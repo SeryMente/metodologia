@@ -79,3 +79,25 @@ Cada número de versión deberá tener asociada una narrativa rica pero concisa.
 Debe contener información suficiente para que, leyendo las versiones sucesivamente, pueda reconstruirse cómo y por qué el sistema pasó de un estado al siguiente.
 
 No se imponen por ahora vocabulario obligatorio, longitud, número de párrafos ni estructuras literarias adicionales. La finalidad es conservar una historia comprensible y reconstruible de la evolución del sistema sin introducir complejidad innecesaria.
+
+## 7. Foliacion global de ciclos de conversacion
+
+Todo ciclo de conversacion dentro de un proyecto sujeto a esta metodologia tendra un **folio global unico y secuencial**, independiente de la conversacion en la que ocurra. La conversacion es el contenedor/contexto; el ciclo es la unidad de secuencia y trazabilidad. La numeracion no se reinicia al cambiar de conversacion y puede intercalarse entre multiples conversaciones.
+
+El formato canonico es:
+
+`PROYECTO / CONV-XX / CXXX`
+
+Donde `PROYECTO` identifica el proyecto, `CONV-XX` la conversacion y `CXXX` el folio global del ciclo. El folio `CXXX` es obligatorio en el formato de salida de **cada ciclo, sin excepcion**, para todos los proyectos bajo la metodologia.
+
+## 8. Identificacion ubicua de la ultima version
+
+En todo momento y en cualquier lugar donde se genere una conversacion al interior de un proyecto sujeto a esta metodologia, el modelo debe identificar la **version de la ultima actualizacion y el nombre de esa version**. Esta regla aplica a conversaciones nuevas, continuaciones y conversaciones especializadas de cualquier ambito.
+
+El formato minimo es:
+
+`Version: vX.Y.Z - Nombre de version`
+
+## 9. Diagrama de arbol oportuno
+
+El diagrama de arbol se mostrara **de manera oportuna** cuando el estado, estructura o naturaleza del trabajo haga pertinente presentar la vision jerarquica. No constituye un elemento obligatorio de todas las respuestas. Una actualizacion importante continua siendo el desencadenante establecido para mostrar oportunamente el arbol general de la metodologia.
