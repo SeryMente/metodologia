@@ -12,7 +12,9 @@ La metodología se definirá gradualmente. Las decisiones confirmadas se incorpo
 
 ## Ultima actualizacion
 
-**v0.1.0 - Convenciones Canonicas Iniciales**
+**v0.2.0 - Suficiencia Progresiva**
 2026-10-03
+
+Esta versión incorpora el estado visual del acumulador global de notas y el primer régimen de salida para controlar la deriva de verbosidad por defecto mediante suficiencia progresiva.
 
 Las convenciones nuevas y su especificacion completa se encuentran en `METODOLOGIA.md`.

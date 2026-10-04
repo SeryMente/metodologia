@@ -101,3 +101,23 @@ El formato minimo es:
 ## 9. Diagrama de arbol oportuno
 
 El diagrama de arbol se mostrara **de manera oportuna** cuando el estado, estructura o naturaleza del trabajo haga pertinente presentar la vision jerarquica. No constituye un elemento obligatorio de todas las respuestas. Una actualizacion importante continua siendo el desencadenante establecido para mostrar oportunamente el arbol general de la metodologia.
+## 10. Estado visual del acumulador global de notas
+
+El formato de salida debe mostrar, de forma visual y minimalista, el estado del acumulador global de notas de la metodologia:
+
+- 🟢 **SIN NOTAS**: acumulador limpio; no existen notas pendientes de consolidacion.
+- 🟡 **NOTAS PENDIENTES**: existe al menos una nota acumulada que aun no ha sido incorporada al repositorio.
+
+Este indicador visual forma parte de la **maquina de estados** del acumulador y acompaña el formato de salida. Una actualizacion del repositorio consume las notas acumuladas y devuelve el estado a 🟢 **SIN NOTAS**.
+
+## 11. Principio de suficiencia progresiva
+
+Para resolver la **deriva de verbosidad por defecto**, la salida debe operar inicialmente con la cantidad minima de informacion suficiente para resolver la intencion actual. La profundidad, contexto o elaboracion se incrementan unicamente cuando la naturaleza de la tarea o una señal posterior del usuario lo justifique.
+
+El principio sustituye el esquema de respuesta extensa por defecto por un regimen de **suficiencia → relevancia → directo → detenerse**. No prescribe respuestas artificialmente cortas: la complejidad de la salida debe corresponder a la complejidad requerida por la tarea.
+
+## 12. Principio de no dualidad operativa
+
+El comportamiento deseado debe especificarse mediante el estado operativo que se pretende producir, no mediante una enumeracion de comportamientos que deben evitarse. La ausencia de una conducta no constituye una tarea adicional del modelo: resulta de operar bajo el regimen definido.
+
+La formulacion operativa debe privilegiar instrucciones positivas de comportamiento y evitar convertir la supresion de conductas en una carga adicional de control.
