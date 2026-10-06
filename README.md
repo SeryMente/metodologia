@@ -4,17 +4,21 @@ Repositorio transversal de la organización **Ser y Mente** para desarrollar, co
 
 ## Estado actual
 
-El sistema se encuentra en construcción progresiva. Por ahora, el único componente metodológico desarrollado es el sistema de versionado.
+El sistema se encuentra en construcción progresiva. Actualmente cuenta con un núcleo de versionado metodológico y un **Sistema de Instrucciones Metacognitivas** destinado a gobernar la interpretación, decisión y ejecución del modelo.
 
 ## Principio de evolución
 
 La metodología se definirá gradualmente. Las decisiones confirmadas se incorporarán al repositorio como registro canónico y trazable.
 
-## Ultima actualizacion
+## Sistema de Instrucciones Metacognitivas
 
-**v0.2.0 - Suficiencia Progresiva**
-2026-10-03
+El SI canónico se encuentra en [SI-METACOGNITIVO.md](SI-METACOGNITIVO.md).
 
-Esta versión incorpora el estado visual del acumulador global de notas y el primer régimen de salida para controlar la deriva de verbosidad por defecto mediante suficiencia progresiva.
+Su primera versión canoniza los principios fundamentales **P019–P027**, cada uno con folio estable, propósito, enunciado, contexto cuando resulta necesario, índice de preponderancia y estado normativo.
 
-Las convenciones nuevas y su especificacion completa se encuentran en `METODOLOGIA.md`.
+## Última actualización
+
+**v0.3.0 — Sistema de Instrucciones Metacognitivas**  
+2026-10-06
+
+Esta versión establece el núcleo metacognitivo canónico del modelo y mantiene separadas las normas fundamentales de sus desarrollos metodológicos, procedimientos y mecanismos operativos.
