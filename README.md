@@ -4,7 +4,7 @@ Repositorio transversal de la organización **Ser y Mente** para desarrollar, co
 
 ## Estado actual
 
-**Cambio de gobernanza:** en revisión
+El sistema cuenta con un núcleo de versionado metodológico y un **Sistema de Instrucciones Metacognitivas** destinado a gobernar la interpretación, decisión y ejecución del modelo. La metodología exige nombres específicos para cada versión, historial narrativo y una identificación temporal de la última actualización canónica.
 
 El sistema se encuentra en construcción progresiva. Actualmente cuenta con un núcleo de versionado metodológico y un **Sistema de Instrucciones Metacognitivas** destinado a gobernar la interpretación, decisión y ejecución del modelo.
 
@@ -20,7 +20,7 @@ Su primera versión canoniza los principios fundamentales **P019–P027**, cada 
 
 ## Última actualización
 
-**v0.3.0 — Sistema de Instrucciones Metacognitivas**  
+**v0.4.0 — Gobernanza Versionada y Observabilidad de Servicios**  
 2026-10-06
 
-Esta versión establece el núcleo metacognitivo canónico del modelo y mantiene separadas las normas fundamentales de sus desarrollos metodológicos, procedimientos y mecanismos operativos.
+El SI canónico vigente es **v1.2.0 — Identidad Versionada y Vigencia Canónica**. Esta actualización establece nombre específico por versión, historial de evolución y observabilidad transversal de servicios.
