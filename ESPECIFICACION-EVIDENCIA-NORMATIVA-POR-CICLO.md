@@ -160,7 +160,7 @@ Se adoptan las siguientes decisiones para esta versión:
 | Rechazo | no sobrescribir; nuevo attempt |
 | Fast path | estructural, determinista, O(N) |
 | Auditoría semántica | selectiva/asíncrona |
-| Seguridad | credencial servidor-a-servidor; nunca en navegador |
+| Seguridad | OAuth por cliente o Bearer manual gestionado por KHORA; secretos no persistidos en claro |
 
 ---
 
@@ -170,11 +170,13 @@ Existe **un único recurso MCP canónico** para Cora/KHORA: `/api/mcp`.
 
 Todas las capacidades actuales y futuras se publican dentro de ese recurso. No se crean MCP separados para gobernanza, volcados, runtime, memoria u otras funciones.
 
-Los clientes de distintas plataformas pueden utilizar el mismo recurso mediante sus propias identidades OAuth. La autorización se expresa mediante scopes mínimos:
+Los clientes de distintas plataformas pueden utilizar el mismo recurso mediante OAuth o mediante un Bearer Token manual emitido por KHORA. La autorización se expresa mediante scopes mínimos:
 
 - `volcados:read` — volcados y revisión;
 - `runtime:read` — observabilidad;
 - `norm:turn` — apertura y verificación normativa.
+
+El mismo recurso `/api/mcp` admite dos métodos de autenticación: OAuth 2.0 para clientes que soportan descubrimiento/autorización y un Bearer Token manual generado por KHORA para plataformas que permiten introducir una credencial estática. El token manual es opaco, de alta entropía, limitado por scopes, con caducidad y revocación individual; KHORA conserva únicamente su hash. La revocación global por generación invalida tanto OAuth como los Bearer manuales.
 
 Añadir una capacidad no crea otra puerta de entrada; añade una herramienta y, solo cuando sea necesario, un scope.
 
@@ -838,10 +840,20 @@ El sistema debe diferenciar:
 KHORA_API_KEY:
 
 - solo servidor;
-- nunca navegador;
+- nunca entregada al modelo;
 - nunca incluida en el receipt;
 - rotación periódica;
 - comparación en tiempo constante.
+
+Bearer manual MCP:
+
+- generado exclusivamente tras autenticación de operador;
+- 256 bits de entropía aleatoria antes del prefijo de presentación;
+- almacenado únicamente como SHA-256;
+- limitado por scopes y recurso MCP;
+- expiración obligatoria;
+- revocación individual y global por generación;
+- mostrado en claro una sola vez en la consola de KHORA.
 
 ### 26.2 MCP
 
