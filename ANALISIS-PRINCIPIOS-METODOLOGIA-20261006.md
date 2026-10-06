@@ -4,7 +4,7 @@
 
 **Estado:** DERIVADO / PENDIENTE DE CONFIRMACIÓN  
 **Naturaleza:** entregable de análisis; no constituye canonización de los principios candidatos.  
-**Repositorio:** `SeryMente/Metodolog-a`  
+**Repositorio:** `SeryMente/metodologia`  
 **Rama:** `main`
 
 Este documento registra la extracción y normalización de contenido normativo realizada a partir de la conversación de origen. Los principios ya existentes se reproducen como línea base; los principios derivados permanecen sin folio canónico y sin valor de precedencia asignado.
