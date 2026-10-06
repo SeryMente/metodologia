@@ -1,6 +1,6 @@
 # Especificación Completa de Evidencia Normativa por Turno
 
-**Estado:** PROPUESTA DE DISEÑO AMPLIADA  
+**Estado:** ESPECIFICACIÓN OPERATIVA
 **Versión:** v0.3.0 — MCP Multiuso + Registro Verificable por Ciclo  
 **Fecha:** 2026-10-06  
 **Ámbito:** mecanismo para obtener evidencia externa, reproducible y auditable de que cada turno elegible de ejecución de ChatGPT fue gobernado por la totalidad del Sistema de Instrucciones Metacognitivas (SI) vigente al inicio del turno.  
@@ -1246,6 +1246,9 @@ Estado observado en main al 2026-10-06:
 - hashing ✅
 - historial de intentos ✅
 - producción Vercel ✅
+- SI v1.1.0 con P028 · Trazabilidad Normativa ✅
+- registro de salida `cycle-verification/v1` ✅
+- `verification_record` en el flujo MCP ✅
 
 Repositorio:
 
@@ -1257,23 +1260,9 @@ khora-web
 
 ---
 
-## 41. Lo que falta para v0.2.0 operativo
+## 41. Lo que queda fuera de este cierre
 
-### Fase A — Contrato de turno
-
-Implementar:
-
-- turns;
-- turn_token;
-- turn/open;
-- turn/verify;
-- transición OPEN → VERIFIED → CLOSED.
-
-URL canónica:
-
-https://github.com/SeryMente/khora/tree/main/khora-web
-
-### Fase B — Parser robusto del SI
+### Parser robusto del SI
 
 Eliminar dependencia de «## 4. Principios fundamentales».
 
@@ -1283,34 +1272,7 @@ URL canónica:
 
 https://github.com/SeryMente/metodologia/blob/main/SI-METACOGNITIVO.md
 
-### Fase C — Adaptador MCP
-
-Crear el puente:
-
-    ChatGPT
-      ↕
-    norm_open_turn
-    norm_verify_turn
-      ↕
-    KHORA
-
-El adaptador nunca entrega KHORA_API_KEY al modelo.
-
-URL canónica:
-
-https://github.com/SeryMente/khora
-
-### Fase D — Activación del flujo por turno
-
-Actualizar el mecanismo de carga/operación del SI para que el flujo por turno sea obligatorio dentro de la integración elegida.
-
-No se modifica el SI canónico hasta que la implementación haya pasado las pruebas de A–C.
-
-URL canónica:
-
-https://github.com/SeryMente/metodologia/blob/main/SI-METACOGNITIVO.md
-
-### Fase E — Binding fuerte
+### Binding fuerte
 
 Cuando exista un runtime controlado, mover input/output hashing desde el modelo al adaptador/runtime.
 
@@ -1318,7 +1280,7 @@ URL canónica:
 
 https://github.com/SeryMente/khora
 
-### Fase F — Gate
+### Gate fuerte de runtime
 
 Hacer que el runtime controlado no pueda cerrar un turno sin VERIFIED.
 
@@ -1326,7 +1288,7 @@ URL canónica:
 
 https://github.com/SeryMente/khora
 
-### Fase G — Auditoría semántica
+### Auditoría semántica
 
 Añadir challenge selectivo y semantic_assurance.
 
@@ -1381,21 +1343,17 @@ Motivo:
 - pasa de comprobación de receipt aislado;
 - a ciclo de turno con apertura, token, snapshot sellado y cierre.
 
+El registro de salida `cycle-verification/v1` es una proyección del receipt y no cambia el protocolo de persistencia v0.2.0.
+
 ### SI
 
-No se modifica en esta especificación.
+v1.0.0 → v1.1.0
 
-La adopción del mecanismo como obligación normativa requiere una actualización separada y versionada de:
+Motivo:
 
-- SI-METACOGNITIVO.md;
-- cargador;
-- reglas de operación.
+- canoniza P028 · Trazabilidad Normativa.
 
-No se debe confundir:
-
-    especificación de implementación
-    ≠
-    canonización del SI
+La implementación desarrolla P028 sin introducir dependencias de MCP, tokens, UI o proveedor dentro del principio.
 
 ---
 
@@ -1461,21 +1419,16 @@ La primera afirmación es auditable. La segunda no.
 
 ## 46. Estado de esta especificación
 
-**PROPUESTA DE DISEÑO AMPLIADA · v0.2.0**
+**ESPECIFICACIÓN OPERATIVA · v0.3.0**
 
-Esta especificación consolida el diseño completo necesario para pasar de:
-
-    KHORA puede verificar receipts
-
-a:
+Esta especificación consolida el contrato para registrar la verificación ciclo a ciclo:
 
     cada turno verificable
     → abre snapshot
     → genera evidencia
     → KHORA verifica
-    → obtiene VERIFIED
-    → queda auditable
+    → produce verification_record
+    → conserva historial
+    → cierra solo con VERIFIED
 
-La implementación actual de KHORA es una base funcional, no todavía la garantía de verificación automática de cada turno.
-
-La siguiente entrega técnica debe implementar las fases A–F en ese orden antes de declarar cerrada la comprobación por turno.
+El alcance de P028 queda implementado en KHORA y desplegado en producción. Las capacidades adicionales de binding fuerte, gate de runtime controlado, parser machine-readable y auditoría semántica permanecen fuera de este cierre.
