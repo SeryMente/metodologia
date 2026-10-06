@@ -2,20 +2,34 @@
 
 ## Estado canónico
 
-- **Versión:** v0.3.0
+- **Nombre de versión:** Gobernanza Versionada y Observabilidad de Servicios
+- **Última actualización canónica:** 2026-10-06T16:42:13-06:00
+
+- **Versión:** v0.4.0
 - **Nombre de versión:** Sistema de Instrucciones Metacognitivas
 - **Última actualización:** 2026-10-06
 - **Ámbito:** Todos los proyectos y conversaciones trabajados bajo esta metodología.
 
 ### Narrativa de la versión
 
-**Antes:** la metodología disponía de versionado, foliación global, reglas de presentación, Suficiencia Progresiva y No Dualidad Operativa, pero no tenía un sistema canónico y compacto de instrucciones destinado a gobernar metacognitivamente al modelo.
+**Antes:** la metodología ya disponía de un SI canónico, foliación global, reglas de salida y trazabilidad normativa, pero la identidad de versión todavía reutilizaba el título general como nombre de versión y la observabilidad de Cora no tenía una frontera transversal uniforme para todos sus servicios HTTP y bridges.
 
-**Cambio:** se incorpora `SI-METACOGNITIVO.md` como sistema canónico de instrucciones fundamentales. El SI establece la estructura de los principios, su folio estable, propósito, enunciado, contexto, índice de preponderancia y estado, y canoniza los principios P019–P027.
+**Cambio:** se formaliza el nombre específico de cada versión, su registro histórico y la marca de última actualización canónica; además, se establece observabilidad transversal para las fronteras de servicio de Cora y correlación uniforme para servicios internos y agentes externos.
 
-**Motivo:** disponer primero de un régimen metacognitivo pequeño y estable que pueda gobernar al modelo y servir después como base para derivar las capas metodológicas inferiores.
+**Motivo:** permitir que cualquier modelo, plataforma o auditor pueda identificar sin ambigüedad qué versión normativa estaba vigente y reconstruir la actividad de los servicios de Cora sin depender de logs aislados por subsistema.
 
-**Resultado:** existe un núcleo metacognitivo canónico, separado de procedimientos, mecanismos y detalles operativos.
+**Resultado:** la metodología cuenta con una convención de versionado descriptiva y trazable, y Cora dispone de una capa común de observabilidad de servicios que complementa sus eventos de dominio y registros especializados.
+
+### Registro de versiones
+
+| Número | Valor cuantitativo | Abstracción | Narrativa |
+|---:|---|---|---|
+| 1 | v0.1.0 | Convenciones Canónicas Iniciales | Se establecieron foliación global de ciclos y las convenciones básicas de versión y salida transversal. |
+| 2 | v0.2.0 | Suficiencia Progresiva | Se incorporaron la suficiencia progresiva, el estado visual del acumulador y criterios para evitar expansión innecesaria de la salida. |
+| 3 | v0.3.0 | Canon Metacognitivo Fundamental | Se incorporó `SI-METACOGNITIVO.md` como núcleo canónico de gobierno metacognitivo, separado de mecanismos y procedimientos. |
+| 4 | v0.4.0 | Gobernanza Versionada y Observabilidad de Servicios | Se normaliza la identidad de versión con nombre y vigencia temporal y se establece observabilidad transversal de las fronteras de servicio de Cora. |
+
+La tabla es canónica: las versiones futuras deben añadir una fila sin borrar ni reciclar las anteriores. El nombre describe el avance de la versión y no sustituye el título general del sistema o documento.
 
 ## 1. Convención obligatoria de foliación de ciclos
 
@@ -53,7 +67,7 @@ Esta identificación aplica a conversaciones nuevas, continuaciones, cambios de 
 
 Formato mínimo:
 
-`Versión: vX.Y.Z — Nombre de versión`
+`Versión: vX.Y.Z — Nombre de versión · Último cambio: hace N minutos|horas|días | YYYY-MM-DD`
 
 ## 3. Diagrama de árbol
 
