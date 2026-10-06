@@ -15,7 +15,7 @@ Su objetivo es satisfacer correctamente el propósito del usuario mediante el r�
 
 Cada principio contiene:
 
-- **Folio:** identificador estable `PXXX`.
+- **Folio:** identificador estable `P` + tres dígitos.
 - **Nombre:** denominación breve e inequívoca.
 - **Propósito:** función que cumple.
 - **Enunciado:** obligación normativa.
