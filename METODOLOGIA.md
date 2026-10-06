@@ -2,12 +2,10 @@
 
 ## Estado canónico
 
-- **Nombre de versión:** Gobernanza Versionada y Observabilidad de Servicios
-- **Última actualización canónica:** 2026-10-06T16:42:13-06:00
-
 - **Versión:** v0.4.0
-- **Nombre de versión:** Sistema de Instrucciones Metacognitivas
+- **Nombre de versión:** Gobernanza Versionada y Observabilidad de Servicios
 - **Última actualización:** 2026-10-06
+- **Última actualización canónica:** 2026-10-06T16:42:13-06:00
 - **Ámbito:** Todos los proyectos y conversaciones trabajados bajo esta metodología.
 
 ### Narrativa de la versión
@@ -55,19 +53,17 @@ El `CXXX` es el identificador secuencial principal del ciclo y no depende del or
 
 La foliación es **obligatoria y ubicua**: debe aparecer en el formato de salida de **cada ciclo, sin excepción**, en todos los proyectos sujetos a esta metodología.
 
-Ejemplo:
-
-`METODOLOGÍA / CONV-05 / C020`
-
 ## 2. Identificación de versión en conversaciones
 
-En todo momento y en cualquier lugar donde se genere una conversación al interior de un proyecto sujeto a esta metodología, el modelo debe identificar la **versión de la última actualización y el nombre de esa versión**.
+En todo momento y en cualquier lugar donde se genere una conversación al interior de un proyecto sujeto a esta metodología, el modelo debe identificar la **versión de la última actualización, el nombre de esa versión y la vigencia temporal de la última modificación canónica**.
 
 Esta identificación aplica a conversaciones nuevas, continuaciones, cambios de ámbito y cualquier otro contexto conversacional dentro de los proyectos bajo la metodología.
 
 Formato mínimo:
 
 `Versión: vX.Y.Z — Nombre de versión · Último cambio: hace N minutos|horas|días | YYYY-MM-DD`
+
+El nombre es el correspondiente a la versión específica y no el título general del sistema. La expresión temporal se deriva de la marca `Última actualización canónica` del recurso normativo; se usan minutos para menos de 60 min, horas para menos de 24 h, días para menos de 30 días y fecha absoluta desde 30 días.
 
 ## 3. Diagrama de árbol
 
@@ -77,7 +73,7 @@ El diagrama de árbol forma parte de la metodología y debe aparecer **de manera
 
 Además de las convenciones de trazabilidad y versión, el formato de salida debe mostrar el estado visual del acumulador global de notas:
 
-`🟢 SIN NOTAS`  /  `🟡 NOTAS PENDIENTES`
+`🟢 SIN NOTAS` / `🟡 NOTAS PENDIENTES`
 
 El indicador es parte de la máquina de estados del acumulador y no es un adorno de presentación.
 
@@ -88,14 +84,7 @@ Cuando corresponda, el encabezado metodológico de un ciclo debe permitir identi
 3. Folio global del ciclo.
 4. Versión de la última actualización.
 5. Nombre de la versión.
-
-Referencia:
-
-`PROYECTO / CONV-XX / CXXX`
-
-`Versión: vX.Y.Z — Nombre de versión`
-
-Estas convenciones son transversales y aplican a cualquier proyecto que adopte la metodología; no están restringidas al repositorio de Metodología.
+6. Último cambio canónico.
 
 ## 5. Sistema de Instrucciones Metacognitivas
 
@@ -103,6 +92,6 @@ El sistema canónico de instrucciones que gobierna la interpretación, decisión
 
 `SI-METACOGNITIVO.md`
 
-Este sistema constituye la capa fundamental de gobierno del modelo. Sus principios son canónicos cuando su estado así lo indique; sus detalles de aplicación pueden desarrollarse en capas metodológicas inferiores sin modificar el significado de los principios.
+La versión canónica actual del SI es **v1.2.0 — Identidad Versionada y Vigencia Canónica** y contiene los principios **P019–P029**, cada uno con su **índice de preponderancia** dentro de la escala `0–1`.
 
-La versión inicial canoniza los principios **P019–P027** y establece para cada uno su **índice de preponderancia** dentro de la escala `0–1`.
+La metodología mantiene separadas las normas fundamentales de sus desarrollos, procedimientos, herramientas y mecanismos de implementación.
