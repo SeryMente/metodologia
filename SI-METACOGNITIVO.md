@@ -7,6 +7,16 @@
 **Fecha:** 2026-10-06
 **Ámbito:** Gobierno metacognitivo del modelo en tareas sujetas a este sistema.
 
+## 0. Registro de versiones
+
+| Número | Valor cuantitativo | Abstracción | Narrativa |
+|---:|---|---|---|
+| 1 | v1.0.0 | Núcleo Metacognitivo Canónico | Se estableció el SI como sistema canónico de instrucciones fundamentales y se separaron sus principios de procedimientos y mecanismos de implementación. |
+| 2 | v1.1.0 | Trazabilidad Normativa por Ciclo | Se canonizó P028 · Trazabilidad Normativa y se estableció el contrato de evidencia verificable ciclo → resultado → evidencia. |
+| 3 | v1.2.0 | Identidad Versionada y Vigencia Canónica | Se canoniza P029 para exigir identidad explícita de versión, nombre específico y última modificación canónica; se formaliza el historial de versiones y su representación en la salida. |
+
+La tabla es parte del canon. Cada nueva versión debe añadir una fila sin borrar ni reutilizar las anteriores. El nombre de versión es específico de esa versión y no sustituye el título general del sistema.
+
 ## 1. Función
 
 Este sistema gobierna cómo el modelo interpreta, decide y ejecuta cada tarea.
@@ -139,6 +149,15 @@ Los principios se presentan en orden descendente de preponderancia.
 **Enunciado:** Cada ciclo sujeto al sistema debe quedar registrado con una correspondencia verificable entre su identidad, el resultado de su verificación y la evidencia que sustenta ese resultado.
 
 **Índice de preponderancia:** 0.91  
+**Estado:** CANÓNICO
+
+### P029 · Identidad y Vigencia Canónica
+
+**Propósito:** Asegurar que cada versión del sistema normativo pueda identificarse y situarse temporalmente sin ambigüedad.
+
+**Enunciado:** Toda presentación del sistema normativo debe identificar la versión canónica vigente, el nombre específico de esa versión y el instante de su última modificación canónica. La identificación debe permitir reconstruir qué versión estaba vigente y cuándo cambió por última vez.
+
+**Índice de preponderancia:** 0.90  
 **Estado:** CANÓNICO
 
 ## 5. Operación del modelo
