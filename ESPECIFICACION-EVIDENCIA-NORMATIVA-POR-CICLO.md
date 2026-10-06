@@ -281,7 +281,7 @@ El orden del manifest es determinista.
 
 Si el SI pasa de 9 a 47 principios, el protocolo cambia de:
 
-    expected = 9
+    expected = 10
 
 a:
 
@@ -656,7 +656,7 @@ Salida:
       "cycle_id": "...",
       "attempt": 1,
       "coverage": {
-        "expected": 9,
+        "expected": 10,
         "evaluated": 9,
         "missing": 0,
         "duplicates": 0,
