@@ -4,6 +4,8 @@ Repositorio transversal de la organización **Ser y Mente** para desarrollar, co
 
 ## Estado actual
 
+**Cambio de gobernanza:** en revisión
+
 El sistema se encuentra en construcción progresiva. Actualmente cuenta con un núcleo de versionado metodológico y un **Sistema de Instrucciones Metacognitivas** destinado a gobernar la interpretación, decisión y ejecución del modelo.
 
 ## Principio de evolución
