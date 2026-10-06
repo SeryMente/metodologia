@@ -1,10 +1,10 @@
 # Especificación Completa de Evidencia Normativa por Turno
 
 **Estado:** ESPECIFICACIÓN OPERATIVA
-**Versión:** v0.3.0 — MCP Multiuso + Registro Verificable por Ciclo  
+**Versión:** v0.4.0 — Identidad Versionada + MCP Multiuso + Registro Verificable por Ciclo  
 **Fecha:** 2026-10-06  
 **Ámbito:** mecanismo para obtener evidencia externa, reproducible y auditable de que cada turno elegible de ejecución de ChatGPT fue gobernado por la totalidad del Sistema de Instrucciones Metacognitivas (SI) vigente al inicio del turno.  
-**Relación con el SI:** este documento especifica un mecanismo de aplicación y verificación. El SI v1.1.0 canoniza P028 · Trazabilidad Normativa; este documento desarrolla su aplicación sin añadir mecanismos al nivel de principio.
+**Relación con el SI:** este documento especifica un mecanismo de aplicación y verificación. El SI v1.2.0 canoniza P028 · Trazabilidad Normativa y P029 · Identidad y Vigencia Canónica; este documento desarrolla su aplicación sin añadir mecanismos al nivel de principio.
 
 **Fuente normativa canónica:**  
 https://github.com/SeryMente/metodologia/blob/main/SI-METACOGNITIVO.md
@@ -210,7 +210,9 @@ Solicitud mínima:
         "opened_at": "2026-10-06T19:30:00.000Z"
       },
       "snapshot": {
-        "version": "v1.1.0",
+        "version": "v1.2.0",
+        "version_name": "Identidad Versionada y Vigencia Canónica",
+        "last_updated_at": "2026-10-06T16:42:13-06:00",
         "git_blob_sha": "...",
         "sha256": "...",
         "manifest_sha256": "...",
@@ -252,9 +254,9 @@ Una vez abierto el turno:
 
     TURN T42
       ↓
-    SNAPSHOT v1.1.0
+    SNAPSHOT v1.2.0
       ↓
-    SI v1.2.0 publicado posteriormente
+    SI v1.3.0 publicado posteriormente
       ↓
     T42 sigue usando v1.1.0
     T43 puede usar v1.2.0
@@ -442,7 +444,7 @@ Esquema recomendado:
         "turn_token": "opaque-server-token"
       },
       "si": {
-        "version": "v1.1.0",
+        "version": "v1.2.0",
         "git_blob_sha": "...",
         "sha256": "...",
         "manifest_sha256": "..."
@@ -1026,6 +1028,14 @@ Los intentos antiguos no deben presentarse como equivalentes a la verificación 
 
 ## 32. Observabilidad
 
+La observabilidad del verificador forma parte de la observabilidad general de Cora y no debe depender exclusivamente de los logs propios de la ruta normativa.
+
+Debe existir una observación transversal en cada frontera HTTP del servicio web y en los bridges que prestan capacidades a agentes externos. Como mínimo se registra servicio, operación, ruta, método, correlación, resultado, código de estado, duración y razón de fallo, sin almacenar payloads, prompts, respuestas completas, secretos ni tokens.
+
+Las llamadas MCP se observan tanto a nivel de request como a nivel de tool call. El gate normativo registra explícitamente aperturas, verificaciones y rechazos por ausencia o invalidez de `turn_token`.
+
+El bridge FastAPI conserva el mismo `correlation_id` y remite su resultado al almacén durable de eventos. Las dependencias externas críticas, como Jules, registran éxito/fallo terminal y latencia.
+
 Métricas mínimas:
 
 - norm_check_open_latency_ms;
@@ -1246,7 +1256,11 @@ Estado observado en main al 2026-10-06:
 - hashing ✅
 - historial de intentos ✅
 - producción Vercel ✅
-- SI v1.1.0 con P028 · Trazabilidad Normativa ✅
+- SI v1.2.0 con P028 · Trazabilidad Normativa y P029 · Identidad y Vigencia Canónica ✅
+- observabilidad transversal de fronteras de servicio ✅
+- bridge FastAPI correlacionado ✅
+- MCP request + tool-call observability ✅
+- dependencias externas Jules observadas ✅
 - registro de salida `cycle-verification/v1` ✅
 - `verification_record` en el flujo MCP ✅
 
@@ -1355,6 +1369,16 @@ Motivo:
 
 La implementación desarrolla P028 sin introducir dependencias de MCP, tokens, UI o proveedor dentro del principio.
 
+v1.1.0 → v1.2.0
+
+Motivo:
+
+- canoniza P029 · Identidad y Vigencia Canónica;
+- exige nombre específico de versión y última modificación canónica;
+- establece su representación obligatoria en la salida del SI.
+
+La implementación desarrolla P029 sin introducir dependencias de MCP, tokens, UI o proveedor dentro del principio.
+
 ---
 
 ## 44. Plan de aceptación
@@ -1419,7 +1443,7 @@ La primera afirmación es auditable. La segunda no.
 
 ## 46. Estado de esta especificación
 
-**ESPECIFICACIÓN OPERATIVA · v0.3.0**
+**ESPECIFICACIÓN OPERATIVA · v0.4.0**
 
 Esta especificación consolida el contrato para registrar la verificación ciclo a ciclo:
 
@@ -1431,4 +1455,4 @@ Esta especificación consolida el contrato para registrar la verificación ciclo
     → conserva historial
     → cierra solo con VERIFIED
 
-El alcance de P028 queda implementado en KHORA y desplegado en producción. Las capacidades adicionales de binding fuerte, gate de runtime controlado, parser machine-readable y auditoría semántica permanecen fuera de este cierre.
+El alcance de P028 y P029 queda implementado en KHORA y desplegado en producción. Las capacidades adicionales de binding fuerte, gate de runtime controlado, parser machine-readable y auditoría semántica permanecen fuera de este cierre.
