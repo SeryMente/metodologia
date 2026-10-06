@@ -1,7 +1,7 @@
 # Generación, auditoría y persistencia de principios metodológicos
 
 **Estado del entregable:** PERSISTIDO  
-**Repositorio canónico:** `SeryMente/Metodolog-a`  
+**Repositorio canónico:** `SeryMente/metodologia`  
 **Archivo:** `PRINCIPIOS-PROMPT-EJECUTOR.md`  
 **Fuente:** conversación metodológica actual y estado vigente del repositorio consultado antes de persistir.  
 **Foliación de principios:** PXXX — pendiente de conciliación con el registro canónico de principios.  
