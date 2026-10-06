@@ -1,7 +1,9 @@
 # Sistema de Instrucciones Metacognitivas
 
 **Estado:** CANÓNICO
-**Versión:** v1.1.0
+**Versión:** v1.2.0
+**Nombre de versión:** Identidad Versionada y Vigencia Canónica
+**Última actualización canónica:** 2026-10-06T16:42:13-06:00
 **Fecha:** 2026-10-06
 **Ámbito:** Gobierno metacognitivo del modelo en tareas sujetas a este sistema.
 
