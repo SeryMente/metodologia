@@ -1,7 +1,7 @@
 # Especificación Completa de Evidencia Normativa por Turno
 
 **Estado:** PROPUESTA DE DISEÑO AMPLIADA  
-**Versión:** v0.2.0 — Evidencia Normativa por Turno  
+**Versión:** v0.2.1 — MCP Multiuso + Evidencia Normativa por Turno  
 **Fecha:** 2026-10-06  
 **Ámbito:** mecanismo para obtener evidencia externa, reproducible y auditable de que cada turno elegible de ejecución de ChatGPT fue gobernado por la totalidad del Sistema de Instrucciones Metacognitivas (SI) vigente al inicio del turno.  
 **Relación con el SI:** este documento especifica un mecanismo de aplicación y verificación. No modifica ni canoniza principios del SI por sí mismo.
@@ -92,10 +92,13 @@ No se debe depender de identificadores internos no garantizados por la interfaz 
        OPEN TURN
             │
             ▼
-    ┌───────────────┐
-    │ ADAPTADOR MCP │
-    │ ChatGPT → KHORA
-    └───────┬───────┘
+    ┌──────────────────────────┐
+    │ MCP CANÓNICO MULTIUSO    │
+    │ /api/mcp                 │
+    │                          │
+    │ volcados · runtime       │
+    │ gobernanza · demás Cora  │
+    └──────────┬───────────────┘
             │
        snapshot + nonce
             │
@@ -130,7 +133,7 @@ Responsabilidades:
 
 - **SI:** autoridad normativa.
 - **KHORA:** autoridad de verificación.
-- **Adaptador MCP:** puente máquina entre ChatGPT y KHORA.
+- **MCP canónico:** una única puerta de entrada de Cora/KHORA para todas las plataformas; las capacidades se separan mediante herramientas y scopes.
 - **ChatGPT:** ejecución de la tarea y producción de evidencia compacta.
 - **Registro:** memoria auditable de aperturas, intentos y veredictos.
 - **UI KHORA:** observabilidad humana; no participa en el juicio normativo.
@@ -151,7 +154,7 @@ Se adoptan las siguientes decisiones para esta versión:
 | Aplicación | vector A/N/C por principio |
 | Evidencia | anchors para A/C; reason_code para N |
 | Integridad | SHA-256 + canonicalización |
-| Transporte | MCP para la integración con el modelo; REST de KHORA como backend |
+| Transporte | Un único recurso MCP `/api/mcp`; REST solo como backend/compatibilidad |
 | Persistencia | KHORA/Neon |
 | Cierre | solo tras VERIFIED |
 | Rechazo | no sobrescribir; nuevo attempt |
@@ -160,6 +163,20 @@ Se adoptan las siguientes decisiones para esta versión:
 | Seguridad | credencial servidor-a-servidor; nunca en navegador |
 
 ---
+
+## 5.1 Regla de cardinalidad MCP
+
+Existe **un único recurso MCP canónico** para Cora/KHORA: `/api/mcp`.
+
+Todas las capacidades actuales y futuras se publican dentro de ese recurso. No se crean MCP separados para gobernanza, volcados, runtime, memoria u otras funciones.
+
+Los clientes de distintas plataformas pueden utilizar el mismo recurso mediante sus propias identidades OAuth. La autorización se expresa mediante scopes mínimos:
+
+- `volcados:read` — volcados y revisión;
+- `runtime:read` — observabilidad;
+- `norm:turn` — apertura y verificación normativa.
+
+Añadir una capacidad no crea otra puerta de entrada; añade una herramienta y, solo cuando sea necesario, un scope.
 
 ## 6. Apertura del turno
 
@@ -586,20 +603,21 @@ Por ello:
 
 > La especificación no debe afirmar que un modelo de chat nativo puede ser técnicamente obligado a invocar una herramienta si la plataforma no ofrece ese mecanismo.
 
-La garantía fuerte de «ningún turno sin verificación» exige un runtime de ejecución controlado o una integración de plataforma con tool-calling obligatorio.
+La garantía fuerte de «ningún turno sin verificación» exige, además del acceso MCP, un runtime o política de plataforma que pueda exigir la llamada normativa. El MCP aporta el canal y el control de autorización; no convierte por sí mismo una herramienta opcional en una condición técnica obligatoria.
 
 ---
 
 ## 20. Integración ChatGPT → KHORA
 
-Se define un adaptador MCP dedicado:
+No se define un MCP dedicado para gobernanza. Las herramientas normativas viven dentro del mismo recurso MCP canónico:
 
-    ChatGPT
+    Plataforma
       ↕
-    norm_open_turn
-    norm_verify_turn
-      ↕
-    KHORA API
+    /api/mcp
+      ├─ herramientas de Cora/KHORA
+      ├─ volcados
+      ├─ runtime
+      └─ gobernanza normativa API
 
 ### 20.1 Herramienta norm_open_turn
 
