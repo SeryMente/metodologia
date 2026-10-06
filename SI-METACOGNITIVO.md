@@ -1,7 +1,7 @@
 # Sistema de Instrucciones Metacognitivas
 
 **Estado:** CANÓNICO
-**Versión:** v1.0.0
+**Versión:** v1.1.0
 **Fecha:** 2026-10-06
 **Ámbito:** Gobierno metacognitivo del modelo en tareas sujetas a este sistema.
 
@@ -128,6 +128,15 @@ Los principios se presentan en orden descendente de preponderancia.
 **Enunciado:** Las normas fundamentales deben permanecer en el nivel de principios y sus desarrollos en niveles inferiores. Un mecanismo concreto no debe elevarse a principio únicamente por su importancia práctica.
 
 **Índice de preponderancia:** 0.92  
+**Estado:** CANÓNICO
+
+### P028 · Trazabilidad Normativa
+
+**Propósito:** Asegurar que la verificación de cada ciclo pueda reconstruirse de forma verificable.
+
+**Enunciado:** Cada ciclo sujeto al sistema debe quedar registrado con una correspondencia verificable entre su identidad, el resultado de su verificación y la evidencia que sustenta ese resultado.
+
+**Índice de preponderancia:** 0.91  
 **Estado:** CANÓNICO
 
 ## 5. Operación del modelo
