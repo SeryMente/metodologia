@@ -1,10 +1,10 @@
 # Especificación Completa de Evidencia Normativa por Turno
 
 **Estado:** PROPUESTA DE DISEÑO AMPLIADA  
-**Versión:** v0.2.1 — MCP Multiuso + Evidencia Normativa por Turno  
+**Versión:** v0.3.0 — MCP Multiuso + Registro Verificable por Ciclo  
 **Fecha:** 2026-10-06  
 **Ámbito:** mecanismo para obtener evidencia externa, reproducible y auditable de que cada turno elegible de ejecución de ChatGPT fue gobernado por la totalidad del Sistema de Instrucciones Metacognitivas (SI) vigente al inicio del turno.  
-**Relación con el SI:** este documento especifica un mecanismo de aplicación y verificación. No modifica ni canoniza principios del SI por sí mismo.
+**Relación con el SI:** este documento especifica un mecanismo de aplicación y verificación. El SI v1.1.0 canoniza P028 · Trazabilidad Normativa; este documento desarrolla su aplicación sin añadir mecanismos al nivel de principio.
 
 **Fuente normativa canónica:**  
 https://github.com/SeryMente/metodologia/blob/main/SI-METACOGNITIVO.md
@@ -210,7 +210,7 @@ Solicitud mínima:
         "opened_at": "2026-10-06T19:30:00.000Z"
       },
       "snapshot": {
-        "version": "v1.0.0",
+        "version": "v1.1.0",
         "git_blob_sha": "...",
         "sha256": "...",
         "manifest_sha256": "...",
@@ -252,12 +252,12 @@ Una vez abierto el turno:
 
     TURN T42
       ↓
-    SNAPSHOT v1.0.0
+    SNAPSHOT v1.1.0
       ↓
-    SI v1.0.1 publicado posteriormente
+    SI v1.2.0 publicado posteriormente
       ↓
-    T42 sigue usando v1.0.0
-    T43 puede usar v1.0.1
+    T42 sigue usando v1.1.0
+    T43 puede usar v1.2.0
 
 ---
 
@@ -442,7 +442,7 @@ Esquema recomendado:
         "turn_token": "opaque-server-token"
       },
       "si": {
-        "version": "v1.0.0",
+        "version": "v1.1.0",
         "git_blob_sha": "...",
         "sha256": "...",
         "manifest_sha256": "..."
