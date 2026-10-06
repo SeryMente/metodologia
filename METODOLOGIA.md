@@ -2,20 +2,20 @@
 
 ## Estado canónico
 
-- **Versión:** v0.2.0
-- **Nombre de versión:** Suficiencia Progresiva
-- **Última actualización:** 2026-10-03
+- **Versión:** v0.3.0
+- **Nombre de versión:** Sistema de Instrucciones Metacognitivas
+- **Última actualización:** 2026-10-06
 - **Ámbito:** Todos los proyectos y conversaciones trabajados bajo esta metodología.
 
 ### Narrativa de la versión
 
-**Antes:** la metodología definía convenciones de trazabilidad, versionado y presentación, pero no un régimen explícito para la densidad de la salida ni para el estado visual del acumulador de notas.
+**Antes:** la metodología disponía de versionado, foliación global, reglas de presentación, Suficiencia Progresiva y No Dualidad Operativa, pero no tenía un sistema canónico y compacto de instrucciones destinado a gobernar metacognitivamente al modelo.
 
-**Cambio:** se incorpora el estado visual 🟢 **SIN NOTAS** / 🟡 **NOTAS PENDIENTES**, y se establece el **Principio de Suficiencia Progresiva** como primera solución al problema de la deriva de verbosidad por defecto. Se incorpora además el **Principio de No Dualidad Operativa** como criterio de formulación del comportamiento.
+**Cambio:** se incorpora `SI-METACOGNITIVO.md` como sistema canónico de instrucciones fundamentales. El SI establece la estructura de los principios, su folio estable, propósito, enunciado, contexto, índice de preponderancia y estado, y canoniza los principios P019–P027.
 
-**Motivo:** sustituir respuestas extensas por defecto por una salida sobria y pragmática cuya profundidad corresponda a la necesidad real de la tarea, sin convertir la evitación de conductas en trabajo adicional del modelo.
+**Motivo:** disponer primero de un régimen metacognitivo pequeño y estable que pueda gobernar al modelo y servir después como base para derivar las capas metodológicas inferiores.
 
-**Resultado:** la metodología dispone ahora de un régimen experimental explícito de salida: **suficiencia → relevancia → directo → detenerse**, con expansión progresiva sólo cuando sea necesaria o solicitada.
+**Resultado:** existe un núcleo metacognitivo canónico, separado de procedimientos, mecanismos y detalles operativos.
 
 ## 1. Convención obligatoria de foliación de ciclos
 
@@ -82,3 +82,13 @@ Referencia:
 `Versión: vX.Y.Z — Nombre de versión`
 
 Estas convenciones son transversales y aplican a cualquier proyecto que adopte la metodología; no están restringidas al repositorio de Metodología.
+
+## 5. Sistema de Instrucciones Metacognitivas
+
+El sistema canónico de instrucciones que gobierna la interpretación, decisión y ejecución metacognitiva del modelo se encuentra en:
+
+`SI-METACOGNITIVO.md`
+
+Este sistema constituye la capa fundamental de gobierno del modelo. Sus principios son canónicos cuando su estado así lo indique; sus detalles de aplicación pueden desarrollarse en capas metodológicas inferiores sin modificar el significado de los principios.
+
+La versión inicial canoniza los principios **P019–P027** y establece para cada uno su **índice de preponderancia** dentro de la escala `0–1`.
