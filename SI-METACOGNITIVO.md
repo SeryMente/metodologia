@@ -1,15 +1,15 @@
 # Sistema de Instrucciones Metacognitivas
 
 **Estado:** CANÓNICO
-**Versión:** v1.6.4
-**Nombre de versión:** Recuperación Determinista de Sesión RDC
+**Versión:** v1.6.5
+**Nombre de versión:** Adquisición Atómica de Snapshot Normativo
 
 > **Corrección canónica:** `THINKING` es una ventana preferente, no una precondición bloqueante. La ausencia de señal de Thinking y la indisponibilidad de KHORA no bloquean por sí mismas la salida; se reflejan en `T` y `K` respectivamente.
 **Última actualización canónica:** 2026-10-07
 **Fecha:** 2026-10-07
 **Ámbito:** Gobierno metacognitivo del modelo en tareas sujetas a este sistema.
 
-> **Regla de frescura canónica:** una copia que identifique como vigente cualquier versión anterior a `v1.6.4` es histórica, no normativa. Debe volver a consultar esta ruta canónica antes de aplicar gates de Thinking/KHORA.
+> **Regla de frescura canónica:** una copia que identifique como vigente cualquier versión anterior a `v1.6.5` es histórica, no normativa. Debe volver a consultar esta ruta canónica antes de aplicar gates de Thinking/KHORA.
 
 ## 0. Registro de versiones
 
@@ -26,6 +26,7 @@
 | 9 | v1.6.2 | Coherencia Canónica de Gates y Continuidad Operativa | Se corrigen contradicciones residuales en artefactos subordinados. Thinking y la disponibilidad de KHORA son condiciones adaptativas y no causas autónomas de bloqueo; `T` y `K` deben describir el estado observable sin transformar incertidumbre de runtime en bloqueo. |
 | 10 | v1.6.3 | Verificación de Frescura Normativa por Ciclo | Se establece la recuperación obligatoria del SI desde un snapshot exacto de `main` en cada ciclo, con comprobación de commit SHA, blob SHA, versión y nombre. El HUD incorpora `F` para indicar la frescura normativa. |
 | 11 | v1.6.4 | Recuperación Determinista de Sesión RDC | Se establece el protocolo explícito para divergencias entre la sesión RDC persistente y la conectividad/observabilidad del canal: conservación de identidad, comando `RDC-REINSTANTIAR`, handshake mínimo, sustitución verificable del estado global y propagación transversal mediante el repositorio. |
+| 12 | v1.6.5 | Adquisición Atómica de Snapshot Normativo | Se endurece la frescura por ciclo mediante doble lectura de `main`, recuperación por SHA exacto y rechazo ante cualquier carrera, caché, discordancia o identidad incompleta. |
 
 La tabla es parte del canon. Cada nueva versión debe añadir una fila sin borrar ni reutilizar las anteriores. El nombre de versión es específico de esa versión y no sustituye el título general del sistema.
 
@@ -219,22 +220,24 @@ Un ciclo bloqueado por este gate no puede declararse completado ni ejecutar oper
 
 ### 5.0.1 Verificación de frescura normativa por ciclo
 
-Antes de aplicar cualquier otra regla operativa en cada ciclo sujeto a este SI, el modelo debe obtener el SHA del commit actual de `main` y recuperar `SI-METACOGNITIVO.md` exactamente desde ese commit.
+Antes de aplicar cualquier otra regla operativa, el ciclo debe adquirir un snapshot inmutable del SI.
 
-La comprobación mínima por ciclo debe:
+Secuencia obligatoria:
+1. leer el SHA actual de `main` y conservarlo como `H1`;
+2. recuperar `SI-METACOGNITIVO.md` exactamente en `H1` y conservar su Git blob SHA;
+3. volver a leer `main` como `H2`;
+4. solo declarar `F:✓) si `H1 = H2`, el archivo proviene exactamente de `H1` y versión + nombre + blob SHA son coherentes con esa instantánea.
 
-1. identificar el SHA del commit `main`;
-2. recuperar el SI usando ese SHA como referencia exacta;
-3. conservar el Git blob SHA devuelto;
-4. comprobar versión y nombre de esa misma instantánea;
-5. vincular commit SHA + blob SHA + versión + nombre al ciclo.
+Reglas de fallo:
+- cualquier cambio `H1 ≠ H2`, error de lectura, uso de `main` sin SHA exacto, caché no demostrada, discordancia de blob, versión o nombre produce `F:?` o `F:!` según corresponda;
+- ningún valor previamente cargado en la conversación, memoria, caché o respuesta anterior puede sustituir la adquisición del ciclo;
+- el ciclo queda vinculado a `H1 + blob SHA + versión + nombre`; esa identidad no puede cambiar durante el ciclo.
 
-Indicador compacto de frescura:
-- `F:✓` = la versión declarada coincide con el SI recuperado desde el `main` del ciclo y el blob SHA quedó verificado;
-- `F:?` = la frescura no pudo comprobarse suficientemente;
-- `F:!` = existe discordancia, obsolescencia o intento de gobernar con una instantánea histórica.
+`F:✓` = snapshot actual comprobado y estable.  
+`F:?` = comprobación incompleta o carrera no resuelta.  
+`F:!` = discordancia, obsolescencia o intento de gobernar con una instantánea histórica.
 
-Una copia cargada previamente en la conversación nunca sustituye esta comprobación. `F:!` impide gobernar el ciclo con la copia histórica. `F:?` impide declarar la frescura como verificada; cuando el trabajo dependa de la normativa vigente, la ejecución sustantiva queda detenida hasta resolver la comprobación.
+Ante `F:?` o `F:!`, cuando el trabajo dependa de la normativa vigente, no se ejecuta sustantivamente hasta resolver la frescura.
 
 ### 5.0.3 Recuperación determinista ante divergencia de observabilidad RDC
 
