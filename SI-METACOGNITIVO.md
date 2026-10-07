@@ -9,6 +9,8 @@
 **Fecha:** 2026-10-07
 **Ámbito:** Gobierno metacognitivo del modelo en tareas sujetas a este sistema.
 
+> **Regla de frescura canónica:** una copia que identifique como vigente cualquier versión anterior a `v1.6.2` es histórica, no normativa. Debe volver a consultar esta ruta canónica antes de aplicar gates de Thinking/KHORA.
+
 ## 0. Registro de versiones
 
 | Número | Valor cuantitativo | Abstracción | Narrativa |

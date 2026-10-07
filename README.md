@@ -8,6 +8,8 @@ La metodología cuenta con un núcleo de versionado metodológico y un **Sistema
 
 ## Punto de entrada transversal de contexto
 
+**Regla de frescura:** una instancia que recupere una versión histórica del SI o de los gates no puede utilizarla para imponer bloqueos retirados por el canon vigente. Debe refrescar `SI-METACOGNITIVO.md` desde `main` antes de decidir el estado del gate.
+
 Para cualquier conversación sujeta a esta metodología, el contexto operativo transversal se obtiene del repositorio y no de la memoria de una conversación aislada.
 
 **Orden mínimo de lectura:**

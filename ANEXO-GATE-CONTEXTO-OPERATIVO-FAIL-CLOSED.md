@@ -30,6 +30,10 @@ Cuando el gate produzca BLOQUEADO, el bloqueo se aplica exclusivamente a la ejec
 La salida inicial del bloqueo debe utilizar el formato visual canónico definido en FORMATO-REGISTRO-VERIFICACION-CICLO.md. No se debe presentar el bloqueo como cierre de la conversación ni como indisponibilidad del modelo.
 
 
+## 2.1 Regla anti-regresión normativa
+
+Este gate no puede ser utilizado para reintroducir bloqueos que el SI vigente haya retirado. En particular, `THINKING` no observable, `INSTANT`, `UNKNOWN`, `UNAVAILABLE`, `K: OFF`, `K: ?` y `K: !` no son causas autónomas de BLOQUEADO. Si una instancia dispone de una copia anterior del SI que los trate como bloqueo, esa copia es histórica y debe refrescarse antes de continuar.
+
 ## 3. Fuente global
 
 La fuente global de la sesion RDC es ESTADO-RDC-ACTIVO.md.

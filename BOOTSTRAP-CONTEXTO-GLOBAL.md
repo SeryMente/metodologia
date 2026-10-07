@@ -9,6 +9,10 @@ Este archivo es el punto de entrada operativo para reconstruir contexto transver
 
 ## Regla principal
 
+### Frescura normativa obligatoria
+
+El bootstrap debe usar el `SI-METACOGNITIVO.md` recuperado desde `main` como fuente activa. Si la copia recuperada identifica una versión anterior a la vigente publicada en `main`, esa copia se considera **HISTÓRICA/OBSOLETA** y no puede utilizarse para decidir bloqueos. Debe refrescarse la fuente antes de aplicar cualquier gate de Thinking o KHORA.
+
 **PRECONDICION DE ARRANQUE:** una conversacion nueva debe consumir este bootstrap y `ESTADO-RDC-ACTIVO.md` antes de preguntar al usuario por la sesion RDC. Si existe una sesion persistente activa, se hereda; no se reidentifica.
 
 La memoria de una conversacion no es la fuente global. El repositorio de la metodologia es la fuente persistente.
@@ -35,8 +39,8 @@ Secuencia operativa:
 2. Leer `ESTADO-RDC-ACTIVO.md` para recuperar la identidad persistente de la sesion RDC.
 3. Leer `ANEXO-GATE-CONTEXTO-OPERATIVO-FAIL-CLOSED.md` para aplicar el gate.
 4. Heredar la sesion persistida si no existe marca de `FINALIZADA` o `SUSTITUIDA`.
-5. Registrar el estado de `reasoning_mode` cuando la plataforma lo exponga; no bloquear solo por su ausencia.
-6. Intentar `khora_mcp_health` sobre el MCP canónico; si no está disponible, declarar `K: OFF` en la salida. Si confirma acceso completo, conservar `K: ✓`.
+5. Registrar el estado de `reasoning_mode` cuando la plataforma lo exponga; no bloquear solo por su ausencia. Si la fuente normativa recuperada contiene la semántica antigua de Thinking fail-closed, tratarla como copia obsoleta y refrescarla.
+6. Intentar `khora_mcp_health` sobre el MCP canónico; si no está disponible, declarar `K: OFF` en la salida. Si confirma acceso completo, conservar `K: ✓`. La falta de KHORA no bloquea por sí misma.
 7. Verificar conectividad RDC solamente cuando el ciclo necesite ejecutar una operacion RDC en vivo.
 
 ## Distincion obligatoria
