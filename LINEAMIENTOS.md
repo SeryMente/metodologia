@@ -123,4 +123,13 @@ El comportamiento deseado debe especificarse mediante el estado operativo que se
 La formulacion operativa debe privilegiar instrucciones positivas de comportamiento y evitar convertir la supresion de conductas en una carga adicional de control.
 \n\n## 13. Contexto de ejecución y salida por ciclo\n\nTodo ciclo sujeto a la metodologia debe incorporar el contexto operativo definido en `ANEXO-CONTEXTO-EJECUCION-Y-SALIDA-CICLO.md`. El bloque es obligatorio e incluye plataforma, ubicacion persistente, estado de sesion RDC, cuenta RDC, uso mensual disponible y usuario Windows operativo. Cuando exista una identidad administrativa relevante, debe mostrarse por separado. Los datos no verificables deben identificarse como tales; no deben completarse por inferencia.
 
-La ubicacion actual permanece vigente entre ciclos y conversaciones hasta una declaracion explicita de cambio. Para CSEC, el perfil canonico vigente establece `fila4` como usuario Windows operativo y `central\\mantenimientorci` como identidad administrativa/elevada de puente. Las operaciones de trabajo no deben ejecutarse directamente bajo la identidad elevada.
+La ubicacion actual permanece vigente entre ciclos y conversaciones hasta una declaracion explicita de cambio. Para CECEQ, el perfil canonico vigente establece `fila4` como usuario Windows operativo y `central\\mantenimientorci` como identidad administrativa/elevada de puente. Las operaciones de trabajo no deben ejecutarse directamente bajo la identidad elevada.
+
+
+## 14. Persistencia de la sesion RDC activa
+
+La sesion RDC activa es estado operativo transversal y no pertenece a una conversacion particular. Debe conservarse en ESTADO-RDC-ACTIVO.md y propagarse entre conversaciones.
+
+Al inicio de cada ciclo, si existe una sesion registrada como activa, se verifica por ping sobre el dispositivo conocido. Solo ante fallo, ausencia o discrepancia se realiza descubrimiento adicional de dispositivos o cuenta.
+
+La identidad RDC, el usuario Windows operativo y la identidad administrativa se registran como campos independientes.

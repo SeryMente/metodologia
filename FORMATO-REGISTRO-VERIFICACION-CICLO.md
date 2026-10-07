@@ -20,3 +20,7 @@ La referencia relativa se calcula a partir de `Última actualización canónica`
 
 La denominación de versión es específica de la versión y no debe reutilizar el título general `Sistema de Instrucciones Metacognitivas`. El registro histórico de versiones pertenece al SI canónico.
 \n\n## Contexto operativo obligatorio\n\nCada registro de ciclo debe conservar el bloque de contexto definido por el anexo canónico:\n\n`PLATAFORMA | UBICACION | RDC-SESION | RDC-CUENTA | RDC-USO-MENSUAL | WIN-OPERATIVO`\n\nCuando exista identidad administrativa relevante, se añade `WIN-ADMIN`. Cuando exista información de terminales RDC, se añade `RDC-TERMINAL`.\n\nLa ausencia de un dato se registra como `NO VERIFICADO`, `NO DISPONIBLE` o `PENDIENTE`. No se debe inferir información faltante.\n\nLa especificación completa se encuentra en `ANEXO-CONTEXTO-EJECUCION-Y-SALIDA-CICLO.md`.\n
+
+## Sesion RDC activa
+
+El registro de ciclo conserva la sesión RDC activa identificada por el estado global. La verificación primaria por ciclo es un ping al device_id registrado. Si falla, se escala a descubrimiento de dispositivo y cuenta.

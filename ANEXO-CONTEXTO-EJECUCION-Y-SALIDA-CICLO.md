@@ -24,7 +24,7 @@ La cuenta de RDC y las identidades de Windows son entidades distintas.
 
 | Codigo | Nombre |
 |---|---|
-| CSEC | CSEC |
+| CECEQ | CECEQ |
 | OFFICE-DEPOT | Office Depot |
 | CIBERCAFE | Cibercafe |
 
@@ -34,11 +34,11 @@ La ubicacion es un estado transversal y persistente de trabajo. Una declaracion 
 
 ## 4. Perfil por ubicacion
 
-### 4.1 CSEC
+### 4.1 CECEQ
 
 | Campo | Valor canonico |
 |---|---|
-| Ubicacion | CSEC |
+| Ubicacion | CECEQ |
 | Usuario Windows operativo | fila4 |
 | Usuario Windows administrativo/elevado | central\mantenimientorci |
 | Regla | El trabajo se ejecuta como fila4; mantenimientorci se limita al puente o elevacion administrativa. |
@@ -107,7 +107,7 @@ La foliacion global del ciclo y la identificacion canonica del SI conservan sus 
 
 Una discrepancia entre la identidad RDC, la identidad Windows operativa esperada y la identidad real de ejecucion debe hacerse visible en el ciclo.
 
-## 9. Activacion inicial CSEC
+## 9. Activacion inicial CECEQ
 
 En la activacion inicial de este anexo se verifico:
 - dispositivo RDC ONLINE: PC10RCIF4EI4, ID 7fabbc1d-7c0d-4400-bd31-88b3b4229286;
@@ -117,4 +117,35 @@ En la activacion inicial de este anexo se verifico:
 - existe una sesion interactiva de Windows fila4 activa;
 - el shell de RDC se ejecuta bajo central\mantenimientorci.
 
-Conclusion: CSEC esta identificado y el perfil operativo esta establecido como fila4. La conexion RDC actualmente verificada permanece administrativamente elevada bajo mantenimientorci; por tanto, no se ejecutan operaciones de trabajo directamente bajo esa identidad hasta disponer de un puente verificado hacia fila4.
+Conclusion: CECEQ esta identificado y el perfil operativo esta establecido como fila4. La conexion RDC actualmente verificada permanece administrativamente elevada bajo mantenimientorci; por tanto, no se ejecutan operaciones de trabajo directamente bajo esa identidad hasta disponer de un puente verificado hacia fila4.
+
+
+## 10. Registro global de la sesion RDC activa
+
+La sesion RDC activa es estado operativo transversal y no pertenece a una conversacion particular. Su registro global se conserva en ESTADO-RDC-ACTIVO.md.
+
+El registro contiene como minimo ubicacion, cuenta RDC, identidad de conexion, device_id, nombre de dispositivo, estado del canal, usuario Windows operativo esperado, identidad administrativa cuando exista, fecha de configuracion, ultima verificacion y consumo mensual disponible.
+
+Una nueva sesion configurada sustituye la sesion activa anterior. No se mantienen varias sesiones como activas simultaneamente salvo canon posterior.
+
+## 11. Verificacion minima por ciclo
+
+Si existe una sesion registrada como activa, al inicio de cada ciclo se verifica por el metodo de menor costo disponible.
+
+Metodo primario:
+1. reutilizar cuenta y device_id registrados;
+2. ejecutar ping sobre el dispositivo conocido;
+3. si responde, mantener la sesion ACTIVA y actualizar la marca de verificacion;
+4. si falla, escalar a descubrimiento de dispositivos y comprobacion de cuenta para determinar cambio, inactividad o necesidad de reconfiguracion.
+
+No se ejecutan list_devices ni who_am_i exclusivamente en cada ciclo cuando el ping confirma la misma sesion.
+
+El porcentaje mensual se reutiliza desde la ultima lectura validada y solo se actualiza cuando una llamada ya necesaria lo expone o cuando el usuario solicita comprobacion explicita.
+
+La verificacion de sesion RDC y la verificacion de sesiones de terminal son estados distintos.
+
+## 12. Propagacion entre conversaciones
+
+El registro global de sesion activa es independiente de la conversacion contenedora. Cada nueva conversacion sujeta a la metodologia consume el estado global mas reciente y lo verifica por el mecanismo minimo definido.
+
+Cuando la verificacion detecte una nueva sesion, esta pasa a ser la sesion activa global y el registro debe actualizarse antes de ejecutar operaciones sustantivas dependientes de RDC.

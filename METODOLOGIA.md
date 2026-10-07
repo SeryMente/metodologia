@@ -2,21 +2,21 @@
 
 ## Estado canónico
 
-- **Versión:** v0.5.0
-- **Nombre de versión:** Contexto de Ejecución y Trazabilidad Operativa
+- **Versión:** v0.5.1
+- **Nombre de versión:** Sesión RDC Persistente y Verificable
 - **Última actualización:** 2026-10-07
-- **Última actualización canónica:** 2026-10-07T09:09:00-06:00
+- **Última actualización canónica:** 2026-10-07T09:26:36-06:00
 - **Ámbito:** Todos los proyectos y conversaciones trabajados bajo esta metodología.
 
 ### Narrativa de la versión
 
-**Antes:** la metodología ya disponía de SI canónico, foliación global, reglas de salida, estado del acumulador y trazabilidad normativa, pero no existía un contrato transversal para registrar el lugar físico, la identidad RDC, el porcentaje de uso del canal RDC y la separación entre usuario Windows operativo y usuario elevado en cada ciclo.
+**Antes:** el ciclo ya registraba ubicación, cuenta RDC, consumo disponible y separación entre usuario Windows operativo y administrativo, pero la sesión RDC activa no se trataba todavía como estado global persistente entre conversaciones.
 
-**Cambio:** se canoniza el Anexo de Contexto de Ejecución y Formato de Salida por Ciclo, se fijan tres ubicaciones iniciales, se define la procedencia y frescura de los datos RDC y se hace obligatoria la separación entre identidad administrativa y operativa.
+**Cambio:** se establece un registro global de sesión RDC activa, se define su propagación entre conversaciones y se fija ping como verificación primaria de bajo costo por ciclo, con escalamiento solo cuando exista fallo o cambio.
 
-**Motivo:** evitar ambigüedad sobre dónde se trabaja, con qué canal se trabaja y bajo qué identidad Windows deben ejecutarse las operaciones, manteniendo trazabilidad suficiente sin elevar detalles de implementación al nivel de principio fundamental.
+**Motivo:** mantener trazabilidad de la sesión que realmente soporta el trabajo sin multiplicar llamadas de descubrimiento y autenticación en cada ciclo.
 
-**Resultado:** cada ciclo sujeto a la metodología dispone de un contrato uniforme de contexto operativo y salida, y CSEC queda perfilado con fila4 como usuario operativo y mantenimientorci como identidad administrativa de puente.
+**Resultado:** la metodología puede identificar y seguir una sesión RDC activa de forma transversal y verificable, y el perfil CECEQ conserva fila4 como usuario operativo y mantenimientorci como identidad administrativa.
 
 ### Registro de versiones
 
@@ -26,7 +26,8 @@
 | 2 | v0.2.0 | Suficiencia Progresiva | Se incorporaron la suficiencia progresiva, el estado visual del acumulador y criterios para evitar expansión innecesaria de la salida. |
 | 3 | v0.3.0 | Canon Metacognitivo Fundamental | Se incorporó `SI-METACOGNITIVO.md` como núcleo canónico de gobierno metacognitivo, separado de mecanismos y procedimientos. |
 | 4 | v0.4.0 | Gobernanza Versionada y Observabilidad de Servicios | Se normaliza la identidad de versión con nombre y vigencia temporal y se establece observabilidad transversal de las fronteras de servicio de Cora. |
-| 5 | v0.5.0 | Contexto de Ejecución y Trazabilidad Operativa | Se canoniza el contexto de ejecución por ciclo, el perfil inicial de CSEC, la identificación de la cuenta y consumo disponible de RDC y la separación entre identidad Windows operativa y administrativa. |
+| 5 | v0.5.0 | Contexto de Ejecución y Trazabilidad Operativa | Se canoniza el contexto de ejecución por ciclo, el perfil inicial de CECEQ, la identificación de la cuenta y consumo disponible de RDC y la separación entre identidad Windows operativa y administrativa. |
+| 6 | v0.5.1 | Sesión RDC Persistente y Verificable | Se establece un registro global de la sesión RDC activa, su propagación entre conversaciones y una verificación mínima por ciclo mediante ping, con escalamiento solo ante fallo o cambio. |
 
 La tabla es canónica: las versiones futuras deben añadir una fila sin borrar ni reciclar las anteriores. El nombre describe el avance de la versión y no sustituye el título general del sistema o documento.
 
@@ -97,3 +98,8 @@ La versión canónica actual del SI es **v1.2.0 — Identidad Versionada y Vigen
 
 La metodología mantiene separadas las normas fundamentales de sus desarrollos, procedimientos, herramientas y mecanismos de implementación.
 \n\n## 6. Contexto de ejecución y salida por ciclo\n\nEl contrato canonico se encuentra en `ANEXO-CONTEXTO-EJECUCION-Y-SALIDA-CICLO.md`. Su aplicacion es ubicua en todos los ciclos sujetos a la metodologia e integra plataforma, ubicacion persistente, estado y cuenta RDC, uso mensual disponible, identidad Windows operativa y, cuando corresponda, identidad administrativa. Los detalles de formato, fuentes y perfiles por ubicacion permanecen en el anexo y no se elevan al nivel del SI.
+
+
+## 6.1 Sesion RDC persistente y verificable
+
+La metodologia mantiene un registro operativo global de la sesion RDC activa en ESTADO-RDC-ACTIVO.md. El registro se propaga entre conversaciones y se verifica al inicio de cada ciclo mediante el mecanismo minimo disponible, con ping como comprobacion primaria.
