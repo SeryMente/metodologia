@@ -1,7 +1,7 @@
 # Procedimiento Canónico de Reinstanciación RDC
 
 **Estado:** CANÓNICO  
-**Versión:** v1.1.0  
+**Versión:** v1.2.0  
 **Fecha:** 2026-10-07  
 **Ámbito:** Recuperación de sesiones RDC cuando exista divergencia entre el estado persistente y la observabilidad del canal.
 
@@ -70,6 +70,16 @@ El modelo:
 
 Una sustitución o refresco no validado no cuenta como recuperación. Si la escritura de `ESTADO-RDC-ACTIVO.md` falla, la recuperación permanece pendiente y no se permite declarar resuelta la conectividad ni reanudar trabajo RDC-dependiente.
 
+## 5.1 Publicación transaccional
+
+La validación del handshake no completa por sí sola la recuperación. La recuperación requiere la publicación condicionada del estado y su lectura de vuelta:
+
+`VALIDAR → PUBLICAR CON SHA → READ-BACK → RESUELTA`
+
+La escritura debe identificar la versión/sha del recurso que se leyó. Si esa versión cambió, se rechaza el intento, se vuelve a leer el estado actual y se reconcilia.
+
+No se permite force-push, sobrescritura ciega ni modificación de una copia local como sustituto de la fuente global.
+
 ## 6. Actualización global
 
 Una vez validado el handshake, ESTADO-RDC-ACTIVO.md se actualiza con:
@@ -84,7 +94,7 @@ Una vez validado el handshake, ESTADO-RDC-ACTIVO.md se actualiza con:
 - estado de recuperación RESUELTA;
 - sustitución explícita de la sesión anterior.
 
-La actualización debe realizarse antes de reanudar cualquier operación sustantiva dependiente de RDC.
+La actualización debe realizarse antes de reanudar cualquier operación sustantiva dependiente de RDC. Después debe ejecutarse un read-back sobre `main` y confirmar que la identidad, conectividad y marca temporal publicadas coinciden con el handshake validado.
 
 ## 7. Propagación
 
