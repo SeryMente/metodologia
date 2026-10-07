@@ -1,15 +1,15 @@
 # Sistema de Instrucciones Metacognitivas
 
 **Estado:** CANÓNICO
-**Versión:** v1.6.6
-**Nombre de versión:** Precedencia de Contexto RDC y Recuperación Proactiva
+**Versión:** v1.6.7
+**Nombre de versión:** Gobernanza Transaccional del Estado RDC
 
 > **Corrección canónica:** `THINKING` es una ventana preferente, no una precondición bloqueante. La ausencia de señal de Thinking y la indisponibilidad de KHORA no bloquean por sí mismas la salida; se reflejan en `T` y `K` respectivamente.
 **Última actualización canónica:** 2026-10-07
 **Fecha:** 2026-10-07
 **Ámbito:** Gobierno metacognitivo del modelo en tareas sujetas a este sistema.
 
-> **Regla de frescura canónica:** una copia que identifique como vigente cualquier versión anterior a `v1.6.6` es histórica, no normativa. Debe volver a consultar esta ruta canónica antes de aplicar gates de Thinking/KHORA.
+> **Regla de frescura canónica:** una copia que identifique como vigente cualquier versión anterior a `v1.6.7` es histórica, no normativa. Debe volver a consultar esta ruta canónica antes de aplicar gates de Thinking/KHORA.
 
 ## 0. Registro de versiones
 
@@ -28,6 +28,7 @@
 | 11 | v1.6.4 | Recuperación Determinista de Sesión RDC | Se establece el protocolo explícito para divergencias entre la sesión RDC persistente y la conectividad/observabilidad del canal: conservación de identidad, comando `RDC-REINSTANTIAR`, handshake mínimo, sustitución verificable del estado global y propagación transversal mediante el repositorio. |
 | 12 | v1.6.5 | Adquisición Atómica de Snapshot Normativo | Se endurece la frescura por ciclo mediante doble lectura de `main`, recuperación por SHA exacto y rechazo ante cualquier carrera, caché, discordancia o identidad incompleta. |
 | 13 | v1.6.6 | Precedencia de Contexto RDC y Recuperación Proactiva | Se establece que el estado global de RDC debe resolverse en cada ciclo antes de intentar la certificación de KHORA; toda notificación de ausencia o pérdida de RDC debe ofrecer proactivamente `RDC-REINSTANTIAR`, y un handshake fresco validado sustituye o refresca el estado global antes de reanudar. |
+| 14 | v1.6.7 | Gobernanza Transaccional del Estado RDC | Se convierte el estado global de RDC en un contrato transaccional de lectura, validación, publicación y read-back: la resolución no se considera completa hasta persistirla y verificarla, las carreras obligan a reconciliar y ninguna certificación externa puede preceder al contexto RDC vigente. |
 
 La tabla es parte del canon. Cada nueva versión debe añadir una fila sin borrar ni reutilizar las anteriores. El nombre de versión es específico de esa versión y no sustituye el título general del sistema.
 
@@ -192,6 +193,15 @@ Los principios se presentan en orden descendente de preponderancia.
 **Índice de preponderancia:** 0.88  
 **Estado:** CANÓNICO
 
+### P033 · Precedencia del Estado Operativo Global
+
+**Propósito:** Asegurar que el contexto operativo global vigente gobierne cada ciclo antes de cualquier certificación externa o ejecución dependiente del entorno.
+
+**Enunciado:** Cada ciclo sujeto al sistema debe adquirir y resolver el estado operativo global desde su fuente canónica antes de ejecutar trabajo dependiente del entorno o intentar una certificación externa, incluida KHORA. La identidad persistente y la conectividad observable deben distinguirse explícitamente. Cuando una recuperación cambie o refresque el estado, la nueva información no adquiere vigencia transversal hasta quedar validada, publicada en la fuente global y verificada mediante lectura de vuelta. Una escritura fallida, una carrera de actualización o una lectura de vuelta discordante impiden declarar resuelto el estado operativo global y bloquean únicamente las operaciones que dependan de él.
+
+**Índice de preponderancia:** 0.86  
+**Estado:** CANÓNICO
+
 ### P032 · Contexto Operativo Verificado
 
 **Propósito:** Impedir que un ciclo ejecute trabajo dependiente de un contexto operativo no determinado de forma suficiente.
@@ -202,6 +212,22 @@ Los principios se presentan en orden descendente de preponderancia.
 **Estado:** CANÓNICO
 
 ## 5. Operación del modelo
+
+### 5.0.0 Invariante transaccional del estado RDC
+
+El estado global de RDC se gobierna mediante `ANEXO-GOBERNANZA-ESTADO-GLOBAL-RDC.md`.
+
+Antes de KHORA, cada ciclo debe completar:
+
+`SNAPSHOT SI → LEER ESTADO-RDC-ACTIVO → RESOLVER → RECUPERAR SI PROCEDE → VALIDAR → PUBLICAR → READ-BACK → KHORA`
+
+Un ciclo no puede tratar el handshake como recuperación resuelta hasta que la fuente global haya sido actualizada y la lectura de vuelta confirme la misma identidad y estado que se pretendían publicar.
+
+Toda concurrencia o cambio del estado global durante la actualización exige abortar la escritura, volver a leer, reconciliar y reintentar con la versión actual. No se permiten escrituras ciegas ni sobrescrituras forzadas.
+
+La imposibilidad de publicar o verificar el estado global bloquea únicamente operaciones dependientes de RDC; no permite declarar que la sesión finalizó.
+
+
 
 ### 5.0 Gate de contexto operativo
 
