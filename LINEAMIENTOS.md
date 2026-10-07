@@ -142,3 +142,18 @@ Toda salida y todo documento sujeto a la metodología debe respetar el glosario 
 La fuente metodológica transversal es `GLOSARIO-OPERATIVO.md`. El glosario no absorbe vocabulario específico de cada proyecto salvo que ese término haya sido canonizado como transversal.
 
 Antes de repetir un nombre propio, acrónimo, identificador de proyecto o producto, debe preferirse la forma registrada en el glosario.
+
+
+## 16. Gate de contexto operativo fail-closed
+
+Cada ciclo sujeto a la metodología debe resolver el contexto operativo antes de ejecutar trabajo sustantivo dependiente del entorno. La verificación automática debe intentarse en primer lugar; no se debe asumir que una sesión RDC sigue activa solo porque existió en un ciclo anterior.
+
+La secuencia es: `LEER ESTADO GLOBAL → DETECCIÓN AUTOMÁTICA → VERIFICACIÓN → PERFIL DE UBICACIÓN → CONTINUAR/BLOQUEAR`.
+
+Una detección fallida, una fuente indisponible o una discrepancia no significan `INACTIVA`. Significan estado indeterminado y abren una única decisión al usuario: si la conversación requiere que exista una sesión RDC activa. Si la respuesta es sí, se solicita la información mínima para establecer y verificar la sesión y se bloquea la ejecución hasta entonces. Si la respuesta es no, se registra `RDC-REQUERIDA: NO` y el ciclo puede continuar sin dependencia de RDC.
+
+La sesión RDC global se propaga entre conversaciones mediante el estado operativo compartido. La ubicación activa y su perfil se consumen del mismo contexto global; una ubicación sin perfil suficiente no puede producir reglas operativas por inferencia.
+
+La separación de identidad de CECEQ es obligatoria: `fila4` es la identidad operativa; `central\\mantenimientorci` es administración/puente. Un proceso ordinario no debe ejecutarse directamente bajo la identidad elevada cuando existe una identidad operativa definida.
+
+El detalle técnico del gate y del puente de identidad se encuentra en `ANEXO-GATE-CONTEXTO-OPERATIVO-FAIL-CLOSED.md`.
