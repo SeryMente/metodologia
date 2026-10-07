@@ -101,14 +101,9 @@ El formato minimo es:
 ## 9. Diagrama de arbol oportuno
 
 El diagrama de arbol se mostrara **de manera oportuna** cuando el estado, estructura o naturaleza del trabajo haga pertinente presentar la vision jerarquica. No constituye un elemento obligatorio de todas las respuestas. Una actualizacion importante continua siendo el desencadenante establecido para mostrar oportunamente el arbol general de la metodologia.
-## 10. Estado visual del acumulador global de notas
+## 10. HUD compacto por turno
 
-El formato de salida debe mostrar, de forma visual y minimalista, el estado del acumulador global de notas de la metodologia:
-
-- 🟢 **SIN NOTAS**: acumulador limpio; no existen notas pendientes de consolidacion.
-- 🟡 **NOTAS PENDIENTES**: existe al menos una nota acumulada que aun no ha sido incorporada al repositorio.
-
-Este indicador visual forma parte de la **maquina de estados** del acumulador y acompaña el formato de salida. Una actualizacion del repositorio consume las notas acumuladas y devuelve el estado a 🟢 **SIN NOTAS**.
+La salida visible conserva todos los campos ya canonizados, pero se presenta como un bloque compacto de baja intrusión. Se permite enriquecer la presentación mediante **negritas**, `código` y etiquetas cortas sin introducir campos ni decisiones nuevas. El contrato vigente de formato es `v1.7.1`.
 
 ## 11. Principio de suficiencia progresiva
 
