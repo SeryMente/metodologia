@@ -12,10 +12,10 @@ El objetivo no es garantizar que una herramienta, red o plataforma nunca falle. 
 
 ## 2. Regla de entrada
 
-Antes de trabajo sustantivo dependiente del entorno, cada ciclo debe:
+Antes de trabajo sustantivo dependiente del entorno, y en todo caso antes de intentar la certificación de KHORA, cada ciclo debe:
 
-1. consumir el estado global de RDC;
-2. intentar deteccion automatica;
+1. consumir el estado global de RDC desde `ESTADO-RDC-ACTIVO.md`;
+2. intentar deteccion automatica y reconciliarla con el estado global;
 3. determinar ACTIVA, INACTIVA o INDETERMINADA;
 4. resolver la ubicacion actual y su perfil;
 5. determinar la identidad efectiva cuando sea relevante para la operación y comprobar su compatibilidad;
@@ -121,6 +121,18 @@ El comando de recuperación instruye a cerrar la terminal/sesión RDC observada,
 La conversación permanece abierta. El modelo no solicita una nueva identidad por la mera divergencia, no marca la sesión anterior como finalizada y no ejecuta operaciones dependientes de RDC hasta verificar la nueva sesión.
 
 Cuando el handshake llega, se valida primero y se actualiza después `ESTADO-RDC-ACTIVO.md`. La nueva sesión verificada sustituye la anterior y la marca de recuperación pasa a `RESUELTA`.
+
+## 4.4.2 Recuperación proactiva ante reporte de ausencia
+
+Siempre que el modelo vaya a comunicar al usuario que RDC no está activa, no está disponible, está desconectada, no está verificada o se perdió durante el ciclo, debe proporcionar en el mismo ciclo el comando canónico `RDC-REINSTANTIAR`.
+
+El comando debe incluir la sintaxis oficial vigente del proveedor para iniciar el Remote Device:
+
+`npx @wonderwhy-er/desktop-commander@latest remote`
+
+Esta oferta es obligatoria aunque la tarea no requiera RDC y aunque el diagnóstico previo pueda resultar falso. Cuando RDC no sea requerida, el comando funciona como mecanismo de recuperación opcional y no crea por sí mismo un bloqueo.
+
+Cuando RDC sea requerida para el ciclo, la falta de conectividad sí bloquea la ejecución sustantiva hasta que el usuario entregue un `RDC-HANDSHAKE` fresco y verificable.
 
 ## 5. Fallo de deteccion y decision del usuario
 
