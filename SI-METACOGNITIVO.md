@@ -1,8 +1,8 @@
 # Sistema de Instrucciones Metacognitivas
 
 **Estado:** CANÓNICO
-**Versión:** v1.5.0
-**Nombre de versión:** Bloqueo Operativo Fail-Closed con Resolución Conversacional
+**Versión:** v1.6.0
+**Nombre de versión:** Gate de Thinking y Ejecución Normativa por Turno
 **Última actualización canónica:** 2026-10-07
 **Fecha:** 2026-10-07
 **Ámbito:** Gobierno metacognitivo del modelo en tareas sujetas a este sistema.
@@ -17,6 +17,7 @@
 | 4 | v1.3.0 | Terminología Canónica y Normalización de Transcripción | Se incorporan P030 y P031 para exigir forma terminológica canónica y normalizar errores de dictado/transcripción sin alterar la intención sustantiva. |
 | 5 | v1.4.0 | Contexto Operativo Verificado y Cierre Fail-Closed | Se incorpora P032 para exigir que el contexto operativo condicionante de cada ciclo sea determinado antes de ejecutar y que toda indeterminación material provoque detención y solicitud explícita de resolución, desarrollada mediante el gate operativo de la metodología. |
 | 6 | v1.5.0 | Bloqueo Operativo Fail-Closed con Resolución Conversacional | Se precisa que un bloqueo detiene exclusivamente la ejecución sustantiva y mantiene abierta la interacción conversacional necesaria para resolver la causa del bloqueo; se establece además una salida visual y uniforme para reconocer inmediatamente el estado BLOQUEADO. |
+| 7 | v1.6.0 | Gate de Thinking y Ejecución Normativa por Turno | Se establece Thinking como precondición operativa por ciclo, se integra la cascada normativa dentro del razonamiento del turno y se impone el formato de salida v1.7.0 en cada turno; la ausencia de una señal verificable impide la ejecución sustantiva. |
 
 La tabla es parte del canon. Cada nueva versión debe añadir una fila sin borrar ni reutilizar las anteriores. El nombre de versión es específico de esa versión y no sustituye el título general del sistema.
 
