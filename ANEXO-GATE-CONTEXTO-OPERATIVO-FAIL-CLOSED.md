@@ -120,39 +120,41 @@ Para CECEQ:
 
 Para OFFICE-DEPOT y CIBERCAFE, mientras no exista perfil operativo suficiente, las propiedades no definidas permanecen PENDIENTES y no se inventan.
 
-## 8. Puente rapido de identidad Windows
+## 8. Resolución rápida de identidad Windows por canal operativo conocido
 
 ### 8.1 Objetivo
 
-Separar la identidad administrativa que sostiene el canal RDC de la identidad operativa que debe realizar el trabajo ordinario, sin cerrar sesion ni almacenar contrasenas.
+Resolver la diferencia entre la identidad administrativa que sostiene el canal RDC y la identidad operativa requerida, sin instalar un puente permanente, sin almacenar credenciales y sin cerrar sesión.
 
-### 8.2 Estrategia preferente
+### 8.2 Camino corto conocido
 
-Cuando ya exista una sesion interactiva de fila4:
+En CECEQ, el camino conocido y ya probado es la tarea interactiva `\\DesktopCommander-Remote-fila4`, configurada para ejecutar `C:\\WINDOWS\\system32\\cmd.exe /d /c "C:\\Program Files\\nodejs\\desktop-commander.cmd" remote` con `fila4`.
 
-1. localizar un proceso interactivo perteneciente a fila4 y verificar su identidad;
-2. obtener y duplicar su token de usuario desde el contexto administrativo autorizado;
-3. crear el proceso de trabajo con ese token;
-4. validar inmediatamente el usuario efectivo y el perfil de usuario;
-5. realizar el trabajo ordinario solo despues de la validacion.
+Cuando el canal actual aparece bajo `central\\mantenimientorci`, el modelo debe tratarlo como una discrepancia de identidad, activar o reutilizar ese canal operativo conocido y verificar la identidad efectiva antes de continuar.
 
-La implementacion concreta puede utilizar las APIs nativas de Windows para duplicacion de tokens y creacion de procesos con el token interactivo, manteniendo los detalles de plataforma fuera del principio fundamental.
+### 8.3 Secuencia
 
-### 8.3 Que no hacer
+1. detectar la identidad real del canal actual;
+2. comparar contra `WIN-OPERATIVO` del perfil;
+3. si hay discrepancia, reutilizar o activar `\\DesktopCommander-Remote-fila4`;
+4. verificar `whoami`, perfil del usuario y ruta de trabajo;
+5. continuar solo si la identidad efectiva es `fila4`.
+
+### 8.4 Qué no hacer
 
 No usar como mecanismo ordinario:
 
-- runas con contrasena;
-- almacenar credenciales de fila4;
-- cerrar y volver a iniciar sesion;
-- convertir permanentemente el proceso RDC en proceso de fila4;
+- `runas` con contraseña;
+- almacenar credenciales de `fila4`;
+- cerrar y volver a iniciar sesión;
+- instalar un servicio o ejecutable de puente permanente;
 - ejecutar el trabajo de proyecto bajo la identidad administrativa.
 
-Estas alternativas son mas lentas, requieren mas intervencion o rompen la separacion de responsabilidades.
+### 8.5 Elevación
 
-### 8.4 Elevacion
+Cuando una operación requiera privilegios administrativos reales, la elevación debe ser puntual y explícita. El trabajo ordinario se mantiene bajo la identidad operativa.
 
-Cuando una operacion requiera privilegios administrativos reales, la elevacion debe ser puntual y explicita. El proceso de trabajo vuelve a quedar bajo la identidad operativa para las operaciones ordinarias.
+El canal operativo conocido es un procedimiento de resolución, no un componente residente adicional.
 
 ## 9. Maquina de estados
 
