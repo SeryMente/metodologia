@@ -18,7 +18,7 @@ Antes de trabajo sustantivo dependiente del entorno, cada ciclo debe:
 2. intentar deteccion automatica;
 3. determinar ACTIVA, INACTIVA o INDETERMINADA;
 4. resolver la ubicacion actual y su perfil;
-5. verificar la identidad Windows operativa exigida por el perfil;
+5. determinar la identidad efectiva cuando sea relevante para la operación y comprobar su compatibilidad;
 6. continuar solo con un estado de gate permitido.
 
 No se permite continuar desde un estado de deteccion fallida.
@@ -120,38 +120,34 @@ Para CECEQ:
 
 Para OFFICE-DEPOT y CIBERCAFE, mientras no exista perfil operativo suficiente, las propiedades no definidas permanecen PENDIENTES y no se inventan.
 
-## 8. Resolución de identidad Windows sin alterar la sesión RDC
+## 8. Ejecución flexible y única restricción de materialización
 
 ### 8.1 Regla para CECEQ
 
-- `WIN-OPERATIVO = fila4`.
-- `WIN-ADMIN = central\\mantenimientorci`.
-- La sesión RDC utilizada para consumo y acceso remoto permanece bajo `central\\mantenimientorci`.
-- No se inicia un segundo canal RDC bajo `fila4`.
+- WIN-OPERATIVO = fila4.
+- WIN-ADMIN = central\mantenimientorci.
+- La sesión RDC utilizada para consumo y acceso remoto permanece bajo central\mantenimientorci.
+- No se inicia un segundo canal RDC bajo fila4.
+- central\mantenimientorci puede ejecutar cualquier trabajo técnicamente válido.
+- La única restricción específica es no clonar ni materializar repositorios nuevos dentro del perfil o ruta de MantenimientoRCI.
 
 ### 8.2 Secuencia
 
-1. detectar la identidad efectiva del canal RDC;
-2. comparar contra `WIN-OPERATIVO` del perfil;
-3. conservar la sesión RDC tal como está;
-4. ejecutar la operación únicamente si es compatible con la identidad efectiva y el perfil;
-5. verificar el resultado y registrar cualquier discrepancia relevante.
+1. detectar la identidad efectiva cuando sea relevante;
+2. resolver la ubicación y su perfil;
+3. comprobar si la operación es técnicamente válida bajo la identidad efectiva;
+4. si la operación es clonación o materialización inicial de repositorio, comprobar que el destino no esté dentro del perfil o ruta de MantenimientoRCI;
+5. ejecutar y verificar el resultado.
 
-Si una operación requiere necesariamente ejecución efectiva bajo `fila4` y no puede resolverse desde la sesión RDC vigente, el gate bloquea la operación. No se intenta salvar la discrepancia mediante una sesión paralela.
+La discrepancia entre fila4 y central\mantenimientorci no bloquea por sí misma.
 
 ### 8.3 Qué no hacer
 
-No usar como mecanismo ordinario:
-
-- `runas` con contraseña;
-- almacenar credenciales de `fila4`;
-- cerrar y volver a iniciar sesión;
-- abrir una sesión RDC paralela bajo `fila4`;
-- convertir la sesión RDC administrativa en una sesión fila4 solo para ejecutar una operación.
+No abrir sesiones RDC paralelas ni almacenar credenciales adicionales para resolver la diferencia de identidad. No clonar ni materializar repositorios nuevos dentro del perfil o ruta de MantenimientoRCI.
 
 ### 8.4 Elevación
 
-Cuando una operación requiera privilegios administrativos reales, la elevación puede utilizar la sesión RDC vigente bajo `central\\mantenimientorci`, siempre que la operación sea compatible con ese contexto. La distinción con `fila4` se mantiene explícita y no se resuelve mediante cambio de sesión.
+Las operaciones que requieran privilegios administrativos reales pueden utilizar la sesión RDC vigente bajo central\mantenimientorci.
 
 ## 9. Maquina de estados
 
