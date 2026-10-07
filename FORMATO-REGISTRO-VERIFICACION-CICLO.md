@@ -74,6 +74,16 @@ La notificación debe indicar que el usuario debe cerrar la terminal/sesión RDC
 
 No debe declararse `INACTIVA` la sesión persistente únicamente por la observación `OFFLINE`.
 
+### Regla de recuperación proactiva
+
+Cuando el modelo comunique cualquier ausencia, pérdida, desconexión, inactividad, no verificación o indisponibilidad de RDC, debe ofrecer en el mismo ciclo:
+
+**RDC-REINSTANTIAR**
+
+Comando oficial del proveedor: `npx @wonderwhy-er/desktop-commander@latest remote`.
+
+Cuando el usuario entregue un `RDC-HANDSHAKE`, el ciclo no puede pasar a continuación hasta validar, publicar y leer de vuelta el estado global.
+
 ## Contexto operativo obligatorio\n\nCada registro de ciclo debe conservar el bloque de contexto definido por el anexo canónico:\n\n`PLATAFORMA | UBICACION | RDC-REQUERIDA | RDC-SESION | RDC-CUENTA | RDC-USO-MENSUAL | WIN-OPERATIVO | CONTEXTO-VERIFICACION`\n\nCuando exista identidad administrativa relevante, se añade `WIN-ADMIN`. Cuando exista información de terminales RDC, se añade `RDC-TERMINAL`. `CONTEXTO-VERIFICACION` registra el resultado del gate: `VERIFICADO-ACTIVO`, `VERIFICADO-INACTIVO`, `NO-REQUERIDO` o `BLOQUEADO`.\n\nLa ausencia de un dato se registra como `NO VERIFICADO`, `NO DISPONIBLE` o `PENDIENTE`. No se debe inferir información faltante.\n\nLa especificación completa se encuentra en `ANEXO-CONTEXTO-EJECUCION-Y-SALIDA-CICLO.md`.\n
 
 ## Indicador discreto de acceso MCP KHORA
