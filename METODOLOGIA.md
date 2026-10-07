@@ -12,7 +12,7 @@
 
 **Antes:** la v0.10.0 había consolidado el control metodológico de sincronización audio–transcripción y el dashboard de medición, pero el gate de ejecución en ChatGPT y el formato visible por turno todavía no estaban integrados de forma ubicua con el SI y el circuito de verificación.
 
-**Cambio:** se canoniza el modo Thinking como precondición de ejecución sujeta a la metodología, se integra la cascada `HEALTH → OPEN → CASCADA → VERIFY → RELEASE` dentro del razonamiento del turno y se establece `v1.7.0` como contrato obligatorio de salida por ciclo. El bloqueo es fail-closed cuando Thinking, MCP o la salida canónica no pueden verificarse.
+**Cambio:** se canoniza el modo Thinking como precondición de ejecución sujeta a la metodología, se integra la cascada `HEALTH → OPEN → CASCADA → VERIFY → RELEASE` dentro del razonamiento del turno y se establece `v1.7.1` como contrato obligatorio de salida por ciclo. El bloqueo es fail-closed cuando Thinking, MCP o la salida canónica no pueden verificarse.
 
 **Motivo:** evitar que una respuesta se trate como metodológicamente resuelta cuando el régimen normativo no pudo iniciarse, verificarse o liberarse, y hacer uniforme la trazabilidad visible de cada turno.
 
@@ -169,7 +169,7 @@ La interfaz nativa de ChatGPT no expone un mecanismo para que un documento de Gi
 
 El contrato de salida definido en `FORMATO-REGISTRO-VERIFICACION-CICLO.md` es obligatorio para **cada turno/ciclo sujeto a la metodología, sin excepción**, incluidos turnos bloqueados, turnos de resolución conversacional y turnos sin uso de RDC. El contrato vigente de presentación es `v1.7.1`.
 
-La respuesta no puede declararse `COMPLETADO` si no porta el formato `v1.7.0` ni si alguno de sus campos obligatorios está ausente o contradice el estado verificable del ciclo.
+La respuesta no puede declararse `COMPLETADO` si no porta el formato `v1.7.1` ni si alguno de sus campos obligatorios está ausente o contradice el estado verificable del ciclo.
 
 ## 18. Salida visible mínima
 
