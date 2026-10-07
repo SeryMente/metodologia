@@ -2,10 +2,10 @@
 
 ## Estado canónico
 
-- **Versión:** v0.5.2
-- **Nombre de versión:** Glosario Operativo y Normalización de Transcripción
+- **Versión:** v0.6.0
+- **Nombre de versión:** Gate de Contexto Operativo Fail-Closed
 - **Última actualización:** 2026-10-07
-- **Última actualización canónica:** 2026-10-07T09:30:33-06:00
+- **Última actualización canónica:** 2026-10-07T10:26:01-06:00
 - **Ámbito:** Todos los proyectos y conversaciones trabajados bajo esta metodología.
 
 ### Narrativa de la versión
@@ -29,6 +29,7 @@
 | 5 | v0.5.0 | Contexto de Ejecución y Trazabilidad Operativa | Se canoniza el contexto de ejecución por ciclo, el perfil inicial de CECEQ, la identificación de la cuenta y consumo disponible de RDC y la separación entre identidad Windows operativa y administrativa. |
 | 6 | v0.5.1 | Sesión RDC Persistente y Verificable | Se establece un registro global de la sesión RDC activa, su propagación entre conversaciones y una verificación mínima por ciclo mediante ping, con escalamiento solo ante fallo o cambio. |
 | 7 | v0.5.2 | Glosario Operativo y Normalización de Transcripción | Se incorpora un glosario metodológico transversal y reglas para normalizar términos dictados o transcritos a su forma canónica, reduciendo deriva de nombres como CECEQ y KHORA. |
+| 8 | v0.6.0 | Gate de Contexto Operativo Fail-Closed | Se convierte la verificación del contexto operativo en una precondición de cada ciclo: detección automática de RDC, resolución del perfil de ubicación y bloqueo ante indeterminación material, con intervención del usuario solo para decidir si RDC es requisito cuando la detección automática falla. |
 
 La tabla es canónica: las versiones futuras deben añadir una fila sin borrar ni reciclar las anteriores. El nombre describe el avance de la versión y no sustituye el título general del sistema o documento.
 
@@ -109,3 +110,28 @@ La metodologia mantiene un registro operativo global de la sesion RDC activa en 
 ## 7. Glosario operativo y normalización de transcripción
 
 El glosario metodológico canónico se encuentra en `GLOSARIO-OPERATIVO.md` y su gobernanza en `ANEXO-GOBERNANZA-TERMINOLOGICA-Y-NORMALIZACION.md`. Los términos canonizados tienen prioridad sobre variantes de dictado o transcripción en toda salida sujeta a la metodología.
+
+
+## 16. Gate de contexto operativo fail-closed
+
+Todo ciclo sujeto a la metodología debe ejecutar primero el gate operativo definido en `ANEXO-GATE-CONTEXTO-OPERATIVO-FAIL-CLOSED.md`.
+
+Estados permitidos antes de trabajo sustantivo dependiente del entorno:
+
+`VERIFICADO-ACTIVO` · `VERIFICADO-INACTIVO` · `NO-REQUERIDO` · `BLOQUEADO`
+
+`NO-VERIFICADO`, `AMBIGUO`, `FUENTE-NO-DISPONIBLE` o cualquier indisponibilidad de la herramienta de detección no son estados de continuación.
+
+Cuando la detección automática no pueda establecer de forma suficiente si existe una sesión RDC activa, el sistema pregunta al usuario si la conversación requiere una sesión RDC activa. Si responde **sí**, el ciclo queda `BLOQUEADO` y solicita la información mínima para identificarla y verificarla. Si responde **no**, el ciclo pasa a `NO-REQUERIDO` y registra explícitamente que RDC no es una precondición de ese ciclo.
+
+Cuando exista una sesión activa verificada, el estado global registrado debe consumirse antes de ejecutar y la nueva verificación debe actualizar su marca temporal. La sesión global no pertenece a una conversación y una nueva sesión verificada sustituye a la anterior.
+
+La ubicación debe resolverse contra el registro canónico de perfiles antes de ejecutar reglas dependientes del entorno. Un perfil de ubicación inexistente o insuficiente bloquea cualquier operación que dependa de ese perfil.
+
+## 17. Puente de identidad operativa
+
+Para CECEQ, la separación `central\\mantenimientorci` → `fila4` se resuelve mediante un puente de token de la sesión interactiva existente, evitando `runas` con contraseña, cerrar sesión, volver a autenticarse o ejecutar el trabajo ordinario bajo la identidad administrativa.
+
+El mecanismo recomendado es: localizar y verificar el token de la sesión interactiva de `fila4`; duplicar ese token desde el contexto administrativo autorizado; crear el proceso operativo con ese token; verificar con `whoami` y la ruta de perfil del usuario antes de operaciones sustantivas. La identidad administrativa queda reservada a elevación o establecimiento del puente.
+
+Este mecanismo es un detalle de implementación y permanece fuera del nivel de principio.
