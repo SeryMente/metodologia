@@ -17,6 +17,8 @@ El bootstrap debe usar el `SI-METACOGNITIVO.md` recuperado desde `main` como fue
 
 La memoria de una conversacion no es la fuente global. El repositorio de la metodologia es la fuente persistente.
 
+La verificación del SI es **por ciclo**. El bootstrap de una conversación no sustituye esta comprobación: cada nuevo ciclo debe resolver el commit actual de `main`, recuperar `SI-METACOGNITIVO.md` desde ese commit y vincular commit SHA + blob SHA + versión + nombre a la instantánea normativa.
+
 Para RDC, el estado mutable y unico se encuentra en:
 
 `ESTADO-RDC-ACTIVO.md`
@@ -35,7 +37,7 @@ Secuencia operativa:
 
 ## Secuencia de arranque
 
-1. Leer `SI-METACOGNITIVO.md` y usar la version canonica vigente.
+1. Obtener el SHA del commit actual de `main`; recuperar `SI-METACOGNITIVO.md` con ese SHA; verificar blob SHA, versión y nombre; usar esa instantánea como única fuente normativa del ciclo y emitir `F:✓` solo cuando la comprobación sea satisfactoria.
 2. Leer `ESTADO-RDC-ACTIVO.md` para recuperar la identidad persistente de la sesion RDC.
 3. Leer `ANEXO-GATE-CONTEXTO-OPERATIVO-FAIL-CLOSED.md` para aplicar el gate.
 4. Heredar la sesion persistida si no existe marca de `FINALIZADA` o `SUSTITUIDA`.
