@@ -2,8 +2,8 @@
 
 ## Estado canónico
 
-- **Versión:** v0.11.3
-- **Nombre de versión:** Coherencia Canónica de Gates y Continuidad Operativa
+- **Versión:** v0.11.4
+- **Nombre de versión:** Verificación de Frescura Normativa por Ciclo
 - **Última actualización:** 2026-10-07
 - **Última actualización canónica:** 2026-10-07
 - **Ámbito:** Todos los proyectos y conversaciones trabajados bajo esta metodología.
@@ -42,6 +42,7 @@
 | 17 | v0.11.1 | Gate de Thinking y HUD Compacto por Turno | Se retira el subsistema operativo de notas del formato y de los lineamientos activos y se compacta el HUD conservando los campos y decisiones normativas existentes. El contrato visible pasa a `v1.7.1` como evolución de presentación. |
 | 18 | v0.11.2 | Verificación Normativa Adaptativa y HUD Compacto por Turno | Se corrige la implementación del gate: Thinking es la ventana preferente para resolver la cascada normativa antes de la salida, pero no se intenta verificar el razonamiento interno ni se bloquea la salida por su estado. KHORA pasa a tener disponibilidad explícita (`K: ✓ / OFF / ? / !`). |
 | 19 | v0.11.3 | Coherencia Canónica de Gates y Continuidad Operativa | Se elimina la contradicción residual que podía reintroducir un bloqueo por Thinking/KHORA desde un anexo subordinado. Solo las condiciones de contexto operativo materialmente requeridas pueden producir BLOQUEADO. |
+| 20 | v0.11.4 | Verificación de Frescura Normativa por Ciclo | Se hace obligatoria la recuperación del SI desde un snapshot exacto de `main` en cada ciclo mediante commit SHA + blob SHA + versión + nombre; una instantánea histórica no puede gobernar el ciclo. |
 La tabla es canónica: las versiones futuras deben añadir una fila sin borrar ni reciclar las anteriores. El nombre describe el avance de la versión y no sustituye el título general del sistema o documento.
 
 ## 1. Convención obligatoria de foliación de ciclos
@@ -94,6 +95,10 @@ Cuando corresponda, el encabezado metodológico de un ciclo debe permitir identi
 4. Versión de la última actualización.
 5. Nombre de la versión.
 6. Último cambio canónico.
+
+## 4.0 Frescura normativa obligatoria por ciclo
+
+Cada ciclo debe volver a consultar `SI-METACOGNITIVO.md` desde un snapshot exacto de `main`; no se reutiliza el SI cargado en turnos anteriores. La comprobación vincula commit SHA + blob SHA + versión + nombre. El HUD muestra `F:✓` solo cuando esa frescura quedó verificada; `F:?` cuando no pudo comprobarse y `F:!` cuando existe discordancia u obsolescencia.
 
 ## 4.1 Gate de ejecución cognitiva
 
