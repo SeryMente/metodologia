@@ -98,6 +98,12 @@ Cuando corresponda, el encabezado metodológico de un ciclo debe permitir identi
 5. Nombre de la versión.
 6. Último cambio canónico.
 
+## 4.1 Gate de ejecución cognitiva
+
+El requisito de ejecución en modo Thinking de ChatGPT, el bloqueo fail-closed, el atestado protocolario y el contrato visible por turno están definidos en `ANEXO-GATE-THINKING-CHATGPT.md`.
+
+Ese anexo es obligatorio para todo ciclo cuya plataforma sea ChatGPT.
+
 ## 5. Sistema de Instrucciones Metacognitivas
 
 El sistema canónico de instrucciones que gobierna la interpretación, decisión y ejecución metacognitiva del modelo se encuentra en:
