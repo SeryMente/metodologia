@@ -30,13 +30,13 @@ El SI canónico se encuentra en [SI-METACOGNITIVO.md](SI-METACOGNITIVO.md).
 
 Versión vigente:
 
-**v1.5.0 — Bloqueo Operativo Fail-Closed con Resolución Conversacional**
+**v1.6.0 — Gate de Thinking y Ejecución Normativa por Turno**
 
 El SI contiene los principios fundamentales **P019–P032**, incluyendo P028 · Trazabilidad Normativa, P029 · Identidad y Vigencia Canónica, P030 · Fidelidad Terminológica Canónica, P031 · Normalización de Transcripción y P032 · Contexto Operativo Verificado.
 
 ## Última actualización de Metodología
 
-**v0.10.0 — Sincronización Audio–Transcripción Medible y Dashboard IGP**  
+**v0.11.0 — Gate de Thinking y Formato Obligatorio por Turno**  
 2026-10-07
 
 Esta evolución establece el gate de contexto operativo, el estado transversal de RDC, el bloqueo fail-closed de ejecución y su resolución conversacional abierta. El trabajo bajo la identidad efectiva de la sesión RDC está permitido cuando sea técnicamente válido; la restricción específica es no clonar ni materializar repositorios nuevos dentro del perfil o ruta de MantenimientoRCI.
@@ -71,4 +71,4 @@ La extensión a proyectos futuros no debe retrasar el objetivo operativo de mejo
 
 ## Gate de ejecución en ChatGPT
 
-Todo ciclo sujeto a la metodología debe ejecutarse en modo Thinking. El contrato se encuentra en `ANEXO-GATE-THINKING-CHATGPT.md`; el formato visible obligatorio es `v1.7.0`.
+Todo ciclo sujeto a la metodología debe ejecutarse en modo Thinking verificable. La ausencia, `INSTANT` o estado desconocido bloquea la ejecución sustantiva. El contrato se encuentra en `ANEXO-GATE-THINKING-CHATGPT.md`; el formato visible `v1.7.0` es obligatorio por turno.
