@@ -2,21 +2,21 @@
 
 ## Estado canónico
 
-- **Versión:** v0.7.0
-- **Nombre de versión:** Resolución de Identidad sin Alterar la Sesión RDC
+- **Versión:** v0.8.0
+- **Nombre de versión:** Ejecución Flexible y Protección de Materialización de Repositorios
 - **Última actualización:** 2026-10-07
 - **Última actualización canónica:** 2026-10-07T10:26:01-06:00
 - **Ámbito:** Todos los proyectos y conversaciones trabajados bajo esta metodología.
 
 ### Narrativa de la versión
 
-**Antes:** el gate de contexto exigía detectar RDC, resolver el perfil de ubicación y distinguir la identidad Windows operativa de la administrativa.
+**Antes:** la metodología trataba la diferencia entre la identidad operativa de referencia (fila4) y la identidad efectiva de la sesión RDC (central\mantenimientorci) como una condición que podía impedir el trabajo.
 
-**Cambio:** se precisa que la sesión RDC activa se conserva íntegramente bajo `central\\mantenimientorci`; la discrepancia con `fila4` se resuelve en el razonamiento y en la selección del procedimiento, sin abrir sesiones paralelas ni alterar el canal RDC.
+**Cambio:** se flexibiliza la ejecución: central\mantenimientorci puede realizar cualquier operación técnicamente válida. Se conserva una sola restricción específica: no clonar ni materializar repositorios nuevos dentro del perfil o ruta de MantenimientoRCI.
 
-**Motivo:** preservar la sesión RDC que efectivamente consume el servicio y evitar efectos laterales sobre autenticación, consumo, continuidad y trazabilidad.
+**Motivo:** eliminar bloqueos y sesiones alternativas innecesarias, manteniendo únicamente la separación que evita alojar repositorios nuevos dentro del perfil administrativo/elevado.
 
-**Resultado:** el modelo reconoce `fila4` como identidad operativa del perfil CECEQ y `central\\mantenimientorci` como identidad efectiva del canal RDC, sin convertir una en la otra ni abrir un segundo canal.
+**Resultado:** la sesión RDC sigue siendo única y permanece bajo central\mantenimientorci; el trabajo ordinario puede ejecutarse desde esa sesión. La clonación o materialización inicial de un repositorio nuevo debe dirigirse a una ubicación distinta de MantenimientoRCI.
 
 ### Registro de versiones
 
@@ -31,7 +31,8 @@
 | 7 | v0.5.2 | Glosario Operativo y Normalización de Transcripción | Se incorpora un glosario metodológico transversal y reglas para normalizar términos dictados o transcritos a su forma canónica, reduciendo deriva de nombres como CECEQ y KHORA. |
 | 8 | v0.6.0 | Gate de Contexto Operativo Fail-Closed | Se convierte la verificación del contexto operativo en una precondición de cada ciclo: detección automática de RDC, resolución del perfil de ubicación y bloqueo ante indeterminación material, con intervención del usuario solo para decidir si RDC es requisito cuando la detección automática falla. |
 
-| 9 | v0.7.0 | Resolución de Identidad sin Alterar la Sesión RDC | Se precisa que el canal RDC permanece bajo `central\\mantenimientorci`; `fila4` se conserva como identidad operativa del perfil sin abrir sesiones paralelas ni modificar la sesión RDC. |
+| 9 | v0.7.0 | Resolución de Identidad sin Alterar la Sesión RDC | Se precisa que el canal RDC permanece bajo central\mantenimientorci y no se abren sesiones paralelas. |
+| 10 | v0.8.0 | Ejecución Flexible y Protección de Materialización de Repositorios | Se permite ejecutar bajo central\mantenimientorci todo trabajo técnicamente válido; la única excepción es no clonar ni materializar repositorios nuevos dentro de ese perfil. |
 La tabla es canónica: las versiones futuras deben añadir una fila sin borrar ni reciclar las anteriores. El nombre describe el avance de la versión y no sustituye el título general del sistema o documento.
 
 ## 1. Convención obligatoria de foliación de ciclos
@@ -129,14 +130,15 @@ Cuando exista una sesión activa verificada, el estado global registrado debe co
 
 La ubicación debe resolverse contra el registro canónico de perfiles antes de ejecutar reglas dependientes del entorno. Un perfil de ubicación inexistente o insuficiente bloquea cualquier operación que dependa de ese perfil.
 
-## 17. Resolución de identidad sin alterar la sesión RDC
+## 17. Ejecución flexible y única restricción de materialización
 
-Para CECEQ, `central\\mantenimientorci` es la identidad efectiva de la sesión RDC y `fila4` es la identidad operativa definida por el perfil de ubicación. Estas identidades no se sustituyen entre sí.
+Para CECEQ, central\mantenimientorci es la identidad efectiva de la sesión RDC y fila4 es la identidad operativa de referencia del perfil. La diferencia entre ambas no bloquea por sí misma la ejecución.
 
-El camino corto canónico no abre una segunda sesión, no modifica la sesión RDC y no inicia otro canal RDC bajo `fila4`. El modelo detecta la diferencia, la hace explícita y selecciona el procedimiento compatible con el perfil y con los permisos disponibles en la sesión RDC vigente.
+Regla operativa:
+1. central\mantenimientorci puede ejecutar cualquier trabajo técnicamente válido.
+2. No se abren sesiones RDC paralelas para resolver una diferencia de identidad.
+3. No se clonan ni se materializan repositorios nuevos dentro del perfil o ruta de MantenimientoRCI.
+4. Los repositorios ya existentes fuera de ese perfil pueden consultarse, modificarse, sincronizarse y administrarse desde la sesión RDC vigente cuando la operación sea técnicamente válida.
+5. Cuando se necesite un repositorio nuevo, la materialización debe dirigirse a una ubicación autorizada distinta de MantenimientoRCI.
 
-Secuencia obligatoria: detectar identidad efectiva de RDC → comparar con `WIN-OPERATIVO` → conservar la sesión RDC bajo `central\\mantenimientorci` → ejecutar únicamente la operación que sea válida con la identidad efectiva disponible → verificar resultado e identidad cuando la operación lo requiera.
-
-Si una operación exige necesariamente ejecución efectiva bajo `fila4` y no puede realizarse desde la sesión RDC vigente sin abrir o alterar otra sesión, esa operación queda bloqueada. No se crea una sesión paralela para salvar la discrepancia.
-
-La identidad administrativa puede utilizarse para las operaciones permitidas por el canal RDC y para elevación explícita. La distinción con `fila4` se conserva como contexto operativo y no se resuelve mediante cambio de sesión.
+La discrepancia entre WIN-OPERATIVO y la identidad efectiva no bloquea el ciclo salvo que la operación concreta viole la restricción de materialización o requiera un permiso que no esté disponible.
