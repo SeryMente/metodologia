@@ -149,26 +149,26 @@ La discrepancia entre identidad operativa de referencia e identidad efectiva no 
 Un bloqueo es de ejecución sustantiva, no de conversación. Mientras el ciclo esté BLOQUEADO, el modelo debe seguir disponible para explicar la causa, solicitar la información mínima, recibir decisiones del usuario y verificar la solución. No puede ejecutar trabajo sustantivo ni declarar el ciclo cerrado hasta levantar el bloqueo.
 
 
-## 17.1 Gate normativo absoluto y liberación
-Un ciclo sujeto a la metodología tiene dos condiciones separadas:
+## 17.1 Verificación normativa y liberación adaptativas
+
+Un ciclo sujeto a la metodología distingue dos estados:
+
 1. **VERIFIED:** KHORA verificó la cobertura e integridad normativa del receipt.
 2. **RELEASED:** KHORA emitió la autorización de liberación para ese mismo ciclo y resultado.
 
-La única transición que permite declarar `E: COMPLETADO` es:
+Cuando KHORA está disponible, el flujo preferente es:
 
-`OPEN → VERIFY: VERIFIED → RELEASE → COMPLETADO`
+`OPEN → VERIFY: VERIFIED → RELEASE → SALIDA`
 
-Cualquier `INVALID`, `INCOMPLETE`, `UNAVAILABLE`, ausencia de receipt, ausencia de release o fallo de acceso al MCP impide declarar el ciclo completado.
+En un runtime controlado que pueda impedir técnicamente la publicación, `RELEASE` sigue siendo la precondición de publicación del resultado verificado.
 
-El resultado producido antes de `RELEASED` es provisional y no constituye resolución metodológica del turno.
+En ChatGPT nativo, la ausencia o indisponibilidad del MCP no impide producir la salida. En ese escenario no existe un veredicto externo y debe declararse `K: OFF`; la salida no puede atribuirse a KHORA como `VERIFIED` ni `RELEASED`.
 
-En un runtime controlado, esta condición debe implementarse técnicamente como precondición de publicación: el runtime no entrega la respuesta al usuario sin un release válido cuyo `output_sha256` coincida con la salida efectiva.
-
-La interfaz nativa de ChatGPT no expone un mecanismo para que un documento de GitHub o una app MCP intercepte técnicamente todos los mensajes antes de su publicación. Por tanto, la garantía técnica absoluta requiere que el turno ocurra dentro de un runtime/adaptador que controle la emisión de la respuesta. La metodología no debe presentar una conversación nativa sin ese controlador como equivalente a un runtime con gate duro.
+`ESTADO: COMPLETADO` describe que el resultado solicitado fue producido; el estado de verificación externa se declara por separado mediante `K`. Por tanto, un resultado puede estar `COMPLETADO` con `K: OFF` sin fingir verificación.
 
 ## 18.0 Regla transversal de salida por turno
 
-El contrato de salida definido en `FORMATO-REGISTRO-VERIFICACION-CICLO.md` es obligatorio para **cada turno/ciclo sujeto a la metodología, sin excepción**, incluidos turnos bloqueados, turnos de resolución conversacional y turnos sin uso de RDC. El contrato vigente de presentación es `v1.7.1`.
+El contrato de salida definido en `FORMATO-REGISTRO-VERIFICACION-CICLO.md` es obligatorio para **cada turno/ciclo sujeto a la metodología, sin excepción**, incluidos turnos bloqueados, turnos de resolución conversacional y turnos sin uso de RDC. El contrato vigente de presentación es `v1.7.2`.
 
 La respuesta no puede declararse `COMPLETADO` si no porta el formato `v1.7.1` ni si alguno de sus campos obligatorios está ausente o contradice el estado verificable del ciclo.
 
@@ -193,11 +193,13 @@ En CECEQ, la identidad visible del entorno es siempre `fila4`; `central\\manteni
 
 `K` significa acceso al MCP canónico de KHORA. Su interpretación es estricta.
 
-- `K: ✓` = acceso autenticado y verificado al recurso MCP canónico con los scopes completos vigentes: `volcados:read`, `runtime:read` y `norm:turn`.
-- `K: ?` = acceso no verificado en el ciclo.
-- `K: !` = acceso intentado y fallido, no autorizado o no disponible.
+- `K: ✓` = acceso autenticado y verificado al MCP canónico y secuencia normativa/liberación alcanzadas.
+- `K: OFF` = MCP no accesible o fuera de servicio durante el ciclo; la salida continúa sin atribuir verificación externa.
+- `K: ?` = disponibilidad o resultado no determinable.
+- `K: !` = acceso intentado y fallido, no autorizado o verificación rechazada.
 
-Nunca se emite `K: ✓` por inferencia, por conocer la URL del MCP o por disponer de otra herramienta. Debe existir evidencia de una comprobación autenticada contra el recurso canónico.
+Nunca se emite `K: ✓` por inferencia, por conocer la URL del MCP o por disponer de otra herramienta.
+
 
 
 ## 19. Procedimiento canónico de sincronización audio–transcripción en vivo
