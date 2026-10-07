@@ -596,11 +596,11 @@ Precondicion:
       AND PERFIL_UBICACION_RESUELTO
       AND CONTEXTO_OPERATIVO_VERIFICADO
 
-Cuando RDC sea requerido y cualquiera de esas condiciones de contexto no pueda demostrarse, el ciclo no puede avanzar a ejecución sustantiva ni a CLOSED. La identidad efectiva de Windows solo es una precondición adicional cuando la operación concreta la requiere.
+Cuando RDC sea requerido y cualquiera de esas condiciones de contexto no pueda demostrarse, el ciclo no puede avanzar a ejecución sustantiva ni a CLOSED. El estado BLOQUEADO no impide la interacción conversacional necesaria para resolver la condición. La identidad efectiva de Windows solo es una precondición adicional cuando la operación concreta la requiere.
 
 Una deteccion de herramienta fallida es TRANSPORT/DETECTION FAILURE, no evidencia de RDC inactivo.
 
-Si el sistema no puede determinar ACTIVA o INACTIVA, debe preguntar al usuario si RDC es requisito del ciclo. La respuesta NO produce NO-REQUERIDO; la respuesta SI mantiene el ciclo bloqueado hasta establecer y verificar la sesion.
+Si el sistema no puede determinar ACTIVA o INACTIVA, debe preguntar al usuario si RDC es requisito del ciclo. La respuesta NO produce NO-REQUERIDO; la respuesta SI mantiene el ciclo bloqueado hasta establecer y verificar la sesion. Durante BLOQUEADO, el modelo sigue disponible para recibir la información mínima y verificar la solución.
 
 El registro de salida debe vincular el verdict normativo con CONTEXTO-VERIFICACION para permitir reconstruir qué contexto operativo estaba vigente al inicio del ciclo.
 ## 19. Gate de cierre
