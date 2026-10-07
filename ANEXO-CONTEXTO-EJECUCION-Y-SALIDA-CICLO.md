@@ -15,8 +15,8 @@ Ubicacion, cuentas, dispositivos, usuarios concretos, porcentajes de uso y forma
 Cada ciclo distingue:
 - Ubicacion: lugar fisico de trabajo.
 - RDC: canal y cuenta de Remote Desktop Commander que proporcionan acceso al entorno remoto.
-- Usuario Windows operativo: identidad bajo la que se ejecutan las operaciones de trabajo.
-- Usuario Windows administrativo/elevado: identidad destinada a elevacion o establecimiento del puente operativo; no es la identidad de trabajo ordinario.
+- Usuario Windows operativo: identidad operativa de referencia definida por el perfil de ubicación; no implica que cada operación deba ejecutarse bajo ella.
+- Usuario Windows administrativo/elevado: identidad efectiva que puede sostener la sesión RDC y ejecutar cualquier trabajo técnicamente válido; no requiere cambio de identidad salvo que una operación concreta exija otro permiso.
 
 La cuenta de RDC y las identidades de Windows son entidades distintas.
 
@@ -184,7 +184,7 @@ Para CECEQ, la resolución canónica es:
 WIN-OPERATIVO = fila4
 WIN-ADMIN = central\\mantenimientorci
 
-La identidad administrativa no sustituye a la operativa. Cuando una operación requiera elevación, debe conservarse la separación entre el proceso de trabajo y el puente administrativo.
+La identidad efectiva de ejecución y la identidad operativa de referencia pueden diferir. Esa diferencia no bloquea por sí misma el trabajo. La restricción especial del perfil es únicamente no clonar ni materializar repositorios nuevos dentro de MantenimientoRCI.
 
 ## 12.4 Condición de bloqueo
 
