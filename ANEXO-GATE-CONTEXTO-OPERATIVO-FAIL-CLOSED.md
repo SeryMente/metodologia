@@ -23,6 +23,13 @@ Antes de trabajo sustantivo dependiente del entorno, cada ciclo debe:
 
 No se permite continuar desde un estado de deteccion fallida.
 
+### Bloqueo de ejecución, conversación abierta
+
+Cuando el gate produzca BLOQUEADO, el bloqueo se aplica exclusivamente a la ejecución sustantiva y al cierre exitoso del ciclo. La conversación permanece abierta para que el modelo pueda explicar el motivo, solicitar la información mínima, recibir la decisión del usuario y volver a verificar el contexto.
+
+La salida inicial del bloqueo debe utilizar el formato visual canónico definido en FORMATO-REGISTRO-VERIFICACION-CICLO.md. No se debe presentar el bloqueo como cierre de la conversación ni como indisponibilidad del modelo.
+
+
 ## 3. Fuente global
 
 La fuente global de la sesion RDC es ESTADO-RDC-ACTIVO.md.
