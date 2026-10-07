@@ -74,8 +74,8 @@ RDC-USO-MENSUAL es obligatorio en la salida de cada ciclo, pero no obliga a cons
 
 ## 6. Flexibilidad de identidad y restricción de repositorios
 
-1. Las operaciones de trabajo sobre archivos, instalaciones, configuraciones y demas estado operativo se ejecutan bajo el usuario Windows operativo del perfil vigente.
-2. La identidad efectiva del canal RDC puede utilizarse para cualquier operación técnicamente válida.
+1. La identidad efectiva del canal RDC puede utilizarse para cualquier operación técnicamente válida.
+2. La identidad operativa de referencia del perfil se conserva como contexto; no constituye una obligación de cambio de usuario para cada operación.
 3. La diferencia con WIN-OPERATIVO se registra como contexto, pero no constituye por sí misma una condición de bloqueo.
 4. No se abren sesiones RDC paralelas para resolver la diferencia.
 5. La única restricción específica es no clonar ni materializar repositorios nuevos dentro del perfil o ruta de MantenimientoRCI.
@@ -119,10 +119,7 @@ En la activacion inicial de este anexo se verifico:
 - existe una sesion interactiva de Windows fila4 activa;
 - el shell de RDC se ejecuta bajo central\mantenimientorci.
 
-Conclusion: CECEQ esta identificado y el perfil operativo esta establecido como fila4. La conexion RDC actualmente verificada permanece administrativamente elevada bajo mantenimientorci; por tanto, no se ejecutan operaciones de trabajo directamente bajo esa identidad hasta disponer de un puente verificado hacia fila4.
-
-
-## 10. Registro global de la sesion RDC activa
+Conclusion: CECEQ esta identificado. La sesion RDC actualmente verificada se ejecuta bajo central\mantenimientorci y esa identidad puede utilizarse para el trabajo tecnicamente valido. fila4 permanece como identidad operativa de referencia del perfil. No se abren sesiones paralelas ni se cambia la identidad solo para trabajar.## 10. Registro global de la sesion RDC activa
 
 La sesion RDC activa es estado operativo transversal y no pertenece a una conversacion particular. Su registro global se conserva en ESTADO-RDC-ACTIVO.md.
 
