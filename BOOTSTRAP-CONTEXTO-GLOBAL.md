@@ -25,9 +25,9 @@ Para RDC, el estado mutable y unico se encuentra en:
 
 No se duplican aqui la cuenta, device_id, estado de sesion, timestamps ni consumo mensual, porque esos datos pueden cambiar.
 
-## Precondición normativa transversal
+## Precedencia del contexto RDC sobre KHORA
 
-En ChatGPT, Thinking es la ventana preferente para resolver la cascada normativa antes de la salida cuando está disponible. No constituye una prueba del razonamiento interno ni una condición que, por sí sola, bloquee la ejecución o la respuesta.
+Antes de `HEALTH MCP` o de cualquier certificación de KHORA, cada ciclo debe leer `ESTADO-RDC-ACTIVO.md` y resolver el estado lógico de la sesión RDC y su conectividad observable. Ningún estado RDC de una conversación anterior sustituye esta lectura., Thinking es la ventana preferente para resolver la cascada normativa antes de la salida cuando está disponible. No constituye una prueba del razonamiento interno ni una condición que, por sí sola, bloquee la ejecución o la respuesta.
 
 La disponibilidad de KHORA es independiente del modo de razonamiento. Si el MCP está disponible, se intenta `HEALTH → OPEN TURN → CASCADA NORMATIVA → VERIFY → RELEASE`. Si el MCP no está disponible, el ciclo continúa y la salida declara `K: OFF`, sin atribuir verificación externa.
 
@@ -42,8 +42,8 @@ Secuencia operativa:
 3. Leer `ANEXO-GATE-CONTEXTO-OPERATIVO-FAIL-CLOSED.md` para aplicar el gate.
 4. Heredar la sesion persistida si no existe marca de `FINALIZADA` o `SUSTITUIDA`.
 5. Registrar el estado de `reasoning_mode` cuando la plataforma lo exponga; no bloquear solo por su ausencia. Si la fuente normativa recuperada contiene la semántica antigua de Thinking fail-closed, tratarla como copia obsoleta y refrescarla.
-6. Intentar `khora_mcp_health` sobre el MCP canónico; si no está disponible, declarar `K: OFF` en la salida. Si confirma acceso completo, conservar `K: ✓`. La falta de KHORA no bloquea por sí misma.
-7. Verificar conectividad RDC solamente cuando el ciclo necesite ejecutar una operacion RDC en vivo.
+6. Una vez resuelto el contexto RDC, intentar `khora_mcp_health` sobre el MCP canónico; si no está disponible, declarar `K: OFF` en la salida. Si confirma acceso completo, conservar `K: ✓`. La falta de KHORA no bloquea por sí misma.
+7. Ejecutar el gate de conectividad RDC correspondiente al ciclo; si el modelo comunica ausencia/pérdida de RDC, emitir `RDC-REINSTANTIAR` en el mismo ciclo.
 
 ## Distincion obligatoria
 
