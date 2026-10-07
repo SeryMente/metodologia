@@ -1,0 +1,52 @@
+name: Validate RDC Governance
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate canonical RDC invariants
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          test -f SI-METACOGNITIVO.md
+          test -f METODOLOGIA.md
+          test -f ESTADO-RDC-ACTIVO.md
+          test -f ANEXO-GATE-CONTEXTO-OPERATIVO-FAIL-CLOSED.md
+          test -f ANEXO-PROCEDIMIENTO-REINSTANTIACION-RDC.md
+          test -f ANEXO-GOBERNANZA-ESTADO-GLOBAL-RDC.md
+          test -f BOOTSTRAP-CONTEXTO-GLOBAL.md
+
+          si_version="$(sed -n 's/^\*\*Versión:\*\* //p' SI-METACOGNITIVO.md | head -1)"
+          si_name="$(sed -n 's/^\*\*Nombre de versión:\*\* //p' SI-METACOGNITIVO.md | head -1)"
+          method_version="$(sed -n 's/^- \*\*Versión:\*\* //p' METODOLOGIA.md | head -1)"
+          method_name="$(sed -n 's/^- \*\*Nombre de versión:\*\* //p' METODOLOGIA.md | head -1)"
+
+          test "$si_version" = "v1.6.7"
+          test "$si_name" = "Gobernanza Transaccional del Estado RDC"
+          test "$method_version" = "v0.11.7"
+          test "$method_name" = "Gobernanza Transaccional del Estado RDC"
+
+          grep -q 'P033 · Precedencia del Estado Operativo Global' SI-METACOGNITIVO.md
+          grep -q 'ANTES.*KHORA\|antes.*KHORA\|antes.*HEALTH MCP.*KHORA' SI-METACOGNITIVO.md
+          grep -q 'RDC-REINSTANTIAR' SI-METACOGNITIVO.md
+          grep -q 'npx @wonderwhy-er/desktop-commander@latest remote' SI-METACOGNITIVO.md
+
+          grep -q 'ESTADO-RDC-ACTIVO.md' ANEXO-GOBERNANZA-ESTADO-GLOBAL-RDC.md
+          grep -q 'LEER.*VALIDAR.*PUBLICAR.*READ-BACK' ANEXO-GOBERNANZA-ESTADO-GLOBAL-RDC.md
+          grep -q 'force' ANEXO-GOBERNANZA-ESTADO-GLOBAL-RDC.md
+          grep -q 'RDC-REINSTANTIAR' ANEXO-GATE-CONTEXTO-OPERATIVO-FAIL-CLOSED.md
+          grep -q 'npx @wonderwhy-er/desktop-commander@latest remote' ANEXO-GATE-CONTEXTO-OPERATIVO-FAIL-CLOSED.md
+          grep -q 'RDC-HANDSHAKE' ANEXO-PROCEDIMIENTO-REINSTANTIACION-RDC.md
+          grep -q 'READ-BACK\|read-back' ANEXO-PROCEDIMIENTO-REINSTANTIACION-RDC.md
+          grep -q 'ESTADO-RDC-ACTIVO.md' BOOTSTRAP-CONTEXTO-GLOBAL.md
+
+          echo "RDC governance invariants: PASS"
