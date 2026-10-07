@@ -97,6 +97,31 @@ Si `ESTADO-RDC-ACTIVO.md` es legible y contiene una sesión persistente `ACTIVA`
 
 La pregunta al usuario solo es válida cuando, después de consumir el estado global y las fuentes disponibles, la existencia de la sesión permanece materialmente indeterminada. Cuando la sesión sí está determinada pero la conectividad está caída, la decisión es operacional: si la tarea requiere RDC en vivo, el ciclo queda bloqueado por conectividad; si no lo requiere, puede continuar sin RDC.
 
+## 4.4.1 Divergencia de observabilidad RDC y recuperación
+
+Se activa este protocolo cuando concurren las siguientes señales:
+
+- `RDC-SESION = ACTIVA` en el estado global;
+- la verificación RDC informa `OFFLINE OBSERVADA`, `NO VERIFICADA` o no puede usar el dispositivo conocido;
+- el usuario aporta evidencia local positiva de actividad de la terminal o sesión RDC.
+
+El modelo no debe resolver la contradicción por inferencia. Debe registrar:
+
+`RDC-SESION = ACTIVA`
+`RDC-CONECTIVIDAD = NO VERIFICADA/OFFLINE OBSERVADA`
+`RDC-OBSERVABILIDAD = DIVERGENTE`
+`RDC-RECUPERACION = REQUERIDA`
+
+Si el ciclo requiere RDC en vivo, el estado es `BLOQUEADO` para ejecución sustantiva y la salida debe emitir inmediatamente:
+
+`RDC-REINSTANTIAR`
+
+El comando de recuperación instruye a cerrar la terminal/sesión RDC observada, iniciar una nueva sesión y devolver el `RDC-HANDSHAKE` definido por `ANEXO-PROCEDIMIENTO-REINSTANTIACION-RDC.md`.
+
+La conversación permanece abierta. El modelo no solicita una nueva identidad por la mera divergencia, no marca la sesión anterior como finalizada y no ejecuta operaciones dependientes de RDC hasta verificar la nueva sesión.
+
+Cuando el handshake llega, se valida primero y se actualiza después `ESTADO-RDC-ACTIVO.md`. La nueva sesión verificada sustituye la anterior y la marca de recuperación pasa a `RESUELTA`.
+
 ## 5. Fallo de deteccion y decision del usuario
 
 Cuando no sea posible determinar si existe una sesion RDC activa, el sistema formula una sola pregunta de control:
@@ -150,6 +175,8 @@ Para OFFICE-DEPOT y CIBERCAFE, mientras no exista perfil operativo suficiente, l
 - No se inicia un segundo canal RDC bajo fila4.
 - central\mantenimientorci puede ejecutar cualquier trabajo técnicamente válido.
 - La única restricción específica es no clonar ni materializar repositorios nuevos dentro del perfil o ruta de MantenimientoRCI.
+
+Cuando exista una divergencia de observabilidad RDC y el ciclo requiera conectividad en vivo, la recuperación mediante `RDC-REINSTANTIAR` es obligatoria antes de reanudar el trabajo dependiente del canal.
 
 ### 8.2 Secuencia
 
