@@ -71,4 +71,4 @@ La extensión a proyectos futuros no debe retrasar el objetivo operativo de mejo
 
 ## Gate de ejecución en ChatGPT
 
-Todo ciclo sujeto a la metodología debe ejecutarse en modo Thinking verificable. La ausencia, `INSTANT` o estado desconocido bloquea la ejecución sustantiva. El contrato se encuentra en `ANEXO-GATE-THINKING-CHATGPT.md`; el formato visible `v1.7.0` es obligatorio por turno.
+Todo ciclo sujeto a la metodología debe ejecutarse en modo Thinking verificable. La ausencia, `INSTANT` o estado desconocido bloquea la ejecución sustantiva. El contrato se encuentra en `ANEXO-GATE-THINKING-CHATGPT.md`; el formato visible `v1.7.1` es obligatorio por turno.
