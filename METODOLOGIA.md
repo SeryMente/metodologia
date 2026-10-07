@@ -2,21 +2,21 @@
 
 ## Estado canónico
 
-- **Versión:** v0.11.7
-- **Nombre de versión:** Gobernanza Transaccional del Estado RDC
+- **Versión:** v0.11.8
+- **Nombre de versión:** Versionado Canónico del Método General
 - **Última actualización:** 2026-10-07
 - **Última actualización canónica:** 2026-10-07
 - **Ámbito:** Todos los proyectos y conversaciones trabajados bajo esta metodología.
 
 ### Narrativa de la versión
 
-**Antes:** la v0.11.6 ya había establecido la precedencia del contexto RDC sobre KHORA y la recuperación proactiva mediante `RDC-REINSTANTIAR`, pero la publicación del estado global todavía dependía demasiado de la disciplina de ejecución del modelo.
+**Antes:** la v0.11.7 ya había formalizado la resolución transaccional del estado global de RDC, pero la Metodología todavía no exponía ni exigía de forma uniforme su propia identidad/versionado en la salida operativa.
 
-**Cambio:** el estado global de RDC pasa a gobernarse como una transacción verificable: lectura, validación, publicación condicionada por versión, lectura de vuelta y liberación. Las carreras o fallos de persistencia dejan la recuperación pendiente.
+**Cambio:** la Metodología pasa a tener identidad canónica explícita e independiente del SI: versión, nombre específico y vigencia temporal de su última modificación metodológica. Esa identidad debe acompañar invariablemente a cada salida sujeta a la metodología.
 
-**Motivo:** impedir que una sesión fresca quede solamente en la memoria de una conversación, que KHORA certifique antes del contexto operativo, o que una escritura parcial se interprete como propagación global.
+**Motivo:** distinguir cambios del método general de cambios del SI o de la implementación de KHORA y evitar regresiones donde una salida conserve el estado del SI pero pierda la vigencia del método que gobierna el ciclo.
 
-**Resultado:** la sesión RDC global se resuelve ciclo a ciclo desde el repositorio y una recuperación no queda cerrada hasta que el estado publicado sea leído de vuelta. La certificación de KHORA queda subordinada a esa resolución.
+**Resultado:** cada ciclo puede identificar de forma verificable qué versión de la Metodología está gobernando, cuándo fue modificada por última vez y qué cambio metodológico representa.
 
 ### Registro de versiones
 
@@ -47,6 +47,7 @@
 | 21 | v0.11.5 | Recuperación Determinista de Sesión RDC | Se incorpora un protocolo de recuperación de dos fases para divergencias entre la sesión RDC persistente y la observabilidad del canal, con `RDC-REINSTANTIAR`, handshake verificable, sustitución global y propagación entre conversaciones. |
 | 22 | v0.11.6 | Precedencia de Contexto RDC y Recuperación Proactiva | Se hace obligatorio resolver el estado global de RDC en cada ciclo antes de KHORA; toda notificación de ausencia o pérdida de RDC emite `RDC-REINSTANTIAR` y un handshake fresco validado actualiza el estado global antes de continuar. |
 | 23 | v0.11.7 | Gobernanza Transaccional del Estado RDC | Se formaliza la resolución de estado RDC como transacción verificable: lectura, validación, publicación condicionada por versión y lectura de vuelta antes de cualquier reanudación o certificación externa. Las carreras, fallos de persistencia y discordancias dejan el estado pendiente y bloquean solo operaciones dependientes de RDC. |
+| 24 | v0.11.8 | Versionado Canónico del Método General | Se establece una identidad canónica propia para la Metodología —versión, nombre específico y vigencia temporal— y se vuelve obligatoria su representación en la salida de cada ciclo. El último cambio metodológico se deriva de la última modificación del recurso canónico que alteró el funcionamiento, gobierno o reglas generales del sistema. |
 La tabla es canónica: las versiones futuras deben añadir una fila sin borrar ni reciclar las anteriores. El nombre describe el avance de la versión y no sustituye el título general del sistema o documento.
 
 ## 1. Convención obligatoria de foliación de ciclos
@@ -79,11 +80,27 @@ En todo momento y en cualquier lugar donde se genere una conversación al interi
 
 Esta identificación aplica a conversaciones nuevas, continuaciones, cambios de ámbito y cualquier otro contexto conversacional dentro de los proyectos bajo la metodología.
 
-Formato mínimo:
+### 2.1 Identidad canónica propia de la Metodología
 
-`Versión: vX.Y.Z — Nombre de versión · Último cambio: hace N minutos|horas|días | YYYY-MM-DD`
+La Metodología se versiona de forma independiente del SI. Su identidad canónica mínima es:
 
-El nombre es el correspondiente a la versión específica y no el título general del sistema. La expresión temporal se deriva de la marca `Última actualización canónica` del recurso normativo; se usan minutos para menos de 60 min, horas para menos de 24 h, días para menos de 30 días y fecha absoluta desde 30 días.
+- **Versión:** `vX.Y.Z`
+- **Nombre de versión:** nombre específico de esa versión metodológica.
+- **Último cambio:** vigencia temporal de la última modificación del recurso canónico que alteró cómo funciona, gobierna, decide u opera el sistema como método general.
+
+No debe inferirse el último cambio metodológico a partir de cualquier actividad del repositorio. Cambios editoriales, administrativos, de implementación aislada o de otros recursos no constituyen por sí mismos una nueva versión metodológica.
+
+La comprobación canónica debe partir de `METODOLOGIA.md` en `main` mediante snapshot exacto y derivar la marca temporal del último commit que modificó ese recurso. La Metodología no hereda la versión ni el timestamp del SI.
+
+### 2.2 Formato obligatorio de salida
+
+En cada ciclo sujeto a esta metodología, sin excepción, debe aparecer la identidad vigente de la Metodología junto con la del SI:
+
+`METODOLOGÍA CARGADA · vX.Y.Z — Nombre de versión · COMPLETA · ACTIVA · ÚLTIMO CAMBIO: hace N minutos|horas|días | YYYY-MM-DD`
+
+La expresión temporal se deriva del timestamp canónico del último cambio metodológico: minutos para menos de 60 min, horas para menos de 24 h, días para menos de 30 días y fecha absoluta desde 30 días.
+
+La salida no puede mostrar una versión histórica como si fuera vigente. Si la Metodología no puede adquirirse o validarse desde `main`, su estado de frescura no puede declararse positivo.
 
 ## 3. Diagrama de árbol
 
@@ -91,14 +108,19 @@ El diagrama de árbol forma parte de la metodología y debe aparecer **de manera
 
 ## 4. Combinación de convenciones en la salida
 
-Cuando corresponda, el encabezado metodológico de un ciclo debe permitir identificar conjuntamente:
+El encabezado metodológico de un ciclo debe permitir identificar conjuntamente:
 
 1. Proyecto.
 2. Conversación.
 3. Folio global del ciclo.
-4. Versión de la última actualización.
-5. Nombre de la versión.
-6. Último cambio canónico.
+4. Versión del SI.
+5. Nombre de versión del SI.
+6. Último cambio canónico del SI.
+7. Versión de la Metodología.
+8. Nombre de versión de la Metodología.
+9. Último cambio canónico de la Metodología.
+
+Las identidades del SI y de la Metodología son independientes y no deben intercambiarse ni derivarse una de la otra.
 
 ## 4.0 Frescura normativa obligatoria por ciclo
 
