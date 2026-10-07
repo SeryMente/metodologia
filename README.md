@@ -8,7 +8,7 @@ La metodología cuenta con un núcleo de versionado metodológico y un **Sistema
 
 ## Punto de entrada transversal de contexto
 
-**Regla de frescura:** una instancia que recupere una versión histórica del SI o de los gates no puede utilizarla para imponer bloqueos retirados por el canon vigente. Debe refrescar `SI-METACOGNITIVO.md` desde `main` antes de decidir el estado del gate.
+**Regla de frescura:** una instancia debe recuperar `SI-METACOGNITIVO.md` desde un snapshot exacto de `main` en cada ciclo y verificar commit SHA + blob SHA + versión + nombre. `F:✓` es la única marca de frescura positiva; `F:?` significa no comprobada y `F:!` significa discordancia u obsolescencia.
 
 Para cualquier conversación sujeta a esta metodología, el contexto operativo transversal se obtiene del repositorio y no de la memoria de una conversación aislada.
 
@@ -32,13 +32,13 @@ El SI canónico se encuentra en [SI-METACOGNITIVO.md](SI-METACOGNITIVO.md).
 
 Versión vigente:
 
-**v1.6.2 — Coherencia Canónica de Gates y Continuidad Operativa**
+**v1.6.3 — Verificación de Frescura Normativa por Ciclo**
 
 El SI contiene los principios fundamentales **P019–P032**, incluyendo P028 · Trazabilidad Normativa, P029 · Identidad y Vigencia Canónica, P030 · Fidelidad Terminológica Canónica, P031 · Normalización de Transcripción y P032 · Contexto Operativo Verificado.
 
 ## Última actualización de Metodología
 
-**v0.11.3 — Coherencia Canónica de Gates y Continuidad Operativa**  
+**v0.11.4 — Verificación de Frescura Normativa por Ciclo**  
 2026-10-07
 
 Esta evolución establece el gate de contexto operativo, el estado transversal de RDC, el bloqueo fail-closed de ejecución y su resolución conversacional abierta. El trabajo bajo la identidad efectiva de la sesión RDC está permitido cuando sea técnicamente válido; la restricción específica es no clonar ni materializar repositorios nuevos dentro del perfil o ruta de MantenimientoRCI.
