@@ -94,7 +94,7 @@ PROYECTO / CONV-XX / CXXX
 
 SI CARGADO · vX.Y.Z — NOMBRE DE VERSIÓN · COMPLETO · ACTIVO
 
-ChatGPT · UBIC: ... · RDC: ... · C: ... · S: ... · K: ... · USR: ...
+ChatGPT · UBIC: ... · RDC: ... · C: ... · S: ... · K: ✓|?|! · T: ✓|?|! · RDC-CNX: ... · USR: ...
 
 NOTAS · 🟢 SIN NOTAS | 🟡 NOTAS PENDIENTES
 
@@ -244,6 +244,8 @@ La ubicación y los identificadores de entorno deben utilizar las formas del glo
 
 
 ## 14. Gate de Thinking y contrato de salida
+
+**Regla transversal:** `K` queda reservado exclusivamente para el acceso/verificación del MCP canónico de KHORA en todos los documentos metodológicos. La conectividad de RDC se expresa como `RDC-CNX` y no puede reutilizar `K`.
 
 Todo ciclo sujeto a la metodología debe ejecutarse en modo Thinking de ChatGPT. La secuencia normativa se realiza durante el razonamiento del turno:
 
