@@ -41,8 +41,8 @@ La ubicacion es un estado transversal y persistente de trabajo. Una declaracion 
 | Ubicacion | CECEQ |
 | Usuario Windows operativo | fila4 |
 | Usuario Windows administrativo/elevado | central\mantenimientorci |
-| Canal operativo conocido | \\DesktopCommander-Remote-fila4 · Solo a petición · Interactivo · Ejecutar como fila4 |
-| Regla | El trabajo se ejecuta como fila4; mantenimientorci queda reservado para elevación explícita o para establecer/reutilizar el canal operativo conocido. |
+| Regla de sesión | El canal RDC permanece bajo central\\mantenimientorci; no se abren sesiones RDC paralelas bajo fila4. |
+| Regla | fila4 es la identidad operativa del perfil; central\\mantenimientorci es la identidad efectiva del canal RDC. La diferencia se conserva y se resuelve por procedimiento, no por cambio de sesión. |
 
 ### 4.2 Office Depot
 
@@ -75,10 +75,10 @@ RDC-USO-MENSUAL es obligatorio en la salida de cada ciclo, pero no obliga a cons
 ## 6. Separacion operativo-administrativa
 
 1. Las operaciones de trabajo sobre archivos, instalaciones, configuraciones y demas estado operativo se ejecutan bajo el usuario Windows operativo del perfil vigente.
-2. La identidad administrativa/elevada no se utiliza directamente para las operaciones ordinarias.
-3. Si el canal RDC aparece elevado bajo central\\mantenimientorci, se advierte la discrepancia y se reutiliza el canal operativo conocido `\\DesktopCommander-Remote-fila4` para ejecutar el trabajo bajo fila4.
-4. Se verifica inmediatamente la identidad efectiva y el perfil de usuario antes de continuar.
-5. Si el canal operativo conocido no puede establecerse o la identidad fila4 no puede verificarse, la operación de trabajo se detiene; no se sustituye el usuario operativo por el administrativo.
+2. La identidad administrativa/elevada es la identidad efectiva del canal RDC vigente y no se altera para resolver la diferencia.
+3. Si la identidad efectiva difiere de `WIN-OPERATIVO`, el modelo hace visible la discrepancia y selecciona solo procedimientos compatibles con la sesión RDC actual.
+4. No se abren sesiones RDC paralelas bajo fila4 ni se convierte la sesión RDC existente en una sesión fila4.
+5. Si una operación exige necesariamente ejecución efectiva bajo fila4 y no es posible realizarla desde la sesión RDC vigente, la operación se detiene; no se sustituye ni se duplica la sesión.
 
 ## 7. Formato obligatorio de salida por ciclo
 
@@ -205,18 +205,19 @@ Mientras el ciclo esté BLOQUEADO, no se ejecutan operaciones dependientes del c
 
 ## 12.5 Resolución rápida de identidad para CECEQ
 
-No se requiere instalar un puente Windows permanente. El procedimiento canónico aprovecha el camino operativo ya conocido y probado.
+No se requiere puente ni sesión adicional. La sesión RDC vigente se conserva bajo `central\\mantenimientorci` para todos los efectos de uso de RDC.
 
-En CECEQ, el camino corto conocido es `\\DesktopCommander-Remote-fila4`, una tarea programada interactiva, "Solo a petición", cuyo ejecutable es `C:\\WINDOWS\\system32\\cmd.exe /d /c "C:\\Program Files\\nodejs\\desktop-commander.cmd" remote` y cuya identidad de ejecución es `fila4`.
+En CECEQ, `fila4` permanece como identidad operativa definida por el perfil, pero no se abre una sesión RDC paralela ni se altera la sesión existente para transformarla en fila4.
 
 Secuencia:
 
-1. detectar si el proceso/canal actual está bajo central\\mantenimientorci;
-2. si existe la discrepancia, reutilizar o activar `\\DesktopCommander-Remote-fila4`;
-3. verificar `whoami`, usuario de perfil y ruta de trabajo;
-4. ejecutar el trabajo ordinario únicamente después de verificar fila4.
+1. detectar la identidad efectiva del canal RDC;
+2. comparar contra `WIN-OPERATIVO` del perfil;
+3. conservar intacta la sesión RDC bajo central\\mantenimientorci;
+4. ejecutar solo operaciones compatibles con la identidad efectiva y verificar el resultado;
+5. si una operación requiere necesariamente identidad fila4 y no puede resolverse desde la sesión vigente, bloquearla en lugar de crear una sesión paralela.
 
-No se almacenan credenciales, no se usa `runas` con contraseña, no se cierra sesión y no se mantiene un componente de puente adicional. Si el canal conocido no está disponible o no permite verificar fila4, el ciclo se bloquea.
+No se almacenan credenciales, no se usa `runas`, no se cierra sesión y no se inicia un segundo canal RDC.
 
 ## 13. Referencia terminológica
 
