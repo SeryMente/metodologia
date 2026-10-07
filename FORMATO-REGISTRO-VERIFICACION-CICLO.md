@@ -66,23 +66,18 @@ Después del bloque, solo se debe informar lo necesario para levantar la condici
 
 ### Recuperación por divergencia RDC
 
-Cuando el motivo del bloqueo sea `DIVERGENCIA DE OBSERVABILIDAD RDC`, después del bloque visual de bloqueo debe emitirse el comando canónico:
+Cuando el ciclo detecte una divergencia de observabilidad, o cuando el modelo comunique cualquier ausencia, pérdida, desconexión, inactividad, no verificación o indisponibilidad de RDC, debe emitir en el mismo ciclo:
 
 **RDC-REINSTANTIAR**
 
-La notificación debe indicar que el usuario debe cerrar la terminal/sesión RDC observada, abrir una nueva sesión y devolver el `RDC-HANDSHAKE`. El modelo debe actualizar `ESTADO-RDC-ACTIVO.md` con los datos validados antes de reanudar la ejecución dependiente de RDC.
+Comando oficial del proveedor:
 
-No debe declararse `INACTIVA` la sesión persistente únicamente por la observación `OFFLINE`.
+`npx @wonderwhy-er/desktop-commander@latest remote`
 
-### Regla de recuperación proactiva
+Si el usuario entrega un `RDC-HANDSHAKE`, el ciclo no puede continuar a la ejecución dependiente de RDC ni declarar la recuperación resuelta hasta completar validación, publicación condicionada y read-back de `ESTADO-RDC-ACTIVO.md`.
 
-Cuando el modelo comunique cualquier ausencia, pérdida, desconexión, inactividad, no verificación o indisponibilidad de RDC, debe ofrecer en el mismo ciclo:
+No debe declararse `INACTIVA` la sesión persistente únicamente por `OFFLINE`.
 
-**RDC-REINSTANTIAR**
-
-Comando oficial del proveedor: `npx @wonderwhy-er/desktop-commander@latest remote`.
-
-Cuando el usuario entregue un `RDC-HANDSHAKE`, el ciclo no puede pasar a continuación hasta validar, publicar y leer de vuelta el estado global.
 
 ## Contexto operativo obligatorio\n\nCada registro de ciclo debe conservar el bloque de contexto definido por el anexo canónico:\n\n`PLATAFORMA | UBICACION | RDC-REQUERIDA | RDC-SESION | RDC-CUENTA | RDC-USO-MENSUAL | WIN-OPERATIVO | CONTEXTO-VERIFICACION`\n\nCuando exista identidad administrativa relevante, se añade `WIN-ADMIN`. Cuando exista información de terminales RDC, se añade `RDC-TERMINAL`. `CONTEXTO-VERIFICACION` registra el resultado del gate: `VERIFICADO-ACTIVO`, `VERIFICADO-INACTIVO`, `NO-REQUERIDO` o `BLOQUEADO`.\n\nLa ausencia de un dato se registra como `NO VERIFICADO`, `NO DISPONIBLE` o `PENDIENTE`. No se debe inferir información faltante.\n\nLa especificación completa se encuentra en `ANEXO-CONTEXTO-EJECUCION-Y-SALIDA-CICLO.md`.\n
 
