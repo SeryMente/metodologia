@@ -58,7 +58,7 @@ No se inventan identidades Windows para perfiles pendientes.
 
 Cada ciclo debe distinguir dos dimensiones:
 - **RDC-SESION:** identidad persistente global (`ACTIVA`, `INACTIVA` o `NO VERIFICADA`).
-- **RDC-CONECTIVIDAD:** posibilidad de uso en vivo del canal/dispositivo (`VERIFICADA`, `NO VERIFICADA`, `OFFLINE OBSERVADA` o equivalente.
+- **RDC-CONECTIVIDAD:** posibilidad de uso en vivo del canal/dispositivo (`VERIFICADA`, `NO VERIFICADA`, `OFFLINE OBSERVADA` o equivalente).
 
 Cada ciclo debe identificar además:
 - PLATAFORMA: ChatGPT.
@@ -126,7 +126,7 @@ Conclusion: CECEQ esta identificado. La sesion RDC actualmente verificada se eje
 
 La sesion RDC activa es estado operativo transversal y no pertenece a una conversacion particular. Su identidad persiste entre conversaciones hasta que se registre explícitamente su finalización o sustitución. Su registro global se conserva en ESTADO-RDC-ACTIVO.md.
 
-El registro contiene como minimo ubicacion, cuenta RDC, identidad de conexion, device_id, nombre de dispositivo, estado del canal, usuario Windows operativo esperado, identidad administrativa cuando exista, fecha de configuracion, ultima verificacion y consumo mensual disponible.
+El registro contiene como minimo ubicacion, cuenta RDC, identidad de conexion, device_id, nombre de dispositivo, estado de la sesión persistente, estado de conectividad, usuario Windows operativo esperado, identidad administrativa cuando exista, fecha de configuracion, ultima verificacion y consumo mensual disponible.
 
 Una nueva sesion configurada sustituye la sesion activa anterior. No se mantienen varias sesiones como activas simultaneamente salvo canon posterior.
 
