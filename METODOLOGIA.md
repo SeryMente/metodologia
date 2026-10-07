@@ -2,8 +2,8 @@
 
 ## Estado canónico
 
-- **Versión:** v0.11.5
-- **Nombre de versión:** Recuperación Determinista de Sesión RDC
+- **Versión:** v0.11.6
+- **Nombre de versión:** Precedencia de Contexto RDC y Recuperación Proactiva
 - **Última actualización:** 2026-10-07
 - **Última actualización canónica:** 2026-10-07
 - **Ámbito:** Todos los proyectos y conversaciones trabajados bajo esta metodología.
@@ -45,6 +45,7 @@
 | 20 | v0.11.4 | Verificación de Frescura Normativa por Ciclo | Se hace obligatoria la recuperación del SI desde un snapshot exacto de `main` en cada ciclo mediante commit SHA + blob SHA + versión + nombre; una instantánea histórica no puede gobernar el ciclo. |
 | 21 | v0.11.5 | Adquisición Atómica de Snapshot Normativo | Se endurece la frescura mediante doble lectura de `main`; cualquier carrera, caché o discordancia invalida la marca positiva. |
 | 21 | v0.11.5 | Recuperación Determinista de Sesión RDC | Se incorpora un protocolo de recuperación de dos fases para divergencias entre la sesión RDC persistente y la observabilidad del canal, con `RDC-REINSTANTIAR`, handshake verificable, sustitución global y propagación entre conversaciones. |
+| 22 | v0.11.6 | Precedencia de Contexto RDC y Recuperación Proactiva | Se hace obligatorio resolver el estado global de RDC en cada ciclo antes de KHORA; toda notificación de ausencia o pérdida de RDC emite `RDC-REINSTANTIAR` y un handshake fresco validado actualiza el estado global antes de continuar. |
 La tabla es canónica: las versiones futuras deben añadir una fila sin borrar ni reciclar las anteriores. El nombre describe el avance de la versión y no sustituye el título general del sistema o documento.
 
 ## 1. Convención obligatoria de foliación de ciclos
@@ -159,6 +160,14 @@ La resolución es conversacional y determinista:
 No se invalida la sesión persistente por el mero hecho de que el dispositivo aparezca offline, pero tampoco se permite utilizarla como conectividad verificada. El nuevo estado sustituye al anterior únicamente después de la verificación del handshake.
 
 El procedimiento detallado está en `ANEXO-PROCEDIMIENTO-REINSTANTIACION-RDC.md`.
+
+## 16.2 Precedencia del contexto RDC
+
+Cada ciclo debe leer y resolver `ESTADO-RDC-ACTIVO.md` antes de intentar `HEALTH` o cualquier certificación externa de KHORA. La lectura del repositorio determina la sesión global vigente; la comprobación del canal determina su utilizabilidad en vivo.
+
+Si el modelo comunica una ausencia, pérdida, desconexión, inactividad o indisponibilidad de RDC, debe entregar en ese mismo ciclo `RDC-REINSTANTIAR` con el comando oficial de inicio del Remote Device. Si el usuario decide ejecutar la recuperación y devuelve un `RDC-HANDSHAKE` fresco, el modelo debe validar y escribir el estado global antes de reanudar.
+
+Un falso positivo de desconexión no impide la recuperación: el handshake fresco tiene precedencia como evidencia actual de conexión una vez validado.
 
 ## 17. Ejecución flexible y única restricción de materialización
 
