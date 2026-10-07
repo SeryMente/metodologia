@@ -14,11 +14,9 @@
 
 ## Identificación normativa obligatoria
 
-Cada ciclo debe recuperar y verificar una instantánea normativa fresca desde `SI-METACOGNITIVO.md` en el commit actual de `main` y debe identificarla con versión, nombre y Git blob SHA.
+Cada ciclo debe adquirir una instantánea fresca mediante `H1 → SI@H1 → H2` e identificarla con versión, nombre y Git blob SHA.
 
-La instantánea normativa de un turno anterior no puede reutilizarse como sustituto de esta comprobación.
-
-Indicador compacto de frescura: `F:✓` = versión declarada verificada como vigente; `F:?` = no pudo comprobarse; `F:!` = versión discordante u obsoleta.
+La instantánea normativa de un turno anterior no puede reutilizarse. `F:✓` solo es válido cuando `H1 = H2`; `F:?` = comprobación incompleta o carrera; `F:!` = discordancia u obsolescencia.
 
 Cada ciclo debe identificar la instantánea normativa que lo gobierna:
 
