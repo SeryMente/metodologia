@@ -10,13 +10,13 @@
 
 ### Narrativa de la versión
 
-**Antes:** la v0.9.3 establecía trazabilidad, contexto operativo y gates, pero no contenía un procedimiento específico para perfeccionar sincronización audio–transcripción mediante medición objetiva.
+**Antes:** la v0.10.0 había consolidado el control metodológico de sincronización audio–transcripción y el dashboard de medición, pero el gate de ejecución en ChatGPT y el formato visible por turno todavía no estaban integrados de forma ubicua con el SI y el circuito de verificación.
 
-**Cambio:** se canonizan el procedimiento de sincronización audio–transcripción, el Índice General de Perfección (IGP) y el dashboard obligatorio por iteración. Otro Gran Programa (OGP) queda como caso prioritario y de validación.
+**Cambio:** se canoniza el modo Thinking como precondición de ejecución sujeta a la metodología, se integra la cascada `HEALTH → OPEN → CASCADA → VERIFY → RELEASE` dentro del razonamiento del turno y se establece `v1.7.0` como contrato obligatorio de salida por ciclo. El bloqueo es fail-closed cuando Thinking, MCP o la salida canónica no pueden verificarse.
 
-**Motivo:** la meta operativa es conseguir cuanto antes la correspondencia correcta entre palabra pronunciada y palabra resaltada en OGP, sin confundir mejora aparente con mejora medida.
+**Motivo:** evitar que una respuesta se trate como metodológicamente resuelta cuando el régimen normativo no pudo iniciarse, verificarse o liberarse, y hacer uniforme la trazabilidad visible de cada turno.
 
-**Resultado:** B1 queda como baseline congelada; el IGP mide distancia al ideal; el dashboard hace legibles los números; cada iteración debe demostrar su efecto. La generalización futura queda subordinada al avance efectivo de OGP.
+**Resultado:** todos los artefactos canónicos comparten el mismo gate de Thinking, la misma semántica de `K`/`T`, la misma obligación de foliación y el mismo contrato de salida por turno. KHORA conserva el control protocolario; en ChatGPT nativo, la metadata del selector de Thinking sigue siendo una limitación de la integración y se trata mediante atestado fail-closed, no por inferencia.
 
 ### Registro de versiones
 
@@ -110,7 +110,7 @@ El sistema canónico de instrucciones que gobierna la interpretación, decisión
 
 `SI-METACOGNITIVO.md`
 
-La versión canónica actual del SI es **v1.5.0 — Bloqueo Operativo Fail-Closed con Resolución Conversacional** y contiene los principios **P019–P032**, cada uno con su **índice de preponderancia** dentro de la escala `0–1`.
+La versión canónica actual del SI es **v1.6.0 — Gate de Thinking y Ejecución Normativa por Turno** y contiene los principios **P019–P032**, cada uno con su **índice de preponderancia** dentro de la escala `0–1`.
 
 La metodología mantiene separadas las normas fundamentales de sus desarrollos, procedimientos, herramientas y mecanismos de implementación.
 \n\n## 6. Contexto de ejecución y salida por ciclo\n\nEl contrato canonico se encuentra en `ANEXO-CONTEXTO-EJECUCION-Y-SALIDA-CICLO.md`. Su aplicacion es ubicua en todos los ciclos sujetos a la metodologia e integra plataforma, ubicacion persistente, estado y cuenta RDC, uso mensual disponible, identidad Windows operativa y, cuando corresponda, identidad administrativa. Los detalles de formato, fuentes y perfiles por ubicacion permanecen en el anexo y no se elevan al nivel del SI.
@@ -169,6 +169,12 @@ El resultado producido antes de `RELEASED` es provisional y no constituye resolu
 En un runtime controlado, esta condición debe implementarse técnicamente como precondición de publicación: el runtime no entrega la respuesta al usuario sin un release válido cuyo `output_sha256` coincida con la salida efectiva.
 
 La interfaz nativa de ChatGPT no expone un mecanismo para que un documento de GitHub o una app MCP intercepte técnicamente todos los mensajes antes de su publicación. Por tanto, la garantía técnica absoluta requiere que el turno ocurra dentro de un runtime/adaptador que controle la emisión de la respuesta. La metodología no debe presentar una conversación nativa sin ese controlador como equivalente a un runtime con gate duro.
+
+## 18.0 Regla transversal de salida por turno
+
+El contrato de salida definido en `FORMATO-REGISTRO-VERIFICACION-CICLO.md` es obligatorio para **cada turno/ciclo sujeto a la metodología, sin excepción**, incluidos turnos bloqueados, turnos de resolución conversacional y turnos sin uso de RDC.
+
+La respuesta no puede declararse `COMPLETADO` si no porta el formato `v1.7.0` ni si alguno de sus campos obligatorios está ausente o contradice el estado verificable del ciclo.
 
 ## 18. Salida visible mínima
 
