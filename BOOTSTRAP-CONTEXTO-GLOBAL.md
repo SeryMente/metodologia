@@ -53,6 +53,22 @@ Secuencia operativa:
 
 Una desconexion, dispositivo offline o herramienta indisponible no equivale a finalizacion de sesion y no autoriza a borrar ni reemplazar la identidad persistida.
 
+## Recuperación por divergencia de observabilidad RDC
+
+Si el estado global registra `RDC-SESION = ACTIVA`, pero la verificación del canal reporta offline/no verificable y el usuario informa actividad local de una terminal RDC, la conversación no debe volver a preguntar qué sesión existe ni declarar que la sesión terminó.
+
+Debe:
+
+1. registrar la divergencia;
+2. mantener la identidad persistente;
+3. cuando el ciclo requiera RDC, bloquear solo la ejecución sustantiva;
+4. emitir `RDC-REINSTANTIAR`;
+5. instruir al usuario a cerrar la terminal observada y abrir una nueva sesión RDC;
+6. recibir el `RDC-HANDSHAKE`;
+7. actualizar `ESTADO-RDC-ACTIVO.md` con la nueva sesión verificada antes de reanudar.
+
+La nueva conversación consumirá automáticamente ese registro actualizado. No existe propagación por memoria conversacional; la propagación se produce por el estado compartido del repositorio.
+
 ## Cambio de sesion
 
 Una nueva sesion verificada sustituye a la anterior y actualiza `ESTADO-RDC-ACTIVO.md`.
