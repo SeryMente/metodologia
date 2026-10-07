@@ -54,6 +54,16 @@ Cuando exista una entrada canonica, su forma debe utilizarse en salidas, documen
 **Definicion:** cuenta utilizada para elevacion o funciones de puente tecnico.  
 **Regla:** su uso directo para trabajo ordinario esta prohibido cuando exista un usuario operativo definido.
 
+### Bloqueo de ejecucion
+**Tipo:** estado de ejecución.
+**Definicion:** condición en la que el ciclo no puede realizar trabajo sustantivo ni declararse cerrado por faltar una precondición verificable.
+**Regla:** el bloqueo es operativo, no conversacional. El modelo permanece disponible para resolver la causa, recibir información y volver a verificar el contexto.
+
+### Notificacion de bloqueo
+**Tipo:** formato operativo.
+**Definicion:** salida visual estandarizada que identifica inmediatamente un ciclo bloqueado.
+**Regla:** debe aparecer al inicio de una notificación de bloqueo y utilizar el formato canónico del registro por ciclo.
+
 ### Ciclo
 **Tipo:** unidad metodologica.  
 **Definicion:** unidad de secuencia y trazabilidad global establecida por la metodologia.
