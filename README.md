@@ -8,7 +8,7 @@ La metodología cuenta con un núcleo de versionado metodológico y un **Sistema
 
 ## Punto de entrada transversal de contexto
 
-**Regla de frescura:** una instancia debe recuperar `SI-METACOGNITIVO.md` desde un snapshot exacto de `main` en cada ciclo y verificar commit SHA + blob SHA + versión + nombre. `F:✓` es la única marca de frescura positiva; `F:?` significa no comprobada y `F:!` significa discordancia u obsolescencia.
+**Regla de frescura:** cada ciclo adquiere `H1 → SI@H1 → H2`; `F:✓` solo si `H1 = H2` y versión + nombre + blob SHA coinciden. No se aceptan caché ni copias previas. `F:?` = no comprobada/carrera; `F:!` = discordancia u obsolescencia.
 
 Para cualquier conversación sujeta a esta metodología, el contexto operativo transversal se obtiene del repositorio y no de la memoria de una conversación aislada.
 
