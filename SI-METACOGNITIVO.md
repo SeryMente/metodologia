@@ -1,15 +1,15 @@
 # Sistema de Instrucciones Metacognitivas
 
 **Estado:** CANÓNICO
-**Versión:** v1.6.3
-**Nombre de versión:** Verificación de Frescura Normativa por Ciclo
+**Versión:** v1.6.4
+**Nombre de versión:** Recuperación Determinista de Sesión RDC
 
 > **Corrección canónica:** `THINKING` es una ventana preferente, no una precondición bloqueante. La ausencia de señal de Thinking y la indisponibilidad de KHORA no bloquean por sí mismas la salida; se reflejan en `T` y `K` respectivamente.
 **Última actualización canónica:** 2026-10-07
 **Fecha:** 2026-10-07
 **Ámbito:** Gobierno metacognitivo del modelo en tareas sujetas a este sistema.
 
-> **Regla de frescura canónica:** una copia que identifique como vigente cualquier versión anterior a `v1.6.2` es histórica, no normativa. Debe volver a consultar esta ruta canónica antes de aplicar gates de Thinking/KHORA.
+> **Regla de frescura canónica:** una copia que identifique como vigente cualquier versión anterior a `v1.6.4` es histórica, no normativa. Debe volver a consultar esta ruta canónica antes de aplicar gates de Thinking/KHORA.
 
 ## 0. Registro de versiones
 
@@ -25,6 +25,7 @@
 | 8 | v1.6.1 | Verificación Normativa Adaptativa por Turno | Se corrige la interpretación operativa del gate: Thinking identifica la ventana preferente para ejecutar la cascada y consultar KHORA, pero no constituye una prueba del razonamiento interno ni una condición que impida la salida. Cuando KHORA no está disponible, la salida continúa bajo el contrato vigente y declara el verificador en OFF. |
 | 9 | v1.6.2 | Coherencia Canónica de Gates y Continuidad Operativa | Se corrigen contradicciones residuales en artefactos subordinados. Thinking y la disponibilidad de KHORA son condiciones adaptativas y no causas autónomas de bloqueo; `T` y `K` deben describir el estado observable sin transformar incertidumbre de runtime en bloqueo. |
 | 10 | v1.6.3 | Verificación de Frescura Normativa por Ciclo | Se establece la recuperación obligatoria del SI desde un snapshot exacto de `main` en cada ciclo, con comprobación de commit SHA, blob SHA, versión y nombre. El HUD incorpora `F` para indicar la frescura normativa. |
+| 11 | v1.6.4 | Recuperación Determinista de Sesión RDC | Se establece el protocolo explícito para divergencias entre la sesión RDC persistente y la conectividad/observabilidad del canal: conservación de identidad, comando `RDC-REINSTANTIAR`, handshake mínimo, sustitución verificable del estado global y propagación transversal mediante el repositorio. |
 
 La tabla es parte del canon. Cada nueva versión debe añadir una fila sin borrar ni reutilizar las anteriores. El nombre de versión es específico de esa versión y no sustituye el título general del sistema.
 
@@ -234,6 +235,25 @@ Indicador compacto de frescura:
 - `F:!` = existe discordancia, obsolescencia o intento de gobernar con una instantánea histórica.
 
 Una copia cargada previamente en la conversación nunca sustituye esta comprobación. `F:!` impide gobernar el ciclo con la copia histórica. `F:?` impide declarar la frescura como verificada; cuando el trabajo dependa de la normativa vigente, la ejecución sustantiva queda detenida hasta resolver la comprobación.
+
+### 5.0.3 Recuperación determinista ante divergencia de observabilidad RDC
+
+Cuando exista una sesión RDC persistente `ACTIVA`, pero la fuente RDC no pueda verificar la conectividad del dispositivo conocido y el usuario aporte evidencia local positiva de actividad de una terminal RDC, el modelo debe clasificar el escenario como **DIVERGENCIA DE OBSERVABILIDAD RDC**.
+
+Esta divergencia no permite concluir ni que la sesión terminó ni que la sesión sigue utilizable en vivo. El modelo debe:
+
+1. conservar la identidad persistente registrada hasta que exista una sustitución o finalización verificable;
+2. separar explícitamente `RDC-SESION = ACTIVA` de `RDC-CONECTIVIDAD = NO VERIFICADA/OFFLINE OBSERVADA`;
+3. si el ciclo requiere RDC en vivo, detener únicamente la ejecución sustantiva;
+4. emitir el comando canónico **`RDC-REINSTANTIAR`** y mantener la conversación abierta;
+5. instruir al usuario a cerrar la terminal/sesión RDC observada y establecer una sesión RDC nueva;
+6. solicitar el `RDC-HANDSHAKE` mínimo definido en `ANEXO-PROCEDIMIENTO-REINSTANTIACION-RDC.md`;
+7. no sustituir `ESTADO-RDC-ACTIVO.md` con datos parciales: primero validar cuenta, dispositivo, device_id y evidencia de conectividad;
+8. una vez verificada la nueva sesión, sustituir la identidad anterior en el estado global, registrar la marca temporal y la procedencia de la verificación y solo entonces reanudar operaciones dependientes de RDC.
+
+El comando `RDC-REINSTANTIAR` es una instrucción conversacional canónica de recuperación; no se debe inventar un comando de shell ni atribuir a RDC una sintaxis que la herramienta no haya proporcionado.
+
+Si el usuario entrega datos de una nueva sesión verificada, esos datos deben escribirse en el registro global antes de declarar resuelta la recuperación. Las conversaciones posteriores deben consumir ese registro actualizado en lugar de depender de la memoria de esta conversación.
 
 ### 5.0.2 Ejecución normativa adaptativa por turno
 
