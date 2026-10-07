@@ -21,6 +21,10 @@ No se duplican aqui la cuenta, device_id, estado de sesion, timestamps ni consum
 
 ## Precondición normativa transversal
 
+### Regla de bloqueo por plataforma
+
+En ChatGPT, `THINKING` no es opcional para un ciclo sujeto a la metodología. Antes de cualquier cambio, llamada de herramienta o ejecución sustantiva debe existir un estado verificable `reasoning_mode=THINKING`. Ausencia, `INSTANT` o estado desconocido mantienen el ciclo BLOQUEADO.
+
 Una conversación nueva sujeta a la metodología no debe considerar resuelta una tarea sustantiva sin completar el circuito normativo de KHORA.
 
 Secuencia obligatoria:
@@ -41,8 +45,9 @@ Antes del health-check, el ciclo debe estar en modo Thinking de ChatGPT. La espe
 2. Leer `ESTADO-RDC-ACTIVO.md` para recuperar la identidad persistente de la sesion RDC.
 3. Leer `ANEXO-GATE-CONTEXTO-OPERATIVO-FAIL-CLOSED.md` para aplicar el gate.
 4. Heredar la sesion persistida si no existe marca de `FINALIZADA` o `SUSTITUIDA`.
-5. Ejecutar `khora_mcp_health` sobre el MCP canónico y conservar su veredicto discreto `K: ✓` cuando confirme acceso completo.
-6. Verificar conectividad RDC solamente cuando el ciclo necesite ejecutar una operacion RDC en vivo.
+5. Verificar `reasoning_mode=THINKING`; si no es verificable, bloquear antes de ejecutar trabajo sustantivo.
+6. Ejecutar `khora_mcp_health` sobre el MCP canónico y conservar su veredicto discreto `K: ✓` cuando confirme acceso completo.
+7. Verificar conectividad RDC solamente cuando el ciclo necesite ejecutar una operacion RDC en vivo.
 
 ## Distincion obligatoria
 
