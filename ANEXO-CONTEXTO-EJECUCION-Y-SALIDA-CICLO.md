@@ -30,7 +30,7 @@ La cuenta de RDC y las identidades de Windows son entidades distintas.
 
 No se infiere una cuarta ubicacion. Una nueva ubicacion requiere actualizacion canonica de este anexo.
 
-La ubicacion es DECLARADA POR EL USUARIO cuando el usuario la establece expresamente. Sin declaracion vigente ni fuente fiable, se muestra NO VERIFICADA.
+La ubicacion es un estado transversal y persistente de trabajo. Una declaracion explicita del usuario establece o cambia UBICACION_ACTUAL; permanece vigente entre ciclos y conversaciones hasta que el usuario declare otra ubicacion. Sin declaracion vigente ni fuente fiable, se muestra NO VERIFICADA.
 
 ## 4. Perfil por ubicacion
 
@@ -56,7 +56,9 @@ No se inventan identidades Windows para perfiles pendientes.
 ## 5. Estado de RDC
 
 Cada ciclo debe identificar:
-- RDC-ESTADO: ACTIVA, INACTIVA o NO VERIFICADA.
+- PLATAFORMA: ChatGPT.
+- RDC-SESION: ACTIVA, INACTIVA o NO VERIFICADA.
+- RDC-ESTADO: estado del dispositivo/canal cuando este disponible.
 - RDC-CUENTA: correo de la cuenta RDC efectivamente utilizada, o NO VERIFICADO.
 - RDC-USO-MENSUAL: porcentaje usado y porcentaje restante, o NO DISPONIBLE.
 - RDC-TERMINAL: estado o numero de sesiones terminales cuando este disponible.
@@ -84,7 +86,7 @@ PROYECTO / CONV-XX / CXXX
 
 SI CARGADO · vX.Y.Z - NOMBRE DE VERSION · COMPLETO · ACTIVO · ULTIMO CAMBIO: ...
 
-CONTEXTO · UBICACION: ... · RDC: ... · RDC-CUENTA: ... · RDC-MENSUAL: ... · WIN-OPERATIVO: ...
+CONTEXTO · PLATAFORMA: ChatGPT · UBICACION: ... · RDC-SESION: ... · RDC-CUENTA: ... · RDC-MENSUAL: ... · WIN-OPERATIVO: ...
 
 NOTAS · SIN NOTAS | NOTAS PENDIENTES
 

@@ -22,7 +22,7 @@ El SI contiene los principios fundamentales **P019–P029**, incluyendo P028 · 
 
 ## Última actualización de Metodología
 
-**v0.5.0 — Contexto de Ejecución y Trazabilidad Operativa**  
-2026-10-07
+**v0.4.0 — Gobernanza Versionada y Observabilidad de Servicios**  
+2026-10-06
 
-Esta versión establece el contexto operativo obligatorio por ciclo, el perfil inicial de CSEC, la identificación del canal y consumo disponible de RDC y la separación entre usuario Windows operativo y administrativo. El contrato detallado se encuentra en [ANEXO-CONTEXTO-EJECUCION-Y-SALIDA-CICLO.md](ANEXO-CONTEXTO-EJECUCION-Y-SALIDA-CICLO.md).
+Esta versión establece la convención de nombre específico por versión, el historial de evolución, la identificación temporal de la última actualización canónica y la observabilidad transversal de servicios de Cora.
