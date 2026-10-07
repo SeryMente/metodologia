@@ -1,7 +1,7 @@
 # Procedimiento Canónico de Reinstanciación RDC
 
 **Estado:** CANÓNICO  
-**Versión:** v1.0.0  
+**Versión:** v1.1.0  
 **Fecha:** 2026-10-07  
 **Ámbito:** Recuperación de sesiones RDC cuando exista divergencia entre el estado persistente y la observabilidad del canal.
 
@@ -16,6 +16,18 @@ No se interpreta la divergencia como prueba de finalización.
 **RDC-REINSTANTIAR**
 
 Es un comando conversacional de recuperación. No es un comando de shell y no debe sustituirse por una sintaxis inventada.
+
+## 2.1 Comando oficial del proveedor
+
+La orden recomendada por Desktop Commander para iniciar el Remote Device es:
+
+`npx @wonderwhy-er/desktop-commander@latest remote`
+
+No se sustituye esta orden por heurísticas de búsqueda de ejecutables ni por comandos inventados. El reinicio normal reutiliza la sesión persistida del dispositivo cuando sigue vigente.
+
+## 2.2 Activación proactiva
+
+Este procedimiento debe ofrecerse en el mismo ciclo siempre que el modelo comunique al usuario que RDC está ausente, inactiva, desconectada, no verificable o no disponible. Si RDC no es requisito del ciclo, se ofrece como recuperación opcional; si es requisito, la ejecución dependiente queda bloqueada hasta verificar el handshake.
 
 ## 3. Acción del usuario
 
@@ -44,7 +56,7 @@ El usuario debe entregar, en la medida en que la plataforma los proporcione:
     WIN-EFECTIVO-RDC: ...
     VERIFICADO-EN: ...
 
-Los campos que la herramienta no proporcione se marcan NO DISPONIBLE; no se inventan. Como mínimo para sustituir la identidad global deben quedar determinados cuenta, dispositivo, device_id y evidencia suficiente de conectividad.
+Los campos que la herramienta no proporcione se marcan NO DISPONIBLE; no se inventan. Como mínimo para sustituir o refrescar el estado global deben quedar determinados cuenta, dispositivo, device_id y evidencia suficiente de conectividad. Una restauración de la misma identidad también cuenta como refresco válido y actualiza la marca temporal.
 
 ## 5. Validación
 
@@ -56,7 +68,7 @@ El modelo:
 4. conserva la procedencia y la marca temporal;
 5. solo después actualiza ESTADO-RDC-ACTIVO.md.
 
-Una sustitución no validada no cuenta como recuperación.
+Una sustitución o refresco no validado no cuenta como recuperación. Si la escritura de `ESTADO-RDC-ACTIVO.md` falla, la recuperación permanece pendiente y no se permite declarar resuelta la conectividad ni reanudar trabajo RDC-dependiente.
 
 ## 6. Actualización global
 
