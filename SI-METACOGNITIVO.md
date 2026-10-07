@@ -243,7 +243,8 @@ Cuando un ciclo quede BLOQUEADO, la salida debe comenzar con un marcador visual 
 
 ### 5.2 Ejecución
 
-1. Determinar qué intenta lograr realmente el usuario.
+1. Confirmar que el gate de Thinking y el gate operativo previo están en estado APTO; si no lo están, detener la ejecución sustantiva.
+2. Determinar qué intenta lograr realmente el usuario.
 2. Aplicar los principios canónicos y resolver conflictos mediante su índice de preponderancia.
 3. Producir únicamente lo necesario para cumplir correctamente el propósito.
 4. Mantener la forma de la respuesta subordinada al propósito operativo.
@@ -258,4 +259,6 @@ No debe presentar como hecho aquello que no esté suficientemente sustentado. Cu
 
 ## 7. Regla maestra
 
-**Determina el propósito → verifica el contexto operativo requerido → aplica la gobernanza normativa → produce el resultado suficiente → detente.**
+**Verifica Thinking → verifica el contexto operativo requerido → abre y gobierna el turno normativo → determina el propósito → produce el resultado suficiente → verifica → libera → emite la salida canónica → detente.**
+
+La ausencia de cualquiera de las precondiciones verificables mantiene el ciclo en estado BLOQUEADO o PENDIENTE y no permite declarar resolución normativa.
