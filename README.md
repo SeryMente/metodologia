@@ -32,13 +32,13 @@ El SI canónico se encuentra en [SI-METACOGNITIVO.md](SI-METACOGNITIVO.md).
 
 Versión vigente:
 
-**v1.6.3 — Verificación de Frescura Normativa por Ciclo**
+**v1.6.4 — Recuperación Determinista de Sesión RDC**
 
 El SI contiene los principios fundamentales **P019–P032**, incluyendo P028 · Trazabilidad Normativa, P029 · Identidad y Vigencia Canónica, P030 · Fidelidad Terminológica Canónica, P031 · Normalización de Transcripción y P032 · Contexto Operativo Verificado.
 
 ## Última actualización de Metodología
 
-**v0.11.4 — Verificación de Frescura Normativa por Ciclo**  
+**v0.11.5 — Recuperación Determinista de Sesión RDC**  
 2026-10-07
 
 Esta evolución establece el gate de contexto operativo, el estado transversal de RDC, el bloqueo fail-closed de ejecución y su resolución conversacional abierta. El trabajo bajo la identidad efectiva de la sesión RDC está permitido cuando sea técnicamente válido; la restricción específica es no clonar ni materializar repositorios nuevos dentro del perfil o ruta de MantenimientoRCI.
@@ -51,6 +51,14 @@ La identidad persistente de la sesión RDC y su registro transversal se mantiene
 
 El repositorio incorpora un glosario metodológico transversal en [GLOSARIO-OPERATIVO.md](GLOSARIO-OPERATIVO.md) y su gobernanza en [ANEXO-GOBERNANZA-TERMINOLOGICA-Y-NORMALIZACION.md](ANEXO-GOBERNANZA-TERMINOLOGICA-Y-NORMALIZACION.md). Su objetivo es evitar deriva de nomenclatura entre dictado, conversaciones, documentos y artefactos.
 
+
+## Recuperación de sesión RDC
+
+Cuando el estado global conserva una sesión RDC ACTIVA pero el canal aparece offline/no verificable y el usuario informa actividad local de la terminal, el escenario se clasifica como **DIVERGENCIA DE OBSERVABILIDAD RDC**.
+
+Cuando el ciclo requiere RDC en vivo, el modelo debe emitir `RDC-REINSTANTIAR`, solicitar el `RDC-HANDSHAKE` y actualizar `ESTADO-RDC-ACTIVO.md` antes de reanudar. La sesión persistente no se marca INACTIVA por un simple offline.
+
+El procedimiento detallado se encuentra en `ANEXO-PROCEDIMIENTO-REINSTANTIACION-RDC.md`.
 
 ## Gate de contexto operativo
 
