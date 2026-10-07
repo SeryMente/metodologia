@@ -10,13 +10,13 @@
 
 ### Narrativa de la versión
 
-**Antes:** la v0.10.0 había consolidado el control metodológico de sincronización audio–transcripción y el dashboard de medición, pero el gate de ejecución en ChatGPT y el formato visible por turno todavía no estaban integrados de forma ubicua con el SI y el circuito de verificación.
+**Antes:** la v0.11.6 ya había establecido la precedencia del contexto RDC sobre KHORA y la recuperación proactiva mediante `RDC-REINSTANTIAR`, pero la publicación del estado global todavía dependía demasiado de la disciplina de ejecución del modelo.
 
-**Cambio:** se consolida la interpretación adaptativa de Thinking/KHORA y se corrigen contradicciones residuales en artefactos subordinados. Thinking permanece como ventana preferente, pero no como precondición bloqueante; KHORA puede no estar disponible y la salida continúa con `K: OFF`.
+**Cambio:** el estado global de RDC pasa a gobernarse como una transacción verificable: lectura, validación, publicación condicionada por versión, lectura de vuelta y liberación. Las carreras o fallos de persistencia dejan la recuperación pendiente.
 
-**Motivo:** evitar regresiones en las que una instancia bloquee por no poder observar el modo Thinking o por no poder acceder al verificador, aunque ninguna de esas condiciones sea un bloqueo normativo vigente.
+**Motivo:** impedir que una sesión fresca quede solamente en la memoria de una conversación, que KHORA certifique antes del contexto operativo, o que una escritura parcial se interprete como propagación global.
 
-**Resultado:** el sistema utiliza una única semántica de gates: solo el contexto operativo materialmente requerido puede bloquear. El estado de Thinking se expresa en `T`; la disponibilidad/verificación de KHORA se expresa en `K`; ninguno de los dos bloquea por sí mismo.
+**Resultado:** la sesión RDC global se resuelve ciclo a ciclo desde el repositorio y una recuperación no queda cerrada hasta que el estado publicado sea leído de vuelta. La certificación de KHORA queda subordinada a esa resolución.
 
 ### Registro de versiones
 
