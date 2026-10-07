@@ -42,7 +42,7 @@ El registro debe contener como minimo:
 - estado independiente de conectividad;
 - condición de finalización o sustitución explícita;
 - ubicacion;
-- RDC-REQUERIDA;
+- RDC-REQUERIDA-POR-CICLO;
 - RDC-SESION;
 - RDC-CUENTA;
 - RDC-DISPOSITIVO;
@@ -86,6 +86,12 @@ El fallo de conectividad por si solo no invalida la sesión persistente.
 Una sesión persistente solo pasa a `VERIFICADO-INACTIVO` cuando existe evidencia fiable de finalización/sustitución o una fuente capaz de establecer inequívocamente que ya no existe la sesión registrada.
 
 La ausencia de respuesta, el dispositivo offline o la indisponibilidad de la herramienta no son evidencia suficiente de finalización y no eliminan la identidad persistente.
+
+## 4.4 Regla de herencia en conversación nueva
+
+Si `ESTADO-RDC-ACTIVO.md` es legible y contiene una sesión persistente `ACTIVA` sin `FINALIZADA` ni `SUSTITUIDA`, la conversación nueva debe heredar esa identidad antes de formular cualquier pregunta de control. No se puede convertir `device offline`, `ping fallido` o `herramienta indisponible` en una pregunta sobre si la sesión existe.
+
+La pregunta al usuario solo es válida cuando, después de consumir el estado global y las fuentes disponibles, la existencia de la sesión permanece materialmente indeterminada. Cuando la sesión sí está determinada pero la conectividad está caída, la decisión es operacional: si la tarea requiere RDC en vivo, el ciclo queda bloqueado por conectividad; si no lo requiere, puede continuar sin RDC.
 
 ## 5. Fallo de deteccion y decision del usuario
 
@@ -218,7 +224,11 @@ Contrato de continuidad:
 
 Una nueva sesion verificada sustituye a la anterior. Una finalización explícita sustituye `ACTIVA` por `INACTIVA`. Ninguna de las dos acciones ocurre por el mero cambio de conversación o por una desconexión temporal.
 
-Una conversación nunca debe pedir al usuario que vuelva a declarar una sesión ya persistida: debe heredarla. La verificación de conectividad se realiza solamente cuando la operación del ciclo necesite RDC en vivo.
+Una conversación nunca debe pedir al usuario que vuelva a declarar una sesión ya persistida: debe heredarla. La verificación de conectividad se realiza solamente cuando la operación del ciclo necesite RDC en vivo. `RDC-REQUERIDA-POR-CICLO` se determina por la tarea y es independiente de `RDC-SESION`.
+
+## 10.1 Evidencia de propagacion
+
+El ciclo debe conservar internamente el origen de la identidad RDC como `GLOBAL_STATE` y la marca temporal de lectura/verificación. En la salida cotidiana esto no se expone como etiqueta adicional: queda representado de forma compacta por el estado RDC vigente.
 
 ## 11. Contrato minimo de salida
 
