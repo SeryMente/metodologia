@@ -2,8 +2,8 @@
 
 ## Estado canónico
 
-- **Versión:** v0.11.4
-- **Nombre de versión:** Verificación de Frescura Normativa por Ciclo
+- **Versión:** v0.11.5
+- **Nombre de versión:** Recuperación Determinista de Sesión RDC
 - **Última actualización:** 2026-10-07
 - **Última actualización canónica:** 2026-10-07
 - **Ámbito:** Todos los proyectos y conversaciones trabajados bajo esta metodología.
@@ -43,6 +43,7 @@
 | 18 | v0.11.2 | Verificación Normativa Adaptativa y HUD Compacto por Turno | Se corrige la implementación del gate: Thinking es la ventana preferente para resolver la cascada normativa antes de la salida, pero no se intenta verificar el razonamiento interno ni se bloquea la salida por su estado. KHORA pasa a tener disponibilidad explícita (`K: ✓ / OFF / ? / !`). |
 | 19 | v0.11.3 | Coherencia Canónica de Gates y Continuidad Operativa | Se elimina la contradicción residual que podía reintroducir un bloqueo por Thinking/KHORA desde un anexo subordinado. Solo las condiciones de contexto operativo materialmente requeridas pueden producir BLOQUEADO. |
 | 20 | v0.11.4 | Verificación de Frescura Normativa por Ciclo | Se hace obligatoria la recuperación del SI desde un snapshot exacto de `main` en cada ciclo mediante commit SHA + blob SHA + versión + nombre; una instantánea histórica no puede gobernar el ciclo. |
+| 21 | v0.11.5 | Recuperación Determinista de Sesión RDC | Se incorpora un protocolo de recuperación de dos fases para divergencias entre la sesión RDC persistente y la observabilidad del canal, con `RDC-REINSTANTIAR`, handshake verificable, sustitución global y propagación entre conversaciones. |
 La tabla es canónica: las versiones futuras deben añadir una fila sin borrar ni reciclar las anteriores. El nombre describe el avance de la versión y no sustituye el título general del sistema o documento.
 
 ## 1. Convención obligatoria de foliación de ciclos
@@ -145,6 +146,18 @@ Cuando la detección automática no pueda establecer de forma suficiente si exis
 Cuando exista una sesión activa verificada, el estado global registrado debe consumirse antes de ejecutar y la nueva verificación debe actualizar su marca temporal. La sesión global no pertenece a una conversación y una nueva sesión verificada sustituye a la anterior.
 
 La ubicación debe resolverse contra el registro canónico de perfiles antes de ejecutar reglas dependientes del entorno. Un perfil de ubicación inexistente o insuficiente bloquea cualquier operación que dependa de ese perfil.
+
+## 16.1 Recuperación determinista de sesión RDC
+
+Cuando el estado global indique una sesión `ACTIVA` pero la conectividad RDC no pueda verificarse y el usuario reporte actividad local de la terminal, el ciclo debe tratar la situación como **DIVERGENCIA DE OBSERVABILIDAD RDC**.
+
+La resolución es conversacional y determinista:
+
+`RDC-REINSTANTIAR` → cerrar terminal observada → abrir nueva sesión RDC → entregar `RDC-HANDSHAKE` → validar → actualizar `ESTADO-RDC-ACTIVO.md` → propagar → reanudar.
+
+No se invalida la sesión persistente por el mero hecho de que el dispositivo aparezca offline, pero tampoco se permite utilizarla como conectividad verificada. El nuevo estado sustituye al anterior únicamente después de la verificación del handshake.
+
+El procedimiento detallado está en `ANEXO-PROCEDIMIENTO-REINSTANTIACION-RDC.md`.
 
 ## 17. Ejecución flexible y única restricción de materialización
 
