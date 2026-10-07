@@ -226,7 +226,7 @@ Secuencia obligatoria:
 1. leer el SHA actual de `main` y conservarlo como `H1`;
 2. recuperar `SI-METACOGNITIVO.md` exactamente en `H1` y conservar su Git blob SHA;
 3. volver a leer `main` como `H2`;
-4. solo declarar `F:✓) si `H1 = H2`, el archivo proviene exactamente de `H1` y versión + nombre + blob SHA son coherentes con esa instantánea.
+4. solo declarar `F:✓` si `H1 = H2`, el archivo proviene exactamente de `H1` y versión + nombre + blob SHA son coherentes con esa instantánea.
 
 Reglas de fallo:
 - cualquier cambio `H1 ≠ H2`, error de lectura, uso de `main` sin SHA exacto, caché no demostrada, discordancia de blob, versión o nombre produce `F:?` o `F:!` según corresponda;
