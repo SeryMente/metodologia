@@ -2,8 +2,8 @@
 
 ## Estado canónico
 
-- **Versión:** v0.11.6
-- **Nombre de versión:** Precedencia de Contexto RDC y Recuperación Proactiva
+- **Versión:** v0.11.7
+- **Nombre de versión:** Gobernanza Transaccional del Estado RDC
 - **Última actualización:** 2026-10-07
 - **Última actualización canónica:** 2026-10-07
 - **Ámbito:** Todos los proyectos y conversaciones trabajados bajo esta metodología.
@@ -46,6 +46,7 @@
 | 21 | v0.11.5 | Adquisición Atómica de Snapshot Normativo | Se endurece la frescura mediante doble lectura de `main`; cualquier carrera, caché o discordancia invalida la marca positiva. |
 | 21 | v0.11.5 | Recuperación Determinista de Sesión RDC | Se incorpora un protocolo de recuperación de dos fases para divergencias entre la sesión RDC persistente y la observabilidad del canal, con `RDC-REINSTANTIAR`, handshake verificable, sustitución global y propagación entre conversaciones. |
 | 22 | v0.11.6 | Precedencia de Contexto RDC y Recuperación Proactiva | Se hace obligatorio resolver el estado global de RDC en cada ciclo antes de KHORA; toda notificación de ausencia o pérdida de RDC emite `RDC-REINSTANTIAR` y un handshake fresco validado actualiza el estado global antes de continuar. |
+| 23 | v0.11.7 | Gobernanza Transaccional del Estado RDC | Se formaliza la resolución de estado RDC como transacción verificable: lectura, validación, publicación condicionada por versión y lectura de vuelta antes de cualquier reanudación o certificación externa. Las carreras, fallos de persistencia y discordancias dejan el estado pendiente y bloquean solo operaciones dependientes de RDC. |
 La tabla es canónica: las versiones futuras deben añadir una fila sin borrar ni reciclar las anteriores. El nombre describe el avance de la versión y no sustituye el título general del sistema o documento.
 
 ## 1. Convención obligatoria de foliación de ciclos
@@ -168,6 +169,18 @@ Cada ciclo debe leer y resolver `ESTADO-RDC-ACTIVO.md` antes de intentar `HEALTH
 Si el modelo comunica una ausencia, pérdida, desconexión, inactividad o indisponibilidad de RDC, debe entregar en ese mismo ciclo `RDC-REINSTANTIAR` con el comando oficial de inicio del Remote Device. Si el usuario decide ejecutar la recuperación y devuelve un `RDC-HANDSHAKE` fresco, el modelo debe validar y escribir el estado global antes de reanudar.
 
 Un falso positivo de desconexión no impide la recuperación: el handshake fresco tiene precedencia como evidencia actual de conexión una vez validado.
+
+## 16.3 Contrato transaccional de estado global RDC
+
+El estado de RDC se considera resuelto únicamente después de completar la transacción canónica definida en `ANEXO-GOBERNANZA-ESTADO-GLOBAL-RDC.md`:
+
+`LEER → VALIDAR → PUBLICAR CONDICIONADO → READ-BACK → LIBERAR`
+
+La publicación debe usar la versión actual del recurso como condición de escritura. Si el estado cambió durante el ciclo, se aborta la publicación, se vuelve a leer y se reconcilia. No se permiten sobrescrituras ciegas.
+
+Después de cualquier recuperación, el modelo debe verificar por lectura de vuelta que `ESTADO-RDC-ACTIVO.md` contiene la sesión, conectividad y marca temporal que sustentan la decisión del ciclo. Solo entonces puede pasar al health-check/certificación de KHORA o reanudar trabajo dependiente de RDC.
+
+La sesión global sigue siendo independiente de la conversación y de la terminal local. El repositorio es la frontera de propagación.
 
 ## 17. Ejecución flexible y única restricción de materialización
 
