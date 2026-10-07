@@ -1,7 +1,7 @@
 # Registro de Verificación por Ciclo
 
 **Estado:** CANÓNICO  
-**Versión:** v1.6.0 — Salida Minimalista con Health-Check MCP  
+**Versión:** v1.7.0 — Thinking y Formato Obligatorio por Turno  
 **Fecha:** 2026-10-07
 
 ## Formato mínimo
@@ -10,7 +10,7 @@
 
 `SI CARGADO · vX.Y.Z — NOMBRE DE VERSIÓN · COMPLETO · ACTIVO`
 
-`ChatGPT · UBIC: ... · RDC: ... · C: ... · S: ... · K: ✓|?|! · fila4`
+`ChatGPT · UBIC: ... · RDC: ... · C: ... · S: ... · K: ✓|?|! · T: ✓|?|! · fila4`
 
 `NOTAS · 🟢 SIN NOTAS | 🟡 NOTAS PENDIENTES`
 
