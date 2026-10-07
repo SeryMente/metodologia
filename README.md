@@ -16,16 +16,16 @@ El SI canónico se encuentra en [SI-METACOGNITIVO.md](SI-METACOGNITIVO.md).
 
 Versión vigente:
 
-**v1.3.0 — Terminología Canónica y Normalización de Transcripción**
+**v1.5.0 — Bloqueo Operativo Fail-Closed con Resolución Conversacional**
 
 El SI contiene los principios fundamentales **P019–P032**, incluyendo P028 · Trazabilidad Normativa, P029 · Identidad y Vigencia Canónica, P030 · Fidelidad Terminológica Canónica, P031 · Normalización de Transcripción y P032 · Contexto Operativo Verificado.
 
 ## Última actualización de Metodología
 
-**v0.4.0 — Gobernanza Versionada y Observabilidad de Servicios**  
-2026-10-06
+**v0.9.0 — Bloqueo Operativo Fail-Closed y Salida Visible**  
+2026-10-07
 
-Esta versión establece la convención de nombre específico por versión, el historial de evolución, la identificación temporal de la última actualización canónica y la observabilidad transversal de servicios de Cora.
+Esta evolución establece el gate de contexto operativo, el estado transversal de RDC, el bloqueo fail-closed de ejecución y su resolución conversacional abierta. El trabajo bajo la identidad efectiva de la sesión RDC está permitido cuando sea técnicamente válido; la restricción específica es no clonar ni materializar repositorios nuevos dentro del perfil o ruta de MantenimientoRCI.
 
 
 La sesión RDC activa y su registro transversal se mantienen mediante ESTADO-RDC-ACTIVO.md y se verifican por ciclo mediante ping como comprobación primaria de bajo costo.
