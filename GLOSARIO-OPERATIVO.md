@@ -1,7 +1,7 @@
 # Glosario Operativo de la Metodologia
 
 **Estado:** CANONICO  
-**Version:** v1.0.0  
+**Version:** v1.1.0  
 **Ambito:** Todos los proyectos y conversaciones sujetos a la metodologia comun.
 
 ## 1. Funcion
@@ -74,6 +74,24 @@ Cuando exista una entrada canonica, su forma debe utilizarse en salidas, documen
 ### Termino canonico
 **Tipo:** unidad terminologica.  
 **Definicion:** forma ortografica y semantica que debe utilizarse una vez incorporada al glosario.
+
+### RDC-REQUERIDA
+**Tipo:** estado de requisito del ciclo.
+**Definicion:** indica si la conversacion o ciclo requiere una sesion RDC activa para ejecutar la tarea.
+**Valores:** SI, NO o PENDIENTE DE RESOLUCION.
+**Regla:** una deteccion indeterminada no puede convertirse en SI o NO por inferencia; debe resolverse explicitamente.
+
+### CONTEXTO-VERIFICACION
+**Tipo:** estado de gate.
+**Definicion:** resultado de la comprobacion del contexto operativo antes de ejecutar.
+**Valores canonicos:** VERIFICADO-ACTIVO, VERIFICADO-INACTIVO, NO-REQUERIDO, BLOQUEADO.
+**Regla:** estados de deteccion como NO-VERIFICADO, INDETERMINADO o FUENTE-NO-DISPONIBLE no son estados de paso.
+
+### Estado RDC activo
+**Tipo:** registro operativo global.
+**Definicion:** estado compartido que identifica la sesion RDC globalmente vigente para las conversaciones sujetas a la metodologia.
+**Fuente:** ESTADO-RDC-ACTIVO.md.
+**Regla:** el registro se consume y verifica por ciclo; una nueva sesion verificada sustituye a la anterior.
 
 ### Procedencia
 **Tipo:** trazabilidad.  
