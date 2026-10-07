@@ -134,6 +134,18 @@ Esta oferta es obligatoria aunque la tarea no requiera RDC y aunque el diagnóst
 
 Cuando RDC sea requerida para el ciclo, la falta de conectividad sí bloquea la ejecución sustantiva hasta que el usuario entregue un `RDC-HANDSHAKE` fresco y verificable.
 
+## 4.4.3 Publicación transaccional del estado global
+
+Toda recuperación o refresco de sesión RDC que modifique `ESTADO-RDC-ACTIVO.md` debe completar la transacción:
+
+`LEER ESTADO → VALIDAR HANDSHAKE → ESCRIBIR CONDICIONADO POR SHA → LEER DE VUELTA → CONFIRMAR`
+
+La escritura se rechaza si el SHA de la versión leída ya no es el actual. En ese caso se vuelve a leer, se reconcilia y se reintenta; no se usa `force` para ocultar una carrera.
+
+El modelo no puede presentar `RDC-RECUPERACION = RESUELTA`, `RDC-CONECTIVIDAD = VERIFICADO-ACTIVO` ni continuar una operación dependiente de RDC hasta que el read-back confirme el estado publicado.
+
+Si la publicación o el read-back no pueden completarse, el estado operativo queda pendiente y las operaciones RDC-dependientes quedan bloqueadas; la sesión persistente no se declara finalizada.
+
 ## 5. Fallo de deteccion y decision del usuario
 
 Cuando no sea posible determinar si existe una sesion RDC activa, el sistema formula una sola pregunta de control:
