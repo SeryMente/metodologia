@@ -1,13 +1,14 @@
 # Registro de Verificación por Ciclo
 
 **Estado:** CANÓNICO  
-**Versión:** v1.7.2 — HUD Compacto y Verificación Adaptativa  
+**Versión:** v1.7.3 — HUD Compacto con Identidad Metodológica Canónica  
 **Fecha:** 2026-10-07
 
 ## Formato mínimo
 
 > **PROYECTO / CONV-XX / CXXX**  
-> `SI CARGADO` · **vX.Y.Z — NOMBRE DE VERSIÓN** · COMPLETO · ACTIVO  
+> `SI CARGADO` · **vX.Y.Z — NOMBRE DE VERSIÓN** · COMPLETO · ACTIVO · ÚLTIMO CAMBIO: hace N minutos|horas|días | YYYY-MM-DD  
+> `METODOLOGÍA CARGADA` · **vX.Y.Z — NOMBRE DE VERSIÓN** · COMPLETA · ACTIVA · ÚLTIMO CAMBIO: hace N minutos|horas|días | YYYY-MM-DD  
 > `ChatGPT` · **UBIC:** … · **RDC:** … · **C:** … · **S:** … · **F:** ✓|?|! · **K:** ✓|OFF|?|! · **T:** ✓|?|! · **RDC-CNX:** … · **USR:** `fila4`  
 > **RESULTADO:** …  
 > **ESTADO:** **COMPLETADO** | **BLOQUEADO** | **PENDIENTE**
@@ -24,6 +25,12 @@ Cada ciclo debe identificar la instantánea normativa que lo gobierna:
 
 La referencia relativa se calcula a partir de `Última actualización canónica` del SI vigente. Para auditoría puede acompañarse del instante ISO-8601 exacto.
 
+La Metodología se identifica de forma independiente y obligatoria:
+
+`METODOLOGÍA: vX.Y.Z — Nombre de versión · Último cambio: hace N minutos|horas|días | YYYY-MM-DD`
+
+Su referencia relativa se calcula a partir del último commit que modificó `METODOLOGIA.md` en `main`, dentro del snapshot exacto del ciclo.
+
 ## 0. Regla de obligatoriedad
 
 Este formato es obligatorio en **cada turno/ciclo sujeto a la metodología, sin excepción**. Aplica a respuestas sustantivas, respuestas de bloqueo y respuestas usadas para resolver un bloqueo.
@@ -32,7 +39,8 @@ El orden canónico de salida es fijo:
 
 1. `PROYECTO / CONV-XX / CXXX`
 2. `SI CARGADO ...`
-3. `ChatGPT ...`
+3. `METODOLOGÍA CARGADA ...`
+4. `ChatGPT ...`
 5. `RESULTADO: ...`
 6. `ESTADO: ...`
 
@@ -40,7 +48,7 @@ No se puede omitir el bloque por considerar que el turno es simple, que no produ
 
 ## 1. HUD compacto
 
-La información metodológica visible se presenta como un bloque compacto de baja intrusión. Se permite enriquecer la presentación mediante **negritas**, `código` y etiquetas cortas sin introducir campos ni decisiones nuevas. El contrato vigente es `v1.7.2`.
+La información metodológica visible se presenta como un bloque compacto de baja intrusión. Se permite enriquecer la presentación mediante **negritas**, `código` y etiquetas cortas sin introducir campos ni decisiones nuevas. El contrato vigente es `v1.7.3`.
 
 ## Principio de uso
 
