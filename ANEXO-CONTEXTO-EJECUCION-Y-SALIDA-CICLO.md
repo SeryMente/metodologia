@@ -245,15 +245,25 @@ La ubicación y los identificadores de entorno deben utilizar las formas del glo
 
 **Regla transversal:** `K` queda reservado exclusivamente para el acceso/verificación del MCP canónico de KHORA en todos los documentos metodológicos. La conectividad de RDC se expresa como `RDC-CNX` y no puede reutilizar `K`.
 
-Todo ciclo sujeto a la metodología debe ejecutarse en modo Thinking de ChatGPT. La secuencia normativa se realiza durante el razonamiento del turno:
+Thinking es la ventana operativa preferente para resolver la cascada normativa cuando la plataforma la expone. No es una precondición para producir una respuesta y su ausencia, `INSTANT`, `UNKNOWN` o `UNAVAILABLE` no bloquean por sí mismos.
 
-`THINKING → HEALTH → OPEN → CASCADA NORMATIVA → VERIFY → RELEASE → SALIDA`
+La secuencia preferente es:
 
-El campo `T` tiene semántica fail-closed:
-- `T: ✓` = atestado `reasoning_mode=THINKING` aceptado y formato `v1.7.1` establecido.
-- `T: ?` = condición no verificable; bloqueo.
-- `T: !` = modo no permitido; bloqueo.
+`THINKING (si disponible) → HEALTH → OPEN → CASCADA NORMATIVA → VERIFY → RELEASE (si disponible) → SALIDA`
 
-El servidor MCP no recibe actualmente de ChatGPT una metadata documentada que exponga directamente el selector del modo Thinking. Por ello, el protocolo no debe fingir una prueba de interfaz que no existe: exige el atestado `THINKING` y rechaza cualquier ausencia o valor distinto.
+El campo `T` registra únicamente el estado observable del runtime cuando exista:
+- `T: ✓` = Thinking fue observado/atestado y la salida canónica está establecida.
+- `T: ?` = el estado del runtime no pudo determinarse.
+- `T: !` = la integración reportó explícitamente un modo no permitido.
 
-El formato visible `v1.7.1` es obligatorio en todos los ciclos, incluidos ciclos BLOQUEADOS. `E: COMPLETADO` requiere además `VERIFIED_RELEASE`.
+`T: ?` y `T: !` no son causas autónomas de bloqueo. Un bloqueo requiere una condición de contexto operativo materialmente requerida por el ciclo.
+
+El MCP de KHORA conserva el mismo carácter adaptativo:
+- `K: ✓` = acceso autenticado y secuencia normativa/liberación verificadas.
+- `K: OFF` = MCP no accesible o no disponible; la salida continúa sin atribuir verificación externa.
+- `K: ?` = estado no determinable.
+- `K: !` = acceso intentado y fallido o verificación rechazada.
+
+`K: OFF`, `K: ?` y `K: !` tampoco son causas autónomas de bloqueo. Este anexo no puede reintroducir una precondición dura que contradiga `SI-METACOGNITIVO.md` v1.6.2 o `ANEXO-GATE-THINKING-CHATGPT.md`.
+
+`E: COMPLETADO` se determina por la producción efectiva del resultado solicitado; la verificación externa se declara por separado mediante `K`. Cuando el ciclo esté sustantivamente bloqueado por contexto operativo, se conserva la salida de bloqueo definida por el contrato vigente.

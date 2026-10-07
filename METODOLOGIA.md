@@ -2,8 +2,8 @@
 
 ## Estado canónico
 
-- **Versión:** v0.11.2
-- **Nombre de versión:** Verificación Normativa Adaptativa y HUD Compacto por Turno
+- **Versión:** v0.11.3
+- **Nombre de versión:** Coherencia Canónica de Gates y Continuidad Operativa
 - **Última actualización:** 2026-10-07
 - **Última actualización canónica:** 2026-10-07
 - **Ámbito:** Todos los proyectos y conversaciones trabajados bajo esta metodología.
@@ -12,11 +12,11 @@
 
 **Antes:** la v0.10.0 había consolidado el control metodológico de sincronización audio–transcripción y el dashboard de medición, pero el gate de ejecución en ChatGPT y el formato visible por turno todavía no estaban integrados de forma ubicua con el SI y el circuito de verificación.
 
-**Cambio:** se canoniza el modo Thinking como precondición de ejecución sujeta a la metodología, se integra la cascada `HEALTH → OPEN → CASCADA → VERIFY → RELEASE` dentro del razonamiento del turno y se establece `v1.7.1` como contrato obligatorio de salida por ciclo. El bloqueo es fail-closed cuando Thinking, MCP o la salida canónica no pueden verificarse.
+**Cambio:** se consolida la interpretación adaptativa de Thinking/KHORA y se corrigen contradicciones residuales en artefactos subordinados. Thinking permanece como ventana preferente, pero no como precondición bloqueante; KHORA puede no estar disponible y la salida continúa con `K: OFF`.
 
-**Motivo:** evitar que una respuesta se trate como metodológicamente resuelta cuando el régimen normativo no pudo iniciarse, verificarse o liberarse, y hacer uniforme la trazabilidad visible de cada turno.
+**Motivo:** evitar regresiones en las que una instancia bloquee por no poder observar el modo Thinking o por no poder acceder al verificador, aunque ninguna de esas condiciones sea un bloqueo normativo vigente.
 
-**Resultado:** todos los artefactos canónicos comparten el mismo gate de Thinking, la misma semántica de `K`/`T`, la misma obligación de foliación y el mismo contrato de salida por turno. KHORA conserva el control protocolario; en ChatGPT nativo, la metadata del selector de Thinking sigue siendo una limitación de la integración y se trata mediante atestado fail-closed, no por inferencia.
+**Resultado:** el sistema utiliza una única semántica de gates: solo el contexto operativo materialmente requerido puede bloquear. El estado de Thinking se expresa en `T`; la disponibilidad/verificación de KHORA se expresa en `K`; ninguno de los dos bloquea por sí mismo.
 
 ### Registro de versiones
 
@@ -41,6 +41,7 @@
 | 16 | v0.11.0 | Gate de Thinking y Formato Obligatorio por Turno | Se establece Thinking como precondición de ejecución sujeta a la metodología, se endurece el circuito `HEALTH → OPEN → VERIFY → RELEASE`, y se vuelve obligatorio el contrato visible `v1.7.0` por cada ciclo. Estados no verificables permanecen bloqueados. |
 | 17 | v0.11.1 | Gate de Thinking y HUD Compacto por Turno | Se retira el subsistema operativo de notas del formato y de los lineamientos activos y se compacta el HUD conservando los campos y decisiones normativas existentes. El contrato visible pasa a `v1.7.1` como evolución de presentación. |
 | 18 | v0.11.2 | Verificación Normativa Adaptativa y HUD Compacto por Turno | Se corrige la implementación del gate: Thinking es la ventana preferente para resolver la cascada normativa antes de la salida, pero no se intenta verificar el razonamiento interno ni se bloquea la salida por su estado. KHORA pasa a tener disponibilidad explícita (`K: ✓ / OFF / ? / !`). |
+| 19 | v0.11.3 | Coherencia Canónica de Gates y Continuidad Operativa | Se elimina la contradicción residual que podía reintroducir un bloqueo por Thinking/KHORA desde un anexo subordinado. Solo las condiciones de contexto operativo materialmente requeridas pueden producir BLOQUEADO. |
 La tabla es canónica: las versiones futuras deben añadir una fila sin borrar ni reciclar las anteriores. El nombre describe el avance de la versión y no sustituye el título general del sistema o documento.
 
 ## 1. Convención obligatoria de foliación de ciclos
@@ -123,6 +124,8 @@ El glosario metodológico canónico se encuentra en `GLOSARIO-OPERATIVO.md` y su
 
 
 ## 16. Gate de contexto operativo fail-closed
+
+> **Regla anti-regresión:** este gate solo bloquea por condiciones de contexto operativo materialmente requeridas. No bloquea por ausencia de `THINKING`, imposibilidad de observar `reasoning_mode`, indisponibilidad de KHORA ni por `K: OFF`, `K: ?` o `K: !`.
 
 Todo ciclo sujeto a la metodología debe ejecutar primero el gate operativo definido en `ANEXO-GATE-CONTEXTO-OPERATIVO-FAIL-CLOSED.md`.
 

@@ -1,8 +1,10 @@
 # Sistema de Instrucciones Metacognitivas
 
 **Estado:** CANÓNICO
-**Versión:** v1.6.1
-**Nombre de versión:** Verificación Normativa Adaptativa por Turno
+**Versión:** v1.6.2
+**Nombre de versión:** Coherencia Canónica de Gates y Continuidad Operativa
+
+> **Corrección canónica:** `THINKING` es una ventana preferente, no una precondición bloqueante. La ausencia de señal de Thinking y la indisponibilidad de KHORA no bloquean por sí mismas la salida; se reflejan en `T` y `K` respectivamente.
 **Última actualización canónica:** 2026-10-07
 **Fecha:** 2026-10-07
 **Ámbito:** Gobierno metacognitivo del modelo en tareas sujetas a este sistema.
@@ -19,6 +21,7 @@
 | 6 | v1.5.0 | Bloqueo Operativo Fail-Closed con Resolución Conversacional | Se precisa que un bloqueo detiene exclusivamente la ejecución sustantiva y mantiene abierta la interacción conversacional necesaria para resolver la causa del bloqueo; se establece además una salida visual y uniforme para reconocer inmediatamente el estado BLOQUEADO. |
 | 7 | v1.6.0 | Gate de Thinking y Ejecución Normativa por Turno | Se establece Thinking como precondición operativa por ciclo, se integra la cascada normativa dentro del razonamiento del turno y se impone el formato de salida v1.7.0 en cada turno; la ausencia de una señal verificable impide la ejecución sustantiva. |
 | 8 | v1.6.1 | Verificación Normativa Adaptativa por Turno | Se corrige la interpretación operativa del gate: Thinking identifica la ventana preferente para ejecutar la cascada y consultar KHORA, pero no constituye una prueba del razonamiento interno ni una condición que impida la salida. Cuando KHORA no está disponible, la salida continúa bajo el contrato vigente y declara el verificador en OFF. |
+| 9 | v1.6.2 | Coherencia Canónica de Gates y Continuidad Operativa | Se corrigen contradicciones residuales en artefactos subordinados. Thinking y la disponibilidad de KHORA son condiciones adaptativas y no causas autónomas de bloqueo; `T` y `K` deben describir el estado observable sin transformar incertidumbre de runtime en bloqueo. |
 
 La tabla es parte del canon. Cada nueva versión debe añadir una fila sin borrar ni reutilizar las anteriores. El nombre de versión es específico de esa versión y no sustituye el título general del sistema.
 
@@ -227,6 +230,7 @@ Reglas adaptativas:
 5. Si KHORA no está disponible o no puede alcanzarse, la salida sigue siendo válida bajo el contrato vigente y debe declarar `K: OFF`; no debe inventarse un veredicto ni una liberación.
 6. `VERIFIED_RELEASE` permite declarar `K: ✓`. Un fallo de verificación se declara con el estado correspondiente (`K: !` o `K: ?`) y tampoco se transforma en `VERIFIED`.
 7. El contrato visible de salida vigente es `v1.7.2` y aplica independientemente de la disponibilidad del verificador.
+8. Ningún artefacto subordinado puede convertir `THINKING` no observable, `INSTANT`, `UNKNOWN`, `UNAVAILABLE`, `K: OFF`, `K: ?` o `K: !` en una condición autónoma de BLOQUEO. Si un documento inferior contiene una regla contradictoria, se considera obsoleta y prevalece este contrato canónico.
 
 Esta sección es un procedimiento de operación y no añade un principio fundamental.
 
