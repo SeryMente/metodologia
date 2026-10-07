@@ -220,7 +220,7 @@ Solicitud mínima:
       },
       "verifier": {
         "protocol": "NORM-CHECK",
-        "protocol_version": "v0.3.0",
+        "protocol_version": "v0.4.0",
         "verifier_version": "norm-check/0.3.0"
       }
     }
