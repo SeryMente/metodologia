@@ -10,7 +10,7 @@
 
 `SI CARGADO · vX.Y.Z — NOMBRE DE VERSIÓN · COMPLETO · ACTIVO`
 
-`ChatGPT · UBIC: ... · RDC: ... · C: ... · S: ... · K: ... · USR: ...`
+`ChatGPT · UBIC: ... · RDC: ... · C: ... · S: ... · K: ✓|?|! · fila4`
 
 `NOTAS · 🟢 SIN NOTAS | 🟡 NOTAS PENDIENTES`
 
@@ -49,6 +49,16 @@ El bloque visual es obligatorio y debe preceder cualquier explicación. Su funci
 Después del bloque, solo se debe informar lo necesario para levantar la condición de bloqueo, incluyendo la información mínima que debe proporcionar el usuario o la verificación que deba realizarse. Mientras el estado sea BLOQUEADO no se declara éxito ni se ejecutan operaciones sustantivas dependientes del contexto.
 
 ## Contexto operativo obligatorio\n\nCada registro de ciclo debe conservar el bloque de contexto definido por el anexo canónico:\n\n`PLATAFORMA | UBICACION | RDC-REQUERIDA | RDC-SESION | RDC-CUENTA | RDC-USO-MENSUAL | WIN-OPERATIVO | CONTEXTO-VERIFICACION`\n\nCuando exista identidad administrativa relevante, se añade `WIN-ADMIN`. Cuando exista información de terminales RDC, se añade `RDC-TERMINAL`. `CONTEXTO-VERIFICACION` registra el resultado del gate: `VERIFICADO-ACTIVO`, `VERIFICADO-INACTIVO`, `NO-REQUERIDO` o `BLOQUEADO`.\n\nLa ausencia de un dato se registra como `NO VERIFICADO`, `NO DISPONIBLE` o `PENDIENTE`. No se debe inferir información faltante.\n\nLa especificación completa se encuentra en `ANEXO-CONTEXTO-EJECUCION-Y-SALIDA-CICLO.md`.\n
+
+## Indicador discreto de acceso MCP KHORA
+
+El campo `K` significa acceso al MCP canónico de KHORA y tiene semántica estricta:
+
+- `K: ✓` = acceso autenticado y verificado al recurso MCP canónico con `volcados:read`, `runtime:read` y `norm:turn`.
+- `K: ?` = acceso no verificado en el ciclo.
+- `K: !` = acceso intentado pero fallido, no autorizado o no disponible.
+
+`K: ✓` exige evidencia de una comprobación autenticada contra `/api/mcp`. Conocer la URL, tener GitHub o tener RDC no demuestra acceso al MCP.
 
 ## Sesion RDC activa
 
