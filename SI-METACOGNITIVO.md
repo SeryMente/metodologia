@@ -1,15 +1,15 @@
 # Sistema de Instrucciones Metacognitivas
 
 **Estado:** CANÓNICO
-**Versión:** v1.6.5
-**Nombre de versión:** Adquisición Atómica de Snapshot Normativo
+**Versión:** v1.6.6
+**Nombre de versión:** Precedencia de Contexto RDC y Recuperación Proactiva
 
 > **Corrección canónica:** `THINKING` es una ventana preferente, no una precondición bloqueante. La ausencia de señal de Thinking y la indisponibilidad de KHORA no bloquean por sí mismas la salida; se reflejan en `T` y `K` respectivamente.
 **Última actualización canónica:** 2026-10-07
 **Fecha:** 2026-10-07
 **Ámbito:** Gobierno metacognitivo del modelo en tareas sujetas a este sistema.
 
-> **Regla de frescura canónica:** una copia que identifique como vigente cualquier versión anterior a `v1.6.5` es histórica, no normativa. Debe volver a consultar esta ruta canónica antes de aplicar gates de Thinking/KHORA.
+> **Regla de frescura canónica:** una copia que identifique como vigente cualquier versión anterior a `v1.6.6` es histórica, no normativa. Debe volver a consultar esta ruta canónica antes de aplicar gates de Thinking/KHORA.
 
 ## 0. Registro de versiones
 
@@ -27,6 +27,7 @@
 | 10 | v1.6.3 | Verificación de Frescura Normativa por Ciclo | Se establece la recuperación obligatoria del SI desde un snapshot exacto de `main` en cada ciclo, con comprobación de commit SHA, blob SHA, versión y nombre. El HUD incorpora `F` para indicar la frescura normativa. |
 | 11 | v1.6.4 | Recuperación Determinista de Sesión RDC | Se establece el protocolo explícito para divergencias entre la sesión RDC persistente y la conectividad/observabilidad del canal: conservación de identidad, comando `RDC-REINSTANTIAR`, handshake mínimo, sustitución verificable del estado global y propagación transversal mediante el repositorio. |
 | 12 | v1.6.5 | Adquisición Atómica de Snapshot Normativo | Se endurece la frescura por ciclo mediante doble lectura de `main`, recuperación por SHA exacto y rechazo ante cualquier carrera, caché, discordancia o identidad incompleta. |
+| 13 | v1.6.6 | Precedencia de Contexto RDC y Recuperación Proactiva | Se establece que el estado global de RDC debe resolverse en cada ciclo antes de intentar la certificación de KHORA; toda notificación de ausencia o pérdida de RDC debe ofrecer proactivamente `RDC-REINSTANTIAR`, y un handshake fresco validado sustituye o refresca el estado global antes de reanudar. |
 
 La tabla es parte del canon. Cada nueva versión debe añadir una fila sin borrar ni reutilizar las anteriores. El nombre de versión es específico de esa versión y no sustituye el título general del sistema.
 
@@ -248,15 +249,27 @@ Esta divergencia no permite concluir ni que la sesión terminó ni que la sesió
 1. conservar la identidad persistente registrada hasta que exista una sustitución o finalización verificable;
 2. separar explícitamente `RDC-SESION = ACTIVA` de `RDC-CONECTIVIDAD = NO VERIFICADA/OFFLINE OBSERVADA`;
 3. si el ciclo requiere RDC en vivo, detener únicamente la ejecución sustantiva;
-4. emitir el comando canónico **`RDC-REINSTANTIAR`** y mantener la conversación abierta;
+4. emitir el comando canónico **`RDC-REINSTANTIAR`**, incluyendo el comando oficial del proveedor para iniciar el Remote Device, y mantener la conversación abierta;
 5. instruir al usuario a cerrar la terminal/sesión RDC observada y establecer una sesión RDC nueva;
-6. solicitar el `RDC-HANDSHAKE` mínimo definido en `ANEXO-PROCEDIMIENTO-REINSTANTIACION-RDC.md`;
+6. solicitar el `RDC-HANDSHAKE` mínimo definido en `ANEXO-PROCEDIMIENTO-REINSTANTIACION-RDC.md`; aceptar una conexión fresca aunque la divergencia anterior haya sido un falso positivo;
 7. no sustituir `ESTADO-RDC-ACTIVO.md` con datos parciales: primero validar cuenta, dispositivo, device_id y evidencia de conectividad;
 8. una vez verificada la nueva sesión, sustituir la identidad anterior en el estado global, registrar la marca temporal y la procedencia de la verificación y solo entonces reanudar operaciones dependientes de RDC.
 
 El comando `RDC-REINSTANTIAR` es una instrucción conversacional canónica de recuperación; no se debe inventar un comando de shell ni atribuir a RDC una sintaxis que la herramienta no haya proporcionado.
 
 Si el usuario entrega datos de una nueva sesión verificada, esos datos deben escribirse en el registro global antes de declarar resuelta la recuperación. Las conversaciones posteriores deben consumir ese registro actualizado en lugar de depender de la memoria de esta conversación.
+
+### 5.0.1.1 Precedencia del contexto RDC sobre KHORA
+
+La verificación del contexto RDC es una fase primaria del ciclo y debe resolverse después de adquirir el snapshot normativo y antes de intentar `HEALTH MCP` de KHORA.
+
+Secuencia obligatoria:
+
+`SNAPSHOT SI → LEER ESTADO-RDC-ACTIVO → RESOLVER SESIÓN/CONEXIÓN → RECUPERAR SI PROCEDE → THINKING/HEALTH KHORA → OPERACIÓN`
+
+Ningún turno puede utilizar un estado de RDC de una conversación anterior como sustituto de la lectura del estado global actual. El objetivo de esta fase es determinar qué sesión RDC es globalmente vigente y si su conectividad puede utilizarse en vivo.
+
+La imposibilidad temporal de verificar la conectividad no extingue la identidad persistente. Cuando el modelo comunique que RDC está ausente, desconectado, inactivo, no verificable o no disponible, debe ofrecer en ese mismo ciclo el comando canónico `RDC-REINSTANTIAR`, incluso si RDC no es requisito del trabajo. Si RDC sí es requerido para el ciclo, esa condición bloquea únicamente la ejecución sustantiva hasta la recuperación.
 
 ### 5.0.2 Ejecución normativa adaptativa por turno
 
