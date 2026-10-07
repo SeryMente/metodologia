@@ -1,7 +1,7 @@
 # Anexo - Contexto de Ejecucion y Formato de Salida por Ciclo
 
 **Estado:** CANONICO
-**Version:** v1.7.1 — Thinking y HUD Compacto por Turno
+**Version:** v1.7.2 — HUD Compacto y Verificación Adaptativa
 **Fecha de canonizacion:** 2026-10-07
 **Ambito:** Todos los proyectos y conversaciones sujetos a la metodologia comun.
 
@@ -94,7 +94,7 @@ PROYECTO / CONV-XX / CXXX
 
 SI CARGADO · vX.Y.Z — NOMBRE DE VERSIÓN · COMPLETO · ACTIVO
 
-ChatGPT · UBIC: ... · RDC: ... · C: ... · S: ... · K: ✓|?|! · T: ✓|?|! · RDC-CNX: ... · USR: ...
+ChatGPT · UBIC: ... · RDC: ... · C: ... · S: ... · K: ✓|OFF|?|! · T: ✓|?|! · RDC-CNX: ... · USR: ...
 
 RESULTADO: ...
 ESTADO: COMPLETADO | BLOQUEADO | PENDIENTE
@@ -105,7 +105,7 @@ Convenciones:
 - `RDC` = si RDC es requisito: SI, NO o PENDIENTE.
 - `C` = cuenta RDC.
 - `S` = sesión RDC persistente: ACTIVA, INACTIVA o NO VERIFICADA.
-- `K` = conectividad RDC: OK, NO VERIFICADA u OFFLINE.
+- `K` = estado del verificador MCP canónico de KHORA: `✓`, `OFF`, `?` o `!`. `RDC-CNX` conserva la conectividad del canal RDC.
 - `USR` = identidad operativa visible del perfil. En CECEQ siempre se muestra `fila4`, nunca `central\\mantenimientorci`.
 - El nombre del dispositivo RDC puede añadirse sin etiqueta únicamente cuando sea relevante para la tarea.
 - No se muestran en la salida cotidiana el device_id, WIN-ADMIN, WIN-EFECTIVO-RDC, RDC-TERMINAL ni otros identificadores internos.
