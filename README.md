@@ -29,3 +29,8 @@ Esta versión establece la convención de nombre específico por versión, el hi
 
 
 La sesión RDC activa y su registro transversal se mantienen mediante ESTADO-RDC-ACTIVO.md y se verifican por ciclo mediante ping como comprobación primaria de bajo costo.
+
+
+## Glosario operativo
+
+El repositorio incorpora un glosario metodológico transversal en [GLOSARIO-OPERATIVO.md](GLOSARIO-OPERATIVO.md) y su gobernanza en [ANEXO-GOBERNANZA-TERMINOLOGICA-Y-NORMALIZACION.md](ANEXO-GOBERNANZA-TERMINOLOGICA-Y-NORMALIZACION.md). Su objetivo es evitar deriva de nomenclatura entre dictado, conversaciones, documentos y artefactos.

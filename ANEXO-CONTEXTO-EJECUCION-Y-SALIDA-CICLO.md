@@ -149,3 +149,8 @@ La verificacion de sesion RDC y la verificacion de sesiones de terminal son esta
 El registro global de sesion activa es independiente de la conversacion contenedora. Cada nueva conversacion sujeta a la metodologia consume el estado global mas reciente y lo verifica por el mecanismo minimo definido.
 
 Cuando la verificacion detecte una nueva sesion, esta pasa a ser la sesion activa global y el registro debe actualizarse antes de ejecutar operaciones sustantivas dependientes de RDC.
+
+
+## 13. Referencia terminológica
+
+La ubicación y los identificadores de entorno deben utilizar las formas del glosario canónico. Para la ubicación actual, la forma canónica es `CECEQ`. Las formas reconocibles como errores de transcripción no deben propagarse a la salida.

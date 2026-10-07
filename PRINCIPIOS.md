@@ -38,3 +38,12 @@ La enumeración y la redacción son responsabilidad del sistema metodológico; e
 ## Precedencia
 
 Los principios se interpretan de arriba hacia abajo. Ante una tensión o conflicto, el principio situado más arriba tiene precedencia sobre los principios posteriores.
+
+
+## P007 · Fidelidad Terminológica Canónica
+
+Los términos que dispongan de una entrada canónica en el glosario metodológico deben utilizarse en su forma y significado canónicos en toda salida, documento o instrucción sujeta a esta metodología. Las variantes de transcripción, dictado o legado no sustituyen la forma canónica.
+
+## P008 · Normalización de Transcripción
+
+Las variantes reconocibles como errores de transcripción deben normalizarse al término canónico correspondiente antes de utilizarlo como identificador, nombre propio, ruta conceptual o referencia metodológica, sin alterar el contenido sustantivo pretendido por el usuario. Cuando la correspondencia no sea suficientemente determinada, debe conservarse la incertidumbre y no inventarse una equivalencia.

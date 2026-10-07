@@ -2,10 +2,10 @@
 
 ## Estado canónico
 
-- **Versión:** v0.5.1
-- **Nombre de versión:** Sesión RDC Persistente y Verificable
+- **Versión:** v0.5.2
+- **Nombre de versión:** Glosario Operativo y Normalización de Transcripción
 - **Última actualización:** 2026-10-07
-- **Última actualización canónica:** 2026-10-07T09:26:36-06:00
+- **Última actualización canónica:** 2026-10-07T09:40:00-06:00
 - **Ámbito:** Todos los proyectos y conversaciones trabajados bajo esta metodología.
 
 ### Narrativa de la versión
@@ -28,6 +28,7 @@
 | 4 | v0.4.0 | Gobernanza Versionada y Observabilidad de Servicios | Se normaliza la identidad de versión con nombre y vigencia temporal y se establece observabilidad transversal de las fronteras de servicio de Cora. |
 | 5 | v0.5.0 | Contexto de Ejecución y Trazabilidad Operativa | Se canoniza el contexto de ejecución por ciclo, el perfil inicial de CECEQ, la identificación de la cuenta y consumo disponible de RDC y la separación entre identidad Windows operativa y administrativa. |
 | 6 | v0.5.1 | Sesión RDC Persistente y Verificable | Se establece un registro global de la sesión RDC activa, su propagación entre conversaciones y una verificación mínima por ciclo mediante ping, con escalamiento solo ante fallo o cambio. |
+| 7 | v0.5.2 | Glosario Operativo y Normalización de Transcripción | Se incorpora un glosario metodológico transversal y reglas para normalizar términos dictados o transcritos a su forma canónica, reduciendo deriva de nombres como CECEQ y KHORA. |
 
 La tabla es canónica: las versiones futuras deben añadir una fila sin borrar ni reciclar las anteriores. El nombre describe el avance de la versión y no sustituye el título general del sistema o documento.
 
@@ -103,3 +104,8 @@ La metodología mantiene separadas las normas fundamentales de sus desarrollos, 
 ## 6.1 Sesion RDC persistente y verificable
 
 La metodologia mantiene un registro operativo global de la sesion RDC activa en ESTADO-RDC-ACTIVO.md. El registro se propaga entre conversaciones y se verifica al inicio de cada ciclo mediante el mecanismo minimo disponible, con ping como comprobacion primaria.
+
+
+## 7. Glosario operativo y normalización de transcripción
+
+El glosario metodológico canónico se encuentra en `GLOSARIO-OPERATIVO.md` y su gobernanza en `ANEXO-GOBERNANZA-TERMINOLOGICA-Y-NORMALIZACION.md`. Los términos canonizados tienen prioridad sobre variantes de dictado o transcripción en toda salida sujeta a la metodología.

@@ -133,3 +133,12 @@ La sesion RDC activa es estado operativo transversal y no pertenece a una conver
 Al inicio de cada ciclo, si existe una sesion registrada como activa, se verifica por ping sobre el dispositivo conocido. Solo ante fallo, ausencia o discrepancia se realiza descubrimiento adicional de dispositivos o cuenta.
 
 La identidad RDC, el usuario Windows operativo y la identidad administrativa se registran como campos independientes.
+
+
+## 15. Glosario operativo
+
+Toda salida y todo documento sujeto a la metodología debe respetar el glosario canónico. Las variantes de reconocimiento de voz se tratan como entradas de normalización y no como nuevas nomenclaturas.
+
+La fuente metodológica transversal es `GLOSARIO-OPERATIVO.md`. El glosario no absorbe vocabulario específico de cada proyecto salvo que ese término haya sido canonizado como transversal.
+
+Antes de repetir un nombre propio, acrónimo, identificador de proyecto o producto, debe preferirse la forma registrada en el glosario.
