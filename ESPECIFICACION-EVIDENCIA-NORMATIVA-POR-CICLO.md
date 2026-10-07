@@ -1,7 +1,7 @@
 # Especificación Completa de Evidencia Normativa por Turno
 
 **Estado:** ESPECIFICACIÓN OPERATIVA
-**Versión:** v0.7.0 — Gate Thinking + Formato Obligatorio + Liberación Verificada  
+**Versión:** v0.7.1 — Gate Thinking + HUD Compacto + Liberación Verificada  
 **Fecha:** 2026-10-07  
 **Ámbito:** mecanismo para obtener evidencia externa, reproducible y auditable de que cada turno elegible de ejecución de ChatGPT fue gobernado por la totalidad del Sistema de Instrucciones Metacognitivas (SI) vigente al inicio del turno.  
 **Relación con el SI:** este documento especifica un mecanismo de aplicación y verificación. El SI v1.6.0 canoniza P028 · Trazabilidad Normativa, P029 · Identidad y Vigencia Canónica, P030 · Fidelidad Terminológica Canónica, P031 · Normalización de Transcripción y P032 · Contexto Operativo Verificado; este documento desarrolla su aplicación sin añadir mecanismos al nivel de principio.
@@ -461,7 +461,7 @@ Esquema recomendado:
       "runtime": {
         "platform": "ChatGPT",
         "reasoning_mode": "THINKING",
-        "output_format_version": "v1.7.0"
+        "output_format_version": "v1.7.1"
       }
     }
 
@@ -612,17 +612,17 @@ El registro de salida debe vincular el verdict normativo con CONTEXTO-VERIFICACI
 
 Todo turno sujeto a la metodología debe presentar y hacer verificar el contrato runtime:
 
-`platform=ChatGPT` + `reasoning_mode=THINKING` + `output_format_version=v1.7.0`.
+`platform=ChatGPT` + `reasoning_mode=THINKING` + `output_format_version=v1.7.1`.
 
 El modelo debe resolver la secuencia normativa durante el razonamiento del turno. Un receipt sin ese runtime, con `reasoning_mode=INSTANT`, con estado no verificable o con otra versión de formato es `INVALID` y no puede alcanzar `VERIFIED`.
 
 El atestado de Thinking es obligatorio porque la integración puede no exponer al servidor una metadata independiente del selector visual. La falta de esa señal no se convierte en evidencia por inferencia.
 
-La salida visible del turno es parte del contrato obligatorio. En un runtime controlado, el adaptador debe validar el texto efectivo contra `v1.7.0` antes de permitir `RELEASE`. En MCP nativo, el receipt demuestra el contrato declarado por la integración, no constituye por sí solo una prueba independiente del texto final publicado.
+La salida visible del turno es parte del contrato obligatorio. En un runtime controlado, el adaptador debe validar el texto efectivo contra `v1.7.1` antes de permitir `RELEASE`. En MCP nativo, el receipt demuestra el contrato declarado por la integración, no constituye por sí solo una prueba independiente del texto final publicado.
 
 Todo turno sujeto a la metodología debe presentar el contrato runtime:
 
-`platform=ChatGPT` + `reasoning_mode=THINKING` + `output_format_version=v1.7.0`.
+`platform=ChatGPT` + `reasoning_mode=THINKING` + `output_format_version=v1.7.1`.
 
 El modelo debe resolver la secuencia normativa durante el razonamiento del turno. Un receipt sin ese runtime, con `reasoning_mode=INSTANT` o con otra versión de formato es `INVALID` y no puede alcanzar `VERIFIED`.
 
@@ -751,7 +751,7 @@ El cargador del SI debe adoptar una política operacional equivalente a:
       ↓
     RELEASE
       ↓
-    emitir resultado con v1.7.0
+    emitir resultado con v1.7.1
     
     Si cualquier gate falla → BLOQUEADO / PENDIENTE → no declarar cierre normativo
 
