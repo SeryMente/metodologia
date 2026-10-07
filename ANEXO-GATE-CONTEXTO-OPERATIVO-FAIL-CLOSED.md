@@ -103,7 +103,6 @@ El estado BLOQUEADO es obligatorio cuando:
 - RDC es requerido pero no hay sesion verificada;
 - la ubicacion no puede determinarse y la tarea depende de su perfil;
 - el perfil de ubicacion no existe o es insuficiente;
-- la identidad Windows operativa esperada no coincide con la identidad real y la operación requiere esa identidad efectiva, pero no puede resolverse desde la sesión RDC vigente sin abrir o alterar otra sesión;
 - existe una discrepancia material entre cuenta RDC, dispositivo, ubicacion o identidad de ejecucion.
 
 Bloqueado significa: no ejecutar, no declarar exito, no sustituir datos por inferencia.
