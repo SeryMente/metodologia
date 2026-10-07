@@ -10,13 +10,13 @@
 
 ### Narrativa de la versión
 
-**Antes:** el ciclo ya registraba ubicación, cuenta RDC, consumo disponible y separación entre usuario Windows operativo y administrativo, pero la sesión RDC activa no se trataba todavía como estado global persistente entre conversaciones.
+**Antes:** el gate de contexto ya exigía detectar RDC, resolver el perfil de ubicación y verificar la identidad Windows operativa, pero la resolución de la diferencia entre la identidad administrativa y la operativa se describía con un mecanismo de puente técnico más complejo.
 
-**Cambio:** se establece un registro global de sesión RDC activa, se define su propagación entre conversaciones y se fija ping como verificación primaria de bajo costo por ciclo, con escalamiento solo cuando exista fallo o cambio.
+**Cambio:** se establece como camino canónico el canal operativo conocido y ya probado para `fila4`, sin instalar un puente Windows permanente.
 
-**Motivo:** mantener trazabilidad de la sesión que realmente soporta el trabajo sin multiplicar llamadas de descubrimiento y autenticación en cada ciclo.
+**Motivo:** resolver la discrepancia por el camino más corto disponible, conservar la separación operativo-administrativa y evitar credenciales, cierre de sesión y componentes residentes innecesarios.
 
-**Resultado:** la metodología puede identificar y seguir una sesión RDC activa de forma transversal y verificable y, cuando el canal de ejecución se encuentre elevado bajo mantenimientorci, resolver la identidad operativa fila4 mediante el canal operativo conocido ya disponible, sin requerir un puente permanente.
+**Resultado:** cuando el canal actual está elevado bajo mantenimientorci, el modelo debe detectar la discrepancia, reutilizar o activar el canal operativo conocido para fila4, verificar la identidad efectiva y solo entonces continuar con el trabajo ordinario.
 
 ### Registro de versiones
 
@@ -31,6 +31,7 @@
 | 7 | v0.5.2 | Glosario Operativo y Normalización de Transcripción | Se incorpora un glosario metodológico transversal y reglas para normalizar términos dictados o transcritos a su forma canónica, reduciendo deriva de nombres como CECEQ y KHORA. |
 | 8 | v0.6.0 | Gate de Contexto Operativo Fail-Closed | Se convierte la verificación del contexto operativo en una precondición de cada ciclo: detección automática de RDC, resolución del perfil de ubicación y bloqueo ante indeterminación material, con intervención del usuario solo para decidir si RDC es requisito cuando la detección automática falla. |
 
+| 9 | v0.7.0 | Resolución Operativa por Canal Conocido | Se sustituye la dependencia de un puente Windows permanente por el uso del canal operativo conocido y ya probado para `fila4`, con verificación explícita de identidad antes del trabajo y bloqueo si ese camino no puede establecerse o verificarse. |
 La tabla es canónica: las versiones futuras deben añadir una fila sin borrar ni reciclar las anteriores. El nombre describe el avance de la versión y no sustituye el título general del sistema o documento.
 
 ## 1. Convención obligatoria de foliación de ciclos
