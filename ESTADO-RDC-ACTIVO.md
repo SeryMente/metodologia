@@ -13,8 +13,8 @@
 | RDC-CUENTA | blacksheepsup@gmail.com |
 | RDC-DISPOSITIVO | PC10RCIF4EI4 |
 | RDC-DEVICE-ID | 7fabbc1d-7c0d-4400-bd31-88b3b4229286 |
-| RDC-VERIFICACION | PING OK |
-| Ultima verificacion | 2026-10-07T16:29:37.252Z |
+| RDC-VERIFICACION | PING OK · 2026-10-07T17:01:36.776Z |
+| Ultima verificacion | 2026-10-07T17:01:36.776Z |
 | RDC-MENSUAL | 8% usado / 92% restante |
 | WIN-OPERATIVO | fila4 |
 | WIN-ADMIN | central\\mantenimientorci |
