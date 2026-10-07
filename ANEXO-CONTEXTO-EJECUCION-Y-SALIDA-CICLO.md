@@ -72,13 +72,13 @@ No se infieren plan, limite bruto, fecha de restablecimiento ni otros datos no p
 
 RDC-USO-MENSUAL es obligatorio en la salida de cada ciclo, pero no obliga a consumir una llamada RDC solo para producirlo. Se reutiliza el ultimo dato verificado disponible y se conserva su marca temporal.
 
-## 6. Separacion operativo-administrativa
+## 6. Flexibilidad de identidad y restricción de repositorios
 
 1. Las operaciones de trabajo sobre archivos, instalaciones, configuraciones y demas estado operativo se ejecutan bajo el usuario Windows operativo del perfil vigente.
-2. La identidad administrativa/elevada es la identidad efectiva del canal RDC vigente y no se altera para resolver la diferencia.
-3. Si la identidad efectiva difiere de `WIN-OPERATIVO`, el modelo hace visible la discrepancia y selecciona solo procedimientos compatibles con la sesión RDC actual.
-4. No se abren sesiones RDC paralelas bajo fila4 ni se convierte la sesión RDC existente en una sesión fila4.
-5. Si una operación exige necesariamente ejecución efectiva bajo fila4 y no es posible realizarla desde la sesión RDC vigente, la operación se detiene; no se sustituye ni se duplica la sesión.
+2. La identidad efectiva del canal RDC puede utilizarse para cualquier operación técnicamente válida.
+3. La diferencia con WIN-OPERATIVO se registra como contexto, pero no constituye por sí misma una condición de bloqueo.
+4. No se abren sesiones RDC paralelas para resolver la diferencia.
+5. La única restricción específica es no clonar ni materializar repositorios nuevos dentro del perfil o ruta de MantenimientoRCI.
 
 ## 7. Formato obligatorio de salida por ciclo
 
@@ -203,7 +203,7 @@ El ciclo se marca BLOQUEADO cuando ocurra cualquiera de estas condiciones:
 
 Mientras el ciclo esté BLOQUEADO, no se ejecutan operaciones dependientes del contexto y no se declara cierre exitoso.
 
-## 12.5 Resolución rápida de identidad para CECEQ
+## 12.5 Flexibilidad de ejecución para CECEQ
 
 No se requiere puente ni sesión adicional. La sesión RDC vigente se conserva bajo `central\\mantenimientorci` para todos los efectos de uso de RDC.
 
