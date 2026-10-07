@@ -1,8 +1,8 @@
 # Especificación Completa de Evidencia Normativa por Turno
 
 **Estado:** ESPECIFICACIÓN OPERATIVA
-**Versión:** v0.4.0 — Identidad Versionada + MCP Multiuso + Registro Verificable por Ciclo  
-**Fecha:** 2026-10-06  
+**Versión:** v0.5.0 — Gate de Contexto Operativo Fail-Closed + Registro Verificable por Ciclo  
+**Fecha:** 2026-10-07  
 **Ámbito:** mecanismo para obtener evidencia externa, reproducible y auditable de que cada turno elegible de ejecución de ChatGPT fue gobernado por la totalidad del Sistema de Instrucciones Metacognitivas (SI) vigente al inicio del turno.  
 **Relación con el SI:** este documento especifica un mecanismo de aplicación y verificación. El SI v1.3.0 canoniza P028 · Trazabilidad Normativa, P029 · Identidad y Vigencia Canónica, P030 · Fidelidad Terminológica Canónica y P031 · Normalización de Transcripción; este documento desarrolla su aplicación sin añadir mecanismos al nivel de principio.
 
@@ -585,6 +585,24 @@ Nunca debe traducirse automáticamente a VERIFIED.
 
 ---
 
+## 19.1 Gate de contexto operativo
+
+El ciclo normativo debe satisfacer tambien el gate definido en ANEXO-GATE-CONTEXTO-OPERATIVO-FAIL-CLOSED.md antes de ser considerado APTO.
+
+Precondicion:
+
+    CONTEXTO_GLOBAL_LEIDO
+      AND RDC_ESTADO_DETERMINADO
+      AND PERFIL_UBICACION_RESUELTO
+      AND IDENTIDAD_OPERATIVA_VERIFICADA
+
+Cuando RDC sea requerido y cualquiera de esas condiciones no pueda demostrarse, el ciclo no puede avanzar a ejecucion sustantiva ni a CLOSED.
+
+Una deteccion de herramienta fallida es TRANSPORT/DETECTION FAILURE, no evidencia de RDC inactivo.
+
+Si el sistema no puede determinar ACTIVA o INACTIVA, debe preguntar al usuario si RDC es requisito del ciclo. La respuesta NO produce NO-REQUERIDO; la respuesta SI mantiene el ciclo bloqueado hasta establecer y verificar la sesion.
+
+El registro de salida debe vincular el verdict normativo con CONTEXTO-VERIFICACION para permitir reconstruir qué contexto operativo estaba vigente al inicio del ciclo.
 ## 19. Gate de cierre
 
 El cierre debe ser una transición controlada:
