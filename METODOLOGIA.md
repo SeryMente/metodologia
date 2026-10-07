@@ -2,21 +2,21 @@
 
 ## Estado canónico
 
-- **Versión:** v0.9.2
-- **Nombre de versión:** Salida Visible Mínima, Propagación Global y Acceso MCP Verificable
+- **Versión:** v0.9.3
+- **Nombre de versión:** Propagación Global Obligatoria y Acceso MCP Verificable
 - **Última actualización:** 2026-10-07
 - **Última actualización canónica:** 2026-10-07
 - **Ámbito:** Todos los proyectos y conversaciones trabajados bajo esta metodología.
 
 ### Narrativa de la versión
 
-**Antes:** el gate fail-closed detenía el ciclo ante un contexto indeterminado o no permitido, pero no explicitaba con suficiente fuerza que el bloqueo debía afectar a la ejecución sustantiva sin cerrar la interacción necesaria para resolverlo.
+**Antes:** la v0.9.2 ya había reducido la salida visible y persistido la identidad RDC entre conversaciones, pero todavía quedaba expuesta una vía de deriva: una conversación nueva podía volver a preguntar por una sesión ya registrada si no consumía correctamente el bootstrap, y el indicador MCP no tenía una semántica positiva estricta.
 
-**Cambio:** se formaliza el bloqueo como estado de ejecución, no de conversación, y se establece una salida visual uniforme para que un bloqueo por contexto operativo sea reconocible de inmediato.
+**Cambio:** se endurece la herencia transversal de la sesión RDC, se prohíbe reidentificar una sesión persistida, se separa explícitamente el requisito RDC de la existencia de la sesión y se formaliza K como prueba discreta de acceso autenticado y completo al MCP canónico de KHORA.
 
-**Motivo:** mantener el rigor del fail-closed sin crear un callejón sin salida para el usuario: el modelo debe poder pedir y recibir la información necesaria para levantar el bloqueo.
+**Motivo:** eliminar ambigüedad de continuidad y evitar afirmaciones de acceso o disponibilidad que no estén sustentadas por una comprobación efectiva.
 
-**Resultado:** un ciclo bloqueado no ejecuta trabajo sustantivo ni declara éxito, pero permanece conversacionalmente abierto y presenta una notificación de bloqueo inequívoca, con causa y acción requerida. La identidad de una sesión RDC persiste entre conversaciones y se mantiene separada de su conectividad observable. La salida cotidiana se reduce a los estados esenciales; los detalles de auditoría permanecen fuera de la salida visible salvo necesidad.
+**Resultado:** el contexto global de RDC queda definido como estado heredable; una conversación nueva debe consumirlo antes de preguntar y una desconexión solo afecta la conectividad en vivo. La salida puede mostrar K: ✓ únicamente cuando exista evidencia de acceso MCP autenticado con los scopes completos.
 
 ### Registro de versiones
 
@@ -36,6 +36,7 @@
 | 11 | v0.9.0 | Bloqueo Operativo Fail-Closed y Salida Visible | Se define que el estado BLOQUEADO detiene la ejecución sustantiva sin impedir la interacción con el usuario y se estandariza una notificación visual de bloqueo. |
 | 12 | v0.9.1 | Persistencia Global de Sesión RDC y Separación de Conectividad | Se fija que la identidad de la sesión RDC persiste entre conversaciones hasta cierre o sustitución explícitos, mientras la conectividad se verifica por separado solo cuando el ciclo requiera uso en vivo. |
 | 13 | v0.9.2 | Salida Visible Mínima y Contexto Condensado | Se simplifica la salida visible del ciclo al conjunto mínimo de identidad, versión, contexto RDC resumido, notas y resultado/estado; los metadatos operativos y la narrativa de proceso quedan fuera de la salida cotidiana. |
+| 14 | v0.9.3 | Propagación Global Obligatoria y Acceso MCP Verificable | Se endurece la herencia automática de la sesión RDC entre conversaciones, se prohíbe su reidentificación cuando ya existe un estado persistente y se incorpora un indicador discreto K que solo es positivo tras comprobar acceso autenticado y completo al MCP canónico de KHORA. |
 La tabla es canónica: las versiones futuras deben añadir una fila sin borrar ni reciclar las anteriores. El nombre describe el avance de la versión y no sustituye el título general del sistema o documento.
 
 ## 1. Convención obligatoria de foliación de ciclos
