@@ -18,6 +18,7 @@
 | RDC-MENSUAL | 8% usado / 92% restante |
 | WIN-OPERATIVO | fila4 |
 | WIN-ADMIN | central\\mantenimientorci |
+| WIN-EFECTIVO-RDC | central\\mantenimientorci |
 | RDC-REQUERIDA | PENDIENTE POR CICLO; NO SE PRESUPONE ACTIVA | 
 | CONTEXTO-VERIFICACION | VERIFICADO-ACTIVO | 
 | PERFIL-UBICACION | CECEQ · COMPLETO | 
@@ -27,7 +28,7 @@
 
 Este registro representa la sesion RDC globalmente activa para las conversaciones sujetas a la metodologia. Debe leerse al inicio de cada ciclo. La lectura no sustituye la verificación: si RDC figura como ACTIVA, debe confirmarse por ping; si la detección no puede establecer ACTIVA o INACTIVA, el gate fail-closed se activa y no se continúa hasta resolver con el usuario si RDC es requisito.
 
-Una nueva sesion activa debe sustituir este registro y actualizar su marca temporal. La resolución de identidad mediante canal conocido es un procedimiento operativo y no un componente residente.
+Una nueva sesion activa debe sustituir este registro y actualizar su marca temporal. La identidad efectiva del canal RDC puede usarse para el trabajo tecnicamente valido; fila4 permanece como identidad operativa de referencia y no implica una segunda sesion RDC.
 
 ## Incidencia conocida
 
