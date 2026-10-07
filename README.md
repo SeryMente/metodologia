@@ -30,18 +30,22 @@ La metodología se define gradualmente. Las decisiones confirmadas se incorporan
 
 El SI canónico se encuentra en [SI-METACOGNITIVO.md](SI-METACOGNITIVO.md).
 
-Versión vigente:
+Versión vigente del SI:
 
 **v1.6.7 — Gobernanza Transaccional del Estado RDC**
+
+Versión vigente de la Metodología:
+
+**v0.11.8 — Versionado Canónico del Método General**
 
 El SI contiene los principios fundamentales **P019–P032**, incluyendo P028 · Trazabilidad Normativa, P029 · Identidad y Vigencia Canónica, P030 · Fidelidad Terminológica Canónica, P031 · Normalización de Transcripción y P032 · Contexto Operativo Verificado.
 
 ## Última actualización de Metodología
 
-**v0.11.7 — Gobernanza Transaccional del Estado RDC**  
+**v0.11.8 — Versionado Canónico del Método General**  
 2026-10-07
 
-Esta evolución establece el gate de contexto operativo, el estado transversal de RDC, el bloqueo fail-closed de ejecución y su resolución conversacional abierta. El trabajo bajo la identidad efectiva de la sesión RDC está permitido cuando sea técnicamente válido; la restricción específica es no clonar ni materializar repositorios nuevos dentro del perfil o ruta de MantenimientoRCI.
+Esta evolución hace canónica la identidad/versionado independiente de la Metodología y obliga a exponer su versión, nombre y vigencia temporal en cada ciclo, separándolos de la identidad y frescura del SI. El trabajo bajo la identidad efectiva de la sesión RDC está permitido cuando sea técnicamente válido; la restricción específica es no clonar ni materializar repositorios nuevos dentro del perfil o ruta de MantenimientoRCI.
 
 
 La identidad persistente de la sesión RDC y su registro transversal se mantienen mediante ESTADO-RDC-ACTIVO.md. La conectividad se verifica por ciclo mediante ping como comprobación primaria cuando el ciclo requiera uso RDC en vivo. La salida visible de cada ciclo muestra únicamente el contexto y resultado esenciales; `K: ✓` solo acredita verificación/liberación de KHORA, mientras `K: OFF` declara que el verificador no estuvo disponible sin bloquear la salida.
