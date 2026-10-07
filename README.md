@@ -36,7 +36,7 @@ Versión vigente del SI:
 
 Versión vigente de la Metodología:
 
-**v0.11.8 — Versionado Canónico del Método General**
+**v0.11.9 — Uso Mensual de RDC en Salida Canónica**
 
 El SI contiene los principios fundamentales **P019–P032**, incluyendo P028 · Trazabilidad Normativa, P029 · Identidad y Vigencia Canónica, P030 · Fidelidad Terminológica Canónica, P031 · Normalización de Transcripción y P032 · Contexto Operativo Verificado.
 
@@ -87,4 +87,4 @@ La extensión a proyectos futuros no debe retrasar el objetivo operativo de mejo
 
 ## Gate de ejecución en ChatGPT
 
-Todo ciclo sujeto a la metodología intenta resolver la cascada normativa durante Thinking cuando esta ventana está disponible. `INSTANT`, ausencia o estado desconocido no bloquean por sí mismos la salida. Cuando KHORA no está disponible, el contrato visible `v1.7.3` se conserva y el HUD declara `K: OFF`.
+Todo ciclo sujeto a la metodología intenta resolver la cascada normativa durante Thinking cuando esta ventana está disponible. `INSTANT`, ausencia o estado desconocido no bloquean por sí mismos la salida. Cuando KHORA no está disponible, el contrato visible `v1.7.4` se conserva y el HUD declara `K: OFF`.
