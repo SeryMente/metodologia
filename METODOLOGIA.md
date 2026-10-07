@@ -2,8 +2,8 @@
 
 ## Estado canónico
 
-- **Versión:** v0.11.0
-- **Nombre de versión:** Gate de Thinking y Formato Obligatorio por Turno
+- **Versión:** v0.11.1
+- **Nombre de versión:** Gate de Thinking y HUD Compacto por Turno
 - **Última actualización:** 2026-10-07
 - **Última actualización canónica:** 2026-10-07
 - **Ámbito:** Todos los proyectos y conversaciones trabajados bajo esta metodología.
@@ -39,6 +39,7 @@
 | 14 | v0.9.3 | Propagación Global Obligatoria y Acceso MCP Verificable | Se endurece la herencia automática de la sesión RDC entre conversaciones, se prohíbe su reidentificación cuando ya existe un estado persistente y se incorpora un indicador discreto K que solo es positivo tras comprobar acceso autenticado y completo al MCP canónico de KHORA. |
 | 15 | v0.10.0 | Sincronización Audio–Transcripción Medible y Dashboard IGP | Se canoniza el procedimiento de perfeccionamiento de sincronización audio–transcripción con OGP como caso prioritario, se establece una baseline congelada, se incorpora el IGP y se vuelve obligatorio el dashboard explicativo por iteración. La abstracción futura queda subordinada al avance efectivo de OGP. |
 | 16 | v0.11.0 | Gate de Thinking y Formato Obligatorio por Turno | Se establece Thinking como precondición de ejecución sujeta a la metodología, se endurece el circuito `HEALTH → OPEN → VERIFY → RELEASE`, y se vuelve obligatorio el contrato visible `v1.7.0` por cada ciclo. Estados no verificables permanecen bloqueados. |
+| 17 | v0.11.1 | Gate de Thinking y HUD Compacto por Turno | Se retira el subsistema operativo de notas del formato y de los lineamientos activos y se compacta el HUD conservando los campos y decisiones normativas existentes. El contrato visible pasa a `v1.7.1` como evolución de presentación. |
 La tabla es canónica: las versiones futuras deben añadir una fila sin borrar ni reciclar las anteriores. El nombre describe el avance de la versión y no sustituye el título general del sistema o documento.
 
 ## 1. Convención obligatoria de foliación de ciclos
@@ -82,12 +83,6 @@ El nombre es el correspondiente a la versión específica y no el título genera
 El diagrama de árbol forma parte de la metodología y debe aparecer **de manera oportuna**, cuando el estado, estructura o naturaleza del trabajo haga pertinente su presentación. No constituye un elemento obligatorio de todas las respuestas.
 
 ## 4. Combinación de convenciones en la salida
-
-Además de las convenciones de trazabilidad y versión, el formato de salida debe mostrar el estado visual del acumulador global de notas:
-
-`🟢 SIN NOTAS` / `🟡 NOTAS PENDIENTES`
-
-El indicador es parte de la máquina de estados del acumulador y no es un adorno de presentación.
 
 Cuando corresponda, el encabezado metodológico de un ciclo debe permitir identificar conjuntamente:
 
@@ -172,7 +167,7 @@ La interfaz nativa de ChatGPT no expone un mecanismo para que un documento de Gi
 
 ## 18.0 Regla transversal de salida por turno
 
-El contrato de salida definido en `FORMATO-REGISTRO-VERIFICACION-CICLO.md` es obligatorio para **cada turno/ciclo sujeto a la metodología, sin excepción**, incluidos turnos bloqueados, turnos de resolución conversacional y turnos sin uso de RDC.
+El contrato de salida definido en `FORMATO-REGISTRO-VERIFICACION-CICLO.md` es obligatorio para **cada turno/ciclo sujeto a la metodología, sin excepción**, incluidos turnos bloqueados, turnos de resolución conversacional y turnos sin uso de RDC. El contrato vigente de presentación es `v1.7.1`.
 
 La respuesta no puede declararse `COMPLETADO` si no porta el formato `v1.7.0` ni si alguno de sus campos obligatorios está ausente o contradice el estado verificable del ciclo.
 
@@ -181,8 +176,6 @@ La respuesta no puede declararse `COMPLETADO` si no porta el formato `v1.7.0` ni
 La salida cotidiana de cada ciclo no debe convertirse en un inventario del mecanismo. Los campos esenciales se condensan en:
 
 `ChatGPT · UBIC: ... · RDC: ... · C: ... · S: ... · K: ✓|?|! · T: ✓|?|! · fila4`
-
-`N: 🟢 SIN NOTAS | 🟡 NOTAS PENDIENTES`
 
 `R: ...`
 
