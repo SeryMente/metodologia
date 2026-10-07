@@ -1,7 +1,7 @@
 # Registro de Verificación por Ciclo
 
 **Estado:** CANÓNICO  
-**Versión:** v1.5.0 — Salida Visible Minimalista  
+**Versión:** v1.6.0 — Salida Minimalista con Health-Check MCP  
 **Fecha:** 2026-10-07
 
 ## Formato mínimo
@@ -51,6 +51,8 @@ Después del bloque, solo se debe informar lo necesario para levantar la condici
 ## Contexto operativo obligatorio\n\nCada registro de ciclo debe conservar el bloque de contexto definido por el anexo canónico:\n\n`PLATAFORMA | UBICACION | RDC-REQUERIDA | RDC-SESION | RDC-CUENTA | RDC-USO-MENSUAL | WIN-OPERATIVO | CONTEXTO-VERIFICACION`\n\nCuando exista identidad administrativa relevante, se añade `WIN-ADMIN`. Cuando exista información de terminales RDC, se añade `RDC-TERMINAL`. `CONTEXTO-VERIFICACION` registra el resultado del gate: `VERIFICADO-ACTIVO`, `VERIFICADO-INACTIVO`, `NO-REQUERIDO` o `BLOQUEADO`.\n\nLa ausencia de un dato se registra como `NO VERIFICADO`, `NO DISPONIBLE` o `PENDIENTE`. No se debe inferir información faltante.\n\nLa especificación completa se encuentra en `ANEXO-CONTEXTO-EJECUCION-Y-SALIDA-CICLO.md`.\n
 
 ## Indicador discreto de acceso MCP KHORA
+
+Antes de abrir el turno normativo se debe intentar el health-check `khora_mcp_health` sobre `/api/mcp`.
 
 El campo `K` significa acceso al MCP canónico de KHORA y tiene semántica estricta:
 
