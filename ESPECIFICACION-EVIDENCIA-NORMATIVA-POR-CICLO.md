@@ -1,7 +1,7 @@
 # Especificación Completa de Evidencia Normativa por Turno
 
 **Estado:** ESPECIFICACIÓN OPERATIVA
-**Versión:** v0.5.0 — Gate de Contexto Operativo Fail-Closed + Registro Verificable por Ciclo  
+**Versión:** v0.5.1 — Gate de Contexto Operativo Fail-Closed + Ejecución Flexible  
 **Fecha:** 2026-10-07  
 **Ámbito:** mecanismo para obtener evidencia externa, reproducible y auditable de que cada turno elegible de ejecución de ChatGPT fue gobernado por la totalidad del Sistema de Instrucciones Metacognitivas (SI) vigente al inicio del turno.  
 **Relación con el SI:** este documento especifica un mecanismo de aplicación y verificación. El SI v1.4.0 canoniza P028 · Trazabilidad Normativa, P029 · Identidad y Vigencia Canónica, P030 · Fidelidad Terminológica Canónica, P031 · Normalización de Transcripción y P032 · Contexto Operativo Verificado; este documento desarrolla su aplicación sin añadir mecanismos al nivel de principio.
