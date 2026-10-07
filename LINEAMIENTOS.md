@@ -157,7 +157,7 @@ El detalle técnico del gate y de la restricción de materialización se encuent
 
 Cuando la plataforma de ejecución sea ChatGPT, todo ciclo sujeto a la metodología debe ejecutarse únicamente bajo `reasoning_mode=THINKING`. El modelo debe resolver el gate durante su razonamiento antes de ejecutar trabajo sustantivo. `INSTANT`, ausencia o imposibilidad de verificar el estado requerido implica BLOQUEADO.
 
-El gate es fail-closed: no se infiere Thinking por la identidad del modelo ni por la intención del usuario. El acceso a KHORA y el contrato `v1.7.0` se comprueban dentro de la misma cascada normativa.
+El gate es fail-closed: no se infiere Thinking por la identidad del modelo ni por la intención del usuario. El acceso a KHORA y el contrato `v1.7.1` se comprueban dentro de la misma cascada normativa.
 
 ## 18. Formato de salida obligatorio por turno
 
