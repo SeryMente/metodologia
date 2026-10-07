@@ -8,11 +8,17 @@
 
 > **PROYECTO / CONV-XX / CXXX**  
 > `SI CARGADO` · **vX.Y.Z — NOMBRE DE VERSIÓN** · COMPLETO · ACTIVO  
-> `ChatGPT` · **UBIC:** … · **RDC:** … · **C:** … · **S:** … · **K:** ✓|?|! · **T:** ✓|?|! · **RDC-CNX:** … · **USR:** `fila4`  
+> `ChatGPT` · **UBIC:** … · **RDC:** … · **C:** … · **S:** … · **F:** ✓|?|! · **K:** ✓|OFF|?|! · **T:** ✓|?|! · **RDC-CNX:** … · **USR:** `fila4`  
 > **RESULTADO:** …  
 > **ESTADO:** **COMPLETADO** | **BLOQUEADO** | **PENDIENTE**
 
 ## Identificación normativa obligatoria
+
+Cada ciclo debe recuperar y verificar una instantánea normativa fresca desde `SI-METACOGNITIVO.md` en el commit actual de `main` y debe identificarla con versión, nombre y Git blob SHA.
+
+La instantánea normativa de un turno anterior no puede reutilizarse como sustituto de esta comprobación.
+
+Indicador compacto de frescura: `F:✓` = versión declarada verificada como vigente; `F:?` = no pudo comprobarse; `F:!` = versión discordante u obsoleta.
 
 Cada ciclo debe identificar la instantánea normativa que lo gobierna:
 
