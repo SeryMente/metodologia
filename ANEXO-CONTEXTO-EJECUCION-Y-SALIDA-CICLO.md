@@ -1,7 +1,7 @@
 # Anexo - Contexto de Ejecucion y Formato de Salida por Ciclo
 
 **Estado:** CANONICO
-**Version:** v1.7.0 — Thinking y Formato Obligatorio por Turno
+**Version:** v1.7.1 — Thinking y HUD Compacto por Turno
 **Fecha de canonizacion:** 2026-10-07
 **Ambito:** Todos los proyectos y conversaciones sujetos a la metodologia comun.
 
@@ -86,7 +86,7 @@ RDC-USO-MENSUAL es obligatorio en la salida de cada ciclo, pero no obliga a cons
 
 ## 7. Formato obligatorio de salida por ciclo
 
-La salida visible de un ciclo debe ser minima y suficiente. Su funcion es mostrar identidad, estado contextual y resultado; no repetir el detalle del mecanismo interno ni el registro de auditoria.
+La salida visible de un ciclo debe ser minima y suficiente. Su funcion es mostrar identidad, estado contextual y resultado; no repetir el detalle del mecanismo interno ni el registro de auditoria. El HUD utiliza una presentación compacta con **negritas**, `código` y estados discretos.
 
 Formato canónico visible:
 
@@ -95,8 +95,6 @@ PROYECTO / CONV-XX / CXXX
 SI CARGADO · vX.Y.Z — NOMBRE DE VERSIÓN · COMPLETO · ACTIVO
 
 ChatGPT · UBIC: ... · RDC: ... · C: ... · S: ... · K: ✓|?|! · T: ✓|?|! · RDC-CNX: ... · USR: ...
-
-NOTAS · 🟢 SIN NOTAS | 🟡 NOTAS PENDIENTES
 
 RESULTADO: ...
 ESTADO: COMPLETADO | BLOQUEADO | PENDIENTE
