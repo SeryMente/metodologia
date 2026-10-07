@@ -1,7 +1,7 @@
 # Anexo - Contexto de Ejecucion y Formato de Salida por Ciclo
 
 **Estado:** CANONICO
-**Version:** v1.7.2 — HUD Compacto y Verificación Adaptativa
+**Version:** v1.7.4 — HUD Compacto con Identidad Metodológica y Uso RDC
 **Fecha de canonizacion:** 2026-10-07
 **Ambito:** Todos los proyectos y conversaciones sujetos a la metodologia comun.
 
@@ -122,7 +122,9 @@ PROYECTO / CONV-XX / CXXX
 
 SI CARGADO · vX.Y.Z — NOMBRE DE VERSIÓN · COMPLETO · ACTIVO
 
-ChatGPT · UBIC: ... · RDC: ... · C: ... · S: ... · K: ✓|OFF|?|! · T: ✓|?|! · RDC-CNX: ... · USR: ...
+METODOLOGÍA CARGADA · vX.Y.Z — NOMBRE DE VERSIÓN · COMPLETA · ACTIVA
+
+ChatGPT · UBIC: ... · RDC: ... · C: ... · RDC-USO: ...% usado / ...% restante · S: ... · K: ✓|OFF|?|! · T: ✓|?|! · RDC-CNX: ... · USR: ...
 
 RESULTADO: ...
 ESTADO: COMPLETADO | BLOQUEADO | PENDIENTE
@@ -131,7 +133,8 @@ Convenciones:
 - `ChatGPT` se muestra sin etiqueta.
 - `UBIC` = ubicación.
 - `RDC` = si RDC es requisito: SI, NO o PENDIENTE.
-- `C` = cuenta RDC.
+- `C` = cuenta RDC de la sesión activa.
+- `RDC-USO` = porcentaje mensual usado y porcentaje restante de la cuenta de la sesión activa. Se presenta con el último dato verificado disponible y su vigencia temporal; cuando no exista, se muestra `NO VERIFICADO` o `NO DISPONIBLE`.
 - `S` = sesión RDC persistente: ACTIVA, INACTIVA o NO VERIFICADA.
 - `K` = estado del verificador MCP canónico de KHORA: `✓`, `OFF`, `?` o `!`. `RDC-CNX` conserva la conectividad del canal RDC.
 - `USR` = identidad operativa visible del perfil. En CECEQ siempre se muestra `fila4`, nunca `central\\mantenimientorci`.
