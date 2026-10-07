@@ -1,7 +1,7 @@
 # Anexo - Contexto de Ejecucion y Formato de Salida por Ciclo
 
 **Estado:** CANONICO
-**Version:** v1.5.0 — Salida Visible Minimalista
+**Version:** v1.7.0 — Thinking y Formato Obligatorio por Turno
 **Fecha de canonizacion:** 2026-10-07
 **Ambito:** Todos los proyectos y conversaciones sujetos a la metodologia comun.
 
@@ -241,3 +241,19 @@ No se almacenan credenciales, no se usa `runas`, no se cierra sesión y no se in
 ## 13. Referencia terminológica
 
 La ubicación y los identificadores de entorno deben utilizar las formas del glosario canónico. Para la ubicación actual, la forma canónica es `CECEQ`. Las formas reconocibles como errores de transcripción no deben propagarse a la salida.
+
+
+## 14. Gate de Thinking y contrato de salida
+
+Todo ciclo sujeto a la metodología debe ejecutarse en modo Thinking de ChatGPT. La secuencia normativa se realiza durante el razonamiento del turno:
+
+`THINKING → HEALTH → OPEN → CASCADA NORMATIVA → VERIFY → RELEASE → SALIDA`
+
+El campo `T` tiene semántica fail-closed:
+- `T: ✓` = atestado `reasoning_mode=THINKING` aceptado y formato `v1.7.0` establecido.
+- `T: ?` = condición no verificable; bloqueo.
+- `T: !` = modo no permitido; bloqueo.
+
+El servidor MCP no recibe actualmente de ChatGPT una metadata documentada que exponga directamente el selector del modo Thinking. Por ello, el protocolo no debe fingir una prueba de interfaz que no existe: exige el atestado `THINKING` y rechaza cualquier ausencia o valor distinto.
+
+El formato visible `v1.7.0` es obligatorio en todos los ciclos, incluidos ciclos BLOQUEADOS. `E: COMPLETADO` requiere además `VERIFIED_RELEASE`.
