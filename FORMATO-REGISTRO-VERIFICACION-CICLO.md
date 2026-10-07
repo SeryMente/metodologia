@@ -1,7 +1,7 @@
 # Registro de Verificación por Ciclo
 
 **Estado:** CANÓNICO  
-**Versión:** v1.7.3 — HUD Compacto con Identidad Metodológica Canónica  
+**Versión:** v1.7.4 — HUD Compacto con Identidad Metodológica y Uso RDC  
 **Fecha:** 2026-10-07
 
 ## Formato mínimo
@@ -9,7 +9,7 @@
 > **PROYECTO / CONV-XX / CXXX**  
 > `SI CARGADO` · **vX.Y.Z — NOMBRE DE VERSIÓN** · COMPLETO · ACTIVO · ÚLTIMO CAMBIO: hace N minutos|horas|días | YYYY-MM-DD  
 > `METODOLOGÍA CARGADA` · **vX.Y.Z — NOMBRE DE VERSIÓN** · COMPLETA · ACTIVA · ÚLTIMO CAMBIO: hace N minutos|horas|días | YYYY-MM-DD  
-> `ChatGPT` · **UBIC:** … · **RDC:** … · **C:** … · **S:** … · **F:** ✓|?|! · **K:** ✓|OFF|?|! · **T:** ✓|?|! · **RDC-CNX:** … · **USR:** `fila4`  
+> `ChatGPT` · **UBIC:** … · **RDC:** … · **C:** … · **RDC-USO:** … usado / … restante · **S:** … · **F:** ✓|?|! · **K:** ✓|OFF|?|! · **T:** ✓|?|! · **RDC-CNX:** … · **USR:** `fila4`  
 > **RESULTADO:** …  
 > **ESTADO:** **COMPLETADO** | **BLOQUEADO** | **PENDIENTE**
 
@@ -48,7 +48,7 @@ No se puede omitir el bloque por considerar que el turno es simple, que no produ
 
 ## 1. HUD compacto
 
-La información metodológica visible se presenta como un bloque compacto de baja intrusión. Se permite enriquecer la presentación mediante **negritas**, `código` y etiquetas cortas sin introducir campos ni decisiones nuevas. El contrato vigente es `v1.7.3`.
+La información metodológica visible se presenta como un bloque compacto de baja intrusión. Se permite enriquecer la presentación mediante **negritas**, `código` y etiquetas cortas sin introducir campos ni decisiones nuevas. El contrato vigente es `v1.7.4`.
 
 ## Principio de uso
 
