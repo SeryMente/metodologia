@@ -3,7 +3,7 @@
 ## Estado canónico
 
 - **Versión:** v0.9.3
-- **Nombre de versión:** Propagación Global Obligatoria y Acceso MCP Verificable
+- **Nombre de versión:** Gate Normativo Absoluto y Health-Check MCP
 - **Última actualización:** 2026-10-07
 - **Última actualización canónica:** 2026-10-07
 - **Ámbito:** Todos los proyectos y conversaciones trabajados bajo esta metodología.
