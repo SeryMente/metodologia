@@ -5,7 +5,7 @@
 - **Versión:** v0.8.0
 - **Nombre de versión:** Ejecución Flexible y Protección de Materialización de Repositorios
 - **Última actualización:** 2026-10-07
-- **Última actualización canónica:** 2026-10-07T10:26:01-06:00
+- **Última actualización canónica:** 2026-10-07T17:01:36-06:00
 - **Ámbito:** Todos los proyectos y conversaciones trabajados bajo esta metodología.
 
 ### Narrativa de la versión
