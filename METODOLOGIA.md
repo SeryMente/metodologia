@@ -2,13 +2,23 @@
 
 ## Estado canónico
 
-- **Versión:** v0.9.3
-- **Nombre de versión:** Gate Normativo Absoluto y Health-Check MCP
+- **Versión:** v0.10.0
+- **Nombre de versión:** Sincronización Audio–Transcripción Medible y Dashboard IGP
 - **Última actualización:** 2026-10-07
 - **Última actualización canónica:** 2026-10-07
 - **Ámbito:** Todos los proyectos y conversaciones trabajados bajo esta metodología.
 
 ### Narrativa de la versión
+
+**Antes:** la v0.9.3 establecía trazabilidad, contexto operativo y gates, pero no contenía un procedimiento específico para perfeccionar sincronización audio–transcripción mediante medición objetiva.
+
+**Cambio:** se canonizan el procedimiento de sincronización audio–transcripción, el Índice General de Perfección (IGP) y el dashboard obligatorio por iteración. Otro Gran Programa (OGP) queda como caso prioritario y de validación.
+
+**Motivo:** la meta operativa es conseguir cuanto antes la correspondencia correcta entre palabra pronunciada y palabra resaltada en OGP, sin confundir mejora aparente con mejora medida.
+
+**Resultado:** B1 queda como baseline congelada; el IGP mide distancia al ideal; el dashboard hace legibles los números; cada iteración debe demostrar su efecto. La generalización futura queda subordinada al avance efectivo de OGP.
+
+### OLD_PLACEHOLDER
 
 **Antes:** la v0.9.2 ya había reducido la salida visible y persistido la identidad RDC entre conversaciones, pero todavía quedaba expuesta una vía de deriva: una conversación nueva podía volver a preguntar por una sesión ya registrada si no consumía correctamente el bootstrap, y el indicador MCP no tenía una semántica positiva estricta.
 
@@ -37,6 +47,7 @@
 | 12 | v0.9.1 | Persistencia Global de Sesión RDC y Separación de Conectividad | Se fija que la identidad de la sesión RDC persiste entre conversaciones hasta cierre o sustitución explícitos, mientras la conectividad se verifica por separado solo cuando el ciclo requiera uso en vivo. |
 | 13 | v0.9.2 | Salida Visible Mínima y Contexto Condensado | Se simplifica la salida visible del ciclo al conjunto mínimo de identidad, versión, contexto RDC resumido, notas y resultado/estado; los metadatos operativos y la narrativa de proceso quedan fuera de la salida cotidiana. |
 | 14 | v0.9.3 | Propagación Global Obligatoria y Acceso MCP Verificable | Se endurece la herencia automática de la sesión RDC entre conversaciones, se prohíbe su reidentificación cuando ya existe un estado persistente y se incorpora un indicador discreto K que solo es positivo tras comprobar acceso autenticado y completo al MCP canónico de KHORA. |
+| 15 | v0.10.0 | Sincronización Audio–Transcripción Medible y Dashboard IGP | Se canoniza el procedimiento de perfeccionamiento de sincronización audio–transcripción con OGP como caso prioritario, se establece una baseline congelada, se incorpora el IGP y se vuelve obligatorio el dashboard explicativo por iteración. La abstracción futura queda subordinada al avance efectivo de OGP. |
 La tabla es canónica: las versiones futuras deben añadir una fila sin borrar ni reciclar las anteriores. El nombre describe el avance de la versión y no sustituye el título general del sistema o documento.
 
 ## 1. Convención obligatoria de foliación de ciclos
@@ -190,3 +201,33 @@ En CECEQ, la identidad visible del entorno es siempre `fila4`; `central\\manteni
 - `K: !` = acceso intentado y fallido, no autorizado o no disponible.
 
 Nunca se emite `K: ✓` por inferencia, por conocer la URL del MCP o por disponer de otra herramienta. Debe existir evidencia de una comprobación autenticada contra el recurso canónico.
+
+
+## 19. Procedimiento canónico de sincronización audio–transcripción en vivo
+
+El procedimiento completo se encuentra en `ANEXO-PROCEDIMIENTO-SINCRONIZACION-AUDIO-TRANSCRIPCION-VIVO.md`.
+
+El caso prioritario es Otro Gran Programa (OGP). La generalización a otros proyectos no debe retrasar su perfeccionamiento.
+
+Secuencia:
+CAMBIO → BENCHMARK → NÚMEROS → DELTA → DECISIÓN → EVIDENCIA → PUBLICACIÓN
+
+## 19.1 Índice General de Perfección
+
+El IGP mide distancia al ideal y no sustituye los gates críticos.
+
+IGP = 100 × Π(qᵢ ^ wᵢ)
+
+## 19.2 Dashboard obligatorio
+
+La especificación se encuentra en `ANEXO-DASHBOARD-IGP-SINCRONIZACION.md`.
+
+Cada iteración debe mostrar IGP, déficit, gates, delta contra baseline, métricas explicadas en una sola frase y evidencia.
+
+El dashboard es un instrumento de control, no el objetivo.
+
+## 19.3 Prioridad OGP
+
+Cuando exista tensión entre extender la metodología y mejorar la sincronización de OGP, debe priorizarse la mejora verificable de OGP siempre que se preserve la trazabilidad mínima y la integridad del benchmark.
+
+La abstracción se extrae de la implementación real de OGP; no la sustituye.
