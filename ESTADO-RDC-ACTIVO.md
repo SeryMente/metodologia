@@ -1,7 +1,7 @@
 # Estado Operativo - Sesion RDC Activa
 
 **Naturaleza:** registro operativo mutable; no constituye por si mismo una nueva norma.
-**Ultima actualizacion:** 2026-10-07T18:22:50.393Z
+**Ultima actualizacion:** 2026-10-07T20:08:00Z
 **Funcion transversal:** fuente global de continuidad de la identidad de la sesion RDC entre conversaciones.
 
 ## Sesion activa
@@ -11,12 +11,12 @@
 | Plataforma | ChatGPT |
 | Ubicacion | CECEQ |
 | RDC-SESION | ACTIVA · IDENTIDAD PERSISTENTE |
-| RDC-CONECTIVIDAD | VERIFICADO-ACTIVO · PING OK · 2026-10-07T18:22:50.393Z |
+| RDC-CONECTIVIDAD | NO VERIFICADA · OFFLINE OBSERVADA · 2026-10-07T20:08:00Z |
 | RDC-CUENTA | blacksheepsup@gmail.com |
 | RDC-DISPOSITIVO | PC10RCIF4EI4 |
 | RDC-DEVICE-ID | 7fabbc1d-7c0d-4400-bd31-88b3b4229286 |
-| RDC-VERIFICACION-CONEXION | PING OK · 2026-10-07T18:22:50.393Z |
-| Ultima verificacion de conexion | 2026-10-07T18:22:50.393Z |
+| RDC-VERIFICACION-CONEXION | NO VERIFICADA · PING NO CONFIRMADO · 2026-10-07T20:08:00Z |
+| Ultima verificacion de conexion | 2026-10-07T20:08:00Z · RESULTADO: NO VERIFICADA |
 | RDC-FINALIZACION | NO REGISTRADA |
 | RDC-SUSTITUCION | NO REGISTRADA |
 | PERSISTENCIA DE SESION | VIGENTE HASTA FINALIZACION O SUSTITUCION EXPLICITAS |
@@ -25,9 +25,12 @@
 | WIN-ADMIN | central\\mantenimientorci |
 | WIN-EFECTIVO-RDC | central\\mantenimientorci |
 | RDC-REQUERIDA | PENDIENTE POR CICLO; NO SE PRESUPONE ACTIVA | 
-| CONTEXTO-VERIFICACION | VERIFICADO-ACTIVO · SESION PERSISTENTE Y CONECTIVIDAD CONFIRMADAS | 
+| CONTEXTO-VERIFICACION | BLOQUEADO · DIVERGENCIA DE OBSERVABILIDAD · RECUPERACION REQUERIDA | 
 | PERFIL-UBICACION | CECEQ · COMPLETO | 
 | IDENTIDAD-OPERATIVA | fila4 · PERFIL CECEQ; NO IMPLICA SESION RDC SEPARADA |
+| RDC-OBSERVABILIDAD | DIVERGENTE · CONECTOR REPORTA OFFLINE / USUARIO REPORTA ACTIVIDAD DE TERMINAL |
+| RDC-RECUPERACION | REQUERIDA · COMANDO CANONICO: RDC-REINSTANTIAR |
+| RDC-RECUPERACION-ESTADO | EN ESPERA HANDSHAKE · LA SESION PERSISTENTE NO SE MARCA FINALIZADA |
 
 ## Regla de lectura
 
@@ -42,5 +45,10 @@ Una nueva conversación debe heredar la sesión registrada antes de pedir al usu
 Una nueva sesion verificada debe sustituir este registro y actualizar su marca temporal. La identidad efectiva del canal RDC puede usarse para el trabajo tecnicamente valido; fila4 permanece como identidad operativa de referencia y no implica una segunda sesion RDC.
 
 ## Incidencia conocida
+
+### Incidencia activa · 2026-10-07
+
+El canal RDC actualmente no puede verificar en vivo el dispositivo registrado, mientras el usuario informa actividad local de la terminal. Esto se trata como **DIVERGENCIA DE OBSERVABILIDAD RDC**, no como finalización de sesión. La recuperación requerida es `RDC-REINSTANTIAR`; la sesión persistente se conservará hasta verificar la nueva sesión y sustituir el registro global.
+
 
 La ultima conexion RDC verificada estuvo autenticada y el shell remoto observado se ejecuto como central\\mantenimientorci. La ultima deteccion posterior observo el dispositivo offline; esto no constituye finalizacion de la sesion persistente. El usuario Windows operativo autorizado para CECEQ es fila4. La identidad central\mantenimientorci puede ejecutar el trabajo tecnicamente valido. La unica restriccion especifica es no clonar ni materializar repositorios nuevos dentro del perfil o ruta de MantenimientoRCI.
