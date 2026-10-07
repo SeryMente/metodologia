@@ -2,8 +2,8 @@
 
 ## Estado canónico
 
-- **Versión:** v0.6.0
-- **Nombre de versión:** Gate de Contexto Operativo Fail-Closed
+- **Versión:** v0.7.0
+- **Nombre de versión:** Resolución Operativa por Canal Conocido
 - **Última actualización:** 2026-10-07
 - **Última actualización canónica:** 2026-10-07T10:26:01-06:00
 - **Ámbito:** Todos los proyectos y conversaciones trabajados bajo esta metodología.
@@ -16,7 +16,7 @@
 
 **Motivo:** mantener trazabilidad de la sesión que realmente soporta el trabajo sin multiplicar llamadas de descubrimiento y autenticación en cada ciclo.
 
-**Resultado:** la metodología puede identificar y seguir una sesión RDC activa de forma transversal y verificable, y el perfil CECEQ conserva fila4 como usuario operativo y mantenimientorci como identidad administrativa.
+**Resultado:** la metodología puede identificar y seguir una sesión RDC activa de forma transversal y verificable y, cuando el canal de ejecución se encuentre elevado bajo mantenimientorci, resolver la identidad operativa fila4 mediante el canal operativo conocido ya disponible, sin requerir un puente permanente.
 
 ### Registro de versiones
 
@@ -128,10 +128,12 @@ Cuando exista una sesión activa verificada, el estado global registrado debe co
 
 La ubicación debe resolverse contra el registro canónico de perfiles antes de ejecutar reglas dependientes del entorno. Un perfil de ubicación inexistente o insuficiente bloquea cualquier operación que dependa de ese perfil.
 
-## 17. Puente de identidad operativa
+## 17. Resolución operativa por canal conocido
 
-Para CECEQ, la separación `central\\mantenimientorci` → `fila4` se resuelve mediante un puente de token de la sesión interactiva existente, evitando `runas` con contraseña, cerrar sesión, volver a autenticarse o ejecutar el trabajo ordinario bajo la identidad administrativa.
+Para CECEQ, la separación `central\\mantenimientorci` → `fila4` no requiere instalar un puente permanente. Cuando el canal de ejecución detectado esté bajo la identidad administrativa, el procedimiento canónico es advertir la discrepancia y utilizar el canal operativo conocido ya disponible para `fila4`, evitando `runas` con contraseña, cerrar sesión, reautenticarse o ejecutar el trabajo ordinario bajo la identidad administrativa.
 
-El mecanismo recomendado es: localizar y verificar el token de la sesión interactiva de `fila4`; duplicar ese token desde el contexto administrativo autorizado; crear el proceso operativo con ese token; verificar con `whoami` y la ruta de perfil del usuario antes de operaciones sustantivas. La identidad administrativa queda reservada a elevación o establecimiento del puente.
+En la máquina CECEQ actualmente perfilada, el camino corto conocido es la tarea interactiva `\\DesktopCommander-Remote-fila4`, configurada para ejecutar `C:\\WINDOWS\\system32\\cmd.exe /d /c "C:\\Program Files\\nodejs\\desktop-commander.cmd" remote` con `fila4`. Ese canal se utiliza como vía de ejecución operativa cuando corresponda; no se trata como un componente permanente adicional.
 
-Este mecanismo es un detalle de implementación y permanece fuera del nivel de principio.
+Secuencia obligatoria: detectar discrepancia → activar o reutilizar el canal operativo conocido → verificar `whoami` y el perfil/ruta de trabajo → continuar bajo `fila4`. Si el canal conocido no puede establecerse o la identidad operativa no puede verificarse, el ciclo queda bloqueado.
+
+La identidad administrativa queda reservada para acciones de elevación explícita o para establecer el canal operativo cuando sea indispensable. Este procedimiento es un detalle de implementación y permanece fuera del nivel de principio.
