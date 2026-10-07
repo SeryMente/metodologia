@@ -1,7 +1,7 @@
 # Anexo — Gate de Thinking en ChatGPT
 
 **Estado:** CANÓNICO
-**Versión:** v1.1.0
+**Versión:** v1.1.1
 **Fecha:** 2026-10-07
 **Ámbito:** Todos los ciclos sujetos a la metodología cuando la plataforma de ejecución sea ChatGPT.
 
@@ -27,13 +27,13 @@ KHORA exige en el turno:
 
 `platform=ChatGPT`
 `reasoning_mode=THINKING`
-`output_format_version=v1.7.0`
+`output_format_version=v1.7.1`
 
 Los tres valores forman parte de la evidencia del turno. Cualquier ausencia o valor distinto impide `VERIFIED`.
 
 ## 4. Límite de evidencia
 
-La metodología no considera verificable un Thinking que solo sea supuesto, inferido por el nombre del modelo o reconstruido a posteriori. Si la integración no entrega una señal operativa aceptable, el estado es `T: ?` y el ciclo queda bloqueado.
+La metodología no considera verificable un estado de razonamiento que solo sea supuesto, inferido por el nombre del modelo o reconstruido a posteriori. Si la integración no entrega una señal operativa aceptable, el estado es `T: ?` y el ciclo queda bloqueado.
 
 OpenAI documenta que ChatGPT dispone de un modo Thinking y que las Apps/MCP reciben metadata de cliente, pero la metadata MCP documentada no incluye el selector de modelo o modo de razonamiento. Por tanto, el servidor KHORA no puede afirmar que lea directamente el selector visual.
 
@@ -41,7 +41,7 @@ El protocolo utiliza `reasoning_mode=THINKING` como atestado obligatorio del run
 
 ## 5. Formato visible
 
-El formato de salida por ciclo es obligatorio y versionado como `v1.7.0`.
+El formato de salida por ciclo es obligatorio y versionado como `v1.7.1`.
 
 `PROYECTO / CONV-XX / CXXX`
 
@@ -49,7 +49,6 @@ El formato de salida por ciclo es obligatorio y versionado como `v1.7.0`.
 
 `ChatGPT · UBIC: ... · RDC: ... · C: ... · S: ... · K: ✓|?|! · T: ✓|?|! · fila4`
 
-`NOTAS · ...`
 `RESULTADO: ...`
 `ESTADO: COMPLETADO | BLOQUEADO | PENDIENTE`
 
@@ -57,4 +56,4 @@ El formato de salida por ciclo es obligatorio y versionado como `v1.7.0`.
 
 ## 6. Cierre
 
-`E: COMPLETADO` solo puede emitirse después de `VERIFIED → RELEASE`, con `T: ✓`, `K: ✓` y con el contrato visible `v1.7.0` cumplido. Si Thinking no está activado o no puede verificarse, no existe ejecución metodológicamente completada.
+`E: COMPLETADO` solo puede emitirse después de `VERIFIED → RELEASE`, con `T: ✓`, `K: ✓` y con el contrato visible `v1.7.1` cumplido. Si Thinking no está activado o no puede verificarse, no existe ejecución metodológicamente completada.
