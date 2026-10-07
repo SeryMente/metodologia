@@ -41,7 +41,8 @@ La ubicacion es un estado transversal y persistente de trabajo. Una declaracion 
 | Ubicacion | CECEQ |
 | Usuario Windows operativo | fila4 |
 | Usuario Windows administrativo/elevado | central\mantenimientorci |
-| Regla | El trabajo se ejecuta como fila4; mantenimientorci se limita al puente o elevacion administrativa. |
+| Canal operativo conocido | \\DesktopCommander-Remote-fila4 · Solo a petición · Interactivo · Ejecutar como fila4 |
+| Regla | El trabajo se ejecuta como fila4; mantenimientorci queda reservado para elevación explícita o para establecer/reutilizar el canal operativo conocido. |
 
 ### 4.2 Office Depot
 
@@ -74,9 +75,10 @@ RDC-USO-MENSUAL es obligatorio en la salida de cada ciclo, pero no obliga a cons
 ## 6. Separacion operativo-administrativa
 
 1. Las operaciones de trabajo sobre archivos, instalaciones, configuraciones y demas estado operativo se ejecutan bajo el usuario Windows operativo del perfil vigente.
-2. La identidad administrativa/elevada no se utiliza directamente para esas operaciones.
-3. La identidad elevada puede actuar como puente tecnico para iniciar un proceso que opere bajo la identidad operativa autorizada.
-4. Si el canal RDC ejecuta directamente bajo la identidad elevada y no existe un puente operativo verificado, la operacion de trabajo se detiene; no se sustituye el usuario operativo por el administrativo.
+2. La identidad administrativa/elevada no se utiliza directamente para las operaciones ordinarias.
+3. Si el canal RDC aparece elevado bajo central\\mantenimientorci, se advierte la discrepancia y se reutiliza el canal operativo conocido `\\DesktopCommander-Remote-fila4` para ejecutar el trabajo bajo fila4.
+4. Se verifica inmediatamente la identidad efectiva y el perfil de usuario antes de continuar.
+5. Si el canal operativo conocido no puede establecerse o la identidad fila4 no puede verificarse, la operación de trabajo se detiene; no se sustituye el usuario operativo por el administrativo.
 
 ## 7. Formato obligatorio de salida por ciclo
 
@@ -196,24 +198,25 @@ El ciclo se marca BLOQUEADO cuando ocurra cualquiera de estas condiciones:
 - RDC es requerido pero no existe una sesión verificada;
 - la ubicación es desconocida cuando la tarea depende de un perfil de ubicación;
 - el perfil de la ubicación no existe o no es suficiente;
-- la identidad Windows operativa requerida no puede verificarse.
+- la identidad Windows operativa requerida no puede verificarse;
+- la resolución por el canal operativo conocido no puede establecerse cuando el canal actual está bajo la identidad administrativa.
 
 Mientras el ciclo esté BLOQUEADO, no se ejecutan operaciones dependientes del contexto y no se declara cierre exitoso.
 
-## 12.5 Puente rápido de identidad para CECEQ
+## 12.5 Resolución rápida de identidad para CECEQ
 
-La estrategia preferente es no cambiar de usuario de Windows ni almacenar credenciales. El proceso administrativo de RDC conserva su función de puente y, cuando ya existe una sesión interactiva de fila4, crea el proceso operativo mediante el token de esa sesión.
+No se requiere instalar un puente Windows permanente. El procedimiento canónico aprovecha el camino operativo ya conocido y probado.
 
-Orden de preferencia:
+En CECEQ, el camino corto conocido es `\\DesktopCommander-Remote-fila4`, una tarea programada interactiva, "Solo a petición", cuyo ejecutable es `C:\\WINDOWS\\system32\\cmd.exe /d /c "C:\\Program Files\\nodejs\\desktop-commander.cmd" remote` y cuya identidad de ejecución es `fila4`.
 
-1. reutilizar el token interactivo ya existente de fila4;
-2. verificar el usuario efectivo y el perfil (whoami, perfil de usuario y ruta de trabajo);
-3. lanzar el proceso ordinario bajo fila4;
-4. utilizar central\\mantenimientorci únicamente para elevación/puente cuando sea indispensable.
+Secuencia:
 
-runas con credenciales, cierre de sesión, reautenticación y ejecución ordinaria como administrador no son el camino rápido ni el camino canónico.
+1. detectar si el proceso/canal actual está bajo central\\mantenimientorci;
+2. si existe la discrepancia, reutilizar o activar `\\DesktopCommander-Remote-fila4`;
+3. verificar `whoami`, usuario de perfil y ruta de trabajo;
+4. ejecutar el trabajo ordinario únicamente después de verificar fila4.
 
-El mecanismo concreto de duplicación/creación del proceso pertenece a la implementación y se documenta en ANEXO-GATE-CONTEXTO-OPERATIVO-FAIL-CLOSED.md.
+No se almacenan credenciales, no se usa `runas` con contraseña, no se cierra sesión y no se mantiene un componente de puente adicional. Si el canal conocido no está disponible o no permite verificar fila4, el ciclo se bloquea.
 
 ## 13. Referencia terminológica
 
