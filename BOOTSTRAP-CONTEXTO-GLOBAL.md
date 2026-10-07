@@ -1,0 +1,52 @@
+# Bootstrap de Contexto Global
+
+**Estado:** CANONICO
+**Ambito:** Todas las conversaciones y proyectos sujetos a la metodologia comun.
+
+## Proposito
+
+Este archivo es el punto de entrada operativo para reconstruir contexto transversal cuando una conversacion nueva no conserva contexto de una conversacion anterior.
+
+## Regla principal
+
+La memoria de una conversacion no es la fuente global. El repositorio de la metodologia es la fuente persistente.
+
+Para RDC, el estado mutable y unico se encuentra en:
+
+`ESTADO-RDC-ACTIVO.md`
+
+No se duplican aqui la cuenta, device_id, estado de sesion, timestamps ni consumo mensual, porque esos datos pueden cambiar.
+
+## Secuencia de arranque
+
+1. Leer `SI-METACOGNITIVO.md` y usar la version canonica vigente.
+2. Leer `ESTADO-RDC-ACTIVO.md` para recuperar la identidad persistente de la sesion RDC.
+3. Leer `ANEXO-GATE-CONTEXTO-OPERATIVO-FAIL-CLOSED.md` para aplicar el gate.
+4. Heredar la sesion persistida si no existe marca de `FINALIZADA` o `SUSTITUIDA`.
+5. Verificar conectividad RDC solamente cuando el ciclo necesite ejecutar una operacion RDC en vivo.
+
+## Distincion obligatoria
+
+**Sesion** = identidad persistente del canal RDC reconocido globalmente.
+
+**Conectividad** = capacidad observable de utilizar ese canal en vivo en el instante de la verificacion.
+
+Una desconexion, dispositivo offline o herramienta indisponible no equivale a finalizacion de sesion y no autoriza a borrar ni reemplazar la identidad persistida.
+
+## Cambio de sesion
+
+Una nueva sesion verificada sustituye a la anterior y actualiza `ESTADO-RDC-ACTIVO.md`.
+
+Un cierre explicito marca la sesion como finalizada.
+
+Hasta entonces, las conversaciones nuevas deben reconocer la sesion persistente registrada.
+
+## Regla para la plataforma
+
+Cuando una conversacion nueva entre al ambito de esta metodologia, debe consultar este bootstrap y el estado RDC antes de preguntar al usuario por una sesion ya registrada.
+
+La conversacion es un contenedor. La sesion RDC global es un estado compartido del repositorio.
+
+## Limite tecnico
+
+Este contrato hace persistente y consultable el estado en el repositorio. La plataforma de ChatGPT no ofrece un mecanismo por el que un archivo de GitHub fuerce tecnicamente a toda conversacion futura a leerlo antes de responder; por ello, la metodologia define este archivo como bootstrap canonico que toda conversacion sujeta al sistema debe consumir al iniciar su ciclo.
