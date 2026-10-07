@@ -250,10 +250,10 @@ Todo ciclo sujeto a la metodología debe ejecutarse en modo Thinking de ChatGPT.
 `THINKING → HEALTH → OPEN → CASCADA NORMATIVA → VERIFY → RELEASE → SALIDA`
 
 El campo `T` tiene semántica fail-closed:
-- `T: ✓` = atestado `reasoning_mode=THINKING` aceptado y formato `v1.7.0` establecido.
+- `T: ✓` = atestado `reasoning_mode=THINKING` aceptado y formato `v1.7.1` establecido.
 - `T: ?` = condición no verificable; bloqueo.
 - `T: !` = modo no permitido; bloqueo.
 
 El servidor MCP no recibe actualmente de ChatGPT una metadata documentada que exponga directamente el selector del modo Thinking. Por ello, el protocolo no debe fingir una prueba de interfaz que no existe: exige el atestado `THINKING` y rechaza cualquier ausencia o valor distinto.
 
-El formato visible `v1.7.0` es obligatorio en todos los ciclos, incluidos ciclos BLOQUEADOS. `E: COMPLETADO` requiere además `VERIFIED_RELEASE`.
+El formato visible `v1.7.1` es obligatorio en todos los ciclos, incluidos ciclos BLOQUEADOS. `E: COMPLETADO` requiere además `VERIFIED_RELEASE`.
