@@ -1,7 +1,7 @@
 # Registro de Verificación por Ciclo
 
 **Estado:** CANÓNICO  
-**Versión:** v1.3.0 — Gate de Contexto Operativo y Sesión RDC Verificable  
+**Versión:** v1.4.0 — Bloqueo Operativo Visible y Resolución Conversacional  
 **Fecha:** 2026-10-07
 
 ## Formato mínimo
@@ -19,7 +19,26 @@ La referencia relativa se calcula a partir de `Última actualización canónica`
 ## Principio de uso
 
 La denominación de versión es específica de la versión y no debe reutilizar el título general `Sistema de Instrucciones Metacognitivas`. El registro histórico de versiones pertenece al SI canónico.
-\n\n## Contexto operativo obligatorio\n\nCada registro de ciclo debe conservar el bloque de contexto definido por el anexo canónico:\n\n`PLATAFORMA | UBICACION | RDC-REQUERIDA | RDC-SESION | RDC-CUENTA | RDC-USO-MENSUAL | WIN-OPERATIVO | CONTEXTO-VERIFICACION`\n\nCuando exista identidad administrativa relevante, se añade `WIN-ADMIN`. Cuando exista información de terminales RDC, se añade `RDC-TERMINAL`. `CONTEXTO-VERIFICACION` registra el resultado del gate: `VERIFICADO-ACTIVO`, `VERIFICADO-INACTIVO`, `NO-REQUERIDO` o `BLOQUEADO`.\n\nLa ausencia de un dato se registra como `NO VERIFICADO`, `NO DISPONIBLE` o `PENDIENTE`. No se debe inferir información faltante.\n\nLa especificación completa se encuentra en `ANEXO-CONTEXTO-EJECUCION-Y-SALIDA-CICLO.md`.\n
+\n\n## Salida de bloqueo
+
+Cuando un ciclo quede BLOQUEADO, la notificación debe iniciar con este bloque visual, sin texto previo:
+
+```
+╔════════════════════════════════════════════════════════════╗
+║ ⛔⛔⛔  BLOQUEADO · EJECUCIÓN DETENIDA  ⛔⛔⛔              ║
+╠════════════════════════════════════════════════════════════╣
+║ MOTIVO: <código/motivo canónico>                           ║
+║ RDC: <REQUERIDA|NO VERIFICADA|NO DISPONIBLE>               ║
+║ ESTADO DEL CICLO: BLOQUEADO                                ║
+║ CONVERSACIÓN: ABIERTA PARA RESOLUCIÓN                      ║
+╚════════════════════════════════════════════════════════════╝
+```
+
+El bloque visual es obligatorio y debe preceder cualquier explicación. Su función es permitir reconocer el bloqueo de un vistazo. El bloqueo detiene la ejecución sustantiva y el cierre del ciclo, pero **no impide conversar con el modelo para resolverlo**.
+
+Después del bloque, solo se debe informar lo necesario para levantar la condición de bloqueo, incluyendo la información mínima que debe proporcionar el usuario o la verificación que deba realizarse. Mientras el estado sea BLOQUEADO no se declara éxito ni se ejecutan operaciones sustantivas dependientes del contexto.
+
+## Contexto operativo obligatorio\n\nCada registro de ciclo debe conservar el bloque de contexto definido por el anexo canónico:\n\n`PLATAFORMA | UBICACION | RDC-REQUERIDA | RDC-SESION | RDC-CUENTA | RDC-USO-MENSUAL | WIN-OPERATIVO | CONTEXTO-VERIFICACION`\n\nCuando exista identidad administrativa relevante, se añade `WIN-ADMIN`. Cuando exista información de terminales RDC, se añade `RDC-TERMINAL`. `CONTEXTO-VERIFICACION` registra el resultado del gate: `VERIFICADO-ACTIVO`, `VERIFICADO-INACTIVO`, `NO-REQUERIDO` o `BLOQUEADO`.\n\nLa ausencia de un dato se registra como `NO VERIFICADO`, `NO DISPONIBLE` o `PENDIENTE`. No se debe inferir información faltante.\n\nLa especificación completa se encuentra en `ANEXO-CONTEXTO-EJECUCION-Y-SALIDA-CICLO.md`.\n
 
 ## Sesion RDC activa
 
