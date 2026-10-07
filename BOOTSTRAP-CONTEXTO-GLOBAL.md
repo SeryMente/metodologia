@@ -21,23 +21,13 @@ No se duplican aqui la cuenta, device_id, estado de sesion, timestamps ni consum
 
 ## Precondición normativa transversal
 
-### Regla de bloqueo por plataforma
+En ChatGPT, Thinking es la ventana preferente para resolver la cascada normativa antes de la salida cuando está disponible. No constituye una prueba del razonamiento interno ni una condición que, por sí sola, bloquee la ejecución o la respuesta.
 
-En ChatGPT, `THINKING` no es opcional para un ciclo sujeto a la metodología. Antes de cualquier cambio, llamada de herramienta o ejecución sustantiva debe existir un estado verificable `reasoning_mode=THINKING`. Ausencia, `INSTANT` o estado desconocido mantienen el ciclo BLOQUEADO.
+La disponibilidad de KHORA es independiente del modo de razonamiento. Si el MCP está disponible, se intenta `HEALTH → OPEN TURN → CASCADA NORMATIVA → VERIFY → RELEASE`. Si el MCP no está disponible, el ciclo continúa y la salida declara `K: OFF`, sin atribuir verificación externa.
 
-Una conversación nueva sujeta a la metodología no debe considerar resuelta una tarea sustantiva sin completar el circuito normativo de KHORA.
+Secuencia operativa:
 
-Secuencia obligatoria:
-
-`BOOTSTRAP → THINKING → HEALTH MCP → OPEN TURN → CASCADA NORMATIVA → VERIFY → RELEASE → RESPUESTA`
-
-Si el health-check MCP no está disponible o no confirma acceso completo, la conversación puede permanecer abierta para resolver el problema, pero el ciclo no puede declararse COMPLETADO.
-
-La sesión RDC persistente se hereda desde `ESTADO-RDC-ACTIVO.md`; la conectividad se revalida únicamente cuando el ciclo requiere uso RDC en vivo.
-
-## Gate de Thinking
-
-Antes del health-check, el ciclo debe estar en modo Thinking de ChatGPT. La especificación canónica está en `ANEXO-GATE-THINKING-CHATGPT.md`. Ausencia, `INSTANT` o imposibilidad de verificar el requisito bloquean la ejecución sustantiva.
+`BOOTSTRAP → CONTEXTO → (THINKING si disponible) → HEALTH MCP → OPEN TURN → CASCADA NORMATIVA → VERIFY → RELEASE cuando disponible → RESPUESTA`
 
 ## Secuencia de arranque
 
@@ -45,8 +35,8 @@ Antes del health-check, el ciclo debe estar en modo Thinking de ChatGPT. La espe
 2. Leer `ESTADO-RDC-ACTIVO.md` para recuperar la identidad persistente de la sesion RDC.
 3. Leer `ANEXO-GATE-CONTEXTO-OPERATIVO-FAIL-CLOSED.md` para aplicar el gate.
 4. Heredar la sesion persistida si no existe marca de `FINALIZADA` o `SUSTITUIDA`.
-5. Verificar `reasoning_mode=THINKING`; si no es verificable, bloquear antes de ejecutar trabajo sustantivo.
-6. Ejecutar `khora_mcp_health` sobre el MCP canónico y conservar su veredicto discreto `K: ✓` cuando confirme acceso completo.
+5. Registrar el estado de `reasoning_mode` cuando la plataforma lo exponga; no bloquear solo por su ausencia.
+6. Intentar `khora_mcp_health` sobre el MCP canónico; si no está disponible, declarar `K: OFF` en la salida. Si confirma acceso completo, conservar `K: ✓`.
 7. Verificar conectividad RDC solamente cuando el ciclo necesite ejecutar una operacion RDC en vivo.
 
 ## Distincion obligatoria
