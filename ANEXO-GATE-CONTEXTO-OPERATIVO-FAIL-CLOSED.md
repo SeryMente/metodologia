@@ -103,7 +103,7 @@ El estado BLOQUEADO es obligatorio cuando:
 - RDC es requerido pero no hay sesion verificada;
 - la ubicacion no puede determinarse y la tarea depende de su perfil;
 - el perfil de ubicacion no existe o es insuficiente;
-- la identidad Windows operativa esperada no coincide con la identidad real y no existe un puente verificado;
+- la identidad Windows operativa esperada no coincide con la identidad real y la operación requiere esa identidad efectiva, pero no puede resolverse desde la sesión RDC vigente sin abrir o alterar otra sesión;
 - existe una discrepancia material entre cuenta RDC, dispositivo, ubicacion o identidad de ejecucion.
 
 Bloqueado significa: no ejecutar, no declarar exito, no sustituir datos por inferencia.
@@ -120,41 +120,38 @@ Para CECEQ:
 
 Para OFFICE-DEPOT y CIBERCAFE, mientras no exista perfil operativo suficiente, las propiedades no definidas permanecen PENDIENTES y no se inventan.
 
-## 8. Resolución rápida de identidad Windows por canal operativo conocido
+## 8. Resolución de identidad Windows sin alterar la sesión RDC
 
-### 8.1 Objetivo
+### 8.1 Regla para CECEQ
 
-Resolver la diferencia entre la identidad administrativa que sostiene el canal RDC y la identidad operativa requerida, sin instalar un puente permanente, sin almacenar credenciales y sin cerrar sesión.
+- `WIN-OPERATIVO = fila4`.
+- `WIN-ADMIN = central\\mantenimientorci`.
+- La sesión RDC utilizada para consumo y acceso remoto permanece bajo `central\\mantenimientorci`.
+- No se inicia un segundo canal RDC bajo `fila4`.
 
-### 8.2 Camino corto conocido
+### 8.2 Secuencia
 
-En CECEQ, el camino conocido y ya probado es la tarea interactiva `\\DesktopCommander-Remote-fila4`, configurada para ejecutar `C:\\WINDOWS\\system32\\cmd.exe /d /c "C:\\Program Files\\nodejs\\desktop-commander.cmd" remote` con `fila4`.
-
-Cuando el canal actual aparece bajo `central\\mantenimientorci`, el modelo debe tratarlo como una discrepancia de identidad, activar o reutilizar ese canal operativo conocido y verificar la identidad efectiva antes de continuar.
-
-### 8.3 Secuencia
-
-1. detectar la identidad real del canal actual;
+1. detectar la identidad efectiva del canal RDC;
 2. comparar contra `WIN-OPERATIVO` del perfil;
-3. si hay discrepancia, reutilizar o activar `\\DesktopCommander-Remote-fila4`;
-4. verificar `whoami`, perfil del usuario y ruta de trabajo;
-5. continuar solo si la identidad efectiva es `fila4`.
+3. conservar la sesión RDC tal como está;
+4. ejecutar la operación únicamente si es compatible con la identidad efectiva y el perfil;
+5. verificar el resultado y registrar cualquier discrepancia relevante.
 
-### 8.4 Qué no hacer
+Si una operación requiere necesariamente ejecución efectiva bajo `fila4` y no puede resolverse desde la sesión RDC vigente, el gate bloquea la operación. No se intenta salvar la discrepancia mediante una sesión paralela.
+
+### 8.3 Qué no hacer
 
 No usar como mecanismo ordinario:
 
 - `runas` con contraseña;
 - almacenar credenciales de `fila4`;
 - cerrar y volver a iniciar sesión;
-- instalar un servicio o ejecutable de puente permanente;
-- ejecutar el trabajo de proyecto bajo la identidad administrativa.
+- abrir una sesión RDC paralela bajo `fila4`;
+- convertir la sesión RDC administrativa en una sesión fila4 solo para ejecutar una operación.
 
-### 8.5 Elevación
+### 8.4 Elevación
 
-Cuando una operación requiera privilegios administrativos reales, la elevación debe ser puntual y explícita. El trabajo ordinario se mantiene bajo la identidad operativa.
-
-El canal operativo conocido es un procedimiento de resolución, no un componente residente adicional.
+Cuando una operación requiera privilegios administrativos reales, la elevación puede utilizar la sesión RDC vigente bajo `central\\mantenimientorci`, siempre que la operación sea compatible con ese contexto. La distinción con `fila4` se mantiene explícita y no se resuelve mediante cambio de sesión.
 
 ## 9. Maquina de estados
 
