@@ -41,12 +41,16 @@ jobs:
           grep -q 'npx @wonderwhy-er/desktop-commander@latest remote' SI-METACOGNITIVO.md
 
           grep -q 'ESTADO-RDC-ACTIVO.md' ANEXO-GOBERNANZA-ESTADO-GLOBAL-RDC.md
-          grep -q 'LEER.*VALIDAR.*PUBLICAR.*READ-BACK' ANEXO-GOBERNANZA-ESTADO-GLOBAL-RDC.md
+          grep -q 'HANDSHAKE → VALIDAR → ESCRIBIR ESTADO GLOBAL → VERIFICAR LECTURA DE VUELTA → RESOLVER' ANEXO-GOBERNANZA-ESTADO-GLOBAL-RDC.md
           grep -q 'force' ANEXO-GOBERNANZA-ESTADO-GLOBAL-RDC.md
           grep -q 'RDC-REINSTANTIAR' ANEXO-GATE-CONTEXTO-OPERATIVO-FAIL-CLOSED.md
           grep -q 'npx @wonderwhy-er/desktop-commander@latest remote' ANEXO-GATE-CONTEXTO-OPERATIVO-FAIL-CLOSED.md
           grep -q 'RDC-HANDSHAKE' ANEXO-PROCEDIMIENTO-REINSTANTIACION-RDC.md
           grep -q 'READ-BACK\|read-back' ANEXO-PROCEDIMIENTO-REINSTANTIACION-RDC.md
           grep -q 'ESTADO-RDC-ACTIVO.md' BOOTSTRAP-CONTEXTO-GLOBAL.md
+          grep -q 'antes de.*HEALTH' BOOTSTRAP-CONTEXTO-GLOBAL.md
+          grep -q 'RDC-REINSTANTIAR' FORMATO-REGISTRO-VERIFICACION-CICLO.md
+          grep -q 'npx @wonderwhy-er/desktop-commander@latest remote' ANEXO-PROCEDIMIENTO-REINSTANTIACION-RDC.md
+          grep -q 'P033 · Precedencia del Estado Operativo Global' SI-METACOGNITIVO.md
 
           echo "RDC governance invariants: PASS"
