@@ -157,3 +157,15 @@ La sesión RDC global se propaga entre conversaciones mediante el estado operati
 La separación de contexto de CECEQ es informativa: `fila4` identifica la identidad operativa de referencia y `central\\mantenimientorci` la identidad efectiva de la sesión RDC. No constituye una prohibición de uso de `central\\mantenimientorci`. La restricción operativa específica se limita a no clonar ni materializar repositorios nuevos dentro de su perfil o ruta.
 
 El detalle técnico del gate y de la restricción de materialización se encuentra en `ANEXO-GATE-CONTEXTO-OPERATIVO-FAIL-CLOSED.md`.
+
+## 17. Gate de Thinking por turno
+
+Cuando la plataforma de ejecución sea ChatGPT, todo ciclo sujeto a la metodología debe ejecutarse únicamente bajo `reasoning_mode=THINKING`. El modelo debe resolver el gate durante su razonamiento antes de ejecutar trabajo sustantivo. `INSTANT`, ausencia o imposibilidad de verificar el estado requerido implica BLOQUEADO.
+
+El gate es fail-closed: no se infiere Thinking por la identidad del modelo ni por la intención del usuario. El acceso a KHORA y el contrato `v1.7.0` se comprueban dentro de la misma cascada normativa.
+
+## 18. Formato de salida obligatorio por turno
+
+El formato definido en `FORMATO-REGISTRO-VERIFICACION-CICLO.md` es obligatorio en **cada turno/ciclo, sin excepción**. Esto incluye aclaraciones, bloqueos, resoluciones conversacionales y respuestas sin cambios de repositorio.
+
+La ausencia o alteración material del formato impide declarar `E: COMPLETADO`. La foliación global `CXXX` y la identificación del SI son parte inseparable del contrato.
