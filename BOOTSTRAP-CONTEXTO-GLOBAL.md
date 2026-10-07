@@ -19,13 +19,26 @@ Para RDC, el estado mutable y unico se encuentra en:
 
 No se duplican aqui la cuenta, device_id, estado de sesion, timestamps ni consumo mensual, porque esos datos pueden cambiar.
 
+## Precondición normativa transversal
+
+Una conversación nueva sujeta a la metodología no debe considerar resuelta una tarea sustantiva sin completar el circuito normativo de KHORA.
+
+Secuencia obligatoria:
+
+`BOOTSTRAP → HEALTH MCP → OPEN TURN → EJECUCIÓN → VERIFY → RELEASE → RESPUESTA`
+
+Si el health-check MCP no está disponible o no confirma acceso completo, la conversación puede permanecer abierta para resolver el problema, pero el ciclo no puede declararse COMPLETADO.
+
+La sesión RDC persistente se hereda desde `ESTADO-RDC-ACTIVO.md`; la conectividad se revalida únicamente cuando el ciclo requiere uso RDC en vivo.
+
 ## Secuencia de arranque
 
 1. Leer `SI-METACOGNITIVO.md` y usar la version canonica vigente.
 2. Leer `ESTADO-RDC-ACTIVO.md` para recuperar la identidad persistente de la sesion RDC.
 3. Leer `ANEXO-GATE-CONTEXTO-OPERATIVO-FAIL-CLOSED.md` para aplicar el gate.
 4. Heredar la sesion persistida si no existe marca de `FINALIZADA` o `SUSTITUIDA`.
-5. Verificar conectividad RDC solamente cuando el ciclo necesite ejecutar una operacion RDC en vivo.
+5. Ejecutar `khora_mcp_health` sobre el MCP canónico y conservar su veredicto discreto `K: ✓` cuando confirme acceso completo.
+6. Verificar conectividad RDC solamente cuando el ciclo necesite ejecutar una operacion RDC en vivo.
 
 ## Distincion obligatoria
 
