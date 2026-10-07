@@ -43,6 +43,7 @@
 | 18 | v0.11.2 | Verificación Normativa Adaptativa y HUD Compacto por Turno | Se corrige la implementación del gate: Thinking es la ventana preferente para resolver la cascada normativa antes de la salida, pero no se intenta verificar el razonamiento interno ni se bloquea la salida por su estado. KHORA pasa a tener disponibilidad explícita (`K: ✓ / OFF / ? / !`). |
 | 19 | v0.11.3 | Coherencia Canónica de Gates y Continuidad Operativa | Se elimina la contradicción residual que podía reintroducir un bloqueo por Thinking/KHORA desde un anexo subordinado. Solo las condiciones de contexto operativo materialmente requeridas pueden producir BLOQUEADO. |
 | 20 | v0.11.4 | Verificación de Frescura Normativa por Ciclo | Se hace obligatoria la recuperación del SI desde un snapshot exacto de `main` en cada ciclo mediante commit SHA + blob SHA + versión + nombre; una instantánea histórica no puede gobernar el ciclo. |
+| 21 | v0.11.5 | Adquisición Atómica de Snapshot Normativo | Se endurece la frescura mediante doble lectura de `main`; cualquier carrera, caché o discordancia invalida la marca positiva. |
 | 21 | v0.11.5 | Recuperación Determinista de Sesión RDC | Se incorpora un protocolo de recuperación de dos fases para divergencias entre la sesión RDC persistente y la observabilidad del canal, con `RDC-REINSTANTIAR`, handshake verificable, sustitución global y propagación entre conversaciones. |
 La tabla es canónica: las versiones futuras deben añadir una fila sin borrar ni reciclar las anteriores. El nombre describe el avance de la versión y no sustituye el título general del sistema o documento.
 
@@ -99,7 +100,7 @@ Cuando corresponda, el encabezado metodológico de un ciclo debe permitir identi
 
 ## 4.0 Frescura normativa obligatoria por ciclo
 
-Cada ciclo debe volver a consultar `SI-METACOGNITIVO.md` desde un snapshot exacto de `main`; no se reutiliza el SI cargado en turnos anteriores. La comprobación vincula commit SHA + blob SHA + versión + nombre. El HUD muestra `F:✓` solo cuando esa frescura quedó verificada; `F:?` cuando no pudo comprobarse y `F:!` cuando existe discordancia u obsolescencia.
+Cada ciclo debe adquirir el SI con doble lectura de `main`: `H1` → recuperar `SI-METACOGNITIVO.md` exactamente en `H1` → `H2`. Solo hay `F:✓` cuando `H1 = H2` y versión + nombre + blob SHA corresponden a la instantánea de `H1`. No se aceptan lecturas de `main` sin SHA exacto, cachés no demostradas ni copias de turnos anteriores. Si `H1 ≠ H2` o falla cualquier comprobación, `F:✓` está prohibido.
 
 ## 4.1 Gate de ejecución cognitiva
 
