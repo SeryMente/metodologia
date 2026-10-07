@@ -1,7 +1,7 @@
 # Estado Operativo - Sesion RDC Activa
 
 **Naturaleza:** registro operativo mutable; no constituye por si mismo una nueva norma.
-**Ultima actualizacion:** 2026-10-07T20:31:30.2613435Z
+**Ultima actualizacion:** 2026-10-07T23:01:00Z
 **Funcion transversal:** fuente global de continuidad de la identidad de la sesion RDC entre conversaciones.
 
 ## Sesion activa
