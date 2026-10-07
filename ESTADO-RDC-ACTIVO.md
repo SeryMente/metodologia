@@ -1,7 +1,7 @@
 # Estado Operativo - Sesion RDC Activa
 
 **Naturaleza:** registro operativo mutable; no constituye por si mismo una nueva norma.
-**Ultima actualizacion:** 2026-10-07T20:08:00Z
+**Ultima actualizacion:** 2026-10-07 · HANDSHAKE FRESCO RECIBIDO
 **Funcion transversal:** fuente global de continuidad de la identidad de la sesion RDC entre conversaciones.
 
 ## Sesion activa
@@ -11,11 +11,11 @@
 | Plataforma | ChatGPT |
 | Ubicacion | CECEQ |
 | RDC-SESION | ACTIVA · IDENTIDAD PERSISTENTE |
-| RDC-CONECTIVIDAD | NO VERIFICADA · OFFLINE OBSERVADA · 2026-10-07T20:08:00Z |
+| RDC-CONECTIVIDAD | VERIFICADO-ACTIVO · PROVIDER HANDSHAKE · 2026-10-07T20:08:00Z |
 | RDC-CUENTA | blacksheepsup@gmail.com |
 | RDC-DISPOSITIVO | PC10RCIF4EI4 |
 | RDC-DEVICE-ID | 7fabbc1d-7c0d-4400-bd31-88b3b4229286 |
-| RDC-VERIFICACION-CONEXION | NO VERIFICADA · PING NO CONFIRMADO · 2026-10-07T20:08:00Z |
+| RDC-VERIFICACION-CONEXION | VERIFICADO · SESSION RESTORED · CHANNEL SUBSCRIBED · DEVICE ONLINE · 2026-10-07T20:08:00Z |
 | Ultima verificacion de conexion | 2026-10-07T20:08:00Z · RESULTADO: NO VERIFICADA |
 | RDC-FINALIZACION | NO REGISTRADA |
 | RDC-SUSTITUCION | NO REGISTRADA |
@@ -25,12 +25,12 @@
 | WIN-ADMIN | central\\mantenimientorci |
 | WIN-EFECTIVO-RDC | central\\mantenimientorci |
 | RDC-REQUERIDA | PENDIENTE POR CICLO; NO SE PRESUPONE ACTIVA | 
-| CONTEXTO-VERIFICACION | BLOQUEADO · DIVERGENCIA DE OBSERVABILIDAD · RECUPERACION REQUERIDA | 
+| CONTEXTO-VERIFICACION | VERIFICADO-ACTIVO · RECUPERACION RESUELTA | 
 | PERFIL-UBICACION | CECEQ · COMPLETO | 
 | IDENTIDAD-OPERATIVA | fila4 · PERFIL CECEQ; NO IMPLICA SESION RDC SEPARADA |
-| RDC-OBSERVABILIDAD | DIVERGENTE · CONECTOR REPORTA OFFLINE / USUARIO REPORTA ACTIVIDAD DE TERMINAL |
-| RDC-RECUPERACION | REQUERIDA · COMANDO CANONICO: RDC-REINSTANTIAR |
-| RDC-RECUPERACION-ESTADO | EN ESPERA HANDSHAKE · LA SESION PERSISTENTE NO SE MARCA FINALIZADA |
+| RDC-OBSERVABILIDAD | COHERENTE · PROVIDER REPORTA DEVICE ONLINE Y SESION RESTAURADA |
+| RDC-RECUPERACION | RESUELTA · COMANDO CANONICO: RDC-REINSTANTIAR |
+| RDC-RECUPERACION-ESTADO | RESUELTA · HANDSHAKE VALIDADO Y ESTADO GLOBAL ACTUALIZADO |
 
 ## Regla de lectura
 
@@ -43,6 +43,18 @@ Este registro representa la identidad de la sesión RDC globalmente vigente para
 Una nueva conversación debe heredar la sesión registrada antes de pedir al usuario que vuelva a identificarla. Solo una evidencia de cierre/cambio sustituye la identidad global. Si una operación requiere RDC en vivo y la conectividad no está verificada, el gate puede bloquear esa operación sin declarar que la sesión dejó de existir.
 
 Una nueva sesion verificada debe sustituir este registro y actualizar su marca temporal. La identidad efectiva del canal RDC puede usarse para el trabajo tecnicamente valido; fila4 permanece como identidad operativa de referencia y no implica una segunda sesion RDC.
+
+## Ultimo handshake validado
+
+**RDC-HANDSHAKE:** recibido y validado desde el Remote Device. La identidad persistente coincide con la registrada y la conectividad quedó confirmada por el proveedor.
+
+- Estado del dispositivo: Online
+- Sesion: Session restored
+- Canal: Channel subscribed
+- Remote Device: connected
+- Marca: HANDSHAKE FRESCO DEL CICLO
+
+Este handshake resuelve la recuperacion sin abrir una segunda sesion.
 
 ## Incidencia conocida
 
