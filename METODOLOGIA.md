@@ -2,8 +2,8 @@
 
 ## Estado canónico
 
-- **Versión:** v0.10.0
-- **Nombre de versión:** Sincronización Audio–Transcripción Medible y Dashboard IGP
+- **Versión:** v0.11.0
+- **Nombre de versión:** Gate de Thinking y Formato Obligatorio por Turno
 - **Última actualización:** 2026-10-07
 - **Última actualización canónica:** 2026-10-07
 - **Ámbito:** Todos los proyectos y conversaciones trabajados bajo esta metodología.
@@ -167,7 +167,7 @@ La interfaz nativa de ChatGPT no expone un mecanismo para que un documento de Gi
 
 La salida cotidiana de cada ciclo no debe convertirse en un inventario del mecanismo. Los campos esenciales se condensan en:
 
-`ChatGPT · UBIC: ... · RDC: ... · C: ... · S: ... · K: ✓|?|! · fila4`
+`ChatGPT · UBIC: ... · RDC: ... · C: ... · S: ... · K: ✓|?|! · T: ✓|?|! · fila4`
 
 `N: 🟢 SIN NOTAS | 🟡 NOTAS PENDIENTES`
 
