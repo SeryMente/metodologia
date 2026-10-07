@@ -32,13 +32,13 @@ El SI canónico se encuentra en [SI-METACOGNITIVO.md](SI-METACOGNITIVO.md).
 
 Versión vigente:
 
-**v1.6.6 — Precedencia de Contexto RDC y Recuperación Proactiva**
+**v1.6.7 — Gobernanza Transaccional del Estado RDC**
 
 El SI contiene los principios fundamentales **P019–P032**, incluyendo P028 · Trazabilidad Normativa, P029 · Identidad y Vigencia Canónica, P030 · Fidelidad Terminológica Canónica, P031 · Normalización de Transcripción y P032 · Contexto Operativo Verificado.
 
 ## Última actualización de Metodología
 
-**v0.11.6 — Precedencia de Contexto RDC y Recuperación Proactiva**  
+**v0.11.7 — Gobernanza Transaccional del Estado RDC**  
 2026-10-07
 
 Esta evolución establece el gate de contexto operativo, el estado transversal de RDC, el bloqueo fail-closed de ejecución y su resolución conversacional abierta. El trabajo bajo la identidad efectiva de la sesión RDC está permitido cuando sea técnicamente válido; la restricción específica es no clonar ni materializar repositorios nuevos dentro del perfil o ruta de MantenimientoRCI.
@@ -59,6 +59,8 @@ Cuando el estado global conserva una sesión RDC ACTIVA pero el canal aparece of
 Cuando el ciclo requiere RDC en vivo, el modelo debe emitir `RDC-REINSTANTIAR`, solicitar el `RDC-HANDSHAKE` y actualizar `ESTADO-RDC-ACTIVO.md` antes de reanudar. La sesión persistente no se marca INACTIVA por un simple offline.
 
 El procedimiento detallado se encuentra en `ANEXO-PROCEDIMIENTO-REINSTANTIACION-RDC.md`.
+
+La recuperación no se considera resuelta hasta el read-back del estado global publicado. Las carreras de actualización se rechazan y reconcilian; no se permiten sobrescrituras ciegas.
 
 ## Gate de contexto operativo
 
