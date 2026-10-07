@@ -26,6 +26,21 @@ Cada ciclo debe identificar la instantánea normativa que lo gobierna:
 
 La referencia relativa se calcula a partir de `Última actualización canónica` del SI vigente. Para auditoría puede acompañarse del instante ISO-8601 exacto.
 
+## 0. Regla de obligatoriedad
+
+Este formato es obligatorio en **cada turno/ciclo sujeto a la metodología, sin excepción**. Aplica a respuestas sustantivas, respuestas de bloqueo y respuestas usadas para resolver un bloqueo.
+
+El orden canónico de salida es fijo:
+
+1. `PROYECTO / CONV-XX / CXXX`
+2. `SI CARGADO ...`
+3. `ChatGPT ...`
+4. `NOTAS ...`
+5. `RESULTADO: ...`
+6. `ESTADO: ...`
+
+No se puede omitir el bloque por considerar que el turno es simple, que no produjo cambios, que solo fue una aclaración o que el usuario ya conoce el contexto.
+
 ## Principio de uso
 
 La denominación de versión es específica de la versión y no debe reutilizar el título general `Sistema de Instrucciones Metacognitivas`. El registro histórico de versiones pertenece al SI canónico.
