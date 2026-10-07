@@ -16,7 +16,7 @@
 
 **Motivo:** mantener el rigor del fail-closed sin crear un callejón sin salida para el usuario: el modelo debe poder pedir y recibir la información necesaria para levantar el bloqueo.
 
-**Resultado:** un ciclo bloqueado no ejecuta trabajo sustantivo ni declara éxito, pero permanece conversacionalmente abierto y presenta una notificación de bloqueo inequívoca, con causa y acción requerida. La identidad de una sesión RDC persiste entre conversaciones y se mantiene separada de su conectividad observable.
+**Resultado:** un ciclo bloqueado no ejecuta trabajo sustantivo ni declara éxito, pero permanece conversacionalmente abierto y presenta una notificación de bloqueo inequívoca, con causa y acción requerida. La identidad de una sesión RDC persiste entre conversaciones y se mantiene separada de su conectividad observable. La salida cotidiana se reduce a los estados esenciales; los detalles de auditoría permanecen fuera de la salida visible salvo necesidad.
 
 ### Registro de versiones
 
@@ -35,6 +35,7 @@
 | 10 | v0.8.0 | Ejecución Flexible y Protección de Materialización de Repositorios | Se permite ejecutar bajo central\mantenimientorci todo trabajo técnicamente válido; la única excepción es no clonar ni materializar repositorios nuevos dentro de ese perfil. |
 | 11 | v0.9.0 | Bloqueo Operativo Fail-Closed y Salida Visible | Se define que el estado BLOQUEADO detiene la ejecución sustantiva sin impedir la interacción con el usuario y se estandariza una notificación visual de bloqueo. |
 | 12 | v0.9.1 | Persistencia Global de Sesión RDC y Separación de Conectividad | Se fija que la identidad de la sesión RDC persiste entre conversaciones hasta cierre o sustitución explícitos, mientras la conectividad se verifica por separado solo cuando el ciclo requiera uso en vivo. |
+| 13 | v0.9.2 | Salida Visible Mínima y Contexto Condensado | Se simplifica la salida visible del ciclo al conjunto mínimo de identidad, versión, contexto RDC resumido, notas y resultado/estado; los metadatos operativos y la narrativa de proceso quedan fuera de la salida cotidiana. |
 La tabla es canónica: las versiones futuras deben añadir una fila sin borrar ni reciclar las anteriores. El nombre describe el avance de la versión y no sustituye el título general del sistema o documento.
 
 ## 1. Convención obligatoria de foliación de ciclos
@@ -141,3 +142,22 @@ La única restricción específica de materialización es no clonar ni materiali
 La discrepancia entre identidad operativa de referencia e identidad efectiva no bloquea por sí misma el ciclo. El gate solo bloquea cuando el contexto requerido no puede verificarse, la operación exige una capacidad que no está disponible o se vulnera la restricción de materialización.
 
 Un bloqueo es de ejecución sustantiva, no de conversación. Mientras el ciclo esté BLOQUEADO, el modelo debe seguir disponible para explicar la causa, solicitar la información mínima, recibir decisiones del usuario y verificar la solución. No puede ejecutar trabajo sustantivo ni declarar el ciclo cerrado hasta levantar el bloqueo.
+
+
+## 18. Salida visible mínima
+
+La salida cotidiana de cada ciclo no debe convertirse en un inventario del mecanismo. Los campos esenciales se condensan en:
+
+`ChatGPT · UBIC: ... · RDC: ... · C: ... · S: ... · K: ... · fila4`
+
+`N: 🟢 SIN NOTAS | 🟡 NOTAS PENDIENTES`
+
+`R: ...`
+
+`E: COMPLETADO | BLOQUEADO | PENDIENTE`
+
+En CECEQ, la identidad visible del entorno es siempre `fila4`; `central\\mantenimientorci` no se muestra en la salida cotidiana aunque sea la identidad efectiva de la sesión RDC. El nombre del dispositivo solo aparece cuando sea relevante.
+
+`OBJETIVO`, `VERIFICACIÓN`, `EJECUCIÓN` y `CIERRE DEL CICLO` no son secciones obligatorias de la salida visible. El objetivo se deriva de la solicitud; la verificación queda representada por el contexto y el gate; la ejecución no requiere narración; y el cierre queda expresado por `E`.
+
+`EVIDENCIA` sigue siendo obligatoria a nivel de trazabilidad normativa (P028), pero no requiere una sección visible en todos los ciclos. Se conserva en los registros y mecanismos de evidencia y se muestra cuando sea necesaria para auditoría, comprobación o explicación del resultado.
