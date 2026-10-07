@@ -2,8 +2,8 @@
 
 ## Estado canónico
 
-- **Versión:** v0.9.1
-- **Nombre de versión:** Persistencia Global de Sesión RDC y Separación de Conectividad
+- **Versión:** v0.9.2
+- **Nombre de versión:** Salida Visible Mínima, Propagación Global y Acceso MCP Verificable
 - **Última actualización:** 2026-10-07
 - **Última actualización canónica:** 2026-10-07
 - **Ámbito:** Todos los proyectos y conversaciones trabajados bajo esta metodología.
@@ -101,7 +101,7 @@ El sistema canónico de instrucciones que gobierna la interpretación, decisión
 
 `SI-METACOGNITIVO.md`
 
-La versión canónica actual del SI es **v1.5.0 — Bloqueo Operativo Fail-Closed con Resolución Conversacional** y contiene los principios **P019–P031**, cada uno con su **índice de preponderancia** dentro de la escala `0–1`.
+La versión canónica actual del SI es **v1.5.0 — Bloqueo Operativo Fail-Closed con Resolución Conversacional** y contiene los principios **P019–P032**, cada uno con su **índice de preponderancia** dentro de la escala `0–1`.
 
 La metodología mantiene separadas las normas fundamentales de sus desarrollos, procedimientos, herramientas y mecanismos de implementación.
 \n\n## 6. Contexto de ejecución y salida por ciclo\n\nEl contrato canonico se encuentra en `ANEXO-CONTEXTO-EJECUCION-Y-SALIDA-CICLO.md`. Su aplicacion es ubicua en todos los ciclos sujetos a la metodologia e integra plataforma, ubicacion persistente, estado y cuenta RDC, uso mensual disponible, identidad Windows operativa y, cuando corresponda, identidad administrativa. Los detalles de formato, fuentes y perfiles por ubicacion permanecen en el anexo y no se elevan al nivel del SI.
@@ -148,7 +148,7 @@ Un bloqueo es de ejecución sustantiva, no de conversación. Mientras el ciclo e
 
 La salida cotidiana de cada ciclo no debe convertirse en un inventario del mecanismo. Los campos esenciales se condensan en:
 
-`ChatGPT · UBIC: ... · RDC: ... · C: ... · S: ... · K: ... · fila4`
+`ChatGPT · UBIC: ... · RDC: ... · C: ... · S: ... · K: ✓|?|! · fila4`
 
 `N: 🟢 SIN NOTAS | 🟡 NOTAS PENDIENTES`
 
@@ -161,3 +161,14 @@ En CECEQ, la identidad visible del entorno es siempre `fila4`; `central\\manteni
 `OBJETIVO`, `VERIFICACIÓN`, `EJECUCIÓN` y `CIERRE DEL CICLO` no son secciones obligatorias de la salida visible. El objetivo se deriva de la solicitud; la verificación queda representada por el contexto y el gate; la ejecución no requiere narración; y el cierre queda expresado por `E`.
 
 `EVIDENCIA` sigue siendo obligatoria a nivel de trazabilidad normativa (P028), pero no requiere una sección visible en todos los ciclos. Se conserva en los registros y mecanismos de evidencia y se muestra cuando sea necesaria para auditoría, comprobación o explicación del resultado.
+
+
+### 18.1 Indicador discreto de acceso MCP de KHORA
+
+`K` significa acceso al MCP canónico de KHORA. Su interpretación es estricta.
+
+- `K: ✓` = acceso autenticado y verificado al recurso MCP canónico con los scopes completos vigentes: `volcados:read`, `runtime:read` y `norm:turn`.
+- `K: ?` = acceso no verificado en el ciclo.
+- `K: !` = acceso intentado y fallido, no autorizado o no disponible.
+
+Nunca se emite `K: ✓` por inferencia, por conocer la URL del MCP o por disponer de otra herramienta. Debe existir evidencia de una comprobación autenticada contra el recurso canónico.
