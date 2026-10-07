@@ -1,7 +1,7 @@
 # Glosario Operativo de la Metodologia
 
 **Estado:** CANONICO  
-**Version:** v1.1.0  
+**Version:** v1.1.1  
 **Ambito:** Todos los proyectos y conversaciones sujetos a la metodologia comun.
 
 ## 1. Funcion
