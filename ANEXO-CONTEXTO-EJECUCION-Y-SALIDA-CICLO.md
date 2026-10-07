@@ -151,6 +151,70 @@ El registro global de sesion activa es independiente de la conversacion contened
 Cuando la verificacion detecte una nueva sesion, esta pasa a ser la sesion activa global y el registro debe actualizarse antes de ejecutar operaciones sustantivas dependientes de RDC.
 
 
+## 12.1 Gate fail-closed por ciclo
+
+La sección 11 define la verificación mínima cuando ya existe una sesión registrada. El gate completo exige además verificar que el estado global sea legible y que pueda distinguirse entre ACTIVA, INACTIVA e INDETERMINADA.
+
+### Secuencia obligatoria
+
+1. Leer ESTADO-RDC-ACTIVO.md.
+2. Intentar detección automática de la sesión actual mediante la fuente RDC disponible.
+3. Si existe una sesión registrada y el dispositivo conocido responde al ping, conservarla como activa y actualizar la marca temporal.
+4. Si el ping falla, escalar a descubrimiento de dispositivos y cuenta.
+5. Si la detección demuestra inequívocamente que no existe sesión activa, registrar RDC-SESION: INACTIVA.
+6. Si no puede determinarse si existe una sesión activa, registrar RDC-SESION: NO VERIFICADA y detener el trabajo sustantivo hasta preguntar al usuario si la conversación requiere una sesión RDC activa.
+7. Si el usuario responde sí, solicitar la información mínima para establecerla (como mínimo, la evidencia final de conexión RDC que permita identificar cuenta y dispositivo), actualizar el estado global y verificarlo antes de continuar.
+8. Si el usuario responde no, registrar RDC-REQUERIDA: NO y permitir únicamente trabajo que no dependa de RDC.
+
+La herramienta indisponible nunca se interpreta como ausencia de sesión.
+
+## 12.2 Propagación transversal
+
+ESTADO-RDC-ACTIVO.md es el estado global lógico de la sesión, no una propiedad de una conversación. Toda conversación sujeta a esta metodología consume el estado más reciente al iniciar cada ciclo.
+
+Cuando una verificación identifica una sesión diferente de la registrada, la nueva sesión sustituye a la anterior antes de cualquier operación dependiente de RDC.
+
+La propagación no se considera completada por la mera lectura de un valor almacenado: el ciclo debe vincular su salida al estado efectivamente verificado y conservar la marca temporal y procedencia de la verificación.
+
+## 12.3 Perfil operativo de ubicación
+
+Después de resolver la sesión RDC, el ciclo debe resolver UBICACION_ACTUAL y el perfil operativo correspondiente. Las reglas específicas del perfil se aplican antes de ejecutar operaciones condicionadas por identidad, rutas, permisos, herramientas o configuración.
+
+Para CECEQ, la resolución canónica es:
+
+WIN-OPERATIVO = fila4
+WIN-ADMIN = central\\mantenimientorci
+
+La identidad administrativa no sustituye a la operativa. Cuando una operación requiera elevación, debe conservarse la separación entre el proceso de trabajo y el puente administrativo.
+
+## 12.4 Condición de bloqueo
+
+El ciclo se marca BLOQUEADO cuando ocurra cualquiera de estas condiciones:
+
+- no puede leerse el estado global de RDC;
+- la detección automática no puede establecer activo/inactivo y el usuario aún no ha resuelto si RDC es requisito;
+- RDC es requerido pero no existe una sesión verificada;
+- la ubicación es desconocida cuando la tarea depende de un perfil de ubicación;
+- el perfil de la ubicación no existe o no es suficiente;
+- la identidad Windows operativa requerida no puede verificarse.
+
+Mientras el ciclo esté BLOQUEADO, no se ejecutan operaciones dependientes del contexto y no se declara cierre exitoso.
+
+## 12.5 Puente rápido de identidad para CECEQ
+
+La estrategia preferente es no cambiar de usuario de Windows ni almacenar credenciales. El proceso administrativo de RDC conserva su función de puente y, cuando ya existe una sesión interactiva de fila4, crea el proceso operativo mediante el token de esa sesión.
+
+Orden de preferencia:
+
+1. reutilizar el token interactivo ya existente de fila4;
+2. verificar el usuario efectivo y el perfil (whoami, perfil de usuario y ruta de trabajo);
+3. lanzar el proceso ordinario bajo fila4;
+4. utilizar central\\mantenimientorci únicamente para elevación/puente cuando sea indispensable.
+
+runas con credenciales, cierre de sesión, reautenticación y ejecución ordinaria como administrador no son el camino rápido ni el camino canónico.
+
+El mecanismo concreto de duplicación/creación del proceso pertenece a la implementación y se documenta en ANEXO-GATE-CONTEXTO-OPERATIVO-FAIL-CLOSED.md.
+
 ## 13. Referencia terminológica
 
 La ubicación y los identificadores de entorno deben utilizar las formas del glosario canónico. Para la ubicación actual, la forma canónica es `CECEQ`. Las formas reconocibles como errores de transcripción no deben propagarse a la salida.
