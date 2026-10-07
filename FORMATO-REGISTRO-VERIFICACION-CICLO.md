@@ -1,7 +1,7 @@
 # Registro de Verificación por Ciclo
 
 **Estado:** CANÓNICO  
-**Versión:** v1.5.0 — Salida Visible Minimalista  
+**Versión:** v1.6.0 — Salida Minimalista con Health-Check MCP  
 **Fecha:** 2026-10-07
 
 ## Formato mínimo
