@@ -2,8 +2,8 @@
 
 ## Estado canónico
 
-- **Versión:** v0.11.1
-- **Nombre de versión:** Gate de Thinking y HUD Compacto por Turno
+- **Versión:** v0.11.2
+- **Nombre de versión:** Verificación Normativa Adaptativa y HUD Compacto por Turno
 - **Última actualización:** 2026-10-07
 - **Última actualización canónica:** 2026-10-07
 - **Ámbito:** Todos los proyectos y conversaciones trabajados bajo esta metodología.
@@ -40,6 +40,7 @@
 | 15 | v0.10.0 | Sincronización Audio–Transcripción Medible y Dashboard IGP | Se canoniza el procedimiento de perfeccionamiento de sincronización audio–transcripción con OGP como caso prioritario, se establece una baseline congelada, se incorpora el IGP y se vuelve obligatorio el dashboard explicativo por iteración. La abstracción futura queda subordinada al avance efectivo de OGP. |
 | 16 | v0.11.0 | Gate de Thinking y Formato Obligatorio por Turno | Se establece Thinking como precondición de ejecución sujeta a la metodología, se endurece el circuito `HEALTH → OPEN → VERIFY → RELEASE`, y se vuelve obligatorio el contrato visible `v1.7.0` por cada ciclo. Estados no verificables permanecen bloqueados. |
 | 17 | v0.11.1 | Gate de Thinking y HUD Compacto por Turno | Se retira el subsistema operativo de notas del formato y de los lineamientos activos y se compacta el HUD conservando los campos y decisiones normativas existentes. El contrato visible pasa a `v1.7.1` como evolución de presentación. |
+| 18 | v0.11.2 | Verificación Normativa Adaptativa y HUD Compacto por Turno | Se corrige la implementación del gate: Thinking es la ventana preferente para resolver la cascada normativa antes de la salida, pero no se intenta verificar el razonamiento interno ni se bloquea la salida por su estado. KHORA pasa a tener disponibilidad explícita (`K: ✓ / OFF / ? / !`). |
 La tabla es canónica: las versiones futuras deben añadir una fila sin borrar ni reciclar las anteriores. El nombre describe el avance de la versión y no sustituye el título general del sistema o documento.
 
 ## 1. Convención obligatoria de foliación de ciclos
@@ -95,7 +96,7 @@ Cuando corresponda, el encabezado metodológico de un ciclo debe permitir identi
 
 ## 4.1 Gate de ejecución cognitiva
 
-El requisito de ejecución en modo Thinking de ChatGPT, el bloqueo fail-closed, el atestado protocolario y el contrato visible por turno están definidos en `ANEXO-GATE-THINKING-CHATGPT.md`.
+Thinking es la ventana preferente de ejecución de la cascada normativa cuando está disponible; el comportamiento adaptativo y el contrato visible están definidos en `ANEXO-GATE-THINKING-CHATGPT.md`.
 
 Ese anexo es obligatorio para todo ciclo cuya plataforma sea ChatGPT.
 
@@ -105,7 +106,7 @@ El sistema canónico de instrucciones que gobierna la interpretación, decisión
 
 `SI-METACOGNITIVO.md`
 
-La versión canónica actual del SI es **v1.6.0 — Gate de Thinking y Ejecución Normativa por Turno** y contiene los principios **P019–P032**, cada uno con su **índice de preponderancia** dentro de la escala `0–1`.
+La versión canónica actual del SI es **v1.6.1 — Verificación Normativa Adaptativa por Turno** y contiene los principios **P019–P032**, cada uno con su **índice de preponderancia** dentro de la escala `0–1`.
 
 La metodología mantiene separadas las normas fundamentales de sus desarrollos, procedimientos, herramientas y mecanismos de implementación.
 \n\n## 6. Contexto de ejecución y salida por ciclo\n\nEl contrato canonico se encuentra en `ANEXO-CONTEXTO-EJECUCION-Y-SALIDA-CICLO.md`. Su aplicacion es ubicua en todos los ciclos sujetos a la metodologia e integra plataforma, ubicacion persistente, estado y cuenta RDC, uso mensual disponible, identidad Windows operativa y, cuando corresponda, identidad administrativa. Los detalles de formato, fuentes y perfiles por ubicacion permanecen en el anexo y no se elevan al nivel del SI.
