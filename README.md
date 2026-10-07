@@ -36,7 +36,7 @@ El SI contiene los principios fundamentales **P019–P032**, incluyendo P028 · 
 
 ## Última actualización de Metodología
 
-**v0.9.3 — Propagación Global Obligatoria y Acceso MCP Verificable**  
+**v0.10.0 — Sincronización Audio–Transcripción Medible y Dashboard IGP**  
 2026-10-07
 
 Esta evolución establece el gate de contexto operativo, el estado transversal de RDC, el bloqueo fail-closed de ejecución y su resolución conversacional abierta. El trabajo bajo la identidad efectiva de la sesión RDC está permitido cuando sea técnicamente válido; la restricción específica es no clonar ni materializar repositorios nuevos dentro del perfil o ruta de MantenimientoRCI.
@@ -55,3 +55,15 @@ El repositorio incorpora un glosario metodológico transversal en [GLOSARIO-OPER
 Todo ciclo sujeto a la metodologia debe pasar el gate fail-closed de contexto operativo antes de ejecutar trabajo dependiente del entorno. El contrato se encuentra en `ANEXO-GATE-CONTEXTO-OPERATIVO-FAIL-CLOSED.md`, y el estado global de la sesion RDC en `ESTADO-RDC-ACTIVO.md`.
 
 La incapacidad de detectar automaticamente la sesion no se interpreta como ausencia. Si no puede establecerse ACTIVA o INACTIVA, el ciclo solicita al usuario confirmar si RDC es requisito; si lo es, queda bloqueado hasta establecer y verificar la sesion.
+
+
+## Sincronización audio–transcripción en vivo
+
+La metodología incorpora un procedimiento canónico para sincronizar audio y transcripción mediante benchmark reproducible, baseline congelada, IGP y dashboard.
+
+**Caso prioritario de validación:** Otro Gran Programa — https://github.com/SeryMente/otrobuenprograma
+
+- ANEXO-PROCEDIMIENTO-SINCRONIZACION-AUDIO-TRANSCRIPCION-VIVO.md
+- ANEXO-DASHBOARD-IGP-SINCRONIZACION.md
+
+La extensión a proyectos futuros no debe retrasar el objetivo operativo de mejorar OGP.
