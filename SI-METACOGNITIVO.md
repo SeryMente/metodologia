@@ -3,7 +3,7 @@
 **Estado:** CANÓNICO
 **Versión:** v1.5.0
 **Nombre de versión:** Bloqueo Operativo Fail-Closed con Resolución Conversacional
-**Última actualización canónica:** 2026-10-07T10:26:01-06:00
+**Última actualización canónica:** 2026-10-07
 **Fecha:** 2026-10-07
 **Ámbito:** Gobierno metacognitivo del modelo en tareas sujetas a este sistema.
 
@@ -201,6 +201,8 @@ Secuencia mínima:
 `AUTO-DETECTAR → VERIFICAR → RESOLVER PERFIL → APTO`
 
 Si la detección automática determina una sesión RDC activa, el ciclo usa esa sesión y el perfil de ubicación global correspondiente. Si determina inequívocamente que no existe sesión activa y la tarea no requiere RDC, el ciclo puede continuar registrándolo. Si no puede determinar si existe una sesión, el ciclo debe solicitar al usuario si en la conversación actual debe existir una sesión RDC activa; si la respuesta es sí, el ciclo queda bloqueado hasta establecerla y verificarla. Si la respuesta es no, debe quedar registrado que RDC no es requisito del ciclo.
+
+La conversación permanece abierta durante cualquier bloqueo para permitir la resolución y la nueva verificación; el bloqueo no constituye cierre ni indisponibilidad conversacional.
 
 La indisponibilidad de la herramienta o de la fuente requerida se trata como fallo de detección, nunca como evidencia de ausencia de sesión.
 
