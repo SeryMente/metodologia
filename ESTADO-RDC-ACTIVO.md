@@ -63,3 +63,15 @@ Este handshake resuelve la recuperacion sin abrir una segunda sesion.
 La divergencia de observabilidad quedó resuelta mediante una reinstanciación oficial del Remote Device. La sesión persistente coincide con la identidad verificada y la conectividad fue confirmada por el proveedor.
 
 La ultima conexion RDC verificada estuvo autenticada y el shell remoto observado se ejecuto como central\\mantenimientorci. El usuario Windows operativo autorizado para CECEQ es fila4. La identidad central\\mantenimientorci puede ejecutar el trabajo tecnicamente valido. La unica restriccion especifica es no clonar ni materializar repositorios nuevos dentro del perfil o ruta de MantenimientoRCI.
+
+
+## Cierre operativo del ciclo · 2026-10-07
+
+- **RDC:** sesión persistente ACTIVA; nueva conexión restaurada sin abrir sesión paralela.
+- **KHORA HEAD:** `326f0664b0dd579c67809d94ac6d6186baa58f5b`; alineado con `origin/main`.
+- **Vercel:** proyecto canónico `khora-web`; deployment `dpl_7kpfQgQuFn2zDEqYkkQPZ4tFBx7t`; estado **READY**; alias `https://khora-web.vercel.app`.
+- **Runtime DB:** migraciones 023–028 aplicadas durante el build de producción.
+- **Validación:** typecheck 0; suite unitaria completa 310/310; build local de producción exit 0.
+- **Smoke producción:** `/` HTTP 200; metadata OAuth MCP HTTP 200; `/api/mcp` sin credenciales HTTP 401.
+- **Integridad normativa:** snapshot atómico H1/H2; commit+blob SHA; ledger secuencial server-side; `application_log_sha256`; `VERIFIED_RELEASE` condicionado a evidencia completa.
+- **GitHub Actions:** workflows del push continúan fallando antes de ejecutar steps; no se usa ese fallo como prueba de producción porque Vercel directo ya verificó el deployment READY del commit exacto.
