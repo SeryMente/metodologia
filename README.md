@@ -6,6 +6,20 @@ Repositorio transversal de la organización **Ser y Mente** para desarrollar, co
 
 La metodología cuenta con un núcleo de versionado metodológico y un **Sistema de Instrucciones Metacognitivas** destinado a gobernar la interpretación, decisión y ejecución del modelo.
 
+## Punto de entrada transversal de contexto
+
+Para cualquier conversación sujeta a esta metodología, el contexto operativo transversal se obtiene del repositorio y no de la memoria de una conversación aislada.
+
+**Orden mínimo de lectura:**
+
+1. [`SI-METACOGNITIVO.md`](SI-METACOGNITIVO.md) — norma canónica vigente.
+2. [`ESTADO-RDC-ACTIVO.md`](ESTADO-RDC-ACTIVO.md) — identidad persistente de la sesión RDC y estado de conectividad.
+3. [`ANEXO-GATE-CONTEXTO-OPERATIVO-FAIL-CLOSED.md`](ANEXO-GATE-CONTEXTO-OPERATIVO-FAIL-CLOSED.md) — verificación y bloqueo.
+
+La sesión RDC no se reinicia al cambiar de conversación. Permanece globalmente vigente hasta una finalización o sustitución explícita. Una desconexión temporal o un dispositivo offline afecta la conectividad observable, no la existencia de la sesión persistida.
+
+Una conversación nueva debe heredar el estado registrado antes de pedir nuevamente los datos de la sesión.
+
 ## Principio de evolución
 
 La metodología se define gradualmente. Las decisiones confirmadas se incorporan al repositorio como registro canónico y trazable. Las normas fundamentales permanecen separadas de procedimientos, herramientas e implementaciones.
@@ -22,13 +36,13 @@ El SI contiene los principios fundamentales **P019–P032**, incluyendo P028 · 
 
 ## Última actualización de Metodología
 
-**v0.9.0 — Bloqueo Operativo Fail-Closed y Salida Visible**  
+**v0.9.1 — Persistencia Global de Sesión RDC y Separación de Conectividad**  
 2026-10-07
 
 Esta evolución establece el gate de contexto operativo, el estado transversal de RDC, el bloqueo fail-closed de ejecución y su resolución conversacional abierta. El trabajo bajo la identidad efectiva de la sesión RDC está permitido cuando sea técnicamente válido; la restricción específica es no clonar ni materializar repositorios nuevos dentro del perfil o ruta de MantenimientoRCI.
 
 
-La sesión RDC activa y su registro transversal se mantienen mediante ESTADO-RDC-ACTIVO.md y se verifican por ciclo mediante ping como comprobación primaria de bajo costo.
+La identidad persistente de la sesión RDC y su registro transversal se mantienen mediante ESTADO-RDC-ACTIVO.md. La conectividad se verifica por ciclo mediante ping como comprobación primaria cuando el ciclo requiera uso RDC en vivo.
 
 
 ## Glosario operativo
