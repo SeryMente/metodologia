@@ -47,7 +47,7 @@ Cuando exista una entrada canonica, su forma debe utilizarse en salidas, documen
 ### Usuario Windows operativo
 **Tipo:** identidad operativa.  
 **Definicion:** cuenta bajo la que deben ejecutarse las operaciones ordinarias del entorno.  
-**Regla:** no se sustituye por una identidad administrativa elevada.
+**Regla:** identifica la identidad operativa de referencia del perfil; no obliga por sí misma a cambiar la identidad efectiva de ejecución.
 
 ### Usuario Windows administrativo
 **Tipo:** identidad administrativa.  
