@@ -1,22 +1,16 @@
 # Registro de Verificación por Ciclo
 
 **Estado:** CANÓNICO  
-**Versión:** v1.7.0 — Thinking y Formato Obligatorio por Turno  
+**Versión:** v1.7.1 — Thinking y HUD Compacto por Turno  
 **Fecha:** 2026-10-07
 
 ## Formato mínimo
 
-`PROYECTO / CONV-XX / CXXX`
-
-`SI CARGADO · vX.Y.Z — NOMBRE DE VERSIÓN · COMPLETO · ACTIVO`
-
-`ChatGPT · UBIC: ... · RDC: ... · C: ... · S: ... · K: ✓|?|! · T: ✓|?|! · fila4`
-
-`NOTAS · 🟢 SIN NOTAS | 🟡 NOTAS PENDIENTES`
-
-`RESULTADO: ...`
-
-`ESTADO: ...`
+> **PROYECTO / CONV-XX / CXXX**  
+> `SI CARGADO` · **vX.Y.Z — NOMBRE DE VERSIÓN** · COMPLETO · ACTIVO  
+> `ChatGPT` · **UBIC:** … · **RDC:** … · **C:** … · **S:** … · **K:** ✓|?|! · **T:** ✓|?|! · **RDC-CNX:** … · **USR:** `fila4`  
+> **RESULTADO:** …  
+> **ESTADO:** **COMPLETADO** | **BLOQUEADO** | **PENDIENTE**
 
 ## Identificación normativa obligatoria
 
@@ -35,11 +29,14 @@ El orden canónico de salida es fijo:
 1. `PROYECTO / CONV-XX / CXXX`
 2. `SI CARGADO ...`
 3. `ChatGPT ...`
-4. `NOTAS ...`
 5. `RESULTADO: ...`
 6. `ESTADO: ...`
 
 No se puede omitir el bloque por considerar que el turno es simple, que no produjo cambios, que solo fue una aclaración o que el usuario ya conoce el contexto.
+
+## 1. HUD compacto
+
+La información metodológica visible se presenta como un bloque compacto de baja intrusión. Se permite enriquecer la presentación mediante **negritas**, `código` y etiquetas cortas sin introducir campos ni decisiones nuevas. El contrato vigente es `v1.7.1`.
 
 ## Principio de uso
 
