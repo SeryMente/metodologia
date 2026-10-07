@@ -36,13 +36,13 @@ El SI contiene los principios fundamentales **P019–P032**, incluyendo P028 · 
 
 ## Última actualización de Metodología
 
-**v0.9.2 — Salida Visible Mínima y Contexto Condensado**  
+**v0.9.3 — Propagación Global Obligatoria y Acceso MCP Verificable**  
 2026-10-07
 
 Esta evolución establece el gate de contexto operativo, el estado transversal de RDC, el bloqueo fail-closed de ejecución y su resolución conversacional abierta. El trabajo bajo la identidad efectiva de la sesión RDC está permitido cuando sea técnicamente válido; la restricción específica es no clonar ni materializar repositorios nuevos dentro del perfil o ruta de MantenimientoRCI.
 
 
-La identidad persistente de la sesión RDC y su registro transversal se mantienen mediante ESTADO-RDC-ACTIVO.md. La conectividad se verifica por ciclo mediante ping como comprobación primaria cuando el ciclo requiera uso RDC en vivo. La salida visible de cada ciclo muestra únicamente el contexto y resultado esenciales; el detalle permanece en los registros.
+La identidad persistente de la sesión RDC y su registro transversal se mantienen mediante ESTADO-RDC-ACTIVO.md. La conectividad se verifica por ciclo mediante ping como comprobación primaria cuando el ciclo requiera uso RDC en vivo. La salida visible de cada ciclo muestra únicamente el contexto y resultado esenciales; `K: ✓` solo acredita acceso MCP de KHORA efectivamente autenticado y verificado.
 
 
 ## Glosario operativo
