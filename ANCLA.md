@@ -7,4 +7,4 @@ Las conversaciones que trabajen sobre metodología deben consultar y aplicar el 
 
 ## Gate transversal por turno
 
-Todo turno sujeto a la metodología debe consumir el SI vigente antes de la ejecución sustantiva, verificar `reasoning_mode=THINKING` cuando la plataforma sea ChatGPT y emitir el formato canónico `v1.7.0` en la salida. La ausencia, `INSTANT` o estado no verificable mantiene el ciclo BLOQUEADO.
+Todo turno sujeto a la metodología debe consumir el SI vigente antes de la ejecución sustantiva. Cuando la plataforma sea ChatGPT, Thinking es la ventana preferente para ejecutar la cascada normativa con KHORA; `reasoning_mode` se registra como metadato cuando esté disponible y no constituye una prueba del razonamiento interno. Si KHORA no está disponible, el turno continúa y la salida declara `K: OFF`; el formato canónico vigente es `v1.7.2`.
