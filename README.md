@@ -36,7 +36,7 @@ El SI contiene los principios fundamentales **P019–P032**, incluyendo P028 · 
 
 ## Última actualización de Metodología
 
-**v0.11.0 — Gate de Thinking y Formato Obligatorio por Turno**  
+**v0.11.1 — Gate de Thinking y HUD Compacto por Turno**  
 2026-10-07
 
 Esta evolución establece el gate de contexto operativo, el estado transversal de RDC, el bloqueo fail-closed de ejecución y su resolución conversacional abierta. El trabajo bajo la identidad efectiva de la sesión RDC está permitido cuando sea técnicamente válido; la restricción específica es no clonar ni materializar repositorios nuevos dentro del perfil o ruta de MantenimientoRCI.
