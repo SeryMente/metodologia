@@ -259,6 +259,21 @@ si la verificacion automatica no puede ejecutarse o no produce evidencia suficie
 
 La imposibilidad de invocar la herramienta no se transforma en falso exito ni en una suposicion de continuidad.
 
+## 12.1 Health-check MCP obligatorio para ciclos normativos
+Antes de la apertura normativa del turno, el cliente sujeto al canon debe comprobar el acceso al único MCP canónico de KHORA mediante `khora_mcp_health`.
+
+El health-check detecta explícitamente:
+- autenticación válida;
+- scopes requeridos;
+- lectura del SI canónico;
+- contrato de MCP único y versión del verificador.
+
+Resultado:
+- `K: ✓` = acceso completo comprobado.
+- `K: ?` = no comprobado.
+- `K: !` = acceso insuficiente o no disponible.
+
+`K: ✓` es una condición de infraestructura/acceso, no un veredicto normativo.
 ## 13. Criterio de completitud del mecanismo
 
 El mecanismo se considera implementado cuando:
