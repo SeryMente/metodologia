@@ -1,7 +1,7 @@
 # Registro de Verificación por Ciclo
 
 **Estado:** CANÓNICO  
-**Versión:** v1.7.1 — Thinking y HUD Compacto por Turno  
+**Versión:** v1.7.2 — HUD Compacto y Verificación Adaptativa  
 **Fecha:** 2026-10-07
 
 ## Formato mínimo
@@ -36,7 +36,7 @@ No se puede omitir el bloque por considerar que el turno es simple, que no produ
 
 ## 1. HUD compacto
 
-La información metodológica visible se presenta como un bloque compacto de baja intrusión. Se permite enriquecer la presentación mediante **negritas**, `código` y etiquetas cortas sin introducir campos ni decisiones nuevas. El contrato vigente es `v1.7.1`.
+La información metodológica visible se presenta como un bloque compacto de baja intrusión. Se permite enriquecer la presentación mediante **negritas**, `código` y etiquetas cortas sin introducir campos ni decisiones nuevas. El contrato vigente es `v1.7.2`.
 
 ## Principio de uso
 
@@ -66,9 +66,10 @@ Después del bloque, solo se debe informar lo necesario para levantar la condici
 
 El campo `K` significa acceso al MCP canónico de KHORA y tiene semántica estricta:
 
-- `K: ✓` = acceso autenticado y verificado al recurso MCP canónico con `volcados:read`, `runtime:read` y `norm:turn`.
-- `K: ?` = acceso no verificado en el ciclo.
-- `K: !` = acceso intentado pero fallido, no autorizado o no disponible.
+- `K: ✓` = acceso autenticado y verificado al MCP canónico, con la secuencia normativa verificada/liberada.
+- `K: OFF` = el MCP no estuvo disponible o no pudo alcanzarse; la salida continúa sin atribuirle verificación.
+- `K: ?` = la disponibilidad o el resultado no pudo determinarse.
+- `K: !` = acceso intentado y fallido, no autorizado, o verificación normativa rechazada.
 
 `K: ✓` exige evidencia de una comprobación autenticada contra `/api/mcp`. Conocer la URL, tener GitHub o tener RDC no demuestra acceso al MCP.
 

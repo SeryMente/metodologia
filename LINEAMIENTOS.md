@@ -153,11 +153,11 @@ La separación de contexto de CECEQ es informativa: `fila4` identifica la identi
 
 El detalle técnico del gate y de la restricción de materialización se encuentra en `ANEXO-GATE-CONTEXTO-OPERATIVO-FAIL-CLOSED.md`.
 
-## 17. Gate de Thinking por turno
+## 17. Verificación normativa adaptativa por turno
 
-Cuando la plataforma de ejecución sea ChatGPT, todo ciclo sujeto a la metodología debe ejecutarse únicamente bajo `reasoning_mode=THINKING`. El modelo debe resolver el gate durante su razonamiento antes de ejecutar trabajo sustantivo. `INSTANT`, ausencia o imposibilidad de verificar el estado requerido implica BLOQUEADO.
+Cuando la plataforma sea ChatGPT, Thinking es la ventana preferente para resolver la cascada normativa durante el razonamiento antes de la salida. `reasoning_mode` es metadato operativo: `THINKING`, `INSTANT`, `UNKNOWN` o `UNAVAILABLE`; no constituye una prueba del razonamiento interno y ninguno de esos estados bloquea por sí mismo la salida.
 
-El gate es fail-closed: no se infiere Thinking por la identidad del modelo ni por la intención del usuario. El acceso a KHORA y el contrato `v1.7.1` se comprueban dentro de la misma cascada normativa.
+Cuando KHORA esté disponible, debe intentarse `HEALTH → OPEN → CASCADA → VERIFY → RELEASE`. Cuando KHORA no esté disponible, la salida continúa bajo el contrato vigente y el HUD declara `K: OFF`, sin atribuir verificación externa. El contrato vigente de salida es `v1.7.2`.
 
 ## 18. Formato de salida obligatorio por turno
 

@@ -1,43 +1,41 @@
 # Anexo — Gate de Thinking en ChatGPT
 
 **Estado:** CANÓNICO
-**Versión:** v1.1.1
+**Versión:** v1.1.2
 **Fecha:** 2026-10-07
 **Ámbito:** Todos los ciclos sujetos a la metodología cuando la plataforma de ejecución sea ChatGPT.
 
-## 1. Precondición
+## 1. Ventana de ejecución
 
-Todo ciclo sujeto a la metodología debe ejecutarse en modo Thinking de ChatGPT. La secuencia normativa se resuelve durante el razonamiento del turno antes de emitir la respuesta.
+Thinking es la ventana operativa preferente para resolver la cascada normativa antes de emitir la respuesta. No se considera una prueba del contenido del razonamiento interno y no constituye una condición que por sí sola bloquee la salida.
 
-Secuencia obligatoria:
+Secuencia preferente:
 
 `THINKING → HEALTH MCP → OPEN TURN → CASCADA DE PRINCIPIOS → VERIFY → RELEASE → SALIDA`
 
-## 2. Gate fail-closed
+## 2. Gate adaptativo
 
-- `THINKING` es obligatorio.
-- La señal válida debe pertenecer al runtime o integración que ejecuta el turno; la capacidad general del modelo para razonar no sustituye el estado de plataforma.
-- `INSTANT` no es un estado permitido para ejecutar trabajo sujeto a la metodología.
-- Ausencia de señal o imposibilidad de determinar el modo requerido = BLOQUEADO.
-- El bloqueo impide ejecución sustantiva y cierre, pero mantiene abierta la conversación para resolver la condición.
+- `THINKING` puede utilizarse cuando la plataforma lo exponga.
+- `INSTANT`, estado desconocido o ausencia de señal no bloquean por sí mismos la producción de la salida.
+- Durante el razonamiento se intenta acceder a KHORA antes de abrir un turno normativo.
+- Cuando KHORA no está disponible, el turno continúa y el HUD declara `K: OFF`.
+- Cuando KHORA está disponible, la cascada normativa intenta alcanzar `VERIFIED_RELEASE` antes de declarar verificación positiva.
 
 ## 3. Contrato protocolario
 
-KHORA exige en el turno:
+KHORA conserva el runtime del turno como metadato:
 
 `platform=ChatGPT`
-`reasoning_mode=THINKING`
-`output_format_version=v1.7.1`
+`reasoning_mode=THINKING|INSTANT|UNKNOWN|UNAVAILABLE`
+`output_format_version=v1.7.2`
 
-Los tres valores forman parte de la evidencia del turno. Cualquier ausencia o valor distinto impide `VERIFIED`.
+La ausencia de un modo de razonamiento no invalida el receipt. El verificador distingue entre integridad normativa y disponibilidad del runtime.
 
 ## 4. Límite de evidencia
 
-La metodología no considera verificable un estado de razonamiento que solo sea supuesto, inferido por el nombre del modelo o reconstruido a posteriori. Si la integración no entrega una señal operativa aceptable, el estado es `T: ?` y el ciclo queda bloqueado.
+La metodología no afirma ni almacena una prueba del razonamiento interno del modelo. `reasoning_mode` es una observación/atestado operativo cuando la integración la proporciona; no equivale a evidencia del contenido mental del modelo.
 
-OpenAI documenta que ChatGPT dispone de un modo Thinking y que las Apps/MCP reciben metadata de cliente, pero la metadata MCP documentada no incluye el selector de modelo o modo de razonamiento. Por tanto, el servidor KHORA no puede afirmar que lea directamente el selector visual.
-
-El protocolo utiliza `reasoning_mode=THINKING` como atestado obligatorio del runtime/modelo. El atestado no debe describirse como una prueba independiente de la interfaz. El gate sigue siendo fail-closed: sin el atestado correcto no hay ejecución normativa.
+La evidencia fuerte sigue siendo el receipt, sus hashes, la cobertura de principios y el veredicto de KHORA cuando el MCP está disponible. Cuando KHORA no está disponible, no existe veredicto externo para ese turno y el estado debe reflejarlo como `K: OFF`.
 
 ## 5. Formato visible
 
@@ -56,4 +54,4 @@ El formato de salida por ciclo es obligatorio y versionado como `v1.7.1`.
 
 ## 6. Cierre
 
-`E: COMPLETADO` solo puede emitirse después de `VERIFIED → RELEASE`, con `T: ✓`, `K: ✓` y con el contrato visible `v1.7.1` cumplido. Si Thinking no está activado o no puede verificarse, no existe ejecución metodológicamente completada.
+La salida puede emitirse en cualquier escenario. `K: ✓` solo se declara después de `VERIFIED → RELEASE`. Cuando el MCP está fuera de servicio o inaccesible, se declara `K: OFF` y no se atribuye verificación externa al turno. El contrato visible `v1.7.2` sigue siendo obligatorio.
