@@ -67,3 +67,8 @@ La metodología incorpora un procedimiento canónico para sincronizar audio y tr
 - ANEXO-DASHBOARD-IGP-SINCRONIZACION.md
 
 La extensión a proyectos futuros no debe retrasar el objetivo operativo de mejorar OGP.
+
+
+## Gate de ejecución en ChatGPT
+
+Todo ciclo sujeto a la metodología debe ejecutarse en modo Thinking. El contrato se encuentra en `ANEXO-GATE-THINKING-CHATGPT.md`; el formato visible obligatorio es `v1.7.0`.
