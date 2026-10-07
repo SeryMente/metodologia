@@ -8,7 +8,7 @@
 
 Este anexo define el mecanismo obligatorio para resolver, al inicio de cada ciclo, si el contexto operativo que puede condicionar la ejecucion esta suficientemente determinado.
 
-El objetivo no es garantizar que una herramienta, red o plataforma nunca falle. El objetivo es que ningun fallo de deteccion pueda convertirse silenciosamente en un supuesto: cuando la evidencia requerida no exista, el ciclo queda bloqueado hasta resolver la indeterminacion.
+El objetivo no es garantizar que una herramienta, red o plataforma nunca falle. El objetivo es mantener la identidad de una sesión global estable entre conversaciones, separar esa identidad de la conectividad observable y evitar que un fallo de deteccion se convierta silenciosamente en un supuesto de finalizacion.
 
 ## 2. Regla de entrada
 
@@ -38,6 +38,9 @@ Ese registro no pertenece a una conversacion. Una conversacion nueva consume el 
 
 El registro debe contener como minimo:
 
+- identidad persistente de la sesión;
+- estado independiente de conectividad;
+- condición de finalización o sustitución explícita;
 - ubicacion;
 - RDC-REQUERIDA;
 - RDC-SESION;
@@ -55,15 +58,15 @@ El registro debe contener como minimo:
 
 ### 4.1 Fast path
 
-Cuando exista una sesion registrada como activa:
+Cuando exista una sesion registrada como activa y no exista una marca de `FINALIZADA` o `SUSTITUIDA`:
 
-- reutilizar cuenta y device_id;
-- ejecutar ping al dispositivo conocido;
-- si responde, marcar VERIFICADO-ACTIVO;
-- actualizar la marca de verificacion;
-- conservar el ultimo consumo mensual verificado.
+- heredar cuenta y device_id;
+- conservar la identidad de la sesión aunque la conversación sea nueva;
+- ejecutar ping al dispositivo conocido cuando el ciclo requiera conectividad RDC en vivo;
+- si responde, marcar `VERIFICADO-ACTIVO` y actualizar la marca de conexión;
+- si no responde, conservar la sesión y marcar la conectividad como no verificada; no convertir el fallo en finalización de sesión.
 
-No se deben realizar llamadas de descubrimiento de mayor costo solo para confirmar una sesion que ya responde por ping.
+No se deben realizar llamadas de descubrimiento de mayor costo solo para reconstruir una identidad que ya está persistida.
 
 ### 4.2 Escalamiento
 
@@ -77,9 +80,9 @@ Si el ping falla:
 
 ### 4.3 Ausencia positiva
 
-Una respuesta fiable que establezca que no existe una sesion RDC activa se registra como VERIFICADO-INACTIVO.
+Una sesión persistente solo pasa a `VERIFICADO-INACTIVO` cuando existe evidencia fiable de finalización/sustitución o una fuente capaz de establecer inequívocamente que ya no existe la sesión registrada.
 
-La ausencia de respuesta no es evidencia de ausencia.
+La ausencia de respuesta, el dispositivo offline o la indisponibilidad de la herramienta no son evidencia suficiente de finalización y no eliminan la identidad persistente.
 
 ## 5. Fallo de deteccion y decision del usuario
 
@@ -192,25 +195,29 @@ Las operaciones que requieran privilegios administrativos reales pueden utilizar
 
 La propagacion funciona por estado compartido, no por memoria de una conversacion.
 
-Contrato:
+Contrato de continuidad:
 
     CONVERSACION A
        |
        v
     ESTADO-RDC-ACTIVO.md
        |
+       +--> identidad persistente de sesión
+       |
+       +--> conectividad observable separada
+       |
        v
     CONVERSACION B
        |
        v
-    verificacion minima
+    heredar identidad + verificar conectividad cuando corresponda
        |
        v
     estado vigente del ciclo
 
-Una nueva sesion verificada sustituye a la anterior.
+Una nueva sesion verificada sustituye a la anterior. Una finalización explícita sustituye `ACTIVA` por `INACTIVA`. Ninguna de las dos acciones ocurre por el mero cambio de conversación o por una desconexión temporal.
 
-Una conversacion nunca puede declarar por si sola que su sesion local continua siendo la globalmente activa sin consultar el estado compartido y pasar el gate.
+Una conversación nunca debe pedir al usuario que vuelva a declarar una sesión ya persistida: debe heredarla. La verificación de conectividad se realiza solamente cuando la operación del ciclo necesite RDC en vivo.
 
 ## 11. Contrato minimo de salida
 
