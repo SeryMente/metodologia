@@ -1,7 +1,7 @@
 # Glosario Operativo de la Metodologia
 
 **Estado:** CANONICO  
-**Version:** v1.1.1  
+**Version:** v1.2.0  
 **Ambito:** Todos los proyectos y conversaciones sujetos a la metodologia comun.
 
 ## 1. Funcion
@@ -51,8 +51,8 @@ Cuando exista una entrada canonica, su forma debe utilizarse en salidas, documen
 
 ### Usuario Windows administrativo
 **Tipo:** identidad administrativa.  
-**Definicion:** cuenta utilizada para elevacion o funciones de puente tecnico.  
-**Regla:** su uso directo para trabajo ordinario esta prohibido cuando exista un usuario operativo definido.
+**Definicion:** identidad administrativa o elevada disponible en el entorno. Puede coincidir con la identidad efectiva de la sesión RDC.  
+**Regla:** su uso para trabajo ordinario está permitido cuando la operación sea técnicamente válida. La única restricción específica de materialización de repositorios se define en los anexos operativos.
 
 ### Bloqueo de ejecucion
 **Tipo:** estado de ejecución.
