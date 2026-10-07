@@ -18,7 +18,7 @@ Versión vigente:
 
 **v1.3.0 — Terminología Canónica y Normalización de Transcripción**
 
-El SI contiene los principios fundamentales **P019–P031**, incluyendo P028 · Trazabilidad Normativa, P029 · Identidad y Vigencia Canónica, P030 · Fidelidad Terminológica Canónica y P031 · Normalización de Transcripción.
+El SI contiene los principios fundamentales **P019–P032**, incluyendo P028 · Trazabilidad Normativa, P029 · Identidad y Vigencia Canónica, P030 · Fidelidad Terminológica Canónica, P031 · Normalización de Transcripción y P032 · Contexto Operativo Verificado.
 
 ## Última actualización de Metodología
 
