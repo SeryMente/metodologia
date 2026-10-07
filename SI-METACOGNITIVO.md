@@ -209,6 +209,26 @@ La indisponibilidad de la herramienta o de la fuente requerida se trata como fal
 
 Un ciclo bloqueado por este gate no puede declararse completado ni ejecutar operaciones dependientes del contexto hasta que el estado requerido quede resuelto.
 
+### 5.0.1 Gate de Thinking y ejecución normativa por turno
+
+Todo ciclo sujeto a este SI que se ejecute en ChatGPT debe comprobar, antes de cualquier trabajo sustantivo, que el modo de razonamiento requerido está habilitado para el turno.
+
+Secuencia obligatoria dentro del razonamiento:
+
+`THINKING → HEALTH MCP → OPEN TURN → CASCADA DE PRINCIPIOS → EJECUCIÓN → PREPARAR EVIDENCIA → VERIFY → RELEASE → SALIDA`
+
+Reglas fail-closed:
+
+1. `THINKING` es una precondición. `INSTANT`, modo desconocido, señal ausente o imposibilidad de verificarlo no permiten ejecución sustantiva.
+2. La identidad general del modelo como modelo de razonamiento no sustituye una señal operativa de Thinking del runtime o integración. No se debe inferir `T: ✓`.
+3. `HEALTH MCP` debe comprobar el acceso al MCP canónico de KHORA antes de abrir el turno normativo.
+4. La cascada normativa debe resolverse durante el razonamiento del turno, antes de producir la respuesta final.
+5. Cada turno debe producir el contrato visible `v1.7.0`; la salida forma parte del estado verificable del turno.
+6. `VERIFIED` no autoriza por sí solo el cierre; cuando exista control técnico de publicación, el runtime debe alcanzar `RELEASE`.
+7. El bloqueo detiene la ejecución sustantiva y el cierre, pero mantiene abierta la conversación para resolver la condición.
+
+Esta sección es un procedimiento de operación y no añade un principio fundamental.
+
 ### 5.1 Identificación canónica en la salida
 
 Cuando el sistema deba identificarse en la salida de un ciclo, debe usar este encabezado:
