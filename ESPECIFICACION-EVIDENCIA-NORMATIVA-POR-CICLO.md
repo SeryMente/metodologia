@@ -4,7 +4,7 @@
 **Versión:** v0.4.0 — Identidad Versionada + MCP Multiuso + Registro Verificable por Ciclo  
 **Fecha:** 2026-10-06  
 **Ámbito:** mecanismo para obtener evidencia externa, reproducible y auditable de que cada turno elegible de ejecución de ChatGPT fue gobernado por la totalidad del Sistema de Instrucciones Metacognitivas (SI) vigente al inicio del turno.  
-**Relación con el SI:** este documento especifica un mecanismo de aplicación y verificación. El SI v1.2.0 canoniza P028 · Trazabilidad Normativa y P029 · Identidad y Vigencia Canónica; este documento desarrolla su aplicación sin añadir mecanismos al nivel de principio.
+**Relación con el SI:** este documento especifica un mecanismo de aplicación y verificación. El SI v1.3.0 canoniza P028 · Trazabilidad Normativa, P029 · Identidad y Vigencia Canónica, P030 · Fidelidad Terminológica Canónica y P031 · Normalización de Transcripción; este documento desarrolla su aplicación sin añadir mecanismos al nivel de principio.
 
 **Fuente normativa canónica:**  
 https://github.com/SeryMente/metodologia/blob/main/SI-METACOGNITIVO.md

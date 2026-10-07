@@ -5,7 +5,7 @@
 - **Versión:** v0.5.2
 - **Nombre de versión:** Glosario Operativo y Normalización de Transcripción
 - **Última actualización:** 2026-10-07
-- **Última actualización canónica:** 2026-10-07T09:40:00-06:00
+- **Última actualización canónica:** 2026-10-07T09:30:33-06:00
 - **Ámbito:** Todos los proyectos y conversaciones trabajados bajo esta metodología.
 
 ### Narrativa de la versión
@@ -95,7 +95,7 @@ El sistema canónico de instrucciones que gobierna la interpretación, decisión
 
 `SI-METACOGNITIVO.md`
 
-La versión canónica actual del SI es **v1.2.0 — Identidad Versionada y Vigencia Canónica** y contiene los principios **P019–P029**, cada uno con su **índice de preponderancia** dentro de la escala `0–1`.
+La versión canónica actual del SI es **v1.3.0 — Terminología Canónica y Normalización de Transcripción** y contiene los principios **P019–P031**, cada uno con su **índice de preponderancia** dentro de la escala `0–1`.
 
 La metodología mantiene separadas las normas fundamentales de sus desarrollos, procedimientos, herramientas y mecanismos de implementación.
 \n\n## 6. Contexto de ejecución y salida por ciclo\n\nEl contrato canonico se encuentra en `ANEXO-CONTEXTO-EJECUCION-Y-SALIDA-CICLO.md`. Su aplicacion es ubicua en todos los ciclos sujetos a la metodologia e integra plataforma, ubicacion persistente, estado y cuenta RDC, uso mensual disponible, identidad Windows operativa y, cuando corresponda, identidad administrativa. Los detalles de formato, fuentes y perfiles por ubicacion permanecen en el anexo y no se elevan al nivel del SI.

@@ -16,9 +16,9 @@ El SI canónico se encuentra en [SI-METACOGNITIVO.md](SI-METACOGNITIVO.md).
 
 Versión vigente:
 
-**v1.2.0 — Identidad Versionada y Vigencia Canónica**
+**v1.3.0 — Terminología Canónica y Normalización de Transcripción**
 
-El SI contiene los principios fundamentales **P019–P029**, incluyendo P028 · Trazabilidad Normativa y P029 · Identidad y Vigencia Canónica.
+El SI contiene los principios fundamentales **P019–P031**, incluyendo P028 · Trazabilidad Normativa, P029 · Identidad y Vigencia Canónica, P030 · Fidelidad Terminológica Canónica y P031 · Normalización de Transcripción.
 
 ## Última actualización de Metodología
 

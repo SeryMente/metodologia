@@ -3,7 +3,7 @@
 **Estado:** CANÓNICO
 **Versión:** v1.3.0
 **Nombre de versión:** Terminología Canónica y Normalización de Transcripción
-**Última actualización canónica:** 2026-10-07T09:45:00-06:00
+**Última actualización canónica:** 2026-10-07T09:30:33-06:00
 **Fecha:** 2026-10-07
 **Ámbito:** Gobierno metacognitivo del modelo en tareas sujetas a este sistema.
 
