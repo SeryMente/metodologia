@@ -603,6 +603,21 @@ Una deteccion de herramienta fallida es TRANSPORT/DETECTION FAILURE, no evidenci
 Si el sistema no puede determinar ACTIVA o INACTIVA, debe preguntar al usuario si RDC es requisito del ciclo. La respuesta NO produce NO-REQUERIDO; la respuesta SI mantiene el ciclo bloqueado hasta establecer y verificar la sesion. Durante BLOQUEADO, el modelo sigue disponible para recibir la información mínima y verificar la solución.
 
 El registro de salida debe vincular el verdict normativo con CONTEXTO-VERIFICACION para permitir reconstruir qué contexto operativo estaba vigente al inicio del ciclo.
+## 18.5 Gate de liberación de respuesta
+La verificación `VERIFIED` no basta por sí sola para autorizar la emisión de una respuesta en un runtime controlado. Después de `VERIFY`, el runtime debe solicitar `khora_norm_release_turn`.
+
+KHORA solo emite `VERIFIED_RELEASE` cuando:
+1. el turno está `CLOSED`;
+2. existe un receipt `VERIFIED` para el intento vigente;
+3. el token de turno sigue siendo válido;
+4. el `output_sha256` y `evidence_sha256` proceden del receipt verificado.
+
+El runtime de control debe comprobar que el hash de la respuesta que va a publicar coincide con `output_sha256` del release. Un mismatch invalida la publicación.
+
+Esto convierte el release en una autorización criptográficamente vinculada al resultado verificado, pero solo es un gate técnico si el runtime controla efectivamente la salida hacia el usuario.
+
+En la interfaz nativa de ChatGPT, una app MCP no recibe un derecho de intercepción universal de todos los mensajes del chat; por tanto, esta garantía de publicación no puede atribuirse al simple hecho de conectar el MCP. Para una garantía absoluta, el dominio de ejecución debe estar controlado por el runtime/adaptador que impone `VERIFY → RELEASE → RESPUESTA`.
+
 ## 19. Gate de cierre
 
 El cierre debe ser una transición controlada:
