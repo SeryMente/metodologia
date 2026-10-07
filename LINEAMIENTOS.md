@@ -150,7 +150,7 @@ Cada ciclo sujeto a la metodología debe resolver el contexto operativo antes de
 
 La secuencia es: `LEER ESTADO GLOBAL → DETECCIÓN AUTOMÁTICA → VERIFICACIÓN → PERFIL DE UBICACIÓN → CONTINUAR/BLOQUEAR`.
 
-Una detección fallida, una fuente indisponible o una discrepancia no significan `INACTIVA`. Significan estado indeterminado y abren una única decisión al usuario: si la conversación requiere que exista una sesión RDC activa. Si la respuesta es sí, se solicita la información mínima para establecer y verificar la sesión y se bloquea la ejecución hasta entonces. Si la respuesta es no, se registra `RDC-REQUERIDA: NO` y el ciclo puede continuar sin dependencia de RDC.
+Una detección fallida, una fuente indisponible o una discrepancia no significan `INACTIVA`. Significan estado indeterminado y abren una única decisión al usuario: si la conversación requiere que exista una sesión RDC activa. Si la respuesta es sí, se solicita la información mínima para establecer y verificar la sesión y se bloquea la ejecución sustantiva hasta entonces, manteniendo abierta la conversación. Si la respuesta es no, se registra `RDC-REQUERIDA: NO` y el ciclo puede continuar sin dependencia de RDC.
 
 La sesión RDC global se propaga entre conversaciones mediante el estado operativo compartido. La ubicación activa y su perfil se consumen del mismo contexto global; una ubicación sin perfil suficiente no puede producir reglas operativas por inferencia.
 
