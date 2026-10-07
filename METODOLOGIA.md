@@ -243,7 +243,7 @@ La respuesta no puede declararse `COMPLETADO` si no porta el formato `v1.7.4` ni
 
 La salida cotidiana de cada ciclo no debe convertirse en un inventario del mecanismo. Los campos esenciales se condensan en:
 
-`ChatGPT · UBIC: ... · RDC: ... · C: ... · S: ... · K: ✓|?|! · T: ✓|?|! · fila4`
+`ChatGPT · UBIC: ... · RDC: ... · C: ... · RDC-USO: ...% usado / ...% restante · S: ... · K: ✓|?|! · T: ✓|?|! · fila4`
 
 `R: ...`
 
