@@ -25,11 +25,15 @@ Una conversación nueva sujeta a la metodología no debe considerar resuelta una
 
 Secuencia obligatoria:
 
-`BOOTSTRAP → HEALTH MCP → OPEN TURN → EJECUCIÓN → VERIFY → RELEASE → RESPUESTA`
+`BOOTSTRAP → THINKING → HEALTH MCP → OPEN TURN → CASCADA NORMATIVA → VERIFY → RELEASE → RESPUESTA`
 
 Si el health-check MCP no está disponible o no confirma acceso completo, la conversación puede permanecer abierta para resolver el problema, pero el ciclo no puede declararse COMPLETADO.
 
 La sesión RDC persistente se hereda desde `ESTADO-RDC-ACTIVO.md`; la conectividad se revalida únicamente cuando el ciclo requiere uso RDC en vivo.
+
+## Gate de Thinking
+
+Antes del health-check, el ciclo debe estar en modo Thinking de ChatGPT. La especificación canónica está en `ANEXO-GATE-THINKING-CHATGPT.md`. Ausencia, `INSTANT` o imposibilidad de verificar el requisito bloquean la ejecución sustantiva.
 
 ## Secuencia de arranque
 
