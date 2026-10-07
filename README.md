@@ -87,4 +87,4 @@ La extensión a proyectos futuros no debe retrasar el objetivo operativo de mejo
 
 ## Gate de ejecución en ChatGPT
 
-Todo ciclo sujeto a la metodología intenta resolver la cascada normativa durante Thinking cuando esta ventana está disponible. `INSTANT`, ausencia o estado desconocido no bloquean por sí mismos la salida. Cuando KHORA no está disponible, el contrato visible `v1.7.2` se conserva y el HUD declara `K: OFF`.
+Todo ciclo sujeto a la metodología intenta resolver la cascada normativa durante Thinking cuando esta ventana está disponible. `INSTANT`, ausencia o estado desconocido no bloquean por sí mismos la salida. Cuando KHORA no está disponible, el contrato visible `v1.7.3` se conserva y el HUD declara `K: OFF`.
