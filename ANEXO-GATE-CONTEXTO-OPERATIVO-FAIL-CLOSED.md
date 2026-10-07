@@ -72,11 +72,14 @@ No se deben realizar llamadas de descubrimiento de mayor costo solo para reconst
 
 Si el ping falla:
 
-- descubrir dispositivos disponibles;
+- descubrir dispositivos disponibles solo si es necesario para determinar un cambio o recuperar la conectividad;
 - comprobar la cuenta RDC autenticada;
-- determinar si la sesion cambio, se volvio inactiva o el registro quedo obsoleto;
+- determinar si la sesion cambio, fue finalizada o el registro quedo obsoleto;
 - si aparece una nueva sesion verificable, sustituir el estado global;
-- si no puede determinarse el estado, marcar INDETERMINADA.
+- si el dispositivo registrado aparece offline pero no existe evidencia positiva de finalizacion o sustitucion, conservar la identidad persistente y marcar la conectividad como NO VERIFICADA;
+- si existe evidencia positiva de ausencia o finalizacion, registrar INACTIVA.
+
+El fallo de conectividad por si solo no invalida la sesión persistente.
 
 ### 4.3 Ausencia positiva
 
@@ -92,11 +95,9 @@ Cuando no sea posible determinar si existe una sesion RDC activa, el sistema for
 
 ### Si responde SI
 
-El ciclo pasa a BLOQUEADO.
+El ciclo pasa a BLOQUEADO cuando no existe una sesión persistente verificable o cuando la operación requiere conectividad RDC en vivo y esta no puede establecerse.
 
-Se solicita la evidencia minima para establecer la sesion, preferentemente el bloque final de conexion RDC que permita identificar cuenta y dispositivo.
-
-La sesion no se considera establecida hasta que el sistema la verifique mediante la fuente RDC.
+Si ya existe una sesión persistida en `ESTADO-RDC-ACTIVO.md`, no se solicita al usuario que vuelva a identificarla: se conserva como sesión global y se solicita únicamente la evidencia necesaria para recuperar o verificar la conectividad.
 
 ### Si responde NO
 
