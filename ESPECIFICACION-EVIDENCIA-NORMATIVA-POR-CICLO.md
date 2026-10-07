@@ -1,7 +1,7 @@
 # Especificación Completa de Evidencia Normativa por Turno
 
 **Estado:** ESPECIFICACIÓN OPERATIVA
-**Versión:** v0.6.0 — Gate Normativo Absoluto + Liberación Verificada  
+**Versión:** v0.7.0 — Gate Thinking + Formato Obligatorio + Liberación Verificada  
 **Fecha:** 2026-10-07  
 **Ámbito:** mecanismo para obtener evidencia externa, reproducible y auditable de que cada turno elegible de ejecución de ChatGPT fue gobernado por la totalidad del Sistema de Instrucciones Metacognitivas (SI) vigente al inicio del turno.  
 **Relación con el SI:** este documento especifica un mecanismo de aplicación y verificación. El SI v1.5.0 canoniza P028 · Trazabilidad Normativa, P029 · Identidad y Vigencia Canónica, P030 · Fidelidad Terminológica Canónica, P031 · Normalización de Transcripción y P032 · Contexto Operativo Verificado; este documento desarrolla su aplicación sin añadir mecanismos al nivel de principio.
@@ -429,7 +429,7 @@ E1 no debe presentarse como equivalente a E2.
 
 ---
 
-## 13. Receipt v0.2.0
+## 13. Receipt v0.4.0
 
 Esquema recomendado:
 
@@ -457,7 +457,12 @@ Esquema recomendado:
       ],
       "output_sha256": "...",
       "evidence_sha256": "...",
-      "created_at": "2026-10-06T19:30:05.000Z"
+      "created_at": "2026-10-06T19:30:05.000Z",
+      "runtime": {
+        "platform": "ChatGPT",
+        "reasoning_mode": "THINKING",
+        "output_format_version": "v1.7.0"
+      }
     }
 
 ---
@@ -603,6 +608,15 @@ Una deteccion de herramienta fallida es TRANSPORT/DETECTION FAILURE, no evidenci
 Si el sistema no puede determinar ACTIVA o INACTIVA, debe preguntar al usuario si RDC es requisito del ciclo. La respuesta NO produce NO-REQUERIDO; la respuesta SI mantiene el ciclo bloqueado hasta establecer y verificar la sesion. Durante BLOQUEADO, el modelo sigue disponible para recibir la información mínima y verificar la solución.
 
 El registro de salida debe vincular el verdict normativo con CONTEXTO-VERIFICACION para permitir reconstruir qué contexto operativo estaba vigente al inicio del ciclo.
+## 18.4 Gate de Thinking y formato
+Todo turno sujeto a la metodología debe presentar el contrato runtime:
+
+`platform=ChatGPT` + `reasoning_mode=THINKING` + `output_format_version=v1.7.0`.
+
+El modelo debe resolver la secuencia normativa durante el razonamiento del turno. Un receipt sin ese runtime, con `reasoning_mode=INSTANT` o con otra versión de formato es `INVALID` y no puede alcanzar `VERIFIED`.
+
+El dato de modo Thinking es un atestado protocolario obligatorio porque la metadata MCP pública documentada actualmente no expone el selector de modelo/modo al servidor. El sistema no debe presentarlo como evidencia independiente de la interfaz.
+
 ## 18.5 Gate de liberación de respuesta
 La verificación `VERIFIED` no basta por sí sola para autorizar la emisión de una respuesta en un runtime controlado. Después de `VERIFY`, el runtime debe solicitar `khora_norm_release_turn`.
 
