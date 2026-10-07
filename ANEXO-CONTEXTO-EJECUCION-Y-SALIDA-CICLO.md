@@ -1,6 +1,7 @@
 # Anexo - Contexto de Ejecucion y Formato de Salida por Ciclo
 
 **Estado:** CANONICO
+**Version:** v1.5.0 — Salida Visible Minimalista
 **Fecha de canonizacion:** 2026-10-07
 **Ambito:** Todos los proyectos y conversaciones sujetos a la metodologia comun.
 
@@ -85,23 +86,35 @@ RDC-USO-MENSUAL es obligatorio en la salida de cada ciclo, pero no obliga a cons
 
 ## 7. Formato obligatorio de salida por ciclo
 
-Cada ciclo debe mostrar invariablemente:
+La salida visible de un ciclo debe ser minima y suficiente. Su funcion es mostrar identidad, estado contextual y resultado; no repetir el detalle del mecanismo interno ni el registro de auditoria.
+
+Formato canónico visible:
 
 PROYECTO / CONV-XX / CXXX
 
-SI CARGADO · vX.Y.Z - NOMBRE DE VERSION · COMPLETO · ACTIVO · ULTIMO CAMBIO: ...
+SI CARGADO · vX.Y.Z — NOMBRE DE VERSIÓN · COMPLETO · ACTIVO
 
-CONTEXTO · PLATAFORMA: ChatGPT · UBICACION: ... · RDC-SESION: ... · RDC-CUENTA: ... · RDC-MENSUAL: ... · WIN-OPERATIVO: ...
+ChatGPT · UBIC: ... · RDC: ... · C: ... · S: ... · K: ... · USR: ...
 
-NOTAS · SIN NOTAS | NOTAS PENDIENTES
+NOTAS · 🟢 SIN NOTAS | 🟡 NOTAS PENDIENTES
 
-Cuando exista distincion administrativa relevante, se anade WIN-ADMIN: ...
+RESULTADO: ...
+ESTADO: COMPLETADO | BLOQUEADO | PENDIENTE
 
-Cuando este disponible, se anade RDC-TERMINAL: ...
+Convenciones:
+- `ChatGPT` se muestra sin etiqueta.
+- `UBIC` = ubicación.
+- `RDC` = si RDC es requisito: SI, NO o PENDIENTE.
+- `C` = cuenta RDC.
+- `S` = sesión RDC persistente: ACTIVA, INACTIVA o NO VERIFICADA.
+- `K` = conectividad RDC: OK, NO VERIFICADA u OFFLINE.
+- `USR` = identidad operativa visible del perfil. En CECEQ siempre se muestra `fila4`, nunca `central\\mantenimientorci`.
+- El nombre del dispositivo RDC puede añadirse sin etiqueta únicamente cuando sea relevante para la tarea.
+- No se muestran en la salida cotidiana el device_id, WIN-ADMIN, WIN-EFECTIVO-RDC, RDC-TERMINAL ni otros identificadores internos.
+- Los detalles completos de cuenta, dispositivo, identidad efectiva, timestamps y evidencia permanecen en el estado global y en los registros de auditoría.
+- La ausencia de un dato se representa como NO VERIFICADO, NO DISPONIBLE o PENDIENTE. Nunca se inventa.
 
-La ausencia de un dato se representa como NO VERIFICADO, NO DISPONIBLE o PENDIENTE. Nunca se inventa.
-
-La foliacion global del ciclo y la identificacion canonica del SI conservan sus reglas vigentes.
+La foliación global del ciclo y la identificación canónica del SI conservan sus reglas vigentes.
 
 ## 8. Procedencia
 
