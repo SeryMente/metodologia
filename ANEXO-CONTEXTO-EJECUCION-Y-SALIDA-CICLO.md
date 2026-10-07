@@ -56,9 +56,12 @@ No se inventan identidades Windows para perfiles pendientes.
 
 ## 5. Estado de RDC
 
-Cada ciclo debe identificar:
+Cada ciclo debe distinguir dos dimensiones:
+- **RDC-SESION:** identidad persistente global (`ACTIVA`, `INACTIVA` o `NO VERIFICADA`).
+- **RDC-CONECTIVIDAD:** posibilidad de uso en vivo del canal/dispositivo (`VERIFICADA`, `NO VERIFICADA`, `OFFLINE OBSERVADA` o equivalente.
+
+Cada ciclo debe identificar además:
 - PLATAFORMA: ChatGPT.
-- RDC-SESION: ACTIVA, INACTIVA o NO VERIFICADA.
 - RDC-ESTADO: estado del dispositivo/canal cuando este disponible.
 - RDC-CUENTA: correo de la cuenta RDC efectivamente utilizada, o NO VERIFICADO.
 - RDC-USO-MENSUAL: porcentaje usado y porcentaje restante, o NO DISPONIBLE.
@@ -121,7 +124,7 @@ En la activacion inicial de este anexo se verifico:
 
 Conclusion: CECEQ esta identificado. La sesion RDC actualmente verificada se ejecuta bajo central\mantenimientorci y esa identidad puede utilizarse para el trabajo tecnicamente valido. fila4 permanece como identidad operativa de referencia del perfil. No se abren sesiones paralelas ni se cambia la identidad solo para trabajar.## 10. Registro global de la sesion RDC activa
 
-La sesion RDC activa es estado operativo transversal y no pertenece a una conversacion particular. Su registro global se conserva en ESTADO-RDC-ACTIVO.md.
+La sesion RDC activa es estado operativo transversal y no pertenece a una conversacion particular. Su identidad persiste entre conversaciones hasta que se registre explícitamente su finalización o sustitución. Su registro global se conserva en ESTADO-RDC-ACTIVO.md.
 
 El registro contiene como minimo ubicacion, cuenta RDC, identidad de conexion, device_id, nombre de dispositivo, estado del canal, usuario Windows operativo esperado, identidad administrativa cuando exista, fecha de configuracion, ultima verificacion y consumo mensual disponible.
 
@@ -129,13 +132,15 @@ Una nueva sesion configurada sustituye la sesion activa anterior. No se mantiene
 
 ## 11. Verificacion minima por ciclo
 
-Si existe una sesion registrada como activa, al inicio de cada ciclo se verifica por el metodo de menor costo disponible.
+Si existe una sesion registrada como activa y no existe una marca de finalización/sustitución, la identidad de esa sesión se hereda automáticamente al ciclo.
 
-Metodo primario:
+Metodo primario para **conectividad en vivo**:
 1. reutilizar cuenta y device_id registrados;
-2. ejecutar ping sobre el dispositivo conocido;
-3. si responde, mantener la sesion ACTIVA y actualizar la marca de verificacion;
-4. si falla, escalar a descubrimiento de dispositivos y comprobacion de cuenta para determinar cambio, inactividad o necesidad de reconfiguracion.
+2. ejecutar ping sobre el dispositivo conocido cuando la tarea requiera RDC en vivo;
+3. si responde, mantener la sesion ACTIVA y actualizar la marca de verificacion de conexion;
+4. si falla, conservar la identidad persistente y escalar a descubrimiento solo cuando sea necesario para determinar un cambio o recuperar la conectividad.
+
+Un fallo de ping no convierte por sí mismo la sesión en INACTIVA.
 
 No se ejecutan list_devices ni who_am_i exclusivamente en cada ciclo cuando el ping confirma la misma sesion.
 
@@ -145,7 +150,11 @@ La verificacion de sesion RDC y la verificacion de sesiones de terminal son esta
 
 ## 12. Propagacion entre conversaciones
 
-El registro global de sesion activa es independiente de la conversacion contenedora. Cada nueva conversacion sujeta a la metodologia consume el estado global mas reciente y lo verifica por el mecanismo minimo definido.
+El registro global de sesion activa es independiente de la conversacion contenedora. Cada nueva conversacion sujeta a la metodologia consume primero el estado global mas reciente y hereda la identidad persistente antes de formular cualquier pregunta al usuario sobre la sesión.
+
+La verificacion de conectividad es una comprobación distinta: se ejecuta cuando el ciclo necesita utilizar RDC en vivo, no para decidir si la identidad persistente sigue existiendo.
+
+Un cambio de conversación no finaliza la sesión. Solo un cierre o sustitución explícitos, o evidencia positiva suficiente de que la sesión registrada ya no existe, puede cambiar la identidad global.
 
 Cuando la verificacion detecte una nueva sesion, esta pasa a ser la sesion activa global y el registro debe actualizarse antes de ejecutar operaciones sustantivas dependientes de RDC.
 
