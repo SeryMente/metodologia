@@ -1,10 +1,10 @@
 # Especificación Completa de Evidencia Normativa por Turno
 
 **Estado:** ESPECIFICACIÓN OPERATIVA
-**Versión:** v0.7.2 — Verificación Adaptativa + HUD Compacto + Liberación Verificada  
+**Versión:** v0.8.0 — Ledger Secuencial Server-Side + Binding de Snapshot  
 **Fecha:** 2026-10-07  
 **Ámbito:** mecanismo para obtener evidencia externa, reproducible y auditable de que cada turno elegible de ejecución de ChatGPT fue gobernado por la totalidad del Sistema de Instrucciones Metacognitivas (SI) vigente al inicio del turno.  
-**Relación con el SI:** este documento especifica un mecanismo de aplicación y verificación. El SI v1.6.5 canoniza P028 · Trazabilidad Normativa, P029 · Identidad y Vigencia Canónica, P030 · Fidelidad Terminológica Canónica, P031 · Normalización de Transcripción y P032 · Contexto Operativo Verificado; este documento desarrolla su aplicación sin añadir mecanismos al nivel de principio.
+**Relación con el SI:** este documento especifica un mecanismo de aplicación y verificación. El SI v1.6.7 canoniza P028 · Trazabilidad Normativa, P029 · Identidad y Vigencia Canónica, P030 · Fidelidad Terminológica Canónica, P031 · Normalización de Transcripción, P032 · Contexto Operativo Verificado y la precedencia del contexto/estado operativo; este documento desarrolla su aplicación sin añadir mecanismos al nivel de principio.
 
 **Fuente normativa canónica:**  
 https://github.com/SeryMente/metodologia/blob/main/SI-METACOGNITIVO.md
@@ -132,10 +132,10 @@ No se debe depender de identificadores internos no garantizados por la interfaz 
 Responsabilidades:
 
 - **SI:** autoridad normativa.
-- **KHORA:** autoridad de verificación.
+- **KHORA:** autoridad de verificación y del ledger de aplicación server-side.
 - **MCP canónico:** una única puerta de entrada de Cora/KHORA para todas las plataformas; las capacidades se separan mediante herramientas y scopes.
 - **ChatGPT:** ejecución de la tarea y producción de evidencia compacta.
-- **Registro:** memoria auditable de aperturas, intentos y veredictos.
+- **Registro:** memoria auditable de aperturas, aplicaciones ordenadas, intentos y veredictos.
 - **UI KHORA:** observabilidad humana; no participa en el juicio normativo.
 
 ---
@@ -148,11 +148,11 @@ Se adoptan las siguientes decisiones para esta versión:
 |---|---|
 | Unidad | 1 turno verificable = 1 ciclo normativo |
 | Fuente normativa | SeryMente/metodologia/SI-METACOGNITIVO.md |
-| Identidad normativa | versión + Git blob SHA + SHA-256 + manifest SHA-256 |
+| Identidad normativa | versión + Git commit SHA + Git blob SHA + SHA-256 + manifest SHA-256 |
 | Catálogo | dinámico; nunca codificado como «9 principios» |
-| Apertura | el servidor crea snapshot y nonce |
-| Aplicación | vector A/N/C por principio |
-| Evidencia | anchors para A/C; reason_code para N |
+| Apertura | el servidor adquiere H1 → SI@H1 → H2 y crea snapshot + nonce |
+| Aplicación | ledger server-side A/N/C por principio, en orden descendente de preponderancia |
+| Evidencia | anchors para A/C; reason_code para N; hash del ledger para trazabilidad |
 | Integridad | SHA-256 + canonicalización |
 | Transporte | Un único recurso MCP `/api/mcp`; REST solo como backend/compatibilidad |
 | Persistencia | KHORA/Neon |
@@ -220,8 +220,8 @@ Solicitud mínima:
       },
       "verifier": {
         "protocol": "NORM-CHECK",
-        "protocol_version": "v0.4.0",
-        "verifier_version": "norm-check/0.3.0"
+        "protocol_version": "v0.5.0",
+        "verifier_version": "norm-check/0.5.0"
       }
     }
 
@@ -277,7 +277,7 @@ Cada principio debe incluir:
 - state;
 - SHA-256 del bloque canónico del principio.
 
-El orden del manifest es determinista.
+El orden del manifest es determinista: descendente por preponderancia canónica, con folio como desempate estable. Ese orden es el único orden aceptable para el ledger server-side.
 
 ### 8.1 Regla de evolución
 
@@ -313,7 +313,9 @@ No se deben inferir principios desde texto narrativo fuera del régimen canónic
 
 ## 10. Vector de aplicación
 
-Por cada folio del manifest debe existir exactamente una evaluación.
+Por cada folio del manifest debe existir exactamente una evaluación. La aplicación es server-side y secuencial: KHORA mantiene `application_index` y solo admite el folio esperado por posición; no se puede saltar, reordenar o duplicar un principio mediante la herramienta de aplicación.
+
+El ledger server-side es la fuente autoritativa del recorrido observado. `VERIFY` solo puede ejecutarse cuando el número de aplicaciones coincide con la longitud del manifest y el orden de folios coincide exactamente con el manifest.
 
 Estados:
 
@@ -377,7 +379,7 @@ La evidencia contextual extendida se conserva únicamente cuando:
 
 ## 12. Binding del turno
 
-Este es el hueco principal que la implementación actual aún no cierra por completo.
+El binding normativo server-side ya queda cerrado para la ruta MCP mediante el estado durable del turno y su ledger secuencial.
 
 Debe vincularse:
 
@@ -397,9 +399,13 @@ Debe vincularse:
        ↓
     NORMATIVE VECTOR
        ↓
+    APPLICATION_LOG_SHA256
+       ↓
     EVIDENCE_SHA256
        ↓
     KHORA VERDICT
+       ↓
+    VERIFIED_RELEASE
 
 ### 12.1 Modo fuerte
 
@@ -429,13 +435,13 @@ E1 no debe presentarse como equivalente a E2.
 
 ---
 
-## 13. Receipt v0.4.0
+## 13. Receipt v0.5.0
 
 Esquema recomendado:
 
     {
       "protocol": "NORM-CHECK",
-      "protocol_version": "v0.2.0",
+      "protocol_version": "v0.5.0",
       "turn": {
         "cycle_id": "cv_8f5a.../T42",
         "conversation_id": "cv_8f5a...",
@@ -445,6 +451,7 @@ Esquema recomendado:
       },
       "si": {
         "version": "v1.2.0",
+        "git_commit_sha": "...",
         "git_blob_sha": "...",
         "sha256": "...",
         "manifest_sha256": "..."
@@ -514,6 +521,10 @@ Hash del resultado efectivo.
 
 Hash del paquete normativo canónico.
 
+### 15.6 Application Log SHA
+
+Hash de la representación canónica del ledger server-side ordenado. Debe calcularse dentro del mismo lock transaccional de `VERIFY` y persistirse junto al receipt.
+
 Todos deben recalcularse durante la verificación.
 
 ---
@@ -547,20 +558,21 @@ Secuencia:
 2. validar token de turno;
 3. identificar ciclo e intento;
 4. recuperar snapshot abierto;
-5. verificar versión y hashes del SI;
+5. verificar commit SHA, blob SHA y hashes del SI;
 6. recuperar manifest cacheado por SHA;
-7. comparar totalidad de folios;
-8. detectar faltantes;
-9. detectar duplicados;
-10. detectar desconocidos;
+7. comprobar ledger server-side completo;
+8. comprobar que el ledger conserve exactamente el orden del manifest;
+9. comparar totalidad de folios del receipt;
+10. detectar faltantes, duplicados y desconocidos;
 11. validar A/N/C;
 12. validar anchors/reason codes;
-13. recomputar hashes;
+13. recomputar application_log_sha256 y el resto de hashes;
 14. validar nonce;
 15. validar intento contra historial;
 16. emitir veredicto;
-17. persistir el intento;
-18. cerrar el ciclo solo si VERIFIED.
+17. persistir el intento y su ledger/hash;
+18. cerrar el ciclo solo si VERIFIED;
+19. emitir VERIFIED_RELEASE solo después de revalidar el receipt y el ledger server-side.
 
 ---
 
