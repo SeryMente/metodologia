@@ -2,21 +2,21 @@
 
 ## Estado canónico
 
-- **Versión:** v0.11.8
-- **Nombre de versión:** Versionado Canónico del Método General
+- **Versión:** v0.11.9
+- **Nombre de versión:** Uso Mensual de RDC en Salida Canónica
 - **Última actualización:** 2026-10-07
 - **Última actualización canónica:** 2026-10-07
 - **Ámbito:** Todos los proyectos y conversaciones trabajados bajo esta metodología.
 
 ### Narrativa de la versión
 
-**Antes:** la v0.11.7 ya había formalizado la resolución transaccional del estado global de RDC, pero la Metodología todavía no exponía ni exigía de forma uniforme su propia identidad/versionado en la salida operativa.
+**Antes:** la v0.11.8 ya había hecho canónica la identidad independiente de la Metodología, pero la salida visible todavía no mostraba de forma explícita el consumo mensual asociado a la cuenta de la sesión RDC activa.
 
-**Cambio:** la Metodología pasa a tener identidad canónica explícita e independiente del SI: versión, nombre específico y vigencia temporal de su última modificación metodológica. Esa identidad debe acompañar invariablemente a cada salida sujeta a la metodología.
+**Cambio:** la salida de cada ciclo incorpora `RDC-USO` con porcentaje usado y porcentaje restante, siempre referido a la cuenta de la sesión RDC activa. El dato se obtiene de la fuente RDC cuando ya existe una lectura necesaria o cuando el usuario solicita comprobación, y se conserva su marca temporal en el estado global.
 
-**Motivo:** distinguir cambios del método general de cambios del SI o de la implementación de KHORA y evitar regresiones donde una salida conserve el estado del SI pero pierda la vigencia del método que gobierna el ciclo.
+**Motivo:** hacer visible un dato operativo relevante sin inventar límites brutos, planes ni fechas de restablecimiento, y evitar que el HUD muestre consumo de una cuenta distinta o un valor obsoleto sin indicarlo.
 
-**Resultado:** cada ciclo puede identificar de forma verificable qué versión de la Metodología está gobernando, cuándo fue modificada por última vez y qué cambio metodológico representa.
+**Resultado:** cada ciclo identifica la cuenta RDC activa y su consumo mensual verificado o, cuando no exista dato vigente, declara `NO VERIFICADO`/`NO DISPONIBLE` en lugar de inferirlo.
 
 ### Registro de versiones
 
@@ -48,6 +48,7 @@
 | 22 | v0.11.6 | Precedencia de Contexto RDC y Recuperación Proactiva | Se hace obligatorio resolver el estado global de RDC en cada ciclo antes de KHORA; toda notificación de ausencia o pérdida de RDC emite `RDC-REINSTANTIAR` y un handshake fresco validado actualiza el estado global antes de continuar. |
 | 23 | v0.11.7 | Gobernanza Transaccional del Estado RDC | Se formaliza la resolución de estado RDC como transacción verificable: lectura, validación, publicación condicionada por versión y lectura de vuelta antes de cualquier reanudación o certificación externa. Las carreras, fallos de persistencia y discordancias dejan el estado pendiente y bloquean solo operaciones dependientes de RDC. |
 | 24 | v0.11.8 | Versionado Canónico del Método General | Se establece una identidad canónica propia para la Metodología —versión, nombre específico y vigencia temporal— y se vuelve obligatoria su representación en la salida de cada ciclo. El último cambio metodológico se deriva de la última modificación del recurso canónico que alteró el funcionamiento, gobierno o reglas generales del sistema. |
+| 25 | v0.11.9 | Uso Mensual de RDC en Salida Canónica | Se vuelve obligatorio mostrar en cada ciclo el uso mensual de RDC de la cuenta asociada a la sesión activa, con porcentaje usado y restante, reutilizando el último dato verificado y su marca temporal sin inferir plan, límite bruto ni restablecimiento. |
 La tabla es canónica: las versiones futuras deben añadir una fila sin borrar ni reciclar las anteriores. El nombre describe el avance de la versión y no sustituye el título general del sistema o documento.
 
 ## 1. Convención obligatoria de foliación de ciclos
@@ -234,9 +235,9 @@ En ChatGPT nativo, la ausencia o indisponibilidad del MCP no impide producir la 
 
 ## 18.0 Regla transversal de salida por turno
 
-El contrato de salida definido en `FORMATO-REGISTRO-VERIFICACION-CICLO.md` es obligatorio para **cada turno/ciclo sujeto a la metodología, sin excepción**, incluidos turnos bloqueados, turnos de resolución conversacional y turnos sin uso de RDC. El contrato vigente de presentación es `v1.7.3`.
+El contrato de salida definido en `FORMATO-REGISTRO-VERIFICACION-CICLO.md` es obligatorio para **cada turno/ciclo sujeto a la metodología, sin excepción**, incluidos turnos bloqueados, turnos de resolución conversacional y turnos sin uso de RDC. El contrato vigente de presentación es `v1.7.4`.
 
-La respuesta no puede declararse `COMPLETADO` si no porta el formato `v1.7.3` ni si alguno de sus campos obligatorios está ausente o contradice el estado verificable del ciclo.
+La respuesta no puede declararse `COMPLETADO` si no porta el formato `v1.7.4` ni si alguno de sus campos obligatorios está ausente o contradice el estado verificable del ciclo.
 
 ## 18. Salida visible mínima
 
