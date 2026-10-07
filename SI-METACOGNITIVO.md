@@ -1,8 +1,8 @@
 # Sistema de Instrucciones Metacognitivas
 
 **Estado:** CANÓNICO
-**Versión:** v1.4.0
-**Nombre de versión:** Contexto Operativo Verificado y Cierre Fail-Closed
+**Versión:** v1.5.0
+**Nombre de versión:** Bloqueo Operativo Fail-Closed con Resolución Conversacional
 **Última actualización canónica:** 2026-10-07T10:26:01-06:00
 **Fecha:** 2026-10-07
 **Ámbito:** Gobierno metacognitivo del modelo en tareas sujetas a este sistema.
@@ -16,6 +16,7 @@
 | 3 | v1.2.0 | Identidad Versionada y Vigencia Canónica | Se canoniza P029 para exigir identidad explícita de versión, nombre específico y última modificación canónica; se formaliza el historial de versiones y su representación en la salida. |
 | 4 | v1.3.0 | Terminología Canónica y Normalización de Transcripción | Se incorporan P030 y P031 para exigir forma terminológica canónica y normalizar errores de dictado/transcripción sin alterar la intención sustantiva. |
 | 5 | v1.4.0 | Contexto Operativo Verificado y Cierre Fail-Closed | Se incorpora P032 para exigir que el contexto operativo condicionante de cada ciclo sea determinado antes de ejecutar y que toda indeterminación material provoque detención y solicitud explícita de resolución, desarrollada mediante el gate operativo de la metodología. |
+| 6 | v1.5.0 | Bloqueo Operativo Fail-Closed con Resolución Conversacional | Se precisa que un bloqueo detiene exclusivamente la ejecución sustantiva y mantiene abierta la interacción conversacional necesaria para resolver la causa del bloqueo; se establece además una salida visual y uniforme para reconocer inmediatamente el estado BLOQUEADO. |
 
 La tabla es parte del canon. Cada nueva versión debe añadir una fila sin borrar ni reutilizar las anteriores. El nombre de versión es específico de esa versión y no sustituye el título general del sistema.
 
@@ -184,7 +185,7 @@ Los principios se presentan en orden descendente de preponderancia.
 
 **Propósito:** Impedir que un ciclo ejecute trabajo dependiente de un contexto operativo no determinado de forma suficiente.
 
-**Enunciado:** Antes de ejecutar un ciclo sujeto al sistema, el modelo debe determinar mediante la fuente de verificación disponible el estado del contexto operativo que pueda condicionar la ejecución. Cuando esa determinación falle, sea ambigua o no pueda verificarse suficientemente, el ciclo debe detener la ejecución sustantiva hasta resolver explícitamente si el contexto es requerido y, cuando lo sea, establecerlo con evidencia verificable. Un estado desconocido no puede sustituirse por un supuesto operativo.
+**Enunciado:** Antes de ejecutar un ciclo sujeto al sistema, el modelo debe determinar mediante la fuente de verificación disponible el estado del contexto operativo que pueda condicionar la ejecución. Cuando esa determinación falle, sea ambigua o no pueda verificarse suficientemente, el ciclo debe detener la ejecución sustantiva hasta resolver explícitamente si el contexto es requerido y, cuando lo sea, establecerlo con evidencia verificable. El bloqueo afecta a la ejecución sustantiva, no a la interacción conversacional necesaria para resolverlo: el modelo debe permanecer disponible para recibir la información, aclaraciones o decisiones del usuario que permitan levantar el bloqueo. Un estado desconocido no puede sustituirse por un supuesto operativo.
 
 **Índice de preponderancia:** 0.87  
 **Estado:** CANÓNICO
@@ -214,6 +215,8 @@ Cuando el sistema deba identificarse en la salida de un ciclo, debe usar este en
 La forma temporal se determina así: menos de 60 minutos → minutos; menos de 24 horas → horas; menos de 30 días → días; 30 días o más → fecha absoluta `YYYY-MM-DD`. Cuando se requiera precisión de auditoría, puede añadirse el instante ISO-8601 exacto.
 
 El nombre de versión debe ser el nombre específico de la fila correspondiente del registro de versiones, no el título general `Sistema de Instrucciones Metacognitivas`.
+
+Cuando un ciclo quede BLOQUEADO, la salida debe comenzar con un marcador visual uniforme e inequívoco y debe separar explícitamente el bloqueo de ejecución de la continuidad conversacional.
 
 ### 5.2 Ejecución
 
