@@ -1,7 +1,7 @@
 # Estado Operativo - Sesion RDC Activa
 
 **Naturaleza:** registro operativo mutable; no constituye por si mismo una nueva norma.
-**Ultima actualizacion:** 2026-10-07 · HANDSHAKE FRESCO RECIBIDO
+**Ultima actualizacion:** 2026-10-07T20:31:30.2613435Z
 **Funcion transversal:** fuente global de continuidad de la identidad de la sesion RDC entre conversaciones.
 
 ## Sesion activa
@@ -11,12 +11,12 @@
 | Plataforma | ChatGPT |
 | Ubicacion | CECEQ |
 | RDC-SESION | ACTIVA · IDENTIDAD PERSISTENTE |
-| RDC-CONECTIVIDAD | VERIFICADO-ACTIVO · PROVIDER HANDSHAKE · 2026-10-07T20:08:00Z |
+| RDC-CONECTIVIDAD | VERIFICADO-ACTIVO · PROVIDER HANDSHAKE · 2026-10-07T20:31:30.2613435Z |
 | RDC-CUENTA | blacksheepsup@gmail.com |
 | RDC-DISPOSITIVO | PC10RCIF4EI4 |
 | RDC-DEVICE-ID | 7fabbc1d-7c0d-4400-bd31-88b3b4229286 |
-| RDC-VERIFICACION-CONEXION | VERIFICADO · SESSION RESTORED · CHANNEL SUBSCRIBED · DEVICE ONLINE · 2026-10-07T20:08:00Z |
-| Ultima verificacion de conexion | 2026-10-07T20:08:00Z · RESULTADO: NO VERIFICADA |
+| RDC-VERIFICACION-CONEXION | VERIFICADO · SESSION RESTORED · CHANNEL SUBSCRIBED · DEVICE ONLINE · 2026-10-07T20:31:30.2613435Z |
+| Ultima verificacion de conexion | 2026-10-07T20:31:30.2613435Z · RESULTADO: VERIFICADO-ACTIVO · EVIDENCIA: HANDSHAKE DEL REMOTE DEVICE |
 | RDC-FINALIZACION | NO REGISTRADA |
 | RDC-SUSTITUCION | NO REGISTRADA |
 | PERSISTENCIA DE SESION | VIGENTE HASTA FINALIZACION O SUSTITUCION EXPLICITAS |
@@ -24,13 +24,13 @@
 | WIN-OPERATIVO | fila4 |
 | WIN-ADMIN | central\\mantenimientorci |
 | WIN-EFECTIVO-RDC | central\\mantenimientorci |
-| RDC-REQUERIDA | PENDIENTE POR CICLO; NO SE PRESUPONE ACTIVA | 
-| CONTEXTO-VERIFICACION | VERIFICADO-ACTIVO · RECUPERACION RESUELTA | 
-| PERFIL-UBICACION | CECEQ · COMPLETO | 
+| RDC-REQUERIDA | PENDIENTE POR CICLO; NO SE PRESUPONE ACTIVA |
+| CONTEXTO-VERIFICACION | VERIFICADO-ACTIVO · RECUPERACION RESUELTA |
+| PERFIL-UBICACION | CECEQ · COMPLETO |
 | IDENTIDAD-OPERATIVA | fila4 · PERFIL CECEQ; NO IMPLICA SESION RDC SEPARADA |
 | RDC-OBSERVABILIDAD | COHERENTE · PROVIDER REPORTA DEVICE ONLINE Y SESION RESTAURADA |
 | RDC-RECUPERACION | RESUELTA · COMANDO CANONICO: RDC-REINSTANTIAR |
-| RDC-RECUPERACION-ESTADO | RESUELTA · HANDSHAKE VALIDADO Y ESTADO GLOBAL ACTUALIZADO |
+| RDC-RECUPERACION-ESTADO | RESUELTA · HANDSHAKE VALIDADO · ESTADO GLOBAL PUBLICADO · READ-BACK REQUERIDO |
 
 ## Regla de lectura
 
@@ -58,9 +58,8 @@ Este handshake resuelve la recuperacion sin abrir una segunda sesion.
 
 ## Incidencia conocida
 
-### Incidencia activa · 2026-10-07
+### Incidencia resuelta · 2026-10-07
 
-El canal RDC actualmente no puede verificar en vivo el dispositivo registrado, mientras el usuario informa actividad local de la terminal. Esto se trata como **DIVERGENCIA DE OBSERVABILIDAD RDC**, no como finalización de sesión. La recuperación requerida es `RDC-REINSTANTIAR`; la sesión persistente se conservará hasta verificar la nueva sesión y sustituir el registro global.
+La divergencia de observabilidad quedó resuelta mediante una reinstanciación oficial del Remote Device. La sesión persistente coincide con la identidad verificada y la conectividad fue confirmada por el proveedor.
 
-
-La ultima conexion RDC verificada estuvo autenticada y el shell remoto observado se ejecuto como central\\mantenimientorci. La ultima deteccion posterior observo el dispositivo offline; esto no constituye finalizacion de la sesion persistente. El usuario Windows operativo autorizado para CECEQ es fila4. La identidad central\mantenimientorci puede ejecutar el trabajo tecnicamente valido. La unica restriccion especifica es no clonar ni materializar repositorios nuevos dentro del perfil o ruta de MantenimientoRCI.
+La ultima conexion RDC verificada estuvo autenticada y el shell remoto observado se ejecuto como central\\mantenimientorci. El usuario Windows operativo autorizado para CECEQ es fila4. La identidad central\\mantenimientorci puede ejecutar el trabajo tecnicamente valido. La unica restriccion especifica es no clonar ni materializar repositorios nuevos dentro del perfil o ruta de MantenimientoRCI.
