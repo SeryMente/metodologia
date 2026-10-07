@@ -123,7 +123,7 @@ El comportamiento deseado debe especificarse mediante el estado operativo que se
 La formulacion operativa debe privilegiar instrucciones positivas de comportamiento y evitar convertir la supresion de conductas en una carga adicional de control.
 \n\n## 13. Contexto de ejecución y salida por ciclo\n\nTodo ciclo sujeto a la metodologia debe incorporar el contexto operativo definido en `ANEXO-CONTEXTO-EJECUCION-Y-SALIDA-CICLO.md`. El bloque es obligatorio e incluye plataforma, ubicacion persistente, estado de sesion RDC, cuenta RDC, uso mensual disponible y usuario Windows operativo. Cuando exista una identidad administrativa relevante, debe mostrarse por separado. Los datos no verificables deben identificarse como tales; no deben completarse por inferencia.
 
-La ubicacion actual permanece vigente entre ciclos y conversaciones hasta una declaracion explicita de cambio. Para CECEQ, el perfil canonico vigente establece `fila4` como usuario Windows operativo y `central\\mantenimientorci` como identidad administrativa/elevada de puente. Las operaciones de trabajo no deben ejecutarse directamente bajo la identidad elevada.
+La ubicacion actual permanece vigente entre ciclos y conversaciones hasta una declaracion explicita de cambio. Para CECEQ, el perfil canónico de referencia establece `fila4` como identidad operativa y `central\\mantenimientorci` como identidad efectiva de la sesión RDC. La diferencia no bloquea el trabajo por sí misma; `central\\mantenimientorci` puede ejecutar cualquier operación técnicamente válida. La única restricción específica es no clonar ni materializar repositorios nuevos dentro de su perfil o ruta.
 
 
 ## 14. Persistencia de la sesion RDC activa
@@ -154,6 +154,6 @@ Una detección fallida, una fuente indisponible o una discrepancia no significan
 
 La sesión RDC global se propaga entre conversaciones mediante el estado operativo compartido. La ubicación activa y su perfil se consumen del mismo contexto global; una ubicación sin perfil suficiente no puede producir reglas operativas por inferencia.
 
-La separación de identidad de CECEQ es obligatoria: `fila4` es la identidad operativa; `central\\mantenimientorci` es administración/puente. Un proceso ordinario no debe ejecutarse directamente bajo la identidad elevada cuando existe una identidad operativa definida.
+La separación de contexto de CECEQ es informativa: `fila4` identifica la identidad operativa de referencia y `central\\mantenimientorci` la identidad efectiva de la sesión RDC. No constituye una prohibición de uso de `central\\mantenimientorci`. La restricción operativa específica se limita a no clonar ni materializar repositorios nuevos dentro de su perfil o ruta.
 
-El detalle técnico del gate y del puente de identidad se encuentra en `ANEXO-GATE-CONTEXTO-OPERATIVO-FAIL-CLOSED.md`.
+El detalle técnico del gate y de la restricción de materialización se encuentra en `ANEXO-GATE-CONTEXTO-OPERATIVO-FAIL-CLOSED.md`.
