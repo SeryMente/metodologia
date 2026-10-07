@@ -1,7 +1,7 @@
 # Estado Operativo - Sesion RDC Activa
 
 **Naturaleza:** registro operativo mutable; no constituye por si mismo una nueva norma.
-**Ultima actualizacion:** 2026-10-07T15:32:57.747Z
+**Ultima actualizacion:** 2026-10-07T16:19:38.979Z
 
 ## Sesion activa
 
@@ -15,13 +15,17 @@
 | RDC-DEVICE-ID | 7fabbc1d-7c0d-4400-bd31-88b3b4229286 |
 | RDC-VERIFICACION | PING OK |
 | Ultima verificacion | 2026-10-07T15:32:57.747Z |
-| RDC-MENSUAL | 5% usado / 95% restante |
+| RDC-MENSUAL | 7% usado / 93% restante |
 | WIN-OPERATIVO | fila4 |
 | WIN-ADMIN | central\\mantenimientorci |
+| RDC-REQUERIDA | PENDIENTE POR CICLO; NO SE PRESUPONE ACTIVA | 
+| CONTEXTO-VERIFICACION | VERIFICADO-ACTIVO | 
+| PERFIL-UBICACION | CECEQ · COMPLETO | 
+| IDENTIDAD-OPERATIVA | fila4 · PENDIENTE DE PUENTE VERIFICADO DESDE RDC ELEVADO |
 
 ## Regla de lectura
 
-Este registro representa la sesion RDC globalmente activa para las conversaciones sujetas a la metodologia. Debe leerse antes de operaciones dependientes de RDC y verificarse por ping al inicio de cada ciclo.
+Este registro representa la sesion RDC globalmente activa para las conversaciones sujetas a la metodologia. Debe leerse al inicio de cada ciclo. La lectura no sustituye la verificación: si RDC figura como ACTIVA, debe confirmarse por ping; si la detección no puede establecer ACTIVA o INACTIVA, el gate fail-closed se activa y no se continúa hasta resolver con el usuario si RDC es requisito.
 
 Una nueva sesion activa debe sustituir este registro y actualizar su marca temporal.
 
