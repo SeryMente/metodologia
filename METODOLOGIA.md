@@ -36,6 +36,7 @@
 | 11 | v0.9.0 | Bloqueo Operativo Fail-Closed y Salida Visible | Se define que el estado BLOQUEADO detiene la ejecución sustantiva sin impedir la interacción con el usuario y se estandariza una notificación visual de bloqueo. |
 | 12 | v0.9.1 | Persistencia Global de Sesión RDC y Separación de Conectividad | Se fija que la identidad de la sesión RDC persiste entre conversaciones hasta cierre o sustitución explícitos, mientras la conectividad se verifica por separado solo cuando el ciclo requiera uso en vivo. |
 | 13 | v0.9.2 | Salida Visible Mínima y Contexto Condensado | Se simplifica la salida visible del ciclo al conjunto mínimo de identidad, versión, contexto RDC resumido, notas y resultado/estado; los metadatos operativos y la narrativa de proceso quedan fuera de la salida cotidiana. |
+| 14 | v0.9.3 | Gate Normativo Absoluto y Health-Check MCP | Se establece que un ciclo solo puede considerarse resuelto cuando KHORA registra VERIFIED y emite la autorización de liberación correspondiente. Se incorpora un health-check discreto del único MCP canónico de KHORA para verificar autenticación, scopes y lectura del SI vigente antes del ciclo. |
 La tabla es canónica: las versiones futuras deben añadir una fila sin borrar ni reciclar las anteriores. El nombre describe el avance de la versión y no sustituye el título general del sistema o documento.
 
 ## 1. Convención obligatoria de foliación de ciclos
@@ -143,6 +144,23 @@ La discrepancia entre identidad operativa de referencia e identidad efectiva no 
 
 Un bloqueo es de ejecución sustantiva, no de conversación. Mientras el ciclo esté BLOQUEADO, el modelo debe seguir disponible para explicar la causa, solicitar la información mínima, recibir decisiones del usuario y verificar la solución. No puede ejecutar trabajo sustantivo ni declarar el ciclo cerrado hasta levantar el bloqueo.
 
+
+## 17.1 Gate normativo absoluto y liberación
+Un ciclo sujeto a la metodología tiene dos condiciones separadas:
+1. **VERIFIED:** KHORA verificó la cobertura e integridad normativa del receipt.
+2. **RELEASED:** KHORA emitió la autorización de liberación para ese mismo ciclo y resultado.
+
+La única transición que permite declarar `E: COMPLETADO` es:
+
+`OPEN → VERIFY: VERIFIED → RELEASE → COMPLETADO`
+
+Cualquier `INVALID`, `INCOMPLETE`, `UNAVAILABLE`, ausencia de receipt, ausencia de release o fallo de acceso al MCP impide declarar el ciclo completado.
+
+El resultado producido antes de `RELEASED` es provisional y no constituye resolución metodológica del turno.
+
+En un runtime controlado, esta condición debe implementarse técnicamente como precondición de publicación: el runtime no entrega la respuesta al usuario sin un release válido cuyo `output_sha256` coincida con la salida efectiva.
+
+La interfaz nativa de ChatGPT no expone un mecanismo para que un documento de GitHub o una app MCP intercepte técnicamente todos los mensajes antes de su publicación. Por tanto, la garantía técnica absoluta requiere que el turno ocurra dentro de un runtime/adaptador que controle la emisión de la respuesta. La metodología no debe presentar una conversación nativa sin ese controlador como equivalente a un runtime con gate duro.
 
 ## 18. Salida visible mínima
 
