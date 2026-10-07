@@ -145,6 +145,23 @@ La discrepancia entre identidad operativa de referencia e identidad efectiva no 
 Un bloqueo es de ejecución sustantiva, no de conversación. Mientras el ciclo esté BLOQUEADO, el modelo debe seguir disponible para explicar la causa, solicitar la información mínima, recibir decisiones del usuario y verificar la solución. No puede ejecutar trabajo sustantivo ni declarar el ciclo cerrado hasta levantar el bloqueo.
 
 
+## 17.1 Gate normativo absoluto y liberación
+Un ciclo sujeto a la metodología tiene dos condiciones separadas:
+1. **VERIFIED:** KHORA verificó la cobertura e integridad normativa del receipt.
+2. **RELEASED:** KHORA emitió la autorización de liberación para ese mismo ciclo y resultado.
+
+La única transición que permite declarar `E: COMPLETADO` es:
+
+`OPEN → VERIFY: VERIFIED → RELEASE → COMPLETADO`
+
+Cualquier `INVALID`, `INCOMPLETE`, `UNAVAILABLE`, ausencia de receipt, ausencia de release o fallo de acceso al MCP impide declarar el ciclo completado.
+
+El resultado producido antes de `RELEASED` es provisional y no constituye resolución metodológica del turno.
+
+En un runtime controlado, esta condición debe implementarse técnicamente como precondición de publicación: el runtime no entrega la respuesta al usuario sin un release válido cuyo `output_sha256` coincida con la salida efectiva.
+
+La interfaz nativa de ChatGPT no expone un mecanismo para que un documento de GitHub o una app MCP intercepte técnicamente todos los mensajes antes de su publicación. Por tanto, la garantía técnica absoluta requiere que el turno ocurra dentro de un runtime/adaptador que controle la emisión de la respuesta. La metodología no debe presentar una conversación nativa sin ese controlador como equivalente a un runtime con gate duro.
+
 ## 18. Salida visible mínima
 
 La salida cotidiana de cada ciclo no debe convertirse en un inventario del mecanismo. Los campos esenciales se condensan en:
