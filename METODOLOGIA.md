@@ -18,16 +18,6 @@
 
 **Resultado:** B1 queda como baseline congelada; el IGP mide distancia al ideal; el dashboard hace legibles los números; cada iteración debe demostrar su efecto. La generalización futura queda subordinada al avance efectivo de OGP.
 
-### OLD_PLACEHOLDER
-
-**Antes:** la v0.9.2 ya había reducido la salida visible y persistido la identidad RDC entre conversaciones, pero todavía quedaba expuesta una vía de deriva: una conversación nueva podía volver a preguntar por una sesión ya registrada si no consumía correctamente el bootstrap, y el indicador MCP no tenía una semántica positiva estricta.
-
-**Cambio:** se endurece la herencia transversal de la sesión RDC, se prohíbe reidentificar una sesión persistida, se separa explícitamente el requisito RDC de la existencia de la sesión y se formaliza K como prueba discreta de acceso autenticado y completo al MCP canónico de KHORA.
-
-**Motivo:** eliminar ambigüedad de continuidad y evitar afirmaciones de acceso o disponibilidad que no estén sustentadas por una comprobación efectiva.
-
-**Resultado:** el contexto global de RDC queda definido como estado heredable; una conversación nueva debe consumirlo antes de preguntar y una desconexión solo afecta la conectividad en vivo. La salida puede mostrar K: ✓ únicamente cuando exista evidencia de acceso MCP autenticado con los scopes completos.
-
 ### Registro de versiones
 
 | Número | Valor cuantitativo | Abstracción | Narrativa |
