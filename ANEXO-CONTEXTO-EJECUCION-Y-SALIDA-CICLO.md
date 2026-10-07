@@ -59,7 +59,9 @@ No se inventan identidades Windows para perfiles pendientes.
 
 Cada ciclo debe distinguir dos dimensiones:
 - **RDC-SESION:** identidad persistente global (`ACTIVA`, `INACTIVA` o `NO VERIFICADA`).
-- **RDC-CONECTIVIDAD:** posibilidad de uso en vivo del canal/dispositivo (`VERIFICADA`, `NO VERIFICADA`, `OFFLINE OBSERVADA` o equivalente).
+- **RDC-CONECTIVIDAD:** posibilidad de uso en vivo del canal/dispositivo (`VERIFICADA`, `NO VERIFICADA`, `OFFLINE OBSERVADA`, `DIVERGENTE` o equivalente).
+- **RDC-OBSERVABILIDAD:** relación entre señales del conector RDC y evidencia local aportada por el usuario (`COHERENTE`, `DIVERGENTE`, `NO DETERMINADA`).
+- **RDC-RECUPERACION:** estado del protocolo (`NO REQUERIDA`, `REQUERIDA`, `EN ESPERA HANDSHAKE`, `RESUELTA`).
 
 Cada ciclo debe identificar además:
 - PLATAFORMA: ChatGPT.
@@ -75,6 +77,26 @@ uso_pct = 100 - remote_calls_left_pct
 No se infieren plan, limite bruto, fecha de restablecimiento ni otros datos no proporcionados por la API.
 
 RDC-USO-MENSUAL es obligatorio en la salida de cada ciclo, pero no obliga a consumir una llamada RDC solo para producirlo. Se reutiliza el ultimo dato verificado disponible y se conserva su marca temporal.
+
+## 5.1 Recuperación de divergencia
+
+Cuando `RDC-SESION = ACTIVA` y la conectividad no es verificable mientras el usuario aporta evidencia positiva de una terminal RDC activa, el ciclo registra una **DIVERGENCIA DE OBSERVABILIDAD**.
+
+La divergencia no finaliza la sesión persistente. Cuando el trabajo requiera RDC en vivo, el ciclo queda bloqueado para ejecución sustantiva y debe emitir `RDC-REINSTANTIAR`.
+
+El handshake mínimo de recuperación debe contener, en la medida en que la plataforma los proporcione:
+
+- `RDC-CUENTA`
+- `RDC-DISPOSITIVO`
+- `RDC-DEVICE-ID`
+- `RDC-CONECTIVIDAD` o evidencia equivalente de conexión
+- `RDC-PING`
+- `UBICACION`
+- `WIN-OPERATIVO`
+- `WIN-EFECTIVO-RDC`
+- marca temporal de la nueva verificación
+
+La cuenta y el dispositivo se consideran nueva identidad solo después de verificar el conjunto mínimo. El modelo actualiza `ESTADO-RDC-ACTIVO.md` antes de reanudar operaciones dependientes de RDC. El estado anterior no se declara finalizado hasta que la sustitución esté verificada.
 
 ## 6. Flexibilidad de identidad y restricción de repositorios
 
