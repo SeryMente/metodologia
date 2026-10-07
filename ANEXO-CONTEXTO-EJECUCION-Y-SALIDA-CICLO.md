@@ -98,6 +98,12 @@ El handshake mínimo de recuperación debe contener, en la medida en que la plat
 
 La cuenta y el dispositivo se consideran nueva identidad solo después de verificar el conjunto mínimo. El modelo actualiza `ESTADO-RDC-ACTIVO.md` antes de reanudar operaciones dependientes de RDC. El estado anterior no se declara finalizado hasta que la sustitución esté verificada.
 
+### Regla de precedencia RDC antes de KHORA
+
+Antes de cualquier certificación o health-check de KHORA, cada ciclo debe consumir `ESTADO-RDC-ACTIVO.md` y resolver la sesión RDC global y su conectividad observable. Esta verificación es obligatoria incluso cuando el ciclo anterior haya confirmado la misma sesión.
+
+Si el modelo comunica una pérdida o ausencia de RDC, debe emitir inmediatamente `RDC-REINSTANTIAR` y el comando oficial `npx @wonderwhy-er/desktop-commander@latest remote` en el mismo ciclo. Si el usuario devuelve un handshake fresco, éste se valida y se persiste antes de reanudar.
+
 ## 6. Flexibilidad de identidad y restricción de repositorios
 
 1. La identidad efectiva del canal RDC puede utilizarse para cualquier operación técnicamente válida.
@@ -286,6 +292,6 @@ El MCP de KHORA conserva el mismo carácter adaptativo:
 - `K: ?` = estado no determinable.
 - `K: !` = acceso intentado y fallido o verificación rechazada.
 
-`K: OFF`, `K: ?` y `K: !` tampoco son causas autónomas de bloqueo. Este anexo no puede reintroducir una precondición dura que contradiga `SI-METACOGNITIVO.md` v1.6.2 o `ANEXO-GATE-THINKING-CHATGPT.md`.
+`K: OFF`, `K: ?` y `K: !` tampoco son causas autónomas de bloqueo. Este anexo no puede reintroducir una precondición dura que contradiga `SI-METACOGNITIVO.md` v1.6.6 o `ANEXO-GATE-THINKING-CHATGPT.md`.
 
 `E: COMPLETADO` se determina por la producción efectiva del resultado solicitado; la verificación externa se declara por separado mediante `K`. Cuando el ciclo esté sustantivamente bloqueado por contexto operativo, se conserva la salida de bloqueo definida por el contrato vigente.
