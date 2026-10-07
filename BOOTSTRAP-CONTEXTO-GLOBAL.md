@@ -9,6 +9,8 @@ Este archivo es el punto de entrada operativo para reconstruir contexto transver
 
 ## Regla principal
 
+**PRECONDICION DE ARRANQUE:** una conversacion nueva debe consumir este bootstrap y `ESTADO-RDC-ACTIVO.md` antes de preguntar al usuario por la sesion RDC. Si existe una sesion persistente activa, se hereda; no se reidentifica.
+
 La memoria de una conversacion no es la fuente global. El repositorio de la metodologia es la fuente persistente.
 
 Para RDC, el estado mutable y unico se encuentra en:
@@ -46,6 +48,10 @@ Hasta entonces, las conversaciones nuevas deben reconocer la sesion persistente 
 Cuando una conversacion nueva entre al ambito de esta metodologia, debe consultar este bootstrap y el estado RDC antes de preguntar al usuario por una sesion ya registrada.
 
 La conversacion es un contenedor. La sesion RDC global es un estado compartido del repositorio.
+
+## Prueba de propagacion
+
+Una propagacion correcta queda demostrada cuando una conversacion nueva puede reconstruir, sin entrada del usuario, al menos `RDC-SESION`, `RDC-CUENTA`, `RDC-DISPOSITIVO`, `RDC-DEVICE-ID`, `UBICACION` y `WIN-OPERATIVO` desde `ESTADO-RDC-ACTIVO.md`. La conectividad se comprueba por separado cuando la tarea requiere uso RDC en vivo.
 
 ## Limite tecnico
 
