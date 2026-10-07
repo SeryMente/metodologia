@@ -2,10 +2,10 @@
 
 ## Estado canónico
 
-- **Versión:** v0.9.0
-- **Nombre de versión:** Bloqueo Operativo Fail-Closed y Salida Visible
+- **Versión:** v0.9.1
+- **Nombre de versión:** Persistencia Global de Sesión RDC y Separación de Conectividad
 - **Última actualización:** 2026-10-07
-- **Última actualización canónica:** 2026-10-07T17:01:36-06:00
+- **Última actualización canónica:** 2026-10-07
 - **Ámbito:** Todos los proyectos y conversaciones trabajados bajo esta metodología.
 
 ### Narrativa de la versión
@@ -16,7 +16,7 @@
 
 **Motivo:** mantener el rigor del fail-closed sin crear un callejón sin salida para el usuario: el modelo debe poder pedir y recibir la información necesaria para levantar el bloqueo.
 
-**Resultado:** un ciclo bloqueado no ejecuta trabajo sustantivo ni declara éxito, pero permanece conversacionalmente abierto y presenta una notificación de bloqueo inequívoca, con causa y acción requerida.
+**Resultado:** un ciclo bloqueado no ejecuta trabajo sustantivo ni declara éxito, pero permanece conversacionalmente abierto y presenta una notificación de bloqueo inequívoca, con causa y acción requerida. La identidad de una sesión RDC persiste entre conversaciones y se mantiene separada de su conectividad observable.
 
 ### Registro de versiones
 
@@ -34,6 +34,7 @@
 | 9 | v0.7.0 | Resolución de Identidad sin Alterar la Sesión RDC | Se precisa que el canal RDC permanece bajo central\mantenimientorci y no se abren sesiones paralelas. |
 | 10 | v0.8.0 | Ejecución Flexible y Protección de Materialización de Repositorios | Se permite ejecutar bajo central\mantenimientorci todo trabajo técnicamente válido; la única excepción es no clonar ni materializar repositorios nuevos dentro de ese perfil. |
 | 11 | v0.9.0 | Bloqueo Operativo Fail-Closed y Salida Visible | Se define que el estado BLOQUEADO detiene la ejecución sustantiva sin impedir la interacción con el usuario y se estandariza una notificación visual de bloqueo. |
+| 12 | v0.9.1 | Persistencia Global de Sesión RDC y Separación de Conectividad | Se fija que la identidad de la sesión RDC persiste entre conversaciones hasta cierre o sustitución explícitos, mientras la conectividad se verifica por separado solo cuando el ciclo requiera uso en vivo. |
 La tabla es canónica: las versiones futuras deben añadir una fila sin borrar ni reciclar las anteriores. El nombre describe el avance de la versión y no sustituye el título general del sistema o documento.
 
 ## 1. Convención obligatoria de foliación de ciclos
@@ -99,7 +100,7 @@ El sistema canónico de instrucciones que gobierna la interpretación, decisión
 
 `SI-METACOGNITIVO.md`
 
-La versión canónica actual del SI es **v1.3.0 — Terminología Canónica y Normalización de Transcripción** y contiene los principios **P019–P031**, cada uno con su **índice de preponderancia** dentro de la escala `0–1`.
+La versión canónica actual del SI es **v1.5.0 — Bloqueo Operativo Fail-Closed con Resolución Conversacional** y contiene los principios **P019–P031**, cada uno con su **índice de preponderancia** dentro de la escala `0–1`.
 
 La metodología mantiene separadas las normas fundamentales de sus desarrollos, procedimientos, herramientas y mecanismos de implementación.
 \n\n## 6. Contexto de ejecución y salida por ciclo\n\nEl contrato canonico se encuentra en `ANEXO-CONTEXTO-EJECUCION-Y-SALIDA-CICLO.md`. Su aplicacion es ubicua en todos los ciclos sujetos a la metodologia e integra plataforma, ubicacion persistente, estado y cuenta RDC, uso mensual disponible, identidad Windows operativa y, cuando corresponda, identidad administrativa. Los detalles de formato, fuentes y perfiles por ubicacion permanecen en el anexo y no se elevan al nivel del SI.
@@ -107,7 +108,7 @@ La metodología mantiene separadas las normas fundamentales de sus desarrollos, 
 
 ## 6.1 Sesion RDC persistente y verificable
 
-La metodologia mantiene un registro operativo global de la sesion RDC activa en ESTADO-RDC-ACTIVO.md. El registro se propaga entre conversaciones y se verifica al inicio de cada ciclo mediante el mecanismo minimo disponible, con ping como comprobacion primaria.
+La metodologia mantiene un registro operativo global de la identidad persistente de la sesion RDC en ESTADO-RDC-ACTIVO.md. La identidad se propaga entre conversaciones y permanece vigente hasta cierre o sustitucion explicitos. La conectividad del canal se verifica por separado mediante el mecanismo minimo disponible, con ping como comprobacion primaria cuando el ciclo requiera uso RDC en vivo.
 
 
 ## 7. Glosario operativo y normalización de transcripción
