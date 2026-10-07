@@ -39,6 +39,16 @@ Cuando exista una entrada canonica, su forma debe utilizarse en salidas, documen
 **Definicion:** conexion remota autenticada a un dispositivo mediante RDC.  
 **Distincion:** una sesion RDC activa no equivale necesariamente a una sesion terminal iniciada mediante la herramienta.
 
+### Divergencia de observabilidad RDC
+**Tipo:** estado operativo de recuperación.  
+**Definicion:** condición en la que la fuente RDC no puede verificar la conectividad o reporta el dispositivo offline mientras el usuario aporta evidencia local positiva de actividad de una terminal o sesión RDC.  
+**Regla:** no permite inferir finalización de la sesión. Cuando el ciclo requiere RDC en vivo, activa el protocolo `RDC-REINSTANTIAR`.
+
+### RDC-REINSTANTIAR
+**Tipo:** comando conversacional de recuperación.  
+**Definicion:** instrucción canónica que solicita cerrar la terminal/sesión RDC observada, iniciar una nueva sesión y devolver el `RDC-HANDSHAKE` necesario para sustituir de forma verificable el estado global.  
+**Regla:** no se interpreta como comando de shell ni como evidencia de finalización de la sesión anterior.
+
 ### Ubicacion actual
 **Tipo:** estado transversal.  
 **Definicion:** lugar fisico de trabajo vigente para los ciclos actuales.  
