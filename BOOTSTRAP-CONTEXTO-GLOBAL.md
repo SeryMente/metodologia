@@ -53,6 +53,16 @@ Secuencia operativa:
 
 Una desconexion, dispositivo offline o herramienta indisponible no equivale a finalizacion de sesion y no autoriza a borrar ni reemplazar la identidad persistida.
 
+## Contrato de publicación transaccional RDC
+
+Antes de `HEALTH MCP` de KHORA, cada ciclo debe consumir `ESTADO-RDC-ACTIVO.md`. Después de una recuperación o refresco, la continuidad depende de una publicación transaccional y un read-back satisfactorio.
+
+Secuencia:
+
+`LEER ESTADO → VALIDAR → PUBLICAR CON SHA/CONDICIÓN → READ-BACK → KHORA`
+
+Si la escritura o lectura de vuelta falla, no se considera resuelta la recuperación y no se reanuda trabajo dependiente de RDC.
+
 ## Recuperación por divergencia de observabilidad RDC
 
 Si el estado global registra `RDC-SESION = ACTIVA`, pero la verificación del canal reporta offline/no verificable y el usuario informa actividad local de una terminal RDC, la conversación no debe volver a preguntar qué sesión existe ni declarar que la sesión terminó.
