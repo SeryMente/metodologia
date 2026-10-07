@@ -1,7 +1,7 @@
 # Anexo — Gate de Thinking en ChatGPT
 
 **Estado:** CANÓNICO
-**Versión:** v1.0.0
+**Versión:** v1.1.0
 **Fecha:** 2026-10-07
 **Ámbito:** Todos los ciclos sujetos a la metodología cuando la plataforma de ejecución sea ChatGPT.
 
@@ -16,6 +16,7 @@ Secuencia obligatoria:
 ## 2. Gate fail-closed
 
 - `THINKING` es obligatorio.
+- La señal válida debe pertenecer al runtime o integración que ejecuta el turno; la capacidad general del modelo para razonar no sustituye el estado de plataforma.
 - `INSTANT` no es un estado permitido para ejecutar trabajo sujeto a la metodología.
 - Ausencia de señal o imposibilidad de determinar el modo requerido = BLOQUEADO.
 - El bloqueo impide ejecución sustantiva y cierre, pero mantiene abierta la conversación para resolver la condición.
@@ -31,6 +32,8 @@ KHORA exige en el turno:
 Los tres valores forman parte de la evidencia del turno. Cualquier ausencia o valor distinto impide `VERIFIED`.
 
 ## 4. Límite de evidencia
+
+La metodología no considera verificable un Thinking que solo sea supuesto, inferido por el nombre del modelo o reconstruido a posteriori. Si la integración no entrega una señal operativa aceptable, el estado es `T: ?` y el ciclo queda bloqueado.
 
 OpenAI documenta que ChatGPT dispone de un modo Thinking y que las Apps/MCP reciben metadata de cliente, pero la metadata MCP documentada no incluye el selector de modelo o modo de razonamiento. Por tanto, el servidor KHORA no puede afirmar que lea directamente el selector visual.
 
@@ -54,4 +57,4 @@ El formato de salida por ciclo es obligatorio y versionado como `v1.7.0`.
 
 ## 6. Cierre
 
-`E: COMPLETADO` solo puede emitirse después de `VERIFIED → RELEASE` y con el contrato visible `v1.7.0` cumplido.
+`E: COMPLETADO` solo puede emitirse después de `VERIFIED → RELEASE`, con `T: ✓`, `K: ✓` y con el contrato visible `v1.7.0` cumplido. Si Thinking no está activado o no puede verificarse, no existe ejecución metodológicamente completada.
