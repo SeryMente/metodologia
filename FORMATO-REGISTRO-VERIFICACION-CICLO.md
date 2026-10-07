@@ -1,12 +1,22 @@
 # Registro de Verificación por Ciclo
 
 **Estado:** CANÓNICO  
-**Versión:** v1.4.0 — Bloqueo Operativo Visible y Resolución Conversacional  
+**Versión:** v1.5.0 — Salida Visible Minimalista  
 **Fecha:** 2026-10-07
 
 ## Formato mínimo
 
-`CICLO | ATTEMPT | VERIFICACIÓN | EVIDENCIA`
+`PROYECTO / CONV-XX / CXXX`
+
+`SI CARGADO · vX.Y.Z — NOMBRE DE VERSIÓN · COMPLETO · ACTIVO`
+
+`ChatGPT · UBIC: ... · RDC: ... · C: ... · S: ... · K: ... · USR: ...`
+
+`NOTAS · 🟢 SIN NOTAS | 🟡 NOTAS PENDIENTES`
+
+`RESULTADO: ...`
+
+`ESTADO: ...`
 
 ## Identificación normativa obligatoria
 
