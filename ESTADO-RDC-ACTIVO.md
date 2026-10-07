@@ -1,7 +1,7 @@
 # Estado Operativo - Sesion RDC Activa
 
 **Naturaleza:** registro operativo mutable; no constituye por si mismo una nueva norma.
-**Ultima actualizacion:** 2026-10-07T10:53:13.9780382-06:00
+**Ultima actualizacion:** 2026-10-07T17:01:36.776Z
 
 ## Sesion activa
 
@@ -15,13 +15,13 @@
 | RDC-DEVICE-ID | 7fabbc1d-7c0d-4400-bd31-88b3b4229286 |
 | RDC-VERIFICACION | PING OK |
 | Ultima verificacion | 2026-10-07T16:29:37.252Z |
-| RDC-MENSUAL | 7% usado / 93% restante |
+| RDC-MENSUAL | 8% usado / 92% restante |
 | WIN-OPERATIVO | fila4 |
 | WIN-ADMIN | central\\mantenimientorci |
 | RDC-REQUERIDA | PENDIENTE POR CICLO; NO SE PRESUPONE ACTIVA | 
 | CONTEXTO-VERIFICACION | VERIFICADO-ACTIVO | 
 | PERFIL-UBICACION | CECEQ · COMPLETO | 
-| IDENTIDAD-OPERATIVA | fila4 · CANAL OPERATIVO CONOCIDO DISPONIBLE: \\DesktopCommander-Remote-fila4 |
+| IDENTIDAD-OPERATIVA | fila4 · PERFIL CECEQ; NO IMPLICA SESION RDC SEPARADA |
 
 ## Regla de lectura
 
@@ -31,4 +31,4 @@ Una nueva sesion activa debe sustituir este registro y actualizar su marca tempo
 
 ## Incidencia conocida
 
-La conexion RDC actual esta autenticada y disponible, pero el shell remoto observado se ejecuta como central\\mantenimientorci. El usuario Windows operativo autorizado para CECEQ es fila4. No se deben realizar operaciones de trabajo directamente bajo la identidad administrativa.
+La conexion RDC actual esta autenticada y disponible, pero el shell remoto observado se ejecuta como central\\mantenimientorci. El usuario Windows operativo autorizado para CECEQ es fila4. La identidad central\mantenimientorci puede ejecutar el trabajo tecnicamente valido. La unica restriccion especifica es no clonar ni materializar repositorios nuevos dentro del perfil o ruta de MantenimientoRCI.
