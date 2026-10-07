@@ -3,20 +3,20 @@
 ## Estado canónico
 
 - **Versión:** v0.7.0
-- **Nombre de versión:** Resolución Operativa por Canal Conocido
+- **Nombre de versión:** Resolución de Identidad sin Alterar la Sesión RDC
 - **Última actualización:** 2026-10-07
 - **Última actualización canónica:** 2026-10-07T10:26:01-06:00
 - **Ámbito:** Todos los proyectos y conversaciones trabajados bajo esta metodología.
 
 ### Narrativa de la versión
 
-**Antes:** el gate de contexto ya exigía detectar RDC, resolver el perfil de ubicación y verificar la identidad Windows operativa, pero la resolución de la diferencia entre la identidad administrativa y la operativa se describía con un mecanismo de puente técnico más complejo.
+**Antes:** el gate de contexto exigía detectar RDC, resolver el perfil de ubicación y distinguir la identidad Windows operativa de la administrativa.
 
-**Cambio:** se establece como camino canónico el canal operativo conocido y ya probado para `fila4`, sin instalar un puente Windows permanente.
+**Cambio:** se precisa que la sesión RDC activa se conserva íntegramente bajo `central\\mantenimientorci`; la discrepancia con `fila4` se resuelve en el razonamiento y en la selección del procedimiento, sin abrir sesiones paralelas ni alterar el canal RDC.
 
-**Motivo:** resolver la discrepancia por el camino más corto disponible, conservar la separación operativo-administrativa y evitar credenciales, cierre de sesión y componentes residentes innecesarios.
+**Motivo:** preservar la sesión RDC que efectivamente consume el servicio y evitar efectos laterales sobre autenticación, consumo, continuidad y trazabilidad.
 
-**Resultado:** cuando el canal actual está elevado bajo mantenimientorci, el modelo debe detectar la discrepancia, reutilizar o activar el canal operativo conocido para fila4, verificar la identidad efectiva y solo entonces continuar con el trabajo ordinario.
+**Resultado:** el modelo reconoce `fila4` como identidad operativa del perfil CECEQ y `central\\mantenimientorci` como identidad efectiva del canal RDC, sin convertir una en la otra ni abrir un segundo canal.
 
 ### Registro de versiones
 
@@ -31,7 +31,7 @@
 | 7 | v0.5.2 | Glosario Operativo y Normalización de Transcripción | Se incorpora un glosario metodológico transversal y reglas para normalizar términos dictados o transcritos a su forma canónica, reduciendo deriva de nombres como CECEQ y KHORA. |
 | 8 | v0.6.0 | Gate de Contexto Operativo Fail-Closed | Se convierte la verificación del contexto operativo en una precondición de cada ciclo: detección automática de RDC, resolución del perfil de ubicación y bloqueo ante indeterminación material, con intervención del usuario solo para decidir si RDC es requisito cuando la detección automática falla. |
 
-| 9 | v0.7.0 | Resolución Operativa por Canal Conocido | Se sustituye la dependencia de un puente Windows permanente por el uso del canal operativo conocido y ya probado para `fila4`, con verificación explícita de identidad antes del trabajo y bloqueo si ese camino no puede establecerse o verificarse. |
+| 9 | v0.7.0 | Resolución de Identidad sin Alterar la Sesión RDC | Se precisa que el canal RDC permanece bajo `central\\mantenimientorci`; `fila4` se conserva como identidad operativa del perfil sin abrir sesiones paralelas ni modificar la sesión RDC. |
 La tabla es canónica: las versiones futuras deben añadir una fila sin borrar ni reciclar las anteriores. El nombre describe el avance de la versión y no sustituye el título general del sistema o documento.
 
 ## 1. Convención obligatoria de foliación de ciclos
@@ -129,12 +129,14 @@ Cuando exista una sesión activa verificada, el estado global registrado debe co
 
 La ubicación debe resolverse contra el registro canónico de perfiles antes de ejecutar reglas dependientes del entorno. Un perfil de ubicación inexistente o insuficiente bloquea cualquier operación que dependa de ese perfil.
 
-## 17. Resolución operativa por canal conocido
+## 17. Resolución de identidad sin alterar la sesión RDC
 
-Para CECEQ, la separación `central\\mantenimientorci` → `fila4` no requiere instalar un puente permanente. Cuando el canal de ejecución detectado esté bajo la identidad administrativa, el procedimiento canónico es advertir la discrepancia y utilizar el canal operativo conocido ya disponible para `fila4`, evitando `runas` con contraseña, cerrar sesión, reautenticarse o ejecutar el trabajo ordinario bajo la identidad administrativa.
+Para CECEQ, `central\\mantenimientorci` es la identidad efectiva de la sesión RDC y `fila4` es la identidad operativa definida por el perfil de ubicación. Estas identidades no se sustituyen entre sí.
 
-En la máquina CECEQ actualmente perfilada, el camino corto conocido es la tarea interactiva `\\DesktopCommander-Remote-fila4`, configurada para ejecutar `C:\\WINDOWS\\system32\\cmd.exe /d /c "C:\\Program Files\\nodejs\\desktop-commander.cmd" remote` con `fila4`. Ese canal se utiliza como vía de ejecución operativa cuando corresponda; no se trata como un componente permanente adicional.
+El camino corto canónico no abre una segunda sesión, no modifica la sesión RDC y no inicia otro canal RDC bajo `fila4`. El modelo detecta la diferencia, la hace explícita y selecciona el procedimiento compatible con el perfil y con los permisos disponibles en la sesión RDC vigente.
 
-Secuencia obligatoria: detectar discrepancia → activar o reutilizar el canal operativo conocido → verificar `whoami` y el perfil/ruta de trabajo → continuar bajo `fila4`. Si el canal conocido no puede establecerse o la identidad operativa no puede verificarse, el ciclo queda bloqueado.
+Secuencia obligatoria: detectar identidad efectiva de RDC → comparar con `WIN-OPERATIVO` → conservar la sesión RDC bajo `central\\mantenimientorci` → ejecutar únicamente la operación que sea válida con la identidad efectiva disponible → verificar resultado e identidad cuando la operación lo requiera.
 
-La identidad administrativa queda reservada para acciones de elevación explícita o para establecer el canal operativo cuando sea indispensable. Este procedimiento es un detalle de implementación y permanece fuera del nivel de principio.
+Si una operación exige necesariamente ejecución efectiva bajo `fila4` y no puede realizarse desde la sesión RDC vigente sin abrir o alterar otra sesión, esa operación queda bloqueada. No se crea una sesión paralela para salvar la discrepancia.
+
+La identidad administrativa puede utilizarse para las operaciones permitidas por el canal RDC y para elevación explícita. La distinción con `fila4` se conserva como contexto operativo y no se resuelve mediante cambio de sesión.
