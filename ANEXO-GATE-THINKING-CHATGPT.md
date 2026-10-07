@@ -1,7 +1,7 @@
 # Anexo — Gate de Thinking en ChatGPT
 
 **Estado:** CANÓNICO
-**Versión:** v1.1.2
+**Versión:** v1.1.3
 **Fecha:** 2026-10-07
 **Ámbito:** Todos los ciclos sujetos a la metodología cuando la plataforma de ejecución sea ChatGPT.
 
@@ -13,9 +13,11 @@ Este anexo está subordinado a `SI-METACOGNITIVO.md`. Cualquier copia que descri
 
 Thinking es la ventana operativa preferente para resolver la cascada normativa antes de emitir la respuesta. No se considera una prueba del contenido del razonamiento interno y no constituye una condición que por sí sola bloquee la salida.
 
+La resolución del contexto RDC es anterior a este anexo: antes de `HEALTH MCP`, el ciclo debe leer y resolver `ESTADO-RDC-ACTIVO.md`. Este anexo no puede iniciar la certificación KHORA antes de que ese gate haya terminado.
+
 Secuencia preferente:
 
-`THINKING → HEALTH MCP → OPEN TURN → CASCADA DE PRINCIPIOS → VERIFY → RELEASE → SALIDA`
+`SNAPSHOT SI → ESTADO RDC → THINKING → HEALTH MCP → OPEN TURN → CASCADA DE PRINCIPIOS → VERIFY → RELEASE → SALIDA`
 
 ## 3. Gate adaptativo
 
