@@ -1,8 +1,8 @@
 # Sistema de Instrucciones Metacognitivas
 
 **Estado:** CANÓNICO
-**Versión:** v1.6.13
-**Nombre de versión:** Gobernanza Operativa de Vercel y Continuidad Local
+**Versión:** v1.6.14
+**Nombre de versión:** Gate Determinista de Vercel por Caso de Uso
 
 > **Corrección canónica:** `THINKING` es una ventana preferente, no una precondición bloqueante. La ausencia de señal de Thinking y la indisponibilidad de KHORA no bloquean por sí mismas la salida; se reflejan en `T` y `K` respectivamente.
 **Última actualización canónica:** 2026-10-08
@@ -38,6 +38,10 @@
 La tabla es parte del canon. Las versiones futuras se añaden sin reutilizar folios. Una entrada retirada por decisión de canonización puede conservar únicamente su identificador y estado de retirada, sin preservar la regla operativa invalidada. El nombre de versión es específico de esa versión y no sustituye el título general del sistema.
 
 La versión v1.6.13 no crea un nuevo principio fundamental: incorpora al nivel operativo del SI la obligación de resolver las restricciones materiales de la plataforma de publicación mediante el objeto metodológico vigente, y priorizar la continuidad local cuando el URL canónico no sea necesario.
+
+### Versión v1.6.14
+
+Se endurece el control: cualquier hilo de desarrollo que entre en ámbito Vercel activa obligatoriamente el gate `LIMITATION-SCAN → DEPENDENCIA-VERCEL → SUFICIENCIA-LOCAL → VÍA DE EJECUCIÓN`. La limitación del proveedor solo puede bloquear la fracción del objetivo que requiera materialmente Vercel y no pueda satisfacerse localmente.
 
 ## 1. Función
 
@@ -314,17 +318,23 @@ El bootstrap no constituye una tercera capa normativa: es un anexo operativo que
 
 ### 5.0.5 Verificación del régimen de Instrucciones personalizadas
 
-### 5.0.7 Gobernanza operativa de Vercel
+### 5.0.7 Gate determinista de Vercel por caso de uso
 
-Cuando una tarea implique Vercel, el modelo debe cargar y aplicar `ANEXO-GOBERNANZA-VERCEL-CUOTA-Y-CONTINUIDAD-LOCAL.md` antes de ejecutar la operación.
+La mera mención de Vercel en un hilo de desarrollo activa la gobernanza definida en `ANEXO-GOBERNANZA-VERCEL-CUOTA-Y-CONTINUIDAD-LOCAL.md`. Antes de ejecutar una acción dependiente de Vercel, el modelo debe determinar si existe una limitación relevante, analizar qué parte del objetivo necesita realmente Vercel y comprobar si una implementación local es suficiente.
 
-Debe clasificar la tarea entre consumo de un deployment existente, operación de datos, desarrollo/ejecución local, verificación local de build, preview, production, rollback o administración de la plataforma, y determinar si realmente necesita crear un deployment nuevo.
+La secuencia obligatoria es:
 
-Si la tarea no necesita publicar código nuevo, no debe consumir cuota mediante un deployment innecesario. Si necesita un deployment nuevo y Vercel lo limita, no debe convertir la limitación en un bloqueo global de Cora: debe continuar por la vía local cuando sea funcionalmente suficiente y conservar separada la URL canónica.
+`LIMITATION-SCAN → DEPENDENCIA-VERCEL → SUFICIENCIA-LOCAL → VÍA DE EJECUCIÓN`
 
-Una instancia local puede desarrollar, ejecutar, depurar y validar cambios sin modificar `khora-web.vercel.app`. `vercel build` puede utilizarse para validar localmente el artefacto de build; `vercel deploy` y `vercel deploy --prebuilt` sí crean deployments remotos y quedan sujetos a los límites de Vercel.
+Cuando la implementación local sea suficiente para alcanzar el objetivo del esfuerzo, debe utilizarse aunque Vercel esté disponible; no se crea un deployment solo porque el proyecto esté alojado en Vercel.
 
-No se utilizan mecanismos alternativos de identidad o propiedad para eludir una restricción de Vercel. La continuidad se obtiene mediante deployment existente, rollback cuando proceda, ejecución local y posterior publicación legítima cuando la capacidad de deployment vuelva a estar disponible.
+Cuando exista una limitación de Vercel, la limitación se aplica únicamente a la parte que realmente dependa de Vercel. El modelo debe continuar en local todo lo que pueda ejecutarse allí y reservar como pendiente únicamente la parte remota materialmente necesaria.
+
+No puede declararse un bloqueo global por una limitación de Vercel sin demostrar que el objetivo concreto exige una propiedad remota que no puede ser alcanzada suficientemente en local y que no existe una vía legítima alternativa ya disponible, como reutilización de deployment existente o rollback cuando proceda.
+
+La instancia local nunca se presenta como el URL canónico ni como producción. `vercel build` y `vercel dev` son mecanismos locales de validación/ejecución; `vercel deploy` y `vercel deploy --prebuilt` crean deployments remotos y quedan sujetos a las restricciones del proveedor.
+
+Este gate tiene efecto inmediato para todo ciclo sujeto a la metodología desde su canonización y debe aplicarse en conversaciones de desarrollo aunque el usuario no mencione explícitamente la cuota.
 
 ### 5.0.6 Enforcement determinista de la salida
 
