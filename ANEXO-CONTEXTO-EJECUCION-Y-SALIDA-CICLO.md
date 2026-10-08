@@ -294,3 +294,14 @@ El MCP de KHORA conserva el mismo carácter adaptativo:
 `K: OFF`, `K: ?` y `K: !` tampoco son causas autónomas de bloqueo. Este anexo no puede reintroducir una precondición dura que contradiga `SI-METACOGNITIVO.md` v1.6.9 o `ANEXO-GATE-THINKING-CHATGPT.md`.
 
 `E: COMPLETADO` se determina por la producción efectiva del resultado solicitado; la verificación externa se declara por separado mediante `K`. Cuando el ciclo esté sustantivamente bloqueado por contexto operativo, se conserva la salida de bloqueo definida por el contrato vigente.
+
+
+## 15. HUD de desempeno CIBERCAFE
+
+Cuando el ciclo pertenezca al proceso persistente de liberacion de desempeno de CIBERCAFE, cada comentario operativo visible debe incorporar un HUD compacto con el estado observable disponible:
+
+`HUD | CPU ... | GPU ... | VRAM ... | RAM ... | DISK ... | TEMP ... | PWR ... | OPORTUNIDAD ... | ACCION ...`
+
+Los valores no disponibles se expresan como `ND`. El HUD reporta telemetria y estado operativo; no expone razonamiento interno paso a paso.
+
+La continuidad del proceso se identifica por `PC-N`. Los datos dinamicos de una sesion no sustituyen el estado persistente del repositorio.
