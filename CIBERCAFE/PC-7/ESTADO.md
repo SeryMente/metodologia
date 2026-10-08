@@ -22,7 +22,7 @@
 | RAM configurada | 2400 MT/s |
 | SSD | ADATA LEGEND 900 PRO, ~2 TB, Healthy/OK |
 | Sistema | Windows 11 Pro, build 26200 |
-| BIOS | ASUS PRIME B550M-K, BIOS 4101 |
+| BIOS | ASUS PRIME B550M-K, BIOS 4101; 4304 disponible oficialmente |
 
 ## Baseline observado 2026-10-08
 
@@ -51,8 +51,27 @@ Resultado inmediato: sin carga anomala observable; mantener y continuar observac
 
 1. RAM operando a 2400 MT/s pese a modulo con especificacion nominal 3200; investigar perfil XMP/DOCP/BIOS antes de cambiar firmware.
 2. Driver NVIDIA instalado 610.47; paquete 617.42 preparado y firmado por NVIDIA, pero la instalacion no se ejecuto durante actividad del usuario.
-3. BIOS 4101; investigar version y beneficio real antes de cualquier actualizacion.
+3. BIOS 4101 instalada; ASUS 4304 publicada el 2026-08-21 con AGESA ComboV2 PI 1.2.0.12. Actualizacion pendiente de ventana de mantenimiento.
 4. Procesos de inicio de Steam/Epic/Riot y otros deben evaluarse por impacto y por necesidad en contexto de cibercafe, nunca eliminarse solo por existir.
+
+
+## Hallazgos de infraestructura 2026-10-08
+
+| Elemento | Estado | Accion |
+|---|---|---|
+| Volumen C: | WARNING · SPOT FIX NEEDED | Requiere comprobacion/reparacion NTFS elevada; no ejecutar offline mientras exista actividad del usuario |
+| NTFS | Evento ID 55: dano en estructura de indice `$I30` en un artefacto de NVIDIA App | No borrar ni manipular manualmente el indice; reparar con herramienta de sistema en mantenimiento |
+| SSD fisico | Healthy / OK | Sin error de disco fisico observado en el snapshot |
+| TRIM | Habilitado | Conservar |
+| Agente local | ACTIVO; muestras cada 10 s | Mantener; no duplicar instancia |
+| Task Scheduler | Tarea `CyberCafe Performance Liberator` presente, estado Ready | Debe iniciar en proximo logon; la instancia actual fue lanzada manualmente |
+
+## Mantenimiento pendiente de alto impacto
+
+- **BIOS 4304:** actualizacion oficial ASUS para PRIME B550M-K; sustituye 4101 y actualiza AGESA. Requiere ventana de mantenimiento y procedimiento de recuperacion.
+- **NVIDIA 617.42 WHQL:** driver Game Ready oficial publicado 2026-10-06; el instalador esta preparado localmente y firmado por NVIDIA. Requiere ventana segura porque reinicia el subsistema grafico.
+- **RAM 3200 MT/s:** el modulo Kingston KF3200C16D4/32GX sigue operando/configurado a 2400 MT/s; requiere investigar DOCP/XMP desde UEFI. No forzar desde Windows.
+- **NTFS Spot Fix:** el volumen C: contiene corrupcion detectada. La herramienta remota actual no dispone de elevacion suficiente para `chkdsk C: /scan`; queda bloqueada la reparacion elevada hasta disponer de contexto administrativo seguro.
 
 ## Reglas de continuidad
 
@@ -77,7 +96,7 @@ Resultado inmediato: sin carga anomala observable; mantener y continuar observac
 | SSD ADATA LEGEND 900 PRO Healthy/OK | VIGENTE | 2026-10-08 | Revalidar si aparecen I/O anomalo, errores SMART o cambio de disco | Reutilizar |
 | Plan Alto rendimiento | VIGENTE | 2026-10-08 | Revalidar si cambia el plan energetico o despues de una restauracion del sistema | Reutilizar |
 | RAM 2400 MT/s | VIGENTE · OPORTUNIDAD | 2026-10-08 | Revalidar si cambia BIOS/DOCP/XMP/modulo | Investigar configuracion/BIOS |
-| NVIDIA 610.47 | VIGENTE · OPORTUNIDAD | 2026-10-08 | Revalidar version antes de mantenimiento del driver | Evaluar actualizacion diferida |
+| NVIDIA 610.47 | VIGENTE · OPORTUNIDAD | 2026-10-08 | Revalidar version antes de mantenimiento del driver | 617.42 WHQL disponible; instalar solo en ventana segura |
 | Procesos de inicio Steam/Epic/Riot | PENDIENTE | 2026-10-08 | Revalidar impacto solo si cambian carga o politica del cibercafe | Analizar necesidad/impacto |
 
 ## Economia RDC de esta memoria
