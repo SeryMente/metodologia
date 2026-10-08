@@ -271,7 +271,7 @@ La conversación permanece abierta durante el bloqueo. El handshake fresco se va
 
 ## 17. Ejecución flexible y única restricción de materialización
 
-La sesión RDC vigente permanece bajo central\mantenimientorci para todos los efectos de uso de RDC. La identidad efectiva del canal puede ejecutar cualquier trabajo técnicamente válido.
+La identidad efectiva del canal RDC puede ejecutar cualquier trabajo técnicamente válido. La selección de terminal del ciclo se mantiene separada de la identidad Windows efectiva y de la ubicación.
 
 La única restricción específica de materialización es no clonar ni materializar repositorios nuevos dentro del perfil o ruta de MantenimientoRCI.
 
