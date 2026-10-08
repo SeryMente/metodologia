@@ -176,4 +176,4 @@ Una cuota agotada no constituye bloqueo global de Cora. La vía local debe utili
 
 La documentación específica del proveedor debe actualizarse en el objeto canónico cuando Vercel modifique límites o mecanismos. Las reglas de plataforma permanecen en el nivel metodológico-operativo; no se elevan automáticamente a principios fundamentales.
 
-No se utilizan cuentas o equipos alternativos como mecanismo de evasión de límites de Vercel.
+No se utilizan mecanismos de identidad, propiedad o equipos como mecanismo de evasión de límites de Vercel.
