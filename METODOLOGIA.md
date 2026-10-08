@@ -2,8 +2,8 @@
 
 ## Estado canónico
 
-- **Versión:** v0.14.1
-- **Nombre de versión:** Gate Determinista de Vercel por Caso de Uso
+- **Versión:** v0.14.2
+- **Nombre de versión:** Enforcement Inmediato del Gate Vercel
 - **Última actualización:** 2026-10-08
 - **Última actualización canónica:** 2026-10-08
 - **Ámbito:** Todos los proyectos y conversaciones trabajados bajo esta metodología.
@@ -61,6 +61,7 @@
 | 36 | v0.13.0 | Versión retirada | Entrada histórica retirada del canon operativo; no contiene reglas vigentes. |
 | 37 | v0.14.0 | Gobernanza de Cuota Vercel y Continuidad Local | Se canoniza el objeto `ANEXO-GOBERNANZA-VERCEL-CUOTA-Y-CONTINUIDAD-LOCAL.md`, se cruza la cuota de deployments con los casos de uso de Cora y se establece la ejecución local como continuidad legítima cuando no sea necesario modificar el URL canónico. |
 | 38 | v0.14.1 | Gate Determinista de Vercel por Caso de Uso | Se hace obligatoria e inmediata la secuencia `LIMITATION-SCAN → DEPENDENCIA-VERCEL → SUFICIENCIA-LOCAL → VÍA DE EJECUCIÓN`, limitando el bloqueo exclusivamente a la fracción del objetivo que requiera materialmente Vercel. |
+| 39 | v0.14.2 | Enforcement Inmediato del Gate Vercel | Se endurece el disparador: la mera mención de Vercel en un hilo de desarrollo activa el gate antes de ejecutar, y la continuidad local pasa a ser la vía obligatoria cuando sea suficiente para alcanzar el objetivo. |
 La tabla es canónica. Las versiones futuras añaden nuevos registros sin reutilizar folios. Una entrada retirada por revisión canónica puede conservar únicamente su identificador y estado de retirada, sin preservar la regla operativa invalidada. El nombre describe el avance de la versión y no sustituye el título general del sistema o documento.
 
 ## 1. Convención obligatoria de foliación de ciclos
