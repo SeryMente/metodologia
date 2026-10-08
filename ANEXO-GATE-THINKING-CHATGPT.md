@@ -1,7 +1,7 @@
 # Anexo — Gate de Thinking en ChatGPT
 
 **Estado:** CANÓNICO
-**Versión:** v1.1.3
+**Versión:** v1.1.4
 **Fecha:** 2026-10-07
 **Ámbito:** Todos los ciclos sujetos a la metodología cuando la plataforma de ejecución sea ChatGPT.
 
@@ -33,7 +33,7 @@ KHORA conserva el runtime del turno como metadato:
 
 `platform=ChatGPT`
 `reasoning_mode=THINKING|INSTANT|UNKNOWN|UNAVAILABLE`
-`output_format_version=v1.7.2`
+`output_format_version=v1.7.5`
 
 La ausencia de un modo de razonamiento no invalida el receipt. El verificador distingue entre integridad normativa y disponibilidad del runtime.
 
@@ -51,7 +51,7 @@ El formato de salida por ciclo es obligatorio y versionado como `v1.7.1`.
 
 `SI CARGADO · vX.Y.Z — NOMBRE DE VERSIÓN · COMPLETO · ACTIVO`
 
-`ChatGPT · UBIC: ... · RDC: ... · C: ... · S: ... · K: ✓|?|! · T: ✓|?|! · fila4`
+`ChatGPT · CI: ✓|?|! · UBIC: ... · RDC: ... · C: ... · S: ... · K: ✓|?|! · T: ✓|?|! · fila4`
 
 `RESULTADO: ...`
 `ESTADO: COMPLETADO | BLOQUEADO | PENDIENTE`
@@ -60,4 +60,4 @@ El formato de salida por ciclo es obligatorio y versionado como `v1.7.1`.
 
 ## 7. Cierre
 
-La salida puede emitirse en cualquier escenario. `K: ✓` solo se declara después de `VERIFIED → RELEASE`. Cuando el MCP está fuera de servicio o inaccesible, se declara `K: OFF` y no se atribuye verificación externa al turno. El contrato visible `v1.7.2` sigue siendo obligatorio.
+La salida puede emitirse en cualquier escenario. `K: ✓` solo se declara después de `VERIFIED → RELEASE`. Cuando el MCP está fuera de servicio o inaccesible, se declara `K: OFF` y no se atribuye verificación externa al turno. El contrato visible `v1.7.5` sigue siendo obligatorio. El indicador `CI` pertenece a ese contrato y registra la aplicación verificable del régimen de Instrucciones personalizadas; no afirma una lectura introspectiva del campo de la plataforma.
