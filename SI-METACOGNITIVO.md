@@ -324,7 +324,7 @@ Si la tarea no necesita publicar código nuevo, no debe consumir cuota mediante 
 
 Una instancia local puede desarrollar, ejecutar, depurar y validar cambios sin modificar `khora-web.vercel.app`. `vercel build` puede utilizarse para validar localmente el artefacto de build; `vercel deploy` y `vercel deploy --prebuilt` sí crean deployments remotos y quedan sujetos a los límites de Vercel.
 
-No se utiliza una cuenta Vercel alternativa para eludir una cuota o sustituir el plano canónico. La continuidad se obtiene mediante deployment existente, rollback cuando proceda, ejecución local y posterior publicación legítima cuando la capacidad de deployment vuelva a estar disponible.
+No se utilizan mecanismos alternativos de identidad o propiedad para eludir una restricción de Vercel. La continuidad se obtiene mediante deployment existente, rollback cuando proceda, ejecución local y posterior publicación legítima cuando la capacidad de deployment vuelva a estar disponible.
 
 ### 5.0.6 Enforcement determinista de la salida
 
