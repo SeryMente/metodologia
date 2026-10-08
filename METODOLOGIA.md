@@ -2,21 +2,21 @@
 
 ## Estado canónico
 
-- **Versión:** v0.12.3
-- **Nombre de versión:** Contrato de Salida Ejecutable
+- **Versión:** v0.12.4
+- **Nombre de versión:** Descubrimiento Vivo de Terminal RDC
 - **Última actualización:** 2026-10-08
 - **Última actualización canónica:** 2026-10-08
 - **Ámbito:** Todos los proyectos y conversaciones trabajados bajo esta metodología.
 
 ### Narrativa de la versión
 
-**Antes:** la v0.12.0 había separado la continuidad transversal en un objeto de índice adicional, además del bootstrap operativo, el estado global y el historial.
+**Antes:** la v0.12.3 trataba `ESTADO-RDC-ACTIVO.md` como estado de una única sesión global y permitía que una conversación nueva heredara esa identidad sin descubrir el conjunto de dispositivos actualmente conectados.
 
-**Cambio:** se elimina la duplicación y se establece `BOOTSTRAP-CONTEXTO-GLOBAL.md` como el único anexo de entrada para la continuidad entre conversaciones. `ESTADO-RDC-ACTIVO.md` conserva la única fuente del estado global vigente y `HISTORIAL-RDC.md` conserva el ciclo de vida de sesiones.
+**Cambio:** `ESTADO-RDC-ACTIVO.md` pasa a ser un registro persistente de identidades y ciclos de vida RDC. La conectividad actual deja de depender del valor heredado y debe descubrirse en vivo contra las cuentas RDC accesibles. La terminal concreta se resuelve por ciclo mediante `RDC-DEVICE-ID`, manteniendo independientes terminal, ubicación y conversación.
 
-**Motivo:** preservar la arquitectura mínima del sistema: principios fundamentales en el SI y desarrollo operativo en el conjunto de anexos, sin crear una tercera capa normativa ni dos índices paralelos para la misma función.
+**Motivo:** el modelo anterior produjo una identificación materialmente incorrecta cuando varias conversaciones y varias computadoras compartían el mismo entorno RDC. Un estado persistido de una terminal no puede actuar como selector global de otra conversación.
 
-**Resultado:** una conversación nueva recupera el SI, la Metodología y un único anexo de bootstrap; desde ese anexo continúa hacia las fuentes persistentes que correspondan.
+**Resultado:** una conversación nueva puede obtener el estado real observable de RDC sin depender de la terminal seleccionada por otra conversación; las distintas terminales pueden coexistir y ser operadas por ciclos independientes.
 
 ### Registro de versiones
 
@@ -53,6 +53,7 @@
 | 27 | v0.12.1 | Bootstrap Canónico Mínimo | Se elimina el índice de continuidad redundante y se establece BOOTSTRAP-CONTEXTO-GLOBAL.md como el único anexo de entrada para reconstruir continuidad entre conversaciones, manteniendo ESTADO-RDC-ACTIVO.md como fuente única del estado global e HISTORIAL-RDC.md como registro de ciclo de vida. |
 | 28 | v0.12.2 | Verificación del Régimen Personalizado | Se incorpora al contrato de salida el indicador operativo CI para registrar, ciclo a ciclo, la aplicación verificable del régimen establecido por las Instrucciones personalizadas. El primer ciclo activa y establece su continuidad; los ciclos posteriores deben conservarla y volver a ejecutar las comprobaciones externas que corresponda. CI no pretende demostrar acceso introspectivo al campo interno de la plataforma. |
 | 29 | v0.12.3 | Contrato de Salida Ejecutable | Se convierte el formato de salida en un contrato ejecutable con esquema machine-readable, validación estructural exacta, renderer determinista y liberación condicionada al output validado. La implementación queda protegida contra deriva mediante sincronización automática entre Metodología y KHORA y pruebas de regresión. |
+| 30 | v0.12.4 | Descubrimiento Vivo de Terminal RDC | Se sustituye el modelo de una única sesión RDC global por un registro de identidades con descubrimiento vivo por ciclo. Una conversación nueva enumera dispositivos conectados en las cuentas RDC accesibles, reconcilia con el registro y selecciona la terminal objetivo sin heredar ciegamente una selección de otra conversación. |
 La tabla es canónica: las versiones futuras deben añadir una fila sin borrar ni reciclar las anteriores. El nombre describe el avance de la versión y no sustituye el título general del sistema o documento.
 
 ## 1. Convención obligatoria de foliación de ciclos
@@ -109,15 +110,17 @@ La salida no puede mostrar una versión histórica como si fuera vigente. Si la 
 
 ### 2.3 Bootstrap canónico de continuidad
 
-`BOOTSTRAP-CONTEXTO-GLOBAL.md` es el anexo único de entrada para reconstruir continuidad entre conversaciones. No contiene el estado RDC actual y no tiene autoridad para sustituir las fuentes canónicas que referencia.
+`BOOTSTRAP-CONTEXTO-GLOBAL.md` es el anexo único de entrada para reconstruir continuidad entre conversaciones. No contiene la selección de una terminal RDC actual y no tiene autoridad para sustituir las fuentes canónicas que referencia.
 
 En cada ciclo, una conversación nueva o continuadora debe usarlo para localizar:
 - `SI-METACOGNITIVO.md`;
 - `METODOLOGIA.md`;
 - `ESTADO-RDC-ACTIVO.md`;
-- `HISTORIAL-RDC.md`, cuando exista y sea necesario para resolver cambios, sustituciones, conflictos o auditoría.
+- `HISTORIAL-RDC.md`, cuando exista y sea necesario para resolver ciclos de vida o auditoría.
 
-La memoria conversacional no sustituye estas fuentes.
+La memoria conversacional no sustituye estas fuentes. 
+
+La memoria conversacional no sustituye estas fuentes. Para RDC, el bootstrap conduce al registro persistente y después al descubrimiento vivo; nunca convierte una selección de otra conversación en la terminal actual de esta conversación.
 
 ### 2.4 Historial mínimo de sesiones RDC
 
@@ -137,11 +140,13 @@ El contrato de salida incorpora `CI` como indicador operativo:
 
 
 
-HISTORIAL-RDC.md conserva el ciclo de vida de las sesiones RDC sin registrar cada ping ni cada ciclo. Una sesión lógica se mantiene como ACTIVA, SUSTITUIDA, FINALIZADA, REVOCADA o EXPIRADA según evidencia verificable.
+HISTORIAL-RDC.md conserva ciclos de vida por identidad de dispositivo sin registrar cada ping ni cada ciclo. La cardinalidad normal permite múltiples identidades/sesiones ACTIVAS de forma simultánea cuando corresponden a distintos `RDC-DEVICE-ID`.
 
-La cardinalidad normal es una sola sesión ACTIVA. Más de una sesión ACTIVA constituye conflicto salvo excepción explícita y vigente.
+La unicidad se evalúa por la identidad `RDC-CUENTA + RDC-DEVICE-ID`, no por el nombre visible del dispositivo. Dos dispositivos distintos pueden compartir un mismo nombre como `PC-7` sin ser la misma terminal.
 
-La sustitución se completa únicamente mediante la transacción ya definida: validar identidad → publicar estado global → read-back.
+Un conflicto real existe cuando el mismo par cuenta + device_id presenta estados incompatibles o cuando se pretende asociar una misma identidad a dos terminales distintas sin evidencia de sustitución. La conexión de una terminal nueva no finaliza ni sustituye otra terminal.
+
+La publicación de un cambio persistente se completa mediante la transacción: validar identidad → publicar estado → read-back.
 
 ## 3. Diagrama de árbol
 
@@ -179,15 +184,19 @@ El sistema canónico de instrucciones que gobierna la interpretación, decisión
 
 `SI-METACOGNITIVO.md`
 
-La versión canónica actual del SI es **v1.6.8 — Continuidad Canónica entre Conversaciones** y contiene los principios canónicos vigentes, cada uno con su **índice de preponderancia** dentro de la escala `0–1`.
+La versión canónica actual del SI es **v1.6.10 — Descubrimiento Vivo de Terminales RDC** y contiene los principios canónicos vigentes, cada uno con su **índice de preponderancia** dentro de la escala `0–1`.
 
 La metodología mantiene separadas las normas fundamentales de sus desarrollos, procedimientos, herramientas y mecanismos de implementación.
 \n\n## 6. Contexto de ejecución y salida por ciclo\n\nEl contrato canonico se encuentra en `ANEXO-CONTEXTO-EJECUCION-Y-SALIDA-CICLO.md`. Su aplicacion es ubicua en todos los ciclos sujetos a la metodologia e integra plataforma, ubicacion persistente, estado y cuenta RDC, uso mensual disponible, identidad Windows operativa y, cuando corresponda, identidad administrativa. Los detalles de formato, fuentes y perfiles por ubicacion permanecen en el anexo y no se elevan al nivel del SI.
 
 
-## 6.1 Sesion RDC persistente y verificable
+## 6.1 Registro persistente y descubrimiento vivo de RDC
 
-La metodologia mantiene un registro operativo global de la identidad persistente de la sesion RDC en ESTADO-RDC-ACTIVO.md. La identidad se propaga entre conversaciones y permanece vigente hasta cierre o sustitucion explicitos. La conectividad del canal se verifica por separado mediante el mecanismo minimo disponible, con ping como comprobacion primaria cuando el ciclo requiera uso RDC en vivo.
+La metodologia mantiene `ESTADO-RDC-ACTIVO.md` como registro operativo persistente de identidades RDC conocidas, sus ciclos de vida y metadatos de continuidad. El registro no contiene una única selección global de terminal.
+
+La conectividad y presencia actuales se obtienen del proveedor RDC en vivo en cada ciclo que requiera resolver RDC. La selección de una terminal es local al ciclo/conversación y se identifica por cuenta + `RDC-DEVICE-ID`.
+
+Una terminal nueva puede coexistir con terminales anteriores. Solo cambia su propio ciclo de vida cuando existe evidencia de desconexión, finalización o sustitución de esa misma identidad.
 
 
 ## 7. Glosario operativo y normalización de transcripción
@@ -195,55 +204,70 @@ La metodologia mantiene un registro operativo global de la identidad persistente
 El glosario metodológico canónico se encuentra en `GLOSARIO-OPERATIVO.md` y su gobernanza en `ANEXO-GOBERNANZA-TERMINOLOGICA-Y-NORMALIZACION.md`. Los términos canonizados tienen prioridad sobre variantes de dictado o transcripción en toda salida sujeta a la metodología.
 
 
-## 16. Gate de contexto operativo fail-closed
+## 16. Gate de contexto operativo
 
 > **Regla anti-regresión:** este gate solo bloquea por condiciones de contexto operativo materialmente requeridas. No bloquea por ausencia de `THINKING`, imposibilidad de observar `reasoning_mode`, indisponibilidad de KHORA ni por `K: OFF`, `K: ?` o `K: !`.
 
 Todo ciclo sujeto a la metodología debe ejecutar primero el gate operativo definido en `ANEXO-GATE-CONTEXTO-OPERATIVO-FAIL-CLOSED.md`.
 
+Antes de usar o certificar RDC, el ciclo debe distinguir:
+- **Registro persistente:** identidades y ciclos de vida conocidos.
+- **Descubrimiento vivo:** dispositivos realmente observables en las cuentas RDC accesibles en este instante.
+- **Selección de terminal:** identidad concreta elegida para este ciclo.
+- **Ubicación:** contexto físico independiente de la identidad RDC.
+- **Conversación:** contenedor que no posee la identidad global de una terminal.
+
 Estados permitidos antes de trabajo sustantivo dependiente del entorno:
 
 `VERIFICADO-ACTIVO` · `VERIFICADO-INACTIVO` · `NO-REQUERIDO` · `BLOQUEADO`
 
-`NO-VERIFICADO`, `AMBIGUO`, `FUENTE-NO-DISPONIBLE` o cualquier indisponibilidad de la herramienta de detección no son estados de continuación.
+La indisponibilidad de una fuente de detección no es evidencia de ausencia de terminal.
 
-Cuando la detección automática no pueda establecer de forma suficiente si existe una sesión RDC activa, el sistema pregunta al usuario si la conversación requiere una sesión RDC activa. Si responde **sí**, el ciclo queda `BLOQUEADO` y solicita la información mínima para identificarla y verificarla. Si responde **no**, el ciclo pasa a `NO-REQUERIDO` y registra explícitamente que RDC no es una precondición de ese ciclo.
+### 16.1 Descubrimiento determinista de terminal RDC
 
-Cuando exista una sesión activa verificada, el estado global registrado debe consumirse antes de ejecutar y la nueva verificación debe actualizar su marca temporal. La sesión global no pertenece a una conversación y una nueva sesión verificada sustituye a la anterior.
+La detección automática de RDC debe ejecutarse contra todas las cuentas RDC accesibles al runtime cuando existan varias cuentas vinculadas.
 
-La ubicación debe resolverse contra el registro canónico de perfiles antes de ejecutar reglas dependientes del entorno. Un perfil de ubicación inexistente o insuficiente bloquea cualquier operación que dependa de ese perfil.
+Secuencia:
 
-## 16.1 Recuperación determinista de sesión RDC
+`LEER REGISTRO → LISTAR DISPOSITIVOS EN VIVO POR CUENTA → RECONCILIAR IDENTIDADES → RESOLVER TERMINAL OBJETIVO → RESOLVER PERFIL → CONTINUAR/BLOQUEAR`
 
-Cuando el estado global indique una sesión `ACTIVA` pero la conectividad RDC no pueda verificarse y el usuario reporte actividad local de la terminal, el ciclo debe tratar la situación como **DIVERGENCIA DE OBSERVABILIDAD RDC**.
+Reglas:
+1. `list_devices` en vivo es la fuente primaria para saber qué dispositivos están ONLINE; `ESTADO-RDC-ACTIVO.md` no puede suprimir ni reemplazar esta consulta.
+2. Si existe exactamente un dispositivo ONLINE observable y RDC es requerido, se selecciona automáticamente.
+3. Si existen varios dispositivos ONLINE, se usa una vinculación de terminal ya establecida dentro de la conversación; si no existe, se solicita al usuario la mínima selección necesaria para identificar la terminal concreta.
+4. Si no existe ningún dispositivo ONLINE y RDC no es requerido, el ciclo puede continuar sin RDC.
+5. Si no existe ningún dispositivo ONLINE y RDC es requerido, el ciclo queda BLOQUEADO y activa `RDC-REINSTANTIAR`.
+6. El nombre visible del dispositivo no es identidad suficiente. La identidad es `RDC-CUENTA + RDC-DEVICE-ID`.
+7. Un dispositivo ONLINE diferente al último registro no constituye por sí mismo una divergencia ni una sustitución global. Se incorpora como identidad nueva si procede.
+8. El registro persistente se usa para reconciliar continuidad y no para decidir presencia actual.
 
-La resolución es conversacional y determinista:
+### 16.2 Precedencia del contexto RDC
 
-`RDC-REINSTANTIAR` → cerrar terminal observada → abrir nueva sesión RDC → entregar `RDC-HANDSHAKE` → validar → actualizar `ESTADO-RDC-ACTIVO.md` → propagar → reanudar.
+Cada ciclo debe resolver RDC antes de cualquier certificación de KHORA:
 
-No se invalida la sesión persistente por el mero hecho de que el dispositivo aparezca offline, pero tampoco se permite utilizarla como conectividad verificada. El nuevo estado sustituye al anterior únicamente después de la verificación del handshake.
+`SNAPSHOT SI → LEER REGISTRO RDC → DESCUBRIR EN VIVO → SELECCIONAR TERMINAL → RESOLVER UBICACIÓN/PERFIL → KHORA → OPERACIÓN`
 
-El procedimiento detallado está en `ANEXO-PROCEDIMIENTO-REINSTANTIACION-RDC.md`.
+Ningún estado de una conversación anterior puede seleccionar por sí mismo la terminal actual de una conversación nueva.
 
-## 16.2 Precedencia del contexto RDC
+La terminal y la ubicación se mantienen separadas. Un cibercafé puede contener múltiples terminales y la misma ubicación puede albergar diferentes identidades RDC a lo largo del tiempo. La ubicación no se infiere del device_id, del nombre del dispositivo ni del historial de uso.
 
-Cada ciclo debe leer y resolver `ESTADO-RDC-ACTIVO.md` antes de intentar `HEALTH` o cualquier certificación externa de KHORA. La lectura del repositorio determina la sesión global vigente; la comprobación del canal determina su utilizabilidad en vivo.
+### 16.3 Registro transaccional y continuidad
 
-Si el modelo comunica una ausencia, pérdida, desconexión, inactividad o indisponibilidad de RDC, debe entregar en ese mismo ciclo `RDC-REINSTANTIAR` con el comando oficial de inicio del Remote Device. Si el usuario decide ejecutar la recuperación y devuelve un `RDC-HANDSHAKE` fresco, el modelo debe validar y escribir el estado global antes de reanudar.
+Cuando el descubrimiento vivo encuentre una identidad nueva o un cambio real de ciclo de vida, el registro persistente debe actualizarse mediante:
 
-Un falso positivo de desconexión no impide la recuperación: el handshake fresco tiene precedencia como evidencia actual de conexión una vez validado.
+`LEER → VALIDAR → PUBLICAR CON SHA → READ-BACK → PROPAGAR`
 
-## 16.3 Contrato transaccional de estado global RDC
+Una carrera obliga a volver a leer y reconciliar. No se permiten escrituras ciegas.
 
-El estado de RDC se considera resuelto únicamente después de completar la transacción canónica definida en `ANEXO-GOBERNANZA-ESTADO-GLOBAL-RDC.md`:
+El resultado vivo del proveedor sigue siendo válido para el ciclo una vez verificado, aunque el registro persistente todavía no haya sido actualizado; en ese caso, la continuidad transversal no se considera publicada.
 
-`LEER → VALIDAR → PUBLICAR CONDICIONADO → READ-BACK → LIBERAR`
+### 16.4 Recuperación ante terminal requerida no observable
 
-La publicación debe usar la versión actual del recurso como condición de escritura. Si el estado cambió durante el ciclo, se aborta la publicación, se vuelve a leer y se reconcilia. No se permiten sobrescrituras ciegas.
+`RDC-REINSTANTIAR` se activa cuando el ciclo requiere una terminal concreta pero esa identidad no aparece disponible en el descubrimiento vivo y existe evidencia de que el usuario intenta utilizarla.
 
-Después de cualquier recuperación, el modelo debe verificar por lectura de vuelta que `ESTADO-RDC-ACTIVO.md` contiene la sesión, conectividad y marca temporal que sustentan la decisión del ciclo. Solo entonces puede pasar al health-check/certificación de KHORA o reanudar trabajo dependiente de RDC.
+La recuperación no puede reemplazar automáticamente la terminal objetivo por otra terminal ONLINE distinta. Un dispositivo diferente es una identidad distinta y requiere selección explícita o una regla de vinculación ya establecida.
 
-La sesión global sigue siendo independiente de la conversación y de la terminal local. El repositorio es la frontera de propagación.
+La conversación permanece abierta durante el bloqueo. El handshake fresco se valida y se registra para la identidad que efectivamente se conectó.
 
 ## 17. Ejecución flexible y única restricción de materialización
 
