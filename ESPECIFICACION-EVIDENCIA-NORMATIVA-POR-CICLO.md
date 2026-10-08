@@ -4,7 +4,7 @@
 **Versión:** v0.8.0 — Ledger Secuencial Server-Side + Binding de Snapshot  
 **Fecha:** 2026-10-07  
 **Ámbito:** mecanismo para obtener evidencia externa, reproducible y auditable de que cada turno elegible de ejecución de ChatGPT fue gobernado por la totalidad del Sistema de Instrucciones Metacognitivas (SI) vigente al inicio del turno.  
-**Relación con el SI:** este documento especifica un mecanismo de aplicación y verificación. El SI v1.6.9 canoniza P028 · Trazabilidad Normativa, P029 · Identidad y Vigencia Canónica, P030 · Fidelidad Terminológica Canónica, P031 · Normalización de Transcripción, P032 · Contexto Operativo Verificado y la precedencia del contexto/estado operativo; este documento desarrolla su aplicación sin añadir mecanismos al nivel de principio.
+**Relación con el SI:** este documento especifica un mecanismo de aplicación y verificación. El SI v1.6.11 canoniza P028 · Trazabilidad Normativa, P029 · Identidad y Vigencia Canónica, P030 · Fidelidad Terminológica Canónica, P031 · Normalización de Transcripción, P032 · Contexto Operativo Verificado y la precedencia del contexto/estado operativo; este documento desarrolla su aplicación sin añadir mecanismos al nivel de principio.
 
 **Fuente normativa canónica:**  
 https://github.com/SeryMente/metodologia/blob/main/SI-METACOGNITIVO.md
@@ -468,7 +468,7 @@ Esquema recomendado:
       "runtime": {
         "platform": "ChatGPT",
         "reasoning_mode": "THINKING",
-        "output_format_version": "v1.7.1"
+        "output_format_version": "v1.7.6"
       }
     }
 
