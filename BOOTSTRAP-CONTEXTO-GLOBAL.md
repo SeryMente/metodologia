@@ -45,7 +45,6 @@ Los ciclos posteriores conservan ese régimen y vuelven a ejecutar las verificac
 2. Leer `ESTADO-RDC-ACTIVO.md` como registro persistente de identidades conocidas; no tratarlo como selector de terminal actual.
 3. Leer `ANEXO-GATE-CONTEXTO-OPERATIVO-FAIL-CLOSED.md` para aplicar el gate.
 4. Cuando RDC sea relevante, descubrir en vivo los dispositivos ONLINE en todas las cuentas RDC accesibles y reconciliarlos con el registro persistente.
-5. Cuando el ciclo requiera publicación en Vercel, resolver primero la ruta primaria y, ante indisponibilidad verificable, activar el procedimiento `ANEXO-GOBERNANZA-PUBLICACION-VERCEL.md` con la cuenta secundaria canónica `blacksheepsup@gmail.com`.
 5. Resolver la terminal concreta del ciclo por `RDC-CUENTA + RDC-DEVICE-ID`; no seleccionar por nombre genérico ni por memoria de otra conversación.
 6. Registrar el estado de `reasoning_mode` cuando la plataforma lo exponga; no bloquear solo por su ausencia.
 7. Una vez resuelto el contexto RDC, intentar `khora_mcp_health` sobre el MCP canónico; si no está disponible, declarar `K: OFF` en la salida.
@@ -96,10 +95,6 @@ Una nueva identidad RDC verificada se añade al registro; no sustituye automáti
 El cierre explícito, desconexión verificable o sustitución afecta a la identidad concreta que corresponda al mismo `RDC-DEVICE-ID`.
 
 Una conversación nueva debe descubrir en vivo qué identidades están ONLINE y puede seleccionar una distinta de la utilizada por otra conversación.
-
-## Continuidad de publicación Vercel
-
-La metodología canoniza `ANEXO-GOBERNANZA-PUBLICACION-VERCEL.md` como procedimiento operativo para mantener una versión públicamente inspeccionable del sistema cuando la cuenta primaria de Vercel no esté disponible. La cuenta secundaria canónica es `blacksheepsup@gmail.com`. Esta ruta conserva la validación del commit, la bóveda canónica de variables y la trazabilidad; no convierte la cuenta secundaria en autoridad productiva primaria.
 
 ## Regla para la plataforma
 
