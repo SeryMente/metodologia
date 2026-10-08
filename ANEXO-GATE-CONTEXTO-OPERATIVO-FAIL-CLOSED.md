@@ -364,3 +364,10 @@ El mecanismo se considera implementado cuando:
 - GLOSARIO-OPERATIVO.md
 
 Este anexo desarrolla P032; no sustituye ni redefine los principios fundamentales.
+
+
+## 15. Memoria persistente de desempeno por terminal
+
+Para CIBERCAFE, resolver el gate de RDC no implica repetir la auditoria de desempeno ya realizada. Una vez identificada la terminal del ciclo, el proceso debe consultar `CIBERCAFE/PC-N/ESTADO.md` y el log de eventos recientes antes de ejecutar diagnosticos profundos.
+
+La memoria persistente es por `PC-N`; una nueva identidad RDC puede observar la misma PC sin crear una nueva computadora. La telemetria de alta frecuencia puede mantenerse local y las llamadas RDC deben reservarse para evidencia o acciones nuevas, verificacion de transiciones y sincronizacion requerida.
