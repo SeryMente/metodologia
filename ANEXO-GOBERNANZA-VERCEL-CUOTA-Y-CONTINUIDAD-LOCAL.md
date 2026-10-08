@@ -102,7 +102,7 @@ La implementación local puede utilizar el código vigente del repositorio, por 
 - no debe declararse producción canónica;
 - debe mantener separada la configuración de datos sintéticos y la configuración con datos reales.
 
-Cuando sea necesario validar específicamente el comportamiento del artefacto de build de Vercel, `vercel build` es una vía local apropiada porque produce `.vercel/output` sin crear por sí mismo el deployment remoto. La instrucción `vercel deploy` o `vercel deploy --prebuilt`, en cambio, sí crea un deployment y queda sujeta a las restricciones de Vercel.
+Cuando sea necesario validar específicamente el comportamiento del artefacto de build de Vercel, `vercel build` es una vía local apropiada porque produce `.vercel/output` sin crear por sí mismo el deployment remoto. `vercel dev` permite replicar localmente el entorno de deployment para probar Functions y Middleware sin desplegar cada cambio. La instrucción `vercel deploy` o `vercel deploy --prebuilt`, en cambio, sí crea un deployment y queda sujeta a las restricciones de Vercel.
 
 ## 7. Gate obligatorio Vercel
 
