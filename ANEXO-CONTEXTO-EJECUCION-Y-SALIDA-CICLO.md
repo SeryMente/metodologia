@@ -295,6 +295,6 @@ El MCP de KHORA conserva el mismo carácter adaptativo:
 - `K: ?` = estado no determinable.
 - `K: !` = acceso intentado y fallido o verificación rechazada.
 
-`K: OFF`, `K: ?` y `K: !` tampoco son causas autónomas de bloqueo. Este anexo no puede reintroducir una precondición dura que contradiga `SI-METACOGNITIVO.md` v1.6.6 o `ANEXO-GATE-THINKING-CHATGPT.md`.
+`K: OFF`, `K: ?` y `K: !` tampoco son causas autónomas de bloqueo. Este anexo no puede reintroducir una precondición dura que contradiga `SI-METACOGNITIVO.md` v1.6.9 o `ANEXO-GATE-THINKING-CHATGPT.md`.
 
 `E: COMPLETADO` se determina por la producción efectiva del resultado solicitado; la verificación externa se declara por separado mediante `K`. Cuando el ciclo esté sustantivamente bloqueado por contexto operativo, se conserva la salida de bloqueo definida por el contrato vigente.
