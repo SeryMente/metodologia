@@ -166,3 +166,17 @@ Cuando una entrada de usuario contiene una variante de transcripcion y existe un
 ### Sincronizacion hibrida de desempeno
 **Tipo:** mecanismo operativo.  
 **Definicion:** estrategia que mantiene telemetria de alta frecuencia local y publica al repositorio eventos materiales inmediatamente, observaciones ordinarias en lotes y un `SYNC_FLUSH` antes de reinicio/DeepFreeze cuando sea observable.
+
+
+### Economia de llamadas RDC
+**Tipo:** criterio de eficiencia operativa.  
+**Definicion:** capacidad de obtener evidencia, acciones o decisiones utiles minimizando llamadas RDC que no agreguen valor.  
+**Regla:** una llamada remota debe justificarse por descubrimiento, accion, verificacion de transicion, resolucion de ambigüedad material o sincronizacion; las mediciones repetibles y la telemetria frecuente deben resolverse localmente o mediante reutilizacion y batching.
+
+### RDC-REUTILIZACION
+**Tipo:** indicador de eficiencia.  
+**Definicion:** cantidad o proporcion de verificaciones servidas mediante memoria persistente u observaciones ya vigentes, evitando una nueva llamada RDC.  
+
+### RDC-EVITADAS
+**Tipo:** indicador de eficiencia.  
+**Definicion:** llamadas remotas que no fueron necesarias gracias a reutilizacion, agregacion o batching de informacion.
