@@ -40,11 +40,11 @@ El SI canónico se encuentra en [SI-METACOGNITIVO.md](SI-METACOGNITIVO.md).
 
 Versión vigente del SI:
 
-**v1.6.13 — Gobernanza Operativa de Vercel y Continuidad Local**
+**v1.6.14 — Gate Determinista de Vercel por Caso de Uso**
 
 Versión vigente de la Metodología:
 
-**v0.14.0 — Gobernanza de Cuota Vercel y Continuidad Local**
+**v0.14.1 — Gate Determinista de Vercel por Caso de Uso**
 
 El SI contiene los principios fundamentales vigentes, ordenados de mayor a menor preponderancia. La continuidad entre conversaciones se desarrolla operativamente mediante la Metodología y el anexo `BOOTSTRAP-CONTEXTO-GLOBAL.md`.
 
