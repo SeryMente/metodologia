@@ -2,8 +2,8 @@
 
 ## Estado canónico
 
-- **Versión:** v0.14.0
-- **Nombre de versión:** Gobernanza de Cuota Vercel y Continuidad Local
+- **Versión:** v0.14.1
+- **Nombre de versión:** Gate Determinista de Vercel por Caso de Uso
 - **Última actualización:** 2026-10-08
 - **Última actualización canónica:** 2026-10-08
 - **Ámbito:** Todos los proyectos y conversaciones trabajados bajo esta metodología.
@@ -16,7 +16,7 @@
 
 **Motivo:** una cuota de publicación agotada no debe interpretarse como indisponibilidad total de Cora ni debe generar mecanismos de evasión del proveedor. El sistema necesita distinguir desarrollo/uso, datos, build, preview, production y URL canónico.
 
-**Resultado:** la metodología determina por operación hasta dónde afecta la cuota, qué puede continuar sobre un deployment existente, qué puede desplazarse a una instancia local y qué debe esperar a una publicación legítima. El objeto queda fechado el 2026-10-08 y preparado para actualizarse cuando cambie la documentación oficial de Vercel.
+**Resultado:** la metodología determina por operación hasta dónde afecta cada limitación de Vercel, qué parte del objetivo depende realmente de la plataforma, qué puede ejecutarse localmente y qué debe esperar a una publicación legítima. El gate es de aplicación inmediata en cualquier hilo de desarrollo que entre en ámbito Vercel.
 
 ### Registro de versiones
 
@@ -60,6 +60,7 @@
 | 35 | v0.12.9 | Régimen CIBERCAFE sin Reinicio y Optimización en Sesión | Se establece `PRESUPUESTO-REINICIO = 0` para el ámbito CIBERCAFE. Ninguna optimización puede provocar, programar o exigir un reinicio. Acciones dependientes de reboot se registran como `BLOQUEADA-REINICIO` y el ciclo continúa con alternativas live. |
 | 36 | v0.13.0 | Versión retirada | Entrada histórica retirada del canon operativo; no contiene reglas vigentes. |
 | 37 | v0.14.0 | Gobernanza de Cuota Vercel y Continuidad Local | Se canoniza el objeto `ANEXO-GOBERNANZA-VERCEL-CUOTA-Y-CONTINUIDAD-LOCAL.md`, se cruza la cuota de deployments con los casos de uso de Cora y se establece la ejecución local como continuidad legítima cuando no sea necesario modificar el URL canónico. |
+| 38 | v0.14.1 | Gate Determinista de Vercel por Caso de Uso | Se hace obligatoria e inmediata la secuencia `LIMITATION-SCAN → DEPENDENCIA-VERCEL → SUFICIENCIA-LOCAL → VÍA DE EJECUCIÓN`, limitando el bloqueo exclusivamente a la fracción del objetivo que requiera materialmente Vercel. |
 La tabla es canónica. Las versiones futuras añaden nuevos registros sin reutilizar folios. Una entrada retirada por revisión canónica puede conservar únicamente su identificador y estado de retirada, sin preservar la regla operativa invalidada. El nombre describe el avance de la versión y no sustituye el título general del sistema o documento.
 
 ## 1. Convención obligatoria de foliación de ciclos
@@ -475,6 +476,14 @@ La clasificación mínima es:
 `CONSUMO EXISTENTE | DATOS | LOCAL | BUILD LOCAL | PREVIEW | PRODUCTION | ROLLBACK | ADMINISTRACION`
 
 El criterio decisivo es si la operación requiere crear un deployment nuevo. La cuota de Vercel se trata como una restricción de publicación, no como un estado global de disponibilidad de Cora.
+
+### 23.0 Gate determinista previo a cualquier operación Vercel
+
+Toda mención de Vercel dentro de un hilo de desarrollo activa el objeto canónico y su gate. Antes de ejecutar, el modelo debe detectar si hay una limitación relevante; determinar hasta qué punto el objetivo necesita materialmente Vercel; y, cuando exista una implementación local capaz de alcanzar el objetivo, continuar localmente sin crear un deployment.
+
+Una limitación de Vercel no es un bloqueo global. Solo se bloquea la parte cuyo objetivo requiere una propiedad remota no sustituible localmente. El resto del esfuerzo continúa.
+
+La secuencia obligatoria es `LIMITATION-SCAN → DEPENDENCIA-VERCEL → SUFICIENCIA-LOCAL → VÍA DE EJECUCIÓN`.
 
 ### 23.1 Continuidad sin nuevo deployment
 
