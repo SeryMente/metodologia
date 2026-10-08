@@ -232,6 +232,12 @@ Una nueva conversacion debe:
 
 La llamada RDC se considera justificada cuando agrega nueva evidencia, ejecuta una accion, verifica una transicion o realiza un flush requerido.
 
+La llamada RDC se considera justificada cuando agrega nueva evidencia, ejecuta una accion, verifica una transicion, resuelve una ambigüedad material o realiza un flush requerido.
+
+El proceso debe preferir la reutilizacion de memoria persistente frente a una nueva llamada cuando la informacion siga dentro de su condicion de validez. La telemetria de alta frecuencia permanece local y el HUD puede reutilizar la ultima lectura verificada apropiada para la decision en curso.
+
+Cada fase puede contabilizar RDC-LLAMADAS, RDC-REUTILIZACION y RDC-EVITADAS. Estos indicadores miden eficiencia de observacion; no sustituyen la evidencia necesaria cuando una decision requiera una lectura fresca.
+
 ## 13. DeepFreeze y continuidad
 
 DeepFreeze y mecanismos equivalentes se consideran **sesiones locales efimeras**, no perdida de memoria del proyecto.
@@ -280,3 +286,30 @@ Este anexo depende de:
 - `GLOSARIO-OPERATIVO.md`
 
 No crea un principio fundamental nuevo. Desarrolla el procedimiento operativo para continuidad de desempeño por terminal.
+
+
+## 12.1 Presupuesto de observacion remota
+
+Cada sesion debe tratar las llamadas RDC como un recurso operativo limitado. La prioridad es maximizar el valor obtenido por llamada, no maximizar el numero de llamadas.
+
+Orden de preferencia:
+
+1. reutilizar memoria persistente vigente;
+2. reutilizar una observacion reciente de la misma sesion cuando sea suficiente;
+3. agrupar varias comprobaciones en una sola llamada cuando la herramienta lo permita;
+4. ejecutar una llamada nueva cuando agregue evidencia o habilite una accion material;
+5. registrar la llamada y su valor producido.
+
+No se repite una llamada identica solo para refrescar el HUD. Se fuerza refresco cuando el dato haya caducado, exista evidencia de cambio, una accion dependa de una lectura fresca o haya una transicion que deba verificarse.
+
+## 12.2 Endurecimiento de memoria
+
+Cada entrada reutilizable del estado de PC-N debe distinguir al menos:
+
+ESTADO = VIGENTE | PENDIENTE | INVALIDADO | DESCARTADO | REQUIERE-REVALIDACION
+
+Y, cuando sea posible:
+
+ULTIMA-VERIFICACION | FUENTE | CONDICION-DE-VALIDEZ | INVALIDADO-POR | SIGUIENTE-ACCION | WATERMARK
+
+Una nueva sesion no empieza desde cero. Empieza desde el conocimiento persistido y dedica llamadas RDC solamente a cerrar las incertidumbres que realmente puedan modificar la siguiente decision.
