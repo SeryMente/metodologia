@@ -116,3 +116,12 @@ Una propagación correcta queda demostrada cuando una conversación nueva puede 
 Este anexo no crea una capa normativa adicional: solo encadena la recuperación de fuentes y el contexto persistente definido por el SI y la Metodología.
 
 Este contrato hace persistente y consultable el estado en el repositorio. La plataforma de ChatGPT no ofrece un mecanismo por el que un archivo de GitHub fuerce tecnicamente a toda conversacion futura a leerlo antes de responder; por ello, la metodologia define este archivo como bootstrap canonico que toda conversacion sujeta al sistema debe consumir al iniciar su ciclo.
+
+
+## Continuidad persistente de desempeno en CIBERCAFE
+
+Cuando la ubicacion sea CIBERCAFE, la continuidad del proceso de desempeno se resuelve por terminal individual, no por el cibercafe como conjunto.
+
+Antes de repetir un diagnostico profundo, el ciclo debe consultar el registro de la terminal correspondiente en `CIBERCAFE/PC-N/ESTADO.md` y sus eventos recientes. El conocimiento vigente se reutiliza y solo se revalida lo dinamico o lo que muestre evidencia de cambio.
+
+La telemetria continua pertenece a la sesion local y no obliga a una llamada RDC por muestra. La persistencia se realiza mediante eventos significativos y lotes segun `ANEXO-PROCESO-LIBERACION-DESEMPENO-CIBERCAFE.md`, incluyendo `SYNC_FLUSH` antes de reinicio/DeepFreeze cuando sea observable.
