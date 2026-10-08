@@ -60,6 +60,12 @@
 | No Canonización por Persistencia | DESARROLLO DE PRINCIPIO EXISTENTE |
 | Suficiencia Progresiva | YA CUBIERTO |
 
+## H. Regla operativa incorporada sin elevar a principio
+
+La cuota de Vercel, los estados de deployment y la continuidad mediante ejecución local se clasifican como **gobernanza operativa de plataforma**. No constituyen principios nuevos del sistema porque dependen de un proveedor y de un entorno concreto. Su fuente canónica es `ANEXO-GOBERNANZA-VERCEL-CUOTA-Y-CONTINUIDAD-LOCAL.md`.
+
+La decisión metodológica es que el modelo debe considerar estas restricciones cuando la tarea utilice Vercel, pero resolverlas mediante reglas operativas sustituibles y no mediante una alteración del núcleo de principios.
+
 ## D. CONTENIDOS NO CONVERTIDOS EN PRINCIPIOS
 
 | Contenido | Clasificación | Motivo |
