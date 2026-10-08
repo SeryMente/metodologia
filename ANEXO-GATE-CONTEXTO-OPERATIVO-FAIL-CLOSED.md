@@ -8,18 +8,19 @@
 
 Este anexo define el mecanismo obligatorio para resolver, al inicio de cada ciclo, si el contexto operativo que puede condicionar la ejecucion esta suficientemente determinado.
 
-El objetivo no es garantizar que una herramienta, red o plataforma nunca falle. El objetivo es mantener la identidad de una sesión global estable entre conversaciones, separar esa identidad de la conectividad observable y evitar que un fallo de deteccion se convierta silenciosamente en un supuesto de finalizacion.
+El objetivo no es garantizar que una herramienta, red o plataforma nunca falle. El objetivo es mantener identidades RDC individuales entre conversaciones, separar registro persistente de conectividad observable y evitar que un registro histórico se convierta silenciosamente en la terminal actual.
 
 ## 2. Regla de entrada
 
 Antes de trabajo sustantivo dependiente del entorno, y en todo caso antes de intentar la certificación de KHORA, cada ciclo debe:
 
-1. consumir el estado global de RDC desde `ESTADO-RDC-ACTIVO.md`;
-2. intentar deteccion automatica y reconciliarla con el estado global;
-3. determinar ACTIVA, INACTIVA o INDETERMINADA;
-4. resolver la ubicacion actual y su perfil;
-5. determinar la identidad efectiva cuando sea relevante para la operación y comprobar su compatibilidad;
-6. continuar solo con un estado de gate permitido.
+1. consumir el registro persistente de RDC desde `ESTADO-RDC-ACTIVO.md`;
+2. descubrir en vivo los dispositivos ONLINE en todas las cuentas RDC accesibles al runtime cuando RDC sea relevante;
+3. reconciliar cada identidad observada por `RDC-CUENTA + RDC-DEVICE-ID` con el registro;
+4. resolver la terminal concreta del ciclo, si la tarea requiere RDC;
+5. resolver la ubicacion actual y su perfil;
+6. determinar la identidad efectiva cuando sea relevante para la operación y comprobar su compatibilidad;
+7. continuar solo con un estado de gate permitido.
 
 No se permite continuar desde un estado de deteccion fallida.
 
@@ -62,28 +63,27 @@ El registro debe contener como minimo:
 
 ### 4.1 Fast path
 
-Cuando exista una sesion registrada como activa y no exista una marca de `FINALIZADA` o `SUSTITUIDA`:
+El fast path ya no hereda una terminal como dispositivo actual.
 
-- heredar cuenta y device_id;
-- conservar la identidad de la sesión aunque la conversación sea nueva;
-- ejecutar ping al dispositivo conocido cuando el ciclo requiera conectividad RDC en vivo;
-- si responde, marcar `VERIFICADO-ACTIVO` y actualizar la marca de conexión;
-- si no responde, conservar la sesión y marcar la conectividad como no verificada; no convertir el fallo en finalización de sesión.
+Cuando RDC sea relevante:
+- descubrir los dispositivos ONLINE mediante `list_devices` en vivo en todas las cuentas RDC accesibles;
+- identificar cada dispositivo por `RDC-CUENTA + RDC-DEVICE-ID`;
+- usar `ESTADO-RDC-ACTIVO.md` únicamente para reconciliar nombre, historial y metadatos;
+- hacer `ping` al dispositivo seleccionado cuando el ciclo requiera conectividad de ejecución;
+- actualizar el registro persistente solo cuando exista una identidad nueva o un cambio verificable de ciclo de vida.
 
-No se deben realizar llamadas de descubrimiento de mayor costo solo para reconstruir una identidad que ya está persistida.
+Un dispositivo persistido como activo pero ausente del descubrimiento vivo no se considera la terminal actual por herencia.
 
 ### 4.2 Escalamiento
 
-Si el ping falla:
+Si el dispositivo seleccionado no responde:
+- volver a consultar el conjunto ONLINE por cuenta;
+- comprobar si el mismo `RDC-DEVICE-ID` reaparece bajo su cuenta;
+- comprobar si existe otra identidad ONLINE que pueda corresponder a una terminal distinta;
+- no sustituir automáticamente la terminal objetivo por esa identidad distinta;
+- si la tarea requiere la terminal seleccionada y sigue sin observarse, activar el procedimiento de recuperación correspondiente.
 
-- descubrir dispositivos disponibles solo si es necesario para determinar un cambio o recuperar la conectividad;
-- comprobar la cuenta RDC autenticada;
-- determinar si la sesion cambio, fue finalizada o el registro quedo obsoleto;
-- si aparece una nueva sesion verificable, sustituir el estado global;
-- si el dispositivo registrado aparece offline pero no existe evidencia positiva de finalizacion o sustitucion, conservar la identidad persistente y marcar la conectividad como NO VERIFICADA;
-- si existe evidencia positiva de ausencia o finalizacion, registrar INACTIVA.
-
-El fallo de conectividad por si solo no invalida la sesión persistente.
+El fallo de conectividad de una identidad no invalida ni elimina otras identidades RDC concurrentes.
 
 ### 4.3 Ausencia positiva
 
@@ -91,11 +91,19 @@ Una sesión persistente solo pasa a `VERIFICADO-INACTIVO` cuando existe evidenci
 
 La ausencia de respuesta, el dispositivo offline o la indisponibilidad de la herramienta no son evidencia suficiente de finalización y no eliminan la identidad persistente.
 
-## 4.4 Regla de herencia en conversación nueva
+## 4.4 Regla de conversación nueva
 
-Si `ESTADO-RDC-ACTIVO.md` es legible y contiene una sesión persistente `ACTIVA` sin `FINALIZADA` ni `SUSTITUIDA`, la conversación nueva debe heredar esa identidad antes de formular cualquier pregunta de control. No se puede convertir `device offline`, `ping fallido` o `herramienta indisponible` en una pregunta sobre si la sesión existe.
+Una conversación nueva no hereda una terminal seleccionada por otra conversación.
 
-La pregunta al usuario solo es válida cuando, después de consumir el estado global y las fuentes disponibles, la existencia de la sesión permanece materialmente indeterminada. Cuando la sesión sí está determinada pero la conectividad está caída, la decisión es operacional: si la tarea requiere RDC en vivo, el ciclo queda bloqueado por conectividad; si no lo requiere, puede continuar sin RDC.
+Debe:
+1. leer el registro persistente;
+2. ejecutar descubrimiento vivo en las cuentas RDC accesibles;
+3. reconciliar las identidades observadas;
+4. seleccionar la terminal concreta del ciclo.
+
+Si hay una sola identidad ONLINE, se selecciona automáticamente. Si hay varias, se usa una vinculación ya establecida en la conversación o se solicita la mínima selección necesaria. Si no hay ninguna ONLINE, se evalúa si RDC es requisito del ciclo.
+
+La mera existencia de un registro `ACTIVA` no evita el descubrimiento vivo.
 
 ## 4.4.1 Divergencia de observabilidad RDC y recuperación
 
@@ -146,23 +154,23 @@ El modelo no puede presentar `RDC-RECUPERACION = RESUELTA`, `RDC-CONECTIVIDAD = 
 
 Si la publicación o el read-back no pueden completarse, el estado operativo queda pendiente y las operaciones RDC-dependientes quedan bloqueadas; la sesión persistente no se declara finalizada.
 
-## 5. Fallo de deteccion y decision del usuario
+## 5. Fallo de detección y decisión del usuario
 
-Cuando no sea posible determinar si existe una sesion RDC activa, el sistema formula una sola pregunta de control:
+Cuando el descubrimiento vivo no permita determinar una terminal requerida, el sistema no utiliza un registro persistente como sustituto.
 
-¿Esta conversacion requiere que exista una sesion RDC activa?
+La pregunta de control se limita a determinar el requisito del ciclo:
+
+¿Esta conversación requiere RDC en vivo?
 
 ### Si responde SI
 
-El ciclo pasa a BLOQUEADO cuando no existe una sesión persistente verificable o cuando la operación requiere conectividad RDC en vivo y esta no puede establecerse.
-
-Si ya existe una sesión persistida en `ESTADO-RDC-ACTIVO.md`, no se solicita al usuario que vuelva a identificarla: se conserva como sesión global y se solicita únicamente la evidencia necesaria para recuperar o verificar la conectividad.
+El ciclo queda BLOQUEADO hasta que exista una terminal ONLINE verificable o se complete `RDC-REINSTANTIAR` para la terminal requerida.
 
 ### Si responde NO
 
-El ciclo pasa a NO-REQUERIDO.
+El ciclo pasa a `NO-REQUERIDO` y solo puede ejecutar trabajo que no dependa de RDC.
 
-Se registra explicitamente que RDC no es precondicion del ciclo. Solo pueden ejecutarse operaciones que no dependan de RDC.
+Cuando hay varias terminales ONLINE, la selección de terminal es el único dato adicional que se solicita; no se pide al usuario reconstruir cuentas, ids o historial que el proveedor ya expone.
 
 ## 6. Fallos que siempre bloquean
 
@@ -225,61 +233,62 @@ Las operaciones que requieran privilegios administrativos reales pueden utilizar
     CICLO
       |
       v
-    LEER ESTADO GLOBAL
+    LEER REGISTRO PERSISTENTE
       |
       v
-    DETECTAR RDC
+    DESCUBRIMIENTO EN VIVO POR CUENTA
       |
-      +--> ACTIVA ----> VERIFICAR ----> RESOLVER PERFIL ----> VERIFICAR IDENTIDAD ----> APTO
+      +--> 0 ONLINE ----> ¿RDC REQUERIDA?
+      |                         |
+      |                         +--> NO ----> NO-REQUERIDO
+      |                         |
+      |                         +--> SI ----> BLOQUEADO → RDC-REINSTANTIAR
       |
-      +--> INACTIVA --> ¿RDC REQUERIDA?
-      |                    |
-      |                    +--> NO ----> NO-REQUERIDO ----> APTO SIN RDC
-      |                    |
-      |                    +--> SI ----> BLOQUEADO
+      +--> 1 ONLINE ----> SELECCIONAR AUTOMATICAMENTE
       |
-      +--> INDETERMINADA --> PREGUNTAR USUARIO
-                           |
-                           +--> NO ----> NO-REQUERIDO
-                           |
-                           +--> SI ----> BLOQUEADO
-                                        |
-                                        v
-                                ESTABLECER SESION
-                                        |
-                                        v
-                                    VERIFICAR
-                                        |
-                                        v
-                                       APTO
+      +--> >1 ONLINE ---> VINCULACIÓN EXISTENTE
+                              |
+                              +--> sí ----> SELECCIONAR
+                              |
+                              +--> no ----> SELECCIÓN MÍNIMA DEL USUARIO
+                                                   |
+                                                   v
+                                             VERIFICAR
+                                                   |
+                                                   v
+                                            RESOLVER PERFIL
+                                                   |
+                                                   v
+                                                  APTO
 
 ## 10. Propagacion entre conversaciones
 
-La propagacion funciona por estado compartido, no por memoria de una conversacion.
+La propagación funciona por estado persistente + descubrimiento vivo, no por memoria de una conversación ni por herencia ciega de una terminal.
 
 Contrato de continuidad:
 
     CONVERSACION A
        |
        v
-    ESTADO-RDC-ACTIVO.md
+    REGISTRO RDC PERSISTENTE
        |
-       +--> identidad persistente de sesión
-       |
-       +--> conectividad observable separada
+       +--> identidades conocidas / historial
        |
        v
     CONVERSACION B
        |
        v
-    heredar identidad + verificar conectividad cuando corresponda
+    DESCUBRIMIENTO RDC EN VIVO
        |
        v
-    estado vigente del ciclo
+    SELECCIÓN LOCAL DE TERMINAL
+       |
+       v
+    estado del ciclo
 
-Una nueva sesion verificada sustituye a la anterior. Una finalización explícita sustituye `ACTIVA` por `INACTIVA`. Ninguna de las dos acciones ocurre por el mero cambio de conversación o por una desconexión temporal.
+El registro permite reconstruir identidades conocidas. El descubrimiento vivo decide presencia actual. Una nueva conversación puede seleccionar una terminal diferente de la usada por otra conversación.
 
-Una conversación nunca debe pedir al usuario que vuelva a declarar una sesión ya persistida: debe heredarla. La verificación de conectividad se realiza solamente cuando la operación del ciclo necesite RDC en vivo. `RDC-REQUERIDA-POR-CICLO` se determina por la tarea y es independiente de `RDC-SESION`.
+Múltiples identidades ONLINE simultáneas no constituyen conflicto. Solo una contradicción dentro de la misma identidad cuenta + device_id requiere reconciliación.
 
 ## 10.1 Evidencia de propagacion
 
@@ -333,18 +342,17 @@ Resultado:
 
 El mecanismo se considera implementado cuando:
 
-1. el estado global es consultable desde cualquier conversacion sujeta al canon;
-2. el ciclo intenta automaticamente la deteccion;
-3. el fast path usa ping sobre la sesion conocida;
-4. el escalamiento resuelve cambios o inactividad;
-5. una deteccion fallida abre la decision unica de requisito RDC;
-6. la respuesta SI bloquea hasta establecer y verificar la sesion;
-7. la respuesta NO permite solo trabajo sin dependencia RDC;
-8. el perfil de ubicacion se carga antes de operaciones condicionadas;
-9. la identidad Windows operativa se valida antes de trabajar;
-10. una discrepancia bloquea;
-11. la salida registra el resultado del gate invariablemente;
-12. el estado global se actualiza cuando cambia la sesion.
+1. el registro persistente es consultable desde cualquier conversación sujeta al canon;
+2. el ciclo ejecuta descubrimiento vivo en todas las cuentas RDC accesibles cuando RDC es relevante;
+3. cada dispositivo se identifica por cuenta + device_id;
+4. la selección de terminal es local al ciclo y no se hereda ciegamente;
+5. múltiples terminales ONLINE pueden coexistir sin conflicto;
+6. una terminal ausente del descubrimiento vivo no se convierte en INACTIVA global por inferencia;
+7. `RDC-REINSTANTIAR` se activa solo cuando una terminal requerida no es observable y debe recuperarse;
+8. los cambios persistentes se publican transaccionalmente y con read-back;
+9. el perfil de ubicación se carga después de resolver la terminal;
+10. la salida registra el resultado del gate;
+11. una conversación nueva puede resolver el conjunto ONLINE actual sin depender de otra conversación.
 
 ## 14. Dependencias canonicas
 
