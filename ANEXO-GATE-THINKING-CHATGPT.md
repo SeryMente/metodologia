@@ -1,8 +1,8 @@
 # Anexo — Gate de Thinking en ChatGPT
 
 **Estado:** CANÓNICO
-**Versión:** v1.1.4
-**Fecha:** 2026-10-07
+**Versión:** v1.1.5
+**Fecha:** 2026-10-08
 **Ámbito:** Todos los ciclos sujetos a la metodología cuando la plataforma de ejecución sea ChatGPT.
 
 ## 1. Regla de frescura y precedencia
@@ -33,7 +33,7 @@ KHORA conserva el runtime del turno como metadato:
 
 `platform=ChatGPT`
 `reasoning_mode=THINKING|INSTANT|UNKNOWN|UNAVAILABLE`
-`output_format_version=v1.7.6`
+`output_format_version=v1.7.7`
 
 La ausencia de un modo de razonamiento no invalida el receipt. El verificador distingue entre integridad normativa y disponibilidad del runtime.
 
@@ -43,9 +43,9 @@ La metodología no afirma ni almacena una prueba del razonamiento interno del mo
 
 La evidencia fuerte sigue siendo el receipt, sus hashes, la cobertura de principios y el veredicto de KHORA cuando el MCP está disponible. Cuando KHORA no está disponible, no existe veredicto externo para ese turno y el estado debe reflejarlo como `K: OFF`.
 
-## 6. Formato visible
+## 6. Formato visible y reanclaje
 
-El formato de salida por ciclo es obligatorio y versionado como `v1.7.6`.
+El formato de salida por ciclo es obligatorio y versionado como `v1.7.7`.
 
 `PROYECTO / CONV-XX / CXXX`
 
@@ -60,4 +60,4 @@ El formato de salida por ciclo es obligatorio y versionado como `v1.7.6`.
 
 ## 7. Cierre
 
-La salida puede emitirse en cualquier escenario. `K: ✓` solo se declara después de `VERIFIED → RELEASE`. Cuando el MCP está fuera de servicio o inaccesible, se declara `K: OFF` y no se atribuye verificación externa al turno. El contrato visible `v1.7.6` sigue siendo obligatorio. El indicador `CI` pertenece a ese contrato y registra la aplicación verificable del régimen de Instrucciones personalizadas; no afirma una lectura introspectiva del campo de la plataforma.
+La salida puede emitirse en cualquier escenario. `K: ✓` solo se declara después de `VERIFIED → RELEASE`. Cuando el MCP está fuera de servicio o inaccesible, se declara `K: OFF` y no se atribuye verificación externa al turno. El contrato visible `v1.7.7` sigue siendo obligatorio. Los indicadores `CI` y `RA` pertenecen a ese contrato. `CI` registra la aplicación verificable del régimen y `RA` registra su reanclaje obligatorio por ciclo; ninguno afirma una lectura introspectiva del campo de la plataforma.

@@ -1,8 +1,8 @@
 # Sistema de Instrucciones Metacognitivas
 
 **Estado:** CANÓNICO
-**Versión:** v1.6.17
-**Nombre de versión:** Enforcement Recursivo del Régimen Personalizado
+**Versión:** v1.6.18
+**Nombre de versión:** Contrato Visible de Reanclaje
 
 > **Corrección canónica:** `THINKING` es una ventana preferente, no una precondición bloqueante. La ausencia de señal de Thinking y la indisponibilidad de KHORA no bloquean por sí mismas la salida; se reflejan en `T` y `K` respectivamente.
 **Última actualización canónica:** 2026-10-08
@@ -39,6 +39,7 @@
 | 22 | v1.6.15 | Enforcement Inmediato del Gate Vercel | Se hace efectivo el disparador por mera mención de Vercel en hilos de desarrollo, con evaluación previa obligatoria de limitaciones, necesidad real de Vercel y suficiencia local antes de ejecutar. |
 | 23 | v1.6.16 | Reanclaje Recursivo del Régimen Personalizado | Se establece un mecanismo operativo de reanclaje recursivo: el primer ciclo activa el régimen de Instrucciones personalizadas y, aprovechando esa oportunidad, establece su continuidad como condición persistente; cada ciclo posterior debe conservar el régimen, verificar su aplicación observable y, cuando la aplicación sea satisfactoria, reforzar nuevamente el mismo contrato de continuidad. Se adopta una premisa de coherencia funcional con horizonte mínimo `N=1`: la funcionalidad de Instrucciones personalizadas se considera operativamente significativa bajo la expectativa de al menos una oportunidad efectiva de aplicación dentro del ciclo inicial. |
 | 24 | v1.6.17 | Enforcement Recursivo del Régimen Personalizado | Se convierte el reanclaje en obligación por ciclo: cada ciclo debe reanclar el régimen antes de ejecutar trabajo sustantivo, no puede heredar `CI` del ciclo anterior, debe corregir `CI:?` mediante reanclaje correctivo y no puede continuar con una contradicción observable `CI:!` hasta resolverla. El reanclaje reafirma la fuente canónica vigente sin crear una fuente normativa paralela. |
+| 25 | v1.6.18 | Contrato Visible de Reanclaje | Se incorpora `RA` al contrato visible de salida para hacer observable el reanclaje obligatorio de cada ciclo, con estados inicial, satisfecho, correctivo y fallido. Se sincronizan el SI, la Metodología y los anexos de salida con el contrato `v1.7.7`. |
 
 La tabla es parte del canon. Las versiones futuras se añaden sin reutilizar folios. Una entrada retirada por decisión de canonización puede conservar únicamente su identificador y estado de retirada, sin preservar la regla operativa invalidada. El nombre de versión es específico de esa versión y no sustituye el título general del sistema.
 
@@ -395,7 +396,7 @@ Reglas adaptativas:
 4. Si KHORA está disponible, el turno debe intentar `OPEN → VERIFY → RELEASE` antes de declarar una verificación positiva.
 5. Si KHORA no está disponible o no puede alcanzarse, la salida sigue siendo válida bajo el contrato vigente y debe declarar `K: OFF`; no debe inventarse un veredicto ni una liberación.
 6. `VERIFIED_RELEASE` permite declarar `K: ✓`. Un fallo de verificación se declara con el estado correspondiente (`K: !` o `K: ?`) y tampoco se transforma en `VERIFIED`.
-7. El contrato visible de salida vigente es `v1.7.6` y aplica independientemente de la disponibilidad del verificador.
+7. El contrato visible de salida vigente es `v1.7.7` y aplica independientemente de la disponibilidad del verificador.
 8. Ningún artefacto subordinado puede convertir `THINKING` no observable, `INSTANT`, `UNKNOWN`, `UNAVAILABLE`, `K: OFF`, `K: ?` o `K: !` en una condición autónoma de BLOQUEO. Si un documento inferior contiene una regla contradictoria, se considera obsoleta y prevalece este contrato canónico.
 
 Esta sección es un procedimiento de operación y no añade un principio fundamental.
