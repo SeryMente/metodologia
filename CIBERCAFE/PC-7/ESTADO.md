@@ -67,3 +67,29 @@ Resultado inmediato: sin carga anomala observable; mantener y continuar observac
 - Ultima persistencia conocida: 2026-10-08.
 - Cursor de eventos: ver `EVENTOS-2026-10.md`.
 - Muestras de alta frecuencia: permanecen locales y no se publican una por una.
+
+
+## Memoria endurecida para no repetir trabajo
+
+| Elemento | Estado | Ultima verificacion | Condicion de validez | Siguiente accion |
+|---|---|---|---|---|
+| Huella CPU/GPU/RAM/SSD/OS | VIGENTE | 2026-10-08 | Revalidar ante cambio de hardware, driver, SO o evidencia de discrepancia | Reutilizar |
+| SSD ADATA LEGEND 900 PRO Healthy/OK | VIGENTE | 2026-10-08 | Revalidar si aparecen I/O anomalo, errores SMART o cambio de disco | Reutilizar |
+| Plan Alto rendimiento | VIGENTE | 2026-10-08 | Revalidar si cambia el plan energetico o despues de una restauracion del sistema | Reutilizar |
+| RAM 2400 MT/s | VIGENTE · OPORTUNIDAD | 2026-10-08 | Revalidar si cambia BIOS/DOCP/XMP/modulo | Investigar configuracion/BIOS |
+| NVIDIA 610.47 | VIGENTE · OPORTUNIDAD | 2026-10-08 | Revalidar version antes de mantenimiento del driver | Evaluar actualizacion diferida |
+| Procesos de inicio Steam/Epic/Riot | PENDIENTE | 2026-10-08 | Revalidar impacto solo si cambian carga o politica del cibercafe | Analizar necesidad/impacto |
+
+## Economia RDC de esta memoria
+
+- Principio operativo: reutilizar memoria vigente antes de abrir una nueva consulta remota.
+- Telemetria rapida: local.
+- Llamadas RDC: reservar para descubrimiento requerido, evidencia nueva, acciones, verificacion de transiciones y sincronizacion.
+- Relecturas identicas para HUD: evitar.
+- Eventos semanticos: sincronizar por evento o lote.
+- Contadores iniciales de esta sesion: RDC-LLAMADAS disponibles parcialmente; RDC-REUTILIZACION aplicada al recuperar hardware/estado; RDC-EVITADAS no cuantificadas automaticamente aun.
+- Estado del sincronizador persistente: REQUIERE-IMPLEMENTACION AUTONOMA.
+
+## Regla de revalidacion
+
+No ejecutar de nuevo una auditoria profunda de hardware/servicios solo porque comience una nueva sesion local. Primero comparar la huella actual contra este registro; reabrir solo la parte que haya cambiado o cuya evidencia haya caducado.
