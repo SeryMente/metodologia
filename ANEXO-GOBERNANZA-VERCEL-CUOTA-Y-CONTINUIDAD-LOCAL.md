@@ -2,7 +2,7 @@
 
 **Objeto:** Gobernanza operativa de Vercel para proyectos sujetos a la metodología  
 **Estado:** CANÓNICO  
-**Versión del objeto:** v1.1.0  
+**Versión del objeto:** v1.1.1  
 **Fecha de actualización del objeto:** 2026-10-08  
 **Ámbito:** Todos los proyectos, conversaciones y operaciones sujetos a la metodología que utilicen Vercel, incluyendo KHORA.  
 **Fuente factual primaria:** documentación oficial vigente de Vercel, especialmente Limits, CLI Build, CLI Deploy e Instant Rollback.  
@@ -15,6 +15,7 @@
 | v1.0.0 | 2026-10-08 | Canonización inicial del cruce Cora × Vercel × cuota × continuidad local. |
 | v1.0.1 | 2026-10-08 | Revisión de cierre y depuración de referencias heredadas; se conserva la misma arquitectura operativa. |
 | v1.1.0 | 2026-10-08 | Endurecimiento del gate obligatorio: detección de limitaciones, determinación de dependencia real del caso de uso, decisión local/Vercel y bloqueo únicamente cuando ninguna vía suficiente alcance el objetivo. Se corrige además el límite vigente de builds por hora de Hobby. |
+| v1.1.1 | 2026-10-08 | Endurecimiento final: activación por mera mención de Vercel en cualquier hilo de desarrollo, evaluación obligatoria de limitación y dependencia antes de ejecutar, y prioridad de continuidad local cuando sea suficiente. Se incorpora `vercel dev` como vía local documentada. |
 
 ## 1. Propósito
 
@@ -37,6 +38,7 @@ Fuentes consultadas para esta versión:
 - https://vercel.com/docs/limits
 - https://vercel.com/docs/cli/build
 - https://vercel.com/docs/cli/deploy
+- https://vercel.com/docs/cli/dev
 - https://vercel.com/docs/instant-rollback
 - https://vercel.com/docs/deployments/rollback-production-deployment
 
