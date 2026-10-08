@@ -180,3 +180,13 @@ Cuando una entrada de usuario contiene una variante de transcripcion y existe un
 ### RDC-EVITADAS
 **Tipo:** indicador de eficiencia.  
 **Definicion:** llamadas remotas que no fueron necesarias gracias a reutilizacion, agregacion o batching de informacion.
+
+
+### PERFIL-CIBERCAFE-NO-REINICIO
+Perfil operativo permanente del ámbito CIBERCAFE en el que la continuidad de la sesión tiene prioridad: `PRESUPUESTO-REINICIO = 0` y ninguna intervención puede requerir reboot de la terminal.
+
+### BLOQUEADA-REINICIO
+Estado de una intervención que requiere reinicio, apagado, reset, entrada a UEFI/BIOS o reparación offline. Se registra como oportunidad, no se ejecuta y no bloquea por sí mismo el resto del ciclo.
+
+### VENTANA-DE-MANTENIMIENTO-LIVE
+Periodo de mantenimiento en CIBERCAFE en el que la terminal permanece encendida, conectada y utilizable por el usuario. No autoriza reinicio.
