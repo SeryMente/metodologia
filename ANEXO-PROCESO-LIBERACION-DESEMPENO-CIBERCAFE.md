@@ -128,8 +128,8 @@ Las intervenciones deben priorizar, en este orden general:
 2. liberacion de recursos no utilizados;
 3. mantenimiento y limpieza controlada;
 4. ajustes de software o drivers con evidencia;
-5. cambios de sistema con validacion y recuperacion;
-6. cambios de firmware/BIOS solo fuera de actividad del usuario y bajo procedimiento especifico.
+5. cambios de sistema con validacion y recuperacion solo si son live y no exigen reboot;
+6. cambios de firmware/BIOS, UEFI/DOCP/XMP y cualquier intervencion que exija reboot quedan `BLOQUEADA-REINICIO` en CIBERCAFE.
 
 Nunca se debe matar un proceso solo por consumo alto. Debe determinarse si pertenece al trabajo activo, al cliente del cibercafe, a seguridad, al juego, a OBS, a control del puesto u otra funcion necesaria.
 
