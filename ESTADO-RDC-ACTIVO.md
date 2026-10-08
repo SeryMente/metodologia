@@ -1,7 +1,7 @@
 # Estado Operativo - Sesion RDC Activa
 
 **Naturaleza:** registro operativo mutable; no constituye por si mismo una nueva norma.
-**Ultima actualizacion:** 2026-10-08T16:22:08.620Z
+**Ultima actualizacion:** 2026-10-08T17:23:06.680Z
 **Funcion transversal:** fuente global de continuidad de la identidad de la sesion RDC entre conversaciones.
 
 ## Sesion activa
@@ -10,29 +10,29 @@
 |---|---|
 | Plataforma | ChatGPT |
 | Ubicacion | CECEQ |
-| RDC-REGISTRO-ID | RDC-20261008-0001 |
+| RDC-REGISTRO-ID | RDC-20261008-0002 |
 | RDC-SESION | ACTIVA · IDENTIDAD PERSISTENTE |
-| RDC-CONECTIVIDAD | VERIFICADO-ACTIVO · PING · 2026-10-08T16:20:35.092Z |
+| RDC-CONECTIVIDAD | VERIFICADO-ACTIVO · PING · 2026-10-08T17:23:06.680Z |
 | RDC-CUENTA | blacksheepsup@gmail.com |
 | RDC-DISPOSITIVO | PC-7 |
-| RDC-DEVICE-ID | 5165397f-3ccf-4c7d-939f-821526119101 |
-| RDC-VERIFICACION-CONEXION | VERIFICADO · SESSION RESTORED · CHANNEL SUBSCRIBED · DEVICE ONLINE · 2026-10-08T16:20:35.092Z |
-| Ultima verificacion de conexion | 2026-10-08T16:20:35.092Z · RESULTADO: VERIFICADO-ACTIVO · EVIDENCIA: PING + HANDSHAKE DEL REMOTE DEVICE |
+| RDC-DEVICE-ID | 418659b7-64bc-4cb2-a2cb-ed8fd83c5005 |
+| RDC-VERIFICACION-CONEXION | VERIFICADO · DEVICE VERIFIED · CHANNEL SUBSCRIBED · DEVICE ONLINE · 2026-10-08T17:23:06.680Z |
+| Ultima verificacion de conexion | 2026-10-08T17:23:06.680Z · RESULTADO: VERIFICADO-ACTIVO · EVIDENCIA: PING + HANDSHAKE DEL REMOTE DEVICE |
 | RDC-FINALIZACION | NO REGISTRADA |
-| RDC-SUSTITUCION | SUSTITUYE RDC-20261007-0001 · 2026-10-08T16:22:08.620Z |
+| RDC-SUSTITUCION | SUSTITUYE RDC-20261008-0001 · 2026-10-08T17:23:06.680Z |
 | PERSISTENCIA DE SESION | VIGENTE HASTA FINALIZACION O SUSTITUCION EXPLICITAS |
-| RDC-MENSUAL | 61% usado / 39% restante |
-| RDC-MENSUAL-VERIFICACION | 2026-10-08 · FUENTE: RDC who_am_i · CUENTA DE LA SESIÓN ACTIVA |
+| RDC-MENSUAL | 65% usado / 35% restante |
+| RDC-MENSUAL-VERIFICACION | 2026-10-08 · FUENTE: RDC who_am_i · CUENTA DE LA SESION ACTIVA |
 | WIN-OPERATIVO | fila4 |
 | WIN-ADMIN | central\\mantenimientorci |
 | WIN-EFECTIVO-RDC | central\\mantenimientorci |
 | RDC-REQUERIDA | PENDIENTE POR CICLO; NO SE PRESUPONE ACTIVA |
-| CONTEXTO-VERIFICACION | VERIFICADO-ACTIVO · SUSTITUCION PUBLICADA Y READ-BACK VERIFICADO |
+| CONTEXTO-VERIFICACION | VERIFICADO-ACTIVO · SUSTITUCION PUBLICADA Y READ-BACK PENDIENTE |
 | PERFIL-UBICACION | CECEQ · COMPLETO |
 | IDENTIDAD-OPERATIVA | fila4 · PERFIL CECEQ; NO IMPLICA SESION RDC SEPARADA |
 | RDC-OBSERVABILIDAD | COHERENTE · PROVIDER REPORTA DEVICE ONLINE Y PING VERIFICADO |
 | RDC-RECUPERACION | RESUELTA · COMANDO CANONICO: RDC-REINSTANTIAR |
-| RDC-RECUPERACION-ESTADO | RESUELTA · HANDSHAKE VALIDADO · ESTADO GLOBAL PUBLICADO · READ-BACK VERIFICADO |
+| RDC-RECUPERACION-ESTADO | HANDSHAKE VALIDADO · PUBLICACION EN CURSO |
 
 ## Regla de lectura
 
@@ -48,19 +48,19 @@ Una nueva sesion verificada debe sustituir este registro y actualizar su marca t
 
 ## Ultimo handshake validado
 
-**RDC-HANDSHAKE:** recibido y validado desde el Remote Device. La identidad persistente vigente es la sesión RDC-20261008-0001 y la conectividad quedó confirmada por el proveedor.
+**RDC-HANDSHAKE:** recibido y validado desde el Remote Device. La identidad persistente vigente pasa a ser la sesión RDC-20261008-0002 y la conectividad quedó confirmada por el proveedor.
 
 - Estado del dispositivo: Online
-- Sesion: Session restored
+- Sesion: Device verified / ready
 - Canal: Channel subscribed
 - Remote Device: connected
 - Device: PC-7
-- Device ID: 5165397f-3ccf-4c7d-939f-821526119101
+- Device ID: 418659b7-64bc-4cb2-a2cb-ed8fd83c5005
 - Marca: HANDSHAKE FRESCO DEL CICLO
 
 ## Sustitución registrada
 
-La sesión anterior RDC-20261007-0001 (PC10RCIF4EI4 / 7fabbc1d-7c0d-4400-bd31-88b3b4229286) fue apagada mediante shutdown y posteriormente confirmada OFFLINE. La nueva sesión RDC-20261008-0001 fue verificada mediante handshake y ping y quedó publicada como sesión global vigente.
+La sesión anterior RDC-20261008-0001 (PC-7 / 5165397f-3ccf-4c7d-939f-821526119101) queda sustituida por la nueva sesión RDC-20261008-0002 (PC-7 / 418659b7-64bc-4cb2-a2cb-ed8fd83c5005), verificada mediante autenticación del Remote Device y ping.
 
 ## Restricciones
 
@@ -72,6 +72,6 @@ La única restricción específica de materialización es no clonar ni materiali
 
 El ciclo de vida de esta sesión y de las anteriores se conserva en HISTORIAL-RDC.md.
 
-## Cierre operativo del estado anterior · 2026-10-07
+## Cierre operativo del estado anterior · 2026-10-08
 
-Se conserva como antecedente histórico y no como estado vigente. Los datos anteriores del deployment y de KHORA pertenecen al cierre del 2026-10-07.
+Se conserva como antecedente histórico y no como estado vigente. La sesión RDC-20261008-0001 fue observada como OFFLINE en el registro del ciclo anterior y queda sustituida por RDC-20261008-0002 tras la verificación de la nueva sesión.
