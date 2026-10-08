@@ -1,15 +1,16 @@
 # Sistema de Instrucciones Metacognitivas
 
 **Estado:** CANÓNICO
-**Versión:** v1.6.18
-**Nombre de versión:** Contrato Visible de Reanclaje
+**Versión:** v1.6.19
+**Nombre de versión:** Bootstrap Fail-Closed y Reanclaje Visible
 
 > **Corrección canónica:** `THINKING` es una ventana preferente, no una precondición bloqueante. La ausencia de señal de Thinking y la indisponibilidad de KHORA no bloquean por sí mismas la salida; se reflejan en `T` y `K` respectivamente.
 **Última actualización canónica:** 2026-10-08
 **Fecha:** 2026-10-08
 **Ámbito:** Gobierno metacognitivo del modelo en tareas sujetas a este sistema.
 
-> **Regla de frescura canónica:** una copia que identifique como vigente cualquier versión anterior a `v1.6.11` es histórica, no normativa. Debe volver a consultar esta ruta canónica antes de aplicar gates de Thinking/KHORA.
+> **Regla de identidad canónica:** la única identidad activa del SI es la cabecera de esta instantánea (`Versión` + `Nombre de versión`) recuperada desde `main` en el SHA exacto del ciclo. El historial de versiones y cualquier mención de versiones anteriores son información histórica y no operativa. Una copia, metodología, bootstrap o respuesta que identifique como vigente otra versión distinta a la cabecera activa se clasifica como **HISTÓRICA/OBSOLETA o CONTRADICTORIA**, no puede gobernar el ciclo y obliga a repetir la adquisición normativa antes de cualquier trabajo sustantivo.
+> **Regla de frescura canónica:** una copia que identifique como vigente cualquier versión anterior a la cabecera activa del SI es histórica, no normativa. Debe volver a consultar esta ruta canónica antes de aplicar gates de Thinking/KHORA.
 
 ## 0. Registro de versiones
 
@@ -40,6 +41,7 @@
 | 23 | v1.6.16 | Reanclaje Recursivo del Régimen Personalizado | Se establece un mecanismo operativo de reanclaje recursivo: el primer ciclo activa el régimen de Instrucciones personalizadas y, aprovechando esa oportunidad, establece su continuidad como condición persistente; cada ciclo posterior debe conservar el régimen, verificar su aplicación observable y, cuando la aplicación sea satisfactoria, reforzar nuevamente el mismo contrato de continuidad. Se adopta una premisa de coherencia funcional con horizonte mínimo `N=1`: la funcionalidad de Instrucciones personalizadas se considera operativamente significativa bajo la expectativa de al menos una oportunidad efectiva de aplicación dentro del ciclo inicial. |
 | 24 | v1.6.17 | Enforcement Recursivo del Régimen Personalizado | Se convierte el reanclaje en obligación por ciclo: cada ciclo debe reanclar el régimen antes de ejecutar trabajo sustantivo, no puede heredar `CI` del ciclo anterior, debe corregir `CI:?` mediante reanclaje correctivo y no puede continuar con una contradicción observable `CI:!` hasta resolverla. El reanclaje reafirma la fuente canónica vigente sin crear una fuente normativa paralela. |
 | 25 | v1.6.18 | Contrato Visible de Reanclaje | Se incorpora `RA` al contrato visible de salida para hacer observable el reanclaje obligatorio de cada ciclo, con estados inicial, satisfecho, correctivo y fallido. Se sincronizan el SI, la Metodología y los anexos de salida con el contrato `v1.7.7`. |
+| 26 | v1.6.19 | Bootstrap Fail-Closed y Reanclaje Visible | Se cierra el puente de arranque entre conversación nueva y fuente canónica: la cabecera del SI se convierte en la única identidad normativa activa, las versiones históricas o espejos contradictorios dejan de ser aceptables y cualquier divergencia de snapshot obliga a `F:!` y bloqueo antes de reanclar o ejecutar trabajo sustantivo. |
 
 La tabla es parte del canon. Las versiones futuras se añaden sin reutilizar folios. Una entrada retirada por decisión de canonización puede conservar únicamente su identificador y estado de retirada, sin preservar la regla operativa invalidada. El nombre de versión es específico de esa versión y no sustituye el título general del sistema.
 
@@ -260,6 +262,25 @@ La indisponibilidad de una fuente de detección se trata como indeterminación o
 
 Un ciclo bloqueado por este gate no puede declararse completado ni ejecutar operaciones dependientes del contexto hasta que la terminal requerida quede resuelta y verificada.
 
+### 5.0.1.1 Gate de identidad normativa del snapshot
+
+La frescura no se satisface únicamente con recuperar texto desde GitHub. El ciclo debe validar la **identidad activa** del snapshot antes de declarar `F:✓`, `SI CARGADO`, `CI:✓` o `RA:INICIAL`.
+
+Reglas obligatorias:
+
+1. La cabecera `Versión` + `Nombre de versión` de `SI-METACOGNITIVO.md` en la instantánea exacta de `H1` es la **única identidad normativa activa** del SI para ese ciclo.
+2. El registro histórico del SI, la memoria conversacional y cualquier declaración de versión contenida en `METODOLOGIA.md`, `BOOTSTRAP-CONTEXTO-GLOBAL.md`, anexos o respuestas anteriores son espejos auxiliares o información histórica; ninguno puede sustituir ni corregir la cabecera del snapshot.
+3. Si cualquier fuente auxiliar declara como vigente una versión o nombre distinto al del snapshot activo, existe una **contradicción de identidad normativa**. El ciclo debe marcar `F:!`, no puede declarar `CI:✓`, no puede declarar `RA:INICIAL` ni continuar con trabajo sustantivo sujeto al régimen hasta reconciliar la fuente.
+4. Una versión histórica encontrada dentro del archivo no puede ser seleccionada como versión activa. Para identificar la versión vigente se lee primero la cabecera activa y solo después, si es necesario, el historial.
+5. El texto `SI CARGADO` solo puede emitirse cuando `H1 = H2`, el blob SHA coincide y la identidad de la cabecera ha sido validada. Una salida que diga `SI CARGADO · vX.Y.Z` con una instantánea histórica, incompleta o contradictoria es inválida.
+6. En una conversación nueva, el reanclaje inicial ocurre **después** de este gate, nunca antes. Si el gate falla, el estado correcto es BLOQUEADO/PENDIENTE de refresco, no un reanclaje satisfactorio.
+
+El cierre de este gate queda expresado por:
+
+`H1 → SI@H1 → H2 → CABECERA ACTIVA → CONSISTENCIA DE ESPEJOS → F`
+
+Con `F:!` la ejecución es fail-closed.
+
 ### 5.0.1 Verificación de frescura normativa por ciclo
 
 Antes de aplicar cualquier otra regla operativa, el ciclo debe adquirir un snapshot inmutable del SI.
@@ -298,7 +319,7 @@ La recuperación y cualquier alta/refresco persistente deben completar:
 
 La conversación posterior no hereda una selección de terminal por memoria. Descubre en vivo y utiliza el registro solo para reconciliación.
 
-### 5.0.1.1 Precedencia del contexto RDC sobre KHORA
+### 5.0.1.2 Precedencia del contexto RDC sobre KHORA
 
 La verificación del contexto RDC es una fase primaria del ciclo y debe resolverse después de adquirir el snapshot normativo y antes de intentar `HEALTH MCP` de KHORA.
 
