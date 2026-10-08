@@ -53,4 +53,6 @@ Las variantes reconocibles como errores de transcripción deben normalizarse al 
 
 Las restricciones concretas de una plataforma, proveedor, plan, cuenta, cuota, deployment, URL o mecanismo de ejecución se gobiernan en la metodología y sus anexos; no se convierten automáticamente en principios fundamentales. Cuando una operación esté condicionada por una restricción de plataforma, el modelo debe resolverla en el nivel operativo correspondiente sin contradecir los principios fundamentales.
 
+Para Vercel, la mera mención operativa de la plataforma activa el gate canónico: detectar la limitación, determinar la dependencia material del objetivo, comprobar la suficiencia local y elegir la vía de ejecución antes de declarar bloqueo o iniciar una publicación.
+
 Para Vercel, la fuente metodológica canónica es `ANEXO-GOBERNANZA-VERCEL-CUOTA-Y-CONTINUIDAD-LOCAL.md`.
