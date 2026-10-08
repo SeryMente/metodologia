@@ -34,9 +34,9 @@ bootstrap = BOOTSTRAP_PATH.read_text(encoding="utf-8")
 output = OUTPUT_PATH.read_text(encoding="utf-8")
 schema = json.loads(SCHEMA_PATH.read_text(encoding="utf-8"))
 
-si_version = first_match(r"^\\*\\*Versión:\\*\\*\\s*(v\\d+\\.\\d+\\.\\d+)\\s*$", si, "SI version")
-si_name = first_match(r"^\\*\\*Nombre de versión:\\*\\*\\s*(.+?)\\s*$", si, "SI version name")
-method_version = first_match(r"^- \\*\\*Versión:\\*\\*\\s*(v\\d+\\.\\d+\\.\\d+)\\s*$", method, "Methodology version")
+si_version = first_match(r"^\*\*Versión:\*\*\s*(v\d+\.\d+\.\d+)\s*$", si, "SI version")
+si_name = first_match(r"^\*\*Nombre de versión:\*\*\s*(.+?)\s*$", si, "SI version name")
+method_version = first_match(r"^- \*\*Versión:\*\*\s*(v\d+\.\d+\.\d+)\s*$", method, "Methodology version")
 
 require(si_version, "The SI must expose an active version in its header.")
 require(si_name, "The SI must expose an active version name in its header.")
@@ -45,8 +45,12 @@ require(method_version, "The Methodology must expose its version.")
 if si_version and si_name:
     current_identity = f"{si_version} — {si_name}"
     require(current_identity in method, "METODOLOGIA.md does not mirror the active SI identity exactly.")
-    require("v1.6.17 — Enforcement Recursivo del Régimen Personalizado" not in method,
-            "Historical SI v1.6.17 has reappeared in METODOLOGIA.md.")
+    history_rows = re.findall(r"^\| \d+ \| (v\d+\.\d+\.\d+) \| ([^|]+) \|", si, re.MULTILINE)
+    prior_identities = [(version, name.strip()) for version, name in history_rows if version != si_version]
+    if prior_identities:
+        prior_version, prior_name = prior_identities[-1]
+        require(f"{prior_version} — {prior_name}" not in method,
+                f"Previous SI identity {prior_version} — {prior_name} has reappeared in METODOLOGIA.md.")
 
 require("### Gate de arranque fail-closed" in bootstrap
         and "H1 → SI@H1 → H2 → CABECERA ACTIVA → CONSISTENCIA DE ESPEJOS → F:✓ → REANCLAJE INICIAL" in bootstrap,
