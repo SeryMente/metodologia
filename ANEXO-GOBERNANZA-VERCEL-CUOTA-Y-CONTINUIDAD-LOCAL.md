@@ -201,7 +201,7 @@ Cada actualización debe conservar:
 
 La versión v1.0.0 establece por primera vez un objeto estable para gobernar el cruce **Cora × Vercel × cuota × ejecución local**.
 
-La estrategia de continuidad por cuenta Vercel alternativa queda retirada y no forma parte de este objeto ni de la metodología vigente.
+Las rutas de continuidad que evadan las restricciones del proveedor no forman parte de este objeto ni de la metodología vigente.
 
 ## 15. Control de calidad de canonización
 
@@ -212,7 +212,7 @@ La estrategia de continuidad por cuenta Vercel alternativa queda retirada y no f
 - URL canónico separado de entornos locales/preview: **OK**
 - Datos persistentes separados de publicación de código: **OK**
 - Rollback separado de fix/redeploy: **OK**
-- Cuentas alternativas excluidas de la continuidad: **OK**
+- Evasión de cuota excluida: **OK**
 
 ### Revisión 2 — consistencia con la metodología
 
