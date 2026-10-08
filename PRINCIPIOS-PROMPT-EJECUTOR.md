@@ -110,7 +110,7 @@
 
 ### Regla adicional de entorno de publicación
 
-Las restricciones de Vercel y la continuidad mediante ejecución local son contenido metodológico-operativo, no principios fundamentales. Cuando el trabajo de extracción, auditoría o persistencia interactúe con Vercel, debe utilizar como referencia vigente `ANEXO-GOBERNANZA-VERCEL-CUOTA-Y-CONTINUIDAD-LOCAL.md`, distinguir si se requiere un deployment nuevo y no convertir una limitación de cuota en indisponibilidad global del sistema.
+Las restricciones de Vercel y la continuidad mediante ejecución local son contenido metodológico-operativo, no principios fundamentales. Cuando el trabajo de extracción, auditoría o persistencia interactúe con Vercel, la mera mención operativa activa `ANEXO-GOBERNANZA-VERCEL-CUOTA-Y-CONTINUIDAD-LOCAL.md`; debe detectar las limitaciones relevantes, distinguir la dependencia material del objetivo, comprobar la suficiencia local y no convertir una limitación de cuota en indisponibilidad global del sistema.
 
 Una cuenta, proyecto, cuota, URL, comando o mecanismo concreto no debe elevarse a principio por su mera importancia práctica. La extracción debe conservar la separación entre norma estable y mecanismo sustituible.
 
