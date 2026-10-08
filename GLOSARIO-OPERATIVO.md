@@ -148,3 +148,21 @@ Cuando una entrada de usuario contiene una variante de transcripcion y existe un
 **Tipo:** mecanismo de verificacion.  
 **Definicion:** consulta al proveedor RDC que determina que identidades de dispositivo estan actualmente observables/ONLINE.  
 **Regla:** tiene precedencia sobre el registro persistente para determinar presencia y conectividad actuales.
+
+
+### PC-N
+**Tipo:** identidad persistente de terminal de CIBERCAFE.  
+**Definicion:** identificador de una computadora individual del cibercafe, por ejemplo `PC-7`, `PC-8` o `PC-9`.  
+**Regla:** el registro y la memoria de desempeno pertenecen a cada `PC-N`; CIBERCAFE no se trata como una sola maquina.
+
+### Evento de desempeno
+**Tipo:** registro operativo.  
+**Definicion:** hecho semantico relevante del proceso de observacion, optimizacion, cambio, regresion, error o sincronizacion de una terminal.
+
+### Memoria persistente de desempeno
+**Tipo:** estado transversal por terminal.  
+**Definicion:** estado consolidado de desempeno que sobrevive a sesiones locales efimeras y mecanismos de restauracion como DeepFreeze mediante el repositorio.
+
+### Sincronizacion hibrida de desempeno
+**Tipo:** mecanismo operativo.  
+**Definicion:** estrategia que mantiene telemetria de alta frecuencia local y publica al repositorio eventos materiales inmediatamente, observaciones ordinarias en lotes y un `SYNC_FLUSH` antes de reinicio/DeepFreeze cuando sea observable.
