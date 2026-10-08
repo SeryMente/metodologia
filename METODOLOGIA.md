@@ -2,21 +2,21 @@
 
 ## Estado canónico
 
-- **Versión:** v0.12.7
-- **Nombre de versión:** Continuidad Persistente de Desempeño por Terminal en Cibercafe
+- **Versión:** v0.12.8
+- **Nombre de versión:** Economía RDC y Memoria Endurecida de Desempeño por Terminal
 - **Última actualización:** 2026-10-08
 - **Última actualización canónica:** 2026-10-08
 - **Ámbito:** Todos los proyectos y conversaciones trabajados bajo esta metodología.
 
 ### Narrativa de la versión
 
-**Antes:** la metodología no conservaba memoria de desempeño por terminal de cibercafe y podía obligar a repetir diagnosticos ya resueltos despues de una sesion efimera o DeepFreeze.
+**Antes:** la metodología ya conservaba memoria de desempeño por `PC-N`, pero todavía no trataba explícitamente la economía de llamadas RDC como una dimensión del buen desempeño ni endurecía su memoria contra repetición innecesaria.
 
-**Cambio:** se incorpora un subsistema persistente por `PC-N`, con estado consolidado, log de eventos y sincronizacion hibrida por evento semantico o lote.
+**Cambio:** se incorpora la economía RDC como criterio de desempeño operativo y se endurece la memoria persistente por terminal con estado de vigencia, cursor de sincronización, evidencias reutilizables, oportunidades pendientes y registro de verificaciones que no deben repetirse mientras sigan válidas.
 
-**Motivo:** cada terminal debe continuar el trabajo de optimizacion a traves de reinicios y sesiones efimeras sin convertir cada medicion en una llamada RDC ni confundir el cibercafe con una sola computadora.
+**Motivo:** el objetivo no es maximizar solo CPU/GPU/RAM/disco; también debe maximizarse la información útil y la mejora conseguida por unidad de observación remota consumida.
 
-**Resultado:** el proceso local puede observar de forma continua, mientras el repositorio conserva hardware, baselines, cambios, regresiones y oportunidades por terminal. Las nuevas sesiones recuperan ese conocimiento y revalidan solo lo dinamico o lo que haya cambiado.
+**Resultado:** cada `PC-N` puede mantener continuidad después de DeepFreeze, reutilizar hechos ya resueltos, reservar RDC para evidencia/acciones que agreguen valor y evaluar el proceso por una combinación de desempeño físico, estabilidad, seguridad, continuidad y eficiencia de observación.
 
 ### Registro de versiones
 
@@ -57,6 +57,7 @@
 | 31 | v0.12.5 | Enforcement Determinista de Salida | Se consolida el formato de salida como contrato ejecutable: esquema machine-readable, validación estructural exacta, renderer determinista, hash del output y barrera de RELEASE. Un ciclo verificado no puede cerrarse sin un output válido y la liberación devuelve el mismo output validado. Las regresiones de contrato deben fallar automáticamente mediante pruebas y sincronización con KHORA. |
 | 32 | v0.12.6 | Continuidad de Publicación Vercel por Cuenta Secundaria | Se canoniza el fallback de publicación en Vercel mediante la cuenta secundaria `blacksheepsup@gmail.com`, manteniendo la cuenta/proyecto primarios como autoridad. La ruta secundaria solo puede publicar un commit validado, usar la bóveda canónica de variables y registrar cuenta, proyecto, SHA, motivo, timestamp y URL. |
 | 33 | v0.12.7 | Continuidad Persistente de Desempeño por Terminal en Cibercafe | Se canoniza el proceso persistente de liberacion de desempeno por `PC-N`, con HUD de telemetria, memoria persistente por terminal y log de eventos. Se establece sincronizacion hibrida: eventos materiales inmediatos, lotes periodicos y `SYNC_FLUSH` antes de reinicio/DeepFreeze, evitando consumir RDC por cada muestra o repetir trabajo ya resuelto. |
+| 34 | v0.12.8 | Economía RDC y Memoria Endurecida de Desempeño por Terminal | Se convierte la economía de llamadas RDC en criterio explícito de buen desempeño. La memoria por `PC-N` debe conservar estado vigente, verificaciones reutilizables, oportunidades, invalidaciones y cursor de sincronización; el ciclo debe priorizar reutilización y agrupar observaciones para maximizar valor obtenido por llamada RDC. |
 La tabla es canónica: las versiones futuras deben añadir una fila sin borrar ni reciclar las anteriores. El nombre describe el avance de la versión y no sustituye el título general del sistema o documento.
 
 ## Gobernanza canónica de publicación Vercel
@@ -406,3 +407,51 @@ La continuidad exige consultar primero la memoria de `PC-N` y no repetir diagnos
 Cuando el proceso se representa en la salida conversacional, cada comentario operativo puede incorporar un HUD compacto de CPU, GPU, VRAM, RAM, disco, temperatura, potencia, oportunidad y accion. El HUD no expone razonamiento interno.
 
 La finalidad es aproximar continuamente cada terminal al maximo desempeno practico sin degradar el trabajo activo, la estabilidad, la seguridad o la recuperabilidad.
+
+
+## 21. Economía de llamadas RDC como dimensión de desempeño
+
+Para CIBERCAFE, un proceso tiene buen desempeño cuando mejora la terminal y, simultáneamente, obtiene el mayor valor informativo y operativo posible por llamada RDC consumida.
+
+La función objetivo práctica es:
+
+**DESEMPEÑO OPERATIVO = capacidad + responsividad + estabilidad + seguridad + continuidad + eficiencia de observación RDC**
+
+La eficiencia de observación RDC se optimiza mediante:
+- reutilización de hardware, drivers, baselines, cambios y causas descartadas que sigan vigentes;
+- muestreo de alta frecuencia local, sin una llamada RDC por muestra;
+- agrupación de observaciones ordinarias en lotes;
+- llamadas remotas disparadas por eventos, transiciones, acciones o evidencia nueva;
+- reutilización del último dato verificado de uso RDC cuando su vigencia lo permita;
+- evitación de relecturas idénticas durante una misma fase operativa.
+
+Una llamada RDC debe justificarse por al menos una de estas funciones: descubrir, actuar, verificar una transición, resolver una ambigüedad material o sincronizar un cambio/evento que deba sobrevivir a la sesión efímera.
+
+No debe utilizarse RDC para repetir una medición cuyo conocimiento persistente siga siendo válido ni para alimentar el HUD con mayor frecuencia que la necesaria para una decisión.
+
+### 21.1 Memoria endurecida por terminal
+
+CIBERCAFE/PC-N/ESTADO.md es un cache de conocimiento verificable, no una copia casual de la última sesión.
+
+Cada hecho persistente debe poder clasificarse como: VIGENTE, PENDIENTE, INVALIDADO, DESCARTADO o REQUIERE-REVALIDACION.
+
+La memoria debe conservar, cuando exista:
+- fecha de última verificación;
+- fuente/evidencia;
+- condición de validez;
+- evento que la invalida;
+- última acción realizada;
+- siguiente acción de mayor valor;
+- última sincronización y watermark.
+
+Al iniciar una nueva sesión local, se debe reutilizar primero la memoria y revalidar solo las variables sensibles al cambio o a la antigüedad.
+
+### 21.2 Indicador operativo de economía RDC
+
+El proceso debe poder reportar de forma agregada:
+
+RDC-LLAMADAS | consumidas para esta fase
+RDC-REUTILIZACION | mediciones/verificaciones servidas desde memoria local
+RDC-EVITADAS | llamadas que no fueron necesarias por reutilización o batching
+
+No se exige mostrar estos contadores en cada salida si no existe una medición fiable; se conservan en el registro cuando sean disponibles.
