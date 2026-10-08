@@ -40,7 +40,7 @@ El SI canónico se encuentra en [SI-METACOGNITIVO.md](SI-METACOGNITIVO.md).
 
 Versión vigente del SI:
 
-**v1.6.8 — Continuidad Canónica entre Conversaciones**
+**v1.6.9 — Continuidad Canónica entre Conversaciones**
 
 Versión vigente de la Metodología:
 
