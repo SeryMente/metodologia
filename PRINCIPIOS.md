@@ -47,3 +47,10 @@ Los términos que dispongan de una entrada canónica en el glosario metodológic
 ## P008 · Normalización de Transcripción
 
 Las variantes reconocibles como errores de transcripción deben normalizarse al término canónico correspondiente antes de utilizarlo como identificador, nombre propio, ruta conceptual o referencia metodológica, sin alterar el contenido sustantivo pretendido por el usuario. Cuando la correspondencia no sea suficientemente determinada, debe conservarse la incertidumbre y no inventarse una equivalencia.
+
+
+## Regla de nivel para restricciones de plataforma
+
+Las restricciones concretas de una plataforma, proveedor, plan, cuenta, cuota, deployment, URL o mecanismo de ejecución se gobiernan en la metodología y sus anexos; no se convierten automáticamente en principios fundamentales. Cuando una operación esté condicionada por una restricción de plataforma, el modelo debe resolverla en el nivel operativo correspondiente sin contradecir los principios fundamentales.
+
+Para Vercel, la fuente metodológica canónica es `ANEXO-GOBERNANZA-VERCEL-CUOTA-Y-CONTINUIDAD-LOCAL.md`.
