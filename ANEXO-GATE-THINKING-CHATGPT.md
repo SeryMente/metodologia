@@ -45,7 +45,7 @@ La evidencia fuerte sigue siendo el receipt, sus hashes, la cobertura de princip
 
 ## 6. Formato visible
 
-El formato de salida por ciclo es obligatorio y versionado como `v1.7.1`.
+El formato de salida por ciclo es obligatorio y versionado como `v1.7.6`.
 
 `PROYECTO / CONV-XX / CXXX`
 
