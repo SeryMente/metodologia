@@ -1,0 +1,20 @@
+# Registro de Terminales de Cibercafe
+
+**Estado:** CANONICO
+**Fecha:** 2026-10-08
+
+Este archivo es el indice de las computadoras individuales administradas por el proceso persistente de liberacion de desempeno.
+
+| Terminal | Estado | Registro de estado | Eventos | Ultima observacion persistente |
+|---|---|---|---|---|
+| PC-7 | ACTIVA EN REGISTRO | `CIBERCAFE/PC-7/ESTADO.md` | `CIBERCAFE/PC-7/EVENTOS-2026-10.md` | 2026-10-08 |
+
+## Regla de alta
+
+Para incorporar una nueva computadora se crea una carpeta individual `CIBERCAFE/PC-N/` con `ESTADO.md` y el archivo mensual de eventos correspondiente.
+
+No se clona el estado de otra PC. El hardware, drivers, rendimiento, oportunidades e intervenciones se descubren y validan para la terminal concreta.
+
+## Regla de continuidad
+
+El indice identifica la unidad de memoria, no el estado vivo de RDC. La terminal viva del ciclo se resuelve mediante el descubrimiento RDC canonico; una vez resuelta, su memoria de desempeno se recupera por `PC-N`.
