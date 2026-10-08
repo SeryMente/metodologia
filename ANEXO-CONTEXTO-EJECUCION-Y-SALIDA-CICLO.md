@@ -49,26 +49,36 @@ La ubicacion es un estado transversal y persistente de trabajo. Una declaracion 
 
 Perfil operativo detallado: PENDIENTE DE PERFILADO.
 
-### 4.3 Cibercafe
+### 4.3 Cibercafé · Luis Pasteur
 
-Perfil operativo detallado: PENDIENTE DE PERFILADO.
+| Campo | Valor canónico |
+|---|---|
+| Ubicacion | CIBERCAFE · Luis Pasteur |
+| Arquitectura | Múltiples terminales RDC independientes |
+| Identidad de terminal | `RDC-CUENTA + RDC-DEVICE-ID` |
+| Regla | La ubicación no selecciona una terminal. El dispositivo concreto se resuelve por descubrimiento vivo en cada ciclo. |
+| Persistencia | `ESTADO-RDC-ACTIVO.md` conserva identidades conocidas y ciclos de vida; no existe una única terminal global del cibercafé. |
 
-No se inventan identidades Windows para perfiles pendientes.
+No se inventan identidades Windows ni etiquetas de terminal que el proveedor no proporcione.
 
 ## 5. Estado de RDC
 
-Cada ciclo debe distinguir dos dimensiones:
-- **RDC-SESION:** identidad persistente global (`ACTIVA`, `INACTIVA` o `NO VERIFICADA`).
-- **RDC-CONECTIVIDAD:** posibilidad de uso en vivo del canal/dispositivo (`VERIFICADA`, `NO VERIFICADA`, `OFFLINE OBSERVADA`, `DIVERGENTE` o equivalente).
-- **RDC-OBSERVABILIDAD:** relación entre señales del conector RDC y evidencia local aportada por el usuario (`COHERENTE`, `DIVERGENTE`, `NO DETERMINADA`).
-- **RDC-RECUPERACION:** estado del protocolo (`NO REQUERIDA`, `REQUERIDA`, `EN ESPERA HANDSHAKE`, `RESUELTA`).
+Cada ciclo debe distinguir:
+- **RDC-REGISTRO:** identidades conocidas y ciclos de vida persistidos.
+- **RDC-DESCUBRIMIENTO:** conjunto de dispositivos observables en vivo en las cuentas accesibles.
+- **RDC-TERMINAL:** identidad concreta seleccionada para el ciclo, definida por `RDC-CUENTA + RDC-DEVICE-ID`.
+- **RDC-CONECTIVIDAD:** posibilidad de uso en vivo del dispositivo seleccionado.
+- **RDC-OBSERVABILIDAD:** relación entre señales del proveedor y la evidencia local.
+- **RDC-RECUPERACION:** estado de recuperación de la terminal seleccionada.
 
 Cada ciclo debe identificar además:
 - PLATAFORMA: ChatGPT.
-- RDC-ESTADO: estado del dispositivo/canal cuando este disponible.
-- RDC-CUENTA: correo de la cuenta RDC efectivamente utilizada, o NO VERIFICADO.
-- RDC-USO-MENSUAL: porcentaje usado y porcentaje restante, o NO DISPONIBLE.
-- RDC-TERMINAL: estado o numero de sesiones terminales cuando este disponible.
+- RDC-ESTADO: estado del dispositivo/canal seleccionado cuando esté disponible.
+- RDC-CUENTA: cuenta de la terminal seleccionada, o NO VERIFICADO.
+- RDC-USO-MENSUAL: porcentaje usado y porcentaje restante de la cuenta seleccionada, o NO DISPONIBLE.
+- RDC-TERMINAL: dispositivo seleccionado y, cuando sea necesario para auditoría, su device_id.
+
+El nombre del dispositivo no es suficiente para diferenciar terminales. Dos identidades con nombres iguales siguen siendo terminales distintas si sus device_id difieren.
 
 Si la API proporciona remote_calls_left_pct, se calcula:
 
@@ -78,31 +88,22 @@ No se infieren plan, limite bruto, fecha de restablecimiento ni otros datos no p
 
 RDC-USO-MENSUAL es obligatorio en la salida de cada ciclo, pero no obliga a consumir una llamada RDC solo para producirlo. Se reutiliza el ultimo dato verificado disponible y se conserva su marca temporal.
 
-## 5.1 Recuperación de divergencia
+## 5.1 Descubrimiento y recuperación por terminal
 
-Cuando `RDC-SESION = ACTIVA` y la conectividad no es verificable mientras el usuario aporta evidencia positiva de una terminal RDC activa, el ciclo registra una **DIVERGENCIA DE OBSERVABILIDAD**.
+La fuente RDC en vivo determina qué terminales están ONLINE en el ciclo. `ESTADO-RDC-ACTIVO.md` se utiliza para reconciliar identidades y conservar continuidad, no para decidir presencia actual.
 
-La divergencia no finaliza la sesión persistente. Cuando el trabajo requiera RDC en vivo, el ciclo queda bloqueado para ejecución sustantiva y debe emitir `RDC-REINSTANTIAR`.
+Cuando exista una identidad seleccionada:
+- el `ping` verifica su conectividad de ejecución;
+- si deja de responder, el ciclo vuelve a descubrir el conjunto ONLINE antes de concluir que la terminal está ausente;
+- una terminal diferente no sustituye automáticamente a la seleccionada.
 
-El handshake mínimo de recuperación debe contener, en la medida en que la plataforma los proporcione:
-
-- `RDC-CUENTA`
-- `RDC-DISPOSITIVO`
-- `RDC-DEVICE-ID`
-- `RDC-CONECTIVIDAD` o evidencia equivalente de conexión
-- `RDC-PING`
-- `UBICACION`
-- `WIN-OPERATIVO`
-- `WIN-EFECTIVO-RDC`
-- marca temporal de la nueva verificación
-
-La cuenta y el dispositivo se consideran nueva identidad solo después de verificar el conjunto mínimo. El modelo actualiza `ESTADO-RDC-ACTIVO.md` antes de reanudar operaciones dependientes de RDC. El estado anterior no se declara finalizado hasta que la sustitución esté verificada.
+`RDC-REINSTANTIAR` se activa únicamente cuando la terminal requerida no es observable en vivo y la tarea necesita esa terminal.
 
 ### Regla de precedencia RDC antes de KHORA
 
-Antes de cualquier certificación o health-check de KHORA, cada ciclo debe consumir `ESTADO-RDC-ACTIVO.md` y resolver la sesión RDC global y su conectividad observable. Esta verificación es obligatoria incluso cuando el ciclo anterior haya confirmado la misma sesión.
+Antes de cualquier certificación o health-check de KHORA, cada ciclo debe consumir el registro persistente y ejecutar descubrimiento vivo cuando RDC sea relevante. La selección de la terminal se establece después de observar el conjunto actual de dispositivos.
 
-Si el modelo comunica una pérdida o ausencia de RDC, debe emitir inmediatamente `RDC-REINSTANTIAR` y el comando oficial `npx @wonderwhy-er/desktop-commander@latest remote` en el mismo ciclo. Si el usuario devuelve un handshake fresco, éste se valida y se persiste antes de reanudar.
+Si el modelo comunica una ausencia o pérdida de RDC, debe emitir inmediatamente `RDC-REINSTANTIAR` y el comando oficial vigente. Un handshake fresco actualiza o incorpora la identidad concreta que efectivamente se conectó.
 
 ## 6. Flexibilidad de identidad y restricción de repositorios
 
@@ -167,52 +168,38 @@ En una conversación nueva, el primer ciclo establece la continuidad del régime
 
 Una discrepancia entre la identidad RDC, la identidad Windows operativa esperada y la identidad real de ejecucion debe hacerse visible en el ciclo.
 
-## 9. Activacion inicial CECEQ
+## 9. Activacion inicial
 
-En la activacion inicial de este anexo se verifico:
-- dispositivo RDC ONLINE: PC10RCIF4EI4, ID 7fabbc1d-7c0d-4400-bd31-88b3b4229286;
-- cuenta RDC autenticada: blacksheepsup@gmail.com;
-- 96% de llamadas RDC restantes este mes, equivalente a 4% usado;
-- la nueva conexion RDC informa canal activo y dispositivo ONLINE;
-- existe una sesion interactiva de Windows fila4 activa;
-- el shell de RDC se ejecuta bajo central\mantenimientorci.
+La activación inicial histórica se conserva solo como antecedente. No define la terminal actual ni la ubicación actual.
 
-Conclusion: CECEQ esta identificado. La sesion RDC actualmente verificada se ejecuta bajo central\mantenimientorci y esa identidad puede utilizarse para el trabajo tecnicamente valido. fila4 permanece como identidad operativa de referencia del perfil. No se abren sesiones paralelas ni se cambia la identidad solo para trabajar.## 10. Registro global de la sesion RDC activa
+Los datos de cada ciclo deben provenir del descubrimiento RDC vivo y de la declaración/resolución de ubicación vigente.
 
-La sesion RDC activa es estado operativo transversal y no pertenece a una conversacion particular. Su identidad persiste entre conversaciones hasta que se registre explícitamente su finalización o sustitución. Su registro global se conserva en ESTADO-RDC-ACTIVO.md.
+## 10. Registro global de identidades RDC
 
-El registro contiene como minimo ubicacion, cuenta RDC, identidad de conexion, device_id, nombre de dispositivo, estado de la sesión persistente, estado de conectividad, usuario Windows operativo esperado, identidad administrativa cuando exista, fecha de configuracion, ultima verificacion y consumo mensual disponible.
+`ESTADO-RDC-ACTIVO.md` es un registro operativo transversal de identidades RDC conocidas. Su unidad de identidad es `RDC-CUENTA + RDC-DEVICE-ID`.
 
-Una nueva sesion configurada sustituye la sesion activa anterior. No se mantienen varias sesiones como activas simultaneamente salvo canon posterior.
+Puede contener múltiples identidades ACTIVAS o conocidas simultáneamente. No contiene una terminal globalmente seleccionada para todas las conversaciones.
+
+El registro conserva historial, nombres de dispositivo, últimas observaciones y ciclos de vida. La conectividad actual siempre se resuelve mediante el proveedor RDC en vivo.
 
 ## 11. Verificacion minima por ciclo
 
-Si existe una sesion registrada como activa y no existe una marca de finalización/sustitución, la identidad de esa sesión se hereda automáticamente al ciclo.
+Si RDC es relevante, el ciclo:
+1. lee el registro persistente;
+2. descubre dispositivos ONLINE en las cuentas RDC accesibles;
+3. reconcilia por cuenta + device_id;
+4. selecciona la terminal concreta;
+5. hace ping al dispositivo seleccionado cuando requiera conectividad de ejecución.
 
-Metodo primario para **conectividad en vivo**:
-1. reutilizar cuenta y device_id registrados;
-2. ejecutar ping sobre el dispositivo conocido cuando la tarea requiera RDC en vivo;
-3. si responde, mantener la sesion ACTIVA y actualizar la marca de verificacion de conexion;
-4. si falla, conservar la identidad persistente y escalar a descubrimiento solo cuando sea necesario para determinar un cambio o recuperar la conectividad.
-
-Un fallo de ping no convierte por sí mismo la sesión en INACTIVA.
-
-No se ejecutan list_devices ni who_am_i exclusivamente en cada ciclo cuando el ping confirma la misma sesion.
-
-El porcentaje mensual se reutiliza desde la ultima lectura validada y solo se actualiza cuando una llamada ya necesaria lo expone o cuando el usuario solicita comprobacion explicita.
-
-La verificacion de sesion RDC y la verificacion de sesiones de terminal son estados distintos.
+No se considera suficiente heredar una terminal por existir en el registro.
 
 ## 12. Propagacion entre conversaciones
 
-El registro global de sesion activa es independiente de la conversacion contenedora. Cada nueva conversacion sujeta a la metodologia consume primero el estado global mas reciente y hereda la identidad persistente antes de formular cualquier pregunta al usuario sobre la sesión.
+La continuidad funciona por registro persistente + descubrimiento vivo.
 
-La verificacion de conectividad es una comprobación distinta: se ejecuta cuando el ciclo necesita utilizar RDC en vivo, no para decidir si la identidad persistente sigue existiendo.
+Una conversación nueva recupera las identidades conocidas, pero vuelve a descubrir el conjunto ONLINE y puede seleccionar una terminal distinta de la utilizada por otra conversación.
 
-Un cambio de conversación no finaliza la sesión. Solo un cierre o sustitución explícitos, o evidencia positiva suficiente de que la sesión registrada ya no existe, puede cambiar la identidad global.
-
-Cuando la verificacion detecte una nueva sesion, esta pasa a ser la sesion activa global y el registro debe actualizarse antes de ejecutar operaciones sustantivas dependientes de RDC.
-
+La ubicación física y la terminal permanecen separadas. `CIBERCAFE · Luis Pasteur` no identifica una única PC.
 
 ## 12.1 Gate fail-closed por ciclo
 
