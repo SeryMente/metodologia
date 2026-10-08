@@ -2,7 +2,7 @@
 
 **Estado:** CANONICO
 **Version:** v1.7.6 — HUD Compacto con Verificación de Régimen Personalizado
-**Fecha de canonizacion:** 2026-10-07
+**Fecha de canonizacion:** 2026-10-08
 **Ambito:** Todos los proyectos y conversaciones sujetos a la metodologia comun.
 
 ## 1. Proposito
@@ -203,69 +203,65 @@ La ubicación física y la terminal permanecen separadas. `CIBERCAFE · Luis Pas
 
 ## 12.1 Gate fail-closed por ciclo
 
-La sección 11 define la verificación mínima cuando ya existe una sesión registrada. El gate completo exige además verificar que el estado global sea legible y que pueda distinguirse entre ACTIVA, INACTIVA e INDETERMINADA.
+La sección 11 define la verificación mínima cuando RDC es relevante. El gate completo exige además que el registro persistente sea legible y que el conjunto actual de dispositivos pueda descubrirse en vivo.
 
 ### Secuencia obligatoria
 
-1. Leer ESTADO-RDC-ACTIVO.md.
-2. Intentar detección automática de la sesión actual mediante la fuente RDC disponible.
-3. Si existe una sesión registrada y el dispositivo conocido responde al ping, conservarla como activa y actualizar la marca temporal.
-4. Si el ping falla, escalar a descubrimiento de dispositivos y cuenta.
-5. Si la detección demuestra inequívocamente que no existe sesión activa, registrar RDC-SESION: INACTIVA.
-6. Si no puede determinarse si existe una sesión activa, registrar RDC-SESION: NO VERIFICADA y detener el trabajo sustantivo hasta preguntar al usuario si la conversación requiere una sesión RDC activa.
-7. Si el usuario responde sí, solicitar la información mínima para establecerla (como mínimo, la evidencia final de conexión RDC que permita identificar cuenta y dispositivo), actualizar el estado global y verificarlo antes de continuar.
-8. Si el usuario responde no, registrar RDC-REQUERIDA: NO y permitir únicamente trabajo que no dependa de RDC.
+1. Leer `ESTADO-RDC-ACTIVO.md`.
+2. Descubrir dispositivos ONLINE en todas las cuentas RDC accesibles al runtime.
+3. Reconciliar por `RDC-CUENTA + RDC-DEVICE-ID`.
+4. Si existe una sola terminal ONLINE y RDC es requerida, seleccionarla.
+5. Si existen varias, usar una vinculación ya establecida o solicitar la mínima selección necesaria.
+6. Si no existe ninguna ONLINE, determinar si RDC es requisito del ciclo.
+7. Si RDC es requerida y no hay terminal observable, bloquear y ofrecer `RDC-REINSTANTIAR`.
+8. Si RDC no es requerida, registrar `RDC-REQUERIDA: NO`.
 
-La herramienta indisponible nunca se interpreta como ausencia de sesión.
+La herramienta indisponible nunca se interpreta como ausencia positiva de terminal.
 
 ## 12.2 Propagación transversal
 
-ESTADO-RDC-ACTIVO.md es el estado global lógico de la sesión, no una propiedad de una conversación. Toda conversación sujeta a esta metodología consume el estado más reciente al iniciar cada ciclo.
+`ESTADO-RDC-ACTIVO.md` es el registro persistente global de identidades conocidas, no una propiedad de una conversación y no un selector global.
 
-Cuando una verificación identifica una sesión diferente de la registrada, la nueva sesión sustituye a la anterior antes de cualquier operación dependiente de RDC.
+Toda conversación sujeta a esta metodología consume el registro y, cuando RDC es relevante, realiza descubrimiento vivo. Una conversación nueva puede seleccionar una terminal diferente de la utilizada por otra conversación.
 
-La propagación no se considera completada por la mera lectura de un valor almacenado: el ciclo debe vincular su salida al estado efectivamente verificado y conservar la marca temporal y procedencia de la verificación.
+Una terminal nueva no sustituye otra identidad distinta. Solo una transición verificable dentro de la misma identidad cuenta + device_id modifica su ciclo de vida.
+
+La propagación no se considera completada por la mera lectura de un valor almacenado: el ciclo debe vincular su salida a la identidad efectivamente seleccionada y a la observación viva.
 
 ## 12.3 Perfil operativo de ubicación
 
-Después de resolver la sesión RDC, el ciclo debe resolver UBICACION_ACTUAL y el perfil operativo correspondiente. Las reglas específicas del perfil se aplican antes de ejecutar operaciones condicionadas por identidad, rutas, permisos, herramientas o configuración.
+Después de resolver la terminal RDC cuando la tarea dependa de ella, el ciclo debe resolver `UBICACION_ACTUAL` y el perfil operativo correspondiente. Las reglas específicas del perfil se aplican antes de ejecutar operaciones condicionadas por identidad, rutas, permisos, herramientas o configuración.
 
-Para CECEQ, la resolución canónica es:
+Para CECEQ, la resolución canónica permanece:
 
 WIN-OPERATIVO = fila4
-WIN-ADMIN = central\\mantenimientorci
+WIN-ADMIN = central\mantenimientorci
 
-La identidad efectiva de ejecución y la identidad operativa de referencia pueden diferir. Esa diferencia no bloquea por sí misma el trabajo. La restricción especial del perfil es únicamente no clonar ni materializar repositorios nuevos dentro de MantenimientoRCI.
+Para CIBERCAFE · Luis Pasteur, la ubicación contiene múltiples terminales y no asocia una PC determinada a la ubicación por defecto.
+
+La identidad efectiva de ejecución y la identidad operativa de referencia pueden diferir. Esa diferencia no bloquea por sí misma el trabajo cuando la operación es técnicamente válida.
 
 ## 12.4 Condición de bloqueo
 
 El ciclo se marca BLOQUEADO cuando ocurra cualquiera de estas condiciones:
 
-- no puede leerse el estado global de RDC;
-- la detección automática no puede establecer activo/inactivo y el usuario aún no ha resuelto si RDC es requisito;
-- RDC es requerido pero no existe una sesión verificada;
+- no puede leerse el registro persistente de RDC cuando la tarea depende de ese contexto;
+- no puede realizarse el descubrimiento vivo y no existe una terminal seleccionada verificable para el ciclo;
+- RDC es requerido pero no existe una terminal ONLINE verificable;
+- hay múltiples terminales ONLINE y no existe información suficiente para seleccionar la terminal objetivo;
 - la ubicación es desconocida cuando la tarea depende de un perfil de ubicación;
 - el perfil de la ubicación no existe o no es suficiente;
-- la identidad Windows operativa requerida no puede verificarse;
-- la resolución por el canal operativo conocido no puede establecerse cuando el canal actual está bajo la identidad administrativa.
+- la identidad Windows operativa requerida no puede verificarse.
 
 Mientras el ciclo esté BLOQUEADO, no se ejecutan operaciones dependientes del contexto y no se declara cierre exitoso.
 
 ## 12.5 Flexibilidad de ejecución para CECEQ
 
-No se requiere puente ni sesión adicional. La sesión RDC vigente se conserva bajo `central\\mantenimientorci` para todos los efectos de uso de RDC.
+La identidad efectiva del canal RDC puede utilizarse para cualquier operación técnicamente válida.
 
-En CECEQ, `fila4` permanece como identidad operativa definida por el perfil, pero no se abre una sesión RDC paralela ni se altera la sesión existente para transformarla en fila4.
+En CECEQ, `fila4` permanece como identidad operativa definida por el perfil y `central\\mantenimientorci` como identidad administrativa efectiva cuando corresponda. Esta regla es independiente de la selección de terminal.
 
-Secuencia:
-
-1. detectar la identidad efectiva del canal RDC;
-2. comparar contra `WIN-OPERATIVO` del perfil;
-3. conservar intacta la sesión RDC bajo central\\mantenimientorci;
-4. ejecutar solo operaciones compatibles con la identidad efectiva y verificar el resultado;
-5. si una operación requiere necesariamente identidad fila4 y no puede resolverse desde la sesión vigente, bloquearla en lugar de crear una sesión paralela.
-
-No se almacenan credenciales, no se usa `runas`, no se cierra sesión y no se inicia un segundo canal RDC.
+No se abre una sesión RDC paralela para cambiar de identidad Windows ni se utiliza una identidad histórica como sustituto de una terminal distinta.
 
 ## 13. Referencia terminológica
 
