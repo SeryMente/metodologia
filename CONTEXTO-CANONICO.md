@@ -2,7 +2,8 @@
 
 **Estado:** CANÓNICO
 **Naturaleza:** objeto operativo de continuidad; no sustituye al SI ni a la Metodología.
-**Función:** punto único de recuperación contextual entre conversaciones e instancias de ChatGPT.
+**Versión del objeto:** v1.0.1
+**Función:** índice único de recuperación contextual entre conversaciones e instancias de ChatGPT.
 
 ## 1. Regla de autoridad
 
@@ -14,7 +15,7 @@ Precedencia:
 2. METODOLOGIA.md
 3. ESTADO-RDC-ACTIVO.md
 4. HISTORIAL-RDC.md, cuando exista y sea necesario para resolver cambios, sustituciones, conflictos o auditoría.
-5. Este objeto, como índice de continuidad y contexto operativo.
+5. Este objeto, únicamente como índice de continuidad y contexto operativo.
 
 La memoria conversacional nunca sustituye estas fuentes.
 
@@ -33,10 +34,13 @@ Todo ciclo sujeto al sistema debe:
 
 1. recuperar y verificar el SI canónico vigente;
 2. recuperar y verificar la Metodología vigente;
-3. leer ESTADO-RDC-ACTIVO.md;
-4. determinar el estado de sesión y conectividad RDC del ciclo;
-5. consultar HISTORIAL-RDC.md cuando exista cambio de identidad, sustitución, conflicto, excepción, recuperación o ambigüedad;
-6. reaccionar conforme a la metodología y emitir el formato de salida obligatorio.
+3. recuperar este objeto de continuidad como índice;
+4. leer ESTADO-RDC-ACTIVO.md y tratarlo como única fuente del estado global vigente;
+5. determinar el estado de sesión y conectividad RDC del ciclo;
+6. consultar HISTORIAL-RDC.md cuando exista cambio de identidad, sustitución, conflicto, excepción, recuperación o ambigüedad;
+7. reaccionar conforme a la metodología y emitir el formato de salida obligatorio.
+
+Este objeto no contiene ni autoriza un estado RDC actual propio. Los valores de sesión, conectividad, cuenta, dispositivo, ubicación y uso deben derivarse de las fuentes operativas correspondientes.
 
 No se presume que el contexto del ciclo anterior siga vigente.
 
@@ -48,23 +52,23 @@ El cambio de conversación no finaliza una sesión RDC.
 
 Una nueva identidad RDC no se convierte en globalmente vigente hasta completar la validación, publicación y read-back definidos por la gobernanza vigente.
 
-## 5. Estado de transición conocido
+## 5. Invariante de estado actual
 
-Al crear este objeto, existe evidencia local proporcionada por el usuario de una nueva sesión RDC:
+La identidad y el estado RDC actuales no se almacenan en este objeto.
 
-- Cuenta: blacksheepsup@gmail.com
-- Dispositivo: PC-7
-- Device ID: 5165397f-3ccf-4c7d-939f-821526119101
-- Estado observado: Device ready / Online / Channel subscribed
-- Condición: **SUSTITUCIÓN PENDIENTE DE PUBLICACIÓN GLOBAL**
+La fuente única del estado global vigente es ESTADO-RDC-ACTIVO.md. Una observación local, un handshake recibido en otra conversación o un dato que aparezca en este índice no puede sustituir esa fuente.
 
-La identidad anterior registrada en ESTADO-RDC-ACTIVO.md no debe darse por sustituida hasta completar la transacción canónica y su read-back.
+HISTORIAL-RDC.md, cuando exista, aporta contexto de ciclo de vida y no sustituye el estado global vigente.
 
-Este bloque es una fotografía operacional de transición; debe actualizarse o quedar obsoleto cuando el estado global sea reconciliado.
+Una nueva identidad RDC solo adquiere vigencia transversal después de completar la validación, publicación condicionada y read-back definidos por la gobernanza vigente.
 
 ## 6. Regla de recuperación
 
 Si este objeto no puede recuperarse, no se considera perdida la continuidad. Se vuelve directamente a las fuentes canónicas enumeradas en la sección 2.
+
+Si ESTADO-RDC-ACTIVO.md puede recuperarse, ese estado conserva precedencia aunque este objeto esté ausente.
+
+Si HISTORIAL-RDC.md no existe o no está disponible, no se inventa historial: se opera con el estado global vigente y se declara la limitación solo cuando afecte la decisión.
 
 Si una fuente operativa no está disponible:
 
@@ -79,6 +83,21 @@ La continuidad recuperada debe reflejarse en el formato de salida canónico vige
 
 El objeto no añade campos visibles ni sustituye el HUD vigente.
 
-## 8. Criterio de éxito
+## 8. Integridad de continuidad
+
+Este objeto debe tratarse como un índice, no como una caché de estado.
+
+Una conversación solo puede declarar contexto RDC resuelto cuando:
+- el SI y la Metodología vigentes fueron adquiridos;
+- ESTADO-RDC-ACTIVO.md fue leído;
+- la sesión global fue identificada desde esa fuente;
+- la conectividad fue determinada conforme al gate aplicable;
+- cualquier discrepancia material fue resuelta o clasificada sin inferencia.
+
+Una fuente más antigua, una copia en otra conversación o una versión almacenada localmente no puede tener precedencia sobre una fuente canónica más reciente.
+
+## 9. Criterio de éxito
 
 Una conversación independiente debe poder recuperar este objeto, seguir sus referencias, reconstruir el estado global y actuar correctamente sin depender de información proporcionada por una conversación anterior.
+
+La recuperación exitosa significa reconstrucción desde fuentes; no significa que el objeto por sí mismo demuestre que el modelo ejecutó el protocolo.
