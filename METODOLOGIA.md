@@ -2,8 +2,8 @@
 
 ## Estado canónico
 
-- **Versión:** v0.14.2
-- **Nombre de versión:** Enforcement Inmediato del Gate Vercel
+- **Versión:** v0.14.3
+- **Nombre de versión:** Reanclaje Recursivo del Régimen Personalizado
 - **Última actualización:** 2026-10-08
 - **Última actualización canónica:** 2026-10-08
 - **Ámbito:** Todos los proyectos y conversaciones trabajados bajo esta metodología.
@@ -62,6 +62,7 @@
 | 37 | v0.14.0 | Gobernanza de Cuota Vercel y Continuidad Local | Se canoniza el objeto `ANEXO-GOBERNANZA-VERCEL-CUOTA-Y-CONTINUIDAD-LOCAL.md`, se cruza la cuota de deployments con los casos de uso de Cora y se establece la ejecución local como continuidad legítima cuando no sea necesario modificar el URL canónico. |
 | 38 | v0.14.1 | Gate Determinista de Vercel por Caso de Uso | Se hace obligatoria e inmediata la secuencia `LIMITATION-SCAN → DEPENDENCIA-VERCEL → SUFICIENCIA-LOCAL → VÍA DE EJECUCIÓN`, limitando el bloqueo exclusivamente a la fracción del objetivo que requiera materialmente Vercel. |
 | 39 | v0.14.2 | Enforcement Inmediato del Gate Vercel | Se endurece el disparador: la mera mención de Vercel en un hilo de desarrollo activa el gate antes de ejecutar, y la continuidad local pasa a ser la vía obligatoria cuando sea suficiente para alcanzar el objetivo. |
+| 40 | v0.14.3 | Reanclaje Recursivo del Régimen Personalizado | Se operacionaliza la continuidad de las Instrucciones personalizadas mediante activación y reanclaje recursivo desde el primer ciclo, con una premisa de coherencia funcional de horizonte mínimo `N=1`. Cada aplicación observable satisfactoria puede reafirmar el contrato de continuidad sin crear una fuente normativa duplicada. |
 La tabla es canónica. Las versiones futuras añaden nuevos registros sin reutilizar folios. Una entrada retirada por revisión canónica puede conservar únicamente su identificador y estado de retirada, sin preservar la regla operativa invalidada. El nombre describe el avance de la versión y no sustituye el título general del sistema o documento.
 
 ## 1. Convención obligatoria de foliación de ciclos
@@ -132,9 +133,19 @@ La memoria conversacional no sustituye estas fuentes. Para RDC, el bootstrap con
 
 ### 2.4 Historial mínimo de sesiones RDC
 
-### 2.5 Verificación del régimen de Instrucciones personalizadas
+### 2.5 Verificación y reanclaje recursivo del régimen de Instrucciones personalizadas
 
 Las Instrucciones personalizadas de ChatGPT constituyen el punto de arranque del régimen conversacional bajo la premisa operativa adoptada por esta metodología. El primer ciclo de una conversación nueva debe activar dicho régimen y establecer su continuidad para los ciclos siguientes.
+
+Como premisa de coherencia funcional con horizonte mínimo `N=1`, la metodología trata la funcionalidad de Instrucciones personalizadas como operativamente significativa bajo la expectativa de que el ciclo inicial constituye al menos una oportunidad efectiva para aplicar la instrucción relativa a la continuidad del propio régimen. Esta es una premisa operacional; no pretende demostrar el mecanismo interno del runtime.
+
+El primer ciclo no solo activa el régimen: debe realizar un **reanclaje inicial**, reafirmando que el régimen de Instrucciones personalizadas continúa vigente durante toda la conversación y que cada ciclo debe conservarlo y verificar su aplicación observable.
+
+En los ciclos posteriores, una aplicación observable satisfactoria constituye una nueva oportunidad de **reanclaje recursivo**. En esa oportunidad, el modelo debe volver a someterse explícitamente al mismo régimen, reafirmar su continuidad para los ciclos siguientes y mantener `CI` como comprobación observable. El reanclaje es referencial: no crea una copia autónoma, una versión paralela ni una nueva fuente normativa.
+
+La recurrencia operativa es:
+
+`ACTIVACIÓN → REANCLAJE → APLICACIÓN → VERIFICACIÓN → REANCLAJE → ...`
 
 El contrato de salida incorpora `CI` como indicador operativo:
 
@@ -144,7 +155,7 @@ El contrato de salida incorpora `CI` como indicador operativo:
 
 `CI` se verifica por sus manifestaciones observables y no por una afirmación sobre el mecanismo interno de ChatGPT. El estado positivo no demuestra que el campo de Instrucciones personalizadas haya sido físicamente releído; demuestra que el ciclo satisface el contrato de continuidad establecido por ese régimen.
 
-`CI` es parte del formato de salida y del procedimiento operativo. No constituye un nuevo principio fundamental.
+`CI` y el reanclaje son procedimientos operativos. No constituyen nuevos principios fundamentales ni sustituyen la autoridad de la fuente canónica del SI.
 
 
 
