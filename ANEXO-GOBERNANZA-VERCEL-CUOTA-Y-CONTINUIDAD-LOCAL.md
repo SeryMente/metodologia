@@ -2,7 +2,7 @@
 
 **Objeto:** Gobernanza operativa de Vercel para proyectos sujetos a la metodología  
 **Estado:** CANÓNICO  
-**Versión del objeto:** v1.0.1  
+**Versión del objeto:** v1.1.0  
 **Fecha de actualización del objeto:** 2026-10-08  
 **Ámbito:** Todos los proyectos, conversaciones y operaciones sujetos a la metodología que utilicen Vercel, incluyendo KHORA.  
 **Fuente factual primaria:** documentación oficial vigente de Vercel, especialmente Limits, CLI Build, CLI Deploy e Instant Rollback.  
@@ -14,6 +14,7 @@
 |---|---|---|
 | v1.0.0 | 2026-10-08 | Canonización inicial del cruce Cora × Vercel × cuota × continuidad local. |
 | v1.0.1 | 2026-10-08 | Revisión de cierre y depuración de referencias heredadas; se conserva la misma arquitectura operativa. |
+| v1.1.0 | 2026-10-08 | Endurecimiento del gate obligatorio: detección de limitaciones, determinación de dependencia real del caso de uso, decisión local/Vercel y bloqueo únicamente cuando ninguna vía suficiente alcance el objetivo. Se corrige además el límite vigente de builds por hora de Hobby. |
 
 ## 1. Propósito
 
@@ -51,7 +52,7 @@ Para el plan **Hobby**, la documentación oficial consultada establece:
 | Restricción | Valor vigente de referencia | Implicación metodológica |
 |---|---:|---|
 | Deployments creados | 100 / 86400 s | La publicación remota de una nueva versión puede quedar temporalmente bloqueada. |
-| Builds | 32 / 3600 s | La capacidad de generar builds también tiene una ventana independiente. |
+| Builds / hora (Hobby) | 100 / 3600 s | Una operación que cree o construya deployments puede encontrar una restricción horaria independiente de la ventana diaria. |
 | Builds concurrentes | 1 | No debe suponerse paralelismo ilimitado de builds. |
 | Tiempo de build por deployment | 45 min | Un build que exceda este límite no puede completar el deployment. |
 | Tamaño máximo de subida CLI | 100 MB | Una publicación desde CLI puede fallar si la fuente supera este tamaño. |
@@ -103,19 +104,73 @@ La implementación local puede utilizar el código vigente del repositorio, por 
 
 Cuando sea necesario validar específicamente el comportamiento del artefacto de build de Vercel, `vercel build` es una vía local apropiada porque produce `.vercel/output` sin crear por sí mismo el deployment remoto. La instrucción `vercel deploy` o `vercel deploy --prebuilt`, en cambio, sí crea un deployment y queda sujeta a las restricciones de Vercel.
 
-## 7. Regla de decisión para cualquier operación Vercel
+## 7. Gate obligatorio Vercel
 
-Ante cualquier tarea que mencione, utilice o pretenda modificar Vercel:
+La mera mención de Vercel dentro de un hilo de desarrollo activa este gate. No se puede ejecutar una operación dependiente de Vercel sin resolverlo primero.
 
-1. Cargar este objeto en su versión vigente.
-2. Determinar si la tarea es de **consumo**, **datos**, **desarrollo local**, **verificación de build**, **deployment preview**, **deployment production**, **rollback** o **administración de la plataforma**.
-3. Determinar si la tarea necesita crear un deployment nuevo.
-4. Si no lo necesita, no consumir cuota por un deployment innecesario.
-5. Si lo necesita y la cuota está disponible, validar localmente tanto como resulte razonable antes de publicar.
-6. Si lo necesita y la cuota está limitada, no insistir cíclicamente ni convertir el bloqueo de Vercel en bloqueo global de Cora.
-7. Seleccionar la alternativa local cuando sea funcionalmente suficiente.
-8. Mantener explícita la frontera entre la instancia local y el URL canónico.
-9. Cuando vuelva a existir capacidad de deployment, publicar el commit exacto que haya sido validado y verificar posteriormente el URL canónico.
+### 7.1 Paso A — Detectar la restricción
+
+El modelo debe comprobar si existe una limitación de Vercel relevante para la operación. Debe distinguir al menos entre:
+
+- cuota o rate limit de deployments/builds;
+- concurrencia;
+- tiempo de build;
+- tamaño o cantidad de archivos;
+- límites de rutas, funciones, variables de entorno, runtime o recursos;
+- disponibilidad/estado del proyecto o deployment;
+- cualquier otra restricción de Vercel que la operación concreta pueda activar.
+
+La comprobación debe usar la documentación oficial vigente de Vercel y, cuando exista acceso al proyecto/cuenta, evidencia viva del estado de Vercel. No se deben inferir límites actuales desde memoria histórica. La existencia de una limitación debe registrarse como evidencia y no asumirse por el mero hecho de trabajar con Vercel.
+
+### 7.2 Paso B — Determinar la necesidad real de Vercel
+
+El modelo debe analizar el objetivo del caso de uso y determinar qué parte del objetivo depende materialmente de Vercel.
+
+Debe establecer explícitamente:
+
+- `OBJETIVO`: resultado que el esfuerzo debe producir.
+- `DEPENDENCIA-VERCEL`: NO, PARCIAL o MATERIAL.
+- `DEPLOY-REQUERIDO`: SI o NO.
+- `SUFICIENCIA-LOCAL`: SI o NO.
+- `MOTIVO`: qué requisito concreto exige o no exige el plano remoto.
+
+`NO` significa que el objetivo puede alcanzarse sin la plataforma Vercel.
+
+`PARCIAL` significa que la mayor parte del objetivo puede alcanzarse localmente y solo una parte posterior exige Vercel.
+
+`MATERIAL` significa que el objetivo, por su propia definición, requiere una propiedad remota concreta que la instancia local no puede sustituir de forma suficiente; por ejemplo, el comportamiento efectivo del URL canónico, una integración/callback externo que dependa materialmente del endpoint público, o una propiedad específica del entorno remoto que sea objeto de validación.
+
+La necesidad de Vercel no se deduce de la arquitectura histórica del proyecto: se deriva del objetivo actual del esfuerzo.
+
+### 7.3 Paso C — Elegir la vía suficiente
+
+La decisión obligatoria es:
+
+`LIMITATION-SCAN → DEPENDENCIA-VERCEL → SUFICIENCIA-LOCAL → VÍA DE EJECUCIÓN`
+
+- Si `SUFICIENCIA-LOCAL = SI`, se debe continuar por la instancia local y no consumir un deployment remoto solo para mantener una ruta histórica de trabajo.
+- Si `DEPENDENCIA-VERCEL = PARCIAL`, se ejecuta localmente toda la parte que no requiera Vercel y se conserva para después únicamente la parte remota material.
+- Si `SUFICIENCIA-LOCAL = NO`, se comprueba la capacidad real de Vercel antes de intentar publicar.
+- Si el deployment es necesario y Vercel está limitado, solo la parte que requiere realmente Vercel queda pendiente/bloqueada. El resto del esfuerzo continúa por la vía local.
+
+### 7.4 Paso D — Prohibición de bloqueo prematuro
+
+Una limitación de Vercel nunca constituye por sí misma un bloqueo global del esfuerzo.
+
+Antes de declarar `BLOQUEADO`, el modelo debe demostrar:
+
+1. que el objetivo concreto requiere una propiedad que no puede obtenerse suficientemente en local;
+2. que dicha propiedad necesita efectivamente una operación Vercel afectada por la limitación;
+3. que no existe una operación ya disponible sobre un deployment existente que satisfaga el objetivo;
+4. que no existe rollback u otra recuperación legítima cuando el caso sea de recuperación;
+5. que la parte restante del objetivo tampoco puede separarse y continuar localmente.
+
+Si cualquiera de estas condiciones no se demuestra, no corresponde declarar bloqueo global.
+
+### 7.5 Efecto inmediato
+
+Este gate tiene efecto desde su incorporación al repositorio canónico. Toda conversación o hilo posterior sujeto a esta metodología que entre en ámbito Vercel debe aplicar este procedimiento antes de ejecutar, aunque la solicitud no mencione explícitamente la cuota.
+
 
 ## 8. Regla sobre rollback y recuperación
 
