@@ -1,0 +1,15 @@
+name: validate-canonical-bootstrap
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  canonical-bootstrap:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate canonical bootstrap bridge
+        run: python3 scripts/validate-canonical-bootstrap.py
