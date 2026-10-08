@@ -108,6 +108,12 @@
 6. **No dualidad operativa:** ya está registrada en `LINEAMIENTOS.md` y `METODOLOGIA.md`. No se duplica como principio nuevo.
 7. Los principios derivados 4–8 constituyen candidatos de abstracción normativa obtenidos del marco de extracción aportado en la conversación; no modifican por sí mismos el canon existente.
 
+### Regla adicional de entorno de publicación
+
+Las restricciones de Vercel y la continuidad mediante ejecución local son contenido metodológico-operativo, no principios fundamentales. Cuando el trabajo de extracción, auditoría o persistencia interactúe con Vercel, debe utilizar como referencia vigente `ANEXO-GOBERNANZA-VERCEL-CUOTA-Y-CONTINUIDAD-LOCAL.md`, distinguir si se requiere un deployment nuevo y no convertir una limitación de cuota en indisponibilidad global del sistema.
+
+Una cuenta, proyecto, cuota, URL, comando o mecanismo concreto no debe elevarse a principio por su mera importancia práctica. La extracción debe conservar la separación entre norma estable y mecanismo sustituible.
+
 ### Relación con documentos canónicos
 
 - `ANCLA.md`: autoridad de canonización y separación propuesta/canon.
