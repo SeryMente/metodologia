@@ -32,22 +32,27 @@ Cuando exista una entrada canonica, su forma debe utilizarse en salidas, documen
 **Tipo:** mecanismo de acceso.  
 **Definicion:** Remote Desktop Commander, canal utilizado para operar el entorno remoto autorizado.  
 **Forma canonica:** RDC.  
-**Regla:** no se confunde con una sesion de terminal.
+**Regla:** no se confunde con la identidad de una terminal ni con la ubicacion fisica.
+
+### Identidad RDC
+**Tipo:** identidad operativa de dispositivo.  
+**Definicion:** combinacion de `RDC-CUENTA + RDC-DEVICE-ID` que identifica una terminal concreta ante el proveedor RDC.  
+**Regla:** el nombre visible del dispositivo no basta para identificar una terminal.
 
 ### Sesion RDC
-**Tipo:** estado operativo.  
-**Definicion:** conexion remota autenticada a un dispositivo mediante RDC.  
-**Distincion:** una sesion RDC activa no equivale necesariamente a una sesion terminal iniciada mediante la herramienta.
+**Tipo:** estado operativo por terminal.  
+**Definicion:** conexion remota autenticada asociada a una identidad RDC concreta.  
+**Distincion:** pueden coexistir varias sesiones RDC en dispositivos diferentes; no existe una unica sesion RDC global para todas las conversaciones.
 
 ### Divergencia de observabilidad RDC
 **Tipo:** estado operativo de recuperación.  
-**Definicion:** condición en la que la fuente RDC no puede verificar la conectividad o reporta el dispositivo offline mientras el usuario aporta evidencia local positiva de actividad de una terminal o sesión RDC.  
-**Regla:** no permite inferir finalización de la sesión. Cuando el ciclo requiere RDC en vivo, activa el protocolo `RDC-REINSTANTIAR`.
+**Definicion:** condicion en la que una terminal RDC requerida no puede verificarse en vivo mientras el usuario aporta evidencia local positiva de actividad de esa terminal.  
+**Regla:** no permite inferir finalizacion ni sustituir la terminal por otra identidad ONLINE. Cuando el ciclo requiere esa terminal en vivo, activa el protocolo `RDC-REINSTANTIAR`.
 
 ### RDC-REINSTANTIAR
 **Tipo:** comando conversacional de recuperación.  
 **Definicion:** instrucción canónica que solicita cerrar la terminal/sesión RDC observada, iniciar una nueva sesión y devolver el `RDC-HANDSHAKE` necesario para sustituir de forma verificable el estado global.  
-**Regla:** no se interpreta como comando de shell ni como evidencia de finalización de la sesión anterior.
+**Regla:** no se interpreta como comando de shell ni como evidencia de finalizacion de otra identidad.
 
 ### Ubicacion actual
 **Tipo:** estado transversal.  
@@ -107,11 +112,11 @@ Cuando exista una entrada canonica, su forma debe utilizarse en salidas, documen
 **Valores canonicos:** VERIFICADO-ACTIVO, VERIFICADO-INACTIVO, NO-REQUERIDO, BLOQUEADO.
 **Regla:** estados de deteccion como NO-VERIFICADO, INDETERMINADO o FUENTE-NO-DISPONIBLE no son estados de paso.
 
-### Estado RDC activo
+### Registro RDC activo
 **Tipo:** registro operativo global.
-**Definicion:** estado compartido que identifica la sesion RDC globalmente vigente para las conversaciones sujetas a la metodologia.
+**Definicion:** registro compartido que conserva identidades RDC conocidas, ciclos de vida y metadatos de continuidad entre conversaciones.
 **Fuente:** ESTADO-RDC-ACTIVO.md.
-**Regla:** el registro se consume y verifica por ciclo; una nueva sesion verificada sustituye a la anterior.
+**Regla:** no selecciona una terminal global ni sustituye el descubrimiento vivo del proveedor. La terminal actual se resuelve por ciclo.
 
 ### Procedencia
 **Tipo:** trazabilidad.  
@@ -132,3 +137,14 @@ El contenido del antiguo GOW no se adopta en bloque.
 ## 6. Regla de correccion
 
 Cuando una entrada de usuario contiene una variante de transcripcion y existe una correspondencia canonica suficientemente determinada, la salida utiliza la forma canonica. Si existe ambiguedad real, se conserva la incertidumbre y no se inventa equivalencia.
+
+
+### Terminal RDC seleccionada
+**Tipo:** estado operativo de ciclo.  
+**Definicion:** identidad RDC concreta elegida para el ciclo actual despues del descubrimiento vivo.  
+**Regla:** la seleccion es local a la conversacion/ciclo y se identifica por cuenta + device_id. No se hereda como seleccion global desde otra conversacion.
+
+### Descubrimiento RDC vivo
+**Tipo:** mecanismo de verificacion.  
+**Definicion:** consulta al proveedor RDC que determina que identidades de dispositivo estan actualmente observables/ONLINE.  
+**Regla:** tiene precedencia sobre el registro persistente para determinar presencia y conectividad actuales.
