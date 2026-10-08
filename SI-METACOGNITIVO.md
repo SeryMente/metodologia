@@ -1,8 +1,8 @@
 # Sistema de Instrucciones Metacognitivas
 
 **Estado:** CANÓNICO
-**Versión:** v1.6.14
-**Nombre de versión:** Gate Determinista de Vercel por Caso de Uso
+**Versión:** v1.6.15
+**Nombre de versión:** Enforcement Inmediato del Gate Vercel
 
 > **Corrección canónica:** `THINKING` es una ventana preferente, no una precondición bloqueante. La ausencia de señal de Thinking y la indisponibilidad de KHORA no bloquean por sí mismas la salida; se reflejan en `T` y `K` respectivamente.
 **Última actualización canónica:** 2026-10-08
@@ -36,6 +36,7 @@
 | 19 | v1.6.12 | Versión retirada | Entrada histórica retirada del canon operativo; no contiene reglas vigentes. |
 | 20 | v1.6.13 | Gobernanza Operativa de Vercel y Continuidad Local | Se incorpora al nivel operativo del SI el objeto canónico para cruzar Vercel, cuota y continuidad local, sin elevar detalles de plataforma a principio fundamental. |
 | 21 | v1.6.14 | Gate Determinista de Vercel por Caso de Uso | Se hace obligatoria e inmediata la secuencia `LIMITATION-SCAN → DEPENDENCIA-VERCEL → SUFICIENCIA-LOCAL → VÍA DE EJECUCIÓN`; una limitación de Vercel solo bloquea la fracción materialmente dependiente de la plataforma que no pueda satisfacerse localmente. |
+| 22 | v1.6.15 | Enforcement Inmediato del Gate Vercel | Se hace efectivo el disparador por mera mención de Vercel en hilos de desarrollo, con evaluación previa obligatoria de limitaciones, necesidad real de Vercel y suficiencia local antes de ejecutar. |
 
 La tabla es parte del canon. Las versiones futuras se añaden sin reutilizar folios. Una entrada retirada por decisión de canonización puede conservar únicamente su identificador y estado de retirada, sin preservar la regla operativa invalidada. El nombre de versión es específico de esa versión y no sustituye el título general del sistema.
 
