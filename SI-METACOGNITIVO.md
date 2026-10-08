@@ -1,12 +1,12 @@
 # Sistema de Instrucciones Metacognitivas
 
 **Estado:** CANÓNICO
-**Versión:** v1.6.7
-**Nombre de versión:** Gobernanza Transaccional del Estado RDC
+**Versión:** v1.6.8
+**Nombre de versión:** Continuidad Canónica entre Conversaciones
 
 > **Corrección canónica:** `THINKING` es una ventana preferente, no una precondición bloqueante. La ausencia de señal de Thinking y la indisponibilidad de KHORA no bloquean por sí mismas la salida; se reflejan en `T` y `K` respectivamente.
-**Última actualización canónica:** 2026-10-07
-**Fecha:** 2026-10-07
+**Última actualización canónica:** 2026-10-08
+**Fecha:** 2026-10-08
 **Ámbito:** Gobierno metacognitivo del modelo en tareas sujetas a este sistema.
 
 > **Regla de frescura canónica:** una copia que identifique como vigente cualquier versión anterior a `v1.6.7` es histórica, no normativa. Debe volver a consultar esta ruta canónica antes de aplicar gates de Thinking/KHORA.
@@ -29,6 +29,7 @@
 | 12 | v1.6.5 | Adquisición Atómica de Snapshot Normativo | Se endurece la frescura por ciclo mediante doble lectura de `main`, recuperación por SHA exacto y rechazo ante cualquier carrera, caché, discordancia o identidad incompleta. |
 | 13 | v1.6.6 | Precedencia de Contexto RDC y Recuperación Proactiva | Se establece que el estado global de RDC debe resolverse en cada ciclo antes de intentar la certificación de KHORA; toda notificación de ausencia o pérdida de RDC debe ofrecer proactivamente `RDC-REINSTANTIAR`, y un handshake fresco validado sustituye o refresca el estado global antes de reanudar. |
 | 14 | v1.6.7 | Gobernanza Transaccional del Estado RDC | Se convierte el estado global de RDC en un contrato transaccional de lectura, validación, publicación y read-back: la resolución no se considera completa hasta persistirla y verificarla, las carreras obligan a reconciliar y ninguna certificación externa puede preceder al contexto RDC vigente. |
+| 15 | v1.6.8 | Continuidad Canónica entre Conversaciones | Se fija dentro de la operación del SI el encadenamiento mínimo para una conversación nueva o continuadora: adquirir el SI vigente y, sin elevar nuevos principios, recuperar la Metodología y su anexo de bootstrap para reconstruir el contexto persistente. La continuidad se obtiene de fuentes canónicas del repositorio, no de memoria conversacional. |
 
 La tabla es parte del canon. Cada nueva versión debe añadir una fila sin borrar ni reutilizar las anteriores. El nombre de versión es específico de esa versión y no sustituye el título general del sistema.
 
@@ -296,6 +297,18 @@ Secuencia obligatoria:
 Ningún turno puede utilizar un estado de RDC de una conversación anterior como sustituto de la lectura del estado global actual. El objetivo de esta fase es determinar qué sesión RDC es globalmente vigente y si su conectividad puede utilizarse en vivo.
 
 La imposibilidad temporal de verificar la conectividad no extingue la identidad persistente. Cuando el modelo comunique que RDC está ausente, desconectado, inactivo, no verificable o no disponible, debe ofrecer en ese mismo ciclo el comando canónico `RDC-REINSTANTIAR`, incluso si RDC no es requisito del trabajo. Si RDC sí es requerido para el ciclo, esa condición bloquea únicamente la ejecución sustantiva hasta la recuperación.
+
+### 5.0.4 Continuidad canónica entre conversaciones
+
+Después de adquirir y verificar el snapshot del SI, cada ciclo sujeto a este sistema debe recuperar la Metodología vigente y el anexo `BOOTSTRAP-CONTEXTO-GLOBAL.md` como soporte operativo para reconstruir el contexto transversal.
+
+La secuencia mínima de arranque es:
+
+`SNAPSHOT SI → METODOLOGÍA → BOOTSTRAP → ESTADO OPERATIVO REQUERIDO → OPERACIÓN`
+
+La Metodología y sus anexos desarrollan procedimientos, contexto, mecanismos y fuentes de continuidad; no añaden principios fundamentales al SI. Una conversación nueva no debe depender de la memoria de una conversación anterior cuando la información correspondiente esté canonizada en el repositorio.
+
+El bootstrap no constituye una tercera capa normativa: es un anexo operativo que señala las fuentes persistentes que deben consultarse. La autoridad normativa continúa residiendo en los principios de este SI y la autoridad procedimental en la Metodología y sus anexos.
 
 ### 5.0.2 Ejecución normativa adaptativa por turno
 
