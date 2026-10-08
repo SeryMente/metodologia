@@ -1,3 +1,9 @@
+## Perfil operativo obligatorio: sin reinicio
+
+**PRESUPUESTO-REINICIO = 0.** En CIBERCAFE ninguna intervención del proceso puede provocar, programar o exigir un reinicio, apagado, reset, entrada a UEFI/BIOS o reparación offline. Una acción con dependencia de reboot se marca `BLOQUEADA-REINICIO`, se registra y se omite; el ciclo continúa con alternativas live.
+
+La ventana de mantenimiento de este ámbito no autoriza reboot: solo permite intervenir con la terminal todavía operativa. Un reinicio externo/DeepFreeze puede ocurrir fuera del proceso; `SYNC_FLUSH` sigue siendo una protección de continuidad cuando exista una señal observable y no implica que el proceso pueda iniciarlo.
+
 # Anexo - Proceso Persistente de Liberacion de Desempeno en Cibercafe
 
 **Estado:** CANONICO  
