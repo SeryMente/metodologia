@@ -47,8 +47,9 @@ Los ciclos posteriores conservan ese régimen y vuelven a ejecutar las verificac
 4. Cuando RDC sea relevante, descubrir en vivo los dispositivos ONLINE en todas las cuentas RDC accesibles y reconciliarlos con el registro persistente.
 5. Resolver la terminal concreta del ciclo por `RDC-CUENTA + RDC-DEVICE-ID`; no seleccionar por nombre genérico ni por memoria de otra conversación.
 6. Registrar el estado de `reasoning_mode` cuando la plataforma lo exponga; no bloquear solo por su ausencia.
-7. Una vez resuelto el contexto RDC, intentar `khora_mcp_health` sobre el MCP canónico; si no está disponible, declarar `K: OFF` en la salida.
-8. Si no existe ningún dispositivo ONLINE y RDC es requerido, bloquear y ofrecer `RDC-REINSTANTIAR`.
+7. Si la tarea utiliza Vercel, cargar `ANEXO-GOBERNANZA-VERCEL-CUOTA-Y-CONTINUIDAD-LOCAL.md` y clasificar si requiere un deployment nuevo antes de ejecutar.
+8. Una vez resuelto el contexto RDC, intentar `khora_mcp_health` sobre el MCP canónico; si no está disponible, declarar `K: OFF` en la salida.
+9. Si no existe ningún dispositivo ONLINE y RDC es requerido, bloquear y ofrecer `RDC-REINSTANTIAR`.
 
 ## Distincion obligatoria
 
@@ -95,6 +96,10 @@ Una nueva identidad RDC verificada se añade al registro; no sustituye automáti
 El cierre explícito, desconexión verificable o sustitución afecta a la identidad concreta que corresponda al mismo `RDC-DEVICE-ID`.
 
 Una conversación nueva debe descubrir en vivo qué identidades están ONLINE y puede seleccionar una distinta de la utilizada por otra conversación.
+
+## Regla de plataforma de publicación
+
+Cuando el ciclo dependa de Vercel, la cuota y el modo de ejecución deben resolverse desde `ANEXO-GOBERNANZA-VERCEL-CUOTA-Y-CONTINUIDAD-LOCAL.md`. Una limitación para crear deployments no implica indisponibilidad global de Cora; debe preferirse el deployment existente o la ejecución local cuando sean suficientes.
 
 ## Regla para la plataforma
 
