@@ -2,21 +2,21 @@
 
 ## Estado canónico
 
-- **Versión:** v0.12.8
-- **Nombre de versión:** Economía RDC y Memoria Endurecida de Desempeño por Terminal
+- **Versión:** v0.12.9
+- **Nombre de versión:** Régimen CIBERCAFE sin Reinicio y Optimización en Sesión
 - **Última actualización:** 2026-10-08
 - **Última actualización canónica:** 2026-10-08
 - **Ámbito:** Todos los proyectos y conversaciones trabajados bajo esta metodología.
 
 ### Narrativa de la versión
 
-**Antes:** la metodología ya conservaba memoria de desempeño por `PC-N`, pero todavía no trataba explícitamente la economía de llamadas RDC como una dimensión del buen desempeño ni endurecía su memoria contra repetición innecesaria.
+**Antes:** la metodología ya conservaba memoria de desempeño por `PC-N` y trataba la economía de llamadas RDC como dimensión del buen desempeño, pero el perfil CIBERCAFE todavía no tenía un presupuesto explícito de reinicio ni una regla transversal que separara oportunidades de mantenimiento imposible durante operación en sesión.
 
-**Cambio:** se incorpora la economía RDC como criterio de desempeño operativo y se endurece la memoria persistente por terminal con estado de vigencia, cursor de sincronización, evidencias reutilizables, oportunidades pendientes y registro de verificaciones que no deben repetirse mientras sigan válidas.
+**Cambio:** se incorpora un perfil operativo CIBERCAFE con `PRESUPUESTO-REINICIO = 0`: cualquier intervención que requiera reinicio, apagado, reset, entrada a UEFI/BIOS o reparación offline queda bloqueada para esa ubicación. Las oportunidades imposibles en sesión se registran sin impedir la continuación de acciones live.
 
-**Motivo:** el objetivo no es maximizar solo CPU/GPU/RAM/disco; también debe maximizarse la información útil y la mejora conseguida por unidad de observación remota consumida.
+**Motivo:** en un cibercafé, el rendimiento útil incluye no interrumpir la sesión del cliente. El máximo práctico debe buscarse exclusivamente dentro del estado operativo vivo de la terminal, preservando continuidad, disponibilidad y reversibilidad.
 
-**Resultado:** cada `PC-N` puede mantener continuidad después de DeepFreeze, reutilizar hechos ya resueltos, reservar RDC para evidencia/acciones que agreguen valor y evaluar el proceso por una combinación de desempeño físico, estabilidad, seguridad, continuidad y eficiencia de observación.
+**Resultado:** cada `PC-N` mantiene continuidad después de DeepFreeze, reutiliza hechos ya resueltos, reserva RDC para evidencia/acciones que agreguen valor y opera con presupuesto de reinicio cero. BIOS/UEFI, firmware, cambios que exijan reboot y reparaciones offline pasan a ser oportunidades registradas, no acciones ejecutables en CIBERCAFE.
 
 ### Registro de versiones
 
@@ -58,6 +58,7 @@
 | 32 | v0.12.6 | Continuidad de Publicación Vercel por Cuenta Secundaria | Se canoniza el fallback de publicación en Vercel mediante la cuenta secundaria `blacksheepsup@gmail.com`, manteniendo la cuenta/proyecto primarios como autoridad. La ruta secundaria solo puede publicar un commit validado, usar la bóveda canónica de variables y registrar cuenta, proyecto, SHA, motivo, timestamp y URL. |
 | 33 | v0.12.7 | Continuidad Persistente de Desempeño por Terminal en Cibercafe | Se canoniza el proceso persistente de liberacion de desempeno por `PC-N`, con HUD de telemetria, memoria persistente por terminal y log de eventos. Se establece sincronizacion hibrida: eventos materiales inmediatos, lotes periodicos y `SYNC_FLUSH` antes de reinicio/DeepFreeze, evitando consumir RDC por cada muestra o repetir trabajo ya resuelto. |
 | 34 | v0.12.8 | Economía RDC y Memoria Endurecida de Desempeño por Terminal | Se convierte la economía de llamadas RDC en criterio explícito de buen desempeño. La memoria por `PC-N` debe conservar estado vigente, verificaciones reutilizables, oportunidades, invalidaciones y cursor de sincronización; el ciclo debe priorizar reutilización y agrupar observaciones para maximizar valor obtenido por llamada RDC. |
+| 35 | v0.12.9 | Régimen CIBERCAFE sin Reinicio y Optimización en Sesión | Se establece `PRESUPUESTO-REINICIO = 0` para el ámbito CIBERCAFE. Ninguna optimización puede provocar, programar o exigir un reinicio. Acciones dependientes de reboot se registran como `BLOQUEADA-REINICIO` y el ciclo continúa con alternativas live. |
 La tabla es canónica: las versiones futuras deben añadir una fila sin borrar ni reciclar las anteriores. El nombre describe el avance de la versión y no sustituye el título general del sistema o documento.
 
 ## Gobernanza canónica de publicación Vercel
@@ -455,3 +456,37 @@ RDC-REUTILIZACION | mediciones/verificaciones servidas desde memoria local
 RDC-EVITADAS | llamadas que no fueron necesarias por reutilización o batching
 
 No se exige mostrar estos contadores en cada salida si no existe una medición fiable; se conservan en el registro cuando sean disponibles.
+
+
+## 22. Perfil CIBERCAFE: operación sin reinicio
+
+El ámbito `CIBERCAFE` adopta por defecto el régimen **sin reinicio** para todas las terminales `PC-N`.
+
+### Regla canónica
+
+`PRESUPUESTO-REINICIO = 0`.
+
+El proceso de liberación de desempeño no puede iniciar, programar ni requerir:
+
+- reinicio, apagado o reset de la terminal;
+- entrada a UEFI/BIOS para aplicar cambios;
+- actualización de BIOS/firmware que implique reinicio;
+- instalación o actualización de driver/software cuyo procedimiento requiera reinicio;
+- reparación offline del sistema de archivos que requiera reiniciar;
+- actualización de Windows u otra operación de sistema que deje un reinicio obligatorio para completar la intervención.
+
+Una acción que dependa de cualquiera de estas condiciones se etiqueta `BLOQUEADA-REINICIO`, se registra como oportunidad fuera del régimen actual y no se ejecuta. El ciclo no se cierra por ello: debe continuar buscando y ejecutando mejoras que puedan aplicarse en vivo.
+
+### Distinción crítica
+
+`BLOQUEADA-REINICIO` no significa que CIBERCAFE esté globalmente BLOQUEADO. Solo queda bloqueada esa intervención. El ciclo continúa mientras existan observaciones o acciones live válidas.
+
+Una ventana de mantenimiento dentro de CIBERCAFE significa una ventana con la terminal todavía operativa y sin reboot. No constituye autorización para reiniciar.
+
+BIOS/UEFI, DOCP/XMP y firmware requieren tratamiento como oportunidades de plataforma fuera del alcance de la sesión viva cuando su aplicación exija reinicio. Los drivers solo son ejecutables cuando se verifique explícitamente que el procedimiento completo no requiere reinicio ni interrumpe la sesión del usuario.
+
+Un reinicio externo, DeepFreeze o reset administrado puede ocurrir por razones ajenas al proceso. En ese caso, `SYNC_FLUSH` se utiliza como mecanismo de protección de continuidad cuando exista una señal observable y tiempo suficiente, pero el proceso de desempeño no lo provoca ni lo programa.
+
+### Ideal práctico del perfil
+
+El **absoluto ideal CIBERCAFE** es el máximo desempeño seguro, estable, recuperable y observable que pueda alcanzarse **sin reiniciar la terminal y sin degradar el trabajo activo**. La existencia de una mejora que requiere reboot no permite declarar ese objetivo inalcanzable mientras queden alternativas live por investigar.
