@@ -2,7 +2,7 @@
 
 **Estado:** CANÓNICO
 **Versión:** v1.1.4
-**Fecha:** 2026-10-07
+**Fecha:** 2026-10-08
 **Ámbito:** Todos los ciclos sujetos a la metodología cuando la plataforma de ejecución sea ChatGPT.
 
 ## 1. Regla de frescura y precedencia
