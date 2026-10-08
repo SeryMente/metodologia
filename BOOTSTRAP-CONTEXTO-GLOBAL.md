@@ -39,6 +39,10 @@ Secuencia operativa:
 
 ## Secuencia de arranque
 
+El primer ciclo de una conversación nueva parte del régimen de Instrucciones personalizadas de ChatGPT. Ese ciclo debe establecer su continuidad para los ciclos posteriores; `CI: ✓` solo expresa que las condiciones observables de ese régimen se manifiestan en el ciclo.
+
+Los ciclos posteriores conservan ese régimen y vuelven a ejecutar las verificaciones externas establecidas por él.
+
 1. Obtener `H1` de `main`; recuperar el SI exactamente en `H1`; obtener `H2` de `main`; usar la instantánea como fuente única y emitir `F:✓` solo si `H1 = H2` y versión + nombre + blob SHA son coherentes.
 2. Leer `ESTADO-RDC-ACTIVO.md` para recuperar la identidad persistente de la sesion RDC.
 3. Leer `ANEXO-GATE-CONTEXTO-OPERATIVO-FAIL-CLOSED.md` para aplicar el gate.
