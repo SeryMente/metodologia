@@ -5,11 +5,11 @@
 **Fecha:** 2026-10-07  
 **Ámbito:** Todos los ciclos sujetos a la metodología cuando exista estado operativo global de RDC.
 
-## 1. Autoridad del estado global
+## 1. Autoridad y naturaleza del registro global
 
-`ESTADO-RDC-ACTIVO.md` es la fuente única del estado lógico global de la sesión RDC. La memoria conversacional, el estado heredado por contexto, una terminal local o una observación aislada de la herramienta no pueden sustituirlo.
+`ESTADO-RDC-ACTIVO.md` es la fuente persistente de continuidad del conjunto de identidades RDC conocidas. No es la fuente de verdad de la conectividad actual ni contiene una única terminal globalmente seleccionada.
 
-El estado global se consume en cada ciclo. No es válido asumir que el valor del ciclo anterior continúa siendo actual.
+La memoria conversacional no sustituye el registro. El registro tampoco sustituye el descubrimiento vivo del proveedor cuando el ciclo necesita resolver qué dispositivos están conectados ahora.
 
 ## 2. Orden obligatorio de adquisición
 
@@ -17,11 +17,13 @@ Antes de cualquier `HEALTH`, `OPEN`, `VERIFY` o `RELEASE` de KHORA, el ciclo deb
 
 1. adquirir el snapshot normativo vigente;
 2. leer `ESTADO-RDC-ACTIVO.md`;
-3. resolver `RDC-SESION`, `RDC-CONECTIVIDAD` y, cuando corresponda, `RDC-OBSERVABILIDAD`;
-4. resolver recuperación si existe;
-5. solo después continuar con KHORA.
+3. descubrir en vivo los dispositivos ONLINE en todas las cuentas RDC accesibles al runtime cuando RDC sea relevante;
+4. reconciliar las identidades observadas con el registro persistente;
+5. seleccionar, si procede, la terminal objetivo del ciclo;
+6. resolver recuperación solo si la terminal requerida no es observable;
+7. solo después continuar con KHORA.
 
-Una certificación de KHORA no puede legitimar una sesión RDC que no haya sido resuelta conforme a este orden.
+Una certificación de KHORA no puede legitimar una selección de terminal RDC que no haya sido resuelta conforme a este orden.
 
 ## 3. Invariante de recuperación
 
@@ -61,19 +63,19 @@ No se permiten actualizaciones ciegas ni force-push sobre el estado global para 
 
 ## 7. Integridad de identidad
 
-La sustitución de una sesión requiere evidencia suficiente para identificar como mínimo cuenta, dispositivo, device_id y conectividad.
+La identidad de una terminal se define por `RDC-CUENTA + RDC-DEVICE-ID`. El nombre visible del dispositivo no es suficiente para identificarla.
 
-Si los datos representan la misma identidad persistente, se realiza un refresco; no se crea una segunda sesión.
+Múltiples identidades pueden permanecer ONLINE y ACTIVAS simultáneamente cuando corresponden a dispositivos distintos. Esto no es conflicto.
 
-Si representan otra identidad, la sustitución debe quedar explícita.
+Un cambio de estado debe afectar únicamente a la identidad que lo origina. Una terminal nueva no sustituye automáticamente otra terminal. Un nuevo nombre o device_id observable se registra como identidad independiente hasta que exista evidencia de que es una reinstanciación del mismo dispositivo.
 
-Los datos parciales no pueden sustituir el estado global.
+Los datos parciales no pueden alterar una identidad persistente ni atribuir una terminal a otra.
 
 ## 8. Propagación
 
-La propagación transversal se produce por el estado publicado en el repositorio. Una conversación posterior debe reconstruir la sesión global leyendo `ESTADO-RDC-ACTIVO.md`.
+La propagación transversal se produce por el estado persistente del registro. Una conversación posterior recupera las identidades conocidas y su historial, pero debe consultar el proveedor en vivo para conocer qué dispositivos están ONLINE en su propio ciclo.
 
-La conversación que recibió el handshake no tiene autoridad para hacer que otras conversaciones dependan de su memoria.
+La conversación que descubrió una terminal no convierte esa terminal en la selección global de las conversaciones posteriores. La selección es local al ciclo/conversación y se basa en la identidad concreta del dispositivo.
 
 ## 9. Fail-closed selectivo
 
@@ -85,13 +87,13 @@ La indisponibilidad del estado, del conector o de KHORA se mantiene diferenciada
 
 ## 10. Prueba de recuperación
 
-Una recuperación solo puede marcarse `RESUELTA` cuando existe:
+Una recuperación de una terminal concreta solo puede marcarse `RESUELTA` cuando existe:
 
-- handshake fresco;
-- identidad validada;
-- estado global actualizado;
-- lectura de vuelta satisfactoria;
-- conectividad vigente según la fuente disponible.
+- handshake fresco para esa identidad;
+- identidad cuenta + device_id validada;
+- conectividad vigente según la fuente disponible;
+- estado persistente actualizado si el ciclo produjo un cambio que deba propagarse;
+- lectura de vuelta satisfactoria cuando hubo publicación.
 
 El sistema no debe emitir una marca positiva basada únicamente en que el proceso local esté abierto.
 
@@ -110,6 +112,10 @@ Si aparece una contradicción, prevalece este contrato y el SI canónico vigente
 
 ## 12. Implementación verificable
 
-La implementación se considera completa cuando una recuperación puede repetirse mediante el mismo circuito sin depender de la conversación donde empezó:
+La implementación se considera completa cuando una conversación nueva puede repetir el circuito sin depender de otra conversación para saber qué terminal está activa:
 
-`FRESCURA SI → ESTADO RDC → DIAGNÓSTICO → RDC-REINSTANTIAR → HANDSHAKE → VALIDACIÓN → PUBLICACIÓN → READ-BACK → PROPAGACIÓN`
+`FRESCURA SI → LEER REGISTRO → DESCUBRIMIENTO VIVO POR CUENTA → RECONCILIACIÓN → SELECCIÓN DE TERMINAL → OPERACIÓN`
+
+Para recuperación de una terminal concreta:
+
+`DESCUBRIMIENTO VIVO → TERMINAL NO OBSERVABLE → RDC-REINSTANTIAR → HANDSHAKE → VALIDACIÓN → PUBLICACIÓN → READ-BACK → PROPAGACIÓN`
