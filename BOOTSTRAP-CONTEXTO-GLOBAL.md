@@ -10,6 +10,16 @@
 Este archivo es el punto de entrada operativo para reconstruir contexto transversal cuando una conversacion nueva no conserva contexto de una conversacion anterior.
 
 ## Regla principal
+## Activación inmediata de Vercel
+
+Si el texto de la tarea, hilo o ciclo contiene una referencia operativa a Vercel —incluida publicación, preview, deployment, production, rollback, build o configuración— se activa inmediatamente el objeto `ANEXO-GOBERNANZA-VERCEL-CUOTA-Y-CONTINUIDAD-LOCAL.md`.
+
+Antes de ejecutar cualquier acción dependiente de Vercel se debe resolver:
+
+`LIMITATION-SCAN → DEPENDENCIA-VERCEL → SUFICIENCIA-LOCAL → VÍA DE EJECUCIÓN`
+
+La limitación se busca primero; la necesidad real de Vercel se determina segundo; la suficiencia de una implementación local se comprueba tercero. Una cuota o límite de Vercel solo puede bloquear la parte que requiera materialmente el proveedor y no pueda ser cubierta localmente.
+
 
 ### Frescura normativa obligatoria
 
