@@ -26,7 +26,7 @@ Una conversación nueva debe heredar el estado registrado antes de pedir nuevame
 
 El SI contiene los principios fundamentales y los presenta verticalmente, de mayor a menor preponderancia. La Metodología y sus anexos desarrollan la aplicación práctica del SI.
 
-Los anexos no constituyen una tercera capa normativa; son soporte subordinado del sistema.
+Los anexos no constituyen una tercera capa normativa; son soporte subordinado del sistema. El bootstrap de continuidad y el estado `CI` son mecanismos de soporte y no añaden principios fundamentales al SI.
 
 ## Principio de evolución
 
@@ -42,7 +42,7 @@ Versión vigente del SI:
 
 Versión vigente de la Metodología:
 
-**v0.12.1 — Bootstrap Canónico Mínimo**
+**v0.12.2 — Verificación del Régimen Personalizado**
 
 El SI contiene los principios fundamentales vigentes, ordenados de mayor a menor preponderancia. La continuidad entre conversaciones se desarrolla operativamente mediante la Metodología y el anexo `BOOTSTRAP-CONTEXTO-GLOBAL.md`.
 
@@ -93,4 +93,4 @@ La extensión a proyectos futuros no debe retrasar el objetivo operativo de mejo
 
 ## Gate de ejecución en ChatGPT
 
-Todo ciclo sujeto a la metodología intenta resolver la cascada normativa durante Thinking cuando esta ventana está disponible. `INSTANT`, ausencia o estado desconocido no bloquean por sí mismos la salida. Cuando KHORA no está disponible, el contrato visible `v1.7.4` se conserva y el HUD declara `K: OFF`.
+Todo ciclo sujeto a la metodología intenta resolver la cascada normativa durante Thinking cuando esta ventana está disponible. `INSTANT`, ausencia o estado desconocido no bloquean por sí mismos la salida. Cuando KHORA no está disponible, el contrato visible `v1.7.5` se conserva y el HUD declara `K: OFF`. El HUD incluye además `CI: ✓|?|!` para registrar la aplicación verificable del régimen de Instrucciones personalizadas.
