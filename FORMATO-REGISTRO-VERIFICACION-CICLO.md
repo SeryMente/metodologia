@@ -1,7 +1,7 @@
 # Registro de Verificación por Ciclo
 
 **Estado:** CANÓNICO  
-**Versión:** v1.7.5 — HUD Compacto con Verificación de Régimen Personalizado  
+**Versión:** v1.7.6 — Contrato Ejecutable y Salida Determinista  
 **Fecha:** 2026-10-07
 
 ## Formato mínimo
@@ -64,7 +64,18 @@ En el primer ciclo de una conversación nueva, `CI: ✓` solo puede declararse c
 
 ## 1. HUD compacto
 
-La información metodológica visible se presenta como un bloque compacto de baja intrusión. Se permite enriquecer la presentación mediante **negritas**, `código` y etiquetas cortas sin introducir campos ni decisiones nuevas. El contrato vigente es `v1.7.5`.
+La información metodológica visible se presenta como un bloque compacto de baja intrusión. Se permite enriquecer la presentación mediante **negritas**, `código` y etiquetas cortas sin introducir campos ni decisiones nuevas. El contrato vigente es `v1.7.6`.
+
+
+## 1.1 Contrato ejecutable de representación
+
+La estructura visible es rígida y no admite variación de orden, campos, cardinalidad ni texto externo al contrato. La flexibilidad del modelo existe únicamente dentro de los valores semánticos autorizados por cada campo.
+
+La representación machine-readable canónica se encuentra en `FORMATO-REGISTRO-VERIFICACION-CICLO.schema.json`.
+
+El texto candidato de salida debe satisfacer el contrato exacto antes de que el ciclo pueda declararse VERIFIED/RELEASED. KHORA valida el texto completo, su estructura, sus estados y su hash. La salida liberada se devuelve desde KHORA como el mismo texto validado.
+
+No existe liberación de un ciclo verificado sin un output que haya pasado esta validación. El contrato no permite texto añadido antes ni después del registro canónico.
 
 ## Principio de uso
 
