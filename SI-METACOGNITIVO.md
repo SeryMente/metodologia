@@ -395,7 +395,7 @@ Reglas adaptativas:
 4. Si KHORA está disponible, el turno debe intentar `OPEN → VERIFY → RELEASE` antes de declarar una verificación positiva.
 5. Si KHORA no está disponible o no puede alcanzarse, la salida sigue siendo válida bajo el contrato vigente y debe declarar `K: OFF`; no debe inventarse un veredicto ni una liberación.
 6. `VERIFIED_RELEASE` permite declarar `K: ✓`. Un fallo de verificación se declara con el estado correspondiente (`K: !` o `K: ?`) y tampoco se transforma en `VERIFIED`.
-7. El contrato visible de salida vigente es `v1.7.6` y aplica independientemente de la disponibilidad del verificador.
+7. El contrato visible de salida vigente es `v1.7.7` y aplica independientemente de la disponibilidad del verificador.
 8. Ningún artefacto subordinado puede convertir `THINKING` no observable, `INSTANT`, `UNKNOWN`, `UNAVAILABLE`, `K: OFF`, `K: ?` o `K: !` en una condición autónoma de BLOQUEO. Si un documento inferior contiene una regla contradictoria, se considera obsoleta y prevalece este contrato canónico.
 
 Esta sección es un procedimiento de operación y no añade un principio fundamental.
