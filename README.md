@@ -40,11 +40,11 @@ El SI canónico se encuentra en [SI-METACOGNITIVO.md](SI-METACOGNITIVO.md).
 
 Versión vigente del SI:
 
-**v1.6.11 — Enforcement Determinista de Salida**
+**v1.6.12 — Continuidad de Publicación Vercel por Cuenta Secundaria**
 
 Versión vigente de la Metodología:
 
-**v0.12.9 — Régimen CIBERCAFE sin Reinicio y Optimización en Sesión**
+**v0.13.0 — Continuidad de Publicación Vercel por Cuenta Secundaria**
 
 El SI contiene los principios fundamentales vigentes, ordenados de mayor a menor preponderancia. La continuidad entre conversaciones se desarrolla operativamente mediante la Metodología y el anexo `BOOTSTRAP-CONTEXTO-GLOBAL.md`.
 
@@ -58,6 +58,14 @@ Esta evolución reduce la continuidad transversal a un único anexo de entrada: 
 
 La identidad persistente de la sesión RDC y su registro transversal se mantienen mediante ESTADO-RDC-ACTIVO.md. La conectividad se verifica por ciclo mediante ping como comprobación primaria cuando el ciclo requiera uso RDC en vivo. La salida visible de cada ciclo muestra únicamente el contexto y resultado esenciales; `K: ✓` solo acredita verificación/liberación de KHORA, mientras `K: OFF` declara que el verificador no estuvo disponible sin bloquear la salida.
 
+
+## Continuidad de publicación Vercel
+
+La gobernanza canónica de publicación resiliente se encuentra en [ANEXO-GOBERNANZA-PUBLICACION-VERCEL-SECUNDARIA.md](ANEXO-GOBERNANZA-PUBLICACION-VERCEL-SECUNDARIA.md).
+
+La cuenta primaria conserva la producción canónica. La cuenta secundaria designada es `blacksheepsup@gmail.com` y se utiliza para publicar y visualizar la versión vigente cuando la primaria no esté disponible, preferentemente mediante un deployment no canónico.
+
+La cuenta secundaria no adquiere autoridad automática sobre `khora-web.vercel.app`, la producción ni la persistencia de usuarios.
 
 ## Glosario operativo
 
