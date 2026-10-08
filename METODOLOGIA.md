@@ -2,10 +2,10 @@
 
 ## Estado canónico
 
-- **Versión:** v0.11.9
-- **Nombre de versión:** Uso Mensual de RDC en Salida Canónica
-- **Última actualización:** 2026-10-07
-- **Última actualización canónica:** 2026-10-07
+- **Versión:** v0.12.0
+- **Nombre de versión:** Continuidad Canónica Transversal
+- **Última actualización:** 2026-10-08
+- **Última actualización canónica:** 2026-10-08
 - **Ámbito:** Todos los proyectos y conversaciones trabajados bajo esta metodología.
 
 ### Narrativa de la versión
@@ -17,6 +17,16 @@
 **Motivo:** hacer visible un dato operativo relevante sin inventar límites brutos, planes ni fechas de restablecimiento, y evitar que el HUD muestre consumo de una cuenta distinta o un valor obsoleto sin indicarlo.
 
 **Resultado:** cada ciclo identifica la cuenta RDC activa y su consumo mensual verificado o, cuando no exista dato vigente, declara `NO VERIFICADO`/`NO DISPONIBLE` en lugar de inferirlo.
+
+### Narrativa de la versión
+
+**Antes:** la v0.11.9 hacía visible el uso mensual de RDC, mientras la continuidad entre conversaciones dependía del estado global operativo y sus anexos.
+
+**Cambio:** se canoniza un objeto único de continuidad, CONTEXTO-CANONICO.md, y un historial mínimo de sesiones RDC en HISTORIAL-RDC.md. El objeto actúa como índice de recuperación; ESTADO-RDC-ACTIVO.md conserva la única verdad operativa vigente y el histórico conserva el ciclo de vida anterior.
+
+**Motivo:** permitir que una conversación nueva reconstruya el contexto sin depender de memoria conversacional y mantener una sola sesión RDC vigente salvo excepción explícita.
+
+**Resultado:** la continuidad transversal queda definida por fuentes persistentes y separadas, con reacción ciclo a ciclo conforme al gate existente, sin añadir una nueva capa de ejecución.
 
 ### Registro de versiones
 
@@ -49,6 +59,7 @@
 | 23 | v0.11.7 | Gobernanza Transaccional del Estado RDC | Se formaliza la resolución de estado RDC como transacción verificable: lectura, validación, publicación condicionada por versión y lectura de vuelta antes de cualquier reanudación o certificación externa. Las carreras, fallos de persistencia y discordancias dejan el estado pendiente y bloquean solo operaciones dependientes de RDC. |
 | 24 | v0.11.8 | Versionado Canónico del Método General | Se establece una identidad canónica propia para la Metodología —versión, nombre específico y vigencia temporal— y se vuelve obligatoria su representación en la salida de cada ciclo. El último cambio metodológico se deriva de la última modificación del recurso canónico que alteró el funcionamiento, gobierno o reglas generales del sistema. |
 | 25 | v0.11.9 | Uso Mensual de RDC en Salida Canónica | Se vuelve obligatorio mostrar en cada ciclo el uso mensual de RDC de la cuenta asociada a la sesión activa, con porcentaje usado y restante, reutilizando el último dato verificado y su marca temporal sin inferir plan, límite bruto ni restablecimiento. |
+| 26 | v0.12.0 | Continuidad Canónica Transversal | Se canoniza CONTEXTO-CANONICO.md como índice de recuperación entre conversaciones y HISTORIAL-RDC.md como registro mínimo del ciclo de vida de sesiones. ESTADO-RDC-ACTIVO.md permanece como única fuente del estado global vigente. La continuidad se reconstruye en cada ciclo desde estas fuentes, sin depender de memoria conversacional. |
 La tabla es canónica: las versiones futuras deben añadir una fila sin borrar ni reciclar las anteriores. El nombre describe el avance de la versión y no sustituye el título general del sistema o documento.
 
 ## 1. Convención obligatoria de foliación de ciclos
@@ -102,6 +113,26 @@ En cada ciclo sujeto a esta metodología, sin excepción, debe aparecer la ident
 La expresión temporal se deriva del timestamp canónico del último cambio metodológico: minutos para menos de 60 min, horas para menos de 24 h, días para menos de 30 días y fecha absoluta desde 30 días.
 
 La salida no puede mostrar una versión histórica como si fuera vigente. Si la Metodología no puede adquirirse o validarse desde `main`, su estado de frescura no puede declararse positivo.
+
+### 2.3 Objeto canónico de continuidad
+
+CONTEXTO-CANONICO.md es el índice operativo para reconstruir el contexto entre conversaciones. No contiene el estado RDC actual y no tiene autoridad para sustituir las fuentes canónicas que referencia.
+
+En cada ciclo, una conversación nueva o continuadora debe poder usarlo para localizar:
+- SI-METACOGNITIVO.md;
+- METODOLOGIA.md;
+- ESTADO-RDC-ACTIVO.md;
+- HISTORIAL-RDC.md, cuando exista y sea necesario.
+
+La memoria conversacional no sustituye estas fuentes.
+
+### 2.4 Historial mínimo de sesiones RDC
+
+HISTORIAL-RDC.md conserva el ciclo de vida de las sesiones RDC sin registrar cada ping ni cada ciclo. Una sesión lógica se mantiene como ACTIVA, SUSTITUIDA, FINALIZADA, REVOCADA o EXPIRADA según evidencia verificable.
+
+La cardinalidad normal es una sola sesión ACTIVA. Más de una sesión ACTIVA constituye conflicto salvo excepción explícita y vigente.
+
+La sustitución se completa únicamente mediante la transacción ya definida: validar identidad → publicar estado global → read-back.
 
 ## 3. Diagrama de árbol
 
