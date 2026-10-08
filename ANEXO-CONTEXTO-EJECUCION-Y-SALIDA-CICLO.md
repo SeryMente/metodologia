@@ -305,3 +305,9 @@ Cuando el ciclo pertenezca al proceso persistente de liberacion de desempeno de 
 Los valores no disponibles se expresan como `ND`. El HUD reporta telemetria y estado operativo; no expone razonamiento interno paso a paso.
 
 La continuidad del proceso se identifica por `PC-N`. Los datos dinamicos de una sesion no sustituyen el estado persistente del repositorio.
+
+
+## 15.0 Régimen CIBERCAFE sin reinicio
+
+Cuando `UBICACION_ACTUAL` sea CIBERCAFE, el output operativo debe asumir `PRESUPUESTO-REINICIO = 0`. Cualquier intervención que requiera reboot se muestra como `BLOQUEADA-REINICIO` y no se ejecuta. El HUD puede mostrar explícitamente `REINICIO 0` para recordar la restricción sin exponer razonamiento interno.
+
