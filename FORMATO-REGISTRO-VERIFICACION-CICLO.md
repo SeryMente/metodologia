@@ -1,7 +1,7 @@
 # Registro de Verificación por Ciclo
 
 **Estado:** CANÓNICO  
-**Versión:** v1.7.6 — Contrato Ejecutable y Salida Determinista  
+**Versión:** v1.7.7 — Contrato Ejecutable con Reanclaje Visible  
 **Fecha:** 2026-10-07
 
 ## Formato mínimo
@@ -9,7 +9,7 @@
 > **PROYECTO / CONV-XX / CXXX**  
 > `SI CARGADO` · **vX.Y.Z — NOMBRE DE VERSIÓN** · COMPLETO · ACTIVO · ÚLTIMO CAMBIO: hace N minutos|horas|días | YYYY-MM-DD  
 > `METODOLOGÍA CARGADA` · **vX.Y.Z — NOMBRE DE VERSIÓN** · COMPLETA · ACTIVA · ÚLTIMO CAMBIO: hace N minutos|horas|días | YYYY-MM-DD  
-> `ChatGPT` · **CI:** ✓|?|! · **UBIC:** … · **RDC:** … · **C:** … · **RDC-USO:** … usado / … restante · **S:** … · **F:** ✓|?|! · **K:** ✓|OFF|?|! · **T:** ✓|?|! · **RDC-CNX:** … · **USR:** `fila4`  
+> `ChatGPT` · **CI:** ✓|?|! · **RA:** INICIAL|✓|CORRECTIVO|! · **UBIC:** … · **RDC:** … · **C:** … · **RDC-USO:** … usado / … restante · **S:** … · **F:** ✓|?|! · **K:** ✓|OFF|?|! · **T:** ✓|?|! · **RDC-CNX:** … · **USR:** `fila4`  
 > **RESULTADO:** …  
 > **ESTADO:** **COMPLETADO** | **BLOQUEADO** | **PENDIENTE**
 
@@ -46,9 +46,9 @@ El orden canónico de salida es fijo:
 
 No se puede omitir el bloque por considerar que el turno es simple, que no produjo cambios, que solo fue una aclaración o que el usuario ya conoce el contexto.
 
-## Verificación del régimen de Instrucciones personalizadas (`CI`)
+## Verificación y reanclaje del régimen de Instrucciones personalizadas (`CI` / `RA`)
 
-`CI` es un indicador operativo de continuidad del régimen establecido por las Instrucciones personalizadas de ChatGPT. No afirma acceso introspectivo al campo interno ni una lectura técnica observable de la plataforma.
+`CI` es un indicador operativo de continuidad del régimen establecido por las Instrucciones personalizadas de ChatGPT. `RA` hace visible el reanclaje obligatorio del ciclo. Ninguno afirma acceso introspectivo al campo interno ni una lectura técnica observable de la plataforma.
 
 Estados:
 
@@ -56,15 +56,21 @@ Estados:
 - `CI: ?` = no existe evidencia suficiente para sostener la aplicación del régimen en este ciclo.
 - `CI: !` = existe una contradicción o incumplimiento observable del régimen.
 
-En el primer ciclo de una conversación nueva, `CI: ✓` solo puede declararse cuando el ciclo haya activado el régimen de Instrucciones personalizadas y haya manifestado su continuidad mediante el bootstrap canónico. En los ciclos posteriores, `CI: ✓` requiere que el ciclo continúe bajo ese régimen y vuelva a ejecutar las comprobaciones externas que éste establece.
+`RA` = estado del reanclaje obligatorio del ciclo:
+- `RA: INICIAL` = reanclaje obligatorio ejecutado en el primer ciclo.
+- `RA: ✓` = reanclaje obligatorio del ciclo ejecutado y satisfecho.
+- `RA: CORRECTIVO` = reanclaje correctivo ejecutado para resolver `CI:?` o una condición de continuidad que requirió corrección.
+- `RA: !` = reanclaje fallido o no satisfecho; no permite continuar con trabajo sustantivo sujeto al régimen.
+
+En el primer ciclo de una conversación nueva, `RA: INICIAL` y `CI: ✓` solo pueden declararse cuando el ciclo haya activado el régimen y ejecutado el reanclaje inicial. En los ciclos posteriores, `RA: ✓` o `RA: CORRECTIVO` es obligatorio antes de declarar `CI: ✓` y antes de ejecutar trabajo sustantivo.
 
 `CI: ✓` no prueba que el modelo haya releído físicamente el campo de Instrucciones personalizadas; acredita la aplicación verificable del régimen conforme a este contrato.
 
-`CI` es obligatorio en cada ciclo sujeto a la metodología y no añade un principio fundamental al SI.
+`CI` y `RA` son obligatorios en cada ciclo sujeto a la metodología y no añaden un principio fundamental al SI.
 
 ## 1. HUD compacto
 
-La información metodológica visible se presenta como un bloque compacto de baja intrusión. Se permite enriquecer la presentación mediante **negritas**, `código` y etiquetas cortas sin introducir campos ni decisiones nuevas. El contrato vigente es `v1.7.6`.
+La información metodológica visible se presenta como un bloque compacto de baja intrusión. Se permite enriquecer la presentación mediante **negritas**, `código` y etiquetas cortas sin introducir campos ni decisiones nuevas. El contrato vigente es `v1.7.7`.
 
 
 ## 1.1 Contrato ejecutable de representación
