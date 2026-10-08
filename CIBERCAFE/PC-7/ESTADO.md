@@ -51,7 +51,7 @@ Resultado inmediato: sin carga anomala observable; mantener y continuar observac
 
 1. RAM operando a 2400 MT/s pese a modulo con especificacion nominal 3200; investigar perfil XMP/DOCP/BIOS antes de cambiar firmware.
 2. Driver NVIDIA instalado 610.47; paquete 617.42 preparado y firmado por NVIDIA, pero la instalacion no se ejecuto durante actividad del usuario.
-3. BIOS 4101 instalada; ASUS 4304 publicada el 2026-08-21 con AGESA ComboV2 PI 1.2.0.12. Actualizacion pendiente de ventana de mantenimiento.
+3. BIOS 4101 instalada; ASUS 4304 disponible, pero `BLOQUEADA-REINICIO` bajo el perfil CIBERCAFE.
 4. Procesos de inicio de Steam/Epic/Riot y otros deben evaluarse por impacto y por necesidad en contexto de cibercafe, nunca eliminarse solo por existir.
 
 
@@ -68,10 +68,18 @@ Resultado inmediato: sin carga anomala observable; mantener y continuar observac
 
 ## Mantenimiento pendiente de alto impacto
 
-- **BIOS 4304:** actualizacion oficial ASUS para PRIME B550M-K; sustituye 4101 y actualiza AGESA. Requiere ventana de mantenimiento y procedimiento de recuperacion.
-- **NVIDIA 617.42 WHQL:** driver Game Ready oficial publicado 2026-10-06; el instalador esta preparado localmente y firmado por NVIDIA. Requiere ventana segura porque reinicia el subsistema grafico.
-- **RAM 3200 MT/s:** el modulo Kingston KF3200C16D4/32GX sigue operando/configurado a 2400 MT/s; requiere investigar DOCP/XMP desde UEFI. No forzar desde Windows.
-- **NTFS Spot Fix:** el volumen C: contiene corrupcion detectada. La herramienta remota actual no dispone de elevacion suficiente para `chkdsk C: /scan`; queda bloqueada la reparacion elevada hasta disponer de contexto administrativo seguro.
+- **BIOS 4304:** disponible para PRIME B550M-K, pero `BLOQUEADA-REINICIO`; no aplicar en CIBERCAFE.
+- **NVIDIA 617.42 WHQL:** paquete oficial preparado y firmado por NVIDIA; `BLOQUEADA-REINICIO` mientras el procedimiento completo no pueda verificarse como live y sin reinicio. No ejecutar por ahora.
+- **RAM 3200 MT/s:** requiere ajuste DOCP/XMP desde UEFI; `BLOQUEADA-REINICIO`. Mantener 2400 MT/s hasta un ámbito que permita cambio de firmware/UEFI.
+- **NTFS Spot Fix:** la reparación online/elevada sigue siendo potencialmente ejecutable si se obtiene elevación sin reboot; la reparación offline queda `BLOQUEADA-REINICIO`.
+
+## Perfil de continuidad CIBERCAFE
+
+- `PRESUPUESTO-REINICIO = 0`.
+- Ninguna accion del proceso puede reiniciar, apagar, resetear o programar reinicio.
+- BIOS/UEFI, firmware, DOCP/XMP y reparaciones offline que exijan reboot se registran como `BLOQUEADA-REINICIO`.
+- Los drivers solo son ejecutables si se demuestra que el procedimiento completo es live, no requiere reboot y no interrumpe al usuario.
+- Una oportunidad bloqueada por reboot no cierra el ciclo; obliga a seguir buscando alternativas live.
 
 ## Reglas de continuidad
 
