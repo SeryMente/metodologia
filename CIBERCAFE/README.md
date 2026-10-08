@@ -41,3 +41,12 @@ No se publica una fila por cada muestra de telemetria.
 `RDC-CUENTA + RDC-DEVICE-ID` identifica el canal RDC concreto de la sesion.
 
 Ambas identidades se relacionan en los eventos, pero no son intercambiables.
+
+
+## Perfil operativo del ámbito
+
+Todas las terminales CIBERCAFE operan por defecto con **`PRESUPUESTO-REINICIO = 0`**.
+
+Esto significa que el proceso de desempeño no reinicia, apaga, resetea ni programa reinicios; tampoco aplica BIOS/UEFI, firmware, reparación offline o cualquier cambio que requiera reboot. Esas oportunidades se conservan como `BLOQUEADA-REINICIO` y no impiden continuar con mejoras que puedan aplicarse en vivo.
+
+Una ventana de mantenimiento CIBERCAFE es exclusivamente **live**. DeepFreeze o un reinicio externo pueden ocurrir fuera del proceso; la continuidad se protege mediante la memoria persistente y `SYNC_FLUSH` cuando exista señal observable suficiente.
