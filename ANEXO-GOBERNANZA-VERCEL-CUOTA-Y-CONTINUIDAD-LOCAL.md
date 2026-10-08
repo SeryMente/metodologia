@@ -152,18 +152,11 @@ Cuando la cuota bloquee una nueva publicación, el estado correcto es:
 
 No debe afirmarse que el URL canónico refleja el `main` actual sin una publicación verificable.
 
-## 11. Regla de no escalamiento por cuentas
+## 11. Regla de no evasión de límites
 
-La continuidad de Vercel **no se obtiene mediante cuentas Vercel alternativas**.
+La continuidad de Vercel no puede utilizar identidades, equipos, proyectos, automatizaciones o configuraciones creadas o utilizadas con el propósito de eludir una restricción del proveedor.
 
-No se debe:
-
-- crear, conservar, documentar o utilizar una cuenta secundaria para ampliar la cuota;
-- alternar identidades o equipos con el propósito de eludir un límite de plataforma;
-- presentar otro proyecto/propietario como mecanismo normal de evasión de la cuota;
-- derivar autoridad de producción de la mera existencia de otra cuenta.
-
-La continuidad prevista por esta metodología se resuelve mediante **reutilización del deployment existente, rollback cuando proceda, desarrollo/ejecución local y posterior publicación legítima cuando la cuota vuelva a permitirla**.
+La continuidad prevista por esta metodología se resuelve mediante **reutilización del deployment existente, rollback cuando proceda, desarrollo/ejecución local y posterior publicación legítima cuando la capacidad vuelva a estar disponible**.
 
 ## 12. Observabilidad del estado de cuota
 
@@ -222,6 +215,6 @@ Las rutas de continuidad que evadan las restricciones del proveedor no forman pa
 - Cubre operaciones de uso, datos, desarrollo, build, preview, production, rollback y acceso remoto: **OK**
 - Evita que una limitación de Vercel bloquee indebidamente las capacidades locales: **OK**
 - No presenta una implementación local como sustituto automático del URL canónico: **OK**
-- No mantiene una estrategia de cuenta Vercel secundaria: **OK**
+- No utiliza mecanismos de evasión de cuota: **OK**
 
 **Conclusión:** el objeto es coherente y apto para ser la referencia transversal de cualquier operación de Vercel bajo esta metodología.
