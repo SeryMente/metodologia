@@ -7,7 +7,9 @@
 ## Formato mínimo
 
 > **PROYECTO / CONV-XX / CXXX**  
-> `SI CARGADO` · **vX.Y.Z — NOMBRE DE VERSIÓN** · COMPLETO · ACTIVO · ÚLTIMO CAMBIO: hace N minutos|horas|días | YYYY-MM-DD  
+> `SI CARGADO` · **vX.Y.Z — NOMBRE DE VERSIÓN** · COMPLETO · ACTIVO · ÚLTIMO CAMBIO: hace N minutos|horas|días | YYYY-MM-DD
+
+**Regla:** esta línea solo puede emitirse después de `F:✓`. Una versión histórica, una versión obtenida del historial o una versión proveniente de un espejo contradictorio nunca puede aparecer aquí como `ACTIVO`.  
 > `METODOLOGÍA CARGADA` · **vX.Y.Z — NOMBRE DE VERSIÓN** · COMPLETA · ACTIVA · ÚLTIMO CAMBIO: hace N minutos|horas|días | YYYY-MM-DD  
 > `ChatGPT` · **CI:** ✓|?|! · **RA:** INICIAL|✓|CORRECTIVO|! · **UBIC:** … · **RDC:** … · **C:** … · **RDC-USO:** … usado / … restante · **S:** … · **F:** ✓|?|! · **K:** ✓|OFF|?|! · **T:** ✓|?|! · **RDC-CNX:** … · **USR:** `fila4`  
 > **RESULTADO:** …  
@@ -17,7 +19,9 @@
 
 Cada ciclo debe adquirir una instantánea fresca mediante `H1 → SI@H1 → H2` e identificarla con versión, nombre y Git blob SHA.
 
-La instantánea normativa de un turno anterior no puede reutilizarse. `F:✓` solo es válido cuando `H1 = H2`; `F:?` = comprobación incompleta o carrera; `F:!` = discordancia u obsolescencia.
+La instantánea normativa de un turno anterior no puede reutilizarse. `F:✓` solo es válido cuando `H1 = H2`, la cabecera activa del SI es estable y su blob SHA coincide; `F:?` = comprobación incompleta o carrera; `F:!` = discordancia, obsolescencia, versión histórica seleccionada o contradicción de identidad normativa.
+
+`F:!` es **fail-closed**: obliga a `ESTADO: BLOQUEADO` o `PENDIENTE`, impide `CI:✓`, impide `RA:INICIAL|✓` y prohíbe ejecutar trabajo sustantivo sujeto a la normativa vigente. `F:?` tampoco permite certificar continuidad hasta completar el snapshot válido.
 
 Cada ciclo debe identificar la instantánea normativa que lo gobierna:
 
@@ -62,7 +66,7 @@ Estados:
 - `RA: CORRECTIVO` = reanclaje correctivo ejecutado para resolver `CI:?` o una condición de continuidad que requirió corrección.
 - `RA: !` = reanclaje fallido o no satisfecho; no permite continuar con trabajo sustantivo sujeto al régimen.
 
-En el primer ciclo de una conversación nueva, `RA: INICIAL` y `CI: ✓` solo pueden declararse cuando el ciclo haya activado el régimen y ejecutado el reanclaje inicial. En los ciclos posteriores, `RA: ✓` o `RA: CORRECTIVO` es obligatorio antes de declarar `CI: ✓` y antes de ejecutar trabajo sustantivo.
+En el primer ciclo de una conversación nueva, `RA: INICIAL` y `CI: ✓` solo pueden declararse cuando el ciclo haya activado el régimen, ejecutado el reanclaje inicial y el snapshot normativo haya cerrado previamente con `F:✓`. Una divergencia `F:!` o una indeterminación `F:?` impide ambas declaraciones. En los ciclos posteriores, `RA: ✓` o `RA: CORRECTIVO` es obligatorio antes de declarar `CI: ✓` y antes de ejecutar trabajo sustantivo.
 
 `CI: ✓` no prueba que el modelo haya releído físicamente el campo de Instrucciones personalizadas; acredita la aplicación verificable del régimen conforme a este contrato.
 
