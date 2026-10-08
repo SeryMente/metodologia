@@ -2,21 +2,21 @@
 
 ## Estado canónico
 
-- **Versión:** v0.12.6
-- **Nombre de versión:** Continuidad de Publicación Vercel por Cuenta Secundaria
+- **Versión:** v0.12.7
+- **Nombre de versión:** Continuidad Persistente de Desempeño por Terminal en Cibercafe
 - **Última actualización:** 2026-10-08
 - **Última actualización canónica:** 2026-10-08
 - **Ámbito:** Todos los proyectos y conversaciones trabajados bajo esta metodología.
 
 ### Narrativa de la versión
 
-**Antes:** la metodología no definía una ruta canónica de continuidad cuando la cuenta primaria de Vercel no podía publicar la versión más vigente del sistema.
+**Antes:** la metodología no conservaba memoria de desempeño por terminal de cibercafe y podía obligar a repetir diagnosticos ya resueltos despues de una sesion efimera o DeepFreeze.
 
-**Cambio:** se incorpora un publicador secundario de Vercel identificado por `blacksheepsup@gmail.com`, subordinado a la cuenta/proyecto primarios y activable solo ante indisponibilidad verificable de la ruta principal.
+**Cambio:** se incorpora un subsistema persistente por `PC-N`, con estado consolidado, log de eventos y sincronizacion hibrida por evento semantico o lote.
 
-**Motivo:** una incidencia de acceso, autenticación, cuota o disponibilidad de la cuenta primaria no debe impedir que el avance más reciente y previamente validado del sistema pueda publicarse y visualizarse.
+**Motivo:** cada terminal debe continuar el trabajo de optimizacion a traves de reinicios y sesiones efimeras sin convertir cada medicion en una llamada RDC ni confundir el cibercafe con una sola computadora.
 
-**Resultado:** existe una ruta de publicación primaria y una ruta de continuidad secundaria, ambas sujetas a la misma validación de código, a la bóveda canónica de variables y a trazabilidad explícita. La cuenta secundaria no adquiere por ello autoridad de producción.
+**Resultado:** el proceso local puede observar de forma continua, mientras el repositorio conserva hardware, baselines, cambios, regresiones y oportunidades por terminal. Las nuevas sesiones recuperan ese conocimiento y revalidan solo lo dinamico o lo que haya cambiado.
 
 ### Registro de versiones
 
@@ -56,6 +56,7 @@
 | 30 | v0.12.4 | Descubrimiento Vivo de Terminal RDC | Se sustituye el modelo de una única sesión RDC global por un registro de identidades con descubrimiento vivo por ciclo. Una conversación nueva enumera dispositivos conectados en las cuentas RDC accesibles, reconcilia con el registro y selecciona la terminal objetivo sin heredar ciegamente una selección de otra conversación. |
 | 31 | v0.12.5 | Enforcement Determinista de Salida | Se consolida el formato de salida como contrato ejecutable: esquema machine-readable, validación estructural exacta, renderer determinista, hash del output y barrera de RELEASE. Un ciclo verificado no puede cerrarse sin un output válido y la liberación devuelve el mismo output validado. Las regresiones de contrato deben fallar automáticamente mediante pruebas y sincronización con KHORA. |
 | 32 | v0.12.6 | Continuidad de Publicación Vercel por Cuenta Secundaria | Se canoniza el fallback de publicación en Vercel mediante la cuenta secundaria `blacksheepsup@gmail.com`, manteniendo la cuenta/proyecto primarios como autoridad. La ruta secundaria solo puede publicar un commit validado, usar la bóveda canónica de variables y registrar cuenta, proyecto, SHA, motivo, timestamp y URL. |
+| 33 | v0.12.7 | Continuidad Persistente de Desempeño por Terminal en Cibercafe | Se canoniza el proceso persistente de liberacion de desempeno por `PC-N`, con HUD de telemetria, memoria persistente por terminal y log de eventos. Se establece sincronizacion hibrida: eventos materiales inmediatos, lotes periodicos y `SYNC_FLUSH` antes de reinicio/DeepFreeze, evitando consumir RDC por cada muestra o repetir trabajo ya resuelto. |
 La tabla es canónica: las versiones futuras deben añadir una fila sin borrar ni reciclar las anteriores. El nombre describe el avance de la versión y no sustituye el título general del sistema o documento.
 
 ## Gobernanza canónica de publicación Vercel
@@ -388,3 +389,20 @@ El dashboard es un instrumento de control, no el objetivo.
 Cuando exista tensión entre extender la metodología y mejorar la sincronización de OGP, debe priorizarse la mejora verificable de OGP siempre que se preserve la trazabilidad mínima y la integridad del benchmark.
 
 La abstracción se extrae de la implementación real de OGP; no la sustituye.
+
+
+## 20. Proceso persistente de liberacion de desempeno en cibercafe
+
+El procedimiento canonico se encuentra en `ANEXO-PROCESO-LIBERACION-DESEMPENO-CIBERCAFE.md`.
+
+En la ubicacion CIBERCAFE, la unidad persistente de continuidad es la terminal individual `PC-N`. El cibercafe nunca se trata como una sola maquina.
+
+La memoria persistente por terminal reside en `CIBERCAFE/PC-N/ESTADO.md` y `CIBERCAFE/PC-N/EVENTOS-YYYY-MM.md`. La sesion local puede ser efimera por DeepFreeze; la memoria del proceso no lo es.
+
+La observacion puede ser continua y de alta frecuencia, pero la persistencia remota es semantica: eventos de cambio, regresion, hardware/driver y cierre se sincronizan inmediatamente; observaciones ordinarias se agregan en lotes; antes de reinicio o restauracion se intenta `SYNC_FLUSH`.
+
+La continuidad exige consultar primero la memoria de `PC-N` y no repetir diagnosticos profundos que ya esten resueltos y sigan siendo validos. Las nuevas observaciones se utilizan para invalidar solo el conocimiento que haya cambiado.
+
+Cuando el proceso se representa en la salida conversacional, cada comentario operativo puede incorporar un HUD compacto de CPU, GPU, VRAM, RAM, disco, temperatura, potencia, oportunidad y accion. El HUD no expone razonamiento interno.
+
+La finalidad es aproximar continuamente cada terminal al maximo desempeno practico sin degradar el trabajo activo, la estabilidad, la seguridad o la recuperabilidad.
