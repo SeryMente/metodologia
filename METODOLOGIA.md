@@ -2,21 +2,21 @@
 
 ## Estado canónico
 
-- **Versión:** v0.12.9
-- **Nombre de versión:** Régimen CIBERCAFE sin Reinicio y Optimización en Sesión
+- **Versión:** v0.13.0
+- **Nombre de versión:** Continuidad de Publicación Vercel por Cuenta Secundaria
 - **Última actualización:** 2026-10-08
 - **Última actualización canónica:** 2026-10-08
 - **Ámbito:** Todos los proyectos y conversaciones trabajados bajo esta metodología.
 
 ### Narrativa de la versión
 
-**Antes:** la metodología ya conservaba memoria de desempeño por `PC-N` y trataba la economía de llamadas RDC como dimensión del buen desempeño, pero el perfil CIBERCAFE todavía no tenía un presupuesto explícito de reinicio ni una regla transversal que separara oportunidades de mantenimiento imposible durante operación en sesión.
+**Antes:** la metodología ya contemplaba continuidad operativa por terminal, economía de observación RDC y un régimen CIBERCAFE sin reinicio, pero la publicación externa dependía de una sola cuenta Vercel y una indisponibilidad de esa cuenta podía impedir incluso visualizar el avance vigente.
 
-**Cambio:** se incorpora un perfil operativo CIBERCAFE con `PRESUPUESTO-REINICIO = 0`: cualquier intervención que requiera reinicio, apagado, reset, entrada a UEFI/BIOS o reparación offline queda bloqueada para esa ubicación. Las oportunidades imposibles en sesión se registran sin impedir la continuación de acciones live.
+**Cambio:** se canoniza una cuenta Vercel secundaria para continuidad de publicación y observación: `blacksheepsup@gmail.com`. La secundaria puede desplegar el commit vigente en un proyecto/dominio no canónico cuando la primaria no esté disponible, sin adquirir autoridad automática sobre producción.
 
-**Motivo:** en un cibercafé, el rendimiento útil incluye no interrumpir la sesión del cliente. El máximo práctico debe buscarse exclusivamente dentro del estado operativo vivo de la terminal, preservando continuidad, disponibilidad y reversibilidad.
+**Motivo:** una contingencia de la cuenta de publicación no debe impedir ver o probar avances, pero tampoco debe arriesgar el dominio canónico ni los datos persistentes de usuarios.
 
-**Resultado:** cada `PC-N` mantiene continuidad después de DeepFreeze, reutiliza hechos ya resueltos, reserva RDC para evidencia/acciones que agreguen valor y opera con presupuesto de reinicio cero. BIOS/UEFI, firmware, cambios que exijan reboot y reparaciones offline pasan a ser oportunidades registradas, no acciones ejecutables en CIBERCAFE.
+**Resultado:** la publicación queda separada en dos planos: autoridad de producción en la cuenta primaria y continuidad de observación en la cuenta secundaria. La persistencia, las migraciones y la promoción a producción permanecen gobernadas explícitamente y no se derivan de la mera indisponibilidad de la cuenta primaria.
 
 ### Registro de versiones
 
@@ -58,6 +58,7 @@
 | 33 | v0.12.7 | Continuidad Persistente de Desempeño por Terminal en Cibercafe | Se canoniza el proceso persistente de liberacion de desempeno por `PC-N`, con HUD de telemetria, memoria persistente por terminal y log de eventos. Se establece sincronizacion hibrida: eventos materiales inmediatos, lotes periodicos y `SYNC_FLUSH` antes de reinicio/DeepFreeze, evitando consumir RDC por cada muestra o repetir trabajo ya resuelto. |
 | 34 | v0.12.8 | Economía RDC y Memoria Endurecida de Desempeño por Terminal | Se convierte la economía de llamadas RDC en criterio explícito de buen desempeño. La memoria por `PC-N` debe conservar estado vigente, verificaciones reutilizables, oportunidades, invalidaciones y cursor de sincronización; el ciclo debe priorizar reutilización y agrupar observaciones para maximizar valor obtenido por llamada RDC. |
 | 35 | v0.12.9 | Régimen CIBERCAFE sin Reinicio y Optimización en Sesión | Se establece `PRESUPUESTO-REINICIO = 0` para el ámbito CIBERCAFE. Ninguna optimización puede provocar, programar o exigir un reinicio. Acciones dependientes de reboot se registran como `BLOQUEADA-REINICIO` y el ciclo continúa con alternativas live. |
+| 36 | v0.13.0 | Continuidad de Publicación Vercel por Cuenta Secundaria | Se canoniza una cuenta Vercel secundaria (`blacksheepsup@gmail.com`) para publicar y visualizar la versión vigente cuando la cuenta primaria no esté disponible. La secundaria usa un proyecto/dominio no canónico y no adquiere autoridad automática sobre producción ni sobre la persistencia de usuarios. |
 La tabla es canónica: las versiones futuras deben añadir una fila sin borrar ni reciclar las anteriores. El nombre describe el avance de la versión y no sustituye el título general del sistema o documento.
 
 ## 1. Convención obligatoria de foliación de ciclos
