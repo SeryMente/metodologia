@@ -47,9 +47,13 @@ Secuencia operativa:
 
 ## Secuencia de arranque
 
-El primer ciclo de una conversación nueva parte del régimen de Instrucciones personalizadas de ChatGPT. Ese ciclo debe establecer su continuidad para los ciclos posteriores; `CI: ✓` solo expresa que las condiciones observables de ese régimen se manifiestan en el ciclo.
+El primer ciclo de una conversación nueva parte del régimen de Instrucciones personalizadas de ChatGPT. Ese ciclo debe aplicar el régimen y ejecutar un **reanclaje inicial obligatorio** que establezca su continuidad para los ciclos posteriores.
 
-Los ciclos posteriores conservan ese régimen y vuelven a ejecutar las verificaciones externas establecidas por él.
+Desde el segundo ciclo, **cada ciclo debe ejecutar un reanclaje de continuidad antes del trabajo sustantivo**. El reanclaje no se hereda por memoria, no se considera consumido por una aplicación anterior y no depende de que el ciclo anterior haya producido `CI: ✓`.
+
+`CI` se calcula de forma independiente en cada ciclo. `CI: ✓` solo expresa que las condiciones observables del régimen se manifiestan en el ciclo; `CI: ?` activa un reanclaje correctivo antes de declarar continuidad satisfecha; `CI: !` exige corregir la contradicción observable antes de continuar con trabajo sustantivo sujeto al régimen.
+
+El reanclaje debe referirse al régimen canónico vigente y no crear un resumen o una copia normativa paralela. Su función es reforzar la continuidad del mismo régimen en cada ciclo.
 
 1. Obtener `H1` de `main`; recuperar el SI exactamente en `H1`; obtener `H2` de `main`; usar la instantánea como fuente única y emitir `F:✓` solo si `H1 = H2` y versión + nombre + blob SHA son coherentes.
 2. Leer `ESTADO-RDC-ACTIVO.md` como registro persistente de identidades conocidas; no tratarlo como selector de terminal actual.

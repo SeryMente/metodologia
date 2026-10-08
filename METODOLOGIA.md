@@ -2,8 +2,8 @@
 
 ## Estado canónico
 
-- **Versión:** v0.14.3
-- **Nombre de versión:** Reanclaje Recursivo del Régimen Personalizado
+- **Versión:** v0.14.4
+- **Nombre de versión:** Enforcement Recursivo del Régimen Personalizado
 - **Última actualización:** 2026-10-08
 - **Última actualización canónica:** 2026-10-08
 - **Ámbito:** Todos los proyectos y conversaciones trabajados bajo esta metodología.
@@ -63,6 +63,7 @@
 | 38 | v0.14.1 | Gate Determinista de Vercel por Caso de Uso | Se hace obligatoria e inmediata la secuencia `LIMITATION-SCAN → DEPENDENCIA-VERCEL → SUFICIENCIA-LOCAL → VÍA DE EJECUCIÓN`, limitando el bloqueo exclusivamente a la fracción del objetivo que requiera materialmente Vercel. |
 | 39 | v0.14.2 | Enforcement Inmediato del Gate Vercel | Se endurece el disparador: la mera mención de Vercel en un hilo de desarrollo activa el gate antes de ejecutar, y la continuidad local pasa a ser la vía obligatoria cuando sea suficiente para alcanzar el objetivo. |
 | 40 | v0.14.3 | Reanclaje Recursivo del Régimen Personalizado | Se operacionaliza la continuidad de las Instrucciones personalizadas mediante activación y reanclaje recursivo desde el primer ciclo, con una premisa de coherencia funcional de horizonte mínimo `N=1`. Cada aplicación observable satisfactoria puede reafirmar el contrato de continuidad sin crear una fuente normativa duplicada. |
+| 41 | v0.14.4 | Enforcement Recursivo del Régimen Personalizado | Se hace obligatorio el reanclaje en cada ciclo antes de trabajo sustantivo, se impide heredar `CI`, se añade reanclaje correctivo para `CI:?` y resolución previa para `CI:!`, y se establece que el contrato de continuidad se renueva por ciclo sin convertirse en una fuente normativa paralela. |
 La tabla es canónica. Las versiones futuras añaden nuevos registros sin reutilizar folios. Una entrada retirada por revisión canónica puede conservar únicamente su identificador y estado de retirada, sin preservar la regla operativa invalidada. El nombre describe el avance de la versión y no sustituye el título general del sistema o documento.
 
 ## 1. Convención obligatoria de foliación de ciclos
@@ -133,29 +134,23 @@ La memoria conversacional no sustituye estas fuentes. Para RDC, el bootstrap con
 
 ### 2.4 Historial mínimo de sesiones RDC
 
-### 2.5 Verificación y reanclaje recursivo del régimen de Instrucciones personalizadas
+### 2.5 Enforcement recursivo del régimen de Instrucciones personalizadas
 
-Las Instrucciones personalizadas de ChatGPT constituyen el punto de arranque del régimen conversacional bajo la premisa operativa adoptada por esta metodología. El primer ciclo de una conversación nueva debe activar dicho régimen y establecer su continuidad para los ciclos siguientes.
+Las Instrucciones personalizadas de ChatGPT constituyen el punto de arranque del régimen conversacional bajo la premisa operativa adoptada por esta metodología. El primer ciclo de una conversación nueva debe activar dicho régimen y ejecutar un **reanclaje inicial obligatorio**.
 
-Como premisa de coherencia funcional con horizonte mínimo `N=1`, la metodología trata la funcionalidad de Instrucciones personalizadas como operativamente significativa bajo la expectativa de que el ciclo inicial constituye al menos una oportunidad efectiva para aplicar la instrucción relativa a la continuidad del propio régimen. Esta es una premisa operacional; no pretende demostrar el mecanismo interno del runtime.
+Como premisa de coherencia funcional con horizonte mínimo `N=1`, la metodología trata la funcionalidad de Instrucciones personalizadas como operativamente significativa bajo la expectativa de que el ciclo inicial constituye al menos una oportunidad efectiva para aplicar la instrucción relativa a la continuidad del propio régimen. Esta es una premisa operacional y no una afirmación sobre el mecanismo interno del runtime.
 
-El primer ciclo no solo activa el régimen: debe realizar un **reanclaje inicial**, reafirmando que el régimen de Instrucciones personalizadas continúa vigente durante toda la conversación y que cada ciclo debe conservarlo y verificar su aplicación observable.
+A partir del primer ciclo, la continuidad deja de ser una acción de una sola vez. **Antes de cualquier trabajo sustantivo, cada ciclo debe ejecutar su propio reanclaje de continuidad.** La obligación no se hereda del ciclo anterior ni se consume por haber sido cumplida previamente.
 
-En los ciclos posteriores, una aplicación observable satisfactoria constituye una nueva oportunidad de **reanclaje recursivo**. En esa oportunidad, el modelo debe volver a someterse explícitamente al mismo régimen, reafirmar su continuidad para los ciclos siguientes y mantener `CI` como comprobación observable. El reanclaje es referencial: no crea una copia autónoma, una versión paralela ni una nueva fuente normativa.
+El reanclaje de cada ciclo debe reafirmar el mismo régimen canónico vigente: las Instrucciones personalizadas siguen siendo condición operativa; el modelo debe someterse al régimen en el ciclo actual y los siguientes; la aplicación debe poder sostenerse de forma observable; y el contrato debe renovarse nuevamente en el siguiente ciclo. El reanclaje es referencial y no crea una copia, versión paralela o fuente normativa adicional.
 
-La recurrencia operativa es:
+Cada ciclo obtiene su propio `CI`. No puede copiarse ni heredarse `CI` desde un ciclo anterior. `CI: ✓` requiere evidencia observable suficiente de aplicación actual. `CI: ?` activa inmediatamente un **reanclaje correctivo** antes de declarar continuidad satisfecha. `CI: !` representa contradicción o incumplimiento observable y obliga a corregir el contexto y completar el reanclaje correctivo antes de continuar con trabajo sustantivo sujeto al régimen.
 
-`ACTIVACIÓN → REANCLAJE → APLICACIÓN → VERIFICACIÓN → REANCLAJE → ...`
+La recurrencia canónica queda definida como:
 
-El contrato de salida incorpora `CI` como indicador operativo:
+`ACTIVACIÓN → REANCLAJE INICIAL → APLICACIÓN → CI → REANCLAJE DEL CICLO → APLICACIÓN → CI → ...`
 
-- `CI: ✓` = condiciones observables del régimen satisfechas durante el ciclo.
-- `CI: ?` = evidencia insuficiente para sostener su aplicación.
-- `CI: !` = contradicción o incumplimiento observable.
-
-`CI` se verifica por sus manifestaciones observables y no por una afirmación sobre el mecanismo interno de ChatGPT. El estado positivo no demuestra que el campo de Instrucciones personalizadas haya sido físicamente releído; demuestra que el ciclo satisface el contrato de continuidad establecido por ese régimen.
-
-`CI` y el reanclaje son procedimientos operativos. No constituyen nuevos principios fundamentales ni sustituyen la autoridad de la fuente canónica del SI.
+`CI` y el reanclaje son mecanismos de continuidad; no constituyen nuevos principios fundamentales ni sustituyen la autoridad de `SI-METACOGNITIVO.md`.
 
 
 
@@ -203,7 +198,7 @@ El sistema canónico de instrucciones que gobierna la interpretación, decisión
 
 `SI-METACOGNITIVO.md`
 
-La versión canónica actual del SI es **v1.6.11 — Enforcement Determinista de Salida** y contiene los principios canónicos vigentes, cada uno con su **índice de preponderancia** dentro de la escala `0–1`.
+La versión canónica actual del SI es **v1.6.17 — Enforcement Recursivo del Régimen Personalizado** y contiene los principios canónicos vigentes, cada uno con su **índice de preponderancia** dentro de la escala `0–1`.
 
 La metodología mantiene separadas las normas fundamentales de sus desarrollos, procedimientos, herramientas y mecanismos de implementación.
 \n\n## 6. Contexto de ejecución y salida por ciclo\n\nEl contrato canonico se encuentra en `ANEXO-CONTEXTO-EJECUCION-Y-SALIDA-CICLO.md`. Su aplicacion es ubicua en todos los ciclos sujetos a la metodologia e integra plataforma, ubicacion persistente, estado y cuenta RDC, uso mensual disponible, identidad Windows operativa y, cuando corresponda, identidad administrativa. Los detalles de formato, fuentes y perfiles por ubicacion permanecen en el anexo y no se elevan al nivel del SI.
