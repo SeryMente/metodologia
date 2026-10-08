@@ -2,7 +2,7 @@
 
 ## Estado canónico
 
-- **Versión:** v0.14.5
+- **Versión:** v0.14.6
 - **Nombre de versión:** Contrato Visible de Reanclaje
 - **Última actualización:** 2026-10-08
 - **Última actualización canónica:** 2026-10-08
@@ -17,6 +17,8 @@
 **Motivo:** una cuota de publicación agotada no debe interpretarse como indisponibilidad total de Cora ni debe generar mecanismos de evasión del proveedor. El sistema necesita distinguir desarrollo/uso, datos, build, preview, production y URL canónico.
 
 **Resultado:** la metodología determina por operación hasta dónde afecta cada limitación de Vercel, qué parte del objetivo depende realmente de la plataforma, qué puede ejecutarse localmente y qué debe esperar a una publicación legítima. El gate es de aplicación inmediata en cualquier hilo de desarrollo que entre en ámbito Vercel.
+
+**Cierre de bootstrap:** se endurece el arranque de conversación nueva para que la identidad activa del SI proceda exclusivamente de la cabecera del snapshot exacto de `main`; una declaración histórica o contradictoria en la metodología, bootstrap o memoria nunca puede sobreescribirla ni habilitar continuidad.
 
 ### Registro de versiones
 
@@ -65,6 +67,7 @@
 | 40 | v0.14.3 | Reanclaje Recursivo del Régimen Personalizado | Se operacionaliza la continuidad de las Instrucciones personalizadas mediante activación y reanclaje recursivo desde el primer ciclo, con una premisa de coherencia funcional de horizonte mínimo `N=1`. Cada aplicación observable satisfactoria puede reafirmar el contrato de continuidad sin crear una fuente normativa duplicada. |
 | 41 | v0.14.4 | Enforcement Recursivo del Régimen Personalizado | Se hace obligatorio el reanclaje en cada ciclo antes de trabajo sustantivo, se impide heredar `CI`, se añade reanclaje correctivo para `CI:?` y resolución previa para `CI:!`, y se establece que el contrato de continuidad se renueva por ciclo sin convertirse en una fuente normativa paralela. |
 | 42 | v0.14.5 | Contrato Visible de Reanclaje | Se incorpora `RA` al HUD y al schema del contrato de salida `v1.7.7`, haciendo visible el estado del reanclaje obligatorio de cada ciclo y sincronizando los anexos de ChatGPT que describen la salida canónica. |
+| 43 | v0.14.6 | Bootstrap Fail-Closed y Reconciliación de Identidad Normativa | Se corrige la dependencia de arranque que permitía que una versión histórica del SI reapareciera como vigente; la Metodología pasa a tratar la cabecera del snapshot exacto del SI como única identidad activa y bloquea cualquier contradicción antes del reanclaje o la ejecución sustantiva. |
 La tabla es canónica. Las versiones futuras añaden nuevos registros sin reutilizar folios. Una entrada retirada por revisión canónica puede conservar únicamente su identificador y estado de retirada, sin preservar la regla operativa invalidada. El nombre describe el avance de la versión y no sustituye el título general del sistema o documento.
 
 ## 1. Convención obligatoria de foliación de ciclos
@@ -187,6 +190,8 @@ Las identidades del SI y de la Metodología son independientes y no deben interc
 
 Cada ciclo debe adquirir el SI con doble lectura de `main`: `H1` → recuperar `SI-METACOGNITIVO.md` exactamente en `H1` → `H2`. Solo hay `F:✓` cuando `H1 = H2` y versión + nombre + blob SHA corresponden a la instantánea de `H1`. No se aceptan lecturas de `main` sin SHA exacto, cachés no demostradas ni copias de turnos anteriores. Si `H1 ≠ H2` o falla cualquier comprobación, `F:✓` está prohibido.
 
+La **identidad activa** del SI se toma exclusivamente de los campos `Versión` y `Nombre de versión` de la cabecera del snapshot exacto. El historial interno y los espejos documentales no son fuentes de autoridad. Una discrepancia entre la cabecera activa y cualquier espejo de versión vigente convierte el ciclo en `F:!` y bloquea el trabajo sustantivo hasta reconciliación.
+
 ## 4.1 Gate de ejecución cognitiva
 
 Thinking es la ventana preferente de ejecución de la cascada normativa cuando está disponible; el comportamiento adaptativo y el contrato visible están definidos en `ANEXO-GATE-THINKING-CHATGPT.md`.
@@ -199,7 +204,7 @@ El sistema canónico de instrucciones que gobierna la interpretación, decisión
 
 `SI-METACOGNITIVO.md`
 
-La versión canónica actual del SI es **v1.6.17 — Enforcement Recursivo del Régimen Personalizado** y contiene los principios canónicos vigentes, cada uno con su **índice de preponderancia** dentro de la escala `0–1`.
+La versión activa del SI para un ciclo **no se deriva de esta línea ni de ninguna otra declaración espejo**. Debe copiarse exclusivamente de la cabecera de `SI-METACOGNITIVO.md` recuperada en la instantánea exacta de `main`. La cabecera canónica actual es **v1.6.19 — Bootstrap Fail-Closed y Reanclaje Visible**. Si la versión o el nombre declarados por la Metodología difieren del snapshot activo del SI, existe una contradicción normativa y el ciclo debe quedar bloqueado con `F:!` hasta reconciliarla.
 
 La metodología mantiene separadas las normas fundamentales de sus desarrollos, procedimientos, herramientas y mecanismos de implementación.
 \n\n## 6. Contexto de ejecución y salida por ciclo\n\nEl contrato canonico se encuentra en `ANEXO-CONTEXTO-EJECUCION-Y-SALIDA-CICLO.md`. Su aplicacion es ubicua en todos los ciclos sujetos a la metodologia e integra plataforma, ubicacion persistente, estado y cuenta RDC, uso mensual disponible, identidad Windows operativa y, cuando corresponda, identidad administrativa. Los detalles de formato, fuentes y perfiles por ubicacion permanecen en el anexo y no se elevan al nivel del SI.

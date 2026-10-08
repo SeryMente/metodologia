@@ -23,13 +23,31 @@ La limitación se busca primero; la necesidad real de Vercel se determina segund
 
 ### Frescura normativa obligatoria
 
-El bootstrap debe usar el `SI-METACOGNITIVO.md` recuperado desde `main` como fuente activa. Si la copia recuperada identifica una versión anterior a la vigente publicada en `main`, esa copia se considera **HISTÓRICA/OBSOLETA** y no puede utilizarse para decidir bloqueos. Debe refrescarse la fuente antes de aplicar cualquier gate de Thinking o KHORA.
+El bootstrap debe usar el `SI-METACOGNITIVO.md` recuperado desde `main` como fuente activa. La **cabecera `Versión` + `Nombre de versión` de ese snapshot exacto es la única identidad activa del SI**. El historial de versiones del archivo y cualquier declaración de versión procedente de Metodología, anexos, memoria conversacional o respuestas previas no puede sustituirla.
+
+Si la copia recuperada identifica una versión anterior a la publicada en `main`, o si cualquier espejo documental declara como vigente una versión/nombre distintos de la cabecera activa, la copia se considera **HISTÓRICA/OBSOLETA o CONTRADICTORIA**. Debe refrescarse/reconciliarse antes de continuar. Ese estado no puede utilizarse para satisfacer `CI`, `RA`, `F` ni para ejecutar trabajo sustantivo.
 
 **PRECONDICION DE ARRANQUE:** una conversacion nueva debe consumir este bootstrap y `ESTADO-RDC-ACTIVO.md` y, cuando RDC sea relevante, realizar descubrimiento vivo mediante el proveedor RDC antes de seleccionar una terminal. Un registro persistente no se hereda como selector actual de terminal.
 
 La memoria de una conversacion no es la fuente global. El repositorio de la metodologia es la fuente persistente.
 
-La verificación del SI es **por ciclo y atómica**. Cada ciclo debe leer `main` como `H1`, recuperar `SI-METACOGNITIVO.md` exactamente en `H1`, volver a leer `main` como `H2` y aceptar `F:✓` solo si `H1 = H2` y versión + nombre + blob SHA coinciden. El bootstrap nunca sustituye esta comprobación ni permite reutilizar caché o copias previas.
+La verificación del SI es **por ciclo y atómica**. Cada ciclo debe leer `main` como `H1`, recuperar `SI-METACOGNITIVO.md` exactamente en `H1`, volver a leer `main` como `H2` y aceptar `F:✓` solo si `H1 = H2`, la versión + nombre proceden de la **cabecera activa** y el blob SHA coincide. El bootstrap nunca sustituye esta comprobación ni permite reutilizar caché o copias previas.
+
+### Gate de arranque fail-closed
+
+La conversación nueva no puede presentar el SI como `CARGADO`, activar el reanclaje inicial ni ejecutar trabajo sustantivo hasta cerrar esta secuencia:
+
+`H1 → SI@H1 → H2 → CABECERA ACTIVA → CONSISTENCIA DE ESPEJOS → F:✓ → REANCLAJE INICIAL`
+
+Reglas:
+1. La cabecera activa del SI es la autoridad única sobre su versión/nombre del ciclo.
+2. Una aparición de una versión dentro del historial no es evidencia de vigencia.
+3. Un espejo contradictorio en Metodología, bootstrap o anexos no puede elevarse a autoridad; debe generar `F:!`.
+4. `F:!` o `F:?` impide `CI:✓` y `RA:INICIAL|✓`; el ciclo queda BLOQUEADO/PENDIENTE de una adquisición válida.
+5. La frase `SI CARGADO` queda reservada para un snapshot que haya superado H1/H2, identidad activa y blob SHA. No se permite mostrar una versión histórica como si fuera la vigente.
+6. Si la ruta de recuperación disponible no demuestra el SHA exacto de `main`, debe tratarse como evidencia insuficiente, no como frescura válida.
+
+Esta barrera existe precisamente para impedir que un estado histórico reaparezca como norma activa al abrir una conversación nueva.
 
 Para RDC, `ESTADO-RDC-ACTIVO.md` es el registro persistente de identidades conocidas y ciclos de vida. No es la fuente de verdad de la presencia actual de dispositivos.
 
@@ -47,7 +65,7 @@ Secuencia operativa:
 
 ## Secuencia de arranque
 
-El primer ciclo de una conversación nueva parte del régimen de Instrucciones personalizadas de ChatGPT. Ese ciclo debe aplicar el régimen y ejecutar un **reanclaje inicial obligatorio** que establezca su continuidad para los ciclos posteriores.
+El primer ciclo de una conversación nueva parte del régimen de Instrucciones personalizadas de ChatGPT **solo después de cerrar el gate de frescura/identidad normativa**. Ese ciclo debe aplicar el régimen y ejecutar un **reanclaje inicial obligatorio** que establezca su continuidad para los ciclos posteriores. Una adquisición histórica, incompleta o contradictoria no satisface el punto de activación.
 
 Desde el segundo ciclo, **cada ciclo debe ejecutar un reanclaje de continuidad antes del trabajo sustantivo**. El reanclaje no se hereda por memoria, no se considera consumido por una aplicación anterior y no depende de que el ciclo anterior haya producido `CI: ✓`.
 
@@ -55,7 +73,7 @@ Desde el segundo ciclo, **cada ciclo debe ejecutar un reanclaje de continuidad a
 
 El reanclaje debe referirse al régimen canónico vigente y no crear un resumen o una copia normativa paralela. Su función es reforzar la continuidad del mismo régimen en cada ciclo.
 
-1. Obtener `H1` de `main`; recuperar el SI exactamente en `H1`; obtener `H2` de `main`; usar la instantánea como fuente única y emitir `F:✓` solo si `H1 = H2` y versión + nombre + blob SHA son coherentes.
+1. Obtener `H1` de `main`; recuperar el SI exactamente en `H1`; obtener `H2` de `main`; leer primero la cabecera activa `Versión` + `Nombre de versión`; comparar después los espejos documentales; usar la instantánea como fuente única y emitir `F:✓` solo si `H1 = H2`, la identidad de la cabecera es estable y versión + nombre + blob SHA son coherentes con esa instantánea.
 2. Leer `ESTADO-RDC-ACTIVO.md` como registro persistente de identidades conocidas; no tratarlo como selector de terminal actual.
 3. Leer `ANEXO-GATE-CONTEXTO-OPERATIVO-FAIL-CLOSED.md` para aplicar el gate.
 4. Cuando RDC sea relevante, descubrir en vivo los dispositivos ONLINE en todas las cuentas RDC accesibles y reconciliarlos con el registro persistente.
