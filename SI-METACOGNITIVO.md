@@ -1,15 +1,15 @@
 # Sistema de Instrucciones Metacognitivas
 
 **Estado:** CANÓNICO
-**Versión:** v1.6.12
-**Nombre de versión:** Continuidad de Publicación Vercel por Cuenta Secundaria
+**Versión:** v1.6.11
+**Nombre de versión:** Enforcement Determinista de Salida
 
 > **Corrección canónica:** `THINKING` es una ventana preferente, no una precondición bloqueante. La ausencia de señal de Thinking y la indisponibilidad de KHORA no bloquean por sí mismas la salida; se reflejan en `T` y `K` respectivamente.
 **Última actualización canónica:** 2026-10-08
 **Fecha:** 2026-10-08
 **Ámbito:** Gobierno metacognitivo del modelo en tareas sujetas a este sistema.
 
-> **Regla de frescura canónica:** una copia que identifique como vigente cualquier versión anterior a `v1.6.12` es histórica, no normativa. Debe volver a consultar esta ruta canónica antes de aplicar gates de Thinking/KHORA.
+> **Regla de frescura canónica:** una copia que identifique como vigente cualquier versión anterior a `v1.6.11` es histórica, no normativa. Debe volver a consultar esta ruta canónica antes de aplicar gates de Thinking/KHORA.
 
 ## 0. Registro de versiones
 
@@ -33,7 +33,6 @@
 | 16 | v1.6.9 | Verificación del Régimen Personalizado | Se establece como procedimiento operativo que el primer ciclo de una conversación nueva activa el régimen de Instrucciones personalizadas y establece su continuidad; los ciclos posteriores deben conservarlo. La verificación de continuidad se expresa mediante `CI` dentro del contrato de salida, sin pretender demostrar acceso introspectivo al mecanismo interno de la plataforma. |
 | 17 | v1.6.10 | Descubrimiento Vivo de Terminales RDC | Se corrige el modelo de continuidad RDC: el estado persistente deja de representar una única sesión global; registra identidades conocidas y su historial, mientras la fuente RDC en vivo determina en cada ciclo qué dispositivos están actualmente conectados. Una conversación nueva debe descubrir y reconciliar el conjunto observable antes de seleccionar la terminal objetivo, manteniendo separadas la ubicación física, la terminal y la conversación. |
 | 18 | v1.6.11 | Enforcement Determinista de Salida | Se consolida el contrato de salida como invariante operativa: el formato vigente es ejecutable, debe validarse de forma exacta antes de VERIFIED, y RELEASE solo puede liberar el mismo output validado y hasheado. La aplicación observable del régimen de Instrucciones personalizadas queda representada mediante CI, sin atribuir a la plataforma una lectura introspectiva del campo interno. |
-| 19 | v1.6.12 | Continuidad de Publicación Vercel por Cuenta Secundaria | Se canoniza una ruta de continuidad para publicaciones en Vercel: la cuenta/proyecto primario mantiene la autoridad principal y una cuenta secundaria identificada por `blacksheepsup@gmail.com` puede publicar el commit validado más reciente cuando la principal no esté disponible. El fallback no sustituye la trazabilidad, no autoriza secretos en el repositorio y debe conservar cuenta, proyecto, SHA, motivo y URL del despliegue. |
 
 La tabla es parte del canon. Cada nueva versión debe añadir una fila sin borrar ni reutilizar las anteriores. El nombre de versión es específico de esa versión y no sustituye el título general del sistema.
 
@@ -309,29 +308,6 @@ La secuencia mínima de arranque es:
 La Metodología y sus anexos desarrollan procedimientos, contexto, mecanismos y fuentes de continuidad; no añaden principios fundamentales al SI. Una conversación nueva no debe depender de la memoria de una conversación anterior cuando la información correspondiente esté canonizada en el repositorio.
 
 El bootstrap no constituye una tercera capa normativa: es un anexo operativo que señala las fuentes persistentes que deben consultarse. La autoridad normativa continúa residiendo en los principios de este SI y la autoridad procedimental en la Metodología y sus anexos.
-
-### 5.0.7 Continuidad canónica de publicación en Vercel
-
-Cuando un ciclo requiera publicar una aplicación en Vercel, la publicación debe utilizar primero la cuenta y el proyecto primarios definidos por el proyecto.
-
-Si la cuenta primaria no está disponible para publicar —por falta de acceso, autenticación, cuota, incidencia operativa o indisponibilidad verificable— el ciclo puede activar el **publicador secundario de Vercel**:
-
-- **Cuenta secundaria canónica:** `blacksheepsup@gmail.com`.
-- **Función:** continuidad de publicación y visualización de la versión más vigente del sistema.
-- **Autoridad:** secundaria durante la contingencia; la primaria conserva la autoridad canónica y debe recuperarse cuando vuelva a estar disponible.
-- **Fuente:** solo un commit del repositorio que haya superado las validaciones exigidas por el ciclo. No se permite desplegar un árbol sucio, una copia manual o una versión histórica solo por estar disponible en la máquina.
-- **Configuración:** las variables y secretos deben proceder de la bóveda canónica de variables o de la configuración segura equivalente del proyecto. Nunca se introducen tokens, contraseñas o secretos de Vercel en archivos versionados de la metodología.
-- **Trazabilidad mínima obligatoria:** cuenta publicadora, proyecto/equipo Vercel, commit SHA, estado de validación, motivo de activación del fallback, timestamp y URL resultante.
-- **Alcance:** la cuenta secundaria permite mantener un artefacto públicamente inspeccionable del avance, pero no cambia por sí misma el proyecto, dominio o autoridad de producción primarios.
-- **Cierre de contingencia:** cuando la cuenta primaria vuelva a estar disponible, el siguiente despliegue canónico debe volver a la ruta primaria. La publicación secundaria permanece como evidencia histórica hasta que su retención deje de ser útil.
-
-Secuencia canónica:
-
-`VALIDAR CÓDIGO → IDENTIFICAR SHA → INTENTAR VERCEL PRIMARIO → SI NO DISPONIBLE, ACTIVAR SECUNDARIO → PUBLICAR → LEER DEPLOYMENT → REGISTRAR TRAZABILIDAD`
-
-La indisponibilidad de la cuenta primaria no autoriza a degradar la validación del código. El objetivo del fallback es continuidad de publicación, no bypass de controles.
-
-Este procedimiento pertenece al nivel operativo y no añade un principio fundamental al SI.
 
 ### 5.0.5 Verificación del régimen de Instrucciones personalizadas
 
