@@ -26,13 +26,13 @@
 | WIN-OPERATIVO | fila4 |
 | WIN-ADMIN | central\\mantenimientorci |
 | WIN-EFECTIVO-RDC | central\\mantenimientorci |
-| RDC-REQUERIDA | PENDIENTE POR CICLO; NO SE PRESUPONE ACTIVA |
-| CONTEXTO-VERIFICACION | VERIFICADO-ACTIVO · SUSTITUCION PUBLICADA Y READ-BACK PENDIENTE |
+| RDC-REQUERIDA | REQUERIDA PARA ESTE CICLO · HOST REAL |
+| CONTEXTO-VERIFICACION | VERIFICADO-ACTIVO · SUSTITUCION PUBLICADA Y READ-BACK VERIFICADO |
 | PERFIL-UBICACION | CECEQ · COMPLETO |
 | IDENTIDAD-OPERATIVA | fila4 · PERFIL CECEQ; NO IMPLICA SESION RDC SEPARADA |
 | RDC-OBSERVABILIDAD | COHERENTE · PROVIDER REPORTA DEVICE ONLINE Y PING VERIFICADO |
 | RDC-RECUPERACION | RESUELTA · COMANDO CANONICO: RDC-REINSTANTIAR |
-| RDC-RECUPERACION-ESTADO | HANDSHAKE VALIDADO · PUBLICACION EN CURSO |
+| RDC-RECUPERACION-ESTADO | RESUELTA · HANDSHAKE VALIDADO · ESTADO GLOBAL PUBLICADO · READ-BACK VERIFICADO |
 
 ## Regla de lectura
 
@@ -48,7 +48,7 @@ Una nueva sesion verificada debe sustituir este registro y actualizar su marca t
 
 ## Ultimo handshake validado
 
-**RDC-HANDSHAKE:** recibido y validado desde el Remote Device. La identidad persistente vigente pasa a ser la sesión RDC-20261008-0002 y la conectividad quedó confirmada por el proveedor.
+**RDC-HANDSHAKE:** recibido y validado desde el Remote Device. La identidad persistente vigente es la sesión RDC-20261008-0002 y la conectividad quedó confirmada por el proveedor.
 
 - Estado del dispositivo: Online
 - Sesion: Device verified / ready
