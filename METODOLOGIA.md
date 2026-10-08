@@ -2,8 +2,8 @@
 
 ## Estado canónico
 
-- **Versión:** v0.14.4
-- **Nombre de versión:** Enforcement Recursivo del Régimen Personalizado
+- **Versión:** v0.14.5
+- **Nombre de versión:** Contrato Visible de Reanclaje
 - **Última actualización:** 2026-10-08
 - **Última actualización canónica:** 2026-10-08
 - **Ámbito:** Todos los proyectos y conversaciones trabajados bajo esta metodología.
@@ -64,6 +64,7 @@
 | 39 | v0.14.2 | Enforcement Inmediato del Gate Vercel | Se endurece el disparador: la mera mención de Vercel en un hilo de desarrollo activa el gate antes de ejecutar, y la continuidad local pasa a ser la vía obligatoria cuando sea suficiente para alcanzar el objetivo. |
 | 40 | v0.14.3 | Reanclaje Recursivo del Régimen Personalizado | Se operacionaliza la continuidad de las Instrucciones personalizadas mediante activación y reanclaje recursivo desde el primer ciclo, con una premisa de coherencia funcional de horizonte mínimo `N=1`. Cada aplicación observable satisfactoria puede reafirmar el contrato de continuidad sin crear una fuente normativa duplicada. |
 | 41 | v0.14.4 | Enforcement Recursivo del Régimen Personalizado | Se hace obligatorio el reanclaje en cada ciclo antes de trabajo sustantivo, se impide heredar `CI`, se añade reanclaje correctivo para `CI:?` y resolución previa para `CI:!`, y se establece que el contrato de continuidad se renueva por ciclo sin convertirse en una fuente normativa paralela. |
+| 42 | v0.14.5 | Contrato Visible de Reanclaje | Se incorpora `RA` al HUD y al schema del contrato de salida `v1.7.7`, haciendo visible el estado del reanclaje obligatorio de cada ciclo y sincronizando los anexos de ChatGPT que describen la salida canónica. |
 La tabla es canónica. Las versiones futuras añaden nuevos registros sin reutilizar folios. Una entrada retirada por revisión canónica puede conservar únicamente su identificador y estado de retirada, sin preservar la regla operativa invalidada. El nombre describe el avance de la versión y no sustituye el título general del sistema o documento.
 
 ## 1. Convención obligatoria de foliación de ciclos
