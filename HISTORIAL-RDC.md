@@ -21,6 +21,7 @@ Múltiples identidades pueden estar ACTIVAS simultáneamente cuando corresponden
 | RDC-20261007-0001 | 2026-10-07T20:31:30.2613435Z | 2026-10-08T16:22:08.620Z* | blacksheepsup@gmail.com | PC10RCIF4EI4 | 7fabbc1d-7c0d-4400-bd31-88b3b4229286 | CECEQ | SUSTITUIDA | RDC-20261008-0001 | Nueva sesión verificada en PC-7; dispositivo anterior apagado y posteriormente observado OFFLINE |
 | RDC-20261008-0001 | 2026-10-08T16:20:35.092Z | 2026-10-08T17:41:23.258Z | blacksheepsup@gmail.com | PC-7 | 5165397f-3ccf-4c7d-939f-821526119101 | CECEQ | SUSTITUIDA | RDC-20261008-0002 | Sustituida por nueva sesión verificada en el mismo equipo; nuevo device_id y ping verificado |
 | RDC-20261008-0002 | 2026-10-08T17:41:23.258Z | — | blacksheepsup@gmail.com | PC-7 | 418659b7-64bc-4cb2-a2cb-ed8fd83c5005 | CECEQ | ACTIVA | — | Nueva sesión verificada; device online y ping verificado |
+| RDC-20261008-0003 | 2026-10-08T19:21:57.319Z | — | blacksheepsup@gmail.com | PC-7 | e5a4159e-cb32-4ba6-89d6-3a2083a49893 | NO DETERMINADA | ACTIVA | — | Nueva conexión verificada; identidad independiente; ping verificado |
 
 * Hora de inicio del shutdown del dispositivo anterior; la consulta posterior confirmó OFFLINE.
 
