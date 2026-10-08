@@ -14,7 +14,7 @@
 
 **Cambio:** se canoniza `ANEXO-GOBERNANZA-VERCEL-CUOTA-Y-CONTINUIDAD-LOCAL.md` como objeto estable para cruzar los casos de uso de Cora con la cuota de deployments de Vercel, la reutilización de deployments existentes, el rollback y la ejecución local.
 
-**Motivo:** una cuota de publicación agotada no debe interpretarse como indisponibilidad total de Cora ni debe generar mecanismos de evasión por cuentas alternativas. El sistema necesita distinguir desarrollo/uso, datos, build, preview, production y URL canónico.
+**Motivo:** una cuota de publicación agotada no debe interpretarse como indisponibilidad total de Cora ni debe generar mecanismos de evasión del proveedor. El sistema necesita distinguir desarrollo/uso, datos, build, preview, production y URL canónico.
 
 **Resultado:** la metodología determina por operación hasta dónde afecta la cuota, qué puede continuar sobre un deployment existente, qué puede desplazarse a una instancia local y qué debe esperar a una publicación legítima. El objeto queda fechado el 2026-10-08 y preparado para actualizarse cuando cambie la documentación oficial de Vercel.
 
