@@ -2,21 +2,21 @@
 
 ## Estado canónico
 
-- **Versión:** v0.13.0
-- **Nombre de versión:** Continuidad de Publicación Vercel por Cuenta Secundaria
+- **Versión:** v0.14.0
+- **Nombre de versión:** Gobernanza de Cuota Vercel y Continuidad Local
 - **Última actualización:** 2026-10-08
 - **Última actualización canónica:** 2026-10-08
 - **Ámbito:** Todos los proyectos y conversaciones trabajados bajo esta metodología.
 
 ### Narrativa de la versión
 
-**Antes:** la metodología ya contemplaba continuidad operativa por terminal, economía de observación RDC y un régimen CIBERCAFE sin reinicio, pero la publicación externa dependía de una sola cuenta Vercel y una indisponibilidad de esa cuenta podía impedir incluso visualizar el avance vigente.
+**Antes:** la metodología necesitaba tratar Vercel como un entorno de publicación sujeto a límites operativos, pero la continuidad estaba modelada alrededor de una contingencia por identidad de publicación.
 
-**Cambio:** se canoniza una cuenta Vercel secundaria para continuidad de publicación y observación: `blacksheepsup@gmail.com`. La secundaria puede desplegar el commit vigente en un proyecto/dominio no canónico cuando la primaria no esté disponible, sin adquirir autoridad automática sobre producción.
+**Cambio:** se canoniza `ANEXO-GOBERNANZA-VERCEL-CUOTA-Y-CONTINUIDAD-LOCAL.md` como objeto estable para cruzar los casos de uso de Cora con la cuota de deployments de Vercel, la reutilización de deployments existentes, el rollback y la ejecución local.
 
-**Motivo:** una contingencia de la cuenta de publicación no debe impedir ver o probar avances, pero tampoco debe arriesgar el dominio canónico ni los datos persistentes de usuarios.
+**Motivo:** una cuota de publicación agotada no debe interpretarse como indisponibilidad total de Cora ni debe generar mecanismos de evasión por cuentas alternativas. El sistema necesita distinguir desarrollo/uso, datos, build, preview, production y URL canónico.
 
-**Resultado:** la publicación queda separada en dos planos: autoridad de producción en la cuenta primaria y continuidad de observación en la cuenta secundaria. La persistencia, las migraciones y la promoción a producción permanecen gobernadas explícitamente y no se derivan de la mera indisponibilidad de la cuenta primaria.
+**Resultado:** la metodología determina por operación hasta dónde afecta la cuota, qué puede continuar sobre un deployment existente, qué puede desplazarse a una instancia local y qué debe esperar a una publicación legítima. El objeto queda fechado el 2026-10-08 y preparado para actualizarse cuando cambie la documentación oficial de Vercel.
 
 ### Registro de versiones
 
@@ -58,8 +58,9 @@
 | 33 | v0.12.7 | Continuidad Persistente de Desempeño por Terminal en Cibercafe | Se canoniza el proceso persistente de liberacion de desempeno por `PC-N`, con HUD de telemetria, memoria persistente por terminal y log de eventos. Se establece sincronizacion hibrida: eventos materiales inmediatos, lotes periodicos y `SYNC_FLUSH` antes de reinicio/DeepFreeze, evitando consumir RDC por cada muestra o repetir trabajo ya resuelto. |
 | 34 | v0.12.8 | Economía RDC y Memoria Endurecida de Desempeño por Terminal | Se convierte la economía de llamadas RDC en criterio explícito de buen desempeño. La memoria por `PC-N` debe conservar estado vigente, verificaciones reutilizables, oportunidades, invalidaciones y cursor de sincronización; el ciclo debe priorizar reutilización y agrupar observaciones para maximizar valor obtenido por llamada RDC. |
 | 35 | v0.12.9 | Régimen CIBERCAFE sin Reinicio y Optimización en Sesión | Se establece `PRESUPUESTO-REINICIO = 0` para el ámbito CIBERCAFE. Ninguna optimización puede provocar, programar o exigir un reinicio. Acciones dependientes de reboot se registran como `BLOQUEADA-REINICIO` y el ciclo continúa con alternativas live. |
-| 36 | v0.13.0 | Continuidad de Publicación Vercel por Cuenta Secundaria | Se canoniza una cuenta Vercel secundaria (`blacksheepsup@gmail.com`) para publicar y visualizar la versión vigente cuando la cuenta primaria no esté disponible. La secundaria usa un proyecto/dominio no canónico y no adquiere autoridad automática sobre producción ni sobre la persistencia de usuarios. |
-La tabla es canónica: las versiones futuras deben añadir una fila sin borrar ni reciclar las anteriores. El nombre describe el avance de la versión y no sustituye el título general del sistema o documento.
+| 36 | v0.13.0 | Versión retirada | Entrada histórica retirada del canon operativo; no contiene reglas vigentes. |
+| 37 | v0.14.0 | Gobernanza de Cuota Vercel y Continuidad Local | Se canoniza el objeto `ANEXO-GOBERNANZA-VERCEL-CUOTA-Y-CONTINUIDAD-LOCAL.md`, se cruza la cuota de deployments con los casos de uso de Cora y se establece la ejecución local como continuidad legítima cuando no sea necesario modificar el URL canónico. |
+La tabla es canónica. Las versiones futuras añaden nuevos registros sin reutilizar folios. Una entrada retirada por revisión canónica puede conservar únicamente su identificador y estado de retirada, sin preservar la regla operativa invalidada. El nombre describe el avance de la versión y no sustituye el título general del sistema o documento.
 
 ## 1. Convención obligatoria de foliación de ciclos
 
@@ -465,3 +466,55 @@ Un reinicio externo, DeepFreeze o reset administrado puede ocurrir por razones a
 ### Ideal práctico del perfil
 
 El **absoluto ideal CIBERCAFE** es el máximo desempeño seguro, estable, recuperable y observable que pueda alcanzarse **sin reiniciar la terminal y sin degradar el trabajo activo**. La existencia de una mejora que requiere reboot no permite declarar ese objetivo inalcanzable mientras queden alternativas live por investigar.
+## 23. Gobernanza operativa de Vercel
+
+Cuando una tarea de cualquier proyecto sujeto a esta metodología utilice Vercel, el modelo debe consultar antes de ejecutar `ANEXO-GOBERNANZA-VERCEL-CUOTA-Y-CONTINUIDAD-LOCAL.md`.
+
+La clasificación mínima es:
+
+`CONSUMO EXISTENTE | DATOS | LOCAL | BUILD LOCAL | PREVIEW | PRODUCTION | ROLLBACK | ADMINISTRACION`
+
+El criterio decisivo es si la operación requiere crear un deployment nuevo. La cuota de Vercel se trata como una restricción de publicación, no como un estado global de disponibilidad de Cora.
+
+### 23.1 Continuidad sin nuevo deployment
+
+Puede continuarse sobre un deployment existente cuando el código desplegado ya contiene las capacidades necesarias y sus servicios externos o persistencia siguen disponibles.
+
+Los cambios de datos no se consideran automáticamente cambios de código. La actualización del SI o la metodología también puede afectar verificaciones desplegadas que consuman esas fuentes dinámicamente, sin requerir redeploy del verificador, mientras el contrato de código permanezca compatible.
+
+### 23.2 Continuidad local
+
+Cuando el URL canónico no sea materialmente necesario, la ejecución local es una vía de continuidad y desarrollo válida. Puede utilizarse para implementar, depurar, probar y validar el código actual.
+
+`vercel build` permite validar localmente el artefacto de build. La creación de deployments mediante `vercel deploy` o `vercel deploy --prebuilt` sigue siendo publicación remota y está sujeta a los límites del proveedor.
+
+La instancia local no adquiere autoridad sobre la producción ni modifica por sí misma `https://khora-web.vercel.app`.
+
+### 23.3 Bloqueo acotado por cuota
+
+Si Vercel rechaza la creación de un deployment por límite de cuota:
+
+- no se reintenta repetidamente la misma publicación;
+- no se presenta Cora completa como indisponible;
+- se continúa por las capacidades que no requieren deployment;
+- se utiliza la instancia local cuando sea suficiente;
+- se conserva la separación entre `main`, deployment servido y URL canónico;
+- se vuelve a verificar la capacidad de publicación antes de intentar un nuevo deployment.
+
+### 23.4 Recuperación
+
+Ante un incidente de producción, debe evaluarse primero si existe un rollback válido a un deployment existente. El rollback no equivale a una corrección de código ni a una reversión de datos.
+
+Toda migración, modificación de esquema o efecto persistente externo debe gobernarse por separado del estado del deployment.
+
+### 23.5 Prohibición de evasión por identidad
+
+La continuidad de Vercel no se resuelve mediante cuentas o equipos alternativos creados o utilizados para ampliar o eludir cuotas. Esta metodología no reconoce una ruta normativa de publicación por identidad alternativa.
+
+El mecanismo canónico de continuidad es:
+
+`DEPLOYMENT EXISTENTE → ROLLBACK CUANDO PROCEDA → LOCAL → PUBLICACION LEGITIMA CUANDO HAYA CAPACIDAD`
+
+### 23.6 Actualización del objeto
+
+Los límites del proveedor no se memorizan como constantes. Cuando Vercel modifique su documentación, plan, límites o mecanismos de deployment, se actualiza el objeto canónico con nueva versión, fecha, fuentes y revisión de la matriz Cora–Vercel.
