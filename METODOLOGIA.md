@@ -2,31 +2,21 @@
 
 ## Estado canónico
 
-- **Versión:** v0.12.0
-- **Nombre de versión:** Continuidad Canónica Transversal
+- **Versión:** v0.12.1
+- **Nombre de versión:** Bootstrap Canónico Mínimo
 - **Última actualización:** 2026-10-08
 - **Última actualización canónica:** 2026-10-08
 - **Ámbito:** Todos los proyectos y conversaciones trabajados bajo esta metodología.
 
 ### Narrativa de la versión
 
-**Antes:** la v0.11.8 ya había hecho canónica la identidad independiente de la Metodología, pero la salida visible todavía no mostraba de forma explícita el consumo mensual asociado a la cuenta de la sesión RDC activa.
+**Antes:** la v0.12.0 había separado la continuidad transversal en un objeto de índice adicional, además del bootstrap operativo, el estado global y el historial.
 
-**Cambio:** la salida de cada ciclo incorpora `RDC-USO` con porcentaje usado y porcentaje restante, siempre referido a la cuenta de la sesión RDC activa. El dato se obtiene de la fuente RDC cuando ya existe una lectura necesaria o cuando el usuario solicita comprobación, y se conserva su marca temporal en el estado global.
+**Cambio:** se elimina la duplicación y se establece `BOOTSTRAP-CONTEXTO-GLOBAL.md` como el único anexo de entrada para la continuidad entre conversaciones. `ESTADO-RDC-ACTIVO.md` conserva la única fuente del estado global vigente y `HISTORIAL-RDC.md` conserva el ciclo de vida de sesiones.
 
-**Motivo:** hacer visible un dato operativo relevante sin inventar límites brutos, planes ni fechas de restablecimiento, y evitar que el HUD muestre consumo de una cuenta distinta o un valor obsoleto sin indicarlo.
+**Motivo:** preservar la arquitectura mínima del sistema: principios fundamentales en el SI y desarrollo operativo en el conjunto de anexos, sin crear una tercera capa normativa ni dos índices paralelos para la misma función.
 
-**Resultado:** cada ciclo identifica la cuenta RDC activa y su consumo mensual verificado o, cuando no exista dato vigente, declara `NO VERIFICADO`/`NO DISPONIBLE` en lugar de inferirlo.
-
-### Narrativa de la versión
-
-**Antes:** la v0.11.9 hacía visible el uso mensual de RDC, mientras la continuidad entre conversaciones dependía del estado global operativo y sus anexos.
-
-**Cambio:** se canoniza un objeto único de continuidad, CONTEXTO-CANONICO.md, y un historial mínimo de sesiones RDC en HISTORIAL-RDC.md. El objeto actúa como índice de recuperación; ESTADO-RDC-ACTIVO.md conserva la única verdad operativa vigente y el histórico conserva el ciclo de vida anterior.
-
-**Motivo:** permitir que una conversación nueva reconstruya el contexto sin depender de memoria conversacional y mantener una sola sesión RDC vigente salvo excepción explícita.
-
-**Resultado:** la continuidad transversal queda definida por fuentes persistentes y separadas, con reacción ciclo a ciclo conforme al gate existente, sin añadir una nueva capa de ejecución.
+**Resultado:** una conversación nueva recupera el SI, la Metodología y un único anexo de bootstrap; desde ese anexo continúa hacia las fuentes persistentes que correspondan.
 
 ### Registro de versiones
 
@@ -59,7 +49,8 @@
 | 23 | v0.11.7 | Gobernanza Transaccional del Estado RDC | Se formaliza la resolución de estado RDC como transacción verificable: lectura, validación, publicación condicionada por versión y lectura de vuelta antes de cualquier reanudación o certificación externa. Las carreras, fallos de persistencia y discordancias dejan el estado pendiente y bloquean solo operaciones dependientes de RDC. |
 | 24 | v0.11.8 | Versionado Canónico del Método General | Se establece una identidad canónica propia para la Metodología —versión, nombre específico y vigencia temporal— y se vuelve obligatoria su representación en la salida de cada ciclo. El último cambio metodológico se deriva de la última modificación del recurso canónico que alteró el funcionamiento, gobierno o reglas generales del sistema. |
 | 25 | v0.11.9 | Uso Mensual de RDC en Salida Canónica | Se vuelve obligatorio mostrar en cada ciclo el uso mensual de RDC de la cuenta asociada a la sesión activa, con porcentaje usado y restante, reutilizando el último dato verificado y su marca temporal sin inferir plan, límite bruto ni restablecimiento. |
-| 26 | v0.12.0 | Continuidad Canónica Transversal | Se canoniza CONTEXTO-CANONICO.md como índice de recuperación entre conversaciones y HISTORIAL-RDC.md como registro mínimo del ciclo de vida de sesiones. ESTADO-RDC-ACTIVO.md permanece como única fuente del estado global vigente. La continuidad se reconstruye en cada ciclo desde estas fuentes, sin depender de memoria conversacional. |
+| 26 | v0.12.0 | Continuidad Canónica Transversal | Se mantiene BOOTSTRAP-CONTEXTO-GLOBAL.md como anexo de entrada para la recuperación entre conversaciones y HISTORIAL-RDC.md como registro mínimo del ciclo de vida de sesiones. ESTADO-RDC-ACTIVO.md permanece como única fuente del estado global vigente. La continuidad se reconstruye en cada ciclo desde estas fuentes, sin depender de memoria conversacional. |
+| 27 | v0.12.1 | Bootstrap Canónico Mínimo | Se elimina el índice de continuidad redundante y se establece BOOTSTRAP-CONTEXTO-GLOBAL.md como el único anexo de entrada para reconstruir continuidad entre conversaciones, manteniendo ESTADO-RDC-ACTIVO.md como fuente única del estado global e HISTORIAL-RDC.md como registro de ciclo de vida. |
 La tabla es canónica: las versiones futuras deben añadir una fila sin borrar ni reciclar las anteriores. El nombre describe el avance de la versión y no sustituye el título general del sistema o documento.
 
 ## 1. Convención obligatoria de foliación de ciclos
@@ -114,15 +105,15 @@ La expresión temporal se deriva del timestamp canónico del último cambio meto
 
 La salida no puede mostrar una versión histórica como si fuera vigente. Si la Metodología no puede adquirirse o validarse desde `main`, su estado de frescura no puede declararse positivo.
 
-### 2.3 Objeto canónico de continuidad
+### 2.3 Bootstrap canónico de continuidad
 
-CONTEXTO-CANONICO.md es el índice operativo para reconstruir el contexto entre conversaciones. No contiene el estado RDC actual y no tiene autoridad para sustituir las fuentes canónicas que referencia.
+`BOOTSTRAP-CONTEXTO-GLOBAL.md` es el anexo único de entrada para reconstruir continuidad entre conversaciones. No contiene el estado RDC actual y no tiene autoridad para sustituir las fuentes canónicas que referencia.
 
-En cada ciclo, una conversación nueva o continuadora debe poder usarlo para localizar:
-- SI-METACOGNITIVO.md;
-- METODOLOGIA.md;
-- ESTADO-RDC-ACTIVO.md;
-- HISTORIAL-RDC.md, cuando exista y sea necesario.
+En cada ciclo, una conversación nueva o continuadora debe usarlo para localizar:
+- `SI-METACOGNITIVO.md`;
+- `METODOLOGIA.md`;
+- `ESTADO-RDC-ACTIVO.md`;
+- `HISTORIAL-RDC.md`, cuando exista y sea necesario para resolver cambios, sustituciones, conflictos o auditoría.
 
 La memoria conversacional no sustituye estas fuentes.
 
@@ -170,7 +161,7 @@ El sistema canónico de instrucciones que gobierna la interpretación, decisión
 
 `SI-METACOGNITIVO.md`
 
-La versión canónica actual del SI es **v1.6.1 — Verificación Normativa Adaptativa por Turno** y contiene los principios **P019–P032**, cada uno con su **índice de preponderancia** dentro de la escala `0–1`.
+La versión canónica actual del SI es **v1.6.8 — Continuidad Canónica entre Conversaciones** y contiene los principios canónicos vigentes, cada uno con su **índice de preponderancia** dentro de la escala `0–1`.
 
 La metodología mantiene separadas las normas fundamentales de sus desarrollos, procedimientos, herramientas y mecanismos de implementación.
 \n\n## 6. Contexto de ejecución y salida por ciclo\n\nEl contrato canonico se encuentra en `ANEXO-CONTEXTO-EJECUCION-Y-SALIDA-CICLO.md`. Su aplicacion es ubicua en todos los ciclos sujetos a la metodologia e integra plataforma, ubicacion persistente, estado y cuenta RDC, uso mensual disponible, identidad Windows operativa y, cuando corresponda, identidad administrativa. Los detalles de formato, fuentes y perfiles por ubicacion permanecen en el anexo y no se elevan al nivel del SI.
