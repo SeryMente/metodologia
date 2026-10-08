@@ -2,8 +2,8 @@
 
 ## Estado canónico
 
-- **Versión:** v0.12.2
-- **Nombre de versión:** Verificación del Régimen Personalizado
+- **Versión:** v0.12.3
+- **Nombre de versión:** Contrato de Salida Ejecutable
 - **Última actualización:** 2026-10-08
 - **Última actualización canónica:** 2026-10-08
 - **Ámbito:** Todos los proyectos y conversaciones trabajados bajo esta metodología.
@@ -52,6 +52,7 @@
 | 26 | v0.12.0 | Continuidad Canónica Transversal | Se canoniza CONTEXTO-CANONICO.md como índice de recuperación entre conversaciones y HISTORIAL-RDC.md como registro mínimo del ciclo de vida de sesiones. ESTADO-RDC-ACTIVO.md permanece como única fuente del estado global vigente. La continuidad se reconstruye en cada ciclo desde estas fuentes, sin depender de memoria conversacional. |
 | 27 | v0.12.1 | Bootstrap Canónico Mínimo | Se elimina el índice de continuidad redundante y se establece BOOTSTRAP-CONTEXTO-GLOBAL.md como el único anexo de entrada para reconstruir continuidad entre conversaciones, manteniendo ESTADO-RDC-ACTIVO.md como fuente única del estado global e HISTORIAL-RDC.md como registro de ciclo de vida. |
 | 28 | v0.12.2 | Verificación del Régimen Personalizado | Se incorpora al contrato de salida el indicador operativo CI para registrar, ciclo a ciclo, la aplicación verificable del régimen establecido por las Instrucciones personalizadas. El primer ciclo activa y establece su continuidad; los ciclos posteriores deben conservarla y volver a ejecutar las comprobaciones externas que corresponda. CI no pretende demostrar acceso introspectivo al campo interno de la plataforma. |
+| 29 | v0.12.3 | Contrato de Salida Ejecutable | Se convierte el formato de salida en un contrato ejecutable con esquema machine-readable, validación estructural exacta, renderer determinista y liberación condicionada al output validado. La implementación queda protegida contra deriva mediante sincronización automática entre Metodología y KHORA y pruebas de regresión. |
 La tabla es canónica: las versiones futuras deben añadir una fila sin borrar ni reciclar las anteriores. El nombre describe el avance de la versión y no sustituye el título general del sistema o documento.
 
 ## 1. Convención obligatoria de foliación de ciclos
@@ -274,9 +275,9 @@ En ChatGPT nativo, la ausencia o indisponibilidad del MCP no impide producir la 
 
 ## 18.0 Regla transversal de salida por turno
 
-El contrato de salida definido en `FORMATO-REGISTRO-VERIFICACION-CICLO.md` es obligatorio para **cada turno/ciclo sujeto a la metodología, sin excepción**, incluidos turnos bloqueados, turnos de resolución conversacional y turnos sin uso de RDC. El contrato vigente de presentación es `v1.7.5`.
+El contrato de salida definido en `FORMATO-REGISTRO-VERIFICACION-CICLO.md` es obligatorio para **cada turno/ciclo sujeto a la metodología, sin excepción**, incluidos turnos bloqueados, turnos de resolución conversacional y turnos sin uso de RDC. El contrato vigente de presentación es `v1.7.6`.
 
-La respuesta no puede declararse `COMPLETADO` si no porta el formato `v1.7.5` ni si alguno de sus campos obligatorios está ausente o contradice el estado verificable del ciclo.
+La respuesta no puede declararse `COMPLETADO` si no porta el formato `v1.7.6`, si no satisface su esquema exacto o si alguno de sus campos obligatorios está ausente o contradice el estado verificable del ciclo.
 
 ## 18. Salida visible mínima
 
