@@ -1,5 +1,8 @@
 # Eventos de Desempeno - PC-7 - 2026-10
 | PC7-20261008-0008 | 2026-10-08 | OPPORTUNITY_DETECTED | Telemetria y memoria correctas, pero sin criterio explicito de costo remoto | Canonizar economia RDC y endurecimiento de memoria | Memoria PC-7 con vigencia/revalidacion; RDC por valor semantico y batching | Reduce repeticion y llamadas RDC sin perder evidencia | e5a4159e-cb32-4ba6-89d6-3a2083a49893 | METODOLOGIA v0.12.8 + ANEXO-PROCESO-LIBERACION-DESEMPENO-CIBERCAFE |
+| PC7-20261008-0009 | 2026-10-08 | INFRASTRUCTURE_FAULT | Volumen C: Healthy=Warning; OperationalStatus=Spot Fix Needed | Diagnosticar NTFS sin afectar actividad | Evento NTFS ID 55: corrupcion de indice $I30 en artefacto de NVIDIA App; sin errores del provider disk observados | Reparacion offline/elevada bloqueada por falta de elevacion segura; no se forzo reinicio | e5a4159e-cb32-4ba6-89d6-3a2083a49893 | Get-Volume; fsutil dirty; System/Ntfs |
+| PC7-20261008-0010 | 2026-10-08 | OPPORTUNITY_CONFIRMED | BIOS instalada 4101 | Verificar fuente oficial y diferir actualizacion | ASUS PRIME B550M-K BIOS 4304 disponible desde 2026-08-21 | Oportunidad de plataforma pendiente de ventana de mantenimiento | e5a4159e-cb32-4ba6-89d6-3a2083a49893 | ASUS soporte oficial |
+| PC7-20261008-0011 | 2026-10-08 | OPPORTUNITY_CONFIRMED | NVIDIA 610.47 instalado | Verificar candidato actual | NVIDIA GeForce Game Ready 617.42 WHQL publicado 2026-10-06; instalador ya preparado | Actualizacion pendiente por actividad de usuario | e5a4159e-cb32-4ba6-89d6-3a2083a49893 | NVIDIA soporte oficial |
 
 **Estado:** CANONICO · append-only por lotes
 **Unidad:** CIBERCAFE + PC-7
