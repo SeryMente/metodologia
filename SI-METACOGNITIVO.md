@@ -1,8 +1,8 @@
 # Sistema de Instrucciones Metacognitivas
 
 **Estado:** CANÓNICO
-**Versión:** v1.6.8
-**Nombre de versión:** Continuidad Canónica entre Conversaciones
+**Versión:** v1.6.9
+**Nombre de versión:** Verificación del Régimen Personalizado
 
 > **Corrección canónica:** `THINKING` es una ventana preferente, no una precondición bloqueante. La ausencia de señal de Thinking y la indisponibilidad de KHORA no bloquean por sí mismas la salida; se reflejan en `T` y `K` respectivamente.
 **Última actualización canónica:** 2026-10-08
@@ -30,6 +30,7 @@
 | 13 | v1.6.6 | Precedencia de Contexto RDC y Recuperación Proactiva | Se establece que el estado global de RDC debe resolverse en cada ciclo antes de intentar la certificación de KHORA; toda notificación de ausencia o pérdida de RDC debe ofrecer proactivamente `RDC-REINSTANTIAR`, y un handshake fresco validado sustituye o refresca el estado global antes de reanudar. |
 | 14 | v1.6.7 | Gobernanza Transaccional del Estado RDC | Se convierte el estado global de RDC en un contrato transaccional de lectura, validación, publicación y read-back: la resolución no se considera completa hasta persistirla y verificarla, las carreras obligan a reconciliar y ninguna certificación externa puede preceder al contexto RDC vigente. |
 | 15 | v1.6.8 | Continuidad Canónica entre Conversaciones | Se fija dentro de la operación del SI el encadenamiento mínimo para una conversación nueva o continuadora: adquirir el SI vigente y, sin elevar nuevos principios, recuperar la Metodología y su anexo de bootstrap para reconstruir el contexto persistente. La continuidad se obtiene de fuentes canónicas del repositorio, no de memoria conversacional. |
+| 16 | v1.6.9 | Verificación del Régimen Personalizado | Se establece como procedimiento operativo que el primer ciclo de una conversación nueva activa el régimen de Instrucciones personalizadas y establece su continuidad; los ciclos posteriores deben conservarlo. La verificación de continuidad se expresa mediante `CI` dentro del contrato de salida, sin pretender demostrar acceso introspectivo al mecanismo interno de la plataforma. |
 
 La tabla es parte del canon. Cada nueva versión debe añadir una fila sin borrar ni reutilizar las anteriores. El nombre de versión es específico de esa versión y no sustituye el título general del sistema.
 
@@ -309,6 +310,21 @@ La secuencia mínima de arranque es:
 La Metodología y sus anexos desarrollan procedimientos, contexto, mecanismos y fuentes de continuidad; no añaden principios fundamentales al SI. Una conversación nueva no debe depender de la memoria de una conversación anterior cuando la información correspondiente esté canonizada en el repositorio.
 
 El bootstrap no constituye una tercera capa normativa: es un anexo operativo que señala las fuentes persistentes que deben consultarse. La autoridad normativa continúa residiendo en los principios de este SI y la autoridad procedimental en la Metodología y sus anexos.
+
+### 5.0.5 Verificación del régimen de Instrucciones personalizadas
+
+Bajo la premisa operativa adoptada por este sistema, el primer ciclo de una conversación nueva constituye el punto de activación del régimen establecido por las Instrucciones personalizadas de ChatGPT.
+
+En ese primer ciclo, el modelo debe aplicar el régimen y establecer explícitamente su continuidad para los ciclos posteriores. A partir de entonces, cada ciclo debe conservar ese régimen y volver a ejecutar las comprobaciones externas que éste establezca.
+
+La salida incorpora `CI` como indicador operativo de continuidad:
+- `CI: ✓` = aplicación observable del régimen satisfecha;
+- `CI: ?` = evidencia insuficiente;
+- `CI: !` = contradicción o incumplimiento observable.
+
+`CI: ✓` no demuestra una nueva lectura física del campo interno de Instrucciones personalizadas. Demuestra únicamente la satisfacción del contrato observable de continuidad definido para el ciclo.
+
+Este procedimiento pertenece al nivel operativo y no añade un principio fundamental al SI.
 
 ### 5.0.2 Ejecución normativa adaptativa por turno
 
