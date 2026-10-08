@@ -114,7 +114,18 @@ Si el usuario entrega un `RDC-HANDSHAKE`, el ciclo no puede continuar a la ejecu
 No debe declararse `INACTIVA` la sesión persistente únicamente por `OFFLINE`.
 
 
-## Contexto operativo obligatorio\n\nCada registro de ciclo debe conservar el bloque de contexto definido por el anexo canónico:\n\n`PLATAFORMA | UBICACION | RDC-REQUERIDA | RDC-SESION | RDC-CUENTA | RDC-USO-MENSUAL | WIN-OPERATIVO | CONTEXTO-VERIFICACION`\n\nCuando exista identidad administrativa relevante, se añade `WIN-ADMIN`. Cuando exista información de terminales RDC, se añade `RDC-TERMINAL`. `CONTEXTO-VERIFICACION` registra el resultado del gate: `VERIFICADO-ACTIVO`, `VERIFICADO-INACTIVO`, `NO-REQUERIDO` o `BLOQUEADO`.\n\nLa ausencia de un dato se registra como `NO VERIFICADO`, `NO DISPONIBLE` o `PENDIENTE`. No se debe inferir información faltante.\n\nLa especificación completa se encuentra en `ANEXO-CONTEXTO-EJECUCION-Y-SALIDA-CICLO.md`.\n
+## Contexto operativo obligatorio
+
+Cada registro de ciclo debe conservar el bloque de contexto definido por el anexo canónico:
+
+`PLATAFORMA | UBICACION | RDC-REQUERIDA | RDC-TERMINAL | RDC-CUENTA | RDC-USO-MENSUAL | WIN-OPERATIVO | CONTEXTO-VERIFICACION`
+
+Cuando exista identidad administrativa relevante, se añade `WIN-ADMIN`. `RDC-TERMINAL` se refiere a la terminal seleccionada en el ciclo y se identifica por dispositivo; el device_id completo permanece en evidencia cuando sea necesario para auditoría. `CONTEXTO-VERIFICACION` registra el resultado del gate.
+
+La ausencia de un dato se registra como `NO VERIFICADO`, `NO DISPONIBLE` o `PENDIENTE`. No se debe inferir información faltante.
+
+La especificación completa se encuentra en `ANEXO-CONTEXTO-EJECUCION-Y-SALIDA-CICLO.md`.
+
 
 ## Indicador discreto de acceso MCP KHORA
 
@@ -127,6 +138,10 @@ El campo `K` significa acceso al MCP canónico de KHORA y tiene semántica estri
 
 `K: ✓` exige evidencia de una comprobación autenticada contra `/api/mcp`. Conocer la URL, tener GitHub o tener RDC no demuestra acceso al MCP.
 
-## Sesion RDC activa
+## Terminal RDC seleccionada
 
-El registro de ciclo conserva la sesión RDC activa identificada por el estado global. Antes de cualquier operación dependiente del entorno debe ejecutarse el gate de contexto. La verificación primaria por ciclo es un ping al device_id registrado cuando la operación requiere RDC en vivo. Si falla, se escala a descubrimiento de dispositivo y cuenta cuando sea necesario. Si la detección no permite establecer activo/inactivo, solo puede bloquearse la ejecución cuando el ciclo requiere RDC en vivo; la conversación permanece abierta para resolverlo. La identidad persistente no se invalida por una caída de conectividad.
+El registro de ciclo no representa una única sesión RDC global. Cuando `RDC: SI`, el ciclo debe utilizar una terminal concreta resuelta mediante descubrimiento vivo y cuya identidad sea `RDC-CUENTA + RDC-DEVICE-ID`.
+
+`C` representa la cuenta RDC de la terminal seleccionada para este ciclo. `S` representa el estado de sesión de esa terminal, no un estado global del conjunto RDC. `RDC-CNX` debe describir la conectividad de la terminal seleccionada y, cuando sea relevante, incluir su nombre de dispositivo. El registro persistente se usa para reconciliación, no para seleccionar por herencia la terminal actual.
+
+Si hay varias terminales ONLINE, la selección pertenece al ciclo/conversación. Si no existe una terminal ONLINE y RDC es requerido, el ciclo queda BLOQUEADO y debe ofrecer `RDC-REINSTANTIAR`.
