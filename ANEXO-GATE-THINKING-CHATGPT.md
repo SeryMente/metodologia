@@ -33,7 +33,7 @@ KHORA conserva el runtime del turno como metadato:
 
 `platform=ChatGPT`
 `reasoning_mode=THINKING|INSTANT|UNKNOWN|UNAVAILABLE`
-`output_format_version=v1.7.5`
+`output_format_version=v1.7.6`
 
 La ausencia de un modo de razonamiento no invalida el receipt. El verificador distingue entre integridad normativa y disponibilidad del runtime.
 
@@ -60,4 +60,4 @@ El formato de salida por ciclo es obligatorio y versionado como `v1.7.1`.
 
 ## 7. Cierre
 
-La salida puede emitirse en cualquier escenario. `K: ✓` solo se declara después de `VERIFIED → RELEASE`. Cuando el MCP está fuera de servicio o inaccesible, se declara `K: OFF` y no se atribuye verificación externa al turno. El contrato visible `v1.7.5` sigue siendo obligatorio. El indicador `CI` pertenece a ese contrato y registra la aplicación verificable del régimen de Instrucciones personalizadas; no afirma una lectura introspectiva del campo de la plataforma.
+La salida puede emitirse en cualquier escenario. `K: ✓` solo se declara después de `VERIFIED → RELEASE`. Cuando el MCP está fuera de servicio o inaccesible, se declara `K: OFF` y no se atribuye verificación externa al turno. El contrato visible `v1.7.6` sigue siendo obligatorio. El indicador `CI` pertenece a ese contrato y registra la aplicación verificable del régimen de Instrucciones personalizadas; no afirma una lectura introspectiva del campo de la plataforma.
