@@ -44,7 +44,7 @@ Versión vigente del SI:
 
 Versión vigente de la Metodología:
 
-**v0.12.2 — Verificación del Régimen Personalizado**
+**v0.12.3 — Verificación del Régimen Personalizado**
 
 El SI contiene los principios fundamentales vigentes, ordenados de mayor a menor preponderancia. La continuidad entre conversaciones se desarrolla operativamente mediante la Metodología y el anexo `BOOTSTRAP-CONTEXTO-GLOBAL.md`.
 
