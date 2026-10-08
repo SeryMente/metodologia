@@ -1,8 +1,8 @@
 # Gobernanza de Estado Global RDC
 
 **Estado:** CANÓNICO  
-**Versión:** v1.0.0  
-**Fecha:** 2026-10-07  
+**Versión:** v1.1.0  
+**Fecha:** 2026-10-08  
 **Ámbito:** Todos los ciclos sujetos a la metodología cuando exista estado operativo global de RDC.
 
 ## 1. Autoridad y naturaleza del registro global
