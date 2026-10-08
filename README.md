@@ -40,32 +40,30 @@ El SI canónico se encuentra en [SI-METACOGNITIVO.md](SI-METACOGNITIVO.md).
 
 Versión vigente del SI:
 
-**v1.6.12 — Continuidad de Publicación Vercel por Cuenta Secundaria**
+**v1.6.13 — Gobernanza Operativa de Vercel y Continuidad Local**
 
 Versión vigente de la Metodología:
 
-**v0.13.0 — Continuidad de Publicación Vercel por Cuenta Secundaria**
+**v0.14.0 — Gobernanza de Cuota Vercel y Continuidad Local**
 
 El SI contiene los principios fundamentales vigentes, ordenados de mayor a menor preponderancia. La continuidad entre conversaciones se desarrolla operativamente mediante la Metodología y el anexo `BOOTSTRAP-CONTEXTO-GLOBAL.md`.
 
 ## Última actualización de Metodología
 
-**v0.11.8 — Versionado Canónico del Método General**  
-2026-10-07
+**v0.14.0 — Gobernanza de Cuota Vercel y Continuidad Local**  
+2026-10-08
 
-Esta evolución reduce la continuidad transversal a un único anexo de entrada: `BOOTSTRAP-CONTEXTO-GLOBAL.md`. El SI conserva los principios fundamentales; la Metodología y sus anexos conservan el desarrollo operativo. El estado RDC vigente permanece exclusivamente en `ESTADO-RDC-ACTIVO.md` y su ciclo de vida en `HISTORIAL-RDC.md`. La continuidad entre conversaciones se reconstruye desde estas fuentes y no desde memoria conversacional.
+La metodología canoniza el cruce transversal entre Cora, la cuota de deployments de Vercel y la continuidad mediante ejecución local. El estado de Vercel se gobierna mediante `ANEXO-GOBERNANZA-VERCEL-CUOTA-Y-CONTINUIDAD-LOCAL.md`; la instancia local puede absorber desarrollo, depuración y validación cuando no sea necesario modificar el URL canónico.
 
 
 La identidad persistente de la sesión RDC y su registro transversal se mantienen mediante ESTADO-RDC-ACTIVO.md. La conectividad se verifica por ciclo mediante ping como comprobación primaria cuando el ciclo requiera uso RDC en vivo. La salida visible de cada ciclo muestra únicamente el contexto y resultado esenciales; `K: ✓` solo acredita verificación/liberación de KHORA, mientras `K: OFF` declara que el verificador no estuvo disponible sin bloquear la salida.
 
 
-## Continuidad de publicación Vercel
+## Gobernanza de Vercel y continuidad local
 
-La gobernanza canónica de publicación resiliente se encuentra en [ANEXO-GOBERNANZA-PUBLICACION-VERCEL-SECUNDARIA.md](ANEXO-GOBERNANZA-PUBLICACION-VERCEL-SECUNDARIA.md).
+La referencia canónica se encuentra en [ANEXO-GOBERNANZA-VERCEL-CUOTA-Y-CONTINUIDAD-LOCAL.md](ANEXO-GOBERNANZA-VERCEL-CUOTA-Y-CONTINUIDAD-LOCAL.md).
 
-La cuenta primaria conserva la producción canónica. La cuenta secundaria designada es `blacksheepsup@gmail.com` y se utiliza para publicar y visualizar la versión vigente cuando la primaria no esté disponible, preferentemente mediante un deployment no canónico.
-
-La cuenta secundaria no adquiere autoridad automática sobre `khora-web.vercel.app`, la producción ni la persistencia de usuarios.
+El anexo cruza los casos de uso de Cora con la cuota de deployments de Vercel y determina cuándo el trabajo puede continuar sobre un deployment existente, cuándo requiere una nueva publicación y cuándo una instancia local es suficiente. La URL canónica de KHORA permanece separada de cualquier ejecución local.
 
 ## Glosario operativo
 
