@@ -1,4 +1,5 @@
 # Eventos de Desempeno - PC-7 - 2026-10
+| PC7-20261008-0008 | 2026-10-08 | OPPORTUNITY_DETECTED | Telemetria y memoria correctas, pero sin criterio explicito de costo remoto | Canonizar economia RDC y endurecimiento de memoria | Memoria PC-7 con vigencia/revalidacion; RDC por valor semantico y batching | Reduce repeticion y llamadas RDC sin perder evidencia | e5a4159e-cb32-4ba6-89d6-3a2083a49893 | METODOLOGIA v0.12.8 + ANEXO-PROCESO-LIBERACION-DESEMPENO-CIBERCAFE |
 
 **Estado:** CANONICO · append-only por lotes
 **Unidad:** CIBERCAFE + PC-7
