@@ -2,7 +2,7 @@
 
 **Objeto:** Gobernanza operativa de Vercel para proyectos sujetos a la metodología  
 **Estado:** CANÓNICO  
-**Versión del objeto:** v1.1.1  
+**Versión del objeto:** v1.2.0  
 **Fecha de actualización del objeto:** 2026-10-08  
 **Ámbito:** Todos los proyectos, conversaciones y operaciones sujetos a la metodología que utilicen Vercel, incluyendo KHORA.  
 **Fuente factual primaria:** documentación oficial vigente de Vercel, especialmente Limits, CLI Build, CLI Deploy e Instant Rollback.  
@@ -16,6 +16,7 @@
 | v1.0.1 | 2026-10-08 | Revisión de cierre y depuración de referencias heredadas; se conserva la misma arquitectura operativa. |
 | v1.1.0 | 2026-10-08 | Endurecimiento del gate obligatorio: detección de limitaciones, determinación de dependencia real del caso de uso, decisión local/Vercel y bloqueo únicamente cuando ninguna vía suficiente alcance el objetivo. Se corrige además el límite vigente de builds por hora de Hobby. |
 | v1.1.1 | 2026-10-08 | Endurecimiento final: activación por mera mención de Vercel en cualquier hilo de desarrollo, evaluación obligatoria de limitación y dependencia antes de ejecutar, y prioridad de continuidad local cuando sea suficiente. Se incorpora `vercel dev` como vía local documentada. |
+| v1.2.0 | 2026-10-08 | Regla explícita de intención de publicación: una solicitud de publicar en Vercel obliga a intentar y resolver una publicación suficiente para el caso de uso del hilo, pero un fallo de publicación nunca convierte por sí solo el esfuerzo completo en bloqueado; la parte local debe continuar cuando sea suficiente para el objetivo. |
 
 ## 1. Propósito
 
@@ -107,6 +108,20 @@ La implementación local puede utilizar el código vigente del repositorio, por 
 Cuando sea necesario validar específicamente el comportamiento del artefacto de build de Vercel, `vercel build` es una vía local apropiada porque produce `.vercel/output` sin crear por sí mismo el deployment remoto. `vercel dev` permite replicar localmente el entorno de deployment para probar Functions y Middleware sin desplegar cada cambio. La instrucción `vercel deploy` o `vercel deploy --prebuilt`, en cambio, sí crea un deployment y queda sujeta a las restricciones de Vercel.
 
 ## 7. Gate obligatorio Vercel
+
+### 7.0 Regla de intención de publicación y suficiencia del caso de uso
+
+Una solicitud explícita de **publicar en Vercel** se interpreta como una instrucción para llevar el resultado del esfuerzo a un entorno remoto suficiente para el caso de uso concreto del hilo. El modelo no debe rebajar esa solicitud a una mera validación local por defecto: debe identificar el destino adecuado (preview, production u otro entorno explícitamente requerido), verificar la capacidad real de Vercel y ejecutar la publicación cuando sea posible.
+
+La palabra **suficiente** se refiere al objetivo real del esfuerzo, no a una réplica universal de toda la plataforma. Si el objetivo del ciclo es únicamente desarrollar, inspeccionar o ver una UI nueva y no se ha solicitado publicación remota, la instancia local es una vía plenamente válida. La imposibilidad de publicar en Vercel no puede bloquear ese trabajo local.
+
+Cuando sí exista una solicitud de publicación y Vercel rechace o limite el deployment, el estado correcto es:
+
+**publicación remota pendiente/limitada + continuidad local disponible**, cuando la parte local sea suficiente para el objetivo técnico restante.
+
+El estado BLOQUEADO solo puede aplicarse a la ruta remota que materialmente requiera Vercel. No puede elevarse automáticamente a bloqueo global del hilo, ciclo o esfuerzo. En particular, nunca debe emitirse una conclusión equivalente a «no se puede continuar» solo porque no fue posible crear un deployment, si el usuario todavía puede obtener de forma suficiente el resultado que está buscando en local.
+
+En sentido inverso, cuando el usuario sí pide publicar, el modelo no debe utilizar la suficiencia local como excusa para omitir el intento remoto: debe intentar la publicación suficiente y, si falla, dejar constancia verificable del punto exacto de fallo y continuar con la parte local no dependiente de Vercel.
 
 La mera mención de Vercel dentro de un hilo de desarrollo activa este gate. No se puede ejecutar una operación dependiente de Vercel sin resolverlo primero.
 
@@ -254,7 +269,8 @@ Cada actualización debe conservar:
 
 ## 14. Estado de esta canonización
 
-**CANONIZADO:** 2026-10-08.
+**CANONIZADO:** 2026-10-08.  
+**Versión vigente del objeto:** v1.2.0.
 
 La versión v1.0.0 establece por primera vez un objeto estable para gobernar el cruce **Cora × Vercel × cuota × ejecución local**.
 
