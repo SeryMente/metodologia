@@ -1,5 +1,7 @@
 # Bootstrap de Contexto Global
 
+**Tipo:** ANEXO OPERATIVO
+
 **Estado:** CANONICO
 **Ambito:** Todas las conversaciones y proyectos sujetos a la metodologia comun.
 
@@ -27,7 +29,7 @@ No se duplican aqui la cuenta, device_id, estado de sesion, timestamps ni consum
 
 ## Precedencia del contexto RDC sobre KHORA
 
-Antes de `HEALTH MCP` o de cualquier certificación de KHORA, cada ciclo debe leer `ESTADO-RDC-ACTIVO.md` y resolver el estado lógico de la sesión RDC y su conectividad observable. Ningún estado RDC de una conversación anterior sustituye esta lectura., Thinking es la ventana preferente para resolver la cascada normativa antes de la salida cuando está disponible. No constituye una prueba del razonamiento interno ni una condición que, por sí sola, bloquee la ejecución o la respuesta.
+Antes de `HEALTH MCP` o de cualquier certificación de KHORA, cada ciclo debe leer `ESTADO-RDC-ACTIVO.md` y resolver el estado lógico de la sesión RDC y su conectividad observable. Ningún estado RDC de una conversación anterior sustituye esta lectura. Thinking es la ventana preferente para resolver la cascada normativa antes de la salida cuando está disponible. No constituye una prueba del razonamiento interno ni una condición que, por sí sola, bloquee la ejecución o la respuesta.
 
 La disponibilidad de KHORA es independiente del modo de razonamiento. Si el MCP está disponible, se intenta `HEALTH → OPEN TURN → CASCADA NORMATIVA → VERIFY → RELEASE`. Si el MCP no está disponible, el ciclo continúa y la salida declara `K: OFF`, sin atribuir verificación externa.
 
@@ -98,5 +100,7 @@ La conversacion es un contenedor. La sesion RDC global es un estado compartido d
 Una propagacion correcta queda demostrada cuando una conversacion nueva puede reconstruir, sin entrada del usuario, al menos `RDC-SESION`, `RDC-CUENTA`, `RDC-DISPOSITIVO`, `RDC-DEVICE-ID`, `UBICACION` y `WIN-OPERATIVO` desde `ESTADO-RDC-ACTIVO.md`. La conectividad se comprueba por separado cuando la tarea requiere uso RDC en vivo.
 
 ## Limite tecnico
+
+Este anexo no crea una capa normativa adicional: solo encadena la recuperación de fuentes y el contexto persistente definido por el SI y la Metodología.
 
 Este contrato hace persistente y consultable el estado en el repositorio. La plataforma de ChatGPT no ofrece un mecanismo por el que un archivo de GitHub fuerce tecnicamente a toda conversacion futura a leerlo antes de responder; por ello, la metodologia define este archivo como bootstrap canonico que toda conversacion sujeta al sistema debe consumir al iniciar su ciclo.
