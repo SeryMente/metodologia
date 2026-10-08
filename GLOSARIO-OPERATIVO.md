@@ -190,3 +190,34 @@ Estado de una intervención que requiere reinicio, apagado, reset, entrada a UEF
 
 ### VENTANA-DE-MANTENIMIENTO-LIVE
 Periodo de mantenimiento en CIBERCAFE en el que la terminal permanece encendida, conectada y utilizable por el usuario. No autoriza reinicio.
+
+### Cuota de deployment Vercel
+**Tipo:** restricción de plataforma.
+**Definición:** límite vigente que Vercel aplica a la creación de nuevos deployments, dependiente del plan y de las ventanas temporales del proveedor.
+**Regla:** se verifica contra la documentación y el estado vigente de Vercel; no se trata como una constante permanente ni como indicio de indisponibilidad total de KHORA.
+
+### Deployment
+**Tipo:** objeto de publicación.
+**Definición:** versión del proyecto creada y servida por Vercel o preparada para servirla.
+**Regla:** la existencia de un deployment no significa que represente el `main` actual; debe verificarse su commit/SHA y estado.
+
+### Ejecución local
+**Tipo:** modo de ejecución.
+**Definición:** instancia de Cora ejecutada fuera del servicio remoto de Vercel, normalmente desde el repositorio canónico en el equipo local.
+**Regla:** puede usarse para desarrollo, depuración y validación cuando el URL canónico no sea materialmente necesario. No adquiere autoridad de producción.
+
+### URL canónico de publicación
+**Tipo:** referencia de despliegue.
+**Definición:** URL que la metodología reconoce como superficie canónica de producción de un proyecto.
+**Regla:** una instancia local o un deployment histórico no se presenta como equivalente al URL canónico sin una decisión explícita y verificable.
+
+### Verificación local de build Vercel
+**Tipo:** mecanismo de validación.
+**Definición:** ejecución local de `vercel build` para obtener y revisar el artefacto `.vercel/output` sin crear por sí misma un deployment remoto.
+**Regla:** `vercel deploy` y `vercel deploy --prebuilt` sí crean deployments y quedan sujetos a los límites del proveedor.
+
+### Estado de cuota Vercel
+**Tipo:** estado operativo de ciclo.
+**Definición:** clasificación de la capacidad de crear el deployment requerido en el momento de la operación.
+**Valores:** `NO-REQUERIDA`, `DISPONIBLE`, `LIMITADA`, `NO-VERIFICADA`.
+**Regla:** `LIMITADA` bloquea la publicación que necesita un deployment nuevo, pero no bloquea por sí misma las operaciones sobre deployments existentes ni la ejecución local.
