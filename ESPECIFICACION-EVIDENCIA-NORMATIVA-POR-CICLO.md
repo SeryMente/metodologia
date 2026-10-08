@@ -637,6 +637,6 @@ El registro de salida debe vincular el verdict normativo con CONTEXTO-VERIFICACI
 
 Thinking es la ventana preferente para ejecutar la cascada normativa antes de la salida cuando la plataforma la expone. No es una precondición para producir respuesta ni una prueba del razonamiento interno.
 
-El receipt conserva `platform=ChatGPT`, el `reasoning_mode` observado (`THINKING|INSTANT|UNKNOWN|UNAVAILABLE`) y `output_format_version=v1.7.5`. Cuando el mecanismo de evidencia registre el estado de continuidad del régimen personalizado, puede conservar `ci_status=✓|?|!`; este campo acredita la aplicación observable del contrato, no una lectura introspectiva de la plataforma. La ausencia de señal de razonamiento no invalida el receipt por sí misma.
+El receipt conserva `platform=ChatGPT`, el `reasoning_mode` observado (`THINKING|INSTANT|UNKNOWN|UNAVAILABLE`) y `output_format_version=v1.7.6`. Cuando el mecanismo de evidencia registre el estado de continuidad del régimen personalizado, puede conservar `ci_status=✓|?|!`; este campo acredita la aplicación observable del contrato, no una lectura introspectiva de la plataforma. La ausencia de señal de razonamiento no invalida el receipt por sí misma.
 
 Cuando KHORA está disponible, el flujo intenta `HEALTH → OPEN → CASCADA → VERIFY → RELEASE`. Cuando no está disponible, el turno continúa con el contrato visible y declara `K: OFF`, sin atribuir verificación externa.
