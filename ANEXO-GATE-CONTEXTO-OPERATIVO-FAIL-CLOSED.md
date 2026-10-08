@@ -368,9 +368,9 @@ Este anexo desarrolla P032; no sustituye ni redefine los principios fundamentale
 
 ## 15.0 Gate de intervención CIBERCAFE sin reinicio
 
-Cuando el ámbito resuelto sea CIBERCAFE, toda intervención propuesta debe pasar por una comprobación adicional antes de ejecutarse: **¿requiere reboot, apagado, reset, UEFI/BIOS o reparación offline?**
+**`PRESUPUESTO-REINICIO = 0`.** Cuando el ámbito resuelto sea CIBERCAFE, toda intervención propuesta debe pasar por una comprobación adicional antes de ejecutarse: **¿requiere reboot, apagado, reset, UEFI/BIOS o reparación offline?**
 
-- Si sí: marcar `BLOQUEADA-REINICIO`, registrar la oportunidad y no ejecutar la acción.
+- Si sí: marcar `BLOQUEADA-REINICIO`, registrar la oportunidad y no ejecutar la acción. Esta etiqueta es obligatoria incluso cuando la acción técnica sea correcta fuera de CIBERCAFE.
 - Si no: continuar con evaluación de riesgo, reversibilidad y efecto sobre trabajo activo.
 
 Esta condición bloquea la **intervención**, no necesariamente el ciclo. El ciclo puede continuar con observación y acciones live.
