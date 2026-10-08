@@ -2,8 +2,8 @@
 
 ## Estado canónico
 
-- **Versión:** v0.12.1
-- **Nombre de versión:** Bootstrap Canónico Mínimo
+- **Versión:** v0.12.2
+- **Nombre de versión:** Verificación del Régimen Personalizado
 - **Última actualización:** 2026-10-08
 - **Última actualización canónica:** 2026-10-08
 - **Ámbito:** Todos los proyectos y conversaciones trabajados bajo esta metodología.
@@ -51,6 +51,7 @@
 | 25 | v0.11.9 | Uso Mensual de RDC en Salida Canónica | Se vuelve obligatorio mostrar en cada ciclo el uso mensual de RDC de la cuenta asociada a la sesión activa, con porcentaje usado y restante, reutilizando el último dato verificado y su marca temporal sin inferir plan, límite bruto ni restablecimiento. |
 | 26 | v0.12.0 | Continuidad Canónica Transversal | Se canoniza CONTEXTO-CANONICO.md como índice de recuperación entre conversaciones y HISTORIAL-RDC.md como registro mínimo del ciclo de vida de sesiones. ESTADO-RDC-ACTIVO.md permanece como única fuente del estado global vigente. La continuidad se reconstruye en cada ciclo desde estas fuentes, sin depender de memoria conversacional. |
 | 27 | v0.12.1 | Bootstrap Canónico Mínimo | Se elimina el índice de continuidad redundante y se establece BOOTSTRAP-CONTEXTO-GLOBAL.md como el único anexo de entrada para reconstruir continuidad entre conversaciones, manteniendo ESTADO-RDC-ACTIVO.md como fuente única del estado global e HISTORIAL-RDC.md como registro de ciclo de vida. |
+| 28 | v0.12.2 | Verificación del Régimen Personalizado | Se incorpora al contrato de salida el indicador operativo CI para registrar, ciclo a ciclo, la aplicación verificable del régimen establecido por las Instrucciones personalizadas. El primer ciclo activa y establece su continuidad; los ciclos posteriores deben conservarla y volver a ejecutar las comprobaciones externas que corresponda. CI no pretende demostrar acceso introspectivo al campo interno de la plataforma. |
 La tabla es canónica: las versiones futuras deben añadir una fila sin borrar ni reciclar las anteriores. El nombre describe el avance de la versión y no sustituye el título general del sistema o documento.
 
 ## 1. Convención obligatoria de foliación de ciclos
@@ -118,6 +119,22 @@ En cada ciclo, una conversación nueva o continuadora debe usarlo para localizar
 La memoria conversacional no sustituye estas fuentes.
 
 ### 2.4 Historial mínimo de sesiones RDC
+
+### 2.5 Verificación del régimen de Instrucciones personalizadas
+
+Las Instrucciones personalizadas de ChatGPT constituyen el punto de arranque del régimen conversacional bajo la premisa operativa adoptada por esta metodología. El primer ciclo de una conversación nueva debe activar dicho régimen y establecer su continuidad para los ciclos siguientes.
+
+El contrato de salida incorpora `CI` como indicador operativo:
+
+- `CI: ✓` = condiciones observables del régimen satisfechas durante el ciclo.
+- `CI: ?` = evidencia insuficiente para sostener su aplicación.
+- `CI: !` = contradicción o incumplimiento observable.
+
+`CI` se verifica por sus manifestaciones observables y no por una afirmación sobre el mecanismo interno de ChatGPT. El estado positivo no demuestra que el campo de Instrucciones personalizadas haya sido físicamente releído; demuestra que el ciclo satisface el contrato de continuidad establecido por ese régimen.
+
+`CI` es parte del formato de salida y del procedimiento operativo. No constituye un nuevo principio fundamental.
+
+
 
 HISTORIAL-RDC.md conserva el ciclo de vida de las sesiones RDC sin registrar cada ping ni cada ciclo. Una sesión lógica se mantiene como ACTIVA, SUSTITUIDA, FINALIZADA, REVOCADA o EXPIRADA según evidencia verificable.
 
@@ -257,9 +274,9 @@ En ChatGPT nativo, la ausencia o indisponibilidad del MCP no impide producir la 
 
 ## 18.0 Regla transversal de salida por turno
 
-El contrato de salida definido en `FORMATO-REGISTRO-VERIFICACION-CICLO.md` es obligatorio para **cada turno/ciclo sujeto a la metodología, sin excepción**, incluidos turnos bloqueados, turnos de resolución conversacional y turnos sin uso de RDC. El contrato vigente de presentación es `v1.7.4`.
+El contrato de salida definido en `FORMATO-REGISTRO-VERIFICACION-CICLO.md` es obligatorio para **cada turno/ciclo sujeto a la metodología, sin excepción**, incluidos turnos bloqueados, turnos de resolución conversacional y turnos sin uso de RDC. El contrato vigente de presentación es `v1.7.5`.
 
-La respuesta no puede declararse `COMPLETADO` si no porta el formato `v1.7.4` ni si alguno de sus campos obligatorios está ausente o contradice el estado verificable del ciclo.
+La respuesta no puede declararse `COMPLETADO` si no porta el formato `v1.7.5` ni si alguno de sus campos obligatorios está ausente o contradice el estado verificable del ciclo.
 
 ## 18. Salida visible mínima
 
