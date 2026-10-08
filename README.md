@@ -24,6 +24,10 @@ La sesión RDC no se reinicia al cambiar de conversación. Permanece globalmente
 
 Una conversación nueva debe heredar el estado registrado antes de pedir nuevamente los datos de la sesión.
 
+## Continuidad de publicación Vercel
+
+La ruta de publicación es primaria por defecto y secundaria por contingencia. La cuenta secundaria canonizada es `blacksheepsup@gmail.com` y su uso exige commit validado, configuración segura desde la bóveda canónica de variables y registro de SHA, motivo y URL. El procedimiento detallado está en [`ANEXO-GOBERNANZA-PUBLICACION-VERCEL.md`](ANEXO-GOBERNANZA-PUBLICACION-VERCEL.md).
+
 ## Arquitectura
 
 El SI contiene los principios fundamentales y los presenta verticalmente, de mayor a menor preponderancia. La Metodología y sus anexos desarrollan la aplicación práctica del SI.
@@ -40,11 +44,11 @@ El SI canónico se encuentra en [SI-METACOGNITIVO.md](SI-METACOGNITIVO.md).
 
 Versión vigente del SI:
 
-**v1.6.11 — Enforcement Determinista de Salida**
+**v1.6.12 — Continuidad de Publicación Vercel por Cuenta Secundaria**
 
 Versión vigente de la Metodología:
 
-**v0.12.5 — Enforcement Determinista de Salida**
+**v0.12.6 — Continuidad de Publicación Vercel por Cuenta Secundaria**
 
 El SI contiene los principios fundamentales vigentes, ordenados de mayor a menor preponderancia. La continuidad entre conversaciones se desarrolla operativamente mediante la Metodología y el anexo `BOOTSTRAP-CONTEXTO-GLOBAL.md`.
 

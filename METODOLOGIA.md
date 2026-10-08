@@ -2,21 +2,21 @@
 
 ## Estado canónico
 
-- **Versión:** v0.12.5
-- **Nombre de versión:** Enforcement Determinista de Salida
+- **Versión:** v0.12.6
+- **Nombre de versión:** Continuidad de Publicación Vercel por Cuenta Secundaria
 - **Última actualización:** 2026-10-08
 - **Última actualización canónica:** 2026-10-08
 - **Ámbito:** Todos los proyectos y conversaciones trabajados bajo esta metodología.
 
 ### Narrativa de la versión
 
-**Antes:** la v0.12.3 trataba `ESTADO-RDC-ACTIVO.md` como estado de una única sesión global y permitía que una conversación nueva heredara esa identidad sin descubrir el conjunto de dispositivos actualmente conectados.
+**Antes:** la metodología no definía una ruta canónica de continuidad cuando la cuenta primaria de Vercel no podía publicar la versión más vigente del sistema.
 
-**Cambio:** `ESTADO-RDC-ACTIVO.md` pasa a ser un registro persistente de identidades y ciclos de vida RDC. La conectividad actual deja de depender del valor heredado y debe descubrirse en vivo contra las cuentas RDC accesibles. La terminal concreta se resuelve por ciclo mediante `RDC-DEVICE-ID`, manteniendo independientes terminal, ubicación y conversación.
+**Cambio:** se incorpora un publicador secundario de Vercel identificado por `blacksheepsup@gmail.com`, subordinado a la cuenta/proyecto primarios y activable solo ante indisponibilidad verificable de la ruta principal.
 
-**Motivo:** el modelo anterior produjo una identificación materialmente incorrecta cuando varias conversaciones y varias computadoras compartían el mismo entorno RDC. Un estado persistido de una terminal no puede actuar como selector global de otra conversación.
+**Motivo:** una incidencia de acceso, autenticación, cuota o disponibilidad de la cuenta primaria no debe impedir que el avance más reciente y previamente validado del sistema pueda publicarse y visualizarse.
 
-**Resultado:** una conversación nueva puede obtener el estado real observable de RDC sin depender de la terminal seleccionada por otra conversación; las distintas terminales pueden coexistir y ser operadas por ciclos independientes.
+**Resultado:** existe una ruta de publicación primaria y una ruta de continuidad secundaria, ambas sujetas a la misma validación de código, a la bóveda canónica de variables y a trazabilidad explícita. La cuenta secundaria no adquiere por ello autoridad de producción.
 
 ### Registro de versiones
 
@@ -55,7 +55,33 @@
 | 29 | v0.12.3 | Contrato de Salida Ejecutable | Se convierte el formato de salida en un contrato ejecutable con esquema machine-readable, validación estructural exacta, renderer determinista y liberación condicionada al output validado. La implementación queda protegida contra deriva mediante sincronización automática entre Metodología y KHORA y pruebas de regresión. |
 | 30 | v0.12.4 | Descubrimiento Vivo de Terminal RDC | Se sustituye el modelo de una única sesión RDC global por un registro de identidades con descubrimiento vivo por ciclo. Una conversación nueva enumera dispositivos conectados en las cuentas RDC accesibles, reconcilia con el registro y selecciona la terminal objetivo sin heredar ciegamente una selección de otra conversación. |
 | 31 | v0.12.5 | Enforcement Determinista de Salida | Se consolida el formato de salida como contrato ejecutable: esquema machine-readable, validación estructural exacta, renderer determinista, hash del output y barrera de RELEASE. Un ciclo verificado no puede cerrarse sin un output válido y la liberación devuelve el mismo output validado. Las regresiones de contrato deben fallar automáticamente mediante pruebas y sincronización con KHORA. |
+| 32 | v0.12.6 | Continuidad de Publicación Vercel por Cuenta Secundaria | Se canoniza el fallback de publicación en Vercel mediante la cuenta secundaria `blacksheepsup@gmail.com`, manteniendo la cuenta/proyecto primarios como autoridad. La ruta secundaria solo puede publicar un commit validado, usar la bóveda canónica de variables y registrar cuenta, proyecto, SHA, motivo, timestamp y URL. |
 La tabla es canónica: las versiones futuras deben añadir una fila sin borrar ni reciclar las anteriores. El nombre describe el avance de la versión y no sustituye el título general del sistema o documento.
+
+## Gobernanza canónica de publicación Vercel
+
+Para los proyectos publicados en Vercel se establece la siguiente jerarquía:
+
+`VERCEL PRIMARIO → VERCEL SECUNDARIO DE CONTINUIDAD`
+
+La ruta primaria conserva la autoridad canónica. Cuando esa ruta no esté disponible por acceso, autenticación, cuota, incidencia operativa o indisponibilidad verificable, puede activarse el publicador secundario.
+
+**Cuenta secundaria canónica:** `blacksheepsup@gmail.com`
+
+El publicador secundario existe para mantener una versión públicamente inspeccionable del avance más reciente. Su activación no sustituye permanentemente a la cuenta primaria ni cambia por sí sola el dominio o la autoridad de producción.
+
+Cada publicación secundaria debe:
+
+1. utilizar un commit conocido y validado del repositorio;
+2. usar la bóveda canónica de variables o la configuración segura equivalente, sin copiar secretos a archivos versionados;
+3. registrar cuenta publicadora, proyecto/equipo Vercel, commit SHA, motivo de contingencia, timestamp y URL;
+4. distinguir el deployment de continuidad del deployment productivo primario;
+5. volver a utilizar la ruta primaria cuando esta vuelva a estar disponible.
+
+No se almacenan tokens, contraseñas, refresh tokens ni credenciales de Vercel en la Metodología, el SI, anexos o repositorios de código.
+
+El procedimiento de detalle está canonizado en `ANEXO-GOBERNANZA-PUBLICACION-VERCEL.md`.
+
 
 ## 1. Convención obligatoria de foliación de ciclos
 
