@@ -509,7 +509,7 @@ Toda migración, modificación de esquema o efecto persistente externo debe gobe
 
 ### 23.5 Prohibición de evasión por identidad
 
-La continuidad de Vercel no se resuelve mediante cuentas o equipos alternativos creados o utilizados para ampliar o eludir cuotas. Esta metodología no reconoce una ruta normativa de publicación por identidad alternativa.
+La continuidad de Vercel no se resuelve mediante mecanismos de identidad, propiedad o equipos utilizados para ampliar o eludir cuotas. Esta metodología no reconoce una ruta normativa de evasión de límites.
 
 El mecanismo canónico de continuidad es:
 
