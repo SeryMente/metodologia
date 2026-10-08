@@ -1,7 +1,7 @@
 # Registro Operativo Global — Identidades RDC
 
 **Naturaleza:** registro operativo mutable; no es una fuente de verdad de conectividad actual ni selecciona una terminal global para todas las conversaciones.
-**Ultima actualizacion registrada:** 2026-10-08T18:02:35.701Z
+**Ultima actualizacion registrada:** 2026-10-08T19:21:57.319Z
 **Funcion transversal:** conservar identidades RDC conocidas, ciclos de vida y observaciones verificadas para continuidad entre conversaciones.
 
 ## Modelo de estado
@@ -19,11 +19,11 @@
 
 ## Observacion viva mas reciente
 
-**Momento:** 2026-10-08T18:02:35.701Z  
+**Momento:** 2026-10-08T19:21:57.319Z  
 **Tipo:** PING VERIFICADO  
 **Cuenta RDC:** blacksheepsup@gmail.com  
 **Dispositivo:** PC-7  
-**RDC-DEVICE-ID:** 418659b7-64bc-4cb2-a2cb-ed8fd83c5005  
+**RDC-DEVICE-ID:** e5a4159e-cb32-4ba6-89d6-3a2083a49893  
 **RDC-CONECTIVIDAD:** VERIFICADO-ACTIVO  
 **RDC-ORIGEN:** proveedor RDC en vivo  
 **Nota:** esta observacion demuestra conectividad de esa identidad en ese ciclo. No declara exclusividad ni seleccion global.
@@ -34,12 +34,13 @@
 
 | Dispositivo | RDC-DEVICE-ID | Estado observado | Ultimo visto reportado |
 |---|---|---|---|
-| PC-7 | 418659b7-64bc-4cb2-a2cb-ed8fd83c5005 | ONLINE | 5m |
+| PC-7 | e5a4159e-cb32-4ba6-89d6-3a2083a49893 | ONLINE | 2m |
+| PC-7 | 418659b7-64bc-4cb2-a2cb-ed8fd83c5005 | OFFLINE | 56m |
 | PC-7 | 5165397f-3ccf-4c7d-939f-821526119101 | OFFLINE | 1h |
 | PC10RCIF4EI4 | 7fabbc1d-7c0d-4400-bd31-88b3b4229286 | OFFLINE | 2h |
 | PC-4 | 87d6fd01-77e1-4a93-ba1a-8faf6b387016 | OFFLINE | 16h |
 
-**Uso mensual observado de esta cuenta:** 73% usado / 27% restante.  
+**Uso mensual observado de esta cuenta:** 77% usado / 23% restante.  
 **Fuente:** `who_am_i` del proveedor RDC durante este ciclo.
 
 ### Cuenta: elathanor111@gmail.com
@@ -58,7 +59,8 @@
 
 | Identidad RDC | Estado persistente | Nota |
 |---|---|---|
-| blacksheepsup@gmail.com + 418659b7-64bc-4cb2-a2cb-ed8fd83c5005 | CONOCIDA · ONLINE EN ULTIMA OBSERVACION | PC-7; ping verificado |
+| blacksheepsup@gmail.com + e5a4159e-cb32-4ba6-89d6-3a2083a49893 | CONOCIDA · ONLINE EN ULTIMA OBSERVACION | PC-7; nueva conexion verificada y ping 2026-10-08T19:21:57.319Z |
+| blacksheepsup@gmail.com + 418659b7-64bc-4cb2-a2cb-ed8fd83c5005 | CONOCIDA · OFFLINE EN ULTIMA OBSERVACION | PC-7; identidad distinta |
 | blacksheepsup@gmail.com + 5165397f-3ccf-4c7d-939f-821526119101 | CONOCIDA · OFFLINE EN ULTIMA OBSERVACION | PC-7; identidad distinta |
 | blacksheepsup@gmail.com + 7fabbc1d-7c0d-4400-bd31-88b3b4229286 | CONOCIDA · OFFLINE EN ULTIMA OBSERVACION | PC10RCIF4EI4 |
 | blacksheepsup@gmail.com + 87d6fd01-77e1-4a93-ba1a-8faf6b387016 | CONOCIDA · OFFLINE EN ULTIMA OBSERVACION | PC-4 |
