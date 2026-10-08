@@ -1,7 +1,7 @@
 # Anexo - Contexto de Ejecucion y Formato de Salida por Ciclo
 
 **Estado:** CANONICO
-**Version:** v1.7.4 — HUD Compacto con Identidad Metodológica y Uso RDC
+**Version:** v1.7.5 — HUD Compacto con Verificación de Régimen Personalizado
 **Fecha de canonizacion:** 2026-10-07
 **Ambito:** Todos los proyectos y conversaciones sujetos a la metodologia comun.
 
@@ -124,7 +124,7 @@ SI CARGADO · vX.Y.Z — NOMBRE DE VERSIÓN · COMPLETO · ACTIVO
 
 METODOLOGÍA CARGADA · vX.Y.Z — NOMBRE DE VERSIÓN · COMPLETA · ACTIVA
 
-ChatGPT · UBIC: ... · RDC: ... · C: ... · RDC-USO: ...% usado / ...% restante · S: ... · K: ✓|OFF|?|! · T: ✓|?|! · RDC-CNX: ... · USR: ...
+ChatGPT · CI: ✓|?|! · UBIC: ... · RDC: ... · C: ... · RDC-USO: ...% usado / ...% restante · S: ... · K: ✓|OFF|?|! · T: ✓|?|! · RDC-CNX: ... · USR: ...
 
 RESULTADO: ...
 ESTADO: COMPLETADO | BLOQUEADO | PENDIENTE
@@ -143,7 +143,20 @@ Convenciones:
 - Los detalles completos de cuenta, dispositivo, identidad efectiva, timestamps y evidencia permanecen en el estado global y en los registros de auditoría.
 - La ausencia de un dato se representa como NO VERIFICADO, NO DISPONIBLE o PENDIENTE. Nunca se inventa.
 
-La foliación global del ciclo y la identificación canónica del SI conservan sus reglas vigentes.
+La foliación global del ciclo, la identificación canónica del SI y el indicador `CI` conservan sus reglas vigentes.
+
+## 7.1 Verificación del régimen de Instrucciones personalizadas
+
+`CI` registra la aplicación verificable del régimen de Instrucciones personalizadas durante el ciclo. No representa una lectura técnica observable del campo interno de la plataforma.
+
+Estados permitidos:
+- `CI: ✓` = condiciones observables del régimen satisfechas.
+- `CI: ?` = evidencia insuficiente para sostener la aplicación.
+- `CI: !` = contradicción o incumplimiento observable.
+
+En una conversación nueva, el primer ciclo establece la continuidad del régimen para los ciclos siguientes. Cada ciclo posterior debe conservar esa continuidad y ejecutar las comprobaciones externas exigidas por el régimen.
+
+`CI: ✓` no puede emitirse por la mera existencia del campo de Instrucciones personalizadas ni por memoria de un ciclo anterior; requiere la manifestación verificable del contrato aplicable al ciclo.
 
 ## 8. Procedencia
 
