@@ -164,3 +164,16 @@ Cuando KHORA esté disponible, debe intentarse `HEALTH → OPEN → CASCADA → 
 El formato definido en `FORMATO-REGISTRO-VERIFICACION-CICLO.md` es obligatorio en **cada turno/ciclo, sin excepción**. Esto incluye aclaraciones, bloqueos, resoluciones conversacionales y respuestas sin cambios de repositorio.
 
 La ausencia o alteración material del formato impide declarar `E: COMPLETADO`. La foliación global `CXXX` y la identificación del SI son parte inseparable del contrato.
+
+
+## 19. Gobernanza de Vercel y ejecución local
+
+Cuando una operación utilice Vercel, el modelo debe consultar el objeto canónico `ANEXO-GOBERNANZA-VERCEL-CUOTA-Y-CONTINUIDAD-LOCAL.md` antes de decidir si publica.
+
+Debe distinguir consumo de un deployment existente, operación de datos, ejecución local, verificación de build, preview, production, rollback y administración. Solo las operaciones que realmente necesiten crear un deployment nuevo quedan directamente condicionadas por la cuota de creación de deployments.
+
+Una cuota agotada no constituye bloqueo global de Cora. La vía local debe utilizarse cuando sea funcionalmente suficiente y no se necesite el URL canónico. La instancia local no cambia la autoridad ni el contenido servido por `https://khora-web.vercel.app`.
+
+La documentación específica del proveedor debe actualizarse en el objeto canónico cuando Vercel modifique límites o mecanismos. Las reglas de plataforma permanecen en el nivel metodológico-operativo; no se elevan automáticamente a principios fundamentales.
+
+No se utilizan cuentas o equipos alternativos como mecanismo de evasión de límites de Vercel.
