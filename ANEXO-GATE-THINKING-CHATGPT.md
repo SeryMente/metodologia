@@ -1,7 +1,7 @@
 # Anexo — Gate de Thinking en ChatGPT
 
 **Estado:** CANÓNICO
-**Versión:** v1.1.4
+**Versión:** v1.1.5
 **Fecha:** 2026-10-08
 **Ámbito:** Todos los ciclos sujetos a la metodología cuando la plataforma de ejecución sea ChatGPT.
 
@@ -43,7 +43,7 @@ La metodología no afirma ni almacena una prueba del razonamiento interno del mo
 
 La evidencia fuerte sigue siendo el receipt, sus hashes, la cobertura de principios y el veredicto de KHORA cuando el MCP está disponible. Cuando KHORA no está disponible, no existe veredicto externo para ese turno y el estado debe reflejarlo como `K: OFF`.
 
-## 6. Formato visible
+## 6. Formato visible y reanclaje
 
 El formato de salida por ciclo es obligatorio y versionado como `v1.7.7`.
 
