@@ -120,7 +120,7 @@ Este contrato hace persistente y consultable el estado en el repositorio. La pla
 
 ## Continuidad persistente de desempeno en CIBERCAFE
 
-Para el perfil CIBERCAFE se aplica desde bootstrap `PRESUPUESTO-REINICIO = 0`. Recuperar la memoria de `PC-N` antes de repetir diagnósticos; no planificar ni ejecutar reboot, BIOS/UEFI, firmware, reparación offline ni cambios que requieran reinicio. Las oportunidades bloqueadas deben conservarse en la memoria para una eventual migración a un ámbito con régimen distinto.
+Para el perfil CIBERCAFE se aplica desde bootstrap `PRESUPUESTO-REINICIO = 0`. Recuperar la memoria de `PC-N` antes de repetir diagnósticos; no planificar ni ejecutar reboot, BIOS/UEFI, firmware, reparación offline ni cambios que requieran reinicio. Las oportunidades `BLOQUEADA-REINICIO` deben conservarse en la memoria para una eventual migración a un ámbito con régimen distinto.
 
 Cuando la ubicacion sea CIBERCAFE, la continuidad del proceso de desempeno se resuelve por terminal individual, no por el cibercafe como conjunto.
 
