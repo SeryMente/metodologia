@@ -51,7 +51,7 @@ El formato de salida por ciclo es obligatorio y versionado como `v1.7.7`.
 
 `SI CARGADO · vX.Y.Z — NOMBRE DE VERSIÓN · COMPLETO · ACTIVO`
 
-`ChatGPT · CI: ✓|?|! · UBIC: ... · RDC: ... · C: ... · S: ... · K: ✓|?|! · T: ✓|?|! · fila4`
+`ChatGPT · CI: ✓|?|! · RA: INICIAL|✓|CORRECTIVO|! · UBIC: ... · RDC: ... · C: ... · S: ... · K: ✓|?|! · T: ✓|?|! · fila4`
 
 `RESULTADO: ...`
 `ESTADO: COMPLETADO | BLOQUEADO | PENDIENTE`
