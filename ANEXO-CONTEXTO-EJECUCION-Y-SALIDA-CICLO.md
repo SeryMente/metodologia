@@ -1,7 +1,7 @@
 # Anexo - Contexto de Ejecucion y Formato de Salida por Ciclo
 
 **Estado:** CANONICO
-**Version:** v1.7.5 — HUD Compacto con Verificación de Régimen Personalizado
+**Version:** v1.7.6 — HUD Compacto con Verificación de Régimen Personalizado
 **Fecha de canonizacion:** 2026-10-07
 **Ambito:** Todos los proyectos y conversaciones sujetos a la metodologia comun.
 
