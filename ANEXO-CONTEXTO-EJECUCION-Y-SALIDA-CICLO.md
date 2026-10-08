@@ -134,9 +134,9 @@ Convenciones:
 - `ChatGPT` se muestra sin etiqueta.
 - `UBIC` = ubicación.
 - `RDC` = si RDC es requisito: SI, NO o PENDIENTE.
-- `C` = cuenta RDC de la sesión activa.
-- `RDC-USO` = porcentaje mensual usado y porcentaje restante de la cuenta de la sesión activa. Se presenta con el último dato verificado disponible y su vigencia temporal; cuando no exista, se muestra `NO VERIFICADO` o `NO DISPONIBLE`.
-- `S` = sesión RDC persistente: ACTIVA, INACTIVA o NO VERIFICADA.
+- `C` = cuenta RDC de la terminal seleccionada para este ciclo.
+- `RDC-USO` = porcentaje mensual usado y porcentaje restante de la cuenta de la terminal seleccionada. Se presenta con el último dato verificado disponible y su vigencia temporal; cuando no exista, se muestra `NO VERIFICADO` o `NO DISPONIBLE`.
+- `S` = estado de sesión de la terminal seleccionada: ACTIVA, INACTIVA o NO VERIFICADA.
 - `K` = estado del verificador MCP canónico de KHORA: `✓`, `OFF`, `?` o `!`. `RDC-CNX` conserva la conectividad del canal RDC.
 - `USR` = identidad operativa visible del perfil. En CECEQ siempre se muestra `fila4`, nunca `central\\mantenimientorci`.
 - El nombre del dispositivo RDC puede añadirse sin etiqueta únicamente cuando sea relevante para la tarea.
