@@ -99,6 +99,18 @@ Cuando exista una identidad seleccionada:
 
 `RDC-REINSTANTIAR` se activa únicamente cuando la terminal requerida no es observable en vivo y la tarea necesita esa terminal.
 
+### Regla de contexto Vercel
+
+Cuando una tarea utilice Vercel, el ciclo debe resolver antes de ejecutar el modo de publicación desde `ANEXO-GOBERNANZA-VERCEL-CUOTA-Y-CONTINUIDAD-LOCAL.md`.
+
+El contexto Vercel debe distinguir, cuando sea relevante:
+- `VERCEL-MODO`: CONSUMO-EXISTENTE, DATOS, LOCAL, BUILD-LOCAL, PREVIEW, PRODUCTION, ROLLBACK o ADMINISTRACION.
+- `VERCEL-DEPLOY-REQUERIDO`: SI o NO.
+- `VERCEL-CUOTA`: NO-REQUERIDA, DISPONIBLE, LIMITADA o NO-VERIFICADA.
+- `VERCEL-CANONICO`: URL/proyecto canónico del sistema, sin confundirlo con una instancia local.
+
+Estos campos son contexto operativo y no amplían por sí mismos el HUD visible del turno. Una cuota limitada solo bloquea la publicación que realmente requiera un deployment nuevo; no bloquea las operaciones que puedan ejecutarse sobre un deployment existente ni las que puedan desplazarse localmente.
+
 ### Regla de precedencia RDC antes de KHORA
 
 Antes de cualquier certificación o health-check de KHORA, cada ciclo debe consumir el registro persistente y ejecutar descubrimiento vivo cuando RDC sea relevante. La selección de la terminal se establece después de observar el conjunto actual de dispositivos.
