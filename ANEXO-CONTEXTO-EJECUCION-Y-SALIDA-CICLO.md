@@ -101,6 +101,8 @@ Cuando exista una identidad seleccionada:
 
 ### Regla de contexto Vercel
 
+La mera mención operativa de Vercel en el ciclo activa este contexto y obliga a resolver el objeto canónico antes de ejecutar. No se asume que la operación necesita un deployment: primero se identifica la limitación relevante, después la dependencia material del objetivo y después la suficiencia local.
+
 Cuando una tarea utilice Vercel, el ciclo debe resolver antes de ejecutar el modo de publicación desde `ANEXO-GOBERNANZA-VERCEL-CUOTA-Y-CONTINUIDAD-LOCAL.md`.
 
 El contexto Vercel debe distinguir, cuando sea relevante:
