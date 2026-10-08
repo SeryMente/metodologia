@@ -2,7 +2,7 @@
 
 **Estado:** CANÓNICO  
 **Versión:** v1.7.7 — Contrato Ejecutable con Reanclaje Visible  
-**Fecha:** 2026-10-07
+**Fecha:** 2026-10-08
 
 ## Formato mínimo
 
