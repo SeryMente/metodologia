@@ -1,7 +1,7 @@
 # Estado Operativo - Sesion RDC Activa
 
 **Naturaleza:** registro operativo mutable; no constituye por si mismo una nueva norma.
-**Ultima actualizacion:** 2026-10-07T23:01:00Z
+**Ultima actualizacion:** 2026-10-08T16:22:08.620Z
 **Funcion transversal:** fuente global de continuidad de la identidad de la sesion RDC entre conversaciones.
 
 ## Sesion activa
@@ -10,28 +10,29 @@
 |---|---|
 | Plataforma | ChatGPT |
 | Ubicacion | CECEQ |
+| RDC-REGISTRO-ID | RDC-20261008-0001 |
 | RDC-SESION | ACTIVA · IDENTIDAD PERSISTENTE |
-| RDC-CONECTIVIDAD | VERIFICADO-ACTIVO · PROVIDER HANDSHAKE · 2026-10-07T20:31:30.2613435Z |
+| RDC-CONECTIVIDAD | VERIFICADO-ACTIVO · PING · 2026-10-08T16:20:35.092Z |
 | RDC-CUENTA | blacksheepsup@gmail.com |
-| RDC-DISPOSITIVO | PC10RCIF4EI4 |
-| RDC-DEVICE-ID | 7fabbc1d-7c0d-4400-bd31-88b3b4229286 |
-| RDC-VERIFICACION-CONEXION | VERIFICADO · SESSION RESTORED · CHANNEL SUBSCRIBED · DEVICE ONLINE · 2026-10-07T20:31:30.2613435Z |
-| Ultima verificacion de conexion | 2026-10-07T20:31:30.2613435Z · RESULTADO: VERIFICADO-ACTIVO · EVIDENCIA: HANDSHAKE DEL REMOTE DEVICE |
+| RDC-DISPOSITIVO | PC-7 |
+| RDC-DEVICE-ID | 5165397f-3ccf-4c7d-939f-821526119101 |
+| RDC-VERIFICACION-CONEXION | VERIFICADO · SESSION RESTORED · CHANNEL SUBSCRIBED · DEVICE ONLINE · 2026-10-08T16:20:35.092Z |
+| Ultima verificacion de conexion | 2026-10-08T16:20:35.092Z · RESULTADO: VERIFICADO-ACTIVO · EVIDENCIA: PING + HANDSHAKE DEL REMOTE DEVICE |
 | RDC-FINALIZACION | NO REGISTRADA |
-| RDC-SUSTITUCION | NO REGISTRADA |
+| RDC-SUSTITUCION | SUSTITUYE RDC-20261007-0001 · 2026-10-08T16:22:08.620Z |
 | PERSISTENCIA DE SESION | VIGENTE HASTA FINALIZACION O SUSTITUCION EXPLICITAS |
-| RDC-MENSUAL | 45% usado / 55% restante |
-| RDC-MENSUAL-VERIFICACION | 2026-10-07T23:01:00Z · FUENTE: RDC who_am_i · CUENTA DE LA SESIÓN ACTIVA |
+| RDC-MENSUAL | 61% usado / 39% restante |
+| RDC-MENSUAL-VERIFICACION | 2026-10-08 · FUENTE: RDC who_am_i · CUENTA DE LA SESIÓN ACTIVA |
 | WIN-OPERATIVO | fila4 |
 | WIN-ADMIN | central\\mantenimientorci |
 | WIN-EFECTIVO-RDC | central\\mantenimientorci |
 | RDC-REQUERIDA | PENDIENTE POR CICLO; NO SE PRESUPONE ACTIVA |
-| CONTEXTO-VERIFICACION | VERIFICADO-ACTIVO · RECUPERACION RESUELTA |
+| CONTEXTO-VERIFICACION | VERIFICADO-ACTIVO · SUSTITUCION PUBLICADA Y READ-BACK VERIFICADO |
 | PERFIL-UBICACION | CECEQ · COMPLETO |
 | IDENTIDAD-OPERATIVA | fila4 · PERFIL CECEQ; NO IMPLICA SESION RDC SEPARADA |
-| RDC-OBSERVABILIDAD | COHERENTE · PROVIDER REPORTA DEVICE ONLINE Y SESION RESTAURADA |
+| RDC-OBSERVABILIDAD | COHERENTE · PROVIDER REPORTA DEVICE ONLINE Y PING VERIFICADO |
 | RDC-RECUPERACION | RESUELTA · COMANDO CANONICO: RDC-REINSTANTIAR |
-| RDC-RECUPERACION-ESTADO | RESUELTA · HANDSHAKE VALIDADO · ESTADO GLOBAL PUBLICADO · READ-BACK REQUERIDO |
+| RDC-RECUPERACION-ESTADO | RESUELTA · HANDSHAKE VALIDADO · ESTADO GLOBAL PUBLICADO · READ-BACK VERIFICADO |
 
 ## Regla de lectura
 
@@ -47,32 +48,30 @@ Una nueva sesion verificada debe sustituir este registro y actualizar su marca t
 
 ## Ultimo handshake validado
 
-**RDC-HANDSHAKE:** recibido y validado desde el Remote Device. La identidad persistente coincide con la registrada y la conectividad quedó confirmada por el proveedor.
+**RDC-HANDSHAKE:** recibido y validado desde el Remote Device. La identidad persistente vigente es la sesión RDC-20261008-0001 y la conectividad quedó confirmada por el proveedor.
 
 - Estado del dispositivo: Online
 - Sesion: Session restored
 - Canal: Channel subscribed
 - Remote Device: connected
+- Device: PC-7
+- Device ID: 5165397f-3ccf-4c7d-939f-821526119101
 - Marca: HANDSHAKE FRESCO DEL CICLO
 
-Este handshake resuelve la recuperacion sin abrir una segunda sesion.
+## Sustitución registrada
 
-## Incidencia conocida
+La sesión anterior RDC-20261007-0001 (PC10RCIF4EI4 / 7fabbc1d-7c0d-4400-bd31-88b3b4229286) fue apagada mediante shutdown y posteriormente confirmada OFFLINE. La nueva sesión RDC-20261008-0001 fue verificada mediante handshake y ping y quedó publicada como sesión global vigente.
 
-### Incidencia resuelta · 2026-10-07
+## Restricciones
 
-La divergencia de observabilidad quedó resuelta mediante una reinstanciación oficial del Remote Device. La sesión persistente coincide con la identidad verificada y la conectividad fue confirmada por el proveedor.
+La sesión RDC vigente puede utilizarse para trabajo técnicamente válido. Para CECEQ, fila4 permanece como identidad operativa de referencia y central\\mantenimientorci como identidad efectiva del canal. No se abren sesiones RDC paralelas para resolver diferencias de identidad.
 
-La ultima conexion RDC verificada estuvo autenticada y el shell remoto observado se ejecuto como central\\mantenimientorci. El usuario Windows operativo autorizado para CECEQ es fila4. La identidad central\\mantenimientorci puede ejecutar el trabajo tecnicamente valido. La unica restriccion especifica es no clonar ni materializar repositorios nuevos dentro del perfil o ruta de MantenimientoRCI.
+La única restricción específica de materialización es no clonar ni materializar repositorios nuevos dentro del perfil o ruta de MantenimientoRCI.
 
+## Fuente histórica
 
-## Cierre operativo del ciclo · 2026-10-07
+El ciclo de vida de esta sesión y de las anteriores se conserva en HISTORIAL-RDC.md.
 
-- **RDC:** sesión persistente ACTIVA; nueva conexión restaurada sin abrir sesión paralela.
-- **KHORA HEAD:** `326f0664b0dd579c67809d94ac6d6186baa58f5b`; alineado con `origin/main`.
-- **Vercel:** proyecto canónico `khora-web`; deployment `dpl_7kpfQgQuFn2zDEqYkkQPZ4tFBx7t`; estado **READY**; alias `https://khora-web.vercel.app`.
-- **Runtime DB:** migraciones 023–028 aplicadas durante el build de producción.
-- **Validación:** typecheck 0; suite unitaria completa 310/310; build local de producción exit 0.
-- **Smoke producción:** `/` HTTP 200; metadata OAuth MCP HTTP 200; `/api/mcp` sin credenciales HTTP 401.
-- **Integridad normativa:** snapshot atómico H1/H2; commit+blob SHA; ledger secuencial server-side; `application_log_sha256`; `VERIFIED_RELEASE` condicionado a evidencia completa.
-- **GitHub Actions:** workflows del push continúan fallando antes de ejecutar steps; no se usa ese fallo como prueba de producción porque Vercel directo ya verificó el deployment READY del commit exacto.
+## Cierre operativo del estado anterior · 2026-10-07
+
+Se conserva como antecedente histórico y no como estado vigente. Los datos anteriores del deployment y de KHORA pertenecen al cierre del 2026-10-07.
