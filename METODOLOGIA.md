@@ -2,8 +2,8 @@
 
 ## Estado canónico
 
-- **Versión:** v0.12.4
-- **Nombre de versión:** Descubrimiento Vivo de Terminal RDC
+- **Versión:** v0.12.5
+- **Nombre de versión:** Enforcement Determinista de Salida
 - **Última actualización:** 2026-10-08
 - **Última actualización canónica:** 2026-10-08
 - **Ámbito:** Todos los proyectos y conversaciones trabajados bajo esta metodología.
@@ -54,6 +54,7 @@
 | 28 | v0.12.2 | Verificación del Régimen Personalizado | Se incorpora al contrato de salida el indicador operativo CI para registrar, ciclo a ciclo, la aplicación verificable del régimen establecido por las Instrucciones personalizadas. El primer ciclo activa y establece su continuidad; los ciclos posteriores deben conservarla y volver a ejecutar las comprobaciones externas que corresponda. CI no pretende demostrar acceso introspectivo al campo interno de la plataforma. |
 | 29 | v0.12.3 | Contrato de Salida Ejecutable | Se convierte el formato de salida en un contrato ejecutable con esquema machine-readable, validación estructural exacta, renderer determinista y liberación condicionada al output validado. La implementación queda protegida contra deriva mediante sincronización automática entre Metodología y KHORA y pruebas de regresión. |
 | 30 | v0.12.4 | Descubrimiento Vivo de Terminal RDC | Se sustituye el modelo de una única sesión RDC global por un registro de identidades con descubrimiento vivo por ciclo. Una conversación nueva enumera dispositivos conectados en las cuentas RDC accesibles, reconcilia con el registro y selecciona la terminal objetivo sin heredar ciegamente una selección de otra conversación. |
+| 31 | v0.12.5 | Enforcement Determinista de Salida | Se consolida el formato de salida como contrato ejecutable: esquema machine-readable, validación estructural exacta, renderer determinista, hash del output y barrera de RELEASE. Un ciclo verificado no puede cerrarse sin un output válido y la liberación devuelve el mismo output validado. Las regresiones de contrato deben fallar automáticamente mediante pruebas y sincronización con KHORA. |
 La tabla es canónica: las versiones futuras deben añadir una fila sin borrar ni reciclar las anteriores. El nombre describe el avance de la versión y no sustituye el título general del sistema o documento.
 
 ## 1. Convención obligatoria de foliación de ciclos
