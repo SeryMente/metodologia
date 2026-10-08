@@ -18,3 +18,8 @@ No se clona el estado de otra PC. El hardware, drivers, rendimiento, oportunidad
 ## Regla de continuidad
 
 El indice identifica la unidad de memoria, no el estado vivo de RDC. La terminal viva del ciclo se resuelve mediante el descubrimiento RDC canonico; una vez resuelta, su memoria de desempeno se recupera por `PC-N`.
+
+
+## Perfil común de operación
+
+Todas las terminales `PC-N` registradas bajo CIBERCAFE heredan `PRESUPUESTO-REINICIO = 0`. El registro de una oportunidad que requiera reboot no constituye autorización para ejecutarla en esa terminal; debe quedar marcada `BLOQUEADA-REINICIO` en su estado individual.
