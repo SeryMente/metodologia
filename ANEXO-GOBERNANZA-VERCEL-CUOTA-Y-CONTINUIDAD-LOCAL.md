@@ -2,11 +2,18 @@
 
 **Objeto:** Gobernanza operativa de Vercel para proyectos sujetos a la metodología  
 **Estado:** CANÓNICO  
-**Versión del objeto:** v1.0.0  
+**Versión del objeto:** v1.0.1  
 **Fecha de actualización del objeto:** 2026-10-08  
 **Ámbito:** Todos los proyectos, conversaciones y operaciones sujetos a la metodología que utilicen Vercel, incluyendo KHORA.  
 **Fuente factual primaria:** documentación oficial vigente de Vercel, especialmente Limits, CLI Build, CLI Deploy e Instant Rollback.  
 **Naturaleza:** regla metodológica-operativa; no constituye un principio fundamental nuevo del SI.
+
+## 0. Registro de versiones del objeto
+
+| Versión | Fecha | Cambio |
+|---|---|---|
+| v1.0.0 | 2026-10-08 | Canonización inicial del cruce Cora × Vercel × cuota × continuidad local. |
+| v1.0.1 | 2026-10-08 | Revisión de cierre y depuración de referencias heredadas; se conserva la misma arquitectura operativa. |
 
 ## 1. Propósito
 
