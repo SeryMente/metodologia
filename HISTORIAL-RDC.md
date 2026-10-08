@@ -1,14 +1,18 @@
 # Historial RDC
 
 **Estado:** CANÓNICO
-**Naturaleza:** registro histórico operativo; no sustituye a ESTADO-RDC-ACTIVO.md.
-**Función:** conservar el ciclo de vida de las sesiones RDC y permitir reconstruir sustituciones, finalizaciones y conflictos entre conversaciones.
+**Naturaleza:** registro histórico operativo; no determina por sí mismo la conectividad actual.
+**Función:** conservar el ciclo de vida de las identidades RDC, incluidas múltiples terminales concurrentes, y permitir reconstruir sustituciones, finalizaciones y conflictos entre conversaciones.
+
+**Identidad primaria:** `RDC-CUENTA + RDC-DEVICE-ID`.
 
 ## Regla
 
-Una entrada representa una sesión lógica, no cada ping ni cada ciclo de conversación.
+Una entrada representa una identidad lógica de dispositivo, no cada ping ni cada ciclo de conversación.
 
-Los registros históricos no se eliminan para crear una apariencia de continuidad. Una sesión cambia de estado mediante un cierre, sustitución, revocación o expiración verificable.
+Los registros históricos no se eliminan para crear una apariencia de continuidad. Una identidad cambia de estado mediante un cierre, sustitución, revocación o expiración verificable.
+
+Múltiples identidades pueden estar ACTIVAS simultáneamente cuando corresponden a distintos `RDC-DEVICE-ID`; esto no constituye conflicto. El nombre visible del dispositivo no es un identificador único.
 
 ## Sesiones
 
@@ -22,12 +26,11 @@ Los registros históricos no se eliminan para crear una apariencia de continuida
 
 ## Regla de unicidad
 
-El estado operativo normal es una sola sesión ACTIVA.
+La unicidad se evalúa por `RDC-CUENTA + RDC-DEVICE-ID`.
 
-Si aparecen varias sesiones ACTIVA simultáneamente:
-- se considera conflicto salvo que exista una excepción explícita y vigente;
-- no se elige una sesión por inferencia;
-- la resolución debe quedar registrada mediante sustitución, finalización o excepción verificable.
+Múltiples sesiones/identidades ACTIVAS son normales cuando corresponden a dispositivos distintos. No existe una única sesión RDC global.
+
+Un conflicto existe cuando la misma identidad presenta estados incompatibles o cuando se pretende representar una misma identidad de device_id como dos terminales distintas sin evidencia. La conexión de una terminal nueva no finaliza ni sustituye otra terminal.
 
 ## Uso
 
@@ -43,8 +46,8 @@ No se consulta para cada ping cuando la identidad global y la conexión observad
 
 ## Fuente actual
 
-La sesión global vigente se determina exclusivamente desde:
+La presencia y conectividad actuales se determinan exclusivamente mediante descubrimiento vivo del proveedor RDC.
 
-ESTADO-RDC-ACTIVO.md
+`ESTADO-RDC-ACTIVO.md` y este historial conservan continuidad, identidades conocidas y ciclos de vida; no autorizan por sí mismos una terminal actual.
 
-Este archivo conserva el pasado; no autoriza por sí mismo una sesión actual.
+La selección de terminal pertenece al ciclo/conversación y debe utilizar `RDC-CUENTA + RDC-DEVICE-ID`.
