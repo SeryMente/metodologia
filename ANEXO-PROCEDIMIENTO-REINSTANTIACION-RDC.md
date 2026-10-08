@@ -1,15 +1,15 @@
 # Procedimiento Canónico de Reinstanciación RDC
 
 **Estado:** CANÓNICO  
-**Versión:** v1.2.0  
-**Fecha:** 2026-10-07  
-**Ámbito:** Recuperación de sesiones RDC cuando exista divergencia entre el estado persistente y la observabilidad del canal.
+**Versión:** v1.3.0  
+**Fecha:** 2026-10-08  
+**Ámbito:** Recuperación de una terminal RDC concreta cuando exista divergencia entre el registro persistente y la observabilidad viva del proveedor.
 
 ## 1. Activación
 
-Se activa cuando la sesión global figura ACTIVA, pero el canal RDC aparece OFFLINE, NO VERIFICADO o inaccesible, y el usuario informa evidencia local positiva de actividad de una terminal o sesión RDC.
+Se activa cuando una terminal concreta requerida por el ciclo no aparece ONLINE en el descubrimiento vivo, pero el usuario aporta evidencia positiva de que intenta utilizar esa terminal.
 
-No se interpreta la divergencia como prueba de finalización.
+No se activa por el mero hecho de que otra terminal aparezca ONLINE. Tampoco se interpreta la ausencia de una identidad histórica como finalización global.
 
 ## 2. Comando canónico
 
@@ -23,7 +23,7 @@ La orden recomendada por Desktop Commander para iniciar el Remote Device es:
 
 `npx @wonderwhy-er/desktop-commander@latest remote`
 
-No se sustituye esta orden por heurísticas de búsqueda de ejecutables ni por comandos inventados. El reinicio normal reutiliza la sesión persistida del dispositivo cuando sigue vigente.
+No se sustituye esta orden por heurísticas de búsqueda de ejecutables ni por comandos inventados. El procedimiento reconecta o crea la identidad de la terminal que efectivamente resulte observable; no selecciona ni sustituye automáticamente otra terminal.
 
 ## 2.2 Activación proactiva
 
@@ -33,10 +33,10 @@ Este procedimiento debe ofrecerse en el mismo ciclo siempre que el modelo comuni
 
 Al recibir RDC-REINSTANTIAR:
 
-1. cerrar la terminal/sesión RDC que el usuario está observando como activa;
-2. iniciar/reinstanciar una sesión RDC nueva;
-3. esperar a que el nuevo canal reporte sus datos de conexión;
-4. devolver al modelo el bloque RDC-HANDSHAKE.
+1. cerrar la instancia RDC que el usuario esté intentando recuperar, cuando corresponda;
+2. iniciar/reinstanciar el Remote Device;
+3. esperar a que el proveedor reporte el nuevo estado;
+4. devolver al modelo el bloque RDC-HANDSHAKE de la identidad que efectivamente quedó conectada.
 
 El cierre de la terminal observada es una medida de saneamiento del canal para evitar que una instancia antigua quede mezclada con la nueva.
 
@@ -56,17 +56,18 @@ El usuario debe entregar, en la medida en que la plataforma los proporcione:
     WIN-EFECTIVO-RDC: ...
     VERIFICADO-EN: ...
 
-Los campos que la herramienta no proporcione se marcan NO DISPONIBLE; no se inventan. Como mínimo para sustituir o refrescar el estado global deben quedar determinados cuenta, dispositivo, device_id y evidencia suficiente de conectividad. Una restauración de la misma identidad también cuenta como refresco válido y actualiza la marca temporal.
+Los campos que la herramienta no proporcione se marcan NO DISPONIBLE; no se inventan. Como mínimo para registrar o refrescar una identidad deben quedar determinados cuenta, dispositivo, device_id y evidencia suficiente de conectividad. Una restauración del mismo device_id refresca esa identidad. Un device_id diferente se registra como identidad distinta; no sustituye automáticamente otra terminal.
 
 ## 5. Validación
 
 El modelo:
 
-1. compara la nueva identidad con la identidad persistente;
-2. verifica que existe evidencia positiva de conexión;
-3. comprueba compatibilidad con el perfil de ubicación;
-4. conserva la procedencia y la marca temporal;
-5. solo después actualiza ESTADO-RDC-ACTIVO.md.
+1. identifica la terminal por cuenta + device_id;
+2. verifica evidencia positiva de conexión;
+3. comprueba compatibilidad con el perfil de ubicación del ciclo;
+4. determina si la identidad ya era conocida o es nueva;
+5. conserva procedencia y marca temporal;
+6. solo después actualiza el registro persistente cuando corresponda.
 
 Una sustitución o refresco no validado no cuenta como recuperación. Si la escritura de `ESTADO-RDC-ACTIVO.md` falla, la recuperación permanece pendiente y no se permite declarar resuelta la conectividad ni reanudar trabajo RDC-dependiente.
 
@@ -82,29 +83,28 @@ No se permite force-push, sobrescritura ciega ni modificación de una copia loca
 
 ## 6. Actualización global
 
-Una vez validado el handshake, ESTADO-RDC-ACTIVO.md se actualiza con:
+Una vez validado el handshake, `ESTADO-RDC-ACTIVO.md` puede actualizarse con:
 
-- nueva cuenta;
-- nuevo dispositivo;
-- nuevo device_id;
-- nueva conectividad;
-- nueva verificación;
-- ubicación/perfil;
-- identidad efectiva;
-- estado de recuperación RESUELTA;
-- sustitución explícita de la sesión anterior.
+- cuenta;
+- dispositivo;
+- device_id;
+- última conectividad verificada;
+- última verificación;
+- metadatos del ciclo y, cuando corresponda, ubicación declarada como dato del evento.
 
-La actualización debe realizarse antes de reanudar cualquier operación sustantiva dependiente de RDC. Después debe ejecutarse un read-back sobre `main` y confirmar que la identidad, conectividad y marca temporal publicadas coinciden con el handshake validado.
+La actualización no crea una selección global y no sustituye otra identidad distinta.
+
+Cuando exista publicación, debe ejecutarse read-back y comprobar que la identidad y marca temporal publicadas coinciden con el handshake.
 
 ## 7. Propagación
 
-La propagación entre conversaciones ocurre por lectura del estado global actualizado en el siguiente ciclo. Las conversaciones no deben depender de la memoria de la conversación que realizó la recuperación.
+La siguiente conversación lee el registro persistente para reconocer la identidad recuperada, pero vuelve a consultar el proveedor en vivo antes de seleccionar una terminal. La recuperación de una terminal no convierte esa terminal en selector global.
 
 ## 8. Estados
 
-RDC-RECUPERACION = REQUERIDA → se necesita RDC-REINSTANTIAR.  
-RDC-RECUPERACION = EN ESPERA HANDSHAKE → el usuario debe entregar los datos de la nueva sesión.  
-RDC-RECUPERACION = RESUELTA → la nueva sesión fue validada y ya gobierna globalmente.
+RDC-RECUPERACION = REQUERIDA → se necesita RDC-REINSTANTIAR para una terminal concreta.  
+RDC-RECUPERACION = EN ESPERA HANDSHAKE → el usuario debe entregar los datos de la identidad efectivamente conectada.  
+RDC-RECUPERACION = RESUELTA → la identidad concreta fue validada y, si correspondía, persistida.
 
 ## 9. Prohibiciones
 
