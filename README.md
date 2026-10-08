@@ -4,7 +4,7 @@ Repositorio transversal de la organización **Ser y Mente** para desarrollar, co
 
 ## Estado actual
 
-La metodología cuenta con un núcleo de versionado metodológico y un **Sistema de Instrucciones Metacognitivas** destinado a gobernar la interpretación, decisión y ejecución del modelo.
+La arquitectura canónica mantiene dos elementos principales: el **Sistema de Instrucciones Metacognitivas**, que contiene los principios fundamentales ordenados por preponderancia, y la **Metodología con sus anexos**, que desarrolla procedimientos, contexto, mecanismos y soporte operativo.
 
 ## Punto de entrada transversal de contexto
 
@@ -22,6 +22,12 @@ La sesión RDC no se reinicia al cambiar de conversación. Permanece globalmente
 
 Una conversación nueva debe heredar el estado registrado antes de pedir nuevamente los datos de la sesión.
 
+## Arquitectura
+
+El SI contiene los principios fundamentales y los presenta verticalmente, de mayor a menor preponderancia. La Metodología y sus anexos desarrollan la aplicación práctica del SI.
+
+Los anexos no constituyen una tercera capa normativa; son soporte subordinado del sistema.
+
 ## Principio de evolución
 
 La metodología se define gradualmente. Las decisiones confirmadas se incorporan al repositorio como registro canónico y trazable. Las normas fundamentales permanecen separadas de procedimientos, herramientas e implementaciones.
@@ -32,20 +38,20 @@ El SI canónico se encuentra en [SI-METACOGNITIVO.md](SI-METACOGNITIVO.md).
 
 Versión vigente del SI:
 
-**v1.6.7 — Gobernanza Transaccional del Estado RDC**
+**v1.6.8 — Continuidad Canónica entre Conversaciones**
 
 Versión vigente de la Metodología:
 
-**v0.11.9 — Uso Mensual de RDC en Salida Canónica**
+**v0.12.1 — Bootstrap Canónico Mínimo**
 
-El SI contiene los principios fundamentales **P019–P032**, incluyendo P028 · Trazabilidad Normativa, P029 · Identidad y Vigencia Canónica, P030 · Fidelidad Terminológica Canónica, P031 · Normalización de Transcripción y P032 · Contexto Operativo Verificado.
+El SI contiene los principios fundamentales vigentes, ordenados de mayor a menor preponderancia. La continuidad entre conversaciones se desarrolla operativamente mediante la Metodología y el anexo `BOOTSTRAP-CONTEXTO-GLOBAL.md`.
 
 ## Última actualización de Metodología
 
 **v0.11.8 — Versionado Canónico del Método General**  
 2026-10-07
 
-Esta evolución hace canónica la identidad/versionado independiente de la Metodología y obliga a exponer su versión, nombre y vigencia temporal en cada ciclo, separándolos de la identidad y frescura del SI. El trabajo bajo la identidad efectiva de la sesión RDC está permitido cuando sea técnicamente válido; la restricción específica es no clonar ni materializar repositorios nuevos dentro del perfil o ruta de MantenimientoRCI.
+Esta evolución reduce la continuidad transversal a un único anexo de entrada: `BOOTSTRAP-CONTEXTO-GLOBAL.md`. El SI conserva los principios fundamentales; la Metodología y sus anexos conservan el desarrollo operativo. El estado RDC vigente permanece exclusivamente en `ESTADO-RDC-ACTIVO.md` y su ciclo de vida en `HISTORIAL-RDC.md`. La continuidad entre conversaciones se reconstruye desde estas fuentes y no desde memoria conversacional.
 
 
 La identidad persistente de la sesión RDC y su registro transversal se mantienen mediante ESTADO-RDC-ACTIVO.md. La conectividad se verifica por ciclo mediante ping como comprobación primaria cuando el ciclo requiera uso RDC en vivo. La salida visible de cada ciclo muestra únicamente el contexto y resultado esenciales; `K: ✓` solo acredita verificación/liberación de KHORA, mientras `K: OFF` declara que el verificador no estuvo disponible sin bloquear la salida.
