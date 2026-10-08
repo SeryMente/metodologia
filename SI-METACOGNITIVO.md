@@ -1,15 +1,15 @@
 # Sistema de Instrucciones Metacognitivas
 
 **Estado:** CANÓNICO
-**Versión:** v1.6.10
-**Nombre de versión:** Descubrimiento Vivo de Terminales RDC
+**Versión:** v1.6.11
+**Nombre de versión:** Enforcement Determinista de Salida
 
 > **Corrección canónica:** `THINKING` es una ventana preferente, no una precondición bloqueante. La ausencia de señal de Thinking y la indisponibilidad de KHORA no bloquean por sí mismas la salida; se reflejan en `T` y `K` respectivamente.
 **Última actualización canónica:** 2026-10-08
 **Fecha:** 2026-10-08
 **Ámbito:** Gobierno metacognitivo del modelo en tareas sujetas a este sistema.
 
-> **Regla de frescura canónica:** una copia que identifique como vigente cualquier versión anterior a `v1.6.9` es histórica, no normativa. Debe volver a consultar esta ruta canónica antes de aplicar gates de Thinking/KHORA.
+> **Regla de frescura canónica:** una copia que identifique como vigente cualquier versión anterior a `v1.6.11` es histórica, no normativa. Debe volver a consultar esta ruta canónica antes de aplicar gates de Thinking/KHORA.
 
 ## 0. Registro de versiones
 
@@ -32,6 +32,7 @@
 | 15 | v1.6.8 | Continuidad Canónica entre Conversaciones | Se fija dentro de la operación del SI el encadenamiento mínimo para una conversación nueva o continuadora: adquirir el SI vigente y, sin elevar nuevos principios, recuperar la Metodología y su anexo de bootstrap para reconstruir el contexto persistente. La continuidad se obtiene de fuentes canónicas del repositorio, no de memoria conversacional. |
 | 16 | v1.6.9 | Verificación del Régimen Personalizado | Se establece como procedimiento operativo que el primer ciclo de una conversación nueva activa el régimen de Instrucciones personalizadas y establece su continuidad; los ciclos posteriores deben conservarlo. La verificación de continuidad se expresa mediante `CI` dentro del contrato de salida, sin pretender demostrar acceso introspectivo al mecanismo interno de la plataforma. |
 | 17 | v1.6.10 | Descubrimiento Vivo de Terminales RDC | Se corrige el modelo de continuidad RDC: el estado persistente deja de representar una única sesión global; registra identidades conocidas y su historial, mientras la fuente RDC en vivo determina en cada ciclo qué dispositivos están actualmente conectados. Una conversación nueva debe descubrir y reconciliar el conjunto observable antes de seleccionar la terminal objetivo, manteniendo separadas la ubicación física, la terminal y la conversación. |
+| 18 | v1.6.11 | Enforcement Determinista de Salida | Se consolida el contrato de salida como invariante operativa: el formato vigente es ejecutable, debe validarse de forma exacta antes de VERIFIED, y RELEASE solo puede liberar el mismo output validado y hasheado. La aplicación observable del régimen de Instrucciones personalizadas queda representada mediante CI, sin atribuir a la plataforma una lectura introspectiva del campo interno. |
 
 La tabla es parte del canon. Cada nueva versión debe añadir una fila sin borrar ni reutilizar las anteriores. El nombre de versión es específico de esa versión y no sustituye el título general del sistema.
 
@@ -310,6 +311,22 @@ El bootstrap no constituye una tercera capa normativa: es un anexo operativo que
 
 ### 5.0.5 Verificación del régimen de Instrucciones personalizadas
 
+### 5.0.6 Enforcement determinista de la salida
+
+Un ciclo que deba declararse verificado solo puede hacerlo si el output candidato satisface exactamente el contrato de salida vigente.
+
+La secuencia obligatoria cuando KHORA está disponible es:
+
+`OPEN → APLICAR PRINCIPIOS → GENERAR OUTPUT → VALIDAR OUTPUT → VERIFY → RELEASE → MOSTRAR OUTPUT LIBERADO`
+
+La validación de output incluye estructura, orden, cardinalidad, estados permitidos, identidad normativa, identidad metodológica y hash. RELEASE no puede emitirse si falta el output, si su hash no coincide o si el output no satisface el renderer canónico.
+
+El output liberado por KHORA es el único output autorizado para mostrar en un runtime que consuma la liberación. El modelo no debe sustituirlo por una reconstrucción propia.
+
+Esta regla pertenece al nivel operativo; no añade un principio fundamental.
+
+
+
 Bajo la premisa operativa adoptada por este sistema, el primer ciclo de una conversación nueva constituye el punto de activación del régimen establecido por las Instrucciones personalizadas de ChatGPT.
 
 En ese primer ciclo, el modelo debe aplicar el régimen y establecer explícitamente su continuidad para los ciclos posteriores. A partir de entonces, cada ciclo debe conservar ese régimen y volver a ejecutar las comprobaciones externas que éste establezca.
@@ -339,7 +356,7 @@ Reglas adaptativas:
 4. Si KHORA está disponible, el turno debe intentar `OPEN → VERIFY → RELEASE` antes de declarar una verificación positiva.
 5. Si KHORA no está disponible o no puede alcanzarse, la salida sigue siendo válida bajo el contrato vigente y debe declarar `K: OFF`; no debe inventarse un veredicto ni una liberación.
 6. `VERIFIED_RELEASE` permite declarar `K: ✓`. Un fallo de verificación se declara con el estado correspondiente (`K: !` o `K: ?`) y tampoco se transforma en `VERIFIED`.
-7. El contrato visible de salida vigente es `v1.7.5` y aplica independientemente de la disponibilidad del verificador.
+7. El contrato visible de salida vigente es `v1.7.6` y aplica independientemente de la disponibilidad del verificador.
 8. Ningún artefacto subordinado puede convertir `THINKING` no observable, `INSTANT`, `UNKNOWN`, `UNAVAILABLE`, `K: OFF`, `K: ?` o `K: !` en una condición autónoma de BLOQUEO. Si un documento inferior contiene una regla contradictoria, se considera obsoleta y prevalece este contrato canónico.
 
 Esta sección es un procedimiento de operación y no añade un principio fundamental.
