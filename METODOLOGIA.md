@@ -2,23 +2,23 @@
 
 ## Estado canónico
 
-- **Versión:** v0.14.6
-- **Nombre de versión:** Contrato Visible de Reanclaje
-- **Última actualización:** 2026-10-08
-- **Última actualización canónica:** 2026-10-08
+- **Versión:** v0.14.7
+- **Nombre de versión:** Arranque CLI Verificable y Continuidad por Terminal
+- **Última actualización:** 2026-10-09
+- **Última actualización canónica:** 2026-10-09
 - **Ámbito:** Todos los proyectos y conversaciones trabajados bajo esta metodología.
 
 ### Narrativa de la versión
 
-**Antes:** la metodología necesitaba tratar Vercel como un entorno de publicación sujeto a límites operativos, pero la continuidad estaba modelada alrededor de una contingencia por identidad de publicación.
+**Antes:** el arranque Windows y la clonación de repositorios dependían de comprobaciones manuales sobre Git, PATH, wrappers .cmd/.ps1, errores de comandos nativos y estado previo del destino. La terminal PC-4 no tenía memoria persistente individual dentro de CIBERCAFE.
 
-**Cambio:** se canoniza `ANEXO-GOBERNANZA-VERCEL-CUOTA-Y-CONTINUIDAD-LOCAL.md` como objeto estable para cruzar los casos de uso de Cora con la cuota de deployments de Vercel, la reutilización de deployments existentes, el rollback y la ejecución local.
+**Cambio:** se canoniza ANEXO-PROCEDIMIENTO-ARRANQUE-CLI-WINDOWS-Y-CLONADO-REPOSITORIOS.md y se agrega scripts/clone-public-repo-to-desktop.ps1. La secuencia separa identidad PC-N de RDC, instalación de Git de autenticación GitHub, inicio de proceso de validación end-to-end y escritura de publicación de read-back. Se crea memoria y registro de eventos independientes para CIBERCAFE + PC-4 y se actualizan los índices de terminales y ciclo de vida RDC.
 
-**Motivo:** una cuota de publicación agotada no debe interpretarse como indisponibilidad total de Cora ni debe generar mecanismos de evasión del proveedor. El sistema necesita distinguir desarrollo/uso, datos, build, preview, production y URL canónico.
+**Motivo:** evitar errores repetidos de ejecución de npx.ps1 bajo ExecutionPolicy, selección implícita de fuentes winget, NativeCommandError bajo PowerShell 5.1, clonaciones no verificadas y sustitución accidental de identidades persistentes. Las acciones del equipo deben poder verificarse exclusivamente por CLI cuando ese medio esté requerido.
 
-**Resultado:** la metodología determina por operación hasta dónde afecta cada limitación de Vercel, qué parte del objetivo depende realmente de la plataforma, qué puede ejecutarse localmente y qué debe esperar a una publicación legítima. El gate es de aplicación inmediata en cualquier hilo de desarrollo que entre en ámbito Vercel.
+**Resultado:** las descargas públicas de repositorios se realizan con Git, validan origin/rama/HEAD/working tree y nunca sobrescriben destinos dudosos o cambios locales. El procedimiento registra los errores relevantes y sus correcciones, verifica aplicaciones con evidencia del objetivo real y conserva el estado por terminal individual antes de actualizar los índices globales.
 
-**Cierre de bootstrap:** se endurece el arranque de conversación nueva para que la identidad activa del SI proceda exclusivamente de la cabecera del snapshot exacto de `main`; una declaración histórica o contradictoria en la metodología, bootstrap o memoria nunca puede sobreescribirla ni habilitar continuidad.
+**Continuidad normativa:** la identidad activa del SI sigue procediendo exclusivamente de la cabecera de su snapshot exacto de main. Esta versión metodológica no sustituye ni versiona el SI.
 
 ### Registro de versiones
 
@@ -68,6 +68,7 @@
 | 41 | v0.14.4 | Enforcement Recursivo del Régimen Personalizado | Se hace obligatorio el reanclaje en cada ciclo antes de trabajo sustantivo, se impide heredar `CI`, se añade reanclaje correctivo para `CI:?` y resolución previa para `CI:!`, y se establece que el contrato de continuidad se renueva por ciclo sin convertirse en una fuente normativa paralela. |
 | 42 | v0.14.5 | Contrato Visible de Reanclaje | Se incorpora `RA` al HUD y al schema del contrato de salida `v1.7.7`, haciendo visible el estado del reanclaje obligatorio de cada ciclo y sincronizando los anexos de ChatGPT que describen la salida canónica. |
 | 43 | v0.14.6 | Bootstrap Fail-Closed y Reconciliación de Identidad Normativa | Se corrige la dependencia de arranque que permitía que una versión histórica del SI reapareciera como vigente; la Metodología pasa a tratar la cabecera del snapshot exacto del SI como única identidad activa y bloquea cualquier contradicción antes del reanclaje o la ejecución sustantiva. |
+| 44 | v0.14.7 | Arranque CLI Verificable y Continuidad por Terminal | Se canoniza el procedimiento de arranque CLI Windows, la clonación idempotente con verificación de origin/SHA/working tree y la persistencia separada del estado y los eventos de cada terminal CIBERCAFE; se registra la identidad PC-4 sin sustituir otras sesiones RDC. |
 La tabla es canónica. Las versiones futuras añaden nuevos registros sin reutilizar folios. Una entrada retirada por revisión canónica puede conservar únicamente su identificador y estado de retirada, sin preservar la regla operativa invalidada. El nombre describe el avance de la versión y no sustituye el título general del sistema o documento.
 
 ## 1. Convención obligatoria de foliación de ciclos
