@@ -6,6 +6,9 @@ $ErrorActionPreference='Stop'
 $script:RunId=Get-Date -Format 'yyyyMMdd-HHmmss'
 $script:LogPath=$null
 $script:StopFile=$null
+$script:RunMutex=$null
+$script:RunMutexOwned=$false
+$script:RunMutexAbandoned=$false
 $script:GhPath=$null
 $script:GitPath=$null
 $script:OriginalGhToken=[Environment]::GetEnvironmentVariable('GH_TOKEN','Process')
@@ -409,8 +412,26 @@ $desktop=[Environment]::GetFolderPath('Desktop')
 if ([string]::IsNullOrWhiteSpace($desktop) -or -not (Test-Path -LiteralPath $desktop)) { $desktop=Join-Path $env:USERPROFILE 'Desktop' }
 if (-not (Test-Path -LiteralPath $desktop)) { throw 'DESKTOP_PATH_NOT_FOUND' }
 if ([string]::IsNullOrWhiteSpace($WorkRoot)) { $WorkRoot=Join-Path $desktop 'Entorno Persistente' }
+
+# Serialize main bootstrap runs because they share repository, observer, and RDC state.
+$mutexName='Local\PasteurPersistentBootstrap'
+$script:RunMutex=[System.Threading.Mutex]::new($false,$mutexName)
+try {
+    $script:RunMutexOwned=$script:RunMutex.WaitOne(0)
+} catch [System.Threading.AbandonedMutexException] {
+    $script:RunMutexOwned=$true
+    $script:RunMutexAbandoned=$true
+}
+if (-not $script:RunMutexOwned) {
+    Write-Host 'BOOTSTRAP_SKIPPED=ANOTHER_INSTANCE_ACTIVE | No shared files, OBS, observer, or RDC state changed.'
+    $script:RunMutex.Dispose()
+    $script:RunMutex=$null
+    return
+}
+
 New-Item -ItemType Directory -Path (Join-Path $WorkRoot 'logs') -Force | Out-Null
 $script:LogPath=Join-Path $WorkRoot ('logs\bootstrap-'+$script:RunId+'.log'); $script:StopFile=Join-Path $WorkRoot '.bootstrap-session.stop'
+if ($script:RunMutexAbandoned) { Write-Log 'BOOTSTRAP_MUTEX=RECOVERED_ABANDONED_PREVIOUS_RUN' } else { Write-Log 'BOOTSTRAP_MUTEX=ACQUIRED' }
 $computer=Get-CimInstance Win32_ComputerSystem; $os=Get-CimInstance Win32_OperatingSystem; $dns=[System.Net.Dns]::GetHostName(); $name=[string]$computer.Name
 $guess=if ($name -match '^(?i)PC-\d+$') { $name } elseif ($dns -match '^(?i)PC-\d+$') { $dns } else { '' }
 if ([string]::IsNullOrWhiteSpace($TerminalId)) { if ($guess) { $TerminalId=$guess } else { $TerminalId=Read-Host 'Physical Pasteur terminal ID (PC-N); not RDC device ID' } }
@@ -548,5 +569,14 @@ finally {
         if ($null -ne $script:OriginalGitConfig[$n]) { [Environment]::SetEnvironmentVariable($n,[string]$script:OriginalGitConfig[$n],'Process') }
         else { Remove-Item ('Env:'+$n) -ErrorAction SilentlyContinue }
     }
-    if ($script:StopFile) { New-Item -ItemType File -Path $script:StopFile -Force | Out-Null; Write-Log 'OBSERVER_STOP_SIGNAL=WRITTEN' }
+    try {
+        if ($script:StopFile) { New-Item -ItemType File -Path $script:StopFile -Force | Out-Null; Write-Log 'OBSERVER_STOP_SIGNAL=WRITTEN' }
+    } finally {
+        if ($script:RunMutexOwned -and $script:RunMutex) {
+            try { $script:RunMutex.ReleaseMutex(); Write-Log 'BOOTSTRAP_MUTEX=RELEASED' } catch { Write-Host 'BOOTSTRAP_MUTEX_RELEASE_WARNING' }
+            try { $script:RunMutex.Dispose() } catch {}
+            $script:RunMutex=$null
+            $script:RunMutexOwned=$false
+        }
+    }
 }
