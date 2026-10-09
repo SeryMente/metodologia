@@ -263,10 +263,10 @@ function Sync-MethodologyRepository {
 
     $siText = [System.IO.File]::ReadAllText((Join-Path $target 'SI-METACOGNITIVO.md'))
     $methodText = [System.IO.File]::ReadAllText((Join-Path $target 'METODOLOGIA.md'))
-    $siVersionMatch = [regex]::Match($siText, '(?m)^\*\*Versión:\*\*\s*(.+)$')
-    $siNameMatch = [regex]::Match($siText, '(?m)^\*\*Nombre de versión:\*\*\s*(.+)$')
-    $methodVersionMatch = [regex]::Match($methodText, '(?m)^- \*\*Versión:\*\*\s*(.+)$')
-    $methodNameMatch = [regex]::Match($methodText, '(?m)^- \*\*Nombre de versión:\*\*\s*(.+)$')
+    $siVersionMatch = [regex]::Match($siText, '(?m)^\*\*Versi.n:\*\*[ \t]*(.+)$')
+    $siNameMatch = [regex]::Match($siText, '(?m)^\*\*Nombre de versi.n:\*\*[ \t]*(.+)$')
+    $methodVersionMatch = [regex]::Match($methodText, '(?m)^- \*\*Versi.n:\*\*[ \t]*(.+)$')
+    $methodNameMatch = [regex]::Match($methodText, '(?m)^- \*\*Nombre de versi.n:\*\*[ \t]*(.+)$')
     if (-not $siVersionMatch.Success -or -not $siNameMatch.Success -or
         -not $methodVersionMatch.Success -or -not $methodNameMatch.Success) {
         throw 'CANONICAL_VERSION_HEADERS_NOT_FOUND'
