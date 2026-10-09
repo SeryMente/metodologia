@@ -1,10 +1,12 @@
 # Especificación canónica EP: Cybernet, RDC, WP-LAB y OGP-Visual
 
 **Estado:** especificación consolidada; ejecución física y certificación pendientes de evidencia.
+**Versión del objeto:** v1.0.0
+**Nombre de versión:** Revisión Local Aislada y Publicación Verificable
 **Corte:** 2026-10-09.
 **Fuente transversal:** SeryMente/metodologia.
 **SI vigente leído con H1 → SI@H1 → H2:** v1.6.21 — Ordenamiento por Preponderancia y Categorías.
-**Frescura comprobada:** H1 = H2 = 8ea039d987712d5d154ec2ef3fb47adfea2422d3; blob SI 89ebe84df49300662f996b85130cbcb893b568e0.
+**Frescura comprobada en esta actualización:** H1 = H2 = ccb0258f5571b9f8a5533a2a17a32c3ce554c294; blob SI 89ebe84df49300662f996b85130cbcb893b568e0; versión/nombre comprobados contra el archivo completo fijado a ese commit.
 **Objeto relacionado:** [consolidación EP-WP-LAB](ANEXO-ENTORNO-PERSISTENTE-HIBRIDO-EP-WP-LAB.md).
 
 ## 1. Propósito y autoridad
@@ -909,3 +911,60 @@ En cuanto a RDC, ambos scripts ejecutan el cliente en primer plano, pero el aná
 > Enduredelo un turno, verifica su integridad, y Todo, mira, llevo un tiempo tratando de tener este entorno persistente y no lo he podido lograr, y es algo básico. Entonces sí necesito poderlo perfeccionar. Así que en este nuevo esfuerzo vamos a tratar de irlo haciendo por secciones. Identifica dentro de tu estrategia general para entorno persistente cuáles son los elementos fundacionales. De momento nada más voy a estar trabajando cibercafé, cibernet, Luis Pasteur. ya sabes cuáles son las características de la ubicación. y este, debo de poder llegar y reiniciar la sesión persistente sin fallos y de manera fluida. Debo de poder levantar la sesión RDC en cada sesión para esta ubicación. Debo de poder instalar OBS cámara virtual, debe de quedar la cámara virtual ya detectada por Chrome, debe de descargar la carpeta de trabajo a escritorio con todos los repositorios y las extensiones para gestor de procesos y Signal Interpreter en su versión más actualizada. Debe de descargar Notepad++ y hacerlo el programa predeterminado. Esos son los elementos fundacionales para esta ubicación, ayúdame a tenerlos para que funcionen de manera fluida. El registro de eventos es importante para que podamos perfeccionarlo porque sí va a haber uno que otro error, pero al cabo de un par de ciclos de desarrollo ya debería de quedar esta parte antes de pasar a otros elementos del entorno de persistencia.
 
 Esta entrada fija el alcance de prioridad de la Fase Fundacional y complementa los requisitos verbatim anteriores. Las decisiones de seguridad, privacidad, ausencia de reinicios, persistencia no certificada y gates de aceptación se formalizan en las secciones 16 y 17 sin reinterpretar el texto anterior.
+
+
+---
+
+## 19. Ciclo operativo: revisión local de la interfaz EP de KHORA y publicación (2026-10-09)
+
+**Estado del ciclo:** UI de revisión local disponible por loopback; autenticación demo local verificada mediante CLI; operaciones reales de lanzamiento deliberadamente desactivadas en esta vista; publicación nueva en Vercel limitada; persistencia física de EP no certificada.
+
+### 19.1 Narrativa de versión · Antes → Cambio → Motivo → Resultado
+
+- **Antes:** el hilo disponía de un servidor local en el puerto 3000 y de una ruta de producción cuyo deployment más reciente no estaba listo. La interfaz EP dependía de configuración de Auth.js/OIDC y sus llamadas de catálogo, sesión y observabilidad fallaban cuando faltaban variables de entorno y base de datos. El procedimiento local previamente recordado —acceso local sin OIDC, limitado a loopback— no estaba presente de forma verificable en el checkout actual.
+- **Cambio:** se añadió un modo de demostración para desarrollo que exige simultáneamente `NODE_ENV=development` y `KHORA_LOCAL_DEMO_MODE=1`; usa un proveedor Auth.js `local-demo` solo en esa configuración, valida que el host sea `localhost`, `127.0.0.1` o `::1`, genera un secreto de sesión aleatorio por proceso y fija el servidor en `127.0.0.1`. El launcher CLI `khora-web/scripts/start-local-demo.mjs` limpia los flags de Playwright y `AUTH_SECRET`, inicia Next.js en un puerto libre desde el 3001 y escribe registro en `%USERPROFILE%\Desktop\log.txt`. El modo de revisión usa `.next-local-demo`, presenta un aviso visible de solo lectura, suprime las consultas del panel de EP y la telemetría global, y deshabilita la emisión de tokens y el arranque del entorno.
+- **Motivo:** permitir inspeccionar la interfaz de KHORA sin depender de un proveedor OIDC remoto ni convertir un bypass de pruebas Playwright en mecanismo de acceso normal. La vista debe ser honesta sobre sus límites: el acceso visual no demuestra que existan base de datos, permisos GitHub, persistencia de datos, VHDX o BitLocker disponibles.
+- **Resultado:** el flujo Auth.js de demostración respondió por loopback; el proveedor expuesto fue únicamente `local-demo`; la ruta de seguridad EP respondió HTTP 200 cuando se envió la cookie de sesión de prueba mediante CLI; TypeScript no reportó errores y el contrato de navegación pasó. La UI puede revisarse en la misma terminal que ejecuta el servidor. Esta implementación de revisión no emite ni simula credenciales de bootstrap.
+
+### 19.2 Comandos y acceso de la sesión
+
+Desde `C:\Users\PC 7\Desktop\Entorno Persistente\khora\khora-web`, el launcher se inicia por CLI:
+
+```powershell
+npm run local:demo -- 3001
+```
+
+El enlace de acceso local de esta sesión es `http://127.0.0.1:3001/auth/signin`. Al pulsar **Entrar en modo local**, abrir `http://127.0.0.1:3001/sistema/seguridad?tab=entorno-persistente`. Estos URLs son efímeros y locales a la terminal; no son un servicio público ni una URL canónica de producción. No abrir ni conducir la interfaz mediante RDC: RDC se limita a CLI; la inspección visual la realiza el usuario en el navegador de la propia terminal.
+
+La vista local no consulta `/api/ep/repos`, `/api/ep/token` ni `/api/ep/logs`, no ejecuta el bootstrap y no envía `/api/observaciones/runtime-state`. No inventa repositorios, sesiones, tokens o resultados de persistencia. El catálogo, la emisión y la bitácora remota solo se reactivan en el flujo operativo normal con su configuración real, no dentro de este modo.
+
+### 19.3 Separación de OIDC y la autenticación real
+
+La excepción de autenticación es exclusivamente de desarrollo y loopback. Producción mantiene el proveedor OIDC original; `PLAYWRIGHT_TEST_RUN` y `PLAYWRIGHT_TEST_BYPASS` se eliminan del proceso local. No se reutiliza `AUTH_SECRET` ni credencial de OIDC de producción. El secreto `KHORA_LOCAL_DEMO_SECRET` se genera aleatoriamente al iniciar, solo se pasa al proceso hijo por su entorno y no se registra. La contraseña maestra de EP, el PAT de GitHub y una sesión local de demostración son credenciales distintas; la demo no habilita la custodia o recuperación del PAT.
+
+La implementación local de revisión está en el árbol de trabajo de esta terminal. No se ha publicado el cambio de código de KHORA, no se ha modificado el deployment de producción ni se afirma que el cambio local sobreviva a una sesión volátil hasta que se integre y verifique desde el repositorio de KHORA.
+
+### 19.4 Evidencia de Vercel
+
+El deployment de producción más reciente consultado, `dpl_5KjFtipEd88pnpKorU5jMFajmNsW`, se creó desde `SeryMente/khora` commit `5ececf8f7977b8423d61ef4f1acbd3f0c54d2856` y terminó en `ERROR` por error sintáctico en `khora-web/lib/ui-review/registry.ts`. La rama actual de KHORA consultada está en `e2d89dbdc7aa0f537cea94188abdecb5e99215a3`; incluye la corrección de sintaxis `0a39692` y la versión web `0.3.8`. Un nuevo intento explícito de deployment de producción desde este HEAD fue rechazado por Vercel con HTTP `402 payment_required`, recurso `api-deployments-free-per-day`, `retryAfter=86400` (>100 deployments/día). No se cambió el plan, la facturación ni la configuración de seguridad. No crear otra identidad, equipo o proyecto para evitar la restricción. El deployment anterior `dpl_9wegjRrLbkVGiFcdQuKyp6R6tJgd` existe como `READY` para `b94e05f7a3f8e8bb3d48bf635054fd3b44702c4c`, pero no fue promovido de nuevo y no sustituye la verificación de la versión actual.
+
+### 19.5 Registro de validación y límites
+
+| Control | Resultado | Evidencia/limitación |
+|---|---|---|
+| Launcher Node.js | PASS | `node --check scripts/start-local-demo.mjs` |
+| TypeScript | PASS | `tsc --noEmit`, salida 0 tras los cambios locales |
+| Contrato de navegación | PASS | `npm run ui:contract` |
+| Auth.js local | PASS | `/api/auth/providers` listó solo `local-demo`; inicio de sesión CLI creó sesión `khora-local-demo@localhost` |
+| Binding de red | PASS | puerto 3001 escucha en `127.0.0.1`, sin listener en `0.0.0.0` ni `::` |
+| UI Review gate | FAIL no atribuible a este modo | `npm run ui-review:check` detectó un `onClick` en elemento no semántico en el archivo preexistente modificado `PipelineView.tsx`; no se amplió el alcance para corregirlo |
+| Suite unitaria | FAIL parcial | `334/345` tests pasaron; 11 fallaron en rutas/contratos de Ingesta/Custody y sincronización del contrato metodológico local `v1.7.6` frente al canónico `v1.7.7`. La suite no se certifica completa |
+| Integración real del launcher EP | NO VERIFICADA | El modo visual no conecta base de datos, catálogo GitHub o bitácora remota; no se intentó crear un token de bootstrap |
+| Persistencia VHDX/BitLocker/Deadman | NO VERIFICADA | No hay prueba nueva de junction, volumen cifrado, destino privado ni recuperación |
+| Deployment de producción | LIMITADO | Vercel rechazó el intento de publicación por el límite diario de la cuenta |
+
+Las cuatro modificaciones que ya existían en el checkout local al comenzar el ciclo (`IngresoWorkspace.tsx`, `PipelineView.tsx`, `app/sistema/volcados/page.tsx` y `lib/ui-review/states.ts`) se conservaron. No se mezclaron con el modo de revisión. Las modificaciones de revisión que quedan locales tampoco deben presentarse como canonizadas en el repositorio de código: la canonización de este apartado preserva la decisión, el procedimiento y la evidencia en Metodología.
+
+### 19.6 Decisión operativa vigente
+
+Hasta que el usuario revise la interfaz local, **no continuar con las demás líneas del esfuerzo**. Mantener el servidor loopback disponible para esa revisión. Aceptar comentarios de UI antes de preparar un cambio de código para KHORA. La limitación de Vercel deja solo la publicación remota pendiente; la revisión local sigue disponible. No declarar el Entorno Persistente completado, no afirmar persistencia física y no emitir tokens ni lanzar un entorno real en modo demo.
