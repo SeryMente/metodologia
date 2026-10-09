@@ -861,3 +861,42 @@ La fase se aprueba después de dos instanciaciones consecutivas controladas, sin
 
 Después de esos dos éxitos, congelar la capa fundacional como base estable antes de ampliar EP. No iniciar WordPress/Divi o pesos de modelos hasta pasar el gate. La certificación de ubicación/terminal y el almacenamiento remoto duradero continúan como estados separados hasta obtener evidencia.
 
+
+
+---
+
+## 17. Auditoría de integridad del estado real de código (H1/H2 2026-10-09)
+
+**H1 = H2 = d0d116e298b5bd3f6e1e69950fbbf9389b4edd48.** SI leído exactamente desde H1: versión v1.6.21, blob SHA 89ebe84df49300662f996b85130cbcb893b568e0. Esta auditoría sustituye cualquier lectura anterior de blobs de scripts cuando no coincida con la tabla actual.
+
+| Artefacto en main | Blob SHA actual | Evidencia estática | Estado frente a la Fase Fundacional |
+|---|---|---|---|
+| scripts/bootstrap-cibercafe-cli.ps1 | bad15eddd4feca2d0c576ee6390863c94618faa4 | Tiene preparación de Git/Node, sincronización de Metodología, parámetro StartOBSVirtualCamera y lanzamiento RDC en primer plano. | No clona todos los repositorios. No instala Notepad++. No extrae identidad RDC ni copia ficha RDC al portapapeles. La cámara queda confirmada por log OBS, no por Chrome. |
+| scripts/bootstrap-entorno-persistente.ps1 | f595ca78cc08cff649b4b9f422a6704747b89cb8 | Sincroniza los cinco repositorios listados; exporta la extensión Signal Interpreter; crea log de bootstrap, eventos y observador; separa la identidad CIBERCAFE/PC-N. La comprobación actual de OBS registra que la salida empezó y ejecuta un rescan PnP. | No instala/configura Notepad++; no verifica la enumeración real de Chrome; no extrae el RDC-DEVICE-ID de la sesión ni crea ficha RDC. Usa Set-Clipboard únicamente para borrar un PAT de GitHub del portapapeles cuando detecta que sigue allí: esto no satisface el requisito de ficha RDC. No contiene el agente Performance-Liberator; solo consulta estado de una tarea y lee marcas del log. |
+| scripts/obs-chrome-camera-fix.ps1 | 5b8ba374bd0a0c8b7fc49e4e8c40daee5d7b1448 | Inicia OBS y consulta su log; abre/gestiona Chrome y modifica preferencias o políticas en el flujo histórico. | No integrarlo en el bootstrap fundacional tal como está. Requiere rediseño si se va a conservar: no editar perfiles/políticas, no cerrar a la fuerza el navegador, y demostrar enumeración de cámara por un test consentido. |
+| ANEXO-PROCEDIMIENTO-ARRANQUE-CLI-WINDOWS-Y-CLONADO-REPOSITORIOS.md | 1b2b9c889ef9bdf32f73cfdbcd782c7e98dcf185 | Procedimiento de apoyo para arranque, debe compararse con ambos scripts. | Mantenerlo alineado con el punto de entrada que se elija; evitar que describa como una sola capacidad lo que hoy está repartido entre dos scripts. |
+
+### 17.1 Riesgo adicional de versionado de bootstrap
+
+El script bootstrap-entorno-persistente.ps1 descarga bootstrap-cibercafe-cli.ps1 desde el commit histórico 14756d289f1ddc4c74c6736f5aa021121158541c y valida un hash hard-coded. Ese anclaje hace la base reproducible, pero también la mantiene congelada deliberadamente en una versión antigua mientras el archivo actual en main puede cambiar. El próximo cambio debe resolver explícitamente la estrategia de releases: pin de una versión coordinada/documentada o pin actualizado desde el proceso de publicación. No permitir que el orquestador se presente como actualizado mientras ejecuta silenciosamente una base antigua. No sustituirlo por latest sin hash.
+
+### 17.2 Repositorios y manifiestos
+
+La inspección del árbol actual de SeryMente/GDP encontró manifest.json en la raíz del repositorio. La inspección de SeryMente/signal-interpreter encontró extension/manifest.json, coherente con exportar la carpeta extension a la raíz de la extensión consumible. El bootstrap actual solo comprueba existencia de manifest.json en GDP; la siguiente implementación debe parsear JSON y validar campos obligatorios/versiones, además de verificar HEAD y árbol exportado. La lista real de repositorios y sus ramas debe verificarse de nuevo antes de la descarga, porque main puede avanzar después de esta auditoría.
+
+### 17.3 Notepad++: bloqueo de implementación actual
+
+No se encontró en ninguno de los dos bootstraps una instalación o configuración de Notepad++. El cambio debe instalarlo solo cuando falte, registrar versión/ruta y comprobar asociación predeterminada para cada extensión acordada. La función oficial de asociaciones de Notepad++ existe, pero en un Windows compartido la configuración puede requerir elevación o confirmación del usuario; no escribir a ciegas UserChoice ni declarar predeterminado sin una consulta posterior. En sesión Cybernet, tratar el resultado como volátil y revalidarlo en cada arranque.
+
+### 17.4 Cámara y RDC: no confundir fases
+
+El flujo actual de OBS puede confirmar un evento reciente en el log y un rescan PnP; no comprueba que Chrome exponga el dispositivo a una sesión real ni que un permiso normal permita abrirlo. El próximo gate requiere prueba a nivel de Chrome. Mantener fuera del bootstrap el helper actual que altera perfiles/políticas y desarrollar una comprobación no invasiva separada, respetando permisos y controles de la aplicación objetivo.
+
+En cuanto a RDC, ambos scripts ejecutan el cliente en primer plano, pero el análisis estático no encontró una extracción fiable de los campos finales del handshake ni el copy de la ficha RDC. La siguiente versión debe parsear datos de esta ejecución en vivo y fallar explícitamente ante formato cambiado, IDs ausentes o estado no Online. El copy al portapapeles se hace solo después del gate; nunca guardar códigos temporales o credenciales.
+
+### 17.5 Resultado del ciclo
+
+- **Verificado:** SI fresco; hashes/blobs actuales leídos; estructura de archivos y presencia de funcionalidades comprobada estáticamente.
+- **Bloqueado/no verificado:** ejecución real de los scripts en la terminal; cámara detectada por Chrome; asociación de Notepad++; nueva ficha RDC; salida del agente de rendimiento; almacenamiento duradero.
+- **Sin cambios locales o de hardware:** el trabajo en este ciclo es documental y en GitHub. No se hicieron instalaciones, no se editó Chrome, no se manipuló el ZIP de Divi ni se reinició ningún equipo.
+
