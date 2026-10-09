@@ -168,3 +168,16 @@ Cuando la ubicacion sea CIBERCAFE, la continuidad del proceso de desempeno se re
 Antes de repetir un diagnostico profundo, el ciclo debe consultar el registro de la terminal correspondiente en `CIBERCAFE/PC-N/ESTADO.md` y sus eventos recientes. El conocimiento vigente se reutiliza y solo se revalida lo dinamico o lo que muestre evidencia de cambio.
 
 La telemetria continua pertenece a la sesion local y no obliga a una llamada RDC por muestra. La persistencia se realiza mediante eventos significativos y lotes segun `ANEXO-PROCESO-LIBERACION-DESEMPENO-CIBERCAFE.md`, incluyendo `SYNC_FLUSH` antes de reinicio/DeepFreeze cuando sea observable.
+
+
+## Contexto condicional: Entorno Persistente y WP-LAB
+
+Cuando una tarea incluya KHORA EP, EP_VOLATIL, VHDX, BitLocker, la junction `Desktop\\EP`, Deadman Trigger, WordPress Studio, Divi o el laboratorio de Ser y Mente, leer primero `ANEXO-ENTORNO-PERSISTENTE-HIBRIDO-EP-WP-LAB.md` y verificar sus refs/estados con el proveedor antes de ejecutar acciones.
+
+Reglas:
+1. No ejecutar el bootstrap histórico de WP-LAB mientras siga vigente la auditoría de riesgos descrita en el anexo. Primero preservar el sitio, localizar/verificar snapshot y activo propietario y corregir los reemplazos destructivos.
+2. Clasificar el almacenamiento como EP_VOLATIL hasta demostrar el VHDX, BitLocker requerido y la asociación exacta de `Desktop\\EP` con el workspace cifrado.
+3. No inferir que un camino, snapshot o binario se perdió por no aparecer en una ruta esperada; localizarlo mediante diagnóstico de solo lectura.
+4. Distinguir identidad persistente de terminal (`CIBERCAFE + PC-N`) de identidad temporal RDC (`cuenta + device_id`).
+5. En el repositorio público Metodología solo se persisten decisiones, runbooks, hashes y manifiestos saneados. Secretos, contenido privado, dumps, snapshots completos y el ZIP propietario de Divi quedan fuera.
+6. El contenido mutable del sitio solo se considera cloud-persistente al verificar escritura, lectura de vuelta, hash y restauración desde el destino privado aprobado. Un commit del repositorio no sustituye la persistencia de base de datos ni de medios.
