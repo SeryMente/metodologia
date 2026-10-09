@@ -4,7 +4,7 @@ Repositorio transversal de la organización **Ser y Mente** para desarrollar, co
 
 ## Estado actual
 
-La arquitectura canónica mantiene dos elementos principales: el **Sistema de Instrucciones Metacognitivas**, que contiene los principios fundamentales ordenados por preponderancia, y la **Metodología con sus anexos**, que desarrolla procedimientos, contexto, mecanismos y soporte operativo.
+La arquitectura canónica mantiene dos elementos principales: el **Sistema de Instrucciones basado en lista de principios en cascada**, que contiene los principios fundamentales ordenados por preponderancia, y la **Metodología con sus anexos**, que desarrolla procedimientos, contexto, mecanismos y soporte operativo.
 
 ## Punto de entrada transversal de contexto
 
@@ -34,26 +34,26 @@ Los anexos no constituyen una tercera capa normativa; son soporte subordinado de
 
 La metodología se define gradualmente. Las decisiones confirmadas se incorporan al repositorio como registro canónico y trazable. Las normas fundamentales permanecen separadas de procedimientos, herramientas e implementaciones.
 
-## Sistema de Instrucciones Metacognitivas
+## Sistema de Instrucciones basado en lista de principios en cascada
 
 El SI canónico se encuentra en [SI-METACOGNITIVO.md](SI-METACOGNITIVO.md).
 
 Versión vigente del SI:
 
-**v1.6.15 — Enforcement Inmediato del Gate Vercel**
+**v1.6.20 — Identidad de Principios en Cascada**
 
 Versión vigente de la Metodología:
 
-**v0.14.2 — Enforcement Inmediato del Gate Vercel**
+**v0.14.6 — Contrato Visible de Reanclaje**
 
 El SI contiene los principios fundamentales vigentes, ordenados de mayor a menor preponderancia. La continuidad entre conversaciones se desarrolla operativamente mediante la Metodología y el anexo `BOOTSTRAP-CONTEXTO-GLOBAL.md`.
 
 ## Última actualización de Metodología
 
-**v0.14.0 — Gobernanza de Cuota Vercel y Continuidad Local**  
+**v0.14.6 — Contrato Visible de Reanclaje**  
 2026-10-08
 
-La metodología canoniza el cruce transversal entre Cora, la cuota de deployments de Vercel y la continuidad mediante ejecución local. El estado de Vercel se gobierna mediante `ANEXO-GOBERNANZA-VERCEL-CUOTA-Y-CONTINUIDAD-LOCAL.md`; la instancia local puede absorber desarrollo, depuración y validación cuando no sea necesario modificar el URL canónico.
+La metodología consolida el contrato visible de reanclaje por ciclo y mantiene la identidad activa del SI subordinada exclusivamente a la cabecera de su snapshot canónico. Las declaraciones históricas o contradictorias en documentos espejo no sustituyen esa fuente.
 
 
 La identidad persistente de la sesión RDC y su registro transversal se mantienen mediante ESTADO-RDC-ACTIVO.md. La conectividad se verifica por ciclo mediante ping como comprobación primaria cuando el ciclo requiera uso RDC en vivo. La salida visible de cada ciclo muestra únicamente el contexto y resultado esenciales; `K: ✓` solo acredita verificación/liberación de KHORA, mientras `K: OFF` declara que el verificador no estuvo disponible sin bloquear la salida.
