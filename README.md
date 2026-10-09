@@ -109,3 +109,10 @@ El clonador específico es [scripts/clone-public-repo-to-desktop.ps1](scripts/cl
 ## Gate de ejecución en ChatGPT
 
 Todo ciclo sujeto a la metodología intenta resolver la cascada normativa durante Thinking cuando esta ventana está disponible. `INSTANT`, ausencia o estado desconocido no bloquean por sí mismos la salida. Cuando KHORA no está disponible, el contrato visible `v1.7.7` se conserva y el HUD declara `K: OFF`. El HUD incluye además `CI: ✓|?|!` para registrar la aplicación verificable del régimen de Instrucciones personalizadas.
+
+
+## Entorno Persistente Híbrido y WP-LAB
+
+El registro transversal de continuidad, decisiones, estados físicos, manifiestos no sensibles y plan de integración se encuentra en [ANEXO-ENTORNO-PERSISTENTE-HIBRIDO-EP-WP-LAB.md](ANEXO-ENTORNO-PERSISTENTE-HIBRIDO-EP-WP-LAB.md). Cualquier trabajo sobre KHORA EP, EP_VOLATIL, VHDX/BitLocker, Deadman Trigger o el laboratorio WordPress Ser y Mente debe leerlo antes de ejecutar scripts.
+
+El anexo distingue evidencia actual de documentación histórica. La presencia de una carpeta no acredita una junction cifrada; el repositorio público conserva documentos y hashes no sensibles, nunca secretos, bases de datos, snapshots completos ni el ZIP propietario de Divi.
