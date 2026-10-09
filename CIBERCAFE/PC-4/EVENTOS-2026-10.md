@@ -16,6 +16,8 @@
 | PC4-20261009-0008 | 2026-10-09 | SYNTAX_FAILURE_CORRECTED | La salida de verificación usó Out-String.Trim y falló después de clonar | Cambiar a una expresión PowerShell válida y verificar el destino en un comando separado | El clon se confirmó sin cambios locales | Un error en la verificación posterior no implicó que el clon hubiera fallado; verificar artefactos antes de repetir una operación con efectos secundarios | ad151d48-3bd6-44a8-9b61-b0d0291643eb | git -C Desktop\metodologia |
 | PC4-20261009-0009 | 2026-10-09T01:10:54.905Z | PING_VERIFIED | Conectividad no asumida por memoria | Ejecutar ping al device_id concreto | PC-4 respondió pong | Terminal RDC revalidada en el ciclo | ad151d48-3bd6-44a8-9b61-b0d0291643eb | pong 2026-10-09T01:10:54.905Z |
 
+| PC4-20261009-0010 | 2026-10-09 | SCRIPT_VALIDATED | Clon manual verificado; el script reutilizable aún no tenía prueba en ambas rutas | Ejecutar el clonador en destino existente limpio y en un destino temporal nuevo; comprobar origin, rama, HEAD y estado | Ruta existente: RESULT=UPDATED; ruta nueva: RESULT=CLONED; ambas con origin público correcto, rama main, HEAD verificado y working tree limpio; el directorio temporal fue eliminado | Se validaron las ramas de actualización idempotente y clonación inicial sin automatización gráfica ni cambios locales persistentes de prueba | ad151d48-3bd6-44a8-9b61-b0d0291643eb | PowerShell CLI; clone-public-repo-to-desktop.ps1; Git 2.55.0.windows.5 |
+
 ## Reglas anti-repetición derivadas
 
 - Usar npx.cmd/npm.cmd cuando la política de PowerShell bloquee wrappers .ps1.
