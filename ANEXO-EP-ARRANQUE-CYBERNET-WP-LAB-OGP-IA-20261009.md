@@ -1,8 +1,8 @@
 # Especificación canónica EP: Cybernet, RDC, WP-LAB y OGP-Visual
 
 **Estado:** especificación consolidada; ejecución física y certificación pendientes de evidencia.
-**Versión del objeto:** v1.0.0
-**Nombre de versión:** Revisión Local Aislada y Publicación Verificable
+**Versión del objeto:** v1.1.0
+**Nombre de versión:** Acceso OEP por Contraseña Maestra y Bootstrap GitHub Sin PAT Interactivo
 **Corte:** 2026-10-09.
 **Fuente transversal:** SeryMente/metodologia.
 **SI vigente leído con H1 → SI@H1 → H2:** v1.6.21 — Ordenamiento por Preponderancia y Categorías.
@@ -968,3 +968,62 @@ Las cuatro modificaciones que ya existían en el checkout local al comenzar el c
 ### 19.6 Decisión operativa vigente
 
 Hasta que el usuario revise la interfaz local, **no continuar con las demás líneas del esfuerzo**. Mantener el servidor loopback disponible para esa revisión. Aceptar comentarios de UI antes de preparar un cambio de código para KHORA. La limitación de Vercel deja solo la publicación remota pendiente; la revisión local sigue disponible. No declarar el Entorno Persistente completado, no afirmar persistencia física y no emitir tokens ni lanzar un entorno real en modo demo.
+
+
+---
+
+## 20. Ciclo operativo 005: puerta maestra de EP y bootstrap GitHub sin PAT interactivo (2026-10-09)
+
+**Versión del objeto:** v1.1.0 — Acceso OEP por Contraseña Maestra y Bootstrap GitHub Sin PAT Interactivo.
+**Tipo de trabajo de este ciclo:** inspección documental y de código fuente en GitHub; no se usaron RDC, Vercel ni un runtime local. No se cambió el despliegue ni se afirma que exista una implementación operativa del nuevo acceso.
+**SI transversal:** v1.6.21 — Ordenamiento por Preponderancia y Categorías; referencia de lectura: ccb0258f5571b9f8a5533a2a17a32c3ce554c294.
+
+### 20.1 Narrativa de versión · Antes → Cambio → Motivo → Resultado
+
+- **Antes:** el panel EP de KHORA requiere sesión OIDC/Google para la API de token. El comando PowerShell generado usa un token KHORA temporal para descargar el gate; ese token no es un PAT de GitHub. El bootstrap de referencia SeryMente/metodologia/scripts/bootstrap-entorno-persistente.ps1, fijado por el usuario al commit ccb0258f5571b9f8a5533a2a17a32c3ce554c294, solicita un PAT de GitHub por separado y valida acceso de lectura por API y Git HTTPS a cinco repositorios. OEP ya nombraba la contraseña maestra como intención, pero no tenía criterios completos de aceptación.
+- **Cambio:** se define el contrato objetivo de puerta OEP limitada y separación de credenciales: contraseña maestra, token KHORA, credencial GitHub y llave de bóveda no son intercambiables. La identidad general OIDC no se reemplaza; el acceso maestro solo autoriza EP. Para que el comando no solicite PAT interactivo, el objetivo recomendado es una GitHub App restringida a los cinco repositorios requeridos, con token de instalación breve y permisos mínimos de solo lectura. La escritura que requieran ramas de trabajo deberá ser capacidad separada.
+- **Motivo:** arrancar desde la URL canónica en Cybernet sin Google OIDC ni segunda captura manual del PAT, sin convertir la contraseña maestra en llave general ni incrustar un PAT de larga duración en el comando.
+- **Resultado:** el diseño de seguridad y los criterios de aceptación quedan especificados para una implementación futura. El código KHORA en main todavía usa OIDC en auth.ts y en la API de emisión; no se debe presentar el acceso maestro ni el bootstrap sin PAT interactivo como implementados, publicados o verificados. Las escrituras de código/especificación y la creación de issue intentadas en GitHub para cambiar directamente el esquema de autenticación fueron bloqueadas por los controles de seguridad de la herramienta; esta entrada conserva el contrato como pendiente canónico, no como cambio integrado en KHORA.
+
+### 20.2 Evidencia inspeccionada
+
+- KHORA auth.ts: proveedor OIDC; SHA blob observado dc87c3cfa142bd01f46c2a26577f7923c5e0f58a.
+- KHORA khora-web/app/api/ep/token/route.ts: GET y POST dependen de auth() e isEpUserAllowed; SHA blob observado 9195a357b615ba2658f1ec5e547fa2ff39a6ece6.
+- KHORA khora-web/lib/server/ep.ts: el catálogo web usa GITHUB_TOKEN del entorno de servidor; no debe exponerse al cliente; SHA blob observado 4b93221b1e43e739b6c0b91b0fb7a4fca3c7526d.
+- KHORA ep-medio-architectura.md: arquitectura canónica v1.0.4, SHA blob observado 382e4a929a984a96926fd6f9080f80bedd109a0b.
+- KHORA OEP.md: puerta OEP Master Password en estado de diseño y OEP-PENDING-001 abierto; SHA blob observado antes del intento de escritura 362f878237045e6a88e905b8e561c9dba4e0c4d9.
+- Metodología bootstrap scripts/bootstrap-entorno-persistente.ps1: blob observado 04a442f1f735e0fd1a2a3aeceb30b1e49f38996f, 41 147 caracteres y 583 líneas. Solicita el PAT vía portapapeles, verifica los cinco repositorios por API y git ls-remote, mantiene configuración Git efímera y limpia variables antes de arrancar procesos secundarios. El SHA-256 incluido en el comando se conserva como dato aportado por el usuario; no se declara recalculado en este ciclo.
+- Lista exacta del bootstrap de referencia: SeryMente/metodologia, SeryMente/otrogranprograma, SeryMente/GDP, SeryMente/signal-interpreter y SeryMente/khora.
+
+### 20.3 Contrato técnico obligatorio
+
+1. La URL canónica de KHORA debe permitir entrar a la puerta EP con contraseña maestra sin iniciar Google OIDC, mediante autorización específica, expirable, revocable y de mínimo privilegio. Las páginas y APIs generales continúan protegidas por OIDC; ocultar pestañas no sustituye autorización de servidor.
+2. El verificador maestro se configura fuera del repositorio y nunca almacena la contraseña en claro. Debe usar una KDF resistente, sal aleatoria, límites de intentos, bloqueo/backoff, rotación, revocación y recuperación segura. Los fallos no revelan cuentas, estado de repositorios ni detalles de configuración.
+3. El botón EP debe emitir autorización temporal; el comando PowerShell no incluye PAT permanente, contraseña maestra, clave privada del GitHub App ni token de instalación preemitido. La redención de bootstrap es de un solo uso, caduca rápidamente y consume su estado atómicamente.
+4. Para evitar que el comando pida el PAT interactivo, la vía preferida es una GitHub App restringida a los cinco repositorios listados en §20.2. El token de instalación debe ser temporal y de solo lectura (Contents: read, Metadata: read). Una capacidad de escritura para ramas ep-wip/* no puede añadirse silenciosamente a la credencial de lectura.
+5. Antes de modificar el workspace, validar acceso a main de cada repositorio por API y por Git HTTPS. Si uno falla, detenerse antes de cambios destructivos y registrar un identificador estable, el repositorio afectado y diagnóstico saneado, nunca tokens o encabezados.
+6. Preservar compatibilidad con el bootstrap de referencia hasta que la vía nueva pase una matriz equivalente en Windows PowerShell 5.1: pin de commit y hash SHA-256, detección de herramientas, mutex anti-duplicación, cinco repositorios, preservación de directorios/archivos WIP, limpieza de secretos, comprobación posterior y arranque real. No declarar ausencia de regresiones a partir de inspección estática.
+7. La instanciación funcional es la primera prioridad de aceptación. La volatilidad y limpieza siguen siendo requisitos de EP y no se eliminan por la presencia de Deep Freeze. Se puede priorizar su validación después de demostrar el arranque inicial, sin declarar completado EP.
+8. La vía maestra no concede acceso general a KHORA ni permite usar una sesión EP temporal para eludir la autorización de endpoints no EP. No persistir credenciales en logs, DOM, historial de PowerShell, argumentos de proceso ni configuración Git.
+
+### 20.4 Comando de referencia aportado por el usuario (verbatim)
+
+```powershell
+$ErrorActionPreference='Stop'; [Net.ServicePointManager]::SecurityProtocol=[Net.SecurityProtocolType]::Tls12; $u='https://raw.githubusercontent.com/SeryMente/metodologia/ccb0258f5571b9f8a5533a2a17a32c3ce554c294/scripts/bootstrap-entorno-persistente.ps1'; $f=Join-Path $env:TEMP 'bootstrap-entorno-persistente.ps1'; Invoke-WebRequest -UseBasicParsing -Uri $u -OutFile $f; $h=(Get-FileHash -LiteralPath $f -Algorithm SHA256).Hash; if($h -ne 'DCD96B217E4FB236ABDE40641303CC2EEAC40142F5A140F8D9F5DA6D4F0CCF75'){Remove-Item -LiteralPath $f -Force -ErrorAction SilentlyContinue; throw 'BOOTSTRAP_SHA256_MISMATCH'}; $ps=Join-Path $env:SystemRoot 'System32\WindowsPowerShell\v1.0\powershell.exe'; & $ps -NoProfile -ExecutionPolicy Bypass -File $f
+```
+
+Este comando es la referencia aportada para Windows PowerShell 5.1; el bootstrap que descarga todavía solicita el PAT. No se afirma que por sí solo cumpla el nuevo requisito de no pedirlo.
+
+### 20.5 Solicitud del usuario verbatim
+
+> Ok, mira, vamos bien. Este, nada más había un pequeño... bueno, vamos bien. reitero que todo tiene que ser a cada ciclo, tienes que ir actualizando el objeto canónico del sprint en el repositorio de metodología para que siempre estemos en contexto, siempre estemos en contexto. Este, incluye lo de Versel y todo para que únicamente con revisar ese objeto podamos retomar la tarea. Entonces, ya quedó eso. Dale una endurecida al requerimiento de que la interfaz de Cora permita tener el token de GitHub especialmente diseñado para que tengamos acceso a todos los repositorios que tenemos que tener acceso, para que el comando de PowerShell que nosotros utilicemos a través de la puerta vía contraseña maestra en la implementación de Versel, que es... o sea, esto va a estar en Versel para que yo nada más llegue, por ejemplo, y me siente en Cybernet y me maneje para poder entrar a mi cuenta de Google, que es la que me permite... o mejor dicho, nada más abra Chrome, ingrese la URL canónica de Cora y sin tener que ingresar a mi cuenta de Google, utilizando la contraseña maestra, pueda extraer un comando de PowerShell que ya tenga lo que necesite para que no me vuelva a pedir el token de GitHub y que al correrlo instancie todo el entorno persistente para empezar. Para empezar me interesa que lo instancie. La volatilidad todavía no es como que... bueno, tiene que traerla, es necesario, pero no me interesa mucho porque ya de por sí las computadoras de este lugar tienen un mecanismo tipo Deep Freeze que hace que las sesiones sean efímeras y de momento me interesa que arranque el sistema. ¿Sí? Te voy a pasar entonces un... te voy a pasar un comando que ya se sabe que funciona a la perfección y tiene varias características. analízalo cuidadosamente para que sea para que por lo menos funcione al nivel que funciona este comando. Lo único que yo le ingreso a este comando es el token de GitHub. Todo lo demás funciona a la perfección. No quiero regresiones, es importante que no haya regresiones. Entonces básicamente, como mínimo, deja todo hasta ese punto. Ya me voy a desconectar y no vas a tener RDC disponible. trabaja únicamente con GitHub y resuelve lo de extremo a extremo y no te detengas hasta terminar, pase lo que pase. Máximo grado de implacable rigurosidad en la atención al detalle y la calidad y sobre todo ve registrando todo lo que es verbatim que yo haya dicho para que lo tengas como especificación canónica cuando tengas que tomar decisiones.
+
+> Una vez más resuelve de extremo a extremo y no te detengas hasta terminar sin excusas y sin RDC únicamente trabajo en GitHub y en Cora nada de Vercel ni implementación local puro trabajo en los repositorios conforme a lo que te acabo de decir vuelvo en una media hora.
+
+### 20.6 Estado y reanudación
+
+- Este ciclo no ejecutó Vercel ni un runtime local y no usó RDC.
+- No se cambió ningún workflow de publicación ni se afirma despliegue nuevo. La incidencia previa de Vercel con HTTP 402 por límite diario sigue siendo el último estado documentado en §19.4.
+- Código fuente, migraciones, configuración del GitHub App, verificador de contraseña, pruebas y runtime no se consideran implementados por esta entrada documental. El conector de GitHub bloqueó las escrituras de autenticación/issue intentadas.
+- OEP-PENDING-001 sigue abierto hasta que la puerta maestra, el token GitHub efímero y los criterios de aceptación estén implementados y verificados. El punto de reanudación es inspeccionar el estado de main, resolver la autorización de cambios mediante un flujo permitido y desarrollar el contrato de §20.3 en una rama aislada antes de integrar.
+- Regla de ciclo: actualizar el objeto canónico al cierre de cada ciclo con narrativa Antes → Cambio → Motivo → Resultado, cambios, hashes/commits, evidencia, fallos, bloqueos y punto de reanudación. Un resumen de chat no sustituye este registro.
