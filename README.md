@@ -40,7 +40,7 @@ El SI canónico se encuentra en [SI-METACOGNITIVO.md](SI-METACOGNITIVO.md).
 
 Versión vigente del SI:
 
-**v1.6.20 — Identidad de Principios en Cascada**
+**v1.6.21 — Ordenamiento por Preponderancia y Categorías**
 
 Versión vigente de la Metodología:
 
