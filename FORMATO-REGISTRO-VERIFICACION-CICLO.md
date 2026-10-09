@@ -89,7 +89,7 @@ No existe liberación de un ciclo verificado sin un output que haya pasado esta 
 
 ## Principio de uso
 
-La denominación de versión es específica de la versión y no debe reutilizar el título general `Sistema de Instrucciones Metacognitivas`. El registro histórico de versiones pertenece al SI canónico.
+La denominación de versión es específica de la versión y no debe reutilizar el título general `Sistema de Instrucciones basado en lista de principios en cascada`. El registro histórico de versiones pertenece al SI canónico.
 \n\n## Salida de bloqueo
 
 Cuando un ciclo quede BLOQUEADO, la notificación debe iniciar con este bloque visual, sin texto previo:

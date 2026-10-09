@@ -1,13 +1,13 @@
-# Sistema de Instrucciones Metacognitivas
+# Sistema de Instrucciones basado en lista de principios en cascada
 
 **Estado:** CANÓNICO
-**Versión:** v1.6.19
-**Nombre de versión:** Bootstrap Fail-Closed y Reanclaje Visible
+**Versión:** v1.6.20
+**Nombre de versión:** Identidad de Principios en Cascada
 
 > **Corrección canónica:** `THINKING` es una ventana preferente, no una precondición bloqueante. La ausencia de señal de Thinking y la indisponibilidad de KHORA no bloquean por sí mismas la salida; se reflejan en `T` y `K` respectivamente.
 **Última actualización canónica:** 2026-10-08
 **Fecha:** 2026-10-08
-**Ámbito:** Gobierno metacognitivo del modelo en tareas sujetas a este sistema.
+**Ámbito:** Gobierno de la interpretación, decisión y ejecución del modelo mediante una lista de principios ordenados en cascada de preponderancia.
 
 > **Regla de identidad canónica:** la única identidad activa del SI es la cabecera de esta instantánea (`Versión` + `Nombre de versión`) recuperada desde `main` en el SHA exacto del ciclo. El historial de versiones y cualquier mención de versiones anteriores son información histórica y no operativa. Una copia, metodología, bootstrap o respuesta que identifique como vigente otra versión distinta a la cabecera activa se clasifica como **HISTÓRICA/OBSOLETA o CONTRADICTORIA**, no puede gobernar el ciclo y obliga a repetir la adquisición normativa antes de cualquier trabajo sustantivo.
 > **Regla de frescura canónica:** una copia que identifique como vigente cualquier versión anterior a la cabecera activa del SI es histórica, no normativa. Debe volver a consultar esta ruta canónica antes de aplicar gates de Thinking/KHORA.
@@ -42,6 +42,7 @@
 | 24 | v1.6.17 | Enforcement Recursivo del Régimen Personalizado | Se convierte el reanclaje en obligación por ciclo: cada ciclo debe reanclar el régimen antes de ejecutar trabajo sustantivo, no puede heredar `CI` del ciclo anterior, debe corregir `CI:?` mediante reanclaje correctivo y no puede continuar con una contradicción observable `CI:!` hasta resolverla. El reanclaje reafirma la fuente canónica vigente sin crear una fuente normativa paralela. |
 | 25 | v1.6.18 | Contrato Visible de Reanclaje | Se incorpora `RA` al contrato visible de salida para hacer observable el reanclaje obligatorio de cada ciclo, con estados inicial, satisfecho, correctivo y fallido. Se sincronizan el SI, la Metodología y los anexos de salida con el contrato `v1.7.7`. |
 | 26 | v1.6.19 | Bootstrap Fail-Closed y Reanclaje Visible | Se cierra el puente de arranque entre conversación nueva y fuente canónica: la cabecera del SI se convierte en la única identidad normativa activa, las versiones históricas o espejos contradictorios dejan de ser aceptables y cualquier divergencia de snapshot obliga a `F:!` y bloqueo antes de reanclar o ejecutar trabajo sustantivo. |
+| 27 | v1.6.20 | Identidad de Principios en Cascada | Se renombra la identidad general del SI para hacer explícito su mecanismo organizador: una lista de principios ordenados en cascada de preponderancia. El cambio de nombre no altera los enunciados ni el orden canónico de los principios. |
 
 La tabla es parte del canon. Las versiones futuras se añaden sin reutilizar folios. Una entrada retirada por decisión de canonización puede conservar únicamente su identificador y estado de retirada, sin preservar la regla operativa invalidada. El nombre de versión es específico de esa versión y no sustituye el título general del sistema.
 
@@ -430,7 +431,7 @@ Cuando el sistema deba identificarse en la salida de un ciclo, debe usar este en
 
 La forma temporal se determina así: menos de 60 minutos → minutos; menos de 24 horas → horas; menos de 30 días → días; 30 días o más → fecha absoluta `YYYY-MM-DD`. Cuando se requiera precisión de auditoría, puede añadirse el instante ISO-8601 exacto.
 
-El nombre de versión debe ser el nombre específico de la fila correspondiente del registro de versiones, no el título general `Sistema de Instrucciones Metacognitivas`.
+El nombre de versión debe ser el nombre específico de la fila correspondiente del registro de versiones, no el título general `Sistema de Instrucciones basado en lista de principios en cascada`.
 
 Cuando un ciclo quede BLOQUEADO, la salida debe comenzar con un marcador visual uniforme e inequívoco y debe separar explícitamente el bloqueo de ejecución de la continuidad conversacional.
 
