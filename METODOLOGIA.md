@@ -318,6 +318,13 @@ En ChatGPT nativo, la ausencia o indisponibilidad del MCP no impide producir la 
 
 `ESTADO: COMPLETADO` describe que el resultado solicitado fue producido; el estado de verificación externa se declara por separado mediante `K`. Por tanto, un resultado puede estar `COMPLETADO` con `K: OFF` sin fingir verificación.
 
+
+## 17.2 Arranque CLI Windows y descarga verificable de repositorios
+
+Cuando la tarea requiera arrancar aplicaciones en Windows, resolver dependencias PowerShell o descargar/actualizar repositorios, consultar el procedimiento condicional [ANEXO-PROCEDIMIENTO-ARRANQUE-CLI-WINDOWS-Y-CLONADO-REPOSITORIOS.md](ANEXO-PROCEDIMIENTO-ARRANQUE-CLI-WINDOWS-Y-CLONADO-REPOSITORIOS.md) y, cuando aplique, usar [scripts/clone-public-repo-to-desktop.ps1](scripts/clone-public-repo-to-desktop.ps1). Este procedimiento no anula las restricciones de materialización del apartado 17: primero se valida que el perfil y la ruta permiten clonar.
+
+El clonador distingue Git de GitHub CLI, usa la fuente winget explícita cuando debe instalar Git y valida origin, rama, SHA de HEAD y working tree. Un destino dudoso o con cambios locales se conserva y la operación se detiene. Las operaciones de terminal respetan la restricción de CLI cuando el usuario la establece; la validación debe demostrar el resultado real, no solo que el proceso arrancó.
+
 ## 18.0 Regla transversal de salida por turno
 
 El contrato de salida definido en `FORMATO-REGISTRO-VERIFICACION-CICLO.md` es obligatorio para **cada turno/ciclo sujeto a la metodología, sin excepción**, incluidos turnos bloqueados, turnos de resolución conversacional y turnos sin uso de RDC. El contrato vigente de presentación es `v1.7.7`.
