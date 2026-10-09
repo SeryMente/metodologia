@@ -332,8 +332,26 @@ try {
     Invoke-WebRequest -UseBasicParsing -Uri $url -OutFile $file
     if ((Get-FileHash -LiteralPath $file -Algorithm SHA256).Hash -ne $pinHash) { Remove-Item -LiteralPath $file -Force -ErrorAction SilentlyContinue; throw 'BASE_BOOTSTRAP_HASH_MISMATCH' }
     Write-Log 'BASE_BOOTSTRAP=PINNED_SHA256_VERIFIED'
+    # The pinned prepare step only updates the public Desktop\metodologia checkout.
+    # Remove command-scope Git credential overrides while it inspects the local origin,
+    # then restore the in-memory token transport before private-repository operations.
+    $gitCredentialEnv=@{}
+    foreach ($n in @('GIT_CONFIG_COUNT','GIT_CONFIG_KEY_0','GIT_CONFIG_VALUE_0','GIT_CONFIG_KEY_1','GIT_CONFIG_VALUE_1')) {
+        $gitCredentialEnv[$n]=[Environment]::GetEnvironmentVariable($n,'Process')
+        Remove-Item ('Env:'+$n) -ErrorAction SilentlyContinue
+    }
     $ps=Join-Path $env:SystemRoot 'System32\WindowsPowerShell\v1.0\powershell.exe'; $old=$ErrorActionPreference
-    try { $ErrorActionPreference='Continue'; $baseOutput=@(& $ps -NoProfile -ExecutionPolicy Bypass -File $file -PrepareOnly 2>&1); $baseCode=$LASTEXITCODE } finally { $ErrorActionPreference=$old }
+    try {
+        $ErrorActionPreference='Continue'
+        $baseOutput=@(& $ps -NoProfile -ExecutionPolicy Bypass -File $file -PrepareOnly 2>&1)
+        $baseCode=$LASTEXITCODE
+    } finally {
+        $ErrorActionPreference=$old
+        foreach ($n in $gitCredentialEnv.Keys) {
+            if ($null -ne $gitCredentialEnv[$n]) { [Environment]::SetEnvironmentVariable($n,[string]$gitCredentialEnv[$n],'Process') }
+            else { Remove-Item ('Env:'+$n) -ErrorAction SilentlyContinue }
+        }
+    }
     foreach ($line in $baseOutput) { Write-Log ('BASE_PREPARE | '+[string]$line) }
     if ($baseCode -ne 0) { throw "BASE_PREPARE_FAILED: exit=$baseCode" }
 
