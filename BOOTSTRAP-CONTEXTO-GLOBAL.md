@@ -83,6 +83,15 @@ El reanclaje debe referirse al régimen canónico vigente y no crear un resumen 
 8. Una vez resuelto el contexto RDC, intentar `khora_mcp_health` sobre el MCP canónico; si no está disponible, declarar `K: OFF` en la salida.
 9. Si no existe ningún dispositivo ONLINE y RDC es requerido, bloquear y ofrecer `RDC-REINSTANTIAR`.
 
+
+## Procedimiento condicional de CLI Windows y repositorios
+
+Cuando el ciclo incluya operaciones en Windows PowerShell, arranque de aplicaciones, instalación de dependencias o descarga/actualización de repositorios, consumir ANEXO-PROCEDIMIENTO-ARRANQUE-CLI-WINDOWS-Y-CLONADO-REPOSITORIOS.md antes de ejecutar. El script reutilizable de clonación es scripts/clone-public-repo-to-desktop.ps1.
+
+Si el usuario exige CLI, toda inspección y operación de la terminal debe realizarse por línea de comandos; no usar automatización de ventanas, clics ni controles gráficos. La creación o actualización de archivos persistentes sigue el contrato de publicación condicionada y read-back.
+
+El anexo no reemplaza el snapshot SI, el registro de terminales, el descubrimiento vivo RDC ni la verificación por ping. Es un procedimiento condicional de implementación, no un selector de terminal.
+
 ## Distincion obligatoria
 
 **Identidad RDC** = par `RDC-CUENTA + RDC-DEVICE-ID` que identifica una terminal/dispositivo en el proveedor.
