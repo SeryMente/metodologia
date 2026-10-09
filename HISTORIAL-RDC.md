@@ -23,6 +23,8 @@ Múltiples identidades pueden estar ACTIVAS simultáneamente cuando corresponden
 | RDC-20261008-0002 | 2026-10-08T17:41:23.258Z | — | blacksheepsup@gmail.com | PC-7 | 418659b7-64bc-4cb2-a2cb-ed8fd83c5005 | CECEQ | ACTIVA | — | Nueva sesión verificada; device online y ping verificado |
 | RDC-20261008-0003 | 2026-10-08T19:21:57.319Z | — | blacksheepsup@gmail.com | PC-7 | e5a4159e-cb32-4ba6-89d6-3a2083a49893 | NO DETERMINADA | ACTIVA | — | Nueva conexión verificada; identidad independiente; ping verificado |
 
+| RDC-20261009-0001 | 2026-10-09T00:29:10.343Z | — | blacksheepsheepsup@gmail.com | PC-4 | ad151d48-3bd6-44a8-9b61-b0d0291643eb | CIBERCAFE | ACTIVA | — | Nueva conexión verificada en terminal distinta; no sustituye sesiones existentes |
+
 * Hora de inicio del shutdown del dispositivo anterior; la consulta posterior confirmó OFFLINE.
 
 ## Regla de unicidad
