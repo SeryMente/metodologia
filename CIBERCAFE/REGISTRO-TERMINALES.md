@@ -1,12 +1,13 @@
 # Registro de Terminales de Cibercafe
 
 **Estado:** CANONICO
-**Fecha:** 2026-10-08
+**Fecha:** 2026-10-09
 
 Este archivo es el indice de las computadoras individuales administradas por el proceso persistente de liberacion de desempeno.
 
 | Terminal | Estado | Registro de estado | Eventos | Ultima observacion persistente |
 |---|---|---|---|---|
+| PC-4 | ACTIVA EN REGISTRO | `CIBERCAFE/PC-4/ESTADO.md` | `CIBERCAFE/PC-4/EVENTOS-2026-10.md` | 2026-10-09 |
 | PC-7 | ACTIVA EN REGISTRO | `CIBERCAFE/PC-7/ESTADO.md` | `CIBERCAFE/PC-7/EVENTOS-2026-10.md` | 2026-10-08 |
 
 ## Regla de alta
