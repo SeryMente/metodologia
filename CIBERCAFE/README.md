@@ -11,6 +11,7 @@ El cibercafe no se representa como una sola maquina.
 
 Cada terminal tiene su propio registro:
 
+`CIBERCAFE/PC-4/`
 `CIBERCAFE/PC-7/`
 `CIBERCAFE/PC-8/`
 `CIBERCAFE/PC-9/`
