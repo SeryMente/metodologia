@@ -63,6 +63,16 @@ La consulta no midió carga sostenida de CPU/GPU, temperaturas, latencia ni rend
 - Verificación al finalizar el clon: origin correcto, rama main, HEAD 2815b439fde33d3fdc46ef80e47b2f93f5d97eef y working tree limpio.
 - La verificación inicial tuvo un error de sintaxis independiente del clon (Out-String.Trim no es un cmdlet). Una comprobación posterior válida confirmó el clon; no repetir esa expresión.
 
+### 2026-10-09 — Bootstrap CLI integral anclado
+
+- Script canónico: `scripts/bootstrap-cibercafe-cli.ps1`.
+- Commit inmutable del script validado: `14756d289f1ddc4c74c6736f5aa021121158541c`.
+- SHA-256 verificado del artefacto descargado: `19D254602AEAA17F08D9E4D09B20B665DC48588C46EB41F1C9E53F2EF62E0154`.
+- Prueba de preparación ejecutada con Windows PowerShell 5.1: Git y Node/npm verificados, `Desktop\metodologia` actualizado sin cambios locales, SI/Metodología reconocidos, `PREPARE_ONLY=True`, salida 0.
+- Con `-StartOBSVirtualCamera`, la prueba detectó la cámara ya activa y no abrió otra instancia.
+- No se lanzó otro handshake RDC durante esta prueba para evitar crear una identidad duplicada; el comando final deja RDC en primer plano para el handshake normal.
+- No usar raw `main` como fuente ejecutable del bootstrap: se observó que podía entregar una versión anterior. Descargar el commit fijado y verificar SHA-256 primero.
+
 ## Lecciones operativas de esta terminal
 
 1. Para Remote Desktop Commander, PowerShell resolvió npx a npx.ps1 y la política de scripts bloqueó su ejecución. Usar npx.cmd @wonderwhy-er/desktop-commander@latest remote.
