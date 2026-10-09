@@ -44,16 +44,16 @@ Versión vigente del SI:
 
 Versión vigente de la Metodología:
 
-**v0.14.7 — Arranque CLI Verificable y Continuidad por Terminal**
+**v0.14.8 — Bootstrap CLI Integral para Terminales CIBERCAFE**
 
 El SI contiene los principios fundamentales vigentes, ordenados de mayor a menor preponderancia. La continuidad entre conversaciones se desarrolla operativamente mediante la Metodología y el anexo `BOOTSTRAP-CONTEXTO-GLOBAL.md`.
 
 ## Última actualización de Metodología
 
-**v0.14.7 — Arranque CLI Verificable y Continuidad por Terminal**  
+**v0.14.8 — Bootstrap CLI Integral para Terminales CIBERCAFE**  
 2026-10-09
 
-La metodología canoniza el arranque CLI de Windows, la clonación idempotente de repositorios públicos con verificación de origin/HEAD/working tree y la memoria persistente independiente por terminal CIBERCAFE. La identidad activa del SI continúa subordinada exclusivamente a la cabecera de su snapshot canónico.
+La metodología incorpora un bootstrap CLI integral para terminales Windows de CIBERCAFE: instalación/verificación de dependencias, sincronización segura de Metodología, comprobación opcional de OBS Virtual Camera y arranque de RDC. La identidad activa del SI continúa subordinada exclusivamente a la cabecera de su snapshot canónico.
 
 
 La identidad persistente de la sesión RDC y su registro transversal se mantienen mediante ESTADO-RDC-ACTIVO.md. La conectividad se verifica por ciclo mediante ping como comprobación primaria cuando el ciclo requiera uso RDC en vivo. La salida visible de cada ciclo muestra únicamente el contexto y resultado esenciales; `K: ✓` solo acredita verificación/liberación de KHORA, mientras `K: OFF` declara que el verificador no estuvo disponible sin bloquear la salida.
@@ -102,13 +102,9 @@ La extensión a proyectos futuros no debe retrasar el objetivo operativo de mejo
 
 ## Arranque CLI Windows y clonación de repositorios
 
-Cuando una tarea requiera iniciar herramientas Windows, resolver dependencias o descargar repositorios al Escritorio, consulta el procedimiento condicional [ANEXO-PROCEDIMIENTO-ARRANQUE-CLI-WINDOWS-Y-CLONADO-REPOSITORIOS.md](ANEXO-PROCEDIMIENTO-ARRANQUE-CLI-WINDOWS-Y-CLONADO-REPOSITORIOS.md).
+Para iniciar una terminal CIBERCAFE desde PowerShell, usa [scripts/bootstrap-cibercafe-cli.ps1](scripts/bootstrap-cibercafe-cli.ps1) mediante su entrada de descarga HTTPS documentada en [ANEXO-PROCEDIMIENTO-ARRANQUE-CLI-WINDOWS-Y-CLONADO-REPOSITORIOS.md](ANEXO-PROCEDIMIENTO-ARRANQUE-CLI-WINDOWS-Y-CLONADO-REPOSITORIOS.md). El bootstrap valida Git y Node/npm/npx, sincroniza `Desktop\metodologia` sin sobrescribir destinos dudosos y mantiene RDC en primer plano. Para intentar arrancar la cámara virtual, se usa el parámetro `-StartOBSVirtualCamera`; los permisos de cámara de Chrome permanecen por sitio.
 
-El script verificable es [scripts/clone-public-repo-to-desktop.ps1](scripts/clone-public-repo-to-desktop.ps1). Para descargar el repositorio público de Metodología en una carpeta inexistente, con Git ya instalado:
-
-    git clone https://github.com/SeryMente/metodologia.git "$env:USERPROFILE\Desktop\metodologia"
-
-El script idempotente verifica origin, branch, HEAD y working tree; se detiene si el destino no es el repositorio esperado o contiene cambios locales. No sustituye autenticación CLI para repositorios privados.
+El clonador específico es [scripts/clone-public-repo-to-desktop.ps1](scripts/clone-public-repo-to-desktop.ps1). Para descargar un repositorio público diferente se proporciona su URL como `-RepositoryUrl`. Ambos scripts validan origin, branch, HEAD y working tree, se detienen ante cambios locales y no sustituyen la autenticación CLI requerida por los repositorios privados.
 
 ## Gate de ejecución en ChatGPT
 
