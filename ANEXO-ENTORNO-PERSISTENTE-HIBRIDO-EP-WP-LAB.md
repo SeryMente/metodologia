@@ -169,3 +169,21 @@ La migración definitiva se declara completada solo si se demuestra la ubicació
 ## 9. Siguiente operación
 
 La siguiente acción es una **búsqueda de solo lectura en PC-7** para reconciliar identidad de host y localizar los activos fuera de las rutas esperadas. No ejecutar el bootstrap, no mover el sitio, no restaurar el snapshot y no cambiar la ruta activa hasta que esa inspección produzca paths, hashes y estado de almacenamiento verificables.
+
+
+---
+
+## 10. Actualización de canon: terminal efímera, arranque RDC y OGP visual (2026-10-09)
+
+La especificación general ampliada, incluidas las condiciones de identidad RDC, secuenciación por prioridades, telemetría, OBS, WP-LAB, OGP-Visual y entradas verbatim del usuario, se encuentra en el nuevo [ANEXO-EP-ARRANQUE-CYBERNET-WP-LAB-OGP-IA-20261009.md](ANEXO-EP-ARRANQUE-CYBERNET-WP-LAB-OGP-IA-20261009.md). Esta referencia es obligatoria junto con este anexo en sesiones que involucren Cybernet/RDC/EP/WP-LAB/OGP.
+
+### Correcciones de contexto a este corte
+
+- PC-7, PC-4 y otras etiquetas semejantes son terminales físicas separadas del cibercafé. La sesión Windows/perfil/Descargas/Escritorio es efímera por defecto según declaración del usuario. Una carpeta del escritorio no debe canonizarse como ubicación persistente.
+- El TXT ChatGPT-Cyber - Arranque-20261009-1024.txt sí estaba accesible en Downloads de PC-7 durante la conexión RDC de este ciclo; la búsqueda previa en la biblioteca de archivos no lo encontró porque era un archivo local del host remoto. La transcripción se leyó y se ha extractado al nuevo anexo, sin reproducir códigos temporales ni credenciales RDC en el repositorio público.
+- El hilo histórico mostró Node 24.20.0 y OBS Studio 32.2.2 instalados en un intento que terminó en OBS_VIRTUAL_CAMERA_DID_NOT_START. Este resultado no certifica el estado actual ni el estado de la siguiente sesión.
+- La instrucción expresa del usuario para el arranque es no trabajar con Chrome; ejecutar por terminal. El bootstrap debe evitar cambios a perfiles/políticas de Chrome y no declarar cámara detectada por inferencia.
+- Divi 4.23.1 (divi-theme_4.23.1.zip) es el activo que el usuario solicita para el siguiente intento. Sigue sin comprobarse ZIP, versión real, hash o autorización; la referencia histórica Divi 4.24.0 no debe sobreescribir esta selección sin una decisión explícita.
+- El pipeline local OGP (ComfyUI/Nunchaku/Z-Image-Turbo/Qwen-Image-Edit) es una capa posterior; no debe retrasar el acceso a la sesión básica ni descargar pesos pesados antes de resolver la persistencia duradera y el preflight de hardware.
+
+El estado físico continúa siendo EP_VOLATIL / UBICACIÓN FÍSICA NO CERTIFICADA hasta que se demuestre el volumen, junction, cifrado y restauración. La publicación de especificaciones no equivale a integración física.

@@ -102,7 +102,7 @@ La extensión a proyectos futuros no debe retrasar el objetivo operativo de mejo
 
 ## Arranque CLI Windows y clonación de repositorios
 
-Para iniciar una terminal CIBERCAFE desde PowerShell, usa [scripts/bootstrap-cibercafe-cli.ps1](scripts/bootstrap-cibercafe-cli.ps1) mediante su entrada de descarga HTTPS documentada en [ANEXO-PROCEDIMIENTO-ARRANQUE-CLI-WINDOWS-Y-CLONADO-REPOSITORIOS.md](ANEXO-PROCEDIMIENTO-ARRANQUE-CLI-WINDOWS-Y-CLONADO-REPOSITORIOS.md). El bootstrap valida Git y Node/npm/npx, sincroniza `Desktop\metodologia` sin sobrescribir destinos dudosos y mantiene RDC en primer plano. Para intentar arrancar la cámara virtual, se usa el parámetro `-StartOBSVirtualCamera`; los permisos de cámara de Chrome permanecen por sitio.
+Para iniciar una terminal CIBERCAFE desde PowerShell, usa [scripts/bootstrap-cibercafe-cli.ps1](scripts/bootstrap-cibercafe-cli.ps1) mediante el procedimiento documentado en [ANEXO-PROCEDIMIENTO-ARRANQUE-CLI-WINDOWS-Y-CLONADO-REPOSITORIOS.md](ANEXO-PROCEDIMIENTO-ARRANQUE-CLI-WINDOWS-Y-CLONADO-REPOSITORIOS.md). El bootstrap valida Git y Node/npm/npx, sincroniza los repositorios sin sobrescribir destinos dudosos y mantiene RDC en primer plano. La cámara virtual puede intentarse con el parámetro `-StartOBSVirtualCamera`; el bootstrap no abre, cierra, inspecciona ni modifica Chrome ni sus perfiles/permisos. Cualquier prueba de detección en una aplicación queda separada y no se da por hecha.
 
 El clonador específico es [scripts/clone-public-repo-to-desktop.ps1](scripts/clone-public-repo-to-desktop.ps1). Para descargar un repositorio público diferente se proporciona su URL como `-RepositoryUrl`. Ambos scripts validan origin, branch, HEAD y working tree, se detienen ante cambios locales y no sustituyen la autenticación CLI requerida por los repositorios privados.
 
@@ -114,5 +114,7 @@ Todo ciclo sujeto a la metodología intenta resolver la cascada normativa durant
 ## Entorno Persistente Híbrido y WP-LAB
 
 El registro transversal de continuidad, decisiones, estados físicos, manifiestos no sensibles y plan de integración se encuentra en [ANEXO-ENTORNO-PERSISTENTE-HIBRIDO-EP-WP-LAB.md](ANEXO-ENTORNO-PERSISTENTE-HIBRIDO-EP-WP-LAB.md). Cualquier trabajo sobre KHORA EP, EP_VOLATIL, VHDX/BitLocker, Deadman Trigger o el laboratorio WordPress Ser y Mente debe leerlo antes de ejecutar scripts.
+
+Para el contrato completo del arranque en terminales efímeras de Cybernet, RDC, identidad por terminal, ficha de sesión al portapapeles, OBS, observador/telemetría, orden de instanciación por coste, WordPress/Divi y capacidad de IA visual local OGP, leer también [ANEXO-EP-ARRANQUE-CYBERNET-WP-LAB-OGP-IA-20261009.md](ANEXO-EP-ARRANQUE-CYBERNET-WP-LAB-OGP-IA-20261009.md). Este anexo contiene una sección de especificaciones del usuario verbatim y distingue premisas declaradas de pruebas técnicas.
 
 El anexo distingue evidencia actual de documentación histórica. La presencia de una carpeta no acredita una junction cifrada; el repositorio público conserva documentos y hashes no sensibles, nunca secretos, bases de datos, snapshots completos ni el ZIP propietario de Divi.
