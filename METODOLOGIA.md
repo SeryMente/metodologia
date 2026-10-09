@@ -198,13 +198,13 @@ Thinking es la ventana preferente de ejecución de la cascada normativa cuando e
 
 Ese anexo es obligatorio para todo ciclo cuya plataforma sea ChatGPT.
 
-## 5. Sistema de Instrucciones Metacognitivas
+## 5. Sistema de Instrucciones basado en lista de principios en cascada
 
-El sistema canónico de instrucciones que gobierna la interpretación, decisión y ejecución metacognitiva del modelo se encuentra en:
+El sistema canónico de instrucciones basado en una lista de principios ordenados en cascada de preponderancia se encuentra en:
 
 `SI-METACOGNITIVO.md`
 
-La versión activa del SI para un ciclo **no se deriva de esta línea ni de ninguna otra declaración espejo**. Debe copiarse exclusivamente de la cabecera de `SI-METACOGNITIVO.md` recuperada en la instantánea exacta de `main`. La cabecera canónica actual es **v1.6.19 — Bootstrap Fail-Closed y Reanclaje Visible**. Si la versión o el nombre declarados por la Metodología difieren del snapshot activo del SI, existe una contradicción normativa y el ciclo debe quedar bloqueado con `F:!` hasta reconciliarla.
+La versión activa del SI para un ciclo **no se deriva de esta línea ni de ninguna otra declaración espejo**. Debe copiarse exclusivamente de la cabecera de `SI-METACOGNITIVO.md` recuperada en la instantánea exacta de `main`. La cabecera canónica actual es **v1.6.20 — Identidad de Principios en Cascada**. Si la versión o el nombre declarados por la Metodología difieren del snapshot activo del SI, existe una contradicción normativa y el ciclo debe quedar bloqueado con `F:!` hasta reconciliarla.
 
 La metodología mantiene separadas las normas fundamentales de sus desarrollos, procedimientos, herramientas y mecanismos de implementación.
 \n\n## 6. Contexto de ejecución y salida por ciclo\n\nEl contrato canonico se encuentra en `ANEXO-CONTEXTO-EJECUCION-Y-SALIDA-CICLO.md`. Su aplicacion es ubicua en todos los ciclos sujetos a la metodologia e integra plataforma, ubicacion persistente, estado y cuenta RDC, uso mensual disponible, identidad Windows operativa y, cuando corresponda, identidad administrativa. Los detalles de formato, fuentes y perfiles por ubicacion permanecen en el anexo y no se elevan al nivel del SI.
