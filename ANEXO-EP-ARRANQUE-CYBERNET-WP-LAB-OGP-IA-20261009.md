@@ -900,3 +900,12 @@ En cuanto a RDC, ambos scripts ejecutan el cliente en primer plano, pero el aná
 - **Bloqueado/no verificado:** ejecución real de los scripts en la terminal; cámara detectada por Chrome; asociación de Notepad++; nueva ficha RDC; salida del agente de rendimiento; almacenamiento duradero.
 - **Sin cambios locales o de hardware:** el trabajo en este ciclo es documental y en GitHub. No se hicieron instalaciones, no se editó Chrome, no se manipuló el ZIP de Divi ni se reinició ningún equipo.
 
+
+
+---
+
+## 18. Entrada del usuario verbatim: alcance fundacional actual
+
+> Enduredelo un turno, verifica su integridad, y Todo, mira, llevo un tiempo tratando de tener este entorno persistente y no lo he podido lograr, y es algo básico. Entonces sí necesito poderlo perfeccionar. Así que en este nuevo esfuerzo vamos a tratar de irlo haciendo por secciones. Identifica dentro de tu estrategia general para entorno persistente cuáles son los elementos fundacionales. De momento nada más voy a estar trabajando cibercafé, cibernet, Luis Pasteur. ya sabes cuáles son las características de la ubicación. y este, debo de poder llegar y reiniciar la sesión persistente sin fallos y de manera fluida. Debo de poder levantar la sesión RDC en cada sesión para esta ubicación. Debo de poder instalar OBS cámara virtual, debe de quedar la cámara virtual ya detectada por Chrome, debe de descargar la carpeta de trabajo a escritorio con todos los repositorios y las extensiones para gestor de procesos y Signal Interpreter en su versión más actualizada. Debe de descargar Notepad++ y hacerlo el programa predeterminado. Esos son los elementos fundacionales para esta ubicación, ayúdame a tenerlos para que funcionen de manera fluida. El registro de eventos es importante para que podamos perfeccionarlo porque sí va a haber uno que otro error, pero al cabo de un par de ciclos de desarrollo ya debería de quedar esta parte antes de pasar a otros elementos del entorno de persistencia.
+
+Esta entrada fija el alcance de prioridad de la Fase Fundacional y complementa los requisitos verbatim anteriores. Las decisiones de seguridad, privacidad, ausencia de reinicios, persistencia no certificada y gates de aceptación se formalizan en las secciones 16 y 17 sin reinterpretar el texto anterior.
