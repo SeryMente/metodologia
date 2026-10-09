@@ -1,7 +1,7 @@
 # Registro Operativo Global — Identidades RDC
 
 **Naturaleza:** registro operativo mutable; no es una fuente de verdad de conectividad actual ni selecciona una terminal global para todas las conversaciones.
-**Ultima actualizacion registrada:** 2026-10-09T01:10:54.905Z
+**Ultima actualizacion registrada:** 2026-10-09T01:16:35.344Z
 **Funcion transversal:** conservar identidades RDC conocidas, ciclos de vida y observaciones verificadas para continuidad entre conversaciones.
 
 ## Modelo de estado
@@ -19,7 +19,7 @@
 
 ## Observacion viva mas reciente
 
-**Momento:** 2026-10-09T01:10:54.905Z  
+**Momento:** 2026-10-09T01:16:35.344Z  
 **Tipo:** HANDSHAKE FRESCO + PING VERIFICADO  
 **Cuenta RDC:** blacksheepsheepsup@gmail.com  
 **Dispositivo:** PC-4  
@@ -35,11 +35,11 @@
 
 | Dispositivo | RDC-DEVICE-ID | Estado observado | Ultimo visto reportado |
 |---|---|---|---|
-| PC-4 | ad151d48-3bd6-44a8-9b61-b0d0291643eb | ONLINE | proveedor reportó 3m al momento de descubrimiento; ping 2026-10-09T01:10:54.905Z |
+| PC-4 | ad151d48-3bd6-44a8-9b61-b0d0291643eb | ONLINE | proveedor reportó 3m al momento de descubrimiento; ping 2026-10-09T01:16:35.344Z |
 
 **Nota:** el proveedor devolvió esta identidad como ONLINE. Una identidad no devuelta en una lista posterior no se elimina ni se declara finalizada solo por inferencia.
 
-**Uso mensual observado de esta cuenta:** 86% usado / 14% restante.  
+**Uso mensual observado de esta cuenta:** 87% usado / 13% restante.  
 **Fuente:** who_am_i del proveedor RDC durante el mismo ciclo; no implica fecha de reinicio del contador.
 
 ### Cuenta: elathanor111@gmail.com
@@ -59,7 +59,7 @@
 
 | Identidad RDC | Estado persistente | Nota |
 |---|---|---|
-| blacksheepsheepsup@gmail.com + ad151d48-3bd6-44a8-9b61-b0d0291643eb | CONOCIDA · ONLINE EN ULTIMA OBSERVACION | PC-4; handshake fresco y ping 2026-10-09T01:10:54.905Z; identidad RDC nueva e independiente |
+| blacksheepsheepsup@gmail.com + ad151d48-3bd6-44a8-9b61-b0d0291643eb | CONOCIDA · ONLINE EN ULTIMA OBSERVACION | PC-4; handshake fresco y ping 2026-10-09T01:16:35.344Z; identidad RDC nueva e independiente |
 | blacksheepsup@gmail.com + ad151d48-3bd6-44a8-9b61-b0d0291643eb | CONOCIDA · ONLINE EN ULTIMA OBSERVACION | PC-4; handshake fresco y ping verificado 2026-10-09T00:30:31.732Z; identidad RDC nueva e independiente |
 | blacksheepsup@gmail.com + e5a4159e-cb32-4ba6-89d6-3a2083a49893 | CONOCIDA · ONLINE EN ULTIMA OBSERVACION | PC-7; nueva conexion verificada y ping 2026-10-08T19:21:57.319Z |
 | blacksheepsup@gmail.com + 418659b7-64bc-4cb2-a2cb-ed8fd83c5005 | CONOCIDA · OFFLINE EN ULTIMA OBSERVACION | PC-7; identidad distinta |
