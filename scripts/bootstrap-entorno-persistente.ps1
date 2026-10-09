@@ -136,6 +136,15 @@ function Normalize-Origin([string]$Value) {
 }
 function Sync-Repo([string]$Repo,[string]$Destination) {
     $expected=('https://github.com/'+$Repo).ToLowerInvariant()
+    if ((Test-Path -LiteralPath $Destination) -and -not (Test-Path -LiteralPath (Join-Path $Destination '.git'))) {
+        $leftovers=@(Get-ChildItem -LiteralPath $Destination -Force -ErrorAction Stop)
+        if ($leftovers.Count -eq 0) {
+            Remove-Item -LiteralPath $Destination -Force
+            Write-Log ('EMPTY_FAILED_CLONE_DIR_REMOVED='+$Destination)
+        } else {
+            throw "DESTINATION_EXISTS_NOT_GIT: $Destination; non-empty directory preserved to protect local data."
+        }
+    }
     if (Test-Path -LiteralPath $Destination) {
         if (-not (Test-Path -LiteralPath (Join-Path $Destination '.git'))) { throw "DESTINATION_EXISTS_NOT_GIT: $Destination" }
         $o=Invoke-NativeCaptured -Executable $script:GitPath -Arguments @('-C',$Destination,'remote','get-url','origin') -Quiet
