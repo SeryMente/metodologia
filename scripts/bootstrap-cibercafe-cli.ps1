@@ -261,10 +261,7 @@ function Sync-MethodologyRepository {
         }
     }
 
-    $canonicalRepo = $script:MethodologyPath
-    if ([string]::IsNullOrWhiteSpace($canonicalRepo) -or -not (Test-Path -LiteralPath $canonicalRepo)) {
-        throw 'METHODOLOGY_PATH_NOT_EXPORTED_FROM_SYNC'
-    }
+    $canonicalRepo = $target
     $siText = [System.IO.File]::ReadAllText((Join-Path $canonicalRepo 'SI-METACOGNITIVO.md'))
     $methodText = [System.IO.File]::ReadAllText((Join-Path $canonicalRepo 'METODOLOGIA.md'))
     $siVersionMatch = [regex]::Match($siText, '(?m)^\*\*Versi.n:\*\*[ \t]*(.+)$')
