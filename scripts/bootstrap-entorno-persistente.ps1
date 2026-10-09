@@ -58,7 +58,7 @@ function Ensure-Gh {
         $wg=Find-Winget
         if (-not $wg) { throw 'GITHUB_CLI_MISSING_AND_WINGET_UNAVAILABLE' }
         $r=Invoke-NativeCaptured -Executable $wg -Arguments @('install','--id','GitHub.cli','--exact','--source','winget','--scope','user','--accept-source-agreements','--accept-package-agreements','--silent') -Label 'INSTALL_GH'
-        if ($r.ExitCode -ne 0) { $r=Invoke-NativeCaptured -Executable $wg -Arguments @('install','--id','GitHub.cli','--exact','--source','winget','--scope','user','--accept-source-agreements','--accept-package-agreements','--silent') -Label 'INSTALL_GH_DEFAULT' }
+        if ($r.ExitCode -ne 0) { $r=Invoke-NativeCaptured -Executable $wg -Arguments @('install','--id','GitHub.cli','--exact','--source','winget','--scope','user','--accept-source-agreements','--package-agreements','--silent') -Label 'INSTALL_GH_DEFAULT' }
         $end=(Get-Date).AddSeconds(60)
         do { $gh=Find-Gh; if (-not $gh) { Start-Sleep -Milliseconds 500 } } while (-not $gh -and (Get-Date) -lt $end)
         if (-not $gh) { throw "GITHUB_CLI_INSTALL_NOT_VERIFIED: exit=$($r.ExitCode)" }
@@ -79,25 +79,27 @@ function Ensure-Gh {
             throw 'CLIPBOARD_TOKEN_NOT_RECOGNIZED: copy a valid GitHub PAT (ghp_... or github_pat_...) and retry.'
         }
 
-        # gh API commands use GH_TOKEN. Git HTTPS uses an ephemeral extra-header.
-        # This supports fine-grained PATs without persisting the token in gh config or Git files.
         $env:GH_TOKEN=$token
         $tokenKind=if ($token.StartsWith('github_pat_')) { 'FINE_GRAINED' } else { 'CLASSIC_OR_OTHER' }
-        $basic=[Convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes(('x-access-token:' + $token)))
-        $token=$null
         $env:GIT_TERMINAL_PROMPT='0'
-        $env:GIT_CONFIG_COUNT='2'
-        $env:GIT_CONFIG_KEY_0='credential.helper'
-        $env:GIT_CONFIG_VALUE_0=''
-        $env:GIT_CONFIG_KEY_1='http.https://github.com/.extraheader'
-        $env:GIT_CONFIG_VALUE_1='AUTHORIZATION: basic '+$basic
-        $basic=$null
 
+        # Validate the copied token via the REST API before configuring Git HTTPS.
         $auth=Invoke-NativeCaptured -Executable $gh -Arguments @('api','user','--jq','.login') -Quiet
         $account=($auth.Lines -join '').Trim()
         if ($auth.ExitCode -ne 0 -or [string]::IsNullOrWhiteSpace($account)) {
             throw 'GITHUB_TOKEN_REJECTED_BY_API: the copied token was not accepted by GitHub. Verify token validity, expiry, and organization policy.'
         }
+
+        # Git reads these process-only config pairs; no credential or token is written to disk.
+        # Use the documented http.extraHeader key, not a URL-subsection config key in the environment.
+        $basic=[Convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes(($account + ':' + $token)))
+        $token=$null
+        $env:GIT_CONFIG_COUNT='2'
+        $env:GIT_CONFIG_KEY_0='credential.helper'
+        $env:GIT_CONFIG_VALUE_0=''
+        $env:GIT_CONFIG_KEY_1='http.extraHeader'
+        $env:GIT_CONFIG_VALUE_1='AUTHORIZATION: basic '+$basic
+        $basic=$null
 
         $targets=@('SeryMente/metodologia','SeryMente/otrogranprograma','SeryMente/GDP','SeryMente/signal-interpreter','SeryMente/khora')
         foreach ($repo in $targets) {
@@ -106,7 +108,7 @@ function Ensure-Gh {
                 throw "PAT_CONTENTS_READ_FAILED: $repo; token must include this repository and Contents: Read-only (plus Metadata: Read-only); organization approval may also be required."
             }
         }
-        Write-Log ('GITHUB_TOKEN=VERIFIED | ACCOUNT='+$account+' | TYPE='+$tokenKind+' | API_CONTENTS_READ=VERIFIED_FOR_ALL_REPOSITORIES | GIT_AUTH=EPHEMERAL')
+        Write-Log ('GITHUB_TOKEN=VERIFIED | ACCOUNT='+$account+' | TYPE='+$tokenKind+' | API_CONTENTS_READ=VERIFIED_FOR_ALL_REPOSITORIES | GIT_AUTH=EPHEMERAL_HTTP_EXTRAHEADER')
     } finally {
         $token=$null
         $basic=$null
@@ -161,7 +163,7 @@ function Sync-Repo([string]$Repo,[string]$Destination) {
         if ($r.ExitCode -ne 0) { throw "GIT_PULL_FAILED: $Repo" }
     } else {
         New-Item -ItemType Directory -Path (Split-Path -Parent $Destination) -Force | Out-Null
-        $r=Invoke-NativeCaptured -Executable $script:GhPath -Arguments @('repo','clone',('https://github.com/'+$Repo+'.git'),$Destination) -Label ('CLONE '+$Repo)
+        $r=Invoke-NativeCaptured -Executable $script:GitPath -Arguments @('clone','--',$expected+'.git',$Destination) -Label ('CLONE '+$Repo)
         if ($r.ExitCode -ne 0) { throw "GIT_CLONE_FAILED: $Repo" }
     }
     $b=Invoke-NativeCaptured -Executable $script:GitPath -Arguments @('-C',$Destination,'branch','--show-current') -Quiet
@@ -383,7 +385,12 @@ try {
         $url='https://github.com/'+$item.Repo+'.git'
         $transport=Invoke-NativeCaptured -Executable $script:GitPath -Arguments @('ls-remote','--exit-code',$url,'refs/heads/main') -Quiet
         if ($transport.ExitCode -ne 0 -or -not (($transport.Lines -join ' ') -match 'refs/heads/main')) {
-            throw "GIT_CONTENTS_ACCESS_FAILED: $($item.Repo); the new token must allow Git read access to Contents on this repository. No project repositories have been cloned in this work root yet."
+            foreach ($line in $transport.Lines) {
+                $safeLine=[regex]::Replace([string]$line,'(?i)(gh[pousr]_[A-Za-z0-9_]{20,}|github_pat_[A-Za-z0-9_]{20,})','[REDACTED]')
+                $safeLine=[regex]::Replace($safeLine,'(?i)AUTHORIZATION:\s*basic\s+\S+','AUTHORIZATION: basic [REDACTED]')
+                Write-Log ('GIT_READ_DIAGNOSTIC | '+$item.Repo+' | '+$safeLine)
+            }
+            throw "GIT_CONTENTS_ACCESS_FAILED: $($item.Repo); inspect GIT_READ_DIAGNOSTIC above. Token API access passed; this is the Git HTTPS transport result."
         }
         Write-Log ('TOKEN_GIT_READ=VERIFIED | '+$item.Repo)
     }
