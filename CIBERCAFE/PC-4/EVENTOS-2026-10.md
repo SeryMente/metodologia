@@ -1,0 +1,27 @@
+# Eventos de Desempeño - PC-4 - 2026-10
+
+**Estado:** CANÓNICO · append-only por lotes  
+**Unidad:** CIBERCAFE + PC-4  
+**RDC observada en la sesión:** ad151d48-3bd6-44a8-9b61-b0d0291643eb
+
+| EVENT-ID | UTC | TIPO | ANTES | ACCIÓN | DESPUÉS | IMPACTO/RESULTADO | RDC-DEVICE-ID | EVIDENCIA |
+|---|---|---|---|---|---|---|---|---|
+| PC4-20261009-0001 | 2026-10-09T00:29:10.343Z | SESSION_START | Identidad de esta conexión no registrada | Recibir handshake y comprobar proveedor RDC | PC-4 ONLINE | Nueva identidad RDC registrada como independiente; no sustituye PC-7 ni otras identidades | ad151d48-3bd6-44a8-9b61-b0d0291643eb | list_devices + ping |
+| PC4-20261009-0002 | 2026-10-09 | BASELINE | Sin memoria persistente específica de PC-4 | Consultar hostname, Win32_ComputerSystem, SO, CPU, RAM, BIOS, GPU, volumen C: | Inventario de hardware inicial disponible; faltan métricas de carga/temperatura | Evita copiar las especificaciones de PC-7 y define qué mediciones siguen pendientes | ad151d48-3bd6-44a8-9b61-b0d0291643eb | PowerShell + CIM |
+| PC4-20261009-0003 | 2026-10-09 | CLI_FAILURE_CORRECTED | Se invocó npx; PowerShell resolvió npx.ps1 | Repetir usando npx.cmd | Handshake RDC completado | La política de ejecución bloquea el wrapper PowerShell; usar el shim CMD en las terminales afectadas | ad151d48-3bd6-44a8-9b61-b0d0291643eb | Salida del shell y handshake del usuario |
+| PC4-20261009-0004 | 2026-10-09 | CAMERA_VALIDATED | OBS iniciado; la comprobación inicial del log no encontró el marcador esperado a tiempo | Inspeccionar el log de OBS y ejecutar getUserMedia de extremo a extremo desde Chrome | Label OBS Virtual Camera; 1280 × 720 a ~30 FPS | Cámara disponible para la prueba local; permisos por sitio siguen siendo independientes | ad151d48-3bd6-44a8-9b61-b0d0291643eb | Log OBS + result.json temporal |
+| PC4-20261009-0005 | 2026-10-09 | TEMPORARY_TEST_CLEANUP | Política temporal de cámara para localhost y servidor Node de prueba activos | Quitar el valor de política temporal, detener servidor y volver a abrir el perfil | No quedó política temporal; servidor detenido | No se amplió permiso a sitios ajenos a la prueba | ad151d48-3bd6-44a8-9b61-b0d0291643eb | Verificación posterior por PowerShell |
+| PC4-20261009-0006 | 2026-10-09 | DEPENDENCY_INSTALLED | Git no estaba en PATH ni en rutas estándar | Instalar Git.Git con winget --source winget; comprobar git --version | Git 2.55.0.windows.5 verificado | Git listo para clonar repositorios públicos sin instalar gh | ad151d48-3bd6-44a8-9b61-b0d0291643eb | Salida winget y git --version |
+| PC4-20261009-0007 | 2026-10-09 | REPOSITORY_CLONED | No existía Desktop\metodologia | Clonar https://github.com/SeryMente/metodologia.git | origin correcto, rama main, HEAD 2815b439fde33d3fdc46ef80e47b2f93f5d97eef, working tree limpio en esa verificación | Clon verificable en el Escritorio; no confundir un ZIP con un clon Git | ad151d48-3bd6-44a8-9b61-b0d0291643eb | git remote, branch, rev-parse y status |
+| PC4-20261009-0008 | 2026-10-09 | SYNTAX_FAILURE_CORRECTED | La salida de verificación usó Out-String.Trim y falló después de clonar | Cambiar a una expresión PowerShell válida y verificar el destino en un comando separado | El clon se confirmó sin cambios locales | Un error en la verificación posterior no implicó que el clon hubiera fallado; verificar artefactos antes de repetir una operación con efectos secundarios | ad151d48-3bd6-44a8-9b61-b0d0291643eb | git -C Desktop\metodologia |
+| PC4-20261009-0009 | 2026-10-09T01:10:54.905Z | PING_VERIFIED | Conectividad no asumida por memoria | Ejecutar ping al device_id concreto | PC-4 respondió pong | Terminal RDC revalidada en el ciclo | ad151d48-3bd6-44a8-9b61-b0d0291643eb | pong 2026-10-09T01:10:54.905Z |
+
+## Reglas anti-repetición derivadas
+
+- Usar npx.cmd/npm.cmd cuando la política de PowerShell bloquee wrappers .ps1.
+- Especificar --source winget y acuerdos para operaciones no interactivas de winget.
+- Capturar stderr de comandos nativos y evaluar el código de salida sin abortar antes de tiempo.
+- Instalar/validar Git por separado de GitHub CLI.
+- No sobrescribir un destino existente; validar .git, origin, branch y estado limpio antes de actualizar.
+- Probar la cámara con captura real del navegador; eliminar la política/servidor temporal al terminar.
+- Solo CLI en esta terminal; no utilizar automatización de ventanas ni controles gráficos.
