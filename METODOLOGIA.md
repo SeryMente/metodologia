@@ -2,23 +2,23 @@
 
 ## Estado canónico
 
-- **Versión:** v0.14.7
-- **Nombre de versión:** Arranque CLI Verificable y Continuidad por Terminal
+- **Versión:** v0.14.8
+- **Nombre de versión:** Bootstrap CLI Integral para Terminales CIBERCAFE
 - **Última actualización:** 2026-10-09
 - **Última actualización canónica:** 2026-10-09
 - **Ámbito:** Todos los proyectos y conversaciones trabajados bajo esta metodología.
 
 ### Narrativa de la versión
 
-**Antes:** el arranque Windows y la clonación de repositorios dependían de comprobaciones manuales sobre Git, PATH, wrappers .cmd/.ps1, errores de comandos nativos y estado previo del destino. La terminal PC-4 no tenía memoria persistente individual dentro de CIBERCAFE.
+**Antes:** el procedimiento de arranque CLI estaba especificado y el clonador del repositorio estaba disponible, pero faltaba una única entrada de bootstrap que resolviera dependencias, preparara el repositorio, verificara el estado y dejara RDC ejecutándose en la terminal correcta.
 
-**Cambio:** se canoniza ANEXO-PROCEDIMIENTO-ARRANQUE-CLI-WINDOWS-Y-CLONADO-REPOSITORIOS.md y se agrega scripts/clone-public-repo-to-desktop.ps1. La secuencia separa identidad PC-N de RDC, instalación de Git de autenticación GitHub, inicio de proceso de validación end-to-end y escritura de publicación de read-back. Se crea memoria y registro de eventos independientes para CIBERCAFE + PC-4 y se actualizan los índices de terminales y ciclo de vida RDC.
+**Cambio:** se canoniza scripts/bootstrap-cibercafe-cli.ps1 como orquestador de inicio. Identifica la terminal, valida Git y Node/npm/npx, instala dependencias faltantes con la fuente winget explícita, sincroniza Desktop/metodologia solo cuando el destino es seguro, comprueba archivos y versiones normativas, ofrece el inicio verificable de OBS Virtual Camera y lanza el comando oficial de RDC en primer plano.
 
-**Motivo:** evitar errores repetidos de ejecución de npx.ps1 bajo ExecutionPolicy, selección implícita de fuentes winget, NativeCommandError bajo PowerShell 5.1, clonaciones no verificadas y sustitución accidental de identidades persistentes. Las acciones del equipo deben poder verificarse exclusivamente por CLI cuando ese medio esté requerido.
+**Motivo:** eliminar la improvisación de comandos largos, los fallos por wrappers .ps1 bloqueados, las consultas winget ambiguas, los errores nativos mal interpretados, las actualizaciones de repositorios con cambios locales y la confusión entre iniciar un proceso y verificar el servicio real.
 
-**Resultado:** las descargas públicas de repositorios se realizan con Git, validan origin/rama/HEAD/working tree y nunca sobrescriben destinos dudosos o cambios locales. El procedimiento registra los errores relevantes y sus correcciones, verifica aplicaciones con evidencia del objetivo real y conserva el estado por terminal individual antes de actualizar los índices globales.
+**Resultado:** las terminales Windows de CIBERCAFE disponen de un comando reutilizable de bootstrap y de los contratos de salida que diferencian éxito, fallo de OBS y bloqueos de instalación/autenticación. El bootstrap conserva la terminal RDC accesible si falla el intento de OBS, no da permisos globales de cámara, no ejecuta reinicios y no publica commits automáticamente.
 
-**Continuidad normativa:** la identidad activa del SI sigue procediendo exclusivamente de la cabecera de su snapshot exacto de main. Esta versión metodológica no sustituye ni versiona el SI.
+**Continuidad normativa:** la identidad activa del SI sigue procediendo exclusivamente de la cabecera de su snapshot exacto de main. Esta versión de Metodología no sustituye ni versiona el SI.
 
 ### Registro de versiones
 
@@ -69,6 +69,7 @@
 | 42 | v0.14.5 | Contrato Visible de Reanclaje | Se incorpora `RA` al HUD y al schema del contrato de salida `v1.7.7`, haciendo visible el estado del reanclaje obligatorio de cada ciclo y sincronizando los anexos de ChatGPT que describen la salida canónica. |
 | 43 | v0.14.6 | Bootstrap Fail-Closed y Reconciliación de Identidad Normativa | Se corrige la dependencia de arranque que permitía que una versión histórica del SI reapareciera como vigente; la Metodología pasa a tratar la cabecera del snapshot exacto del SI como única identidad activa y bloquea cualquier contradicción antes del reanclaje o la ejecución sustantiva. |
 | 44 | v0.14.7 | Arranque CLI Verificable y Continuidad por Terminal | Se canoniza el procedimiento de arranque CLI Windows, la clonación idempotente con verificación de origin/SHA/working tree y la persistencia separada del estado y los eventos de cada terminal CIBERCAFE; se registra la identidad PC-4 sin sustituir otras sesiones RDC. |
+| 45 | v0.14.8 | Bootstrap CLI Integral para Terminales CIBERCAFE | Se incorpora un comando único que instala/verifica dependencias, sincroniza Metodología con comprobaciones de seguridad, opcionalmente valida el inicio de OBS Virtual Camera y lanza RDC; conserva el diagnóstico remoto ante fallos de OBS y no declara éxito sin verificación. |
 La tabla es canónica. Las versiones futuras añaden nuevos registros sin reutilizar folios. Una entrada retirada por revisión canónica puede conservar únicamente su identificador y estado de retirada, sin preservar la regla operativa invalidada. El nombre describe el avance de la versión y no sustituye el título general del sistema o documento.
 
 ## 1. Convención obligatoria de foliación de ciclos
