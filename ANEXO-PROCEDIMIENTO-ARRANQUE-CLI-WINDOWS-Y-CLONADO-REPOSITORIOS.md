@@ -118,3 +118,15 @@ La telemetría frecuente permanece local. Los eventos persistentes registran cam
 ## 7. Contrato de éxito
 
 Al cerrar una acción, reporta la terminal/device_id usada, el comando, la comprobación que demuestra el resultado, la persistencia realizada y los SHA/read-back correspondientes. Declara pendientes los puntos que no hayan quedado demostrados.
+
+## 8. Un solo comando de bootstrap
+
+Para iniciar una terminal Windows desde una sesión PowerShell, sin depender de que Git/Node ya estén instalados, descargar el bootstrap canónico por HTTPS y ejecutarlo en un proceso hijo de PowerShell con ExecutionPolicy Bypass:
+
+    $u='https://raw.githubusercontent.com/SeryMente/metodologia/main/scripts/bootstrap-cibercafe-cli.ps1'; $f=Join-Path $env:TEMP 'bootstrap-cibercafe-cli.ps1'; Invoke-WebRequest -UseBasicParsing -Uri $u -OutFile $f; if (-not (Test-Path -LiteralPath $f)) { throw 'BOOTSTRAP_DOWNLOAD_FAILED' }; $ps=Join-Path $env:SystemRoot 'System32\WindowsPowerShell\v1.0\powershell.exe'; & $ps -NoProfile -ExecutionPolicy Bypass -File $f -StartOBSVirtualCamera
+
+El bootstrap identifica la terminal, instala/verifica Git y Node/npm/npx mediante la fuente explícita winget cuando faltan, clona o actualiza `Desktop\metodologia` únicamente si el destino es seguro, verifica las cabeceras normativas y activa el Remote Device en la terminal actual. Con `-StartOBSVirtualCamera`, también intenta iniciar y verificar la cámara virtual. Si la preparación de OBS falla, lo informa y continúa con RDC para conservar la vía de diagnóstico.
+
+Debe mantenerse abierta la terminal en la que quede ejecutándose `npx.cmd ... remote`. Si RDC solicita un código de dispositivo, el usuario debe autorizarlo y comprobar que los códigos coincidan. La autenticación inicial no puede garantizarse automáticamente por un comando.
+
+El bootstrap no modifica permisos de cámara globales en Chrome, no da permisos universales a todos los sitios, no configura una cuenta de Chrome concreta, no crea commits/push y no ejecuta reinicios. El perfil y los permisos por sitio se validan por separado. Si `winget`, la red o una instalación elevada están bloqueados por la terminal, el script informa el bloqueo en vez de declarar éxito.
