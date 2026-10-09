@@ -8,6 +8,12 @@ $script:LogPath=$null
 $script:StopFile=$null
 $script:GhPath=$null
 $script:GitPath=$null
+$script:OriginalGhToken=[Environment]::GetEnvironmentVariable('GH_TOKEN','Process')
+$script:OriginalGitTerminalPrompt=[Environment]::GetEnvironmentVariable('GIT_TERMINAL_PROMPT','Process')
+$script:OriginalGitConfig=@{}
+foreach ($n in @('GIT_CONFIG_COUNT','GIT_CONFIG_KEY_0','GIT_CONFIG_VALUE_0','GIT_CONFIG_KEY_1','GIT_CONFIG_VALUE_1')) {
+    $script:OriginalGitConfig[$n]=[Environment]::GetEnvironmentVariable($n,'Process')
+}
 function Write-Log([string]$Message) {
     $safeMessage=[regex]::Replace($Message,'(?i)(gh[pousr]_[A-Za-z0-9_]{20,}|github_pat_[A-Za-z0-9_]{20,})','[REDACTED]')
     $line='{0} | {1}' -f (Get-Date -Format 'yyyy-MM-dd HH:mm:ss.fffK'),$safeMessage
@@ -52,47 +58,62 @@ function Ensure-Gh {
         $wg=Find-Winget
         if (-not $wg) { throw 'GITHUB_CLI_MISSING_AND_WINGET_UNAVAILABLE' }
         $r=Invoke-NativeCaptured -Executable $wg -Arguments @('install','--id','GitHub.cli','--exact','--source','winget','--scope','user','--accept-source-agreements','--accept-package-agreements','--silent') -Label 'INSTALL_GH'
-        if ($r.ExitCode -ne 0) { $r=Invoke-NativeCaptured -Executable $wg -Arguments @('install','--id','GitHub.cli','--exact','--source','winget','--accept-source-agreements','--accept-package-agreements','--silent') -Label 'INSTALL_GH_DEFAULT' }
+        if ($r.ExitCode -ne 0) { $r=Invoke-NativeCaptured -Executable $wg -Arguments @('install','--id','GitHub.cli','--exact','--source','winget','--accept-source-agreements','--package-agreements','--silent') -Label 'INSTALL_GH_DEFAULT' }
         $end=(Get-Date).AddSeconds(60)
         do { $gh=Find-Gh; if (-not $gh) { Start-Sleep -Milliseconds 500 } } while (-not $gh -and (Get-Date) -lt $end)
         if (-not $gh) { throw "GITHUB_CLI_INSTALL_NOT_VERIFIED: exit=$($r.ExitCode)" }
     }
     $script:GhPath=$gh
-    $auth=Invoke-NativeCaptured -Executable $gh -Arguments @('auth','status','--hostname','github.com') -Quiet
-    if ($auth.ExitCode -ne 0) {
-        Write-Host ''
-        Write-Host 'GitHub CLI is installed but this Windows user is not authenticated.'
-        Write-Host 'Copy a GitHub personal access token with read access to all required private repositories to the clipboard.'
-        Write-Host 'Do not type or paste the token into the console. The bootstrap reads it from the clipboard and does not log it.'
-        [void](Read-Host 'After copying the token, press Enter to authenticate')
-        $token=''
-        try {
-            $token=[string](Get-Clipboard -Raw -ErrorAction Stop)
-            $token=$token.Trim()
-            if ($token -notmatch '^(gh[pousr]_[A-Za-z0-9_]{20,}|github_pat_[A-Za-z0-9_]{20,})$') {
-                throw 'CLIPBOARD_TOKEN_NOT_RECOGNIZED: copy a GitHub PAT (ghp_... or github_pat_...) and retry.'
-            }
-            $oldPreference=$ErrorActionPreference
-            try {
-                $ErrorActionPreference='Continue'
-                $loginOutput=@($token | & $gh auth login --hostname github.com --git-protocol https --with-token 2>&1)
-                $loginCode=$LASTEXITCODE
-            } finally { $ErrorActionPreference=$oldPreference }
-            foreach ($line in $loginOutput) { Write-Log ('GH_AUTH_LOGIN | ' + [string]$line) }
-            if ($loginCode -ne 0) { throw "GITHUB_AUTH_LOGIN_FAILED: exit=$loginCode. Check that the PAT is valid and has read access to the required repositories." }
-        } finally {
-            $token=$null
-            try {
-                $clipboardAfter=[string](Get-Clipboard -Raw -ErrorAction Stop)
-                if ($clipboardAfter.Trim() -match '^(gh[pousr]_[A-Za-z0-9_]{20,}|github_pat_[A-Za-z0-9_]{20,})$') {
-                    Set-Clipboard -Value '' -ErrorAction SilentlyContinue
-                }
-            } catch {}
+
+    Write-Host ''
+    Write-Host 'A new GitHub token is required for this run; any stored gh session will not be reused.'
+    Write-Host 'Copy a PAT authorized for ALL required repositories, including private GDP and KHORA.'
+    Write-Host 'For a fine-grained PAT: select these repositories and grant Contents: Read-only plus Metadata: Read-only.'
+    Write-Host 'Do not paste the token into this console. Copy it to the clipboard; it will be read silently and not logged.'
+    [void](Read-Host 'After copying the updated token, press Enter')
+    $token=''
+    try {
+        $token=[string](Get-Clipboard -Raw -ErrorAction Stop)
+        $token=$token.Trim()
+        if ($token -notmatch '^(gh[pousr]_[A-Za-z0-9_]{20,}|github_pat_[A-Za-z0-9_]{20,})$') {
+            throw 'CLIPBOARD_TOKEN_NOT_RECOGNIZED: copy a valid GitHub PAT (ghp_... or github_pat_...) and retry.'
         }
+
+        # Fine-grained PATs must be supplied through GH_TOKEN; gh auth login --with-token
+        # is intended for classic PATs and can mis-handle fine-grained token permissions.
+        $env:GH_TOKEN=$token
+        $tokenKind=if ($token.StartsWith('github_pat_')) { 'FINE_GRAINED' } else { 'CLASSIC_OR_OTHER' }
+        $token=$null
+        $env:GIT_TERMINAL_PROMPT='0'
+        $env:GIT_CONFIG_COUNT='2'
+        $env:GIT_CONFIG_KEY_0='credential.helper'
+        $env:GIT_CONFIG_VALUE_0=''
+        $env:GIT_CONFIG_KEY_1='credential.helper'
+        $env:GIT_CONFIG_VALUE_1='!gh auth git-credential'
+
         $auth=Invoke-NativeCaptured -Executable $gh -Arguments @('auth','status','--hostname','github.com') -Quiet
-        if ($auth.ExitCode -ne 0) { throw 'GITHUB_AUTH_NOT_VERIFIED_AFTER_LOGIN' }
+        if ($auth.ExitCode -ne 0) { throw 'GITHUB_TOKEN_INVALID: gh could not authenticate using the newly copied token.' }
+
+        $setup=Invoke-NativeCaptured -Executable $gh -Arguments @('auth','setup-git','--hostname','github.com','--force') -Quiet
+        if ($setup.ExitCode -ne 0) { throw 'GITHUB_GIT_CREDENTIAL_SETUP_FAILED' }
+
+        $targets=@('SeryMente/metodologia','SeryMente/otrogranprograma','SeryMente/GDP','SeryMente/signal-interpreter','SeryMente/khora')
+        foreach ($repo in $targets) {
+            $probe=Invoke-NativeCaptured -Executable $gh -Arguments @('api',('repos/'+$repo+'/git/ref/heads/main'),'--jq','.ref') -Quiet
+            if ($probe.ExitCode -ne 0 -or (($probe.Lines -join '').Trim() -ne 'refs/heads/main')) {
+                throw "PAT_CONTENTS_READ_FAILED: $repo; token must include this repository and Contents: Read-only (plus Metadata: Read-only); organization approval may also be required."
+            }
+        }
+        Write-Log ('GITHUB_TOKEN=VERIFIED | TYPE='+$tokenKind+' | API_CONTENTS_READ=VERIFIED_FOR_ALL_REPOSITORIES | TOKEN_STORAGE=PROCESS_ONLY')
+    } finally {
+        $token=$null
+        try {
+            $clipboardAfter=[string](Get-Clipboard -Raw -ErrorAction Stop)
+            if ($clipboardAfter.Trim() -match '^(gh[pousr]_[A-Za-z0-9_]{20,}|github_pat_[A-Za-z0-9_]{20,})$') {
+                Set-Clipboard -Value '' -ErrorAction SilentlyContinue
+            }
+        } catch {}
     }
-    Write-Log 'GITHUB_CLI_AND_AUTH=VERIFIED'
 }
 function Resolve-Git {
     Refresh-Path
@@ -306,7 +327,7 @@ try {
 
     $script:GitPath=Resolve-Git
     if (-not $script:GitPath) { throw 'GIT_NOT_FOUND_AFTER_BASE_PREPARE' }
-    $setup=Invoke-NativeCaptured -Executable $script:GhPath -Arguments @('auth','setup-git') -Label 'GH_SETUP_GIT'
+    $setup=Invoke-NativeCaptured -Executable $script:GhPath -Arguments @('auth','setup-git','--hostname','github.com','--force') -Label 'GH_SETUP_GIT'
     if ($setup.ExitCode -ne 0) { throw 'GH_AUTH_SETUP_GIT_FAILED' }
     $repos=@(
         @{Name='metodologia';Repo='SeryMente/metodologia'},
@@ -317,9 +338,15 @@ try {
     )
     foreach ($item in $repos) {
         $probe=Invoke-NativeCaptured -Executable $script:GhPath -Arguments @('repo','view',$item.Repo,'--json','nameWithOwner,visibility') -Quiet
-        if ($probe.ExitCode -ne 0) { throw "REPOSITORY_ACCESS_FAILED: $($item.Repo); fix repository permission before downloads." }
+        if ($probe.ExitCode -ne 0) { throw "REPOSITORY_METADATA_ACCESS_FAILED: $($item.Repo); verify token repository selection and organization approval." }
+        $url='https://github.com/'+$item.Repo+'.git'
+        $transport=Invoke-NativeCaptured -Executable $script:GitPath -Arguments @('ls-remote','--exit-code',$url,'refs/heads/main') -Quiet
+        if ($transport.ExitCode -ne 0 -or -not (($transport.Lines -join ' ') -match 'refs/heads/main')) {
+            throw "GIT_CONTENTS_ACCESS_FAILED: $($item.Repo); the new token must allow Git read access to Contents on this repository. No project repositories have been cloned in this work root yet."
+        }
+        Write-Log ('TOKEN_GIT_READ=VERIFIED | '+$item.Repo)
     }
-    Write-Log 'REPOSITORY_ACCESS=VERIFIED'
+    Write-Log 'REPOSITORY_API_AND_GIT_READ=VERIFIED_FOR_ALL_REPOSITORIES'
     $failed=@()
     foreach ($item in $repos) {
         try { Sync-Repo $item.Repo (Join-Path $WorkRoot $item.Name) }
@@ -335,6 +362,8 @@ try {
     if ([System.IO.File]::ReadAllText($si).Length -lt 1000 -or [System.IO.File]::ReadAllText($met).Length -lt 1000) { throw 'SI_OR_METHODOLOGY_INCOMPLETE' }
     Write-Log 'SI_AND_METHODOLOGY=LOCAL_FILES_VERIFIED'
 
+    # The PAT is no longer needed; do not pass it to the observer or RDC child process.
+    Remove-Item Env:GH_TOKEN,Env:GIT_TERMINAL_PROMPT,Env:GIT_CONFIG_COUNT,Env:GIT_CONFIG_KEY_0,Env:GIT_CONFIG_VALUE_0,Env:GIT_CONFIG_KEY_1,Env:GIT_CONFIG_VALUE_1 -ErrorAction SilentlyContinue
     try { Ensure-ObsCamera } catch { Write-Log ('OBS_CAMERA=BLOCKED_OR_FAILED | '+$_.Exception.Message) }
     Write-Log 'CHROME=NOT_TOUCHED | no Chrome process or settings are accessed.'
     $task='NOT_REGISTERED'; try { $t=Get-ScheduledTask -TaskName 'CyberCafe Performance Liberator' -ErrorAction Stop; $task=[string]$t.State } catch {}
@@ -351,4 +380,12 @@ try {
     if ($rc -ne 0) { throw "RDC_REMOTE_FAILED: exit=$rc" }
 }
 catch { Write-Log ('FATAL_ERROR='+$_.Exception.Message); Write-Log ('LOG_PATH='+$script:LogPath); throw }
-finally { if ($script:StopFile) { New-Item -ItemType File -Path $script:StopFile -Force | Out-Null; Write-Log 'OBSERVER_STOP_SIGNAL=WRITTEN' } }
+finally {
+    if ($null -ne $script:OriginalGhToken) { [Environment]::SetEnvironmentVariable('GH_TOKEN',$script:OriginalGhToken,'Process') } else { Remove-Item Env:GH_TOKEN -ErrorAction SilentlyContinue }
+    if ($null -ne $script:OriginalGitTerminalPrompt) { [Environment]::SetEnvironmentVariable('GIT_TERMINAL_PROMPT',$script:OriginalGitTerminalPrompt,'Process') } else { Remove-Item Env:GIT_TERMINAL_PROMPT -ErrorAction SilentlyContinue }
+    foreach ($n in $script:OriginalGitConfig.Keys) {
+        if ($null -ne $script:OriginalGitConfig[$n]) { [Environment]::SetEnvironmentVariable($n,[string]$script:OriginalGitConfig[$n],'Process') }
+        else { Remove-Item ('Env:'+$n) -ErrorAction SilentlyContinue }
+    }
+    if ($script:StopFile) { New-Item -ItemType File -Path $script:StopFile -Force | Out-Null; Write-Log 'OBSERVER_STOP_SIGNAL=WRITTEN' }
+}
