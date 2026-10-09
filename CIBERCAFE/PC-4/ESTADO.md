@@ -12,7 +12,7 @@
 - Usuario de proceso observado: PC 4.
 - RDC observado en esta sesión: blacksheepsup@gmail.com + ad151d48-3bd6-44a8-9b61-b0d0291643eb.
 - Dispositivo RDC visible: PC-4.
-- Último ping verificado: 2026-10-09T01:10:54.905Z.
+- Último ping verificado: 2026-10-09T01:16:35.344Z.
 - Nota de entorno: COMPUTERNAME apareció vacío dentro de un proceso RDC de PowerShell; usar también [System.Net.Dns]::GetHostName() y Win32_ComputerSystem.Name.
 - El device_id RDC identifica el canal de sesión y no sustituye la identidad persistente CIBERCAFE + PC-4.
 
