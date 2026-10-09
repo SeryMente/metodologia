@@ -279,46 +279,47 @@ function Ensure-ObsCamera {
     }
 
     if (-not $reg64Ok -or ($hasDll32 -and -not $reg32Ok) -or $frameServerNeedsChange) {
-        # Elevate only this temporary, token-free camera-registration helper; the bootstrap
-        # itself and all repository/RDC work remain in the original terminal.
-        $helperPath=Join-Path $env:TEMP ('bootstrap-obs-vcam-'+[guid]::NewGuid().ToString('N')+'.ps1')
-        $helperText=@'
-param([Parameter(Mandatory=$true)][string]$Module64,[string]$Module32,[switch]$EnableFrameServerMode)
+        # Elevate only the token-free camera-registration command. Use EncodedCommand
+        # so no mutable helper script is executed from the user's writable TEMP folder.
+        $module64Literal="'" + $dll64.Replace("'","''") + "'"
+        $module32Literal="'" + $(if ($hasDll32) { $dll32.Replace("'","''") } else { '' }) + "'"
+        $frameServerLiteral=if ($enableFrameServerMode) { '$true' } else { '$false' }
+        $adminCode=@'
 $ErrorActionPreference='Stop'
-$reg64=Join-Path $env:SystemRoot 'System32\regsvr32.exe'
-if (-not (Test-Path -LiteralPath $Module64 -PathType Leaf)) { exit 21 }
-& $reg64 /s /i $Module64
-if ($LASTEXITCODE -ne 0) { exit 64 }
-if ($Module32 -and (Test-Path -LiteralPath $Module32 -PathType Leaf)) {
-    $reg32=Join-Path $env:SystemRoot 'SysWOW64\regsvr32.exe'
-    if (-not (Test-Path -LiteralPath $reg32 -PathType Leaf)) { exit 32 }
-    & $reg32 /s /i $Module32
-    if ($LASTEXITCODE -ne 0) { exit 33 }
-}
-if ($EnableFrameServerMode) {
-    $paths=@(
-        'HKLM:\SOFTWARE\Microsoft\Windows Media Foundation\Platform',
-        'HKLM:\SOFTWARE\WOW6432Node\Microsoft\Windows Media Foundation\Platform'
-    )
-    foreach ($p in $paths) {
-        if (-not (Test-Path -LiteralPath $p)) { New-Item -Path $p -Force | Out-Null }
-        New-ItemProperty -LiteralPath $p -Name 'EnableFrameServerMode' -PropertyType DWord -Value 1 -Force | Out-Null
-        $v=Get-ItemProperty -LiteralPath $p -Name 'EnableFrameServerMode' -ErrorAction Stop
-        if ([int]$v.EnableFrameServerMode -ne 1) { exit 65 }
+$Module64=__MODULE64__
+$Module32=__MODULE32__
+$EnableFrameServerMode=__ENABLE__
+try {
+    $reg64=Join-Path $env:SystemRoot 'System32\regsvr32.exe'
+    if (-not (Test-Path -LiteralPath $Module64 -PathType Leaf)) { exit 21 }
+    & $reg64 /s /i $Module64
+    if ($LASTEXITCODE -ne 0) { exit 64 }
+    if ($Module32 -and (Test-Path -LiteralPath $Module32 -PathType Leaf)) {
+        $reg32=Join-Path $env:SystemRoot 'SysWOW64\regsvr32.exe'
+        if (-not (Test-Path -LiteralPath $reg32 -PathType Leaf)) { exit 32 }
+        & $reg32 /s /i $Module32
+        if ($LASTEXITCODE -ne 0) { exit 33 }
     }
-}
-exit 0
-'@
-        [System.IO.File]::WriteAllText($helperPath,$helperText,(New-Object System.Text.UTF8Encoding($true)))
-        $ps64=Join-Path $env:SystemRoot 'System32\WindowsPowerShell\v1.0\powershell.exe'
-        $argsLine='-NoProfile -ExecutionPolicy Bypass -File "'+$helperPath+'" -Module64 "'+$dll64+'"'
-        if ($hasDll32) { $argsLine+=' -Module32 "'+$dll32+'"' }
-        if ($enableFrameServerMode) { $argsLine+=' -EnableFrameServerMode' }
-        try {
-            $elevated=Start-Process -FilePath $ps64 -ArgumentList $argsLine -Verb RunAs -Wait -PassThru -ErrorAction Stop
-        } finally {
-            Remove-Item -LiteralPath $helperPath -Force -ErrorAction SilentlyContinue
+    if ($EnableFrameServerMode) {
+        $paths=@(
+            'HKLM:\SOFTWARE\Microsoft\Windows Media Foundation\Platform',
+            'HKLM:\SOFTWARE\WOW6432Node\Microsoft\Windows Media Foundation\Platform'
+        )
+        foreach ($p in $paths) {
+            if (-not (Test-Path -LiteralPath $p)) { New-Item -Path $p -Force | Out-Null }
+            New-ItemProperty -LiteralPath $p -Name 'EnableFrameServerMode' -PropertyType DWord -Value 1 -Force | Out-Null
+            $v=Get-ItemProperty -LiteralPath $p -Name 'EnableFrameServerMode' -ErrorAction Stop
+            if ([int]$v.EnableFrameServerMode -ne 1) { exit 65 }
         }
+    }
+    exit 0
+} catch { exit 66 }
+'@
+        $adminCode=$adminCode.Replace('__MODULE64__',$module64Literal).Replace('__MODULE32__',$module32Literal).Replace('__ENABLE__',$frameServerLiteral)
+        $encoded=[Convert]::ToBase64String([Text.Encoding]::Unicode.GetBytes($adminCode))
+        $ps64=Join-Path $env:SystemRoot 'System32\WindowsPowerShell\v1.0\powershell.exe'
+        $argsLine='-NoProfile -ExecutionPolicy Bypass -EncodedCommand '+$encoded
+        $elevated=Start-Process -FilePath $ps64 -ArgumentList $argsLine -Verb RunAs -Wait -PassThru -ErrorAction Stop
         if ($elevated.ExitCode -ne 0) { throw ('OBS_VCAM_ELEVATED_SETUP_FAILED: exit='+$elevated.ExitCode+'; approve the Windows elevation prompt and retry if it was declined.') }
     }
 
