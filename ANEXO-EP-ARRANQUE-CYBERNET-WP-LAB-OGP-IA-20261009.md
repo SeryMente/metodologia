@@ -360,3 +360,361 @@ No confundir:
 - CUDA disponible con operación real GPU;
 - dato declarado con evidencia independiente;
 - publicación de código con aceptación funcional.
+
+
+---
+
+## 14. Entrada OGP íntegra, verbatim
+
+Se conserva a continuación la especificación completa aportada por el usuario. El único ajuste de serialización es reponer los delimitadores Markdown del texto durante la escritura del archivo.
+
+```text
+# INTEGRACIÓN DE INFRAESTRUCTURA LOCAL DE IA GENERATIVA VISUAL EN ENTORNO PERSISTENTE
+
+## Instrucción de implementación para el modelo constructor
+
+### 1. Rol y objetivo
+
+Actúa como arquitecto e ingeniero de implementación responsable de **Entorno Persistente**, respetando su arquitectura canónica, sus mecanismos de instanciación efímera, su gobernanza de contexto y sus procedimientos de instalación, recuperación y certificación.
+
+Debes integrar como capacidad nativa de Entorno Persistente la infraestructura local de IA generativa visual necesaria para producir y editar los recursos gráficos complementarios del instrumento de comunicación de **Otro Gran Programa (OGP)**.
+
+El objetivo es que, cuando se instancie un entorno persistente en una terminal elegible del cibercafé de Luis Pasteur, el sistema prepare, valide y deje disponible automáticamente la infraestructura necesaria para que un agente de IA pueda generar, editar, evaluar y guardar recursos visuales mediante modelos ejecutados localmente en GPU.
+
+**No te limites a documentar la solución.** Inspecciona la arquitectura canónica, determina los puntos de integración correctos, implementa los cambios necesarios en el ámbito de Entorno Persistente, verifica los resultados y publica los cambios conforme al procedimiento canónico de ese proyecto.
+
+### 2. Recuperación obligatoria del contexto canónico
+
+Antes de modificar cualquier componente:
+
+1. Recupera desde su fuente canónica la versión vigente de `SI-METACOGNITIVO.md` en la rama `main` del repositorio de metodología. Comprueba la identidad exacta del snapshot y su vigencia.
+2. Recupera la documentación canónica actual de Entorno Persistente, incluidos su arquitectura, bootstrap, instanciación efímera, persistencia local, gestión de dependencias, resolución de contexto, identificación de terminales y pruebas.
+3. Identifica el repositorio y las rutas canónicas exactas donde debe implementarse la capacidad. No inventes nombres, ubicaciones, contratos ni dependencias.
+4. Inspecciona los mecanismos de instanciación reales y las modificaciones pendientes. Distingue el entorno efímero de los componentes persistentes que permiten reconstruirlo.
+5. Determina el estado real de los recursos y procesos previamente preparados para OGP. No des por concluida ninguna instalación basándote únicamente en que existe un archivo o se inició un proceso.
+
+Las fuentes canónicas vigentes prevalecen sobre este prompt, sobre copias locales antiguas y sobre cualquier estado heredado de una conversación anterior.
+
+### 3. Ámbito funcional
+
+La capacidad que debe integrarse es una infraestructura de **generación y edición visual mediante modelos abiertos ejecutados localmente**.
+
+No la confundas con un servicio de generación de imágenes en la nube ni con la instalación genérica de un modelo conversacional. El pipeline seleccionado es una infraestructura especializada de generación visual y transformación de imágenes.
+
+Debe proporcionar:
+
+- Generación automatizada de imágenes a partir de instrucciones textuales.
+- Edición y refinamiento de imágenes existentes mediante modelos compatibles.
+- Uso de imágenes de referencia y mecanismos de coherencia visual.
+- Ejecución de workflows reproducibles.
+- Control programático mediante API local, Python o CLI.
+- Procesamiento por lotes y gestión de colas.
+- Conservación de originales, versiones, metadatos, prompts, parámetros y resultados.
+- Escritura de resultados en un workspace de integración accesible al agente de IA.
+- Recuperación de la capacidad después de destruir y volver a instanciar una sesión efímera.
+
+El sistema debe permitir automatizar el flujo completo:
+
+`SOLICITUD → VALIDACIÓN DE CONTEXTO → RESOLUCIÓN DE TERMINAL → PREFLIGHT GPU → GENERACIÓN → EVALUACIÓN → EDICIÓN → PRESERVACIÓN → INTEGRACIÓN`
+
+La publicación o modificación del sitio OGP permanece condicionada a la validación visual y al gate de aceptación definidos por el proyecto OGP.
+
+### 4. Restricción geográfica y de terminal
+
+La infraestructura local de inferencia está autorizada exclusivamente para terminales situadas en el **cibercafé de Luis Pasteur**, siempre que satisfagan todas las comprobaciones de identidad, hardware, software y ubicación.
+
+Esta restricción es obligatoria y debe materializarse en código ejecutable, no solamente en documentación.
+
+Debes mantener separadas las siguientes entidades:
+
+- **Ubicación:** el cibercafé de Luis Pasteur.
+- **Terminal:** cada computadora física individual.
+- **Identidad RDC:** cuenta y `RDC-DEVICE-ID` concretos.
+- **Sesión:** instancia efímera de Entorno Persistente.
+- **Conversación:** contexto desde el que se solicita una operación.
+- **Capacidad local:** combinación certificada de hardware, runtime, modelos y workflows.
+
+Una ubicación puede tener múltiples terminales. Una terminal no representa por sí sola una ubicación y no debe seleccionarse por su nombre, por la etiqueta `PC-7` ni por un registro histórico.
+
+En cada instanciación que requiera esta capacidad, realiza descubrimiento vivo de las terminales RDC, reconcilia las identidades y resuelve la terminal objetivo conforme a la metodología canónica. No heredes ciegamente la terminal de otra conversación.
+
+#### Comportamiento requerido por escenario
+
+**Terminal autorizada en el cibercafé, con GPU compatible:**
+
+- Verificar identidad y atestación de ubicación.
+- Inventariar hardware y runtime.
+- Recuperar dependencias y modelos existentes.
+- Instalar o reparar lo que falte.
+- Ejecutar las pruebas de certificación pendientes.
+- Habilitar la capacidad cuando el preflight completo sea satisfactorio.
+
+**Terminal fuera de la ubicación autorizada:**
+
+- No ejecutar inferencia para OGP.
+- No iniciar ComfyUI ni otros runtimes de modelos para esta finalidad.
+- No descargar innecesariamente los modelos pesados.
+- Permitir el resto de la instanciación de Entorno Persistente si sus requisitos independientes se cumplen.
+
+**Terminal sin GPU compatible, con GPU no detectable o con runtime CUDA/PyTorch incompatible:**
+
+- Bloquear la inferencia local.
+- No efectuar fallback a CPU.
+- No declarar la capacidad disponible.
+- Registrar el fallo concreto y su solución necesaria.
+
+**Ubicación, identidad o conectividad indeterminadas:**
+
+- Aplicar fail-closed.
+- No ejecutar la generación.
+- No resolver la incertidumbre mediante inferencias basadas en memoria conversacional.
+
+La resolución del contexto debe distinguir una atestación declarada por el usuario de una verificación técnica independiente. No presentes como prueba criptográfica una identificación basada únicamente en hostname, IP, gateway o dispositivo RDC.
+
+### 5. Infraestructura técnica seleccionada
+
+Implementa inicialmente el siguiente candidato, sujeto a la validación de compatibilidad real y a las licencias vigentes:
+
+**Orquestación:** ComfyUI local, en modo portable para Windows y controlable mediante API.
+
+**Aceleración y cuantización:** Nunchaku, con sus nodos personalizados para ComfyUI y el binario nativo exacto compatible con el runtime.
+
+**Generación primaria:** Z-Image-Turbo, usando una variante cuantizada FP4 apropiada para la GPU disponible, como la variante Nunchaku `svdq-fp4_r128-z-image-turbo.safetensors`, siempre que supere las pruebas de compatibilidad.
+
+**Edición:** Qwen-Image-Edit-2509 o la variante de edición compatible que supere la certificación.
+
+No instales versiones arbitrarias ni combines binarios por semejanza de nombres. Resuelve explícitamente las compatibilidades de Windows, versión de Python embebido, PyTorch, CUDA, driver NVIDIA, Nunchaku, ComfyUI, arquitectura GPU y modelos.
+
+Fija versiones y hashes de los componentes certificados. Si el candidato no puede instalarse de forma reproducible en la GPU elegible, determina la alternativa local compatible antes de proclamar la capacidad operativa.
+
+No sustituyas silenciosamente la inferencia local por un servicio en la nube.
+
+### 6. Aprovisionamiento integrado en la instanciación
+
+Integra un provisionador idempotente en el punto apropiado del ciclo de vida de Entorno Persistente.
+
+Cada ejecución del provisionador debe:
+
+1. Detectar el contexto de ejecución y resolver si esta capacidad es aplicable.
+2. Obtener una instantánea actual del hardware y comprobar elegibilidad.
+3. Determinar la ubicación, identidad y autorización de la terminal.
+4. Inventariar instalaciones, versiones, dependencias, modelos, archivos temporales y espacio disponible.
+5. Comprobar si el runtime existente es íntegro y compatible.
+6. Reutilizar las instalaciones, cachés y modelos íntegros.
+7. Descargar únicamente los componentes ausentes o dañados, utilizando fuentes oficiales y hashes verificables cuando estén disponibles.
+8. Reanudar o reiniciar de forma segura descargas interrumpidas.
+9. Instalar las dependencias en el orden correcto y verificar su integridad.
+10. Ejecutar pruebas de GPU y de carga de modelos.
+11. Publicar el estado de la capacidad y las evidencias de certificación.
+12. Dejarla disponible automáticamente para el agente de IA cuando todos los gates hayan sido superados.
+
+**Idempotencia:** instanciar varias veces el entorno no debe provocar reinstalaciones innecesarias, duplicación de modelos, pérdida de configuraciones, descargas repetidas ni divergencia de versiones.
+
+No descargues varios gigabytes en cada nueva sesión efímera. Los artefactos deben conservarse en un caché local recuperable por la siguiente instancia cuando el diseño canónico lo permita; de lo contrario, documenta y controla la materialización necesaria.
+
+Elimina o aísla artefactos temporales incompletos. No sobrescribas una instalación funcional con otra incompatible sin una operación controlada de reparación.
+
+### 7. Preflight obligatorio y bloqueo de ejecución
+
+Implementa un componente explícito de control de ejecución, denominado según las convenciones reales del proyecto.
+
+Debe impedir el arranque de la inferencia hasta verificar, como mínimo:
+
+- Snapshot canónico vigente y contexto operativo resuelto.
+- Identidad RDC concreta y conectividad actual.
+- Ubicación autorizada y atestación vigente para la terminal.
+- Coincidencia del fingerprint autorizado de hardware.
+- CPU, RAM, espacio disponible y sistema operativo.
+- GPU NVIDIA esperada, VRAM, driver y capacidad de cómputo.
+- CUDA funcional y PyTorch compatible con la arquitectura GPU.
+- Operación real de cálculo ejecutada en GPU.
+- Disponibilidad de ComfyUI y sus nodos personalizados.
+- Compatibilidad e integridad de todos los modelos, encoders, VAE y demás recursos requeridos por el workflow.
+- Workspace y directorio de salida válidos.
+
+El preflight no puede limitarse a comprobar que `torch.cuda.is_available()` devuelve verdadero. Ejecuta una operación real en GPU y verifica que no existen warnings de incompatibilidad de arquitectura ni kernels necesarios ausentes.
+
+Si falla cualquier requisito, devuelve un estado bloqueado identificable y un diagnóstico accionable. No arranques ComfyUI para después descubrir la incompatibilidad; verifica previamente lo que pueda validarse sin iniciar la inferencia.
+
+La misma protección debe aplicarse a los arranques automáticos y a las solicitudes a la API local. Ningún segundo punto de entrada debe permitir saltarse el gate.
+
+### 8. Fingerprint y certificación por terminal
+
+El diseño debe admitir varias computadoras en el cibercafé, cada una con capacidades distintas.
+
+Por cada terminal autorizada, conserva un registro versionado que identifique, según corresponda:
+
+- Cuenta RDC y RDC-DEVICE-ID.
+- Identidad de la terminal y hostname.
+- CPU, RAM y GPU.
+- Driver NVIDIA, capacidad de cómputo, VRAM y runtime CUDA.
+- Versiones de Python, PyTorch, ComfyUI y Nunchaku.
+- Modelos y workflows certificados, con sus hashes.
+- Resultado y fecha de las pruebas.
+- Identidad y vigencia de la atestación de ubicación.
+- Estado actual de la capacidad y motivo de bloqueo, en caso de existir.
+
+No presupongas que todas las computadoras del cibercafé tienen GPU o hardware idénticos. Determina la capacidad de cada terminal a partir de su inventario real.
+
+Si cambia la GPU, el driver, el runtime, una dependencia crítica o un artefacto certificado, invalida las certificaciones afectadas y vuelve a verificarlas.
+
+### 9. Recuperación del intento de instalación existente
+
+Existe un intento previo de preparación en el workspace:
+
+`C:\\Users\\PC 7\\Downloads\\OGP-Visual-Pipeline`
+
+Incluye una distribución portable de ComfyUI y una copia de `ComfyUI-nunchaku`. Durante ese intento se detectó una incompatibilidad entre la versión de PyTorch incluida originalmente y la RTX 5060, seguida de operaciones de sustitución de PyTorch y una instalación fallida de Nunchaku por conflicto de dependencias y bloqueo de archivos. También se inició la descarga del modelo Z-Image-Turbo.
+
+La terminal utilizada tenía las siguientes características observadas:
+
+- Identidad RDC: cuenta informada en el registro histórico (dato transitorio; no reutilizar automáticamente en futuras sesiones).
+- RDC-DEVICE-ID: identificado en el registro original de la sesión, no fijado aquí como identidad actual.
+- Hostname: PC-7.
+- CPU: AMD Ryzen 5 5600X, 6 núcleos y 12 hilos.
+- RAM: aproximadamente 32 GiB.
+- GPU: NVIDIA GeForce RTX 5060.
+- VRAM reportada por nvidia-smi: 8151 MiB.
+- Compute capability: 12.0.
+- Driver NVIDIA observado: 610.47.
+
+La ubicación CIBERCAFE fue declarada por el usuario en el ciclo correspondiente; debe reconciliarse con la atestación y los procedimientos canónicos vigentes, no considerarse automáticamente una certificación física independiente.
+
+**Estado del intento: no certificado.** La última fase de operaciones remotas sufrió timeouts. No asumas que la reparación de PyTorch, el establecimiento de Nunchaku, la descarga del modelo ni la última escritura del guard finalizaron correctamente.
+
+La primera acción sobre estos artefactos debe ser recuperar la conectividad en vivo, inventariar los archivos, comprobar los procesos y validar la integridad de la instalación. No repitas una instalación potencialmente destructiva sin verificar antes su estado real.
+
+No ejecutes inferencia hasta recuperar un entorno consistente.
+
+### 10. Pruebas de certificación
+
+Define pruebas automáticas y persistentes para los siguientes niveles:
+
+**Nivel 1 — Integridad del entorno:** importación de PyTorch, versiones fijadas y ausencia de dependencias rotas.
+
+**Nivel 2 — GPU:** detección de la RTX correspondiente, operación CUDA real y ausencia de fallback a CPU.
+
+**Nivel 3 — Backend:** importación correcta de Nunchaku y carga de sus nodos personalizados en ComfyUI.
+
+**Nivel 4 — Modelos:** verificación de integridad y carga real de los componentes necesarios para el workflow.
+
+**Nivel 5 — Generación:** producir una imagen en un workflow controlado y comprobar que el archivo de salida es válido, legible y está en el destino esperado.
+
+**Nivel 6 — Edición:** validar un workflow de edición con una imagen de referencia cuando el modelo y sus dependencias estén certificados.
+
+**Nivel 7 — Recuperación:** destruir y volver a instanciar la sesión efímera, comprobando que el entorno persiste, recupera sus dependencias y supera nuevamente el preflight sin intervención repetitiva.
+
+**Nivel 8 — Rechazo:** comprobar automáticamente que un hostname, RDC-DEVICE-ID, perfil de ubicación o hardware no autorizado produce un bloqueo efectivo. Verificar también que no se inicia ningún proceso de inferencia.
+
+**Nivel 9 — Reproducibilidad:** repetir la instanciación y demostrar que no se vuelven a descargar o instalar artefactos que ya están íntegros.
+
+La capacidad no puede declararse certificada únicamente porque ComfyUI se abre o porque los nodos aparecen en su interfaz.
+
+### 11. Primera prueba visual de OGP
+
+Una vez certificada la infraestructura, prepara una única generación de aceptación, denominada:
+
+**TEST 01 — UMBRAL / ENTRY AS TRANSFORMATION**
+
+Objetivo: producir la primera imagen maestra de la dirección visual de OGP.
+
+Formato: horizontal 4:3.
+
+Dirección visual:
+
+- Umbral monumental abstracto construido con materia densa: piedra, mineral, cerámica o estratos comprimidos.
+- Apertura asimétrica que revele profundidad interior.
+- Transformación material y perceptiva, no una puerta literal.
+- Iluminación física direccional, profundidad y espacio negativo.
+- Trazas de azul profundo integradas en los estratos estructurales.
+- Sin personas, texto ni logotipos.
+
+Lenguaje rector: **CARTOGRAFÍA DE LA TRANSFORMACIÓN**.
+
+Hipótesis visual primaria: Material Intelligence. Hipótesis secundaria: Dark Field Cinema.
+
+Evita cerebros azules, neuronas, redes de nodos, circuitos, estética cyberpunk, futurismo genérico, partículas decorativas, explosiones, fotografía de stock e ilustraciones corporativas.
+
+Genera primero una imagen maestra. No produzcas un conjunto de decenas de imágenes independientes. El modelo de producción debe permitir derivar estados y variaciones a partir de maestros preservados.
+
+El resultado debe guardarse en un workspace de integración separado del repositorio OGP, acompañado de prompt, modelo, versiones, parámetros, seed cuando corresponda, hashes y evidencia de ejecución en GPU.
+
+No modifiques story-v3.js, los JSON canónicos, la estructura visual ni el sitio publicado de OGP como parte de esta instalación. La integración visual de OGP queda condicionada a la evaluación y aprobación de TEST 01.
+
+La aceptación estética debe respetar el criterio canónico de OGP: promedio mínimo de 4.2/5 y ningún criterio crítico por debajo de 3/5.
+
+### 12. Costes, licencias y autonomía
+
+La solución debe funcionar sin depender de:
+
+- Suscripciones comerciales de generación visual.
+- Créditos de APIs de inferencia alojadas.
+- Claves de proveedor que requieran pagos.
+- Tarjetas bancarias.
+- Servicios remotos necesarios para ejecutar cada generación.
+- Intervenciones manuales repetitivas.
+
+Se admite conexión a Internet para recuperar releases, dependencias y modelos durante el aprovisionamiento inicial o las actualizaciones controladas. La inferencia debe permanecer local.
+
+Antes de fijar una combinación de modelos y dependencias, verifica sus licencias vigentes y su autorización para el uso previsto. No des por hecho que todos los componentes o pesos tienen idénticas condiciones de licencia por ser descargables públicamente.
+
+Las dependencias críticas deben estar fijadas, documentadas y sujetas a comprobaciones de integridad. No ejecutes instalaciones arbitrarias de paquetes ni actualizaciones generales no controladas.
+
+### 13. Entregables dentro de Entorno Persistente
+
+Integra la capacidad en los componentes canónicos que correspondan, evitando duplicar mecanismos que ya existan.
+
+Los entregables deben incluir:
+
+1. Provisionador idempotente asociado al ciclo de instanciación.
+2. Resolución y autorización de contexto, ubicación y terminal.
+3. Inventario de hardware y resolución de compatibilidad.
+4. Guard de ejecución fail-closed.
+5. Gestor de artefactos, caché y recuperación de instalaciones incompletas.
+6. Configuración versionada del pipeline y sus dependencias.
+7. Interfaz de control programático para solicitudes de generación y edición.
+8. Registro de ejecución, certificación, fallos y recuperación.
+9. Documentación canónica de operación y reparación.
+10. Pruebas automatizadas para todos los gates anteriores.
+11. Integración con los mecanismos existentes de recuperación de sesiones efímeras.
+12. Actualización y publicación canónica de los cambios de Entorno Persistente mediante su flujo de control de versiones.
+
+No crees un segundo sistema de persistencia o de selección RDC si Entorno Persistente ya tiene un componente canónico que cumple esa función. Extiende o adapta el mecanismo existente.
+
+### 14. Secuencia de implementación
+
+Ejecuta el trabajo en este orden:
+
+**Fase A. Auditoría:** recuperar la documentación canónica, identificar los puntos de integración, revisar el estado existente y determinar el cambio mínimo suficiente.
+
+**Fase B. Diseño:** definir contratos, estados, gates, dependencias fijadas y ciclo de recuperación.
+
+**Fase C. Implementación:** integrar el provisionador, el registro de capacidades y el guard de ejecución en Entorno Persistente.
+
+**Fase D. Certificación:** probar detección de contexto, hardware, CUDA, backend, modelos, generación y rechazo en condiciones no elegibles.
+
+**Fase E. Primera prueba visual:** ejecutar TEST 01 en la terminal autorizada y guardar la evidencia.
+
+**Fase F. Persistencia:** demostrar que una nueva instancia efímera recupera automáticamente una instalación válida sin repetir pasos manuales.
+
+**Fase G. Publicación:** ejecutar pruebas de regresión, publicar los cambios conforme al procedimiento canónico y verificar la versión finalmente publicada.
+
+En cada fase, conserva evidencia comprobable de los resultados. Si un gate falla, corrige su causa y repite la prueba correspondiente; no ocultes fallos ni declares certificaciones pendientes como aprobadas.
+
+### 15. Criterio de finalización
+
+El trabajo solo estará terminado cuando se demuestre que:
+
+- Entorno Persistente reconoce y selecciona la terminal individual correcta.
+- La capacidad queda restringida al cibercafé autorizado y a terminales elegibles.
+- El entorno efímero puede destruirse y volver a crearse sin perder la capacidad recuperable.
+- Las instalaciones y descargas son idempotentes, reproducibles y verificables.
+- La generación y edición se controlan programáticamente y usan GPU real.
+- Una terminal no elegible no puede activar la inferencia ni siquiera mediante una ruta alternativa.
+- TEST 01 ha producido una imagen válida, con trazabilidad y evaluación documentadas.
+- La infraestructura está integrada y documentada en el ámbito canónico de Entorno Persistente.
+- El repositorio OGP permanece sin cambios hasta superar el gate visual correspondiente.
+
+No confundas **implementado**, **instalado**, **funcional**, **certificado** y **publicado**. Cada uno es un estado distinto que requiere evidencia propia.
+```
+
