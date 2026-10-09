@@ -174,6 +174,8 @@ La telemetria continua pertenece a la sesion local y no obliga a una llamada RDC
 
 Cuando una tarea incluya KHORA EP, EP_VOLATIL, VHDX, BitLocker, la junction `Desktop\\EP`, Deadman Trigger, WordPress Studio, Divi o el laboratorio de Ser y Mente, leer primero `ANEXO-ENTORNO-PERSISTENTE-HIBRIDO-EP-WP-LAB.md` y verificar sus refs/estados con el proveedor antes de ejecutar acciones.
 
+Cuando una tarea incluya Cybernet/Luis Pasteur, una terminal PC-N, RDC, bootstrap de sesión efímera, repositorios/extensiones, OBS Virtual Camera, telemetría por terminal, EP-WP-LAB, Divi o IA visual OGP, leer también `ANEXO-EP-ARRANQUE-CYBERNET-WP-LAB-OGP-IA-20261009.md`. Tratar los perfiles/Escritorio/Descargas como volátiles por defecto. Resolver terminal y RDC en vivo, no heredar identidades de otra conversación, mantener `PRESUPUESTO-REINICIO = 0`, y priorizar contexto/workspace/RDC antes de descargas pesadas. El bootstrap no modifica Chrome; los checkpoints duraderos, el tema licenciado y los modelos requieren almacenamiento y autorización comprobados.
+
 Reglas:
 1. No ejecutar el bootstrap histórico de WP-LAB mientras siga vigente la auditoría de riesgos descrita en el anexo. Primero preservar el sitio, localizar/verificar snapshot y activo propietario y corregir los reemplazos destructivos.
 2. Clasificar el almacenamiento como EP_VOLATIL hasta demostrar el VHDX, BitLocker requerido y la asociación exacta de `Desktop\\EP` con el workspace cifrado.
