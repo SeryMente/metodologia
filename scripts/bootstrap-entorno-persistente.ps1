@@ -227,6 +227,22 @@ function Test-ObsLog([datetime]$Since) {
     for ($i=0;$i -lt $lines.Count;$i++) { if ($lines[$i] -match 'Starting Virtual Camera output to Program|Virtual Camera Start') { $started=$i }; if ($lines[$i] -match 'Stopping Virtual Camera|Virtual Camera Stop') { $stopped=$i } }
     return ($started -ge 0 -and $started -gt $stopped)
 }
+function Test-ObsModuleRegistration([string]$ModulePath,[string]$View) {
+    if (-not (Test-Path -LiteralPath $ModulePath -PathType Leaf)) { return $false }
+    $reg=Join-Path $env:SystemRoot 'System32\reg.exe'
+    $key='HKLM\SOFTWARE\Classes\CLSID\{A3FCE0F5-3493-419F-958A-ABA1250EC20B}\InprocServer32'
+    $r=Invoke-NativeCaptured -Executable $reg -Arguments @('query',$key,'/ve',('/reg:'+$View)) -Quiet
+    if ($r.ExitCode -ne 0) { return $false }
+    $actual=$r.Lines -join [Environment]::NewLine
+    $expected=[System.IO.Path]::GetFullPath($ModulePath)
+    return ($actual.IndexOf($expected,[StringComparison]::OrdinalIgnoreCase) -ge 0)
+}
+function Get-FrameServerValue([string]$RegistryPath) {
+    try {
+        $item=Get-ItemProperty -LiteralPath $RegistryPath -Name 'EnableFrameServerMode' -ErrorAction Stop
+        return [int]$item.EnableFrameServerMode
+    } catch { return -1 }
+}
 function Ensure-ObsCamera {
     $obs=Find-Obs
     if (-not $obs) {
@@ -237,16 +253,100 @@ function Ensure-ObsCamera {
         do { Start-Sleep -Milliseconds 500; $obs=Find-Obs } while (-not $obs -and (Get-Date) -lt $end)
         if (-not $obs) { throw "OBS_INSTALL_NOT_VERIFIED: exit=$($ins.ExitCode)" }
     }
+    if (-not [Environment]::Is64BitOperatingSystem) { throw 'OBS_VIRTUAL_CAMERA_REQUIRES_64BIT_WINDOWS' }
     $root=Split-Path -Parent (Split-Path -Parent (Split-Path -Parent $obs))
-    $dll=Join-Path $root 'data\obs-plugins\win-dshow\obs-virtualcam-module64.dll'
-    if (-not (Test-Path -LiteralPath $dll -PathType Leaf)) { throw ('OBS_VIRTUALCAM_MODULE_MISSING='+$dll) }
-    $clsid='Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{A3FCE0F5-3493-419F-958A-ABA1250EC20B}'
-    if (-not (Test-Path -LiteralPath $clsid)) {
-        $reg=Invoke-NativeCaptured -Executable (Join-Path $env:SystemRoot 'System32\regsvr32.exe') -Arguments @('/s','/i',$dll) -Label 'REGISTER_OBS_VCAM64'
-        if ($reg.ExitCode -ne 0 -or -not (Test-Path -LiteralPath $clsid)) { throw 'OBS_VCAM_REGISTRATION_REQUIRES_ADMIN_TERMINAL' }
+    $dll64=Join-Path $root 'data\obs-plugins\win-dshow\obs-virtualcam-module64.dll'
+    $dll32=Join-Path $root 'data\obs-plugins\win-dshow\obs-virtualcam-module32.dll'
+    if (-not (Test-Path -LiteralPath $dll64 -PathType Leaf)) { throw ('OBS_VIRTUALCAM_MODULE64_MISSING='+$dll64) }
+    $hasDll32=Test-Path -LiteralPath $dll32 -PathType Leaf
+    if (-not $hasDll32) { Write-Log 'OBS_VCAM_MODULE32=NOT_PRESENT | 64-bit Chrome compatibility will be validated separately.' }
+
+    $reg64Ok=Test-ObsModuleRegistration -ModulePath $dll64 -View '64'
+    $reg32Ok=$true
+    if ($hasDll32) { $reg32Ok=Test-ObsModuleRegistration -ModulePath $dll32 -View '32' }
+
+    $os=Get-CimInstance Win32_OperatingSystem -ErrorAction Stop
+    $enableFrameServerMode=([int]$os.BuildNumber -ge 22621)
+    $frameServerPaths=@(
+        'HKLM:\SOFTWARE\Microsoft\Windows Media Foundation\Platform',
+        'HKLM:\SOFTWARE\WOW6432Node\Microsoft\Windows Media Foundation\Platform'
+    )
+    $frameServerNeedsChange=$false
+    if ($enableFrameServerMode) {
+        foreach ($rp in $frameServerPaths) {
+            if ((Get-FrameServerValue $rp) -ne 1) { $frameServerNeedsChange=$true }
+        }
     }
+
+    if (-not $reg64Ok -or ($hasDll32 -and -not $reg32Ok) -or $frameServerNeedsChange) {
+        # Elevate only this temporary, token-free camera-registration helper; the bootstrap
+        # itself and all repository/RDC work remain in the original terminal.
+        $helperPath=Join-Path $env:TEMP ('bootstrap-obs-vcam-'+[guid]::NewGuid().ToString('N')+'.ps1')
+        $helperText=@'
+param([Parameter(Mandatory=$true)][string]$Module64,[string]$Module32,[switch]$EnableFrameServerMode)
+$ErrorActionPreference='Stop'
+$reg64=Join-Path $env:SystemRoot 'System32\regsvr32.exe'
+if (-not (Test-Path -LiteralPath $Module64 -PathType Leaf)) { exit 21 }
+& $reg64 /s /i $Module64
+if ($LASTEXITCODE -ne 0) { exit 64 }
+if ($Module32 -and (Test-Path -LiteralPath $Module32 -PathType Leaf)) {
+    $reg32=Join-Path $env:SystemRoot 'SysWOW64\regsvr32.exe'
+    if (-not (Test-Path -LiteralPath $reg32 -PathType Leaf)) { exit 32 }
+    & $reg32 /s /i $Module32
+    if ($LASTEXITCODE -ne 0) { exit 33 }
+}
+if ($EnableFrameServerMode) {
+    $paths=@(
+        'HKLM:\SOFTWARE\Microsoft\Windows Media Foundation\Platform',
+        'HKLM:\SOFTWARE\WOW6432Node\Microsoft\Windows Media Foundation\Platform'
+    )
+    foreach ($p in $paths) {
+        if (-not (Test-Path -LiteralPath $p)) { New-Item -Path $p -Force | Out-Null }
+        New-ItemProperty -LiteralPath $p -Name 'EnableFrameServerMode' -PropertyType DWord -Value 1 -Force | Out-Null
+        $v=Get-ItemProperty -LiteralPath $p -Name 'EnableFrameServerMode' -ErrorAction Stop
+        if ([int]$v.EnableFrameServerMode -ne 1) { exit 65 }
+    }
+}
+exit 0
+'@
+        [System.IO.File]::WriteAllText($helperPath,$helperText,(New-Object System.Text.UTF8Encoding($true)))
+        $ps64=Join-Path $env:SystemRoot 'System32\WindowsPowerShell\v1.0\powershell.exe'
+        $argsLine='-NoProfile -ExecutionPolicy Bypass -File "'+$helperPath+'" -Module64 "'+$dll64+'"'
+        if ($hasDll32) { $argsLine+=' -Module32 "'+$dll32+'"' }
+        if ($enableFrameServerMode) { $argsLine+=' -EnableFrameServerMode' }
+        try {
+            $elevated=Start-Process -FilePath $ps64 -ArgumentList $argsLine -Verb RunAs -Wait -PassThru -ErrorAction Stop
+        } finally {
+            Remove-Item -LiteralPath $helperPath -Force -ErrorAction SilentlyContinue
+        }
+        if ($elevated.ExitCode -ne 0) { throw ('OBS_VCAM_ELEVATED_SETUP_FAILED: exit='+$elevated.ExitCode+'; approve the Windows elevation prompt and retry if it was declined.') }
+    }
+
+    if (-not (Test-ObsModuleRegistration -ModulePath $dll64 -View '64')) { throw 'OBS_VCAM_REGISTRATION_64BIT_NOT_VERIFIED' }
+    Write-Log 'OBS_VCAM_REGISTRATION_64BIT=VERIFIED'
+    if ($hasDll32) {
+        if (-not (Test-ObsModuleRegistration -ModulePath $dll32 -View '32')) { throw 'OBS_VCAM_REGISTRATION_32BIT_NOT_VERIFIED' }
+        Write-Log 'OBS_VCAM_REGISTRATION_32BIT=VERIFIED'
+    }
+    $frameServerChanged=$enableFrameServerMode -and $frameServerNeedsChange
+    if ($enableFrameServerMode) {
+        foreach ($rp in $frameServerPaths) {
+            if ((Get-FrameServerValue $rp) -ne 1) { throw ('WINDOWS_MEDIA_FOUNDATION_FRAME_SERVER_NOT_ENABLED='+$rp) }
+        }
+        Write-Log 'WINDOWS_MEDIA_FOUNDATION_FRAME_SERVER=ENABLED_BOTH_REGISTRY_VIEWS'
+        if ($frameServerChanged) {
+            Write-Log 'CAMERA_RESTART_MAY_BE_REQUIRED=TRUE | Frame Server settings changed; no Windows restart was issued (reboot budget=0).'
+        } else {
+            Write-Log 'CAMERA_FRAME_SERVER_SETTINGS=ALREADY_ENABLED'
+        }
+    } else {
+        Write-Log ('WINDOWS_MEDIA_FOUNDATION_FRAME_SERVER=NOT_REQUIRED_FOR_BUILD_'+$os.BuildNumber)
+    }
+
     $active=$false
-    foreach ($p in @(Get-CimInstance Win32_Process -Filter "name='obs64.exe'" -ErrorAction SilentlyContinue)) { if (Test-ObsLog $p.CreationDate) { $active=$true; break } }
+    foreach ($p in @(Get-CimInstance Win32_Process -Filter "name='obs64.exe'" -ErrorAction SilentlyContinue)) {
+        if (Test-ObsLog $p.CreationDate) { $active=$true; break }
+    }
     if (-not $active) {
         $since=Get-Date
         $proc=Start-Process -FilePath $obs -ArgumentList @('--startvirtualcam','--minimize-to-tray','--multi') -WorkingDirectory (Split-Path -Parent $obs) -PassThru
@@ -257,12 +357,20 @@ function Ensure-ObsCamera {
     if (-not $active) { throw 'OBS_VIRTUAL_CAMERA_START_NOT_VERIFIED_IN_LOG' }
     Write-Log 'OBS_VIRTUAL_CAMERA=START_CONFIRMED'
     $pnputil=Join-Path $env:SystemRoot 'System32\pnputil.exe'
-    if (Test-Path -LiteralPath $pnputil) { $scan=Invoke-NativeCaptured -Executable $pnputil -Arguments @('/scan-devices') -Label 'PNP_RESCAN'; if ($scan.ExitCode -ne 0) { Write-Log ('PNP_RESCAN_EXIT='+$scan.ExitCode) } }
+    if (Test-Path -LiteralPath $pnputil) {
+        $scan=Invoke-NativeCaptured -Executable $pnputil -Arguments @('/scan-devices') -Label 'PNP_RESCAN'
+        if ($scan.ExitCode -ne 0) { Write-Log ('PNP_RESCAN_EXIT='+$scan.ExitCode) }
+    }
     $gp=Get-Command Get-PnpDevice -ErrorAction SilentlyContinue
     if ($gp) {
         $devices=@(Get-PnpDevice -PresentOnly -ErrorAction SilentlyContinue | Where-Object { $_.FriendlyName -match '(?i)OBS.*Virtual Camera|Virtual Camera.*OBS' })
-        if ($devices.Count -gt 0) { foreach ($d in $devices) { Write-Log ('OBS_PNP_DEVICE='+$d.FriendlyName+' | STATUS='+$d.Status) } } else { Write-Log 'OBS_PNP_DEVICE=NOT_LISTED_BY_GET_PNPDEVICE' }
+        if ($devices.Count -gt 0) {
+            foreach ($d in $devices) { Write-Log ('OBS_PNP_DEVICE='+$d.FriendlyName+' | STATUS='+$d.Status) }
+        } else {
+            Write-Log 'OBS_PNP_DEVICE=NOT_LISTED_BY_GET_PNPDEVICE | non-fatal; OBS uses a registered virtual capture filter, not necessarily a PnP node.'
+        }
     }
+    Write-Log 'CHROME_CAMERA_PREREQUISITES=VERIFIED | 64-bit capture filter registered and OBS virtual output active; Chrome itself remains untouched and is not browser-probed.'
 }
 function Start-Observer([string]$ScriptPath,[string]$Root,[string]$PcId) {
     $found=@(Get-CimInstance Win32_Process -Filter "name='powershell.exe'" -ErrorAction SilentlyContinue | Where-Object { $_.CommandLine -and $_.CommandLine -match [regex]::Escape($ScriptPath) -and $_.CommandLine -match 'ObserverOnly' })
@@ -415,7 +523,8 @@ try {
 
     # The PAT is no longer needed; do not pass it to the observer or RDC child process.
     Remove-Item Env:GH_TOKEN,Env:GIT_TERMINAL_PROMPT,Env:GIT_CONFIG_COUNT,Env:GIT_CONFIG_KEY_0,Env:GIT_CONFIG_VALUE_0,Env:GIT_CONFIG_KEY_1,Env:GIT_CONFIG_VALUE_1 -ErrorAction SilentlyContinue
-    try { Ensure-ObsCamera } catch { Write-Log ('OBS_CAMERA=BLOCKED_OR_FAILED | '+$_.Exception.Message) }
+    Write-Log 'OBS_CAMERA_PHASE=BEGIN | after repository synchronization/token cleanup; before observer and RDC.'
+    try { Ensure-ObsCamera; Write-Log 'OBS_CAMERA=VERIFIED | OS camera registration and OBS virtual output checks passed.' } catch { Write-Log ('OBS_CAMERA=BLOCKED_OR_FAILED | '+$_.Exception.Message) }
     Write-Log 'CHROME=NOT_TOUCHED | no Chrome process or settings are accessed.'
     $task='NOT_REGISTERED'; try { $t=Get-ScheduledTask -TaskName 'CyberCafe Performance Liberator' -ErrorAction Stop; $task=[string]$t.State } catch {}
     Write-Log ('PERFORMANCE_TASK='+$task+' | state is not heartbeat proof.')
