@@ -2,21 +2,21 @@
 
 ## Estado canónico
 
-- **Versión:** v0.14.8
-- **Nombre de versión:** Bootstrap CLI Integral para Terminales CIBERCAFE
+- **Versión:** v0.14.9
+- **Nombre de versión:** Bootstrap Anclado por Commit y Hash
 - **Última actualización:** 2026-10-09
 - **Última actualización canónica:** 2026-10-09
 - **Ámbito:** Todos los proyectos y conversaciones trabajados bajo esta metodología.
 
 ### Narrativa de la versión
 
-**Antes:** el procedimiento de arranque CLI estaba especificado y el clonador del repositorio estaba disponible, pero faltaba una única entrada de bootstrap que resolviera dependencias, preparara el repositorio, verificara el estado y dejara RDC ejecutándose en la terminal correcta.
+**Antes:** el bootstrap integral estaba implementado y probado, pero la entrada de descarga usaba una URL móvil de `main`. Durante la validación, esa URL devolvió una versión anterior aunque el commit del repositorio ya había avanzado.
 
-**Cambio:** se canoniza scripts/bootstrap-cibercafe-cli.ps1 como orquestador de inicio. Identifica la terminal, valida Git y Node/npm/npx, instala dependencias faltantes con la fuente winget explícita, sincroniza Desktop/metodologia solo cuando el destino es seguro, comprueba archivos y versiones normativas, ofrece el inicio verificable de OBS Virtual Camera y lanza el comando oficial de RDC en primer plano.
+**Cambio:** se ancla la entrada ejecutable a un commit inmutable de `scripts/bootstrap-cibercafe-cli.ps1` y se verifica su SHA-256 antes de iniciar el proceso hijo de PowerShell. El bootstrap mantiene comprobaciones de dependencias, clonación/actualización segura, versión normativa, cámara opcional y lanzamiento de RDC.
 
-**Motivo:** eliminar la improvisación de comandos largos, los fallos por wrappers .ps1 bloqueados, las consultas winget ambiguas, los errores nativos mal interpretados, las actualizaciones de repositorios con cambios locales y la confusión entre iniciar un proceso y verificar el servicio real.
+**Motivo:** impedir que una caché o retraso de propagación en la URL raw cambie silenciosamente el script que el usuario está ejecutando. Un comando de arranque definitivo debe identificar exactamente su artefacto, no depender de contenido móvil que no se haya verificado.
 
-**Resultado:** las terminales Windows de CIBERCAFE disponen de un comando reutilizable de bootstrap y de los contratos de salida que diferencian éxito, fallo de OBS y bloqueos de instalación/autenticación. El bootstrap conserva la terminal RDC accesible si falla el intento de OBS, no da permisos globales de cámara, no ejecuta reinicios y no publica commits automáticamente.
+**Resultado:** la entrada canónica aborta si el hash del script descargado no coincide; solo entonces ejecuta PowerShell con `-NoProfile -ExecutionPolicy Bypass`. La ruta de preparación quedó probada en PowerShell 5.1, y la opción OBS reconoció la cámara virtual ya activa sin lanzar una instancia duplicada.
 
 **Continuidad normativa:** la identidad activa del SI sigue procediendo exclusivamente de la cabecera de su snapshot exacto de main. Esta versión de Metodología no sustituye ni versiona el SI.
 
@@ -70,6 +70,7 @@
 | 43 | v0.14.6 | Bootstrap Fail-Closed y Reconciliación de Identidad Normativa | Se corrige la dependencia de arranque que permitía que una versión histórica del SI reapareciera como vigente; la Metodología pasa a tratar la cabecera del snapshot exacto del SI como única identidad activa y bloquea cualquier contradicción antes del reanclaje o la ejecución sustantiva. |
 | 44 | v0.14.7 | Arranque CLI Verificable y Continuidad por Terminal | Se canoniza el procedimiento de arranque CLI Windows, la clonación idempotente con verificación de origin/SHA/working tree y la persistencia separada del estado y los eventos de cada terminal CIBERCAFE; se registra la identidad PC-4 sin sustituir otras sesiones RDC. |
 | 45 | v0.14.8 | Bootstrap CLI Integral para Terminales CIBERCAFE | Se incorpora un comando único que instala/verifica dependencias, sincroniza Metodología con comprobaciones de seguridad, opcionalmente valida el inicio de OBS Virtual Camera y lanza RDC; conserva el diagnóstico remoto ante fallos de OBS y no declara éxito sin verificación. |
+| 46 | v0.14.9 | Bootstrap Anclado por Commit y Hash | Se fija el script de arranque a un commit inmutable y SHA-256 verificado antes de ejecutarlo, corrigiendo el riesgo real de contenido raw obsoleto; se conserva la preparación segura de dependencias, repositorio, OBS opcional y RDC. |
 La tabla es canónica. Las versiones futuras añaden nuevos registros sin reutilizar folios. Una entrada retirada por revisión canónica puede conservar únicamente su identificador y estado de retirada, sin preservar la regla operativa invalidada. El nombre describe el avance de la versión y no sustituye el título general del sistema o documento.
 
 ## 1. Convención obligatoria de foliación de ciclos
