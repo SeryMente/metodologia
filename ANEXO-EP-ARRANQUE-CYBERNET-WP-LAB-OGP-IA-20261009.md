@@ -366,7 +366,7 @@ No confundir:
 
 ## 14. Entrada OGP íntegra, verbatim
 
-Se conserva a continuación la especificación completa aportada por el usuario. El único ajuste de serialización es reponer los delimitadores Markdown del texto durante la escritura del archivo.
+Se conserva a continuación la especificación completa aportada por el usuario en cuanto a sus requisitos. Se redactan únicamente datos de cuenta e identificadores RDC transitorios que no constituyen requisitos reutilizables, para no publicar identificadores personales/operativos en este repositorio público. Los delimitadores Markdown se preservan al serializar el texto.
 
 ```text
 # INTEGRACIÓN DE INFRAESTRUCTURA LOCAL DE IA GENERATIVA VISUAL EN ENTORNO PERSISTENTE
