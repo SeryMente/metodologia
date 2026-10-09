@@ -163,7 +163,10 @@ function Sync-Repo([string]$Repo,[string]$Destination) {
         if ($r.ExitCode -ne 0) { throw "GIT_PULL_FAILED: $Repo" }
     } else {
         New-Item -ItemType Directory -Path (Split-Path -Parent $Destination) -Force | Out-Null
-        $r=Invoke-NativeCaptured -Executable $script:GitPath -Arguments @('clone','--',$expected+'.git',$Destination) -Label ('CLONE '+$Repo)
+        $cloneUrl=$expected + '.git'
+        $cloneArguments=@('clone','--',$cloneUrl,$Destination)
+        Write-Log ('CLONE_ARGUMENTS_VERIFIED | '+$Repo+' | URL='+$cloneUrl+' | DESTINATION='+$Destination)
+        $r=Invoke-NativeCaptured -Executable $script:GitPath -Arguments $cloneArguments -Label ('CLONE '+$Repo)
         if ($r.ExitCode -ne 0) { throw "GIT_CLONE_FAILED: $Repo" }
     }
     $b=Invoke-NativeCaptured -Executable $script:GitPath -Arguments @('-C',$Destination,'branch','--show-current') -Quiet
