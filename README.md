@@ -44,16 +44,16 @@ Versión vigente del SI:
 
 Versión vigente de la Metodología:
 
-**v0.14.8 — Bootstrap CLI Integral para Terminales CIBERCAFE**
+**v0.14.9 — Bootstrap Anclado por Commit y Hash**
 
 El SI contiene los principios fundamentales vigentes, ordenados de mayor a menor preponderancia. La continuidad entre conversaciones se desarrolla operativamente mediante la Metodología y el anexo `BOOTSTRAP-CONTEXTO-GLOBAL.md`.
 
 ## Última actualización de Metodología
 
-**v0.14.8 — Bootstrap CLI Integral para Terminales CIBERCAFE**  
+**v0.14.9 — Bootstrap Anclado por Commit y Hash**  
 2026-10-09
 
-La metodología incorpora un bootstrap CLI integral para terminales Windows de CIBERCAFE: instalación/verificación de dependencias, sincronización segura de Metodología, comprobación opcional de OBS Virtual Camera y arranque de RDC. La identidad activa del SI continúa subordinada exclusivamente a la cabecera de su snapshot canónico.
+La metodología ancla el bootstrap CLI de Windows a un commit inmutable y verifica SHA-256 antes de ejecutarlo, evitando versiones raw obsoletas. El bootstrap verifica dependencias, sincroniza Metodología de forma segura, ofrece el inicio opcional de OBS Virtual Camera y lanza RDC. La identidad activa del SI continúa subordinada exclusivamente a la cabecera de su snapshot canónico.
 
 
 La identidad persistente de la sesión RDC y su registro transversal se mantienen mediante ESTADO-RDC-ACTIVO.md. La conectividad se verifica por ciclo mediante ping como comprobación primaria cuando el ciclo requiera uso RDC en vivo. La salida visible de cada ciclo muestra únicamente el contexto y resultado esenciales; `K: ✓` solo acredita verificación/liberación de KHORA, mientras `K: OFF` declara que el verificador no estuvo disponible sin bloquear la salida.
