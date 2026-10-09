@@ -718,3 +718,48 @@ El trabajo solo estará terminado cuando se demuestre que:
 No confundas **implementado**, **instalado**, **funcional**, **certificado** y **publicado**. Cada uno es un estado distinto que requiere evidencia propia.
 ```
 
+
+
+---
+
+## 15. Auditoría de implementación del bootstrap y brechas explícitas
+
+**Fecha de auditoría:** 2026-10-09. **Código base revisado:** main = 71eb24ff2e285501990374fe03fd5368245e0e06. Esta auditoría es estática, por lectura de los archivos en GitHub; no implica ejecución local ni prueba de la terminal.
+
+### 15.1 Scripts contrastados
+
+| Archivo | Blob SHA en el commit auditado | Lo que sí contiene | Brechas comprobadas |
+|---|---|---|---|
+| scripts/bootstrap-cibercafe-cli.ps1 | bad15eddd4feca2d0c576ee6390863c94618faa4 | 442 líneas; resuelve hostname por DNS/WMI, asegura Git y Node, sincroniza metodología, incluye el parámetro StartOBSVirtualCamera y deja RDC en primer plano. Si se solicita, trata de registrar la cámara, lanza OBS y espera confirmación en un log reciente. | No contiene Set-Clipboard; no extrae RDC-DEVICE-ID/nombre/cuenta del flujo; no genera la ficha RDC; no inicia un observador; no crea performance-events.log ni contiene telemetría del agente; no usa Get-PnpDevice como validación de la cámara. |
+| scripts/bootstrap-entorno-persistente.ps1 | f88da1c3631c2038232caa8027c19d0d429dfbcf | 322 líneas; crea estado por terminal CIBERCAFE/PC-N, log por sesión, performance-events.log y una consola hija de observador; muestra CPU/RAM/disco y GPU si nvidia-smi está disponible; consulta el estado de una tarea de desempeño; prepara repositorios/extensiones y termina ejecutando RDC en primer plano. | No contiene Set-Clipboard ni extracción de RDC-DEVICE-ID; no crea la ficha RDC. Consulta si existe una tarea CyberCafe Performance Liberator, pero no contiene la implementación del agente ni demuestra que esa tarea emita muestras. El observador y el agente son estados distintos. El script reutiliza el bootstrap CLI fijado a una ref histórica concreta, de modo que sus comportamientos no deben equipararse automáticamente al bootstrap CLI actual en main. |
+| scripts/obs-chrome-camera-fix.ps1 | 5b8ba374bd0a0c8b7fc49e4e8c40daee5d7b1448 | Intenta iniciar OBS, analiza su log y ayuda a revisar el dispositivo de cámara. | Accede directamente a Chrome, contempla reinicio de procesos, inspección/edición de perfil, preferencias/políticas y apertura de páginas Chrome. Está fuera del alcance del bootstrap canónico porque la instrucción vigente del usuario es “todo es por terminal; no trabajar con Chrome”. No ejecutarlo desde el arranque de EP. |
+
+Los SHA anteriores identifican los blobs revisados en el commit citado, no necesariamente nuevas copias de estos archivos si el código cambia en otra publicación.
+
+### 15.2 Estado real por requisito
+
+| Requisito canónico | Estado auditado | Próxima implementación/verificación necesaria |
+|---|---|---|
+| SI H1 → SI@H1 → H2 en esta sesión | PASS para la auditoría documental; la implementación base valida headers locales pero este análisis no certificó que el script compare dos lecturas de main. | Mantener el gate de frescura explícito y verificarlo con el procedimiento canónico vigente. |
+| Identidad terminal separada de RDC | PARCIAL en bootstrap-entorno-persistente: usa terminal PC-N y registra el contexto; no completa la reconciliación con el dispositivo RDC recién asignado. | Analizar el handshake/estado del proveedor sin reutilizar valores históricos; persistir identidad por terminal y registrar la identidad RDC como efímera. |
+| Ficha RDC al portapapeles | MISSING en los dos bootstraps revisados: ninguno llama Set-Clipboard ni extrae la ficha del texto de RDC. | Añadir un extractor robusto de los campos de sesión después de la autorización y comprobación Online, sin guardar código de verificación, token ni contraseña. Si el formato del proveedor cambia o los campos faltan, no copiar una ficha falsa; marcar el campo no disponible. |
+| Clonado/sincronización y taxonomía de repositorios | PRESENTE en el orquestador de EP con validación del árbol y exportación de Signal Interpreter; la validación de manifest.json de GDP es solo una comprobación de existencia. | Incorporar pruebas estructurales del manifiesto y de la raíz de la extensión. Resolver si el entrypoint canónico será bootstrap-cibercafe-cli.ps1 invocando un orquestador único o bootstrap-entorno-persistente.ps1 que lo llame en modo PrepareOnly; no mantener dos puntos de entrada ambiguos. |
+| Observador en consola independiente | IMPLEMENTADO en bootstrap-entorno-persistente.ps1, no en el entrypoint CLI por sí solo. | Decidir un único entrypoint canónico y demostrar que abre exactamente un observador, con cierre controlado y sin duplicados. |
+| Agente persistente de rendimiento | NO VERIFICADO. El script consulta el nombre/estado de una tarea y lee un fichero de eventos, pero no contiene el código del agente ni demuestra que la tarea produzca muestras actuales. | Encontrar el código fuente real de Performance Liberator, comprobar su origen/versión, frecuencia de muestras, acciones permitidas, rollback y ausencia de operaciones que rompan PRESUPUESTO-REINICIO = 0. No crear un optimizador duplicado. |
+| OBS Virtual Camera | PARCIAL estáticamente: el bootstrap CLI puede registrar DLL y comprobar un log reciente; el script auxiliar standalone tiene más interacciones, pero no se debe integrar porque toca Chrome. Ningún resultado prueba el estado de una sesión nueva. | Verificar dispositivo y salida en la terminal activa, permisos, fuente de vídeo y log. Registrar PENDIENTE_ADMIN/BLOCKED si requiere elevación no disponible; no reiniciar ni editar Chrome. |
+| Prohibición de operaciones en Chrome | Cumplida por el alcance declarado del bootstrap CLI; incumplida por el script auxiliar standalone, que debe permanecer excluido. | Conservar una prueba estática que garantice que el entrypoint no invoca el helper ni accede a procesos, perfiles o políticas Chrome. |
+| Atestación efectiva de ubicación Cybernet | NOT IMPLEMENTED / NOT VERIFIED en los scripts contrastados. La terminal lógica y el hostname no equivalen a prueba independiente de ubicación. | Integrar el mecanismo canónico de autorización/atestación ya existente o mantener el pipeline OGP bloqueado hasta definir uno; no inventar una prueba criptográfica. |
+| VHDX/junction/BitLocker y estado durable | NOT VERIFIED. | Verificar ubicación física, destino, BitLocker XtsAes256, protección y cifrado al 100 %, además de write/read-back y restauración desde el almacén privado aprobado. |
+| EP-WP-LAB y Divi 4.23.1 | PENDING. | Obtener el ZIP de nuevo en sesión activa, verificar contenido/hash/autorización, corregir bootstrap en staging y probar backup, rollback y rutas. |
+| Pipeline local OGP | NOT CERTIFIED. | Revalidar GPU/runtime/modelos/licencias, aplicar guard en todos los puntos de entrada y completar pruebas sin descargas pesadas hasta superar los gates. |
+
+### 15.3 Contrato para el siguiente cambio de código
+
+1. No modificar scripts en la misma operación documental ni ejecutarlos sobre la sesión del usuario sin conexión RDC activa y mandato específico.
+2. Resolver la relación entre los dos bootstraps: el entrypoint de usuario debe ser único; el script de preparación puede permanecer como módulo subordinado con interfaz explícita.
+3. Añadir la ficha RDC solo tras observación viva del resultado del handshake. El portapapeles es un producto de conveniencia, no una fuente de verdad ni almacenamiento persistente.
+4. No invocar scripts auxiliares que actúen sobre Chrome.
+5. No afirmar que existe agente de rendimiento porque exista la ventana de observador o una tarea programada.
+6. Reutilizar el mecanismo real de identidad y persistencia; no escribir memoria terminal duradera solamente en el Escritorio volátil.
+7. Tras cada ajuste: lint/parse estático compatible con PowerShell 5.1, revisión de diff, pruebas unitarias/simuladas de datos faltantes y fallos, validación de no reinicio/Chrome, PR, merge y read-back. Pruebas físicas se ejecutan solo cuando haya una sesión RDC nueva disponible y sin reiniciar Cybernet.
+
