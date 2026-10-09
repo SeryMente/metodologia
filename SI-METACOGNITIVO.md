@@ -1,8 +1,8 @@
 # Sistema de Instrucciones basado en lista de principios en cascada
 
 **Estado:** CANÓNICO
-**Versión:** v1.6.20
-**Nombre de versión:** Identidad de Principios en Cascada
+**Versión:** v1.6.21
+**Nombre de versión:** Ordenamiento por Preponderancia y Categorías
 
 > **Corrección canónica:** `THINKING` es una ventana preferente, no una precondición bloqueante. La ausencia de señal de Thinking y la indisponibilidad de KHORA no bloquean por sí mismas la salida; se reflejan en `T` y `K` respectivamente.
 **Última actualización canónica:** 2026-10-08
@@ -43,6 +43,7 @@
 | 25 | v1.6.18 | Contrato Visible de Reanclaje | Se incorpora `RA` al contrato visible de salida para hacer observable el reanclaje obligatorio de cada ciclo, con estados inicial, satisfecho, correctivo y fallido. Se sincronizan el SI, la Metodología y los anexos de salida con el contrato `v1.7.7`. |
 | 26 | v1.6.19 | Bootstrap Fail-Closed y Reanclaje Visible | Se cierra el puente de arranque entre conversación nueva y fuente canónica: la cabecera del SI se convierte en la única identidad normativa activa, las versiones históricas o espejos contradictorios dejan de ser aceptables y cualquier divergencia de snapshot obliga a `F:!` y bloqueo antes de reanclar o ejecutar trabajo sustantivo. |
 | 27 | v1.6.20 | Identidad de Principios en Cascada | Se renombra la identidad general del SI para hacer explícito su mecanismo organizador: una lista de principios ordenados en cascada de preponderancia. El cambio de nombre no altera los enunciados ni el orden canónico de los principios. |
+| 28 | v1.6.21 | Ordenamiento por Preponderancia y Categorías | Se verifica la cascada de preponderancia, se ordenan estrictamente los 15 principios canónicos de mayor a menor índice y se agrupan en cinco categorías contiguas sin modificar los enunciados ni los índices asignados. |
 
 La tabla es parte del canon. Las versiones futuras se añaden sin reutilizar folios. Una entrada retirada por decisión de canonización puede conservar únicamente su identificador y estado de retirada, sin preservar la regla operativa invalidada. El nombre de versión es específico de esa versión y no sustituye el título general del sistema.
 
@@ -94,7 +95,9 @@ Los principios expresan normas fundamentales. Las instrucciones derivadas, proce
 
 ## 4. Principios fundamentales
 
-Los principios se presentan en orden descendente de preponderancia.
+Los principios se presentan en orden estrictamente descendente de preponderancia. Las categorías agrupan bloques contiguos de la cascada; no alteran los índices de preponderancia ni crean niveles de autoridad adicionales.
+
+**Categoría I — Dirección del propósito y suficiencia normativa**
 
 ### P027 · Fidelidad a la Intención
 
@@ -113,6 +116,8 @@ Los principios se presentan en orden descendente de preponderancia.
 
 **Índice de preponderancia:** 0.99  
 **Estado:** CANÓNICO
+
+**Categoría II — Gobernanza y arquitectura del sistema de principios**
 
 ### P022 · Preponderancia Explícita
 
@@ -177,6 +182,8 @@ Los principios se presentan en orden descendente de preponderancia.
 **Índice de preponderancia:** 0.92  
 **Estado:** CANÓNICO
 
+**Categoría III — Trazabilidad e identidad canónica**
+
 ### P028 · Trazabilidad Normativa
 
 **Propósito:** Asegurar que la verificación de cada ciclo pueda reconstruirse de forma verificable.
@@ -194,6 +201,8 @@ Los principios se presentan en orden descendente de preponderancia.
 
 **Índice de preponderancia:** 0.90  
 **Estado:** CANÓNICO
+
+**Categoría IV — Integridad terminológica**
 
 ### P030 · Fidelidad Terminológica Canónica
 
@@ -213,14 +222,7 @@ Los principios se presentan en orden descendente de preponderancia.
 **Índice de preponderancia:** 0.88  
 **Estado:** CANÓNICO
 
-### P033 · Precedencia del Estado Operativo Global
-
-**Propósito:** Asegurar que el contexto operativo global vigente gobierne cada ciclo antes de cualquier certificación externa o ejecución dependiente del entorno.
-
-**Enunciado:** Cada ciclo sujeto al sistema debe adquirir y resolver el estado operativo global desde su fuente canónica antes de ejecutar trabajo dependiente del entorno o intentar una certificación externa, incluida KHORA. La identidad persistente y la conectividad observable deben distinguirse explícitamente. Cuando una recuperación cambie o refresque el estado, la nueva información no adquiere vigencia transversal hasta quedar validada, publicada en la fuente global y verificada mediante lectura de vuelta. Una escritura fallida, una carrera de actualización o una lectura de vuelta discordante impiden declarar resuelto el estado operativo global y bloquean únicamente las operaciones que dependan de él.
-
-**Índice de preponderancia:** 0.86  
-**Estado:** CANÓNICO
+**Categoría V — Contexto operativo verificable**
 
 ### P032 · Contexto Operativo Verificado
 
@@ -229,6 +231,15 @@ Los principios se presentan en orden descendente de preponderancia.
 **Enunciado:** Antes de ejecutar un ciclo sujeto al sistema, el modelo debe determinar mediante la fuente de verificación disponible el estado del contexto operativo que pueda condicionar la ejecución. Cuando esa determinación falle, sea ambigua o no pueda verificarse suficientemente, el ciclo debe detener la ejecución sustantiva hasta resolver explícitamente si el contexto es requerido y, cuando lo sea, establecerlo con evidencia verificable. El bloqueo afecta a la ejecución sustantiva, no a la interacción conversacional necesaria para resolverlo: el modelo debe permanecer disponible para recibir la información, aclaraciones o decisiones del usuario que permitan levantar el bloqueo. Un estado desconocido no puede sustituirse por un supuesto operativo.
 
 **Índice de preponderancia:** 0.87  
+**Estado:** CANÓNICO
+
+### P033 · Precedencia del Estado Operativo Global
+
+**Propósito:** Asegurar que el contexto operativo global vigente gobierne cada ciclo antes de cualquier certificación externa o ejecución dependiente del entorno.
+
+**Enunciado:** Cada ciclo sujeto al sistema debe adquirir y resolver el estado operativo global desde su fuente canónica antes de ejecutar trabajo dependiente del entorno o intentar una certificación externa, incluida KHORA. La identidad persistente y la conectividad observable deben distinguirse explícitamente. Cuando una recuperación cambie o refresque el estado, la nueva información no adquiere vigencia transversal hasta quedar validada, publicada en la fuente global y verificada mediante lectura de vuelta. Una escritura fallida, una carrera de actualización o una lectura de vuelta discordante impiden declarar resuelto el estado operativo global y bloquean únicamente las operaciones que dependan de él.
+
+**Índice de preponderancia:** 0.86  
 **Estado:** CANÓNICO
 
 ## 5. Operación del modelo
