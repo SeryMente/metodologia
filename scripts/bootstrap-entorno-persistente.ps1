@@ -340,6 +340,18 @@ try {
         $gitCredentialEnv[$n]=[Environment]::GetEnvironmentVariable($n,'Process')
         Remove-Item ('Env:'+$n) -ErrorAction SilentlyContinue
     }
+    # Diagnose the local Desktop checkout in the same clean Git environment before the legacy helper runs.
+    $desktopForProbe=[Environment]::GetFolderPath('Desktop')
+    $methodologyForProbe=Join-Path $desktopForProbe 'metodologia'
+    $gitForProbe=Resolve-Git
+    if ($gitForProbe -and (Test-Path -LiteralPath (Join-Path $methodologyForProbe '.git'))) {
+        $originProbe=Invoke-NativeCaptured -Executable $gitForProbe -Arguments @('-C',$methodologyForProbe,'remote','get-url','origin') -Quiet
+        if ($originProbe.ExitCode -ne 0) {
+            foreach ($line in $originProbe.Lines) { Write-Log ('DESKTOP_ORIGIN_DIAGNOSTIC | '+[string]$line) }
+            throw 'DESKTOP_METHODOLOGY_ORIGIN_READ_FAILED: see DESKTOP_ORIGIN_DIAGNOSTIC lines above; no repository files were changed by this check.'
+        }
+        Write-Log ('DESKTOP_METHODOLOGY_ORIGIN_READABLE='+($originProbe.Lines -join '').Trim())
+    }
     $ps=Join-Path $env:SystemRoot 'System32\WindowsPowerShell\v1.0\powershell.exe'; $old=$ErrorActionPreference
     try {
         $ErrorActionPreference='Continue'
