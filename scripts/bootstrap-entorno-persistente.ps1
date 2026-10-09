@@ -94,11 +94,11 @@ function Ensure-Gh {
         # Use the documented http.extraHeader key, not a URL-subsection config key in the environment.
         $basic=[Convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes(($account + ':' + $token)))
         $token=$null
-        $env:GIT_CONFIG_COUNT='2'
-        $env:GIT_CONFIG_KEY_0='credential.helper'
-        $env:GIT_CONFIG_VALUE_0=''
-        $env:GIT_CONFIG_KEY_1='http.extraHeader'
-        $env:GIT_CONFIG_VALUE_1='AUTHORIZATION: basic '+$basic
+        # Windows PowerShell removes environment variables assigned an empty string.
+        # Use one non-empty Git config entry so GIT_CONFIG_COUNT always matches real variables.
+        $env:GIT_CONFIG_COUNT='1'
+        $env:GIT_CONFIG_KEY_0='http.extraHeader'
+        $env:GIT_CONFIG_VALUE_0='AUTHORIZATION: basic '+$basic
         $basic=$null
 
         $targets=@('SeryMente/metodologia','SeryMente/otrogranprograma','SeryMente/GDP','SeryMente/signal-interpreter','SeryMente/khora')
