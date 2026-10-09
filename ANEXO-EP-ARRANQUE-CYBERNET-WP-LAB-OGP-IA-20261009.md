@@ -1,8 +1,8 @@
 # Especificación canónica EP: Cybernet, RDC, WP-LAB y OGP-Visual
 
 **Estado:** especificación consolidada; ejecución física y certificación pendientes de evidencia.
-**Versión del objeto:** v1.1.1
-**Nombre de versión:** UI de Cora para Bóveda Cifrada de GitHub y Bootstrap Sin Reingreso de PAT
+**Versión del objeto:** v1.1.2
+**Nombre de versión:** Compatibilidad de Credenciales GitHub y Verificación E2E OEP Pendiente
 **Corte:** 2026-10-09.
 **Fuente transversal:** SeryMente/metodologia.
 **SI vigente leído con H1 → SI@H1 → H2:** v1.6.21 — Ordenamiento por Preponderancia y Categorías.
@@ -974,7 +974,7 @@ Hasta que el usuario revise la interfaz local, **no continuar con las demás lí
 
 ## 20. Ciclo operativo 005: UI de bóveda GitHub cifrada y puerta maestra OEP (2026-10-09)
 
-**Versión del objeto:** v1.1.1 — UI de Cora para Bóveda Cifrada de GitHub y Bootstrap Sin Reingreso de PAT.
+**Versión del objeto:** v1.1.2 — Compatibilidad de Credenciales GitHub y Verificación E2E OEP Pendiente.
 **Tipo de trabajo de este ciclo:** inspección documental y de código fuente en GitHub; no se usaron RDC, Vercel ni un runtime local. No se cambió el despliegue ni se afirma que exista una implementación operativa del nuevo acceso.
 **SI transversal:** v1.6.21 — Ordenamiento por Preponderancia y Categorías; referencia de lectura: ccb0258f5571b9f8a5533a2a17a32c3ce554c294.
 
@@ -983,7 +983,7 @@ Hasta que el usuario revise la interfaz local, **no continuar con las demás lí
 - **Antes:** el panel EP de KHORA exigía sesión OIDC/Google para emitir la sesión y leer el catálogo. El comando PowerShell generado usaba un token KHORA temporal para descargar el gate, pero después pedía un PAT de GitHub por portapapeles si GitHub CLI no estaba autenticado. El token de KHORA y el PAT son credenciales distintas. OEP ya nombraba la contraseña maestra como intención, pero no tenía criterios completos de aceptación ni una bóveda de PAT administrable desde la UI.
 - **Cambio:** en la rama `feat/ep-github-token-vault-ui` se implementa una UI de Cora para cargar, validar, rotar y borrar un PAT; cifrado server-side AES-256-GCM; entrega del secreto solo a una sesión EP con scope `ep:github:token`; catálogo de workspace conectado a la bóveda; puerta de contraseña maestra limitada a EP; y sustitución del prompt del portapapeles por recuperación HTTPS mediante el `apiBase` ya configurado. Se actualizó el PowerShell embebido para que coincida con `scripts/khora/khora.ps1`, se añadieron migración y pruebas estáticas. No se crea una GitHub App ni se cambia el path canónico existente.
 - **Motivo:** atender la aclaración del usuario: la ruta ya existe; la carencia era una interfaz segura para introducir el PAT, cifrarlo y hacerlo disponible al PowerShell servido por Cora, sin reingresarlo al arrancar en Cybernet.
-- **Resultado:** la propuesta está en PR #292, rama `feat/ep-github-token-vault-ui`, con cabecera actual observada `f2fbce980d051305ff42e91d3dcfe062cf788b35`; todavía no está integrada ni desplegada. GitHub registra fallos en los cuatro workflows principales de esta cabecera; no se pudieron recuperar los logs de los jobs. No hay prueba real en Windows PowerShell 5.1. No se cargó PAT/contraseña real, no se aplicó la migración y no se certifica operación end-to-end en producción.
+- **Resultado:** la propuesta está en PR #292, rama `feat/ep-github-token-vault-ui`, con cabecera actual observada `8f0b3f24e0a9c323f8ae9aec4f739caeadb5408e`; todavía no está integrada ni desplegada. Se reintentaron desde GitHub los workflows fallidos `CI`, `Khora Single Script Guard`, `khora-ok / gate` y `UI Quality`; todos volvieron a fallar y los logs de los jobs no existen en el almacenamiento consultado (404 `BlobNotFound`). No hay prueba real en Windows PowerShell 5.1. No se cargó PAT/contraseña real, no se aplicó la migración y no se certifica operación end-to-end en producción.
 
 ### 20.2 Evidencia inspeccionada
 
@@ -1023,7 +1023,7 @@ Este comando es la referencia aportada para Windows PowerShell 5.1; el bootstrap
 ### 20.6 Estado y reanudación
 
 - Este ciclo no ejecutó Vercel ni un runtime local y no usó RDC. No se integró la rama en `main` para evitar disparar el workflow existente de despliegue.
-- PR #292 permanece abierto y draft: https://github.com/SeryMente/khora/pull/292. Rama `feat/ep-github-token-vault-ui`; cabecera observada al cierre `f2fbce980d051305ff42e91d3dcfe062cf788b35`. La arquitectura de rama es v1.0.5 y este objeto es v1.1.1.
+- PR #292 permanece abierto y draft: https://github.com/SeryMente/khora/pull/292. Rama `feat/ep-github-token-vault-ui`; cabecera observada al cierre `8f0b3f24e0a9c323f8ae9aec4f739caeadb5408e`. La arquitectura de rama es v1.0.5, OEP es v0.1.7 y este objeto es v1.1.2.
 - La UI gestiona el PAT en un campo temporal del navegador; el servidor valida el acceso requerido, persiste solo ciphertext AES-256-GCM, y no lo devuelve por el endpoint de administración. El endpoint de entrega solo admite un JWT EP válido con scope `ep:github:token` y usa no-store. El catálogo consulta primero la bóveda y usa `GITHUB_TOKEN` solo como compatibilidad. El launcher obtiene el token por el `apiBase` existente y ya no solicita pegarlo en el portapapeles.
 - La contraseña maestra OEP usa scrypt, salt aleatorio, pepper derivado por ámbito, comparación constante, límite de ocho intentos fallidos por origen hasheado cada 15 minutos y cookie firmada de 15 minutos limitada a EP. Alta/rotación requiere una sesión OIDC autorizada; el uso diario del submódulo EP puede entrar por contraseña maestra sin convertirla en autenticación general de KHORA.
 - `ep-integrity-manifest.sha256` conserva 606 entradas. Se refrescaron los hashes conocidos de los archivos de este ciclo; las entradas no relacionadas no fueron recalculadas en bloque, por lo que no se declara una verificación integral del manifiesto completo.
@@ -1035,3 +1035,10 @@ Este comando es la referencia aportada para Windows PowerShell 5.1; el bootstrap
 ### 20.7 Aclaración del usuario verbatim
 
 > Ok, estaba revisando los comentarios de tu razonamiento y me di cuenta que estabas trabajando para resolver la necesidad de un path. Ese path yo ya lo tengo configurado y de hecho lo único que te estoy pidiendo es que me des interfaz en la UI de Cora para poder cargar el token de manera segura, conforme es un secreto, guardarlo, encriptarlo y hacerlo disponible para que se utilice mediante el comando de PowerShell que Cora va a servir. Esto debería de zanjar cualquier duda que tengas al respecto o me equivoco?
+
+### 20.8 Ciclo operativo 006 — Compatibilidad de tokens GitHub y reintento de CI
+
+- **Antes →** el cambio inicial aceptaba PAT clásicos y granulares, pero excluía el prefijo OAuth `gho_` aunque el bootstrap anterior ya lo admitía. La cabecera `009fc2d5952285193e45732b52de92f95d545e55` seguía marcada con fallos de workflows y el conector no permitía leer sus logs.
+- **Cambio →** se restauró `gho_` en la validación del token en servidor y PowerShell; se actualizó la UI, la redacción de secretos, la prueba de contrato y la arquitectura para documentar `ghp_`, `github_pat_` y `gho_`. Se regeneró el PowerShell embebido desde el fuente y se verificó igualdad tras normalizar finales de línea. Se actualizó OEP a `v0.1.7` y su hash dentro del manifiesto de 606 entradas.
+- **Motivo →** preservar compatibilidad del flujo ya configurado y evitar que la nueva bóveda obligue a cambiar la credencial que ya funciona con el launcher.
+- **Resultado →** cabecera de PR observada `8f0b3f24e0a9c323f8ae9aec4f739caeadb5408e`. Se reintentaron en GitHub los cuatro workflows y todos volvieron a fallar: CI (#2525), UI Quality (#306), Khora Single Script Guard (#118) y khora-ok / gate (#572). Los siete jobs fallidos devolvieron 404 `BlobNotFound` al recuperar los logs, por lo que la causa exacta no está demostrada. El manifiesto se actualizó para los archivos tocados; los demás hashes preexistentes no se recalcularon integralmente. No se desplegó, no se integró `main`, no se cargaron secretos reales y no se probó PowerShell 5.1. `OEP-PENDING-001` permanece abierto.
