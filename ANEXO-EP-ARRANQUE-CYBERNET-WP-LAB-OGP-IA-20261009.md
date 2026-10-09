@@ -763,3 +763,149 @@ Los SHA anteriores identifican los blobs revisados en el commit citado, no neces
 6. Reutilizar el mecanismo real de identidad y persistencia; no escribir memoria terminal duradera solamente en el Escritorio volátil.
 7. Tras cada ajuste: lint/parse estático compatible con PowerShell 5.1, revisión de diff, pruebas unitarias/simuladas de datos faltantes y fallos, validación de no reinicio/Chrome, PR, merge y read-back. Pruebas físicas se ejecutan solo cuando haya una sesión RDC nueva disponible y sin reiniciar Cybernet.
 
+
+
+---
+
+## 16. Fase fundacional EP-Cybernet: alcance cerrado, criterios de aceptación y ciclos de mejora
+
+**Objetivo inmediato:** que una llegada a Cybernet/Luis Pasteur produzca una sesión de trabajo utilizable y repetible con el mínimo de fricción, y que los fallos queden registrados para corregirlos en uno o dos ciclos. No se habilitarán todavía WP-LAB, migración física completa ni modelos grandes de IA hasta que esta fase supere sus gates.
+
+### 16.1 Alcance cerrado
+
+La ubicación objetivo declarada por el usuario para esta etapa es Cybernet, cibercafé de la calle Luis Pasteur. Esto no certifica técnicamente la ubicación ni habilita inferencia GPU OGP. Cada terminal física es individual, identificada como CIBERCAFE/PC-N y separada de la sesión RDC.
+
+Capacidades fundacionales requeridas:
+
+1. **Reinstanciación fluida de EP básico:** contexto vigente, identidad de terminal, log de ejecución, herramientas esenciales y workspace de sesión.
+2. **RDC nuevo por sesión:** cliente Desktop Commander Remote en primer plano, handshake y autorización realmente completados, nombre e ID del dispositivo extraídos de la sesión actual, estado Online verificado y ficha de sesión copiada al portapapeles.
+3. **OBS Virtual Camera:** OBS presente; componente virtual instalado/registrado sin reinicio; proceso iniciado; log reciente confirma su salida; dispositivo presente en Windows y escena con una fuente válida.
+4. **Detección por Chrome:** Chrome enumera OBS Virtual Camera como dispositivo disponible. Es una prueba independiente del registro PnP y del arranque de OBS.
+5. **Workspace actualizado:** raíz Desktop/Entorno Persistente creada para la sesión activa; cinco repositorios correctos disponibles (metodologia, otro-gran-programa, gestor-de-procesos, signal-interpreter-source, khora); exportación consumible de GDP y Signal Interpreter con sus manifiestos en la raíz esperada, derivada de los commits actuales de main.
+6. **Notepad++:** instalar o reutilizar versión oficial válida, comprobar ejecutable y configurarlo como predeterminado para .txt y los formatos acordados de texto/código; verificar que Windows resuelve la asociación al ejecutable correcto.
+7. **Registro de eventos:** bitácora por ejecución con resultado por etapa, códigos de error, duración, versiones/SHAs y evidencia posterior. Distinguir el log local volátil del checkpoint remoto duradero.
+
+Fuera del alcance de esta fase: WordPress/Divi, VHDX/BitLocker/Deadman completo, ComfyUI/Nunchaku y pesos IA OGP. Estas capas no deben retrasar el arranque básico.
+
+### 16.2 Orden de ejecución
+
+| Orden | Etapa | Gate de salida obligatorio |
+|---|---|---|
+| F0 | Contexto canónico y sesión | H1 → SI@H1 → H2 verificados; RunId; fecha/hora con zona; terminal y sesión como entidades separadas. |
+| F1 | Workspace y repositorios | Herramientas/autenticación verificadas; acceso a todos los repos; árbol existente protegido si está sucio; origin/rama correctos; SHA post-sync registrado; manifiestos JSON parseados y exportación Signal con hashes. |
+| F2 | Notepad++ | Fuente de instalación acordada y ejecutable/versiones comprobados; asociaciones predeterminadas verificadas por extensión. Si la política de Windows compartido bloquea la asociación, usar BLOCKED_DEFAULT_APP, nunca éxito supuesto. |
+| F3 | OBS/Virtual Camera en Windows | Módulo y registro correctos; permisos resueltos; log reciente de arranque; dispositivo PnP presente/activo; cero reinicios. Si faltan privilegios, BLOCKED_ADMIN sin reintentos destructivos. |
+| F4 | Prueba de cámara en Chrome | Chrome enumera OBS Virtual Camera y una prueba autorizada confirma que puede abrir el dispositivo con permisos normales. No editar directamente perfiles, claves de UserChoice, políticas ni listas de URLs permitidas. Si el navegador necesita actualizar su lista de dispositivos, cualquier acción debe ser explícita, reversible y no arriesgar formularios abiertos. |
+| F5 | RDC | Iniciar el cliente; observar handshake y estado Online; extraer campos de la conexión en vivo; copiar ficha sin secretos. Si el proveedor requiere autorización humana, esperar ese paso y comprobar coincidencia; no reutilizar códigos ni IDs de otra sesión. |
+| F6 | Cierre de preparación | Log final PASS/BLOCKED/FAIL/NOT_VERIFIED por etapa, resumen copiable y estado del checkpoint. RDC permanece en la consola principal; el observador, si se usa, en una consola hija. |
+
+Un error debe producir una causa concreta y permitir corregir la etapa fallida sin reinstalar componentes íntegros. El presupuesto de reinicio continúa en cero.
+
+### 16.3 Gate de cámara: detección no equivale a simular presencia
+
+OBS Virtual Camera se admite para usos autorizados de producción audiovisual, presentación y pruebas técnicas. La meta verificable es que Windows y Chrome enumeren un dispositivo funcional con una fuente de vídeo legítima. No utilizarla para suplantar a una persona, fingir presencia o eludir controles de identidad/presencia de una plataforma de interpretación. Si la plataforma exige captura directa, liveness o un dispositivo específico, respetar sus controles.
+
+Implementar el gate de navegador mediante comprobación no invasiva y reproducible de enumerateDevices/acceso normal a cámara, o inspección explícita en los ajustes de cámara de Chrome. No alterar Preferences, Local State, VideoCaptureAllowedUrls ni políticas del navegador para forzar el resultado. No declarar PASS solo porque pnputil /scan-devices, un CLSID, un log histórico o un proceso OBS aparezcan correctos.
+
+Fuentes upstream para el siguiente ciclo de código:
+- Guía oficial de OBS Virtual Camera: https://obsproject.com/kb/virtual-camera-guide
+- Solución oficial de problemas de OBS Virtual Camera para Windows: https://obsproject.com/kb/virtual-camera-troubleshooting
+- Manual de Notepad++ — asociaciones de archivos: https://github.com/notepad-plus-plus/npp-usermanual/blob/master/content/docs/preferences.md
+- Manual de Notepad++ — instalador y argumentos de línea de comandos: https://github.com/notepad-plus-plus/npp-usermanual/blob/master/content/docs/command-prompt.md
+- Microsoft — asociaciones y aplicaciones predeterminadas en Windows: https://learn.microsoft.com/en-us/windows/win32/shell/default-programs
+
+Las fuentes de upstream describen capacidades generales; no demuestran el estado de una terminal concreta.
+
+### 16.4 Contrato de Notepad++
+
+La aplicación predeterminada no se considera configurada porque exista notepad++.exe. La prueba debe resolver asociaciones de Windows para .txt y las extensiones objetivo acordadas (como .log, .md, .json, .ps1 y formatos fuente del workspace), y demostrar que el destino es la versión de Notepad++ instalada.
+
+No modificar a ciegas HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\UserChoice ni inventar su hash. Preferir el registro de la aplicación y los mecanismos soportados por Windows/Notepad++; si el sistema exige confirmación interactiva, informar qué elección falta. Comprobar asociaciones al iniciar cada sesión por la volatilidad de Cybernet; reutilizar la instalación si sobrevive y reinstalar solo si falta.
+
+### 16.5 Workspace y pruebas estructurales
+
+Para cada repo: comprobar .git, origin exacto, rama main, árbol limpio antes de actualizar, pull --ff-only y SHA resultante. No hacer reset forzado ni borrar contenido local desconocido.
+
+Comprobar:
+- gestor-de-procesos/manifest.json existe, parsea como JSON y tiene identificadores/versión válidos.
+- signal-interpreter-source/extension/manifest.json existe y parsea; la exportación signal-interpreter/manifest.json coincide semánticamente con el origen y su marcador conserva commit fuente y hashes del árbol.
+- Los otros repos corresponden a SeryMente/metodologia, SeryMente/otrogranprograma y SeryMente/khora. KHORA no es Cora.
+- Todo se materializa bajo una sola raíz de trabajo de la sesión actual, clasificada como volátil; no registrar esa ruta como almacén persistente.
+
+### 16.6 Contrato de la ficha RDC
+
+Tras verificar el handshake, copiar una ficha con campos tales como TERMINAL_ID, TERMINAL_ID_SOURCE, RDC_DEVICE_NAME, RDC_DEVICE_ID, RDC_STATUS, RDC_VERIFIED_AT, SESSION_RUN_ID, BOOTSTRAP_COMMIT, BOOTSTRAP_SHA256, CAMERA_OS_STATUS, CAMERA_CHROME_STATUS, NOTEPADPP_VERSION, REPOS_HEADS y LOG_PATH.
+
+Cada valor debe tener evidencia; si falta, informar NOT_VERIFIED. No obtenerlo de memoria conversacional. No incluir contraseña, PAT, código temporal de autorización, cookie ni otra credencial. La ficha es contexto operativo de la sesión, no memoria persistente. Redactar secretos antes de escribir logs.
+
+### 16.7 Observabilidad para corregir en uno o dos ciclos
+
+Cada etapa debe emitir eventos estructurados, preferiblemente JSON Lines, con timestamp, run_id, terminal_id, stage, status, duration_ms, exit_code, evidence_ref, versiones/SHAs, error_code, resumen técnico y siguiente acción sugerida.
+
+Estados normalizados: PASS, BLOCKED, FAIL, NOT_VERIFIED, SKIPPED. El resultado global no puede ser PASS si algún gate obligatorio está bloqueado, falló o no fue verificado. Mostrar primero los bloqueos y luego los éxitos. El ciclo de corrección siguiente debe enfocarse en el gate fallido y sus regresiones; no repetir toda la instalación.
+
+Deep Freeze puede borrar el log local. Hasta probar destino privado duradero mediante put → read-back → SHA-256, usar REMOTE_CHECKPOINT=NOT_VERIFIED. Solo sincronizar a Metodología pública resúmenes saneados y no personales; logs con IDs RDC o datos personales requieren almacenamiento privado aprobado.
+
+### 16.8 Criterio de conclusión fundacional
+
+La fase se aprueba después de dos instanciaciones consecutivas controladas, sin reiniciar el equipo, que demuestren:
+1. Bootstrap básico fluido e idempotente.
+2. Todos los repositorios correctos y actualizados y manifiestos válidos.
+3. Notepad++ como aplicación predeterminada comprobada para extensiones objetivo.
+4. OBS Virtual Camera activa y detectada por Windows.
+5. Chrome enumera la cámara en una prueba real con permisos normales.
+6. RDC Online con identidad de la sesión actual y ficha correcta al portapapeles.
+7. Log completo, estados explícitos y ausencia de secretos.
+8. La segunda ejecución no destruye cambios del usuario ni reinstala artefactos íntegros.
+9. PRESUPUESTO-REINICIO=0.
+
+Después de esos dos éxitos, congelar la capa fundacional como base estable antes de ampliar EP. No iniciar WordPress/Divi o pesos de modelos hasta pasar el gate. La certificación de ubicación/terminal y el almacenamiento remoto duradero continúan como estados separados hasta obtener evidencia.
+
+
+
+---
+
+## 17. Auditoría de integridad del estado real de código (H1/H2 2026-10-09)
+
+**H1 = H2 = d0d116e298b5bd3f6e1e69950fbbf9389b4edd48.** SI leído exactamente desde H1: versión v1.6.21, blob SHA 89ebe84df49300662f996b85130cbcb893b568e0. Esta auditoría sustituye cualquier lectura anterior de blobs de scripts cuando no coincida con la tabla actual.
+
+| Artefacto en main | Blob SHA actual | Evidencia estática | Estado frente a la Fase Fundacional |
+|---|---|---|---|
+| scripts/bootstrap-cibercafe-cli.ps1 | bad15eddd4feca2d0c576ee6390863c94618faa4 | Tiene preparación de Git/Node, sincronización de Metodología, parámetro StartOBSVirtualCamera y lanzamiento RDC en primer plano. | No clona todos los repositorios. No instala Notepad++. No extrae identidad RDC ni copia ficha RDC al portapapeles. La cámara queda confirmada por log OBS, no por Chrome. |
+| scripts/bootstrap-entorno-persistente.ps1 | f595ca78cc08cff649b4b9f422a6704747b89cb8 | Sincroniza los cinco repositorios listados; exporta la extensión Signal Interpreter; crea log de bootstrap, eventos y observador; separa la identidad CIBERCAFE/PC-N. La comprobación actual de OBS registra que la salida empezó y ejecuta un rescan PnP. | No instala/configura Notepad++; no verifica la enumeración real de Chrome; no extrae el RDC-DEVICE-ID de la sesión ni crea ficha RDC. Usa Set-Clipboard únicamente para borrar un PAT de GitHub del portapapeles cuando detecta que sigue allí: esto no satisface el requisito de ficha RDC. No contiene el agente Performance-Liberator; solo consulta estado de una tarea y lee marcas del log. |
+| scripts/obs-chrome-camera-fix.ps1 | 5b8ba374bd0a0c8b7fc49e4e8c40daee5d7b1448 | Inicia OBS y consulta su log; abre/gestiona Chrome y modifica preferencias o políticas en el flujo histórico. | No integrarlo en el bootstrap fundacional tal como está. Requiere rediseño si se va a conservar: no editar perfiles/políticas, no cerrar a la fuerza el navegador, y demostrar enumeración de cámara por un test consentido. |
+| ANEXO-PROCEDIMIENTO-ARRANQUE-CLI-WINDOWS-Y-CLONADO-REPOSITORIOS.md | 1b2b9c889ef9bdf32f73cfdbcd782c7e98dcf185 | Procedimiento de apoyo para arranque, debe compararse con ambos scripts. | Mantenerlo alineado con el punto de entrada que se elija; evitar que describa como una sola capacidad lo que hoy está repartido entre dos scripts. |
+
+### 17.1 Riesgo adicional de versionado de bootstrap
+
+El script bootstrap-entorno-persistente.ps1 descarga bootstrap-cibercafe-cli.ps1 desde el commit histórico 14756d289f1ddc4c74c6736f5aa021121158541c y valida un hash hard-coded. Ese anclaje hace la base reproducible, pero también la mantiene congelada deliberadamente en una versión antigua mientras el archivo actual en main puede cambiar. El próximo cambio debe resolver explícitamente la estrategia de releases: pin de una versión coordinada/documentada o pin actualizado desde el proceso de publicación. No permitir que el orquestador se presente como actualizado mientras ejecuta silenciosamente una base antigua. No sustituirlo por latest sin hash.
+
+### 17.2 Repositorios y manifiestos
+
+La inspección del árbol actual de SeryMente/GDP encontró manifest.json en la raíz del repositorio. La inspección de SeryMente/signal-interpreter encontró extension/manifest.json, coherente con exportar la carpeta extension a la raíz de la extensión consumible. El bootstrap actual solo comprueba existencia de manifest.json en GDP; la siguiente implementación debe parsear JSON y validar campos obligatorios/versiones, además de verificar HEAD y árbol exportado. La lista real de repositorios y sus ramas debe verificarse de nuevo antes de la descarga, porque main puede avanzar después de esta auditoría.
+
+### 17.3 Notepad++: bloqueo de implementación actual
+
+No se encontró en ninguno de los dos bootstraps una instalación o configuración de Notepad++. El cambio debe instalarlo solo cuando falte, registrar versión/ruta y comprobar asociación predeterminada para cada extensión acordada. La función oficial de asociaciones de Notepad++ existe, pero en un Windows compartido la configuración puede requerir elevación o confirmación del usuario; no escribir a ciegas UserChoice ni declarar predeterminado sin una consulta posterior. En sesión Cybernet, tratar el resultado como volátil y revalidarlo en cada arranque.
+
+### 17.4 Cámara y RDC: no confundir fases
+
+El flujo actual de OBS puede confirmar un evento reciente en el log y un rescan PnP; no comprueba que Chrome exponga el dispositivo a una sesión real ni que un permiso normal permita abrirlo. El próximo gate requiere prueba a nivel de Chrome. Mantener fuera del bootstrap el helper actual que altera perfiles/políticas y desarrollar una comprobación no invasiva separada, respetando permisos y controles de la aplicación objetivo.
+
+En cuanto a RDC, ambos scripts ejecutan el cliente en primer plano, pero el análisis estático no encontró una extracción fiable de los campos finales del handshake ni el copy de la ficha RDC. La siguiente versión debe parsear datos de esta ejecución en vivo y fallar explícitamente ante formato cambiado, IDs ausentes o estado no Online. El copy al portapapeles se hace solo después del gate; nunca guardar códigos temporales o credenciales.
+
+### 17.5 Resultado del ciclo
+
+- **Verificado:** SI fresco; hashes/blobs actuales leídos; estructura de archivos y presencia de funcionalidades comprobada estáticamente.
+- **Bloqueado/no verificado:** ejecución real de los scripts en la terminal; cámara detectada por Chrome; asociación de Notepad++; nueva ficha RDC; salida del agente de rendimiento; almacenamiento duradero.
+- **Sin cambios locales o de hardware:** el trabajo en este ciclo es documental y en GitHub. No se hicieron instalaciones, no se editó Chrome, no se manipuló el ZIP de Divi ni se reinició ningún equipo.
+
+
+
+---
+
+## 18. Entrada del usuario verbatim: alcance fundacional actual
+
+> Enduredelo un turno, verifica su integridad, y Todo, mira, llevo un tiempo tratando de tener este entorno persistente y no lo he podido lograr, y es algo básico. Entonces sí necesito poderlo perfeccionar. Así que en este nuevo esfuerzo vamos a tratar de irlo haciendo por secciones. Identifica dentro de tu estrategia general para entorno persistente cuáles son los elementos fundacionales. De momento nada más voy a estar trabajando cibercafé, cibernet, Luis Pasteur. ya sabes cuáles son las características de la ubicación. y este, debo de poder llegar y reiniciar la sesión persistente sin fallos y de manera fluida. Debo de poder levantar la sesión RDC en cada sesión para esta ubicación. Debo de poder instalar OBS cámara virtual, debe de quedar la cámara virtual ya detectada por Chrome, debe de descargar la carpeta de trabajo a escritorio con todos los repositorios y las extensiones para gestor de procesos y Signal Interpreter en su versión más actualizada. Debe de descargar Notepad++ y hacerlo el programa predeterminado. Esos son los elementos fundacionales para esta ubicación, ayúdame a tenerlos para que funcionen de manera fluida. El registro de eventos es importante para que podamos perfeccionarlo porque sí va a haber uno que otro error, pero al cabo de un par de ciclos de desarrollo ya debería de quedar esta parte antes de pasar a otros elementos del entorno de persistencia.
+
+Esta entrada fija el alcance de prioridad de la Fase Fundacional y complementa los requisitos verbatim anteriores. Las decisiones de seguridad, privacidad, ausencia de reinicios, persistencia no certificada y gates de aceptación se formalizan en las secciones 16 y 17 sin reinterpretar el texto anterior.
