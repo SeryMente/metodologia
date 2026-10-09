@@ -117,4 +117,6 @@ El registro transversal de continuidad, decisiones, estados físicos, manifiesto
 
 Para el contrato completo del arranque en terminales efímeras de Cybernet, RDC, identidad por terminal, ficha de sesión al portapapeles, OBS, observador/telemetría, orden de instanciación por coste, WordPress/Divi y capacidad de IA visual local OGP, leer también [ANEXO-EP-ARRANQUE-CYBERNET-WP-LAB-OGP-IA-20261009.md](ANEXO-EP-ARRANQUE-CYBERNET-WP-LAB-OGP-IA-20261009.md). Este anexo contiene una sección de especificaciones del usuario verbatim y distingue premisas declaradas de pruebas técnicas.
 
+**Foco de trabajo actual:** completar exclusivamente la Fase Fundacional EP-Cybernet antes de WP-LAB o modelos IA: workspace y extensiones actualizados, Notepad++ predeterminado y comprobado, OBS Virtual Camera confirmada en Windows y enumerada realmente por Chrome, RDC fresco con ficha de sesión verificada al portapapeles y logging saneado. El criterio de salida exige dos instanciaciones consecutivas controladas sin reinicio; ver sección 16 del anexo canónico.
+
 El anexo distingue evidencia actual de documentación histórica. La presencia de una carpeta no acredita una junction cifrada; el repositorio público conserva documentos y hashes no sensibles, nunca secretos, bases de datos, snapshots completos ni el ZIP propietario de Divi.
