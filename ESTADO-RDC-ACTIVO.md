@@ -1,7 +1,7 @@
 # Registro Operativo Global — Identidades RDC
 
 **Naturaleza:** registro operativo mutable; no es una fuente de verdad de conectividad actual ni selecciona una terminal global para todas las conversaciones.
-**Ultima actualizacion registrada:** 2026-10-09T00:30:31.732Z
+**Ultima actualizacion registrada:** 2026-10-09T01:10:54.905Z
 **Funcion transversal:** conservar identidades RDC conocidas, ciclos de vida y observaciones verificadas para continuidad entre conversaciones.
 
 ## Modelo de estado
@@ -19,39 +19,39 @@
 
 ## Observacion viva mas reciente
 
-**Momento:** 2026-10-09T00:30:31.732Z  
+**Momento:** 2026-10-09T01:10:54.905Z  
 **Tipo:** HANDSHAKE FRESCO + PING VERIFICADO  
-**Cuenta RDC:** blacksheepsup@gmail.com  
+**Cuenta RDC:** blacksheepsheepsup@gmail.com  
 **Dispositivo:** PC-4  
 **RDC-DEVICE-ID:** ad151d48-3bd6-44a8-9b61-b0d0291643eb  
 **RDC-CONECTIVIDAD:** VERIFICADO-ACTIVO  
-**RDC-ORIGEN:** handshake reportado por el usuario + proveedor RDC en vivo  
-**Nota:** identidad nueva registrada de forma independiente. No sustituye identidades anteriores aunque compartan etiquetas visibles como PC-4 o PC-7.
+**RDC-ORIGEN:** proveedor RDC en vivo + ping satisfactorio  
+**Nota:** identidad RDC independiente; no sustituye identidades previas con nombres visibles similares.
 
 
 ## Descubrimiento vivo por cuenta · instantánea del ciclo
 
-### Cuenta: blacksheepsup@gmail.com
+### Cuenta: blacksheepsheepsup@gmail.com
 
 | Dispositivo | RDC-DEVICE-ID | Estado observado | Ultimo visto reportado |
 |---|---|---|---|
-| PC-4 | ad151d48-3bd6-44a8-9b61-b0d0291643eb | ONLINE | ping confirmado 2026-10-09T00:30:31.732Z |
+| PC-4 | ad151d48-3bd6-44a8-9b61-b0d0291643eb | ONLINE | proveedor reportó 3m al momento de descubrimiento; ping 2026-10-09T01:10:54.905Z |
 
-**Nota:** en esta consulta, el proveedor devolvió esta identidad como ONLINE. Las identidades históricas no devueltas no se eliminan ni se les asigna un cambio de estado por inferencia.
+**Nota:** el proveedor devolvió esta identidad como ONLINE. Una identidad no devuelta en una lista posterior no se elimina ni se declara finalizada solo por inferencia.
 
-**Uso mensual observado de esta cuenta:** 77% usado / 23% restante.  
-**Fuente:** último dato previamente verificado de who_am_i; no se refrescó en esta consulta.
+**Uso mensual observado de esta cuenta:** 86% usado / 14% restante.  
+**Fuente:** who_am_i del proveedor RDC durante el mismo ciclo; no implica fecha de reinicio del contador.
 
 ### Cuenta: elathanor111@gmail.com
 
 | Dispositivo | RDC-DEVICE-ID | Estado observado | Ultimo visto reportado |
 |---|---|---|---|
-| PC10RCIF4EI4 | e2673ecd-dc26-45ac-8e53-f8475ae01d58 | OFFLINE | 25h |
-| PC10RCIF4EI4 | f1690b1c-5833-4203-a361-1b35dc64f4d6 | OFFLINE | 33h |
+| PC10RCIF4EI4 | e2673ecd-dc26-45ac-8e53-f8475ae01d58 | OFFLINE | 26h |
+| PC10RCIF4EI4 | f1690b1c-5833-4203-a361-1b35dc64f4d6 | OFFLINE | 34h |
 | PC10RCIF4EI4 | a0e844b8-4876-44f3-bbfd-e476c9360c74 | OFFLINE | 50h |
 | PC10RCIF4EI4 | 3de5e950-8696-48a8-99d4-8dd23aa4b8d6 | OFFLINE | 55h |
-| PC10RCIF4EI4 | b6aca917-2346-41be-9e0d-928ed858990e | OFFLINE | 55h |
-| PC-7 | addd4ea6-c208-4a95-9baa-dd8d78983447 | OFFLINE | 71h |
+| PC10RCIF4EI4 | b6aca917-2346-41be-9e0d-928ed858990e | OFFLINE | 56h |
+| PC-7 | addd4ea6-c208-4a95-9baa-dd8d78983447 | OFFLINE | 72h |
 | PC-7 | 506f4dc3-01d2-48c3-bc86-c5879dacee50 | OFFLINE | 73h |
 
 
@@ -59,6 +59,7 @@
 
 | Identidad RDC | Estado persistente | Nota |
 |---|---|---|
+| blacksheepsheepsup@gmail.com + ad151d48-3bd6-44a8-9b61-b0d0291643eb | CONOCIDA · ONLINE EN ULTIMA OBSERVACION | PC-4; handshake fresco y ping 2026-10-09T01:10:54.905Z; identidad RDC nueva e independiente |
 | blacksheepsup@gmail.com + ad151d48-3bd6-44a8-9b61-b0d0291643eb | CONOCIDA · ONLINE EN ULTIMA OBSERVACION | PC-4; handshake fresco y ping verificado 2026-10-09T00:30:31.732Z; identidad RDC nueva e independiente |
 | blacksheepsup@gmail.com + e5a4159e-cb32-4ba6-89d6-3a2083a49893 | CONOCIDA · ONLINE EN ULTIMA OBSERVACION | PC-7; nueva conexion verificada y ping 2026-10-08T19:21:57.319Z |
 | blacksheepsup@gmail.com + 418659b7-64bc-4cb2-a2cb-ed8fd83c5005 | CONOCIDA · OFFLINE EN ULTIMA OBSERVACION | PC-7; identidad distinta |
