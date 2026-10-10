@@ -11,7 +11,7 @@
 
 **Regla:** esta línea solo puede emitirse después de `F:✓`. Una versión histórica, una versión obtenida del historial o una versión proveniente de un espejo contradictorio nunca puede aparecer aquí como `ACTIVO`.  
 > `METODOLOGÍA CARGADA` · **vX.Y.Z — NOMBRE DE VERSIÓN** · COMPLETA · ACTIVA · ÚLTIMO CAMBIO: hace N minutos|horas|días | YYYY-MM-DD  
-> `ChatGPT` · **CI:** ✓|?|! · **RA:** INICIAL|✓|CORRECTIVO|! · **UBIC:** … · **RDC:** … · **C:** … · **RDC-USO:** … usado / … restante · **S:** … · **F:** ✓|?|! · **K:** ✓|OFF|?|! · **T:** ✓|?|! · **RDC-CNX:** … · **USR:** `fila4`  
+> `ChatGPT` · **CI:** ✓|?|! · **RA:** INICIAL|✓|CORRECTIVO|! · **UBIC:** … · **RDC:** … · **C:** … · **RDC-USO:** … usado / … restante · **S:** … · **F:** ✓|?|! · **K:** ✓|OFF|?|! · **T:** ✓|?|! · **RDC-CNX:** … · **USR:** …  
 > **RESULTADO:** …  
 > **ESTADO:** **COMPLETADO** | **BLOQUEADO** | **PENDIENTE**
 
@@ -130,7 +130,7 @@ Cada registro de ciclo debe conservar el bloque de contexto definido por el anex
 
 `PLATAFORMA | UBICACION | RDC-REQUERIDA | RDC-TERMINAL | RDC-CUENTA | RDC-USO-MENSUAL | WIN-OPERATIVO | CONTEXTO-VERIFICACION`
 
-Cuando exista identidad administrativa relevante, se añade `WIN-ADMIN`. `RDC-TERMINAL` se refiere a la terminal seleccionada en el ciclo y se identifica por dispositivo; el device_id completo permanece en evidencia cuando sea necesario para auditoría. `CONTEXTO-VERIFICACION` registra el resultado del gate.
+Cuando exista identidad administrativa relevante, se añade `WIN-ADMIN`. `RDC-TERMINAL` se refiere a la terminal seleccionada en el ciclo y se identifica por dispositivo; el device_id completo permanece en evidencia cuando sea necesario para auditoría. `CONTEXTO-VERIFICACION` registra el resultado del gate. La identidad Windows observada no se infiere del árbol de trabajo: para CECEQ, este último es el árbol completo de fila4 y nunca el de MantenimientoRCI, conforme al anexo canónico.
 
 La ausencia de un dato se registra como `NO VERIFICADO`, `NO DISPONIBLE` o `PENDIENTE`. No se debe inferir información faltante.
 
