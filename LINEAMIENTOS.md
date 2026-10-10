@@ -118,7 +118,7 @@ El comportamiento deseado debe especificarse mediante el estado operativo que se
 La formulacion operativa debe privilegiar instrucciones positivas de comportamiento y evitar convertir la supresion de conductas en una carga adicional de control.
 \n\n## 13. Contexto de ejecución y salida por ciclo\n\nTodo ciclo sujeto a la metodologia debe incorporar el contexto operativo definido en `ANEXO-CONTEXTO-EJECUCION-Y-SALIDA-CICLO.md`. El bloque es obligatorio e incluye plataforma, ubicacion persistente, estado de sesion RDC, cuenta RDC, uso mensual disponible y usuario Windows operativo. Cuando exista una identidad administrativa relevante, debe mostrarse por separado. Los datos no verificables deben identificarse como tales; no deben completarse por inferencia.
 
-La ubicacion actual permanece vigente entre ciclos y conversaciones hasta una declaracion explicita de cambio. Para CECEQ, cuando se trabaje desde el perfil de MantenimientoRCI, el árbol completo de trabajo es C:\\Users\\fila4\\.... Nunca se debe escribir dentro de C:\\Users\\MantenimientoRCI\\.... Esta norma regula únicamente el destino de trabajo y no prescribe la identidad de ejecución.
+La ubicacion actual permanece vigente entre ciclos y conversaciones hasta una declaracion explicita de cambio. Para CECEQ, los datos de trabajo se guardan en el árbol completo de `C:\\Users\\fila4\\...` y nunca en el árbol de MantenimientoRCI. Para el arranque de Entorno Persistente, Khora conserva `central\\MantenimientoRCI` como identidad efectiva en todos los procesos y separa esa identidad del destino de datos; `fila4` no es una identidad asumida ni suplantada.
 
 
 ## 14. Persistencia de la sesion RDC activa
@@ -149,7 +149,7 @@ Una detección fallida, una fuente indisponible o una discrepancia no significan
 
 La sesión RDC global se propaga entre conversaciones mediante el estado operativo compartido. La ubicación activa y su perfil se consumen del mismo contexto global; una ubicación sin perfil suficiente no puede producir reglas operativas por inferencia.
 
-Para CECEQ, la regla específica consiste únicamente en usar el árbol completo de directorios de fila4 como árbol de trabajo y no escribir dentro del árbol de MantenimientoRCI. No determina la identidad bajo la que se ejecuta el proceso ni añade requisitos de sesión o elevación.
+Para CECEQ, la regla general de filesystem es usar el árbol completo de fila4 como destino de trabajo y no escribir en el árbol de MantenimientoRCI. Cuando Khora arranca Entorno Persistente, la regla específica exige además ejecutar y mantener todos los procesos bajo la identidad efectiva `central\\MantenimientoRCI`, sin suplantar `fila4`; los directorios de fila4 se usan solo como destinos. La redirección es local al entorno del proceso y toda ruta debe validarse antes de escribir.
 
 El detalle técnico del gate y de la restricción de materialización se encuentra en `ANEXO-GATE-CONTEXTO-OPERATIVO-FAIL-CLOSED.md`.
 
