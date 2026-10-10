@@ -1,6 +1,6 @@
 > **AVISO DE SUBORDINACIÓN DOCUMENTAL (2026-10-10):** este archivo extenso se conserva como registro histórico de especificaciones, prompts, hallazgos y evidencia del corte indicado. La fuente única canónica transversal vigente es [CANON-ENTORNO-PERSISTENTE-Y-LABORATORIOS.md](CANON-ENTORNO-PERSISTENTE-Y-LABORATORIOS.md). En caso de divergencia prevalece el canon; los estados fechados aquí no acreditan el estado actual. No borrar este registro hasta auditar y preservar toda evidencia única.
 
-# Especificación canónica EP: Cybernet, RDC, WP-LAB y OGP-Visual
+# Registro histórico de especificación EP: Cybernet, RDC, WP-LAB y OGP-Visual
 
 **Estado:** especificación consolidada; ejecución física y certificación pendientes de evidencia.
 **Versión del objeto:** v1.1.12
