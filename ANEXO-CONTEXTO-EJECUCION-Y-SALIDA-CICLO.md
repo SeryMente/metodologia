@@ -121,11 +121,12 @@ Si el modelo comunica una ausencia o pérdida de RDC, debe emitir inmediatamente
 
 ## 6. Flexibilidad de identidad y restricción de repositorios
 
-1. La identidad efectiva del canal RDC puede utilizarse para cualquier operación técnicamente válida.
-2. La identidad operativa de referencia del perfil se conserva como contexto; no constituye una obligación de cambio de usuario para cada operación.
-3. La diferencia con WIN-OPERATIVO se registra como contexto, pero no constituye por sí misma una condición de bloqueo.
-4. No se abren sesiones RDC paralelas para resolver la diferencia.
-5. La única restricción específica es no clonar ni materializar repositorios nuevos dentro del perfil o ruta de MantenimientoRCI.
+1. En CECEQ, toda operación se ejecuta desde la sesión elevada `central\\mantenimientorci`; no se cambia a la identidad `fila4`.
+2. `fila4` identifica el árbol de destino autorizado, no el principal obligatorio del proceso.
+3. Todo dato y artefacto de trabajo —repositorios, archivos, instalaciones, configuraciones, cachés y temporales— debe ubicarse dentro del árbol de directorios de `fila4`.
+4. No usar el árbol de directorios de MantenimientoRCI como workspace ni como destino de datos; la restricción es más amplia que la clonación de repositorios.
+5. No se abren sesiones RDC paralelas, no se usa impersonación ni tareas temporales para cambiar la identidad.
+6. Una denegación real de acceso se resuelve sobre la ruta autorizada y el error concreto; nunca se elude escribiendo en el árbol prohibido.
 
 ## 7. Formato obligatorio de salida por ciclo
 
