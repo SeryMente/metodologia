@@ -8,7 +8,6 @@ $script:LogPath=$null
 $script:RunMutex=$null
 $script:RunMutexOwned=$false
 $script:RunMutexAbandoned=$false
-$script:GhPath=$null
 $script:GitPath=$null
 $script:OriginalGhToken=[Environment]::GetEnvironmentVariable('GH_TOKEN','Process')
 $script:OriginalGitTerminalPrompt=[Environment]::GetEnvironmentVariable('GIT_TERMINAL_PROMPT','Process')
@@ -47,31 +46,22 @@ function Find-Winget {
     if (Test-Path -LiteralPath $p -PathType Leaf) { return $p }
     return $null
 }
-function Find-Gh {
-    Refresh-Path
-    $x=Get-Command gh.exe -ErrorAction SilentlyContinue
-    if (-not $x) { $x=Get-Command gh -ErrorAction SilentlyContinue }
-    if ($x -and $x.Source) { return $x.Source }
-    foreach ($p in @((Join-Path $env:ProgramFiles 'GitHub CLI\gh.exe'),(Join-Path $env:LOCALAPPDATA 'Programs\GitHub CLI\gh.exe'),(Join-Path $env:LOCALAPPDATA 'Microsoft\WinGet\Links\gh.exe'))) {
-        if ($p -and (Test-Path -LiteralPath $p -PathType Leaf)) { return $p }
+function Invoke-GitHubApi {
+    param([Parameter(Mandatory=$true)][string]$Path)
+    $secret=[Environment]::GetEnvironmentVariable('GH_TOKEN','Process')
+    if ([string]::IsNullOrWhiteSpace($secret)) { throw 'GITHUB_TOKEN_MISSING' }
+    $headers=@{
+        Authorization=('Bearer '+$secret)
+        Accept='application/vnd.github+json'
+        'X-GitHub-Api-Version'='2026-03-10'
+        'User-Agent'='EP-bootstrap'
     }
-    return $null
+    try { return Invoke-RestMethod -Method Get -Uri ('https://api.github.com'+$Path) -Headers $headers -TimeoutSec 30 -ErrorAction Stop }
+    finally { $headers=$null; $secret=$null }
 }
-function Ensure-Gh {
-    $gh=Find-Gh
-    if (-not $gh) {
-        $wg=Find-Winget
-        if (-not $wg) { throw 'GITHUB_CLI_MISSING_AND_WINGET_UNAVAILABLE' }
-        $r=Invoke-NativeCaptured -Executable $wg -Arguments @('install','--id','GitHub.cli','--exact','--source','winget','--scope','user','--accept-source-agreements','--accept-package-agreements','--silent') -Label 'INSTALL_GH'
-        if ($r.ExitCode -ne 0) { $r=Invoke-NativeCaptured -Executable $wg -Arguments @('install','--id','GitHub.cli','--exact','--source','winget','--scope','user','--accept-source-agreements','--package-agreements','--silent') -Label 'INSTALL_GH_DEFAULT' }
-        $end=(Get-Date).AddSeconds(60)
-        do { $gh=Find-Gh; if (-not $gh) { Start-Sleep -Milliseconds 500 } } while (-not $gh -and (Get-Date) -lt $end)
-        if (-not $gh) { throw "GITHUB_CLI_INSTALL_NOT_VERIFIED: exit=$($r.ExitCode)" }
-    }
-    $script:GhPath=$gh
-
+function Ensure-GitHubAccess {
     Write-Host ''
-    Write-Host 'A new GitHub token is required for this run; any stored gh session will not be reused.'
+    Write-Host 'A new GitHub token is required for this run; any stored credential is ignored.'
     Write-Host 'Copy a PAT authorized for ALL required repositories, including private GDP and KHORA.'
     Write-Host 'For a fine-grained PAT: select these repositories and grant Contents: Read-only plus Metadata: Read-only.'
     Write-Host 'Do not paste the token into this console. Copy it to the clipboard; it will be read silently and not logged.'
@@ -83,36 +73,29 @@ function Ensure-Gh {
         if ($token -notmatch '^(gh[pousr]_[A-Za-z0-9_]{20,}|github_pat_[A-Za-z0-9_]{20,})$') {
             throw 'CLIPBOARD_TOKEN_NOT_RECOGNIZED: copy a valid GitHub PAT (ghp_... or github_pat_...) and retry.'
         }
-
         $env:GH_TOKEN=$token
         $tokenKind=if ($token.StartsWith('github_pat_')) { 'FINE_GRAINED' } else { 'CLASSIC_OR_OTHER' }
         $env:GIT_TERMINAL_PROMPT='0'
 
-        # Validate the copied token via the REST API before configuring Git HTTPS.
-        $auth=Invoke-NativeCaptured -Executable $gh -Arguments @('api','user','--jq','.login') -Quiet
-        $account=($auth.Lines -join '').Trim()
-        if ($auth.ExitCode -ne 0 -or [string]::IsNullOrWhiteSpace($account)) {
-            throw 'GITHUB_TOKEN_REJECTED_BY_API: the copied token was not accepted by GitHub. Verify token validity, expiry, and organization policy.'
+        $auth=Invoke-GitHubApi -Path '/user'
+        $account=[string]$auth.login
+        if ([string]::IsNullOrWhiteSpace($account)) { throw 'GITHUB_TOKEN_REJECTED_BY_API: login missing.' }
+
+        $targets=@('SeryMente/metodologia','SeryMente/otrogranprograma','SeryMente/GDP','SeryMente/signal-interpreter','SeryMente/khora')
+        foreach ($repo in $targets) {
+            $probe=Invoke-GitHubApi -Path ('/repos/'+$repo+'/git/ref/heads/main')
+            if ([string]$probe.ref -ne 'refs/heads/main') {
+                throw "PAT_CONTENTS_READ_FAILED: $repo; expected refs/heads/main."
+            }
         }
 
-        # Git reads these process-only config pairs; no credential or token is written to disk.
-        # Use the documented http.extraHeader key, not a URL-subsection config key in the environment.
-        $basic=[Convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes(($account + ':' + $token)))
+        # Git transport uses only process-level configuration; no token is written to a config file.
+        $basic=[Convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes(($account+':'+$token)))
         $token=$null
-        # Windows PowerShell removes environment variables assigned an empty string.
-        # Use one non-empty Git config entry so GIT_CONFIG_COUNT always matches real variables.
         $env:GIT_CONFIG_COUNT='1'
         $env:GIT_CONFIG_KEY_0='http.extraHeader'
         $env:GIT_CONFIG_VALUE_0='AUTHORIZATION: basic '+$basic
         $basic=$null
-
-        $targets=@('SeryMente/metodologia','SeryMente/otrogranprograma','SeryMente/GDP','SeryMente/signal-interpreter','SeryMente/khora')
-        foreach ($repo in $targets) {
-            $probe=Invoke-NativeCaptured -Executable $gh -Arguments @('api',('repos/'+$repo+'/git/ref/heads/main'),'--jq','.ref') -Quiet
-            if ($probe.ExitCode -ne 0 -or (($probe.Lines -join '').Trim() -ne 'refs/heads/main')) {
-                throw "PAT_CONTENTS_READ_FAILED: $repo; token must include this repository and Contents: Read-only (plus Metadata: Read-only); organization approval may also be required."
-            }
-        }
         Write-Log ('GITHUB_TOKEN=VERIFIED | ACCOUNT='+$account+' | TYPE='+$tokenKind+' | API_CONTENTS_READ=VERIFIED_FOR_ALL_REPOSITORIES | GIT_AUTH=EPHEMERAL_HTTP_EXTRAHEADER')
     } finally {
         $token=$null
@@ -556,7 +539,7 @@ $events=Join-Path $WorkRoot ('EVENTOS-'+(Get-Date -Format 'yyyy-MM')+'.md')
 if (-not (Test-Path -LiteralPath $events)) { [System.IO.File]::WriteAllText($events,('# EP bootstrap events'+[Environment]::NewLine),(New-Object System.Text.UTF8Encoding($false))) }
 Add-Content -LiteralPath $events -Value ('- '+(Get-Date -Format 'yyyy-MM-dd HH:mm:ssK')+' | BOOTSTRAP_START | user='+$env:USERNAME+' | reboot_budget=0') -Encoding UTF8
 try {
-    Ensure-Gh
+    Ensure-GitHubAccess
     Ensure-HostToolchain
     Write-Log 'LEGACY_PREPARE_REMOVED=HOST_TOOLCHAIN_VERIFIED | No prior Desktop methodology checkout is inspected or modified.'
 
@@ -571,8 +554,9 @@ try {
         @{Name='khora';Repo='SeryMente/khora'}
     )
     foreach ($item in $repos) {
-        $probe=Invoke-NativeCaptured -Executable $script:GhPath -Arguments @('repo','view',$item.Repo,'--json','nameWithOwner,visibility') -Quiet
-        if ($probe.ExitCode -ne 0) { throw "REPOSITORY_METADATA_ACCESS_FAILED: $($item.Repo); verify token repository selection and organization approval." }
+        try { $probe=Invoke-GitHubApi -Path ('/repos/'+$item.Repo) }
+        catch { throw "REPOSITORY_METADATA_ACCESS_FAILED: $($item.Repo); verify token repository selection and organization approval." }
+        if ([string]$probe.full_name -ine [string]$item.Repo) { throw "REPOSITORY_METADATA_ACCESS_FAILED: unexpected repository identity for $($item.Repo)." }
         $url='https://github.com/'+$item.Repo+'.git'
         $transport=Invoke-NativeCaptured -Executable $script:GitPath -Arguments @('ls-remote','--exit-code',$url,'refs/heads/main') -Quiet
         if ($transport.ExitCode -ne 0 -or -not (($transport.Lines -join ' ') -match 'refs/heads/main')) {
