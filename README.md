@@ -2,6 +2,10 @@
 
 Repositorio transversal de la organización **Ser y Mente** para desarrollar, conservar y evolucionar la metodología común de trabajo aplicable a sus repositorios.
 
+## Canon transversal de Entorno Persistente
+
+**Fuente única:** [CANON-ENTORNO-PERSISTENTE-Y-LABORATORIOS.md](CANON-ENTORNO-PERSISTENTE-Y-LABORATORIOS.md). Este canon gobierna EP, continuidad por terminal, persistencia y recuperación, WordPress local/WP-LAB, laboratorio de contenido complementario para OGP y requisitos de acceso administrativo/secretos vinculados a Cora. Los anexos EP anteriores se conservan como antecedentes y evidencia histórica subordinada; no son autoridades paralelas.
+
 ## Estado actual
 
 La arquitectura canónica mantiene dos elementos principales: el **Sistema de Instrucciones basado en lista de principios en cascada**, que contiene los principios fundamentales ordenados por preponderancia, y la **Metodología con sus anexos**, que desarrolla procedimientos, contexto, mecanismos y soporte operativo.
@@ -17,6 +21,7 @@ Para cualquier conversación sujeta a esta metodología, el contexto operativo t
 1. [`SI-METACOGNITIVO.md`](SI-METACOGNITIVO.md) — norma canónica vigente.
 2. [`METODOLOGIA.md`](METODOLOGIA.md) — desarrollo metodológico vigente.
 3. [`BOOTSTRAP-CONTEXTO-GLOBAL.md`](BOOTSTRAP-CONTEXTO-GLOBAL.md) — continuidad entre conversaciones.
+4. `[CANON-ENTORNO-PERSISTENTE-Y-LABORATORIOS.md](CANON-ENTORNO-PERSISTENTE-Y-LABORATORIOS.md)` — canon transversal obligatorio cuando la tarea involucre EP, WP-LAB, OGP o los flujos de acceso/secretos asociados.
 4. [`ESTADO-RDC-ACTIVO.md`](ESTADO-RDC-ACTIVO.md) — identidad persistente de la sesión RDC y estado de conectividad.
 5. [`ANEXO-GATE-CONTEXTO-OPERATIVO-FAIL-CLOSED.md`](ANEXO-GATE-CONTEXTO-OPERATIVO-FAIL-CLOSED.md) — verificación y bloqueo.
 
