@@ -206,7 +206,7 @@ Para OFFICE-DEPOT y CIBERCAFE, mientras no exista perfil operativo suficiente, l
 - La sesión RDC utilizada para consumo y acceso remoto permanece bajo central\mantenimientorci.
 - No se inicia un segundo canal RDC bajo fila4.
 - central\mantenimientorci puede ejecutar cualquier trabajo técnicamente válido.
-- La única restricción específica es no clonar ni materializar repositorios nuevos dentro del perfil o ruta de MantenimientoRCI.
+- La restricción de destino es no crear archivos ni trabajar dentro del árbol de directorios de MantenimientoRCI. La sesión central\\mantenimientorci puede operar directamente sobre rutas autorizadas de fila4; no requiere cambio de usuario. No crear tareas temporales para forzar esa identidad.
 
 Cuando exista una divergencia de observabilidad RDC y el ciclo requiera conectividad en vivo, la recuperación mediante `RDC-REINSTANTIAR` es obligatoria antes de reanudar el trabajo dependiente del canal.
 
