@@ -195,9 +195,9 @@ Para OFFICE-DEPOT y CIBERCAFE, mientras no exista perfil operativo suficiente, l
 
 ## 8. Regla de destino de trabajo para CECEQ
 
-Cuando se trabaje en CECEQ desde el perfil de MantenimientoRCI, el árbol completo de trabajo es C:\\Users\\fila4\\.... Toda escritura propia de la tarea debe tener destino dentro del árbol de fila4. Nunca se debe escribir dentro de C:\\Users\\MantenimientoRCI\\....
+Para Entorno Persistente en CECEQ, la identidad efectiva de todos los procesos Khora debe seguir siendo `central\\MantenimientoRCI`. Se verifica mediante el token Windows real, incluidos procesos hijos y el gate elevado. `fila4` es únicamente el árbol de datos: `C:\\Users\\fila4\\...`, con el VHDX efímero alojado allí. Nunca se cambia ni suplanta la identidad efectiva por `fila4`.
 
-Esta regla regula únicamente el destino de trabajo. No impone una identidad de ejecución determinada ni agrega condiciones sobre elevación, sesión RDC, cambio de usuario, impersonación, tareas temporales o manejo especial de permisos.
+El lanzador resuelve de forma única el perfil real de fila4 antes de consumir el token o materializar el bootstrap; redirige las rutas de usuario en el entorno del proceso y restaura el entorno del shell llamador al terminar. Todo archivo de trabajo se dirige al árbol de fila4 o al VHDX. La configuración, el historial, los blobs DPAPI de usuario y las cachés del perfil MantenimientoRCI quedan fuera del destino. Los secretos temporales entre procesos se protegen con DPAPI de ámbito de equipo. Perfiles ambiguos, puntos de reanálisis o destinos externos generan un fallo cerrado antes de continuar.
 
 La recuperación y verificación general de RDC se rige por las secciones correspondientes y es independiente de esta regla de directorios.
 
