@@ -9,6 +9,8 @@
 
 Este anexo define el contexto operativo minimo que acompana cada ciclo y las reglas para identificar el entorno desde el que se ejecuta el trabajo.
 
+Cuando el ciclo incluya Entorno Persistente, persistencia/cifrado/recuperación, WordPress local/WP-LAB, el laboratorio OGP o flujos de acceso/secretos vinculados a Cora, el canon de dominio es [CANON-ENTORNO-PERSISTENTE-Y-LABORATORIOS.md](CANON-ENTORNO-PERSISTENTE-Y-LABORATORIOS.md). Este anexo aporta contexto e identidad por ciclo; no compite con ese canon ni lo reemplaza.
+
 Ubicacion, cuentas, dispositivos, usuarios concretos, porcentajes de uso y formatos son datos y mecanismos operativos; permanecen en este nivel y no se elevan a principio fundamental salvo que una revision posterior determine una necesidad normativa irreductible.
 
 ## 2. Identidad de ejecucion
