@@ -1,12 +1,12 @@
 # Especificación canónica EP: Cybernet, RDC, WP-LAB y OGP-Visual
 
 **Estado:** especificación consolidada; ejecución física y certificación pendientes de evidencia.
-**Versión del objeto:** v1.1.8
-**Nombre de versión:** Regla Operativa de Continuidad EP
+**Versión del objeto:** v1.1.9
+**Nombre de versión:** Diagnóstico Reproducible de CI y Corrección Publicada de KHORA
 **Corte:** 2026-10-09.
 **Fuente transversal:** SeryMente/metodologia.
 **SI vigente leído con H1 → SI@H1 → H2:** v1.6.21 — Ordenamiento por Preponderancia y Categorías.
-**Frescura comprobada en esta actualización:** H1 = H2 = ccb0258f5571b9f8a5533a2a17a32c3ce554c294; blob SI 89ebe84df49300662f996b85130cbcb893b568e0; versión/nombre comprobados contra el archivo completo fijado a ese commit.
+**Frescura comprobada antes de esta actualización:** H1 = H2 = 5b6814a6164d33344448889b0485e631686fef87; blob SI 89ebe84df49300662f996b85130cbcb893b568e0; versión/nombre verificados leyendo la cabecera actual de `SI-METACOGNITIVO.md` (`v1.6.21 — Ordenamiento por Preponderancia y Categorías`).
 **Objeto relacionado:** [consolidación EP-WP-LAB](ANEXO-ENTORNO-PERSISTENTE-HIBRIDO-EP-WP-LAB.md).
 
 ## 1. Propósito y autoridad
@@ -1405,71 +1405,79 @@ Esta regla complementa, no reemplaza, las obligaciones de documentación exhaust
 
 Se conserva la instrucción exactamente como fue recibida, incluidos errores tipográficos y puntuación; no se normaliza dentro de la cita.
 
-### 25.2 Estado vivo de KHORA/GitHub antes de actuar
+### 25.2 Estado vivo de KHORA/GitHub — corrección publicada y CI aún bloqueado
 
-- PR: [#292 — Add EP master-password gate and encrypted GitHub token UI](https://github.com/SeryMente/khora/pull/292), abierto y sin merge.
+- PR: [#292 — Add EP master-password gate and encrypted GitHub token UI](https://github.com/SeryMente/khora/pull/292), abierto, en borrador y sin merge.
 - Rama: `feat/ep-github-token-vault-ui`.
-- Head observado: `c9f21d14a05d9153bb65d25b6d1f50b552aa092c`. `git ls-remote` ejecutado desde PC-1 devolvió este mismo SHA para la rama privada.
-- Workflows consultados: `CI` run 2577 (`failure`), `UI Quality` run 332 (`failure`), `khora-ok / gate` run 598 (`failure`) y `Khora Single Script Guard` run 144 (`failure`).
-- Jobs consultados: CI `calidad` (114091182139), `api-tests` (114091182414), `khora-web-gate` (114091182503); UI Quality `UI E2E` (114091140103), `UI Contract` (114091140225); gate `khora-ok` (114091217112); guard `validate-khora-tree` (114091244233). Todos figuran `failure`.
-- Para tres jobs representativos consultados, los pasos devolvieron arreglos vacíos y los logs fallaron con HTTP 404 `BlobNotFound`. Se mantiene desconocida la causa de código subyacente; no se hicieron reintentos ciegos ni se atribuye un defecto concreto sin evidencia.
-- Checks externos Vercel/Netlify: todos los contexts consultados siguen en `failure`. No se invocó despliegue.
+- Head anterior reproducido en PC-1: `c9f21d14a05d9153bb65d25b6d1f50b552aa092c`.
+- Commit de corrección publicado: [`6738c1f1aeffe5835a725531e0774d4420af13c5`](https://github.com/SeryMente/khora/commit/6738c1f1aeffe5835a725531e0774d4420af13c5). La referencia Git de la rama y la API directa de la PR confirmaron ese head.
+- El commit actualiza 10 archivos: declara y restablece el estado `archivado`; tipa la comprobación del inventario; normaliza el buffer de firma Web Crypto para TypeScript; completa fixtures de UI Review; elimina la redeclaración `tokenRoute` en el test de seguridad; hace semántica la tarjeta seleccionable de Pipeline; sincroniza el esquema canónico con Metodología v1.7.7 e incorpora el campo `RA` al renderer, parser y tests.
+- La copia del esquema bajo `khora-web/contracts/FORMATO-REGISTRO-VERIFICACION-CICLO.schema.json` se comparó desde GitHub con el archivo canónico de Metodología: los contenidos coinciden, versión `v1.7.7`.
+- No se hizo merge ni despliegue. No se configuró una contraseña maestra real, no se cargó un PAT real y no se expusieron secretos.
 
-### 25.3 Prueba de viabilidad local — evidencia directa
+### 25.3 Reproducción local en PC-1 — evidencia directa y límites
 
-**Conectividad del dispositivo:** la lista de Desktop Commander mostró PC-1 `Online`; el ping devolvió `pong` a las `2026-10-10T01:10:31.913Z`. PC-7 aparece offline en ambos registros mostrados por el servicio.
+**Checkout y dependencias:**
+- RDC confirmó PC-1 en línea al inicio de la prueba; se creó un checkout temporal aislado: `C:\Users\PC 9\AppData\Local\Temp\khora-ci-20261009-191854-c2581ce7`.
+- Se verificó el head antes de instalar: `c9f21d14a05d9153bb65d25b6d1f50b552aa092c`, idéntico al head anterior de la PR.
+- `npm.cmd ci --no-audit --no-fund` terminó con código 0 e instaló 552 paquetes en el checkout temporal.
+- El host tenía Windows x64, Windows PowerShell 5.1.19041.6456, Git 2.55.0.windows.5, Node.js v24.20.0 y npm 11.19.0. `npm.cmd` funciona; el shim `npm.ps1` fue bloqueado por Execution Policy y esta política no se modificó.
+- GitHub CLI 2.102.0 no está autenticado; aun así, `git ls-remote` había demostrado lectura de la rama privada. No se presupone permiso de escritura local.
 
-**Entorno detectado en PC-1:**
-- Sistema: Windows x64, shell predeterminado `powershell.exe`.
-- Windows PowerShell: `5.1.19041.6456`.
-- Git: `2.55.0.windows.5`.
-- Node.js: `v24.20.0`.
-- npm: `11.19.0`, invocable mediante `npm.cmd`.
-- GitHub CLI: `2.102.0`.
-- Python no está disponible según la configuración declarada por Desktop Commander.
-- Intentar invocar el shim `npm` resolvió a `npm.ps1` y fue bloqueado por Execution Policy. No se modificó la política; `npm.cmd --version` sí devolvió `11.19.0`.
-- `gh auth status --hostname github.com` informó que GitHub CLI no está autenticado. `gh repo view` no pudo leer el repositorio y terminó con código 4.
-- No obstante, un comando de solo lectura `git ls-remote` contra `https://github.com/SeryMente/khora.git` tuvo exit code 0 y devolvió el head de `feat/ep-github-token-vault-ui`. Esto demuestra acceso Git de lectura desde esa máquina, sin que sea necesario inferir cómo están almacenadas las credenciales.
-- No se encontró un checkout en las tres rutas comprobadas: `%USERPROFILE%\Desktop\KHORA-EP\repo`, `%USERPROFILE%\Desktop\khora` y `%USERPROFILE%\source\repos\khora`. Este resultado no afirma que no exista en otra ruta.
-- Las comprobaciones fueron de lectura/diagnóstico: no se clonó ni modificó el repositorio, no se instalaron dependencias, no se ejecutaron tests del proyecto y no se alteraron las credenciales o políticas del sistema.
+**Gates ejecutados antes de aplicar el commit publicado:**
+- `npm run typecheck`: FALLÓ con errores de estado `archivado` inexistente, callback con `item` implícitamente any, tipo de buffer en Web Crypto, fixtures incompletas y redeclaración `tokenRoute`. Los archivos afectados forman parte del commit publicado.
+- `npm run ui:contract`: PASS; el contrato de navegación se informó íntegro.
+- `npm run ui-review:check`: FALLÓ porque `PipelineView.tsx` usaba `onClick` en un `div` no semántico. El commit publicado cambia la tarjeta a un `button` nativo y conserva contenido de modelo de frase, con `aria-pressed`.
+- `npm run test:unit`: FALLÓ; quedó demostrada la divergencia del contrato local v1.7.6 contra el contrato canónico v1.7.7. El renderer/parser tampoco representaba el nuevo campo `RA`; el commit publicado sincroniza esquema, implementación y regresión.
+- La prueba de tipo y las suites no se reejecutaron después de publicar, porque RDC pasó a estar fuera de línea. No se declara que los tests locales hayan pasado tras el parche.
 
-### 25.4 Respuesta objetiva a la viabilidad local
+**Lectura estática post-publicación:** se volvieron a leer los archivos desde GitHub y pasaron 16 verificaciones de presencia/consistencia: head de PR; estado y reinicio de `archivado`; anotación de tipo; buffer Web Crypto; fixtures de Ingreso y Pipeline; variables del test de seguridad; tarjeta semántica; parser/renderer/tests de `RA`; versión documental; igualdad exacta del esquema contra Metodología. Estas comprobaciones estáticas no sustituyen compilación ni tests de runtime.
 
-**Conclusión: SÍ, es viable usar PC-1 para acelerar el diagnóstico local de CI, con condiciones.** La conexión del dispositivo y la lectura Git de la rama privada ya se comprobaron directamente. La máquina tiene Windows PowerShell 5.1, Node, Git y `npm.cmd`, por lo que es candidata para las pruebas compatibles con sus runtimes.
+### 25.4 Estado de GitHub Actions en el commit publicado
 
-**Lo que aún no se ha demostrado:** que el checkout esté materializado, que todas las dependencias puedan instalarse, que el runtime coincida con la versión usada por cada workflow, que todos los tests puedan correr localmente o que los fallos actuales se reproduzcan fuera de Actions. La autenticación de GitHub CLI está ausente aunque el acceso Git de lectura funciona; no debe suponerse que hay permiso de escritura. No exponer ni reutilizar secretos manualmente.
+Para el SHA `6738c1f1aeffe5835a725531e0774d4420af13c5`, GitHub creó las ejecuciones:
+- [CI — push #2578](https://github.com/SeryMente/khora/actions/runs/38018055932): FAILURE.
+- [CI — pull request](https://github.com/SeryMente/khora/actions/runs/38018059324): FAILURE.
+- [UI Quality](https://github.com/SeryMente/khora/actions/runs/38018059383): FAILURE.
+- [khora-ok / gate](https://github.com/SeryMente/khora/actions/runs/38018059361): FAILURE.
+- [Khora Single Script Guard](https://github.com/SeryMente/khora/actions/runs/38018059308): FAILURE.
 
-**Método propuesto para acelerar el ciclo de construcción:**
-1. Verificar los comandos exactos y versiones fijados por los workflows de la cabecera `c9f21d14…`.
-2. Materializar esa misma cabecera en un directorio temporal separado, sin tocar árboles locales desconocidos.
-3. Instalar dependencias con el lockfile del repositorio y con el ejecutable compatible (`npm.cmd` mientras el shim `npm.ps1` esté bloqueado).
-4. Ejecutar primero los gates locales rápidos —lint, comprobaciones estáticas, unit/API/contratos y guards de PowerShell que puedan ejecutarse en ese host—, almacenando salidas reproducibles.
-5. Corregir únicamente un fallo con evidencia; repetir el test local relevante antes de publicar el commit.
-6. Consultar GitHub Actions después de publicar. Solo GitHub puede certificar el estado remoto del CI; pasar localmente no equivale a CI verde.
+Los jobs del head publicado se completaron en aproximadamente 1–2 segundos, devuelven `steps: []`, tienen `runner_name` vacío y las descargas de logs fallan con HTTP 404 `BlobNotFound`. Este comportamiento también se observó en el head previo `c9f21d14…`; por ello no demuestra que la suite haya alcanzado un test de código ni localiza una causa de test. No se repetirán workflows idénticos sin evidencia diagnóstica nueva.
+- Los checks externos Vercel/Netlify continúan en FAILURE. No se invocó despliegue.
 
-Esta secuencia es un plan, no una afirmación de que se haya ejecutado. No se clonó, editó, instaló ni publicó código durante este subciclo; la pregunta actual pedía confirmar capacidad de manera objetiva.
+**Estado de RDC:** tras el trabajo local, la lista del servicio mostró PC-1 y PC-7 fuera de línea; no se intentó seguir ejecutando comandos contra un dispositivo desconectado. Para reanudar pruebas CLI cuando el host esté disponible, debe iniciarse Desktop Commander en una terminal elevada con `npx @wonderwhy-er/desktop-commander@latest remote`; hasta entonces, la ruta de continuidad es GitHub.
 
-### 25.5 Qué cuenta como resultado valioso y qué falta endurecer
+### 25.5 Qué cuenta como resultado valioso, bloqueo actual y siguiente acción
 
-**Criterio de resultado sustantivo:** cambio de código de KHORA publicado en el PR #292, con regresión cubierta por pruebas y checks de CI verdes verificados en GitHub. No cuentan como cierre del objetivo: esta actualización documental, el mero acceso al dispositivo, un clone exitoso, una prueba local aislada, o la repetición de un workflow sin diagnóstico.
+**Objetivo concreto de construcción:** entregar una revisión de KHORA publicada en el PR #292 que corrija los fallos demostrados y consiga checks remotos verdes verificables. La primera corrección está publicada, pero el objetivo no puede darse por completado mientras Actions no aporte una ejecución útil y CI no quede verde. La actualización documental, un checkout, una instalación exitosa o un conjunto de comprobaciones estáticas no son cierre del objetivo.
 
-**Bloqueos actuales, por prioridad:**
-1. Recuperar pasos/logs de Actions por una vía autorizada, o reproducir los gates en local para localizar la causa precisa de las fallas.
-2. Materializar un checkout temporal e instalar dependencias compatibles con los workflows, preservando el repositorio y estado de la máquina.
-3. Identificar/corregir la causa raíz con prueba de regresión local y evidencia, y publicar una revisión acotada.
-4. Revalidar CI remoto después de la publicación.
-5. Mantener fuera de alcance merge/deploy y configuración de secretos reales mientras los gates no se satisfagan.
+**Bloqueo actual:** los workflows principales fallan antes de registrar pasos y sus logs no están disponibles (`BlobNotFound`). No se puede certificar si el código del nuevo commit pasa en Ubuntu hasta recuperar logs/annotations o disponer de otra ejecución útil. La conexión RDC está fuera de línea, así que no puede repetirse ahora la validación local sobre el commit corregido.
 
-**Próxima acción concreta:** inspeccionar desde GitHub los workflows y lockfiles fijados al head observado para conocer los comandos y las versiones exactas; luego, si se inicia ejecución local, preparar checkout temporal de esa cabecera en PC-1 sin tocar directorios existentes y correr primero el gate más barato y relevante.
+**Secuencia siguiente:**
+1. Continuar vía GitHub mientras RDC siga desconectado; consultar el estado de ejecución y metadatos de checks, sin reintentar fallos opacos en bucle.
+2. Si la API/runner vuelve a ofrecer pasos o logs, localizar la primera causa real y corregir solo con evidencia.
+3. Cuando RDC se reinicie, llevar al checkout temporal el SHA publicado y ejecutar `npm.cmd run typecheck`, `npm.cmd run ui-review:check`, `npm.cmd run ui:contract` y `npm.cmd run test:unit` antes de modificar otra vez.
+4. No declarar CI verde hasta observarlo en GitHub; no hacer merge ni desplegar sin validación.
 
-**Estado por gate:**
-- Dispositivo local conectado: `PASS` (ping respondió).
-- Acceso Git de lectura a la rama privada: `PASS` (`git ls-remote` devolvió el SHA).
-- Checkout local y dependencias de KHORA: `NOT_VERIFIED`.
-- Diagnóstico de la causa raíz de CI: `BLOCKED` (steps vacíos y logs 404; todavía sin reproducción local).
-- PR #292 con CI verde: `FAIL` en el estado remoto observado; objetivo de construcción aún no logrado.
-- Merge/despliegue: no ejecutados.
+**Directriz del usuario para este ciclo, registrada literalmente:**
 
-**Prohibiciones vigentes:** no declarar CI verde, no atribuir una causa sin evidencia, no asumir autenticación de escritura, no cambiar Execution Policy global, no sobrescribir archivos existentes, no hacer merge ni desplegar, no registrar valores de credenciales.
+> Haz lo que tengas que usar via rdc que esta disponible durante lso siguientes 10 minutos para acelerar las pruebas via CLIs, pero hazlo ya
+>
+> Ademas, creo que es el ultumo ciclo anbtes de irme, y regresar en un ratop. Cuando me vaya te quedaras solo con trabajo via github, pero no quiero que te detengas, ahsta terminar por nada del mundo. Asi que sigue trabajando en github, en rdc y en github en este ciclo, para resolver todo de extremo a extrmeo.
+>
+> No tienes autorizado a parar ahsta termianr.
 
-**Lectura de vuelta:** completada tras guardar la sección. GitHub devolvió el blob SHA `7b2000d3403d9c74853c86ad61d9a570e62b4939`; la lectura de la zona final verificó v1.1.8, §25, el objetivo de construcción, la instrucción verbatim, la evidencia de viabilidad local y los criterios de resultado.
+El usuario preguntó después: «Sigues procesando en que te quedaste? O ya terminaste?». La respuesta fue que el trabajo no estaba terminado y se mantuvo la ejecución dentro del turno.
+
+**Estado por gate al cierre de la actualización:**
+- Checkout aislado del head anterior: PASS.
+- Instalación por lockfile en PC-1: PASS.
+- Contrato de navegación `ui:contract` en head anterior: PASS.
+- Typecheck/UI Review/unit tests del head anterior: FAIL, con defectos concretos abordados por el commit publicado, aún sin reejecución post-patch.
+- Consistencia estática de los archivos publicados contra el head nuevo: PASS.
+- CI / UI Quality / gate / guard remotos en head nuevo: FAIL sin pasos/logs utilizables.
+- PR #292: abierto, en borrador y sin merge.
+- CI verde, merge, despliegue y prueba E2E de Windows PowerShell 5.1: no alcanzados/no ejecutados.
+
+**Reglas vigentes:** no inventar éxito de CI; no atribuir causa a tests que no ejecutaron; no suponer autenticación de escritura; no cambiar Execution Policy; no sobrescribir workspaces existentes; no exponer secretos; no hacer merge ni desplegar.
+
