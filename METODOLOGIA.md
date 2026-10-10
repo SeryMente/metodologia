@@ -2,21 +2,21 @@
 
 ## Estado canónico
 
-- **Versión:** v0.14.13
-- **Nombre de versión:** Identidad Efectiva MantenimientoRCI y Árbol de Datos Fila4 para EP
+- **Versión:** v0.14.14
+- **Nombre de versión:** Canon Transversal de Entorno Persistente y Laboratorios
 - **Última actualización:** 2026-10-10
 - **Última actualización canónica:** 2026-10-10
 - **Ámbito:** Todos los proyectos y conversaciones trabajados bajo esta metodología.
 
 ### Narrativa de la versión
 
-**Antes:** v0.14.12 definía el árbol de destino de CECEQ, pero dejaba fuera la regla especial que necesita el arranque de Entorno Persistente.
+**Antes:** v0.14.13 definía la identidad efectiva y el árbol de datos para el arranque EP en CECEQ, pero los requisitos transversales EP/WP-LAB/OGP y los flujos relacionados de acceso/secretos estaban distribuidos entre anexos extensos con autoridad potencialmente ambigua.
 
-**Cambio:** cuando Khora arranca Entorno Persistente en CECEQ, los procesos permanecen bajo la identidad Windows efectiva `central\\MantenimientoRCI`. Esa identidad ejecuta el trabajo; no se cambia, suplanta ni declara como `fila4`. El árbol de datos, staging, cachés, temporales, configuraciones, instalaciones portátiles y materialización de repositorios se dirige a `C:\\Users\\fila4\\...` o al VHDX efímero guardado dentro de ese árbol. Khora no escribe artefactos ni modifica configuraciones de usuario dentro de `C:\\Users\\MantenimientoRCI\\...`.
+**Cambio:** se establece `CANON-ENTORNO-PERSISTENTE-Y-LABORATORIOS.md` como fuente transversal única para continuidad y persistencia EP, identidad por terminal, VHDX/BitLocker, checkpoints y recuperación, WordPress local/WP-LAB, laboratorio de contenido complementario para OGP y requisitos de seguridad para los flujos de Cora vinculados a contraseña maestra, OIDC, PowerShell y token GitHub. README y bootstrap priorizan el canon; los documentos previos se conservan como antecedentes subordinados.
 
-**Alcance:** se separan y comprueban dos dimensiones: identidad efectiva del proceso y destino de datos. La identidad de cada proceso hijo debe conservarse y comprobarse; las rutas se resuelven explícitamente al árbol de fila4 antes de crear o escribir archivos. El entorno del proceso puede redirigirse en memoria, sin modificar variables de usuario persistentes ni el perfil de MantenimientoRCI. Una ruta ambigua, una ruta que escape del perfil de fila4 o un punto de reanálisis no autorizado hace fallar el arranque de forma cerrada.
+**Alcance:** esta versión consolida autoridad y requisitos documentales, no certifica la infraestructura física ni afirma que los flujos de Cora estén implementados. El estado E2E sigue pendiente de evidencia reproducible. Las reglas de identidad efectiva y destino de v0.14.13 se mantienen vigentes.
 
-**Continuidad normativa:** v0.14.13 mantiene la regla general de destino de v0.14.12 y la especializa para el ciclo de Entorno Persistente en CECEQ. No cambia la identidad activa del usuario de Windows ni versiona el SI.
+**Continuidad normativa:** v0.14.14 no cambia el SI ni la identidad efectiva de procesos; clarifica la propiedad transversal de Metodología y elimina la ambigüedad documental sobre EP.
 
 ### Registro de versiones
 
@@ -73,6 +73,7 @@
 | 48 | v0.14.11 | Identidad Elevada Obligatoria y Aislamiento del Árbol de Trabajo | Versión histórica; sus instrucciones de identidad y sesión quedan superadas por la delimitación de destino de v0.14.12. |
 | 49 | v0.14.12 | Árbol de Trabajo de Fila4 como Única Regla de Destino | En CECEQ, el árbol completo de trabajo es el de fila4 y nunca se escribe en el árbol de MantenimientoRCI. La regla solo determina destinos de escritura; no añade condiciones de identidad o sesión. |
 | 50 | v0.14.13 | Identidad Efectiva MantenimientoRCI y Árbol de Datos Fila4 para EP | Para el arranque de Entorno Persistente en CECEQ, MantenimientoRCI sigue siendo la identidad efectiva de todos los procesos; Fila4 es exclusivamente el destino del árbol de datos y del VHDX. Se preserva el perfil de MantenimientoRCI y el arranque falla cerrado ante destinos ambiguos o inseguros. |
+| 51 | v0.14.14 | Canon Transversal de Entorno Persistente y Laboratorios | Se crea un único canon transversal para EP, persistencia/cifrado/recuperación, identidad por terminal, WP-LAB, contenido complementario OGP y requisitos de seguridad de UI/acceso vinculados a Cora. README y bootstrap priorizan el canon; los anexos anteriores se conservan como antecedentes subordinados. No se certifica implementación ni E2E sin evidencia. |
 La tabla es canónica. Las versiones futuras añaden nuevos registros sin reutilizar folios. Una entrada retirada por revisión canónica puede conservar únicamente su identificador y estado de retirada, sin preservar la regla operativa invalidada. El nombre describe el avance de la versión y no sustituye el título general del sistema o documento.
 
 La regla general de destino para CECEQ, establecida en v0.14.12, sigue siendo usar el árbol de fila4 para los datos de trabajo. Para el caso específico en que Khora arranca Entorno Persistente en CECEQ rige además el contrato de v0.14.13: todos los procesos mantienen la identidad efectiva `central\\MantenimientoRCI`, mientras los datos se escriben únicamente en el árbol de fila4 o dentro del VHDX materializado desde ese árbol. La identidad efectiva y el destino se verifican por separado.
