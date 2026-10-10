@@ -1,8 +1,8 @@
 # Especificación canónica EP: Cybernet, RDC, WP-LAB y OGP-Visual
 
 **Estado:** especificación consolidada; ejecución física y certificación pendientes de evidencia.
-**Versión del objeto:** v1.1.3
-**Nombre de versión:** Endurecimiento OIDC, Bóveda Fail-Closed y CI No Verificable
+**Versión del objeto:** v1.1.4
+**Nombre de versión:** Inventario Integral EP y Planificación por Gates
 **Corte:** 2026-10-09.
 **Fuente transversal:** SeryMente/metodologia.
 **SI vigente leído con H1 → SI@H1 → H2:** v1.6.21 — Ordenamiento por Preponderancia y Categorías.
@@ -974,7 +974,7 @@ Hasta que el usuario revise la interfaz local, **no continuar con las demás lí
 
 ## 20. Ciclo operativo 005: UI de bóveda GitHub cifrada y puerta maestra OEP (2026-10-09)
 
-**Versión del objeto:** v1.1.3 — Endurecimiento OIDC, Bóveda Fail-Closed y CI No Verificable.
+**Versión del objeto:** v1.1.4 — Inventario Integral EP y Planificación por Gates.
 **Tipo de trabajo de este ciclo:** inspección documental y de código fuente en GitHub; no se usaron RDC, Vercel ni un runtime local. No se cambió el despliegue ni se afirma que exista una implementación operativa del nuevo acceso.
 **SI transversal:** v1.6.21 — Ordenamiento por Preponderancia y Categorías; referencia de lectura: ccb0258f5571b9f8a5533a2a17a32c3ce554c294.
 
@@ -1054,3 +1054,116 @@ Este comando es la referencia aportada para Windows PowerShell 5.1; el bootstrap
 ### 20.10 Solicitud del usuario verbatim — progreso y ausencia de RDC
 
 > En este momento no esta RDC activo, pero no lo necesitas verdad? Empieza no te detengas hasta terminar. Reportame en tu razonamiento peridoicamente tiempo estimado para terminar. Y reporta progreso feneral, siempre.
+
+## 21. Ciclo operativo 010 — Inventario integral del EP y planificación de fases
+
+**Corte:** 2026-10-09 (UTC de GitHub puede mostrar actividad del 2026-10-10).
+**Ámbito:** inventario del EP completo, con fronteras entre lo implementado, lo preparado, lo no verificado y las capacidades posteriores. Este ciclo es documental y de planificación; no afirma funcionamiento físico.
+**Estado de entrada:** PR #292 sigue abierto en draft, cabecera de código `c9f21d14a05d9153bb65d25b6d1f50b552aa092c`. Arquitectura KHORA en la rama v1.0.7; OEP v0.1.9; CI no certificado; migración 017 sin aplicar al entorno productivo; sin prueba de Windows PowerShell 5.1 E2E.
+
+### 21.1 Narrativa de versión · Antes → Cambio → Motivo → Resultado
+
+- **Antes →** los elementos de EP existían distribuidos entre el launcher KHORA, la arquitectura OEP, la especificación de Metodología, el bootstrap histórico y las futuras líneas fundacionales de Cybernet, WP-LAB y OGP-Visual. La continuidad podía interpretarse como una única instalación, cuando en realidad contiene varios subsistemas y dependencias con estados de validación distintos.
+- **Cambio →** se enumeran las capas, sus interfaces, sus límites y sus gates; se propone una secuencia por fases que prioriza un arranque básico verificable antes de infraestructura pesada, persistencia avanzada y modelos de IA.
+- **Motivo →** evitar omisiones entre el acceso web, la sesión PowerShell, la identidad de cada terminal, el workspace cifrado, herramientas, observabilidad, limpieza y las capas de trabajo posteriores.
+- **Resultado →** este inventario es el checklist transversal para planificar los próximos ciclos. No cambia el alcance inmediato de PR #292 ni reemplaza los contratos técnicos de KHORA. Todo elemento sin evidencia física debe permanecer como PREPARADO, BLOQUEADO o NO VERIFICADO, nunca como PASS.
+
+### 21.2 Inventario integral de elementos del EP
+
+Los siguientes números identifican componentes del sistema, no el orden temporal de instalación. Los elementos 1–23 componen la capa fundacional y operativa; WP-LAB y OGP-Visual son capas posteriores que dependen del gate fundacional.
+
+1. **Plano de control canónico y continuidad.** Repositorio público `SeryMente/metodologia` para especificaciones, decisiones, runbooks, fases, estado, bloqueos, manifiestos saneados y trazabilidad entre conversaciones. Cada ciclo debe dejar el número/nombre de versión, narrativa Antes → Cambio → Motivo → Resultado, evidencia y punto de reanudación. No publicar secretos, dumps, contenido privado ni binarios propietarios.
+
+2. **Arquitectura de KHORA/OEP y contratos de implementación.** `SeryMente/khora` mantiene UI, API, launcher, migraciones, pruebas y manifiestos de integridad. La arquitectura OEP define el comportamiento y se enlaza desde este objeto transversal; cualquier divergencia entre los contratos se debe reconciliar, no resolver por inferencia.
+
+3. **URL canónica y API base existente.** La interfaz se sirve en la URL canónica de Cora y reutiliza el `apiBase` actual que termina en `/api/ep`. No inventar un segundo path ni modificar la ruta existente para solucionar el almacenamiento de credenciales.
+
+4. **Identidad global y acceso rápido OEP.** OIDC conserva la identidad primaria de KHORA y la administración de seguridad. La contraseña maestra abre únicamente el submódulo EP mediante una sesión específica, breve y revocable; no sustituye OIDC para el resto del sistema. La primera configuración/recuperación de la contraseña maestra requiere OIDC.
+
+5. **Bóveda del token de GitHub.** Entrada del PAT mediante campo protegido en la UI; validación server-side; almacenamiento solo como ciphertext AES-256-GCM; metadatos limitados a cuenta, sufijo, repositorios/permiso observado y fecha. La clave se deriva con separación de dominio de `EP_BOOTSTRAP_JWT_SECRET`; su rotación requiere recargar el PAT. El token no se devuelve al navegador después de guardarlo.
+
+6. **Autorización y fronteras de la bóveda.** Consultar estado no sensible y consumir el token para iniciar EP son capacidades distintas de administrar el secreto. Carga, rotación y borrado requieren OIDC autorizado; un JWT EP con scope `ep:github:token` puede solicitar la credencial para el bootstrap. Los endpoints de cookie maestra que emiten sesión validan el origen cuando corresponda. La bóveda falla cerrada si no se puede consultar/descifrar; no cambia silenciosamente a otra identidad.
+
+7. **Credenciales diferenciadas y comando sin secreto.** El token temporal de KHORA, la contraseña maestra OEP, el PAT GitHub, la llave del volumen cifrado y una sesión RDC son credenciales/artefactos distintos. El comando visible no debe contener el PAT; no se permite en URL, argumentos de proceso, historial, HTML, logs o repositorios. El clipboard no debe usarse para volver a introducir el PAT.
+
+8. **Launcher y ejecución de Windows PowerShell 5.1.** Comando de bootstrap controlado, versión y commit fijados, hash SHA-256 comprobado, validación del path API HTTPS, proceso hijo/elevación controlada, errores estables y limpieza de temporales en éxito/fallo. La compatibilidad se debe probar en Windows PowerShell 5.1 real; parser moderno o revisión estática no sustituyen el arranque completo.
+
+9. **Descubrimiento y clasificación del host.** Inspeccionar edición/build de Windows, arquitectura, privilegios, usuario interactivo, Escritorio real y escribible, disco/espacio libre, volúmenes, herramientas disponibles, señales de host administrado y política de uso de herramientas. Reutilizar toolchain instalado cuando sea válido; no reinstalarlo por defecto.
+
+10. **Identidad de ubicación, terminal y sesión.** Mantener separadas la ubicación general (por ejemplo, Cybernet/Luis Pasteur), la identidad estable de la terminal física (por ejemplo, CIBERCAFE + PC-N), el usuario/perfil Windows y el identificador del dispositivo/sesión RDC. El cibercafé no es una única máquina; pueden existir varias terminales y sesiones concurrentes. Nunca usar el RDC-DEVICE-ID efímero como identidad estable de la terminal.
+
+11. **Modelo de volatilidad y estado del EP.** Clasificar explícitamente el estado como EP_VOLATIL o EP_CIFRADO; una carpeta del Escritorio o una ejecución satisfactoria no acreditan persistencia. Deep Freeze hace que el estado local pueda desaparecer entre sesiones, pero no reemplaza la obligación de verificar cifrado, limpieza, recuperación y un destino remoto duradero cuando se requiera continuidad.
+
+12. **Volumen cifrado y llave local.** Crear/montar un VHDX nuevo dentro del espacio autorizado; protegerlo con BitLocker XTS-AES-256; verificar cifrado al 100 % y ProtectionStatus=On antes de declarar PASS. Proteger secretos efímeros que deban sobrevivir entre procesos mediante DPAPI dentro del contexto y volumen correctos. El mecanismo de limpieza debe desmontar/bloquear el volumen de forma segura.
+
+13. **Workspace y ruta visible.** Mantener una sola raíz de trabajo de la sesión dentro del volumen cifrado. `Desktop/EP` es una junction NTFS al workspace interno, no una segunda copia ni un almacén duradero; validar tipo y target exacto. Si ya existe y apunta a algo desconocido, fallar cerrado, no sobrescribir ni eliminar contenido desconocido.
+
+14. **Repositorios Git y estrategia de releases.** Obtener repositorios privados por commit/versión aprobada; verificar `.git`, `origin`, rama, SHA, árbol de trabajo y actualizaciones fast-forward. No hacer resets forzados sobre árboles desconocidos y no perder WIP. El bootstrap debe evitar ejecutar silenciosamente un script base histórico cuando se presenta como versión nueva; los pins/hash deben actualizarse mediante proceso de publicación coordinado.
+
+15. **Matriz de repositorios y extensiones.** La especificación OEP de la bóveda requiere acceso a `CENSUS`, `GDP`, `metodologia`, `otrogranprograma`, `signal-interpreter` y `khora`; el workspace de trabajo expone cinco y reserva `khora` como repositorio del bootstrap. Un bootstrap de referencia anterior enumera cinco e incluye metodología, otrogranprograma, GDP, signal-interpreter y khora, sin listar CENSUS. **No colapsar ni renombrar CENSUS/GDP por suposición:** la siguiente reconciliación debe confirmar si son repositorios distintos o un alias histórico de Gestor de Procesos. Para cada manifiesto, parsear JSON, validar campos/versiones y comprobar la equivalencia de las extensiones exportadas. La extensión Signal Interpreter parte de `extension/manifest.json` y se exporta con el manifiesto en la raíz consumible.
+
+16. **Conservación de WIP y contexto de repositorios.** Crear/recuperar ramas `ep-wip/*` y persistir/verificar los cambios de KHORA y repositorios seleccionados. No sobrescribir contenido local, configuración Git de usuario ni archivos desconocidos. La continuidad de un entorno no equivale a clonar `main`: también exige preservar y recuperar trabajo en curso con evidencia.
+
+17. **Perfil de Visual Studio Code.** Restaurar configuración, extensiones y workspace necesarios al materializar una instancia nueva. Determinar qué elementos pertenecen al perfil portable/usuario y cuáles al workspace cifrado. No guardar secretos en settings, archivos de workspace, logs o sincronización pública.
+
+18. **Toolchain del host y Notepad++.** Detectar reutilizables (por ejemplo Git, Node 22 compatible, VS Code y herramientas requeridas). Instalar Notepad++ solo si falta; registrar la versión/ruta y verificar las asociaciones de `.txt`, `.log`, `.md`, `.json`, `.ps1` y fuentes objetivo. No manipular a ciegas `UserChoice` ni declarar aplicación predeterminada solo porque existe `notepad++.exe`.
+
+19. **OBS Virtual Camera y gate de Chrome.** Preparar/validar OBS Virtual Camera y su detección por Windows; después demostrar que Chrome enumera y puede abrir la cámara mediante permisos normales en una prueba consentida. El evento del log de OBS o el rescan PnP no bastan. No modificar preferencias/políticas de Chrome, forzar permisos, cerrar el navegador a la fuerza ni simular presencia/liveness.
+
+20. **RDC: lanzamiento, handshake e identidad de sesión.** Abrir una sesión RDC nueva cuando así lo exija el entorno de terminal efímero; validar estado Online mediante datos del handshake real, capturar los campos actuales y fallar explícitamente si faltan o cambia el formato. Solo después copiar una ficha saneada de sesión con terminal_id, fuente, RDC device name/ID, estado y hora, run_id, commit/hash de bootstrap, estados de cámara/Notepad++, cabezas de repos y ruta de logs. No copiar credenciales ni códigos temporales al clipboard.
+
+21. **Bitácora estructurada y ventana de eventos en vivo.** Mantener registro humano y JSON Lines/NDJSON con timestamp, run_id, terminal_id, etapa, estado, duración, exit code, versión/SHA, error_code, referencia de evidencia, resumen técnico y siguiente acción. Los identificadores de etapa `EP-IN-*`, `EP-RUN-*` y `EP-OUT-*` deben ser estables. Lanzador e interfaz de eventos pueden vivir en ventanas hijas independientes; ninguna salida debe revelar PAT, contraseña, cookie, JWT completo o llave del volumen.
+
+22. **Integridad, manifiesto y estado de aceptación.** Calcular/verificar hashes de scripts, artefactos y snapshots autorizados; asociarlos con commits y versiones. Los estados permitidos incluyen PASS, BLOCKED, FAIL, NOT_VERIFIED y SKIPPED. El resultado global no puede ser PASS si cualquier gate obligatorio está bloqueado o no verificado. Distinguir documentado, implementado, instalado, funcional, certificado y publicado.
+
+23. **Deadman, guardian, salida limpia y reinicio inesperado.** Programar limpieza al reinicio; vigilar procesos/terminal según el contrato; cerrar procesos y quitar primero la junction conocida; bloquear/desmontar VHDX; eliminar temporales/DPAPI que no deban sobrevivir y limpiar restos volátiles. No borrar repositorios/WIP desconocidos ni artefactos remotos confirmados. En Cybernet rige `PRESUPUESTO-REINICIO=0`; pruebas de reinicio solo en host autorizado y ventana explícita.
+
+24. **Persistencia remota y checkpoints duraderos.** Elegir un destino privado aprobado para logs completos, snapshots y contenido mutable que no puede publicarse en Metodología. Probar `put → read-back → SHA-256`, metadatos de snapshot y recuperación desde un entorno nuevo. Hasta demostrarlo, `REMOTE_CHECKPOINT=NOT_VERIFIED`; Deep Freeze no demuestra persistencia remota.
+
+25. **Capa WordPress / Divi / WP-LAB.** Es una carga de trabajo posterior con sitio, snapshots, código recuperable de `SeryMente/serymente`, WordPress Studio, Node/PHP, plugins/MU-plugins, dependencias y pruebas de rutas. Encontrar activos en modo de solo lectura, proteger el original, comprobar hashes antes de rehidratar, probar restauración en staging y las rutas acordadas. Divi es un binario propietario y no se sube al repositorio público. Resolver explícitamente la divergencia registrada entre Divi 4.23.1 y referencias históricas a 4.24.0; no elegir equivalencia sin una decisión/validación autorizada.
+
+26. **Capa OGP-Visual e IA local en GPU.** Capacidad posterior y separada del arranque básico: preflight de host/GPU/memoria/runtime, compatibilidad de drivers/Python/CUDA, infraestructura seleccionada (ComfyUI/Nunchaku/Z-Image-Turbo/Qwen-Image-Edit), caché recuperable de artefactos pesados, modelos/pesos versionados, generación/edición/evaluación y TEST 01. No descargar varios GB cada sesión efímera ni ejecutar inferencia hasta recuperar un entorno consistente y pasar el gate de hardware. No editar los artefactos visuales canónicos ni el sitio publicado de OGP como parte de la instalación.
+
+27. **Costos, licencias y fronteras de privacidad/seguridad.** Separar credenciales, tokens de usuario, datos privados, licencias y artefactos con copyright de la documentación pública. Usar almacenamiento privado para datos personales/RDC completos, WP snapshots y logs sensibles. No eludir liveness/controles de plataformas ni crear bypasses de autenticación. Las restricciones externas de deploy (Vercel/Netlify) son un estado separado del CI del código y no se deben mezclar en el diagnóstico.
+
+28. **Multisesión y recuperación entre terminales.** Cada ejecución tiene run_id propio y ficha de host/terminal, pudiendo alternar entre distintas PCs del mismo cibercafé o trabajar en varias simultáneamente. Debe descubrir qué estado es local a la sesión, cuál reside en el volumen, cuál se ha guardado remotamente y cuál no puede recuperarse. No reutilizar ciegamente perfiles, paths, IDs RDC o estado de una terminal previa.
+
+29. **Control de secuencia y eficiencia.** Resolver en orden: acceso al comando y autenticación → bootstrap básico → repositorios/workspace → estado de sesión y logs → RDC y herramientas de trabajo → estabilidad del arranque → persistencia duradera/Deadman → WP-LAB → IA local pesada. Evitar instalar o descargar capas posteriores antes de que el gate fundacional las habilite.
+
+30. **Mecanismo de cambio, continuidad y publicación.** Toda modificación funcional requiere diff revisado, pruebas aplicables, hashes actualizados, actualización del objeto canónico y read-back desde GitHub. No integrar ni desplegar un PR con CI fallido. Las limitaciones del runner/log se registran como bloqueo real, no se convierten en PASS por inspección del código.
+
+### 21.3 Plan de fases futuras por dependencias y gates
+
+El plan se mantiene secuencial en las dependencias y puede avanzar en documentación mientras un gate físico/externo esté bloqueado. No autoriza por sí mismo el merge, despliegue, migración productiva, cargas de secretos ni reinicios.
+
+| Fase | Alcance | Dependencia principal | Criterio de salida verificable | Estado actual |
+|---|---|---|---|---|
+| 0. Gobierno y reconciliación | Alinear Metodología, KHORA, OEP, arquitectura, `EP-VALIDATION.md`, manifiestos y ruta de bootstrap; resolver discrepancias de nombres y autoridad documental. | Lectura fresca de fuentes canónicas y SHA. | Una especificación transversal, contratos enlazados, inventario de repos confirmados y versiones coherentes con read-back. | En curso; este ciclo incorpora inventario y hoja de ruta, el alineamiento integral permanece pendiente. |
+| 1. Desbloqueo de CI y validación de código | Recuperar evidencia real de los cuatro workflows; corregir fallos demostrados en typecheck, contratos, unit, E2E y parser/guard de PowerShell. | Logs/steps/artifacts utilizables de GitHub Actions o una vía aprobada que los produzca. | Todos los gates requeridos en verde en una misma cabecera; sin logs inaccesibles ni checks interpretados por suposición. | BLOQUEADO: CI #292 sigue en fallo y los logs/steps no están disponibles en el conector. |
+| 2. Entrega operativa del acceso OEP en Cora | Revisión de seguridad, integración por flujo autorizado, despliegue válido y migración 017; configurar primero master password por OIDC y cargar PAT en la UI. | Fase 1 aprobada; mecanismo de publicación permitido y DB destino autorizada. | La URL canónica sirve la UI; migración aplicada; la contraseña maestra limita a EP; la bóveda persiste ciphertext; se ve estado redactado y la API solo entrega token con JWT EP autorizado. | PREPARADO, NO OPERATIVO/NO VERIFICADO; PR #292 draft, sin merge/deploy. Vercel/Netlify muestra restricción externa de repo privado; este ciclo no ejecutó esos servicios. |
+| 3. Arranque núcleo en Windows PowerShell 5.1 | Validar el comando servido, path existente, JWT de sesión, recuperación HTTPS del PAT, descarga del gate fijado, validación SHA, elevación, temporales y ausencia de secretos. | Fase 2 desplegada con credenciales configuradas. | Arranque frío de Windows PowerShell 5.1 hasta materializar KHORA privado; PAT no aparece en comando/historial/logs/clipboard; limpieza de temporales comprobada. | NO VERIFICADO; sin ejecución física en este ciclo. |
+| 4. Workspace cifrado y repositorios | Preflight del host; VHDX + BitLocker XTS-AES-256 al 100 %; junction exacta; seis accesos validados y catálogo/repos seleccionados conciliados; manifests de extensiones válidos; preservar WIP. | Fase 3; permisos Git efectivos en todos los repos. | Workspace único en volumen verificado, repos con remote/HEAD/manifests exactos, exportaciones correctas, no pérdida de WIP y ninguna ruta desconocida sobrescrita. | NO VERIFICADO; hay discrepancy CENSUS/GDP por resolver antes de implementar la matriz definitiva. |
+| 5. Perfil de trabajo fundacional | Restaurar VS Code, toolchain del host y Notepad++; registrar versiones, asociaciones reales y preflight idempotente. | Fase 4 y perfil/instaladores permitidos. | Reutilización cuando sea válida, configuración restaurada en nueva sesión y asociaciones de archivo demostradas; no reinstala componentes íntegros por defecto. | PENDIENTE de inspección física. |
+| 6. RDC y observabilidad end-to-end | Lanzar RDC, analizar handshake real, distinguir terminal/device/session, copiar ficha saneada, comprobar logs y estados normalizados. | Fase 4; acceso a una terminal autorizada. | RDC Online corroborado; ficha con origen de cada campo; logs completo+JSONL sin secretos, ventana de eventos en vivo y errores con siguiente acción. | NO VERIFICADO sin RDC. |
+| 7. Gate fundacional de estabilidad | Dos instanciaciones consecutivas controladas sin reiniciar la terminal, con repos/manifest, launcher, perfiles, toolchain, OBS y cámara Chrome autorizada, RDC y logs. | Fases 3–6; host físico elegible. | Dos PASS consecutivos, segunda instancia preserva WIP y artefactos válidos, `PRESUPUESTO-REINICIO=0`. Cámara no se certifica solo por log OBS/PnP. | BLOQUEADO hasta pruebas en Cybernet; no usar el entorno productivo para pruebas de reinicio. |
+| 8. Persistencia remota y recuperación | Destino privado duradero; checkpoints incrementales; snapshots/logs, Deadman, guardian, limpieza y recuperación de contexto entre PCs/sesiones. | Fase 7 como base usable; backend privado autorizado. | Put/read-back/SHA y restauración desde entorno nuevo, Deadman no destruye copias remotas y los secretos/identidades RDC permanecen en almacén privado. | PENDIENTE de definir/verificar destino durable; no asumir que PostgreSQL/Blob ya contiene todos los activos. |
+| 9. WP-LAB | Inventario read-only de activos, proteger original, compatibilidad WordPress/Studio/Node/PHP/Divi, rehidratar en staging, probar rutas y restauración. | Fase 8 o mecanismo de persistencia explícitamente aprobado; activos/licencia autorizados. | Snapshot verificado, versión de Divi decidida con evidencia, pruebas funcionales por ruta, restauración en staging y destino remoto validado. | POSTERIOR; activos físicos/ZIP y destino privado no verificados. |
+| 10. OGP-Visual/GPU | Preflight de GPU, instalar/reutilizar pipeline, cachear pesos en almacenamiento recuperable y evaluar generación/edición visual. | Fase 8; hardware compatible y presupuestos/licencias confirmados. | Modelo cargado y ejecución real GPU demostrada, artefactos y prompts/resultados versionados; TEST 01 aprobado sin alterar el sitio canónico. | POSTERIOR; no descargar pesos pesados antes del gate fundacional. |
+| 11. Operación estable y mantenimiento | Versionado semántico, regresiones, reconciliación diaria de estado, recuperación entre conversaciones/terminales y cierre de ciclo por manifiesto. | Gates anteriores apropiados al alcance de operación. | Estado reproducible con version/hash/evidencias actuales, tablero de pendientes y rollback/recuperación verificados por artefacto. | Continuo, cada ciclo desde ahora. |
+
+### 21.4 Reglas de secuencia y de decisión
+
+- **Prioridad operativa inmediata:** conseguir una ejecución CI diagnosticable y cerrar los fallos demostrados del acceso/bóveda/launcher antes de declarar utilizable la URL canónica.
+- **Prioridad de arranque del usuario:** que la puerta OEP entregue el comando que usa el `apiBase` existente y que ese comando instancie el núcleo sin volver a pedir el PAT. La bóveda aún no está desplegada ni configurada en producción.
+- **No bloquear capas ligeras por capas pesadas:** la planificación de WP-LAB y OGP continúa en Metodología, pero sus instalaciones/pesos no deben retrasar el arranque básico.
+- **No saltar gates:** una UI visible no demuestra API operativa; una API verde no demuestra scope GitHub de escritura; un VHDX creado no demuestra BitLocker 100 %; un proceso RDC iniciado no demuestra Online; un log OBS no demuestra que Chrome enumeró la cámara; un archivo local no demuestra persistencia remota.
+- **Privacidad de registros:** la especificación pública conserva decisiones, hashes y logs saneados. Logs completos con identificadores RDC, datos de usuario, snapshots WP-LAB y cualquier contenido privado requieren destino privado aprobado.
+- **Cambio de versión:** el siguiente ciclo debe actualizar esta hoja de ruta si cambia la secuencia o un gate. No marcar una fase como completa solo porque sus documentos/código existan.
+
+### 21.5 Punto de reanudación
+
+1. Fuente transversal: este archivo en `SeryMente/metodologia/main`, versión v1.1.4.
+2. Implementación de UI/bóveda: PR #292 en `SeryMente/khora`, rama `feat/ep-github-token-vault-ui`, última cabecera de código conocida `c9f21d14a05d9153bb65d25b6d1f50b552aa092c`.
+3. Bloqueo inmediato: `CI`, `UI Quality`, `Khora Single Script Guard` y `khora-ok / gate` en fallo; el conector no entregó logs/steps/artifacts utilizables, incluyendo el intento de diagnóstico temporal, que ya fue retirado.
+4. Aún no realizado: merge/deploy, migración productiva 017, configuración real OIDC/contraseña maestra/PAT, validación de permisos de escritura, prueba PowerShell 5.1, host real, RDC, cámara Chrome, Notepad++, persistencia remota, WP-LAB y OGP-GPU.
+5. Riesgo de nomenclatura de repositorios por resolver: el contrato de bóveda lista seis nombres incluyendo CENSUS y GDP; el bootstrap histórico lista cinco y no incluye CENSUS. Confirmar remotes/nombres en GitHub antes de consolidar la lista definitiva.
