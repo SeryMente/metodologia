@@ -342,6 +342,15 @@ El anexo histórico registró la UI/bóveda en la rama `feat/ep-github-token-vau
 
 Este dato es evidencia histórica, no estado actual de la rama ni de producción. Antes de declarar implementado/operativo/E2E, consultar el PR, la rama y el deployment actuales, revisar la migración y los checks, y ejecutar pruebas reales autorizadas. Si la evidencia actual no está disponible, el estado queda **NO VERIFICADO**.
 
+### 9.7 Estado remoto observado al 2026-10-10
+
+La consulta actual a GitHub devuelve los siguientes datos de PR, que son un snapshot del repositorio y no certificación del producto:
+
+- **PR #292 — Add EP master-password gate and encrypted GitHub token UI:** abierto, draft, sin merge; rama `feat/ep-github-token-vault-ui`; HEAD `6738c1f1aeffe5835a725531e0774d4420af13c5`. El cuerpo del PR reporta CI, UI Quality, `khora-ok / gate` y Khora Single Script Guard en FAILURE; los jobs terminan sin runner/steps visibles y los logs devuelven `BlobNotFound`. No se debe inferir que los tests llegaron a ejecutarse. Las pruebas locales anteriores al último commit no sustituyen ejecutar nuevamente typecheck, suites unitarias/UI y pruebas E2E después del patch. No se ha demostrado aquí el uso de secretos reales, migración productiva ni PowerShell 5.1 real.
+- **PR #294 — EP CECEQ: separar identidad MantenimientoRCI y árbol de datos Fila4:** abierto, draft, sin merge; rama `fix/ep-ceceq-mantenimientorci-fila4-profile-v2`; HEAD `c62661c2c7be5f9763d9fb73ee52ac028fb8d2e4`. Es un frente distinto, relacionado con identidad efectiva y destino de datos. Su presencia no demuestra que el bootstrap EP ni el host CECEQ estén certificados.
+
+En consecuencia, las funciones de puerta maestra/bóveda y la separación de identidad/destino permanecen **EN DESARROLLO / NO CERTIFICADAS E2E**. Volver a consultar los PR y sus checks antes de cada ciclo; no reutilizar estos SHA como si fueran el HEAD vigente en una fecha posterior.
+
 ## 10. Seguridad, privacidad y amenazas
 
 Amenazas mínimas:
