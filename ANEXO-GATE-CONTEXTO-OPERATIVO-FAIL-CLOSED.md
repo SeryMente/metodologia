@@ -189,44 +189,18 @@ Bloqueado significa: no ejecutar, no declarar exito, no sustituir datos por infe
 
 Una vez verificada la ubicacion, el sistema carga el perfil canonico correspondiente.
 
-Para CECEQ:
-
-- UBICACION = CECEQ;
-- WIN-OPERATIVO = fila4;
-- WIN-ADMIN = central\mantenimientorci.
+Para CECEQ, el árbol completo de trabajo es C:\\Users\\fila4\\... y nunca se escribe dentro de C:\\Users\\MantenimientoRCI\\....
 
 Para OFFICE-DEPOT y CIBERCAFE, mientras no exista perfil operativo suficiente, las propiedades no definidas permanecen PENDIENTES y no se inventan.
 
-## 8. Ejecución flexible y única restricción de materialización
+## 8. Regla de destino de trabajo para CECEQ
 
-### 8.1 Regla para CECEQ
+Cuando se trabaje en CECEQ desde el perfil de MantenimientoRCI, el árbol completo de trabajo es C:\\Users\\fila4\\.... Toda escritura propia de la tarea debe tener destino dentro del árbol de fila4. Nunca se debe escribir dentro de C:\\Users\\MantenimientoRCI\\....
 
-- WIN-OPERATIVO = fila4.
-- WIN-ADMIN = central\mantenimientorci.
-- La sesión RDC utilizada para consumo y acceso remoto permanece bajo central\mantenimientorci.
-- No se inicia un segundo canal RDC bajo fila4.
-- central\mantenimientorci puede ejecutar cualquier trabajo técnicamente válido.
-- La restricción de destino es no crear archivos ni trabajar dentro del árbol de directorios de MantenimientoRCI. La sesión central\\mantenimientorci puede operar directamente sobre rutas autorizadas de fila4; no requiere cambio de usuario. No crear tareas temporales para forzar esa identidad.
+Esta regla regula únicamente el destino de trabajo. No impone una identidad de ejecución determinada ni agrega condiciones sobre elevación, sesión RDC, cambio de usuario, impersonación, tareas temporales o manejo especial de permisos.
 
-Cuando exista una divergencia de observabilidad RDC y el ciclo requiera conectividad en vivo, la recuperación mediante `RDC-REINSTANTIAR` es obligatoria antes de reanudar el trabajo dependiente del canal.
+La recuperación y verificación general de RDC se rige por las secciones correspondientes y es independiente de esta regla de directorios.
 
-### 8.2 Secuencia
-
-1. detectar la identidad efectiva cuando sea relevante;
-2. resolver la ubicación y su perfil;
-3. comprobar si la operación es técnicamente válida bajo la identidad efectiva;
-4. antes de cualquier operación, comprobar que la ruta destino no esté dentro del árbol de directorios de MantenimientoRCI; las rutas autorizadas de fila4 pueden operarse directamente desde la sesión RDC vigente;
-5. ejecutar y verificar el resultado.
-
-La discrepancia entre fila4 y central\mantenimientorci no bloquea por sí misma.
-
-### 8.3 Qué no hacer
-
-No abrir sesiones RDC paralelas, crear tareas temporales ni cambiar de usuario para resolver la diferencia de identidad. No crear archivos ni trabajar dentro del árbol de directorios de MantenimientoRCI. Operar directamente sobre las rutas autorizadas de fila4 desde la sesión administrativa vigente.
-
-### 8.4 Elevación
-
-Las operaciones que requieran privilegios administrativos reales pueden utilizar la sesión RDC vigente bajo central\mantenimientorci.
 
 ## 9. Maquina de estados
 
