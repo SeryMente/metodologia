@@ -1,7 +1,7 @@
 # Especificación canónica EP: Cybernet, RDC, WP-LAB y OGP-Visual
 
 **Estado:** especificación consolidada; ejecución física y certificación pendientes de evidencia.
-**Versión del objeto:** v1.1.6
+**Versión del objeto:** v1.1.7
 **Nombre de versión:** Regla Operativa de Continuidad EP
 **Corte:** 2026-10-09.
 **Fuente transversal:** SeryMente/metodologia.
@@ -1323,3 +1323,60 @@ Se puede añadir detalle adicional según el ciclo; estos campos son el mínimo,
 **Prohibiciones vigentes:** no merge, no deploy, no uso de secretos reales sin autorización, no prueba local/RDC si no está disponible, no ampliar el alcance a OBS/cámara, WP-LAB, OGP/GPU o persistencia avanzada para resolver el gate mínimo. No inventar resultados de ejecución.
 
 **Nota de integridad documental:** este ciclo añade la norma de continuidad y la ventana de reanudación; no afirma haber corregido los checks de KHORA ni cambia el estado del PR.
+
+
+## 24. Ciclo operativo 013 — Objetivo concreto visible y obligatorio en cada ciclo
+
+**Corte:** 2026-10-10.
+**Versión del objeto:** v1.1.7 — Objetivo Concreto Visible por Ciclo.
+**Narrativa Antes → Cambio → Motivo → Resultado**
+- **Antes:** la plantilla de continuidad ya requería un objetivo del ciclo, pero no obligaba de forma suficientemente explícita a que el usuario lo recibiera en cada actualización visible de la conversación.
+- **Cambio:** se establece como regla operativa informar, en cada ciclo y antes de continuar el trabajo, el objetivo concreto actual y el entregable específico que se intenta proporcionar; al cambiar el objetivo, se debe anunciar la actualización. Al cierre se comparan objetivo, resultado demostrado y brecha restante.
+- **Motivo:** el usuario necesita conocer en todo momento qué resultado específico está intentando conseguir el trabajo en curso, sin confundir actividad, intención y entrega efectiva.
+- **Resultado:** la regla queda incorporada al objeto canónico y debe cumplirse tanto en las actualizaciones conversacionales como en el registro de cada ciclo.
+
+### 24.1 Instrucción del usuario — registro verbatim
+
+> Regla operativa del sprint. ducmentala yu siempre la debes de seguir:
+> REPORTAME EN CADA CICLO CUAL ES EL OBJETIVO CONCRETO ACTUAL QEU INTENTAS ENTREGARME
+
+La cita se conserva con la redacción, capitalización y errores tipográficos originales. No se corrige dentro del registro verbatim.
+
+### 24.2 Regla normativa obligatoria
+
+Para **cada ciclo de cualquier trabajo relacionado con EP**, y sin esperar al cierre:
+
+1. **Reportar el objetivo al usuario.** En la primera actualización visible del ciclo, incluir explícitamente la etiqueta **“Objetivo concreto de este ciclo”** seguida de una frase específica que identifique el resultado/entregable que se intenta conseguir ahora. No sustituirlo por una descripción vaga de actividad como “revisar”, “investigar” o “seguir trabajando”.
+2. **Definir el entregable verificable.** Indicar qué artefacto, decisión, evidencia, reparación o comprobación se pretende dejar disponible al terminar el ciclo, y qué criterio permite distinguir un resultado logrado de uno solo intentado.
+3. **Mantenerlo actualizado.** Si cambia el objetivo, el bloqueo principal o el entregable buscado, declarar el nuevo objetivo antes de continuar con las acciones afectadas y registrar la causa del cambio en el objeto canónico.
+4. **Distinguir intención de resultado.** Al finalizar el ciclo, informar por separado: objetivo inicial/vigente, resultado observado, estado (PASS, BLOCKED, FAIL o NOT_VERIFIED), evidencia y brecha que sigue abierta. Un objetivo comunicado no cuenta como entrega conseguida.
+5. **Registrar también el objetivo aquí.** Cada nueva sección de ciclo en este archivo debe abrir con un campo **Objetivo concreto del ciclo**, describiendo el entregable y su criterio de aceptación. Si un ciclo tiene subciclos con objetivos distintos, documentarlos por separado sin perder la trazabilidad del ciclo padre.
+6. **Conservar la disciplina incremental.** Reportar el objetivo antes de continuar, y comunicar el resultado tan pronto haya una mejora persistente o un bloqueo comprobado. No demorar la actualización para presentar una historia de progreso más grande y no simular avance cuando no se haya producido.
+7. **Aplicarlo en todos los turnos EP.** Es obligatorio aunque el ciclo sea principalmente documental, de diagnóstico, de recuperación de evidencia o esté bloqueado por acceso. Si no existe todavía una vía para completar el entregable, declarar el objetivo concreto pendiente y el impedimento verificable.
+8. **No ampliar el alcance para llenar el ciclo.** El objetivo debe pertenecer al alcance actual de EP y respetar §22; la obligación de reportarlo no autoriza un merge, despliegue, uso de credenciales reales ni pruebas en máquinas que no estén disponibles/autorizadas.
+
+Esta regla complementa, no reemplaza, las obligaciones de documentación exhaustiva, instrucciones verbatim, comprobación de GitHub, lectura de vuelta y separación entre hechos, inferencias y pendientes establecidas en §23.
+
+### 24.3 Estado vivo consultado antes de documentar
+
+**Repositorio canónico:** `SeryMente/metodologia`, rama `main`.
+**Objeto antes del cambio:** versión v1.1.6 — Regla Operativa de Continuidad EP; blob SHA `445485ac91a2f82cb4b8afbe6331aa462a7b1f14`.
+**KHORA / PR #292:** [Add EP master-password gate and encrypted GitHub token UI](https://github.com/SeryMente/khora/pull/292), estado open en la consulta. La comparación de `main` con `feat/ep-github-token-vault-ui` mostró 71 commits ahead y 0 behind. La comparación del head de esa rama con el SHA registrado `c9f21d14a05d9153bb65d25b6d1f50b552aa092c` devolvió `identical`, por lo que ese SHA sigue siendo el head observado en esta comprobación.
+**Workflows consultados para esa cabecera:**
+- `CI`, run 2577: `failure`.
+- `UI Quality`, run 332: `failure`.
+- `khora-ok / gate`, run 598: `failure`.
+- `Khora Single Script Guard`, run 144: `failure`.
+**Checks externos:** cinco contextos Vercel y uno de Netlify devolvieron `failure`. No se ejecutó un despliegue.
+**Alcance de la acción:** actualización documental solamente. No se modificó el repositorio KHORA, no se integró el PR ni se modificó infraestructura.
+
+### 24.4 Resultado y endurecimiento pendiente
+
+- **Regla documental:** objetivo — añadir la obligación de reportar explícitamente el entregable concreto de cada ciclo. Resultado tras la escritura y lectura de vuelta: se confirmará a continuación con el commit y el contenido de GitHub.
+- **CI de KHORA:** `FAIL/BLOCKED` según la evidencia actual; los resultados fallidos no exponen por sí mismos la causa. No se atribuye el fallo a un defecto específico de código sin pasos/logs utilizables.
+- **EP v1.0 operativo:** `NOT_VERIFIED`; la actualización de esta regla no modifica los gates pendientes de §22.
+- **Qué falta endurecer:** recuperar evidencia diagnóstica accesible de CI; verificar permisos efectivos del PAT y la lista definitiva de repositorios; aplicar y comprobar la configuración autorizada de la migración 017; completar una ejecución real E2E en Windows PowerShell 5.1.
+- **Siguiente acción:** en el próximo ciclo EP, abrir con “Objetivo concreto de este ciclo”, consultar el estado vivo de GitHub, resolver la siguiente acción segura de mayor prioridad y registrar su resultado antes de cerrar.
+- **Prohibiciones mantenidas:** no merge, no deploy, no uso de secretos reales sin autorización, no E2E inventado, no expansión del alcance de EP v1.0.
+
+**Lectura de vuelta:** pendiente de ejecutar después de guardar esta versión; no se declara persistencia hasta que la sección 24 y v1.1.7 estén verificadas desde GitHub.
