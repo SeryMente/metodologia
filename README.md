@@ -21,9 +21,9 @@ Para cualquier conversación sujeta a esta metodología, el contexto operativo t
 1. [`SI-METACOGNITIVO.md`](SI-METACOGNITIVO.md) — norma canónica vigente.
 2. [`METODOLOGIA.md`](METODOLOGIA.md) — desarrollo metodológico vigente.
 3. [`BOOTSTRAP-CONTEXTO-GLOBAL.md`](BOOTSTRAP-CONTEXTO-GLOBAL.md) — continuidad entre conversaciones.
-4. `[CANON-ENTORNO-PERSISTENTE-Y-LABORATORIOS.md](CANON-ENTORNO-PERSISTENTE-Y-LABORATORIOS.md)` — canon transversal obligatorio cuando la tarea involucre EP, WP-LAB, OGP o los flujos de acceso/secretos asociados.
-4. [`ESTADO-RDC-ACTIVO.md`](ESTADO-RDC-ACTIVO.md) — identidad persistente de la sesión RDC y estado de conectividad.
-5. [`ANEXO-GATE-CONTEXTO-OPERATIVO-FAIL-CLOSED.md`](ANEXO-GATE-CONTEXTO-OPERATIVO-FAIL-CLOSED.md) — verificación y bloqueo.
+4. [`CANON-ENTORNO-PERSISTENTE-Y-LABORATORIOS.md`](CANON-ENTORNO-PERSISTENTE-Y-LABORATORIOS.md) — canon transversal obligatorio cuando la tarea involucre EP, WP-LAB, OGP o los flujos de acceso/secretos asociados.
+5. [`ESTADO-RDC-ACTIVO.md`](ESTADO-RDC-ACTIVO.md) — identidad persistente de la sesión RDC y estado de conectividad.
+6. [`ANEXO-GATE-CONTEXTO-OPERATIVO-FAIL-CLOSED.md`](ANEXO-GATE-CONTEXTO-OPERATIVO-FAIL-CLOSED.md) — verificación y bloqueo.
 
 La sesión RDC no se reinicia al cambiar de conversación. Permanece globalmente vigente hasta una finalización o sustitución explícita. Una desconexión temporal o un dispositivo offline afecta la conectividad observable, no la existencia de la sesión persistida.
 
@@ -49,16 +49,16 @@ Versión vigente del SI:
 
 Versión vigente de la Metodología:
 
-**v0.14.9 — Bootstrap Anclado por Commit y Hash**
+**v0.14.14 — Canon Transversal de Entorno Persistente y Laboratorios**
 
 El SI contiene los principios fundamentales vigentes, ordenados de mayor a menor preponderancia. La continuidad entre conversaciones se desarrolla operativamente mediante la Metodología y el anexo `BOOTSTRAP-CONTEXTO-GLOBAL.md`.
 
 ## Última actualización de Metodología
 
-**v0.14.9 — Bootstrap Anclado por Commit y Hash**  
-2026-10-09
+**v0.14.14 — Canon Transversal de Entorno Persistente y Laboratorios**  
+2026-10-10
 
-La metodología ancla el bootstrap CLI de Windows a un commit inmutable y verifica SHA-256 antes de ejecutarlo, evitando versiones raw obsoletas. El bootstrap verifica dependencias, sincroniza Metodología de forma segura, ofrece el inicio opcional de OBS Virtual Camera y lanza RDC. La identidad activa del SI continúa subordinada exclusivamente a la cabecera de su snapshot canónico.
+Se establece un canon transversal único para EP, persistencia/cifrado/recuperación, identidad por terminal, WordPress local/WP-LAB, laboratorio de contenido complementario para OGP y requisitos de seguridad de UI/acceso vinculados a Cora. Los anexos anteriores quedan subordinados y conservan su valor histórico; el estado físico y E2E no se declara certificado sin evidencia.
 
 
 La identidad persistente de la sesión RDC y su registro transversal se mantienen mediante ESTADO-RDC-ACTIVO.md. La conectividad se verifica por ciclo mediante ping como comprobación primaria cuando el ciclo requiera uso RDC en vivo. La salida visible de cada ciclo muestra únicamente el contexto y resultado esenciales; `K: ✓` solo acredita verificación/liberación de KHORA, mientras `K: OFF` declara que el verificador no estuvo disponible sin bloquear la salida.
