@@ -1472,4 +1472,4 @@ Esta secuencia es un plan, no una afirmación de que se haya ejecutado. No se cl
 
 **Prohibiciones vigentes:** no declarar CI verde, no atribuir una causa sin evidencia, no asumir autenticación de escritura, no cambiar Execution Policy global, no sobrescribir archivos existentes, no hacer merge ni desplegar, no registrar valores de credenciales.
 
-**Lectura de vuelta:** pendiente de realizar después de guardar esta versión; no declarar persistencia hasta confirmar v1.1.8 y §25 desde GitHub.
+**Lectura de vuelta:** completada tras guardar la sección. GitHub devolvió el blob SHA `7b2000d3403d9c74853c86ad61d9a570e62b4939`; la lectura de la zona final verificó v1.1.8, §25, el objetivo de construcción, la instrucción verbatim, la evidencia de viabilidad local y los criterios de resultado.
