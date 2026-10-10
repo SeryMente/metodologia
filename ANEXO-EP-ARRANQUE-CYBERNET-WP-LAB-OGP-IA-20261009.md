@@ -1380,3 +1380,96 @@ Esta regla complementa, no reemplaza, las obligaciones de documentación exhaust
 - **Prohibiciones mantenidas:** no merge, no deploy, no uso de secretos reales sin autorización, no E2E inventado, no expansión del alcance de EP v1.0.
 
 **Lectura de vuelta:** completada tras la escritura. La versión v1.1.7 y la sección 24 fueron leídas desde GitHub; la comprobación automática confirmó encabezado, sección normativa y siguiente acción. En la respuesta de este ciclo se registra el blob SHA exacto de esta lectura.
+
+
+## 25. Ciclo operativo 014 — Objetivo de construcción, resultado valioso y viabilidad de CI local
+
+**Corte:** 2026-10-10.
+**Versión del objeto:** v1.1.8 — Objetivo de Construcción y Diagnóstico Local de CI.
+**Objetivo concreto de construcción vigente:** conseguir que el PR #292 de KHORA alcance checks de CI verdes y verificables mediante diagnóstico reproducible, corrección mínima de la causa real y publicación de la revisión corregida. El entregable sustantivo es código corregido publicado en el PR con evidencia de checks verdes; actualizar documentación por sí solo no satisface este objetivo de construcción.
+**Entregable de este subciclo:** determinar con pruebas observables si el entorno Windows disponible se puede usar para ejecutar pruebas locales que aceleren el diagnóstico de CI, sin hacer cambios destructivos ni declarar el resultado final conseguido.
+**Criterio de aceptación del subciclo:** identificar una máquina accesible, runtime y herramientas relevantes, posibilidad de lectura del head privado exacto y bloqueos que impidan ejecutar las pruebas. No cuenta como aceptación que se haya intentado una conexión; se exige resultado observado.
+**Narrativa Antes → Cambio → Motivo → Resultado**
+- **Antes:** §24 formalizó que cada ciclo debe comunicar un objetivo, pero la formulación anterior podía tratar el mantenimiento documental como el entregable final, aunque el usuario pide resultados de construcción útiles, visibles y publicados.
+- **Cambio:** se distingue ahora de forma normativa el objetivo de construcción sustantivo del subciclo técnico/documental. Cada ciclo debe orientarse a un resultado de producto que merezca publicarse; la documentación obligatoria es trazabilidad y continuidad, no un sustituto del entregable.
+- **Motivo:** evitar confundir actividad o administración del sprint con progreso de código demostrable.
+- **Resultado:** el objetivo de construcción vuelve a centrarse en corregir los fallos de CI del PR #292; la comprobación local confirma que hay una máquina Windows accesible y acceso Git de lectura a la rama privada, aunque falta un checkout en las rutas comprobadas y no se han ejecutado pruebas del proyecto.
+
+### 25.1 Instrucción del usuario — registro verbatim
+
+> Objetivo concreto de este ciclo: registrar y verificar en el objeto canónico de Metodología la obligación de reportarte, en cada ciclo, cuál es el entregable concreto que estoy intentando conseguir.
+>
+> ERROR: No es lo que quiero. Lo que quioero es el objhetivo de construccion, osea que estas tratando de entregarme. Tu me tienes que entregar a mi resutlkados que pueda ver publicados. OSea no cualqueir cosa e sun resultadop. Resutlados que valgan la pena. 
+>
+> Pregubnta puedfes usar el entorno local para acelerar el proceso de los CI? Es una pregunta que quiero que me respondas con objetividad.
+
+Se conserva la instrucción exactamente como fue recibida, incluidos errores tipográficos y puntuación; no se normaliza dentro de la cita.
+
+### 25.2 Estado vivo de KHORA/GitHub antes de actuar
+
+- PR: [#292 — Add EP master-password gate and encrypted GitHub token UI](https://github.com/SeryMente/khora/pull/292), abierto y sin merge.
+- Rama: `feat/ep-github-token-vault-ui`.
+- Head observado: `c9f21d14a05d9153bb65d25b6d1f50b552aa092c`. `git ls-remote` ejecutado desde PC-1 devolvió este mismo SHA para la rama privada.
+- Workflows consultados: `CI` run 2577 (`failure`), `UI Quality` run 332 (`failure`), `khora-ok / gate` run 598 (`failure`) y `Khora Single Script Guard` run 144 (`failure`).
+- Jobs consultados: CI `calidad` (114091182139), `api-tests` (114091182414), `khora-web-gate` (114091182503); UI Quality `UI E2E` (114091140103), `UI Contract` (114091140225); gate `khora-ok` (114091217112); guard `validate-khora-tree` (114091244233). Todos figuran `failure`.
+- Para tres jobs representativos consultados, los pasos devolvieron arreglos vacíos y los logs fallaron con HTTP 404 `BlobNotFound`. Se mantiene desconocida la causa de código subyacente; no se hicieron reintentos ciegos ni se atribuye un defecto concreto sin evidencia.
+- Checks externos Vercel/Netlify: todos los contexts consultados siguen en `failure`. No se invocó despliegue.
+
+### 25.3 Prueba de viabilidad local — evidencia directa
+
+**Conectividad del dispositivo:** la lista de Desktop Commander mostró PC-1 `Online`; el ping devolvió `pong` a las `2026-10-10T01:10:31.913Z`. PC-7 aparece offline en ambos registros mostrados por el servicio.
+
+**Entorno detectado en PC-1:**
+- Sistema: Windows x64, shell predeterminado `powershell.exe`.
+- Windows PowerShell: `5.1.19041.6456`.
+- Git: `2.55.0.windows.5`.
+- Node.js: `v24.20.0`.
+- npm: `11.19.0`, invocable mediante `npm.cmd`.
+- GitHub CLI: `2.102.0`.
+- Python no está disponible según la configuración declarada por Desktop Commander.
+- Intentar invocar el shim `npm` resolvió a `npm.ps1` y fue bloqueado por Execution Policy. No se modificó la política; `npm.cmd --version` sí devolvió `11.19.0`.
+- `gh auth status --hostname github.com` informó que GitHub CLI no está autenticado. `gh repo view` no pudo leer el repositorio y terminó con código 4.
+- No obstante, un comando de solo lectura `git ls-remote` contra `https://github.com/SeryMente/khora.git` tuvo exit code 0 y devolvió el head de `feat/ep-github-token-vault-ui`. Esto demuestra acceso Git de lectura desde esa máquina, sin que sea necesario inferir cómo están almacenadas las credenciales.
+- No se encontró un checkout en las tres rutas comprobadas: `%USERPROFILE%\Desktop\KHORA-EP\repo`, `%USERPROFILE%\Desktop\khora` y `%USERPROFILE%\source\repos\khora`. Este resultado no afirma que no exista en otra ruta.
+- Las comprobaciones fueron de lectura/diagnóstico: no se clonó ni modificó el repositorio, no se instalaron dependencias, no se ejecutaron tests del proyecto y no se alteraron las credenciales o políticas del sistema.
+
+### 25.4 Respuesta objetiva a la viabilidad local
+
+**Conclusión: SÍ, es viable usar PC-1 para acelerar el diagnóstico local de CI, con condiciones.** La conexión del dispositivo y la lectura Git de la rama privada ya se comprobaron directamente. La máquina tiene Windows PowerShell 5.1, Node, Git y `npm.cmd`, por lo que es candidata para las pruebas compatibles con sus runtimes.
+
+**Lo que aún no se ha demostrado:** que el checkout esté materializado, que todas las dependencias puedan instalarse, que el runtime coincida con la versión usada por cada workflow, que todos los tests puedan correr localmente o que los fallos actuales se reproduzcan fuera de Actions. La autenticación de GitHub CLI está ausente aunque el acceso Git de lectura funciona; no debe suponerse que hay permiso de escritura. No exponer ni reutilizar secretos manualmente.
+
+**Método propuesto para acelerar el ciclo de construcción:**
+1. Verificar los comandos exactos y versiones fijados por los workflows de la cabecera `c9f21d14…`.
+2. Materializar esa misma cabecera en un directorio temporal separado, sin tocar árboles locales desconocidos.
+3. Instalar dependencias con el lockfile del repositorio y con el ejecutable compatible (`npm.cmd` mientras el shim `npm.ps1` esté bloqueado).
+4. Ejecutar primero los gates locales rápidos —lint, comprobaciones estáticas, unit/API/contratos y guards de PowerShell que puedan ejecutarse en ese host—, almacenando salidas reproducibles.
+5. Corregir únicamente un fallo con evidencia; repetir el test local relevante antes de publicar el commit.
+6. Consultar GitHub Actions después de publicar. Solo GitHub puede certificar el estado remoto del CI; pasar localmente no equivale a CI verde.
+
+Esta secuencia es un plan, no una afirmación de que se haya ejecutado. No se clonó, editó, instaló ni publicó código durante este subciclo; la pregunta actual pedía confirmar capacidad de manera objetiva.
+
+### 25.5 Qué cuenta como resultado valioso y qué falta endurecer
+
+**Criterio de resultado sustantivo:** cambio de código de KHORA publicado en el PR #292, con regresión cubierta por pruebas y checks de CI verdes verificados en GitHub. No cuentan como cierre del objetivo: esta actualización documental, el mero acceso al dispositivo, un clone exitoso, una prueba local aislada, o la repetición de un workflow sin diagnóstico.
+
+**Bloqueos actuales, por prioridad:**
+1. Recuperar pasos/logs de Actions por una vía autorizada, o reproducir los gates en local para localizar la causa precisa de las fallas.
+2. Materializar un checkout temporal e instalar dependencias compatibles con los workflows, preservando el repositorio y estado de la máquina.
+3. Identificar/corregir la causa raíz con prueba de regresión local y evidencia, y publicar una revisión acotada.
+4. Revalidar CI remoto después de la publicación.
+5. Mantener fuera de alcance merge/deploy y configuración de secretos reales mientras los gates no se satisfagan.
+
+**Próxima acción concreta:** inspeccionar desde GitHub los workflows y lockfiles fijados al head observado para conocer los comandos y las versiones exactas; luego, si se inicia ejecución local, preparar checkout temporal de esa cabecera en PC-1 sin tocar directorios existentes y correr primero el gate más barato y relevante.
+
+**Estado por gate:**
+- Dispositivo local conectado: `PASS` (ping respondió).
+- Acceso Git de lectura a la rama privada: `PASS` (`git ls-remote` devolvió el SHA).
+- Checkout local y dependencias de KHORA: `NOT_VERIFIED`.
+- Diagnóstico de la causa raíz de CI: `BLOCKED` (steps vacíos y logs 404; todavía sin reproducción local).
+- PR #292 con CI verde: `FAIL` en el estado remoto observado; objetivo de construcción aún no logrado.
+- Merge/despliegue: no ejecutados.
+
+**Prohibiciones vigentes:** no declarar CI verde, no atribuir una causa sin evidencia, no asumir autenticación de escritura, no cambiar Execution Policy global, no sobrescribir archivos existentes, no hacer merge ni desplegar, no registrar valores de credenciales.
+
+**Lectura de vuelta:** pendiente de realizar después de guardar esta versión; no declarar persistencia hasta confirmar v1.1.8 y §25 desde GitHub.
