@@ -9,6 +9,11 @@
 **Fuente normativa canónica:**  
 https://github.com/SeryMente/metodologia/blob/main/SI-METACOGNITIVO.md
 
+**Canon de dominio para ciclos EP/WP-LAB/OGP y accesos seguros:**  
+https://github.com/SeryMente/metodologia/blob/main/CANON-ENTORNO-PERSISTENTE-Y-LABORATORIOS.md
+
+Este enlace determina requisitos y criterios de evidencia del dominio EP; no altera el alcance de este documento sobre evidencia normativa por turno.
+
 **Implementación de verificador existente:**  
 https://github.com/SeryMente/khora/blob/main/khora-web/lib/server/norm-check.ts
 
