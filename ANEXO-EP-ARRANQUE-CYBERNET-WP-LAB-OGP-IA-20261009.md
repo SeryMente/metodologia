@@ -1,8 +1,8 @@
 # Especificación canónica EP: Cybernet, RDC, WP-LAB y OGP-Visual
 
 **Estado:** especificación consolidada; ejecución física y certificación pendientes de evidencia.
-**Versión del objeto:** v1.1.5
-**Nombre de versión:** EP v1.0 — Alcance Mínimo y Gates
+**Versión del objeto:** v1.1.6
+**Nombre de versión:** Regla Operativa de Continuidad EP
 **Corte:** 2026-10-09.
 **Fuente transversal:** SeryMente/metodologia.
 **SI vigente leído con H1 → SI@H1 → H2:** v1.6.21 — Ordenamiento por Preponderancia y Categorías.
@@ -1023,7 +1023,7 @@ Este comando es la referencia aportada para Windows PowerShell 5.1; el bootstrap
 ### 20.6 Estado y reanudación
 
 - Este ciclo no ejecutó Vercel ni un runtime local y no usó RDC. No se integró la rama en `main` para evitar disparar el workflow existente de despliegue.
-- PR #292 permanece abierto y draft: https://github.com/SeryMente/khora/pull/292. Rama `feat/ep-github-token-vault-ui`; cabecera observada al cierre del ciclo 009 `c9f21d14a05d9153bb65d25b6d1f50b552aa092c`. La arquitectura de rama es v1.0.7, OEP es v0.1.9 y este objeto es v1.1.5.
+- PR #292 permanece abierto y draft: https://github.com/SeryMente/khora/pull/292. Rama `feat/ep-github-token-vault-ui`; cabecera observada al cierre del ciclo 009 `c9f21d14a05d9153bb65d25b6d1f50b552aa092c`. La arquitectura de rama es v1.0.7, OEP es v0.1.9 y este objeto es v1.1.6.
 - La UI gestiona el PAT en un campo temporal del navegador; el servidor valida el acceso requerido, persiste solo ciphertext AES-256-GCM, y no lo devuelve por el endpoint de administración. El endpoint de entrega solo admite un JWT EP válido con scope `ep:github:token` y usa no-store. El catálogo consulta primero la bóveda y usa `GITHUB_TOKEN` solo como compatibilidad. El launcher obtiene el token por el `apiBase` existente y ya no solicita pegarlo en el portapapeles.
 - La contraseña maestra OEP usa scrypt, salt aleatorio, pepper derivado por ámbito, comparación constante, límite de ocho intentos fallidos por origen hasheado cada 15 minutos y cookie firmada de 15 minutos limitada a EP. Alta/rotación requiere una sesión OIDC autorizada; el uso diario del submódulo EP puede entrar por contraseña maestra sin convertirla en autenticación general de KHORA.
 - `ep-integrity-manifest.sha256` conserva 607 entradas. Se refrescaron los hashes conocidos de los archivos de este ciclo; las entradas no relacionadas no fueron recalculadas en bloque, por lo que no se declara una verificación integral del manifiesto completo.
