@@ -81,6 +81,8 @@ Si un script de configuración debe ignorar la política del shell padre, ejecú
 
 **Destino obligatorio en CECEQ:** si el proceso se ejecuta desde el perfil de MantenimientoRCI, las rutas derivadas de `$env:USERPROFILE`, `[Environment]::GetFolderPath('Desktop')`, `TEMP` o `AppData` pueden señalar su propio árbol. Antes de clonar, actualizar, instalar o guardar datos, asegúrate de que el destino resuelto esté dentro del árbol completo de `C:\\Users\\fila4\\...`. Nunca escribir dentro de `C:\\Users\\MantenimientoRCI\\...`. Esta aclaración regula únicamente la ruta de trabajo; no exige cambiar de identidad ni crear una sesión o procedimiento adicional.
 
+Los ejemplos genéricos siguientes que usan `$env:USERPROFILE` y el clonador que resuelve el Escritorio del proceso no deben ejecutarse tal cual en CECEQ si su destino cae en MantenimientoRCI. En ese caso, clona o actualiza con Git indicando explícitamente una ruta dentro de `C:\\Users\\fila4\\...`; no uses el clonador actual si su Escritorio resuelve al árbol de MantenimientoRCI.
+
 Para un repositorio público, si Git está instalado y no existe aún el destino:
 
     git clone https://github.com/SeryMente/metodologia.git "$env:USERPROFILE\Desktop\metodologia"
