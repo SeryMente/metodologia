@@ -215,14 +215,14 @@ Cuando exista una divergencia de observabilidad RDC y el ciclo requiera conectiv
 1. detectar la identidad efectiva cuando sea relevante;
 2. resolver la ubicación y su perfil;
 3. comprobar si la operación es técnicamente válida bajo la identidad efectiva;
-4. si la operación es clonación o materialización inicial de repositorio, comprobar que el destino no esté dentro del perfil o ruta de MantenimientoRCI;
+4. antes de cualquier operación, comprobar que la ruta destino no esté dentro del árbol de directorios de MantenimientoRCI; las rutas autorizadas de fila4 pueden operarse directamente desde la sesión RDC vigente;
 5. ejecutar y verificar el resultado.
 
 La discrepancia entre fila4 y central\mantenimientorci no bloquea por sí misma.
 
 ### 8.3 Qué no hacer
 
-No abrir sesiones RDC paralelas ni almacenar credenciales adicionales para resolver la diferencia de identidad. No clonar ni materializar repositorios nuevos dentro del perfil o ruta de MantenimientoRCI.
+No abrir sesiones RDC paralelas, crear tareas temporales ni cambiar de usuario para resolver la diferencia de identidad. No crear archivos ni trabajar dentro del árbol de directorios de MantenimientoRCI. Operar directamente sobre las rutas autorizadas de fila4 desde la sesión administrativa vigente.
 
 ### 8.4 Elevación
 
