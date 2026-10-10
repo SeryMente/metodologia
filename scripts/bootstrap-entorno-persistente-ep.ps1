@@ -137,6 +137,74 @@ function Resolve-Npx {
     foreach ($p in @((Join-Path $env:ProgramFiles 'nodejs\npx.cmd'),(Join-Path $env:LOCALAPPDATA 'Programs\nodejs\npx.cmd'))) { if ($p -and (Test-Path -LiteralPath $p -PathType Leaf)) { return $p } }
     return $null
 }
+function Resolve-Node {
+    Refresh-Path
+    $x=Get-Command node.exe -ErrorAction SilentlyContinue
+    if ($x -and $x.Source) { return $x.Source }
+    $candidates=@()
+    if ($env:ProgramFiles) { $candidates += (Join-Path $env:ProgramFiles 'nodejs\node.exe') }
+    if ($env:LOCALAPPDATA) { $candidates += (Join-Path $env:LOCALAPPDATA 'Programs\nodejs\node.exe') }
+    foreach ($p in $candidates) { if ($p -and (Test-Path -LiteralPath $p -PathType Leaf)) { return $p } }
+    return $null
+}
+function Ensure-HostToolchain {
+    $git=Resolve-Git
+    if (-not $git) {
+        $wg=Find-Winget
+        if (-not $wg) { throw 'GIT_NOT_FOUND_AND_WINGET_UNAVAILABLE' }
+        $install=Invoke-NativeCaptured -Executable $wg -Arguments @('install','--id','Git.Git','-e','--source','winget','--accept-source-agreements','--accept-package-agreements','--silent') -Label 'INSTALL_GIT'
+        $deadline=(Get-Date).AddSeconds(60)
+        do { $git=Resolve-Git; if (-not $git) { Start-Sleep -Milliseconds 500 } } while (-not $git -and (Get-Date) -lt $deadline)
+        if (-not $git) { throw "GIT_INSTALL_NOT_VERIFIED: exit=$($install.ExitCode)" }
+    }
+    $gitVersion=Invoke-NativeCaptured -Executable $git -Arguments @('--version') -Label 'GIT_VERSION'
+    if ($gitVersion.ExitCode -ne 0) { throw 'GIT_VERSION_CHECK_FAILED' }
+    $script:GitPath=$git
+    $env:Path="$(Split-Path -Parent $git);$env:Path"
+
+    $node=Resolve-Node
+    $npx=Resolve-Npx
+    $needsInstall=$false
+    if (-not $node -or -not $npx) {
+        $needsInstall=$true
+    } else {
+        $versionResult=Invoke-NativeCaptured -Executable $node -Arguments @('--version') -Label 'NODE_VERSION_CHECK'
+        if ($versionResult.ExitCode -ne 0) { $needsInstall=$true }
+        else {
+            $versionText=($versionResult.Lines -join '').Trim().TrimStart('v')
+            try { if ([version]$versionText -lt [version]'22.12.0') { $needsInstall=$true } } catch { $needsInstall=$true }
+        }
+    }
+    if ($needsInstall) {
+        $wg=Find-Winget
+        if (-not $wg) { throw 'NODE_NPX_NOT_READY_AND_WINGET_UNAVAILABLE' }
+        $install=Invoke-NativeCaptured -Executable $wg -Arguments @('install','--id','OpenJS.NodeJS.LTS','-e','--source','winget','--accept-source-agreements','--accept-package-agreements','--silent') -Label 'INSTALL_NODE_LTS'
+        $env:Path="$env:ProgramFiles\nodejs;$env:LOCALAPPDATA\Programs\nodejs;$env:APPDATA\npm;$env:Path"
+        $deadline=(Get-Date).AddSeconds(60)
+        do {
+            $node=Resolve-Node
+            $npx=Resolve-Npx
+            if (-not $node -or -not $npx) { Start-Sleep -Milliseconds 500 }
+        } while ((-not $node -or -not $npx) -and (Get-Date) -lt $deadline)
+        if (-not $node -or -not $npx) { throw "NODE_NPX_INSTALL_NOT_VERIFIED: exit=$($install.ExitCode)" }
+    }
+    $env:Path="$env:ProgramFiles\nodejs;$env:LOCALAPPDATA\Programs\nodejs;$env:APPDATA\npm;$env:Path"
+    $nodeVersion=Invoke-NativeCaptured -Executable $node -Arguments @('--version') -Label 'NODE_VERSION'
+    $versionText=($nodeVersion.Lines -join '').Trim().TrimStart('v')
+    try { $parsedNodeVersion=[version]$versionText } catch { throw "NODE_VERSION_INVALID: $versionText" }
+    if ($nodeVersion.ExitCode -ne 0 -or $parsedNodeVersion -lt [version]'22.12.0') { throw "NODE_TOO_OLD_OR_INVALID: $versionText; minimum 22.12.0" }
+
+    $npmCmd=Join-Path (Split-Path -Parent $node) 'npm.cmd'
+    if (-not (Test-Path -LiteralPath $npmCmd -PathType Leaf)) {
+        $npm=Get-Command npm.cmd -ErrorAction SilentlyContinue
+        if ($npm -and $npm.Source) { $npmCmd=$npm.Source }
+    }
+    if (-not (Test-Path -LiteralPath $npmCmd -PathType Leaf)) { throw 'NPM_CMD_NOT_FOUND' }
+    $npmVersion=Invoke-NativeCaptured -Executable $npmCmd -Arguments @('--version') -Label 'NPM_VERSION'
+    if ($npmVersion.ExitCode -ne 0) { throw 'NODE_NPM_VERSION_CHECK_FAILED' }
+    $script:NpxCmd=$npx
+    Write-Log 'HOST_TOOLCHAIN=GIT_NODE_NPM_NPX_VERIFIED'
+}
 function Normalize-Origin([string]$Value) {
     $v=$Value.Trim() -replace '^git@github\.com:','https://github.com/' -replace '^ssh://git@github\.com/','https://github.com/' -replace '\.git$',''
     return $v.TrimEnd('/').ToLowerInvariant()
@@ -409,46 +477,8 @@ if (-not (Test-Path -LiteralPath $events)) { [System.IO.File]::WriteAllText($eve
 Add-Content -LiteralPath $events -Value ('- '+(Get-Date -Format 'yyyy-MM-dd HH:mm:ssK')+' | BOOTSTRAP_START | user='+$env:USERNAME+' | reboot_budget=0') -Encoding UTF8
 try {
     Ensure-Gh
-    $pin='14756d289f1ddc4c74c6736f5aa021121158541c'; $pinHash='19D254602AEAA17F08D9E4D09B20B665DC48588C46EB41F1C9E53F2EF62E0154'
-    $url='https://raw.githubusercontent.com/SeryMente/metodologia/'+$pin+'/scripts/bootstrap-cibercafe-cli.ps1'; $file=Join-Path $env:TEMP 'bootstrap-cibercafe-cli-pinned.ps1'
-    [Net.ServicePointManager]::SecurityProtocol=[Net.SecurityProtocolType]::Tls12
-    Invoke-WebRequest -UseBasicParsing -Uri $url -OutFile $file
-    if ((Get-FileHash -LiteralPath $file -Algorithm SHA256).Hash -ne $pinHash) { Remove-Item -LiteralPath $file -Force -ErrorAction SilentlyContinue; throw 'BASE_BOOTSTRAP_HASH_MISMATCH' }
-    Write-Log 'BASE_BOOTSTRAP=PINNED_SHA256_VERIFIED'
-    # The pinned prepare step only updates the public Desktop\metodologia checkout.
-    # Remove command-scope Git credential overrides while it inspects the local origin,
-    # then restore the in-memory token transport before private-repository operations.
-    $gitCredentialEnv=@{}
-    foreach ($n in @('GIT_CONFIG_COUNT','GIT_CONFIG_KEY_0','GIT_CONFIG_VALUE_0','GIT_CONFIG_KEY_1','GIT_CONFIG_VALUE_1')) {
-        $gitCredentialEnv[$n]=[Environment]::GetEnvironmentVariable($n,'Process')
-        Remove-Item ('Env:'+$n) -ErrorAction SilentlyContinue
-    }
-    # Diagnose the local Desktop checkout in the same clean Git environment before the legacy helper runs.
-    $desktopForProbe=[Environment]::GetFolderPath('Desktop')
-    $methodologyForProbe=Join-Path $desktopForProbe 'metodologia'
-    $gitForProbe=Resolve-Git
-    if ($gitForProbe -and (Test-Path -LiteralPath (Join-Path $methodologyForProbe '.git'))) {
-        $originProbe=Invoke-NativeCaptured -Executable $gitForProbe -Arguments @('-C',$methodologyForProbe,'remote','get-url','origin') -Quiet
-        if ($originProbe.ExitCode -ne 0) {
-            foreach ($line in $originProbe.Lines) { Write-Log ('DESKTOP_ORIGIN_DIAGNOSTIC | '+[string]$line) }
-            throw 'DESKTOP_METHODOLOGY_ORIGIN_READ_FAILED: see DESKTOP_ORIGIN_DIAGNOSTIC lines above; no repository files were changed by this check.'
-        }
-        Write-Log ('DESKTOP_METHODOLOGY_ORIGIN_READABLE='+($originProbe.Lines -join '').Trim())
-    }
-    $ps=Join-Path $env:SystemRoot 'System32\WindowsPowerShell\v1.0\powershell.exe'; $old=$ErrorActionPreference
-    try {
-        $ErrorActionPreference='Continue'
-        $baseOutput=@(& $ps -NoProfile -ExecutionPolicy Bypass -File $file -PrepareOnly 2>&1)
-        $baseCode=$LASTEXITCODE
-    } finally {
-        $ErrorActionPreference=$old
-        foreach ($n in $gitCredentialEnv.Keys) {
-            if ($null -ne $gitCredentialEnv[$n]) { [Environment]::SetEnvironmentVariable($n,[string]$gitCredentialEnv[$n],'Process') }
-            else { Remove-Item ('Env:'+$n) -ErrorAction SilentlyContinue }
-        }
-    }
-    foreach ($line in $baseOutput) { Write-Log ('BASE_PREPARE | '+[string]$line) }
-    if ($baseCode -ne 0) { throw "BASE_PREPARE_FAILED: exit=$baseCode" }
+    Ensure-HostToolchain
+    Write-Log 'LEGACY_PREPARE_REMOVED=HOST_TOOLCHAIN_VERIFIED | No prior Desktop methodology checkout is inspected or modified.'
 
     $script:GitPath=Resolve-Git
     if (-not $script:GitPath) { throw 'GIT_NOT_FOUND_AFTER_BASE_PREPARE' }
