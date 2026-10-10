@@ -1,12 +1,12 @@
 # Especificación canónica EP: Cybernet, RDC, WP-LAB y OGP-Visual
 
 **Estado:** especificación consolidada; ejecución física y certificación pendientes de evidencia.
-**Versión del objeto:** v1.1.9
-**Nombre de versión:** Diagnóstico Reproducible de CI y Corrección Publicada de KHORA
+**Versión del objeto:** v1.1.10
+**Nombre de versión:** Diagnóstico de CI Privado y Reparación de Gates Canónicos
 **Corte:** 2026-10-09.
 **Fuente transversal:** SeryMente/metodologia.
 **SI vigente leído con H1 → SI@H1 → H2:** v1.6.21 — Ordenamiento por Preponderancia y Categorías.
-**Frescura comprobada antes de esta actualización:** H1 = H2 = 5b6814a6164d33344448889b0485e631686fef87; blob SI 89ebe84df49300662f996b85130cbcb893b568e0; versión/nombre verificados leyendo la cabecera actual de `SI-METACOGNITIVO.md` (`v1.6.21 — Ordenamiento por Preponderancia y Categorías`).
+**Frescura comprobada antes de esta actualización:** H1 = H2 = f380df739926df56a4032a3773ed30b3c70a4c58; blob SI 151333921ca3214c0adee3996cc80d5f23adb2d5; versión/nombre verificados leyendo la cabecera activa de `SI-METACOGNITIVO.md` (`v1.6.21 — Ordenamiento por Preponderancia y Categorías`).
 **Objeto relacionado:** [consolidación EP-WP-LAB](ANEXO-ENTORNO-PERSISTENTE-HIBRIDO-EP-WP-LAB.md).
 
 ## 1. Propósito y autoridad
@@ -1413,6 +1413,7 @@ Se conserva la instrucción exactamente como fue recibida, incluidos errores tip
 - Commit de corrección publicado: [`6738c1f1aeffe5835a725531e0774d4420af13c5`](https://github.com/SeryMente/khora/commit/6738c1f1aeffe5835a725531e0774d4420af13c5). La referencia Git de la rama y la API directa de la PR confirmaron ese head.
 - El commit actualiza 10 archivos: declara y restablece el estado `archivado`; tipa la comprobación del inventario; normaliza el buffer de firma Web Crypto para TypeScript; completa fixtures de UI Review; elimina la redeclaración `tokenRoute` en el test de seguridad; hace semántica la tarjeta seleccionable de Pipeline; sincroniza el esquema canónico con Metodología v1.7.7 e incorpora el campo `RA` al renderer, parser y tests.
 - La copia del esquema bajo `khora-web/contracts/FORMATO-REGISTRO-VERIFICACION-CICLO.schema.json` se comparó desde GitHub con el archivo canónico de Metodología: los contenidos coinciden, versión `v1.7.7`.
+- En Metodología se detectaron y corrigieron dos validadores canónicos desfasados: el gate bootstrap exigía frases fail-closed sin el formato literal actualizado, y el gate de gobernanza RDC fijaba identidades históricas `v1.6.7`/`v0.11.7`. El commit [`f380df7`](https://github.com/SeryMente/metodologia/commit/f380df739926df56a4032a3773ed30b3c70a4c58) alinea los textos normativos con sus validadores y hace que el gate RDC compruebe la identidad activa en lugar de una versión obsoleta.
 - No se hizo merge ni despliegue. No se configuró una contraseña maestra real, no se cargó un PAT real y no se expusieron secretos.
 
 ### 25.3 Reproducción local en PC-1 — evidencia directa y límites
@@ -1442,7 +1443,9 @@ Para el SHA `6738c1f1aeffe5835a725531e0774d4420af13c5`, GitHub creó las ejecuci
 - [khora-ok / gate](https://github.com/SeryMente/khora/actions/runs/38018059361): FAILURE.
 - [Khora Single Script Guard](https://github.com/SeryMente/khora/actions/runs/38018059308): FAILURE.
 
-Los jobs del head publicado se completaron en aproximadamente 1–2 segundos, devuelven `steps: []`, tienen `runner_name` vacío y las descargas de logs fallan con HTTP 404 `BlobNotFound`. Este comportamiento también se observó en el head previo `c9f21d14…`; por ello no demuestra que la suite haya alcanzado un test de código ni localiza una causa de test. No se repetirán workflows idénticos sin evidencia diagnóstica nueva.
+Los jobs del head publicado se completaron en aproximadamente 1–2 segundos, devuelven `steps: []`, tienen `runner_name` vacío y las descargas de logs fallan con HTTP 404 `BlobNotFound`. El mismo patrón aparece en el CI de KHORA `main` (run `37989017867`) y en un workflow programado ajeno al PR (`38016423103`). No demuestra que la suite haya alcanzado un test de código ni localiza una causa dentro del código. No se repetirán workflows idénticos sin evidencia diagnóstica nueva.
+
+**Control comparativo de Actions en Metodología:** el repositorio `SeryMente/metodologia` es público y los gates de su commit posterior `f380df7` ejecutaron sus pasos y terminaron en SUCCESS: [validate-canonical-bootstrap](https://github.com/SeryMente/metodologia/actions/runs/38018495149) y [Validate RDC Governance](https://github.com/SeryMente/metodologia/actions/runs/38018495178). Esto prueba que Actions puede ejecutar esos trabajos en el repositorio público, no que la configuración de KHORA sea correcta. KHORA es privado; GitHub documenta que los runners estándar en repositorios públicos son gratuitos, mientras el uso de repositorios privados está sujeto a cuota de minutos/plan y facturación ([Billing and usage](https://docs.github.com/en/actions/concepts/billing-and-usage?apiVersion=2022-11-28)). El patrón de KHORA apunta ahora a una restricción/configuración del ámbito privado o a un fallo de provisión/almacenamiento de logs. **No está confirmado**: no tenemos acceso a los datos de facturación ni a todos los ajustes de Actions desde el conector. El propietario debe comprobar la cuota/uso de Actions y los límites de gasto, además de la configuración Actions del repositorio, antes de otro reintento.
 - Los checks externos Vercel/Netlify continúan en FAILURE. No se invocó despliegue.
 
 **Estado de RDC:** tras el trabajo local, la lista del servicio mostró PC-1 y PC-7 fuera de línea; no se intentó seguir ejecutando comandos contra un dispositivo desconectado. Para reanudar pruebas CLI cuando el host esté disponible, debe iniciarse Desktop Commander en una terminal elevada con `npx @wonderwhy-er/desktop-commander@latest remote`; hasta entonces, la ruta de continuidad es GitHub.
@@ -1451,10 +1454,10 @@ Los jobs del head publicado se completaron en aproximadamente 1–2 segundos, de
 
 **Objetivo concreto de construcción:** entregar una revisión de KHORA publicada en el PR #292 que corrija los fallos demostrados y consiga checks remotos verdes verificables. La primera corrección está publicada, pero el objetivo no puede darse por completado mientras Actions no aporte una ejecución útil y CI no quede verde. La actualización documental, un checkout, una instalación exitosa o un conjunto de comprobaciones estáticas no son cierre del objetivo.
 
-**Bloqueo actual:** los workflows principales fallan antes de registrar pasos y sus logs no están disponibles (`BlobNotFound`). No se puede certificar si el código del nuevo commit pasa en Ubuntu hasta recuperar logs/annotations o disponer de otra ejecución útil. La conexión RDC está fuera de línea, así que no puede repetirse ahora la validación local sobre el commit corregido.
+**Bloqueo actual:** las pruebas locales demostraron defectos y hay un commit de corrección publicado, pero no se reejecutaron las suites tras el parche. Los workflows de KHORA siguen muriendo antes de registrar pasos (`BlobNotFound`), incluso en una cabecera histórica de `main`, mientras los gates de Metodología sí se ejecutaron y pasaron. La hipótesis prioritaria es una restricción/configuración/cuota de Actions para el repositorio privado o un problema de provisión/registro de logs; no se da por confirmada hasta que el propietario revise facturación, límites de gasto y ajustes de Actions. RDC está fuera de línea, por lo que no puede repetirse el CLI post-patch ahora.
 
 **Secuencia siguiente:**
-1. Continuar vía GitHub mientras RDC siga desconectado; consultar el estado de ejecución y metadatos de checks, sin reintentar fallos opacos en bucle.
+1. Continuar vía GitHub mientras RDC siga desconectado. El propietario debe comprobar cuota de minutos, presupuesto/límite de gasto y habilitación de Actions para el repositorio privado KHORA; no es posible verificar esos datos desde el conector disponible.
 2. Si la API/runner vuelve a ofrecer pasos o logs, localizar la primera causa real y corregir solo con evidencia.
 3. Cuando RDC se reinicie, llevar al checkout temporal el SHA publicado y ejecutar `npm.cmd run typecheck`, `npm.cmd run ui-review:check`, `npm.cmd run ui:contract` y `npm.cmd run test:unit` antes de modificar otra vez.
 4. No declarar CI verde hasta observarlo en GitHub; no hacer merge ni desplegar sin validación.
