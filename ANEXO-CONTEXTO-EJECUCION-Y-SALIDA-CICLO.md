@@ -271,7 +271,7 @@ El ciclo se marca BLOQUEADO cuando ocurra cualquiera de estas condiciones:
 - hay múltiples terminales ONLINE y no existe información suficiente para seleccionar la terminal objetivo;
 - la ubicación es desconocida cuando la tarea depende de un perfil de ubicación;
 - el perfil de la ubicación no existe o no es suficiente;
-- la identidad Windows operativa requerida no puede verificarse.
+- la operación exige expresamente una identidad Windows específica por un requisito técnico o de autorización, y esa identidad no puede verificarse. La identidad operativa de referencia del perfil no es por sí sola una identidad de ejecución obligatoria.
 
 Mientras el ciclo esté BLOQUEADO, no se ejecutan operaciones dependientes del contexto y no se declara cierre exitoso.
 
@@ -282,6 +282,8 @@ La identidad efectiva del canal RDC puede utilizarse para cualquier operación t
 En CECEQ, `fila4` permanece como identidad operativa definida por el perfil y `central\\mantenimientorci` como identidad administrativa efectiva cuando corresponda. Esta regla es independiente de la selección de terminal.
 
 No se abre una sesión RDC paralela para cambiar de identidad Windows ni se utiliza una identidad histórica como sustituto de una terminal distinta.
+
+La identidad administrativa efectiva puede operar directamente sobre destinos autorizados dentro del perfil de `fila4`. La prohibición es de destino: no crear archivos, repositorios ni realizar trabajo dentro del árbol de directorios de MantenimientoRCI. No utilizar tareas temporales, impersonación, cambio de sesión ni un canal RDC paralelo para forzar ejecución como `fila4`.
 
 ## 13. Referencia terminológica
 
