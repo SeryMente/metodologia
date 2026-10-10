@@ -40,8 +40,11 @@ La ubicacion es un estado transversal y persistente de trabajo. Una declaracion 
 | Campo | Valor canónico |
 |---|---|
 | Ubicacion | CECEQ |
-| Árbol completo de trabajo | C:\\Users\\fila4\\... |
-| Regla de escritura | Nunca escribir dentro de C:\\Users\\MantenimientoRCI\\... |
+| Identidad efectiva para el arranque de Entorno Persistente | `central\\MantenimientoRCI`, sin cambio ni suplantación de usuario |
+| Árbol de datos y destino externo del VHDX | C:\\Users\\fila4\\... |
+| Regla de escritura | Khora no escribe dentro de C:\\Users\\MantenimientoRCI\\... ni modifica su perfil |
+| Redirección | Variables de entorno solo del proceso; destinos validados antes de escribir |
+| Credenciales efímeras entre procesos | DPAPI de ámbito de equipo; archivos temporales en el árbol de fila4 |
 
 ### 4.2 Office Depot
 
@@ -119,9 +122,9 @@ Si el modelo comunica una ausencia o pérdida de RDC, debe emitir inmediatamente
 
 ## 6. Árbol de trabajo de CECEQ
 
-Cuando se trabaje en CECEQ desde el perfil de MantenimientoRCI, el árbol completo de trabajo es C:\\Users\\fila4\\.... Toda escritura propia de la tarea debe dirigirse a ese árbol. Nunca se debe escribir dentro de C:\\Users\\MantenimientoRCI\\....
+En el arranque de Entorno Persistente en CECEQ, los procesos KHORA se ejecutan bajo la identidad Windows efectiva `central\\MantenimientoRCI`. La identidad no cambia a `fila4` y ningún proceso debe afirmar que actúa como esa identidad. El árbol de datos, repositorios, instalaciones portátiles, cachés, temporales, configuración y la carpeta externa del VHDX pertenece al árbol `C:\\Users\\fila4\\...`; todo el contenido de sesión se mantiene dentro del VHDX cifrado alojado allí.
 
-Esta regla se limita al destino de trabajo; no prescribe la identidad Windows de ejecución ni impone condiciones adicionales de elevación, sesión, cambio de usuario, impersonación, tareas temporales o manejo de permisos.
+La ruta `fila4` es únicamente un destino de filesystem y no una suplantación de identidad. El lanzador y el gate redirigen variables de entorno dentro del proceso, verifican la identidad real de los procesos hijos y validan cada ruta antes de escribir. No se crean archivos de trabajo, historiales, configuraciones ni credenciales ligados al perfil de MantenimientoRCI. Si el perfil fila4 no se resuelve de manera única, si existe un punto de reanálisis inesperado o si una ruta sale del destino permitido, el arranque se detiene.
 
 ## 7. Formato obligatorio de salida por ciclo
 
