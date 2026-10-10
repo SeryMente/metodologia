@@ -1,7 +1,7 @@
 # Especificación canónica EP: Cybernet, RDC, WP-LAB y OGP-Visual
 
 **Estado:** especificación consolidada; ejecución física y certificación pendientes de evidencia.
-**Versión del objeto:** v1.1.7
+**Versión del objeto:** v1.1.8
 **Nombre de versión:** Regla Operativa de Continuidad EP
 **Corte:** 2026-10-09.
 **Fuente transversal:** SeryMente/metodologia.
