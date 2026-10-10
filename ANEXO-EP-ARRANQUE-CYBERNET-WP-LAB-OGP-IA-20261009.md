@@ -1,12 +1,12 @@
 # Especificación canónica EP: Cybernet, RDC, WP-LAB y OGP-Visual
 
 **Estado:** especificación consolidada; ejecución física y certificación pendientes de evidencia.
-**Versión del objeto:** v1.1.11
-**Nombre de versión:** Evidencia de CI Privado, Runner y Reparación de Gates Canónicos
+**Versión del objeto:** v1.1.12
+**Nombre de versión:** Reconfirmación de BlobNotFound en Actions de KHORA
 **Corte:** 2026-10-09.
 **Fuente transversal:** SeryMente/metodologia.
 **SI vigente leído con H1 → SI@H1 → H2:** v1.6.21 — Ordenamiento por Preponderancia y Categorías.
-**Frescura comprobada antes de esta actualización:** H1 = H2 = 6b39202b9b4a5d66ce1fa216db6e353fb821f2dd; blob SI 151333921ca3214c0adee3996cc80d5f23adb2d5; versión/nombre verificados leyendo la cabecera activa de `SI-METACOGNITIVO.md` (`v1.6.21 — Ordenamiento por Preponderancia y Categorías`).
+**Frescura comprobada antes de esta actualización:** H1 = H2 = 144bd8f133c26115b11ce53e88406da7917c8235; blob SI 151333921ca3214c0adee3996cc80d5f23adb2d5; versión/nombre verificados desde la cabecera activa de `SI-METACOGNITIVO.md` (`v1.6.21 — Ordenamiento por Preponderancia y Categorías`).
 **Objeto relacionado:** [consolidación EP-WP-LAB](ANEXO-ENTORNO-PERSISTENTE-HIBRIDO-EP-WP-LAB.md).
 
 ## 1. Propósito y autoridad
@@ -1484,3 +1484,20 @@ El usuario preguntó después: «Sigues procesando en que te quedaste? O ya term
 
 **Reglas vigentes:** no inventar éxito de CI; no atribuir causa a tests que no ejecutaron; no suponer autenticación de escritura; no cambiar Execution Policy; no sobrescribir workspaces existentes; no exponer secretos; no hacer merge ni desplegar.
 
+
+
+### 25.6 Reconfirmación del bloqueo de Actions — 2026-10-10, 09:17 hora de CDMX
+
+**Estado del producto:** el PR [KHORA #292](https://github.com/SeryMente/khora/pull/292) continúa abierto y en borrador, sin merge ni despliegue. El head no cambió: `6738c1f1aeffe5835a725531e0774d4420af13c5`. No hay una ejecución nueva de CI para el head corregido desde los runs consultados de las 02:44 UTC.
+
+**Nueva evidencia de KHORA/main:** se consultaron cuatro workflows programados más recientes; todos figuran como `failure` y las descargas de log devuelven HTTP 404 `BlobNotFound`:
+- [Sync Todoist and Notion, run 38060728199](https://github.com/SeryMente/khora/actions/runs/38060728199), job `114238276816`.
+- [Board Orchestrator, run 38060574847](https://github.com/SeryMente/khora/actions/runs/38060574847), job `114237835481`.
+- [Khora API Healthcheck, run 38057661273](https://github.com/SeryMente/khora/actions/runs/38057661273), job `114229320182`.
+- [Jules Auto-Respond Cron, run 38057019715](https://github.com/SeryMente/khora/actions/runs/38057019715), job `114227468122`.
+
+Esto amplía el patrón: no se limita a CI, UI Quality o al PR; también afecta workflows programados en el repositorio privado. No demuestra si la causa es cuota, políticas de Actions, provisión de runners o retención/almacenamiento de logs. La hipótesis de un problema específico de KHORA/ámbito privado sigue sin confirmación técnica.
+
+**RDC:** PC-1 y PC-7 continúan `Offline` en la lista de Desktop Commander (última conexión registrada hace 14–17 horas). No se enviaron comandos a dispositivos desconectados.
+
+**Resultado del ciclo:** no hay avance que permita desbloquear la ejecución de pruebas post-patch de KHORA. Sí están confirmadas las correcciones de los gates de Metodología y sus workflows verdes, pero la causa raíz de los jobs de KHORA sigue fuera del alcance del conector actual. La acción externa decisiva sigue siendo inspeccionar consumo/cuota y límites de gasto de GitHub Actions y los ajustes/políticas de runners en la cuenta/organización propietaria. No afirmar CI verde ni repetir workflows fallidos en bucle.
