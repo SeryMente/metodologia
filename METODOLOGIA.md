@@ -2,21 +2,21 @@
 
 ## Estado canónico
 
-- **Versión:** v0.14.12
-- **Nombre de versión:** Árbol de Trabajo de Fila4 como Única Regla de Destino
+- **Versión:** v0.14.13
+- **Nombre de versión:** Identidad Efectiva MantenimientoRCI y Árbol de Datos Fila4 para EP
 - **Última actualización:** 2026-10-10
 - **Última actualización canónica:** 2026-10-10
 - **Ámbito:** Todos los proyectos y conversaciones trabajados bajo esta metodología.
 
 ### Narrativa de la versión
 
-**Antes:** la redacción vinculaba la regla de directorios con requisitos adicionales sobre identidad de ejecución, elevación y sesiones.
+**Antes:** v0.14.12 definía el árbol de destino de CECEQ, pero dejaba fuera la regla especial que necesita el arranque de Entorno Persistente.
 
-**Cambio:** en CECEQ, cuando se trabaje desde el perfil de MantenimientoRCI, el árbol completo de trabajo es C:\\Users\\fila4\\.... Todas las escrituras propias de la tarea deben dirigirse al árbol de directorios de fila4. Nunca se debe escribir dentro de C:\\Users\\MantenimientoRCI\\....
+**Cambio:** cuando Khora arranca Entorno Persistente en CECEQ, los procesos permanecen bajo la identidad Windows efectiva `central\\MantenimientoRCI`. Esa identidad ejecuta el trabajo; no se cambia, suplanta ni declara como `fila4`. El árbol de datos, staging, cachés, temporales, configuraciones, instalaciones portátiles y materialización de repositorios se dirige a `C:\\Users\\fila4\\...` o al VHDX efímero guardado dentro de ese árbol. Khora no escribe artefactos ni modifica configuraciones de usuario dentro de `C:\\Users\\MantenimientoRCI\\...`.
 
-**Alcance:** esta norma regula únicamente el árbol de directorios de trabajo. No establece una identidad de ejecución obligatoria ni agrega condiciones sobre elevación, sesiones, cambio de usuario, impersonación, tareas temporales o manejo de permisos.
+**Alcance:** se separan y comprueban dos dimensiones: identidad efectiva del proceso y destino de datos. La identidad de cada proceso hijo debe conservarse y comprobarse; las rutas se resuelven explícitamente al árbol de fila4 antes de crear o escribir archivos. El entorno del proceso puede redirigirse en memoria, sin modificar variables de usuario persistentes ni el perfil de MantenimientoRCI. Una ruta ambigua, una ruta que escape del perfil de fila4 o un punto de reanálisis no autorizado hace fallar el arranque de forma cerrada.
 
-**Continuidad normativa:** el cambio precisa la regla de destino y no sustituye ni versiona el SI.
+**Continuidad normativa:** v0.14.13 mantiene la regla general de destino de v0.14.12 y la especializa para el ciclo de Entorno Persistente en CECEQ. No cambia la identidad activa del usuario de Windows ni versiona el SI.
 
 ### Registro de versiones
 
@@ -72,9 +72,10 @@
 | 47 | v0.14.10 | Ejecución Directa y Separación de Destinos por Identidad | Se elimina la interpretación errónea de que operar en rutas de fila4 exige ejecutar como fila4; central\\mantenimientorci trabaja directamente desde la sesión RDC vigente sobre destinos autorizados, sin tareas temporales, impersonación ni sesiones paralelas. |
 | 48 | v0.14.11 | Identidad Elevada Obligatoria y Aislamiento del Árbol de Trabajo | Versión histórica; sus instrucciones de identidad y sesión quedan superadas por la delimitación de destino de v0.14.12. |
 | 49 | v0.14.12 | Árbol de Trabajo de Fila4 como Única Regla de Destino | En CECEQ, el árbol completo de trabajo es el de fila4 y nunca se escribe en el árbol de MantenimientoRCI. La regla solo determina destinos de escritura; no añade condiciones de identidad o sesión. |
+| 50 | v0.14.13 | Identidad Efectiva MantenimientoRCI y Árbol de Datos Fila4 para EP | Para el arranque de Entorno Persistente en CECEQ, MantenimientoRCI sigue siendo la identidad efectiva de todos los procesos; Fila4 es exclusivamente el destino del árbol de datos y del VHDX. Se preserva el perfil de MantenimientoRCI y el arranque falla cerrado ante destinos ambiguos o inseguros. |
 La tabla es canónica. Las versiones futuras añaden nuevos registros sin reutilizar folios. Una entrada retirada por revisión canónica puede conservar únicamente su identificador y estado de retirada, sin preservar la regla operativa invalidada. El nombre describe el avance de la versión y no sustituye el título general del sistema o documento.
 
-La regla vigente para CECEQ se limita al destino de trabajo descrito en v0.14.12. Las referencias históricas a identidad, elevación, sesiones, cambio de usuario, impersonación o gestión de permisos no añaden requisitos a esta regla.
+La regla general de destino para CECEQ, establecida en v0.14.12, sigue siendo usar el árbol de fila4 para los datos de trabajo. Para el caso específico en que Khora arranca Entorno Persistente en CECEQ rige además el contrato de v0.14.13: todos los procesos mantienen la identidad efectiva `central\\MantenimientoRCI`, mientras los datos se escriben únicamente en el árbol de fila4 o dentro del VHDX materializado desde ese árbol. La identidad efectiva y el destino se verifican por separado.
 
 ## 1. Convención obligatoria de foliación de ciclos
 
@@ -297,9 +298,9 @@ La conversación permanece abierta durante el bloqueo. El handshake fresco se va
 
 ## 17. Regla de destino de trabajo para CECEQ
 
-Cuando se trabaje en CECEQ desde el perfil de MantenimientoRCI, el árbol completo de trabajo es C:\\Users\\fila4\\.... Toda escritura propia de la tarea —incluidos archivos, repositorios, instalaciones, configuraciones, cachés, temporales, artefactos y datos— debe tener destino dentro del árbol de fila4. Nunca se debe escribir dentro de C:\\Users\\MantenimientoRCI\\....
+En CECEQ, el destino de trabajo general es el árbol completo de `C:\\Users\\fila4\\...`; no se escribe dentro de `C:\\Users\\MantenimientoRCI\\...`. Para el arranque de Entorno Persistente, Khora ejecuta bajo la identidad elevada efectiva `central\\MantenimientoRCI` y redirige a fila4 las rutas de usuario del proceso antes de la primera escritura. Los repositorios, instalaciones portátiles, archivos, configuraciones, cachés, temporales y datos deben quedar dentro del árbol de fila4 o en el VHDX efímero guardado allí.
 
-Esta regla determina únicamente dónde se trabaja y dónde se escribe. No prescribe qué identidad ejecuta el proceso ni añade requisitos de elevación, sesión, cambio de usuario, impersonación, tareas temporales o procedimientos especiales de permisos.
+La identidad Windows no se cambia ni se suplanta. `fila4` es el destino de datos, no la identidad del proceso. La redirección se hace en el entorno del proceso, no mediante cambios persistentes de perfil. Khora no debe escribir ni actualizar archivos de perfil, historial, configuración, credenciales o blobs DPAPI de usuario en el árbol de MantenimientoRCI. Los blobs efímeros que crucen procesos con este contrato usan DPAPI de ámbito de equipo, con archivos materializados en el árbol permitido y eliminación explícita. La ruta se comprueba contra el perfil real de fila4 y se rechazan perfiles ambiguos y puntos de reanálisis.
 
 
 ## 17.1 Verificación normativa y liberación adaptativas
@@ -322,7 +323,7 @@ En ChatGPT nativo, la ausencia o indisponibilidad del MCP no impide producir la 
 
 ## 17.2 Arranque CLI Windows y descarga verificable de repositorios
 
-Cuando la tarea requiera arrancar aplicaciones en Windows, resolver dependencias PowerShell o descargar/actualizar repositorios, consultar el procedimiento condicional [ANEXO-PROCEDIMIENTO-ARRANQUE-CLI-WINDOWS-Y-CLONADO-REPOSITORIOS.md](ANEXO-PROCEDIMIENTO-ARRANQUE-CLI-WINDOWS-Y-CLONADO-REPOSITORIOS.md) y, cuando aplique, usar [scripts/clone-public-repo-to-desktop.ps1](scripts/clone-public-repo-to-desktop.ps1). El repositorio debe clonarse dentro del árbol de directorios de fila4; nunca debe materializarse ni escribirse dentro del árbol de MantenimientoRCI. Todo clonador, instalador o bootstrap que derive Desktop, TEMP, AppData o su destino desde el perfil del proceso solo es válido si su ruta resuelta queda dentro del árbol de fila4; en otro caso, se debe indicar explícitamente un destino bajo fila4.
+Cuando la tarea requiera arrancar aplicaciones en Windows, resolver dependencias PowerShell o descargar/actualizar repositorios, consultar el procedimiento condicional [ANEXO-PROCEDIMIENTO-ARRANQUE-CLI-WINDOWS-Y-CLONADO-REPOSITORIOS.md](ANEXO-PROCEDIMIENTO-ARRANQUE-CLI-WINDOWS-Y-CLONADO-REPOSITORIOS.md). En CECEQ, el lanzador de Entorno Persistente debe conservar `central\\MantenimientoRCI` como identidad efectiva y resolver previamente todos los destinos dentro de fila4. Los repositorios y herramientas faltantes se materializan de forma portátil en el VHDX o en el árbol de fila4; no se usan instaladores por usuario ni credenciales o configuraciones específicas de MantenimientoRCI. Todo clonador, instalador o bootstrap que derive Desktop, TEMP, AppData o su destino desde el perfil del proceso solo es válido si redirige y verifica expresamente su destino antes de la primera escritura.
 
 El clonador distingue Git de GitHub CLI, usa la fuente winget explícita cuando debe instalar Git y valida origin, rama, SHA de HEAD y working tree. Un destino dudoso o con cambios locales se conserva y la operación se detiene. Las operaciones de terminal respetan la restricción de CLI cuando el usuario la establece; la validación debe demostrar el resultado real, no solo que el proceso arrancó.
 
