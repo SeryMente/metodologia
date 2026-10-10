@@ -544,6 +544,9 @@ if (-not $script:RunMutexOwned) {
 New-Item -ItemType Directory -Path (Join-Path $WorkRoot 'logs') -Force | Out-Null
 $script:LogPath=Join-Path $WorkRoot ('logs\bootstrap-'+$script:RunId+'.log')
 if ($script:RunMutexAbandoned) { Write-Log 'BOOTSTRAP_MUTEX=RECOVERED_ABANDONED_PREVIOUS_RUN' } else { Write-Log 'BOOTSTRAP_MUTEX=ACQUIRED' }
+Write-Log ('FILA4_PROFILE_ROOT='+$script:Fila4ProfileRoot)
+Write-Log ('FILA4_DESKTOP='+$desktop)
+Write-Log ('WORKSPACE_ROOT='+$WorkRoot)
 $computer=Get-CimInstance Win32_ComputerSystem; $os=Get-CimInstance Win32_OperatingSystem; $dns=[System.Net.Dns]::GetHostName(); $name=[string]$computer.Name
 Write-Log ('SESSION_START | HOST='+$name+' | DNS='+$dns+' | User='+$env:USERNAME)
 Write-Log ('OS='+$os.Caption+' | BUILD='+$os.BuildNumber+' | PowerShell='+$PSVersionTable.PSVersion)
