@@ -2,23 +2,23 @@
 
 ## Estado canónico
 
-- **Versión:** v0.14.9
-- **Nombre de versión:** Bootstrap Anclado por Commit y Hash
-- **Última actualización:** 2026-10-09
-- **Última actualización canónica:** 2026-10-09
+- **Versión:** v0.14.10
+- **Nombre de versión:** Ejecución Directa y Separación de Destinos por Identidad
+- **Última actualización:** 2026-10-10
+- **Última actualización canónica:** 2026-10-10
 - **Ámbito:** Todos los proyectos y conversaciones trabajados bajo esta metodología.
 
 ### Narrativa de la versión
 
-**Antes:** el bootstrap integral estaba implementado y probado, pero la entrada de descarga usaba una URL móvil de `main`. Durante la validación, esa URL devolvió una versión anterior aunque el commit del repositorio ya había avanzado.
+**Antes:** la metodología distinguía la identidad Windows operativa de referencia de la identidad administrativa efectiva del canal RDC, pero quedaba margen para interpretar que trabajar dentro de directorios de `fila4` exigía ejecutar como `fila4`. Esa interpretación generó intentos innecesarios de cambio de identidad y tareas programadas temporales.
 
-**Cambio:** se ancla la entrada ejecutable a un commit inmutable de `scripts/bootstrap-cibercafe-cli.ps1` y se verifica su SHA-256 antes de iniciar el proceso hijo de PowerShell. El bootstrap mantiene comprobaciones de dependencias, clonación/actualización segura, versión normativa, cámara opcional y lanzamiento de RDC.
+**Cambio:** se precisa que `central\\mantenimientorci` puede operar directamente por CLI sobre rutas autorizadas dentro del perfil de `fila4`. La identidad `fila4` identifica el perfil/destino operativo; no es el principal obligatorio de cada proceso. Se prohíbe crear tareas temporales, impersonar/sustituir al usuario o abrir sesiones RDC paralelas como workaround.
 
-**Motivo:** impedir que una caché o retraso de propagación en la URL raw cambie silenciosamente el script que el usuario está ejecutando. Un comando de arranque definitivo debe identificar exactamente su artefacto, no depender de contenido móvil que no se haya verificado.
+**Motivo:** la restricción de CECEQ es de ámbito de rutas: no crear archivos o repositorios ni trabajar dentro del árbol de directorios de MantenimientoRCI. No prohíbe que el proceso administrativo acceda a destinos autorizados de `C:\\Users\\fila4\\...`.
 
-**Resultado:** la entrada canónica aborta si el hash del script descargado no coincide; solo entonces ejecuta PowerShell con `-NoProfile -ExecutionPolicy Bypass`. La ruta de preparación quedó probada en PowerShell 5.1, y la opción OBS reconoció la cámara virtual ya activa sin lanzar una instancia duplicada.
+**Resultado:** se continúa mediante la sesión RDC ya autenticada, ejecutando operaciones directas sobre rutas explícitas autorizadas de `fila4`, sin tareas temporales ni reconexiones. Solo una denegación real del sistema de archivos sobre una operación concreta puede requerir resolver permisos; la diferencia de identidad no bloquea por sí sola.
 
-**Continuidad normativa:** la identidad activa del SI sigue procediendo exclusivamente de la cabecera de su snapshot exacto de main. Esta versión de Metodología no sustituye ni versiona el SI.
+**Continuidad normativa:** la identidad activa del SI sigue procediendo exclusivamente de la cabecera de su snapshot exacto de `main`. Esta actualización modifica el procedimiento operativo general y no sustituye ni versiona el SI.
 
 ### Registro de versiones
 
@@ -71,6 +71,7 @@
 | 44 | v0.14.7 | Arranque CLI Verificable y Continuidad por Terminal | Se canoniza el procedimiento de arranque CLI Windows, la clonación idempotente con verificación de origin/SHA/working tree y la persistencia separada del estado y los eventos de cada terminal CIBERCAFE; se registra la identidad PC-4 sin sustituir otras sesiones RDC. |
 | 45 | v0.14.8 | Bootstrap CLI Integral para Terminales CIBERCAFE | Se incorpora un comando único que instala/verifica dependencias, sincroniza Metodología con comprobaciones de seguridad, opcionalmente valida el inicio de OBS Virtual Camera y lanza RDC; conserva el diagnóstico remoto ante fallos de OBS y no declara éxito sin verificación. |
 | 46 | v0.14.9 | Bootstrap Anclado por Commit y Hash | Se fija el script de arranque a un commit inmutable y SHA-256 verificado antes de ejecutarlo, corrigiendo el riesgo real de contenido raw obsoleto; se conserva la preparación segura de dependencias, repositorio, OBS opcional y RDC. |
+| 47 | v0.14.10 | Ejecución Directa y Separación de Destinos por Identidad | Se elimina la interpretación errónea de que operar en rutas de fila4 exige ejecutar como fila4; central\\mantenimientorci trabaja directamente desde la sesión RDC vigente sobre destinos autorizados, sin tareas temporales, impersonación ni sesiones paralelas. La restricción continúa siendo no trabajar dentro del árbol de directorios de MantenimientoRCI. |
 La tabla es canónica. Las versiones futuras añaden nuevos registros sin reutilizar folios. Una entrada retirada por revisión canónica puede conservar únicamente su identificador y estado de retirada, sin preservar la regla operativa invalidada. El nombre describe el avance de la versión y no sustituye el título general del sistema o documento.
 
 ## 1. Convención obligatoria de foliación de ciclos
@@ -301,6 +302,14 @@ La única restricción específica de materialización es no clonar ni materiali
 La discrepancia entre identidad operativa de referencia e identidad efectiva no bloquea por sí misma el ciclo. El gate solo bloquea cuando el contexto requerido no puede verificarse, la operación exige una capacidad que no está disponible o se vulnera la restricción de materialización.
 
 Un bloqueo es de ejecución sustantiva, no de conversación. Mientras el ciclo esté BLOQUEADO, el modelo debe seguir disponible para explicar la causa, solicitar la información mínima, recibir decisiones del usuario y verificar la solución. No puede ejecutar trabajo sustantivo ni declarar el ciclo cerrado hasta levantar el bloqueo.
+
+### Regla operativa obligatoria: identidad efectiva y destino autorizado
+
+En CECEQ, `central\\mantenimientorci` es la identidad efectiva de la sesión RDC y puede ejecutar directamente por CLI operaciones técnicamente válidas sobre rutas autorizadas de `C:\\Users\\fila4\\...`. `WIN-OPERATIVO = fila4` identifica el perfil/destino operativo; **no** exige que el proceso se ejecute como esa cuenta.
+
+La restricción se aplica al árbol de directorios de MantenimientoRCI: no crear archivos o repositorios allí ni utilizarlo como workspace. No prohíbe acceder desde la sesión administrativa a rutas permitidas de `fila4`.
+
+Queda prohibido resolver esta distinción mediante tareas programadas temporales, impersonación, cambio de inicio de sesión o sesiones RDC paralelas. No solicitar al usuario que cambie a fila4 si la operación puede ejecutarse directamente con la sesión vigente. Si el sistema de archivos deniega una operación concreta, reportar la ruta y el error exactos y corregir únicamente ese impedimento; nunca inferirlo por la diferencia entre identidades.
 
 
 ## 17.1 Verificación normativa y liberación adaptativas
