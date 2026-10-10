@@ -1,4 +1,4 @@
-# Canon canónico de Entorno Persistente, Continuidad de Ejecución y Laboratorios Locales
+# Canon transversal de Entorno Persistente, Continuidad de Ejecución y Laboratorios Locales
 
 **ID documental:** METODOLOGIA-EP-CANON  
 **Versión del documento:** v1.0.0  
