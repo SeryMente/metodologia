@@ -40,10 +40,10 @@ La ubicacion es un estado transversal y persistente de trabajo. Una declaracion 
 | Campo | Valor canonico |
 |---|---|
 | Ubicacion | CECEQ |
-| Usuario Windows operativo | fila4 |
-| Usuario Windows administrativo/elevado | central\mantenimientorci |
-| Regla de sesión | El canal RDC permanece bajo central\\mantenimientorci; no se abren sesiones RDC paralelas bajo fila4. |
-| Regla | fila4 es la identidad operativa del perfil; central\\mantenimientorci es la identidad efectiva del canal RDC. La diferencia se conserva y se resuelve por procedimiento, no por cambio de sesión. |
+| Perfil/árbol de destino de trabajo | `C:\\Users\\fila4\\...` |
+| Identidad Windows de ejecución | `central\\mantenimientorci` (elevada; obligatoria para el trabajo en este perfil) |
+| Regla de sesión | Se reutiliza la sesión RDC elevada vigente; no se abren sesiones paralelas ni se cambia a fila4. |
+| Regla de destino | Todo repositorio, archivo, instalación, configuración, caché, temporal, artefacto y dato de trabajo debe residir en el árbol de `fila4`. El árbol de MantenimientoRCI queda prohibido como workspace y destino de datos. |
 
 ### 4.2 Office Depot
 
@@ -278,13 +278,11 @@ Mientras el ciclo esté BLOQUEADO, no se ejecutan operaciones dependientes del c
 
 ## 12.5 Flexibilidad de ejecución para CECEQ
 
-La identidad efectiva del canal RDC puede utilizarse para cualquier operación técnicamente válida.
+En CECEQ, toda operación de trabajo se ejecuta como `central\\mantenimientorci`, desde la sesión elevada vigente. `fila4` define exclusivamente el árbol de destino autorizado y no la identidad de ejecución. La regla es independiente de la selección de terminal.
 
-En CECEQ, `fila4` permanece como identidad operativa definida por el perfil y `central\\mantenimientorci` como identidad administrativa efectiva cuando corresponda. Esta regla es independiente de la selección de terminal.
+Todo repositorio, archivo, instalación, configuración, caché, temporal, artefacto y dato utilizado o producido debe ubicarse en el árbol de `fila4`. El árbol de MantenimientoRCI está prohibido como workspace y destino de datos.
 
-No se abre una sesión RDC paralela para cambiar de identidad Windows ni se utiliza una identidad histórica como sustituto de una terminal distinta.
-
-La identidad administrativa efectiva puede operar directamente sobre destinos autorizados dentro del perfil de `fila4`. La prohibición es de destino: no crear archivos, repositorios ni realizar trabajo dentro del árbol de directorios de MantenimientoRCI. No utilizar tareas temporales, impersonación, cambio de sesión ni un canal RDC paralelo para forzar ejecución como `fila4`.
+No se cambia a `fila4`, no se abre una sesión RDC paralela, ni se utiliza impersonación o una tarea temporal para cambiar la identidad. Si el sistema deniega una operación en una ruta autorizada, se diagnostica el error exacto y se resuelve ese permiso sin trasladar el trabajo al árbol prohibido.
 
 ## 13. Referencia terminológica
 
