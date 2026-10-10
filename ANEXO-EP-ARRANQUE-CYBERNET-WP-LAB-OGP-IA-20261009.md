@@ -1,8 +1,8 @@
 # Especificación canónica EP: Cybernet, RDC, WP-LAB y OGP-Visual
 
 **Estado:** especificación consolidada; ejecución física y certificación pendientes de evidencia.
-**Versión del objeto:** v1.1.2
-**Nombre de versión:** Compatibilidad de Credenciales GitHub y Verificación E2E OEP Pendiente
+**Versión del objeto:** v1.1.3
+**Nombre de versión:** Endurecimiento OIDC, Bóveda Fail-Closed y CI No Verificable
 **Corte:** 2026-10-09.
 **Fuente transversal:** SeryMente/metodologia.
 **SI vigente leído con H1 → SI@H1 → H2:** v1.6.21 — Ordenamiento por Preponderancia y Categorías.
@@ -974,7 +974,7 @@ Hasta que el usuario revise la interfaz local, **no continuar con las demás lí
 
 ## 20. Ciclo operativo 005: UI de bóveda GitHub cifrada y puerta maestra OEP (2026-10-09)
 
-**Versión del objeto:** v1.1.2 — Compatibilidad de Credenciales GitHub y Verificación E2E OEP Pendiente.
+**Versión del objeto:** v1.1.3 — Endurecimiento OIDC, Bóveda Fail-Closed y CI No Verificable.
 **Tipo de trabajo de este ciclo:** inspección documental y de código fuente en GitHub; no se usaron RDC, Vercel ni un runtime local. No se cambió el despliegue ni se afirma que exista una implementación operativa del nuevo acceso.
 **SI transversal:** v1.6.21 — Ordenamiento por Preponderancia y Categorías; referencia de lectura: ccb0258f5571b9f8a5533a2a17a32c3ce554c294.
 
@@ -1023,10 +1023,10 @@ Este comando es la referencia aportada para Windows PowerShell 5.1; el bootstrap
 ### 20.6 Estado y reanudación
 
 - Este ciclo no ejecutó Vercel ni un runtime local y no usó RDC. No se integró la rama en `main` para evitar disparar el workflow existente de despliegue.
-- PR #292 permanece abierto y draft: https://github.com/SeryMente/khora/pull/292. Rama `feat/ep-github-token-vault-ui`; cabecera observada al cierre `8f0b3f24e0a9c323f8ae9aec4f739caeadb5408e`. La arquitectura de rama es v1.0.5, OEP es v0.1.7 y este objeto es v1.1.2.
+- PR #292 permanece abierto y draft: https://github.com/SeryMente/khora/pull/292. Rama `feat/ep-github-token-vault-ui`; cabecera observada al cierre del ciclo 009 `c9f21d14a05d9153bb65d25b6d1f50b552aa092c`. La arquitectura de rama es v1.0.7, OEP es v0.1.9 y este objeto es v1.1.3.
 - La UI gestiona el PAT en un campo temporal del navegador; el servidor valida el acceso requerido, persiste solo ciphertext AES-256-GCM, y no lo devuelve por el endpoint de administración. El endpoint de entrega solo admite un JWT EP válido con scope `ep:github:token` y usa no-store. El catálogo consulta primero la bóveda y usa `GITHUB_TOKEN` solo como compatibilidad. El launcher obtiene el token por el `apiBase` existente y ya no solicita pegarlo en el portapapeles.
 - La contraseña maestra OEP usa scrypt, salt aleatorio, pepper derivado por ámbito, comparación constante, límite de ocho intentos fallidos por origen hasheado cada 15 minutos y cookie firmada de 15 minutos limitada a EP. Alta/rotación requiere una sesión OIDC autorizada; el uso diario del submódulo EP puede entrar por contraseña maestra sin convertirla en autenticación general de KHORA.
-- `ep-integrity-manifest.sha256` conserva 606 entradas. Se refrescaron los hashes conocidos de los archivos de este ciclo; las entradas no relacionadas no fueron recalculadas en bloque, por lo que no se declara una verificación integral del manifiesto completo.
+- `ep-integrity-manifest.sha256` conserva 607 entradas. Se refrescaron los hashes conocidos de los archivos de este ciclo; las entradas no relacionadas no fueron recalculadas en bloque, por lo que no se declara una verificación integral del manifiesto completo.
 - GitHub registra como fallidos `CI`, `Khora Single Script Guard`, `khora-ok / gate` y `UI Quality` para la cabecera indicada. La herramienta no pudo recuperar los logs de los jobs (404 BlobNotFound); no se debe afirmar que los fallos están corregidos ni que las pruebas pasaron. Los checks externos Vercel/Netlify también aparecen fallidos; no se ejecutó ningún despliegue.
 - No se cargó un PAT real ni se configuró una contraseña maestra real; no se aplicó la migración `017_ep_github_credential_vault.sql` en el runtime y no se probó el arranque real con Windows PowerShell 5.1. Para uso operativo deben integrarse los cambios en un ciclo autorizado, aplicar la migración mediante el flujo de despliegue permitido, configurar contraseña maestra desde OIDC, cargar el PAT, y verificar un arranque completo y una escritura efectiva a las ramas/repositorios pertinentes.
 - `OEP-PENDING-001` permanece abierto hasta que CI, migración, permisos efectivos de escritura, PowerShell 5.1 E2E y seguridad de las rutas hayan quedado verificados. El PR en draft no equivale a aceptación ni despliegue.
@@ -1042,3 +1042,15 @@ Este comando es la referencia aportada para Windows PowerShell 5.1; el bootstrap
 - **Cambio →** se restauró `gho_` en la validación del token en servidor y PowerShell; se actualizó la UI, la redacción de secretos, la prueba de contrato y la arquitectura para documentar `ghp_`, `github_pat_` y `gho_`. Se regeneró el PowerShell embebido desde el fuente y se verificó igualdad tras normalizar finales de línea. Se actualizó OEP a `v0.1.7` y su hash dentro del manifiesto de 606 entradas.
 - **Motivo →** preservar compatibilidad del flujo ya configurado y evitar que la nueva bóveda obligue a cambiar la credencial que ya funciona con el launcher.
 - **Resultado →** cabecera de PR observada `8f0b3f24e0a9c323f8ae9aec4f739caeadb5408e`. Se reintentaron en GitHub los cuatro workflows y todos volvieron a fallar: CI (#2525), UI Quality (#306), Khora Single Script Guard (#118) y khora-ok / gate (#572). Los siete jobs fallidos devolvieron 404 `BlobNotFound` al recuperar los logs, por lo que la causa exacta no está demostrada. El manifiesto se actualizó para los archivos tocados; los demás hashes preexistentes no se recalcularon integralmente. No se desplegó, no se integró `main`, no se cargaron secretos reales y no se probó PowerShell 5.1. `OEP-PENDING-001` permanece abierto.
+
+
+### 20.9 Ciclo operativo 009 — Separación OIDC, origen y bóveda fail-closed
+
+- **Antes →** la primera propuesta permitía administrar el token persistente también con la cookie maestra, podía caer a `GITHUB_TOKEN` si la bóveda no podía leer/descifrar y la ruta de acceso `/auth/ep` no estaba declarada como excepción del contrato de navegación. Además, el POST que emite la sesión EP no exigía un origen coincidente cuando su principal era la cookie maestra.
+- **Cambio →** cargar/rotar/borrar la credencial GitHub ahora requiere OIDC autorizado; la sesión maestra solo consulta estado redactado y puede usar el token durante el bootstrap. La UI oculta los controles administrativos cuando `canManage` es falso. La emisión por cookie maestra requiere `Origin` coincidente. El catálogo solo usa el token de entorno legado si la bóveda responde correctamente y confirma que no hay credencial; los errores de almacenamiento o descifrado fallan cerrados. `/auth/ep` se añade a `NAVIGATION_EXEMPT_ROUTES` y una prueba de contrato protege esa regla. Arquitectura actualizada a v1.0.7, OEP a v0.1.9 y el manifiesto a 607 entradas con las huellas de los archivos cambiados recalculadas.
+- **Motivo →** limitar autoridad de la contraseña maestra, evitar cambios silenciosos de credencial y dejar el contrato de navegación consistente con la nueva puerta de OEP.
+- **Resultado →** cabecera observada `c9f21d14a05d9153bb65d25b6d1f50b552aa092c`, PR #292 abierto y draft. En esa cabecera `CI`, `Khora Single Script Guard`, `khora-ok / gate` y `UI Quality` finalizaron en fallo. El conector no ofrece sus logs ni pasos; la variante temporal de diagnóstico también falló sin producir pasos, logs ni artefactos y fue retirada. El manifiesto conserva 607 entradas y se actualizaron los hashes de OEP, arquitectura, catálogo, API de token, registro de navegación y pruebas. Esto no constituye una validación de todos los hashes restantes ni evidencia de CI aprobada. No se integró `main`, no se desplegó, no se usó RDC ni runtime local, no se cargaron secretos reales, no se aplicó la migración a producción y no se ejecutó PowerShell 5.1 real. `OEP-PENDING-001` permanece abierto.
+
+### 20.10 Solicitud del usuario verbatim — progreso y ausencia de RDC
+
+> En este momento no esta RDC activo, pero no lo necesitas verdad? Empieza no te detengas hasta terminar. Reportame en tu razonamiento peridoicamente tiempo estimado para terminar. Y reporta progreso feneral, siempre.
