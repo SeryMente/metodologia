@@ -2,21 +2,21 @@
 
 ## Estado canónico
 
-- **Versión:** v0.15.0
-- **Nombre de versión:** Continuidad Canónica del Sprint MCP
-- **Última actualización:** 2026-10-10
-- **Última actualización canónica:** 2026-10-10
+- **Versión:** v0.14.9
+- **Nombre de versión:** Bootstrap Anclado por Commit y Hash
+- **Última actualización:** 2026-10-09
+- **Última actualización canónica:** 2026-10-09
 - **Ámbito:** Todos los proyectos y conversaciones trabajados bajo esta metodología.
 
 ### Narrativa de la versión
 
-**Antes:** el bootstrap era la entrada canónica de continuidad, pero el descubrimiento de objetos específicos de un esfuerzo podía depender de memoria conversacional o de que el usuario volviera a describir el contexto. Esto era insuficiente para un sprint de observabilidad MCP que debe continuar entre modelos y plataformas.
+**Antes:** el bootstrap integral estaba implementado y probado, pero la entrada de descarga usaba una URL móvil de `main`. Durante la validación, esa URL devolvió una versión anterior aunque el commit del repositorio ya había avanzado.
 
-**Cambio:** se crea el objeto canónico ANEXO-SPRINT-MCP-OBSERVABILIDAD-KHORA-DICTADO.md y se incorpora su descubrimiento condicional en BOOTSTRAP-CONTEXTO-GLOBAL.md. El objeto conserva instrucciones del usuario verbatim, estado técnico, evidencia, riesgos, criterios de aceptación y crónica exhaustiva por ciclo. README y la identidad versionada de la Metodología se sincronizan con la nueva entrada.
+**Cambio:** se ancla la entrada ejecutable a un commit inmutable de `scripts/bootstrap-cibercafe-cli.ps1` y se verifica su SHA-256 antes de iniciar el proceso hijo de PowerShell. El bootstrap mantiene comprobaciones de dependencias, clonación/actualización segura, versión normativa, cámara opcional y lanzamiento de RDC.
 
-**Motivo:** que una conversación pueda cambiar de modelo, proveedor o plataforma sin perder la especificación del sprint, repetir investigaciones ya resueltas ni atribuir pruebas que no se ejecutaron. Los documentos de continuidad deben indicar una sola fuente de verdad y separar evidencia real de hipótesis.
+**Motivo:** impedir que una caché o retraso de propagación en la URL raw cambie silenciosamente el script que el usuario está ejecutando. Un comando de arranque definitivo debe identificar exactamente su artefacto, no depender de contenido móvil que no se haya verificado.
 
-**Resultado:** el contexto específico del sprint puede localizarse desde el bootstrap global. El acceso autenticado real al MCP, la suficiencia de sus registros y la reparación del bug continúan pendientes; la canonización documental no los declara resueltos.
+**Resultado:** la entrada canónica aborta si el hash del script descargado no coincide; solo entonces ejecuta PowerShell con `-NoProfile -ExecutionPolicy Bypass`. La ruta de preparación quedó probada en PowerShell 5.1, y la opción OBS reconoció la cámara virtual ya activa sin lanzar una instancia duplicada.
 
 **Continuidad normativa:** la identidad activa del SI sigue procediendo exclusivamente de la cabecera de su snapshot exacto de main. Esta versión de Metodología no sustituye ni versiona el SI.
 
@@ -71,7 +71,6 @@
 | 44 | v0.14.7 | Arranque CLI Verificable y Continuidad por Terminal | Se canoniza el procedimiento de arranque CLI Windows, la clonación idempotente con verificación de origin/SHA/working tree y la persistencia separada del estado y los eventos de cada terminal CIBERCAFE; se registra la identidad PC-4 sin sustituir otras sesiones RDC. |
 | 45 | v0.14.8 | Bootstrap CLI Integral para Terminales CIBERCAFE | Se incorpora un comando único que instala/verifica dependencias, sincroniza Metodología con comprobaciones de seguridad, opcionalmente valida el inicio de OBS Virtual Camera y lanza RDC; conserva el diagnóstico remoto ante fallos de OBS y no declara éxito sin verificación. |
 | 46 | v0.14.9 | Bootstrap Anclado por Commit y Hash | Se fija el script de arranque a un commit inmutable y SHA-256 verificado antes de ejecutarlo, corrigiendo el riesgo real de contenido raw obsoleto; se conserva la preparación segura de dependencias, repositorio, OBS opcional y RDC. |
-| 47 | v0.15.0 | Continuidad Canónica del Sprint MCP | Se canoniza el objeto portátil de continuidad del sprint de observabilidad MCP y diagnóstico del dictado; el bootstrap identifica el objeto por contexto y obliga a documentar por ciclo instrucciones verbatim, avances, incidentes, evidencia, decisiones y siguientes pasos sin depender de la conversación o plataforma. |
 La tabla es canónica. Las versiones futuras añaden nuevos registros sin reutilizar folios. Una entrada retirada por revisión canónica puede conservar únicamente su identificador y estado de retirada, sin preservar la regla operativa invalidada. El nombre describe el avance de la versión y no sustituye el título general del sistema o documento.
 
 ## 1. Convención obligatoria de foliación de ciclos
@@ -134,10 +133,7 @@ En cada ciclo, una conversación nueva o continuadora debe usarlo para localizar
 - `SI-METACOGNITIVO.md`;
 - `METODOLOGIA.md`;
 - `ESTADO-RDC-ACTIVO.md`;
-- `HISTORIAL-RDC.md`, cuando exista y sea necesario para resolver ciclos de vida o auditoría;
-- el objeto de continuidad específico que indique el propio bootstrap para el ámbito del esfuerzo activo.
-
-El bootstrap conserva un solo punto de entrada general y deriva a objetos de contexto condicional sin duplicar sus contenidos. Cuando una tarea corresponda a un sprint documentado en un anexo canónico, ese anexo es la fuente de continuidad del esfuerzo. Cada ciclo debe actualizar la crónica de ese objeto antes de finalizar.
+- `HISTORIAL-RDC.md`, cuando exista y sea necesario para resolver ciclos de vida o auditoría.
 
 La memoria conversacional no sustituye estas fuentes. 
 
