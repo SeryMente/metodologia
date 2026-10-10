@@ -1,8 +1,8 @@
 # Especificación canónica EP: Cybernet, RDC, WP-LAB y OGP-Visual
 
 **Estado:** especificación consolidada; ejecución física y certificación pendientes de evidencia.
-**Versión del objeto:** v1.1.4
-**Nombre de versión:** Inventario Integral EP y Planificación por Gates
+**Versión del objeto:** v1.1.5
+**Nombre de versión:** EP v1.0 — Alcance Mínimo y Gates
 **Corte:** 2026-10-09.
 **Fuente transversal:** SeryMente/metodologia.
 **SI vigente leído con H1 → SI@H1 → H2:** v1.6.21 — Ordenamiento por Preponderancia y Categorías.
@@ -974,7 +974,7 @@ Hasta que el usuario revise la interfaz local, **no continuar con las demás lí
 
 ## 20. Ciclo operativo 005: UI de bóveda GitHub cifrada y puerta maestra OEP (2026-10-09)
 
-**Versión del objeto:** v1.1.4 — Inventario Integral EP y Planificación por Gates.
+**Versión del objeto:** v1.1.5 — EP v1.0: Alcance Mínimo y Gates.
 **Tipo de trabajo de este ciclo:** inspección documental y de código fuente en GitHub; no se usaron RDC, Vercel ni un runtime local. No se cambió el despliegue ni se afirma que exista una implementación operativa del nuevo acceso.
 **SI transversal:** v1.6.21 — Ordenamiento por Preponderancia y Categorías; referencia de lectura: ccb0258f5571b9f8a5533a2a17a32c3ce554c294.
 
@@ -1023,7 +1023,7 @@ Este comando es la referencia aportada para Windows PowerShell 5.1; el bootstrap
 ### 20.6 Estado y reanudación
 
 - Este ciclo no ejecutó Vercel ni un runtime local y no usó RDC. No se integró la rama en `main` para evitar disparar el workflow existente de despliegue.
-- PR #292 permanece abierto y draft: https://github.com/SeryMente/khora/pull/292. Rama `feat/ep-github-token-vault-ui`; cabecera observada al cierre del ciclo 009 `c9f21d14a05d9153bb65d25b6d1f50b552aa092c`. La arquitectura de rama es v1.0.7, OEP es v0.1.9 y este objeto es v1.1.4.
+- PR #292 permanece abierto y draft: https://github.com/SeryMente/khora/pull/292. Rama `feat/ep-github-token-vault-ui`; cabecera observada al cierre del ciclo 009 `c9f21d14a05d9153bb65d25b6d1f50b552aa092c`. La arquitectura de rama es v1.0.7, OEP es v0.1.9 y este objeto es v1.1.5.
 - La UI gestiona el PAT en un campo temporal del navegador; el servidor valida el acceso requerido, persiste solo ciphertext AES-256-GCM, y no lo devuelve por el endpoint de administración. El endpoint de entrega solo admite un JWT EP válido con scope `ep:github:token` y usa no-store. El catálogo consulta primero la bóveda y usa `GITHUB_TOKEN` solo como compatibilidad. El launcher obtiene el token por el `apiBase` existente y ya no solicita pegarlo en el portapapeles.
 - La contraseña maestra OEP usa scrypt, salt aleatorio, pepper derivado por ámbito, comparación constante, límite de ocho intentos fallidos por origen hasheado cada 15 minutos y cookie firmada de 15 minutos limitada a EP. Alta/rotación requiere una sesión OIDC autorizada; el uso diario del submódulo EP puede entrar por contraseña maestra sin convertirla en autenticación general de KHORA.
 - `ep-integrity-manifest.sha256` conserva 607 entradas. Se refrescaron los hashes conocidos de los archivos de este ciclo; las entradas no relacionadas no fueron recalculadas en bloque, por lo que no se declara una verificación integral del manifiesto completo.
@@ -1167,3 +1167,75 @@ El plan se mantiene secuencial en las dependencias y puede avanzar en documentac
 3. Bloqueo inmediato: `CI`, `UI Quality`, `Khora Single Script Guard` y `khora-ok / gate` en fallo; el conector no entregó logs/steps/artifacts utilizables, incluyendo el intento de diagnóstico temporal, que ya fue retirado.
 4. Aún no realizado: merge/deploy, migración productiva 017, configuración real OIDC/contraseña maestra/PAT, validación de permisos de escritura, prueba PowerShell 5.1, host real, RDC, cámara Chrome, Notepad++, persistencia remota, WP-LAB y OGP-GPU.
 5. Riesgo de nomenclatura de repositorios por resolver: el contrato de bóveda lista seis nombres incluyendo CENSUS y GDP; el bootstrap histórico lista cinco y no incluye CENSUS. Confirmar remotes/nombres en GitHub antes de consolidar la lista definitiva.
+
+## 22. Ciclo operativo 011 — Alcance mínimo de EP v1.0 y control de GitHub por turno
+
+**Corte:** 2026-10-10.
+**Versión del objeto:** v1.1.5 — EP v1.0: Alcance Mínimo y Gates.
+**Narrativa Antes → Cambio → Motivo → Resultado**
+- **Antes:** el inventario enumeraba todas las capas del EP, pero la aceptación del producto inicial podía confundirse con la terminación de cámaras, RDC, persistencia remota, WP-LAB o IA local.
+- **Cambio:** se fija una frontera estricta para EP v1.0: acceder a Cora, autenticarse con la contraseña maestra ya configurada, recuperar el comando usando el path existente, utilizar el PAT cifrado de servidor sin volver a solicitarlo, y ejecutar el bootstrap privado con trazabilidad mínima.
+- **Motivo:** llegar primero al primer arranque real sin ampliar la versión inicial con subsistemas que no son necesarios para demostrar ese flujo.
+- **Resultado:** las demás capas continúan en el inventario/roadmap, pero no bloquean por sí solas la aceptación de la interfaz y bootstrap mínimos. Ningún gate de seguridad o arranque real se omite.
+
+### 22.1 Alcance obligatorio de EP v1.0
+
+1. **Entrada:** URL canónica de Cora y ruta EP existentes; no crear otra URL ni otra vía de bootstrap.
+2. **Autenticación diaria:** contraseña maestra con sesión limitada a EP. La configuración/rotación administrativa inicial sigue requiriendo OIDC. No crear bypass general de KHORA.
+3. **PAT:** introducirlo una vez en la UI autorizada; validar desde servidor; cifrar/persistir como AES-256-GCM; nunca devolver el secreto a la UI. La gestión del secreto requiere OIDC; el uso del secreto para bootstrap exige un JWT EP vigente con scope `ep:github:token`.
+4. **Comando:** mantener el flujo de bootstrap existente, su `apiBase`, pin de fuente y validación SHA-256. La entrega del token temporal de KHORA continúa separada del PAT; la versión 1.0 elimina la necesidad de volver a introducir el PAT, no confunde ni elimina otros factores del flujo.
+5. **PowerShell 5.1:** obtener el PAT por HTTPS desde la API EP con scope autorizado; validar URL, formato/purpose de la respuesta; no incluir el PAT en el comando, portapapeles, historial, argumentos de proceso o logs; no caer silenciosamente a un token alternativo.
+6. **Bootstrap mínimo:** materializar la fuente privada fijada, validar integridad y repositorio destino, crear/usar el workspace requerido por el launcher y devolver un estado de salida inequívoco. Los cambios locales/WIP desconocidos no se sobrescriben.
+7. **Migración/configuración:** la migración 017 debe aplicarse al ambiente autorizado antes del uso real; el secreto raíz `EP_BOOTSTRAP_JWT_SECRET`, la cuenta OIDC permitida y la contraseña maestra se configuran por el flujo aprobado, nunca en el repositorio.
+8. **Prueba/observabilidad mínima:** registro saneado con run_id, etapa, status, código de error y siguiente acción; sin secretos. Los estados de cada gate son PASS, BLOCKED, FAIL o NOT_VERIFIED.
+9. **Readiness:** no integrar ni declarar operativo hasta que las pruebas automáticas requeridas pasen, la migración esté aplicada y una ejecución real de Windows PowerShell 5.1 termine el flujo.
+
+### 22.2 Fuera del alcance de bloqueo de v1.0
+
+Estas capacidades siguen dentro del EP general, pero quedan para fases posteriores y no se instalarán ni descargarán como parte del primer arranque salvo dependencia explícita del bootstrap:
+
+- certificación de OBS Virtual Camera en Windows/Chrome y configuración completa de cámara;
+- Notepad++ como asociación predeterminada universal;
+- ficha RDC completa y certificación de la identidad de cada terminal, salvo la identificación mínima del host necesaria para log/diagnóstico;
+- checkpoints remotos duraderos, recuperación completa entre terminales, Deadman/guardian y pruebas de reinicio;
+- rehidratación de WordPress/Divi/WP-LAB;
+- infraestructura local OGP/GPU, ComfyUI, modelos/pesos y TEST 01;
+- optimizaciones, paneles, instalaciones generales y automatizaciones que no sean necesarias para el recorrido de aceptación de v1.0.
+
+No es una renuncia a estas capacidades, sino una frontera de entrega: se documentan y se planifican, pero no amplían el gate del primer arranque. La seguridad esencial del volumen y la protección de secretos pertenecen a v1.0 cuando el bootstrap escriba en ese workspace; no se difieren para ahorrar trabajo.
+
+### 22.3 Gate único de aceptación de v1.0
+
+El recorrido completo debe aprobarse en la misma cabecera de código:
+
+1. UI de Cora permite entrar mediante la contraseña maestra únicamente al submódulo EP.
+2. La administración del PAT solo está disponible con OIDC autorizado; tras guardarlo, la UI solo muestra estado redactado.
+3. El PAT persiste cifrado y se entrega solo tras un JWT EP válido con el scope requerido.
+4. El comando generado mantiene el path canónico `apiBase`, descarga la fuente fijada y verifica SHA-256 antes de ejecutarla.
+5. En Windows PowerShell 5.1, el bootstrap llega al estado de workspace/entorno inicial sin prompt para el PAT ni exposición del secreto.
+6. Las pruebas de CI, contratos de UI/API, regresión y guard de PowerShell pasan con pasos y logs accesibles.
+7. Se comprueba la limpieza de temporales y la respuesta de fallo de cada paso crítico; no se declara PASS cuando el runner no entrega logs/steps.
+8. Se verifica el estado por read-back de GitHub y se registra la cabecera exacta, hashes relevantes, migración, configuración y evidencia de la prueba real.
+
+### 22.4 Comprobación obligatoria de GitHub en cada turno
+
+En cada turno de trabajo relacionado con EP se debe consultar el estado del PR, cabecera, workflows, jobs, pasos/logs, checks externos, revisiones/comentarios relevantes y cambios en las fuentes canónicas antes de decidir el siguiente cambio. Si un check falla, intentar recuperar los pasos/logs; si siguen ausentes, registrar evidencia exacta y no inferir la causa. Solo después se cambia el código correspondiente. Reintentar un run no es corregir un fallo y que el API acepte el reintento no significa que el check pase.
+
+**Estado verificado en este ciclo:**
+
+- PR #292: abierto y en draft; rama `feat/ep-github-token-vault-ui`; cabecera `c9f21d14a05d9153bb65d25b6d1f50b552aa092c`.
+- `CI` run 2577, `UI Quality` run 332, `khora-ok / gate` run 598 y `Khora Single Script Guard` run 144: todos siguen en `failure`.
+- Se reintentaron los jobs fallidos de las cuatro ejecuciones. Los nuevos jobs volvieron a fallar inmediatamente; para los siete jobs, los endpoints de pasos devolvieron listas vacías y los logs devolvieron 404 `BlobNotFound`. Por ello, esta sesión no permite distinguir un fallo de código de un fallo de ejecución/retención de logs.
+- Los checks externos Vercel/Netlify reportan fallo por la configuración/limitación del proyecto privado. No se ejecutó Vercel ni se desplegó.
+- No hay revisiones ni hilos inline en el PR. No hay evidencia nueva de ejecución local, migración productiva, secreto real o Windows PowerShell 5.1.
+- El reintento no cambió los resultados. No se declara CI aprobado ni v1.0 operativo.
+
+### 22.5 Qué falta endurecer antes de ejecutar
+
+1. **Bloqueo inmediato de CI:** conseguir que GitHub Actions entregue pasos/logs reproducibles o corregir la causa real cuando esté observada. No añadir más código de diagnóstico ciego ni repetir reintentos indefinidamente.
+2. **Permisos reales del PAT:** demostrar read/write efectivo para la lista definitiva de repositorios, incluida la discrepancia CENSUS/GDP frente al bootstrap histórico.
+3. **Configuración de producción autorizada:** aplicar migración 017, raíz criptográfica y cuenta OIDC permitida; establecer/rotar la contraseña maestra, cargar el PAT y confirmar estado redactado. Nada de esto se ha ejecutado en este ciclo.
+4. **E2E Windows PowerShell 5.1:** arranque frío real con PAT no solicitado ni expuesto, hash correcto, workspace listo y limpieza comprobada.
+5. **Readiness del PR:** mantenerlo sin merge/deploy hasta satisfacer los gates anteriores y registrar evidencia verificable.
+
+**Siguiente acción autorizada:** continuar resolviendo únicamente la causa demostrada del CI y las comprobaciones necesarias de EP v1.0. No ampliar el alcance a OBS, cámara, WP-LAB, OGP/GPU ni persistencia avanzada durante esta etapa. No desplegar, no integrar y no usar credenciales reales sin el procedimiento/permiso correspondiente.
