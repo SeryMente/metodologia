@@ -44,13 +44,13 @@ Versión vigente del SI:
 
 Versión vigente de la Metodología:
 
-**v0.15.0 — Continuidad Canónica del Sprint MCP**
+**v0.14.9 — Bootstrap Anclado por Commit y Hash**
 
 El SI contiene los principios fundamentales vigentes, ordenados de mayor a menor preponderancia. La continuidad entre conversaciones se desarrolla operativamente mediante la Metodología y el anexo `BOOTSTRAP-CONTEXTO-GLOBAL.md`.
 
 ## Última actualización de Metodología
 
-**v0.15.0 — Continuidad Canónica del Sprint MCP**  
+**v0.14.9 — Bootstrap Anclado por Commit y Hash**  
 2026-10-09
 
 La metodología ancla el bootstrap CLI de Windows a un commit inmutable y verifica SHA-256 antes de ejecutarlo, evitando versiones raw obsoletas. El bootstrap verifica dependencias, sincroniza Metodología de forma segura, ofrece el inicio opcional de OBS Virtual Camera y lanza RDC. La identidad activa del SI continúa subordinada exclusivamente a la cabecera de su snapshot canónico.
@@ -110,10 +110,6 @@ El clonador específico es [scripts/clone-public-repo-to-desktop.ps1](scripts/cl
 
 Todo ciclo sujeto a la metodología intenta resolver la cascada normativa durante Thinking cuando esta ventana está disponible. `INSTANT`, ausencia o estado desconocido no bloquean por sí mismos la salida. Cuando KHORA no está disponible, el contrato visible `v1.7.7` se conserva y el HUD declara `K: OFF`. El HUD incluye además `CI: ✓|?|!` para registrar la aplicación verificable del régimen de Instrucciones personalizadas.
 
-
-## Sprint MCP KHORA · Observabilidad y dictado
-
-El objeto canónico de continuidad del sprint se encuentra en [ANEXO-SPRINT-MCP-OBSERVABILIDAD-KHORA-DICTADO.md](ANEXO-SPRINT-MCP-OBSERVABILIDAD-KHORA-DICTADO.md). Para trabajos sobre acceso interoperable al MCP de KHORA, registros de observabilidad, o diagnóstico del bug de dictado in situ, debe leerse completo antes de ejecutar. Contiene instrucciones verbatim, estado por fases, evidencia, incidentes y crónica obligatoria por ciclo. No demuestra por sí mismo acceso autenticado al MCP ni declara resuelto el bug.
 
 ## Entorno Persistente: Fase Fundacional Cybernet y WP-LAB
 
