@@ -1239,3 +1239,87 @@ En cada turno de trabajo relacionado con EP se debe consultar el estado del PR, 
 5. **Readiness del PR:** mantenerlo sin merge/deploy hasta satisfacer los gates anteriores y registrar evidencia verificable.
 
 **Siguiente acción autorizada:** continuar resolviendo únicamente la causa demostrada del CI y las comprobaciones necesarias de EP v1.0. No ampliar el alcance a OBS, cámara, WP-LAB, OGP/GPU ni persistencia avanzada durante esta etapa. No desplegar, no integrar y no usar credenciales reales sin el procedimiento/permiso correspondiente.
+
+## 23. Ciclo operativo 012 — Regla permanente de documentación exhaustiva y continuidad del sprint EP
+
+**Corte:** 2026-10-10.
+**Versión del objeto:** v1.1.6 — Regla Operativa de Continuidad EP.
+**Narrativa Antes → Cambio → Motivo → Resultado**
+- **Antes:** el objeto establecía comprobación de GitHub por turno y documentaba el alcance mínimo, pero no formalizaba con suficiente fuerza el deber de registrar cada instrucción, acción, evidencia y decisión del sprint en cada ciclo.
+- **Cambio:** se eleva la documentación canónica exhaustiva a regla operativa obligatoria para cualquier actividad relacionada con EP, aplicable a cada turno y cada ciclo, no solo al cierre de una fase.
+- **Motivo:** permitir que el esfuerzo se retome desde cualquier conversación o instancia con una ventana de contexto de máxima calidad, sin depender de memoria implícita ni repetir investigación.
+- **Resultado:** cada ciclo futuro debe dejar una actualización persistente del objeto canónico en este repositorio de Metodología, y comprobar por lectura de vuelta que se guardó correctamente.
+
+### 23.1 Instrucción del usuario — registro verbatim
+
+> Sigue documentando, y de ehcho que el objeto canonico lo diga como obligatorio para todo lo que tenga que ver con EP, a cada ciclo, debes de dejar bien documentado,
+>
+> Ve documentando en un objeto canonico del repositorio todo lo que tenga que ver con este sprint, a niovel de ultra detalle a cada ciclo, entiendes? esta es una regla operativa del sprint, , en el repositorio de metodologia. El documento debe de poder aportar una ventana de contexto de altisima calidad, para retomar el esfuerzo desde donde sea. Esfuerzate siempre con el objeto canonico y siempre mantelo adctualziado a cada paso con todo. imncluidas misinstrucciones verbatim.
+>
+> Avanza siempre con un objetivo de engregarme una actualizacion lo mas pronto posbile. Yo necesito ver reustlados frecuentemente,.
+
+La instrucción se conserva tal como fue recibida, incluidas sus grafías, puntuación y errores tipográficos. No se corrige dentro de la cita.
+
+### 23.2 Regla normativa permanente
+
+Para **todo lo relacionado con EP**, sin excepción por subsistema, rama, repositorio, conversación, herramienta o fase:
+
+1. **Actualizar en cada ciclo.** Antes de dar por terminado un ciclo de trabajo, actualizar el objeto canónico en el repositorio Metodología con lo ocurrido en ese ciclo. No acumular varios ciclos sin documentar.
+2. **Registrar instrucciones verbatim.** Conservar literalmente las nuevas instrucciones operativas del usuario que afecten el sprint, además de la interpretación operativa y sus consecuencias. Distinguir siempre cita original de resumen o análisis.
+3. **Registrar el estado observado, no el supuesto.** Anotar fecha/corte, repositorio, rama, PR, SHA exacto, versión documental y de código conocida, checks, jobs, pasos/logs disponibles, errores exactos, cambios de archivos, hashes cuando se hayan comprobado, revisiones, dependencias, límites de acceso y resultados de lectura de vuelta.
+4. **Separar hecho, inferencia y pendiente.** Etiquetar claramente qué se observó directamente, qué es una hipótesis pendiente de validar y qué no pudo comprobarse. Nunca convertir ausencia de logs en diagnóstico de código.
+5. **Preservar decisiones y razones.** Cada decisión material debe explicar el estado anterior, cambio, motivo, resultado y consecuencia para el próximo ciclo. Los estados históricos se conservan; corregir el estado vigente no significa reescribir la historia.
+6. **Dejar un plan ejecutable de reanudación.** Incluir el siguiente paso concreto, las precondiciones, el archivo o sistema exacto, el criterio de aceptación, los comandos/pruebas previstos cuando sean conocidos y las acciones expresamente prohibidas.
+7. **Documentar seguridad y límites.** Indicar qué secretos/configuración real no se ha aplicado, qué acciones externas no se ejecutaron, qué permisos faltan y qué evidencia hace falta. Nunca registrar valores secretos; solo nombres de variables, estado de configuración y metadatos saneados.
+8. **Comprobar persistencia documental.** Tras actualizar, leer de vuelta el archivo desde GitHub y verificar versión, sección nueva y commit. Si la actualización falla, no afirmar que quedó documentada: reportar el fallo y reintentarlo por una ruta segura.
+9. **Comprobar GitHub en cada turno.** Antes de cambiar código o concluir, revisar PR/cabecera, workflows/checks, jobs, logs/pasos, comentarios/revisiones y las fuentes canónicas pertinentes. Recuperar evidencias de los fallos antes de corregir; si GitHub no las expone, documentar el límite exacto y buscar una alternativa autorizada de diagnóstico, sin reintentos ciegos indefinidos.
+10. **Entregar resultados incrementales.** Priorizar una mejora pequeña, verificable y comunicable frente a grandes bloques de trabajo opaco. Informar del estado real y del siguiente paso útil tan pronto exista resultado persistente.
+11. **No ampliar el alcance por iniciativa propia.** Para EP v1.0, mantener los gates mínimos definidos en §22. Los subsistemas de fases posteriores se documentan y planifican, pero no se incorporan al bootstrap mínimo sin dependencia y autorización explícitas.
+12. **No declarar cierre sin evidencia.** No afirmar PASS, integración, despliegue, persistencia real ni prueba E2E si no existe evidencia directa y verificable. Mantener PR abierto/no integrado cuando los gates sigan pendientes.
+13. **No depender de contexto conversacional.** El objeto debe permitir que otra instancia retome el trabajo sin necesitar el historial del chat: describir el objetivo, estado exacto, restricciones, decisiones, referencias a archivos y siguiente acción suficiente para continuar.
+14. **Mantener una sola fuente canónica de continuidad del sprint.** La ubicación normativa de este registro es este archivo del repositorio `SeryMente/metodologia`. Otros documentos pueden enlazarlo, pero no sustituirlo ni crear una fuente paralela de estado que diverja.
+
+### 23.3 Plantilla mínima obligatoria para cada ciclo
+
+Cada nuevo ciclo se añade como sección numerada sin borrar los anteriores y debe contener, como mínimo:
+
+- **Identificación:** número de ciclo, fecha/corte, nombre y versión del objeto canónico.
+- **Objetivo del ciclo:** resultado concreto que se intenta conseguir y por qué pertenece al alcance vigente.
+- **Instrucciones del usuario:** citas verbatim nuevas que tengan impacto operativo, sin normalización.
+- **Estado inicial:** PR, rama, SHA, checks y estado documental consultados antes de actuar.
+- **Acciones realizadas:** llamadas/operaciones relevantes en términos legibles, archivos tocados y commits producidos.
+- **Evidencia:** resultados directos, checks, pruebas, hashes o lecturas de vuelta; incluir errores exactos y referencias.
+- **Resultado:** PASS / BLOCKED / FAIL / NOT_VERIFIED por cada gate afectado, con criterio de estado.
+- **Seguridad y límites:** secretos no mostrados, permisos, acciones no ejecutadas y riesgos abiertos.
+- **Qué falta endurecer:** lista priorizada, sin duplicar tareas ya cerradas ni ocultar bloqueos.
+- **Reanudación:** siguiente acción concreta, precondiciones, criterios de aceptación y prohibiciones.
+- **Lectura de vuelta:** commit del objeto canónico y comprobación de que la nueva sección/versionado se encuentran en GitHub.
+
+Se puede añadir detalle adicional según el ciclo; estos campos son el mínimo, no un límite de profundidad. Para un cambio que abarque varios subsistemas, se registran las evidencias de cada uno.
+
+### 23.4 Procedimiento de cada turno EP
+
+1. Consultar primero el estado vivo de GitHub y las fuentes canónicas necesarias.
+2. Identificar el bloqueo o mejora mínima de mayor prioridad dentro de EP v1.0.
+3. Ejecutar un cambio pequeño, con alcance y permisos claros, o recuperar la evidencia que impide actuar.
+4. Validar el cambio con las pruebas disponibles; distinguir pruebas ejecutadas de pruebas planificadas.
+5. Actualizar inmediatamente este objeto canónico con los resultados del paso, no solo con el resumen final del turno.
+6. Leer el objeto de vuelta desde GitHub y verificar el commit/sección/versionado.
+7. Comunicar brevemente el resultado y **qué falta endurecer**.
+8. Repetir mientras haya una acción segura y concreta que pueda mejorar el estado. No inventar trabajo ni simular actividad cuando el siguiente paso requiere acceso o evidencia ausente.
+
+### 23.5 Contexto de reanudación al cierre del ciclo 012
+
+**Objetivo vigente:** EP v1.0 mínimo: Cora/ruta EP existente → contraseña maestra con alcance EP → PAT administrado bajo OIDC y cifrado en servidor → endpoint de token protegido por JWT EP y scope → bootstrap fijado e íntegro → ejecución real en Windows PowerShell 5.1 sin volver a introducir ni exponer el PAT.
+
+**Estado conocido de KHORA:** PR #292, rama `feat/ep-github-token-vault-ui`, cabecera registrada `c9f21d14a05d9153bb65d25b6d1f50b552aa092c`. Antes de actuar en un turno nuevo, consultar de nuevo el SHA: este valor es el último estado registrado, no garantía de que siga siendo el head.
+
+**Bloqueo de CI conocido al corte anterior:** `CI` run 2577, `UI Quality` run 332, `khora-ok / gate` run 598 y `Khora Single Script Guard` run 144 fallaban. Los reintentos produjeron nuevos jobs que fallaron, pero sus pasos aparecieron vacíos y la recuperación de logs devolvió HTTP 404 `BlobNotFound`. No se conoce la causa exacta. Los checks externos Vercel/Netlify figuraban fallidos por limitaciones de configuración del proyecto privado; no se ha invocado Vercel ni desplegado desde este esfuerzo.
+
+**Acceso/ejecución no demostrados:** no se ha acreditado aplicación de migración 017 en producción, configuración real de `EP_BOOTSTRAP_JWT_SECRET`, alta/rotación de contraseña maestra, almacenamiento del PAT real, permisos efectivos de escritura en los repositorios definitivos ni ejecución E2E con Windows PowerShell 5.1. No se debe afirmar que el flujo está operativo.
+
+**Siguiente paso recomendado:** volver a consultar PR y checks actuales. Recuperar logs de un job representativo y verificar si el problema de `BlobNotFound` afecta a todas las ejecuciones o solo a esos runs; buscar una vía autorizada para hacer accesible la causa del fallo. No seguir reintentando indefinidamente. Con evidencia, corregir el fallo concreto más pequeño; luego actualizar este objeto al cierre de ese subciclo.
+
+**Prohibiciones vigentes:** no merge, no deploy, no uso de secretos reales sin autorización, no prueba local/RDC si no está disponible, no ampliar el alcance a OBS/cámara, WP-LAB, OGP/GPU o persistencia avanzada para resolver el gate mínimo. No inventar resultados de ejecución.
+
+**Nota de integridad documental:** este ciclo añade la norma de continuidad y la ventana de reanudación; no afirma haber corregido los checks de KHORA ni cambia el estado del PR.
