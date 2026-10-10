@@ -2,21 +2,21 @@
 
 ## Estado canónico
 
-- **Versión:** v0.14.10
-- **Nombre de versión:** Ejecución Directa y Separación de Destinos por Identidad
+- **Versión:** v0.14.11
+- **Nombre de versión:** Identidad Elevada Obligatoria y Aislamiento del Árbol de Trabajo
 - **Última actualización:** 2026-10-10
 - **Última actualización canónica:** 2026-10-10
 - **Ámbito:** Todos los proyectos y conversaciones trabajados bajo esta metodología.
 
 ### Narrativa de la versión
 
-**Antes:** la metodología distinguía la identidad Windows operativa de referencia de la identidad administrativa efectiva del canal RDC, pero quedaba margen para interpretar que trabajar dentro de directorios de `fila4` exigía ejecutar como `fila4`. Esa interpretación generó intentos innecesarios de cambio de identidad y tareas programadas temporales.
+**Antes:** la norma permitía operar desde `central\\mantenimientorci`, pero formulaba la ejecución elevada como una capacidad permitida y no como la identidad de ejecución obligatoria para este entorno. También dejaba margen para reducir la prohibición a la clonación/materialización de repositorios, cuando el usuario estableció una frontera más amplia para todo dato de trabajo.
 
-**Cambio:** se precisa que `central\\mantenimientorci` puede operar directamente por CLI sobre rutas autorizadas dentro del perfil de `fila4`. La identidad `fila4` identifica el perfil/destino operativo; no es el principal obligatorio de cada proceso. Se prohíbe crear tareas temporales, impersonar/sustituir al usuario o abrir sesiones RDC paralelas como workaround.
+**Cambio:** en CECEQ, toda operación se ejecuta desde la sesión elevada `central\\mantenimientorci`. `fila4` identifica exclusivamente el árbol de directorios autorizado para trabajo y almacenamiento. Todo archivo, repositorio, instalación, configuración, caché, artefacto y dato generado o utilizado por la tarea debe residir en el árbol de `fila4`; el árbol de `MantenimientoRCI` no se usa como workspace ni como destino de datos.
 
-**Motivo:** la restricción de CECEQ es de ámbito de rutas: no crear archivos o repositorios ni trabajar dentro del árbol de directorios de MantenimientoRCI. No prohíbe que el proceso administrativo acceda a destinos autorizados de `C:\\Users\\fila4\\...`.
+**Motivo:** separar de forma inequívoca el principal que ejecuta y aporta elevación del perfil cuyo sistema de directorios contiene los datos operativos. La ubicación de los datos no obliga a cambiar la identidad del proceso.
 
-**Resultado:** se continúa mediante la sesión RDC ya autenticada, ejecutando operaciones directas sobre rutas explícitas autorizadas de `fila4`, sin tareas temporales ni reconexiones. Solo una denegación real del sistema de archivos sobre una operación concreta puede requerir resolver permisos; la diferencia de identidad no bloquea por sí sola.
+**Resultado:** se continúa mediante la sesión RDC elevada ya autenticada, ejecutando operaciones con rutas explícitas dentro del árbol de `fila4`. No se cambia a `fila4`, no se suplanta esa identidad y no se crean tareas ni sesiones RDC paralelas. Si una operación no puede escribir en un destino autorizado, se diagnostica el error concreto de permisos; no se cambia de usuario ni se escribe en el árbol prohibido como alternativa.
 
 **Continuidad normativa:** la identidad activa del SI sigue procediendo exclusivamente de la cabecera de su snapshot exacto de `main`. Esta actualización modifica el procedimiento operativo general y no sustituye ni versiona el SI.
 
@@ -71,7 +71,7 @@
 | 44 | v0.14.7 | Arranque CLI Verificable y Continuidad por Terminal | Se canoniza el procedimiento de arranque CLI Windows, la clonación idempotente con verificación de origin/SHA/working tree y la persistencia separada del estado y los eventos de cada terminal CIBERCAFE; se registra la identidad PC-4 sin sustituir otras sesiones RDC. |
 | 45 | v0.14.8 | Bootstrap CLI Integral para Terminales CIBERCAFE | Se incorpora un comando único que instala/verifica dependencias, sincroniza Metodología con comprobaciones de seguridad, opcionalmente valida el inicio de OBS Virtual Camera y lanza RDC; conserva el diagnóstico remoto ante fallos de OBS y no declara éxito sin verificación. |
 | 46 | v0.14.9 | Bootstrap Anclado por Commit y Hash | Se fija el script de arranque a un commit inmutable y SHA-256 verificado antes de ejecutarlo, corrigiendo el riesgo real de contenido raw obsoleto; se conserva la preparación segura de dependencias, repositorio, OBS opcional y RDC. |
-| 47 | v0.14.10 | Ejecución Directa y Separación de Destinos por Identidad | Se elimina la interpretación errónea de que operar en rutas de fila4 exige ejecutar como fila4; central\\mantenimientorci trabaja directamente desde la sesión RDC vigente sobre destinos autorizados, sin tareas temporales, impersonación ni sesiones paralelas. La restricción continúa siendo no trabajar dentro del árbol de directorios de MantenimientoRCI. |
+| 47 | v0.14.10 | Ejecución Directa y Separación de Destinos por Identidad | Se elimina la interpretación errónea de que operar en rutas de fila4 exige ejecutar como fila4; central\\mantenimientorci trabaja directamente desde la sesión RDC vigente sobre destinos autorizados, sin tareas temporales, impersonación ni sesiones paralelas. |\n| 48 | v0.14.11 | Identidad Elevada Obligatoria y Aislamiento del Árbol de Trabajo | Para CECEQ, se fija central\\mantenimientorci como identidad obligatoria de ejecución; fila4 define únicamente el árbol permitido para todos los datos y artefactos de trabajo. Se prohíbe utilizar el árbol de MantenimientoRCI como workspace o destino de datos, sin cambiar de usuario ni crear sesiones paralelas. |
 La tabla es canónica. Las versiones futuras añaden nuevos registros sin reutilizar folios. Una entrada retirada por revisión canónica puede conservar únicamente su identificador y estado de retirada, sin preservar la regla operativa invalidada. El nombre describe el avance de la versión y no sustituye el título general del sistema o documento.
 
 ## 1. Convención obligatoria de foliación de ciclos
@@ -295,9 +295,9 @@ La conversación permanece abierta durante el bloqueo. El handshake fresco se va
 
 ## 17. Ejecución flexible y única restricción de materialización
 
-La identidad efectiva del canal RDC puede ejecutar cualquier trabajo técnicamente válido. La selección de terminal del ciclo se mantiene separada de la identidad Windows efectiva y de la ubicación.
+En CECEQ, toda operación de trabajo debe ejecutarse desde la sesión elevada `central\\mantenimientorci`. La selección de terminal del ciclo se mantiene separada de la identidad Windows efectiva y de la ubicación.
 
-La única restricción específica de materialización es no clonar ni materializar repositorios nuevos dentro del perfil o ruta de MantenimientoRCI.
+`C:\\Users\\fila4\\...` es el árbol de destino para todo el trabajo: repositorios, archivos, instalaciones, configuraciones, cachés, artefactos y datos temporales o persistentes. No utilizar el árbol de directorios de MantenimientoRCI para trabajar ni almacenar datos. La regla abarca más que clonar repositorios.
 
 La discrepancia entre identidad operativa de referencia e identidad efectiva no bloquea por sí misma el ciclo. El gate solo bloquea cuando el contexto requerido no puede verificarse, la operación exige una capacidad que no está disponible o se vulnera la restricción de materialización.
 
@@ -305,9 +305,9 @@ Un bloqueo es de ejecución sustantiva, no de conversación. Mientras el ciclo e
 
 ### Regla operativa obligatoria: identidad efectiva y destino autorizado
 
-En CECEQ, `central\\mantenimientorci` es la identidad efectiva de la sesión RDC y puede ejecutar directamente por CLI operaciones técnicamente válidas sobre rutas autorizadas de `C:\\Users\\fila4\\...`. `WIN-OPERATIVO = fila4` identifica el perfil/destino operativo; **no** exige que el proceso se ejecute como esa cuenta.
+En CECEQ, `central\\mantenimientorci` es la identidad elevada y obligatoria para ejecutar toda operación. `WIN-OPERATIVO = fila4` identifica únicamente el árbol de directorios de destino; **no** es la identidad bajo la que deba ejecutarse el proceso.
 
-La restricción se aplica al árbol de directorios de MantenimientoRCI: no crear archivos o repositorios allí ni utilizarlo como workspace. No prohíbe acceder desde la sesión administrativa a rutas permitidas de `fila4`.
+Todo el trabajo debe guardarse y ejecutarse sobre destinos explícitos autorizados dentro de `C:\\Users\\fila4\\...`. Esto incluye repositorios, archivos, instalaciones, configuraciones, cachés, temporales, artefactos y datos operativos. El árbol de directorios de MantenimientoRCI queda excluido como workspace y como destino de datos; la prohibición no se limita a clonar repositorios.
 
 Queda prohibido resolver esta distinción mediante tareas programadas temporales, impersonación, cambio de inicio de sesión o sesiones RDC paralelas. No solicitar al usuario que cambie a fila4 si la operación puede ejecutarse directamente con la sesión vigente. Si el sistema de archivos deniega una operación concreta, reportar la ruta y el error exactos y corregir únicamente ese impedimento; nunca inferirlo por la diferencia entre identidades.
 
