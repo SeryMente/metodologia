@@ -1,3 +1,5 @@
+> **AVISO DE SUBORDINACIÓN DOCUMENTAL (2026-10-10):** este archivo se conserva como antecedente y evidencia histórica. La fuente única canónica transversal vigente es [CANON-ENTORNO-PERSISTENTE-Y-LABORATORIOS.md](CANON-ENTORNO-PERSISTENTE-Y-LABORATORIOS.md). En caso de divergencia prevalece el canon. No borrar este anexo mientras contenga decisiones, hashes o evidencias no migradas.
+
 # Entorno Persistente Híbrido · Consolidación EP y EP-WP-LAB
 
 **Estado:** PLAN CONSOLIDADO · EP físico NO CERTIFICADO  
