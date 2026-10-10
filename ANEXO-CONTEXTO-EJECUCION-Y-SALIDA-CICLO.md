@@ -37,13 +37,11 @@ La ubicacion es un estado transversal y persistente de trabajo. Una declaracion 
 
 ### 4.1 CECEQ
 
-| Campo | Valor canonico |
+| Campo | Valor canónico |
 |---|---|
 | Ubicacion | CECEQ |
-| Perfil/árbol de destino de trabajo | `C:\\Users\\fila4\\...` |
-| Identidad Windows de ejecución | `central\\mantenimientorci` (elevada; obligatoria para el trabajo en este perfil) |
-| Regla de sesión | Se reutiliza la sesión RDC elevada vigente; no se abren sesiones paralelas ni se cambia a fila4. |
-| Regla de destino | Todo repositorio, archivo, instalación, configuración, caché, temporal, artefacto y dato de trabajo debe residir en el árbol de `fila4`. El árbol de MantenimientoRCI queda prohibido como workspace y destino de datos. |
+| Árbol completo de trabajo | C:\\Users\\fila4\\... |
+| Regla de escritura | Nunca escribir dentro de C:\\Users\\MantenimientoRCI\\... |
 
 ### 4.2 Office Depot
 
@@ -119,14 +117,11 @@ Antes de cualquier certificación o health-check de KHORA, cada ciclo debe consu
 
 Si el modelo comunica una ausencia o pérdida de RDC, debe emitir inmediatamente `RDC-REINSTANTIAR` y el comando oficial vigente. Un handshake fresco actualiza o incorpora la identidad concreta que efectivamente se conectó.
 
-## 6. Flexibilidad de identidad y restricción de repositorios
+## 6. Árbol de trabajo de CECEQ
 
-1. En CECEQ, toda operación se ejecuta desde la sesión elevada `central\\mantenimientorci`; no se cambia a la identidad `fila4`.
-2. `fila4` identifica el árbol de destino autorizado, no el principal obligatorio del proceso.
-3. Todo dato y artefacto de trabajo —repositorios, archivos, instalaciones, configuraciones, cachés y temporales— debe ubicarse dentro del árbol de directorios de `fila4`.
-4. No usar el árbol de directorios de MantenimientoRCI como workspace ni como destino de datos; la restricción es más amplia que la clonación de repositorios.
-5. No se abren sesiones RDC paralelas, no se usa impersonación ni tareas temporales para cambiar la identidad.
-6. Una denegación real de acceso se resuelve sobre la ruta autorizada y el error concreto; nunca se elude escribiendo en el árbol prohibido.
+Cuando se trabaje en CECEQ desde el perfil de MantenimientoRCI, el árbol completo de trabajo es C:\\Users\\fila4\\.... Toda escritura propia de la tarea debe dirigirse a ese árbol. Nunca se debe escribir dentro de C:\\Users\\MantenimientoRCI\\....
+
+Esta regla se limita al destino de trabajo; no prescribe la identidad Windows de ejecución ni impone condiciones adicionales de elevación, sesión, cambio de usuario, impersonación, tareas temporales o manejo de permisos.
 
 ## 7. Formato obligatorio de salida por ciclo
 
@@ -153,7 +148,7 @@ Convenciones:
 - `RDC-USO` = porcentaje mensual usado y porcentaje restante de la cuenta de la terminal seleccionada. Se presenta con el último dato verificado disponible y su vigencia temporal; cuando no exista, se muestra `NO VERIFICADO` o `NO DISPONIBLE`.
 - `S` = estado de sesión de la terminal seleccionada: ACTIVA, INACTIVA o NO VERIFICADA.
 - `K` = estado del verificador MCP canónico de KHORA: `✓`, `OFF`, `?` o `!`. `RDC-CNX` conserva la conectividad del canal RDC.
-- `USR` = identidad operativa visible del perfil. En CECEQ siempre se muestra `fila4`, nunca `central\\mantenimientorci`.
+- `USR` = identidad Windows efectiva observada, si se informa; no se deduce del árbol de trabajo ni se fija en `fila4` por la regla de directorios.
 - El nombre del dispositivo RDC puede añadirse sin etiqueta únicamente cuando sea relevante para la tarea.
 - No se muestran en la salida cotidiana el device_id, WIN-ADMIN, WIN-EFECTIVO-RDC, RDC-TERMINAL ni otros identificadores internos.
 - Los detalles completos de cuenta, dispositivo, identidad efectiva, timestamps y evidencia permanecen en el estado global y en los registros de auditoría.
@@ -253,10 +248,7 @@ La propagación no se considera completada por la mera lectura de un valor almac
 
 Después de resolver la terminal RDC cuando la tarea dependa de ella, el ciclo debe resolver `UBICACION_ACTUAL` y el perfil operativo correspondiente. Las reglas específicas del perfil se aplican antes de ejecutar operaciones condicionadas por identidad, rutas, permisos, herramientas o configuración.
 
-Para CECEQ, la resolución canónica permanece:
-
-WIN-OPERATIVO = fila4
-WIN-ADMIN = central\mantenimientorci
+Para CECEQ, el árbol de trabajo es C:\\Users\\fila4\\.... La identidad Windows efectiva no se deduce de esta ruta; esta regla no prescribe una identidad de ejecución.
 
 Para CIBERCAFE · Luis Pasteur, la ubicación contiene múltiples terminales y no asocia una PC determinada a la ubicación por defecto.
 
@@ -276,13 +268,11 @@ El ciclo se marca BLOQUEADO cuando ocurra cualquiera de estas condiciones:
 
 Mientras el ciclo esté BLOQUEADO, no se ejecutan operaciones dependientes del contexto y no se declara cierre exitoso.
 
-## 12.5 Flexibilidad de ejecución para CECEQ
+## 12.5 Árbol de trabajo para CECEQ
 
-En CECEQ, toda operación de trabajo se ejecuta como `central\\mantenimientorci`, desde la sesión elevada vigente. `fila4` define exclusivamente el árbol de destino autorizado y no la identidad de ejecución. La regla es independiente de la selección de terminal.
+Cuando se trabaje en CECEQ desde el perfil de MantenimientoRCI, el árbol completo de trabajo es C:\\Users\\fila4\\.... Toda escritura propia de la tarea debe tener destino dentro de ese árbol. Nunca se debe escribir dentro de C:\\Users\\MantenimientoRCI\\....
 
-Todo repositorio, archivo, instalación, configuración, caché, temporal, artefacto y dato utilizado o producido debe ubicarse en el árbol de `fila4`. El árbol de MantenimientoRCI está prohibido como workspace y destino de datos.
-
-No se cambia a `fila4`, no se abre una sesión RDC paralela, ni se utiliza impersonación o una tarea temporal para cambiar la identidad. Si el sistema deniega una operación en una ruta autorizada, se diagnostica el error exacto y se resuelve ese permiso sin trasladar el trabajo al árbol prohibido.
+La regla determina exclusivamente el árbol de directorios de trabajo; no exige actuar como fila4 ni prescribe la identidad de ejecución, la elevación, las sesiones o un procedimiento adicional.
 
 ## 13. Referencia terminológica
 
