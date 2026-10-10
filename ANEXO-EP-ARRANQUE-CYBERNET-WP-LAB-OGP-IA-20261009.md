@@ -1379,4 +1379,4 @@ Esta regla complementa, no reemplaza, las obligaciones de documentación exhaust
 - **Siguiente acción:** en el próximo ciclo EP, abrir con “Objetivo concreto de este ciclo”, consultar el estado vivo de GitHub, resolver la siguiente acción segura de mayor prioridad y registrar su resultado antes de cerrar.
 - **Prohibiciones mantenidas:** no merge, no deploy, no uso de secretos reales sin autorización, no E2E inventado, no expansión del alcance de EP v1.0.
 
-**Lectura de vuelta:** pendiente de ejecutar después de guardar esta versión; no se declara persistencia hasta que la sección 24 y v1.1.7 estén verificadas desde GitHub.
+**Lectura de vuelta:** completada tras la escritura. La versión v1.1.7 y la sección 24 fueron leídas desde GitHub; la comprobación automática confirmó encabezado, sección normativa y siguiente acción. En la respuesta de este ciclo se registra el blob SHA exacto de esta lectura.
