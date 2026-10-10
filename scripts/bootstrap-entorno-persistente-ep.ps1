@@ -31,9 +31,12 @@ function Invoke-NativeCaptured {
     return [pscustomobject]@{ ExitCode=[int]$code; Lines=@($lines | ForEach-Object { [string]$_ }) }
 }
 function Refresh-Path {
-    $env:Path=@($env:Path,[Environment]::GetEnvironmentVariable('Path','Machine'),[Environment]::GetEnvironmentVariable('Path','User'),
+    # Never import the elevated account's user PATH; only machine and Fila4 locations are eligible.
+    $env:Path=@($env:Path,[Environment]::GetEnvironmentVariable('Path','Machine'),
         (Join-Path $env:ProgramFiles 'Git\cmd'),(Join-Path $env:ProgramFiles 'nodejs'),(Join-Path $env:ProgramFiles 'GitHub CLI'),
-        (Join-Path $env:LOCALAPPDATA 'Programs\nodejs'),(Join-Path $env:LOCALAPPDATA 'Programs\GitHub CLI'),(Join-Path $env:APPDATA 'npm')) -join ';'
+        (Join-Path $env:LOCALAPPDATA 'Programs\Git'),(Join-Path $env:LOCALAPPDATA 'Programs\Git\cmd'),
+        (Join-Path $env:LOCALAPPDATA 'Programs\nodejs'),(Join-Path $env:LOCALAPPDATA 'Programs\GitHub CLI'),
+        (Join-Path $env:LOCALAPPDATA 'Microsoft\WinGet\Links'),(Join-Path $env:APPDATA 'npm')) -join ';'
 }
 function Find-Winget {
     Refresh-Path
@@ -443,10 +446,84 @@ try {
     }
     Write-Log 'CHROME_CAMERA_PREREQUISITES=VERIFIED | 64-bit capture filter registered and OBS virtual output active; Chrome itself remains untouched and is not browser-probed.'
 }
-$desktop=[Environment]::GetFolderPath('Desktop')
-if ([string]::IsNullOrWhiteSpace($desktop) -or -not (Test-Path -LiteralPath $desktop)) { $desktop=Join-Path $env:USERPROFILE 'Desktop' }
-if (-not (Test-Path -LiteralPath $desktop)) { throw 'DESKTOP_PATH_NOT_FOUND' }
+# Resolve the authorized data profile by Windows profile/SID, never by the elevated process's Desktop.
+$currentIdentity=[System.Security.Principal.WindowsIdentity]::GetCurrent().Name
+if ($currentIdentity -notmatch '(?i)(^|\\)mantenimientorci$') { throw "WRONG_EXECUTION_IDENTITY: expected elevated MantenimientoRCI, got $currentIdentity" }
+$principal=New-Object System.Security.Principal.WindowsPrincipal([System.Security.Principal.WindowsIdentity]::GetCurrent())
+if (-not $principal.IsInRole([System.Security.Principal.WindowsBuiltInRole]::Administrator)) { throw 'MANTENIMIENTORCI_NOT_ELEVATED' }
+$profiles=@(Get-CimInstance Win32_UserProfile -ErrorAction Stop | Where-Object {
+    $profile=$_
+    if ($profile.Special -or [string]::IsNullOrWhiteSpace([string]$profile.LocalPath) -or [string]::IsNullOrWhiteSpace([string]$profile.SID)) { return $false }
+    $account=''
+    try { $account=([System.Security.Principal.SecurityIdentifier]::new([string]$profile.SID)).Translate([System.Security.Principal.NTAccount]).Value } catch {}
+    if ($account -match '(?i)(^|\\)fila4$') { return $true }
+    return ((Split-Path -Leaf ([string]$profile.LocalPath)) -match '(?i)^fila4([._-].*)?$')
+})
+if ($profiles.Count -ne 1) { throw "FILA4_PROFILE_NOT_UNIQUE: matches=$($profiles.Count); no profile files were created." }
+$script:Fila4Sid=[string]$profiles[0].SID
+$script:Fila4ProfileRoot=[System.IO.Path]::GetFullPath([string]$profiles[0].LocalPath).TrimEnd('\')
+if (-not (Test-Path -LiteralPath $script:Fila4ProfileRoot -PathType Container)) { throw 'FILA4_PROFILE_DIRECTORY_MISSING' }
+$driveRoot=[System.IO.Path]::GetPathRoot($script:Fila4ProfileRoot)
+$homePath='\' + $script:Fila4ProfileRoot.Substring($driveRoot.Length).TrimStart('\')
+$desktop=Join-Path $script:Fila4ProfileRoot 'Desktop'
+$desktopKey='Registry::HKEY_USERS\'+$script:Fila4Sid+'\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders'
+$userEnvKey='Registry::HKEY_USERS\'+$script:Fila4Sid+'\Environment'
+if (Test-Path -LiteralPath $desktopKey) {
+    $shellFolders=Get-ItemProperty -LiteralPath $desktopKey -ErrorAction Stop
+    $desktopRaw=[string]$shellFolders.Desktop
+    if (-not [string]::IsNullOrWhiteSpace($desktopRaw)) {
+        $desktopResolved=$desktopRaw.Replace('%USERPROFILE%',$script:Fila4ProfileRoot).Replace('%userprofile%',$script:Fila4ProfileRoot)
+        $desktopResolved=$desktopResolved.Replace('%HOMEDRIVE%',$driveRoot.TrimEnd('\')).Replace('%homedrive%',$driveRoot.TrimEnd('\'))
+        $desktopResolved=$desktopResolved.Replace('%HOMEPATH%',$homePath).Replace('%homepath%',$homePath)
+        if (Test-Path -LiteralPath $userEnvKey) {
+            $userVars=Get-ItemProperty -LiteralPath $userEnvKey -ErrorAction SilentlyContinue
+            if ($null -ne $userVars) {
+                foreach ($property in $userVars.PSObject.Properties) {
+                    if ($property.Name -notmatch '^PS' -and $property.Value -is [string]) {
+                        $desktopResolved=$desktopResolved.Replace('%'+$property.Name+'%',[string]$property.Value)
+                        $desktopResolved=$desktopResolved.Replace('%'+$property.Name.ToLowerInvariant()+'%',[string]$property.Value)
+                    }
+                }
+            }
+        }
+        if ($desktopResolved -match '%[^%]+%') { throw "FILA4_DESKTOP_ENVIRONMENT_UNRESOLVED: $desktopRaw" }
+        if (-not [System.IO.Path]::IsPathRooted($desktopResolved)) { throw 'FILA4_DESKTOP_NOT_ABSOLUTE' }
+        $desktop=[System.IO.Path]::GetFullPath($desktopResolved)
+    }
+}
+$fila4Prefix=$script:Fila4ProfileRoot.TrimEnd('\')+'\'
+if (-not $desktop.StartsWith($fila4Prefix,[System.StringComparison]::OrdinalIgnoreCase)) { throw "FILA4_DESKTOP_OUTSIDE_PROFILE_TREE: $desktop" }
+if (-not (Test-Path -LiteralPath $desktop -PathType Container)) { New-Item -ItemType Directory -Path $desktop -Force | Out-Null }
+$localAppData=Join-Path $script:Fila4ProfileRoot 'AppData\Local'
+$appData=Join-Path $script:Fila4ProfileRoot 'AppData\Roaming'
+$tempRoot=Join-Path $localAppData 'Temp'
+foreach ($path in @($localAppData,$appData,$tempRoot)) { if (-not (Test-Path -LiteralPath $path -PathType Container)) { New-Item -ItemType Directory -Path $path -Force | Out-Null } }
+# Child tools, caches, configuration, and TEMP are isolated to the Fila4 profile.
+$env:USERPROFILE=$script:Fila4ProfileRoot
+$env:HOME=$script:Fila4ProfileRoot
+$env:HOMEDRIVE=$driveRoot.TrimEnd('\')
+$env:HOMEPATH=$homePath
+$env:LOCALAPPDATA=$localAppData
+$env:APPDATA=$appData
+$env:TEMP=$tempRoot
+$env:TMP=$tempRoot
+$machinePath=[Environment]::GetEnvironmentVariable('Path','Machine')
+$pathParts=@($machinePath,(Join-Path $env:ProgramFiles 'Git\cmd'),(Join-Path $env:ProgramFiles 'nodejs'),(Join-Path $env:ProgramFiles 'GitHub CLI'),
+    (Join-Path $localAppData 'Programs\Git'),(Join-Path $localAppData 'Programs\Git\cmd'),(Join-Path $localAppData 'Programs\nodejs'),
+    (Join-Path $localAppData 'Programs\GitHub CLI'),(Join-Path $localAppData 'Microsoft\WinGet\Links'),(Join-Path $appData 'npm'))
+$env:Path=($pathParts | Where-Object { -not [string]::IsNullOrWhiteSpace([string]$_) } | Select-Object -Unique) -join ';'
 if ([string]::IsNullOrWhiteSpace($WorkRoot)) { $WorkRoot=Join-Path $desktop 'EP' }
+$WorkRoot=[System.IO.Path]::GetFullPath($WorkRoot)
+if (-not $WorkRoot.StartsWith($fila4Prefix,[System.StringComparison]::OrdinalIgnoreCase)) { throw "WORK_ROOT_OUTSIDE_FILA4_PROFILE: $WorkRoot" }
+$script:Fila4WorkRoot=$WorkRoot
+$env:GH_CONFIG_DIR=Join-Path $WorkRoot 'config\gh'
+$env:GIT_CONFIG_GLOBAL=Join-Path $WorkRoot 'config\gitconfig'
+$env:NPM_CONFIG_CACHE=Join-Path $WorkRoot 'cache\npm'
+$env:XDG_CONFIG_HOME=Join-Path $WorkRoot 'config\xdg-config'
+$env:XDG_DATA_HOME=Join-Path $WorkRoot 'config\xdg-data'
+foreach ($path in @((Join-Path $WorkRoot 'config'),$env:GH_CONFIG_DIR,$env:NPM_CONFIG_CACHE,$env:XDG_CONFIG_HOME,$env:XDG_DATA_HOME)) {
+    if (-not (Test-Path -LiteralPath $path -PathType Container)) { New-Item -ItemType Directory -Path $path -Force | Out-Null }
+}
 
 # Serialize main bootstrap runs because they share repository, OBS, and RDC state.
 $mutexName='Local\EntornoPersistenteBootstrap'
