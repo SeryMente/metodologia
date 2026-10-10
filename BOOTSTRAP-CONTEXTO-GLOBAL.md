@@ -170,14 +170,6 @@ Antes de repetir un diagnostico profundo, el ciclo debe consultar el registro de
 La telemetria continua pertenece a la sesion local y no obliga a una llamada RDC por muestra. La persistencia se realiza mediante eventos significativos y lotes segun `ANEXO-PROCESO-LIBERACION-DESEMPENO-CIBERCAFE.md`, incluyendo `SYNC_FLUSH` antes de reinicio/DeepFreeze cuando sea observable.
 
 
-## Contexto condicional: Sprint MCP KHORA — observabilidad y dictado
-
-Cuando una tarea incluya MCP de KHORA, eventos de observabilidad/runtime, eventos_sistema, khora_eventos_recientes, khora_eventos_desde, khora_observacion_instantanea, edición in situ, reanudación del dictado o continuación del sprint de observabilidad, leer completo primero el objeto canónico [ANEXO-SPRINT-MCP-OBSERVABILIDAD-KHORA-DICTADO.md](ANEXO-SPRINT-MCP-OBSERVABILIDAD-KHORA-DICTADO.md).
-
-Ese objeto es la fuente única de continuidad del sprint: contiene las instrucciones verbatim del usuario, el alcance, las líneas base verificadas, incidentes, hipótesis, criterios de aceptación, estado por fases y crónica. No pedir al usuario reconstruir la historia ya documentada. Cada ciclo de este sprint debe añadir una entrada exhaustiva a su crónica antes de finalizar, conservando todos los avances, incidencias, resultados negativos, evidencia, decisiones y siguientes pasos. El estado de una conversación no sustituye al objeto.
-
-No declarar acceso real al MCP, consulta de registros, reproducción de dictado, pruebas, publicación ni despliegue sin evidencia ejecutada. Si el cliente/modelo actual no dispone de conexión MCP autorizada, registrar la limitación en el objeto y no simular llamadas. Antes de corregir el bug de dictado, completar los gates de acceso real y suficiencia de la observabilidad definidos en el objeto. La implementación permanece en SeryMente/khora; el registro de continuidad transversal y las instrucciones verbatim viven en Metodología.
-
 ## Contexto condicional: Entorno Persistente y WP-LAB
 
 Cuando una tarea incluya KHORA EP, EP_VOLATIL, VHDX, BitLocker, la junction `Desktop\\EP`, Deadman Trigger, WordPress Studio, Divi o el laboratorio de Ser y Mente, leer primero `ANEXO-ENTORNO-PERSISTENTE-HIBRIDO-EP-WP-LAB.md` y verificar sus refs/estados con el proveedor antes de ejecutar acciones.
