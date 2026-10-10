@@ -3,6 +3,7 @@ param([string]$WorkRoot)
 # Windows PowerShell 5.1; ASCII-only. Chrome is intentionally never touched.
 Set-StrictMode -Version 2.0
 $ErrorActionPreference='Stop'
+[Net.ServicePointManager]::SecurityProtocol=[Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12
 $script:RunId=Get-Date -Format 'yyyyMMdd-HHmmss'
 $script:LogPath=$null
 $script:RunMutex=$null
