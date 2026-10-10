@@ -449,7 +449,7 @@ try {
 # Resolve the authorized data profile by Windows profile/SID, never by the elevated process's Desktop.
 $currentIdentity=[System.Security.Principal.WindowsIdentity]::GetCurrent().Name
 if ($currentIdentity -notmatch '(?i)(^|\\)mantenimientorci$') { throw "WRONG_EXECUTION_IDENTITY: expected elevated MantenimientoRCI, got $currentIdentity" }
-$principal=New-Object System.Security.Principal.WindowsPrincipal([System.Security.Principal.WindowsIdentity]::GetCurrent())
+$principal=[System.Security.Principal.WindowsPrincipal]::new([System.Security.Principal.WindowsIdentity]::GetCurrent())
 if (-not $principal.IsInRole([System.Security.Principal.WindowsBuiltInRole]::Administrator)) { throw 'MANTENIMIENTORCI_NOT_ELEVATED' }
 $profiles=@(Get-CimInstance Win32_UserProfile -ErrorAction Stop | Where-Object {
     $profile=$_
