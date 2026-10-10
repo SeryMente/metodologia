@@ -268,19 +268,20 @@ Una pieza se considera entregable cuando tiene brief rastreable, archivos fuente
 
 Esta sección registra el alcance solicitado y fija requisitos de seguridad. La existencia de cada control en la versión actual de Cora debe comprobarse en su repositorio; no se presume implementado.
 
-### 9.1 Principio de autorización
+### 9.1 Contrato de autorización de la puerta EP
 
-La autenticación identifica al actor; la autorización determina qué acciones puede ejecutar. La contraseña maestra no debe funcionar como un bypass opaco que neutralice OIDC, políticas de acceso, auditoría o autorización del sistema operativo. Si se necesita una ruta alternativa o break-glass, debe diseñarse explícitamente como un flujo separado, con:
-- motivo de negocio y amenaza que resuelve;
-- actores/roles autorizados;
-- factor(es) de autenticación y política de intentos;
-- duración y alcance limitados;
-- consentimiento/confirmación visible para acciones privilegiadas;
-- registro de auditoría saneado;
-- revocación y respuesta a compromiso;
-- pruebas negativas de acceso no autorizado.
+La semántica transversal documentada en el registro histórico es específica y no equivale a desactivar OIDC en toda Cora:
 
-No afirmar que introducir una contraseña maestra “da vuelta” a OIDC hasta especificar si significa un segundo factor, un modo de emergencia, autenticación local o una excepción de política. El requisito de producto necesita esa semántica inequívoca. No se debe almacenar una contraseña maestra recuperable en texto claro ni incrustarla en código/configuración. Preferir verificación con hash robusto y sal, protección contra fuerza bruta y almacenamiento de secretos apropiado; la elección final debe ajustarse al modelo de identidad real.
+- La URL canónica existente de KHORA/Cora permite entrar a la puerta EP con contraseña maestra sin iniciar Google OIDC para ese flujo EP limitado.
+- Las páginas y APIs generales permanecen protegidas por OIDC. Ocultar pestañas en la interfaz nunca sustituye autorización del servidor.
+- El primer alta/configuración y la recuperación o rotación de la contraseña maestra requieren una sesión OIDC autorizada.
+- La contraseña maestra habilita una sesión breve, revocable y de mínimo privilegio, limitada a EP. No concede acceso general a Cora, no otorga privilegios Windows por sí misma y no autoriza la administración de la credencial GitHub.
+- La carga, rotación y eliminación del PAT de GitHub requieren OIDC autorizado. La sesión maestra puede consultar estado redactado y utilizar la credencial en el flujo de bootstrap, pero no administrar el PAT.
+- El flujo de contraseña maestra debe tener expiración, límites de intentos, protección contra fuerza bruta, comparación constante, revocación, auditoría saneada y pruebas negativas. Los fallos no revelan cuentas, estado de repositorios ni detalles de configuración.
+
+La evidencia histórica describe scrypt, sal aleatoria, pepper derivado por ámbito, límite de ocho intentos fallidos por origen hasheado durante 15 minutos y cookie firmada de 15 minutos limitada a EP. Estos parámetros son una **línea base documentada de una revisión anterior**, no una afirmación de que la rama de producción actual los implemente; deben verificarse contra código y configuración vigentes.
+
+No almacenar una contraseña maestra recuperable en texto claro ni incrustarla en código/configuración. La excepción de OIDC es de alcance estrecho, expirable, revocable y auditable; no debe ampliarse por conveniencia.
 
 ### 9.2 Interfaz para ejecutar comandos PowerShell
 
@@ -300,19 +301,19 @@ La interfaz no debe mostrar, copiar o persistir credenciales en logs ni devolver
 
 ### 9.3 Entrada y almacenamiento de token GitHub
 
-El flujo de UI para ingresar un token debe:
-1. aceptar el valor solo sobre canal autenticado y protegido;
-2. no volver a mostrarlo tras la entrada;
-3. evitar query strings, telemetría, analytics, excepciones y logs;
-4. almacenarlo mediante el gestor de secretos aprobado para el entorno, no en texto claro en base de datos, localStorage, repositorio o archivo de configuración versionado;
-5. restringir su acceso a la función/servicio que realmente lo necesita;
-6. pedir scopes mínimos y preferir credenciales de vida corta cuando la integración lo permita;
-7. ofrecer reemplazo, rotación, revocación y prueba de conectividad sin revelar el valor;
-8. distinguir entre “guardado”, “permiso suficiente”, “conectividad comprobada” y “operación GitHub completada”;
-9. evitar persistir el token en prompts o documentación pública;
-10. definir el comportamiento cuando el secreto no existe, expiró o fue revocado.
+El contrato histórico identifica una bóveda de PAT administrable desde la UI de Cora y el consumo por el bootstrap PowerShell existente; no se debe crear un path canónico alternativo ni una GitHub App para resolver este requisito sin una decisión nueva.
 
-No considerar un token “seguro” solo porque la UI lo enmascara. El almacenamiento, el acceso del servidor, los logs, las copias de seguridad, el ciclo de vida y el alcance de permisos deben comprobarse.
+Requisitos:
+1. La UI permite cargar, validar, rotar y borrar el PAT; el campo de entrada es temporal y el valor no se vuelve a mostrar después de guardarlo.
+2. El servidor valida la credencial y almacena únicamente ciphertext con AES-256-GCM. Metadatos permitidos: cuenta, últimos cuatro caracteres, repositorios/permisos observados y fecha; nunca el token.
+3. La clave de cifrado se deriva con separación de dominio de `EP_BOOTSTRAP_JWT_SECRET`. Si se rota esa raíz, el procedimiento debe exigir volver a cargar el PAT y verificar que la bóveda vuelva a funcionar.
+4. La sesión EP obtiene un JWT limitado al scope `ep:github:token`; el PowerShell servido por KHORA recupera el secreto mediante `GET /api/ep/github-token` usando el `apiBase` existente. La respuesta debe tener controles de caché apropiados (incluido `no-store`) y autorización del servidor.
+5. El secreto no forma parte del comando, URL, argumentos de proceso ni logs. El launcher lo mantiene en memoria y, en el entorno Windows definido por el contrato histórico, lo protege con DPAPI dentro del volumen cifrado. La viabilidad de esta protección depende de que el volumen y el flujo real de claves estén instalados y verificados.
+6. La bóveda debe fallar cerrada ante errores de almacenamiento o descifrado. Solo puede recurrir al `GITHUB_TOKEN` legado cuando la bóveda responde correctamente y confirma que no hay credencial; no ante un error ambiguo.
+7. La interfaz distingue entre credencial guardada, token validado, permisos suficientes y escritura real probada. El inventario de repositorios o los scopes declarados no demuestran por sí solos capacidad de push.
+8. Preferir scopes mínimos y credenciales de vida corta cuando la integración lo permita; probar rotación y revocación sin revelar el valor.
+
+No considerar un token “seguro” solo porque la UI lo enmascara. Deben verificarse almacenamiento, acceso del servidor, logs, copias de seguridad, ciclo de vida y permisos efectivos.
 
 ### 9.4 Pruebas obligatorias de Cora
 
@@ -328,6 +329,18 @@ No considerar un token “seguro” solo porque la UI lo enmascara. El almacenam
 - el flujo completo se prueba E2E en un entorno autorizado sin exponer credenciales.
 
 Hasta obtener evidencia, cada punto permanece como requisito/pending; no como capacidad disponible.
+
+### 9.5 Repositorios requeridos y discrepancia pendiente
+
+El contrato histórico de la bóveda valida por API la identidad y seis repositorios: `CENSUS`, `GDP`, `metodologia`, `otrogranprograma`, `signal-interpreter` y `khora`. El catálogo de workspace expone los cinco repositorios de trabajo y conserva `khora` como repositorio del bootstrap. Sin embargo, el bootstrap histórico de referencia enumeraba cinco repositorios y no incluía `CENSUS`. **La lista definitiva continúa pendiente de reconciliación con los remotes reales y los permisos autorizados.** No convertir esa discrepancia en una lista fija de producción sin verificarla.
+
+Para capacidad de escritura, el antecedente especifica `Contents: Read and write` y `Metadata: Read` en cada repositorio requerido, pero la metadata de API no demuestra scopes efectivos. La aceptación exige una prueba de escritura autorizada (por ejemplo, una rama de prueba y un cambio inocuo) y su lectura de vuelta; no realizarla sobre `main` ni sobre datos productivos sin autorización.
+
+### 9.6 Estado histórico de implementación: no confundir con estado actual
+
+El anexo histórico registró la UI/bóveda en la rama `feat/ep-github-token-vault-ui`, PR #292, con migración `017_ep_github_credential_vault.sql` pendiente de aplicar a producción. En ese corte se registraron fallos de CI, UI Quality, Khora Single Script Guard y `khora-ok / gate`; los logs no pudieron recuperarse por `BlobNotFound`. No se había cargado PAT/contraseña real, no se había aplicado la migración en producción y no se había probado el arranque real con Windows PowerShell 5.1. Por tanto, ese corte **no certificaba** la funcionalidad E2E.
+
+Este dato es evidencia histórica, no estado actual de la rama ni de producción. Antes de declarar implementado/operativo/E2E, consultar el PR, la rama y el deployment actuales, revisar la migración y los checks, y ejecutar pruebas reales autorizadas. Si la evidencia actual no está disponible, el estado queda **NO VERIFICADO**.
 
 ## 10. Seguridad, privacidad y amenazas
 
