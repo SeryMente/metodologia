@@ -291,7 +291,7 @@ El cierre de este gate queda expresado por:
 
 `H1 → SI@H1 → H2 → CABECERA ACTIVA → CONSISTENCIA DE ESPEJOS → F`
 
-Con `F:!` la ejecución es fail-closed.
+Con F:! la ejecución es fail-closed.
 
 ### 5.0.1 Verificación de frescura normativa por ciclo
 

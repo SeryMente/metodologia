@@ -21,7 +21,7 @@ Cada ciclo debe adquirir una instantánea fresca mediante `H1 → SI@H1 → H2` 
 
 La instantánea normativa de un turno anterior no puede reutilizarse. `F:✓` solo es válido cuando `H1 = H2`, la cabecera activa del SI es estable y su blob SHA coincide; `F:?` = comprobación incompleta o carrera; `F:!` = discordancia, obsolescencia, versión histórica seleccionada o contradicción de identidad normativa.
 
-`F:!` es **fail-closed**: obliga a `ESTADO: BLOQUEADO` o `PENDIENTE`, impide `CI:✓`, impide `RA:INICIAL|✓` y prohíbe ejecutar trabajo sustantivo sujeto a la normativa vigente. `F:?` tampoco permite certificar continuidad hasta completar el snapshot válido.
+F:! es **fail-closed**: obliga a `ESTADO: BLOQUEADO` o `PENDIENTE`, impide `CI:✓`, impide `RA:INICIAL|✓` y prohíbe ejecutar trabajo sustantivo sujeto a la normativa vigente. `F:?` tampoco permite certificar continuidad hasta completar el snapshot válido.
 
 Cada ciclo debe identificar la instantánea normativa que lo gobierna:
 

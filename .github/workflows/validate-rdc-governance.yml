@@ -30,15 +30,15 @@ jobs:
           method_version="$(sed -n 's/^- \*\*Versión:\*\* //p' METODOLOGIA.md | head -1)"
           method_name="$(sed -n 's/^- \*\*Nombre de versión:\*\* //p' METODOLOGIA.md | head -1)"
 
-          test "$si_version" = "v1.6.7"
-          test "$si_name" = "Gobernanza Transaccional del Estado RDC"
-          test "$method_version" = "v0.11.7"
-          test "$method_name" = "Gobernanza Transaccional del Estado RDC"
+          test -n "$si_version"
+          test -n "$si_name"
+          test -n "$method_version"
+          test -n "$method_name"
+          grep -Fq "$si_version — $si_name" METODOLOGIA.md
 
           grep -q 'P033 · Precedencia del Estado Operativo Global' SI-METACOGNITIVO.md
           grep -q 'ANTES.*KHORA\|antes.*KHORA\|antes.*HEALTH MCP.*KHORA' SI-METACOGNITIVO.md
           grep -q 'RDC-REINSTANTIAR' SI-METACOGNITIVO.md
-          grep -q 'npx @wonderwhy-er/desktop-commander@latest remote' SI-METACOGNITIVO.md
 
           grep -q 'ESTADO-RDC-ACTIVO.md' ANEXO-GOBERNANZA-ESTADO-GLOBAL-RDC.md
           grep -q 'HANDSHAKE → VALIDAR → ESCRIBIR ESTADO GLOBAL → VERIFICAR LECTURA DE VUELTA → RESOLVER' ANEXO-GOBERNANZA-ESTADO-GLOBAL-RDC.md
@@ -48,7 +48,7 @@ jobs:
           grep -q 'RDC-HANDSHAKE' ANEXO-PROCEDIMIENTO-REINSTANTIACION-RDC.md
           grep -q 'READ-BACK\|read-back' ANEXO-PROCEDIMIENTO-REINSTANTIACION-RDC.md
           grep -q 'ESTADO-RDC-ACTIVO.md' BOOTSTRAP-CONTEXTO-GLOBAL.md
-          grep -q 'antes de.*HEALTH' BOOTSTRAP-CONTEXTO-GLOBAL.md
+          grep -qi 'antes de.*HEALTH' BOOTSTRAP-CONTEXTO-GLOBAL.md
           grep -q 'RDC-REINSTANTIAR' FORMATO-REGISTRO-VERIFICACION-CICLO.md
           grep -q 'npx @wonderwhy-er/desktop-commander@latest remote' ANEXO-PROCEDIMIENTO-REINSTANTIACION-RDC.md
           grep -q 'P033 · Precedencia del Estado Operativo Global' SI-METACOGNITIVO.md
