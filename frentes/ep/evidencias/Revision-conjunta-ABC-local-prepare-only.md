@@ -667,3 +667,90 @@ Compuertas humanas/materiales siguen siendo las existentes de §§3.5–3.6, 4.4
 Pronóstico: próximo hito técnico = adquisición completa admitida y reconciliación de manifiesto sobre una copia exacta, antes de build/regresiones afectadas. No hay duración medida fiable para la recursión pendiente; no asignar minutos ficticios. Revisión humana, host/custodia y recuperación causal son esperas separadas. Cierre integral permanece sin fecha defendible hasta esas admisiones y los ensayos de persistencia/restauración/residuos; no solo queda Vercel.
 
 El archivo completo actualizado se adjunta recuperable. La presencia de esta versión §10 en Descargas PC-14 queda PENDIENTE de cotejo por asistencia; no se atribuye a la recepción ya comprobada de §9. El paquete/recibo históricos permanecen completos y separados.
+
+## §11 · Continuación GitHub: manifiesto causal y recuperación acotada de bóveda
+
+### 11.1 Alcance y custodia
+
+Conservados íntegramente §1–§10 y los paquetes anteriores. Constructor: código/copia aislada; asistencia: objeto canónico de persistencia de entorno, host y bóveda. Remote Desktop Commander continúa deshabilitado. Sin push, merge, publicación, SQL real, acceso a PC-14, importación de secretos ni aplicación de políticas A/B/local/C. El silencio solicitado al operador no significa vigilancia permanente ni ejecución indefinida.
+
+Base técnica fijada: main `dbc73afada1ad29abf46f4599d22cc3158a9a986`; PR292 `6738c1f1aeffe5835a725531e0774d4420af13c5`; fuente de validador `93cbcb2845239274f6ee03fe149b526e4a624238`. El código y los recibos de §10 no se sustituyen con evidencia de esta copia ampliada.
+
+### 11.2 Pendiente técnico retirado
+
+Copia ampliada congelada: 540 archivos, huella anterior al delta `8c5e32cdbf5b5ffc92677cdd75b4113a34ce385c9205916062e8a030539fbf67`. Aplicación de patch autorizado de cinco rutas: check/apply conformes. Antes de nueva conciliación, el validador existente rechaza 202 archivos faltantes y 59 divergencias: no se suman ni comparan como aceptación con los 335/47 de §10.
+
+Conciliadas exclusivamente cinco líneas de `ep-integrity-manifest.sha256`, sin cambiar sus fuentes:
+
+| Fuente retenida | Último cambio de ruta comprobado | Intención del cambio existente |
+| --- | --- | --- |
+| scripts/khora/khora.ps1 | 8c7a8b5a6c74e00a1c57a5d001855c7361228407 | rutas de trabajo Fila4 sin suplantación de identidad |
+| scripts/khora/modules/00-config.ps1 | 5dc82b536525c546542509db9694293f6da1885c | endurecimiento BitLocker y reutilización de credenciales de host |
+| scripts/khora/modules/08-deps.ps1 | 5dc82b536525c546542509db9694293f6da1885c | mismo cambio existente |
+| khora-web/lib/server/ep-bootstrap-content.ts | 5dc82b536525c546542509db9694293f6da1885c | bootstrap sincronizado en ese cambio existente |
+| ep-medio-architectura.md | 5dc82b536525c546542509db9694293f6da1885c | referencia documental de ese cambio existente |
+
+Cada fuente coincide en tamaño, Git blob y SHA-256 con main fijado; el recibo conserva huellas esperadas anteriores y nuevas. No se rehashó globalmente ni se rellenaron faltantes. Esta conciliación no ejecuta BitLocker, no activa las rutas históricas ni aprueba políticas nuevas.
+
+Resultado: quedan 202 faltantes y 54 divergencias. Huella de la copia después de la corrección: `ebecc937c2f8a6eaf32f5aea1fae48d3e7c026e263e4d25adf05d31bd6019335`, SHA-256 del mapa JSON ordenado ruta→SHA-256 de archivos, excluyendo caché; no es un Git tree ni hash de ZIP.
+
+Pruebas causales con el validador EXISTENTE: manipulación sintética de 00-config rechazada y bytes restaurados; eliminación de cobertura de `khora-web/scripts/run_unit_tests.mjs` rechazada, manifiesto restaurado y cotejado. La primera prueba no se repitió al corregir el nombre supuesto del runner. Error de ruta registrado: la prueba inicial se detuvo antes de ensayar cobertura, nunca se reportó como PASS global. No se repitieron las 21 regresiones anteriores.
+
+### 11.3 Fuentes pendientes: no confundir conectividad con integridad
+
+Adquisición por conector y descargas exactas emitidas por él, sin extraer/reutilizar tokens para otro destino. Índice sanitizado y cola de directorios conservados por revisión. Un HTTP 404 con URL temporal envejecida no demuestra archivo ausente: renovar el listado contrato recuperó ocho archivos y comprobó sus blobs. Los otros enlaces vencidos requieren renovación acotada, no reconstrucción del contenido ni otra auditoría.
+
+`kernel/src/khora_kernel/data/personalqa.json` quedó explícitamente diferido sin descargar sus bytes; asimismo secretos, datos operativos y logs excluidos. No rebajar el perfil para quitar esos faltantes: adquirir material privado requiere destino protegido/admisión que no se infiere de acceso GitHub.
+
+Trabajo todavía automatizable: completar directorios admitidos, verificar cada blob, adquirir intenciones de divergencias restantes, conciliar únicamente lo justificado y ejecutar compuertas afectadas. No afirmar agotamiento del trabajo independiente ni candidata íntegra por esta entrega.
+
+### 11.4 Recuperación por correo: objetos distintos
+
+| Objeto | Mecanismo observado | Lo que NO demuestra |
+| --- | --- | --- |
+| Archivo env-vault | PBKDF2-HMAC-SHA256, 200000 iteraciones, claves de contenido derivadas directamente de llave; AES-CBC/PKCS7 + HMAC; rotación existente necesita llave anterior | recuperar ciphertext por reset de hash o por conocer el email |
+| Agente local de bóveda | custodia temporal/local de llave con protección Windows DPAPI del perfil | recuperación independiente del perfil/máquina/volumen, o envío seguro de llave por correo |
+| Bóveda del navegador lib/crypto.ts | clave de datos aleatoria con envolturas AES-GCM por PIN y código aleatorio de recuperación; resetPINWithRecoveryCode conserva la clave de datos | compatibilidad con archivo env-vault, correo integrado o persistencia fuera de localStorage |
+| Contraseña maestra EP propuesta en PR292 | verificador scrypt; cambio autorizado por sesión OpenID Connect y email permitido | descifrado o recuperación de env-vault; tampoco prueba autenticación reciente/multifactor del proveedor |
+| PIN servidor/api boveda | hash PIN/sello y reset autorizado por sesión/email | recuperación de ciphertext del archivo ni prueba de email_verified/autenticación multifactor reciente |
+
+Fuentes exactas: env-vault blob `46efce0ff43c400bccdee11f02de5bc2ddd21e4c`; crypto navegador `c9fc91d08c95685c7223fdbeeb7044324a9018ba`; agente `b03f1edfaf3243ed9545b687fea11490f23178f7`; verificador EP `6e8025df4d0a3691128c39f1772915052e6f7089` y ruta de cambio `5975baefdb297003b7e2a1b211f2484e4a6ade75`. Primeros tres de main fijado; dos últimos de PR292 fijado, no aceptados/integrados por inferencia.
+
+La recuperación real de nueve entradas recifradas es evidencia REPORTADA y custodiada por asistencia, no reejecutada aquí. No autentica proveedores ni configura todo el runtime. Asistencia contrastó cinco nombres requeridos —AUTH_SECRET, OIDC_ISSUER_URL, OIDC_CLIENT_ID, OIDC_CLIENT_SECRET, DATABASE_URL— ausentes de ese inventario histórico; ello no prueba ausencia en otros almacenes autorizados. Plantilla SMTP no acredita recuperación criptográfica. El defecto UTC/local observado correspondía al helper de metadata/cleanup; Import-KhoraTemporaryVaultAccess ya usa RoundtripKind.
+
+### 11.5 Recomendación única condicionada: reutilizar custodia existente antes de migrar formato
+
+Recomiendo verificar y, SOLO tras aprobación específica, reutilizar un custodio cifrado existente e independiente del entorno a recuperar para conservar el material de recuperación del archivo. Conservar de entrada el codec y la rotación existentes; no construir servicio email ni migrar formato ahora.
+
+LastPass figura únicamente como antecedente en la doctrina de entorno con llave física; no se verificó cuenta actual, relación con `the.willfreeman@gmail.com`, plan, controles o recuperación habilitada. Es candidato a cotejo, NO proveedor seleccionado/configurado. La documentación oficial distingue verificación por email de recuperación automática disponible para combinaciones de dispositivo/navegador previamente admitidas; reset de cuenta vacía el contenido. No prometer recuperación por email desde cualquier host basándose en ese antecedente.
+
+Email = canal de autenticación/verificación o notificación; nunca enviar llave, código de recuperación, contraseña maestra ni secretos por email. La custodia y su propia recuperación deben funcionar fuera de PC-14, del perfil EP, de la bóveda y del volumen cuya pérdida se ensaya. Evitar circularidad: correo o gestor accesibles únicamente con un secreto dentro de la misma bóveda; llave de BitLocker solamente dentro del gestor que requiere el volumen; material únicamente en localStorage/DPAPI del host perdido.
+
+Con codec actual, “sin conocer la llave anterior” significa que el operador la olvidó pero un custodio previamente admitido conserva material capaz de descifrar. No significa recuperar matemáticamente una llave que no existe en ningún lugar. Si se exige que nadie conserve la llave anterior, habría que aprobar una envoltura de clave de datos por material independiente y la migración correspondiente; el patrón del navegador no se adapta al archivo silenciosamente.
+
+Alternativa si no se admite custodio: segundo secreto de recuperación independiente, de alta entropía y con conservación fuera del entorno; no es recuperación basada únicamente en email. Ninguna alternativa está implementada o aceptada.
+
+**Decisión material exacta:** ¿admitir custodia criptográfica independiente con acceso/recuperación mediante la cuenta de correo especificada y controles verificados, aceptando el riesgo del custodio y del correo, o exigir un segundo secreto independiente? Después debe aprobarse el proveedor/cuenta, controles, material custodiado y prueba concreta; no ampliar permisos o costos por defecto. No se solicita respuesta mientras el operador está ausente.
+
+### 11.6 Aceptación futura, todavía no ejecutada
+
+1. Fixture sintética y copia recuperable intacta: enrolar material de recuperación antes de olvidar la llave; proteger archivo, backups, envolturas y custodia según alcance aprobado.
+2. Retirar la llave anterior del conocimiento/input del operador y simular pérdida del host/perfil; autenticar recuperación por ruta admitida, sin transmitir material secreto por email.
+3. Descifrar contenido anterior con material recuperado, comparar íntegramente valores en memoria, rotar/reproteger con nueva llave, verificar todas las entradas y apertura posterior. Un reset que produce bóveda vacía no satisface aceptación.
+4. Rechazar identidad incorrecta, material incorrecto, replay/expiración aplicables y ciphertext alterado. Probar interrupción antes/después de reemplazo: original y copia conservados, rollback utilizable; comprobar residuos y limpieza sin pérdida silenciosa.
+5. Ensayar revocación de acceso de recuperación y sustitución del material conforme a política aprobada. Una copia offline vieja no deja de ser descifrable por revocar acceso online: declarar ese límite, retención y rotación de credenciales de proveedor por separado. No atribuir efecto retroactivo a eliminación local o reset PIN.
+6. No borrar/activar la única copia recuperada hasta sustituta funcional comprobada, admisión del host/recursos y target exacto autorizado. Borrado local no reescribe Git, backups ni invalida claves de proveedores.
+
+### 11.7 Continuidad integral
+
+Mantener el alcance de migraciones 016/017/021 delimitado en las secciones anteriores: secuencia, esquema/idempotencia/rollback pendientes del ensayo aislado admitido; las pruebas de texto SQL no son ejecución ni reversión demostradas. Paquete causal aún faltante bloquea cotejar sus nueve correcciones, no adquirir fuentes públicas/admitidas. Contratos local-web y seguridad A/B/local/C, listener/origen, cifrado/persistencia/restauración/cierre, host protegido, WordPress/activos licenciados y aceptación de perfil mantienen sus compuertas.
+
+Ruta crítica técnica inmediata: adquisición permitida → intención por divergencia → copia identificada reconciliada → comprobaciones afectadas; separada de revisión humana de custodia/políticas, host, recursos aislados, paquete causal y activos. Sin plazo medido defendible de cierre integral; no estimar tiempos de espera humana ni afirmar “solo falta Vercel”.
+
+### 11.8 Comprobación independiente adicional
+
+Ejecutados siete archivos existentes de contratos puros/mock del kernel: constructor de apps, gestor de tareas, ingesta de archivos, memoria organizada, modelo de lenguaje, contrato de propuesta y transcripción. **21 casos PASS**, exit 0, fuentes sin cambio, 0.741 s medidos de proceso. Son OTROS 21 casos: no las 21 regresiones históricas del validador ni repetición de las 69+12 pruebas de §10. Fixtures Neo4j no solicitadas, sin conexión a base ni secretos en entorno del proceso. Dependencias públicas de ensayo instaladas en entorno temporal separado, freeze conservado; no prueba del host, cifrado, proveedores o integración integral.
+
+Fuentes de las distinciones criptográficas: codec/rotación existente del archivo[^https://github.com/SeryMente/khora/blob/dbc73afada1ad29abf46f4599d22cc3158a9a986/scripts/khora/env-vault.ps1], envolturas separadas de clave del navegador[^https://github.com/SeryMente/khora/blob/dbc73afada1ad29abf46f4599d22cc3158a9a986/khora-web/lib/crypto.ts], custodia local del agente[^https://github.com/SeryMente/khora/blob/dbc73afada1ad29abf46f4599d22cc3158a9a986/tools/vault-agent/vault_agent.py], verificador y ruta maestra de PR292[^https://github.com/SeryMente/khora/blob/6738c1f1aeffe5835a725531e0774d4420af13c5/khora-web/lib/server/ep-master-password.ts][^https://github.com/SeryMente/khora/blob/6738c1f1aeffe5835a725531e0774d4420af13c5/khora-web/app/api/ep/master-password/route.ts].
+
+LastPass: antecedente histórico únicamente en <mention url="https://app.notion.com/p/0c0a4187824183a68e1601753d250065">Doctrina del entorno persistente con llave física</mention>[^https://app.notion.com/p/0c0a4187824183a68e1601753d250065]. Recuperación oficial condicionada a capacidades existentes del dispositivo/navegador y controles de cuenta; reset vacío no conserva el contenido[^https://support.lastpass.com/s/document-item?language=en_US&bundleId=lastpass&topicId=LastPass%2Frecover-master-password.html]. No se verificó ni configuró una cuenta real.

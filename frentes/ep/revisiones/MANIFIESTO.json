@@ -36,9 +36,9 @@
     },
     {
       "path": "frentes/ep/OEP.md",
-      "bytes": 201554,
-      "sha256": "0141379942ae4cb4289d41887f41dd1a6ded525f109709faa4e7443e4602a130",
-      "git_blob": "549e193a5cd90ecb4111b9e582507051bb02bbac"
+      "bytes": 206197,
+      "sha256": "4095195761fab6bb486e62ec652fff3f8de26c35156a1c734657538e55a01634",
+      "git_blob": "6cbf2f3912e48c0869b8592b4ef71c0387d29a22"
     },
     {
       "path": "frentes/ep/README.md",
@@ -102,15 +102,15 @@
     },
     {
       "path": "frentes/ep/prompts/CLAUDIA.txt",
-      "bytes": 23663,
-      "sha256": "064d7b5d2529a8d44c5feb2262b186f7beb58f0ae11a7a03321fbd8cb5bcd8c2",
-      "git_blob": "8c7c550b13715a5239230fcb315895a15d82f89b"
+      "bytes": 23645,
+      "sha256": "d92e4150820c261c7f52d32b64d9f315995105fc4cbafa8ac1e561ed3af2bfee",
+      "git_blob": "7c3b8c38e1ff2937f5308ccbb270baf4fe58a254"
     },
     {
       "path": "frentes/ep/prompts/SAMANTHA.txt",
-      "bytes": 24671,
-      "sha256": "effee6c887b98a2654afbe390d372051352de2ff90daa23e3ff1e00ead596dcc",
-      "git_blob": "e538ae2dee96300622f077b0b4f90b0cac21b6c7"
+      "bytes": 24653,
+      "sha256": "07354cb7830d4bce8ffc53fb2aa70bba0f1636948944ede9b22196b18ce23f0f",
+      "git_blob": "91bc3222b83e420e0e7cc455694014f48d6124cb"
     },
     {
       "path": "frentes/ep/revisiones/LECTURA-DE-VUELTA-07a1a574.json",
@@ -210,9 +210,9 @@
     },
     {
       "path": "frentes/ep/evidencias/Revision-conjunta-ABC-local-prepare-only.md",
-      "bytes": 109593,
-      "sha256": "6344b36bc107480bb9f4b3d0e4f1600ea56192e30636cfb6d55199eec72ff94e",
-      "git_blob": "046b961cde8731ac450cd0e66d0832a474e94e61"
+      "bytes": 123312,
+      "sha256": "a66e276104d40d33eeb9bd8b454c1242350e3dd2e3089a1cc08253a6a3c0aace",
+      "git_blob": "ba23a78ad0d5a32a2206403eab596d8da79500a7"
     },
     {
       "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.9.json",
@@ -261,6 +261,12 @@
       "bytes": 687,
       "sha256": "93016cc1ea6527b36a888a4f418f1f0a5de9c8798cc6f018619462c21b8c4936",
       "git_blob": "4b7975d7f004a00b5d7db49157eea2bac6ba4e28"
+    },
+    {
+      "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.15.json",
+      "bytes": 876,
+      "sha256": "ab5eea2e2ad7ea7d35140e2fc92d79e35680079172fb2ad9299328d4c17a8dae",
+      "git_blob": "3690b3a8663c4a7a8c7dd220761c9be47da32c2a"
     }
   ],
   "exclusions": [
@@ -268,7 +274,7 @@
     "Downloads files not recovered"
   ],
   "prior_readback_verified": "49e64d0636392c4d2f6f36e3e6d4484d465f0630; seven blobs matched and OEP content exact",
-  "latest_review_source_commit": "61c67e75678c03339d22978b3b500df2fb27c17e",
-  "current_event": "Silent continuation ordered; builder turn-duration recovery; independent vault prerequisite/source inventory grounded without secrets or policy changes",
+  "latest_review_source_commit": "fdfeea4219356974d510abaad39a78d1c5a44f4d",
+  "current_event": "Exact section11 review received; five causal manifest expectations reconciled and scoped tests reported; independent recovery proposal remains material decision pending",
   "verification_scope": "Changed files require read-back; unchanged entries preserve concurrent manifest and receipt, not current product evidence."
 }
