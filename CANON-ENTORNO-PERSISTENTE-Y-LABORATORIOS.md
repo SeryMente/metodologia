@@ -1,9 +1,9 @@
 # Canon transversal de Entorno Persistente, Continuidad de Ejecución y Laboratorios Locales
 
 **ID documental:** METODOLOGIA-EP-CANON  
-**Versión del documento:** v1.2.0  
-**Nombre de versión:** Ejecución Autónoma de Samantha en una Sola Invocación  
-**Estado:** CANON DOCUMENTAL TRANSVERSAL Y CONTRATO DE EJECUCIÓN; implementación, publicación del producto y certificación física NO acreditadas por esta edición.  
+**Versión del documento:** v1.3.0  
+**Nombre de versión:** Contratos Concretos, Procedencia y Cierre Documental Previo  
+**Estado:** REVISIÓN DOCUMENTAL; contrato reconciliado con fuentes, cierre de decisiones materiales PENDIENTE. NO ADMITIDO PARA IMPLEMENTACIÓN INTEGRAL EN UN CICLO. Esta edición no acredita implementación, publicación ni certificación física.  
 **Fecha de corte documental:** 2026-10-10 (America/Mexico_City); revisión documental autorizada el 2026-10-11 UTC.  
 **Repositorio propietario y fuente normativa transversal:** [SeryMente/metodologia](https://github.com/SeryMente/metodologia)  
 **Ruta canónica:** `CANON-ENTORNO-PERSISTENTE-Y-LABORATORIOS.md`
@@ -500,7 +500,7 @@ Hasta entonces, el estado global seguirá siendo **PENDIENTE DE CERTIFICACIÓN E
 
 Esta revisión documenta una actualización coordinada del sistema existente, no una reescritura ni una nueva arquitectura. Antes de modificar código, el ejecutor produce un plan derivado de este archivo: componente, requisito, archivo real, cambio necesario, prueba, autorización y reversión. No necesita una conversación o anexo para descubrir qué se exige. Sí necesita acceso a repositorios, host, servicios, activos y autorizaciones: escribir una especificación no crea esos recursos.
 
-La versión de este documento (`v1.2.0`), la Metodología, el Sistema de Instrucciones, el host/bootstrap y `khora-web/package.json` son identidades distintas. Ninguna se usa como versión de otra. El número exacto de publicación del producto se calcula desde su baseline real conforme a su política vigente y se congela antes del primer cambio; la baseline del corte no se presenta como vigente para siempre. Sin baseline inequívoca o política de versión verificable, `BLOCKED_VERSION_BASELINE`.
+La versión de este documento (`v1.3.0`), la Metodología, el Sistema de Instrucciones, el host/bootstrap y `khora-web/package.json` son identidades distintas. Ninguna se usa como versión de otra. El número exacto de publicación del producto se calcula desde su baseline real conforme a su política vigente y se congela antes del primer cambio; la baseline del corte no se presenta como vigente para siempre. Sin baseline inequívoca o política de versión verificable, `BLOCKED_VERSION_BASELINE`.
 
 **Un ciclo:** una invocación de implementación autorizada que Samantha lleva desde adquisición y admisión hasta publicación verificada/cierre, sin esperar un «continúa» entre pasos. Las llamadas a herramientas, pruebas, reparaciones causales y esperas de procesos forman parte de esa misma invocación. No incluye una segunda conversación, un nuevo mensaje para aportar credenciales/aprobaciones ni un handoff a otra sesión. Esas situaciones producen SUSPENDIDO/BLOQUEADO y conservan checkpoint, pero no satisfacen el objetivo de un solo ciclo. El release_id puede conservarse al reanudar una liberación; eso no transforma dos ciclos en uno.
 
@@ -518,15 +518,32 @@ La entrega mínima v1.0 fue delimitada en el antecedente §22; se preserva y no 
 
 ### 18.3 Precondiciones materiales y autorizaciones
 
-Antes de la construcción afectada deben existir: permisos sobre los repositorios seleccionados; revisión presencial del operador para UX/UI, seguridad y arquitectura cuando aplica; autorización de migración/configuración productiva y prueba de escritura; host Windows elegible; destinos privados; fuentes/activos licenciados; acceso al proveedor de publicación existente; pruebas con logs; y un responsable de rollback. La orden de editar este canon no satisface esas autorizaciones de ejecución.
+Antes de la construcción afectada deben existir: permisos sobre los repositorios seleccionados; revisión presencial del operador para UX/UI, seguridad y arquitectura cuando aplica; autorización de migración/configuración productiva y prueba de escritura; host Windows elegible; destinos privados; fuentes/activos licenciados; acceso al proveedor de publicación existente; pruebas con logs; y un responsable de rollback. La orden de editar este canon no satisface esas autorizaciones de ejecución. La orden vigente de este ciclo es **documento primero**: no iniciar ni continuar cambios de implementación mientras no se cierre el contrato y se satisfaga la admisión. No usar la autorización de implementación anterior para saltarse esta dependencia.
 
 Todo dato de entorno se obtiene con descubrimiento de solo lectura o del canal privado autorizado, se valida y se congela en el manifiesto. Una política de retención, un nuevo proveedor, coste, volumen a cifrar, cuenta autorizada o mecanismo de atestación no aprobado no se decide por un default del agente. `BLOCKED_DECISION` identifica exactamente el campo y su impacto. Las fases independientes pueden prepararse, pero no se promociona la candidata incompleta.
+
+### 18.4 Encargo vigente y cierre de entradas materiales
+
+- Perfil exigido: `EP-INTEGRAL`; modalidad de la futura entrega: `prepare-only`. El único diferimiento autorizado de una preparación terminada será `vercel-publication`. No rebajar a EP-V1-MINIMO para evitar los requisitos integrales.
+- La implementación de producto se concentra en `SeryMente/khora`. Metodología conserva este contrato. Los demás repositorios son fuentes/activos de integración: leerlos no autoriza cambiar sus productos ni publicar OGP/WordPress. Si la integración requiere una modificación ajena a Khora, declararla con archivo y causa antes de ampliar el perímetro.
+- El archivo es el único insumo **técnico**. Credenciales/licencias/aprobaciones privadas y descubrimiento de hardware/versiones son recursos; no se convierten en otro documento de requisitos. Toda decisión material recuperada o aprobada se incorpora aquí antes de admitir construcción; el ejecutor no debe tener que buscar una conversación para descubrir su contenido.
+- Identificar versión, puerto, GPU y hash reales es descubrimiento verificable, no una pregunta de preferencia. Elegir un proveedor nuevo, tolerancia de pérdida, retención o criterio editorial sí es una decisión material. No mezclar ambos tipos de entrada.
+
+| Entrada que aún exige decisión del operador | Contenido exacto para cerrarla | Estado documental de esta edición |
+|---|---|---|
+| D01 — Destino privado duradero | Servicio/cuenta o almacén existente autorizado, namespace por clase, responsable, límite de coste/cuota, canal privado de acceso; cubrir snapshots WP, fuentes/salidas OGP, logs privados y checkpoint del release. Para pesos/runtime, distinguir copia privada de descarga reanudable desde revisión/hash autorizado. | NO RESUELTA: las fuentes recuperadas no establecen un destino para estas clases. Git WIP, ledger y perfil remoto no lo sustituyen. |
+| D02 — Política de continuidad | Intervalo máximo de checkpoint, pérdida máxima admisible, tiempo máximo de recuperación y retención por clase; reglas para último válido y capacidad mínima. | NO RESUELTA: autoWipMinutes=5 solo cubre el WIP observado; no fija estas garantías para WP/IA. |
+| D03 — Criterios críticos de TEST 01 | Lista explícita de criterios críticos dentro de los diez de §22.3, aprobada antes de puntuar. | RÚBRICA RECUPERADA; la fuente no marca qué criterios son críticos. No escogerlos después de ver la imagen. |
+
+Estas tres decisiones no son TODOs autorizados para el implementador. `document_contract_closed=false` mientras alguna siga sin resolver. Su cierre consiste en sustituir cada estado por la decisión concreta y su aprobación, actualizar los contratos afectados y verificar concordancia. No basta borrar la tabla, escribir «aprobado» ni marcar una bandera.
+
+Las revisiones humanas exigidas por gobierno, acceso al host, licencias y credenciales siguen siendo precondiciones de ejecución. Una autorización material se registra con sujeto, alcance, revisión y fecha; no se inventa en este archivo. La disponibilidad del host/runner se comprueba de nuevo en admisión y no se confunde con integridad documental.
 
 ## 19. Baseline, localizadores e interfaces existentes
 
 ### 19.1 Inventario de fuentes y puntos de modificación
 
-Estos localizadores son concretos; observarlos en la revisión elegida y registrar blob/commit. Si un archivo se movió, resolverlo mediante el árbol real y registrar el cambio de ruta; no inventar un sustituto.
+Estos localizadores son concretos y distinguen código de baseline y código candidato; observarlos en la revisión elegida y registrar blob/commit. Si un archivo se movió, resolverlo mediante el árbol real y registrar el cambio de ruta; no inventar un sustituto.
 
 | Repositorio | Archivos/puntos existentes | Responsabilidad de actualización |
 |---|---|---|
@@ -539,11 +556,15 @@ Estos localizadores son concretos; observarlos en la revisión elegida y registr
 | `SeryMente/serymente` | `reconstruction/lab/bootstrap-ser-y-mente-lab.ps1`, `custom-code`, módulos Blog, `reconstruction/lab/LOCAL-STUDIO-4.24.md` | Reconstrucción WordPress, plugins/rutas y bootstrap seguro. |
 | `SeryMente/GDP`, `signal-interpreter`, `otrogranprograma`, `CENSUS` | Árbol real, rama por defecto, manifiestos/selección | Acceso y materialización según rol firmado; no modificar productos ajenos al alcance. |
 
+**Distinción obligatoria de existencia:** la tabla incluye destinos de integración, no afirma que todos existan en main. En la baseline observada `dbc73afada1ad29abf46f4599d22cc3158a9a986`, `ep.ts` emite `ep:bootstrap`, `ep:logs:write` y `ep:logs:read`; el scope `ep:github:token`, la bóveda PAT, el verificador maestro, la ruta de consumo y la migración 017 se recuperan de la candidata de #292 y deben integrarse/probarse. Un archivo candidato no se atribuye a producción ni se crea de cero sin revisar ese código.
+
 El PR #292 es un punto de recuperación de código candidato, no una dependencia de autorización ni garantía de vigencia. PR #294 es un frente de identidad CECEQ que solo se integra si el perfil/host o los archivos realmente lo requieren. No mezclar ambos por su número. Resolver conflictos contra la baseline actual, revisar diff y probar el resultado integrado.
 
 ### 19.2 Identificación exacta de candidata y destino
 
 Registrar por repositorio: URL/origin, visibilidad, rama por defecto observada, SHA base, SHA candidato, archivos cambiados, blob hashes y versión leída. Fijar una instantánea por repositorio; las consultas de código posteriores usan ese commit. Si main cambia antes de integrar o la selección cambia, reconciliar en staging y repetir el cono de pruebas afectado.
+
+El destino recuperado de `modules/00-config.ps1` es proyecto `khora-web`, scope `victorhugotorresmendez-8991s-projects`, URL `https://khora-web.vercel.app`; son localizadores de la baseline, no evidencia de acceso, plan/cuenta activos ni autorización de publicación. Comprobar project ID, scope, root y alias contra el proveedor antes de promoción. No sustituirlos por el alias `khora-ten` de la ficha Notion histórica de julio.
 
 El destino de Khora es su proyecto/alias ya configurado; la URL histórica `https://khora-web.vercel.app/sistema` es un localizador, no autorización para publicar en otro proyecto. Obtener `apiBase` del descriptor autorizado y comprobar que es HTTPS, termina exactamente en `/api/ep`, carece de credenciales/query/fragmento y coincide con la audiencia firmada/configuración canónica. No deducirlo de la ventana activa ni emitir una URL nueva por comodidad.
 
@@ -563,7 +584,9 @@ La contraseña maestra es **autenticación alternativa de alcance EP**, no segun
 | `POST /api/ep/events`, `GET /api/ep/logs` | Bearer `ep:logs:write` / `ep:logs:read` | Eventos y lectura solo del sujeto/sesión autorizados, saneados. |
 | Páginas y APIs generales | OIDC según política existente | La sesión maestra no abre acceso general; ocultar pestañas no concede autorización. |
 
-Para Bearer validar `alg=HS256`, `typ=JWT`, firma, `iss=khora-ep`, audiencia canónica, sujeto, `sid`, `jti`, scope, expiración y revocación. El servidor es la autoridad; validación de formato en PowerShell no reemplaza firma del servidor. La emisión/revocación y limitación de tasa deben ser transaccionales; reutilizar tablas/sesiones existentes. Una solicitud sin identidad, scope o sesión válida no entrega secretos.
+Para Bearer validar `alg=HS256`, `typ=JWT`, firma, `iss=khora-ep`, audiencia canónica, sujeto, `sid`, `jti`, scope, expiración y revocación. El servidor es la autoridad; validación de formato en PowerShell no reemplaza firma del servidor. La emisión/revocación y limitación de tasa deben ser transaccionales; reutilizar tablas/sesiones existentes. Conservar los parámetros observados: issuer `khora-ep`; `EP_TOKEN_TTL_SECONDS` por defecto 43 200 segundos, mínimo 900 y máximo 86 400; máximo cinco emisiones por usuario en quince minutos; nueva emisión revoca las anteriores y supersede la sesión previa bajo lock de usuario. La cuenta permitida se obtiene de `EP_ALLOWED_EMAIL` o del fallback existente `MCP_ALLOWED_EMAIL`, no de una dirección incrustada por el agente. La audiencia es `EP_CANONICAL_URL` HTTPS exacta y termina en `/api/ep`.
+
+La candidata maestro usa scrypt con N=32 768, r=8, p=1 y maxmem=64 MiB; sal de 32 bytes/verificador de 64; contraseña entre 16 y 1 024 caracteres; máximo ocho fallos en quince minutos. Son formatos/parámetros recuperados, no prueba de eficacia del endpoint. Probar cookie, expiración, origen y efectos de rotación/revocación con el código integrado. No cambiar el coste criptográfico ni prolongar la sesión para facilitar el arranque sin revisión de seguridad. Una solicitud sin identidad, scope o sesión válida no entrega secretos.
 
 Las respuestas de consumo PAT requieren `Cache-Control: no-store, max-age=0`, `Pragma: no-cache`, `Referrer-Policy: no-referrer`, `X-Content-Type-Options: nosniff`. Los errores son públicos estables y no contienen token, ciphertext, consulta SQL, stack interno ni cuenta. Una respuesta HTTP 200 con purpose/sesión inválidos se rechaza; no se acepta como conexión.
 
@@ -612,6 +635,14 @@ Preservar sin renumerar `EP-IN-010/015/020/030/040/050/060/070/075/080/090/100/1
 
 Registrar START remoto antes y OK/FAIL después de cada etapa crítica. La baseline del ledger usa hash encadenado `SHA-256(hash_anterior || evento_canónico)`, secuencia única por sesión y bloqueo transaccional. Tras tres intentos sin confirmación remota no continuar una etapa crítica. Esta bitácora no es backup de datos.
 
+Parámetros observados del supervisor: inactividad 15 minutos; autosave WIP cada 5 minutos; heartbeat cada 60 segundos; poll cada 2 segundos. Los dos últimos no son checkpoints ni pruebas de recuperación. El arranque debe completar el primer checkpoint confirmado antes de quedar operativo; la garantía de datos privados utiliza D02, no el intervalo WIP por analogía.
+
+Brechas concretas que la actualización debe reparar antes de ejecutar sobre datos existentes:
+1. `07-git-wip.ps1/Initialize-KhoraRepository` hace `reset --hard` tras fetch; sustituir la operación sobre un árbol con cambios por adquisición del SHA en staging/worktree propio limpio. Origin, propietario y estado se validan antes de cualquier checkout.
+2. `Init-Wip` toma la rama ep-wip más reciente por fecha y ejecuta checkout -B; seleccionar continuidad por identidad/registro del workspace y checkpoint confirmado, no por antigüedad global. Una rama ajena no es la sesión del operador.
+3. `Get-KhoraStageablePaths` enumera también untracked con una denylist; conservar exclusiones y añadir autorización positiva de rutas. Un archivo desconocido queda sin stage y se registra saneado. Stagear individualmente no vuelve autorizado todo archivo encontrado.
+4. `12-handoff.ps1` contiene `Ensure-Handoff{return $true}` y `active=$false`; ese stub no acredita persistencia de contexto, recepción ni recuperación. Reutilizar el checkpoint/manifiesto real y probar read-back, no añadir otra fuente de verdad.
+
 Guardian vigila terminal/supervisor, VS Code, `cleanup.request`, latido e inactividad (baseline 15 minutos). En salida: detener procesos → exportar perfil cifrado y hacer push WIP de rutas explícitas autorizadas → verificar SHA remoto → purgar secretos → quitar únicamente junction propia → bloquear → desmontar → eliminar contenedor propio → desregistrar tarea solo si no quedan residuos → cerrar registro remoto/purgar token. Nunca `git add -A` con archivos inesperados ni `reset --hard`, `git clean` o borrado de árboles ajenos.
 
 La confidencialidad prevalece ante un fallo de cierre: el cierre de emergencia no se bloquea indefinidamente esperando un push; se sanea/purga/bloquea aunque haya pérdida de continuidad y esta se registra. Para datos recuperables deben existir checkpoints periódicos previos, no depender del cierre. Deadman no elimina remotes confirmados. La tarea AtStartup como SYSTEM permanece si hay residuos propios; probar que no borra un directorio distinto y que solo se desregistra tras verificar eliminación.
@@ -659,6 +690,10 @@ Aceptación: en el host real y de nuevo después de restore, `/`, `/psicologos/`
 
 No escoger un proveedor privado sin decisión material aprobada. El ejecutor debe resolver y registrar para cada clase: storage ID autorizado, objeto/namespace, región si aplica, acceso, cifrado, responsable, retención en días/número, frecuencia máxima de checkpoint, pérdida admisible y tiempo máximo de recuperación aprobados, coste/cuota y procedimiento de lectura/restore. Sin estos valores concretos, `BLOCKED_STORAGE_POLICY`; no usar cero, infinito o un default silencioso.
 
+El formato de perfil/archivo de la baseline no es la bóveda PAT de servidor: `env-vault.ps1` usa cabecera `KHORAEP1` de 8 bytes, sal 16, IV 16, HMAC 32 y ciphertext desde byte 72; PBKDF2-HMAC-SHA256 de 200 000 iteraciones deriva 64 bytes, divididos en AES-256-CBC y HMAC-SHA256. Autenticar cabecera/sal/IV/ciphertext antes de descifrar y no entregar plaintext al fallar. Preservar lectura compatible; un formato nuevo requiere migración aprobada y pruebas de ida/vuelta/archivo truncado/corrupción/llave incorrecta. AES-GCM de §19.4 solo describe el PAT del servidor; no reinterpretar archivos de perfil existentes como GCM.
+
+El perfil cifrado remoto de referencia es `ep-state/vscode-profile.v1.enc` en la continuidad Git autorizada. Verificar rama/origin/commit, lectura y descifrado en una sesión limpia antes de atribuir recuperación. `secrets/env-vault.enc.json` contiene entradas cifradas; su protección/autorización de distribución se verifica por separado. Ni ese archivo ni el blob de perfil autorizan subir dumps, medios, Divi o pesos a Git.
+
 Mapa requerido: código→Git autorizado; evidencia pública→Metodología saneada; ledger EP→DB Khora; perfil cifrado→mecanismo `ep-state` remoto existente verificado; WP DB/medios/snapshots→almacén privado aprobado; fuentes/salidas OGP y pesos/runtime recuperables→destinos privados autorizados; secretos→bóveda/almacén aprobado. PostgreSQL/Blob no cubren una clase hasta demostrarlo. No ampliar Blob para backups sin decisión y pruebas.
 
 Checkpoint: inventario y consistencia → empaquetado/cifrado según clasificación → manifiesto con objetos incluidos/excluidos y SHA-256/tamaño → escritura en staging remoto → lectura de vuelta y comparación → commit/promoción del checkpoint válido → registro duradero. No sobrescribir el último checkpoint válido con uno incompleto; GC/retención solo después de lectura de un sucesor válido y conforme a la política. Medir pérdida/tiempo contra límites aprobados; no afirmar continuidad sin periodicidad efectiva.
@@ -679,7 +714,24 @@ Pruebas obligatorias: importaciones íntegras; operación CUDA real sin fallback
 
 Una única imagen maestra horizontal 4:3, **UMBRAL / ENTRY AS TRANSFORMATION**. Umbral monumental abstracto de piedra/mineral/cerámica/estratos; apertura asimétrica y profundidad interior; transformación material/perceptiva, no puerta literal; luz física direccional, espacio negativo y trazas estructurales de azul profundo. Sin personas, texto ni logotipos. Lenguaje CARTOGRAFÍA DE LA TRANSFORMACIÓN; hipótesis Material Intelligence/Dark Field Cinema. Excluir cerebros azules, neuronas, nodos, circuitos, cyberpunk, futurismo genérico, partículas/explosiones decorativas, stock e ilustración corporativa.
 
-Guardar maestro/fuentes fuera del repositorio OGP con brief, prompt, modelo, lock/runtime, parámetros, seed, tamaño/formato/hash, evidencia GPU y destino confirmado. Evaluación humana registrada: promedio mínimo 4.2/5 y ningún criterio crítico menor de 3/5. La rúbrica/criterios deben ser los aprobados por OGP, recuperados del responsable editorial y congelados en el manifiesto; no inventar una rúbrica para aprobar la imagen. Si falta, `BLOCKED_EDITORIAL_CRITERIA`.
+Guardar maestro/fuentes fuera del repositorio OGP con brief, prompt, modelo, lock/runtime, parámetros, seed, tamaño/formato/hash, evidencia GPU y destino confirmado. La rúbrica **ya recuperada** de `docs/VISUAL-PRODUCTION-STRATEGY-CANON-20261008.json` v1.0.0, commit `29304fc27b7303d4963ca085af064087532766dd`, blob `e39362c1e8b5495bcbf21d33c20e758356eee9c2`, es:
+
+| Criterio | Pregunta evaluada |
+|---|---|
+| Identidad | Podría pertenecer exclusivamente a OGP. |
+| Concepto | La imagen piensa, no sólo decora. |
+| Memorabilidad | Deja una imagen mental reconocible. |
+| Profundidad | Resiste 20–30 segundos de observación. |
+| Editorialidad | Parece art-directed, no simplemente prompt-success. |
+| Narrativa | Puede evolucionar con el relato. |
+| Sistema | Permite construir una familia completa. |
+| Web | Convive con el texto sin competir con él. |
+| Movimiento | Admite animación semántica sutil. |
+| Anti-cliché | Evita la estética genérica de IA. |
+
+Registrar una puntuación humana 1–5 por criterio, sin omisiones, identidad del revisor, fecha y observación justificativa. Promedio mínimo 4.2/5 y ningún criterio **crítico aprobado** por debajo de 3/5. La fuente no designa críticos: D03 debe fijarlos antes de generar/evaluar, no inferir que todos o ninguno lo son. TEST final de la fuente: eliminar mentalmente el logo OGP y comprobar si el visual sigue perteneciendo a una obra sobre percepción → inteligencia → conflicto → relación → transformación → integración. Resultado estético no se adjudica por una prueba de formato/hash ni por autoevaluación de Samantha.
+
+El canon visual de OGP incluye una política Ideogram y un camino de publicación propio. Se recupera aquí su criterio editorial, **no** se sustituye por él el backend local ComfyUI/Nunchaku seleccionado para este laboratorio ni se autorizan sus cinco segmentos/49 segmentos o publicación editorial. TEST 01 es una sola imagen maestra, no validación del Visual DNA completo. Si falta D03 o aprobación humana de la imagen, `BLOCKED_EDITORIAL_CRITERIA`, aunque la infraestructura genere un archivo válido.
 
 Certificar la infraestructura no autoriza modificar `story-v3.js`, JSON canónicos, estructura visual o sitio publicado OGP. Esa integración/publicación editorial es un alcance separado con aprobación humana. EP-INTEGRAL entrega capacidad y maestro aprobado/recuperable; no atribuye publicación editorial no ejecutada.
 
@@ -726,6 +778,8 @@ Cada fila debe tener requisito, commit/artefacto/host, prueba ejecutada, resulta
 
 Desde `khora-web`, los scripts observados de la candidata son: instalación por lockfile con `npm.cmd ci --no-audit --no-fund`; `npm run ui:contract`, `typecheck`, `ui-review:check`, `test:unit`, `build` y `e2e`. Verificar que siguen definidos y leer los workflows para reproducir los checks CI, UI Quality, khora-ok/gate y Khora Single Script Guard. No usar un `lint` que no existe/ya no es compatible como sustituto de otro check. Pruebas Playwright requieren configuración/fixtures del entorno aislado y nunca datos de producción como fixture. No inferir PASS de un código de salida capturado incorrectamente.
 
+Separar cuatro recursos de GitHub: contenido, commit statuses, check runs y Actions jobs/logs. Un HTTP 403 en uno solo acredita rechazo de ese endpoint/operación para esa conexión, no falta universal de acceso ni ausencia de Actions Read and write. Registrar recurso, operación y respuesta saneada; comprobar permisos/soporte del tipo de token y herramientas disponibles antes de recomendar cambios. No exigir una opción Checks que no aparezca en el token fino ni una credencial nueva por conjetura. Un status obtenido no sustituye check runs o logs; tampoco evidencia de build. La restricción de Vercel Hobby sobre repositorio privado es un problema de proveedor/plan distinto del 403 de GitHub.
+
 Checks sin runner/steps/logs (`BlobNotFound` incluido) son NOT_VERIFIED aunque el API acepte un reintento. Diagnosticar provisión/políticas/cuota con evidencia autorizada; no atribuir automáticamente el fallo al código, no fabricar checks ni deshabilitar protecciones. Un runner alternativo o sustitución de check requiere autorización explícita y evidencia equivalente; pruebas locales no levantan por sí solas branch protection.
 
 Catálogo mínimo de bloqueos: `BLOCKED_AUTHORIZATION`, `BLOCKED_VERSION_BASELINE`, `BLOCKED_REPO_CONTRACT`, `BLOCKED_HOST_IDENTITY`, `BLOCKED_DESTINATION`, `BLOCKED_ADMIN`, `BLOCKED_DEFAULT_APP`, `BLOCKED_STORAGE_POLICY`, `BLOCKED_LICENSED_ASSET`, `BLOCKED_RUNTIME_COMPATIBILITY`, `BLOCKED_EDITORIAL_CRITERIA`, `BLOCKED_CI_EVIDENCE`, `BLOCKED_DEPLOY_QUOTA`, `BLOCKED_DECISION`. Error de hash, fuga de secreto o autorización rota es FAIL y detiene promoción. Registrar operación, síntoma exacto saneado, causa comprobada o desconocida, impacto, corrección, prueba causal y prevención antes de la siguiente cirugía. Repetir solo pruebas invalidadas y gate final; no guerras de sondas.
@@ -745,7 +799,7 @@ Catálogo mínimo de bloqueos: `BLOCKED_AUTHORIZATION`, `BLOCKED_VERSION_BASELIN
 ### 24.2 Promover el candidato exacto
 
 6. Reconsultar main, PRs, checks, revisiones y candidato. Integrar PRs individualmente en orden de dependencia. Registrar SHA integrado de cada repo; si el merge/conflicto cambia el árbol probado, ejecutar pruebas afectadas y comprobar equivalencia del artefacto antes de promoción. No merge automático de #292/#294 por aparecer aquí.
-7. Calcular versiones por política real y escribirlas en sus archivos propietarios junto con narrativa causal; actualizar manifiestos/fuentes generadas y comprobar enlaces subordinados. La versión documental no obliga a subir la Metodología global o SI como si fueran el producto; si el cambio afecta su política, se actualizan con autorización y coherencia en su propio flujo.
+7. Confirmar las versiones objetivo calculadas y escritas durante preparación antes de R14/R15; no introducir cambios de versión nuevos después de las pruebas. Si hace falta cambiar una versión, actualizar candidata/artefactos y repetir sus pruebas afectadas antes de integración/promoción. Mantener narrativa causal; actualizar manifiestos/fuentes generadas y comprobar enlaces subordinados. La versión documental no obliga a subir la Metodología global o SI como si fueran el producto; si el cambio afecta su política, se actualizan con autorización y coherencia en su propio flujo.
 8. Construir un artefacto de producción reproducible desde el SHA integrado limpio de main, nunca desde ep-wip. Registrar SHA, lockfile, versión, ID/hash de build y destino. Usar el mecanismo Vercel/proveedor ya configurado; credenciales solo por canal privado, no argumentos/logs. Revalidar cuota, project ID, equipo, root directory y alias antes de escribir.
 9. Aplicar cambios de esquema compatibles en el entorno autorizado con backup/restore ya ensayados y migraciones cuyos hashes coinciden. Una columna/tabla aditiva compatible puede preceder al deploy; una migración destructiva o incompatible exige decisión y plan específico, no se ejecuta por este runbook genérico. Verificar esquema y registrar read-back sin filas sensibles.
 10. Desplegar/promover el artefacto fijado. No reintentar ciegamente si el proveedor devuelve estado ambiguo: recuperar deployment ID y comparar su SHA antes de otra creación. Mantener la versión activa anterior hasta readiness del destino; no publicar un artefacto distinto para ahorrar tiempo.
@@ -913,6 +967,10 @@ Salida de éxito: versión/perfil publicados, commits/artefacto/destino comproba
 
 Cuando la orden excluya expresamente Vercel, `delivery_mode="prepare-only"` y `deferred_operations=["vercel-publication"]`. Samantha no ejecuta deploy/promoción/alias productivos, no dispara workflows de deploy y no fusiona una rama si esa fusión provoca despliegue automático no autorizado. Implementa y prueba en rama/staging aislados. La integración al destino previsto debe estar resuelta y revisada, no dejar conflictos de PR como si fueran «publicar».
 
+**Corrección necesaria en el producto antes de probar prepare-only:** `13-session.ps1/Start-Sesion`, etapa EP-IN-080, importa VERCEL_TOKEN e invoca `Deploy-Production` incondicionalmente. Separar verificación/reutilización de versión activa del acto autorizado de publicar. Prepare-only no exige ni usa VERCEL_TOKEN en el host para el arranque de ensayo y no llama el despliegue. Una candidata staging debe poder arrancar mediante descriptor/API de staging y fuente exacta, sin exigir que producción ya sirva esa candidata. Producción conserva su comprobación de correspondencia; no cambiar su audiencia a staging ni omitir autenticación. Prueba negativa: ejecutar dos instanciaciones de candidata y comprobar cero llamadas de creación/promoción/alias Vercel y cero dispatch de workflows productivos; EP-IN-080 registra verificación staging, no PUBLICADO.
+
+El workflow `deploy-production.yml` observado dispara en push a main. Por tanto, no fusionar mientras siga autorizado solo prepare-only. Preparar y probar el árbol de integración exacto respecto de main, sin conflictos, con revisiones completas y artefacto identificado. La publicación posterior puede incluir la promoción Git que dispara ese workflow **solo si** no necesita resolver código, revisar, configurar secretos, hacer una migración no preparada ni repetir preparación. Revalidar main en ese acto; un cambio no equivalente invalida readiness. Dejar una rama con conflictos o sin aprobaciones nunca equivale a «solo falta Vercel».
+
 `ready_for_vercel=true` requiere todos los gates prepublicación del perfil PASS, ensayo E2E/restore del artefacto exacto, versiones/migraciones/configuración probadas, CI/revisiones verificables, ausencia de conflictos y manifiesto de procedencia/rollback completo. Las únicas comprobaciones pospublicación pendientes son las que constituyen la transacción Vercel: deploy/promoción, alias/procedencia y smoke/aceptación contra ese destino activo. No afirmar «solo falta publicar» si aún faltan host, revisión, secreto, migración, licencia, datos, CI o prueba de recuperación.
 
 En este modo `published_verified=false` y `global_certified=false` mientras no exista aceptación activa; `single_cycle_completed` del objetivo original de publicar permanece false. La preparación sí puede marcar `single_cycle_preparation_completed=true` si alcanza READY_PARA_VERCEL en la misma invocación, sin suspensiones ni otro pendiente. Este estado no equivale a PUBLICADO_VERIFICADO. Una publicación automática accidental es incumplimiento del alcance, no un atajo.
@@ -923,4 +981,8 @@ En este modo `published_verified=false` y `global_certified=false` mientras no e
 **Cambio:** v1.2.0 hace de este canon un insumo operativo del ejecutor, corrige §12/§18, añade admisión antes de mutación, W0–W7, herramientas/entornos separados, avance causal sin preguntas de trámite y criterio verificable de una invocación.
 **Motivo:** impedir otra ronda de planificación/documentación en lugar de ejecutar cuando la implementación esté autorizada y los recursos disponibles.
 **Límite:** no crea permisos, secretos, atestación, licencias, host, runner ni disponibilidad ilimitada; un bloqueo externo impide éxito en un ciclo y se declara literalmente.
+
+**Revisión v1.3.0 — documento primero:** recupera parámetros de sesiones/supervisor/destino y formato de perfil; incrusta los diez criterios visuales originales; distingue main/candidata y statuses/checks/Actions; identifica operaciones destructivas y stubs; corrige el orden de versionado y el arranque prepare-only. Declara D01–D03 como decisiones materiales aún no recuperadas; no fabrica proveedor, retención ni criterios críticos. El estado documental sigue no admitido hasta cerrarlas; la mejora del archivo no es implementación.
+
+**Ancla v1.3.0:** documento anterior en commit `48be13a17eb7266315e8bdfe656b40135f151e95`, blob `5cbb5ad1d47bf9e7cffcb7d4e201ecdb90cb60c8`; SI/Metodología de esa instantánea mantienen blobs `151333921ca3214c0adee3996cc80d5f23adb2d5` y `8a2946c767c6ecd73e71d61c0c5274b6c7b2d17f`. Código Khora observado en `dbc73afada1ad29abf46f4599d22cc3158a9a986`: config `272ed2f33ecc5f542de005eea384e96d77abb0ba`, WIP `bf7c3f8d3f8fa50ba8c3ebb40595b505fc0975aa`, handoff `f52d710be6c8597404c638a2d0a184b39a661db6`, supervisor `cad2ea6c39376c0b32860a3a52709dbeb1fa3788`, env-vault `46efce0ff43c400bccdee11f02de5bc2ddd21e4c`. Fuentes son procedencia fijada, no prueba de operaciones E2E.
 **Ancla de edición:** canon v1.1.0 en `93488728d6f5dda046d65b2518e9f81a88d17db6`, blob `d24c48c77673b076db30a0b33879b1ac72bce695`; SI y Metodología recuperados en esa misma instantánea, sin cambio de blobs. La escritura v1.2.0 requiere control del blob esperado y comparación literal/read-back antes de declararse publicada.
