@@ -36,9 +36,9 @@
     },
     {
       "path": "frentes/ep/OEP.md",
-      "bytes": 177453,
-      "sha256": "91a620875f47020b5ee44de05d39e20f4adf802643e31979db4a42f9f0853625",
-      "git_blob": "df1ccf65acee1b2854e55b5468441b6ef89ecfd6"
+      "bytes": 182429,
+      "sha256": "45ae95ddc63a457e0da67d67150989dfec191858b4a127424834681198ee14d5",
+      "git_blob": "b4cc520bb43523e9540dc71e1d5621c619d93ed9"
     },
     {
       "path": "frentes/ep/README.md",
@@ -102,15 +102,15 @@
     },
     {
       "path": "frentes/ep/prompts/CLAUDIA.txt",
-      "bytes": 20648,
-      "sha256": "81025657e61605304d064954da75affc5b508014c1145ea39efd0b8c1557da2e",
-      "git_blob": "1fb8f8761cee93357447e501078978f3a561a3ec"
+      "bytes": 20903,
+      "sha256": "e5251296a4e376ffae574a297fa5ce971305b2733bb70097c34fb2a8f9a88c45",
+      "git_blob": "830d20c7aff5613de5e7391bf95514510173c830"
     },
     {
       "path": "frentes/ep/prompts/SAMANTHA.txt",
-      "bytes": 21656,
-      "sha256": "5099eb39bc0e2362434ea25662d31a76dbb43785dc880bf727ee12dd98adbee8",
-      "git_blob": "3ff0a90f1c9182fd60a3d65d3d340e27ca6c45e8"
+      "bytes": 21911,
+      "sha256": "0f1c664e472451eabec197b780ca980c9ce5b92e4c278f1bce7644038eae846a",
+      "git_blob": "9ab92cb4027357c78b6400502efe8c44440ef877"
     },
     {
       "path": "frentes/ep/revisiones/LECTURA-DE-VUELTA-07a1a574.json",
@@ -237,6 +237,12 @@
       "bytes": 830,
       "sha256": "bf8a89b4d5db1365b70da2839fb976bd6dad40c9c2c4d5b6e939426797e6ee64",
       "git_blob": "44eab0439c1eb525f45df9e532ac3409061de6e1"
+    },
+    {
+      "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.11.json",
+      "bytes": 791,
+      "sha256": "e3f1ae268e2b63f3b9e67de93861161d67c72408dad3ad51aec2eac513406ccd",
+      "git_blob": "977440df778e3290a71057bde18de74139727b36"
     }
   ],
   "exclusions": [
@@ -244,7 +250,7 @@
     "Downloads files not recovered"
   ],
   "prior_readback_verified": "49e64d0636392c4d2f6f36e3e6d4484d465f0630; seven blobs matched and OEP content exact",
-  "latest_review_source_commit": "c3bed595acf152331f4c2a3a0ac4ddf1f0f4559f",
-  "current_event": "Historical vault authenticates with prior key, ephemeral reference expired and not consumed; staged recovery/rotation helper prepared with causal synthetic tests",
+  "latest_review_source_commit": "16913e74ac8078b6cf77d49391dde6feb7beb91b",
+  "current_event": "Staged recovery real verified; operator redirects to functional rebuilt vault with email recovery; custody/security decision pending",
   "verification_scope": "Changed files require read-back; unchanged entries preserve concurrent manifest and receipt, not current product evidence."
 }
