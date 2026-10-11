@@ -1,8 +1,8 @@
-<!-- METACANON_VERSION=1.3; TEMPORARY_FRAMEWORK=true; USER_TRANSCRIPT_SPEC=true -->
+<!-- METACANON_VERSION=1.4; TEMPORARY_FRAMEWORK=true; USER_TRANSCRIPT_SPEC=true -->
 # Metacanon para crear y mantener objetos canónicos de proyecto
 
-- Estado: **Versión documental 1.3 — Gobierno heredable, versión visible y acceso remoto necesario**, preparada para lectura verificable en rama metodológica; no afirmar integración en main.
-- Versión metodológica: **1.3**. Sello: **METACANON-OBJETOS-v1.3**.
+- Estado: **Versión documental 1.4 — Recepción prioritaria del constructor y pronóstico calibrado**, preparada para lectura verificable en rama metodológica; no afirmar integración en main.
+- Versión metodológica: **1.4**. Sello: **METACANON-OBJETOS-v1.4**.
 - Nombre propio del marco: pendiente de elección del operador; no usar el nombre de un proyecto como nombre del método.
 - Repositorio de metodología identificado: https://github.com/SeryMente/metodologia, privado comprobado en el ciclo de actualización 1.1; revalidar su visibilidad antes de cada escritura sensible. Ruta METACANON-OBJETOS-CANONICOS.md; rama de esta entrega docs/metacanon-objetos-20261011. Conservar los originales y datos privados del frente solo en su carpeta autorizada tras verificar acceso privado; nunca publicar secretos en Git ni transportar identidades de ejemplos.
 - Archivo estable propuesto: `METACANON-OBJETOS-CANONICOS.md`.
@@ -22,7 +22,7 @@ Antes de cada ciclo comprobar la versión de este metacanon y del objeto del pro
 1. Un objeto canónico vivo por proyecto, no dos fuentes de estado paralelas.
 2. Método central y estado de proyecto separados; cada instancia registra versión metodológica adquirida.
 3. Propósito y alcance arraigados en instrucciones originales del operador; propuestas no equivalen a aprobaciones.
-4. Constructor ejecuta el grueso del desarrollo; asistente revisa evidencia, mantiene continuidad y emite un prompt útil hacia el cierre correcto.
+4. Constructor ejecuta el grueso del desarrollo; asistente revisa evidencia, mantiene continuidad y emite un prompt útil hacia el cierre correcto. Toda salida del constructor entregada por el operador tiene prioridad de atención conforme a §25.
 5. Cero bloating: ninguna función, infraestructura o trabajo técnico que no cierre alcance autorizado o riesgo material demostrado.
 6. Instrucciones originales verbatim con procedencia; interpretación normalizada aparte, sin invertir negaciones silenciosamente.
 7. Calidad y no-simulación no se rebajan por urgencia: evidencia actual/histórica/sintética diferenciada, aceptación antes de cierre.
@@ -70,10 +70,10 @@ Cada proyecto deriva sus datos. No importar nombres de cliente, cuentas, disposi
 3. Actualización/delta: fuentes comprobadas, revisión anterior/actual, cambio y efecto en el ciclo; separar delta metodológico y delta de proyecto. Si inaccesible, frescura NO VERIFICADA.
 4. Qué avanzó: evidencia y entorno; qué no se tocó; observado/reportado/sintético/inferido/desconocido.
 5. Qué falta: lista finita vigente y bloqueos concretos.
-6. Viabilidad: alcance posible con respaldo y condiciones no resueltas.
-7. Tiempo/ciclos: próximo hito y cierre completo separados, rangos, confianza, supuestos, esperas externas y cambios de pronóstico.
+6. Viabilidad: intención original → medida realizable y evidencia → objetivo seleccionado → avance hacia sus criterios de aceptación → límites y condiciones no resueltas (§25).
+7. Tiempo/ciclos: próximo hito y cierre del objetivo seleccionado separados; pendientes y ruta crítica, rangos justificados, confianza, supuestos, esperas externas, estimación anterior/nueva y causa de deriva (§25).
 8. Siguiente acción: del agente y mínima intervención del operador cuando sea material.
-9. Continuación: un prompt útil del asistente o checkpoint/evidencia del constructor; no interrumpir trabajo con órdenes redundantes.
+9. Continuación: ante una salida recibida del constructor, el asistente entrega siempre un prompt de respuesta y el delta comprensible (§25); no reiniciar, duplicar trabajo ni introducir órdenes redundantes. El constructor entrega checkpoint/evidencia.
 10. Persistencia: fuente/revisión verificada o archivo local pendiente; delta producido, ancla y próximo checkpoint.
 
 No mantener “99 %” indefinidamente. Si no hay base de estimación, declarar no estimable y la dependencia concreta, no fabricar un plazo. No declarar entrega completa por plan, maqueta, compilación, prueba sintética, archivo creado o solicitud abierta.
@@ -121,9 +121,9 @@ Respeta alcance, compuertas y no-simulación. El asistente mantiene continuidad 
 ## 9. Estado de este metacanon
 
 - De dónde viene: instrucciones originales de creación portable, dos roles, verbatim, crónica, eficiencia, salida consistente, estimación, viabilidad, perfil/acceso remoto y delta.
-- Dónde está: versión documental 1.3; centralización en rama de SeryMente/metodologia, sin modificar el Sistema de Instrucciones ni las normas globales anteriores. Evidencia privada de Profuturo queda en GDP.
+- Dónde está: versión documental 1.4; centralización en rama de SeryMente/metodologia, sin modificar el Sistema de Instrucciones ni las normas globales anteriores. Evidencia privada de Profuturo queda en GDP.
 - A dónde va: uso temporal por aproximadamente un mes, validación de cada instancia y posterior migración a infraestructura autorizada sin pérdida.
-- Qué cambió: V24/V25, matriz de decisiones basada en dictados, mínimo viable demostrado, persistencia oportuna, fuente central identificada y revisión de privacidad.
+- Qué cambió en 1.4: M32 incorpora prioridad de atención a salidas del constructor, síntesis de novedad/viabilidad/avance y pronóstico calibrado por pendientes y ruta crítica (§25). Conserva la gobernanza 1.3 y su excepción metodológica de hilo único.
 - Próximo paso: verificar recepción/readback de esta versión y usarla para instancias; nombre propio pendiente, candidatos TRAMA/HILO VIVO/CANON VIVO/DOBLE HILO no ratificados. No bloquear su uso por branding.
 - Historia: versiones 0.1–0.3 fueron borradores locales; sus notas finales son históricas, no estado de publicación actual.
 
@@ -414,3 +414,27 @@ Endurece la capacidad de lmetacnon, para progapagar la gobernanza hacia los cano
 ````
 
 **Trazabilidad M31:** dictado → §23–§24 y restricciones §5/§6/§12/§13/§19 → matriz/constancia del hijo y prompts → revisión documental/lectura de vuelta. No otorga permisos de equipo ni capacidad técnica de forzar agentes externos.
+
+## 25. Recepción prioritaria del constructor y pronóstico calibrado — actualización 1.4
+
+**Disparador:** el operador entrega al asistente una salida del constructor. Tiene prioridad sobre la tarea auxiliar en curso. Detener la emisión de nuevas operaciones auxiliares, conservar su checkpoint y atender la salida antes de continuar. Si hay una mutación indivisible en ejecución, alcanzar el primer punto seguro sin cancelarla a ciegas; declarar esa excepción. No detener al constructor, abandonar una operación incierta ni simular trabajo en segundo plano. La excepción de hilo único metodológico (§21) permanece: no inventar un segundo rol.
+
+**Respuesta obligatoria del asistente:** leer íntegramente la salida recibida; contrastar con el último checkpoint y las fuentes pertinentes; distinguir reporte del constructor de comprobación propia. Entregar al operador una síntesis suficiente para no tener que leer la salida: qué cambió y por qué importa, qué quedó demostrado/aceptado o pendiente, efecto en viabilidad y avance hacia el objetivo seleccionado, tiempo/ciclos y siguiente acción. Si no hay novedad, decirlo expresamente. Acompañar siempre un prompt completo y copiable para el constructor, ajustado al delta: continuar sin reiniciar, reutilizar evidencia válida, cerrar pendientes concretos y respetar permisos. Si no hay cambio de dirección, el prompt indica continuidad sin pruebas u órdenes redundantes. Entregar el prompt no demuestra que el constructor lo recibió o ejecutó. Después, retomar únicamente trabajo auxiliar útil y sin colisiones.
+
+**Viabilidad y avance:** mantener la cadena intención literal → capacidad realizable con evidencia y entorno → medida seleccionada y criterios terminales → criterios cumplidos y pendientes. No sustituir el objetivo del operador por una capacidad menor sin decisión explícita. Separar límite demostrado, hipótesis viable y bloqueo externo; implementado no equivale a demostrado ni aceptado. Reportar qué parte del propósito puede lograrse hoy, en qué condiciones y qué falta para la medida seleccionada; no prometer garantía sobre terceros.
+
+**Cálculo del pronóstico:** estimar desde la lista finita de trabajo pendiente y dependencias reales, incluyendo pruebas, recuperación, revisión, empaquetado, persistencia y aceptación necesarias; no desde el porcentaje de código escrito. Usar duraciones observadas comparables cuando existan y declarar falta de muestra cuando no existan. El tiempo restante sigue la ruta crítica: no sumar tareas verdaderamente paralelas ni descontar paralelismo ficticio. Dar un rango con supuestos y contingencia causal acotada, confianza y dos horizontes separados: siguiente hito verificable y cierre del objetivo seleccionado. Las esperas humanas/materiales sin plazo quedan aparte y sin fecha inventada. Los ciclos son intercambios/checkpoints necesarios por dependencias o compuertas, no llamadas a herramientas ni un número fijo por costumbre.
+
+**Calibración y anticasi-terminado:** registrar estimación anterior, resultado observado, nueva estimación y causa cuando cambie. Si el trabajo consume el rango previsto sin cerrar el hito, recalcular desde los pendientes reales y explicar el desvío ese mismo ciclo; no renovar el mismo «30–60 minutos / 1–2 ciclos» sin fundamento ni conservar un «99 %» con bloqueos sustantivos. Porcentajes solo con denominador explícito y criterios verificables; preferir criterios terminales cumplidos/pendientes. Sin base suficiente, declarar horizonte no estimable y la evidencia o dependencia exacta necesaria, manteniendo ejecución independiente autorizada.
+
+**Herencia y comprobación:** incorporar §25 en colaboración, viabilidad, formato de ciclo y prompts de cada hijo que adquiera este delta; registrar ubicación/adopción conforme a §23. Prueba documental mínima: una salida nueva interrumpe trabajo auxiliar en punto seguro, produce síntesis de novedad y prompt; un resultado sintético no eleva viabilidad real; una espera sin plazo no genera fecha; una estimación vencida se recalcula y explica. Esta revisión documental no acredita comportamiento empírico de otro modelo.
+
+### M32 · instrucción directa del operador · evento posterior a 1.3
+
+Original íntegro del mensaje recibido en el hilo asistente Profuturo; sin normalización ortográfica ni atribución de hora no disponible. Lectura operativa separada en §25.
+
+````text
+Otra cosa que quiero que revises en el metacanon es instalar la regla de que cuando yo te entregue a ti, modelo asistente, una salida del modelo constructor, si estás haciendo algo, pausas, atiendes la salida, generas un nuevo prompt y me actualizas en cuanto qué es lo nuevo, porque yo no voy a leer esa salida, nada más te la voy a pasar y tú me vas a decir si hay algo nuevo que reportar. Recuerda que a mí lo que me interesa y también verifica si el metacanon lo incluye. A mí me interesa la viabilidad, o sea, que si se va a poder hacer lo que yo dije que quería que se hiciese, en qué medida se puede hacer y cuál es el avance hasta ese momento hacia la realización de la medida seleccionada como el objetivo y cuál es el tiempo estimado para terminar y cuáles son los ciclos. Esto con un criterio fino, evitando en la medida de lo posible quedarte como que en el 99.00009, tres horas, ¿no? cuando el proceso duró tres horas y media. El criterio para el cálculo del tiempo estimado ha de ser un buen criterio.
+````
+
+**Trazabilidad M32:** original → §25 y ajustes §1/§4/§9 → contraste de cobertura previa, revisión documental y lectura de vuelta de versión 1.4. Autorización limitada a este cambio metodológico; no modifica permisos, código, normas superiores ni acredita propagación a hijos no revisados.
