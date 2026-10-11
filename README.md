@@ -125,3 +125,10 @@ Para el contrato completo del arranque en terminales efímeras de Cybernet, RDC,
 **Foco de trabajo actual:** completar exclusivamente la Fase Fundacional EP-Cybernet antes de WP-LAB o modelos IA: workspace y extensiones actualizados, Notepad++ predeterminado y comprobado, OBS Virtual Camera confirmada en Windows y enumerada realmente por Chrome, RDC fresco con ficha de sesión verificada al portapapeles y logging saneado. El criterio de salida exige dos instanciaciones consecutivas controladas sin reinicio; ver sección 16 del anexo canónico.
 
 El anexo distingue evidencia actual de documentación histórica. La presencia de una carpeta no acredita una junction cifrada; el repositorio público conserva documentos y hashes no sensibles, nunca secretos, bases de datos, snapshots completos ni el ZIP propietario de Divi.
+
+
+## Objetos canónicos portables — marco temporal
+
+El procedimiento subordinado [METACANON-OBJETOS-CANONICOS.md](METACANON-OBJETOS-CANONICOS.md) define cómo crear objetos de contexto replicables para cualquier proyecto, preservar dictados originales como especificación, adquirir roles/instrucciones, comprobar delta y mantener viabilidad, evidencia y prompts de continuidad. Su registro de revisión está en [REVISION-METACANON-1.0.json](REVISION-METACANON-1.0.json).
+
+Marco temporal orientativo de un mes, sin infraestructura nueva ni modificación del Sistema de Instrucciones. Esta documentación no certifica productos, permisos o dispositivos y no fuerza herramientas/memoria en otras plataformas. Las instancias privadas conservan su contexto privado; este repo público solo recibe metodología y evidencia no sensible.
