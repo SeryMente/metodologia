@@ -36,9 +36,9 @@
     },
     {
       "path": "frentes/ep/OEP.md",
-      "bytes": 206197,
-      "sha256": "4095195761fab6bb486e62ec652fff3f8de26c35156a1c734657538e55a01634",
-      "git_blob": "6cbf2f3912e48c0869b8592b4ef71c0387d29a22"
+      "bytes": 211501,
+      "sha256": "f1bb7ed8c84129a17171c8ee606b37747a5bbae9013eed4e03872ee57e7b289f",
+      "git_blob": "7dd72806824c9abbe58a5d42d3d81729a7500501"
     },
     {
       "path": "frentes/ep/README.md",
@@ -102,15 +102,15 @@
     },
     {
       "path": "frentes/ep/prompts/CLAUDIA.txt",
-      "bytes": 23645,
-      "sha256": "d92e4150820c261c7f52d32b64d9f315995105fc4cbafa8ac1e561ed3af2bfee",
-      "git_blob": "7c3b8c38e1ff2937f5308ccbb270baf4fe58a254"
+      "bytes": 24493,
+      "sha256": "602350db7bdf3b86efa32bb98a86cc95818dd10d4d4e7094fc43a2bafb81e0a7",
+      "git_blob": "fcf675b942286bbe6f7f55dbd7f19cf5929010c8"
     },
     {
       "path": "frentes/ep/prompts/SAMANTHA.txt",
-      "bytes": 24653,
-      "sha256": "07354cb7830d4bce8ffc53fb2aa70bba0f1636948944ede9b22196b18ce23f0f",
-      "git_blob": "91bc3222b83e420e0e7cc455694014f48d6124cb"
+      "bytes": 25501,
+      "sha256": "54225ad612fb73de5a1b52f21ed23959340cd2ebd7761e032c4808e3c82513bb",
+      "git_blob": "650772dccc06bc099dfab336bae7f73e4c79f591"
     },
     {
       "path": "frentes/ep/revisiones/LECTURA-DE-VUELTA-07a1a574.json",
@@ -267,6 +267,18 @@
       "bytes": 876,
       "sha256": "ab5eea2e2ad7ea7d35140e2fc92d79e35680079172fb2ad9299328d4c17a8dae",
       "git_blob": "3690b3a8663c4a7a8c7dd220761c9be47da32c2a"
+    },
+    {
+      "path": "frentes/ep/evidencias/EP-H03-recibo-fuentes-post-section11.json",
+      "bytes": 7088,
+      "sha256": "382471bd53676955dc1cb441e7ef883b1a34b7116f8401b33ee55b0734a77b06",
+      "git_blob": "30a22c88a9f93aef89e28419ca88a76262f5cbb9"
+    },
+    {
+      "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.16.json",
+      "bytes": 1183,
+      "sha256": "1d415ca2566e07c9c4f3adb5e7a3d0ab6b963f6ed376ba9c2f4f0fa7d2b285a4",
+      "git_blob": "28d2590b51d0d33d31258baef7805d4c511f5abd"
     }
   ],
   "exclusions": [
@@ -274,7 +286,7 @@
     "Downloads files not recovered"
   ],
   "prior_readback_verified": "49e64d0636392c4d2f6f36e3e6d4484d465f0630; seven blobs matched and OEP content exact",
-  "latest_review_source_commit": "fdfeea4219356974d510abaad39a78d1c5a44f4d",
-  "current_event": "Exact section11 review received; five causal manifest expectations reconciled and scoped tests reported; independent recovery proposal remains material decision pending",
+  "latest_review_source_commit": "f41d24a8bb30f20dd8b5c4099860350f9ffa0f6c",
+  "current_event": "Exact post-section11 source acquisition receipt and queues preserved; reported source counts distinct from frozen tested tree; work open",
   "verification_scope": "Changed files require read-back; unchanged entries preserve concurrent manifest and receipt, not current product evidence."
 }
