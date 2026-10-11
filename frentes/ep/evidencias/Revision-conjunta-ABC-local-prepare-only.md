@@ -622,3 +622,48 @@ Ran 21 tests in 0.619s
 
 OK
 ```
+
+
+## 10. Fuentes fijadas y reconciliación aislada parcial — nuevo checkpoint
+
+### 10.1 Continuidad y custodia
+
+Se conservan íntegros los 102043 bytes de §§1–9 (SHA-256 e199c50dfceff2d383f4a5f5e2f26da214ea06576417e38a76ebd7123f6f7667). El ZIP de §9 no se regeneró ni ejecutó y las 21 regresiones de su validador no se repitieron. La asistencia verificó posteriormente su recepción física; el NOT_VERIFIED original de transferencia conserva su contexto histórico.
+
+Objeto canónico adquirido: OEP v0.3.10 / VCU-EP-v12, metodologia docs/metacanon-objetos-20261011, commit 16913e74ac8078b6cf77d49391dde6feb7beb91b, blob df1ccf65acee1b2854e55b5468441b6ef89ecfd6. Su §81 registra recuperación histórica reportada por operador y preparación sintética del helper; no demuestra autenticación de la copia Git actual, vigencia de proveedores, nueva llave custodiada, activación ni volumen. Constructor no tomó intervención de host/bóveda; Remote Desktop Commander continuó deshabilitado. Claudia conserva escritura de OEP.
+
+### 10.2 Adquisición sin credenciales nuevas
+
+Main comprobado: dbc73afada1ad29abf46f4599d22cc3158a9a986. Fuentes conservadas: producto #292 en 6738c1f1aeffe5835a725531e0774d4420af13c5 y validador en 93cbcb2845239274f6ee03fe149b526e4a624238. Se descargaron exclusivamente URL por archivo entregadas por el conector, fijadas a esas revisiones. Se verificó tamaño, Git blob SHA-1 sobre bytes crudos y SHA-256; subárboles compartidos solo se reutilizaron con igualdad de Git tree SHA en el mismo path. No se extrajeron tokens para otros destinos, no hubo login/secretos nuevos y los recibos saneados no contienen URL firmadas.
+
+Git directo sin credencial abortó con terminal prompts disabled y el tarball anónimo devolvió 404. Esto no se presenta como bloqueo universal: la adquisición por conector funcionó. URL iniciales caducadas devolvieron 404; refrescar exactamente el listado de origen resolvió los errores de archivos conocidos. No se confundió caducidad de URL con ausencia de fuente.
+
+Checkpoint de adquisición: main 381 archivos verificados, #292 114 y validador 364; cifras por revisión, no suma de archivos únicos. Los listados conocidos no están completos: quedan 79 directorios frontera no enumerados en main/validador y 41 en #292; recursión puede descubrir más hijos. No se declara clon completo ni modos Git reconstruidos. Se difirieron logs, diagnósticos y datos/bóveda potencialmente privados, sin descargarlos por inferencia. El inventario exacto pendiente acompaña el recibo, no sustituye OEP.
+
+### 10.3 Diff autorizado aplicado sobre copia aislada
+
+Copia congelada parcial desde main, 380 archivos de fuente, fingerprint SHA-256 4b0f905e24153a62daf6b58fb695d3341a457fb3378362d80cf07f74118b36de. Regla de huella: SHA-256 del JSON compacto ordenado path→SHA-256 de cada archivo; excluye node_modules y cachés. No es un Git tree SHA ni el hash de un ZIP. Cuatro archivos adquiridos después de congelar esta copia no se atribuyen a ella.
+
+El patch conservado pasó apply-check y se aplicó; cambió exactamente cinco rutas: ep-integrity-manifest.sha256, tests/validate_ep.py, tests/ep_release_readiness.py, tests/test_ep_release_readiness.py y tests/README-EP-READINESS.md. package.json, package-lock.json y ejecutor unitario permanecen byte-identical a sus blobs. No se aplicaron #292 completo, las nueve correcciones causales ausentes ni A/B/local/C.
+
+Un primer apply-check rechazó tres destinos de altas que la preparación había precopiado. No se aplicó el patch allí. Se registró la causa, se conservó esa copia y se corrigió en directorio único nuevo: preflight exige que los destinos /dev/null estén ausentes. Apply-check/aplicación posterior PASS. No hubo borrado, reset, cambio de rama ni mutación remota.
+
+**Integridad global: BLOCKED.** La copia congelada registra 335 rutas manifestadas ausentes y 47 divergencias de hash presentes; cobertura obligatoria sin faltantes. Este resultado sustituye únicamente la medida de esta nueva copia, no reescribe el recibo histórico de 592 ausentes. Todas las 47 divergencias presentes coinciden con Git blobs de main fijado: no son daños de descarga. El manifiesto vigente se modificó por última vez en 7afe575cc48532ce039a3ff40b368dc755f46795 (2026-10-07), mientras fuentes del host y ep.ts tienen cambios posteriores comprobados. Tabla exacta contiene hash esperado, blob observado, SHA-256 y tamaño por ruta. No se actualizaron esas 47 entradas para forzar PASS, ni se tocaron hashes de los 335 faltantes. La procedencia byte a byte no sustituye revisión de intención/alcance ni cobertura completa.
+
+### 10.4 Comprobaciones nuevas, separadas de aceptación
+
+- 69 pruebas existentes PASS en 13 archivos sobre contratos/funciones adquiridos; ejecución con dependencias fijadas y defaults sintéticos del setup existente. Fuentes de ese ensayo no cambiaron durante ejecución. No es prueba de identidad local ni red/host reales.
+- 12 pruebas existentes PASS sobre edición in situ y aserciones estáticas de SQL normativo/scopes, en la copia aislada. No se aplicó SQL ni se ensayó rollback/restauración. No se repitieron las tres pruebas de producto ya entregadas ni las 21 regresiones del validador.
+- Sintaxis de 219 archivos TypeScript/JavaScript con TypeScript 5.9.3: sin errores de transpilación sintáctica. No es typecheck semántico, build completo ni ejecución de aplicación.
+- Parseo AST de 26 archivos Python adquiridos: sin errores; no acredita módulos que faltan ni ejecución de host.
+- Validador existente conserva compuerta global; no se llamó a las comprobaciones estáticas internas saltando el rechazo de integridad. No hubo Vercel, workflows productivos, push ni merge.
+
+### 10.5 Pendientes y siguiente acción por ruta crítica
+
+Trabajo independiente todavía abierto: completar adquisición finita por listados/árboles fijados (reutilizando blobs y sin repetir pruebas vigentes), contrastar intención de divergencias del manifiesto con cambios exactos, preparar únicamente reconciliación autorizada y repetir solo compuertas afectadas sobre nueva copia identificada. Este checkpoint no acredita agotamiento de todo trabajo independiente.
+
+Compuertas humanas/materiales siguen siendo las existentes de §§3.5–3.6, 4.4 y 8.6: aprobación específica de identidad/capacidades/custodia/concesión offline; cookies y revocación total por usuario con cierre ordinario/emergencia; alcance técnico prepare-only del arranque; admisión de host/cifrado/recursos y base PostgreSQL aislada para 016/017/021; recuperación del ZIP causal para cotejar sus nueve correcciones; instrucciones/versiones/licencias del laboratorio WordPress. No se solicita revocación selectiva, migración por defecto ni exclusiones de capacidades.
+
+Pronóstico: próximo hito técnico = adquisición completa admitida y reconciliación de manifiesto sobre una copia exacta, antes de build/regresiones afectadas. No hay duración medida fiable para la recursión pendiente; no asignar minutos ficticios. Revisión humana, host/custodia y recuperación causal son esperas separadas. Cierre integral permanece sin fecha defendible hasta esas admisiones y los ensayos de persistencia/restauración/residuos; no solo queda Vercel.
+
+El archivo completo actualizado se adjunta recuperable. La presencia de esta versión §10 en Descargas PC-14 queda PENDIENTE de cotejo por asistencia; no se atribuye a la recepción ya comprobada de §9. El paquete/recibo históricos permanecen completos y separados.
