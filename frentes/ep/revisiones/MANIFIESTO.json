@@ -3,19 +3,18 @@
   "repository": "SeryMente/metodologia",
   "branch": "docs/metacanon-objetos-20261011",
   "front_folder": "frentes/ep",
-  "scope": "exact documentary bytes; no secrets or product changes",
   "files": [
     {
       "path": "METACANON-OBJETOS-CANONICOS.md",
-      "bytes": 42514,
-      "sha256": "6600b0ca93b0bd235065aa6cac5adf09a5af64b6581f41db3c0ae507ca2ed198",
-      "git_blob": "cef0dac1661854b9b9923580611c1c1e2b930dc3"
+      "bytes": 44599,
+      "sha256": "a50dc42b17de76a76eca0ef5842363a5b7f67da4a1b3cab826134e97c85af34c",
+      "git_blob": "a34341306e6f862dff747e81dec42bf449c20206"
     },
     {
       "path": "README.md",
-      "bytes": 12163,
-      "sha256": "feedb10e5fa486652183ad703a0b1a7ac9ada1356986f530a87a7bd17f2b3b5e",
-      "git_blob": "5d61cb2cd8daabbb3cc02f56c68655e4a074123b"
+      "bytes": 12319,
+      "sha256": "42ab473ea07e330e9f8eb0b63a1acc97a71a3fc1fa466a8965542dee1f70c548",
+      "git_blob": "ef676679629e3b33fa166f4a007834abdda94106"
     },
     {
       "path": "REVISION-METACANON-1.1.json",
@@ -24,16 +23,22 @@
       "git_blob": "6a233854630a1024e950fcef3d64df69585efc8c"
     },
     {
+      "path": "REVISION-METACANON-1.2.json",
+      "bytes": 578,
+      "sha256": "c14f8660161a36b7b83516ca3fb4e6e75137eeb752ee7cc0b72c538b786e8a7a",
+      "git_blob": "11394404a2ac662081f536bb256c76c4f16912b6"
+    },
+    {
       "path": "frentes/ep/OEP.md",
-      "bytes": 99240,
-      "sha256": "f1f9b5da98a515f002e4682460b662d18f500997590e9b4ba41785683fa7e287",
-      "git_blob": "7e7fea3a7b8263750fa0ae3e0c1629e7619186ee"
+      "bytes": 100454,
+      "sha256": "742c5ff5cfbbe637ca1608d14edd3999264fa81e19cd339f858cd679f6ae2f3b",
+      "git_blob": "bec2466b80ab41ea00008091488c670796dae716"
     },
     {
       "path": "frentes/ep/README.md",
       "bytes": 1051,
-      "sha256": "255d57244641998377cd1eceda0c058d3987a7a52491501c13a482b31738026b",
-      "git_blob": "16fdf9c643ad9eca9042430fdade9a00d98dd25e"
+      "sha256": "c325f48dd648359b2b25e4717e9ebfb00ecd472781c96eb3e7a85056edeaf742",
+      "git_blob": "da4f07712671deee3b0ca7817dc34b1ac7cf40c7"
     },
     {
       "path": "frentes/ep/artefactos/entrega-v0.2.0.zip.b64",
@@ -79,25 +84,38 @@
     },
     {
       "path": "frentes/ep/prompts/CLAUDIA.txt",
-      "bytes": 7452,
-      "sha256": "7401928c200657dc07effcac915f2a7f075c97af85297c547167eff80468c05f",
-      "git_blob": "d6abb59bac6c5e52b60272171e048131af249326"
+      "bytes": 7722,
+      "sha256": "a82e03fa42f5e4f7d479640de063bc1b82ec630391a02346a53c9ccba44a291a",
+      "git_blob": "660086217a643276fad7a4db87f7f26321e08a29"
     },
     {
       "path": "frentes/ep/prompts/SAMANTHA.txt",
-      "bytes": 8230,
-      "sha256": "a2035fa4ed8fd01a79e32e9d779cc9d6279f2eba62a421fd01d1fc63107fd783",
-      "git_blob": "007b40bb184ceae41da68ff8fd3996ce653f8448"
+      "bytes": 8500,
+      "sha256": "c28c90a4946d5ae539becea1820e3acf49bd224d1d763cae709167cf3f4f938f",
+      "git_blob": "f09bb3557a18f1f3ed874be49404fa8649d96acd"
+    },
+    {
+      "path": "frentes/ep/revisiones/LECTURA-DE-VUELTA-07a1a574.json",
+      "bytes": 1717,
+      "sha256": "1a3b7f07b2b9e2491a8fa59e7143437517554abbc6305ec9f07b0db17b381da4",
+      "git_blob": "b2ae32e1c42a5579cca07f936def69c893dd2cc3"
     },
     {
       "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.0.json",
       "bytes": 993,
       "sha256": "ceb54af12c22f3b3f796fea9b97e1955b9ddbf1115afc569c9a6715e07fa483f",
       "git_blob": "328458cb4a62f2d52bc95ed8412ed057007d3dcc"
+    },
+    {
+      "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.1.json",
+      "bytes": 556,
+      "sha256": "8f604fe401aa6351f8517d7b92e764917bdec75546cb6ae3bbd8ce5cdf937ddb",
+      "git_blob": "b36349e1ddc4e20ed0257662d9d2d59fa3673b1b"
     }
   ],
   "exclusions": [
-    "manifest self-hash",
+    "self hash",
     "Downloads files not recovered"
-  ]
+  ],
+  "prior_readback_verified": "07a1a5746f58396352efd29f88e8e7d193ad7335"
 }

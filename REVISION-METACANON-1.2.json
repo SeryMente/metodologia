@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "version": "1.2 / METACANON-OBJETOS-v1.2",
+  "date": "2026-10-11",
+  "changes": "M29: sole single-thread/no-assistant exception is methodological maintenance project; EP retains its two roles",
+  "checks": {
+    "operator_literal_preserved": true,
+    "ep_two_roles_preserved": true,
+    "no_new_agent_or_thread": true,
+    "no_code_or_khora_change": true,
+    "prior_remote_16_files_verified": true
+  },
+  "hashes": {
+    "METACANON-OBJETOS-CANONICOS.md": "a50dc42b17de76a76eca0ef5842363a5b7f67da4a1b3cab826134e97c85af34c"
+  },
+  "main_integration": false
+}

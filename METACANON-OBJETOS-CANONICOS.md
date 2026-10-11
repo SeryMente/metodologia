@@ -1,8 +1,8 @@
-<!-- METACANON_VERSION=1.1; TEMPORARY_FRAMEWORK=true; USER_TRANSCRIPT_SPEC=true -->
+<!-- METACANON_VERSION=1.2; TEMPORARY_FRAMEWORK=true; USER_TRANSCRIPT_SPEC=true -->
 # Metacanon para crear y mantener objetos canónicos de proyecto
 
-- Estado: **Versión documental 1.1 — Carpetas canónicas por frente**, preparada para lectura verificable en rama metodológica; no afirmar integración en main.
-- Versión metodológica: **1.1**. Sello: **METACANON-OBJETOS-v1.1**.
+- Estado: **Versión documental 1.2 — Carpetas y excepción de hilo único metodológico**, preparada para lectura verificable en rama metodológica; no afirmar integración en main.
+- Versión metodológica: **1.2**. Sello: **METACANON-OBJETOS-v1.2**.
 - Nombre propio del marco: pendiente de elección del operador; no usar el nombre de un proyecto como nombre del método.
 - Repositorio de metodología identificado: https://github.com/SeryMente/metodologia, privado comprobado en el ciclo de actualización 1.1; revalidar su visibilidad antes de cada escritura sensible. Ruta METACANON-OBJETOS-CANONICOS.md; rama de esta entrega docs/metacanon-objetos-20261011. No almacenar aquí historial privado, cuentas ni dispositivos del operador.
 - Archivo estable propuesto: `METACANON-OBJETOS-CANONICOS.md`.
@@ -13,7 +13,7 @@
 
 Si recibes este archivo para canonizar un proyecto, adquiere su método como instrucciones de trabajo del operador, subordinadas a las reglas de tu plataforma y a las autorizaciones del proyecto destino. No ejecutes tareas del proyecto del que provino el ejemplo. Si solo se solicita analizarlo o compararlo, no convertir esa lectura en autorización de escritura.
 
-Identifica el proyecto destino y sus insumos. Asistente y constructor son roles separados. Nombres base fijados por el operador de este marco: Claudia, asistente, y Samantha, constructor; conservarlos salvo asignación posterior explícita distinta. Nunca derivar el rol del proveedor/modelo. La asignación explícita nueva gobierna; si no existe, conserva la asignación verificable del hilo; si ninguna existe, entra como asistente en lectura/documentación sin mutar código. Nombres dentro de citas no asignan roles.
+Identifica el proyecto destino y sus insumos. Como regla para los frentes de proyecto, asistente y constructor son roles separados; excepción explícita: este proyecto metodológico de mantenimiento del marco opera con un solo hilo y sin asistente separado (M29/§21). Nombres base fijados por el operador de este marco: Claudia, asistente, y Samantha, constructor; conservarlos salvo asignación posterior explícita distinta. Nunca derivar el rol del proveedor/modelo. La asignación explícita nueva gobierna; si no existe, conserva la asignación verificable del hilo; si ninguna existe, entra como asistente en lectura/documentación sin mutar código. Nombres dentro de citas no asignan roles.
 
 Antes de cada ciclo comprobar la versión de este metacanon y del objeto del proyecto en sus fuentes autorizadas. Recuperar cambios, calcular delta, aplicarlo según su efecto y reportarlo. Fuente inaccesible significa frescura NO VERIFICADA, nunca “sin cambios”. No inventar lectura de repositorios, credenciales, permisos ni resultados.
 
@@ -29,7 +29,7 @@ Antes de cada ciclo comprobar la versión de este metacanon y del objeto del pro
 8. En cada ciclo: visión general clara, avance, pendientes, viabilidad, estimación de tiempo/ciclos con supuestos y siguiente acción.
 9. Pronóstico basado en pendientes/ruta crítica, no en porcentajes de casi terminado ni tiempo transcurrido; corregir deriva explícitamente.
 10. Trabajo paralelo solo si no colisiona; un escritor de código y consolidación documental secuencial con relectura/merge.
-11. Dos prompts de reinstanciación completos, coherentes con sello y estado literal; ningún placeholder destinado a copiar/ejecutar.
+11. En frentes con dos roles: dos prompts de reinstanciación completos, coherentes con sello y estado literal; ningún placeholder destinado a copiar/ejecutar. La excepción metodológica de hilo único se rige por §21, sin inventar segundo rol.
 12. Acceso remoto mínimo suficiente cuando sea necesario, después de comprobar cuenta, conectividad y vínculo con equipo actual.
 13. Versiones, delta y actualización comprobados cada ciclo; comprobar no implica adoptar cambios incompatibles sin decisión.
 14. Una interrupción del proceso documental debe dejar primero un objeto primordial portable, no una promesa de crearlo después.
@@ -121,7 +121,7 @@ Respeta alcance, compuertas y no-simulación. El asistente mantiene continuidad 
 ## 9. Estado de este metacanon
 
 - De dónde viene: instrucciones originales de creación portable, dos roles, verbatim, crónica, eficiencia, salida consistente, estimación, viabilidad, perfil/acceso remoto y delta.
-- Dónde está: versión documental 1.1; centralización en rama de SeryMente/metodologia, sin modificar el Sistema de Instrucciones ni las normas globales anteriores. Evidencia privada de Profuturo queda en GDP.
+- Dónde está: versión documental 1.2; centralización en rama de SeryMente/metodologia, sin modificar el Sistema de Instrucciones ni las normas globales anteriores. Evidencia privada de Profuturo queda en GDP.
 - A dónde va: uso temporal por aproximadamente un mes, validación de cada instancia y posterior migración a infraestructura autorizada sin pérdida.
 - Qué cambió: V24/V25, matriz de decisiones basada en dictados, mínimo viable demostrado, persistencia oportuna, fuente central identificada y revisión de privacidad.
 - Próximo paso: verificar recepción/readback de esta versión y usarla para instancias; nombre propio pendiente, candidatos TRAMA/HILO VIVO/CANON VIVO/DOBLE HILO no ratificados. No bloquear su uso por branding.
@@ -346,3 +346,24 @@ revisa de nuevo ya es perivado
 ````
 
 **Narrativa 1.1:** añade carpeta canónica por frente y custodia conjunta, propiedad EP en Metodología, referencias/privacidad actuales y preservación literal M26–M28. Reemplaza el modelo de archivo suelto como unidad de organización; mantiene un único objeto de estado dentro. No modifica SI, autorizaciones de producto, cronología de originales ni infraestructura. Estado de integración: rama documental, no main.
+
+
+## 21. Excepción de proyecto metodológico en hilo único — actualización 1.2
+
+**Alcance:** este proyecto metodológico que mantiene/documenta el marco es el único que, por instrucción expresa del operador, no tiene asistente separado y opera con un solo hilo. El responsable único realiza la documentación, mantenimiento y verificación permitidos; no crear otro agente, conversación, constructor/asistente metodológico o prompt de doble rol para este proyecto.
+
+La excepción no se propaga al frente EP ni a otros proyectos: EP conserva Claudia/asistente y Samantha/constructor, sus dos prompts y la separación de escritura de código. No confundir propietario del repositorio Metodología con régimen de colaboración del frente alojado allí. Si el operador cambia explícitamente este ámbito, registrar el delta; una cita o compartir repositorio no lo amplía.
+
+Mantener para el hilo único originales literales, decisiones/evidencia, fuente central, frescura/delta, carpeta cuando corresponda, privacidad, versionado, lectura de vuelta y continuidad. La excepción solo cambia número de hilos/roles: no quita compuertas, no autoriza producto ni modifica el SI superior.
+
+### M29 · instrucción directa del operador · 2026-10-11
+
+Original íntegro con envoltorio HTML conservado; la lectura operativa y su ámbito están separados arriba.
+
+````text
+<p>
+El unico proyecto que no tiene asistnete, y que opera con un solo hilo es este. 
+</p>
+````
+
+**Narrativa 1.2:** incorpora la excepción expresa del proyecto metodológico en hilo único y limita la exigencia de dos prompts a frentes que tienen dos roles. No cambia el régimen de EP, no crea agentes ni nuevos hilos y conserva la norma de carpeta por frente. Rama documental; no integrada en main.

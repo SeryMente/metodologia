@@ -129,6 +129,8 @@ El anexo distingue evidencia actual de documentación histórica. La presencia d
 
 ## Objetos canónicos portables — marco temporal
 
-El procedimiento subordinado [METACANON-OBJETOS-CANONICOS.md](METACANON-OBJETOS-CANONICOS.md) define cómo crear objetos de contexto replicables para cualquier proyecto, preservar dictados originales como especificación, adquirir roles/instrucciones, comprobar delta y mantener viabilidad, evidencia y prompts de continuidad. Revisión vigente: [REVISION-METACANON-1.1.json](REVISION-METACANON-1.1.json); la revisión 1.0 queda como antecedente.
+El procedimiento subordinado [METACANON-OBJETOS-CANONICOS.md](METACANON-OBJETOS-CANONICOS.md) define cómo crear objetos de contexto replicables para cualquier proyecto, preservar dictados originales como especificación, adquirir roles/instrucciones, comprobar delta y mantener viabilidad, evidencia y prompts de continuidad. Revisión vigente: [REVISION-METACANON-1.2.json](REVISION-METACANON-1.2.json); la revisión 1.0 queda como antecedente.
 
 Marco temporal orientativo de un mes, sin infraestructura nueva ni modificación del Sistema de Instrucciones. Esta documentación no certifica productos, permisos o dispositivos y no fuerza herramientas/memoria en otras plataformas. Cada frente tiene una carpeta canónica con un objeto de estado y todos sus archivos. [Frente EP](frentes/ep/README.md) pertenece a este repositorio; Khora es referencia de código, no propietario del frente. La visibilidad de Metodología fue comprobada privada en este ciclo; revalidarla antes de cada carga de originales privados. Secretos nunca a Git.
+
+El proyecto de mantenimiento metodológico opera en un solo hilo y sin asistente separado; la excepción del metacanon §21 no cambia los dos roles de EP.
