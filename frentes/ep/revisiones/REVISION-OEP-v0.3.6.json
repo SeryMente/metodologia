@@ -45,5 +45,28 @@
   "visual_original_received": true,
   "wordpress_spec_in_new_attachment": false,
   "preparation_directory_created": true,
-  "vault_key_received": false
+  "vault_key_received": false,
+  "verified_readback": {
+    "commit": "49e64d0636392c4d2f6f36e3e6d4484d465f0630",
+    "oep_content_exact": true,
+    "git_blobs_matched": {
+      "frentes/ep/OEP.md": "537095ff8128cad04a5c0d13c4e36127bde6ac19",
+      "frentes/ep/prompts/CLAUDIA.txt": "a162fe29bf28ff7c6d015af7481ca766cc3894e3",
+      "frentes/ep/prompts/SAMANTHA.txt": "c9ad77ff643f2f7168251511a997cdae793e5a99",
+      "frentes/ep/originales/instrucciones-operador-hitos-RDC-provision-20261011.txt": "1b3a503c67eacb4174c48b57cf7c5743556668f5",
+      "frentes/ep/revisiones/REVISION-OEP-v0.3.6.json": "04681b8a65a9af2f5f4cba7090eafdd8994de41d",
+      "frentes/ep/revisiones/MANIFIESTO.json": "133bfa2d10affa64eee7e6f434ce85b83a9abac8",
+      "frentes/ep/originales/ChatGPT-OGP - Addiction - 5-20261011-1633.txt": "a90b812c73502e2ecb11236845be44d1974f9594"
+    },
+    "scope": "first documentary commit of this cycle; not product acceptance"
+  },
+  "host_key_checkpoint": {
+    "machine": "PC-14",
+    "sid_verified": true,
+    "reference_exists": false,
+    "volume_created": false,
+    "syntax_pass": true,
+    "wrong_key_rejected": true,
+    "secret_requested_by_test": false
+  }
 }

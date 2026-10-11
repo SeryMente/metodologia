@@ -36,9 +36,9 @@
     },
     {
       "path": "frentes/ep/OEP.md",
-      "bytes": 148448,
-      "sha256": "604397c5e38133091db6a71d7bd5a5083e0cc20db39cddf8531b7e950de565f8",
-      "git_blob": "537095ff8128cad04a5c0d13c4e36127bde6ac19"
+      "bytes": 149392,
+      "sha256": "c62a07e19b47efd05d6533d608c237bef7e4a444775a46afbeb42937325c950c",
+      "git_blob": "6f443524ddc33910883979b13409a366edaa5b8b"
     },
     {
       "path": "frentes/ep/README.md",
@@ -186,9 +186,9 @@
     },
     {
       "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.6.json",
-      "bytes": 2046,
-      "sha256": "68717a1631d4043093970304461c57a251239bcdc851a756d85d78a2e1d27f75",
-      "git_blob": "04681b8a65a9af2f5f4cba7090eafdd8994de41d"
+      "bytes": 3196,
+      "sha256": "1bbd834201a0fbb4861fd19955b077fb72eaee8b3f93240b3d9a0f2dfc35d0e0",
+      "git_blob": "1404241f7c436d3606eab14992408206c65e276b"
     },
     {
       "path": "frentes/ep/originales/ChatGPT-OGP - Addiction - 5-20261011-1633.txt",
@@ -201,7 +201,7 @@
     "self hash",
     "Downloads files not recovered"
   ],
-  "prior_readback_verified": "07a1a5746f58396352efd29f88e8e7d193ad7335",
+  "prior_readback_verified": "49e64d0636392c4d2f6f36e3e6d4484d465f0630; seven blobs matched and OEP content exact",
   "latest_review_source_commit": "8ae0a831312d3dd74dfa0e9e5e266233e1e40555",
   "current_event": "Operator milestones/per-cycle continuity, authorized encrypted workspace on PC-14, restrictive RDC delegation; OGP visual original received, not WordPress",
   "verification_scope": "Changed files require read-back; unchanged entries preserve concurrent manifest and receipt, not current product evidence."
