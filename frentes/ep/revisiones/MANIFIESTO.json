@@ -6,9 +6,9 @@
   "files": [
     {
       "path": "METACANON-OBJETOS-CANONICOS.md",
-      "bytes": 52156,
-      "sha256": "3e1d5a129eb5047cab43994c3bfcc09e25707ff954f7c5835775e19405223e15",
-      "git_blob": "f5a843c1c521d91d7d13dd4225100f0c73dc396f"
+      "bytes": 58464,
+      "sha256": "490d31e1ce18812b90bfd15469a1842495815ff74dea64fc9020a944e55895b2",
+      "git_blob": "61bc98e0b3f5e149274238a5f6df39a8a4aba539"
     },
     {
       "path": "README.md",
@@ -36,15 +36,15 @@
     },
     {
       "path": "frentes/ep/OEP.md",
-      "bytes": 123995,
-      "sha256": "5350e2380b5a41f9b76cf570f4b5da1962db118b1a4f525074f4c6fb2c33c7d7",
-      "git_blob": "dab6f1bd39c48be7819c1077247d222d3d8cbd46"
+      "bytes": 133479,
+      "sha256": "80c382f93e421a039e6c878ebaa8fff97291fe0d9b2280745457777eff2f5959",
+      "git_blob": "8ef7cfdcad3d4a5835628f7ae7587f59417d3abc"
     },
     {
       "path": "frentes/ep/README.md",
-      "bytes": 1565,
-      "sha256": "7e15ba3a1a0d0f8c567d8925f27469399df33c1db62acd64657b5f77364d5d5a",
-      "git_blob": "54cc5cb3b47932eaaae40731c5f1cb666600c52c"
+      "bytes": 1802,
+      "sha256": "ba4d5a4af47625b6463dd5f7da23a8f7c8fbd6e004fdabc969a61cd87e223349",
+      "git_blob": "fa067c563c64c8bfef6c9eb081a7360f437e6cab"
     },
     {
       "path": "frentes/ep/artefactos/entrega-v0.2.0.zip.b64",
@@ -102,15 +102,15 @@
     },
     {
       "path": "frentes/ep/prompts/CLAUDIA.txt",
-      "bytes": 12452,
-      "sha256": "4571b370a307f0d36c2c331b5c5c33d5e773b9e1f43d11c5ebb667086b1212a2",
-      "git_blob": "c44ccbbc8e2f1ae0c2313930c573ee55c97aa5b3"
+      "bytes": 14079,
+      "sha256": "b6060913215f39539c5b1e90ed5b9ba3874412166415b9e6aa731d9e7b077206",
+      "git_blob": "76c8bf10e956e20d6edc388b242585e6269079b5"
     },
     {
       "path": "frentes/ep/prompts/SAMANTHA.txt",
-      "bytes": 13220,
-      "sha256": "ef3711d1319f74806680f76e2306e7ab8bde685dd2045ad64b448acd33cc72cd",
-      "git_blob": "5af3cb80f471a4537d504275dcb3c72771022def"
+      "bytes": 14847,
+      "sha256": "04022e4497084378bb5c822cb0bc07fa3a067bcc0eaae940e43336ef0fc974c3",
+      "git_blob": "aecdfd1aea0979a0ac446e43468affafceb72e35"
     },
     {
       "path": "frentes/ep/revisiones/LECTURA-DE-VUELTA-07a1a574.json",
@@ -153,6 +153,30 @@
       "bytes": 1085,
       "sha256": "2ac75ba5eed307ae9a4c42cace497e5d5dfc18a9c9f4d4b0975e53f3b1fd886e",
       "git_blob": "aab9fc78347ce8db0b0a455cb2c9eec82bf96bc5"
+    },
+    {
+      "path": "frentes/ep/originales/instruccion-asistencia-util-evento-327.txt",
+      "bytes": 896,
+      "sha256": "d866bb694f289a198f02272dc983ed3e6d601beb0661ae37e918c3954025503e",
+      "git_blob": "f6cc498b6566e642617223855166b17137a90989"
+    },
+    {
+      "path": "frentes/ep/originales/instruccion-prioridad-pronostico-evento-388.txt",
+      "bytes": 1139,
+      "sha256": "9b8219e765fa664a81b1f214617eb7b13094a7c2d30763fc48a7133f498f27dd",
+      "git_blob": "6542e00fcdd6d626d82c5df487c91e0c58199924"
+    },
+    {
+      "path": "frentes/ep/originales/salida-constructor-ABC-local-evento-389.txt",
+      "bytes": 16319,
+      "sha256": "bc59d19c989f89439da5310d06b60c417e15e2fb6af48f70ecdff27e532679f6",
+      "git_blob": "b79acf3f09c39b8068c6fa55fd3be57731267a0a"
+    },
+    {
+      "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.5.json",
+      "bytes": 4166,
+      "sha256": "a7824e5c52d9dcedcbf218668cff597fb62f680e3f5f71886cbf0b2ff0e8aadf",
+      "git_blob": "dc3fd93d26395ba2e3d97cd3105fcac9faa7b9ed"
     }
   ],
   "exclusions": [
@@ -160,7 +184,7 @@
     "Downloads files not recovered"
   ],
   "prior_readback_verified": "07a1a5746f58396352efd29f88e8e7d193ad7335",
-  "latest_review_source_commit": "68122f699bc4a243d619442b3b242f1f8b0fdcaf",
-  "current_event": "M30/M31 governance delta reconciled with Claudia receipt",
+  "latest_review_source_commit": "1c52d8f2e9965cc07ff869a232233cd2224bae13",
+  "current_event": "constructor output 389 received and reviewed; independent coverage findings accumulated",
   "verification_scope": "Changed files require read-back; unchanged entries preserve concurrent manifest and receipt, not current product evidence."
 }
