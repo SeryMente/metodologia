@@ -36,9 +36,9 @@
     },
     {
       "path": "frentes/ep/OEP.md",
-      "bytes": 154313,
-      "sha256": "1ae18a0810c35562b99efdca27778ee7698265fad781a8f8ce3121ed14b31268",
-      "git_blob": "3f433f2376a6547e68080f41efb64224a9f87dc4"
+      "bytes": 156151,
+      "sha256": "f931c3fbd7cdcbb365971d9244ea15d6258ea5e0a2ea95fc366e750589353cab",
+      "git_blob": "f8519c8144e096311f1d207a1e08b16823dd9765"
     },
     {
       "path": "frentes/ep/README.md",
@@ -102,15 +102,15 @@
     },
     {
       "path": "frentes/ep/prompts/CLAUDIA.txt",
-      "bytes": 17392,
-      "sha256": "3796c20cce57ec625bf284e95c93f0df13e474506a31d7145343fa78e174fe0d",
-      "git_blob": "0ba62720c5a1dd3c65fba11676e3965aa2958bbe"
+      "bytes": 17362,
+      "sha256": "180b833e64e08e9897abd9109c6367e1ff06437c437561b06fa7a7c8a5e19280",
+      "git_blob": "53a959cf9821eb75dc01bd00d75501e2dac87c9b"
     },
     {
       "path": "frentes/ep/prompts/SAMANTHA.txt",
-      "bytes": 18191,
-      "sha256": "cb5c68c01b3a118b1ffcaf12ca8059bda1bbc37ed727bc916de86b8eed01d060",
-      "git_blob": "418c4afe9a8f2da8295892cdaad0295e3cf44bbf"
+      "bytes": 18161,
+      "sha256": "6ea87d8ac7b0112f8dac415308cd1a3892d93f809d028db9eb7dcfdfe72d1fef",
+      "git_blob": "efeca37768346c5ad500e2ea79e69847c61b97df"
     },
     {
       "path": "frentes/ep/revisiones/LECTURA-DE-VUELTA-07a1a574.json",
@@ -201,6 +201,12 @@
       "bytes": 728,
       "sha256": "c176746d6aba1dcd3de92424b08f37bae6c6515bfa44a12caedfd3fca82032ea",
       "git_blob": "ea35b4f942530f6ed36bcd894f0c87f2b2aadc43"
+    },
+    {
+      "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.8.json",
+      "bytes": 698,
+      "sha256": "5933505f767fc5fc7d39d65e7bf1123448b87fc5d6af89a183522a917275b2c2",
+      "git_blob": "73fd63eaa31f71455dcc756d3afbadd3dbed81dc"
     }
   ],
   "exclusions": [
@@ -208,7 +214,7 @@
     "Downloads files not recovered"
   ],
   "prior_readback_verified": "49e64d0636392c4d2f6f36e3e6d4484d465f0630; seven blobs matched and OEP content exact",
-  "latest_review_source_commit": "7e0f5291f3b479ccc4d08ed26b75b0f29b709625",
-  "current_event": "Forgotten recently rotated key; non-destructive diagnosis, identity clarification checkpoint",
+  "latest_review_source_commit": "9969494dc459954dbb44639bd6e94db3780ab086",
+  "current_event": "Operator identifies environment vault and has previous key; local recovery verifier prepared, authentication pending",
   "verification_scope": "Changed files require read-back; unchanged entries preserve concurrent manifest and receipt, not current product evidence."
 }
