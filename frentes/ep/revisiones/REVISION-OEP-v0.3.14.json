@@ -1,0 +1,23 @@
+{
+  "version": "v0.3.14",
+  "seal": "VCU-EP-v16",
+  "base_commit": "61c67e75678c03339d22978b3b500df2fb27c17e",
+  "operator_reports": "SUPPRESSED_UNTIL_RETURN",
+  "builder_duration_limit_observed": true,
+  "builder_latest_observed_status": "running",
+  "cancelled_calls_assumed_executed": false,
+  "cipher_alias_count": 9,
+  "missing_in_this_copy": [
+    "AUTH_SECRET",
+    "DATABASE_URL",
+    "OIDC_ISSUER_URL",
+    "OIDC_CLIENT_ID",
+    "OIDC_CLIENT_SECRET"
+  ],
+  "global_secret_absence_claimed": false,
+  "provider_calls": false,
+  "secret_decrypted": false,
+  "product_modified": false,
+  "source_main": "dbc73afada1ad29abf46f4599d22cc3158a9a986",
+  "readback": "PENDING_AT_WRITE"
+}

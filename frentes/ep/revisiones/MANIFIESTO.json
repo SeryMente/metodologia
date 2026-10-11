@@ -36,9 +36,9 @@
     },
     {
       "path": "frentes/ep/OEP.md",
-      "bytes": 192972,
-      "sha256": "567e4ed89e6c4244fb71ad44f029015ae8e6b7ed165e76a30a9d1c870326d5b1",
-      "git_blob": "57f7b80b9b4e0971d1b279d0b2e41f41fca68a7c"
+      "bytes": 201554,
+      "sha256": "0141379942ae4cb4289d41887f41dd1a6ded525f109709faa4e7443e4602a130",
+      "git_blob": "549e193a5cd90ecb4111b9e582507051bb02bbac"
     },
     {
       "path": "frentes/ep/README.md",
@@ -102,15 +102,15 @@
     },
     {
       "path": "frentes/ep/prompts/CLAUDIA.txt",
-      "bytes": 22616,
-      "sha256": "19287f448fe875bab9492c0c1bdfa569398cdc1c0eee6f89b0e651a4366c8f94",
-      "git_blob": "400fb3f07d64a726e05c945afcaab08ea18c3446"
+      "bytes": 23663,
+      "sha256": "064d7b5d2529a8d44c5feb2262b186f7beb58f0ae11a7a03321fbd8cb5bcd8c2",
+      "git_blob": "8c7c550b13715a5239230fcb315895a15d82f89b"
     },
     {
       "path": "frentes/ep/prompts/SAMANTHA.txt",
-      "bytes": 23624,
-      "sha256": "229b600c8660bd23901ad22c2c1912d779144b736eecff0626859a7b2ab3b1de",
-      "git_blob": "b0be77ada0b2f4f40d0213dba5873e1838a5d268"
+      "bytes": 24671,
+      "sha256": "effee6c887b98a2654afbe390d372051352de2ff90daa23e3ff1e00ead596dcc",
+      "git_blob": "e538ae2dee96300622f077b0b4f90b0cac21b6c7"
     },
     {
       "path": "frentes/ep/revisiones/LECTURA-DE-VUELTA-07a1a574.json",
@@ -255,6 +255,12 @@
       "bytes": 654,
       "sha256": "b80c77b37430b01bf30ac5c851f5eee159a2db456845921dc8350b635ecdf7b0",
       "git_blob": "d562ab9451b022869f3b06f99a7d25b7a9e721b0"
+    },
+    {
+      "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.14.json",
+      "bytes": 687,
+      "sha256": "93016cc1ea6527b36a888a4f418f1f0a5de9c8798cc6f018619462c21b8c4936",
+      "git_blob": "4b7975d7f004a00b5d7db49157eea2bac6ba4e28"
     }
   ],
   "exclusions": [
@@ -262,7 +268,7 @@
     "Downloads files not recovered"
   ],
   "prior_readback_verified": "49e64d0636392c4d2f6f36e3e6d4484d465f0630; seven blobs matched and OEP content exact",
-  "latest_review_source_commit": "9307e5ef888339528a088d810e5a61f6bafb71bc",
-  "current_event": "GitHub-only end-to-end authorized work; encrypted vault custody acquired before remote loss, no key export or new security approvals",
+  "latest_review_source_commit": "61c67e75678c03339d22978b3b500df2fb27c17e",
+  "current_event": "Silent continuation ordered; builder turn-duration recovery; independent vault prerequisite/source inventory grounded without secrets or policy changes",
   "verification_scope": "Changed files require read-back; unchanged entries preserve concurrent manifest and receipt, not current product evidence."
 }
