@@ -1,0 +1,103 @@
+{
+  "schema": 1,
+  "repository": "SeryMente/metodologia",
+  "branch": "docs/metacanon-objetos-20261011",
+  "front_folder": "frentes/ep",
+  "scope": "exact documentary bytes; no secrets or product changes",
+  "files": [
+    {
+      "path": "METACANON-OBJETOS-CANONICOS.md",
+      "bytes": 42514,
+      "sha256": "6600b0ca93b0bd235065aa6cac5adf09a5af64b6581f41db3c0ae507ca2ed198",
+      "git_blob": "cef0dac1661854b9b9923580611c1c1e2b930dc3"
+    },
+    {
+      "path": "README.md",
+      "bytes": 12163,
+      "sha256": "feedb10e5fa486652183ad703a0b1a7ac9ada1356986f530a87a7bd17f2b3b5e",
+      "git_blob": "5d61cb2cd8daabbb3cc02f56c68655e4a074123b"
+    },
+    {
+      "path": "REVISION-METACANON-1.1.json",
+      "bytes": 778,
+      "sha256": "e53101e84845af06c0409819502a5474227501dc0e29ccc3739d7b8c3ef22e84",
+      "git_blob": "6a233854630a1024e950fcef3d64df69585efc8c"
+    },
+    {
+      "path": "frentes/ep/OEP.md",
+      "bytes": 99240,
+      "sha256": "f1f9b5da98a515f002e4682460b662d18f500997590e9b4ba41785683fa7e287",
+      "git_blob": "7e7fea3a7b8263750fa0ae3e0c1629e7619186ee"
+    },
+    {
+      "path": "frentes/ep/README.md",
+      "bytes": 1051,
+      "sha256": "255d57244641998377cd1eceda0c058d3987a7a52491501c13a482b31738026b",
+      "git_blob": "16fdf9c643ad9eca9042430fdade9a00d98dd25e"
+    },
+    {
+      "path": "frentes/ep/artefactos/entrega-v0.2.0.zip.b64",
+      "bytes": 122201,
+      "sha256": "372b5a536052ae6443105df0e3b63c09190b3892f6b871f69c4506183e425700",
+      "git_blob": "b9c00f85cf6ccd6e910b1b343ff91b01363c8b37"
+    },
+    {
+      "path": "frentes/ep/artefactos/restaurar-entrega-v0.2.0.cjs",
+      "bytes": 909,
+      "sha256": "7e44547d702f67940169f33064bf199a36e337951dc89c289c8f1af44db4bd63",
+      "git_blob": "9f42f631f41a71e0c7fa5cdc46823050f8406375"
+    },
+    {
+      "path": "frentes/ep/evidencias/INVENTARIO.md",
+      "bytes": 751,
+      "sha256": "363734060e454873932cfa4e08f548fd24b3b822ec49d9689219d859bffc7793",
+      "git_blob": "bbc452227e5e94689c64d3165262912a5c104bc6"
+    },
+    {
+      "path": "frentes/ep/originales/conversacion-asistente.txt",
+      "bytes": 79991,
+      "sha256": "655ae3f37e16aef6599125b06796d0da4b7c0a414bed30acf8148485c64a1007",
+      "git_blob": "5ef6319696aa7327595040c27215e062704552df"
+    },
+    {
+      "path": "frentes/ep/originales/conversacion-constructor.txt",
+      "bytes": 61091,
+      "sha256": "fadfe197c265779287e2daf690da814c0a04128afa10e435c17cb93af537b44c",
+      "git_blob": "b05a99f355585b2e5f57958127e0b62336d32608"
+    },
+    {
+      "path": "frentes/ep/originales/encargo-documental-actual.txt",
+      "bytes": 397,
+      "sha256": "d2265700ddfeec4687744463194ecdfb083bcc57eedc62e1ef3bbcdc0e9af208",
+      "git_blob": "c7b3645c8979e90e375e2ae735de861cd82bd953"
+    },
+    {
+      "path": "frentes/ep/originales/instruccion-carpeta-20261011.txt",
+      "bytes": 271,
+      "sha256": "a672580043a4b62787536abedd14dd7339f3f50d72377e720985c81dd7cbfc7a",
+      "git_blob": "fa6b58f23e1d32cfa58a15603fb137fe2de6ab7f"
+    },
+    {
+      "path": "frentes/ep/prompts/CLAUDIA.txt",
+      "bytes": 7452,
+      "sha256": "7401928c200657dc07effcac915f2a7f075c97af85297c547167eff80468c05f",
+      "git_blob": "d6abb59bac6c5e52b60272171e048131af249326"
+    },
+    {
+      "path": "frentes/ep/prompts/SAMANTHA.txt",
+      "bytes": 8230,
+      "sha256": "a2035fa4ed8fd01a79e32e9d779cc9d6279f2eba62a421fd01d1fc63107fd783",
+      "git_blob": "007b40bb184ceae41da68ff8fd3996ce653f8448"
+    },
+    {
+      "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.0.json",
+      "bytes": 993,
+      "sha256": "ceb54af12c22f3b3f796fea9b97e1955b9ddbf1115afc569c9a6715e07fa483f",
+      "git_blob": "328458cb4a62f2d52bc95ed8412ed057007d3dcc"
+    }
+  ],
+  "exclusions": [
+    "manifest self-hash",
+    "Downloads files not recovered"
+  ]
+}

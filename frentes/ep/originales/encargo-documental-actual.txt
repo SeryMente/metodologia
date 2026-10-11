@@ -1,0 +1,3 @@
+<p>
+Dame un mprompt para darselo a los agentes asistentes y constructor del las converasciones mencionadas al inicio de una de las covnersaciones. estan en downloads para que las adjudiques en el repo. <br /><br />Revisa cuidadosamente y dame los dos promtps apra instanciar ambas partes del frente compeltamente, y cosntruye el objeto canonico con maxima calida de detalle y apego al canon. 
+</p>

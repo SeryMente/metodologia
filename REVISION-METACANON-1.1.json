@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "date": "2026-10-11",
+  "version": "1.1 / METACANON-OBJETOS-v1.1",
+  "delta": "M26–M28: canonical folder per front, all front files, EP owner Metodologia; no upper SI or product modifications",
+  "hashes": {
+    "METACANON-OBJETOS-CANONICOS.md": "6600b0ca93b0bd235065aa6cac5adf09a5af64b6581f41db3c0ae507ca2ed198"
+  },
+  "checks": {
+    "originals_exact": true,
+    "two_prompts_exact_in_object": true,
+    "state_exact_in_both": true,
+    "literal_folder_instruction_preserved": true,
+    "owner_correction_preserved": true,
+    "restore_base64_exact": true,
+    "no_product_changes": true,
+    "one_live_object": true
+  },
+  "scope": "documentary, not product certification",
+  "remaining": "not integrated in main; other-front migration not authorized"
+}

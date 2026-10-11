@@ -1,0 +1,812 @@
+
+Notion AI · 10:39 AM
+pasted-text
+.txt
+pasted-text
+.txt
+Te dare dos conversacsiones, una es para la que quiero que me auyiudes a trabajar en equipo como agente intermediario, la otra es una conversacion de ehjemplo donde un modelo me ayuda como agente intermefdiario para otar conveasdcion como la primera par aque lo tomes de ejemplo:
+
+
+10:40 AM
+Worked for 24s
+Sí. Asumo el papel de intermediaria para la conversación de Khora, tomando la segunda como ejemplo de coordinación, no como fuente de requisitos. Fuente personal confirmada: NX-329m.
+
+El objetivo que voy a proteger
+Dejar la actualización de Khora implementada y verificada de extremo a extremo, con únicamente la publicación en Vercel pendiente. Endurecer el documento o aprobar las pruebas de un verificador no equivale a terminar el sistema. Esa diferencia es central en la primera conversación.session-file://c6da007b-154a-4d1f-b527-94f004a34ef6
+
+Cómo trabajaremos
+El otro modelo: constructor y único escritor del código durante este trabajo.
+Yo: revisora e intermediaria. Contrastaré sus resultados con tu objetivo, detectaré desvíos y prepararé una sola instrucción priorizada y copiable para cada siguiente ciclo.
+Tú: me pasas su respuesta; solo te pediré intervención cuando haya una decisión material o una acción que realmente necesite tu presencia.
+Mantendré la presión sobre el avance sin rebajar calidad ni aceptar cierres ficticios. Tampoco convertiré cada dificultad en un cambio de credenciales, una investigación interminable o más documentación.
+
+Del ejemplo conservo la separación de frentes y la revisión de evidencia. También tomo su corrección final: no añadir demostraciones, entregables ni funciones que tú no pediste.session-file://4c78cde4-174d-4849-b301-cb2ea594943f
+
+Punto de continuación
+La primera conversación termina con un comando para preparar Node.js portátil e iniciar Remote Desktop Commander, después del fallo por no encontrar npx.cmd. El adjunto no contiene el resultado de ese segundo comando, así que no asumiré que la computadora ya está conectada.session-file://c6da007b-154a-4d1f-b527-94f004a34ef6
+
+Pásame el resultado de ese comando o la respuesta más reciente del constructor, si ya avanzó. Desde ahí te devolveré: qué quedó demostrado, qué falta para tu objetivo y el único mensaje que conviene enviarle. No hace falta reiniciar el encargo ni mandarle otro prompt general de presión.
+
+10:41 AM
+pasted-text
+.txt
+Actuyalizo con algunso elementos relevantes sobre tu funcion con este otro fragmento:
+
+10:44 AM
+Leyendo la actualización de mi función intermediaria
+Entendido. Mi función no es solo revisar y transmitir: es reducir el tiempo hasta el resultado previsto, sin volver más complejo el producto ni la coordinación. Fuente confirmada: NX-329m.
+
+El fragmento precisa dos obligaciones: aprovechar los ciclos con trabajo independiente útil y mejorar la coordinación sin distraer al constructor ni provocarle retrabajo.session-file://a324a439-0541-4fed-882a-ffccf8403930
+
+Lo aplicaré así a Khora:
+
+Una misma versión de referencia. Cuando revise código o pruebas, identificaré la revisión y el entorno correspondientes. Consultaré el repositorio en lectura cuando eso te ahorre copiar información.
+Una devolución consolidada por ciclo. Separaré bloqueos de entrega, incumplimientos de lo acordado y pulido. Cada corrección tendrá una condición concreta para darla por resuelta; preservaré lo ya aceptado.
+Sin interferencias mientras construye. Acumularé observaciones para su siguiente salida. Solo recomendaré interrumpirlo ante riesgo de datos, una dirección equivocada o retrabajo importante.
+Trabajo paralelo que quite trabajo al cierre. Revisar evidencia disponible, detectar contradicciones o preparar una comprobación necesaria; no producir documentos, propuestas o procesos para llenar la espera.
+Visibilidad para ti. Te explicaré brevemente viabilidad, avance demostrado, pendientes y tiempo estimado cuando haya base suficiente. Si no la hay, señalaré qué falta para estimarlo.
+Mi filtro contra el bloat: cada acción debe cerrar un requisito existente, prevenir un fallo concreto o pulir la experiencia ya acordada. Si no hace ninguna de esas cosas, la descarto.
+
+Tu participación debe quedar reducida a pasarme la salida del constructor y resolver las decisiones verdaderamente materiales. Yo me encargo de convertirla en una siguiente instrucción clara, priorizada y lista para enviar, sin reiniciar el trabajo ni trasladarte su diagnóstico.
+
+10:44 AM
+Mas elementos importgantes:
+
+10:35 AMCual demostracion, te refioeres al tour interqactivo para la primera vez que use el sistema miguel?10:35 AM
+No; me refería a dos cosas distintas, y debí separarlas mejor:
+• Tour interactivo: dentro de la extensión, guía a Miguel durante el primer uso, resalta los controles y puede reactivarse desde Configuración. Esto sí forma parte de lo que pediste.
+• Demostración: un recorrido opcional para que tú le presentes el producto. No es otra función ni necesita desarrollo.
+Nos concentramos en el tour y en la experiencia real del sistema. La parte de presentación puede dejarse de lado; no debe consumir tiempo del constructor ni ampliar el alcance.10:35 AMNo. 
+• Demostración: un recorrido opcional para que tú le presentes el producto. No es otra función ni necesita desarrollo.10:36 AM
+Entendido: descartamos la demostración por completo. La añadí yo y no corresponde a lo que necesitas.
+El alcance es la extensión terminada, con una experiencia pulida y el tour interactivo de primer uso para Miguel, reactivable desde Configuración.
+De la última ficha conservamos únicamente los criterios de aceptación. Nada de guiones de presentación, modos demo ni trabajo adicional para exhibir el producto.10:36 AMCorrecto10:36 AM
+Queda fijado: producto real, experiencia pulida y tour interactivo de primer uso. Sin demostraciones ni funciones extra.
+Cuando llegue la respuesta del constructor, la revisaré contra ese alcance y te diré qué está resuelto, qué falta y el siguiente paso.10:36 AMQue piuedes ir mejorando mientras esperamos? Soy esceptico no obstante de que comprendas el conmcepto de NO BLOAT y de que por el hechod e estar tratando de aprovechar el tiempo mientras esperamso no signficia que vamo sa volver mas complejas las cosas, o algo por el stilo. Se tratad e reducir la cantidad de tiempo ne4cesaria para alcanzar el resultado ya previsto. 
+
+O bien, mejorar y pulir la caldiad, pero sin bloat. 10:40 AMEliminar el alcance extra de la ficha
+Sí. Aprovechar el tiempo no significa llenar la espera con más trabajo. Significa quitarle trabajo al cierre. Y tu objeción es justa: la demostración fue una desviación mía; ya la eliminé de la ficha de trabajo.
+Para mí, NO BLOAT significa:
+• ninguna función, pantalla o dependencia adicional fuera del objetivo;
+• ninguna documentación que repita lo ya definido;
+• ninguna instrucción al constructor que lo distraiga o le provoque retrabajo;
+• mejoras pequeñas que hagan el recorrido existente más claro y fiable.
+Mientras esperamos, lo útil es pulir lo ya acordado:
+1. Textos: instrucciones cortas, botones inequívocos y errores que indiquen cómo continuar.
+2. Tour: quitar pasos redundantes; cada paso debe ayudar a realizar una acción o entender un resultado.
+3. Coherencia: que interfaz, tour y funcionamiento usen los mismos nombres y estados, sin promesas contradictorias.
+No abriré otro rediseño ni generaré más paquetes por llenar el tiempo. Estas correcciones se incorporarán a una sola revisión de su implementación, cuando llegue.
+La medida del éxito no es cuánto produzco mientras esperamos, sino cuánto retrabajo evitamos y qué tan bien queda el producto previsto. Si no hay una mejora independiente que aporte eso, esperar su resultado es la decisión eficiente.10:41 AMOk aprovecha este ciclo en lo que esperamos. 10:41 AMPolishing tour text
+Voy a depurar el guion existente: quitar referencias a demostraciones, acortar las instrucciones y comprobar que el tour no obligue a consultar, pausar o exportar para completarlo. Sin añadir pantallas ni funciones.Worked for 23sTambien ademas de aprovechart para lo ya discutido, quiero que pienmse sen maneras de mejorar tu interactividad y sinergia con el otro hilo rumbo al objetivo ya discutido10:42 AMChecked command
+Sí. La mejor sinergia es que yo reduzca sus dudas y su retrabajo, no que le genere más instrucciones mientras implementa.
+Lo organizaría así, sin añadir herramientas ni procesos pesados:
+1. Revisar exactamente lo que construyó
+Cada salida debe identificar revisión del código, entorno y pruebas realizadas. Así reviso la misma versión y no le señalo problemas de una captura antigua.
+Cuando sea posible, consultaré esa revisión del repositorio solo en lectura, sin hacerte copiar todo el código.
+2. Devolver una sola respuesta priorizada
+Separaré mis observaciones en:
+• Bloquea la entrega: funcionamiento, datos, seguridad o recuperación.
+• Incumple lo acordado: diseño o tour distinto de tus requisitos.
+• Pulido: claridad, alineación, textos e interacción.
+Le devolveremos correcciones concretas y su criterio de aceptación, no otro rediseño ni toda la historia del proyecto. También indicaré lo que ya está aceptado para evitar que lo rehaga.
+3. No cambiarle el objetivo a mitad del trabajo
+Las mejoras pequeñas se acumulan para el siguiente intercambio. Solo conviene interrumpirlo si detectamos algo que podría provocar pérdida de datos, una implementación equivocada o retrabajo importante.
+No le enviaremos varios prompts sucesivos mientras procesa uno.
+4. Pedir evidencia que permita decidir
+En vez de “¿cómo vas?”, necesitamos:
+qué implementó → qué probó → qué falta → qué necesita de nosotros.
+Si dice que algo funciona, comprobaré qué demuestra su evidencia. Si pide una decisión técnica, exigiré una recomendación concreta y sus consecuencias, no una lista de problemas trasladada a ti.
+5. Reducir tu trabajo de intermediario
+Tú me pasas su salida y los archivos relevantes. Yo te devolveré:
+• un resumen breve de viabilidad, avance y tiempo restante;
+• un único mensaje listo para responderle, con las prioridades necesarias.
+Regla central: un constructor, una versión de referencia y una revisión consolidada por ciclo. Eso acelera el cierre sin volver más complejo el producto ni la coordinación.10:42 AMBueno, seguimso esperando que responde el prompt inicial el modelo:
+Sunday, Oct 11Edicion-AMOR-diseno-para-implementar.zipContinúa con la implementación del rediseño Edición AMOR usando el paquete adjunto. Mi objetivo es llevar la extensión hacia una entrega final real, no producir otra maqueta ni otro informe de preparación.
+
+AUTORIZACIÓN CONCRETA
+Apruebo la dirección visual y autorizo implementar la presentación y las interacciones del rediseño en la interfaz real de Profuturo.
+
+Esta autorización NO incluye cambios de permisos, autenticación, cifrado, credenciales, destinos o conservación de datos, arquitectura, canal de distribución, concesión de accesos, fusión ni publicación final. Esos aspectos conservan sus compuertas específicas. No uses Desktop Commander ni accedas remotamente a mis equipos.
+
+PRIMERO, LEE Y CONTRASTA
+1. Lee el archivo LEEME, la especificación y el HTML del paquete.
+2. Inspecciona la versión actual del repositorio y reconoce cualquier cambio posterior a la revisión utilizada para diseñar.
+3. Conserva intacto el paquete congelado HF35 y su evidencia. Trabaja sobre una nueva candidata identificable.
+4. Trata el HTML como referencia visual e interactiva, no como reemplazo directo del dashboard. Sus datos, conexiones y transiciones simuladas NO deben pasar al producto.
+
+IMPLEMENTA EL RECORRIDO REAL
+Integra la experiencia aprobada:
+- acceso al proyecto y preparación;
+- carga de CSV y lista pegada;
+- revisión de registros válidos, inválidos y duplicados;
+- consulta por lote con avance legible;
+- pausa y continuación;
+- resultados, filtros y exportación;
+- desconexión, sesión expirada, problemas de guardado y recuperación.
+
+Conserva los contratos funcionales, identificadores, eventos, validaciones y mecanismos existentes que correspondan. No elimines la consulta individual ni capacidades de Century 21 para simplificar el diseño. No inventes capacidades para completar una pantalla.
+
+IDENTIDAD Y CALIDAD VISUAL
+Mantén la dirección aprobada: fondo claro, superficies blancas, navegación petróleo, acciones azules y dorado discreto para “Edición AMOR”.
+
+La felicitación será breve, descartable y sin interrumpir el trabajo:
+“Por la llegada de tu hijo. Felicidades por esta nueva etapa.”
+
+Sin corazones, confeti, animaciones sentimentales ni mensajes repetitivos. Prioriza claridad, tipografía legible, alineación, contraste, estados de foco y consistencia. Adapta el diseño al contenedor real de la extensión; no supongas que una captura de escritorio garantiza que funcionará en un panel estrecho.
+
+VERACIDAD DE LA INTERFAZ
+- Obtén estados y contadores del funcionamiento real, no de valores decorativos.
+- Distingue administradora confirmada, respuesta oficial no localizada y pendiente o error técnico.
+- No muestres “guardado” sin confirmación de persistencia.
+- No conviertas un error técnico en “no localizada”.
+- Conserva la asociación NSS–AFORE y su posición adyacente en la exportación.
+- Diferencia exportación parcial de resultados finales.
+- Pausar o reabrir no debe borrar el lote ni repetir consultas.
+- Ante una respuesta incierta, conserva el trabajo y concilia su estado antes de cualquier reenvío.
+- No presentes Google o el motor como disponibles sin comprobarlo.
+- No expongas NSS completos, credenciales ni datos privados en capturas, registros o informes.
+
+SEGURIDAD Y DISTRIBUCIÓN
+Usa el inventario y la matriz de aceptación ya preparados como restricciones y referencias, no como pruebas aprobadas.
+
+No retires https:/// a ciegas: los orígenes variables de Century 21 necesitan un tratamiento aprobado. No implementes cambios de autenticación o protección de secretos aprovechando esta autorización visual.
+
+La descarga privada y la actualización asistida siguen siendo propuestas pendientes de aprobación y comprobación. No las presentes como un actualizador automático construido.
+
+VALIDA LA IMPLEMENTACIÓN, NO SOLO LA MAQUETA
+Ejecuta pruebas sobre la interfaz realmente integrada, usando datos sintéticos y servicios de prueba claramente identificados cuando corresponda:
+- carga, revisión, filtros y exportación;
+- estados vacío, en curso, pausado, terminado y con atención necesaria;
+- desconexión, expiración y fallo de guardado;
+- recuperación sin pérdida ni reenvío;
+- teclado, foco, diálogos y ausencia de desbordamientos;
+- regresión de Profuturo y Century 21.
+
+Captura y revisa las pantallas de la versión integrada. No reutilices las imágenes de la maqueta como evidencia de implementación.
+
+Repite las pruebas cuyos archivos o supuestos hayan cambiado; conserva las demás evidencias sin atribuirles una cobertura nueva. Genera el manifiesto de integridad y el paquete de la nueva candidata después de los cambios.
+
+AVANZA SIN ESPERAR INNECESARIAMENTE
+La salida local de Node condiciona los pasos dependientes de Windows, no toda la integración de interfaz. Avanza ahora en lo independiente dentro de las autorizaciones vigentes.
+
+Cuando necesites una prueba local, entrega un solo comando completo y seguro por ciclo, explica qué comprueba y espera mi salida antes del siguiente paso dependiente. No prometas trabajo en segundo plano si la sesión termina.
+
+ENTREGA Y ACTUALIZACIONES
+Actualízame al cerrar hitos relevantes o encontrar un bloqueo nuevo, indicando brevemente:
+- qué quedó implementado;
+- qué se probó y en qué entorno;
+- qué falta;
+- qué decisión o acción concreta necesitas de mí.
+
+Al terminar esta fase entrega:
+1. Revisión o commit identificable.
+2. Capturas de la interfaz integrada.
+3. Resultados de pruebas y pendientes reales.
+4. Nueva candidata con integridad verificada.
+5. Lista mínima para retomar mañana, con el siguiente paso exacto.
+
+No vuelvas a limitarte a preparar otro plan: implementa y verifica lo autorizado. Si falta una definición visual menor, resuélvela con la especificación y los patrones aprobados; consulta solamente cuando afecte funcionalidad, seguridad o alcance.
+
+Esta fase puede quedar como “UI integrada y validada en el entorno indicado”. Declara “ENTREGA COMPLETA” únicamente cuando la versión final esté publicada por el canal aprobado, instalada y probada en Windows y con las condiciones de operación respaldadas.
+
+AMPLIACIÓN DEL ALCANCE: PRIMER USO Y TOUR PRÁCTICO PARA MIGUEL
+
+Integra esta instrucción al rediseño aprobado. Autoriza la capa de orientación visual y sus preferencias locales; no autoriza cambios de seguridad, cuentas, credenciales, permisos ni condiciones de consulta.
+
+ORDEN OBLIGATORIO
+1. Comprender las capacidades y restricciones de la plataforma.
+2. Definir las funciones respaldadas por esa comprensión.
+3. Implementar y validar funciones e interfaz.
+4. Construir el tour encima del recorrido real.
+
+No construyas un tour de funciones imaginarias ni uses una maqueta para demostrar que el producto funciona.
+
+COMPRENSIÓN DE CONSAR
+Reutiliza la investigación y las evidencias existentes. Completa únicamente las incertidumbres necesarias y distingue:
+- capacidad documentada oficialmente;
+- comportamiento técnico observado;
+- limitaciones del entorno o de nuestra implementación;
+- condiciones de uso y autorización;
+- aspectos todavía desconocidos.
+
+Para cada función ofrecida, registra qué la respalda, qué necesita y qué ocurre cuando no puede completarse. Una posibilidad técnica no equivale a permiso de uso ni a capacidad garantizada.
+
+No explores límites mediante saturación, evasión, rotación de identidades o consultas personales innecesarias. Si una condición depende de respuesta institucional, conserva ese pendiente explícito y avanza en las partes independientes.
+
+Propón aprovechar al máximo las capacidades VIABLES y respaldadas, sin ampliar silenciosamente el alcance. Presenta cualquier función nueva material para aprobación antes de implementarla.
+
+DISEÑO DEL PRIMER USO
+El objetivo es que Miguel siempre tenga claro:
+- qué necesita hacer ahora;
+- por qué hace falta;
+- cuándo terminó;
+- cómo resolver un impedimento.
+
+La interfaz debe ser comprensible también sin el tour.
+
+Usa dos niveles:
+A. Una bienvenida y preparación inicial breves.
+B. Guías contextuales que aparezcan cuando Miguel llegue por primera vez a cada función de Profuturo.
+
+No conviertas el primer acceso en un recorrido largo por todas las pantallas. Cubre cada función real, pero en el momento en que resulte útil.
+
+ACCESO Y USUARIOS
+Inspecciona primero el flujo de acceso vigente.
+
+Si existe creación inicial de contraseña y confirmación, guía ambos campos y sus validaciones reales. Si el proyecto ya tiene contraseña, guía el acceso existente: no introduzcas un cambio de contraseña ni un proyecto nuevo para cumplir el tour.
+
+Nunca leas, copies, registres o reproduzcas contraseñas en la guía o en su telemetría. Durante una entrada sensible evita capturas y deja operativos el campo y los controles de visibilidad que ya correspondan.
+
+En el selector, presenta a Miguel primero y después mi cuenta, identificándolas mediante los datos autorizados existentes. No inventes nombres, usuarios ni accesos. No cambies la identidad seleccionada ni sus permisos silenciosamente.
+
+Si ese selector determina autenticación o autorización, valida el contrato antes de modificar su comportamiento. Ordenar visualmente no equivale a conceder acceso.
+
+CAPA VISUAL DEL TOUR
+Usa una superposición oscura semitransparente y un recorte preciso que mantenga visible y utilizable el elemento señalado.
+
+Cada paso tendrá:
+- título breve;
+- una instrucción concreta;
+- explicación adicional solo si es necesaria;
+- progreso de la guía;
+- opción de salir;
+- navegación anterior/siguiente cuando tenga sentido.
+
+Ubica la tarjeta sin tapar el elemento ni sus mensajes de validación. Adapta el recorte y la tarjeta al desplazamiento, cambios de tamaño y paneles estrechos. Si el elemento no existe o no está disponible, no muestres una flecha apuntando al vacío: explica el requisito o suspende ese paso.
+
+Mantén la identidad sobria de Edición AMOR. Sin confeti, animaciones excesivas ni repetición de la felicitación personal.
+
+GUIAR ACCIONES REALES
+Cuando un paso requiera una acción, avanza al comprobar su resultado real, no por un temporizador:
+- seleccionar una cuenta;
+- completar el acceso;
+- verificar los requisitos;
+- cargar o pegar una lista;
+- revisar exclusiones;
+- iniciar un lote;
+- consultar su avance;
+- pausar o continuar;
+- revisar resultados;
+- exportar.
+
+No ejecutes consultas, exportaciones, cambios de cuenta ni otras operaciones sensibles automáticamente por pulsar “Siguiente”.
+
+El inicio de una consulta requiere la acción y las confirmaciones funcionales correspondientes. No obligues a consultar NSS reales para completar el tour. Cuando no haya un lote autorizado, permite terminar la orientación sin consultar o usar una demostración separada y claramente identificada.
+
+Explica contextualmente la diferencia entre resultado confirmado, cuenta no localizada y pendiente técnico. Enseña la recuperación sin sugerir reenvíos automáticos de respuestas inciertas.
+
+PRIMERA VEZ Y REACTIVACIÓN
+Muestra la bienvenida automáticamente solo en el primer uso aplicable. Registra por separado el avance de las guías contextuales para no repetir pasos completados.
+
+Define explícitamente el alcance de esa preferencia —perfil, instalación o cuenta según el contrato existente— sin añadir sincronización o destinos de datos nuevos.
+
+En Configuración, incluye una acción fácil de encontrar:
+“Volver a iniciar el recorrido guiado”.
+
+Reactivar el tour no debe borrar datos, restablecer credenciales ni iniciar consultas. Si Miguel lo abandona, puede seguir trabajando y retomarlo después. Una actualización ordinaria no debe repetir todo el recorrido.
+
+ACCESIBILIDAD Y ROBUSTEZ
+Verifica teclado, foco visible, lectores de pantalla, ampliación y movimiento reducido. Evita que el foco alcance controles bloqueados por la superposición, pero permite usar los controles destacados. Al salir, restaura el foco apropiadamente.
+
+No interfieras con diálogos de autenticación, confirmaciones, avisos críticos ni operaciones en curso. No bloquees la recuperación del sistema para terminar la guía.
+
+ACEPTACIÓN
+Prueba el tour sobre la interfaz integrada, incluyendo:
+- primer uso y accesos posteriores;
+- proyecto existente frente a configuración inicial;
+- Miguel y mi cuenta sin alterar permisos;
+- salida, reanudación y reactivación;
+- validaciones incorrectas y requisitos ausentes;
+- desconexión y sesión expirada;
+- cambio de tamaño y desplazamiento;
+- teclado y foco;
+- ausencia de consultas disparadas por el tour;
+- conservación de lotes, credenciales y resultados.
+
+Entrega capturas y evidencia de la implementación real. La cobertura del tour no acredita por sí misma funcionamiento de CONSAR, autorización de lotes ni certificación Windows.
+
+Implementa ahora las partes respaldadas y autorizadas. Mantén los pasos dependientes de condiciones todavía desconocidas fuera del recorrido operativo hasta resolverlas. No paralices todo el rediseño por una respuesta externa pendiente.10:24 AMWorked for 48s
+La rama vigente coincide con la revisión usada para diseñar. Estoy integrando la nueva interfaz sobre sus contratos reales; HF35 queda intacto y las compuertas de seguridad, Windows y publicación siguen separadas.Worked for 11m 42s
+El rediseño ya está integrado en el dashboard real. La prueba encontró y permitió corregir una ruta heredada que, al reabrir, ocultaba Profuturo detrás de Redes; el recorrido sintético ya pasó carga, pausa, recuperación, filtros y descarga de CSV. Estoy cerrando los casos de desconexión y fallo de guardado, y revisando las capturas de esta candidata.Working for 6mEjecutar regresiones afectadas de aislamiento, lotes y sesiónExecuting task documentationRead Registro Canónico de Errores de Terminal · KhoraViewed imageAislar el recorte móvil y la clasificación del error HTTPUpdated pageCorregir respuesta 503 y aislar estilos móviles heredadosDocumentar capacidades respaldadas y revisar el avance de aceptaciónChecked commandRegistrar fallo de herramienta y evitar repetir pruebas sin correcciónRead Registro Canónico de Errores de Terminal · KhoraUpdated pageAplicar correcciones causales con compuertas de ejecuciónGitHub / Create branchCerrar el contrato de integridad de la nueva revisiónViewed imageMedir el recorte observado sin repetir consultas del loteViewed imageChecked commandCorregir la anchura mínima heredada y comprobar geometríaChecked commandViewed imagePreparing
+
+
+Ve aprovchando el tiempo10:43 AM
+El avance reportado ya incluye interfaz integrada y pruebas sintéticas, no solo preparación. Eso es buena señal, pero aún no acredita Windows ni la entrega final. Voy a afinar la revisión de los fallos que encontró —reapertura, error 503 y recorte móvil— sin mandarle instrucciones que interrumpan su trabajo.Afinar la revisión sobre los fallos encontrados
+Ya ajusté la revisión a los problemas concretos que está resolviendo, sin tocar su código ni añadir alcance:
+• Reapertura: Profuturo debe seguir visible cuando terminen de cargar todas las capas, conservando el lote y Century 21.
+• Error 503: debe indicar motor no disponible, sin convertirlo en “cuenta no localizada” ni reenviar consultas.
+• Pantalla estrecha: revisaré capturas y posición de elementos; una prueba de ancho puede pasar aunque haya contenido recortado.
+• Fallo de Google: recuperar el guardado no debe repetir la consulta a CONSAR.
+• CSV: validaré su contenido, no detalles de formato como llevar comillas.
+También depuré el guion del tour: sin modo demostración y sin pedir repetir acciones ya realizadas.
+Dónde estamos: la integración parece viable según su reporte; está cerrando defectos reales. Todavía no tenemos evidencia final del tour, Windows ni publicación. No puedo estimar responsablemente el cierre completo con esa salida parcial.
+No le mandaría otro prompt ahora. Cuando termine, usaremos sus pruebas y capturas para pedir solo las correcciones que realmente falten, sin repetir trabajo aprobado.10:44 AMNo le mandaría otro prompt ahora. Cuando termine, usaremos sus pruebas y capturas para pedir solo las correcciones que realmente falten, sin repetir trabajo aprobado.
+OKAYT seguire tu recomendacionm, y meitras tanto?10:44 AM
+Mientras tanto, lo que más reduce el tiempo de entrega es desbloquear la prueba de Windows, no seguir añadiendo diseño.
+¿Ya ejecutaste el comando de Node que te dio el constructor?
+• Si no: ejecuta ese paso y comparte la salida. Eso permite avanzar con la instalación local, sin Desktop Commander.
+• Si ya lo ejecutaste: no lo repitas; basta con recuperar el resultado.
+De mi lado, la preparación independiente ya está cubierta: diseño, tour y revisión de los problemas encontrados. No voy a generar más documentos ni cambiarle instrucciones por llenar la espera. Para mejorar de verdad la implementación necesito su siguiente revisión o sus capturas.
+Así aprovechamos el paralelo: él termina la integración; tú desbloqueas Windows; yo reviso la evidencia cuando llegue. Sin funciones extra ni trabajo duplicado.10:44 AMNo le mandaría otro prompt ahora. Cuando termine, usaremos sus pruebas y capturas para pedir solo las correcciones que realmente falten, sin repetir trabajo aprobado.
+OKAYT seguire tu recomendacionm, y meitras tanto?
+
+EDIT:  Ademas en cada ciclo debes de calcular con fino criterio el tiempo estimado de entrega, y numero de ciclos. No vayas a incurrie en el error tipico de calcular algo, y al final quedarte 20x lo durado hasta ese punto en un margen dew 98 o 99.90005 por ciento me entiendes?10:46 AM
+Sí: nada de quedarnos eternamente en “99 %”. A partir de ahora estimaré por pendientes verificables, no por cuánto tiempo llevamos trabajando.
+En cada ciclo indicaré:
+• Tiempo técnico restante, como rango.
+• Ciclos restantes, entendidos como salida del constructor → revisión → corrección.
+• Dependencias externas, separadas de ese tiempo.
+• Confianza de la estimación y qué cambió respecto al ciclo anterior.
+Si aparece un problema, actualizaré la estimación y explicaré la causa; no conservaré una cifra optimista artificialmente.
+Estimación actual
+Con su reporte parcial, no con una candidata final inspeccionada:HitoTiempo estimadoCiclosCandidata con interfaz y tour revisados1–3 horas de trabajo activo2–4Entrega completa al clienteTodavía no estimable con confianzaSin cifra fiable aún
+Confianza del primer rango: baja. Sabemos que la interfaz está integrada y que está corrigiendo regresiones; todavía no sabemos cuánto del tour está implementado ni qué revelará la revisión final. Windows, seguridad, distribución y condiciones de CONSAR siguen impidiendo fijar una fecha responsable de entrega completa.
+Mientras esperamos, el paso útil sigue siendo obtener la salida de Node, si falta. Yo no añadiré más diseño ni documentación: la siguiente reducción real de incertidumbre vendrá de revisar su implementación.10:46 AM
+10:46 AM
+Clarifying task requirements
+Sí: incorporo también la obligación de estimar tiempo y ciclos en cada revisión, sin porcentajes de avance engañosos. Fuente confirmada: NX-329m.
+
+Hay tres precisiones importantes:
+
+Aprovechar la espera significa reducir el trabajo restante, no fabricar actividad. Primero buscaré una comprobación independiente o un bloqueo que pueda resolver dentro de mis autorizaciones. Si necesito su nueva versión para aportar algo, no inventaré tareas.
+Revisaré contradicciones entre instrucciones y decisiones posteriores. En tu ejemplo, el prompt inicial todavía permitía una demostración separada, pero después la descartaste expresamente: debe prevalecer esa corrección. Detectar estos residuos evita que el constructor implemente alcance cancelado.
+Las estimaciones pertenecen a cada proyecto. No trasladaré a Khora las “1–3 horas / 2–4 ciclos” del ejemplo, ni sus requisitos de tour, Profuturo o Miguel.
+Cómo presentaré cada pronóstico
+Hito concreto: qué resultado estamos estimando.
+Tiempo técnico restante: rango basado en implementación, pruebas y correcciones pendientes.
+Ciclos restantes: cada ciclo es una salida del constructor → revisión consolidada → siguiente instrucción, si hace falta.
+Esperas externas: separadas; no escondidas dentro del rango técnico.
+Confianza y cambio: qué evidencia sostiene la estimación y qué la hizo subir o bajar.
+No descontaré tiempo simplemente porque pasó tiempo. Solo reduciré el pronóstico cuando se cierre trabajo con evidencia; si aparece un defecto, ampliaré el rango.
+
+Para Khora, ahora: tiempo y ciclos hasta “solo falta Vercel” todavía sin rango defendible. Falta la salida del arranque remoto y una actualización del constructor que permita identificar los pendientes actuales. Esa es la incertidumbre concreta; no un supuesto “último 1 %”.
+
+10:47 AM
+}Bien. Ahora que hacemos?
+10:48 AM
+Taking action on tools
+Voy a comprobar, sin modificar nada, si la computadora ya está conectada y qué estado tiene la candidata de Khora. Así elegimos el siguiente paso real, sin repetir el arranque ni interferir con el constructor.
+
+Worked for 3s
+Ahora toca devolverle al constructor un desbloqueo concreto, no otro prompt general de presión.
+
+Comprobé en lectura:
+
+Desktop Commander muestra 015RENTA02 en línea. Todavía no confirmé que sea la computadora 2 de Office Depot; no ejecuté nada en ella.
+La solicitud de integración #292 sigue abierta, en borrador y con conflictos. Su revisión actual es 6738c1f1aeffe5835a725531e0774d4420af13c5. Las pruebas posteriores a la corrección siguen pendientes según su descripción; eso no equivale a comprobar ahora las ejecuciones de GitHub.⁠
+
+⁠
+Pega este único mensaje en la conversación principal de Khora, si el constructor no está procesando ya otra instrucción:
+
+Actualización para continuar sin reiniciar: la conexión Desktop Commander muestra el dispositivo 015RENTA02 en línea. Comprueba primero su identidad y si corresponde a la computadora 2 de Office Depot; no la deduzcas del nombre ni de rutas históricas.
+
+Si corresponde al equipo autorizado, retoma desde el estado real y ejecuta las pruebas pendientes de la revisión corregida. La solicitud de integración #292 sigue en borrador y con conflictos, con cabecera 6738c1f1aeffe5835a725531e0774d4420af13c5. Distingue esa rama de la candidata de preparación integral: no presupongas que son la misma entrega.
+
+Conserva cambios locales, secretos y compuertas vigentes. No fusiones ni publiques en Vercel. No repitas preparación ya verificada ni uses pruebas del verificador como certificación del sistema completo.
+
+Continúa lo independiente y autorizado. Devuelve al cerrar el siguiente hito: revisión probada, resultados y entorno, pendientes concretos para que solo falte Vercel, recomendación de siguiente paso y estimación razonada de tiempo técnico y ciclos, separando esperas externas.
+Si ya está trabajando, no lo interrumpas: reservamos este mensaje para su siguiente salida.
+
+Pronóstico: un intercambio para confirmar equipo y conocer el resultado de las pruebas pendientes, si la conexión permanece disponible. El tiempo total hasta “solo falta Vercel” aún no tiene un rango defendible: faltan la identificación de la candidata integral y sus resultados actuales.
+
+10:48 AM
+Espera. Otra cosa es que conforme esperamos a que termine el modelpo constructor, tu siempre en cada ciclo no te puedes quedar sin hacer nada me epxlico? La condicion o criterio de operacion es que nunca debes dee estar pausado. No te pafrece que hay parametros para siempre tener algo quer hacer?
+10:51 AM
+Sí. Mi respuesta anterior te devolvió demasiado pronto a la espera. Lo correcto es que yo busque y ejecute el siguiente trabajo independiente que acerque al cierre, sin necesitar otro “avanza”.
+
+Hay parámetros para mantenerme activa en cada ciclo, en este orden:
+
+Reducir incertidumbre: comprobar versión, cambios, pruebas y pendientes actuales.
+Preparar el siguiente paso: resolver sus precondiciones sin tocar el trabajo del constructor.
+Revisar lo existente: detectar contradicciones, regresiones o requisitos omitidos.
+Acortar el cierre: evitar pruebas duplicadas, instrucciones ambiguas y retrabajo.
+Pulir lo autorizado: mejorar claridad y experiencia, sin añadir funciones.
+Cada acción debe producir algo útil: un pendiente cerrado, una incertidumbre reducida, una corrección concreta o trabajo posterior ahorrado. No cuenta generar documentos o repetir comprobaciones para aparentar actividad.
+
+En Khora ya hay un frente independiente: determinar cómo se relacionan la rama de preparación integral y la solicitud de integración #292. Hasta ahora comprobé esta última, pero eso no identifica toda la candidata. Resolver esa relación permitirá revisar el código correcto y evitar pruebas sobre una versión equivocada.
+
+También corrijo mi coordinación: no necesitas enviar todavía el prompt anterior; primero debo completar esa comprobación.
+
+La distinción es esta: autonomía durante nuestros ciclos, sí; actividad continua entre mensajes, no puedo prometerla. Y si todas las acciones útiles quedan bloqueadas, identificaré la dependencia exacta, sin inventar alcance ni trabajo de relleno.
+
+10:51 AM
+Te actualizo:
+Primero comprobaré la identidad técnica del dispositivo y la sesión local, sin atribuirle ubicación por su nombre. Si corresponden al equipo autorizado, probaré la cabecera de #292 en un checkout aislado, separado de la candidata integral. No reiniciaré, fusionaré ni publicaré.
+El primer hito será identidad confirmada y un primer resultado de las suites de #292; estimación inicial: 2–4 ciclos de herramientas y 15–40 minutos técnicos si el equipo, acceso y descargas están disponibles. Ajustaré el cálculo con el estado real.Worked for 42s
+La conexión responde. El proceso remoto está en la misma sesión interactiva de Windows que Explorer, con PowerShell 5.1 y Node portátil 22.23.3. Eso identifica el host y la sesión; no demuestra por sí solo su ubicación física.
+Completaré las comprobaciones de solo lectura. Antes de cargar código privado o ejecutar las suites en ese host, necesito tu confirmación de que el cliente conectado es el que abriste en la computadora 2 de Office Depot.Worked for 32s
+La revisión objetivo sigue siendo 6738c1f… de #292, todavía en borrador y con conflictos; no la he confundido con la candidata integral.⁠⁠
+En la sesión remota encontré Node/npm operativos, pero Git y GitHub CLI no están en el PATH y no apareció un checkout en las ubicaciones iniciales inspeccionadas. No he descargado código privado ni ejecutado las suites. Falta confirmar la correspondencia física del cliente.¿Confirmas que el cliente RDC conectado como 015RENTA02 es el que acabas de abrir físicamente en la computadora 2 de Office Depot y autorizas usar ese dispositivo para las pruebas aisladas de #292, sin reiniciar, fusionar ni publicar?Sí: es ese cliente en la computadora 2 de Office Depot; autorizo las pruebas aisladas.Desktop Commander Remote / start_process
+10:52 AM
+Finding a file schema
+El constructor ya tiene tu autorización y está iniciando las pruebas aisladas de #292; todavía no hay resultados. No lo interrumpiré ni tocaré ese equipo. En paralelo, comprobaré dónde está la candidata integral y cómo se relaciona con esa solicitud, para evitar validar solo una parte y confundirla con la actualización completa.
+
+Worked for 1m 14s
+Bien: la confirmación del equipo y la autorización ya quedaron resueltas en el hilo constructor. No hace falta enviarle nada más mientras ejecuta las pruebas.
+
+Yo avancé en paralelo, solo en lectura, y encontré una distinción importante:
+
+Lo que comprobé
+La rama test/ep-single-cycle-readiness-20261011, en revisión 93cbcb2…, no es la actualización integral implementada. Su documentación declara expresamente que contiene validación y pruebas, sin cambios de funcionamiento, autenticación, interfaz, PowerShell ni despliegue. También advierte que no debe tratarse como una candidata lista.⁠
+
+⁠
+
+Además, ese documento sigue referenciando el canon v1.2.0, mientras la fuente normativa recuperada está en v1.4.0. Es una discrepancia que habrá que revisar antes del cierre; por sí sola no demuestra que el validador sea incorrecto.⁠
+
+⁠⁠
+
+⁠
+
+Utilidad concreta: aunque #292 apruebe sus suites, todavía debemos comprobar el árbol integrado y los requisitos restantes. No aceptaremos “#292 verde” como equivalente a “solo falta Vercel”.
+
+Coordinación y pronóstico
+Constructor: pruebas aisladas de #292.
+Mi siguiente frente: contrastar el validador con el contrato vigente, sin modificar archivos ni duplicar sus pruebas.
+Próximo hito: primer resultado de suites. Mantengo como referencia provisional su rango de 15–40 minutos técnicos y 2–4 ciclos de herramientas, sin descontarlo por el mero paso del tiempo. No son 2–4 mensajes tuyos.
+Entrega integral: aún sin rango defendible; falta identificar y probar la implementación completa.
+Reservo estos hallazgos para una sola devolución consolidada cuando llegue su resultado.
+
+10:54 AM
+Como te puedes tiu mantener ocupado?
+10:55 AM
+Focusing on validator tools
+Con revisiones independientes que le ahorren trabajo al constructor, no vigilando sus procesos ni generando más planes. Ahora compararé el validador de preparación con el canon vigente: comprobaré si podría aceptar como lista una entrega que todavía tenga requisitos pendientes. No tocaré código ni el equipo remoto.
+
+Worked for 9s
+Me mantengo ocupada tomando una parte independiente del cierre y resolviéndola, no creando más trabajo. Acabo de hacerlo con el validador de preparación.
+
+Resultado útil de este ciclo
+Encontré una brecha de cobertura:
+
+El validador comprueba requisitos aprobados, correspondencia de revisión, integridad de evidencias y que solo figure Vercel como operación pendiente.⁠
+
+⁠
+Pero no exige explícitamente todos los campos del manifiesto vigente: identidad del canon, versiones base/objetivo por repositorio, identificación del artefacto y datos estructurados de migración y reversión. El canon sí los exige.⁠
+
+⁠
+Consecuencia: un resultado positivo de ese validador no basta, por sí solo, para aceptar “solo falta Vercel”. Esos contratos podrían estar comprobados mediante las evidencias externas, pero debemos verificarlo; no asumirlo. No he demostrado una aceptación incorrecta en ejecución: este hallazgo viene de comparar código y contrato.
+
+Esto ya reduce trabajo posterior: cuando termine el constructor, revisaré esa cobertura concreta, sin pedir otro sistema de validación ni repetir sus suites.
+
+Cómo continúo
+Mi siguiente tarea independiente será comprobar si sus pruebas cubren esta brecha. Después contrastaré las restricciones de publicación con el código existente. Sin tocar su rama ni el equipo remoto.
+
+Pronóstico de mi frente: una revisión adicional, estimada en 5–15 minutos técnicos y un ciclo, con confianza media; si requiere reproducir un caso, actualizaré el rango. La estimación de entrega integral sigue abierta hasta disponer de la candidata completa.
+
+Así me mantengo activa: cada ciclo deja menos incertidumbre o menos trabajo para terminar, no más documentos ni instrucciones.
+
+10:55 AM
+Te actualizo. 
+¿Confirmas que el cliente RDC conectado como 015RENTA02 es el que acabas de abrir físicamente en la computadora 2 de Office Depot y autorizas usar ese dispositivo para las pruebas aisladas de #292, sin reiniciar, fusionar ni publicar?Sí: es ese cliente en la computadora 2 de Office Depot; autorizo las pruebas aisladas.Desktop Commander Remote / start_process
+Confirmado por ti: trabajaré sobre la computadora 2 de Office Depot, con la identidad técnica ya comprobada.
+El preflight detectó una compuerta concreta: C: no está cifrado y no hay workspace EP montado. No voy a descargar el repositorio privado ni secretos a ese disco. Sí puedo continuar con análisis sintáctico de código suministrado en memoria, sin ejecutarlo; las suites que necesitan un checkout quedarán bloqueadas hasta disponer del workspace cifrado y acceso GitHub autorizado.
+La estimación inicial de 15–40 minutos ya no cubre ese aprovisionamiento: separaré esa espera de los tiempos de prueba.Working for 3m 26sGitHub / pull_request_readRead Registro Canónico de Errores de Terminal · KhoraDesktop Commander Remote / read_process_outputFiguring out file extractionDelimitar los archivos de la revisión corregidaGitHub / get_file_contentsGitHub / get_file_contentsGitHub / get_file_contentsSaving result to fileSaving result to fileSaving result to filePreparar análisis Windows sin escribir código privadoDiagnosticar la discrepancia de integridad encontradaRegistrar el fallo causal antes de continuarUpdated pagePreparar la prueba sintáctica independiente del falloDesktop Commander Remote / Start Terminal ProcessRead Registro Canónico de Errores de Terminal · KhoraDesktop Commander Remote / Read Process OutputRegistrar el diagnóstico del harness WindowsUpdated page
+
+
+
+
+
+
+—-
+
+Es importante y necesario que te mantengas ocupado, y que busque sl amanera de no colisionar con el modelo, para que puedas redeucir el tiempo necesario. 
+
+Ademas, algo importante es la estimacion, ciclo a ciclo. O mejor aun, en tus procesos de razonamiento, ya que la cantidad de ciclos debe de ser redudcica a su minima expresion posible. 
+10:57 AM
+Executing regression testing
+El disco sin cifrar bloquea las suites que necesitan descargar el repositorio, pero no toda la revisión. No tocaré el equipo remoto ni duplicaré el diagnóstico de integridad y sintaxis que ya lleva el constructor.
+
+Voy a comprobar en mi entorno si el validador acepta un manifiesto incompleto. Eso puede dejarle una corrección precisa, en lugar de otra auditoría general. Actualizaré el pronóstico por trabajo pendiente y evidencia, no por cantidad de mensajes.
+
+Worked for 43s
+Avancé sin tocar el equipo ni la rama del constructor: ya reproduje una brecha del validador y comprobé una restricción del arranque.
+
+Dos resultados concretos
+Manifiesto incompleto aceptado. Las diez pruebas originales pasaron en mi entorno. Después, usando únicamente datos sintéticos, el validador devolvió READY_PARA_VERCEL sin campos explícitos de canon, artefacto, reversión y contexto por repositorio; también ignoró valores inválidos añadidos para esos campos. Esto demuestra una limitación de esa validación, no que el sistema esté listo ni que haya fallado una prueba real de extremo a extremo.session-file://9c41350d-c0d7-4f34-8db2-565696d22cf8
+El arranque todavía invoca publicación. En la rama de preparación examinada, Start-Sesion importa VERCEL_TOKEN y llama a Deploy-Production sin una condición visible de “solo preparar”. Esa ruta necesita resolverse antes de ensayar el arranque completo bajo tu exclusión de Vercel. La leí; no la ejecuté.⁠
+
+⁠
+Conservo la reproducción para que el constructor pueda contrastarla sin rehacer la investigación:
+
+Khora-revision-validador-prueba-sintetica
+.json
+Coordinación
+El constructor continúa con integridad y análisis sintáctico. Yo no duplicaré ese frente. Estos hallazgos irán en una única devolución, vinculados a la revisión exacta; no modificaré su código ni enviaré instrucciones sucesivas mientras trabaja.
+
+Pronóstico actualizado
+Mi comprobación del validador: cerrada en este ciclo.
+Siguiente revisión consolidada: estimación de un intercambio y 5–10 minutos técnicos tras recibir su resultado; confianza media.
+Entrega integral: todavía sin rango fiable. El workspace cifrado bloquea las suites con checkout y la ruta de arranque examinada aún requiere corrección; por eso retiro el rango inicial de 15–40 minutos como estimación de cierre.
+Reduciré ciclos agrupando comprobaciones independientes y devolviendo correcciones con evidencia y aceptación concreta, no suprimiendo pruebas necesarias.
+
+10:58 AM
+Descargue tu archivo a Downloads, o Descarga del usuariod e esta maquina de ooffice depot. 
+
+Te doy la respuesta del modelo. 
+
+Es importante que cuandso yot e deactualizaciond el comportamiento del otro modelo, respondas con el prompt mas efectivo que puedas
+11:01 AM
+Entendido: cada actualización del constructor la convertiré en un único prompt listo para pegar, dirigido al siguiente paso que más acerque al cierre, sin repetir trabajo ni ampliar alcance.
+
+En este mensaje no aparece todavía su respuesta. Pégala aquí y prepararé la instrucción sobre lo que realmente haya ejecutado o encontrado.
+
+El archivo que descargaste es evidencia de una prueba sintética, no un programa: no lo ejecutes ni lo pegues en PowerShell. Tampoco necesito su ruta local; el constructor puede recibirlo como adjunto si resulta necesario para la siguiente corrección.
+
+Próximo hito: revisar su salida y entregar el prompt en un ciclo. El pronóstico técnico de implementación lo ajustaré con esa evidencia, no con el tiempo transcurrido.
+
+11:01 AM
+Confirmado por ti: trabajaré sobre la computadora 2 de Office Depot, con la identidad técnica ya comprobada.
+El preflight detectó una compuerta concreta: C: no está cifrado y no hay workspace EP montado. No voy a descargar el repositorio privado ni secretos a ese disco. Sí puedo continuar con análisis sintáctico de código suministrado en memoria, sin ejecutarlo; las suites que necesitan un checkout quedarán bloqueadas hasta disponer del workspace cifrado y acceso GitHub autorizado.
+La estimación inicial de 15–40 minutos ya no cubre ese aprovisionamiento: separaré esa espera de los tiempos de prueba.Worked for 4m 59s
+El primer hito de pruebas ya produjo evidencia útil sobre la cabecera de #292:
+• El gate y Test-Arranque.ps1 pasan el análisis sintáctico en PowerShell 5.1, tras corregir la lectura de la marca BOM en el harness.
+• Falla la coincidencia byte a byte entre el gate y su copia embebida: LF frente a CRLF.
+• El test de arranque espera 7.5.1, mientras el gate declara 7.5.3.
+• En 11 pruebas aisladas del validador real de entradas, 10 pasan y una falla el contrato de URL exacta: acepta /api/ep/.
+No he cambiado esa cabecera ni iniciado el bootstrap completo. Registraré estos resultados; las suites de checkout siguen bloqueadas por el workspace cifrado y las credenciales de acceso.Worked for 1m 16s
+Hito cerrado: identidad confirmada y primeras pruebas reales de la revisión #292 en Windows. No está lista para dejar únicamente Vercel pendiente.
+Revisión y entorno
+• Revisión probada: 6738c1f1aeffe5835a725531e0774d4420af13c5; la cabecera permanece intacta.
+• Equipo: cliente 015RENTA02, confirmado expresamente por ti como computadora 2 de Office Depot; no deduje la ubicación del nombre.
+• Entorno observado: Windows 11 Pro, PowerShell 5.1.26100.7920 y Node 22.23.3. Pruebas realizadas en memoria, sin escribir el repositorio privado en el disco sin cifrar.⁠⁠
+ResultadosComprobaciónResultadoSintaxis del gate y Test-Arranque.ps1PASS, cero errores en ambos. Se corrigió exclusivamente la lectura BOM del harness.Gate frente a copia embebidaFAIL: LF frente a CRLF; no coinciden byte a byte.Contrato de versión del testDeriva estática: espera 7.5.1; el gate declara 7.5.3.Validador real de entradas del launcher10 PASS / 1 FAIL: acepta /api/ep/, contrario al contrato de URL exacta. No demuestra un bypass de autenticación.Suites completas, compilación y recorrido extremo a extremoNO EJECUTADOS, por las precondiciones indicadas abajo.
+Los resultados están registrados con su alcance y evidencia. No son pruebas del verificador de preparación ni certificación de la candidata integral.⁠⁠
+Pendientes para que solo falte Vercel
+1. Workspace cifrado de ensayo y acceso GitHub autorizado. C: está sin cifrar y no hay EP montado. No arrancar el flujo actual a ciegas: incluye publicación automática.
+2. Corregir las tres diferencias encontradas y probar la nueva revisión.
+3. Ejecutar instalación por lockfile, contratos de interfaz, comprobación de tipos, pruebas unitarias completas, build, Playwright y guards.
+4. Resolver conflictos y revisiones de #292, sin fusionar; comprobar la integración prevista y la evidencia de integración continua.
+5. Completar la candidata integral, separada de #292: staging de API/autenticación/migraciones, Blob privado y recuperación, WordPress/licencias, fundación, rollback y pruebas físicas. La generación visual positiva requiere la ubicación Cybernet autorizada y evaluación humana; no corresponde ejecutarla en Office Depot.⁠⁠
+Siguiente paso y estimación
+Recomiendo habilitar primero el workspace cifrado de ensayo y el acceso privado, sin invocar la etapa que publica Vercel.
+Para ese aprovisionamiento y una primera batería completa de #292: 60–120 minutos técnicos y 2–4 ciclos, suponiendo credenciales disponibles, descargas normales y sin nuevas regresiones. Las esperas por autorización, credenciales, revisiones o runners quedan aparte. Todavía no hay base suficiente para estimar el cierre integral, especialmente WordPress, recuperación y GPU.
+No reinicié, modifiqué código de producto, fusioné ni publiqué.Registradas pruebas y causas verificadas11:00 AM
+11:02 AM
+La salida es útil, pero no conviene bloquear todas las correcciones detrás del aprovisionamiento cifrado. Podemos cerrar trabajo independiente mientras se resuelve esa precondición, sin autorizar cambios de seguridad por accidente.
+
+Pronóstico: mantengo sus 60–120 minutos y 2–4 ciclos como estimación provisional únicamente del aprovisionamiento y primera batería completa, con confianza baja. No cubre la candidata integral. El siguiente intercambio debe producir correcciones verificadas o propuestas mínimas listas para tu revisión, no otra lista general.
+
+Pega esto:
+
+Retoma desde el hito cerrado, sin repetir las pruebas válidas ni reiniciar la investigación. Conserva como referencia #292 en 6738c1f1aeffe5835a725531e0774d4420af13c5 y distingue esa revisión de cualquier nueva candidata.
+
+No hagas depender todo el avance del workspace cifrado. Trabaja en dos frentes separados, sin colisiones:
+
+1. CERRAR LAS DIFERENCIAS YA DEMOSTRADAS
+Prepara una corrección mínima por causa:
+- Regenerar la copia embebida desde los bytes exactos del gate fijado y actualizar los artefactos de integridad afectados. Normalizar LF/CRLF para comparar texto NO satisface el contrato byte a byte.
+- Reconciliar la expectativa 7.5.1 del test con la versión real 7.5.3, comprobando antes que esa sea la versión objetivo correcta. No cambies versiones indiscriminadamente ni fixtures históricos.
+- Para /api/ep/, presenta el fragmento causal, el cambio mínimo recomendado y las pruebas de aceptación/rechazo. No lo llames bypass de autenticación. Por afectar validación de una ruta de seguridad, no lo apliques sin la revisión específica del operador.
+
+Aplica únicamente cambios cubiertos por las autorizaciones vigentes. Para cualquier cambio sujeto a una compuerta todavía pendiente, entrega un diff concreto y su recomendación, no una consulta abstracta. Continúa las demás tareas independientes.
+
+2. PREPARAR LA EJECUCIÓN SEGURA, SIN APROVISIONAR A CIEGAS
+Determina qué recurso cifrado autorizado existente puede utilizarse y cuál es la única acción habilitante mínima. Esta instrucción no autoriza crear volúmenes, cambiar cifrado, permisos, cuentas o destinos ni introducir secretos en el disco sin cifrar.
+
+No ejecutes el bootstrap completo: la ruta actual incluye publicación automática. Comprueba cómo quedará separado el ensayo de la publicación, sin eliminar autenticación ni debilitar controles.
+
+REVISIÓN INDEPENDIENTE DISPONIBLE
+La intermediaria examinó la rama test/ep-single-cycle-readiness-20261011 en 93cbcb2845239274f6ee03fe149b526e4a624238 y reprodujo con fixtures sintéticos que el validador devuelve READY_PARA_VERCEL sin campos explícitos de canon, artefacto y rollback, e ignora valores inválidos añadidos para ellos.
+
+Contrasta ese hallazgo con el manifiesto obligatorio del canon v1.4.0 y con los controles existentes. Determina si otra validación ya cubre esos requisitos; si no, prepara la corrección mínima en el mecanismo existente. No construyas otro sistema ni confundas esta reproducción sintética con evidencia operativa.
+
+CIERRE DEL PRÓXIMO HITO
+Entrega en una sola salida:
+- revisión exacta y cambios aplicados frente a propuestas pendientes;
+- pruebas causales realizadas, entorno y resultado;
+- evidencia vigente que puede reutilizarse y pruebas invalidadas;
+- única intervención material necesaria del operador;
+- tiempo técnico y ciclos restantes por hito, con supuestos y confianza, separando esperas externas.
+
+Mantén un único árbol de integración identificable. No fusiones, publiques, reinicies ni declares que solo falta Vercel mientras haya conflictos, revisiones, recursos o pruebas pendientes. Reduce ciclos agrupando trabajo independiente; no reduciendo garantías.
+11:02 AM
+Ya le di el prompt 
+Es importante y necesario que te mantengas ocupado, y que busque sl amanera de no colisionar con el modelo, para que puedas redeucir el tiempo necesario. 
+
+Ademas, algo importante es la estimacion, ciclo a ciclo. O mejor aun, en tus procesos de razonamiento, ya que la cantidad de ciclos debe de ser redudcica a su minima expresion posible. 
+
+Si ,me das un prompt, tu asume que ya se lo entregue y continua con lo tuyo, nunca te detengas. 
+11:03 AM
+Asumido: después de darte un prompt, lo trataré como entregado y continuaré por mi frente sin pedir confirmación.
+
+Ahora dejaré al constructor las correcciones y el validador. Revisaré en lectura otro requisito de aceptación: si cambiar la contraseña maestra invalida las sesiones anteriores y si hay una prueba que lo demuestre. No tocaré su rama ni el equipo remoto.
+
+Worked for 2m 5s
+Asumido: cada prompt que te entregue cuenta como enviado. Continuaré con trabajo independiente sin pedirte confirmación ni tocar lo que esté modificando el constructor.
+
+Este ciclo produjo otro hallazgo verificable, distinto de sus correcciones actuales:
+
+La rotación no invalida la sesión maestra anterior
+Sobre la revisión 6738c1f…, ejecuté las funciones de contraseña y sesión con base de datos simulada, identidad y secretos sintéticos:
+
+La cookie fue aceptada antes de cambiar la contraseña.
+Tras ejecutar el cambio, la misma cookie siguió siendo aceptada.
+El contrato exige invalidar las sesiones maestras anteriores.session-file://101b1500-9a4a-4b94-989c-46e1d2750a01⁠
+
+⁠
+Alcance: reproducción aislada de esas funciones, no prueba del servicio desplegado ni de una cuenta real. No cambié código remoto, contraseñas reales ni configuración de Office Depot.
+
+Esto evita descubrir el problema al final. Lo incorporaré a la próxima devolución consolidada, con la prueba concreta de aceptación: cookie anterior rechazada tras la rotación; acceso nuevo permitido con la contraseña nueva. La solución de seguridad requiere tu revisión específica; no la implementaré por mi cuenta.
+
+Pronóstico
+Mi revisión de este requisito: cerrada en este ciclo.
+Corrección y comprobación: previsión provisional de 1–2 ciclos después de la revisión de seguridad, confianza baja hasta conocer la solución propuesta.
+Entrega integral: aún sin rango defendible; el bloqueo del workspace cifrado sigue impidiendo completar las suites.
+No necesitas descargar otro archivo ni enviar otro prompt ahora. Conservo la evidencia para el siguiente intercambio.
+
+Registrado fallo del arnés y resultado de la prueba
+11:06 AM
+Recuerda, todo lo que el modelo constructor ofrezca para descarga lo tendre en downloads para tu revision. Respuesta del modelo:
+
+Retomo las causas demostradas sin repetir sus pruebas válidas. Prepararé una única candidata identificable con las correcciones autorizadas; el cambio de validación de /api/ep/ quedará como diff pendiente de tu revisión específica.
+En paralelo contrastaré el hallazgo del validador con los controles existentes y buscaré recursos cifrados ya autorizados, solo en lectura. No crearé volúmenes ni ejecutaré el bootstrap. Estimo 45–90 minutos técnicos para este hito, sujeto al tamaño de la corrección del validador; separaré las esperas externas.Worked for 6m 5s
+La reproducción confirma el hueco: el validador puede aceptar recibos genéricos sin verificar canon, artefacto ni rollback. Los controles inspeccionados no lo cubren.
+También quedó identificada la causa de la copia embebida: Git conserva LF y el checkout de Windows usa CRLF. Corregiré la comparación contra los bytes fijados de Git, sin normalizar texto ni cambiar el gate. El ajuste de /api/ep/ quedará como diff pendiente de tu revisión específica.Worked for 4m 37s
+Las correcciones causales ya pasan sus pruebas: 18 métodos del validador en el sandbox; en la computadora autorizada, el test corregido tiene cero errores de sintaxis y la propuesta para /api/ep/ pasa 11 casos. Estas últimas pruebas ejecutaron solo la función aislada, no el bootstrap ni la autenticación real.
+El equipo no tiene un recurso cifrado conectado utilizable. Además, el bootstrap sigue incluyendo publicación automática y operaciones de repositorio que no ejecutaré sobre tu trabajo. Estoy cerrando el paquete único de cambios, integridad y propuestas pendientes; aún no equivale a «solo falta Vercel».Worked for 3m 59s
+Preparé y probé las correcciones causales en un único paquete. La integración sigue BLOQUEADA: todavía no queda únicamente Vercel. No fusioné, publiqué, reinicié ni ejecuté el bootstrap.⁠⁠
+Revisión exacta y cambios
+• Referencia conservada: solicitud #292 en 6738c1f1aeffe5835a725531e0774d4420af13c5.
+• Validador de origen, distinto: 93cbcb2845239274f6ee03fe149b526e4a624238.
+• Correcciones: superposición de nueve archivos, identificada por SHA-256 041d203ae726bcd0e4303bc674582867705e577bc9e00c164fd83fb467a579c7. No es un commit integrado del producto.
+• La rama fix/ep-causal-integrity-20261011-1704 continúa en la referencia original. No empujé código porque no pude verificar si la integración externa dispararía una publicación automática de preview en Vercel.⁠⁠
+Aplicado y probado en el sandbox:
+1. Copia embebida regenerada desde los bytes exactos del gate fijado en Git, sin normalización textual.
+2. Expectativa actual de Test-Arranque: 7.5.1 → 7.5.3, corroborada contra las fuentes fijadas. Sin cambiar versiones runtime ni fixtures históricos.
+3. Validador existente endurecido: exige canon, artefacto y rollback explícitos, verifica archivos por sus bytes y liga los recibos a esos campos.
+4. Integridad afectada actualizada, conservando las entradas restantes. Se distingue el hash del blob Git del hash del checkout CRLF.⁠⁠
+Pruebas y entornoPrueba causalResultadoValidador corregido, Python 3.13, sandbox Linux18 métodos PASS, con rechazos parametrizadosReproducción del hallazgo de la intermediariaLos campos ausentes/inválidos ahora producen BLOCKEDDiff y hashes afectados, fixture Git parcialPASSTest-Arranque corregido, PowerShell 5.1 en 015RENTA02Cero errores de sintaxis, hash correctoPropuesta /api/ep/, función aislada en ese equipo11/11 casos PASS
+Estas pruebas no certifican el producto completo, la autenticación real, el build, la recuperación física ni el ensayo de extremo a extremo.⁠⁠
+Propuestas pendientes, no aplicadas
+Para /api/ep/, el fragmento causal y cambio mínimo recomendado son:
+
+- $uri.AbsolutePath.TrimEnd('/') -ne '/api/ep'
++ $uri.AbsolutePath -ne '/api/ep'
+La propuesta acepta la ruta HTTPS esperada y rechaza la barra final, además de conservar los rechazos probados para HTTP, query, fragmento, userinfo, ruta incorrecta y tokens inválidos. Requiere tu revisión específica de seguridad; no la apliqué al gate.⁠⁠
+El bootstrap tampoco es un ensayo seguro: contiene publicación automática, reset --hard y selección de otra rama de trabajo. El paquete incluye una guardia propuesta, pero no una separación integral prepare-only ya implementada.⁠⁠
+Habilitación y siguiente paso
+Única acción habilitante de almacenamiento: conectar/desbloquear una EP cifrada existente y ya autorizada, y verificar su identidad, cifrado y ruta. No encontré una utilizable conectada al equipo; no aprovisioné nada ni escribí secretos o checkout privado en su disco.⁠⁠
+No puedo convertir todos los bloqueos en una sola intervención: esa habilitación y la revisión específica del diff son independientes. Recomiendo resolverlas antes de ejecutar una sesión integral.
+Se reutilizan el parser del gate sin cambios y las evidencias de identidad/versiones mientras no cambien sus supuestos. Quedan invalidadas la copia embebida anterior, la expectativa 7.5.1 y las pruebas/recibos afectados por el validador modificado.⁠⁠
+Estimación restante por hitoHito, con insumos disponiblesTiempo técnicoCiclosConfianzaCambio de ruta y separación mínima probada45–90 min1–2MediaVerificar recurso cifrado existente10–20 min1MediaIntegración sin conflictos y build60–120 min1–2Baja–mediaEnsayo y restauración por entorno60–120 min1–2Baja
+Esperas del operador, CI, proveedores y activos van aparte. El cierre integral aún no tiene una duración responsablemente estimable.KHORA-EP-hito-causal-041d203ae726.zip
+Fuente cargada: NX-329m.
+
+
+11:55 AM
+Voy a revisar el ZIP en Descargas antes de preparar el siguiente prompt. No ejecutaré su contenido ni tocaré el trabajo del constructor; comprobaré la huella, los cambios y qué sigue siendo solo una propuesta.
+
+Worked for 21s
+Revisé el ZIP en Descargas sin extraerlo ni ejecutarlo. Los nueve archivos coinciden con las huellas del índice. El paquete distingue correctamente correcciones, propuestas pendientes y pruebas parciales; todavía no es una candidata integrada.
+
+La guardia propuesta únicamente bloquea Start-Sesion: no implementa el ensayo sin publicación. Además, debemos incorporar el fallo de revocación que reproduje: la cookie anterior sigue siendo aceptada después de cambiar la contraseña, en una prueba aislada con datos sintéticos.session-file://101b1500-9a4a-4b94-989c-46e1d2750a01
+
+Estimación: próximo hito de propuestas concretas y pruebas independientes: 45–90 minutos técnicos, 1–2 intercambios, confianza media-baja. No incluye habilitar almacenamiento, integración/build ni pruebas físicas. No sumaría todavía sus rangos como plazo total: algunas tareas pueden solaparse y otras siguen bloqueadas.
+
+Pega este único prompt:
+
+Retoma desde el paquete KHORA-EP-hito-causal-041d203ae726.zip. La intermediaria comprobó en Descargas que los nueve archivos de overlay coinciden con los hashes de overlay-index.json. Eso acredita integridad del contenido, no integración ni funcionamiento del producto.
+
+Conserva las correcciones y evidencias válidas. No repitas los 18 métodos ni los 11 casos salvo que cambien sus archivos o supuestos. El siguiente hito debe resolver decisiones concretas y preparar la integración, no producir otra auditoría general.
+
+1. SEPARACIÓN REAL DEL ENSAYO
+La guardia pendiente de Start-Sesion es una contención, no una implementación prepare-only. Presenta un diff mínimo sobre los componentes existentes y una recomendación única para:
+- ensayar la candidata exacta sin importar VERCEL_TOKEN ni publicar, promover alias o disparar workflows productivos;
+- preservar autenticación, comprobación de procedencia, cifrado y registro;
+- no ejecutar reset --hard ni seleccionar otra rama sobre trabajo existente;
+- conservar el funcionamiento productivo autorizado, sin crear otro launcher ni una arquitectura paralela.
+
+Antes de construir cambios sujetos a revisión de arquitectura/seguridad, muestra el comportamiento propuesto y sus consecuencias al operador. No interpretes este prompt como esa aprobación. Sí puedes continuar la inspección y las pruebas independientes de mecanismos ya autorizados.
+
+2. ROTACIÓN DE CONTRASEÑA MAESTRA
+Añade al cierre del requisito existente este hallazgo sobre #292 en 6738c1f1aeffe5835a725531e0774d4420af13c5:
+una prueba aislada ejecutó setEpMasterPassword, emitió cookie, volvió a ejecutar setEpMasterPassword y readEpMasterEmail siguió aceptando la cookie anterior. Se usaron DB simulada y secretos sintéticos; no es una prueba del despliegue.
+
+Contrasta la causa en ep-master-password.ts, ep-master-session.ts y sus consumidores. Propón una corrección mínima para invalidar inmediatamente sesiones maestras anteriores, preservando OIDC general, scopes y separación de credenciales. No rotes secretos reales ni apliques cambios de seguridad sin revisión específica.
+
+Aceptación: cookie anterior rechazada tras rotación; nueva autenticación válida; contraseña anterior rechazada; expiración y aislamiento conservados. Distingue cookies maestras de tokens de bootstrap y delimita qué exige el contrato para cada uno.
+
+3. REVISIÓN DEL OPERADOR SIN VUELTAS
+Consolida en una sola salida las decisiones pendientes:
+A. URL exacta /api/ep.
+B. Comportamiento seguro prepare-only.
+C. Invalidación tras rotación.
+
+Para cada una: diff concreto, recomendación, consecuencias, prueba de aceptación y alcance preciso de aprobación. No las mezcles con la conexión del recurso cifrado ni atribuyas aprobación por silencio.
+
+4. CONTINÚA LO INDEPENDIENTE
+Prepara la integración local aislada respecto de la baseline vigente, sin push, merge ni publicación. No repitas la búsqueda de almacenamiento salvo que exista una señal de recurso conectado. No escribas checkout privado o secretos en C: sin cifrar.
+
+Entrega una revisión o árbol identificable, cambios frente a propuestas, resultados causales y siguiente acción material mínima. Actualiza tiempo y ciclos por trabajo restante, separando esperas y tareas paralelas; no sumes rangos solapados ni mantengas estimaciones que ya perdieron sus supuestos.
+Lo trato como entregado. Mi frente continúa siendo la revisión independiente del paquete y sus contratos, sin modificar los archivos que él está integrando.
+
+11:56 AM
+Osea, cual es el estado actual del proyecto. No entiende. Es importante, y eso quiero que lo recuerdes: A cada ciclo tu debe de asegurarte de entregar una vision genheral y concreta amigable y efectiva pafr que yo tenga conciencia de donde esgtamos. 
+11:58 AM
+Estamos en una actualización parcialmente preparada, todavía no en un sistema terminado. No falta solo publicar en Vercel. Te he dado demasiado detalle técnico sin explicarte suficientemente el conjunto.
+
+Dónde estamos
+Parte	Estado concreto
+Documento de lo que hay que construir	Las decisiones principales están definidas. Eso no significa que ya estén implementadas.
+Código de la actualización	Existe código previo y un paquete de correcciones probado parcialmente. Ese paquete todavía no está integrado en una versión completa.
+Pruebas	Hay comprobaciones aisladas que pasan. Faltan la compilación completa y las pruebas del recorrido real, incluida recuperación.
+Computadora de Office Depot	Está conectada y autorizada para las pruebas. No tiene conectado un espacio cifrado utilizable, por lo que no se puede descargar allí el repositorio privado ni cargar secretos.
+Publicación	Sigue excluida por tu instrucción. Además, el arranque actual todavía incluye publicación automática: hay que separar el ensayo de la publicación.
+En palabras simples: tenemos piezas y correcciones, pero todavía falta ensamblarlas y demostrar que el conjunto funciona.
+
+Qué impide avanzar al ensayo completo
+Hay dos frentes distintos:
+
+Código: integrar las correcciones y resolver los comportamientos de seguridad pendientes. Encontré, por ejemplo, que la sesión anterior sigue siendo aceptada después de cambiar la contraseña en una prueba aislada.session-file://101b1500-9a4a-4b94-989c-46e1d2750a01
+Entorno: disponer del espacio cifrado autorizado donde ejecutar las pruebas completas.
+Después siguen pendientes los componentes integrales —respaldo y recuperación, laboratorio WordPress y generación visual— y sus respectivas comprobaciones.
+
+Qué estamos haciendo ahora
+El constructor tiene el prompt para preparar las soluciones concretas y avanzar en lo independiente. Yo reviso sus entregables sin modificar su código. El próximo hito es tener cambios claramente identificados y decisiones específicas listas para tu revisión; no es todavía la entrega final.
+
+Estimación de ese próximo hito: 45–90 minutos técnicos y 1–2 intercambios, confianza media-baja. El cierre completo aún no tiene una estimación fiable.
+
+Queda como regla para este hilo: cada respuesta sustantiva empezará con dónde estamos, qué avanzó, qué bloquea y cuál es el próximo hito, antes de los detalles o del prompt.
+
+11:58 AM
+Algo que me interesa mucho que se quede estandarizado y que no vaya a variar, o sea, que tenga una implementación canónica consistente a lo largo de las diferentes ubicaciones, terminales y tipos de sesión que tengo que tener para poder trabajar, es la implementación local de Cora. No solo porque, y de manera importante, Vercel limita la capacidad de despliegues que tengo en un lapso de 24 horas, sino que puede resultar útil por otras razones. La implementación local no puede funcionar con autenticación OIDC, así que debe darle la vuelta y, en lo demás, debe de tener, debe de ser prácticamente idéntica y aproblemática. Ahora bien, quiero que exista una sincronización bien implementada aproblemática también en cuanto al contenido de usuario de la aplicación principal y la local. Son dos instancias hermanas que deben de manejar prácticamente lo mismo. La local queda autorizada por su característica de ser efímera, si es que este entorno persistente va a ser bien implementado conforme al diseño que incluya un mecanismo de hombre muerto para garantizar la volatilidad y lo efímero de cada sesión. Si es así, entonces no debería haber problema en que una sesión local de Cora no autenticada por OIDC funcionara como gemelo de la versión de la aplicación web para cuando haya limitaciones en el despliegue de Vercel.
+12:00 PM
+Estado general: seguimos sin una candidata integral validada; el espacio cifrado y el ensayo sin publicación continúan pendientes. Tu propuesta añade un requisito importante: Khora local como instancia hermana de la web, con funcionamiento equivalente y el mismo contenido de usuario.
+
+Voy a contrastarlo con la arquitectura y la autenticación existentes. No aplicaré un bypass: primero comprobaré qué necesita identidad, cómo compartirían los datos y qué garantiza realmente el mecanismo de hombre muerto.
+
+Worked for 12s
+Sí: el objetivo es una sola Khora con dos formas de ejecutarse —web y local—, no dos productos que se separen con el tiempo. La local debe permitirte trabajar sin consumir despliegues de Vercel.
+
+Dónde estamos: las correcciones anteriores siguen sin integrar y las pruebas completas continúan bloqueadas. Esta implementación local todavía no está definida ni validada como capacidad canónica; tu instrucción establece ahora ese requisito.
+
+Mi recomendación concreta
+Aspecto	Comportamiento propuesto
+Aplicación	Mismo código y contratos funcionales. Solo cambian las adaptaciones necesarias de entorno y acceso.
+Versiones	Cada sesión identifica exactamente qué revisión ejecuta. Una candidata local puede ser más nueva que producción, sin confundir sus pruebas con las de la web.
+Contenido	Ambas acceden al mismo contenido persistente autorizado. Evitar una segunda base independiente si no hace falta.
+Acceso local	Sin obligarte al inicio de sesión web, pero con una identidad local de sesión, limitada y revocable.
+Sesión efímera	Servidor, perfil del navegador, cachés y secretos dentro del entorno cifrado; cierre y recuperación comprobados.
+Despliegue	Arrancar localmente nunca publica ni consume un despliegue de Vercel.
+Dos precisiones importantes
+Sin OpenID Connect (OIDC) no significa sin autorización. No he confirmado que OIDC sea técnicamente imposible en localhost. El código actual configura ese proveedor y dispone de excepciones para pruebas; esas excepciones no son un modo operativo local listo para usar.⁠
+
+⁠⁠
+
+⁠
+
+Ser efímera reduce residuos; no protege por sí solo una sesión abierta. El mecanismo de hombre muerto actúa al cerrar o fallar. Mientras trabajas, siguen siendo necesarios el aislamiento, la identidad y la protección del acceso a los datos. La arquitectura existente reconoce expresamente que el cifrado no protege frente a un equipo anfitrión comprometido mientras el volumen está montado.⁠
+
+⁠
+
+La sincronización que necesitas
+Mismo contenido no significa copiarlo todo entre dos instalaciones. Primero debemos reutilizar el almacenamiento y los mecanismos existentes. Para cambios sin conexión, conservar una cola protegida, confirmar el guardado remoto y evitar duplicados al reconectar.
+
+Hay un punto que requiere definición: si la sesión muere sin red, no podemos prometer simultáneamente borrar toda copia local y recuperar cambios que nunca salieron del equipo. El cierre debe distinguir cambios confirmados, pendientes recuperables y pérdida eventual. El estándar existente ya contempla captura local y reenvío, pero dejaba los conflictos local–servidor fuera de alcance; tu uso de instancias hermanas exige resolver esa parte mínima.⁠
+⁠
+
+Prompt para el constructor
+Incorpora este requisito explícito al objetivo, sin reiniciar ni descartar las correcciones actuales: Khora debe tener una implementación local canónica, consistente entre ubicaciones, terminales y tipos de sesión, como instancia hermana de la web.
+
+Reutiliza el mismo código y contratos. Arrancar una sesión local no debe publicar en Vercel. Identifica la revisión local y su compatibilidad con la versión web; no exijas desplegar cada cambio para trabajar.
+
+Inspecciona autenticación, almacenamiento, sincronización y ciclo de vida existentes antes de proponer cambios. No conviertas PLAYWRIGHT_TEST_RUN o PLAYWRIGHT_TEST_BYPASS en autenticación operativa. No presupongas que OIDC es imposible localmente: distingue una restricción de configuración del requisito del operador de no depender del inicio de sesión web.
+
+Recomienda una única solución mínima para:
+1. Acceso local autorizado, ligado a la sesión efímera, sin ampliar acceso anónimo remoto.
+2. Mismo contenido de usuario, reutilizando fuentes persistentes existentes y evitando bases paralelas.
+3. Cambios simultáneos, desconexión, reintentos y recuperación sin duplicación ni sobrescritura silenciosa.
+4. Servidor limitado a loopback y perfil de navegador, cachés, temporales y secretos dentro del entorno cifrado.
+5. Cierre manual, muerte de procesos, inactividad, reinicio y pérdida de red, con revocación y limpieza verificables.
+6. Arranque sin publicación, reset destructivo ni cambio inesperado de rama.
+
+Distingue qué existe, qué debe modificarse y qué no está probado. Explica especialmente el destino de cambios todavía no sincronizados cuando se activa el hombre muerto: no prometas recuperación de datos nunca persistidos ni conservación fuera del perímetro autorizado.
+
+Presenta el cambio mínimo de arquitectura y seguridad para revisión específica del operador antes de construirlo. Esta instrucción fija el resultado deseado, no aprueba por silencio un mecanismo de identidad, permisos, almacenamiento o eliminación.
+
+Consolida esa decisión con las propuestas pendientes relacionadas para evitar rondas separadas. Continúa mientras tanto las tareas ya autorizadas e independientes.
+
+Devuelve primero una visión general comprensible: dónde estamos, qué avanzó, qué bloquea y próximo hito. Después, recomendación concreta, cambios necesarios, pruebas de aceptación y estimación por trabajo pendiente, separando esperas externas. No crees otro producto, launcher, tablero ni documento paralelo si puede actualizarse la fuente existente.
+Pronóstico: cerrar la propuesta técnica y su revisión: 1–2 intercambios, aproximadamente 30–60 minutos técnicos, confianza baja. La implementación y entrega integral aún no tienen un rango defendible. Trato este prompt como entregado; mi siguiente frente será revisar la sincronización existente, sin modificarla.
+
+12:01 PM

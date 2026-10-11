@@ -1,10 +1,10 @@
-<!-- METACANON_VERSION=1.0; TEMPORARY_FRAMEWORK=true; USER_TRANSCRIPT_SPEC=true -->
+<!-- METACANON_VERSION=1.1; TEMPORARY_FRAMEWORK=true; USER_TRANSCRIPT_SPEC=true -->
 # Metacanon para crear y mantener objetos canónicos de proyecto
 
-- Estado: **Versión documental cerrada 1.0**, preparada para lectura verificable en rama metodológica; no afirmar integración en main.
-- Versión metodológica: **1.0**. Sello: **METACANON-OBJETOS-v1.0**.
+- Estado: **Versión documental 1.1 — Carpetas canónicas por frente**, preparada para lectura verificable en rama metodológica; no afirmar integración en main.
+- Versión metodológica: **1.1**. Sello: **METACANON-OBJETOS-v1.1**.
 - Nombre propio del marco: pendiente de elección del operador; no usar el nombre de un proyecto como nombre del método.
-- Repositorio de metodología identificado: https://github.com/SeryMente/metodologia, público. Ruta METACANON-OBJETOS-CANONICOS.md; rama de esta entrega docs/metacanon-objetos-20261011. No almacenar aquí historial privado, cuentas ni dispositivos del operador.
+- Repositorio de metodología identificado: https://github.com/SeryMente/metodologia, privado comprobado en el ciclo de actualización 1.1; revalidar su visibilidad antes de cada escritura sensible. Ruta METACANON-OBJETOS-CANONICOS.md; rama de esta entrega docs/metacanon-objetos-20261011. No almacenar aquí historial privado, cuentas ni dispositivos del operador.
 - Archivo estable propuesto: `METACANON-OBJETOS-CANONICOS.md`.
 - Origen: instrucciones del operador y método explicitado durante la documentación del frente Profuturo. **Los datos, permisos y estado de ese proyecto no forman parte de este método.**
 - Propósito: permitir que un asistente canonice un solo objeto `.md` de cualquier proyecto y que cualquier modelo pueda adquirir su gobierno, retomar el trabajo y migrar sin reconstruir el contexto.
@@ -33,6 +33,7 @@ Antes de cada ciclo comprobar la versión de este metacanon y del objeto del pro
 12. Acceso remoto mínimo suficiente cuando sea necesario, después de comprobar cuenta, conectividad y vínculo con equipo actual.
 13. Versiones, delta y actualización comprobados cada ciclo; comprobar no implica adoptar cambios incompatibles sin decisión.
 14. Una interrupción del proceso documental debe dejar primero un objeto primordial portable, no una promesa de crearlo después.
+15. Un frente se organiza siempre como carpeta canónica de repositorio: un objeto de estado vivo dentro y todos los archivos del frente conservados en esa carpeta según clase; no archivos sueltos ni fuentes paralelas.
 
 ## 2. Insumos y creación
 
@@ -112,7 +113,7 @@ Criterio documental: gobernable, comprensible y migrable sin pedir una recapitul
 ```text
 Actúa como asistente del proyecto identificado por mis insumos. Usa este metacanon como método, sin ejecutar ni copiar el estado de su proyecto de origen. Comprueba su revisión/frescura y la del objeto existente, si lo hay; calcula y reporta el delta.
 
-Canoniza un solo archivo .md del proyecto destino. Primero produce el objeto primordial portable; después completa §3 con datos y autorizaciones de los insumos reales. Conserva mis instrucciones literales con procedencia, fija gobierno/roles y salida por ciclo, y prepara dos prompts completos de reinstanciación. No inventes repositorio, permisos, funciones, pruebas ni plazos. Si el destino es ambiguo, pregunta solo lo necesario para identificarlo.
+Canoniza una carpeta del frente en su repositorio propietario, con un solo objeto .md de estado vivo dentro y todos sus archivos pertinentes organizados en ella. Primero produce el objeto primordial portable; después completa §3 con datos y autorizaciones de los insumos reales. Conserva mis instrucciones literales con procedencia, fija gobierno/roles y salida por ciclo, y prepara dos prompts completos de reinstanciación. No inventes repositorio, permisos, funciones, pruebas ni plazos. Si el destino es ambiguo, pregunta solo lo necesario para identificarlo.
 
 Respeta alcance, compuertas y no-simulación. El asistente mantiene continuidad y busca acelerar el cierre correcto sin bloating; el constructor ejecuta el desarrollo. Haz la doble revisión de §7, corrige hallazgos y persiste con lectura/diff cuando haya acceso. Si no, entrega la copia completa y el bloqueo exacto. Cada ciclo aplica §4 y §5; acceso remoto solo conforme a §6.
 ```
@@ -120,7 +121,7 @@ Respeta alcance, compuertas y no-simulación. El asistente mantiene continuidad 
 ## 9. Estado de este metacanon
 
 - De dónde viene: instrucciones originales de creación portable, dos roles, verbatim, crónica, eficiencia, salida consistente, estimación, viabilidad, perfil/acceso remoto y delta.
-- Dónde está: versión documental 1.0; centralización en rama de SeryMente/metodologia, sin modificar el Sistema de Instrucciones ni las normas globales anteriores. Evidencia privada de Profuturo queda en GDP.
+- Dónde está: versión documental 1.1; centralización en rama de SeryMente/metodologia, sin modificar el Sistema de Instrucciones ni las normas globales anteriores. Evidencia privada de Profuturo queda en GDP.
 - A dónde va: uso temporal por aproximadamente un mes, validación de cada instancia y posterior migración a infraestructura autorizada sin pérdida.
 - Qué cambió: V24/V25, matriz de decisiones basada en dictados, mínimo viable demostrado, persistencia oportuna, fuente central identificada y revisión de privacidad.
 - Próximo paso: verificar recepción/readback de esta versión y usarla para instancias; nombre propio pendiente, candidatos TRAMA/HILO VIVO/CANON VIVO/DOBLE HILO no ratificados. No bloquear su uso por branding.
@@ -235,7 +236,7 @@ Cada metacanon y objeto derivado contiene una sección **Especificaciones origin
 
 Regla obligatoria: **dictado original → lectura normalizada separada → datos/evidencia → decisión → cambio → aceptación**. Cada decisión material enlaza sus identificadores y evidencia. Lo que no deriva de una instrucción/criterio aprobado se etiqueta propuesta; no se implementa como alcance nuevo. Ante contradicción, comparar procedencia y orden, preservar ambas y aclarar solo lo material. No elevar esta especificación por encima de instrucciones superiores de plataforma o autorizaciones explícitas.
 
-Privacidad: este repositorio es público. Los dictados metodológicos no sensibles se incluyen literalmente abajo. Si un original contiene cuentas/dispositivos/datos privados, conservarlo en el objeto privado autorizado y registrar identificador/ruta/hash y regla no sensible aquí; no redactar y llamarlo verbatim ni publicar un secreto por cumplir un formato. El ejemplo privado es docs/FRENTE-PROFUTURO-CONTEXTO.md §9 en SeryMente/GDP, no requisito de acceso para aplicar el método general.
+Privacidad: revalidar la visibilidad efectiva del repositorio antes de escribir; SeryMente/metodologia fue comprobado privado en el evento 1.1, lo cual sustituye la observación pública histórica pero no autoriza secretos en Git. Los dictados metodológicos no sensibles se incluyen literalmente abajo. Si un original contiene cuentas/dispositivos/datos privados, conservarlo en el objeto privado autorizado y registrar identificador/ruta/hash y regla no sensible aquí; no redactar y llamarlo verbatim ni publicar un secreto por cumplir un formato. El ejemplo privado es docs/FRENTE-PROFUTURO-CONTEXTO.md §9 en SeryMente/GDP, no requisito de acceso para aplicar el método general.
 
 ## 15. Producto mínimo viable y frontera de viabilidad
 
@@ -310,3 +311,38 @@ Todo lo que se haga en relacion al objeto canonioco debe de ser muy pulido y con
 ### Referencias de originales con contexto privado
 
 La instrucción de Remote Desktop Commander V19 contiene una cuenta personal y permanece literal en el objeto autorizado de Profuturo §9; V22 contiene ubicación/equipo y se conserva en ese mismo lugar. §6/§12 derivan solamente la regla general de vínculo/perfil; no publicar la identidad. La norma de doble revisión queda literal en M18. Ninguna referencia exige heredar permisos o acceder al proyecto ejemplo para gobernar otro proyecto.
+
+
+## 20. Carpetas canónicas por frente — actualización 1.1
+
+**Regla ratificada:** cada frente se representa por una carpeta canónica en su repositorio propietario. La carpeta organiza; un único archivo de objeto dentro conserva el estado vivo. Todos los archivos importantes del frente —dictados, conversaciones, prompts, evidencias, artefactos, revisiones y manifiestos— se conservan allí tan pronto sean accesibles, con procedencia, tamaño/hash, clasificación, actualización condicionada y lectura de vuelta. Los prompts y recibos no crean estados paralelos.
+
+Identificar/reutilizar primero la carpeta existente; si no existe y la creación está autorizada, establecer una ruta estable e índice mínimo. Subcarpetas solo por clases presentes, no vacíos hipotéticos. Secretos nunca a Git; originales privados solo en destino privado autorizado. Recursos que no puedan residir allí por licencia/seguridad/tamaño conservan referencia de destino aprobado e integridad; no prometer ni fabricar copia. Esta excepción de custodia no vuelve a convertir el frente en archivo aislado.
+
+El repositorio del código de un componente no determina el propietario del frente. El operador corrigió explícitamente: EP pertenece a Metodología; Khora es referencia de implementación, no destino de custodia. Instancia de esta regla: frentes/ep/ en SeryMente/metodologia, con OEP.md y archivos del frente. No mover ni renormar otros frentes unilateralmente; aplicar la regla en nuevas instancias y en las migraciones expresamente autorizadas. Evitar duplicados; conservar referencias históricas y exportación/recepción antes de archivar.
+
+Antes de escribir verificar concurrencia y privacidad actuales. Un cambio de visibilidad se incorpora como delta observado, no se asume por memoria; afirmar privacidad sin herramienta está prohibido. Carga documental no autoriza merge, despliegue, acceso remoto ni cambio del SI. Compatibilidad: propiedad/ruta del objeto se actualiza explícitamente, originales/hashes se preservan y los dos prompts se sincronizan.
+
+### M26 · instrucción directa del operador · 2026-10-11
+
+Original íntegro con envoltorio HTML, sin corregir grafía; regla/decisión normalizada arriba. La afirmación de privacidad se verificó después y no se usa como prueba por sí sola.
+
+````text
+<p>
+Subelo a la carpeta canonica del frente, (ahora son carpetas) y documenta todo para que siempr esean carpetas, y ahi se guarden siempre lso archivos del frente. Y metodolopgia es privado. 
+</p>
+````
+
+### M27 · corrección directa de propietario · mismo ciclo
+
+````text
+No, no uses khora, EP es de Metodologia
+````
+
+### M28 · reporte posterior de privacidad · mismo ciclo
+
+````text
+revisa de nuevo ya es perivado
+````
+
+**Narrativa 1.1:** añade carpeta canónica por frente y custodia conjunta, propiedad EP en Metodología, referencias/privacidad actuales y preservación literal M26–M28. Reemplaza el modelo de archivo suelto como unidad de organización; mantiene un único objeto de estado dentro. No modifica SI, autorizaciones de producto, cronología de originales ni infraestructura. Estado de integración: rama documental, no main.

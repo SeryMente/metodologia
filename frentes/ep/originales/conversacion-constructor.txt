@@ -1,0 +1,768 @@
+
+Notion AI · October 10 at 7:47 PM
+Archivo: CANON-ENTORNO-PERSISTENTE-Y-LABORATORIOS.md
+
+Repositorio: Metodologia, lo ubicas?
+October 10 at 7:47 PM
+Worked for 11s
+Sí, ubicado y verificado: CANON-ENTORNO-PERSISTENTE-Y-LABORATORIOS.md está en la raíz de SeryMente/metodologia, rama main. Aún no he leído su contenido.⁠
+
+⁠
+
+Fuente personal confirmada: NX-329m.
+
+October 10 at 7:48 PM
+verifica la integridad del documento para determinar si su contenido es lo suficientemente organizado, completo, íntegro y en general suficiente para poder implementar la actualización consiguiendo la publicación de la nueva versión del sistema de extremo a extremo en un solo ciclo tomando como único insumo ese archivo.
+October 10 at 7:50 PM
+GitHub / get_file_contents
+Voy a auditar el archivo como único insumo normativo: buscaré contradicciones, vacíos y dependencias que impidan implementar, verificar y publicar de extremo a extremo. No modificaré el documento ni el sistema.
+
+Worked for 20s
+No: el archivo está organizado y es legible, pero no es suficiente como único insumo para implementar y publicar una nueva versión del sistema de extremo a extremo en un solo ciclo. Es un buen canon de requisitos y controles, no todavía una especificación de actualización ejecutable y cerrada. El propio documento obliga a consultar otras fuentes y deja decisiones críticas pendientes.⁠
+
+⁠
+
+Alcance y comprobación de integridad
+Leí el archivo completo desde main: 533 líneas, versión documental v1.0.0, corte declarado 2026-10-10. Audité esa revisión, sin sustituir sus vacíos con información de otros documentos ni asumir que el estado histórico descrito sigue vigente.⁠
+
+⁠
+
+La comprobación mecánica de la copia descargada dio:
+
+Su hash de objeto Git coincide con el informado por GitHub: b879a0c210edbcaf8d3c6db969fbac32c8f2e908.
+No detecté caracteres nulos ni caracteres de sustitución que indiquen un problema evidente de decodificación.
+Las secciones principales mantienen una secuencia de 0 a 17.
+Los ocho enlaces relativos explícitos corresponden a archivos presentes en el listado de la raíz consultado. Eso no acredita la integridad de sus contenidos ni la resolución de todas las referencias técnicas externas.⁠
+
+⁠
+Conclusión de integridad: la copia recuperada no presenta indicios de truncamiento o corrupción. No puedo certificar que la consolidación haya preservado íntegramente los antecedentes, porque eso requeriría cotejarlos y dejaría de ser una auditoría tomando únicamente este archivo.
+
+Lo que sí está bien resuelto
+El documento separa con claridad gobierno, implementación, datos, identidad y evidencia. Define controles de destino, checkpoints con lectura posterior, restauración aislada, tratamiento de secretos, pruebas negativas y estados independientes de implementación, operación, certificación y publicación. También evita presentar requisitos o antecedentes como capacidades ya disponibles.⁠
+
+⁠
+
+Esa organización sirve para gobernar el esfuerzo y prevenir certificaciones falsas. No basta para determinar exactamente qué construir, cómo integrarlo y cómo liberar la versión.
+
+Vacíos que bloquean el objetivo
+Hallazgo	Evidencia dentro del archivo	Consecuencia
+1. No es autosuficiente por diseño	§0 exige leer el Sistema de Instrucciones, la Metodología, registros vigentes y especificaciones externas. §4 remite incluso a documentos cuyas rutas están por localizar.	Un agente que use solo este archivo incumpliría su propio procedimiento de recuperación.
+2. No define la actualización objetivo	Identifica la versión del documento, pero no fija una versión objetivo del sistema ni un conjunto cerrado de cambios respecto de una base.	No puede determinarse inequívocamente qué debe contener la nueva publicación.
+3. Los contratos técnicos están incompletos	§6 pide definir el ciclo del volumen cifrado; §7 pide registrar el inventario; §9 remite al bootstrap y a la implementación real.	Faltan parámetros, interfaces y procedimientos suficientes para implementar sin decisiones adicionales.
+4. Persistencia y recuperación siguen abiertas	No selecciona destinos reales por artefacto ni concreta retención, frecuencia de checkpoints o pérdida de datos y tiempo de recuperación admisibles.	Dos implementaciones incompatibles podrían satisfacer su redacción general.
+5. El alcance entre repositorios no está cerrado	§9.5 declara pendiente la reconciliación entre cinco y seis repositorios. §9.7 registra dos frentes separados de desarrollo.	No queda fijado qué repositorios son obligatorios ni cómo se coordina la actualización.
+6. El laboratorio no tiene una base reproducible definida	§7 exige versiones y pruebas “definidas por el proyecto”; §8 depende de herramientas, recursos, licencias y aprobaciones sin seleccionar.	No puede reconstruirse ni aceptarse el laboratorio únicamente con lo contenido aquí.
+7. Falta el procedimiento de publicación	§11 define “PUBLICADO”, pero las fases A–H terminan en certificación y cierre, no en una liberación concreta.	No hay destino de publicación, orden de migración y despliegue, versión del artefacto, verificación posterior ni reversión de la liberación.
+Estos vacíos son explícitos o verificables en las secciones de fuentes, persistencia, laboratorios, repositorios y ejecución; no son simplemente ausencia de comandos copiables. Una especificación puede ser suficiente sin incluir todo el código, pero debe cerrar las decisiones y contratos que el ejecutor no puede deducir con seguridad.⁠
+
+⁠⁠
+
+⁠
+
+Tensiones internas que deben resolverse
+1. Autenticación: contrato establecido y decisión pendiente
+§9.1 define una puerta limitada al Entorno Persistente con contraseña maestra y sin iniciar autenticación de Google. Sin embargo, §15.5 deja pendiente decidir si esa contraseña es segundo factor, acceso de emergencia o proveedor alternativo, y la fase B vuelve a exigir confirmar su semántica.
+
+No queda inequívocamente separado qué está aprobado, qué es antecedente y qué sigue siendo propuesta. Esa distinción bloquea una implementación segura en un solo ciclo.⁠
+
+⁠⁠
+
+⁠
+
+2. Secretos: prohibición general y entrega autorizada
+§9.2 prohíbe devolver secretos al cliente; §9.3 exige que un endpoint entregue el token al launcher de PowerShell.
+
+Ambas reglas pueden ser compatibles, pero el archivo debe delimitar “cliente”: navegador, interfaz administrativa y launcher autorizado no son el mismo principal. Falta precisar la excepción, el receptor permitido y el límite de confianza.⁠
+
+⁠
+
+3. Protección local y recuperación en otra terminal
+§9.3 prescribe protección local con la API de Protección de Datos de Windows; §12 contempla recuperar en otra terminal. No explica cómo se reaprovisiona la credencial cuando cambia la identidad o el host. No demuestra una incompatibilidad, pero deja sin especificar el puente de recuperación entre ambos requisitos.⁠
+
+⁠
+
+4. Identidad del producto y autoridad documental
+El texto asigna responsabilidades distintas a “KHORA” y “Cora”, mientras tu instrucción personal establece que Cora = Khora. Además, la cabecera declara autoridad canónica, pero la matriz §14 todavía la describe como “propuesta”. Deben reconciliarse los nombres y el estado de ratificación para no ejecutar contra una división de productos o una autoridad ambigua.⁠
+
+⁠⁠
+
+⁠⁠
+⁠
+
+Qué necesita para alcanzar la suficiencia solicitada
+La corrección no consiste en hacerlo más largo indiscriminadamente. Necesita cerrar cinco bloques:
+
+Contrato de actualización: base verificable, versión objetivo, componentes incluidos, exclusiones y cambios exactos.
+Decisiones aprobadas: autenticación, destinos, recuperación, repositorios y configuración del laboratorio; ninguna decisión crítica escondida como “por confirmar”.
+Contratos de implementación: interfaces, parámetros, migraciones, dependencias y orden de integración suficientes para ejecutar sin consultar antecedentes normativos.
+Matriz de aceptación: requisito → componente → prueba → resultado esperado → evidencia → condición de bloqueo.
+Procedimiento de liberación: preparación, construcción, pruebas, migración, despliegue, comprobación de la versión publicada y reversión ante fallo.
+También debe definir “un solo ciclo”: una ejecución coordinada puede incluir reinicios, reanudación y aprobación humana; una ejecución ininterrumpida no puede darse por garantizada con las pruebas físicas y decisiones pendientes que exige este canon.⁠
+
+⁠
+
+Dictamen final: apto como canon transversal de gobierno; no apto todavía como único insumo de implementación y publicación integral. El siguiente paso correcto es cerrar esos contratos y contradicciones antes de autorizar la ejecución, no pedir al implementador que rellene los vacíos. No modifiqué el archivo ni el sistema.
+
+October 10 at 7:51 PM
+modifícalo y haz que se apegue de manera perfecta al ideal que describes.
+October 10 at 7:51 PM
+GitHub / get_file_contents
+Voy a convertirlo en una especificación ejecutable: incorporaré los detalles que hoy remite a otros archivos y cerraré el contrato de actualización, pruebas, publicación y reversión. No inventaré decisiones de seguridad ni daré por probadas capacidades físicas; lo que requiera evidencia quedará como una compuerta explícita.
+
+Modificaré la documentación, no ejecutaré la actualización del sistema.
+
+Worked for 1m 6s
+Encontré un punto importante: los antecedentes ya fijaban una entrega mínima del Entorno Persistente v1.0, pero el canon la mezclaba con la certificación de todo el programa. Voy a separar ambos alcances para que publicar la versión mínima no se confunda con terminar el sistema completo.
+
+También incorporaré los requisitos omitidos de arranque, cámara, editor, WordPress e inferencia visual, y definiré cómo se verifica la versión publicada y cuándo debe detenerse la liberación.
+
+Worked for 5m 13s
+Modificado y publicado en main como v1.1.0, con lectura posterior idéntica al contenido preparado y hash coincidente. Commit: 93488728d6f5dda046d65b2518e9f81a88d17db6.⁠
+
+⁠
+
+El archivo ahora incluye:
+
+Alcances separados: entrega mínima, fundacional e integral, sin confundir sus certificaciones.
+Contratos concretos de autenticación, secretos, launcher, cifrado, workspace, WordPress e infraestructura visual.
+32 requisitos verificables, con resultados esperados y bloqueos explícitos.
+Procedimiento de implementación, integración, migración, publicación, comprobación de la versión activa y reversión.
+Registro de evidencia y reanudación, distinguiendo preparación, publicación verificada y certificación global.⁠
+
+⁠
+Límite importante: no sería honesto llamarlo “perfecto” ni garantizar la publicación integral en un ciclo. Siguen requiriendo resolución real los destinos privados y sus políticas, permisos, credenciales, licencias, compatibilidad del host y aprobaciones materiales. Los dejé como condiciones precisas de bloqueo, no los rellené con decisiones inventadas.⁠
+
+⁠
+
+Solo actualicé ese documento; no desplegué ni modifiqué el sistema.
+
+October 10 at 7:59 PM
+Endurecelo para que te sirva de insumo a ti mismo para la implementacion en un solo ciclo usandolo. 
+October 10 at 8:06 PM
+GitHub / get_file_contents
+Lo endureceré como contrato de ejecución para mí: orden de operaciones, selección de herramientas, avance autónomo, pruebas y criterio de cierre en una sola invocación. También corregiré “un ciclo” para que no pueda significar varias conversaciones. Esta orden modifica el canon; no inicia todavía la implementación.
+
+Worked for 2m 10s
+Cuando termines de endurecer, implementa, End to End, de manera que lo unico que nos quede por hacer, cuando ya hayas hecho qeu todo quede perfecto. En un solo ciclo, sin detenerte bajo ninguna circunstancia para nada porq ue ya no volvere, sea la publicacion en verdcel. Es decir, solo eso debe de faltar. Por lo demas, todo debe de quedar perfecto. Obvio trabajaras sobre el repositorio de Khora. 
+October 10 at 8:08 PM
+Understanding deployment conditions
+Entendido: al terminar el endurecimiento, trabajaré en SeryMente/khora para dejar la candidata preparada de extremo a extremo, sin publicar en Vercel. Avanzaré sin preguntas de trámite.
+
+No puedo prometer perfección ni ignorar controles obligatorios. Si falta una credencial, una revisión exigida o acceso al host, continuaré lo que pueda ejecutar con seguridad y dejaré el bloqueo acreditado, sin simular que solo falta el despliegue.
+
+Worked for 1m 6s
+La admisión encontró tres bloqueos reales: ambos dispositivos Windows están offline; GitHub devuelve 403 al consultar los checks; y el PR existente sigue en borrador, con conflictos y sin revisiones registradas.
+
+Continuaré con las verificaciones y el código de validación que pueda trabajar desde mi entorno, sin tocar los diseños de seguridad ni publicar en Vercel. Con estos bloqueos, no sería veraz afirmar que al final solo faltará desplegar.
+
+Worked for 4m 45s
+Ya implementé un verificador en una rama aislada de Khora y sus diez pruebas locales pasaron. Rechaza requisitos pendientes, evidencias alteradas, otra revisión de código y tareas pendientes además de Vercel.
+
+Ese resultado verifica el guard, no el sistema completo: los bloqueos de Windows, checks y revisión siguen abiertos. No fusionaré la rama a main, porque ese evento activa el despliegue de producción.
+
+Worked for 1m 17s
+Que es 403?
+October 10 at 8:16 PM
+403 significa “acceso prohibido”: GitHub recibió la solicitud, pero la credencial de mi conexión no tiene permiso para consultar ese recurso.
+
+En este caso ocurrió al pedir los checks de pruebas del PR #292. GitHub respondió: Resource not accessible by personal access token.
+
+No significa que las pruebas hayan fallado; significa que no pude consultar sus resultados. La conexión sí pudo leer y escribir archivos, pero ese permiso no garantiza acceso a los checks.
+
+October 10 at 8:16 PM
+Este? hub.com/SeryMente/khora
+October 10 at 8:18 PM
+Sí, me refiero al repositorio SeryMente/khora en GitHub. El enlace que pegaste dice hub.com; el correcto es github.com/SeryMente/khora.
+
+El 403 ocurrió al consultar los checks del PR #292, no al abrir el repositorio completo.
+
+October 10 at 8:18 PM
+Que acceso debed e traer el beareer token?
+October 10 at 8:18 PM
+Worked for 31s
+Para el token de GitHub que usa mi conexión, Bearer solo indica cómo se envía; los permisos se configuran en GitHub.
+
+Si es un token de acceso personal granular (PAT), debe tener:
+
+Resource owner: SeryMente.
+Repository access: incluir khora.
+Estos permisos de repositorio:
+Permiso	Nivel	Para qué
+Checks	Read-only	Consultar los checks; es el acceso relacionado con el 403 observado.
+Actions	Read-only	Leer ejecuciones, jobs y logs.
+Contents	Read and write	Leer código y guardar cambios.
+Pull requests	Read and write	Consultar y gestionar solicitudes de integración.
+Metadata	Read-only	Leer información básica del repositorio.
+Para diagnosticar las pruebas no necesito Checks ni Actions con escritura. Actions: Read and write solo sería necesario si autorizas reejecutar o administrar workflows.⁠
+
+⁠
+
+Si es un PAT clásico, consultar checks y logs de un repositorio privado requiere el scope repo, que es más amplio.⁠
+
+⁠⁠
+
+⁠
+
+Importante: debe actualizarse la credencial de la conexión GitHub que estoy usando; cambiar únicamente el token guardado en Khora no corregiría este acceso. Si sigue apareciendo 403, habría que comprobar también aprobación de la organización y restricciones de acceso. No pegues el token en el chat.
+
+October 10 at 8:19 PM
+Osea como resuelvo el problema?
+October 10 at 8:20 PM
+Worked for 33s
+Edita el token que usaste para conectar GitHub conmigo; no hace falta cambiar código.
+
+Abre tus tokens granulares de GitHub y selecciona ese token existente.
+Comprueba que tiene acceso a SeryMente/khora.
+En Repository permissions, añade:
+Checks → Read-only
+Actions → Read-only
+Conserva los permisos de escritura que ya utilizas para código y solicitudes de integración.⁠
+
+⁠
+
+Guarda los cambios. Si GitHub solicita aprobación de SeryMente, debe aprobarse antes de que esos permisos funcionen.
+Vuelve aquí y escribe «verifica el acceso». Repetiré la consulta que dio 403.
+Si editas el mismo token, no necesitas copiarlo de nuevo. Si generas otro, sí habrá que sustituir la credencial de la conexión GitHub. Nunca pegues el token en este chat.
+
+Esto resuelve el bloqueo de permisos si esa era la causa; no garantiza que las pruebas estén pasando.
+
+October 10 at 8:21 PM
+Notion
+No description
+Created on Tue, Sep 22 2026.
+Expires on Mon, Nov 9 2026
+
+Access on the  SeryMente organizationRepository accessSelect the repositories this token can access. Personal access tokens can always read from all public repositories on GitHub.comRepository accessPublic repositoriesRead-only access to public repositories.All repositoriesThis applies to all current and future repositories that you can access in this organization. Also includes public repositories (read-only).Only select repositoriesSelect at least one repository. Max 50 repositories. Also includes public repositories (read-only).Selected 7 repositories.SeryMente/khoraSeryMente/serymenteSeryMente/otrogranprogramaSeryMente/GDPSeryMente/khora-effectifSeryMente/signal-interpreterSeryMente/metodologia
+Permissions
+Choose the minimal permissions necessary for your needs. Learn more about permissions.
+Permissions
+• ActionsWorkflows, workflow runs and artifacts.Learn more.
+• AdministrationRepository creation, deletion, settings, teams, and collaborators.Learn more.
+• Agent secretsManage agent repository secrets.Learn more.
+• Agent tasksView, create, and manage agent tasks in a repository.Learn more.
+• Agent variablesManage agent repository variables.Learn more.
+• Artifact metadataCreate and retrieve artifact metadata for a repository.Learn more.
+• AttestationsCreate and retrieve attestations for a repository.Learn more.
+• Code qualityAccess and manage code quality data for a repository.Learn more.
+• Code scanning alertsView and manage code scanning alerts.Learn more.
+• CodespacesCreate, edit, delete and list Codespaces.Learn more.
+• Codespaces lifecycle adminManage the lifecycle of Codespaces, including starting and stopping.Learn more.
+• Codespaces metadataAccess Codespaces metadata including the devcontainers and machine type.Learn more.
+• Codespaces secretsRestrict Codespaces user secrets modifications to specific repositories.Learn more.
+• Commit statusesCommit statuses.Learn more.
+• ContentsRepository contents, commits, branches, downloads, releases, and merges.Learn more.
+• Copilot agent settingsView and manage Copilot cloud agent settings for a repository.Learn more.
+• Custom propertiesRead and write repository custom properties values at the repository level, when allowed by the property.Learn more.
+• Dependabot alertsRetrieve Dependabot alerts.Learn more.
+• Dependabot secretsManage Dependabot repository secrets.Learn more.
+• DeploymentsDeployments and deployment statuses.Learn more.
+• DiscussionsDiscussions and related comments and labels.Learn more.
+• EnvironmentsManage repository environments.Learn more.
+• GitHub App installation repository accessManage which GitHub Apps can access a repositoryLearn more.
+• IssuesIssues and related comments, assignees, labels, and milestones.Learn more.
+• License compliance alertsRetrieve license compliance alerts.Learn more.
+• Merge queuesManage a repository's merge queuesLearn more.
+• MetadataRequiredSearch repositories, list collaborators, and access repository metadata.Learn more.
+• PagesRetrieve Pages statuses, configuration, and builds, as well as create new builds.Learn more.
+• Pull requestsPull requests and related comments, assignees, labels, milestones, and merges.Learn more.
+• Repository creationCreate repositories.Learn more.
+• Repository security advisoriesView and manage repository security advisories.Learn more.
+• Secret scanning alert dismissal requestsView and manage secret scanning alert dismissal requestsLearn more.
+• Secret scanning alertsView and manage secret scanning alerts.Learn more.
+• Secret scanning push protection bypass requestsReview and manage repository secret scanning push protection bypass requests.Learn more.
+• SecretsManage Actions repository secrets.Learn more.
+• VariablesManage Actions repository variables.Learn more.
+• WebhooksManage the post-receive hooks for a repository.Learn more.
+• WorkflowsUpdate GitHub Action workflow files.Learn more.
+This token will be ready for use immediately.
+October 10 at 8:22 PM
+Worked for 18s
+Sí, ese es el token. Y corrijo mi instrucción anterior: “Checks” no aparece en tu lista; te pedí activar un permiso que no está disponible en esa pantalla.
+
+Para el trabajo actual, selecciona estos niveles:
+
+Permiso visible	Nivel
+Actions	Read-only
+Commit statuses	Read-only
+Contents	Read and write
+Pull requests	Read and write
+Workflows	Read and write, porque estamos modificando archivos de workflows
+Metadata	Conserva el acceso requerido
+No necesitas habilitar Administration, Secrets ni Deployments. Actions permite consultar ejecuciones y logs; Commit statuses permite leer estados de commits. No son equivalentes a consultar check-runs.⁠
+
+⁠⁠
+
+⁠
+
+Para mantener exactamente la consulta que dio 403, la documentación contempla un token personal clásico con scope repo para repositorios privados. Eso concede acceso más amplio que tu token granular; no recomiendo sustituirlo sin necesidad.⁠
+
+⁠
+
+Mi recomendación inmediata: conserva este token granular, configura los permisos de la tabla y guarda. Después verificaremos las consultas disponibles, sin prometer que esos cambios eliminan el 403 de check-runs.
+
+October 10 at 8:23 PM
+Como resuelvo el problema?
+October 10 at 8:24 PM
+Para resolver el 403 de la consulta actual, sustituye el token granular de esta conexión por un token clásico de GitHub con permiso repo. Esa vía está documentada para consultar check-runs de repositorios privados.⁠
+
+⁠
+
+Haz esto:
+
+Abre GitHub → Personal access tokens → Tokens (classic).
+Selecciona Generate new token → Generate new token (classic).
+Ponle nombre Notion-GitHub, una caducidad corta y marca:
+repo: necesario para la consulta que está bloqueada.
+workflow: para que pueda modificar también los archivos de GitHub Actions.
+Genera el token y sustituye el Bearer token de la conexión GitHub que usas conmigo. No cambies el token almacenado dentro de Khora: es otra credencial.
+Escribe aquí «token actualizado». Repetiré la consulta y comprobaré si desapareció el 403.
+Advertencia: un token clásico con repo puede acceder a todos los repositorios privados que tu cuenta tenga autorizados; no queda limitado a los siete seleccionados del token granular. Si GitHub exige autorización de la organización, debes completarla.
+
+No pegues el token en el chat.
+
+October 10 at 8:24 PM
+No puedo usar el token atual?
+October 10 at 8:25 PM
+GitHub / pull_request_read
+Sí, puedes conservar el token actual. Me excedí al presentar el cambio a uno clásico como obligatorio.
+
+Acabo de probar otra consulta con tu token y sí pude leer los estados del PR #292. El bloqueo es específico de la consulta check-runs, no del acceso completo al repositorio.⁠
+
+⁠
+
+No generes otro token por ahora. Conserva el actual y configura Actions → Read-only para permitir lectura de ejecuciones y logs.⁠
+
+⁠
+
+Yo usaré las rutas compatibles. Los estados de commits no sustituyen los checks ni sus logs, así que no declararé las pruebas aprobadas basándome solo en esa consulta.
+
+October 10 at 8:25 PM
+Pero tienes read and write en actions, necesitas que cambie algo?
+October 10 at 8:26 PM
+No. Si Actions ya tiene “Read and write”, no necesitas cambiar ese permiso ni reemplazar el token. Incluye el acceso de lectura requerido.⁠
+
+⁠
+
+Mi indicación anterior fue incorrecta: el 403 de check-runs no demuestra que falte permiso de Actions. Conservaré el token actual; me corresponde comprobar una vía compatible para consultar ejecuciones y logs.
+
+October 10 at 8:26 PM
+Entonces por que me mencionaste el errror 403
+October 10 at 8:26 PM
+Te lo mencioné porque GitHub sí devolvió 403 al consultar los checks, y tenía que aclarar que no podía verificar sus resultados.
+
+Mi error fue el diagnóstico posterior: interpreté ese rechazo como un permiso que debías cambiar, te indiqué buscar “Checks” y después propuse reemplazar el token sin haber demostrado que fuera necesario. Te hice dar vueltas innecesarias.
+
+Lo correcto era: «Esta consulta fue rechazada; voy a comprobar otra vía con la conexión actual antes de pedirte cambios». El 403 era real; la solución que te indiqué no estaba suficientemente verificada.
+
+October 10 at 8:26 PM
+Entonces ya tienes el documento co ntodo lo necesrio para la actualizacion, es perfecto y conforme tu mas efectivo ideal?
+October 10 at 8:27 PM
+Worked for 3s
+No. Está endurecido, pero todavía no puedo afirmar que contenga todo lo necesario ni que cumpla plenamente el ideal que me pediste.
+
+La versión actual define alcance, orden de ejecución, contratos, pruebas, reversión y el criterio de «solo falta publicar en Vercel». Pero aún exige resolver datos y decisiones concretos: almacenamiento y recuperación, configuración autorizada, activos/licencias y compatibilidad del entorno. Convertir esos vacíos en bloqueos explícitos no equivale a cerrarlos.⁠
+
+⁠
+
+Además, no implementé la actualización integral de Khora: implementé un verificador y sus pruebas. El registro guardado declara expresamente ready_for_vercel=false y only_vercel_remaining=false.⁠
+
+⁠
+
+Mi entrega quedó por debajo de tu objetivo. El siguiente trabajo útil no es añadir más reglas: es cerrar los parámetros pendientes con evidencia y decisiones autorizadas, implementar los cambios reales y verificar la candidata. Solo entonces podría afirmar que el documento fue suficiente y que únicamente queda la publicación.
+
+October 10 at 8:28 PM
+Entonces resuelvelo antes de ponmerte a implementar. primero el documento. 
+October 10 at 8:39 PM
+Primero el documento; no haré más cambios de implementación.
+
+Voy a cerrar sus vacíos con las fuentes existentes y separar lo que puedo determinar de lo que requiere una decisión tuya. No añadiré otra capa de reglas ni presentaré un pendiente como resuelto. Si falta una decisión material, la consultaré antes de cerrar el canon.
+
+Worked for 2m 32s
+Encontré la rúbrica visual original y parámetros concretos del código que el canon todavía dejaba genéricos. Los incorporaré y corregiré las diferencias entre lo exigido y lo realmente implementado, incluido el despliegue automático durante el arranque. No tocaré código de Khora en esta etapa.⁠
+
+⁠⁠
+
+⁠
+
+Worked for 1m 57s
+Actualicé y verifiqué íntegramente el documento a v1.3.0. No hice más cambios de implementación. Incorporé la rúbrica original, parámetros concretos y correcciones al flujo que debe dejar únicamente Vercel pendiente.⁠
+
+⁠
+
+Para cerrar el documento faltan tres decisiones materiales que las fuentes no resuelven. No las voy a inventar ni declarar el archivo suficiente mientras sigan abiertas.
+
+¿Qué almacén privado existente autorizas para respaldos WordPress, fuentes/imágenes y registros privados? Indica servicio/cuenta o ubicación y límite de gasto permitido. No incluyas contraseñas ni tokens.
+Other: Puede servir vercel blob?
+¿Qué objetivos de respaldo y recuperación autorizas? Son requisitos que después habrá que demostrar, no garantías ya verificadas.
+Other: Que reocmiendas?
+La rúbrica original enumera diez criterios, pero no identifica los críticos. ¿Cuáles deben obtener al menos 3/5, además del promedio mínimo de 4.2/5?
+Other: Que recomiendas=
+Worked for 17s
+Sí, Vercel Blob puede servir. Recomiendo este paquete para cerrar el documento:
+
+1. Almacenamiento: Vercel Blob privado
+Para respaldos WordPress, imágenes/fuentes y registros privados, con cifrado antes de subirlos y recuperación verificada. Blob admite almacenes privados con lectura y escritura autenticadas.⁠
+
+⁠
+
+No reutilizaría a ciegas el almacenamiento actual: el código de audio de Khora escribe objetos cifrados con acceso público; eso no demuestra que exista un almacén privado preparado para respaldos.⁠
+
+⁠
+
+Los modelos grandes los recuperaría desde fuentes autorizadas, con revisión y hash fijados, en vez de duplicarlos indiscriminadamente en Blob.
+
+Límite económico recomendado: ningún gasto nuevo sin tu aprobación. Hobby tiene cuotas y puede bloquear el acceso al agotarlas; no prometeré recuperación integral gratuita sin medir volumen, operaciones y transferencias.⁠
+
+⁠
+
+2. Continuidad: protección equilibrada
+Checkpoint de cambios cada 5 minutos, mientras haya trabajo activo.
+Pérdida máxima admisible: 5 minutos.
+Recuperación objetivo: 60 minutos, comprobada mediante ensayo.
+Retención: últimos 3 checkpoints válidos y 7 respaldos diarios, conservando las dependencias necesarias para restaurarlos.
+Nunca eliminar el último respaldo válido ni subir copias completas cuando basten cambios incrementales.
+Son objetivos de aceptación, no garantías ya demostradas.
+
+3. Calidad visual: los diez criterios críticos
+Recomiendo exigir mínimo 3/5 en cada criterio y promedio mínimo 4.2/5. Así una media alta no oculta una falla grave de identidad, narrativa o calidad editorial. La evaluación final sigue siendo humana.
+
+¿Autorizas incorporar este paquete al canon, manteniendo prohibido cualquier gasto nuevo sin tu aprobación? Con esa decisión cerraré estos tres vacíos documentales; todavía no iniciaré implementación.
+
+October 10 at 8:46 PM
+Si
+October 10 at 8:47 PM
+GitHub / get_file_contents
+Incorporaré las tres decisiones aprobadas al canon y verificaré lo guardado. Mantengo el alcance: documento primero, sin cambios de implementación.
+
+Incorporar las decisiones aprobadas al canon
+Si lpo que necesito es que ya cierres e implementes de extremo a extremo, sin detenerte aunque el cielo se caiga
+October 10 at 8:47 PM
+Entendido: cierro el documento y después paso directamente a implementación, sin preguntas de trámite. Avanzaré mientras tenga una vía autorizada y verificable; no llamaré “terminado” a pruebas omitidas ni eludiré seguridad o permisos. Mantengo tu límite anterior: dejar la publicación en Vercel pendiente.
+
+Worked for 2m 19s
+Cerré las tres decisiones del documento, guardé v1.4.0 y verifiqué su contenido íntegro. Incluye Blob privado, continuidad de 5 minutos, recuperación máxima de 60 minutos y los diez criterios visuales críticos.⁠
+
+⁠
+
+Pasé a comprobar la ejecución, pero encontré bloqueos reales:
+
+Las dos terminales Windows están desconectadas. No puedo ejecutar allí PowerShell, BitLocker, restauración ni pruebas físicas.
+La solicitud de integración #292 sigue en borrador, con conflictos y sin revisiones registradas.⁠
+
+⁠
+El almacén privado, su capacidad y la recuperación completa todavía no están verificados.
+Las 10 pruebas locales del validador de preparación aprobaron, pero no equivalen a pruebas del sistema completo. Registré el estado y actualicé su integridad en la rama de preparación.⁠
+
+⁠
+
+No está implementado de extremo a extremo y no sería cierto decir que solo falta Vercel. Para avanzar con las pruebas físicas debe volver a estar accesible una terminal Windows autorizada. No fusioné ni publiqué producción.
+
+October 10 at 8:51 PM
+Sunday, Oct 11
+Dame un comando para iniciar RDC aqui en computadora dos de office depot
+10:08 AM
+Worked for 44s
+En PowerShell de la computadora 2 de Office Depot, pega esta única línea para iniciar Remote Desktop Commander (RDC), usando el comando del bootstrap vigente:⁠
+
+⁠
+
+$ErrorActionPreference='Stop'; $npx=Get-Command npx.cmd -ErrorAction SilentlyContinue; if(-not $npx){throw 'Falta Node.js/npm: no se encontro npx.cmd'}; & $npx.Source --yes '@wonderwhy-er/desktop-commander@latest' remote; if($LASTEXITCODE -ne 0){throw "RDC termino con codigo $LASTEXITCODE"}
+Deja esa ventana abierta. Si solicita autorización, complétala con la cuenta conectada a este chat. No pegues aquí códigos de autorización ni tokens.
+
+Cuando indique conexión establecida, dime «conectado»; comprobaré el dispositivo y su identidad real.
+
+10:09 AM
+PS C:\Users\PC> $ErrorActionPreference='Stop'; $npx=Get-Command npx.cmd -ErrorAction SilentlyContinue; if(-not $npx){throw 'Falta Node.js/npm: no se encontro npx.cmd'}; & $npx.Source --yes '@wonderwhy-er/desktop-commander@latest' remote; if($LASTEXITCODE -ne 0){throw "RDC termino con codigo $LASTEXITCODE"}
+Falta Node.js/npm: no se encontro npx.cmd
+En línea: 1 Carácter: 102
++ ... (-not $npx){throw 'Falta Node.js/npm: no se encontro npx.cmd'}; & $np ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++ CategoryInfo          : OperationStopped: (Falta Node.js/n...ncontro npx.cmd:String) [], RuntimeException
++ FullyQualifiedErrorId : Falta Node.js/npm: no se encontro npx.cmd
+
+PS C:\Users\PC>
+
+
+
+10:09 AM
+La compuerta abortó porque no encontró npx.cmd; eso todavía no demuestra que Node.js esté ausente. Prepararé un único comando que busque la instalación existente y, si no la encuentra, descargue una copia portátil oficial, verifique su integridad y arranque RDC sin instalar nada globalmente.
+
+Worked for 47s
+El comando anterior no encontró npx.cmd en el PATH. Pega esta única línea en la misma PowerShell: busca Node existente y, si falta, descarga una copia portátil oficial y verifica su SHA-256 antes de ejecutarla. No requiere instalación global.⁠
+
+⁠
+
+Estimación: un comando y la autorización del cliente; unos minutos según la conexión. Deja abierta la ventana cuando arranque Remote Desktop Commander (RDC). No compartas códigos ni tokens.
+
+Registrado el fallo de arranque
+$ErrorActionPreference='Stop'; [Net.ServicePointManager]::SecurityProtocol=[Net.SecurityProtocolType]::Tls12; $work=Join-Path ([IO.Path]::GetTempPath()) ('khora-rdc-'+[guid]::NewGuid().ToString('N')); New-Item -ItemType Directory -Path $work | Out-Null; $dirs=@(); $found=Get-Command npx.cmd -ErrorAction SilentlyContinue; if($found){$dirs+=Split-Path -Parent $found.Source}; foreach($base in @($env:ProgramFiles,${env:ProgramFiles(x86)},$env:LOCALAPPDATA)){if($base){$dirs+=Join-Path $base 'nodejs'; $dirs+=Join-Path $base 'Programs\nodejs'}}; $npx=$null; foreach($dir in ($dirs | Select-Object -Unique)){$candidate=Join-Path $dir 'npx.cmd'; $node=Join-Path $dir 'node.exe'; if((Test-Path -LiteralPath $candidate -PathType Leaf) -and (Test-Path -LiteralPath $node -PathType Leaf)){$version=& $node --version; if($LASTEXITCODE -eq 0 -and $version -match '^v(\d+)\.' -and [int]$Matches[1] -ge 22){$npx=$candidate; break}}}; if(-not $npx){$arch='x86'; if([Environment]::Is64BitOperatingSystem){$cpu=Get-CimInstance Win32_Processor | Select-Object -First 1; $arch=switch([int]$cpu.Architecture){9{'x64'} 12{'arm64'} default{throw 'Arquitectura Windows no compatible'}}}; $hashes=@{x64='2b0ff57b049cda1bbcea2240eec20467018713c1efe1f7360c2681859b90ed71'; arm64='33dad22e4cef5ee8f9fbb1b0d037fdacd0e56d12a4580f0d63f68b894deab535'; x86='1e07ac00e61b41b7ecf242de8e38883d237d5ad3fdcad7c16f2dd3a88670e2b6'}; $name='node-v22.23.3-win-'+$arch; $zip=Join-Path $work ($name+'.zip'); Write-Host 'Descargando Node.js portatil oficial...'; Invoke-WebRequest -UseBasicParsing -Uri ('https://nodejs.org/dist/v22.23.3/'+$name+'.zip') -OutFile $zip; if((Get-FileHash -LiteralPath $zip -Algorithm SHA256).Hash -ne $hashes[$arch]){throw 'NODE_SHA256_MISMATCH: descarga rechazada'}; Expand-Archive -LiteralPath $zip -DestinationPath $work; $npx=Join-Path (Join-Path $work $name) 'npx.cmd'}; if(-not (Test-Path -LiteralPath $npx -PathType Leaf)){throw 'No se pudo preparar npx.cmd'}; $env:PATH=(Split-Path -Parent $npx)+';'+$env:PATH; $env:npm_config_cache=Join-Path $work 'npm-cache'; Write-Host 'Iniciando RDC: deja esta ventana abierta y completa la autorizacion si se solicita.'; $old=$ErrorActionPreference; try{$ErrorActionPreference='Continue'; & $npx --yes '@wonderwhy-er/desktop-commander@latest' remote; $rc=$LASTEXITCODE}finally{$ErrorActionPreference=$old}; if($rc -ne 0){throw "RDC termino con codigo $rc"}
+10:10 AM
+Actualización para continuar sin reiniciar: la conexión Desktop Commander muestra el dispositivo 015RENTA02 en línea. Comprueba primero su identidad y si corresponde a la computadora 2 de Office Depot; no la deduzcas del nombre ni de rutas históricas.
+
+Si corresponde al equipo autorizado, retoma desde el estado real y ejecuta las pruebas pendientes de la revisión corregida. La solicitud de integración #292 sigue en borrador y con conflictos, con cabecera 6738c1f1aeffe5835a725531e0774d4420af13c5. Distingue esa rama de la candidata de preparación integral: no presupongas que son la misma entrega.
+
+Conserva cambios locales, secretos y compuertas vigentes. No fusiones ni publiques en Vercel. No repitas preparación ya verificada ni uses pruebas del verificador como certificación del sistema completo.
+
+Continúa lo independiente y autorizado. Devuelve al cerrar el siguiente hito: revisión probada, resultados y entorno, pendientes concretos para que solo falte Vercel, recomendación de siguiente paso y estimación razonada de tiempo técnico y ciclos, separando esperas externas.
+10:49 AM
+Desktop Commander Remote / List Devices
+Primero comprobaré la identidad técnica del dispositivo y la sesión local, sin atribuirle ubicación por su nombre. Si corresponden al equipo autorizado, probaré la cabecera de #292 en un checkout aislado, separado de la candidata integral. No reiniciaré, fusionaré ni publicaré.
+
+El primer hito será identidad confirmada y un primer resultado de las suites de #292; estimación inicial: 2–4 ciclos de herramientas y 15–40 minutos técnicos si el equipo, acceso y descargas están disponibles. Ajustaré el cálculo con el estado real.
+
+Worked for 16s
+La conexión responde. El proceso remoto está en la misma sesión interactiva de Windows que Explorer, con PowerShell 5.1 y Node portátil 22.23.3. Eso identifica el host y la sesión; no demuestra por sí solo su ubicación física.
+
+Completaré las comprobaciones de solo lectura. Antes de cargar código privado o ejecutar las suites en ese host, necesito tu confirmación de que el cliente conectado es el que abriste en la computadora 2 de Office Depot.
+
+Worked for 18s
+La revisión objetivo sigue siendo 6738c1f… de #292, todavía en borrador y con conflictos; no la he confundido con la candidata integral.⁠
+
+⁠
+
+En la sesión remota encontré Node/npm operativos, pero Git y GitHub CLI no están en el PATH y no apareció un checkout en las ubicaciones iniciales inspeccionadas. No he descargado código privado ni ejecutado las suites. Falta confirmar la correspondencia física del cliente.
+
+¿Confirmas que el cliente RDC conectado como 015RENTA02 es el que acabas de abrir físicamente en la computadora 2 de Office Depot y autorizas usar ese dispositivo para las pruebas aisladas de #292, sin reiniciar, fusionar ni publicar?
+Sí: es ese cliente en la computadora 2 de Office Depot; autorizo las pruebas aisladas.
+Desktop Commander Remote / start_process
+Confirmado por ti: trabajaré sobre la computadora 2 de Office Depot, con la identidad técnica ya comprobada.
+
+El preflight detectó una compuerta concreta: C: no está cifrado y no hay workspace EP montado. No voy a descargar el repositorio privado ni secretos a ese disco. Sí puedo continuar con análisis sintáctico de código suministrado en memoria, sin ejecutarlo; las suites que necesitan un checkout quedarán bloqueadas hasta disponer del workspace cifrado y acceso GitHub autorizado.
+
+La estimación inicial de 15–40 minutos ya no cubre ese aprovisionamiento: separaré esa espera de los tiempos de prueba.
+
+Worked for 4m 32s
+El primer hito de pruebas ya produjo evidencia útil sobre la cabecera de #292:
+
+El gate y Test-Arranque.ps1 pasan el análisis sintáctico en PowerShell 5.1, tras corregir la lectura de la marca BOM en el harness.
+Falla la coincidencia byte a byte entre el gate y su copia embebida: LF frente a CRLF.
+El test de arranque espera 7.5.1, mientras el gate declara 7.5.3.
+En 11 pruebas aisladas del validador real de entradas, 10 pasan y una falla el contrato de URL exacta: acepta /api/ep/.
+No he cambiado esa cabecera ni iniciado el bootstrap completo. Registraré estos resultados; las suites de checkout siguen bloqueadas por el workspace cifrado y las credenciales de acceso.
+
+Worked for 1m 1s
+Hito cerrado: identidad confirmada y primeras pruebas reales de la revisión #292 en Windows. No está lista para dejar únicamente Vercel pendiente.
+
+Revisión y entorno
+Revisión probada: 6738c1f1aeffe5835a725531e0774d4420af13c5; la cabecera permanece intacta.
+Equipo: cliente 015RENTA02, confirmado expresamente por ti como computadora 2 de Office Depot; no deduje la ubicación del nombre.
+Entorno observado: Windows 11 Pro, PowerShell 5.1.26100.7920 y Node 22.23.3. Pruebas realizadas en memoria, sin escribir el repositorio privado en el disco sin cifrar.⁠
+
+⁠
+Resultados
+Comprobación	Resultado
+Sintaxis del gate y Test-Arranque.ps1	PASS, cero errores en ambos. Se corrigió exclusivamente la lectura BOM del harness.
+Gate frente a copia embebida	FAIL: LF frente a CRLF; no coinciden byte a byte.
+Contrato de versión del test	Deriva estática: espera 7.5.1; el gate declara 7.5.3.
+Validador real de entradas del launcher	10 PASS / 1 FAIL: acepta /api/ep/, contrario al contrato de URL exacta. No demuestra un bypass de autenticación.
+Suites completas, compilación y recorrido extremo a extremo	NO EJECUTADOS, por las precondiciones indicadas abajo.
+Los resultados están registrados con su alcance y evidencia. No son pruebas del verificador de preparación ni certificación de la candidata integral.⁠
+
+⁠
+
+Pendientes para que solo falte Vercel
+Workspace cifrado de ensayo y acceso GitHub autorizado. C: está sin cifrar y no hay EP montado. No arrancar el flujo actual a ciegas: incluye publicación automática.
+Corregir las tres diferencias encontradas y probar la nueva revisión.
+Ejecutar instalación por lockfile, contratos de interfaz, comprobación de tipos, pruebas unitarias completas, build, Playwright y guards.
+Resolver conflictos y revisiones de #292, sin fusionar; comprobar la integración prevista y la evidencia de integración continua.
+Completar la candidata integral, separada de #292: staging de API/autenticación/migraciones, Blob privado y recuperación, WordPress/licencias, fundación, rollback y pruebas físicas. La generación visual positiva requiere la ubicación Cybernet autorizada y evaluación humana; no corresponde ejecutarla en Office Depot.⁠
+
+⁠
+Siguiente paso y estimación
+Recomiendo habilitar primero el workspace cifrado de ensayo y el acceso privado, sin invocar la etapa que publica Vercel.
+
+Para ese aprovisionamiento y una primera batería completa de #292: 60–120 minutos técnicos y 2–4 ciclos, suponiendo credenciales disponibles, descargas normales y sin nuevas regresiones. Las esperas por autorización, credenciales, revisiones o runners quedan aparte. Todavía no hay base suficiente para estimar el cierre integral, especialmente WordPress, recuperación y GPU.
+
+No reinicié, modifiqué código de producto, fusioné ni publiqué.
+
+Registradas pruebas y causas verificadas
+11:00 AM
+Retoma desde el hito cerrado, sin repetir las pruebas válidas ni reiniciar la investigación. Conserva como referencia #292 en 6738c1f1aeffe5835a725531e0774d4420af13c5 y distingue esa revisión de cualquier nueva candidata.
+
+No hagas depender todo el avance del workspace cifrado. Trabaja en dos frentes separados, sin colisiones:
+
+1. CERRAR LAS DIFERENCIAS YA DEMOSTRADAS
+Prepara una corrección mínima por causa:
+- Regenerar la copia embebida desde los bytes exactos del gate fijado y actualizar los artefactos de integridad afectados. Normalizar LF/CRLF para comparar texto NO satisface el contrato byte a byte.
+- Reconciliar la expectativa 7.5.1 del test con la versión real 7.5.3, comprobando antes que esa sea la versión objetivo correcta. No cambies versiones indiscriminadamente ni fixtures históricos.
+- Para /api/ep/, presenta el fragmento causal, el cambio mínimo recomendado y las pruebas de aceptación/rechazo. No lo llames bypass de autenticación. Por afectar validación de una ruta de seguridad, no lo apliques sin la revisión específica del operador.
+
+Aplica únicamente cambios cubiertos por las autorizaciones vigentes. Para cualquier cambio sujeto a una compuerta todavía pendiente, entrega un diff concreto y su recomendación, no una consulta abstracta. Continúa las demás tareas independientes.
+
+2. PREPARAR LA EJECUCIÓN SEGURA, SIN APROVISIONAR A CIEGAS
+Determina qué recurso cifrado autorizado existente puede utilizarse y cuál es la única acción habilitante mínima. Esta instrucción no autoriza crear volúmenes, cambiar cifrado, permisos, cuentas o destinos ni introducir secretos en el disco sin cifrar.
+
+No ejecutes el bootstrap completo: la ruta actual incluye publicación automática. Comprueba cómo quedará separado el ensayo de la publicación, sin eliminar autenticación ni debilitar controles.
+
+REVISIÓN INDEPENDIENTE DISPONIBLE
+La intermediaria examinó la rama test/ep-single-cycle-readiness-20261011 en 93cbcb2845239274f6ee03fe149b526e4a624238 y reprodujo con fixtures sintéticos que el validador devuelve READY_PARA_VERCEL sin campos explícitos de canon, artefacto y rollback, e ignora valores inválidos añadidos para ellos.
+
+Contrasta ese hallazgo con el manifiesto obligatorio del canon v1.4.0 y con los controles existentes. Determina si otra validación ya cubre esos requisitos; si no, prepara la corrección mínima en el mecanismo existente. No construyas otro sistema ni confundas esta reproducción sintética con evidencia operativa.
+
+CIERRE DEL PRÓXIMO HITO
+Entrega en una sola salida:
+- revisión exacta y cambios aplicados frente a propuestas pendientes;
+- pruebas causales realizadas, entorno y resultado;
+- evidencia vigente que puede reutilizarse y pruebas invalidadas;
+- única intervención material necesaria del operador;
+- tiempo técnico y ciclos restantes por hito, con supuestos y confianza, separando esperas externas.
+
+Mantén un único árbol de integración identificable. No fusiones, publiques, reinicies ni declares que solo falta Vercel mientras haya conflictos, revisiones, recursos o pruebas pendientes. Reduce ciclos agrupando trabajo independiente; no reduciendo garantías.
+11:03 AM
+Retomo las causas demostradas sin repetir sus pruebas válidas. Prepararé una única candidata identificable con las correcciones autorizadas; el cambio de validación de /api/ep/ quedará como diff pendiente de tu revisión específica.
+
+En paralelo contrastaré el hallazgo del validador con los controles existentes y buscaré recursos cifrados ya autorizados, solo en lectura. No crearé volúmenes ni ejecutaré el bootstrap. Estimo 45–90 minutos técnicos para este hito, sujeto al tamaño de la corrección del validador; separaré las esperas externas.
+
+Worked for 5m 53s
+La reproducción confirma el hueco: el validador puede aceptar recibos genéricos sin verificar canon, artefacto ni rollback. Los controles inspeccionados no lo cubren.
+
+También quedó identificada la causa de la copia embebida: Git conserva LF y el checkout de Windows usa CRLF. Corregiré la comparación contra los bytes fijados de Git, sin normalizar texto ni cambiar el gate. El ajuste de /api/ep/ quedará como diff pendiente de tu revisión específica.
+
+Worked for 4m 12s
+Las correcciones causales ya pasan sus pruebas: 18 métodos del validador en el sandbox; en la computadora autorizada, el test corregido tiene cero errores de sintaxis y la propuesta para /api/ep/ pasa 11 casos. Estas últimas pruebas ejecutaron solo la función aislada, no el bootstrap ni la autenticación real.
+
+El equipo no tiene un recurso cifrado conectado utilizable. Además, el bootstrap sigue incluyendo publicación automática y operaciones de repositorio que no ejecutaré sobre tu trabajo. Estoy cerrando el paquete único de cambios, integridad y propuestas pendientes; aún no equivale a «solo falta Vercel».
+
+Worked for 3m 45s
+Preparé y probé las correcciones causales en un único paquete. La integración sigue BLOQUEADA: todavía no queda únicamente Vercel. No fusioné, publiqué, reinicié ni ejecuté el bootstrap.⁠
+
+⁠
+
+Revisión exacta y cambios
+Referencia conservada: solicitud #292 en 6738c1f1aeffe5835a725531e0774d4420af13c5.
+Validador de origen, distinto: 93cbcb2845239274f6ee03fe149b526e4a624238.
+Correcciones: superposición de nueve archivos, identificada por SHA-256 041d203ae726bcd0e4303bc674582867705e577bc9e00c164fd83fb467a579c7. No es un commit integrado del producto.
+La rama fix/ep-causal-integrity-20261011-1704 continúa en la referencia original. No empujé código porque no pude verificar si la integración externa dispararía una publicación automática de preview en Vercel.⁠
+
+⁠
+Aplicado y probado en el sandbox:
+
+Copia embebida regenerada desde los bytes exactos del gate fijado en Git, sin normalización textual.
+Expectativa actual de Test-Arranque: 7.5.1 → 7.5.3, corroborada contra las fuentes fijadas. Sin cambiar versiones runtime ni fixtures históricos.
+Validador existente endurecido: exige canon, artefacto y rollback explícitos, verifica archivos por sus bytes y liga los recibos a esos campos.
+Integridad afectada actualizada, conservando las entradas restantes. Se distingue el hash del blob Git del hash del checkout CRLF.⁠
+
+⁠
+Pruebas y entorno
+Prueba causal	Resultado
+Validador corregido, Python 3.13, sandbox Linux	18 métodos PASS, con rechazos parametrizados
+Reproducción del hallazgo de la intermediaria	Los campos ausentes/inválidos ahora producen BLOCKED
+Diff y hashes afectados, fixture Git parcial	PASS
+Test-Arranque corregido, PowerShell 5.1 en 015RENTA02	Cero errores de sintaxis, hash correcto
+Propuesta /api/ep/, función aislada en ese equipo	11/11 casos PASS
+Estas pruebas no certifican el producto completo, la autenticación real, el build, la recuperación física ni el ensayo de extremo a extremo.⁠
+
+⁠
+
+Propuestas pendientes, no aplicadas
+Para /api/ep/, el fragmento causal y cambio mínimo recomendado son:
+
+- $uri.AbsolutePath.TrimEnd('/') -ne '/api/ep'
++ $uri.AbsolutePath -ne '/api/ep'
+La propuesta acepta la ruta HTTPS esperada y rechaza la barra final, además de conservar los rechazos probados para HTTP, query, fragmento, userinfo, ruta incorrecta y tokens inválidos. Requiere tu revisión específica de seguridad; no la apliqué al gate.⁠
+
+⁠
+
+El bootstrap tampoco es un ensayo seguro: contiene publicación automática, reset --hard y selección de otra rama de trabajo. El paquete incluye una guardia propuesta, pero no una separación integral prepare-only ya implementada.⁠
+
+⁠
+
+Habilitación y siguiente paso
+Única acción habilitante de almacenamiento: conectar/desbloquear una EP cifrada existente y ya autorizada, y verificar su identidad, cifrado y ruta. No encontré una utilizable conectada al equipo; no aprovisioné nada ni escribí secretos o checkout privado en su disco.⁠
+
+⁠
+
+No puedo convertir todos los bloqueos en una sola intervención: esa habilitación y la revisión específica del diff son independientes. Recomiendo resolverlas antes de ejecutar una sesión integral.
+
+Se reutilizan el parser del gate sin cambios y las evidencias de identidad/versiones mientras no cambien sus supuestos. Quedan invalidadas la copia embebida anterior, la expectativa 7.5.1 y las pruebas/recibos afectados por el validador modificado.⁠
+
+⁠
+
+Estimación restante por hito
+Hito, con insumos disponibles	Tiempo técnico	Ciclos	Confianza
+Cambio de ruta y separación mínima probada	45–90 min	1–2	Media
+Verificar recurso cifrado existente	10–20 min	1	Media
+Integración sin conflictos y build	60–120 min	1–2	Baja–media
+Ensayo y restauración por entorno	60–120 min	1–2	Baja
+Esperas del operador, CI, proveedores y activos van aparte. El cierre integral aún no tiene una duración responsablemente estimable.
+
+KHORA-EP-hito-causal-041d203ae726
+.zip
+Fuente cargada: NX-329m.
+
+11:19 AM
+Retoma desde el paquete KHORA-EP-hito-causal-041d203ae726.zip. La intermediaria comprobó en Descargas que los nueve archivos de overlay coinciden con los hashes de overlay-index.json. Eso acredita integridad del contenido, no integración ni funcionamiento del producto.
+
+Conserva las correcciones y evidencias válidas. No repitas los 18 métodos ni los 11 casos salvo que cambien sus archivos o supuestos. El siguiente hito debe resolver decisiones concretas y preparar la integración, no producir otra auditoría general.
+
+1. SEPARACIÓN REAL DEL ENSAYO
+La guardia pendiente de Start-Sesion es una contención, no una implementación prepare-only. Presenta un diff mínimo sobre los componentes existentes y una recomendación única para:
+- ensayar la candidata exacta sin importar VERCEL_TOKEN ni publicar, promover alias o disparar workflows productivos;
+- preservar autenticación, comprobación de procedencia, cifrado y registro;
+- no ejecutar reset --hard ni seleccionar otra rama sobre trabajo existente;
+- conservar el funcionamiento productivo autorizado, sin crear otro launcher ni una arquitectura paralela.
+
+Antes de construir cambios sujetos a revisión de arquitectura/seguridad, muestra el comportamiento propuesto y sus consecuencias al operador. No interpretes este prompt como esa aprobación. Sí puedes continuar la inspección y las pruebas independientes de mecanismos ya autorizados.
+
+2. ROTACIÓN DE CONTRASEÑA MAESTRA
+Añade al cierre del requisito existente este hallazgo sobre #292 en 6738c1f1aeffe5835a725531e0774d4420af13c5:
+una prueba aislada ejecutó setEpMasterPassword, emitió cookie, volvió a ejecutar setEpMasterPassword y readEpMasterEmail siguió aceptando la cookie anterior. Se usaron DB simulada y secretos sintéticos; no es una prueba del despliegue.
+
+Contrasta la causa en ep-master-password.ts, ep-master-session.ts y sus consumidores. Propón una corrección mínima para invalidar inmediatamente sesiones maestras anteriores, preservando OIDC general, scopes y separación de credenciales. No rotes secretos reales ni apliques cambios de seguridad sin revisión específica.
+
+Aceptación: cookie anterior rechazada tras rotación; nueva autenticación válida; contraseña anterior rechazada; expiración y aislamiento conservados. Distingue cookies maestras de tokens de bootstrap y delimita qué exige el contrato para cada uno.
+
+3. REVISIÓN DEL OPERADOR SIN VUELTAS
+Consolida en una sola salida las decisiones pendientes:
+A. URL exacta /api/ep.
+B. Comportamiento seguro prepare-only.
+C. Invalidación tras rotación.
+
+Para cada una: diff concreto, recomendación, consecuencias, prueba de aceptación y alcance preciso de aprobación. No las mezcles con la conexión del recurso cifrado ni atribuyas aprobación por silencio.
+
+4. CONTINÚA LO INDEPENDIENTE
+Prepara la integración local aislada respecto de la baseline vigente, sin push, merge ni publicación. No repitas la búsqueda de almacenamiento salvo que exista una señal de recurso conectado. No escribas checkout privado o secretos en C: sin cifrar.
+
+Entrega una revisión o árbol identificable, cambios frente a propuestas, resultados causales y siguiente acción material mínima. Actualiza tiempo y ciclos por trabajo restante, separando esperas y tareas paralelas; no sumes rangos solapados ni mantengas estimaciones que ya perdieron sus supuestos.
+11:57 AM
+Retomo el paquete verificado sin repetir las suites válidas. Prepararé un solo árbol local, separado de las propuestas A/B/C, y mostraré sus diffs y consecuencias antes de tocar seguridad o arquitectura. No haré push, merge, publicación ni nuevas sondas de almacenamiento.
+
+Worked for 3m 44s
+La causa de la rotación está localizada: setEpMasterPassword cambia sal y verificador, pero la cookie solo comprueba firma y tiempo; no consulta la generación vigente de la contraseña. Sus consumidores incluyen el servidor EP y el middleware.
+
+Te propongo dos comportamientos, todavía sin aprobación ni aplicación:
+
+B: un ensayo finito en el mismo gate, sobre una candidata aislada ya existente: verifica autenticación, cifrado, origen y SHA; excluye Vercel; no resetea, cambia ramas ni entra al supervisor productivo.
+C: ligar la cookie a una generación opaca derivada de la sal que ya cambia al rotar, y comprobarla sin caché en cada autorización maestra. Esto cerraría cookies antiguas, no sesiones OIDC ni tokens de bootstrap ya emitidos.
+Prepararé los diffs concretos para que esas consecuencias puedan revisarse junto con A.
+
+Worked for 1m 25s
+Incorpora este requisito explícito al objetivo, sin reiniciar ni descartar las correcciones actuales: Khora debe tener una implementación local canónica, consistente entre ubicaciones, terminales y tipos de sesión, como instancia hermana de la web.
+
+Reutiliza el mismo código y contratos. Arrancar una sesión local no debe publicar en Vercel. Identifica la revisión local y su compatibilidad con la versión web; no exijas desplegar cada cambio para trabajar.
+
+Inspecciona autenticación, almacenamiento, sincronización y ciclo de vida existentes antes de proponer cambios. No conviertas PLAYWRIGHT_TEST_RUN o PLAYWRIGHT_TEST_BYPASS en autenticación operativa. No presupongas que OIDC es imposible localmente: distingue una restricción de configuración del requisito del operador de no depender del inicio de sesión web.
+
+Recomienda una única solución mínima para:
+1. Acceso local autorizado, ligado a la sesión efímera, sin ampliar acceso anónimo remoto.
+2. Mismo contenido de usuario, reutilizando fuentes persistentes existentes y evitando bases paralelas.
+3. Cambios simultáneos, desconexión, reintentos y recuperación sin duplicación ni sobrescritura silenciosa.
+4. Servidor limitado a loopback y perfil de navegador, cachés, temporales y secretos dentro del entorno cifrado.
+5. Cierre manual, muerte de procesos, inactividad, reinicio y pérdida de red, con revocación y limpieza verificables.
+6. Arranque sin publicación, reset destructivo ni cambio inesperado de rama.
+
+Distingue qué existe, qué debe modificarse y qué no está probado. Explica especialmente el destino de cambios todavía no sincronizados cuando se activa el hombre muerto: no prometas recuperación de datos nunca persistidos ni conservación fuera del perímetro autorizado.
+
+Presenta el cambio mínimo de arquitectura y seguridad para revisión específica del operador antes de construirlo. Esta instrucción fija el resultado deseado, no aprueba por silencio un mecanismo de identidad, permisos, almacenamiento o eliminación.
+
+Consolida esa decisión con las propuestas pendientes relacionadas para evitar rondas separadas. Continúa mientras tanto las tareas ya autorizadas e independientes.
+
+Devuelve primero una visión general comprensible: dónde estamos, qué avanzó, qué bloquea y próximo hito. Después, recomendación concreta, cambios necesarios, pruebas de aceptación y estimación por trabajo pendiente, separando esperas externas. No crees otro producto, launcher, tablero ni documento paralelo si puede actualizarse la fuente existente.
+12:03 PM
+Lo incorporo como ampliación del objetivo, no como reinicio: la instancia local canónica será hermana de la web, con el mismo código y contenido, y su arranque no publicará.
+
+Consolidaré esto dentro de B, junto con A y C. Primero contrastaré la autenticación, persistencia, sincronización y cierre que ya existen. En particular, no usaré los bypass de Playwright como acceso operativo ni presentaré la credencial EP limitada como autorización general de Khora.
+
+Worked for 6m 55s
+Stopped by a usage policy.
+12:11 PM

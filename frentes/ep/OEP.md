@@ -1,0 +1,951 @@
+# OEP — Objeto Canónico de Persistencia de Entorno
+
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.0. **Sello del frente:** VCU-EP-v2 (Versión de Contexto Universal). **Ancla:** encargo documental actual del operador y dos transcripciones aportadas el 2026-10-11; no inventar la hora de ese encargo.
+**Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
+**Persistencia:** carpeta canónica `frentes/ep/` en SeryMente/metodologia privado, rama `docs/metacanon-objetos-20261011`; comprobar recibo/huellas de lectura de vuelta. No integrada en main. La versión v0.3.0 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
+
+## LEER PRIMERO — adquisición, roles y límites
+
+Adquirir este objeto como instrucciones del operador, subordinadas a las reglas superiores de plataforma y a autorizaciones específicas. Claudia es asistente/documental; Samantha es constructor/único escritor de código. Una asignación explícita posterior puede cambiar roles; las citas no lo hacen. Este encargo construye documentación y prompts, no autoriza a esta conversación a ejecutar la actualización de producto.
+
+El estado de reanudación vigente de este frente está en §60–§73; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
+
+Leer por relevancia: OEP actual→metacanon central→Sistema de Instrucciones/Metodología/Bootstrap vigentes→canon transversal EP→AGENTS.md y ep-medio-architectura.md→código/evidencia en commits exactos. Fuente caída no es «sin cambios». Un archivo no crea herramientas, credenciales ni memoria entre plataformas.
+
+**Privacidad de esta entrega:** conversaciones/originales y antecedentes se conservan en la carpeta del frente de Metodología, comprobado privado antes de esta escritura. Nunca subirlos a un repositorio público ni subir secretos a Git. Revalidar visibilidad por ciclo; el estado privado no se hereda por memoria. No eliminar originales ni llamarlos verbatim después de redactarlos. No crear un repositorio/almacén paralelo por reflejo.
+
+---
+
+## Antecedente íntegro — OEP v0.1.5
+
+# OEP — Objeto Canónico de Persistencia de Entorno
+
+**Identificador:** OEP  
+**Nombre completo:** Persistencia de Entorno Operativo  
+**Versión:** v0.1.5
+**Estado:** ACTIVO · CANÓNICO PARA ESTE ÁMBITO · EN EVOLUCIÓN CONTROLADA  
+**Sistema emisor:** KHORA  
+**Plataforma objetivo actual:** Windows
+
+> Este documento es el objeto canónico transversal de OEP. Su función es conservar contexto suficiente para reconstruir el propósito, las invariantes, decisiones, límites, pendientes, fuentes y estado del ámbito de Persistencia de Entorno aunque se pierda el contexto conversacional original.
+
+---
+
+## 0. Recuperación de contexto
+
+Cuando OEP sea recuperado sin el contexto conversacional original, leer en este orden: identidad y versión; fuentes canónicas; invariantes; decisiones; estado; pendientes; desafío activo. No reconstruir por memoria una decisión que esté escrita aquí o en una fuente de mayor autoridad. Ante conflicto, prevalece la fuente de mayor autoridad; si ninguna lo resuelve, el asunto queda BLOQUEADO y se solicita únicamente lo necesario.
+
+## 1. Fuentes canónicas
+
+**Fuente técnica primaria existente:** `SeryMente/khora/ep-medio-architectura.md`, versión observada `v1.0.4`. Es la especificación normativa existente de Entorno Persistente Medio.
+
+**Fuente metodológica superior:** `SeryMente/metodologia/SI-METACOGNITIVO.md`, versión observada `v1.6.8`, nombre de versión **Continuidad Canónica entre Conversaciones**.
+
+**Snapshot de KHORA observado al canonizar OEP:** `main` = `019d7ab396534148db111b7860697ec7c8029d81`. SHA verificado en este ciclo después de integrar las correcciones de toolchain y bootstrap.
+
+**Blob actual de arquitectura EP:** `382e4a929a984a96926fd6f9080f80bedd109a0b`.
+
+## 2. Propósito
+
+OEP proporciona una continuidad de trabajo persistente en su identidad y estado remoto, pero efímera en su materialización local. La computadora donde se trabaja es un medio temporal, no el ancla principal de continuidad.
+
+**Principio rector:** persistencia remota + materialización local efímera + adaptación al host + recuperación verificable.
+
+## 3. Modelo de continuidad
+
+Una misma continuidad lógica atraviesa múltiples instancias locales. Cambiar de computadora o ubicación no equivale a comenzar un trabajo nuevo. La continuidad debe quedar respaldada por repositorios remotos y demás estados autorizados.
+
+## 4. Ubicaciones objetivo actuales
+
+Perfiles iniciales: `LOC-CSEC`, `LOC-OFFICE-DEPOT`, `LOC-LUIS-PASTEUR`.
+
+Las ubicaciones son perfiles de adaptación de un único motor OEP. No deben convertirse en implementaciones independientes.
+
+## 5. Perfil de ubicación / host
+
+Cada materialización debe poder asociarse a un perfil de host que describa como mínimo: Windows y versión; PowerShell; privilegios; BitLocker; espacio libre; Escritorio real del usuario interactivo; escritura local; HTTPS; Git; GitHub CLI; Node.js/npm; Python; Vercel CLI; Visual Studio Code; Notepad++; Chrome; OBS; cámara virtual de OBS; AutoHotkey 2.0; políticas del host; herramientas reutilizables; faltantes e incompatibles.
+
+Estados recomendados: `AVAILABLE`, `AVAILABLE_COMPATIBLE`, `MISSING`, `INCOMPATIBLE`, `BLOCKED`, `NOT_VERIFIED`.
+
+La existencia de una herramienta no implica que pueda reutilizarse.
+
+## 6. Experiencia de arranque objetivo
+
+Llegar a una computadora → abrir KHORA → autenticarse → obtener credencial OEP → recibir de KHORA el comando PowerShell → ejecutar launcher → detectar host → seleccionar/adoptar perfil → materializar únicamente lo necesario → quedar operativo → trabajar → cerrar o perder sesión → volatilizar instancia local.
+
+La intervención manual y el tiempo de arranque deben minimizarse y medirse.
+
+## 7. Regla de desarrollo ciclo a ciclo
+
+Se resuelve un desafío concreto por ciclo. Cada ciclo registra desafío, contexto utilizado, análisis, solución, cambios incorporados, evidencia y nuevos pendientes.
+
+Si el desafío no puede resolverse cabalmente con la información disponible, se detiene la ejecución sustantiva y se solicita únicamente lo necesario.
+
+Estados: `RESUELTO`, `PARCIALMENTE_RESUELTO`, `BLOQUEADO`, `NO-VERIFICADO`, `PENDIENTE`.
+
+## 8. Taxonomía del conocimiento
+
+`FACTO-CANONICO` = existe en fuente normativa o implementación verificable.  
+`DECISION-OEP` = decisión adoptada explícitamente.  
+`REQUISITO-OEP` = necesidad declarada aún sujeta a diseño.  
+`PROPUESTA` = alternativa no adoptada.  
+`PENDIENTE` = asunto no resuelto.  
+`NO-VERIFICADO` = no probado suficientemente.
+
+Lo no escrito no debe inventarse.
+
+## 9. KHORA como autoridad de emisión
+
+KHORA es el sistema emisor del launcher de OEP. Flujo: KHORA → autenticación → credencial de sesión OEP → launcher PowerShell → bootstrap OEP.
+
+**GitHub Gist queda descartado** como mecanismo de distribución del launcher o recuperación de secretos.
+
+## 10. Launcher PowerShell
+
+Debe ser emitido por KHORA, estar libre de secretos incrustados, soportar Windows PowerShell 5.1 como mínimo actual, recuperar el bootstrap autorizado, adaptarse al host, no exponer el token en historial/salida/argumentos de proceso, limpiar temporales y credenciales y producir errores identificables.
+
+La implementación existente de EP debe ser la base antes de crear un mecanismo paralelo.
+
+## 11. Autenticación
+
+### 11.1 OIDC
+Google OIDC permanece como identidad primaria de KHORA. OEP no reemplaza la autenticación global de KHORA.
+
+### 11.2 Acceso rápido específico de OEP
+Se adopta como dirección de diseño una credencial rápida específica, provisionalmente denominada `OEP Master Password`, para reducir la fricción de arranque sin convertirla automáticamente en credencial primaria global.
+
+Modelo: OIDC → identidad primaria de KHORA. OEP Master Password → acceso rápido y limitado a la emisión/inicio de OEP.
+
+### 11.3 Mínimo privilegio
+Debe limitarse al ámbito OEP y no adquirir automáticamente administración general de KHORA, acceso general a secretos o acceso irrestricto a repositorios.
+
+### 11.4 Seguridad
+El diseño debe resolver verificador seguro, derivación resistente a fuerza bruta, salt, rate limiting, bloqueo, revocación, rotación, recuperación, invalidación, protección contra enumeración y reuso. Nunca almacenar la contraseña en claro ni incrustarla en el launcher.
+
+## 12. Token de sesión OEP
+
+El token emitido por KHORA debe ser efímero, asociado a sesión, revocable, limitado por scopes, identificable y protegido contra exposición. La arquitectura EP vigente ya contempla `sid`, `jti`, expiración, scopes, audiencia, emisor, revocación y asociación a usuario.
+
+## 13. Token vs raíz criptográfica
+
+**Pendiente crítico.** La intención aportada contempla utilizar el token de KHORA como llave o componente de la llave de arranque/cifrado. EP Medio v1.0.1 actualmente separa token Khora para bootstrap/logs/autorización y llave de bóveda para raíz criptográfica/BitLocker/perfil. Hasta una decisión explícita: **token de sesión OEP ≠ automáticamente raíz criptográfica**.
+
+## 14. Invariante de cifrado
+
+Los repositorios no deben quedar materializados innecesariamente en claro fuera del perímetro protegido. Modelo: crear perímetro protegido → materializar dentro → trabajar dentro → destruir. No descargar/descomprimir en claro y cifrar después si ello deja una copia externa. La implementación EP vigente utiliza VHDX + BitLocker como perímetro actual.
+
+## 15. Workspace
+
+La raíz lógica deseada es `<Escritorio>/EP/`.
+
+Estructura conceptual: `EP/Gestor-de-Procesos/`, `EP/Signal-Interpreter/`, `EP/Armonía/`, `EP/KHORA/` y otros repositorios seleccionados.
+
+Cada repositorio seleccionado bajo `SeryMente` corresponde a una carpeta de trabajo determinista dentro de `EP`. Armonía es futura y no obliga a materialización en todas las sesiones.
+
+## 16. Extensiones Chrome
+
+Extensiones actuales: Gestor de Procesos y Signal Interpreter. Extensión prevista: Armonía.
+
+Para una extensión Chrome, la carpeta de trabajo del repositorio es directamente la raíz cargable de Chrome. El `manifest.json` vive en esa raíz cuando el proyecto así lo requiera. No crear una copia adicional solo para instalar.
+
+## 17. Selección de repositorios
+
+OEP debe soportar materialización total y subconjuntos. La selección debe formar parte de una configuración de sesión reproducible.
+
+## 18. Manifiesto de sesión
+
+El diseño futuro debe permitir un descriptor reproducible con sesión, perfil de ubicación, repositorios, herramientas, capacidades, preferencias del workspace y políticas de seguridad.
+
+## 19. Herramientas obligatorias
+
+**Visual Studio Code:** IDE principal; conservar la estrategia portátil/persistible de EP cuando sea compatible.
+
+**Notepad++:** obligatorio para edición rápida y bloc de notas híbrido; detectar → verificar → reutilizar si válido → instalar si falta.
+
+**OBS:** objetivo inmediato disponer de cámara virtual; detectar → verificar compatibilidad → verificar cámara virtual → reutilizar o instalar.
+
+**AutoHotkey 2.0:** obligatorio; verificar existencia, versión, ejecución y compatibilidad.
+
+**Google Chrome:** necesario para KHORA, autenticación, extensiones y operación web.
+
+**Git / GitHub CLI / Node.js / npm / Python / Vercel:** dependencias de infraestructura según necesidades de repositorios y despliegues.
+
+## 20. Política de host verificado
+
+Una herramienta del host solo puede reutilizarse si cumple versión, seguridad/firma cuando corresponda, aislamiento de configuración/cachés y contrato OEP. Esto corresponde al principio existente `allow-verified-host`.
+
+## 21. Descubrimiento del Escritorio
+
+El Escritorio se descubre dinámicamente. No asumir una ruta fija. El workspace se crea a partir del Escritorio real del usuario interactivo.
+
+## 22. Bootstrap adaptativo
+
+El bootstrap debe seguir: detección → perfil → evaluación → reutilizar / instalar / reparar / bloquear.
+
+No asumir Git, npm, Python, OBS, Notepad++, AutoHotkey, BitLocker, privilegios, PATH completo, rutas estándar ni políticas permisivas.
+
+## 23. Persistencia remota
+
+La continuidad debe quedar respaldada por repositorios, ramas de continuidad, estados remotos autorizados, perfiles persistibles, bitácoras remotas y otros artefactos explícitamente persistentes.
+
+La instancia local nunca debe ser el único portador de continuidad.
+
+## 24. Git y continuidad
+
+EP vigente utiliza ramas `ep-wip/*` para trabajo en progreso. Cuando una etapa requiere persistencia confirmada, el éxito debe verificarse por SHA local = SHA remoto cuando el contrato lo exige.
+
+## 25. Bitácora
+
+EP vigente utiliza un registro local técnico dentro del perímetro y un libro mayor remoto persistente. La bitácora remota debe sobrevivir cierre abrupto, muerte de procesos, eliminación local y reinicio. La estructura existente usa `ep_sessions`, `ep_bootstrap_tokens` y `ep_events`.
+
+## 26. Integridad de bitácora
+
+La arquitectura existente encadena eventos mediante `SHA-256(hash_anterior || representación_canónica_del_evento)` para detectar supresión, reordenamiento y modificación posterior. El reloj de servidor es autoritativo.
+
+## 27. Identificadores estables
+
+EP vigente utiliza `EP-IN-xxx`, `EP-RUN-xxx` y `EP-OUT-xxx`. No renumerar ni reutilizar identificadores existentes.
+
+## 28. Dead-man trigger
+
+El mecanismo de hombre muerto ya existe en EP y OEP debe reutilizarlo. Si la sesión operativa deja de estar bajo control autorizado, la instancia local debe tender a la volatilización segura. Se contemplan cierre normal, cierre de VS Code, muerte de terminal/supervisor, inactividad, reinicio y vigilancia.
+
+Ante conflicto entre continuidad y confidencialidad, prevalece la confidencialidad.
+
+## 29. Limpieza
+
+Secuencia conceptual: aceptar motivo → detener procesos → persistir lo necesario → verificar continuidad remota → purgar secretos → bloquear → desmontar → eliminar contenedor → eliminar carpeta exterior → retirar tarea solo tras confirmar ausencia de residuos → cerrar sesión OEP remotamente.
+
+Un fallo de continuidad no debe impedir la limpieza crítica.
+
+## 30. Reinicio inesperado
+
+La tarea de arranque de limpieza debe detectar residuos, intentar limpiarlos, confirmar eliminación y permanecer armada si quedan residuos. No crear cuarentena local permanente para residuos sensibles.
+
+## 31. Gestión de secretos
+
+No deben aparecer secretos en historial, logs, salida, argumentos de proceso, repositorios, archivos temporales innecesarios ni portapapeles después de su uso. Debe limpiarse token, variables sensibles, blobs temporales, portapapeles y artefactos de bootstrap.
+
+## 32. Cachés y configuración
+
+Cuando formen parte de la sesión, TEMP, TMP, GH_CONFIG_DIR, GIT_CONFIG_GLOBAL, NPM_CONFIG_CACHE, PIP_CACHE_DIR, XDG_CONFIG_HOME y XDG_DATA_HOME deben redirigirse al perímetro OEP.
+
+## 33. Perfil de VS Code
+
+Persistir configuración útil y extensiones/listas necesarias; reconstruir binarios cuando sea necesario; mantener el estado persistido cifrado; evitar secretos en el perfil.
+
+## 34. Clasificación del estado local
+
+Cada componente local debe clasificarse como `PERSISTENTE`, `RECONSTRUIBLE` o `EFÍMERO`. Un componente necesario para continuidad que no esté respaldado remotamente es una deficiencia arquitectónica que debe registrarse.
+
+## 35. Rendimiento
+
+Objetivo: minimizar el tiempo entre autenticación y entorno utilizable. Cada etapa crítica registra START, estado terminal, duración e identificador estable. Optimizar con mediciones reales.
+
+## 36. Evolución del bootstrap
+
+La mejora basada en uso real sigue: fallo observado → causa → solución → prueba → versión → evidencia → integración. No se considera aprendizaje válido un cambio improvisado sin evidencia. Las causas conocidas no deben repetirse deliberadamente.
+
+## 37. Estados de sesión
+
+Estados conceptuales: `NEW`, `AUTHENTICATED`, `BOOTSTRAPPING`, `PROFILED`, `PROVISIONING`, `MATERIALIZING`, `READY`, `WORKING`, `FINALIZING`, `CLEANING`, `CLOSED`, `FAILED`, `BLOCKED`, `RECOVERY_REQUIRED`.
+
+## 38. Continuidad remota
+
+Estados conceptuales: `REMOTE_CONTINUITY_OK`, `REMOTE_CONTINUITY_PENDING`, `REMOTE_CONTINUITY_FAILED`. Una sesión local `READY` no implica automáticamente continuidad remota confirmada.
+
+## 39. Condición de operativo
+
+Solo declarar una sesión operativa cuando el host es compatible, el perímetro está protegido, las herramientas requeridas están listas, los repositorios requeridos están materializados, la continuidad remota es válida, la vigilancia está activa y las superficies previstas son correctas.
+
+## 40. Reconciliación
+
+Si estado local y remoto discrepan: **NO ELEGIR SILENCIOSAMENTE**. Determinar versión, SHA, sesión, autoría, conflicto y posibilidad de preservación. Ante incertidumbre material: `BLOCKED`.
+
+## 41. SHA como identidad técnica
+
+Cuando una afirmación dependa de contenido, versión o despliegue concreto, preferir el SHA exacto. `main`, `latest` o `production` no sustituyen una identidad exacta cuando se requiere precisión.
+
+## 42. Publicación de main
+
+EP vigente contiene `EP-IN-080`, que exige publicación y verificación del SHA exacto de `main` y restauración posterior de `ep-wip/*`. OEP conserva esta propiedad mientras siga vigente en EP.
+
+## 43. Límites del modelo de amenaza
+
+OEP protege principalmente datos en reposo, copias físicas, residuos locales y materialización efímera. No afirma aislar el volumen contra malware con privilegios equivalentes ni contra un host ya comprometido mientras el entorno está montado.
+
+## 44. RDC
+
+RDC forma parte del contexto operativo cuando el ciclo requiera acceso al host, diagnóstico, ejecución, revisión de sesiones o reinstanciación. El estado RDC debe observarse de forma real y no inferirse. Se prevé capacidad para revisar sesiones RDC desde OEP.
+
+## 45. OEP Hub
+
+Se prevé un Hub gráfico como capa superior para iniciar, seleccionar repositorios, seleccionar perfil, editar configuración, obtener launcher, ver estado, revisar RDC y finalizar. El Hub no debe contener como única copia la lógica crítica del núcleo.
+
+## 46. Independencia del mecanismo de acceso
+
+OEP conserva su identidad aunque se acceda mediante navegador, KHORA, PowerShell, RDC, Hub futuro u otro mecanismo autorizado. La interfaz no define el sistema.
+
+## 47. Ciclo operativo 001 — Perfil de host
+
+**Desafío:** hacer que OEP conozca las capacidades y señales del host antes de declarar el entorno operativo.
+
+**Implementado:** `scripts/khora/khora.ps1` amplía `EP-IN-010` para capturar un perfil `oep-host-profile/v1` y lo persiste dentro del volumen cifrado como `session-state/host-profile.v1.json`; `session-manifest.json` registra esquema, ruta y clasificación. `modules/00-config.ps1` carga el perfil para etapas posteriores.
+
+**Evidencia RDC en PC-7:** Windows 11 Pro build 26200; usuario `PC 7`; administrador `true`; Escritorio `C:\Users\PC 7\Desktop`; ~1002.28 GiB libres en C:; Git y GitHub CLI portátiles presentes en `Desktop\_BootstrapTools`; Node.js y npm presentes; Python resuelve a WindowsApps; VS Code, Notepad++, OBS y AutoHotkey no encontrados por `Get-Command`.
+
+**Señales de administración:** `cyberclient`, `cyberclientproxy`, `vigia`, `DFLocker64` y otras; clasificación `managed-or-public-suspected`, sin inferir ubicación.
+
+**BitLocker del sistema observado:** `FullyEncrypted`, `Protection=Off`, `XtsAes128`, `100%`. Describe C: y **no equivale a EP-IN-030**, que verifica el VHDX de trabajo con XTS-AES-256 y protección activa.
+
+**Resultado:** `RESUELTO` para captura/persistencia del perfil; `NO-VERIFICADO` para bootstrap OEP completo en este host.
+
+## 47.1 Ciclo operativo 003 — Reutilización verificable del toolchain del host
+
+**Desafío:** hacer que OEP/KHORA reutilicen instalaciones válidas del host aunque no estén en `PATH`, y que el bootstrap no dependa de `npm.ps1` cuando la política de ejecución lo bloquee.
+
+**Cambios integrados en KHORA:**
+- `scripts/khora/khora.ps1` añade resolución determinista de herramientas en rutas estándar del host y evita tratar el alias de Python en `WindowsApps` como instalación válida.
+- `scripts/khora/modules/08-deps.ps1` reutiliza Git, GitHub CLI, Node.js y Python encontrados en rutas estándar y resuelve npm mediante `npm.cmd`.
+- `scripts/khora/modules/00-config.ps1` queda alineado con `SCRIPT_VERSION = 7.5.2`.
+- `tests/validate_ep.py` exige la presencia del resolvedor de herramientas y de `npm.cmd`.
+- `ep-medio-architectura.md` documenta el contrato de reutilización de herramientas del host.
+- `khora-web/lib/server/ep-bootstrap-content.ts` fue regenerado para mantener el bootstrap embebido byte-equivalente al gate.
+
+**Evidencia real en PC-7 mediante RDC:**
+- PowerShell 5.1.26100.9168.
+- Usuario interactivo `PC 7`; administrador `true`.
+- Escritorio `C:\Users\PC 7\Desktop`.
+- Espacio libre medido: ~1008.32 GiB.
+- BitLocker disponible en el sistema.
+- Node.js `v24.20.0`; npm `11.19.0` mediante `npm.cmd`.
+- Git `2.55.0.windows.5`.
+- GitHub CLI `2.102.0`.
+- Python `3.11.9`.
+- Notepad++ `8.9.8.1`.
+- OBS Studio `32.2.2`.
+- AutoHotkey 2.0.29.
+- No se verificó todavía cámara virtual de OBS.
+- En el cierre del ciclo 003, GitHub CLI quedó instalado pero sin autenticación persistente; esa condición histórica se resolvió durante el ciclo 004 mediante autorización web y verificación de la sesión.
+
+**Resultado:** `PARCIALMENTE_RESUELTO`. La reutilización y detección robusta fueron integradas en código y el toolchain quedó materializado en el host real. La ejecución end-to-end de KHORA/OEP permanece `NO-VERIFICADA` hasta completar autenticación GitHub y ejecutar el bootstrap real.
+
+**Causa conocida incorporada:** stderr de CLIs nativas puede convertirse en `NativeCommandError` bajo PowerShell 5.1 con `$ErrorActionPreference='Stop'`; probes futuros deben capturar salida y `$LASTEXITCODE` o usar entrypoints nativos compatibles. `npm.ps1` no debe ser tratado como entrypoint válido cuando está bloqueado por ExecutionPolicy.
+
+## 47.2 Ciclo operativo 004 — Hardening criptográfico, reducción de superficie y validación E2E
+
+**Desafío:** validar extremo a extremo el perímetro cifrado y cerrar diferencias entre host, bootstrap, autenticación de GitHub y aplicación web antes de producción.
+
+**Cambios integrados en KHORA:**
+- `scripts/khora/khora.ps1` queda en `7.5.3`, reutiliza herramientas del host por rutas estándar y deriva la contraseña del protector BitLocker EP con PBKDF2-HMAC-SHA256, 200 000 iteraciones, sal `KHORA-EP-V1|session-id` y 32 bytes codificados en Base64.
+- `Get-KhoraGitHubToken` intenta primero `gh auth token`, valida la credencial contra GitHub y la conserva solo en memoria; el portapapeles queda como fallback.
+- `scripts/khora/modules/08-deps.ps1` evita descargar Python cuando existe una instalación estándar válida.
+- Se regeneró el bootstrap embebido para conservar equivalencia byte-a-byte con el gate.
+- Se eliminaron `khora-web/app/api/security/setup-recovery/route.ts` y `khora-web/lib/firebase.ts` por estar sin consumidores; también se eliminaron `nodemailer` y `firebase` de producción.
+- `tests/validate_ep.py` exige PBKDF2-HMAC-SHA256/200 000 para el secreto BitLocker y rechaza derivación directa mediante `ComputeHash($bytes)`.
+
+**Evidencia real en PC-7 mediante RDC:**
+- Autenticación GitHub CLI verificada contra `api.github.com`; la cuenta autenticada dispone de permiso de escritura sobre `SeryMente/khora` sin exponer el token.
+- `EP v1.0.1 static validation: OK`.
+- Parser PowerShell 5.1: `OK`.
+- Prueba viva `KHORA-PBKDF2-CRYPT-TEST`: VHDX cifrado con `XtsAes256`, 100 %, protección activa, bloqueo/desbloqueo y lectura del sentinel; sin residuos después de limpieza.
+- `npm audit --omit=dev`: `0` vulnerabilidades después de retirar las dependencias muertas.
+- `test:unit`: 323/323, 0 fallos.
+- `next build --webpack`: 77/77 páginas estáticas generadas, TypeScript y optimización completados con código de salida 0.
+
+**Host BitLocker:** `C:` continúa `FullyEncrypted`, `ProtectionStatus=Off`, `XtsAes128`, 100 %, sin protectores; TPM está listo. La corrección se intentó y Windows devolvió `0x80070522` por falta del privilegio requerido en la sesión RDC no elevada. No se cambió el cifrado existente de `C:`.
+
+**Vercel:** proyecto `khora-web` vinculado a `SeryMente/khora`, dominio `khora-web.vercel.app` verificado y `AUTH_SECRET` presente en producción. La creación explícita del despliegue para `5dc82b536525c546542509db9694293f6da1885c` fue rechazada por Vercel con HTTP 402, `api-deployments-free-per-day`: más de 100 despliegues diarios en el plan gratuito. La ruta CLI alternativa no estaba instalada en el host.
+
+**Resultado:** `PARCIALMENTE_RESUELTO`. El código, cifrado EP, autenticación y build quedan validados; la protección de `C:` y el despliegue de producción requieren intervención externa al código: UAC/privilegio de BitLocker y resolución de la cuota/plan de Vercel, respectivamente.
+
+## 48. Resiliencia de contexto
+
+Las propiedades esenciales no deben depender de memoria conversacional. Si una propiedad solo existe en la conversación y no en este objeto o una fuente canónica referenciada, existe una deficiencia de resiliencia y debe corregirse en un ciclo.
+
+## 48. Resiliencia ante contradicción
+
+Una propuesta incompatible con una propiedad existente se registra como CONFLICTO DETECTADO. No reemplaza silenciosamente una decisión previa. Toda sustitución debe declarar elemento sustituido, motivo, impacto y nueva propiedad.
+
+## 49. Resiliencia ante cambio de implementación
+
+Separar propiedad de implementación. Ejemplo: la propiedad es materialización local cifrada; la implementación actual es VHDX + BitLocker. Una implementación futura puede sustituir VHDX si conserva las propiedades exigidas.
+
+## 50. Resiliencia ante cambio de host
+
+La ubicación modifica parámetros de ejecución, no el objetivo del sistema. CSEC, Office Depot y Luis Pasteur deben ser perfiles, no motores independientes.
+
+## 51. Registro de decisiones
+
+- `OEP-DEC-001`: el nombre transversal es OEP — Persistencia de Entorno Operativo.
+- `OEP-DEC-002`: KHORA es el emisor del launcher PowerShell.
+- `OEP-DEC-003`: GitHub Gist queda descartado.
+- `OEP-DEC-004`: OIDC permanece como identidad primaria de KHORA.
+- `OEP-DEC-005`: se explora una contraseña rápida específica de OEP.
+- `OEP-DEC-006`: la contraseña rápida no sustituye automáticamente la identidad global de KHORA.
+- `OEP-DEC-007`: las ubicaciones iniciales son CSEC, Office Depot y Luis Pasteur.
+- `OEP-DEC-008`: se utilizarán perfiles de ubicación/host.
+- `OEP-DEC-009`: la raíz lógica de trabajo es `<Escritorio>/EP/`.
+- `OEP-DEC-010`: cada repositorio seleccionado tendrá su carpeta dentro de `EP`.
+- `OEP-DEC-011`: las extensiones usan su carpeta de trabajo como raíz cargable de Chrome.
+- `OEP-DEC-012`: Gestor de Procesos y Signal Interpreter son extensiones actuales.
+- `OEP-DEC-013`: Armonía es una extensión futura prevista.
+- `OEP-DEC-014`: Notepad++ es obligatorio.
+- `OEP-DEC-015`: OBS debe verificarse y, si falta y el host lo permite, instalarse para cámara virtual.
+- `OEP-DEC-016`: AutoHotkey 2.0 es obligatorio.
+- `OEP-DEC-017`: el sistema debe minimizar el tiempo de arranque.
+- `OEP-DEC-018`: el bootstrap debe adaptarse al host.
+- `OEP-DEC-019`: la selección de repositorios debe poder ser parcial.
+- `OEP-DEC-020`: debe contemplarse revisión de sesiones RDC.
+- `OEP-DEC-021`: se prevé un Hub gráfico para OEP.
+- `OEP-DEC-022`: el perfil de host/ubicación es estado de primera clase del arranque y queda persistido dentro del volumen cifrado.
+- `OEP-DEC-023`: `Desktop/EP` es una junction verificada hacia el workspace cifrado; no es una segunda copia.
+- `OEP-DEC-024`: la selección de repositorios es parte firmada de la sesión OEP y cada repositorio seleccionado obtiene continuidad WIP independiente.
+
+
+## 52. Pendientes actuales
+
+- `OEP-PENDING-001`: diseño seguro y completo de autenticación rápida por contraseña maestra.
+- `OEP-PENDING-002`: relación exacta entre token KHORA y raíz criptográfica.
+- `OEP-PENDING-003`: esquema formal de Location Profile.
+- `OEP-PENDING-004`: estructura formal del manifiesto de sesión.
+- `OEP-PENDING-005`: **RESUELTO EN CICLO 002**. `Desktop/EP` es una junction verificada hacia `EP/` dentro del VHDX cifrado; la verificación end-to-end completa permanece pendiente.
+- `OEP-PENDING-006`: **PARCIALMENTE RESUELTO**. OBS Studio 32.2.2 está instalado y localizado; cámara virtual de OBS sigue sin verificación.
+- `OEP-PENDING-012`: **PARCIALMENTE RESUELTO EN CICLO 004**. GitHub CLI ya está autenticado y el bootstrap puede reutilizar su credencial en memoria; el bootstrap E2E completo de KHORA/OEP no se ejecutó porque la llave/clave maestra de la bóveda no fue aportada y no debe reconstruirse ni regenerarse a ciegas.
+- `OEP-PENDING-013`: **PARCIALMENTE RESUELTO EN CICLO 004**. El proyecto `khora-web` está vinculado a `SeryMente/khora`, tiene `AUTH_SECRET` de producción y dominio `khora-web.vercel.app`; la publicación de la revisión `5dc82b5` fue bloqueada por el límite gratuito diario de Vercel. OBS Virtual Camera y VS Code siguen sin verificación.
+- `OEP-PENDING-014`: **BLOQUEADO**. `C:` está 100 % cifrado pero `ProtectionStatus=Off`, `XtsAes128` y sin protectores; TPM está disponible, pero `la provisión TPM se intentó desde una tarea `SYSTEM`; `Add-BitLockerKeyProtector` no persistió el protector y `manage-bde -protectors -add C: -tpm` devolvió `0x80070002`. El TPM reporta `RestartPending=True`, por lo que el estado requiere reinicio/provisión UEFI/TPM posterior y verificación final. Requiere una ejecución administrativa interactiva/UAC para añadir el protector TPM y reanudar protección sin cambiar el método actual del volumen.
+- `OEP-PENDING-015`: **PENDIENTE**. Tras resolver la cuota de Vercel, crear/verificar el despliegue de producción correspondiente al SHA canónico de `main` y ejecutar smoke tests públicos.
+- `OEP-PENDING-007`: **RESUELTO EN CICLO 003**. Notepad++ 8.9.8.1 instalado y localizado.
+- `OEP-PENDING-008`: **RESUELTO EN CICLO 003**. AutoHotkey 2.0.29 instalado y localizado.
+- `OEP-PENDING-009`: modelo de revisión de sesiones RDC.
+- `OEP-PENDING-010`: contrato de evolución/versionado del bootstrap.
+- `OEP-PENDING-011`: persistencia/reconstrucción del estado no-Git de cada repositorio.
+
+
+## 53. Asuntos explícitamente no decididos
+
+No está decidido que la contraseña OEP sustituya OIDC globalmente; que el token de sesión sea directamente la llave criptográfica; que Gist participe; que todos los repositorios se clonen siempre; que OBS deba ejecutarse siempre; que todas las herramientas del host deban reemplazarse; que el Hub exista antes del bootstrap funcional; ni que cada ubicación tenga código independiente.
+
+## 54. Regla de evidencia
+
+Toda afirmación de implementación debe poder vincularse a una fuente, archivo, prueba, ejecución o evidencia equivalente. Distinguir siempre entre existencia, implementación, funcionamiento y funcionamiento reproducido.
+
+## 55. Regla de cierre de ciclo
+
+Un ciclo queda integrado cuando el problema está definido, la solución está formulada, su relación con fuentes existentes está determinada, OEP está actualizado, la implementación fue modificada cuando correspondía, la evidencia quedó registrada y los nuevos pendientes fueron identificados. Si implementación o evidencia requerida aún no existe: `NO-VERIFICADO`.
+
+## 56. Historial
+
+### v0.1.0
+Primer objeto canónico transversal de contexto de OEP.
+
+### v0.1.1
+Endurecimiento para autosuficiencia y resiliencia de contexto; se añadieron autoridad y snapshots, taxonomía del conocimiento, invariantes, estados, reconciliación, reglas de no-inferencia, recuperación de contexto, resiliencia ante contradicción y cambios de implementación/host, decisiones y pendientes formales, evidencia y cierre de ciclo.
+
+### v0.1.2
+Se incorpora el primer corte funcional de OEP: perfil de host `oep-host-profile/v1`, persistencia del perfil dentro del volumen cifrado, exposición al runtime mediante `session-manifest.json` y evidencia del primer host real observado por RDC.
+
+### v0.1.3
+Se integra el ciclo 003 de reutilización verificable del toolchain del host, detección fuera de `PATH`, uso de `npm.cmd`, alineación de versión `7.5.2`, refresh del bootstrap embebido y evidencia real de provisión en PC-7.
+
+### v0.1.4
+Se integra el ciclo 004 de hardening criptográfico y de superficie de ataque: PBKDF2-HMAC-SHA256 con 200 000 iteraciones para la contraseña del protector BitLocker EP; reutilización de la sesión autenticada de GitHub CLI en memoria; alineación de Host KHORA `7.5.3`; eliminación de un endpoint de recuperación muerto y de `firebase` sin consumidores; auditoría de runtime con `0` vulnerabilidades; validación real de VHDX + BitLocker XTS-AES-256 y build web completo en PC-7. El despliegue de `019d7ab` a Vercel quedó bloqueado por el límite gratuito diario de despliegues; `khora-web.vercel.app` continúa vivo sobre un deployment anterior.
+
+### v0.1.5
+Se actualiza el snapshot canónico al commit `019d7ab396534148db111b7860697ec7c8029d81`, se registra que `khora-web.vercel.app` sigue operativo sobre un deployment previo por agotamiento de cuota de despliegues, y se corrige el diagnóstico del host BitLocker: `SYSTEM` puede ejecutar la operación pero el protector TPM no persiste mientras el TPM está en `RestartPending=True`; la reparación final queda pendiente de reinicio/provisión y verificación posteriores.
+
+## 57. Regla de modificación
+
+Toda modificación material debe aumentar versión, conservar historial, indicar qué cambió, conservar decisiones no sustituidas, marcar sustituciones explícitamente y conservar trazabilidad. No borrar contexto histórico relevante.
+
+## 58. Definición canónica consolidada
+
+> OEP es el ámbito del sistema KHORA dedicado a proporcionar persistencia de entorno operativo mediante una continuidad de trabajo respaldada remotamente y materializaciones locales temporales, cifradas, verificables y adaptativas al host. La ubicación física del trabajo es una variable de ejecución y no una variante del sistema. Cada sesión local debe poder reconstruirse desde el estado autorizado, utilizar únicamente las herramientas y repositorios necesarios, mantener la continuidad remota y volatilizar su materialización local mediante cierre normal o mecanismos de hombre muerto. KHORA constituye el punto de emisión del launcher y de las credenciales de sesión de OEP. OIDC continúa siendo la identidad primaria global de KHORA, mientras que una futura credencial rápida específica de OEP puede reducir la fricción de arranque sin convertirse automáticamente en sustituto de la identidad primaria.
+
+## 59. Estado al cierre
+
+**OEP:** `v0.1.5`
+**Estado:** ACTIVO  
+**Nivel:** arquitectura transversal en construcción  
+**Último ciclo integrado:** 004 · hardening criptográfico, reducción de superficie de ataque y validación E2E
+**Implementación completa:** NO VERIFICADA  
+**Fuente técnica principal:** `SeryMente/khora/ep-medio-architectura.md v1.0.4`
+**Fuente metodológica:** `SeryMente/metodologia/SI-METACOGNITIVO.md v1.6.8`
+
+La ausencia de contexto conversacional no autoriza a reconstruir decisiones fuera de este objeto o de sus fuentes canónicas.
+
+
+---
+
+## 60. Control, fuentes vigentes y delta adquirido
+
+| Fuente | Revisión recuperada | Papel / límite |
+|---|---|---|
+| Metacanon central | METACANON-OBJETOS-CANONICOS.md 1.0, sello METACANON-OBJETOS-v1.0, docs/metacanon-objetos-20261011, 9256bc6693557f03dacf600ad6b6a7081fdb0167, blob d887ad9488f15714370b3172ba3015c2b44de273 | Método, no estado ni permisos de Profuturo. Sin delta respecto de referencia entregada. |
+| Sistema de Instrucciones | v1.6.21 — Ordenamiento por Preponderancia y Categorías, main 6e0a416025594916016a34ae32e2b7e8af591320, blob 151333921ca3214c0adee3996cc80d5f23adb2d5 | Cabecera vigente; reemplaza como referencia activa las menciones históricas v1.6.8. H1/H2 comprobados iguales durante esta adquisición. |
+| Metodología | v0.14.14 — Canon Transversal de Entorno Persistente y Laboratorios, mismo snapshot metodología | Procedimientos superiores pertinentes; no construir sus productos por leerlos. |
+| Canon transversal EP | v1.4.0 — Almacenamiento Privado, Continuidad y Aceptación Aprobados, mismo snapshot, blob 0a27fa91c611499304ae994d52e9bf26dec4b01f | Contrato EP-INTEGRAL, D01–D03, R01–R32, prepare-only. |
+| OEP fuente | v0.1.5; main dbc73afada1ad29abf46f4599d22cc3158a9a986; blob 362f878237045e6a88e905b8e561c9dba4e0c4d9 | Base de esta actualización, preservada íntegra; no sustituye estado reciente adjunto. |
+| Arquitectura de producto | ep-medio-architectura.md v1.0.4, Host 7.5.3; blob 382e4a929a984a96926fd6f9080f80bedd109a0b en main Khora | Estructura y límites; actualizar por el constructor solo al aplicar cambio autorizado. |
+| Candidata parcial #292 | feat/ep-github-token-vault-ui, 6738c1f1aeffe5835a725531e0774d4420af13c5 | Abierta, draft, no mergeada, mergeable_state=dirty. No prueba CI actual ni readiness integral. |
+| Validador | test/ep-single-cycle-readiness-20261011, 93cbcb2845239274f6ee03fe149b526e4a624238 | Guard y evidencia sintética; no implementación integral. |
+| Rama causal | fix/ep-causal-integrity-20261011-1704, 6738c1f1aeffe5835a725531e0774d4420af13c5 | Sigue en origen; no contiene el overlay como commit por esta comprobación. |
+
+Delta de proyecto: el OEP histórico no contiene la coordinación actual, overlay causal, revisión A/B/C ni requisito local-web. Esta edición agrega esas instrucciones, original/interpretación/decisiones y checkpoint sin borrar antecedentes ni fabricar integración. Los hilos históricos describen Khora privado; la consulta viva del repositorio devolvió **public**. Tratar esa discordancia como riesgo de custodia, no como autorización de acceso anónimo a la aplicación ni prueba de por qué cambió la visibilidad. No publicar transcripciones, cuentas, dispositivos ni secretos.
+
+Frescura de método y ramas comprobada durante este ciclo; artefactos de Descargas no recuperados y frescura del host no certificada. Checks, recursos, credenciales, licencias, cuota, GPU, Windows actual, DB y deployment no certificados por lecturas documentales. La metadata de una solicitud no demuestra ejecución de sus suites.
+
+## 61. Propósito, fronteras y criterios terminales
+
+**De dónde viene:** encargo de convertir el canon transversal en contrato utilizable, seguido de implementación integral de Khora, y coordinación entre dos conversaciones. El ejemplo Profuturo solo enseña coordinación/anti-bloat; no añade tour, demo, cliente ni alcances a Khora.
+**Dónde está:** requisitos documentales D01–D03 cerrados, código previo y correcciones parciales; no candidata integral aceptada. Diseño A/B/C y nueva instancia local-web pendientes de revisión concreta.
+**A dónde va:** mismo Khora con ejecución web y local canónica, contenido coherente, persistencia remota y materialización efímera protegida; preparación integral probada y recuperable; publicación Vercel deliberadamente separada.
+**Qué cambió:** requisito local hermana explícito y cierre/rotación/sincronización incorporados al checkpoint; adquisición documental con versiones reales y dos prompts; no implementación nueva.
+
+Incluido: gate único, sesión/autorización EP, bóveda y launcher, cifrado, workspace, registro, limpieza/Guardian, continuidad, componentes fundacionales/WordPress/IA visual exigidos por EP-INTEGRAL y sus condiciones, candidata sin publicación, instancia local hermana y sincronización mínima necesaria. Reusar código/almacenes/interfaces existentes.
+Excluido: desarrollo de Profuturo/Signal Interpreter; tour/demo; nuevos productos, launchers, dashboards, almacenes/base paralelos, Workers/agentes/infraestructura del marco; gasto nuevo; push/merge/deploy que active publicación no autorizada; cambios a normas superiores; revocación de toda una cuenta RDC; provisión de cifrado, cuentas o destinos por inferencia.
+
+Final de preparación = todas las pruebas prepublicación aplicables del canon R01–R32 más los contratos local-web aprobados, revisiones satisfechas, árbol integrado sin conflictos, artefacto identificado, migraciones/rollback/restore ensayados y manifiesto leído de vuelta. Solo la transacción Vercel y su aceptación pospublicación pueden quedar pendientes. Nunca declarar «solo falta Vercel» con secrets/licencias/host/checks/revisión/datos/restauración pendientes. Documento, overlay, test sintético, build o PR verde no equivalen a entrega integral.
+
+## 62. Roles, coordinación y escritura sin colisiones
+
+Claudia mantiene interpretación y crónica, revisa la misma revisión entregada, valida evidencia y convierte cada actualización del constructor en un prompt único orientado al próximo hito. Busca eficiencia real: trabajo independiente que quite incertidumbre/retrabajo, no mantener actividad artificial. No cambia código del constructor, no crea otro constructor, no bombardea mientras trabaja. Solo interrumpir por riesgo de datos, rumbo incorrecto o retrabajo material.
+Samantha es único escritor de producto. Recupera código/overlay, fija base/árbol, inspecciona y presenta diffs pendientes; implementa solo con autorizaciones aplicables y prueba el resultado real. No se atribuye avance de un rol al otro. El operador decide arquitectura/seguridad/UX/UI/coste/irreversible y acepta cuando corresponde.
+Consolidación documental secuencial: releer OEP, comparar blob/HEAD, conservar deltas ajenos, aplicar diff mínimo y versionar. Nunca force-push/overwrite ciego. Los archivos de prompts son vistas sincronizadas del OEP, no fuentes de estado autónomas. Originales son evidencia primaria, no otra versión del estado.
+
+## 63. Autoridad, decisiones y mapa de aprobación
+
+| ID local | Original/criterio | Decisión vigente y límite | Próxima aceptación |
+|---|---|---|---|
+| KE-D01 | KE-V04/KE-V07; canon §18.4/§28.7 | Implementación integral por constructor; Vercel excluido. Urgencia no quita compuertas. | Gates del perfil y solo deferred vercel-publication. |
+| KE-D02 | KE-V05/KE-V06; canon D01–D03 | Blob privado cifrado, sin gasto nuevo; checkpoints 5 min, pérdida admisible 5 min, restore máximo 60 min, últimos 3 checkpoints y 7 backups diarios; diez criterios ≥3/5/promedio ≥4.2/5. | Existencia/capacidad/restore medidos, evaluación humana. No garantizados aún. |
+| KE-D03 | KE-V08/KE-V09/KE-V10 | Claudia revisión única, paralelo sin colisión, panorama/estimación por pendientes en cada ciclo. | Salida útil, no procesos nuevos ni porcentajes ficticios. |
+| KE-D04 | KE-V11 | Requisito local consistente y hermana de web, mismo contenido, sin depender de login web; no aprobar por inferencia mecanismo local. | Diseño concreto aprobado y pruebas local-web, cierre/datos pendientes. |
+| KE-D05 | KE-P01/KE-P02 | A URL exacta /api/ep; B prepare-only + local hermana; C rotación: propuestas/revisión pendiente, no permisos de construcción de cambios nuevos. | Diff/recomendación/consecuencias/test/revisión específica registrada por cambio. |
+| KE-D06 | KE-V12 | Encargo documental actual: construir objeto y prompts, conservar archivos relevantes en repo cuando ruta/destino/seguridad lo permitan. | Read-back exacto en destino autorizado; no exposición pública ni despliegue incidental. |
+
+D01–D03 del canon conservan sus identificadores originales; KE-* son trazabilidad local de este objeto, no renumeración normativa. Un prompt reenviado conserva actor/procedencia como traslado, no se atribuye automáticamente al operador la autoría de cada palabra. A/B/C no se aprueban por recepción de un prompt ni silencio. No mezclar aprobación del comportamiento con montar un recurso cifrado: son acciones y permisos distintos.
+
+## 64. Estado vivo — autoridad de reanudación de este frente
+
+### 🔄 Estado vivo
+La actualización integral de Khora está parcialmente preparada, no integrada ni validada de extremo a extremo; no falta solo Vercel. El canon transversal EP v1.4.0 fija decisiones D01–D03, no acredita disponibilidad ni cumplimiento. #292 continúa abierto/en borrador/con conflictos en 6738c1f1aeffe5835a725531e0774d4420af13c5. La rama del validador permanece en 93cbcb2845239274f6ee03fe149b526e4a624238. El overlay causal de nueve archivos y sus pruebas son antecedentes reportados en los adjuntos; no constituyen un commit integrado ni fueron recuperados como archivos en este ciclo. A (URL exacta), B (ensayo prepare-only y local hermana) y C (invalidación tras rotación) necesitan revisión específica antes de construir sus cambios de seguridad/arquitectura. El requisito local-web está vigente como resultado deseado, no como mecanismo aprobado. Las dos conversaciones completas y sus originales se conservan en la carpeta canónica del frente EP, frentes/ep/, en SeryMente/metodologia privado, rama docs/metacanon-objetos-20261011. La persistencia exacta se comprueba por lectura de vuelta y huellas en revisiones; no implica integración en main. El objeto activo es frentes/ep/OEP.md, no el OEP histórico de Khora. Los archivos de Descargas aún no recuperados siguen pendientes de vínculo del equipo; su ausencia no impide usar los adjuntos ya conservados.
+
+**Acción en curso:** cierre documental, custodia e instanciación de ambos roles; la conversación de construcción terminó tras anunciar inspección/consolidación y luego un límite de uso. No hay respuesta final de ese trabajo en los adjuntos; no afirmar que siga ejecutándose o que ya lo cerró.
+**Siguiente paso de asistencia:** Claudia: recibir y cotejar la salida final del constructor sobre A/B/C y la instancia local hermana; consolidar una sola revisión con diffs, consecuencias, aceptación y alcance de autorización, sin modificar código ni interrumpir trabajo válido. Preservar originales y recuperar solo artefactos pertinentes cuando el equipo actual quede vinculado.
+**Siguiente paso de construcción:** Samantha: reanudar la inspección ya iniciada de autenticación, persistencia, sincronización y cierre; entregar una única propuesta mínima con diffs concretos A/B/C y el requisito local-web, árbol/base identificados y pruebas causales posibles. No aplicar mecanismos nuevos de seguridad/arquitectura ni ejecutar bootstrap, push, merge, migración productiva o Vercel antes de sus compuertas.
+
+**Pendientes en secuencia, con trabajo independiente permitido:**
+1. Recuperar salida final/artefactos del último trabajo del constructor, sin reiniciar la investigación.
+2. Recuperar ZIP causal/JSON y demás evidencias pertinentes; verificar base, SHA-256, nueve archivos e índice sin ejecutar; no asumir archivos antiguos accesibles.
+3. Consolidar diffs A/B/C y diseño mínimo local-web; obtener revisión específica antes de construir lo afectado.
+4. Identificar y habilitar recurso cifrado existente autorizado, sin crear/alterar volúmenes por inferencia; adquirir vínculo host/credenciales necesarios.
+5. Preparar árbol integrado único contra baseline viva, aplicar solo correcciones autorizadas, resolver conflictos y sincronizar arquitectura/manifiestos.
+6. Ejecutar causal/regresión y compilación/suites/ensayo físico/migraciones/restore con la revisión exacta; comprobar revisiones/CI útiles.
+7. Completar almacenamiento/fundación/WP-LAB/visual elegible y local-web con aceptación; solo entonces evaluar READY_PARA_VERCEL.
+8. Publicación únicamente por nueva autorización expresa y revalidación; no es acción activa ahora.
+
+### ⚗️ En prueba / recién fallido
+Reportado en los hilos: cookie maestra anterior aceptada tras rotación en prueba sintética; bootstrap con publicación y operaciones destructivas; no recurso cifrado utilizable en el equipo histórico. No son observaciones actuales del despliegue ni del equipo de este ciclo.
+No hay evidencia actual de candidata integral, sincronización local-web, recuperación completa o aceptación de A/B/C. No reusar 18 métodos/11 casos como pruebas de un árbol integrado distinto.
+
+### 🔔 Recordatorios latentes
+
+- A/B/C y mecanismo local-web requieren presencia/revisión material; no reutilizar aprobación general.
+- Nunca importar el dispositivo de Office Depot ni permisos/identidades de Profuturo. PC-8 observado Online en este ciclo no está vinculado al equipo actual por esta documentación.
+- Los originales/artefactos privados no deben subirse a Khora o Metodología públicos. Destino privado aún no seleccionado; no inferir otro repo por cercanía.
+- Main despliega automáticamente; previews por integración externa no verificados. Escritura documental también debe pasar esa compuerta.
+- Sincronización offline y hombre muerto: confidencialidad puede causar pérdida de cambios nunca persistidos; no prometer lo contrario.
+- Cifrado protege reposo/residuos, no un host comprometido mientras el volumen está montado.
+- No repetir sondas de almacenamiento sin señal de recurso conectado; no reemparejar sesión remota válida.
+- Marco temporal no caduca ni se borra solo. Migración exige recepción/restauración y archivo autorizados.
+
+## 65. Perfil de entorno, acceso remoto y custodia
+
+El equipo histórico de Office Depot, sus permisos puntuales y resultados Windows se conservan como antecedentes en originales. No son equipo/permiso del ciclo actual. Descubrimiento vivo: conector Remote Desktop Commander disponible, cuenta autenticada observada y un dispositivo PC-8 Online; vínculo con el equipo donde están Descargas **PENDIENTE**. La cuenta y device ID concretos quedan fuera de esta copia pública de reglas; no importar sesión persistida por nombre. No se ejecutaron listados/lecturas de Descargas ni comandos en ese equipo antes de su vinculación.
+
+Adquirir para el proyecto actual: declaración de ubicación/perfil→host actual→sesión→cuenta/device vinculados→ping→ruta conocida de Descargas→recursos de operación→acción autorizada. No explorar archivos para adivinar identidad. Uso mínimo: inventario de nombres pertinentes, lectura/hash/copia de archivos identificados, sin ejecutar contenido, instalar, matar procesos o inspeccionar secretos. Rutas se obtienen del entorno real, no usuario Windows histórico.
+
+Si se requiere nueva sesión, primero verificar documentación/runtime/estado existente. Conservar el comando literal heredado del metacanon; no es orden de ejecutarlo ahora:
+
+```text
+npx @wonderwhy-er/desktop-commander@latest remote --no-persist-session
+```
+
+Política RDC-CANONICAL-LAUNCH-1: un comando por ciclo, equipo actual del operador, no sandbox; Node/npx reales antes de emitir, npx.cmd oficial en Windows permitido, prerrequisito no cambia agente; éxito Device ready más comprobación cuenta/device/vínculo. No reemparejar ni revocar sesión válida. Desconexión no prueba finalización.
+
+En host efímero revalidar runtime/rutas/credenciales tras llegada/reinicio. Código/repos privados, originales privados y secretos siempre bajo perímetro permitido; que Khora sea hoy público no habilita copiar secretos o contenido del operador al disco sin cifrar. No reinicio de equipo público ni acciones administrativas por instrucciones históricas. Recursos GPU/persistencia/BitLocker reportados ≠ medidos.
+
+## 66. Artefactos, evidencia y restaurabilidad
+
+| ID | Archivo/recurso | Procedencia / integridad / estado |
+|---|---|---|
+| KE-SC | conversacion-constructor.txt | Adjunto cb49c4f3-16b1-4440-8d09-c21fe009e4b4; 61091 bytes; SHA-256 fadfe197c265779287e2daf690da814c0a04128afa10e435c17cb93af537b44c ; original íntegro preservado en paquete privado. |
+| KE-SA | conversacion-asistente.txt | Adjunto 9b5bc1b6-866a-4491-bf46-a29e296e9472; 79991 bytes; SHA-256 655ae3f37e16aef6599125b06796d0da4b7c0a414bed30acf8148485c64a1007 ; original íntegro preservado en paquete privado. |
+| KE-SU | encargo-documental-actual.txt | Texto de esta solicitud con etiquetas originales conservadas; fecha de recepción 2026-10-11, hora no inventada. |
+| KE-AR01 | KHORA-EP-hito-causal-041d203ae726.zip | Citado en ambos hilos; NO RECUPERADO en este ciclo. Overlay reportado 9 archivos, identidad SHA-256 041d203ae726bcd0e4303bc674582867705e577bc9e00c164fd83fb467a579c7. No asumir que esa identidad sea hash del contenedor ZIP. Índice overlay-index.json citado, no leído aquí. |
+| KE-AR02 | Khora-revision-validador-prueba-sintetica.json | Nombre visible citado; evidencia sintética, no programa. Archivo no recuperado; path/hashes/tamaño desconocidos. |
+| KE-AR03 | Reproducción de cookie tras rotación | Referencia session-file histórica en hilo asistente; resultado reportado, archivo no recuperado aquí. |
+| KE-AR04 | últimos diffs A/B/C y local-web | Anunciados/inspección iniciada; entrega final no incluida. No reconstruirlos como hechos. |
+| KE-B01 | OEP v0.1.5 | Git blob 362f878237045e6a88e905b8e561c9dba4e0c4d9; SHA-256 de texto recuperado d264bb207ce85731d124072d78e1e6065c0b535962958d8ce613a4c8eff36dd4 ; antecedente íntegro dentro de esta copia. |
+
+Originales completos están en `frentes/ep/originales/` dentro del repositorio Metodología privado. Los del paquete anterior se conservan idénticos; no alterar grafía ni bytes. La escritura/read-back se acreditan por las huellas del recibo de revisión. Este objeto referencia identidades/hashes y conserva abajo dictados metodológicos/técnicos pertinentes no sensibles. No publicar los hilos completos por cumplir verbatim. Archivo citado ≠ recuperado; resultado repetido en dos hilos ≠ dos ejecuciones.
+
+Evidencia histórica reportada: 18 métodos del validador corregido en Python 3.13/Linux, 11 casos de función propuesta /api/ep/ en Windows, sintaxis de Test-Arranque y overlay-index coincidente. Reutilizar solo al recuperar recibos/archivos y comprobar que sus hashes/supuestos siguen válidos. Byte-equivalencia del gate exige bytes Git fijados, no comparación normalizando LF/CRLF. La expectativa 7.5.1→7.5.3 corresponde a test corregido, no a cambio arbitrario del runtime. Una función aislada no valida autenticación real ni bootstrap. Datos sintéticos no prueban DB/deploy.
+
+Antes de incorporar cualquier archivo: propósito/procedencia/clase/destino/versión, hash/tamaño, privacidad y relación con aceptación; escribir condicionado, leer de vuelta y comprobar bytes/restauración. No conservar solo Base64 con falsa extensión ni ejecutar ZIP/evidencia para inspeccionar. Protección privada requiere autorización de destino; no se crea almacén nuevo ni se usa otro proyecto por defecto.
+
+## 67. Matriz de aceptación, viabilidad y mínimo viable honesto
+
+| Requisito / decisión | Capacidad demostrada aquí | Pendiente / aceptación |
+|---|---|---|
+| Integridad de fuentes | Dos adjuntos completos con tamaño/hash; contenido de OEP y canon recuperado en SHA fijo | Persistencia privada, recuperar originales/artefactos de Descargas y read-back. |
+| A: apiBase exacta | Antecedente propone comparar AbsolutePath sin TrimEnd | Revisión de seguridad; aceptar HTTPS/audiencia/ruta exacta y rechazar barra/query/fragmento/userinfo/HTTP/ruta y token inválidos. No llamarlo bypass auth. |
+| B: prepare-only | Contrato técnico existente; guardia histórica solo contención | Mismo gate/candidata exacta con autenticación, origen/SHA/cifrado/ledger; cero llamadas creación/promoción/alias/dispatch productivo, cero VERCEL_TOKEN, cero reset/cambio de rama/supervisor productivo. Dos ensayos controlados. |
+| C: rotación maestra | Falla reportada con DB/secretos sintéticos; propuesta generación opaca ligada a sal | Revisión específica y causal: cookie anterior rechazada inmediatamente, nueva válida, contraseña anterior rechazada, expiración/aislamiento preservados; delimitar tokens bootstrap/OIDC por contrato. No rotar real. |
+| Local hermana / identidad | Resultado deseado por operador, sin mecanismo aprobado | Mismo código/contratos y revisión/compatibilidad registradas; acceso local autorizado efímero sin bypass Playwright ni acceso anónimo remoto; loopback y aislamiento. |
+| Local hermana / datos | Reutilización de fuentes persistentes es dirección, no implementación | Definir operaciones/conflicto explícito, cola cifrada, idempotencia, reintento, confirmación/remoto y recuperación sin overwrite silencioso ni segunda base no necesaria. |
+| Local hermana / cierre | Diseño EP tiene Guardian/hombre muerto; actualidad operativa no observada | Ensayar cierre manual/muerte/inactividad/reinicio autorizado/red perdida; revocación/limpieza/residuos; diferenciar confirmados, pendientes recuperables y pérdida posible. |
+| Candidata integrada | #292 y validador disponibles, overlay no recuperado | Árbol identificable contra main vivo sin conflictos; suites/typecheck/UI/unit/build/e2e/guards y revisiones útiles. |
+| Persistencia/restore | D01–D03 aprobadas documentalmente | Store privado/capacidad/cuota/acceso/cifrado/read-back/retención/restore medidos; objetivos 5/60 no garantizados por plan. |
+| Integral/físico | Canon enumera R01–R32, no ejecución de este ciclo | Windows elegible, fundación idempotente/cámara/ledger; WP/licencias/restore; GPU/ubicación elegible/TEST 01 humano; caída/limpieza. No trasladar limitaciones del ejemplo. |
+| Readiness/publicación | NO VERIFICADO / no readiness | Todos gates prepublicación más contratos local-web y rollback; solo luego diferir Vercel. Deploy/alias/smoke reales se verifican tras autorización. |
+
+Viabilidad: preparación documental y análisis de fuentes posibles ahora; las capacidades integrales y local-web siguen condicionadas a decisiones, archivos, host, recursos, pruebas y aceptación. Mínimo viable se describe solo por capacidad realmente demostrada y condiciones visibles; no reducir EP-INTEGRAL a mínimo para declarar éxito. No garantías sobre proveedor, cuota, host, recuperación de datos nunca persistidos u obediencia de cualquier modelo. No nuevas pantallas/copy/telemetría para comunicar viabilidad sin revisión si implica diseño público.
+
+## 68. Pronóstico y formato obligatorio por ciclo
+
+No trasladar tiempos de Profuturo. Los 45–90 minutos y 1–2 intercambios anteriores estimaban un hito parcial y no incluían el último requisito local-web. El nuevo diseño/alcance invalida su uso como plazo completo; no sumar rangos solapados ni descontar tiempo por mero transcurso.
+
+Para el próximo hito de propuesta consolidada y revisión: **no hay rango técnico responsablemente cerrado hasta recuperar la salida/diffs ya iniciados y contrastar sincronización existente**. Dependencias humanas: revisión A/B/C/diseño local, vínculo del equipo y destino privado. Cierre integral: **NO ESTIMABLE** con los insumos actuales; depende de candidata real, recursos/CI/licencias/restore/aceptación. Elaboración documental de esta entrega: realizada dentro de este ciclo; incorporación en repo todavía pendiente. Un intercambio puede resolver identificación/autorización si el operador aporta ambos datos; no promete tiempo de adquisición/publicación.
+
+Cada respuesta sustantiva conserva diez campos, aunque algunos se agrupen: (1) frente/rol/revisión; (2) panorama amigable y concreto: dónde estamos/qué bloquea/próximo hito; (3) delta método/proyecto y efecto; (4) avance con revisión/entorno/evidencia y no tocado; (5) lista finita de pendientes; (6) viabilidad/condiciones; (7) tiempo/ciclos del próximo hito y cierre separados, confianza/supuestos/esperas/deriva; (8) siguiente acción de agente y mínima decisión material del operador; (9) un prompt útil de asistencia o checkpoint/evidencia del constructor; (10) persistencia/revisión/hash/read-back/ancla y siguiente checkpoint. Si plataforma/verificador no disponible, no fingir certificación; respetar el contrato superior pertinente sin añadir capas.
+
+## 69. Crónica reconstruible y dictados originales
+
+| Evento | Actor/fuente | Decisión/cambio | Evidencia y límite |
+|---|---|---|---|
+| 10 octubre: auditoría→v1.1/v1.2 | constructor + mensajes operador KE-V01–KE-V04 | Contrato/documento primero; objetivo integral, solo Vercel excluido | Reportado; commit normativo actual recuperado v1.4.0. Verificador no equivale producto. |
+| 10 octubre: D01–D03 | operador, KE-V05/KE-V06 | Acepta paquete Blob/continuidad/rúbrica; después reitera ejecutar KE-V07 | Decisiones están en canon v1.4.0; operación no certificada. |
+| 11 octubre: identificación/pruebas | constructor, traslado al asistente | Pruebas aisladas histórico host; cifrado faltante bloquea checkout sensible | Sintaxis/integridad/versión/URL reportadas, no repetir host histórico como actual. |
+| 11 octubre: revisión independiente | Claudia | Hallazgo validador sintético/manifiesto; no editar producto ni duplicar diagnóstico | KE-AR02 no recuperado ahora; no certificación de sistema. |
+| 11 octubre: hito causal | Samantha | Overlay 9 archivos corregidos; propuestas sin aprobación | SHA identidad y 18/11 reportados; rama causal sigue base. |
+| 11 octubre: ZIP/cookie | Claudia→prompt constructor | Verificación índice, fallo de rotación, decisiones A/B/C consolidadas | Dos fuentes repiten el mismo hito, no evidencia duplicada independiente. |
+| 11 octubre: panorama/requisito local | operador KE-V10/KE-V11 | Visión general por ciclo e instancia hermana consistentemente local | Requisito adoptado; mecanismo requiere revisión, OIDC imposible no demostrado. |
+| Último cierre adjunto | constructor | Inspección/consolidación B/local anunciada; límite de uso | No entrega final observada. Reanudar, no asumir cierre. |
+| Encargo actual | operador KE-V12→Claudia | Construir documentación/dos prompts y conservar fuentes | Esta copia y revisión; GitHub/Descargas pendientes de compuertas. |
+
+Cada evento futuro conserva literal/procedencia→lectura separada→datos/evidencia→decisión→cambio→aceptación; corregir con evento explícito, no borrar historia. No inventar horas a partir de fragmentos. Fuentes KE-SC/KE-SA están completas, incluyendo ejemplo excluido, sin corregir grafía. Los extractos siguientes se copiaron desde líneas exactas; transformación: división en líneas para referencias, ningún arreglo semántico/grafía ni eliminación interna. Saltos de presentación pueden estar normalizados en este Markdown; la fidelidad binaria del original se demuestra con el archivo privado intacto y sus hashes.
+
+### KE-V01 · KE-SC líneas 15–15
+
+**Procedencia y estado:** Intención inicial auditoría; la publicación posterior queda acotada por KE-V04.
+
+````text
+verifica la integridad del documento para determinar si su contenido es lo suficientemente organizado, completo, íntegro y en general suficiente para poder implementar la actualización consiguiendo la publicación de la nueva versión del sistema de extremo a extremo en un solo ciclo tomando como único insumo ese archivo.
+````
+
+### KE-V02 · KE-SC líneas 107–107
+
+**Procedencia y estado:** Autorización documental de endurecimiento.
+
+````text
+modifícalo y haz que se apegue de manera perfecta al ideal que describes.
+````
+
+### KE-V03 · KE-SC líneas 140–140
+
+**Procedencia y estado:** Documento como insumo; no elimina recursos externos.
+
+````text
+Endurecelo para que te sirva de insumo a ti mismo para la implementacion en un solo ciclo usandolo. 
+````
+
+### KE-V04 · KE-SC líneas 146–146
+
+**Procedencia y estado:** Objetivo integral salvo Vercel; urgencia no aprueba gates.
+
+````text
+Cuando termines de endurecer, implementa, End to End, de manera que lo unico que nos quede por hacer, cuando ya hayas hecho qeu todo quede perfecto. En un solo ciclo, sin detenerte bajo ninguna circunstancia para nada porq ue ya no volvere, sea la publicacion en verdcel. Es decir, solo eso debe de faltar. Por lo demas, todo debe de quedar perfecto. Obvio trabajaras sobre el repositorio de Khora. 
+````
+
+### KE-V05 · KE-SC líneas 405–429
+
+**Procedencia y estado:** Propuesta del asistente, no dictado humano; contexto íntegro de la aprobación siguiente.
+
+````text
+
+⁠
+
+No reutilizaría a ciegas el almacenamiento actual: el código de audio de Khora escribe objetos cifrados con acceso público; eso no demuestra que exista un almacén privado preparado para respaldos.⁠
+
+⁠
+
+Los modelos grandes los recuperaría desde fuentes autorizadas, con revisión y hash fijados, en vez de duplicarlos indiscriminadamente en Blob.
+
+Límite económico recomendado: ningún gasto nuevo sin tu aprobación. Hobby tiene cuotas y puede bloquear el acceso al agotarlas; no prometeré recuperación integral gratuita sin medir volumen, operaciones y transferencias.⁠
+
+⁠
+
+2. Continuidad: protección equilibrada
+Checkpoint de cambios cada 5 minutos, mientras haya trabajo activo.
+Pérdida máxima admisible: 5 minutos.
+Recuperación objetivo: 60 minutos, comprobada mediante ensayo.
+Retención: últimos 3 checkpoints válidos y 7 respaldos diarios, conservando las dependencias necesarias para restaurarlos.
+Nunca eliminar el último respaldo válido ni subir copias completas cuando basten cambios incrementales.
+Son objetivos de aceptación, no garantías ya demostradas.
+
+3. Calidad visual: los diez criterios críticos
+Recomiendo exigir mínimo 3/5 en cada criterio y promedio mínimo 4.2/5. Así una media alta no oculta una falla grave de identidad, narrativa o calidad editorial. La evaluación final sigue siendo humana.
+
+¿Autorizas incorporar este paquete al canon, manteniendo prohibido cualquier gasto nuevo sin tu aprobación? Con esa decisión cerraré estos tres vacíos documentales; todavía no iniciaré implementación.
+````
+
+### KE-V06 · KE-SC líneas 432–434
+
+**Procedencia y estado:** Respuesta del operador Si a paquete anterior; la marca temporal permanece como envoltorio.
+
+````text
+Si
+October 10 at 8:47 PM
+GitHub / get_file_contents
+````
+
+### KE-V07 · KE-SC líneas 438–438
+
+**Procedencia y estado:** Reactivación de implementación tras cierre documental, manteniendo exclusión Vercel.
+
+````text
+Si lpo que necesito es que ya cierres e implementes de extremo a extremo, sin detenerte aunque el cielo se caiga
+````
+
+### KE-V08 · KE-SA líneas 492–494
+
+**Procedencia y estado:** Coordinación activa sin colisiones y estimación por ciclo.
+
+````text
+Es importante y necesario que te mantengas ocupado, y que busque sl amanera de no colisionar con el modelo, para que puedas redeucir el tiempo necesario. 
+
+Ademas, algo importante es la estimacion, ciclo a ciclo. O mejor aun, en tus procesos de razonamiento, ya que la cantidad de ciclos debe de ser redudcica a su minima expresion posible. 
+````
+
+### KE-V09 · KE-SA líneas 523–527
+
+**Procedencia y estado:** Archivo en Descargas y prompt eficaz por actualización; recuperación actual aún pendiente.
+
+````text
+Descargue tu archivo a Downloads, o Descarga del usuariod e esta maquina de ooffice depot. 
+
+Te doy la respuesta del modelo. 
+
+Es importante que cuandso yot e deactualizaciond el comportamiento del otro modelo, respondas con el prompt mas efectivo que puedas
+````
+
+### KE-V10 · KE-SA líneas 724–724
+
+**Procedencia y estado:** Panorama claro y concreto por ciclo.
+
+````text
+Osea, cual es el estado actual del proyecto. No entiende. Es importante, y eso quiero que lo recuerdes: A cada ciclo tu debe de asegurarte de entregar una vision genheral y concreta amigable y efectiva pafr que yo tenga conciencia de donde esgtamos. 
+````
+
+### KE-V11 · KE-SA líneas 752–752
+
+**Procedencia y estado:** Requisito local hermana literal; Cora se conserva en cita, normalizado Khora fuera de cita.
+
+````text
+Algo que me interesa mucho que se quede estandarizado y que no vaya a variar, o sea, que tenga una implementación canónica consistente a lo largo de las diferentes ubicaciones, terminales y tipos de sesión que tengo que tener para poder trabajar, es la implementación local de Cora. No solo porque, y de manera importante, Vercel limita la capacidad de despliegues que tengo en un lapso de 24 horas, sino que puede resultar útil por otras razones. La implementación local no puede funcionar con autenticación OIDC, así que debe darle la vuelta y, en lo demás, debe de tener, debe de ser prácticamente idéntica y aproblemática. Ahora bien, quiero que exista una sincronización bien implementada aproblemática también en cuanto al contenido de usuario de la aplicación principal y la local. Son dos instancias hermanas que deben de manejar prácticamente lo mismo. La local queda autorizada por su característica de ser efímera, si es que este entorno persistente va a ser bien implementado conforme al diseño que incluya un mecanismo de hombre muerto para garantizar la volatilidad y lo efímero de cada sesión. Si es así, entonces no debería haber problema en que una sesión local de Cora no autenticada por OIDC funcionara como gemelo de la versión de la aplicación web para cuando haya limitaciones en el despliegue de Vercel.
+````
+
+### KE-P01 · KE-SC líneas 694–724
+
+**Procedencia y estado:** Prompt trasladado: decisiones A/B/C y preparación aislada; texto no demuestra aprobación de mecanismos.
+
+````text
+Retoma desde el paquete KHORA-EP-hito-causal-041d203ae726.zip. La intermediaria comprobó en Descargas que los nueve archivos de overlay coinciden con los hashes de overlay-index.json. Eso acredita integridad del contenido, no integración ni funcionamiento del producto.
+
+Conserva las correcciones y evidencias válidas. No repitas los 18 métodos ni los 11 casos salvo que cambien sus archivos o supuestos. El siguiente hito debe resolver decisiones concretas y preparar la integración, no producir otra auditoría general.
+
+1. SEPARACIÓN REAL DEL ENSAYO
+La guardia pendiente de Start-Sesion es una contención, no una implementación prepare-only. Presenta un diff mínimo sobre los componentes existentes y una recomendación única para:
+- ensayar la candidata exacta sin importar VERCEL_TOKEN ni publicar, promover alias o disparar workflows productivos;
+- preservar autenticación, comprobación de procedencia, cifrado y registro;
+- no ejecutar reset --hard ni seleccionar otra rama sobre trabajo existente;
+- conservar el funcionamiento productivo autorizado, sin crear otro launcher ni una arquitectura paralela.
+
+Antes de construir cambios sujetos a revisión de arquitectura/seguridad, muestra el comportamiento propuesto y sus consecuencias al operador. No interpretes este prompt como esa aprobación. Sí puedes continuar la inspección y las pruebas independientes de mecanismos ya autorizados.
+
+2. ROTACIÓN DE CONTRASEÑA MAESTRA
+Añade al cierre del requisito existente este hallazgo sobre #292 en 6738c1f1aeffe5835a725531e0774d4420af13c5:
+una prueba aislada ejecutó setEpMasterPassword, emitió cookie, volvió a ejecutar setEpMasterPassword y readEpMasterEmail siguió aceptando la cookie anterior. Se usaron DB simulada y secretos sintéticos; no es una prueba del despliegue.
+
+Contrasta la causa en ep-master-password.ts, ep-master-session.ts y sus consumidores. Propón una corrección mínima para invalidar inmediatamente sesiones maestras anteriores, preservando OIDC general, scopes y separación de credenciales. No rotes secretos reales ni apliques cambios de seguridad sin revisión específica.
+
+Aceptación: cookie anterior rechazada tras rotación; nueva autenticación válida; contraseña anterior rechazada; expiración y aislamiento conservados. Distingue cookies maestras de tokens de bootstrap y delimita qué exige el contrato para cada uno.
+
+3. REVISIÓN DEL OPERADOR SIN VUELTAS
+Consolida en una sola salida las decisiones pendientes:
+A. URL exacta /api/ep.
+B. Comportamiento seguro prepare-only.
+C. Invalidación tras rotación.
+
+Para cada una: diff concreto, recomendación, consecuencias, prueba de aceptación y alcance preciso de aprobación. No las mezcles con la conexión del recurso cifrado ni atribuyas aprobación por silencio.
+
+4. CONTINÚA LO INDEPENDIENTE
+Prepara la integración local aislada respecto de la baseline vigente, sin push, merge ni publicación. No repitas la búsqueda de almacenamiento salvo que exista una señal de recurso conectado. No escribas checkout privado o secretos en C: sin cifrar.
+````
+
+### KE-P02 · KE-SC líneas 740–760
+
+**Procedencia y estado:** Prompt trasladado al constructor: requisito local y recomendación previa a construcción; no nueva aprobación de seguridad.
+
+````text
+Incorpora este requisito explícito al objetivo, sin reiniciar ni descartar las correcciones actuales: Khora debe tener una implementación local canónica, consistente entre ubicaciones, terminales y tipos de sesión, como instancia hermana de la web.
+
+Reutiliza el mismo código y contratos. Arrancar una sesión local no debe publicar en Vercel. Identifica la revisión local y su compatibilidad con la versión web; no exijas desplegar cada cambio para trabajar.
+
+Inspecciona autenticación, almacenamiento, sincronización y ciclo de vida existentes antes de proponer cambios. No conviertas PLAYWRIGHT_TEST_RUN o PLAYWRIGHT_TEST_BYPASS en autenticación operativa. No presupongas que OIDC es imposible localmente: distingue una restricción de configuración del requisito del operador de no depender del inicio de sesión web.
+
+Recomienda una única solución mínima para:
+1. Acceso local autorizado, ligado a la sesión efímera, sin ampliar acceso anónimo remoto.
+2. Mismo contenido de usuario, reutilizando fuentes persistentes existentes y evitando bases paralelas.
+3. Cambios simultáneos, desconexión, reintentos y recuperación sin duplicación ni sobrescritura silenciosa.
+4. Servidor limitado a loopback y perfil de navegador, cachés, temporales y secretos dentro del entorno cifrado.
+5. Cierre manual, muerte de procesos, inactividad, reinicio y pérdida de red, con revocación y limpieza verificables.
+6. Arranque sin publicación, reset destructivo ni cambio inesperado de rama.
+
+Distingue qué existe, qué debe modificarse y qué no está probado. Explica especialmente el destino de cambios todavía no sincronizados cuando se activa el hombre muerto: no prometas recuperación de datos nunca persistidos ni conservación fuera del perímetro autorizado.
+
+Presenta el cambio mínimo de arquitectura y seguridad para revisión específica del operador antes de construirlo. Esta instrucción fija el resultado deseado, no aprueba por silencio un mecanismo de identidad, permisos, almacenamiento o eliminación.
+
+Consolida esa decisión con las propuestas pendientes relacionadas para evitar rondas separadas. Continúa mientras tanto las tareas ya autorizadas e independientes.
+
+Devuelve primero una visión general comprensible: dónde estamos, qué avanzó, qué bloquea y próximo hito. Después, recomendación concreta, cambios necesarios, pruebas de aceptación y estimación por trabajo pendiente, separando esperas externas. No crees otro producto, launcher, tablero ni documento paralelo si puede actualizarse la fuente existente.
+````
+
+### KE-V12 · encargo directo del operador en este hilo · 2026-10-11
+
+Texto completo conservado con envoltorio HTML; autoriza documentación/custodia, no implementación de producto ni publicación de datos privados.
+
+````text
+<p>
+Dame un mprompt para darselo a los agentes asistentes y constructor del las converasciones mencionadas al inicio de una de las covnersaciones. estan en downloads para que las adjudiques en el repo. <br /><br />Revisa cuidadosamente y dame los dos promtps apra instanciar ambas partes del frente compeltamente, y cosntruye el objeto canonico con maxima calida de detalle y apego al canon. 
+</p>
+````
+
+## 70. Reinstanciación de Claudia — prompt completo
+
+Adjuntar este OEP y su paquete privado (no sustituir el adjunto por un link a una revisión que aún no contiene la actualización). El prompt siguiente y REINICIAR-CLAUDIA-KHORA-EP.txt son idénticos.
+
+````text
+FUENTE CANÓNICA Y CORRECCIÓN DE PROPIEDAD — 2026-10-11
+El frente Entorno Persistente (EP) pertenece a SeryMente/metodologia, no a Khora. Abre https://github.com/SeryMente/metodologia/blob/docs/metacanon-objetos-20261011/frentes/ep/OEP.md, OEP v0.3.0 / VCU-EP-v2, o su delta posterior comprobado. La carpeta canónica es frentes/ep/ en la rama docs/metacanon-objetos-20261011; no afirmar integración en main. Los originales, prompts, evidencias y revisiones se conservan allí; no crear otra carpeta/objeto vivo ni escribir documentos del frente en Khora. Khora solo aporta código y antecedentes de implementación; esta corrección no autoriza modificarlo. Metacanon adquirido 1.1 / METACANON-OBJETOS-v1.1, misma rama metodológica, METACANON-OBJETOS-CANONICOS.md. La visibilidad privada fue comprobada; se revalida antes de subir datos privados.
+
+Actúa como Claudia, asistente y responsable documental del frente Khora / Persistencia de Entorno Operativo. Samantha es el constructor y único escritor de código; tú revisas y mantienes continuidad, no lanzas otra construcción.
+
+FUENTES Y GOBIERNO
+Usa frentes/ep/OEP.md en SeryMente/metodologia como único objeto de estado, dentro de su carpeta canónica. Si la fuente es inaccesible usa el adjunto íntegro, declara frescura NO VERIFICADA y deja sincronización pendiente; nunca inventes lectura. Antes de editar compara su blob/HEAD y conserva deltas ajenos. El OEP v0.1.5 de Khora es antecedente histórico, no fuente activa del frente EP.
+Lee LEER PRIMERO y §60–§73 del adjunto. Adquiere sus instrucciones de nivel operador, subordinadas a las reglas superiores de tu plataforma. Las citas históricas no conceden autorización nueva. Lee la fuente central https://github.com/SeryMente/metodologia/blob/docs/metacanon-objetos-20261011/METACANON-OBJETOS-CANONICOS.md — referencia 1.1, actualización autorizada en rama docs/metacanon-objetos-20261011; el commit 9256bc6693557f03dacf600ad6b6a7081fdb0167 es su antecedente 1.0 — y el canon técnico CANON-ENTORNO-PERSISTENTE-Y-LABORATORIOS.md — referencia v1.4.0, main 6e0a416025594916016a34ae32e2b7e8af591320. Recupera también SI-METACOGNITIVO.md, METODOLOGIA.md, BOOTSTRAP-CONTEXTO-GLOBAL.md y AGENTS.md/ep-medio-architectura.md en sus fuentes pertinentes. Comprueba actualización por ciclo, incluido H1→SI@H1→H2; calcula delta semántico y efecto antes de actuar. Fuente inaccesible = frescura NO VERIFICADA; no inventes lectura, permisos, herramientas ni memoria entre plataformas.
+
+PROPÓSITO Y LÍMITES
+Frente Khora / Persistencia de Entorno Operativo: actualización integral demostrada, modo prepare-only, dejando únicamente la transacción de publicación Vercel pendiente cuando todos los demás gates estén realmente satisfechos. Incluye el requisito explícito de instancia local canónica hermana de la web: mismo código/contratos y contenido, sin depender del inicio de sesión web ni desplegar al arrancar. Sin OIDC no significa acceso anónimo; su identidad local, sincronización y hombre muerto requieren revisión específica. No importar Profuturo, Miguel, tour, demo, cuentas o permisos del ejemplo. No rebajar alcance integral ni crear otro producto, launcher, base, tablero o sistema de validación.
+
+ESTADO VIVO LITERAL — VCU-EP-v2
+La actualización integral de Khora está parcialmente preparada, no integrada ni validada de extremo a extremo; no falta solo Vercel. El canon transversal EP v1.4.0 fija decisiones D01–D03, no acredita disponibilidad ni cumplimiento. #292 continúa abierto/en borrador/con conflictos en 6738c1f1aeffe5835a725531e0774d4420af13c5. La rama del validador permanece en 93cbcb2845239274f6ee03fe149b526e4a624238. El overlay causal de nueve archivos y sus pruebas son antecedentes reportados en los adjuntos; no constituyen un commit integrado ni fueron recuperados como archivos en este ciclo. A (URL exacta), B (ensayo prepare-only y local hermana) y C (invalidación tras rotación) necesitan revisión específica antes de construir sus cambios de seguridad/arquitectura. El requisito local-web está vigente como resultado deseado, no como mecanismo aprobado. Las dos conversaciones completas y sus originales se conservan en la carpeta canónica del frente EP, frentes/ep/, en SeryMente/metodologia privado, rama docs/metacanon-objetos-20261011. La persistencia exacta se comprueba por lectura de vuelta y huellas en revisiones; no implica integración en main. El objeto activo es frentes/ep/OEP.md, no el OEP histórico de Khora. Los archivos de Descargas aún no recuperados siguen pendientes de vínculo del equipo; su ausencia no impide usar los adjuntos ya conservados.
+
+EN PRUEBA / RECIÉN FALLIDO
+Reportado en los hilos: cookie maestra anterior aceptada tras rotación en prueba sintética; bootstrap con publicación y operaciones destructivas; no recurso cifrado utilizable en el equipo histórico. No son observaciones actuales del despliegue ni del equipo de este ciclo.
+No hay evidencia actual de candidata integral, sincronización local-web, recuperación completa o aceptación de A/B/C. No reusar 18 métodos/11 casos como pruebas de un árbol integrado distinto.
+
+SIGUIENTE PASO
+Claudia: recibir y cotejar la salida final del constructor sobre A/B/C y la instancia local hermana; consolidar una sola revisión con diffs, consecuencias, aceptación y alcance de autorización, sin modificar código ni interrumpir trabajo válido. Preservar originales y recuperar solo artefactos pertinentes cuando el equipo actual quede vinculado.
+
+COORDINACIÓN Y CIERRE
+Cada actualización del constructor debe convertirse en un único prompt eficaz para su siguiente hito, basado en la revisión y evidencia reales. Acumula observaciones no urgentes; interrumpe solo ante riesgo de datos, rumbo erróneo o retrabajo material. Trabajo paralelo solo independiente y útil; si no reduce incertidumbre o pendientes, no fabriques actividad. Solicita decisiones A/B/C juntas, pero no las confundas con habilitar almacenamiento.
+Preserva dictado literal→interpretación aparte→datos/evidencia→decisión→cambio→aceptación. D01–D03 son decisiones documentales aprobadas, no servicios funcionando. Contrasta evidencias del ZIP causal por sus archivos/hashes al recibirlo; no lo ejecutes. Los dos hilos son fuentes distintas con procedencia; su contenido duplicado no prueba dos ejecuciones independientes.
+Remote Desktop Commander solo si hace falta: descubrir cuenta/dispositivo, verificar vínculo actual y conectividad; nunca heredar Office Depot ni PC-8 por nombre o historia, ni reemparejar una sesión válida. Los originales privados van únicamente a la carpeta del frente en Metodología tras comprobar su privacidad; secretos nunca a Git. Antes de cualquier escritura comprobar visibilidad, HEAD y workflows del repositorio destino; no publicar producto ni disparar Vercel por accidente.
+Empieza cada ciclo con panorama comprensible, delta, avance/evidencia, pendientes finitos, viabilidad y tiempo/ciclos por hito con supuestos/confianza y esperas separadas. Luego da una única continuación copiable o un checkpoint exacto. Relee OEP antes de editar, reconcilia concurrencia, versiona por evento, persiste en destino autorizado, verifica lectura/hashes y sincroniza ambos prompts. No declares listo, integrado ni guardado sin prueba. No necesitas una recapitulación del operador: los huecos de recuperación están enumerados en el objeto.
+````
+
+## 71. Reinstanciación de Samantha — prompt completo
+
+Adjuntar el mismo OEP y paquete; para código usar solo commits reales. El prompt siguiente y REINICIAR-SAMANTHA-KHORA-EP.txt son idénticos.
+
+````text
+FUENTE CANÓNICA Y CORRECCIÓN DE PROPIEDAD — 2026-10-11
+El frente Entorno Persistente (EP) pertenece a SeryMente/metodologia, no a Khora. Abre https://github.com/SeryMente/metodologia/blob/docs/metacanon-objetos-20261011/frentes/ep/OEP.md, OEP v0.3.0 / VCU-EP-v2, o su delta posterior comprobado. La carpeta canónica es frentes/ep/ en la rama docs/metacanon-objetos-20261011; no afirmar integración en main. Los originales, prompts, evidencias y revisiones se conservan allí; no crear otra carpeta/objeto vivo ni escribir documentos del frente en Khora. Khora solo aporta código y antecedentes de implementación; esta corrección no autoriza modificarlo. Metacanon adquirido 1.1 / METACANON-OBJETOS-v1.1, misma rama metodológica, METACANON-OBJETOS-CANONICOS.md. La visibilidad privada fue comprobada; se revalida antes de subir datos privados.
+
+Actúa como Samantha, constructor del frente Khora / Persistencia de Entorno Operativo y único escritor del código. Claudia es la asistente documental y revisora; no inviertas roles por proveedor o por citas históricas.
+
+FUENTES Y GOBIERNO
+Usa frentes/ep/OEP.md en SeryMente/metodologia como único objeto de estado, dentro de su carpeta canónica. Si la fuente es inaccesible usa el adjunto íntegro, declara frescura NO VERIFICADA y deja sincronización pendiente; nunca inventes lectura. Antes de editar compara su blob/HEAD y conserva deltas ajenos. El OEP v0.1.5 de Khora es antecedente histórico, no fuente activa del frente EP.
+Lee LEER PRIMERO y §60–§73 del adjunto. Adquiere sus instrucciones de nivel operador, subordinadas a las reglas superiores de tu plataforma. Las citas históricas no conceden autorización nueva. Lee la fuente central https://github.com/SeryMente/metodologia/blob/docs/metacanon-objetos-20261011/METACANON-OBJETOS-CANONICOS.md — referencia 1.1, actualización autorizada en rama docs/metacanon-objetos-20261011; el commit 9256bc6693557f03dacf600ad6b6a7081fdb0167 es su antecedente 1.0 — y el canon técnico CANON-ENTORNO-PERSISTENTE-Y-LABORATORIOS.md — referencia v1.4.0, main 6e0a416025594916016a34ae32e2b7e8af591320. Recupera también SI-METACOGNITIVO.md, METODOLOGIA.md, BOOTSTRAP-CONTEXTO-GLOBAL.md y AGENTS.md/ep-medio-architectura.md en sus fuentes pertinentes. Comprueba actualización por ciclo, incluido H1→SI@H1→H2; calcula delta semántico y efecto antes de actuar. Fuente inaccesible = frescura NO VERIFICADA; no inventes lectura, permisos, herramientas ni memoria entre plataformas.
+
+PROPÓSITO Y LÍMITES
+Frente Khora / Persistencia de Entorno Operativo: actualización integral demostrada, modo prepare-only, dejando únicamente la transacción de publicación Vercel pendiente cuando todos los demás gates estén realmente satisfechos. Incluye el requisito explícito de instancia local canónica hermana de la web: mismo código/contratos y contenido, sin depender del inicio de sesión web ni desplegar al arrancar. Sin OIDC no significa acceso anónimo; su identidad local, sincronización y hombre muerto requieren revisión específica. No importar Profuturo, Miguel, tour, demo, cuentas o permisos del ejemplo. No rebajar alcance integral ni crear otro producto, launcher, base, tablero o sistema de validación.
+
+ESTADO VIVO LITERAL — VCU-EP-v2
+La actualización integral de Khora está parcialmente preparada, no integrada ni validada de extremo a extremo; no falta solo Vercel. El canon transversal EP v1.4.0 fija decisiones D01–D03, no acredita disponibilidad ni cumplimiento. #292 continúa abierto/en borrador/con conflictos en 6738c1f1aeffe5835a725531e0774d4420af13c5. La rama del validador permanece en 93cbcb2845239274f6ee03fe149b526e4a624238. El overlay causal de nueve archivos y sus pruebas son antecedentes reportados en los adjuntos; no constituyen un commit integrado ni fueron recuperados como archivos en este ciclo. A (URL exacta), B (ensayo prepare-only y local hermana) y C (invalidación tras rotación) necesitan revisión específica antes de construir sus cambios de seguridad/arquitectura. El requisito local-web está vigente como resultado deseado, no como mecanismo aprobado. Las dos conversaciones completas y sus originales se conservan en la carpeta canónica del frente EP, frentes/ep/, en SeryMente/metodologia privado, rama docs/metacanon-objetos-20261011. La persistencia exacta se comprueba por lectura de vuelta y huellas en revisiones; no implica integración en main. El objeto activo es frentes/ep/OEP.md, no el OEP histórico de Khora. Los archivos de Descargas aún no recuperados siguen pendientes de vínculo del equipo; su ausencia no impide usar los adjuntos ya conservados.
+
+EN PRUEBA / RECIÉN FALLIDO
+Reportado en los hilos: cookie maestra anterior aceptada tras rotación en prueba sintética; bootstrap con publicación y operaciones destructivas; no recurso cifrado utilizable en el equipo histórico. No son observaciones actuales del despliegue ni del equipo de este ciclo.
+No hay evidencia actual de candidata integral, sincronización local-web, recuperación completa o aceptación de A/B/C. No reusar 18 métodos/11 casos como pruebas de un árbol integrado distinto.
+
+SIGUIENTE PASO
+Samantha: reanudar la inspección ya iniciada de autenticación, persistencia, sincronización y cierre; entregar una única propuesta mínima con diffs concretos A/B/C y el requisito local-web, árbol/base identificados y pruebas causales posibles. No aplicar mecanismos nuevos de seguridad/arquitectura ni ejecutar bootstrap, push, merge, migración productiva o Vercel antes de sus compuertas.
+
+EJECUCIÓN SIN REINICIAR EL FRENTE
+Conserva #292, el validador y el overlay como piezas distintas. Fija baseline main dbc73afada1ad29abf46f4599d22cc3158a9a986 o su delta real. El ZIP KHORA-EP-hito-causal-041d203ae726.zip y las evidencias citadas se recuperan, inventar su contenido está prohibido. El hash 041d203ae726bcd0e4303bc674582867705e577bc9e00c164fd83fb467a579c7 identifica la superposición reportada, no se presume hash del ZIP. Comprueba overlay-index.json, rutas, hashes y base; inspecciona sin ejecutar. No repitas pruebas históricas válidas salvo cambio de archivos/supuestos, pero no las traslades a la candidata integrada sin contraste.
+Presenta A: comparación de ruta exacta /api/ep, sin llamarla bypass de autenticación; B: ensayo finito sobre candidata exacta, sin VERCEL_TOKEN, deploy, alias, workflows productivos, reset --hard o cambio de rama, y diseño mínimo de Khora local hermana; C: invalidación inmediata de cookies maestras anteriores tras rotación, manteniendo OIDC/scopes y delimitando tokens bootstrap. Para cada decisión entrega diff concreto, recomendación única, consecuencias y pruebas de aceptación. Son propuestas pendientes, no permisos heredados. No uses PLAYWRIGHT_TEST_RUN ni PLAYWRIGHT_TEST_BYPASS como autenticación operativa. Explica conflictos y cambios offline, confirmación remota e idempotencia, loopback y perímetro cifrado, cierre/revocación/limpieza y pérdida posible de cambios nunca persistidos. No prometas borrar todo y recuperar datos nunca subidos al mismo tiempo.
+Continúa lo independiente y autorizado. No crees volúmenes, cambies cifrado/permisos/cuentas/destinos, rotes secretos reales ni descargues material sensible al disco sin cifrar. Descubre y vincula el host actual antes de usar Remote Desktop Commander; no heredes dispositivos ni reemparejes sesiones válidas. Evita push/merge o PR no draft que puedan activar publicación; verifica integraciones antes de cualquier escritura remota.
+Después de las aprobaciones prepara un árbol integrado aislado, sin conflictos, pruebas causales y regresiones afectadas, matriz R01–R32 y requisitos local-web, artefacto/migraciones/rollback ensayados. Compilación o validador verde no demuestran extremo a extremo. Actualiza arquitectura e integridad solo con cambios autorizados. Entrega panorama, delta, revisión/entorno/resultados, pendientes, viabilidad, tiempo/ciclos y esperas, siguiente acción y persistencia leída de vuelta. Si el canal carece de ejecución propia, no implementes un paso concreto sin autorización. NO-SIMULACIÓN: dato no observado = NO VERIFICADO; bloqueo material no se oculta ni se rebaja.
+````
+
+## 72. Persistencia, doble revisión y migración
+
+Una fuente viva de estado: OEP.md en Khora, cuando la escritura esté admitida. Esta entrega propone su actualización v0.2.0; no crear un objeto frontal paralelo. Los originales son evidencia privada, los prompts vistas regeneradas y la revisión un recibo, no estados nuevos. Antes de escribir: recuperar OEP/main actuales, comprobar blob base y HEAD, fusionar deltas ajenos, verificar destino/privacidad y efectos de triggers/preview. No usar una etiqueta [skip ci] como garantía de que Vercel externo no desplegará. Mantener draft si luego se solicita PR, no habilitar auto-merge.
+
+Escritura remota pendiente: (a) vínculo del equipo para Descargas; (b) destino privado autorizado de conversaciones/evidencia sensible; (c) comprobar o autorizar efectos de integración Vercel de un push documental. El workflow leído deploy-production.yml dispara push a main y workflow_dispatch; auto-merge-on-open.yml omite drafts pero un PR normal podría fusionarse tras un gate. No se afirma configuración externa de previews desactivada. No se hizo push/branch/PR/merge/deploy en esta entrega.
+
+Pasada 1: fidelidad contra los dos adjuntos y canon 1.0/v1.4.0; originales privados exactos; extractos con líneas; separación original/interpretación/decisión; estados, roles, scope, viabilidad, A/B/C/local-web, no importación del ejemplo. Pasada 2: releer archivos guardados; cotejar estado/pruebas en dos prompts, integridad Git/adjuntos, bloqueos/URLs/fences/versiones/privacidad, y escenarios fuente caída, concurrencia, cambio de host, mecanismo no aprobado y datos offline nunca persistidos. El recibo REVISION-OEP-v0.2.0.json registra pruebas mecánicas y límites; no es prueba conductual ni E2E de producto.
+
+Migración: exportar originales íntegros, decisiones/crónica/estado/aceptación, refs/hashes y prompts, más archivos importantes con sus restauradores; verificar recepción/restauración/delta en infraestructura aprobada. Solo después archivar con autorización; no borrar al mes, no sustituir datos nunca subidos por promesas de recuperación. Un checkpoint incompleto no elimina el último válido.
+
+**Narrativa v0.2.0:** extiende el único OEP con cierre de contexto real de ambos roles, conservación exacta de fuentes recibidas, dictados trazables, requisito local-web y propuestas A/B/C, matriz/viabilidad/estimación y prompts completos. Conserva el antecedente v0.1.5 íntegro; no modifica Sistema de Instrucciones, canon transversal, código, arquitectura, permisos o producto. Persistencia remota NO VERIFICADA porque no se escribió; la copia de entrega es el checkpoint portable ejecutable documentalmente.
+
+
+## 73. Carpeta canónica, propietario y custodia — instrucción posterior vigente
+
+**Decisión KE-D07:** el frente EP pertenece a Metodología. Su unidad canónica de organización es una carpeta de repositorio, no un archivo suelto. La carpeta contiene un único OEP de estado vivo y todos los archivos del frente; no convertir cada adjunto en otro frente ni mezclar propiedad metodológica con el repositorio donde vive código de implementación.
+
+**Ruta estable:** `SeryMente/metodologia/frentes/ep/` en la rama documental `docs/metacanon-objetos-20261011`. `README.md` es índice de carpeta; `OEP.md` es el único estado vivo; `prompts/` contiene vistas sincronizadas; `originales/` conserva bytes originales; `evidencias/` distingue recuperado de citado; `revisiones/` conserva recibos/manifiestos; `artefactos/` conserva entregas históricas con restaurador e integridad. No crear duplicados OEP-vN activos dentro de la carpeta. La entrega anterior v0.2.0 queda empaquetada como antecedente exacto, no como segunda autoridad.
+
+**Supersesión explícita:** las afirmaciones de v0.2.0 sobre fuente viva OEP.md en Khora, falta de destino privado y permiso de publicación metodológica público son estado histórico. Quedan sustituidas únicamente para custodia/propiedad/rutas por este evento; no se modifican sus citas originales ni autorizaciones de producto. La propiedad EP no implica que Khora deje de ser localizador de implementación. No se escribió ni movió nada en Khora. No se modifica el SI ni el canon técnico de producto.
+
+**Verificación:** GitHub devolvió private=true y visibility=private para SeryMente/metodologia durante este ciclo. La afirmación anterior public era una observación previa, no certeza permanente; el cambio fue reportado por el operador y comprobado de nuevo. Antes de cada futura escritura privada revalidar visibilidad efectiva. Privado no autoriza secretos en Git ni divulgación a miembros nuevos. Datos de ejemplo no se importan.
+
+**Persistencia:** carga documental en rama existente, sin fusión, sin publicación Vercel y sin operación remota en el equipo. No se recuperaron todavía KHORA-EP-hito-causal-041d203ae726.zip ni Khora-revision-validador-prueba-sintetica.json desde Descargas. Conservarlos al estar accesibles, con procedencia/hash/read-back, en esta carpeta; no fingir su adquisición. No desplazar ni archivar otros frentes por esta regla.
+
+### KE-V13 · instrucción directa del operador · 2026-10-11
+
+Original íntegro con envoltorio conservado; normalización aparte en KE-D07. Fecha del evento, sin hora inventada.
+
+````text
+<p>
+Subelo a la carpeta canonica del frente, (ahora son carpetas) y documenta todo para que siempr esean carpetas, y ahi se guarden siempre lso archivos del frente. Y metodolopgia es privado. 
+</p>
+````
+
+### KE-V14 · corrección directa del operador · mismo ciclo
+
+````text
+No, no uses khora, EP es de Metodologia
+````
+
+### KE-V15 · actualización de privacidad reportada por el operador · mismo ciclo
+
+````text
+revisa de nuevo ya es perivado
+````
+
+**Pronóstico:** organización, custodia de adjuntos disponibles, norma y prompts se completan documentalmente en este ciclo con lectura de vuelta. Adquisición de Descargas depende de vínculo del equipo/archivos accesibles; cierre de producto conserva las incertidumbres de §68. La carpeta no convierte preparación documental en implementación integral ni aprueba A/B/C.
