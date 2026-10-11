@@ -1,0 +1,185 @@
+{
+  "schema": 1,
+  "version": "v0.3.3",
+  "seal": "VCU-EP-v5",
+  "event": "Claudia repository reception and independent documentary review completed",
+  "source_commit": "f63f5cbaa843311046beb916d5944aef54c39180",
+  "delivery_reference": "429675bf1bce08c3b14ecd62601668aff3f7107e",
+  "method_acquired": "1.2",
+  "si_acquisition": {
+    "H1": "6e0a416025594916016a34ae32e2b7e8af591320",
+    "H2": "6e0a416025594916016a34ae32e2b7e8af591320",
+    "blob": "151333921ca3214c0adee3996cc80d5f23adb2d5",
+    "version": "v1.6.21",
+    "name": "Ordenamiento por Preponderancia y Categorías"
+  },
+  "originals": [
+    {
+      "path": "frentes/ep/originales/conversacion-asistente.txt",
+      "bytes": 79991,
+      "sha256": "655ae3f37e16aef6599125b06796d0da4b7c0a414bed30acf8148485c64a1007",
+      "git_blob": "5ef6319696aa7327595040c27215e062704552df"
+    },
+    {
+      "path": "frentes/ep/originales/conversacion-constructor.txt",
+      "bytes": 61091,
+      "sha256": "fadfe197c265779287e2daf690da814c0a04128afa10e435c17cb93af537b44c",
+      "git_blob": "b05a99f355585b2e5f57958127e0b62336d32608"
+    }
+  ],
+  "literal_excerpt_checks": [
+    {
+      "id": "KE-V01",
+      "source": "KE-SC",
+      "lines": [
+        15,
+        15
+      ],
+      "exact": true
+    },
+    {
+      "id": "KE-V02",
+      "source": "KE-SC",
+      "lines": [
+        107,
+        107
+      ],
+      "exact": true
+    },
+    {
+      "id": "KE-V03",
+      "source": "KE-SC",
+      "lines": [
+        140,
+        140
+      ],
+      "exact": true
+    },
+    {
+      "id": "KE-V04",
+      "source": "KE-SC",
+      "lines": [
+        146,
+        146
+      ],
+      "exact": true
+    },
+    {
+      "id": "KE-V05",
+      "source": "KE-SC",
+      "lines": [
+        405,
+        429
+      ],
+      "exact": true
+    },
+    {
+      "id": "KE-V06",
+      "source": "KE-SC",
+      "lines": [
+        432,
+        434
+      ],
+      "exact": true
+    },
+    {
+      "id": "KE-V07",
+      "source": "KE-SC",
+      "lines": [
+        438,
+        438
+      ],
+      "exact": true
+    },
+    {
+      "id": "KE-V08",
+      "source": "KE-SA",
+      "lines": [
+        492,
+        494
+      ],
+      "exact": true
+    },
+    {
+      "id": "KE-V09",
+      "source": "KE-SA",
+      "lines": [
+        523,
+        527
+      ],
+      "exact": true
+    },
+    {
+      "id": "KE-V10",
+      "source": "KE-SA",
+      "lines": [
+        724,
+        724
+      ],
+      "exact": true
+    },
+    {
+      "id": "KE-V11",
+      "source": "KE-SA",
+      "lines": [
+        752,
+        752
+      ],
+      "exact": true
+    },
+    {
+      "id": "KE-P01",
+      "source": "KE-SC",
+      "lines": [
+        694,
+        724
+      ],
+      "exact": true
+    },
+    {
+      "id": "KE-P02",
+      "source": "KE-SC",
+      "lines": [
+        740,
+        760
+      ],
+      "exact": true
+    }
+  ],
+  "findings_corrected": [
+    "prompt state seal VCU-EP-v2 contradicted current document seal",
+    "attachment-first wrappers and historical prompt filenames outdated",
+    "custody/privately received originals still shown pending in active reminders",
+    "initial method snapshot confused with current acquisition"
+  ],
+  "product_change": false,
+  "acceptance_A_B_C_local_granted": false,
+  "main_integration": false,
+  "zip_execution": false,
+  "remote_host_access": false,
+  "workflows_reviewed": [
+    "validate-canonical-bootstrap.yml",
+    "validate-rdc-governance.yml",
+    "scripts/validate-canonical-bootstrap.py"
+  ],
+  "external_preview_configuration": "NOT_VERIFIED; not exposed by connector",
+  "historical_readback_scope": "07a1a574 only; not certification of later revisions",
+  "local_processing_error": {
+    "operation": "extract tool results into review workspace",
+    "symptom": "FileNotFoundError: /data/ep-review/frentes/ep/evidencias/INVENTARIO.md",
+    "cause": "destination parent directory absent",
+    "state_impact": "remote untouched; previous local files preserved",
+    "correction": "mkdir parents before write_bytes",
+    "verification": true,
+    "prevention": "create parent directories for every recovered path"
+  },
+  "remaining": [
+    "constructor final proposal/diffs",
+    "Downloads artifacts with provenance/hashes",
+    "specific security/architecture review",
+    "authorized encrypted resource and live host",
+    "integrated candidate gates/restore/local-web",
+    "later authorized Vercel transaction"
+  ],
+  "readback": "pending remote write and independent exact hash verification"
+}
