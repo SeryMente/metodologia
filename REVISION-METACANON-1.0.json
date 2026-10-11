@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "date": "2026-10-11",
+  "scope": "documentary QA, not product certification or empirical model obedience",
+  "pass1": "Review against original methodological instructions, literal sections preserved; latest dictation complete; interpretation separated",
+  "pass2": {
+    "prior_28_literal_blocks_preserved": true,
+    "latest_user_dictation_in_both": true,
+    "state_verbatim_in_two_prompts": true,
+    "failed_verbatim_in_two_prompts": true,
+    "balanced_fences": true,
+    "project_version_consistent": true,
+    "method_header_consistent": true,
+    "no_public_accounts": true,
+    "no_secret_patterns": true,
+    "no_personal_numeric_ids": true,
+    "no_stale_startup_block": true,
+    "no_absolute_guarantee": true,
+    "temporal_exit_preserves_data": true,
+    "decision_chain": true
+  },
+  "versions": {
+    "method": "1.0 / METACANON-OBJETOS-v1.0"
+  },
+  "hashes": {
+    "METACANON-OBJETOS-CANONICOS.md": "27e315ab13655aa39a9fadf3de67ed20aaeeac93829e825c1695c0e4baa99d00"
+  },
+  "remaining": "framework name not ratified; branch pending integration; no product acceptance certified"
+}
