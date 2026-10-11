@@ -36,9 +36,9 @@
     },
     {
       "path": "frentes/ep/OEP.md",
-      "bytes": 133479,
-      "sha256": "80c382f93e421a039e6c878ebaa8fff97291fe0d9b2280745457777eff2f5959",
-      "git_blob": "8ef7cfdcad3d4a5835628f7ae7587f59417d3abc"
+      "bytes": 148448,
+      "sha256": "604397c5e38133091db6a71d7bd5a5083e0cc20db39cddf8531b7e950de565f8",
+      "git_blob": "537095ff8128cad04a5c0d13c4e36127bde6ac19"
     },
     {
       "path": "frentes/ep/README.md",
@@ -102,15 +102,15 @@
     },
     {
       "path": "frentes/ep/prompts/CLAUDIA.txt",
-      "bytes": 14079,
-      "sha256": "b6060913215f39539c5b1e90ed5b9ba3874412166415b9e6aa731d9e7b077206",
-      "git_blob": "76c8bf10e956e20d6edc388b242585e6269079b5"
+      "bytes": 16448,
+      "sha256": "69263a758560da63d6d619a9529f4f8637b269d67a2fb4d6cb01e4bc7b31105e",
+      "git_blob": "a162fe29bf28ff7c6d015af7481ca766cc3894e3"
     },
     {
       "path": "frentes/ep/prompts/SAMANTHA.txt",
-      "bytes": 14847,
-      "sha256": "04022e4497084378bb5c822cb0bc07fa3a067bcc0eaae940e43336ef0fc974c3",
-      "git_blob": "aecdfd1aea0979a0ac446e43468affafceb72e35"
+      "bytes": 17247,
+      "sha256": "ecaece72a7023e0d3864ce0dcb357816958d933d55f8d16a0dec316e051a902e",
+      "git_blob": "c9ad77ff643f2f7168251511a997cdae793e5a99"
     },
     {
       "path": "frentes/ep/revisiones/LECTURA-DE-VUELTA-07a1a574.json",
@@ -177,6 +177,24 @@
       "bytes": 4166,
       "sha256": "a7824e5c52d9dcedcbf218668cff597fb62f680e3f5f71886cbf0b2ff0e8aadf",
       "git_blob": "dc3fd93d26395ba2e3d97cd3105fcac9faa7b9ed"
+    },
+    {
+      "path": "frentes/ep/originales/instrucciones-operador-hitos-RDC-provision-20261011.txt",
+      "bytes": 1425,
+      "sha256": "66d2cbda5646f166e842594cdefcae676e36f9e73d762a5163305a8d64916f22",
+      "git_blob": "1b3a503c67eacb4174c48b57cf7c5743556668f5"
+    },
+    {
+      "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.6.json",
+      "bytes": 2046,
+      "sha256": "68717a1631d4043093970304461c57a251239bcdc851a756d85d78a2e1d27f75",
+      "git_blob": "04681b8a65a9af2f5f4cba7090eafdd8994de41d"
+    },
+    {
+      "path": "frentes/ep/originales/ChatGPT-OGP - Addiction - 5-20261011-1633.txt",
+      "bytes": 59349,
+      "sha256": "c15eff877888d7b9f1045d1206d3004b6ebf7e52e64a3a8c37980a60e80601f3",
+      "git_blob": "a90b812c73502e2ecb11236845be44d1974f9594"
     }
   ],
   "exclusions": [
@@ -184,7 +202,7 @@
     "Downloads files not recovered"
   ],
   "prior_readback_verified": "07a1a5746f58396352efd29f88e8e7d193ad7335",
-  "latest_review_source_commit": "1c52d8f2e9965cc07ff869a232233cd2224bae13",
-  "current_event": "constructor output 389 received and reviewed; independent coverage findings accumulated",
+  "latest_review_source_commit": "8ae0a831312d3dd74dfa0e9e5e266233e1e40555",
+  "current_event": "Operator milestones/per-cycle continuity, authorized encrypted workspace on PC-14, restrictive RDC delegation; OGP visual original received, not WordPress",
   "verification_scope": "Changed files require read-back; unchanged entries preserve concurrent manifest and receipt, not current product evidence."
 }

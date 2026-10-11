@@ -1,0 +1,19 @@
+# Instrucciones del operador — ciclo EP 2026-10-11
+Fuente: conversación de asistencia EP; session://ecea4187-8241-819b-af83-0003b7c205f7/3f6a4187-8241-809a-b873-00a9a183c158. Horas de mensajes no atribuidas. Los siguientes son extractos materiales literales; no una copia íntegra del turno que incluía la salida del constructor.
+
+EP-OP-RDC — texto literal de instrucción:
+Creo que el uso de RDC puede hacer mucho mas lento el procesamiento, por eso limita el uso de RDC por parte del modelo constor, por default, solo el asistnete puede decidir cuando usarlo, y con fines especitficos. Siempr ey caundo sean para ahorrar tiempo.
+
+EP-OP-PROVISION — extracto literal de respuesta a si existe espacio cifrado en PC-14:
+1. No hay. Resuelvelo. Tienes autorizacion.
+
+EP-OP-WORDPRESS — extracto literal del mismo mensaje:
+2. Te pasare en un momento las converasciones de chatgpt donde viene lo de wordpress, etc. A que te refires con paquete causal?
+
+EP-OP-CONTINUIDAD — envoltorio del mensaje preservado:
+<p>
+Oye y en cuanto lo veas oportunoy covneneiente, dame el prompt para tu constructor, nunca lo dejes sin trabajo
+</p>
+
+EP-OP-HITOS — mensaje literal:
+Organiza el prtoyecto por hitos, para que me entregues resultados significativos con lka mayor frecuencia posible. Y por favor, siempore a cada ciclo actualzia el objeto canonico, no puedo enfatizar la impoertancia de ello. No te quize interrumpir prosigue.

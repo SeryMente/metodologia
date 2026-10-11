@@ -1,0 +1,49 @@
+{
+  "version": "v0.3.6",
+  "seal": "VCU-EP-v8",
+  "base_commit": "8ae0a831312d3dd74dfa0e9e5e266233e1e40555",
+  "base_oep_blob": "8ef7cfdcad3d4a5835628f7ae7587f59417d3abc",
+  "scope": "milestones, current state, authorized host prerequisite and restrictive RDC delegation; no product implementation",
+  "checks": {
+    "historical_0_59_preserved": true,
+    "prompt_views_equal": true,
+    "private_repository_verified": true,
+    "workflows_inspected": true,
+    "external_previews_not_exposed": true
+  },
+  "product_tests_executed": false,
+  "encrypted_volume_created": false,
+  "constructor_supplement_bytes_received": false,
+  "files": {
+    "frentes/ep/OEP.md": {
+      "bytes": 148448,
+      "sha256": "604397c5e38133091db6a71d7bd5a5083e0cc20db39cddf8531b7e950de565f8",
+      "git_blob": "537095ff8128cad04a5c0d13c4e36127bde6ac19"
+    },
+    "frentes/ep/prompts/CLAUDIA.txt": {
+      "bytes": 16448,
+      "sha256": "69263a758560da63d6d619a9529f4f8637b269d67a2fb4d6cb01e4bc7b31105e",
+      "git_blob": "a162fe29bf28ff7c6d015af7481ca766cc3894e3"
+    },
+    "frentes/ep/prompts/SAMANTHA.txt": {
+      "bytes": 17247,
+      "sha256": "ecaece72a7023e0d3864ce0dcb357816958d933d55f8d16a0dec316e051a902e",
+      "git_blob": "c9ad77ff643f2f7168251511a997cdae793e5a99"
+    },
+    "frentes/ep/originales/instrucciones-operador-hitos-RDC-provision-20261011.txt": {
+      "bytes": 1425,
+      "sha256": "66d2cbda5646f166e842594cdefcae676e36f9e73d762a5163305a8d64916f22",
+      "git_blob": "1b3a503c67eacb4174c48b57cf7c5743556668f5"
+    },
+    "frentes/ep/originales/ChatGPT-OGP - Addiction - 5-20261011-1633.txt": {
+      "bytes": 59349,
+      "sha256": "c15eff877888d7b9f1045d1206d3004b6ebf7e52e64a3a8c37980a60e80601f3",
+      "git_blob": "a90b812c73502e2ecb11236845be44d1974f9594"
+    }
+  },
+  "readback_status": "PENDING_AT_WRITE; verify using remote blobs and exact OEP before reporting saved",
+  "visual_original_received": true,
+  "wordpress_spec_in_new_attachment": false,
+  "preparation_directory_created": true,
+  "vault_key_received": false
+}
