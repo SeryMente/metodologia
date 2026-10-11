@@ -227,7 +227,7 @@ Me urge el comando para instalar las sesiones RDC. Si quieres, dámelo primero y
 
 Cambio 0.3: fija el arranque operativo y su herencia, distingue reparación de prerrequisitos de sustitución del agente y prohíbe alternativas silenciosas. Nota histórica de la versión 0.3: entonces era local y no estaba publicado en el repositorio metodológico.
 
-Fin del borrador. Método preparado; publicación y autoridad central pendientes.
+Fin del antecedente 0.3. La versión documental vigente y su estado se indican en la cabecera y §9.
 
 ## 14. Dictados como especificación primaria y decisiones trazables
 
@@ -306,11 +306,6 @@ Todo lo que se haga en relacion al objeto canonioco debe de ser muy pulido y con
 
 
 
-### M23 · instrucción metodológica original preservada en Profuturo §9
-
-```text
-Me urge el comando para instalar las sesiones RDC. Si quieres, dámelo primero y luego pasas a lo de después. El comando siempre es un problema porque nunca... siempre el modelo trata de buscar otro o el que funciona es el que publica Remote Desktop Commander, el republicante de la utilidad. Este, canonízalo ya desde el Metacanon para que todos los objetos canónicos que se desprendan para este tipo de estilo de marco de trabajo lo contengan y cuando se trate de RDC o de iniciar una nueva sesión de RDC siempre se utilice el mismo comando.
-```
 
 ### Referencias de originales con contexto privado
 
