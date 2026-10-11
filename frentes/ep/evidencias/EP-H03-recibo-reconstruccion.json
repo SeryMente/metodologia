@@ -1,0 +1,13 @@
+{
+  "archive_name": "EP-H03-integracion-reproducible-parcial-20261011.zip",
+  "archive_sha256": "5f494998a08f23c6bf0622ada4de17d6e9754369e66fcd3dbeb79e7ecc279ed9",
+  "archive_bytes": 370543,
+  "zip_repeated_generation_byte_identical": true,
+  "checksummed_members": 40,
+  "reconstructed_files_byte_identical": 8,
+  "regression_methods": 21,
+  "regression_scope": "existing validator suite; synthetic, not product acceptance",
+  "offline_reconstruction_exit_code": 0,
+  "physical_downloads_transfer": "NOT_VERIFIED",
+  "canonical_write": "NOT_PERFORMED_PENDING_COORDINATION"
+}

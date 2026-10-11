@@ -1,0 +1,66 @@
+{
+  "version": "v0.3.9",
+  "seal": "VCU-EP-v11",
+  "base_commit": "dd67536862adeb64c3f554570b7c73e5f3bafbf7",
+  "review_source_sha256": "e199c50dfceff2d383f4a5f5e2f26da214ea06576417e38a76ebd7123f6f7667",
+  "review_bytes": 102043,
+  "source_readback_exact": true,
+  "builder_results": "reported in original document; not rerun by assistant",
+  "new_helper_sha256": "0725961c017666e5fda7dae462cc34cb71da877388a4353e974661f88669b7f0",
+  "historical_candidates": [
+    {
+      "blob": "2bf8530843ba09a6e12d1e8799c86eff672c9378",
+      "entries": 9
+    },
+    {
+      "blob": "c924551f8fe56a176a8c76a8c63bef9ea8460531",
+      "entries": 6
+    }
+  ],
+  "main_candidate_rejected": "operator reported",
+  "real_historical_key_validation": "pending",
+  "secrets_decrypted": false,
+  "vault_changed": false,
+  "volume_created": false,
+  "readback_status": "PENDING_AT_WRITE",
+  "direct_session_communication": {
+    "constructor_session": "session://ecea4187-8241-819b-af83-0003b7c205f7/3f6a4187-8241-8092-8764-00a90c36f6be",
+    "latest_event_read": 977,
+    "methods_reported": 21,
+    "global_manifest_missing_files_reported": 592,
+    "message_tool_result": "running",
+    "message_read_or_applied": "not verified",
+    "persistent_watch": "not demonstrated",
+    "agents_created": 0
+  },
+  "direct_coordination_authorized_by_operator": true,
+  "manual_prompt_default": "fallback only",
+  "shared_writes": "single declared writer; assistant owns OEP in this milestone",
+  "communication_hardening_authorized": true,
+  "guards": [
+    "exact pair/goal/roles",
+    "event cursor",
+    "single writer and explicit handoff",
+    "evidence-based status",
+    "no secrets",
+    "no acknowledgement loops",
+    "no completion polling",
+    "existing permissions only",
+    "portable prompt excludes EP scope"
+  ],
+  "builder_package_custody": {
+    "zip_sha256": "5f494998a08f23c6bf0622ada4de17d6e9754369e66fcd3dbeb79e7ecc279ed9",
+    "members": 41,
+    "members_hash_verified": 40,
+    "unsafe_paths_or_symlinks": false,
+    "review_inside_zip_matches_received": true,
+    "review_prefix_preserved": true,
+    "execution_by_assistant": false,
+    "reconstruction_rerun_by_assistant": false,
+    "receipt_downloads_flag": "historical NOT_VERIFIED; current transfer independently verified by assistant"
+  },
+  "builder_completed_delta_received_directly": true,
+  "builder_continuation_sent_directly": true,
+  "glossary_version": "v1.1",
+  "glossary_readback_verified": true
+}

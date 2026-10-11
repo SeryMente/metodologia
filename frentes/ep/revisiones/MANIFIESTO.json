@@ -36,9 +36,9 @@
     },
     {
       "path": "frentes/ep/OEP.md",
-      "bytes": 156151,
-      "sha256": "f931c3fbd7cdcbb365971d9244ea15d6258ea5e0a2ea95fc366e750589353cab",
-      "git_blob": "f8519c8144e096311f1d207a1e08b16823dd9765"
+      "bytes": 173074,
+      "sha256": "ee8254345fce0ca340dbc5ac7745e73fd8420e37550aa2e41a08a0400d572b4e",
+      "git_blob": "4984722f380bfed3ad039cef43738a7f09536998"
     },
     {
       "path": "frentes/ep/README.md",
@@ -102,15 +102,15 @@
     },
     {
       "path": "frentes/ep/prompts/CLAUDIA.txt",
-      "bytes": 17362,
-      "sha256": "180b833e64e08e9897abd9109c6367e1ff06437c437561b06fa7a7c8a5e19280",
-      "git_blob": "53a959cf9821eb75dc01bd00d75501e2dac87c9b"
+      "bytes": 20178,
+      "sha256": "0307023df069d5f3cf07e73a3a545016e83b15267e61c146b28728e0f91ae483",
+      "git_blob": "180339a20c58089182ed12067c5bf98dcc49cf30"
     },
     {
       "path": "frentes/ep/prompts/SAMANTHA.txt",
-      "bytes": 18161,
-      "sha256": "6ea87d8ac7b0112f8dac415308cd1a3892d93f809d028db9eb7dcfdfe72d1fef",
-      "git_blob": "efeca37768346c5ad500e2ea79e69847c61b97df"
+      "bytes": 21186,
+      "sha256": "e1d61cb591dcc609c1ae589c918e3204e171669c527fb00a981e0a7fe1bb0321",
+      "git_blob": "8441ed55019965ef653c79f6ece8fe6ca88d073b"
     },
     {
       "path": "frentes/ep/revisiones/LECTURA-DE-VUELTA-07a1a574.json",
@@ -207,6 +207,30 @@
       "bytes": 698,
       "sha256": "5933505f767fc5fc7d39d65e7bf1123448b87fc5d6af89a183522a917275b2c2",
       "git_blob": "73fd63eaa31f71455dcc756d3afbadd3dbed81dc"
+    },
+    {
+      "path": "frentes/ep/evidencias/Revision-conjunta-ABC-local-prepare-only.md",
+      "bytes": 102043,
+      "sha256": "e199c50dfceff2d383f4a5f5e2f26da214ea06576417e38a76ebd7123f6f7667",
+      "git_blob": "3dfd6a539350e1d169fe2c4af21cf18d608af6b1"
+    },
+    {
+      "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.9.json",
+      "bytes": 2462,
+      "sha256": "c00ed129152a6c7d81641da16675aac6949b73be2d8e67dd0293da09edeead49",
+      "git_blob": "4fbeecec4be792a84d55f7f0303405cfd79d528a"
+    },
+    {
+      "path": "frentes/ep/evidencias/EP-H03-recibo-reconstruccion.json",
+      "bytes": 576,
+      "sha256": "513fad00839224498144dce062536c2594bd4b49989ec50920893b885172e10f",
+      "git_blob": "93362942199b2c14e4c2cc06f07052ee0af3bf40"
+    },
+    {
+      "path": "frentes/ep/artefactos/EP-H03-integracion-reproducible-parcial-20261011.zip.b64",
+      "bytes": 494061,
+      "sha256": "00c594f6c5f57c9dcb284701a9e627dd624f04a62494540f43dd835211a475ca",
+      "git_blob": "98cdb8b488c736913e821445cb2a8fee65ba52d6"
     }
   ],
   "exclusions": [
@@ -214,7 +238,7 @@
     "Downloads files not recovered"
   ],
   "prior_readback_verified": "49e64d0636392c4d2f6f36e3e6d4484d465f0630; seven blobs matched and OEP content exact",
-  "latest_review_source_commit": "9969494dc459954dbb44639bd6e94db3780ab086",
-  "current_event": "Operator identifies environment vault and has previous key; local recovery verifier prepared, authentication pending",
+  "latest_review_source_commit": "dd67536862adeb64c3f554570b7c73e5f3bafbf7",
+  "current_event": "Prioritize exact builder supplement 8, stop repeating completed focal work; recovery uses distinct historical vaults after main rejected; direct constructor session read and message accepted, no persistent-watch claim; operator ratified direct intersession coordination with explicit writer and unchanged safety gates; operator authorized hardening and portable inauguration prompt; exact builder section9/ZIP/receipt received and custody verified in Downloads; asynchronous continuation sent directly",
   "verification_scope": "Changed files require read-back; unchanged entries preserve concurrent manifest and receipt, not current product evidence."
 }
