@@ -1,8 +1,8 @@
 # Canon transversal de Entorno Persistente, Continuidad de Ejecución y Laboratorios Locales
 
 **ID documental:** METODOLOGIA-EP-CANON  
-**Versión del documento:** v1.1.0  
-**Nombre de versión:** Contrato Único de Actualización, Aceptación y Publicación EP  
+**Versión del documento:** v1.2.0  
+**Nombre de versión:** Ejecución Autónoma de Samantha en una Sola Invocación  
 **Estado:** CANON DOCUMENTAL TRANSVERSAL Y CONTRATO DE EJECUCIÓN; implementación, publicación del producto y certificación física NO acreditadas por esta edición.  
 **Fecha de corte documental:** 2026-10-10 (America/Mexico_City); revisión documental autorizada el 2026-10-11 UTC.  
 **Repositorio propietario y fuente normativa transversal:** [SeryMente/metodologia](https://github.com/SeryMente/metodologia)  
@@ -10,7 +10,7 @@
 
 > **Regla de autoridad y autosuficiencia:** este archivo contiene el contrato técnico transversal de actualización, integración, aceptación, publicación y recuperación del Entorno Persistente (EP). Los anexos son procedencia histórica, no lecturas técnicas obligatorias para completar instrucciones faltantes. El Sistema de Instrucciones y la Metodología vigentes conservan su precedencia de gobierno: este canon no puede dispensar su adquisición ni una autorización humana exigida por ellos. Código, proveedores, host, secretos y activos licenciados son recursos de ejecución que deben observarse, no requisitos que se puedan inventar. Si una decisión material aún no está autorizada, la ejecución se bloquea con el requisito exacto; no se promete publicación incondicional.
 
-**Lectura ejecutiva:** alcance y significado de un ciclo en §18; contratos concretos en §19–§22; pruebas y errores en §23; publicación/reversión en §24; evidencia, trazabilidad y autoauditoría en §25–§27. Las secciones §0–§17 conservan requisitos generales y evidencia histórica. En asuntos técnicos resueltos por esta revisión, el contrato específico de §18–§27 prevalece sobre una formulación general anterior, sin rebajar seguridad ni ampliar autorizaciones.
+**Entrada del ejecutor:** Samantha empieza por §28 y ejecuta su admisión; después lee íntegramente el canon. Alcance y significado de un ciclo en §18; contratos concretos en §19–§22; pruebas y errores en §23; publicación/reversión en §24; evidencia, trazabilidad y autoauditoría en §25–§27. Las secciones §0–§17 conservan requisitos generales y evidencia histórica. En asuntos técnicos resueltos por esta revisión, el contrato específico de §18–§28 prevalece sobre una formulación general anterior, sin rebajar seguridad ni ampliar autorizaciones.
 
 ## 0. Recuperación y preflight de lectura
 
@@ -100,7 +100,7 @@ Una ruta local de ejecución no se considera plano de datos persistente sin un d
 
 ## 4. Procedencia documental y localizadores de código
 
-Las siguientes fuentes son antecedentes/localizadores subordinados. No se requiere leerlas para reconstruir los requisitos técnicos de §18–§27. Sus afirmaciones fechadas no certifican el host ni reemplazan este canon:
+Las siguientes fuentes son antecedentes/localizadores subordinados. No se requiere leerlas para reconstruir los requisitos técnicos de §18–§28. Sus afirmaciones fechadas no certifican el host ni reemplazan este canon:
 
 1. [Anexo EP híbrido y EP-WP-LAB](ANEXO-ENTORNO-PERSISTENTE-HIBRIDO-EP-WP-LAB.md) — plan consolidado previo, decisiones y evidencia histórica.
 2. [Anexo Cybernet, RDC, WP-LAB y OGP-Visual](ANEXO-EP-ARRANQUE-CYBERNET-WP-LAB-OGP-IA-20261009.md) — especificación extensa de arranque, telemetría y laboratorio; conservar como registro histórico de detalle, no como autoridad competidora.
@@ -400,7 +400,7 @@ No colapsar estados ni inferir uno del otro. “Preparado” no significa “ope
 
 ## 12. Secuencia de ejecución y aceptación
 
-Un solo ciclo de liberación tiene `release_id`, alcance congelado, candidato identificable y checkpoint remoto. Puede incluir varias sesiones, reinicio de un host de prueba o confirmaciones humanas; no significa una respuesta de chat, un comando monolítico ni una garantía de tiempo. La secuencia detallada se encuentra en §24.
+Un solo ciclo de implementación es una sola invocación de Samantha, con múltiples llamadas a herramientas, un `release_id`, alcance congelado, candidato identificable y checkpoint remoto. No significa un solo comando ni varias conversaciones encadenadas. Si debe esperar un nuevo turno del operador, pierde herramientas/contexto de ejecución o necesita reinstanciación, el ciclo queda SUSPENDIDO/BLOQUEADO y no se cuenta como éxito en un ciclo. Un proceso puede esperar/pollear dentro de la misma invocación, sin convertirlo en un turno nuevo. La secuencia detallada está en §24 y la admisión del ejecutor en §28.
 
 | Fase | Acción y gate obligatorio | Si falla |
 |---|---|---|
@@ -439,7 +439,7 @@ La matriz refleja únicamente lo respaldado por el material documental inspeccio
 
 | Dominio | Estado documental al corte | Evidencia que falta para elevar estado |
 |---|---|---|
-| Canon transversal EP | Canon transversal publicado en la baseline documental; revisión ejecutable v1.1.0 pendiente de read-back de su propia escritura | Verificar publicación y referencias cruzadas en main |
+| Canon transversal EP | Canon transversal con revisión v1.1.0 publicada y leída de vuelta; v1.2.0 requiere su propio read-back | Verificar publicación y referencias cruzadas en main |
 | Identidad/volatilidad por terminal | Reglas y registros por terminal documentados | Lectura actual del host/terminal y pruebas por terminal |
 | Persistencia remota/checkpoints | Diseño descrito | Read-back, SHA y prueba de restauración desde el destino real |
 | VHDX/BitLocker | Requisitos y plan descritos en documentos previos | Estado real del volumen, cifrado, recuperación y claves protegidas |
@@ -500,9 +500,11 @@ Hasta entonces, el estado global seguirá siendo **PENDIENTE DE CERTIFICACIÓN E
 
 Esta revisión documenta una actualización coordinada del sistema existente, no una reescritura ni una nueva arquitectura. Antes de modificar código, el ejecutor produce un plan derivado de este archivo: componente, requisito, archivo real, cambio necesario, prueba, autorización y reversión. No necesita una conversación o anexo para descubrir qué se exige. Sí necesita acceso a repositorios, host, servicios, activos y autorizaciones: escribir una especificación no crea esos recursos.
 
-La versión de este documento (`v1.1.0`), la Metodología, el Sistema de Instrucciones, el host/bootstrap y `khora-web/package.json` son identidades distintas. Ninguna se usa como versión de otra. El número exacto de publicación del producto se calcula desde su baseline real conforme a su política vigente y se congela antes del primer cambio; la baseline del corte no se presenta como vigente para siempre. Sin baseline inequívoca o política de versión verificable, `BLOCKED_VERSION_BASELINE`.
+La versión de este documento (`v1.2.0`), la Metodología, el Sistema de Instrucciones, el host/bootstrap y `khora-web/package.json` son identidades distintas. Ninguna se usa como versión de otra. El número exacto de publicación del producto se calcula desde su baseline real conforme a su política vigente y se congela antes del primer cambio; la baseline del corte no se presenta como vigente para siempre. Sin baseline inequívoca o política de versión verificable, `BLOCKED_VERSION_BASELINE`.
 
-**Un ciclo:** desde adquisición hasta publicación verificada o salida bloqueada/fallida, con un único `release_id` y candidato congelado. Una corrección que modifica el candidato invalida las pruebas afectadas y genera una revisión del manifiesto dentro del mismo ciclo. No se preserva un PASS de un SHA anterior para otro candidato. Un bloqueo por credencial, licencia, host, decisión material, cuota o runner es una salida legítima, no permiso para simular el cierre.
+**Un ciclo:** una invocación de implementación autorizada que Samantha lleva desde adquisición y admisión hasta publicación verificada/cierre, sin esperar un «continúa» entre pasos. Las llamadas a herramientas, pruebas, reparaciones causales y esperas de procesos forman parte de esa misma invocación. No incluye una segunda conversación, un nuevo mensaje para aportar credenciales/aprobaciones ni un handoff a otra sesión. Esas situaciones producen SUSPENDIDO/BLOQUEADO y conservan checkpoint, pero no satisfacen el objetivo de un solo ciclo. El release_id puede conservarse al reanudar una liberación; eso no transforma dos ciclos en uno.
+
+Una corrección que modifica la candidata invalida pruebas afectadas y actualiza el manifiesto dentro de la invocación. No se conserva PASS de otro árbol ni se fija un plazo inventado. Credencial, licencia, decisión material, host, cuota o runner faltantes se descubren en admisión; no se construye primero para preguntar al final. Esta orden documental no autoriza usar credenciales reales o desplegar producto. La admisión de §28 determina si una futura orden de implementar es ejecutable con los recursos/autorizaciones presentes.
 
 ### 18.2 Perfiles de entrega sin equivalencias falsas
 
@@ -787,7 +789,7 @@ El ejecutor materializa el registro en el almacén autorizado existente; esta ta
 
 Invariantes: `release_ready` solo con gates prepublicación y ensayos aplicables PASS según §23; `published_verified` requiere también R16 activo y R32-cierre de §24, no mero ready; `global_certified` solo perfil EP-INTEGRAL y R01–R32 completos. Un documento publicado con especificaciones no cumple ninguno de estos booleanos de producto por ese hecho.
 
-Máquina de estados: ADQUIRIDO → PLAN_VALIDADO → CANDIDATO → READY_PREPUBLICACIÓN → PROMOVIDO → PUBLICADO_VERIFICADO → CERRADO. Cualquier fase admite BLOCKED/FAIL con checkpoint y retorno controlado; PROMOVIDO no implica PUBLICADO_VERIFICADO. Una modificación del árbol o contrato invalida READY y sus pruebas afectadas. La transición CERRADO integral requiere además `global_certified=true`; un cierre parcial conserva `global_certified=false`.
+Máquina de estados: ADQUIRIDO → ADMITIDO (§28.2) → PLAN_VALIDADO → CANDIDATO → READY_PREPUBLICACIÓN → PROMOVIDO → PUBLICADO_VERIFICADO → CERRADO. Cualquier fase admite BLOCKED/FAIL con checkpoint y retorno controlado; PROMOVIDO no implica PUBLICADO_VERIFICADO. Una modificación del árbol o contrato invalida READY y sus pruebas afectadas. La transición CERRADO integral requiere además `global_certified=true`; un cierre parcial conserva `global_certified=false`. Para el objetivo de una invocación, §28 añade `execution_admitted` y `single_cycle_completed`; ninguno se deduce de conservar el release_id.
 
 ### 25.2 Eventos e integridad de estado
 
@@ -828,3 +830,97 @@ Antes de declarar que este canon habilita una liberación concreta en un ciclo, 
 8. El estado final distingue revisión documental, publicación parcial, publicación integral y certificación global.
 
 Si falta cualquiera de estas condiciones, el dictamen de la liberación es **BLOQUEADA POR PRECONDICIÓN IDENTIFICADA**, aunque el canon haya sido mejorado y publicado. «Perfecto», «completo» o «un solo ciclo» nunca se usan para ocultar una dependencia material, una decisión no autorizada o una prueba no ejecutada.
+
+
+## 28. Contrato operativo de Samantha: implementar, publicar y verificar en una invocación
+
+### 28.1 Disparador, cometido y definición de éxito
+
+**Ejecutor:** Samantha, usando herramientas disponibles y descritas en la invocación actual. Este apartado es una instrucción operativa, no una atribución de capacidades inexistentes. Una orden de «endurecer/editar el canon» solo activa edición documental. Una orden explícita de «implementar usando este canon» activa adquisición/admisión y las acciones de ejecución permitidas; no reemplaza las aprobaciones especiales de UX/UI, seguridad, arquitectura, credenciales, datos y producción.
+
+**Objetivo por defecto de implementación integral:** obtener la nueva versión del perfil EP-INTEGRAL publicada en el destino existente, ejecutar su flujo real contra esa versión, demostrar recuperación y cerrar evidencia. No responder con plan/código sugerido/PR abierto si se puede ejecutar y cerrar con herramientas autorizadas. EP-V1-MINIMO solo se selecciona cuando la orden establece ese alcance; no reducir alcance para lograr un PASS.
+
+**Éxito en un ciclo:** misma invocación desde adquisición a cierre, todas las pruebas obligatorias vigentes, versión activa comprobada, read-back final y ningún gate obligatorio pendiente. Un commit documental, código escrito, compilación, CI verde, merge o deployment por separado no lo cumplen. `single_cycle_completed=true` solo si además de la publicación/certificación del alcance no hubo suspensión ni intervención en un turno posterior. Una entrega parcial bloqueada se comunica como tal, nunca como éxito integral.
+
+### 28.2 Admisión antes de la primera mutación de producto
+
+Samantha realiza un preflight consolidado de solo lectura. Obtiene observaciones independientes en paralelo y deja las comprobaciones dependientes en secuencia. No usa búsquedas genéricas para recorrer filas ni repite datos ya recuperados y vigentes. El canon es el único contrato técnico; el código sirve para resolver implementación, no para decidir silenciosamente otros requisitos.
+
+| Precondición | Cómo resolverla en esta invocación | Decisión obligatoria |
+|---|---|---|
+| Gobierno/alcance | Canon completo, SI/Metodología frescos H1→lectura@H1→H2; orden explícita y perfil. | Conflicto normativo o alcance ambiguo: BLOCKED antes de construir. |
+| Baseline/versión | Leer ramas/HEAD, PRs/diffs/checks/revisiones, versión activa y política real; fijar commits. | Registrar versión objetivo calculada, no versión documental. Si no determinable, BLOCKED_VERSION_BASELINE. |
+| Herramientas y permisos | Descubrir servidores/herramientas y sus esquemas; comprobar lectura/escritura autenticadas sin mutación de prueba no autorizada. | Una herramienta no listada no se simula. Si existe otra vía autorizada, usarla; si no, BLOCKED con capacidad exacta. |
+| Host Windows | Estado registrado RDC, dispositivos vivos, ping y observación de identidad/rutas/privilegios. | Linux local no sustituye PowerShell 5.1 real. Host incorrecto/offline/no elevado: bloqueo de las pruebas/operaciones dependientes. |
+| Aprobaciones | Recuperar decisiones y revisiones explícitas vigentes para cambios/diseño/cifrado/migración/deploy/prueba de escritura. | No convertir un permiso de edición o un «implementa» general en presencia UX/UI/seguridad/arquitectura. |
+| Secretos y producción | Validar presencia/referencia privada/entorno y permisos por canal seguro; observar configuración/alias/quota. | No pedir valores por chat ni inspeccionarlos en logs. Falta de credencial/coste nuevo/cuota: BLOCKED específico. |
+| Datos, activos y políticas | Destinos reales, retención/recuperación aprobadas, backup/restore, Divi/licencias, GPU/runtime, atestación y rúbrica OGP para integral. | Reusar decisión aprobada y vigente; no inventar parámetros. Agrupar únicamente decisiones materiales realmente faltantes. |
+| Pruebas y reversión | Enumerar suites/workflows/fixtures, logs, host de ensayo, deployment anterior y plan de datos compatible. | Sin runner/evidencia, restore o rollback requeridos: no admitir promoción. |
+
+**Resultado de admisión:** `execution_admitted=true` únicamente si hay ruta verificable a todas las operaciones/pruebas del perfil, autorizaciones presentes y ningún dato/decisión material obligatorio sin resolver. No exige que las pruebas ya hayan pasado: exige que puedan ejecutarse de forma autorizada. Antes de admitir, registrar `admission_missing=[]`, baseline, objetivo, destino, responsable y capacidades actuales. Si no pasa, emitir un único diagnóstico consolidado con evidencia, operaciones afectadas y mínima acción habilitante; no dispersar preguntas de trámite ni iniciar cirugías productivas.
+
+Puede continuar lecturas, diagnóstico y preparación reversible permitida durante un bloqueo, pero no marcar ADMITIDO ni afirmar que ese trabajo parcial satisface la implementación. La falta de una capacidad optativa no bloquea el perfil que no la exige. Una vez admitido, un cambio real de recursos/HEAD/autorización puede suspenderlo; actualizar evidencia, no conservar una admisión obsoleta.
+
+### 28.3 Rutas de herramientas y separación de entornos
+
+- **GitHub:** usar herramientas descritas para archivos en commits fijados, ramas, PR/diff, checks/revisiones y escrituras con blob/HEAD esperado. Agrupar cambios relacionados y leer de vuelta. Si la plataforma permite shell autorizado, usar CLI existente para workflows/jobs/logs/build/deploy cuando el conector no ofrezca esa capacidad. Antes de cada operación crítica revalidar candidato/checks y autorización; no ejecutar dos mutaciones concurrentes del mismo repo.
+- **Desktop Commander Remote:** describir los tools que se usarán; resolver dispositivo con `list_devices` y comprobar `ping` cuando el trabajo requiera host vivo. Ejecutar PowerShell mediante `start_process` en el dispositivo autorizado; recuperar estado/salida con `read_process_output` o `get_tool_result` según el resultado real. Una respuesta que solo acepta el trabajo no es su finalización. Guardar device ID/process handle/correlation ID, exit code y evidencia; no lanzar duplicados por no esperar.
+- **Sandbox propio:** preparar payloads, inspección estática, diffs, validaciones y artefactos reproducibles en raíz propia. No tratar sus rutas Linux, variables o procesos como el Windows del operador. Código privado/secreto no se exfiltra a archivos públicos; los payloads no contienen valores de credenciales.
+- **Credenciales, proveedor y humano:** usar las conexiones y canales seguros realmente disponibles. Si un proveedor necesita reautenticación, una confirmación humana o un permiso material que no existe en esta invocación, bloquear/suspender y registrarlo. No abrir otra cuenta/proyecto, omitir un check o fabricar consentimiento.
+
+Los nombres anteriores son localizadores de capacidades observadas, no esquemas congelados ni garantía de conexión futura. Al ejecutar, cargar el esquema y seguirlo una sola vez; usar IDs/URLs devueltos, no fabricados. No usar navegador para operaciones Notion. No crear Workers, integraciones, agentes paralelos o subsistemas nuevos para compensar una capacidad faltante sin autorización correspondiente; no delegar a subagentes salvo solicitud explícita.
+
+### 28.4 Plan de construcción cerrado y dependencias
+
+Antes de editar código, Samantha materializa `implementation_plan` desde código observado y R01–R32. Cada unidad tiene ID, repo/archivo real, SHA base, requisito, brecha observada, cambio mínimo, autorización, dependencias, prueba/comando real, expected, riesgo, rollback y estado. **Requisito ya satisfecho con evidencia vigente = VERIFY/REUSE, no reimplementación.** Unidad sin contrato/aprobación/archivo resoluble = BLOCKED, nunca TODO oculto en una candidata liberable.
+
+| Unidad | Acción concreta | Dependencia y cierre |
+|---|---|---|
+| W0 | Resolver admisión, versiones, destinos, matriz y plan de archivos. | Antes de toda construcción; únicamente lectura/preparación autorizada. |
+| W1 | Corregir solo brechas de puerta EP/OIDC, sesiones, bóveda, rutas/migraciones y pruebas en componentes de §19. | W0 y aprobaciones específicas; R03–R07/R13/R15 en staging. |
+| W2 | Corregir pin/hash/fuente embebida, launcher, identidad/DPAPI, volumen, workspace, ledger/Guardian/cierre donde la prueba detecte brecha. | W0; W1 para consumo real; R08–R12/R17 y pruebas físicas aplicables. |
+| W3 | Preparar fundación idempotente, exports, asociaciones, cámara y RDC sin invadir Chrome. | W2 operativo y permisos de §21; R18–R22. No añadir estas capas a la entrega mínima. |
+| W4 | Corregir bootstrap WP en staging; obtener checkpoint consistente, paths/funcionalidad/restore reales. | W2 más storage/licencia; W3 estable para integral; R23–R26. |
+| W5 | Resolver lock/provisionador/guard de IA, generación/edición, re-instanciación y TEST 01 aprobado. | Persistencia y preflight elegible; W3 estable; R27–R29. Sin integración editorial no autorizada. |
+| W6 | Completar pruebas de caída/recuperación/limpieza y regresión sobre candidata exacta. | Unidades obligatorias del perfil; R30–R31 integral, R14 y matriz prepublicación. |
+| W7 | Revisión/readiness, integración individual, artefacto exacto, migración autorizada, deploy/alias, prueba activa, evidencia/read-back/rollback según §24. | Gates previos completos; R16 activo y R32-cierre; no finalizar en PR o build. |
+
+W1/W2 pueden tener preparación independiente; sus pruebas acopladas esperan sus dependencias. WP e IA comparten destino/host: no paralelizar instalaciones, migraciones o cambios de workspace que compitan por esos recursos. Mantener serializadas las cirugías de cada repo/host; paralelizar solo lecturas/pruebas aisladas realmente independientes. No extender alcance ni hacer refactors no necesarios para pasar el requisito.
+
+### 28.5 Bucle de trabajo dentro de la misma invocación
+
+Tras cada resultado de herramienta: comprobar finalización real → clasificar prueba/estado → guardar evidencia/checkpoint necesario → elegir y ejecutar la siguiente unidad desbloqueada. No terminar el mensaje porque se escribió código, se abrió PR o «el siguiente paso está listo». No preguntar «¿continuamos?» ni emitir comandos para que el operador haga lo que Samantha puede ejecutar autorizadamente.
+
+Ante FAIL con causa reproducida y corrección dentro del alcance autorizado: registrar el error, aplicar cambio causal mínimo, ejecutar primero su prueba y después regresiones afectadas; actualizar SHA/manifiesto. Una evidencia vigente se reutiliza solo si sus archivos, configuración, host y supuestos no cambiaron. Ante salida incompleta, esperar/pollear por el identificador del trabajo en vez de repetir la mutación. Ante error de proveedor/permiso sin nueva evidencia, no reintentar indefinidamente ni modificar código a ciegas.
+
+Pausas duras: credencial/reautenticación; aprobación material/presencia; archivo vetado; entorno o identidad ambiguos; datos/backup no protegidos; incidencia de ejecución sin evidencia; coste/cuota; pérdida de herramientas o límites efectivos de la sesión. Registrar estado residual y suspender lo afectado. No redefinir «un ciclo» para absorber la pausa. Una cuota o un tiempo límite no justifican pruebas omitidas, merge sin revisión ni publicación no verificable.
+
+Si el operador debe ejecutar por ausencia real de terminal propia autorizada, solicitar autorización para ese paso concreto y entregar solo el comando completo permitido. Como exige output en un turno posterior, el objetivo de una invocación queda SUSPENDIDO, no completado. Un canal con tools disponibles evita ese traspaso; no simular que el comando se ejecutó.
+
+### 28.6 Registro del ejecutor y contrato de salida
+
+Extender el manifiesto §25 con: `executor="Samantha"`, `executor_contract="ep-single-invocation/v1"`, invocation_id real de la plataforma si está disponible (de lo contrario ID de ejecución generado y rotulado como tal), `execution_admitted`, `admission_missing`, herramientas/conexiones efectivamente verificadas, `implementation_plan`, estado por W0–W7, revisiones/commits, referencias de procesos/checkpoints, `suspensions`, `single_cycle_completed` y motivo de salida. No guardar texto de credenciales ni asumir que una etiqueta generada es ID nativo.
+
+Invariantes adicionales:
+- ADQUIRIDO → ADMITIDO → PLAN_VALIDADO → CANDIDATO → READY_PREPUBLICACIÓN → PROMOVIDO → PUBLICADO_VERIFICADO → CERRADO. ADMITIDO exige §28.2; el resto conserva §23–§25.
+- `single_cycle_completed` requiere misma invocación, cero suspensiones que exijan otro turno/sesión y todos los gates del alcance completos, además de `published_verified=true`; para integral requiere `global_certified=true`.
+- Una pregunta material sin respuesta, un PR abierto, una prueba Windows no ejecutada, logs inaccesibles o un destino activo no comprobado hacen `single_cycle_completed=false`.
+- Un guard local verifica campos y condiciones antes de la promoción y del cierre; no basta que el modelo escriba «PASS». Implementarlo en el mecanismo de validación existente, sin un segundo sistema de gobierno. Conservar la prueba negativa: un requisito pendiente o un candidato cambiado debe rechazar readiness/cierre.
+
+Salida de éxito: versión/perfil publicados, commits/artefacto/destino comprobados, pruebas y recuperación del alcance, read-back y limitaciones externas al alcance. Salida de bloqueo/fallo: qué se ejecutó realmente, último estado confirmado, evidencia del bloqueo, rollback/residuos y única acción habilitante mínima. No prometer auto-continuación después de terminar la invocación ni tratar la preparación documental como implementación.
+
+### 28.7 Modo autorizado: preparar todo excepto publicación Vercel
+
+Cuando la orden excluya expresamente Vercel, `delivery_mode="prepare-only"` y `deferred_operations=["vercel-publication"]`. Samantha no ejecuta deploy/promoción/alias productivos, no dispara workflows de deploy y no fusiona una rama si esa fusión provoca despliegue automático no autorizado. Implementa y prueba en rama/staging aislados. La integración al destino previsto debe estar resuelta y revisada, no dejar conflictos de PR como si fueran «publicar».
+
+`ready_for_vercel=true` requiere todos los gates prepublicación del perfil PASS, ensayo E2E/restore del artefacto exacto, versiones/migraciones/configuración probadas, CI/revisiones verificables, ausencia de conflictos y manifiesto de procedencia/rollback completo. Las únicas comprobaciones pospublicación pendientes son las que constituyen la transacción Vercel: deploy/promoción, alias/procedencia y smoke/aceptación contra ese destino activo. No afirmar «solo falta publicar» si aún faltan host, revisión, secreto, migración, licencia, datos, CI o prueba de recuperación.
+
+En este modo `published_verified=false` y `global_certified=false` mientras no exista aceptación activa; `single_cycle_completed` del objetivo original de publicar permanece false. La preparación sí puede marcar `single_cycle_preparation_completed=true` si alcanza READY_PARA_VERCEL en la misma invocación, sin suspensiones ni otro pendiente. Este estado no equivale a PUBLICADO_VERIFICADO. Una publicación automática accidental es incumplimiento del alcance, no un atajo.
+
+### 28.8 Narrativa y verificación de esta edición
+
+**Antes:** v1.1.0 contenía contratos y runbook, pero permitía llamar «un ciclo» a varias sesiones y no fijaba admisión, ruta de tools ni obligaciones concretas de Samantha.
+**Cambio:** v1.2.0 hace de este canon un insumo operativo del ejecutor, corrige §12/§18, añade admisión antes de mutación, W0–W7, herramientas/entornos separados, avance causal sin preguntas de trámite y criterio verificable de una invocación.
+**Motivo:** impedir otra ronda de planificación/documentación en lugar de ejecutar cuando la implementación esté autorizada y los recursos disponibles.
+**Límite:** no crea permisos, secretos, atestación, licencias, host, runner ni disponibilidad ilimitada; un bloqueo externo impide éxito en un ciclo y se declara literalmente.
+**Ancla de edición:** canon v1.1.0 en `93488728d6f5dda046d65b2518e9f81a88d17db6`, blob `d24c48c77673b076db30a0b33879b1ac72bce695`; SI y Metodología recuperados en esa misma instantánea, sin cambio de blobs. La escritura v1.2.0 requiere control del blob esperado y comparación literal/read-back antes de declararse publicada.
