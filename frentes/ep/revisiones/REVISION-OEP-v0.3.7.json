@@ -1,0 +1,18 @@
+{
+  "version": "v0.3.7",
+  "seal": "VCU-EP-v9",
+  "base_commit": "7e0f5291f3b479ccc4d08ed26b75b0f29b709625",
+  "event": "operator reports forgotten recently rotated key; requests reset",
+  "key_identity": "requires operator clarification",
+  "vault_script_blob": "46efce0ff43c400bccdee11f02de5bc2ddd21e4c",
+  "recovery_references_checked": 2,
+  "recovery_references_present": 0,
+  "secret_values_read_or_decrypted": false,
+  "vault_reset": false,
+  "product_changed": false,
+  "volume_created": false,
+  "prior_key_input_command": "suspended",
+  "builder_independent_work": "unchanged; continue already authorized tasks",
+  "metacanon_blob": "61bc98e0b3f5e149274238a5f6df39a8a4aba539",
+  "readback_status": "PENDING_AT_WRITE"
+}

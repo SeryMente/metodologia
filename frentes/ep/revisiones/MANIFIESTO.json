@@ -36,9 +36,9 @@
     },
     {
       "path": "frentes/ep/OEP.md",
-      "bytes": 149392,
-      "sha256": "c62a07e19b47efd05d6533d608c237bef7e4a444775a46afbeb42937325c950c",
-      "git_blob": "6f443524ddc33910883979b13409a366edaa5b8b"
+      "bytes": 154313,
+      "sha256": "1ae18a0810c35562b99efdca27778ee7698265fad781a8f8ce3121ed14b31268",
+      "git_blob": "3f433f2376a6547e68080f41efb64224a9f87dc4"
     },
     {
       "path": "frentes/ep/README.md",
@@ -102,15 +102,15 @@
     },
     {
       "path": "frentes/ep/prompts/CLAUDIA.txt",
-      "bytes": 16448,
-      "sha256": "69263a758560da63d6d619a9529f4f8637b269d67a2fb4d6cb01e4bc7b31105e",
-      "git_blob": "a162fe29bf28ff7c6d015af7481ca766cc3894e3"
+      "bytes": 17392,
+      "sha256": "3796c20cce57ec625bf284e95c93f0df13e474506a31d7145343fa78e174fe0d",
+      "git_blob": "0ba62720c5a1dd3c65fba11676e3965aa2958bbe"
     },
     {
       "path": "frentes/ep/prompts/SAMANTHA.txt",
-      "bytes": 17247,
-      "sha256": "ecaece72a7023e0d3864ce0dcb357816958d933d55f8d16a0dec316e051a902e",
-      "git_blob": "c9ad77ff643f2f7168251511a997cdae793e5a99"
+      "bytes": 18191,
+      "sha256": "cb5c68c01b3a118b1ffcaf12ca8059bda1bbc37ed727bc916de86b8eed01d060",
+      "git_blob": "418c4afe9a8f2da8295892cdaad0295e3cf44bbf"
     },
     {
       "path": "frentes/ep/revisiones/LECTURA-DE-VUELTA-07a1a574.json",
@@ -195,6 +195,12 @@
       "bytes": 59349,
       "sha256": "c15eff877888d7b9f1045d1206d3004b6ebf7e52e64a3a8c37980a60e80601f3",
       "git_blob": "a90b812c73502e2ecb11236845be44d1974f9594"
+    },
+    {
+      "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.7.json",
+      "bytes": 728,
+      "sha256": "c176746d6aba1dcd3de92424b08f37bae6c6515bfa44a12caedfd3fca82032ea",
+      "git_blob": "ea35b4f942530f6ed36bcd894f0c87f2b2aadc43"
     }
   ],
   "exclusions": [
@@ -202,7 +208,7 @@
     "Downloads files not recovered"
   ],
   "prior_readback_verified": "49e64d0636392c4d2f6f36e3e6d4484d465f0630; seven blobs matched and OEP content exact",
-  "latest_review_source_commit": "8ae0a831312d3dd74dfa0e9e5e266233e1e40555",
-  "current_event": "Operator milestones/per-cycle continuity, authorized encrypted workspace on PC-14, restrictive RDC delegation; OGP visual original received, not WordPress",
+  "latest_review_source_commit": "7e0f5291f3b479ccc4d08ed26b75b0f29b709625",
+  "current_event": "Forgotten recently rotated key; non-destructive diagnosis, identity clarification checkpoint",
   "verification_scope": "Changed files require read-back; unchanged entries preserve concurrent manifest and receipt, not current product evidence."
 }
