@@ -36,9 +36,9 @@
     },
     {
       "path": "frentes/ep/OEP.md",
-      "bytes": 188055,
-      "sha256": "7f96cc048ac1ea62d7e78bc66101f558c1ba3853333d56a11ac54db58c181d14",
-      "git_blob": "c7c67e7d1849090f7b1b97908b185a81d2dfe248"
+      "bytes": 192972,
+      "sha256": "567e4ed89e6c4244fb71ad44f029015ae8e6b7ed165e76a30a9d1c870326d5b1",
+      "git_blob": "57f7b80b9b4e0971d1b279d0b2e41f41fca68a7c"
     },
     {
       "path": "frentes/ep/README.md",
@@ -102,15 +102,15 @@
     },
     {
       "path": "frentes/ep/prompts/CLAUDIA.txt",
-      "bytes": 21632,
-      "sha256": "d2ca2b2bee063eb91cff52b17e6ba904c800ab4f4801b90926f9f825434508ce",
-      "git_blob": "fdc3cfca34e85429041d201d8a6c4d428e12d631"
+      "bytes": 22616,
+      "sha256": "19287f448fe875bab9492c0c1bdfa569398cdc1c0eee6f89b0e651a4366c8f94",
+      "git_blob": "400fb3f07d64a726e05c945afcaab08ea18c3446"
     },
     {
       "path": "frentes/ep/prompts/SAMANTHA.txt",
-      "bytes": 22640,
-      "sha256": "ab2d6d3f32ebd1f313394acead3d4da6b926d8b0d24f471bd9a063ea415e1704",
-      "git_blob": "60aa5e7d5b45e13d17e27c566948423d48ac4a80"
+      "bytes": 23624,
+      "sha256": "229b600c8660bd23901ad22c2c1912d779144b736eecff0626859a7b2ab3b1de",
+      "git_blob": "b0be77ada0b2f4f40d0213dba5873e1838a5d268"
     },
     {
       "path": "frentes/ep/revisiones/LECTURA-DE-VUELTA-07a1a574.json",
@@ -249,6 +249,12 @@
       "bytes": 909,
       "sha256": "63edb72f6ad0f7c6dfc76df778af8dd701240a332550f41c3c658cd48eea7bd5",
       "git_blob": "3cfe9b73989fb319a4104a6376a3c17fafc3770c"
+    },
+    {
+      "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.13.json",
+      "bytes": 654,
+      "sha256": "b80c77b37430b01bf30ac5c851f5eee159a2db456845921dc8350b635ecdf7b0",
+      "git_blob": "d562ab9451b022869f3b06f99a7d25b7a9e721b0"
     }
   ],
   "exclusions": [
@@ -256,7 +262,7 @@
     "Downloads files not recovered"
   ],
   "prior_readback_verified": "49e64d0636392c4d2f6f36e3e6d4484d465f0630; seven blobs matched and OEP content exact",
-  "latest_review_source_commit": "5c69fead75ee4937b578ca5d90c728d0f60c534c",
-  "current_event": "Constructor section10 review acquired and exactbytes verified; partial integration/rejection/tests reported separately; vault rebuild directive preserved",
+  "latest_review_source_commit": "9307e5ef888339528a088d810e5a61f6bafb71bc",
+  "current_event": "GitHub-only end-to-end authorized work; encrypted vault custody acquired before remote loss, no key export or new security approvals",
   "verification_scope": "Changed files require read-back; unchanged entries preserve concurrent manifest and receipt, not current product evidence."
 }

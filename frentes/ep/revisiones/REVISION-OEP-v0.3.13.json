@@ -1,0 +1,20 @@
+{
+  "version": "v0.3.13",
+  "seal": "VCU-EP-v15",
+  "base_commit": "9307e5ef888339528a088d810e5a61f6bafb71bc",
+  "operator_directive": "continue via GitHub before RDC drops",
+  "builder_notified": true,
+  "host_operations": false,
+  "rdc_required_for_independent_work": false,
+  "permissions_extended": false,
+  "prior_state_preserved": true,
+  "readback": "PENDING_AT_WRITE",
+  "last_operator_message": "GitHub only; four minutes remote; away for hours",
+  "encrypted_custody_acquired": true,
+  "vault_bytes": 3656,
+  "backup_bytes": 2077,
+  "receipt_bytes": 988,
+  "keys_exported": false,
+  "dpapi_exported": false,
+  "cipher_uploaded_to_git": false
+}
