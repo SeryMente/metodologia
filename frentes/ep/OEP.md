@@ -1,8 +1,8 @@
 # OEP — Objeto Canónico de Persistencia de Entorno
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.1. **Sello del frente:** VCU-EP-v3 (Versión de Contexto Universal). **Ancla:** encargo documental actual del operador y dos transcripciones aportadas el 2026-10-11; no inventar la hora de ese encargo.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.2. **Sello del frente:** VCU-EP-v4 (Versión de Contexto Universal). **Ancla:** encargo documental actual del operador y dos transcripciones aportadas el 2026-10-11; no inventar la hora de ese encargo.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
-**Persistencia:** carpeta canónica `frentes/ep/` en SeryMente/metodologia privado, rama `docs/metacanon-objetos-20261011`; comprobar recibo/huellas de lectura de vuelta. No integrada en main. La versión v0.3.1 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
+**Persistencia:** carpeta canónica `frentes/ep/` en SeryMente/metodologia privado, rama `docs/metacanon-objetos-20261011`; comprobar recibo/huellas de lectura de vuelta. No integrada en main. La versión v0.3.2 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
 ## LEER PRIMERO — adquisición, roles y límites
 
@@ -839,7 +839,7 @@ Adjuntar este OEP y su paquete privado (no sustituir el adjunto por un link a un
 
 ````text
 FUENTE CANÓNICA Y CORRECCIÓN DE PROPIEDAD — 2026-10-11
-El frente Entorno Persistente (EP) pertenece a SeryMente/metodologia, no a Khora. Abre https://github.com/SeryMente/metodologia/blob/docs/metacanon-objetos-20261011/frentes/ep/OEP.md, OEP v0.3.1 / VCU-EP-v3, o su delta posterior comprobado. La carpeta canónica es frentes/ep/ en la rama docs/metacanon-objetos-20261011; no afirmar integración en main. Los originales, prompts, evidencias y revisiones se conservan allí; no crear otra carpeta/objeto vivo ni escribir documentos del frente en Khora. Khora solo aporta código y antecedentes de implementación; esta corrección no autoriza modificarlo. Metacanon adquirido 1.2 / METACANON-OBJETOS-v1.2, misma rama metodológica, METACANON-OBJETOS-CANONICOS.md. La visibilidad privada fue comprobada; se revalida antes de subir datos privados.
+El frente Entorno Persistente (EP) pertenece a SeryMente/metodologia, no a Khora. Abre https://github.com/SeryMente/metodologia/blob/docs/metacanon-objetos-20261011/frentes/ep/OEP.md, OEP v0.3.2 / VCU-EP-v4, o su delta posterior comprobado. La carpeta canónica es frentes/ep/ en la rama docs/metacanon-objetos-20261011; no afirmar integración en main. Los originales, prompts, evidencias y revisiones se conservan allí; no crear otra carpeta/objeto vivo ni escribir documentos del frente en Khora. Khora solo aporta código y antecedentes de implementación; esta corrección no autoriza modificarlo. Metacanon adquirido 1.2 / METACANON-OBJETOS-v1.2, misma rama metodológica, METACANON-OBJETOS-CANONICOS.md. La visibilidad privada fue comprobada; se revalida antes de subir datos privados.
 
 Actúa como Claudia, asistente y responsable documental del frente Khora / Persistencia de Entorno Operativo. Samantha es el constructor y único escritor de código; tú revisas y mantienes continuidad, no lanzas otra construcción.
 
@@ -875,7 +875,7 @@ Adjuntar el mismo OEP y paquete; para código usar solo commits reales. El promp
 
 ````text
 FUENTE CANÓNICA Y CORRECCIÓN DE PROPIEDAD — 2026-10-11
-El frente Entorno Persistente (EP) pertenece a SeryMente/metodologia, no a Khora. Abre https://github.com/SeryMente/metodologia/blob/docs/metacanon-objetos-20261011/frentes/ep/OEP.md, OEP v0.3.1 / VCU-EP-v3, o su delta posterior comprobado. La carpeta canónica es frentes/ep/ en la rama docs/metacanon-objetos-20261011; no afirmar integración en main. Los originales, prompts, evidencias y revisiones se conservan allí; no crear otra carpeta/objeto vivo ni escribir documentos del frente en Khora. Khora solo aporta código y antecedentes de implementación; esta corrección no autoriza modificarlo. Metacanon adquirido 1.2 / METACANON-OBJETOS-v1.2, misma rama metodológica, METACANON-OBJETOS-CANONICOS.md. La visibilidad privada fue comprobada; se revalida antes de subir datos privados.
+El frente Entorno Persistente (EP) pertenece a SeryMente/metodologia, no a Khora. Abre https://github.com/SeryMente/metodologia/blob/docs/metacanon-objetos-20261011/frentes/ep/OEP.md, OEP v0.3.2 / VCU-EP-v4, o su delta posterior comprobado. La carpeta canónica es frentes/ep/ en la rama docs/metacanon-objetos-20261011; no afirmar integración en main. Los originales, prompts, evidencias y revisiones se conservan allí; no crear otra carpeta/objeto vivo ni escribir documentos del frente en Khora. Khora solo aporta código y antecedentes de implementación; esta corrección no autoriza modificarlo. Metacanon adquirido 1.2 / METACANON-OBJETOS-v1.2, misma rama metodológica, METACANON-OBJETOS-CANONICOS.md. La visibilidad privada fue comprobada; se revalida antes de subir datos privados.
 
 Actúa como Samantha, constructor del frente Khora / Persistencia de Entorno Operativo y único escritor del código. Claudia es la asistente documental y revisora; no inviertas roles por proveedor o por citas históricas.
 
@@ -958,3 +958,12 @@ revisa de nuevo ya es perivado
 ### Adquisición metodológica 1.2 — evento posterior
 
 Metacanon 1.2 / METACANON-OBJETOS-v1.2: excepción expresa de proyecto metodológico en un solo hilo, sin asistente separado. Esta instancia EP conserva sus dos roles/prompts y su carpeta; el hecho de alojarse en Metodología no la convierte en proyecto metodológico de mantenimiento. OEP v0.3.1 / VCU-EP-v3 solo sincroniza la versión adquirida y ambos prompts. No cambia estado de código, autorizaciones A/B/C, repositorios de implementación ni pendientes de Descargas. Carga 07a1a5746f58396352efd29f88e8e7d193ad7335 verificada: 16/16 Git blobs y contenido OEP remoto exactos; ver recibo de lectura de vuelta.
+
+
+### Evento de coordinación prioritario — salida de Claudia aportada por el operador
+
+OEP v0.3.2 / VCU-EP-v4. El operador indicó «Te paso salida del asistente de entorno persistente dale prioridad». La respuesta final aportada (marcas reportadas 14:50–14:52) sigue el prompt anterior: usa OEP histórico en Khora y solicita adjuntos v0.2.0 que no recibió. No es un defecto técnico nuevo del producto; es desfase de recepción/fuentes. Se conserva el extracto con procedencia en originales/salida-asistente-ep-20261011-1452.md; el prompt repetido corresponde al antecedente ya preservado.
+
+**Decisión y siguiente acción de asistencia:** recuperar directamente la carpeta privada frentes/ep/ de Metodología, versión actual/delta y manifiesto; cerrar cotejo de los dos hilos ya conservados sin pedir reenvío ni recapitulación. Prompt puntual en prompts/ACTUALIZAR-CLAUDIA-RECEPCION.txt; no es otro estado ni un tercer rol. No dar por hecho que Claudia ejecutó esa continuación. Mantener espera diferenciada por archivos de Descargas no recuperados y salida final de Samantha; no cambiar A/B/C ni afirmar avance integral.
+
+Esta actualización agrega crónica de recepción y sincroniza versiones de ambos prompts. El estado de implementación y permisos no cambia. Metacanon adquirido 1.2; se reconcilia su cabecera de privacidad con la custodia privada autorizada. No modificación de Khora/SI/main, no publicación ni acceso remoto.

@@ -4,7 +4,7 @@
 - Estado: **Versión documental 1.2 — Carpetas y excepción de hilo único metodológico**, preparada para lectura verificable en rama metodológica; no afirmar integración en main.
 - Versión metodológica: **1.2**. Sello: **METACANON-OBJETOS-v1.2**.
 - Nombre propio del marco: pendiente de elección del operador; no usar el nombre de un proyecto como nombre del método.
-- Repositorio de metodología identificado: https://github.com/SeryMente/metodologia, privado comprobado en el ciclo de actualización 1.1; revalidar su visibilidad antes de cada escritura sensible. Ruta METACANON-OBJETOS-CANONICOS.md; rama de esta entrega docs/metacanon-objetos-20261011. No almacenar aquí historial privado, cuentas ni dispositivos del operador.
+- Repositorio de metodología identificado: https://github.com/SeryMente/metodologia, privado comprobado en el ciclo de actualización 1.1; revalidar su visibilidad antes de cada escritura sensible. Ruta METACANON-OBJETOS-CANONICOS.md; rama de esta entrega docs/metacanon-objetos-20261011. Conservar los originales y datos privados del frente solo en su carpeta autorizada tras verificar acceso privado; nunca publicar secretos en Git ni transportar identidades de ejemplos.
 - Archivo estable propuesto: `METACANON-OBJETOS-CANONICOS.md`.
 - Origen: instrucciones del operador y método explicitado durante la documentación del frente Profuturo. **Los datos, permisos y estado de ese proyecto no forman parte de este método.**
 - Propósito: permitir que un asistente canonice un solo objeto `.md` de cualquier proyecto y que cualquier modelo pueda adquirir su gobierno, retomar el trabajo y migrar sin reconstruir el contexto.

@@ -8,10 +8,11 @@
     "ep_two_roles_preserved": true,
     "no_new_agent_or_thread": true,
     "no_code_or_khora_change": true,
-    "prior_remote_16_files_verified": true
+    "prior_remote_16_files_verified": true,
+    "privacy_header_matches_authorized_private_folder": true
   },
   "hashes": {
-    "METACANON-OBJETOS-CANONICOS.md": "a50dc42b17de76a76eca0ef5842363a5b7f67da4a1b3cab826134e97c85af34c"
+    "METACANON-OBJETOS-CANONICOS.md": "71330197b1c2c368e83580120c04ab2bf97a0c15ff60666b085df1ff8ef7e437"
   },
   "main_integration": false
 }

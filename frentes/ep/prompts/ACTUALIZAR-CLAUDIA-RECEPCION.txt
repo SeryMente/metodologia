@@ -1,0 +1,32 @@
+Claudia: actualiza las fuentes de reanudación sin reiniciar el trabajo ni pedir otra recapitulación.
+
+CORRECCIÓN VIGENTE DEL OPERADOR
+El frente Entorno Persistente pertenece a SeryMente/metodologia, no a Khora. Metodología ya fue comprobado privado. La carpeta canónica es frentes/ep/; ahí están el objeto, los dos prompts, los originales, el inventario de evidencias y las revisiones. Khora sigue siendo referencia de implementación, no la fuente viva del frente.
+
+RECUPERA DIRECTAMENTE DEL REPOSITORIO
+Rama: docs/metacanon-objetos-20261011.
+Commit de la entrega que resolvió la recepción: 429675bf1bce08c3b14ecd62601668aff3f7107e.
+
+1. frentes/ep/README.md
+2. frentes/ep/OEP.md — v0.3.1 / VCU-EP-v3 en ese commit; adquirir cualquier delta posterior comprobado.
+3. frentes/ep/prompts/CLAUDIA.txt
+4. frentes/ep/originales/conversacion-asistente.txt
+5. frentes/ep/originales/conversacion-constructor.txt
+6. frentes/ep/revisiones/MANIFIESTO.json y los registros de revisión/lectura de vuelta.
+7. METACANON-OBJETOS-CANONICOS.md — 1.2 / METACANON-OBJETOS-v1.2.
+
+Usa las conexiones GitHub disponibles: el fallo de una conexión no demuestra que todas estén bloqueadas. Recupera primero la rama actual y compara con este commit; si avanzó, conserva y calcula el delta posterior. No sobrescribas cambios ajenos.
+
+El objeto y los originales ya están persistidos en esa rama. No vuelvas a pedir OEP-v0.2.0.md ni el paquete como adjuntos si puedes recuperar estos archivos. La entrega v0.2.0 es antecedente, no la fuente vigente. No afirmar integración en main.
+
+ALCANCE DEL DELTA
+Cambian propietario documental, carpeta, custodia y fuentes de reinstanciación. No se declara avance técnico nuevo ni aprobación de A/B/C. El proyecto de mantenimiento metodológico opera en un solo hilo sin asistente separado; esa excepción NO cambia los dos roles de este frente EP.
+
+Comprueba los hashes de los archivos recuperados y lee el estado vivo actualizado. Los archivos de Descargas citados en el inventario siguen sin recuperarse: no confundas esa ausencia con la recepción de los dos hilos, que ya están conservados. No ejecutes el ZIP histórico para inspeccionarlo ni heredes equipo o permisos.
+
+SIGUIENTE HITO
+Cierra ahora el cotejo documental que habías dejado bloqueado: originales y procedencia, estado, propuestas A/B/C, requisito local hermana y evidencias disponibles. Entrega un panorama breve, delta concreto, pendientes finitos y una única continuación hacia Samantha.
+
+Si aún no existe su salida final, continúa solo la revisión independiente útil y no lo interrumpas ni fabriques progreso. Conserva prepare-only, las revisiones específicas de seguridad/arquitectura y la separación entre prueba aislada y aceptación integral.
+
+Antes de editar, relee revisión/HEAD; guarda cualquier actualización exclusivamente dentro de frentes/ep/, verifica lectura de vuelta y sincroniza ambos prompts. No modifiques código ni normas superiores. Mantén viabilidad y tiempo/ciclos por hito, separando esperas externas.
