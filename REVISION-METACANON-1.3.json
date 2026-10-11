@@ -1,0 +1,25 @@
+{
+  "version": "1.3 / METACANON-OBJETOS-v1.3",
+  "hashes": {
+    "METACANON-OBJETOS-CANONICOS.md": "3e1d5a129eb5047cab43994c3bfcc09e25707ff954f7c5835775e19405223e15"
+  },
+  "schema": 1,
+  "event": "operator M30/M31: visible version, verified governance propagation, strictly necessary remote access",
+  "base_commit": "68122f699bc4a243d619442b3b242f1f8b0fdcaf",
+  "checks": {
+    "operator_original_literal": true,
+    "visible_field_all_cycles": true,
+    "both_role_prompts_synced": true,
+    "unavailable_freshness_and_unknown_version_explicit": true,
+    "historical_version_events_preserved": true,
+    "no_product_or_superior_instruction_change": true,
+    "second_operator_original_literal": true,
+    "governance_in_both_prompts": true,
+    "remote_necessity_in_both_prompts": true,
+    "no_routine_remote_discovery": true,
+    "no_rdc_calls_this_cycle": true,
+    "concurrent_claudia_review_preserved": true
+  },
+  "verification_scope": "documentary checks, not an empirical test of external models",
+  "main_integration": false
+}

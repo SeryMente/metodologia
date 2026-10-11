@@ -1,8 +1,8 @@
-<!-- METACANON_VERSION=1.2; TEMPORARY_FRAMEWORK=true; USER_TRANSCRIPT_SPEC=true -->
+<!-- METACANON_VERSION=1.3; TEMPORARY_FRAMEWORK=true; USER_TRANSCRIPT_SPEC=true -->
 # Metacanon para crear y mantener objetos canónicos de proyecto
 
-- Estado: **Versión documental 1.2 — Carpetas y excepción de hilo único metodológico**, preparada para lectura verificable en rama metodológica; no afirmar integración en main.
-- Versión metodológica: **1.2**. Sello: **METACANON-OBJETOS-v1.2**.
+- Estado: **Versión documental 1.3 — Gobierno heredable, versión visible y acceso remoto necesario**, preparada para lectura verificable en rama metodológica; no afirmar integración en main.
+- Versión metodológica: **1.3**. Sello: **METACANON-OBJETOS-v1.3**.
 - Nombre propio del marco: pendiente de elección del operador; no usar el nombre de un proyecto como nombre del método.
 - Repositorio de metodología identificado: https://github.com/SeryMente/metodologia, privado comprobado en el ciclo de actualización 1.1; revalidar su visibilidad antes de cada escritura sensible. Ruta METACANON-OBJETOS-CANONICOS.md; rama de esta entrega docs/metacanon-objetos-20261011. Conservar los originales y datos privados del frente solo en su carpeta autorizada tras verificar acceso privado; nunca publicar secretos en Git ni transportar identidades de ejemplos.
 - Archivo estable propuesto: `METACANON-OBJETOS-CANONICOS.md`.
@@ -31,7 +31,7 @@ Antes de cada ciclo comprobar la versión de este metacanon y del objeto del pro
 10. Trabajo paralelo solo si no colisiona; un escritor de código y consolidación documental secuencial con relectura/merge.
 11. En frentes con dos roles: dos prompts de reinstanciación completos, coherentes con sello y estado literal; ningún placeholder destinado a copiar/ejecutar. La excepción metodológica de hilo único se rige por §21, sin inventar segundo rol.
 12. Acceso remoto mínimo suficiente cuando sea necesario, después de comprobar cuenta, conectividad y vínculo con equipo actual.
-13. Versiones, delta y actualización comprobados cada ciclo; comprobar no implica adoptar cambios incompatibles sin decisión.
+13. Versiones, delta y actualización comprobados cada ciclo; versión/sello del metacanon adquiridos visibles en toda salida, sin excepción (§22). Comprobar no implica adoptar cambios incompatibles sin decisión.
 14. Una interrupción del proceso documental debe dejar primero un objeto primordial portable, no una promesa de crearlo después.
 15. Un frente se organiza siempre como carpeta canónica de repositorio: un objeto de estado vivo dentro y todos los archivos del frente conservados en esa carpeta según clase; no archivos sueltos ni fuentes paralelas.
 
@@ -49,7 +49,7 @@ Extraer por cada instrucción material: literal, origen/evento, lectura operativ
 |---|---|
 | Control e identidad | Nombre ratificado, versión/sello, ancla del último evento real, ubicación/fuente y persistencia comprobada o pendiente. |
 | LEER PRIMERO | Modo ejecución/adaptación, adquisición automática de rol, capas activas y precedencia; citas no activan permisos. |
-| Referencia metodológica | Metacanon/fuente, versión adquirida, commit/hash si accesible, frescura y desviaciones autorizadas. |
+| Referencia metodológica | Fuente/versión/sello central, commit/hash, frescura, obligación visible (§22) y matriz/constancia de adopción de gobernanza (§23), con límites de necesidad remota (§24) heredados en objeto y prompts. |
 | Propósito y alcance | De dónde viene, dónde está, a dónde va, qué cambió; incluido, excluido y criterios terminales. |
 | Roles y colaboración | Responsabilidades concretas; asistencia orientada a eficiencia real; construcción; escritura sin colisiones. |
 | Autoridad | Decisiones vigentes, vetos, propuestas, aprobaciones y compuertas; nada heredado del proyecto ejemplo. |
@@ -65,7 +65,7 @@ Cada proyecto deriva sus datos. No importar nombres de cliente, cuentas, disposi
 
 ## 4. Salida por ciclo
 
-1. Proyecto, rol y revisión/sello adquirido.
+1. Proyecto, rol y revisión/sello del objeto; **Metacanon adquirido: versión y sello**, revisión/commit o hash de fuente y frescura (§22). Este campo aparece en toda salida de ciclo sin excepciones, no solo al instanciar.
 2. Dónde estamos: panorama comprensible del esfuerzo y la entrega.
 3. Actualización/delta: fuentes comprobadas, revisión anterior/actual, cambio y efecto en el ciclo; separar delta metodológico y delta de proyecto. Si inaccesible, frescura NO VERIFICADA.
 4. Qué avanzó: evidencia y entorno; qué no se tocó; observado/reportado/sintético/inferido/desconocido.
@@ -86,11 +86,11 @@ Compatibilidad: incorporar el cambio compatible; si cambia una decisión materia
 
 Antes de escribir volver a comprobar revisión; ante concurrencia preservar ambos deltas y fusionar. Actualizar sello/ancla por evento real y no simplemente por fecha. Persistir y releer/diff. Si no hay acceso, entregar copia completa con sincronización pendiente. Copia vieja/ETag inexistente nunca se presenta como comprobación viva.
 
-Registrar en cada instancia qué versión metodológica incorporó. Un cambio de un proyecto puede proponerse al método; no se convierte en modificación central unilateral. Versionar el metacanon con notas de cambio, compatibilidad, procedencia y evidencia de revisión. No fijar rutas/URLs que todavía no se identificaron.
+Registrar en cada instancia qué versión metodológica incorporó y su matriz/constancia de herencia conforme a §23. No confundir comprobación de fuente, adopción documental y ejecución observada. Un cambio de un proyecto puede proponerse al método; no se convierte en modificación central unilateral. Versionar el metacanon con notas de cambio, compatibilidad, procedencia y evidencia de revisión. No fijar rutas/URLs que todavía no se identificaron.
 
 ## 6. Acceso remoto frugal y suficiente
 
-Al iniciar/usar el objeto o cambiar de dispositivo, descubrir si la plataforma expone el conector remoto. Si no, avisar que no puede observar sesiones, sin afirmar que no existen. Si existe: comprobar cuenta autenticada esperada, dispositivos Online, conectividad y correspondencia del ID/host con el equipo actual mediante evidencia mínima del operador. Ubicación física y un equipo Online no prueban ese vínculo. Cuenta y dispositivo proceden del proyecto actual, no de este metacanon.
+Solo si un requisito imprescindible necesita el equipo actual y las alternativas no bastan (§24), descubrir si la plataforma expone el conector remoto. Iniciar/usar el objeto o cambiar de dispositivo no justifica por sí solo ninguna llamada remota. Si no, avisar que no puede observar sesiones, sin afirmar que no existen. Si existe: comprobar cuenta autenticada esperada, dispositivos Online, conectividad y correspondencia del ID/host con el equipo actual mediante evidencia mínima del operador. Ubicación física y un equipo Online no prueban ese vínculo. Cuenta y dispositivo proceden del proyecto actual, no de este metacanon.
 
 Bloquear ejecución remota si falta conector vivo, cuenta, conectividad, vínculo, necesidad o autorización. No explorar archivos para “averiguar” la identidad. Seleccionar explícitamente el device ID vinculado; no usar el dispositivo predeterminado ambiguo. Usar repo/adjuntos/sandbox cuando basten; acceso remoto solo para el requisito que lo necesite. Agrupar lecturas, limitar rutas y no matar procesos desconocidos. Efectividad por encima de ahorrar una prueba necesaria.
 
@@ -121,7 +121,7 @@ Respeta alcance, compuertas y no-simulación. El asistente mantiene continuidad 
 ## 9. Estado de este metacanon
 
 - De dónde viene: instrucciones originales de creación portable, dos roles, verbatim, crónica, eficiencia, salida consistente, estimación, viabilidad, perfil/acceso remoto y delta.
-- Dónde está: versión documental 1.2; centralización en rama de SeryMente/metodologia, sin modificar el Sistema de Instrucciones ni las normas globales anteriores. Evidencia privada de Profuturo queda en GDP.
+- Dónde está: versión documental 1.3; centralización en rama de SeryMente/metodologia, sin modificar el Sistema de Instrucciones ni las normas globales anteriores. Evidencia privada de Profuturo queda en GDP.
 - A dónde va: uso temporal por aproximadamente un mes, validación de cada instancia y posterior migración a infraestructura autorizada sin pérdida.
 - Qué cambió: V24/V25, matriz de decisiones basada en dictados, mínimo viable demostrado, persistencia oportuna, fuente central identificada y revisión de privacidad.
 - Próximo paso: verificar recepción/readback de esta versión y usarla para instancias; nombre propio pendiente, candidatos TRAMA/HILO VIVO/CANON VIVO/DOBLE HILO no ratificados. No bloquear su uso por branding.
@@ -166,7 +166,7 @@ Las reglas RDC y la doble revisión se derivan de instrucciones directas del mis
 
 ## 12. Perfiles de ubicación, equipo y sesión
 
-Adquirir perfil al iniciar o usar el objeto y ante cambio de equipo/lugar/reinicio; comprobar en cada ciclo si siguen vigentes sus supuestos. Derivar ubicación de declaración/evidencia autorizada, no de IP, hostname parecido o dispositivo histórico. Registrar fuente y separar dato reportado de capacidad medida.
+Cuando el hito dependa del entorno, adquirir el perfil pertinente de fuentes autorizadas y comprobar los supuestos que afecten la tarea. No consultar equipo, sesión ni recursos por rutina al iniciar/usar el objeto o cambiar de ciclo; toda llamada remota está condicionada a §24. Derivar ubicación de declaración/evidencia autorizada, no de IP, hostname parecido o dispositivo histórico. Registrar fuente y separar dato reportado de capacidad medida.
 
 Cadena de decisión: ubicación/perfil → hostname actual → identidad de sesión → disponibilidad/vínculo remoto → recursos mínimos de tarea → acción autorizada. Si faltan datos, declarar hueco concreto sin importar características de otra ubicación. Un nombre coincidente no prueba conexión Online ni el equipo físico actual.
 
@@ -182,7 +182,7 @@ Cambio 0.2: añade adquisición y verificación de perfil de entorno, sesión ef
 
 ## 13. Comando RDC único y herencia obligatoria
 
-Norma directa del operador. Todo objeto derivado de este marco debe contener el siguiente comando operativo literal y emplearlo al iniciar una sesión de Remote Desktop Commander:
+Norma directa del operador. Todo objeto derivado de este marco debe contener el siguiente comando operativo literal; emplearlo solo al necesitar estrictamente una sesión nueva de Remote Desktop Commander conforme a §24. Contenerlo no obliga a arrancar, consultar ni reemparejar una sesión válida:
 
 ```text
 npx @wonderwhy-er/desktop-commander@latest remote --no-persist-session
@@ -289,7 +289,7 @@ Bueno, debemos de manejar un mínimo producto viable conforme sí hayamos resuel
 
 Primera revisión contra insumos reales, no contra memoria del redactor: texto literal/procedencia, gobierno/roles, alcance, autorizaciones, estado, crónica, salida, viabilidad/estimación, remoto/frescura, réplica y persistencia. Segunda: leer resultado guardado, cotejar versiones/prompts/estado, rutas, hashes y límites; probar documentalmente fuente caída/carrera/rol ambiguo/cambio de equipo/dictado ambiguo/propuesta no aprobada/garantía externa. No declarar simulación de comportamiento como test empírico de modelos.
 
-Una instancia pasa si cualquier lector autorizado puede identificar rol, fuente primaria, propósito, último evento, qué está probado, próximo paso, qué no puede hacer y cómo guardar sin pedir recapitulación. Si falta dato material, registrar bloqueo específico; no rellenarlo. Registro de revisión acompaña esta versión y no certifica productos derivados.
+Una instancia pasa si cualquier lector autorizado puede identificar rol, fuente primaria, propósito, último evento, qué está probado, próximo paso, qué no puede hacer y cómo guardar sin pedir recapitulación. Si falta dato material, registrar bloqueo específico; no rellenarlo. Registro de revisión acompaña esta versión y no certifica productos derivados. Verificar además que el objeto y sus prompts incluyen §22: campo visible aun en mantenimiento, bloqueo, cierre, fuente inaccesible y diferencia entre versión adquirida/vigente. Ausencia del campo, versión sin respaldo, regla central vigente omitida/relajada, falta de constancia de herencia o llamada remota sin necesidad justificada = revisión no conforme; son pruebas documentales, no una garantía empírica de obediencia de modelos.
 
 ### M13 · instrucción metodológica original preservada en Profuturo §9
 
@@ -367,3 +367,50 @@ El unico proyecto que no tiene asistnete, y que opera con un solo hilo es este.
 ````
 
 **Narrativa 1.2:** incorpora la excepción expresa del proyecto metodológico en hilo único y limita la exigencia de dos prompts a frentes que tienen dos roles. No cambia el régimen de EP, no crea agentes ni nuevos hilos y conserva la norma de carpeta por frente. Rama documental; no integrada en main.
+
+
+## 22. Versión visible del metacanon en toda salida — actualización 1.3
+
+VERSIÓN VISIBLE EN CADA CICLO — OBLIGATORIO, SIN EXCEPCIONES
+En cada salida de ciclo, desde la primera/reinstanciación y también en mantenimiento, bloqueo o cierre, muestra explícitamente «Metacanon adquirido:» con versión y sello, diferenciados de la versión del objeto del frente. Comprueba la fuente central por ciclo y declara revisión/commit o hash y frescura. Si es inaccesible o hay carrera, conserva la última versión realmente adquirida identificada como tal y declara «frescura NO VERIFICADA»; si nunca fue adquirida, declara «versión NO VERIFICADA». No inventes una versión vigente ni omitas el campo por falta de acceso. Si la fuente comprobada difiere de la adquirida, informa ambas y el delta/efecto; no afirmes adopción automática ni aprobación nueva. Antes de enviar, coteja presencia, identidad y evidencia del campo; su omisión es incumplimiento del formato y debe corregirse explícitamente, sin fingir cumplimiento previo. Esta obligación documental no garantiza obediencia técnica de modelos externos ni supera las reglas de su plataforma.
+
+**Herencia y cobertura:** incluir esta obligación en cada objeto canónico de frente nuevo o actualizado y en todos sus prompts de reinstanciación. Rige asistentes, constructores y el hilo único metodológico. Las instancias previas la incorporan al adquirir el delta central, conservando historia y autorizaciones; no declarar migradas copias ni conversaciones que no se han actualizado/verificado. No crear fuentes paralelas ni reescribir objetos ajenos por estilo.
+
+### M30 · instrucción directa del operador · evento posterior a 1.2
+
+Original íntegro con envoltorio HTML conservado; normalización operativa separada arriba. Sin atribuir hora no disponible.
+
+````text
+<p>
+Asegurate que cualquier objeto canonico de frente, obligue al modeloa  presentar version del metacanonen su dalida. a cada ciclo sin excepcion. 
+</p>
+````
+
+**Trazabilidad:** M30 → §22 y §1/§3/§4/§19 → comprobación documental y de fuente de esta revisión → Metacanon 1.3 y objeto EP/prompts sincronizados. No modifica el Sistema de Instrucciones superior, código, permisos ni integración en main.
+
+
+## 23. Propagación verificable de gobernanza a los hijos — actualización 1.3
+
+HERENCIA DE GOBERNANZA — OBLIGATORIA
+Antes de actuar en cada ciclo, recupera el metacanon central y el objeto del frente, coteja revisiones y calcula el delta de gobierno. Las normas vigentes compatibles del metacanon se heredan explícitamente: matriz regla/sección central → sección/prompts del hijo → efecto/evidencia → estado adoptada, pendiente, bloqueada o excepción autorizada. Las propuestas y citas históricas no se heredan como normas ni permisos. Conserva dictados, datos y decisiones del frente; ningún hijo puede relajar la norma central por omisión o reinterpretación. Reconciliar conflictos por precedencia y autorización; detener solo la acción afectada, continuar lo independiente y autorizado. Una versión más reciente no concede permisos ni habilita una decisión material.
+Registra en el propio objeto fuente/rama, versión/sello central adquirido, commit o blob/hash comprobado, evento, delta y ubicación donde se aplicó; sincroniza sus prompts y verifica lectura de vuelta. Distingue adquirido, incorporado documentalmente y observado en operación: guardar el archivo no prueba recepción/obediencia de otras conversaciones. Si falta acceso/frescura, declara NO VERIFICADA y limita la acción dependiente; si la incorporación/persistencia está pendiente, no declares propagación cerrada. No crear otra fuente de estado, infraestructura ni modificar el Sistema de Instrucciones superior.
+
+Prueba mínima: toda norma vigente pertinente tiene ubicación efectiva en el hijo/prompts o pendiente/excepción expresa con alcance y autoridad; ausencia de esa cobertura = NO CONFORME, no declaración de propagación lograda. Los hijos anteriores se reconcilian al adquirir el delta; no afirmar actualización de frentes no revisados ni reescribir otros repositorios sin autorización.
+
+## 24. Acceso remoto por necesidad estricta — actualización 1.3
+
+REMOTE DESKTOP COMMANDER — NECESIDAD ESTRICTA
+No usar Remote Desktop Commander por rutina, al instanciar o por cambiar de ciclo/equipo. Antes de cualquier llamada —incluidos descubrimiento de cuenta/dispositivos, ping, listados y lecturas— identifica el requisito imprescindible del hito que necesita observación o acción en el equipo actual y por qué repo, adjuntos, sandbox o herramientas específicas no bastan. Si bastan, no llames a Remote Desktop Commander y declara «RDC: no utilizado; no necesario» cuando corresponda al formato. Un archivo mencionado en Descargas no justifica inspección remota si ya fue recibido por otra fuente.
+Solo tras demostrar esa necesidad, verificar autorización, cuenta, vínculo actual, conectividad y alcance mínimo; si falta alguno, bloquear el acceso remoto, no explorar para averiguarlo ni reemparejar sesiones válidas. Acotar rutas/datos/comandos al requisito y detener el uso al satisfacerlo; no escanear ni mantener vigilancia por defecto. La herencia del comando de arranque no ordena ejecutarlo; perfil/sesión pueden quedar no verificados sin impedir trabajo documental que no dependa del equipo. No heredar identidades ni permisos de ejemplos.
+
+### M31 · instrucción directa del operador · mismo ciclo documental, posterior a M30
+
+Original íntegro con envoltorio HTML conservado; interpretación operativa en §23–§24.
+
+````text
+<p>
+Endurece la capacidad de lmetacnon, para progapagar la gobernanza hacia los canones hijos de los frentes. <br /><br />Asegurate que RDC solo se use si es estrictamente necesario. 
+</p>
+````
+
+**Trazabilidad M31:** dictado → §23–§24 y restricciones §5/§6/§12/§13/§19 → matriz/constancia del hijo y prompts → revisión documental/lectura de vuelta. No otorga permisos de equipo ni capacidad técnica de forzar agentes externos.

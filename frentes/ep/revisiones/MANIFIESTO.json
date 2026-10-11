@@ -6,15 +6,15 @@
   "files": [
     {
       "path": "METACANON-OBJETOS-CANONICOS.md",
-      "bytes": 44708,
-      "sha256": "71330197b1c2c368e83580120c04ab2bf97a0c15ff60666b085df1ff8ef7e437",
-      "git_blob": "65087aa5d25b7941f5c9b568ad0ac24f6324999b"
+      "bytes": 52156,
+      "sha256": "3e1d5a129eb5047cab43994c3bfcc09e25707ff954f7c5835775e19405223e15",
+      "git_blob": "f5a843c1c521d91d7d13dd4225100f0c73dc396f"
     },
     {
       "path": "README.md",
-      "bytes": 12319,
-      "sha256": "42ab473ea07e330e9f8eb0b63a1acc97a71a3fc1fa466a8965542dee1f70c548",
-      "git_blob": "ef676679629e3b33fa166f4a007834abdda94106"
+      "bytes": 12833,
+      "sha256": "0d427af3f035d53ec1e72ce5301297de5cc0afbe4bc84d79a3bb34a896946562",
+      "git_blob": "4f67ac69e3d84c763be5beae00873d07eb7cb758"
     },
     {
       "path": "REVISION-METACANON-1.1.json",
@@ -29,16 +29,22 @@
       "git_blob": "633dd080f6ee8bc418e7679e20a2d46247c6818f"
     },
     {
+      "path": "REVISION-METACANON-1.3.json",
+      "bytes": 1040,
+      "sha256": "9a8ee22b8fb75627f96ac62029a5b04e567fe560c853726ff6073779646e4be1",
+      "git_blob": "fb4aada2f915e0a01f213dae265593349875d446"
+    },
+    {
       "path": "frentes/ep/OEP.md",
-      "bytes": 108576,
-      "sha256": "bd7b9d3d8262bf006d8f012992780160c30a89660cfb9ad35122294a3a07445a",
-      "git_blob": "9f5065880fd682cb5c82a7c0922b898a3984999e"
+      "bytes": 123995,
+      "sha256": "5350e2380b5a41f9b76cf570f4b5da1962db118b1a4f525074f4c6fb2c33c7d7",
+      "git_blob": "dab6f1bd39c48be7819c1077247d222d3d8cbd46"
     },
     {
       "path": "frentes/ep/README.md",
-      "bytes": 1380,
-      "sha256": "613161997dd3ee0da909a9973a1d89eef51e6e70ac6c61c668f054888d2b14d8",
-      "git_blob": "d0de894516cb1ae4ba30e1243db64fd4b88074c8"
+      "bytes": 1565,
+      "sha256": "7e15ba3a1a0d0f8c567d8925f27469399df33c1db62acd64657b5f77364d5d5a",
+      "git_blob": "54cc5cb3b47932eaaae40731c5f1cb666600c52c"
     },
     {
       "path": "frentes/ep/artefactos/entrega-v0.2.0.zip.b64",
@@ -90,27 +96,33 @@
     },
     {
       "path": "frentes/ep/prompts/ACTUALIZAR-CLAUDIA-RECEPCION.txt",
-      "bytes": 3041,
-      "sha256": "0c3278e911589e483d4074c2864d3511aa1a538318329862027ea7d53f8c0137",
-      "git_blob": "7b6ae8e634adba6876e2eb4b907a16576fdf3cf2"
+      "bytes": 7160,
+      "sha256": "03568c7bc145443c26816f21a0e3bb66c83ced4af06d94615f02f01598e9469a",
+      "git_blob": "c2508d9de1e608f998bc79fed63969e90a3e7de4"
     },
     {
       "path": "frentes/ep/prompts/CLAUDIA.txt",
-      "bytes": 8644,
-      "sha256": "f6ea60aa55812469faa623d2a9b986e748a154b3046aaad07486c1735cc5d6e1",
-      "git_blob": "847e1d86e8bb9e0afb8c4962bad9829a7c9353c6"
+      "bytes": 12452,
+      "sha256": "4571b370a307f0d36c2c331b5c5c33d5e773b9e1f43d11c5ebb667086b1212a2",
+      "git_blob": "c44ccbbc8e2f1ae0c2313930c573ee55c97aa5b3"
     },
     {
       "path": "frentes/ep/prompts/SAMANTHA.txt",
-      "bytes": 9422,
-      "sha256": "dde0bad4929893386f7a8eb78bd95129a026672b4885d12ff38917ff95d56cfc",
-      "git_blob": "c0cff7db88933e0486b91b5012f80e345c53f103"
+      "bytes": 13220,
+      "sha256": "ef3711d1319f74806680f76e2306e7ab8bde685dd2045ad64b448acd33cc72cd",
+      "git_blob": "5af3cb80f471a4537d504275dcb3c72771022def"
     },
     {
       "path": "frentes/ep/revisiones/LECTURA-DE-VUELTA-07a1a574.json",
       "bytes": 1717,
       "sha256": "1a3b7f07b2b9e2491a8fa59e7143437517554abbc6305ec9f07b0db17b381da4",
       "git_blob": "b2ae32e1c42a5579cca07f936def69c893dd2cc3"
+    },
+    {
+      "path": "frentes/ep/revisiones/LECTURA-DE-VUELTA-7c9bd39a.json",
+      "bytes": 2484,
+      "sha256": "d5cc9d6f30eefc64f70c5434d31cbe26b5cf4e92023210c02a7ec0bd8cc0b8f0",
+      "git_blob": "c27188b5f0395e63fc48a1302138615c2c69c4f1"
     },
     {
       "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.0.json",
@@ -135,6 +147,12 @@
       "bytes": 4475,
       "sha256": "5f142e1d7409b24ccc60aa93086a788cdfe5d9a4a68839942a9a3df56a1a8f5a",
       "git_blob": "aab846e636f0f0258dafabb22f62df97da6b48b8"
+    },
+    {
+      "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.4.json",
+      "bytes": 1085,
+      "sha256": "2ac75ba5eed307ae9a4c42cace497e5d5dfc18a9c9f4d4b0975e53f3b1fd886e",
+      "git_blob": "aab9fc78347ce8db0b0a455cb2c9eec82bf96bc5"
     }
   ],
   "exclusions": [
@@ -142,7 +160,7 @@
     "Downloads files not recovered"
   ],
   "prior_readback_verified": "07a1a5746f58396352efd29f88e8e7d193ad7335",
-  "latest_review_source_commit": "f63f5cbaa843311046beb916d5944aef54c39180",
-  "current_event": "Claudia documentary reception cotejo",
-  "verification_scope": "Each revised file requires read-back; unchanged entries preserve prior manifest, not fresh full recovery."
+  "latest_review_source_commit": "68122f699bc4a243d619442b3b242f1f8b0fdcaf",
+  "current_event": "M30/M31 governance delta reconciled with Claudia receipt",
+  "verification_scope": "Changed files require read-back; unchanged entries preserve concurrent manifest and receipt, not current product evidence."
 }
