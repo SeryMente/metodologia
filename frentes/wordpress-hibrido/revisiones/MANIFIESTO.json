@@ -37,15 +37,15 @@
   "files": [
     {
       "path": "README.md",
-      "bytes": 1084,
-      "sha256": "92ceb7ca212727b1687cf33fe6f46af6d6d5d7f8a8187ced7affc149379a274e",
-      "git_blob_sha1": "95849186c7765b7b2c0145faa12b4a777320b430"
+      "bytes": 1282,
+      "sha256": "cd416d61432d4cdb9e5e4c01b3ab87fb6a0f9c4bf86a7c7ed1a070348a0f3c45",
+      "git_blob_sha1": "eb1aa400947637cdf15493d5c9f7d769e4420a33"
     },
     {
       "path": "WORDPRESS-HIBRIDO.md",
-      "bytes": 28796,
-      "sha256": "cf31c7c2ffdc9270787e2e6311cf6429ae13a4e2f1e191e11f341e63c4a3fb6f",
-      "git_blob_sha1": "250546063d9e74fe6cc284eb623c5addc78673cb"
+      "bytes": 29377,
+      "sha256": "669ef64823e11f244e13349d361563558fcf0c1b3f4587328db573626c481fb6",
+      "git_blob_sha1": "0ee7e2f4562f7307536d592a8f2d0f5aeaa252bc"
     },
     {
       "path": "originales/ChatGPT-OGP-Blog-3-lectura-normalizada.txt",
@@ -56,22 +56,35 @@
     {
       "path": "prompts/ASISTENTE.txt",
       "bytes": 5360,
-      "sha256": "7d476875793d076f02a3be98bfdb97293146a29da12df096e7095b5f2d7f9870",
-      "git_blob_sha1": "5f2ffd4596d475c9e38fdf9869110f51f4916695"
+      "sha256": "ff46c439ef4c0ad4b1afe29bdcd6d6bc0e542fbf094f7f28906adcd1d7946d63",
+      "git_blob_sha1": "60f58f694b9aa9c250717fa9bc555a1e4126cc13"
     },
     {
       "path": "prompts/CONSTRUCTOR.txt",
       "bytes": 5747,
-      "sha256": "473cae80d27838d9e429ed3ac9f76e40b8a42513c5afef3d7739e9d107da0cca",
-      "git_blob_sha1": "9f76a4c586fb364f757c378cec1b2136460d3209"
+      "sha256": "efe7416fa204a18e29169d9d7820756a923d812667d5e9dfda815c68ef82263c",
+      "git_blob_sha1": "1a9921afd0cb2f9ee7187a5c7d0e76d4ff0473b8"
+    },
+    {
+      "path": "revisiones/LECTURA-DE-VUELTA-v0.1.0.json",
+      "bytes": 968,
+      "sha256": "8d3ff5ff189bd20a14e210b883c7259bed0145b916233c192bf8dfbf91823979",
+      "git_blob_sha1": "effbb3e5baaed392d1a1092f4d1554d93a269fc8"
     },
     {
       "path": "revisiones/REVISION-v0.1.0.json",
       "bytes": 1637,
       "sha256": "c38057699591dfc9fa904cceb1d7126b1de6e6fcbbec4d48f9af939dbdbd25c8",
       "git_blob_sha1": "01297386413cd85ccb0ae3c7064863aa8f4cf526"
+    },
+    {
+      "path": "revisiones/REVISION-v0.1.1.json",
+      "bytes": 1800,
+      "sha256": "51700560f79dea927de4862a71c52ba04badeec2683c24792509499bb20eb24f",
+      "git_blob_sha1": "bf669eba5e87f048193a646855b9645d4e797d35"
     }
   ],
   "transcript_original_bytes_verified": false,
-  "privacy": "Metodología privado comprobado antes de escritura; no secretos a Git"
+  "privacy": "Metodología privado comprobado antes de escritura; no secretos a Git",
+  "object_version": "v0.1.1"
 }

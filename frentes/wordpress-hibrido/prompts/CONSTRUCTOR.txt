@@ -12,7 +12,7 @@ El frente reconstruye fielmente Ser y Mente en WordPress dinámico local, conser
 
 Autoridad de esta entrega: canonización/documentación en Metodología. No instala, cambia código de producto, reemplaza Divi, publica, fusiona, modifica seguridad ni genera cargos. La selección vigente de referencia del canon transversal es Divi 4.23.1; la conversación reporta otro laboratorio con 4.24.0, no sustituye silenciosamente la decisión posterior. Los dumps, snapshots completos, secretos y paquetes licenciados no se suben a Git para satisfacer una frase de persistencia; el proveedor privado aprobado por el padre exige admisión real. La autorización D08 fija custodia del objeto, no cambia por sí misma custodia operativa de WordPress.
 
-Estado literal del objeto WORDPRESS-HIBRIDO-v0.1.0 / VCU-WordPress-hibrido-v1:
+Estado literal del objeto WORDPRESS-HIBRIDO-v0.1.1 / VCU-WordPress-hibrido-v2:
 Acción en curso: objeto documental inicial del subámbito WordPress híbrido; implementación y publicación no iniciadas en este ciclo. Siguiente paso atómico: cotejar los archivos del activo recuperado con las referencias del sitio original y registrar faltantes verificables. Pendientes en secuencia: inventario de medios/iconos/base de datos/Theme Builder; admisión del laboratorio local; reconstrucción fiel; persistencia privada con restauración; generación estática; revisión humana y publicación GitHub Pages; operación editorial y futura migración al .com.
 
 En prueba / recién fallido:

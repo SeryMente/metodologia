@@ -1,0 +1,18 @@
+{
+  "commit_verified": "a1faeac18bd2bafbabcaeac0fd39be26597c6b89",
+  "verification": "PASS: texto objeto igual y siete Git blob SHA iguales al paquete generado",
+  "remote_files_verified": {
+    "README.md": "95849186c7765b7b2c0145faa12b4a777320b430",
+    "WORDPRESS-HIBRIDO.md": "250546063d9e74fe6cc284eb623c5addc78673cb",
+    "prompts/ASISTENTE.txt": "5f2ffd4596d475c9e38fdf9869110f51f4916695",
+    "prompts/CONSTRUCTOR.txt": "9f76a4c586fb364f757c378cec1b2136460d3209",
+    "originales/ChatGPT-OGP-Blog-3-lectura-normalizada.txt": "a2f6489214db8e191db2da49c0bb659ab9b00559",
+    "revisiones/MANIFIESTO.json": "6076f05bfbae8db76d63bf2668e3dff5addca05a",
+    "revisiones/REVISION-v0.1.0.json": "01297386413cd85ccb0ae3c7064863aa8f4cf526"
+  },
+  "scope": "documental; no pruebas WordPress",
+  "findings_corrected_next_revision": [
+    "cabecera de tabla de fuentes Markdown ausente",
+    "inventarían cambiado a inventariarán para no introducir funcionalidades"
+  ]
+}

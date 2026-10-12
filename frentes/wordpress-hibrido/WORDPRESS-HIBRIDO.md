@@ -4,9 +4,9 @@
 
 ## Control e identidad
 
-**Tipo:** 📜 Norma / Canon; Elemento documental, no Contenedor. **Naturaleza:** temporal de trabajo por autorización D01/D08; archivar solo tras migración íntegra verificada y decisión del operador, sin caducidad automática ni borrado. **Versión documental:** v0.1.0. **Sello:** WORDPRESS-HIBRIDO-v0.1.0. **Versión de Contexto Universal:** VCU-WordPress-hibrido-v1. Nombre descriptivo del subámbito, no una marca nueva ni un cambio del método.
+**Tipo:** 📜 Norma / Canon; Elemento documental, no Contenedor. **Naturaleza:** temporal de trabajo por autorización D01/D08; archivar solo tras migración íntegra verificada y decisión del operador, sin caducidad automática ni borrado. **Versión documental:** v0.1.1. **Sello:** WORDPRESS-HIBRIDO-v0.1.1. **Versión de Contexto Universal:** VCU-WordPress-hibrido-v2. Nombre descriptivo del subámbito, no una marca nueva ni un cambio del método.
 
-**Ancla:** autorización directa D08 para crear el objeto en Metodología, junto con D05–D07 sobre fuente dinámica local y réplica estática temporal fiel. **Folio de primera canonización de este frente:** WORDPRESS-HIBRIDO / CONV-01 / C001; no renumera ni convierte la transcripción histórica en ciclos nuevos. **Fecha de corte de fuente:** 2026-10-12 UTC; no hay hora individual disponible para los dictados del chat.
+**Ancla:** lectura de vuelta comprobada del primer commit documental y corrección de dos hallazgos de revisión; autorización directa D08 para crear el objeto en Metodología, junto con D05–D07 sobre fuente dinámica local y réplica estática temporal fiel. **Folio de primera canonización de este frente:** WORDPRESS-HIBRIDO / CONV-01 / C001; no renumera ni convierte la transcripción histórica en ciclos nuevos. **Fecha de corte de fuente:** 2026-10-12 UTC; no hay hora individual disponible para los dictados del chat.
 
 **Propietario documental autorizado:** SeryMente/metodologia, privado comprobado en este ciclo. **Carpeta:** `frentes/wordpress-hibrido/`. **Fuente única del estado vivo:** `WORDPRESS-HIBRIDO.md`. **Rama documental:** `docs/wordpress-hibrido-20261012`, creada desde `49ac40e9f6122e2d2fb339362cfa0a78128c8e37`. Esta entrega no autoriza ni afirma fusión en main. **Objeto padre:** [Persistencia de Entorno Operativo v0.3.18](../ep/OEP.md), sin modificación; este objeto gobierna únicamente su subámbito WordPress y puede avanzar documentalmente en paralelo al padre, no constituye otro Entorno Persistente.
 
@@ -24,6 +24,8 @@ Este hilo tiene encargo de asistencia documental. La identidad del agente de Not
 
 **Metacanon adquirido:** 1.5 · METACANON-OBJETOS-v1.5. Fuentes recuperadas en commit `49ac40e9f6122e2d2fb339362cfa0a78128c8e37`; metacanon blob `32c7a65ff2e83b3b76752ba2160427bd6e851a8f`. El Sistema de Instrucciones se volvió a recuperar por SHA exacto y H1/H2 coincidieron; la lectura de main del ciclo no sustituye la comprobación de uno futuro. Frescura del snapshot: comprobada para esta adquisición, no garantía perpetua.
 
+| Fuente | Versión | Ruta | Git blob SHA |
+|---|---|---|---|
 | Metacanon | 1.5 | `METACANON-OBJETOS-CANONICOS.md` | `32c7a65ff2e83b3b76752ba2160427bd6e851a8f` |
 | Sistema de Instrucciones | v1.6.21 | `SI-METACOGNITIVO.md` | `151333921ca3214c0adee3996cc80d5f23adb2d5` |
 | Metodología | v0.14.14 | `METODOLOGIA.md` | `8a2946c767c6ecd73e71d61c0c5274b6c7b2d17f` |
@@ -58,7 +60,7 @@ Las cabeceras antiguas que aún dicen “rama/no main” en fuentes ahora recupe
 
 **Incluido:** recuperación del sitio completo, Home/global/Blog/Psicólogos/página para psicólogos/Comenzar y demás páginas originales comprobables; iconos, medios, estilos, comportamiento exportable, contenidos y configuración; edición de ideas cotidianas y artículos; optimización para motores de búsqueda de los artículos; ciclo recuperar → editar → conservar → exportar → publicar → verificar; futuro alojamiento `.com` y contención operativa por Entorno Persistente.
 
-**Excluido de esta fase:** rediseño o plantilla genérica en lugar del activo, producto clínico/agenda/pagos/backend de psicoterapia, reescritura de estrategia comercial, campaña SEO para GitHub Pages, WordPress cloud permanente de pago, migración/publicación ahora, nuevo proveedor/stack por conveniencia, expansión de Khora/IA visual y garantías de ranking. Funciones dinámicas no exportables se inventarían expresamente; no se sustituyen sin decisión.
+**Excluido de esta fase:** rediseño o plantilla genérica en lugar del activo, producto clínico/agenda/pagos/backend de psicoterapia, reescritura de estrategia comercial, campaña SEO para GitHub Pages, WordPress cloud permanente de pago, migración/publicación ahora, nuevo proveedor/stack por conveniencia, expansión de Khora/IA visual y garantías de ranking. Funciones dinámicas no exportables se inventariarán explícitamente; no se sustituyen sin decisión.
 
 ## Roles y colaboración
 
@@ -104,7 +106,7 @@ No se ejecutó el bootstrap histórico ni se publicó en GitHub Pages.
 
 | Criterio terminal | Resultado de este ciclo | Evidencia/entorno | Pendiente |
 |---|---|---|---|
-| Objeto portable y gobernable | Documentación preparada, sin cierre técnico | Trece bloques, dictados, fuentes, prompts y revisión local | Lectura/diff repositorio de esta entrega |
+| Objeto portable y gobernable | Primera entrega guardada y leída de vuelta; corrección documental preparada, sin cierre técnico | Texto y siete blobs cotejados en commit a1faeac18bd2bafbabcaeac0fd39be26597c6b89 | Verificar huellas del commit de corrección |
 | Fuente del activo identificada | Repositorio y árboles comprobados | SeryMente/serymente main `3603bf2afaff24b19215086beb08f51170b70193` | Inventario de archivos y correspondencia visual con original |
 | Activo completo recuperado | NO VERIFICADO | Documentos/árboles no prueban DB/uploads/Theme Builder/iconos | Ubicar fuentes y registrar faltantes, sin inventarlos |
 | WordPress dinámico local fiel | NO VERIFICADO actual | Laboratorio PC-7 solo histórico | Admisión, versiones/licencia, staging, reconstrucción y revisión humana |
@@ -134,6 +136,7 @@ Presentar en cada ciclo: (1) proyecto/rol/folio, sello documental, «Metacanon a
 3. **Aclaraciones actuales:** D00–D09, originales pertinentes preservados al final; grafía/negaciones intactas y normalización operativa separada en Propósito/Autoridad. Fuente: conversación actual de Notion `https://app.notion.com/chat?t=3f75d4a3b25080a5841000a96e8062fd`; sin hora individual inventada.
 4. **Fuentes documentales:** revisiones/blobs de tabla metodológica; lectura por pertinencia del padre no acredita adquirir todos sus datos técnicos históricos. El anexo híbrido histórico es antecedente, no nueva autoridad. Estado E2E de Ser y Mente blob `a86efc0e7a5ce9865a124674536fceb2c85bb5aa` recuperado en commit `3603bf2afaff24b19215086beb08f51170b70193`: declara una sesión pasada, no observación actual de local/cloud.
 5. **Creación:** permiso D08, carpeta de frente única en rama propia; no modifica padre/metacanon/Sistema de Instrucciones ni repos producto. No hay constructor externo activo ni retorno técnico actual.
+6. **Lectura de vuelta:** primer commit a1faeac18bd2bafbabcaeac0fd39be26597c6b89, objeto textual y siete blobs comparados sin diferencia. v0.1.1 corrige cabecera de tabla y la palabra inventarían → inventariarán; sin cambio de alcance, permisos, pendientes ni estado operativo. Recibo en revisiones/LECTURA-DE-VUELTA-v0.1.0.json.
 
 ## Reinstanciación
 
@@ -143,7 +146,7 @@ Materializaciones únicas de prompts: `prompts/ASISTENTE.txt` y `prompts/CONSTRU
 
 Carpeta organiza; este archivo es el único estado vivo. README solo índice; originales son fuentes; revisiones son pruebas/recibos. No mantener copias normativas en Otro Gran Programa, Ser y Mente, Khora o Notion. Antes de actualizar verificar privacidad/revisión/estado de rama; preservar cambios concurrentes y comparar huellas, sin sobrescribir por memoria. Fuente caída bloquea solo escritura dependiente, conservando checkpoint portable.
 
-Pasada 1: fidelidad frente a D00–D09 y TXT; propósito, alcance, permisos, hechos/reportes y límites. Pasada 2: releer producto guardado, cotejar trece bloques y semántica, nombres/versión/prompts/estado/fuentes/índice/dictados. Casos negativos: fuente inaccesible no emite frescura; permiso documental no activa instalación; histórico PC-7 no acredita host actual; manifiesto Divi no crea binario; repo público no admite DB/licencia; estático no es copia restaurable de WordPress. Registrar resultados en `revisiones/REVISION-v0.1.0.json`, manifiesto de contenido y recibo de lectura de vuelta. Validación documental no demuestra comportamiento de otros modelos ni cierre de producto.
+Pasada 1: fidelidad frente a D00–D09 y TXT; propósito, alcance, permisos, hechos/reportes y límites. Pasada 2: releer producto guardado, cotejar trece bloques y semántica, nombres/versión/prompts/estado/fuentes/índice/dictados. Casos negativos: fuente inaccesible no emite frescura; permiso documental no activa instalación; histórico PC-7 no acredita host actual; manifiesto Divi no crea binario; repo público no admite DB/licencia; estático no es copia restaurable de WordPress. Registrar resultados en `revisiones/REVISION-v0.1.1.json`, manifiesto de contenido y recibo de lectura de vuelta. Validación documental no demuestra comportamiento de otros modelos ni cierre de producto.
 
 Guardado: en rama documental, sin main. Verificación doble requerida: commit/árbol esperado y lectura del contenido/huellas de cada archivo. No eliminar fuentes ni crear carpetas vacías hipotéticas. Próximo checkpoint: inventario del activo con faltantes atribuidos y encargo de construcción que no autoapruebe compuertas.
 

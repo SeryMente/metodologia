@@ -1,0 +1,52 @@
+{
+  "object_version": "v0.1.1",
+  "seal": "WORDPRESS-HIBRIDO-v0.1.1",
+  "method": "METACANON-OBJETOS-v1.5",
+  "scope": "documental, no producto",
+  "source_commit": "49ac40e9f6122e2d2fb339362cfa0a78128c8e37",
+  "pass_1": {
+    "literal_current_dictates_preserved": true,
+    "transcript_1348_lines_normalized": true,
+    "historical_current_separated": true,
+    "no_install_or_publish_permission_inferred": true,
+    "subscope_parent_not_modified": true
+  },
+  "pass_2_local": {
+    "core_headings_exact_order": [
+      "Control e identidad",
+      "LEER PRIMERO",
+      "Referencia metodológica",
+      "Propósito y alcance",
+      "Roles y colaboración",
+      "Autoridad",
+      "Perfil de entorno",
+      "Estado vivo",
+      "Aceptación y viabilidad",
+      "Formato de ciclo",
+      "Crónica y fuentes",
+      "Reinstanciación",
+      "Persistencia y revisión"
+    ],
+    "state_literal_in_both_prompts": true,
+    "governance_in_both_prompts": true,
+    "folder_index_present": true,
+    "findings_corrected": [
+      "tabla Markdown con cabecera",
+      "inventariarán, no inventarían"
+    ]
+  },
+  "negative_cases": [
+    "fuente caída → frescura NO VERIFICADA",
+    "permiso documental → no instalar/publicar",
+    "PC-7 histórico → no selección local actual",
+    "manifiesto → no binario Divi",
+    "Git público → no dump/snapshot/licencia",
+    "estático → no backup WordPress"
+  ],
+  "remote_readback": "v0.1.0 verificada por texto y siete blobs en a1faeac18bd2bafbabcaeac0fd39be26597c6b89; verificar commit v0.1.1 antes de entregar",
+  "limitations": [
+    "copia TXT textual normalizada, no hash del original Windows",
+    "sin pruebas de runtime, licencia binaria, snapshot remoto o restauración",
+    "sin recepción/obediencia externa demostrada"
+  ]
+}
