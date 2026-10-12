@@ -1,0 +1,34 @@
+{
+  "schema": 1,
+  "commit": "a449d8c72dc5e94ce901c829b264067da31a844e",
+  "status": "VERIFIED_EXACT",
+  "metacanon": "1.5 / METACANON-OBJETOS-v1.5",
+  "object": "v0.3.18 / VCU-EP-v20",
+  "all_10_written_blobs_match": true,
+  "full_method_object_readback_byte_exact": true,
+  "core_13_names_order_and_targets_verified": true,
+  "core_negative_missing_changed_header_rejected_locally": true,
+  "both_prompts_byte_synced": true,
+  "checkpoint_section88_preserved": true,
+  "verified_blobs": {
+    "METACANON-OBJETOS-CANONICOS.md": "32c7a65ff2e83b3b76752ba2160427bd6e851a8f",
+    "README.md": "3d8d7d84de3ef39be9c01e423a955ab9ed77dc38",
+    "REVISION-METACANON-1.5.json": "4e19c05d85e253d747f31b9321a46a7aa5005c39",
+    "frentes/ep/OEP.md": "e1e045cdc9b1a286047c6d47c47a5111a0b52bce",
+    "frentes/ep/README.md": "fd3515eed66ce9f3206e71aa4c341b1a8136089e",
+    "frentes/ep/prompts/CLAUDIA.txt": "d4d32af4e1732d6b5b02222e5e8e8f1ae3317b99",
+    "frentes/ep/prompts/SAMANTHA.txt": "8c59db892a17a2fb0130254b9d7a885f43f10d13",
+    "frentes/ep/originales/instrucciones-gobierno-estructura-rdc-20261011.txt": "2329e5c61b693cfce8d98fd0c77b8e5694994db3",
+    "frentes/ep/revisiones/MANIFIESTO.json": "4549c49176218ca82736f6381037a053b40f7bb8",
+    "frentes/ep/revisiones/REVISION-OEP-v0.3.18.json": "1a5ff0939c793ce5013508253ee128b443d96fbd"
+  },
+  "scope": "documentary integrity and structure, not empirical behavior/product acceptance",
+  "limits": [
+    "No bearer token requested or handled",
+    "No RDC use",
+    "No code or superior instructions changes",
+    "No other proposed improvements adopted",
+    "No main integration",
+    "No other repo/front migration claim"
+  ]
+}
