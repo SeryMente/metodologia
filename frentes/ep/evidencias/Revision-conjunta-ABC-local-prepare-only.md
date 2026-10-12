@@ -754,3 +754,40 @@ Ejecutados siete archivos existentes de contratos puros/mock del kernel: constru
 Fuentes de las distinciones criptográficas: codec/rotación existente del archivo[^https://github.com/SeryMente/khora/blob/dbc73afada1ad29abf46f4599d22cc3158a9a986/scripts/khora/env-vault.ps1], envolturas separadas de clave del navegador[^https://github.com/SeryMente/khora/blob/dbc73afada1ad29abf46f4599d22cc3158a9a986/khora-web/lib/crypto.ts], custodia local del agente[^https://github.com/SeryMente/khora/blob/dbc73afada1ad29abf46f4599d22cc3158a9a986/tools/vault-agent/vault_agent.py], verificador y ruta maestra de PR292[^https://github.com/SeryMente/khora/blob/6738c1f1aeffe5835a725531e0774d4420af13c5/khora-web/lib/server/ep-master-password.ts][^https://github.com/SeryMente/khora/blob/6738c1f1aeffe5835a725531e0774d4420af13c5/khora-web/app/api/ep/master-password/route.ts].
 
 LastPass: antecedente histórico únicamente en <mention url="https://app.notion.com/p/0c0a4187824183a68e1601753d250065">Doctrina del entorno persistente con llave física</mention>[^https://app.notion.com/p/0c0a4187824183a68e1601753d250065]. Recuperación oficial condicionada a capacidades existentes del dispositivo/navegador y controles de cuenta; reset vacío no conserva el contenido[^https://support.lastpass.com/s/document-item?language=en_US&bundleId=lastpass&topicId=LastPass%2Frecover-master-password.html]. No se verificó ni configuró una cuenta real.
+
+
+## §12 · Representación Git canónica, procedencia y cierre acotado de cobertura
+
+### Resultado probado, sin aceptación integral
+Se preserva íntegro el prefijo §1–§11: 123312 bytes, SHA-256 a66e276104d40d33eeb9bd8b454c1242350e3dd2e3089a1cc08253a6a3c0aace. Los árboles y pruebas congelados anteriores no se sustituyen ni se transfieren a esta copia. No se regeneró un ZIP.
+
+Sobre main dbc73afada1ad29abf46f4599d22cc3158a9a986 se preparó otra copia aislada de 603 archivos (600 fuentes admitidas al corte y tres adiciones del parche autorizado). Aplicación del parche original: apply-check y apply conformes; sintaxis Python de 137 archivos conforme. Árbol bruto previo: 8b4dc90764ea0fb7f0fa28668521c02760ddbde7d7ff220cab41305a64bd23b1; rechazo global: 144 ausentes y 67 divergencias.
+
+### Causa concreta: blob Git no equivale a bytes de checkout
+La .gitattributes existente prescribe scripts/khora/**/*.ps1 text eol=crlf. Quince aparentes divergencias del manifiesto coinciden exactamente con su conversión CRLF, sin diferencias de contenido. Se verificaron los blobs brutos y se materializaron 23 archivos PowerShell conforme a esos atributos; los blobs originales permanecen separados. El Git auxiliar solo consultó atributos: no es un clon, no acredita HEAD, permisos, modos ni host.
+
+Las cinco correcciones de huellas previamente justificadas se expresan ahora sobre los bytes de checkout: tres PowerShell necesitan CRLF; el archivo TypeScript y el documento conservan sus bytes. La §11 sigue describiendo su copia bruta; no se debe trasladar su compatibilidad a un checkout de Windows. Copia tras esta reconciliación: 113b8a6a6913db6901dd445cbfcf9e87ff1c0f37f26a1cbba9449bd1336b2e50. Rechazo: 144 ausentes y 47 divergencias. Alteración sintética de 00-config y eliminación de cobertura del ejecutor run_unit_tests.mjs detectadas; bytes restaurados y rechazo base idéntico.
+
+### Cuatro divergencias intencionales probadas y dependencia antes sin cobertura
+Se recuperaron versiones anteriores de cuatro archivos y cotejaron sus blobs; las cuatro huellas antiguas del manifiesto coinciden exactamente con los bytes CRLF históricos. Producto #292 y main contienen los mismos bytes actuales de esas cuatro rutas.
+- 07-git-wip.ps1: commit 1f46b5e627c66e9de4b197e54d8de68f53265369; ruta de repositorio explícita y continuidad de repositorios seleccionados.
+- 13-session.ps1: mismo commit; selección y materialización de repositorios, etapa EP-IN-075 y registro de selección en manifiesto de sesión.
+- khora.barrel.ps1: mismo commit; carga explícita del módulo existente 16-oep-workspace.ps1.
+- 11-cleanup.ps1: commit 97f9f66695452d9b9f365cadcfd5d6128101f83a; retirar enlace Desktop/EP antes de desmontar.
+Las versiones anteriores cotejadas son 2c192a5aaf0e8c4812fc68c6700f5c65e251a83b para los tres módulos y 155c9629928c74527f0a4cb3e0272cc3e70757ec para el barril. No se infirió intención del mensaje de un commit que no hubiera cambiado esa ruta.
+
+En una copia separada se actualizaron únicamente esas cuatro huellas, se añadió cobertura del módulo 16 ya cargado por el barril y se extendió la lista requerida del verificador existente a esa dependencia. Se actualizó la huella del propio verificador por su diff exacto. No se escribió código de ejecución PowerShell ni nuevas políticas de identidad, revocación, custodia o arquitectura. El parche mínimo pasa apply-check sobre la copia base preservada. Pruebas negativas: retirar módulo 16 o ejecutor unitario del manifiesto produce INTEGRITY_COVERAGE_MISSING; restauración cotejada. Sintaxis del verificador Python conforme.
+
+Copia identificada: 24151e74756609482a58080939bb0eaca56f9027b05f509ca42f0bee1b07acee, 603 archivos; rechazo global conserva 144 ausentes y 43 divergencias. NO candidata integrada, NO preparación integral. Es huella SHA-256 del mapa ordenado ruta→SHA-256, no Git tree ni hash ZIP. El arranque histórico conserva una etapa productiva EP-IN-080: no se ejecutó ni se presenta como prepare-only admisible; su aislamiento sigue condicionado a las compuertas existentes.
+
+### Adquisición posterior separada y comprobaciones incrementales
+Índice posterior al corte: main 609 fuentes verificadas/618 conocidas; producto #292 409/418; validador 592/601. Fronteras todavía abiertas: 55/64/56 directorios, incluyendo áreas diferidas; no equivalen a pendientes totalmente admitidos. Errores de descarga actuales: cero. No se traslada este avance a las copias congeladas.
+Los dos pending del recibo histórico se identificaron, sin descargar su contenido: kernel/src/khora_kernel/data/personalqa.json en producto y validador, blob 0d1bef003c6360c1818bc66f6d19000f90bfd0c8, 60761 bytes. Se clasificaron deferred-private-review, no aparecen en caché ni árboles adquiridos. Ahora existen nueve diferidos por revisión; se preserva el recibo histórico con ocho diferidos más uno pendiente donde correspondía.
+
+Sobre las fuentes main posteriores: TypeScript 5.9.3 comprobó sintaxis de 62 entradas adicionales, cero errores; 219 entradas iguales por SHA-256 reutilizadas, no reejecutadas. Sintaxis no acredita tipado semántico, build, servicios ni aceptación. No se repitieron las 21 regresiones históricas ni los 21 contratos kernel.
+
+### Gobierno, límites y checkpoint
+Fuente documental actual adquirida: OEP v0.3.16 / VCU-EP-v18, commit c30eabea7c33e661a302c58c62dfdbed43bcdc4d, blob 7dd72806824c9abbe58a5d42d3d81729a7500501, 211501 bytes cotejados. Asistencia sigue única escritora de OEP/host/bóveda. El error de opción --no-index se registró y corrigió; el read-back del registro refleja pruebas y estado residual.
+
+Siguiente trabajo: consumir directorios admitidos de la cola fresca por blobs exactos, explicar las 43 divergencias restantes antes de corregir huellas, incorporar únicamente fuentes admitidas a una copia nueva identificada y comprobar solo cambios causales. Las 144 ausencias incluyen material no admitido: no borrar entradas para forzar PASS. El causal sigue bloqueando el cotejo de sus correcciones, no toda adquisición.
+Persisten decisiones de A/B/local/C, recuperación/custodia por correo, admisión de host y recursos, pruebas reales de migración 016/017/021 y su rollback, cifrado/restauración/cierre, WordPress/activos y aceptación integral. Ningún ensayo SQL real, operación de host, secreto, push, merge, publicación o Remote Desktop Commander. Próximo hito defendible: retirar fuentes admitidas e intenciones pendientes; no hay duración medida para el cierre integral ni agotamiento del trabajo independiente. Informes al operador suspendidos hasta su retorno.

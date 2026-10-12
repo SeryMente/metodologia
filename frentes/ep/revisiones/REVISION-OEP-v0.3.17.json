@@ -1,0 +1,44 @@
+{
+  "version": "v0.3.17",
+  "seal": "VCU-EP-v19",
+  "base_commit": "c30eabea7c33e661a302c58c62dfdbed43bcdc4d",
+  "source_event": 1644,
+  "review_exact_custody": {
+    "review_bytes": 129947,
+    "review_sha256": "0586e7cfb1cbeef2e5f4d495ba9bc450451b5c5594050485f75e63a74582a68d",
+    "prefix_bytes": 123312,
+    "suffix_bytes": 6635,
+    "suffix_sha256": "e986b95759bf0da617ed4719470704300cd5edbc46cc4bbe059a593de01cb47d",
+    "receipt_hashes": {
+      "checkout-representation-section12-receipt.json": {
+        "bytes": 23264,
+        "sha256": "3682686e0d2a3a0f3843388a8259aa6db9b40eb80d96a51b8d918418c38ec31f"
+      },
+      "manifest-workspace-coverage-section12-receipt.json": {
+        "bytes": 17096,
+        "sha256": "55b9c666cd26dee86f850f0654166a0481cb4fd9b37de2e168494acbd9155700"
+      },
+      "manifest-four-provenance-section12.json": {
+        "bytes": 9534,
+        "sha256": "1e5b964f63e7ae211b84af95bd20648f00e314ae1185c5cc0fb64907ce027267"
+      },
+      "coverage-patch-apply-check-section12.json": {
+        "bytes": 153,
+        "sha256": "b4154f8f5b9e7ea6ae2e3358459e468210f62a5f8afa63ad3ee984af6448130a"
+      },
+      "syntax-incremental-section12-receipt.json": {
+        "bytes": 7391,
+        "sha256": "09b3f68e56d0f7a46be76460821798c086d447c7dc74c1ecd9e55f4be0c5466a"
+      }
+    }
+  },
+  "proofs": "REPORTED_BY_BUILDER_NOT_REEXECUTED",
+  "partial_tree_reported": "24151e74756609482a58080939bb0eaca56f9027b05f509ca42f0bee1b07acee",
+  "global_integrity": "BLOCKED_144_MISSING_43_DIVERGENT",
+  "raw_receipts_acquired": false,
+  "new_zip": false,
+  "candidate_integrated": false,
+  "independent_work_exhausted": false,
+  "operator_reports": "SUPPRESSED_UNTIL_RETURN",
+  "readback": "PENDING_AT_WRITE"
+}
