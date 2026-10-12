@@ -1,0 +1,7 @@
+Procedencia: dos mensajes directos del operador en el hilo metodológico; originales íntegros; no hora atribuida. M33/M34 centrales.
+
+M33
+Ok añade regla estricta, solo el asistente puede usar rdc, el constructor no teien restricciones salvo esa, la de rdc, nunca la debe de usar para nada sin excusa. Actualiza el metacanon
+
+M34
+Ok, fortalece la capacidad para someter al modelo que use el marco d etrabajo por objeto canonico, para que use el sistema de instruccioens de lmrco .<br /><br />Fortalece la capacidad para que los objetos canonicos de distintos frentes sean siempre consistentes en lo estructural. actualiza y deja el repo en la vesion mas vigente .

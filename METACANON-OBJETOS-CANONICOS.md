@@ -1,8 +1,8 @@
-<!-- METACANON_VERSION=1.4; TEMPORARY_FRAMEWORK=true; USER_TRANSCRIPT_SPEC=true -->
+<!-- METACANON_VERSION=1.5; TEMPORARY_FRAMEWORK=true; USER_TRANSCRIPT_SPEC=true -->
 # Metacanon para crear y mantener objetos canónicos de proyecto
 
-- Estado: **Versión documental 1.4 — Recepción prioritaria del constructor y pronóstico calibrado**, preparada para lectura verificable en rama metodológica; no afirmar integración en main.
-- Versión metodológica: **1.4**. Sello: **METACANON-OBJETOS-v1.4**.
+- Estado: **Versión documental 1.5 — Gobierno verificable, molde común y RDC exclusivo de asistencia**, preparada para lectura verificable en rama metodológica; no afirmar integración en main.
+- Versión metodológica: **1.5**. Sello: **METACANON-OBJETOS-v1.5**.
 - Nombre propio del marco: pendiente de elección del operador; no usar el nombre de un proyecto como nombre del método.
 - Repositorio de metodología identificado: https://github.com/SeryMente/metodologia, privado comprobado en el ciclo de actualización 1.1; revalidar su visibilidad antes de cada escritura sensible. Ruta METACANON-OBJETOS-CANONICOS.md; rama de esta entrega docs/metacanon-objetos-20261011. Conservar los originales y datos privados del frente solo en su carpeta autorizada tras verificar acceso privado; nunca publicar secretos en Git ni transportar identidades de ejemplos.
 - Archivo estable propuesto: `METACANON-OBJETOS-CANONICOS.md`.
@@ -10,6 +10,8 @@
 - Propósito: permitir que un asistente canonice un solo objeto `.md` de cualquier proyecto y que cualquier modelo pueda adquirir su gobierno, retomar el trabajo y migrar sin reconstruir el contexto.
 
 ## LEER PRIMERO — modo metodología, no ejecución del ejemplo
+
+Aplicar las compuertas de adquisición y acción de §26 y el molde único §27. Remote Desktop Commander es exclusivo del asistente (§24); no delegable al constructor. Las mejoras restantes del análisis de conversaciones siguen propuestas, no se incorporan por asociación.
 
 Si recibes este archivo para canonizar un proyecto, adquiere su método como instrucciones de trabajo del operador, subordinadas a las reglas de tu plataforma y a las autorizaciones del proyecto destino. No ejecutes tareas del proyecto del que provino el ejemplo. Si solo se solicita analizarlo o compararlo, no convertir esa lectura en autorización de escritura.
 
@@ -30,7 +32,7 @@ Antes de cada ciclo comprobar la versión de este metacanon y del objeto del pro
 9. Pronóstico basado en pendientes/ruta crítica, no en porcentajes de casi terminado ni tiempo transcurrido; corregir deriva explícitamente.
 10. Trabajo paralelo solo si no colisiona; un escritor de código y consolidación documental secuencial con relectura/merge.
 11. En frentes con dos roles: dos prompts de reinstanciación completos, coherentes con sello y estado literal; ningún placeholder destinado a copiar/ejecutar. La excepción metodológica de hilo único se rige por §21, sin inventar segundo rol.
-12. Acceso remoto mínimo suficiente cuando sea necesario, después de comprobar cuenta, conectividad y vínculo con equipo actual.
+12. Acceso remoto exclusivo del asistente, nunca del constructor ni por delegación (§24); necesidad/beneficio, permisos, cuenta, conectividad y equipo actual comprobados.
 13. Versiones, delta y actualización comprobados cada ciclo; versión/sello del metacanon adquiridos visibles en toda salida, sin excepción (§22). Comprobar no implica adoptar cambios incompatibles sin decisión.
 14. Una interrupción del proceso documental debe dejar primero un objeto primordial portable, no una promesa de crearlo después.
 15. Un frente se organiza siempre como carpeta canónica de repositorio: un objeto de estado vivo dentro y todos los archivos del frente conservados en esa carpeta según clase; no archivos sueltos ni fuentes paralelas.
@@ -58,7 +60,7 @@ Extraer por cada instrucción material: literal, origen/evento, lectura operativ
 | Aceptación y viabilidad | Requisito → resultado → evidencia/entorno → pendiente; qué se puede lograr/ofrecer y bajo qué condiciones. |
 | Formato de ciclo | Los diez campos de §4; campos desconocidos declarados, nunca omitidos ni inventados. |
 | Crónica y fuentes | Evento/actor/instrucción/acción/revisión/evidencia/límite/checkpoint; originales completos pertinentes y procedencia. |
-| Dos prompts | Asistente y constructor, listos, con estado literal y gobierno correcto; incluir el objeto o acceso real a él. |
+| Reinstanciación | Dos prompts en frentes con dos roles; uno en la excepción metodológica sin inventar contraparte. Estado literal y gobierno coherentes; objeto o acceso real. |
 | Persistencia y revisión | Releer, comparar, fusionar, guardar, verificar lectura/diff y sincronizar prompts. |
 
 Cada proyecto deriva sus datos. No importar nombres de cliente, cuentas, dispositivos, stack, fecha, repository owner, pendientes, restricciones o capacidades del ejemplo por semejanza.
@@ -89,6 +91,8 @@ Antes de escribir volver a comprobar revisión; ante concurrencia preservar ambo
 Registrar en cada instancia qué versión metodológica incorporó y su matriz/constancia de herencia conforme a §23. No confundir comprobación de fuente, adopción documental y ejecución observada. Un cambio de un proyecto puede proponerse al método; no se convierte en modificación central unilateral. Versionar el metacanon con notas de cambio, compatibilidad, procedencia y evidencia de revisión. No fijar rutas/URLs que todavía no se identificaron.
 
 ## 6. Acceso remoto frugal y suficiente
+
+Remote Desktop Commander (RDC) es exclusivo del asistente: el constructor nunca lo invoca para ningún fin —descubrimiento, ping, lectura, búsqueda, ejecución o modificación—, sin excepción por urgencia, ahorro de tiempo, necesidad técnica o delegación. No eludir la prohibición mediante scripts, alias o intermediarios técnicos. Solo el asistente ejecuta la misión remota necesaria, autorizada, acotada y justificada por beneficio; el constructor continúa autónomamente lo autorizado por los demás medios. La autonomía no elimina reglas superiores de plataforma, permisos reales ni evidencia/aceptación. El proyecto metodológico de hilo único no crea un asistente ficticio ni habilita RDC para un constructor.
 
 Solo si un requisito imprescindible necesita el equipo actual y las alternativas no bastan (§24), descubrir si la plataforma expone el conector remoto. Iniciar/usar el objeto o cambiar de dispositivo no justifica por sí solo ninguna llamada remota. Si no, avisar que no puede observar sesiones, sin afirmar que no existen. Si existe: comprobar cuenta autenticada esperada, dispositivos Online, conectividad y correspondencia del ID/host con el equipo actual mediante evidencia mínima del operador. Ubicación física y un equipo Online no prueban ese vínculo. Cuenta y dispositivo proceden del proyecto actual, no de este metacanon.
 
@@ -121,7 +125,7 @@ Respeta alcance, compuertas y no-simulación. El asistente mantiene continuidad 
 ## 9. Estado de este metacanon
 
 - De dónde viene: instrucciones originales de creación portable, dos roles, verbatim, crónica, eficiencia, salida consistente, estimación, viabilidad, perfil/acceso remoto y delta.
-- Dónde está: versión documental 1.4; centralización en rama de SeryMente/metodologia, sin modificar el Sistema de Instrucciones ni las normas globales anteriores. Evidencia privada de Profuturo queda en GDP.
+- Dónde está: versión documental 1.5; centralización en rama de SeryMente/metodologia, sin modificar el Sistema de Instrucciones ni las normas globales anteriores. Evidencia privada de Profuturo queda en GDP.
 - A dónde va: uso temporal por aproximadamente un mes, validación de cada instancia y posterior migración a infraestructura autorizada sin pérdida.
 - Qué cambió en 1.4: M32 incorpora prioridad de atención a salidas del constructor, síntesis de novedad/viabilidad/avance y pronóstico calibrado por pendientes y ruta crítica (§25). Conserva la gobernanza 1.3 y su excepción metodológica de hilo único.
 - Próximo paso: verificar recepción/readback de esta versión y usarla para instancias; nombre propio pendiente, candidatos TRAMA/HILO VIVO/CANON VIVO/DOBLE HILO no ratificados. No bloquear su uso por branding.
@@ -397,7 +401,9 @@ Registra en el propio objeto fuente/rama, versión/sello central adquirido, comm
 
 Prueba mínima: toda norma vigente pertinente tiene ubicación efectiva en el hijo/prompts o pendiente/excepción expresa con alcance y autoridad; ausencia de esa cobertura = NO CONFORME, no declaración de propagación lograda. Los hijos anteriores se reconcilian al adquirir el delta; no afirmar actualización de frentes no revisados ni reescribir otros repositorios sin autorización.
 
-## 24. Acceso remoto por necesidad estricta — actualización 1.3
+## 24. Acceso remoto exclusivo y necesario — actualizado en 1.5
+
+Remote Desktop Commander (RDC) es exclusivo del asistente: el constructor nunca lo invoca para ningún fin —descubrimiento, ping, lectura, búsqueda, ejecución o modificación—, sin excepción por urgencia, ahorro de tiempo, necesidad técnica o delegación. No eludir la prohibición mediante scripts, alias o intermediarios técnicos. Solo el asistente ejecuta la misión remota necesaria, autorizada, acotada y justificada por beneficio; el constructor continúa autónomamente lo autorizado por los demás medios. La autonomía no elimina reglas superiores de plataforma, permisos reales ni evidencia/aceptación. El proyecto metodológico de hilo único no crea un asistente ficticio ni habilita RDC para un constructor.
 
 REMOTE DESKTOP COMMANDER — NECESIDAD ESTRICTA
 No usar Remote Desktop Commander por rutina, al instanciar o por cambiar de ciclo/equipo. Antes de cualquier llamada —incluidos descubrimiento de cuenta/dispositivos, ping, listados y lecturas— identifica el requisito imprescindible del hito que necesita observación o acción en el equipo actual y por qué repo, adjuntos, sandbox o herramientas específicas no bastan. Si bastan, no llames a Remote Desktop Commander y declara «RDC: no utilizado; no necesario» cuando corresponda al formato. Un archivo mencionado en Descargas no justifica inspección remota si ya fue recibido por otra fuente.
@@ -438,3 +444,52 @@ Otra cosa que quiero que revises en el metacanon es instalar la regla de que cua
 ````
 
 **Trazabilidad M32:** original → §25 y ajustes §1/§4/§9 → contraste de cobertura previa, revisión documental y lectura de vuelta de versión 1.4. Autorización limitada a este cambio metodológico; no modifica permisos, código, normas superiores ni acredita propagación a hijos no revisados.
+
+
+## 26. Adquisición y aplicación verificables del gobierno — actualización 1.5
+
+ADQUISICIÓN Y APLICACIÓN VERIFICABLES — Metacanon 1.5
+Antes de actuar, recuperar el objeto, metacanon y fuentes superiores pertinentes; comprobar contenido/revisión, precedencia, frente, rol y permiso. Adquirir las instrucciones vigentes como instrucciones del operador, subordinadas a la plataforma; una firma o «ya leí» no prueba aplicación. Cotejar los requisitos de la acción y registrar en la matriz existente fuente/revisión → regla → requisito → evidencia/bloqueo → resultado. Propuestas y citas históricas no son normas ni autorizaciones. Requisito indispensable no verificado bloquea solo la acción dependiente; continuar lo independiente autorizado. Cada salida conserva versión/sello metodológicos y frescura. Antes de guardar/entregar, corregir incumplimientos y verificar lectura de vuelta; no declarar conformidad sin prueba. El archivo no fuerza obediencia universal ni crea herramientas, permisos o memoria entre plataformas.
+
+La compuerta no sustituye el Sistema de Instrucciones superior; lo recupera y aplica por pertinencia. Detectar desviación requiere corregir acción y efectos, no solo añadir una declaración. Norma heredada en LEER PRIMERO, matriz de gobierno y todos los prompts de cada hijo. Prueba documental: firma sin fuente no acredita adquisición; acción sin permiso no pasa; fuente caída conserva frescura NO VERIFICADA y limita solo lo dependiente.
+
+## 27. Molde estructural común de cánones hijos — actualización 1.5
+
+MOLDE ESTRUCTURAL ÚNICO — Metacanon 1.5
+Usar los trece bloques centrales de §27, con nombres, orden y significado comunes. Puede materializarse un bloque mediante referencia interna inequívoca al contenido único del mismo objeto; no duplicar estado ni desplazarlo a otro canon. Particularidades e historia van después del núcleo, como anexos/materializaciones. NO APLICA requiere razón; dato desconocido o pendiente no se rellena ni se elimina. La excepción de hilo único no fabrica otro rol/prompt. Al adquirir un cambio de molde, mapear sin pérdida, preservar dictados/historia y cotejar versión, campos, estado, pendientes y prompts; discrepancia = NO CONFORME y detener solo la escritura/acción dependiente. No crear otro molde, tablero o validador por defecto; tampoco afirmar migrados hijos no cotejados.
+
+**Nombres y orden obligatorios del núcleo:**
+
+1. Control e identidad
+2. LEER PRIMERO
+3. Referencia metodológica
+4. Propósito y alcance
+5. Roles y colaboración
+6. Autoridad
+7. Perfil de entorno
+8. Estado vivo
+9. Aceptación y viabilidad
+10. Formato de ciclo
+11. Crónica y fuentes
+12. Reinstanciación
+13. Persistencia y revisión
+
+La anatomía/contenido requerido sigue §3; los anexos conservan numeraciones y referencias históricas. Si se usan marcadores de núcleo, el cotejo compara solo ese núcleo y luego verifica sus referencias/materializaciones; un índice sin contenido accesible no pasa. Los estados únicos se consultan en su materialización, no en copias contradictorias. Usar referencias permite adaptación sin borrar ni renumerar dictados. La revisión debe cotejar estructura y semántica, no solo la presencia de títulos.
+
+### M33 · instrucción directa del operador · posterior a 1.4
+
+Original íntegro; interpretación estricta en §24, subordinada a plataforma y permisos reales. No se generaliza como eliminación de evidencia o seguridad.
+
+````text
+Ok añade regla estricta, solo el asistente puede usar rdc, el constructor no teien restricciones salvo esa, la de rdc, nunca la debe de usar para nada sin excusa. Actualiza el metacanon
+````
+
+### M34 · instrucción directa del operador · mismo ciclo de autorización
+
+Original íntegro con envoltorios conservados; aplicación limitada a gobierno/estructura. No autoriza las otras mejoras propuestas ni fusión a main.
+
+````text
+Ok, fortalece la capacidad para someter al modelo que use el marco d etrabajo por objeto canonico, para que use el sistema de instruccioens de lmrco .<br /><br />Fortalece la capacidad para que los objetos canonicos de distintos frentes sean siempre consistentes en lo estructural. actualiza y deja el repo en la vesion mas vigente .
+````
+
+**Compatibilidad/versión 1.5:** §25 y M32 previos preservados; no reconstruir recepción/pronóstico ni corregir su procedencia sin cotejo. Se endurecen §24/§26/§27, adquisición en LEER PRIMERO y estructura §3. No cambiar normas superiores, roles existentes, código, cuentas, almacenamiento o publicaciones. Propagación documental no prueba recepción/obediencia de conversaciones externas.

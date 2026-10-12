@@ -129,12 +129,14 @@ El anexo distingue evidencia actual de documentación histórica. La presencia d
 
 ## Objetos canónicos portables — marco temporal
 
-El procedimiento subordinado [METACANON-OBJETOS-CANONICOS.md](METACANON-OBJETOS-CANONICOS.md) define cómo crear objetos de contexto replicables para cualquier proyecto, preservar dictados originales como especificación, adquirir roles/instrucciones, comprobar delta y mantener viabilidad, evidencia y prompts de continuidad. Revisión vigente: [REVISION-METACANON-1.3.json](REVISION-METACANON-1.3.json); la revisión 1.0 queda como antecedente.
+El procedimiento subordinado [METACANON-OBJETOS-CANONICOS.md](METACANON-OBJETOS-CANONICOS.md) define cómo crear objetos de contexto replicables para cualquier proyecto, preservar dictados originales como especificación, adquirir roles/instrucciones, comprobar delta y mantener viabilidad, evidencia y prompts de continuidad. Revisión vigente: [REVISION-METACANON-1.5.json](REVISION-METACANON-1.5.json); la revisión 1.0 queda como antecedente.
 
 Marco temporal orientativo de un mes, sin infraestructura nueva ni modificación del Sistema de Instrucciones. Esta documentación no certifica productos, permisos o dispositivos y no fuerza herramientas/memoria en otras plataformas. Cada frente tiene una carpeta canónica con un objeto de estado y todos sus archivos. [Frente EP](frentes/ep/README.md) pertenece a este repositorio; Khora es referencia de código, no propietario del frente. La visibilidad de Metodología fue comprobada privada en este ciclo; revalidarla antes de cada carga de originales privados. Secretos nunca a Git.
 
 El proyecto de mantenimiento metodológico opera en un solo hilo y sin asistente separado; la excepción del metacanon §21 no cambia los dos roles de EP.
 
-Metacanon 1.3, §22: todo objeto de frente y sus prompts exigen versión/sello del metacanon visibles en cada salida de ciclo, incluidos bloqueo y mantenimiento; fuente inaccesible = frescura NO VERIFICADA, sin inventar versión vigente.
+Metacanon 1.5, §22: todo objeto de frente y sus prompts exigen versión/sello del metacanon visibles en cada salida de ciclo, incluidos bloqueo y mantenimiento; fuente inaccesible = frescura NO VERIFICADA, sin inventar versión vigente.
 
 La gobernanza central se hereda por delta con matriz/constancia verificable en cada hijo (§23), sin confundir adopción documental con ejecución de modelos. Remote Desktop Commander solo para requisitos imprescindibles sin alternativa suficiente (§24), nunca por rutina.
+
+Metacanon 1.5: adquisición/aplicación verificables (§26), trece bloques comunes (§27) y RDC exclusivo del asistente, prohibido al constructor sin delegación (§24). Gobierno superior intacto; rama documental, no main. Solo estos cambios autorizados, no las demás mejoras propuestas.

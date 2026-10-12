@@ -1,0 +1,35 @@
+{
+  "schema": 1,
+  "version": "v0.3.18 / VCU-EP-v20",
+  "method_acquired": "1.5",
+  "base_commit": "4262e7f9fec3d098b10ce1748cff442acdbdf4c0",
+  "event": "M33/M34 approved, acquisition verified / common structure / assistant-only RDC",
+  "checks": {
+    "core_exact_names_and_order": true,
+    "core_missing_or_changed_header_rejected": true,
+    "core_materialization_targets_present": true,
+    "both_prompts_byte_synced": true,
+    "current_state_literal_synced": true,
+    "prior_technical_section88_byte_preserved": true,
+    "historical_oep_0_1_5_preserved": true,
+    "operator_literals_preserved": true,
+    "only_authorized_three_changes": true,
+    "no_superior_instruction_or_code_change": true,
+    "no_rdc_or_token_required": true
+  },
+  "upper_acquisition": {
+    "H1": "6e0a416025594916016a34ae32e2b7e8af591320",
+    "H2": "6e0a416025594916016a34ae32e2b7e8af591320",
+    "si_version": "v1.6.21",
+    "si_blob": "151333921ca3214c0adee3996cc80d5f23adb2d5"
+  },
+  "hashes": {
+    "METACANON-OBJETOS-CANONICOS.md": "1db7a16892310c505ec3002e9439e35c11a13b2e5e36dee2829efeda201e042c",
+    "frentes/ep/OEP.md": "43ce0d2cadf5b1313902f0eb5400b2f8f5748692e7a5800e3bbb9705aa02daee"
+  },
+  "scope": "Documentary conformance only; not external-agent behavior or product test",
+  "other_fronts_migrated": false,
+  "main_integration": false,
+  "external_preview_configuration": "not exposed; not guaranteed absent",
+  "readback": "required after write"
+}

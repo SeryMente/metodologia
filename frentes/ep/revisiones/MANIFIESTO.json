@@ -6,15 +6,15 @@
   "files": [
     {
       "path": "METACANON-OBJETOS-CANONICOS.md",
-      "bytes": 58464,
-      "sha256": "490d31e1ce18812b90bfd15469a1842495815ff74dea64fc9020a944e55895b2",
-      "git_blob": "61bc98e0b3f5e149274238a5f6df39a8a4aba539"
+      "bytes": 64953,
+      "sha256": "1db7a16892310c505ec3002e9439e35c11a13b2e5e36dee2829efeda201e042c",
+      "git_blob": "32c7a65ff2e83b3b76752ba2160427bd6e851a8f"
     },
     {
       "path": "README.md",
-      "bytes": 12833,
-      "sha256": "0d427af3f035d53ec1e72ce5301297de5cc0afbe4bc84d79a3bb34a896946562",
-      "git_blob": "4f67ac69e3d84c763be5beae00873d07eb7cb758"
+      "bytes": 13123,
+      "sha256": "58039896e2867b29677dede02e32cf0971be3946bdef27174c08d1fb163d1c21",
+      "git_blob": "3d8d7d84de3ef39be9c01e423a955ab9ed77dc38"
     },
     {
       "path": "REVISION-METACANON-1.1.json",
@@ -35,16 +35,28 @@
       "git_blob": "fb4aada2f915e0a01f213dae265593349875d446"
     },
     {
+      "path": "REVISION-METACANON-1.5.json",
+      "bytes": 1463,
+      "sha256": "501857e29efcdf843c2f78f550f6ab967afd25ab1d42f7986f01f4484f8a15fe",
+      "git_blob": "4e19c05d85e253d747f31b9321a46a7aa5005c39"
+    },
+    {
       "path": "frentes/ep/OEP.md",
-      "bytes": 213809,
-      "sha256": "ace6ea7bb311eef2c2103959d289634de8e01a2d7c4119295e69843464c30204",
-      "git_blob": "e3e49a6d1ae8c327e7ac497c3355b05df5e0f1b2"
+      "bytes": 227048,
+      "sha256": "43ce0d2cadf5b1313902f0eb5400b2f8f5748692e7a5800e3bbb9705aa02daee",
+      "git_blob": "e1e045cdc9b1a286047c6d47c47a5111a0b52bce"
     },
     {
       "path": "frentes/ep/README.md",
-      "bytes": 1802,
-      "sha256": "ba4d5a4af47625b6463dd5f7da23a8f7c8fbd6e004fdabc969a61cd87e223349",
-      "git_blob": "fa067c563c64c8bfef6c9eb081a7360f437e6cab"
+      "bytes": 1224,
+      "sha256": "89dd364a956df825de60e6248f9fc5701a690e9051d236e7ea4c5141cba93154",
+      "git_blob": "fd3515eed66ce9f3206e71aa4c341b1a8136089e"
+    },
+    {
+      "path": "frentes/ep/artefactos/EP-H03-integracion-reproducible-parcial-20261011.zip.b64",
+      "bytes": 494061,
+      "sha256": "00c594f6c5f57c9dcb284701a9e627dd624f04a62494540f43dd835211a475ca",
+      "git_blob": "98cdb8b488c736913e821445cb2a8fee65ba52d6"
     },
     {
       "path": "frentes/ep/artefactos/entrega-v0.2.0.zip.b64",
@@ -59,10 +71,34 @@
       "git_blob": "9f42f631f41a71e0c7fa5cdc46823050f8406375"
     },
     {
+      "path": "frentes/ep/evidencias/EP-H03-recibo-fuentes-post-section11.json",
+      "bytes": 7088,
+      "sha256": "382471bd53676955dc1cb441e7ef883b1a34b7116f8401b33ee55b0734a77b06",
+      "git_blob": "30a22c88a9f93aef89e28419ca88a76262f5cbb9"
+    },
+    {
+      "path": "frentes/ep/evidencias/EP-H03-recibo-reconstruccion.json",
+      "bytes": 576,
+      "sha256": "513fad00839224498144dce062536c2594bd4b49989ec50920893b885172e10f",
+      "git_blob": "93362942199b2c14e4c2cc06f07052ee0af3bf40"
+    },
+    {
       "path": "frentes/ep/evidencias/INVENTARIO.md",
       "bytes": 1270,
       "sha256": "41967dcb24a47ea2759d9e1cf90c3e8741f8750ae0a662010bc77cfefe85c21c",
       "git_blob": "ddfa21cd5f6a1768fc55e1e6cba57cf443bbc2fd"
+    },
+    {
+      "path": "frentes/ep/evidencias/Revision-conjunta-ABC-local-prepare-only.md",
+      "bytes": 129947,
+      "sha256": "0586e7cfb1cbeef2e5f4d495ba9bc450451b5c5594050485f75e63a74582a68d",
+      "git_blob": "b3395e72cb2a0b093916020dc66222b70bfff5f4"
+    },
+    {
+      "path": "frentes/ep/originales/ChatGPT-OGP - Addiction - 5-20261011-1633.txt",
+      "bytes": 59349,
+      "sha256": "c15eff877888d7b9f1045d1206d3004b6ebf7e52e64a3a8c37980a60e80601f3",
+      "git_blob": "a90b812c73502e2ecb11236845be44d1974f9594"
     },
     {
       "path": "frentes/ep/originales/conversacion-asistente.txt",
@@ -83,16 +119,46 @@
       "git_blob": "c7b3645c8979e90e375e2ae735de861cd82bd953"
     },
     {
+      "path": "frentes/ep/originales/instruccion-asistencia-util-evento-327.txt",
+      "bytes": 896,
+      "sha256": "d866bb694f289a198f02272dc983ed3e6d601beb0661ae37e918c3954025503e",
+      "git_blob": "f6cc498b6566e642617223855166b17137a90989"
+    },
+    {
       "path": "frentes/ep/originales/instruccion-carpeta-20261011.txt",
       "bytes": 271,
       "sha256": "a672580043a4b62787536abedd14dd7339f3f50d72377e720985c81dd7cbfc7a",
       "git_blob": "fa6b58f23e1d32cfa58a15603fb137fe2de6ab7f"
     },
     {
+      "path": "frentes/ep/originales/instruccion-prioridad-pronostico-evento-388.txt",
+      "bytes": 1139,
+      "sha256": "9b8219e765fa664a81b1f214617eb7b13094a7c2d30763fc48a7133f498f27dd",
+      "git_blob": "6542e00fcdd6d626d82c5df487c91e0c58199924"
+    },
+    {
+      "path": "frentes/ep/originales/instrucciones-gobierno-estructura-rdc-20261011.txt",
+      "bytes": 665,
+      "sha256": "8bfafed36c691fac85ff041d5ac27721dea87d1eb6b16de8d2a31a302e2a3feb",
+      "git_blob": "2329e5c61b693cfce8d98fd0c77b8e5694994db3"
+    },
+    {
+      "path": "frentes/ep/originales/instrucciones-operador-hitos-RDC-provision-20261011.txt",
+      "bytes": 1425,
+      "sha256": "66d2cbda5646f166e842594cdefcae676e36f9e73d762a5163305a8d64916f22",
+      "git_blob": "1b3a503c67eacb4174c48b57cf7c5743556668f5"
+    },
+    {
       "path": "frentes/ep/originales/salida-asistente-ep-20261011-1452.md",
       "bytes": 5378,
       "sha256": "18207cc9fc8ee1dda497ebd58408587d1827580598354693c3ac28de8473282f",
       "git_blob": "44bdffc5f5ef923eb424c6229036474e7d637a50"
+    },
+    {
+      "path": "frentes/ep/originales/salida-constructor-ABC-local-evento-389.txt",
+      "bytes": 16319,
+      "sha256": "bc59d19c989f89439da5310d06b60c417e15e2fb6af48f70ecdff27e532679f6",
+      "git_blob": "b79acf3f09c39b8068c6fa55fd3be57731267a0a"
     },
     {
       "path": "frentes/ep/prompts/ACTUALIZAR-CLAUDIA-RECEPCION.txt",
@@ -102,15 +168,15 @@
     },
     {
       "path": "frentes/ep/prompts/CLAUDIA.txt",
-      "bytes": 23659,
-      "sha256": "547939094e1de5a644e7c190fd60792f4ae8127ba7f293bb3bacdb5cbf6a9049",
-      "git_blob": "c78bafd77fdbd677a66b765dfba3fef4eb6d6412"
+      "bytes": 26304,
+      "sha256": "6c69028c8a1470793193c101bd083453dce6c575a5eb6d65d21b4f4aaf2ac9d4",
+      "git_blob": "d4d32af4e1732d6b5b02222e5e8e8f1ae3317b99"
     },
     {
       "path": "frentes/ep/prompts/SAMANTHA.txt",
-      "bytes": 24667,
-      "sha256": "2f2972b86ad150ffc7fe1fa4278f9aefe26e72afb4704b09a5acb04765d11b76",
-      "git_blob": "8810d2833d2a9a12a48af07ae1c2f54f93b0b083"
+      "bytes": 27279,
+      "sha256": "d1478812ad3d4dc8b9c4739032aacebd89524231c979f04fbe26ca28c74adc5d",
+      "git_blob": "8c59db892a17a2fb0130254b9d7a885f43f10d13"
     },
     {
       "path": "frentes/ep/revisiones/LECTURA-DE-VUELTA-07a1a574.json",
@@ -135,102 +201,6 @@
       "bytes": 556,
       "sha256": "8f604fe401aa6351f8517d7b92e764917bdec75546cb6ae3bbd8ce5cdf937ddb",
       "git_blob": "b36349e1ddc4e20ed0257662d9d2d59fa3673b1b"
-    },
-    {
-      "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.2.json",
-      "bytes": 634,
-      "sha256": "0aa34bcf154ea7cbbb29eff5c04cff80e33c22dc886ca5a1f5538fc07a6a4a54",
-      "git_blob": "7816e393f0dd1c551b8d5903af24866ced095c30"
-    },
-    {
-      "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.3.json",
-      "bytes": 4475,
-      "sha256": "5f142e1d7409b24ccc60aa93086a788cdfe5d9a4a68839942a9a3df56a1a8f5a",
-      "git_blob": "aab846e636f0f0258dafabb22f62df97da6b48b8"
-    },
-    {
-      "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.4.json",
-      "bytes": 1085,
-      "sha256": "2ac75ba5eed307ae9a4c42cace497e5d5dfc18a9c9f4d4b0975e53f3b1fd886e",
-      "git_blob": "aab9fc78347ce8db0b0a455cb2c9eec82bf96bc5"
-    },
-    {
-      "path": "frentes/ep/originales/instruccion-asistencia-util-evento-327.txt",
-      "bytes": 896,
-      "sha256": "d866bb694f289a198f02272dc983ed3e6d601beb0661ae37e918c3954025503e",
-      "git_blob": "f6cc498b6566e642617223855166b17137a90989"
-    },
-    {
-      "path": "frentes/ep/originales/instruccion-prioridad-pronostico-evento-388.txt",
-      "bytes": 1139,
-      "sha256": "9b8219e765fa664a81b1f214617eb7b13094a7c2d30763fc48a7133f498f27dd",
-      "git_blob": "6542e00fcdd6d626d82c5df487c91e0c58199924"
-    },
-    {
-      "path": "frentes/ep/originales/salida-constructor-ABC-local-evento-389.txt",
-      "bytes": 16319,
-      "sha256": "bc59d19c989f89439da5310d06b60c417e15e2fb6af48f70ecdff27e532679f6",
-      "git_blob": "b79acf3f09c39b8068c6fa55fd3be57731267a0a"
-    },
-    {
-      "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.5.json",
-      "bytes": 4166,
-      "sha256": "a7824e5c52d9dcedcbf218668cff597fb62f680e3f5f71886cbf0b2ff0e8aadf",
-      "git_blob": "dc3fd93d26395ba2e3d97cd3105fcac9faa7b9ed"
-    },
-    {
-      "path": "frentes/ep/originales/instrucciones-operador-hitos-RDC-provision-20261011.txt",
-      "bytes": 1425,
-      "sha256": "66d2cbda5646f166e842594cdefcae676e36f9e73d762a5163305a8d64916f22",
-      "git_blob": "1b3a503c67eacb4174c48b57cf7c5743556668f5"
-    },
-    {
-      "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.6.json",
-      "bytes": 3196,
-      "sha256": "1bbd834201a0fbb4861fd19955b077fb72eaee8b3f93240b3d9a0f2dfc35d0e0",
-      "git_blob": "1404241f7c436d3606eab14992408206c65e276b"
-    },
-    {
-      "path": "frentes/ep/originales/ChatGPT-OGP - Addiction - 5-20261011-1633.txt",
-      "bytes": 59349,
-      "sha256": "c15eff877888d7b9f1045d1206d3004b6ebf7e52e64a3a8c37980a60e80601f3",
-      "git_blob": "a90b812c73502e2ecb11236845be44d1974f9594"
-    },
-    {
-      "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.7.json",
-      "bytes": 728,
-      "sha256": "c176746d6aba1dcd3de92424b08f37bae6c6515bfa44a12caedfd3fca82032ea",
-      "git_blob": "ea35b4f942530f6ed36bcd894f0c87f2b2aadc43"
-    },
-    {
-      "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.8.json",
-      "bytes": 698,
-      "sha256": "5933505f767fc5fc7d39d65e7bf1123448b87fc5d6af89a183522a917275b2c2",
-      "git_blob": "73fd63eaa31f71455dcc756d3afbadd3dbed81dc"
-    },
-    {
-      "path": "frentes/ep/evidencias/Revision-conjunta-ABC-local-prepare-only.md",
-      "bytes": 129947,
-      "sha256": "0586e7cfb1cbeef2e5f4d495ba9bc450451b5c5594050485f75e63a74582a68d",
-      "git_blob": "b3395e72cb2a0b093916020dc66222b70bfff5f4"
-    },
-    {
-      "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.9.json",
-      "bytes": 2462,
-      "sha256": "c00ed129152a6c7d81641da16675aac6949b73be2d8e67dd0293da09edeead49",
-      "git_blob": "4fbeecec4be792a84d55f7f0303405cfd79d528a"
-    },
-    {
-      "path": "frentes/ep/evidencias/EP-H03-recibo-reconstruccion.json",
-      "bytes": 576,
-      "sha256": "513fad00839224498144dce062536c2594bd4b49989ec50920893b885172e10f",
-      "git_blob": "93362942199b2c14e4c2cc06f07052ee0af3bf40"
-    },
-    {
-      "path": "frentes/ep/artefactos/EP-H03-integracion-reproducible-parcial-20261011.zip.b64",
-      "bytes": 494061,
-      "sha256": "00c594f6c5f57c9dcb284701a9e627dd624f04a62494540f43dd835211a475ca",
-      "git_blob": "98cdb8b488c736913e821445cb2a8fee65ba52d6"
     },
     {
       "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.10.json",
@@ -269,12 +239,6 @@
       "git_blob": "3690b3a8663c4a7a8c7dd220761c9be47da32c2a"
     },
     {
-      "path": "frentes/ep/evidencias/EP-H03-recibo-fuentes-post-section11.json",
-      "bytes": 7088,
-      "sha256": "382471bd53676955dc1cb441e7ef883b1a34b7116f8401b33ee55b0734a77b06",
-      "git_blob": "30a22c88a9f93aef89e28419ca88a76262f5cbb9"
-    },
-    {
       "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.16.json",
       "bytes": 1183,
       "sha256": "1d415ca2566e07c9c4f3adb5e7a3d0ab6b963f6ed376ba9c2f4f0fa7d2b285a4",
@@ -285,6 +249,60 @@
       "bytes": 1733,
       "sha256": "65b411bbfbff3cdd7f0e56abd5af5b734bb72e45dbdbcd9b753d96823ce0a68b",
       "git_blob": "2190d8e79711f3ef7221e8587d221551bbebcf81"
+    },
+    {
+      "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.18.json",
+      "bytes": 1455,
+      "sha256": "21d23d21a0dab66d6aead6631f886105dae9bdb2cc33c098528c4007f7bb28c2",
+      "git_blob": "1a5ff0939c793ce5013508253ee128b443d96fbd"
+    },
+    {
+      "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.2.json",
+      "bytes": 634,
+      "sha256": "0aa34bcf154ea7cbbb29eff5c04cff80e33c22dc886ca5a1f5538fc07a6a4a54",
+      "git_blob": "7816e393f0dd1c551b8d5903af24866ced095c30"
+    },
+    {
+      "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.3.json",
+      "bytes": 4475,
+      "sha256": "5f142e1d7409b24ccc60aa93086a788cdfe5d9a4a68839942a9a3df56a1a8f5a",
+      "git_blob": "aab846e636f0f0258dafabb22f62df97da6b48b8"
+    },
+    {
+      "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.4.json",
+      "bytes": 1085,
+      "sha256": "2ac75ba5eed307ae9a4c42cace497e5d5dfc18a9c9f4d4b0975e53f3b1fd886e",
+      "git_blob": "aab9fc78347ce8db0b0a455cb2c9eec82bf96bc5"
+    },
+    {
+      "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.5.json",
+      "bytes": 4166,
+      "sha256": "a7824e5c52d9dcedcbf218668cff597fb62f680e3f5f71886cbf0b2ff0e8aadf",
+      "git_blob": "dc3fd93d26395ba2e3d97cd3105fcac9faa7b9ed"
+    },
+    {
+      "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.6.json",
+      "bytes": 3196,
+      "sha256": "1bbd834201a0fbb4861fd19955b077fb72eaee8b3f93240b3d9a0f2dfc35d0e0",
+      "git_blob": "1404241f7c436d3606eab14992408206c65e276b"
+    },
+    {
+      "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.7.json",
+      "bytes": 728,
+      "sha256": "c176746d6aba1dcd3de92424b08f37bae6c6515bfa44a12caedfd3fca82032ea",
+      "git_blob": "ea35b4f942530f6ed36bcd894f0c87f2b2aadc43"
+    },
+    {
+      "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.8.json",
+      "bytes": 698,
+      "sha256": "5933505f767fc5fc7d39d65e7bf1123448b87fc5d6af89a183522a917275b2c2",
+      "git_blob": "73fd63eaa31f71455dcc756d3afbadd3dbed81dc"
+    },
+    {
+      "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.9.json",
+      "bytes": 2462,
+      "sha256": "c00ed129152a6c7d81641da16675aac6949b73be2d8e67dd0293da09edeead49",
+      "git_blob": "4fbeecec4be792a84d55f7f0303405cfd79d528a"
     }
   ],
   "exclusions": [
@@ -292,7 +310,7 @@
     "Downloads files not recovered"
   ],
   "prior_readback_verified": "49e64d0636392c4d2f6f36e3e6d4484d465f0630; seven blobs matched and OEP content exact",
-  "latest_review_source_commit": "c30eabea7c33e661a302c58c62dfdbed43bcdc4d",
-  "current_event": "Section12 exact review custody; checkout representation and scoped coverage reported; global reject144/43; sources post-cut distinct",
-  "verification_scope": "Changed files require read-back; unchanged entries preserve concurrent manifest and receipt, not current product evidence."
+  "latest_review_source_commit": "4262e7f9fec3d098b10ce1748cff442acdbdf4c0",
+  "current_event": "M33/M34 acquisition / common core / assistant-only RDC",
+  "verification_scope": "changed files require exact read-back; unchanged entries preserve previous manifest, not fresh product evidence"
 }
