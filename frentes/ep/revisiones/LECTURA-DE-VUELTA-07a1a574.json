@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "commit": "07a1a5746f58396352efd29f88e8e7d193ad7335",
+  "status": "VERIFIED_EXACT",
+  "all_16_git_blobs_match": true,
+  "oep_content_readback_exact": true,
+  "verified_files": {
+    "frentes/ep/OEP.md": "7e7fea3a7b8263750fa0ae3e0c1629e7619186ee",
+    "frentes/ep/README.md": "16fdf9c643ad9eca9042430fdade9a00d98dd25e",
+    "frentes/ep/prompts/CLAUDIA.txt": "d6abb59bac6c5e52b60272171e048131af249326",
+    "frentes/ep/prompts/SAMANTHA.txt": "007b40bb184ceae41da68ff8fd3996ce653f8448",
+    "frentes/ep/originales/conversacion-asistente.txt": "5ef6319696aa7327595040c27215e062704552df",
+    "frentes/ep/originales/conversacion-constructor.txt": "b05a99f355585b2e5f57958127e0b62336d32608",
+    "frentes/ep/originales/encargo-documental-actual.txt": "c7b3645c8979e90e375e2ae735de861cd82bd953",
+    "frentes/ep/originales/instruccion-carpeta-20261011.txt": "fa6b58f23e1d32cfa58a15603fb137fe2de6ab7f",
+    "frentes/ep/artefactos/entrega-v0.2.0.zip.b64": "b9c00f85cf6ccd6e910b1b343ff91b01363c8b37",
+    "frentes/ep/artefactos/restaurar-entrega-v0.2.0.cjs": "9f42f631f41a71e0c7fa5cdc46823050f8406375",
+    "frentes/ep/evidencias/INVENTARIO.md": "bbc452227e5e94689c64d3165262912a5c104bc6",
+    "frentes/ep/revisiones/MANIFIESTO.json": "69e1e5f3dccd08ecf43298a4ba65c4452e07a0a9",
+    "frentes/ep/revisiones/REVISION-OEP-v0.3.0.json": "328458cb4a62f2d52bc95ed8412ed057007d3dcc",
+    "METACANON-OBJETOS-CANONICOS.md": "cef0dac1661854b9b9923580611c1c1e2b930dc3",
+    "README.md": "5d61cb2cd8daabbb3cc02f56c68655e4a074123b",
+    "REVISION-METACANON-1.1.json": "6a233854630a1024e950fcef3d64df69585efc8c"
+  },
+  "limits": [
+    "no main merge",
+    "no Downloads acquisition",
+    "not product certification"
+  ]
+}

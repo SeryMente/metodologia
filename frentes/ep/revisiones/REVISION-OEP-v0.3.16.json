@@ -1,0 +1,36 @@
+{
+  "version": "v0.3.16",
+  "seal": "VCU-EP-v18",
+  "base_commit": "f41d24a8bb30f20dd8b5c4099860350f9ffa0f6c",
+  "receipt_event": 1595,
+  "receipt_bytes": 7088,
+  "receipt_sha256": "382471bd53676955dc1cb441e7ef883b1a34b7116f8401b33ee55b0734a77b06",
+  "receipt_acquired": "EXACT_BYTES_VERIFIED",
+  "source_counts_reported": {
+    "dbc73afada1ad29abf46f4599d22cc3158a9a986": {
+      "verified": 562,
+      "deferred-private-review": 9
+    },
+    "6738c1f1aeffe5835a725531e0774d4420af13c5": {
+      "verified": 257,
+      "deferred-private-review": 8,
+      "pending": 1
+    },
+    "93cbcb2845239274f6ee03fe149b526e4a624238": {
+      "verified": 545,
+      "deferred-private-review": 8,
+      "pending": 1
+    }
+  },
+  "frontier_counts": {
+    "dbc73afada1ad29abf46f4599d22cc3158a9a986": 76,
+    "6738c1f1aeffe5835a725531e0774d4420af13c5": 31,
+    "93cbcb2845239274f6ee03fe149b526e4a624238": 77
+  },
+  "partial_frozen_tree_unchanged": "ebecc937c2f8a6eaf32f5aea1fae48d3e7c026e263e4d25adf05d31bd6019335",
+  "new_sources_integrated": false,
+  "zip_received": false,
+  "independent_work_exhausted": false,
+  "operator_reports": "SUPPRESSED_UNTIL_RETURN",
+  "readback": "PENDING_AT_WRITE"
+}

@@ -1,0 +1,22 @@
+{
+  "version": "v0.3.15",
+  "seal": "VCU-EP-v17",
+  "base_commit": "fdfeea4219356974d510abaad39a78d1c5a44f4d",
+  "source_direct_message_event": 1528,
+  "review_bytes": 123312,
+  "review_sha256": "a66e276104d40d33eeb9bd8b454c1242350e3dd2e3089a1cc08253a6a3c0aace",
+  "preserved_prefix_bytes": 109593,
+  "receipt": "semantic JSON from message only, not attachment bytes",
+  "zip_received": false,
+  "downloads_received": false,
+  "builder_partial_fingerprint": "ebecc937c2f8a6eaf32f5aea1fae48d3e7c026e263e4d25adf05d31bd6019335",
+  "builder_reported_missing": 202,
+  "builder_reported_divergent": 54,
+  "builder_reported_other_kernel_cases": 21,
+  "cases_duration_seconds": 0.741,
+  "assistance_reexecuted_tests": false,
+  "integrated_candidate": false,
+  "recovery_proposal_implemented": false,
+  "operator_reports": "SUPPRESSED_UNTIL_RETURN",
+  "readback": "PENDING_AT_WRITE"
+}

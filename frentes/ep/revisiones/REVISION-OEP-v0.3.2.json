@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "version": "v0.3.2",
+  "seal": "VCU-EP-v4",
+  "method_acquired": "1.2",
+  "event": "prioritize received EP assistant output; correct outdated reception source",
+  "checks": {
+    "originals_previous_preserved": true,
+    "source_excerpt_provenance_explicit": true,
+    "two_reinstantiation_prompts_synced": true,
+    "no_product_change": true,
+    "no_khora_change": true,
+    "no_claim_assistant_executed_followup": true
+  },
+  "remaining": [
+    "Downloads artifacts not acquired",
+    "constructor final output not received",
+    "A/B/C/local mechanism acceptance not granted"
+  ],
+  "main_integration": false
+}

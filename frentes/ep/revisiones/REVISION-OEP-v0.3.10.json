@@ -1,0 +1,22 @@
+{
+  "version": "v0.3.10",
+  "seal": "VCU-EP-v12",
+  "base_commit": "c3bed595acf152331f4c2a3a0ac4ddf1f0f4559f",
+  "historical_authentication": "operator reported 9/9; local reference metadata source/count verified",
+  "source_blob": "2bf8530843ba09a6e12d1e8799c86eff672c9378",
+  "reference_expired": true,
+  "expired_secret_consumed": false,
+  "helper_sha256": "7ee1bbd15e3fefbaa24d77aa1c39613019f4ec363e676d3f809f58785a997762",
+  "pinned_codec_blob": "46efce0ff43c400bccdee11f02de5bc2ddd21e4c",
+  "causal_bom_issue": "registered and corrected",
+  "synthetic_codec_tests": {
+    "roundtrip": "PASS",
+    "rotation": "PASS",
+    "wrong_key_rejected": "PASS"
+  },
+  "real_recovery_executed": false,
+  "provider_validity": "NOT_VERIFIED",
+  "activation": "NOT_PERFORMED",
+  "volume_created": false,
+  "readback": "PENDING_AT_WRITE"
+}

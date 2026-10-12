@@ -1,0 +1,82 @@
+{
+  "schema": 1,
+  "version": "v0.3.5",
+  "seal": "VCU-EP-v7",
+  "source_commit": "1c52d8f2e9965cc07ff869a232233cd2224bae13",
+  "method_acquired": "1.4",
+  "event": "priority reception of constructor output 389 while independent acceptance review was paused",
+  "provenance": [
+    {
+      "path": "frentes/ep/originales/instruccion-asistencia-util-evento-327.txt",
+      "source": "session://55bade27-f22c-8108-a269-00039938ee4f/3f6ade27-f22c-80cd-b7d3-00a9cec6b53b",
+      "event_sequence": 327,
+      "transformation": "Tool event envelope removed; message body retained exactly including HTML, spelling and line breaks. Constructor authorship is reported by operator, not authenticated independently."
+    },
+    {
+      "path": "frentes/ep/originales/instruccion-prioridad-pronostico-evento-388.txt",
+      "source": "session://55bade27-f22c-8108-a269-00039938ee4f/3f6ade27-f22c-80cd-b7d3-00a9cec6b53b",
+      "event_sequence": 388,
+      "transformation": "Tool event envelope removed; message body retained exactly including HTML, spelling and line breaks. Constructor authorship is reported by operator, not authenticated independently."
+    },
+    {
+      "path": "frentes/ep/originales/salida-constructor-ABC-local-evento-389.txt",
+      "source": "session://55bade27-f22c-8108-a269-00039938ee4f/3f6ade27-f22c-80cd-b7d3-00a9cec6b53b",
+      "event_sequence": 389,
+      "transformation": "Tool event envelope removed; message body retained exactly including HTML, spelling and line breaks. Constructor authorship is reported by operator, not authenticated independently."
+    }
+  ],
+  "message_body_hashes": [
+    {
+      "path": "frentes/ep/originales/instruccion-asistencia-util-evento-327.txt",
+      "bytes": 896,
+      "sha256": "d866bb694f289a198f02272dc983ed3e6d601beb0661ae37e918c3954025503e",
+      "git_blob": "f6cc498b6566e642617223855166b17137a90989"
+    },
+    {
+      "path": "frentes/ep/originales/instruccion-prioridad-pronostico-evento-388.txt",
+      "bytes": 1139,
+      "sha256": "9b8219e765fa664a81b1f214617eb7b13094a7c2d30763fc48a7133f498f27dd",
+      "git_blob": "6542e00fcdd6d626d82c5df487c91e0c58199924"
+    },
+    {
+      "path": "frentes/ep/originales/salida-constructor-ABC-local-evento-389.txt",
+      "bytes": 16319,
+      "sha256": "bc59d19c989f89439da5310d06b60c417e15e2fb6af48f70ecdff27e532679f6",
+      "git_blob": "b79acf3f09c39b8068c6fa55fd3be57731267a0a"
+    }
+  ],
+  "test_source_commit": "6738c1f1aeffe5835a725531e0774d4420af13c5",
+  "test_sources": {
+    "scripts/khora/tests/Test-Arranque.ps1": "7e3a7cb89d86070d84ecd389262095d39f59a071",
+    "khora-web/tests/unit/ep_security.test.ts": "6637b7fd963e858f32775d755a4edd8e56e40612",
+    "khora-web/tests/unit/ep_token.test.ts": "b0f14801c0d8876139c8d3c3087f0dcc7e1b8675",
+    "khora-web/tests/unit/setup.ts": "8f12b8cdae9587eac842a4ce0961cd6d26f8533f",
+    "khora-web/tests/regression/smoke.spec.ts": "591e8d3fe5801396c6f9dc292268fc169590c263"
+  },
+  "scope": "Static source review only; tests not executed; no exhaustive repository coverage claim. Constructor source observations are reported, not independently rechecked here.",
+  "proposal_accepted": false,
+  "product_changed": false,
+  "new_norms_written": false,
+  "rdc": "not used; not necessary",
+  "pending_material": [
+    "B local identity permissions and finite existing content operations",
+    "C bootstrap origin, rotation policy and issuance/rotation serialization",
+    "joint human review A/B/local/C",
+    "overlay receipt and encrypted host admission",
+    "integrated candidate and tests/restore/rollback"
+  ],
+  "readback": "Required after write; not inferred from push response",
+  "previous_document_commit": "17a8a33defd7cb3336a847bccda55ace6554ba13",
+  "governance_delta": {
+    "central_blob": "61bc98e0b3f5e149274238a5f6df39a8a4aba539",
+    "central_section": "25",
+    "adopted_in": [
+      "62",
+      "68",
+      "CLAUDIA.txt",
+      "SAMANTHA.txt"
+    ],
+    "central_norm_modified_by_Claudia": false,
+    "source_provenance_question": "central M32 reports Profuturo origin; current full operator event 388 originates in EP; ask central maintainer to reconcile without guessing"
+  }
+}

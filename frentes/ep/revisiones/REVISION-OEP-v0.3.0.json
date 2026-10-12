@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "date": "2026-10-11",
+  "document_version": "v0.3.0",
+  "seal": "VCU-EP-v2",
+  "repository": "SeryMente/metodologia",
+  "folder": "frentes/ep",
+  "branch": "docs/metacanon-objetos-20261011",
+  "repository_private_verified": true,
+  "pass1": "Original instructions and operator ownership correction; exact source transcripts preserved; active state/role/delta/custody updated without editing product or SI.",
+  "pass2": {
+    "originals_exact": true,
+    "two_prompts_exact_in_object": true,
+    "state_exact_in_both": true,
+    "literal_folder_instruction_preserved": true,
+    "owner_correction_preserved": true,
+    "restore_base64_exact": true,
+    "no_product_changes": true,
+    "one_live_object": true
+  },
+  "readback": "Verify remote Git blobs against MANIFIESTO.json after write; not inferred from push success.",
+  "limits": [
+    "Downloads artifacts not acquired",
+    "No product or E2E certification",
+    "No main integration",
+    "Khora not modified"
+  ]
+}

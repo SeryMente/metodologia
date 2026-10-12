@@ -1,0 +1,17 @@
+{
+  "version": "v0.3.11",
+  "seal": "VCU-EP-v13",
+  "base_commit": "16913e74ac8078b6cf77d49391dde6feb7beb91b",
+  "recovery_real": "COMPLETED_STAGED_ONLY",
+  "entries": 9,
+  "recovered_sha256": "008044f2df9e2705e89c9d4bafe6e8563e81d2945005f07f7ab67f5d0159a19b",
+  "source_backup_sha256": "57d3bfe5417714393ce311fecc4c8e105d175e6f1fd0a3fb20e7fcb8639ab05d",
+  "hashes_and_private_acl": "READBACK_PASS",
+  "provider_validity": "NOT_VERIFIED",
+  "activation": "NOT_PERFORMED",
+  "deleted_resources": [],
+  "reference_expiry_comparison": "DateTimeOffset corrected; prior metadata false expiry invalid",
+  "new_user_goal": "rebuild functional environment-variable vault recoverable through designated email",
+  "security_architecture": "SPECIFIC_REVIEW_PENDING",
+  "readback": "PENDING_AT_WRITE"
+}

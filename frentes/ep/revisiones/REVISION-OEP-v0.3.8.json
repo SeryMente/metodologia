@@ -1,0 +1,17 @@
+{
+  "version": "v0.3.8",
+  "seal": "VCU-EP-v10",
+  "base_commit": "9969494dc459954dbb44639bd6e94db3780ab086",
+  "key_identity": "environment variable vault; operator confirmed",
+  "old_key_available": "operator reported, not authenticated",
+  "candidate_vault_blob": "9d30e8cdab83a1c54d8dc6cb7d46d1c80cab302f",
+  "candidate_entries": 9,
+  "candidate_is_rotation_backup": "not established",
+  "helper_sha256": "0e3aa726ff433a8fbfe21430e357de19e2df984418cfbacf2c96f1ccf05b4ae3",
+  "helper_readback_and_syntax": "PASS",
+  "secret_requested_or_read": false,
+  "recovery_reference_exists": false,
+  "vault_or_product_changed": false,
+  "volume_created": false,
+  "readback_status": "PENDING_AT_WRITE"
+}

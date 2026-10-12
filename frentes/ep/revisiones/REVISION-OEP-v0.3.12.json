@@ -1,0 +1,25 @@
+{
+  "version": "v0.3.12",
+  "seal": "VCU-EP-v14",
+  "base_commit": "5c69fead75ee4937b578ca5d90c728d0f60c534c",
+  "review_bytes": 109593,
+  "review_sha256": "6344b36bc107480bb9f4b3d0e4f1600ea56192e30636cfb6d55199eec72ff94e",
+  "prefix_bytes_preserved": 102043,
+  "source": "constructor direct message event1288 + retained section9 prefix",
+  "review_received": "VERIFIED_BYTES",
+  "new_zip_received": "NOT_VERIFIED",
+  "new_downloads_received": "NOT_VERIFIED",
+  "builder_partial_fingerprint": "4b0f905e24153a62daf6b58fb695d3341a457fb3378362d80cf07f74118b36de",
+  "builder_reported_missing": 335,
+  "builder_reported_divergences": 47,
+  "builder_reported_tests": {
+    "functions": 69,
+    "editing_static_sql": 12,
+    "syntax_ts_js": 219,
+    "python_ast": 26
+  },
+  "tests_reexecuted_by_assistance": false,
+  "integrated_candidate": false,
+  "vault_goal_preserved": true,
+  "readback": "PENDING_AT_WRITE"
+}

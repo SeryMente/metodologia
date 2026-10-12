@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "version": "v0.3.1",
+  "seal": "VCU-EP-v3",
+  "method_acquired": "1.2",
+  "date": "2026-10-11",
+  "checks": {
+    "operator_literal_preserved": true,
+    "ep_two_roles_preserved": true,
+    "no_new_agent_or_thread": true,
+    "no_code_or_khora_change": true,
+    "prior_remote_16_files_verified": true
+  },
+  "role_change": false,
+  "product_change": false,
+  "previous_readback_commit": "07a1a5746f58396352efd29f88e8e7d193ad7335",
+  "limits": [
+    "No Downloads acquisition",
+    "No main merge",
+    "Not product certification"
+  ]
+}
