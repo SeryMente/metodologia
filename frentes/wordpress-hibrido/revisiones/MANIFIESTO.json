@@ -1,0 +1,77 @@
+{
+  "object": "WORDPRESS-HIBRIDO.md",
+  "source_commit": "49ac40e9f6122e2d2fb339362cfa0a78128c8e37",
+  "method_sources": {
+    "Metacanon": {
+      "version": "1.5",
+      "seal": "METACANON-OBJETOS-v1.5",
+      "path": "METACANON-OBJETOS-CANONICOS.md",
+      "blob": "32c7a65ff2e83b3b76752ba2160427bd6e851a8f"
+    },
+    "Sistema de Instrucciones": {
+      "version": "v1.6.21",
+      "name": "Ordenamiento por Preponderancia y Categorías",
+      "path": "SI-METACOGNITIVO.md",
+      "blob": "151333921ca3214c0adee3996cc80d5f23adb2d5"
+    },
+    "Metodología": {
+      "version": "v0.14.14",
+      "path": "METODOLOGIA.md",
+      "blob": "8a2946c767c6ecd73e71d61c0c5274b6c7b2d17f"
+    },
+    "Bootstrap": {
+      "path": "BOOTSTRAP-CONTEXTO-GLOBAL.md",
+      "blob": "8c7370768f34fff8a533d20a801ab028439fae00"
+    },
+    "Canon transversal EP": {
+      "version": "v1.4.0",
+      "path": "CANON-ENTORNO-PERSISTENTE-Y-LABORATORIOS.md",
+      "blob": "0a27fa91c611499304ae994d52e9bf26dec4b01f"
+    },
+    "Objeto padre": {
+      "version": "v0.3.18",
+      "path": "frentes/ep/OEP.md",
+      "blob": "e1e045cdc9b1a286047c6d47c47a5111a0b52bce"
+    }
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 1084,
+      "sha256": "92ceb7ca212727b1687cf33fe6f46af6d6d5d7f8a8187ced7affc149379a274e",
+      "git_blob_sha1": "95849186c7765b7b2c0145faa12b4a777320b430"
+    },
+    {
+      "path": "WORDPRESS-HIBRIDO.md",
+      "bytes": 28796,
+      "sha256": "cf31c7c2ffdc9270787e2e6311cf6429ae13a4e2f1e191e11f341e63c4a3fb6f",
+      "git_blob_sha1": "250546063d9e74fe6cc284eb623c5addc78673cb"
+    },
+    {
+      "path": "originales/ChatGPT-OGP-Blog-3-lectura-normalizada.txt",
+      "bytes": 46991,
+      "sha256": "2c27164d3411d4b0e2f192970c5839ee84db9fe141736443bd8c8babd5b04e74",
+      "git_blob_sha1": "a2f6489214db8e191db2da49c0bb659ab9b00559"
+    },
+    {
+      "path": "prompts/ASISTENTE.txt",
+      "bytes": 5360,
+      "sha256": "7d476875793d076f02a3be98bfdb97293146a29da12df096e7095b5f2d7f9870",
+      "git_blob_sha1": "5f2ffd4596d475c9e38fdf9869110f51f4916695"
+    },
+    {
+      "path": "prompts/CONSTRUCTOR.txt",
+      "bytes": 5747,
+      "sha256": "473cae80d27838d9e429ed3ac9f76e40b8a42513c5afef3d7739e9d107da0cca",
+      "git_blob_sha1": "9f76a4c586fb364f757c378cec1b2136460d3209"
+    },
+    {
+      "path": "revisiones/REVISION-v0.1.0.json",
+      "bytes": 1637,
+      "sha256": "c38057699591dfc9fa904cceb1d7126b1de6e6fcbbec4d48f9af939dbdbd25c8",
+      "git_blob_sha1": "01297386413cd85ccb0ae3c7064863aa8f4cf526"
+    }
+  ],
+  "transcript_original_bytes_verified": false,
+  "privacy": "Metodología privado comprobado antes de escritura; no secretos a Git"
+}
