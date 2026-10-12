@@ -1,0 +1,19 @@
+{
+  "object_version": "v0.1.1",
+  "commit_verified": "4a7e90407f91eaee9bbbd500e50be3f254eb2f51",
+  "result": "PASS",
+  "method": "Git blob SHA1 expected vs returned from immutable commit; initial object also read and compared as full text; original subtree unchanged",
+  "files": {
+    "README.md": "eb1aa400947637cdf15493d5c9f7d769e4420a33",
+    "WORDPRESS-HIBRIDO.md": "0ee7e2f4562f7307536d592a8f2d0f5aeaa252bc",
+    "prompts/ASISTENTE.txt": "60f58f694b9aa9c250717fa9bc555a1e4126cc13",
+    "prompts/CONSTRUCTOR.txt": "1a9921afd0cb2f9ee7187a5c7d0e76d4ff0473b8",
+    "originales/ChatGPT-OGP-Blog-3-lectura-normalizada.txt": "a2f6489214db8e191db2da49c0bb659ab9b00559",
+    "revisiones/LECTURA-DE-VUELTA-v0.1.0.json": "effbb3e5baaed392d1a1092f4d1554d93a269fc8",
+    "revisiones/MANIFIESTO.json": "33989e20a6613d505f204facae32430b2122f132",
+    "revisiones/REVISION-v0.1.0.json": "01297386413cd85ccb0ae3c7064863aa8f4cf526",
+    "revisiones/REVISION-v0.1.1.json": "bf669eba5e87f048193a646855b9645d4e797d35"
+  },
+  "main_unchanged_at_verification": "49ac40e9f6122e2d2fb339362cfa0a78128c8e37",
+  "limits": "documental; no prueba de sitio WordPress, restauración ni publicación"
+}

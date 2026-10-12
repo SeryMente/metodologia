@@ -72,6 +72,12 @@
       "git_blob_sha1": "effbb3e5baaed392d1a1092f4d1554d93a269fc8"
     },
     {
+      "path": "revisiones/LECTURA-DE-VUELTA-v0.1.1.json",
+      "bytes": 1176,
+      "sha256": "e2a6da912bfeee2b1fc218b9b7351f90deca83645ff3b7649d620dc9738a6655",
+      "git_blob_sha1": "b562c36059da494af75b9617e7e6334b24b5972e"
+    },
+    {
       "path": "revisiones/REVISION-v0.1.0.json",
       "bytes": 1637,
       "sha256": "c38057699591dfc9fa904cceb1d7126b1de6e6fcbbec4d48f9af939dbdbd25c8",
@@ -79,9 +85,9 @@
     },
     {
       "path": "revisiones/REVISION-v0.1.1.json",
-      "bytes": 1800,
-      "sha256": "51700560f79dea927de4862a71c52ba04badeec2683c24792509499bb20eb24f",
-      "git_blob_sha1": "bf669eba5e87f048193a646855b9645d4e797d35"
+      "bytes": 1801,
+      "sha256": "065164794418436a865bda8d1c1e276530000b5c57fae5104cb8a1d84e61a985",
+      "git_blob_sha1": "fe1b8e38dbbf49721bb460a8ba287988ac3ec3fe"
     }
   ],
   "transcript_original_bytes_verified": false,

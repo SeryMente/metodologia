@@ -43,7 +43,7 @@
     "Git público → no dump/snapshot/licencia",
     "estático → no backup WordPress"
   ],
-  "remote_readback": "v0.1.0 verificada por texto y siete blobs en a1faeac18bd2bafbabcaeac0fd39be26597c6b89; verificar commit v0.1.1 antes de entregar",
+  "remote_readback": "PASS; nueve blobs del paquete v0.1.1 cotejados en 4a7e90407f91eaee9bbbd500e50be3f254eb2f51; original textual y árbol preservados",
   "limitations": [
     "copia TXT textual normalizada, no hash del original Windows",
     "sin pruebas de runtime, licencia binaria, snapshot remoto o restauración",
