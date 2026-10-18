@@ -1,11 +1,11 @@
-<!-- OBJECT_VERSION=0.2; METACANON_VERSION=1.5; STATE_SOURCE=SPRINT.md -->
+<!-- OBJECT_VERSION=0.3; METACANON_VERSION=1.5; STATE_SOURCE=SPRINT.md -->
 # Sprint · Convergencia funcional, mercado y apoyos · Khora y Otro Gran Programa
 
 ## 1. Control e identidad
 
 - Naturaleza: objeto documental permanente del sprint, vivo y provisional en su definición; no especificación de lanzamiento ni ratificación de una arquitectura.
-- Versión/sello del objeto: **0.2 · SPRINT-CONVERGENCIA-v0.2**.
-- Ancla: confirmación expresa del operador «Si sehguimso manualmente», posterior al rechazo de automatización por coste, en este mismo hilo. Se conserva el objetivo diario como frecuencia de revisión manual al retomar; no implica ejecución entre mensajes.
+- Versión/sello del objeto: **0.3 · SPRINT-CONVERGENCIA-v0.3**.
+- Ancla: «Sigue», instrucción directa posterior a confirmar revisión manual; se contrastaron costes y datos de servicios de voz. Se conserva el objetivo diario al retomar, no ejecución entre mensajes.
 - Propietario de custodia: `SeryMente/metodologia`, privado comprobado mediante GitHub en este ciclo. Carpeta: `frentes/convergencia-funcional/`. Estado único: este archivo.
 - Rama documental: `docs/sprint-convergencia-funcional-20261017`, creada desde `main@49ac40e9f6122e2d2fb339362cfa0a78128c8e37`. No fusionar ni afirmar integrado en main por guardar esta rama.
 - Persistencia: el recibo del commit y la lectura de vuelta son la prueba de publicación; la sola presencia de esta frase no la acredita. Si la lectura falla, esta entrega queda NO VERIFICADA.
@@ -81,15 +81,15 @@ Canal: Notion AI, workspace Queretaro, zona horaria America/Mexico_City. Fuentes
 
 ## 8. Estado vivo
 
-**Acción actual:** revisión manual por Samantha, sin agente adicional ni ejecución entre mensajes. Objeto v0.2; no se decide primera versión.
+**Acción actual:** revisión manual por Samantha, sin agente adicional ni ejecución entre mensajes. Objeto v0.3; no se decide primera versión.
 
-**Avance observado:** matriz F01–F15 conservada. Se contrastaron documentación de transcripción en vivo ElevenLabs/Deepgram y alineación forzada ElevenLabs; se verificaron páginas y términos de ayudas después del encaje funcional. Deepgram ofrece un máximo publicado de 100.000 USD/12 meses, no un importe concedido; exige producción o intención real de lanzar en seis meses. Sus créditos promocionales no se autorizan para investigación de competidores; aclarar con el proveedor cualquier prueba comparativa antes de usar esos créditos. No hubo llamadas de audio ni prueba empírica de calidad. No hay nueva conclusión sobre la tríada ni motivo de cambiar su diseño.
+**Avance observado:** matriz F01–F15 conservada. Se añadió al radar el contraste de coste y datos: Scribe Realtime frente a Nova-3 Multilingual, tarifa separada de audio grabado, saldo inicial Deepgram distinto de su premio, exclusión de entrenamiento distinta de retención cero, condiciones por solicitud/cuenta y riesgo de recarga automática. No se comparan tarifas como coste total equivalente; falta precio aplicable al excluir entrenamiento y aclarar extras.  Se contrastaron documentación de transcripción en vivo ElevenLabs/Deepgram y alineación forzada ElevenLabs; se verificaron páginas y términos de ayudas después del encaje funcional. Deepgram ofrece un máximo publicado de 100.000 USD/12 meses, no un importe concedido; exige producción o intención real de lanzar en seis meses. Sus créditos promocionales no se autorizan para investigación de competidores; aclarar con el proveedor cualquier prueba comparativa antes de usar esos créditos. No hubo llamadas de audio ni prueba empírica de calidad. No hay nueva conclusión sobre la tríada ni motivo de cambiar su diseño.
 
-**Siguiente paso:** cerrar el coste y tratamiento de datos de las dos alternativas antes de proponer una prueba con corpus público/sintético; luego continuar por memoria persistente y temporalidad con Graphiti/Zep, sin abrir otro documento de convergencia. No condicionar investigación al alcance de lanzamiento.
+**Siguiente paso:** investigar memoria persistente y temporalidad (F06/F07): Graphiti como biblioteca frente a Zep gestionado y alternativas, contratos de procedencia/corrección, costes, datos y salida; después buscar apoyos. Voz queda documentada, no autorizada para audio personal. No condicionar investigación al alcance de lanzamiento.
 
 **Pendientes en orden:**
 1. Continuar manualmente al retomar el chat. No probar ni activar el agente por iniciativa propia; la automatización deja de ser el siguiente paso. Sin garantía de ejecución diaria entre mensajes.
-2. Completar coste de transcripción/alineación, retención/entrenamiento, español, disponibilidad y salida; la existencia de un parámetro de logging no demuestra ausencia de retención.
+2. Voz: tarifas base y políticas ya documentadas en el radar, sin prueba empírica. Resolver solo al preparar prueba: precio sin entrenamiento de Deepgram, complementos discrepantes de ElevenLabs, equivalencia del premio en dólares/horas y cobertura/retención de alineación. No bloquear por estas incertidumbres la investigación de memoria.
 3. Si se propone prueba real, precisar datos autorizados, presupuesto y licencia; no usar crédito Deepgram promocional para comparativas sin aclarar su restricción contractual.
 4. Revisar memoria persistente y temporalidad (F06/F07) contra servicios/bibliotecas existentes y sus alternativas; después buscar apoyos de las coincidencias.
 5. Conservar funciones declaradas/propuestas/ejemplos; F02 sigue siendo un ejemplo exploratorio, no compromiso de construcción.
@@ -152,6 +152,16 @@ La lectura de vuelta del objeto v0.1 coincidió con blob `93374551c3f073ae56d662
 **Lectura separada:** no probar ni activar agente; Samantha continúa manualmente. No equivale a revisión gratis ni trabajo automático entre mensajes. El traslado intermedio de datos de conectividad no es autorización de acceso y no se reproduce como historial.
 
 Fuentes adicionales de este corte: https://elevenlabs.io/docs/overview/capabilities/forced-alignment.md ; https://deepgram.com/startup-program ; https://deepgram.com/startup-program-terms-of-service ; https://elevenlabs.io/startup-grants .
+
+### Delta posterior · costes y datos de voz
+
+M04, instrucción directa del operador, verbatim: «Sigue». Aplicación: continuar investigación manual autorizada, sin ejecutar servicios, activar agente ni acceder al equipo.
+
+Corte documental: precios y datos de voz contrastados y guardados en §A.2 del radar. El uso de datos para mejorar modelos se puede excluir según documentación; esto no equivale a acceso automático a retención cero. No se adopta proveedor ni se garantiza privacidad por una certificación comercial. La cifra publicada de transcripción no paga todos los componentes de Khora. La fuente de precios de Deepgram incluye un mecanismo de recarga automática que debe comprobarse/desactivarse antes de una prueba con cuenta autorizada. No se activó cuenta, tarjeta o crédito.
+
+Persistencia previa v0.2 leída en commit `199c201106aa065b913c7068911b069397ecbec3`, blob `98ce75dfe7037c8083d7e08da7fc4932a69773bf`. v0.3 conserva trece bloques y originales; método central sin cambios en esta edición. Evidencia de detalle y límites en el radar; no duplicar sus tablas. Verificación v0.3: recibo y lectura de vuelta deben acompañar la entrega.
+
+Fuentes nuevas: https://deepgram.com/pricing ; https://elevenlabs.io/pricing/api?price.section=speech_to_text ; https://developers.deepgram.com/docs/the-deepgram-model-improvement-partnership-program ; https://deepgram.com/privacy/subprocessors ; https://elevenlabs.io/docs/eleven-api/resources/zero-retention-mode.md ; https://help.elevenlabs.io/hc/en-us/articles/29952728805393-Is-my-data-used-to-improve-ElevenLabs-AI-models .
 
 ### Especificaciones originales verbatim
 
