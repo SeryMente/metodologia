@@ -1,11 +1,11 @@
-<!-- OBJECT_VERSION=0.4; METACANON_VERSION=1.5; STATE_SOURCE=SPRINT.md -->
+<!-- OBJECT_VERSION=0.5; METACANON_VERSION=1.5; STATE_SOURCE=SPRINT.md -->
 # Sprint · Convergencia funcional, mercado y apoyos · Khora y Otro Gran Programa
 
 ## 1. Control e identidad
 
 - Naturaleza: objeto documental permanente del sprint, vivo y provisional en su definición; no especificación de lanzamiento ni ratificación de una arquitectura.
-- Versión/sello del objeto: **0.4 · SPRINT-CONVERGENCIA-v0.4**.
-- Ancla: «Avanza», posterior al mandato de completar cada fase de extremo a extremo en el ciclo. Corte F06/F07 de memoria persistente y temporalidad, desde necesidad hasta ayudas y recomendación. Se conserva revisión manual, no ejecución entre mensajes.
+- Versión/sello del objeto: **0.5 · SPRINT-CONVERGENCIA-v0.5**.
+- Ancla: «Siguiente», posterior al cierre de memoria. F08 completada documentalmente de extremo a extremo, sin prueba empírica ni implementación. Revisión manual; no agente ni ejecución entre mensajes.
 - Propietario de custodia: `SeryMente/metodologia`, privado comprobado mediante GitHub en este ciclo. Carpeta: `frentes/convergencia-funcional/`. Estado único: este archivo.
 - Rama documental: `docs/sprint-convergencia-funcional-20261017`, creada desde `main@49ac40e9f6122e2d2fb339362cfa0a78128c8e37`. No fusionar ni afirmar integrado en main por guardar esta rama.
 - Persistencia: el recibo del commit y la lectura de vuelta son la prueba de publicación; la sola presencia de esta frase no la acredita. Si la lectura falla, esta entrega queda NO VERIFICADA.
@@ -81,16 +81,16 @@ Canal: Notion AI, workspace Queretaro, zona horaria America/Mexico_City. Fuentes
 
 ## 8. Estado vivo
 
-**Acción actual:** fase documental F06/F07 completada: necesidad → alternativas → integración → coste/datos/licencia/salida → ayudas → conclusión y persistencia verificable. Objeto v0.4; revisión manual en este chat. No hay motor adoptado ni primera versión decidida.
+**Acción actual:** fase documental F08 completada: necesidad → alternativas → integración → coste/datos/licencia/salida → ayudas → recomendación/persistencia. Objeto v0.5; revisión manual. No hay motor adoptado, ensayo ejecutado ni primera versión decidida.
 
-**Avance observado:** Graphiti autogestionado, Zep gestionado y Mem0 Platform contrastados con fuentes primarias. La comparación distingue originales de hechos extraídos, historia de vigencias de ranking temporal, invalidación de borrado y servicio gestionado de edición abierta. Tarifas y oportunidades viven en A.3 del radar único. Se documentan Mem0 Pro tres meses solo para nuevos usuarios, Zep Free con límites y el programa Zep Emerging de pago/funding: no efectivo ni aprobación garantizada. La política Mem0 diferencia entrenamiento gratis/pago; la cuenta bonificada requiere aclaración. Zep no quedó acreditado para datos personales por la política consultada. No se atribuye a ninguno garantía de extracción fiel ni salida/restauración ensayada. Recomendación documental, no decisión de arquitectura: retener Graphiti y Mem0 como candidatos, Zep como alternativa gestionada. La tesis incorpora que estas funciones ya disponibles no prueban exclusividad; se mantiene hipótesis de fidelidad/control/experiencia. No se revalidaron por inferencia las restantes oportunidades o tecnologías.
+**Avance observado:** Hindsight, LightRAG y una línea base propuesta contrastados en A.4 del radar único. Retorno a original distinto de recuerdo extraído, cita distinta de respaldo. Hindsight Cloud publica operaciones por token/llamada y almacenamiento tras treinta días; superficie Data Privacy Enterprise no se hereda a créditos. Su programa startup exige entidad constituida, producto para clientes, memoria central y empresa financiada o rentable con tracción: no elegibilidad confirmada. LightRAG MIT: cuotas del código distintas de coste de modelos y operación; aviso histórico de evasión de autenticación contrastado con corrección registrada en v1.5.4, no una certificación de cualquier despliegue. Exportación Hindsight consultada obsoleta, reconstituye vectores/entidades al importar: restauración exacta no demostrada. Radar técnico y tesis reciben consecuencias, sin ratificar superioridad ni diseño. F06/F07 y voz conservan sus límites; no refrescar otras oportunidades por inferencia.
 
-**Siguiente paso:** F08, recuperación verificable y búsqueda híbrida/retorno al original, completa en un ciclo documental hasta coste, datos, salida, ayudas y conclusión. No reservar estos últimos como fases de turnos futuros. Reusar evidencia de Graphiti/Mem0 sin repetirla salvo cambio material; contrastar Hindsight/LightRAG y línea base con fuentes primarias. No implementar ni pedir un alcance de lanzamiento.
+**Siguiente paso:** F09/F10, ideación asíncrona recuperable y redacción enraizada en sentido: necesidad → servicios/productos/patrones → integración/costes/datos/salida → ayudas → recomendación/prueba propuesta/persistencia. Reutilizar F06–F08; comprobar qué falta entre recuperar material y elaborar conservando el sentido, sin fijar primera versión ni implementar.
 
 **Pendientes en orden:**
 1. Continuar manualmente al retomar; no probar/activar agente ni prometer trabajo diario entre mensajes.
-2. Completar F08 de extremo a extremo según M06; diferenciar investigación completa, preguntas contractuales bloqueantes y prueba no ejecutada.
-3. Si se propone prueba de memoria, corpus sintético con cambio de preferencia, negación, retractación, llegada tardía, dos usuarios, fuente, exportación/restauración y borrado; sin datos personales ni gasto por defecto. Contrato propuesto en radar, aún no aprobado ni ejecutado.
+2. Completar F09/F10 de extremo a extremo; F08 concluida documentalmente, no empíricamente. No reservar costes/datos/apoyos para un turno posterior por conveniencia.
+3. Si se propone prueba de recuperación, aplicar A.4: misma carga/modelo/presupuesto, respaldos por afirmación, cita exacta, ausencia, negación, actualización, aislamiento e instrucciones incrustadas. Hindsight Cloud: confirmar términos de datos, cuota, precio facturable y límites del beneficio; LightRAG: fijar versión y revisar autenticación/avisos antes de exposición. Ningún dato personal autorizado. Si se propone prueba de memoria, corpus sintético con cambio de preferencia, negación, retractación, llegada tardía, dos usuarios, fuente, exportación/restauración y borrado; sin datos personales ni gasto por defecto. Contrato propuesto en radar, aún no aprobado ni ejecutado.
 4. Antes de Mem0: confirmar nuevo usuario, cuota/duración/cobro tras premio, tratamiento de Pro bonificado y entrenamiento. No crear cuenta solo para descubrir elegibilidad y perder condición de nuevo usuario.
 5. Antes de Zep con información personal: términos aplicables, subencargados, ubicación, entrenamiento, exportación íntegra y borrado de copias. Programa Emerging no prioritario para esfuerzo sin presupuesto: financiación y desembolso exigidos, no acreditados aquí.
 6. Voz: documentación anterior preservada; aclarar precio al excluir entrenamiento de Deepgram, extras de ElevenLabs y cobertura/retención de alineación antes de prueba. Créditos Deepgram no usar para comparar competidores sin aclarar restricción.
@@ -99,7 +99,7 @@ Canal: Notion AI, workspace Queretaro, zona horaria America/Mexico_City. Fuentes
 9. Afinar tesis solo con diferencias verificadas; no cambios de diseño/seguridad/arquitectura por promoción o benchmark ajeno.
 10. Mantener rama documental, sin merge. Releer fuentes antes de escribir; registrar cobertura real y readback, no fabricar revisión diaria exhaustiva.
 
-**En prueba / recién fallido:** ninguna integración ni medición de calidad ejecutada. Agente desactivado. Una lectura local falló porque la copia v0.3 no estaba en la ruta supuesta; se recuperó del resultado GitHub ya leído y se verificó su blob antes de generar el delta. No hubo mutación del producto ni pérdida de estado. Prevención: comprobar existencia y hash, no asumir temporales descritos en un resumen.
+**En prueba / recién fallido:** ninguna integración ni medición de calidad ejecutada. Agente desactivado. En este corte se corrigió una lectura local del JSON de Notion: markdown es un objeto que contiene su texto, no una cadena; el error solo interrumpió el análisis local, sin escritura ni pérdida. Se inspeccionó el esquema y se recargó en formato v2 sin truncamiento/bloques desconocidos antes de preparar parches. Prevención: validar tipos/esquema antes de procesar. Antecedente anterior: Una lectura local falló porque la copia v0.3 no estaba en la ruta supuesta; se recuperó del resultado GitHub ya leído y se verificó su blob antes de generar el delta. No hubo mutación del producto ni pérdida de estado. Prevención: comprobar existencia y hash, no asumir temporales descritos en un resumen.
 
 **Recordatorios latentes:** funciones antes de ayudas; candidatos útiles sin promoción permanecen; revisión manual consume créditos de conversación. Sin gasto, cuentas, envíos, migraciones ni acceso remoto. La conectividad suministrada no amplía permisos ni se copia a este objeto. Investigación completa no significa integración lista.
 ## 9. Aceptación y viabilidad
@@ -112,6 +112,7 @@ Canal: Notion AI, workspace Queretaro, zona horaria America/Mexico_City. Fuentes
 | Comparar transcripción en vivo | Dos fuentes primarias confirman servicios integrables y resultados parciales/finales | No medición propia, español y privacidad por contrastar |
 | Ayudas como segundo paso | Mapeadas por función a fichas existentes; candidatos sin ayuda retenidos | Elegibilidad personal no acreditada |
 | F06/F07 de extremo a extremo | Necesidad, tres rutas, integración, costes, datos, salida y apoyos documentados | Sección A.3 del radar; integración/seguridad NO acreditadas |
+| F08 de extremo a extremo | Tres rutas, coste/datos/licencia/salida y ayudas verificadas documentalmente | Radar A.4; ninguna integración/garantía empírica acreditada |
 | Reingreso portable | Este objeto, originales, fuente y prompts | Publicación/lectura de vuelta necesarias |
 
 Viable ahora: investigación y comparación documental manual cuando el chat esté activo, sujeta a créditos de conversación y acceso; no un agente adicional ni trabajo entre mensajes. No viable prometer cobertura diaria exhaustiva de todo el mercado, gratuidad total, concesión de ayudas ni superioridad sin ensayos. La secuencia permite descubrir el producto, no necesita un catálogo final previo.
@@ -199,6 +200,30 @@ Fuentes de este corte:
 
 Pronóstico comparado: objetivo anterior era investigar memoria/temporalidad; se cierra documentalmente en este ciclo con las garantías no acreditadas identificadas. Próximo hito seleccionado: F08 completo en un ciclo de investigación si las fuentes siguen accesibles, sin tiempo medido fiable para prometer minutos. Una prueba real o contratación no tiene plazo por carecer de autorización y condiciones. El sprint exploratorio completo sigue sin horizonte estimable; no se inventa porcentaje ni se reduce el alcance para llamarlo terminado.
 
+### Delta posterior · recuperación verificable y búsqueda híbrida
+
+**M08 · continuación directa del operador, verbatim:**
+
+> Siguiente
+
+Lectura separada: continuar con F08 completo, dentro del permiso documental existente; no implementación, cuentas, gasto ni solicitud. Metacanon central recargado, mismo main49ac/blob32c7 y versión 1.5; sin delta metodológico. Objeto anterior v0.4 recargado desde commit `366e23a93c73f0cf7126b430cbb39cb280579756`, blob `7ac50d0ef7aa3f512404de3fd89eef923b765d4f`. Repositorio privado revalidado. Originales y trece bloques preservados.
+
+F08 queda en A.4 del radar, sin tabla paralela en este archivo. Fuentes primarias contrastadas para necesidad/integración, luego costes/datos/salida, después ayudas. Hindsight hasta 15.000 dólares es máximo escalonado y condicionado con caducidad publicada de tres meses, no saldo de esta cuenta. Para Otro Gran Programa no se acredita producto/entidad elegible ni necesidad de memoria agéntica; búsqueda del corpus aprobado es la tarea a comparar. LightRAG mantiene candidatura sin ayuda específica verificada. La alerta de seguridad es documental y no identifica afectación del entorno del operador. Radar técnico y tesis reciben delta de evidencia dentro de sus ediciones documentales vigentes, sin nueva ratificación de diseño.
+
+Fuentes del corte:
+- https://hindsight.vectorize.io/developer/retrieval — cuatro señales, presupuesto, chunks y límites.
+- https://github.com/vectorize-io/hindsight — operaciones, componentes y proveedores.
+- https://vectorize.io/pricing — coste por operación, código MIT y saldo inicial sin importe presupuestable.
+- https://docs.hindsight.vectorize.io/security/data-privacy — superficie Enterprise, etiquetado y recibos, no condiciones heredadas del premio.
+- https://docs.hindsight.vectorize.io/api-reference/export-documents — ruta obsoleta y regeneración al importar.
+- https://vectorize.io/startups — requisitos, tres etapas y caducidad.
+- https://github.com/HKUDS/LightRAG — modos, citas, contexto, borrado y almacenamientos.
+- https://github.com/HKUDS/LightRAG/blob/main/LICENSE — MIT.
+- https://github.com/HKUDS/LightRAG/security/advisories/GHSA-f4vv-55c2-5789 — aviso histórico; carga rápida falló, carga completa obtuvo contenido.
+- https://github.com/HKUDS/LightRAG/releases/tag/v1.5.4 — corrección registrada; no garantía general de seguridad.
+
+Pronóstico: F08 se completa documentalmente en el ciclo previsto; no hubo ensayos de producto. Próximo hito F09/F10 completo en un ciclo de investigación si las fuentes son accesibles. No hay muestra de duración que permita prometer minutos; intervención material solo si una prueba/dato/contrato lo exige. Sprint exploratorio completo sin horizonte finito estimable. No se trunca a conveniencia ni se proclama implementación completa.
+
 ### Especificaciones originales verbatim
 
 **M01 · Mensaje directo del operador · este hilo, posterior a la entrega de los radares · 2026-10-17.** Texto completo recibido, sin normalizar grafía, negaciones ni ejemplos. Sin envoltorio HTML en este mensaje. No se inventa una hora exacta.
@@ -229,6 +254,6 @@ Toma estado y siguiente paso de §8, no de una copia. Investiga funciones en len
 
 Antes de editar: comprobar privacidad, revisión de esta rama y blob del objeto; releer, comparar y fusionar ante concurrencia. No sobrescribir a ciegas ni importar datos de ejemplo. Al guardar: actualizar sello/ancla solo por evento real, mantener originales/crónica y prompts coherentes, publicar en la rama autorizada y verificar lectura/diff. Si falla, entregar archivo íntegro con sincronización pendiente, no afirmar persistencia.
 
-Doble revisión de esta entrega: (1) fidelidad M01–M07 → decisiones/criterios/pendientes, quince funciones como propuestas y ejemplo no exigencia; trece bloques presentes, sin secretos o identidades importadas. (2) lectura de vuelta del objeto publicado y páginas/configuración Notion, integridad del original y enlaces. Hasta ejecutar la segunda pasada no declarar conformidad completa. Casos negativos: fuente inaccesible no acredita frescura; disparador desactivado no acredita vigilancia; documentación API no acredita integración; premio anunciado no acredita concesión; guardar la rama no acredita merge.
+Doble revisión de esta entrega: (1) fidelidad M01–M08 → decisiones/criterios/pendientes, quince funciones como propuestas y ejemplo no exigencia; trece bloques presentes, sin secretos o identidades importadas. (2) lectura de vuelta del objeto publicado y páginas/configuración Notion, integridad del original y enlaces. Hasta ejecutar la segunda pasada no declarar conformidad completa. Casos negativos: fuente inaccesible no acredita frescura; disparador desactivado no acredita vigilancia; documentación API no acredita integración; premio anunciado no acredita concesión; guardar la rama no acredita merge.
 
 Este objeto es el punto de continuidad, no otra copia de los radares. README es índice sin estado mutable. Una futura migración preserva original, decisiones, fuentes, estado y recepción verificable antes de archivar. El marco temporal del metacanon no autoriza borrar automáticamente este registro permanente.
