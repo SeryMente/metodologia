@@ -1,11 +1,11 @@
-<!-- OBJECT_VERSION=0.8; METACANON_VERSION=1.5; STATE_SOURCE=SPRINT.md -->
+<!-- OBJECT_VERSION=0.9; METACANON_VERSION=1.5; STATE_SOURCE=SPRINT.md -->
 # Sprint · Convergencia funcional, mercado y apoyos · Khora y Otro Gran Programa
 
 ## 1. Control e identidad
 
 - Naturaleza: objeto documental permanente del sprint, vivo y provisional en su definición; no especificación de lanzamiento ni ratificación de una arquitectura.
-- Versión/sello del objeto: **0.8 · SPRINT-CONVERGENCIA-v0.8**.
-- Ancla: M13, autorización para preparar casos sintéticos y método de comparación. ENSAYO-TEXTO-v0.1 preparado en radar A.13; sin corridas, implementación o primera versión elegida. Revisión diaria manual; sin agente ni ejecución entre mensajes.
+- Versión/sello del objeto: **0.9 · SPRINT-CONVERGENCIA-v0.9**.
+- Ancla: M14 · 2026-10-18, identificación y separación documental autorizadas por el operador. Cuatro cuerpos diferenciados en §11 y adjunto radar custodiado literalmente; ensayo preparado, no ejecutado. Revisión manual; sin agente ni ejecución entre mensajes.
 - Propietario de custodia: `SeryMente/metodologia`, privado comprobado mediante GitHub en este ciclo. Carpeta: `frentes/convergencia-funcional/`. Estado único: este archivo.
 - Rama documental: `docs/sprint-convergencia-funcional-20261017`, creada desde `main@49ac40e9f6122e2d2fb339362cfa0a78128c8e37`. No fusionar ni afirmar integrado en main por guardar esta rama.
 - Persistencia: el recibo del commit y la lectura de vuelta son la prueba de publicación; la sola presencia de esta frase no la acredita. Si la lectura falla, esta entrega queda NO VERIFICADA.
@@ -81,7 +81,7 @@ Canal: Notion AI, workspace Queretaro, zona horaria America/Mexico_City. Fuentes
 
 ## 8. Estado vivo
 
-**Acción actual:** preparación de evaluación completa documentalmente: ENSAYO-TEXTO-v0.1, corpus sintético, consultas, respuestas esperadas, alternativas, rúbrica y recibo/registro futuro en A.13 del radar existente. Objeto v0.8. Inventario inicial F01–F15 ya cubierto; no se reabre como catálogo pendiente.
+**Acción actual:** recepción documental diferenciada por M14: dos cánones, radar compartido y brief histórico del agente identificados por separado en §11. Radar recibido custodiado íntegro; otras tres fuentes proceden del texto directo del operador. Objeto v0.9. ENSAYO-TEXTO-v0.1 preparado, no ejecutado; inventario F01–F15 cubierto documentalmente. URLs originales no accesibles aquí: no sustituirlas por versiones antiguas del workspace. La custodia exportada literal de los tres cuerpos pegados queda pendiente si se requiere portabilidad independiente del chat.
 
 **Avance observado:** tres tareas de contraste, no funciones elegidas para lanzamiento: recuperación dispersa, redacción fiel y próximo paso respaldado. Fuentes ficticias distinguen negación, tiempo de expresión/ingesta, retractación, autoría, duplicados, datos faltantes e instrucciones incrustadas. Línea base simple y recorridos de mercado de A.3–A.11; no rutas adoptadas. Solucionario separado del material de candidato en una futura corrida; casos de desarrollo no son test ciego. Control por prompt no equivale a aislamiento real. Radar técnico y tesis reciben límites de inferencia. No nuevas prestaciones/precios revalidados por este trabajo, ni resultados o ganador inventados.
 
@@ -129,6 +129,53 @@ Por M06 y su precisión posterior M10, cerrar todas las fases documentales pendi
 Toda salida de este frente registra: (1) proyecto, rol, versión/sello del objeto y «Metacanon adquirido: versión/sello», revisión y frescura; (2) dónde estamos; (3) delta metodológico y de proyecto; (4) avance y evidencia, no tocado; (5) pendientes/bloqueos; (6) viabilidad y condiciones; (7) pronóstico de próximo hito y cierre con supuestos o no estimable; (8) siguiente acción/agente y mínima intervención material del operador; (9) continuación/prompt hacia el investigador si existe salida que responder; (10) persistencia, ancla y checkpoint. Puede condensarse sin ocultar lo desconocido. No afirmar certificación externa, herramientas o ensayo por una firma.
 
 ## 11. Crónica y fuentes
+
+### Registro documental diferenciado · recepción 2026-10-18
+
+Mandato M14 del operador, literal:
+
+> Son varios documentos distinguielos, identififcalos, separalos, y documetnalso en el objeto canonico del proyecto, sui lo ghaty verdaD?
+
+**Aplicación:** identificar y separar documentalmente los cuatro cuerpos recibidos, sin fusionar sus funciones ni crear otra fuente de estado. Este registro pertenece al objeto permanente existente. El ensayo A.13 es una sección del radar, no un quinto documento autónomo. El metacanon central y este objeto son documentos de gobierno/continuidad aparte; no forman parte de los cuatro cuerpos aportados en ese mensaje.
+
+#### Documento 1 · Canon del Radar Comercial · IA Personal & Ecosistema GraphRAG
+
+- Tipo: 📜 Norma / Canon; elemento permanente, declarativo, operativo, en incubación. Versión declarada en el texto recibido: **v0.4 · 2026-10-17**.
+- Identidad: mapa de enfoques y proveedores tecnológicos; registra evidencia, límites, temporalidad, recuperación, memoria y consecuencias técnicas. No define por sí mismo arquitectura ni certifica prestaciones de Khora.
+- Fuente referenciada: https://app.notion.com/p/e4bade27f22c8326951981a971309a39 . Procedencia de esta recepción: primer cuerpo pegado directamente por el operador, desde su cabecera v0.4 hasta §RAT y enlaces a Rúbrica Universal/Análisis N1.
+- Acceso: URL no accesible mediante Notion en esta sesión; texto aportado por el operador disponible. La recepción del texto no acredita una lectura actual de la página remota ni revalida enlaces de proveedores.
+- Relación: recibe evidencia funcional del documento 3 y aporta contexto al documento 2. Las revisiones de octubre no revalidan automáticamente tablas históricas o documentos hijos.
+
+#### Documento 2 · Tesis Competitiva de la Tríada de Proyección Visual
+
+- Tipo: 📜 Norma / Canon; elemento permanente, declarativo, operativo. Versión declarada: **v1.4 · 2026-10-17**.
+- Identidad: hipótesis competitivas y asertos A1–A8; composición propuesta, fidelidad, control, proyecciones y defensibilidad. Exclusividad no verificada; no superioridad ratificada ni implementación acreditada.
+- Fuente referenciada: https://app.notion.com/p/814ade27f22c82fea64f816b38dae7c3 . Procedencia: segundo cuerpo del mensaje, nueva cabecera v1.4 hasta §IDEAS.
+- Acceso: página no accesible en esta sesión; texto recibido directamente, no confundido con la antigua v1.1 accesible en este workspace.
+- Relación: interpreta evidencia del documento 1 y resultados futuros del documento 3; no sustituye evaluación de producto ni elegibilidad administrativa. Diseño propuesto, construido y validado siguen separados.
+
+#### Documento 3 · Radar de convergencia funcional, servicios y apoyos · Khora y Otro Gran Programa
+
+- Tipo: 🔬 Investigación / Evidencia; elemento permanente compartido. Corte declarado: **2026-10-17**; no asignar versión numérica no indicada.
+- Identidad: destino principal de la secuencia necesidad/función → mercado → integración → costes/datos/licencia/salida → apoyos. Incluye inventario F01–F15, apartados A.1–A.13, fichas de contraste, crónica, oportunidades y requisitos de candidatura.
+- Fuente referenciada: https://app.notion.com/p/3a99db5638e24defabfcce28ea877f6f . Procedencia: adjunto `pasted-text.txt` del mensaje documental recibido en esta sesión. Nombre igual al de otro adjunto histórico no implica identidad de contenido.
+- Evidencia custodiada íntegra y sin normalización: `fuentes/2026-10-18-radar-convergencia-recibido.txt`; **138533 bytes; SHA-256 `e8f320c8dbe75b39cd49300eb4cad56ab62ab137703c1b6787f0bd70ffbd6712`**. Es copia de recepción, no otro radar vivo. La fuente remota no es accesible aquí; cambios futuros exigen cotejo, no sobrescritura con esta copia.
+- Subdocumento interno, no archivo canónico separado: **A.13 · Evaluación reproducible de utilidad y fidelidad · ENSAYO-TEXTO-v0.1**. Corpus S01–S16 ficticio; consultas C01–C12; expectativas, alternativas, rúbrica y registro futuro. Preparado, no ejecutado. La copia recibida incluye solucionario y control reservado S15: no pasar el documento completo al candidato de una prueba puntuable.
+- Integridad experimental: Samantha ya leyó las expectativas; respuestas suyas sobre estos mismos casos no son prueba ciega ni evaluación independiente. No declarar aislamiento real por ocultación en un prompt. Ejecución requiere condiciones/autorización concretas.
+
+#### Documento 4 · Instrucciones del borrador «Radar diario · funciones, servicios y apoyos»
+
+- Tipo documental: 📨 Encargo / Brief de un agente; documento operativo distinto de los cánones. No se ha comprobado aquí una versión o título formal de su página de instrucciones. Nombre descriptivo tomado del borrador histórico.
+- Procedencia: tercer cuerpo del texto pegado por el operador, comienza **«Trabajo»** y termina en **«Prueba pendiente»**, después del cierre de §IDEAS del documento 2. No es parte de la tesis.
+- Referencia histórica de agente: agent://55bade27-f22c-8108-a269-00039938ee4f/c53217cb-460d-46d9-a1b8-d6ff388e446b . No se cargó ni modificó su configuración en este ciclo; no certificar estado técnico actual del disparador por el texto recibido.
+- Contenido: tres destinos autorizados, secuencia funcional/comercial, reglas de escritura y formato; límite explícito de no editar este objeto GitHub desde ese agente. Esa restricción pertenece al rol del agente; Samantha consolida este objeto por mandato actual M14.
+- Vigencia operativa: por decisión posterior ya registrada, **no probar ni activar el agente**. Su cierre «Prueba pendiente» es antecedente superado por el modo manual; pegarlo no reactiva autorización ni concede permisos de gasto, cuenta o acceso remoto.
+
+**Mapa de responsabilidades, sin duplicación:** documento 3 conserva funciones, alternativas y apoyos; documento 1 conserva evidencia del ecosistema; documento 2 conserva hipótesis competitivas; documento 4 describe un ejecutor histórico desactivado; `SPRINT.md` conserva continuidad, autoridad, recepción y pendientes. No mover ni recrear páginas de Notion para aparentar separación: se distinguen por identidad, función y procedencia.
+
+**Cobertura real:** se identificaron cuerpos y estructura; A.13 del adjunto fue leída íntegra, junto con cierre, crónica y compuertas. No se afirma auditoría exhaustiva de cada ficha ni revalidación comercial de todas sus fuentes. Los documentos 1, 2 y 4 proceden del texto directo de la conversación; no se fabrican archivos supuestamente verbatim de esos cuerpos. Queda pendiente su custodia literal exportada si se necesita independencia completa de este chat; esta limitación no impide registrar identidad y función ahora.
+
+**Recepción y autoridad:** este cambio documenta M14, no aprueba arquitectura ni prueba. No edición de Notion, normas centrales o main; sin solicitudes, implementación, servicios externos, agentes, subagentes o acceso remoto. La comprobación de publicación requiere recibo y lectura posterior del objeto y del adjunto custodiado.
 
 - 2026-10-17, antecedente del mismo hilo: revisión de competitividad y quince apoyos; páginas de Notion creadas/actualizadas, sin postulaciones. Las respuestas anteriores del modelo son antecedentes, no garantía oficial de elegibilidad.
 - 2026-10-17, M01: operador modifica frecuencia, difiere primera versión y prescribe convergencia funcional antes de apoyos. Samantha normaliza por separado y actualiza los recursos existentes.
