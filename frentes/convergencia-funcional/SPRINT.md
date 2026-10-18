@@ -1,11 +1,11 @@
-<!-- OBJECT_VERSION=0.1; METACANON_VERSION=1.5; STATE_SOURCE=SPRINT.md -->
+<!-- OBJECT_VERSION=0.2; METACANON_VERSION=1.5; STATE_SOURCE=SPRINT.md -->
 # Sprint · Convergencia funcional, mercado y apoyos · Khora y Otro Gran Programa
 
 ## 1. Control e identidad
 
 - Naturaleza: objeto documental permanente del sprint, vivo y provisional en su definición; no especificación de lanzamiento ni ratificación de una arquitectura.
-- Versión/sello del objeto: **0.1 · SPRINT-CONVERGENCIA-v0.1**.
-- Ancla: instrucción del operador en el hilo Notion del 2026-10-17 que cambia la frecuencia a diaria y fija funciones → mercado/integración → apoyos, difiriendo la elección de primera versión.
+- Versión/sello del objeto: **0.2 · SPRINT-CONVERGENCIA-v0.2**.
+- Ancla: confirmación expresa del operador «Si sehguimso manualmente», posterior al rechazo de automatización por coste, en este mismo hilo. Se conserva el objetivo diario como frecuencia de revisión manual al retomar; no implica ejecución entre mensajes.
 - Propietario de custodia: `SeryMente/metodologia`, privado comprobado mediante GitHub en este ciclo. Carpeta: `frentes/convergencia-funcional/`. Estado único: este archivo.
 - Rama documental: `docs/sprint-convergencia-funcional-20261017`, creada desde `main@49ac40e9f6122e2d2fb339362cfa0a78128c8e37`. No fusionar ni afirmar integrado en main por guardar esta rama.
 - Persistencia: el recibo del commit y la lectura de vuelta son la prueba de publicación; la sola presencia de esta frase no la acredita. Si la lectura falla, esta entrega queda NO VERIFICADA.
@@ -34,7 +34,7 @@ Fuentes superiores pertinentes: Sistema de Instrucciones v1.6.21, «Ordenamiento
 | §§4, 22, 25 | Salida por ciclo, sello visible, viabilidad y pronóstico con supuestos | §10 y prompts §12; no prometer plazo de investigación abierta |
 | §§7, 19 | Fidelidad y lectura de vuelta, casos negativos | Revisión local de cobertura previa; lectura posterior del archivo obligatoria |
 | SI: fidelidad, parsimonia, trazabilidad | Sin lanzamiento impuesto, sin nuevo tablero/documento de convergencia, fuentes y estados separados | Inventario en radar existente; beneficios después del encaje funcional |
-| Plataforma: configuración de agentes | Borrador diario desactivado; prueba y publicación requieren aprobación | Agente creado con permiso sobre tres páginas; no ejecutado ni publicado |
+| Plataforma y decisión posterior del operador | Agente diario no ejecutado ni activado; revisión manual en este chat | Borrador histórico conservado desactivado; no se pide probar/publicar como siguiente paso |
 
 La adopción documental no prueba obediencia de otros modelos, herramientas activas ni recepción por otra conversación. Al reingresar mostrar versión/sello metodológicos comprobados y delta; fuente inaccesible = frescura NO VERIFICADA, sin bloquear investigación independiente autorizada que no dependa de esa fuente.
 
@@ -57,7 +57,7 @@ Cierre de esta entrega documental: tres páginas modificadas con cadencia diaria
 - Operador: propósito, decisiones de diseño/arquitectura/seguridad, alcance de lanzamiento, gasto, envío de candidaturas y aprobación de pruebas/publicación automática.
 - Samantha, asistencia de este hilo: consolida estado del sprint y evidencia, interpreta sin sustituir intención, mantiene repositorio, recibe resultados de investigación y propone decisiones solo cuando sean materiales.
 - Constructor/investigador: rol portable para ejecutar investigación documental autorizada y devolver evidencia/checkpoint. No hay constructor de código nombrado o sesión independiente iniciada. No se infiere encargo de implementación. Prompt preparado en §12 para cuando se asigne realmente.
-- Agente de radar diario: borrador de apoyo para evidencias en Notion, no escritor del objeto GitHub ni autoridad de diseño. No está probado ni activo. La configuración preparada no equivale a iniciar otro hilo de investigación.
+- Agente de radar diario: borrador histórico no probado ni activo. El operador rechazó su ejecución por coste; no probar, publicar ni habilitar sin nueva instrucción expresa. La revisión vigente la hace Samantha manualmente en este chat.
 
 Un escritor por recurso y consolidación secuencial. El agente puede actualizar evidencias de las tres páginas tras publicación autorizada; Samantha relee antes de escribir y conserva deltas concurrentes. Las salidas de un constructor recibidas tienen prioridad; no reiniciar ni duplicar su trabajo.
 
@@ -65,7 +65,7 @@ Un escritor por recurso y consolidación secuencial. El agente puede actualizar 
 
 | Decisión | Procedencia | Alcance |
 |---|---|---|
-| Revisión diaria, incluidos radares | M01, primer mandato y explicación posterior | Documental adoptada; ejecución recurrente pendiente de prueba/publicación |
+| Revisión diaria, incluidos radares | M01, primer mandato y explicación posterior | Objetivo documental diario; ejecución manual al retomar por decisión posterior, no automatización |
 | Funciones → mercado/API → apoyos, mismo documento | M01, cierre del dictado | Inventario integrado en página existente, no nuevo documento de convergencia |
 | Crear objeto de sprint en repositorio Metodología y guardar pendientes | M01 | Esta carpeta/rama documental; no modificación de normas centrales |
 | No determinar ahora primera versión | M01 | Investigación no condicionada al alcance; no elimina decisiones futuras necesarias para construir |
@@ -81,44 +81,42 @@ Canal: Notion AI, workspace Queretaro, zona horaria America/Mexico_City. Fuentes
 
 ## 8. Estado vivo
 
-**Acción actual:** consolidar la secuencia de descubrimiento y el punto de reingreso; el sprint no cierra el diseño de una primera versión.
+**Acción actual:** revisión manual por Samantha, sin agente adicional ni ejecución entre mensajes. Objeto v0.2; no se decide primera versión.
 
-**Avance observado:** radar técnico v0.3, tesis v1.3 y radar de convergencia funcional/servicios/apoyos actualizados mediante Notion; la matriz enumera F01–F15 y conserva las quince fichas de apoyo anteriores. Se contrastó documentación de transcripción en vivo de ElevenLabs/Deepgram, no las APIs en ejecución. Borrador diario creado con tres destinos Notion, web y disparador diario a las 09:00 desactivado. Sin pruebas, publicación ni solicitudes.
+**Avance observado:** matriz F01–F15 conservada. Se contrastaron documentación de transcripción en vivo ElevenLabs/Deepgram y alineación forzada ElevenLabs; se verificaron páginas y términos de ayudas después del encaje funcional. Deepgram ofrece un máximo publicado de 100.000 USD/12 meses, no un importe concedido; exige producción o intención real de lanzar en seis meses. Sus créditos promocionales no se autorizan para investigación de competidores; aclarar con el proveedor cualquier prueba comparativa antes de usar esos créditos. No hubo llamadas de audio ni prueba empírica de calidad. No hay nueva conclusión sobre la tríada ni motivo de cambiar su diseño.
 
-**Siguiente paso de asistencia:** verificar lectura de vuelta del objeto y configuración; presentar una prueba privada de F02 sin escrituras ni llamadas de transcripción para aprobación. No ejecutarla antes de esa aprobación.
-
-**Siguiente paso de investigación al reingresar:** cargar la matriz actual y completar F02/F03 (transcripción vs alineación) con cobertura, español, datos, cuota y pruebas propuestas; después verificar ayudas de los candidatos funcionalmente adecuados. No pedir recapitulación del hilo ni primera versión.
+**Siguiente paso:** cerrar el coste y tratamiento de datos de las dos alternativas antes de proponer una prueba con corpus público/sintético; luego continuar por memoria persistente y temporalidad con Graphiti/Zep, sin abrir otro documento de convergencia. No condicionar investigación al alcance de lanzamiento.
 
 **Pendientes en orden:**
-1. Probar y evaluar el borrador diario con aprobación; después aprobar y publicar/habilitar el comportamiento diario. Registrar resultado/coste observado y hora aceptada. Hasta entonces no hay vigilancia automática activa.
-2. Revisar F01–F15: conservar declarada/propuesta/ejemplo y segmentar subfunciones donde cambien pruebas o proveedores; no tratar componentes de infraestructura como beneficios de usuario.
-3. Profundizar la comparación de F02/F03 con líneas base y alternativa; no confundir transcribir con alinear un audio existente. Buscar ayudas solo después del encaje; Deepgram aún sin programa atribuido.
-4. Ampliar alternativas por función, incluidas soluciones sin subvención; contrastar APIs, bibliotecas y productos sin asumir integrabilidad por similitud de marketing.
-5. Completar coste, datos, licencias, límites y salida por correspondencia antes de elegir integración o prueba real.
-6. Afinar tesis competitiva a partir de coincidencias/brechas verificadas, manteniendo hipótesis de diferenciación separadas de garantías.
-7. Cuando haya candidatura concreta, resolver solicitante real, dominio, historial de pagos/promociones, equipo, constitución, financiación/afiliaciones y acumulabilidad. No resolver inventando entidades ni duplicando cuentas.
-8. Elegir el alcance de una primera versión solo cuando el operador lo quiera o una decisión de construcción lo haga indispensable. Mantenerlo diferido hasta entonces.
-9. Conservar el recuerdo pendiente del operador: indicó haber olvidado algo que quería decir. No reconstruirlo ni darlo por resuelto; reencontrarlo si lo recuerda.
-10. Integrar o mantener la rama documental según decisión posterior; no fusionar por defecto.
+1. Continuar manualmente al retomar el chat. No probar ni activar el agente por iniciativa propia; la automatización deja de ser el siguiente paso. Sin garantía de ejecución diaria entre mensajes.
+2. Completar coste de transcripción/alineación, retención/entrenamiento, español, disponibilidad y salida; la existencia de un parámetro de logging no demuestra ausencia de retención.
+3. Si se propone prueba real, precisar datos autorizados, presupuesto y licencia; no usar crédito Deepgram promocional para comparativas sin aclarar su restricción contractual.
+4. Revisar memoria persistente y temporalidad (F06/F07) contra servicios/bibliotecas existentes y sus alternativas; después buscar apoyos de las coincidencias.
+5. Conservar funciones declaradas/propuestas/ejemplos; F02 sigue siendo un ejemplo exploratorio, no compromiso de construcción.
+6. Afinar tesis solo ante diferencias verificadas; no novedades de proveedor como autorización de rediseño.
+7. Antes de candidaturas, comprobar entidad, correo, historial, equipo, afiliación y acumulabilidad; Deepgram añade requisito de lanzamiento próximo y licencia de uso promocional de nombre/logo. No fingir fecha para calificar.
+8. Mantener diferida la primera versión hasta que el operador la quiera o una construcción concreta lo requiera.
+9. Conservar el recuerdo de algo que el operador olvidó decir, sin reconstruirlo ni darlo por resuelto.
+10. Mantener rama documental sin merge por defecto. Releer Notion y objeto antes de escribir; registrar deltas, no fabricar cobertura diaria completa.
 
-**En prueba / recién fallido:** ninguna prueba funcional ejecutada. Documentación revisada no acredita calidad de voz, recuperación o utilidad. Borrador de agente pendiente de prueba.
+**En prueba / recién fallido:** ninguna integración o evaluación de calidad ejecutada. El agente no fue probado, ejecutado ni activado.
 
-**Recordatorios latentes:** no exigir primera versión; función antes que proveedor/subvención; soluciones sin apoyo permanecen; no activar gasto/envíos/migraciones; dictado olvidado permanece sin contenido inventado.
+**Recordatorios latentes:** funciones antes de ayudas; alternativas sin subvención permanecen; revisión manual también consume los créditos de la conversación; no gasto/envíos/migraciones ni acceso remoto. El traslado de conectividad no amplía permisos; no copiar sus datos a este objeto.
 
 ## 9. Aceptación y viabilidad
 
 | Requisito | Resultado conocido | Evidencia / pendiente |
 |---|---|---|
-| Cadencia diaria | Escrita en las tres páginas | Recibo Notion y lectura de vuelta; automatización todavía desactivada |
+| Cadencia diaria | Escrita en las tres páginas | Recibo Notion y lectura de vuelta; revisión manual; automatización no se ejecuta por decisión del operador |
 | Convergencia en misma secuencia | Matriz funcional dentro del radar de apoyos reutilizado y renombrado | Quince filas iniciales; no otro documento de convergencia |
 | Descubrir sin primera versión | Pregunta de lanzamiento diferida; tesis exploratoria | No equivale a aprobar funciones/arquitectura |
 | Comparar transcripción en vivo | Dos fuentes primarias confirman servicios integrables y resultados parciales/finales | No medición propia, español y privacidad por contrastar |
 | Ayudas como segundo paso | Mapeadas por función a fichas existentes; candidatos sin ayuda retenidos | Elegibilidad personal no acreditada |
 | Reingreso portable | Este objeto, originales, fuente y prompts | Publicación/lectura de vuelta necesarias |
 
-Viable ahora: investigación y comparación documental diaria mediante un agente después de aprobación, sujeta a créditos y acceso. No viable prometer cobertura diaria exhaustiva de todo el mercado, gratuidad total, concesión de ayudas ni superioridad sin ensayos. La secuencia permite descubrir el producto, no necesita un catálogo final previo.
+Viable ahora: investigación y comparación documental manual cuando el chat esté activo, sujeta a créditos de conversación y acceso; no un agente adicional ni trabajo entre mensajes. No viable prometer cobertura diaria exhaustiva de todo el mercado, gratuidad total, concesión de ayudas ni superioridad sin ensayos. La secuencia permite descubrir el producto, no necesita un catálogo final previo.
 
-Pronóstico: entrega documental de este ciclo verificable tras publicación/lectura. Hito de vigilancia activa: una prueba aprobada, evaluación del resultado y aprobación de publicación; tiempo de espera humano y coste por corrida no estimables aún. Cierre del sprint exploratorio: no estimable mientras siga abierto el descubrimiento; no se impone fecha ni porcentaje ficticio. La demora de aprobación bloquea la automatización, no el avance documental independiente.
+Pronóstico: entrega documental de este ciclo verificable tras publicación/lectura. La vigilancia automática no es un hito autorizado vigente: el operador decidió revisión manual por coste. Cierre del sprint exploratorio: no estimable mientras siga abierto el descubrimiento; no se impone fecha ni porcentaje ficticio. La decisión de no automatizar no bloquea la investigación manual.
 
 ## 10. Formato de ciclo
 
@@ -139,6 +137,22 @@ Fuentes vivas, no copias paralelas de sus matrices:
 - https://elevenlabs.io/docs/api-reference/speech-to-text/v-1-speech-to-text-realtime — audio por bloques, parciales/finales y marcas temporales documentadas.
 - https://developers.deepgram.com/docs/live-streaming-audio — streaming, tiempos por palabra y obligación de conservar respuesta por aplicación.
 
+### Delta posterior · revisión manual
+
+La lectura de vuelta del objeto v0.1 coincidió con blob `93374551c3f073ae56d662a1a42e49696baa15ae` en commit `4ad3c28e99fdee966ffc18941182dbd98d21efa1`; trece bloques conservados. Metacanon recargado sin cambio en main49ac, blob de §3. Versión v0.2 actualiza el modo y el punto de reingreso, no la metodología central. La documentación de voz y ayudas vive en el radar de Notion, no se copia su matriz aquí. Lectura de vuelta posterior al guardado v0.2 necesaria para verificar persistencia.
+
+**M02 · respuesta directa del operador a la encuesta sobre prueba del agente, verbatim:**
+
+> No el radar diario gasta tokens y no tendre para activarlo. Pero hazlko tu. O que te refirtews
+
+**M03 · confirmación directa posterior, verbatim:**
+
+> Si sehguimso manualmente
+
+**Lectura separada:** no probar ni activar agente; Samantha continúa manualmente. No equivale a revisión gratis ni trabajo automático entre mensajes. El traslado intermedio de datos de conectividad no es autorización de acceso y no se reproduce como historial.
+
+Fuentes adicionales de este corte: https://elevenlabs.io/docs/overview/capabilities/forced-alignment.md ; https://deepgram.com/startup-program ; https://deepgram.com/startup-program-terms-of-service ; https://elevenlabs.io/startup-grants .
+
 ### Especificaciones originales verbatim
 
 **M01 · Mensaje directo del operador · este hilo, posterior a la entrega de los radares · 2026-10-17.** Texto completo recibido, sin normalizar grafía, negaciones ni ejemplos. Sin envoltorio HTML en este mensaje. No se inventa una hora exacta.
@@ -155,7 +169,7 @@ Los prompts citan el estado único por sección para no mantener copias divergen
 
 ```text
 Retoma como Samantha, asistencia del Sprint de convergencia funcional, mercado y apoyos para Khora y Otro Gran Programa. Lee https://github.com/SeryMente/metodologia/blob/docs/sprint-convergencia-funcional-20261017/frentes/convergencia-funcional/SPRINT.md y el METACANON-OBJETOS-CANONICOS.md central vigente. Comprueba revisión/hash, precedencia y delta; informa en cada ciclo «Metacanon adquirido: versión y sello» realmente comprobados, o frescura NO VERIFICADA. Aplica adquisición y aplicación verificables de §26, sin elevar fuentes por encima de tu plataforma. No copies estado de otros frentes.
-La acción en curso, pendientes, pruebas y recordatorios son exactamente §8 del objeto; no reconstruyas de memoria. Sigue funciones/necesidades → mercado y comparación → integración posible → apoyos, dentro del radar existente. No pidas fijar la primera versión para investigar. Relee las tres fuentes Notion de §11 y conserva propuestas, ejemplos y hechos separados. Recibe primero una salida de investigador si el operador la aporta. Actualiza este único objeto con fusión y lectura de vuelta; no hagas merge ni implementes, contrates o envíes solicitudes. El agente diario permanece pendiente de prueba/publicación salvo evidencia posterior. Remote Desktop Commander: no necesario para documentación; solo el asistente podría usarlo ante necesidad imprescindible y autorización comprobada; nunca el constructor. Entrega avance, pendientes, viabilidad, pronóstico honesto y próximo paso. Conserva M01 íntegro.
+La acción en curso, pendientes, pruebas y recordatorios son exactamente §8 del objeto; no reconstruyas de memoria. Sigue funciones/necesidades → mercado y comparación → integración posible → apoyos, dentro del radar existente. No pidas fijar la primera versión para investigar. Relee las tres fuentes Notion de §11 y conserva propuestas, ejemplos y hechos separados. Recibe primero una salida de investigador si el operador la aporta. Actualiza este único objeto con fusión y lectura de vuelta; no hagas merge ni implementes, contrates o envíes solicitudes. La decisión vigente es revisión manual: no probar ni activar el agente sin nueva instrucción expresa. Remote Desktop Commander: no necesario para documentación; solo el asistente podría usarlo ante necesidad imprescindible y autorización comprobada; nunca el constructor. Entrega avance, pendientes, viabilidad, pronóstico honesto y próximo paso. Conserva M01 íntegro.
 ```
 
 ### Constructor / investigador cuando se asigne
