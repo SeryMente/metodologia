@@ -1,11 +1,11 @@
-<!-- OBJECT_VERSION=0.3; METACANON_VERSION=1.5; STATE_SOURCE=SPRINT.md -->
+<!-- OBJECT_VERSION=0.4; METACANON_VERSION=1.5; STATE_SOURCE=SPRINT.md -->
 # Sprint · Convergencia funcional, mercado y apoyos · Khora y Otro Gran Programa
 
 ## 1. Control e identidad
 
 - Naturaleza: objeto documental permanente del sprint, vivo y provisional en su definición; no especificación de lanzamiento ni ratificación de una arquitectura.
-- Versión/sello del objeto: **0.3 · SPRINT-CONVERGENCIA-v0.3**.
-- Ancla: «Sigue», instrucción directa posterior a confirmar revisión manual; se contrastaron costes y datos de servicios de voz. Se conserva el objetivo diario al retomar, no ejecución entre mensajes.
+- Versión/sello del objeto: **0.4 · SPRINT-CONVERGENCIA-v0.4**.
+- Ancla: «Avanza», posterior al mandato de completar cada fase de extremo a extremo en el ciclo. Corte F06/F07 de memoria persistente y temporalidad, desde necesidad hasta ayudas y recomendación. Se conserva revisión manual, no ejecución entre mensajes.
 - Propietario de custodia: `SeryMente/metodologia`, privado comprobado mediante GitHub en este ciclo. Carpeta: `frentes/convergencia-funcional/`. Estado único: este archivo.
 - Rama documental: `docs/sprint-convergencia-funcional-20261017`, creada desde `main@49ac40e9f6122e2d2fb339362cfa0a78128c8e37`. No fusionar ni afirmar integrado en main por guardar esta rama.
 - Persistencia: el recibo del commit y la lectura de vuelta son la prueba de publicación; la sola presencia de esta frase no la acredita. Si la lectura falla, esta entrega queda NO VERIFICADA.
@@ -81,28 +81,27 @@ Canal: Notion AI, workspace Queretaro, zona horaria America/Mexico_City. Fuentes
 
 ## 8. Estado vivo
 
-**Acción actual:** revisión manual por Samantha, sin agente adicional ni ejecución entre mensajes. Objeto v0.3; no se decide primera versión.
+**Acción actual:** fase documental F06/F07 completada: necesidad → alternativas → integración → coste/datos/licencia/salida → ayudas → conclusión y persistencia verificable. Objeto v0.4; revisión manual en este chat. No hay motor adoptado ni primera versión decidida.
 
-**Avance observado:** matriz F01–F15 conservada. Se añadió al radar el contraste de coste y datos: Scribe Realtime frente a Nova-3 Multilingual, tarifa separada de audio grabado, saldo inicial Deepgram distinto de su premio, exclusión de entrenamiento distinta de retención cero, condiciones por solicitud/cuenta y riesgo de recarga automática. No se comparan tarifas como coste total equivalente; falta precio aplicable al excluir entrenamiento y aclarar extras.  Se contrastaron documentación de transcripción en vivo ElevenLabs/Deepgram y alineación forzada ElevenLabs; se verificaron páginas y términos de ayudas después del encaje funcional. Deepgram ofrece un máximo publicado de 100.000 USD/12 meses, no un importe concedido; exige producción o intención real de lanzar en seis meses. Sus créditos promocionales no se autorizan para investigación de competidores; aclarar con el proveedor cualquier prueba comparativa antes de usar esos créditos. No hubo llamadas de audio ni prueba empírica de calidad. No hay nueva conclusión sobre la tríada ni motivo de cambiar su diseño.
+**Avance observado:** Graphiti autogestionado, Zep gestionado y Mem0 Platform contrastados con fuentes primarias. La comparación distingue originales de hechos extraídos, historia de vigencias de ranking temporal, invalidación de borrado y servicio gestionado de edición abierta. Tarifas y oportunidades viven en A.3 del radar único. Se documentan Mem0 Pro tres meses solo para nuevos usuarios, Zep Free con límites y el programa Zep Emerging de pago/funding: no efectivo ni aprobación garantizada. La política Mem0 diferencia entrenamiento gratis/pago; la cuenta bonificada requiere aclaración. Zep no quedó acreditado para datos personales por la política consultada. No se atribuye a ninguno garantía de extracción fiel ni salida/restauración ensayada. Recomendación documental, no decisión de arquitectura: retener Graphiti y Mem0 como candidatos, Zep como alternativa gestionada. La tesis incorpora que estas funciones ya disponibles no prueban exclusividad; se mantiene hipótesis de fidelidad/control/experiencia. No se revalidaron por inferencia las restantes oportunidades o tecnologías.
 
-**Siguiente paso:** investigar memoria persistente y temporalidad (F06/F07): Graphiti como biblioteca frente a Zep gestionado y alternativas, contratos de procedencia/corrección, costes, datos y salida; después buscar apoyos. Voz queda documentada, no autorizada para audio personal. No condicionar investigación al alcance de lanzamiento.
+**Siguiente paso:** F08, recuperación verificable y búsqueda híbrida/retorno al original, completa en un ciclo documental hasta coste, datos, salida, ayudas y conclusión. No reservar estos últimos como fases de turnos futuros. Reusar evidencia de Graphiti/Mem0 sin repetirla salvo cambio material; contrastar Hindsight/LightRAG y línea base con fuentes primarias. No implementar ni pedir un alcance de lanzamiento.
 
 **Pendientes en orden:**
-1. Continuar manualmente al retomar el chat. No probar ni activar el agente por iniciativa propia; la automatización deja de ser el siguiente paso. Sin garantía de ejecución diaria entre mensajes.
-2. Voz: tarifas base y políticas ya documentadas en el radar, sin prueba empírica. Resolver solo al preparar prueba: precio sin entrenamiento de Deepgram, complementos discrepantes de ElevenLabs, equivalencia del premio en dólares/horas y cobertura/retención de alineación. No bloquear por estas incertidumbres la investigación de memoria.
-3. Si se propone prueba real, precisar datos autorizados, presupuesto y licencia; no usar crédito Deepgram promocional para comparativas sin aclarar su restricción contractual.
-4. Revisar memoria persistente y temporalidad (F06/F07) contra servicios/bibliotecas existentes y sus alternativas; después buscar apoyos de las coincidencias.
-5. Conservar funciones declaradas/propuestas/ejemplos; F02 sigue siendo un ejemplo exploratorio, no compromiso de construcción.
-6. Afinar tesis solo ante diferencias verificadas; no novedades de proveedor como autorización de rediseño.
-7. Antes de candidaturas, comprobar entidad, correo, historial, equipo, afiliación y acumulabilidad; Deepgram añade requisito de lanzamiento próximo y licencia de uso promocional de nombre/logo. No fingir fecha para calificar.
-8. Mantener diferida la primera versión hasta que el operador la quiera o una construcción concreta lo requiera.
-9. Conservar el recuerdo de algo que el operador olvidó decir, sin reconstruirlo ni darlo por resuelto.
-10. Mantener rama documental sin merge por defecto. Releer Notion y objeto antes de escribir; registrar deltas, no fabricar cobertura diaria completa.
+1. Continuar manualmente al retomar; no probar/activar agente ni prometer trabajo diario entre mensajes.
+2. Completar F08 de extremo a extremo según M06; diferenciar investigación completa, preguntas contractuales bloqueantes y prueba no ejecutada.
+3. Si se propone prueba de memoria, corpus sintético con cambio de preferencia, negación, retractación, llegada tardía, dos usuarios, fuente, exportación/restauración y borrado; sin datos personales ni gasto por defecto. Contrato propuesto en radar, aún no aprobado ni ejecutado.
+4. Antes de Mem0: confirmar nuevo usuario, cuota/duración/cobro tras premio, tratamiento de Pro bonificado y entrenamiento. No crear cuenta solo para descubrir elegibilidad y perder condición de nuevo usuario.
+5. Antes de Zep con información personal: términos aplicables, subencargados, ubicación, entrenamiento, exportación íntegra y borrado de copias. Programa Emerging no prioritario para esfuerzo sin presupuesto: financiación y desembolso exigidos, no acreditados aquí.
+6. Voz: documentación anterior preservada; aclarar precio al excluir entrenamiento de Deepgram, extras de ElevenLabs y cobertura/retención de alineación antes de prueba. Créditos Deepgram no usar para comparar competidores sin aclarar restricción.
+7. Mantener funciones declaradas/propuestas/ejemplos, primera versión diferida y recuerdo de lo que el operador olvidó decir sin reconstruirlo. No asumir aplicación de memoria personal en Otro Gran Programa: versiones del corpus pueden bastar.
+8. Antes de candidaturas: entidad, correo, historial, equipo, afiliación y acumulabilidad; ninguna solicitud enviada. No duplicar premios por dos marcas de una misma entidad.
+9. Afinar tesis solo con diferencias verificadas; no cambios de diseño/seguridad/arquitectura por promoción o benchmark ajeno.
+10. Mantener rama documental, sin merge. Releer fuentes antes de escribir; registrar cobertura real y readback, no fabricar revisión diaria exhaustiva.
 
-**En prueba / recién fallido:** ninguna integración o evaluación de calidad ejecutada. El agente no fue probado, ejecutado ni activado.
+**En prueba / recién fallido:** ninguna integración ni medición de calidad ejecutada. Agente desactivado. Una lectura local falló porque la copia v0.3 no estaba en la ruta supuesta; se recuperó del resultado GitHub ya leído y se verificó su blob antes de generar el delta. No hubo mutación del producto ni pérdida de estado. Prevención: comprobar existencia y hash, no asumir temporales descritos en un resumen.
 
-**Recordatorios latentes:** funciones antes de ayudas; alternativas sin subvención permanecen; revisión manual también consume los créditos de la conversación; no gasto/envíos/migraciones ni acceso remoto. El traslado de conectividad no amplía permisos; no copiar sus datos a este objeto.
-
+**Recordatorios latentes:** funciones antes de ayudas; candidatos útiles sin promoción permanecen; revisión manual consume créditos de conversación. Sin gasto, cuentas, envíos, migraciones ni acceso remoto. La conectividad suministrada no amplía permisos ni se copia a este objeto. Investigación completa no significa integración lista.
 ## 9. Aceptación y viabilidad
 
 | Requisito | Resultado conocido | Evidencia / pendiente |
@@ -112,6 +111,7 @@ Canal: Notion AI, workspace Queretaro, zona horaria America/Mexico_City. Fuentes
 | Descubrir sin primera versión | Pregunta de lanzamiento diferida; tesis exploratoria | No equivale a aprobar funciones/arquitectura |
 | Comparar transcripción en vivo | Dos fuentes primarias confirman servicios integrables y resultados parciales/finales | No medición propia, español y privacidad por contrastar |
 | Ayudas como segundo paso | Mapeadas por función a fichas existentes; candidatos sin ayuda retenidos | Elegibilidad personal no acreditada |
+| F06/F07 de extremo a extremo | Necesidad, tres rutas, integración, costes, datos, salida y apoyos documentados | Sección A.3 del radar; integración/seguridad NO acreditadas |
 | Reingreso portable | Este objeto, originales, fuente y prompts | Publicación/lectura de vuelta necesarias |
 
 Viable ahora: investigación y comparación documental manual cuando el chat esté activo, sujeta a créditos de conversación y acceso; no un agente adicional ni trabajo entre mensajes. No viable prometer cobertura diaria exhaustiva de todo el mercado, gratuidad total, concesión de ayudas ni superioridad sin ensayos. La secuencia permite descubrir el producto, no necesita un catálogo final previo.
@@ -119,6 +119,8 @@ Viable ahora: investigación y comparación documental manual cuando el chat est
 Pronóstico: entrega documental de este ciclo verificable tras publicación/lectura. La vigilancia automática no es un hito autorizado vigente: el operador decidió revisión manual por coste. Cierre del sprint exploratorio: no estimable mientras siga abierto el descubrimiento; no se impone fecha ni porcentaje ficticio. La decisión de no automatizar no bloquea la investigación manual.
 
 ## 10. Formato de ciclo
+
+Por mandato M06, cerrar cada fase funcional seleccionada de extremo a extremo en el mismo ciclo: necesidad, alternativas, integración, costes/datos/licencia/salida, ayudas, recomendación, persistencia y lectura de vuelta. No fragmentar los pasos seguros por conveniencia; una falta material se documenta y bloquea solo la acción dependiente. Esto no autoriza implementar, gastar ni omitir decisiones humanas.
 
 Toda salida de este frente registra: (1) proyecto, rol, versión/sello del objeto y «Metacanon adquirido: versión/sello», revisión y frescura; (2) dónde estamos; (3) delta metodológico y de proyecto; (4) avance y evidencia, no tocado; (5) pendientes/bloqueos; (6) viabilidad y condiciones; (7) pronóstico de próximo hito y cierre con supuestos o no estimable; (8) siguiente acción/agente y mínima intervención material del operador; (9) continuación/prompt hacia el investigador si existe salida que responder; (10) persistencia, ancla y checkpoint. Puede condensarse sin ocultar lo desconocido. No afirmar certificación externa, herramientas o ensayo por una firma.
 
@@ -163,6 +165,40 @@ Persistencia previa v0.2 leída en commit `199c201106aa065b913c7068911b069397ecb
 
 Fuentes nuevas: https://deepgram.com/pricing ; https://elevenlabs.io/pricing/api?price.section=speech_to_text ; https://developers.deepgram.com/docs/the-deepgram-model-improvement-partnership-program ; https://deepgram.com/privacy/subprocessors ; https://elevenlabs.io/docs/eleven-api/resources/zero-retention-mode.md ; https://help.elevenlabs.io/hc/en-us/articles/29952728805393-Is-my-data-used-to-improve-ElevenLabs-AI-models .
 
+### Delta posterior · cierre integral de memoria y temporalidad
+
+Persistencia anterior v0.3 comprobada en commit `e388e7498900e50fc76d0a028781c0b78a8121eb`, blob `f1d52fe0d8e0f5b18e3de14f6a44e03ec536776e`. Metacanon 1.5 recargado desde main49ac, blob `32c7a65ff2e83b3b76752ba2160427bd6e851a8f`, sin delta central. Privacidad del repositorio comprobada otra vez. v0.4 es delta de este frente, no modificación de normas centrales.
+
+**M05 · pregunta directa del operador, verbatim:**
+
+> Muéstrame a grandes rasgos qué fue lo que te pedí.
+
+**M06 · mandato posterior directo del operador, verbatim:**
+
+> Completa cada fase pór co,mpletpo def extrem oa extremo en cada ciclo
+
+**M07 · continuación directa del operador, verbatim:**
+
+> Avanza
+
+Lectura separada: M06 exige fase completa por ciclo, no solo catálogo de proveedores; M07 continúa el trabajo documental autorizado. No elevan alcance de permisos, no convierten investigación en implementación y no ordenan cambiar el Metacanon central. M05 pide una síntesis comprensible del propósito, sin sustituir M01.
+
+F06/F07: se contrastaron fuentes primarias para Graphiti, Zep y Mem0; después se comprobaron ofertas y condiciones. El detalle único de precios, datos, salida y recomendaciones permanece en radar A.3. Consecuencia competitiva registrada en radar técnico v0.4 y tesis v1.4; versión del documento no demuestra superioridad ni ratificación de un diseño. Lectura de vuelta posterior debe confirmar guardado de los tres cambios.
+
+Fuentes de este corte:
+- https://github.com/getzep/graphiti — historia temporal, procedencia, requisitos, Apache 2.0 y separación de Zep.
+- https://www.getzep.com/pricing/ — cuotas, crédito por bytes, recargas y límites del plan gratuito.
+- https://www.getzep.com/legal/privacy/ — insuficiente para acreditar tratamiento completo del corpus/garantías para la cuenta; no rellenar el hueco.
+- https://www.getzep.com/emerging/ — descuento empresarial de pago y requisitos de financiación, no subvención para esfuerzo sin presupuesto.
+- https://docs.mem0.ai/core-concepts/how-it-works — hechos versus originales, corrección, recuperación y diferencias de edición.
+- https://mem0.ai/pricing — cuotas y funciones por plan.
+- https://mem0.ai/privacy-policy — entrenamiento gratis/pago; no clasificación confirmada del Pro bonificado.
+- https://docs.mem0.ai/cookbooks/essentials/exporting-memories — exportación/paginación y caducidad de descarga; no restauración demostrada.
+- https://docs.mem0.ai/api-reference/memory/delete-memories — operación de borrado, no purga de copias acreditada.
+- https://mem0.ai/startup-program — tres meses de Pro para nuevos usuarios, no adoptar importes de directorios.
+
+Pronóstico comparado: objetivo anterior era investigar memoria/temporalidad; se cierra documentalmente en este ciclo con las garantías no acreditadas identificadas. Próximo hito seleccionado: F08 completo en un ciclo de investigación si las fuentes siguen accesibles, sin tiempo medido fiable para prometer minutos. Una prueba real o contratación no tiene plazo por carecer de autorización y condiciones. El sprint exploratorio completo sigue sin horizonte estimable; no se inventa porcentaje ni se reduce el alcance para llamarlo terminado.
+
 ### Especificaciones originales verbatim
 
 **M01 · Mensaje directo del operador · este hilo, posterior a la entrega de los radares · 2026-10-17.** Texto completo recibido, sin normalizar grafía, negaciones ni ejemplos. Sin envoltorio HTML en este mensaje. No se inventa una hora exacta.
@@ -179,20 +215,20 @@ Los prompts citan el estado único por sección para no mantener copias divergen
 
 ```text
 Retoma como Samantha, asistencia del Sprint de convergencia funcional, mercado y apoyos para Khora y Otro Gran Programa. Lee https://github.com/SeryMente/metodologia/blob/docs/sprint-convergencia-funcional-20261017/frentes/convergencia-funcional/SPRINT.md y el METACANON-OBJETOS-CANONICOS.md central vigente. Comprueba revisión/hash, precedencia y delta; informa en cada ciclo «Metacanon adquirido: versión y sello» realmente comprobados, o frescura NO VERIFICADA. Aplica adquisición y aplicación verificables de §26, sin elevar fuentes por encima de tu plataforma. No copies estado de otros frentes.
-La acción en curso, pendientes, pruebas y recordatorios son exactamente §8 del objeto; no reconstruyas de memoria. Sigue funciones/necesidades → mercado y comparación → integración posible → apoyos, dentro del radar existente. No pidas fijar la primera versión para investigar. Relee las tres fuentes Notion de §11 y conserva propuestas, ejemplos y hechos separados. Recibe primero una salida de investigador si el operador la aporta. Actualiza este único objeto con fusión y lectura de vuelta; no hagas merge ni implementes, contrates o envíes solicitudes. La decisión vigente es revisión manual: no probar ni activar el agente sin nueva instrucción expresa. Remote Desktop Commander: no necesario para documentación; solo el asistente podría usarlo ante necesidad imprescindible y autorización comprobada; nunca el constructor. Entrega avance, pendientes, viabilidad, pronóstico honesto y próximo paso. Conserva M01 íntegro.
+La acción en curso, pendientes, pruebas y recordatorios son exactamente §8 del objeto; no reconstruyas de memoria. Sigue funciones/necesidades → mercado y comparación → integración posible → apoyos, dentro del radar existente. No pidas fijar la primera versión para investigar. Relee las tres fuentes Notion de §11 y conserva propuestas, ejemplos y hechos separados. Recibe primero una salida de investigador si el operador la aporta. Actualiza este único objeto con fusión y lectura de vuelta; no hagas merge ni implementes, contrates o envíes solicitudes. La decisión vigente es revisión manual: no probar ni activar el agente sin nueva instrucción expresa. Remote Desktop Commander: no necesario para documentación; solo el asistente podría usarlo ante necesidad imprescindible y autorización comprobada; nunca el constructor. Entrega avance, pendientes, viabilidad, pronóstico honesto y próximo paso. Conserva todos los originales íntegros. Aplica M06: completa cada fase funcional de extremo a extremo en el ciclo, incluidos coste, datos, salida, ayudas y persistencia; no confundir cierre documental con integración probada ni saltar autorizaciones.
 ```
 
 ### Constructor / investigador cuando se asigne
 
 ```text
 Actúa como investigador del Sprint de convergencia funcional, mercado y apoyos, no como implementador de código. Antes de actuar recupera https://github.com/SeryMente/metodologia/blob/docs/sprint-convergencia-funcional-20261017/frentes/convergencia-funcional/SPRINT.md y el METACANON-OBJETOS-CANONICOS.md central vigente. Coteja revisión, rol, permisos y reglas aplicables conforme a §26; declara en cada ciclo «Metacanon adquirido: versión/sello» y fuente/frescura reales. Si falta una fuente indispensable, bloquea solo su operación dependiente y no simules adquisición.
-Toma estado y siguiente paso de §8, no de una copia. Investiga funciones en lenguaje de mercado; después proveedores, cobertura real, API/biblioteca/producto/patrón, comparación, datos, coste y salida; solo entonces busca ayudas. Retén alternativas útiles sin ayuda. No fijes la primera versión ni eleves el ejemplo de transcripción a requisito. Usa fuentes primarias fechadas y distingue documentado/probado/aceptado. No accedas a Remote Desktop Commander para ningún fin ni por delegación. No crees cuentas, gastes, envíes solicitudes, migres datos, implementes, alteres diseño/seguridad o fusionas ramas. Devuelve evidencia y cambios propuestos para consolidación por Samantha; evita escrituras concurrentes y no declares actualización del objeto sin recibo/readback. Tu checkpoint debe incluir funciones revisadas/no revisadas, hallazgos, límites, próximo paso, viabilidad y tiempo no estimable si carece de base.
+Toma estado y siguiente paso de §8, no de una copia. Investiga funciones en lenguaje de mercado; después proveedores, cobertura real, API/biblioteca/producto/patrón, comparación, datos, coste y salida; solo entonces busca ayudas. Cierra la fase seleccionada de extremo a extremo en el ciclo, incluidos recomendación y checkpoint verificable; no pospongas costes/datos/apoyos a otro turno por comodidad. Retén alternativas útiles sin ayuda. No fijes la primera versión ni eleves el ejemplo de transcripción a requisito. Usa fuentes primarias fechadas y distingue documentado/probado/aceptado. No accedas a Remote Desktop Commander para ningún fin ni por delegación. No crees cuentas, gastes, envíes solicitudes, migres datos, implementes, alteres diseño/seguridad o fusionas ramas. Devuelve evidencia y cambios propuestos para consolidación por Samantha; evita escrituras concurrentes y no declares actualización del objeto sin recibo/readback. Tu checkpoint debe incluir funciones revisadas/no revisadas, hallazgos, límites, próximo paso, viabilidad y tiempo no estimable si carece de base.
 ```
 
 ## 13. Persistencia y revisión
 
 Antes de editar: comprobar privacidad, revisión de esta rama y blob del objeto; releer, comparar y fusionar ante concurrencia. No sobrescribir a ciegas ni importar datos de ejemplo. Al guardar: actualizar sello/ancla solo por evento real, mantener originales/crónica y prompts coherentes, publicar en la rama autorizada y verificar lectura/diff. Si falla, entregar archivo íntegro con sincronización pendiente, no afirmar persistencia.
 
-Doble revisión de esta entrega: (1) fidelidad M01 → decisiones/criterios/pendientes, quince funciones como propuestas y ejemplo no exigencia; trece bloques presentes, sin secretos o identidades importadas. (2) lectura de vuelta del objeto publicado y páginas/configuración Notion, integridad del original y enlaces. Hasta ejecutar la segunda pasada no declarar conformidad completa. Casos negativos: fuente inaccesible no acredita frescura; disparador desactivado no acredita vigilancia; documentación API no acredita integración; premio anunciado no acredita concesión; guardar la rama no acredita merge.
+Doble revisión de esta entrega: (1) fidelidad M01–M07 → decisiones/criterios/pendientes, quince funciones como propuestas y ejemplo no exigencia; trece bloques presentes, sin secretos o identidades importadas. (2) lectura de vuelta del objeto publicado y páginas/configuración Notion, integridad del original y enlaces. Hasta ejecutar la segunda pasada no declarar conformidad completa. Casos negativos: fuente inaccesible no acredita frescura; disparador desactivado no acredita vigilancia; documentación API no acredita integración; premio anunciado no acredita concesión; guardar la rama no acredita merge.
 
 Este objeto es el punto de continuidad, no otra copia de los radares. README es índice sin estado mutable. Una futura migración preserva original, decisiones, fuentes, estado y recepción verificable antes de archivar. El marco temporal del metacanon no autoriza borrar automáticamente este registro permanente.
