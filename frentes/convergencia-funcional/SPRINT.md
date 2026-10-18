@@ -1,11 +1,11 @@
-<!-- OBJECT_VERSION=0.7; METACANON_VERSION=1.5; STATE_SOURCE=SPRINT.md -->
+<!-- OBJECT_VERSION=0.8; METACANON_VERSION=1.5; STATE_SOURCE=SPRINT.md -->
 # Sprint · Convergencia funcional, mercado y apoyos · Khora y Otro Gran Programa
 
 ## 1. Control e identidad
 
 - Naturaleza: objeto documental permanente del sprint, vivo y provisional en su definición; no especificación de lanzamiento ni ratificación de una arquitectura.
-- Versión/sello del objeto: **0.7 · SPRINT-CONVERGENCIA-v0.7**.
-- Ancla: M10, cierre conjunto de todas las fases documentales del inventario inicial F01–F15, sin detenerse por fase. Sin ensayos, implementación o primera versión elegida. Revisión diaria manual, sin agente ni ejecución entre mensajes.
+- Versión/sello del objeto: **0.8 · SPRINT-CONVERGENCIA-v0.8**.
+- Ancla: M13, autorización para preparar casos sintéticos y método de comparación. ENSAYO-TEXTO-v0.1 preparado en radar A.13; sin corridas, implementación o primera versión elegida. Revisión diaria manual; sin agente ni ejecución entre mensajes.
 - Propietario de custodia: `SeryMente/metodologia`, privado comprobado mediante GitHub en este ciclo. Carpeta: `frentes/convergencia-funcional/`. Estado único: este archivo.
 - Rama documental: `docs/sprint-convergencia-funcional-20261017`, creada desde `main@49ac40e9f6122e2d2fb339362cfa0a78128c8e37`. No fusionar ni afirmar integrado en main por guardar esta rama.
 - Persistencia: el recibo del commit y la lectura de vuelta son la prueba de publicación; la sola presencia de esta frase no la acredita. Si la lectura falla, esta entrega queda NO VERIFICADA.
@@ -81,15 +81,15 @@ Canal: Notion AI, workspace Queretaro, zona horaria America/Mexico_City. Fuentes
 
 ## 8. Estado vivo
 
-**Acción actual:** inventario inicial F01–F15 completo documentalmente. Objeto v0.7. Cierre conjunto autorizado por M10, no una fase pendiente por turno. No se afirma explorado todo el mercado, integración probada, arquitectura ratificada o candidatura elegible.
+**Acción actual:** preparación de evaluación completa documentalmente: ENSAYO-TEXTO-v0.1, corpus sintético, consultas, respuestas esperadas, alternativas, rúbrica y recibo/registro futuro en A.13 del radar existente. Objeto v0.8. Inventario inicial F01–F15 ya cubierto; no se reabre como catálogo pendiente.
 
-**Avance observado:** A.6–A.12 del radar único completan captura, narración/conversación, acción, visualización, control/salida, operación y despliegue. F02/F03 y F06–F10 reutilizan evidencia dirigida previa; no se revalidan todas sus fuentes por inferencia. Tres páginas reciben conclusiones y límites; Notion/ElevenLabs/Supabase revalidados de forma dirigida, otras oportunidades mantienen su corte. Hallazgos nuevos: Agent APIs Notion beta existen; Workers son gratuitos durante beta Business/Enterprise, no gratis para siempre; ElevenLabs Agents tiene retención predeterminada de dos años y cero días no equivale a no retener; Vercel Hobby no es ruta comercial gratuita. Se corrige la exclusión absoluta por cualquier pago histórico Notion: las fuentes actuales no permiten concluirla para todos los casos; historial concreto pendiente. Se preservan títulos, hijos, originales y ninguna matriz se duplica en el repositorio.
+**Avance observado:** tres tareas de contraste, no funciones elegidas para lanzamiento: recuperación dispersa, redacción fiel y próximo paso respaldado. Fuentes ficticias distinguen negación, tiempo de expresión/ingesta, retractación, autoría, duplicados, datos faltantes e instrucciones incrustadas. Línea base simple y recorridos de mercado de A.3–A.11; no rutas adoptadas. Solucionario separado del material de candidato en una futura corrida; casos de desarrollo no son test ciego. Control por prompt no equivale a aislamiento real. Radar técnico y tesis reciben límites de inferencia. No nuevas prestaciones/precios revalidados por este trabajo, ni resultados o ganador inventados.
 
-**Siguiente paso:** siguiente revisión diaria manual cuando el operador retome, cambios por función → mercado/integración → costes/licencias/datos/salida → ayudas → consecuencias de tesis. Si se decide avanzar de documentación a evidencia empírica, elegir una tarea y condiciones de prueba; no exigir primera versión ni improvisar diseño. No quedan fases documentales del inventario inicial reservadas para otro turno.
+**Siguiente paso:** el trabajo seguro de preparación queda completado. Para una corrida real se requiere elección/autorización concreta de superficie, datos/cuenta, límites de coste y candados pertinentes; no basta el «Si» que autorizó preparar. Si no se quiere ejecutar, continuar revisión manual de mercado cuando se retome. No pedir primera versión como prerrequisito ni enviar solicitudes a partir de datos sintéticos.
 
 **Pendientes materiales y de mantenimiento:**
 1. Revisión manual: registrar fuentes/funciones revisadas y no revisadas, fecha real y delta; no hay vigilancia entre mensajes ni activación del agente descartado. Cadencia diaria no garantiza inspección exhaustiva diaria del mercado.
-2. Pruebas no ejecutadas: tarea y corpus público/sintético aprobados, cuenta/datos/coste autorizados y candados de diseño/seguridad/arquitectura cuando corresponda. Criterios por función están en el radar; no asumir autorización por describir un protocolo de prueba.
+2. Pruebas no ejecutadas: preparación de tareas/corpus sintético autorizada por M13 y completada en A.13; falta autorización de ejecución concreta, superficie/cuenta, datos y coste y candados pertinentes. El conjunto de desarrollo visible no acredita generalización; conservar criterios y preparar casos nuevos antes de reclamar superioridad. No asumir autorización por describir una prueba.
 3. Memoria/recuperación/elaboración: comprobar fidelidad, fuentes, negación, corrección, vigencia, autoría, aislamiento e instrucciones incrustadas. Términos por edición, borrado y restauración necesitan verificación contractual/empírica antes de datos personales. Mantener bloqueos específicos de A.3–A.5 (Mem0 bonificado, Zep, Hindsight, LightRAG, Google, OpenAI, Nowledge).
 4. Voz: derechos/consentimiento, español real, parciales/finales, interrupción/cancelación, extras de modelo/telefonía, retención y cobertura exacta del premio; no clonar voces ni enviar corpus íntimo. Mantener restricción del crédito Deepgram para comparar competidores hasta aclararla.
 5. Visualización/acción: separar significado y posiciones, propuesta y compromiso, tarea y ejecución; revisión humana antes de construcción. Nada clínico acreditado. Ensayar accesibilidad, reversibilidad y esfuerzo frente a lista/chat simples.
@@ -115,11 +115,12 @@ Canal: Notion AI, workspace Queretaro, zona horaria America/Mexico_City. Fuentes
 | F08 de extremo a extremo | Tres rutas, coste/datos/licencia/salida y ayudas verificadas documentalmente | Radar A.4; ninguna integración/garantía empírica acreditada |
 | F09/F10 de extremo a extremo | Rutas de ideación/elaboración, integración, costes/licencia/datos/salida, ayudas, recomendación y casos de aceptación | Radar A.5, técnico y tesis; sin ensayo, aprobación de diseño ni financiación |
 | Inventario inicial F01–F15 completo documentalmente | F01/F04/F05/F11/F12/F13/F14/F15 cerradas en conjunto; anteriores reutilizadas sin inventar frescura | Radar A.6–A.12, técnico y tesis; cada función con alternativas, integración, coste/licencia/datos/salida, ayudas y pruebas propuestas; ninguna ejecución de producto |
+| Preparación de evaluación | Corpus sintético, consultas, expectativas, líneas base, alternativas, rúbrica y registro preparados | Radar A.13; no ejecución, resultado, producto validado o primera versión elegida |
 | Reingreso portable | Este objeto, originales, fuente y prompts | Publicación/lectura de vuelta necesarias |
 
 Viable ahora: investigación y comparación documental manual cuando el chat esté activo, sujeta a créditos de conversación y acceso; no un agente adicional ni trabajo entre mensajes. No viable prometer cobertura diaria exhaustiva de todo el mercado, gratuidad total, concesión de ayudas ni superioridad sin ensayos. La secuencia permite descubrir el producto, no necesita un catálogo final previo.
 
-Pronóstico: el alcance documental acotado F01–F15 se cierra en esta entrega sujeto a publicación/lectura de vuelta, no se reserva una fase para mañana. Investigación continua del mercado: sin cierre final estimable. Evaluación empírica y solicitudes: dependen de autorizaciones, identidad y condiciones materiales aún no acreditadas; no prometer fechas ni probabilidades. Revisión diaria manual sólo durante conversaciones activas.
+Pronóstico: preparación documental autorizada completada en este ciclo y verificable por publicación/lectura de vuelta. El inventario F01–F15 sigue cerrado documentalmente. Una corrida real está condicionada a autorización y acceso/coste; no tiene plazo ni resultado prometidos. Investigación continua y revisión diaria manual no tienen cierre universal estimable ni vigilancia entre mensajes.
 
 ## 10. Formato de ciclo
 
@@ -295,6 +296,30 @@ Fuentes primarias nuevas o revalidadas del corte (detalle y hallazgos en el rada
 
 La frase anterior «próxima fase F11» describe historia superada por M10, no el estado actual. Próximo checkpoint: mantenimiento diario manual y/o preparación de una prueba concreta sólo si se autoriza. No queda catálogo inicial pendiente artificialmente; no se promete revisión entre mensajes.
 
+### Delta posterior · preparación de evaluación reproducible
+
+**M11 · continuación directa del operador, verbatim:**
+
+> Sigue
+
+**M12 · aclaración directa del operador, verbatim:**
+
+> Osea que sigue?\]
+
+**Contexto inmediato de la autorización:** Samantha explicó que prepararía casos sintéticos, criterios y alternativas para comparar recuperación de ideas, redacción fiel y propuesta de acción, sin ejecutar proveedores, transferir datos personales o fijar primera versión. La respuesta aprobatoria siguiente se aplica a esa preparación, no a ejecutar cuentas/herramientas.
+
+**M13 · autorización directa del operador, verbatim:**
+
+> Si
+
+Lectura separada: completar método/casos ahora, dentro de los documentos existentes. Las lecturas iniciadas tras M11 fueron canceladas por interrupción antes de empezar; no produjeron cambios ni prueban adquisición. Fuentes recuperadas de nuevo después de M13. La aclaración no autoriza ejecución de producto ni contratación.
+
+Objeto v0.7 recuperado desde commit `63b1e230574164d8f5f9ff8fa95ae23c96c65a5e`, blob `14a5d680c663c515cdef1e71a71709d4d6b552d0`. Metacanon 1.5 recargado desde main `49ac40e9f6122e2d2fb339362cfa0a78128c8e37`, blob `32c7a65ff2e83b3b76752ba2160427bd6e851a8f`, sin delta central. Referencias superiores de §3 conservan el mismo snapshot. Privacidad del repositorio revalidada antes de persistir. Sin agentes, subagentes ni acceso remoto. Trece bloques, crónica y originales previos conservados.
+
+A.13 del radar contiene la única versión documental del corpus y solucionario. No se crea otro documento de convergencia ni se copian fixtures a este objeto. Radares/tesis actualizados con estado «preparado, no ejecutado», límites de generalización, distinción desarrollo/test ciego y comparación producto/componente. No se refrescan oportunidades por asociación ni se calcula probabilidad de concesión. Un ejemplo inventado nunca se presenta como tracción o recibo de una startup real. v0.8 sólo actualiza este frente; no normas centrales, diseño o main.
+
+Evidencia de aceptación: lectura de vuelta de las tres páginas sin truncamiento/bloques desconocidos y archivo de repositorio idéntico al preparado, con corpus/consultas/conclusiones íntegros; debe comprobarse después de publicar, no se acredita por escribir esta frase.
+
 ## 12. Reinstanciación
 
 Los prompts citan el estado único por sección para no mantener copias divergentes. Fuente y límites se recuperan antes de actuar. Son instrucciones de continuidad, no invocaciones ejecutadas de otro agente.
@@ -317,6 +342,6 @@ Toma estado y siguiente paso de §8, no de una copia. Investiga funciones en len
 
 Antes de editar: comprobar privacidad, revisión de esta rama y blob del objeto; releer, comparar y fusionar ante concurrencia. No sobrescribir a ciegas ni importar datos de ejemplo. Al guardar: actualizar sello/ancla solo por evento real, mantener originales/crónica y prompts coherentes, publicar en la rama autorizada y verificar lectura/diff. Si falla, entregar archivo íntegro con sincronización pendiente, no afirmar persistencia.
 
-Doble revisión de esta entrega: (1) fidelidad M01–M10 → decisiones/criterios/pendientes, quince funciones como propuestas y ejemplo no exigencia; trece bloques presentes, sin secretos o identidades importadas. (2) lectura de vuelta del objeto publicado y páginas/configuración Notion, integridad del original y enlaces. Hasta ejecutar la segunda pasada no declarar conformidad completa. Casos negativos: fuente inaccesible no acredita frescura; disparador desactivado no acredita vigilancia; documentación API no acredita integración; premio anunciado no acredita concesión; guardar la rama no acredita merge.
+Doble revisión de esta entrega: (1) fidelidad M01–M13 → decisiones/criterios/pendientes, quince funciones como propuestas y ejemplo no exigencia; trece bloques presentes, sin secretos o identidades importadas. (2) lectura de vuelta del objeto publicado y páginas/configuración Notion, integridad del original y enlaces. Hasta ejecutar la segunda pasada no declarar conformidad completa. Casos negativos: fuente inaccesible no acredita frescura; disparador desactivado no acredita vigilancia; documentación API no acredita integración; premio anunciado no acredita concesión; guardar la rama no acredita merge.
 
 Este objeto es el punto de continuidad, no otra copia de los radares. README es índice sin estado mutable. Una futura migración preserva original, decisiones, fuentes, estado y recepción verificable antes de archivar. El marco temporal del metacanon no autoriza borrar automáticamente este registro permanente.
