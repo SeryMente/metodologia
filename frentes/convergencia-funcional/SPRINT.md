@@ -1,11 +1,11 @@
-<!-- OBJECT_VERSION=0.5; METACANON_VERSION=1.5; STATE_SOURCE=SPRINT.md -->
+<!-- OBJECT_VERSION=0.6; METACANON_VERSION=1.5; STATE_SOURCE=SPRINT.md -->
 # Sprint · Convergencia funcional, mercado y apoyos · Khora y Otro Gran Programa
 
 ## 1. Control e identidad
 
 - Naturaleza: objeto documental permanente del sprint, vivo y provisional en su definición; no especificación de lanzamiento ni ratificación de una arquitectura.
-- Versión/sello del objeto: **0.5 · SPRINT-CONVERGENCIA-v0.5**.
-- Ancla: «Siguiente», posterior al cierre de memoria. F08 completada documentalmente de extremo a extremo, sin prueba empírica ni implementación. Revisión manual; no agente ni ejecución entre mensajes.
+- Versión/sello del objeto: **0.6 · SPRINT-CONVERGENCIA-v0.6**.
+- Ancla: M09, resolución de extremo a extremo mientras el operador se ausenta. F09/F10 completadas documentalmente, sin pruebas de producto ni implementación. Revisión manual; no agente ni ejecución entre mensajes.
 - Propietario de custodia: `SeryMente/metodologia`, privado comprobado mediante GitHub en este ciclo. Carpeta: `frentes/convergencia-funcional/`. Estado único: este archivo.
 - Rama documental: `docs/sprint-convergencia-funcional-20261017`, creada desde `main@49ac40e9f6122e2d2fb339362cfa0a78128c8e37`. No fusionar ni afirmar integrado en main por guardar esta rama.
 - Persistencia: el recibo del commit y la lectura de vuelta son la prueba de publicación; la sola presencia de esta frase no la acredita. Si la lectura falla, esta entrega queda NO VERIFICADA.
@@ -81,17 +81,17 @@ Canal: Notion AI, workspace Queretaro, zona horaria America/Mexico_City. Fuentes
 
 ## 8. Estado vivo
 
-**Acción actual:** fase documental F08 completada: necesidad → alternativas → integración → coste/datos/licencia/salida → ayudas → recomendación/persistencia. Objeto v0.5; revisión manual. No hay motor adoptado, ensayo ejecutado ni primera versión decidida.
+**Acción actual:** fase documental F09/F10 completada de extremo a extremo: necesidad → alternativas → integración → coste/licencia/datos/salida → apoyos → recomendación/criterios/persistencia. Objeto v0.6. Sin proveedor, arquitectura o primera versión elegidos; sin ensayos ni subida de corpus.
 
-**Avance observado:** Hindsight, LightRAG y una línea base propuesta contrastados en A.4 del radar único. Retorno a original distinto de recuerdo extraído, cita distinta de respaldo. Hindsight Cloud publica operaciones por token/llamada y almacenamiento tras treinta días; superficie Data Privacy Enterprise no se hereda a créditos. Su programa startup exige entidad constituida, producto para clientes, memoria central y empresa financiada o rentable con tracción: no elegibilidad confirmada. LightRAG MIT: cuotas del código distintas de coste de modelos y operación; aviso histórico de evasión de autenticación contrastado con corrección registrada en v1.5.4, no una certificación de cualquier despliegue. Exportación Hindsight consultada obsoleta, reconstituye vectores/entidades al importar: restauración exacta no demostrada. Radar técnico y tesis reciben consecuencias, sin ratificar superioridad ni diseño. F06/F07 y voz conservan sus límites; no refrescar otras oportunidades por inferencia.
+**Avance observado:** A.5 del radar único contrasta Nowledge, Gemini Notebook (antes NotebookLM), Responses/File Search y un patrón de evidencia sobre componentes F08. Se descompone captura, recuperación dispersa, evolución, elaboración y revisión sin imponer alcance. Nowledge local/Cloud/modelo remoto requieren perímetros distintos; edición gratuita personal y uso comercial no implican redistribución. API Enterprise de Google consultada administra cuadernos en Preview, no demuestra chat/generación pública. OpenAI archivos/vector stores no son retención cero; citas no prueban fidelidad. Google ficha 05 revalidada y OpenAI ficha 17 añadida después del encaje: inversión, etapa y códigos no acreditados. Radar técnico y tesis reciben consecuencias y casos negativos, no superioridad. Otras oportunidades conservan su corte anterior.
 
-**Siguiente paso:** F09/F10, ideación asíncrona recuperable y redacción enraizada en sentido: necesidad → servicios/productos/patrones → integración/costes/datos/salida → ayudas → recomendación/prueba propuesta/persistencia. Reutilizar F06–F08; comprobar qué falta entre recuperar material y elaborar conservando el sentido, sin fijar primera versión ni implementar.
+**Siguiente paso:** F11, síntesis existencial accionable: estudiar paso de memoria/elaboración a acción útil; necesidad → mercado → integración → coste/datos/licencia/salida → apoyos → recomendación/prueba propuesta/persistencia. Reutilizar F06–F10; no reducirlo sin evidencia a agenda, consejo clínico o autonomía de ejecución. Cerrar esa fase completa en el próximo ciclo activo.
 
 **Pendientes en orden:**
 1. Continuar manualmente al retomar; no probar/activar agente ni prometer trabajo diario entre mensajes.
-2. Completar F09/F10 de extremo a extremo; F08 concluida documentalmente, no empíricamente. No reservar costes/datos/apoyos para un turno posterior por conveniencia.
+2. Completar F11 de extremo a extremo. F06–F10 tienen cierres documentales dirigidos, no evaluación empírica. Después F12 visualización y F13 control/salida como fases propias; F01/F04/F05/F14/F15 conservan partes exploratorias y no se declaran completas por proximidad. No reservar costes/datos/apoyos para otro turno por conveniencia.
 3. Si se propone prueba de recuperación, aplicar A.4: misma carga/modelo/presupuesto, respaldos por afirmación, cita exacta, ausencia, negación, actualización, aislamiento e instrucciones incrustadas. Hindsight Cloud: confirmar términos de datos, cuota, precio facturable y límites del beneficio; LightRAG: fijar versión y revisar autenticación/avisos antes de exposición. Ningún dato personal autorizado. Si se propone prueba de memoria, corpus sintético con cambio de preferencia, negación, retractación, llegada tardía, dos usuarios, fuente, exportación/restauración y borrado; sin datos personales ni gasto por defecto. Contrato propuesto en radar, aún no aprobado ni ejecutado.
-4. Antes de Mem0: confirmar nuevo usuario, cuota/duración/cobro tras premio, tratamiento de Pro bonificado y entrenamiento. No crear cuenta solo para descubrir elegibilidad y perder condición de nuevo usuario.
+4. Antes de probar F09/F10: autorización de datos/cuenta/coste; aclarar edición/licencia Nowledge y términos Cloud, API exacta Google disponible, cobertura/expiración/borrado OpenAI. No sustituir cita por respaldo ni esquema por sentido. Google Start exige planes reales de inversión; OpenAI vía socios exige afiliación/código. No crear cuenta o fingir inversión para calificar. Antes de Mem0: confirmar nuevo usuario, cuota/duración/cobro tras premio, tratamiento de Pro bonificado y entrenamiento. No crear cuenta solo para descubrir elegibilidad y perder condición de nuevo usuario.
 5. Antes de Zep con información personal: términos aplicables, subencargados, ubicación, entrenamiento, exportación íntegra y borrado de copias. Programa Emerging no prioritario para esfuerzo sin presupuesto: financiación y desembolso exigidos, no acreditados aquí.
 6. Voz: documentación anterior preservada; aclarar precio al excluir entrenamiento de Deepgram, extras de ElevenLabs y cobertura/retención de alineación antes de prueba. Créditos Deepgram no usar para comparar competidores sin aclarar restricción.
 7. Mantener funciones declaradas/propuestas/ejemplos, primera versión diferida y recuerdo de lo que el operador olvidó decir sin reconstruirlo. No asumir aplicación de memoria personal en Otro Gran Programa: versiones del corpus pueden bastar.
@@ -113,6 +113,7 @@ Canal: Notion AI, workspace Queretaro, zona horaria America/Mexico_City. Fuentes
 | Ayudas como segundo paso | Mapeadas por función a fichas existentes; candidatos sin ayuda retenidos | Elegibilidad personal no acreditada |
 | F06/F07 de extremo a extremo | Necesidad, tres rutas, integración, costes, datos, salida y apoyos documentados | Sección A.3 del radar; integración/seguridad NO acreditadas |
 | F08 de extremo a extremo | Tres rutas, coste/datos/licencia/salida y ayudas verificadas documentalmente | Radar A.4; ninguna integración/garantía empírica acreditada |
+| F09/F10 de extremo a extremo | Rutas de ideación/elaboración, integración, costes/licencia/datos/salida, ayudas, recomendación y casos de aceptación | Radar A.5, técnico y tesis; sin ensayo, aprobación de diseño ni financiación |
 | Reingreso portable | Este objeto, originales, fuente y prompts | Publicación/lectura de vuelta necesarias |
 
 Viable ahora: investigación y comparación documental manual cuando el chat esté activo, sujeta a créditos de conversación y acceso; no un agente adicional ni trabajo entre mensajes. No viable prometer cobertura diaria exhaustiva de todo el mercado, gratuidad total, concesión de ayudas ni superioridad sin ensayos. La secuencia permite descubrir el producto, no necesita un catálogo final previo.
@@ -224,6 +225,41 @@ Fuentes del corte:
 
 Pronóstico: F08 se completa documentalmente en el ciclo previsto; no hubo ensayos de producto. Próximo hito F09/F10 completo en un ciclo de investigación si las fuentes son accesibles. No hay muestra de duración que permita prometer minutos; intervención material solo si una prueba/dato/contrato lo exige. Sprint exploratorio completo sin horizonte finito estimable. No se trunca a conveniencia ni se proclama implementación completa.
 
+### Delta posterior · ideación recuperable y redacción enraizada
+
+**M09 · mensaje directo del operador, original con envoltorios conservados:**
+
+<p>
+Voy a salir unos minutos, resuelve e2e con la cmayor alidad posible. 
+</p>
+
+Lectura separada: completar F09/F10 de extremo a extremo con la mayor calidad posible dentro del alcance documental existente; la ausencia no autoriza gasto, implementación, decisiones de arquitectura/seguridad, agentes ni solicitudes. No exige interrumpir por preguntas de trámite ni permite inventar pruebas o aprobación.
+
+Objeto v0.5 recuperado: commit `c03fc7d59e5e670465e09b8e4480e0670e2a5218`, blob `35c5548164ab0d0066c497ca147f30be931c7b59`, idéntico a copia local usada para delta. Metacanon 1.5 recargado: mismo main49ac/blob32c7, sin cambio central; referencias superiores de §3 permanecen en ese snapshot. Repositorio privado revalidado. Se conserva molde de trece bloques y originales M01–M09. Sin acceso remoto ni subagentes.
+
+A.5 del radar concentra el detalle, sin matriz duplicada aquí. Consecuencia de tesis: capturar/sintetizar y elaborar con citas ya tienen alternativas; fidelidad de modalidad, negación, vigencia, autoría y menor esfuerzo requieren prueba propia. Google ficha 05 revalidada y OpenAI ficha 17 añadida; ningún apoyo concedido. No se refresca el resto del radar por asociación. No comparación numérica ni visual de cuotas heterogéneas; sin factura mensual inventada.
+
+Fuentes primarias del corte:
+- https://mem.nowledge.co/docs/usage — captura, Crystals, Flags y requisitos de inteligencia de fondo.
+- https://mem.nowledge.co/_llms/api.md — memorias, fuentes/hilos, exportación/importación y ajustes sin secretos.
+- https://mem.nowledge.co/pricing — gratuidad/licencias/planes; carga rápida insuficiente, completa obtenida. Funciones anunciadas/futuras no se cuentan como disponibles sin confirmar.
+- https://mem.nowledge.co/cloud — espacio alojado opcional, distinto de flujo sólo local.
+- https://support.google.com/notebooklm/answer/16164461?hl=en — Gemini Notebook, fuentes/citas/errores y condiciones de datos por cuenta.
+- https://support.google.com/notebooklm/answer/16213268?hl=en — plan gratuito y límites sujetos a cambio.
+- https://knowledge.workspace.google.com/admin/migrate/export-notebooklm-data — exportación administrativa, no restauración demostrada.
+- https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/api-notebooks — API de administración Preview, exige licencias; no afirmar generación embebida.
+- https://developers.openai.com/api/docs/guides/tools-file-search — recuperación, citas, resultados opcionales y filtros.
+- https://developers.openai.com/api/docs/pricing — almacenamiento/llamadas separados de modelo.
+- https://developers.openai.com/api/docs/guides/your-data — controles por endpoint; archivos/vector stores no heredan retención cero.
+- https://openai.com/business/why-openai/startups — vía socios de inversión, código, datos empresariales y facturación posterior.
+- https://cloud.google.com/startup/benefits — etapas, financiación, modelos elegibles/excluidos y extra Workspace.
+
+Preparación local: un literal multilínea en el script produjo SyntaxError: unterminated string literal (detected at line 71). No se había ejecutado escritura remota ni generado delta; se corrigió el escape de salto de línea y se exige compilar el script antes de generar payloads. Impacto de estado: ninguno en producto o documentos remotos. Verificación: compilación, ejecución y cotejo estructural previos a los parches. Prevención automatizable: py_compile antes de aplicar.
+
+Tres páginas Google agotaron tiempo en carga rápida; la carga completa obtuvo contenido. Esto afectó consulta, no persistencia ni producto; no se extrapolaron garantías desde snippets antiguos. Página promocional notebooklm.google devolvió vacío; no fue necesaria tras recuperar ayuda oficial. Se conservaron precios por sus unidades, sin comparar cuotas incompatibles.
+
+Pronóstico: hito documental F09/F10 resuelto en este ciclo; ninguna implementación validada. Próximo F11 documental completo es viable en un ciclo activo si fuentes accesibles; no hay duración medida fiable para prometer minutos. Cierre de investigación exploratoria total no estimable; la definición de primera versión sigue diferida. Persistencia v0.6 requiere recibo y lectura remota posterior, además del cotejo local. Sin trabajo entre mensajes ni agente diario activado.
+
 ### Especificaciones originales verbatim
 
 **M01 · Mensaje directo del operador · este hilo, posterior a la entrega de los radares · 2026-10-17.** Texto completo recibido, sin normalizar grafía, negaciones ni ejemplos. Sin envoltorio HTML en este mensaje. No se inventa una hora exacta.
@@ -254,6 +290,6 @@ Toma estado y siguiente paso de §8, no de una copia. Investiga funciones en len
 
 Antes de editar: comprobar privacidad, revisión de esta rama y blob del objeto; releer, comparar y fusionar ante concurrencia. No sobrescribir a ciegas ni importar datos de ejemplo. Al guardar: actualizar sello/ancla solo por evento real, mantener originales/crónica y prompts coherentes, publicar en la rama autorizada y verificar lectura/diff. Si falla, entregar archivo íntegro con sincronización pendiente, no afirmar persistencia.
 
-Doble revisión de esta entrega: (1) fidelidad M01–M08 → decisiones/criterios/pendientes, quince funciones como propuestas y ejemplo no exigencia; trece bloques presentes, sin secretos o identidades importadas. (2) lectura de vuelta del objeto publicado y páginas/configuración Notion, integridad del original y enlaces. Hasta ejecutar la segunda pasada no declarar conformidad completa. Casos negativos: fuente inaccesible no acredita frescura; disparador desactivado no acredita vigilancia; documentación API no acredita integración; premio anunciado no acredita concesión; guardar la rama no acredita merge.
+Doble revisión de esta entrega: (1) fidelidad M01–M09 → decisiones/criterios/pendientes, quince funciones como propuestas y ejemplo no exigencia; trece bloques presentes, sin secretos o identidades importadas. (2) lectura de vuelta del objeto publicado y páginas/configuración Notion, integridad del original y enlaces. Hasta ejecutar la segunda pasada no declarar conformidad completa. Casos negativos: fuente inaccesible no acredita frescura; disparador desactivado no acredita vigilancia; documentación API no acredita integración; premio anunciado no acredita concesión; guardar la rama no acredita merge.
 
 Este objeto es el punto de continuidad, no otra copia de los radares. README es índice sin estado mutable. Una futura migración preserva original, decisiones, fuentes, estado y recepción verificable antes de archivar. El marco temporal del metacanon no autoriza borrar automáticamente este registro permanente.
