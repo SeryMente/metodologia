@@ -1,0 +1,1 @@
+El consumidor pasó **20/20 comprobaciones en Chromium**. En la ruta de despacho encontré la dependencia Meta exacta: exige identidad de Página verificada incluso antes de entregar al blog. Por tanto, no basta con configurar GitHub. Registraré ese contrato y el bloqueo normativo reportado, sin reintentar la credencial ni llamar a Meta con permisos supuestos.
