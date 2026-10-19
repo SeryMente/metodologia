@@ -1,0 +1,3 @@
+**No puedo cerrar ahora la publicación con audio en ambos destinos.** El bloqueo no es solo Facebook: todavía falta implementar y desplegar la exportación del audio archivado, su reproducción pública y la aprobación que cubra texto y audio. El servidor ya rechaza la aprobación del flujo anterior; no voy a habilitarlo como si cumpliera.
+
+Que puedas entrar como administrador de Facebook ayuda, pero no acredita acceso para publicar mediante su API. No abriré el navegador del agente ni seguiré investigando las capturas recuperadas. Tampoco te pediré un token mientras el flujo de audio no esté listo.

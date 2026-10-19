@@ -1,17 +1,9 @@
-**Dejé implementado y probado el núcleo editorial; el cierre de extremo a extremo sigue pendiente. No hay una nota real publicada en ambos destinos.**
+**El blog existe, pero la publicación de una nota con audio en blog y Facebook no quedó operativa.** No hay una primera nota real publicada ni puedo prometer ese cierre dentro del tiempo indicado.
 
-### Entregado
-- [Solicitud de cambios 329](https://github.com/SeryMente/khora/pull/329), **en borrador y sin activar**, revisión `13a15d9532931a0ff2795f5390ce2750484a1474`.
-- Consentimiento conjunto por versión: **Sí → blog y Página de Facebook; No → conservar sin publicar**. La negativa puede persistirse incluso antes de preparar un borrador, sin leer el original ni depender del acceso normativo.
-- Propuestas de metadatos con anclas, lectura limitada mediante el protocolo de contexto del modelo (MCP), cola durable y comprobantes separados por destino. Un envío incierto a Facebook no se repite a ciegas.[^https://github.com/SeryMente/khora/tree/13a15d9532931a0ff2795f5390ce2750484a1474/khora-web/lib/server/blog]
+- **Código guardado:** [solicitud 329, en borrador](https://github.com/SeryMente/khora/pull/329), revisión `1b76690928e401fa1d21d30c8cd720c9d8655ff9`. El cambio bloquea aprobar y despachar entradas del contrato anterior, que solo cubría texto. **No está desplegado.**[^https://github.com/SeryMente/khora/commit/1b76690928e401fa1d21d30c8cd720c9d8655ff9]
+- **Pruebas locales:** 29 unitarias y un escenario transaccional aislado pasaron; también tipos estrictos del núcleo y comprobación sintáctica. No acreditan publicación real.[^https://github.com/SeryMente/metodologia/blob/main/frentes/blog-personal/evidencia/C-BLOG-002/unit-tests.txt]
+- **Canon único:** actualizado a `BLOG-PERSONAL-v4`, conservando historia, contrato y pendientes. No creé otro frente.[^https://github.com/SeryMente/metodologia/blob/main/frentes/blog-personal/OBJETO-CANONICO.md]
 
-**Verificación:** 28 pruebas locales, un escenario transaccional PostgreSQL aislado, tipos estrictos del núcleo y regresión del blog existente. No equivalen a compilación completa de Khora ni a pruebas con proveedores reales. El único canon queda actualizado a **BLOG-PERSONAL-v3**, bajo Metacanon 1.6, con fuentes, crónica, evidencia y pendientes.[^https://github.com/SeryMente/metodologia/blob/main/frentes/blog-personal/OBJETO-CANONICO.md]
+**Ruta crítica pendiente:** audio archivado íntegro y verificado → exportación/reproducción pública → vista previa y aprobación exacta de texto y audio → integración y despliegue → comprobación del blog → Facebook y comprobante separado. La autorización oficial de la Página y el acceso normativo de Khora siguen sin resolución acreditada.[^https://github.com/SeryMente/metodologia/blob/main/frentes/blog-personal/OBJETO-CANONICO.md]
 
-### Qué impide activarlo
-1. **Khora:** su credencial normativa sigue sin reparación acreditada; la comprobación devolvió `SI_MAIN_FETCH 401`. Está separada de mi conexión GitHub.
-2. **Permisos administrativos:** Vercel permite consultar el proyecto, pero listar despliegues devolvió **403 del ámbito del equipo**. Los controles de integración continua de GitHub tampoco pudieron verificarse por permisos.
-3. **Publicación real:** faltan verificar oficialmente la administración/permisos de la Página, revisar el texto y formato de la primera nota y completar integración con Ingreso, migraciones y despliegue.[^https://github.com/SeryMente/metodologia/blob/main/frentes/blog-personal/evidencia/C-BLOG-002/limites.json]
-
-No publiqué pruebas ni originales privados, no usé acceso remoto y no doy la conexión por operativa. **No puedo fijar un plazo de cierre real mientras falten esos accesos y la nota aprobada.**
-
-**Siguiente intervención necesaria:** ¿autorizas abrir la bóveda de Khora en el navegador para reparar su credencial mediante entrada segura? No pegues el PIN ni el token en el chat.
+No abrí el navegador del agente, no cambié secretos y no seguí diagnosticando las capturas recuperadas. Poder iniciar sesión como administrador de Facebook no sustituye los permisos de publicación de su aplicación. **No necesitas pasarme un token ahora:** primero falta completar el flujo de audio. “No publicar” permanece independiente; no se transforma en consentimiento pendiente.
