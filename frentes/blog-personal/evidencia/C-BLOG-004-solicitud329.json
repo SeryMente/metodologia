@@ -1,0 +1,37 @@
+{
+  "number": 329,
+  "title": "Blog: consentimiento conjunto por versión y sincronización protegida (sin activar)",
+  "body": "Ampliación explícita del operador; mismo blog y mismo canon privado en metodologia. Backend editorial nuevo sin tocar dictado/captura. Contrato khora-web/contracts/blog-editorial-v1.md coordinado con Ingreso (columnas tipo_entrada/ofuscada, migración034 del otro frente).\n\nIncluye: API sesión prepare/decide/status/open_turn; Sí ambos destinos/No sin publicar; SHA de revisión exacta; propuestas extractivas Groq ancladas y privadas; almacenamiento cifrado; vista pública readonly+tombstones; scope blog:read bajo gatedTool normativo existente; outbox Postgres con lease/fencing/dedupe; drivers GitHub/Meta oficiales y verificación independiente; GitHub Actions privado deshabilitado hasta configuración.\n\nPruebas LOCALES: 26 dominio/transportes sintéticos, 1 escenario transaccional PGlite, tipos estrictos de núcleo y sintaxis de17 archivos TS/TSX; BLOG_CONTRACT_OK en clone limpio público HEADfb02d26. No son prueba de conexión real ni de compilación/regresión completa Next. Workflow aislado agregado para ejecución CI.\n\nNO MERGE automático: draft obligatorio por política auto-merge del repo. NO se aplicó migración a producción ni configuró secretos, no se autorizó o publicó fixture/nota real. Bloqueos de activación: NORM_GITHUB_CREDENTIAL_REJECTED SI_MAIN_FETCH401 confirmado, Vercel needs_reauth, admin/tareas/permisos Meta no verificados, formato y primera nota no aprobados. Falta regresión completa/deploy/control de roles readonly/migraciones/revisión de seguridad. Datos de captura y publicación no se confunden; edición revoca aprobación; actualización/retirada pública distinta queda bloqueada en primera versión.\n\nNo declarar sincronizado/operativo por este commit.",
+  "state": "open",
+  "draft": true,
+  "merged": false,
+  "mergeable_state": "unstable",
+  "html_url": "https://github.com/SeryMente/khora/pull/329",
+  "user": {
+    "login": "1interprete1",
+    "id": 269599528,
+    "profile_url": "https://github.com/1interprete1",
+    "avatar_url": "https://avatars.githubusercontent.com/u/269599528?v=4"
+  },
+  "head": {
+    "ref": "feat/blog-editorial-sync-20261019",
+    "sha": "fea4b676e6784bc5041207673ca6eb6d6155299b",
+    "repo": {
+      "full_name": "SeryMente/khora"
+    }
+  },
+  "base": {
+    "ref": "main",
+    "sha": "b5e7009de137db30c26ecc5f4ddbb34789f453f2",
+    "repo": {
+      "full_name": "SeryMente/khora"
+    }
+  },
+  "additions": 951,
+  "deletions": 18,
+  "changed_files": 25,
+  "commits": 10,
+  "comments": 2,
+  "created_at": "2026-10-19T17:15:59Z",
+  "updated_at": "2026-10-19T18:05:02Z"
+}

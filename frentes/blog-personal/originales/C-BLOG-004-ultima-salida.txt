@@ -1,0 +1,3 @@
+Recibido el checkpoint 19b3966b6cdefc6edebea7d18e8e88acf102356b de PR330. Integración y pruebas quedan como reporte del coordinador, no como verificación propia de producción.
+
+Mantengo los archivos Blog congelados: sin pushes, cambios nuevos, merge, migraciones, despliegue ni publicación. La continuidad y el reporte quedan centralizados en tu hilo.

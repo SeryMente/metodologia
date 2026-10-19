@@ -1,0 +1,53 @@
+{
+  "cycle": "C-BLOG-004",
+  "source_attachment": {
+    "id": "11339e09-a638-416d-9a15-8beb540b0afe",
+    "bytes": 34368,
+    "sha256": "93faece6b84fafd6177e257f47596d88e5f4a0c91b9fe6f761df79f1b4587662",
+    "git_copy": "redacted auth block; original remains session attachment"
+  },
+  "base_document_commit": "8d2be205fa6062493ce3f3f0525e4462285cec62",
+  "base_document_blob": "c82680400886e7f8edfdfe87bb30c7f9a238a800",
+  "method_blob": "8f9ad1cf0e09e5fcd7014190770a77294ff39af4",
+  "repository_privacy": "private=true checked using GitHub search_repositories in current cycle",
+  "encoding": "UTF-8; attachment text outside omitted block unchanged including CRLF from input; generated documents LF",
+  "scope": "documentation only, no runtime verification or code modification",
+  "files": {
+    "frentes/blog-personal/originales/C-BLOG-004-conversacion-recibida-redactada.txt": {
+      "sha256": "53b39d202f1bbdf27e57f15fb45d0b8a37af20434050baf1be23758f89179e05",
+      "git_blob": "13753708074fafbb8dfd84d2286e961e0e770eba"
+    },
+    "frentes/blog-personal/originales/C-BLOG-004-ultima-salida.txt": {
+      "sha256": "d462ec63c8380958f8d55e5da6e4966a2fee7b559bf1b1c5834650569b5dfdd6",
+      "git_blob": "e1840a8def14980e5c45c63c640864b322f6d80c"
+    },
+    "frentes/blog-personal/originales/C-BLOG-004-encargo.txt": {
+      "sha256": "84c2598e2b3e1b886af460a49cc2f2904c31a5a6eb0d3edbd8a1e88c88537382",
+      "git_blob": "184cc2f84f600988db3277e5b5b2112ff51d685c"
+    },
+    "frentes/blog-personal/OBJETO-CANONICO.md": {
+      "sha256": "fdbeafaf10ea5f41190936c6fcdcbafe30927448cd4053c076103ddb53a413c7",
+      "git_blob": "50dfe40f195093d2e487ca19a095c1e29d7ec688"
+    },
+    "frentes/blog-personal/evidencia/C-BLOG-004-solicitud330.json": {
+      "sha256": "ee226c616b100a8ddffdfd526d85b4a4e8d8306bca6128c8ad5eebe1cc2ff980",
+      "git_blob": "743fcab61d92f50dc7d392242fbd1bcd98d76036"
+    },
+    "frentes/blog-personal/evidencia/C-BLOG-004-solicitud329.json": {
+      "sha256": "e72b84cbf4c0226587a22f22e52116d9f600bb6ac99bc5ffd998dba5eac187a3",
+      "git_blob": "da98ea2af6711a0785533286b02aa675d1653851"
+    },
+    "frentes/blog-personal/evidencia/C-BLOG-004-C031-consolidacion.json": {
+      "sha256": "441c30d140324be8789b8ab04480a5fa33d65e64e2dc18c01bb198f6d8e3dffa",
+      "git_blob": "10ee5dbffc6d9ead7b4f384575fe5fb0ed4a4cc9"
+    },
+    "frentes/blog-personal/originales/C-BLOG-004-cierre.txt": {
+      "sha256": "9a11fe2f57d7c1d33ac9f21cdcf9069e7a4f5a11f432fb6dee7e25b0a2c46f27",
+      "git_blob": "e6d6d287176a7bb8ca56de441289f495e2e5c12b"
+    },
+    "frentes/blog-personal/originales/C-BLOG-004-salidas-intermedias.txt": {
+      "sha256": "96b96585f386b359a029d10d8fa7e092c74f05024cc9ac609cdd733c7e0e10ea",
+      "git_blob": "1e7df87cc68359f0afe69bfffa7b9df7cf6b0a67"
+    }
+  }
+}
