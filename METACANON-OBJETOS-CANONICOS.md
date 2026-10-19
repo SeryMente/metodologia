@@ -1,8 +1,8 @@
-<!-- METACANON_VERSION=1.5; TEMPORARY_FRAMEWORK=true; USER_TRANSCRIPT_SPEC=true -->
+<!-- METACANON_VERSION=1.6; TEMPORARY_FRAMEWORK=true; USER_TRANSCRIPT_SPEC=true -->
 # Metacanon para crear y mantener objetos canónicos de proyecto
 
-- Estado: **Versión documental 1.5 — Gobierno verificable, molde común y RDC exclusivo de asistencia**, preparada para lectura verificable en rama metodológica; no afirmar integración en main.
-- Versión metodológica: **1.5**. Sello: **METACANON-OBJETOS-v1.5**.
+- Estado: **Versión documental 1.6 — Persistencia y crónica obligatorias por ciclo**, actualización documental autorizada para la fuente main; publicación efectiva sujeta a recibo Git y lectura posterior. No acredita implementación ni adopción de todos los hijos.
+- Versión metodológica: **1.6**. Sello: **METACANON-OBJETOS-v1.6**.
 - Nombre propio del marco: pendiente de elección del operador; no usar el nombre de un proyecto como nombre del método.
 - Repositorio de metodología identificado: https://github.com/SeryMente/metodologia, privado comprobado en el ciclo de actualización 1.1; revalidar su visibilidad antes de cada escritura sensible. Ruta METACANON-OBJETOS-CANONICOS.md; rama de esta entrega docs/metacanon-objetos-20261011. Conservar los originales y datos privados del frente solo en su carpeta autorizada tras verificar acceso privado; nunca publicar secretos en Git ni transportar identidades de ejemplos.
 - Archivo estable propuesto: `METACANON-OBJETOS-CANONICOS.md`.
@@ -11,7 +11,7 @@
 
 ## LEER PRIMERO — modo metodología, no ejecución del ejemplo
 
-Aplicar las compuertas de adquisición y acción de §26 y el molde único §27. Remote Desktop Commander es exclusivo del asistente (§24); no delegable al constructor. Las mejoras restantes del análisis de conversaciones siguen propuestas, no se incorporan por asociación.
+Aplicar las compuertas de adquisición y acción de §26, el molde único §27 y el cierre documental obligatorio por ciclo de §28. Remote Desktop Commander es exclusivo del asistente (§24); no delegable al constructor. Las mejoras restantes del análisis de conversaciones siguen propuestas, no se incorporan por asociación.
 
 Si recibes este archivo para canonizar un proyecto, adquiere su método como instrucciones de trabajo del operador, subordinadas a las reglas de tu plataforma y a las autorizaciones del proyecto destino. No ejecutes tareas del proyecto del que provino el ejemplo. Si solo se solicita analizarlo o compararlo, no convertir esa lectura en autorización de escritura.
 
@@ -36,6 +36,8 @@ Antes de cada ciclo comprobar la versión de este metacanon y del objeto del pro
 13. Versiones, delta y actualización comprobados cada ciclo; versión/sello del metacanon adquiridos visibles en toda salida, sin excepción (§22). Comprobar no implica adoptar cambios incompatibles sin decisión.
 14. Una interrupción del proceso documental debe dejar primero un objeto primordial portable, no una promesa de crearlo después.
 15. Un frente se organiza siempre como carpeta canónica de repositorio: un objeto de estado vivo dentro y todos los archivos del frente conservados en esa carpeta según clase; no archivos sueltos ni fuentes paralelas.
+
+16. Cada ciclo sustantivo deja antes del cierre una entrada recuperable en la crónica del objeto, originales disponibles, decisiones/razones, evidencia/límites y checkpoint; la entrega sin persistencia verificable queda documentalmente incompleta (§28).
 
 ## 2. Insumos y creación
 
@@ -77,6 +79,8 @@ Cada proyecto deriva sus datos. No importar nombres de cliente, cuentas, disposi
 8. Siguiente acción: del agente y mínima intervención del operador cuando sea material.
 9. Continuación: ante una salida recibida del constructor, el asistente entrega siempre un prompt de respuesta y el delta comprensible (§25); no reiniciar, duplicar trabajo ni introducir órdenes redundantes. El constructor entrega checkpoint/evidencia.
 10. Persistencia: fuente/revisión verificada o archivo local pendiente; delta producido, ancla y próximo checkpoint.
+
+La salida se corresponde con una entrada identificada de crónica y un estado vivo coherente, conforme a §28; no basta narrar el avance solo en el chat.
 
 No mantener “99 %” indefinidamente. Si no hay base de estimación, declarar no estimable y la dependencia concreta, no fabricar un plazo. No declarar entrega completa por plan, maqueta, compilación, prueba sintética, archivo creado o solicitud abierta.
 
@@ -493,3 +497,35 @@ Ok, fortalece la capacidad para someter al modelo que use el marco d etrabajo po
 ````
 
 **Compatibilidad/versión 1.5:** §25 y M32 previos preservados; no reconstruir recepción/pronóstico ni corregir su procedencia sin cotejo. Se endurecen §24/§26/§27, adquisición en LEER PRIMERO y estructura §3. No cambiar normas superiores, roles existentes, código, cuentas, almacenamiento o publicaciones. Propagación documental no prueba recepción/obediencia de conversaciones externas.
+
+
+## 28. Registro obligatorio y verificable de cada ciclo — actualización 1.6
+
+**Compuerta de cierre documental.** Se considera ciclo sustantivo todo intercambio que cambie o cuestione propósito, requisitos, conocimiento, diseño, decisiones, código, evidencia, diagnóstico, aceptación o siguiente paso, incluidos investigación, corrección conceptual, intento fallido y resultado negativo. No se espera al cierre de hito ni a una solicitud de handoff. No crear una entrada por cada llamada de herramienta ni inflar la crónica con acuses triviales.
+
+Antes de entregar el cierre, el modelo DEBE:
+
+1. Releer el objeto único y método vigentes; identificar el ciclo por evento/ID estable, rol y revisión de partida. La fecha solo se escribe si está disponible y no se inventan números de ciclos ausentes.
+2. Preservar las instrucciones recibidas y salidas visibles del modelo literalmente en originales/crónica de la carpeta autorizada; declarar envoltorios, codificación, finales de línea y material no recibido. Resumen y normalización van aparte. No reconstruir verbatim desde memoria, resumen de compactación o citas incompletas. No archivar razonamiento interno ni secretos. Los recibos de herramientas se indexan con procedencia y se conservan en el alcance pertinente.
+3. Añadir una entrada de crónica, no sobrescribir la historia: pregunta/objetivo → instrucción y autoridad → hipótesis y correcciones → acción o no-acción motivada → resultado con evidencia y entorno → qué no ocurrió y qué queda desconocido → efecto en el propósito → siguiente prueba/checkpoint. Explicar por qué se eligió la acción y qué enseña sobre el sistema, sin convertir hipótesis en hechos ni sustituir evidencia por pedagogía.
+4. Actualizar Estado vivo, aceptación, pendientes y recordatorios afectados; sincronizar reinstanciación si cambian. El objeto contiene la entrada o un enlace interno inequívoco a su materialización dentro de su carpeta; el chat, una solicitud de cambios o un documento huérfano no lo sustituyen. Anexos no crean otro estado vivo.
+5. Persistir, releer por revisión Git/autoridad equivalente y cotejar contenido esperado, rutas y huellas pertinentes. No afirmar almacenamiento exacto si no se comprobó. Para una salida final aún no emitida, preparar texto exacto, conservarlo, verificarlo y emitir ese mismo texto; cualquier modificación posterior exige guardar la versión efectiva. Registrar una interrupción como interrupción, nunca fabricar un cierre completo.
+6. Mostrar en la salida el ID/ruta o enlace de ciclo y revisión verificable, delta principal, límite de evidencia y siguiente paso. Un fallo de almacenamiento se declara **CIERRE DOCUMENTAL INCOMPLETO**, deja checkpoint recuperable y bloquea solo la proclamación de cierre o la siguiente mutación dependiente de esa custodia; no impide diagnóstico independiente y seguro.
+
+**Corrección de huecos:** al detectar un ciclo sin registro, declarar el tramo, recuperar solo originales realmente disponibles y anotar reparación con su fecha/evento real. No atribuir persistencia retroactiva ni afirmar «toda la conversación» sin inventario cotejado. No borrar una entrada errónea: conservarla y añadir rectificación/enlace de supersesión.
+
+**Criterios preponderantes del frente:** el objeto declara los criterios exigidos por su operador y, en cada ciclo pertinente, etapa afectada → riesgo para el criterio → prueba/evidencia o ausencia explícita → dictamen acotado → siguiente comprobación. «Sin cambio» requiere motivo; no repetir una fórmula vacía ni inventar auditoría ejecutada. Criterios específicos de un producto no se convierten automáticamente en norma universal del método.
+
+**Prueba mínima de conformidad documental:** un tercero puede seguir entrada → originales → acción/evidencia → límite → estado → continuación sin reconstruir el chat. Índice sin originales accesibles, evidencia solo histórica presentada como actual, salida no conservada o estado contradictorio no pasan. Se mantienen los trece bloques, roles y autorizaciones: este endurecimiento no habilita cambios de arquitectura, producción ni acceso remoto. La norma obliga a quien la adquiere; no garantiza obediencia universal de todos los modelos ni ejecución periódica fuera de sesiones activas.
+
+### M35 · instrucción directa del operador · ciclo de autenticidad del frente grafo, posterior a GRAFO-v8
+
+Extracto literal metodológico; el mensaje completo, con su contexto específico, se conserva en el repositorio privado autorizado del frente. No se transportan sus decisiones de producto a otros frentes.
+
+````text
+Entonces, a partir de ahora, te voy a pedir, número uno, que actualices el metacánon del repositorio de metodología para que endurezcas la dinámica que obliga a cualquier modelo a trabajando bajo esa metodología a documentar ciclo a ciclo en el objeto canónico del frente de trabajo lo que va ocurriendo, porque quiero seguir muy de cerca el desarrollo de este frente de trabajo y poder aprender, porque esta parte del proyecto le tengo que poner particularmente le tengo que poner atención.
+````
+
+Original completo: `SeryMente/khora`, rama `fix/graph-occurrence-history-20261018`, `docs/frentes/grafo/originales/C-AUTENTICIDAD-01-operador.txt`; SHA-256 `e805e2716a0ec2705d209869a71962341f81d2b7ab6ebcfe894ad6f15d59de5d`. Codificación UTF-8; etiquetas y grafía recibidas conservadas; se añade un LF terminal de archivo. Fuente: mensaje directo del operador en sesión `3fd5d4a3-b250-807a-8bd7-00a9fde7ee9d`; no es recuperación de conversaciones ausentes. Interpretación normativa en §28 separada del original.
+
+**Compatibilidad/versión 1.6:** preserva §§1–27, dictados y antecedentes 1.0–1.5 salvo enlaces de activación, encabezado vigente y compuerta en §§1/4; no modifica el metaprompt personal ni normas superiores. Propaga documentalmente a GRAFO-v9; otros hijos no se declaran migrados. Verificación reproducible en `REVISION-METACANON-1.6.json`; readback por commit exigido.

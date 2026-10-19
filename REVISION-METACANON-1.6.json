@@ -1,0 +1,20 @@
+{
+  "schema": 1,
+  "version": "1.6 / METACANON-OBJETOS-v1.6",
+  "base_commit": "49ac40e9f6122e2d2fb339362cfa0a78128c8e37",
+  "event": "M35 / C-AUTENTICIDAD-01",
+  "scope": "Documentary update; no claim of universal model compliance or migration of all child objects",
+  "checks": {
+    "historical_sections_10_27_exact": true,
+    "thirteen_child_core_blocks_ordered": true,
+    "source_literal_excerpt_exact": true,
+    "privacy_rechecked_both_repos_private": true,
+    "personal_metaprompt_unchanged": true
+  },
+  "hashes": {
+    "METACANON-OBJETOS-CANONICOS.md": "4c70b7109649dd7c0d5c894b4dceaee6656cf73ab06471a4166ca538bcf21711",
+    "operator_source": "e805e2716a0ec2705d209869a71962341f81d2b7ab6ebcfe894ad6f15d59de5d"
+  },
+  "readback": "required after push; independently compare Git blob/hash",
+  "other_fronts_migrated": false
+}
