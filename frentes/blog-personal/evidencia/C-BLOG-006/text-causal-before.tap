@@ -1,0 +1,27 @@
+TAP version 13
+# Subtest: causal server regression: cancelled deliveries cannot silently approve inert outbox
+not ok 1 - causal server regression: cancelled deliveries cannot silently approve inert outbox
+  ---
+  duration_ms: 71.420664
+  type: 'test'
+  location: '/vercel/sandbox/data/blog-build/base/khora-web/tests/unit/blog-text-workflow.test.ts:2:13365'
+  failureType: 'testCodeFailure'
+  error: 'Missing expected rejection.'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  operator: 'rejects'
+  stack: |-
+    async TestContext.<anonymous> (/vercel/sandbox/data/blog-build/base/khora-web/tests/unit/blog-text-workflow.test.ts:68:196)
+    async Test.run (node:internal/test_runner/test:1125:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3)
+  ...
+1..1
+# tests 1
+# suites 0
+# pass 0
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 353.728418

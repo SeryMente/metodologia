@@ -1,0 +1,13 @@
+**Cabeza final:** `3fcfe4cd0b186c80bfe6b55b579eb6c99a620398`, rama `feat/blog-text-workflow-20261019`, base `7826aa5`. Sustituye la entrega `0345946`; sin merge ni despliegue propio.[^https://github.com/SeryMente/khora/commit/3fcfe4cd0b186c80bfe6b55b579eb6c99a620398]
+
+**Cuatro blobs cambiados respecto a `0345946`** — prefijo `khora-web/`:
+- `app/components/blog/BlogTextWorkspace.tsx` → `ebe51ef876079b13385abef0ebada8449c6123d0`
+- `lib/blog/text-workflow.ts` → `8703abf9eae6e367d948807711e630939d44bf92`
+- `tests/unit/blog-text-workflow.test.ts` → `2262915b371770a0e82ae527e239e27443422944`
+- `tests/browser/blog-text-workflow.local.test.mjs` → `31e76c7853c08fa44fb02b8b27231190109afb11`
+
+**Verificación:** cuatro blobs finales cotejados; **88/88 pruebas**, sin omisiones; **27 comprobaciones Chromium** con servicios sintéticos; tipos estrictos **5.9.3, incluido JSX**, aprobados. La negativa causal falla en `0345946` y pasa corregida. Bloqueo previo, respuesta incierta y aprobación registrada quedan separados; no se fabrica consentimiento.
+
+Los otros tres archivos permanecen idénticos. **Sin publicación real:** siguen pendientes integración, revisión humana, configuración/normativa y nota exacta aprobada. Canon Blog actualizado a **v9 · C-BLOG-006**, con evidencia y límites.[^https://github.com/SeryMente/metodologia/blob/docs/blog-editorial-sync-20261019/frentes/blog-personal/OBJETO-CANONICO.md]
+
+Metacanon **1.6 · METACANON-OBJETOS-v1.6** · Fuente **NX-330m**.
