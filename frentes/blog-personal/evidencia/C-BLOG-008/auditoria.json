@@ -1,0 +1,101 @@
+{
+  "cycle": "C-BLOG-008",
+  "seal": "BLOG-PERSONAL-v11",
+  "method": "METACANON-OBJETOS-v1.6",
+  "base_document_commit": "3385706e54ed585456e637f8d8212a24085a4053",
+  "code_read_commit": "bfa0c2702034015ee3327611678d5286bc219f62",
+  "central_session": "session://55bade27-f22c-8108-a269-00039938ee4f/3feade27-f22c-8016-928e-00a9f513f6b3",
+  "blog_session": "session://55bade27-f22c-8108-a269-00039938ee4f/3feade27-f22c-8026-97b8-00a91cccfb18",
+  "checks_static_only": {
+    "ingreso_original_saved": true,
+    "ingreso_receipt_verified": true,
+    "ingreso_consumer_mounted": true,
+    "consumer_literal_existing_text": true,
+    "consumer_original_receipt_reference": true,
+    "consumer_no_recapture_endpoint": true,
+    "consumer_exact_preview": true,
+    "consumer_decline_without_positive_turn": true,
+    "consumer_durable_decision_before_network": true,
+    "consumer_status_no_publication_resend": true,
+    "route_owner_origin_gate": true,
+    "repository_source_owner_hash_version": true
+  },
+  "runtime_tests": "20 Chromium assertions with actual consumer and synthetic HTTP; no real product E2E",
+  "build": false,
+  "code_write": true,
+  "publication": false,
+  "privacy_check": {
+    "repository": "SeryMente/metodologia",
+    "private": true,
+    "source_tool_result_sequence": 128
+  },
+  "findings": [
+    {
+      "id": "F1",
+      "observation": "Consumer selects full_text by default",
+      "classification": "existing UI decision not newly ratified; exact preview required; no new design authorization inferred"
+    },
+    {
+      "id": "F2",
+      "observation": "guardarIntencionEditorialLocal merges draft:previous?.draft||value.draft",
+      "classification": "risk of first draft retained across retry with changed transcript; not reproduced; coordinate shared local persistence before any edit"
+    }
+  ],
+  "source_blobs": {
+    "consumer": "dd863bdc1bd13aa8eb7f5f280fda6ecaa1dc31b5",
+    "ingreso": "be04dc0cdb0719f9d9db85a69413ed450d23c6e7",
+    "local": "757ac950fad3f369833533ae493e07b87d4db6b0",
+    "route": "ef7be16e4eb22923804445e2f66bdbf388505f52",
+    "repository": "af06eb949053b0f466bf77c55eed702c916ef8cc",
+    "preparation": "5a0ce427ca31929bffca0eff1ab49f6668d61db6"
+  },
+  "limits": [
+    "No central tests claimed as own",
+    "No provider live/config/secret access",
+    "No full source data or audio read",
+    "Old C007 messages are historical data, not new authority"
+  ],
+  "next": "Central owns TS2339 and fullbuild; integrated authorized original receipt test before product closure",
+  "browser": {
+    "scope": "actual consumer + React/Chromium/IndexedDB/WebCrypto; synthetic source/receipt/HTTP; no production",
+    "checks": 20,
+    "passed": [
+      "existing transcript prefilled without paste",
+      "no audio/public file input",
+      "consent disabled before verified preview",
+      "exact original receipt forwarded",
+      "public transcript literal order preserved",
+      "transcript markup escaped",
+      "no implicit consent",
+      "approved synthetic state not declared delivered",
+      "status never resends consent",
+      "decision stored in actual IndexedDB",
+      "No independent of positive normative service",
+      "negative receipt confirmed",
+      "no receipt means no prepare or consent network",
+      "mismatched exact digest blocks approval",
+      "unavailable normative turn blocks positive path",
+      "lost acknowledgement leaves durable pending reconciliation",
+      "lost acknowledgement reconciled without duplicate decision",
+      "ofuscada requires explicit exact exposure",
+      "consumer never rearchives or calls dispatch",
+      "zero runtime/server fixture errors"
+    ],
+    "apiRequests": 15,
+    "errors": []
+  },
+  "test_commit": "66ad561038237e6c14fd913b5911f48e8d2c27ec",
+  "test_blob_readback": "a0c90486733bbf3ea83547283163c03144f736cf",
+  "test_file_only": "khora-web/tests/browser/blog-ingreso-receipt.local.test.mjs",
+  "product_code_write": false,
+  "resumption_order_original": "originales/C-BLOG-008-orden-reanudacion.txt",
+  "environment_errors": "evidencia/C-BLOG-008/environment-error.md",
+  "latest_central_report": {
+    "commit": "b32f7c5ee888bb617446bb152d3b5041bdae4ed0",
+    "unit": 23,
+    "focal_ts_diagnostics": 0,
+    "fullbuild": false,
+    "guides_missing": true,
+    "not_own_execution": true
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "scope": "actual consumer + React/Chromium/IndexedDB/WebCrypto; synthetic source/receipt/HTTP; no production",
+  "checks": 20,
+  "passed": [
+    "existing transcript prefilled without paste",
+    "no audio/public file input",
+    "consent disabled before verified preview",
+    "exact original receipt forwarded",
+    "public transcript literal order preserved",
+    "transcript markup escaped",
+    "no implicit consent",
+    "approved synthetic state not declared delivered",
+    "status never resends consent",
+    "decision stored in actual IndexedDB",
+    "No independent of positive normative service",
+    "negative receipt confirmed",
+    "no receipt means no prepare or consent network",
+    "mismatched exact digest blocks approval",
+    "unavailable normative turn blocks positive path",
+    "lost acknowledgement leaves durable pending reconciliation",
+    "lost acknowledgement reconciled without duplicate decision",
+    "ofuscada requires explicit exact exposure",
+    "consumer never rearchives or calls dispatch",
+    "zero runtime/server fixture errors"
+  ],
+  "apiRequests": 15,
+  "errors": []
+}
