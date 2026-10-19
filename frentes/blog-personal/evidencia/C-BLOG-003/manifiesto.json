@@ -1,0 +1,10 @@
+{
+  "OBJETO-CANONICO.md": "7bb79d27133fe9082a43d67935b43fbe89d0ae53725974bcfc2ee1710600b1ad",
+  "originales/C-BLOG-003-autorizacion-textual-coordinacion.txt": "8ee4fe5e17ca76b2dc1ac135e05739228402bc29d5b1ba78e24becc397d68945",
+  "originales/C-BLOG-003-cierre.txt": "65ece0fac66b550a264d1d43c897e684230e03cfb92de8a241da22d4dc4799df",
+  "originales/C-BLOG-003-asistencia-01.txt": "8691a54f1b3708d495c344350f8592f7e2d46327f0fafec99a88703b15798e7d",
+  "evidencia/C-BLOG-003/unit-tests.txt": "feb438d18f39b59df513473700514f58c3d584f53873254c2a14a90c6d8afe52",
+  "evidencia/C-BLOG-003/postgres-tests.txt": "65c4eeff3af49efccfb500ece515469cb065fd21e9738a22c802b65cee47079a",
+  "evidencia/C-BLOG-003/syntax.txt": "16fad90f322292b2ef7cb354bf20de43a51ec5be88aa861b7e6cf97c046cb9ac",
+  "evidencia/C-BLOG-003/limites.json": "62b533e97929840fdef337ef62e2ccc99b158cb2ca67a8b01becae384ee972a9"
+}

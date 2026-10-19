@@ -1,0 +1,14 @@
+{
+  "commit": "7924fc760834ea10b7d02f8548c49a95250f5257",
+  "authorization": "explicit_operator_text_only_cut_received_via_central",
+  "audio": "PRIVATE",
+  "guard_audio": "REMOVED_ONLY_FROM_API_AND_DISPATCH",
+  "real_note_consent": false,
+  "meta_app": "NOT_IDENTIFIED",
+  "production_migration": "NOT_APPLIED",
+  "deployment": "NOT_PERFORMED",
+  "full_next_build": "NOT_VERIFIED",
+  "normative_dependency": "401_NO_REPAIR_VERIFIED",
+  "browser_used": false,
+  "secrets_changed": false
+}
