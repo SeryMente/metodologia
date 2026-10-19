@@ -1,0 +1,28 @@
+{
+  "scope": "C012 delta+current canonical object, not all historical files",
+  "base_document_commit": "53e4b4e45ae56bb8c9a4d444bde2b00acfe30c8a",
+  "sha256": {
+    "OBJETO-CANONICO.md": "838f2ec0e96193146a8f5bb76c8a7d164cb6fa74d31820385e717920a1521109",
+    "originales/C-BLOG-012-evento-1332.json": "8d6e57659f384cd372223fb7454019d23440e5f118cae0c971a59fa21af39ab5",
+    "originales/C-BLOG-012-mensaje-1332.txt": "db4659ddf58d3cd1e3df3ae80dfedc4b34d5e8ec8e689d0ace75b9731b860d5a",
+    "originales/C-BLOG-012-evento-1367.json": "29ec1b8d32ebb488490f7cf63b74f02b7d8df0681f2da1e8fd88ce92a578661b",
+    "originales/C-BLOG-012-mensaje-1367.txt": "10169b5930158cd87fa0656f66b3fa4e9a15ace0b4e0d3472ff4e300e399f9ad",
+    "originales/C-BLOG-012-evento-1392.json": "7dff224afb39f66b225b31f41cb7c1db68ad0c1f66cc68336eab775ce6271554",
+    "originales/C-BLOG-012-mensaje-1392.txt": "55f989b680ddd05d31c878d9087cd52a305a9e1e37745ad038531f9b6aa8c35a",
+    "originales/C-BLOG-012-evento-1413.json": "ae7a6d2dad1a42300adba72f09c821429a6771b213f39c3d5c9ec22fe04e7d4e",
+    "originales/C-BLOG-012-mensaje-1413.txt": "54eb6deef0a89ce1790eaa7b1a047eca717bf02b7d8d0539a12081d7c247d7b6",
+    "originales/C-BLOG-012-evento-1461.json": "bfe6f2208708e73205d7195c34f12fe6454ce7c9b57a9d002b8455f5e9c4b37f",
+    "originales/C-BLOG-012-mensaje-1461.txt": "a19aa805a2e79e46b3c53ecdb4d272d50d19b67bfcd688e9bdb003ba97be5cc5",
+    "originales/C-BLOG-012-mensaje-1419-visible.txt": "6dea24aac0d2950bd9fe9f90fded4e9e2f079742805697a9b055c113ff6dc6d6",
+    "originales/C-BLOG-012-asistencia-01.txt": "9a83831f1cc07f19d39680c4220e2e0e74ef2380bc0b033320769668d6d157e4",
+    "originales/C-BLOG-012-procedencia.md": "dd0e3cfd70b2410f858dd13140eed9d3fd43f35f95e8aae78adb5e5562a61018",
+    "originales/C-BLOG-012-cierre.txt": "4e28b5a1f3d2583c7cae734c5f38b07892049888544e86835e0a0a62d117dcf4",
+    "evidencia/C-BLOG-012/objeto-anterior-v14.md": "e4158d9d6d7fafdca6c24b7020bdda9554d3f1b5942edf1f49119b800b6270b3",
+    "evidencia/C-BLOG-012/procedencia-adjunto.json": "a22afdae545914e691c619c08c837ce1ca7f4c9f49a0730bd70677716e86b0a7",
+    "evidencia/C-BLOG-012/readback-before.txt": "4cd8a017127c583daf62a3689f71f8f7da9c8c385280494615b99d068eb3e175",
+    "evidencia/C-BLOG-012/readback-after.txt": "ca97983b251061ce1ddddddf9928b970532a7d2256fc65bc12af842449ff8c4d",
+    "evidencia/C-BLOG-012/readback-types.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "evidencia/C-BLOG-012/khora-health.json": "3cefc5c45afcb0efd05c1dd6cdca3499e865fd01b52cdc4c61f674dc43f22565",
+    "evidencia/C-BLOG-012/code-readback.json": "2fcbe76d88590e5af68cdc9ed5daaa6cc36d02aba3128722a24a646851964753"
+  }
+}

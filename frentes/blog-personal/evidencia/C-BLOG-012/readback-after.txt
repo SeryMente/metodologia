@@ -1,0 +1,18 @@
+✔ full text readback reaches official Graph endpoint and confirms exact approved message (27.870177ms)
+✔ link readback confirms exact text and approved article URL (0.605637ms)
+✔ HTTP200 with another message does not confirm delivery (0.454189ms)
+✔ HTTP200 with another post ID does not confirm delivery (0.431714ms)
+✔ link to another revision or absent attachment does not confirm delivery (1.665132ms)
+✔ foreign permalink does not become a publication receipt (0.941958ms)
+✔ wrong Page post ID is rejected before any HTTP request (0.147296ms)
+✔ Graph readback failures never create a success receipt (0.986164ms)
+✔ verification is read-only and never retries a send (0.351752ms)
+✔ fixed Graph host/path protections remain despite field expansion braces (1.624474ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 168.81529

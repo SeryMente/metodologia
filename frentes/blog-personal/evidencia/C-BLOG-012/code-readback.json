@@ -1,0 +1,16 @@
+{
+  "base_commit": "cdc74b3fdaf33487435c34462cc016dd2e3092b2",
+  "code_commit": "a7201394f2d1befcb3ce76c61c66f95904373dec",
+  "branch": "fix/blog-meta-readback-c012",
+  "provider_before": "d11e9356da6625d2744798fd6ee3db4ccfe63d61",
+  "provider_after": "84689b937157b4b287b455aa9b40a762be7a32ea",
+  "test_after": "c33bd2841acae86269a9c59aea20457f693df363",
+  "remote_provider_and_test_readback": true,
+  "production_checked": false,
+  "tests": "10/10 isolated actual-class mocked transport, no skips",
+  "typecheck": "TypeScript5.9.3 strict ES2017 exit0",
+  "full_next_build": "NOT_PERFORMED",
+  "meta_real_permissions": "NOT_VERIFIED",
+  "secrets_changed": false,
+  "normative_health": "401 SI_MAIN_FETCH correlation fa997745-edba-4b0e-975f-b8930996614f retryable:false"
+}
