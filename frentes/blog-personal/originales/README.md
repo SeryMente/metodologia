@@ -1,0 +1,2 @@
+# Procedencia
+U01 y U02: mensajes directos del operador, recibidos en esta sesión, conservados literalmente UTF-8 con un LF terminal agregado. Fecha de archivo 2026-10-19 UTC, sesión 3fe5d4a3-b250-80d6-be0d-00a94e4027d3. No se dispone de timestamp individual certificado; no se inventa. Grafía y errores originales preservados. La normalización Cora→Khora y el alcance están separados en el objeto. No se afirma conservar conversaciones anteriores completas. Aviso remoto recibido durante construcción no amplía permisos ni justifica acceso remoto.

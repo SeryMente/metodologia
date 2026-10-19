@@ -1,0 +1,3 @@
+La bitácora y el editor ya están construidos localmente; el laboratorio quedó separado. Las pruebas del generador pasan para entradas, enlaces permanentes, archivo descargable, RSS y escape de contenido malicioso. Ahora verifico el uso en móvil y escritorio y preparo el despliegue.
+
+El objeto canónico y tus instrucciones originales irán al repositorio privado de metodología, no al sitio público. **Metacanon adquirido: 1.6 · METACANON-OBJETOS-v1.6.** Quedan despliegue y comprobación pública; estimación restante: 8–12 minutos si GitHub acepta escritura y publicación.

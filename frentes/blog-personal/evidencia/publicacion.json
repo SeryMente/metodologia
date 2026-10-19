@@ -1,0 +1,43 @@
+{
+  "index": {
+    "url": "https://serymente.github.io/otrogranprograma/blog/",
+    "status": 200,
+    "sha256": "d97f263d1c65be517a4c818452f52814e7305c8a7eb5c0d204eea614cfae9e93"
+  },
+  "escribir/": {
+    "url": "https://serymente.github.io/otrogranprograma/blog/escribir/",
+    "status": 200,
+    "sha256": "ca61718383619e789cc3b87dd656a78153e620047852f5e72fe9aed5c881182b"
+  },
+  "laboratorio/": {
+    "url": "https://serymente.github.io/otrogranprograma/blog/laboratorio/",
+    "status": 200,
+    "sha256": "c2f7b5a4ac9c1420a4130b8b4195c755ce76c9f9d810c1d36bf658ba400df8ff"
+  },
+  "escribir/editor.js": {
+    "url": "https://serymente.github.io/otrogranprograma/blog/escribir/editor.js",
+    "status": 200,
+    "sha256": "b1d114678613f6c5a62ecacfd8a71fba6e2058606e8993370bb0eaa4c5181c14"
+  },
+  "blog.css": {
+    "url": "https://serymente.github.io/otrogranprograma/blog/blog.css",
+    "status": 200,
+    "sha256": "b0b3b9d2a09411789770e02e8ed2b1e4bfda1f98acd8d45d73268d81fe73e087"
+  },
+  "archivo.json": {
+    "url": "https://serymente.github.io/otrogranprograma/blog/archivo.json",
+    "status": 200,
+    "sha256": "c22ec38fdb7362044e086660bf46b176d0e73d1aac60969c0b64e316c9d170a8"
+  },
+  "feed.xml": {
+    "url": "https://serymente.github.io/otrogranprograma/blog/feed.xml",
+    "status": 200,
+    "sha256": "36c03dac94275b821e5c2452548264612fca265eb42aa59d1e781b731187956f"
+  },
+  "deployment": {
+    "id": 39188702206,
+    "commit": "fb02d26a5f39838c6bd692b937d93bb21fd75761",
+    "conclusion": "success",
+    "url": "https://github.com/SeryMente/otrogranprograma/actions/runs/39188702206"
+  }
+}

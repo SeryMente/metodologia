@@ -1,0 +1,15 @@
+**El blog personal ya está publicado y el laboratorio quedó como subpágina.** El despliegue de GitHub Pages terminó correctamente.[^https://github.com/SeryMente/otrogranprograma/actions/runs/39188702206]
+
+- **[Abrir tu blog](https://serymente.github.io/otrogranprograma/blog/)**
+- **[Escribir una entrada](https://serymente.github.io/otrogranprograma/blog/escribir/)**
+- [Laboratorio WordPress conservado](https://serymente.github.io/otrogranprograma/blog/laboratorio/)
+
+Quedó con estilo limpio de lectura, preparado para móvil y escritorio: entradas cronológicas, enlaces permanentes, búsqueda, archivo descargable y suscripción RSS. El editor permite escribir, importar texto, revisar y aprobar antes de continuar a GitHub; allí confirmas la publicación con tu cuenta autorizada.[^https://github.com/SeryMente/otrogranprograma/blob/main/blog/README.md]
+
+**Khora:** el puente inicial funciona por importación de un texto seleccionado o preparación asistida. **No es sincronización automática ni un botón dentro de Khora.** No publiqué ninguna nota privada ni inventé una primera entrada.[^https://github.com/SeryMente/otrogranprograma/blob/main/blog/README.md]
+
+**Canon privado:** [Blog personal · objeto canónico](https://github.com/SeryMente/metodologia/blob/main/frentes/blog-personal/OBJETO-CANONICO.md), con tus originales, decisiones, evidencia y continuidad. **BLOG-PERSONAL-v2 · Metacanon 1.6, METACANON-OBJETOS-v1.6**, fuente central revalidada sin cambios.[^https://github.com/SeryMente/metodologia/blob/main/frentes/blog-personal/OBJETO-CANONICO.md]
+
+**Verificación:** siete recursos públicos respondieron correctamente; las pruebas específicas del blog pasaron. Una comprobación heredada del sitio sigue fallando por un texto antiguo del autor; quedó documentada, no desactivada.[^https://github.com/SeryMente/metodologia/blob/main/frentes/blog-personal/evidencia/publicacion.json][^https://github.com/SeryMente/metodologia/blob/main/frentes/blog-personal/evidencia/incidencias.md]
+
+La infraestructura quedó entregada en este ciclo. **Para la primera publicación falta únicamente elegir y aprobar el texto.**
