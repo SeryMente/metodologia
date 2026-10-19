@@ -1,0 +1,3 @@
+El despliegue corregido ya terminó correctamente y el blog responde públicamente con el contenido nuevo. Estoy comprobando editor, laboratorio y descargas, y cerrando el registro canónico.
+
+No publiqué ninguna entrada personal: falta que elijas y apruebes el primer texto. El puente con Khora queda por selección/importación, no como sincronización automática. También detecté una prueba heredada del sitio que falla por un texto antiguo del autor; comprobé que no la introdujo el blog y la dejaré documentada.
