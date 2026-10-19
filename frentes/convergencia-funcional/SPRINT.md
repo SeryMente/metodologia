@@ -1,11 +1,11 @@
-<!-- OBJECT_VERSION=0.13; METACANON_VERSION=1.6; STATE_SOURCE=SPRINT.md -->
+<!-- OBJECT_VERSION=0.14; METACANON_VERSION=1.6; STATE_SOURCE=SPRINT.md -->
 # Sprint · Convergencia funcional, mercado y apoyos · Khora y Otro Gran Programa
 
 ## 1. Control e identidad
 
 - Naturaleza: objeto documental permanente del sprint, vivo y provisional en su definición; no especificación de lanzamiento ni ratificación de una arquitectura.
-- Versión/sello del objeto: **0.13 · SPRINT-CONVERGENCIA-v0.13**.
-- Ancla: M18 · C-NOTION-DOMINIO-01; se aclara web/correo empresarial sin requisito publicado específico .com. Consulta por prueba previa sigue pendiente; sin compras ni envíos.
+- Versión/sello del objeto: **0.14 · SPRINT-CONVERGENCIA-v0.14**.
+- Ancla: M19 · C-NOTION-PRESENCIA-WEB-01; necesidad de presentación pública identificada, sitio previo consultado sin presentación de negocio verificable en extracción. Reutilización propuesta, no diseño/construcción aprobados. Elegibilidad sigue pendiente.
 - Propietario de custodia: `SeryMente/metodologia`, privado comprobado mediante GitHub en este ciclo. Carpeta: `frentes/convergencia-funcional/`. Estado único: este archivo.
 - Rama documental: `docs/sprint-convergencia-funcional-20261017`, creada desde `main@49ac40e9f6122e2d2fb339362cfa0a78128c8e37`. No fusionar ni afirmar integrado en main por guardar esta rama.
 - Persistencia: el recibo del commit y la lectura de vuelta son la prueba de publicación; la sola presencia de esta frase no la acredita. Si la lectura falla, esta entrega queda NO VERIFICADA.
@@ -99,13 +99,15 @@ Canal: Notion AI, workspace Numb’s Space (según contexto actual de esta sesi�
 
 ## 8. Estado vivo
 
-**Acción actual:** objeto v0.13; método 1.6 revalidado sin delta. Operador declara nunca haber pagado y sí haber recibido una prueba gratuita. No se verifica historial de facturación por acceso a cuenta. El formulario oficial incluye pruebas promocionales previas entre exclusiones; vía estándar detenida antes de declarar elegibilidad. Consulta preparada para startups@makenotion.com, no enviada. Nombre/fecha/alcance de la prueba desconocidos.
+**Acción actual:** objeto v0.14; método 1.6 revalidado sin delta. Operador declara nunca haber pagado y sí haber recibido una prueba gratuita. No se verifica historial de facturación por acceso a cuenta. El formulario oficial incluye pruebas promocionales previas entre exclusiones; vía estándar detenida antes de declarar elegibilidad. Consulta preparada para startups@makenotion.com, no enviada. Nombre/fecha/alcance de la prueba desconocidos.
 
 **Avance observado:** tres tareas de contraste, no funciones elegidas para lanzamiento: recuperación dispersa, redacción fiel y próximo paso respaldado. Fuentes ficticias distinguen negación, tiempo de expresión/ingesta, retractación, autoría, duplicados, datos faltantes e instrucciones incrustadas. Línea base simple y recorridos de mercado de A.3–A.11; no rutas adoptadas. Solucionario separado del material de candidato en una futura corrida; casos de desarrollo no son test ciego. Control por prompt no equivale a aislamiento real. Radar técnico y tesis reciben límites de inferencia. No nuevas prestaciones/precios revalidados por este trabajo, ni resultados o ganador inventados.
 
 **Aclaración de dominio M18:** formulario exige correo laboral (excluye personales como Gmail/Yahoo) y web de empresa; no publica terminación .com obligatoria ni lista de extensiones. No inferir aceptación universal de extensiones ni obligación de compra/propiedad jurídica del dominio. No comprar solo para esta ayuda antes de aclarar exclusión por prueba.
 
-**Siguiente paso:** operador envía consulta preparada y aporta respuesta escrita; conservar nombre/fecha de la prueba si los localiza. No exigir datos posteriores de solicitud estándar ni avanzar a otros programas como si Notion estuviera resuelto. Según respuesta: aclarar datos de prueba o documentar exclusión y alternativa legítima. Sin nuevas cuentas para eludir historial, sin envío por Samantha, sin aceptación de términos ni gasto.
+**Presencia pública M19:** necesidad declarada por operador para candidatura. Sitio existente https://khora-web.vercel.app/ y /sistema consultados: extracción pública muestra Entrar / Un espacio para recibir memoria, no acredita descripción de empresa suficiente. No prueba inexistencia de contenido autenticado. Propuesta: evaluar reutilización y preparar presentación honesta (problema, destinatario/valor, estado real, responsable/contacto) sin elegir diseño ni prometer capacidades. Revisión presencial del operador requerida para copy público/interfaz antes de construcción/publicación. No crear otro sitio o comprar dominio automáticamente.
+
+**Siguiente paso:** evaluar reutilización del sitio con evidencia del repositorio autorizado cuando corresponda y revisar con operador el brief/copy antes de construir; en paralelo, operador envía consulta preparada y aporta respuesta escrita; conservar nombre/fecha de la prueba si los localiza. No exigir datos posteriores de solicitud estándar ni avanzar a otros programas como si Notion estuviera resuelto. Según respuesta: aclarar datos de prueba o documentar exclusión y alternativa legítima. Sin nuevas cuentas para eludir historial, sin envío por Samantha, sin aceptación de términos ni gasto.
 
 **Huecos documentales no bloqueantes de Notion:** Rúbrica Universal y Análisis N1, referencias de los cánones, no accesibles por sus IDs y sin texto recibido. No sustituirlos por versiones antiguas de otros IDs. Los tres cuerpos pegados, antes pendientes de custodia exportada, ahora están guardados literalmente desde el evento 104; la limitación histórica de M14/M15 queda superada solo en ese punto. No hay certificación de frescura de las páginas remotas.
 
@@ -154,6 +156,19 @@ Por M06 y su precisión posterior M10, cerrar todas las fases documentales pendi
 Toda salida de este frente registra: (1) proyecto, rol, versión/sello del objeto y «Metacanon adquirido: versión/sello», revisión y frescura; (2) dónde estamos; (3) delta metodológico y de proyecto; (4) avance y evidencia, no tocado; (5) pendientes/bloqueos; (6) viabilidad y condiciones; (7) pronóstico de próximo hito y cierre con supuestos o no estimable; (8) siguiente acción/agente y mínima intervención material del operador; (9) continuación/prompt hacia el investigador si existe salida que responder; (10) persistencia, ancla y checkpoint. Puede condensarse sin ocultar lo desconocido. No afirmar certificación externa, herramientas o ensayo por una firma.
 
 ## 11. Crónica y fuentes
+
+### C-NOTION-PRESENCIA-WEB-01 · M19 · necesidad de web pública sin duplicación automática
+
+Partida v0.13@94c70746f3412c7cb002ddbca9debf100b069eec; método v1.6, blob 8f9ad1cf0e09e5fcd7014190770a77294ff39af4 sin delta. Privacidad del repositorio comprobada. Mensaje directo en sesión 3fda4187-8241-80d9-8627-00a9a79e07f7, literal en `originales/C-NOTION-PRESENCIA-WEB-01-operador.txt`; salida literal en archivo homónimo -salida.md. Sin comentarios visibles anteriores en el ciclo; fecha no inventada.
+
+Interpretación: Cora se normaliza a Khora por instrucción vigente; operador deduce necesidad de sitio para solicitar Notion. No es autorización de gasto, dominio, despliegue ni aprobación de diseño/copy público. No ampliar lanzamiento por una ayuda.
+
+Evidencia: ayuda oficial https://www.notion.com/help/notion-for-startups, resultado 466, pide public company website/company email y advierte sobre web inactiva/incompleta o sin descripción clara. Dirección heredada se verificó sin autenticarse: https://khora-web.vercel.app/sistema (470) y raíz (475) devuelven título Khora y texto Entrar / Un espacio para recibir memoria. Límite: extracción pública, no auditoría del código ni contenido autenticado; no afirmar inexistencia de otras páginas ni suficiencia/aceptación por Notion. No se inspeccionó el plan de alojamiento ni se aprobó Vercel Hobby comercial.
+
+Dictamen: evaluar reutilización antes de duplicar sitio; brief interno propuesto en respuesta, no copy público aprobado. Contenidos propuestos: definición/problema, destinatario/valor, estado real y responsable/contacto. Criterios: integración antes de construir, presencia verificable, no simulación y candado humano sobre interfaz/marketing; prueba disponible documental, diseño aún sin aprobación. Dependencia de web separada del bloqueo por prueba gratuita; no comprar dominio solo para sortear un filtro independiente.
+
+Resultado: necesidad y límites registrados. No web/código/diseño implementados, ninguna publicación, dominio comprado, cuenta creada o envío de solicitud/correo. Pendiente: evaluar reutilización en repositorio autorizado y revisión de operador antes de construcción, consulta de elegibilidad preparada anteriormente sigue no enviada por Samantha. No hay aceptación ni concesión. Objetivo del frente no cambia; se añade dependencia de preparación. No merge main.
+
 
 ### C-NOTION-DOMINIO-01 · M18 · web y correo empresarial, no terminación .com
 
@@ -463,6 +478,8 @@ A.13 del radar contiene la única versión documental del corpus y solucionario.
 Evidencia de aceptación: lectura de vuelta de las tres páginas sin truncamiento/bloques desconocidos y archivo de repositorio idéntico al preparado, con corpus/consultas/conclusiones íntegros; debe comprobarse después de publicar, no se acredita por escribir esta frase.
 
 ## 12. Reinstanciación
+
+Checkpoint adicional M19: presencia pública de Khora identificada; evaluar reutilización del sitio, sin diseño/construcción ni gasto autorizado. No sustituye consulta de elegibilidad.
 
 Checkpoint vigente M17: consulta de elegibilidad Notion preparada; esperar envío por operador y respuesta. Historial declarado nunca pago + prueba previa. Este checkpoint sustituye la pregunta anterior sobre historial, sin alterar crónica.
 
