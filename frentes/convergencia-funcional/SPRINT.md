@@ -1,11 +1,11 @@
-<!-- OBJECT_VERSION=0.12; METACANON_VERSION=1.6; STATE_SOURCE=SPRINT.md -->
+<!-- OBJECT_VERSION=0.13; METACANON_VERSION=1.6; STATE_SOURCE=SPRINT.md -->
 # Sprint · Convergencia funcional, mercado y apoyos · Khora y Otro Gran Programa
 
 ## 1. Control e identidad
 
 - Naturaleza: objeto documental permanente del sprint, vivo y provisional en su definición; no especificación de lanzamiento ni ratificación de una arquitectura.
-- Versión/sello del objeto: **0.12 · SPRINT-CONVERGENCIA-v0.12**.
-- Ancla: M17 · C-NOTION-ELEGIBILIDAD-01; operador declara prueba gratuita previa y nunca pago. Formulario incluye pruebas entre exclusiones; consulta escrita preparada, no enviada.
+- Versión/sello del objeto: **0.13 · SPRINT-CONVERGENCIA-v0.13**.
+- Ancla: M18 · C-NOTION-DOMINIO-01; se aclara web/correo empresarial sin requisito publicado específico .com. Consulta por prueba previa sigue pendiente; sin compras ni envíos.
 - Propietario de custodia: `SeryMente/metodologia`, privado comprobado mediante GitHub en este ciclo. Carpeta: `frentes/convergencia-funcional/`. Estado único: este archivo.
 - Rama documental: `docs/sprint-convergencia-funcional-20261017`, creada desde `main@49ac40e9f6122e2d2fb339362cfa0a78128c8e37`. No fusionar ni afirmar integrado en main por guardar esta rama.
 - Persistencia: el recibo del commit y la lectura de vuelta son la prueba de publicación; la sola presencia de esta frase no la acredita. Si la lectura falla, esta entrega queda NO VERIFICADA.
@@ -99,9 +99,11 @@ Canal: Notion AI, workspace Numb’s Space (según contexto actual de esta sesi�
 
 ## 8. Estado vivo
 
-**Acción actual:** objeto v0.12; método 1.6 revalidado sin delta. Operador declara nunca haber pagado y sí haber recibido una prueba gratuita. No se verifica historial de facturación por acceso a cuenta. El formulario oficial incluye pruebas promocionales previas entre exclusiones; vía estándar detenida antes de declarar elegibilidad. Consulta preparada para startups@makenotion.com, no enviada. Nombre/fecha/alcance de la prueba desconocidos.
+**Acción actual:** objeto v0.13; método 1.6 revalidado sin delta. Operador declara nunca haber pagado y sí haber recibido una prueba gratuita. No se verifica historial de facturación por acceso a cuenta. El formulario oficial incluye pruebas promocionales previas entre exclusiones; vía estándar detenida antes de declarar elegibilidad. Consulta preparada para startups@makenotion.com, no enviada. Nombre/fecha/alcance de la prueba desconocidos.
 
 **Avance observado:** tres tareas de contraste, no funciones elegidas para lanzamiento: recuperación dispersa, redacción fiel y próximo paso respaldado. Fuentes ficticias distinguen negación, tiempo de expresión/ingesta, retractación, autoría, duplicados, datos faltantes e instrucciones incrustadas. Línea base simple y recorridos de mercado de A.3–A.11; no rutas adoptadas. Solucionario separado del material de candidato en una futura corrida; casos de desarrollo no son test ciego. Control por prompt no equivale a aislamiento real. Radar técnico y tesis reciben límites de inferencia. No nuevas prestaciones/precios revalidados por este trabajo, ni resultados o ganador inventados.
+
+**Aclaración de dominio M18:** formulario exige correo laboral (excluye personales como Gmail/Yahoo) y web de empresa; no publica terminación .com obligatoria ni lista de extensiones. No inferir aceptación universal de extensiones ni obligación de compra/propiedad jurídica del dominio. No comprar solo para esta ayuda antes de aclarar exclusión por prueba.
 
 **Siguiente paso:** operador envía consulta preparada y aporta respuesta escrita; conservar nombre/fecha de la prueba si los localiza. No exigir datos posteriores de solicitud estándar ni avanzar a otros programas como si Notion estuviera resuelto. Según respuesta: aclarar datos de prueba o documentar exclusión y alternativa legítima. Sin nuevas cuentas para eludir historial, sin envío por Samantha, sin aceptación de términos ni gasto.
 
@@ -152,6 +154,15 @@ Por M06 y su precisión posterior M10, cerrar todas las fases documentales pendi
 Toda salida de este frente registra: (1) proyecto, rol, versión/sello del objeto y «Metacanon adquirido: versión/sello», revisión y frescura; (2) dónde estamos; (3) delta metodológico y de proyecto; (4) avance y evidencia, no tocado; (5) pendientes/bloqueos; (6) viabilidad y condiciones; (7) pronóstico de próximo hito y cierre con supuestos o no estimable; (8) siguiente acción/agente y mínima intervención material del operador; (9) continuación/prompt hacia el investigador si existe salida que responder; (10) persistencia, ancla y checkpoint. Puede condensarse sin ocultar lo desconocido. No afirmar certificación externa, herramientas o ensayo por una firma.
 
 ## 11. Crónica y fuentes
+
+### C-NOTION-DOMINIO-01 · M18 · web y correo empresarial, no terminación .com
+
+Partida v0.12@d03c34f99968457ec509ac1b226cc3f3c71c68ba; método 1.6 y blob 8f9ad1cf0e09e5fcd7014190770a77294ff39af4 revalidados sin delta, repositorio privado comprobado. Mensaje directo del operador, sesión 3fda4187-8241-80d9-8627-00a9a79e07f7. Original `originales/C-NOTION-DOMINIO-01-operador.txt`; salida preparada literal `originales/C-NOTION-DOMINIO-01-salida.md`. No comentarios visibles previos a la salida en este ciclo.
+
+Pregunta: si Notion exige dominio propio .com. Fuente oficial https://app.notion.com/startups-application-form, lectura rápida insuficiente (solo Notion); lectura completa/focalizada posterior, tool_result_sequence 428: “What is your work email? Note: We **do not** accept personal emails (e.g. gmail, yahoo, etc.).” y “What is your company website?”. No requisito específico .com ni lista de extensiones en el texto consultado. Se distingue observación documental de inferencia: correo empresarial vinculado a organización no prueba propiedad registral obligatoria ni admisibilidad universal de dominios.
+
+Criterio: honestidad y coste justificado → evitar presentar .com como requisito o comprarlo antes de aclarar exclusión → evidencia oficial → aclaración acotada y conservar checkpoint M17. No se verificó titularidad/web/email actual del operador. No se compró dominio, no cuenta nueva, no formulario/correo enviado. El objetivo no cambia; expediente queda en consulta de elegibilidad por prueba previa. Estado y continuación conservados. No merge main. Fecha no inventada.
+
 
 ### C-NOTION-ELEGIBILIDAD-01 · M17 · prueba previa y consulta antes de solicitar
 
