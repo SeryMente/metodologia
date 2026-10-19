@@ -1,0 +1,59 @@
+{
+  "cycle": "C-BLOG-005",
+  "base_document_commit": "e4d332f9429756cdc881c7618ceb5721e3e359e9",
+  "code_commit": "83519ec2dabebbf2723f7fa2042e2545c36a9902",
+  "files": {
+    "frentes/blog-personal/OBJETO-CANONICO.md": {
+      "git_blob": "5380ced735d68a62658f08953457e6d0126b3485",
+      "sha256": "7d66858204df1843649b87ed148935de4c6988173ec54344e323c86eff9661f2"
+    },
+    "frentes/blog-personal/originales/C-BLOG-005-operador-documentacion.txt": {
+      "git_blob": "ba5f08729c503b7b8b9baac07c6e8e21d8aebc9f",
+      "sha256": "fbdaea3c6f9dde6afcad390ac4ddc3fd16ace054e0019db2b26fdf4779b4e655"
+    },
+    "frentes/blog-personal/originales/C-BLOG-005-central-extractos-literales.txt": {
+      "git_blob": "370108f5f95e27749d3ec85ba3cd455f76aa000e",
+      "sha256": "8a4d66b37d74fddb485a97be1b2792190a1385ee4c09107188b5336696962f87"
+    },
+    "frentes/blog-personal/originales/C-BLOG-005-salidas-visibles.txt": {
+      "git_blob": "636c1426eb71a8fce423c8b8bb71b8419ee6bfc4",
+      "sha256": "c95e6a4b89e5b18997ce42880d31561ecf9ef7939faf968b46b2d8075dd6696c"
+    },
+    "frentes/blog-personal/evidencia/C-BLOG-005/regression.tap": {
+      "git_blob": "f2b71c06a57ef8d8aafdac031128276f969e166a",
+      "sha256": "959256cda6b489d28032d9043bc64e87e56b753b4bbf34c407f0de39d72cfaac"
+    },
+    "frentes/blog-personal/evidencia/C-BLOG-005/causal-before.txt": {
+      "git_blob": "a7bb50e2550af718a1007e016287711f0ee0a156",
+      "sha256": "11148eed874a911112f0385d9e0998cdf14349e9237743a3b7528eafd8816731"
+    },
+    "frentes/blog-personal/evidencia/C-BLOG-005/causal-after.tap": {
+      "git_blob": "30f90d7da7cf9df17251dec0ca9ced262c1c2bd5",
+      "sha256": "e6a873c146476458a6348f89dd858e0826feba738a18d7c7622148238915abcf"
+    },
+    "frentes/blog-personal/evidencia/C-BLOG-005/typecheck.txt": {
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "frentes/blog-personal/evidencia/C-BLOG-005/incidencias-locales.md": {
+      "git_blob": "ecc6e841f42dc5595e65719bdb34a5dc547f2a78",
+      "sha256": "b7f8a45472d576d184f91282f826cef93ede4c9ad46c8cde718f169d3e0275d5"
+    },
+    "frentes/blog-personal/evidencia/C-BLOG-005/generador-publico-verificado.py": {
+      "git_blob": "bbaaf1f0d7f0cc7d0f13fbdb0e027c7191aa3e05",
+      "sha256": "45cf90ac9eb2dce735e5fcbb830d0ae88a037e1ad3168eae9d653acc87249702"
+    },
+    "frentes/blog-personal/evidencia/C-BLOG-005/resultado.json": {
+      "git_blob": "ac6084faea1e8ee5159d847c94aaf1e15533632e",
+      "sha256": "06cc7616ceb39d58baaf13b9c1785480c2b2f070b39a6bd0e17391c0fe60e4e9"
+    },
+    "frentes/blog-personal/originales/C-BLOG-005-cierre.txt": {
+      "git_blob": "ec2d93ec313a5f5f567563188b84537c05bd5ed3",
+      "sha256": "b043bac7a817f8da0f63c110be0aa58abed0f885e63f235d961b5e37d81162ae"
+    },
+    "frentes/blog-personal/originales/C-BLOG-005-procedencia.txt": {
+      "git_blob": "ed7f384670b7778c6a45c5a62022826beaae444e",
+      "sha256": "15a691bed4ae2ae0ac4db1ce0c3d445d8ab15cbd48b08646a3c666cc7c09b9c6"
+    }
+  }
+}

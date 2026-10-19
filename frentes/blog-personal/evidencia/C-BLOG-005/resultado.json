@@ -1,0 +1,65 @@
+{
+  "cycle": "C-BLOG-005",
+  "source_commit": "5c67ce832fa43ea37e986f01461537ddd193557b",
+  "code_commit": "83519ec2dabebbf2723f7fa2042e2545c36a9902",
+  "branch": "fix/blog-metadata-coverage-20261019",
+  "changed_files": {
+    "khora-web/lib/server/blog/metadata.ts": "63025fe7ea8ca7cba004d2d3f71921a46e54f4d3",
+    "khora-web/tests/unit/blog-metadata-hardening.test.ts": "29194d8b258c1e25d62566a4ee18245f82fec688",
+    "khora-web/contracts/blog-editorial-v1.md": "26c1f2a089af29ba3e9bf7a707cae8727d4a90b2"
+  },
+  "readback": "all3expectedGitBlobs matched GitHub reads this turn",
+  "tests_current": {
+    "new": 23,
+    "editorial_regression": 29,
+    "preparation_with_actual_local_python_generator": 13,
+    "total": 65,
+    "pass": 65,
+    "fail": 0,
+    "skipped": 0,
+    "providers": "synthetic transports only",
+    "before_fix_causal": {
+      "pass": 0,
+      "fail": 4,
+      "expected_failure": true
+    }
+  },
+  "strict_types": {
+    "typescript": "5.9.3",
+    "types_node": "24",
+    "exit": 0,
+    "scope": "metadata/domain/providers/delivery/transcript-preparation; no Next fullbuild"
+  },
+  "production": {
+    "merge": false,
+    "migration": false,
+    "deploy": false,
+    "publication": false,
+    "provider_or_auth_verified": false
+  },
+  "method_blob": "8f9ad1cf0e09e5fcd7014190770a77294ff39af4",
+  "privacy_checked": true,
+  "reference_meta_official": [
+    "https://developers.facebook.com/documentation/pages-api/getting-started",
+    "https://developers.facebook.com/documentation/pages-api/manage-pages"
+  ],
+  "limits": "UTF16 not bytes/tokens; max200000source,60000window,512overlap,4windows,25s shared budget,100global unique proposals; coverage is requested text, not semantic completeness",
+  "actual_public_generator": {
+    "repo": "SeryMente/otrogranprograma",
+    "commit": "fb02d26a5f39838c6bd692b937d93bb21fd75761",
+    "path": "scripts/build-personal-blog.py",
+    "blob": "bbaaf1f0d7f0cc7d0f13fbdb0e027c7191aa3e05",
+    "sha256": "45cf90ac9eb2dce735e5fcbb830d0ae88a037e1ad3168eae9d653acc87249702",
+    "source_readback": "MCP and localbytes match"
+  },
+  "central_report_only": {
+    "integration_commit": "bdc0255df9c9573575b25082706197a55bef7211",
+    "total_tests": 76,
+    "pass": 75,
+    "skip": 1,
+    "browser_assertions": 15,
+    "preview": "dpl_3i1uggfnr2cGt89iRMCQvXJq2qWA",
+    "preview_state": "INITIALIZING",
+    "not_own_verification": true
+  }
+}
