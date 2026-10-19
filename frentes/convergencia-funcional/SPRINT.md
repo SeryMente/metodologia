@@ -1,11 +1,11 @@
-<!-- OBJECT_VERSION=0.14; METACANON_VERSION=1.6; STATE_SOURCE=SPRINT.md -->
+<!-- OBJECT_VERSION=0.15; METACANON_VERSION=1.6; STATE_SOURCE=SPRINT.md -->
 # Sprint · Convergencia funcional, mercado y apoyos · Khora y Otro Gran Programa
 
 ## 1. Control e identidad
 
 - Naturaleza: objeto documental permanente del sprint, vivo y provisional en su definición; no especificación de lanzamiento ni ratificación de una arquitectura.
-- Versión/sello del objeto: **0.14 · SPRINT-CONVERGENCIA-v0.14**.
-- Ancla: M19 · C-NOTION-PRESENCIA-WEB-01; necesidad de presentación pública identificada, sitio previo consultado sin presentación de negocio verificable en extracción. Reutilización propuesta, no diseño/construcción aprobados. Elegibilidad sigue pendiente.
+- Versión/sello del objeto: **0.15 · SPRINT-CONVERGENCIA-v0.15**.
+- Ancla: M21 · C-DOMINIO-SIN-DESEMBOLSO-01; opciones gratuitas/condicionadas investigadas, primera comprobación dominio existente; M20 reparado con originales disponibles. Sin alta, compra o solicitud.
 - Propietario de custodia: `SeryMente/metodologia`, privado comprobado mediante GitHub en este ciclo. Carpeta: `frentes/convergencia-funcional/`. Estado único: este archivo.
 - Rama documental: `docs/sprint-convergencia-funcional-20261017`, creada desde `main@49ac40e9f6122e2d2fb339362cfa0a78128c8e37`. No fusionar ni afirmar integrado en main por guardar esta rama.
 - Persistencia: el recibo del commit y la lectura de vuelta son la prueba de publicación; la sola presencia de esta frase no la acredita. Si la lectura falla, esta entrega queda NO VERIFICADA.
@@ -99,7 +99,7 @@ Canal: Notion AI, workspace Numb’s Space (según contexto actual de esta sesi�
 
 ## 8. Estado vivo
 
-**Acción actual:** objeto v0.14; método 1.6 revalidado sin delta. Operador declara nunca haber pagado y sí haber recibido una prueba gratuita. No se verifica historial de facturación por acceso a cuenta. El formulario oficial incluye pruebas promocionales previas entre exclusiones; vía estándar detenida antes de declarar elegibilidad. Consulta preparada para startups@makenotion.com, no enviada. Nombre/fecha/alcance de la prueba desconocidos.
+**Acción actual:** objeto v0.15; método 1.6 revalidado sin delta. Operador declara nunca haber pagado y sí haber recibido una prueba gratuita. No se verifica historial de facturación por acceso a cuenta. El formulario oficial incluye pruebas promocionales previas entre exclusiones; vía estándar detenida antes de declarar elegibilidad. Consulta preparada para startups@makenotion.com, no enviada. Nombre/fecha/alcance de la prueba desconocidos.
 
 **Avance observado:** tres tareas de contraste, no funciones elegidas para lanzamiento: recuperación dispersa, redacción fiel y próximo paso respaldado. Fuentes ficticias distinguen negación, tiempo de expresión/ingesta, retractación, autoría, duplicados, datos faltantes e instrucciones incrustadas. Línea base simple y recorridos de mercado de A.3–A.11; no rutas adoptadas. Solucionario separado del material de candidato en una futura corrida; casos de desarrollo no son test ciego. Control por prompt no equivale a aislamiento real. Radar técnico y tesis reciben límites de inferencia. No nuevas prestaciones/precios revalidados por este trabajo, ni resultados o ganador inventados.
 
@@ -107,7 +107,9 @@ Canal: Notion AI, workspace Numb’s Space (según contexto actual de esta sesi�
 
 **Presencia pública M19:** necesidad declarada por operador para candidatura. Sitio existente https://khora-web.vercel.app/ y /sistema consultados: extracción pública muestra Entrar / Un espacio para recibir memoria, no acredita descripción de empresa suficiente. No prueba inexistencia de contenido autenticado. Propuesta: evaluar reutilización y preparar presentación honesta (problema, destinatario/valor, estado real, responsable/contacto) sin elegir diseño ni prometer capacidades. Revisión presencial del operador requerida para copy público/interfaz antes de construcción/publicación. No crear otro sitio o comprar dominio automáticamente.
 
-**Siguiente paso:** evaluar reutilización del sitio con evidencia del repositorio autorizado cuando corresponda y revisar con operador el brief/copy antes de construir; en paralelo, operador envía consulta preparada y aporta respuesta escrita; conservar nombre/fecha de la prueba si los localiza. No exigir datos posteriores de solicitud estándar ni avanzar a otros programas como si Notion estuviera resuelto. Según respuesta: aclarar datos de prueba o documentar exclusión y alternativa legítima. Sin nuevas cuentas para eludir historial, sin envío por Samantha, sin aceptación de términos ni gasto.
+**Dominio sin desembolso M21:** preguntar por dominio ya existente y autorizado de organización; después elegibilidad educativa, no inferida. Beneficio estudiantil .me un año publicado, EU.org subdominio gratuito sin adecuación comercial/aceptación Notion verificadas. No dominio .com gratuito indefinido confirmado. Correo y registro separados; redirección gratuita no equivale a buzón completo.
+
+**Siguiente paso:** comprobar si operador ya dispone de dominio utilizable y evaluar reutilización del sitio con evidencia del repositorio autorizado cuando corresponda y revisar con operador el brief/copy antes de construir; en paralelo, operador envía consulta preparada y aporta respuesta escrita; conservar nombre/fecha de la prueba si los localiza. No exigir datos posteriores de solicitud estándar ni avanzar a otros programas como si Notion estuviera resuelto. Según respuesta: aclarar datos de prueba o documentar exclusión y alternativa legítima. Sin nuevas cuentas para eludir historial, sin envío por Samantha, sin aceptación de términos ni gasto.
 
 **Huecos documentales no bloqueantes de Notion:** Rúbrica Universal y Análisis N1, referencias de los cánones, no accesibles por sus IDs y sin texto recibido. No sustituirlos por versiones antiguas de otros IDs. Los tres cuerpos pegados, antes pendientes de custodia exportada, ahora están guardados literalmente desde el evento 104; la limitación histórica de M14/M15 queda superada solo en ese punto. No hay certificación de frescura de las páginas remotas.
 
@@ -156,6 +158,17 @@ Por M06 y su precisión posterior M10, cerrar todas las fases documentales pendi
 Toda salida de este frente registra: (1) proyecto, rol, versión/sello del objeto y «Metacanon adquirido: versión/sello», revisión y frescura; (2) dónde estamos; (3) delta metodológico y de proyecto; (4) avance y evidencia, no tocado; (5) pendientes/bloqueos; (6) viabilidad y condiciones; (7) pronóstico de próximo hito y cierre con supuestos o no estimable; (8) siguiente acción/agente y mínima intervención material del operador; (9) continuación/prompt hacia el investigador si existe salida que responder; (10) persistencia, ancla y checkpoint. Puede condensarse sin ocultar lo desconocido. No afirmar certificación externa, herramientas o ensayo por una firma.
 
 ## 11. Crónica y fuentes
+
+### C-DOMINIO-SIN-DESEMBOLSO-01 · M21 · opciones y costes que no deben confundirse
+
+Partida v0.14@70beb1a0af8976f941f59f224370d9b0546cbef9. Método 1.6, blob 8f9ad1cf0e09e5fcd7014190770a77294ff39af4 sin delta; privacidad GitHub comprobada. Fuente sesión 3fda4187-8241-80d9-8627-00a9a79e07f7. Mensaje actual literal y salida en `originales/C-DOMINIO-SIN-DESEMBOLSO-01-{operador.txt,salida.md}`. Fecha no inventada.
+
+Corrección de hueco M20: intercambio inmediatamente previo sobre dominio .com no se guardó entonces. Se conserva ahora desde los mensajes íntegros visibles, no desde resumen, en `originales/C-DOMINIO-SIN-DESEMBOLSO-01-reparacion-M20.txt`; envoltorios ROL separan usuario/asistente y se añade LF final. No atribuir persistencia retroactiva. La afirmación previa dominio propio se acota: no hace falta comprar uno nuevo si existe dominio organizacional utilizable legítimamente; no se ha verificado titularidad actual. No hay lista de extensiones aceptadas por Notion y ejemplos .mx/.ai no acreditan aceptación individual.
+
+Investigación externa: necesidad ya contextualizada en el frente; búsqueda pública dominios gratuitos y fuentes primarias. EU.org https://nic.eu.org/ resultado 525: free subdomain registration, foco usuarios/organizaciones no lucrativas; no se revisó aceptación comercial específica ni Notion. GitHub https://education.github.com/pack resultado 527: registro .me un año Namecheap, sujeto a elegibilidad estudiantil desconocida. Cloudflare https://developers.cloudflare.com/email-routing/ resultado 526: reenvío entrada Free/Paid, envío arbitrario requiere Workers Paid; no atribuir buzón completo/dominio gratuito ni aconsejar despliegue. GoDaddy https://www.godaddy.com/domains/free-domain resultado búsqueda 510 anuncia un año y renovación regular; resultado secundario regional asocia compra de hosting. No afirmar existencia de un .com gratuito indefinido o elegibilidad del operador.
+
+Criterio coste/verdad: dominio, correo y hosting no son un mismo producto; primer año/promoción/servicio condicionado no es gratuidad perpetua. Reutilización antes de compra. Resultado: opciones documentadas, no cuentas abiertas ni solicitud/registro/compra/correo efectuados. Siguiente checkpoint: dominio ya disponible de organización, si no, elegibilidad educativa; sin dato, no elegir proveedor. Consulta Notion por prueba previa sigue pendiente y no se elude. Ningún gasto, código, interfaz, publicación ni merge main.
+
 
 ### C-NOTION-PRESENCIA-WEB-01 · M19 · necesidad de web pública sin duplicación automática
 
@@ -478,6 +491,8 @@ A.13 del radar contiene la única versión documental del corpus y solucionario.
 Evidencia de aceptación: lectura de vuelta de las tres páginas sin truncamiento/bloques desconocidos y archivo de repositorio idéntico al preparado, con corpus/consultas/conclusiones íntegros; debe comprobarse después de publicar, no se acredita por escribir esta frase.
 
 ## 12. Reinstanciación
+
+Checkpoint M21: preguntar si ya existe dominio legítimamente utilizable; no asumir estudiante. No registro/compra ni aceptación por Notion acreditados.
 
 Checkpoint adicional M19: presencia pública de Khora identificada; evaluar reutilización del sitio, sin diseño/construcción ni gasto autorizado. No sustituye consulta de elegibilidad.
 

@@ -1,0 +1,12 @@
+ROL: usuario
+Si pide un correo empresarial, vamos a tener que tener un dominio punto com, ¿verdad?
+
+ROL: asistente
+**Necesitaremos un dominio propio para tener correo empresarial, pero no tiene que terminar en `.com`.** Podría ser `.com`, `.mx`, `.ai` u otra extensión; Notion no publica una exigencia específica de `.com`. Sí excluye correos personales como Gmail o Yahoo.[^https://app.notion.com/startups-application-form]
+
+Son tres piezas distintas:
+- **Dominio:** el nombre que registramos.
+- **Correo empresarial:** una dirección bajo ese dominio, mediante un servicio de correo.
+- **Sitio web:** puede usar ese mismo dominio.
+
+**Comprar el dominio no incluye necesariamente correo ni alojamiento.** Mi recomendación sería preferir `.com` si el nombre adecuado está disponible y el precio conviene, pero como elección nuestra, **no como requisito de Notion**.
