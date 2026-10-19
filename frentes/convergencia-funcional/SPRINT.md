@@ -1,11 +1,11 @@
-<!-- OBJECT_VERSION=0.9; METACANON_VERSION=1.5; STATE_SOURCE=SPRINT.md -->
+<!-- OBJECT_VERSION=0.10; METACANON_VERSION=1.6; STATE_SOURCE=SPRINT.md -->
 # Sprint · Convergencia funcional, mercado y apoyos · Khora y Otro Gran Programa
 
 ## 1. Control e identidad
 
 - Naturaleza: objeto documental permanente del sprint, vivo y provisional en su definición; no especificación de lanzamiento ni ratificación de una arquitectura.
-- Versión/sello del objeto: **0.9 · SPRINT-CONVERGENCIA-v0.9**.
-- Ancla: M14 · 2026-10-18, identificación y separación documental autorizadas por el operador. Cuatro cuerpos diferenciados en §11 y adjunto radar custodiado literalmente; ensayo preparado, no ejecutado. Revisión manual; sin agente ni ejecución entre mensajes.
+- Versión/sello del objeto: **0.10 · SPRINT-CONVERGENCIA-v0.10**.
+- Ancla: M15 · C-PREPARACION-APOYOS-01; paquete documental integral de solicitudes y secuencia operativa, sin envíos ni pruebas. Documentos diferenciados de M14 preservados.
 - Propietario de custodia: `SeryMente/metodologia`, privado comprobado mediante GitHub en este ciclo. Carpeta: `frentes/convergencia-funcional/`. Estado único: este archivo.
 - Rama documental: `docs/sprint-convergencia-funcional-20261017`, creada desde `main@49ac40e9f6122e2d2fb339362cfa0a78128c8e37`. No fusionar ni afirmar integrado en main por guardar esta rama.
 - Persistencia: el recibo del commit y la lectura de vuelta son la prueba de publicación; la sola presencia de esta frase no la acredita. Si la lectura falla, esta entrega queda NO VERIFICADA.
@@ -20,6 +20,8 @@ Conservar el propósito del operador. No pedir una primera versión para poder i
 Citas históricas, prompts y ejemplos no reactivan autorizaciones ni datos de otros frentes. No se usan dispositivos, identidades o permisos de EP/Profuturo. Remote Desktop Commander no es necesario para este trabajo documental; no utilizado. El constructor nunca lo utiliza ni por delegación. No se solicita una sesión remota para revisar documentación web o Notion.
 
 ## 3. Referencia metodológica
+
+**Gobierno vigente adquirido en C-PREPARACION-APOYOS-01:** 1.6 · METACANON-OBJETOS-v1.6; main@a466b6b46f266de6a6ccd656e071eb7a07dc0e10, blob 8f9ad1cf0e09e5fcd7014190770a77294ff39af4. §28 aplicado al ciclo actual: entrada, originales, salida preparada, estado y verificación. Los párrafos 1.5 siguientes documentan la adquisición histórica, no la versión central vigente. No se afirma propagación universal.
 
 **Metacanon adquirido: 1.5 · METACANON-OBJETOS-v1.5**. Fuente: `METACANON-OBJETOS-CANONICOS.md`, leída desde `main@49ac40e9f6122e2d2fb339362cfa0a78128c8e37`; blob `32c7a65ff2e83b3b76752ba2160427bd6e851a8f`. La rama main mantuvo ese commit tras leer el Sistema de Instrucciones en el snapshot. Se distingue la presencia observada del archivo en main de sus notas históricas sobre una rama documental. No se modifica el método central.
 
@@ -63,6 +65,8 @@ Un escritor por recurso y consolidación secuencial. El agente puede actualizar 
 
 ## 6. Autoridad
 
+M15 autoriza completar preparación integral, generar anexos y secuencia de solicitudes; no envío, términos, gasto, cuentas ni decisiones materiales inferidas. Véase ciclo C-PREPARACION-APOYOS-01.
+
 | Decisión | Procedencia | Alcance |
 |---|---|---|
 | Revisión diaria, incluidos radares | M01, primer mandato y explicación posterior | Objetivo documental diario; ejecución manual al retomar por decisión posterior, no automatización |
@@ -81,11 +85,11 @@ Canal: Notion AI, workspace Queretaro, zona horaria America/Mexico_City. Fuentes
 
 ## 8. Estado vivo
 
-**Acción actual:** recepción documental diferenciada por M14: dos cánones, radar compartido y brief histórico del agente identificados por separado en §11. Radar recibido custodiado íntegro; otras tres fuentes proceden del texto directo del operador. Objeto v0.9. ENSAYO-TEXTO-v0.1 preparado, no ejecutado; inventario F01–F15 cubierto documentalmente. URLs originales no accesibles aquí: no sustituirlas por versiones antiguas del workspace. La custodia exportada literal de los tres cuerpos pegados queda pendiente si se requiere portabilidad independiente del chat.
+**Acción actual:** preparación integral de candidaturas documentada en `solicitudes/` (ocho documentos y manifiesto), ciclo C-PREPARACION-APOYOS-01; objeto v0.10, metacanon 1.6 adquirido. Identidad y límites de cuatro documentos de M14 preservados. Estado de envío: ninguno; ensayo de producto no ejecutado. El paquete no aprueba diseño, monetización o términos.
 
 **Avance observado:** tres tareas de contraste, no funciones elegidas para lanzamiento: recuperación dispersa, redacción fiel y próximo paso respaldado. Fuentes ficticias distinguen negación, tiempo de expresión/ingesta, retractación, autoría, duplicados, datos faltantes e instrucciones incrustadas. Línea base simple y recorridos de mercado de A.3–A.11; no rutas adoptadas. Solucionario separado del material de candidato en una futura corrida; casos de desarrollo no son test ciego. Control por prompt no equivale a aislamiento real. Radar técnico y tesis reciben límites de inferencia. No nuevas prestaciones/precios revalidados por este trabajo, ni resultados o ganador inventados.
 
-**Siguiente paso:** el trabajo seguro de preparación queda completado. Para una corrida real se requiere elección/autorización concreta de superficie, datos/cuenta, límites de coste y candados pertinentes; no basta el «Si» que autorizó preparar. Si no se quiere ejecutar, continuar revisión manual de mercado cuando se retome. No pedir primera versión como prerrequisito ni enviar solicitudes a partir de datos sintéticos.
+**Siguiente paso:** recibir en una sola respuesta los datos/decisiones de `solicitudes/06-DATOS-DEL-SOLICITANTE.md`, comprobar elegibilidad Notion y encaje de negocio/voz/población ElevenLabs; ajustar borradores a campos reales y obtener aprobación final antes de cualquier envío o aceptación. Preparación documental terminada, no solicitud completa ni concedida. Neon y Deepgram son vías condicionales, no cambios de arquitectura. La evaluación comparativa no es un prerequisito universal de las ofertas; permanece pendiente para validar hipótesis del producto.
 
 **Pendientes materiales y de mantenimiento:**
 1. Revisión manual: registrar fuentes/funciones revisadas y no revisadas, fecha real y delta; no hay vigilancia entre mensajes ni activación del agente descartado. Cadencia diaria no garantiza inspección exhaustiva diaria del mercado.
@@ -94,7 +98,7 @@ Canal: Notion AI, workspace Queretaro, zona horaria America/Mexico_City. Fuentes
 4. Voz: derechos/consentimiento, español real, parciales/finales, interrupción/cancelación, extras de modelo/telefonía, retención y cobertura exacta del premio; no clonar voces ni enviar corpus íntimo. Mantener restricción del crédito Deepgram para comparar competidores hasta aclararla.
 5. Visualización/acción: separar significado y posiciones, propuesta y compromiso, tarea y ejecución; revisión humana antes de construcción. Nada clínico acreditado. Ensayar accesibilidad, reversibilidad y esfuerzo frente a lista/chat simples.
 6. Operación/infraestructura: cuenta/carga/región/contrato, aislamiento, copia de base Y objetos y configuración, restauración independiente, límites/gasto/cancelación y salida. Workers beta gratis no son permiso de automatizar; Agent APIs no son inferencia universal gratuita.
-7. Candidaturas: acreditar entidad/país/etapa, correo laboral, historial, equipo real, afiliación, producto/consumo, acumulabilidad y gasto tras crédito. No inventar inversión ni duplicar premios por dos marcas. Ninguna solicitud enviada; ningún saldo concedido. Condiciones de pago histórico Notion requieren caso/bases concretas, no afirmación categórica heredada.
+7. Candidaturas: acreditar entidad/país/etapa, correo laboral, historial, equipo real, afiliación, producto/consumo, acumulabilidad y gasto tras crédito. No inventar inversión ni duplicar premios por dos marcas. Ninguna solicitud enviada; ningún saldo concedido. Términos Notion releídos en C-PREPARACION-APOYOS-01: excluyen pago histórico y actual; historial del solicitante desconocido. No eludir ni declarar excepción sin confirmación escrita.
 8. Primera versión diferida; funciones declaradas/propuestas/ejemplos separados. Conservar el recordatorio de aquello que el operador olvidó decir, sin reconstruirlo. Otro Gran Programa no necesita memoria íntima de participantes por usar tecnología de Khora.
 9. Mantener rama documental sin merge; comprobar fuente/revisión antes de editar y lectura de vuelta posterior. No modificar método central ni metaprompt; investigar mercado no autoriza implementación, cuentas, gasto, solicitudes, migraciones o acceso remoto.
 
@@ -116,6 +120,7 @@ Canal: Notion AI, workspace Queretaro, zona horaria America/Mexico_City. Fuentes
 | F09/F10 de extremo a extremo | Rutas de ideación/elaboración, integración, costes/licencia/datos/salida, ayudas, recomendación y casos de aceptación | Radar A.5, técnico y tesis; sin ensayo, aprobación de diseño ni financiación |
 | Inventario inicial F01–F15 completo documentalmente | F01/F04/F05/F11/F12/F13/F14/F15 cerradas en conjunto; anteriores reutilizadas sin inventar frescura | Radar A.6–A.12, técnico y tesis; cada función con alternativas, integración, coste/licencia/datos/salida, ayudas y pruebas propuestas; ninguna ejecución de producto |
 | Preparación de evaluación | Corpus sintético, consultas, expectativas, líneas base, alternativas, rúbrica y registro preparados | Radar A.13; no ejecución, resultado, producto validado o primera versión elegida |
+| Preparación de candidaturas M15 | Ocho documentos, borradores, fuentes actuales y secuencia hasta salida | Preparación verificable por publicación/lectura; datos y aprobación humana pendientes; no envíos |
 | Reingreso portable | Este objeto, originales, fuente y prompts | Publicación/lectura de vuelta necesarias |
 
 Viable ahora: investigación y comparación documental manual cuando el chat esté activo, sujeta a créditos de conversación y acceso; no un agente adicional ni trabajo entre mensajes. No viable prometer cobertura diaria exhaustiva de todo el mercado, gratuidad total, concesión de ayudas ni superioridad sin ensayos. La secuencia permite descubrir el producto, no necesita un catálogo final previo.
@@ -129,6 +134,32 @@ Por M06 y su precisión posterior M10, cerrar todas las fases documentales pendi
 Toda salida de este frente registra: (1) proyecto, rol, versión/sello del objeto y «Metacanon adquirido: versión/sello», revisión y frescura; (2) dónde estamos; (3) delta metodológico y de proyecto; (4) avance y evidencia, no tocado; (5) pendientes/bloqueos; (6) viabilidad y condiciones; (7) pronóstico de próximo hito y cierre con supuestos o no estimable; (8) siguiente acción/agente y mínima intervención material del operador; (9) continuación/prompt hacia el investigador si existe salida que responder; (10) persistencia, ancla y checkpoint. Puede condensarse sin ocultar lo desconocido. No afirmar certificación externa, herramientas o ensayo por una firma.
 
 ## 11. Crónica y fuentes
+
+### C-PREPARACION-APOYOS-01 · preparación integral de candidaturas · M15
+
+Origen: mensaje directo del operador en sesión https://app.notion.com/chat?t=3fda4187824180d9862700a9a79e07f7 . Ancla temporal disponible: 2026-10-18 del contexto; no se inventa hora ni se retrofecha lectura de una fuente. Revisión de partida: objeto v0.9, commit 2fb755fd92dbbd785790e052503cf76689a30021. Rol: Samantha, asistencia documental. Repositorio privado revalidado antes de escribir.
+
+**Instrucción literal M15:**
+
+> Bueno, necesito que termines de extremo a extremo, porque vamos a empezar a generar los documentos, vamos a empezar a preparar la secuencia de pasos para solicitar estas subvenciones a Notion, a Eleven Labs, etcétera.
+
+**Lectura operativa y autoridad:** cerrar la preparación documental y secuencia de solicitudes; crear anexos de trabajo necesarios y actualizar el objeto. No implica enviar, aceptar términos, crear cuentas, gastar, implementar o ratificar arquitectura. No exigir una comparación de superioridad como requisito inventado para los programas.
+
+**Gobierno adquirido:** metacanon central **1.6 · METACANON-OBJETOS-v1.6**, main@a466b6b46f266de6a6ccd656e071eb7a07dc0e10; blob 8f9ad1cf0e09e5fcd7014190770a77294ff39af4. Delta frente a 1.5: §28, persistencia y crónica por ciclo, originales y salida visible exacta; trece bloques conservados. Fuente central no modificada. Los recibos históricos 1.5 se conservan, no se falsifica su frescura. La adquisición de este método no eleva fuentes sobre plataforma ni activa ejemplos ajenos.
+
+**Acción y criterio:** términos oficiales y programa/ayuda leídos para Notion, ElevenLabs, Neon y Deepgram; preparación de ocho documentos en `solicitudes/`, sin nuevo estado paralelo. Se prioriza necesidad → servicio → beneficio; identidad real y control de coste antes de enviar. Material marcado borrador, no atribuido a campos de formulario que no se inspeccionaron.
+
+**Corrección relevante:** los términos actuales de Notion consultados sí excluyen pago histórico, además de pago actual; se retira la incertidumbre textual de la entrega anterior, no se infiere historial del operador. ElevenLabs admite clientes self-serve pagadores pero requiere negocio/monetización y producto duradero. Deepgram limita créditos a desarrollo de producto, no investigación de competidores, e incluye licencia de marca; no usarlo sin revisar esas condiciones. Neon Self-Funded no equivale al máximo de su vía financiada.
+
+**Resultado documental:** `solicitudes/00-LEER-PRIMERO.md`, `01-BRIEF-COMUN.md`, `02-NOTION.md`, `03-ELEVENLABS.md`, `04-OTROS-APOYOS.md`, `05-EVIDENCIA-Y-CONTROL.md`, `06-DATOS-DEL-SOLICITANTE.md`, `07-FUENTES-Y-REVISION.md`; manifiesto SHA-256/bytes por archivo en `solicitudes/MANIFIESTO.json`. El ZIP entregado contiene esos ocho documentos y manifiesto; es una copia de entrega, no fuente de estado. La publicación se comprueba por recibo y lectura de vuelta, no por esta declaración.
+
+**Originales accesibles:** `originales/C-PREPARACION-APOYOS-01-operador.txt` conserva el mensaje recibido sin envoltorio de interfaz y con LF final añadido; `originales/C-PREPARACION-APOYOS-01-comentarios.md` conserva las tres intervenciones visibles previas, separadas por párrafos; `originales/C-PREPARACION-APOYOS-01-salida.md` contiene el texto final preparado para emisión idéntica. UTF-8 y finales LF. No incluyen razonamiento interno, secretos ni todo el historial del chat; no se afirma reparación retroactiva de todos los ciclos. Texto de salida preparado antes de emitir y sujeto a lectura de vuelta.
+
+**Evidencia y límites:** fuentes/extractos y huecos descritos en el documento 07; no se inspeccionaron formularios autenticados ni cuentas. Consulta auxiliar de enlaces obtuvo 403 y fue abandonada; no prueba bloqueo de los programas. No hubo pruebas de producto, voz, gastos, solicitudes, publicaciones públicas ni cambios en páginas Notion inaccesibles. ENSAYO-TEXTO-v0.1 sigue no ejecutado; solucionario visto por Samantha impide tratar una respuesta propia como prueba ciega. No hay ingresos, población etaria, negocio, saldo o elegibilidad inventados.
+
+**Criterios preponderantes cotejados:** fidelidad del relato → brief separa objetivo/desarrollo/validación; elegibilidad → términos actuales y preguntas no adivinadas; no gasto/datos → sin cuentas ni envíos; utilidad operativa → secuencia hasta recibo, concesión, consumo y salida; portabilidad → anexos y huellas; no exclusividad simulada → no benchmark ni tasas inventadas. Dictamen: preparación documental cerrable por lectura de vuelta; candidaturas no listas para envío hasta datos y decisión humana. No se acredita recepción o conducta de otro agente.
+
+**Checkpoint exacto:** recibir respuesta única a `solicitudes/06-DATOS-DEL-SOLICITANTE.md`; filtrar Notion sin eludir pago/promociones, resolver negocio/voz/población de ElevenLabs y luego ajustar a campos reales con aprobación final. No reservar investigación segura para otro ciclo. Tiempo: paquete documental preparado en este ciclo; envío y concesión dependen de datos/autorización/proveedor, sin fecha prometida.
 
 ### Registro documental diferenciado · recepción 2026-10-18
 
@@ -368,6 +399,8 @@ A.13 del radar contiene la única versión documental del corpus y solucionario.
 Evidencia de aceptación: lectura de vuelta de las tres páginas sin truncamiento/bloques desconocidos y archivo de repositorio idéntico al preparado, con corpus/consultas/conclusiones íntegros; debe comprobarse después de publicar, no se acredita por escribir esta frase.
 
 ## 12. Reinstanciación
+
+Continuación vigente: adquirir metacanon central 1.6 o versión posterior comprobada y su §28; leer §8 y el ciclo C-PREPARACION-APOYOS-01, luego los anexos `solicitudes/`. No reiniciar catálogo ni exigir benchmark para solicitar; pedir únicamente datos reales y decisiones materiales. Preparación terminada, envío no autorizado. Los prompts históricos siguientes conservan límites compatibles y remiten al estado único; no activan agentes.
 
 Los prompts citan el estado único por sección para no mantener copias divergentes. Fuente y límites se recuperan antes de actuar. Son instrucciones de continuidad, no invocaciones ejecutadas de otro agente.
 

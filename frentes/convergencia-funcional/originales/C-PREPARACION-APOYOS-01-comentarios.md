@@ -1,0 +1,7 @@
+Voy a cerrar el paquete documental y la secuencia de solicitud: requisitos vigentes, borradores por programa, evidencias necesarias y orden de pasos. Dejaré separados los documentos listos de los datos que aún debes confirmar. No enviaré solicitudes, abriré cuentas ni presentaré como demostradas las capacidades pendientes de prueba.
+
+La revisión encontró una diferencia decisiva: **los términos de Notion excluyen también a antiguos clientes de pago**, aunque su ayuda resumida se centre en no pagar actualmente. ElevenLabs sí admite clientes de autoservicio de pago, pero exige estrategia de negocio, correo empresarial y un producto duradero. Prepararé los expedientes con esas compuertas; no hace falta demostrar exclusividad tecnológica para solicitarlos.[^https://www.notion.so/notion/Notion-for-Startup-Terms-936b74c0323745a186b1497747074020][^https://elevenlabs.io/startup-grants]
+
+También cambió el metacanon central a **v1.6**: aplicaré su obligación de conservar la crónica y la salida de este ciclo, sin modificar la fuente central.
+
+El paquete ya contiene ocho documentos: brief común, expedientes de Notion y ElevenLabs, vías de Neon y Deepgram, control de evidencias, datos faltantes, fuentes y secuencia de solicitud. Ahora lo guardaré en la carpeta del sprint y verificaré la lectura de vuelta. Quedará cerrada la preparación documental; los envíos seguirán sujetos a tus datos y aprobación.

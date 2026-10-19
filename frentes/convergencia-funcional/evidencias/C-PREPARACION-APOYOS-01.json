@@ -1,0 +1,67 @@
+{
+  "cycle": "C-PREPARACION-APOYOS-01",
+  "starting_commit": "2fb755fd92dbbd785790e052503cf76689a30021",
+  "method_commit": "a466b6b46f266de6a6ccd656e071eb7a07dc0e10",
+  "tool_evidence": {
+    "notion_terms": "event_30vz6z1ecc4kp56qz13dt1q277",
+    "notion_help": "event_32t0j30ry7zt9vbrz400fjygtm",
+    "elevenlabs": "event_1wrr8e8kzf9gsm6j36ff49fk75",
+    "neon": "event_7yby2addmzy95y76g997qhwrnq",
+    "deepgram_terms": "event_4paa181hpmpc0s25kar0ck4wdr"
+  },
+  "expected_files": {
+    "frentes/convergencia-funcional/SPRINT.md": {
+      "bytes": 62761,
+      "sha256": "1233658700c1405bc8c13cb23fa2d338d65eca9df5789f1bb73ae66a08cac4cb"
+    },
+    "frentes/convergencia-funcional/solicitudes/00-LEER-PRIMERO.md": {
+      "bytes": 4602,
+      "sha256": "73238bee8103cafd7636df2459d7992ec578f700e1bfdd2d23323bf6d8ed81fe"
+    },
+    "frentes/convergencia-funcional/solicitudes/01-BRIEF-COMUN.md": {
+      "bytes": 3378,
+      "sha256": "9d79e8e68af36edc01635ea2794a9c969c6412263d004fd8d15057ecb83a8ca8"
+    },
+    "frentes/convergencia-funcional/solicitudes/02-NOTION.md": {
+      "bytes": 5042,
+      "sha256": "e7ff7ccbfe39a22a92b3377bd9a1315d73b7775ce1f502d41ca590162cfaa760"
+    },
+    "frentes/convergencia-funcional/solicitudes/03-ELEVENLABS.md": {
+      "bytes": 5411,
+      "sha256": "0babf36311ba5e25c73beda197d8a0fd19386ba7b2c540afab4cc55e4ecc4bfc"
+    },
+    "frentes/convergencia-funcional/solicitudes/04-OTROS-APOYOS.md": {
+      "bytes": 3685,
+      "sha256": "ad47e77141344f8a81b049e5fe38d56c3022ca46258a49f6f326b42dd062f6fc"
+    },
+    "frentes/convergencia-funcional/solicitudes/05-EVIDENCIA-Y-CONTROL.md": {
+      "bytes": 3491,
+      "sha256": "539581f26ac3c07085e4789436a132166e2dc7a8671608aa64083be1e6252721"
+    },
+    "frentes/convergencia-funcional/solicitudes/06-DATOS-DEL-SOLICITANTE.md": {
+      "bytes": 2036,
+      "sha256": "29d6683a7be8c586f2c53798376d14b794e3eff7c6c50670ff0e5363c36605e1"
+    },
+    "frentes/convergencia-funcional/solicitudes/07-FUENTES-Y-REVISION.md": {
+      "bytes": 3169,
+      "sha256": "aa8648ce5c82b96fdfe8fc5e89624eec7f9e10a44367d5b02d2e1c7c7e5077b4"
+    },
+    "frentes/convergencia-funcional/solicitudes/MANIFIESTO.json": {
+      "bytes": 1064,
+      "sha256": "e385667f727ae8342c4948cf72da08a3d8d04beaa6630ce71ae562ee0179bf31"
+    },
+    "frentes/convergencia-funcional/originales/C-PREPARACION-APOYOS-01-operador.txt": {
+      "bytes": 219,
+      "sha256": "377579ca9e10f26eb397cbd00b41f7a26a7f2345379f354ca71a96e3e23b6732"
+    },
+    "frentes/convergencia-funcional/originales/C-PREPARACION-APOYOS-01-comentarios.md": {
+      "bytes": 1436,
+      "sha256": "5895279a8f5710181241156ebfcf4c41d62ffba6714fc7e805364761b8e9a94e"
+    },
+    "frentes/convergencia-funcional/originales/C-PREPARACION-APOYOS-01-salida.md": {
+      "bytes": 2815,
+      "sha256": "4a74d4c7b572dfc66a833cc6528ae7e4f182baac13adf23dede46faacbe30e19"
+    }
+  },
+  "limits": "Tool IDs index receipts; not a full transcript of external tools. Readback still required."
+}

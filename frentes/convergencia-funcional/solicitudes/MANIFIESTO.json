@@ -1,0 +1,34 @@
+{
+  "00-LEER-PRIMERO.md": {
+    "bytes": 4602,
+    "sha256": "73238bee8103cafd7636df2459d7992ec578f700e1bfdd2d23323bf6d8ed81fe"
+  },
+  "01-BRIEF-COMUN.md": {
+    "bytes": 3378,
+    "sha256": "9d79e8e68af36edc01635ea2794a9c969c6412263d004fd8d15057ecb83a8ca8"
+  },
+  "02-NOTION.md": {
+    "bytes": 5042,
+    "sha256": "e7ff7ccbfe39a22a92b3377bd9a1315d73b7775ce1f502d41ca590162cfaa760"
+  },
+  "03-ELEVENLABS.md": {
+    "bytes": 5411,
+    "sha256": "0babf36311ba5e25c73beda197d8a0fd19386ba7b2c540afab4cc55e4ecc4bfc"
+  },
+  "04-OTROS-APOYOS.md": {
+    "bytes": 3685,
+    "sha256": "ad47e77141344f8a81b049e5fe38d56c3022ca46258a49f6f326b42dd062f6fc"
+  },
+  "05-EVIDENCIA-Y-CONTROL.md": {
+    "bytes": 3491,
+    "sha256": "539581f26ac3c07085e4789436a132166e2dc7a8671608aa64083be1e6252721"
+  },
+  "06-DATOS-DEL-SOLICITANTE.md": {
+    "bytes": 2036,
+    "sha256": "29d6683a7be8c586f2c53798376d14b794e3eff7c6c50670ff0e5363c36605e1"
+  },
+  "07-FUENTES-Y-REVISION.md": {
+    "bytes": 3169,
+    "sha256": "aa8648ce5c82b96fdfe8fc5e89624eec7f9e10a44367d5b02d2e1c7c7e5077b4"
+  }
+}
