@@ -1,0 +1,55 @@
+{
+  "cycle": "C-BLOG-010",
+  "seal": "BLOG-PERSONAL-v13",
+  "method": "METACANON-OBJETOS-v1.6",
+  "code_commit": "95b374c5bfc44d2900ea73c47c0f43fc3401f4c0",
+  "code_blobs_readback": {
+    "khora-web/lib/ingreso/cronica-coverage.ts": {
+      "blob": "0419271026a301b4d6bc64a847dcc23369ca5bc6",
+      "sha256": "9305c34e7093f29d05ea8fb55566775bcc9e59cf4d1847061cfa89cb90e42874"
+    },
+    "khora-web/tests/unit/cronica-coverage.test.ts": {
+      "blob": "6ae11f6e5c69efad8ee29161c0b815b4bf9fa464",
+      "sha256": "3672ab52cab9645c26d84eef1d3c9ed7a905ac4efe6bcb19f9c57c170b6872c5"
+    }
+  },
+  "tests": {
+    "passed": 43,
+    "failed": 0,
+    "skipped": 0,
+    "compiler": "7.0.2",
+    "strict_targets": [
+      "ES2017/NodeNext",
+      "ES2017/Bundler"
+    ],
+    "diagnostics": 0,
+    "full_next_build": false,
+    "central_5_9_3": false,
+    "chromium_this_module": false
+  },
+  "sources": {
+    "U01": "323067f446738d70eb04efa48363a7fe20e9473c",
+    "U03_normalized_not_original_transcript": "fbdb22ecfdbfe9277c3bab9c3b04c33e774b3e92",
+    "metacanon": "8f9ad1cf0e09e5fcd7014190770a77294ff39af4",
+    "canon_base": "faab3a3c88ff1da0874fc9e41653ad6f2781028c"
+  },
+  "privacy_verified": {
+    "khora": true,
+    "metodologia": true
+  },
+  "communications": {
+    "central_url": "session://55bade27-f22c-8108-a269-00039938ee4f/3feade27-f22c-8016-928e-00a9f513f6b3",
+    "sources_before_implementation": true,
+    "intermediate_do_not_integrate_notice": true,
+    "final_commit_blobs_delivered": true,
+    "blog_branch_frozen_after_handoff": true
+  },
+  "boundaries": [
+    "two new files only",
+    "not truth, identity proof or publication gate",
+    "unknown lexical forms can remain pending",
+    "no maximum narrative size introduced",
+    "no UI/consumer/dispatch/central mutation",
+    "Groq next version only"
+  ]
+}

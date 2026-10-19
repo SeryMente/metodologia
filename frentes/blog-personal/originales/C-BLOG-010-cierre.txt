@@ -1,0 +1,14 @@
+**Entregado al central y rama Blog congelada:** cabeza final `95b374c5bfc44d2900ea73c47c0f43fc3401f4c0`. Integrar únicamente estos dos archivos, no la rama completa:
+
+| Archivo bajo `khora-web/` | Blob verificado |
+|---|---|
+| `lib/ingreso/cronica-coverage.ts` | `0419271026a301b4d6bc64a847dcc23369ca5bc6` |
+| `tests/unit/cronica-coverage.test.ts` | `6ae11f6e5c69efad8ee29161c0b815b4bf9fa464` |
+
+**43/43 pruebas propias, sin omisiones**, y cero diagnósticos estrictos ES2017/Bundler y NodeNext con TypeScript **7.0.2 instalado aquí**. El central verifica su banco 5.9.3 y Chromium; no atribuyo esos resultados todavía.[^https://github.com/SeryMente/khora/blob/95b374c5bfc44d2900ea73c47c0f43fc3401f4c0/khora-web/tests/unit/cronica-coverage.test.ts]
+
+`analyzeCronicaCoverage(text)` devuelve la unión exacta `when|where|what`, cobertura y fragmento literal. Recalcula al borrar; excluye conservadoramente negaciones, incertidumbre, futuro y citas, incluidas varias frases. **Son menciones opcionales, no suficiencia, verdad ni permiso de publicación.** Algunos giros o lugares desconocidos pueden quedar pendientes; no se completan por inferencia.[^https://github.com/SeryMente/khora/blob/95b374c5bfc44d2900ea73c47c0f43fc3401f4c0/khora-web/lib/ingreso/cronica-coverage.ts]
+
+Fuentes ya comunicadas: U01 pide constancia cotidiana y representación propia; U03 exige relato libre e incompleto conservable. No encontré fundamento para añadir una obligación política, forense o de dirección exacta.[^https://github.com/SeryMente/metodologia/blob/482725063fa47e60186027e9abe55986affca680/frentes/blog-personal/originales/U01-necesidad.txt][^https://github.com/SeryMente/metodologia/blob/482725063fa47e60186027e9abe55986affca680/frentes/blog-personal/originales/U03-ampliacion-normalizada.txt]
+
+**Canon propio v13 · C-BLOG-010 guardado y cotejado.** Sin cambios de interfaz, captura, consumidor, despacho, ramas centrales o publicación. Resumen Groq sigue para la siguiente versión. Mi entrega técnica está cerrada; integración y producción quedan con el central, sin cambios concurrentes míos.[^https://github.com/SeryMente/metodologia/blob/docs/blog-editorial-sync-20261019/frentes/blog-personal/OBJETO-CANONICO.md]
