@@ -1,11 +1,11 @@
-<!-- OBJECT_VERSION=0.21; METACANON_VERSION=1.6; STATE_SOURCE=SPRINT.md -->
+<!-- OBJECT_VERSION=0.22; METACANON_VERSION=1.6; STATE_SOURCE=SPRINT.md -->
 # Sprint · Convergencia funcional, mercado y apoyos · Khora y Otro Gran Programa
 
 ## 1. Control e identidad
 
 - Naturaleza: objeto documental permanente del sprint, vivo y provisional en su definición; no especificación de lanzamiento ni ratificación de una arquitectura.
-- Versión/sello del objeto: **0.21 · SPRINT-CONVERGENCIA-v0.21**.
-- Ancla: M27 · C-NOTION-EXPEDIENTE-01; preparar expediente antes de consulta: descripciones y controles actualizados, perfil/evidencias/publicación pendientes. Sin envío ni altas.
+- Versión/sello del objeto: **0.22 · SPRINT-CONVERGENCIA-v0.22**.
+- Ancla: M28 · C-KHORA-PRESENCIA-GITHUB-01; evaluar presencia pública de Khora, distinguir ficha/repositorio y GitHub Pages; alcance por aclarar. Recomendación interna, no publicación ni cambio de privacidad.
 - Propietario de custodia: `SeryMente/metodologia`, privado comprobado mediante GitHub en este ciclo. Carpeta: `frentes/convergencia-funcional/`. Estado único: este archivo.
 - Rama documental: `docs/sprint-convergencia-funcional-20261017`, creada desde `main@49ac40e9f6122e2d2fb339362cfa0a78128c8e37`. No fusionar ni afirmar integrado en main por guardar esta rama.
 - Persistencia: el recibo del commit y la lectura de vuelta son la prueba de publicación; la sola presencia de esta frase no la acredita. Si la lectura falla, esta entrega queda NO VERIFICADA.
@@ -99,7 +99,7 @@ Canal: Notion AI, workspace Numb’s Space (según contexto actual de esta sesi�
 
 ## 8. Estado vivo
 
-**Acción actual:** objeto v0.21; método 1.6 revalidado sin delta. Operador declara nunca haber pagado y sí haber recibido una prueba gratuita. No se verifica historial de facturación por acceso a cuenta. El formulario oficial incluye pruebas promocionales previas entre exclusiones; vía estándar detenida antes de declarar elegibilidad. Consulta preparada para startups@makenotion.com, no enviada. Nombre/fecha/alcance de la prueba desconocidos.
+**Acción actual:** objeto v0.22; método 1.6 revalidado sin delta. Operador declara nunca haber pagado y sí haber recibido una prueba gratuita. No se verifica historial de facturación por acceso a cuenta. El formulario oficial incluye pruebas promocionales previas entre exclusiones; vía estándar detenida antes de declarar elegibilidad. Consulta preparada para startups@makenotion.com, no enviada. Nombre/fecha/alcance de la prueba desconocidos.
 
 **Avance observado:** tres tareas de contraste, no funciones elegidas para lanzamiento: recuperación dispersa, redacción fiel y próximo paso respaldado. Fuentes ficticias distinguen negación, tiempo de expresión/ingesta, retractación, autoría, duplicados, datos faltantes e instrucciones incrustadas. Línea base simple y recorridos de mercado de A.3–A.11; no rutas adoptadas. Solucionario separado del material de candidato en una futura corrida; casos de desarrollo no son test ciego. Control por prompt no equivale a aislamiento real. Radar técnico y tesis reciben límites de inferencia. No nuevas prestaciones/precios revalidados por este trabajo, ni resultados o ganador inventados.
 
@@ -109,7 +109,7 @@ Canal: Notion AI, workspace Numb’s Space (según contexto actual de esta sesi�
 
 **Corrección vigente M23 de interpretación M22:** el operador NO ordenó resolver .com ahora para poder pedir apoyo: los .com vendrán después. Samantha convirtió indebidamente esa intención futura en compuerta inmediata y desvió al registrador anterior. No preguntar más por recuperación/compra como siguiente paso de esta solicitud. Prioridad: avanzar apoyo Notion sin gasto con situación real. Correo empresarial operativo no disponible según contexto; si no existe, no se verifica formulario válido con Gmail. Cuenta Notion Business pagada no es requisito de compra previa; el programa se dirige a no pagadores. Consulta desde correo actual solicita si hay revisión manual/documentación alternativa y declara prueba gratuita anterior. No excepción aprobada ni elegibilidad confirmada.
 
-**Siguiente paso vigente M27:** completar perfil mínimo Notion con operador (responsable/persona o entidad/país, empleados y colaboradores, workspace, socio real); revisar descripción interna y seleccionar evidencia saneada y contenido de presentación pública antes de enviar consulta. Usuario pide llegar con demás material listo, no solo preguntar sin dossier. 02-NOTION.md contiene ficha, borradores, criterios y distinción de requisitos oficiales vs apoyo. No inventar identidad ni publicar sitio por inferencia; .com futuro y no gasto siguen vigentes. Nunca pago/sí prueba conocidos no se preguntan otra vez; correo y exclusión trial se consultan con transparencia. No cuentas, solicitud ni aprobación de marketing/seguridad dadas por este trabajo.
+**Siguiente paso vigente M28:** aclarar si usuario entiende página GitHub como ficha/repositorio público o sitio alojado en Pages. Recomendación inicial: presentación pública separada del código/metodología privados, pendiente revisión y aprobación. No crear/publicar ni cambiar visibilidad por pedir opinión. Pages requiere cotejar alcance con límites comerciales oficiales; evidencia GitHub no acredita correo/empresa ni sustituye web Notion por inferencia. Perfil mínimo/evidencias/presentación de M27 siguen pendientes y no se vuelven a preguntar todos ahora.
 
 **Huecos documentales no bloqueantes de Notion:** Rúbrica Universal y Análisis N1, referencias de los cánones, no accesibles por sus IDs y sin texto recibido. No sustituirlos por versiones antiguas de otros IDs. Los tres cuerpos pegados, antes pendientes de custodia exportada, ahora están guardados literalmente desde el evento 104; la limitación histórica de M14/M15 queda superada solo en ese punto. No hay certificación de frescura de las páginas remotas.
 
@@ -159,6 +159,17 @@ Por M06 y su precisión posterior M10, cerrar todas las fases documentales pendi
 Toda salida de este frente registra: (1) proyecto, rol, versión/sello del objeto y «Metacanon adquirido: versión/sello», revisión y frescura; (2) dónde estamos; (3) delta metodológico y de proyecto; (4) avance y evidencia, no tocado; (5) pendientes/bloqueos; (6) viabilidad y condiciones; (7) pronóstico de próximo hito y cierre con supuestos o no estimable; (8) siguiente acción/agente y mínima intervención material del operador; (9) continuación/prompt hacia el investigador si existe salida que responder; (10) persistencia, ancla y checkpoint. Puede condensarse sin ocultar lo desconocido. No afirmar certificación externa, herramientas o ensayo por una firma.
 
 ## 11. Crónica y fuentes
+
+### C-KHORA-PRESENCIA-GITHUB-01 · M28 · opinión sobre vitrina y distinción de alcances
+
+Partida v0.21@7b723ef63ee3eb042b77358d989929c19d4626ca; método 1.6/blob 8f9ad1cf0e09e5fcd7014190770a77294ff39af4 sin delta; repo privado comprobado. Mensaje directo sesión 3fda4187-8241-80d9-8627-00a9a79e07f7; original/salida literal en originales/C-KHORA-PRESENCIA-GITHUB-01-*. No comentario visible previo, fecha no inventada. Cora se normaliza a Khora por instrucción vigente.
+
+Pregunta: conveniencia de página GitHub. Ambigüedad no resuelta entre ficha/repositorio y Pages: se pregunta directamente, sin crear un objeto público ni elegir hosting de forma silenciosa. Contexto del expediente Notion ya adquirido; nuevas capacidades de GitHub se verifican en fuentes primarias. Búsqueda 891: https://docs.github.com/en/account-and-profile/concepts/organization-profile explica descripción, enlaces, README y repositorios destacados. Lectura 902: https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits restringe Pages como hosting gratuito para negocio/transacciones/SaaS comercial. No se extrapola prohibición a toda documentación informativa ni se aprueba diseño/hosting comercial concreto.
+
+Recomendación no ratificada: vitrina documental pública separada de los repos privados, descripción/etapa/evidencia saneada/responsable; evitar divulgar código, corpus, secretos o metodología privada. No se inspeccionaron ni alteraron permisos del repo Khora en este ciclo; no afirmar verificación reciente de su visibilidad, la recomendación es no cambiarla a público. GitHub no garantiza credibilidad, usuarios, aceptación Notion o sustitución de web/correo, ni es prueba de validación de mercado. Persona/entidad pública aún requiere confirmación de M27.
+
+Criterio privacidad/pertinencia: hacer revisable solo evidencia seleccionada, sin publicar todo para parecer startup. Resultado: opinión condicionada y pregunta de alcance; nada creado, publicado, reconfigurado, desplegado, enviado o pagado. Próximo: aclarar alcance, luego contenido revisable antes de publicación y candado del operador para marketing/interfaz/seguridad. M27 de perfil/evidencias sigue pendiente. Se persiste en rama documental sin merge main y se coteja por commit.
+
 
 ### C-NOTION-EXPEDIENTE-01 · M27 · preparar lo demás antes de consultar admisión
 
@@ -571,7 +582,7 @@ Evidencia de aceptación: lectura de vuelta de las tres páginas sin truncamient
 
 ## 12. Reinstanciación
 
-Checkpoint vigente M27: completar cuatro datos de perfil y revisar expediente/evidencias/presentación antes de enviar consulta Notion. Preparación documental en 02-NOTION.md; no todo listo ni publicación aprobada. FreeDNS/Zoho no primera ruta; no altas, envío o excepción obtenida; .com futuro sin compra actual.
+Checkpoint vigente M28: aclarar ficha/repositorio público vs Pages; recomendar vitrina documental separada, sin publicación/privacidad modificada. Perfil/evidencias M27 siguen pendientes; no se da por satisfecho correo/web Notion. No .com actual, altas ni envío.
 
 Checkpoint adicional M19: presencia pública de Khora identificada; evaluar reutilización del sitio, sin diseño/construcción ni gasto autorizado. No sustituye consulta de elegibilidad.
 
