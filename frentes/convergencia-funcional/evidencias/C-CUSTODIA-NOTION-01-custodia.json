@@ -1,0 +1,42 @@
+{
+  "cycle": "C-CUSTODIA-NOTION-01",
+  "documents": {
+    "frentes/convergencia-funcional/fuentes/canon-radar-comercial-v0.4-recibido.txt": {
+      "bytes": 33462,
+      "sha256": "dbf99c443ae277f1c95712170b4d58532a68b9478d05f32a6e41637f5eb9db7c"
+    },
+    "frentes/convergencia-funcional/fuentes/tesis-competitiva-v1.4-recibida.txt": {
+      "bytes": 30970,
+      "sha256": "76aa49556abbc6000e9b819da33eacf7c5c3446d201770221a42653bd2514ed4"
+    },
+    "frentes/convergencia-funcional/fuentes/instrucciones-agente-radar-diario-recibidas.txt": {
+      "bytes": 5534,
+      "sha256": "eea5a06eb9584c6cdc9f3e3d80c368bf604abb907a16e4723beb48c57b6f40d0"
+    },
+    "frentes/convergencia-funcional/originales/mensaje-documental-104-original.txt": {
+      "bytes": 69966,
+      "sha256": "5a617fc543d19d34bfb2181691db100ef5cd944b5a828301a3eb1e5fcce48cb9"
+    },
+    "frentes/convergencia-funcional/originales/conversacion-previa-recibida.txt": {
+      "bytes": 63887,
+      "sha256": "88268ab1b52322acbc8023364552da69cc5fc2bf7bd5c77fbbe5818ca85f99ee"
+    },
+    "frentes/convergencia-funcional/fuentes/metacanon-v1.6-adquirido.md": {
+      "bytes": 71603,
+      "sha256": "dab6680cbcdb6530e4616f8b13d1e0d5f1ff0885508203d1c5eac22fd86250ee"
+    },
+    "frentes/convergencia-funcional/fuentes/2026-10-18-radar-convergencia-recibido.txt": {
+      "bytes": 138533,
+      "sha256": "e8f320c8dbe75b39cd49300eb4cad56ab62ab137703c1b6787f0bd70ffbd6712",
+      "git_blob": "a1da0a84856cf18f9e8087636448a7356c549135",
+      "action": "conservado; no duplicado"
+    }
+  },
+  "provenance": {
+    "message_event": 104,
+    "session": "session://ecea4187-8241-819b-af83-0003b7c205f7/3fda4187-8241-80d9-8627-00a9a79e07f7",
+    "method_commit": "a466b6b46f266de6a6ccd656e071eb7a07dc0e10",
+    "message_transform": "Returned message wrapper and trailing attachment metadata removed; exact body preserved. Three slices concatenate exactly; UTF-8, no terminal newline added to slices. Original prior attachment retains original CRLF.",
+    "no_live_sync": "Notion original page URLs inaccessible; received snapshots are not remote freshness certification."
+  }
+}

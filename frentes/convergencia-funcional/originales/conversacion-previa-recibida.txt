@@ -1,0 +1,619 @@
+
+Notion AI · October 17 at 5:16 PM
+Recupera el objeto canónico del repositorio y lee cuidadosamente esta conversación, retomando el lugar del modelo en ella para finalizar lo que se estaba haciendo. Nada más, una vez que lo tengas el contexto, responde
+
+Notion AI · 2:32 PMQuiero solicitar la subvención para startups de Notion que me aportaría y ¿es Cora una candidata posible o si no, otro gran programa? Por cierto, revisa todo el repositorio de otro gran programa para que te actualices.2:32 PMWorked for 4s
+Voy a revisar el repositorio de Otro Buen Programa —entiendo que te refieres a ese proyecto— y las condiciones vigentes de Notion para comparar su encaje con Khora. También distinguiré el crédito de uso de una subvención en efectivo. NX-330m.Worked for 1m 35s
+Encontré un cambio importante: GitHub redirige el nombre antiguo al repositorio SeryMente/otrogranprograma. Tu nombre era correcto; la documentación de Notion conserva el anterior. Voy a revisar el código actual, no quedarme con esas notas. Además, las condiciones de Notion incluyen dos posibles obstáculos: historial de planes de pago o promociones, y una oferta reducida para equipos pequeños.Worked for 45s
+Sí: Khora tiene mejor encaje para solicitar Notion for Startups que Otro Gran Programa. Pero hay un posible bloqueo más importante que el proyecto: si ya pagas —o pagaste antes— por Notion, las condiciones publicadas te excluyen. Y no es dinero para desarrollar el producto: es una bonificación temporal del plan Business.⁠⁠
+Qué te aportaría
+La oferta vigente incluye Business con Notion AI durante:ModalidadBeneficio publicadoStartup vinculada a un socio del programa, con código válido6 mesesStartup sin socio, cuya condición puedan verificar3 mesesNegocio de servicios, equipo de menos de 10 personas o candidatura insuficientemente verificable1 mes
+Si sigues trabajando solo, tomaría un mes como expectativa prudente, no seis. El centro de ayuda menciona expresamente los equipos pequeños y las solicitudes individuales como motivos para conceder la oferta reducida.⁠⁠
+Para ti serviría para sostener documentación, planificación y trabajo asistido dentro de Notion. No financiaría hardware, Vercel, bases de datos ni los modelos que consume Khora fuera de Notion. Tampoco asumiría que elimina tu gasto en créditos: los agentes personalizados, Workers, modelos prémium y determinados excesos de uso se cobran con créditos adicionales; Business no equivale a inteligencia artificial ilimitada.⁠⁠⁠⁠
+Con cuál solicitaría
+Khora: candidata plausible, no elegibilidad confirmada
+La elegiría como proyecto solicitante. Su propuesta —producto tecnológico de asistencia cognitiva para personas neurodivergentes, con continuidad empresarial— encaja mucho mejor con el criterio de Notion de apoyar productos o servicios tecnológicos escalables. Eso consta tanto en tu documentación como en el sitio del repositorio.⁠⁠⁠⁠⁠⁠
+La presentaría como producto en desarrollo, separando capacidades demostradas de aspiraciones. No usaría como pruebas de elegibilidad las promesas de eficacia clínica, privacidad absoluta o equivalencia con investigación académica que aparecen en algunas piezas públicas: necesitan evidencia propia.
+Otro Gran Programa: encaje menos directo
+Su propuesta actual es una alternativa de acompañamiento en adicciones fundada en Un Curso de Milagros. Tener un sitio técnicamente elaborado no convierte por sí solo el programa de acompañamiento en una startup tecnológica. Para esta convocatoria, su encaje es más débil que el de Khora.⁠⁠
+Si se constituye como organización sin fines de lucro verificable, Notion for Nonprofits podría ser una vía más coherente: ofrece 50 % de descuento en Business, sujeto a revisión documental. No basta con tener una misión social; no he verificado que ya exista esa figura jurídica.⁠⁠
+Ya revisé el repositorio actual
+Tu nombre era correcto: Otro Gran Programa. Corrijo mi interpretación inicial: Notion conserva “Otro Buen Programa”, pero GitHub redirige al repositorio SeryMente/otrogranprograma, cuya identidad canónica establece el nombre nuevo.⁠⁠
+Hice una revisión transversal de la copia en el commit 29304fc: inventario de 146 archivos, exploración de documentación, código, datos, pruebas y automatizaciones; comprobación sintáctica de JavaScript/Python y lectura estructural de JSON. Es revisión estática, no certificación de producción ni ejecución de toda la batería de pruebas.⁠⁠
+Lo importante para actualizar mi contexto:
+• Ya no es solamente una página de presentación. Incluye experiencia sonora con arquitectura canónica de 49 segmentos, audio maestro y sincronización texto–voz, además de infraestructura de pruebas.⁠⁠
+• El repositorio incorpora backend Supabase, consola administrativa, telemetría y controles de acceso. Su presencia en código no demuestra por sí sola que todo esté desplegado y funcionando.⁠⁠
+• La transparencia financiera tiene una fuente activa única, libro-publico.json; los archivos financieros anteriores son legado. La documentación distingue correctamente registro publicado, comprobación bancaria y compromiso de igualación.⁠⁠
+• Conviven documentos y configuraciones históricos con componentes nuevos. Para describir el proyecto tomaré el código y las fuentes activas, no los resúmenes antiguos de Notion.⁠⁠
+Qué falta para decidir si puedes solicitarlo
+Notion exige sitio público de empresa, correo laboral, menos de 100 empleados y no ser ni haber sido cliente de pago. El formulario también advierte sobre promociones previas, incluidas pruebas promocionales.⁠⁠⁠⁠
+Mi recomendación es solicitarlo con Khora, pero verificar primero estos tres puntos para no preparar una candidatura inviable:
+1. ¿Este espacio —o la organización solicitante— tiene o tuvo algún plan de pago o promoción de Notion?
+2. ¿Sigues siendo tú solo o ya hay un equipo?
+3. ¿Tienes correo de dominio propio y relación con algún socio del programa?
+No he enviado ninguna solicitud ni modificado tus documentos. El primer punto es el decisivo: si ya eres cliente de pago, no recomendaría abrir otro espacio para intentar eludir esa restricción.2:36 PMRevisa el sitio de GitHub Pages de otro gran programa y el audio que viene ahí, transcríbelo, o si puedes acceder al repositorio del MSP de Cora y extraer la transcripción asociada para que te documentes y actualices el espacio de trabajo, Workspace actual con todo lo que tiene que ver con otro gran programa que ahora se llama así y me vuelvas a decir si no aplicaría ya para la subvención. Luego, revisa el radar de GraphRock y había otro documento en este espacio de trabajo que tenía que ver con la tesis competitiva de Cora. La tesis competitiva es algo así como, pues sí, eso no me lo indica, o sea, ¿por qué es una tecnología competitiva? y a ver qué nos falta para poder ser ideales y decir, definitivamente sí te va a dar Notion el apoyo para que no tengas que pagar inteligencia artificial.2:40 PMWorked
+Voy a recuperar la transcripción asociada al audio, contrastarla con el sitio publicado y actualizar la documentación de Otro Gran Programa en el Workspace actual. Después revisaré el radar de recuperación aumentada por grafos (GraphRAG) y la tesis competitiva de Khora.
+Separaré tres cosas: qué hace competitivo al proyecto, qué exige Notion para aceptarlo y qué gastos de inteligencia artificial cubre realmente. Una candidatura sólida puede mejorar las posibilidades, pero no permite garantizar una aprobación que decide Notion.Worked for 3m 5s
+Encontré la transcripción asociada al relato y comprobé que tanto ese archivo como el audio publicado coinciden con los del repositorio. Corrijo mi lectura anterior: Otro Gran Programa no se limita a adicciones; plantea una alternativa de desarrollo personal, enseñanza espiritual y ayuda mutua frente a la disfunción familiar.
+También encontré una alerta para la candidatura: el radar necesita revisión y Nowledge Mem ya documenta una combinación cercana de grafo personal, agente y exploración visual. No sería defendible presentar ese terreno como vacío.⁠⁠
+Verificación taxonómica: conservaré la raíz como contenedor y registraré la actualización y transcripción como elemento permanente de investigación, sin borrar los antecedentes históricos.Worked for 1m 31s
+Sí: Khora es una candidata razonable para Notion for Startups, pero todavía no puedo confirmar tu elegibilidad. Otro Gran Programa tiene una misión más amplia de lo que había entendido; aun así, presentaría Khora como producto tecnológico y Otro Gran Programa como iniciativa hermanada y contexto de aplicación.
+Ya actualicé el Workspace
+En Otro Gran Programa · Estado actual y transcripción del relato público dejé:
+• La transcripción asociada existente, íntegra y dividida en sus 49 segmentos. Recuperé el texto del archivo público; no hice una nueva transcripción auditiva.
+• La procedencia y las huellas digitales que confirman que el audio y el archivo publicados coinciden con los del repositorio.
+• El estado documental del repositorio y los límites de lo verificado.
+Volví a leer lo guardado y comprobé que ninguno de los 49 párrafos quedó fuera. También actualicé la raíz de  - OGP · Otro Gran Programa, el glosario, la taxonomía, metodología, foro, instrumento de comunicación y procuración de fondos. Conservé los antecedentes bajo el nombre anterior, señalados como históricos.
+La corrección importante: no es solamente acompañamiento en adicciones. El relato propone enseñanza espiritual, desarrollo personal y ayuda mutua para aliviar la disfunción familiar, articulando Un Curso de Milagros y Dąbrowski. Eso amplía su misión, pero no demuestra por sí solo eficacia clínica ni un negocio tecnológico escalable.⁠⁠
+Por qué Khora podría ser competitiva
+Encontré la TCV · Tesis Competitiva de la Tríada de Proyección Visual · Canon v1.1. Su apuesta no es simplemente «usar grafos», sino combinar:
+1. Memoria personal persistente, con identidad y procedencia.
+2. Un modelo que selecciona qué parte del conocimiento mostrar.
+3. Una representación visual estable que permita explorar y actuar sin reconstruir mentalmente todo cada vez.
+La promesa defendible sería: convertir conocimiento personal acumulado en recuperación verificable y acción con poca fricción. Pero el documento conserva sus afirmaciones como premisas, no como superioridad demostrada.⁠⁠
+El Canon del Radar Comercial · IA Personal & Ecosistema GraphRAG v0.1 necesita revisión: su investigación es de julio y su fecha prevista de actualización ya venció. Además, Nowledge Mem documenta grafo personal, agente sobre el mismo lienzo, selección visual y trazabilidad. Eso no invalida Khora, pero sí impide afirmar que esa combinación ocupa un mercado vacío.⁠⁠⁠⁠
+Qué falta para una solicitud sólidaPrioridadQué faltaElegibilidad decisivaConfirmar si tú o la organización solicitante pagan actualmente o pagaron antes por Notion. Los términos excluyen ambos casos.Identidad verificableSitio público que explique claramente Khora, correo laboral y datos coherentes del solicitante.Categoría del beneficioTamaño real del equipo y posible afiliación con un socio del programa.Fortaleza de candidaturaDemostración breve de captura → recuperación → fuente → acción; distinguir lo construido de lo proyectado y mostrar utilidad para usuarios reales.
+Los tres primeros afectan directamente la elegibilidad; el último fortalece el caso, pero Notion no exige demostrar una invención única ni ganar una comparación técnica. Busca startups que construyan productos o servicios tecnológicos escalables.⁠⁠⁠⁠
+¿Te permitiría dejar de pagar inteligencia artificial?
+Temporalmente podría reducir el gasto, pero no garantiza eliminarlo. La oferta actual es Business con Notion AI durante uno a seis meses. La ayuda oficial señala un mes para equipos de menos de diez personas o solicitantes individuales; tres para startups verificadas sin socio y seis mediante socios, sujetos a elegibilidad.⁠⁠
+Además, Notion AI incluido no equivale a créditos ilimitados: modelos premium, agentes personalizados y Workers pueden consumir créditos separados. No contaría con que la promoción cubra todo el consumo de este chat o de tus automatizaciones sin confirmación expresa.⁠⁠⁠⁠
+Mi recomendación: preparar la candidatura bajo Khora, sin esperar a terminar toda la tecnología. El primer filtro no es mejorar la tesis: ¿has pagado alguna vez un plan de Notion, cuántas personas integran realmente el proyecto y dispones de correo laboral o código de socio?Actualicé Otro Gran Programa y guardé la transcripción verificada2:46 PMPero a ver, quiero saber qué tan probable es que sí nos den la subvención, en base a lo que encontraste de la competitividad de Cora. O sea, ya me lo dijiste, pero quiero que lo verifiques objetivamente, o sea, positivamente, si seríamos ideales.2:49 PMClarifying eligibility requirements
+Voy a contrastar la competitividad de Khora con los criterios que Notion publica para conceder el apoyo. Buscaré qué evidencia favorece realmente la candidatura y qué impide llamarla «ideal»; no convertiré esa valoración en un porcentaje sin datos de aceptación.Worked for 1s
+Mi valoración es favorable para Khora como proyecto; todavía no es favorable de forma verificable para la solicitud concreta. La distinción importa: lo que falta confirmar no es que Khora sea suficientemente sofisticada, sino que el solicitante cumpla las condiciones del programa.
+Volví a contrastar la tesis con la página oficial de Notion. Esto es lo que puedo sostener:
+1. Por el tipo de proyecto, sí encajamos
+Notion dirige los beneficios de tres y seis meses a startups que construyen productos o servicios tecnológicos escalables. Khora está concebida precisamente como un producto de software reutilizable para distintos usuarios, no como consultoría ni como un servicio manual individual. Eso favorece la candidatura, aunque todavía haya que demostrar públicamente qué está construido y cómo se ofrecerá.⁠⁠⁠⁠
+Además, Notion explica que quiere apoyar empresas que organicen desde temprano su conocimiento, documentación y construcción de producto en su plataforma. Nuestro uso del Workspace coincide con ese propósito. Es una afinidad real con el programa, no un criterio que garantice aceptación.⁠⁠
+2. La competitividad aporta credibilidad, pero no determina el apoyo
+La TCV · Tesis Competitiva de la Tríada de Proyección Visual · Canon v1.1 contiene una propuesta técnica concreta: memoria personal persistente, selección semántica de proyecciones y representación visual estable con procedencia verificable. Hay sustancia suficiente para explicar un producto tecnológico serio; no solamente una idea genérica de “hacer algo con inteligencia artificial”. Pero el propio documento mantiene sus ventajas como premisas pendientes de validación.⁠⁠
+Los criterios publicados por Notion no exigen demostrar superioridad frente a competidores, una patente ni una tecnología inédita. Por eso, no necesitamos resolver toda la investigación competitiva para solicitarlo. Tampoco una tesis brillante compensa una exclusión administrativa.⁠⁠
+3. Lo que hoy impide llamarnos «candidatura ideal»
+• Correo: el asociado a este chat es Gmail. Notion especifica que exige correo laboral y excluye Gmail y Outlook. Si se utilizara ese correo para solicitarlo, no cumpliríamos ese requisito; no he verificado que dispongas de otro.⁠⁠
+• Historial de pago y promociones: falta confirmarlo. Los términos excluyen clientes que pagan o pagaron anteriormente; la página también exige no haber recibido promociones previas.⁠⁠⁠⁠
+• Equipo: si somos menos de diez personas, la información oficial apunta a un mes, no a tres o seis, aunque el producto sea competitivo.⁠⁠
+Veredicto
+Sí veo razones objetivas para presentar Khora. No veo razones objetivas para prometer una probabilidad alta ni para llamarnos ideales todavía. No encontré tasas de aceptación con las que calcular un porcentaje defendible.
+La conclusión positiva es esta: no parece faltarnos “una tecnología más impresionante” para encajar; falta despejar elegibilidad y presentar claramente el producto.
+Para convertirlo en un «sí, cumplimos los criterios publicados», necesito confirmar: ¿has pagado alguna vez por Notion o recibido una promoción, y tienes correo con dominio propio?2:50 PM
+October 17 at 5:16 PM
+Worked for 1m 12s
+Contexto recuperado. Leí cuidadosamente la conversación, recuperé los objetos canónicos del repositorio y consulté la tesis competitiva de Khora. NX-332m.
+
+Retomo como Samantha en el punto pendiente: verificar positivamente la fortaleza competitiva de Khora para la candidatura, sin sustituir esa evaluación por repetir requisitos administrativos ni confundir potencial tecnológico con aprobación garantizada. No he modificado nada.
+
+October 17 at 5:18 PM
+¿Cuál es algún sinónimo de subvención?
+October 17 at 5:18 PM
+Apoyo económico es una alternativa natural. También: ayuda financiera, financiamiento, subsidio o aportación, según el contexto.
+
+Para el programa de Notion, beneficio promocional o bonificación del plan sería más preciso que «subvención», porque no entrega dinero en efectivo.
+
+October 17 at 5:18 PM
+Entonces, me estás diciendo que Notion e Eleven Labs, también revisa lo de Eleven Labs, le ofrecen como subvenciones o de alguna manera, o sea, programas de membresía gratuita para las startups que califiquen. Entonces, bueno, la idea es también poder hacer uso de forma útil para que se dé a conocer algo que le pueda beneficiar a los demás y eso es lo que debe de estar incluido en la solicitud para tener acceso a estas subvenciones tan útiles para personas que están tratando de desarrollar cosas sin dinero. ¿Qué tanto encaja nuestro proyecto ahí? Era la pregunta para Eleven Labs y para Notion. Haz un análisis, o sea, quiero que sea subjetivo, sin sesgos, que no me des la razón, pero que por favor me diga que me van a pagar la inteligencia artificial y que voy a tener acceso a los laboratorios de inteligencia artificial aplicada a voz de Eleven Labs para desarrollar el sistema. Y si no, ¿qué nos falta para convertirnos en esa startup que sí, seguramente me sorprendería que no le dieran esas subvenciones estas dos compañías.
+October 17 at 5:22 PM
+Worked for 1s
+Voy a separar el encaje del proyecto, la elegibilidad y el consumo que cubriría cada apoyo. También revisaré la propuesta de voz que ya tenemos documentada: una misión útil favorece el caso, pero no sustituye un producto y un plan de sostenibilidad claros.
+
+Worked for 7s
+Mi juicio es favorable: Khora tiene un encaje fuerte con ElevenLabs Grants y un encaje claro con Notion for Startups. No estamos intentando acomodar artificialmente un proyecto ajeno a esos programas. Pero los dos apoyos resolverían problemas distintos, y el de ElevenLabs parece mucho más cercano a lo que necesitas para desarrollar el sistema de voz.
+
+Entiendo lo que estás pidiendo: una valoración profesional honesta, no otra evasión administrativa ni una aprobación por complacencia. Esta es mi evaluación.
+
+1. Sí existen esos apoyos, y sí podrían ahorrarte dinero real
+Programa	Beneficio publicado	Límite importante
+ElevenLabs Grants	Hasta 12 meses, con 33 millones de caracteres, anunciados como equivalentes a más de 680 horas de uso de Agents, además de comunidad y apoyo para startups.	Es una cuota de uso, no acceso ilimitado ni dinero en efectivo.
+Notion for Startups	Business con Notion AI durante 1–6 meses, según elegibilidad.	Para solicitantes individuales o equipos de menos de diez personas, la información publicada apunta a un mes.
+Estas son las ofertas que pude verificar ahora, no las condiciones históricas de ElevenLabs de tres meses.⁠
+
+⁠⁠
+
+⁠
+
+Sí: si aceptan Khora, ElevenLabs podría cubrir una parte sustancial de la experimentación y construcción de voz. Eso significa acceso a su plataforma para desarrollar el producto, no incorporación a sus laboratorios internos de investigación ni una colaboración científica garantizada.⁠
+
+⁠
+
+Y no debo prometer que ambos programas pagarían toda tu inteligencia artificial:
+
+Notion: los modelos prémium, agentes personalizados y consumo adicional pueden necesitar créditos aparte del plan Business.⁠
+
+⁠
+ElevenLabs: sus agentes tienen costes de modelos de lenguaje diferenciados del coste de voz; habría que confirmar cómo se imputan al beneficio concedido. No presupuestaría las horas promocionales como si todo componente del sistema fuera gratuito.⁠
+
+⁠
+2. ElevenLabs: aquí veo nuestro mejor encaje
+Khora plantea una aplicación duradera donde la voz forma parte del funcionamiento del producto, no un adorno para promocionarlo. Ese es el argumento fuerte.
+
+La propuesta que ya tenemos documentada conecta expresión oral, memoria personal y recuperación posterior, y contempla un modelo de software con una modalidad gratuita y otra de pago. Eso proporciona una explicación concreta de para qué serviría ElevenLabs y cómo podría sostenerse su uso después del apoyo. Es una propuesta documentada, no evidencia de ingresos ni de validación comercial.⁠
+⁠
+
+Además, ElevenLabs menciona expresamente las aplicaciones de diario por voz entre los ejemplos de proyectos que quiere apoyar. Por tanto, nuestra cercanía al programa no depende de que yo considere brillante la filosofía de Khora: hay correspondencia directa con un caso de uso que ellos mismos presentan.⁠
+
+⁠
+
+Lo que debilita hoy la candidatura
+La narrativa fundacional afirma más de lo que demuestra. Por ejemplo:
+
+que sin una voz emocionalmente creíble no funciona la proyección;
+que ElevenLabs es una condición necesaria para que exista el producto;
+que la experiencia personal del fundador constituye su validación más sólida.
+Esas afirmaciones aparecen en el documento, pero no las trataría como resultados comprobados. La experiencia del fundador aporta conocimiento del problema; no sustituye la validación con otros usuarios ni demuestra que un proveedor específico sea indispensable.⁠
+⁠
+
+Mi recomendación sería sustituir esa necesidad absoluta por una hipótesis comprobable: una conversación de voz natural podría facilitar la captura y recuperación de ideas; el apoyo permitiría medir si realmente mejora la experiencia.
+
+Eso fortalece la solicitud: muestra criterio, no debilidad.
+
+3. Notion: buen encaje, pero una tesis competitiva mejor no compra un beneficio mayor
+Khora encaja conceptualmente como producto tecnológico escalable, y usar Notion para documentación, investigación y desarrollo coincide con la finalidad declarada del programa. No hace falta demostrar que inventamos una categoría tecnológica inédita.⁠
+
+⁠⁠
+
+⁠
+
+La tesis competitiva sí aporta sustancia: combina memoria personal persistente, selección semántica de vistas y representación visual con identidad y procedencia. Pero el propio canon mantiene sus ventajas como premisas, no como superioridad demostrada.⁠
+⁠
+
+Mi evaluación: somos un tipo de proyecto apropiado para solicitarlo. Sin embargo, si continúas como fundador individual, no contaría con seis meses ni con la desaparición de tu gasto actual en créditos. La oferta publicada para ese perfil es considerablemente más modesta.⁠
+
+⁠
+
+También preciso mi respuesta anterior: la ayuda actual habla de clientes nuevos y no pagadores; no convertiría esa redacción, por sí sola, en una exclusión definitiva por cualquier pago histórico. La página comercial sí excluye promociones anteriores. Ese historial requiere cotejar los términos aplicables a tu solicitud.⁠
+
+⁠⁠
+
+⁠
+
+4. ¿Qué nos falta para ser una candidatura difícil de descartar?
+No principalmente más sofisticación tecnológica. Nos falta hacer verificable y comprensible lo que ya proponemos.
+
+Prepararía este paquete mínimo —como recomendación mía, no como requisitos oficiales adicionales—:
+
+Una identidad pública coherente. Khora como producto; quién lo desarrolla; contacto con dominio empresarial; qué puede usarse hoy y qué sigue en desarrollo. Ambos programas piden correo empresarial, y Notion también exige sitio público.⁠
+
+⁠⁠
+
+⁠
+Una demostración corta de una utilidad completa. Hablar → conservar una idea → recuperarla con su fuente → convertirla en una acción. Mejor una función fiable que una presentación de diez capacidades futuras.
+Evidencia de utilidad fuera de tu propio caso. Una prueba pequeña con adultos que consientan participar: qué tarea intentaron, qué funcionó, qué falló y si volverían a usarlo. No hacen falta resultados espectaculares ni inventar tracción.
+Un plan concreto para ElevenLabs. Qué componente usaríamos, qué probaríamos durante el apoyo y cómo pagaríamos el coste por usuario después. Su programa exige estrategia de negocio o monetización y un producto de largo plazo; excluye campañas puntuales y proyectos dirigidos a menores de 18 años.⁠
+
+⁠
+Una promesa responsable. Presentar la asistencia cognitiva que podamos demostrar, sin convertirla en eficacia terapéutica, diagnóstico o superioridad psicológica no validados.
+La utilidad social sí debe entrar en la solicitud, explicando quién se beneficia y cómo. Pero mi lectura es que estos programas no son principalmente ayudas por necesidad económica: apoyan productos que pueden crecer utilizando sus plataformas. El mejor argumento no es solo «no tenemos dinero», sino «este recurso elimina un obstáculo concreto para probar y llevar a usuarios una solución útil».⁠
+
+⁠⁠
+
+⁠
+
+Mi veredicto
+ElevenLabs: veo una candidatura prometedora y una relación fuerte entre producto y apoyo. Con demostración, identidad empresarial y plan de sostenibilidad, recomendaría presentarla con confianza.
+Notion: veo una solicitud razonable si cumples elegibilidad, pero no lo consideraría la solución principal a tu gasto de inteligencia artificial.
+Otro Gran Programa: lo usaría como contexto de misión o aplicación cuando corresponda, no para diluir la explicación del producto Khora.
+No puedo decir honestamente «seguramente nos lo darán». Sí puedo decir algo positivo y fundamentado: Khora tiene una razón auténtica para recibir estos apoyos, especialmente el de ElevenLabs; no necesitamos inventar otra startup para merecer consideración. Necesitamos convertir la propuesta en evidencia breve, pública y verificable.
+
+Para cerrar la evaluación de elegibilidad faltan datos concretos: correo empresarial, tamaño real del equipo, historial de planes/promociones en Notion y de solicitudes o cuenta Enterprise en ElevenLabs. Esos datos pueden cambiar el resultado aunque el producto sea excelente.
+
+October 17 at 5:23 PM
+Es importante que utilices, bueno, de ahora en adelante vamos a mantener en el radar a las posibles subvenciones que podamos adquirir de esta naturaleza y que sean aplicables para Cora o para otro gran programa. a veces a lo mejor podremos solicitar con los dos proyectos, a veces nada más a través de uno y a veces tendremos que hacer algunas mejorías que tengan sentido para nuestro propósito para poder calificar a otros. Eso se obvia, pero además tenemos que mantener el documento de tesis competitiva y el radar de GraphRack al día para mantenernos actualizados. Tenemos que buscar la manera de mantenerlo, de tener algo que esté en el filo sangriento de la tecnología. En marzo era GraphRack, estamos en octubre. Actualiza el radar del ecosistema GraphRack que ya existe al interior de este espacio de trabajo. Actualiza el documento de tesis competitiva si necesitas preguntarme cosas porque es un diseño, es un conato de documento que hay que construir y actualiza, mejor dicho, crea el radar de subvenciones para startups de toda índole, incluso si no aplican a los ámbitos de aplicación de los dos proyectos, cosas que nos sirvan y cosas que nos puedan dar gratis, de acuerdo con freebies que nos puedan regalar estas compañías y que podamos obtener.
+October 17 at 5:26 PM
+Worked for 12s
+Actualizaré el radar existente y la tesis competitiva con fuentes actuales, distinguiendo avances comprobados de promesas y decisiones de diseño pendientes. También crearé un radar compartido de apoyos, créditos y planes gratuitos: utilidad para cada proyecto, requisitos, límites, costes posteriores y siguiente acción. No enviaré solicitudes ni cambiaré el diseño del producto para perseguir beneficios.
+
+Worked for 1m 9s
+Encontré afirmaciones que deben corregirse: el radar describía el mercado personal como casi vacío y atribuía a Khora capacidades de su diseño de referencia como si ya estuvieran demostradas. Nowledge Mem y Graphiti documentan memoria persistente, procedencia y actualización del conocimiento; la tesis tendrá que apoyarse en diferencias más precisas.
+
+También hay oportunidades prácticas más allá de Notion y ElevenLabs: Neon tiene una vía para proyectos autofinanciados. En cambio, varios beneficios grandes de GitHub y Vercel exigen respaldo o afiliación que aún no hemos acreditado.
+
+Worked for 28s
+Verificación taxonómica: los dos cánones seguirán como elementos, y el nuevo radar será un elemento permanente de investigación bajo Marketing general, compartido por ambos proyectos; no encontré un radar de apoyos equivalente.
+
+Dejaré fechas de revisión y disparadores concretos para los tres documentos. La cadencia quedará documentada, pero no la presentaré como vigilancia automática: eso requeriría configurar una ejecución recurrente y revisar su coste.
+
+Worked for 5m 12s
+El radar de apoyos ya está creado con 15 oportunidades verificadas, separando créditos, planes gratuitos, membresías y dinero.
+
+La conclusión práctica: ElevenLabs merece preparar una candidatura de Khora; Notion sigue dependiendo del historial de la cuenta y puede ofrecer solo un mes. Neon también tiene una vía para proyectos autofinanciados. Ninguna de estas ofertas garantiza cubrir todo el gasto de inteligencia artificial.
+
+Estoy terminando de guardar y comprobar las correcciones del radar técnico y la tesis, sin aprobar cambios de diseño.
+
+Worked for 39s
+Actualicé los dos documentos existentes y creé el radar compartido de apoyos.
+
+📜Canon del Radar Comercial · IA Personal & Ecosistema GraphRAG v0.4​: incorpora memoria temporal, recuperación híbrida, consolidación y procedencia. Contrasta ocho actores y distingue documentación comercial de capacidades ensayadas; no presenta la revisión como exhaustiva.⁠
+⁠
+📜TCV · Tesis Competitiva de la Tríada de Proyección Visual · Canon v1.4​: retiré las conclusiones de «mercado vacío» y exclusividad no demostrada. Conservé el diseño como propuesta y añadí pruebas comparativas y decisiones pendientes, sin aprobar cambios de arquitectura.⁠
+⁠
+🔬Radar de convergencia funcional, servicios y apoyos · Khora y Otro Gran Programa​: contiene 15 oportunidades, entre ellas Notion, ElevenLabs, Neon, AWS, Google, Microsoft, Cloudflare, Vercel, GitHub, NVIDIA y dos vías monetarias. Cada ficha distingue beneficio, encaje por proyecto, requisitos, riesgos y siguiente acción.⁠
+⁠
+Mi conclusión: estar en la frontera no significa incorporar siempre el método más reciente. Para Khora, la apuesta que merece validarse es recuperar, elaborar y actuar fielmente sobre la expresión personal, con fuentes y menos esfuerzo. Grafo, voz y proyecciones deben demostrar que ayudan; su combinación ya no basta para afirmar originalidad.⁠
+⁠
+
+Dejé revisión semanal y contraste mensual, además de verificación antes de cada solicitud. Es una cadencia documental, no vigilancia automática configurada. No envié solicitudes ni activé servicios.
+
+Actualicé los radares y la tesis competitiva
+Para avanzar en la tesis sin decidir el producto por ti: ¿la proyección visual es indispensable desde la primera versión, o aceptarías demostrar primero recuperación y acción fieles mediante voz y texto?
+
+October 17 at 5:37 PM
+la revisión que sea diaria. ¿Necesitas saber qué voy a poner en la primera versión para construir la tesis? porque todavía no lo quiero, o sea, no siento como que lo quiera tener. ¿Crees que es necesario determinarlo? Más bien yo te pregunto a ti. Y me parece una oportunidad lo que estamos haciendo con este hilo para desglosar las funciones, o sea, los features del sistema versus lo que hay en el disponible conforme a la tecnología más de filo sangriento que existe. De ahí la instrucción de que hagamos la revisión todos los días de los radares. Por cierto, si no te había dado instrucciones, ve creando en el repositorio de metodología conforme instruye el Metacanon para objetos canónicos de Sprints. Un objeto canónico para este Sprint y anota en los pendientes para cuando lo recupere y lo siga trabajando. Ya no me acuerdo qué te iba a decir, pero de todas formas, eso que te acabo de decir y te decía, me parece una oportunidad para obligarnos a descubrir los features, segmentarlos, tenerlos bien definidos desde el punto de vista del mercado que frecuentemente es el punto de vista práctico, supongo. No sé qué opinas tú, pero a mí me interesaría ver esa enumeración y a partir de ahí converger con lo que empresas como Eleven Labs, Notion y otras compañías de la multitud de servicios que hay afuera, a veces geniales y que no conozco, a ver cuáles convergen con lo que nosotros estamos haciendo para poder ir descubriendo formas avanzadas y excelentes de hacer lo que estamos haciendo, aprovechando algunos de estos servicios y buscar las subvenciones de estas compañías si es que las ofrecen o si no, por lo menos tenerlas en el radar. Ahora haz que el proceso sea buscar convergencia entre features desde el punto de vista del mercado del sistema y lo que existe en el mercado para esas features. Es decir, para si estamos haciendo, qué sé yo, transcripción, es un ejemplo, a ver si hay algún servicio que haga exactamente la transcripción en vivo para ver si ellos lo hacen, cómo lo hacen y si podemos hacerlo como ellos o si podemos utilizar el servicio mediante una API. Luego, cuando tengamos ese mapeo, como segundo paso, buscar si esas correlaciones también tienen la posibilidad de subvenciones a startups. Si lo hacemos en esa secuencia, no tengo que crear otro documento aparte para la convergencia y todo puede quedar en la misma secuencia, así que hazlo así.
+October 17 at 5:42 PM
+No necesitas fijar todavía la primera versión. Podemos construir la tesis desde las capacidades que quieres habilitar y contrastarlas con el mercado, sin convertir esa exploración en un compromiso de alcance.
+
+Adoptaré esta secuencia: función y necesidad → soluciones disponibles → comparación e integración posible → apoyos o créditos. El mercado nos ayudará a concretar las funciones, pero no sustituirá tu propósito.
+
+Voy a cambiar la revisión a diaria y recuperar el Metacanon para registrar este sprint y sus pendientes en el repositorio correcto. También comprobaré cómo dejar la revisión realmente programada, no solo escrita.
+
+Worked for 11m 16s
+Worked for 8m 5s
+Ya quedó organizado como lo planteas: funciones → soluciones de mercado → integración posible → apoyos. No necesitas decidir todavía la primera versión. La tesis puede construirse como hipótesis de valor contrastable; el alcance será necesario cuando pasemos a construir o probar algo concreto.
+
+Lo que dejé preparado
+En el 🔬Radar de convergencia funcional, servicios y apoyos · Khora y Otro Gran Programa​ incorporé 15 funciones iniciales, conservando las 15 fichas de beneficios. Incluyen captura, transcripción, sincronización audio–texto, voz, conversación, memoria, temporalidad, recuperación, ideación, redacción, síntesis, proyecciones visuales, control de datos, operación e infraestructura. Son un inventario exploratorio, no funciones aprobadas ni construidas.⁠
+⁠
+Actualicé el 📜Canon del Radar Comercial · IA Personal & Ecosistema GraphRAG v0.4​ y la 📜TCV · Tesis Competitiva de la Tríada de Proyección Visual · Canon v1.4​ para revisión diaria, sin exigir que elijas el lanzamiento ni cambiar el diseño por cada novedad.
+Creé y releí el objeto canónico del sprint en Metodología: conserva tu instrucción íntegra, los pendientes y los prompts de reingreso. Está en rama documental, no fusionado en main.
+Metacanon adquirido: 1.5 · METACANON-OBJETOS-v1.5, fuente comprobada en 49ac40e9.
+
+Revisión diaria: preparada, todavía no activa
+El borrador propone 09:00, hora de Ciudad de México, diariamente. Solo puede editar las tres páginas indicadas y consultar fuentes públicas; no enviar solicitudes, contratar servicios ni decidir arquitectura.
+
+Antes de activarlo, propongo una prueba privada y de solo lectura: comparar transcripción de ElevenLabs y Deepgram y, después, comprobar un apoyo asociado. Sin editar páginas, subir audio ni llamar a servicios de transcripción. La prueba consume créditos de Notion; su coste aún no está medido.
+
+Actualicé los radares, la tesis y la secuencia funcional
+
+Creé Radar diario · funciones, servicios y apoyos en borrador
+Added appearance
+Added triggers
+¿Ejecuto esta prueba privada ahora o quieres indicar cambios? La revisión diaria seguirá desactivada hasta evaluar la prueba y aprobar su publicación.
+Other: No el radar diario gasta tokens y no tendre para activarlo. Pero hazlko tu. O que te refirtews
+Me refería a un agente separado que se ejecutaría automáticamente cada día y consumiría créditos de Notion. No lo ejecutaré ni lo activaré; quedó en borrador y desactivado.
+
+Sí, puedo hacer yo la revisión en este chat, sin ese agente adicional. Pero hay una diferencia importante:
+
+Revisión conmigo: consume los créditos de esta conversación y se realiza cuando retomamos el trabajo.
+Revisión automática diaria: necesita una ejecución programada; no puedo seguir trabajando entre mensajes por mi cuenta ni prometer que será gratuita.
+Por ahora seguimos manualmente conmigo, sin prueba del agente. El mapa funcional y los documentos ya quedaron actualizados. Cuando retomemos el sprint, recuperaré sus pendientes y continuaré con función → servicios disponibles → integración → apoyos, sin pedirte que vuelvas a explicar el contexto ni que decidas todavía la primera versión.
+
+October 17 at 6:24 PM
+Grafo
+Recibido: Remote Desktop Commander (RDC), dispositivo 015RENTA02, identificador exacto fe26439e-4d86-42d5-b4c0-82d8e30c04f5, endpoint https://mcp.desktopcommander.app/.
+
+Usaré ese identificador si una tarea autorizada requiere conexión. No he conectado ni accedido al equipo; el estado Online corresponde a la comprobación que trasladaste. Estos datos no conceden permisos de acceso o modificación ni amplían el alcance del hilo.
+
+October 17 at 6:31 PM
+Si sehguimso manualmente
+October 17 at 6:37 PM
+Sí, seguimos manualmente, sin activar el agente. Retomo la comparación de transcripción y sincronización audio–texto; después revisaré los apoyos de los servicios que encajen. No hace falta acceder al equipo remoto.
+
+Worked for 2m 1s
+Sí, seguimos manualmente. Ya avancé la comparación y guardé esa decisión en el radar y en el objeto del sprint, sin ejecutar ni activar el agente.
+
+Dos hallazgos útiles
+Para Otro Gran Programa: si ya tenemos el audio y el texto aprobado, conviene estudiar alineación forzada, no volver a transcribir. ElevenLabs ofrece precisamente audio + texto → tiempos por palabra o frase, con español de México documentado. Es una correspondencia funcional, todavía no una integración probada.⁠
+
+⁠
+Para Khora: encontré otro apoyo pertinente: Deepgram for Startups, con hasta 100.000 dólares en créditos durante doce meses, sujetos a selección. Pide estar en producción o buscar lanzar en los próximos seis meses; no debemos comprometernos a ese plazo solo para calificar.⁠
+
+⁠
+Hay una condición importante: los créditos promocionales de Deepgram permiten desarrollar el producto, no investigar competidores. Cualquier comparativa financiada con ese saldo necesitaría aclaración previa.⁠
+
+⁠
+
+Dejé el contraste en el 🔬Radar de convergencia funcional, servicios y apoyos · Khora y Otro Gran Programa​ y actualicé el objeto canónico del sprint a v0.2, ambos releídos y verificados.
+
+Pendiente inmediato: comparar costes y tratamiento de datos antes de proponer una prueba real. No subí audio, contraté servicios ni envié solicitudes.
+
+Metacanon adquirido: 1.5 · METACANON-OBJETOS-v1.5, sin cambios en la fuente comprobada.
+
+Actualicé el radar con revisión manual, alineación y apoyo de Deepgram
+October 17 at 6:40 PM
+Sigue
+October 17 at 7:37 PM
+Sigo con costes y tratamiento de datos de ElevenLabs y Deepgram. Separaré las cuotas gratuitas de los créditos sujetos a aprobación, y comprobaré qué condiciones habría que resolver antes de usar audio personal.
+
+Worked for 2m 6s
+Avancé costes y privacidad. La conclusión: hay vías económicas para experimentar con voz, pero todavía no una opción aprobada para el audio íntimo de Khora.
+
+Costes publicados
+ElevenLabs Scribe Realtime: 0,39 dólares por hora de audio, antes de impuestos y complementos.⁠
+
+⁠
+Deepgram Nova-3 Multilingual: 0,35 dólares por hora, como promoción temporal. Además publica 200 dólares de saldo inicial para cuentas nuevas, sin tarjeta; es distinto de su subvención para startups. No he comprobado si tu cuenta dispone de ese beneficio.⁠
+
+⁠
+No declaro ganador por esa diferencia: falta confirmar calidad en español, complementos y tarifa aplicable al excluir el entrenamiento.
+
+La condición importante está en los datos
+ElevenLabs permite excluir los datos nuevos del entrenamiento, pero eso no elimina su retención. Su modalidad de retención cero está reservada a determinados clientes Enterprise; no debemos presumir que venga con la subvención.⁠
+
+⁠⁠
+
+⁠
+
+Deepgram permite excluir cada solicitud del programa de mejora, y documenta que esas solicitudes se conservan solo durante su procesamiento. También advierte de una recarga automática configurable: habría que comprobarla antes de cualquier prueba con cuenta real.⁠
+
+⁠⁠
+
+⁠
+
+Guardé el contraste en el 🔬Radar de convergencia funcional, servicios y apoyos · Khora y Otro Gran Programa​ y los pendientes en el objeto del sprint v0.3, verificados por lectura posterior.
+
+Siguiente bloque: memoria persistente y temporalidad, comparando biblioteca abierta frente a servicio gestionado. Las dudas comerciales de voz quedan registradas, sin bloquear esa investigación. No subí audio ni activé servicios.
+
+Marco aplicado: Metacanon 1.5 · METACANON-OBJETOS-v1.5.
+
+Documenté costes, condiciones de datos y límites de gratuidad
+October 17 at 7:39 PM
+Sunday, Oct 18
+Muéstrame a grandes rasgos qué fue lo que te pedí.
+9:20 AM
+Me pediste convertir este trabajo en un proceso de descubrimiento de Khora y Otro Gran Programa, no simplemente en una búsqueda de subvenciones.
+
+A grandes rasgos:
+
+Desglosar las funciones del sistema y expresarlas en términos prácticos: qué necesita hacer la persona y qué resultado obtiene. Sin obligarte a decidir todavía la primera versión.
+Contrastar cada función con lo que existe en el mercado, incluida la tecnología más avanzada: quién lo resuelve, cómo, qué nos falta y si conviene integrar un servicio, utilizar una biblioteca, aprender de su enfoque o construir algo propio.
+Después del encaje funcional, investigar los apoyos disponibles: créditos, planes gratuitos, descuentos, membresías y subvenciones. Conservar también los servicios útiles que no ofrezcan ayudas.
+Mantener actualizados el radar tecnológico y la tesis competitiva, con evidencia y sin darte la razón por complacencia: distinguir lo que queremos hacer, lo que existe y lo que realmente hemos demostrado.
+Mantener todo en una misma secuencia documental, sin crear otro documento aparte para la convergencia, y guardar el estado y los pendientes en un objeto canónico del sprint dentro del repositorio de Metodología.
+Revisarlo diariamente como objetivo, pero finalmente acordamos hacerlo manualmente conmigo al retomar el chat, sin activar un agente recurrente que consuma créditos adicionales.
+El propósito central: descubrir mejores maneras de realizar nuestros proyectos y aprovechar recursos externos que tengan sentido para ellos, sin deformarlos para conseguir una promoción.
+
+La transcripción fue un ejemplo para explicar el método, no una decisión de que deba ser la primera función que construyamos.
+
+9:20 AM
+Completa cada fase pór co,mpletpo def extrem oa extremo en cada ciclo
+9:29 AM
+Entendido: cada ciclo debe cerrar una fase completa de extremo a extremo, no dejarte una entrega parcial seguida de «eso lo revisaré después».
+
+Para cada bloque funcional, completaré en el mismo ciclo:
+
+Necesidad y función: qué queremos resolver.
+Mercado: soluciones pertinentes y alternativas.
+Convergencia: cobertura, diferencias y opciones de integración.
+Viabilidad: costes, datos, licencias, límites y salida.
+Apoyos: beneficios disponibles y requisitos, después del encaje funcional.
+Conclusión: recomendación, incertidumbres y decisiones necesarias.
+Persistencia: actualizar los documentos correspondientes y el objeto del sprint, verificando lo guardado.
+No confundiré investigación terminada con integración probada o subvención concedida. Si una credencial, autorización o decisión material impide cerrar algo, agotaré lo independiente y dejaré el bloqueo exacto; no declararé completada esa parte.
+
+El siguiente ciclo cubrirá así memoria persistente y temporalidad, con toda esa secuencia, no solamente una primera búsqueda de proveedores.
+
+9:29 AM
+Avanza
+9:37 AM
+Preparar revisión integral de memoria
+Completaré la fase de memoria persistente y temporalidad: necesidad, alternativas, integración, costes y datos; después, apoyos y recomendación. Cerraré con los documentos actualizados y verificados. No instalaré componentes ni enviaré datos personales a proveedores.
+
+Worked for 2m 15s
+Encontré una opción concreta para investigar: Mem0 ofrece tres meses de Pro para nuevos usuarios. Pero su política permite entrenar con datos del plan gratuito; antes de usar datos personales habría que aclarar cómo clasifica la cuenta bonificada. Zep ofrece un nivel gratuito, mientras que su programa empresarial exige financiación previa y pago: no sirve como ayuda sin presupuesto. Estos límites pesan tanto como las funciones técnicas.⁠
+
+⁠⁠
+
+⁠⁠
+
+⁠⁠
+
+⁠
+
+Worked for 2m 12s
+La conclusión provisional es no elegir todavía un motor: Graphiti encaja directamente con historia y procedencia; Zep ofrece gestión de esa infraestructura; Mem0 es candidato para memoria extraída y tiene una ayuda concreta. No son equivalentes y aún no los hemos probado.⁠
+
+⁠⁠
+
+⁠⁠
+
+⁠
+
+Guardaré el contraste completo —incluidos costes, datos, salida y apoyos— en el radar existente, y su consecuencia en la tesis: la memoria temporal por sí sola no diferencia a Khora. Eso no obliga a decidir ahora la primera versión ni a cambiar su diseño.
+
+Worked for 52s
+Cerré la fase de memoria persistente y temporalidad de extremo a extremo, en su alcance documental: necesidad, alternativas, integración posible, costes, datos, salida, apoyos y recomendación. Todo quedó guardado y releído; ninguna integración se presenta como probada.
+
+Resultado práctico
+Alternativa	Qué nos aporta	Mi valoración
+Graphiti	Historia de hechos, correcciones y retorno a episodios originales	Referencia directa para estudiar la memoria temporal de Khora. Código abierto no significa inferencia ni mantenimiento gratuitos.⁠
+
+⁠
+Zep	Esa infraestructura como servicio gestionado; nivel gratuito de 10.000 créditos mensuales	Alternativa para prototipado. Su programa empresarial exige financiación previa y pago: no lo priorizaría como ayuda sin presupuesto.⁠
+
+⁠⁠
+
+⁠
+Mem0	Memoria extraída y recuperable entre sesiones; programa de tres meses gratuitos de Pro para nuevos usuarios	Oportunidad concreta para Khora, pendiente de elegibilidad. Antes de datos personales hay que confirmar cómo trata el entrenamiento en una cuenta bonificada.⁠
+
+⁠⁠
+
+⁠⁠
+
+⁠
+Recomendación: conservar candidatos, sin escoger todavía motor ni primera versión. Para Otro Gran Programa, primero comprobar si necesita memoria relacional: un corpus con originales y versiones podría bastar.
+
+La consecuencia para la tesis es importante: tener memoria temporal y procedencia ya no diferencia por sí solo a Khora. La ventaja por demostrar está en conservar el sentido, permitir correcciones y convertir lo recuperado en una experiencia útil con menos esfuerzo.⁠
+
+⁠⁠
+
+⁠
+
+Persistencia y continuidad
+Contraste completo en A.3 del 🔬Radar de convergencia funcional, servicios y apoyos · Khora y Otro Gran Programa​.
+📜Canon del Radar Comercial · IA Personal & Ecosistema GraphRAG v0.4​ y 📜TCV · Tesis Competitiva de la Tríada de Proyección Visual · Canon v1.4​ actualizados.
+Objeto canónico del sprint v0.4, commit 366e23a, verificado íntegramente; sin fusionar en main.
+Metacanon adquirido: 1.5 · METACANON-OBJETOS-v1.5, fuente central comprobada, sin cambios. NX-332m.
+
+No creé cuentas, envié solicitudes ni transferí datos personales. Continúa el modo manual, sin agente recurrente.
+
+Actualicé el contraste de memoria, los radares y la tesis
+Siguiente fase: recuperación verificable y búsqueda híbrida, también completa hasta costes, datos y apoyos. Objetivo: un ciclo documental si las fuentes están accesibles; el cierre del sprint exploratorio aún no tiene un plazo estimable.
+
+9:44 AM
+Siguiente
+9:59 AM
+Searched Hindsight memory retrieval pricing privacy startup credits, LightRAG citations deletion license retrieval
+Sigo con recuperación verificable y búsqueda híbrida: cómo encontrar lo pertinente y volver al original sin confundir una cita con una respuesta respaldada. Cerraré el bloque completo —alternativas, integración, costes, datos, apoyos y recomendación— sin instalar ni enviar información a proveedores.
+
+Worked for 1m 18s
+Hay dos hallazgos útiles. Hindsight permite recuperar el fragmento original detrás de una memoria resumida; eso encaja con nuestra exigencia de verificar el sentido, aunque todavía no demuestra que seleccione siempre la evidencia correcta.⁠
+
+⁠
+
+También ofrece hasta 15.000 dólares en créditos, pero exige un producto para clientes y una empresa financiada o rentable; no es una ayuda abierta para exploración individual. La registraré como oportunidad condicionada, no como candidatura lista.⁠
+
+⁠
+
+Worked for 3m 57s
+Completé la fase de recuperación verificable y búsqueda híbrida, incluidos integración posible, costes, licencias, datos, salida, apoyos y recomendación. Quedó guardada y verificada; no se ejecutaron pruebas ni se adoptó tecnología.
+
+Qué cambia para nosotros
+Hindsight es candidato para Khora porque combina búsqueda semántica, léxica, relacional y temporal, y permite recuperar el fragmento original detrás del recuerdo resumido. Eso ayuda a comprobar matices, pero no garantiza una respuesta fiel.⁠
+
+⁠
+LightRAG sigue como alternativa para relacionar documentos y devolver contexto con citas. Antes de cualquier despliegue hay que comprobar versión y autenticación: encontré una corrección de seguridad registrada en la versión 1.5.4.⁠
+
+⁠⁠
+
+⁠
+Mi recomendación: compararlos contra búsqueda léxica/vectorial sencilla. Para Otro Gran Programa, localizar correctamente pasajes del corpus aprobado puede importar más que añadir memoria agéntica.
+Hallazgo de apoyos: Hindsight publica hasta 15.000 dólares en créditos escalonados, con caducidad de tres meses desde aprobación. Exige empresa constituida, producto para clientes y financiación o rentabilidad con tracción. No tenemos acreditado ese encaje administrativo, aunque la correspondencia técnica con Khora sea plausible.⁠
+
+⁠
+
+La consecuencia para la tesis es: tener citas no basta; hay que demostrar que respaldan realmente lo afirmado. Esa prueba quedó definida, no ejecutada.
+
+Documentación y continuidad
+Actualicé y releí:
+
+A.4 del 🔬Radar de convergencia funcional, servicios y apoyos · Khora y Otro Gran Programa​.
+El 📜Canon del Radar Comercial · IA Personal & Ecosistema GraphRAG v0.4​ y la 📜TCV · Tesis Competitiva de la Tríada de Proyección Visual · Canon v1.4​.
+Objeto canónico del sprint, v0.5, commit c03fc7d, sin fusionar en main.
+Metacanon adquirido: 1.5 · METACANON-OBJETOS-v1.5, comprobado y sin cambios.
+
+Siguiente bloque: ideación asíncrona recuperable y redacción enraizada en sentido: qué falta entre encontrar material y elaborar sin deformarlo. Objetivo: un ciclo documental completo si las fuentes están accesibles; el cierre total del sprint sigue sin plazo estimable.
+
+Context compacted
+Voy a salir unos minutos, resuelve e2e con la cmayor alidad posible. 
+10:06 AM
+Cargar criterios de análisis e integración
+Completaré de extremo a extremo la fase de ideación recuperable y redacción anclada en tus fuentes: alternativas, integración, costes, tratamiento de datos, apoyos y conclusión. Dejaré los resultados y el punto exacto de continuación guardados y verificados, sin contratar servicios ni adoptar decisiones de diseño por ti.
+
+Worked for 1m 45s
+El hallazgo central es que recuperar material y escribir con citas ya tiene alternativas sólidas. La diferencia que Khora tendría que demostrar es conservar tu sentido —negaciones, dudas, cambios y autoría— al elaborar, no sólo adjuntar fuentes. También encontré créditos de OpenAI sujetos a socios de inversión y condiciones de Google que impiden tratarlos como apoyos automáticamente accesibles. Dejaré esas diferencias y sus límites explícitos.
+
+Worked for 4m 34s
+Completé de extremo a extremo la fase de ideación recuperable y redacción enraizada en sentido, incluyendo alternativas, integración, costes, licencias, datos, salida, apoyos y criterios de evaluación. Guardé los cambios y verifiqué la lectura de vuelta.
+
+Conclusión principal
+La oportunidad de Khora no es simplemente conectar ideas o escribir con citas: esas capacidades ya tienen alternativas. La diferencia que debemos demostrar es elaborar conservando tu sentido, tus dudas, negaciones, cambios y autoría, con menos esfuerzo de revisión. Todavía no está validada.⁠
+
+⁠⁠
+
+⁠⁠
+
+⁠
+
+Dejé tres referencias prácticas:
+
+Nowledge Mem: captura, recuperación y síntesis de ideas dispersas.
+Gemini Notebook —antes NotebookLM—: elaboración con fuentes; su aplicación no equivale automáticamente a un servicio integrable.
+OpenAI Responses/File Search: candidato integrable, con costes y retención separados de sus promociones.⁠
+
+⁠⁠
+
+⁠⁠
+
+⁠
+Lo que quedó actualizado
+🔬Radar de convergencia funcional, servicios y apoyos · Khora y Otro Gran Programa​: fase completa, pruebas propuestas y condiciones de ayudas.
+📜Canon del Radar Comercial · IA Personal & Ecosistema GraphRAG v0.4​: nuevas correspondencias y límites.
+📜TCV · Tesis Competitiva de la Tríada de Proyección Visual · Canon v1.4​: diferenciación como hipótesis comprobable, sin exigir decidir la primera versión.
+El objeto canónico del sprint quedó en v0.6, verificado y sin fusionar a main.
+
+No contraté, implementé ni envié solicitudes. El siguiente checkpoint es síntesis existencial accionable: pasar de recuperar y elaborar a producir acción útil. Metacanon adquirido: 1.5 · METACANON-OBJETOS-v1.5.
+
+10:14 AM
+Siguierbnte resuelvas todas no te detengas por ciclo
+10:21 AM
+Preparar cierre de todas las fases pendientes
+Sí. Completaré todas las fases documentales pendientes del inventario actual, sin detenerme al terminar cada una. Dejaré el mapa funcional, las consecuencias para la tesis, los apoyos y los pendientes consolidados y verificados. Sólo quedarán fuera las pruebas o decisiones que requieran datos privados, gasto o tu aprobación de diseño.
+
+Worked for 7m 33s
+Cerraré todo el inventario funcional pendiente en esta entrega, no una fase por turno. El cierre será documental: alternativas, integración, costes, datos, salida y apoyos; distinguiré claramente lo investigado de lo probado y guardaré el punto de continuidad en el repositorio.
+
+Worked for 2m 7s
+El mapa ya cubre las quince funciones del inventario inicial. Dos hallazgos corrigen la lectura anterior: Notion sí tiene una interfaz de agentes en beta, y Workers es gratuito durante la beta en Business y Enterprise; ninguna de las dos cosas implica inteligencia artificial ilimitada. Ahora guardaré y comprobaré las actualizaciones de los radares, la tesis y el objeto del sprint.
+
+Worked for 1m 21s
+Completé todas las fases documentales pendientes del inventario inicial: las quince funciones quedaron cubiertas, sin detenerme después de cada fase. El cierre es de investigación y comparación, no de implementación ni pruebas del producto.
+
+Qué quedó actualizado
+🔬Radar de convergencia funcional, servicios y apoyos · Khora y Otro Gran Programa​: funciones → alternativas → integración → costes, licencias, datos y salida → apoyos → recomendación y pruebas propuestas.
+📜Canon del Radar Comercial · IA Personal & Ecosistema GraphRAG v0.4​: consecuencias de mercado y límites de las alternativas.
+📜TCV · Tesis Competitiva de la Tríada de Proyección Visual · Canon v1.4​: hipótesis diferenciadora y qué habría que demostrar, sin obligarte a elegir todavía una primera versión.
+Conclusión principal: la oportunidad de Khora no está demostrada por acumular memoria, voz, grafos y tareas —ya existen—, sino en conseguir una composición fiel al sentido del usuario, controlable y con menor esfuerzo real. Eso sigue siendo una hipótesis que debemos probar, no una superioridad acreditada.⁠
+⁠
+
+Correcciones importantes
+Notion sí tiene una interfaz de agentes en beta pública. Además, Workers es gratuito durante la beta en Business y Enterprise; no equivale a inteligencia artificial ilimitada ni autoriza activar nuestro agente descartado.⁠
+
+⁠⁠
+
+⁠
+ElevenLabs continúa siendo una posibilidad pertinente si la voz sirve a un producto duradero, no solamente a una narración aislada. El apoyo no garantiza todos los costes del sistema ni acceso a laboratorios internos.⁠
+
+⁠
+Corregí la afirmación categórica anterior sobre Notion: no debemos dar por excluyente cualquier pago histórico sin comprobar las bases aplicables al solicitante concreto.⁠
+
+⁠
+Guardé el objeto canónico del sprint v0.7, conforme al Metacanon adquirido v1.5, y verifiqué la lectura de vuelta de los cuatro documentos. La rama no se fusionó con main.
+
+Quedan las compuertas reales: condiciones del solicitante y autorización de pruebas/datos/gasto; no fases documentales reservadas artificialmente para otro turno. La revisión diaria continúa manual, sin vigilancia entre mensajes.
+
+10:33 AM
+Sigue
+10:34 AM
+Searched earlier activity
+Sigo con el siguiente paso seguro: convertir la tesis en una evaluación reproducible, con casos sintéticos, criterios de aceptación y comparación frente a alternativas simples. Prepararé el protocolo y lo guardaré en los documentos existentes, sin elegir la primera versión ni ejecutar servicios.
+
+Worked
+Interrupted
+10:34 AM
+Osea que sigue?]
+10:34 AM
+Lo que sigue es pasar del catálogo de funciones a comprobar dónde Khora aporta una ventaja práctica. No hace falta decidir todavía la primera versión.
+
+El siguiente trabajo concreto es:
+
+Elegir tareas de evaluación, no funciones de lanzamiento: recuperar una idea dispersa, redactar sin alterar su sentido y obtener un próximo paso respaldado.
+Preparar ejemplos sintéticos con respuestas esperadas y fallos claros: pérdida de negaciones, ideas omitidas, compromisos inventados o fuentes equivocadas.
+Comparar cada tarea con una alternativa sencilla y servicios existentes: determinar qué podemos integrar y qué tendría sentido desarrollar.
+Con ese encaje, priorizar apoyos: qué servicio necesitamos realmente, qué beneficio ofrece y qué requisitos nos faltan.
+Ahora puedo preparar los casos y el método de comparación sin gastar ni transferir datos personales. Ejecutar la comparación con proveedores vendría después, con sus condiciones verificadas.
+
+Eso nos permitirá sustituir «parece una startup interesante» por evidencia concreta de qué resuelve, para quién y por qué merece apoyo, sin prometer que lo concederán.
+
+10:35 AM
+Si
+10:35 AM
+Prepararé los casos sintéticos, los criterios de aceptación y las alternativas de comparación. Quedarán en el radar existente y en el objeto del sprint, sin ejecutar servicios ni decidir la primera versión.
+
+Worked for 3m 35s
+El ensayo ya está preparado: incluye dieciséis registros ficticios y doce casos para comprobar fidelidad, retractaciones, atribución, datos faltantes y propuestas de acción. También deja explícito que la alternativa sencilla puede resultar mejor y que estos casos visibles no bastan para demostrar superioridad. Ahora guardaré y verificaré los cambios.
+
+Worked for 57s
+Ya quedó preparada y guardada la evaluación, sin ejecutar servicios ni decidir la primera versión.
+
+En la sección A.13 del 🔬Radar de convergencia funcional, servicios y apoyos · Khora y Otro Gran Programa​ dejé:
+
+Dieciséis registros ficticios y doce casos, con fuentes y resultados esperados.
+Tres tareas: recuperar ideas dispersas, redactar conservando su sentido y proponer un paso respaldado sin ejecutarlo.
+Comparación con una alternativa sencilla y con servicios ya investigados.
+Criterios para detectar negaciones perdidas, compromisos inventados, retractaciones ignoradas, atribuciones falsas y datos sin respaldo.
+Un registro para recoger resultados, costes y esfuerzo de corrección cuando se realice la prueba.⁠
+⁠
+La comparación no presupone que Khora gane: si basta una solución sencilla, la preferimos; si un servicio resuelve el tramo, estudiamos integrarlo; desarrollar algo propio necesita una brecha útil demostrada.
+
+Actualicé también la 📜TCV · Tesis Competitiva de la Tríada de Proyección Visual · Canon v1.4​ y el 📜Canon del Radar Comercial · IA Personal & Ecosistema GraphRAG v0.4​. El objeto canónico del sprint quedó en v0.8, conforme al Metacanon adquirido v1.5, sin fusionar con main. Verifiqué los cuatro documentos tras guardarlos.
+
+Siguiente paso material: realizar una primera comparación sobre este corpus, empezando por la línea base simple. La preparación está completa; todavía no hay resultados ni evidencia para afirmar superioridad o aprobación probable de apoyos.
+
+10:41 AM
