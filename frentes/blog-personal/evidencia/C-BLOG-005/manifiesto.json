@@ -1,19 +1,19 @@
 {
   "cycle": "C-BLOG-005",
-  "base_document_commit": "e4d332f9429756cdc881c7618ceb5721e3e359e9",
+  "base_document_commit": "e45c5317671b3ead0b09fee92e87e46b322831bd",
   "code_commit": "83519ec2dabebbf2723f7fa2042e2545c36a9902",
   "files": {
     "frentes/blog-personal/OBJETO-CANONICO.md": {
-      "git_blob": "5380ced735d68a62658f08953457e6d0126b3485",
-      "sha256": "7d66858204df1843649b87ed148935de4c6988173ec54344e323c86eff9661f2"
+      "git_blob": "bd618235ac2cb85d3e5bc0077559d6d0e5a05a81",
+      "sha256": "c9b205dfb36d827012de9c9f31203c62a16ba636d0f0f149a4222f2291f1d538"
     },
     "frentes/blog-personal/originales/C-BLOG-005-operador-documentacion.txt": {
       "git_blob": "ba5f08729c503b7b8b9baac07c6e8e21d8aebc9f",
       "sha256": "fbdaea3c6f9dde6afcad390ac4ddc3fd16ace054e0019db2b26fdf4779b4e655"
     },
     "frentes/blog-personal/originales/C-BLOG-005-central-extractos-literales.txt": {
-      "git_blob": "370108f5f95e27749d3ec85ba3cd455f76aa000e",
-      "sha256": "8a4d66b37d74fddb485a97be1b2792190a1385ee4c09107188b5336696962f87"
+      "git_blob": "181fd2d67ca8b64df01e88ef3af7f79234e13519",
+      "sha256": "6f0579f70690441144bc66b0ec335b84f67d62f2e98b662465d77e3b600d8149"
     },
     "frentes/blog-personal/originales/C-BLOG-005-salidas-visibles.txt": {
       "git_blob": "636c1426eb71a8fce423c8b8bb71b8419ee6bfc4",
@@ -44,16 +44,17 @@
       "sha256": "45cf90ac9eb2dce735e5fcbb830d0ae88a037e1ad3168eae9d653acc87249702"
     },
     "frentes/blog-personal/evidencia/C-BLOG-005/resultado.json": {
-      "git_blob": "ac6084faea1e8ee5159d847c94aaf1e15533632e",
-      "sha256": "06cc7616ceb39d58baaf13b9c1785480c2b2f070b39a6bd0e17391c0fe60e4e9"
+      "git_blob": "b3d4768e6b093adf37d033002330721df9834ee3",
+      "sha256": "c39a7daf075feb9e4ec7d03ef2436a9fe131d433b712c6ae4186ef58a53f8d9b"
     },
     "frentes/blog-personal/originales/C-BLOG-005-cierre.txt": {
-      "git_blob": "ec2d93ec313a5f5f567563188b84537c05bd5ed3",
-      "sha256": "b043bac7a817f8da0f63c110be0aa58abed0f885e63f235d961b5e37d81162ae"
+      "git_blob": "e492e8171e568f0e3477207be5093b6a01cae1ed",
+      "sha256": "954d8483efb2b205ff45aed3b6b1c05aeb27ea08cddec764fe5e7845c0fb2a75"
     },
     "frentes/blog-personal/originales/C-BLOG-005-procedencia.txt": {
       "git_blob": "ed7f384670b7778c6a45c5a62022826beaae444e",
       "sha256": "15a691bed4ae2ae0ac4db1ce0c3d445d8ab15cbd48b08646a3c666cc7c09b9c6"
     }
-  }
+  },
+  "continuation": "sameC005; intermediatev7notemitted; v8updatesfinalcentralreport"
 }

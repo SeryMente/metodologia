@@ -55,11 +55,17 @@
   "central_report_only": {
     "integration_commit": "bdc0255df9c9573575b25082706197a55bef7211",
     "total_tests": 76,
-    "pass": 75,
-    "skip": 1,
+    "pass": 76,
+    "skip": 0,
     "browser_assertions": 15,
     "preview": "dpl_3i1uggfnr2cGt89iRMCQvXJq2qWA",
-    "preview_state": "INITIALIZING",
-    "not_own_verification": true
+    "preview_state": "READY",
+    "not_own_verification": true,
+    "readback_files": 13,
+    "handler_recovery_assertions": 9,
+    "preview_url": "https://khora-10mve3uo2-victorhugotorresmendez-8991s-projects.vercel.app",
+    "logs": "403 persists even explicit scope; no proof of all build gates",
+    "probe_http": "in progress, not received here",
+    "no_more_blog_code_changes_requested": true
   }
 }
