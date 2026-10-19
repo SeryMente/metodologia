@@ -1,0 +1,59 @@
+{
+  "commit": "13a15d9532931a0ff2795f5390ce2750484a1474",
+  "checks": [
+    {
+      "path": "delivery.ts",
+      "remote": "7b35a788c927fdc04bb139db57947a843e7c6c68",
+      "local": "7b35a788c927fdc04bb139db57947a843e7c6c68",
+      "matches": true
+    },
+    {
+      "path": "domain.ts",
+      "remote": "013b3e2e470a650022e0fc3fb9c142d44f9f6088",
+      "local": "013b3e2e470a650022e0fc3fb9c142d44f9f6088",
+      "matches": true
+    },
+    {
+      "path": "mcp.ts",
+      "remote": "4268af5d933562e63658cdfb28cf5fae9b83f553",
+      "local": "4268af5d933562e63658cdfb28cf5fae9b83f553",
+      "matches": true
+    },
+    {
+      "path": "metadata.ts",
+      "remote": "76ab889669fee45ed835bb80b6536055c9f59069",
+      "local": "76ab889669fee45ed835bb80b6536055c9f59069",
+      "matches": true
+    },
+    {
+      "path": "outbox.ts",
+      "remote": "42b502caff15c3fe9a0e36f603e39f948b435bf4",
+      "local": "42b502caff15c3fe9a0e36f603e39f948b435bf4",
+      "matches": true
+    },
+    {
+      "path": "providers.ts",
+      "remote": "f85745ee17fde5196de3e84343528d743217a391",
+      "local": "f85745ee17fde5196de3e84343528d743217a391",
+      "matches": true
+    },
+    {
+      "path": "repository.ts",
+      "remote": "e10ecd42e1e2ce9fdd122518eefa048243071c8d",
+      "local": "e10ecd42e1e2ce9fdd122518eefa048243071c8d",
+      "matches": true
+    },
+    {
+      "path": "service.ts",
+      "remote": "413c4dc5c7969f8521faaf280e2e0f83f01bf944",
+      "local": "413c4dc5c7969f8521faaf280e2e0f83f01bf944",
+      "matches": true
+    },
+    {
+      "path": "app/api/blog/editorial/route.ts",
+      "remote": "fdaefe875a017da599626f41fca14c3cf4a92a03",
+      "local": "fdaefe875a017da599626f41fca14c3cf4a92a03",
+      "matches": true
+    }
+  ]
+}

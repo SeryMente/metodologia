@@ -1,0 +1,17 @@
+**Dejé implementado y probado el núcleo editorial; el cierre de extremo a extremo sigue pendiente. No hay una nota real publicada en ambos destinos.**
+
+### Entregado
+- [Solicitud de cambios 329](https://github.com/SeryMente/khora/pull/329), **en borrador y sin activar**, revisión `13a15d9532931a0ff2795f5390ce2750484a1474`.
+- Consentimiento conjunto por versión: **Sí → blog y Página de Facebook; No → conservar sin publicar**. La negativa puede persistirse incluso antes de preparar un borrador, sin leer el original ni depender del acceso normativo.
+- Propuestas de metadatos con anclas, lectura limitada mediante el protocolo de contexto del modelo (MCP), cola durable y comprobantes separados por destino. Un envío incierto a Facebook no se repite a ciegas.[^https://github.com/SeryMente/khora/tree/13a15d9532931a0ff2795f5390ce2750484a1474/khora-web/lib/server/blog]
+
+**Verificación:** 28 pruebas locales, un escenario transaccional PostgreSQL aislado, tipos estrictos del núcleo y regresión del blog existente. No equivalen a compilación completa de Khora ni a pruebas con proveedores reales. El único canon queda actualizado a **BLOG-PERSONAL-v3**, bajo Metacanon 1.6, con fuentes, crónica, evidencia y pendientes.[^https://github.com/SeryMente/metodologia/blob/main/frentes/blog-personal/OBJETO-CANONICO.md]
+
+### Qué impide activarlo
+1. **Khora:** su credencial normativa sigue sin reparación acreditada; la comprobación devolvió `SI_MAIN_FETCH 401`. Está separada de mi conexión GitHub.
+2. **Permisos administrativos:** Vercel permite consultar el proyecto, pero listar despliegues devolvió **403 del ámbito del equipo**. Los controles de integración continua de GitHub tampoco pudieron verificarse por permisos.
+3. **Publicación real:** faltan verificar oficialmente la administración/permisos de la Página, revisar el texto y formato de la primera nota y completar integración con Ingreso, migraciones y despliegue.[^https://github.com/SeryMente/metodologia/blob/main/frentes/blog-personal/evidencia/C-BLOG-002/limites.json]
+
+No publiqué pruebas ni originales privados, no usé acceso remoto y no doy la conexión por operativa. **No puedo fijar un plazo de cierre real mientras falten esos accesos y la nota aprobada.**
+
+**Siguiente intervención necesaria:** ¿autorizas abrir la bóveda de Khora en el navegador para reparar su credencial mediante entrada segura? No pegues el PIN ni el token en el chat.

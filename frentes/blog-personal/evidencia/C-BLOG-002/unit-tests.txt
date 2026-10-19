@@ -1,0 +1,36 @@
+✔ exact version approves, private identifiers never projected (1.84373ms)
+✔ unauthorized actor rejected (0.419118ms)
+✔ missing approval rejected (0.171893ms)
+✔ editing body invalidates exact approval (0.290202ms)
+✔ editing Facebook format invalidates approval (0.303268ms)
+✔ source version change rejected (0.3098ms)
+✔ exclude conversacion_maya (0.154236ms)
+✔ exclude interpretacion_simultanea (0.105697ms)
+✔ three independent decisions (0.18189ms)
+✔ obfuscation needs explicit decision, flag not exported (0.413654ms)
+✔ reject extra private fields (0.174597ms)
+✔ reject ambiguous public date (0.160105ms)
+✔ source hash integrity (0.1357ms)
+✔ anchored proposals preserve exact source and unknown date (18.627746ms)
+✔ invented metadata rejected (0.155436ms)
+✔ provider unavailable not simulated (0.252957ms)
+✔ canonical digest key order invariant (0.203653ms)
+✔ facebook requires independently confirmed blog (0.08465ms)
+✔ lost Facebook response is unknown, no blind resend (0.354343ms)
+✔ known Facebook ID reconciles without POST (0.149926ms)
+✔ GitHub existing identical entry does not write again (0.615354ms)
+✔ GitHub refuses overwrite different content (0.434141ms)
+✔ Meta Page identity not inferred from configured numeric URL (0.635083ms)
+✔ Meta discovery requires explicit content task (0.501638ms)
+✔ Meta discovery bounded cursor loop (0.506805ms)
+✔ source classification not trusted from public client (0.160473ms)
+✔ provider objects never serialize credentials (0.144948ms)
+✔ session adapter supplies neither external cycle identifier (official random turn) (18.20857ms)
+ℹ tests 28
+ℹ suites 0
+ℹ pass 28
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 186.301331

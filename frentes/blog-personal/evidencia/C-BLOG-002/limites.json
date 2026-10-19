@@ -1,0 +1,17 @@
+{
+  "code_commit": "13a15d9532931a0ff2795f5390ce2750484a1474",
+  "pull_request": 329,
+  "draft": true,
+  "ci_readback": "403 Resource not accessible by personal access token",
+  "full_next_build": "NOT_VERIFIED",
+  "production_migration": "NOT_APPLIED",
+  "meta_page_admin": "NOT_VERIFIED",
+  "real_publication": "NOT_PERFORMED",
+  "secrets_configured": false,
+  "remote_desktop_used": false,
+  "vercel_project_metadata": "AVAILABLE",
+  "vercel_deployments": "403 SCOPE_FORBIDDEN",
+  "vercel_cli": "NOT_INSTALLED",
+  "normative_causal_test": "SYNTHETIC_OFFICIAL_SOURCE_PASSED",
+  "refusal_before_draft": "SYNTHETIC_POSTGRES_PASSED"
+}

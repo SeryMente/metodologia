@@ -1,0 +1,90 @@
+{
+  "readback_commit": "2c7f53101b3685193b9c415406196aabeeba8169",
+  "files": [
+    {
+      "path": ".github/workflows/blog-editorial-sync.yml",
+      "matches_current_local": true,
+      "note": ""
+    },
+    {
+      "path": ".github/workflows/blog-editorial-tests.yml",
+      "matches_current_local": true,
+      "note": ""
+    },
+    {
+      "path": "khora-web/app/api/blog/dispatch/route.ts",
+      "matches_current_local": true,
+      "note": ""
+    },
+    {
+      "path": "khora-web/app/api/blog/editorial/route.ts",
+      "matches_current_local": true,
+      "note": ""
+    },
+    {
+      "path": "khora-web/contracts/blog-editorial-v1.md",
+      "matches_current_local": true,
+      "note": ""
+    },
+    {
+      "path": "khora-web/db/migrations/20261019_blog_editorial.sql",
+      "matches_current_local": true,
+      "note": ""
+    },
+    {
+      "path": "khora-web/lib/server/blog/delivery.ts",
+      "matches_current_local": true,
+      "note": ""
+    },
+    {
+      "path": "khora-web/lib/server/blog/domain.ts",
+      "matches_current_local": true,
+      "note": ""
+    },
+    {
+      "path": "khora-web/lib/server/blog/mcp.ts",
+      "matches_current_local": true,
+      "note": ""
+    },
+    {
+      "path": "khora-web/lib/server/blog/metadata.ts",
+      "matches_current_local": true,
+      "note": ""
+    },
+    {
+      "path": "khora-web/lib/server/blog/outbox.ts",
+      "matches_current_local": false,
+      "note": "later fix commit may change file"
+    },
+    {
+      "path": "khora-web/lib/server/blog/providers.ts",
+      "matches_current_local": false,
+      "note": "later fix commit may change file"
+    },
+    {
+      "path": "khora-web/lib/server/blog/repository.ts",
+      "matches_current_local": true,
+      "note": ""
+    },
+    {
+      "path": "khora-web/lib/server/blog/service.ts",
+      "matches_current_local": true,
+      "note": ""
+    },
+    {
+      "path": "khora-web/tests/unit/blog-editorial.test.ts",
+      "matches_current_local": false,
+      "note": "later fix commit may change file"
+    },
+    {
+      "path": "khora-web/tests/unit/blog-postgres.test.ts",
+      "matches_current_local": true,
+      "note": ""
+    },
+    {
+      "path": "khora-web/tests/unit/blog-register.mjs",
+      "matches_current_local": true,
+      "note": ""
+    }
+  ]
+}

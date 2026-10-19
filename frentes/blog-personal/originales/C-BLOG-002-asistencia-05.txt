@@ -1,0 +1,1 @@
+**Actualización de acceso:** Vercel ya responde; pude verificar el proyecto `khora-web`. El aviso anterior de reautenticación queda como antecedente, no como estado actual. Esto permite revisar el despliegue, pero no prueba que se haya reparado la credencial con la que Khora lee sus instrucciones.

@@ -1,0 +1,3 @@
+El código ya está en la [solicitud de cambios 329, en borrador](https://github.com/SeryMente/khora/pull/329): consentimiento conjunto por versión, acceso limitado del protocolo de contexto del modelo (MCP), propuestas de metadatos con anclas y cola con comprobantes separados para blog y Facebook. **No lo he fusionado ni activado.**[^https://github.com/SeryMente/khora/pull/329]
+
+Las pruebas locales pasaron: 26 de dominio y transportes, un escenario transaccional de PostgreSQL aislado y la regresión del blog existente. Eso **no acredita** todavía el despliegue ni la publicación real. Para activar faltan la reparación administrativa de Khora/Vercel, la autorización oficial de la Página y una nota con texto y formato aprobados. No necesito que pegues secretos en el chat.
