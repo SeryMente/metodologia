@@ -1,0 +1,1 @@
+Todavía no tengo un correo operativo; tengo candidatos. Voy a comprobar una sola ruta gratuita hasta donde pueda avanzar sin crear cuentas ni aceptar condiciones por ti. Si hay un bloqueo, te diré exactamente cuál.

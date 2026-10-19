@@ -1,0 +1,34 @@
+{
+  "cycle": "C-CORREO-ALTA-COMPROBADA-01",
+  "browser_session": "correo-khora-3fda",
+  "signup_urls": [
+    "https://freedns.afraid.org/signup/",
+    "https://workplace.zoho.com/signup?type=org&plan=free"
+  ],
+  "source_sequences": [
+    717,
+    724,
+    734,
+    735,
+    744,
+    748,
+    756
+  ],
+  "verified": [
+    "FreeDNS supports MX/TXT per features",
+    "FreeDNS signup inspected without data",
+    "Zoho Forever Free specific link found",
+    "Zoho Business Email signup opened without submission"
+  ],
+  "not_verified": [
+    "Free account regional eligibility for applicant",
+    "Chosen name availability and control",
+    "Email send and receive",
+    "Notion acceptance",
+    "Trial-history exception"
+  ],
+  "created_accounts": false,
+  "accepted_terms": false,
+  "paid": false,
+  "private_values_collected": false
+}
