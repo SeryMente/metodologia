@@ -1,11 +1,11 @@
-<!-- OBJECT_VERSION=0.19; METACANON_VERSION=1.6; STATE_SOURCE=SPRINT.md -->
+<!-- OBJECT_VERSION=0.20; METACANON_VERSION=1.6; STATE_SOURCE=SPRINT.md -->
 # Sprint · Convergencia funcional, mercado y apoyos · Khora y Otro Gran Programa
 
 ## 1. Control e identidad
 
 - Naturaleza: objeto documental permanente del sprint, vivo y provisional en su definición; no especificación de lanzamiento ni ratificación de una arquitectura.
-- Versión/sello del objeto: **0.19 · SPRINT-CONVERGENCIA-v0.19**.
-- Ancla: M25 · C-CORREO-ALTA-COMPROBADA-01; altas FreeDNS/Zoho Free inspeccionadas; permiso específico de cuentas y subdominio tercero pendiente, sin correo creado ni términos aceptados.
+- Versión/sello del objeto: **0.20 · SPRINT-CONVERGENCIA-v0.20**.
+- Ancla: M26 · C-NOTION-MEJOR-RUTA-01; recomendación principal consulta de elegibilidad antes de altas. FreeDNS candidato técnico no recomendado como primera ruta de candidatura; ninguna cuenta ni consulta enviada.
 - Propietario de custodia: `SeryMente/metodologia`, privado comprobado mediante GitHub en este ciclo. Carpeta: `frentes/convergencia-funcional/`. Estado único: este archivo.
 - Rama documental: `docs/sprint-convergencia-funcional-20261017`, creada desde `main@49ac40e9f6122e2d2fb339362cfa0a78128c8e37`. No fusionar ni afirmar integrado en main por guardar esta rama.
 - Persistencia: el recibo del commit y la lectura de vuelta son la prueba de publicación; la sola presencia de esta frase no la acredita. Si la lectura falla, esta entrega queda NO VERIFICADA.
@@ -99,7 +99,7 @@ Canal: Notion AI, workspace Numb’s Space (según contexto actual de esta sesi�
 
 ## 8. Estado vivo
 
-**Acción actual:** objeto v0.19; método 1.6 revalidado sin delta. Operador declara nunca haber pagado y sí haber recibido una prueba gratuita. No se verifica historial de facturación por acceso a cuenta. El formulario oficial incluye pruebas promocionales previas entre exclusiones; vía estándar detenida antes de declarar elegibilidad. Consulta preparada para startups@makenotion.com, no enviada. Nombre/fecha/alcance de la prueba desconocidos.
+**Acción actual:** objeto v0.20; método 1.6 revalidado sin delta. Operador declara nunca haber pagado y sí haber recibido una prueba gratuita. No se verifica historial de facturación por acceso a cuenta. El formulario oficial incluye pruebas promocionales previas entre exclusiones; vía estándar detenida antes de declarar elegibilidad. Consulta preparada para startups@makenotion.com, no enviada. Nombre/fecha/alcance de la prueba desconocidos.
 
 **Avance observado:** tres tareas de contraste, no funciones elegidas para lanzamiento: recuperación dispersa, redacción fiel y próximo paso respaldado. Fuentes ficticias distinguen negación, tiempo de expresión/ingesta, retractación, autoría, duplicados, datos faltantes e instrucciones incrustadas. Línea base simple y recorridos de mercado de A.3–A.11; no rutas adoptadas. Solucionario separado del material de candidato en una futura corrida; casos de desarrollo no son test ciego. Control por prompt no equivale a aislamiento real. Radar técnico y tesis reciben límites de inferencia. No nuevas prestaciones/precios revalidados por este trabajo, ni resultados o ganador inventados.
 
@@ -109,7 +109,7 @@ Canal: Notion AI, workspace Numb’s Space (según contexto actual de esta sesi�
 
 **Corrección vigente M23 de interpretación M22:** el operador NO ordenó resolver .com ahora para poder pedir apoyo: los .com vendrán después. Samantha convirtió indebidamente esa intención futura en compuerta inmediata y desvió al registrador anterior. No preguntar más por recuperación/compra como siguiente paso de esta solicitud. Prioridad: avanzar apoyo Notion sin gasto con situación real. Correo empresarial operativo no disponible según contexto; si no existe, no se verifica formulario válido con Gmail. Cuenta Notion Business pagada no es requisito de compra previa; el programa se dirige a no pagadores. Consulta desde correo actual solicita si hay revisión manual/documentación alternativa y declara prueba gratuita anterior. No excepción aprobada ni elegibilidad confirmada.
 
-**Siguiente paso:** pedir autorización explícita para crear cuentas gratuitas FreeDNS y Zoho, sin tarjeta/pago, y aceptar evaluar subdominio compartido (identidad bajo dominio de tercero, no .com propio). Si autoriza, pedir identidad/datos actuales sin inferir email; secretos mediante herramienta privada, inspección de campos visibles antes. Presentar nombre concreto para aprobación antes de reservar, verificar Free regional sin falsear país ni pasar a trial premium, revisar condiciones relevantes y compuerta de seguridad, luego configuración/pruebas solo bajo autorización pertinente. Si pago/no Free, detener. No correo operativo ni aceptación Notion acreditados; consulta de prueba previa sigue preparada/no enviada.
+**Siguiente paso recomendado M26:** enviar consulta ya preparada desde correo actual a startups@makenotion.com sobre admisión sin correo empresarial/prueba previa y evidencia alternativa. No es solicitud aceptada ni excepción publicada. No pedir alta FreeDNS/Zoho como primera ruta de esta candidatura: montaje técnico no acredita aceptación y puede ser trabajo inútil ante trial previo. Para correo definitivo, evaluar dominio controlado + Zoho Free al contar con dominio y Free regional; no compra .com ahora por inferencia. Recomendación del asistente, no decisión/aceptación del operador ni envío autorizado.
 
 **Huecos documentales no bloqueantes de Notion:** Rúbrica Universal y Análisis N1, referencias de los cánones, no accesibles por sus IDs y sin texto recibido. No sustituirlos por versiones antiguas de otros IDs. Los tres cuerpos pegados, antes pendientes de custodia exportada, ahora están guardados literalmente desde el evento 104; la limitación histórica de M14/M15 queda superada solo en ese punto. No hay certificación de frescura de las páginas remotas.
 
@@ -158,6 +158,17 @@ Por M06 y su precisión posterior M10, cerrar todas las fases documentales pendi
 Toda salida de este frente registra: (1) proyecto, rol, versión/sello del objeto y «Metacanon adquirido: versión/sello», revisión y frescura; (2) dónde estamos; (3) delta metodológico y de proyecto; (4) avance y evidencia, no tocado; (5) pendientes/bloqueos; (6) viabilidad y condiciones; (7) pronóstico de próximo hito y cierre con supuestos o no estimable; (8) siguiente acción/agente y mínima intervención material del operador; (9) continuación/prompt hacia el investigador si existe salida que responder; (10) persistencia, ancla y checkpoint. Puede condensarse sin ocultar lo desconocido. No afirmar certificación externa, herramientas o ensayo por una firma.
 
 ## 11. Crónica y fuentes
+
+### C-NOTION-MEJOR-RUTA-01 · M26 · recomendación según objetivo, no según posibilidad técnica
+
+Partida v0.19@37e9d3b9180a590d15165b9423803681ad18bb39. Método 1.6/blob 8f9ad1cf0e09e5fcd7014190770a77294ff39af4 sin delta, privacidad comprobada. Fuente mensaje directo sesión 3fda4187-8241-80d9-8627-00a9a79e07f7; original y salida literal en `originales/C-NOTION-MEJOR-RUTA-01-*`. Sin comentarios visibles del asistente antes de salida, fecha no inventada.
+
+Pregunta: mejor solución. Se diferencia candidato técnico y recomendación para objetivo urgente. Comparación cualitativa basada en evidencia ya adquirida, sin barrido comercial nuevo: correo bajo FreeDNS puede requerir cuentas y configuraciones, depende de tercero y no acredita filtro Notion; Zoho Free resuelve buzón condicional, no registro ni elegibilidad. Trial previo es filtro independiente. Recomendación principal: consulta de elegibilidad antes de invertir más en altas; recomendación futura de correo: dominio legítimamente controlado + Zoho Free si disponible. No se declara esa recomendación validación end-to-end, ni compra ahora, ni excepción concedida.
+
+Autoridad/límite: recomendar consulta usa términos oficiales adquiridos en C-NOTION-PRIORIDAD-CORREGIDA-01, no nueva lectura de términos en este ciclo. Zoho usa evidencia de C-CORREO-ALTA-COMPROBADA-01. No inventar revisión actual de proveedor. No garantizar soporte de revisión manual; preguntar si existe. Aclaración de la salida previa: formulario abierto no convierte FreeDNS en mejor opción para candidatura. No hubo autorización del usuario para altas; pregunta anterior queda desplazada como recomendación, no aprobada.
+
+Criterio preponderante: conseguir ayuda sin desembolso y con declaraciones verdaderas → riesgo de trabajo/identidad no aceptados → evidencia parcial y trial → consulta primero. Resultado: una recomendación clara y motivo; no cuentas, correo operativo, solicitud, gasto, decisión de arquitectura/seguridad o registro de dominio. No operación externa realizada. Pendiente respuesta escrita al programa; si estándar exige correo/web, será bloqueo real salvo alternativa aprobada, no simulación. Se mantiene histórico, actualiza continuación; rama documental, no main. Verificación de custodia por commit antes de cierre.
+
 
 ### C-CORREO-ALTA-COMPROBADA-01 · M25 · ruta gratuita inspeccionada hasta alta, decisión material pendiente
 
@@ -546,7 +557,7 @@ Evidencia de aceptación: lectura de vuelta de las tres páginas sin truncamient
 
 ## 12. Reinstanciación
 
-Checkpoint vigente M25: altas inspeccionadas; pedir autorización específica de cuentas gratuitas FreeDNS/Zoho y uso de subdominio compartido. Después datos privados y nombre concreto, sin envío/registro automático. No correo operativo ni aceptación Notion; .com futuro no compra ahora.
+Checkpoint recomendado vigente M26: consulta Notion primero para objetivo ayuda sin gasto; candidato FreeDNS/Zoho no recomendado como primera opción de candidatura. No alta autorizada, correo creado ni excepción obtenida. .com futuro, no compra actual.
 
 Checkpoint adicional M19: presencia pública de Khora identificada; evaluar reutilización del sitio, sin diseño/construcción ni gasto autorizado. No sustituye consulta de elegibilidad.
 
