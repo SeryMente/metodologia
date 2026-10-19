@@ -1,0 +1,1 @@
+Entendido: buscamos cumplir los requisitos sin desembolso, no abrir otra contratación. Primero comprobaré si `serimente.com` perdió el registro o si solo dejó de funcionar la web; eso cambia la solución.

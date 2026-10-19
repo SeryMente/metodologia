@@ -1,11 +1,11 @@
-<!-- OBJECT_VERSION=0.15; METACANON_VERSION=1.6; STATE_SOURCE=SPRINT.md -->
+<!-- OBJECT_VERSION=0.16; METACANON_VERSION=1.6; STATE_SOURCE=SPRINT.md -->
 # Sprint · Convergencia funcional, mercado y apoyos · Khora y Otro Gran Programa
 
 ## 1. Control e identidad
 
 - Naturaleza: objeto documental permanente del sprint, vivo y provisional en su definición; no especificación de lanzamiento ni ratificación de una arquitectura.
-- Versión/sello del objeto: **0.15 · SPRINT-CONVERGENCIA-v0.15**.
-- Ancla: M21 · C-DOMINIO-SIN-DESEMBOLSO-01; opciones gratuitas/condicionadas investigadas, primera comprobación dominio existente; M20 reparado con originales disponibles. Sin alta, compra o solicitud.
+- Versión/sello del objeto: **0.16 · SPRINT-CONVERGENCIA-v0.16**.
+- Ancla: M22 · C-COM-COSTE-CERO-01; operador fija .com empresarial sin pago y declara caída de serimente.com por impago. Sin ficha RDAP/resolución en consulta; proveedor/bonificación desconocidos. No contratación.
 - Propietario de custodia: `SeryMente/metodologia`, privado comprobado mediante GitHub en este ciclo. Carpeta: `frentes/convergencia-funcional/`. Estado único: este archivo.
 - Rama documental: `docs/sprint-convergencia-funcional-20261017`, creada desde `main@49ac40e9f6122e2d2fb339362cfa0a78128c8e37`. No fusionar ni afirmar integrado en main por guardar esta rama.
 - Persistencia: el recibo del commit y la lectura de vuelta son la prueba de publicación; la sola presencia de esta frase no la acredita. Si la lectura falla, esta entrega queda NO VERIFICADA.
@@ -99,7 +99,7 @@ Canal: Notion AI, workspace Numb’s Space (según contexto actual de esta sesi�
 
 ## 8. Estado vivo
 
-**Acción actual:** objeto v0.15; método 1.6 revalidado sin delta. Operador declara nunca haber pagado y sí haber recibido una prueba gratuita. No se verifica historial de facturación por acceso a cuenta. El formulario oficial incluye pruebas promocionales previas entre exclusiones; vía estándar detenida antes de declarar elegibilidad. Consulta preparada para startups@makenotion.com, no enviada. Nombre/fecha/alcance de la prueba desconocidos.
+**Acción actual:** objeto v0.16; método 1.6 revalidado sin delta. Operador declara nunca haber pagado y sí haber recibido una prueba gratuita. No se verifica historial de facturación por acceso a cuenta. El formulario oficial incluye pruebas promocionales previas entre exclusiones; vía estándar detenida antes de declarar elegibilidad. Consulta preparada para startups@makenotion.com, no enviada. Nombre/fecha/alcance de la prueba desconocidos.
 
 **Avance observado:** tres tareas de contraste, no funciones elegidas para lanzamiento: recuperación dispersa, redacción fiel y próximo paso respaldado. Fuentes ficticias distinguen negación, tiempo de expresión/ingesta, retractación, autoría, duplicados, datos faltantes e instrucciones incrustadas. Línea base simple y recorridos de mercado de A.3–A.11; no rutas adoptadas. Solucionario separado del material de candidato en una futura corrida; casos de desarrollo no son test ciego. Control por prompt no equivale a aislamiento real. Radar técnico y tesis reciben límites de inferencia. No nuevas prestaciones/precios revalidados por este trabajo, ni resultados o ganador inventados.
 
@@ -107,9 +107,9 @@ Canal: Notion AI, workspace Numb’s Space (según contexto actual de esta sesi�
 
 **Presencia pública M19:** necesidad declarada por operador para candidatura. Sitio existente https://khora-web.vercel.app/ y /sistema consultados: extracción pública muestra Entrar / Un espacio para recibir memoria, no acredita descripción de empresa suficiente. No prueba inexistencia de contenido autenticado. Propuesta: evaluar reutilización y preparar presentación honesta (problema, destinatario/valor, estado real, responsable/contacto) sin elegir diseño ni prometer capacidades. Revisión presencial del operador requerida para copy público/interfaz antes de construcción/publicación. No crear otro sitio o comprar dominio automáticamente.
 
-**Dominio sin desembolso M21:** preguntar por dominio ya existente y autorizado de organización; después elegibilidad educativa, no inferida. Beneficio estudiantil .me un año publicado, EU.org subdominio gratuito sin adecuación comercial/aceptación Notion verificadas. No dominio .com gratuito indefinido confirmado. Correo y registro separados; redirección gratuita no equivale a buzón completo.
+**Restricción vigente de dominio M22 (refina M21):** operador elige .com empresarial para candidatura, sin pago; no proponer .me/.eu.org como sustitutos. Declara que serimente.com cayó por falta de pago. Consulta pública exacta a RDAP Verisign devolvió HTTP404 y resolución IPv4 falló; no prueba titularidad, elegibilidad de recuperación, disponibilidad de compra ni borrado de todas las zonas. Preguntar proveedor anterior para revisar recuperación/bonificaciones reales. No hay .com sin pago verificado para este solicitante. Promociones condicionadas a hosting pagado no cumplen; no cuentas, tarjetas, renovaciones ni patrocinio asumido. Dominio y correo y web son condiciones separadas; prueba previa Notion sigue pendiente.
 
-**Siguiente paso:** comprobar si operador ya dispone de dominio utilizable y evaluar reutilización del sitio con evidencia del repositorio autorizado cuando corresponda y revisar con operador el brief/copy antes de construir; en paralelo, operador envía consulta preparada y aporta respuesta escrita; conservar nombre/fecha de la prueba si los localiza. No exigir datos posteriores de solicitud estándar ni avanzar a otros programas como si Notion estuviera resuelto. Según respuesta: aclarar datos de prueba o documentar exclusión y alternativa legítima. Sin nuevas cuentas para eludir historial, sin envío por Samantha, sin aceptación de términos ni gasto.
+**Siguiente paso:** preguntar registrador/proveedor anterior de serimente.com, sin credenciales; revisar condiciones y posible bonificación que cubra de verdad .com sin gasto ni compromiso de cobro. Si no existe, declarar bloqueo de coste, no cambiar extensión/presupuesto por inferencia. En paralelo, consulta escrita de elegibilidad Notion preparada sigue pendiente de envío por operador/respuesta; no afirmar ayuda concedida. Presencia pública se preparará sobre sitio reutilizable con revisión humana antes de construcción/publicación.
 
 **Huecos documentales no bloqueantes de Notion:** Rúbrica Universal y Análisis N1, referencias de los cánones, no accesibles por sus IDs y sin texto recibido. No sustituirlos por versiones antiguas de otros IDs. Los tres cuerpos pegados, antes pendientes de custodia exportada, ahora están guardados literalmente desde el evento 104; la limitación histórica de M14/M15 queda superada solo en ese punto. No hay certificación de frescura de las páginas remotas.
 
@@ -158,6 +158,19 @@ Por M06 y su precisión posterior M10, cerrar todas las fases documentales pendi
 Toda salida de este frente registra: (1) proyecto, rol, versión/sello del objeto y «Metacanon adquirido: versión/sello», revisión y frescura; (2) dónde estamos; (3) delta metodológico y de proyecto; (4) avance y evidencia, no tocado; (5) pendientes/bloqueos; (6) viabilidad y condiciones; (7) pronóstico de próximo hito y cierre con supuestos o no estimable; (8) siguiente acción/agente y mínima intervención material del operador; (9) continuación/prompt hacia el investigador si existe salida que responder; (10) persistencia, ancla y checkpoint. Puede condensarse sin ocultar lo desconocido. No afirmar certificación externa, herramientas o ensayo por una firma.
 
 ## 11. Crónica y fuentes
+
+### C-COM-COSTE-CERO-01 · M22 · .com obligatorio por decisión y cero pago
+
+Partida v0.15@0486bc3fcb7f314559ec978a235e8982a7da10e4. Método central v1.6, blob 8f9ad1cf0e09e5fcd7014190770a77294ff39af4, revalidado sin delta. Repositorio privado comprobado. Instrucción directa en sesión 3fda4187-8241-80d9-8627-00a9a79e07f7; literal en `originales/C-COM-COSTE-CERO-01-operador.txt`, comentario visible y salida literal en archivos homónimos -comentarios.md/-salida.md. Fecha no inventada.
+
+Delta de autoridad: .com ahora es elección explícita del operador, no requisito atribuido a Notion; coste cero permanece vinculante. Serimente.com, grafía literal suministrada, cayó por falta de pago según operador, no auditoría de su cuenta. No sustituir por SeryMente.com ni otro nombre sin confirmación.
+
+Acción: consulta RDAP pública Verisign y DNS del nombre exacto sin autenticación, registro en `evidencias/C-COM-COSTE-CERO-01.json`: HTTP404 y error de resolución. Dictamen acotado: no ficha/no resolución observadas, no titularidad o precio/disponibilidad de compra demostrados. No prueba causa del impago ni permite recuperar sin registrar. Recuperación/bonificación requiere conocer proveedor anterior. Búsqueda dirigida oficial encontró GoDaddy .com gratis con compra de hosting anual (https://www.godaddy.com/domains/free-domain; resultado 576), no cumple sin pago. Otras ofertas estudiantiles no se adoptan ni se asume estudiante. No se verifica promoción .com coste cero para operador; patrocinio/crédito son posibilidades condicionadas, no recursos concedidos.
+
+Relectura de formulario Notion: extracción rápida 567 solo Notion y extracción completa focalizada 577 insuficiente; no renovar vigencia de exclusiones por esta llamada. Exclusión de promociones/pruebas sigue como evidencia previa fechada en C-NOTION-ELEGIBILIDAD-01, no nueva validación. No se intenta formulario autenticado ni se envía solicitud. Resolver dominio no elimina requisito independiente de elegibilidad.
+
+Criterios: presupuesto cero y honestidad → riesgo de disfrazar paquete pagado o ensayo como crédito disponible → evidencia pública/ausencia de oferta útil → bloqueo de provisión aún abierto → siguiente dato registrador anterior. No activar gasto, tarjeta, correo, migración, cambios de seguridad/diseño ni despliegues. No se adquirió dominio ni se contrató nada; objeto conservado en rama, no main. Actualización de estado/continuación y originales; persistencia sujeta a lectura de vuelta por commit.
+
 
 ### C-DOMINIO-SIN-DESEMBOLSO-01 · M21 · opciones y costes que no deben confundirse
 
@@ -492,7 +505,7 @@ Evidencia de aceptación: lectura de vuelta de las tres páginas sin truncamient
 
 ## 12. Reinstanciación
 
-Checkpoint M21: preguntar si ya existe dominio legítimamente utilizable; no asumir estudiante. No registro/compra ni aceptación por Notion acreditados.
+Checkpoint vigente M22: obtener proveedor anterior de serimente.com; revisar bonificación/recuperación .com sin pago. Alternativas .me/.eu.org no satisfacen nueva elección. Sin oferta coste cero verificada, no contratación ni aceptación Notion acreditadas.
 
 Checkpoint adicional M19: presencia pública de Khora identificada; evaluar reutilización del sitio, sin diseño/construcción ni gasto autorizado. No sustituye consulta de elegibilidad.
 

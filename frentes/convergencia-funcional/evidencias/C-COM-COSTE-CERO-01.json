@@ -1,0 +1,20 @@
+{
+  "domain": "serimente.com",
+  "rdap_url": "https://rdap.verisign.com/com/v1/domain/serimente.com",
+  "rdap_error": "HTTP Error 404: Not Found",
+  "dns_error": "[Errno -2] Name or service not known",
+  "cycle": "C-COM-COSTE-CERO-01",
+  "user_attribution": "caida por impago declarada por operador; no auditoria cuenta",
+  "limitations": [
+    "No ownership verified",
+    "No registrar account inspected",
+    "No availability or price guaranteed",
+    "No zero-cost offer for applicant verified"
+  ],
+  "source_results": [
+    570,
+    576,
+    567,
+    577
+  ]
+}
