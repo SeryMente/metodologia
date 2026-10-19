@@ -1,0 +1,1 @@
+Tienes razón: interpreté mal la prioridad. Los `.com` vendrán después; ahora necesitamos saber cómo solicitar el apoyo sin tener todavía correo empresarial. Corregiré el registro y comprobaré el canal oficial para consultar ese caso.

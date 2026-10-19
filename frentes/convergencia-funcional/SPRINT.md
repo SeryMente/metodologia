@@ -1,11 +1,11 @@
-<!-- OBJECT_VERSION=0.16; METACANON_VERSION=1.6; STATE_SOURCE=SPRINT.md -->
+<!-- OBJECT_VERSION=0.17; METACANON_VERSION=1.6; STATE_SOURCE=SPRINT.md -->
 # Sprint · Convergencia funcional, mercado y apoyos · Khora y Otro Gran Programa
 
 ## 1. Control e identidad
 
 - Naturaleza: objeto documental permanente del sprint, vivo y provisional en su definición; no especificación de lanzamiento ni ratificación de una arquitectura.
-- Versión/sello del objeto: **0.16 · SPRINT-CONVERGENCIA-v0.16**.
-- Ancla: M22 · C-COM-COSTE-CERO-01; operador fija .com empresarial sin pago y declara caída de serimente.com por impago. Sin ficha RDAP/resolución en consulta; proveedor/bonificación desconocidos. No contratación.
+- Versión/sello del objeto: **0.17 · SPRINT-CONVERGENCIA-v0.17**.
+- Ancla: M23 · C-NOTION-PRIORIDAD-CORREGIDA-01; se corrige interpretación M22: .com futuro, no condición previa inmediata. Prioridad es consulta de admisión/validación alternativa sin correo empresarial, revelando prueba previa. Sin envío.
 - Propietario de custodia: `SeryMente/metodologia`, privado comprobado mediante GitHub en este ciclo. Carpeta: `frentes/convergencia-funcional/`. Estado único: este archivo.
 - Rama documental: `docs/sprint-convergencia-funcional-20261017`, creada desde `main@49ac40e9f6122e2d2fb339362cfa0a78128c8e37`. No fusionar ni afirmar integrado en main por guardar esta rama.
 - Persistencia: el recibo del commit y la lectura de vuelta son la prueba de publicación; la sola presencia de esta frase no la acredita. Si la lectura falla, esta entrega queda NO VERIFICADA.
@@ -99,7 +99,7 @@ Canal: Notion AI, workspace Numb’s Space (según contexto actual de esta sesi�
 
 ## 8. Estado vivo
 
-**Acción actual:** objeto v0.16; método 1.6 revalidado sin delta. Operador declara nunca haber pagado y sí haber recibido una prueba gratuita. No se verifica historial de facturación por acceso a cuenta. El formulario oficial incluye pruebas promocionales previas entre exclusiones; vía estándar detenida antes de declarar elegibilidad. Consulta preparada para startups@makenotion.com, no enviada. Nombre/fecha/alcance de la prueba desconocidos.
+**Acción actual:** objeto v0.17; método 1.6 revalidado sin delta. Operador declara nunca haber pagado y sí haber recibido una prueba gratuita. No se verifica historial de facturación por acceso a cuenta. El formulario oficial incluye pruebas promocionales previas entre exclusiones; vía estándar detenida antes de declarar elegibilidad. Consulta preparada para startups@makenotion.com, no enviada. Nombre/fecha/alcance de la prueba desconocidos.
 
 **Avance observado:** tres tareas de contraste, no funciones elegidas para lanzamiento: recuperación dispersa, redacción fiel y próximo paso respaldado. Fuentes ficticias distinguen negación, tiempo de expresión/ingesta, retractación, autoría, duplicados, datos faltantes e instrucciones incrustadas. Línea base simple y recorridos de mercado de A.3–A.11; no rutas adoptadas. Solucionario separado del material de candidato en una futura corrida; casos de desarrollo no son test ciego. Control por prompt no equivale a aislamiento real. Radar técnico y tesis reciben límites de inferencia. No nuevas prestaciones/precios revalidados por este trabajo, ni resultados o ganador inventados.
 
@@ -107,9 +107,9 @@ Canal: Notion AI, workspace Numb’s Space (según contexto actual de esta sesi�
 
 **Presencia pública M19:** necesidad declarada por operador para candidatura. Sitio existente https://khora-web.vercel.app/ y /sistema consultados: extracción pública muestra Entrar / Un espacio para recibir memoria, no acredita descripción de empresa suficiente. No prueba inexistencia de contenido autenticado. Propuesta: evaluar reutilización y preparar presentación honesta (problema, destinatario/valor, estado real, responsable/contacto) sin elegir diseño ni prometer capacidades. Revisión presencial del operador requerida para copy público/interfaz antes de construcción/publicación. No crear otro sitio o comprar dominio automáticamente.
 
-**Restricción vigente de dominio M22 (refina M21):** operador elige .com empresarial para candidatura, sin pago; no proponer .me/.eu.org como sustitutos. Declara que serimente.com cayó por falta de pago. Consulta pública exacta a RDAP Verisign devolvió HTTP404 y resolución IPv4 falló; no prueba titularidad, elegibilidad de recuperación, disponibilidad de compra ni borrado de todas las zonas. Preguntar proveedor anterior para revisar recuperación/bonificaciones reales. No hay .com sin pago verificado para este solicitante. Promociones condicionadas a hosting pagado no cumplen; no cuentas, tarjetas, renovaciones ni patrocinio asumido. Dominio y correo y web son condiciones separadas; prueba previa Notion sigue pendiente.
+**Corrección vigente M23 de interpretación M22:** el operador NO ordenó resolver .com ahora para poder pedir apoyo: los .com vendrán después. Samantha convirtió indebidamente esa intención futura en compuerta inmediata y desvió al registrador anterior. No preguntar más por recuperación/compra como siguiente paso de esta solicitud. Prioridad: avanzar apoyo Notion sin gasto con situación real. Correo empresarial operativo no disponible según contexto; si no existe, no se verifica formulario válido con Gmail. Cuenta Notion Business pagada no es requisito de compra previa; el programa se dirige a no pagadores. Consulta desde correo actual solicita si hay revisión manual/documentación alternativa y declara prueba gratuita anterior. No excepción aprobada ni elegibilidad confirmada.
 
-**Siguiente paso:** preguntar registrador/proveedor anterior de serimente.com, sin credenciales; revisar condiciones y posible bonificación que cubra de verdad .com sin gasto ni compromiso de cobro. Si no existe, declarar bloqueo de coste, no cambiar extensión/presupuesto por inferencia. En paralelo, consulta escrita de elegibilidad Notion preparada sigue pendiente de envío por operador/respuesta; no afirmar ayuda concedida. Presencia pública se preparará sobre sitio reutilizable con revisión humana antes de construcción/publicación.
+**Siguiente paso:** operador envía consulta actualizada a startups@makenotion.com desde correo actual; obtener respuesta sobre admisión sin correo empresarial/validación alternativa y efecto de prueba previa. No hacer de compra/recuperación .com un prerrequisito inmediato. Sin revisión alternativa aprobada o correo legítimo y elegibilidad, no enviar formulario declarando cumplimiento. No autorizarse excepción, envío, gasto ni nueva cuenta.
 
 **Huecos documentales no bloqueantes de Notion:** Rúbrica Universal y Análisis N1, referencias de los cánones, no accesibles por sus IDs y sin texto recibido. No sustituirlos por versiones antiguas de otros IDs. Los tres cuerpos pegados, antes pendientes de custodia exportada, ahora están guardados literalmente desde el evento 104; la limitación histórica de M14/M15 queda superada solo en ese punto. No hay certificación de frescura de las páginas remotas.
 
@@ -158,6 +158,19 @@ Por M06 y su precisión posterior M10, cerrar todas las fases documentales pendi
 Toda salida de este frente registra: (1) proyecto, rol, versión/sello del objeto y «Metacanon adquirido: versión/sello», revisión y frescura; (2) dónde estamos; (3) delta metodológico y de proyecto; (4) avance y evidencia, no tocado; (5) pendientes/bloqueos; (6) viabilidad y condiciones; (7) pronóstico de próximo hito y cierre con supuestos o no estimable; (8) siguiente acción/agente y mínima intervención material del operador; (9) continuación/prompt hacia el investigador si existe salida que responder; (10) persistencia, ancla y checkpoint. Puede condensarse sin ocultar lo desconocido. No afirmar certificación externa, herramientas o ensayo por una firma.
 
 ## 11. Crónica y fuentes
+
+### C-NOTION-PRIORIDAD-CORREGIDA-01 · M23 · rectificación de rumbo y consulta sin compra previa
+
+Partida v0.16@966575ef7d6d9036a10b4e7d3eecb6fab30a8e13. Método 1.6 revalidado, blob 8f9ad1cf0e09e5fcd7014190770a77294ff39af4 sin delta; repo privado comprobado. Mensaje directo de operador en sesión 3fda4187-8241-80d9-8627-00a9a79e07f7; originales, comentario visible y salida exacta en `originales/C-NOTION-PRIORIDAD-CORREGIDA-01-*`. Fecha no inventada. No razonamiento interno archivado.
+
+Instrucción/corrección: .com es posterior, no condición inmediata; urge aplicar a apoyo Notion y resolver falta de correo empresarial. Rectificación explícita de C-COM-COSTE-CERO-01: la afirmación de elección .com obligatoria ahora fue interpretación errónea de Samantha, no decisión ratificada del operador. Se conserva historia, se supersede estado/checkpoint y se suspende pregunta por registrador como paso inmediato. No se repite búsqueda de dominio gratuito por inercia.
+
+Evidencia de este ciclo: ayuda oficial https://www.notion.com/help/notion-for-startups (617) y términos https://www.notion.so/notion/Notion-for-Startup-Terms-936b74c0323745a186b1497747074020 (619) exigen web/correo de empresa y no pagador; términos indican startups@makenotion.com para denegación controvertida. No exigen comprar Business para postular. El canal se propone para consulta previa, no como admisión manual ya autorizada. No se verificó que Gmail sea aceptado en formulario ni que una excepción exista. Restricción por promociones/prueba proviene del formulario consultado en C-NOTION-ELEGIBILIDAD-01; no se declara nueva lectura del formulario en este ciclo.
+
+Acción: redactar consulta que pide revisión manual o documentación alternativa mientras no hay correo corporativo operativo; revela nunca pago y prueba previa. Se describe proyecto temprano y documentación real, no producto validado ni sitio completo. Contacto sin coste de registro de dominio; no garantiza concesión o excepción. Criterios preponderantes: pertinencia al objetivo urgente, no-simulación y no gasto → reconocer giro equivocado → fuente oficial + borrador honesto → pendiente respuesta escrita, no implementar un requisito no priorizado.
+
+Resultado: estado/custodia corregidos, consulta preparada no enviada. No formulario, cuenta, dominio, renovación, contratación, migración, diseño ni despliegue. Sigue pendiente web pública suficiente para trámite estándar, sin decidir comprarla ni validación alternativa. No crear páginas satélite. Siguiente checkpoint: respuesta del programa; si exige correo/web y excluye prueba, registrar bloqueo real y opciones autorizadas, no fingir cumplimiento. Se guarda en rama documental sin merge main y se verifica por commit antes de cierre.
+
 
 ### C-COM-COSTE-CERO-01 · M22 · .com obligatorio por decisión y cero pago
 
@@ -505,7 +518,7 @@ Evidencia de aceptación: lectura de vuelta de las tres páginas sin truncamient
 
 ## 12. Reinstanciación
 
-Checkpoint vigente M22: obtener proveedor anterior de serimente.com; revisar bonificación/recuperación .com sin pago. Alternativas .me/.eu.org no satisfacen nueva elección. Sin oferta coste cero verificada, no contratación ni aceptación Notion acreditadas.
+Checkpoint vigente M23: consulta Notion sobre revisión sin correo corporativo y prueba previa; envío por operador/respuesta pendientes. M22 queda corregido: .com futuro, no paso inmediato ni bloqueo impuesto por Samantha.
 
 Checkpoint adicional M19: presencia pública de Khora identificada; evaluar reutilización del sitio, sin diseño/construcción ni gasto autorizado. No sustituye consulta de elegibilidad.
 
