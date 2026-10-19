@@ -1,0 +1,31 @@
+{
+  "cycle": "C-NOTION-ELEGIBILIDAD-01",
+  "method_blob": "8f9ad1cf0e09e5fcd7014190770a77294ff39af4",
+  "private_verified": true,
+  "user_declaration": {
+    "ever_paid": false,
+    "previous_free_trial": true,
+    "trial_details": "unknown"
+  },
+  "sources": [
+    {
+      "url": "https://app.notion.com/startups-application-form",
+      "tool_result_sequence": 370,
+      "relevant_quote": "have ever received any promo (including in-product trial offerings)"
+    },
+    {
+      "url": "https://www.notion.com/help/notion-for-startups",
+      "tool_result_sequence": 369,
+      "scope": "Help summary; not override form exclusion"
+    },
+    {
+      "url": "https://www.notion.so/notion/Notion-for-Startup-Terms-936b74c0323745a186b1497747074020",
+      "tool_result_sequence": 387,
+      "relevant_quote": "If Notion denies your request and you believe you should be eligible, you should email startups@makenotion.com."
+    }
+  ],
+  "submission_performed": false,
+  "trial_account_audited": false,
+  "next": "Operator sends clarification and provides written response",
+  "encoding": "UTF-8; one terminal LF added to originals and final; no unseen reasoning stored"
+}

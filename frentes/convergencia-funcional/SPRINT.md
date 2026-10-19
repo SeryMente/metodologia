@@ -1,11 +1,11 @@
-<!-- OBJECT_VERSION=0.11; METACANON_VERSION=1.6; STATE_SOURCE=SPRINT.md -->
+<!-- OBJECT_VERSION=0.12; METACANON_VERSION=1.6; STATE_SOURCE=SPRINT.md -->
 # Sprint · Convergencia funcional, mercado y apoyos · Khora y Otro Gran Programa
 
 ## 1. Control e identidad
 
 - Naturaleza: objeto documental permanente del sprint, vivo y provisional en su definición; no especificación de lanzamiento ni ratificación de una arquitectura.
-- Versión/sello del objeto: **0.11 · SPRINT-CONVERGENCIA-v0.11**.
-- Ancla: M16 · C-CUSTODIA-NOTION-01; objetivo del frente actualizado, custodia literal de laterales completada para lo recibido, Notion primer trámite guiado. No envío efectuado.
+- Versión/sello del objeto: **0.12 · SPRINT-CONVERGENCIA-v0.12**.
+- Ancla: M17 · C-NOTION-ELEGIBILIDAD-01; operador declara prueba gratuita previa y nunca pago. Formulario incluye pruebas entre exclusiones; consulta escrita preparada, no enviada.
 - Propietario de custodia: `SeryMente/metodologia`, privado comprobado mediante GitHub en este ciclo. Carpeta: `frentes/convergencia-funcional/`. Estado único: este archivo.
 - Rama documental: `docs/sprint-convergencia-funcional-20261017`, creada desde `main@49ac40e9f6122e2d2fb339362cfa0a78128c8e37`. No fusionar ni afirmar integrado en main por guardar esta rama.
 - Persistencia: el recibo del commit y la lectura de vuelta son la prueba de publicación; la sola presencia de esta frase no la acredita. Si la lectura falla, esta entrega queda NO VERIFICADA.
@@ -99,11 +99,11 @@ Canal: Notion AI, workspace Numb’s Space (según contexto actual de esta sesi�
 
 ## 8. Estado vivo
 
-**Acción actual:** objetivo canónico explícito de M16 en §4; metacanon 1.6 revalidado sin delta central. Documentos principales custodiados separados en `fuentes/`, originales en `originales/`, paquete en `solicitudes/` e índice con límites. Objeto v0.11. Notion es el primer trámite guiado; pago/promociones/identidad del solicitante todavía desconocidos. Ningún envío ni nueva cuenta.
+**Acción actual:** objeto v0.12; método 1.6 revalidado sin delta. Operador declara nunca haber pagado y sí haber recibido una prueba gratuita. No se verifica historial de facturación por acceso a cuenta. El formulario oficial incluye pruebas promocionales previas entre exclusiones; vía estándar detenida antes de declarar elegibilidad. Consulta preparada para startups@makenotion.com, no enviada. Nombre/fecha/alcance de la prueba desconocidos.
 
 **Avance observado:** tres tareas de contraste, no funciones elegidas para lanzamiento: recuperación dispersa, redacción fiel y próximo paso respaldado. Fuentes ficticias distinguen negación, tiempo de expresión/ingesta, retractación, autoría, duplicados, datos faltantes e instrucciones incrustadas. Línea base simple y recorridos de mercado de A.3–A.11; no rutas adoptadas. Solucionario separado del material de candidato en una futura corrida; casos de desarrollo no son test ciego. Control por prompt no equivale a aislamiento real. Radar técnico y tesis reciben límites de inferencia. No nuevas prestaciones/precios revalidados por este trabajo, ni resultados o ganador inventados.
 
-**Siguiente paso:** preguntar únicamente por pagos actuales/pasados y promociones de Notion; registrar respuesta y decidir vía estándar o consulta de elegibilidad. Después pedir identidad/workspace, web/correo empresarial y equipo/socio según lo que falte. No pedir simultáneamente todo el expediente de ElevenLabs. La autorización general de empezar no elimina revisión de términos/declaraciones/cuenta del acto final ni concede gasto.
+**Siguiente paso:** operador envía consulta preparada y aporta respuesta escrita; conservar nombre/fecha de la prueba si los localiza. No exigir datos posteriores de solicitud estándar ni avanzar a otros programas como si Notion estuviera resuelto. Según respuesta: aclarar datos de prueba o documentar exclusión y alternativa legítima. Sin nuevas cuentas para eludir historial, sin envío por Samantha, sin aceptación de términos ni gasto.
 
 **Huecos documentales no bloqueantes de Notion:** Rúbrica Universal y Análisis N1, referencias de los cánones, no accesibles por sus IDs y sin texto recibido. No sustituirlos por versiones antiguas de otros IDs. Los tres cuerpos pegados, antes pendientes de custodia exportada, ahora están guardados literalmente desde el evento 104; la limitación histórica de M14/M15 queda superada solo en ese punto. No hay certificación de frescura de las páginas remotas.
 
@@ -114,7 +114,7 @@ Canal: Notion AI, workspace Numb’s Space (según contexto actual de esta sesi�
 4. Voz: derechos/consentimiento, español real, parciales/finales, interrupción/cancelación, extras de modelo/telefonía, retención y cobertura exacta del premio; no clonar voces ni enviar corpus íntimo. Mantener restricción del crédito Deepgram para comparar competidores hasta aclararla.
 5. Visualización/acción: separar significado y posiciones, propuesta y compromiso, tarea y ejecución; revisión humana antes de construcción. Nada clínico acreditado. Ensayar accesibilidad, reversibilidad y esfuerzo frente a lista/chat simples.
 6. Operación/infraestructura: cuenta/carga/región/contrato, aislamiento, copia de base Y objetos y configuración, restauración independiente, límites/gasto/cancelación y salida. Workers beta gratis no son permiso de automatizar; Agent APIs no son inferencia universal gratuita.
-7. Candidaturas: acreditar entidad/país/etapa, correo laboral, historial, equipo real, afiliación, producto/consumo, acumulabilidad y gasto tras crédito. No inventar inversión ni duplicar premios por dos marcas. Ninguna solicitud enviada; ningún saldo concedido. Términos Notion releídos en C-PREPARACION-APOYOS-01: excluyen pago histórico y actual; historial del solicitante desconocido. No eludir ni declarar excepción sin confirmación escrita.
+7. Candidaturas: acreditar entidad/país/etapa, correo laboral, historial, equipo real, afiliación, producto/consumo, acumulabilidad y gasto tras crédito. No inventar inversión ni duplicar premios por dos marcas. Ninguna solicitud enviada; ningún saldo concedido. Términos Notion releídos en C-PREPARACION-APOYOS-01: excluyen pago histórico y actual; M17 declara nunca pago y prueba previa, con exclusión publicada y consulta pendiente. No eludir ni declarar excepción sin confirmación escrita.
 8. Primera versión diferida; funciones declaradas/propuestas/ejemplos separados. Conservar el recordatorio de aquello que el operador olvidó decir, sin reconstruirlo. Otro Gran Programa no necesita memoria íntima de participantes por usar tecnología de Khora.
 9. Mantener rama documental sin merge; comprobar fuente/revisión antes de editar y lectura de vuelta posterior. No modificar método central ni metaprompt; investigar mercado no autoriza implementación, cuentas, gasto, solicitudes, migraciones o acceso remoto.
 
@@ -138,6 +138,7 @@ Canal: Notion AI, workspace Numb’s Space (según contexto actual de esta sesi�
 | Preparación de evaluación | Corpus sintético, consultas, expectativas, líneas base, alternativas, rúbrica y registro preparados | Radar A.13; no ejecución, resultado, producto validado o primera versión elegida |
 | Preparación de candidaturas M15 | Ocho documentos, borradores, fuentes actuales y secuencia hasta salida | Preparación verificable por publicación/lectura; datos y aprobación humana pendientes; no envíos |
 | Objetivo/custodia M16 | Objetivo explícito en §4 y cuatro documentos principales guardados; paquete de ocho anexos presente | Índice, manifiesto y lectura posterior; dos dependencias no accesibles declaradas |
+| Filtro Notion M17 | Declaración nunca pago + prueba previa; formulario excluye promociones incluidas pruebas | Consulta escrita preparada, no enviada; sin excepción o concesión acreditada |
 | Reingreso portable | Este objeto, originales, fuente y prompts | Publicación/lectura de vuelta necesarias |
 
 Viable ahora: investigación y comparación documental manual cuando el chat esté activo, sujeta a créditos de conversación y acceso; no un agente adicional ni trabajo entre mensajes. No viable prometer cobertura diaria exhaustiva de todo el mercado, gratuidad total, concesión de ayudas ni superioridad sin ensayos. La secuencia permite descubrir el producto, no necesita un catálogo final previo.
@@ -151,6 +152,19 @@ Por M06 y su precisión posterior M10, cerrar todas las fases documentales pendi
 Toda salida de este frente registra: (1) proyecto, rol, versión/sello del objeto y «Metacanon adquirido: versión/sello», revisión y frescura; (2) dónde estamos; (3) delta metodológico y de proyecto; (4) avance y evidencia, no tocado; (5) pendientes/bloqueos; (6) viabilidad y condiciones; (7) pronóstico de próximo hito y cierre con supuestos o no estimable; (8) siguiente acción/agente y mínima intervención material del operador; (9) continuación/prompt hacia el investigador si existe salida que responder; (10) persistencia, ancla y checkpoint. Puede condensarse sin ocultar lo desconocido. No afirmar certificación externa, herramientas o ensayo por una firma.
 
 ## 11. Crónica y fuentes
+
+### C-NOTION-ELEGIBILIDAD-01 · M17 · prueba previa y consulta antes de solicitar
+
+Partida: v0.11 en e0c7e626c3201c878957bc6bfed439b9c2fb6561. Método central v1.6, blob 8f9ad1cf0e09e5fcd7014190770a77294ff39af4 sin delta; privacidad del repositorio comprobada en este ciclo. Fuente: mensaje directo del operador en sesión 3fda4187-8241-80d9-8627-00a9a79e07f7. Fecha de ejecución no añadida por ausencia de reloj verificado.
+
+Pregunta previa: historial de pagos/promociones. Declaración recibida: nunca pago y prueba gratuita previa; original literal en `originales/C-NOTION-ELEGIBILIDAD-01-operador.txt`. No es auditoría de cuenta. Nombre, fecha, plan y workspace de la prueba desconocidos.
+
+Acción/evidencia: ayuda oficial cargada; extracción rápida de startups-apply insuficiente (solo Notion), luego lectura completa del formulario oficial app.notion.com/startups-application-form confirma exclusión expresa de promociones, incluyendo in-product trial offerings. Términos cargados confirman canal startups@makenotion.com para casos de denegación; se usa para consulta previa sin afirmar excepción. Hipótesis corregida: no pagar nunca no basta para elegibilidad. Elegibilidad depende de historia exacta y respuesta oficial; no se fuerza una declaración de cumplimiento. Texto público y fuentes pertinentes en evidencia JSON.
+
+Criterio: expediente honesto → riesgo de declarar falsamente ausencia de promociones → formulario + declaración del operador → no continuar vía estándar sin aclaración → consulta escrita. Se conserva preparación de kit como antecedente, no se afirma borrador anterior vigente frente a este delta. El mapeo de campos antes inaccesible ahora sí se leyó textualmente, no se inspeccionó formulario autenticado ni se completó.
+
+Resultado: correo de consulta listo en salida literal; no se envió, no cuenta creada, no términos aceptados, no ayuda concedida ni denegación individual emitida por Notion. Siguiente checkpoint: envío por operador y respuesta escrita; no inventar tipo/fecha de prueba. Originales/salida y evidencia enlazados en carpeta; salida sin comentarios previos del asistente en este ciclo. Publicación por rama y lectura posterior necesarias; sin merge main.
+
 
 ### C-CUSTODIA-NOTION-01 · M16 · objetivo, custodia y Notion primero
 
@@ -438,6 +452,8 @@ A.13 del radar contiene la única versión documental del corpus y solucionario.
 Evidencia de aceptación: lectura de vuelta de las tres páginas sin truncamiento/bloques desconocidos y archivo de repositorio idéntico al preparado, con corpus/consultas/conclusiones íntegros; debe comprobarse después de publicar, no se acredita por escribir esta frase.
 
 ## 12. Reinstanciación
+
+Checkpoint vigente M17: consulta de elegibilidad Notion preparada; esperar envío por operador y respuesta. Historial declarado nunca pago + prueba previa. Este checkpoint sustituye la pregunta anterior sobre historial, sin alterar crónica.
 
 Prioridad vigente M16: guiar solicitud de Notion primero, paso a paso; leer §4, §8 y C-CUSTODIA-NOTION-01. Custodia literal de los cuatro cuerpos recibidos ya en carpeta; dos dependencias no recibidas señaladas en índice. No volver a pedir carga de documentos custodiados ni toda la información de otros programas para empezar.
 
