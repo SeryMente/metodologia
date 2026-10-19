@@ -1,0 +1,50 @@
+{
+  "cycle": "C-BLOG-007",
+  "seal": "BLOG-PERSONAL-v10",
+  "method": "METACANON-OBJETOS-v1.6",
+  "base_document_commit": "88c306cb7d844110c3e1b9f42bdd457030f868e0",
+  "code_head": "3fcfe4cd0b186c80bfe6b55b579eb6c99a620398",
+  "central_integration_report": "c0dcb2e26f9df31273bbf654ffc52222a7d9d887",
+  "deployment_report": {
+    "id": "dpl_jLTALH6xrtcDqoKNd5Tc3B927TfB",
+    "state": "ERROR",
+    "code": "lint_or_type_error",
+    "logs": "403 specific; no full cause attribution"
+  },
+  "current_own_reproduction": {
+    "compiler": "TypeScript5.9.3",
+    "target": "ES2017",
+    "strict": true,
+    "original_diagnostics": 1,
+    "code": 2339,
+    "file": "khora-web/tests/unit/blog-text-workflow.test.ts",
+    "line": 44,
+    "exact_null_assertion_fix_in_memory_diagnostics": 0,
+    "written_or_pushed": false,
+    "full_build": false
+  },
+  "prior_own_tests": {
+    "unit": 88,
+    "browser": 27,
+    "scope": "HTTP/auth/normative/receipt fixtures; real React/WebCrypto"
+  },
+  "central_report_tests": {
+    "unit": 99,
+    "browser": 27,
+    "strict": "5.9.3 JSX",
+    "not_own_execution": true
+  },
+  "bridge_code_read": {
+    "ref": "c0dcb2e26f9df31273bbf654ffc52222a7d9d887",
+    "ingreso_blob": "be04dc0cdb0719f9d9db85a69413ed450d23c6e7",
+    "consumer_blob": "dd863bdc1bd13aa8eb7f5f280fda6ecaa1dc31b5",
+    "existing_consumer": true,
+    "real_end_to_end": false,
+    "manual_new_page_consumes_existing": false
+  },
+  "execution_stopped": true,
+  "new_central_url": null,
+  "publication": false,
+  "future_work_requires_resumption": true,
+  "prompt_sha256": "c3fae5b36af0ddb626ce32608b43064ea32644d25d996d1e3f12a225d87ab4e6"
+}
