@@ -1,0 +1,13 @@
+**Actualizado y verificado el único canon Blog: BLOG-PERSONAL-v14 · C-BLOG-011.** Metacanon 1.6 · METACANON-OBJETOS-v1.6.
+
+Quedaron custodiados por separado **U-C039-01, U-C039-02 y U-C039-03**, con sus cuerpos literales, procedencia y huellas; también el registro central de propuestas, decisiones abiertas e investigación. No corregí «No obstante, no considéralo ya en esta versión» ni presenté el reenvío como exportación íntegra de la sesión.
+
+**Vigente, sin cambiar implementación:**
+- Suficiencia **obligatoria** al seleccionar Crónica personal; campos, precisión y momento de exigencia pendientes de decisión. La opcionalidad anterior queda histórica, no norma vigente ni gate nuevo inventado.
+- Texto público **siempre trabajado**. Aprobación literal: crónica sobria, primera persona, concreta y reconocible como suya; la propuesta editorial detallada no queda aprobada en bloque.
+- Audio original: único contenido crudo público futuro, obligatorio en entregas posteriores; **no activado ahora**. Imagen por entrada diferida por presupuesto; Google gratuito no acreditado y MidJourney/estilos futuros.
+- Blog conserva activos/medios, representaciones por destino, versiones, enlaces y actualizaciones; Dictado conserva criterio editorial y elaboración del texto.
+
+Meta y HeyGen quedaron como **investigación recibida del central, no comprobación propia ni autorización**: sin garantizar sustitución orgánica o conservación de interacciones, sin elegir proveedor ni consentir avatar, subida, clonación de voz o pago.
+
+**Objeto, manifiesto y anexos cotejados por lectura Git.** El manifiesto declara su cobertura y conserva las huellas históricas sin fingir revalidación de archivos no leídos. No hubo cambios de código, runtime, cuentas, proveedores, producción o publicación; no toqué el canon central.[^https://github.com/SeryMente/metodologia/blob/docs/blog-editorial-sync-20261019/frentes/blog-personal/OBJETO-CANONICO.md]
