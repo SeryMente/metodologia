@@ -8,8 +8,8 @@
     "sha256": "9d79e8e68af36edc01635ea2794a9c969c6412263d004fd8d15057ecb83a8ca8"
   },
   "02-NOTION.md": {
-    "bytes": 5042,
-    "sha256": "e7ff7ccbfe39a22a92b3377bd9a1315d73b7775ce1f502d41ca590162cfaa760"
+    "bytes": 12608,
+    "sha256": "a35e928f536792c44849c5217f50d49fabcc55841349972c99abf37844d51afb"
   },
   "03-ELEVENLABS.md": {
     "bytes": 5411,
@@ -24,8 +24,8 @@
     "sha256": "539581f26ac3c07085e4789436a132166e2dc7a8671608aa64083be1e6252721"
   },
   "06-DATOS-DEL-SOLICITANTE.md": {
-    "bytes": 2036,
-    "sha256": "29d6683a7be8c586f2c53798376d14b794e3eff7c6c50670ff0e5363c36605e1"
+    "bytes": 2733,
+    "sha256": "7252ce3d07249a46941dd762942b03d3396351a3655128a471a526e92574f40b"
   },
   "07-FUENTES-Y-REVISION.md": {
     "bytes": 3169,

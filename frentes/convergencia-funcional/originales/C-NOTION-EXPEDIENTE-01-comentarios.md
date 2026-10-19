@@ -1,0 +1,1 @@
+Sí. Voy a convertir lo ya investigado en un expediente de verificación para Notion: presentación de Khora, uso del workspace, evidencias y checklist de requisitos. Dejaré separados lo que ya está respaldado, lo que necesita tu confirmación y lo que exige preparación adicional, sin enviar nada.

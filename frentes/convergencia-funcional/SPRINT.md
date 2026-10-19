@@ -1,11 +1,11 @@
-<!-- OBJECT_VERSION=0.20; METACANON_VERSION=1.6; STATE_SOURCE=SPRINT.md -->
+<!-- OBJECT_VERSION=0.21; METACANON_VERSION=1.6; STATE_SOURCE=SPRINT.md -->
 # Sprint · Convergencia funcional, mercado y apoyos · Khora y Otro Gran Programa
 
 ## 1. Control e identidad
 
 - Naturaleza: objeto documental permanente del sprint, vivo y provisional en su definición; no especificación de lanzamiento ni ratificación de una arquitectura.
-- Versión/sello del objeto: **0.20 · SPRINT-CONVERGENCIA-v0.20**.
-- Ancla: M26 · C-NOTION-MEJOR-RUTA-01; recomendación principal consulta de elegibilidad antes de altas. FreeDNS candidato técnico no recomendado como primera ruta de candidatura; ninguna cuenta ni consulta enviada.
+- Versión/sello del objeto: **0.21 · SPRINT-CONVERGENCIA-v0.21**.
+- Ancla: M27 · C-NOTION-EXPEDIENTE-01; preparar expediente antes de consulta: descripciones y controles actualizados, perfil/evidencias/publicación pendientes. Sin envío ni altas.
 - Propietario de custodia: `SeryMente/metodologia`, privado comprobado mediante GitHub en este ciclo. Carpeta: `frentes/convergencia-funcional/`. Estado único: este archivo.
 - Rama documental: `docs/sprint-convergencia-funcional-20261017`, creada desde `main@49ac40e9f6122e2d2fb339362cfa0a78128c8e37`. No fusionar ni afirmar integrado en main por guardar esta rama.
 - Persistencia: el recibo del commit y la lectura de vuelta son la prueba de publicación; la sola presencia de esta frase no la acredita. Si la lectura falla, esta entrega queda NO VERIFICADA.
@@ -99,7 +99,7 @@ Canal: Notion AI, workspace Numb’s Space (según contexto actual de esta sesi�
 
 ## 8. Estado vivo
 
-**Acción actual:** objeto v0.20; método 1.6 revalidado sin delta. Operador declara nunca haber pagado y sí haber recibido una prueba gratuita. No se verifica historial de facturación por acceso a cuenta. El formulario oficial incluye pruebas promocionales previas entre exclusiones; vía estándar detenida antes de declarar elegibilidad. Consulta preparada para startups@makenotion.com, no enviada. Nombre/fecha/alcance de la prueba desconocidos.
+**Acción actual:** objeto v0.21; método 1.6 revalidado sin delta. Operador declara nunca haber pagado y sí haber recibido una prueba gratuita. No se verifica historial de facturación por acceso a cuenta. El formulario oficial incluye pruebas promocionales previas entre exclusiones; vía estándar detenida antes de declarar elegibilidad. Consulta preparada para startups@makenotion.com, no enviada. Nombre/fecha/alcance de la prueba desconocidos.
 
 **Avance observado:** tres tareas de contraste, no funciones elegidas para lanzamiento: recuperación dispersa, redacción fiel y próximo paso respaldado. Fuentes ficticias distinguen negación, tiempo de expresión/ingesta, retractación, autoría, duplicados, datos faltantes e instrucciones incrustadas. Línea base simple y recorridos de mercado de A.3–A.11; no rutas adoptadas. Solucionario separado del material de candidato en una futura corrida; casos de desarrollo no son test ciego. Control por prompt no equivale a aislamiento real. Radar técnico y tesis reciben límites de inferencia. No nuevas prestaciones/precios revalidados por este trabajo, ni resultados o ganador inventados.
 
@@ -109,7 +109,7 @@ Canal: Notion AI, workspace Numb’s Space (según contexto actual de esta sesi�
 
 **Corrección vigente M23 de interpretación M22:** el operador NO ordenó resolver .com ahora para poder pedir apoyo: los .com vendrán después. Samantha convirtió indebidamente esa intención futura en compuerta inmediata y desvió al registrador anterior. No preguntar más por recuperación/compra como siguiente paso de esta solicitud. Prioridad: avanzar apoyo Notion sin gasto con situación real. Correo empresarial operativo no disponible según contexto; si no existe, no se verifica formulario válido con Gmail. Cuenta Notion Business pagada no es requisito de compra previa; el programa se dirige a no pagadores. Consulta desde correo actual solicita si hay revisión manual/documentación alternativa y declara prueba gratuita anterior. No excepción aprobada ni elegibilidad confirmada.
 
-**Siguiente paso recomendado M26:** enviar consulta ya preparada desde correo actual a startups@makenotion.com sobre admisión sin correo empresarial/prueba previa y evidencia alternativa. No es solicitud aceptada ni excepción publicada. No pedir alta FreeDNS/Zoho como primera ruta de esta candidatura: montaje técnico no acredita aceptación y puede ser trabajo inútil ante trial previo. Para correo definitivo, evaluar dominio controlado + Zoho Free al contar con dominio y Free regional; no compra .com ahora por inferencia. Recomendación del asistente, no decisión/aceptación del operador ni envío autorizado.
+**Siguiente paso vigente M27:** completar perfil mínimo Notion con operador (responsable/persona o entidad/país, empleados y colaboradores, workspace, socio real); revisar descripción interna y seleccionar evidencia saneada y contenido de presentación pública antes de enviar consulta. Usuario pide llegar con demás material listo, no solo preguntar sin dossier. 02-NOTION.md contiene ficha, borradores, criterios y distinción de requisitos oficiales vs apoyo. No inventar identidad ni publicar sitio por inferencia; .com futuro y no gasto siguen vigentes. Nunca pago/sí prueba conocidos no se preguntan otra vez; correo y exclusión trial se consultan con transparencia. No cuentas, solicitud ni aprobación de marketing/seguridad dadas por este trabajo.
 
 **Huecos documentales no bloqueantes de Notion:** Rúbrica Universal y Análisis N1, referencias de los cánones, no accesibles por sus IDs y sin texto recibido. No sustituirlos por versiones antiguas de otros IDs. Los tres cuerpos pegados, antes pendientes de custodia exportada, ahora están guardados literalmente desde el evento 104; la limitación histórica de M14/M15 queda superada solo en ese punto. No hay certificación de frescura de las páginas remotas.
 
@@ -145,6 +145,7 @@ Canal: Notion AI, workspace Numb’s Space (según contexto actual de esta sesi�
 | Preparación de candidaturas M15 | Ocho documentos, borradores, fuentes actuales y secuencia hasta salida | Preparación verificable por publicación/lectura; datos y aprobación humana pendientes; no envíos |
 | Objetivo/custodia M16 | Objetivo explícito en §4 y cuatro documentos principales guardados; paquete de ocho anexos presente | Índice, manifiesto y lectura posterior; dos dependencias no accesibles declaradas |
 | Filtro Notion M17 | Declaración nunca pago + prueba previa; formulario excluye promociones incluidas pruebas | Consulta escrita preparada, no enviada; sin excepción o concesión acreditada |
+| Preparación reforzada Notion M27 | Expediente existente actualizado: ficha, evidencia, web, mapeo formulario y criterios de listo | Faltan cuatro confirmaciones del operador, seleccionar/sanear evidencias, revisión/presentación pública; no envío ni admisión |
 | Reingreso portable | Este objeto, originales, fuente y prompts | Publicación/lectura de vuelta necesarias |
 
 Viable ahora: investigación y comparación documental manual cuando el chat esté activo, sujeta a créditos de conversación y acceso; no un agente adicional ni trabajo entre mensajes. No viable prometer cobertura diaria exhaustiva de todo el mercado, gratuidad total, concesión de ayudas ni superioridad sin ensayos. La secuencia permite descubrir el producto, no necesita un catálogo final previo.
@@ -158,6 +159,19 @@ Por M06 y su precisión posterior M10, cerrar todas las fases documentales pendi
 Toda salida de este frente registra: (1) proyecto, rol, versión/sello del objeto y «Metacanon adquirido: versión/sello», revisión y frescura; (2) dónde estamos; (3) delta metodológico y de proyecto; (4) avance y evidencia, no tocado; (5) pendientes/bloqueos; (6) viabilidad y condiciones; (7) pronóstico de próximo hito y cierre con supuestos o no estimable; (8) siguiente acción/agente y mínima intervención material del operador; (9) continuación/prompt hacia el investigador si existe salida que responder; (10) persistencia, ancla y checkpoint. Puede condensarse sin ocultar lo desconocido. No afirmar certificación externa, herramientas o ensayo por una firma.
 
 ## 11. Crónica y fuentes
+
+### C-NOTION-EXPEDIENTE-01 · M27 · preparar lo demás antes de consultar admisión
+
+Partida v0.20@8d96604582a06d03ac9807adf52579d736745d65; método 1.6/blob 8f9ad1cf0e09e5fcd7014190770a77294ff39af4 revalidado sin delta, privacidad del repositorio comprobada. Fuente directa sesión 3fda4187-8241-80d9-8627-00a9a79e07f7; original, comentario y salida en originales/C-NOTION-EXPEDIENTE-01-*. Fecha de ejecución no inventada.
+
+Instrucción: prepararnos para verificación y tener demás material listo antes de consultar. Acción: cargar brief, expediente Notion y datos del solicitante existentes; actualizarlos, no crear otro expediente ni pedir datos de ElevenLabs ahora. Dos textos se editan y manifiesto sincronizado; otros documentos conservan fecha/alcance, no revalidados por proximidad. El paquete ZIP antiguo es snapshot histórico no actualizado automáticamente.
+
+Evidencia actual: formulario https://app.notion.com/startups-application-form: extracción rápida (838) insuficiente, completa (850) expone requisitos/campos, exclusión promo incluido trial y Gmail/Yahoo. Ayuda https://www.notion.com/help/notion-for-startups (846) explica oferta y problemas de web/legitimidad; no se infiere elegibilidad o seis meses. Sitio https://khora-web.vercel.app/ (857) devuelve Entrar / Un espacio para recibir memoria, no descripción suficiente acreditada. No ensayo/instalación ni web construida. Fuentes de proyecto: 01-BRIEF-COMUN.md y fuentes custodiadas, originales de investigación no verificación externa de capacidades actuales. No patentes, validación clínica o tracción añadidas.
+
+Preparación: redacción inglesa de proyecto/uso/apoyo, consulta honesta sobre falta de correo y trial, mapa de campos, ficha de destinatario candidato Numb’s Space (ID del contexto, no selección aprobada), plan de resumen/capturas saneadas, brief de contenido público pendiente de revisión y criterios de listo. Historial de nunca pago/sí prueba se refleja y no se pregunta de nuevo. Se corrige el expediente antiguo que decía campos no visibles y usaba consulta genérica de paid plan; ahora mapeo textual documentado y caso concreto. Cuatro datos no deducibles solicitados: responsable/entidad/país, empleados vs colaboradores, workspace, socio. Nombre UI y huso horario no prueban identidad/país legal. No se convierte sociedad/inversión/pitch/producto terminado en requisito universal por no aparecer como campos del texto consultado; solicitudes posteriores se verificarán.
+
+Criterios: honestidad/privacidad/presupuesto → no presentar investigación como producto ni abrir todos los docs privados → borrador + checklist y límites → no listo para envío hasta confirmación de perfil/evidencias/copy final. Sitio/diseño/seguridad requieren presencia del operador antes de construir/publicar; preparar brief interno no los aprueba. Se puede declarar ausencia de web/correo al consultar, no usar expediente sólido para negar trial excluyente. No se afirma documentación completa sin faltantes. Ningún correo/formulario, cuenta, gasto, publicación ni merge main ejecutados. Estado/continuación y manifiesto actualizados; readback por commit antes de cierre.
+
 
 ### C-NOTION-MEJOR-RUTA-01 · M26 · recomendación según objetivo, no según posibilidad técnica
 
@@ -557,7 +571,7 @@ Evidencia de aceptación: lectura de vuelta de las tres páginas sin truncamient
 
 ## 12. Reinstanciación
 
-Checkpoint recomendado vigente M26: consulta Notion primero para objetivo ayuda sin gasto; candidato FreeDNS/Zoho no recomendado como primera opción de candidatura. No alta autorizada, correo creado ni excepción obtenida. .com futuro, no compra actual.
+Checkpoint vigente M27: completar cuatro datos de perfil y revisar expediente/evidencias/presentación antes de enviar consulta Notion. Preparación documental en 02-NOTION.md; no todo listo ni publicación aprobada. FreeDNS/Zoho no primera ruta; no altas, envío o excepción obtenida; .com futuro sin compra actual.
 
 Checkpoint adicional M19: presencia pública de Khora identificada; evaluar reutilización del sitio, sin diseño/construcción ni gasto autorizado. No sustituye consulta de elegibilidad.
 
