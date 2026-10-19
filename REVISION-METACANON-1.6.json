@@ -9,12 +9,14 @@
     "thirteen_child_core_blocks_ordered": true,
     "source_literal_excerpt_exact": true,
     "privacy_rechecked_both_repos_private": true,
-    "personal_metaprompt_unchanged": true
+    "personal_metaprompt_unchanged": true,
+    "current_source_main_not_historical_branch": true
   },
   "hashes": {
-    "METACANON-OBJETOS-CANONICOS.md": "4c70b7109649dd7c0d5c894b4dceaee6656cf73ab06471a4166ca538bcf21711",
+    "METACANON-OBJETOS-CANONICOS.md": "dab6680cbcdb6530e4616f8b13d1e0d5f1ff0885508203d1c5eac22fd86250ee",
     "operator_source": "e805e2716a0ec2705d209869a71962341f81d2b7ab6ebcfe894ad6f15d59de5d"
   },
-  "readback": "required after push; independently compare Git blob/hash",
-  "other_fronts_migrated": false
+  "readback": "required for corrected final revision; prior revision read back exactly",
+  "other_fronts_migrated": false,
+  "publication_precedent": "7bc0e82e74340cf3863523d2ddddb71d7b6dc4fb"
 }
