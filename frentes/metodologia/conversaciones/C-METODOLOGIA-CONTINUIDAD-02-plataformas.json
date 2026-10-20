@@ -1,0 +1,8 @@
+{
+  "ciclo": "C-METODOLOGIA-CONTINUIDAD-02",
+  "relacion": "Posterior a las dos entradas en C-METODOLOGIA-CONTINUIDAD-02-entradas.json",
+  "rol": "user",
+  "texto": "<p>\nSi hazlo. <br /><br />Solo quiero tener que decir las cosas una vez. <br /><br />Notion es la unica plataforma que usa el metapromtp canonico de samantha por su propia cuenta, que esta sincronizado con el documento del mismo nombre en el directorio metacanonico. Esto supone un uso distinto por plataforma. Y debemos prepararnos para ello. \n</p>",
+  "acuerdo": "El operador no debe repetir las instrucciones ya persistidas. Notion recibe el metaprompt mediante su configuración; otras plataformas requieren adquisición explícita al arrancar. No confundir carga automática con sincronización del contenido.",
+  "verificacion": "La descripción del comportamiento de plataforma proviene del operador. La sincronización automática del documento no queda acreditada por esta entrada. Conservar procedencia, revisión y discrepancias observadas, sin inventar acceso."
+}
