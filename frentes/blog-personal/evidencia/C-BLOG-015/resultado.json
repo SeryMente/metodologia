@@ -1,0 +1,57 @@
+{
+  "cycle": "C-BLOG-015",
+  "baseContentCommit": "91d729396398240f0b4745fd5645f15c7c9fd935",
+  "baseModuleBlob": "0419271026a301b4d6bc64a847dcc23369ca5bc6",
+  "baseTestBlob": "6ae11f6e5c69efad8ee29161c0b815b4bf9fa464",
+  "deliveryCommit": "01a4482fec3c9e53a8513f661c05627a682775f1",
+  "branch": "feat/blog-text-workflow-20261019",
+  "readback": {
+    "blobs": {
+      "khora-web/lib/ingreso/cronica-coverage.ts": "f1c7837446b29602730383d877daffa398cfcc50",
+      "khora-web/tests/unit/cronica-coverage.test.ts": "f10109ce6b83d3fe6951d748b3a4ccaf06cec7ec"
+    },
+    "bothExact": true,
+    "results": [
+      1118,
+      1119
+    ]
+  },
+  "compiler": "TypeScript7.0.2 local CLI",
+  "strictChecks": [
+    "ES2017 NodeNext strict emit + node --test",
+    "ES2017 ESNext Bundler strict noEmit; zero diagnostics"
+  ],
+  "baselineSameUpdatedBank": {
+    "total": 80,
+    "pass": 61,
+    "fail": 19,
+    "skipped": 0,
+    "qualification": "includes mandatory-label contract change; not all19 are same semantic bug"
+  },
+  "patched": {
+    "total": 80,
+    "pass": 80,
+    "fail": 0,
+    "skipped": 0
+  },
+  "sourceProbe": {
+    "central1416": "complete available tool-body, local HTML tags stripped for supplementary probe",
+    "coverage": [
+      "when",
+      "where",
+      "what"
+    ],
+    "scope": "lexical detection only, not user microphone/session/semantics; complete private narrative NOT embedded in product test"
+  },
+  "limits": [
+    "no TS5.9.3 run by Blog",
+    "no fullNext build/UI/browser or production test by Blog",
+    "no deployment/merge/main/receipt/public note",
+    "conservative lexical cues, NOT fact/sufficiency/identity proof; unknown wording may remain pending",
+    "generic self-correction reopens all3 conservatively; no claim of complete natural-language understanding",
+    "no acquisition of providers/secrets/Meta/Signal"
+  ],
+  "ownership": "copy ONLY2 listed blobs to current central tree; never merge/cherry-pick obsolete Blog tree/699ce393; files frozen after receipt",
+  "safeRollback": "restore the two baseline blobs only on coordinated central tree, not branch-wide rollback",
+  "privacy": "metadata repository private:true verified1132; original belongs to private custody"
+}

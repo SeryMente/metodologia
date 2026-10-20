@@ -1,5 +1,5 @@
 {
-  "OBJETO-CANONICO.md": "acd9f06722df641a790c80082bf84975d26c2a773e512877f1ef452d22620922",
+  "OBJETO-CANONICO.md": "dc3f643fcf72291c845a434a6221fea48722fabe05bc62581114488cd5a0d8f3",
   "README.md": "5cdd06009adeb2d4596016cd88b170afc555d7ada2472567449751aadf939989",
   "originales/U01-necesidad.txt": "d98ddf1b564752f5b2c9bdfcfbbf14052d47b7ecb6373b1a3833b30f9ec28161",
   "originales/U02-autorizacion.txt": "f143659f078927f6bce1f7c49c18175c1469d0d15f9b05cadd58527c87ba29e6",
@@ -39,5 +39,12 @@
   "evidencia/C-BLOG-014/procedencia-y-cobertura.md": "a1cbe1e6f5fbf8bcaba169e6b935221ad8dde38e8cc0d244a0fd91de585f6581",
   "evidencia/C-BLOG-014/gobierno-adquirido.json": "9a0967cff9f9dfebc0266c4f28e8ad36f951693443898222c9a981b474f1a1d2",
   "evidencia/C-BLOG-014/verificacion-documental.json": "6f610bb538235b853e246c9abaf124be565da757325f4e710a19849e29aad76e",
-  "originales/C-BLOG-014-orden-tecnica-posterior.txt": "df8341b5ad649d7c9f2465d7f49588a9e82e81758957fe9a893ab73b06aa4453"
+  "originales/C-BLOG-014-orden-tecnica-posterior.txt": "df8341b5ad649d7c9f2465d7f49588a9e82e81758957fe9a893ab73b06aa4453",
+  "conversaciones/C-BLOG-015-central-1416.txt": "535926330ee50d4f4340a83a3b393d11e858018642d83347683e07df71935330",
+  "conversaciones/C-BLOG-015-central-1416.procedencia.json": "d9e450c88d03500e557e3809101c450690e5524dbc8a29afcb0ba9acbc3ec075",
+  "cronica/C-BLOG-015.md": "ef16e242e7d5c1bd90874da6389525f782c11e882ebd433a053612946fd6ea3b",
+  "originales/C-BLOG-015-cierre.md": "33ddbecbc447766a307646a6ffe53ca35c28ba7b3876c21bf0386e784c25a59b",
+  "evidencia/C-BLOG-015/baseline-newtests.log": "7167d993a26a806608b1f02490ffe99d443df3cb0d99142d6cefd0e84bc7a6ca",
+  "evidencia/C-BLOG-015/tests-final.log": "80d3c4d2d27033c278886721f8af7b32197defcf070ee5319bc59ca7379a1a9d",
+  "evidencia/C-BLOG-015/resultado.json": "99a578d8af402b37139d62b9a62b104e8d15a3e451ce81a88eafbb170c7a1945"
 }

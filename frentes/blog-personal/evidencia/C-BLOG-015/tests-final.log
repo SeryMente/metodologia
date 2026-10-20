@@ -1,0 +1,490 @@
+TAP version 13
+# Subtest: stable contract and mandatory sufficient labels, empty remains pending
+ok 1 - stable contract and mandatory sufficient labels, empty remains pending
+  ---
+  duration_ms: 4.993657
+  type: 'test'
+  ...
+# Subtest: explicit narrative: Hoy trabajé en casa.
+ok 2 - explicit narrative: Hoy trabajé en casa.
+  ---
+  duration_ms: 9.91157
+  type: 'test'
+  ...
+# Subtest: explicit narrative: Ayer caminé en el parque.
+ok 3 - explicit narrative: Ayer caminé en el parque.
+  ---
+  duration_ms: 3.247435
+  type: 'test'
+  ...
+# Subtest: explicit narrative: El lunes escribí en la biblioteca.
+ok 4 - explicit narrative: El lunes escribí en la biblioteca.
+  ---
+  duration_ms: 0.277662
+  type: 'test'
+  ...
+# Subtest: explicit narrative: El 19 de octubre de 2026 estudié en Querétaro.
+ok 5 - explicit narrative: El 19 de octubre de 2026 estudié en Querétaro.
+  ---
+  duration_ms: 0.417498
+  type: 'test'
+  ...
+# Subtest: explicit narrative: 2026-10-19 estuve en la oficina.
+ok 6 - explicit narrative: 2026-10-19 estuve en la oficina.
+  ---
+  duration_ms: 0.1681
+  type: 'test'
+  ...
+# Subtest: uncertain/negative/future/attributed remains pending: Quizá ayer fui al parque.
+ok 7 - uncertain/negative/future/attributed remains pending: Quizá ayer fui al parque.
+  ---
+  duration_ms: 0.314282
+  type: 'test'
+  ...
+# Subtest: uncertain/negative/future/attributed remains pending: Tal vez hoy trabajé en casa.
+ok 8 - uncertain/negative/future/attributed remains pending: Tal vez hoy trabajé en casa.
+  ---
+  duration_ms: 0.229803
+  type: 'test'
+  ...
+# Subtest: uncertain/negative/future/attributed remains pending: Creo que estuve en Querétaro.
+ok 9 - uncertain/negative/future/attributed remains pending: Creo que estuve en Querétaro.
+  ---
+  duration_ms: 0.188609
+  type: 'test'
+  ...
+# Subtest: uncertain/negative/future/attributed remains pending: No recuerdo si ayer caminé en casa.
+ok 10 - uncertain/negative/future/attributed remains pending: No recuerdo si ayer caminé en casa.
+  ---
+  duration_ms: 0.281237
+  type: 'test'
+  ...
+# Subtest: uncertain/negative/future/attributed remains pending: No fui ayer a la biblioteca.
+ok 11 - uncertain/negative/future/attributed remains pending: No fui ayer a la biblioteca.
+  ---
+  duration_ms: 0.185456
+  type: 'test'
+  ...
+# Subtest: uncertain/negative/future/attributed remains pending: Nunca trabajé en casa.
+ok 12 - uncertain/negative/future/attributed remains pending: Nunca trabajé en casa.
+  ---
+  duration_ms: 0.116125
+  type: 'test'
+  ...
+# Subtest: uncertain/negative/future/attributed remains pending: Mañana iré a la oficina.
+ok 13 - uncertain/negative/future/attributed remains pending: Mañana iré a la oficina.
+  ---
+  duration_ms: 0.098607
+  type: 'test'
+  ...
+# Subtest: uncertain/negative/future/attributed remains pending: Si hoy estuviera en casa, escribiría.
+ok 14 - uncertain/negative/future/attributed remains pending: Si hoy estuviera en casa, escribiría.
+  ---
+  duration_ms: 0.09112
+  type: 'test'
+  ...
+# Subtest: uncertain/negative/future/attributed remains pending: Según Ana, ayer fui a la biblioteca.
+ok 15 - uncertain/negative/future/attributed remains pending: Según Ana, ayer fui a la biblioteca.
+  ---
+  duration_ms: 0.084749
+  type: 'test'
+  ...
+# Subtest: uncertain/negative/future/attributed remains pending: Me dijeron que ayer trabajé en casa.
+ok 16 - uncertain/negative/future/attributed remains pending: Me dijeron que ayer trabajé en casa.
+  ---
+  duration_ms: 0.086342
+  type: 'test'
+  ...
+# Subtest: uncertain/negative/future/attributed remains pending: “Hoy trabajé en casa”.
+ok 17 - uncertain/negative/future/attributed remains pending: “Hoy trabajé en casa”.
+  ---
+  duration_ms: 0.554604
+  type: 'test'
+  ...
+# Subtest: uncertain/negative/future/attributed remains pending: Ella dijo que hoy trabajé en casa.
+ok 18 - uncertain/negative/future/attributed remains pending: Ella dijo que hoy trabajé en casa.
+  ---
+  duration_ms: 0.141367
+  type: 'test'
+  ...
+# Subtest: uncertain/negative/future/attributed remains pending: Ella trabajó ayer en casa.
+ok 19 - uncertain/negative/future/attributed remains pending: Ella trabajó ayer en casa.
+  ---
+  duration_ms: 0.127282
+  type: 'test'
+  ...
+# Subtest: deletion reopens every item, no sticky state
+ok 20 - deletion reopens every item, no sticky state
+  ---
+  duration_ms: 0.315743
+  type: 'test'
+  ...
+# Subtest: independent clauses do not inherit an earlier denial
+ok 21 - independent clauses do not inherit an earlier denial
+  ---
+  duration_ms: 0.149118
+  type: 'test'
+  ...
+# Subtest: contrast correction uses literal positive clause
+ok 22 - contrast correction uses literal positive clause
+  ---
+  duration_ms: 0.20674
+  type: 'test'
+  ...
+# Subtest: literal evidence, no normalization/inferred date
+ok 23 - literal evidence, no normalization/inferred date
+  ---
+  duration_ms: 0.263498
+  type: 'test'
+  ...
+# Subtest: each cue is analyzed independently, not a conservation gate
+ok 24 - each cue is analyzed independently, not a conservation gate
+  ---
+  duration_ms: 0.222488
+  type: 'test'
+  ...
+# Subtest: identity assertion is not activity or proof
+ok 25 - identity assertion is not activity or proof
+  ---
+  duration_ms: 0.149403
+  type: 'test'
+  ...
+# Subtest: emotion not guessed into location
+ok 26 - emotion not guessed into location
+  ---
+  duration_ms: 0.131328
+  type: 'test'
+  ...
+# Subtest: platform is not inferred physical location
+ok 27 - platform is not inferred physical location
+  ---
+  duration_ms: 0.123802
+  type: 'test'
+  ...
+# Subtest: month and number are not inferred location
+ok 28 - month and number are not inferred location
+  ---
+  duration_ms: 0.167017
+  type: 'test'
+  ...
+# Subtest: unknown lowercase place may remain pending
+ok 29 - unknown lowercase place may remain pending
+  ---
+  duration_ms: 0.128298
+  type: 'test'
+  ...
+# Subtest: quoted cues cannot cover reported content
+ok 30 - quoted cues cannot cover reported content
+  ---
+  duration_ms: 0.14327
+  type: 'test'
+  ...
+# Subtest: unquoted own activity survives quoted embedded content
+ok 31 - unquoted own activity survives quoted embedded content
+  ---
+  duration_ms: 0.141518
+  type: 'test'
+  ...
+# Subtest: unqualified third person cannot cover own activity
+ok 32 - unqualified third person cannot cover own activity
+  ---
+  duration_ms: 0.138311
+  type: 'test'
+  ...
+# Subtest: vague reflection not filled with invented clues
+ok 33 - vague reflection not filled with invented clues
+  ---
+  duration_ms: 0.13647
+  type: 'test'
+  ...
+# Subtest: arbitrary long free narrative is not truncated or rejected
+ok 34 - arbitrary long free narrative is not truncated or rejected
+  ---
+  duration_ms: 31.222828
+  type: 'test'
+  ...
+# Subtest: repeatability and returned values do not leak state
+ok 35 - repeatability and returned values do not leak state
+  ---
+  duration_ms: 0.394708
+  type: 'test'
+  ...
+# Subtest: past morning is not confused with future tomorrow
+ok 36 - past morning is not confused with future tomorrow
+  ---
+  duration_ms: 0.176678
+  type: 'test'
+  ...
+# Subtest: activity noun alone does not assert first person
+ok 37 - activity noun alone does not assert first person
+  ---
+  duration_ms: 0.147886
+  type: 'test'
+  ...
+# Subtest: contracted locative al is recognized
+ok 38 - contracted locative al is recognized
+  ---
+  duration_ms: 0.124161
+  type: 'test'
+  ...
+# Subtest: unclosed quote in live transcript never becomes own evidence
+ok 39 - unclosed quote in live transcript never becomes own evidence
+  ---
+  duration_ms: 0.165279
+  type: 'test'
+  ...
+# Subtest: past morning phrase is retained without guessing future
+ok 40 - past morning phrase is retained without guessing future
+  ---
+  duration_ms: 0.138837
+  type: 'test'
+  ...
+# Subtest: quoted multi-sentence narrative never becomes operator evidence
+ok 41 - quoted multi-sentence narrative never becomes operator evidence
+  ---
+  duration_ms: 0.127475
+  type: 'test'
+  ...
+# Subtest: unclosed multi-sentence quote stays masked during live dictation
+ok 42 - unclosed multi-sentence quote stays masked during live dictation
+  ---
+  duration_ms: 0.120264
+  type: 'test'
+  ...
+# Subtest: own narrative after closed quote remains eligible
+ok 43 - own narrative after closed quote remains eligible
+  ---
+  duration_ms: 0.123328
+  type: 'test'
+  ...
+# Subtest: reported own general location: Estoy en el cibercafé Louis Pasteur.
+ok 44 - reported own general location: Estoy en el cibercafé Louis Pasteur.
+  ---
+  duration_ms: 0.153243
+  type: 'test'
+  ...
+# Subtest: reported own general location: Estoy en el cybernet de la calle Luis Pasteur.
+ok 45 - reported own general location: Estoy en el cybernet de la calle Luis Pasteur.
+  ---
+  duration_ms: 0.093153
+  type: 'test'
+  ...
+# Subtest: explicit street correction keeps latest literal anchor
+ok 46 - explicit street correction keeps latest literal anchor
+  ---
+  duration_ms: 0.143268
+  type: 'test'
+  ...
+# Subtest: date assertion with del and following weekday
+ok 47 - date assertion with del and following weekday
+  ---
+  duration_ms: 0.396745
+  type: 'test'
+  ...
+# Subtest: bare estoy is not an activity: Estoy cansado.
+ok 48 - bare estoy is not an activity: Estoy cansado.
+  ---
+  duration_ms: 0.142314
+  type: 'test'
+  ...
+# Subtest: bare estoy is not an activity: Estoy aquí.
+ok 49 - bare estoy is not an activity: Estoy aquí.
+  ---
+  duration_ms: 0.084188
+  type: 'test'
+  ...
+# Subtest: bare estoy is not an activity: Estoy en casa.
+ok 50 - bare estoy is not an activity: Estoy en casa.
+  ---
+  duration_ms: 0.084346
+  type: 'test'
+  ...
+# Subtest: bare estoy is not an activity: Estoy seguro.
+ok 51 - bare estoy is not an activity: Estoy seguro.
+  ---
+  duration_ms: 0.079333
+  type: 'test'
+  ...
+# Subtest: present first-person dictation is activity
+ok 52 - present first-person dictation is activity
+  ---
+  duration_ms: 0.126217
+  type: 'test'
+  ...
+# Subtest: remote qualifier cannot revoke earlier own assertion:  y no recuerdo si mañana iré al parque
+ok 53 - remote qualifier cannot revoke earlier own assertion:  y no recuerdo si mañana iré al parque
+  ---
+  duration_ms: 0.391473
+  type: 'test'
+  ...
+# Subtest: remote qualifier cannot revoke earlier own assertion:  y supongamos que ella fue ayer a casa
+ok 54 - remote qualifier cannot revoke earlier own assertion:  y supongamos que ella fue ayer a casa
+  ---
+  duration_ms: 0.139372
+  type: 'test'
+  ...
+# Subtest: remote qualifier cannot revoke earlier own assertion:  no recuerdo si fui ayer al parque
+ok 55 - remote qualifier cannot revoke earlier own assertion:  no recuerdo si fui ayer al parque
+  ---
+  duration_ms: 0.178689
+  type: 'test'
+  ...
+# Subtest: remote qualifier cannot revoke earlier own assertion:  entonces quizá mañana vaya a casa
+ok 56 - remote qualifier cannot revoke earlier own assertion:  entonces quizá mañana vaya a casa
+  ---
+  duration_ms: 0.112436
+  type: 'test'
+  ...
+# Subtest: local qualification and examples remain pending: Si digo estoy en el cibercafé Louis Pasteur.
+ok 57 - local qualification and examples remain pending: Si digo estoy en el cibercafé Louis Pasteur.
+  ---
+  duration_ms: 0.125269
+  type: 'test'
+  ...
+# Subtest: local qualification and examples remain pending: Por ejemplo si digo estoy en el cibercafé Louis Pasteur.
+ok 58 - local qualification and examples remain pending: Por ejemplo si digo estoy en el cibercafé Louis Pasteur.
+  ---
+  duration_ms: 0.078363
+  type: 'test'
+  ...
+# Subtest: local qualification and examples remain pending: Ella está en el cibercafé Louis Pasteur.
+ok 59 - local qualification and examples remain pending: Ella está en el cibercafé Louis Pasteur.
+  ---
+  duration_ms: 0.07873
+  type: 'test'
+  ...
+# Subtest: local qualification and examples remain pending: No estoy en el cibercafé Louis Pasteur.
+ok 60 - local qualification and examples remain pending: No estoy en el cibercafé Louis Pasteur.
+  ---
+  duration_ms: 0.067202
+  type: 'test'
+  ...
+# Subtest: local qualification and examples remain pending: Quizá estoy en el cibercafé Louis Pasteur.
+ok 61 - local qualification and examples remain pending: Quizá estoy en el cibercafé Louis Pasteur.
+  ---
+  duration_ms: 0.065323
+  type: 'test'
+  ...
+# Subtest: local qualification and examples remain pending: Según Ana estoy en el cibercafé Louis Pasteur.
+ok 62 - local qualification and examples remain pending: Según Ana estoy en el cibercafé Louis Pasteur.
+  ---
+  duration_ms: 0.06885
+  type: 'test'
+  ...
+# Subtest: local qualification and examples remain pending: «Estoy en el cibercafé Louis Pasteur».
+ok 63 - local qualification and examples remain pending: «Estoy en el cibercafé Louis Pasteur».
+  ---
+  duration_ms: 0.078301
+  type: 'test'
+  ...
+# Subtest: local qualification and examples remain pending: Si es 19 de octubre del 2026.
+ok 64 - local qualification and examples remain pending: Si es 19 de octubre del 2026.
+  ---
+  duration_ms: 0.197873
+  type: 'test'
+  ...
+# Subtest: local qualification and examples remain pending: No es 19 de octubre del 2026.
+ok 65 - local qualification and examples remain pending: No es 19 de octubre del 2026.
+  ---
+  duration_ms: 0.094085
+  type: 'test'
+  ...
+# Subtest: local qualification and examples remain pending: Creo que es 19 de octubre del 2026.
+ok 66 - local qualification and examples remain pending: Creo que es 19 de octubre del 2026.
+  ---
+  duration_ms: 0.086684
+  type: 'test'
+  ...
+# Subtest: live deletion and replacement reopens, no previously saved coverage
+ok 67 - live deletion and replacement reopens, no previously saved coverage
+  ---
+  duration_ms: 0.19501
+  type: 'test'
+  ...
+# Subtest: earlier remote denial does not swallow new explicit date predicate
+ok 68 - earlier remote denial does not swallow new explicit date predicate
+  ---
+  duration_ms: 0.175019
+  type: 'test'
+  ...
+# Subtest: qualified date not split into certainty: No sé si hoy es 19 de octubre del 2026.
+ok 69 - qualified date not split into certainty: No sé si hoy es 19 de octubre del 2026.
+  ---
+  duration_ms: 0.148507
+  type: 'test'
+  ...
+# Subtest: qualified date not split into certainty: Quizá hoy es 19 de octubre del 2026.
+ok 70 - qualified date not split into certainty: Quizá hoy es 19 de octubre del 2026.
+  ---
+  duration_ms: 0.08081
+  type: 'test'
+  ...
+# Subtest: qualified date not split into certainty: Según Ana hoy es 19 de octubre del 2026.
+ok 71 - qualified date not split into certainty: Según Ana hoy es 19 de octubre del 2026.
+  ---
+  duration_ms: 0.073852
+  type: 'test'
+  ...
+# Subtest: qualified date not split into certainty: Supongamos que hoy es 19 de octubre del 2026.
+ok 72 - qualified date not split into certainty: Supongamos que hoy es 19 de octubre del 2026.
+  ---
+  duration_ms: 0.074508
+  type: 'test'
+  ...
+# Subtest: explicit self-retraction clears prior cues without deleting source
+ok 73 - explicit self-retraction clears prior cues without deleting source
+  ---
+  duration_ms: 0.166803
+  type: 'test'
+  ...
+# Subtest: uncertain correction reopens rather than retaining the old assertion
+ok 74 - uncertain correction reopens rather than retaining the old assertion
+  ---
+  duration_ms: 0.129389
+  type: 'test'
+  ...
+# Subtest: discourse boundary cannot release conditional or reported scope: Si ahora trabajo en casa.
+ok 75 - discourse boundary cannot release conditional or reported scope: Si ahora trabajo en casa.
+  ---
+  duration_ms: 0.112275
+  type: 'test'
+  ...
+# Subtest: discourse boundary cannot release conditional or reported scope: Creo que ahora trabajo en casa.
+ok 76 - discourse boundary cannot release conditional or reported scope: Creo que ahora trabajo en casa.
+  ---
+  duration_ms: 0.073744
+  type: 'test'
+  ...
+# Subtest: discourse boundary cannot release conditional or reported scope: Según Ana entonces hoy trabajé en casa.
+ok 77 - discourse boundary cannot release conditional or reported scope: Según Ana entonces hoy trabajé en casa.
+  ---
+  duration_ms: 0.100868
+  type: 'test'
+  ...
+# Subtest: discourse boundary cannot release conditional or reported scope: Supongamos que trabajo en casa y yo escribo en la biblioteca.
+ok 78 - discourse boundary cannot release conditional or reported scope: Supongamos que trabajo en casa y yo escribo en la biblioteca.
+  ---
+  duration_ms: 0.080848
+  type: 'test'
+  ...
+# Subtest: actual unpunctuated date/checklist feedback preserves explicit date
+ok 79 - actual unpunctuated date/checklist feedback preserves explicit date
+  ---
+  duration_ms: 0.33164
+  type: 'test'
+  ...
+# Subtest: explicit same-statement retraction cannot leave a positive cue
+ok 80 - explicit same-statement retraction cannot leave a positive cue
+  ---
+  duration_ms: 0.125136
+  type: 'test'
+  ...
+1..80
+# tests 80
+# suites 0
+# pass 80
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 202.325

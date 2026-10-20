@@ -1,0 +1,12 @@
+{
+  "sourceSession": "session://55bade27-f22c-8108-a269-00039938ee4f/3feade27-f22c-8016-928e-00a9f513f6b3",
+  "sequence": 1416,
+  "role": "operator user.message received through Central",
+  "retrievedBy": "notion_read_session_event, result986",
+  "representation": "exact body from tool envelope, UTF-8; no native session export claimed",
+  "sha256": "535926330ee50d4f4340a83a3b393d11e858018642d83347683e07df71935330",
+  "redactions": 0,
+  "privacy": "metodologia private:true freshly verified result1132 before commit; private narrative not a public note, no publication consent inferred",
+  "attachment": "pasted-text.txt 180362bytes identifier cited in event; underlying bytes NOT retrieved by this cycle",
+  "model": "NO VERIFICADO"
+}
