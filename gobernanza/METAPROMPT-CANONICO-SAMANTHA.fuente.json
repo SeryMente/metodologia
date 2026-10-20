@@ -1,21 +1,10 @@
 {
-  "documento": "Metaprompt Canónico de Samantha",
-  "version": "v332",
-  "firma": "NX-332m",
-  "notion_url": "https://app.notion.com/p/a925d4a3b2508393b2b7817f1cf431da",
-  "notion_contentLastEditedAt": 1792184960558,
-  "repository_path": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.md",
-  "sha256_content_utf8": "57ab317fb3c5033292101aadc7796dcbf123f30e197fd0253ba34c596690461f",
-  "transformacion": "Ninguna sobre content; UTF-8, sin añadir LF terminal. Espejo del contenido extraído, no exportación binaria de Notion.",
-  "autoridad": "Gobierno general de Ser y Mente y sus repositorios, ratificado por operador en evento 290 de la sesión 3ff5d4a3-b250-8012-ae4a-00a9fb4b2b95",
-  "sincronizacion_automatica": "PENDIENTE DE IMPLEMENTACIÓN Y PRUEBA; esta operación es una sincronización puntual",
-  "notion_modificado": false,
-  "dependencias": "Las referencias Notion dentro del original no se consideran migradas por copiar este archivo. Revisión de dependencias pendientes antes de afirmar portabilidad completa.",
-  "prius": {
-    "estado": "DIFERIDO EXPLÍCITAMENTE; NO ACTIVADO",
-    "source_url": "https://app.notion.com/p/3b05d4a3b25082c8baaa0155185988c4",
-    "contentLastEditedAt": 1792184974822,
-    "sha256_content_utf8": "0eb98cc74f1a7d6602d171478f44b6574aa8f237c49305420c9d418b4d2511b0",
-    "path": "gobernanza/antecedentes/CANON-SESION-PRIUS-v0.25.md"
-  }
+  "source": "https://app.notion.com/p/a925d4a3b2508393b2b7817f1cf431da",
+  "source_title": "Metaprompt Canónico de Samantha · Workspace v333 · NX-333m",
+  "contentLastEditedAt": 1792461532084,
+  "sha256_utf8": "02a9cacb78f4dc0cd86a819593e931dcf45b84f3ed310569a0b592e0b579c6ed",
+  "cycle": "C-METODOLOGIA-CONTINUIDAD-02",
+  "mirror": "Cuerpo íntegro leído tras edición en Notion; sin añadir salto de línea",
+  "sync": "copia puntual verificada; no instala sincronización automática",
+  "native_loading": "Notion puede aportar una versión distinta; cotejar firma, origen y revisión. Esta sesión recibió automáticamente la página antigua v330 eliminada, y adquirió expresamente la fuente viva v332 antes de actualizarla a v333."
 }

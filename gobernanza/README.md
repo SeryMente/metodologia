@@ -1,6 +1,6 @@
 # Gobierno general de Ser y Mente
 
-El documento [Metaprompt Canónico de Samantha](METAPROMPT-CANONICO-SAMANTHA.md), v332 · NX-332m, es el gobierno general del espacio de trabajo Ser y Mente, de la organización SeryMente y de este repositorio, por instrucción expresa del operador en el ciclo C-METODOLOGIA-GOBIERNO-01. Está subordinado a las reglas de cada plataforma y a las autorizaciones vigentes del operador; no crea herramientas ni permisos.
+El documento [Metaprompt Canónico de Samantha](METAPROMPT-CANONICO-SAMANTHA.md), v333 · NX-333m, es el gobierno general del espacio de trabajo Ser y Mente, de la organización SeryMente y de este repositorio, por instrucción expresa del operador en el ciclo C-METODOLOGIA-GOBIERNO-01. Está subordinado a las reglas de cada plataforma y a las autorizaciones vigentes del operador; no crea herramientas ni permisos.
 
 No es un segundo metaprompt ni una nueva redacción: es el espejo íntegro del contenido de la página Notion. El recibo [de fuente y sincronización](METAPROMPT-CANONICO-SAMANTHA.fuente.json) distingue documento fuente, versión, revisión y huella de contenido. Notion es la superficie de origen de este documento y GitHub su copia operativa distribuible; una edición de un espejo no debe sobrescribir silenciosamente cambios de la fuente. La conciliación de escrituras simultáneas y la sincronización inversa no se dan por diseñadas ni autorizadas.
 
@@ -20,3 +20,7 @@ Sesión PRIUS se conserva como [antecedente íntegro](antecedentes/CANON-SESION-
 ## Límites comprobados
 
 Este ciclo prepara una copia puntual y referencias de gobierno; no instala un servicio de sincronización. El metaprompt aún contiene referencias a páginas Notion y normas particulares de proyectos: leerlas no activa proyectos ni protocolos citados. Se requiere revisar y transportar las dependencias necesarias antes de certificar uso sin Notion. No se garantiza obediencia de todos los modelos por la existencia de archivos.
+
+## C-METODOLOGIA-CONTINUIDAD-02
+
+Fuente actual adquirida y editada: Metaprompt v333 · NX-333m, con un principio añadido de continuidad por frentes y 34 previos preservados literalmente. Glosario central de Notion v1.6 conservado en `GLOSARIO-WORKSPACE.md` como espejo, no otro gobierno; el glosario metodológico de la raíz conserva su alcance propio. Estos números actualizan los de la migración inicial descrita arriba. Los espejos no instalan sincronización automática. La configuración nativa de Notion puede cargar otra página/revisión: comprobar fuente, no asumir vigencia.

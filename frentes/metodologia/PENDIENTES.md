@@ -8,12 +8,12 @@ Primero lo urgente y después la mejora continua. Conservar las notas de lo que 
 
 ## Urgente
 
-- **CONT-01 · En curso, no verificado:** ensayar en un entorno virtual la continuidad de contexto entre conversaciones; iterar sobre los fallos observados. Distinguir pruebas de archivos y recuperación de estado de pruebas semánticas con modelos independientes. No prometer perfección universal.
-- **CONT-02 · Pendiente:** consolidar un prompt universal de reinstanciación que recupere el frente desde la revisión persistida, sin depender de la memoria del chat anterior. Debe cubrir cortes imprevistos y conversaciones limitadas, no solo traspasos planificados.
-- **GOB-01 · Autorizado, no aplicado:** añadir al metaprompt de Samantha únicamente lo necesario para dar cabida a los frentes y su continuidad, preservando identidad, dinámica y normas existentes. No equivale a autorización para rehacerlo.
+- **CONT-01 · Parcial, banco mecánico verificado y prueba semántica pendiente:** ensayar en un entorno virtual la continuidad de contexto entre conversaciones; iterar sobre los fallos observados. Distinguir pruebas de archivos y recuperación de estado de pruebas semánticas con modelos independientes. No prometer perfección universal.
+- **CONT-02 · Disparador preparado, validación semántica pendiente:** consolidar un prompt universal de reinstanciación que recupere el frente desde la revisión persistida, sin depender de la memoria del chat anterior. Debe cubrir cortes imprevistos y conversaciones limitadas, no solo traspasos planificados.
+- **GOB-01 · Aplicado y cotejado en v333; conserva 34 principios previos:** añadir al metaprompt de Samantha únicamente lo necesario para dar cabida a los frentes y su continuidad, preservando identidad, dinámica y normas existentes. No equivale a autorización para rehacerlo.
 - **PORT-01 · Parcial:** terminar la portabilidad del metacanon. Ya existe el primer bloque documental 1.7 en GitHub; todavía no acredita arranque ligero ni funcionamiento sin acceso a Notion. La dependencia de conectores y el modo de transporte sin conector requieren resolución explícita.
 - **CUST-01 · En curso:** mantener entradas del operador y salidas visibles del asistente en la carpeta del frente, con secuencia y límites de conversación, plataforma y modelo. Archivar metadatos solo cuando sean conocidos; no inferir modelo, rol o persona.
-- **CUST-02 · Pendiente:** reconciliar la cobertura del historial anterior a este registro. El bloque C-METODOLOGIA-GOBIERNO-01 declara cobertura parcial. Estas notas son una síntesis de acuerdos recuperados, NO una transcripción íntegra ni prueba de que no se perdió nada.
+- **CUST-02 · Cobertura recuperada de esta sesión directa:** 22 entradas del operador hasta535 y 29 salidas visibles hasta542, con originales e índice verificable. El bloque inicial parcial se conserva como historia. Estas notas siguen siendo síntesis, no sustituyen el diálogo literal; no abarcan otras conversaciones ni mensajes futuros.
 
 ## Importantes, sin implementación acreditada
 
@@ -22,7 +22,7 @@ Primero lo urgente y después la mejora continua. Conservar las notas de lo que 
 - **HIST-01 · Requisito ratificado:** historial secuenciado de la conversación general, incluidos cambios de plataforma, conversación y modelo; identidad/rol solo cuando estén asignados. Conservar originales además de la crónica y distinguir resúmenes de originales.
 - **DOC-01 · Requisito ratificado:** el frente contiene copias de los documentos producidos en aplicaciones especializadas. GitHub sostiene la persistencia transversal de la organización SeryMente; las aplicaciones son superficies de trabajo, no una dependencia exclusiva.
 - **GLOS-01 · Requisito ratificado:** «frente de trabajo» es la denominación corta de «objeto canónico de persistencia de frente de trabajo». Enumerar formalmente sus características generales a partir de la práctica de estas semanas, no inventar complejidad por anticipación.
-- **GOB-02 · Parcial:** el metaprompt de Samantha es el gobierno general del repositorio y la organización, como el mismo documento sincronizado, no un gobierno paralelo. El espejo v332 existe; cualquier nueva edición debe cotejarse con la fuente.
+- **GOB-02 · Parcial:** el metaprompt de Samantha es el gobierno general del repositorio y la organización, como el mismo documento sincronizado, no un gobierno paralelo. El espejo actual v333 se coteja con la fuente; las referencias v332 documentan la migración anterior.
 
 ## Diferidos explícitamente
 
@@ -36,3 +36,17 @@ Conservar el identificador y registrar evidencia de implementación, cancelació
 ## Cobertura
 
 Este archivo recoge acuerdos disponibles en el contexto activo y la recapitulación de trabajo. Para las dos instrucciones nuevas conservadas literalmente, véase `conversaciones/C-METODOLOGIA-CONTINUIDAD-02-entradas.json`. No contiene pensamientos privados del modelo. No afirma custodia automática de mensajes futuros ni recuperación completa de conversaciones anteriores.
+
+## Actualización C-METODOLOGIA-CONTINUIDAD-02
+
+- **CONT-01:** banco mecánico ejecutado y reproducible: 33/33 en versión final y repetibilidad. La prueba semántica con otro modelo sigue pendiente; no cerrado integralmente.
+- **CONT-02:** prompt universal publicado en la raíz; validación semántica pendiente.
+- **GOB-01:** aplicado en fuente Notion v333 · NX-333m y espejo de este ciclo; 34/34 principios anteriores cotejados, uno añadido. No se reescribe la dinámica de Samantha.
+- **CUST-02:** recuperado el diálogo directo de esta sesión: 22 entradas del operador hasta535 y 29 mensajes visibles del asistente hasta542. Evidencia en `evidencias/SESION-3ff5-cobertura.json`. Las declaraciones de laguna anteriores se conservan como historia; ya no describen este corte cotejado. No acredita otras sesiones ni captura futura automática.
+- **PLAT-01 · Requisito ratificado, parcialmente cubierto:** Notion recibe el metaprompt por configuración; otras plataformas requieren carga explícita. Ambos modos incluidos en el banco mecánico. Detectada carga nativa antigua v330 frente a fuente viva v332 antes de esta edición v333. **Pendiente:** comprobar el ajuste real de personalización y ensayo independiente; no se afirma corregido.
+- **CUST-03 · Mandato permanente de este frente:** el chat es donde el operador dice las cosas una vez; conservar sus palabras y respuestas visibles, no solo resúmenes. Verificar cobertura sin exigir redictado. No tratar una simple promesa de custodia como guardado efectivo.
+- **GLOS-02 · Decisión ratificada:** «fuentes de trabajo» puede ser error de transcripción de «frentes de trabajo»; normalizar al interpretar y preservar el original literal.
+
+Seguridad/cifrado, sincronización automática, portabilidad completa y Sesión PRIUS siguen en los estados y prioridades ya recogidos; no se cierran por esta actualización. Las listas previas son el registro histórico del arranque; esta actualización determina el estado de las ideas citadas.
+
+- **REV-01 · Pendiente:** revisión general de fidelidad a lo dictado, coherencia, operación y portabilidad; no exigir al operador revisar todo el documento. No confundir el buen resultado previo con arquitectura óptima universal ni dar la razón automáticamente. Fuente: entradas165 y189, respuestas176 y202.

@@ -3,7 +3,7 @@
 Punto de entrada de lectura; no es otro objeto de estado ni otra autoridad.
 
 1. Adquiere el [gobierno general: Metaprompt Canónico de Samantha](gobernanza/METAPROMPT-CANONICO-SAMANTHA.md). Consulta [procedencia, alcance y límites](gobernanza/README.md). No asumir que el contenido se cargó por recibir solo un enlace.
-2. Para crear, mantener o retomar un frente, adquiere el [Metacanon](METACANON-OBJETOS-CANONICOS.md), su LEER PRIMERO, §9 y §§29–33; consulta después las reglas pertinentes restantes. Versión 1.7, sello METACANON-OBJETOS-v1.7. El núcleo ligero y separación de antecedentes siguen pendientes: este índice no constituye esa refactorización.
+2. Para crear, mantener o retomar un frente, adquiere el [Metacanon](METACANON-OBJETOS-CANONICOS.md), su LEER PRIMERO, §9 y §§29–34; consulta después las reglas pertinentes restantes. Versión 1.8, sello METACANON-OBJETOS-v1.8. El núcleo ligero y separación de antecedentes siguen pendientes: este índice no constituye esa refactorización.
 3. Identifica el frente y su núcleo operativo único; lee gobierno particular, estado, pendientes y siguiente paso, y solo después los materiales que exija la tarea. No activar proyectos o protocolos por aparecer en una cita.
 4. Comprueba revisión y frescura de lo adquirido por los medios efectivamente disponibles. Sin lectura directa del repositorio, utiliza copias completas suministradas por el operador y declara su procedencia/frescura; nunca afirmar una lectura o escritura de GitHub inexistente. El transporte manual es una vía de contingencia, no cumplimiento de sincronización automática.
 5. Conserva originales/crónica, actualiza el estado y verifica el guardado al finalizar conforme al método. No hay memoria ni tareas en segundo plano garantizadas por estos archivos.
@@ -16,3 +16,7 @@ Punto de entrada de lectura; no es otro objeto de estado ni otra autoridad.
 - Sesión PRIUS: conservada, no activada; revisión y adaptación diferidas.
 
 El gobierno general anterior de `SI-METACOGNITIVO.md` es histórico. Los procedimientos técnicos existentes no imponen una herramienta o proveedor a todo frente: se consultan cuando la tarea los necesita y sus permisos lo permiten.
+
+## Continuidad entre conversaciones
+
+Usa el [prompt universal](PROMPT-UNIVERSAL-REINSTANCIACION.md) y el [contrato de continuidad](CONTINUIDAD-ENTRE-CONVERSACIONES.md). En Notion comprueba el metaprompt recibido por configuración; fuera de Notion cárgalo expresamente. La versión automática puede ser antigua. El núcleo del frente de metodología sigue en el metacanon, §9; [ideas pendientes](frentes/metodologia/PENDIENTES.md). Pruebas mecánicas no equivalen a ensayo semántico de otro modelo.

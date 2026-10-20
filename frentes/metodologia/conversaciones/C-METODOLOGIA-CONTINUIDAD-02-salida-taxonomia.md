@@ -1,0 +1,1 @@
+Verificación taxonómica: actualizaré dos Elementos existentes —el metaprompt y el glosario—, sin crear ni mover páginas, conservando sus iconos y el texto de los 34 principios actuales.

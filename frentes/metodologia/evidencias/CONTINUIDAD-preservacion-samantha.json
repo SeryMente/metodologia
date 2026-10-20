@@ -1,0 +1,11 @@
+{
+  "principios_previos": 34,
+  "preservados_byte_a_byte": 34,
+  "principio_nuevo": "P035",
+  "fuente_version": "v332",
+  "destino_version": "v333",
+  "scope": "Comparación mecánica de los 34 bloques de principios; no equivalencia semántica de todo el documento.",
+  "readback_confirmed": true,
+  "source_revision": 1792461532084,
+  "whole_body_equivalence": "Concordancia completa tras normalizar únicamente escapes de corchetes y etiquetas dinámicas de menciones de Notion; espejo usa cuerpo real sin normalización."
+}

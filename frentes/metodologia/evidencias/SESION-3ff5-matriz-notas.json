@@ -1,0 +1,88 @@
+{
+  "kind": "Índice de trazabilidad, no segunda fuente de estado. Los estados se consultan en núcleo y PENDIENTES.md.",
+  "covered_direct_user_events": 22,
+  "map": {
+    "23": [
+      "ACCESO-LECTURA: verificado"
+    ],
+    "72": [
+      "PORT-01",
+      "Referencia mixta a Ética, conservada como original; no incorpora sus cánones"
+    ],
+    "135": [
+      "PORT-01"
+    ],
+    "165": [
+      "PORT-01",
+      "REV-01"
+    ],
+    "179": [
+      "GLOS-01",
+      "HIST-01",
+      "ARQ-01",
+      "Actualizaciones periódicas ratificadas"
+    ],
+    "184": [
+      "ARQ-01",
+      "CUST-01"
+    ],
+    "189": [
+      "REV-01"
+    ],
+    "205": [
+      "Custodia separada de normación"
+    ],
+    "210": [
+      "SYNC-01",
+      "DOC-01",
+      "GLOS-01",
+      "Espacio general: SeryMente"
+    ],
+    "215": [
+      "SEG-01"
+    ],
+    "216": [
+      "GLOS-02"
+    ],
+    "223": [
+      "SEG-01"
+    ],
+    "230": [
+      "SEG-01"
+    ],
+    "235": [
+      "Dos capas identificadas; pregunta respondida"
+    ],
+    "253": [
+      "GOB-02",
+      "PRIUS-01",
+      "PORT-01"
+    ],
+    "290": [
+      "GOB-02",
+      "SYNC-01"
+    ],
+    "413": [
+      "CONT-01",
+      "Prioridad máxima: continuidad entre conversaciones"
+    ],
+    "418": [
+      "CONT-02"
+    ],
+    "423": [
+      "CONT-01",
+      "GOB-01"
+    ],
+    "447": [
+      "Prioridad por urgencia",
+      "CUST-03"
+    ],
+    "503": [
+      "PLAT-01",
+      "CUST-03"
+    ],
+    "535": [
+      "CUST-03"
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "cycle": "C-METODOLOGIA-CONTINUIDAD-02",
+  "metacanon": "1.8",
+  "native_source": "https://app.notion.com/p/a925d4a3b2508393b2b7817f1cf431da",
+  "native_revision": 1792461532084,
+  "notion_edit_reference": "editref_KPnWVp2NvGp6",
+  "repository_private_checked": true,
+  "checks": {
+    "direct_user_messages": 22,
+    "visible_assistant_messages_through_542": 29,
+    "prior_principles_unchanged": 34,
+    "new_principles": 1,
+    "mechanical_scenarios_passed": 33,
+    "repeatability": true
+  },
+  "limits": [
+    "No ensayo semántico de modelos independientes",
+    "No corrección acreditada de personalización Notion",
+    "No sincronización automática instalada",
+    "Cifrado y Sesión PRIUS diferidos",
+    "No portabilidad completa por el mero índice"
+  ],
+  "payload_hashes": {
+    "frentes/metodologia/evidencias/CONTINUIDAD-preservacion-samantha.json": "b53bb134767af75db1e99cec32b85d1c374afc092fb91664f23d902122c27a27",
+    "gobernanza/METAPROMPT-CANONICO-SAMANTHA.md": "02a9cacb78f4dc0cd86a819593e931dcf45b84f3ed310569a0b592e0b579c6ed",
+    "gobernanza/METAPROMPT-CANONICO-SAMANTHA.fuente.json": "5ada66732b19ee031e55bfd5913bd3d392db6a9494a4009943546b74d2380cf1",
+    "gobernanza/GLOSARIO-WORKSPACE.md": "30f51645f7f3f12a1a9da412a458cc57ddf61dde3ffd9eb9d6019a61bb2a133d",
+    "gobernanza/GLOSARIO-WORKSPACE.fuente.json": "95d8438af1367d3e6b438ec877aa7553cd58439db1e1199e86da8173f519bad9",
+    "frentes/metodologia/conversaciones/SESION-3ff5-dialogo-000023-000542.jsonl": "d06ccfd406b5186153c225c0abfb444c99e007301a6f90642c7731e2802e2a2f",
+    "frentes/metodologia/evidencias/SESION-3ff5-cobertura.json": "d9121bfcac8fcf9530fd54c35b27a2317cf581ca7b4c732f343d58aac7e2600c",
+    "PROMPT-UNIVERSAL-REINSTANCIACION.md": "174a02d6152549717f8ba03180db257ebd6acda08b7581faf5a98cb71134e3ea",
+    "CONTINUIDAD-ENTRE-CONVERSACIONES.md": "c72aaf101c2c838883909a4e5047ad8cb00456061bee6078441418fe00f5b79f",
+    "frentes/metodologia/pruebas/continuidad/ensayo.py": "01e6488591945093cf2ee2cf274ae42fd56bfb18c5c2f1a1596976d506fc5099",
+    "frentes/metodologia/pruebas/continuidad/resultado.json": "25235c5b82ea3a03d16820ce9573ec561d65f8636ec5880bf5c4526befa33a22",
+    "METACANON-OBJETOS-CANONICOS.md": "95e4dff3228b3408c48e264591cf318aa428739ee599a03b3210284bedd9223e",
+    "INICIO.md": "62f48e7b0009eab4808a3b6a0e3be0aa3fc9cc66d16c13143f53503a26791159",
+    "gobernanza/README.md": "82e631387009e097f04faea31bba112ac9622d86e0a7c0382d9e83323e2155ba",
+    "frentes/metodologia/PENDIENTES.md": "4fe4688b905b1cdcb737577067fcd79be0c6196deaf95b428307de8200ec5879",
+    "frentes/metodologia/cronica/C-METODOLOGIA-CONTINUIDAD-02.md": "c889e1dade7cf8f968313af95063c8b01fc851fbc9222a9518cc58d9e65e6fe4",
+    "frentes/metodologia/conversaciones/C-METODOLOGIA-CONTINUIDAD-02-salida-taxonomia.md": "c4b752ac77c577c49da4147f63e745700afe2995cc4315444bdf8914b8644fb0",
+    "frentes/metodologia/evidencias/SESION-3ff5-matriz-notas.json": "9075e517c5cec1122a8de74b93468358d9045868288b011b441c1a9436242423",
+    "frentes/metodologia/conversaciones/C-METODOLOGIA-CONTINUIDAD-02-salida-final.md": "c44055c434ba8a469b2ed198bda0625880b5e7822f0a4e5361ec271ed4ed2e5b"
+  },
+  "notes_coverage": 22,
+  "final_output": "Preparada y conservada antes de emitir; el registro no atribuye secuencia nativa aún desconocida."
+}
