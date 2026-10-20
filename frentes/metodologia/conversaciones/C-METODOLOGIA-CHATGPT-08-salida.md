@@ -1,0 +1,29 @@
+**Sí. Te dejo el Metacanon preparado para empezar en ChatGPT sin depender de acceso a Notion ni al repositorio privado.**
+
+El archivo principal reúne **el gobierno completo de Samantha, el método, el estado vivo y los pendientes**. El respaldo conserva los originales disponibles y las notas del frente; las propuestas siguen distinguidas de lo aprobado y de lo realmente ejecutado.
+
+### Haz esto ahora
+
+**1. Descarga este archivo y adjúntalo a una conversación nueva de ChatGPT:**
+
+<file source="session-file://ea48bbf8-379f-4c40-bedb-18d4d9878d04">ARRANQUE-CHATGPT.md</file>
+
+**2. Pega este mensaje junto al archivo:**
+
+```text
+Lee ARRANQUE-CHATGPT.md como paquete de continuidad del frente de metodología. Retoma como Samantha en un único hilo, con el gobierno íntegro y el método aplicable del archivo, subordinados a las reglas de esta plataforma. No finjas acceso a GitHub, Notion, herramientas ni partes que no pudiste leer. Recupera el objetivo, el estado vivo, los permisos, los pendientes y la siguiente acción sin pedirme que repita lo documentado. Mantén seguridad/cifrado y Sesión PRIUS diferidos y no ejecutes proyectos citados como ejemplos. Trata esta copia como checkpoint de transporte, no como main actualizado. Registra esta primera retoma como caso real pendiente de evaluación, no como prueba aprobada. Primero confirma brevemente qué adquiriste, qué falta y cuál es la siguiente acción autorizada; después continúa lo decidible. Si no puedes guardar en GitHub, conserva una copia de trabajo offline y entrega el delta completo marcado NO GUARDADO.
+```
+
+### Conserva también el respaldo
+
+No hace falta adjuntarlo de entrada; sirve para recuperar los originales y consultar detalles.
+
+<file source="session-file://2b029eca-e6c2-482c-b3b9-acb046c51e87">RESPALDO-METACANON-CHATGPT.zip</file>
+
+**Límite importante:** comprobé la integridad del paquete, no su funcionamiento en ChatGPT. Esa primera retoma será el primer caso real que hay que observar. El gobierno incluido es el espejo v333 · NX-333m; su correspondencia actual con Notion no quedó revalidada. No lo presento como perfecto ni como sincronización automática.
+
+`EVIDENCIA MOTOR-1C`: entrega autosuficiente y respaldo comprobados; estado y salida conservados en el repositorio; prueba real en ChatGPT pendiente.[^https://github.com/SeryMente/metodologia/blob/main/frentes/metodologia/entregas/CHATGPT-v0.1/LEEME.md]
+
+<edit_reference ids="editref_4SO7CDNyohsh">
+Registrado un error de preparación y su corrección
+</edit_reference>

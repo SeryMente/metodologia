@@ -86,3 +86,11 @@ Próximo hito de mayor valor: retoma ciega con otro modelo y evaluación contra 
 - CONT-01/CONT-02/BENCH-01/OBS-01: observar el prompt en laboratorio Y retomas reales hasta perfeccionar su función. Protocolo0.3: fallo→fuente/versión→corrección→regresión→contraste real. No cerrar por PASS mecánico ni contar casos no observados como aprobados.
 - Instrucción literal en conversaciones/C-METODOLOGIA-VALIDACION-07-dialogo.jsonl. En este ciclo no se ejecutan nuevas pruebas. La comprensión independiente y casos reales del prompt siguen pendientes de evidencia.
 - No se instala observación automática ni se amplía captura. El siguiente hito es la retoma ciega independiente; registrar usos reales cuando ocurran con evidencia accesible. Seguridad/cifrado y Sesión PRIUS siguen diferidos.
+
+## Entrega C-METODOLOGIA-CHATGPT-08-r1
+
+- CHATGPT-01/PORT-01/CONT-02: salida urgente por agotamiento del acceso; entregaChatGPT0.1 para adquirir gobierno, método y estado desde archivos sin conector obligatorio. Empaquetado no equivale a funcionamiento probado en ChatGPT.
+- REAL-CHATGPT-01 · Pendiente de observación: primera retoma con el archivo principal; conservar lectura efectiva, respuesta inicial, permisos, incertidumbres y próxima acción. No marcar PASS por autodeclaración del receptor. El evaluador coteja originales; no suministrar toda la historia por rutina para falsear la prueba ciega.
+- LAB-01/BENCH-01: última explicación fue diseño, no instalación ni ensayo semántico. Conversación como fuente de casos, copias aisladas para ensayos, receptor independiente y contraste real. Sigue vigente protocolo0.3.
+- CUST-03/04: se preservan pregunta y respuesta sobre laboratorio y nueva orden de migración. Sin escritura a GitHub, devolver delta completo NO GUARDADO y conservar la copia de trabajo offline; no fingir sincronía.
+- Los demás pendientes y sus prioridades se conservan. Arquitectura por directorio ratificada; SeryMente es workspace general; frente es nombre corto del objeto de persistencia. Gobierno333 no se reescribe. Seguridad/cifrado y Sesión PRIUS permanecen diferidos.

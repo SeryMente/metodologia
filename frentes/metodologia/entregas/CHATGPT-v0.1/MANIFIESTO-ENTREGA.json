@@ -1,0 +1,352 @@
+{
+  "delivery_version": "ChatGPT0.1",
+  "method_version": "1.8",
+  "governance": "mirror333; Notion source not revalidated",
+  "state_revision": "C-METODOLOGIA-CHATGPT-08-r1",
+  "base_revision": "57649141551a234d13208f72d42f6a12191d093f",
+  "base_acquired_at": "2026-10-20T19:52:51.575Z",
+  "provenance": "revision base + explicit delivery delta; not an assertion of current main or final publication commit",
+  "base_source_files": {
+    "INICIO.md": {
+      "sha256": "ffbc39220f321cdc99eb4cb542ed50df772b4ca01d87ffebc6662b31892911f0",
+      "git_blob": "def32e6f36ed6aff83d4e051cf383622e7d026b1"
+    },
+    "GLOSARIO-OPERATIVO.md": {
+      "sha256": "5c008693dfa16c9e58a614218d2be68538a27ef5dd6482caa6c1927f711430da",
+      "git_blob": "c970fef36c24f2df50ee44786740af77ebb36037"
+    },
+    "CONTINUIDAD-ENTRE-CONVERSACIONES.md": {
+      "sha256": "c72aaf101c2c838883909a4e5047ad8cb00456061bee6078441418fe00f5b79f",
+      "git_blob": "9420c1bfe3e6492841fd6d180ed65a721c2b13e9"
+    },
+    "METACANON-OBJETOS-CANONICOS.md": {
+      "sha256": "a416506e0d426e7ea5a53ce26c088c4869883b7bbf93a7dbfd83ffc631d48eef",
+      "git_blob": "141b7475542532bbae69751c4e046bda9d3d7e2b"
+    },
+    "PROMPT-UNIVERSAL-REINSTANCIACION.md": {
+      "sha256": "0dab41782c8bf7c8f3582fedfbbac050be2bedb75397594256f419b086f22973",
+      "git_blob": "d9f70e7bd86eb18d945e3f90415f6b59f000ec44"
+    },
+    "frentes/metodologia/PENDIENTES.md": {
+      "sha256": "97823994fc8b559437a14decb9a169464d39686972b31373b70c1bea4bc48b57",
+      "git_blob": "dfdd002587c9f3c14311de337aabdf3061a135c8"
+    },
+    "frentes/metodologia/antecedentes/ANCLA.md": {
+      "sha256": "2f0eae96287e5ffe8cf8601b235ca23bbf6f89f9aece64f564a5093080b1efc6",
+      "git_blob": "eb50d7175211e79bcf8bfed98ebf83f12164d40f"
+    },
+    "frentes/metodologia/antecedentes/BOOTSTRAP-CONTEXTO-GLOBAL.md": {
+      "sha256": "ab916f8d31a182f255d768e09941c1a24af874b38d1f89a5d573dcc1391bdc56",
+      "git_blob": "8c7370768f34fff8a533d20a801ab028439fae00"
+    },
+    "frentes/metodologia/conversaciones/C-METODOLOGIA-BENCHMARK-03-primer-corte.jsonl": {
+      "sha256": "5828a65bc08b76217c031509636fa52502302305780e6d3e3a61a795b100d1cc",
+      "git_blob": "254a5a7a17e0818542ae3fb9001037b9759a4453"
+    },
+    "frentes/metodologia/conversaciones/C-METODOLOGIA-BENCHMARK-03-segmento-1005-1012.jsonl": {
+      "sha256": "2e6e65ec7759d0c4b4e7daa4e11520737c40ccdc7dd373b530db63d8e540f0ee",
+      "git_blob": "4c198d38a007a5af22218dd3101168719061a72e"
+    },
+    "frentes/metodologia/antecedentes/METACANON-OBJETOS-v1.6.md": {
+      "sha256": "dab6680cbcdb6530e4616f8b13d1e0d5f1ff0885508203d1c5eac22fd86250ee",
+      "git_blob": "8f9ad1cf0e09e5fcd7014190770a77294ff39af4"
+    },
+    "frentes/metodologia/conversaciones/C-METODOLOGIA-CONTINUIDAD-02-entradas.json": {
+      "sha256": "4c3204a51bd807f3aa0d394b8102fa808b1a90e5abc2c33521b0abcf69b06fa3",
+      "git_blob": "bac5d6852fee52c654e2f23ced06d31e27987220"
+    },
+    "frentes/metodologia/conversaciones/C-METODOLOGIA-CONTINUIDAD-02-plataformas.json": {
+      "sha256": "5c5797a9a514a86a373daa30d13700839ab45704dd589851e88621021717d286",
+      "git_blob": "3e896f28f4001733a22f15fa0a17a20f8bd4f7aa"
+    },
+    "frentes/metodologia/conversaciones/C-METODOLOGIA-CONTINUIDAD-02-salida-final.md": {
+      "sha256": "c44055c434ba8a469b2ed198bda0625880b5e7822f0a4e5361ec271ed4ed2e5b",
+      "git_blob": "5d901f20cf71718183242fa65671380997adaa05"
+    },
+    "frentes/metodologia/conversaciones/C-METODOLOGIA-CONTINUIDAD-02-salida-taxonomia.md": {
+      "sha256": "c4b752ac77c577c49da4147f63e745700afe2995cc4315444bdf8914b8644fb0",
+      "git_blob": "1558748743bb9f5b3baefee1d3cd7f147483a758"
+    },
+    "frentes/metodologia/conversaciones/C-METODOLOGIA-GOBIERNO-01-salida.md": {
+      "sha256": "50bfc1b2a633a93a53df3dc476cbe7ff7a6adc9712781a597aa22dad58f11464",
+      "git_blob": "57477f39e3b50b6ad9fbab90914b11d715bf1320"
+    },
+    "frentes/metodologia/conversaciones/C-METODOLOGIA-GOBIERNO-01.json": {
+      "sha256": "3fcbfc900a031d30575d9e776baf434c17858d5cddf96f12e8daf7e363ddc058",
+      "git_blob": "49f4cc49f3c35297317f738fd462e15b4cf0733b"
+    },
+    "frentes/metodologia/conversaciones/C-METODOLOGIA-IMPLEMENTACION-06-cierre.jsonl": {
+      "sha256": "5d9d612a45d6068446803b91c0e940af299ed9bcc0b7194b75ded76fc9b2046a",
+      "git_blob": "981358c2b85c8a9447615be1cc8617e927e0900c"
+    },
+    "frentes/metodologia/conversaciones/C-METODOLOGIA-IMPLEMENTACION-06-dialogo.jsonl": {
+      "sha256": "37c428548ef84c3be5377e92b00ec3ccba6985916cdfcdf6663d4a76b412c172",
+      "git_blob": "eab4eb3a619b7e7ebfb3f89b177785cf92a574bf"
+    },
+    "frentes/metodologia/conversaciones/C-METODOLOGIA-IMPLEMENTACION-06-salida.md": {
+      "sha256": "1b615511a8d047e5ce68a2b02112090fb830c53d89efb675a55c34319972d999",
+      "git_blob": "648665598059da9e2d6c31271fe973b9de95318e"
+    },
+    "frentes/metodologia/conversaciones/C-METODOLOGIA-RETOMA-05-adjunto.txt": {
+      "sha256": "4337eee0f4ad1dbc544ccabdadf034e2dbde5853ef157489da3b3db0cafc03eb",
+      "git_blob": "6893fa5eedbaba2b62d7e62217e63fdd814700e3"
+    },
+    "frentes/metodologia/conversaciones/C-METODOLOGIA-RETOMA-05-dialogo.jsonl": {
+      "sha256": "884d92d319403f46ee0306d40a52d084d80db10216fc18c8fc99719e461de9b4",
+      "git_blob": "56dc7e0fbb0463f124a3a1b92b63ad9ed1fe8db7"
+    },
+    "frentes/metodologia/conversaciones/C-METODOLOGIA-RETOMA-05-salida.md": {
+      "sha256": "dcdb368d075454a6212aa6f52f6a2ea85dcd361df25e33266fbbb566d9ebe71b",
+      "git_blob": "d60d7800092c24e0c3cd8d7155a70f4e4f4a36b6"
+    },
+    "frentes/metodologia/conversaciones/C-METODOLOGIA-TRAZABILIDAD-04-1164-1166.jsonl": {
+      "sha256": "05bd3f49c069b6c40054f73da1ba111f258ebaf854aca6754a50d999fcb9095e",
+      "git_blob": "749974892dc80a0656e4ab36f45b12b0abf9370f"
+    },
+    "frentes/metodologia/conversaciones/C-METODOLOGIA-VALIDACION-07-dialogo.jsonl": {
+      "sha256": "dd74fd8f9af0d4c46bf847afd4a5c2d808ffb42fd720eb8a20b86911022a0423",
+      "git_blob": "8cc25c7544da0921c70ad67f04cf75199135db7d"
+    },
+    "frentes/metodologia/conversaciones/C-METODOLOGIA-VALIDACION-07-salida.md": {
+      "sha256": "03221a857e307500cd0f7a4c5e44f91c7fc5309fc607451bdd05e4b6586a893b",
+      "git_blob": "b6dfdc68e6020bdea397ad10858bfca4e1c31ea2"
+    },
+    "frentes/metodologia/conversaciones/SESION-3ff5-entradas-000023-000535.jsonl": {
+      "sha256": "1b333b86ffffd49b362eb4448d951fc09b94cf8b1108118aa74190ad1d89e355",
+      "git_blob": "f6a7386fb6b7664ef98244832429a171cea9e7d3"
+    },
+    "frentes/metodologia/conversaciones/SESION-3ff5-dialogo-000023-000542.jsonl": {
+      "sha256": "d06ccfd406b5186153c225c0abfb444c99e007301a6f90642c7731e2802e2a2f",
+      "git_blob": "b1e7dcdc87bf38d69a60b0f95b2eff1c9980329b"
+    },
+    "frentes/metodologia/cronica/C-METODOLOGIA-CONTINUIDAD-02.md": {
+      "sha256": "c889e1dade7cf8f968313af95063c8b01fc851fbc9222a9518cc58d9e65e6fe4",
+      "git_blob": "c1697cffa2e0be96c3bf17d6adc408450b549ff0"
+    },
+    "frentes/metodologia/cronica/C-METODOLOGIA-GOBIERNO-01.md": {
+      "sha256": "c04da76bb422d7eb56acdc906d1b101a5b07523e236ae495b23ebaaa5c7f04d0",
+      "git_blob": "89aae274e2c9de0041156d278d240ae15fe5bf0c"
+    },
+    "frentes/metodologia/cronica/C-METODOLOGIA-IMPLEMENTACION-06.md": {
+      "sha256": "b0b263d754a4d5ef9dd563ba072234038a281c98fbf456d17b1e65d780c8dc85",
+      "git_blob": "6d31284b3fe65a3e8e664592ed3051c5b0ad547b"
+    },
+    "frentes/metodologia/cronica/C-METODOLOGIA-RETOMA-05.md": {
+      "sha256": "adbfbd4752a85fc169f222f048afd16d5ea3d131a3ceb1232602d4ae8e4aa51b",
+      "git_blob": "f4d5539aea858a4bd17b46f320162be14c1024f9"
+    },
+    "frentes/metodologia/cronica/C-METODOLOGIA-VALIDACION-07.md": {
+      "sha256": "4a92fc575a2ad0100f5d19947d21c4553b578f4c0d9f6d57f668ab4d6410354f",
+      "git_blob": "9f04aa7fcde8e8ec19634f4943cb2670f46333ef"
+    },
+    "frentes/metodologia/evidencias/C-METODOLOGIA-CONTINUIDAD-02-readback.json": {
+      "sha256": "4f10019a86095a35f235e43396e4ef315e087c49d32356a200e6c08714b1f442",
+      "git_blob": "0624b50448e3c9d72eee38c941b473a13b369e22"
+    },
+    "frentes/metodologia/evidencias/C-METODOLOGIA-GOBIERNO-01-readback.json": {
+      "sha256": "ca83818eb3502753d86fd6dc12650d4e4fb0f2889323fb5caa9551c7a09a6e76",
+      "git_blob": "b4517c6c94574fcde2cf797021c32d028e4670fd"
+    },
+    "frentes/metodologia/evidencias/C-METODOLOGIA-IMPLEMENTACION-06-config-r2.json": {
+      "sha256": "32cea38f6f7d9b1643fb5ae6e9a5b77d3991687737848941678d81e35c13a054",
+      "git_blob": "3e344e9e7f825bb2f94277c3fc79e7990a0ddecc"
+    },
+    "frentes/metodologia/evidencias/C-METODOLOGIA-IMPLEMENTACION-06.json": {
+      "sha256": "ae425df06676484c5ca8845d618a5c60ee880d08ca30f2dab88527b10de40051",
+      "git_blob": "ac919d77badf515515fd650533e1a0ed5765ce4d"
+    },
+    "frentes/metodologia/evidencias/C-METODOLOGIA-RETOMA-05.json": {
+      "sha256": "0e28e3ce16ed2a7386a4987bc36cc247817d0016136f85f9a2c8b2a799ee7c85",
+      "git_blob": "4a7378747f6c15b17a9abd654daaee37d4214561"
+    },
+    "frentes/metodologia/evidencias/C-METODOLOGIA-VALIDACION-07.json": {
+      "sha256": "4b8ebd8680f7873f30da878de9aa3c9ae99eabafd231a3bfe1812843ff561498",
+      "git_blob": "1b5697e126908e4970b29e7fc909bbe7f1b9cdc2"
+    },
+    "frentes/metodologia/evidencias/CONTINUIDAD-preservacion-samantha.json": {
+      "sha256": "b53bb134767af75db1e99cec32b85d1c374afc092fb91664f23d902122c27a27",
+      "git_blob": "c874679d96e8594b330ccc270b39d57f9e3eeb1a"
+    },
+    "frentes/metodologia/evidencias/SESION-3ff5-cobertura.json": {
+      "sha256": "d9121bfcac8fcf9530fd54c35b27a2317cf581ca7b4c732f343d58aac7e2600c",
+      "git_blob": "18bb7c721663209112ceea1188abddece2325a07"
+    },
+    "frentes/metodologia/evidencias/SESION-3ff5-matriz-notas.json": {
+      "sha256": "9075e517c5cec1122a8de74b93468358d9045868288b011b441c1a9436242423",
+      "git_blob": "8fd9b945e707a638ac0f4ccb54e40e217117e024"
+    },
+    "frentes/metodologia/fuentes/C-METODOLOGIA-IMPLEMENTACION-06-Harmonia-hub.json": {
+      "sha256": "102ae63c4a16d44e3b952a45a2044d3f5296048577580daf52fb19d5fea559e7",
+      "git_blob": "c8fbfb13a99f09cf0f404e7ee6a864d2331f1860"
+    },
+    "frentes/metodologia/fuentes/C-METODOLOGIA-IMPLEMENTACION-06-LISA-v1.2.json": {
+      "sha256": "345289a79f37a2b12a7362e337cf1757e0e1f622cfed90d029cd33fc306c8533",
+      "git_blob": "18cea2a1b57f2989af0ac6d2158741bd812e8b4b"
+    },
+    "frentes/metodologia/kit/0.1.0/ARRANQUE-PROMPT.txt": {
+      "sha256": "7cf40c08038f3e4559ebd542f1157b4d7b604aacd80f2ea1d7f009135675e530",
+      "git_blob": "84f44a8949bad7a9bc23c408b6a12e57295dd081"
+    },
+    "frentes/metodologia/kit/0.1.0/README.md": {
+      "sha256": "256c1bc6c69c8597e5b7f71e8b09f03b2a7109a02da244c387362d23ff892c81",
+      "git_blob": "2095f1305c1cf21f6aa4e3e06d06ce975e3482c8"
+    },
+    "frentes/metodologia/kit/0.1.0/RECIBO-GOBIERNO.md": {
+      "sha256": "63e9d08d5c150fe43c32637a76022c36f2b5a9781e2ff8f6ac0be4a2c8277e76",
+      "git_blob": "9273bb13f7c2346f0c9dca0889dfbd0e4ec5c1de"
+    },
+    "frentes/metodologia/kit/0.1.0/continuidad.cjs": {
+      "sha256": "313436db40f99ac485f4e11884bede903c2dcc33ceac9c3a0fc1256449ceb53c",
+      "git_blob": "3758f5789890367bf0a5d16f2289b92b4ba476cf"
+    },
+    "frentes/metodologia/kit/0.1.0/ensayo-historico.py": {
+      "sha256": "01e6488591945093cf2ee2cf274ae42fd56bfb18c5c2f1a1596976d506fc5099",
+      "git_blob": "15d225a0ab30acbd032d50f293ecb8b64640eb61"
+    },
+    "frentes/metodologia/kit/0.1.0/especificacion.json": {
+      "sha256": "cb3fc20b3c6a7a253c518f97e69052fd70a6eb9510aef57c25a48928bafa8f37",
+      "git_blob": "099e456a90c687b0c856860ea7c40a0658d41d23"
+    },
+    "frentes/metodologia/kit/0.1.0/laboratorio.cjs": {
+      "sha256": "08abfa35bb5b5f75d701957f6cae931242ba5c0312b1e70de9761dccba036713",
+      "git_blob": "9fadde0889b850091e6deade2bb48057ab56e2f2"
+    },
+    "frentes/metodologia/pruebas/benchmark/C-METODOLOGIA-IMPLEMENTACION-06-linux.json": {
+      "sha256": "ee79680818edd62eed9b21c48a3d2acb80cc0c2e2565347d02caca79f69fd7cc",
+      "git_blob": "ce081663837e6baedb0a59b3656036fb97ea85c0"
+    },
+    "frentes/metodologia/pruebas/benchmark/PROTOCOLO-v0.1.md": {
+      "sha256": "8b48e889f39c2142f652f5a7dc528e9a4c09df61bfb286ab2be882d463df8c3a",
+      "git_blob": "62ba2ad7c6be5beeab2d6c8db9c1ae5f0af11e14"
+    },
+    "frentes/metodologia/pruebas/benchmark/PROTOCOLO-v0.2.md": {
+      "sha256": "70fc1674e112d1923f8851777b0ac0eb2bc22b7c95caa87e55216f8c65d3bada",
+      "git_blob": "be48f36df18a7c9d3b0448538774627e954ba4ee"
+    },
+    "frentes/metodologia/pruebas/benchmark/C-METODOLOGIA-IMPLEMENTACION-06-regresion-python.json": {
+      "sha256": "25235c5b82ea3a03d16820ce9573ec561d65f8636ec5880bf5c4526befa33a22",
+      "git_blob": "7d82443aabcf7a6b670dfa9aa7942f199a2d84c0"
+    },
+    "frentes/metodologia/pruebas/benchmark/C-METODOLOGIA-IMPLEMENTACION-06-windows.json": {
+      "sha256": "af531837b80ea295e4b83563e3256ef61f45fde69569efd379576047a94be7dc",
+      "git_blob": "8af212b08939c9639cc90d4143c19adacc6bf7b5"
+    },
+    "frentes/metodologia/pruebas/benchmark/PROTOCOLO-v0.3.md": {
+      "sha256": "dd8ccd7aeb7c2994366a6cc9f7ce1f9eb1e8affb4e73527e6cecc92ba55bf0a5",
+      "git_blob": "a6b1736eddf5bfa1cd8f4df0892ce2c39af12b27"
+    },
+    "frentes/metodologia/pruebas/continuidad/ensayo.py": {
+      "sha256": "01e6488591945093cf2ee2cf274ae42fd56bfb18c5c2f1a1596976d506fc5099",
+      "git_blob": "15d225a0ab30acbd032d50f293ecb8b64640eb61"
+    },
+    "frentes/metodologia/pruebas/continuidad/resultado.json": {
+      "sha256": "25235c5b82ea3a03d16820ce9573ec561d65f8636ec5880bf5c4526befa33a22",
+      "git_blob": "7d82443aabcf7a6b670dfa9aa7942f199a2d84c0"
+    },
+    "frentes/metodologia/trazabilidad/C-METODOLOGIA-IMPLEMENTACION-06.json": {
+      "sha256": "f0989899bbf5ec6f675fa441b40f72c7b6420ea8ca650dc315b4b3df1e6422d4",
+      "git_blob": "74fe5bc9b22edfe54574ba05cd5981277b887745"
+    },
+    "frentes/metodologia/trazabilidad/C-METODOLOGIA-IMPLEMENTACION-06.md": {
+      "sha256": "e6bf94ba0c8ffa097b3dbbff5f670f09bdd84bb9b7927f34cc998f938423520b",
+      "git_blob": "8727660f0a399dc2539a1b99d3abc5b89d91dec5"
+    },
+    "gobernanza/GLOSARIO-WORKSPACE.md": {
+      "sha256": "30f51645f7f3f12a1a9da412a458cc57ddf61dde3ffd9eb9d6019a61bb2a133d",
+      "git_blob": "dad209451aa2acfb67ba134bfc3fb41c2a40e789"
+    },
+    "gobernanza/METAPROMPT-CANONICO-SAMANTHA.fuente.json": {
+      "sha256": "5ada66732b19ee031e55bfd5913bd3d392db6a9494a4009943546b74d2380cf1",
+      "git_blob": "9723f26e65139e961708c4304170d7689a36d388"
+    },
+    "gobernanza/METAPROMPT-CANONICO-SAMANTHA.md": {
+      "sha256": "02a9cacb78f4dc0cd86a819593e931dcf45b84f3ed310569a0b592e0b579c6ed",
+      "git_blob": "e964afa3d50b60980f870016ee7a597db3e5caf2"
+    },
+    "gobernanza/README.md": {
+      "sha256": "82e631387009e097f04faea31bba112ac9622d86e0a7c0382d9e83323e2155ba",
+      "git_blob": "0ea4f0abcb83825ff84296546ba28355972ddf33"
+    }
+  },
+  "delivery_delta_paths": [
+    "METACANON-OBJETOS-CANONICOS.md",
+    "frentes/metodologia/PENDIENTES.md",
+    "frentes/metodologia/conversaciones/C-METODOLOGIA-CHATGPT-08-dialogo.jsonl"
+  ],
+  "files": {
+    "ARRANQUE-CHATGPT.md": "93e621837971dea62919a24ad1a417eb76b1c68232f96e915234b6fb773062d3",
+    "PROMPT-ENTRADA.txt": "f29f9df8c66142403a5541e1169237ce8e56af200038cecf20ad7cee4fa60e8b",
+    "LEEME.md": "d547fd0d5914b2017a6ad77e0d61efcd26540ff0f393a8418cbb5afab3ef1c3a",
+    "fuentes/INICIO.md": "ffbc39220f321cdc99eb4cb542ed50df772b4ca01d87ffebc6662b31892911f0",
+    "fuentes/GLOSARIO-OPERATIVO.md": "5c008693dfa16c9e58a614218d2be68538a27ef5dd6482caa6c1927f711430da",
+    "fuentes/CONTINUIDAD-ENTRE-CONVERSACIONES.md": "c72aaf101c2c838883909a4e5047ad8cb00456061bee6078441418fe00f5b79f",
+    "fuentes/METACANON-OBJETOS-CANONICOS.md": "1b5c101b64dea3be5c0399f20d92bd93763ad734f7fb7762d5afee2563f3d248",
+    "fuentes/PROMPT-UNIVERSAL-REINSTANCIACION.md": "0dab41782c8bf7c8f3582fedfbbac050be2bedb75397594256f419b086f22973",
+    "fuentes/gobernanza/GLOSARIO-WORKSPACE.md": "30f51645f7f3f12a1a9da412a458cc57ddf61dde3ffd9eb9d6019a61bb2a133d",
+    "fuentes/gobernanza/METAPROMPT-CANONICO-SAMANTHA.fuente.json": "5ada66732b19ee031e55bfd5913bd3d392db6a9494a4009943546b74d2380cf1",
+    "fuentes/gobernanza/METAPROMPT-CANONICO-SAMANTHA.md": "02a9cacb78f4dc0cd86a819593e931dcf45b84f3ed310569a0b592e0b579c6ed",
+    "fuentes/gobernanza/README.md": "82e631387009e097f04faea31bba112ac9622d86e0a7c0382d9e83323e2155ba",
+    "fuentes/frentes/metodologia/PENDIENTES.md": "82a0401ab50f8d7581787f2c4b46014385da4eac3c3d398d9dfe62974b088538",
+    "fuentes/frentes/metodologia/antecedentes/ANCLA.md": "2f0eae96287e5ffe8cf8601b235ca23bbf6f89f9aece64f564a5093080b1efc6",
+    "fuentes/frentes/metodologia/antecedentes/BOOTSTRAP-CONTEXTO-GLOBAL.md": "ab916f8d31a182f255d768e09941c1a24af874b38d1f89a5d573dcc1391bdc56",
+    "fuentes/frentes/metodologia/antecedentes/METACANON-OBJETOS-v1.6.md": "dab6680cbcdb6530e4616f8b13d1e0d5f1ff0885508203d1c5eac22fd86250ee",
+    "fuentes/frentes/metodologia/conversaciones/C-METODOLOGIA-BENCHMARK-03-primer-corte.jsonl": "5828a65bc08b76217c031509636fa52502302305780e6d3e3a61a795b100d1cc",
+    "fuentes/frentes/metodologia/conversaciones/C-METODOLOGIA-BENCHMARK-03-segmento-1005-1012.jsonl": "2e6e65ec7759d0c4b4e7daa4e11520737c40ccdc7dd373b530db63d8e540f0ee",
+    "fuentes/frentes/metodologia/conversaciones/C-METODOLOGIA-CONTINUIDAD-02-entradas.json": "4c3204a51bd807f3aa0d394b8102fa808b1a90e5abc2c33521b0abcf69b06fa3",
+    "fuentes/frentes/metodologia/conversaciones/C-METODOLOGIA-CONTINUIDAD-02-plataformas.json": "5c5797a9a514a86a373daa30d13700839ab45704dd589851e88621021717d286",
+    "fuentes/frentes/metodologia/conversaciones/C-METODOLOGIA-CONTINUIDAD-02-salida-final.md": "c44055c434ba8a469b2ed198bda0625880b5e7822f0a4e5361ec271ed4ed2e5b",
+    "fuentes/frentes/metodologia/conversaciones/C-METODOLOGIA-CONTINUIDAD-02-salida-taxonomia.md": "c4b752ac77c577c49da4147f63e745700afe2995cc4315444bdf8914b8644fb0",
+    "fuentes/frentes/metodologia/conversaciones/C-METODOLOGIA-GOBIERNO-01-salida.md": "50bfc1b2a633a93a53df3dc476cbe7ff7a6adc9712781a597aa22dad58f11464",
+    "fuentes/frentes/metodologia/conversaciones/C-METODOLOGIA-GOBIERNO-01.json": "3fcbfc900a031d30575d9e776baf434c17858d5cddf96f12e8daf7e363ddc058",
+    "fuentes/frentes/metodologia/conversaciones/C-METODOLOGIA-IMPLEMENTACION-06-cierre.jsonl": "5d9d612a45d6068446803b91c0e940af299ed9bcc0b7194b75ded76fc9b2046a",
+    "fuentes/frentes/metodologia/conversaciones/C-METODOLOGIA-IMPLEMENTACION-06-dialogo.jsonl": "37c428548ef84c3be5377e92b00ec3ccba6985916cdfcdf6663d4a76b412c172",
+    "fuentes/frentes/metodologia/conversaciones/C-METODOLOGIA-IMPLEMENTACION-06-salida.md": "1b615511a8d047e5ce68a2b02112090fb830c53d89efb675a55c34319972d999",
+    "fuentes/frentes/metodologia/conversaciones/C-METODOLOGIA-RETOMA-05-adjunto.txt": "4337eee0f4ad1dbc544ccabdadf034e2dbde5853ef157489da3b3db0cafc03eb",
+    "fuentes/frentes/metodologia/conversaciones/C-METODOLOGIA-RETOMA-05-dialogo.jsonl": "884d92d319403f46ee0306d40a52d084d80db10216fc18c8fc99719e461de9b4",
+    "fuentes/frentes/metodologia/conversaciones/C-METODOLOGIA-RETOMA-05-salida.md": "dcdb368d075454a6212aa6f52f6a2ea85dcd361df25e33266fbbb566d9ebe71b",
+    "fuentes/frentes/metodologia/conversaciones/C-METODOLOGIA-TRAZABILIDAD-04-1164-1166.jsonl": "05bd3f49c069b6c40054f73da1ba111f258ebaf854aca6754a50d999fcb9095e",
+    "fuentes/frentes/metodologia/conversaciones/C-METODOLOGIA-VALIDACION-07-dialogo.jsonl": "dd74fd8f9af0d4c46bf847afd4a5c2d808ffb42fd720eb8a20b86911022a0423",
+    "fuentes/frentes/metodologia/conversaciones/C-METODOLOGIA-VALIDACION-07-salida.md": "03221a857e307500cd0f7a4c5e44f91c7fc5309fc607451bdd05e4b6586a893b",
+    "fuentes/frentes/metodologia/conversaciones/SESION-3ff5-entradas-000023-000535.jsonl": "1b333b86ffffd49b362eb4448d951fc09b94cf8b1108118aa74190ad1d89e355",
+    "fuentes/frentes/metodologia/conversaciones/SESION-3ff5-dialogo-000023-000542.jsonl": "d06ccfd406b5186153c225c0abfb444c99e007301a6f90642c7731e2802e2a2f",
+    "fuentes/frentes/metodologia/conversaciones/C-METODOLOGIA-CHATGPT-08-dialogo.jsonl": "1ab68c1da77f37ba95db237e404d39cd4ba74f1d20882f6f6d158f28c94580eb",
+    "fuentes/frentes/metodologia/cronica/C-METODOLOGIA-CONTINUIDAD-02.md": "c889e1dade7cf8f968313af95063c8b01fc851fbc9222a9518cc58d9e65e6fe4",
+    "fuentes/frentes/metodologia/cronica/C-METODOLOGIA-GOBIERNO-01.md": "c04da76bb422d7eb56acdc906d1b101a5b07523e236ae495b23ebaaa5c7f04d0",
+    "fuentes/frentes/metodologia/cronica/C-METODOLOGIA-IMPLEMENTACION-06.md": "b0b263d754a4d5ef9dd563ba072234038a281c98fbf456d17b1e65d780c8dc85",
+    "fuentes/frentes/metodologia/cronica/C-METODOLOGIA-RETOMA-05.md": "adbfbd4752a85fc169f222f048afd16d5ea3d131a3ceb1232602d4ae8e4aa51b",
+    "fuentes/frentes/metodologia/cronica/C-METODOLOGIA-VALIDACION-07.md": "4a92fc575a2ad0100f5d19947d21c4553b578f4c0d9f6d57f668ab4d6410354f",
+    "fuentes/frentes/metodologia/evidencias/C-METODOLOGIA-CONTINUIDAD-02-readback.json": "4f10019a86095a35f235e43396e4ef315e087c49d32356a200e6c08714b1f442",
+    "fuentes/frentes/metodologia/evidencias/C-METODOLOGIA-GOBIERNO-01-readback.json": "ca83818eb3502753d86fd6dc12650d4e4fb0f2889323fb5caa9551c7a09a6e76",
+    "fuentes/frentes/metodologia/evidencias/C-METODOLOGIA-IMPLEMENTACION-06-config-r2.json": "32cea38f6f7d9b1643fb5ae6e9a5b77d3991687737848941678d81e35c13a054",
+    "fuentes/frentes/metodologia/evidencias/C-METODOLOGIA-IMPLEMENTACION-06.json": "ae425df06676484c5ca8845d618a5c60ee880d08ca30f2dab88527b10de40051",
+    "fuentes/frentes/metodologia/evidencias/C-METODOLOGIA-RETOMA-05.json": "0e28e3ce16ed2a7386a4987bc36cc247817d0016136f85f9a2c8b2a799ee7c85",
+    "fuentes/frentes/metodologia/evidencias/C-METODOLOGIA-VALIDACION-07.json": "4b8ebd8680f7873f30da878de9aa3c9ae99eabafd231a3bfe1812843ff561498",
+    "fuentes/frentes/metodologia/evidencias/CONTINUIDAD-preservacion-samantha.json": "b53bb134767af75db1e99cec32b85d1c374afc092fb91664f23d902122c27a27",
+    "fuentes/frentes/metodologia/evidencias/SESION-3ff5-cobertura.json": "d9121bfcac8fcf9530fd54c35b27a2317cf581ca7b4c732f343d58aac7e2600c",
+    "fuentes/frentes/metodologia/evidencias/SESION-3ff5-matriz-notas.json": "9075e517c5cec1122a8de74b93468358d9045868288b011b441c1a9436242423",
+    "fuentes/frentes/metodologia/fuentes/C-METODOLOGIA-IMPLEMENTACION-06-Harmonia-hub.json": "102ae63c4a16d44e3b952a45a2044d3f5296048577580daf52fb19d5fea559e7",
+    "fuentes/frentes/metodologia/fuentes/C-METODOLOGIA-IMPLEMENTACION-06-LISA-v1.2.json": "345289a79f37a2b12a7362e337cf1757e0e1f622cfed90d029cd33fc306c8533",
+    "fuentes/frentes/metodologia/trazabilidad/C-METODOLOGIA-IMPLEMENTACION-06.json": "f0989899bbf5ec6f675fa441b40f72c7b6420ea8ca650dc315b4b3df1e6422d4",
+    "fuentes/frentes/metodologia/trazabilidad/C-METODOLOGIA-IMPLEMENTACION-06.md": "e6bf94ba0c8ffa097b3dbbff5f670f09bdd84bb9b7927f34cc998f938423520b",
+    "fuentes/frentes/metodologia/pruebas/benchmark/C-METODOLOGIA-IMPLEMENTACION-06-linux.json": "ee79680818edd62eed9b21c48a3d2acb80cc0c2e2565347d02caca79f69fd7cc",
+    "fuentes/frentes/metodologia/pruebas/benchmark/PROTOCOLO-v0.1.md": "8b48e889f39c2142f652f5a7dc528e9a4c09df61bfb286ab2be882d463df8c3a",
+    "fuentes/frentes/metodologia/pruebas/benchmark/PROTOCOLO-v0.2.md": "70fc1674e112d1923f8851777b0ac0eb2bc22b7c95caa87e55216f8c65d3bada",
+    "fuentes/frentes/metodologia/pruebas/benchmark/C-METODOLOGIA-IMPLEMENTACION-06-regresion-python.json": "25235c5b82ea3a03d16820ce9573ec561d65f8636ec5880bf5c4526befa33a22",
+    "fuentes/frentes/metodologia/pruebas/benchmark/C-METODOLOGIA-IMPLEMENTACION-06-windows.json": "af531837b80ea295e4b83563e3256ef61f45fde69569efd379576047a94be7dc",
+    "fuentes/frentes/metodologia/pruebas/benchmark/PROTOCOLO-v0.3.md": "dd8ccd7aeb7c2994366a6cc9f7ce1f9eb1e8affb4e73527e6cecc92ba55bf0a5",
+    "fuentes/frentes/metodologia/pruebas/continuidad/ensayo.py": "01e6488591945093cf2ee2cf274ae42fd56bfb18c5c2f1a1596976d506fc5099",
+    "fuentes/frentes/metodologia/pruebas/continuidad/resultado.json": "25235c5b82ea3a03d16820ce9573ec561d65f8636ec5880bf5c4526befa33a22",
+    "fuentes/frentes/metodologia/kit/0.1.0/ARRANQUE-PROMPT.txt": "7cf40c08038f3e4559ebd542f1157b4d7b604aacd80f2ea1d7f009135675e530",
+    "fuentes/frentes/metodologia/kit/0.1.0/README.md": "256c1bc6c69c8597e5b7f71e8b09f03b2a7109a02da244c387362d23ff892c81",
+    "fuentes/frentes/metodologia/kit/0.1.0/RECIBO-GOBIERNO.md": "63e9d08d5c150fe43c32637a76022c36f2b5a9781e2ff8f6ac0be4a2c8277e76",
+    "fuentes/frentes/metodologia/kit/0.1.0/continuidad.cjs": "313436db40f99ac485f4e11884bede903c2dcc33ceac9c3a0fc1256449ceb53c",
+    "fuentes/frentes/metodologia/kit/0.1.0/ensayo-historico.py": "01e6488591945093cf2ee2cf274ae42fd56bfb18c5c2f1a1596976d506fc5099",
+    "fuentes/frentes/metodologia/kit/0.1.0/especificacion.json": "cb3fc20b3c6a7a253c518f97e69052fd70a6eb9510aef57c25a48928bafa8f37",
+    "fuentes/frentes/metodologia/kit/0.1.0/laboratorio.cjs": "08abfa35bb5b5f75d701957f6cae931242ba5c0312b1e70de9761dccba036713"
+  },
+  "new_model_test": false,
+  "automatic_capture": false,
+  "scope": "methodology front, method roots, named governance mirrors; no other fronts",
+  "zip_sha256": "5ca4a9f6dd896dc0453a99025269617084bfedd4de727fe91d4288c9bc44ebec",
+  "zip_bytes": 348602
+}

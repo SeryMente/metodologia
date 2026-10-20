@@ -1,0 +1,23 @@
+{
+  "base": "57649141551a234d13208f72d42f6a12191d093f",
+  "scope": "entrega ChatGPT0.1 del frente metodología",
+  "source_files": 65,
+  "source_integrity": "PASS",
+  "zip_crc": "PASS",
+  "manifest_hashes": "PASS",
+  "government_modified": false,
+  "chatgpt_real_test": "NOT RUN / REAL-CHATGPT-01 pendiente",
+  "notion_government_freshness": "NO VERIFICADO",
+  "final_sha256": "92bf03a66930a061847444a36a92ab89434dd5f9335eae5c057def6cd004c62a",
+  "files": {
+    "METACANON-OBJETOS-CANONICOS.md": "3541af8dc8bd977b8fe9a16b54e54d2e553f92244b45d98994cf29233a25e613",
+    "frentes/metodologia/PENDIENTES.md": "82a0401ab50f8d7581787f2c4b46014385da4eac3c3d398d9dfe62974b088538",
+    "frentes/metodologia/conversaciones/C-METODOLOGIA-CHATGPT-08-dialogo.jsonl": "1ab68c1da77f37ba95db237e404d39cd4ba74f1d20882f6f6d158f28c94580eb",
+    "frentes/metodologia/conversaciones/C-METODOLOGIA-CHATGPT-08-salida.md": "92bf03a66930a061847444a36a92ab89434dd5f9335eae5c057def6cd004c62a",
+    "frentes/metodologia/conversaciones/C-METODOLOGIA-CHATGPT-08-cierre.jsonl": "141d59f0e9e8cafd438635094d909ab1bb4b23acde79187df27471c00e31467a",
+    "frentes/metodologia/entregas/CHATGPT-v0.1/LEEME.md": "d547fd0d5914b2017a6ad77e0d61efcd26540ff0f393a8418cbb5afab3ef1c3a",
+    "frentes/metodologia/entregas/CHATGPT-v0.1/PROMPT-ENTRADA.txt": "f29f9df8c66142403a5541e1169237ce8e56af200038cecf20ad7cee4fa60e8b",
+    "frentes/metodologia/entregas/CHATGPT-v0.1/MANIFIESTO-ENTREGA.json": "b1e90263c38fbced1465b9a9bc87ae2cee050f505f3a03d98c9161ebf6c1cd3c",
+    "frentes/metodologia/cronica/C-METODOLOGIA-CHATGPT-08.md": "d80dbe12ea2117b0f5e63cee756de4982902a6f763816103d437a648d27cc31a"
+  }
+}
