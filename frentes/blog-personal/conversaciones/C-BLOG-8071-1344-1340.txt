@@ -1,0 +1,20 @@
+**Entrega técnica lista y persistida:** commit `34ac81c222397ab0e1e91c77cec8b9db21f6a903`, rama `feat/blog-intent-recovery-20261020`, sobre la base exacta `4ff209f`. **Cotejo posterior: los cuatro SHA de archivo coinciden con los archivos probados.** [^https://github.com/SeryMente/khora/commit/34ac81c222397ab0e1e91c77cec8b9db21f6a903]
+
+### Correcciones entregadas
+- Recuperación de la **misma versión exacta**, con nueva confirmación explícita; si el servidor ya aprobó, reconcilia sin repetir la aprobación.
+- Revisión heredada recuperable mediante **nueva previa y revisión**, sin heredar consentimiento.
+- Propuesta trabajada conservada cifrada, vinculada a propietario, fuente, versión y huellas; sin guardar tokens normativos ni añadir otra copia del original.
+- Presentación separada de **Momento del hecho** y marca de registro/archivo, sin inventar fechas. [^https://github.com/SeryMente/khora/commit/34ac81c222397ab0e1e91c77cec8b9db21f6a903]
+
+### Verificación repetida después del reinicio
+**9/9 pruebas unitarias, 39 comprobaciones Chromium y TypeScript 5.9.3 estricto — destino ES2017 y JSX— sin errores.** IndexedDB y cifrado fueron reales; autenticación, normativa y respuestas del servidor fueron simuladas. **No es una compilación completa ni prueba de publicación real.**
+
+### Cuatro rutas para integrar
+| Ruta dentro de `khora-web/` | SHA del archivo cotejado |
+|---|---|
+| `app/components/ingreso/PublicacionCapturaPendiente.tsx` | `82dce2691a3aef5c93e4ed1d59ba88f35730708c` |
+| `lib/client/custodia-local.ts` | `3cda572e29aa506b51ab36c5a1ade8f16bea4ccb` |
+| `tests/unit/blog-intent-recovery.test.ts` | `a85477f2cde8c2a42c19da9d64332cc539893a6c` |
+| `tests/browser/blog-intent-recovery.local.test.mjs` | `abfde0b341449da61794cda6512d2403e3be9da6` |
+
+**Siguiente paso: integración y comprobación completa por central.** No modifiqué configuración, proveedores, secretos, planificador ni producción. No publiqué contenido. La configuración legítima de los destinos y la aprobación de la entrada exacta siguen siendo requisitos separados.

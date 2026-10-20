@@ -1,0 +1,55 @@
+{
+  "cycle": "C-BLOG-8071-1344",
+  "code_repo": "SeryMente/khora",
+  "branch": "feat/blog-intent-recovery-20261020",
+  "base": "4ff209fba2bd02d6e61516c7c598e7260ae69871",
+  "commit": "34ac81c222397ab0e1e91c77cec8b9db21f6a903",
+  "expected_and_observed_git_blobs": {
+    "khora-web/app/components/ingreso/PublicacionCapturaPendiente.tsx": "82dce2691a3aef5c93e4ed1d59ba88f35730708c",
+    "khora-web/lib/client/custodia-local.ts": "3cda572e29aa506b51ab36c5a1ade8f16bea4ccb",
+    "khora-web/tests/unit/blog-intent-recovery.test.ts": "a85477f2cde8c2a42c19da9d64332cc539893a6c",
+    "khora-web/tests/browser/blog-intent-recovery.local.test.mjs": "abfde0b341449da61794cda6512d2403e3be9da6"
+  },
+  "readback_kind": "GitHub contents-directory blob SHA comparison, 4/4; not a claim of full-text download",
+  "readback_tool_events": [
+    1330,
+    1331,
+    1332,
+    1338
+  ],
+  "commit_inventory_tool_event": 1323,
+  "unit": {
+    "passed": 9,
+    "failed": 0,
+    "skipped": 0,
+    "environment": "Node 24, tsx; restored exact source; final execution tool1304"
+  },
+  "browser": {
+    "passed": 39,
+    "failed": 0,
+    "environment": "real local Chromium/React/IndexedDB/AES-GCM; synthetic owner/auth/normative/API/Groq response; CSS stub; tool1312"
+  },
+  "types": {
+    "compiler": "TypeScript5.9.3",
+    "target": "ES2017",
+    "strict": true,
+    "jsx": "react-jsx",
+    "diagnostics": 0,
+    "scope": "isolated imports of changed TS/TSX files and new unit test, not full Next build"
+  },
+  "not_verified": [
+    "real production behavior of this patch",
+    "real auth/DB/normative provider execution",
+    "real Groq fidelity",
+    "GitHub/Meta provisioning or current secret values",
+    "actual provider post or first approved entry",
+    "human design acceptance"
+  ],
+  "no_operations": [
+    "no promotion/merge/main write",
+    "no remote desktop",
+    "no provider/capture/DB/schema/config modification",
+    "no audio publication",
+    "no reinterpretation of corpus49de/schema0.1.0"
+  ]
+}
