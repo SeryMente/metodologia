@@ -1,0 +1,49 @@
+{
+  "version": "1.7",
+  "sello": "METACANON-OBJETOS-v1.7",
+  "cycle": "C-METODOLOGIA-GOBIERNO-01",
+  "base_commit": "a466b6b46f266de6a6ccd656e071eb7a07dc0e10",
+  "pass_1": "Fidelidad a instrucciones y distinción de propuesta/requisito/implementación",
+  "pass_2": "Relectura local de archivos generados y contraste con fuentes guardadas; lectura Git posterior obligatoria",
+  "checks": {
+    "metaprompt_content_exact": true,
+    "prius_content_exact": true,
+    "antecedent_1_6_exact": true,
+    "principles_34_preserved": true,
+    "current_version": true,
+    "old_sections_preserved": true,
+    "new_sections_present": true,
+    "no_notion_mutation": true,
+    "no_automatic_sync_claim": true,
+    "prius_not_activated": true,
+    "full_session_archive_not_claimed": true,
+    "complete_portability_not_claimed": true,
+    "old_si_retained": true
+  },
+  "limits": [
+    "Publicación y cotejo remoto pendientes al generar este archivo; no se afirman ya ejecutados aquí.",
+    "Arquitectura ratificada; separación física del metacanon aún pendiente.",
+    "No probado desde otra plataforma; dependencias de Notion y sincronización pendientes.",
+    "Solo originales inventariados; historial retrospectivo incompleto declarado."
+  ],
+  "files_sha256_utf8": {
+    "gobernanza/METAPROMPT-CANONICO-SAMANTHA.md": "57ab317fb3c5033292101aadc7796dcbf123f30e197fd0253ba34c596690461f",
+    "gobernanza/antecedentes/CANON-SESION-PRIUS-v0.25.md": "0eb98cc74f1a7d6602d171478f44b6574aa8f237c49305420c9d418b4d2511b0",
+    "gobernanza/METAPROMPT-CANONICO-SAMANTHA.fuente.json": "8898e1b4fa927bddbd09ed6afa786ceeac2e1eca402df0e262312725d45610a3",
+    "gobernanza/README.md": "3f9dcd9c7409a5d28ed151625a3b6e73d7177127910ad42afaf4274dd22c2add",
+    "frentes/metodologia/antecedentes/METACANON-OBJETOS-v1.6.md": "dab6680cbcdb6530e4616f8b13d1e0d5f1ff0885508203d1c5eac22fd86250ee",
+    "METACANON-OBJETOS-CANONICOS.md": "c73df1fb8f72a596d21a81bee001bd6f1198cf8934a9703a07769234a3af26a6",
+    "INICIO.md": "d3dd693474d381d9a298097cba1438fbb44575cf7aee691632f6dc285a421ae8",
+    "frentes/metodologia/antecedentes/ANCLA.md": "2f0eae96287e5ffe8cf8601b235ca23bbf6f89f9aece64f564a5093080b1efc6",
+    "frentes/metodologia/antecedentes/BOOTSTRAP-CONTEXTO-GLOBAL.md": "ab916f8d31a182f255d768e09941c1a24af874b38d1f89a5d573dcc1391bdc56",
+    "ANCLA.md": "015fef084b3d43fe15e4ecbb32619deaf99b8695f8ad1436caf6d61c3dc24321",
+    "BOOTSTRAP-CONTEXTO-GLOBAL.md": "1b05b879b099a92682aaf68d6696d87909019f4e5f68446651a8f6613315f86a",
+    "SI-METACOGNITIVO.md": "ad24ba49da02d384daccb136bb3a535c5e508ea676d4987b74af089171251daf",
+    "METODOLOGIA.md": "933a939d8272f6965f30bfbb8b4907ef653637539d832e77cc3f7df7bf4974d4",
+    "GLOSARIO-OPERATIVO.md": "5c008693dfa16c9e58a614218d2be68538a27ef5dd6482caa6c1927f711430da",
+    "README.md": "42fd072ed21f1518b817758caed111ed2753d45e8081f3a3fa4f2b912045a4e7",
+    "frentes/metodologia/conversaciones/C-METODOLOGIA-GOBIERNO-01.json": "3fcbfc900a031d30575d9e776baf434c17858d5cddf96f12e8daf7e363ddc058",
+    "frentes/metodologia/conversaciones/C-METODOLOGIA-GOBIERNO-01-salida.md": "50bfc1b2a633a93a53df3dc476cbe7ff7a6adc9712781a597aa22dad58f11464",
+    "frentes/metodologia/cronica/C-METODOLOGIA-GOBIERNO-01.md": "3051a66601c2f1683d0a6e197da908ef0191b96a071b58cd2c31b4b1e0693151"
+  }
+}

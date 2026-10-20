@@ -1,7 +1,7 @@
 # Glosario Operativo de la Metodologia
 
 **Estado:** CANONICO  
-**Version:** v1.2.0  
+**Version:** v1.3.0  
 **Ambito:** Todos los proyectos y conversaciones sujetos a la metodologia comun.
 
 ## 1. Funcion
@@ -124,7 +124,7 @@ Cuando exista una entrada canonica, su forma debe utilizarse en salidas, documen
 
 ## 4. Terminos deliberadamente no heredados
 
-No se heredan automaticamente GOW, WS, SSC, FIAT, PRIUS, RAP, MDC, VRC ni Entorno Persistente cuando procedan del corpus anterior de Notion y no hayan sido adoptados por este canon. Tampoco se hereda vocabulario teorico o especifico de proyecto sin necesidad transversal demostrada.
+No se hereda automáticamente vocabulario del corpus Notion anterior por mera mención. La adopción expresa del Metaprompt Canónico de Samantha como gobierno general no activa todos sus protocolos o proyectos citados. Sesión PRIUS queda identificada y diferida, no activada; las demás voces requieren ámbito y adopción pertinentes. Tampoco se hereda vocabulario teorico o especifico de proyecto sin necesidad transversal demostrada.
 
 ## 5. Procedencia de la migracion
 
@@ -221,3 +221,40 @@ Periodo de mantenimiento en CIBERCAFE en el que la terminal permanece encendida,
 **Definición:** clasificación de la capacidad de crear el deployment requerido en el momento de la operación.
 **Valores:** `NO-REQUERIDA`, `DISPONIBLE`, `LIMITADA`, `NO-VERIFICADA`.
 **Regla:** `LIMITADA` bloquea la publicación que necesita un deployment nuevo, pero no bloquea por sí misma las operaciones sobre deployments existentes ni la ejecución local.
+
+
+## 7. Formalización de frentes — C-METODOLOGIA-GOBIERNO-01
+
+### Frente de trabajo
+**Tipo:** objeto de persistencia compuesto.  
+**Nombre técnico:** objeto canónico de persistencia de frente de trabajo.  
+**Nombre corto equivalente:** frente de trabajo.  
+**Definición:** directorio completo con núcleo operativo único, contexto externo recuperable, conversaciones originales, crónica y materiales pertinentes. No equivale a un único .md. En lenguaje ordinario también puede designar el esfuerzo: explicitar la distinción cuando afecte custodia o arquitectura.  
+**Normalización:** «fuentes de trabajo» se corrige a «frentes de trabajo» cuando el contexto lo identifica inequívocamente; conservar el original del dictado.
+
+### Núcleo operativo
+Archivo de entrada y estado vigente de un frente. Orienta y enruta, conserva gobierno obligatorio y continuidad suficiente; no duplica toda la historia ni es un índice vacío.
+
+### Contexto persistido
+Representación externa verificable necesaria para reconstruir una ventana de trabajo útil en otra instancia. No es la ventana interna ni la memoria del modelo.
+
+### Historial conversacional
+Originales secuenciados de entradas del usuario y salidas visibles del modelo, con cambios de plataforma, conversación y modelo, y rol/persona cuando existan. No equivale al contexto operativo ni a una síntesis.
+
+### Crónica del frente
+Registro explicativo de acontecimientos, decisiones, acciones, evidencias, límites y continuidad enlazado con originales; no los sustituye.
+
+### Espacio de trabajo Ser y Mente
+Organización `SeryMente` y sus repositorios como espacio persistente común. Las aplicaciones comerciales, como Notion, son superficies vinculadas, no la única persistencia.
+
+### Sincronización perpetua
+Requisito ratificado: cada cambio documental en la aplicación de origen desencadena actualización automática de su espejo en el repositorio del frente. Alcance confirmado aplicación → repositorio; no presume dirección inversa. Mecanismo aún pendiente; una copia puntual no acredita continuidad automática.
+
+### Metaprompt Canónico de Samantha
+Documento de Capa 1 que contiene identidad, comportamiento y reglas generales y gobierna el espacio de trabajo Ser y Mente y sus repositorios. Un mismo documento con copia operativa en GitHub, no dos autoridades por estar espejado. Versión fuente migrada v332 · NX-332m. «Samanta», «Metapron» y «Metapromp» son variantes de dictado, no nombres nuevos.
+
+### Sesión PRIUS
+Segunda capa de gobernanza histórica del espacio Notion. Uso futuro previsto; revisión/adaptación diferidas explícitamente hasta que no haya urgencias. Copiar o mencionar su canon no abre una sesión.
+
+### Metacanon de frentes
+Método de configuración y mantenimiento de los frentes, subordinado al gobierno general. No se confunde con el metaprompt ni sustituye las reglas superiores de cada plataforma.

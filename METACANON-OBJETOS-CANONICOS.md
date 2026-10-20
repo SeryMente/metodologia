@@ -1,15 +1,19 @@
-<!-- METACANON_VERSION=1.6; TEMPORARY_FRAMEWORK=true; USER_TRANSCRIPT_SPEC=true -->
+<!-- METACANON_VERSION=1.7; TEMPORARY_FRAMEWORK=true; USER_TRANSCRIPT_SPEC=true -->
 # Metacanon para crear y mantener objetos canónicos de proyecto
 
-- Estado: **Versión documental 1.6 — Persistencia y crónica obligatorias por ciclo**, actualización documental autorizada para la fuente main; publicación efectiva sujeta a recibo Git y lectura posterior. No acredita implementación ni adopción de todos los hijos.
-- Versión metodológica: **1.6**. Sello: **METACANON-OBJETOS-v1.6**.
+- Estado: **Versión documental 1.7 — Gobierno portable y arquitectura de frentes**, primer bloque de acuerdos autorizado por el operador en C-METODOLOGIA-GOBIERNO-01. Publicación efectiva sujeta a recibo Git y lectura posterior. No acredita sincronización automática, cifrado, migración de todos los hijos ni portabilidad operativa completa.
+- Versión metodológica: **1.7**. Sello: **METACANON-OBJETOS-v1.7**. Gobierno general: [Metaprompt Canónico de Samantha](gobernanza/METAPROMPT-CANONICO-SAMANTHA.md), v332 · NX-332m; relación y límites en [gobernanza](gobernanza/README.md).
 - Nombre propio del marco: pendiente de elección del operador; no usar el nombre de un proyecto como nombre del método.
 - Repositorio de metodología identificado: https://github.com/SeryMente/metodologia, privado comprobado en el ciclo de actualización 1.1; revalidar su visibilidad antes de cada escritura sensible. Ruta METACANON-OBJETOS-CANONICOS.md; fuente vigente main; rama documental histórica docs/metacanon-objetos-20261011. Conservar los originales y datos privados del frente solo en su carpeta autorizada tras verificar acceso privado; nunca publicar secretos en Git ni transportar identidades de ejemplos.
 - Archivo estable propuesto: `METACANON-OBJETOS-CANONICOS.md`.
 - Origen: instrucciones del operador y método explicitado durante la documentación del frente Profuturo. **Los datos, permisos y estado de ese proyecto no forman parte de este método.**
-- Propósito: permitir que un asistente canonice un solo objeto `.md` de cualquier proyecto y que cualquier modelo pueda adquirir su gobierno, retomar el trabajo y migrar sin reconstruir el contexto.
+- Propósito: permitir configurar un frente de trabajo como directorio completo con un núcleo operativo único y materiales enlazados, para adquirir su gobierno, retomar el trabajo y migrar entre plataformas sin reconstruir la historia. El núcleo no equivale a todo el objeto.
 
 ## LEER PRIMERO — modo metodología, no ejecución del ejemplo
+
+**Actualización 1.7, de lectura previa:** [INICIO.md](INICIO.md) es la puerta de entrada transversal. Gobierno general en `gobernanza/METAPROMPT-CANONICO-SAMANTHA.md`; el metacanon gobierna el método, no constituye una autoridad general competidora. §§29–33 prevalecen sobre formulaciones anteriores incompatibles, en particular «objeto = un solo .md», subordinación al SI anterior, temporalidad de un mes como compromiso vigente y activación implícita de PRIUS. Las menciones de 1.0–1.6 en antecedentes conservan su sentido histórico. Leer una propuesta histórica no la ratifica.
+
+**Estado de refactorización:** arquitectura por directorios ratificada. Este primer bloque mantiene el cuerpo previo y sus referencias; el aligeramiento y separación física del metacanon aún están pendientes. No presentar el índice ni esta incorporación como refactorización completa o prueba en otra plataforma.
 
 Aplicar las compuertas de adquisición y acción de §26, el molde único §27 y el cierre documental obligatorio por ciclo de §28. Remote Desktop Commander es exclusivo del asistente (§24); no delegable al constructor. Las mejoras restantes del análisis de conversaciones siguen propuestas, no se incorporan por asociación.
 
@@ -128,12 +132,15 @@ Respeta alcance, compuertas y no-simulación. El asistente mantiene continuidad 
 
 ## 9. Estado de este metacanon
 
-- De dónde viene: instrucciones originales de creación portable, dos roles, verbatim, crónica, eficiencia, salida consistente, estimación, viabilidad, perfil/acceso remoto y delta.
-- Dónde está: versión documental 1.5; centralización en rama de SeryMente/metodologia, sin modificar el Sistema de Instrucciones ni las normas globales anteriores. Evidencia privada de Profuturo queda en GDP.
-- A dónde va: uso temporal por aproximadamente un mes, validación de cada instancia y posterior migración a infraestructura autorizada sin pérdida.
-- Qué cambió en 1.4: M32 incorpora prioridad de atención a salidas del constructor, síntesis de novedad/viabilidad/avance y pronóstico calibrado por pendientes y ruta crítica (§25). Conserva la gobernanza 1.3 y su excepción metodológica de hilo único.
-- Próximo paso: verificar recepción/readback de esta versión y usarla para instancias; nombre propio pendiente, candidatos TRAMA/HILO VIVO/CANON VIVO/DOBLE HILO no ratificados. No bloquear su uso por branding.
-- Historia: versiones 0.1–0.3 fueron borradores locales; sus notas finales son históricas, no estado de publicación actual.
+- De dónde viene: práctica del operador durante varias semanas; instrucciones originales de portabilidad, custodia, continuidad, trazabilidad y gobierno.
+- Dónde está: versión 1.7, primer bloque de formalización. Fuente de estado única: este archivo en la raíz del repositorio metodológico; materiales auxiliares del propio frente en `frentes/metodologia/`. No crear un segundo objeto de estado para el mismo frente. La raíz de este repositorio es el directorio del frente metodológico; la subcarpeta solo organiza sus materiales.
+- A dónde va: uso general entre plataformas y modelos, incluidos servicios gratuitos cuando sus capacidades permitan el trabajo, sin dependencia obligatoria de Notion. No se fija una fecha de abandono del marco; el mes citado en versiones anteriores es antecedente, no plazo automático de caducidad.
+- Qué cambió: §§29–33, gobierno general espejado de Samantha, glosario, estructura de directorio e historial, sincronización perpetua como requisito todavía sin mecanismo, seguridad/cifrado y revisión de PRIUS diferidos expresamente.
+- 🔄 Estado vivo: consolidar este primer bloque y verificarlo; siguiente paso: revisar las dependencias Notion del gobierno y separar núcleo, reglas de consulta e historia sin pérdida ni fuentes de estado paralelas; después probar reinstanciación en una conversación independiente. Pendientes: (1) aligeramiento físico; (2) paquete portable y dependencias; (3) prueba de adquisición/retoma/guardado; (4) mecanismo de sincronización automática; (5) seguridad y cifrado — alta importancia, diferidos por urgencia; (6) revisión y uso de PRIUS — diferidos hasta no haber urgencias. La lista no acredita ninguna implementación.
+- ⚗️ En prueba / recién fallido: prueba documental y huellas del espejo preparadas; pruebas empíricas entre plataformas y sincronización automática pendientes.
+- 🔔 Recordatorios latentes: no confundir copia puntual con sincronización perpetua; no perder originales ni atribuir modelos desconocidos; no activar PRIUS; no publicar secretos; no declarar que todos los repositorios/hilos adquirieron este gobierno sin comprobarlos.
+- Ancla: evento 290 de sesión `3ff5d4a3-b250-8012-ae4a-00a9fb4b2b95`, autorización expresa de alcance organizacional del metaprompt; ciclo `C-METODOLOGIA-GOBIERNO-01`.
+- Crónica y originales: [registro del ciclo](frentes/metodologia/cronica/C-METODOLOGIA-GOBIERNO-01.md) y [segmento recibido](frentes/metodologia/conversaciones/C-METODOLOGIA-GOBIERNO-01.json). Custodia anterior parcial declarada; no se afirma exportación íntegra de toda la sesión.
 
 ## 10. Instrucción original de separación del metacanon
 
@@ -258,13 +265,13 @@ Ampliación: límite actual → hipótesis → prueba mínima permitida → evid
 
 Conservar/documentar en el repo todo artefacto importante tan pronto exista acceso: nombre/ruta recuperable, propósito, procedencia, versión/commit verificable, hash, estado y relación con aceptación. Revisar privacidad, guardar y comprobar lectura de vuelta; si no accesible, checkpoint pendiente concreto. Evitar duplicados/versiones sobrescritas. Archivo codificado requiere restaurador mínimo y prueba de originales exactos, no falsa extensión binaria.
 
-Este marco por repositorios es temporal, horizonte orientativo aproximadamente un mes. Usar archivos Markdown/JSON y herramientas existentes, sin infraestructura paralela por comodidad. Robustez mediante fresco/delta, procedencia, escrituras condicionadas, originales, evidencia, prompts sincronizados y recuperación. El plazo no habilita borrar ni archivar unilateralmente. Para abandonar: exportar originales/decisiones/crónica/estado/fuentes, verificar recepción íntegra y restauración en destino autorizado; archivar después de autorización y conservar referencias históricas.
+La temporalidad aproximada de un mes es un antecedente de diseño; el operador ratificó ahora su uso general entre plataformas (§29), sin fijar fecha automática de abandono. Usar archivos Markdown/JSON y herramientas existentes, sin infraestructura paralela por comodidad. Robustez mediante fresco/delta, procedencia, escrituras condicionadas, originales, evidencia, prompts sincronizados y recuperación. El plazo no habilita borrar ni archivar unilateralmente. Para abandonar: exportar originales/decisiones/crónica/estado/fuentes, verificar recepción íntegra y restauración en destino autorizado; archivar después de autorización y conservar referencias históricas.
 
 ## 17. Compatibilidad con el repositorio metodológico existente
 
 Lecturas de referencia de esta elaboración: ANCLA.md, SI-METACOGNITIVO.md, METODOLOGIA.md, BOOTSTRAP-CONTEXTO-GLOBAL.md y anexos de gobernanza/recuperación Remote Desktop Commander en commit 6e0a416025594916016a34ae32e2b7e8af591320. Lectura histórica no acredita frescura futura; consumidores recuperan fuente vigente y verifican revisión.
 
-Este metacanon es un procedimiento/artefacto subordinado, no un nuevo Sistema de Instrucciones ni una tercera capa superior. No modifica normas globales, selectores de terminal o proyectos ajenos. El núcleo oficial de Remote Desktop Commander y opción --no-persist-session del marco son compatibles como política temporal de arranque; no revocan identidades persistidas ni sustituyen registros transversales. Al usarlos, cumplir el registro global y escritura condicionada/readback cuando el régimen aplicable lo exige. No fingir handshake publicado.
+Este metacanon es un procedimiento/artefacto subordinado, no un nuevo Sistema de Instrucciones ni una tercera capa superior. Desde 1.7 su gobierno general es el Metaprompt Canónico de Samantha (§33). La subordinación al SI-METACOGNITIVO de las versiones anteriores es histórica. Este cambio de gobierno no modifica código, selectores de terminal ni permisos de proyectos ajenos. El núcleo oficial de Remote Desktop Commander y opción --no-persist-session del marco son compatibles como política temporal de arranque; no revocan identidades persistidas ni sustituyen registros transversales. Al usarlos, cumplir el registro global y escritura condicionada/readback cuando el régimen aplicable lo exige. No fingir handshake publicado.
 
 Las cláusulas históricas que dependan específicamente de Khora u otro producto solo se activan por su ámbito real; leer un ejemplo no manda implementar ese producto. Si hay conflicto material entre este marco y norma superior vigente, no resolver mediante edición silenciosa: declarar conflicto, bloquear solo lo afectado y solicitar la decisión indispensable. No afirmar que este documento fuerza al 100% de modelos a obedecer; el contrato exige adquisición verificable, pero no crea herramientas ni memoria global.
 
@@ -529,3 +536,44 @@ Entonces, a partir de ahora, te voy a pedir, número uno, que actualices el meta
 Original completo: `SeryMente/khora`, rama `fix/graph-occurrence-history-20261018`, `docs/frentes/grafo/originales/C-AUTENTICIDAD-01-operador.txt`; SHA-256 `e805e2716a0ec2705d209869a71962341f81d2b7ab6ebcfe894ad6f15d59de5d`. Codificación UTF-8; etiquetas y grafía recibidas conservadas; se añade un LF terminal de archivo. Fuente: mensaje directo del operador en sesión `3fd5d4a3-b250-807a-8bd7-00a9fde7ee9d`; no es recuperación de conversaciones ausentes. Interpretación normativa en §28 separada del original.
 
 **Compatibilidad/versión 1.6:** preserva §§1–27, dictados y antecedentes 1.0–1.5 salvo enlaces de activación, encabezado vigente y compuerta en §§1/4; no modifica el metaprompt personal ni normas superiores. Propaga documentalmente a GRAFO-v9; otros hijos no se declaran migrados. Verificación reproducible en `REVISION-METACANON-1.6.json`; readback por commit exigido.
+
+
+## 29. Objeto de persistencia como directorio y arquitectura ratificada — 1.7
+
+Un objeto canónico de persistencia de frente de trabajo, en corto **frente de trabajo**, es un directorio organizado, no un archivo monolítico. Conserva un único núcleo operativo: propósito, alcance, gobierno particular, autorizaciones/vetos, estado vigente, aceptación, pendientes, siguiente paso, revisión y mapa de consulta. El archivo de entrada contiene orientación suficiente para actuar y dirige hacia los materiales necesarios; no es un índice vacío. El gobierno obligatorio se adquiere siempre, no queda oculto detrás de lectura opcional. El contexto externo permite reconstruir una ventana de trabajo útil, no exporta la memoria interna de un modelo.
+
+Separar núcleo/estado, conversaciones originales, crónica explicativa y materiales de respaldo conforme existan. No imponer carpetas vacías ni fragmentación máxima. Conservar una sola materialización de cada estado vigente; el historial no es un segundo estado activo. Los trece bloques de §§3/27 mantienen nombres, orden y significado en el núcleo, mediante referencias internas verificables cuando corresponda. Todo original o material citado debe ser accesible o declararse pendiente; un índice sin contenido no pasa.
+
+Arquitectura ratificada en el evento 210: núcleo operativo, originales y crónica complementarios, decisiones y materiales bajo demanda, lectura selectiva con gobierno previo y actualización coherente. El frente metodológico conserva por compatibilidad el núcleo/estado en el archivo raíz `METACANON-OBJETOS-CANONICOS.md`; su división física y aligeramiento son pendientes, no realizados por esta declaración.
+
+## 30. Historial conversacional secuenciado y atribución — 1.7
+
+Conservar tanto entradas del operador como salidas visibles del modelo en el directorio del frente. El historial puede abarcar plataformas, conversaciones y modelos distintos. Separar originales literales de síntesis, normalizaciones, decisiones y crónica; enlazarlos con identificadores estables. Registrar la secuencia comprobable, cambios de plataforma/conversación/modelo y, si están asignados, rol e identidad/persona. Distinguir modelo de rol y persona. Si no hay asignación o identidad comprobada, dejar ausente o NO VERIFICADA; nunca inferir proveedor/modelo a partir del nombre Samantha.
+
+Metadatos mínimos por segmento: identificador, frente, procedencia y conversación cuando estén disponibles, plataforma, modelo observado/reportado/desconocido, rol/persona si asignados, límites de secuencia, evento/fecha disponibles, relación con segmento previo y cambios de instancia. Declarar material omitido/no recibido, envoltorios, codificación y transformaciones. La concurrencia se conserva como tal con puntos de conciliación: no fabricar una cronología total. No archivar razonamiento interno ni secretos. §28 sigue gobernando custodia, crónica, cierre y reparación de huecos.
+
+## 31. Espacio de trabajo y sincronización perpetua — 1.7
+
+**Espacio de trabajo general:** Ser y Mente, organización GitHub `SeryMente` y sus repositorios. Notion u otras aplicaciones son superficies de trabajo vinculadas, no la única persistencia del frente.
+
+Cada documento producido para un frente en esas aplicaciones debe tener una copia recuperable en el directorio correspondiente. El requisito de **sincronización perpetua** es que todo cambio en la aplicación de origen desencadene automáticamente la actualización de su espejo en el repositorio, sin solicitud manual ni necesidad de un chat activo. Su alcance confirmado es aplicación → repositorio; la sincronización inversa no se presume ni autoriza sobrescribir la fuente.
+
+Requisito y ejecución se distinguen: esta versión NO implementa el disparador ni un servicio de sincronización. Una copia puntual verificada acredita solo esa revisión. No afirmar «siempre sincronizado» a partir de una instrucción, una promesa o un commit. Conservar por documento origen, destino, revisión y evidencia disponible de correspondencia; frescura desconocida o divergente se declara, no se oculta. Detección, recuperación, latencia, conciliación de ediciones simultáneas y prueba integral forman parte del diseño pendiente; no se fijan garantías absolutas ni herramientas sin revisión y autorización pertinentes.
+
+## 32. Pendientes expresamente diferidos y criterio de urgencia — 1.7
+
+Prioridad actual: preparar el metacanon y su gobierno para continuar el trabajo entre plataformas cuando termine el acceso del operador a Notion. El uso de inteligencia artificial gratuita es una condición de interés, no el propósito exclusivo ni un producto prometido.
+
+- **Seguridad de la información y cifrado:** pendiente de importancia destacada, diferido expresamente por urgencia; comprende documentos y contenidos de los frentes. No equivale a solución, descarte o autorización de exposición. Se mantienen prohibición de secretos en Git, privacidad comprobada y permisos vigentes; repositorio privado no demuestra cifrado de extremo a extremo ni diseño de seguridad resuelto.
+- **Sesión PRIUS:** uso futuro previsto, revisión/adaptación diferidas hasta que no haya asuntos urgentes; no activada por lectura, copia o migración. Se conserva el antecedente sin ejecutarlo ni imponerlo como requisito actual de la metodología.
+- **Sincronización automática:** requisito importante pendiente de diseño, implementación y prueba; no se sustituye por pedir al operador transporte manual permanente como si se hubiera cumplido.
+
+No eliminar estos pendientes por cambiar de plataforma ni darles cierre sin evidencia o cancelación expresa.
+
+## 33. Gobierno general único y flujo de formalización — 1.7
+
+El mismo documento Metaprompt Canónico de Samantha del espacio Notion se conserva como espejo en `gobernanza/METAPROMPT-CANONICO-SAMANTHA.md`; no es un segundo gobierno ni una versión nueva de sus reglas. El operador ratificó que gobierna este repositorio y toda la organización Ser y Mente. Fuente/huella/versión y límites en `gobernanza/METAPROMPT-CANONICO-SAMANTHA.fuente.json` y `gobernanza/README.md`. El antiguo SI deja de ser autoridad general paralela; se conserva como antecedente y no reactiva su precedencia por referencias antiguas.
+
+El operador dicta y precisa; el modelo recoge notas separando requisitos ratificados, propuestas y cuestiones abiertas. Se permiten notas transitorias en el chat durante esta discusión breve por autorización expresa. Cuando exista un bloque coherente, actualizar periódicamente el metacanon, preservar procedencia, comparar contra lo ratificado y verificar publicación/lectura. Esta excepción acotada no elimina la custodia por ciclo en otros frentes ni autoriza cambios del metaprompt por iniciativa del modelo. La versión 1.7 conserva sus reglas literalmente; solo establece su autoridad y copia operativa.
+
+Compatibilidad: §§1–28, originales y antecedentes se conservan salvo las sustituciones expresas de 1.7; no se presume migración/recepción de todos los frentes. La instantánea 1.6 íntegra se conserva en `frentes/metodologia/antecedentes/METACANON-OBJETOS-v1.6.md`. Registro y fuentes de este bloque en `frentes/metodologia/cronica/C-METODOLOGIA-GOBIERNO-01.md`. No se modifica Notion, código, despliegues, dispositivos ni credenciales.

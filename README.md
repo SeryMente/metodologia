@@ -1,3 +1,11 @@
+# Entrada vigente — Ser y Mente
+
+**Comienza por [INICIO.md](INICIO.md).** Gobierno general: [Metaprompt Canónico de Samantha](gobernanza/METAPROMPT-CANONICO-SAMANTHA.md), v332 · NX-332m. Método: [Metacanon 1.7](METACANON-OBJETOS-CANONICOS.md), METACANON-OBJETOS-v1.7.
+
+La regla de autoridad de [gobernanza](gobernanza/README.md) prevalece sobre las referencias antiguas de esta página al SI como norma general y a formatos/gates de plataformas concretas. El material técnico se conserva por ámbito; no activa proyectos o herramientas por aparecer aquí. Sesión PRIUS y seguridad/cifrado quedan diferidos expresamente. Sincronización automática requerida, todavía no implementada. No se certifica portabilidad operativa completa ni adopción en todos los repositorios.
+
+---
+
 # Metodología
 
 Repositorio transversal de la organización **Ser y Mente** para desarrollar, conservar y evolucionar la metodología común de trabajo aplicable a sus repositorios.
@@ -8,7 +16,7 @@ Repositorio transversal de la organización **Ser y Mente** para desarrollar, co
 
 ## Estado actual
 
-La arquitectura canónica mantiene dos elementos principales: el **Sistema de Instrucciones basado en lista de principios en cascada**, que contiene los principios fundamentales ordenados por preponderancia, y la **Metodología con sus anexos**, que desarrolla procedimientos, contexto, mecanismos y soporte operativo.
+El gobierno general vigente es el **Metaprompt Canónico de Samantha**, espejado desde Notion. El **Metacanon de frentes** desarrolla el método de persistencia. Sesión PRIUS queda diferida explícitamente; no está activada. El Sistema de Instrucciones anterior es histórico como gobierno general.
 
 ## Punto de entrada transversal de contexto
 
@@ -18,7 +26,7 @@ Para cualquier conversación sujeta a esta metodología, el contexto operativo t
 
 **Orden mínimo de lectura:**
 
-1. [`SI-METACOGNITIVO.md`](SI-METACOGNITIVO.md) — norma canónica vigente.
+1. [`INICIO.md`](INICIO.md) y [`gobernanza/README.md`](gobernanza/README.md) — entrada y gobierno general vigente; SI-METACOGNITIVO.md es antecedente.
 2. [`METODOLOGIA.md`](METODOLOGIA.md) — desarrollo metodológico vigente.
 3. [`BOOTSTRAP-CONTEXTO-GLOBAL.md`](BOOTSTRAP-CONTEXTO-GLOBAL.md) — continuidad entre conversaciones.
 4. [`CANON-ENTORNO-PERSISTENTE-Y-LABORATORIOS.md`](CANON-ENTORNO-PERSISTENTE-Y-LABORATORIOS.md) — canon transversal obligatorio cuando la tarea involucre EP, WP-LAB, OGP o los flujos de acceso/secretos asociados.
@@ -127,11 +135,11 @@ Para el contrato completo del arranque en terminales efímeras de Cybernet, RDC,
 El anexo distingue evidencia actual de documentación histórica. La presencia de una carpeta no acredita una junction cifrada; el repositorio público conserva documentos y hashes no sensibles, nunca secretos, bases de datos, snapshots completos ni el ZIP propietario de Divi.
 
 
-## Objetos canónicos portables — marco temporal
+## Objetos canónicos portables — marco de frentes
 
-El procedimiento subordinado [METACANON-OBJETOS-CANONICOS.md](METACANON-OBJETOS-CANONICOS.md) define cómo crear objetos de contexto replicables para cualquier proyecto, preservar dictados originales como especificación, adquirir roles/instrucciones, comprobar delta y mantener viabilidad, evidencia y prompts de continuidad. Revisión vigente: [REVISION-METACANON-1.5.json](REVISION-METACANON-1.5.json); la revisión 1.0 queda como antecedente.
+El procedimiento subordinado [METACANON-OBJETOS-CANONICOS.md](METACANON-OBJETOS-CANONICOS.md) define cómo crear objetos de contexto replicables para cualquier proyecto, preservar dictados originales como especificación, adquirir roles/instrucciones, comprobar delta y mantener viabilidad, evidencia y prompts de continuidad. Revisión de este bloque: [REVISION-METACANON-1.7.json](REVISION-METACANON-1.7.json); revisiones 1.0–1.6 quedan como antecedentes.
 
-Marco temporal orientativo de un mes, sin infraestructura nueva ni modificación del Sistema de Instrucciones. Esta documentación no certifica productos, permisos o dispositivos y no fuerza herramientas/memoria en otras plataformas. Cada frente tiene una carpeta canónica con un objeto de estado y todos sus archivos. [Frente EP](frentes/ep/README.md) pertenece a este repositorio; Khora es referencia de código, no propietario del frente. La visibilidad de Metodología fue comprobada privada en este ciclo; revalidarla antes de cada carga de originales privados. Secretos nunca a Git.
+El horizonte de un mes es histórico, no caducidad automática. La versión 1.7 incorpora el gobierno general ratificado y arquitectura por directorios; no instala infraestructura nueva. Esta documentación no certifica productos, permisos o dispositivos y no fuerza herramientas/memoria en otras plataformas. Cada frente tiene una carpeta canónica con un objeto de estado y todos sus archivos. [Frente EP](frentes/ep/README.md) pertenece a este repositorio; Khora es referencia de código, no propietario del frente. La visibilidad de Metodología fue comprobada privada en este ciclo; revalidarla antes de cada carga de originales privados. Secretos nunca a Git.
 
 El proyecto de mantenimiento metodológico opera en un solo hilo y sin asistente separado; la excepción del metacanon §21 no cambia los dos roles de EP.
 

@@ -1,3 +1,5 @@
+> **ACTUALIZACIÓN DE GOBIERNO — C-METODOLOGIA-GOBIERNO-01.** El gobierno general vigente es el [Metaprompt Canónico de Samantha](gobernanza/METAPROMPT-CANONICO-SAMANTHA.md); fuente y precedencia en [gobernanza](gobernanza/README.md). Las referencias inferiores al SI como gobierno general y a gates de una plataforma son antecedentes o procedimientos de ámbito específico, no autoridades generales alternativas. El método de frentes vigente está en [METACANON-OBJETOS-CANONICOS.md](METACANON-OBJETOS-CANONICOS.md), 1.7. Los procedimientos previos se conservan sin modificar código ni eliminar protecciones de frentes. Entrada actual: [INICIO.md](INICIO.md).
+
 # Metodología
 
 ## Estado canónico
