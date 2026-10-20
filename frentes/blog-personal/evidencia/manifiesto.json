@@ -1,5 +1,5 @@
 {
-  "OBJETO-CANONICO.md": "dc3f643fcf72291c845a434a6221fea48722fabe05bc62581114488cd5a0d8f3",
+  "OBJETO-CANONICO.md": "8959e4cb37fca5b99f96ddf8deb0f1d05c734e08e3e2506b7c04854f73dd69fe",
   "README.md": "5cdd06009adeb2d4596016cd88b170afc555d7ada2472567449751aadf939989",
   "originales/U01-necesidad.txt": "d98ddf1b564752f5b2c9bdfcfbbf14052d47b7ecb6373b1a3833b30f9ec28161",
   "originales/U02-autorizacion.txt": "f143659f078927f6bce1f7c49c18175c1469d0d15f9b05cadd58527c87ba29e6",
@@ -46,5 +46,15 @@
   "originales/C-BLOG-015-cierre.md": "33ddbecbc447766a307646a6ffe53ca35c28ba7b3876c21bf0386e784c25a59b",
   "evidencia/C-BLOG-015/baseline-newtests.log": "7167d993a26a806608b1f02490ffe99d443df3cb0d99142d6cefd0e84bc7a6ca",
   "evidencia/C-BLOG-015/tests-final.log": "80d3c4d2d27033c278886721f8af7b32197defcf070ee5319bc59ca7379a1a9d",
-  "evidencia/C-BLOG-015/resultado.json": "99a578d8af402b37139d62b9a62b104e8d15a3e451ce81a88eafbb170c7a1945"
+  "evidencia/C-BLOG-015/resultado.json": "99a578d8af402b37139d62b9a62b104e8d15a3e451ce81a88eafbb170c7a1945",
+  "conversaciones/C-BLOG-8071-1344-1082.txt": "9c4551b980d0e793c030d6536edaa3651fa6cf07816ae5a3c624cd31d6a47149",
+  "conversaciones/C-BLOG-8071-1344-1340.txt": "d785d6179e62474970bf28e7fcbda22c1fca0c6b0e5058f7e81a5b0310c3e99a",
+  "conversaciones/C-BLOG-8071-1344-1344.txt": "019d1d30147b8f54099c67bf04df1c44b2774acc6fed3f24bb316c10c00cb266",
+  "evidencia/C-BLOG-8071-1344/resultado.json": "27923a5f5bce2f23a9f36cbddf528abc41101dea0e12c19e093b00bf666207d8",
+  "evidencia/C-BLOG-8071-1344/unit-retest.log": "d3f79b2347a65d1ef0dc1c73d931dab9829646fd5fea9d972a56ba860b9c066d",
+  "evidencia/C-BLOG-8071-1344/browser-retest.json": "f900546ec085cc3d669f8f7f5071f3b6fe002b3baceaf16ec625ef7c914bd68c",
+  "evidencia/C-BLOG-8071-1344/manifiesto-recibido.json": "848c5857d2da35b0aa0f8cb1c932a04194757eb93629bf42a0bb6bc10101dfa3",
+  "conversaciones/C-BLOG-8071-1344-procedencia.json": "666009e748aca1d4945ed78d95c2b745c502f07dee38b7290ff1164ee4365ef3",
+  "cronica/C-BLOG-8071-1344.md": "85f80baa57e800f5f109b3fcbd7aa068640d002305739031b16f777ad5e592d0",
+  "originales/C-BLOG-8071-1344-cierre.md": "2e68deacbe8a7eb38ad8b37ef5ad77ef8ebe4bf80c495152fa5347cf7514da7c"
 }
