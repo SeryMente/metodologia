@@ -1,0 +1,1 @@
+Cierre documental: BLOG-PERSONAL-v17 · C-BLOG-014 guardado y cotejado con Git. Evento1478 preservado con redacción declarada del código histórico de vinculación; historia y reportes centrales separados. Continúo únicamente el parche causal posterior de los dos archivos autorizados, sin UI, captura, proveedores ni despliegues.

@@ -1,5 +1,5 @@
 {
-  "OBJETO-CANONICO.md": "e4158d9d6d7fafdca6c24b7020bdda9554d3f1b5942edf1f49119b800b6270b3",
+  "OBJETO-CANONICO.md": "acd9f06722df641a790c80082bf84975d26c2a773e512877f1ef452d22620922",
   "README.md": "5cdd06009adeb2d4596016cd88b170afc555d7ada2472567449751aadf939989",
   "originales/U01-necesidad.txt": "d98ddf1b564752f5b2c9bdfcfbbf14052d47b7ecb6373b1a3833b30f9ec28161",
   "originales/U02-autorizacion.txt": "f143659f078927f6bce1f7c49c18175c1469d0d15f9b05cadd58527c87ba29e6",
@@ -25,5 +25,19 @@
   "evidencia/C-BLOG-011/objeto-anterior-v13.md": "9ee4f93b10959412a5f3c3c657542403bff9b745c8818a147c231f7b26f5846d",
   "evidencia/C-BLOG-011/manifiesto-anterior.json": "c3f40265c1662c0f7795bfec40840bb180ec8645de9671c94e8a59f9f272e1fd",
   "evidencia/C-BLOG-011/cobertura-manifiesto.json": "a31c7de56fc2678bc2a9ebcd8b4bb9b87507cf9b0f5fffc4c996a3dccd11ab1b",
-  "originales/C-BLOG-011-recibo-central.txt": "793e42063c6671981c0eca9245f477d4e05bdd00f6263d8358fa403ba757bf30"
+  "originales/C-BLOG-011-recibo-central.txt": "793e42063c6671981c0eca9245f477d4e05bdd00f6263d8358fa403ba757bf30",
+  "conversaciones/C-BLOG-014-central-1478.txt": "b7e2d6fb55ec8199ee8f44a4184aeb47f35e82e3d2673fa17e7b12816a64baac",
+  "conversaciones/C-BLOG-014-central-1478.procedencia.json": "9505621ab6a87d0d0746d8fb81f37330247f29b5c91c3d9e2cdc3f3614a6f3a2",
+  "originales/C-BLOG-014-encargo.txt": "d0ff6f0168e6e92936c2ac27d037df54ee54ab2e19f2c09e5fef9a603edbacf0",
+  "originales/C-BLOG-014-reporte-central-actual.txt": "60072f49028b3246d3f383b1f42788d4034e94d8ddbac8756685073f695e624e",
+  "originales/C-BLOG-014-comentario-asistente.txt": "bb01c92c92836f8cf2cdc78468ac0283e88cd9c6b5746e9ab02cf7ac3ad0ef85",
+  "originales/C-BLOG-014-cierre.md": "10db0670e74e0a2f67c72413a9e7ec54859123bdf7ab59426f04fb355cfc4b89",
+  "cronica/C-BLOG-014.md": "57f68912e25a67fcd6264a30873073afaaf2fa850266e6a998fc7b11cbb7eff1",
+  "evidencia/C-BLOG-014/objeto-anterior-v16.md": "80a27247f688dc2890dede66aa9189f55e8ff8a178fe3a1be90327d612f81656",
+  "evidencia/C-BLOG-014/manifiesto-anterior.json": "c28600fa4b610df22b61356f95f196443207cb0ec857fe55d48b8405f17df94f",
+  "evidencia/C-BLOG-014/trayectoria-reportada.json": "750b4f69869cfeb0dd3f8ac1bd93e98f1df5e763a9e98ceae898a709e1d84cb3",
+  "evidencia/C-BLOG-014/procedencia-y-cobertura.md": "a1cbe1e6f5fbf8bcaba169e6b935221ad8dde38e8cc0d244a0fd91de585f6581",
+  "evidencia/C-BLOG-014/gobierno-adquirido.json": "9a0967cff9f9dfebc0266c4f28e8ad36f951693443898222c9a981b474f1a1d2",
+  "evidencia/C-BLOG-014/verificacion-documental.json": "6f610bb538235b853e246c9abaf124be565da757325f4e710a19849e29aad76e",
+  "originales/C-BLOG-014-orden-tecnica-posterior.txt": "df8341b5ad649d7c9f2465d7f49588a9e82e81758957fe9a893ab73b06aa4453"
 }

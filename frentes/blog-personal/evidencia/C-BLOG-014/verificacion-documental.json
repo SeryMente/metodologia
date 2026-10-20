@@ -1,0 +1,25 @@
+{
+  "cycle": "C-BLOG-014",
+  "version": "BLOG-PERSONAL-v17",
+  "baseCommit": "e09818592f3f9f9e79e280fd8d5d04e2bd05f32e",
+  "sourceEvent": 1478,
+  "sourceRawSha256": "6888617b2f23bbb5df313841323f5bacb13d24b52d9bcdf1ab7e961ef23c29a6",
+  "sourcePersistedSha256": "b7e2d6fb55ec8199ee8f44a4184aeb47f35e82e3d2673fa17e7b12816a64baac",
+  "sourceRedactionCount": 3,
+  "checks": {
+    "13sections_order": true,
+    "source_event1478_not1468": true,
+    "redactions_reversible_in_local_source_only": true,
+    "no_auth_code_in_payload": true,
+    "previous_v16_preserved": true,
+    "history_not_rerun": true,
+    "only_front_docs_paths": true
+  },
+  "productTestsExecuted": false,
+  "runtimeQueriedByBlog": false,
+  "nativeNotionSourceAccessible": false,
+  "mirrorAcquired": "v333 NX-333m",
+  "methodAcquired": "1.8 METACANON-OBJETOS-v1.8",
+  "manifestCoverage": "complete current delta, historical inherited entries not revalidated",
+  "readback": "required after commit, not claimed yet in this preflight record"
+}
