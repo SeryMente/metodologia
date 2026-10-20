@@ -27,3 +27,7 @@ Estado único y pendientes en METACANON-OBJETOS-CANONICOS.md §9. Próximo paso:
 ## Salida conservada
 
 Texto final exacto preparado en [salida](../conversaciones/C-METODOLOGIA-GOBIERNO-01-salida.md). Si falla la publicación o el cotejo, no emitirlo como éxito: declarar cierre documental incompleto y conservar el checkpoint local.
+
+## Recibo de publicación y cotejo
+
+Revisión publicada y comprobada: `bf113b51c8c9bfda32a0603be84daff67bf505a2`. Los 19 archivos coinciden por huellas Git; metacanon íntegro leído de vuelta y comparado con el contenido esperado. [Recibo](../evidencias/C-METODOLOGIA-GOBIERNO-01-readback.json). Esto acredita el primer bloque documental, no las pruebas operativas pendientes.

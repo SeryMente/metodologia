@@ -1,0 +1,133 @@
+{
+  "cycle": "C-METODOLOGIA-GOBIERNO-01",
+  "verified_commit": "bf113b51c8c9bfda32a0603be84daff67bf505a2",
+  "verification": "19 rutas leídas por SHA de commit y cotejadas por Git blob; cuerpo íntegro del metacanon leído de vuelta y comparado byte a byte; cuerpo del metaprompt recuperado por la misma revisión y blob coincidente con fuente Notion; no es una prueba de sincronización automática o recepción de otros agentes.",
+  "checks": {
+    "gobernanza/METAPROMPT-CANONICO-SAMANTHA.md": {
+      "blob_sha": "d84d17b597ad5b7be584f98bac9be7001b4d64cd",
+      "sha256": "57ab317fb3c5033292101aadc7796dcbf123f30e197fd0253ba34c596690461f",
+      "bytes": 40025,
+      "match": true
+    },
+    "gobernanza/antecedentes/CANON-SESION-PRIUS-v0.25.md": {
+      "blob_sha": "c7b626953dd0761764af401f80cab396377f9eb4",
+      "sha256": "0eb98cc74f1a7d6602d171478f44b6574aa8f237c49305420c9d418b4d2511b0",
+      "bytes": 40915,
+      "match": true
+    },
+    "gobernanza/METAPROMPT-CANONICO-SAMANTHA.fuente.json": {
+      "blob_sha": "b91844332c7068e5e323ee433ef2a53e5a87f108",
+      "sha256": "8898e1b4fa927bddbd09ed6afa786ceeac2e1eca402df0e262312725d45610a3",
+      "bytes": 1382,
+      "match": true
+    },
+    "gobernanza/README.md": {
+      "blob_sha": "b904d434c0dd62797eb1bbd73a927da7eff27a82",
+      "sha256": "3f9dcd9c7409a5d28ed151625a3b6e73d7177127910ad42afaf4274dd22c2add",
+      "bytes": 2735,
+      "match": true
+    },
+    "frentes/metodologia/antecedentes/METACANON-OBJETOS-v1.6.md": {
+      "blob_sha": "8f9ad1cf0e09e5fcd7014190770a77294ff39af4",
+      "sha256": "dab6680cbcdb6530e4616f8b13d1e0d5f1ff0885508203d1c5eac22fd86250ee",
+      "bytes": 71603,
+      "match": true
+    },
+    "METACANON-OBJETOS-CANONICOS.md": {
+      "blob_sha": "63a224391ed70e57522d26886203aae0be223ebb",
+      "sha256": "c73df1fb8f72a596d21a81bee001bd6f1198cf8934a9703a07769234a3af26a6",
+      "bytes": 81978,
+      "match": true
+    },
+    "INICIO.md": {
+      "blob_sha": "716ce9cfbfd3ecfeeff5a9891542594e8d959fe9",
+      "sha256": "d3dd693474d381d9a298097cba1438fbb44575cf7aee691632f6dc285a421ae8",
+      "bytes": 2328,
+      "match": true
+    },
+    "frentes/metodologia/antecedentes/ANCLA.md": {
+      "blob_sha": "eb50d7175211e79bcf8bfed98ebf83f12164d40f",
+      "sha256": "2f0eae96287e5ffe8cf8601b235ca23bbf6f89f9aece64f564a5093080b1efc6",
+      "bytes": 2863,
+      "match": true
+    },
+    "frentes/metodologia/antecedentes/BOOTSTRAP-CONTEXTO-GLOBAL.md": {
+      "blob_sha": "8c7370768f34fff8a533d20a801ab028439fae00",
+      "sha256": "ab916f8d31a182f255d768e09941c1a24af874b38d1f89a5d573dcc1391bdc56",
+      "bytes": 17422,
+      "match": true
+    },
+    "ANCLA.md": {
+      "blob_sha": "56e2884efc54078ac88046bc8ae980ae85dc6430",
+      "sha256": "015fef084b3d43fe15e4ecbb32619deaf99b8695f8ad1436caf6d61c3dc24321",
+      "bytes": 1295,
+      "match": true
+    },
+    "BOOTSTRAP-CONTEXTO-GLOBAL.md": {
+      "blob_sha": "eff2a8fc6009ff3bf38bf4f42c50052f2b3023e1",
+      "sha256": "1b05b879b099a92682aaf68d6696d87909019f4e5f68446651a8f6613315f86a",
+      "bytes": 1712,
+      "match": true
+    },
+    "SI-METACOGNITIVO.md": {
+      "blob_sha": "1c1e8746d70807ad3274bf98f723f08915585efe",
+      "sha256": "ad24ba49da02d384daccb136bb3a535c5e508ea676d4987b74af089171251daf",
+      "bytes": 42753,
+      "match": true
+    },
+    "METODOLOGIA.md": {
+      "blob_sha": "6203e7220883d95ad19a4712f5086cce74872738",
+      "sha256": "933a939d8272f6965f30bfbb8b4907ef653637539d832e77cc3f7df7bf4974d4",
+      "bytes": 52653,
+      "match": true
+    },
+    "GLOSARIO-OPERATIVO.md": {
+      "blob_sha": "c970fef36c24f2df50ee44786740af77ebb36037",
+      "sha256": "5c008693dfa16c9e58a614218d2be68538a27ef5dd6482caa6c1927f711430da",
+      "bytes": 16178,
+      "match": true
+    },
+    "README.md": {
+      "blob_sha": "d8860d40b7bb8e2db734d2de542d023ad1b91528",
+      "sha256": "42fd072ed21f1518b817758caed111ed2753d45e8081f3a3fa4f2b912045a4e7",
+      "bytes": 14058,
+      "match": true
+    },
+    "frentes/metodologia/conversaciones/C-METODOLOGIA-GOBIERNO-01.json": {
+      "blob_sha": "49f4cc49f3c35297317f738fd462e15b4cf0733b",
+      "sha256": "3fcbfc900a031d30575d9e776baf434c17858d5cddf96f12e8daf7e363ddc058",
+      "bytes": 8321,
+      "match": true
+    },
+    "frentes/metodologia/conversaciones/C-METODOLOGIA-GOBIERNO-01-salida.md": {
+      "blob_sha": "57477f39e3b50b6ad9fbab90914b11d715bf1320",
+      "sha256": "50bfc1b2a633a93a53df3dc476cbe7ff7a6adc9712781a597aa22dad58f11464",
+      "bytes": 1366,
+      "match": true
+    },
+    "frentes/metodologia/cronica/C-METODOLOGIA-GOBIERNO-01.md": {
+      "blob_sha": "09e2be593348510743c96a496e2b3fb3b1677983",
+      "sha256": "3051a66601c2f1683d0a6e197da908ef0191b96a071b58cd2c31b4b1e0693151",
+      "bytes": 3724,
+      "match": true
+    },
+    "REVISION-METACANON-1.7.json": {
+      "blob_sha": "71931b46a2284a7db601fb0d761f95bf774b1688",
+      "sha256": "ad12592c15b393810fe0f1b1a2530d794064fb060fddf15e9d1ed8b95b94b9fa",
+      "bytes": 3294,
+      "match": true
+    }
+  },
+  "remote_read_events": [
+    370,
+    371,
+    372,
+    373,
+    374,
+    375,
+    381,
+    382,
+    383
+  ],
+  "result": "COINCIDENCIA DE LOS 19 ARCHIVOS"
+}
