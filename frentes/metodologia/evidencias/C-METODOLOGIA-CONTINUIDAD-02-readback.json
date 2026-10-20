@@ -1,0 +1,63 @@
+{
+  "cycle": "C-METODOLOGIA-CONTINUIDAD-02",
+  "verified_commit": "f82eb1fd9cb7ed79df06e0d460fb2dccd8ec6dde",
+  "source_read_events": [
+    840,
+    841,
+    842,
+    843,
+    844,
+    845,
+    846,
+    847,
+    848
+  ],
+  "git_blobs_match": {
+    "CONTINUIDAD-ENTRE-CONVERSACIONES.md": "9420c1bfe3e6492841fd6d180ed65a721c2b13e9",
+    "PROMPT-UNIVERSAL-REINSTANCIACION.md": "67c946b47ff8c3a7a00a64b240b620c0e73968a5",
+    "INICIO.md": "4ea3c9e56f893a131a5f94031cdfa1b24abb1b5a",
+    "METACANON-OBJETOS-CANONICOS.md": "8bc5d7c900ec4bca9fd3131bb635746b50cec1e5",
+    "REVISION-METACANON-1.8.json": "8a82b5375b69b773a7dfd66a0c9b665acba196b9",
+    "gobernanza/GLOSARIO-WORKSPACE.fuente.json": "5b9d02aee8936063504a4e111a6512fdb87c0de2",
+    "gobernanza/GLOSARIO-WORKSPACE.md": "dad209451aa2acfb67ba134bfc3fb41c2a40e789",
+    "gobernanza/METAPROMPT-CANONICO-SAMANTHA.fuente.json": "9723f26e65139e961708c4304170d7689a36d388",
+    "gobernanza/METAPROMPT-CANONICO-SAMANTHA.md": "e964afa3d50b60980f870016ee7a597db3e5caf2",
+    "gobernanza/README.md": "0ea4f0abcb83825ff84296546ba28355972ddf33",
+    "frentes/metodologia/PENDIENTES.md": "0da063c29d6c1b819e431fd4b54e1ccad396fbc4",
+    "frentes/metodologia/conversaciones/C-METODOLOGIA-CONTINUIDAD-02-salida-final.md": "5d901f20cf71718183242fa65671380997adaa05",
+    "frentes/metodologia/conversaciones/C-METODOLOGIA-CONTINUIDAD-02-salida-taxonomia.md": "1558748743bb9f5b3baefee1d3cd7f147483a758",
+    "frentes/metodologia/conversaciones/SESION-3ff5-dialogo-000023-000542.jsonl": "b1e7dcdc87bf38d69a60b0f95b2eff1c9980329b",
+    "frentes/metodologia/evidencias/CONTINUIDAD-preservacion-samantha.json": "c874679d96e8594b330ccc270b39d57f9e3eeb1a",
+    "frentes/metodologia/evidencias/SESION-3ff5-cobertura.json": "18bb7c721663209112ceea1188abddece2325a07",
+    "frentes/metodologia/evidencias/SESION-3ff5-matriz-notas.json": "8fd9b945e707a638ac0f4ccb54e40e217117e024",
+    "frentes/metodologia/cronica/C-METODOLOGIA-CONTINUIDAD-02.md": "c1697cffa2e0be96c3bf17d6adc408450b549ff0",
+    "frentes/metodologia/pruebas/continuidad/ensayo.py": "15d225a0ab30acbd032d50f293ecb8b64640eb61",
+    "frentes/metodologia/pruebas/continuidad/resultado.json": "7d82443aabcf7a6b670dfa9aa7942f199a2d84c0"
+  },
+  "whole_body_checks": [
+    {
+      "path": "frentes/metodologia/conversaciones/SESION-3ff5-dialogo-000023-000542.jsonl",
+      "whole_body_equal": true
+    },
+    {
+      "path": "METACANON-OBJETOS-CANONICOS.md",
+      "whole_body_equal": true
+    }
+  ],
+  "originals_text_hashes_verified": 51,
+  "direct_user_originals": 22,
+  "visible_assistant_originals": 29,
+  "notes_mapping_covered_user_entries": 22,
+  "source_MP": "v333 · NX-333m",
+  "source_MP_last_edited": 1792461532084,
+  "previous_principles_preserved": 34,
+  "new_principles": 1,
+  "mechanical_tests": "33/33 + repetibilidad",
+  "not_verified": [
+    "comprensión semántica por otro modelo",
+    "captura automática de mensajes futuros",
+    "sincronización perpetua",
+    "reparación ajuste de personalización Notion",
+    "portabilidad total"
+  ]
+}
