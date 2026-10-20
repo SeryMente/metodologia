@@ -31,3 +31,7 @@ Resultado mecánico: 33/33 escenarios pasan en la variante final; repetibilidad 
 ## Diferidos y límites
 
 La sincronización automática aplicación → repositorio continúa sin implementación acreditada; los espejos de este ciclo son copias puntuales. Seguridad/cifrado y revisión de Sesión PRIUS permanecen diferidos explícitos. Esta mejora no activa PRIUS ni modifica los permisos de seguridad. El aligeramiento físico del metacanon y la adquisición de todas las dependencias Notion siguen pendientes; no se declara portabilidad total.
+
+## Endurecimiento1.9
+
+Aplicar §35: demostrar retoma desde fuentes, verificar bloques completos y acción contra autorización; detener solo la dependencia no adquirida. Distinguir copia offline, original, estado confirmado y efecto incierto. El verificador0.1.1 toma la versión real del método y comprueba el gobierno completo contra la huella de origen suministrada. Huellas y procesos aislados no acreditan semántica ni autoría de una referencia no confiable. No activar cifrado, PRIUS, observador o sincronización por esta mejora.

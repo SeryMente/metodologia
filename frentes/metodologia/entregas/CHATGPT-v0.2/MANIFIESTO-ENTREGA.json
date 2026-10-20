@@ -1,0 +1,416 @@
+{
+  "delivery_version": "0.2",
+  "method_version": "1.9",
+  "base_revision": "473db6d7e261867e5a0142b4e0bcb2f6d478d0b4",
+  "provenance": "base adquirida más delta C-METODOLOGIA-ENDURECIMIENTO-09; no commit de publicación futuro",
+  "state_revision": "C-METODOLOGIA-ENDURECIMIENTO-09-r1",
+  "government_version": "333",
+  "government_sha256": "02a9cacb78f4dc0cd86a819593e931dcf45b84f3ed310569a0b592e0b579c6ed",
+  "government_modified": false,
+  "source_scope": "73 fuentes recuperadas al corte08 más delta09; no workspace completo",
+  "delta_paths": [
+    "METACANON-OBJETOS-CANONICOS.md",
+    "INICIO.md",
+    "frentes/metodologia/PENDIENTES.md",
+    "PROMPT-UNIVERSAL-REINSTANCIACION.md",
+    "CONTINUIDAD-ENTRE-CONVERSACIONES.md",
+    "frentes/metodologia/kit/0.1.1/continuidad.cjs",
+    "frentes/metodologia/kit/0.1.1/laboratorio.cjs",
+    "frentes/metodologia/kit/0.1.1/especificacion.json",
+    "frentes/metodologia/kit/0.1.1/README.md",
+    "frentes/metodologia/kit/0.1.1/RECIBO-GOBIERNO.md",
+    "frentes/metodologia/kit/0.1.1/ARRANQUE-PROMPT.txt",
+    "frentes/metodologia/conversaciones/C-METODOLOGIA-ENDURECIMIENTO-09-dialogo.jsonl",
+    "frentes/metodologia/fuentes/MOTOR-1C-portable-ciclo09.md",
+    "frentes/metodologia/fuentes/MOTOR-1C-portable-ciclo09.procedencia.json",
+    "frentes/metodologia/fuentes/MEMORIA-OPERATIVA-ciclo09.md",
+    "frentes/metodologia/entregas/CHATGPT-v0.2/LEEME.md",
+    "frentes/metodologia/entregas/CHATGPT-v0.2/PROMPT-ENTRADA.txt",
+    "frentes/metodologia/pruebas/endurecimiento/C-METODOLOGIA-ENDURECIMIENTO-09.json",
+    "frentes/metodologia/pruebas/endurecimiento/C-METODOLOGIA-ENDURECIMIENTO-09-laboratorio.json",
+    "frentes/metodologia/trazabilidad/C-METODOLOGIA-ENDURECIMIENTO-09.md",
+    "frentes/metodologia/cronica/C-METODOLOGIA-ENDURECIMIENTO-09.md"
+  ],
+  "files": {
+    "ARRANQUE-PORTABLE-v0.2.md": {
+      "sha256": "a949e0430bff5db32dcccac47d5a4d18c83c0ebcb6be07a783c2b5f06a65bb66",
+      "bytes": 166839
+    },
+    "PROMPT-ENTRADA.txt": {
+      "sha256": "6e4b2f4672f02eb2f1dc046f8c695b4793234c4e664d5a34dcd012c3850fbcf9",
+      "bytes": 1156
+    },
+    "LEEME.md": {
+      "sha256": "ceb9ab45ea342d7c0881f34ded65a3532d3ad49065122bb1444958dd86367eee",
+      "bytes": 1801
+    },
+    "fuentes/INICIO.md": {
+      "sha256": "9bc7342698a655e8c48f46ed5422744377ddbae5e854b2889383551ae4844938",
+      "bytes": 3199
+    },
+    "fuentes/GLOSARIO-OPERATIVO.md": {
+      "sha256": "5c008693dfa16c9e58a614218d2be68538a27ef5dd6482caa6c1927f711430da",
+      "bytes": 16178
+    },
+    "fuentes/CONTINUIDAD-ENTRE-CONVERSACIONES.md": {
+      "sha256": "f3c540ead9e08fe543e4ed2ea6df45ff67b1c3651f8fea2a65632d4e0ebf8452",
+      "bytes": 5516
+    },
+    "fuentes/METACANON-OBJETOS-CANONICOS.md": {
+      "sha256": "ac074da79f9141a7f7583d27d7dc1fa7135da13d5a612db3b89dc2c55dc4fc22",
+      "bytes": 91677
+    },
+    "fuentes/PROMPT-UNIVERSAL-REINSTANCIACION.md": {
+      "sha256": "e98aa8bcaaeec3f43725907e49d453a21ea7d8afcf05d38bea093d2d24898a2d",
+      "bytes": 4195
+    },
+    "fuentes/gobernanza/GLOSARIO-WORKSPACE.md": {
+      "sha256": "30f51645f7f3f12a1a9da412a458cc57ddf61dde3ffd9eb9d6019a61bb2a133d",
+      "bytes": 56075
+    },
+    "fuentes/gobernanza/METAPROMPT-CANONICO-SAMANTHA.fuente.json": {
+      "sha256": "5ada66732b19ee031e55bfd5913bd3d392db6a9494a4009943546b74d2380cf1",
+      "bytes": 747
+    },
+    "fuentes/gobernanza/METAPROMPT-CANONICO-SAMANTHA.md": {
+      "sha256": "02a9cacb78f4dc0cd86a819593e931dcf45b84f3ed310569a0b592e0b579c6ed",
+      "bytes": 42523
+    },
+    "fuentes/gobernanza/README.md": {
+      "sha256": "82e631387009e097f04faea31bba112ac9622d86e0a7c0382d9e83323e2155ba",
+      "bytes": 3326
+    },
+    "fuentes/frentes/metodologia/PENDIENTES.md": {
+      "sha256": "6011998445de41a6e907d1bccf8d77c90770c8817d054f617c40a3f08d16ad6c",
+      "bytes": 16098
+    },
+    "fuentes/frentes/metodologia/antecedentes/ANCLA.md": {
+      "sha256": "2f0eae96287e5ffe8cf8601b235ca23bbf6f89f9aece64f564a5093080b1efc6",
+      "bytes": 2863
+    },
+    "fuentes/frentes/metodologia/antecedentes/BOOTSTRAP-CONTEXTO-GLOBAL.md": {
+      "sha256": "ab916f8d31a182f255d768e09941c1a24af874b38d1f89a5d573dcc1391bdc56",
+      "bytes": 17422
+    },
+    "fuentes/frentes/metodologia/antecedentes/METACANON-OBJETOS-v1.6.md": {
+      "sha256": "dab6680cbcdb6530e4616f8b13d1e0d5f1ff0885508203d1c5eac22fd86250ee",
+      "bytes": 71603
+    },
+    "fuentes/frentes/metodologia/conversaciones/C-METODOLOGIA-BENCHMARK-03-primer-corte.jsonl": {
+      "sha256": "5828a65bc08b76217c031509636fa52502302305780e6d3e3a61a795b100d1cc",
+      "bytes": 3576
+    },
+    "fuentes/frentes/metodologia/conversaciones/C-METODOLOGIA-BENCHMARK-03-segmento-1005-1012.jsonl": {
+      "sha256": "2e6e65ec7759d0c4b4e7daa4e11520737c40ccdc7dd373b530db63d8e540f0ee",
+      "bytes": 1574
+    },
+    "fuentes/frentes/metodologia/conversaciones/C-METODOLOGIA-CONTINUIDAD-02-entradas.json": {
+      "sha256": "4c3204a51bd807f3aa0d394b8102fa808b1a90e5abc2c33521b0abcf69b06fa3",
+      "bytes": 1427
+    },
+    "fuentes/frentes/metodologia/conversaciones/C-METODOLOGIA-CONTINUIDAD-02-plataformas.json": {
+      "sha256": "5c5797a9a514a86a373daa30d13700839ab45704dd589851e88621021717d286",
+      "bytes": 1044
+    },
+    "fuentes/frentes/metodologia/conversaciones/C-METODOLOGIA-CONTINUIDAD-02-salida-final.md": {
+      "sha256": "c44055c434ba8a469b2ed198bda0625880b5e7822f0a4e5361ec271ed4ed2e5b",
+      "bytes": 1617
+    },
+    "fuentes/frentes/metodologia/conversaciones/C-METODOLOGIA-CONTINUIDAD-02-salida-taxonomia.md": {
+      "sha256": "c4b752ac77c577c49da4147f63e745700afe2995cc4315444bdf8914b8644fb0",
+      "bytes": 193
+    },
+    "fuentes/frentes/metodologia/conversaciones/C-METODOLOGIA-GOBIERNO-01-salida.md": {
+      "sha256": "50bfc1b2a633a93a53df3dc476cbe7ff7a6adc9712781a597aa22dad58f11464",
+      "bytes": 1366
+    },
+    "fuentes/frentes/metodologia/conversaciones/C-METODOLOGIA-GOBIERNO-01.json": {
+      "sha256": "3fcbfc900a031d30575d9e776baf434c17858d5cddf96f12e8daf7e363ddc058",
+      "bytes": 8321
+    },
+    "fuentes/frentes/metodologia/conversaciones/C-METODOLOGIA-IMPLEMENTACION-06-cierre.jsonl": {
+      "sha256": "5d9d612a45d6068446803b91c0e940af299ed9bcc0b7194b75ded76fc9b2046a",
+      "bytes": 3026
+    },
+    "fuentes/frentes/metodologia/conversaciones/C-METODOLOGIA-IMPLEMENTACION-06-dialogo.jsonl": {
+      "sha256": "37c428548ef84c3be5377e92b00ec3ccba6985916cdfcdf6663d4a76b412c172",
+      "bytes": 6670
+    },
+    "fuentes/frentes/metodologia/conversaciones/C-METODOLOGIA-IMPLEMENTACION-06-salida.md": {
+      "sha256": "1b615511a8d047e5ce68a2b02112090fb830c53d89efb675a55c34319972d999",
+      "bytes": 2694
+    },
+    "fuentes/frentes/metodologia/conversaciones/C-METODOLOGIA-RETOMA-05-adjunto.txt": {
+      "sha256": "4337eee0f4ad1dbc544ccabdadf034e2dbde5853ef157489da3b3db0cafc03eb",
+      "bytes": 54565
+    },
+    "fuentes/frentes/metodologia/conversaciones/C-METODOLOGIA-RETOMA-05-dialogo.jsonl": {
+      "sha256": "884d92d319403f46ee0306d40a52d084d80db10216fc18c8fc99719e461de9b4",
+      "bytes": 10907
+    },
+    "fuentes/frentes/metodologia/conversaciones/C-METODOLOGIA-RETOMA-05-salida.md": {
+      "sha256": "dcdb368d075454a6212aa6f52f6a2ea85dcd361df25e33266fbbb566d9ebe71b",
+      "bytes": 1880
+    },
+    "fuentes/frentes/metodologia/conversaciones/C-METODOLOGIA-TRAZABILIDAD-04-1164-1166.jsonl": {
+      "sha256": "05bd3f49c069b6c40054f73da1ba111f258ebaf854aca6754a50d999fcb9095e",
+      "bytes": 6233
+    },
+    "fuentes/frentes/metodologia/conversaciones/C-METODOLOGIA-VALIDACION-07-dialogo.jsonl": {
+      "sha256": "dd74fd8f9af0d4c46bf847afd4a5c2d808ffb42fd720eb8a20b86911022a0423",
+      "bytes": 1741
+    },
+    "fuentes/frentes/metodologia/conversaciones/C-METODOLOGIA-VALIDACION-07-salida.md": {
+      "sha256": "03221a857e307500cd0f7a4c5e44f91c7fc5309fc607451bdd05e4b6586a893b",
+      "bytes": 944
+    },
+    "fuentes/frentes/metodologia/conversaciones/SESION-3ff5-entradas-000023-000535.jsonl": {
+      "sha256": "1b333b86ffffd49b362eb4448d951fc09b94cf8b1108118aa74190ad1d89e355",
+      "bytes": 20062
+    },
+    "fuentes/frentes/metodologia/conversaciones/SESION-3ff5-dialogo-000023-000542.jsonl": {
+      "sha256": "d06ccfd406b5186153c225c0abfb444c99e007301a6f90642c7731e2802e2a2f",
+      "bytes": 68959
+    },
+    "fuentes/frentes/metodologia/conversaciones/C-METODOLOGIA-CHATGPT-08-dialogo.jsonl": {
+      "sha256": "1ab68c1da77f37ba95db237e404d39cd4ba74f1d20882f6f6d158f28c94580eb",
+      "bytes": 4459
+    },
+    "fuentes/frentes/metodologia/conversaciones/C-METODOLOGIA-CHATGPT-08-salida.md": {
+      "sha256": "92bf03a66930a061847444a36a92ab89434dd5f9335eae5c057def6cd004c62a",
+      "bytes": 2540
+    },
+    "fuentes/frentes/metodologia/conversaciones/C-METODOLOGIA-CHATGPT-08-cierre.jsonl": {
+      "sha256": "141d59f0e9e8cafd438635094d909ab1bb4b23acde79187df27471c00e31467a",
+      "bytes": 2743
+    },
+    "fuentes/frentes/metodologia/conversaciones/C-METODOLOGIA-ENDURECIMIENTO-09-dialogo.jsonl": {
+      "sha256": "88e61baf9c428fb9b24904da9e1df4599ed5eadac73f136be8db782d5280f995",
+      "bytes": 2917
+    },
+    "fuentes/frentes/metodologia/cronica/C-METODOLOGIA-CONTINUIDAD-02.md": {
+      "sha256": "c889e1dade7cf8f968313af95063c8b01fc851fbc9222a9518cc58d9e65e6fe4",
+      "bytes": 1800
+    },
+    "fuentes/frentes/metodologia/cronica/C-METODOLOGIA-GOBIERNO-01.md": {
+      "sha256": "c04da76bb422d7eb56acdc906d1b101a5b07523e236ae495b23ebaaa5c7f04d0",
+      "bytes": 4103
+    },
+    "fuentes/frentes/metodologia/cronica/C-METODOLOGIA-IMPLEMENTACION-06.md": {
+      "sha256": "b0b263d754a4d5ef9dd563ba072234038a281c98fbf456d17b1e65d780c8dc85",
+      "bytes": 3898
+    },
+    "fuentes/frentes/metodologia/cronica/C-METODOLOGIA-RETOMA-05.md": {
+      "sha256": "adbfbd4752a85fc169f222f048afd16d5ea3d131a3ceb1232602d4ae8e4aa51b",
+      "bytes": 4455
+    },
+    "fuentes/frentes/metodologia/cronica/C-METODOLOGIA-VALIDACION-07.md": {
+      "sha256": "4a92fc575a2ad0100f5d19947d21c4553b578f4c0d9f6d57f668ab4d6410354f",
+      "bytes": 1103
+    },
+    "fuentes/frentes/metodologia/cronica/C-METODOLOGIA-CHATGPT-08.md": {
+      "sha256": "d80dbe12ea2117b0f5e63cee756de4982902a6f763816103d437a648d27cc31a",
+      "bytes": 1571
+    },
+    "fuentes/frentes/metodologia/cronica/C-METODOLOGIA-ENDURECIMIENTO-09.md": {
+      "sha256": "bce1074f7a4057271a7783862dad13c3856abda0dcefe20626546761bb008340",
+      "bytes": 1434
+    },
+    "fuentes/frentes/metodologia/evidencias/C-METODOLOGIA-CONTINUIDAD-02-readback.json": {
+      "sha256": "4f10019a86095a35f235e43396e4ef315e087c49d32356a200e6c08714b1f442",
+      "bytes": 3051
+    },
+    "fuentes/frentes/metodologia/evidencias/C-METODOLOGIA-GOBIERNO-01-readback.json": {
+      "sha256": "ca83818eb3502753d86fd6dc12650d4e4fb0f2889323fb5caa9551c7a09a6e76",
+      "bytes": 5176
+    },
+    "fuentes/frentes/metodologia/evidencias/C-METODOLOGIA-IMPLEMENTACION-06-config-r2.json": {
+      "sha256": "32cea38f6f7d9b1643fb5ae6e9a5b77d3991687737848941678d81e35c13a054",
+      "bytes": 1141
+    },
+    "fuentes/frentes/metodologia/evidencias/C-METODOLOGIA-IMPLEMENTACION-06.json": {
+      "sha256": "ae425df06676484c5ca8845d618a5c60ee880d08ca30f2dab88527b10de40051",
+      "bytes": 5189
+    },
+    "fuentes/frentes/metodologia/evidencias/C-METODOLOGIA-RETOMA-05.json": {
+      "sha256": "0e28e3ce16ed2a7386a4987bc36cc247817d0016136f85f9a2c8b2a799ee7c85",
+      "bytes": 5350
+    },
+    "fuentes/frentes/metodologia/evidencias/C-METODOLOGIA-VALIDACION-07.json": {
+      "sha256": "4b8ebd8680f7873f30da878de9aa3c9ae99eabafd231a3bfe1812843ff561498",
+      "bytes": 1588
+    },
+    "fuentes/frentes/metodologia/evidencias/CONTINUIDAD-preservacion-samantha.json": {
+      "sha256": "b53bb134767af75db1e99cec32b85d1c374afc092fb91664f23d902122c27a27",
+      "bytes": 527
+    },
+    "fuentes/frentes/metodologia/evidencias/SESION-3ff5-cobertura.json": {
+      "sha256": "d9121bfcac8fcf9530fd54c35b27a2317cf581ca7b4c732f343d58aac7e2600c",
+      "bytes": 2398
+    },
+    "fuentes/frentes/metodologia/evidencias/SESION-3ff5-matriz-notas.json": {
+      "sha256": "9075e517c5cec1122a8de74b93468358d9045868288b011b441c1a9436242423",
+      "bytes": 1487
+    },
+    "fuentes/frentes/metodologia/evidencias/C-METODOLOGIA-CHATGPT-08.json": {
+      "sha256": "fa64b426bd659c2a8653a9c07caef36b275973ea19983519a88eb19b013b8e23",
+      "bytes": 1654
+    },
+    "fuentes/frentes/metodologia/fuentes/C-METODOLOGIA-IMPLEMENTACION-06-Harmonia-hub.json": {
+      "sha256": "102ae63c4a16d44e3b952a45a2044d3f5296048577580daf52fb19d5fea559e7",
+      "bytes": 6252
+    },
+    "fuentes/frentes/metodologia/fuentes/C-METODOLOGIA-IMPLEMENTACION-06-LISA-v1.2.json": {
+      "sha256": "345289a79f37a2b12a7362e337cf1757e0e1f622cfed90d029cd33fc306c8533",
+      "bytes": 27195
+    },
+    "fuentes/frentes/metodologia/fuentes/MOTOR-1C-portable-ciclo09.md": {
+      "sha256": "5c36a07c948801839699dc0787f4d18611ac761cb2dbd10cc80e2a1d18681d1d",
+      "bytes": 17292
+    },
+    "fuentes/frentes/metodologia/fuentes/MOTOR-1C-portable-ciclo09.procedencia.json": {
+      "sha256": "bb7843397632f760fceef94b93905fc3c1c4a2a2725bcd4783b4a8a7b29f134d",
+      "bytes": 449
+    },
+    "fuentes/frentes/metodologia/fuentes/MEMORIA-OPERATIVA-ciclo09.md": {
+      "sha256": "53de8fefc2cdb4cb9de4a04cc9a775177bb890c72e9957838e6dd7554f579699",
+      "bytes": 1831
+    },
+    "fuentes/frentes/metodologia/trazabilidad/C-METODOLOGIA-IMPLEMENTACION-06.json": {
+      "sha256": "f0989899bbf5ec6f675fa441b40f72c7b6420ea8ca650dc315b4b3df1e6422d4",
+      "bytes": 47769
+    },
+    "fuentes/frentes/metodologia/trazabilidad/C-METODOLOGIA-IMPLEMENTACION-06.md": {
+      "sha256": "e6bf94ba0c8ffa097b3dbbff5f670f09bdd84bb9b7927f34cc998f938423520b",
+      "bytes": 5360
+    },
+    "fuentes/frentes/metodologia/trazabilidad/C-METODOLOGIA-ENDURECIMIENTO-09.md": {
+      "sha256": "56749e014868e3c972dae64c0753791b3bcb067887051082da2a4340950dadaa",
+      "bytes": 3139
+    },
+    "fuentes/frentes/metodologia/kit/0.1.0/ARRANQUE-PROMPT.txt": {
+      "sha256": "7cf40c08038f3e4559ebd542f1157b4d7b604aacd80f2ea1d7f009135675e530",
+      "bytes": 977
+    },
+    "fuentes/frentes/metodologia/kit/0.1.0/README.md": {
+      "sha256": "256c1bc6c69c8597e5b7f71e8b09f03b2a7109a02da244c387362d23ff892c81",
+      "bytes": 2645
+    },
+    "fuentes/frentes/metodologia/kit/0.1.0/RECIBO-GOBIERNO.md": {
+      "sha256": "63e9d08d5c150fe43c32637a76022c36f2b5a9781e2ff8f6ac0be4a2c8277e76",
+      "bytes": 775
+    },
+    "fuentes/frentes/metodologia/kit/0.1.0/continuidad.cjs": {
+      "sha256": "313436db40f99ac485f4e11884bede903c2dcc33ceac9c3a0fc1256449ceb53c",
+      "bytes": 6274
+    },
+    "fuentes/frentes/metodologia/kit/0.1.0/ensayo-historico.py": {
+      "sha256": "01e6488591945093cf2ee2cf274ae42fd56bfb18c5c2f1a1596976d506fc5099",
+      "bytes": 13881
+    },
+    "fuentes/frentes/metodologia/kit/0.1.0/especificacion.json": {
+      "sha256": "cb3fc20b3c6a7a253c518f97e69052fd70a6eb9510aef57c25a48928bafa8f37",
+      "bytes": 2015
+    },
+    "fuentes/frentes/metodologia/kit/0.1.0/laboratorio.cjs": {
+      "sha256": "08abfa35bb5b5f75d701957f6cae931242ba5c0312b1e70de9761dccba036713",
+      "bytes": 4860
+    },
+    "fuentes/frentes/metodologia/kit/0.1.1/continuidad.cjs": {
+      "sha256": "244516aeeb40ac2a2f6c9c0efba671de6e8214ea06fddbdd8a0776f16846eaae",
+      "bytes": 6950
+    },
+    "fuentes/frentes/metodologia/kit/0.1.1/laboratorio.cjs": {
+      "sha256": "45a21d8dfc9f59edf5fc6d676ddf80ed7511cad110867c4f5d68b819d88c9972",
+      "bytes": 5756
+    },
+    "fuentes/frentes/metodologia/kit/0.1.1/especificacion.json": {
+      "sha256": "923d6d05f7340c8a2b3c33cc2dedd7b624e8b8df924f823d8332cc440c95b6bc",
+      "bytes": 2218
+    },
+    "fuentes/frentes/metodologia/kit/0.1.1/README.md": {
+      "sha256": "9b7c5a122e987b2635e9eac9b2a5c028a3137db9f0b58ddf1c72c970e429ee45",
+      "bytes": 1243
+    },
+    "fuentes/frentes/metodologia/kit/0.1.1/RECIBO-GOBIERNO.md": {
+      "sha256": "fe55babbdc5c48a25957bfbdf74eb54c5c59287441c98a83578b46f71c5a8bdb",
+      "bytes": 940
+    },
+    "fuentes/frentes/metodologia/kit/0.1.1/ARRANQUE-PROMPT.txt": {
+      "sha256": "6e4b2f4672f02eb2f1dc046f8c695b4793234c4e664d5a34dcd012c3850fbcf9",
+      "bytes": 1156
+    },
+    "fuentes/frentes/metodologia/pruebas/benchmark/C-METODOLOGIA-IMPLEMENTACION-06-linux.json": {
+      "sha256": "ee79680818edd62eed9b21c48a3d2acb80cc0c2e2565347d02caca79f69fd7cc",
+      "bytes": 10224
+    },
+    "fuentes/frentes/metodologia/pruebas/benchmark/PROTOCOLO-v0.1.md": {
+      "sha256": "8b48e889f39c2142f652f5a7dc528e9a4c09df61bfb286ab2be882d463df8c3a",
+      "bytes": 6718
+    },
+    "fuentes/frentes/metodologia/pruebas/benchmark/PROTOCOLO-v0.2.md": {
+      "sha256": "70fc1674e112d1923f8851777b0ac0eb2bc22b7c95caa87e55216f8c65d3bada",
+      "bytes": 1878
+    },
+    "fuentes/frentes/metodologia/pruebas/benchmark/C-METODOLOGIA-IMPLEMENTACION-06-regresion-python.json": {
+      "sha256": "25235c5b82ea3a03d16820ce9573ec561d65f8636ec5880bf5c4526befa33a22",
+      "bytes": 70543
+    },
+    "fuentes/frentes/metodologia/pruebas/benchmark/C-METODOLOGIA-IMPLEMENTACION-06-windows.json": {
+      "sha256": "af531837b80ea295e4b83563e3256ef61f45fde69569efd379576047a94be7dc",
+      "bytes": 10368
+    },
+    "fuentes/frentes/metodologia/pruebas/benchmark/PROTOCOLO-v0.3.md": {
+      "sha256": "dd8ccd7aeb7c2994366a6cc9f7ce1f9eb1e8affb4e73527e6cecc92ba55bf0a5",
+      "bytes": 3472
+    },
+    "fuentes/frentes/metodologia/pruebas/continuidad/ensayo.py": {
+      "sha256": "01e6488591945093cf2ee2cf274ae42fd56bfb18c5c2f1a1596976d506fc5099",
+      "bytes": 13881
+    },
+    "fuentes/frentes/metodologia/pruebas/continuidad/resultado.json": {
+      "sha256": "25235c5b82ea3a03d16820ce9573ec561d65f8636ec5880bf5c4526befa33a22",
+      "bytes": 70543
+    },
+    "fuentes/frentes/metodologia/pruebas/endurecimiento/C-METODOLOGIA-ENDURECIMIENTO-09.json": {
+      "sha256": "f9ab6c266d25e076740f4157b1f86f5d9f11e75e9420ae70d236f5edfe352cf8",
+      "bytes": 3757
+    },
+    "fuentes/frentes/metodologia/pruebas/endurecimiento/C-METODOLOGIA-ENDURECIMIENTO-09-laboratorio.json": {
+      "sha256": "a5c3e056f8dc4489c6295b98b0662b559ed30549f118bf8eeaa558b72d6a8c61",
+      "bytes": 12107
+    },
+    "fuentes/frentes/metodologia/entregas/CHATGPT-v0.1/LEEME.md": {
+      "sha256": "d547fd0d5914b2017a6ad77e0d61efcd26540ff0f393a8418cbb5afab3ef1c3a",
+      "bytes": 2027
+    },
+    "fuentes/frentes/metodologia/entregas/CHATGPT-v0.1/PROMPT-ENTRADA.txt": {
+      "sha256": "f29f9df8c66142403a5541e1169237ce8e56af200038cecf20ad7cee4fa60e8b",
+      "bytes": 955
+    },
+    "fuentes/frentes/metodologia/entregas/CHATGPT-v0.1/MANIFIESTO-ENTREGA.json": {
+      "sha256": "b1e90263c38fbced1465b9a9bc87ae2cee050f505f3a03d98c9161ebf6c1cd3c",
+      "bytes": 25174
+    },
+    "fuentes/frentes/metodologia/entregas/CHATGPT-v0.2/LEEME.md": {
+      "sha256": "ceb9ab45ea342d7c0881f34ded65a3532d3ad49065122bb1444958dd86367eee",
+      "bytes": 1801
+    },
+    "fuentes/frentes/metodologia/entregas/CHATGPT-v0.2/PROMPT-ENTRADA.txt": {
+      "sha256": "6e4b2f4672f02eb2f1dc046f8c695b4793234c4e664d5a34dcd012c3850fbcf9",
+      "bytes": 1156
+    }
+  },
+  "mechanical_tests": {
+    "passed": 30,
+    "total": 30
+  },
+  "delivery_literal_checks": {
+    "passed": 8,
+    "total": 8
+  },
+  "model_test": "NOT RUN",
+  "automatic_sync": "NOT INSTALLED",
+  "zip_sha256": "c956283781622669415d7666a76599c1c0345583f2a94a8b5319baacff6d0864",
+  "zip_bytes": 395782
+}

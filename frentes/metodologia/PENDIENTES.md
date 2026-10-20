@@ -94,3 +94,10 @@ Próximo hito de mayor valor: retoma ciega con otro modelo y evaluación contra 
 - LAB-01/BENCH-01: última explicación fue diseño, no instalación ni ensayo semántico. Conversación como fuente de casos, copias aisladas para ensayos, receptor independiente y contraste real. Sigue vigente protocolo0.3.
 - CUST-03/04: se preservan pregunta y respuesta sobre laboratorio y nueva orden de migración. Sin escritura a GitHub, devolver delta completo NO GUARDADO y conservar la copia de trabajo offline; no fingir sincronía.
 - Los demás pendientes y sus prioridades se conservan. Arquitectura por directorio ratificada; SeryMente es workspace general; frente es nombre corto del objeto de persistencia. Gobierno333 no se reescribe. Seguridad/cifrado y Sesión PRIUS permanecen diferidos.
+
+## C-METODOLOGIA-ENDURECIMIENTO-09-r1
+
+- Orden actual: endurecimiento general de emergencia para utilizar el marco como está previsto en otra plataforma. No es cambio de finalidad ni «modo de instrucciones vagas»; la interpretación inicial del modelo fue corregida por el operador.
+- Destino reportado por el operador: ChatGPT gratuito actual; identidad técnica, cuotas y capacidad NO VERIFICADAS. No se compensa un fallo del receptor declarando cumplido lo que no hizo.
+- PORT-01/CONT-02: entrega0.2 y control operativo§35 implementados documentalmente; verificador con versión real y gobierno completo; integridad/retoma mecánica sometidas a pruebas. La aceptación semántica sigue abierta.
+- REAL-CHATGPT-01, ensayo independiente, observador, sincronización, formalización de intención y restantes ideas se conservan con sus estados previos. Seguridad/cifrado y Sesión PRIUS no se activan.

@@ -15,3 +15,7 @@ Retoma el frente identificado en el enlace o paquete adjunto a este mensaje. No 
 ## Transporte verificable · kit 0.1.0
 
 Si recibes un paquete sin acceso al repositorio, usa ARRANQUE.md y los archivos del paquete. Declara su revisión y el corte cubierto; no lo declares vigente frente a main sin cotejo. Adquiere el gobierno completo, no solo su firma. Usa el recibo breve definido en `frentes/metodologia/kit/0.1.0/RECIBO-GOBIERNO.md` para mostrar fuente, versión, aplicación concreta, custodia y límite. El paquete es una copia de transporte del mismo frente, no una autoridad paralela. Una comprobación mecánica no demuestra comprensión ni autoriza repetir efectos inciertos.
+
+## Precisión de portabilidad1.9
+
+En cada retoma aplicar §35 del metacanon adquirido, no eludirlo por una respuesta «listo». Comprobar lectura efectiva y representar objetivo, rol, revisión, permisos, pendientes e incertidumbres; citar el estado literal requerido. El prompt no crea conectores ni memoria. En el hilo único no exigir un segundo agente. La prueba semántica queda abierta hasta contraste independiente/real. Sin escritura, checkpoint o delta íntegro NO GUARDADO.
