@@ -3,7 +3,7 @@
 Punto de entrada de lectura; no es otro objeto de estado ni otra autoridad.
 
 1. Adquiere el [gobierno general: Metaprompt Canónico de Samantha](gobernanza/METAPROMPT-CANONICO-SAMANTHA.md). Consulta [procedencia, alcance y límites](gobernanza/README.md). No asumir que el contenido se cargó por recibir solo un enlace.
-2. Para crear, mantener o retomar un frente, adquiere el [Metacanon](METACANON-OBJETOS-CANONICOS.md), su LEER PRIMERO, §9 y §§29–35; consulta después las reglas pertinentes restantes. Versión 1.9, sello METACANON-OBJETOS-v1.9. El núcleo ligero y separación de antecedentes siguen pendientes: este índice no constituye esa refactorización.
+2. Para crear, mantener o retomar un frente, adquiere el [Metacanon](METACANON-OBJETOS-CANONICOS.md), su LEER PRIMERO, §9 y §§29–36; consulta después las reglas pertinentes restantes. Versión 1.10, sello METACANON-OBJETOS-v1.10. El núcleo ligero y separación de antecedentes siguen pendientes: este índice no constituye esa refactorización.
 3. Identifica el frente y su núcleo operativo único; lee gobierno particular, estado, pendientes y siguiente paso, y solo después los materiales que exija la tarea. No activar proyectos o protocolos por aparecer en una cita.
 4. Comprueba revisión y frescura de lo adquirido por los medios efectivamente disponibles. Sin lectura directa del repositorio, utiliza copias completas suministradas por el operador y declara su procedencia/frescura; nunca afirmar una lectura o escritura de GitHub inexistente. El transporte manual es una vía de contingencia, no cumplimiento de sincronización automática.
 5. Conserva originales/crónica, actualiza el estado y verifica el guardado al finalizar conforme al método. No hay memoria ni tareas en segundo plano garantizadas por estos archivos.
@@ -21,6 +21,18 @@ El gobierno general anterior de `SI-METACOGNITIVO.md` es histórico. Los procedi
 
 Usa el [prompt universal](PROMPT-UNIVERSAL-REINSTANCIACION.md) y el [contrato de continuidad](CONTINUIDAD-ENTRE-CONVERSACIONES.md). En Notion comprueba el metaprompt recibido por configuración; fuera de Notion cárgalo expresamente. La versión automática puede ser antigua. El núcleo del frente de metodología sigue en el metacanon, §9; [ideas pendientes](frentes/metodologia/PENDIENTES.md). Pruebas mecánicas no equivalen a ensayo semántico de otro modelo.
 
-## Vía portable ejecutable · kit 0.1.1
+## Vía portable ejecutable · kit 0.1.2
 
-Herramientas y lectura de arranque en `frentes/metodologia/kit/0.1.1/README.md`; estado único en §9 del metacanon. Usar el prompt universal y el recibo breve; los paquetes transportados conservan revisión/cobertura y declaran frescura desconocida sin cotejo. No sustituyen el canon ni certifican comprensión semántica.
+Herramientas y lectura de arranque en `frentes/metodologia/kit/0.1.2/README.md`; estado único en §9 del metacanon. Usar el prompt universal y el recibo breve; los paquetes transportados conservan revisión/cobertura y declaran frescura desconocida sin cotejo. No sustituyen el canon ni certifican comprensión semántica.
+
+## Revisión integral1.10
+
+Las dieciséis categorías son ejes de auditoría, no sustituyen el molde de trece bloques. Aplicar§36 y distinguir revisión cerrada de aceptación funcional abierta. Informe y delta: frentes/metodologia/revisiones/C-METODOLOGIA-REVISION-INTEGRAL-10.md.
+
+## Refresco de la fuente · ciclo10
+
+Aplicar§37 en cada ciclo activo: comprobar versión/huella y commit de la ruta central por un medio real; recuperar/adoptar solo delta compatible ya autorizado. Mostrar versión adquirida, antigüedad de modificación y estado de comprobación. Sin acceso/reloj/origen: vigencia o edad NO VERIFICADA. No fingir refresco entre turnos o de instrucciones nativas.
+
+## Responsabilidad exclusiva · método1.10§38
+
+La migración no transfiere el frente por sí sola. Verificar CONTROL-RESPONSABILIDAD.json autoritativo: segundo hilo, copia offline o propiedad incierta ⇒ solo lectura/análisis y propuestas NO APLICADAS, sin asumir responsabilidad ni escribir el canon. No vence por interrupción. Transferir explícitamente a hilo/instancia identificados mediante comparación y sustitución atómicas; nunca sobrescribir el control con push genérico. La biblioteca ensaya el control, no impone un cerrojo a herramientas que lo eludan; esa limitación debe declararse. Refresco y propiedad son compuertas independientes.

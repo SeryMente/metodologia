@@ -1,7 +1,7 @@
 # Glosario Operativo de la Metodologia
 
 **Estado:** CANONICO  
-**Version:** v1.3.0  
+**Version:** v1.3.1  
 **Ambito:** Todos los proyectos y conversaciones sujetos a la metodologia comun.
 
 ## 1. Funcion
@@ -251,10 +251,32 @@ Organización `SeryMente` y sus repositorios como espacio persistente común. La
 Requisito ratificado: cada cambio documental en la aplicación de origen desencadena actualización automática de su espejo en el repositorio del frente. Alcance confirmado aplicación → repositorio; no presume dirección inversa. Mecanismo aún pendiente; una copia puntual no acredita continuidad automática.
 
 ### Metaprompt Canónico de Samantha
-Documento de Capa 1 que contiene identidad, comportamiento y reglas generales y gobierna el espacio de trabajo Ser y Mente y sus repositorios. Un mismo documento con copia operativa en GitHub, no dos autoridades por estar espejado. Versión fuente migrada v332 · NX-332m. «Samanta», «Metapron» y «Metapromp» son variantes de dictado, no nombres nuevos.
+Documento de Capa 1 que contiene identidad, comportamiento y reglas generales y gobierna el espacio de trabajo Ser y Mente y sus repositorios. Un mismo documento con copia operativa en GitHub, no dos autoridades por estar espejado. Antecedente de migración: v332 · NX-332m; no es prueba de vigencia. El espejo adquirido333 y su procedencia se consultan en gobernanza, sin fijar aquí otra autoridad. «Samanta», «Metapron» y «Metapromp» son variantes de dictado, no nombres nuevos.
 
 ### Sesión PRIUS
 Segunda capa de gobernanza histórica del espacio Notion. Uso futuro previsto; revisión/adaptación diferidas explícitamente hasta que no haya urgencias. Copiar o mencionar su canon no abre una sesión.
 
 ### Metacanon de frentes
 Método de configuración y mantenimiento de los frentes, subordinado al gobierno general. No se confunde con el metaprompt ni sustituye las reglas superiores de cada plataforma.
+
+## 8. Precisión de revisión integral1.10
+
+### Categorías de revisión
+Dieciséis ejes de auditoría de cobertura e integración del método. No reemplazan los trece bloques del molde del núcleo ni obligan a dieciséis secciones nuevas por frente.
+
+### Contrato de cierre
+Concreción del encargo, criterio observable, fuente de intención, permiso, dependencias, evidencia y checkpoint dentro del núcleo existente. No es un segundo estado ni autorización automática.
+
+### Aceptación funcional
+Contraste del funcionamiento previsto con evidencia del receptor real y su entorno. Se distingue de revisión documental completada y de controles mecánicos aprobados; no se deduce de ellos.
+
+### Recibo de refresco
+Evidencia derivada de lectura de la fuente central: revisión, versión/huella, modificación, comprobación y adopción. No constituye otro núcleo ni actualiza por sí solo un frente.
+
+### Antigüedad del método
+Tiempo desde la última modificación comprobada del archivo metodológico, distinto del tiempo desde su comprobación o empaquetado. Si faltan reloj/fuente/fecha coherentes, edad no verificada.
+
+- **Responsable exclusivo del frente:** único hilo/instancia vigente en el control, no todo lector o colaborador.
+- **Generación de responsabilidad:** contador que invalida permisos operativos anteriores al transferir/liberar; no autentica identidad por sí mismo.
+- **Comparación y sustitución atómicas:** reemplazo condicionado a la huella exacta observada, sin que un segundo competidor sobrescriba silenciosamente.
+- **Preflight cooperativo:** comprobación previa; no equivale a imposición transaccional de todas las escrituras.

@@ -1,0 +1,105 @@
+{
+  "scope": "mechanical-refresh-state-machine-not-model-or-provider-availability",
+  "clock": "synthetic deterministic fixtures",
+  "records": [
+    {
+      "id": "F01-detectar-nueva-version",
+      "passed": true
+    },
+    {
+      "id": "F02-adoptar-solo-con-revision",
+      "passed": true
+    },
+    {
+      "id": "F03-sin-cambios-por-hash",
+      "passed": true
+    },
+    {
+      "id": "F04-caida-preserva-adquirida",
+      "passed": true
+    },
+    {
+      "id": "F05-hash-corrupto",
+      "passed": true
+    },
+    {
+      "id": "F06-snapshot-no-es-consulta-viva",
+      "passed": true
+    },
+    {
+      "id": "F07-version-textual1.10-vs1.9",
+      "passed": true
+    },
+    {
+      "id": "F08-retroceso-bloqueado",
+      "passed": true
+    },
+    {
+      "id": "F09-adopcion-con-huella-ajena",
+      "passed": true
+    },
+    {
+      "id": "F10-adopcion-sin-referencia",
+      "passed": true
+    },
+    {
+      "id": "F11-segundos",
+      "passed": true
+    },
+    {
+      "id": "F12-minutos",
+      "passed": true
+    },
+    {
+      "id": "F13-horas",
+      "passed": true
+    },
+    {
+      "id": "F14-ayer",
+      "passed": true
+    },
+    {
+      "id": "F15-dos-dias",
+      "passed": true
+    },
+    {
+      "id": "F16-reloj-futuro",
+      "passed": true
+    },
+    {
+      "id": "F17-fuente-sin-fecha",
+      "passed": true
+    },
+    {
+      "id": "F18-marcadores-duplicados",
+      "passed": true
+    },
+    {
+      "id": "F19-cambio-mismo-numero-detectado",
+      "passed": true
+    },
+    {
+      "id": "F20-lectura-no-muta-recibo",
+      "passed": true
+    },
+    {
+      "id": "F21-comprobacion-caducada",
+      "passed": true
+    },
+    {
+      "id": "F22-sin-hora-de-lectura",
+      "passed": true
+    },
+    {
+      "id": "F23-lectura-futura",
+      "passed": true
+    },
+    {
+      "id": "F24-zona-invalida-no-fabrica-edad",
+      "passed": true
+    }
+  ],
+  "passed": 24,
+  "total": 24,
+  "result": "PASS"
+}

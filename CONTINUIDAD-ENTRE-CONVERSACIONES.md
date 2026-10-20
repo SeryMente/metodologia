@@ -35,3 +35,15 @@ La sincronización automática aplicación → repositorio continúa sin impleme
 ## Endurecimiento1.9
 
 Aplicar §35: demostrar retoma desde fuentes, verificar bloques completos y acción contra autorización; detener solo la dependencia no adquirida. Distinguir copia offline, original, estado confirmado y efecto incierto. El verificador0.1.1 toma la versión real del método y comprueba el gobierno completo contra la huella de origen suministrada. Huellas y procesos aislados no acreditan semántica ni autoría de una referencia no confiable. No activar cifrado, PRIUS, observador o sincronización por esta mejora.
+
+## Aceptación integral1.10
+
+Aplicar§36: contrato del ciclo y propósito global separados, dependencias por operación, estado único y versiones textuales. Las cinco puertas requieren evidencia propia; preparar un paquete no aprueba la retoma real. Conservar en REAL-CHATGPT-01 entrada, respuesta y acción literales, sin atribuir modelo desconocido ni autocalificación.
+
+## Refresco de la fuente · ciclo10
+
+Aplicar§37 en cada ciclo activo: comprobar versión/huella y commit de la ruta central por un medio real; recuperar/adoptar solo delta compatible ya autorizado. Mostrar versión adquirida, antigüedad de modificación y estado de comprobación. Sin acceso/reloj/origen: vigencia o edad NO VERIFICADA. No fingir refresco entre turnos o de instrucciones nativas.
+
+## Responsabilidad exclusiva · método1.10§38
+
+La migración no transfiere el frente por sí sola. Verificar CONTROL-RESPONSABILIDAD.json autoritativo: segundo hilo, copia offline o propiedad incierta ⇒ solo lectura/análisis y propuestas NO APLICADAS, sin asumir responsabilidad ni escribir el canon. No vence por interrupción. Transferir explícitamente a hilo/instancia identificados mediante comparación y sustitución atómicas; nunca sobrescribir el control con push genérico. La biblioteca ensaya el control, no impone un cerrojo a herramientas que lo eludan; esa limitación debe declararse. Refresco y propiedad son compuertas independientes.

@@ -1,0 +1,56 @@
+{
+  "schema": "revision-integral-holistica/1",
+  "scope": "composed software contract tests; fixtures, not actual model, API race or server write enforcement",
+  "timestamp": "2026-10-20T23:04:17.631Z",
+  "method": "1.10",
+  "source_revision": "a8d612145cd64a46a13567c9779efd19b6cce9d7",
+  "source_sha256": {
+    "INICIO.md": "d0e2f22ccaab3f30449d4181c20367cbc0f1753f3fda8979357ab96135510154",
+    "METACANON-OBJETOS-CANONICOS.md": "aa50289ea42f543ee063838c098e0304c995daf9b9a925c4d6f3c37f10e8406e",
+    "PROMPT-UNIVERSAL-REINSTANCIACION.md": "700363d784fde7989301fd580d73877cce0ed89e9f52af4788c231156bdb6315",
+    "CONTINUIDAD-ENTRE-CONVERSACIONES.md": "544e989d2f5ce3e9df9844fb09e4ae26c3511010dc793883e459e9eede9cd400",
+    "gobernanza/METAPROMPT-CANONICO-SAMANTHA.md": "02a9cacb78f4dc0cd86a819593e931dcf45b84f3ed310569a0b592e0b579c6ed",
+    "frentes/metodologia/PENDIENTES.md": "4b56f16703bcdb43599320e04017a4e76b66d820649c91fe578dffb5f73e07ee",
+    "frentes/metodologia/conversaciones/C-METODOLOGIA-RETOMA-05-adjunto.txt": "4337eee0f4ad1dbc544ccabdadf034e2dbde5853ef157489da3b3db0cafc03eb",
+    "frentes/metodologia/conversaciones/C-METODOLOGIA-RETOMA-05-dialogo.jsonl": "884d92d319403f46ee0306d40a52d084d80db10216fc18c8fc99719e461de9b4",
+    "frentes/metodologia/conversaciones/C-METODOLOGIA-IMPLEMENTACION-06-dialogo.jsonl": "37c428548ef84c3be5377e92b00ec3ccba6985916cdfcdf6663d4a76b412c172",
+    "frentes/metodologia/trazabilidad/C-METODOLOGIA-IMPLEMENTACION-06.md": "e6bf94ba0c8ffa097b3dbbff5f670f09bdd84bb9b7927f34cc998f938423520b",
+    "frentes/metodologia/trazabilidad/C-METODOLOGIA-IMPLEMENTACION-06.json": "f0989899bbf5ec6f675fa441b40f72c7b6420ea8ca650dc315b4b3df1e6422d4",
+    "frentes/metodologia/kit/0.1.2/README.md": "bb33d559ad341763d2574fcd6d86d7c42188c848739dc0d3266c7ed00104042f",
+    "frentes/metodologia/kit/0.1.2/RECIBO-GOBIERNO.md": "6fd6269e3f12421d4266e21c35efa80608463537b07775f2b95d453743974753",
+    "gobernanza/README.md": "82e631387009e097f04faea31bba112ac9622d86e0a7c0382d9e83323e2155ba",
+    "gobernanza/METAPROMPT-CANONICO-SAMANTHA.fuente.json": "5ada66732b19ee031e55bfd5913bd3d392db6a9494a4009943546b74d2380cf1",
+    "frentes/metodologia/conversaciones/C-METODOLOGIA-ENDURECIMIENTO-09-dialogo.jsonl": "88e61baf9c428fb9b24904da9e1df4599ed5eadac73f136be8db782d5280f995",
+    "frentes/metodologia/conversaciones/C-METODOLOGIA-REVISION-INTEGRAL-10-dialogo.jsonl": "09b19a86c6611cf8df771215b95d041f0b30cddadd5b3117b8fb91b69c85e7ee",
+    "frentes/metodologia/fuentes/MOTOR-1C-portable-ciclo09.md": "5c36a07c948801839699dc0787f4d18611ac761cb2dbd10cc80e2a1d18681d1d",
+    "frentes/metodologia/fuentes/MEMORIA-OPERATIVA-ciclo09.md": "53de8fefc2cdb4cb9de4a04cc9a775177bb890c72e9957838e6dd7554f579699",
+    "frentes/metodologia/kit/0.1.2/refrescar.cjs": "538db235bc63087d2f4942f9df97982cbc4edbd8568e2b8ea8947bae37b8c03c",
+    "frentes/metodologia/kit/0.1.2/responsabilidad.cjs": "f15630553bbe045439657ae6dfb4d84535f394895a7ccb03132825fb6a6e17aa",
+    "frentes/metodologia/CONTROL-RESPONSABILIDAD.json": "583a834a1c3dd81884d0fc024860591da6f0df566a7e6418018df91cc5eebb6e"
+  },
+  "records": [
+    {
+      "id": "H01-fuentes-y-propietario-consistentes",
+      "passed": true
+    },
+    {
+      "id": "H02-offline-lectura-no-responsabilidad",
+      "passed": true
+    },
+    {
+      "id": "H03-propuesta-no-es-autorizacion",
+      "passed": true
+    },
+    {
+      "id": "H04-interrupcion-no-repetir-no-caducar",
+      "passed": true
+    },
+    {
+      "id": "H05-concurrencia-bloquea-revision-y-propietario",
+      "passed": true
+    }
+  ],
+  "passed": 5,
+  "total": 5,
+  "semantic_validation": "NOT RUN"
+}

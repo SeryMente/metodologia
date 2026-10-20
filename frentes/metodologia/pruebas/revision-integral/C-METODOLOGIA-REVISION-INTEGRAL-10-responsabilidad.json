@@ -1,0 +1,81 @@
+{
+  "schema": "responsabilidad-tests/1",
+  "timestamp": "2026-10-20T23:03:57.473Z",
+  "scope": "pure transitions + local atomic-create race; NOT GitHub concurrent race or server-enforced write fencing",
+  "passed": 18,
+  "total": 18,
+  "tests": [
+    {
+      "id": "O01-primer-responsable",
+      "passed": true
+    },
+    {
+      "id": "O02-segundo-bloqueado",
+      "passed": true
+    },
+    {
+      "id": "O03-no-reclamar-como-renovacion",
+      "passed": true
+    },
+    {
+      "id": "O04-vigente-pasa-preflight",
+      "passed": true
+    },
+    {
+      "id": "O05-otro-hilo-bloqueado",
+      "passed": true
+    },
+    {
+      "id": "O06-sin-fuente-bloqueado",
+      "passed": true
+    },
+    {
+      "id": "O07-copia-offline-bloqueada",
+      "passed": true
+    },
+    {
+      "id": "O08-observacion-antigua-bloqueada",
+      "passed": true
+    },
+    {
+      "id": "O09-generacion-antigua-bloqueada",
+      "passed": true
+    },
+    {
+      "id": "O10-blob-antiguo-bloqueado",
+      "passed": true
+    },
+    {
+      "id": "O11-no-liberar-por-otro",
+      "passed": true
+    },
+    {
+      "id": "O12-transferencia-explicita",
+      "passed": true
+    },
+    {
+      "id": "O13-sin-destino-no-transferir",
+      "passed": true
+    },
+    {
+      "id": "O14-liberacion-y-nueva-generacion",
+      "passed": true
+    },
+    {
+      "id": "O15-control-corrupto-bloquea",
+      "passed": true
+    },
+    {
+      "id": "O16-sin-autorizacion-bloquea",
+      "passed": true
+    },
+    {
+      "id": "O17-reloj-no-valido-bloquea",
+      "passed": true
+    },
+    {
+      "id": "O18-carrera-local-solo-un-ganador",
+      "passed": true
+    }
+  ]
+}

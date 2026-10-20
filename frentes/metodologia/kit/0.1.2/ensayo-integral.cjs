@@ -1,0 +1,12 @@
+'use strict';
+const fs=require('node:fs'),assert=require('node:assert/strict'),path=require('node:path'),k=require('./continuidad.cjs'),o=require('./responsabilidad.cjs'),r=require('./refrescar.cjs');
+if(process.argv.length!==6){console.error('Uso: node ensayo-integral.cjs especificacion.json raiz revision salida.json');process.exit(2)}
+const [sp,root,rev,out]=process.argv.slice(2),p=k.build(JSON.parse(fs.readFileSync(sp)),root,rev),copy=()=>structuredClone(p),records=[];
+function t(id,fn){try{fn();records.push({id,passed:true})}catch(e){records.push({id,passed:false,error:e.message})}}
+const control=JSON.parse(p.files['frentes/metodologia/CONTROL-RESPONSABILIDAD.json'].text),id={thread:control.owner_thread,instance:control.instance,generation:control.generation},obs={record:control,authoritative:true,observed_ms:1000,now_ms:1001,blob:'a'.repeat(40)};
+t('H01-fuentes-y-propietario-consistentes',()=>{k.validate(p,rev);assert(o.gate(obs,id,obs.blob).allowed);assert.equal(p.framework_runtime_acceptance,'pending')});
+t('H02-offline-lectura-no-responsabilidad',()=>{const q=copy();k.validate(q,rev);assert(!o.gate(null,id,obs.blob).allowed);assert.equal(r.check(null,null,{now:'2026-10-20T23:00:00Z'}).source_verified_this_check,false)});
+t('H03-propuesta-no-es-autorizacion',()=>{let q=copy();q.action_contracts[0].authorization.status='proposed';assert.throws(()=>k.validate(q,rev));q.action_contracts[0].declared_result='blocked';k.validate(q,rev)});
+t('H04-interrupcion-no-repetir-no-caducar',()=>{let q=copy();q.operations=[{id:'efecto-interrumpido',status:'unknown'}];k.validate(q,rev);assert.equal(q.replay_allowed,false);assert.equal(control.expiry,null);assert.throws(()=>o.transition(control,{action:'claim',thread:'otro',instance:'otro',authorization_ref:'solo-propuesta'}))});
+t('H05-concurrencia-bloquea-revision-y-propietario',()=>{assert.throws(()=>k.validate(p,'b'.repeat(40)));assert(!o.gate(obs,{...id,generation:id.generation+1},obs.blob).allowed)});
+const e={schema:'revision-integral-holistica/1',scope:'composed software contract tests; fixtures, not actual model, API race or server write enforcement',timestamp:new Date().toISOString(),method:p.method_version,source_revision:rev,source_sha256:Object.fromEntries(Object.entries(p.files).map(([n,f])=>[n,f.sha256])),records,passed:records.filter(x=>x.passed).length,total:records.length,semantic_validation:'NOT RUN'};fs.writeFileSync(out,JSON.stringify(e,null,2)+'\n',{flag:'wx'});console.log(JSON.stringify({passed:e.passed,total:e.total}));if(e.passed!==e.total)process.exitCode=1;

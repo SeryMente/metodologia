@@ -1,0 +1,169 @@
+{
+  "cycle": "C-METODOLOGIA-REVISION-INTEGRAL-10",
+  "from": "1.9",
+  "to": "1.10",
+  "categories": [
+    {
+      "id": "R01",
+      "category": "Gobierno e identidad",
+      "baseline_rule": "§§26/33/35.1",
+      "decision": "Conservar",
+      "finding": "La firma no prueba gobierno; el espejo333 y su fuente Notion no son vigencia equivalente.",
+      "change": "Gobierno íntegro preservado; procedencia, ámbito y límite separados.",
+      "verification": "M03/M07/M08/M26/M29; cotejo del espejo",
+      "limit": "Sin nueva edición del metaprompt; frescura Notion abierta."
+    },
+    {
+      "id": "R02",
+      "category": "Propósito y alcance",
+      "baseline_rule": "§§2/15/35.2",
+      "decision": "Endurecer",
+      "finding": "El cierre del encargo documental podía confundirse con la estabilidad del marco.",
+      "change": "Contrato de cierre distingue objetivo del ciclo y aceptación funcional global.",
+      "verification": "Contrato objetivo→criterio observable→evidencia; M39/M42",
+      "limit": "Una revisión terminada no implica receptor validado."
+    },
+    {
+      "id": "R03",
+      "category": "Fidelidad a la intención",
+      "baseline_rule": "§§14/25/30",
+      "decision": "Endurecer",
+      "finding": "Enlace literal→aceptación existía, pero sin control mínimo en la entrega.",
+      "change": "Cada criterio conserva referencia original y resultado observable; propuestas no pasan a permiso.",
+      "verification": "M36/M39/M41; originales actuales preservados",
+      "limit": "La semántica exige contraste; no firma L0 ni métrica inventada."
+    },
+    {
+      "id": "R04",
+      "category": "Organización del frente",
+      "baseline_rule": "§§20/29/35.3",
+      "decision": "Corregir",
+      "finding": "El extractor de§9 podía contar un bloque fusionado aunque hubiera dos encabezados.",
+      "change": "Conteo exacto de un inicio de estado y ruta canónica fija en el verificador. Registro de responsable exclusivo y bloqueo por hilo/instancia/generación; traspaso explícito sin caducidad.",
+      "verification": "M31/M46 y lectura de estado; O01–O18 y lectura del control GitHub",
+      "limit": "No se crean otros núcleos ni se trasladan frentes. Sin mediador de escritura, imposición universal NO ACREDITADA."
+    },
+    {
+      "id": "R05",
+      "category": "Estructura común",
+      "baseline_rule": "§§3/27/29",
+      "decision": "Precisar",
+      "finding": "Las16 categorías de auditoría podían confundirse con los13 bloques de los hijos.",
+      "change": "Categorías son ejes de revisión; se preservan nombres/orden del molde13.",
+      "verification": "Cotejo de la tabla13 contra1.9; mapa§36",
+      "limit": "No declarar hijos migrados por editar el método."
+    },
+    {
+      "id": "R06",
+      "category": "Roles y colaboración",
+      "baseline_rule": "§§21/24/25",
+      "decision": "Conservar",
+      "finding": "Riesgo de que la excepción de hilo único se propague a proyectos vecinos.",
+      "change": "Un hilo solo en este frente; otros conservan asignación y prompts documentados. Registro de responsable exclusivo y bloqueo por hilo/instancia/generación; traspaso explícito sin caducidad.",
+      "verification": "Cotejo del disparador y excepción; recibo de rol; O01–O18 y lectura del control GitHub",
+      "limit": "No agentes nuevos ni acceso remoto por rutina. Sin mediador de escritura, imposición universal NO ACREDITADA."
+    },
+    {
+      "id": "R07",
+      "category": "Autorizaciones y límites",
+      "baseline_rule": "§§14/26/35.2",
+      "decision": "Endurecer",
+      "finding": "Un estado operativo verificado no exigía enlazar permiso en el esquema de transporte.",
+      "change": "Operaciones con ID y autorización declarada; propuesta/revocación no respaldan ejecución/aceptación. Registro de responsable exclusivo y bloqueo por hilo/instancia/generación; traspaso explícito sin caducidad.",
+      "verification": "M35/M36/M41/M49; O01–O18 y lectura del control GitHub",
+      "limit": "Validación de declaraciones, no autenticación humana ni control del proveedor. Sin mediador de escritura, imposición universal NO ACREDITADA."
+    },
+    {
+      "id": "R08",
+      "category": "Ejecución autónoma",
+      "baseline_rule": "§§4/25/35.2",
+      "decision": "Precisar",
+      "finding": "Podía crecer una lista de revisiones sin resultado terminal o confundirse bloqueo parcial con total.",
+      "change": "Objetivo acotado, dependencia por acción, siguiente paso y parada afectada explícitos.",
+      "verification": "M37/M38/M43/M48; escenarios holísticos",
+      "limit": "No ejecución futura autónoma ni permiso para efectos ajenos."
+    },
+    {
+      "id": "R09",
+      "category": "Viabilidad y avance",
+      "baseline_rule": "§§15/25",
+      "decision": "Precisar",
+      "finding": "Implementado, demostrado y aceptado podían agruparse bajo un único «listo».",
+      "change": "Separar preparación/documentación, prueba mecánica y aceptación funcional del receptor.",
+      "verification": "M40/M42; dictamen separado",
+      "limit": "No se reduce la finalidad para aprobar el marco."
+    },
+    {
+      "id": "R10",
+      "category": "Estimaciones",
+      "baseline_rule": "§§4/25",
+      "decision": "Conservar",
+      "finding": "Presión de tiempo puede inducir pronósticos fijos sin muestra.",
+      "change": "Recalcular desde dependencias; desconocido/no estimable se conserva con causa.",
+      "verification": "Cotejo documental; sin nuevo plazo fabricado",
+      "limit": "No se mide fiabilidad temporal de un modelo en este ciclo."
+    },
+    {
+      "id": "R11",
+      "category": "Evidencia y verificación",
+      "baseline_rule": "§§7/19/26/35.5",
+      "decision": "Corregir",
+      "finding": "Campos de tipo incorrecto, rutas ambiguas o versiones duplicadas no tenían compuerta uniforme.",
+      "change": "Esquema tipado, rutas canónicas, versión textual exacta y referencias obligatorias.",
+      "verification": "M32–M34/M44/M47/M50 y regresión",
+      "limit": "Hashes no son autoría ni comprensión."
+    },
+    {
+      "id": "R12",
+      "category": "Persistencia y trazabilidad",
+      "baseline_rule": "§§16/28/30",
+      "decision": "Endurecer",
+      "finding": "La cobertura de entradas nuevas no estaba incorporada automáticamente al perfil del kit.",
+      "change": "Inventario del corte y originales actuales; salida exacta archivada por separado; paquete identifica base+delta.",
+      "verification": "M12/M13/M14; cotejo y hashes de fuentes",
+      "limit": "No captura de herramientas completas o mensajes futuros."
+    },
+    {
+      "id": "R13",
+      "category": "Continuidad y migración",
+      "baseline_rule": "§§34/35",
+      "decision": "Corregir",
+      "finding": "El archivo de arranque tenía protocolo, pero el perfil del kit no lo exigía.",
+      "change": "Dependencias declaradas y adquiridas incluidas en ambos caminos de transporte.",
+      "verification": "M37/M38/M43 y controles de bloques",
+      "limit": "No se afirma lectura real en ChatGPT ni todo Notion espejado."
+    },
+    {
+      "id": "R14",
+      "category": "Versiones y conciliación",
+      "baseline_rule": "§§5/22/23/35.3",
+      "decision": "Endurecer",
+      "finding": "Versión1.10 puede confundirse con1.1 si se trata como número; publicación no equivale a frescura futura.",
+      "change": "Versiones como cadenas, delta1.9→1.10 y comparación de base antes de publicar; no sobrescribir divergencia detectada. Refresco por huella, commit de la ruta y etiqueta de actualización/comprobación; falta de acceso nunca se presenta como actualidad. Control§38 independiente del refresco.",
+      "verification": "M25/M30/M44; revisión Git de partida; F01–F24 y lectura real GitHub MCP",
+      "limit": "La herramienta de publicación no proporciona exclusión mutua universal. Sin ejecución o acceso no hay refresco garantizado."
+    },
+    {
+      "id": "R15",
+      "category": "Entorno, herramientas y seguridad",
+      "baseline_rule": "§§6/12/13/24/32",
+      "decision": "Precisar",
+      "finding": "Dependencia ausente o diferida podía bloquear todo o ignorarse por completo.",
+      "change": "Inventario por alcance: adquirido/no disponible/diferido; detener solo la operación dependiente.",
+      "verification": "M38/M43/M48; revisión de privacidad",
+      "limit": "Cifrado y diseños reservados siguen diferidos; ningún secreto o servicio nuevo."
+    },
+    {
+      "id": "R16",
+      "category": "Validación y mejora continua",
+      "baseline_rule": "§§7/19/34/35.5",
+      "decision": "Endurecer",
+      "finding": "Aprobar controles documentales podía presentarse como cierre de estabilidad.",
+      "change": "Cinco puertas de aceptación, resultados por capa y rúbrica REAL-CHATGPT-01 sin autocalificación.",
+      "verification": "M40/M42/M45; pruebas mecánicas y regresiones",
+      "limit": "Ensayo semántico independiente y uso real siguen pendientes."
+    }
+  ],
+  "not_applied": "nota excluida por el operador; no redefine el propósito",
+  "real_receiver_acceptance": "pending"
+}

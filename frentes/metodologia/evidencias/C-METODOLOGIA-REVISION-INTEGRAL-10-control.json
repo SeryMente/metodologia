@@ -1,0 +1,11 @@
+{
+  "path": "frentes/metodologia/CONTROL-RESPONSABILIDAD.json",
+  "commit": "70bbc25b72e014e3df2f0df80aaaa8c4e8d4a0de",
+  "blob": "29d0b9afab67e9e932bcaa292c8c4c4d2dc3bac7",
+  "created_via": "GitHub create_or_update_file no sha; absent path verified before creation",
+  "readback": "exact text acquired from GitHub MCP event934",
+  "generation": 1,
+  "server_fencing_all_writes": false,
+  "concurrent_github_race": "NOT RUN",
+  "current_owner_thread": "session://ecea4187-8241-819b-af83-0003b7c205f7/3ffa4187-8241-80de-84a6-00a98cbd8894"
+}

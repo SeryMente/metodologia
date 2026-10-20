@@ -19,3 +19,15 @@ Si recibes un paquete sin acceso al repositorio, usa ARRANQUE.md y los archivos 
 ## Precisión de portabilidad1.9
 
 En cada retoma aplicar §35 del metacanon adquirido, no eludirlo por una respuesta «listo». Comprobar lectura efectiva y representar objetivo, rol, revisión, permisos, pendientes e incertidumbres; citar el estado literal requerido. El prompt no crea conectores ni memoria. En el hilo único no exigir un segundo agente. La prueba semántica queda abierta hasta contraste independiente/real. Sin escritura, checkpoint o delta íntegro NO GUARDADO.
+
+## Precisión1.10
+
+Aplicar§36 y conservar el propósito. Las dieciséis categorías de revisión no reemplazan los trece bloques del núcleo. Distinguir el cierre del encargo actual de aceptación funcional del marco; recuperar dependencias y permiso por acción. Una revisión documental o prueba mecánica no cierra la retoma semántica real. No convertir1.10 en1.1 ni borrar pendientes por migrar.
+
+## Refresco de la fuente · ciclo10
+
+Aplicar§37 en cada ciclo activo: comprobar versión/huella y commit de la ruta central por un medio real; recuperar/adoptar solo delta compatible ya autorizado. Mostrar versión adquirida, antigüedad de modificación y estado de comprobación. Sin acceso/reloj/origen: vigencia o edad NO VERIFICADA. No fingir refresco entre turnos o de instrucciones nativas.
+
+## Responsabilidad exclusiva · método1.10§38
+
+La migración no transfiere el frente por sí sola. Verificar CONTROL-RESPONSABILIDAD.json autoritativo: segundo hilo, copia offline o propiedad incierta ⇒ solo lectura/análisis y propuestas NO APLICADAS, sin asumir responsabilidad ni escribir el canon. No vence por interrupción. Transferir explícitamente a hilo/instancia identificados mediante comparación y sustitución atómicas; nunca sobrescribir el control con push genérico. La biblioteca ensaya el control, no impone un cerrojo a herramientas que lo eludan; esa limitación debe declararse. Refresco y propiedad son compuertas independientes.

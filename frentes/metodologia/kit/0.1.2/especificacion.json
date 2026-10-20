@@ -1,0 +1,131 @@
+{
+  "front": "metodologia",
+  "state_path": "METACANON-OBJETOS-CANONICOS.md",
+  "pending_path": "frentes/metodologia/PENDIENTES.md",
+  "governance_path": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.md",
+  "governance_version": "333",
+  "source_freshness": "not_verified_against_notion",
+  "semantic_validation": "pending",
+  "replay_allowed": false,
+  "operations": [],
+  "coverage": {
+    "complete": false,
+    "session": "3ffa4187-8241-80de-84a6-00a98cbd8894",
+    "limit": "92 archivos recuperados al corte09 y delta10; entradas visibles sobre categorías/estabilidad y orden de revisión; no herramientas completas ni captura futura automática; inventario de efectos anteriores no recuperado"
+  },
+  "originals": [
+    "frentes/metodologia/conversaciones/C-METODOLOGIA-RETOMA-05-adjunto.txt",
+    "frentes/metodologia/conversaciones/C-METODOLOGIA-RETOMA-05-dialogo.jsonl",
+    "frentes/metodologia/conversaciones/C-METODOLOGIA-IMPLEMENTACION-06-dialogo.jsonl",
+    "frentes/metodologia/conversaciones/C-METODOLOGIA-ENDURECIMIENTO-09-dialogo.jsonl",
+    "frentes/metodologia/conversaciones/C-METODOLOGIA-REVISION-INTEGRAL-10-dialogo.jsonl"
+  ],
+  "required": [
+    "INICIO.md",
+    "METACANON-OBJETOS-CANONICOS.md",
+    "PROMPT-UNIVERSAL-REINSTANCIACION.md",
+    "CONTINUIDAD-ENTRE-CONVERSACIONES.md",
+    "gobernanza/METAPROMPT-CANONICO-SAMANTHA.md",
+    "frentes/metodologia/PENDIENTES.md",
+    "frentes/metodologia/conversaciones/C-METODOLOGIA-RETOMA-05-adjunto.txt",
+    "frentes/metodologia/conversaciones/C-METODOLOGIA-RETOMA-05-dialogo.jsonl",
+    "frentes/metodologia/conversaciones/C-METODOLOGIA-IMPLEMENTACION-06-dialogo.jsonl",
+    "frentes/metodologia/trazabilidad/C-METODOLOGIA-IMPLEMENTACION-06.md",
+    "frentes/metodologia/trazabilidad/C-METODOLOGIA-IMPLEMENTACION-06.json",
+    "frentes/metodologia/kit/0.1.2/README.md",
+    "frentes/metodologia/kit/0.1.2/RECIBO-GOBIERNO.md",
+    "gobernanza/README.md",
+    "gobernanza/METAPROMPT-CANONICO-SAMANTHA.fuente.json",
+    "frentes/metodologia/conversaciones/C-METODOLOGIA-ENDURECIMIENTO-09-dialogo.jsonl",
+    "frentes/metodologia/conversaciones/C-METODOLOGIA-REVISION-INTEGRAL-10-dialogo.jsonl",
+    "frentes/metodologia/fuentes/MOTOR-1C-portable-ciclo09.md",
+    "frentes/metodologia/fuentes/MEMORIA-OPERATIVA-ciclo09.md",
+    "frentes/metodologia/kit/0.1.2/refrescar.cjs",
+    "frentes/metodologia/kit/0.1.2/responsabilidad.cjs",
+    "frentes/metodologia/CONTROL-RESPONSABILIDAD.json"
+  ],
+  "operations_inventory_status": "not_recovered; empty list is not proof that no operation exists",
+  "configuration_revision": "r5",
+  "governance_source_sha256": "02a9cacb78f4dc0cd86a819593e931dcf45b84f3ed310569a0b592e0b579c6ed",
+  "contract": {
+    "objective": "Revisión documental y mecánica del marco, manteniendo propósito y aceptación funcional abiertos hasta prueba del receptor",
+    "source_ref": "frentes/metodologia/conversaciones/C-METODOLOGIA-REVISION-INTEGRAL-10-dialogo.jsonl",
+    "criteria": [
+      {
+        "id": "audit16",
+        "source_ref": "frentes/metodologia/conversaciones/C-METODOLOGIA-REVISION-INTEGRAL-10-dialogo.jsonl",
+        "observable": "informe por16 categorías y revisión holística con delta",
+        "status": "pending"
+      },
+      {
+        "id": "refresh",
+        "source_ref": "frentes/metodologia/conversaciones/C-METODOLOGIA-REVISION-INTEGRAL-10-dialogo.jsonl",
+        "observable": "detección y etiqueta con límites de origen/reloj/adopción explícitos",
+        "status": "pending"
+      },
+      {
+        "id": "ownership",
+        "source_ref": "frentes/metodologia/conversaciones/C-METODOLOGIA-REVISION-INTEGRAL-10-dialogo.jsonl#orden-responsabilidad-exclusiva",
+        "observable": "registro exclusivo, bloqueo conservador y límites de imposición declarados",
+        "status": "pending"
+      }
+    ]
+  },
+  "framework_runtime_acceptance": "pending",
+  "dependencies": [
+    {
+      "id": "government",
+      "status": "acquired",
+      "source_path": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.md",
+      "scopes": [
+        "documentation"
+      ]
+    },
+    {
+      "id": "method",
+      "status": "acquired",
+      "source_path": "METACANON-OBJETOS-CANONICOS.md",
+      "scopes": [
+        "documentation"
+      ]
+    },
+    {
+      "id": "motor",
+      "status": "acquired",
+      "source_path": "frentes/metodologia/fuentes/MOTOR-1C-portable-ciclo09.md",
+      "scopes": [
+        "documentation"
+      ]
+    },
+    {
+      "id": "receiver_execution",
+      "status": "unavailable",
+      "scopes": [
+        "receiver_effect"
+      ]
+    },
+    {
+      "id": "cipher_review",
+      "status": "deferred",
+      "scopes": [
+        "security_change"
+      ]
+    }
+  ],
+  "action_contracts": [
+    {
+      "id": "document_method",
+      "scope": "documentation",
+      "authorization": {
+        "status": "authorized",
+        "source_ref": "frentes/metodologia/conversaciones/C-METODOLOGIA-REVISION-INTEGRAL-10-dialogo.jsonl"
+      },
+      "dependencies": [
+        "government",
+        "method",
+        "motor"
+      ],
+      "declared_result": "allowed"
+    }
+  ]
+}

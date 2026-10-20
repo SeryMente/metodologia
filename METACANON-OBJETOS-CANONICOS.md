@@ -1,8 +1,8 @@
-<!-- METACANON_VERSION=1.9; TEMPORARY_FRAMEWORK=true; USER_TRANSCRIPT_SPEC=true -->
+<!-- METACANON_VERSION=1.10; TEMPORARY_FRAMEWORK=true; USER_TRANSCRIPT_SPEC=true -->
 # Metacanon para crear y mantener objetos canónicos de proyecto
 
-- Estado: **Versión documental 1.9 — Endurecimiento operativo de portabilidad**, ampliación autorizada en C-METODOLOGIA-ENDURECIMIENTO-09; versiones previas preservadas en historia y antecedentes. Evidencia y límites en §§34–35. No acredita sincronización automática, cifrado, migración de todos los hijos ni portabilidad operativa completa.
-- Versión metodológica: **1.9**. Sello: **METACANON-OBJETOS-v1.9**. Gobierno general: [Metaprompt Canónico de Samantha](gobernanza/METAPROMPT-CANONICO-SAMANTHA.md), v333 · NX-333m; relación y límites en [gobernanza](gobernanza/README.md).
+- Estado: **Versión documental 1.10 — Revisión integral por categorías y aceptación**, ampliación autorizada en C-METODOLOGIA-REVISION-INTEGRAL-10; versiones previas preservadas en historia y antecedentes. Evidencia y límites en §§34–37. No acredita sincronización automática, cifrado, migración de todos los hijos ni portabilidad operativa completa.
+- Versión metodológica: **1.10**. Sello: **METACANON-OBJETOS-v1.10**. Gobierno general: [Metaprompt Canónico de Samantha](gobernanza/METAPROMPT-CANONICO-SAMANTHA.md), v333 · NX-333m; relación y límites en [gobernanza](gobernanza/README.md).
 - Nombre propio del marco: pendiente de elección del operador; no usar el nombre de un proyecto como nombre del método.
 - Repositorio de metodología identificado: https://github.com/SeryMente/metodologia, privado comprobado en el ciclo de actualización 1.1; revalidar su visibilidad antes de cada escritura sensible. Ruta METACANON-OBJETOS-CANONICOS.md; fuente vigente main; rama documental histórica docs/metacanon-objetos-20261011. Conservar los originales y datos privados del frente solo en su carpeta autorizada tras verificar acceso privado; nunca publicar secretos en Git ni transportar identidades de ejemplos.
 - Archivo estable propuesto: `METACANON-OBJETOS-CANONICOS.md`.
@@ -11,7 +11,7 @@
 
 ## LEER PRIMERO — modo metodología, no ejecución del ejemplo
 
-**Precisión vigente1.9:** aplicar §35 junto con §§29–34; primero gobierno, frente/rol, estado y permiso, después acción comprobada y checkpoint. §35 no altera el gobierno ni autoriza productos por ejemplo. Versiones antiguas en originales/notas conservan su carácter histórico.
+**Precisión vigente1.10:** aplicar §§35–38 junto con §§29–34; primero gobierno, frente/rol, estado y permiso, después acción comprobada y checkpoint. §35 no altera el gobierno ni autoriza productos por ejemplo. Versiones antiguas en originales/notas conservan su carácter histórico.
 
 **Actualización 1.7, de lectura previa:** [INICIO.md](INICIO.md) es la puerta de entrada transversal. Gobierno general en `gobernanza/METAPROMPT-CANONICO-SAMANTHA.md`; el metacanon gobierna el método, no constituye una autoridad general competidora. §§29–33 prevalecen sobre formulaciones anteriores incompatibles, en particular «objeto = un solo .md», subordinación al SI anterior, temporalidad de un mes como compromiso vigente y activación implícita de PRIUS. Las menciones de 1.0–1.6 en antecedentes conservan su sentido histórico. Leer una propuesta histórica no la ratifica.
 
@@ -134,15 +134,15 @@ Respeta alcance, compuertas y no-simulación. El asistente mantiene continuidad 
 
 ## 9. Estado de este metacanon
 
-- De dónde viene: dictados originales del operador y arquitectura por directorios ratificada; continuidad, fidelidad y custodia como prioridades. Todo el historial se conserva sin convertir propuestas en decisiones.
-- Dónde está: método1.9 / METACANON-OBJETOS-v1.9; estado C-METODOLOGIA-ENDURECIMIENTO-09-r1; entrega portable0.2; gobierno Samantha v333 · NX-333m íntegro y sin modificar. Revisión base473db6d7e261867e5a0142b4e0bcb2f6d478d0b4 más delta de este ciclo; frescura posterior requiere cotejo.
-- A dónde va: utilizar el mismo marco general en otra plataforma, incluido el ChatGPT gratuito que el operador usará; no cambiar su función para adaptarlo a instrucciones vagas ni prometer capacidades de ese receptor.
-- Qué cambió: control operativo§35; corrección del disparador genérico para respetar el hilo único; arranque y prompt coordinados; marcadores de integridad/lectura; verificador0.1.1 con versión metodológica real y comprobación del gobierno íntegro; controles positivos/negativos y respaldo con originales. No se altera la arquitectura ni se instala infraestructura.
-- 🔄 Estado vivo: endurecimiento general de emergencia del marco para migrar. Utilizar ARRANQUE-PORTABLE-v0.2.md y su prompt, adquirir gobierno y método reales, recuperar objetivo, estado, permisos, pendientes y próxima acción sin recapitulación. Siguiente paso: primera retoma real REAL-CHATGPT-01; conservar respuesta y límites, contrastar con originales y corregir fallos sin autoaprobar continuidad. Sin conector de escritura, continuar solo lo autorizado en copia de trabajo y entregar delta íntegro NO GUARDADO, nunca simular main actualizado. No construir observador ni reabrir decisiones diferidas como requisito de arranque.
-- ⚗️ En prueba / recién fallido: comprensión y cumplimiento del ChatGPT receptor NO VERIFICADOS; controles mecánicos y revisión documental no prueban conducta del modelo. Fuente Notion del espejo333 NO VERIFICADA; discrepancia histórica330 no reparada por inferencia.
-- Evidencia del ciclo: pruebas/endurecimiento/C-METODOLOGIA-ENDURECIMIENTO-09.json y trazabilidad del mismo identificador; pruebas aisladas de paquete/integridad/retoma y auditoría dirigida. Resultados y denominadores reales constan en la evidencia, no se deducen de la firma.
-- Cobertura: fuentes heredadas recuperadas, entrega08 y las tres instrucciones actuales de endurecimiento/corrección/destino; salidas visibles de este ciclo conservadas con procedencia. No archivo completo de herramientas, pensamientos privados ni captura futura automática. El paquete es derivado de transporte, no segundo núcleo.
-- 🔔 Recordatorios latentes: continuidad y fidelidad primero. Mantener notas, propuestas, decisiones, implementaciones y evidencia separadas. Permanecen ensayo semántico independiente y uso real; aligeramiento físico integral; cadena formal de intención/LISA; observador Harmonia/contrato técnico; aclaración de «Cloud»; sincronización aplicación→repositorio y discrepancia de gobierno. Seguridad/cifrado y Sesión PRIUS siguen diferidos explícitos, no cancelados ni activados. Pendientes completos en frentes/metodologia/PENDIENTES.md.
+- De dónde viene: dictados originales, arquitectura por directorios y continuidad ratificadas; endurecimiento1.9 revisado por dieciséis categorías y por integración holística. Historial y reglas compatibles conservados.
+- Dónde está: método1.10 / METACANON-OBJETOS-v1.10; estado C-METODOLOGIA-REVISION-INTEGRAL-10-r1; entrega portable0.3; kit0.1.2 con refresco y control de responsabilidad. Gobierno Samantha v333 · NX-333m íntegro y sin editar. Revisión basea8d612145cd64a46a13567c9779efd19b6cce9d7 más delta del ciclo10; cotejar para frescura posterior.
+- A dónde va: mantener el propósito general y usar el marco en otra plataforma sin reconstrucción del contexto ni sustitución del objetivo. Destino ChatGPT gratuito reportado; modelo/cuota/capacidad no comprobados.
+- Qué cambió: registro exclusivo no caducable y transferencia explícita, con límite de imposición técnica; refresco por huella/versión y etiqueta temporal con comprobación/fallo explícitos; auditoría16 y cinco puertas de aceptación; contrato de cierre y dependencias por acción; corrección de estado/versión duplicados y tipos/esquema; operaciones con permiso e identificador; entrada/prompts/kit/paquete coherentes. La revisión documental y las pruebas mecánicas no cierran aceptación funcional.
+- 🔄 Estado vivo: revisión integral del marco terminada documentalmente con límites; transportar mediante ARRANQUE-PORTABLE-v0.3.md y prompt correspondiente. Responsable registrado: hilo3ffa4187-8241-80de-84a6-00a98cbd8894, instancia samanthal-metodologia-ciclo10, generación1; control creado atómicamente y leído de vuelta en70bbc25b72e014e3df2f0df80aaaa8c4e8d4a0de. Próximo receptor permanece en lectura hasta traspaso explícito verificable. Siguiente paso: REAL-CHATGPT-01 en nueva conversación, inicialmente de adquisición/lectura; conservar entrada/respuesta/acción real y contrastar cinco puertas. No autoaprobar el receptor por decir «leído». Sin control vivo verificable, no asumir responsabilidad ni escribir canon; solo análisis y propuestas NO APLICADAS. Sin escritura al repositorio, copia de trabajo y delta íntegro NO GUARDADO; no repetir efectos inciertos ni construir observador como requisito de arranque.
+- ⚗️ En prueba / recién fallido: estabilidad operativa/comprensión del receptor NO VERIFICADAS. Fuente Notion del espejo333 NO VERIFICADA; la discrepancia histórica330 no se declara reparada. Los verificadores validan consistencia de declaraciones y archivos, no permisos humanos auténticos ni efectos externos.
+- Evidencia: revisiones/C-METODOLOGIA-REVISION-INTEGRAL-10.md y .json; pruebas/revision-integral del mismo ciclo; delta verificable1.9→1.10. La evidencia nueva identifica entradas exactas, entorno y alcance, no se atribuye prueba a modelos no ejecutados.
+- Cobertura:92 archivos recuperados al corte09 más delta10; originales visibles de preguntas/respuestas sobre categorías y estabilidad y orden actual. No herramientas completas, razonamiento privado ni captura futura automática. Estado único en este§9; paquete derivado, no autoridad nueva.
+- 🔔 Recordatorios latentes: continuidad, fidelidad y custodia primero. Mantener notas/propuestas/decisiones/implementaciones/evidencia separadas. Pendientes: ensayo semántico independiente y uso real, aligeramiento físico, intención formal/LISA, observador Harmonia/contrato, aclarar «Cloud», sincronización aplicación→repositorio y gobierno discrepante. Seguridad/cifrado y Sesión PRIUS continúan diferidos, no cancelados ni activados. Pendientes completos en frentes/metodologia/PENDIENTES.md.
 
 
 ## 10. Instrucción original de separación del metacanon
@@ -627,3 +627,100 @@ Para migrar: un disparador estable identifica el frente y recupera el estado del
 La entrega documental es utilizable cuando gobierno y método son recuperables, estado y prompt coinciden, fuentes/bloques obligatorios no están truncados, los pendientes no se pierden, el paquete supera sus controles positivos y negativos y queda un siguiente paso autorizado. Eso no acredita cumplimiento semántico del receptor: el primer uso real y los ensayos independientes siguen pendientes hasta conservar sus resultados y contrastarlos con los originales. Si el receptor falla repetidamente, registrar el fallo y limitar esa acción; no rebajar el objetivo del operador ni añadir promesas para fingir que ya funciona.
 
 Espejo333 intacto; correspondencia vigente con Notion no revalidada. Seguridad/cifrado, Sesión PRIUS, observador y sincronización continúan con sus estados previos. No se identifica ni se garantiza el modelo actual de ChatGPT gratuito: su disponibilidad y capacidad deben observarse en el receptor real.
+
+## 36. Integridad por categorías y aceptación holística · revisión1.10
+
+Las dieciséis categorías son ejes de revisión del método, no un nuevo molde ni dieciséis secciones obligatorias en cada hijo. Los trece bloques de§27 conservan nombres, orden y significado. Esta precisión no cambia arquitectura, gobierno, objetivos, roles ni autorizaciones; concreta controles de reglas existentes. El informe de este ciclo en frentes/metodologia/revisiones/C-METODOLOGIA-REVISION-INTEGRAL-10.md conserva hallazgo, cambio, evidencia y límite por categoría.
+
+### 36.1 Cobertura por categoría
+
+| Eje | Comprobación exigida | Regla base |
+| --- | --- | --- |
+| 1. Gobierno e identidad | Gobierno íntegro preservado; procedencia, ámbito y límite separados. | §§26/33/35.1 |
+| 2. Propósito y alcance | Contrato de cierre distingue objetivo del ciclo y aceptación funcional global. | §§2/15/35.2 |
+| 3. Fidelidad a la intención | Cada criterio conserva referencia original y resultado observable; propuestas no pasan a permiso. | §§14/25/30 |
+| 4. Organización del frente | Conteo exacto de un inicio de estado y ruta canónica fija en el verificador. | §§20/29/35.3 |
+| 5. Estructura común | Categorías son ejes de revisión; se preservan nombres/orden del molde13. | §§3/27/29 |
+| 6. Roles y colaboración | Un hilo solo en este frente; otros conservan asignación y prompts documentados. | §§21/24/25 |
+| 7. Autorizaciones y límites | Operaciones con ID y autorización declarada; propuesta/revocación no respaldan ejecución/aceptación. | §§14/26/35.2 |
+| 8. Ejecución autónoma | Objetivo acotado, dependencia por acción, siguiente paso y parada afectada explícitos. | §§4/25/35.2 |
+| 9. Viabilidad y avance | Separar preparación/documentación, prueba mecánica y aceptación funcional del receptor. | §§15/25 |
+| 10. Estimaciones | Recalcular desde dependencias; desconocido/no estimable se conserva con causa. | §§4/25 |
+| 11. Evidencia y verificación | Esquema tipado, rutas canónicas, versión textual exacta y referencias obligatorias. | §§7/19/26/35.5 |
+| 12. Persistencia y trazabilidad | Inventario del corte y originales actuales; salida exacta archivada por separado; paquete identifica base+delta. | §§16/28/30 |
+| 13. Continuidad y migración | Dependencias declaradas y adquiridas incluidas en ambos caminos de transporte. | §§34/35 |
+| 14. Versiones y conciliación | Versiones como cadenas, delta1.9→1.10 y comparación de base antes de publicar; no sobrescribir divergencia detectada. | §§5/22/23/35.3 |
+| 15. Entorno, herramientas y seguridad | Inventario por alcance: adquirido/no disponible/diferido; detener solo la operación dependiente. | §§6/12/13/24/32 |
+| 16. Validación y mejora continua | Cinco puertas de aceptación, resultados por capa y rúbrica REAL-CHATGPT-01 sin autocalificación. | §§7/19/34/35.5 |
+
+### 36.2 Contrato de cierre sin sustitución del propósito
+
+Antes de actuar, registrar en los campos existentes del núcleo, no en otro estado: encargo/objetivo literal y referencia; resultado terminal del ciclo; incluido/excluido; criterios observables con fuente, evidencia esperada y estado; autorización requerida; dependencias/capacidades; incertidumbres/efectos previos; próxima acción y checkpoint. No exigir papelería nueva cuando esos datos ya sean inequívocamente recuperables. Desconocido se conserva como desconocido, no se convierte en NO APLICA sin razón.
+
+Distinguir dos cierres: el trabajo solicitado en este ciclo puede estar verificado mientras la aceptación funcional global sigue abierta. Terminar esta revisión no significa que el marco ya gobierne correctamente a cualquier modelo. Para cada criterio: pendiente, bloqueado, verificado o no aplicable con razón; todo verificado enlaza evidencia y alcance. No cambiar el criterio ni el objetivo para acomodar lo que el receptor sí pudo hacer.
+
+### 36.3 Dependencias, permisos y operaciones
+
+Inventariar fuentes/capacidades realmente pertinentes con estado adquirido/disponible, no disponible o diferido y acción a la que afectan. Una copia local completa puede habilitar documentación aunque no acredite frescura remota. Una referencia citada no equivale a dependencia adquirida. Cualquier protocolo obligatorio para la acción debe estar recuperado o dejar bloqueo específico; no activarlo solo porque aparece mencionado. No ignorar una dependencia roja ni paralizar tareas independientes.
+
+Las operaciones materiales conservan identificador único, permiso y procedencia, estado, recibo/evidencia y reanudación. Un verificador puede comprobar consistencia de esas declaraciones, no autenticar que el humano aprobó ni garantizar que un servicio realizó el efecto. Propuesto/revocado no es autorizado; ejecutado no es verificado; verificado no es aceptación funcional global. No repetir resultado incierto ni reconstruir un inventario perdido como vacío.
+
+### 36.4 Cinco puertas de aceptación
+
+1. **Coherencia:** gobierno, método, perfil de roles, estado, permisos y prompts compatibles. Detectar versiones/campos duplicados, conservar historial y bloquear solo el efecto conflictivo.
+2. **Fidelidad:** referencia original → interpretación separada → criterio → acción → evidencia/aceptación. Una matriz no sustituye originales ni constituye firma formal de intención.
+3. **Funcionamiento efectivo:** siguiente paso autorizado realmente realizado con evidencia, no solo plan, fórmula o autoafirmación. Declarar capacidades y capa de prueba, sin homologar comprobadores mecánicos a modelos.
+4. **Recuperación:** corte, ausencia de fuente, efecto incierto y concurrencia dejan un punto recuperable; relectura antes de sobrescritura, sin promesas de memoria o actividad en segundo plano. Si no hay escritura, delta íntegro NO GUARDADO.
+5. **Contraste real:** una nueva conversación recibe únicamente el paquete/prompt, adquiere el frente, respeta permisos y avanza sin recapitulación general. Registrar entrada efectiva, plataforma/modelo comprobados o desconocidos, respuesta literal, acción/evidencia, fallos y corrección. No se autoaprueba ni se declara ciego si se le suministró toda la respuesta esperada.
+
+Cada puerta lleva evidencia o pendiente, no un «aprobado» por existencia de instrucciones. Una puerta mecánica aprobada no cierra la puerta funcional. La revisión documental puede cerrarse con límites; la estabilidad operativa permanece no validada mientras falten pruebas del receptor.
+
+### 36.5 Revisión holística, delta y propagación
+
+Cruzar las categorías mediante escenarios completos: trabajo autorizado con fuentes disponibles; documentación offline con frescura desconocida; propuesta sin permiso; interrupción con efecto incierto; dependencia diferida o escritura concurrente. Revisar ida y vuelta entre propósito, fuente, permiso, acción, prueba, estado y próxima conversación. Los escenarios mecanizados prueban declaraciones/control de flujo de archivos; no son ensayos semánticos ni middleware que obligue al modelo.
+
+Publicar un delta inequívoco: base/versiones, cambio y motivo, regla/archivo afectado, compatibilidad, prueba nueva/regresión, límites y siguiente aceptación. Las versiones son cadenas —1.10 no es1.1—. Actualizar entrada, prompt, kit y paquete que realmente se hayan cotejado; no afirmar migración de otros hijos. Sin control atómico disponible, una relectura reduce pero no elimina carreras: ante divergencia detectada no sobrescribir. No fingir garantías que la herramienta no ofrece.
+
+El control1.10 conserva propósito general y las excepciones vigentes. Seguridad/cifrado y Sesión PRIUS continúan diferidos; observación, sincronización automática, cadena formal de intención y aceptación del receptor conservan sus pendientes. No se modifica el Metaprompt Canónico de Samantha.
+
+## 37. Refresco del método y etiqueta temporal · ampliación del ciclo10
+
+### 37.1 Fuente y autodetección en cada ciclo activo
+
+Fuente central: SeryMente/metodologia, main, METACANON-OBJETOS-CANONICOS.md. Antes de cada ciclo sustantivo del frente activo, comprobar contenido/huella y revisión del método por un medio autorizado realmente disponible. No usar el último commit de cualquier archivo como fecha de actualización del método: consultar el último commit de esta ruta en la revisión observada. El helper rechaza observaciones de más de60s al generar un recibo de actualidad; una tarea larga requiere nueva lectura antes de afirmar actualidad. Registrar hora real de comprobación, versión textual, blob/hash, commit fuente, fecha de modificación y versión/huella adquiridas por el frente. Una firma, fecha copiada o caché sola no acreditan fuente vigente.
+
+Con GitHub MCP: leer fuente por revisión y commit de la ruta; conservar evidencia de la lectura y comparar con lo adquirido. Con CLI legítima disponible, refrescar.cjs hace consultas GitHub de solo lectura con tiempo/reintentos acotados y genera recibo derivado. Sin esos medios: conservar última versión adquirida y declarar vigencia NO VERIFICADA; no fingir que un adjunto se actualiza solo. No instalar credenciales, servicios ni ampliar acceso para ocultar el bloqueo.
+
+Comparar por huella, no solo por número: un cambio con la misma versión también requiere delta. Si no cambió la huella, reutilizar contenido ya adquirido sin releer innecesariamente. Si cambió, recuperar texto completo y diferencias pertinentes, reconciliar con gobierno/rol/alcance/permisos del frente y adoptar automáticamente lo compatible ya autorizado; registrar fuente y revisión de esa adopción. Un cambio material reservado al operador o retroceso de versión no se adopta a ciegas: mostrar versión disponible y adquirida, detener solo la operación afectada y conservar el delta. El comprobador no interpreta compatibilidad semántica ni autentica una aprobación humana por recibir un campo de JSON.
+
+### 37.2 Etiqueta discreta y honesta en cada salida
+
+Mantener el campo obligatorio de§22. Etiqueta abreviada adicional: versión adquirida + antigüedad de la última modificación del método + estado de comprobación. Ejemplo de formato, no dato real: «Metacanon1.10 · actualizado hace4min · comprobado ahora». Para una actualización pendiente: «adquirido1.10 / fuente1.11 · adopción pendiente». Ante caída: última versión realmente adquirida, antigüedad de última comprobación y «vigencia NO VERIFICADA». Nunca llamar «versión más actual» a una versión que no se cotejó.
+
+Calcular antigüedad al responder, desde la fecha de actualización de la ruta y un reloj comprobable, no desde el envío del usuario, el guardado de otro archivo o un texto estático. Segundos/minutos/horas para intervalos cortos; ayer/haceN días según zona horaria explícita para intervalos largos. El recibo conserva además fechas absolutas para auditar. Si reloj, zona, origen o fecha no están disponibles/coherentes, informar edad no verificada; no fabricar «ahora» ni rejuvenecer el método al releerlo. La fecha de empaquetado no equivale a la de actualización del método.
+
+### 37.3 Estados y límites de garantía
+
+Comprobación actual sin cambios o adopción compatible registrada; actualización pendiente de revisión; fuente no disponible; fuente inconsistente; comprobación caducada; retroceso pendiente de revisión. Los errores nunca convierten la última copia en actual: conservar el último recibo bueno y el bloqueo concreto. Las pruebas verifican estas transiciones bajo condiciones explícitas, no disponibilidad perpetua de GitHub ni obediencia de un modelo.
+
+Este control se dispara al ejecutar un ciclo con acceso a la fuente. No existe aquí vigilancia entre turnos, actualización forzada de conversaciones inactivas, edición automática de instrucciones nativas del proveedor ni mecanismo que una plataforma sin herramientas esté obligada a ejecutar. Garantía universal «a prueba de fallos» y refresco en ausencia de ejecución NO ACREDITADOS; quedan como limitación material, no se simulan. Cada frente debe adquirir el delta al volver a activarse. Esto no sustituye la sincronización aplicación→repositorio ni el observador pendientes, ni autoriza construir esa infraestructura sin sus compuertas.
+
+## 38. Responsabilidad exclusiva por frente · ampliación del ciclo10
+
+### 38.1 Invariante, identidad y bloqueo
+
+Cada frente tiene como máximo un hilo responsable registrado; colaboradores y receptores en lectura no se convierten en responsables. En metodología, CONTROL-RESPONSABILIDAD.json dentro del directorio del frente contiene solo control: frente, hilo/instancia, generación, condición y referencia de autorización. No duplica el estado operativo de§9 ni cambia el régimen de otros frentes. La asignación requiere una fuente de autorización expresa; identificadores declarados no autentican al emisor.
+
+Antes de asumir responsabilidad o modificar el canon: leer el control autoritativo vigente, comprobar hilo, instancia y generación y conservar su huella para la operación. Segundo hilo, ausencia de fuente, observación caducada, resultado incierto, formato ilegible o diferencia de generación/huella ⇒ **BLOQUEADO PARA RESPONSABILIDAD Y ESCRITURA CANÓNICA**. Puede leer, analizar y preparar propuestas explícitamente no aplicadas; no arrogarse responsabilidad, ejecutar efectos ni publicar estado paralelo. Una declaración «soy el mismo hilo» sin identidad verificable no satisface el control.
+
+### 38.2 Adquisición, traspaso y recuperación
+
+Crear por operación atómica «si no existe»; reemplazar solo mediante comparación y sustitución de la huella actual. En GitHub Contents: creación sin SHA y actualización con SHA observado. Conflicto ⇒ no adquirido; nunca reintentar sustituyendo automáticamente la huella para ganar. El control no se escribe con push genérico ni se borra para desbloquearlo. Lectura de vuelta obligatoria; operación de resultado incierto se reconcilia, no se repite a ciegas.
+
+No hay vencimiento ni robo por silencio, desconexión o cierre del navegador. Liberación por el propietario vigente y transferencia a hilo/instancia identificados requieren autorización explícita, checkpoint conservado y cambio atómico de generación. Un hilo anterior queda bloqueado tras el traspaso. Si el propietario desaparece, recuperación excepcional requiere decisión expresa del operador y comparación atómica del control observado; no se infiere permiso ni se debilita el bloqueo. Preparar un paquete de migración no transfiere responsabilidad. Destino sin identificar o sin acceso de verificación permanece en lectura/propuestas hasta un traspaso verificable.
+
+### 38.3 Alcance real de la garantía
+
+La creación y sustitución condicionales permiten un solo propietario **en el registro**. La biblioteca responsabilidad.cjs ensaya transiciones y un preflight conservador; no ejecuta mutaciones ni autentica identidades/órdenes. La carrera local prueba exclusión atómica del adaptador local, no una carrera GitHub real.
+
+Una comprobación anterior a un push no cierra la ventana entre comprobación y escritura. Para impedir todas las escrituras de procesos no cooperantes se necesita un mediador que valide la generación en la misma transacción de cada efecto y políticas de acceso que impidan eludirlo. Ese mediador y esas políticas no están implementados ni autorizados aquí. Por tanto, no declarar «a prueba de fallas universal» ni «todas las escrituras protegidas». La falta de garantía técnica se hace visible y bloquea atribuir esa capacidad; no se sustituye por una promesa del modelo. El refresco§37 tampoco concede propiedad.

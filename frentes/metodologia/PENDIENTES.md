@@ -101,3 +101,15 @@ Próximo hito de mayor valor: retoma ciega con otro modelo y evaluación contra 
 - Destino reportado por el operador: ChatGPT gratuito actual; identidad técnica, cuotas y capacidad NO VERIFICADAS. No se compensa un fallo del receptor declarando cumplido lo que no hizo.
 - PORT-01/CONT-02: entrega0.2 y control operativo§35 implementados documentalmente; verificador con versión real y gobierno completo; integridad/retoma mecánica sometidas a pruebas. La aceptación semántica sigue abierta.
 - REAL-CHATGPT-01, ensayo independiente, observador, sincronización, formalización de intención y restantes ideas se conservan con sus estados previos. Seguridad/cifrado y Sesión PRIUS no se activan.
+
+## C-METODOLOGIA-REVISION-INTEGRAL-10-r1
+
+- Revisión de dieciséis categorías y su integración holística: cambios documentales1.10 y kit0.1.2; evidencias en revisiones y pruebas/revision-integral. Categorías no sustituyen molde13.
+- Revisión/documentación y pruebas mecánicas separadas de estabilidad operativa: REAL-CHATGPT-01 y receptor independiente siguen abiertos. No cambiar su estado por publicar esta versión.
+- Inventario de dependencias/permisos por acción y contrato de cierre incorporados; aligeramiento físico, sincronización, observador, intención formal y demás pendientes previos se conservan. Seguridad/cifrado y Sesión PRIUS diferidos sin activación.
+
+- REFRESCO-01: autodetección por fuente/huella, contrato de adopción y etiqueta temporal incluidos en1.10. Comprobación obligatoria al ejecutar cada ciclo; adaptadores disponibles: GitHub MCP y helperCLI de solo lectura. Garantía universal, vigilancia entre turnos y ejecución forzada en plataformas sin herramientas NO ACREDITADAS. No cerrar ese límite por aprobar fixtures.
+
+## RESPONSABILIDAD-01 · petición del ciclo10
+
+Implementado: regla§38, registro exclusivo creado sin sobrescribir y leído de vuelta; biblioteca y ensayo de transiciones/carrera local. Pendiente: transferencia explícita al hilo destino cuando esté identificado y disponga de verificación; sin ella el receptor queda en lectura/propuestas. No implementado: mediador transaccional y restricción de todas las vías de escritura; requerirían revisión/decisión material. No afirmar protección universal ni usar vencimiento automático.
