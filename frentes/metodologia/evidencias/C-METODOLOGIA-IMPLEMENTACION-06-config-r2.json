@@ -1,0 +1,15 @@
+{
+  "configuration_revision": "r2",
+  "base": "030512e17a8a001d6dcdb3ebe972d51f1c5e2fad",
+  "reason": "no inventar una operación real a partir de un marcador de guarda",
+  "semantic_validation": "pending",
+  "files": {
+    "frentes/metodologia/kit/0.1.0/especificacion.json": "cb3fc20b3c6a7a253c518f97e69052fd70a6eb9510aef57c25a48928bafa8f37",
+    "frentes/metodologia/cronica/C-METODOLOGIA-IMPLEMENTACION-06.md": "b0b263d754a4d5ef9dd563ba072234038a281c98fbf456d17b1e65d780c8dc85",
+    "frentes/metodologia/pruebas/benchmark/C-METODOLOGIA-IMPLEMENTACION-06-linux.json": "ee79680818edd62eed9b21c48a3d2acb80cc0c2e2565347d02caca79f69fd7cc",
+    "frentes/metodologia/pruebas/benchmark/C-METODOLOGIA-IMPLEMENTACION-06-windows.json": "af531837b80ea295e4b83563e3256ef61f45fde69569efd379576047a94be7dc",
+    "frentes/metodologia/conversaciones/C-METODOLOGIA-IMPLEMENTACION-06-salida.md": "1b615511a8d047e5ce68a2b02112090fb830c53d89efb675a55c34319972d999",
+    "frentes/metodologia/conversaciones/C-METODOLOGIA-IMPLEMENTACION-06-cierre.jsonl": "5d9d612a45d6068446803b91c0e940af299ed9bcc0b7194b75ded76fc9b2046a"
+  },
+  "governance_unchanged": true
+}

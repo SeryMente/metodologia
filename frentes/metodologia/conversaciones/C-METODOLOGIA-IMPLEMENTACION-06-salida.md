@@ -15,6 +15,6 @@ La trazabilidad ya enlaza dictados con requisitos y evidencia, pero **no calcula
 
 <file source="session-file://e04a3a3a-e153-4f5f-8967-26c76ddec10e">Prompt-universal-de-continuidad.txt</file>
 
-<edit_reference ids="editref_78eXnGQ1TFF7,editref_XK7Pr8_Ssu7Z">
+<edit_reference ids="editref_78eXnGQ1TFF7,editref_XK7Pr8_Ssu7Z,editref__m-4TmSLxqSo">
 Registrados fallos de ejecución y sus guardas
 </edit_reference>

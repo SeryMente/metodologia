@@ -7,16 +7,11 @@
   "source_freshness": "not_verified_against_notion",
   "semantic_validation": "pending",
   "replay_allowed": false,
-  "operations": [
-    {
-      "id": "cualquier-efecto-sin-recibo-en-el-nuevo-hilo",
-      "status": "unknown"
-    }
-  ],
+  "operations": [],
   "coverage": {
     "complete": false,
     "session": "3ffa4187-8241-80de-84a6-00a98cbd8894",
-    "limit": "exportación adjunta íntegra hasta la interrupción 2026-10-20 09:50; tramo de migración guardado en RETOMA-05 y eventos 241,244,246,249 más salida de IMPLEMENTACION-06; no captura futura automática"
+    "limit": "exportación adjunta íntegra hasta la interrupción 2026-10-20 09:50; tramo de migración guardado en RETOMA-05 y eventos 241,244,246,249 más salida de IMPLEMENTACION-06; no captura futura automática; inventario operativo no recuperado: verificar cualquier efecto anterior antes de actuar"
   },
   "originals": [
     "frentes/metodologia/conversaciones/C-METODOLOGIA-RETOMA-05-adjunto.txt",
@@ -39,5 +34,7 @@
     "frentes/metodologia/kit/0.1.0/RECIBO-GOBIERNO.md",
     "gobernanza/README.md",
     "gobernanza/METAPROMPT-CANONICO-SAMANTHA.fuente.json"
-  ]
+  ],
+  "operations_inventory_status": "not_recovered; empty list is not proof that no operation exists",
+  "configuration_revision": "r2"
 }

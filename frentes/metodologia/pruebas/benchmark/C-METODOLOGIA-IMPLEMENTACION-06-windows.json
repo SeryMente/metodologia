@@ -3,9 +3,9 @@
   "kit": "0.1.0",
   "method": "1.8",
   "governance": "333",
-  "source_revision": "a1c519d587effd0974db3788204ddfd9ad39d215",
+  "source_revision": "030512e17a8a001d6dcdb3ebe972d51f1c5e2fad",
   "source_revision_role": "base_commit_of_candidate; source hashes identify exact tested working inputs",
-  "timestamp": "2026-10-20T17:26:28.547Z",
+  "timestamp": "2026-10-20T17:32:05.641Z",
   "environment": {
     "platform": "win32",
     "arch": "x64",
@@ -39,8 +39,8 @@
       "actual": "accept",
       "passed": true,
       "exit_code": 0,
-      "elapsed_ms": 449.7164,
-      "stdout": "{\"status\":\"INTEGRITY_VALID\",\"revision\":\"a1c519d587effd0974db3788204ddfd9ad39d215\",\"files\":15,\"remote_freshness\":\"expected_revision_matches_not_a_remote_query\",\"source_freshness\":\"not_verified_against_notion\",\"semantic_validation\":\"pending\",\"replay_allowed\":false}",
+      "elapsed_ms": 440.3902,
+      "stdout": "{\"status\":\"INTEGRITY_VALID\",\"revision\":\"030512e17a8a001d6dcdb3ebe972d51f1c5e2fad\",\"files\":15,\"remote_freshness\":\"expected_revision_matches_not_a_remote_query\",\"source_freshness\":\"not_verified_against_notion\",\"semantic_validation\":\"pending\",\"replay_allowed\":false}",
       "stderr": ""
     },
     {
@@ -50,7 +50,7 @@
       "actual": "block",
       "passed": true,
       "exit_code": 1,
-      "elapsed_ms": 448.7128,
+      "elapsed_ms": 404.6733,
       "stdout": "",
       "stderr": "BLOQUEADO: integridad METACANON-OBJETOS-CANONICOS.md"
     },
@@ -61,7 +61,7 @@
       "actual": "block",
       "passed": true,
       "exit_code": 1,
-      "elapsed_ms": 437.3879,
+      "elapsed_ms": 434.6888,
       "stdout": "",
       "stderr": "BLOQUEADO: integridad gobernanza/METAPROMPT-CANONICO-SAMANTHA.md"
     },
@@ -72,7 +72,7 @@
       "actual": "block",
       "passed": true,
       "exit_code": 1,
-      "elapsed_ms": 423.5423,
+      "elapsed_ms": 437.3253,
       "stdout": "",
       "stderr": "BLOQUEADO: integridad frentes/metodologia/PENDIENTES.md"
     },
@@ -83,7 +83,7 @@
       "actual": "block",
       "passed": true,
       "exit_code": 1,
-      "elapsed_ms": 389.1767,
+      "elapsed_ms": 427.2391,
       "stdout": "",
       "stderr": "BLOQUEADO: frente incorrecto"
     },
@@ -94,7 +94,7 @@
       "actual": "block",
       "passed": true,
       "exit_code": 1,
-      "elapsed_ms": 405.4314,
+      "elapsed_ms": 475.2941,
       "stdout": "",
       "stderr": "BLOQUEADO: revisión distinta a la requerida"
     },
@@ -105,7 +105,7 @@
       "actual": "block",
       "passed": true,
       "exit_code": 1,
-      "elapsed_ms": 434.1243,
+      "elapsed_ms": 455.6417,
       "stdout": "",
       "stderr": "BLOQUEADO: gobierno nativo distinto: resolver discrepancia"
     },
@@ -116,8 +116,8 @@
       "actual": "accept",
       "passed": true,
       "exit_code": 0,
-      "elapsed_ms": 441.5958,
-      "stdout": "{\"status\":\"INTEGRITY_VALID\",\"revision\":\"a1c519d587effd0974db3788204ddfd9ad39d215\",\"files\":15,\"remote_freshness\":\"expected_revision_matches_not_a_remote_query\",\"source_freshness\":\"not_verified_against_notion\",\"semantic_validation\":\"pending\",\"replay_allowed\":false}",
+      "elapsed_ms": 417.3343,
+      "stdout": "{\"status\":\"INTEGRITY_VALID\",\"revision\":\"030512e17a8a001d6dcdb3ebe972d51f1c5e2fad\",\"files\":15,\"remote_freshness\":\"expected_revision_matches_not_a_remote_query\",\"source_freshness\":\"not_verified_against_notion\",\"semantic_validation\":\"pending\",\"replay_allowed\":false}",
       "stderr": ""
     },
     {
@@ -127,7 +127,7 @@
       "actual": "block",
       "passed": true,
       "exit_code": 1,
-      "elapsed_ms": 444.0553,
+      "elapsed_ms": 401.3119,
       "stdout": "",
       "stderr": "BLOQUEADO: ruta insegura"
     },
@@ -138,7 +138,7 @@
       "actual": "block",
       "passed": true,
       "exit_code": 1,
-      "elapsed_ms": 420.3672,
+      "elapsed_ms": 405.7411,
       "stdout": "",
       "stderr": "BLOQUEADO: ruta insegura"
     },
@@ -149,7 +149,7 @@
       "actual": "block",
       "passed": true,
       "exit_code": 1,
-      "elapsed_ms": 401.1154,
+      "elapsed_ms": 416.1164,
       "stdout": "",
       "stderr": "BLOQUEADO: archivo no inventariado extra"
     },
@@ -160,7 +160,7 @@
       "actual": "block",
       "passed": true,
       "exit_code": 1,
-      "elapsed_ms": 435.3296,
+      "elapsed_ms": 408.5143,
       "stdout": "",
       "stderr": "BLOQUEADO: originales ausentes"
     },
@@ -171,7 +171,7 @@
       "actual": "block",
       "passed": true,
       "exit_code": 1,
-      "elapsed_ms": 427.7451,
+      "elapsed_ms": 406.7876,
       "stdout": "",
       "stderr": "BLOQUEADO: cobertura debe declarar límite, no captura futura"
     },
@@ -182,7 +182,7 @@
       "actual": "block",
       "passed": true,
       "exit_code": 1,
-      "elapsed_ms": 442.9863,
+      "elapsed_ms": 406.2849,
       "stdout": "",
       "stderr": "BLOQUEADO: cobertura debe declarar límite, no captura futura"
     },
@@ -193,7 +193,7 @@
       "actual": "block",
       "passed": true,
       "exit_code": 1,
-      "elapsed_ms": 409.3836,
+      "elapsed_ms": 413.7306,
       "stdout": "",
       "stderr": "BLOQUEADO: estado derivado distinto"
     },
@@ -204,7 +204,7 @@
       "actual": "block",
       "passed": true,
       "exit_code": 1,
-      "elapsed_ms": 425.5603,
+      "elapsed_ms": 400.6644,
       "stdout": "",
       "stderr": "BLOQUEADO: lectura derivada distinta"
     },
@@ -215,8 +215,8 @@
       "actual": "accept",
       "passed": true,
       "exit_code": 0,
-      "elapsed_ms": 460.9394,
-      "stdout": "{\"status\":\"INTEGRITY_VALID\",\"revision\":\"a1c519d587effd0974db3788204ddfd9ad39d215\",\"files\":15,\"remote_freshness\":\"NOT_VERIFIED\",\"source_freshness\":\"not_verified_against_notion\",\"semantic_validation\":\"pending\",\"replay_allowed\":false}",
+      "elapsed_ms": 394.2715,
+      "stdout": "{\"status\":\"INTEGRITY_VALID\",\"revision\":\"030512e17a8a001d6dcdb3ebe972d51f1c5e2fad\",\"files\":15,\"remote_freshness\":\"NOT_VERIFIED\",\"source_freshness\":\"not_verified_against_notion\",\"semantic_validation\":\"pending\",\"replay_allowed\":false}",
       "stderr": ""
     },
     {
@@ -226,7 +226,7 @@
       "actual": "block",
       "passed": true,
       "exit_code": 1,
-      "elapsed_ms": 430.7734,
+      "elapsed_ms": 407.1618,
       "stdout": "",
       "stderr": "BLOQUEADO: repetición prohibida"
     },
@@ -237,7 +237,7 @@
       "actual": "block",
       "passed": true,
       "exit_code": 1,
-      "elapsed_ms": 436.5374,
+      "elapsed_ms": 436.1555,
       "stdout": "",
       "stderr": "BLOQUEADO: operación sin recibo/evidencia"
     },
@@ -248,7 +248,7 @@
       "actual": "block",
       "passed": true,
       "exit_code": 1,
-      "elapsed_ms": 493.1394,
+      "elapsed_ms": 394.7954,
       "stdout": "",
       "stderr": "BLOQUEADO: no atribuir prueba semántica"
     },
@@ -259,7 +259,7 @@
       "actual": "block",
       "passed": true,
       "exit_code": 1,
-      "elapsed_ms": 426.7712,
+      "elapsed_ms": 408.5992,
       "stdout": "",
       "stderr": "BLOQUEADO: frescura del espejo no acreditada"
     },
@@ -270,7 +270,7 @@
       "actual": "block",
       "passed": true,
       "exit_code": 1,
-      "elapsed_ms": 409.4844,
+      "elapsed_ms": 389.1766,
       "stdout": "",
       "stderr": "BLOQUEADO: inventario duplicado"
     },
@@ -281,7 +281,7 @@
       "actual": "block",
       "passed": true,
       "exit_code": 1,
-      "elapsed_ms": 388.9641,
+      "elapsed_ms": 400.6742,
       "stdout": "",
       "stderr": "BLOQUEADO: esquema/versión"
     },
@@ -298,9 +298,9 @@
   "in_memory_unchanged": true,
   "semantic_validation": "pending",
   "browser_observer": "not_installed",
-  "temporary_directory": "C:\\Users\\MANTEN~1\\AppData\\Local\\Temp\\metodologia-lab-cvrKl1",
+  "temporary_directory": "C:\\Users\\MANTEN~1\\AppData\\Local\\Temp\\metodologia-lab-lZLkVV",
   "result": "PASS",
-  "installed_lab_root": "C:\\Users\\MantenimientoRCI\\AppData\\Local\\SeryMente\\Laboratorio\\metodologia\\kit-0.1.0-vCJevW",
-  "no_background_service": true,
-  "no_vm_created": true
+  "configuration_sha256": "cb3fc20b3c6a7a253c518f97e69052fd70a6eb9510aef57c25a48928bafa8f37",
+  "configuration_revision": "r2",
+  "installed_lab_root": "C:\\Users\\MantenimientoRCI\\AppData\\Local\\SeryMente\\Laboratorio\\metodologia\\kit-0.1.0-vCJevW"
 }

@@ -23,3 +23,7 @@ Sigue pendiente: prueba ciega con otro modelo; refactorización física integral
 Conservar exportación íntegra previa y diálogo de migración RETOMA-05; nuevos originales directos241,244,246,249; salida final preparada se archiva exactamente en -salida.md. La cobertura no abarca herramientas ni todos los mensajes intermedios de trabajo. Un guardado no garantiza captura futura.
 
 La siguiente acción es la prueba semántica ciega. Requiere receptor independiente y evaluación contra fuentes, no una autocertificación con palabras clave. Tiempo integral de esa prueba y de pendientes externos no verificado; no se emite promesa de cierre universal.
+
+## Ajuste de configuración r2
+
+El cotejo final detectó un marcador genérico preventivo en el inventario de operaciones. No representaba una operación real recuperada y podía interpretarse como tal. Se retira; inventario no adquirido se declara expresamente y lista vacía no acredita ausencia de efectos anteriores. No se amplían permisos ni se permite repetir efectos sin consultar evidencia. Kit0.1.0, configuraciónr2; fuentes/pruebas mecánicas conservadas, nuevo ensayo24/24 en Linux y Windows. Estado operativo y siguiente hito sin cambio: prueba semántica independiente pendiente.
