@@ -64,3 +64,19 @@ Esta actualización conserva las listas anteriores como historia. No modifica pr
 7. **PLAT-01 / GOB-02 · Discrepancia:** espejo GitHub v333 disponible; personalización/página accesible v330; página Notion declarada por el espejo no accesible desde el workspace actual. Vigencia relativa y correspondencia de origen no verificadas. No sobrescribir ni sustituir páginas por deducción.
 
 Se mantienen SYNC-01, SEG-01 y PRIUS-01 en sus estados anteriores. Referencias normativas al antiguo gobierno se interpretan según la precedencia ya ratificada; esta revisión no cambia el metaprompt ni activa protocolos. El próximo paso documental está exclusivamente en §9 del núcleo.
+
+## Conciliación C-METODOLOGIA-IMPLEMENTACION-06-r1
+
+Historial anterior preservado; esta entrada precisa estado sin cambiar prioridades ratificadas.
+
+- CUST-03/04: adjunto completo exacto y cotejo de 30 temas, con anclas literales y huella; se añaden eventos241,244,246,249 y salida final. Cobertura explícita, no captura automática futura.
+- CONT-02/SAL-01: prompt universal ampliado de forma mínima con vía de transporte, revisión esperada, no repetición y recibo breve. Kit0.1.0 ejecutable empaqueta y valida el núcleo y produce lectura de arranque. Prueba de comprensión semántica continúa pendiente.
+- CONT-01/BENCH-01/LAB-01: laboratorio de CLI con procesos nuevos, resultados por caso, hashes/versiones y ejecución Linux y Windows, más regresión Python histórica ejecutada nuevamente sin alterar la fuente. Los resultados solo cierran controles mecánicos, no continuidad semántica perfecta ni observación del navegador. Evidencia en pruebas/benchmark/ y kit/0.1.0.
+- TRAZ-01: LISA v1.2 adquirido y copiado; trazabilidad documental implementada. Vector L0 requiere ratificación/firma, no equivale a embeddings. La matriz no simula L0 firmado ni distancia semántica calculada. Cadena formal hasta código y métrica semántica siguen pendientes.
+- ARQ-01/PORT-01: paquete de transporte con lectura operativa derivada literal y archivos completos bajo demanda. Sin duplicar estado vivo ni borrar antecedentes. Separación física integral del metacanon todavía pendiente; no afirmar arranque mínimo perfecto.
+- OBS-01: hub histórico Harmonia recuperado; contrato técnico actual no adquirido en este ciclo. Observador ChatGPT NO implementado ni instalado; identificación de «Cloud» no resuelta. Requiere contrato vigente y revisión explícita del alcance de datos/seguridad antes de construcción.
+- DOC-01: snapshots puntuales de LISA y Harmonia en fuentes/, no sincronización perpetua.
+- PLAT-01/GOB-02: espejo333 intacto; carga nativa330 antigua; correspondencia con fuente actual NO VERIFICADA, no se sobrescriben páginas ni personalización por deducción.
+- SYNC-01, SEG-01 y PRIUS-01 mantienen sus estados previos. Repositorio privado no resuelve cifrado. Ningún protocolo PRIUS ni LISA se activa por consultar sus documentos.
+
+Próximo hito de mayor valor: retoma ciega con otro modelo y evaluación contra los originales. No requiere construir antes toda la observabilidad. No hay plazo integral probado para pendientes externos.

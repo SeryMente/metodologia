@@ -20,3 +20,7 @@ El gobierno general anterior de `SI-METACOGNITIVO.md` es histórico. Los procedi
 ## Continuidad entre conversaciones
 
 Usa el [prompt universal](PROMPT-UNIVERSAL-REINSTANCIACION.md) y el [contrato de continuidad](CONTINUIDAD-ENTRE-CONVERSACIONES.md). En Notion comprueba el metaprompt recibido por configuración; fuera de Notion cárgalo expresamente. La versión automática puede ser antigua. El núcleo del frente de metodología sigue en el metacanon, §9; [ideas pendientes](frentes/metodologia/PENDIENTES.md). Pruebas mecánicas no equivalen a ensayo semántico de otro modelo.
+
+## Vía portable ejecutable · kit 0.1.0
+
+Herramientas y lectura de arranque en `frentes/metodologia/kit/0.1.0/README.md`; estado único en §9 del metacanon. Usar el prompt universal y el recibo breve; los paquetes transportados conservan revisión/cobertura y declaran frescura desconocida sin cotejo. No sustituyen el canon ni certifican comprensión semántica.

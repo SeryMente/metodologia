@@ -1,0 +1,79 @@
+{
+  "cycle": "C-METODOLOGIA-IMPLEMENTACION-06",
+  "revision": "r1",
+  "method_version": "1.8",
+  "kit_version": "0.1.0",
+  "benchmark_version": "0.2",
+  "base": "a1c519d587effd0974db3788204ddfd9ad39d215",
+  "expected_existing": {
+    "METACANON-OBJETOS-CANONICOS.md": "2c234f8924c75444a47ad423f6654dca329c7d4a",
+    "INICIO.md": "4ea3c9e56f893a131a5f94031cdfa1b24abb1b5a",
+    "PROMPT-UNIVERSAL-REINSTANCIACION.md": "67c946b47ff8c3a7a00a64b240b620c0e73968a5",
+    "CONTINUIDAD-ENTRE-CONVERSACIONES.md": "9420c1bfe3e6492841fd6d180ed65a721c2b13e9",
+    "frentes/metodologia/PENDIENTES.md": "e947c05955b79c0c7c8d6a34638745656ef34b98",
+    "gobernanza/METAPROMPT-CANONICO-SAMANTHA.md": "e964afa3d50b60980f870016ee7a597db3e5caf2",
+    "gobernanza/README.md": "0ea4f0abcb83825ff84296546ba28355972ddf33",
+    "gobernanza/METAPROMPT-CANONICO-SAMANTHA.fuente.json": "9723f26e65139e961708c4304170d7689a36d388"
+  },
+  "scope": "targeted section9, append INICIO/prompt/pending, named new front artifacts; governance immutable",
+  "attachment": {
+    "bytes": 54565,
+    "sha256": "4337eee0f4ad1dbc544ccabdadf034e2dbde5853ef157489da3b3db0cafc03eb"
+  },
+  "mechanical_tests": {
+    "linux": "24/24",
+    "windows": "24/24",
+    "python_final": "33/33"
+  },
+  "semantic_validation": "pending",
+  "traceability": "documentary; no signed L0, no semantic delta",
+  "files": {
+    "PROMPT-UNIVERSAL-REINSTANCIACION.md": "0dab41782c8bf7c8f3582fedfbbac050be2bedb75397594256f419b086f22973",
+    "METACANON-OBJETOS-CANONICOS.md": "7fbd015551e1be760ebed39a51879079156f75e55cc4fa14b751d05248bfc471",
+    "INICIO.md": "ffbc39220f321cdc99eb4cb542ed50df772b4ca01d87ffebc6662b31892911f0",
+    "frentes/metodologia/PENDIENTES.md": "063753c51a781fc56118ca977f221b1716de6aeef33167905eb4381e1f5d8e77",
+    "frentes/metodologia/trazabilidad/C-METODOLOGIA-IMPLEMENTACION-06.json": "f0989899bbf5ec6f675fa441b40f72c7b6420ea8ca650dc315b4b3df1e6422d4",
+    "frentes/metodologia/trazabilidad/C-METODOLOGIA-IMPLEMENTACION-06.md": "e6bf94ba0c8ffa097b3dbbff5f670f09bdd84bb9b7927f34cc998f938423520b",
+    "frentes/metodologia/fuentes/C-METODOLOGIA-IMPLEMENTACION-06-LISA-v1.2.json": "345289a79f37a2b12a7362e337cf1757e0e1f622cfed90d029cd33fc306c8533",
+    "frentes/metodologia/fuentes/C-METODOLOGIA-IMPLEMENTACION-06-Harmonia-hub.json": "102ae63c4a16d44e3b952a45a2044d3f5296048577580daf52fb19d5fea559e7",
+    "frentes/metodologia/conversaciones/C-METODOLOGIA-IMPLEMENTACION-06-dialogo.jsonl": "37c428548ef84c3be5377e92b00ec3ccba6985916cdfcdf6663d4a76b412c172",
+    "frentes/metodologia/conversaciones/C-METODOLOGIA-IMPLEMENTACION-06-salida.md": "31127df8614ff5ba00fc1d4fa7aab92528dd47b7c4ffa1d3ae36a703bf88f7fb",
+    "frentes/metodologia/conversaciones/C-METODOLOGIA-IMPLEMENTACION-06-cierre.jsonl": "25fb36a38370ccf614c17224c6a8b8c008d135e205521c7063e1890587a9bc3d",
+    "frentes/metodologia/cronica/C-METODOLOGIA-IMPLEMENTACION-06.md": "53c6961115d5a7eef36304a6dcfff913a7a226d061ca72c06d4884f75efbb318",
+    "frentes/metodologia/pruebas/benchmark/PROTOCOLO-v0.2.md": "70fc1674e112d1923f8851777b0ac0eb2bc22b7c95caa87e55216f8c65d3bada",
+    "frentes/metodologia/pruebas/benchmark/C-METODOLOGIA-IMPLEMENTACION-06-linux.json": "87efc0c0f44218eef297fa2b10ec8de0bfc881ea7779ed6f022a52567dc4e78f",
+    "frentes/metodologia/pruebas/benchmark/C-METODOLOGIA-IMPLEMENTACION-06-windows.json": "cc2e0ac0a513b1e1b575e1433b6a792de0299c7b00875db96a2d32bc4d29f4b7",
+    "frentes/metodologia/pruebas/benchmark/C-METODOLOGIA-IMPLEMENTACION-06-regresion-python.json": "25235c5b82ea3a03d16820ce9573ec561d65f8636ec5880bf5c4526befa33a22",
+    "frentes/metodologia/kit/0.1.0/continuidad.cjs": "313436db40f99ac485f4e11884bede903c2dcc33ceac9c3a0fc1256449ceb53c",
+    "frentes/metodologia/kit/0.1.0/laboratorio.cjs": "08abfa35bb5b5f75d701957f6cae931242ba5c0312b1e70de9761dccba036713",
+    "frentes/metodologia/kit/0.1.0/ensayo-historico.py": "01e6488591945093cf2ee2cf274ae42fd56bfb18c5c2f1a1596976d506fc5099",
+    "frentes/metodologia/kit/0.1.0/especificacion.json": "05bcebe3a31a0e0fd68bbea223c069b371e9ae0114e8dca0fbc42c1b58ccf5ab",
+    "frentes/metodologia/kit/0.1.0/RECIBO-GOBIERNO.md": "63e9d08d5c150fe43c32637a76022c36f2b5a9781e2ff8f6ac0be4a2c8277e76",
+    "frentes/metodologia/kit/0.1.0/README.md": "256c1bc6c69c8597e5b7f71e8b09f03b2a7109a02da244c387362d23ff892c81",
+    "frentes/metodologia/kit/0.1.0/ARRANQUE-PROMPT.txt": "7cf40c08038f3e4559ebd542f1157b4d7b604aacd80f2ea1d7f009135675e530"
+  },
+  "coverage": {
+    "original_export": "complete supplied file",
+    "direct_events": [
+      241,
+      244,
+      246,
+      249
+    ],
+    "final": "exact saved separately",
+    "all_intermediate_comments": false,
+    "future_automatic_capture": false
+  },
+  "local_lab_root": "C:\\Users\\MantenimientoRCI\\AppData\\Local\\SeryMente\\Laboratorio\\metodologia\\kit-0.1.0-vCJevW",
+  "no_governance_change": true,
+  "no_observer_installed": true,
+  "no_sync_installed": true,
+  "preflight": {
+    "private_repo": true,
+    "base": "a1c519d587effd0974db3788204ddfd9ad39d215",
+    "negative_tests": "PASS",
+    "tested_inputs_match": true,
+    "readback_required": true,
+    "secret_pattern_scan": "limited known patterns; not a complete secret audit"
+  }
+}

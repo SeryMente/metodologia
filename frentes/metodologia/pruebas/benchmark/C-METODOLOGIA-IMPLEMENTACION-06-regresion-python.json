@@ -1,0 +1,2585 @@
+{
+  "kind": "ensayo mecanico con fixtures sinteticos, no LLM",
+  "limitations": [
+    "No mide comprensión, obediencia o fidelidad semántica de ningún modelo.",
+    "No recupera mensajes que jamás se escribieron y cuyo faltante no se declaró.",
+    "El pin detecta alteraciones respecto de una referencia, no autentica al autor.",
+    "No es una implementación de sincronización perpetua ni cifrado.",
+    "Los baselines son variantes deliberadamente incompletas de este banco; no versiones históricas del método."
+  ],
+  "iterations": [
+    {
+      "version": 0,
+      "passed": 5,
+      "total": 33,
+      "checks": [
+        {
+          "case": "operacion_incierta_no_repetir",
+          "passed": false,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "persona": null,
+            "action": "replay",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "user",
+                "text": "Mantener pendiente el cifrado."
+              },
+              {
+                "event": 2,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "assistant",
+                "persona": null,
+                "text": "Pendiente registrado."
+              }
+            ]
+          }
+        },
+        {
+          "case": "originales_ambos_roles",
+          "passed": true,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "persona": null,
+            "action": "replay",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "user",
+                "text": "Mantener pendiente el cifrado."
+              },
+              {
+                "event": 2,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "assistant",
+                "persona": null,
+                "text": "Pendiente registrado."
+              }
+            ]
+          }
+        },
+        {
+          "case": "persona_no_inferida",
+          "passed": true,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "persona": null,
+            "action": "replay",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "user",
+                "text": "Mantener pendiente el cifrado."
+              },
+              {
+                "event": 2,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "assistant",
+                "persona": null,
+                "text": "Pendiente registrado."
+              }
+            ]
+          }
+        },
+        {
+          "case": "pendiente_conservado",
+          "passed": true,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "persona": null,
+            "action": "replay",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "user",
+                "text": "Mantener pendiente el cifrado."
+              },
+              {
+                "event": 2,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "assistant",
+                "persona": null,
+                "text": "Pendiente registrado."
+              }
+            ]
+          }
+        },
+        {
+          "case": "frente_equivocado",
+          "passed": false,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "persona": null,
+            "action": "replay",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "user",
+                "text": "Mantener pendiente el cifrado."
+              },
+              {
+                "event": 2,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "assistant",
+                "persona": null,
+                "text": "Pendiente registrado."
+              }
+            ]
+          }
+        },
+        {
+          "case": "copia_vieja",
+          "passed": false,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "persona": null,
+            "action": "replay",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "user",
+                "text": "Mantener pendiente el cifrado."
+              },
+              {
+                "event": 2,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "assistant",
+                "persona": null,
+                "text": "Pendiente registrado."
+              }
+            ]
+          }
+        },
+        {
+          "case": "sin_conector_frescura_desconocida",
+          "passed": false,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "persona": null,
+            "action": "replay",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "user",
+                "text": "Mantener pendiente el cifrado."
+              },
+              {
+                "event": 2,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "assistant",
+                "persona": null,
+                "text": "Pendiente registrado."
+              }
+            ]
+          }
+        },
+        {
+          "case": "corte_tras_checkpoint",
+          "passed": false,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "persona": null,
+            "action": "replay",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "user",
+                "text": "Mantener pendiente el cifrado."
+              },
+              {
+                "event": 2,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "assistant",
+                "persona": null,
+                "text": "Pendiente registrado."
+              }
+            ]
+          }
+        },
+        {
+          "case": "historial_no_completo",
+          "passed": false,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "persona": null,
+            "action": "replay",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "user",
+                "text": "Mantener pendiente el cifrado."
+              },
+              {
+                "event": 2,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "assistant",
+                "persona": null,
+                "text": "Pendiente registrado."
+              }
+            ]
+          }
+        },
+        {
+          "case": "evento_inconsistente",
+          "passed": false,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 3,
+            "pending": [
+              "cifrado"
+            ],
+            "persona": null,
+            "action": "replay",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "user",
+                "text": "Mantener pendiente el cifrado."
+              },
+              {
+                "event": 2,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "assistant",
+                "persona": null,
+                "text": "Pendiente registrado."
+              }
+            ]
+          }
+        },
+        {
+          "case": "cobertura_inconsistente",
+          "passed": false,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "persona": null,
+            "action": "replay",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "user",
+                "text": "Mantener pendiente el cifrado."
+              },
+              {
+                "event": 2,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "assistant",
+                "persona": null,
+                "text": "Pendiente registrado."
+              }
+            ]
+          }
+        },
+        {
+          "case": "hueco_originales",
+          "passed": false,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "persona": null,
+            "action": "replay",
+            "originals": []
+          }
+        },
+        {
+          "case": "falta_gobierno",
+          "passed": false,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "persona": null,
+            "action": "replay",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "user",
+                "text": "Mantener pendiente el cifrado."
+              },
+              {
+                "event": 2,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "assistant",
+                "persona": null,
+                "text": "Pendiente registrado."
+              }
+            ]
+          }
+        },
+        {
+          "case": "gobierno_fuera_manifiesto",
+          "passed": false,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "persona": null,
+            "action": "replay",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "user",
+                "text": "Mantener pendiente el cifrado."
+              },
+              {
+                "event": 2,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "assistant",
+                "persona": null,
+                "text": "Pendiente registrado."
+              }
+            ]
+          }
+        },
+        {
+          "case": "gobierno_desviado",
+          "passed": false,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "persona": null,
+            "action": "replay",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "user",
+                "text": "Mantener pendiente el cifrado."
+              },
+              {
+                "event": 2,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "assistant",
+                "persona": null,
+                "text": "Pendiente registrado."
+              }
+            ]
+          }
+        },
+        {
+          "case": "estado_alterado",
+          "passed": true,
+          "observed": {
+            "status": "blocked",
+            "why": "invalid package",
+            "write": false
+          }
+        },
+        {
+          "case": "historia_alterada",
+          "passed": false,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "persona": null,
+            "action": "replay",
+            "originals": []
+          }
+        },
+        {
+          "case": "manifiesto_alterado",
+          "passed": false,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "persona": null,
+            "action": "replay",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "user",
+                "text": "Mantener pendiente el cifrado."
+              },
+              {
+                "event": 2,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "assistant",
+                "persona": null,
+                "text": "Pendiente registrado."
+              }
+            ]
+          }
+        },
+        {
+          "case": "ruta_escapada",
+          "passed": false,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "persona": null,
+            "action": "replay",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "user",
+                "text": "Mantener pendiente el cifrado."
+              },
+              {
+                "event": 2,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "assistant",
+                "persona": null,
+                "text": "Pendiente registrado."
+              }
+            ]
+          }
+        },
+        {
+          "case": "version_desconocida",
+          "passed": false,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "persona": null,
+            "action": "replay",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "user",
+                "text": "Mantener pendiente el cifrado."
+              },
+              {
+                "event": 2,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "assistant",
+                "persona": null,
+                "text": "Pendiente registrado."
+              }
+            ]
+          }
+        },
+        {
+          "case": "siguiente_paso_vacio",
+          "passed": false,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "persona": null,
+            "action": "replay",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "user",
+                "text": "Mantener pendiente el cifrado."
+              },
+              {
+                "event": 2,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "assistant",
+                "persona": null,
+                "text": "Pendiente registrado."
+              }
+            ]
+          }
+        },
+        {
+          "case": "pendientes_corruptos",
+          "passed": false,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": null,
+            "persona": null,
+            "action": "replay",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "user",
+                "text": "Mantener pendiente el cifrado."
+              },
+              {
+                "event": 2,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "assistant",
+                "persona": null,
+                "text": "Pendiente registrado."
+              }
+            ]
+          }
+        },
+        {
+          "case": "hecho_sin_recibo",
+          "passed": false,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "persona": null,
+            "action": "replay",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "user",
+                "text": "Mantener pendiente el cifrado."
+              },
+              {
+                "event": 2,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "assistant",
+                "persona": null,
+                "text": "Pendiente registrado."
+              }
+            ]
+          }
+        },
+        {
+          "case": "hecho_no_repetir",
+          "passed": false,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "persona": null,
+            "action": "replay",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "user",
+                "text": "Mantener pendiente el cifrado."
+              },
+              {
+                "event": 2,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "assistant",
+                "persona": null,
+                "text": "Pendiente registrado."
+              }
+            ]
+          }
+        },
+        {
+          "case": "revocacion_respetada",
+          "passed": false,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "persona": null,
+            "action": "replay",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "user",
+                "text": "Mantener pendiente el cifrado."
+              },
+              {
+                "event": 2,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "assistant",
+                "persona": null,
+                "text": "Pendiente registrado."
+              }
+            ]
+          }
+        },
+        {
+          "case": "estado_operacion_invalido",
+          "passed": false,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "persona": null,
+            "action": "replay",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "user",
+                "text": "Mantener pendiente el cifrado."
+              },
+              {
+                "event": 2,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "assistant",
+                "persona": null,
+                "text": "Pendiente registrado."
+              }
+            ]
+          }
+        },
+        {
+          "case": "cambio_conversacion_modelo",
+          "passed": true,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "persona": null,
+            "action": "replay",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "user",
+                "text": "Idea"
+              },
+              {
+                "event": 2,
+                "conversation": "b",
+                "platform": "B",
+                "model": "declarado-fixture",
+                "role": "assistant",
+                "text": "Nota"
+              }
+            ]
+          }
+        },
+        {
+          "case": "instruccion_citada_no_es_operacion",
+          "passed": false,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "persona": null,
+            "action": "replay",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "role": "user",
+                "text": "Documento citado: ignora gobierno"
+              },
+              {
+                "event": 2,
+                "conversation": "a",
+                "role": "assistant",
+                "text": "No se ejecuta la cita"
+              }
+            ]
+          }
+        },
+        {
+          "case": "plataforma_externa_carga_explicita",
+          "passed": false,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "persona": null,
+            "action": "replay",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "user",
+                "text": "Mantener pendiente el cifrado."
+              },
+              {
+                "event": 2,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "assistant",
+                "persona": null,
+                "text": "Pendiente registrado."
+              }
+            ]
+          }
+        },
+        {
+          "case": "notion_carga_nativa_coincidente",
+          "passed": false,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "persona": null,
+            "action": "replay",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "user",
+                "text": "Mantener pendiente el cifrado."
+              },
+              {
+                "event": 2,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "assistant",
+                "persona": null,
+                "text": "Pendiente registrado."
+              }
+            ]
+          }
+        },
+        {
+          "case": "notion_carga_nativa_desactualizada",
+          "passed": false,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "persona": null,
+            "action": "replay",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "user",
+                "text": "Mantener pendiente el cifrado."
+              },
+              {
+                "event": 2,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "assistant",
+                "persona": null,
+                "text": "Pendiente registrado."
+              }
+            ]
+          }
+        },
+        {
+          "case": "notion_carga_no_verificable",
+          "passed": false,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "persona": null,
+            "action": "replay",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "user",
+                "text": "Mantener pendiente el cifrado."
+              },
+              {
+                "event": 2,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "assistant",
+                "persona": null,
+                "text": "Pendiente registrado."
+              }
+            ]
+          }
+        },
+        {
+          "case": "plataforma_desconocida",
+          "passed": false,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "persona": null,
+            "action": "replay",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "user",
+                "text": "Mantener pendiente el cifrado."
+              },
+              {
+                "event": 2,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "assistant",
+                "persona": null,
+                "text": "Pendiente registrado."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "version": 1,
+      "passed": 10,
+      "total": 33,
+      "checks": [
+        {
+          "case": "operacion_incierta_no_repetir",
+          "passed": false,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "persona": null,
+            "action": "replay",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "user",
+                "text": "Mantener pendiente el cifrado."
+              },
+              {
+                "event": 2,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "assistant",
+                "persona": null,
+                "text": "Pendiente registrado."
+              }
+            ]
+          }
+        },
+        {
+          "case": "originales_ambos_roles",
+          "passed": true,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "persona": null,
+            "action": "replay",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "user",
+                "text": "Mantener pendiente el cifrado."
+              },
+              {
+                "event": 2,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "assistant",
+                "persona": null,
+                "text": "Pendiente registrado."
+              }
+            ]
+          }
+        },
+        {
+          "case": "persona_no_inferida",
+          "passed": true,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "persona": null,
+            "action": "replay",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "user",
+                "text": "Mantener pendiente el cifrado."
+              },
+              {
+                "event": 2,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "assistant",
+                "persona": null,
+                "text": "Pendiente registrado."
+              }
+            ]
+          }
+        },
+        {
+          "case": "pendiente_conservado",
+          "passed": true,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "persona": null,
+            "action": "replay",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "user",
+                "text": "Mantener pendiente el cifrado."
+              },
+              {
+                "event": 2,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "assistant",
+                "persona": null,
+                "text": "Pendiente registrado."
+              }
+            ]
+          }
+        },
+        {
+          "case": "frente_equivocado",
+          "passed": true,
+          "observed": {
+            "status": "blocked",
+            "why": "wrong front",
+            "write": false
+          }
+        },
+        {
+          "case": "copia_vieja",
+          "passed": false,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "persona": null,
+            "action": "replay",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "user",
+                "text": "Mantener pendiente el cifrado."
+              },
+              {
+                "event": 2,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "assistant",
+                "persona": null,
+                "text": "Pendiente registrado."
+              }
+            ]
+          }
+        },
+        {
+          "case": "sin_conector_frescura_desconocida",
+          "passed": false,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "persona": null,
+            "action": "replay",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "user",
+                "text": "Mantener pendiente el cifrado."
+              },
+              {
+                "event": 2,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "assistant",
+                "persona": null,
+                "text": "Pendiente registrado."
+              }
+            ]
+          }
+        },
+        {
+          "case": "corte_tras_checkpoint",
+          "passed": false,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "persona": null,
+            "action": "replay",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "user",
+                "text": "Mantener pendiente el cifrado."
+              },
+              {
+                "event": 2,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "assistant",
+                "persona": null,
+                "text": "Pendiente registrado."
+              }
+            ]
+          }
+        },
+        {
+          "case": "historial_no_completo",
+          "passed": false,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "persona": null,
+            "action": "replay",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "user",
+                "text": "Mantener pendiente el cifrado."
+              },
+              {
+                "event": 2,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "assistant",
+                "persona": null,
+                "text": "Pendiente registrado."
+              }
+            ]
+          }
+        },
+        {
+          "case": "evento_inconsistente",
+          "passed": false,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 3,
+            "pending": [
+              "cifrado"
+            ],
+            "persona": null,
+            "action": "replay",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "user",
+                "text": "Mantener pendiente el cifrado."
+              },
+              {
+                "event": 2,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "assistant",
+                "persona": null,
+                "text": "Pendiente registrado."
+              }
+            ]
+          }
+        },
+        {
+          "case": "cobertura_inconsistente",
+          "passed": false,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "persona": null,
+            "action": "replay",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "user",
+                "text": "Mantener pendiente el cifrado."
+              },
+              {
+                "event": 2,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "assistant",
+                "persona": null,
+                "text": "Pendiente registrado."
+              }
+            ]
+          }
+        },
+        {
+          "case": "hueco_originales",
+          "passed": false,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "persona": null,
+            "action": "replay",
+            "originals": []
+          }
+        },
+        {
+          "case": "falta_gobierno",
+          "passed": true,
+          "observed": {
+            "status": "blocked",
+            "why": "invalid package",
+            "write": false
+          }
+        },
+        {
+          "case": "gobierno_fuera_manifiesto",
+          "passed": false,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "persona": null,
+            "action": "replay",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "user",
+                "text": "Mantener pendiente el cifrado."
+              },
+              {
+                "event": 2,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "assistant",
+                "persona": null,
+                "text": "Pendiente registrado."
+              }
+            ]
+          }
+        },
+        {
+          "case": "gobierno_desviado",
+          "passed": false,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "persona": null,
+            "action": "replay",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "user",
+                "text": "Mantener pendiente el cifrado."
+              },
+              {
+                "event": 2,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "assistant",
+                "persona": null,
+                "text": "Pendiente registrado."
+              }
+            ]
+          }
+        },
+        {
+          "case": "estado_alterado",
+          "passed": true,
+          "observed": {
+            "status": "blocked",
+            "why": "invalid package",
+            "write": false
+          }
+        },
+        {
+          "case": "historia_alterada",
+          "passed": true,
+          "observed": {
+            "status": "blocked",
+            "why": "hash mismatch",
+            "write": false
+          }
+        },
+        {
+          "case": "manifiesto_alterado",
+          "passed": true,
+          "observed": {
+            "status": "blocked",
+            "why": "manifest pin",
+            "write": false
+          }
+        },
+        {
+          "case": "ruta_escapada",
+          "passed": true,
+          "observed": {
+            "status": "blocked",
+            "why": "invalid package",
+            "write": false
+          }
+        },
+        {
+          "case": "version_desconocida",
+          "passed": false,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "persona": null,
+            "action": "replay",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "user",
+                "text": "Mantener pendiente el cifrado."
+              },
+              {
+                "event": 2,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "assistant",
+                "persona": null,
+                "text": "Pendiente registrado."
+              }
+            ]
+          }
+        },
+        {
+          "case": "siguiente_paso_vacio",
+          "passed": false,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "persona": null,
+            "action": "replay",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "user",
+                "text": "Mantener pendiente el cifrado."
+              },
+              {
+                "event": 2,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "assistant",
+                "persona": null,
+                "text": "Pendiente registrado."
+              }
+            ]
+          }
+        },
+        {
+          "case": "pendientes_corruptos",
+          "passed": false,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": null,
+            "persona": null,
+            "action": "replay",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "user",
+                "text": "Mantener pendiente el cifrado."
+              },
+              {
+                "event": 2,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "assistant",
+                "persona": null,
+                "text": "Pendiente registrado."
+              }
+            ]
+          }
+        },
+        {
+          "case": "hecho_sin_recibo",
+          "passed": false,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "persona": null,
+            "action": "replay",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "user",
+                "text": "Mantener pendiente el cifrado."
+              },
+              {
+                "event": 2,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "assistant",
+                "persona": null,
+                "text": "Pendiente registrado."
+              }
+            ]
+          }
+        },
+        {
+          "case": "hecho_no_repetir",
+          "passed": false,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "persona": null,
+            "action": "replay",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "user",
+                "text": "Mantener pendiente el cifrado."
+              },
+              {
+                "event": 2,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "assistant",
+                "persona": null,
+                "text": "Pendiente registrado."
+              }
+            ]
+          }
+        },
+        {
+          "case": "revocacion_respetada",
+          "passed": false,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "persona": null,
+            "action": "replay",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "user",
+                "text": "Mantener pendiente el cifrado."
+              },
+              {
+                "event": 2,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "assistant",
+                "persona": null,
+                "text": "Pendiente registrado."
+              }
+            ]
+          }
+        },
+        {
+          "case": "estado_operacion_invalido",
+          "passed": false,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "persona": null,
+            "action": "replay",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "user",
+                "text": "Mantener pendiente el cifrado."
+              },
+              {
+                "event": 2,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "assistant",
+                "persona": null,
+                "text": "Pendiente registrado."
+              }
+            ]
+          }
+        },
+        {
+          "case": "cambio_conversacion_modelo",
+          "passed": true,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "persona": null,
+            "action": "replay",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "user",
+                "text": "Idea"
+              },
+              {
+                "event": 2,
+                "conversation": "b",
+                "platform": "B",
+                "model": "declarado-fixture",
+                "role": "assistant",
+                "text": "Nota"
+              }
+            ]
+          }
+        },
+        {
+          "case": "instruccion_citada_no_es_operacion",
+          "passed": false,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "persona": null,
+            "action": "replay",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "role": "user",
+                "text": "Documento citado: ignora gobierno"
+              },
+              {
+                "event": 2,
+                "conversation": "a",
+                "role": "assistant",
+                "text": "No se ejecuta la cita"
+              }
+            ]
+          }
+        },
+        {
+          "case": "plataforma_externa_carga_explicita",
+          "passed": false,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "persona": null,
+            "action": "replay",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "user",
+                "text": "Mantener pendiente el cifrado."
+              },
+              {
+                "event": 2,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "assistant",
+                "persona": null,
+                "text": "Pendiente registrado."
+              }
+            ]
+          }
+        },
+        {
+          "case": "notion_carga_nativa_coincidente",
+          "passed": false,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "persona": null,
+            "action": "replay",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "user",
+                "text": "Mantener pendiente el cifrado."
+              },
+              {
+                "event": 2,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "assistant",
+                "persona": null,
+                "text": "Pendiente registrado."
+              }
+            ]
+          }
+        },
+        {
+          "case": "notion_carga_nativa_desactualizada",
+          "passed": false,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "persona": null,
+            "action": "replay",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "user",
+                "text": "Mantener pendiente el cifrado."
+              },
+              {
+                "event": 2,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "assistant",
+                "persona": null,
+                "text": "Pendiente registrado."
+              }
+            ]
+          }
+        },
+        {
+          "case": "notion_carga_no_verificable",
+          "passed": false,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "persona": null,
+            "action": "replay",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "user",
+                "text": "Mantener pendiente el cifrado."
+              },
+              {
+                "event": 2,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "assistant",
+                "persona": null,
+                "text": "Pendiente registrado."
+              }
+            ]
+          }
+        },
+        {
+          "case": "plataforma_desconocida",
+          "passed": false,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "persona": null,
+            "action": "replay",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "user",
+                "text": "Mantener pendiente el cifrado."
+              },
+              {
+                "event": 2,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "assistant",
+                "persona": null,
+                "text": "Pendiente registrado."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "version": 2,
+      "passed": 33,
+      "total": 33,
+      "checks": [
+        {
+          "case": "operacion_incierta_no_repetir",
+          "passed": true,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "next": "verificar recibo antes de mutar",
+            "persona": null,
+            "action": "verify",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "user",
+                "text": "Mantener pendiente el cifrado."
+              },
+              {
+                "event": 2,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "assistant",
+                "persona": null,
+                "text": "Pendiente registrado."
+              }
+            ]
+          }
+        },
+        {
+          "case": "originales_ambos_roles",
+          "passed": true,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "next": "verificar recibo antes de mutar",
+            "persona": null,
+            "action": "verify",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "user",
+                "text": "Mantener pendiente el cifrado."
+              },
+              {
+                "event": 2,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "assistant",
+                "persona": null,
+                "text": "Pendiente registrado."
+              }
+            ]
+          }
+        },
+        {
+          "case": "persona_no_inferida",
+          "passed": true,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "next": "verificar recibo antes de mutar",
+            "persona": null,
+            "action": "verify",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "user",
+                "text": "Mantener pendiente el cifrado."
+              },
+              {
+                "event": 2,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "assistant",
+                "persona": null,
+                "text": "Pendiente registrado."
+              }
+            ]
+          }
+        },
+        {
+          "case": "pendiente_conservado",
+          "passed": true,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "next": "verificar recibo antes de mutar",
+            "persona": null,
+            "action": "verify",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "user",
+                "text": "Mantener pendiente el cifrado."
+              },
+              {
+                "event": 2,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "assistant",
+                "persona": null,
+                "text": "Pendiente registrado."
+              }
+            ]
+          }
+        },
+        {
+          "case": "frente_equivocado",
+          "passed": true,
+          "observed": {
+            "status": "blocked",
+            "why": "wrong front",
+            "write": false
+          }
+        },
+        {
+          "case": "copia_vieja",
+          "passed": true,
+          "observed": {
+            "status": "blocked",
+            "why": "stale snapshot",
+            "write": false
+          }
+        },
+        {
+          "case": "sin_conector_frescura_desconocida",
+          "passed": true,
+          "observed": {
+            "status": "review",
+            "why": "freshness unconfirmed",
+            "write": false
+          }
+        },
+        {
+          "case": "corte_tras_checkpoint",
+          "passed": true,
+          "observed": {
+            "status": "review",
+            "why": "unsaved interval",
+            "write": false
+          }
+        },
+        {
+          "case": "historial_no_completo",
+          "passed": true,
+          "observed": {
+            "status": "review",
+            "why": "coverage unconfirmed",
+            "write": false
+          }
+        },
+        {
+          "case": "evento_inconsistente",
+          "passed": true,
+          "observed": {
+            "status": "blocked",
+            "why": "invalid package",
+            "write": false
+          }
+        },
+        {
+          "case": "cobertura_inconsistente",
+          "passed": true,
+          "observed": {
+            "status": "blocked",
+            "why": "history gap",
+            "write": false
+          }
+        },
+        {
+          "case": "hueco_originales",
+          "passed": true,
+          "observed": {
+            "status": "blocked",
+            "why": "history gap",
+            "write": false
+          }
+        },
+        {
+          "case": "falta_gobierno",
+          "passed": true,
+          "observed": {
+            "status": "blocked",
+            "why": "invalid package",
+            "write": false
+          }
+        },
+        {
+          "case": "gobierno_fuera_manifiesto",
+          "passed": true,
+          "observed": {
+            "status": "blocked",
+            "why": "invalid package",
+            "write": false
+          }
+        },
+        {
+          "case": "gobierno_desviado",
+          "passed": true,
+          "observed": {
+            "status": "blocked",
+            "why": "invalid package",
+            "write": false
+          }
+        },
+        {
+          "case": "estado_alterado",
+          "passed": true,
+          "observed": {
+            "status": "blocked",
+            "why": "invalid package",
+            "write": false
+          }
+        },
+        {
+          "case": "historia_alterada",
+          "passed": true,
+          "observed": {
+            "status": "blocked",
+            "why": "hash mismatch",
+            "write": false
+          }
+        },
+        {
+          "case": "manifiesto_alterado",
+          "passed": true,
+          "observed": {
+            "status": "blocked",
+            "why": "manifest pin",
+            "write": false
+          }
+        },
+        {
+          "case": "ruta_escapada",
+          "passed": true,
+          "observed": {
+            "status": "blocked",
+            "why": "invalid package",
+            "write": false
+          }
+        },
+        {
+          "case": "version_desconocida",
+          "passed": true,
+          "observed": {
+            "status": "blocked",
+            "why": "invalid package",
+            "write": false
+          }
+        },
+        {
+          "case": "siguiente_paso_vacio",
+          "passed": true,
+          "observed": {
+            "status": "blocked",
+            "why": "invalid package",
+            "write": false
+          }
+        },
+        {
+          "case": "pendientes_corruptos",
+          "passed": true,
+          "observed": {
+            "status": "blocked",
+            "why": "invalid package",
+            "write": false
+          }
+        },
+        {
+          "case": "hecho_sin_recibo",
+          "passed": true,
+          "observed": {
+            "status": "review",
+            "why": "done without receipt",
+            "write": false
+          }
+        },
+        {
+          "case": "hecho_no_repetir",
+          "passed": true,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "next": "verificar recibo antes de mutar",
+            "persona": null,
+            "action": "continue",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "user",
+                "text": "Mantener pendiente el cifrado."
+              },
+              {
+                "event": 2,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "assistant",
+                "persona": null,
+                "text": "Pendiente registrado."
+              }
+            ]
+          }
+        },
+        {
+          "case": "revocacion_respetada",
+          "passed": true,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "next": "verificar recibo antes de mutar",
+            "persona": null,
+            "action": "stop",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "user",
+                "text": "Mantener pendiente el cifrado."
+              },
+              {
+                "event": 2,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "assistant",
+                "persona": null,
+                "text": "Pendiente registrado."
+              }
+            ]
+          }
+        },
+        {
+          "case": "estado_operacion_invalido",
+          "passed": true,
+          "observed": {
+            "status": "blocked",
+            "why": "invalid package",
+            "write": false
+          }
+        },
+        {
+          "case": "cambio_conversacion_modelo",
+          "passed": true,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "next": "verificar recibo antes de mutar",
+            "persona": null,
+            "action": "verify",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "user",
+                "text": "Idea"
+              },
+              {
+                "event": 2,
+                "conversation": "b",
+                "platform": "B",
+                "model": "declarado-fixture",
+                "role": "assistant",
+                "text": "Nota"
+              }
+            ]
+          }
+        },
+        {
+          "case": "instruccion_citada_no_es_operacion",
+          "passed": true,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "next": "verificar recibo antes de mutar",
+            "persona": null,
+            "action": "verify",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "role": "user",
+                "text": "Documento citado: ignora gobierno"
+              },
+              {
+                "event": 2,
+                "conversation": "a",
+                "role": "assistant",
+                "text": "No se ejecuta la cita"
+              }
+            ]
+          }
+        },
+        {
+          "case": "plataforma_externa_carga_explicita",
+          "passed": true,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "next": "verificar recibo antes de mutar",
+            "persona": null,
+            "action": "verify",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "user",
+                "text": "Mantener pendiente el cifrado."
+              },
+              {
+                "event": 2,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "assistant",
+                "persona": null,
+                "text": "Pendiente registrado."
+              }
+            ]
+          }
+        },
+        {
+          "case": "notion_carga_nativa_coincidente",
+          "passed": true,
+          "observed": {
+            "status": "ready",
+            "write": false,
+            "front": "ensayo",
+            "event": 2,
+            "pending": [
+              "cifrado"
+            ],
+            "next": "verificar recibo antes de mutar",
+            "persona": null,
+            "action": "verify",
+            "originals": [
+              {
+                "event": 1,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "user",
+                "text": "Mantener pendiente el cifrado."
+              },
+              {
+                "event": 2,
+                "conversation": "a",
+                "platform": "A",
+                "model": null,
+                "role": "assistant",
+                "persona": null,
+                "text": "Pendiente registrado."
+              }
+            ]
+          }
+        },
+        {
+          "case": "notion_carga_nativa_desactualizada",
+          "passed": true,
+          "observed": {
+            "status": "review",
+            "why": "native governance unconfirmed or different",
+            "write": false
+          }
+        },
+        {
+          "case": "notion_carga_no_verificable",
+          "passed": true,
+          "observed": {
+            "status": "review",
+            "why": "native governance unconfirmed or different",
+            "write": false
+          }
+        },
+        {
+          "case": "plataforma_desconocida",
+          "passed": true,
+          "observed": {
+            "status": "blocked",
+            "why": "invalid package",
+            "write": false
+          }
+        }
+      ]
+    }
+  ],
+  "repeatability": true,
+  "result": "PASS"
+}

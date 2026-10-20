@@ -1,0 +1,43 @@
+{
+  "front": "metodologia",
+  "state_path": "METACANON-OBJETOS-CANONICOS.md",
+  "pending_path": "frentes/metodologia/PENDIENTES.md",
+  "governance_path": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.md",
+  "governance_version": "333",
+  "source_freshness": "not_verified_against_notion",
+  "semantic_validation": "pending",
+  "replay_allowed": false,
+  "operations": [
+    {
+      "id": "cualquier-efecto-sin-recibo-en-el-nuevo-hilo",
+      "status": "unknown"
+    }
+  ],
+  "coverage": {
+    "complete": false,
+    "session": "3ffa4187-8241-80de-84a6-00a98cbd8894",
+    "limit": "exportación adjunta íntegra hasta la interrupción 2026-10-20 09:50; tramo de migración guardado en RETOMA-05 y eventos 241,244,246,249 más salida de IMPLEMENTACION-06; no captura futura automática"
+  },
+  "originals": [
+    "frentes/metodologia/conversaciones/C-METODOLOGIA-RETOMA-05-adjunto.txt",
+    "frentes/metodologia/conversaciones/C-METODOLOGIA-RETOMA-05-dialogo.jsonl",
+    "frentes/metodologia/conversaciones/C-METODOLOGIA-IMPLEMENTACION-06-dialogo.jsonl"
+  ],
+  "required": [
+    "INICIO.md",
+    "METACANON-OBJETOS-CANONICOS.md",
+    "PROMPT-UNIVERSAL-REINSTANCIACION.md",
+    "CONTINUIDAD-ENTRE-CONVERSACIONES.md",
+    "gobernanza/METAPROMPT-CANONICO-SAMANTHA.md",
+    "frentes/metodologia/PENDIENTES.md",
+    "frentes/metodologia/conversaciones/C-METODOLOGIA-RETOMA-05-adjunto.txt",
+    "frentes/metodologia/conversaciones/C-METODOLOGIA-RETOMA-05-dialogo.jsonl",
+    "frentes/metodologia/conversaciones/C-METODOLOGIA-IMPLEMENTACION-06-dialogo.jsonl",
+    "frentes/metodologia/trazabilidad/C-METODOLOGIA-IMPLEMENTACION-06.md",
+    "frentes/metodologia/trazabilidad/C-METODOLOGIA-IMPLEMENTACION-06.json",
+    "frentes/metodologia/kit/0.1.0/README.md",
+    "frentes/metodologia/kit/0.1.0/RECIBO-GOBIERNO.md",
+    "gobernanza/README.md",
+    "gobernanza/METAPROMPT-CANONICO-SAMANTHA.fuente.json"
+  ]
+}
