@@ -1,0 +1,12 @@
+{
+  "schema": "responsabilidad/1",
+  "front": "metodologia",
+  "status": "owned",
+  "owner_thread": "session://ecea4187-8241-819b-af83-0003b7c205f7/3ffa4187-8241-80de-84a6-00a98cbd8894",
+  "instance": "samanthal-metodologia-ciclo10",
+  "generation": 1,
+  "authorization_ref": "frentes/metodologia/conversaciones/C-METODOLOGIA-REVISION-INTEGRAL-10-dialogo.jsonl#orden-responsabilidad-exclusiva",
+  "scope": "one recorded owner; cooperative preflight, not server-enforced fencing of arbitrary repository writes",
+  "expiry": null,
+  "handoff": "explicit transfer to identified target only; offline receiver stays read-only"
+}
