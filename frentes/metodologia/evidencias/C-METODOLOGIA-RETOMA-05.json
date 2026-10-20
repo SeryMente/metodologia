@@ -1,0 +1,52 @@
+{
+  "cycle": "C-METODOLOGIA-RETOMA-05",
+  "state_revision": "r1",
+  "method_version": "1.8",
+  "method_seal": "METACANON-OBJETOS-v1.8",
+  "base_commit": "06a844b5b02cbb0c0521a07740a785d17279b0e8",
+  "session": "3ffa4187-8241-80de-84a6-00a98cbd8894",
+  "attachment": {
+    "filename": "pasted-text.txt",
+    "bytes": 54565,
+    "sha256": "4337eee0f4ad1dbc544ccabdadf034e2dbde5853ef157489da3b3db0cafc03eb",
+    "preservation": "bytes exactos de archivo recibido, sin normalización",
+    "source": "adjunto suministrado por el usuario; exportación textual de conversación, no captura nativa del chat anterior"
+  },
+  "coverage": {
+    "current_dialogue": "Mensajes visibles de migración disponibles en el contexto activo, incluida la respuesta final anterior recuperada literalmente mediante evento138. Índices locales no equivalen a eventos nativos. No incluye herramientas ni envoltorio de adjuntos como texto del usuario; el adjunto se conserva aparte. No afirma captura automática del resto de la sesión ni turnos futuros.",
+    "excluded": [
+      "herramientas",
+      "contexto automático",
+      "razonamiento privado",
+      "mensajes no recibidos"
+    ],
+    "future": "La salida preparada solo se considera efectiva si se emite literalmente tras readback; no se prometen turnos futuros."
+  },
+  "governance": {
+    "mirror": "v333 / NX-333m",
+    "notion_accessible": "v330 / NX-330m",
+    "source_correspondence": "NO_VERIFICADA"
+  },
+  "limitations": [
+    "sin prueba ciega semántica",
+    "sin ejecución nueva de batería",
+    "sin instalación de laboratorio",
+    "sin sincronización automática",
+    "sin cifrado implementado",
+    "sin activación PRIUS"
+  ],
+  "file_kind": "manifiesto de procedencia de esta revisión, no segundo estado vigente",
+  "previous_state_section9": "## 9. Estado de este metacanon\n\n- De dónde viene: práctica del operador durante varias semanas; instrucciones originales de portabilidad, custodia, continuidad, trazabilidad y gobierno.\n- Dónde está: versión 1.8, bloque de continuidad y custodia sobre la formalización 1.7. Fuente de estado única: este archivo en la raíz del repositorio metodológico; materiales auxiliares del propio frente en `frentes/metodologia/`. No crear un segundo objeto de estado para el mismo frente. La raíz de este repositorio es el directorio del frente metodológico; la subcarpeta solo organiza sus materiales.\n- A dónde va: uso general entre plataformas y modelos, incluidos servicios gratuitos cuando sus capacidades permitan el trabajo, sin dependencia obligatoria de Notion. No se fija una fecha de abandono del marco; el mes citado en versiones anteriores es antecedente, no plazo automático de caducidad.\n- Qué cambió: se añade §34, contrato de continuidad, prompt universal, banco mecánico y custodia cotejada del diálogo; metaprompt v333 y glosario central v1.6. Se conservan §§29–33 y los diferimientos previos.\n- 🔄 Estado vivo: ciclo C-METODOLOGIA-CONTINUIDAD-02: custodia recuperada de 22 entradas directas del operador y 29 respuestas visibles, con secuencia y huellas; banco mecánico final 33/33 escenarios y repetibilidad; metaprompt ampliado a v333 · NX-333m preservando los 34 principios previos. Siguiente paso: probar la retoma semántica en una conversación independiente con el prompt universal y las fuentes, sin recapitulación del operador. Ideas pendientes: [registro consultable](frentes/metodologia/PENDIENTES.md). La continuidad real entre modelos y la portabilidad completa NO están acreditadas.\n- ⚗️ En prueba / recién fallido: banco mecánico aprobado, no prueba de comprensión de otro modelo; ajuste de personalización Notion recibió versión antigua y no se declara reparado. Persisten aligeramiento físico, dependencias Notion y sincronización automática.\n- 🔔 Recordatorios latentes: no confundir copia puntual con sincronización perpetua; no perder originales ni atribuir modelos desconocidos; no activar PRIUS; no publicar secretos; no declarar que todos los repositorios/hilos adquirieron este gobierno sin comprobarlos.\n- Ancla actual: eventos 423, 447, 503 y 535 de sesión `3ff5d4a3-b250-8012-ae4a-00a9fb4b2b95`, continuidad, adición mínima, prioridades y custodia; ciclo `C-METODOLOGIA-CONTINUIDAD-02`. Ancla anterior de gobierno organizacional: evento290.\n- Crónica y originales actuales: [ciclo de continuidad](frentes/metodologia/cronica/C-METODOLOGIA-CONTINUIDAD-02.md), [diálogo literal cotejado](frentes/metodologia/conversaciones/SESION-3ff5-dialogo-000023-000542.jsonl) y [cobertura exacta](frentes/metodologia/evidencias/SESION-3ff5-cobertura.json). Los segmentos previos se conservan como historia; no se incluyen contexto automático, herramientas ni razonamiento privado.\n",
+  "expected_existing": {
+    "METACANON-OBJETOS-CANONICOS.md": "8bc5d7c900ec4bca9fd3131bb635746b50cec1e5",
+    "frentes/metodologia/PENDIENTES.md": "0da063c29d6c1b819e431fd4b54e1ccad396fbc4",
+    "gobernanza/METAPROMPT-CANONICO-SAMANTHA.md": "e964afa3d50b60980f870016ee7a597db3e5caf2"
+  },
+  "preflight": {
+    "private_repository": true,
+    "head": "06a844b5b02cbb0c0521a07740a785d17279b0e8",
+    "negative_tests": "PASS",
+    "scope": "section9 + append pending + named new documents",
+    "secret_pattern_scan": "no known patterns; not a guarantee of all secrets"
+  }
+}

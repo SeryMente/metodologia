@@ -50,3 +50,17 @@ Este archivo recoge acuerdos disponibles en el contexto activo y la recapitulaci
 Seguridad/cifrado, sincronización automática, portabilidad completa y Sesión PRIUS siguen en los estados y prioridades ya recogidos; no se cierran por esta actualización. Las listas previas son el registro histórico del arranque; esta actualización determina el estado de las ideas citadas.
 
 - **REV-01 · Pendiente:** revisión general de fidelidad a lo dictado, coherencia, operación y portabilidad; no exigir al operador revisar todo el documento. No confundir el buen resultado previo con arquitectura óptima universal ni dar la razón automáticamente. Fuente: entradas165 y189, respuestas176 y202.
+
+## Conciliación C-METODOLOGIA-RETOMA-05-r1
+
+Esta actualización conserva las listas anteriores como historia. No modifica prioridades ratificadas ni da por implementado lo diseñado.
+
+1. **CUST-03 / CUST-04 · Custodia y estado:** incorporar exportación recibida y mensajes visibles disponibles de la migración; cobertura en evidencias/C-METODOLOGIA-RETOMA-05.json. Las instrucciones posteriores estaban archivadas pero no reflejadas suficientemente en §9; se concilian sin inventar avances.
+2. **CONT-02 / SAL-01 · Continuidad y recibo de gobierno:** afinar prompt universal y salida breve que muestre fuente, versión, frescura, aplicación y corte persistido; firma sola no prueba conducta. La retoma con historial adjunto no cuenta como prueba ciega del disparador universal.
+3. **TRAZ-01 · Trazabilidad:** recuperar fuentes existentes del marco de especificación y vectores semánticos mencionado por el operador; cadena literal → intención normalizada → criterio aprobado → acción → resultado → evidencia. Diferencia tendiente a cero es meta; métrica semántica y mecanismo aún no están implementados ni validados.
+4. **BENCH-01 · Medición versionada:** diseño inicial en pruebas/benchmark/PROTOCOLO-v0.1.md. Casos, indicadores y registros propuestos, no resultados. Conservar modalidad, denominadores, fuentes, versión y evidencia por ejecución. No volver a presentar el banco mecánico histórico como nueva prueba semántica.
+5. **LAB-01 · Laboratorio reproducible:** inventariar solo por necesidad y autorización; instalación mediante conexión remota solicitada en el dictado, pero no demostrada por la retoma. La carpeta local llamada Metodologia con otro remoto es reporte histórico, no raíz vigente adquirida; no sobrescribirla.
+6. **OBS-01 · Harmonia:** recuperar contrato modular existente y especificar observación de eventos accesibles de ChatGPT (prioridad) y la otra plataforma citada como «Cloud», cuya identificación como Claude debe verificarse en fuentes antes de implementar. No observar razonamiento interno ni atribuir causas comerciales sin evidencia. No elegir nueva arquitectura ni cruzar candados de seguridad por esta nota.
+7. **PLAT-01 / GOB-02 · Discrepancia:** espejo GitHub v333 disponible; personalización/página accesible v330; página Notion declarada por el espejo no accesible desde el workspace actual. Vigencia relativa y correspondencia de origen no verificadas. No sobrescribir ni sustituir páginas por deducción.
+
+Se mantienen SYNC-01, SEG-01 y PRIUS-01 en sus estados anteriores. Referencias normativas al antiguo gobierno se interpretan según la precedencia ya ratificada; esta revisión no cambia el metaprompt ni activa protocolos. El próximo paso documental está exclusivamente en §9 del núcleo.
