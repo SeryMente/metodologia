@@ -80,3 +80,9 @@ Historial anterior preservado; esta entrada precisa estado sin cambiar prioridad
 - SYNC-01, SEG-01 y PRIUS-01 mantienen sus estados previos. Repositorio privado no resuelve cifrado. Ningún protocolo PRIUS ni LISA se activa por consultar sus documentos.
 
 Próximo hito de mayor valor: retoma ciega con otro modelo y evaluación contra los originales. No requiere construir antes toda la observabilidad. No hay plazo integral probado para pendientes externos.
+
+## Seguimiento C-METODOLOGIA-VALIDACION-07-r1
+
+- CONT-01/CONT-02/BENCH-01/OBS-01: observar el prompt en laboratorio Y retomas reales hasta perfeccionar su función. Protocolo0.3: fallo→fuente/versión→corrección→regresión→contraste real. No cerrar por PASS mecánico ni contar casos no observados como aprobados.
+- Instrucción literal en conversaciones/C-METODOLOGIA-VALIDACION-07-dialogo.jsonl. En este ciclo no se ejecutan nuevas pruebas. La comprensión independiente y casos reales del prompt siguen pendientes de evidencia.
+- No se instala observación automática ni se amplía captura. El siguiente hito es la retoma ciega independiente; registrar usos reales cuando ocurran con evidencia accesible. Seguridad/cifrado y Sesión PRIUS siguen diferidos.

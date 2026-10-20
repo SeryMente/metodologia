@@ -1,0 +1,25 @@
+{
+  "cycle": "C-METODOLOGIA-VALIDACION-07",
+  "base": "56c63c5e50b91bc3f6de40d9de486865accc6bef",
+  "method_version": "1.8",
+  "protocol_version": "0.3",
+  "timestamp": "2026-10-20T18:04:39.275Z",
+  "expected_sources": {
+    "METACANON-OBJETOS-CANONICOS.md": "7fbd015551e1be760ebed39a51879079156f75e55cc4fa14b751d05248bfc471",
+    "frentes/metodologia/PENDIENTES.md": "063753c51a781fc56118ca977f221b1716de6aeef33167905eb4381e1f5d8e77",
+    "gobernanza/METAPROMPT-CANONICO-SAMANTHA.md": "02a9cacb78f4dc0cd86a819593e931dcf45b84f3ed310569a0b592e0b579c6ed"
+  },
+  "governance_unchanged": true,
+  "new_benchmark_run": false,
+  "real_prompt_trial_run": false,
+  "automatic_observation_installed": false,
+  "source_user_sha256": "d8bb52f08d54830ef83ffd15f6a55dc8cf8ffe9d636a4ec0934e1b5d5285917d",
+  "files": {
+    "METACANON-OBJETOS-CANONICOS.md": "a416506e0d426e7ea5a53ce26c088c4869883b7bbf93a7dbfd83ffc631d48eef",
+    "frentes/metodologia/PENDIENTES.md": "97823994fc8b559437a14decb9a169464d39686972b31373b70c1bea4bc48b57",
+    "frentes/metodologia/pruebas/benchmark/PROTOCOLO-v0.3.md": "dd8ccd7aeb7c2994366a6cc9f7ce1f9eb1e8affb4e73527e6cecc92ba55bf0a5",
+    "frentes/metodologia/cronica/C-METODOLOGIA-VALIDACION-07.md": "4a92fc575a2ad0100f5d19947d21c4553b578f4c0d9f6d57f668ab4d6410354f",
+    "frentes/metodologia/conversaciones/C-METODOLOGIA-VALIDACION-07-salida.md": "03221a857e307500cd0f7a4c5e44f91c7fc5309fc607451bdd05e4b6586a893b",
+    "frentes/metodologia/conversaciones/C-METODOLOGIA-VALIDACION-07-dialogo.jsonl": "dd74fd8f9af0d4c46bf847afd4a5c2d808ffb42fd720eb8a20b86911022a0423"
+  }
+}
