@@ -1,0 +1,59 @@
+{
+  "method": "1.10",
+  "delivery": "0.3",
+  "publication": "246abe6e6d9443014cfb54fce7b26b774b2840a0",
+  "literal_checks": [
+    {
+      "id": "D01-exacto",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "id": "D02-corte-final",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "id": "D03-gobierno-recortado",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "id": "D04-metodo-alterado",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "id": "D05-estado-duplicado",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "id": "D06-pendientes-omitidos",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "id": "D07-protocolo-omitido",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "id": "D08-control-omitido",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    }
+  ],
+  "passed": 8,
+  "total": 8,
+  "semantic_receiver_test": "NOT RUN",
+  "government_unchanged": true
+}
