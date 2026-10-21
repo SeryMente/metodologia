@@ -1,7 +1,9 @@
-# Entrega0.3 · método1.10
+# Transporte de hilo fresco · Metodología/Metacanon
 
-Adjunta ARRANQUE-PORTABLE-v0.3.md a una conversación nueva y pega PROMPT-ENTRADA.txt. El primer ensayo puede hacerse en lectura; no es transferencia de responsabilidad. Conserva la respuesta original para contrastar REAL-CHATGPT-01. El destino solo podrá asumir/escribir tras transferencia explícita identificada y control verificable; sin acceso queda en lectura/propuestas NO APLICADAS.
+Para el relevo vigente usa **PROMPT-MIGRACION-HILO-FRESCO-21.txt** y **CHECKPOINT-MIGRACION-HILO-FRESCO-21.md**. Este paquete apunta a la fuente preponderante `SeryMente/metodologia/main`, vigente en el momento de emisión.
 
-Respaldo: fuentes recuperadas92 al corte09 más delta10, originales preservados, metacanon completo, gobierno333 íntegro, laboratorio, informe de16 categorías/delta y huellas. No todo el workspace ni garantía de recuperar herramientas/mensajes que nunca se conservaron. Las pruebas de integridad no garantizan lectura o cumplimiento del modelo. Actualización y cerrojo no se fuerzan en chats sin herramientas o actores que los eludan. No instalado observador ni mediador transaccional. Esta entrega reemplaza0.2 como transporte, sin eliminar historia.
+La entrega `ARRANQUE-PORTABLE-v0.3.md` y su manifiesto reflejan método1.10 y deben conservarse como antecedentes de transporte; no deben reemplazar el canon actual. El nuevo hilo debe adquirir INICIO, Sam, Metacanon, GOW y el control desde `main`.
 
-Para retomar basta el archivo de arranque y el prompt; conservar ZIP como respaldo, no cargarlo entero por rutina. No se garantiza capacidad de lectura del plan gratuito. MANIFIESTO identifica archivos y hashes; una referencia confiable externa sigue siendo necesaria para autoría.
+La migración está **preparada, no completada**. El operador autorizó una transferencia única de Metodología/Metacanon. El destino solo asume la titularidad tras leer el control vivo, crear su folio/alias, cambiar el control mediante CAS por SHA/generación y leerlo de vuelta. No reutilizar el folio anterior. Sin acceso a control o sin read-back, permanecer en lectura/propuestas NO APLICADAS.
+
+El destino debe reproducir literalmente la última salida persistida si puede leerla, mostrar el formato Metacanon §4 en su primera respuesta y revisar manualmente Sam/GOW. MCP normativo permanece desactivado. No hay bloqueo server-side universal ni garantía de acceso a repositorios no expuestos.
