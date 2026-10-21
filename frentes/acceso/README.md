@@ -5,6 +5,7 @@ Frente de trabajo para determinar qué inteligencia artificial se necesita, qué
 - Núcleo operativo único: [ACCESO.md](ACCESO.md)
 - Responsabilidad vigente: [CONTROL-RESPONSABILIDAD.json](CONTROL-RESPONSABILIDAD.json)
 - Inventario inicial: [inventarios/INVENTARIO-NECESIDADES-IA-v0.1.md](inventarios/INVENTARIO-NECESIDADES-IA-v0.1.md)
+- Matriz de casos de uso: [inventarios/MATRIZ-CASOS-USO-IA-v0.1.md](inventarios/MATRIZ-CASOS-USO-IA-v0.1.md)
 - Conversaciones originales: [conversaciones/](conversaciones/)
 - Crónica: [cronica/](cronica/)
 
