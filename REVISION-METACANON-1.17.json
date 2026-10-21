@@ -106,12 +106,12 @@
   },
   "custom_instructions": {
     "artifact": "/mnt/data/IPZ-CAMPO-CHATGPT.txt",
-    "characters": 1287,
+    "characters": 1432,
     "verified_under_free_go_limit": 1500,
     "native_chatgpt_field_modified": false,
     "operator_action_required": "Paste into Settings > Personalization > Custom Instructions; then read back the saved field.",
     "repository_artifact": "frentes/metodologia/entregas/CHATGPT-v0.3/IPZ-CAMPO-CHATGPT.txt",
-    "repository_blob": "33c9931ddb65ff6b7532aebf40906a01b17445b3"
+    "repository_blob": "eac6010f5d7d053e3b746a081743d48856b598c8"
   },
   "limitations": [
     "No permanent GitHub↔Notion synchronization was installed.",
