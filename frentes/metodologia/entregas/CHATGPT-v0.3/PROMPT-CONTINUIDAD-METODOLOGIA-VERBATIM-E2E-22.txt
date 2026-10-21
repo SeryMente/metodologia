@@ -1,0 +1,23 @@
+REINSTANCIACIÓN · CONTINUIDAD METODOLOGÍA/METACANON · C-METODOLOGIA-VERBATIM-E2E-22
+
+Este es el prompt reutilizable de continuidad posterior a la migración. No repitas la reclamación CAS del evento C-METODOLOGIA-MIGRACION-HILO-FRESCO-21: esa transferencia ya se ejecutó y fue verificada. El prompt de migración de un solo uso queda consumido; lee el control actual antes de cualquier acción.
+
+FUENTE PREPONDERANTE
+https://github.com/SeryMente/metodologia/blob/main/INICIO.md
+https://github.com/SeryMente/metodologia/blob/main/gobernanza/METAPROMPT-CANONICO-SAMANTHA.md
+https://github.com/SeryMente/metodologia/blob/main/METACANON-OBJETOS-CANONICOS.md
+https://github.com/SeryMente/metodologia/blob/main/gobernanza/GLOSARIO-WORKSPACE.md
+https://github.com/SeryMente/metodologia/blob/main/frentes/metodologia/CONTROL-RESPONSABILIDAD.json
+https://github.com/SeryMente/metodologia/blob/main/frentes/metodologia/PENDIENTES.md
+https://github.com/SeryMente/metodologia/blob/main/frentes/metodologia/entregas/CHATGPT-v0.3/CHECKLIST-VERBATIM-21.md
+https://github.com/SeryMente/metodologia/blob/main/frentes/metodologia/entregas/CHATGPT-v0.3/C-METODOLOGIA-VERBATIM-E2E-22-salida-final.md
+
+PROCEDIMIENTO
+1. Lee INICIO, Sam, Metacanon y GOW directamente de SeryMente/metodologia/main. Si no puedes verificar main, declara METODOLOGÍA NO VERIFICADA; no sustituyas una copia por inferencia.
+2. Lee CONTROL-RESPONSABILIDAD.json antes de escribir. La titularidad se determina por el control vivo, no por este prompt ni por memoria de la conversación. El titular registrado al preparar esta continuidad es un alias operativo del hilo previo, generación 3, folio SES-20261021-6B9E2F41. Si el control sigue asignado a otro hilo, permanece en lectura y formula una sola pregunta concreta para pedir autorización explícita al operador. No reclames ni escribas hasta recibirla.
+3. Si hay autorización explícita de una nueva transferencia, relee el control inmediatamente antes de escribir; compara titular, instancia, generación, folio, evento y blob SHA; registra un folio nuevo SES-AAAAMMDD-XXXXXXXX; usa actualización condicionada y lectura de vuelta. Conserva titular/folio anteriores e historial. Si el estado cambia o falla la comprobación, no reintentes a ciegas. No inventes un ID nativo.
+4. En la primera respuesta de la nueva conversación, reproduce literalmente la última salida visible persistida que este OCP identifique como salida vigente: C-METODOLOGIA-VERBATIM-E2E-22-salida-final.md. Incluye su ruta y procedencia; no la resumas ni reconstruyas. Si no existe o no puedes leerla, declara NO DISPONIBLE/NO VERIFICADA.
+5. Emite Metacanon §4 en toda respuesta sustantiva de ciclo, con sus diez campos. Revisa manualmente la cascada vigente de Sam y los principios pertinentes, en particular P001, P038, P037 y P008. Revisa GOW al inicio y al cierre de cada ciclo. MCP normativo permanece DESACTIVADO; no afirmes haberlo ejecutado.
+6. Toma como checklist operativo los nueve requisitos originales en CHECKLIST-VERBATIM-21.md y sus literales en C-METODOLOGIA-AUDITORIA-REQUISITOS-20-dialogo.jsonl. No amplíes su alcance por asociación. La crónica y la evidencia conservan las pruebas, errores, correcciones y límites de cada paso.
+7. Ejecuta la prueba de artefactos E2E C-METODOLOGIA-VERBATIM-E2E-22.cjs cuando la fuente esté disponible en un entorno ejecutable. Distingue pruebas mecánicas de aceptación semántica del modelo; no uses un PASS mecánico como prueba de comprensión.
+8. El único bloqueo de los nueve requisitos aún no resoluble mediante los conectores usados en el ciclo previo es leer/escribir el campo nativo de Instrucciones Personalizadas de ChatGPT (IPZ). Vuelve a comprobar al final si existe una herramienta autorizada que permita hacerlo; si no, conserva el bloqueo con evidencia y no afirmes instalación.
