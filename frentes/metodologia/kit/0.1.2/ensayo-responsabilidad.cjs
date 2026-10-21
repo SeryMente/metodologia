@@ -19,5 +19,20 @@ t('O15-control-corrupto-bloquea',()=>assert.throws(()=>k.transition({...a,genera
 t('O16-sin-autorizacion-bloquea',()=>assert.throws(()=>k.transition(null,{...req,authorization_ref:''})));
 t('O17-reloj-no-valido-bloquea',()=>assert(!k.gate({...obs,now_ms:0},ident,obs.blob).allowed));
 // Real concurrent local processes, atomic exclusive creation; does NOT test GitHub Contents or provider authorization.
-t('O18-carrera-local-solo-un-ganador',()=>{let dir=fs.mkdtempSync(path.join(os.tmpdir(),'owner-race-')),file=path.join(dir,'claim');const code=`const fs=require('fs');try{let f=fs.openSync(process.argv[1],'wx');fs.writeSync(f,process.argv[2]);fs.closeSync(f);process.exit(0)}catch(e){if(e.code==='EEXIST')process.exit(3);throw e}`;let worker=path.join(dir,'worker.cjs');fs.writeFileSync(worker,code.replace('process.argv[1]','process.argv[2]').replace('process.argv[2]);fs.closeSync','process.argv[3]);fs.closeSync'));let r=cp.spawnSync('bash',['-c',`node '${worker}' '${file}' A & p=$!; node '${worker}' '${file}' B & q=$!; wait $p; a=$?; wait $q; b=$?; echo "$a $b"`],{encoding:'utf8'});assert.deepEqual(r.stdout.trim().split(' ').sort(),['0','3']);assert(['A','B'].includes(fs.readFileSync(file,'utf8')))});
-let result={schema:'responsabilidad-tests/1',timestamp:new Date().toISOString(),scope:'pure transitions + local atomic-create race; NOT GitHub concurrent race or server-enforced write fencing',passed:tests.filter(x=>x.passed).length,total:tests.length,tests};console.log(JSON.stringify(result,null,2));if(result.passed!==result.total)process.exitCode=1;
+// Cross-platform concurrent local processes; no bash dependency; not GitHub/server fencing.
+(async()=>{
+ const id='O18-carrera-local-solo-un-ganador'; let dir;
+ try {
+  dir=fs.mkdtempSync(path.join(os.tmpdir(),'owner-race-'));
+  const file=path.join(dir,'claim'),worker=path.join(dir,'worker.cjs');
+  fs.writeFileSync(worker,`const fs=require('node:fs');try{const fd=fs.openSync(process.argv[2],'wx');fs.writeSync(fd,process.argv[3]);fs.closeSync(fd);process.exit(0)}catch(e){if(e.code==='EEXIST')process.exit(3);console.error(e.message);process.exit(1)}`);
+  const run=value=>new Promise((resolve,reject)=>{const child=cp.spawn(process.execPath,[worker,file,value],{stdio:'ignore'});child.once('error',reject);child.once('close',resolve)});
+  const codes=await Promise.all([run('A'),run('B')]);
+  assert.deepEqual(codes.slice().sort((a,b)=>a-b),[0,3]);
+  assert(['A','B'].includes(fs.readFileSync(file,'utf8')));
+  tests.push({id,passed:true,scope:'two concurrent Node processes using exclusive file creation; local only'});
+ } catch(e) { tests.push({id,passed:false,error:e.message}); }
+ finally { if(dir) try { fs.rmSync(dir,{recursive:true,force:true}); } catch(e) {} }
+ const result={schema:'responsabilidad-tests/1',timestamp:new Date().toISOString(),scope:'pure transitions + cross-platform concurrent local exclusive-create race; NOT GitHub concurrent race or server-enforced write fencing',passed:tests.filter(x=>x.passed).length,total:tests.length,tests};
+ console.log(JSON.stringify(result,null,2)); if(result.passed!==result.total) process.exitCode=1;
+})().catch(e=>{console.error(e);process.exitCode=1});
