@@ -1,8 +1,8 @@
-<!-- METACANON_VERSION=1.11; TEMPORARY_FRAMEWORK=true; USER_TRANSCRIPT_SPEC=true -->
+<!-- METACANON_VERSION=1.12; TEMPORARY_FRAMEWORK=true; USER_TRANSCRIPT_SPEC=true -->
 # Metacanon para crear y mantener objetos canónicos de proyecto
 
-- Estado: **Versión documental 1.11 — Compuerta de propósito previo para crear frentes**, ampliación autorizada en C-METODOLOGIA-PROPOSITO-11; versiones previas preservadas en historia y antecedentes. La revisión integral 1.10 y sus límites siguen vigentes; esta versión añade §39 sin acreditar propagación automática a hijos.
-- Versión metodológica: **1.11**. Sello: **METACANON-OBJETOS-v1.11**. Gobierno general: [Metaprompt Canónico de Samantha](gobernanza/METAPROMPT-CANONICO-SAMANTHA.md), v333 · NX-333m; relación y límites en [gobernanza](gobernanza/README.md).
+- Estado: **Versión documental 1.12 — RDC sin interfaz gráfica compartida**, ampliación autorizada en C-METODOLOGIA-RDC-GUI-12; versiones previas preservadas en historia y antecedentes. Conserva la compuerta de propósito 1.11 y añade §40; no acredita propagación automática a hijos.
+- Versión metodológica: **1.12**. Sello: **METACANON-OBJETOS-v1.12**. Gobierno general: [Metaprompt Canónico de Samantha](gobernanza/METAPROMPT-CANONICO-SAMANTHA.md), v333 · NX-333m; relación y límites en [gobernanza](gobernanza/README.md).
 - Nombre propio del marco: pendiente de elección del operador; no usar el nombre de un proyecto como nombre del método.
 - Repositorio de metodología identificado: https://github.com/SeryMente/metodologia, privado comprobado en el ciclo de actualización 1.1; revalidar su visibilidad antes de cada escritura sensible. Ruta METACANON-OBJETOS-CANONICOS.md; fuente vigente main; rama documental histórica docs/metacanon-objetos-20261011. Conservar los originales y datos privados del frente solo en su carpeta autorizada tras verificar acceso privado; nunca publicar secretos en Git ni transportar identidades de ejemplos.
 - Archivo estable propuesto: `METACANON-OBJETOS-CANONICOS.md`.
@@ -11,7 +11,7 @@
 
 ## LEER PRIMERO — modo metodología, no ejecución del ejemplo
 
-**Precisión vigente 1.11:** aplicar §39 junto con §§35–38 y §§29–34; primero gobierno, frente/rol, estado y permiso, después acción comprobada y checkpoint. §35 no altera el gobierno ni autoriza productos por ejemplo. Versiones antiguas en originales/notas conservan su carácter histórico.
+**Precisión vigente 1.12:** aplicar §§39–40 junto con §§35–38 y §§29–34; primero gobierno, frente/rol, estado y permiso, después acción comprobada y checkpoint. §35 no altera el gobierno ni autoriza productos por ejemplo. Versiones antiguas en originales/notas conservan su carácter histórico.
 
 **Actualización 1.7, de lectura previa:** [INICIO.md](INICIO.md) es la puerta de entrada transversal. Gobierno general en `gobernanza/METAPROMPT-CANONICO-SAMANTHA.md`; el metacanon gobierna el método, no constituye una autoridad general competidora. §§29–33 prevalecen sobre formulaciones anteriores incompatibles, en particular «objeto = un solo .md», subordinación al SI anterior, temporalidad de un mes como compromiso vigente y activación implícita de PRIUS. Las menciones de 1.0–1.6 en antecedentes conservan su sentido histórico. Leer una propuesta histórica no la ratifica.
 
@@ -45,6 +45,7 @@ Antes de cada ciclo comprobar la versión de este metacanon y del objeto del pro
 
 16. Cada ciclo sustantivo deja antes del cierre una entrada recuperable en la crónica del objeto, originales disponibles, decisiones/razones, evidencia/límites y checkpoint; la entrega sin persistencia verificable queda documentalmente incompleta (§28).
 17. Ningún frente nuevo ni su objeto canónico de persistencia pueden crearse sin un enunciado de propósito dictado directamente por el operador, conservado verbatim y documentado canónicamente; su ausencia es bloqueo de creación (§39).
+18. Una conexión RDC nunca autoriza utilizar la interfaz gráfica del monitor activo del operador. En un equipo compartido, el trabajo remoto es solo terminal/CLI o ejecución headless no visible; la GUI requiere autorización específica y un segundo monitor verificado (§40).
 
 ## 2. Insumos y creación
 
@@ -422,6 +423,8 @@ Prueba mínima: toda norma vigente pertinente tiene ubicación efectiva en el hi
 
 Remote Desktop Commander (RDC) es exclusivo del asistente: el constructor nunca lo invoca para ningún fin —descubrimiento, ping, lectura, búsqueda, ejecución o modificación—, sin excepción por urgencia, ahorro de tiempo, necesidad técnica o delegación. No eludir la prohibición mediante scripts, alias o intermediarios técnicos. Solo el asistente ejecuta la misión remota necesaria, autorizada, acotada y justificada por beneficio; el constructor continúa autónomamente lo autorizado por los demás medios. La autonomía no elimina reglas superiores de plataforma, permisos reales ni evidencia/aceptación. El proyecto metodológico de hilo único no crea un asistente ficticio ni habilita RDC para un constructor.
 
+**RDC NO AUTORIZA LA GUI COMPARTIDA.** En el equipo cuyo monitor está usando el operador, todo trabajo remoto se limita a terminal/CLI o procesos headless que no creen, enfoquen ni manipulen ventanas visibles. Quedan prohibidos mouse, pulsaciones sobre la interfaz, automatización de accesibilidad, navegación visible, abrir/cerrar/minimizar ventanas y capturar o leer la pantalla compartida. Solo una autorización específica del operador y un segundo monitor previamente verificado permiten una acción gráfica, y únicamente en esa pantalla separada. Ante interferencia observada o dudosa: detener inmediatamente sin “limpiar” la GUI, identificar actor y acciones mediante evidencia disponible, reportar el incidente y continuar solo por medios no gráficos. Véase §40.
+
 REMOTE DESKTOP COMMANDER — NECESIDAD ESTRICTA
 No usar Remote Desktop Commander por rutina, al instanciar o por cambiar de ciclo/equipo. Antes de cualquier llamada —incluidos descubrimiento de cuenta/dispositivos, ping, listados y lecturas— identifica el requisito imprescindible del hito que necesita observación o acción en el equipo actual y por qué repo, adjuntos, sandbox o herramientas específicas no bastan. Si bastan, no llames a Remote Desktop Commander y declara «RDC: no utilizado; no necesario» cuando corresponda al formato. Un archivo mencionado en Descargas no justifica inspección remota si ya fue recibido por otra fuente.
 Solo tras demostrar esa necesidad, verificar autorización, cuenta, vínculo actual, conectividad y alcance mínimo; si falta alguno, bloquear el acceso remoto, no explorar para averiguarlo ni reemparejar sesiones válidas. Acotar rutas/datos/comandos al requisito y detener el uso al satisfacerlo; no escanear ni mantener vigilancia por defecto. La herencia del comando de arranque no ordena ejecutarlo; perfil/sesión pueden quedar no verificados sin impedir trabajo documental que no dependa del equipo. No heredar identidades ni permisos de ejemplos.
@@ -751,4 +754,32 @@ OK, este, sigamos trabajando con el marco de trabajo. Ahora mismo creé un hilo 
 ````
 
 **Compatibilidad/versión 1.11:** no cambia el propósito general, los trece bloques, los roles ni las autorizaciones del marco. Endurece únicamente la creación de frentes nuevos. No invalida retroactivamente frentes existentes ni acredita que ya incorporaron el delta; cada uno debe adquirirlo y revisar su efecto al activarse.
+
+## 40. Prohibición de usar la interfaz gráfica compartida por RDC · actualización 1.12
+
+### 40.1 Separación física de interacción
+
+La existencia de una conexión RDC no concede permiso para utilizar la interfaz gráfica que el operador está usando. Dos actores no deben disputar el mismo monitor, foco, mouse o teclado. Mientras el operador trabaje en la pantalla activa, el agente remoto solo puede usar terminal/CLI u otro medio no gráfico y no visible —incluidos procesos headless— que no cambie ventanas, foco ni entrada de usuario.
+
+### 40.2 Acciones prohibidas y excepción estrecha
+
+Sin excepción vigente, quedan prohibidos: mover o pulsar el mouse; enviar teclas a ventanas; abrir, cerrar, enfocar, minimizar o reorganizar aplicaciones; navegar un navegador visible; usar automatización de accesibilidad sobre la GUI; capturar o leer la pantalla compartida; y cualquier acción que pueda disputar el monitor o revelar contenido visible del operador. Una acción gráfica solo puede considerarse cuando concurren **ambas** condiciones: autorización específica del operador para esa acción y segundo monitor verificado como superficie separada. Tener varios dispositivos, una sesión RDC válida o una ventana minimizada no acredita un segundo monitor ni reemplaza la autorización.
+
+### 40.3 Respuesta a incidente y verificación
+
+Si el operador observa interferencia o existe duda, detener toda acción gráfica de inmediato. No intentar cerrar, restaurar ni “dejar como estaba” mediante más GUI. Consultar auditoría no gráfica disponible, identificar el hilo responsable y la última acción sin atribuir lo no probado, comunicar la prohibición y conservar el incidente. El hilo puede continuar únicamente por CLI/headless. La falta de identificación no autoriza reanudar; deja bloqueada la GUI hasta resolución.
+
+Pruebas negativas mínimas: una conexión online no habilita GUI; una orden general de continuar no es autorización gráfica; una tarea que requiere Chrome visible queda pendiente; un intento fallido también cuenta como infracción/intento y se registra; disponer de segundo monitor sin autorización específica sigue bloqueando la GUI.
+
+### M40 · instrucción directa del operador · C-METODOLOGIA-RDC-GUI-12
+
+Original íntegro preservado en `frentes/metodologia/conversaciones/C-METODOLOGIA-RDC-GUI-12-dialogo.jsonl`; lectura normativa aplicada en §§1, 24 y 40.
+
+````text
+uno de los modelos está utilizando la conexión RDC para utilizar la interfaz gráfica que yo estoy utilizando en este momento. Eso está prohibido. El hecho de tener una conexión RDC no significa que el modelo pueda ponerse a usar el monitor que yo estoy utilizando para trabajar, porque dos personas no pueden usar el mismo monitor al mismo tiempo. El trabajo por conexión RDC se hace por terminal CLI u otro medio siempre y cuando no utilice la interfaz gráfica que yo estoy utilizando a menos que se tengan dos monitores. Esa sería, a partir de ahí se empieza a hacer de otra manera. A ver quién lo está haciendo y que no lo vuelva a hacer.
+````
+
+**Incidente observado:** Signal Interpreter reconoció haber intentado acceder al botón Extensiones de Chrome mediante automatización de accesibilidad y, antes, abrir `chrome://extensions` y solicitar el cierre de Chrome. La invocación final falló y Chrome no se cerró. El hilo recibió orden de detener toda GUI y continuar solo por CLI/headless. Esta constatación identifica el intento reportado; no acredita ausencia de otros eventos fuera del historial disponible.
+
+**Compatibilidad/versión 1.12:** endurece RDC sin cambiar roles, arquitectura por directorios, compuerta de propósito ni autorizaciones de producto. No convierte procesos headless en permiso para manipular una sesión gráfica oculta y no acredita que los hijos hayan adquirido la regla.
 
