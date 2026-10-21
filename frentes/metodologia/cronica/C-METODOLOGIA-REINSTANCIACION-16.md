@@ -31,7 +31,7 @@ El texto de la instrucción del operador, la continuidad por expiración de tiem
 | `gobernanza/GLOSARIO-WORKSPACE.md` | v2.0 | Define FT/FDT, OCP, SES e IPZ; enlaza directamente GOW, Metacanon §4 y la cascada de Sam. |
 | `BOOTSTRAP-CONTEXTO-GLOBAL.md` | blob `26c69035250e857641aea341fb4468a8617c6a07` | BCR alineado a main, búsqueda de FT por nombre, OCP, folio, salida literal anterior y MCP normativo desactivado. |
 | `INICIO.md` / `gobernanza/README.md` | blobs registrados en evidencia | Rutas de adquisición y referencias actualizadas a Sam v337/Metacanon v1.17/GOW v2.0. |
-| `frentes/metodologia/entregas/CHATGPT-v0.3/IPZ-CAMPO-CHATGPT.txt` | 1.287 caracteres | Campo IPZ corto listo para pegar; enlaces directos al GOW, Metacanon §4 y la lista de principios de Sam. |
+| `frentes/metodologia/entregas/CHATGPT-v0.3/IPZ-CAMPO-CHATGPT.txt` | 1.432 caracteres | Campo IPZ de 1.432 caracteres (blob `eac6010f5d7d053e3b746a081743d48856b598c8`) listo para pegar; enlaces directos al GOW, Metacanon §4 y la lista de principios de Sam. |
 | `REVISION-METACANON-1.17.json` | blob registrado en evidencia | Recibo estructurado del cambio y sus límites. |
 
 Los espejos de Notion de Sam y GOW se actualizaron desde `main` y se releyeron. Sam quedó como v337/NX-337m; el GOW como v2.0 con las entradas FT/FDT, OCP, SES e IPZ y los enlaces exigidos.
@@ -46,7 +46,7 @@ La búsqueda de código accesible no devolvió coincidencias del folio, pero el 
 
 - Lectura de vuelta de Metacanon v1.17, Sam v337/NX-337m, GOW v2.0, BCR, INICIO, guía de gobernanza, control de folio y recibos.
 - Lectura de vuelta de Notion: Sam v337/NX-337m con P037/P038/P008/P039; GOW v2.0 con FT/FDT/OCP/SES/IPZ, revisión obligatoria y enlaces directos.
-- El IPZ tiene 1.287 caracteres; la documentación vigente de OpenAI fija 1.500 caracteres para Free/Go. El texto está guardado en main, pero no se ha pegado en el ajuste nativo.
+- El IPZ tiene 1.432 caracteres; la documentación vigente de OpenAI fija 1.500 caracteres para Free/Go. El texto está guardado en main, pero no se ha pegado en el ajuste nativo.
 - La verificación normativa por MCP permanece desactivada; se requiere revisión manual de la cascada de Sam y del GOW en cada ciclo.
 - No se implementó sincronización perpetua GitHub↔Notion; las propagaciones verificadas son puntuales.
 - No se probó aceptación semántica por un modelo externo distinto; no se promete obediencia universal.
