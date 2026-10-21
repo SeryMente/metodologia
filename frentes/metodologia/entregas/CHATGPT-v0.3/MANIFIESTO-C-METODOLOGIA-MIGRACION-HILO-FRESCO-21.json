@@ -93,7 +93,7 @@
     },
     "e2e_test": {
       "path": "frentes/metodologia/pruebas/continuidad/C-METODOLOGIA-VERBATIM-E2E-22.cjs",
-      "blob": "5a70ebad35d020cac32fab6710a28992a8f2b54a"
+      "blob": "1a122abe316b759396fae64b161636833a313f34"
     },
     "current_output": {
       "path": "frentes/metodologia/entregas/CHATGPT-v0.3/C-METODOLOGIA-VERBATIM-E2E-22-salida-final.md",
@@ -168,7 +168,7 @@
     },
     "e2e_test": {
       "path": "frentes/metodologia/pruebas/continuidad/C-METODOLOGIA-VERBATIM-E2E-22.cjs",
-      "blob": "5a70ebad35d020cac32fab6710a28992a8f2b54a",
+      "blob": "1a122abe316b759396fae64b161636833a313f34",
       "expected_checks": 16
     },
     "final_output": {
@@ -196,6 +196,16 @@
       "characters": 1451,
       "links_verified": 3,
       "native_field": "not readable/writable through available tools"
-    }
+    },
+    "metacanon": {
+      "path": "METACANON-OBJETOS-CANONICOS.md",
+      "blob": "99cddf94b2b52d3bd1140112d198d50a5e274a7d",
+      "version": "1.19"
+    },
+    "pending": {
+      "path": "frentes/metodologia/PENDIENTES.md",
+      "blob": "75ed42c66fa5b937e8c36d099a31b9662c35168a"
+    },
+    "status": "OCP entrypoints, current output, checklist, prompts and tests persisted/read-back; final E2E will verify the consolidated manifest and all nine verbatim requirements."
   }
 }
