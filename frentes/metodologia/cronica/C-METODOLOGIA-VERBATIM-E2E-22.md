@@ -95,7 +95,7 @@ Al reexaminar las herramientas disponibles no se identificó una acción autoriz
 - El SHA de objeto de Git de la salida M22 es `51450a8a9daef2661530d69c92aaf8ca046c07c0`, commit `5c5518457919f4bb29e0c56a4c72da586a2bfabf`; la prueba también pasó su comprobación de correspondencia con el manifiesto.
 - Se revisaron las herramientas de ajustes disponibles: solo exponen color de acento, apariencia y personalidad; no ofrecen el campo nativo IPZ. El equipo remoto no tenía una ventana titulada ChatGPT/OpenAI; la única ventana de Chrome detectada estaba titulada “Retomar FT Harmonia”. No se navegó ni modificó esa sesión de otro frente. Se limita la conclusión a esa observación del equipo y a las herramientas realmente expuestas.
 - Conclusión del bloqueo: el archivo IPZ sí está validado en `main` a 1.451 caracteres y con tres enlaces directos; su instalación nativa no se puede leer ni escribir por la interfaz disponible. No se declara actualizada.
-- Se ejecutará otra vez el mismo test después de sincronizar este recibo y el manifiesto; el resultado de esa última corrida, con sus SHA exactos, se guarda en el JSON de evidencia M22.
+- El resultado de cierre de este evento se identifica por el commit de `main`, el conteo y las huellas que constan en `evidencias/C-METODOLOGIA-VERBATIM-E2E-22.json`; la evidencia más reciente, no la planificación escrita antes de ejecutar, determina el corte vigente.
 
 ## 9. Errores y correcciones conservados
 
