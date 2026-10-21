@@ -108,7 +108,7 @@ Operación de migración que inaugura la Era Post-Canon de un protocolo: el cont
 
 <b>MDC</b> ✦
 
-Método para Documentar Cánones <b>= Método de Canonización = Metacanon</b>. En el contexto histórico/local del WS Khora, los tres nombres se usaron como equivalentes — «Metacanon» expresaba que el MDC es el Canon cuyo objeto es el Canon como tipo de documento. Esta equivalencia no se exporta automáticamente a la Metodología de Ser y Mente, donde «Metacanon de objetos canónicos» designa el marco v1.14 para mantener frentes persistentes. En referencias entre espacios se usan calificadores completos. El método que rige cómo se construye todo Canon del WS. Dos modos: declarativo (Modo A) y ejecutable (Modo B). Reemplaza al MDP como método rector único. Documento: [MDC · Método para Documentar Cánones v1.1](https://app.notion.com/p/f55a418782418304a3d581adad1a71f6).
+Método para Documentar Cánones <b>= Método de Canonización = Metacanon</b>. En el contexto histórico/local del WS Khora, los tres nombres se usaron como equivalentes — «Metacanon» expresaba que el MDC es el Canon cuyo objeto es el Canon como tipo de documento. Esta equivalencia no se exporta automáticamente a la Metodología de Ser y Mente, donde «Metacanon de objetos canónicos» designa el marco metodológico de frentes persistentes, actualmente v1.16. En referencias entre espacios se usan calificadores completos. El método que rige cómo se construye todo Canon del WS. Dos modos: declarativo (Modo A) y ejecutable (Modo B). Reemplaza al MDP como método rector único. Documento: [MDC · Método para Documentar Cánones v1.1](https://app.notion.com/p/f55a418782418304a3d581adad1a71f6).
 
 <b>MDP</b> 🟦
 
@@ -481,7 +481,7 @@ Instrumento determinista, versionado en el repositorio, que audita mecánicament
 
 ### Grupo 10 · Metodología compartida y entradas heredadas del glosario de Metodología
 
-**Procedencia:** migración íntegra de las entradas terminológicas del archivo GLOSARIO-OPERATIVO.md, versión v1.3.1, blob 6b8d3a50f2ac235b5597989981a0eabee9e90d85. Su original completo se conserva en frentes/metodologia/antecedentes/GLOSARIO-OPERATIVO-v1.3.1.md. Se unifica aquí el vocabulario común sin extender los términos locales más allá de su ámbito original. Los conceptos que ya existían en los grupos anteriores se consolidan en su entrada canónica correspondiente, no se duplican.
+**Procedencia:** migración íntegra de las entradas terminológicas del archivo GLOSARIO-OPERATIVO.md, versión v1.3.1, blob 6b8d3a50f2ac235b5597989981a0eabee9e90d85. Su original completo se conserva en frentes/metodologia/antecedentes/GLOSARIO-OPERATIVO-v1.3.1.md. Se unifica aquí el vocabulario común sin extender los términos locales más allá de su ámbito original. Los conceptos que ya existían en los grupos anteriores se consolidan en su entrada canónica correspondiente, no se duplican. La inclusión de una entrada no activa por sí misma un protocolo, permiso, proyecto o despliegue: se respetan sus condiciones de activación, el ámbito propio y las autorizaciones correspondientes. La mención de Sesión PRIUS no la activa; su revisión/adaptación continúa diferida hasta que el operador la reabra explícitamente.
 
 #### Entradas de términos canónicos heredados
 
