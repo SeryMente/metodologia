@@ -126,7 +126,7 @@ Implementado: regla§38, registro exclusivo creado sin sobrescribir y leído de 
 ### Sigue pendiente y no debe marcarse como hecho
 
 - **SYNC-01 · Sincronización perpetua:** sigue pendiente el mecanismo automático que propagará cada cambio entre plataforma y repositorio. Las escrituras y lecturas de vuelta de este ciclo fueron puntuales.
-- **PLAT-01 / personalización nativa:** no se modificaron directamente los ajustes de instrucciones personalizadas de ChatGPT. Se preparará/entregará la versión BCR lista para copiar; no declarar que ya está instalada en los ajustes ni que otros modelos la obedecen.
+- **PLAT-01 / personalización nativa:** no se modificaron directamente los ajustes de instrucciones personalizadas de ChatGPT. Este ciclo entrega el texto BCR listo para copiar; sigue pendiente que el operador lo pegue/adopte en los ajustes nativos. No declarar que ya está instalado ni que otros modelos lo obedecen.
 - **REAL-CHATGPT-01 / receptor independiente:** permanece pendiente una prueba semántica independiente con otro hilo/modelo, incluida la lectura del estado y la aplicación real de la jerarquía.
 - **Seguridad/cifrado y Sesión PRIUS:** continúan diferidos, sin activación por esta actualización.
 
