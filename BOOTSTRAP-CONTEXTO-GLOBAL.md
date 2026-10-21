@@ -15,7 +15,7 @@ El repositorio `SeryMente/metodologia/main` es la fuente canónica preponderante
 Adquiere en este orden desde la revisión efectiva de `main`:
 1. `INICIO.md` como punto de entrada y jerarquía de adquisición.
 2. `gobernanza/METAPROMPT-CANONICO-SAMANTHA.md` (Sam), gobierno general.
-3. `METACANON-OBJETOS-CANONICOS.md`, método de los frentes y reglas §§42–45.
+3. `METACANON-OBJETOS-CANONICOS.md`, método de los frentes y reglas §§42–48.
 4. `gobernanza/GLOSARIO-WORKSPACE.md` (GOW), único glosario operativo canónico.
 5. El control de responsabilidad, núcleo operativo y reglas del frente concreto cuando la tarea identifique uno.
 
@@ -68,6 +68,6 @@ La fuente de verdad para decidir qué está vigente sigue siendo `SeryMente/meto
 
 Ante «retoma», «continúa» o «asume responsabilidad» de un FT, consulta `INICIO.md`, Sam, Metacanon y el GOW en `SeryMente/metodologia/main`. Revisa GOW al inicio y cierre de cada ciclo y revisa manualmente la cascada de Sam. La verificación normativa automática por MCP está desactivada.
 
-Busca el repositorio de origen entre los repositorios SeryMente accesibles y localiza el FT por nombre propio en su carpeta OCP `frentes/<slug>/`. Un repositorio puede contener cualquier número de FT. Genera un folio operativo `SES-AAAAMMDD-XXXXXXXX` para la sesión y regístralo en el único control de responsabilidad del OCP; un FT admite una sola sesión activa. Si otro titular sigue activo, pide una vez autorización de transferencia según Sam P037/Metacanon §42 y guarda el traspaso por comparación de revisión/generación y lectura de vuelta. No finjas una titularidad si el guardado no se verificó.
+Busca el repositorio de origen entre los repositorios SeryMente accesibles y localiza el FT por nombre propio y descubre su OCP a partir del núcleo, README y control de responsabilidad. La ruta predeterminada para OCP nuevos es `frentes/<slug>/`; conserva rutas canónicas preexistentes, como `docs/frentes/<slug>/`, sin migrarlas ni duplicar controles. Un repositorio puede contener cualquier número de FT. Genera un folio operativo `SES-AAAAMMDD-XXXXXXXX`, busca colisiones en los controles accesibles y regístralo en el único control de responsabilidad del OCP; registra el ámbito de búsqueda y no afirmes unicidad global fuera de él.  un FT admite una sola sesión activa. Si otro titular sigue activo, pide una vez autorización de transferencia según Sam P037/Metacanon §42 y guarda el traspaso por comparación de revisión/generación y lectura de vuelta. No finjas una titularidad si el guardado no se verificó.
 
 Adopta el contexto y las fuentes reales del OCP. En el primer ciclo reproduce literalmente la última salida visible del modelo efectivamente persistida, con origen/ruta; si no está disponible, indícalo sin reconstruirla. Aplica siempre el formato obligatorio de Metacanon §4: https://github.com/SeryMente/metodologia/blob/main/METACANON-OBJETOS-CANONICOS.md#4-salida-por-ciclo. Las normas y el glosario se rigen por `main`; el estado del FT reside en su OCP.
