@@ -2,25 +2,26 @@
   "canonical_source": "https://github.com/SeryMente/metodologia/blob/main/gobernanza/GLOSARIO-WORKSPACE.md",
   "canonical_repository": "SeryMente/metodologia",
   "canonical_branch": "main",
-  "source_title": "Glosario Operativo del Workspace (GOW) · v2.1",
-  "canonical_blob_sha": "d8df366741f6c5881c8da5e9660cfaf520fd768e",
-  "canonical_precedence": "GOW in SeryMente/metodologia/main is the sole canonical glossary; Notion and external copies are subordinate mirrors; the root GLOSARIO-OPERATIVO.md remains a compatibility pointer.",
+  "source_title": "Glosario Operativo del Workspace (GOW) · v2.2",
+  "canonical_blob_sha": "6d4f8aff292ae173d9ceeba03694597bd2f16488",
+  "canonical_precedence": "GOW in SeryMente/metodologia/main is exclusively the operational glossary for terms, abbreviations, semantic equivalences and authorized transcription normalizations. It is not the Hub, an orchestrator, or a general authority for project governance; the current Metacanon work thread is the contextual Hub for this construction cycle.",
   "prior_notion_source": "https://app.notion.com/p/247a418782418399a86001aae61ae938",
   "notion_mirror_readback": {
     "url": "https://app.notion.com/p/247a418782418399a86001aae61ae938",
-    "title": "Glosario Operativo del Workspace (GOW) · Canon v2.1",
-    "observed_version": "v2.1",
+    "title": "Glosario Operativo del Workspace (GOW) · Canon v2.2",
+    "observed_version": "v2.2",
     "status": "VERIFIED_READBACK",
     "checks": {
-      "version": true,
-      "FTFDT": true,
-      "OCP": true,
-      "sessionFolio": true,
+      "v2_2": true,
+      "Metacanon119": true,
+      "FT_FDT_equivalence": true,
+      "unlimitedFTperRepo": true,
+      "OCP_folderAndLegacyPaths": true,
+      "SES": true,
       "IPZ": true,
-      "cycleReview": true,
-      "mainPrecedence": true,
-      "Metacanon118": true,
-      "legacyOCPPaths": true,
+      "GOWGlossaryOnly": true,
+      "HubDistinctionInMain": true,
+      "GOWReviewEachCycle": true,
       "directGOWLink": true,
       "directMetacanonSection4Link": true,
       "directSamCascadeLink": true
@@ -35,6 +36,6 @@
     "method": "Merged terms into Group 10 with provenance and scope; duplicates were consolidated against the existing GOW entries; old root file is a pointer, not a glossary authority."
   },
   "source_content_sha256": null,
-  "sync_status": "GOW v2.1 copied from main to Notion and read back after OCP legacy-path reconciliation. The body includes FT/FDT, OCP, SES, IPZ, per-cycle GOW review, Metacanon v1.18, and direct links to GOW, Metacanon §4 and Sam's cascading principles. Point-in-time sync only; no continuous synchronization installed.",
-  "hash_status": "SHA-256 was not recalculated; the Git blob SHA records the canonical repository object."
+  "sync_status": "GOW v2.2 was read from main, written to the Notion mirror, and the mirror was read back at title/version v2.2. The canonical body separates GOW's glossary-only scope from the contextual Hub designation in Metacanon §49. Point-in-time synchronization only; no continuous synchronization is installed.",
+  "hash_status": "SHA-256 was not recalculated; Git blob SHA is used as revision evidence."
 }
