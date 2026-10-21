@@ -143,7 +143,7 @@ La revisión por ciclo del GOW sí es obligatoria ahora; no depende del cierre d
 - GOW v2.0: términos FT/FDT, OCP, folio SES e IPZ añadidos; la referencia activa a Metacanon v1.17 se corrigió en main y luego se volvió a escribir y leer de vuelta la página Notion v2.0 (última lectura observada 2026-10-21T21:01:51.961Z). El recibo JSON de GOW conserva una marca de lectura anterior y queda pendiente de refresco.
 - BCR: se añadieron enlaces directos a Sam (cascada), Metacanon §4 y GOW, además del flujo FT/OCP/SES y MCP normativo desactivado; blob `26c69035250e857641aea341fb4468a8617c6a07`.
 - Control de Metodología: folio operativo `SES-20261021-C4D81A7F` guardado/read-back con generación 2. Búsqueda de colisión limitada al repo accesible; unicidad en toda la organización no verificada.
-- IPZ: texto final de 1287 caracteres guardado en `frentes/metodologia/entregas/CHATGPT-v0.3/IPZ-CAMPO-CHATGPT.txt` y en `/mnt/data/IPZ-CAMPO-CHATGPT.txt`; listo para copiar. Ajuste nativo de ChatGPT aún requiere pegado explícito y posterior comprobación.
+- IPZ: texto final de 1432 caracteres guardado en `frentes/metodologia/entregas/CHATGPT-v0.3/IPZ-CAMPO-CHATGPT.txt` y en `/mnt/data/IPZ-CAMPO-CHATGPT.txt`; listo para copiar. Ajuste nativo de ChatGPT aún requiere pegado explícito y posterior comprobación.
 
 ### Pendiente de cierre y no declarar completado
 
