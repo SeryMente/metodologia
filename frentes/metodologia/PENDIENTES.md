@@ -202,3 +202,15 @@ La revisión por ciclo del GOW sí es obligatoria ahora; no depende del cierre d
 
 El recuento de caracteres del IPZ aplica al campo que se va a pegar, sin incluir el salto de línea final del archivo. OpenAI indica un límite de 1.500 caracteres para Free/Go y que las instrucciones guardadas se aplican inmediatamente a todos los chats. Referencia oficial: https://help.openai.com/en/articles/8096356-chatgpt-custom-instructions
 
+## C-METODOLOGIA-MIGRACION-HILO-FRESCO-21 · Migración a hilo fresco
+
+- **Estado:** paquete de relevo preparado; el control sigue en generación 2 y conserva la titularidad de origen. La transferencia al destino NO está completada hasta el CAS + read-back ejecutados por el hilo fresco.
+- **Autorización:** el operador ordenó explícitamente «Actualiza OCP para migrar instancia a hilo fresco y dame el prompt que necesito para reinstanciar». Alcance: una transferencia de Metodología/Metacanon al próximo hilo que use el prompt de este evento; no otros frentes.
+- **Origen:** propietario operativo `operator-authorized-transfer:C-METODOLOGIA-COLISION-RESPONSABILIDAD-14`; instancia `chatgpt-metacanon-collision-remediation-2026-10-21`; generación 2; folio `SES-20261021-C4D81A7F`. La identidad es un alias operativo, no ID nativo.
+- **Destino:** aún no existe en esta plataforma de control. Debe generar un folio `SES-AAAAMMDD-XXXXXXXX`, comprobar colisiones dentro del alcance accesible, crear alias operativo, transferir por compare-and-swap usando SHA actual y generación observada y validar por lectura de vuelta.
+- **Prompt vigente:** `frentes/metodologia/entregas/CHATGPT-v0.3/PROMPT-MIGRACION-HILO-FRESCO-21.txt`.
+- **Checkpoint:** `frentes/metodologia/entregas/CHATGPT-v0.3/CHECKPOINT-MIGRACION-HILO-FRESCO-21.md`.
+- **Última salida persistida que el destino debe reproducir literalmente:** `frentes/metodologia/entregas/CHATGPT-v0.3/C-METODOLOGIA-AUDITORIA-REQUISITOS-20-salida-final.md`.
+- **Reglas de seguridad del relevo:** no liberar ni reemplazar al titular por iniciar un chat; no declarar transferencia antes del read-back; si cambia el control o falla la escritura, detenerse sin reintentos ciegos; no reutilizar el folio de origen como folio destino.
+- **Pendientes de fondo:** IPZ nativo no verificable desde estos conectores; prueba E2E de retoma en hilo nuevo por ejecutar; MCP normativo sigue desactivado; no se afirma inventario global de la organización.
+
