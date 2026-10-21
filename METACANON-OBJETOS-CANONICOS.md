@@ -1,7 +1,7 @@
 <!-- METACANON_VERSION=1.14; TEMPORARY_FRAMEWORK=true; USER_TRANSCRIPT_SPEC=true -->
 # Metacanon para crear y mantener objetos canónicos de proyecto
 
-- Estado: **Versión documental 1.14 — Resolución explícita de colisiones de responsabilidad**, ampliación autorizada en C-METODOLOGIA-PERFIL-FILA4-13; versiones previas preservadas en historia y antecedentes. Conserva las compuertas 1.11–1.12 y añade §41; no acredita propagación automática a hijos.
+- Estado: **Versión documental 1.14 — Resolución explícita de colisiones de responsabilidad**, ampliación autorizada en C-METODOLOGIA-COLISION-RESPONSABILIDAD-14; conserva las compuertas anteriores, integra §42 y preserva el historial. No acredita propagación automática a hijos.
 - Versión metodológica: **1.14**. Sello: **METACANON-OBJETOS-v1.14**. Gobierno general: [Metaprompt Canónico de Samantha](gobernanza/METAPROMPT-CANONICO-SAMANTHA.md), v335 · NX-335m; relación y límites en [gobernanza](gobernanza/README.md).
 - Nombre propio del marco: pendiente de elección del operador; no usar el nombre de un proyecto como nombre del método.
 - Repositorio de metodología identificado: https://github.com/SeryMente/metodologia, privado comprobado en el ciclo de actualización 1.1; revalidar su visibilidad antes de cada escritura sensible. Ruta METACANON-OBJETOS-CANONICOS.md; fuente vigente main; rama documental histórica docs/metacanon-objetos-20261011. Conservar los originales y datos privados del frente solo en su carpeta autorizada tras verificar acceso privado; nunca publicar secretos en Git ni transportar identidades de ejemplos.
