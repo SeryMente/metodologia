@@ -100,3 +100,8 @@ Al reexaminar las herramientas disponibles no se identificó una acción autoriz
 ## 9. Errores y correcciones conservados
 
 Las primeras ejecuciones no se borran ni se sustituyen por el resultado exitoso: el ensayo de responsabilidad 17/18 motivó la corrección de concurrencia local multiplataforma; la regresión de refresco pasó 24/24; la continuidad histórica falló 18/33 por la diferencia entre codificación predeterminada de Windows y UTF-8, y pasó 33/33 tras fijar UTF-8/LF. La primera E2E tuvo un bloqueo de preparación por sparse-checkout incompleto; la siguiente alcanzó 12/15 y permitió corregir tres aserciones/rutas sin eliminar criterios. Una versión posterior pasó 15/15; esta corrida consolidada pasó 16/16. Los informes r2/r3 y la evidencia final conservan la distinción entre los cortes.
+
+
+## 10. Segunda E2E tras sincronizar diálogo, crónica y manifiesto · 2026-10-21
+
+La ejecución posterior a la primera sincronización completa terminó **PASS 16/16**, proceso Node.js con salida cero, en commit `9d10d1dc2d4f9d0308c496e015709e43743c2bbd`. Los 16 IDs aparecen con `passed: true` en el JSON de resultado local. Incluyó verificación del OCP de entrada, el estado de transferencia consumida, los nueve requisitos verbatim, los diez campos §4 de la salida M22, y la coincidencia del blob SHA de esa salida con el manifiesto. La última repetición tras añadir este recibo y sincronizar la revisión final del manifiesto se hará antes de escribir la evidencia definitiva; el JSON de evidencia será la autoridad del corte final, no esta ejecución anterior.
