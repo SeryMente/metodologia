@@ -71,11 +71,16 @@
     },
     "dialogue": {
       "path": "frentes/metodologia/conversaciones/C-METODOLOGIA-REINSTANCIACION-16-dialogo.jsonl",
-      "blob": "767068c9ff00bdb3f78f70d84ffd56bd122a8b63"
+      "blob": "ccb02ed8b2ae1edb45698c855e26d0a05110b72b"
     },
     "evidence": {
       "path": "frentes/metodologia/evidencias/C-METODOLOGIA-REINSTANCIACION-16-readback.json",
       "previous_blob": "63477ca3ef7834908bc0028dd9a61a6fba11927d"
-    }
+    },
+    "final_output": {
+      "path": "frentes/metodologia/entregas/CHATGPT-v0.3/C-METODOLOGIA-REINSTANCIACION-16-salida-final.md",
+      "blob": "f1148d978668ee8af244f05dab4476274e081c1f"
+    },
+    "evidence_previous_blob": "3fc986b8ec88fa2da246b1ccca5ec779d5a8770a"
   }
 }
