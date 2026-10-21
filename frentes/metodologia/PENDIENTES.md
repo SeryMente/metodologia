@@ -214,3 +214,10 @@ El recuento de caracteres del IPZ aplica al campo que se va a pegar, sin incluir
 - **Reglas de seguridad del relevo:** no liberar ni reemplazar al titular por iniciar un chat; no declarar transferencia antes del read-back; si cambia el control o falla la escritura, detenerse sin reintentos ciegos; no reutilizar el folio de origen como folio destino.
 - **Pendientes de fondo:** IPZ nativo no verificable desde estos conectores; prueba E2E de retoma en hilo nuevo por ejecutar; MCP normativo sigue desactivado; no se afirma inventario global de la organización.
 
+
+
+## Checklist basado en verbatim · corte 2026-10-21
+
+Checklist único de consulta rápida para los nueve requisitos literales: [CHECKLIST-VERBATIM-21.md](entregas/CHATGPT-v0.3/CHECKLIST-VERBATIM-21.md). Sustituye como vista operativa actual al cuadro R01–R15 histórico de C-METODOLOGIA-AUDITORIA-REQUISITOS-20; conserva ese cuadro y el evento de migración anteriores como historia, sin reescribirlos.
+
+Estado E2E de este corte: ocho aspectos comprobados en los artefactos/operación de la sesión; el único bloqueo directamente pendiente del verbatim es confirmar en el campo nativo de ChatGPT que el IPZ de 1.451 caracteres esté instalado exactamente. Este conector no permite leer ni escribir ese campo. La cobertura global de repositorios tampoco se afirma más allá de los nueve visibles.
