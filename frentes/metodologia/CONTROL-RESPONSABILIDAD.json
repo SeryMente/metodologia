@@ -32,7 +32,13 @@
     "instance": "chatgpt-metacanon-collision-remediation-2026-10-21",
     "generation": 2,
     "identity_kind": "operational session folio; not a native ChatGPT conversation ID",
-    "uniqueness_check": "No match found in the accessible SeryMente/metodologia repository search; cross-repository uniqueness is not asserted because not all organization repositories were independently searched in this operation.",
-    "source_sha_before": "50e444c86342226362392e5fc2fe243fed751857"
+    "uniqueness_check": "Manual cross-control check completed on 2026-10-21: no matching folio found in the four accessible CONTROL-RESPONSABILIDAD.json files across SeryMente/khora (Harmonia), SeryMente/signal-interpreter, and SeryMente/metodologia (acceso, metodologia). The tool exposed nine repositories owned by SeryMente but no organization membership listing; other repositories did not expose a recognized control path in the inspected tree. This proves no duplicate only within the checked controls, not organization-wide uniqueness or server-enforced exclusivity.",
+    "source_sha_before": "50e444c86342226362392e5fc2fe243fed751857",
+    "checked_control_scope": [
+      "SeryMente/khora:docs/frentes/harmonia/CONTROL-RESPONSABILIDAD.json",
+      "SeryMente/signal-interpreter:docs/frentes/signal-interpreter/CONTROL-RESPONSABILIDAD.json",
+      "SeryMente/metodologia:frentes/acceso/CONTROL-RESPONSABILIDAD.json",
+      "SeryMente/metodologia:frentes/metodologia/CONTROL-RESPONSABILIDAD.json"
+    ]
   }
 }
