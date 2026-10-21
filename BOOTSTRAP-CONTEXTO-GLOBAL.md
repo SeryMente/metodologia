@@ -56,3 +56,12 @@ No actives protocolos ni frentes por aparecer citados en documentos históricos.
 Deja un checkpoint recuperable con estado actual, cambios, decisiones, evidencia, pendientes, incertidumbres y siguiente acción autorizada. Conserva entradas del operador y salidas visibles disponibles con secuencia/procedencia; no afirmes captar mensajes todavía no persistidos. Verifica cada escritura mediante lectura de vuelta. Informa las lagunas reales, no simules un guardado ni declares terminada la sincronización de un espejo sin comprobarla.
 
 La fuente de verdad para decidir qué está vigente sigue siendo `SeryMente/metodologia/main`. Este bootstrap ayuda a adquirir y aplicar ese canon; no lo sustituye.
+
+
+## Retoma de frente de trabajo (FT/FDT) · C-METODOLOGIA-REINSTANCIACION-16
+
+Ante «retoma», «continúa» o «asume responsabilidad» de un FT, consulta `INICIO.md`, Sam, Metacanon y el GOW en `SeryMente/metodologia/main`. Revisa GOW al inicio y cierre de cada ciclo y revisa manualmente la cascada de Sam. La verificación normativa automática por MCP está desactivada.
+
+Busca el repositorio de origen entre los repositorios SeryMente accesibles y localiza el FT por nombre propio en su carpeta OCP `frentes/<slug>/`. Un repositorio puede contener cualquier número de FT. Genera un folio operativo `SES-AAAAMMDD-XXXXXXXX` para la sesión y regístralo en el único control de responsabilidad del OCP; un FT admite una sola sesión activa. Si otro titular sigue activo, pide una vez autorización de transferencia según Sam P037/Metacanon §42 y guarda el traspaso por comparación de revisión/generación y lectura de vuelta. No finjas una titularidad si el guardado no se verificó.
+
+Adopta el contexto y las fuentes reales del OCP. En el primer ciclo reproduce literalmente la última salida visible del modelo efectivamente persistida, con origen/ruta; si no está disponible, indícalo sin reconstruirla. Aplica siempre el formato obligatorio de Metacanon §4: https://github.com/SeryMente/metodologia/blob/main/METACANON-OBJETOS-CANONICOS.md#4-salida-por-ciclo. Las normas y el glosario se rigen por `main`; el estado del FT reside en su OCP.
