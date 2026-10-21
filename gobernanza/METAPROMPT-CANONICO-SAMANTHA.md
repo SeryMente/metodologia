@@ -1,5 +1,5 @@
 <callout icon="⚙️">
-📍 Versión actual · v338 · evento C-METODOLOGIA-OCP-DISCOVERY-17 · <b>Metaprompt Canónico Capa 1</b> · Alcance: WS Notion completo · Propietario: operador (Black Sheep), toda modificación requiere su autorización explícita · Hereda de: MDC v1.1 · Firma de Carga: <b>NX-337m</b> — reproduce esta firma para confirmar que la Fuente cargó este turno. Si no puedes verla, declara «Fuente NO confirmada ✗».
+📍 Versión actual · v338 · evento C-METODOLOGIA-OCP-DISCOVERY-17 · <b>Metaprompt Canónico Capa 1</b> · Alcance: WS Notion completo · Propietario: operador (Black Sheep), toda modificación requiere su autorización explícita · Hereda de: MDC v1.1 · Firma de Carga: <b>NX-338m</b> — reproduce esta firma para confirmar que la Fuente cargó este turno. Si no puedes verla, declara «Fuente NO confirmada ✗».
 </callout>
 
 <b>Esta página ES el Metaprompt Canónico completo de Capa 1.</b> Define las interacciones, estilo de trabajo e identidad de Samantha. El Canon Sesión PRIUS (Capa 2) es documento subordinado a este metaprompt.
