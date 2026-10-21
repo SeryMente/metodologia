@@ -2,27 +2,28 @@
   "canonical_source": "https://github.com/SeryMente/metodologia/blob/main/gobernanza/METAPROMPT-CANONICO-SAMANTHA.md",
   "canonical_repository": "SeryMente/metodologia",
   "canonical_branch": "main",
-  "source_title": "Metaprompt Canónico de Samantha (Sam) · v337 · NX-337m",
-  "canonical_blob_sha": "2d21b3d5ff7d3d33146e790021b0794242121fae",
-  "canonical_precedence": "Sam P038 establishes SeryMente/metodologia/main as the preponderant source. P008 requires GOW review at the start and close of each cycle. P039 defines FT/OCP exclusive folio workflow.",
+  "source_title": "Metaprompt Canónico de Samantha (Sam) · v338 · NX-338m",
+  "canonical_blob_sha": "1ace0ef55623b8ae4d1be5c169fe3f211f22594a",
+  "canonical_precedence": "Sam P038 establishes SeryMente/metodologia/main as preponderant; P008 mandates GOW review at every cycle start/close; P039 defines FT retake/folio; P040 requires OCP discovery from authoritative files and preserves existing OCP paths.",
   "prior_notion_origin": "https://app.notion.com/p/a925d4a3b2508393b2b7817f1cf431da",
   "notion_mirror_readback": {
     "url": "https://app.notion.com/p/c85a41878241830588e181f4c02fbab4",
-    "title": "Metaprompt Canónico de Samantha · Workspace v337 · NX-337m",
-    "observed_version": "v337 · NX-337m",
-    "checks": {
-      "version": true,
-      "signatureNX337": true,
-      "p037": true,
-      "p038": true,
-      "p008MandatoryCycleGOW": true,
-      "p039FTOCP": true,
-      "footer39Principles": true
-    },
+    "title": "Metaprompt Canónico de Samantha · Workspace v338 · NX-338m",
+    "observed_version": "v338 · NX-338m",
     "status": "VERIFIED_READBACK",
-    "verified_at": "2026-10-21T20:54:50.468Z"
+    "checks": {
+      "v338": true,
+      "signatureNX338m": true,
+      "P037": true,
+      "P038": true,
+      "P008CycleReview": true,
+      "P039": true,
+      "P040": true,
+      "footer40Principles": true,
+      "legacyOcpPaths": true
+    }
   },
   "source_content_sha256": null,
-  "sync_status": "Repository main at v337 was written to Notion and read back. Point-in-time mirror update only; the native ChatGPT custom-instructions field was not edited by these tools.",
-  "hash_status": "SHA-256 was not recalculated; the Git blob SHA records the canonical repository object."
+  "sync_status": "Sam v338 was copied from current main to the Notion mirror and read back. P040 covers OCP discovery across accessible repositories and preservation of inherited paths; P008 requires per-cycle GOW review. Point-in-time sync only; no continuous synchronization is installed.",
+  "hash_status": "SHA-256 was not recalculated; Git blob SHA is used as revision evidence."
 }
