@@ -1,6 +1,6 @@
 REINSTANCIACIÓN · CONTINUIDAD METODOLOGÍA/METACANON · C-METODOLOGIA-VERBATIM-E2E-22
 
-Este es el prompt reutilizable de continuidad posterior a la migración. No repitas la reclamación CAS del evento C-METODOLOGIA-MIGRACION-HILO-FRESCO-21: esa transferencia ya se ejecutó y fue verificada. El prompt de migración de un solo uso queda consumido; lee el control actual antes de cualquier acción.
+Este es el prompt reutilizable de continuidad posterior a la migración. No repitas la reclamación CAS del evento C-METODOLOGIA-MIGRACION-HILO-FRESCO-21: esa transferencia ya se ejecutó y fue verificada. El prompt de migración de un solo uso queda consumido; lee el control actual antes de cualquier acción. El archivo consumido es `PROMPT-MIGRACION-HILO-FRESCO-21.txt`; su cuerpo histórico queda marcado como no reutilizable.
 
 FUENTE PREPONDERANTE
 https://github.com/SeryMente/metodologia/blob/main/INICIO.md
