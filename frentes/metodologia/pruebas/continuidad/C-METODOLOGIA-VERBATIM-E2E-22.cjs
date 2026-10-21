@@ -124,7 +124,7 @@ test('salida-final-M22-existe-y-cumple-los-diez-campos', () => {
   for (let n = 1; n <= 10; n++) if (!currentOutput.includes('## ' + n + '. ')) throw new Error('M22 output field ' + n + ' missing');
   if (!currentOutput.includes('SES-20261021-6B9E2F41') || !currentOutput.includes('CHECKLIST-VERBATIM-21.md')) throw new Error('M22 output lacks active folio/checklist provenance');
   if (!currentOutput.includes('C-METODOLOGIA-VERBATIM-E2E-22.json')) throw new Error('M22 output lacks current evidence path');
-  const blobSha = crypto.createHash('sha1').update(Buffer.concat([Buffer.from('blob ' + Buffer.byteLength(currentOutput, 'utf8') + '\\0', 'utf8'), Buffer.from(currentOutput, 'utf8')])).digest('hex');
+  const blobSha = crypto.createHash('sha1').update(Buffer.concat([Buffer.from('blob ' + Buffer.byteLength(currentOutput, 'utf8') + '\0', 'utf8'), Buffer.from(currentOutput, 'utf8')])).digest('hex');
   if (manifest.artifacts?.current_output?.path !== files.currentOutput || manifest.artifacts?.current_output?.blob !== blobSha || manifest.artifacts?.current_output?.status !== 'persisted_and_readback_verified') throw new Error('manifest current output path/blob/status does not match persisted file');
   if (manifest.current_cycle?.event !== 'C-METODOLOGIA-VERBATIM-E2E-22' || manifest.current_cycle?.final_output?.blob !== blobSha) throw new Error('manifest current-cycle output ref is stale');
   if (!manifest.current_cycle?.evidence?.path || !manifest.current_cycle?.chronicle?.path || !manifest.current_cycle?.dialogue?.path) throw new Error('manifest current-cycle persistence paths are incomplete');
