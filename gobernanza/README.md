@@ -1,15 +1,21 @@
 # Gobierno general de Ser y Mente
 
-El documento [Metaprompt Canónico de Samantha](METAPROMPT-CANONICO-SAMANTHA.md), v335 · NX-335m, es el gobierno general del espacio de trabajo Ser y Mente, de la organización SeryMente y de este repositorio, por instrucción expresa del operador en el ciclo C-METODOLOGIA-GOBIERNO-01. Está subordinado a las reglas de cada plataforma y a las autorizaciones vigentes del operador; no crea herramientas ni permisos.
+El documento [Metaprompt Canónico de Samantha (Sam)](METAPROMPT-CANONICO-SAMANTHA.md), v336 · NX-336m, es el gobierno general del espacio de trabajo Ser y Mente, de la organización SeryMente y de este repositorio, por instrucción expresa del operador en el ciclo C-METODOLOGIA-GOBIERNO-01. Está subordinado a las reglas de cada plataforma y a las autorizaciones vigentes del operador; no crea herramientas ni permisos.
 
-No es un segundo metaprompt ni una nueva redacción: es el espejo íntegro del contenido de la página Notion. El recibo [de fuente y sincronización](METAPROMPT-CANONICO-SAMANTHA.fuente.json) distingue documento fuente, versión, revisión y huella de contenido. Notion es la superficie de origen de este documento y GitHub su copia operativa distribuible; una edición de un espejo no debe sobrescribir silenciosamente cambios de la fuente. La conciliación de escrituras simultáneas y la sincronización inversa no se dan por diseñadas ni autorizadas.
+La fuente canónica preponderante es este repositorio privado, SeryMente/metodologia, rama main. El repositorio define qué versión está vigente para el gobierno general, Metacanon, el GOW, los estados de frente, los controles y la evidencia documental. Notion, las instrucciones personalizadas, las memorias, las copias locales y las demás plataformas son superficies de trabajo o espejos subordinados; no desplazan main por fecha de edición ni por carga automática. Los recibos de fuente conservan la procedencia histórica y reportan cada espejo divergente sin fingir sincronización. Toda enmienda canónica se persiste primero en main y se verifica por lectura de vuelta; la propagación a Notion no se presume.
 
-## Precedencia y ámbitos
+## Precedencia de fuente y jerarquía normativa
 
-1. Reglas superiores de la plataforma y autorizaciones expresas vigentes del operador.
-2. Metaprompt Canónico de Samantha: identidad, comportamiento y reglas generales.
-3. Metacanon: método de los frentes, subordinado al gobierno general; cada frente conserva propósito, permisos y estado propios.
-4. Procedimientos y anexos técnicos pertinentes: aplicables solo a su ámbito, sin convertirse en requisitos universales de acceso a Notion, KHORA, un conector remoto o una plataforma concreta.
+**Precedencia de fuente:** SeryMente/metodologia/main es la autoridad documental para el contenido y el estado canónico del espacio. Una divergencia se resuelve a favor de la revisión verificada del repositorio; el espejo se reconcilia después. Si main no puede leerse, declarar METODOLOGÍA NO VERIFICADA y no tratar un espejo como sustituto actual.
+
+**Jerarquía normativa interna del contenido de main:**
+
+1. El Metaprompt Canónico de Samantha (Sam), v336 · NX-336m, establece el gobierno general documentado del espacio.
+2. Metacanon, versión 1.15 · METACANON-OBJETOS-v1.15, establece el método para crear, mantener, verificar y transferir frentes.
+3. Los cánones, controles y procedimientos particulares gobiernan únicamente sus ámbitos y no anulan normas superiores.
+4. Las autorizaciones explícitas del operador habilitan los cambios dentro de su alcance; el estado adoptado solo se considera canónico una vez persistido y verificado en main.
+
+Las políticas obligatorias no anulables de la plataforma y sus permisos/capacidades reales son límites de ejecución externos al contenido del repositorio; la documentación no puede neutralizarlos ni crear permisos inexistentes.
 
 SI-METACOGNITIVO.md deja de ser gobierno general paralelo y se conserva como antecedente histórico. Sus referencias antiguas desde otros documentos no reactivan su precedencia. No se borran decisiones ni protecciones específicas de los frentes por esta migración; ante un conflicto material no resuelto se detiene solo la operación afectada y se consulta al operador.
 
