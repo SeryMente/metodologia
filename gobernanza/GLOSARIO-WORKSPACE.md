@@ -1,5 +1,5 @@
 <callout icon="📜" color="gray_bg">
-📍 Versión actual · v1.6 · evento C-METODOLOGIA-CONTINUIDAD-02 · Canon Declarativo · Tier Bloqueante · Alcance: todo el WS · todos los proyectos · Propietario: operador (Black Sheep), toda modificación requiere su autorización explícita
+📍 Versión actual · v1.8 · evento C-GOW-METODOLOGIA-FUENTE-01 · Canon Declarativo · Tier Bloqueante · Alcance: todo el WS · todos los proyectos y frentes de trabajo · Propietario: operador (Black Sheep), toda modificación requiere su autorización explícita
 </callout>
 
 ## §F · Ficha
@@ -10,7 +10,7 @@
 | Acrónimo | GOW |
 | Clase | Canon declarativo (Modo A) |
 | Alcance | Todo el WS · todos los proyectos |
-| Método rector | MDC v1.0 |
+| Método rector | MDC v1.1 |
 | Estado | En Revisión |
 | Fecha de inicio | 2026-07-20 |
 | Operador | Black Sheep |
@@ -20,7 +20,7 @@
 ## §SUM · Resumen Operativo
 
 <callout icon="💊">
-El GOW es el repositorio canónico y autoritativo de toda convención semántica y término operativo del WS. <b>Aplica</b> cuando un término se use en ≥2 documentos del WS y su ambigüedad tenga costo real. <b>No aplica</b> a léxicos de proyecto específicos ni al vocabulario general del español o de ninguna disciplina.
+El GOW es el repositorio canónico y autoritativo de toda convención semántica y término operativo transversal del WS y de los frentes que adquieren este canon. <b>Aplica</b> cuando una denominación, abreviatura, equivalencia o posible error de transcripción afecta la interpretación, decisión o coordinación entre frentes; como regla de triage, prioriza términos usados en ≥2 documentos o frentes y cuya ambigüedad tenga costo real. <b>Revisión obligatoria</b>: consultar la fuente vigente al inicio y al cierre de cada ciclo, sin excepción; registrar en el mismo ciclo toda convención ratificada y toda corrección de transcripción que el operador solicite explícitamente. <b>No aplica</b> a léxicos estrictamente locales ni al vocabulario general del español o de ninguna disciplina. Los léxicos locales pueden existir, pero no contradicen silenciosamente el alcance transversal de este canon.
 </callout>
 
 ## §IX · Índice
@@ -30,7 +30,7 @@ El GOW es el repositorio canónico y autoritativo de toda convención semántica
 - §F · Ficha
 - §EI · Párrafo Eidético
 - §PRO · Procedencia
-- §A · Glosario canónico (Grupos 1–8)
+- §A · Glosario canónico (Grupos 1–9)
 - §TAX · Dirección Taxonómica
 - §AC · Acreditación
 - §R · Qué NO es el GOW y riesgos
@@ -108,7 +108,7 @@ Operación de migración que inaugura la Era Post-Canon de un protocolo: el cont
 
 <b>MDC</b> ✦
 
-Método para Documentar Cánones <b>= Método de Canonización = Metacanon</b>. Los tres nombres son intercambiables en el uso operativo del WS — «Metacanon» expresa que el MDC es el Canon cuyo objeto es el Canon como tipo de documento. El método que rige cómo se construye todo Canon del WS. Dos modos: declarativo (Modo A) y ejecutable (Modo B). Reemplaza al MDP como método rector único. Documento: [MDC · Método para Documentar Cánones v1.1](/p/5cb5d4a3b25082ea9e8e81f2b5163238?pvs=25).
+Método para Documentar Cánones <b>= Método de Canonización = Metacanon</b>. En el contexto histórico/local del WS Khora, los tres nombres se usaron como equivalentes — «Metacanon» expresaba que el MDC es el Canon cuyo objeto es el Canon como tipo de documento. Esta equivalencia no se exporta automáticamente a la Metodología de Ser y Mente, donde «Metacanon de objetos canónicos» designa el marco v1.14 para mantener frentes persistentes. En referencias entre espacios se usan calificadores completos. El método que rige cómo se construye todo Canon del WS. Dos modos: declarativo (Modo A) y ejecutable (Modo B). Reemplaza al MDP como método rector único. Documento: [MDC · Método para Documentar Cánones v1.1](https://app.notion.com/p/f55a418782418304a3d581adad1a71f6).
 
 <b>MDP</b> 🟦
 
@@ -128,11 +128,11 @@ Glosario Operativo del Workspace. Este documento.
 
 <b>SSC · Sustrato de Sesión Canónica</b> ✦
 
-Capa abstracta e irreducible heredada por todo tipo de sesión formal del WS. Define los 8 componentes obligatorios que convierten una conversación en sesión canónica: SSC-01 Banner de Estado · SSC-02 IE con Adjudicación · SSC-03 Compuertas de Apertura · SSC-04 Compuerta de Cierre · SSC-05 Anclaje de Versión · SSC-06 DG (Directiva General) · SSC-07 NI (Norte Inmediato) · SSC-08 Folio de Sesión. No se instancia directamente — lo especializan los tipos de sesión concretos (FIAT, PRIUS, RAP y futuros). Propuesta de Samantha ratificada por el operador (2026-07-24, PRIUS-003). Documento: [SSC · Sustrato de Sesión Canónica · Canon v0.1](/p/b745d4a3b25083f5b244811e9cb0cfe3?pvs=25).
+Capa abstracta e irreducible heredada por todo tipo de sesión formal del WS. Define los 8 componentes obligatorios que convierten una conversación en sesión canónica: SSC-01 Banner de Estado · SSC-02 IE con Adjudicación · SSC-03 Compuertas de Apertura · SSC-04 Compuerta de Cierre · SSC-05 Anclaje de Versión · SSC-06 DG (Directiva General) · SSC-07 NI (Norte Inmediato) · SSC-08 Folio de Sesión. No se instancia directamente — lo especializan los tipos de sesión concretos (FIAT, PRIUS, RAP y futuros). Propuesta de Samantha ratificada por el operador (2026-07-24, PRIUS-003). Documento: [SSC · Sustrato de Sesión Canónica · Canon v0.1](/p/5b4a418782418277a061014cc180acc1?pvs=25).
 
 <b>FN · Forja Normativa</b> 🎙️
 
-Mecanismo de enmienda intencional y deliberado dentro de una sesión canónica: el operador convoca explícitamente una corrida de diseño para construir, refinar o especificar un componente canónico (Canon, Artefacto, norma de redacción, etc.). Contraparte intencional del IE (Insight Empírico) — donde el IE es emergente y reactivo, la FN es dirigida y proactiva. Ambos son fuente de verdad para el L0 del Canon o Artefacto afectado y producen enmiendas igualmente legítimas. Ratificado por dictado del operador (2026-07-24, PRIUS-003); nombre aprobado tras descarte de DNS (conflicto infraestructura de redes). Define los 8 componentes obligatorios que convierten una conversación en sesión canónica: SSC-01 Banner de Estado · SSC-02 IE con Adjudicación · SSC-03 Compuertas de Apertura · SSC-04 Compuerta de Cierre · SSC-05 Anclaje de Versión · SSC-06 DG (Directiva General) · SSC-07 NI (Norte Inmediato) · SSC-08 Folio de Sesión. No se instancia directamente — lo especializan los tipos de sesión concretos (FIAT, PRIUS, RAP y futuros). Propuesta de Samantha ratificada por el operador (2026-07-24, PRIUS-003). Documento: [SSC · Sustrato de Sesión Canónica · Canon v0.1](/p/b745d4a3b25083f5b244811e9cb0cfe3?pvs=25).
+Mecanismo de enmienda intencional y deliberado dentro de una sesión canónica: el operador convoca explícitamente una corrida de diseño para construir, refinar o especificar un componente canónico (Canon, Artefacto, norma de redacción, etc.). Contraparte intencional del IE (Insight Empírico) — donde el IE es emergente y reactivo, la FN es dirigida y proactiva. Ambos son fuente de verdad para el L0 del Canon o Artefacto afectado y producen enmiendas igualmente legítimas. Ratificado por dictado del operador (2026-07-24, PRIUS-003); nombre aprobado tras descarte de DNS (conflicto infraestructura de redes). Define los 8 componentes obligatorios que convierten una conversación en sesión canónica: SSC-01 Banner de Estado · SSC-02 IE con Adjudicación · SSC-03 Compuertas de Apertura · SSC-04 Compuerta de Cierre · SSC-05 Anclaje de Versión · SSC-06 DG (Directiva General) · SSC-07 NI (Norte Inmediato) · SSC-08 Folio de Sesión. No se instancia directamente — lo especializan los tipos de sesión concretos (FIAT, PRIUS, RAP y futuros). Propuesta de Samantha ratificada por el operador (2026-07-24, PRIUS-003). Documento: [SSC · Sustrato de Sesión Canónica · Canon v0.1](/p/5b4a418782418277a061014cc180acc1?pvs=25).
 
 ---
 
@@ -234,15 +234,15 @@ Demográfico secundario de SEA. Estado de una persona en proceso de integración
 
 <b>Premisa de anclaje ético en lo posible</b> 🎙️
 
-Término de Ética con referencia transversal para el frente grafo. Su definición única y límites residen en <mention url="https://app.notion.com/p/cf75d4a3b2508231b1d4014c570c7216">Ética</mention>, §4, ETICA-v1.2, eventos E10 y C-POSIBILIDAD-SITUADA-01. Se conserva el nombre ya registrado en E10; la denominación provisional concurrente queda como historia, no segundo término rector. Relaciona orientación ética y comprensión revisable de posibilidades y restricciones; no convierte viabilidad en justificación moral ni propone definición clínica. Se registra la referencia, no una ética universal ni un canon paralelo.
+Término de Ética con referencia transversal para el frente grafo. Su definición única y límites residen en <mention url="https://app.notion.com/p/65ca41878241826a9628017bdd8ce1a1" />, §4, ETICA-v1.2, eventos E10 y C-POSIBILIDAD-SITUADA-01. Se conserva el nombre ya registrado en E10; la denominación provisional concurrente queda como historia, no segundo término rector. Relaciona orientación ética y comprensión revisable de posibilidades y restricciones; no convierte viabilidad en justificación moral ni propone definición clínica. Se registra la referencia, no una ética universal ni un canon paralelo.
 
 <b>Otro Gran Programa (OGP)</b> 🎙️
 
-Nombre actual del proyecto antes denominado <b>Otro Buen Programa (OBP)</b>, confirmado por el operador el 2026-10-17 y coincidente con el sitio y repositorio públicos. OBP se conserva como alias histórico para recuperar antecedentes; no se reescriben citas ni documentos históricos como si hubieran nacido con el nombre nuevo. Raíz: <mention url="https://app.notion.com/p/1ed5d4a3b250833c8d1381897397bd7d">🌱 - OGP · Otro Gran Programa</mention>.
+Nombre actual del proyecto antes denominado <b>Otro Buen Programa (OBP)</b>, confirmado por el operador el 2026-10-17 y coincidente con el sitio y repositorio públicos. OBP se conserva como alias histórico para recuperar antecedentes; no se reescriben citas ni documentos históricos como si hubieran nacido con el nombre nuevo. Raíz: <mention url="https://app.notion.com/p/f19a41878241838384ec81137b757005" />.
 
 <b>Paquete de Tercer ámbito</b> ✦
 
-Paquete documental de la iniciativa en curso, identificado mediante el <mention url="https://app.notion.com/p/ac65d4a3b2508211a88681fd475f4c58">Índice vivo de fuentes · Tercer ámbito</mention>; no equivale a la totalidad de la sombrilla Tercer ámbito. Regla de identificación aprobada por el operador e incorporada al <mention url="https://app.notion.com/p/a925d4a3b2508393b2b7817f1cf431da">Metaprompt Canónico de Samantha · Workspace v333 · NX-333m</mention> como Principio de Identificación del Paquete de Tercer ámbito \[P034\], v332 · NX-332m · 2026-10-16.
+Paquete documental de la iniciativa en curso, identificado mediante el <mention url="https://app.notion.com/p/55da418782418391921c81acdc227a16" />; no equivale a la totalidad de la sombrilla Tercer ámbito. Regla de identificación aprobada por el operador e incorporada al <mention url="https://app.notion.com/p/c85a41878241830588e181f4c02fbab4" /> como Principio de Identificación del Paquete de Tercer ámbito \[P034\], v332 · NX-332m · 2026-10-16.
 
 <b>Remote Desktop Commander (RDC)</b> 🎙️
 
@@ -259,6 +259,30 @@ Convención de equivalencia terminológica ratificada por el operador: «Cora» 
 <b>MP · PRIUS-MP · Metaprompt Canónico de Capa 1</b> 🎙️
 
 Nombre canónico del estrato de instrucciones de sistema que rige al agente núcleo del WS. Desde la era PRIUS (2026-07-23), el MP reside íntegramente en §EI.1 del Canon Sesión PRIUS — es el conjunto de principios \[P-n\], artefactos \[ART-n\] y recuerdos vigentes de Capa 1 que carga en cada sesión. Abreviatura canónica: <b>MP</b>. Nombre alternativo operativo: <b>PRIUS-MP</b> (enfatiza la residencia en el Canon PRIUS). La equivalencia pre-PRIUS «Workspace (documento) = Metaprompt = System Prompt · Abreviaturas: MP · SY» queda obsoleta y reemplazada por esta entrada. 🎙️ Dictado del operador (2026-07-24, sesión PRIUS-003).
+
+<b>Sam</b> 🎙️
+
+Abreviatura canónica autorizada para «Metaprompt Canónico de Samantha», la fuente de gobierno general de Samantha. En este sentido, normaliza la forma transcrita «SAM» a «Sam». No designa por sí sola al agente/persona Samantha ni a otro sistema llamado Sam; si el contexto apunta a otra entidad, conserva su nombre.
+
+<b>Metacanon de objetos canónicos (Metacanon v1.15)</b> 🟦
+
+Marco del repositorio SeryMente/metodologia que configura y mantiene frentes de trabajo como directorios con un núcleo operativo único y materiales enlazados. No confundir con la equivalencia histórica/local de «Metacanon» y «Método para Documentar Cánones (MDC)» usada en el WS Khora. En comunicaciones entre espacios, usar el nombre completo o el calificador de contexto; no propagar equivalencia indistinta.
+
+<b>Normalización de transcripción</b> 🎙️
+
+Asociación explícita entre una forma errónea detectada en dictado/transcripción y el término correcto. Registrar correcciones nuevas solo cuando el operador lo indique expresamente; aplicar automáticamente asociaciones canónicas ya autorizadas cuando el contexto las confirme. No reescribir citas ni originales históricos; conservar la forma observada, la forma correcta, las condiciones de aplicación y la procedencia. Si el contexto real sigue ambiguo, preguntar una sola vez.
+
+<b>Equivalencia operativa</b> ✦
+
+Relación entre formas de denominación que pueden interpretarse igual bajo un alcance definido. No inferir equivalencia por similitud textual, fonética o semántica; registrar alcance, forma canónica, alias/errores admitidos, excepciones y procedencia. Una equivalencia propia de un proyecto no se generaliza a todo el WS.
+
+<b>Revisión del GOW por ciclo</b> ✦
+
+Comprobación obligatoria al inicio y al cierre de cada ciclo de trabajo: consultar esta fuente vigente, identificar términos, abreviaturas, alias y correcciones relevantes para la tarea, resolver discrepancias conforme a la jerarquía y la autorización aplicables, y registrar en este mismo ciclo toda convención ratificada o corrección explícitamente solicitada. Si la fuente no está accesible, declarar «GOW NO VERIFICADO» y no suponer que está vigente. La revisión no obliga a añadir términos sin necesidad real ni a versionar ante todo acceso; la versión cambia cuando cambia el contenido normativo o terminológico.
+
+<b>Glosario operativo compartido</b> ✦
+
+Denominación funcional del GOW para todos los frentes de trabajo: vocabulario transversal que permite abreviar términos, convenir significados y corregir errores recurrentes de transcripción mediante asociaciones explícitas entre expresiones incorrectas y términos correctos, conforme el operador las identifique y solicite. La fuente canónica preponderante es `SeryMente/metodologia/main`, archivo `gobernanza/GLOSARIO-WORKSPACE.md`; esta página de Notion y las demás copias son espejos subordinados. Si existe divergencia, prevalece la revisión verificada de `main`; si `main` no puede consultarse, declarar «GOW NO VERIFICADO». La página espejo debe identificar la revisión de origen y su frescura verificada.
 
 <b>Julia = Jules</b> 🎙️
 
@@ -322,7 +346,7 @@ Convención de entorno verificada en sesión (2026-08-05, ticket FIX-DICTADO): N
 
 <b>Canon LISA</b> ✦
 
-Canon ejecutable que norma la conversión de la intención dictada del operador en especificación firmada (L0 → REQ → ACR) para las categorías candadas, y punto único de invocación de todo lo rescatable del trabajo LISA pre-Khora (lo diferido vive en su §IDEAS). Documento: <mention url="https://app.notion.com/p/e9b5d4a3b250837e97e88167e1f33a84">Canon LISA · Especificación de Intención v1.2</mention>.
+Canon ejecutable que norma la conversión de la intención dictada del operador en especificación firmada (L0 → REQ → ACR) para las categorías candadas, y punto único de invocación de todo lo rescatable del trabajo LISA pre-Khora (lo diferido vive en su §IDEAS). Documento: <mention url="https://app.notion.com/p/968a41878241825a960b01d1d241cb08" />.
 
 <b>Vector Semántico L0</b> 🟦
 
@@ -364,7 +388,7 @@ Figura del Canon LISA (§EI.11 · enmienda v1.2 · 2026-07-22): en casos especia
 
 <b>Convención de Código Firmado</b> ✦
 
-Canon ejecutable que norma la cabecera de trazabilidad @l0/@req/@acr de todo código producido bajo tarjeta candada, prohíbe el código huérfano dentro de ese alcance y extiende esa trazabilidad al código pre-LISA que una tarjeta candada toque. Documento: <mention url="https://app.notion.com/p/3a45d4a3b2508278bfeb01f0626d45d6">Convención de Código Firmado v1.1</mention>.
+Canon ejecutable que norma la cabecera de trazabilidad @l0/@req/@acr de todo código producido bajo tarjeta candada, prohíbe el código huérfano dentro de ese alcance y extiende esa trazabilidad al código pre-LISA que una tarjeta candada toque. Documento: <mention url="https://app.notion.com/p/bf6a4187824183ebb9e6012950ec0a50" />.
 
 <b>Cabecera de trazabilidad (@l0/@req/@acr)</b> 🟦
 
@@ -388,7 +412,7 @@ Procedimiento de ingeniería inversa de especificación (4 fases) que reconstruy
 
 <b>Protocolo FIAT</b> 🎙️
 
-Canon ejecutable (en incubación v0.x) que norma la sesión de chat como máquina de estados dura (S0–S7) para la toma, firma y materialización de Vectores Semánticos L0, con banner de ejecución por turno. Entrada única del sistema. Nombre ratificado por el operador (2026-07-21): «fiat» — la palabra creadora («fiat lux»), registro de creación divina, no ocultista. Documento: <mention url="https://app.notion.com/p/3475d4a3b25082bf803d011bea03975f">Protocolo FIAT · Ingesta de Vectores Semánticos · Canon v0.40</mention>.
+Canon ejecutable (en incubación v0.x) que norma la sesión de chat como máquina de estados dura (S0–S7) para la toma, firma y materialización de Vectores Semánticos L0, con banner de ejecución por turno. Entrada única del sistema. Nombre ratificado por el operador (2026-07-21): «fiat» — la palabra creadora («fiat lux»), registro de creación divina, no ocultista. Documento: <mention url="https://app.notion.com/p/99ba4187824182e7aedf011a6d452bce" />.
 
 <b>Génesis · Registro L0</b> 🎙️
 
@@ -438,7 +462,7 @@ Estado terminal provisional de una instancia FIAT (E-04 · autorizado 2026-07-21
 
 <b>PCA · Protocolo de Construcción Auditada</b> 🎙️
 
-Canon ejecutable (en incubación v0.x, Ruta B) que rige el circuito por el cual una unidad de trabajo derivada de un Documento Fuente Aprobado (Canon LISA §EI.11) se despacha al ejecutor probabilístico externo (Jules) y se audita mecánicamente antes de integrarse al repositorio. Bautizado por el operador (2026-07-22, "PCA confirmado"). Documento: <mention url="https://app.notion.com/p/4825d4a3b2508336870481a35e22834a">PCA · Protocolo de Construcción Auditada · Canon v0.2</mention>.
+Canon ejecutable (en incubación v0.x, Ruta B) que rige el circuito por el cual una unidad de trabajo derivada de un Documento Fuente Aprobado (Canon LISA §EI.11) se despacha al ejecutor probabilístico externo (Jules) y se audita mecánicamente antes de integrarse al repositorio. Bautizado por el operador (2026-07-22, "PCA confirmado"). Documento: <mention url="https://app.notion.com/p/5ada418782418220811d01451dec1c40" />.
 
 <b>Sobre de Despacho</b> 🎙️
 
@@ -490,20 +514,24 @@ El GOW se considera poseído cuando:
 
 - <b>Inflación de glosario:</b> añadir términos que no tienen uso cruzado real → mitigación: triage antes de añadir (¿este término se usa en ≥2 documentos de proyectos distintos?).
 - <b>Drift semántico:</b> un documento usa un término con significado diferente al del GOW sin declararlo → mitigación: VRC Control 2 detecta ausencia de marca de procedencia; revisión periódica del GOW.
-- <b>Glosario desactualizado:</b> el WS evoluciona más rápido que el GOW → mitigación: ciclo de versión disparado por ≥3 términos nuevos en uso cruzado sin definición canónica.
+- <b>Glosario desactualizado:</b> el WS evoluciona más rápido que el GOW → mitigación: revisión obligatoria al inicio y cierre de cada ciclo; resolver el delta de inmediato y versionar solo cuando cambie el contenido normativo o terminológico.
 
 ---
 
 ## §Q · Preguntas abiertas — NO canónicas
 
-1. ¿El GOW debe incluir términos técnicos del corpus EpisTwin/GraphRAG, o solo términos operativos del WS como sistema de trabajo?
+1. ¿Qué términos técnicos de EpisTwin/GraphRAG cumplen el criterio de uso transversal y costo de ambigüedad para incorporarse al GOW?
 2. ¿Cuál es el mecanismo de propuesta de nuevos términos? ¿Solo el operador los propone, o el agente puede proponer con ratificación posterior?
-3. ¿Los términos del Léxico RAP[\[1\]](/p/5425d4a3b250823aa24001ad6126a9ec?pvs=25) deben migrarse al GOW o coexistir?
+3. ¿Los términos del Léxico RAP[\[1\]](/p/aa7a418782418265b86b81c496de67f5?pvs=25) deben migrarse al GOW o coexistir?
 4. ¿El GOW se versiona con cada término nuevo, o solo con cambios semánticos sustantivos?
 
 ---
 
 ## §RAT · Registro de ratificaciones
+
+<b>C-GOW-SAM-01 · v1.7 · 2026-10-21.</b> Por instrucción expresa del operador se preserva el GOW preexistente como fuente única, se amplía su uso transversal a los frentes que adquieren este canon, se incorpora «Sam» como abreviatura contextual de «Metaprompt Canónico de Samantha», se añade el contrato de normalización de transcripción y revisión obligatoria en cada ciclo, y se limita explícitamente la equivalencia histórica MDC/Metacanon al contexto local para evitar colisiones con Metacanon de objetos canónicos v1.14. Las entradas previas se conservan; la actualización no equivale a revalidación de todas ellas.
+
+<b>C-GOW-METODOLOGIA-FUENTE-01 · v1.8 · 2026-10-21.</b> Por instrucción expresa del operador, `SeryMente/metodologia/main` pasa a ser la fuente canónica preponderante del GOW y de la documentación metodológica compartida. Se conserva el contenido heredado y se modifica la declaración de fuente para que Notion sea un espejo subordinado. La entrada «Metacanon de objetos canónicos» se actualiza a v1.15. Esta ratificación no acredita todavía la reconciliación de la página Notion ni una sincronización automática.
 
 <b>C-METODOLOGIA-CONTINUIDAD-02 · v1.6.</b> Se registran las denominaciones y la continuidad por frentes ratificadas por el operador, con arranque diferenciado por plataforma. Las entradas previas, incluida la definición única de Ética, permanecen íntegras.
 
