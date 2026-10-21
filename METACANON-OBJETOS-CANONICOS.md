@@ -1,8 +1,8 @@
-<!-- METACANON_VERSION=1.13; TEMPORARY_FRAMEWORK=true; USER_TRANSCRIPT_SPEC=true -->
+<!-- METACANON_VERSION=1.14; TEMPORARY_FRAMEWORK=true; USER_TRANSCRIPT_SPEC=true -->
 # Metacanon para crear y mantener objetos canónicos de proyecto
 
-- Estado: **Versión documental 1.13 — Perfil Windows fila4 fail-closed**, ampliación autorizada en C-METODOLOGIA-PERFIL-FILA4-13; versiones previas preservadas en historia y antecedentes. Conserva las compuertas 1.11–1.12 y añade §41; no acredita propagación automática a hijos.
-- Versión metodológica: **1.13**. Sello: **METACANON-OBJETOS-v1.13**. Gobierno general: [Metaprompt Canónico de Samantha](gobernanza/METAPROMPT-CANONICO-SAMANTHA.md), v334 · NX-334m; relación y límites en [gobernanza](gobernanza/README.md).
+- Estado: **Versión documental 1.14 — Resolución explícita de colisiones de responsabilidad**, ampliación autorizada en C-METODOLOGIA-PERFIL-FILA4-13; versiones previas preservadas en historia y antecedentes. Conserva las compuertas 1.11–1.12 y añade §41; no acredita propagación automática a hijos.
+- Versión metodológica: **1.14**. Sello: **METACANON-OBJETOS-v1.14**. Gobierno general: [Metaprompt Canónico de Samantha](gobernanza/METAPROMPT-CANONICO-SAMANTHA.md), v335 · NX-335m; relación y límites en [gobernanza](gobernanza/README.md).
 - Nombre propio del marco: pendiente de elección del operador; no usar el nombre de un proyecto como nombre del método.
 - Repositorio de metodología identificado: https://github.com/SeryMente/metodologia, privado comprobado en el ciclo de actualización 1.1; revalidar su visibilidad antes de cada escritura sensible. Ruta METACANON-OBJETOS-CANONICOS.md; fuente vigente main; rama documental histórica docs/metacanon-objetos-20261011. Conservar los originales y datos privados del frente solo en su carpeta autorizada tras verificar acceso privado; nunca publicar secretos en Git ni transportar identidades de ejemplos.
 - Archivo estable propuesto: `METACANON-OBJETOS-CANONICOS.md`.
@@ -11,7 +11,7 @@
 
 ## LEER PRIMERO — modo metodología, no ejecución del ejemplo
 
-**Precisión vigente 1.13:** aplicar §§39–41 junto con §§35–38 y §§29–34; primero gobierno, frente/rol, estado y permiso, después acción comprobada y checkpoint. §35 no altera el gobierno ni autoriza productos por ejemplo. Versiones antiguas en originales/notas conservan su carácter histórico.
+**Precisión vigente 1.14:** aplicar §42 junto con §§35–41 y §§29–34; primero gobierno, frente/rol, control de responsabilidad, estado y permiso, después acción comprobada y checkpoint. §42 reduce la colisión a una autorización explícita del operador seguida de sustitución atómica/read-back; no crea identidad nativa de plataforma ni garantiza exclusión de escritores que eludan el control. Versiones antiguas en originales/notas conservan su carácter histórico.
 
 **Actualización 1.7, de lectura previa:** [INICIO.md](INICIO.md) es la puerta de entrada transversal. Gobierno general en `gobernanza/METAPROMPT-CANONICO-SAMANTHA.md`; el metacanon gobierna el método, no constituye una autoridad general competidora. §§29–33 prevalecen sobre formulaciones anteriores incompatibles, en particular «objeto = un solo .md», subordinación al SI anterior, temporalidad de un mes como compromiso vigente y activación implícita de PRIUS. Las menciones de 1.0–1.6 en antecedentes conservan su sentido histórico. Leer una propuesta histórica no la ratifica.
 
@@ -817,4 +817,45 @@ Solo el de fila 4,  asegurte que para est ubicacion sea laultiam vez que tenga q
 ````
 
 **Compatibilidad/versión 1.13:** añade una restricción específica de ubicación derivada de identidad comprobada. No generaliza la ruta `fila4` a otros equipos, cuentas u operadores; en ellos sigue exigiéndose resolución propia. No acredita que artefactos anteriores hayan sido reparados ni autoriza tocar el perfil prohibido para “limpiarlo”.
+## 42. Resolución explícita de colisiones de responsabilidad — actualización 1.14
+
+### 42.1 Preflight obligatorio
+
+Antes de que un modelo asuma responsabilidad, escriba en el canon o declare resuelta una transferencia, debe leer de la fuente vigente CONTROL-RESPONSABILIDAD.json, conservar el blob SHA y la generación, e identificar si existe titularidad previa. Si el control pertenece a otra conversación, el identificador nativo de esta conversación no está expuesto, o la titularidad previa no es reconciliable, esto activa la resolución conversacional; no es motivo para exigir al operador que averigüe metadatos internos de ChatGPT, Notion, otro modelo o una plataforma.
+
+### 42.2 Pregunta única y autorización suficiente
+
+El modelo pregunta una sola vez, de forma directa y sin formularios:
+
+> ¿Autorizas que esta conversación asuma el frente [nombre del frente] y sustituya la titularidad actualmente registrada?
+
+Una respuesta afirmativa explícita a esa pregunta constituye la autorización del operador para resolver la colisión concreta. No se exige una segunda aprobación ni un identificador técnico aportado por el operador. La autorización se limita al frente indicado y al control leído en ese ciclo. Una respuesta negativa o ambigua conserva la titularidad actual y permite solo lectura/análisis no mutativo.
+
+### 42.3 Transferencia condicionada y alias del receptor
+
+Tras la respuesta afirmativa, el modelo ejecuta en el mismo ciclo una actualización condicionada por el SHA observado. La escritura solo se acepta si el contenido y la generación siguen siendo los leídos; la nueva generación es la anterior más uno. Si la API rechaza la escritura por conflicto o su resultado es incierto, no se reintenta a ciegas: se vuelve a leer el control, se reconcilia y se vuelve a pedir decisión únicamente si la nueva colisión requiere una autorización distinta.
+
+Se registra el identificador nativo del hilo/ejecución solo cuando una herramienta lo exponga realmente. Cuando la plataforma no proporcione ese dato, se asigna un alias operativo único, basado en el identificador del evento autorizado, y una etiqueta de instancia estable. El alias no se presenta como ID nativo ni como prueba criptográfica de identidad; su legitimidad deriva de la autorización explícita registrada por el operador y del control condicionado por SHA.
+
+### 42.4 Evidencia y lectura de vuelta
+
+El control registra, como mínimo, el frente, el estado, propietario/instancia anteriores, generación anterior, autorización y su procedencia, evento único, receptor nativo o alias claramente clasificado, generación nueva, SHA de base y mecanismo de transferencia. Tras la escritura, el modelo relee la ruta canónica y coteja literalmente los campos, la generación y el SHA disponible. Solo entonces declara la transferencia completada y continúa las mutaciones dependientes de la propiedad.
+
+Un cambio concurrente obliga a reconciliar. Nunca se sobrescribe una generación distinta solo para ganar la carrera. El bloqueo anterior no se mantiene por falta de un identificador nativo cuando el operador ya autorizó explícitamente este traspaso.
+
+### 42.5 Automatización, límites y alcance
+
+Este preflight es obligatorio en cada ciclo activo para todos los modelos que adquieran este método: detecta la colisión, pide una sola decisión humana y ejecuta el compare-and-swap/read-back sin pedir al operador resolver detalles de implementación. La actualización condicionada del control protege contra sobrescrituras concurrentes que compitan mediante la misma API; el archivo y el metaprompt no instalan por sí mismos un mediador capaz de impedir escrituras de herramientas o modelos no cooperantes que eludan el control. No se afirma una exclusión universal que no exista.
+
+La confirmación autoriza únicamente la transferencia indicada. No modifica las reglas superiores, no crea permisos sobre otros frentes y no habilita modificaciones de un gobierno que sigan sujetas a aprobación explícita.
+
+### M42 · instrucción directa del operador · C-METODOLOGIA-COLISION-RESPONSABILIDAD-14
+
+Original del operador preservado literalmente:
+
+~~~text
+Ah, bueno, entonces hay que corregir de manera que en el futuro, cuando en la plataforma ChatGPT o cualquier otro modelo identifique esa colisión, nada más baste que se me pregunte para emitir actualización explícita. Y al emitirla se resuelve el conflicto. Por supuesto, esto tiene que estar normado en el metaprompt. Y debe de evitarse el incidente de manera automatizada para que ya no vuelva a ocurrir después de esta ocasión
+~~~
+
+**Narrativa 1.14:** P037 establece el contrato general en el gobierno de Samantha; §42 materializa el procedimiento de responsabilidad en el Metacanon. El receptor no debe solicitar al operador una identidad técnica que las herramientas no exponen. La autorización explícita, el compare-and-swap de la revisión y la lectura de vuelta sustituyen el bloqueo por un único ciclo de transferencia verificable. No acredita que todos los modelos/herramientas puedan o vayan a obedecer el preflight.
 
