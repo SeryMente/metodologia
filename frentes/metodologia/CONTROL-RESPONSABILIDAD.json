@@ -2,11 +2,24 @@
   "schema": "responsabilidad/1",
   "front": "metodologia",
   "status": "owned",
-  "owner_thread": "session://ecea4187-8241-819b-af83-0003b7c205f7/3ffa4187-8241-80de-84a6-00a98cbd8894",
-  "instance": "samanthal-metodologia-ciclo10",
-  "generation": 1,
-  "authorization_ref": "frentes/metodologia/conversaciones/C-METODOLOGIA-REVISION-INTEGRAL-10-dialogo.jsonl#orden-responsabilidad-exclusiva",
-  "scope": "one recorded owner; cooperative preflight, not server-enforced fencing of arbitrary repository writes",
+  "owner_thread": "operator-authorized-transfer:C-METODOLOGIA-COLISION-RESPONSABILIDAD-14",
+  "instance": "chatgpt-metacanon-collision-remediation-2026-10-21",
+  "generation": 2,
+  "authorization_ref": "METACANON-OBJETOS-CANONICOS.md#42-M42; instrucción explícita del operador en esta conversación: asumir el frente Metacanon y corregir la colisión; owner_thread es alias operativo porque no se expuso un ID nativo de esta conversación.",
+  "scope": "one recorded owner; generation 2 supersedes generation 1 by explicit operator authorization; owner_thread is an operational alias, not a native platform thread ID; cooperative preflight, not server-enforced fencing of arbitrary repository writes",
   "expiry": null,
-  "handoff": "explicit transfer to identified target only; offline receiver stays read-only"
+  "handoff": "Transferred from samanthal-metodologia-ciclo10 (generation 1) to operator-authorized event alias C-METODOLOGIA-COLISION-RESPONSABILIDAD-14 (generation 2); atomic SHA-conditioned update and read-back required; future collision: ask once for explicit operator authorization, no opaque platform ID request.",
+  "previous_owner": {
+    "owner_thread": "session://ecea4187-8241-819b-af83-0003b7c205f7/3ffa4187-8241-80de-84a6-00a98cbd8894",
+    "instance": "samanthal-metodologia-ciclo10",
+    "generation": 1,
+    "observed_blob_sha": "29d0b9afab67e9e932bcaa292c8c4c4d2dc3bac7"
+  },
+  "transfer": {
+    "event_id": "C-METODOLOGIA-COLISION-RESPONSABILIDAD-14",
+    "recorded_on": "2026-10-21",
+    "receiver_identity_kind": "operator-authorized operational alias; native conversation ID unavailable",
+    "authorization_scope": "Metacanon/front metodología control for this transfer only",
+    "method": "contents API update conditioned on the observed Git blob SHA, followed by canonical read-back"
+  }
 }
