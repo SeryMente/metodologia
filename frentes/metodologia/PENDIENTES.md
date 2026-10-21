@@ -153,3 +153,23 @@ La revisión por ciclo del GOW sí es obligatoria ahora; no depende del cierre d
 - Pegar el IPZ en configuración de ChatGPT y confirmar su contenido real.
 - Prueba semántica con otro modelo/hilo y sincronización perpetua: pendientes; el MCP normativo permanece desactivado.
 
+## C-METODOLOGIA-OCP-DISCOVERY-17-r1 · 2026-10-21
+
+### Cerrado y verificado en main
+
+- Metacanon **v1.18 · METACANON-OBJETOS-v1.18**: §48 exige buscar FT por nombre y descubrir OCP a partir de núcleo/README/control en repositorios accesibles. `frentes/<slug>/` es la convención para OCP nuevos; `docs/frentes/<slug>/` y cualquier ruta canónica histórica declarada se conservan sin migración implícita.
+- Sam **v338 · NX-338m**: P039 alineado con descubrimiento de OCP; P040 exige registrar el alcance accesible y conservar rutas heredadas. Firma de carga y pie de 40 principios leídos de vuelta.
+- GOW **v2.1**: la definición OCP enlaza Metacanon 1.18 y permite rutas heredadas; los términos FT/FDT, SES e IPZ y los tres enlaces directos se verificaron en main y en Notion. Notion se releyó con título v2.1.
+- BCR, `INICIO.md`, README de gobernanza, puntero del glosario y anexo terminológico actualizados; todos fueron releídos de vuelta.
+- IPZ de compatibilidad: `frentes/metodologia/entregas/CHATGPT-v0.3/IPZ-CAMPO-CHATGPT.txt`, **1.494 caracteres**, revisado y leído de vuelta. También escrito en `/mnt/data/IPZ-CAMPO-CHATGPT.txt`.
+- Folio de Metodología: `SES-20261021-C4D81A7F`, generación 2, sigue activo. Se comparó contra los cuatro controles de responsabilidad accesibles en tres repositorios; no se encontró duplicado. Harmonia en `SeryMente/khora/docs/frentes/harmonia/` conserva su titular anterior y no fue transferido porque el nombre se usó como ejemplo.
+
+### Sigue pendiente y no debe marcarse completado
+
+- El operador confirmó que el campo nativo IPZ se actualizó con la versión anterior. Como la revisión actual agrega compatibilidad con OCP heredados, debe reemplazarse el contenido por la versión final de 1.494 caracteres y verificarse después del guardado. Esta conexión no expone el campo nativo para escribirlo o releerlo directamente.
+- La herramienta expone nueve repositorios bajo el propietario `SeryMente`, pero no devolvió una lista de membresías de organización. La unicidad del folio queda comprobada solo en los cuatro controles leídos; no se afirma unicidad global fuera del alcance accesible.
+- Verificación normativa automática por MCP: DESACTIVADA por instrucción expresa. No se ejecutó.
+- No hay sincronización perpetua GitHub↔Notion; las propagaciones del ciclo son puntuales y verificadas.
+- Prueba semántica en un modelo/hilo independiente pendiente. No se afirma cumplimiento universal por todos los modelos.
+
+
