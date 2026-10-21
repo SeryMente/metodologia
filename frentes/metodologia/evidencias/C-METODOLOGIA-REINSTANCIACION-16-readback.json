@@ -13,7 +13,7 @@
     "governance_readme": "ae4762613a3df889ad6dc320fd20002e9ecfdce6",
     "responsibility_control": "5761eaa529686bbdb2d7acee6b078f24a1c105ac",
     "pending": "1357c3b2132c06d1afbb121c766746e1373d4255",
-    "ipz": "33c9931ddb65ff6b7532aebf40906a01b17445b3",
+    "ipz": "eac6010f5d7d053e3b746a081743d48856b598c8",
     "revision": "b06d156a6c958d5690452af36be5907d56463418",
     "sam_receipt": "e89ec11fda2ffd79e96c6859b71339e623ca704d",
     "gow_receipt": "a23da22ddddfefb25a4cea134622a3aa62908f99"
@@ -22,7 +22,7 @@
     "metacanon": "1.17/METACANON-OBJETOS-v1.17",
     "sam": "v337/NX-337m",
     "gow": "v2.0",
-    "ipz_characters": 1287
+    "ipz_characters": 1432
   },
   "folio": {
     "value": "SES-20261021-C4D81A7F",
