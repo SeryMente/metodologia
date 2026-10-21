@@ -1,12 +1,18 @@
 {
-  "source": "https://app.notion.com/p/a925d4a3b2508393b2b7817f1cf431da",
-  "source_title": "🧬 Metaprompt Canónico de Samantha · Workspace v335 · NX-335m",
-  "contentLastEditedAt": 1792611818682,
-  "sha256_utf8": null,
-  "cycle": "C-METODOLOGIA-COLISION-RESPONSABILIDAD-14",
-  "mirror": "Cuerpo extraído de Notion v335 copiado al espejo GitHub y cotejado por igualdad exacta de contenido en la lectura de vuelta; blob actual 62e0e43c7ee8b4f02a2ed7633e2417cd1f48eb99.",
-  "sync": "Copia puntual fuente → repositorio verificada para este snapshot; no instala sincronización automática futura. El SHA-256 nuevo no fue recalculado.",
-  "native_loading": "Notion puede aportar una versión distinta; cotejar firma, origen y revisión. Esta sesión recibió automáticamente la página antigua v330 eliminada, y adquirió expresamente la fuente viva v332 antes de actualizarla a v333. Fuente v335 · NX-335m adquirida por fetch y leída de vuelta el 2026-10-21; la configuración nativa cargada por otros hilos/modelos no se presume idéntica.",
-  "previous_sha256_utf8": "02a9cacb78f4dc0cd86a819593e931dcf45b84f3ed310569a0b592e0b579c6ed",
-  "hash_status": "SHA-256 actual NO RECALCULADO; la igualdad exacta del cuerpo fuente/espejo se verificó directamente por comparación de cadenas en este ciclo."
+  "canonical_source": "https://github.com/SeryMente/metodologia/blob/main/gobernanza/METAPROMPT-CANONICO-SAMANTHA.md",
+  "canonical_repository": "SeryMente/metodologia",
+  "canonical_branch": "main",
+  "source_title": "Metaprompt Canónico de Samantha (Sam) · v336 · NX-336m",
+  "canonical_blob_sha": "7f009f13bf06df9d94bcb1561e5b9031b4243c19",
+  "canonical_precedence": "Metacanon §43 and Sam P038 establish the repository as the preponderant source; Notion, custom instructions and other platform copies are subordinate mirrors.",
+  "prior_notion_origin": "https://app.notion.com/p/a925d4a3b2508393b2b7817f1cf431da",
+  "current_notion_search_result": {
+    "url": "https://app.notion.com/p/c85a41878241830588e181f4c02fbab4",
+    "title": "Metaprompt Canónico de Samantha · Workspace v333 · NX-333m",
+    "observed_version": "v333 · NX-333m",
+    "status": "DIVERGENT_STALE_MIRROR"
+  },
+  "source_content_sha256": null,
+  "sync_status": "Repository main updated to v336; visible Notion page remains v333 in the observed fetch. Direct Notion write capability is not established; do not claim the mirror was synchronized. Canonical repository takes precedence.",
+  "hash_status": "SHA-256 was not recalculated; the Git blob SHA records the repository object."
 }
