@@ -54,8 +54,8 @@ def safe_path(root, relative):
 def resume(root, request, version):
     """Consume solo archivos/entrada explícita; no recibe variables del productor."""
     try:
-        man = json.loads((root / "manifiesto.json").read_text())
-        state = json.loads((root / "estado.json").read_text())
+        man = json.loads((root / "manifiesto.json").read_text(encoding="utf-8"))
+        state = json.loads((root / "estado.json").read_text(encoding="utf-8"))
         if version >= 1:
             if digest((root / "manifiesto.json").read_bytes()) != request["pin"]:
                 return {"status": "blocked", "why": "manifest pin", "write": False}
@@ -79,7 +79,7 @@ def resume(root, request, version):
                 raise ValueError("eventos inconsistentes")
             if request.get("current_event") not in (None, state["event"]):
                 return {"status": "blocked", "why": "stale snapshot", "write": False}
-            history = json.loads((root / "historia.json").read_text())
+            history = json.loads((root / "historia.json").read_text(encoding="utf-8"))
             events = [r["event"] for r in history]
             if (not history or events != list(range(1, state["event"] + 1))
                     or state["history_through"] != state["event"]):
@@ -131,7 +131,7 @@ def run_case(version, change=None, request_change=None, expected=None,
     with tempfile.TemporaryDirectory(prefix="continuidad-") as temp:
         root = pathlib.Path(temp)
         for name, content in data.items():
-            (root / name).write_text(content)
+            (root / name).write_text(content, encoding="utf-8", newline="\n")
         (root / "manifiesto.json").write_bytes(encoded(man))
         if tamper:
             tamper(root)
@@ -219,7 +219,7 @@ def main():
                         all(c["passed"] for c in report["iterations"][-1]["checks"])
                         else "FAIL")
     output = pathlib.Path(sys.argv[1]) if len(sys.argv) > 1 else pathlib.Path("resultado.json")
-    output.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n")
+    output.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
     print(json.dumps({"result": report["result"], "iterations":
           [{"version": x["version"], "passed": x["passed"], "total": x["total"]}
            for x in report["iterations"]], "repeatability": report["repeatability"]}))
