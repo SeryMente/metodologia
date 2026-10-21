@@ -2,7 +2,7 @@
 
 **Estado:** PROCEDIMIENTO DE APOYO · SUBORDINADO AL GOW  
 **Versión:** v1.1 · Fuente preponderante: `SeryMente/metodologia/main`  
-**Relación:** desarrolla el contrato de revisión/normalización del GOW, y complementa Sam P008 y Metacanon §§43–45.
+**Relación:** desarrolla el contrato de revisión/normalización del GOW, y complementa Sam P008 y Metacanon §§43–48.
 
 ## 1. Fuente única
 
@@ -21,9 +21,9 @@ Entrada dictada/transcrita → identificar el posible término → consultar el 
 
 Registrar nuevas asociaciones solo cuando el operador lo solicite expresamente. Las ya aprobadas se aplican sin volver a preguntar cuando el referente es inequívoco. La normalización cambia la forma terminológica, no el sentido sustantivo de la intención.
 
-## 4. Preponderancia y revisión
+## 4. Preponderancia, descubrimiento de OCP y revisión
 
-`SeryMente/metodologia/main` determina la revisión vigente. Ante diferencia entre este anexo, Notion, las instrucciones personalizadas o cualquier copia, prevalecen el GOW y las reglas verificadas del repositorio. Revisar el GOW al inicio y antes de cerrar cada ciclo, sin excepción. Si no puede consultarse `main`, declarar `GOW NO VERIFICADO`. La mención de un término o protocolo no activa por sí sola el protocolo ni generaliza un vocabulario local a todos los proyectos.
+`SeryMente/metodologia/main` determina la revisión vigente. Ante diferencia entre este anexo, Notion, las instrucciones personalizadas o cualquier copia, prevalecen el GOW y las reglas verificadas del repositorio. Revisar el GOW al inicio y antes de cerrar cada ciclo, sin excepción. Para ubicar un FT, descubrir su OCP a partir de su nombre canónico y el núcleo/README/control; `frentes/<slug>/` es la ruta predeterminada de los OCP nuevos, mientras que los OCP existentes pueden conservar rutas canónicas como `docs/frentes/<slug>/`. No mover carpetas ni duplicar controles al retomar. Si no puede consultarse `main`, declarar `GOW NO VERIFICADO`. La mención de un término o protocolo no activa por sí sola el protocolo ni generaliza un vocabulario local a todos los proyectos.
 
 ## 5. Correcciones conocidas
 
