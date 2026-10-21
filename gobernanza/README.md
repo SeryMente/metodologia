@@ -10,7 +10,7 @@ La fuente canónica preponderante es este repositorio privado, SeryMente/metodol
 
 **Jerarquía normativa interna del contenido de main:**
 
-1. El Metaprompt Canónico de Samantha (Sam), v336 · NX-336m, establece el gobierno general documentado del espacio.
+1. El Metaprompt Canónico de Samantha (Sam), v338 · NX-338m, establece el gobierno general documentado del espacio.
 2. Metacanon, versión 1.18 · METACANON-OBJETOS-v1.18, establece el método para crear, mantener, verificar y transferir frentes, incluida la fuente única del GOW.
 3. Los cánones, controles y procedimientos particulares gobiernan únicamente sus ámbitos y no anulan normas superiores.
 4. Las autorizaciones explícitas del operador habilitan los cambios dentro de su alcance; el estado adoptado solo se considera canónico una vez persistido y verificado en main.
