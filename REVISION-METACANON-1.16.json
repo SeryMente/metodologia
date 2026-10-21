@@ -1,0 +1,105 @@
+{
+  "schema": "revision-metacanon/1",
+  "version": "1.16",
+  "seal": "METACANON-OBJETOS-v1.16",
+  "cycle": "C-METODOLOGIA-FUENTE-PRECEDENCIA-15",
+  "related_cycle": "C-GOW-METODOLOGIA-GLOSARIOS-02",
+  "base": {
+    "version": "1.15",
+    "blob": "0d80e519e85ce14ecda53fd78e53329335aff004"
+  },
+  "result": {
+    "path": "METACANON-OBJETOS-CANONICOS.md",
+    "blob": "50fd180af34cbfc939bfd7655b1ae5c75725c4dc",
+    "commit": "91f437faa0751348b609de4b034382dd01d00736"
+  },
+  "governance": {
+    "metaprompt": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.md",
+    "version": "v336",
+    "signature": "NX-336m",
+    "blob": "711c613519d3c33ed6bb479ce3a8c9b65dd6269f",
+    "principles_added_or_reordered": [
+      "P038 immediately after P001"
+    ],
+    "principles_refined": [
+      "P008"
+    ]
+  },
+  "glossary": {
+    "path": "gobernanza/GLOSARIO-WORKSPACE.md",
+    "version": "v1.9",
+    "blob": "17bf150cf20532793b8d1b3e175e0330013df4d8",
+    "inherited_root_glossary": "GLOSARIO-OPERATIVO.md v1.3.1",
+    "inherited_root_blob": "6b8d3a50f2ac235b5597989981a0eabee9e90d85",
+    "archived_original": "frentes/metodologia/antecedentes/GLOSARIO-OPERATIVO-v1.3.1.md",
+    "imported_term_blocks": 49,
+    "canonical_authority": "Only gobernanza/GLOSARIO-WORKSPACE.md in SeryMente/metodologia/main"
+  },
+  "affected_sections": [
+    "1 (invariant 21)",
+    "9",
+    "43",
+    "44",
+    "45"
+  ],
+  "affected_paths": [
+    "gobernanza/METAPROMPT-CANONICO-SAMANTHA.md",
+    "gobernanza/METAPROMPT-CANONICO-SAMANTHA.fuente.json",
+    "gobernanza/GLOSARIO-WORKSPACE.md",
+    "gobernanza/GLOSARIO-WORKSPACE.fuente.json",
+    "GLOSARIO-OPERATIVO.md",
+    "ANEXO-GOBERNANZA-TERMINOLOGICA-Y-NORMALIZACION.md",
+    "INICIO.md",
+    "gobernanza/README.md",
+    "BOOTSTRAP-CONTEXTO-GLOBAL.md",
+    "REVISION-METACANON-1.16.json"
+  ],
+  "rules": {
+    "source_precedence": "SeryMente/metodologia/main is preponderant for methodological/documentary state; Notion and all other copies are subordinated mirrors.",
+    "one_glossary": "GOW is the sole canonical cross-front glossary; root GLOSARIO-OPERATIVO.md is a compatibility pointer and its source was archived verbatim.",
+    "every_cycle": "Read/review the GOW at cycle start and close, without exception.",
+    "transcription": "Apply only existing approved mappings when contextual referent is clear; register new mapping only on explicit operator request; preserve original transcript.",
+    "scope": "Imported local RDC/CIBERCAFE/Vercel entries keep their scope; presence in GOW does not activate protocols or universalize local rules."
+  },
+  "verification": {
+    "repo_readback": true,
+    "notion_gow_readback": {
+      "title": "Glosario Operativo del Workspace (GOW) · Canon v1.9",
+      "url": "https://app.notion.com/p/247a418782418399a86001aae61ae938",
+      "status": "verified",
+      "checks": [
+        "v1.9",
+        "Group 10 imported terms",
+        "CECEQ and RDC terms",
+        "Sam",
+        "contextual KHORA normalization",
+        "cycle review",
+        "repo precedence",
+        "no implicit activation"
+      ]
+    },
+    "notion_sam_readback": {
+      "title": "Metaprompt Canónico de Samantha · Workspace v336 · NX-336m",
+      "url": "https://app.notion.com/p/c85a41878241830588e181f4c02fbab4",
+      "status": "verified",
+      "checks": [
+        "v336",
+        "load signature NX-336m",
+        "P037",
+        "P038",
+        "P008 points to canonical GOW",
+        "footer 38 principles"
+      ]
+    },
+    "BCR": {
+      "path": "BOOTSTRAP-CONTEXTO-GLOBAL.md",
+      "blob": "767db8cdf00d3106399023c1baceeb5a91a6b4e6",
+      "status": "written and read back from main"
+    }
+  },
+  "limits": [
+    "No automatic permanent GitHub↔Notion synchronization was implemented.",
+    "SHA-256 content digests were not recalculated; Git blob SHAs are recorded.",
+    "Platform-enforced policies and actual permissions/capabilities remain execution limits."
+  ]
+}
