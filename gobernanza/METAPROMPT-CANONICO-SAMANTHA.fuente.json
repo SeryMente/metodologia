@@ -2,21 +2,23 @@
   "canonical_source": "https://github.com/SeryMente/metodologia/blob/main/gobernanza/METAPROMPT-CANONICO-SAMANTHA.md",
   "canonical_repository": "SeryMente/metodologia",
   "canonical_branch": "main",
-  "source_title": "Metaprompt Canónico de Samantha (Sam) · v338 · NX-338m",
-  "canonical_blob_sha": "1ace0ef55623b8ae4d1be5c169fe3f211f22594a",
+  "source_title": "Metaprompt Canónico de Samantha (Sam) · v339 · NX-339m",
+  "canonical_blob_sha": "fdc996078bd611492e46d6b3abf569fbb4a6effa",
   "canonical_precedence": "Sam P038 establishes SeryMente/metodologia/main as preponderant; P008 mandates GOW review at every cycle start/close; P039 defines FT retake/folio; P040 requires OCP discovery from authoritative files and preserves existing OCP paths.",
   "prior_notion_origin": "https://app.notion.com/p/a925d4a3b2508393b2b7817f1cf431da",
   "notion_mirror_readback": {
     "url": "https://app.notion.com/p/c85a41878241830588e181f4c02fbab4",
     "title": "Metaprompt Canónico de Samantha · Workspace v338 · NX-338m",
-    "observed_version": "v338 · NX-338m",
+    "observed_version": "v339 · NX-339m",
     "status": "VERIFIED_READBACK",
     "checks": {
-      "v338": true,
-      "signatureNX338m": true,
+      "v339": true,
+      "signatureNX339m": true,
       "P037": true,
       "P038": true,
       "P008CycleReview": true,
+      "P008GlossaryOnly": true,
+      "P008NotHub": true,
       "P039": true,
       "P040": true,
       "footer40Principles": true,
@@ -24,6 +26,6 @@
     }
   },
   "source_content_sha256": null,
-  "sync_status": "Sam v338 was copied from current main to the Notion mirror and read back. P040 covers OCP discovery across accessible repositories and preservation of inherited paths; P008 requires per-cycle GOW review. Point-in-time sync only; no continuous synchronization is installed.",
+  "sync_status": "Sam v339 was persisted to main and read back. The Notion mirror was updated and checked for v339/NX-339m, corrected P008, E-34 and footer. The GOW mirror was updated and checked at v2.2 for glossary-only scope and the contextual Hub entry. Key normative content was read back; byte-for-byte equality of each full page was not tested. Point-in-time sync only; no continuous synchronization is installed.",
   "hash_status": "SHA-256 was not recalculated; Git blob SHA is used as revision evidence."
 }
