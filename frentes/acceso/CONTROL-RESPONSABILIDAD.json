@@ -1,0 +1,12 @@
+{
+  "schema": "responsabilidad/1",
+  "front": "acceso",
+  "status": "owned",
+  "owner_thread": "session://ecea4187-8241-819b-af83-0003b7c205f7/400a4187-8241-8064-b9f3-00a97855029f",
+  "instance": "samanthal-acceso-inicial",
+  "generation": 1,
+  "authorization_ref": "frentes/acceso/conversaciones/C-ACCESO-001.jsonl#U01",
+  "scope": "one recorded owner; cooperative preflight, not server-enforced fencing of arbitrary repository writes",
+  "expiry": null,
+  "handoff": "explicit transfer to identified target only; offline receiver stays read-only"
+}
