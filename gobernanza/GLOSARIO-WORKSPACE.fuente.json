@@ -22,7 +22,9 @@
       "mainPrecedence": true,
       "directGOWLink": true,
       "directMetacanonSection4Link": true,
-      "directSamCascadeLink": true
+      "directSamCascadeLink": true,
+      "metacanon117": true,
+      "directSamPrinciplesCascadeLink": true
     }
   },
   "imported_corpus": {
@@ -34,6 +36,6 @@
     "method": "Merged terms into Group 10 with provenance and scope; duplicates were consolidated against the existing GOW entries; old root file is a pointer, not a glossary authority."
   },
   "source_content_sha256": null,
-  "sync_status": "Canonical GOW v2.0 blob and Notion v2.0 mirror were compared by targeted read-back in this cycle. The Notion body contains FT/FDT, OCP, SES, IPZ, required per-cycle GOW review, and direct links to GOW, Metacanon §4, and Sam’s cascading principle list. Point-in-time synchronization only; no continuous synchronization installed.",
+  "sync_status": "Read-back verified after mirroring GOW v2.0 from main: FT/FDT, OCP, session folio, IPZ, mandatory cycle review, repository precedence, and direct links to GOW, Metacanon §4, and Sam’s cascading-principle list are present. Main GOW blob is f39ad5bb44d4d02562ccfc0a4af8015fb1d8ca04. This is point-in-time synchronization, not continuous sync.",
   "hash_status": "SHA-256 was not recalculated; the Git blob SHA records the canonical repository object."
 }
