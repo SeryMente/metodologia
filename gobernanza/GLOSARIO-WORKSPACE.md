@@ -1,5 +1,5 @@
 <callout icon="📜" color="gray_bg">
-📍 Versión actual · v2.1 · evento C-METODOLOGIA-OCP-DISCOVERY-17 · Canon Declarativo · Tier Bloqueante · Alcance: todo el WS · todos los proyectos y frentes de trabajo · Propietario: operador (Black Sheep), toda modificación requiere su autorización explícita
+📍 Versión actual · v2.2 · evento C-METODOLOGIA-GOW-HUB-19 · Canon Declarativo · Tier Bloqueante · Alcance: todo el WS · todos los proyectos y frentes de trabajo · Propietario: operador (Black Sheep), toda modificación requiere su autorización explícita
 </callout>
 
 ## §F · Ficha
@@ -20,7 +20,7 @@
 ## §SUM · Resumen Operativo
 
 <callout icon="💊">
-El GOW es el repositorio canónico y autoritativo de toda convención semántica y término operativo transversal del WS y de los frentes que adquieren este canon. <b>Aplica</b> cuando una denominación, abreviatura, equivalencia o posible error de transcripción afecta la interpretación, decisión o coordinación entre frentes; como regla de triage, prioriza términos usados en ≥2 documentos o frentes y cuya ambigüedad tenga costo real. <b>Revisión obligatoria</b>: consultar la fuente vigente al inicio y al cierre de cada ciclo, sin excepción; registrar en el mismo ciclo toda convención ratificada y toda corrección de transcripción que el operador solicite explícitamente. <b>No aplica</b> a léxicos estrictamente locales ni al vocabulario general del español o de ninguna disciplina. Los léxicos locales pueden existir, pero no contradicen silenciosamente el alcance transversal de este canon.
+El GOW es exclusivamente el glosario operativo compartido: fija significados convenidos de términos, abreviaturas y equivalencias semánticas, y registra asociaciones autorizadas entre variantes de transcripción y términos correctos con su alcance y procedencia. No es un Hub, un centro de coordinación, un orquestador de frentes ni una fuente de permisos o protocolos generales. <b>Aplica</b> cuando la ambigüedad terminológica afecta la interpretación y el uso consistente del vocabulario entre documentos o frentes; como regla de triage, prioriza términos de uso transversal cuya ambigüedad tenga costo real. <b>Revisión obligatoria</b>: consultar la fuente vigente al inicio y al cierre de cada ciclo, sin excepción; registrar en el mismo ciclo toda convención semántica ratificada y toda corrección de transcripción que el operador solicite explícitamente, con lectura de vuelta. <b>No aplica</b> al gobierno de frentes ni al vocabulario general del español o de ninguna disciplina. Los léxicos locales pueden existir, pero no contradicen silenciosamente las equivalencias transversales que el operador haya ratificado.
 </callout>
 
 ## §IX · Índice
@@ -180,7 +180,7 @@ Nombre canónico para los tres objetivos de capacidad de Khora (SEA, IAR, RES). 
 
 <b>Contrato cognitivo del grafo</b> ✦
 
-Compromiso de diseño y aceptación que traduce las capacidades de la prótesis Khora en obligaciones verificables del grafo, sin deformar las fuentes ni sustituir la autoría y las decisiones del usuario. Pregunta rectora ratificada: «¿Este grafo permite ejercer las capacidades que justifican construirlo sin deformar las fuentes?». Nombre y pregunta canonizados por orden expresa del operador en el evento C-CONTRATO-COGNITIVO-01. Referencia semántica de proyecto registrada aquí por la instrucción de hub central; no se generaliza como obligación de otros proyectos. Definición rectora única y alcance: [objeto canónico del frente grafo, Contrato cognitivo del grafo](https://github.com/SeryMente/khora/blob/fix/graph-occurrence-history-20261018/docs/frentes/grafo/OBJETO.md#contrato-cognitivo-del-grafo--can%C3%B3nico). No es otro algoritmo, diagnóstico, promesa de perfección ni certificación de producto.
+Compromiso de diseño y aceptación que traduce las capacidades de la prótesis Khora en obligaciones verificables del grafo, sin deformar las fuentes ni sustituir la autoría y las decisiones del usuario. Pregunta rectora ratificada: «¿Este grafo permite ejercer las capacidades que justifican construirlo sin deformar las fuentes?». Nombre y pregunta canonizados por orden expresa del operador en el evento C-CONTRATO-COGNITIVO-01. Referencia semántica de proyecto registrada aquí por la función terminológica del GOW; no se generaliza como obligación de otros proyectos. Definición rectora única y alcance: [objeto canónico del frente grafo, Contrato cognitivo del grafo](https://github.com/SeryMente/khora/blob/fix/graph-occurrence-history-20261018/docs/frentes/grafo/OBJETO.md#contrato-cognitivo-del-grafo--can%C3%B3nico). No es otro algoritmo, diagnóstico, promesa de perfección ni certificación de producto.
 
 <b>FDP · Facultad Determinista de la Prótesis</b> ✦
 
@@ -276,7 +276,7 @@ Nombre canónico del estrato de instrucciones de sistema que rige al agente núc
 
 Abreviatura canónica autorizada para «Metaprompt Canónico de Samantha», la fuente de gobierno general de Samantha, cuyo archivo canónico es gobernanza/METAPROMPT-CANONICO-SAMANTHA.md en SeryMente/metodologia/main. En este sentido, normaliza la forma transcrita «SAM» a «Sam» y, solo cuando el contexto confirme que se refiere al metaprompt, reconoce las variantes históricas de dictado «Samanta», «Metapron» y «Metapromp». No designa por sí sola al agente/persona Samantha ni a otro sistema llamado Sam; si el contexto apunta a otra entidad, conserva su nombre.
 
-<b>Metacanon de objetos canónicos (Metacanon v1.18)</b> 🟦
+<b>Metacanon de objetos canónicos (Metacanon v1.19)</b> 🟦
 
 Marco del repositorio SeryMente/metodologia que configura y mantiene frentes de trabajo como directorios con un núcleo operativo único y materiales enlazados. No confundir con la equivalencia histórica/local de «Metacanon» y «Método para Documentar Cánones (MDC)» usada en el WS Khora. En comunicaciones entre espacios, usar el nombre completo o el calificador de contexto; no propagar equivalencia indistinta.
 
@@ -494,6 +494,10 @@ Instrumento determinista, versionado en el repositorio, que audita mecánicament
 ### Grupo 10 · Metodología compartida y entradas heredadas del glosario de Metodología
 
 **Procedencia:** migración íntegra de las entradas terminológicas del archivo GLOSARIO-OPERATIVO.md, versión v1.3.1, blob 6b8d3a50f2ac235b5597989981a0eabee9e90d85. Su original completo se conserva en frentes/metodologia/antecedentes/GLOSARIO-OPERATIVO-v1.3.1.md. Se unifica aquí el vocabulario común sin extender los términos locales más allá de su ámbito original. Los conceptos que ya existían en los grupos anteriores se consolidan en su entrada canónica correspondiente, no se duplican. La inclusión de una entrada no activa por sí misma un protocolo, permiso, proyecto o despliegue: se respetan sus condiciones de activación, el ámbito propio y las autorizaciones correspondientes. La mención de Sesión PRIUS no la activa; su revisión/adaptación continúa diferida hasta que el operador la reabra explícitamente.
+
+<b>Hub de construcción (contexto Metacanon · 2026-10-21)</b> 🎙️
+
+En este ciclo, denominación contextual del frente de trabajo Metacanon y del hilo en el que se construye el Marco de Metacanon. No designa al GOW; no es una definición universal de Hub para todos los frentes. Procedencia: instrucción explícita del operador en C-METODOLOGIA-GOW-HUB-19.
 
 #### Entradas de términos canónicos heredados
 
@@ -917,6 +921,8 @@ El GOW se considera poseído cuando:
 ---
 
 ## §RAT · Registro de ratificaciones
+
+<b>C-METODOLOGIA-GOW-HUB-19 · v2.2 · 2026-10-21.</b> Por instrucción expresa del operador se corrige la descripción de P008: el GOW se limita a glosario operativo y convenciones semánticas; no desempeña función de Hub. Se incorpora la entrada contextual «Hub de construcción» para identificar, en este frente y ciclo, el FT/hilo Metacanon que construye el Marco. Las demás entradas heredadas y su procedencia se conservan.
 
 <b>C-GOW-SAM-01 · v1.7 · 2026-10-21.</b> Por instrucción expresa del operador se preserva el GOW preexistente como fuente única, se amplía su uso transversal a los frentes que adquieren este canon, se incorpora «Sam» como abreviatura contextual de «Metaprompt Canónico de Samantha», se añade el contrato de normalización de transcripción y revisión obligatoria en cada ciclo, y se limita explícitamente la equivalencia histórica MDC/Metacanon al contexto local para evitar colisiones con Metacanon de objetos canónicos v1.14. Las entradas previas se conservan; la actualización no equivale a revalidación de todas ellas.
 
