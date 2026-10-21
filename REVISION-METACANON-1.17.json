@@ -13,7 +13,7 @@
       "path": "METACANON-OBJETOS-CANONICOS.md",
       "version": "1.17",
       "seal": "METACANON-OBJETOS-v1.17",
-      "blob": "ff8528484909dd730ead3d2286360c4ee5ebcf0f"
+      "blob": "83ef1bdeb83c2229c8d34b48c8e9b104299a8de0"
     },
     "sam": {
       "path": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.md",
@@ -109,7 +109,8 @@
     "characters": 1287,
     "verified_under_free_go_limit": 1500,
     "native_chatgpt_field_modified": false,
-    "operator_action_required": "Paste the provided text into Settings > Personalization > Custom Instructions; then read back/confirm the saved field."
+    "operator_action_required": "Paste into Settings > Personalization > Custom Instructions; then read back the saved field.",
+    "repository_artifact": "frentes/metodologia/entregas/CHATGPT-v0.3/IPZ-CAMPO-CHATGPT.txt"
   },
   "limitations": [
     "No permanent GitHub↔Notion synchronization was installed.",
