@@ -1,5 +1,7 @@
 # C-METODOLOGIA-REINSTANCIACION-16 · salida de ciclo
 
+Consultar esta salida persistida en [GitHub](https://github.com/SeryMente/metodologia/blob/main/frentes/metodologia/entregas/C-METODOLOGIA-REINSTANCIACION-16-salida.md).
+
 ## 1. Identidad operativa y gobierno vigente
 
 **METODOLOGÍA / SES-20261021-C4D81A7F / C-METODOLOGIA-REINSTANCIACION-16.** Frente activo: Metacanon/Metodología. OCP: `frentes/metodologia/`. El control registra el folio operativo `SES-20261021-C4D81A7F`, generación 2. El folio es un alias de sesión, no un ID nativo de ChatGPT. Se comprobó colisión únicamente en el repositorio accesible; no se afirma unicidad global entre todos los repositorios de SeryMente.
