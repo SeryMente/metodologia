@@ -49,7 +49,7 @@
     },
     "pending": {
       "path": "frentes/metodologia/PENDIENTES.md",
-      "blob": "acc30a1b6d71eedb5442a176bd99b9c42889f29c"
+      "blob": "1357c3b2132c06d1afbb121c766746e1373d4255"
     }
   },
   "OCP": {
@@ -110,7 +110,8 @@
     "verified_under_free_go_limit": 1500,
     "native_chatgpt_field_modified": false,
     "operator_action_required": "Paste into Settings > Personalization > Custom Instructions; then read back the saved field.",
-    "repository_artifact": "frentes/metodologia/entregas/CHATGPT-v0.3/IPZ-CAMPO-CHATGPT.txt"
+    "repository_artifact": "frentes/metodologia/entregas/CHATGPT-v0.3/IPZ-CAMPO-CHATGPT.txt",
+    "repository_blob": "33c9931ddb65ff6b7532aebf40906a01b17445b3"
   },
   "limitations": [
     "No permanent GitHub↔Notion synchronization was installed.",
