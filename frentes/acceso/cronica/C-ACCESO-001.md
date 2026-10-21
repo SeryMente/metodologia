@@ -22,11 +22,15 @@ Se eligió `frentes/acceso/` porque el repositorio propietario fue indicado expr
 - Control: commit `8ea09d02c005331e40d38d1d62bd1f993ce9fccc`, blob `d77dbf55ca188d79d5126e168edd202ec63ac811`; lectura de vuelta correcta.
 - Núcleo: commit `7193bf33d554ed8a128bf199aec18aeb36cdcca1`, blob `f2a75448c770247f10bd022894a434cd765b79b2`.
 - Conversación inicial: commit `c30c72b47cf59f676d7103f78acf0a9702c53f1b`, blob `98f47e687f29c93ab0974ef10af81a92726bd02a`.
-- Verificación final de rutas, contenido y estructura queda registrada al cierre de este ciclo.
+- Verificación final: directorio y cinco entradas leídos desde `main`; núcleo con trece bloques en orden, un solo estado vivo y cercas equilibradas. Cierre del núcleo: commit `888a18ae07d879e200afae6266bc56bc7931b8e9`.
 
 ## Límites y no-acción
 
 No se investigaron todavía proveedores/modelos, no se midió calidad, no se inventariaron cuentas o cuotas, no se usaron credenciales, no hubo gasto, acceso remoto, cambio de seguridad, arquitectura ni despliegue. La privacidad del repositorio se hereda como antecedente reportado por el metacanon, pero no se revalidó con una consulta de visibilidad específica en este ciclo; por ello no se almacenaron secretos ni datos sensibles. La exclusividad de responsabilidad es cooperativa en el registro, no un cerrojo universal de GitHub.
+
+## Orden concurrente sobre acceso remoto
+
+U02 llegó desde la sesión `3ffa4187-8241-80de-84a6-00a98cbd8894` durante el cierre: detener todo uso gráfico de Remote Desktop Commander (Comandante de Escritorio Remoto) y limitarlo a terminal o interfaz de línea de comandos no gráfica; interfaz gráfica únicamente con autorización específica y segundo monitor verificado. Estado real al recibirla: no se estaba usando Remote Desktop Commander ni ninguna interfaz gráfica del equipo; la última interacción gráfica en este hilo fue ninguna. U02 y A02 se conservaron literalmente en la conversación. La compuerta se incorporó al núcleo en commit `01baffaedbfe10846f691cf207bc773e65fee669`; no se cerró ni alteró ninguna ventana.
 
 ## Efecto sobre el propósito y checkpoint
 
