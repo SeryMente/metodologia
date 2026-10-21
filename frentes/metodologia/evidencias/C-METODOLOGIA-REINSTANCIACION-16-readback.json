@@ -1,0 +1,67 @@
+{
+  "event": "C-METODOLOGIA-REINSTANCIACION-16",
+  "date": "2026-10-21",
+  "status": "written-readback-verified",
+  "source_repository": "SeryMente/metodologia",
+  "branch": "main",
+  "blobs": {
+    "metacanon": "83ef1bdeb83c2229c8d34b48c8e9b104299a8de0",
+    "sam": "2d21b3d5ff7d3d33146e790021b0794242121fae",
+    "gow": "f39ad5bb44d4d02562ccfc0a4af8015fb1d8ca04",
+    "bcr": "26c69035250e857641aea341fb4468a8617c6a07",
+    "inicio": "c7bfe48eeeb2139cf023f7e06e0c5597e0fe85ad",
+    "governance_readme": "ae4762613a3df889ad6dc320fd20002e9ecfdce6",
+    "responsibility_control": "5761eaa529686bbdb2d7acee6b078f24a1c105ac",
+    "pending": "1357c3b2132c06d1afbb121c766746e1373d4255",
+    "ipz": "33c9931ddb65ff6b7532aebf40906a01b17445b3",
+    "revision": "b06d156a6c958d5690452af36be5907d56463418",
+    "sam_receipt": "e89ec11fda2ffd79e96c6859b71339e623ca704d",
+    "gow_receipt": "a23da22ddddfefb25a4cea134622a3aa62908f99"
+  },
+  "versions": {
+    "metacanon": "1.17/METACANON-OBJETOS-v1.17",
+    "sam": "v337/NX-337m",
+    "gow": "v2.0",
+    "ipz_characters": 1287
+  },
+  "folio": {
+    "value": "SES-20261021-C4D81A7F",
+    "status": "active",
+    "control_generation": 2,
+    "identity_kind": "operational folio/alias, not native platform conversation ID"
+  },
+  "notion_readback": {
+    "sam": {
+      "title": "Metaprompt Canónico de Samantha · Workspace v337 · NX-337m",
+      "checks": [
+        "v337",
+        "NX-337m",
+        "P037",
+        "P038",
+        "P008",
+        "P039"
+      ]
+    },
+    "gow": {
+      "title": "Glosario Operativo del Workspace (GOW) · Canon v2.0",
+      "checks": [
+        "v2.0",
+        "FT/FDT",
+        "OCP",
+        "SES",
+        "IPZ",
+        "per-cycle review",
+        "GOW link",
+        "Metacanon §4 link",
+        "Sam cascading-principles link"
+      ]
+    }
+  },
+  "limitations": [
+    "Native IPZ setting not modified from these connectors; operator must paste and read back.",
+    "MCP normative verification is disabled.",
+    "No continuous GitHub↔Notion synchronization installed.",
+    "Organization-wide unique folio absence not proven by code search.",
+    "SHA-256 content hashes not recalculated; Git blob SHAs are used."
+  ]
+}
