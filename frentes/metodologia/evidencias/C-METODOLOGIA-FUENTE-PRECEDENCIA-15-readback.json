@@ -1,0 +1,114 @@
+{
+  "schema": "metodologia-readback/1",
+  "event": "C-METODOLOGIA-FUENTE-PRECEDENCIA-15",
+  "date": "2026-10-21",
+  "status": "documental-write-and-readback-verified",
+  "main": {
+    "repository": "SeryMente/metodologia",
+    "branch": "main",
+    "files": {
+      "sam": {
+        "path": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.md",
+        "version": "v336",
+        "signature": "NX-336m",
+        "blob": "711c613519d3c33ed6bb479ce3a8c9b65dd6269f"
+      },
+      "metacanon": {
+        "path": "METACANON-OBJETOS-CANONICOS.md",
+        "version": "1.16",
+        "seal": "METACANON-OBJETOS-v1.16",
+        "blob": "50fd180af34cbfc939bfd7655b1ae5c75725c4dc"
+      },
+      "gow": {
+        "path": "gobernanza/GLOSARIO-WORKSPACE.md",
+        "version": "v1.9",
+        "blob": "17bf150cf20532793b8d1b3e175e0330013df4d8"
+      },
+      "legacyArchive": {
+        "path": "frentes/metodologia/antecedentes/GLOSARIO-OPERATIVO-v1.3.1.md",
+        "blob": "6b8d3a50f2ac235b5597989981a0eabee9e90d85"
+      },
+      "rootPointer": {
+        "path": "GLOSARIO-OPERATIVO.md",
+        "blob": "367898529eca9cef425f3a3d2471c85b31c8127b"
+      },
+      "normalizationAnnex": {
+        "path": "ANEXO-GOBERNANZA-TERMINOLOGICA-Y-NORMALIZACION.md",
+        "blob": "510143b33c762840bf7a31bbd9ad726ffddce033"
+      },
+      "bcr": {
+        "path": "BOOTSTRAP-CONTEXTO-GLOBAL.md",
+        "blob": "767db8cdf00d3106399023c1baceeb5a91a6b4e6"
+      },
+      "inicio": {
+        "path": "INICIO.md",
+        "blob": "871253399531683be912ee58dc504f0b3713feef"
+      },
+      "governanceReadme": {
+        "path": "gobernanza/README.md",
+        "blob": "fd5651b0adb7686633a21756eab7939e2a25fb7c"
+      },
+      "pending": {
+        "path": "frentes/metodologia/PENDIENTES.md",
+        "blob": "4f5ece5fe12617f9ff1ee88467f6a7c3c2aeada4"
+      },
+      "revision": {
+        "path": "REVISION-METACANON-1.16.json",
+        "blob": "6c23c90dfc7609565b00d2496961bb1683b58e05"
+      },
+      "samReceipt": {
+        "path": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.fuente.json",
+        "blob": "136635031112066d9fc1cf0b71647f0231f66cd2"
+      },
+      "gowReceipt": {
+        "path": "gobernanza/GLOSARIO-WORKSPACE.fuente.json",
+        "blob": "de3cbb272b9b6cfe056989f428d0d41b0c507637"
+      }
+    }
+  },
+  "notion": {
+    "gow": {
+      "url": "https://app.notion.com/p/247a418782418399a86001aae61ae938",
+      "version": "v1.9",
+      "title": "Glosario Operativo del Workspace (GOW) · Canon v1.9",
+      "status": "verified read-back",
+      "checks": [
+        "Group 10",
+        "CECEQ",
+        "RDC-REINSTANTIAR",
+        "Sam",
+        "CORA/C-O-R-A→KHORA with context",
+        "GOW cycle review",
+        "main precedence",
+        "no implied protocol activation"
+      ]
+    },
+    "sam": {
+      "url": "https://app.notion.com/p/c85a41878241830588e181f4c02fbab4",
+      "version": "v336",
+      "signature": "NX-336m",
+      "status": "verified read-back",
+      "checks": [
+        "P037",
+        "P038",
+        "P008 points to canonical GOW",
+        "38 principles footer"
+      ]
+    }
+  },
+  "import": {
+    "priorNotionGOW": "v1.7",
+    "priorRootGlossary": "v1.3.1",
+    "rootGlossaryBlocksImported": 49,
+    "originalArchivedVerbatim": true,
+    "legacyRootPathConvertedToPointer": true,
+    "onlyCanonicalGOW": true,
+    "scopePreservedForRDC_CIBERCAFE_Vercel": true
+  },
+  "limitations": {
+    "nativeCustomInstructionsModified": false,
+    "permanentNotionGitHubSyncImplemented": false,
+    "externalModelSemanticAcceptanceTest": "pending",
+    "sha256ContentDigest": "not recalculated; Git blob SHA only"
+  }
+}
