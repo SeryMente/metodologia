@@ -124,10 +124,17 @@ test('salida-final-M22-existe-y-cumple-los-diez-campos', () => {
   for (let n = 1; n <= 10; n++) if (!currentOutput.includes('## ' + n + '. ')) throw new Error('M22 output field ' + n + ' missing');
   if (!currentOutput.includes('SES-20261021-6B9E2F41') || !currentOutput.includes('CHECKLIST-VERBATIM-21.md')) throw new Error('M22 output lacks active folio/checklist provenance');
   if (!currentOutput.includes('C-METODOLOGIA-VERBATIM-E2E-22.json')) throw new Error('M22 output lacks current evidence path');
+  const blobSha = crypto.createHash('sha1').update(Buffer.concat([Buffer.from('blob ' + Buffer.byteLength(currentOutput, 'utf8') + '\\0', 'utf8'), Buffer.from(currentOutput, 'utf8')])).digest('hex');
+  if (manifest.artifacts?.current_output?.path !== files.currentOutput || manifest.artifacts?.current_output?.blob !== blobSha || manifest.artifacts?.current_output?.status !== 'persisted_and_readback_verified') throw new Error('manifest current output path/blob/status does not match persisted file');
+  if (manifest.current_cycle?.event !== 'C-METODOLOGIA-VERBATIM-E2E-22' || manifest.current_cycle?.final_output?.blob !== blobSha) throw new Error('manifest current-cycle output ref is stale');
+  if (!manifest.current_cycle?.evidence?.path || !manifest.current_cycle?.chronicle?.path || !manifest.current_cycle?.dialogue?.path) throw new Error('manifest current-cycle persistence paths are incomplete');
 });
 test('manifest-y-salida-generica-no-declaran-transferencia-pendiente', () => {
   if (!manifest.status.includes('transferred_and_readback_verified') || manifest.handoffPreparation?.transferComplete !== true) throw new Error('manifest status is stale');
+  if (manifest.current_cycle?.event !== 'C-METODOLOGIA-VERBATIM-E2E-22') throw new Error('manifest M22 event missing');
+  if (manifest.current_cycle?.source_verbatim?.literal_count !== 9) throw new Error('manifest is not anchored to exactly nine original operator statements');
   if (!genericOutput.includes('SUPERSEDIDO COMO SALIDA DEFINITIVA')) throw new Error('generic output is not marked superseded');
+  if (!pending.includes('evidencias/C-METODOLOGIA-VERBATIM-E2E-22.json') || !pending.includes('cronica/C-METODOLOGIA-VERBATIM-E2E-22.md')) throw new Error('pending register lacks current evidence/chronicle paths');
 });
 const headResult = cp.spawnSync('git', ['rev-parse', 'HEAD'], { cwd: root, encoding: 'utf8' });
 const result = {
