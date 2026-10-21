@@ -204,7 +204,7 @@ El recuento de caracteres del IPZ aplica al campo que se va a pegar, sin incluir
 
 ## C-METODOLOGIA-MIGRACION-HILO-FRESCO-21 · Migración a hilo fresco
 
-- **Estado:** paquete de relevo preparado; el control sigue en generación 2 y conserva la titularidad de origen. La transferencia al destino NO está completada hasta el CAS + read-back ejecutados por el hilo fresco.
+- **Estado:** paquete de relevo preparado y registrado en `CONTROL-RESPONSABILIDAD.json` (`handoff_preparation.status=prepared_waiting_for_target_claim`; control blob `3125ea6a222d531f479292b69bd68c34b82f1ee7`). El propietario/folio de origen siguen en generación 2; la transferencia al destino NO está completada hasta el CAS + read-back del hilo fresco.
 - **Autorización:** el operador ordenó explícitamente «Actualiza OCP para migrar instancia a hilo fresco y dame el prompt que necesito para reinstanciar». Alcance: una transferencia de Metodología/Metacanon al próximo hilo que use el prompt de este evento; no otros frentes.
 - **Origen:** propietario operativo `operator-authorized-transfer:C-METODOLOGIA-COLISION-RESPONSABILIDAD-14`; instancia `chatgpt-metacanon-collision-remediation-2026-10-21`; generación 2; folio `SES-20261021-C4D81A7F`. La identidad es un alias operativo, no ID nativo.
 - **Destino:** aún no existe en esta plataforma de control. Debe generar un folio `SES-AAAAMMDD-XXXXXXXX`, comprobar colisiones dentro del alcance accesible, crear alias operativo, transferir por compare-and-swap usando SHA actual y generación observada y validar por lectura de vuelta.
