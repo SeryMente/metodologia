@@ -21,5 +21,18 @@
     "receiver_identity_kind": "operator-authorized operational alias; native conversation ID unavailable",
     "authorization_scope": "Metacanon/front metodología control for this transfer only",
     "method": "contents API update conditioned on the observed Git blob SHA, followed by canonical read-back"
+  },
+  "session_folio": "SES-20261021-C4D81A7F",
+  "session_assignment": {
+    "status": "active",
+    "folio": "SES-20261021-C4D81A7F",
+    "assigned_on": "2026-10-21",
+    "front_ocp": "frentes/metodologia/",
+    "owner_alias": "operator-authorized-transfer:C-METODOLOGIA-COLISION-RESPONSABILIDAD-14",
+    "instance": "chatgpt-metacanon-collision-remediation-2026-10-21",
+    "generation": 2,
+    "identity_kind": "operational session folio; not a native ChatGPT conversation ID",
+    "uniqueness_check": "No match found in the accessible SeryMente/metodologia repository search; cross-repository uniqueness is not asserted because not all organization repositories were independently searched in this operation.",
+    "source_sha_before": "50e444c86342226362392e5fc2fe243fed751857"
   }
 }
