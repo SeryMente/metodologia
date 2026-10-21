@@ -1,7 +1,7 @@
 {
   "event": "C-METODOLOGIA-MIGRACION-HILO-FRESCO-21",
   "date": "2026-10-21",
-  "status": "handoff_package_created; awaits_control_stage_and_destination_claim",
+  "status": "handoff_prepared_waiting_for_target_claim; not_transferred",
   "source": {
     "repository": "SeryMente/metodologia",
     "branch": "main",
@@ -15,7 +15,9 @@
     "generation": 2,
     "folio": "SES-20261021-C4D81A7F",
     "owner_thread": "operator-authorized-transfer:C-METODOLOGIA-COLISION-RESPONSABILIDAD-14",
-    "instance": "chatgpt-metacanon-collision-remediation-2026-10-21"
+    "instance": "chatgpt-metacanon-collision-remediation-2026-10-21",
+    "sha_after_preparation": "3125ea6a222d531f479292b69bd68c34b82f1ee7",
+    "current_state": "owned; generation 2; source remains current owner until the fresh thread completes CAS and read-back"
   },
   "authorization": {
     "status": "explicit_operator_authorization_recorded",
@@ -47,5 +49,6 @@
     "No source project mutations after prepared handoff except verification/evidence",
     "New thread must reproduce latest persisted output literally or state unavailable",
     "First-cycle output must follow Metacanon §4"
-  ]
+  ],
+  "handoffPreparation": "prepared_waiting_for_target_claim"
 }
