@@ -1,6 +1,6 @@
 # Checkpoint de migración a hilo fresco · C-METODOLOGIA-MIGRACION-HILO-FRESCO-21
 
-**Estado de relevo:** preparado por documentar; **todavía no transferido**. El próximo hilo debe ejecutar el traspaso condicionado y leerlo de vuelta antes de asumir responsabilidad.
+**Estado de relevo:** preparado y registrado en el control; **todavía no transferido**. El próximo hilo debe ejecutar el traspaso condicionado y leerlo de vuelta antes de asumir responsabilidad.
 
 ## Frente y fuente
 
@@ -20,6 +20,8 @@
 - Generación de origen: `2`.
 - Folio de origen: `SES-20261021-C4D81A7F`.
 - SHA del control antes de preparar este evento: `f810835002e235ebd12cedc75a02678aa1073f2b`.
+- SHA actual tras preparar el relevo: `3125ea6a222d531f479292b69bd68c34b82f1ee7`.
+- El control vivo contiene `handoff_preparation.status=prepared_waiting_for_target_claim`; propietario y folio actuales siguen activos hasta el CAS del destino.
 - Evento de relevo autorizado: `C-METODOLOGIA-MIGRACION-HILO-FRESCO-21`.
 - Texto de autorización del operador: «Actualiza OCP para migrar instancia a hilo fresco y dame el prompt que necesito para reinstanciar».
 - Alcance de autorización: una transferencia de Metodología/Metacanon al próximo hilo fresco que ejecute el prompt de este evento. No autoriza migrar otros frentes.
