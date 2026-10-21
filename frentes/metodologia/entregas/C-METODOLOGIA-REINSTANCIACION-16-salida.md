@@ -46,7 +46,7 @@ Sam y GOW se escribieron en Notion y se leyeron de vuelta. Sam se comprobó como
 
 ## 5. Qué falta
 
-- **IPZ nativo:** el texto de 1208 caracteres está preparado en `/mnt/data/IPZ-CAMPO-CHATGPT.txt`, pero no se modificó el campo nativo de ChatGPT. Requiere pegado explícito por el operador y comprobación de lectura de vuelta.
+- **IPZ nativo:** el texto de 1208 caracteres está preparado en [IPZ-CAMPO-CHATGPT.txt](sandbox:/mnt/data/IPZ-CAMPO-CHATGPT.txt), pero no se modificó el campo nativo de ChatGPT. Requiere pegado explícito por el operador y comprobación de lectura de vuelta.
 - **Versionado GOW:** el encabezado sigue en v2.0; una corrección puntual al cuerpo alinea Metacanon a v1.17 sin que se haya cerrado una revisión con sello v2.1. El recibo GOW conserva una marca temporal de lectura anterior a la última sincronización y debe refrescarse.
 - **Unicidad global de folio:** se buscó colisión en el repo accesible `metodologia`, no en todos los repositorios de la organización. La unicidad organizacional no queda demostrada.
 - **Prueba externa y enforcement:** sigue pendiente probar este flujo en otro modelo/hilo. No existe un candado server-side que impida absolutamente a escritores no cooperantes eludir la titularidad; la norma se implementa mediante control, comparación de SHA/generación y read-back.
