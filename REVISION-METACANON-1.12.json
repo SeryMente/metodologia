@@ -1,0 +1,26 @@
+{
+  "schema": "revision-metacanon/1",
+  "version": "1.12",
+  "seal": "METACANON-OBJETOS-v1.12",
+  "cycle": "C-METODOLOGIA-RDC-GUI-12",
+  "base": {
+    "version": "1.11",
+    "blob": "31ed813b209c26186cc5210257d21aa4609caef2"
+  },
+  "rule": "RDC no autoriza la GUI del monitor activo del operador; solo CLI/headless salvo autorización específica y segundo monitor verificado.",
+  "affected_sections": [
+    "1",
+    "24",
+    "40"
+  ],
+  "incident": {
+    "identified_thread": "Signal Interpreter",
+    "admission": "Intentó automatización de accesibilidad y acciones visibles de Chrome; se detuvo."
+  },
+  "compatibility": "No cambia roles ni arquitectura; endurece el medio permitido para RDC.",
+  "verification": [
+    "operator verbatim preserved",
+    "incident admission preserved in chronicle",
+    "read-back pending at creation time"
+  ]
+}
