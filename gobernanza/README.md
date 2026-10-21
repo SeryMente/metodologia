@@ -11,7 +11,7 @@ La fuente canónica preponderante es este repositorio privado, SeryMente/metodol
 **Jerarquía normativa interna del contenido de main:**
 
 1. El Metaprompt Canónico de Samantha (Sam), v336 · NX-336m, establece el gobierno general documentado del espacio.
-2. Metacanon, versión 1.15 · METACANON-OBJETOS-v1.15, establece el método para crear, mantener, verificar y transferir frentes.
+2. Metacanon, versión 1.16 · METACANON-OBJETOS-v1.16, establece el método para crear, mantener, verificar y transferir frentes, incluida la fuente única del GOW.
 3. Los cánones, controles y procedimientos particulares gobiernan únicamente sus ámbitos y no anulan normas superiores.
 4. Las autorizaciones explícitas del operador habilitan los cambios dentro de su alcance; el estado adoptado solo se considera canónico una vez persistido y verificado en main.
 
@@ -30,3 +30,10 @@ Este ciclo prepara una copia puntual y referencias de gobierno; no instala un se
 ## C-METODOLOGIA-CONTINUIDAD-02
 
 Fuente actual adquirida y editada: Metaprompt v333 · NX-333m, con un principio añadido de continuidad por frentes y 34 previos preservados literalmente. Glosario central de Notion v1.6 conservado en `GLOSARIO-WORKSPACE.md` como espejo, no otro gobierno; el glosario metodológico de la raíz conserva su alcance propio. Estos números actualizan los de la migración inicial descrita arriba. Los espejos no instalan sincronización automática. La configuración nativa de Notion puede cargar otra página/revisión: comprobar fuente, no asumir vigencia.
+
+**Rectificación vigente por C-GOW-METODOLOGIA-GLOSARIOS-02 / Metacanon 1.16:** el glosario metodológico de la raíz dejó de tener autoridad propia. `GLOSARIO-OPERATIVO.md` es ahora un puntero de compatibilidad; su original v1.3.1 está preservado en `frentes/metodologia/antecedentes/GLOSARIO-OPERATIVO-v1.3.1.md`. El único glosario canónico es `gobernanza/GLOSARIO-WORKSPACE.md`, v1.9; contiene el corpus heredado con su procedencia y alcances. Esta rectificación supersede la afirmación histórica anterior y evita dos fuentes normativas.
+
+
+## C-GOW-METODOLOGIA-GLOSARIOS-02 · GOW único
+
+`gobernanza/GLOSARIO-WORKSPACE.md` v1.9 es la fuente terminológica canónica única. El GOW conserva la tradición previa del Workspace Khora, importa los términos pertinentes de `GLOSARIO-OPERATIVO.md` v1.3.1 con procedencia y alcance, y distingue entradas generales de vocabulario local. La página Notion fue actualizada desde main y leída de vuelta en v1.9. `GLOSARIO-OPERATIVO.md` permanece como puntero, con original verbatim en antecedentes. El anexo de gobernanza terminológica es subordinado y no otra fuente de términos.
