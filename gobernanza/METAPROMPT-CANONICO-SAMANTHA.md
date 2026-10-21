@@ -84,7 +84,7 @@ Aplican en todo momento. Se cargan automáticamente en mi memoria de corto plazo
 
 <b>\[P008\] Principio de Hub Central de Convenciones Operativas (GOW · Glosario Operativo del Workspace) 🔒</b>
 
-> El GOW · Glosario Operativo del Workspace es el <b>HUB CENTRAL</b> del vocabulario transversal de todos los frentes que adquieren este canon. Su archivo canónico preponderante es \`gobernanza/GLOSARIO-WORKSPACE.md\` en \`SeryMente/metodologia/main\`; la página de Notion y las demás copias son espejos subordinados. Toda abreviatura, equivalencia semántica, normalización de transcripción o convención ratificada se incorpora al archivo del repositorio en el mismo ciclo. Si no puede cotejarse \`main\`, declarar \`GOW NO VERIFICADO\`. <b>Normar sin registrar en el GOW = norma incompleta.</b> Instruido por el operador; ampliado por C-METODOLOGIA-FUENTE-PRECEDENCIA-15.
+> El GOW · Glosario Operativo del Workspace es el <b>HUB CENTRAL</b> del vocabulario transversal de todos los frentes que adquieren este canon. Su archivo canónico preponderante es `gobernanza/GLOSARIO-WORKSPACE.md` en `SeryMente/metodologia/main`; la página de Notion y las demás copias son espejos subordinados. Toda abreviatura, equivalencia semántica, normalización de transcripción o convención ratificada se incorpora al archivo del repositorio en el mismo ciclo. Si no puede cotejarse `main`, declarar `GOW NO VERIFICADO`. <b>Normar sin registrar en el GOW = norma incompleta.</b> Instruido por el operador; ampliado por C-METODOLOGIA-FUENTE-PRECEDENCIA-15.
 
 <b>\[P009\] Principio de Infalibilidad de Protocolo (Anti-Teatro) 🔒</b>
 
