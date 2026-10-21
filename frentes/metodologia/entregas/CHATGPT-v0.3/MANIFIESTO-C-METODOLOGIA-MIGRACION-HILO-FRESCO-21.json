@@ -179,12 +179,12 @@
     },
     "dialogue": {
       "path": "frentes/metodologia/conversaciones/C-METODOLOGIA-VERBATIM-E2E-22-dialogo.jsonl",
-      "blob": "d04dbbbd45295b640bba0162ea8fe11e61f3d395",
-      "entries": 12
+      "blob": "1cb6072f075e92078f57804f612ce6772e2a809a",
+      "entries": 13
     },
     "chronicle": {
       "path": "frentes/metodologia/cronica/C-METODOLOGIA-VERBATIM-E2E-22.md",
-      "blob": "83bf25e0580639e533c01fc00df0d0847f9f261c"
+      "blob": "93471f0a1cc013595ff2b20fc8d53af74cec0eaa"
     },
     "evidence": {
       "path": "frentes/metodologia/evidencias/C-METODOLOGIA-VERBATIM-E2E-22.json",
@@ -206,7 +206,7 @@
       "path": "frentes/metodologia/PENDIENTES.md",
       "blob": "75ed42c66fa5b937e8c36d099a31b9662c35168a"
     },
-    "status": "Current OCP artifacts are persisted and read-back verified. The latest E2E closeout, including the final consolidated manifest/source hashes, is authoritative in the linked current-cycle evidence JSON.",
+    "status": "OCP entrypoints, output, checklist, prompts, dialogue, chronicle and manifest are persisted and read-back verified. The authoritative latest execution result and source hashes are in the current-cycle evidence JSON.",
     "validation_history": [
       {
         "run": "preliminary",
@@ -218,6 +218,13 @@
       {
         "run": "consolidated-before-dialogue-and-chronicle-readback-sync",
         "commit": "1ff70cd720914bde94a9d4c14baf13074316bad7",
+        "result": "PASS",
+        "passed": 16,
+        "total": 16
+      },
+      {
+        "run": "consolidated-after-manifest-dialogue-chronicle-sync",
+        "commit": "9d10d1dc2d4f9d0308c496e015709e43743c2bbd",
         "result": "PASS",
         "passed": 16,
         "total": 16
