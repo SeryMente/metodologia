@@ -2,17 +2,37 @@
   "canonical_source": "https://github.com/SeryMente/metodologia/blob/main/gobernanza/GLOSARIO-WORKSPACE.md",
   "canonical_repository": "SeryMente/metodologia",
   "canonical_branch": "main",
-  "source_title": "Glosario Operativo del Workspace (GOW) · v1.8",
-  "canonical_blob_sha": "85063a030467afd308da00ebac4b284c6cec5d87",
-  "canonical_precedence": "Metacanon §43–44 establishes this repository file as preponderant for the shared glossary; Notion and copies in other workspaces are subordinate mirrors.",
-  "prior_notion_origin": "https://app.notion.com/p/247a418782418399a86001aae61ae938",
-  "current_notion_observation": {
-    "title": "Glosario Operativo del Workspace (GOW) · Canon v1.7",
-    "observed_version": "v1.7",
-    "status": "DIVERGENT_STALE_MIRROR"
+  "source_title": "Glosario Operativo del Workspace (GOW) · v1.9",
+  "canonical_blob_sha": "17bf150cf20532793b8d1b3e175e0330013df4d8",
+  "canonical_precedence": "Metacanon §43–45 establishes this repository file as the sole preponderant glossary. Notion and copies in other spaces are subordinate mirrors; GLOSARIO-OPERATIVO.md at the root is now only a compatibility pointer.",
+  "prior_notion_source": "https://app.notion.com/p/247a418782418399a86001aae61ae938",
+  "notion_mirror_readback": {
+    "url": "https://app.notion.com/p/247a418782418399a86001aae61ae938",
+    "title": "📜 Glosario Operativo del Workspace (GOW) · Canon v1.9",
+    "observed_title": "Glosario Operativo del Workspace (GOW) · Canon v1.9",
+    "last_edited_at": "2026-10-21T20:39:25.824Z",
+    "checks": {
+      "version": true,
+      "group10": true,
+      "ceceq": true,
+      "rdc": true,
+      "sam": true,
+      "khora": true,
+      "cycleReview": true,
+      "singleSource": true,
+      "nonActivation": true
+    },
+    "status": "VERIFIED_READBACK"
   },
-  "import_method": "The complete fetched Notion v1.7 body was imported into the repository mirror, retaining prior glossary groups and entries, and updated with source precedence and v1.8 provenance.",
+  "imported_corpus": {
+    "source_path": "GLOSARIO-OPERATIVO.md",
+    "source_version": "v1.3.1",
+    "source_blob_sha": "6b8d3a50f2ac235b5597989981a0eabee9e90d85",
+    "archived_verbatim_at": "frentes/metodologia/antecedentes/GLOSARIO-OPERATIVO-v1.3.1.md",
+    "imported_term_blocks": 49,
+    "method": "Merged terms into Group 10 with provenance and scope; duplicates were consolidated against the existing GOW entries; old root file is a pointer, not a glossary authority."
+  },
   "source_content_sha256": null,
-  "sync_status": "Repository main updated to v1.8; the Notion page still displays v1.7 in the observed fetch. Direct Notion write capability is not established; do not claim the mirror was synchronized. Canonical repository takes precedence.",
-  "hash_status": "SHA-256 was not recalculated; the Git blob SHA records the repository object."
+  "sync_status": "Repository main at GOW v1.9 was written to the Notion mirror and checked by read-back for title, version, Group 10, inherited CECEQ/RDC terms, Sam, contextual KHORA normalization, mandatory cycle review, repository precedence, and non-activation rule. Point-in-time sync only; no continuous GitHub↔Notion sync is installed.",
+  "hash_status": "SHA-256 was not recalculated; the Git blob SHA records the canonical repository object."
 }
