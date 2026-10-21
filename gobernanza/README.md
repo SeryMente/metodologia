@@ -1,6 +1,6 @@
 # Gobierno general de Ser y Mente
 
-El documento [Metaprompt Canónico de Samantha (Sam)](METAPROMPT-CANONICO-SAMANTHA.md), v338 · NX-338m, es el gobierno general del espacio de trabajo Ser y Mente, de la organización SeryMente y de este repositorio, por instrucción expresa del operador en el ciclo C-METODOLOGIA-GOBIERNO-01. Está subordinado a las reglas de cada plataforma y a las autorizaciones vigentes del operador; no crea herramientas ni permisos.
+El documento [Metaprompt Canónico de Samantha (Sam)](METAPROMPT-CANONICO-SAMANTHA.md), v339 · NX-339m, es el gobierno general del espacio de trabajo Ser y Mente, de la organización SeryMente y de este repositorio, por instrucción expresa del operador en el ciclo C-METODOLOGIA-GOBIERNO-01. Está subordinado a las reglas de cada plataforma y a las autorizaciones vigentes del operador; no crea herramientas ni permisos.
 
 La fuente canónica preponderante es este repositorio privado, SeryMente/metodologia, rama main. El repositorio define qué versión está vigente para el gobierno general, Metacanon, el GOW, los estados de frente, los controles y la evidencia documental. Notion, las instrucciones personalizadas, las memorias, las copias locales y las demás plataformas son superficies de trabajo o espejos subordinados; no desplazan main por fecha de edición ni por carga automática. Los recibos de fuente conservan la procedencia histórica y reportan cada espejo divergente sin fingir sincronización. Toda enmienda canónica se persiste primero en main y se verifica por lectura de vuelta; la propagación a Notion no se presume.
 
@@ -10,7 +10,7 @@ La fuente canónica preponderante es este repositorio privado, SeryMente/metodol
 
 **Jerarquía normativa interna del contenido de main:**
 
-1. El Metaprompt Canónico de Samantha (Sam), v338 · NX-338m, establece el gobierno general documentado del espacio.
+1. El Metaprompt Canónico de Samantha (Sam), v339 · NX-339m, establece el gobierno general documentado del espacio.
 2. Metacanon, versión 1.18 · METACANON-OBJETOS-v1.18, establece el método para crear, mantener, verificar y transferir frentes, incluida la fuente única del GOW.
 3. Los cánones, controles y procedimientos particulares gobiernan únicamente sus ámbitos y no anulan normas superiores.
 4. Las autorizaciones explícitas del operador habilitan los cambios dentro de su alcance; el estado adoptado solo se considera canónico una vez persistido y verificado en main.
@@ -47,3 +47,7 @@ El Metacanon v1.18 §§46–48 normaliza retomas de FT: búsqueda del repositori
 ## C-METODOLOGIA-OCP-DISCOVERY-17 · Compatibilidad de rutas OCP
 
 Metacanon v1.18 §48 y Sam v338 · NX-338m/P040 exigen descubrir el OCP por el nombre canónico del FT y sus artefactos. `frentes/<slug>/` es la ruta predeterminada para OCP nuevos; los existentes pueden conservar `docs/frentes/<slug>/` u otra ruta expresamente declarada, sin migración implícita ni controles duplicados. La búsqueda debe declarar el conjunto de repositorios accesibles, no fingir inventario completo de la organización. GOW v2.1 incorpora la misma regla; Notion e instrucciones personalizadas son espejos subordinados de main.
+
+## C-METODOLOGIA-GOW-HUB-19 · Distinción entre GOW y Hub de construcción
+
+Sam v339 · NX-339m corrige P008: el GOW es solo un glosario operativo de términos y convenciones semánticas; no es un Hub, coordinador ni orquestador de frentes. Metacanon v1.19 · METACANON-OBJETOS-v1.19 incorpora §49 y actualiza su estado vivo: en el contexto actual, el Hub de construcción es el frente de trabajo Metacanon y este hilo que construye el Marco. GOW v2.2 registra esta denominación con alcance contextual, sin universalizarla. BCR se alinea con la distinción y mantiene su subordinación a Sam/Metacanon. La revisión GOW por ciclo se conserva; el Hub y el glosario no son la misma entidad.
