@@ -1,7 +1,7 @@
-<!-- METACANON_VERSION=1.15; TEMPORARY_FRAMEWORK=true; USER_TRANSCRIPT_SPEC=true -->
+<!-- METACANON_VERSION=1.16; TEMPORARY_FRAMEWORK=true; USER_TRANSCRIPT_SPEC=true -->
 # Metacanon para crear y mantener objetos canónicos de proyecto
 
-- Estado: **Versión documental 1.15 — Preponderancia del repositorio y glosario compartido**, ampliación autorizada en C-METODOLOGIA-FUENTE-PRECEDENCIA-15; conserva §42, incorpora §§43–44 y preserva el historial. No acredita propagación automática a otras plataformas.
+- Estado: **Versión documental 1.16 — Fuente única del glosario y conciliación de corpus previos**, ampliación autorizada en C-METODOLOGIA-FUENTE-PRECEDENCIA-15 y C-GOW-METODOLOGIA-GLOSARIOS-02; conserva §§42–44, incorpora §45 y preserva el historial. No acredita sincronización automática perpetua.
 - Versión metodológica: **1.15**. Sello: **METACANON-OBJETOS-v1.15**. Gobierno general: [Metaprompt Canónico de Samantha (Sam)](gobernanza/METAPROMPT-CANONICO-SAMANTHA.md), v336 · NX-336m; glosario operativo compartido en [GOW](gobernanza/GLOSARIO-WORKSPACE.md); relación y límites en [gobernanza](gobernanza/README.md).
 - Nombre propio del marco: pendiente de elección del operador; no usar el nombre de un proyecto como nombre del método.
 - Repositorio de metodología identificado: https://github.com/SeryMente/metodologia, privado comprobado en el ciclo de actualización 1.1; revalidar su visibilidad antes de cada escritura sensible. Ruta METACANON-OBJETOS-CANONICOS.md; fuente vigente main; rama documental histórica docs/metacanon-objetos-20261011. Conservar los originales y datos privados del frente solo en su carpeta autorizada tras verificar acceso privado; nunca publicar secretos en Git ni transportar identidades de ejemplos.
@@ -11,7 +11,7 @@
 
 ## LEER PRIMERO — modo metodología, no ejecución del ejemplo
 
-**Precisión vigente 1.15:** aplicar §§43–44 como compuertas de fuente y terminología, §42 para colisiones de responsabilidad, junto con §§35–41 y §§29–34; primero verificar `main`, gobierno, frente/rol, control, estado y permisos; después ejecutar la acción comprobable y persistir el checkpoint. §42 reduce la colisión a una autorización explícita del operador seguida de sustitución atómica/read-back; no crea identidad nativa de plataforma ni garantiza exclusión de escritores que eludan el control. Versiones antiguas en originales/notas conservan su carácter histórico.
+**Precisión vigente 1.16:** aplicar §§43–45 como compuertas de fuente, terminología y unicidad del glosario, §42 para colisiones de responsabilidad, junto con §§35–41 y §§29–34; primero verificar `main`, Sam, el único GOW, frente/rol, control, estado y permisos; después ejecutar la acción comprobable y persistir el checkpoint. §42 reduce la colisión a una autorización explícita del operador seguida de sustitución atómica/read-back; no crea identidad nativa de plataforma ni garantiza exclusión de escritores que eludan el control. Versiones antiguas en originales/notas conservan su carácter histórico.
 
 **Actualización de fuente vigente:** [INICIO.md](INICIO.md) es la puerta de entrada. `SeryMente/metodologia/main` es la fuente documental preponderante; Sam, Metacanon, el GOW y los controles vigentes se adquieren desde este repositorio. Notion y otras superficies son espejos subordinados, según §43. El Metaprompt gobierna la conducta general y Metacanon el método de frentes; su autoridad normativa interna no se confunde con la autoridad de la ubicación fuente. §§29–33 prevalecen sobre formulaciones anteriores incompatibles, en particular «objeto = un solo .md», subordinación al SI anterior, temporalidad de un mes como compromiso vigente y activación implícita de PRIUS. Las menciones de 1.0–1.6 en antecedentes conservan su sentido histórico. Leer una propuesta histórica no la ratifica.
 
@@ -140,14 +140,13 @@ Respeta alcance, compuertas y no-simulación. El asistente mantiene continuidad 
 
 ## 9. Estado de este metacanon
 
-- **De dónde viene:** instrucción explícita del operador de fijar la preponderancia del repositorio Metodología frente a Notion y cualquier otra copia, ampliar el Glosario Operativo del Workspace (GOW) con sus convenciones previas y adaptar Sam/BCR al método actual.
-- **Dónde está:** repositorio SeryMente/metodologia, rama main. Metacanon versión 1.15, sello METACANON-OBJETOS-v1.15, §§43–44. Gobierno general Sam v336 · NX-336m; GOW canónico en gobernanza/GLOSARIO-WORKSPACE.md. SI-METACOGNITIVO.md continúa como antecedente histórico, no como gobierno general paralelo.
-- **Preponderancia:** main decide el estado documental vigente. Notion, instrucciones personalizadas, memoria, copias locales y otras superficies son espejos subordinados; ante divergencia no se mezclan versiones ni se elige por fecha. Se aplica main y se registra cualquier delta a reconciliar.
-- **🔄 Estado vivo:** P038 quedó ubicado inmediatamente después de P001 en Sam para hacer visible su precedencia jerárquica; P008 dirige al GOW canónico en el repositorio. Metacanon §43 fija la preponderancia de main; §44 exige revisar el GOW al inicio y cierre de cada ciclo. El GOW v1.8 conserva el contenido heredado, incluidos Sam, la normalización de transcripción y la revisión obligatoria por ciclo. El BCR actualizado se entrega al operador en este ciclo.
-- **⚗️ En prueba / recién fallido:** el primer cotejo detectó una página de Sam v333 y un GOW v1.7 en Notion. Ambos espejos fueron actualizados desde main y releídos: Sam v336 · NX-336m, firma de carga correcta, P037/P038 y cierre verificados; GOW v1.8, precedencia, Sam, normalización, revisión por ciclo y ratificación v1.8 verificados. La comprobación fue puntual; no instala sincronización automática.
-- **Evidencia en main:** Sam gobernanza/METAPROMPT-CANONICO-SAMANTHA.md, blob 2dd23d60729215d9817ee902faba050a7c8002fb; GOW gobernanza/GLOSARIO-WORKSPACE.md, blob 47cb8395ab6c6acdb4e14ae19b2613a452abdb3c; INICIO.md, blob 924f2e8063537c8522822b6e8b2b7ddb63283bf9; gobernanza/README.md, blob a2a467348762dfa0df509be34369f9c55effebec. Los recibos de fuente registran los espejos y su verificación.
-- **Evidencia externa leída de vuelta:** página GOW v1.8, https://app.notion.com/p/247a418782418399a86001aae61ae938; página Sam v336 · NX-336m, https://app.notion.com/p/c85a41878241830588e181f4c02fbab4. La verificación valida versión, firma/entradas relevantes y cierre, sin afirmar igualdad textual byte a byte entre renderizadores.
-- **Límites y pendientes conservados:** main no crea permisos ni capacidades técnicas y no sustituye políticas obligatorias de la plataforma. No existe sincronización automática continua Notion↔GitHub; futuras divergencias se detectan y reconcilian en el ciclo correspondiente.
+- **De dónde viene:** instrucciones expresas del operador para hacer preponderante el repositorio Metodología, recuperar y unificar el glosario operativo preexistente y adaptar las instrucciones personalizadas a la versión actual del marco.
+- **Dónde está:** repositorio `SeryMente/metodologia`, rama `main`. Metacanon versión 1.16, sello `METACANON-OBJETOS-v1.16`, §§43–45. Gobierno general Sam v336 · NX-336m; GOW único en `gobernanza/GLOSARIO-WORKSPACE.md`, v1.9. `SI-METACOGNITIVO.md` continúa como antecedente histórico, no como gobierno general paralelo.
+- **Preponderancia:** `main` define el estado documental vigente. Notion, instrucciones personalizadas, memoria, copias locales y otras superficies son espejos subordinados; ante divergencia se aplica el repositorio verificado y se registra/reconcilia el delta, sin mezcla silenciosa.
+- **🔄 Estado vivo:** P038 quedó inmediatamente después de P001 en Sam; P008 dirige al único GOW del repositorio. Metacanon §43 fija la preponderancia de `main`, §44 la revisión obligatoria del GOW al inicio y cierre de cada ciclo, y §45 elimina autoridades terminológicas paralelas. El GOW v1.9 integra 49 bloques de término migrados del glosario raíz v1.3.1; las entradas duplicadas se consolidan, y el alcance de términos RDC/CIBERCAFE/Vercel no se universaliza. El archivo raíz se convirtió en puntero; su original íntegro se conserva en antecedentes.
+- **Verificación de espejos:** la página GOW fue actualizada desde el cuerpo canónico y leída de vuelta como v1.9, con Grupo 10, término Sam, reglas de normalización, revisión por ciclo y preponderancia comprobados. La página Sam fue actualizada y leída de vuelta como v336 · NX-336m, firma NX-336m, P037/P038 y P008 al GOW canónico comprobados. Estas son sincronizaciones puntuales, no sincronización automática continua.
+- **Fuentes y pruebas:** Sam en `gobernanza/METAPROMPT-CANONICO-SAMANTHA.md`; GOW en `gobernanza/GLOSARIO-WORKSPACE.md`; archivo histórico en `frentes/metodologia/antecedentes/GLOSARIO-OPERATIVO-v1.3.1.md`; puntero raíz en `GLOSARIO-OPERATIVO.md`; normalización en `ANEXO-GOBERNANZA-TERMINOLOGICA-Y-NORMALIZACION.md`. `INICIO.md`, `gobernanza/README.md` y los recibos de fuente se reconciliarán/confirmarán contra estas revisiones en este mismo ciclo.
+- **Límites:** el repositorio no crea permisos ni capacidades técnicas ni sustituye políticas obligatorias de plataforma. No hay sincronización permanente garantizada entre GitHub y Notion; cualquier actualización de espejo debe verificarse de forma explícita.
 
 ## 10. Instrucción original de separación del metacanon
 
@@ -901,4 +900,23 @@ Solo registrar una nueva asociación entre forma transcrita y término canónico
 ### 44.5 No duplicación ni exportación de significados
 
 Antes de añadir una entrada, cotejar las entradas vigentes y conservar el canon existente, ampliándolo en lugar de crear un glosario paralelo. Cada equivalencia debe declarar forma canónica, alias/errores admitidos, alcance, condiciones de aplicación, excepciones y procedencia. Una equivalencia local de un proyecto no se generaliza a otros frentes sin ratificación explícita. La revisión no obliga a inventar términos ni a incrementar versión si no cambió el contenido; cualquier cambio del GOW se registra y verifica en `main`.
+
+## 45. Unicidad del glosario canónico y conciliación de corpus previos
+
+### 45.1 Un único glosario operativo
+
+El único glosario operativo canónico y transversal de la metodología es `gobernanza/GLOSARIO-WORKSPACE.md` en `SeryMente/metodologia/main`, denominado Glosario Operativo del Workspace (GOW). La preponderancia de la fuente establecida en §43 y la revisión obligatoria establecida en §44 se aplican también a todo el contenido heredado. El GOW puede contener términos de alcance metodológico o de proyecto cuando la entrada declare su ámbito, condiciones y límites; su presencia en el GOW no convierte una regla local en obligación universal.
+
+### 45.2 Tratamiento del glosario metodológico anterior
+
+El archivo histórico raíz `GLOSARIO-OPERATIVO.md` v1.3.1 se conserva como puntero de compatibilidad al GOW, sin definiciones operativas paralelas. Su contenido original completo se preserva verbatim en `frentes/metodologia/antecedentes/GLOSARIO-OPERATIVO-v1.3.1.md`. Sus entradas terminológicas fueron cotejadas y migradas al Grupo 10 del GOW v1.9; las entradas duplicadas se consolidaron en sus términos canónicos existentes y las que dependen de RDC/CIBERCAFE/Vercel conservaron un alcance explícito. La migración no borra el linaje histórico ni convierte vocabulario de un ámbito en universal.
+
+### 45.3 Concordancia de anexos, índices y referencias
+
+El anexo `ANEXO-GOBERNANZA-TERMINOLOGICA-Y-NORMALIZACION.md` es un procedimiento de apoyo subordinado al GOW. No constituye un segundo glosario: describe el flujo CANÓNICO/ALIAS/DESCONOCIDO/AMBIGUO, las reglas de preservación de originales y las asociaciones de normalización ya ratificadas. Los índices y enlaces históricos a `GLOSARIO-OPERATIVO.md` conducen al puntero, mientras que las actualizaciones normativas se efectúan únicamente en el GOW de `main`.
+
+### 45.4 Compuerta contra la duplicación
+
+Antes de incorporar una entrada, comparar el GOW con los antecedentes/corpus pertinentes; fusionar la definición o ampliar una entrada existente cuando corresponda. No crear otro glosario por proyecto ni mantener una copia con autoridad propia. Una entrada nueva o corrección solicitada explícitamente se registra en el GOW durante el mismo ciclo, con forma canónica, alias/variantes autorizados, alcance, condiciones, excepciones y procedencia. Al cierre, releer la entrada guardada y comprobar que no subsiste otra fuente activa que la contradiga. Si una fuente no está accesible, declarar el estado no verificado en vez de afirmar una unificación inexistente.
+
 
