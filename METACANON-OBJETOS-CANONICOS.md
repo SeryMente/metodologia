@@ -2,7 +2,7 @@
 # Metacanon para crear y mantener objetos canónicos de proyecto
 
 - Estado: **Versión documental 1.16 — Fuente única del glosario y conciliación de corpus previos**, ampliación autorizada en C-METODOLOGIA-FUENTE-PRECEDENCIA-15 y C-GOW-METODOLOGIA-GLOSARIOS-02; conserva §§42–44, incorpora §45 y preserva el historial. No acredita sincronización automática perpetua.
-- Versión metodológica: **1.15**. Sello: **METACANON-OBJETOS-v1.15**. Gobierno general: [Metaprompt Canónico de Samantha (Sam)](gobernanza/METAPROMPT-CANONICO-SAMANTHA.md), v336 · NX-336m; glosario operativo compartido en [GOW](gobernanza/GLOSARIO-WORKSPACE.md); relación y límites en [gobernanza](gobernanza/README.md).
+- Versión metodológica: **1.16**. Sello: **METACANON-OBJETOS-v1.16**. Gobierno general: [Metaprompt Canónico de Samantha (Sam)](gobernanza/METAPROMPT-CANONICO-SAMANTHA.md), v336 · NX-336m; único glosario operativo compartido en [GOW](gobernanza/GLOSARIO-WORKSPACE.md), v1.9; relación y límites en [gobernanza](gobernanza/README.md).
 - Nombre propio del marco: pendiente de elección del operador; no usar el nombre de un proyecto como nombre del método.
 - Repositorio de metodología identificado: https://github.com/SeryMente/metodologia, privado comprobado en el ciclo de actualización 1.1; revalidar su visibilidad antes de cada escritura sensible. Ruta METACANON-OBJETOS-CANONICOS.md; fuente vigente main; rama documental histórica docs/metacanon-objetos-20261011. Conservar los originales y datos privados del frente solo en su carpeta autorizada tras verificar acceso privado; nunca publicar secretos en Git ni transportar identidades de ejemplos.
 - Archivo estable propuesto: `METACANON-OBJETOS-CANONICOS.md`.
@@ -48,6 +48,7 @@ Antes de cada ciclo comprobar la versión de este metacanon y del objeto del pro
 18. Una conexión RDC nunca autoriza utilizar la interfaz gráfica del monitor activo del operador. En un equipo compartido, el trabajo remoto es solo terminal/CLI o ejecución headless no visible; la GUI requiere autorización específica y un segundo monitor verificado (§40).
 19. En la ubicación `CENTRAL\fila4`, la raíz operativa es el `Win32_UserProfile.LocalPath` asociado al SID de fila4; `C:\Users\MantenimientoRCI\` pertenece a otra cuenta y está prohibido. Variables del proceso remoto o redirecciones que apunten al perfil prohibido bloquean la operación (§41; Metaprompt P036).
 20. El contenido documental/metodológico, las definiciones operativas y el estado de los frentes se rigen por la revisión verificada de `SeryMente/metodologia/main`; Notion, instrucciones personalizadas y demás copias no la desplazan (§43). El GOW debe revisarse en cada ciclo sin excepción (§44).
+21. Existe un solo glosario operativo canónico: `gobernanza/GLOSARIO-WORKSPACE.md` en `main`. Los glosarios anteriores se integran o se convierten en punteros, y sus originales completos se preservan en antecedentes; ninguna copia o anexo puede ejercer autoridad terminológica paralela (§45).
 
 ## 2. Insumos y creación
 
