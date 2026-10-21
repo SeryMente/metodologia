@@ -24,18 +24,17 @@
   },
   "final_e2e": {
     "result": "PASS",
-    "passed": 16,
-    "total": 16,
+    "passed": 17,
+    "total": 17,
     "exit_code": 0,
-    "executed_at": "2026-10-21T23:33:59.699Z",
-    "source_commit": "a67428370575f8e89690bd0caada610e4950f507",
+    "executed_at": "2026-10-21T23:37:35.353Z",
+    "source_commit": "67d63b015ab5802152e57db73e26a3ded21cc35f",
     "environment": {
       "platform": "win32",
       "node": "v22.23.3",
       "host": "PC10RCIF4EI4"
     },
-    "result_schema": "metodologia-verbatim-e2e/1",
-    "scope": "nine original operator requirements plus their persisted artifacts; artifact-chain test only, not LLM semantic acceptance or native IPZ settings read-back",
+    "scope": "nine original operator requirements plus their persisted artifacts; artifact-chain test only, not LLM semantic acceptance or native ChatGPT settings read-back",
     "records": [
       {
         "id": "V01-un-repositorio-admite-multiples-FT",
@@ -98,6 +97,10 @@
         "passed": true
       },
       {
+        "id": "manifest-blob-actual-de-dialogo-cronica-y-readme",
+        "passed": true
+      },
+      {
         "id": "manifest-y-salida-generica-no-declaran-transferencia-pendiente",
         "passed": true
       }
@@ -114,32 +117,17 @@
       "frentes/metodologia/entregas/CHATGPT-v0.3/C-METODOLOGIA-AUDITORIA-REQUISITOS-20-salida-final.md": "6920ddf8e0af893d7017d050d0d5af62fabc77a912d25c81ac4533d79ed269ea",
       "frentes/metodologia/entregas/CHATGPT-v0.3/CHECKLIST-VERBATIM-21.md": "9d7a08f71fbc4e0731bf84aa3d61e67e78334ce79b9fd4a6fe0b0412f92fefa5",
       "frentes/metodologia/PENDIENTES.md": "80507a124614b149bd903aae806f11605b2fc3f89d9e044d1a0a2d332e874877",
-      "frentes/metodologia/README.md": "a2b1f6e60b34e3cf57ad88febf870547ad997bf582e188f3b49b17541cd8014f",
+      "frentes/metodologia/README.md": "bfb3c12060f6df2c26c79cb78ba84e827dc00befc1201a9544bf73cb7f09c593",
       "frentes/metodologia/entregas/CHATGPT-v0.3/PROMPT-CONTINUIDAD-METODOLOGIA-VERBATIM-E2E-22.txt": "1779e3637e2de7aaff08c403f6e71455991c12902e62d2550fc0edf7e5c949d1",
       "frentes/metodologia/entregas/CHATGPT-v0.3/PROMPT-MIGRACION-HILO-FRESCO-21.txt": "9c6482c587096aafabbaf6a9ae7ac6c8aa5e14bae7aa33e9ec33766be4872ce5",
       "frentes/metodologia/entregas/CHATGPT-v0.3/CHECKPOINT-MIGRACION-HILO-FRESCO-21.md": "e2fd0ac9df89625181eb19ca2dd85ca0798157f138449577eacc7382ad9e7a2f",
       "frentes/metodologia/entregas/CHATGPT-v0.3/LEEME.md": "690311b81868fdd7b5435529422c35cee861bce7e5b4a88f9eb5fc9e4cf78ffe",
       "frentes/metodologia/entregas/CHATGPT-v0.3/PROMPT-ENTRADA.txt": "81470bdf49a7ceffe196bd427e371151291f9c0441f8882751b3e2d5ebb9fef1",
-      "frentes/metodologia/entregas/CHATGPT-v0.3/MANIFIESTO-C-METODOLOGIA-MIGRACION-HILO-FRESCO-21.json": "f120abcb5d9cf4c4dd557cc75d5557954be56f312e0d73a2ebf22645cc417f3b",
+      "frentes/metodologia/entregas/CHATGPT-v0.3/MANIFIESTO-C-METODOLOGIA-MIGRACION-HILO-FRESCO-21.json": "bcc177624df3385dd182406cdf9f33104b4dd647fdafdc99a8490150559d4c45",
       "frentes/metodologia/entregas/CHATGPT-v0.3/C-METODOLOGIA-MIGRACION-HILO-FRESCO-21-salida-final.md": "20dc8fcf5134d27b7846bf27b228391bf70c89e296ccbefb5f60ffdffa82381f",
-      "frentes/metodologia/entregas/CHATGPT-v0.3/C-METODOLOGIA-VERBATIM-E2E-22-salida-final.md": "d14658fc0b225044d2cce3d0d551a91abd09833978f711d2fd913aa2f81bfbed"
-    },
-    "source_blobs": {
-      "inicio": "4dd3e16b61405c0bf60afead4054af6f36b7f917",
-      "sam": "fdc996078bd611492e46d6b3abf569fbb4a6effa",
-      "metacanon": "99cddf94b2b52d3bd1140112d198d50a5e274a7d",
-      "gow": "6d4f8aff292ae173d9ceeba03694597bd2f16488",
-      "control": "08f0ac0e9e3797d44f6f0827fabf90eb1cd139e0",
-      "pending": "75ed42c66fa5b937e8c36d099a31b9662c35168a",
-      "manifest": "d49e932d1dafe0beed4fd2efb76cdb9623dddbfa",
-      "checklist": "c65e634644e6088c60ea84d00794137d746062f8",
-      "test": "1a122abe316b759396fae64b161636833a313f34",
-      "prompt_continuity": "51ef7b85ac59f79f3dda2776c5fb3a0e4da1aa24",
-      "readme": "19d94b0b852f3ac93a13e4cf440fead869f805e2",
-      "output": "51450a8a9daef2661530d69c92aaf8ca046c07c0",
-      "dialogue": "1cb6072f075e92078f57804f612ce6772e2a809a",
-      "chronicle": "93471f0a1cc013595ff2b20fc8d53af74cec0eaa",
-      "ipz": "ff456fbc02f60c93d0dc35a70ee602ceb47626c8"
+      "frentes/metodologia/entregas/CHATGPT-v0.3/C-METODOLOGIA-VERBATIM-E2E-22-salida-final.md": "d14658fc0b225044d2cce3d0d551a91abd09833978f711d2fd913aa2f81bfbed",
+      "frentes/metodologia/conversaciones/C-METODOLOGIA-VERBATIM-E2E-22-dialogo.jsonl": "4793f3d982ab2178378fd2b5208218f350c789434a4e9d5247cf1e7bdfddc4ac",
+      "frentes/metodologia/cronica/C-METODOLOGIA-VERBATIM-E2E-22.md": "ff58e26f607f5669c1bade44af7e87b715ac6c1871f0078a2e84892dd7d37d85"
     }
   },
   "historical_runs": [
@@ -253,14 +241,22 @@
           "passed": 16,
           "total": 16,
           "commit": "a67428370575f8e89690bd0caada610e4950f507"
+        },
+        {
+          "attempt": 8,
+          "result": "PASS",
+          "passed": 17,
+          "total": 17,
+          "commit": "67d63b015ab5802152e57db73e26a3ded21cc35f",
+          "executed_at": "2026-10-21T23:37:35.353Z"
         }
       ],
       "final_attempt": {
         "result": "PASS",
-        "passed": 16,
-        "total": 16,
-        "commit": "a67428370575f8e89690bd0caada610e4950f507",
-        "executed_at": "2026-10-21T23:33:59.699Z"
+        "passed": 17,
+        "total": 17,
+        "commit": "67d63b015ab5802152e57db73e26a3ded21cc35f",
+        "executed_at": "2026-10-21T23:37:35.353Z"
       }
     }
   ],
@@ -309,18 +305,19 @@
     },
     "dialogue": {
       "path": "frentes/metodologia/conversaciones/C-METODOLOGIA-VERBATIM-E2E-22-dialogo.jsonl",
-      "blob_sha": "1cb6072f075e92078f57804f612ce6772e2a809a",
-      "entries": 13,
+      "blob_sha": "f2c6ce93d66921ad2c0e08934e80adfc0b48e323",
+      "entries": 15,
       "commit": "70facbce2d1bde1313f6b2be36e7a61928f91d4e"
     },
     "chronicle": {
       "path": "frentes/metodologia/cronica/C-METODOLOGIA-VERBATIM-E2E-22.md",
-      "blob_sha": "93471f0a1cc013595ff2b20fc8d53af74cec0eaa",
+      "blob_sha": "61ed65b8054654d9a641c6ee54c425e708bc94d9",
       "commit": "8154d7b2dcd4d3e5eb2b8f0e48fe5055333d4695"
     },
     "e2e_script": {
       "path": "frentes/metodologia/pruebas/continuidad/C-METODOLOGIA-VERBATIM-E2E-22.cjs",
-      "blob_sha": "1a122abe316b759396fae64b161636833a313f34"
+      "blob_sha": "c7e25fa907c7375f131ffc8989b0277505ce56c0",
+      "test_count": 17
     },
     "prompt_continuity": {
       "path": "frentes/metodologia/entregas/CHATGPT-v0.3/PROMPT-CONTINUIDAD-METODOLOGIA-VERBATIM-E2E-22.txt",
@@ -328,7 +325,14 @@
     },
     "manifest": {
       "path": "frentes/metodologia/entregas/CHATGPT-v0.3/MANIFIESTO-C-METODOLOGIA-MIGRACION-HILO-FRESCO-21.json",
-      "blob_sha": "d49e932d1dafe0beed4fd2efb76cdb9623dddbfa"
-    }
+      "blob_sha": "df471d485dda578d3ee611b75220e622d5479786"
+    },
+    "ocp_entrypoint": {
+      "path": "frentes/metodologia/README.md",
+      "blob_sha": "b84fa52d4aa10a527c779bea2c6df26a70e1d894",
+      "status": "updated_and_readback_verified",
+      "previous_sha": "19d94b0b852f3ac93a13e4cf440fead869f805e2"
+    },
+    "readme_blob_sha": "b84fa52d4aa10a527c779bea2c6df26a70e1d894"
   }
 }
