@@ -2,11 +2,14 @@
 
 Punto de entrada de lectura; no es otro objeto de estado ni otra autoridad.
 
+**Fuente de verdad preponderante:** el repositorio SeryMente/metodologia, rama main. Notion, las instrucciones personalizadas, las memorias y las copias locales son espejos subordinados. Ante divergencia, prevalece main; si no puede verificarse, declarar METODOLOGÍA NO VERIFICADA.
+
 1. Adquiere el [gobierno general: Metaprompt Canónico de Samantha](gobernanza/METAPROMPT-CANONICO-SAMANTHA.md). Consulta [procedencia, alcance y límites](gobernanza/README.md). No asumir que el contenido se cargó por recibir solo un enlace.
-2. Para crear, mantener o retomar un frente, adquiere el [Metacanon](METACANON-OBJETOS-CANONICOS.md), su LEER PRIMERO, §9 y §§29–42; consulta después las reglas pertinentes restantes. Versión 1.14, sello METACANON-OBJETOS-v1.14. El núcleo ligero y separación de antecedentes siguen pendientes: este índice no constituye esa refactorización.
-3. Identifica el frente y su núcleo operativo único; lee gobierno particular, estado, pendientes y siguiente paso, y solo después los materiales que exija la tarea. No activar proyectos o protocolos por aparecer en una cita.
-4. Comprueba revisión y frescura de lo adquirido por los medios efectivamente disponibles. Sin lectura directa del repositorio, utiliza copias completas suministradas por el operador y declara su procedencia/frescura; nunca afirmar una lectura o escritura de GitHub inexistente. El transporte manual es una vía de contingencia, no cumplimiento de sincronización automática.
-5. Conserva originales/crónica, actualiza el estado y verifica el guardado al finalizar conforme al método. No hay memoria ni tareas en segundo plano garantizadas por estos archivos.
+2. Para crear, mantener o retomar un frente, adquiere el [Metacanon](METACANON-OBJETOS-CANONICOS.md), su LEER PRIMERO, §9 y §§29–44; consulta después las reglas pertinentes restantes. Versión 1.15, sello METACANON-OBJETOS-v1.15. En particular, aplica §43 para precedencia de fuente y §44 para revisión del glosario en cada ciclo, sin excepción. El núcleo ligero y separación de antecedentes siguen pendientes: este índice no constituye esa refactorización.
+3. Adquiere y revisa el [Glosario Operativo del Workspace (GOW)](gobernanza/GLOSARIO-WORKSPACE.md) desde main al inicio y al cierre de cada ciclo; nunca confíes en una copia externa cuando difiera.
+4. Identifica el frente y su núcleo operativo único; lee gobierno particular, estado, pendientes y siguiente paso, y solo después los materiales que exija la tarea. No activar proyectos o protocolos por aparecer en una cita.
+5. Comprueba revisión y frescura de lo adquirido por los medios efectivamente disponibles. Sin lectura directa del repositorio, utiliza copias completas suministradas por el operador y declara su procedencia/frescura; nunca afirmar una lectura o escritura de GitHub inexistente. El transporte manual es una vía de contingencia, no cumplimiento de sincronización automática.
+6. Conserva originales/crónica, actualiza el estado y verifica el guardado al finalizar conforme al método. No hay memoria ni tareas en segundo plano garantizadas por estos archivos.
 
 ## Pendientes destacados
 
