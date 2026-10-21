@@ -40,5 +40,50 @@
       "SeryMente/metodologia:frentes/acceso/CONTROL-RESPONSABILIDAD.json",
       "SeryMente/metodologia:frentes/metodologia/CONTROL-RESPONSABILIDAD.json"
     ]
+  },
+  "handoff_preparation": {
+    "event_id": "C-METODOLOGIA-MIGRACION-HILO-FRESCO-21",
+    "status": "prepared_waiting_for_target_claim",
+    "prepared_on": "2026-10-21",
+    "prepared_from": {
+      "owner_thread": "operator-authorized-transfer:C-METODOLOGIA-COLISION-RESPONSABILIDAD-14",
+      "instance": "chatgpt-metacanon-collision-remediation-2026-10-21",
+      "generation": 2,
+      "session_folio": "SES-20261021-C4D81A7F",
+      "control_blob_sha_before": "f810835002e235ebd12cedc75a02678aa1073f2b"
+    },
+    "operator_authorization": {
+      "status": "explicit",
+      "verbatim": "Actualiza OCP para migrar instancia a hilo fresco y dame el prompt que necesito para reinstanciar",
+      "scope": "single transfer of the Metodología/Metacanon front to the next fresh thread that uses the migration prompt; no other FT",
+      "prompt_reuse": "one successful claim only; CAS prevents a second claimant using the same prepared state"
+    },
+    "source_policy": {
+      "owner_remains_recorded_until_destination_CAS": true,
+      "freeze_project_mutations_after_package_preparation": true,
+      "allow_only_readback_and_handoff_evidence": true
+    },
+    "target": {
+      "status": "not_yet_instantiated",
+      "target_thread": "to_be_identified_by_the_fresh_conversation",
+      "target_instance": "to_be_set_by_destination_as_operational_alias",
+      "target_folio_format": "SES-AAAAMMDD-XXXXXXXX",
+      "identity_kind": "operational alias; not a native platform thread ID"
+    },
+    "artifacts": {
+      "prompt": "frentes/metodologia/entregas/CHATGPT-v0.3/PROMPT-MIGRACION-HILO-FRESCO-21.txt",
+      "checkpoint": "frentes/metodologia/entregas/CHATGPT-v0.3/CHECKPOINT-MIGRACION-HILO-FRESCO-21.md",
+      "last_persisted_output": "frentes/metodologia/entregas/CHATGPT-v0.3/C-METODOLOGIA-AUDITORIA-REQUISITOS-20-salida-final.md"
+    },
+    "transfer_contract": {
+      "read_live_control_again_before_write": true,
+      "require_event_and_source_identity_generation_folio_match": true,
+      "new_generation": "observed_generation_plus_one",
+      "require_sha_conditioned_write": true,
+      "preserve_previous_owner_folio_and_history": true,
+      "readback_required": true,
+      "blind_retry_prohibited": true,
+      "if_conflict_or_no_write": "stop; remain read-only; declare transfer not completed"
+    }
   }
 }
