@@ -1,7 +1,7 @@
 {
   "event": "C-METODOLOGIA-MIGRACION-HILO-FRESCO-21",
   "date": "2026-10-21",
-  "status": "handoff_prepared_waiting_for_target_claim; ownership_not_transferred",
+  "status": "handoff_transferred_and_readback_verified; one_time_prompt_consumed",
   "source": {
     "repository": "SeryMente/metodologia",
     "branch": "main",
@@ -26,9 +26,11 @@
     "scope": "one transfer of Metodología/Metacanon to the next fresh thread using this prompt; no other FT"
   },
   "destination": {
-    "identity": "not yet instantiated",
-    "action": "new thread generates unique folio and operational alias, then claims by CAS/read-back",
-    "must_not_claim_before_readback": true
+    "identity": "chatgpt-C-METODOLOGIA-MIGRACION-HILO-FRESCO-21-SES-20261021-6B9E2F41",
+    "instance": "chatgpt-metodologia-metacanon-migracion21-6B9E2F41",
+    "folio": "SES-20261021-6B9E2F41",
+    "generation": 3,
+    "action": "transfer completed via SHA-conditioned control update and canonical read-back"
   },
   "current_governance": {
     "metacanon": "1.19 / METACANON-OBJETOS-v1.19",
@@ -76,6 +78,26 @@
     "metacanon": {
       "path": "METACANON-OBJETOS-CANONICOS.md",
       "blob": "4ff1090d1174575133f9355d0bb98dc55041e2d7"
+    },
+    "current_continuation_prompt": {
+      "path": "frentes/metodologia/entregas/CHATGPT-v0.3/PROMPT-CONTINUIDAD-METODOLOGIA-VERBATIM-E2E-22.txt",
+      "blob": "338a6ae8b6130897705ce002e11e133f37503eb1"
+    },
+    "current_checklist": {
+      "path": "frentes/metodologia/entregas/CHATGPT-v0.3/CHECKLIST-VERBATIM-21.md",
+      "blob": "c65e634644e6088c60ea84d00794137d746062f8"
+    },
+    "ocp_entrypoint": {
+      "path": "frentes/metodologia/README.md",
+      "blob": "19d94b0b852f3ac93a13e4cf440fead869f805e2"
+    },
+    "e2e_test": {
+      "path": "frentes/metodologia/pruebas/continuidad/C-METODOLOGIA-VERBATIM-E2E-22.cjs",
+      "blob": "7ea4dab3167fd64b5e47c5a1c78cc7b432fe0232"
+    },
+    "current_output": {
+      "path": "frentes/metodologia/entregas/CHATGPT-v0.3/C-METODOLOGIA-VERBATIM-E2E-22-salida-final.md",
+      "status": "pending_end_of_cycle_persistence"
     }
   },
   "native_ipz_status": "current native field cannot be read by these tools; previous user confirmation concerned a prior 1432-character revision; canonical current artifact is 1451 characters.",
@@ -90,18 +112,37 @@
   ],
   "handoffPreparation": {
     "event_id": "C-METODOLOGIA-MIGRACION-HILO-FRESCO-21",
-    "status": "prepared_waiting_for_target_claim",
+    "status": "transferred",
     "explicit_operator_authorization": true,
-    "transfer_complete": false,
-    "target_identity": "not yet instantiated",
-    "transferComplete": false
+    "transfer_complete": true,
+    "target_identity": "chatgpt-C-METODOLOGIA-MIGRACION-HILO-FRESCO-21-SES-20261021-6B9E2F41",
+    "transferComplete": true,
+    "completed_on": "2026-10-21",
+    "target_instance": "chatgpt-metodologia-metacanon-migracion21-6B9E2F41",
+    "target_folio": "SES-20261021-6B9E2F41",
+    "target_generation": 3,
+    "transfer_commit": "d2b070183fe0b0fcc21279dcdd862234fcdd9374",
+    "target_control_readback_sha": "08f0ac0e9e3797d44f6f0827fabf90eb1cd139e0"
   },
   "closing_conditions": [
-    "target opens a fresh conversation and reads current main",
-    "source identity/generation/folio and prepared event all still match",
-    "target generates a fresh folio and operational alias, no native ID fabricated",
-    "target updates CONTROL-RESPONSABILIDAD.json via SHA-conditioned write, increments generation by one, preserves prior owner/folio/history",
-    "target reads the control back and verifies exact owner/instance/folio/generation/event",
-    "only then target may claim ownership and perform project mutations"
-  ]
+    "Completed: destination checked the prepared event and source generation/folio/owner.",
+    "Completed: destination generated a new folio/operational alias and performed a SHA-conditioned control update.",
+    "Completed: destination read the control back and verified owner, instance, folio, generation and event.",
+    "Completed: Metacanon §9 was updated and read back.",
+    "Completed: one-time migration prompt and transport entrypoints marked consumed/current.",
+    "Still open: native IPZ field equality cannot be read or written through the available connectors.",
+    "Still open: semantic validation by an independent model/thread; mechanical tests do not prove model comprehension.",
+    "Still open: global uniqueness / all organization repositories / server-side writer fencing are not claimed."
+  ],
+  "currentControl": {
+    "path": "frentes/metodologia/CONTROL-RESPONSABILIDAD.json",
+    "blob": "08f0ac0e9e3797d44f6f0827fabf90eb1cd139e0",
+    "commit": "d2b070183fe0b0fcc21279dcdd862234fcdd9374",
+    "status": "owned",
+    "generation": 3,
+    "folio": "SES-20261021-6B9E2F41",
+    "owner_thread_alias": "chatgpt-C-METODOLOGIA-MIGRACION-HILO-FRESCO-21-SES-20261021-6B9E2F41",
+    "instance": "chatgpt-metodologia-metacanon-migracion21-6B9E2F41",
+    "identity_kind": "operational alias; native conversation ID unavailable"
+  }
 }
