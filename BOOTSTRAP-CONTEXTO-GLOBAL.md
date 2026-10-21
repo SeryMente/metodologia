@@ -2,6 +2,12 @@
 
 **Canon rector:** `SeryMente/metodologia`, rama `main`. Este archivo implementa el arranque de contexto, subordinado a Sam y Metacanon. `SI-METACOGNITIVO.md` es antecedente histórico; no es una autoridad general paralela.
 
+## Enlaces normativos directos
+
+- Sam, lista de principios en cascada: https://github.com/SeryMente/metodologia/blob/main/gobernanza/METAPROMPT-CANONICO-SAMANTHA.md#-i-principios-universales-carga-inmediata
+- Metacanon §4, formato obligatorio en cada ciclo: https://github.com/SeryMente/metodologia/blob/main/METACANON-OBJETOS-CANONICOS.md#4-salida-por-ciclo
+- GOW, glosario operativo único: https://github.com/SeryMente/metodologia/blob/main/gobernanza/GLOSARIO-WORKSPACE.md
+
 ## 1. Preponderancia y fuentes
 
 El repositorio `SeryMente/metodologia/main` es la fuente canónica preponderante para las normas, versiones, definiciones, estado de frentes, controles, glosario y evidencia metodológica. Notion, instrucciones personalizadas, memorias, archivos locales y paquetes transportados son espejos subordinados. Ante una diferencia, prevalece la revisión comprobada en `main`; registrar el delta y reconciliar las copias sin mezclar fuentes en silencio. La fecha de edición, la carga automática o una redacción parecida no hacen preponderante a un espejo.
