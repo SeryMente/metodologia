@@ -63,5 +63,19 @@
     "No continuous GitHub↔Notion synchronization installed.",
     "Organization-wide unique folio absence not proven by code search.",
     "SHA-256 content hashes not recalculated; Git blob SHAs are used."
-  ]
+  ],
+  "artifacts": {
+    "chronicle": {
+      "path": "frentes/metodologia/cronica/C-METODOLOGIA-REINSTANCIACION-16.md",
+      "blob": "dbbd641c49ae2ca29081147ac9b8e93e39e7ea77"
+    },
+    "dialogue": {
+      "path": "frentes/metodologia/conversaciones/C-METODOLOGIA-REINSTANCIACION-16-dialogo.jsonl",
+      "blob": "767068c9ff00bdb3f78f70d84ffd56bd122a8b63"
+    },
+    "evidence": {
+      "path": "frentes/metodologia/evidencias/C-METODOLOGIA-REINSTANCIACION-16-readback.json",
+      "previous_blob": "63477ca3ef7834908bc0028dd9a61a6fba11927d"
+    }
+  }
 }
