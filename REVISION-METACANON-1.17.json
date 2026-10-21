@@ -13,7 +13,7 @@
       "path": "METACANON-OBJETOS-CANONICOS.md",
       "version": "1.17",
       "seal": "METACANON-OBJETOS-v1.17",
-      "blob": "83ef1bdeb83c2229c8d34b48c8e9b104299a8de0"
+      "blob": "e3261a40f6556c60d468950886eb73d2c0d351d0"
     },
     "sam": {
       "path": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.md",
@@ -49,7 +49,7 @@
     },
     "pending": {
       "path": "frentes/metodologia/PENDIENTES.md",
-      "blob": "1357c3b2132c06d1afbb121c766746e1373d4255"
+      "blob": "42f74f72a14b5733f1eac36f9653896e84d7766a"
     }
   },
   "OCP": {
@@ -118,5 +118,15 @@
     "Native ChatGPT custom-instructions settings were not editable through the current connected tools.",
     "MCP normative verifier intentionally remains disabled.",
     "SHA-256 file digests were not recalculated; Git blob SHAs are used as revision evidence."
-  ]
+  ],
+  "artifacts": {
+    "final_output": {
+      "path": "frentes/metodologia/entregas/CHATGPT-v0.3/C-METODOLOGIA-REINSTANCIACION-16-salida-final.md",
+      "blob": "be5539b6b7b29503845371c4d32924fd5a88627d"
+    },
+    "dialogue": {
+      "path": "frentes/metodologia/conversaciones/C-METODOLOGIA-REINSTANCIACION-16-dialogo.jsonl",
+      "blob": "f2b127586483e4dfbd06b5a98f358ba8c733e261"
+    }
+  }
 }
