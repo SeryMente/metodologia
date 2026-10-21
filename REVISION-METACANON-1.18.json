@@ -153,6 +153,10 @@
     "finalOutput": {
       "path": "frentes/metodologia/entregas/CHATGPT-v0.3/C-METODOLOGIA-OCP-DISCOVERY-17-salida-final.md",
       "blob": "6755b9296b3b06f31b76bcd43dc364b64be09504"
+    },
+    "evidence": {
+      "path": "frentes/metodologia/evidencias/C-METODOLOGIA-OCP-DISCOVERY-17-readback.json",
+      "kind": "read-back evidence record; indexed here without a reverse hash to avoid a circular receipt"
     }
   },
   "limitations": [
