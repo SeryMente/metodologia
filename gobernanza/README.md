@@ -1,6 +1,6 @@
 # Gobierno general de Ser y Mente
 
-El documento [Metaprompt Canónico de Samantha](METAPROMPT-CANONICO-SAMANTHA.md), v333 · NX-333m, es el gobierno general del espacio de trabajo Ser y Mente, de la organización SeryMente y de este repositorio, por instrucción expresa del operador en el ciclo C-METODOLOGIA-GOBIERNO-01. Está subordinado a las reglas de cada plataforma y a las autorizaciones vigentes del operador; no crea herramientas ni permisos.
+El documento [Metaprompt Canónico de Samantha](METAPROMPT-CANONICO-SAMANTHA.md), v335 · NX-335m, es el gobierno general del espacio de trabajo Ser y Mente, de la organización SeryMente y de este repositorio, por instrucción expresa del operador en el ciclo C-METODOLOGIA-GOBIERNO-01. Está subordinado a las reglas de cada plataforma y a las autorizaciones vigentes del operador; no crea herramientas ni permisos.
 
 No es un segundo metaprompt ni una nueva redacción: es el espejo íntegro del contenido de la página Notion. El recibo [de fuente y sincronización](METAPROMPT-CANONICO-SAMANTHA.fuente.json) distingue documento fuente, versión, revisión y huella de contenido. Notion es la superficie de origen de este documento y GitHub su copia operativa distribuible; una edición de un espejo no debe sobrescribir silenciosamente cambios de la fuente. La conciliación de escrituras simultáneas y la sincronización inversa no se dan por diseñadas ni autorizadas.
 
