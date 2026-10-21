@@ -1,10 +1,12 @@
 {
   "source": "https://app.notion.com/p/a925d4a3b2508393b2b7817f1cf431da",
-  "source_title": "Metaprompt Canónico de Samantha · Workspace v333 · NX-333m",
-  "contentLastEditedAt": 1792461532084,
-  "sha256_utf8": "02a9cacb78f4dc0cd86a819593e931dcf45b84f3ed310569a0b592e0b579c6ed",
-  "cycle": "C-METODOLOGIA-CONTINUIDAD-02",
-  "mirror": "Cuerpo íntegro leído tras edición en Notion; sin añadir salto de línea",
-  "sync": "copia puntual verificada; no instala sincronización automática",
-  "native_loading": "Notion puede aportar una versión distinta; cotejar firma, origen y revisión. Esta sesión recibió automáticamente la página antigua v330 eliminada, y adquirió expresamente la fuente viva v332 antes de actualizarla a v333."
+  "source_title": "🧬 Metaprompt Canónico de Samantha · Workspace v335 · NX-335m",
+  "contentLastEditedAt": 1792611818682,
+  "sha256_utf8": null,
+  "cycle": "C-METODOLOGIA-COLISION-RESPONSABILIDAD-14",
+  "mirror": "Cuerpo extraído de Notion v335 copiado al espejo GitHub y cotejado por igualdad exacta de contenido en la lectura de vuelta; blob actual 62e0e43c7ee8b4f02a2ed7633e2417cd1f48eb99.",
+  "sync": "Copia puntual fuente → repositorio verificada para este snapshot; no instala sincronización automática futura. El SHA-256 nuevo no fue recalculado.",
+  "native_loading": "Notion puede aportar una versión distinta; cotejar firma, origen y revisión. Esta sesión recibió automáticamente la página antigua v330 eliminada, y adquirió expresamente la fuente viva v332 antes de actualizarla a v333. Fuente v335 · NX-335m adquirida por fetch y leída de vuelta el 2026-10-21; la configuración nativa cargada por otros hilos/modelos no se presume idéntica.",
+  "previous_sha256_utf8": "02a9cacb78f4dc0cd86a819593e931dcf45b84f3ed310569a0b592e0b579c6ed",
+  "hash_status": "SHA-256 actual NO RECALCULADO; la igualdad exacta del cuerpo fuente/espejo se verificó directamente por comparación de cadenas en este ciclo."
 }
