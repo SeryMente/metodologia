@@ -1,5 +1,5 @@
 <callout icon="📜" color="gray_bg">
-📍 Versión actual · v2.0 · evento C-GOW-FT-IPZ-OCP-03 · Canon Declarativo · Tier Bloqueante · Alcance: todo el WS · todos los proyectos y frentes de trabajo · Propietario: operador (Black Sheep), toda modificación requiere su autorización explícita
+📍 Versión actual · v2.1 · evento C-METODOLOGIA-OCP-DISCOVERY-17 · Canon Declarativo · Tier Bloqueante · Alcance: todo el WS · todos los proyectos y frentes de trabajo · Propietario: operador (Black Sheep), toda modificación requiere su autorización explícita
 </callout>
 
 ## §F · Ficha
@@ -230,7 +230,7 @@ Demográfico secundario de SEA. Estado de una persona en proceso de integración
 
 <b>Objeto canónico de persistencia (OCP)</b> 🎙️
 
-Carpeta canónica que materializa todas las necesidades de persistencia de un frente de trabajo (FT/FDT) dentro de su repositorio de origen. Conforme al Metacanon §§3, 27, 29 y 46, la ruta estándar es `frentes/<slug-del-ft>/`; contiene un único núcleo operativo con los trece bloques requeridos y las materializaciones que el frente realmente necesite: control de titularidad/sesión, conversaciones y originales disponibles, crónica, evidencias, fuentes, prompts de reinstanciación y artefactos. No se crean subcarpetas vacías por rutina ni estados vivos paralelos. Cada repo puede alojar cualquier cantidad de OCP/FT con nombres distintos; no existe un máximo metodológico. El estado de titularidad y folio vive en un único `CONTROL-RESPONSABILIDAD.json` del OCP; no crear un segundo control competidor. El OCP se adapta al nombre/canon del frente sin trasladar datos de otro proyecto.
+Carpeta canónica que materializa todas las necesidades de persistencia de un frente de trabajo (FT/FDT) dentro de su repositorio de origen. Conforme al Metacanon §§3, 27, 29, 46 y 48, la ruta predeterminada para OCP nuevos es `frentes/<slug-del-ft>/`; los OCP ya existentes pueden conservar la ruta autoritativa histórica que indique su núcleo/README/control, por ejemplo `docs/frentes/<slug-del-ft>/`, sin mover carpetas ni duplicar controles al retomar; contiene un único núcleo operativo con los trece bloques requeridos y las materializaciones que el frente realmente necesite: control de titularidad/sesión, conversaciones y originales disponibles, crónica, evidencias, fuentes, prompts de reinstanciación y artefactos. No se crean subcarpetas vacías por rutina ni estados vivos paralelos. Cada repo puede alojar cualquier cantidad de OCP/FT con nombres distintos; no existe un máximo metodológico. El estado de titularidad y folio vive en un único `CONTROL-RESPONSABILIDAD.json` del OCP; no crear un segundo control competidor. El OCP se adapta al nombre/canon del frente sin trasladar datos de otro proyecto.
 
 <b>Folio de sesión (SES)</b> 🎙️
 
@@ -276,7 +276,7 @@ Nombre canónico del estrato de instrucciones de sistema que rige al agente núc
 
 Abreviatura canónica autorizada para «Metaprompt Canónico de Samantha», la fuente de gobierno general de Samantha, cuyo archivo canónico es gobernanza/METAPROMPT-CANONICO-SAMANTHA.md en SeryMente/metodologia/main. En este sentido, normaliza la forma transcrita «SAM» a «Sam» y, solo cuando el contexto confirme que se refiere al metaprompt, reconoce las variantes históricas de dictado «Samanta», «Metapron» y «Metapromp». No designa por sí sola al agente/persona Samantha ni a otro sistema llamado Sam; si el contexto apunta a otra entidad, conserva su nombre.
 
-<b>Metacanon de objetos canónicos (Metacanon v1.17)</b> 🟦
+<b>Metacanon de objetos canónicos (Metacanon v1.18)</b> 🟦
 
 Marco del repositorio SeryMente/metodologia que configura y mantiene frentes de trabajo como directorios con un núcleo operativo único y materiales enlazados. No confundir con la equivalencia histórica/local de «Metacanon» y «Método para Documentar Cánones (MDC)» usada en el WS Khora. En comunicaciones entre espacios, usar el nombre completo o el calificador de contexto; no propagar equivalencia indistinta.
 
@@ -922,7 +922,9 @@ El GOW se considera poseído cuando:
 
 <b>C-GOW-METODOLOGIA-GLOSARIOS-02 · v1.9 · 2026-10-21.</b>
 
-<b>C-GOW-FT-IPZ-OCP-03 · v2.0 · 2026-10-21.</b> Se añaden FT/FDT como equivalentes de «frente de trabajo»; OCP como carpeta de persistencia por FT conforme al Metacanon; folio SES con adjudicación exclusiva de cada FT a una sola sesión activa; e IPZ como término de Instrucciones Personalizadas. La entrada IPZ contiene enlaces directos al GOW, a Metacanon §4 y al tramo de principios de Sam. Las nuevas definiciones describen procedimientos normativos, no afirman que se haya modificado por sí mismo el campo de personalización ni que exista un lock server-side universal.
+<b>C-GOW-FT-IPZ-OCP-03 · v2.0 · 2026-10-21.</b>
+
+<b>C-METODOLOGIA-OCP-DISCOVERY-17 · GOW v2.1 · 2026-10-21.</b> Se aclara la compatibilidad entre la ruta predeterminada nueva `frentes/<slug>/` y los OCP preexistentes declarados en núcleos/README/controles, incluidas rutas `docs/frentes/<slug>/`. Al retomar, descubrir la ubicación real y conservarla; no mover ni duplicar el OCP por normalización. Se reconoce Sam v338 · NX-338m, P040. Se añaden FT/FDT como equivalentes de «frente de trabajo»; OCP como carpeta de persistencia por FT conforme al Metacanon; folio SES con adjudicación exclusiva de cada FT a una sola sesión activa; e IPZ como término de Instrucciones Personalizadas. La entrada IPZ contiene enlaces directos al GOW, a Metacanon §4 y al tramo de principios de Sam. Las nuevas definiciones describen procedimientos normativos, no afirman que se haya modificado por sí mismo el campo de personalización ni que exista un lock server-side universal.
  Por instrucción expresa se integra el corpus de términos del Glosario Operativo de la Metodología v1.3.1 a este único GOW; las entradas duplicadas se consolidan y los términos de ámbito específico conservan su alcance. El archivo raíz anterior se preserva verbatim como antecedente y pasa a ser un puntero de compatibilidad. Se eleva Metacanon a v1.16 para normar la unicidad de fuente. La página Notion v1.9 fue actualizada desde esta revisión de main y leída de vuelta en el mismo ciclo; se verificaron título, versión y contenido incorporado. Esta escritura es puntual y no instala sincronización perpetua. Por instrucción expresa del operador, `SeryMente/metodologia/main` pasa a ser la fuente canónica preponderante del GOW y de la documentación metodológica compartida. Se conserva el contenido heredado y se modifica la declaración de fuente para que Notion sea un espejo subordinado. La entrada «Metacanon de objetos canónicos» se actualiza a v1.15. La página Notion se actualizó desde la revisión canónica de main y se leyó de vuelta en este ciclo para comprobar título, v1.8, precedencia del repositorio y entradas operativas. Esta comprobación puntual no instala sincronización automática futura.
 
 <b>C-METODOLOGIA-CONTINUIDAD-02 · v1.6.</b> Se registran las denominaciones y la continuidad por frentes ratificadas por el operador, con arranque diferenciado por plataforma. Las entradas previas, incluida la definición única de Ética, permanecen íntegras.
