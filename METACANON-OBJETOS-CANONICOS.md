@@ -1,7 +1,7 @@
-<!-- METACANON_VERSION=1.14; TEMPORARY_FRAMEWORK=true; USER_TRANSCRIPT_SPEC=true -->
+<!-- METACANON_VERSION=1.15; TEMPORARY_FRAMEWORK=true; USER_TRANSCRIPT_SPEC=true -->
 # Metacanon para crear y mantener objetos canónicos de proyecto
 
-- Estado: **Versión documental 1.14 — Resolución explícita de colisiones de responsabilidad**, ampliación autorizada en C-METODOLOGIA-COLISION-RESPONSABILIDAD-14; conserva las compuertas anteriores, integra §42 y preserva el historial. No acredita propagación automática a hijos.
+- Estado: **Versión documental 1.15 — Preponderancia del repositorio y glosario compartido**, ampliación autorizada en C-METODOLOGIA-FUENTE-PRECEDENCIA-15; conserva §42, incorpora §§43–44 y preserva el historial. No acredita propagación automática a otras plataformas.
 - Versión metodológica: **1.14**. Sello: **METACANON-OBJETOS-v1.14**. Gobierno general: [Metaprompt Canónico de Samantha](gobernanza/METAPROMPT-CANONICO-SAMANTHA.md), v335 · NX-335m; relación y límites en [gobernanza](gobernanza/README.md).
 - Nombre propio del marco: pendiente de elección del operador; no usar el nombre de un proyecto como nombre del método.
 - Repositorio de metodología identificado: https://github.com/SeryMente/metodologia, privado comprobado en el ciclo de actualización 1.1; revalidar su visibilidad antes de cada escritura sensible. Ruta METACANON-OBJETOS-CANONICOS.md; fuente vigente main; rama documental histórica docs/metacanon-objetos-20261011. Conservar los originales y datos privados del frente solo en su carpeta autorizada tras verificar acceso privado; nunca publicar secretos en Git ni transportar identidades de ejemplos.
@@ -11,9 +11,9 @@
 
 ## LEER PRIMERO — modo metodología, no ejecución del ejemplo
 
-**Precisión vigente 1.14:** aplicar §42 junto con §§35–41 y §§29–34; primero gobierno, frente/rol, control de responsabilidad, estado y permiso, después acción comprobada y checkpoint. §42 reduce la colisión a una autorización explícita del operador seguida de sustitución atómica/read-back; no crea identidad nativa de plataforma ni garantiza exclusión de escritores que eludan el control. Versiones antiguas en originales/notas conservan su carácter histórico.
+**Precisión vigente 1.15:** aplicar §§43–44 como compuertas de fuente y terminología, §42 para colisiones de responsabilidad, junto con §§35–41 y §§29–34; primero verificar `main`, gobierno, frente/rol, control, estado y permisos; después ejecutar la acción comprobable y persistir el checkpoint. §42 reduce la colisión a una autorización explícita del operador seguida de sustitución atómica/read-back; no crea identidad nativa de plataforma ni garantiza exclusión de escritores que eludan el control. Versiones antiguas en originales/notas conservan su carácter histórico.
 
-**Actualización 1.7, de lectura previa:** [INICIO.md](INICIO.md) es la puerta de entrada transversal. Gobierno general en `gobernanza/METAPROMPT-CANONICO-SAMANTHA.md`; el metacanon gobierna el método, no constituye una autoridad general competidora. §§29–33 prevalecen sobre formulaciones anteriores incompatibles, en particular «objeto = un solo .md», subordinación al SI anterior, temporalidad de un mes como compromiso vigente y activación implícita de PRIUS. Las menciones de 1.0–1.6 en antecedentes conservan su sentido histórico. Leer una propuesta histórica no la ratifica.
+**Actualización de fuente vigente:** [INICIO.md](INICIO.md) es la puerta de entrada. `SeryMente/metodologia/main` es la fuente documental preponderante; Sam, Metacanon, el GOW y los controles vigentes se adquieren desde este repositorio. Notion y otras superficies son espejos subordinados, según §43. El Metaprompt gobierna la conducta general y Metacanon el método de frentes; su autoridad normativa interna no se confunde con la autoridad de la ubicación fuente. §§29–33 prevalecen sobre formulaciones anteriores incompatibles, en particular «objeto = un solo .md», subordinación al SI anterior, temporalidad de un mes como compromiso vigente y activación implícita de PRIUS. Las menciones de 1.0–1.6 en antecedentes conservan su sentido histórico. Leer una propuesta histórica no la ratifica.
 
 **Estado de refactorización:** arquitectura por directorios ratificada. Este primer bloque mantiene el cuerpo previo y sus referencias; el aligeramiento y separación física del metacanon aún están pendientes. No presentar el índice ni esta incorporación como refactorización completa o prueba en otra plataforma.
 
@@ -47,6 +47,7 @@ Antes de cada ciclo comprobar la versión de este metacanon y del objeto del pro
 17. Ningún frente nuevo ni su objeto canónico de persistencia pueden crearse sin un enunciado de propósito dictado directamente por el operador, conservado verbatim y documentado canónicamente; su ausencia es bloqueo de creación (§39).
 18. Una conexión RDC nunca autoriza utilizar la interfaz gráfica del monitor activo del operador. En un equipo compartido, el trabajo remoto es solo terminal/CLI o ejecución headless no visible; la GUI requiere autorización específica y un segundo monitor verificado (§40).
 19. En la ubicación `CENTRAL\fila4`, la raíz operativa es el `Win32_UserProfile.LocalPath` asociado al SID de fila4; `C:\Users\MantenimientoRCI\` pertenece a otra cuenta y está prohibido. Variables del proceso remoto o redirecciones que apunten al perfil prohibido bloquean la operación (§41; Metaprompt P036).
+20. El contenido documental/metodológico, las definiciones operativas y el estado de los frentes se rigen por la revisión verificada de `SeryMente/metodologia/main`; Notion, instrucciones personalizadas y demás copias no la desplazan (§43). El GOW debe revisarse en cada ciclo sin excepción (§44).
 
 ## 2. Insumos y creación
 
@@ -139,14 +140,13 @@ Respeta alcance, compuertas y no-simulación. El asistente mantiene continuidad 
 
 ## 9. Estado de este metacanon
 
-- **De dónde viene:** instrucciones explícitas del operador para adoptar el frente Metacanon y corregir la colisión de responsabilidad detectada en el repositorio SeryMente/metodologia. La fuente general rectora es el Metaprompt Canónico de Samantha v335 · NX-335m; SI-METACOGNITIVO.md se conserva como antecedente y no como gobierno general paralelo.
-- **Dónde está:** METACANON-OBJETOS-CANONICOS.md, versión documental 1.14, sello METACANON-OBJETOS-v1.14, sección §42. El Metaprompt de Notion v335 y su espejo de GitHub se compararon después de la escritura y su cuerpo coincide exactamente en la revisión observada. El control de responsabilidad se actualizó a generación 2 y se leyó de vuelta.
-- **A dónde va:** todos los modelos deben leer el control antes de asumir/escribir, detectar una colisión automáticamente, pedir una sola autorización explícita del operador y ejecutar la transferencia condicionada por SHA y generación con lectura de vuelta. No debe solicitarse al operador un ID técnico que la plataforma no expone.
-- **Qué cambió:** P037 en el Metaprompt establece el contrato general; §42 del Metacanon detalla preflight, pregunta única, alias operativo cuando no hay identidad nativa, compare-and-swap, auditoría y tratamiento de carreras. El control registra el traspaso de generación 1 a generación 2 bajo el evento C-METODOLOGIA-COLISION-RESPONSABILIDAD-14. La actualización es verificable en el control, pero no crea un mediador de servidor que impida escrituras arbitrarias de modelos no cooperantes.
-- **🔄 Estado vivo:** responsable registrado mediante alias operativo autorizado: operator-authorized-transfer:C-METODOLOGIA-COLISION-RESPONSABILIDAD-14; instancia chatgpt-metacanon-collision-remediation-2026-10-21; generación 2. El identificador nativo de esta conversación no fue expuesto por las herramientas y no se simula. La fuente de responsabilidad conserva el titular anterior y el SHA de base en el registro de transferencia. Próximo paso: usar este preflight de forma recurrente y verificarlo en otros receptores sin afirmar que ya se ha probado en ellos.
-- **⚗️ En prueba / recién fallido:** la detección en este ciclo recuperó una titularidad histórica y las herramientas no expusieron el ID nativo del hilo actual; se resolvió con un alias explícito de evento. La garantía es cooperativa y por control GitHub, no una exclusión universal de escritores que eludan el mecanismo.
-- **Evidencia:** Metaprompt Notion v335 · NX-335m, leída de vuelta; espejo gobernanza/METAPROMPT-CANONICO-SAMANTHA.md, blob 62e0e43c7ee8b4f02a2ed7633e2417cd1f48eb99, comparado en igualdad exacta con el cuerpo de la fuente; control leído de vuelta, blob 50e444c86342226362392e5fc2fe243fed751857, generación 2; diálogo visible del ciclo registrado en frentes/metodologia/conversaciones/C-METODOLOGIA-COLISION-RESPONSABILIDAD-14-dialogo.jsonl, blob 55d4af44289de00d73ef8cc72aeee0c146ed7de1, 14 entradas y cierre final cotejado literalmente.
-- **Límites y pendientes conservados:** esta corrección no instala sincronización permanente entre Notion y GitHub ni prueba el cumplimiento semántico de todos los modelos externos. Seguridad/cifrado, automatización general de sincronización, portabilidad integral y pruebas independientes permanecen en sus estados anteriores.
+- **De dónde viene:** instrucción explícita del operador de fijar la preponderancia del repositorio Metodología frente a Notion y cualquier otra copia, ampliar el Glosario Operativo del Workspace (GOW) con sus convenciones previas y adaptar Sam/BCR al método actual.
+- **Dónde está:** repositorio `SeryMente/metodologia`, rama `main`. Metacanon versión 1.15, sello `METACANON-OBJETOS-v1.15`, §§43–44. Gobierno general Sam v336 · NX-336m; GOW canónico en `gobernanza/GLOSARIO-WORKSPACE.md`. `SI-METACOGNITIVO.md` continúa como antecedente histórico, no como gobierno general paralelo.
+- **Jerarquía de fuente:** `main` es preponderante para el estado, versiones, canon y evidencia documental. Notion, instrucciones personalizadas, memoria y otras superficies son espejos; ante divergencia no se mezclan versiones ni se elige por fecha, se usa el repositorio y se registra el delta a reconciliar.
+- **🔄 Estado vivo:** la regla de fuente se incorpora primero a Sam como P038 después de P001; Metacanon la detalla en §43 y el contrato de revisión del GOW en §44. El GOW preserva los términos previos, incluyendo `Sam`, normalización de transcripción y revisión obligatoria de cada ciclo. Siguiente paso: verificar las escrituras de `main`, reconciliar metadatos/recibos y emitir el BCR actualizado.
+- **⚗️ En prueba / recién fallido:** la búsqueda de Notion expuso una página de Metaprompt v333, mientras que el espejo de GitHub contiene v335 y la nueva edición pasa a v336. Esta divergencia confirma la necesidad de no atribuir vigencia a una carga automática ni declarar un espejo sincronizado sin verificación. La capacidad de escritura directa en Notion aún no está confirmada.
+- **Evidencia:** Sam `gobernanza/METAPROMPT-CANONICO-SAMANTHA.md`, nuevo v336/NX-336m/P038; Metacanon `METACANON-OBJETOS-CANONICOS.md`, nueva versión 1.15; GOW `gobernanza/GLOSARIO-WORKSPACE.md`, actualización prevista a v1.8; punto de entrada `INICIO.md` y guía `gobernanza/README.md` por reconciliarse en este ciclo. No se declara sincronización automática Notion↔GitHub.
+- **Límites y pendientes conservados:** la preponderancia documental no crea permisos ni capacidades técnicas y no sustituye políticas obligatorias de la plataforma. La sincronización automática continua, la escritura/actualización de Notion y las pruebas con modelos externos solo se declaran realizadas si se verifican separadamente.
 
 ## 10. Instrucción original de separación del metacanon
 
@@ -856,4 +856,48 @@ Ah, bueno, entonces hay que corregir de manera que en el futuro, cuando en la pl
 ~~~
 
 **Narrativa 1.14:** P037 establece el contrato general en el gobierno de Samantha; §42 materializa el procedimiento de responsabilidad en el Metacanon. El receptor no debe solicitar al operador una identidad técnica que las herramientas no exponen. La autorización explícita, el compare-and-swap de la revisión y la lectura de vuelta sustituyen el bloqueo por un único ciclo de transferencia verificable. No acredita que todos los modelos/herramientas puedan o vayan a obedecer el preflight.
+
+## 43. Preponderancia canónica del repositorio Metodología
+
+### 43.1 Fuente de verdad única
+
+Para el estado metodológico/documental de Ser y Mente, las versiones de los cánones, el gobierno general, las definiciones terminológicas, los controles de responsabilidad, las decisiones ratificadas y la evidencia persistente de los frentes, la fuente canónica preponderante es el repositorio privado `SeryMente/metodologia`, rama `main`. La revisión efectiva es la que pueda leerse y verificarse en el repositorio, no la que una plataforma asegure haber cargado.
+
+### 43.2 Preponderancia frente a Notion y otras superficies
+
+Notion, las instrucciones personalizadas, los resúmenes de memoria, los archivos locales, los paquetes copiados, los prompts transportados y cualquier otra plataforma son superficies de uso, transporte o espejos subordinados para estos contenidos. No sustituyen ni superan `main` por ser más recientes, por haberse cargado automáticamente o por contener una redacción parecida. En particular, una página de Notion con versión anterior no prevalece sobre el archivo canónico verificado del repositorio.
+
+### 43.3 Qué hacer ante divergencia
+
+Antes de una acción que dependa de la vigencia de un canon, recuperar el archivo pertinente de `main` y registrar versión/sello y SHA disponible. Si una copia diverge, aplicar la revisión del repositorio; documentar el delta, identificar el espejo afectado y reconciliarlo mediante una escritura autorizada y lectura de vuelta. No fusionar en silencio textos de Notion y GitHub ni inferir que una edición externa ya llegó al repositorio. Una modificación sugerida o aprobada pero aún no persistida en `main` conserva el estado de propuesta/cambio pendiente y no se presenta como canon vigente.
+
+### 43.4 Fuente inaccesible
+
+Si no puede leerse o verificarse `main`, declarar `METODOLOGÍA NO VERIFICADA`, especificar qué fuente sí se adquirió y continuar solo con el análisis que no dependa de una vigencia desconocida. Una copia previa puede conservar valor histórico/contextual, pero no autoriza afirmar que representa la versión actual. No declarar sincronización, integridad, versión o lectura de vuelta que no se haya comprobado.
+
+### 43.5 Jerarquía normativa interna
+
+La preponderancia de `main` determina cuál contenido documental representa el estado canónico; no hace equivalentes todas las normas del repositorio. Dentro de ese contenido se aplica la jerarquía normativa expresa: el Metaprompt Canónico de Samantha (Sam) gobierna la conducta general, Metacanon gobierna el método de los frentes, y los cánones y procedimientos particulares rigen solo su ámbito sin anular reglas superiores. Las decisiones expresas del operador se incorporan conforme a sus compuertas de autorización y se vuelven estado canónico al persistirse/verificarse en `main`. Las políticas obligatorias no anulables de la plataforma y los permisos/capacidades reales siguen siendo límites de ejecución; este marco no los modifica ni fabrica.
+
+## 44. Glosario operativo compartido y revisión obligatoria
+
+### 44.1 Fuente canónica
+
+El Glosario Operativo del Workspace (GOW), también llamado glosario operativo compartido, tiene su archivo canónico en `gobernanza/GLOSARIO-WORKSPACE.md` de `SeryMente/metodologia/main`. Es el vocabulario transversal para abreviar términos, acordar equivalencias y corregir errores de transcripción recurrentes. La página Notion y las copias de otros espacios son espejos; no prevalecen sobre el archivo del repositorio.
+
+### 44.2 Revisión de cada ciclo, sin excepción
+
+Al inicio de cada ciclo, recuperar y revisar el GOW vigente desde `main`, incluyendo las entradas relevantes para el frente/tarea. Antes de cerrar el ciclo, comprobar otra vez si la tarea produjo una nueva abreviatura, equivalencia, definición, error de transcripción o excepción. La falta de cambios no elimina la obligación de revisión. Si no se puede leer `main`, declarar `GOW NO VERIFICADO`; no afirmar que se cumplió la revisión vigente. El registro de términos nuevos o correcciones explícitamente solicitadas se hace en el mismo ciclo, con procedencia, alcance y condición de aplicación.
+
+### 44.3 Corrección de transcripción sin alterar originales
+
+Solo registrar una nueva asociación entre forma transcrita y término canónico cuando el operador lo solicite expresamente. Aplicar de forma automática las asociaciones ya autorizadas cuando el contexto confirme su referente. Preservar el dictado/cita original y guardar la normalización como interpretación separada; nunca corregir retrospectivamente una cita histórica como si hubiera nacido en la forma normalizada. Si el contexto real sigue siendo ambiguo, explicitar la duda y hacer una sola pregunta concreta.
+
+### 44.4 Equivalencia contextual de Sam y Khora
+
+`Sam` es la abreviatura canónica de «Metaprompt Canónico de Samantha» cuando el contexto alude al gobierno general. La forma en mayúsculas `SAM` se normaliza a `Sam` bajo ese mismo contexto; no designa automáticamente a la persona/agente Samantha ni a otra entidad del mismo nombre. De igual modo, una transcripción como `C-O-R-A`, `CORA` o una variante fonética se normaliza a `KHORA` cuando el contexto confirme que alude al sistema/producto Khora; se conserva `CORA` si se trata de otra entidad y se pregunta si persiste una ambigüedad real.
+
+### 44.5 No duplicación ni exportación de significados
+
+Antes de añadir una entrada, cotejar las entradas vigentes y conservar el canon existente, ampliándolo en lugar de crear un glosario paralelo. Cada equivalencia debe declarar forma canónica, alias/errores admitidos, alcance, condiciones de aplicación, excepciones y procedencia. Una equivalencia local de un proyecto no se generaliza a otros frentes sin ratificación explícita. La revisión no obliga a inventar términos ni a incrementar versión si no cambió el contenido; cualquier cambio del GOW se registra y verifica en `main`.
 
