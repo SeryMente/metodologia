@@ -25,7 +25,9 @@ const files = {
   entry: 'frentes/metodologia/entregas/CHATGPT-v0.3/PROMPT-ENTRADA.txt',
   manifest: 'frentes/metodologia/entregas/CHATGPT-v0.3/MANIFIESTO-C-METODOLOGIA-MIGRACION-HILO-FRESCO-21.json',
   genericOutput: 'frentes/metodologia/entregas/CHATGPT-v0.3/C-METODOLOGIA-MIGRACION-HILO-FRESCO-21-salida-final.md',
-  currentOutput: 'frentes/metodologia/entregas/CHATGPT-v0.3/C-METODOLOGIA-VERBATIM-E2E-22-salida-final.md'
+  currentOutput: 'frentes/metodologia/entregas/CHATGPT-v0.3/C-METODOLOGIA-VERBATIM-E2E-22-salida-final.md',
+  currentDialogue: 'frentes/metodologia/conversaciones/C-METODOLOGIA-VERBATIM-E2E-22-dialogo.jsonl',
+  currentChronicle: 'frentes/metodologia/cronica/C-METODOLOGIA-VERBATIM-E2E-22.md'
 };
 const read = key => fs.readFileSync(path.join(root, files[key]), 'utf8');
 const sha256 = s => crypto.createHash('sha256').update(s, 'utf8').digest('hex');
@@ -34,7 +36,7 @@ function test(id, fn) {
   try { fn(); checks.push({ id, passed: true }); }
   catch (e) { checks.push({ id, passed: false, error: e.message }); }
 }
-let verbatim, control, accessControl, ipz, gow, sam, metacanon, output, previousOutput, checklist, pending, readme, continuationPrompt, migrationPrompt, checkpoint, leeme, entry, manifest, genericOutput, currentOutput;
+let verbatim, control, accessControl, ipz, gow, sam, metacanon, output, previousOutput, checklist, pending, readme, continuationPrompt, migrationPrompt, checkpoint, leeme, entry, manifest, genericOutput, currentOutput, currentDialogue, currentChronicle;
 try {
   verbatim = JSON.parse(read('verbatim').split(/\r?\n/)[0]).verbatim;
   control = JSON.parse(read('control'));
@@ -56,6 +58,8 @@ try {
   manifest = JSON.parse(read('manifest'));
   genericOutput = read('genericOutput');
   currentOutput = read('currentOutput');
+  currentDialogue = read('currentDialogue');
+  currentChronicle = read('currentChronicle');
 } catch (e) {
   console.error(JSON.stringify({ result: 'BLOCKED', reason: 'required source could not be read', error: e.message }));
   process.exit(2);
@@ -128,6 +132,14 @@ test('salida-final-M22-existe-y-cumple-los-diez-campos', () => {
   if (manifest.artifacts?.current_output?.path !== files.currentOutput || manifest.artifacts?.current_output?.blob !== blobSha || manifest.artifacts?.current_output?.status !== 'persisted_and_readback_verified') throw new Error('manifest current output path/blob/status does not match persisted file');
   if (manifest.current_cycle?.event !== 'C-METODOLOGIA-VERBATIM-E2E-22' || manifest.current_cycle?.final_output?.blob !== blobSha) throw new Error('manifest current-cycle output ref is stale');
   if (!manifest.current_cycle?.evidence?.path || !manifest.current_cycle?.chronicle?.path || !manifest.current_cycle?.dialogue?.path) throw new Error('manifest current-cycle persistence paths are incomplete');
+});
+test('manifest-blob-actual-de-dialogo-cronica-y-readme', () => {
+  const gitBlobSha = value => crypto.createHash('sha1').update(Buffer.concat([Buffer.from('blob ' + Buffer.byteLength(value, 'utf8') + '\0', 'utf8'), Buffer.from(value, 'utf8')])).digest('hex');
+  if (manifest.current_cycle?.dialogue?.blob !== gitBlobSha(currentDialogue)) throw new Error('M22 dialogue blob SHA differs from manifest');
+  if (manifest.current_cycle?.chronicle?.blob !== gitBlobSha(currentChronicle)) throw new Error('M22 chronicle blob SHA differs from manifest');
+  if (manifest.artifacts?.ocp_entrypoint?.blob !== gitBlobSha(readme) || manifest.current_cycle?.ocp_entrypoint?.blob !== gitBlobSha(readme)) throw new Error('OCP README blob SHA differs from manifest');
+  if (!currentDialogue.includes('"kind":"prepared_final"')) throw new Error('exact prepared final response not persisted in dialogue');
+  if (currentChronicle.includes('La última repetición tras añadir este recibo')) throw new Error('chronicle still contains stale future-tense closeout wording');
 });
 test('manifest-y-salida-generica-no-declaran-transferencia-pendiente', () => {
   if (!manifest.status.includes('transferred_and_readback_verified') || manifest.handoffPreparation?.transferComplete !== true) throw new Error('manifest status is stale');
