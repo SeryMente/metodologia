@@ -16,7 +16,15 @@ const files = {
   output: 'frentes/metodologia/entregas/CHATGPT-v0.3/C-METODOLOGIA-MIGRACION-HILO-FRESCO-21-salida-final-SES-20261021-6B9E2F41.md',
   previousOutput: 'frentes/metodologia/entregas/CHATGPT-v0.3/C-METODOLOGIA-AUDITORIA-REQUISITOS-20-salida-final.md',
   checklist: 'frentes/metodologia/entregas/CHATGPT-v0.3/CHECKLIST-VERBATIM-21.md',
-  pending: 'frentes/metodologia/PENDIENTES.md'
+  pending: 'frentes/metodologia/PENDIENTES.md',
+  readme: 'frentes/metodologia/README.md',
+  continuationPrompt: 'frentes/metodologia/entregas/CHATGPT-v0.3/PROMPT-CONTINUIDAD-METODOLOGIA-VERBATIM-E2E-22.txt',
+  migrationPrompt: 'frentes/metodologia/entregas/CHATGPT-v0.3/PROMPT-MIGRACION-HILO-FRESCO-21.txt',
+  checkpoint: 'frentes/metodologia/entregas/CHATGPT-v0.3/CHECKPOINT-MIGRACION-HILO-FRESCO-21.md',
+  leeme: 'frentes/metodologia/entregas/CHATGPT-v0.3/LEEME.md',
+  entry: 'frentes/metodologia/entregas/CHATGPT-v0.3/PROMPT-ENTRADA.txt',
+  manifest: 'frentes/metodologia/entregas/CHATGPT-v0.3/MANIFIESTO-C-METODOLOGIA-MIGRACION-HILO-FRESCO-21.json',
+  genericOutput: 'frentes/metodologia/entregas/CHATGPT-v0.3/C-METODOLOGIA-MIGRACION-HILO-FRESCO-21-salida-final.md'
 };
 const read = key => fs.readFileSync(path.join(root, files[key]), 'utf8');
 const sha256 = s => crypto.createHash('sha256').update(s, 'utf8').digest('hex');
@@ -25,7 +33,7 @@ function test(id, fn) {
   try { fn(); checks.push({ id, passed: true }); }
   catch (e) { checks.push({ id, passed: false, error: e.message }); }
 }
-let verbatim, control, accessControl, ipz, gow, sam, metacanon, output, previousOutput, checklist, pending;
+let verbatim, control, accessControl, ipz, gow, sam, metacanon, output, previousOutput, checklist, pending, readme, continuationPrompt, migrationPrompt, checkpoint, leeme, entry, manifest, genericOutput;
 try {
   verbatim = JSON.parse(read('verbatim').split(/\r?\n/)[0]).verbatim;
   control = JSON.parse(read('control'));
@@ -38,6 +46,14 @@ try {
   previousOutput = read('previousOutput');
   checklist = read('checklist');
   pending = read('pending');
+  readme = read('readme');
+  continuationPrompt = read('continuationPrompt');
+  migrationPrompt = read('migrationPrompt');
+  checkpoint = read('checkpoint');
+  leeme = read('leeme');
+  entry = read('entry');
+  manifest = JSON.parse(read('manifest'));
+  genericOutput = read('genericOutput');
 } catch (e) {
   console.error(JSON.stringify({ result: 'BLOCKED', reason: 'required source could not be read', error: e.message }));
   process.exit(2);
@@ -83,6 +99,28 @@ test('V09-MCP-normativo-permanece-desactivado', () => {
 test('continuidad-checklist-y-pendientes-enlazados', () => {
   for (let n = 1; n <= 9; n++) if (!checklist.includes('| ' + n + ' |')) throw new Error('verbatim checklist row ' + n + ' missing');
   if (!checklist.includes(files.verbatim) || !pending.includes('CHECKLIST-VERBATIM-21.md')) throw new Error('checklist provenance/pending reference missing');
+});
+test('OCP-entrypoint-no-duplica-estado-y-dirige-al-nucleo', () => {
+  if (!readme.includes('no un segundo estado vivo')) throw new Error('README does not declare that it is not a parallel state');
+  if (!readme.includes('METACANON-OBJETOS-CANONICOS.md') || !readme.includes('CONTROL-RESPONSABILIDAD.json')) throw new Error('README canonical nucleus/control routes missing');
+  if (!readme.includes(files.checklist) && !readme.includes('CHECKLIST-VERBATIM-21.md')) throw new Error('README checklist route missing');
+});
+test('prompt-de-continuidad-no-reclama-sobre-transferencia-consumida', () => {
+  if (!continuationPrompt.includes('No repitas la reclamación CAS') || !continuationPrompt.includes('CONTROL-RESPONSABILIDAD.json')) throw new Error('reusable prompt does not require current control preflight');
+  if (!continuationPrompt.includes('PROMPT-MIGRACION-HILO-FRESCO-21.txt')) throw new Error('reusable prompt does not identify the consumed one-use prompt');
+});
+test('prompt-de-un-solo-uso-marcado-consumido', () => {
+  if (!migrationPrompt.includes('PROMPT DE UN SOLO USO CONSUMIDO')) throw new Error('old one-time prompt is not marked consumed');
+  if (!migrationPrompt.includes('SES-20261021-6B9E2F41')) throw new Error('old prompt does not document the completed transfer');
+});
+test('checkpoint-refleja-transferencia-completada-y-entrypoints-actuales', () => {
+  if (!checkpoint.includes('ESTADO ACTUAL VERIFICADO') || !checkpoint.includes('generación **3**')) throw new Error('checkpoint lacks current verified state overlay');
+  if (!checkpoint.includes('PROMPT-CONTINUIDAD-METODOLOGIA-VERBATIM-E2E-22.txt')) throw new Error('checkpoint does not route new threads to current continuation prompt');
+  if (!leeme.includes('ya se consumó') || !entry.includes('PROMPT-CONTINUIDAD-METODOLOGIA-VERBATIM-E2E-22.txt')) throw new Error('entrypoints still indicate a pending transfer or stale prompt');
+});
+test('manifest-y-salida-generica-no-declaran-transferencia-pendiente', () => {
+  if (!manifest.status.includes('transferred_and_readback_verified') || manifest.handoffPreparation?.transferComplete !== true) throw new Error('manifest status is stale');
+  if (!genericOutput.includes('SUPERSEDIDO COMO SALIDA DEFINITIVA')) throw new Error('generic output is not marked superseded');
 });
 const headResult = cp.spawnSync('git', ['rev-parse', 'HEAD'], { cwd: root, encoding: 'utf8' });
 const result = {
