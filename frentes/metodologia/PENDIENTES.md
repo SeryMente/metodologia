@@ -172,4 +172,33 @@ La revisión por ciclo del GOW sí es obligatoria ahora; no depende del cierre d
 - No hay sincronización perpetua GitHub↔Notion; las propagaciones del ciclo son puntuales y verificadas.
 - Prueba semántica en un modelo/hilo independiente pendiente. No se afirma cumplimiento universal por todos los modelos.
 
+## C-METODOLOGIA-AUDITORIA-REQUISITOS-20 · Checklist literal de cumplimiento — auditoría 2026-10-21
+
+**Leyenda:** `VERIFICADO` = existe norma y evidencia de lectura; `PARCIAL` = norma escrita, pero falta prueba o acceso; `PENDIENTE` = depende de una acción externa no verificada.
+
+| ID | Criterio derivado del mandato verbatim | Estado | Evidencia / brecha |
+|---|---|---|---|
+| R01 | Nueva conversación o conversación refrescada dispara la retoma del FT por nombre | **PARTIAL** | El contenido nativo de IPZ no puede leerse desde estas herramientas; el operador confirmó una versión previa, no la última copia canónica. |
+| R02 | SeryMente/metodologia/main prevalece sobre Notion y otras copias | **VERIFIED** | Sam P038; Metacanon §§43-45; INICIO.md |
+| R03 | Buscar repositorio correcto y FT por denominación canónica; un repo puede tener FT ilimitados | **PARTIAL** | La conexión expone nueve repositorios del propietario SeryMente, no una lista completa de miembros/repositorios de la organización. La norma limita las afirmaciones al alcance accesible. |
+| R04 | GOW define FT/FDT como equivalentes; define OCP e IPZ | **VERIFIED** | GOW v2.2 en main y lectura de vuelta de Notion |
+| R05 | IPZ incluye enlace directo al GOW y consulta obligatoria cada ciclo, expresada también en Sam | **VERIFIED_DOCUMENTALLY** | La instalación exacta del IPZ vigente en el campo nativo no es legible por estas herramientas. |
+| R06 | OCP como carpeta canónica que contiene necesidades de persistencia de un FT | **VERIFIED** | Metacanon §§46-48; GOW v2.2; rutas heredadas verificadas en Harmonia |
+| R07 | Folio por sesión y adjudicación exclusiva del folio al FT; una sesión activa por FT | **PARTIAL** | La regla se documentó y el frente Metodología tiene folio activo, pero no se ejecutó una retoma nueva de un FT distinto como prueba E2E. No hay bloqueo server-side universal. |
+| R08 | Adoptar contexto usando los recursos reales del OCP | **PARTIAL** | No se hizo una reinstanciación completa de extremo a extremo de un FT distinto durante esta auditoría. |
+| R09 | Recuperar literalmente la última salida persistida del modelo en el primer ciclo | **PARTIAL** | El requisito está normado, pero no se ejecutó una retoma externa con una salida previa verificada que pudiera servir como prueba real. |
+| R10 | Adoptar el marco de Metacanon, con evidencia inicial de versión Sam y folio | **PARTIAL** | Esta respuesta presenta la evidencia, pero mensajes previos de esta misma sesión no siempre usaron la salida completa de §4. |
+| R11 | Formato de salida §4 obligatorio en cada ciclo | **PARTIAL_HISTORICAL** | El formato está normado; no todas las respuestas anteriores de esta misma sesión cumplieron el esquema completo de diez campos. Esta auditoría sí se estructura conforme a esos diez campos. |
+| R12 | IPZ enlaza directamente a Metacanon §4 y a la cascada jerárquica de Sam | **VERIFIED_DOCUMENTALLY** | La coincidencia del campo nativo con el artefacto actual queda pendiente de lectura/confirmación. |
+| R13 | MCP normativo desactivado y no afirmar que se utilizó | **VERIFIED** | IPZ; BCR; Metacanon; revisión manual |
+| R14 | Entregar IPZ actualizado y dentro del límite de la plataforma | **PARTIAL** | El usuario confirmó antes una revisión de 1432 caracteres. Debe reemplazarse por la versión actual de 1451 y confirmarse guardado. |
+| R15 | Funcionamiento fiable al usar otros modelos/plataformas y acceso completo a toda la organización | **PARTIAL_NOT_TESTED** | No se ha realizado prueba semántica en otro modelo/plataforma; las instrucciones no crean permisos ni garantizan inventario global o cerrojo server-side. |
+
+### Conclusión de auditoría
+
+- **Cumplido documentalmente:** precedencia de `main`; definiciones FT/FDT, OCP e IPZ; OCP-folder; enlaces normativos; regla GOW por ciclo y cascada manual de Sam; estado MCP desactivado.
+- **Parcial en operación:** búsqueda organizacional completa, adjudicación exclusiva universal, adopción de todo el contexto del OCP y recuperación de la última salida en un primer ciclo real, cumplimiento §4 de todos los mensajes previos, y campo IPZ nativo.
+- **Acción operativa pendiente:** sustituir la versión previamente reportada como instalada por la IPZ canónica vigente de **1.451 caracteres** y confirmar guardado. El campo nativo no se puede leer directamente desde esta conexión.
+
+El recuento de caracteres del IPZ aplica al campo que se va a pegar, sin incluir el salto de línea final del archivo. OpenAI indica un límite de 1.500 caracteres para Free/Go y que las instrucciones guardadas se aplican inmediatamente a todos los chats. Referencia oficial: https://help.openai.com/en/articles/8096356-chatgpt-custom-instructions
 
