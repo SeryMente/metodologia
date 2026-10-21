@@ -12,7 +12,7 @@ Este README es un índice de navegación, **no un segundo estado vivo**. El esta
 6. [Checklist de los nueve requisitos verbatim](entregas/CHATGPT-v0.3/CHECKLIST-VERBATIM-21.md) y [diálogo literal de origen](conversaciones/C-METODOLOGIA-AUDITORIA-REQUISITOS-20-dialogo.jsonl).
 7. [Última salida persistida del ciclo](entregas/CHATGPT-v0.3/C-METODOLOGIA-VERBATIM-E2E-22-salida-final.md) — reproducir literalmente en la primera respuesta del nuevo hilo, con procedencia; si no se lee, declarar NO DISPONIBLE.
 8. [Prompt reutilizable de continuidad](entregas/CHATGPT-v0.3/PROMPT-CONTINUIDAD-METODOLOGIA-VERBATIM-E2E-22.txt).
-9. [Prueba de cadena de artefactos E2E](pruebas/continuidad/C-METODOLOGIA-VERBATIM-E2E-22.cjs) y su evidencia, una vez generada, en `evidencias/C-METODOLOGIA-VERBATIM-E2E-22.json`.
+9. [Prueba de cadena de artefactos E2E](pruebas/continuidad/C-METODOLOGIA-VERBATIM-E2E-22.cjs) y [evidencia de resultados y hashes](evidencias/C-METODOLOGIA-VERBATIM-E2E-22.json).
 
 ## Traspaso y titularidad
 
