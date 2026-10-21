@@ -1,0 +1,23 @@
+REINSTANCIACIÓN · C-METODOLOGIA-MIGRACION-HILO-FRESCO-21
+
+Retoma Metodología/Metacanon desde SeryMente/metodologia/main. main prevalece sobre Notion, memoria y paquetes históricos. Antes de actuar, lee:
+- https://github.com/SeryMente/metodologia/blob/main/INICIO.md
+- https://github.com/SeryMente/metodologia/blob/main/gobernanza/METAPROMPT-CANONICO-SAMANTHA.md
+- https://github.com/SeryMente/metodologia/blob/main/METACANON-OBJETOS-CANONICOS.md
+- https://github.com/SeryMente/metodologia/blob/main/gobernanza/GLOSARIO-WORKSPACE.md
+- https://github.com/SeryMente/metodologia/blob/main/frentes/metodologia/CONTROL-RESPONSABILIDAD.json
+- https://github.com/SeryMente/metodologia/blob/main/frentes/metodologia/entregas/CHATGPT-v0.3/CHECKPOINT-MIGRACION-HILO-FRESCO-21.md
+- Última salida persistida: https://github.com/SeryMente/metodologia/blob/main/frentes/metodologia/entregas/CHATGPT-v0.3/C-METODOLOGIA-AUDITORIA-REQUISITOS-20-salida-final.md
+
+El operador autorizó expresamente una transferencia única de este FT al hilo fresco: «Actualiza OCP para migrar instancia a hilo fresco y dame el prompt que necesito para reinstanciar». La autorización solo aplica a Metodología/Metacanon y al evento indicado; no a otros FT.
+
+1. Lee el control autoritativo. Solo procede si incluye `handoff_preparation.event_id=C-METODOLOGIA-MIGRACION-HILO-FRESCO-21`, estado `prepared_waiting_for_target_claim`, propietario de origen `operator-authorized-transfer:C-METODOLOGIA-COLISION-RESPONSABILIDAD-14`, instancia `chatgpt-metacanon-collision-remediation-2026-10-21`, generación 2 y folio `SES-20261021-C4D81A7F`. Si cualquiera cambió, detente; no sobreescribas ni vuelvas a preguntar salvo que el cambio cree una nueva colisión.
+2. Genera un folio destino `SES-AAAAMMDD-XXXXXXXX`; busca colisiones entre controles accesibles y declara el alcance. No inventes un ID nativo. Usa un alias operativo que incluya el evento y el folio.
+3. Realiza una única actualización del control condicionada por el SHA leído: cambia propietario/instancia/folio al hilo actual, aumenta generación en uno, conserva el titular/folio anteriores e historial y marca el evento transferido. Si hay conflicto, relee y reconcilia; no reintentes a ciegas.
+4. Lee de vuelta desde `main`. Solo con coincidencia exacta de propietario, instancia, folio, generación y evento confirma la transferencia. Sin escritura o read-back: `TRASPASO NO COMPLETADO`; permanece en lectura.
+5. Tras la transferencia, adopta el contexto del OCP `frentes/metodologia/`, lee `PENDIENTES.md` y las fuentes relevantes, y actualiza el estado vivo de Metacanon §9 para identificar contextualmente al hilo nuevo como Hub de construcción.
+6. En la primera respuesta, reproduce literalmente el contenido completo de la última salida persistida indicada arriba, con ruta/procedencia, como «Última salida conservada del modelo anterior». Si no puedes leerla, declara `NO DISPONIBLE / NO VERIFICADA`; no la reconstruyas. Después usa la salida de Metacanon §4 con sus diez campos, incluyendo versión/firma de Sam, sello Metacanon, versión GOW, OCP y folio.
+7. Cita literalmente el «🔄 Estado vivo» actual de Metacanon §9. Busca «⚗️ En prueba / recién fallido» en el OCP canónico actual; si no existe, declara `NO DISPONIBLE EN EL OCP CANÓNICO VIGENTE`. No uses como actual la copia histórica ARRANQUE-PORTABLE-v0.3 (método 1.10).
+8. Revisa GOW al inicio y cierre y la cascada de Sam manualmente. MCP normativo permanece DESACTIVADO. Aplica Metacanon §4 en cada ciclo y registra evidencias/pending.
+
+No declares transferencia completada por emitir este prompt. La transferencia se realiza únicamente en el control autoritativo, con compare-and-swap y lectura de vuelta.
