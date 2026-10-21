@@ -288,5 +288,27 @@
     "No independent semantic test on another model/platform was run.",
     "MCP normative verification remains explicitly disabled.",
     "No permanent GitHub↔Notion sync or server-side session lock was installed."
-  ]
+  ],
+  "artifacts": {
+    "checklist_and_pending": {
+      "path": "frentes/metodologia/PENDIENTES.md",
+      "blob": "6264c99fa4de9059ee013b9706ba4cee7e634fd9"
+    },
+    "audit_chronicle": {
+      "path": "frentes/metodologia/cronica/C-METODOLOGIA-AUDITORIA-REQUISITOS-20.md",
+      "blob": "53b4fbb6746723185913c78e42418c02b672912e"
+    },
+    "audit_dialogue": {
+      "path": "frentes/metodologia/conversaciones/C-METODOLOGIA-AUDITORIA-REQUISITOS-20-dialogo.jsonl",
+      "blob": "7d6a6c0716a81d78199653c547c74e0363015229"
+    },
+    "audit_output": {
+      "path": "frentes/metodologia/entregas/CHATGPT-v0.3/C-METODOLOGIA-AUDITORIA-REQUISITOS-20-salida-final.md",
+      "blob": "6978db55681c9df5e64580c8b90e793b2d7b23fa"
+    },
+    "evidence": {
+      "path": "frentes/metodologia/evidencias/C-METODOLOGIA-AUDITORIA-REQUISITOS-20-readback.json",
+      "blob": "d7f86dc52e4f6afe29ba23d1f485271dfc079996"
+    }
+  }
 }
