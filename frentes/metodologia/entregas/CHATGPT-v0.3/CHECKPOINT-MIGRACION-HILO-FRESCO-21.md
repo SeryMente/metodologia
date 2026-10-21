@@ -1,3 +1,10 @@
+> **ESTADO ACTUAL VERIFICADO · 2026-10-21:** la transferencia única ya se completó. El control autoritativo registra alias `chatgpt-C-METODOLOGIA-MIGRACION-HILO-FRESCO-21-SES-20261021-6B9E2F41`, instancia `chatgpt-metodologia-metacanon-migracion21-6B9E2F41`, generación **3** y folio **SES-20261021-6B9E2F41**. El blob del control comprobado es `08f0ac0e9e3797d44f6f0827fabf90eb1cd139e0`; la actualización de Metacanon §9 quedó leída de vuelta en blob `76fddd36a79e02340b7f4620cca8851cf8e305ac`.
+>
+> **Cómo leer este checkpoint:** las secciones siguientes conservan el estado original de preparación, que era correcto antes del CAS del destino. Las frases «todavía no transferido» y los pasos de reclamación que siguen son **historia, no instrucciones vigentes**; no repitas esa transferencia. Para un hilo posterior usa [PROMPT-CONTINUIDAD-METODOLOGIA-VERBATIM-E2E-22.txt](PROMPT-CONTINUIDAD-METODOLOGIA-VERBATIM-E2E-22.txt), lee el control vivo y aplica las compuertas de Sam/Metacanon.
+>
+> **Verbatim/E2E:** checklist activo [CHECKLIST-VERBATIM-21.md](CHECKLIST-VERBATIM-21.md); la fuente primaria son los nueve enunciados en `conversaciones/C-METODOLOGIA-AUDITORIA-REQUISITOS-20-dialogo.jsonl`. El campo nativo IPZ sigue sin verificación por los conectores; no inferir instalación.
+>
+> ---
 # Checkpoint de migración a hilo fresco · C-METODOLOGIA-MIGRACION-HILO-FRESCO-21
 
 **Estado de relevo:** preparado y registrado en el control; **todavía no transferido**. El próximo hilo debe ejecutar el traspaso condicionado y leerlo de vuelta antes de asumir responsabilidad.
