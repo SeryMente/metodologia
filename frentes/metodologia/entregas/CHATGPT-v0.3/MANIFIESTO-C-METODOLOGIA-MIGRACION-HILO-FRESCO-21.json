@@ -45,7 +45,7 @@
       "path": "frentes/metodologia/entregas/CHATGPT-v0.3/CHECKPOINT-MIGRACION-HILO-FRESCO-21.md",
       "blob": "a6c2112eeb8809f6e61ef45944d14123eb5c3575"
     },
-    "latest_persisted_output": {
+    "last_persisted_model_output": {
       "path": "frentes/metodologia/entregas/CHATGPT-v0.3/C-METODOLOGIA-AUDITORIA-REQUISITOS-20-salida-final.md",
       "blob": "6978db55681c9df5e64580c8b90e793b2d7b23fa"
     },
@@ -59,7 +59,15 @@
     },
     "dialogue": {
       "path": "frentes/metodologia/conversaciones/C-METODOLOGIA-MIGRACION-HILO-FRESCO-21-dialogo.jsonl",
-      "blob": "6db5ee8d76c2121d0f120e1b74ac537a732506b8"
+      "blob": "da1cc1d2bbd10aded3e0584cbeac9f7b4ea56818"
+    },
+    "evidence": {
+      "path": "frentes/metodologia/evidencias/C-METODOLOGIA-MIGRACION-HILO-FRESCO-21-readback.json",
+      "blob": "fa704c6ebdc7c2088c52d0cb24bb7e26db9c6890"
+    },
+    "control": {
+      "path": "frentes/metodologia/CONTROL-RESPONSABILIDAD.json",
+      "blob": "3125ea6a222d531f479292b69bd68c34b82f1ee7"
     },
     "pending": {
       "path": "frentes/metodologia/PENDIENTES.md",
@@ -68,10 +76,6 @@
     "metacanon": {
       "path": "METACANON-OBJETOS-CANONICOS.md",
       "blob": "4ff1090d1174575133f9355d0bb98dc55041e2d7"
-    },
-    "responsibility_control": {
-      "path": "frentes/metodologia/CONTROL-RESPONSABILIDAD.json",
-      "blob": "3125ea6a222d531f479292b69bd68c34b82f1ee7"
     }
   },
   "native_ipz_status": "current native field cannot be read by these tools; previous user confirmation concerned a prior 1432-character revision; canonical current artifact is 1451 characters.",
@@ -89,7 +93,8 @@
     "status": "prepared_waiting_for_target_claim",
     "explicit_operator_authorization": true,
     "transfer_complete": false,
-    "target_identity": "not yet instantiated"
+    "target_identity": "not yet instantiated",
+    "transferComplete": false
   },
   "closing_conditions": [
     "target opens a fresh conversation and reads current main",
