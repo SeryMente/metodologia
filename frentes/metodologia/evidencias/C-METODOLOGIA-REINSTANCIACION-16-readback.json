@@ -5,16 +5,16 @@
   "source_repository": "SeryMente/metodologia",
   "branch": "main",
   "blobs": {
-    "metacanon": "83ef1bdeb83c2229c8d34b48c8e9b104299a8de0",
+    "metacanon": "e3261a40f6556c60d468950886eb73d2c0d351d0",
     "sam": "2d21b3d5ff7d3d33146e790021b0794242121fae",
     "gow": "f39ad5bb44d4d02562ccfc0a4af8015fb1d8ca04",
     "bcr": "26c69035250e857641aea341fb4468a8617c6a07",
     "inicio": "c7bfe48eeeb2139cf023f7e06e0c5597e0fe85ad",
     "governance_readme": "ae4762613a3df889ad6dc320fd20002e9ecfdce6",
     "responsibility_control": "5761eaa529686bbdb2d7acee6b078f24a1c105ac",
-    "pending": "1357c3b2132c06d1afbb121c766746e1373d4255",
+    "pending": "42f74f72a14b5733f1eac36f9653896e84d7766a",
     "ipz": "eac6010f5d7d053e3b746a081743d48856b598c8",
-    "revision": "b06d156a6c958d5690452af36be5907d56463418",
+    "revision": "758c9d731f84ca21b1f6f83ac744ebe492f54076",
     "sam_receipt": "e89ec11fda2ffd79e96c6859b71339e623ca704d",
     "gow_receipt": "a23da22ddddfefb25a4cea134622a3aa62908f99"
   },
@@ -67,11 +67,11 @@
   "artifacts": {
     "chronicle": {
       "path": "frentes/metodologia/cronica/C-METODOLOGIA-REINSTANCIACION-16.md",
-      "blob": "dbbd641c49ae2ca29081147ac9b8e93e39e7ea77"
+      "blob": "387a3d33cf4d0e6776093d560964e8abac71edd8"
     },
     "dialogue": {
       "path": "frentes/metodologia/conversaciones/C-METODOLOGIA-REINSTANCIACION-16-dialogo.jsonl",
-      "blob": "ccb02ed8b2ae1edb45698c855e26d0a05110b72b"
+      "blob": "f2b127586483e4dfbd06b5a98f358ba8c733e261"
     },
     "evidence": {
       "path": "frentes/metodologia/evidencias/C-METODOLOGIA-REINSTANCIACION-16-readback.json",
@@ -79,8 +79,12 @@
     },
     "final_output": {
       "path": "frentes/metodologia/entregas/CHATGPT-v0.3/C-METODOLOGIA-REINSTANCIACION-16-salida-final.md",
-      "blob": "f1148d978668ee8af244f05dab4476274e081c1f"
+      "blob": "be5539b6b7b29503845371c4d32924fd5a88627d"
     },
-    "evidence_previous_blob": "3fc986b8ec88fa2da246b1ccca5ec779d5a8770a"
+    "evidence_previous_blob": "3fc986b8ec88fa2da246b1ccca5ec779d5a8770a",
+    "revision": {
+      "path": "REVISION-METACANON-1.17.json",
+      "blob": "758c9d731f84ca21b1f6f83ac744ebe492f54076"
+    }
   }
 }
