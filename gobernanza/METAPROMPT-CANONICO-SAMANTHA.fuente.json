@@ -3,16 +3,25 @@
   "canonical_repository": "SeryMente/metodologia",
   "canonical_branch": "main",
   "source_title": "Metaprompt Canónico de Samantha (Sam) · v336 · NX-336m",
-  "canonical_blob_sha": "7f009f13bf06df9d94bcb1561e5b9031b4243c19",
-  "canonical_precedence": "Metacanon §43 and Sam P038 establish the repository as the preponderant source; Notion, custom instructions and other platform copies are subordinate mirrors.",
+  "canonical_blob_sha": "711c613519d3c33ed6bb479ce3a8c9b65dd6269f",
+  "canonical_precedence": "Sam P038 and Metacanon §43–45 declare SeryMente/metodologia/main preponderant over Notion, custom instructions, memories, local copies and other platform mirrors for methodological state and evidence.",
   "prior_notion_origin": "https://app.notion.com/p/a925d4a3b2508393b2b7817f1cf431da",
-  "current_notion_search_result": {
+  "notion_mirror_readback": {
     "url": "https://app.notion.com/p/c85a41878241830588e181f4c02fbab4",
-    "title": "Metaprompt Canónico de Samantha · Workspace v333 · NX-333m",
-    "observed_version": "v333 · NX-333m",
-    "status": "DIVERGENT_STALE_MIRROR"
+    "title": "🧬 Metaprompt Canónico de Samantha · Workspace v336 · NX-336m",
+    "observed_version": "v336 · NX-336m",
+    "last_edited_at": "2026-10-21T20:32:54.644Z",
+    "checks": {
+      "version": true,
+      "signature": true,
+      "p037": true,
+      "p038": true,
+      "p008GOW": true,
+      "footer": true
+    },
+    "status": "VERIFIED_READBACK"
   },
   "source_content_sha256": null,
-  "sync_status": "Repository main updated to v336; visible Notion page remains v333 in the observed fetch. Direct Notion write capability is not established; do not claim the mirror was synchronized. Canonical repository takes precedence.",
-  "hash_status": "SHA-256 was not recalculated; the Git blob SHA records the repository object."
+  "sync_status": "Repository main at Sam v336 was written to the Notion mirror and checked by read-back for title, version, load signature, P037/P038, P008 repository GOW path, and footer. Point-in-time sync only; no continuous GitHub↔Notion sync is installed.",
+  "hash_status": "SHA-256 was not recalculated; the Git blob SHA records the canonical repository object."
 }
