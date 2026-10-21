@@ -140,7 +140,7 @@ La revisión por ciclo del GOW sí es obligatoria ahora; no depende del cierre d
 
 - Metacanon 1.17 / METACANON-OBJETOS-v1.17: §§46–47 definen OCP como carpeta por FT, folio SES, adjudicación exclusiva por control de responsabilidad y recuperación literal de la última salida visible preservada; §4 define salida obligatoria por ciclo.
 - Sam v337 · NX-337m: P039 y P008 actualizados; P008 exige lectura del GOW al inicio y cierre de cada ciclo. Sam se sincronizó a Notion y se leyó de vuelta con firma y pie de 39 principios.
-- GOW v2.0: términos FT/FDT, OCP, folio SES e IPZ añadidos; corrección de la referencia activa a Metacanon v1.17 guardada en main. El espejo Notion v2.0 se verificó antes de esta corrección puntual; la última modificación todavía no tiene lectura de vuelta.
+- GOW v2.0: términos FT/FDT, OCP, folio SES e IPZ añadidos; la referencia activa a Metacanon v1.17 se corrigió en main y luego se volvió a escribir y leer de vuelta la página Notion v2.0 (última lectura observada 2026-10-21T21:01:51.961Z). El recibo JSON de GOW conserva una marca de lectura anterior y queda pendiente de refresco.
 - BCR: sección nueva de retoma FT/OCP/SES añadida y leída de vuelta; blob `82c4c2c03bcdde5c63a8766f8fe2a40bc4be0f0a`.
 - Control de Metodología: folio operativo `SES-20261021-C4D81A7F` guardado/read-back con generación 2. Búsqueda de colisión limitada al repo accesible; unicidad en toda la organización no verificada.
 - IPZ: texto de 1208 caracteres preparado en `/mnt/data/IPZ-CAMPO-CHATGPT.txt`. Ajuste nativo de ChatGPT aún requiere pegado explícito y posterior comprobación.
