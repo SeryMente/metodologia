@@ -2,28 +2,150 @@
   "schema": "responsabilidad/1",
   "front": "metodologia",
   "status": "owned",
-  "owner_thread": "operator-authorized-transfer:C-METODOLOGIA-COLISION-RESPONSABILIDAD-14",
-  "instance": "chatgpt-metacanon-collision-remediation-2026-10-21",
-  "generation": 2,
-  "authorization_ref": "METACANON-OBJETOS-CANONICOS.md#42-M42; instrucción explícita del operador en esta conversación: asumir el frente Metacanon y corregir la colisión; owner_thread es alias operativo porque no se expuso un ID nativo de esta conversación.",
-  "scope": "one recorded owner; generation 2 supersedes generation 1 by explicit operator authorization; owner_thread is an operational alias, not a native platform thread ID; cooperative preflight, not server-enforced fencing of arbitrary repository writes",
+  "owner_thread": "chatgpt-C-METODOLOGIA-MIGRACION-HILO-FRESCO-21-SES-20261021-6B9E2F41",
+  "instance": "chatgpt-metodologia-metacanon-migracion21-6B9E2F41",
+  "generation": 3,
+  "authorization_ref": "METACANON-OBJETOS-CANONICOS.md#42-M42; autorización explícita de transferencia registrada en CONTROL-RESPONSABILIDAD.json/handoff_preparation para C-METODOLOGIA-MIGRACION-HILO-FRESCO-21; identidad del destino como alias operativo, ID nativo no expuesto.",
+  "scope": "one active owner; generation 3 supersedes generation 2 by explicit operator authorization for C-METODOLOGIA-MIGRACION-HILO-FRESCO-21; owner_thread is an operational alias, not a native platform thread ID; cooperative preflight, not server-enforced fencing of arbitrary repository writes",
   "expiry": null,
-  "handoff": "Transferred from samanthal-metodologia-ciclo10 (generation 1) to operator-authorized event alias C-METODOLOGIA-COLISION-RESPONSABILIDAD-14 (generation 2); atomic SHA-conditioned update and read-back required; future collision: ask once for explicit operator authorization, no opaque platform ID request.",
+  "handoff": "Transferred in C-METODOLOGIA-MIGRACION-HILO-FRESCO-21 from operator-authorized-transfer:C-METODOLOGIA-COLISION-RESPONSABILIDAD-14 (instance chatgpt-metacanon-collision-remediation-2026-10-21, generation 2, folio SES-20261021-C4D81A7F) to chatgpt-C-METODOLOGIA-MIGRACION-HILO-FRESCO-21-SES-20261021-6B9E2F41 (instance chatgpt-metodologia-metacanon-migracion21-6B9E2F41, generation 3, folio SES-20261021-6B9E2F41); conditioned on observed control blob SHA 3125ea6a222d531f479292b69bd68c34b82f1ee7 and verified by canonical read-back. Alias is operational, not a native platform ID. This registry is cooperative, not universal writer fencing.",
   "previous_owner": {
-    "owner_thread": "session://ecea4187-8241-819b-af83-0003b7c205f7/3ffa4187-8241-80de-84a6-00a98cbd8894",
-    "instance": "samanthal-metodologia-ciclo10",
-    "generation": 1,
-    "observed_blob_sha": "29d0b9afab67e9e932bcaa292c8c4c4d2dc3bac7"
+    "owner_thread": "operator-authorized-transfer:C-METODOLOGIA-COLISION-RESPONSABILIDAD-14",
+    "instance": "chatgpt-metacanon-collision-remediation-2026-10-21",
+    "generation": 2,
+    "session_folio": "SES-20261021-C4D81A7F",
+    "observed_blob_sha": "3125ea6a222d531f479292b69bd68c34b82f1ee7",
+    "status": "owned"
   },
   "transfer": {
-    "event_id": "C-METODOLOGIA-COLISION-RESPONSABILIDAD-14",
+    "event_id": "C-METODOLOGIA-MIGRACION-HILO-FRESCO-21",
+    "status": "transferred",
     "recorded_on": "2026-10-21",
-    "receiver_identity_kind": "operator-authorized operational alias; native conversation ID unavailable",
-    "authorization_scope": "Metacanon/front metodología control for this transfer only",
-    "method": "contents API update conditioned on the observed Git blob SHA, followed by canonical read-back"
+    "authorization": {
+      "status": "explicit",
+      "verbatim": "Actualiza OCP para migrar instancia a hilo fresco y dame el prompt que necesito para reinstanciar",
+      "scope": "single transfer of Metodología/Metacanon only"
+    },
+    "from": {
+      "owner_thread": "operator-authorized-transfer:C-METODOLOGIA-COLISION-RESPONSABILIDAD-14",
+      "instance": "chatgpt-metacanon-collision-remediation-2026-10-21",
+      "generation": 2,
+      "session_folio": "SES-20261021-C4D81A7F",
+      "observed_blob_sha": "3125ea6a222d531f479292b69bd68c34b82f1ee7",
+      "status": "owned"
+    },
+    "to": {
+      "owner_thread": "chatgpt-C-METODOLOGIA-MIGRACION-HILO-FRESCO-21-SES-20261021-6B9E2F41",
+      "instance": "chatgpt-metodologia-metacanon-migracion21-6B9E2F41",
+      "generation": 3,
+      "session_folio": "SES-20261021-6B9E2F41",
+      "identity_kind": "operational alias; native conversation ID unavailable"
+    },
+    "observed_control_blob_sha": "3125ea6a222d531f479292b69bd68c34b82f1ee7",
+    "observed_source_generation": 2,
+    "new_generation": 3,
+    "method": "SHA-conditioned GitHub contents update using observed current blob SHA, followed by canonical read-back",
+    "collision_check": {
+      "candidate_folio": "SES-20261021-6B9E2F41",
+      "checked_controls": [
+        "SeryMente/khora:docs/frentes/harmonia/CONTROL-RESPONSABILIDAD.json",
+        "SeryMente/signal-interpreter:docs/frentes/signal-interpreter/CONTROL-RESPONSABILIDAD.json",
+        "SeryMente/metodologia:frentes/acceso/CONTROL-RESPONSABILIDAD.json",
+        "SeryMente/metodologia:frentes/metodologia/CONTROL-RESPONSABILIDAD.json"
+      ],
+      "exact_code_search_result_count": 0,
+      "declared_scope": "four readable CONTROL-RESPONSABILIDAD.json files and code search across the nine accessible SeryMente repositories; does not prove global uniqueness",
+      "unverified_path": "SeryMente/personal:frentes/repertorio-canto-personal/CONTROL-RESPONSABILIDAD.json returned NOT_FOUND"
+    }
   },
-  "session_folio": "SES-20261021-C4D81A7F",
+  "session_folio": "SES-20261021-6B9E2F41",
   "session_assignment": {
+    "status": "active",
+    "folio": "SES-20261021-6B9E2F41",
+    "assigned_on": "2026-10-21",
+    "front_ocp": "frentes/metodologia/",
+    "owner_alias": "chatgpt-C-METODOLOGIA-MIGRACION-HILO-FRESCO-21-SES-20261021-6B9E2F41",
+    "instance": "chatgpt-metodologia-metacanon-migracion21-6B9E2F41",
+    "generation": 3,
+    "identity_kind": "operational session folio; not a native ChatGPT conversation ID",
+    "uniqueness_check": "Manual check on 2026-10-21: no matching folio in the four readable controls listed below and exact code search across accessible SeryMente repositories returned zero matches. The attempted personal OCP control path returned NOT_FOUND. The nine-repository inventory is accessible scope, not proof of all organization repositories; no global uniqueness or server-enforced exclusivity is claimed.",
+    "source_sha_before": "3125ea6a222d531f479292b69bd68c34b82f1ee7",
+    "checked_control_scope": [
+      "SeryMente/khora:docs/frentes/harmonia/CONTROL-RESPONSABILIDAD.json",
+      "SeryMente/signal-interpreter:docs/frentes/signal-interpreter/CONTROL-RESPONSABILIDAD.json",
+      "SeryMente/metodologia:frentes/acceso/CONTROL-RESPONSABILIDAD.json",
+      "SeryMente/metodologia:frentes/metodologia/CONTROL-RESPONSABILIDAD.json"
+    ],
+    "unverified_control_paths": [
+      "SeryMente/personal:frentes/repertorio-canto-personal/CONTROL-RESPONSABILIDAD.json (NOT_FOUND; not counted as checked)"
+    ]
+  },
+  "handoff_preparation": {
+    "event_id": "C-METODOLOGIA-MIGRACION-HILO-FRESCO-21",
+    "status": "transferred",
+    "prepared_on": "2026-10-21",
+    "prepared_from": {
+      "owner_thread": "operator-authorized-transfer:C-METODOLOGIA-COLISION-RESPONSABILIDAD-14",
+      "instance": "chatgpt-metacanon-collision-remediation-2026-10-21",
+      "generation": 2,
+      "session_folio": "SES-20261021-C4D81A7F",
+      "control_blob_sha_before": "f810835002e235ebd12cedc75a02678aa1073f2b"
+    },
+    "operator_authorization": {
+      "status": "explicit",
+      "verbatim": "Actualiza OCP para migrar instancia a hilo fresco y dame el prompt que necesito para reinstanciar",
+      "scope": "single transfer of the Metodología/Metacanon front to the next fresh thread that uses the migration prompt; no other FT",
+      "prompt_reuse": "one successful claim only; CAS prevents a second claimant using the same prepared state"
+    },
+    "source_policy": {
+      "owner_remains_recorded_until_destination_CAS": false,
+      "freeze_project_mutations_after_package_preparation": true,
+      "allow_only_readback_and_handoff_evidence": true
+    },
+    "target": {
+      "status": "claimed",
+      "target_thread": "chatgpt-C-METODOLOGIA-MIGRACION-HILO-FRESCO-21-SES-20261021-6B9E2F41",
+      "target_instance": "chatgpt-metodologia-metacanon-migracion21-6B9E2F41",
+      "target_folio": "SES-20261021-6B9E2F41",
+      "target_generation": 3,
+      "claimed_on": "2026-10-21",
+      "identity_kind": "operational alias; not a native platform conversation ID",
+      "control_blob_sha_before": "3125ea6a222d531f479292b69bd68c34b82f1ee7"
+    },
+    "artifacts": {
+      "prompt": "frentes/metodologia/entregas/CHATGPT-v0.3/PROMPT-MIGRACION-HILO-FRESCO-21.txt",
+      "checkpoint": "frentes/metodologia/entregas/CHATGPT-v0.3/CHECKPOINT-MIGRACION-HILO-FRESCO-21.md",
+      "last_persisted_output": "frentes/metodologia/entregas/CHATGPT-v0.3/C-METODOLOGIA-AUDITORIA-REQUISITOS-20-salida-final.md"
+    },
+    "transfer_contract": {
+      "read_live_control_again_before_write": true,
+      "require_event_and_source_identity_generation_folio_match": true,
+      "new_generation": "observed_generation_plus_one",
+      "require_sha_conditioned_write": true,
+      "preserve_previous_owner_folio_and_history": true,
+      "readback_required": true,
+      "blind_retry_prohibited": true,
+      "if_conflict_or_no_write": "stop; remain read-only; declare transfer not completed"
+    },
+    "completed_on": "2026-10-21"
+  },
+  "ownership_history": [
+    {
+      "owner_thread": "session://ecea4187-8241-819b-af83-0003b7c205f7/3ffa4187-8241-80de-84a6-00a98cbd8894",
+      "instance": "samanthal-metodologia-ciclo10",
+      "generation": 1,
+      "observed_blob_sha": "29d0b9afab67e9e932bcaa292c8c4c4d2dc3bac7"
+    },
+    {
+      "owner_thread": "operator-authorized-transfer:C-METODOLOGIA-COLISION-RESPONSABILIDAD-14",
+      "instance": "chatgpt-metacanon-collision-remediation-2026-10-21",
+      "generation": 2,
+      "session_folio": "SES-20261021-C4D81A7F",
+      "observed_blob_sha": "3125ea6a222d531f479292b69bd68c34b82f1ee7",
+      "status": "owned"
+    }
+  ],
+  "previous_session_assignment": {
     "status": "active",
     "folio": "SES-20261021-C4D81A7F",
     "assigned_on": "2026-10-21",
@@ -41,49 +163,20 @@
       "SeryMente/metodologia:frentes/metodologia/CONTROL-RESPONSABILIDAD.json"
     ]
   },
-  "handoff_preparation": {
-    "event_id": "C-METODOLOGIA-MIGRACION-HILO-FRESCO-21",
-    "status": "prepared_waiting_for_target_claim",
-    "prepared_on": "2026-10-21",
-    "prepared_from": {
-      "owner_thread": "operator-authorized-transfer:C-METODOLOGIA-COLISION-RESPONSABILIDAD-14",
-      "instance": "chatgpt-metacanon-collision-remediation-2026-10-21",
-      "generation": 2,
-      "session_folio": "SES-20261021-C4D81A7F",
-      "control_blob_sha_before": "f810835002e235ebd12cedc75a02678aa1073f2b"
-    },
-    "operator_authorization": {
-      "status": "explicit",
-      "verbatim": "Actualiza OCP para migrar instancia a hilo fresco y dame el prompt que necesito para reinstanciar",
-      "scope": "single transfer of the Metodología/Metacanon front to the next fresh thread that uses the migration prompt; no other FT",
-      "prompt_reuse": "one successful claim only; CAS prevents a second claimant using the same prepared state"
-    },
-    "source_policy": {
-      "owner_remains_recorded_until_destination_CAS": true,
-      "freeze_project_mutations_after_package_preparation": true,
-      "allow_only_readback_and_handoff_evidence": true
-    },
-    "target": {
-      "status": "not_yet_instantiated",
-      "target_thread": "to_be_identified_by_the_fresh_conversation",
-      "target_instance": "to_be_set_by_destination_as_operational_alias",
-      "target_folio_format": "SES-AAAAMMDD-XXXXXXXX",
-      "identity_kind": "operational alias; not a native platform thread ID"
-    },
-    "artifacts": {
-      "prompt": "frentes/metodologia/entregas/CHATGPT-v0.3/PROMPT-MIGRACION-HILO-FRESCO-21.txt",
-      "checkpoint": "frentes/metodologia/entregas/CHATGPT-v0.3/CHECKPOINT-MIGRACION-HILO-FRESCO-21.md",
-      "last_persisted_output": "frentes/metodologia/entregas/CHATGPT-v0.3/C-METODOLOGIA-AUDITORIA-REQUISITOS-20-salida-final.md"
-    },
-    "transfer_contract": {
-      "read_live_control_again_before_write": true,
-      "require_event_and_source_identity_generation_folio_match": true,
-      "new_generation": "observed_generation_plus_one",
-      "require_sha_conditioned_write": true,
-      "preserve_previous_owner_folio_and_history": true,
-      "readback_required": true,
-      "blind_retry_prohibited": true,
-      "if_conflict_or_no_write": "stop; remain read-only; declare transfer not completed"
+  "transfer_history": [
+    {
+      "event_id": "C-METODOLOGIA-COLISION-RESPONSABILIDAD-14",
+      "recorded_on": "2026-10-21",
+      "receiver_identity_kind": "operator-authorized operational alias; native conversation ID unavailable",
+      "authorization_scope": "Metacanon/front metodología control for this transfer only",
+      "method": "contents API update conditioned on the observed Git blob SHA, followed by canonical read-back"
     }
+  ],
+  "previous_transfer": {
+    "event_id": "C-METODOLOGIA-COLISION-RESPONSABILIDAD-14",
+    "recorded_on": "2026-10-21",
+    "receiver_identity_kind": "operator-authorized operational alias; native conversation ID unavailable",
+    "authorization_scope": "Metacanon/front metodología control for this transfer only",
+    "method": "contents API update conditioned on the observed Git blob SHA, followed by canonical read-back"
   }
 }
