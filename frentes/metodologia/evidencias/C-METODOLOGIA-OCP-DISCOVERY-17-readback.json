@@ -1,0 +1,147 @@
+{
+  "event": "C-METODOLOGIA-OCP-DISCOVERY-17",
+  "date": "2026-10-21",
+  "status": "canon_and_mirror_readback_verified; native_ipz_replacement_pending",
+  "source": {
+    "repository": "SeryMente/metodologia",
+    "branch": "main"
+  },
+  "versions": {
+    "metacanon": {
+      "version": "1.18",
+      "seal": "METACANON-OBJETOS-v1.18",
+      "blob": "5e45529886099f19ca10bf9351d9622cab8b4c34"
+    },
+    "sam": {
+      "version": "v338",
+      "signature": "NX-338m",
+      "principles": 40,
+      "blob": "1ace0ef55623b8ae4d1be5c169fe3f211f22594a"
+    },
+    "gow": {
+      "version": "v2.1",
+      "blob": "d8df366741f6c5881c8da5e9660cfaf520fd768e"
+    },
+    "bcr": {
+      "blob": "48d2f0c2cb57d5b74f69c539a4cd1a780bafdff9"
+    },
+    "inicio": {
+      "blob": "2b460e6b040b0c8153fea441d5d5681dd29febba"
+    },
+    "governance_readme": {
+      "blob": "0bf9a4d01930f97d2789a404f997be8a1a49ccf5"
+    },
+    "root_glossary_pointer": {
+      "blob": "154cacde1a557a3be3168e31121c0b33989a9341"
+    },
+    "terminology_annex": {
+      "blob": "5ade5159c3b2d27c598d2c7032d11940586ac1f3"
+    },
+    "sam_receipt": {
+      "blob": "88847817640a32717a600da003f4c6c5bf72c35f"
+    },
+    "gow_receipt": {
+      "blob": "e8042ab78c344bfe3a3d42ed95213c3ba2bd7ae3"
+    },
+    "responsibility_control": {
+      "blob": "f810835002e235ebd12cedc75a02678aa1073f2b",
+      "folio": "SES-20261021-C4D81A7F",
+      "generation": 2,
+      "status": "owned"
+    }
+  },
+  "manual_checks": {
+    "sam": {
+      "notion_page": "https://app.notion.com/p/c85a41878241830588e181f4c02fbab4",
+      "status": "verified_readback",
+      "checks": [
+        "v338",
+        "NX-338m",
+        "P039",
+        "P040",
+        "P008 GOW cycle review",
+        "40 principle footer"
+      ]
+    },
+    "gow": {
+      "notion_page": "https://app.notion.com/p/247a418782418399a86001aae61ae938",
+      "status": "verified_readback",
+      "checks": [
+        "v2.1",
+        "FT/FDT",
+        "OCP",
+        "SES",
+        "IPZ",
+        "Metacanon 1.18 reference",
+        "docs/frentes legacy path",
+        "mandatory GOW cycle review",
+        "direct GOW link",
+        "direct Metacanon §4 link",
+        "direct Sam cascade link"
+      ]
+    },
+    "folio_collision": {
+      "status": "checked_four_controls",
+      "result": "No duplicate folio found in the four accessible controls",
+      "scope": [
+        "SeryMente/khora/docs/frentes/harmonia/CONTROL-RESPONSABILIDAD.json",
+        "SeryMente/signal-interpreter/docs/frentes/signal-interpreter/CONTROL-RESPONSABILIDAD.json",
+        "SeryMente/metodologia/frentes/acceso/CONTROL-RESPONSABILIDAD.json",
+        "SeryMente/metodologia/frentes/metodologia/CONTROL-RESPONSABILIDAD.json"
+      ],
+      "limitations": "Nine repositories under owner SeryMente were exposed; org membership listing unavailable. Does not prove org-wide uniqueness."
+    },
+    "harmonia": {
+      "repository": "SeryMente/khora",
+      "ocp": "docs/frentes/harmonia/",
+      "control_blob": "dab4eb84680a556af4e6bed029ebb234a42a2cfe",
+      "status": "assigned",
+      "generation": 1,
+      "write_or_transfer_performed": false,
+      "reason": "Mentioned as example, not as a command to assume or transfer"
+    }
+  },
+  "ipz": {
+    "path": "frentes/metodologia/entregas/CHATGPT-v0.3/IPZ-CAMPO-CHATGPT.txt",
+    "blob": "f58f419ecf925175462e17e8a3a3828bc09ec59d",
+    "characters_without_final_newline": 1494,
+    "platform_limit": 1500,
+    "link_targets": [
+      "GOW",
+      "Metacanon §4",
+      "Sam cascade"
+    ],
+    "operator_reported_previous_revision_applied": true,
+    "current_revision_native_readback": "not available via connected tools; latest 1494-char text should replace previous 1432-char version"
+  },
+  "artifacts": {
+    "pending": {
+      "path": "frentes/metodologia/PENDIENTES.md",
+      "blob": "f83006c2a193f3c6434e0defa143356568799286"
+    },
+    "chronicle": {
+      "path": "frentes/metodologia/cronica/C-METODOLOGIA-OCP-DISCOVERY-17.md",
+      "blob": "f7538e4acbe67fffccba23b6ed09fe7662008c65"
+    },
+    "dialogue": {
+      "path": "frentes/metodologia/conversaciones/C-METODOLOGIA-OCP-DISCOVERY-17-dialogo.jsonl",
+      "blob": "964affba43a0d8bf2cce828e006c6b4a46b053bd"
+    },
+    "final_output": {
+      "path": "frentes/metodologia/entregas/CHATGPT-v0.3/C-METODOLOGIA-OCP-DISCOVERY-17-salida-final.md",
+      "blob": "6755b9296b3b06f31b76bcd43dc364b64be09504"
+    },
+    "revision": {
+      "path": "REVISION-METACANON-1.18.json",
+      "blob": "fa9231a7cbc250dd3a5726da71e569adba504c30"
+    }
+  },
+  "limitations": [
+    "MCP normative verification is intentionally disabled; checks in this cycle were manual.",
+    "No continuous GitHub↔Notion sync or universal server-side ownership lock was installed.",
+    "The native ChatGPT custom-instructions field cannot be read back or written by the available connected tools.",
+    "Organization-wide folio uniqueness is not asserted beyond the four checked controls.",
+    "External-model semantic compliance has not been tested.",
+    "SHA-256 content digests were not recalculated; Git blob SHAs are recorded as revision identifiers."
+  ]
+}
