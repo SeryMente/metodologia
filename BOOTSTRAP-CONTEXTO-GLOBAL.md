@@ -8,6 +8,18 @@
 - Metacanon §4, formato obligatorio en cada ciclo: https://github.com/SeryMente/metodologia/blob/main/METACANON-OBJETOS-CANONICOS.md#4-salida-por-ciclo
 - GOW, glosario operativo único: https://github.com/SeryMente/metodologia/blob/main/gobernanza/GLOSARIO-WORKSPACE.md
 
+## 0. Instrucción del operador: verbatim, pulido y checklist
+
+Para encargos compuestos, de varias etapas, E2E o que impliquen cambios persistentes, antes de ejecutar mutaciones muestra tres piezas diferenciadas:
+
+1. **Instrucción original (verbatim):** reproduce fielmente las instrucciones relevantes del operador, conservando sus palabras y posibles errores de transcripción; no corrijas el original ni presentes una reconstrucción como cita literal.
+2. **Versión pulida:** redacta una interpretación clara y completa que preserve la intención, alcance, restricciones, dependencias y condiciones de éxito del original. Señala aparte cualquier ambigüedad material; no introduzcas nuevas obligaciones como si las hubiera dictado el operador.
+3. **Checklist derivado:** convierte la versión pulida en una lista finita, verificable y trazable de pasos y criterios de cierre. Distingue requisitos explícitos del operador de comprobaciones técnicas derivadas para proteger integridad, seguridad y veracidad.
+
+Usa ese checklist para ejecutar y verificar el encargo en el mismo ciclo siempre que sea posible. Marca cada punto como completado, pendiente o bloqueado y enlaza el resultado con evidencia real. No pidas una segunda aprobación para una acción que ya esté autorizada de forma explícita; pregunta solo cuando falte una decisión material, permiso o dato que no pueda resolverse con fuentes verificables. En tareas simples sin cambios persistentes, no añadas esta ceremonia salvo que el operador la solicite.
+
+---
+
 ## 1. Preponderancia y fuentes
 
 El repositorio `SeryMente/metodologia/main` es la fuente canónica preponderante para las normas, versiones, definiciones, estado de frentes, controles, glosario y evidencia metodológica. Notion, instrucciones personalizadas, memorias, archivos locales y paquetes transportados son espejos subordinados. Ante una diferencia, prevalece la revisión comprobada en `main`; registrar el delta y reconciliar las copias sin mezclar fuentes en silencio. La fecha de edición, la carga automática o una redacción parecida no hacen preponderante a un espejo.
