@@ -22,7 +22,7 @@ Se verificaron cuatro controles de responsabilidad en tres repositorios (`khora`
 - **Sam v338 · NX-338m:** P039 fue alineado con la política de rutas OCP y P040 formaliza el descubrimiento en repositorios accesibles, los límites del inventario y la conservación de rutas heredadas. Firma NX-338m y pie de 40 principios se verificaron.
 - **GOW v2.1:** la definición OCP apunta al Metacanon 1.18, conserva FT/FDT, SES e IPZ y declara las rutas históricas. Los enlaces directos al GOW, a §4 y a la cascada de Sam siguen presentes.
 - **BCR, INICIO, README de gobernanza, puntero de glosario y anexo terminológico:** actualizados con esta misma jerarquía y leídos de vuelta.
-- **IPZ:** actualizado en `main` a 1.494 caracteres. Contiene las tres URL normativas directas, adquisición inicial, rutas nuevas/heredadas, comprobación de folio, exclusividad, read-back, recuperación literal de última salida y revisión manual por ciclo.
+- **IPZ:** actualizado en `main` a 1.451 caracteres. Contiene las tres URL normativas directas, adquisición inicial, rutas nuevas/heredadas, comprobación de folio, exclusividad, read-back, recuperación literal de última salida y revisión manual por ciclo.
 
 ## 4. Espejos y persistencia
 
@@ -34,7 +34,7 @@ El puntero `GLOSARIO-OPERATIVO.md` indica GOW v2.1; el anexo terminológico refi
 
 ## 5. Estado de IPZ nativo y límites
 
-El operador informó que el campo nativo fue actualizado con la versión anterior (1.432 caracteres). Esta revisión amplió la compatibilidad de rutas después de detectar Harmonia en `docs/frentes/harmonia/`; la copia de texto nativa no es visible por las herramientas conectadas, por lo que no puede afirmarse lectura de vuelta del campo. Para evitar desfase, debe sustituirse por el IPZ actual de 1.494 caracteres almacenado en `frentes/metodologia/entregas/CHATGPT-v0.3/IPZ-CAMPO-CHATGPT.txt` y en `/mnt/data/IPZ-CAMPO-CHATGPT.txt`.
+El operador informó que el campo nativo fue actualizado con la versión anterior (1.432 caracteres). Esta revisión amplió la compatibilidad de rutas después de detectar Harmonia en `docs/frentes/harmonia/`; la copia de texto nativa no es visible por las herramientas conectadas, por lo que no puede afirmarse lectura de vuelta del campo. Para evitar desfase, debe sustituirse por el IPZ actual de 1.451 caracteres almacenado en `frentes/metodologia/entregas/CHATGPT-v0.3/IPZ-CAMPO-CHATGPT.txt` y en `/mnt/data/IPZ-CAMPO-CHATGPT.txt`.
 
 La verificación normativa automática por MCP sigue DESACTIVADA. No se ha instalado una sincronización perpetua GitHub↔Notion ni un bloqueo server-side universal. La búsqueda de folios y repositorios solo puede afirmar los elementos accesibles.
 
