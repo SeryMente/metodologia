@@ -149,13 +149,13 @@ Respeta alcance, compuertas y no-simulación. El asistente mantiene continuidad 
 - **Evidencia de archivos canónicos en `main`:**
   - Sam — `gobernanza/METAPROMPT-CANONICO-SAMANTHA.md`, blob `711c613519d3c33ed6bb479ce3a8c9b65dd6269f`.
   - GOW — `gobernanza/GLOSARIO-WORKSPACE.md`, blob `17bf150cf20532793b8d1b3e175e0330013df4d8`.
-  - INICIO — `INICIO.md`, blob `2f65c85c652340505c4661229de8148cdc56b8c2`.
+  - INICIO — `INICIO.md`, blob `871253399531683be912ee58dc504f0b3713feef`; ahora enlaza el BCR canónico.
   - Guía de gobernanza — `gobernanza/README.md`, blob `fd5651b0adb7686633a21756eab7939e2a25fb7c`.
   - Puntero de compatibilidad raíz — `GLOSARIO-OPERATIVO.md`, blob `367898529eca9cef425f3a3d2471c85b31c8127b`; anexo subordinado — `ANEXO-GOBERNANZA-TERMINOLOGICA-Y-NORMALIZACION.md`, blob `510143b33c762840bf7a31bbd9ad726ffddce033`.
   - Original conservado verbatim — `frentes/metodologia/antecedentes/GLOSARIO-OPERATIVO-v1.3.1.md`, blob `6b8d3a50f2ac235b5597989981a0eabee9e90d85`.
-  - BCR adaptado — `BOOTSTRAP-CONTEXTO-GLOBAL.md`, blob `767db8cdf00d3106399023c1baceeb5a91a6b4e6`.
+  - BCR adaptado — `BOOTSTRAP-CONTEXTO-GLOBAL.md`, blob `767db8cdf00d3106399023c1baceeb5a91a6b4e6`. Su contenido completo es fuente canónica del bootstrap; los ajustes nativos de instrucciones personalizadas no se modificaron directamente.
   - Recibos de fuente — Sam `gobernanza/METAPROMPT-CANONICO-SAMANTHA.fuente.json`, blob `136635031112066d9fc1cf0b71647f0231f66cd2`; GOW `gobernanza/GLOSARIO-WORKSPACE.fuente.json`, blob `de3cbb272b9b6cfe056989f428d0d41b0c507637`.
-- **Límites:** el canon no crea permisos, capacidades ni un mediador universal que impida a herramientas no cooperantes escribir fuera del control. No está implementada sincronización automática perpetua GitHub↔Notion. Todo cambio de espejo sigue requiriendo propagación y verificación explícitas.
+- **Límites:** el canon no crea permisos, capacidades ni un mediador universal que impida a herramientas no cooperantes escribir fuera del control. No está implementada sincronización automática perpetua GitHub↔Notion. Todo cambio de espejo sigue requiriendo propagación y verificación explícitas. La crónica y la evidencia de lectura de vuelta están registradas en `frentes/metodologia/cronica/C-METODOLOGIA-FUENTE-PRECEDENCIA-15.md` y `frentes/metodologia/evidencias/C-METODOLOGIA-FUENTE-PRECEDENCIA-15-readback.json`; el estado actualizado de tareas y pendientes está en `frentes/metodologia/PENDIENTES.md`. El registro de revisión es `REVISION-METACANON-1.16.json`.
 
 ## 10. Instrucción original de separación del metacanon
 
