@@ -1,0 +1,24 @@
+{
+  "schema": "revision-metacanon/1",
+  "version": "1.11",
+  "seal": "METACANON-OBJETOS-v1.11",
+  "cycle": "C-METODOLOGIA-PROPOSITO-11",
+  "base": {
+    "version": "1.10",
+    "blob": "53db16723ec90d555d207a9a94e4f1dfd58adf07"
+  },
+  "rule": "Todo frente nuevo requiere propósito dictado directamente por el operador, preservado verbatim; ausencia bloquea creación.",
+  "affected_sections": [
+    "1",
+    "2",
+    "3",
+    "27",
+    "39"
+  ],
+  "compatibility": "No modifica trece bloques, roles ni autorizaciones; no acredita propagación retroactiva.",
+  "verification": [
+    "original preserved",
+    "canonical rule inserted",
+    "read-back pending at creation time"
+  ]
+}
