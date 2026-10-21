@@ -1,3 +1,11 @@
+# ⚠️ PROMPT DE UN SOLO USO CONSUMIDO — NO REEJECUTAR
+
+El evento `C-METODOLOGIA-MIGRACION-HILO-FRESCO-21` ya completó CAS y read-back. Control vivo: generación 3, folio `SES-20261021-6B9E2F41`, propietario operativo `chatgpt-C-METODOLOGIA-MIGRACION-HILO-FRESCO-21-SES-20261021-6B9E2F41`. El cuerpo histórico que sigue fue el prompt de reclamación usado; sus precondiciones de generación 2 ya no son actuales. **No vuelvas a ejecutarlo ni reclames otra vez el mismo traspaso.** Para continuar desde otro hilo, usa [PROMPT-CONTINUIDAD-METODOLOGIA-VERBATIM-E2E-22.txt](PROMPT-CONTINUIDAD-METODOLOGIA-VERBATIM-E2E-22.txt) y consulta el control vivo.
+
+---
+
+## Prompt original usado, conservado verbatim debajo de esta nota
+
 REINSTANCIACIÓN · C-METODOLOGIA-MIGRACION-HILO-FRESCO-21
 
 Retoma Metodología/Metacanon desde SeryMente/metodologia/main. main prevalece sobre Notion, memoria y paquetes históricos. Antes de actuar, lee:
