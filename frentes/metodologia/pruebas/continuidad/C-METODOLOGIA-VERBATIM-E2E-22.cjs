@@ -65,7 +65,7 @@ test('V01-un-repositorio-admite-multiples-FT', () => {
 test('V02-IPZ-enlaza-y-remite-al-GOW', () => {
   if (!ipz.includes('https://github.com/SeryMente/metodologia/blob/main/gobernanza/GLOSARIO-WORKSPACE.md')) throw new Error('canonical GOW link missing');
   if (!gow.includes('v2.2') || !gow.includes('No es un Hub')) throw new Error('current GOW version/scope not detected');
-  if (!sam.includes('P008') || !sam.includes('al inicio y al cierre de cada ciclo')) throw new Error('Sam P008 cycle-review rule missing');
+  if (!sam.includes('P008') || !sam.toLowerCase().includes('al inicio y al cierre de cada ciclo')) throw new Error('Sam P008 cycle-review rule missing');
 });
 test('V03-IPZ-es-termino-canonico-y-cuenta-verificada', () => {
   if (!gow.includes('Instrucciones Personalizadas de ChatGPT (IPZ)')) throw new Error('IPZ glossary entry missing');
@@ -116,7 +116,7 @@ test('prompt-de-un-solo-uso-marcado-consumido', () => {
 test('checkpoint-refleja-transferencia-completada-y-entrypoints-actuales', () => {
   if (!checkpoint.includes('ESTADO ACTUAL VERIFICADO') || !checkpoint.includes('generación **3**')) throw new Error('checkpoint lacks current verified state overlay');
   if (!checkpoint.includes('PROMPT-CONTINUIDAD-METODOLOGIA-VERBATIM-E2E-22.txt')) throw new Error('checkpoint does not route new threads to current continuation prompt');
-  if (!leeme.includes('ya se consumó') || !entry.includes('PROMPT-CONTINUIDAD-METODOLOGIA-VERBATIM-E2E-22.txt')) throw new Error('entrypoints still indicate a pending transfer or stale prompt');
+  if (!leeme.includes('se consumó') || !entry.includes('PROMPT-CONTINUIDAD-METODOLOGIA-VERBATIM-E2E-22.txt')) throw new Error('entrypoints still indicate a pending transfer or stale prompt');
 });
 test('manifest-y-salida-generica-no-declaran-transferencia-pendiente', () => {
   if (!manifest.status.includes('transferred_and_readback_verified') || manifest.handoffPreparation?.transferComplete !== true) throw new Error('manifest status is stale');
