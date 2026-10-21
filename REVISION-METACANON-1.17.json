@@ -1,0 +1,120 @@
+{
+  "schema": "revision-metacanon/1",
+  "event": "C-METODOLOGIA-REINSTANCIACION-16",
+  "date": "2026-10-21",
+  "status": "documentary_changes_written_and_read_back",
+  "canonical_source": {
+    "repository": "SeryMente/metodologia",
+    "branch": "main",
+    "precedence": "preponderant"
+  },
+  "versions": {
+    "metacanon": {
+      "path": "METACANON-OBJETOS-CANONICOS.md",
+      "version": "1.17",
+      "seal": "METACANON-OBJETOS-v1.17",
+      "blob": "ff8528484909dd730ead3d2286360c4ee5ebcf0f"
+    },
+    "sam": {
+      "path": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.md",
+      "version": "v337",
+      "signature": "NX-337m",
+      "blob": "2d21b3d5ff7d3d33146e790021b0794242121fae",
+      "added": "P039"
+    },
+    "gow": {
+      "path": "gobernanza/GLOSARIO-WORKSPACE.md",
+      "version": "v2.0",
+      "blob": "f39ad5bb44d4d02562ccfc0a4af8015fb1d8ca04"
+    },
+    "bcr": {
+      "path": "BOOTSTRAP-CONTEXTO-GLOBAL.md",
+      "blob": "26c69035250e857641aea341fb4468a8617c6a07"
+    },
+    "inicio": {
+      "path": "INICIO.md",
+      "blob": "c7bfe48eeeb2139cf023f7e06e0c5597e0fe85ad"
+    },
+    "governanceGuide": {
+      "path": "gobernanza/README.md",
+      "blob": "ae4762613a3df889ad6dc320fd20002e9ecfdce6"
+    },
+    "samReceipt": {
+      "path": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.fuente.json",
+      "blob": "e89ec11fda2ffd79e96c6859b71339e623ca704d"
+    },
+    "gowReceipt": {
+      "path": "gobernanza/GLOSARIO-WORKSPACE.fuente.json",
+      "blob": "415af634eb9d692513c24198f5ddc7b6d48d37ae"
+    },
+    "pending": {
+      "path": "frentes/metodologia/PENDIENTES.md",
+      "blob": "acc30a1b6d71eedb5442a176bd99b9c42889f29c"
+    }
+  },
+  "OCP": {
+    "path": "frentes/metodologia/",
+    "control_path": "frentes/metodologia/CONTROL-RESPONSABILIDAD.json",
+    "control_blob": "5761eaa529686bbdb2d7acee6b078f24a1c105ac",
+    "generation": 2,
+    "active_folio": "SES-20261021-C4D81A7F",
+    "status": "active",
+    "identity_kind": "operational alias and folio, not native ChatGPT conversation ID",
+    "repository_collision_check": "limited to accessible repository scope; organization-wide uniqueness not asserted"
+  },
+  "rules_implemented": [
+    "FT and FDT are equivalent terms for frente de trabajo.",
+    "OCP is the project repository folder for one FT; multiple FTs may exist in one repository.",
+    "A session receives a folio SES-AAAAMMDD-XXXXXXXX; each FT may have only one active session.",
+    "An active conflicting owner triggers Sam P037 and Metacanon §42: ask once for explicit transfer authorization, compare SHA/generation, read back.",
+    "The first cycle after retaking a FT reproduces the last persisted visible model output verbatim with provenance, or reports unavailable without reconstruction.",
+    "Metacanon §4 is mandatory in every cycle.",
+    "Review GOW at cycle start and close, without exception; manually inspect Sam cascade each cycle.",
+    "Normative MCP verification remains disabled and must not be claimed.",
+    "IPZ terminology and direct links to GOW, Metacanon §4 and Sam cascading principles are in GOW."
+  ],
+  "notion_mirror_readback": {
+    "sam": {
+      "title": "Metaprompt Canónico de Samantha · Workspace v337 · NX-337m",
+      "url": "https://app.notion.com/p/c85a41878241830588e181f4c02fbab4",
+      "version": "v337 · NX-337m",
+      "signature": "NX-337m",
+      "checks": [
+        "P037",
+        "P038",
+        "P008 mandatory GOW cycle review",
+        "P039",
+        "39-principles footer"
+      ],
+      "status": "verified"
+    },
+    "gow": {
+      "title": "Glosario Operativo del Workspace (GOW) · Canon v2.0",
+      "url": "https://app.notion.com/p/247a418782418399a86001aae61ae938",
+      "version": "v2.0",
+      "checks": [
+        "FT/FDT",
+        "OCP",
+        "folio SES",
+        "IPZ",
+        "mandatory cycle review",
+        "main precedence",
+        "direct links to GOW, Metacanon §4 and Sam principles"
+      ],
+      "status": "verified"
+    }
+  },
+  "custom_instructions": {
+    "artifact": "/mnt/data/IPZ-CAMPO-CHATGPT.txt",
+    "characters": 1287,
+    "verified_under_free_go_limit": 1500,
+    "native_chatgpt_field_modified": false,
+    "operator_action_required": "Paste the provided text into Settings > Personalization > Custom Instructions; then read back/confirm the saved field."
+  },
+  "limitations": [
+    "No permanent GitHub↔Notion synchronization was installed.",
+    "Native ChatGPT custom-instructions settings were not editable through the current connected tools.",
+    "MCP normative verifier intentionally remains disabled.",
+    "SHA-256 file digests were not recalculated; Git blob SHAs are used as revision evidence."
+  ]
+}
