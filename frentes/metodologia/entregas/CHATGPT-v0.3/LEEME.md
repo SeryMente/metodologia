@@ -1,9 +1,15 @@
-# Transporte de hilo fresco · Metodología/Metacanon
+# Transporte y continuidad · Metodología/Metacanon
 
-Para el relevo vigente usa **PROMPT-MIGRACION-HILO-FRESCO-21.txt** y **CHECKPOINT-MIGRACION-HILO-FRESCO-21.md**. Este paquete apunta a la fuente preponderante `SeryMente/metodologia/main`, vigente en el momento de emisión.
+**Estado actual verificado:** la transferencia única C-METODOLOGIA-MIGRACION-HILO-FRESCO-21 se consumó; el control autoritativo registra generación 3 y folio `SES-20261021-6B9E2F41`. Verifica siempre el control vivo de `SeryMente/metodologia/main`; esta nota no sustituye esa fuente.
 
-La entrega `ARRANQUE-PORTABLE-v0.3.md` y su manifiesto reflejan método1.10 y deben conservarse como antecedentes de transporte; no deben reemplazar el canon actual. El nuevo hilo debe adquirir INICIO, Sam, Metacanon, GOW y el control desde `main`.
+Para abrir un hilo posterior, utiliza [PROMPT-CONTINUIDAD-METODOLOGIA-VERBATIM-E2E-22.txt](PROMPT-CONTINUIDAD-METODOLOGIA-VERBATIM-E2E-22.txt) y el [checkpoint actualizado](CHECKPOINT-MIGRACION-HILO-FRESCO-21.md). **No reutilices** [PROMPT-MIGRACION-HILO-FRESCO-21.txt](PROMPT-MIGRACION-HILO-FRESCO-21.txt): fue un prompt de un solo uso y su CAS ya se completó.
 
-La migración está **preparada, no completada**. El operador autorizó una transferencia única de Metodología/Metacanon. El destino solo asume la titularidad tras leer el control vivo, crear su folio/alias, cambiar el control mediante CAS por SHA/generación y leerlo de vuelta. No reutilizar el folio anterior. Sin acceso a control o sin read-back, permanecer en lectura/propuestas NO APLICADAS.
+## Orden de lectura
 
-El destino debe reproducir literalmente la última salida persistida si puede leerla, mostrar el formato Metacanon §4 en su primera respuesta y revisar manualmente Sam/GOW. MCP normativo permanece desactivado. No hay bloqueo server-side universal ni garantía de acceso a repositorios no expuestos.
+1. `SeryMente/metodologia/main/INICIO.md`.
+2. Sam v339 · NX-339m; Metacanon 1.19; GOW v2.2.
+3. `frentes/metodologia/CONTROL-RESPONSABILIDAD.json` y `METACANON-OBJETOS-CANONICOS.md` §9.
+4. `frentes/metodologia/PENDIENTES.md`, [checklist de nueve requisitos](CHECKLIST-VERBATIM-21.md), originales verbatim y crónica.
+5. [Última salida persistida](C-METODOLOGIA-VERBATIM-E2E-22-salida-final.md) cuando exista y esté verificada; el primer ciclo la reproduce literalmente con procedencia. Si no está accesible, declara NO DISPONIBLE.
+
+MCP normativo permanece desactivado. Revisión manual de Sam/GOW en cada ciclo. El archivo IPZ de 1.451 caracteres está verificado en el repositorio; la coincidencia con el campo nativo de ChatGPT sigue pendiente porque los conectores usados no exponen su lectura/escritura. Las pruebas mecánicas no equivalen a aceptación semántica de un modelo independiente.
