@@ -147,8 +147,8 @@ La revisión por ciclo del GOW sí es obligatoria ahora; no depende del cierre d
 
 ### Pendiente de cierre y no declarar completado
 
-- Actualizar el estado vivo de §9 de Metacanon para que refleje que el BCR ya quedó guardado; la escritura correctiva fue rechazada.
-- Actualizar recibos fuente de Sam/GOW a sus blobs más recientes.
+- **Cerrado:** §9 de Metacanon se actualizó y leyó de vuelta para reflejar el BCR guardado y el estado pendiente de IPZ nativo.
+- **Cerrado:** recibos fuente de Sam v337/GOW v2.0 actualizados a los últimos blobs de main.
 - Propagar la última corrección textual del GOW al espejo Notion y releerla; en este momento el main prevalece.
 - Pegar el IPZ en configuración de ChatGPT y confirmar su contenido real.
 - Prueba semántica con otro modelo/hilo y sincronización perpetua: pendientes; el MCP normativo permanece desactivado.
