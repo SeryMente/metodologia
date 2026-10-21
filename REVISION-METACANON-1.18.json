@@ -102,10 +102,10 @@
   },
   "customInstructions": {
     "artifact": "frentes/metodologia/entregas/CHATGPT-v0.3/IPZ-CAMPO-CHATGPT.txt",
-    "blob": "f58f419ecf925175462e17e8a3a3828bc09ec59d",
-    "characters": 1494,
+    "blob": "ff456fbc02f60c93d0dc35a70ee602ceb47626c8",
+    "characters": 1451,
     "limit": 1500,
-    "nativeFieldStatus": "Operator confirmed applying the previous 1432-character IPZ. This 1494-character version adds the now-required legacy OCP path rule; it has not yet been confirmed in the native field. Replace the prior text and verify read-back.",
+    "nativeFieldStatus": "Operator confirmed applying the previous IPZ version (1432 characters). The current 1451-character version adds the explicit unlimited-FT-per-repository rule and preserves legacy OCP paths; it still must replace the previous text in the native field, whose saved content is not directly readable through connected tools.",
     "localArtifact": "/mnt/data/IPZ-CAMPO-CHATGPT.txt"
   },
   "notionMirrorReadback": {
@@ -140,19 +140,19 @@
   "artifacts": {
     "pending": {
       "path": "frentes/metodologia/PENDIENTES.md",
-      "blob": "f83006c2a193f3c6434e0defa143356568799286"
+      "blob": "63484a80fb5ffb512f439e6bbe3d5b0f54a4880f"
     },
     "chronicle": {
       "path": "frentes/metodologia/cronica/C-METODOLOGIA-OCP-DISCOVERY-17.md",
-      "blob": "f7538e4acbe67fffccba23b6ed09fe7662008c65"
+      "blob": "2c362d635afe86d4fc122cf29418b74328ab0301"
     },
     "dialogue": {
       "path": "frentes/metodologia/conversaciones/C-METODOLOGIA-OCP-DISCOVERY-17-dialogo.jsonl",
-      "blob": "964affba43a0d8bf2cce828e006c6b4a46b053bd"
+      "blob": "6a4f337e5536e06cd5ff5e26db27650abb3c324c"
     },
     "finalOutput": {
       "path": "frentes/metodologia/entregas/CHATGPT-v0.3/C-METODOLOGIA-OCP-DISCOVERY-17-salida-final.md",
-      "blob": "6755b9296b3b06f31b76bcd43dc364b64be09504"
+      "blob": "f3ae5a649f13ae5d952491be3c8a67158161bb03"
     },
     "evidence": {
       "path": "frentes/metodologia/evidencias/C-METODOLOGIA-OCP-DISCOVERY-17-readback.json",
