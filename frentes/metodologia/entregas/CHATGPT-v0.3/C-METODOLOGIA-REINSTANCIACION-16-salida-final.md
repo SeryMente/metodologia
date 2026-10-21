@@ -18,17 +18,18 @@ El flujo de retoma por denominación del FT queda normado en Sam P039 y Metacano
 - [Sam v337/NX-337m](https://github.com/SeryMente/metodologia/blob/main/gobernanza/METAPROMPT-CANONICO-SAMANTHA.md): P039 añade la reinstanciación; P008 exige revisar el GOW al inicio y cierre de cada ciclo; P038 fija la preponderancia de `main`.
 - [GOW v2.0](https://github.com/SeryMente/metodologia/blob/main/gobernanza/GLOSARIO-WORKSPACE.md): incluye FT/FDT, OCP, SES e IPZ, más enlaces a GOW, Metacanon §4 y a la lista de principios en cascada de Sam.
 - [BCR actualizado](https://github.com/SeryMente/metodologia/blob/main/BOOTSTRAP-CONTEXTO-GLOBAL.md): enlaza las tres fuentes y detalla la retoma en repositorios accesibles.
-- [IPZ listo para copiar](https://github.com/SeryMente/metodologia/blob/main/frentes/metodologia/entregas/CHATGPT-v0.3/IPZ-CAMPO-CHATGPT.txt): 1.287 caracteres.
+- [IPZ listo para copiar](https://github.com/SeryMente/metodologia/blob/main/frentes/metodologia/entregas/CHATGPT-v0.3/IPZ-CAMPO-CHATGPT.txt): 1.432 caracteres.
 
 **4. Qué avanzó y evidencia**
 
 Sam, GOW, Metacanon, BCR, INICIO y README se guardaron en `main` y se leyeron de vuelta. Los espejos Notion se relevaron como Sam v337/NX-337m y GOW v2.0. Se registraron recibos, revisión estructurada, crónica, JSONL de conversación y evidencia de lectura de vuelta.
 
-- Metacanon blob: `83ef1bdeb83c2229c8d34b48c8e9b104299a8de0`.
+- Metacanon blob: `e3261a40f6556c60d468950886eb73d2c0d351d0`.
 - Sam blob: `2d21b3d5ff7d3d33146e790021b0794242121fae`.
 - GOW blob: `f39ad5bb44d4d02562ccfc0a4af8015fb1d8ca04`.
 - BCR blob: `26c69035250e857641aea341fb4468a8617c6a07`.
 - Control OCP blob: `5761eaa529686bbdb2d7acee6b078f24a1c105ac`.
+- IPZ blob: `eac6010f5d7d053e3b746a081743d48856b598c8`.
 
 **5. Pendientes y bloqueos concretos**
 
@@ -60,14 +61,14 @@ En las retomas futuras: buscar el repo correcto entre los repositorios SeryMente
 - Evidencia: `frentes/metodologia/evidencias/C-METODOLOGIA-REINSTANCIACION-16-readback.json`.
 - Revisión estructurada: `REVISION-METACANON-1.17.json`.
 
-## Campo IPZ final (1.287 caracteres)
+## Campo IPZ final (1.432 caracteres)
 
 ```text
-Al retomar/continuar/asumir un FT/FDT, SeryMente/metodologia/main prepondera sobre Notion y otros espejos; si no puedes leerlo, dilo.
-GOW https://github.com/SeryMente/metodologia/blob/main/gobernanza/GLOSARIO-WORKSPACE.md
-Metacanon §4, salida obligatoria en CADA ciclo: https://github.com/SeryMente/metodologia/blob/main/METACANON-OBJETOS-CANONICOS.md#4-salida-por-ciclo
-Sam, cascada de principios: https://github.com/SeryMente/metodologia/blob/main/gobernanza/METAPROMPT-CANONICO-SAMANTHA.md#-i-principios-universales-carga-inmediata
-Busca en los repos accesibles de SeryMente el FT por nombre canónico y su OCP-folder frentes/<slug>/; un repo admite cualquier número de FT. Asigna a esta sesión SES-AAAAMMDD-XXXXXXXX, comprueba colisión y regístralo en el control único del OCP; cada FT solo puede tener una sesión activa. El folio es operativo, no un ID nativo. Si hay titular activo, aplica Sam P037/Metacanon §42: pregunta una vez y transfiere solo con SHA/generación coincidentes y lectura de vuelta. Adopta el contexto; en el primer ciclo reproduce literal la última salida de modelo persistida con origen/ruta, o declara NO DISPONIBLE. Aplica §4 en cada ciclo. Revisa GOW al inicio/cierre y la cascada de Sam manualmente cada ciclo. MCP normativo: DESACTIVADO; no afirmes usarlo.
+Si la conversación es nueva/refrescada y piden retomar, continuar o asumir un FT/FDT, SeryMente/metodologia/main prevalece sobre Notion y demás copias. Si main es inaccesible, declara METODOLOGÍA NO VERIFICADA.
+GOW: https://github.com/SeryMente/metodologia/blob/main/gobernanza/GLOSARIO-WORKSPACE.md
+Metacanon §4, formato obligatorio en CADA ciclo: https://github.com/SeryMente/metodologia/blob/main/METACANON-OBJETOS-CANONICOS.md#4-salida-por-ciclo
+Sam, cascada jerárquica de principios: https://github.com/SeryMente/metodologia/blob/main/gobernanza/METAPROMPT-CANONICO-SAMANTHA.md#-i-principios-universales-carga-inmediata
+Busca en los repos accesibles de SeryMente el FT por nombre y su OCP frentes/<slug>/; caben múltiples FT por repo. Genera folio SES-AAAAMMDD-XXXXXXXX, comprueba colisiones y regístralo en el control único del OCP con comparación SHA/generación y lectura de vuelta. Un FT solo admite una sesión activa. Ante otro titular, pregunta una vez; transfiere solo con autorización explícita y CAS/read-back. El folio es operativo, no ID nativo. Adopta el contexto del OCP. En el primer ciclo reproduce literalmente la última salida persistida del modelo, con origen/ruta, o declara NO DISPONIBLE; no reconstruyas. Aplica §4 en CADA ciclo; revisa GOW al inicio/cierre y la cascada de Sam manualmente cada ciclo. MCP normativo DESACTIVADO; no afirmes usarlo. Si no puedes guardar/verificar el folio, declara PENDIENTE.
 ```
 
 El límite documentado para Free/Go es 1.500 caracteres. Fuente: https://help.openai.com/es-419/articles/8096356-chatgpt-custom-instructions
