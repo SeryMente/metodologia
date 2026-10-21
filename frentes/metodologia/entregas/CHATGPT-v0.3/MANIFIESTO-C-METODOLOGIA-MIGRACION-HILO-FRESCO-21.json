@@ -89,11 +89,11 @@
     },
     "ocp_entrypoint": {
       "path": "frentes/metodologia/README.md",
-      "blob": "19d94b0b852f3ac93a13e4cf440fead869f805e2"
+      "blob": "b84fa52d4aa10a527c779bea2c6df26a70e1d894"
     },
     "e2e_test": {
       "path": "frentes/metodologia/pruebas/continuidad/C-METODOLOGIA-VERBATIM-E2E-22.cjs",
-      "blob": "1a122abe316b759396fae64b161636833a313f34"
+      "blob": "c7e25fa907c7375f131ffc8989b0277505ce56c0"
     },
     "current_output": {
       "path": "frentes/metodologia/entregas/CHATGPT-v0.3/C-METODOLOGIA-VERBATIM-E2E-22-salida-final.md",
@@ -160,7 +160,7 @@
     },
     "ocp_entrypoint": {
       "path": "frentes/metodologia/README.md",
-      "blob": "19d94b0b852f3ac93a13e4cf440fead869f805e2"
+      "blob": "b84fa52d4aa10a527c779bea2c6df26a70e1d894"
     },
     "reusable_prompt": {
       "path": "frentes/metodologia/entregas/CHATGPT-v0.3/PROMPT-CONTINUIDAD-METODOLOGIA-VERBATIM-E2E-22.txt",
@@ -168,8 +168,8 @@
     },
     "e2e_test": {
       "path": "frentes/metodologia/pruebas/continuidad/C-METODOLOGIA-VERBATIM-E2E-22.cjs",
-      "blob": "1a122abe316b759396fae64b161636833a313f34",
-      "expected_checks": 16
+      "blob": "c7e25fa907c7375f131ffc8989b0277505ce56c0",
+      "expected_checks": 17
     },
     "final_output": {
       "path": "frentes/metodologia/entregas/CHATGPT-v0.3/C-METODOLOGIA-VERBATIM-E2E-22-salida-final.md",
@@ -179,12 +179,12 @@
     },
     "dialogue": {
       "path": "frentes/metodologia/conversaciones/C-METODOLOGIA-VERBATIM-E2E-22-dialogo.jsonl",
-      "blob": "1cb6072f075e92078f57804f612ce6772e2a809a",
-      "entries": 13
+      "blob": "f2c6ce93d66921ad2c0e08934e80adfc0b48e323",
+      "entries": 15
     },
     "chronicle": {
       "path": "frentes/metodologia/cronica/C-METODOLOGIA-VERBATIM-E2E-22.md",
-      "blob": "93471f0a1cc013595ff2b20fc8d53af74cec0eaa"
+      "blob": "61ed65b8054654d9a641c6ee54c425e708bc94d9"
     },
     "evidence": {
       "path": "frentes/metodologia/evidencias/C-METODOLOGIA-VERBATIM-E2E-22.json",
@@ -206,7 +206,7 @@
       "path": "frentes/metodologia/PENDIENTES.md",
       "blob": "75ed42c66fa5b937e8c36d099a31b9662c35168a"
     },
-    "status": "OCP entrypoints, output, checklist, prompts, dialogue, chronicle and manifest are persisted and read-back verified. The authoritative latest execution result and source hashes are in the current-cycle evidence JSON.",
+    "status": "The final OCP entrypoints and the prepared final response are persisted/read-back verified. The linked M22 evidence JSON is the authoritative source for the final E2E result and latest source hashes.",
     "validation_history": [
       {
         "run": "preliminary",
@@ -225,6 +225,13 @@
       {
         "run": "consolidated-after-manifest-dialogue-chronicle-sync",
         "commit": "9d10d1dc2d4f9d0308c496e015709e43743c2bbd",
+        "result": "PASS",
+        "passed": 16,
+        "total": 16
+      },
+      {
+        "run": "consolidated-after-evidence-of-final-output-and-final-OCP-hygiene",
+        "commit": "a67428370575f8e89690bd0caada610e4950f507",
         "result": "PASS",
         "passed": 16,
         "total": 16
