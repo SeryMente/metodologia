@@ -2,7 +2,7 @@
 # Metacanon para crear y mantener objetos canónicos de proyecto
 
 - Estado: **Versión documental 1.17 — Reinstanciación por frente, folio de sesión y OCP**, ampliación autorizada en C-METODOLOGIA-REINSTANCIACION-16; conserva §§42–45, incorpora §§46–47 y preserva el historial. No acredita sincronización automática perpetua.
-- Versión metodológica: **1.16**. Sello: **METACANON-OBJETOS-v1.16**. Gobierno general: [Metaprompt Canónico de Samantha (Sam)](gobernanza/METAPROMPT-CANONICO-SAMANTHA.md), v336 · NX-336m; único glosario operativo compartido en [GOW](gobernanza/GLOSARIO-WORKSPACE.md), v1.9; relación y límites en [gobernanza](gobernanza/README.md).
+- Versión metodológica: **1.17**. Sello: **METACANON-OBJETOS-v1.17**. Gobierno general: [Metaprompt Canónico de Samantha (Sam)](gobernanza/METAPROMPT-CANONICO-SAMANTHA.md), v337 · NX-337m; único glosario operativo compartido en [GOW](gobernanza/GLOSARIO-WORKSPACE.md), v2.0; relación y límites en [gobernanza](gobernanza/README.md).
 - Nombre propio del marco: pendiente de elección del operador; no usar el nombre de un proyecto como nombre del método.
 - Repositorio de metodología identificado: https://github.com/SeryMente/metodologia, privado comprobado en el ciclo de actualización 1.1; revalidar su visibilidad antes de cada escritura sensible. Ruta METACANON-OBJETOS-CANONICOS.md; fuente vigente main; rama documental histórica docs/metacanon-objetos-20261011. Conservar los originales y datos privados del frente solo en su carpeta autorizada tras verificar acceso privado; nunca publicar secretos en Git ni transportar identidades de ejemplos.
 - Archivo estable propuesto: `METACANON-OBJETOS-CANONICOS.md`.
