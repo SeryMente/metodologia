@@ -24,7 +24,8 @@ const files = {
   leeme: 'frentes/metodologia/entregas/CHATGPT-v0.3/LEEME.md',
   entry: 'frentes/metodologia/entregas/CHATGPT-v0.3/PROMPT-ENTRADA.txt',
   manifest: 'frentes/metodologia/entregas/CHATGPT-v0.3/MANIFIESTO-C-METODOLOGIA-MIGRACION-HILO-FRESCO-21.json',
-  genericOutput: 'frentes/metodologia/entregas/CHATGPT-v0.3/C-METODOLOGIA-MIGRACION-HILO-FRESCO-21-salida-final.md'
+  genericOutput: 'frentes/metodologia/entregas/CHATGPT-v0.3/C-METODOLOGIA-MIGRACION-HILO-FRESCO-21-salida-final.md',
+  currentOutput: 'frentes/metodologia/entregas/CHATGPT-v0.3/C-METODOLOGIA-VERBATIM-E2E-22-salida-final.md'
 };
 const read = key => fs.readFileSync(path.join(root, files[key]), 'utf8');
 const sha256 = s => crypto.createHash('sha256').update(s, 'utf8').digest('hex');
@@ -33,7 +34,7 @@ function test(id, fn) {
   try { fn(); checks.push({ id, passed: true }); }
   catch (e) { checks.push({ id, passed: false, error: e.message }); }
 }
-let verbatim, control, accessControl, ipz, gow, sam, metacanon, output, previousOutput, checklist, pending, readme, continuationPrompt, migrationPrompt, checkpoint, leeme, entry, manifest, genericOutput;
+let verbatim, control, accessControl, ipz, gow, sam, metacanon, output, previousOutput, checklist, pending, readme, continuationPrompt, migrationPrompt, checkpoint, leeme, entry, manifest, genericOutput, currentOutput;
 try {
   verbatim = JSON.parse(read('verbatim').split(/\r?\n/)[0]).verbatim;
   control = JSON.parse(read('control'));
@@ -54,6 +55,7 @@ try {
   entry = read('entry');
   manifest = JSON.parse(read('manifest'));
   genericOutput = read('genericOutput');
+  currentOutput = read('currentOutput');
 } catch (e) {
   console.error(JSON.stringify({ result: 'BLOCKED', reason: 'required source could not be read', error: e.message }));
   process.exit(2);
@@ -117,6 +119,11 @@ test('checkpoint-refleja-transferencia-completada-y-entrypoints-actuales', () =>
   if (!checkpoint.includes('ESTADO ACTUAL VERIFICADO') || !checkpoint.includes('generación **3**')) throw new Error('checkpoint lacks current verified state overlay');
   if (!checkpoint.includes('PROMPT-CONTINUIDAD-METODOLOGIA-VERBATIM-E2E-22.txt')) throw new Error('checkpoint does not route new threads to current continuation prompt');
   if (!leeme.includes('se consumó') || !entry.includes('PROMPT-CONTINUIDAD-METODOLOGIA-VERBATIM-E2E-22.txt')) throw new Error('entrypoints still indicate a pending transfer or stale prompt');
+});
+test('salida-final-M22-existe-y-cumple-los-diez-campos', () => {
+  for (let n = 1; n <= 10; n++) if (!currentOutput.includes('## ' + n + '. ')) throw new Error('M22 output field ' + n + ' missing');
+  if (!currentOutput.includes('SES-20261021-6B9E2F41') || !currentOutput.includes('CHECKLIST-VERBATIM-21.md')) throw new Error('M22 output lacks active folio/checklist provenance');
+  if (!currentOutput.includes('C-METODOLOGIA-VERBATIM-E2E-22.json')) throw new Error('M22 output lacks current evidence path');
 });
 test('manifest-y-salida-generica-no-declaran-transferencia-pendiente', () => {
   if (!manifest.status.includes('transferred_and_readback_verified') || manifest.handoffPreparation?.transferComplete !== true) throw new Error('manifest status is stale');
