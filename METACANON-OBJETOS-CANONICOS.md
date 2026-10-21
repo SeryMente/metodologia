@@ -1,8 +1,8 @@
-<!-- METACANON_VERSION=1.12; TEMPORARY_FRAMEWORK=true; USER_TRANSCRIPT_SPEC=true -->
+<!-- METACANON_VERSION=1.13; TEMPORARY_FRAMEWORK=true; USER_TRANSCRIPT_SPEC=true -->
 # Metacanon para crear y mantener objetos canónicos de proyecto
 
-- Estado: **Versión documental 1.12 — RDC sin interfaz gráfica compartida**, ampliación autorizada en C-METODOLOGIA-RDC-GUI-12; versiones previas preservadas en historia y antecedentes. Conserva la compuerta de propósito 1.11 y añade §40; no acredita propagación automática a hijos.
-- Versión metodológica: **1.12**. Sello: **METACANON-OBJETOS-v1.12**. Gobierno general: [Metaprompt Canónico de Samantha](gobernanza/METAPROMPT-CANONICO-SAMANTHA.md), v333 · NX-333m; relación y límites en [gobernanza](gobernanza/README.md).
+- Estado: **Versión documental 1.13 — Perfil Windows fila4 fail-closed**, ampliación autorizada en C-METODOLOGIA-PERFIL-FILA4-13; versiones previas preservadas en historia y antecedentes. Conserva las compuertas 1.11–1.12 y añade §41; no acredita propagación automática a hijos.
+- Versión metodológica: **1.13**. Sello: **METACANON-OBJETOS-v1.13**. Gobierno general: [Metaprompt Canónico de Samantha](gobernanza/METAPROMPT-CANONICO-SAMANTHA.md), v334 · NX-334m; relación y límites en [gobernanza](gobernanza/README.md).
 - Nombre propio del marco: pendiente de elección del operador; no usar el nombre de un proyecto como nombre del método.
 - Repositorio de metodología identificado: https://github.com/SeryMente/metodologia, privado comprobado en el ciclo de actualización 1.1; revalidar su visibilidad antes de cada escritura sensible. Ruta METACANON-OBJETOS-CANONICOS.md; fuente vigente main; rama documental histórica docs/metacanon-objetos-20261011. Conservar los originales y datos privados del frente solo en su carpeta autorizada tras verificar acceso privado; nunca publicar secretos en Git ni transportar identidades de ejemplos.
 - Archivo estable propuesto: `METACANON-OBJETOS-CANONICOS.md`.
@@ -11,7 +11,7 @@
 
 ## LEER PRIMERO — modo metodología, no ejecución del ejemplo
 
-**Precisión vigente 1.12:** aplicar §§39–40 junto con §§35–38 y §§29–34; primero gobierno, frente/rol, estado y permiso, después acción comprobada y checkpoint. §35 no altera el gobierno ni autoriza productos por ejemplo. Versiones antiguas en originales/notas conservan su carácter histórico.
+**Precisión vigente 1.13:** aplicar §§39–41 junto con §§35–38 y §§29–34; primero gobierno, frente/rol, estado y permiso, después acción comprobada y checkpoint. §35 no altera el gobierno ni autoriza productos por ejemplo. Versiones antiguas en originales/notas conservan su carácter histórico.
 
 **Actualización 1.7, de lectura previa:** [INICIO.md](INICIO.md) es la puerta de entrada transversal. Gobierno general en `gobernanza/METAPROMPT-CANONICO-SAMANTHA.md`; el metacanon gobierna el método, no constituye una autoridad general competidora. §§29–33 prevalecen sobre formulaciones anteriores incompatibles, en particular «objeto = un solo .md», subordinación al SI anterior, temporalidad de un mes como compromiso vigente y activación implícita de PRIUS. Las menciones de 1.0–1.6 en antecedentes conservan su sentido histórico. Leer una propuesta histórica no la ratifica.
 
@@ -46,6 +46,7 @@ Antes de cada ciclo comprobar la versión de este metacanon y del objeto del pro
 16. Cada ciclo sustantivo deja antes del cierre una entrada recuperable en la crónica del objeto, originales disponibles, decisiones/razones, evidencia/límites y checkpoint; la entrega sin persistencia verificable queda documentalmente incompleta (§28).
 17. Ningún frente nuevo ni su objeto canónico de persistencia pueden crearse sin un enunciado de propósito dictado directamente por el operador, conservado verbatim y documentado canónicamente; su ausencia es bloqueo de creación (§39).
 18. Una conexión RDC nunca autoriza utilizar la interfaz gráfica del monitor activo del operador. En un equipo compartido, el trabajo remoto es solo terminal/CLI o ejecución headless no visible; la GUI requiere autorización específica y un segundo monitor verificado (§40).
+19. En la ubicación `CENTRAL\fila4`, la raíz operativa es el `Win32_UserProfile.LocalPath` asociado al SID de fila4; `C:\Users\MantenimientoRCI\` pertenece a otra cuenta y está prohibido. Variables del proceso remoto o redirecciones que apunten al perfil prohibido bloquean la operación (§41; Metaprompt P036).
 
 ## 2. Insumos y creación
 
@@ -67,7 +68,7 @@ Extraer por cada instrucción material: literal, origen/evento, lectura operativ
 | Propósito y alcance | Enunciado de propósito dictado por el operador, conservado verbatim y con procedencia; lectura operativa separada; de dónde viene, dónde está, a dónde va, qué cambió; incluido, excluido y criterios terminales. |
 | Roles y colaboración | Responsabilidades concretas; asistencia orientada a eficiencia real; construcción; escritura sin colisiones. |
 | Autoridad | Decisiones vigentes, vetos, propuestas, aprobaciones y compuertas; nada heredado del proyecto ejemplo. |
-| Perfil de entorno | Ubicación/perfil declarados, host actual, sesión local, persistencia, recursos reportados/medidos, vínculo remoto y procedencia; no importar datos de otro operador. |
+| Perfil de entorno | Ubicación/perfil declarados, asociación cuenta→SID→LocalPath comprobada cuando aplique, raíces permitidas/prohibidas, host actual, sesión local, persistencia, recursos reportados/medidos, vínculo remoto y procedencia; no importar datos de otro operador ni resolver rutas desde la identidad del proceso remoto. |
 | Estado vivo | Acción actual, siguiente paso por rol, pendientes ordenados, pruebas/fallos y recordatorios latentes. |
 | Aceptación y viabilidad | Requisito → resultado → evidencia/entorno → pendiente; qué se puede lograr/ofrecer y bajo qué condiciones. |
 | Formato de ciclo | Los diez campos de §4; campos desconocidos declarados, nunca omitidos ni inventados. |
@@ -782,4 +783,38 @@ uno de los modelos está utilizando la conexión RDC para utilizar la interfaz g
 **Incidente observado:** Signal Interpreter reconoció haber intentado acceder al botón Extensiones de Chrome mediante automatización de accesibilidad y, antes, abrir `chrome://extensions` y solicitar el cierre de Chrome. La invocación final falló y Chrome no se cerró. El hilo recibió orden de detener toda GUI y continuar solo por CLI/headless. Esta constatación identifica el intento reportado; no acredita ausencia de otros eventos fuera del historial disponible.
 
 **Compatibilidad/versión 1.12:** endurece RDC sin cambiar roles, arquitectura por directorios, compuerta de propósito ni autorizaciones de producto. No convierte procesos headless en permiso para manipular una sesión gráfica oculta y no acredita que los hijos hayan adquirido la regla.
+
+## 41. Perfil Windows fila4 y raíz prohibida · actualización 1.13
+
+### 41.1 Identidad verificada
+
+Para la ubicación Windows del operador, la identidad de trabajo es <code>CENTRAL\fila4</code>. La comprobación CLI de `Win32_UserProfile`, traduciendo SID a `NTAccount`, produjo: <code>CENTRAL\fila4</code> → SID <code>S-1-5-21-1529298404-1161420656-882029410-5167</code> → LocalPath <code>C:\Users\fila4</code>, cargado. También demostró que <code>CENTRAL\MantenimientoRCI</code> es una cuenta distinta, SID terminado en <code>2126</code>, con LocalPath <code>C:\Users\MantenimientoRCI</code>.
+
+### 41.2 Regla fail-closed de rutas
+
+Para este operador y ubicación, <code>C:\Users\MantenimientoRCI\</code> nunca se usa como raíz operativa, Escritorio, temporal, staging, origen o destino. No basta que `%USERPROFILE%`, `$HOME`, `GetFolderPath`, el proceso de RDC o una redirección de Windows devuelvan esa ruta: eso identifica el contexto técnico de otra cuenta y bloquea la operación. Antes de leer o escribir archivos dependientes del perfil, resolver por CLI cuenta → SID → `Win32_UserProfile.LocalPath`; exigir coincidencia con <code>C:\Users\fila4</code>. Las carpetas especiales de fila4 se verifican dentro de su propio perfil/hive. No adivinar ni sustituir una ruta histórica.
+
+### 41.3 Artefactos mal ubicados y respuesta
+
+Si un hilo reportó o creó artefactos bajo la raíz prohibida, no moverlos, copiarlos, borrarlos ni sobrescribirlos automáticamente. Inventariar solo por CLI, preservar integridad, distinguir preparado de instalado/cargado/probado y proponer reparación con origen y destino verificados. El frente propietario actualiza su objeto y prompts; otros hilos no invaden su control. La regla es global por Metaprompt P036, pero su incorporación documental en cada hijo debe comprobarse.
+
+Pruebas negativas: usuario activo `fila4` con proceso RDC bajo otra cuenta no autoriza el otro perfil; una carpeta especial resuelta a `MantenimientoRCI` no es Escritorio de fila4; coincidencia de dispositivo no sustituye SID; una ruta ya usada no se vuelve válida por antecedentes; una orden general de terminar no levanta el bloqueo.
+
+### M41 · instrucción directa del operador · C-METODOLOGIA-PERFIL-FILA4-13
+
+Original íntegro preservado en `frentes/metodologia/conversaciones/C-METODOLOGIA-PERFIL-FILA4-13-dialogo.jsonl`; lectura normativa aplicada en §§1, 3 y 41 y en Metaprompt P036.
+
+````text
+Fijate lo que me dijo Harmonia<br />Listo. Confirmé que el usuario activo es <b><code>CENTRAL\fila4</code></b> y que su Escritorio está redirigido por Windows a:<br /><code>C:\Users\MantenimientoRCI\Desktop
+
+
+Esto es un error, 
+Aqui lo unico que hay que entender es que el sistema de archivos de </code><br /><code>C:\Users\MantenimientoRCI\
+
+Nunca se debe usar. 
+
+Solo el de fila 4,  asegurte que para est ubicacion sea laultiam vez que tenga que aclararlo, usando el metaprompt de samanttha, y  tu  capacidad para asegurarte que si se utilzie</code>
+````
+
+**Compatibilidad/versión 1.13:** añade una restricción específica de ubicación derivada de identidad comprobada. No generaliza la ruta `fila4` a otros equipos, cuentas u operadores; en ellos sigue exigiéndose resolución propia. No acredita que artefactos anteriores hayan sido reparados ni autoriza tocar el perfil prohibido para “limpiarlo”.
 
