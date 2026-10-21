@@ -86,3 +86,17 @@ Al reexaminar las herramientas disponibles no se identificó una acción autoriz
 - Los ensayos de responsabilidad, refresco y continuidad finalizaron con los resultados arriba descritos, tras corregir fallas reproducibles.
 - La evidencia M22 guarda las huellas del corte E2E final, resultados, procedimientos, límites y referencias de salida/dialogo/crónica.
 - Bloqueos honestos al cierre: instalación/lectura del IPZ nativo; aceptación semántica independiente; inventario completo/unicidad global y fencing de servidor. No se cierran por PASS mecánico.
+
+
+## 8. Resultado de la primera E2E consolidada y reexamen del bloqueo · 2026-10-21
+
+- Corte probado: `1ff70cd720914bde94a9d4c14baf13074316bad7`, Windows `win32`, Node.js `v22.23.3`.
+- Resultado de `C-METODOLOGIA-VERBATIM-E2E-22.cjs`: **PASS 16/16**, salida de proceso 0. La última aserción añadida valida que la salida final M22 existe, que sus diez campos §4 están presentes y que el blob SHA guardado en el manifiesto coincide con el archivo leído.
+- El SHA de objeto de Git de la salida M22 es `51450a8a9daef2661530d69c92aaf8ca046c07c0`, commit `5c5518457919f4bb29e0c56a4c72da586a2bfabf`; la prueba también pasó su comprobación de correspondencia con el manifiesto.
+- Se revisaron las herramientas de ajustes disponibles: solo exponen color de acento, apariencia y personalidad; no ofrecen el campo nativo IPZ. El equipo remoto no tenía una ventana titulada ChatGPT/OpenAI; la única ventana de Chrome detectada estaba titulada “Retomar FT Harmonia”. No se navegó ni modificó esa sesión de otro frente. Se limita la conclusión a esa observación del equipo y a las herramientas realmente expuestas.
+- Conclusión del bloqueo: el archivo IPZ sí está validado en `main` a 1.451 caracteres y con tres enlaces directos; su instalación nativa no se puede leer ni escribir por la interfaz disponible. No se declara actualizada.
+- Se ejecutará otra vez el mismo test después de sincronizar este recibo y el manifiesto; el resultado de esa última corrida, con sus SHA exactos, se guarda en el JSON de evidencia M22.
+
+## 9. Errores y correcciones conservados
+
+Las primeras ejecuciones no se borran ni se sustituyen por el resultado exitoso: el ensayo de responsabilidad 17/18 motivó la corrección de concurrencia local multiplataforma; la regresión de refresco pasó 24/24; la continuidad histórica falló 18/33 por la diferencia entre codificación predeterminada de Windows y UTF-8, y pasó 33/33 tras fijar UTF-8/LF. La primera E2E tuvo un bloqueo de preparación por sparse-checkout incompleto; la siguiente alcanzó 12/15 y permitió corregir tres aserciones/rutas sin eliminar criterios. Una versión posterior pasó 15/15; esta corrida consolidada pasó 16/16. Los informes r2/r3 y la evidencia final conservan la distinción entre los cortes.
