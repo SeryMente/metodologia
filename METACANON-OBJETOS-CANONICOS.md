@@ -1,7 +1,7 @@
-<!-- METACANON_VERSION=1.16; TEMPORARY_FRAMEWORK=true; USER_TRANSCRIPT_SPEC=true -->
+<!-- METACANON_VERSION=1.17; TEMPORARY_FRAMEWORK=true; USER_TRANSCRIPT_SPEC=true -->
 # Metacanon para crear y mantener objetos canónicos de proyecto
 
-- Estado: **Versión documental 1.16 — Fuente única del glosario y conciliación de corpus previos**, ampliación autorizada en C-METODOLOGIA-FUENTE-PRECEDENCIA-15 y C-GOW-METODOLOGIA-GLOSARIOS-02; conserva §§42–44, incorpora §45 y preserva el historial. No acredita sincronización automática perpetua.
+- Estado: **Versión documental 1.17 — Reinstanciación por frente, folio de sesión y OCP**, ampliación autorizada en C-METODOLOGIA-REINSTANCIACION-16; conserva §§42–45, incorpora §§46–47 y preserva el historial. No acredita sincronización automática perpetua.
 - Versión metodológica: **1.16**. Sello: **METACANON-OBJETOS-v1.16**. Gobierno general: [Metaprompt Canónico de Samantha (Sam)](gobernanza/METAPROMPT-CANONICO-SAMANTHA.md), v336 · NX-336m; único glosario operativo compartido en [GOW](gobernanza/GLOSARIO-WORKSPACE.md), v1.9; relación y límites en [gobernanza](gobernanza/README.md).
 - Nombre propio del marco: pendiente de elección del operador; no usar el nombre de un proyecto como nombre del método.
 - Repositorio de metodología identificado: https://github.com/SeryMente/metodologia, privado comprobado en el ciclo de actualización 1.1; revalidar su visibilidad antes de cada escritura sensible. Ruta METACANON-OBJETOS-CANONICOS.md; fuente vigente main; rama documental histórica docs/metacanon-objetos-20261011. Conservar los originales y datos privados del frente solo en su carpeta autorizada tras verificar acceso privado; nunca publicar secretos en Git ni transportar identidades de ejemplos.
@@ -11,7 +11,7 @@
 
 ## LEER PRIMERO — modo metodología, no ejecución del ejemplo
 
-**Precisión vigente 1.16:** aplicar §§43–45 como compuertas de fuente, terminología y unicidad del glosario, §42 para colisiones de responsabilidad, junto con §§35–41 y §§29–34; primero verificar `main`, Sam, el único GOW, frente/rol, control, estado y permisos; después ejecutar la acción comprobable y persistir el checkpoint. §42 reduce la colisión a una autorización explícita del operador seguida de sustitución atómica/read-back; no crea identidad nativa de plataforma ni garantiza exclusión de escritores que eludan el control. Versiones antiguas en originales/notas conservan su carácter histórico.
+**Precisión vigente 1.17:** aplicar §§43–47 como compuertas de fuente, terminología, OCP y folio de sesión; §42 rige los traspasos de responsabilidad. Al retomar un FT, localizar su OCP en los repositorios de `SeryMente`, registrar folio en el control autoritativo de sesión única, adquirir el contexto pertinente, recuperar la última salida visible conservada y aplicar siempre el formato §4. Revisar Sam y GOW manualmente en cada ciclo; la verificación normativa automática por MCP permanece desactivada. §42 reduce la colisión a una autorización explícita del operador seguida de sustitución atómica/read-back; no crea identidad nativa de plataforma ni garantiza exclusión de escritores que eludan el control. Versiones antiguas en originales/notas conservan su carácter histórico.
 
 **Actualización de fuente vigente:** [INICIO.md](INICIO.md) es la puerta de entrada. `SeryMente/metodologia/main` es la fuente documental preponderante; Sam, Metacanon, el GOW y los controles vigentes se adquieren desde este repositorio. Notion y otras superficies son espejos subordinados, según §43. El Metaprompt gobierna la conducta general y Metacanon el método de frentes; su autoridad normativa interna no se confunde con la autoridad de la ubicación fuente. §§29–33 prevalecen sobre formulaciones anteriores incompatibles, en particular «objeto = un solo .md», subordinación al SI anterior, temporalidad de un mes como compromiso vigente y activación implícita de PRIUS. Las menciones de 1.0–1.6 en antecedentes conservan su sentido histórico. Leer una propuesta histórica no la ratifica.
 
@@ -73,7 +73,7 @@ Extraer por cada instrucción material: literal, origen/evento, lectura operativ
 | Perfil de entorno | Ubicación/perfil declarados, asociación cuenta→SID→LocalPath comprobada cuando aplique, raíces permitidas/prohibidas, host actual, sesión local, persistencia, recursos reportados/medidos, vínculo remoto y procedencia; no importar datos de otro operador ni resolver rutas desde la identidad del proceso remoto. |
 | Estado vivo | Acción actual, siguiente paso por rol, pendientes ordenados, pruebas/fallos y recordatorios latentes. |
 | Aceptación y viabilidad | Requisito → resultado → evidencia/entorno → pendiente; qué se puede lograr/ofrecer y bajo qué condiciones. |
-| Formato de ciclo | Los diez campos de §4; campos desconocidos declarados, nunca omitidos ni inventados. |
+| Formato de ciclo | Los diez campos de §4; incluye FT/OCP/folio y prueba visible de adopción de Sam/Metacanon/GOW cuando el ciclo opera un FT. Campos desconocidos declarados, nunca omitidos ni inventados. |
 | Crónica y fuentes | Evento/actor/instrucción/acción/revisión/evidencia/límite/checkpoint; originales completos pertinentes y procedencia. |
 | Reinstanciación | Dos prompts en frentes con dos roles; uno en la excepción metodológica sin inventar contraparte. Estado literal y gobierno coherentes; objeto o acceso real. |
 | Persistencia y revisión | Releer, comparar, fusionar, guardar, verificar lectura/diff y sincronizar prompts. |
@@ -82,18 +82,18 @@ Cada proyecto deriva sus datos. No importar nombres de cliente, cuentas, disposi
 
 ## 4. Salida por ciclo
 
-1. Proyecto, rol y revisión/sello del objeto; **Metacanon adquirido: versión y sello**, revisión/commit o hash de fuente y frescura (§22). Este campo aparece en toda salida de ciclo sin excepciones, no solo al instanciar.
-2. Dónde estamos: panorama comprensible del esfuerzo y la entrega.
-3. Actualización/delta: fuentes comprobadas, revisión anterior/actual, cambio y efecto en el ciclo; separar delta metodológico y delta de proyecto. Si inaccesible, frescura NO VERIFICADA.
-4. Qué avanzó: evidencia y entorno; qué no se tocó; observado/reportado/sintético/inferido/desconocido.
-5. Qué falta: lista finita vigente y bloqueos concretos.
-6. Viabilidad: intención original → medida realizable y evidencia → objetivo seleccionado → avance hacia sus criterios de aceptación → límites y condiciones no resueltas (§25).
-7. Tiempo/ciclos: próximo hito y cierre del objetivo seleccionado separados; pendientes y ruta crítica, rangos justificados, confianza, supuestos, esperas externas, estimación anterior/nueva y causa de deriva (§25).
-8. Siguiente acción: del agente y mínima intervención del operador cuando sea material.
-9. Continuación: ante una salida recibida del constructor, el asistente entrega siempre un prompt de respuesta y el delta comprensible (§25); no reiniciar, duplicar trabajo ni introducir órdenes redundantes. El constructor entrega checkpoint/evidencia.
-10. Persistencia: fuente/revisión verificada o archivo local pendiente; delta producido, ancla y próximo checkpoint.
+1. **Identidad operativa y gobierno vigente.** Proyecto/repositorio/FT y rol; si el ciclo opera un FT, nombre canónico, ruta del OCP, folio SES activo, generación del control y estado de adjudicación exclusiva; **Metacanon adquirido: versión y sello**, revisión/commit o hash y frescura; Sam: versión/firma; GOW: versión/blob y constancia de revisión del ciclo. Verificación de principios: revisión manual de la cascada vigente de Sam y reglas relevantes; indicar explícitamente `MCP-NORMATIVO: DESACTIVADO` mientras siga así. Esta identificación aparece en toda salida de ciclo, sin excepciones.
+2. **Dónde estamos.** Panorama comprensible del esfuerzo y entrega. En el primer ciclo de una conversación nueva/retomada sobre un FT, adjuntar inmediatamente después de la cabecera la última salida visible del modelo recuperada del OCP, literal y con su ruta/ID/procedencia; identificarla como salida previa conservada, no como respuesta recién generada. Si no existe una copia verificable, indicarlo y no reconstruirla de memoria.
+3. **Actualización/delta.** Fuentes comprobadas, revisión anterior/actual, cambio y efecto en el ciclo; separar delta metodológico y delta del FT. Si una fuente está inaccesible, frescura NO VERIFICADA.
+4. **Qué avanzó.** Evidencia y entorno; qué no se tocó; separar observado, reportado, sintético, inferido y desconocido.
+5. **Qué falta.** Lista finita vigente y bloqueos concretos.
+6. **Viabilidad.** Intención original → medida realizable y evidencia → objetivo seleccionado → avance hacia sus criterios de aceptación → límites y condiciones no resueltas (§25).
+7. **Tiempo/ciclos.** Próximo hito y cierre del objetivo seleccionado separados; pendientes y ruta crítica, rangos justificados, confianza, supuestos, esperas externas, estimación anterior/nueva y causa de deriva (§25).
+8. **Siguiente acción.** Acción del agente y mínima intervención del operador cuando sea material.
+9. **Continuación.** Ante una salida recibida del constructor, el asistente entrega siempre un prompt de respuesta y el delta comprensible (§25); no reiniciar, duplicar trabajo ni introducir órdenes redundantes. El constructor entrega checkpoint/evidencia.
+10. **Persistencia.** Fuente/revisión verificada o archivo local pendiente; delta producido, ancla, ID/ruta de crónica, estado del control folio/titularidad y próximo checkpoint.
 
-La salida se corresponde con una entrada identificada de crónica y un estado vivo coherente, conforme a §28; no basta narrar el avance solo en el chat.
+La salida se corresponde con una entrada identificada de crónica y un estado vivo coherente, conforme a §28; no basta narrar el avance solo en el chat. En ciclos de FT, el folio y la versión/firma de Sam son campos obligatorios; no se omiten por brevedad.
 
 No mantener “99 %” indefinidamente. Si no hay base de estimación, declarar no estimable y la dependencia concreta, no fabricar un plazo. No declarar entrega completa por plan, maqueta, compilación, prueba sintética, archivo creado o solicitud abierta.
 
@@ -141,21 +141,12 @@ Respeta alcance, compuertas y no-simulación. El asistente mantiene continuidad 
 
 ## 9. Estado de este metacanon
 
-- **De dónde viene:** instrucción expresa del operador de adoptar la preponderancia de `SeryMente/metodologia/main`, preservar el glosario de Khora Hub, integrar los términos metodológicos previos, actualizar Sam y adaptar el Bootstrap Conversacional Recursivo (BCR).
-- **Dónde está:** este repositorio, rama `main`; versión 1.16, sello `METACANON-OBJETOS-v1.16`, §§43–45 e invariante 21. Sam v336 · NX-336m; único GOW v1.9; SI-METACOGNITIVO.md sigue siendo antecedente, no gobierno general paralelo.
-- **Fuente preponderante:** `main` define el estado metodológico/documental vigente. Notion, instrucciones personalizadas, memoria, copias locales y otros sitios son espejos subordinados. Si divergen, prevalece el contenido verificado en `main`; no se escogen versiones por fecha, no se mezclan copias y no se declara sincronización no comprobada.
-- **🔄 Estado vivo:** P038 se colocó inmediatamente después de P001 en Sam; P008 ahora dirige al archivo canónico GOW en el repositorio. Metacanon §43 establece la preponderancia de `main`, §44 obliga a revisar el GOW al inicio y al cierre de cada ciclo, y §45 prohíbe autoridades terminológicas paralelas. El GOW v1.9 incorporó 49 bloques terminológicos del archivo raíz v1.3.1, manteniendo procedencia y alcance; los términos repetidos se consolidaron en sus entradas existentes. `GLOSARIO-OPERATIVO.md` pasó a puntero de compatibilidad y el texto original se archivó íntegro. `BOOTSTRAP-CONTEXTO-GLOBAL.md` contiene el BCR adaptado a esta jerarquía.
-- **Verificación de Notion:** la página del GOW fue actualizada desde el último cuerpo de `main` y releída como v1.9; se comprobaron Grupo 10, CECEQ/RDC, Sam, normalización contextual de KHORA, revisión por ciclo, fuente preponderante y regla de no activación implícita. La página de Sam fue releída como v336 · NX-336m, firma NX-336m; P037, P038, P008 y pie de 38 principios comprobados. Son lecturas de vuelta puntuales, no sincronización continua.
-- **Evidencia de archivos canónicos en `main`:**
-  - Sam — `gobernanza/METAPROMPT-CANONICO-SAMANTHA.md`, blob `711c613519d3c33ed6bb479ce3a8c9b65dd6269f`.
-  - GOW — `gobernanza/GLOSARIO-WORKSPACE.md`, blob `17bf150cf20532793b8d1b3e175e0330013df4d8`.
-  - INICIO — `INICIO.md`, blob `871253399531683be912ee58dc504f0b3713feef`; ahora enlaza el BCR canónico.
-  - Guía de gobernanza — `gobernanza/README.md`, blob `fd5651b0adb7686633a21756eab7939e2a25fb7c`.
-  - Puntero de compatibilidad raíz — `GLOSARIO-OPERATIVO.md`, blob `367898529eca9cef425f3a3d2471c85b31c8127b`; anexo subordinado — `ANEXO-GOBERNANZA-TERMINOLOGICA-Y-NORMALIZACION.md`, blob `510143b33c762840bf7a31bbd9ad726ffddce033`.
-  - Original conservado verbatim — `frentes/metodologia/antecedentes/GLOSARIO-OPERATIVO-v1.3.1.md`, blob `6b8d3a50f2ac235b5597989981a0eabee9e90d85`.
-  - BCR adaptado — `BOOTSTRAP-CONTEXTO-GLOBAL.md`, blob `767db8cdf00d3106399023c1baceeb5a91a6b4e6`. Su contenido completo es fuente canónica del bootstrap; los ajustes nativos de instrucciones personalizadas no se modificaron directamente.
-  - Recibos de fuente — Sam `gobernanza/METAPROMPT-CANONICO-SAMANTHA.fuente.json`, blob `136635031112066d9fc1cf0b71647f0231f66cd2`; GOW `gobernanza/GLOSARIO-WORKSPACE.fuente.json`, blob `de3cbb272b9b6cfe056989f428d0d41b0c507637`.
-- **Límites:** el canon no crea permisos, capacidades ni un mediador universal que impida a herramientas no cooperantes escribir fuera del control. No está implementada sincronización automática perpetua GitHub↔Notion. Todo cambio de espejo sigue requiriendo propagación y verificación explícitas. La crónica y la evidencia de lectura de vuelta están registradas en `frentes/metodologia/cronica/C-METODOLOGIA-FUENTE-PRECEDENCIA-15.md` y `frentes/metodologia/evidencias/C-METODOLOGIA-FUENTE-PRECEDENCIA-15-readback.json`; el estado actualizado de tareas y pendientes está en `frentes/metodologia/PENDIENTES.md`. El registro de revisión es `REVISION-METACANON-1.16.json`.
+- **De dónde viene:** instrucciones expresas del operador para normalizar el inicio/retoma de cualquier FT, la titularidad exclusiva por sesión, el folio, el OCP-folder, la recuperación de la última salida persistida, y la emisión obligatoria del formato §4 en cada ciclo.
+- **Dónde está:** repositorio `SeryMente/metodologia`, rama `main`; Metacanon 1.17, sello `METACANON-OBJETOS-v1.17`, §§43–47; Sam v337 · NX-337m; GOW v2.0; BCR actualizado; plantilla de IPZ dentro de `frentes/metodologia/entregas`.
+- **Fuente y descubrimiento:** el repositorio Metodología rige normas, vocabulario y método. Para un FT concreto, localizar el repositorio de origen dentro de la organización SeryMente y la carpeta nombrada; el estado del FT vive en su OCP y queda subordinado a ese gobierno. No existe límite metodológico a la cantidad de FT en un repositorio.
+- **🔄 Estado vivo:** §46 define OCP como carpeta de repositorio por FT; §47 establece descubrimiento, folio SES, adjudicación exclusiva, carga del contexto y devolución de la última salida visible conservada en el primer ciclo. §4 incorpora FT/OCP/folio, versión de Sam, Metacanon/GOW y revisión manual de cascada. El comprobador normativo por MCP se mantiene desactivado; no se declara verificado por él. La revisión manual de Sam/GOW cada ciclo sigue obligatoria.
+- **Límites:** no se puede afirmar acceso a todos los repositorios de la organización si las herramientas no los exponen. No simular folio/control o titularidad: escritura por comparación SHA/generación y lectura de vuelta. Si hay otro titular activo, P037/§42 exige la pregunta explícita única antes del traspaso. No existe bloqueo server-side universal frente a escritores que eludan el control.
+- **Pendientes:** propagación al ajuste nativo de IPZ debe hacerla el operador copiando el artefacto corto listo para el límite de caracteres; no se afirma que el campo personal ya cambió. Sync GitHub↔Notion y la aceptación semántica en modelos externos siguen sin garantía automática.
 
 ## 10. Instrucción original de separación del metacanon
 
@@ -529,7 +520,7 @@ Ok, fortalece la capacidad para someter al modelo que use el marco d etrabajo po
 
 Antes de entregar el cierre, el modelo DEBE:
 
-1. Releer el objeto único y método vigentes; identificar el ciclo por evento/ID estable, rol y revisión de partida. La fecha solo se escribe si está disponible y no se inventan números de ciclos ausentes.
+1. Releer el objeto único y método vigentes; identificar el ciclo por evento/ID estable, rol y revisión de partida. Para un nuevo FT retomado, localizar el repo y OCP, asignar/reutilizar el folio activo de esta sesión conforme a §§46–47 y comprobar que la titularidad queda exclusiva. La fecha solo se escribe si está disponible y no se inventan números de ciclos ausentes. En el primer ciclo debe recuperarse la última salida visible de modelo conservada y presentarse literal en el bloque de salida previa; si no está persistida o accesible, declarar el hueco sin reconstruir.
 2. Preservar las instrucciones recibidas y salidas visibles del modelo literalmente en originales/crónica de la carpeta autorizada; declarar envoltorios, codificación, finales de línea y material no recibido. Resumen y normalización van aparte. No reconstruir verbatim desde memoria, resumen de compactación o citas incompletas. No archivar razonamiento interno ni secretos. Los recibos de herramientas se indexan con procedencia y se conservan en el alcance pertinente.
 3. Añadir una entrada de crónica, no sobrescribir la historia: pregunta/objetivo → instrucción y autoridad → hipótesis y correcciones → acción o no-acción motivada → resultado con evidencia y entorno → qué no ocurrió y qué queda desconocido → efecto en el propósito → siguiente prueba/checkpoint. Explicar por qué se eligió la acción y qué enseña sobre el sistema, sin convertir hipótesis en hechos ni sustituir evidencia por pedagogía.
 4. Actualizar Estado vivo, aceptación, pendientes y recordatorios afectados; sincronizar reinstanciación si cambian. El objeto contiene la entrada o un enlace interno inequívoco a su materialización dentro de su carpeta; el chat, una solicitud de cambios o un documento huérfano no lo sustituyen. Anexos no crean otro estado vivo.
@@ -557,7 +548,7 @@ Original completo: `SeryMente/khora`, rama `fix/graph-occurrence-history-2026101
 
 ## 29. Objeto de persistencia como directorio y arquitectura ratificada — 1.7
 
-Un objeto canónico de persistencia de frente de trabajo, en corto **frente de trabajo**, es un directorio organizado, no un archivo monolítico. Conserva un único núcleo operativo: propósito, alcance, gobierno particular, autorizaciones/vetos, estado vigente, aceptación, pendientes, siguiente paso, revisión y mapa de consulta. El archivo de entrada contiene orientación suficiente para actuar y dirige hacia los materiales necesarios; no es un índice vacío. El gobierno obligatorio se adquiere siempre, no queda oculto detrás de lectura opcional. El contexto externo permite reconstruir una ventana de trabajo útil, no exporta la memoria interna de un modelo.
+Un Objeto Canónico de Persistencia (OCP) de un frente de trabajo (FT/FDT), en corto **frente de trabajo**, es la carpeta canónica organizada en el repositorio de origen, no un archivo monolítico. Su ruta por convención es `frentes/<slug-del-ft>/`; puede haber cualquier cantidad de carpetas FT dentro de un mismo repositorio, cada una con nombre y estado propios. Conserva un único núcleo operativo: propósito, alcance, gobierno particular, autorizaciones/vetos, estado vigente, aceptación, pendientes, siguiente paso, revisión y mapa de consulta. El archivo de entrada contiene orientación suficiente para actuar y dirige hacia los materiales necesarios; no es un índice vacío. El gobierno obligatorio se adquiere siempre, no queda oculto detrás de lectura opcional. El contexto externo permite reconstruir una ventana de trabajo útil, no exporta la memoria interna de un modelo.
 
 Separar núcleo/estado, conversaciones originales, crónica explicativa y materiales de respaldo conforme existan. No imponer carpetas vacías ni fragmentación máxima. Conservar una sola materialización de cada estado vigente; el historial no es un segundo estado activo. Los trece bloques de §§3/27 mantienen nombres, orden y significado en el núcleo, mediante referencias internas verificables cuando corresponda. Todo original o material citado debe ser accesible o declararse pendiente; un índice sin contenido no pasa.
 
@@ -928,4 +919,52 @@ El anexo `ANEXO-GOBERNANZA-TERMINOLOGICA-Y-NORMALIZACION.md` es un procedimiento
 
 Antes de incorporar una entrada, comparar el GOW con los antecedentes/corpus pertinentes; fusionar la definición o ampliar una entrada existente cuando corresponda. No crear otro glosario por proyecto ni mantener una copia con autoridad propia. Una entrada nueva o corrección solicitada explícitamente se registra en el GOW durante el mismo ciclo, con forma canónica, alias/variantes autorizados, alcance, condiciones, excepciones y procedencia. Al cierre, releer la entrada guardada y comprobar que no subsiste otra fuente activa que la contradiga. Si una fuente no está accesible, declarar el estado no verificado en vez de afirmar una unificación inexistente.
 
+## 46. OCP-folder por frente de trabajo — actualización 1.17
+
+### 46.1 Definición
+
+Un Objeto Canónico de Persistencia (OCP) es la carpeta del repositorio que contiene todas las necesidades de persistencia de un frente de trabajo específico (FT/FDT). Su ruta estándar es `frentes/<slug-del-ft>/`. Es un directorio, no un documento aislado ni un nombre que sustituya al FT. El archivo de núcleo del proyecto puede conservar su denominación canónica existente; el OCP es la carpeta que contiene ese único núcleo más las materializaciones pertinentes.
+
+### 46.2 Estructura normativa derivada de §§3 y 27
+
+El OCP conserva un único núcleo operativo conforme a los trece bloques de §§3/27. Según las necesidades reales del frente, puede materializar dentro de la carpeta:
+- `CONTROL-RESPONSABILIDAD.json`: fuente autoritativa única de titularidad, generación y folio de sesión activo.
+- `conversaciones/` u `originales/`: entradas del operador y salidas visibles persistidas, secuenciadas y con procedencia.
+- `cronica/`: registro incremental de decisiones, acciones, evidencias, límites y checkpoint.
+- `evidencias/`, `fuentes/`, `artefactos/`: soportes requeridos y referencias.
+- `prompts/` o artefactos de reinstanciación si aplican los roles del proyecto.
+
+Estos nombres orientan, pero no obligan a crear carpetas vacías. Las rutas preexistentes se conservan y el núcleo debe señalar la ubicación real. Un único estado vivo y un único control de titularidad gobiernan el frente; no se crean archivos de control paralelos.
+
+### 46.3 Multiplicidad de frentes
+
+Un repositorio puede contener cualquier cantidad de OCP/FT con denominaciones propias, siempre que cada uno conserve una carpeta diferenciada, un núcleo operativo único y su control individual. No hay un límite metodológico al número de frentes alojados en un repositorio. El nombre del repositorio no sustituye el nombre del FT y la coincidencia parcial de nombres no basta para decidir que dos frentes son iguales.
+
+### 46.4 Unicidad del control
+
+Dentro de cada OCP existe un único control autoritativo de responsabilidad/sesión. Se recomienda `CONTROL-RESPONSABILIDAD.json` en la raíz de la carpeta. Si un frente previo mantiene ese control en otra ubicación canónica, el núcleo lo referencia sin duplicarlo y esa ubicación sigue siendo la única fuente hasta una migración explícita, condicionada y verificada. El control identifica el FT, su repositorio/ruta, folio activo, instancia o alias de sesión, generación, titular anterior y evidencia de transferencia.
+
+## 47. Reinstanciación por FT, folio de sesión y salida inicial — actualización 1.17
+
+### 47.1 Disparador y descubrimiento
+
+Frases como «retoma la conversación del frente de trabajo X», «retoma FT X», «asume la responsabilidad de X», «continuemos con X» o equivalentes activan este flujo. Antes de actuar, leer `INICIO.md`, Sam, Metacanon y GOW desde `SeryMente/metodologia/main`. Buscar el repositorio de origen entre los repositorios de la organización SeryMente que las herramientas de la sesión permitan enumerar/consultar; después localizar el FT por su nombre canónico en el OCP `frentes/<slug>/`, sin suponer que el nombre del FT coincide con el del repositorio ni que un repositorio alberga un solo FT. Si la organización o ruta no son accesibles, declarar el límite; no inventar localización.
+
+### 47.2 Folio y adjudicación exclusiva
+
+En una sesión nueva/retomada sobre un FT, generar un folio `SES-AAAAMMDD-XXXXXXXX`, comprobando que no choque con folios registrados accesibles. El folio es una identidad operativa de sesión, no un ID nativo de la plataforma. Conservarlo durante los ciclos de esa sesión. Registrar el folio y el alias/instancia verificable en el único control autoritativo del OCP, usando la comparación y sustitución condicionadas por SHA/revisión y generación; leer de vuelta y comprobar.
+
+Cada FT/OCP puede tener exactamente una sesión activa adjudicada al mismo tiempo; un folio activo no puede asignarse simultáneamente a dos sesiones y un FT no puede pertenecer a dos sesiones activas. Ante un control sin titular previo o con titular compatible y verificable, la adjudicación se registra de forma condicionada. Si aparece otro titular activo, identidad no reconciliable o carrera, aplicar Sam P037 y §42: preguntar una sola vez si el operador autoriza transferir este FT de la titularidad/folio actual al folio nuevo. Una respuesta afirmativa explícita autoriza esa transferencia concreta; reemplazar solo si SHA y generación siguen iguales, aumentar generación y conservar registro del titular anterior. Ante negativa, ambigüedad, falta de escritura o read-back fallido, no declarar la sesión activa ni continuar tareas dependientes de la titularidad; hacer solo diagnóstico/propuestas seguras.
+
+### 47.3 Adopción del contexto del OCP
+
+Tras confirmar titularidad exclusiva, leer el núcleo operativo y cargar el gobierno del FT, su propósito/autoridad, estado vivo, pendientes, aceptación, crónica reciente, control, revisiones, evidencias y fuentes necesarias. Consultar las conversaciones/originales que el siguiente paso necesite y verificar su secuencia; no afirmar que se leyó material no disponible. Adoptar el Marco de trabajo del Metacanon para crear y mantener objetos canónicos de proyecto, incluidos el molde de trece bloques (§§3/27), el formato obligatorio por ciclo (§4) y la compuerta de documentación (§28). Mantener la jerarquía: Metodología `main` para normas y glosario; OCP del repositorio de proyecto para estado de ese FT.
+
+### 47.4 Última salida del modelo en el primer ciclo
+
+En el primer ciclo de cada sesión nueva/retomada, localizar en el OCP la última salida visible del modelo efectivamente persistida, preferiblemente mediante el historial estructurado de conversaciones y sus marcas de orden/fecha/evento. Leer de la fuente original y presentarla en el primer mensaje como bloque literal identificado **«Última salida conservada del modelo anterior»**, con su ruta/ID, fuente y revisión. No resumirla en lugar de reproducirla, no reconstruirla desde memoria, no confundirla con una respuesta nueva ni alterar su forma original. Si no existe o no puede leerse, declarar **«Última salida previa: NO DISPONIBLE / NO VERIFICADA»**, explicar el alcance y seguir solo con lo que pueda probarse.
+
+### 47.5 Evidencia obligatoria del primer ciclo y formato por ciclo
+
+El primer ciclo presenta la cabecera de §4 con nombre canónico del FT, ruta OCP, folio activo/generación, versión/firma adquiridas de Sam, sello/revisión de Metacanon y versión/blob del GOW. Expone brevemente que se adoptó la cascada de principios de Sam y se revisó el GOW para este ciclo. La verificación automática normativa por MCP permanece desactivada mientras el operador no la reactive: hacer una revisión manual explícita de la cascada vigente y de los principios relevantes de Sam, sin declarar verificación MCP. La misma salida compacta de §4 es obligatoria en cada ciclo posterior, sin excepción. El formato de salida completo queda enlazado en `https://github.com/SeryMente/metodologia/blob/main/METACANON-OBJETOS-CANONICOS.md#4-salida-por-ciclo`.
 
