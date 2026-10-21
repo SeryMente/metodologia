@@ -1,5 +1,5 @@
 <callout icon="📜" color="gray_bg">
-📍 Versión actual · v1.8 · evento C-GOW-METODOLOGIA-FUENTE-01 · Canon Declarativo · Tier Bloqueante · Alcance: todo el WS · todos los proyectos y frentes de trabajo · Propietario: operador (Black Sheep), toda modificación requiere su autorización explícita
+📍 Versión actual · v1.9 · evento C-GOW-METODOLOGIA-GLOSARIOS-02 · Canon Declarativo · Tier Bloqueante · Alcance: todo el WS · todos los proyectos y frentes de trabajo · Propietario: operador (Black Sheep), toda modificación requiere su autorización explícita
 </callout>
 
 ## §F · Ficha
@@ -30,7 +30,7 @@ El GOW es el repositorio canónico y autoritativo de toda convención semántica
 - §F · Ficha
 - §EI · Párrafo Eidético
 - §PRO · Procedencia
-- §A · Glosario canónico (Grupos 1–9)
+- §A · Glosario canónico (Grupos 1–10)
 - §TAX · Dirección Taxonómica
 - §AC · Acreditación
 - §R · Qué NO es el GOW y riesgos
@@ -152,7 +152,7 @@ Prueba equivalente del MDP para el Bloque de Apertura de un protocolo: eliminar 
 
 <b>Procedencia</b> ✦
 
-Capa de origen de cada afirmación dentro de un Canon. Marca obligatoria por afirmación: 🎙️ dictado del operador · 🟦 corpus interno · 🌐 teoría externa · ✦ propuesta de Samantha ratificada.
+Capa de origen de cada afirmación o término: permite identificar fuente, fecha/evento, ámbito y linaje. En el corpus de Cánones, marcas de procedencia: 🎙️ dictado del operador · 🟦 corpus interno · 🌐 teoría externa · ✦ propuesta de Samantha ratificada. Las entradas heredadas conservan su fuente y alcance; las citas originales no se reescriben como si hubieran nacido normalizadas.
 
 <b>Acreditación (§AC)</b> ✦
 
@@ -226,7 +226,7 @@ Demográfico secundario de SEA. Estado de una persona en proceso de integración
 
 ### Grupo 5 · Convenciones semánticas operativas
 
-<b>Frente de trabajo</b> — Denominación corta de «objeto canónico de persistencia de frente de trabajo»: directorio persistente con núcleo operativo único, documentos y antecedentes. Ventana de contexto e historial de conversaciones son distintos; no crea una segunda fuente de estado.
+<b>Frente de trabajo</b> — Denominación corta de «objeto canónico de persistencia de frente de trabajo»: directorio persistente con un núcleo operativo único, contexto externo recuperable, documentos, antecedentes, conversaciones originales y crónica. No equivale a un solo archivo .md. «Ventana de contexto», «historial conversacional» y «crónica del frente» son objetos distintos; no crean fuentes paralelas de estado. En uso ordinario puede aludir también al esfuerzo de trabajo; explicitar la distinción cuando afecte custodia o arquitectura. «Fuentes de trabajo» se normaliza a «frentes de trabajo» si el contexto lo identifica inequívocamente, conservando el dictado original.
 
 <b>Persistencia seamless entre conversaciones</b> — Continuidad desde el último punto efectivamente guardado y verificado, sin exigir repetir lo conservado. No significa memoria ilimitada, captura automática ni conservación de mensajes no escritos; las lagunas se declaran.
 
@@ -252,9 +252,9 @@ Denominación del operador para Desktop Commander Remote MCP, del paquete <code>
 
 Abreviatura operativa de «workspace» (espacio de trabajo). Cuando se usa sin calificador, refiere al workspace Black Sheep en Notion.
 
-<b>Cora = Khora</b> 🎙️
+<b>Normalización contextual: CORA / C-O-R-A → KHORA</b> 🎙️
 
-Convención de equivalencia terminológica ratificada por el operador: «Cora» y «Khora» son nombres intercambiables para la misma prótesis cognitiva digital dentro del proyecto — el nombre canónico de producto y sistema operativo es «Khora» (Khora OS, terminal <code>khora></code>, comandos <code>khora <verbo></code>); toda mención de «Cora» como nombre de producto u OS se traduce automáticamente a «Khora» en cualquier salida o documento del WS. Ratificado por el operador (2026-07-18, v296 del Metaprompt; confirmado 2026-07-21).
+Convención de normalización de transcripción ratificada por el operador. Cuando el contexto confirma que la mención alude a la prótesis cognitiva digital o al sistema asociado, las formas «Cora», «CORA», «C-O-R-A» y variantes fonéticas cercanas se normalizan a la forma canónica KHORA. En redacción de marca se conserva «Khora» o «Khora OS» cuando corresponde al nombre comercial; KHORA es el identificador canónico de normalización. Si el contexto evidencia otra entidad llamada Cora/CORA, se conserva esa entidad. Si persiste una ambigüedad real, se explicita y se pregunta una sola vez. La asociación no autoriza a cambiar citas u originales históricos.
 
 <b>MP · PRIUS-MP · Metaprompt Canónico de Capa 1</b> 🎙️
 
@@ -262,9 +262,9 @@ Nombre canónico del estrato de instrucciones de sistema que rige al agente núc
 
 <b>Sam</b> 🎙️
 
-Abreviatura canónica autorizada para «Metaprompt Canónico de Samantha», la fuente de gobierno general de Samantha. En este sentido, normaliza la forma transcrita «SAM» a «Sam». No designa por sí sola al agente/persona Samantha ni a otro sistema llamado Sam; si el contexto apunta a otra entidad, conserva su nombre.
+Abreviatura canónica autorizada para «Metaprompt Canónico de Samantha», la fuente de gobierno general de Samantha, cuyo archivo canónico es gobernanza/METAPROMPT-CANONICO-SAMANTHA.md en SeryMente/metodologia/main. En este sentido, normaliza la forma transcrita «SAM» a «Sam» y, solo cuando el contexto confirme que se refiere al metaprompt, reconoce las variantes históricas de dictado «Samanta», «Metapron» y «Metapromp». No designa por sí sola al agente/persona Samantha ni a otro sistema llamado Sam; si el contexto apunta a otra entidad, conserva su nombre.
 
-<b>Metacanon de objetos canónicos (Metacanon v1.15)</b> 🟦
+<b>Metacanon de objetos canónicos (Metacanon v1.16)</b> 🟦
 
 Marco del repositorio SeryMente/metodologia que configura y mantiene frentes de trabajo como directorios con un núcleo operativo único y materiales enlazados. No confundir con la equivalencia histórica/local de «Metacanon» y «Método para Documentar Cánones (MDC)» usada en el WS Khora. En comunicaciones entre espacios, usar el nombre completo o el calificador de contexto; no propagar equivalencia indistinta.
 
@@ -282,7 +282,7 @@ Comprobación obligatoria al inicio y al cierre de cada ciclo de trabajo: consul
 
 <b>Glosario operativo compartido</b> ✦
 
-Denominación funcional del GOW para todos los frentes de trabajo: vocabulario transversal que permite abreviar términos, convenir significados y corregir errores recurrentes de transcripción mediante asociaciones explícitas entre expresiones incorrectas y términos correctos, conforme el operador las identifique y solicite. La fuente canónica preponderante es `SeryMente/metodologia/main`, archivo `gobernanza/GLOSARIO-WORKSPACE.md`; esta página de Notion y las demás copias son espejos subordinados. Si existe divergencia, prevalece la revisión verificada de `main`; si `main` no puede consultarse, declarar «GOW NO VERIFICADO». La página espejo debe identificar la revisión de origen y su frescura verificada.
+Denominación funcional del GOW para todos los frentes de trabajo: vocabulario transversal que permite abreviar términos, convenir significados y corregir errores recurrentes de transcripción mediante asociaciones explícitas entre expresiones incorrectas y términos correctos, conforme el operador las identifique y solicite. La fuente canónica preponderante es SeryMente/metodologia/main, archivo gobernanza/GLOSARIO-WORKSPACE.md; esta página de Notion y las demás copias son espejos subordinados. Si existe divergencia, prevalece la revisión verificada de main; si main no puede consultarse, declarar «GOW NO VERIFICADO». El GOW puede conservar entradas con ámbito local explícito para evitar pérdida contextual, pero su presencia no universaliza su aplicación.
 
 <b>Julia = Jules</b> 🎙️
 
@@ -478,6 +478,383 @@ Instrumento determinista, versionado en el repositorio, que audita mecánicament
 
 ---
 
+
+### Grupo 10 · Metodología compartida y entradas heredadas del glosario de Metodología
+
+**Procedencia:** migración íntegra de las entradas terminológicas del archivo GLOSARIO-OPERATIVO.md, versión v1.3.1, blob 6b8d3a50f2ac235b5597989981a0eabee9e90d85. Su original completo se conserva en frentes/metodologia/antecedentes/GLOSARIO-OPERATIVO-v1.3.1.md. Se unifica aquí el vocabulario común sin extender los términos locales más allá de su ámbito original. Los conceptos que ya existían en los grupos anteriores se consolidan en su entrada canónica correspondiente, no se duplican.
+
+#### Entradas de términos canónicos heredados
+
+<b>CECEQ</b> 🟦
+
+**Procedencia y alcance:** importado de GLOSARIO-OPERATIVO.md v1.3.1 (blob 6b8d3a50f2ac235b5597989981a0eabee9e90d85); conservar el alcance específico de esta definición y no generalizarla a otros proyectos por mera inclusión en el GOW. Sección de términos metodológicos comunes.
+
+**Tipo:** ubicacion.  
+**Definicion:** nombre canonico de la ubicacion de trabajo correspondiente al Centro Cultural Gomez Morin en Queretaro.  
+**Forma canonica:** CECEQ.  
+**Variantes de transcripcion conocidas:** CSEC, CSEQ.  
+**Regla:** las variantes se normalizan a CECEQ.
+
+<b>RDC</b> 🟦
+
+**Procedencia y alcance:** importado de GLOSARIO-OPERATIVO.md v1.3.1 (blob 6b8d3a50f2ac235b5597989981a0eabee9e90d85); conservar el alcance específico de esta definición y no generalizarla a otros proyectos por mera inclusión en el GOW. Sección de términos metodológicos comunes.
+
+**Tipo:** mecanismo de acceso.  
+**Definicion:** Remote Desktop Commander, canal utilizado para operar el entorno remoto autorizado.  
+**Forma canonica:** RDC.  
+**Regla:** no se confunde con la identidad de una terminal ni con la ubicacion fisica.
+
+<b>Identidad RDC</b> 🟦
+
+**Procedencia y alcance:** importado de GLOSARIO-OPERATIVO.md v1.3.1 (blob 6b8d3a50f2ac235b5597989981a0eabee9e90d85); conservar el alcance específico de esta definición y no generalizarla a otros proyectos por mera inclusión en el GOW. Sección de términos metodológicos comunes.
+
+**Tipo:** identidad operativa de dispositivo.  
+**Definicion:** combinacion de `RDC-CUENTA + RDC-DEVICE-ID` que identifica una terminal concreta ante el proveedor RDC.  
+**Regla:** el nombre visible del dispositivo no basta para identificar una terminal.
+
+<b>Sesion RDC</b> 🟦
+
+**Procedencia y alcance:** importado de GLOSARIO-OPERATIVO.md v1.3.1 (blob 6b8d3a50f2ac235b5597989981a0eabee9e90d85); conservar el alcance específico de esta definición y no generalizarla a otros proyectos por mera inclusión en el GOW. Sección de términos metodológicos comunes.
+
+**Tipo:** estado operativo por terminal.  
+**Definicion:** conexion remota autenticada asociada a una identidad RDC concreta.  
+**Distincion:** pueden coexistir varias sesiones RDC en dispositivos diferentes; no existe una unica sesion RDC global para todas las conversaciones.
+
+<b>Divergencia de observabilidad RDC</b> 🟦
+
+**Procedencia y alcance:** importado de GLOSARIO-OPERATIVO.md v1.3.1 (blob 6b8d3a50f2ac235b5597989981a0eabee9e90d85); conservar el alcance específico de esta definición y no generalizarla a otros proyectos por mera inclusión en el GOW. Sección de términos metodológicos comunes.
+
+**Tipo:** estado operativo de recuperación.  
+**Definicion:** condicion en la que una terminal RDC requerida no puede verificarse en vivo mientras el usuario aporta evidencia local positiva de actividad de esa terminal.  
+**Regla:** no permite inferir finalizacion ni sustituir la terminal por otra identidad ONLINE. Cuando el ciclo requiere esa terminal en vivo, activa el protocolo `RDC-REINSTANTIAR`.
+
+<b>RDC-REINSTANTIAR</b> 🟦
+
+**Procedencia y alcance:** importado de GLOSARIO-OPERATIVO.md v1.3.1 (blob 6b8d3a50f2ac235b5597989981a0eabee9e90d85); conservar el alcance específico de esta definición y no generalizarla a otros proyectos por mera inclusión en el GOW. Sección de términos metodológicos comunes.
+
+**Tipo:** comando conversacional de recuperación.  
+**Definicion:** instrucción canónica que solicita cerrar la terminal/sesión RDC observada, iniciar una nueva sesión y devolver el `RDC-HANDSHAKE` necesario para sustituir de forma verificable el estado global.  
+**Regla:** no se interpreta como comando de shell ni como evidencia de finalizacion de otra identidad.
+
+<b>Ubicacion actual</b> 🟦
+
+**Procedencia y alcance:** importado de GLOSARIO-OPERATIVO.md v1.3.1 (blob 6b8d3a50f2ac235b5597989981a0eabee9e90d85); conservar el alcance específico de esta definición y no generalizarla a otros proyectos por mera inclusión en el GOW. Sección de términos metodológicos comunes.
+
+**Tipo:** estado transversal.  
+**Definicion:** lugar fisico de trabajo vigente para los ciclos actuales.  
+**Regla:** permanece vigente entre conversaciones hasta declaracion explicita de cambio.
+
+<b>Usuario Windows operativo</b> 🟦
+
+**Procedencia y alcance:** importado de GLOSARIO-OPERATIVO.md v1.3.1 (blob 6b8d3a50f2ac235b5597989981a0eabee9e90d85); conservar el alcance específico de esta definición y no generalizarla a otros proyectos por mera inclusión en el GOW. Sección de términos metodológicos comunes.
+
+**Tipo:** identidad operativa.  
+**Definicion:** cuenta bajo la que deben ejecutarse las operaciones ordinarias del entorno.  
+**Regla:** identifica la identidad operativa de referencia del perfil; no obliga por sí misma a cambiar la identidad efectiva de ejecución.
+
+<b>Usuario Windows administrativo</b> 🟦
+
+**Procedencia y alcance:** importado de GLOSARIO-OPERATIVO.md v1.3.1 (blob 6b8d3a50f2ac235b5597989981a0eabee9e90d85); conservar el alcance específico de esta definición y no generalizarla a otros proyectos por mera inclusión en el GOW. Sección de términos metodológicos comunes.
+
+**Tipo:** identidad administrativa.  
+**Definicion:** identidad administrativa o elevada disponible en el entorno. Puede coincidir con la identidad efectiva de la sesión RDC.  
+**Regla:** su uso para trabajo ordinario está permitido cuando la operación sea técnicamente válida. La única restricción específica de materialización de repositorios se define en los anexos operativos.
+
+<b>Bloqueo de ejecucion</b> 🟦
+
+**Procedencia y alcance:** importado de GLOSARIO-OPERATIVO.md v1.3.1 (blob 6b8d3a50f2ac235b5597989981a0eabee9e90d85); conservar el alcance específico de esta definición y no generalizarla a otros proyectos por mera inclusión en el GOW. Sección de términos metodológicos comunes.
+
+**Tipo:** estado de ejecución.
+**Definicion:** condición en la que el ciclo no puede realizar trabajo sustantivo ni declararse cerrado por faltar una precondición verificable.
+**Regla:** el bloqueo es operativo, no conversacional. El modelo permanece disponible para resolver la causa, recibir información y volver a verificar el contexto.
+
+<b>Notificacion de bloqueo</b> 🟦
+
+**Procedencia y alcance:** importado de GLOSARIO-OPERATIVO.md v1.3.1 (blob 6b8d3a50f2ac235b5597989981a0eabee9e90d85); conservar el alcance específico de esta definición y no generalizarla a otros proyectos por mera inclusión en el GOW. Sección de términos metodológicos comunes.
+
+**Tipo:** formato operativo.
+**Definicion:** salida visual estandarizada que identifica inmediatamente un ciclo bloqueado.
+**Regla:** debe aparecer al inicio de una notificación de bloqueo y utilizar el formato canónico del registro por ciclo.
+
+<b>Ciclo</b> 🟦
+
+**Procedencia y alcance:** importado de GLOSARIO-OPERATIVO.md v1.3.1 (blob 6b8d3a50f2ac235b5597989981a0eabee9e90d85); conservar el alcance específico de esta definición y no generalizarla a otros proyectos por mera inclusión en el GOW. Sección de términos metodológicos comunes.
+
+**Tipo:** unidad metodologica.  
+**Definicion:** unidad de secuencia y trazabilidad global establecida por la metodologia.
+
+<b>Conversacion</b> 🟦
+
+**Procedencia y alcance:** importado de GLOSARIO-OPERATIVO.md v1.3.1 (blob 6b8d3a50f2ac235b5597989981a0eabee9e90d85); conservar el alcance específico de esta definición y no generalizarla a otros proyectos por mera inclusión en el GOW. Sección de términos metodológicos comunes.
+
+**Tipo:** contenedor.  
+**Definicion:** contexto conversacional que contiene uno o mas ciclos; no sustituye la identidad global del ciclo.
+
+<b>Variante de transcripcion</b> 🟦
+
+**Procedencia y alcance:** importado de GLOSARIO-OPERATIVO.md v1.3.1 (blob 6b8d3a50f2ac235b5597989981a0eabee9e90d85); conservar el alcance específico de esta definición y no generalizarla a otros proyectos por mera inclusión en el GOW. Sección de términos metodológicos comunes.
+
+**Tipo:** alias de normalizacion.  
+**Definicion:** forma producida por dictado, reconocimiento de voz o legado que corresponde razonablemente a un termino canonico.  
+**Regla:** la variante no adquiere autoridad por aparecer en la entrada original del usuario.
+
+<b>Termino canonico</b> 🟦
+
+**Procedencia y alcance:** importado de GLOSARIO-OPERATIVO.md v1.3.1 (blob 6b8d3a50f2ac235b5597989981a0eabee9e90d85); conservar el alcance específico de esta definición y no generalizarla a otros proyectos por mera inclusión en el GOW. Sección de términos metodológicos comunes.
+
+**Tipo:** unidad terminologica.  
+**Definicion:** forma ortografica y semantica que debe utilizarse una vez incorporada al glosario.
+
+<b>RDC-REQUERIDA</b> 🟦
+
+**Procedencia y alcance:** importado de GLOSARIO-OPERATIVO.md v1.3.1 (blob 6b8d3a50f2ac235b5597989981a0eabee9e90d85); conservar el alcance específico de esta definición y no generalizarla a otros proyectos por mera inclusión en el GOW. Sección de términos metodológicos comunes.
+
+**Tipo:** estado de requisito del ciclo.
+**Definicion:** indica si la conversacion o ciclo requiere una sesion RDC activa para ejecutar la tarea.
+**Valores:** SI, NO o PENDIENTE DE RESOLUCION.
+**Regla:** una deteccion indeterminada no puede convertirse en SI o NO por inferencia; debe resolverse explicitamente.
+
+<b>CONTEXTO-VERIFICACION</b> 🟦
+
+**Procedencia y alcance:** importado de GLOSARIO-OPERATIVO.md v1.3.1 (blob 6b8d3a50f2ac235b5597989981a0eabee9e90d85); conservar el alcance específico de esta definición y no generalizarla a otros proyectos por mera inclusión en el GOW. Sección de términos metodológicos comunes.
+
+**Tipo:** estado de gate.
+**Definicion:** resultado de la comprobacion del contexto operativo antes de ejecutar.
+**Valores canonicos:** VERIFICADO-ACTIVO, VERIFICADO-INACTIVO, NO-REQUERIDO, BLOQUEADO.
+**Regla:** estados de deteccion como NO-VERIFICADO, INDETERMINADO o FUENTE-NO-DISPONIBLE no son estados de paso.
+
+<b>Registro RDC activo</b> 🟦
+
+**Procedencia y alcance:** importado de GLOSARIO-OPERATIVO.md v1.3.1 (blob 6b8d3a50f2ac235b5597989981a0eabee9e90d85); conservar el alcance específico de esta definición y no generalizarla a otros proyectos por mera inclusión en el GOW. Sección de términos metodológicos comunes.
+
+**Tipo:** registro operativo global.
+**Definicion:** registro compartido que conserva identidades RDC conocidas, ciclos de vida y metadatos de continuidad entre conversaciones.
+**Fuente:** ESTADO-RDC-ACTIVO.md.
+**Regla:** no selecciona una terminal global ni sustituye el descubrimiento vivo del proveedor. La terminal actual se resuelve por ciclo.
+
+<b>Terminal RDC seleccionada</b> 🟦
+
+**Procedencia y alcance:** importado de GLOSARIO-OPERATIVO.md v1.3.1 (blob 6b8d3a50f2ac235b5597989981a0eabee9e90d85); conservar el alcance específico de esta definición y no generalizarla a otros proyectos por mera inclusión en el GOW. Alcance operativo RDC/CIBERCAFE, no universal.
+
+**Tipo:** estado operativo de ciclo.  
+**Definicion:** identidad RDC concreta elegida para el ciclo actual despues del descubrimiento vivo.  
+**Regla:** la seleccion es local a la conversacion/ciclo y se identifica por cuenta + device_id. No se hereda como seleccion global desde otra conversacion.
+
+<b>Descubrimiento RDC vivo</b> 🟦
+
+**Procedencia y alcance:** importado de GLOSARIO-OPERATIVO.md v1.3.1 (blob 6b8d3a50f2ac235b5597989981a0eabee9e90d85); conservar el alcance específico de esta definición y no generalizarla a otros proyectos por mera inclusión en el GOW. Alcance operativo RDC/CIBERCAFE, no universal.
+
+**Tipo:** mecanismo de verificacion.  
+**Definicion:** consulta al proveedor RDC que determina que identidades de dispositivo estan actualmente observables/ONLINE.  
+**Regla:** tiene precedencia sobre el registro persistente para determinar presencia y conectividad actuales.
+
+<b>PC-N</b> 🟦
+
+**Procedencia y alcance:** importado de GLOSARIO-OPERATIVO.md v1.3.1 (blob 6b8d3a50f2ac235b5597989981a0eabee9e90d85); conservar el alcance específico de esta definición y no generalizarla a otros proyectos por mera inclusión en el GOW. Alcance operativo RDC/CIBERCAFE, no universal.
+
+**Tipo:** identidad persistente de terminal de CIBERCAFE.  
+**Definicion:** identificador de una computadora individual del cibercafe, por ejemplo `PC-7`, `PC-8` o `PC-9`.  
+**Regla:** el registro y la memoria de desempeno pertenecen a cada `PC-N`; CIBERCAFE no se trata como una sola maquina.
+
+<b>Evento de desempeno</b> 🟦
+
+**Procedencia y alcance:** importado de GLOSARIO-OPERATIVO.md v1.3.1 (blob 6b8d3a50f2ac235b5597989981a0eabee9e90d85); conservar el alcance específico de esta definición y no generalizarla a otros proyectos por mera inclusión en el GOW. Entrada heredada con alcance expresado en su definición.
+
+**Tipo:** registro operativo.  
+**Definicion:** hecho semantico relevante del proceso de observacion, optimizacion, cambio, regresion, error o sincronizacion de una terminal.
+
+<b>Memoria persistente de desempeno</b> 🟦
+
+**Procedencia y alcance:** importado de GLOSARIO-OPERATIVO.md v1.3.1 (blob 6b8d3a50f2ac235b5597989981a0eabee9e90d85); conservar el alcance específico de esta definición y no generalizarla a otros proyectos por mera inclusión en el GOW. Entrada heredada con alcance expresado en su definición.
+
+**Tipo:** estado transversal por terminal.  
+**Definicion:** estado consolidado de desempeno que sobrevive a sesiones locales efimeras y mecanismos de restauracion como DeepFreeze mediante el repositorio.
+
+<b>Sincronizacion hibrida de desempeno</b> 🟦
+
+**Procedencia y alcance:** importado de GLOSARIO-OPERATIVO.md v1.3.1 (blob 6b8d3a50f2ac235b5597989981a0eabee9e90d85); conservar el alcance específico de esta definición y no generalizarla a otros proyectos por mera inclusión en el GOW. Entrada heredada con alcance expresado en su definición.
+
+**Tipo:** mecanismo operativo.  
+**Definicion:** estrategia que mantiene telemetria de alta frecuencia local y publica al repositorio eventos materiales inmediatamente, observaciones ordinarias en lotes y un `SYNC_FLUSH` antes de reinicio/DeepFreeze cuando sea observable.
+
+<b>Economia de llamadas RDC</b> 🟦
+
+**Procedencia y alcance:** importado de GLOSARIO-OPERATIVO.md v1.3.1 (blob 6b8d3a50f2ac235b5597989981a0eabee9e90d85); conservar el alcance específico de esta definición y no generalizarla a otros proyectos por mera inclusión en el GOW. Alcance operativo RDC/CIBERCAFE, no universal.
+
+**Tipo:** criterio de eficiencia operativa.  
+**Definicion:** capacidad de obtener evidencia, acciones o decisiones utiles minimizando llamadas RDC que no agreguen valor.  
+**Regla:** una llamada remota debe justificarse por descubrimiento, accion, verificacion de transicion, resolucion de ambigüedad material o sincronizacion; las mediciones repetibles y la telemetria frecuente deben resolverse localmente o mediante reutilizacion y batching.
+
+<b>RDC-REUTILIZACION</b> 🟦
+
+**Procedencia y alcance:** importado de GLOSARIO-OPERATIVO.md v1.3.1 (blob 6b8d3a50f2ac235b5597989981a0eabee9e90d85); conservar el alcance específico de esta definición y no generalizarla a otros proyectos por mera inclusión en el GOW. Alcance operativo RDC/CIBERCAFE, no universal.
+
+**Tipo:** indicador de eficiencia.  
+**Definicion:** cantidad o proporcion de verificaciones servidas mediante memoria persistente u observaciones ya vigentes, evitando una nueva llamada RDC.
+
+<b>RDC-EVITADAS</b> 🟦
+
+**Procedencia y alcance:** importado de GLOSARIO-OPERATIVO.md v1.3.1 (blob 6b8d3a50f2ac235b5597989981a0eabee9e90d85); conservar el alcance específico de esta definición y no generalizarla a otros proyectos por mera inclusión en el GOW. Alcance operativo RDC/CIBERCAFE, no universal.
+
+**Tipo:** indicador de eficiencia.  
+**Definicion:** llamadas remotas que no fueron necesarias gracias a reutilizacion, agregacion o batching de informacion.
+
+<b>PERFIL-CIBERCAFE-NO-REINICIO</b> 🟦
+
+**Procedencia y alcance:** importado de GLOSARIO-OPERATIVO.md v1.3.1 (blob 6b8d3a50f2ac235b5597989981a0eabee9e90d85); conservar el alcance específico de esta definición y no generalizarla a otros proyectos por mera inclusión en el GOW. Alcance operativo RDC/CIBERCAFE, no universal.
+
+Perfil operativo permanente del ámbito CIBERCAFE en el que la continuidad de la sesión tiene prioridad: `PRESUPUESTO-REINICIO = 0` y ninguna intervención puede requerir reboot de la terminal.
+
+<b>BLOQUEADA-REINICIO</b> 🟦
+
+**Procedencia y alcance:** importado de GLOSARIO-OPERATIVO.md v1.3.1 (blob 6b8d3a50f2ac235b5597989981a0eabee9e90d85); conservar el alcance específico de esta definición y no generalizarla a otros proyectos por mera inclusión en el GOW. Alcance operativo RDC/CIBERCAFE, no universal.
+
+Estado de una intervención que requiere reinicio, apagado, reset, entrada a UEFI/BIOS o reparación offline. Se registra como oportunidad, no se ejecuta y no bloquea por sí mismo el resto del ciclo.
+
+<b>VENTANA-DE-MANTENIMIENTO-LIVE</b> 🟦
+
+**Procedencia y alcance:** importado de GLOSARIO-OPERATIVO.md v1.3.1 (blob 6b8d3a50f2ac235b5597989981a0eabee9e90d85); conservar el alcance específico de esta definición y no generalizarla a otros proyectos por mera inclusión en el GOW. Alcance operativo RDC/CIBERCAFE, no universal.
+
+Periodo de mantenimiento en CIBERCAFE en el que la terminal permanece encendida, conectada y utilizable por el usuario. No autoriza reinicio.
+
+<b>Cuota de deployment Vercel</b> 🟦
+
+**Procedencia y alcance:** importado de GLOSARIO-OPERATIVO.md v1.3.1 (blob 6b8d3a50f2ac235b5597989981a0eabee9e90d85); conservar el alcance específico de esta definición y no generalizarla a otros proyectos por mera inclusión en el GOW. Alcance técnico de publicación/desarrollo, cuando el proyecto lo utilice.
+
+**Tipo:** restricción de plataforma.
+**Definición:** límite vigente que Vercel aplica a la creación de nuevos deployments, dependiente del plan y de las ventanas temporales del proveedor.
+**Regla:** se verifica contra la documentación y el estado vigente de Vercel; no se trata como una constante permanente ni como indicio de indisponibilidad total de KHORA.
+
+<b>Deployment</b> 🟦
+
+**Procedencia y alcance:** importado de GLOSARIO-OPERATIVO.md v1.3.1 (blob 6b8d3a50f2ac235b5597989981a0eabee9e90d85); conservar el alcance específico de esta definición y no generalizarla a otros proyectos por mera inclusión en el GOW. Alcance técnico de publicación/desarrollo, cuando el proyecto lo utilice.
+
+**Tipo:** objeto de publicación.
+**Definición:** versión del proyecto creada y servida por Vercel o preparada para servirla.
+**Regla:** la existencia de un deployment no significa que represente el `main` actual; debe verificarse su commit/SHA y estado.
+
+<b>Ejecución local</b> 🟦
+
+**Procedencia y alcance:** importado de GLOSARIO-OPERATIVO.md v1.3.1 (blob 6b8d3a50f2ac235b5597989981a0eabee9e90d85); conservar el alcance específico de esta definición y no generalizarla a otros proyectos por mera inclusión en el GOW. Alcance técnico de publicación/desarrollo, cuando el proyecto lo utilice.
+
+**Tipo:** modo de ejecución.
+**Definición:** instancia de Cora ejecutada fuera del servicio remoto de Vercel, normalmente desde el repositorio canónico en el equipo local.
+**Regla:** puede usarse para desarrollo, depuración y validación cuando el URL canónico no sea materialmente necesario. No adquiere autoridad de producción.
+
+<b>URL canónico de publicación</b> 🟦
+
+**Procedencia y alcance:** importado de GLOSARIO-OPERATIVO.md v1.3.1 (blob 6b8d3a50f2ac235b5597989981a0eabee9e90d85); conservar el alcance específico de esta definición y no generalizarla a otros proyectos por mera inclusión en el GOW. Alcance técnico de publicación/desarrollo, cuando el proyecto lo utilice.
+
+**Tipo:** referencia de despliegue.
+**Definición:** URL que la metodología reconoce como superficie canónica de producción de un proyecto.
+**Regla:** una instancia local o un deployment histórico no se presenta como equivalente al URL canónico sin una decisión explícita y verificable.
+
+<b>Verificación local de build Vercel</b> 🟦
+
+**Procedencia y alcance:** importado de GLOSARIO-OPERATIVO.md v1.3.1 (blob 6b8d3a50f2ac235b5597989981a0eabee9e90d85); conservar el alcance específico de esta definición y no generalizarla a otros proyectos por mera inclusión en el GOW. Alcance técnico de publicación/desarrollo, cuando el proyecto lo utilice.
+
+**Tipo:** mecanismo de validación.
+**Definición:** ejecución local de `vercel build` para obtener y revisar el artefacto `.vercel/output` sin crear por sí misma un deployment remoto.
+**Regla:** `vercel deploy` y `vercel deploy --prebuilt` sí crean deployments y quedan sujetos a los límites del proveedor.
+
+<b>Estado de cuota Vercel</b> 🟦
+
+**Procedencia y alcance:** importado de GLOSARIO-OPERATIVO.md v1.3.1 (blob 6b8d3a50f2ac235b5597989981a0eabee9e90d85); conservar el alcance específico de esta definición y no generalizarla a otros proyectos por mera inclusión en el GOW. Alcance técnico de publicación/desarrollo, cuando el proyecto lo utilice.
+
+**Tipo:** estado operativo de ciclo.
+**Definición:** clasificación de la capacidad de crear el deployment requerido en el momento de la operación.
+**Valores:** `NO-REQUERIDA`, `DISPONIBLE`, `LIMITADA`, `NO-VERIFICADA`.
+**Regla:** `LIMITADA` bloquea la publicación que necesita un deployment nuevo, pero no bloquea por sí misma las operaciones sobre deployments existentes ni la ejecución local.
+
+
+## 7. Formalización de frentes — C-METODOLOGIA-GOBIERNO-01
+
+<b>Núcleo operativo</b> 🟦
+
+**Procedencia y alcance:** importado de GLOSARIO-OPERATIVO.md v1.3.1 (blob 6b8d3a50f2ac235b5597989981a0eabee9e90d85); conservar el alcance específico de esta definición y no generalizarla a otros proyectos por mera inclusión en el GOW. Alcance metodológico transversal.
+
+Archivo de entrada y estado vigente de un frente. Orienta y enruta, conserva gobierno obligatorio y continuidad suficiente; no duplica toda la historia ni es un índice vacío.
+
+<b>Contexto persistido</b> 🟦
+
+**Procedencia y alcance:** importado de GLOSARIO-OPERATIVO.md v1.3.1 (blob 6b8d3a50f2ac235b5597989981a0eabee9e90d85); conservar el alcance específico de esta definición y no generalizarla a otros proyectos por mera inclusión en el GOW. Alcance metodológico transversal.
+
+Representación externa verificable necesaria para reconstruir una ventana de trabajo útil en otra instancia. No es la ventana interna ni la memoria del modelo.
+
+<b>Historial conversacional</b> 🟦
+
+**Procedencia y alcance:** importado de GLOSARIO-OPERATIVO.md v1.3.1 (blob 6b8d3a50f2ac235b5597989981a0eabee9e90d85); conservar el alcance específico de esta definición y no generalizarla a otros proyectos por mera inclusión en el GOW. Alcance metodológico transversal.
+
+Originales secuenciados de entradas del usuario y salidas visibles del modelo, con cambios de plataforma, conversación y modelo, y rol/persona cuando existan. No equivale al contexto operativo ni a una síntesis.
+
+<b>Crónica del frente</b> 🟦
+
+**Procedencia y alcance:** importado de GLOSARIO-OPERATIVO.md v1.3.1 (blob 6b8d3a50f2ac235b5597989981a0eabee9e90d85); conservar el alcance específico de esta definición y no generalizarla a otros proyectos por mera inclusión en el GOW. Alcance metodológico transversal.
+
+Registro explicativo de acontecimientos, decisiones, acciones, evidencias, límites y continuidad enlazado con originales; no los sustituye.
+
+<b>Espacio de trabajo Ser y Mente</b> 🟦
+
+**Procedencia y alcance:** importado de GLOSARIO-OPERATIVO.md v1.3.1 (blob 6b8d3a50f2ac235b5597989981a0eabee9e90d85); conservar el alcance específico de esta definición y no generalizarla a otros proyectos por mera inclusión en el GOW. Alcance metodológico transversal.
+
+Organización `SeryMente` y sus repositorios como espacio persistente común. Las aplicaciones comerciales, como Notion, son superficies vinculadas, no la única persistencia.
+
+<b>Sincronización perpetua</b> 🟦
+
+**Procedencia y alcance:** importado de GLOSARIO-OPERATIVO.md v1.3.1 (blob 6b8d3a50f2ac235b5597989981a0eabee9e90d85); conservar el alcance específico de esta definición y no generalizarla a otros proyectos por mera inclusión en el GOW. Alcance metodológico transversal.
+
+Requisito ratificado: cada cambio documental en la aplicación de origen desencadena actualización automática de su espejo en el repositorio del frente. Alcance confirmado aplicación → repositorio; no presume dirección inversa. Mecanismo aún pendiente; una copia puntual no acredita continuidad automática.
+
+<b>Sesión PRIUS</b> 🟦
+
+**Procedencia y alcance:** importado de GLOSARIO-OPERATIVO.md v1.3.1 (blob 6b8d3a50f2ac235b5597989981a0eabee9e90d85); conservar el alcance específico de esta definición y no generalizarla a otros proyectos por mera inclusión en el GOW. Alcance metodológico transversal.
+
+Segunda capa de gobernanza histórica del espacio Notion. Uso futuro previsto; revisión/adaptación diferidas explícitamente hasta que no haya urgencias. Copiar o mencionar su canon no abre una sesión.
+
+<b>Metacanon de frentes</b> 🟦
+
+**Procedencia y alcance:** importado de GLOSARIO-OPERATIVO.md v1.3.1 (blob 6b8d3a50f2ac235b5597989981a0eabee9e90d85); conservar el alcance específico de esta definición y no generalizarla a otros proyectos por mera inclusión en el GOW. Alcance metodológico transversal.
+
+Método de configuración y mantenimiento de los frentes, subordinado al gobierno general. No se confunde con el metaprompt ni sustituye las reglas superiores de cada plataforma.
+
+## 8. Precisión de revisión integral1.10
+
+<b>Categorías de revisión</b> 🟦
+
+**Procedencia y alcance:** importado de GLOSARIO-OPERATIVO.md v1.3.1 (blob 6b8d3a50f2ac235b5597989981a0eabee9e90d85); conservar el alcance específico de esta definición y no generalizarla a otros proyectos por mera inclusión en el GOW. Alcance de revisión y cierre metodológico.
+
+Dieciséis ejes de auditoría de cobertura e integración del método. No reemplazan los trece bloques del molde del núcleo ni obligan a dieciséis secciones nuevas por frente.
+
+<b>Contrato de cierre</b> 🟦
+
+**Procedencia y alcance:** importado de GLOSARIO-OPERATIVO.md v1.3.1 (blob 6b8d3a50f2ac235b5597989981a0eabee9e90d85); conservar el alcance específico de esta definición y no generalizarla a otros proyectos por mera inclusión en el GOW. Alcance de revisión y cierre metodológico.
+
+Concreción del encargo, criterio observable, fuente de intención, permiso, dependencias, evidencia y checkpoint dentro del núcleo existente. No es un segundo estado ni autorización automática.
+
+<b>Aceptación funcional</b> 🟦
+
+**Procedencia y alcance:** importado de GLOSARIO-OPERATIVO.md v1.3.1 (blob 6b8d3a50f2ac235b5597989981a0eabee9e90d85); conservar el alcance específico de esta definición y no generalizarla a otros proyectos por mera inclusión en el GOW. Alcance de revisión y cierre metodológico.
+
+Contraste del funcionamiento previsto con evidencia del receptor real y su entorno. Se distingue de revisión documental completada y de controles mecánicos aprobados; no se deduce de ellos.
+
+<b>Recibo de refresco</b> 🟦
+
+**Procedencia y alcance:** importado de GLOSARIO-OPERATIVO.md v1.3.1 (blob 6b8d3a50f2ac235b5597989981a0eabee9e90d85); conservar el alcance específico de esta definición y no generalizarla a otros proyectos por mera inclusión en el GOW. Alcance de revisión y cierre metodológico.
+
+Evidencia derivada de lectura de la fuente central: revisión, versión/huella, modificación, comprobación y adopción. No constituye otro núcleo ni actualiza por sí solo un frente.
+
+<b>Antigüedad del método</b> 🟦
+
+**Procedencia y alcance:** importado de GLOSARIO-OPERATIVO.md v1.3.1 (blob 6b8d3a50f2ac235b5597989981a0eabee9e90d85); conservar el alcance específico de esta definición y no generalizarla a otros proyectos por mera inclusión en el GOW. Alcance de revisión y cierre metodológico.
+
+Tiempo desde la última modificación comprobada del archivo metodológico, distinto del tiempo desde su comprobación o empaquetado. Si faltan reloj/fuente/fecha coherentes, edad no verificada.
+
+- **Responsable exclusivo del frente:** único hilo/instancia vigente en el control, no todo lector o colaborador.
+- **Generación de responsabilidad:** contador que invalida permisos operativos anteriores al transferir/liberar; no autentica identidad por sí mismo.
+- **Comparación y sustitución atómicas:** reemplazo condicionado a la huella exacta observada, sin que un segundo competidor sobrescriba silenciosamente.
+- **Preflight cooperativo:** comprobación previa; no equivale a imposición transaccional de todas las escrituras.
+
+
 ## §TAX · Dirección Taxonómica
 
 | Campo | Valor |
@@ -531,7 +908,7 @@ El GOW se considera poseído cuando:
 
 <b>C-GOW-SAM-01 · v1.7 · 2026-10-21.</b> Por instrucción expresa del operador se preserva el GOW preexistente como fuente única, se amplía su uso transversal a los frentes que adquieren este canon, se incorpora «Sam» como abreviatura contextual de «Metaprompt Canónico de Samantha», se añade el contrato de normalización de transcripción y revisión obligatoria en cada ciclo, y se limita explícitamente la equivalencia histórica MDC/Metacanon al contexto local para evitar colisiones con Metacanon de objetos canónicos v1.14. Las entradas previas se conservan; la actualización no equivale a revalidación de todas ellas.
 
-<b>C-GOW-METODOLOGIA-FUENTE-01 · v1.8 · 2026-10-21.</b> Por instrucción expresa del operador, `SeryMente/metodologia/main` pasa a ser la fuente canónica preponderante del GOW y de la documentación metodológica compartida. Se conserva el contenido heredado y se modifica la declaración de fuente para que Notion sea un espejo subordinado. La entrada «Metacanon de objetos canónicos» se actualiza a v1.15. La página Notion se actualizó desde la revisión canónica de main y se leyó de vuelta en este ciclo para comprobar título, v1.8, precedencia del repositorio y entradas operativas. Esta comprobación puntual no instala sincronización automática futura.
+<b>C-GOW-METODOLOGIA-GLOSARIOS-02 · v1.9 · 2026-10-21.</b> Por instrucción expresa se integra el corpus de términos del Glosario Operativo de la Metodología v1.3.1 a este único GOW; las entradas duplicadas se consolidan y los términos de ámbito específico conservan su alcance. El archivo raíz anterior se preserva verbatim como antecedente y pasa a ser un puntero de compatibilidad. Se eleva Metacanon a v1.16 para normar la unicidad de fuente. La página Notion se actualizará como espejo subordinado; no se presume sincronización perpetua. Por instrucción expresa del operador, `SeryMente/metodologia/main` pasa a ser la fuente canónica preponderante del GOW y de la documentación metodológica compartida. Se conserva el contenido heredado y se modifica la declaración de fuente para que Notion sea un espejo subordinado. La entrada «Metacanon de objetos canónicos» se actualiza a v1.15. La página Notion se actualizó desde la revisión canónica de main y se leyó de vuelta en este ciclo para comprobar título, v1.8, precedencia del repositorio y entradas operativas. Esta comprobación puntual no instala sincronización automática futura.
 
 <b>C-METODOLOGIA-CONTINUIDAD-02 · v1.6.</b> Se registran las denominaciones y la continuidad por frentes ratificadas por el operador, con arranque diferenciado por plataforma. Las entradas previas, incluida la definición única de Ética, permanecen íntegras.
 
