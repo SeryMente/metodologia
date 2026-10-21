@@ -276,7 +276,7 @@ Nombre canónico del estrato de instrucciones de sistema que rige al agente núc
 
 Abreviatura canónica autorizada para «Metaprompt Canónico de Samantha», la fuente de gobierno general de Samantha, cuyo archivo canónico es gobernanza/METAPROMPT-CANONICO-SAMANTHA.md en SeryMente/metodologia/main. En este sentido, normaliza la forma transcrita «SAM» a «Sam» y, solo cuando el contexto confirme que se refiere al metaprompt, reconoce las variantes históricas de dictado «Samanta», «Metapron» y «Metapromp». No designa por sí sola al agente/persona Samantha ni a otro sistema llamado Sam; si el contexto apunta a otra entidad, conserva su nombre.
 
-<b>Metacanon de objetos canónicos (Metacanon v1.16)</b> 🟦
+<b>Metacanon de objetos canónicos (Metacanon v1.17)</b> 🟦
 
 Marco del repositorio SeryMente/metodologia que configura y mantiene frentes de trabajo como directorios con un núcleo operativo único y materiales enlazados. No confundir con la equivalencia histórica/local de «Metacanon» y «Método para Documentar Cánones (MDC)» usada en el WS Khora. En comunicaciones entre espacios, usar el nombre completo o el calificador de contexto; no propagar equivalencia indistinta.
 
