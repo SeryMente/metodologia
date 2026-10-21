@@ -1,10 +1,18 @@
 {
-  "source": "https://app.notion.com/p/7515d4a3b250830898d58143e5886965",
-  "source_title": "Glosario Operativo del Workspace (GOW) · Canon v1.6",
-  "contentLastEditedAt": 1792461532358,
-  "sha256_utf8": "30f51645f7f3f12a1a9da412a458cc57ddf61dde3ffd9eb9d6019a61bb2a133d",
-  "cycle": "C-METODOLOGIA-CONTINUIDAD-02",
-  "mirror": "Cuerpo íntegro leído tras edición en Notion; sin añadir salto de línea",
-  "sync": "copia puntual verificada; no instala sincronización automática",
-  "native_loading": "Notion puede aportar una versión distinta; cotejar firma, origen y revisión. Esta sesión recibió automáticamente la página antigua v330 eliminada, y adquirió expresamente la fuente viva v332 antes de actualizarla a v333."
+  "canonical_source": "https://github.com/SeryMente/metodologia/blob/main/gobernanza/GLOSARIO-WORKSPACE.md",
+  "canonical_repository": "SeryMente/metodologia",
+  "canonical_branch": "main",
+  "source_title": "Glosario Operativo del Workspace (GOW) · v1.8",
+  "canonical_blob_sha": "85063a030467afd308da00ebac4b284c6cec5d87",
+  "canonical_precedence": "Metacanon §43–44 establishes this repository file as preponderant for the shared glossary; Notion and copies in other workspaces are subordinate mirrors.",
+  "prior_notion_origin": "https://app.notion.com/p/247a418782418399a86001aae61ae938",
+  "current_notion_observation": {
+    "title": "Glosario Operativo del Workspace (GOW) · Canon v1.7",
+    "observed_version": "v1.7",
+    "status": "DIVERGENT_STALE_MIRROR"
+  },
+  "import_method": "The complete fetched Notion v1.7 body was imported into the repository mirror, retaining prior glossary groups and entries, and updated with source precedence and v1.8 provenance.",
+  "source_content_sha256": null,
+  "sync_status": "Repository main updated to v1.8; the Notion page still displays v1.7 in the observed fetch. Direct Notion write capability is not established; do not claim the mirror was synchronized. Canonical repository takes precedence.",
+  "hash_status": "SHA-256 was not recalculated; the Git blob SHA records the repository object."
 }
