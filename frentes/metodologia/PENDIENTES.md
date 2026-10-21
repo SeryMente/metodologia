@@ -113,3 +113,22 @@ Próximo hito de mayor valor: retoma ciega con otro modelo y evaluación contra 
 ## RESPONSABILIDAD-01 · petición del ciclo10
 
 Implementado: regla§38, registro exclusivo creado sin sobrescribir y leído de vuelta; biblioteca y ensayo de transiciones/carrera local. Pendiente: transferencia explícita al hilo destino cuando esté identificado y disponga de verificación; sin ella el receptor queda en lectura/propuestas. No implementado: mediador transaccional y restricción de todas las vías de escritura; requerirían revisión/decisión material. No afirmar protección universal ni usar vencimiento automático.
+
+## C-METODOLOGIA-FUENTE-PRECEDENCIA-15-r1 · 2026-10-21
+
+### Cerrado en este ciclo
+
+- **Fuente preponderante:** Metacanon 1.16 §§43–45 e invariante 21, Sam v336 · NX-336m/P038, y `INICIO.md` establecen que `SeryMente/metodologia/main` es la fuente documental canónica; Notion, instrucciones personalizadas, memorias y copias son espejos subordinados.
+- **GOW único:** GOW v1.9 en `gobernanza/GLOSARIO-WORKSPACE.md` conserva los grupos existentes y absorbió 49 bloques terminológicos del glosario raíz v1.3.1, consolidando duplicados y conservando el alcance de entradas RDC/CIBERCAFE/Vercel. El original quedó archivado verbatim; `GLOSARIO-OPERATIVO.md` ahora es un puntero de compatibilidad y el anexo terminológico es subordinado.
+- **Sam:** P038 quedó inmediatamente después de P001; P008 dirige al GOW canónico y exige registrar cada convenio ratificado en el mismo ciclo. Sam y GOW fueron escritos en sus páginas espejo de Notion desde `main` y verificados por lectura de vuelta.
+- **BCR:** `BOOTSTRAP-CONTEXTO-GLOBAL.md` actualizado para adquirir Sam/Metacanon/GOW desde `main`, revisar el GOW al inicio y al cierre de cada ciclo, aplicar normalización contextual, verificar responsabilidad y persistir evidencia.
+
+### Sigue pendiente y no debe marcarse como hecho
+
+- **SYNC-01 · Sincronización perpetua:** sigue pendiente el mecanismo automático que propagará cada cambio entre plataforma y repositorio. Las escrituras y lecturas de vuelta de este ciclo fueron puntuales.
+- **PLAT-01 / personalización nativa:** no se modificaron directamente los ajustes de instrucciones personalizadas de ChatGPT. Se preparará/entregará la versión BCR lista para copiar; no declarar que ya está instalada en los ajustes ni que otros modelos la obedecen.
+- **REAL-CHATGPT-01 / receptor independiente:** permanece pendiente una prueba semántica independiente con otro hilo/modelo, incluida la lectura del estado y la aplicación real de la jerarquía.
+- **Seguridad/cifrado y Sesión PRIUS:** continúan diferidos, sin activación por esta actualización.
+
+La revisión por ciclo del GOW sí es obligatoria ahora; no depende del cierre de ninguno de los pendientes anteriores.
+
