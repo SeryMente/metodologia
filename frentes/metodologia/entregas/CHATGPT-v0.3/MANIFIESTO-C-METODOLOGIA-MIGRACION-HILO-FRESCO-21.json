@@ -1,7 +1,7 @@
 {
   "event": "C-METODOLOGIA-MIGRACION-HILO-FRESCO-21",
   "date": "2026-10-21",
-  "status": "handoff_prepared_waiting_for_target_claim; not_transferred",
+  "status": "handoff_prepared_waiting_for_target_claim; ownership_not_transferred",
   "source": {
     "repository": "SeryMente/metodologia",
     "branch": "main",
@@ -17,7 +17,8 @@
     "owner_thread": "operator-authorized-transfer:C-METODOLOGIA-COLISION-RESPONSABILIDAD-14",
     "instance": "chatgpt-metacanon-collision-remediation-2026-10-21",
     "sha_after_preparation": "3125ea6a222d531f479292b69bd68c34b82f1ee7",
-    "current_state": "owned; generation 2; source remains current owner until the fresh thread completes CAS and read-back"
+    "current_state": "owned; generation 2; source remains current owner until the fresh thread completes CAS and read-back",
+    "current_status": "owned / generation 2; current owner retained until destination completes CAS and read-back"
   },
   "authorization": {
     "status": "explicit_operator_authorization_recorded",
@@ -36,9 +37,42 @@
     "mcp_normative": "disabled"
   },
   "artifacts": {
-    "prompt": "frentes/metodologia/entregas/CHATGPT-v0.3/PROMPT-MIGRACION-HILO-FRESCO-21.txt",
-    "checkpoint": "frentes/metodologia/entregas/CHATGPT-v0.3/CHECKPOINT-MIGRACION-HILO-FRESCO-21.md",
-    "last_persisted_model_output": "frentes/metodologia/entregas/CHATGPT-v0.3/C-METODOLOGIA-AUDITORIA-REQUISITOS-20-salida-final.md"
+    "prompt": {
+      "path": "frentes/metodologia/entregas/CHATGPT-v0.3/PROMPT-MIGRACION-HILO-FRESCO-21.txt",
+      "blob": "10a0f17217d3a4f484890371ef166fd5abb0a4d2"
+    },
+    "checkpoint": {
+      "path": "frentes/metodologia/entregas/CHATGPT-v0.3/CHECKPOINT-MIGRACION-HILO-FRESCO-21.md",
+      "blob": "a6c2112eeb8809f6e61ef45944d14123eb5c3575"
+    },
+    "latest_persisted_output": {
+      "path": "frentes/metodologia/entregas/CHATGPT-v0.3/C-METODOLOGIA-AUDITORIA-REQUISITOS-20-salida-final.md",
+      "blob": "6978db55681c9df5e64580c8b90e793b2d7b23fa"
+    },
+    "event_output": {
+      "path": "frentes/metodologia/entregas/CHATGPT-v0.3/C-METODOLOGIA-MIGRACION-HILO-FRESCO-21-salida-final.md",
+      "blob": "80150134627ca9b567e4f33ed91a80b7473e47ec"
+    },
+    "chronicle": {
+      "path": "frentes/metodologia/cronica/C-METODOLOGIA-MIGRACION-HILO-FRESCO-21.md",
+      "blob": "edeeecb58520bcb15f0c53089e34437f161abdd5"
+    },
+    "dialogue": {
+      "path": "frentes/metodologia/conversaciones/C-METODOLOGIA-MIGRACION-HILO-FRESCO-21-dialogo.jsonl",
+      "blob": "6db5ee8d76c2121d0f120e1b74ac537a732506b8"
+    },
+    "pending": {
+      "path": "frentes/metodologia/PENDIENTES.md",
+      "blob": "d43db200e635b27d36f0727193b7d37e91ed15de"
+    },
+    "metacanon": {
+      "path": "METACANON-OBJETOS-CANONICOS.md",
+      "blob": "4ff1090d1174575133f9355d0bb98dc55041e2d7"
+    },
+    "responsibility_control": {
+      "path": "frentes/metodologia/CONTROL-RESPONSABILIDAD.json",
+      "blob": "3125ea6a222d531f479292b69bd68c34b82f1ee7"
+    }
   },
   "native_ipz_status": "current native field cannot be read by these tools; previous user confirmation concerned a prior 1432-character revision; canonical current artifact is 1451 characters.",
   "constraints": [
@@ -50,5 +84,19 @@
     "New thread must reproduce latest persisted output literally or state unavailable",
     "First-cycle output must follow Metacanon §4"
   ],
-  "handoffPreparation": "prepared_waiting_for_target_claim"
+  "handoffPreparation": {
+    "event_id": "C-METODOLOGIA-MIGRACION-HILO-FRESCO-21",
+    "status": "prepared_waiting_for_target_claim",
+    "explicit_operator_authorization": true,
+    "transfer_complete": false,
+    "target_identity": "not yet instantiated"
+  },
+  "closing_conditions": [
+    "target opens a fresh conversation and reads current main",
+    "source identity/generation/folio and prepared event all still match",
+    "target generates a fresh folio and operational alias, no native ID fabricated",
+    "target updates CONTROL-RESPONSABILIDAD.json via SHA-conditioned write, increments generation by one, preserves prior owner/folio/history",
+    "target reads the control back and verifies exact owner/instance/folio/generation/event",
+    "only then target may claim ownership and perform project mutations"
+  ]
 }
