@@ -1,8 +1,8 @@
-<!-- METACANON_VERSION=1.10; TEMPORARY_FRAMEWORK=true; USER_TRANSCRIPT_SPEC=true -->
+<!-- METACANON_VERSION=1.11; TEMPORARY_FRAMEWORK=true; USER_TRANSCRIPT_SPEC=true -->
 # Metacanon para crear y mantener objetos canónicos de proyecto
 
-- Estado: **Versión documental 1.10 — Revisión integral por categorías y aceptación**, ampliación autorizada en C-METODOLOGIA-REVISION-INTEGRAL-10; versiones previas preservadas en historia y antecedentes. Evidencia y límites en §§34–37. No acredita sincronización automática, cifrado, migración de todos los hijos ni portabilidad operativa completa.
-- Versión metodológica: **1.10**. Sello: **METACANON-OBJETOS-v1.10**. Gobierno general: [Metaprompt Canónico de Samantha](gobernanza/METAPROMPT-CANONICO-SAMANTHA.md), v333 · NX-333m; relación y límites en [gobernanza](gobernanza/README.md).
+- Estado: **Versión documental 1.11 — Compuerta de propósito previo para crear frentes**, ampliación autorizada en C-METODOLOGIA-PROPOSITO-11; versiones previas preservadas en historia y antecedentes. La revisión integral 1.10 y sus límites siguen vigentes; esta versión añade §39 sin acreditar propagación automática a hijos.
+- Versión metodológica: **1.11**. Sello: **METACANON-OBJETOS-v1.11**. Gobierno general: [Metaprompt Canónico de Samantha](gobernanza/METAPROMPT-CANONICO-SAMANTHA.md), v333 · NX-333m; relación y límites en [gobernanza](gobernanza/README.md).
 - Nombre propio del marco: pendiente de elección del operador; no usar el nombre de un proyecto como nombre del método.
 - Repositorio de metodología identificado: https://github.com/SeryMente/metodologia, privado comprobado en el ciclo de actualización 1.1; revalidar su visibilidad antes de cada escritura sensible. Ruta METACANON-OBJETOS-CANONICOS.md; fuente vigente main; rama documental histórica docs/metacanon-objetos-20261011. Conservar los originales y datos privados del frente solo en su carpeta autorizada tras verificar acceso privado; nunca publicar secretos en Git ni transportar identidades de ejemplos.
 - Archivo estable propuesto: `METACANON-OBJETOS-CANONICOS.md`.
@@ -11,7 +11,7 @@
 
 ## LEER PRIMERO — modo metodología, no ejecución del ejemplo
 
-**Precisión vigente1.10:** aplicar §§35–38 junto con §§29–34; primero gobierno, frente/rol, estado y permiso, después acción comprobada y checkpoint. §35 no altera el gobierno ni autoriza productos por ejemplo. Versiones antiguas en originales/notas conservan su carácter histórico.
+**Precisión vigente 1.11:** aplicar §39 junto con §§35–38 y §§29–34; primero gobierno, frente/rol, estado y permiso, después acción comprobada y checkpoint. §35 no altera el gobierno ni autoriza productos por ejemplo. Versiones antiguas en originales/notas conservan su carácter histórico.
 
 **Actualización 1.7, de lectura previa:** [INICIO.md](INICIO.md) es la puerta de entrada transversal. Gobierno general en `gobernanza/METAPROMPT-CANONICO-SAMANTHA.md`; el metacanon gobierna el método, no constituye una autoridad general competidora. §§29–33 prevalecen sobre formulaciones anteriores incompatibles, en particular «objeto = un solo .md», subordinación al SI anterior, temporalidad de un mes como compromiso vigente y activación implícita de PRIUS. Las menciones de 1.0–1.6 en antecedentes conservan su sentido histórico. Leer una propuesta histórica no la ratifica.
 
@@ -44,12 +44,15 @@ Antes de cada ciclo comprobar la versión de este metacanon y del objeto del pro
 15. Un frente se organiza siempre como carpeta canónica de repositorio: un objeto de estado vivo dentro y todos los archivos del frente conservados en esa carpeta según clase; no archivos sueltos ni fuentes paralelas.
 
 16. Cada ciclo sustantivo deja antes del cierre una entrada recuperable en la crónica del objeto, originales disponibles, decisiones/razones, evidencia/límites y checkpoint; la entrega sin persistencia verificable queda documentalmente incompleta (§28).
+17. Ningún frente nuevo ni su objeto canónico de persistencia pueden crearse sin un enunciado de propósito dictado directamente por el operador, conservado verbatim y documentado canónicamente; su ausencia es bloqueo de creación (§39).
 
 ## 2. Insumos y creación
 
 Leer el encargo vigente, la conversación de asistencia, la de construcción y las fuentes técnicas existentes. Pueden venir en uno o varios archivos. Inventariar lo realmente recibido; declarar huecos y distinguir archivo citado de archivo recuperado. Buscar objeto existente antes de crear duplicado. Si el proyecto/repo destino es ambiguo, pedir solo identificación material; no elegir silenciosamente.
 
 Extraer por cada instrucción material: literal, origen/evento, lectura operativa separada, alcance, aprobación/veto, criterio de aceptación y evidencia requerida. Las decisiones supersedidas se conservan en la crónica y se marcan; no se reactivan al leer citas antiguas.
+
+**Compuerta previa de creación:** antes de crear el directorio del frente, su control de responsabilidad o su objeto canónico, debe existir un enunciado de propósito dictado directamente por el operador. Preservarlo verbatim con procedencia e incorporarlo al bloque «Propósito y alcance». Un propósito inferido, propuesto por el modelo, reconstruido desde un resumen o dejado como marcador no satisface la compuerta. Si falta, registrar **BLOQUEADO: FALTA PROPÓSITO DICTADO** y no crear el frente ni el objeto; sí puede prepararse una propuesta explícitamente no creada y pedir únicamente ese enunciado. Véase §39.
 
 **Objeto primordial inmediato:** identidad conocida, naturaleza provisional/permanente según autorización, propósito original, roles/gobierno, estado conocido, fuentes/huecos y próximo paso exacto. Si falta información, escribir el pendiente concreto, no inventar una implementación o un enlace. Así la propia canonización puede migrar antes de completarse.
 
@@ -60,7 +63,7 @@ Extraer por cada instrucción material: literal, origen/evento, lectura operativ
 | Control e identidad | Nombre ratificado, versión/sello, ancla del último evento real, ubicación/fuente y persistencia comprobada o pendiente. |
 | LEER PRIMERO | Modo ejecución/adaptación, adquisición automática de rol, capas activas y precedencia; citas no activan permisos. |
 | Referencia metodológica | Fuente/versión/sello central, commit/hash, frescura, obligación visible (§22) y matriz/constancia de adopción de gobernanza (§23), con límites de necesidad remota (§24) heredados en objeto y prompts. |
-| Propósito y alcance | De dónde viene, dónde está, a dónde va, qué cambió; incluido, excluido y criterios terminales. |
+| Propósito y alcance | Enunciado de propósito dictado por el operador, conservado verbatim y con procedencia; lectura operativa separada; de dónde viene, dónde está, a dónde va, qué cambió; incluido, excluido y criterios terminales. |
 | Roles y colaboración | Responsabilidades concretas; asistencia orientada a eficiencia real; construcción; escritura sin colisiones. |
 | Autoridad | Decisiones vigentes, vetos, propuestas, aprobaciones y compuertas; nada heredado del proyecto ejemplo. |
 | Perfil de entorno | Ubicación/perfil declarados, host actual, sesión local, persistencia, recursos reportados/medidos, vínculo remoto y procedencia; no importar datos de otro operador. |
@@ -477,7 +480,7 @@ Usar los trece bloques centrales de §27, con nombres, orden y significado comun
 1. Control e identidad
 2. LEER PRIMERO
 3. Referencia metodológica
-4. Propósito y alcance
+4. Propósito y alcance — incluye el enunciado de propósito dictado por el operador, verbatim y con procedencia; sin él un frente nuevo no pasa la compuerta de creación de §39
 5. Roles y colaboración
 6. Autoridad
 7. Perfil de entorno
@@ -724,3 +727,28 @@ No hay vencimiento ni robo por silencio, desconexión o cierre del navegador. Li
 La creación y sustitución condicionales permiten un solo propietario **en el registro**. La biblioteca responsabilidad.cjs ensaya transiciones y un preflight conservador; no ejecuta mutaciones ni autentica identidades/órdenes. La carrera local prueba exclusión atómica del adaptador local, no una carrera GitHub real.
 
 Una comprobación anterior a un push no cierra la ventana entre comprobación y escritura. Para impedir todas las escrituras de procesos no cooperantes se necesita un mediador que valide la generación en la misma transacción de cada efecto y políticas de acceso que impidan eludirlo. Ese mediador y esas políticas no están implementados ni autorizados aquí. Por tanto, no declarar «a prueba de fallas universal» ni «todas las escrituras protegidas». La falta de garantía técnica se hace visible y bloquea atribuir esa capacidad; no se sustituye por una promesa del modelo. El refresco§37 tampoco concede propiedad.
+
+## 39. Propósito dictado como compuerta de creación · actualización 1.11
+
+### 39.1 Regla constitutiva
+
+Cada vez que se cree un frente de trabajo, el operador debe dictar primero su propósito. Ese enunciado es parte constitutiva de la documentación canónica del objeto canónico de persistencia del frente: se conserva literal, con procedencia, y se acompaña de una lectura operativa separada que no lo sustituye. El nombre del frente, una descripción generada por el modelo, el contexto de una tarea, un resumen o una finalidad inferida no equivalen al propósito dictado.
+
+### 39.2 Bloqueo fail-closed
+
+Sin ese enunciado no se crea el frente, su directorio canónico, su control de responsabilidad ni su objeto canónico de persistencia. El estado obligatorio es **BLOQUEADO: FALTA PROPÓSITO DICTADO**. El modelo puede detectar que falta, preservar los insumos recibidos fuera de una falsa instancia canónica y pedir exclusivamente el propósito; no puede rellenarlo, aprobarlo en nombre del operador ni presentar como creado un borrador. Recibir después el propósito levanta solo esta compuerta: las demás autorizaciones, fuentes y controles del método siguen aplicando.
+
+### 39.3 Materialización y verificación
+
+La creación conforme exige una cadena comprobable: enunciado original del operador → original verbatim con procedencia → lectura normalizada separada → bloque «Propósito y alcance» → criterios y alcance derivados sin sustitución → lectura de vuelta. La revisión falla si el verbatim no es recuperable, si propósito y normalización se confunden, si el objeto se creó antes del enunciado o si se usa un marcador. Esta regla rige nuevas creaciones desde 1.11; no demuestra por sí sola que frentes anteriores hayan sido revisados o migrados.
+
+### M39 · instrucción directa del operador · C-METODOLOGIA-PROPOSITO-11
+
+Original íntegro preservado en `frentes/metodologia/conversaciones/C-METODOLOGIA-PROPOSITO-11-dialogo.jsonl`; lectura normativa aplicada en §§1–3, §27 y §39.
+
+````text
+OK, este, sigamos trabajando con el marco de trabajo. Ahora mismo creé un hilo que se llama acceso y le pedí que utilizara el meta canon para crear un objeto canónico de persistencia. Y lo que me pareció este intuitivo empezar a hacer cuando hice eso fue dictar el propósito del frente de trabajo. Entonces, vamos a canonizar eso. Cada vez que se cree un frente de trabajo se tiene que dictar el propósito y ese propósito, ese enunciado, forma parte de la documentación canónica para cualquier objeto canónico de persistencia de frentes de trabajo. Si no se tiene, no se puede crear el frente de trabajo, es una condición de bloqueo.
+````
+
+**Compatibilidad/versión 1.11:** no cambia el propósito general, los trece bloques, los roles ni las autorizaciones del marco. Endurece únicamente la creación de frentes nuevos. No invalida retroactivamente frentes existentes ni acredita que ya incorporaron el delta; cada uno debe adquirirlo y revisar su efecto al activarse.
+
