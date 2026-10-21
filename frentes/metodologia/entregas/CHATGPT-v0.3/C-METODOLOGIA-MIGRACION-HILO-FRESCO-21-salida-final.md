@@ -1,3 +1,7 @@
+> **SUPERSEDIDO COMO SALIDA DEFINITIVA:** esta versión genérica se conserva para linaje, pero el artefacto definitivo del ciclo fue guardado en [C-METODOLOGIA-MIGRACION-HILO-FRESCO-21-salida-final-SES-20261021-6B9E2F41.md](C-METODOLOGIA-MIGRACION-HILO-FRESCO-21-salida-final-SES-20261021-6B9E2F41.md), leído de vuelta y cotejado exactamente. Para el estado actual del OCP consulta también `METACANON-OBJETOS-CANONICOS.md` §9 y `CONTROL-RESPONSABILIDAD.json`. El cuerpo que sigue es el registro histórico de la salida genérica; no es la última salida a reproducir en una retoma futura.
+
+---
+
 # C-METODOLOGIA-MIGRACION-HILO-FRESCO-21 · Salida de ciclo
 
 ## 1. Identidad operativa y gobierno vigente
