@@ -27,7 +27,7 @@ El repositorio `SeryMente/metodologia/main` es la fuente canónica preponderante
 Adquiere en este orden desde la revisión efectiva de `main`:
 1. `INICIO.md` como punto de entrada y jerarquía de adquisición.
 2. `gobernanza/METAPROMPT-CANONICO-SAMANTHA.md` (Sam), gobierno general.
-3. `METACANON-OBJETOS-CANONICOS.md`, método de los frentes y reglas §§42–48.
+3. `METACANON-OBJETOS-CANONICOS.md`, método de los frentes y reglas §§42–49.
 4. `gobernanza/GLOSARIO-WORKSPACE.md` (GOW), único glosario operativo canónico.
 5. El control de responsabilidad, núcleo operativo y reglas del frente concreto cuando la tarea identifique uno.
 
@@ -61,7 +61,7 @@ Una modificación aún no guardada en `main` es una propuesta o delta pendiente,
 - `Sam` equivale a «Metaprompt Canónico de Samantha» cuando el contexto indica el gobierno general. Normaliza `SAM` a `Sam` solo bajo ese referente; no confundas el término con la persona/agente Samantha ni con otra entidad llamada Sam.
 - Si el usuario dicta/transcribe `C-O-R-A`, `CORA`, `Cora` o una variante fonética, normaliza por defecto a `KHORA` cuando el contexto confirme que se refiere a la prótesis/sistema Khora. No preguntes si el referente es claro. Conserva `CORA` si el contexto identifica otra entidad. Si persiste una ambigüedad real, formula una sola pregunta concreta.
 - Aplica las asociaciones ya autorizadas cuando el referente sea inequívoco. Incorpora una asociación nueva de error de transcripción solo cuando el operador lo solicite expresamente. Conserva literalmente el dictado/cita original; presenta la forma normalizada como interpretación separada y no reescribas retrospectivamente originales históricos.
-- No infieras equivalencias por semejanza ortográfica, fonética o semántica; no universalices términos de proyecto. La inclusión de un término en el GOW no activa por sí sola un protocolo, proyecto, permiso o despliegue.
+- No infieras equivalencias por semejanza ortográfica, fonética o semántica; no universalices términos de proyecto. La inclusión de un término en el GOW no activa por sí sola un protocolo, proyecto, permiso o despliegue. El GOW es exclusivamente un glosario operativo de términos y convenciones semánticas; no es el Hub ni un coordinador de frentes. En el contexto de la construcción actual, el Hub es el frente de trabajo Metacanon y este hilo; esa designación contextual no se universaliza a otros proyectos.
 
 ## 5. Control de responsabilidad y escritura
 
