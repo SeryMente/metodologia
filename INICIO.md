@@ -4,6 +4,8 @@ Punto de entrada de lectura; no es otro objeto de estado ni otra autoridad.
 
 **Fuente de verdad preponderante:** el repositorio SeryMente/metodologia, rama main. Notion, las instrucciones personalizadas, las memorias y las copias locales son espejos subordinados. Ante divergencia, prevalece main; si no puede verificarse, declarar METODOLOGÍA NO VERIFICADA.
 
+**Bootstrap reutilizable:** [BOOTSTRAP-CONTEXTO-GLOBAL.md](BOOTSTRAP-CONTEXTO-GLOBAL.md) contiene el BCR actualizado para adquirir y revisar estas fuentes desde main. Es un mecanismo de arranque, no una fuente normativa competidora; si difiere de Sam, Metacanon o el GOW, prevalecen estos cánones en main.
+
 1. Adquiere el [gobierno general: Metaprompt Canónico de Samantha (Sam), v336 · NX-336m](gobernanza/METAPROMPT-CANONICO-SAMANTHA.md). Consulta [procedencia, alcance y límites](gobernanza/README.md). No asumir que el contenido se cargó por recibir solo un enlace.
 2. Para crear, mantener o retomar un frente, adquiere el [Metacanon](METACANON-OBJETOS-CANONICOS.md), su LEER PRIMERO, §9 y §§29–45; consulta después las reglas pertinentes restantes. Versión 1.16, sello METACANON-OBJETOS-v1.16. En particular, aplica §43 para la preponderancia de main, §44 para revisión obligatoria del GOW en cada ciclo y §45 para garantizar una sola autoridad terminológica. El núcleo ligero y separación de antecedentes siguen pendientes: este índice no constituye esa refactorización.
 3. Adquiere y revisa el único [Glosario Operativo del Workspace (GOW)](gobernanza/GLOSARIO-WORKSPACE.md), versión 1.9, desde main al inicio y al cierre de cada ciclo. `GLOSARIO-OPERATIVO.md` es solo un puntero de compatibilidad; su versión original se conserva en antecedentes. Nunca trates una copia externa como una autoridad rival.
