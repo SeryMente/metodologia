@@ -1,0 +1,165 @@
+{
+  "schema": "revision-metacanon/1",
+  "event": "C-METODOLOGIA-OCP-DISCOVERY-17",
+  "date": "2026-10-21",
+  "status": "canonical_docs_and_mirrors_verified; native_ipz_replacement_pending",
+  "canonical_source": {
+    "repository": "SeryMente/metodologia",
+    "branch": "main",
+    "precedence": "preponderant"
+  },
+  "versions": {
+    "metacanon": {
+      "path": "METACANON-OBJETOS-CANONICOS.md",
+      "version": "1.18",
+      "seal": "METACANON-OBJETOS-v1.18",
+      "blob": "5e45529886099f19ca10bf9351d9622cab8b4c34",
+      "sections": [
+        "§4 output every cycle",
+        "§46 OCP folder",
+        "§47 reinstantiation/folio",
+        "§48 cross-repository OCP discovery and legacy paths"
+      ]
+    },
+    "sam": {
+      "path": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.md",
+      "version": "v338",
+      "signature": "NX-338m",
+      "blob": "1ace0ef55623b8ae4d1be5c169fe3f211f22594a",
+      "principles": [
+        "P008 GOW review every cycle",
+        "P039 FT retake and exclusive folio",
+        "P040 OCP discovery/access scope/legacy paths"
+      ]
+    },
+    "gow": {
+      "path": "gobernanza/GLOSARIO-WORKSPACE.md",
+      "version": "v2.1",
+      "blob": "d8df366741f6c5881c8da5e9660cfaf520fd768e",
+      "terms": [
+        "FT",
+        "FDT",
+        "OCP",
+        "SES",
+        "IPZ"
+      ]
+    },
+    "bcr": {
+      "path": "BOOTSTRAP-CONTEXTO-GLOBAL.md",
+      "blob": "48d2f0c2cb57d5b74f69c539a4cd1a780bafdff9"
+    },
+    "inicio": {
+      "path": "INICIO.md",
+      "blob": "2b460e6b040b0c8153fea441d5d5681dd29febba"
+    },
+    "governanceReadme": {
+      "path": "gobernanza/README.md",
+      "blob": "0bf9a4d01930f97d2789a404f997be8a1a49ccf5"
+    },
+    "legacyGlossaryPointer": {
+      "path": "GLOSARIO-OPERATIVO.md",
+      "blob": "154cacde1a557a3be3168e31121c0b33989a9341"
+    },
+    "terminologyAnnex": {
+      "path": "ANEXO-GOBERNANZA-TERMINOLOGICA-Y-NORMALIZACION.md",
+      "blob": "5ade5159c3b2d27c598d2c7032d11940586ac1f3"
+    },
+    "samReceipt": {
+      "path": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.fuente.json",
+      "blob": "88847817640a32717a600da003f4c6c5bf72c35f"
+    },
+    "gowReceipt": {
+      "path": "gobernanza/GLOSARIO-WORKSPACE.fuente.json",
+      "blob": "e8042ab78c344bfe3a3d42ed95213c3ba2bd7ae3"
+    }
+  },
+  "folio": {
+    "path": "frentes/metodologia/CONTROL-RESPONSABILIDAD.json",
+    "blob": "f810835002e235ebd12cedc75a02678aa1073f2b",
+    "value": "SES-20261021-C4D81A7F",
+    "status": "active",
+    "generation": 2,
+    "checkedControls": [
+      "SeryMente/khora:docs/frentes/harmonia/CONTROL-RESPONSABILIDAD.json",
+      "SeryMente/signal-interpreter:docs/frentes/signal-interpreter/CONTROL-RESPONSABILIDAD.json",
+      "SeryMente/metodologia:frentes/acceso/CONTROL-RESPONSABILIDAD.json",
+      "SeryMente/metodologia:frentes/metodologia/CONTROL-RESPONSABILIDAD.json"
+    ],
+    "result": "No duplicate found among these four controls. Nine repositories under owner SeryMente were exposed, but org membership listing was unavailable; organization-wide uniqueness is not asserted."
+  },
+  "ocpDiscovery": {
+    "repositoriesExposed": 9,
+    "organizationMembershipListAvailable": false,
+    "foundLegacyOcp": {
+      "repository": "SeryMente/khora",
+      "path": "docs/frentes/harmonia/",
+      "controlBlob": "dab4eb84680a556af4e6bed029ebb234a42a2cfe",
+      "status": "assigned",
+      "generation": 1
+    },
+    "actionsOnHarmonia": "Read-only inspection only. No transfer or write; Harmonia was mentioned as an example, not an instruction to assume it.",
+    "policy": "New OCP default is frentes/<slug>/; existing declared locations such as docs/frentes/<slug>/ are preserved. Do not move OCP or duplicate controls at retake."
+  },
+  "customInstructions": {
+    "artifact": "frentes/metodologia/entregas/CHATGPT-v0.3/IPZ-CAMPO-CHATGPT.txt",
+    "blob": "f58f419ecf925175462e17e8a3a3828bc09ec59d",
+    "characters": 1494,
+    "limit": 1500,
+    "nativeFieldStatus": "Operator confirmed applying the previous 1432-character IPZ. This 1494-character version adds the now-required legacy OCP path rule; it has not yet been confirmed in the native field. Replace the prior text and verify read-back.",
+    "localArtifact": "/mnt/data/IPZ-CAMPO-CHATGPT.txt"
+  },
+  "notionMirrorReadback": {
+    "sam": {
+      "page": "https://app.notion.com/p/c85a41878241830588e181f4c02fbab4",
+      "version": "v338 · NX-338m",
+      "status": "verified",
+      "checks": [
+        "P039",
+        "P040",
+        "P008 GOW cycle rule",
+        "NX-338m signature",
+        "40-principle footer"
+      ]
+    },
+    "gow": {
+      "page": "https://app.notion.com/p/247a418782418399a86001aae61ae938",
+      "version": "v2.1",
+      "status": "verified",
+      "checks": [
+        "FT/FDT",
+        "OCP",
+        "SES",
+        "IPZ",
+        "Metacanon v1.18",
+        "legacy docs/frentes route",
+        "GOW cycle review",
+        "direct GOW, §4 and Sam cascade links"
+      ]
+    }
+  },
+  "artifacts": {
+    "pending": {
+      "path": "frentes/metodologia/PENDIENTES.md",
+      "blob": "f83006c2a193f3c6434e0defa143356568799286"
+    },
+    "chronicle": {
+      "path": "frentes/metodologia/cronica/C-METODOLOGIA-OCP-DISCOVERY-17.md",
+      "blob": "f7538e4acbe67fffccba23b6ed09fe7662008c65"
+    },
+    "dialogue": {
+      "path": "frentes/metodologia/conversaciones/C-METODOLOGIA-OCP-DISCOVERY-17-dialogo.jsonl",
+      "blob": "964affba43a0d8bf2cce828e006c6b4a46b053bd"
+    },
+    "finalOutput": {
+      "path": "frentes/metodologia/entregas/CHATGPT-v0.3/C-METODOLOGIA-OCP-DISCOVERY-17-salida-final.md",
+      "blob": "6755b9296b3b06f31b76bcd43dc364b64be09504"
+    }
+  },
+  "limitations": [
+    "MCP normative verification remains disabled by explicit instruction; checks were manual read-backs.",
+    "No continuous GitHub↔Notion synchronization installed.",
+    "The connected tools do not expose the native ChatGPT custom-instructions field for direct write/read-back.",
+    "Cross-repository folio collision checks cover only the four inspected controls; universal organization-wide uniqueness is not proven.",
+    "No semantic acceptance test has been run against an independent external model."
+  ]
+}
