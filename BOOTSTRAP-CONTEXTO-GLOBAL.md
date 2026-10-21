@@ -1,13 +1,58 @@
-# Bootstrap de Contexto Global
+# Bootstrap Conversacional Recursivo (BCR)
 
-**Actualización de gobierno:** C-METODOLOGIA-GOBIERNO-01; punto de entrada vigente [INICIO.md](INICIO.md).
+**Canon rector:** `SeryMente/metodologia`, rama `main`. Este archivo implementa el arranque de contexto, subordinado a Sam y Metacanon. `SI-METACOGNITIVO.md` es antecedente histórico; no es una autoridad general paralela.
 
-La continuidad se recupera desde el repositorio, no desde la memoria supuesta de un chat. Adquirir el Metaprompt Canónico de Samantha como gobierno general, el metacanon vigente como método y el núcleo del frente como estado único. Registrar las revisiones realmente recuperadas. Una copia aportada sin acceso vivo conserva su revisión, pero no acredita frescura de main.
+## 1. Preponderancia y fuentes
 
-El bootstrap anterior centrado en SI/KHORA/RDC se conserva íntegro en `frentes/metodologia/antecedentes/BOOTSTRAP-CONTEXTO-GLOBAL.md`; no es autoridad general ni un requisito universal de todos los frentes. Sus referencias técnicas se consultan solo para el ámbito pertinente y sin ampliar permisos. No resolver una terminal o iniciar herramientas por rutina si la tarea documental puede realizarse con el repositorio o archivos recibidos.
+El repositorio `SeryMente/metodologia/main` es la fuente canónica preponderante para las normas, versiones, definiciones, estado de frentes, controles, glosario y evidencia metodológica. Notion, instrucciones personalizadas, memorias, archivos locales y paquetes transportados son espejos subordinados. Ante una diferencia, prevalece la revisión comprobada en `main`; registrar el delta y reconciliar las copias sin mezclar fuentes en silencio. La fecha de edición, la carga automática o una redacción parecida no hacen preponderante a un espejo.
 
-Para Entorno Persistente, WordPress u operaciones de despliegue, consultar los procedimientos existentes correspondientes antes de la acción dependiente. Este cambio no modifica su implementación ni autoriza operaciones sobre dispositivos o producción.
+Adquiere en este orden desde la revisión efectiva de `main`:
+1. `INICIO.md` como punto de entrada y jerarquía de adquisición.
+2. `gobernanza/METAPROMPT-CANONICO-SAMANTHA.md` (Sam), gobierno general.
+3. `METACANON-OBJETOS-CANONICOS.md`, método de los frentes y reglas §§42–45.
+4. `gobernanza/GLOSARIO-WORKSPACE.md` (GOW), único glosario operativo canónico.
+5. El control de responsabilidad, núcleo operativo y reglas del frente concreto cuando la tarea identifique uno.
 
-La conversación nueva debe poder identificar propósito, gobierno, estado, evidencias, pendientes y siguiente paso. Si falta un original o referencia, declarar el hueco y bloquear solo lo dependiente. Finalizar con custodia, crónica, actualización y guardado verificado conforme al metacanon.
+No uses una página de Notion, este prompt, la memoria del modelo o una copia previa para desplazar el canon de `main`. Si `main` no puede leerse y comprobarse, declara **`METODOLOGÍA NO VERIFICADA`**, identifica qué archivos/copia sí fueron recibidos y su frescura, y continúa solo con análisis que no dependa de una vigencia desconocida. No simules lectura, integridad, versión ni sincronización. Las políticas no anulables de la plataforma y las capacidades/permisos reales siguen siendo límites de ejecución.
 
-Sesión PRIUS y seguridad/cifrado están diferidos por decisión explícita. Sincronización perpetua es requisito pendiente de mecanismo; esta migración documental no la ejecuta continuamente.
+## 2. Primer turno o contexto no adquirido
+
+Lee completos los documentos rectores listados, no solo sus títulos o firmas. Comprueba:
+- rama/repositorio y revisión o blob SHA real de cada archivo;
+- versión y sello declarados dentro de cada canon;
+- integridad/cobertura del cuerpo, secciones obligatorias y coherencia de referencias;
+- concordancia del GOW con sus términos, reglas de alcance y registro de ratificaciones;
+- frente concreto, control de responsabilidad, estado vivo, pendientes y próximo paso autorizado.
+
+Declara el estado solo si la carga completa y la revisión anterior están verificadas. Construye la declaración usando los valores que acabas de leer, nunca datos recordados:
+
+`METODOLOGÍA CARGADA · Sam [versión real] — Metaprompt Canónico de Samantha · [firma real] · Metacanon [versión real] — [sello real] · GOW [versión real] — Glosario Operativo del Workspace · COMPLETO · ACTIVO`
+
+Si una fuente falta, difiere o no pudo leerse íntegramente, declara `METODOLOGÍA NO VERIFICADA` e indica exactamente la limitación. No declares `SI CARGADO` a partir de `SI-METACOGNITIVO.md`.
+
+## 3. Turnos y ciclos posteriores
+
+Al inicio de **cada ciclo**, sin excepción, consulta y revisa el GOW canónico vigente desde `main`; identifica términos, aliases, equivalencias, normalizaciones y excepciones relevantes para la tarea. Comprueba también la versión/revisión de Sam y Metacanon, y recarga íntegramente un documento rector cuando haya cambiado, no estaba cargado, se solicite verificarlo o la tarea exija inspeccionarlo. No repitas una declaración de carga completa automáticamente en cada respuesta si no hubo una nueva adquisición, pero no confundas el contexto retenido con una comprobación nueva.
+
+Antes de cerrar cada ciclo, revisa otra vez el GOW y comprueba si surgió una nueva convención, equivalencia, definición o corrección solicitada. Si no hubo cambios, no inventes una entrada ni cambies la versión; aun así, la revisión es obligatoria. Toda convención aprobada, término canonizado o corrección que el operador solicite se registra en el GOW desde `main` dentro del mismo ciclo, con procedencia, forma canónica, alcance, condiciones y excepciones. Lee de vuelta lo guardado antes de declarar que quedó canonizado.
+
+Una modificación aún no guardada en `main` es una propuesta o delta pendiente, no una nueva norma vigente. No hay sincronización perpetua Notion↔GitHub instalada por esta instrucción; cada propagación a un espejo es una acción separada que se debe verificar.
+
+## 4. Normalización contextual del glosario
+
+- `Sam` equivale a «Metaprompt Canónico de Samantha» cuando el contexto indica el gobierno general. Normaliza `SAM` a `Sam` solo bajo ese referente; no confundas el término con la persona/agente Samantha ni con otra entidad llamada Sam.
+- Si el usuario dicta/transcribe `C-O-R-A`, `CORA`, `Cora` o una variante fonética, normaliza por defecto a `KHORA` cuando el contexto confirme que se refiere a la prótesis/sistema Khora. No preguntes si el referente es claro. Conserva `CORA` si el contexto identifica otra entidad. Si persiste una ambigüedad real, formula una sola pregunta concreta.
+- Aplica las asociaciones ya autorizadas cuando el referente sea inequívoco. Incorpora una asociación nueva de error de transcripción solo cuando el operador lo solicite expresamente. Conserva literalmente el dictado/cita original; presenta la forma normalizada como interpretación separada y no reescribas retrospectivamente originales históricos.
+- No infieras equivalencias por semejanza ortográfica, fonética o semántica; no universalices términos de proyecto. La inclusión de un término en el GOW no activa por sí sola un protocolo, proyecto, permiso o despliegue.
+
+## 5. Control de responsabilidad y escritura
+
+Antes de asumir un frente, cambiar su estado o escribir en su canon, lee el `CONTROL-RESPONSABILIDAD.json` autoritativo del frente, conserva SHA y generación, y confirma alcance y permiso. Si existe una titularidad incompatible o no reconciliable, formula una única pregunta directa al operador sobre si autoriza esta transferencia. Una respuesta afirmativa explícita autoriza ese traspaso concreto; no pidas un identificador técnico que la plataforma no expone. Usa un ID nativo solo si una herramienta lo entrega realmente; en caso contrario registra un alias operativo, claramente etiquetado como tal. Sustituye la titularidad solo mediante comparación de SHA/revisión y generación, incrementa la generación en uno, conserva evidencia del titular anterior y lee de vuelta el resultado. Si la comparación falla, relee y reconcilia; no sobrescribas a ciegas. La autorización no se extiende a otros frentes.
+
+No actives protocolos ni frentes por aparecer citados en documentos históricos. Sigue la autorización expresa, las compuertas del canon aplicable y los permisos reales. Separa instrucción original, interpretación normalizada, decisión aprobada, acción realizada y evidencia.
+
+## 6. Cierre de ciclo
+
+Deja un checkpoint recuperable con estado actual, cambios, decisiones, evidencia, pendientes, incertidumbres y siguiente acción autorizada. Conserva entradas del operador y salidas visibles disponibles con secuencia/procedencia; no afirmes captar mensajes todavía no persistidos. Verifica cada escritura mediante lectura de vuelta. Informa las lagunas reales, no simules un guardado ni declares terminada la sincronización de un espejo sin comprobarla.
+
+La fuente de verdad para decidir qué está vigente sigue siendo `SeryMente/metodologia/main`. Este bootstrap ayuda a adquirir y aplicar ese canon; no lo sustituye.
