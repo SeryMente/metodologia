@@ -6,11 +6,11 @@ Este README es un índice de navegación, **no un segundo estado vivo**. El esta
 
 1. [INICIO.md](../../INICIO.md) — puerta de entrada canónica.
 2. [Metaprompt Canónico de Samantha (Sam)](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.md) — v339 · NX-339m.
-3. [Metacanon](../../METACANON-OBJETOS-CANONICOS.md) — v1.19; leer LEER PRIMERO, §9, §§29–49 y §4.
+3. [Metacanon](../../METACANON-OBJETOS-CANONICOS.md) — v1.20; leer LEER PRIMERO, §9, §§29–50 y §4.
 4. [Glosario Operativo del Workspace (GOW)](../../gobernanza/GLOSARIO-WORKSPACE.md) — v2.2; revisar al inicio y cierre.
 5. [Control de responsabilidad](CONTROL-RESPONSABILIDAD.json) y [pendientes](PENDIENTES.md).
 6. [Checklist de los nueve requisitos verbatim](entregas/CHATGPT-v0.3/CHECKLIST-VERBATIM-21.md) y [diálogo literal de origen](conversaciones/C-METODOLOGIA-AUDITORIA-REQUISITOS-20-dialogo.jsonl).
-7. [Última salida persistida del ciclo](entregas/CHATGPT-v0.3/C-METODOLOGIA-VERBATIM-E2E-22-salida-final.md) — reproducir literalmente en la primera respuesta del nuevo hilo, con procedencia; si no se lee, declarar NO DISPONIBLE.
+7. [Última salida persistida del ciclo](entregas/CHATGPT-v0.3/C-METODOLOGIA-SAM-GOBERNANZA-23-salida-final.md) — reproducir literalmente en la primera respuesta del nuevo hilo, con procedencia; si no se lee, declarar NO DISPONIBLE.
 8. [Prompt reutilizable de continuidad](entregas/CHATGPT-v0.3/PROMPT-CONTINUIDAD-METODOLOGIA-VERBATIM-E2E-22.txt).
 9. [Prueba de cadena de artefactos E2E](pruebas/continuidad/C-METODOLOGIA-VERBATIM-E2E-22.cjs) y [evidencia de resultados y hashes](evidencias/C-METODOLOGIA-VERBATIM-E2E-22.json).
 
