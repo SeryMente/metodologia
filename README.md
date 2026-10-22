@@ -1,150 +1,48 @@
-# Entrada vigente — Ser y Mente
+# Ser y Mente · Metodología
 
-**Comienza por [INICIO.md](INICIO.md).** Gobierno general: [Metaprompt Canónico de Samantha](gobernanza/METAPROMPT-CANONICO-SAMANTHA.md), v332 · NX-332m. Método: [Metacanon 1.7](METACANON-OBJETOS-CANONICOS.md), METACANON-OBJETOS-v1.7.
+**Empieza por [INICIO.md](INICIO.md).** Este README es un índice humano, no una fuente normativa ni un estado operativo alternativo.
 
-La regla de autoridad de [gobernanza](gobernanza/README.md) prevalece sobre las referencias antiguas de esta página al SI como norma general y a formatos/gates de plataformas concretas. El material técnico se conserva por ámbito; no activa proyectos o herramientas por aparecer aquí. Sesión PRIUS y seguridad/cifrado quedan diferidos expresamente. Sincronización automática requerida, todavía no implementada. No se certifica portabilidad operativa completa ni adopción en todos los repositorios.
+La fuente documental preponderante es este repositorio privado, rama `main`. Ante una divergencia, prevalece la revisión de `main` verificada. Las copias locales, las memorias, las instrucciones personalizadas y otras plataformas son espejos subordinados.
 
----
+## Gobierno canónico
 
-# Metodología
+- [INICIO.md](INICIO.md) — orden de adquisición y arranque del trabajo.
+- [Metaprompt Canónico de Samantha (Sam)](gobernanza/METAPROMPT-CANONICO-SAMANTHA.md) — gobierno general, v339 · NX-339m.
+- [Metacanon](METACANON-OBJETOS-CANONICOS.md) — método de frentes, v1.20; estado vivo en §9.
+- [Glosario Operativo del Workspace (GOW)](gobernanza/GLOSARIO-WORKSPACE.md) — vocabulario compartido, v2.2; no es un Hub.
+- [Gobierno general y precedencia](gobernanza/README.md).
 
-Repositorio transversal de la organización **Ser y Mente** para desarrollar, conservar y evolucionar la metodología común de trabajo aplicable a sus repositorios.
+## Método transversal y continuidad
 
-## Canon transversal de Entorno Persistente
+- [Metodología operativa](METODOLOGIA.md) y [lineamientos](LINEAMIENTOS.md).
+- [Bootstrap de contexto global](BOOTSTRAP-CONTEXTO-GLOBAL.md) — procedimiento vigente de continuidad.
+- [Ancla metodológica](ANCLA.md).
+- [Especificación de evidencia normativa por ciclo](ESPECIFICACION-EVIDENCIA-NORMATIVA-POR-CICLO.md).
+- [Formato de registro de verificación](FORMATO-REGISTRO-VERIFICACION-CICLO.md) y [su esquema JSON](FORMATO-REGISTRO-VERIFICACION-CICLO.schema.json).
+- [Estado RDC activo](ESTADO-RDC-ACTIVO.md) y [historial RDC](HISTORIAL-RDC.md).
+- [Glosario de compatibilidad](GLOSARIO-OPERATIVO.md) — solo puntero; el GOW canónico está en `gobernanza/`.
 
-**Fuente única:** [CANON-ENTORNO-PERSISTENTE-Y-LABORATORIOS.md](CANON-ENTORNO-PERSISTENTE-Y-LABORATORIOS.md). Este canon gobierna EP, continuidad por terminal, persistencia y recuperación, WordPress local/WP-LAB, laboratorio de contenido complementario para OGP y requisitos de acceso administrativo/secretos vinculados a Cora. Los anexos EP anteriores se conservan como antecedentes y evidencia histórica subordinada; no son autoridades paralelas.
+## Cánones y anexos por ámbito
 
-## Estado actual
+Consulta estos documentos cuando la tarea pertenezca a su ámbito; no es necesario cargar todos para cualquier trabajo.
 
-El gobierno general vigente es el **Metaprompt Canónico de Samantha**, espejado desde Notion. El **Metacanon de frentes** desarrolla el método de persistencia. Sesión PRIUS queda diferida explícitamente; no está activada. El Sistema de Instrucciones anterior es histórico como gobierno general.
+**Entorno persistente y laboratorios:** [canon transversal](CANON-ENTORNO-PERSISTENTE-Y-LABORATORIOS.md), [registro histórico EP/WP-LAB](ANEXO-ENTORNO-PERSISTENTE-HIBRIDO-EP-WP-LAB.md), [especificación EP/Cybernet/WP-LAB/OGP](ANEXO-EP-ARRANQUE-CYBERNET-WP-LAB-OGP-IA-20261009.md), [contexto de ejecución y salida de ciclo](ANEXO-CONTEXTO-EJECUCION-Y-SALIDA-CICLO.md).
 
-## Punto de entrada transversal de contexto
+**Gobernanza y gates:** [gate de contexto fail-closed](ANEXO-GATE-CONTEXTO-OPERATIVO-FAIL-CLOSED.md), [gate de Thinking para ChatGPT](ANEXO-GATE-THINKING-CHATGPT.md), [estado global RDC](ANEXO-GOBERNANZA-ESTADO-GLOBAL-RDC.md), [normalización terminológica](ANEXO-GOBERNANZA-TERMINOLOGICA-Y-NORMALIZACION.md), [dashboard IGP](ANEXO-DASHBOARD-IGP-SINCRONIZACION.md).
 
-**Regla de frescura:** cada ciclo adquiere `H1 → SI@H1 → H2`; `F:✓` solo si `H1 = H2` y versión + nombre + blob SHA coinciden. No se aceptan caché ni copias previas. `F:?` = no comprobada/carrera; `F:!` = discordancia u obsolescencia.
+**Procedimientos operativos:** [Vercel y continuidad local](ANEXO-GOBERNANZA-VERCEL-CUOTA-Y-CONTINUIDAD-LOCAL.md), [arranque CLI y clonado](ANEXO-PROCEDIMIENTO-ARRANQUE-CLI-WINDOWS-Y-CLONADO-REPOSITORIOS.md), [reinstanciación RDC](ANEXO-PROCEDIMIENTO-REINSTANTIACION-RDC.md), [sincronización audio/transcripción](ANEXO-PROCEDIMIENTO-SINCRONIZACION-AUDIO-TRANSCRIPCION-VIVO.md), [liberación de desempeño en Cybercafé](ANEXO-PROCESO-LIBERACION-DESEMPENO-CIBERCAFE.md).
 
-Para cualquier conversación sujeta a esta metodología, el contexto operativo transversal se obtiene del repositorio y no de la memoria de una conversación aislada.
+## Código, frentes y entregables
 
-**Orden mínimo de lectura:**
+- [Scripts](scripts/) y [validaciones automáticas](.github/workflows/).
+- [Frentes de trabajo y sus OCP](frentes/).
+- [Registro de equipos Cybercafé](CIBERCAFE/).
+- [Entregables](ENTREGABLES/); los análisis de principios anteriores están archivados en [principios-historicos](ENTREGABLES/principios-historicos/).
+- Las revisiones históricas de Metacanon están en [frentes/metodologia/antecedentes/revisiones](frentes/metodologia/antecedentes/revisiones/), fuera del arranque rutinario.
 
-1. [`INICIO.md`](INICIO.md) y [`gobernanza/README.md`](gobernanza/README.md) — entrada y gobierno general vigente; SI-METACOGNITIVO.md es antecedente.
-2. [`METODOLOGIA.md`](METODOLOGIA.md) — desarrollo metodológico vigente.
-3. [`BOOTSTRAP-CONTEXTO-GLOBAL.md`](BOOTSTRAP-CONTEXTO-GLOBAL.md) — continuidad entre conversaciones.
-4. [`CANON-ENTORNO-PERSISTENTE-Y-LABORATORIOS.md`](CANON-ENTORNO-PERSISTENTE-Y-LABORATORIOS.md) — canon transversal obligatorio cuando la tarea involucre EP, WP-LAB, OGP o los flujos de acceso/secretos asociados.
-5. [`ESTADO-RDC-ACTIVO.md`](ESTADO-RDC-ACTIVO.md) — identidad persistente de la sesión RDC y estado de conectividad.
-6. [`ANEXO-GATE-CONTEXTO-OPERATIVO-FAIL-CLOSED.md`](ANEXO-GATE-CONTEXTO-OPERATIVO-FAIL-CLOSED.md) — verificación y bloqueo.
+## Compatibilidad histórica
 
-La sesión RDC no se reinicia al cambiar de conversación. Permanece globalmente vigente hasta una finalización o sustitución explícita. Una desconexión temporal o un dispositivo offline afecta la conectividad observable, no la existencia de la sesión persistida.
+- [SI-METACOGNITIVO.md](SI-METACOGNITIVO.md) es un puntero a un sistema anterior archivado; **no es el gobierno vigente**.
+- [CONTINUIDAD-ENTRE-CONVERSACIONES.md](CONTINUIDAD-ENTRE-CONVERSACIONES.md) es un puntero a una guía anterior. Para arrancar, usa `INICIO.md` y `BOOTSTRAP-CONTEXTO-GLOBAL.md`.
 
-Una conversación nueva debe heredar el estado registrado antes de pedir nuevamente los datos de la sesión.
-
-## Arquitectura
-
-El SI contiene los principios fundamentales y los presenta verticalmente, de mayor a menor preponderancia. La Metodología y sus anexos desarrollan la aplicación práctica del SI.
-
-Los anexos no constituyen una tercera capa normativa; son soporte subordinado del sistema. El bootstrap de continuidad y el estado `CI` son mecanismos de soporte y no añaden principios fundamentales al SI.
-
-## Principio de evolución
-
-La metodología se define gradualmente. Las decisiones confirmadas se incorporan al repositorio como registro canónico y trazable. Las normas fundamentales permanecen separadas de procedimientos, herramientas e implementaciones.
-
-## Sistema de Instrucciones basado en lista de principios en cascada
-
-El SI canónico se encuentra en [SI-METACOGNITIVO.md](SI-METACOGNITIVO.md).
-
-Versión vigente del SI:
-
-**v1.6.21 — Ordenamiento por Preponderancia y Categorías**
-
-Versión vigente de la Metodología:
-
-**v0.14.14 — Canon Transversal de Entorno Persistente y Laboratorios**
-
-El SI contiene los principios fundamentales vigentes, ordenados de mayor a menor preponderancia. La continuidad entre conversaciones se desarrolla operativamente mediante la Metodología y el anexo `BOOTSTRAP-CONTEXTO-GLOBAL.md`.
-
-## Última actualización de Metodología
-
-**v0.14.14 — Canon Transversal de Entorno Persistente y Laboratorios**  
-2026-10-10
-
-Se establece un canon transversal único para EP, persistencia/cifrado/recuperación, identidad por terminal, WordPress local/WP-LAB, laboratorio de contenido complementario para OGP y requisitos de seguridad de UI/acceso vinculados a Cora. Los anexos anteriores quedan subordinados y conservan su valor histórico; el estado físico y E2E no se declara certificado sin evidencia.
-
-
-La identidad persistente de la sesión RDC y su registro transversal se mantienen mediante ESTADO-RDC-ACTIVO.md. La conectividad se verifica por ciclo mediante ping como comprobación primaria cuando el ciclo requiera uso RDC en vivo. La salida visible de cada ciclo muestra únicamente el contexto y resultado esenciales; `K: ✓` solo acredita verificación/liberación de KHORA, mientras `K: OFF` declara que el verificador no estuvo disponible sin bloquear la salida.
-
-
-## Gobernanza de Vercel y continuidad local
-
-La referencia canónica se encuentra en [ANEXO-GOBERNANZA-VERCEL-CUOTA-Y-CONTINUIDAD-LOCAL.md](ANEXO-GOBERNANZA-VERCEL-CUOTA-Y-CONTINUIDAD-LOCAL.md).
-
-El anexo cruza los casos de uso de Cora con la cuota de deployments de Vercel y determina cuándo el trabajo puede continuar sobre un deployment existente, cuándo requiere una nueva publicación y cuándo una instancia local es suficiente. La URL canónica de KHORA permanece separada de cualquier ejecución local.
-
-## Glosario operativo
-
-El repositorio incorpora un glosario metodológico transversal en [GLOSARIO-OPERATIVO.md](GLOSARIO-OPERATIVO.md) y su gobernanza en [ANEXO-GOBERNANZA-TERMINOLOGICA-Y-NORMALIZACION.md](ANEXO-GOBERNANZA-TERMINOLOGICA-Y-NORMALIZACION.md). Su objetivo es evitar deriva de nomenclatura entre dictado, conversaciones, documentos y artefactos.
-
-
-## Recuperación de sesión RDC
-
-Cuando el estado global conserva una sesión RDC ACTIVA pero el canal aparece offline/no verificable y el usuario informa actividad local de la terminal, el escenario se clasifica como **DIVERGENCIA DE OBSERVABILIDAD RDC**. Cuando el modelo comunique ausencia, pérdida o desconexión de RDC, debe ofrecer en el mismo ciclo `RDC-REINSTANTIAR` y el comando oficial `npx @wonderwhy-er/desktop-commander@latest remote`.
-
-Cuando el ciclo requiere RDC en vivo, el modelo debe emitir `RDC-REINSTANTIAR`, solicitar el `RDC-HANDSHAKE` y actualizar `ESTADO-RDC-ACTIVO.md` antes de reanudar. La sesión persistente no se marca INACTIVA por un simple offline.
-
-El procedimiento detallado se encuentra en `ANEXO-PROCEDIMIENTO-REINSTANTIACION-RDC.md`.
-
-La recuperación no se considera resuelta hasta el read-back del estado global publicado. Las carreras de actualización se rechazan y reconcilian; no se permiten sobrescrituras ciegas.
-
-## Gate de contexto operativo
-
-Todo ciclo sujeto a la metodologia debe pasar el gate fail-closed de contexto operativo antes de ejecutar trabajo dependiente del entorno. El contrato se encuentra en `ANEXO-GATE-CONTEXTO-OPERATIVO-FAIL-CLOSED.md`, y el estado global de la sesion RDC en `ESTADO-RDC-ACTIVO.md`.
-
-La incapacidad de detectar automaticamente la sesion no se interpreta como ausencia. Si no puede establecerse ACTIVA o INACTIVA, el ciclo solicita al usuario confirmar si RDC es requisito; si lo es, queda bloqueado hasta establecer y verificar la sesion.
-
-
-## Sincronización audio–transcripción en vivo
-
-La metodología incorpora un procedimiento canónico para sincronizar audio y transcripción mediante benchmark reproducible, baseline congelada, IGP y dashboard.
-
-**Caso prioritario de validación:** Otro Gran Programa — https://github.com/SeryMente/otrobuenprograma
-
-- ANEXO-PROCEDIMIENTO-SINCRONIZACION-AUDIO-TRANSCRIPCION-VIVO.md
-- ANEXO-DASHBOARD-IGP-SINCRONIZACION.md
-
-La extensión a proyectos futuros no debe retrasar el objetivo operativo de mejorar OGP.
-
-
-
-## Arranque CLI Windows y clonación de repositorios
-
-Para iniciar una terminal CIBERCAFE desde PowerShell, usa [scripts/bootstrap-cibercafe-cli.ps1](scripts/bootstrap-cibercafe-cli.ps1) mediante el procedimiento documentado en [ANEXO-PROCEDIMIENTO-ARRANQUE-CLI-WINDOWS-Y-CLONADO-REPOSITORIOS.md](ANEXO-PROCEDIMIENTO-ARRANQUE-CLI-WINDOWS-Y-CLONADO-REPOSITORIOS.md). El bootstrap valida Git y Node/npm/npx, sincroniza los repositorios sin sobrescribir destinos dudosos y mantiene RDC en primer plano. La cámara virtual puede intentarse con el parámetro `-StartOBSVirtualCamera`; el bootstrap no abre, cierra, inspecciona ni modifica Chrome ni sus perfiles/permisos. Cualquier prueba de detección en una aplicación queda separada y no se da por hecha.
-
-El clonador específico es [scripts/clone-public-repo-to-desktop.ps1](scripts/clone-public-repo-to-desktop.ps1). Para descargar un repositorio público diferente se proporciona su URL como `-RepositoryUrl`. Ambos scripts validan origin, branch, HEAD y working tree, se detienen ante cambios locales y no sustituyen la autenticación CLI requerida por los repositorios privados.
-
-## Gate de ejecución en ChatGPT
-
-Todo ciclo sujeto a la metodología intenta resolver la cascada normativa durante Thinking cuando esta ventana está disponible. `INSTANT`, ausencia o estado desconocido no bloquean por sí mismos la salida. Cuando KHORA no está disponible, el contrato visible `v1.7.7` se conserva y el HUD declara `K: OFF`. El HUD incluye además `CI: ✓|?|!` para registrar la aplicación verificable del régimen de Instrucciones personalizadas.
-
-
-## Entorno Persistente: Fase Fundacional Cybernet y WP-LAB
-
-El registro transversal de continuidad, decisiones, estados físicos, manifiestos no sensibles y plan de integración se encuentra en [ANEXO-ENTORNO-PERSISTENTE-HIBRIDO-EP-WP-LAB.md](ANEXO-ENTORNO-PERSISTENTE-HIBRIDO-EP-WP-LAB.md). Cualquier trabajo sobre KHORA EP, EP_VOLATIL, VHDX/BitLocker, Deadman Trigger o el laboratorio WordPress Ser y Mente debe leerlo antes de ejecutar scripts.
-
-Para el contrato completo del arranque en terminales efímeras de Cybernet, RDC, identidad por terminal, ficha de sesión al portapapeles, OBS, observador/telemetría, orden de instanciación por coste, WordPress/Divi y capacidad de IA visual local OGP, leer también [ANEXO-EP-ARRANQUE-CYBERNET-WP-LAB-OGP-IA-20261009.md](ANEXO-EP-ARRANQUE-CYBERNET-WP-LAB-OGP-IA-20261009.md). Este anexo contiene una sección de especificaciones del usuario verbatim y distingue premisas declaradas de pruebas técnicas.
-
-**Foco de trabajo actual:** completar exclusivamente la Fase Fundacional EP-Cybernet antes de WP-LAB o modelos IA: workspace y extensiones actualizados, Notepad++ predeterminado y comprobado, OBS Virtual Camera confirmada en Windows y enumerada realmente por Chrome, RDC fresco con ficha de sesión verificada al portapapeles y logging saneado. El criterio de salida exige dos instanciaciones consecutivas controladas sin reinicio; ver sección 16 del anexo canónico.
-
-El anexo distingue evidencia actual de documentación histórica. La presencia de una carpeta no acredita una junction cifrada; el repositorio público conserva documentos y hashes no sensibles, nunca secretos, bases de datos, snapshots completos ni el ZIP propietario de Divi.
-
-
-## Objetos canónicos portables — marco de frentes
-
-El procedimiento subordinado [METACANON-OBJETOS-CANONICOS.md](METACANON-OBJETOS-CANONICOS.md) define cómo crear objetos de contexto replicables para cualquier proyecto, preservar dictados originales como especificación, adquirir roles/instrucciones, comprobar delta y mantener viabilidad, evidencia y prompts de continuidad. Revisión de este bloque: [REVISION-METACANON-1.7.json](REVISION-METACANON-1.7.json); revisiones 1.0–1.6 quedan como antecedentes.
-
-El horizonte de un mes es histórico, no caducidad automática. La versión 1.7 incorpora el gobierno general ratificado y arquitectura por directorios; no instala infraestructura nueva. Esta documentación no certifica productos, permisos o dispositivos y no fuerza herramientas/memoria en otras plataformas. Cada frente tiene una carpeta canónica con un objeto de estado y todos sus archivos. [Frente EP](frentes/ep/README.md) pertenece a este repositorio; Khora es referencia de código, no propietario del frente. La visibilidad de Metodología fue comprobada privada en este ciclo; revalidarla antes de cada carga de originales privados. Secretos nunca a Git.
-
-El proyecto de mantenimiento metodológico opera en un solo hilo y sin asistente separado; la excepción del metacanon §21 no cambia los dos roles de EP.
-
-Metacanon 1.5, §22: todo objeto de frente y sus prompts exigen versión/sello del metacanon visibles en cada salida de ciclo, incluidos bloqueo y mantenimiento; fuente inaccesible = frescura NO VERIFICADA, sin inventar versión vigente.
-
-La gobernanza central se hereda por delta con matriz/constancia verificable en cada hijo (§23), sin confundir adopción documental con ejecución de modelos. Remote Desktop Commander solo para requisitos imprescindibles sin alternativa suficiente (§24), nunca por rutina.
-
-Metacanon 1.5: adquisición/aplicación verificables (§26), trece bloques comunes (§27) y RDC exclusivo del asistente, prohibido al constructor sin delegación (§24). Gobierno superior intacto; rama documental, no main. Solo estos cambios autorizados, no las demás mejoras propuestas.
+Las conversaciones originales, crónicas, evidencias y entregas versionadas de cada frente se conservan bajo sus carpetas correspondientes. Sus contenidos históricos no deben cargarse todos por defecto ni convertirse en normas solo por existir.
