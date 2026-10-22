@@ -17,7 +17,7 @@ La fuente canónica preponderante es este repositorio privado, SeryMente/metodol
 
 Las políticas obligatorias no anulables de la plataforma y sus permisos/capacidades reales son límites de ejecución externos al contenido del repositorio; la documentación no puede neutralizarlos ni crear permisos inexistentes.
 
-SI-METACOGNITIVO.md deja de ser gobierno general paralelo y se conserva como antecedente histórico. Sus referencias antiguas desde otros documentos no reactivan su precedencia. No se borran decisiones ni protecciones específicas de los frentes por esta migración; ante un conflicto material no resuelto se detiene solo la operación afectada y se consulta al operador.
+SI-METACOGNITIVO.md deja de ser gobierno general paralelo y se conserva en su ruta raíz solo como compatibilidad con el consumidor normativo heredado de KHORA. Su cabecera declara `GOBIERNO GENERAL SUPERSEDIDO`; sus afirmaciones internas de CANÓNICO, identidad activa y gates globales describen el régimen anterior y no desplazan a Sam como gobierno general vigente de Metodología. KHORA aún declara `CANONICAL_SI_PATH = "SI-METACOGNITIVO.md"` y extrae de esa ruta versión/nombre; no retirar ni reducir el archivo hasta migrar y probar ese consumidor. `gobernanza/antecedentes/SI-METACOGNITIVO-v1.6.21-historico.md` es un puntero al archivo raíz.
 
 ## Segunda capa
 
