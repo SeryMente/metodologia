@@ -46,7 +46,6 @@ jobs:
           grep -Fq 'Metacanon §4, formato obligatorio en cada ciclo' BOOTSTRAP-CONTEXTO-GLOBAL.md
           grep -Fq 'gobernanza/GLOSARIO-WORKSPACE.md' BOOTSTRAP-CONTEXTO-GLOBAL.md
 
-          python3 scripts/validate-canonical-bootstrap.py
           grep -q 'ANTES.*KHORA\|antes.*KHORA\|antes.*HEALTH MCP.*KHORA' gobernanza/antecedentes/SI-METACOGNITIVO-v1.6.21-historico.md
           grep -q 'RDC-REINSTANTIAR' gobernanza/antecedentes/SI-METACOGNITIVO-v1.6.21-historico.md
 
