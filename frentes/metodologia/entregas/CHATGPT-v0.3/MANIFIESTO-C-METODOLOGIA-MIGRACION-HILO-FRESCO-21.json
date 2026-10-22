@@ -89,7 +89,7 @@
     },
     "ocp_entrypoint": {
       "path": "frentes/metodologia/README.md",
-      "blob": "b84fa52d4aa10a527c779bea2c6df26a70e1d894"
+      "blob": "54c59cb7fb81e04132fb9b8e0f1216ea77982d14"
     },
     "e2e_test": {
       "path": "frentes/metodologia/pruebas/continuidad/C-METODOLOGIA-VERBATIM-E2E-22.cjs",
@@ -160,7 +160,7 @@
     },
     "ocp_entrypoint": {
       "path": "frentes/metodologia/README.md",
-      "blob": "b84fa52d4aa10a527c779bea2c6df26a70e1d894"
+      "blob": "54c59cb7fb81e04132fb9b8e0f1216ea77982d14"
     },
     "reusable_prompt": {
       "path": "frentes/metodologia/entregas/CHATGPT-v0.3/PROMPT-CONTINUIDAD-METODOLOGIA-VERBATIM-E2E-22.txt",
@@ -237,5 +237,13 @@
         "total": 16
       }
     ]
+  },
+  "live_pointer_refresh": {
+    "event": "C-METODOLOGIA-SAM-GOBERNANZA-23",
+    "reason": "README is the live OCP navigation pointer; Metacanon v1.20 and the M23 output supersede its former navigation links. The M22 evidence JSON remains the historical evidence of the M22 test cut.",
+    "prior_blob": "b84fa52d4aa10a527c779bea2c6df26a70e1d894",
+    "current_blob": "54c59cb7fb81e04132fb9b8e0f1216ea77982d14",
+    "updated_at": "2026-10-21",
+    "status": "persisted_and_readback_verified"
   }
 }
