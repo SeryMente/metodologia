@@ -32,6 +32,7 @@ Se registraron en el OCP los requisitos del operador para revisar la estructura 
 - **Ponderación:** Sam no contiene un campo numérico uniforme de preponderancia de 0 a 1 por principio. La posición jerárquica y la ponderación numérica deben tratarse como elementos distintos.
 - **HTML de referencia:** `AthanorJue20260319-normativo_v0943(1).html`, 714.674 bytes, 7.499 líneas, SHA-256 `f16e3aedafe2b2d7919d700373343f4a5beee14bd23d940789980d5a977bdcb5`. El patrón revisado usa índice `#idx`, enlaces a anclas, retornos `↑idx`, miníndices por categoría y referencias cruzadas hacia conceptos y dependencias. El nombre comercial del videojuego es [Pixel Starships](https://www.pixelstarships.com/); no se infiere que Sam documente una mecánica más específica que su enunciado actual.
 - Se aplicó lectura de vuelta a Metacanon, INICIO, README, PENDIENTES y el diálogo. La prueba exacta del folio del ciclo no halló coincidencias en los nueve repositorios accesibles; no acredita unicidad global.
+- **Regresión del OCP: PASS 17/17** en Windows/Node.js v22.23.3, commit probado `1b3d21052d5a3b8d2cc26b48c80f8033e99dc99d`, salida cero. El primer intento posterior a los cambios dio 16/17 porque el manifiesto aún apuntaba al SHA antiguo del README; el puntero vivo se refrescó con procedencia y la segunda ejecución pasó. La evidencia M23 conserva ambos cortes.
 
 ## 5. Qué falta
 
@@ -76,4 +77,5 @@ Realizar la auditoría completa de `P001–P040` en una tabla de trazabilidad co
 - INICIO: `ae86ee00f09fbd0f513be8095fe23310b47b8b58`.
 - README OCP: `54c59cb7fb81e04132fb9b8e0f1216ea77982d14`.
 - PENDIENTES: `ce9278319026d42cfcc2ecfaa548db441defb8f1`.
+- Manifiesto activo de continuidad, con el puntero vivo del README reconciliado: `41f95759839eec1c9bbb323b5d662bfb0660702f`.
 - La huella propia de esta salida, la crónica y la verificación final de los artefactos quedan en el recibo de evidencia [C-METODOLOGIA-SAM-GOBERNANZA-23.json](https://github.com/SeryMente/metodologia/blob/main/frentes/metodologia/evidencias/C-METODOLOGIA-SAM-GOBERNANZA-23.json).
