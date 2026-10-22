@@ -35,3 +35,10 @@ La [salida final §4](../entregas/CHATGPT-v0.3/C-METACANON-TAXONOMIA-REPOSITORIO
 ## Instrucción posterior del operador · validación rápida
 
 Dictado literal añadido al diálogo: “Si vas a validar valida rapida no te tarde shoras”. Alcance operativo: mantener la comprobación proporcional y rápida; no extender la validación a una auditoría exhaustiva. La taxonomía/renombre ya ejecutados no se repiten ni se revierten.
+
+
+## Instrucción posterior · no usar workflows y preparar reinstanciación
+
+El operador preguntó por qué se usan workflows y si GitHub puede ayudar a comprobar la validez de los marcos de gobernanza. Después indicó expresamente: «Por lo pronto no las utilices porque tardas mucho. Documenta todo y dame un prompt para reinstanciar en conversación fresca» y «No te tardes mil años». Ambas instrucciones y las preguntas literales están añadidas al diálogo JSONL.
+
+No se ejecutaron ni consultaron workflows en este cierre. Los estados fallidos previos se conservan como evidencia histórica, con sus causas NO VERIFICADAS; no se reconsultaron ni se espera un PASS. Se añadió el prompt reutilizable `entregas/CHATGPT-v0.3/PROMPT-REINSTANTIACION-METACANON-M25.txt`. Antes de cualquier escritura desde la sesión nueva, se exige leer el control autoritativo y resolver explícitamente cualquier transferencia de titularidad según Sam P037 y Metacanon §42.

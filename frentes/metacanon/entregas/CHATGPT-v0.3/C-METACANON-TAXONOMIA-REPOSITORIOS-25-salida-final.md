@@ -59,8 +59,8 @@ Auditar las referencias y dependencias de los tres scripts clasificados por alca
 
 ## 9. Continuación
 
-La entrada de continuidad es [`frentes/metacanon/README.md`](../README.md). El inventario entre repositorios es [`INVENTARIO-REPOSITORIOS-Y-FRENTES.md`](../../../../INVENTARIO-REPOSITORIOS-Y-FRENTES.md); las reglas normativas están en [Metacanon §51](../../../../METACANON-OBJETOS-CANONICOS.md#51-taxonomia-de-organizacion-repositorios-frentes-y-recursos). El registro es un corte puntual, no sincronización automática entre repositorios.
+La entrada de continuidad es [`frentes/metacanon/README.md`](../README.md). El inventario entre repositorios es [`INVENTARIO-REPOSITORIOS-Y-FRENTES.md`](../../../../INVENTARIO-REPOSITORIOS-Y-FRENTES.md); las reglas normativas están en [Metacanon §51](../../../../METACANON-OBJETOS-CANONICOS.md#51-taxonomia-de-organizacion-repositorios-frentes-y-recursos). Para la conversación fresca, utilizar [`PROMPT-REINSTANTIACION-METACANON-M25.txt`](PROMPT-REINSTANTIACION-METACANON-M25.txt). El registro es un corte puntual, no sincronización automática entre repositorios.
 
 ## 10. Persistencia
 
-Este evento se registra bajo `frentes/metacanon/` con diálogo literal del operador, salida visible, crónica y evidencia de hashes/read-back. El control de responsabilidad mantiene la sesión activa registrada `SES-20261021-6B9E2F41`, generación 3. Los resultados de CI no se presentan como aprobados.
+Este evento se registra bajo `frentes/metacanon/` con las instrucciones posteriores, diálogo JSONL, salida, crónica, evidencia y prompt de reinstanciación. El control sigue registrado en `SES-20261021-6B9E2F41`, generación 3; la nueva conversación debe comprobar el control y no asumir ni transferir titularidad sin la autorización requerida. No se ejecutaron ni consultaron workflows en este cierre; los fallos históricos no se presentan como aprobados.

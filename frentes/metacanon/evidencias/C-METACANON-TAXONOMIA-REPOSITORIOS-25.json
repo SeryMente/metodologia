@@ -307,5 +307,46 @@
     "verbatim": "Si vas a validar valida rapida no te tarde shoras",
     "recorded": true,
     "scope": "fast validation only; no exhaustive audit requested"
+  },
+  "operator_followups": [
+    {
+      "verbatim": "¿Me puedes explicar por qué usas workflows para este proyecto?",
+      "kind": "question",
+      "recorded": true
+    },
+    {
+      "verbatim": "Entonces lo que me dices es que GitHub tiene herramientas que sí me permiten verificar la validez de mis marcos de gobernanza, ¿es así?",
+      "kind": "question",
+      "recorded": true
+    },
+    {
+      "verbatim": "Por lo pronto no las utilices porque tardas mucho. Documenta todo y dame un prompt para reinstanciar en conversación fresca",
+      "kind": "instruction",
+      "recorded": true,
+      "execution": "No workflows invoked or queried in this closeout"
+    },
+    {
+      "verbatim": "No te tardes mil años.",
+      "kind": "instruction",
+      "recorded": true,
+      "execution": "Fast validation requested"
+    }
+  ],
+  "handoff_prompt": {
+    "path": "frentes/metacanon/entregas/CHATGPT-v0.3/PROMPT-REINSTANTIACION-METACANON-M25.txt",
+    "blob_sha": "6f5bd192d5928b869c5363c98fdc34c01e09b0fc",
+    "purpose": "Reinstantiation in a fresh conversation; contains canonical source acquisition, no-workflows instruction, current M25 state and responsibility-transfer guard."
+  },
+  "followup_readbacks": {
+    "planned_commit": "single atomic commit prepared; exact read-back to be verified after ref update",
+    "updated_blobs": {
+      "dialogue": "9b0f7fe281a38a3595edd421620f81bc7636cba8",
+      "chronicle": "f74170eeb79d05e0d97e4557e4fbfdf8a5ac1c3f",
+      "output": "fc5e7cf3517a3760d22ea09f0f11d6a32b621204",
+      "readme": "c287cf46e847859393246c3d3e72f518a7ffb951",
+      "metacanon": "cae8387a576ba4914d086a47bf57fe925717efca",
+      "prompt": "6f5bd192d5928b869c5363c98fdc34c01e09b0fc"
+    },
+    "validation_scope": "quick path/content/readback check only; no workflow execution or polling"
   }
 }

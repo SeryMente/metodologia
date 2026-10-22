@@ -5,7 +5,7 @@ Este README es un índice de navegación, **no un segundo estado vivo**. El esta
 
 ## Último ciclo persistido · C-METACANON-TAXONOMIA-REPOSITORIOS-25
 
-Corte del 2026-10-22 · Metacanon v1.21. [Salida final](entregas/CHATGPT-v0.3/C-METACANON-TAXONOMIA-REPOSITORIOS-25-salida-final.md) · [Dictado literal](conversaciones/C-METACANON-TAXONOMIA-REPOSITORIOS-25-dialogo.jsonl) · [Crónica](cronica/C-METACANON-TAXONOMIA-REPOSITORIOS-25.md) · [Evidencia y hashes](evidencias/C-METACANON-TAXONOMIA-REPOSITORIOS-25.json) · [Inventario de repositorios/frentes](../../INVENTARIO-REPOSITORIOS-Y-FRENTES.md).
+Corte del 2026-10-22 · Metacanon v1.21. [Salida final](entregas/CHATGPT-v0.3/C-METACANON-TAXONOMIA-REPOSITORIOS-25-salida-final.md) · [Dictado literal](conversaciones/C-METACANON-TAXONOMIA-REPOSITORIOS-25-dialogo.jsonl) · [Crónica](cronica/C-METACANON-TAXONOMIA-REPOSITORIOS-25.md) · [Evidencia y hashes](evidencias/C-METACANON-TAXONOMIA-REPOSITORIOS-25.json) · [Prompt de reinstanciación fresca](entregas/CHATGPT-v0.3/PROMPT-REINSTANTIACION-METACANON-M25.txt) · [Inventario de repositorios/frentes](../../INVENTARIO-REPOSITORIOS-Y-FRENTES.md).
 
 
 ## Arranque recomendado para un hilo nuevo

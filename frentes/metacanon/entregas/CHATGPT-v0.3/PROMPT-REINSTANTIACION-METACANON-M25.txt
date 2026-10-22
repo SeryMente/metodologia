@@ -1,0 +1,43 @@
+# Prompt de reinstanciación · Metacanon · continuidad M25
+
+Actúa como constructor del repositorio y del frente operativo **Metacanon** de Ser y Mente. El repositorio propietario sigue siendo `SeryMente/metodologia`; no renombres el repositorio.
+
+## Orden de adquisición obligatoria
+
+1. Lee `INICIO.md` desde `SeryMente/metodologia/main`.
+2. Lee y revisa manualmente la cascada relevante de Sam en `gobernanza/METAPROMPT-CANONICO-SAMANTHA.md` (v339 · NX-339m), sin modificarlo; si cambia la versión, registra la adquirida.
+3. Lee `METACANON-OBJETOS-CANONICOS.md` desde `main`, en particular LEER PRIMERO, §4, §9, §§29–50 y §51. Versión documentada al preparar este prompt: 1.21, `METACANON-OBJETOS-v1.21`.
+4. Lee el GOW canónico `gobernanza/GLOSARIO-WORKSPACE.md` (v2.2) al inicio y al cierre del ciclo. No lo confundas con un Hub.
+5. Lee `frentes/metacanon/README.md`, `frentes/metacanon/CONTROL-RESPONSABILIDAD.json`, `frentes/metacanon/PENDIENTES.md`, el diálogo, la crónica, la salida y la evidencia del ciclo `C-METACANON-TAXONOMIA-REPOSITORIOS-25`.
+6. Lee `INVENTARIO-REPOSITORIOS-Y-FRENTES.md`. Comprueba versión y SHA de las fuentes desde `main`; si una fuente no es accesible, declara NO VERIFICADO.
+
+## Estado confirmado en el corte M25
+
+- Nombre operativo del frente: **Metacanon**. OCP activo: `frentes/metacanon/`.
+- `frentes/metodologia/README.md` es un puntero de compatibilidad; no contiene núcleo vivo ni `CONTROL-RESPONSABILIDAD.json` duplicado.
+- El repositorio conserva su identidad `SeryMente/metodologia`.
+- La taxonomía multi-repositorio está incorporada en Metacanon §51: organización → repositorios → frentes/OCP → materiales; los recursos auxiliares se clasifican por alcance de frente, de repositorio, compartidos dentro del repositorio o compartidos entre repositorios.
+- En el corte se leyeron nueve repositorios accesibles: `metodologia`, `khora`, `serymente`, `otrogranprograma`, `GDP`, `khora-effectif`, `signal-interpreter`, `tercer-ambito` y `personal`. Esto NO prueba que la lista abarque toda la organización.
+- Las ubicaciones históricas de OCP se conservan. GDP conserva un objeto de sprint de archivo único pendiente de clasificación/migración; `tercer-ambito/etica/` requiere confirmar si funciona como OCP formal.
+- Los scripts EP y CIBERCAFE no se movieron ni consolidaron porque no se han demostrado todos sus invocadores, consumidores, dependencias de rutas y pruebas. No moverlos ni fusionarlos por estética.
+- Sam y GOW no fueron modificados por M25.
+
+## Límite expreso del operador: workflows
+
+**Por ahora NO ejecutes, dispares manualmente, consultes, sondees ni esperes GitHub Actions/workflows.** No uses los workflows como validación de este marco ni bloquees el avance esperando sus resultados. Si un commit provoca una ejecución automática por configuración de GitHub, no la uses como criterio de aceptación ni la consultes salvo nueva autorización explícita del operador. Haz solo comprobaciones rápidas y directas de rutas, referencias, estructura y lectura de vuelta; no emprendas una auditoría exhaustiva sin que se pida.
+
+En el corte M25 se habían observado fallos históricos de workflows de Metodología y otros repositorios, pero no se pudieron obtener pasos/logs fiables; sus causas quedaron NO VERIFICADAS. Esto no debe transformarse en PASS ni requiere volver a consultar los workflows en esta reinstanciación.
+
+## Compuerta de responsabilidad antes de escribir
+
+Lee el control autoritativo antes de cualquier escritura. Al preparar este prompt, el control observado registraba `SES-20261021-6B9E2F41`, generación 3, estado `owned`, con el alias operativo de la migración M21. Ese alias no es un ID nativo de conversación. No asumas que una conversación nueva hereda automáticamente la titularidad. Si el control no identifica de forma verificable a la nueva sesión y sigue activo otro titular, permanece en lectura y pregunta una sola vez: **«¿Autorizas transferir el frente Metacanon desde el titular/folio activo que consta en el control a esta nueva sesión?»**. No escribas el control ni mutaciones dependientes hasta recibir autorización explícita; si se autoriza, sigue Sam P037 y Metacanon §42: compare-and-swap por SHA/generación y lectura de vuelta. No reutilices prompts de migración anteriores de un solo uso.
+
+## Continuación solicitada
+
+Retoma desde los pendientes M25, pero no repitas el renombre ni vuelvas a mover el OCP. El siguiente trabajo técnico pendiente es identificar consumidores, invocadores y dependencias de scripts EP/CIBERCAFE con una comprobación breve; después decidir migraciones o adaptadores compatibles. En paralelo, aclarar la clasificación de GDP y `tercer-ambito/etica/` sin moverlos hasta planificar y autorizar cualquier cambio.
+
+En el primer mensaje, presenta la última salida visible guardada en `frentes/metacanon/entregas/CHATGPT-v0.3/C-METACANON-TAXONOMIA-REPOSITORIOS-25-salida-final.md` como «Última salida conservada del modelo anterior», identificando ruta y fuente; no la reconstruyas de memoria. Añade luego el estado actual verificado y aplica el formato obligatorio de diez campos de Metacanon §4 en el ciclo.
+
+## Instrucciones al cerrar el próximo ciclo
+
+Conserva literalmente las instrucciones del operador en JSONL, registra crónica, salida de diez campos y evidencia/read-back. Declara exactamente qué archivos se tocaron, qué se verificó directamente, qué queda pendiente y qué no se hizo. No modifiques Sam ni el GOW sin autorización explícita.
