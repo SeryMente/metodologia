@@ -124,7 +124,7 @@ La comprobación canónica debe partir de `METODOLOGIA.md` en `main` mediante sn
 
 ### 2.2 Formato obligatorio de salida
 
-En cada ciclo sujeto a esta metodología, sin excepción, debe aparecer la identidad vigente de la Metodología junto con la del SI:
+En cada ciclo sujeto a esta metodología, sin excepción, debe poder identificarse el gobierno general vigente de Sam y la identidad vigente de la Metodología:
 
 `METODOLOGÍA CARGADA · vX.Y.Z — Nombre de versión · COMPLETA · ACTIVA · ÚLTIMO CAMBIO: hace N minutos|horas|días | YYYY-MM-DD`
 
@@ -137,7 +137,7 @@ La salida no puede mostrar una versión histórica como si fuera vigente. Si la 
 `BOOTSTRAP-CONTEXTO-GLOBAL.md` es el anexo único de entrada para reconstruir continuidad entre conversaciones. No contiene la selección de una terminal RDC actual y no tiene autoridad para sustituir las fuentes canónicas que referencia.
 
 En cada ciclo, una conversación nueva o continuadora debe usarlo para localizar:
-- `SI-METACOGNITIVO.md`;
+- `gobernanza/METAPROMPT-CANONICO-SAMANTHA.md` (Sam vigente);
 - `METODOLOGIA.md`;
 - `ESTADO-RDC-ACTIVO.md`;
 - `HISTORIAL-RDC.md`, cuando exista y sea necesario para resolver ciclos de vida o auditoría.
@@ -164,7 +164,7 @@ La recurrencia canónica queda definida como:
 
 `ACTIVACIÓN → REANCLAJE INICIAL → APLICACIÓN → CI → REANCLAJE DEL CICLO → APLICACIÓN → CI → ...`
 
-`CI` y el reanclaje son mecanismos de continuidad; no constituyen nuevos principios fundamentales ni sustituyen la autoridad de `SI-METACOGNITIVO.md`.
+`CI` y el reanclaje son mecanismos de continuidad; no constituyen nuevos principios fundamentales ni sustituyen la autoridad del gobierno general vigente de Sam.
 
 
 
@@ -187,20 +187,20 @@ El encabezado metodológico de un ciclo debe permitir identificar conjuntamente:
 1. Proyecto.
 2. Conversación.
 3. Folio global del ciclo.
-4. Versión del SI.
-5. Nombre de versión del SI.
-6. Último cambio canónico del SI.
+4. Versión vigente y firma de Sam.
+5. Nombre del gobierno general vigente.
+6. Última actualización canónica observada de Sam.
 7. Versión de la Metodología.
 8. Nombre de versión de la Metodología.
 9. Último cambio canónico de la Metodología.
 
 Las identidades del SI y de la Metodología son independientes y no deben intercambiarse ni derivarse una de la otra.
 
-## 4.0 Frescura normativa obligatoria por ciclo
+## 4.0 Frescura del gobierno vigente y compatibilidad heredada
 
-Cada ciclo debe adquirir el SI con doble lectura de `main`: `H1` → recuperar `SI-METACOGNITIVO.md` exactamente en `H1` → `H2`. Solo hay `F:✓` cuando `H1 = H2` y versión + nombre + blob SHA corresponden a la instantánea de `H1`. No se aceptan lecturas de `main` sin SHA exacto, cachés no demostradas ni copias de turnos anteriores. Si `H1 ≠ H2` o falla cualquier comprobación, `F:✓` está prohibido.
+Cada ciclo debe adquirir el gobierno general vigente de Sam con doble lectura de `main`: `H1` → recuperar `gobernanza/METAPROMPT-CANONICO-SAMANTHA.md` exactamente en `H1` → `H2`. La frescura solo puede declararse positiva cuando `H1 = H2`, la versión `v339`, la firma `NX-339m` y el blob SHA corresponden a la misma instantánea. No se aceptan cachés no demostradas ni copias de turnos anteriores. Si `H1 ≠ H2` o falla cualquier comprobación, la frescura está no verificada y el gobierno general no puede declararse adquirido.
 
-La **identidad activa** del SI se toma exclusivamente de los campos `Versión` y `Nombre de versión` de la cabecera del snapshot exacto. El historial interno y los espejos documentales no son fuentes de autoridad. Una discrepancia entre la cabecera activa y cualquier espejo de versión vigente convierte el ciclo en `F:!` y bloquea el trabajo sustantivo hasta reconciliación.
+La identidad activa se obtiene de la versión y firma declaradas por Sam en la instantánea exacta. `SI-METACOGNITIVO.md` es un puntero al régimen histórico; no es una fuente normativa activa. **Compatibilidad pendiente:** `FORMATO-REGISTRO-VERIFICACION-CICLO.md` y su esquema v1.7.7 aún conservan campos y terminología del contrato anterior (`SI CARGADO`, `H1 → SI@H1`). Se preservan temporalmente para no romper consumidores no auditados; no se deben usar como evidencia de que el SI histórico gobierna el ciclo. La migración completa de ese contrato queda pendiente de auditar sus consumidores.
 
 ## 4.1 Gate de ejecución cognitiva
 
