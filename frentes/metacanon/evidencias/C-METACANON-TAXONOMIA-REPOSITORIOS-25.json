@@ -234,5 +234,73 @@
     "No inherited OCP paths moved",
     "No empty shared-resource folders created",
     "No OCP created in repositories whose need was not evidenced"
-  ]
+  ],
+  "final_verification": {
+    "evidence_updated_at": "2026-10-22",
+    "current_main_head_before_evidence_refresh": "d3b7b3975a67d31eb86169c16ff838a2b4f79f02",
+    "verified_readbacks": {
+      "repository_root_readme": {
+        "path": "README.md",
+        "blob_sha": "5412bbc2b9a0b25fb97e17881b90900245b1547b",
+        "metacanon_version_visible": "1.21"
+      },
+      "cross_repository_inventory": {
+        "path": "INVENTARIO-REPOSITORIOS-Y-FRENTES.md",
+        "blob_sha": "558580fcb9ecd6345ffd83d8d0036a0c6ba57206",
+        "gdp_row_corrected": true
+      },
+      "metacanon_state": {
+        "path": "METACANON-OBJETOS-CANONICOS.md",
+        "blob_sha": "db10db366fd770ce7cb7a9e8fc392b83824c8821",
+        "event_present": true
+      },
+      "ocp_entrypoint": {
+        "path": "frentes/metacanon/README.md",
+        "blob_sha": "e7e23e2c21c2ddb85432b1baa6539c1e5a5ae237",
+        "m25_section_present": true
+      },
+      "dialogue": {
+        "path": "frentes/metacanon/conversaciones/C-METACANON-TAXONOMIA-REPOSITORIOS-25-dialogo.jsonl",
+        "blob_sha": "202744b78f5e31fc3e908bfbe6b7a592aa9cc9ba",
+        "operator_instructions_verbatim": 2
+      },
+      "chronicle": {
+        "path": "frentes/metacanon/cronica/C-METACANON-TAXONOMIA-REPOSITORIOS-25.md",
+        "blob_sha": "ee8a931b5dc85fa061d3b7a7fe1d6711a0549edf"
+      },
+      "final_output": {
+        "path": "frentes/metacanon/entregas/CHATGPT-v0.3/C-METACANON-TAXONOMIA-REPOSITORIOS-25-salida-final.md",
+        "blob_sha": "e6f4301cc6ac3cc5d7105aa46e36a4081e7384a9"
+      }
+    },
+    "workflows_observed_on_main_head_d3b7b3975a67d31eb86169c16ff838a2b4f79f02": [
+      {
+        "workflow": "validate-canonical-bootstrap",
+        "run_id": 39844146090,
+        "conclusion": "failure",
+        "job_id": 120052816788,
+        "runner_id": 0,
+        "steps": [],
+        "logs": "BlobNotFound"
+      },
+      {
+        "workflow": "Validate RDC Governance",
+        "run_id": 39844146134,
+        "conclusion": "failure",
+        "job_id": 120052816814,
+        "runner_id": 0,
+        "steps": [],
+        "logs": "not successfully retrievable; exact failure cause NOT_VERIFIED"
+      }
+    ],
+    "ci_acceptance": "NOT_PASSED / CAUSE_NOT_VERIFIED",
+    "scope_note": "The above CI observations are tied to the inspected head and precede this evidence refresh commit. Updating this receipt may start new Actions runs; no PASS is inferred.",
+    "taxonomy_readback_claim": "All nine accessible SeryMente repository README/entrypoints were fetched again; each exposes an organizational structure/frentes-resources section or equivalent, and existing OCP routes were preserved.",
+    "incomplete_scope": [
+      "Organization inventory may omit repositories not exposed by the available connection.",
+      "EP/CIBERCAFE script invokers and route dependencies remain unverified; scripts intentionally not moved or merged.",
+      "GDP's single-file sprint object has not been migrated to folder OCP.",
+      "tercer-ambito/etica formal OCP/control classification remains pending."
+    ]
+  }
 }
