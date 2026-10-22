@@ -338,8 +338,9 @@
     "purpose": "Reinstantiation in a fresh conversation; contains canonical source acquisition, no-workflows instruction, current M25 state and responsibility-transfer guard."
   },
   "followup_readbacks": {
-    "planned_commit": "single atomic commit prepared; exact read-back to be verified after ref update",
-    "updated_blobs": {
+    "status": "VERIFIED_FROM_MAIN",
+    "quick_scope": "Fetched current main content after ref update for dialogue, chronicle, output, README, prompt and Metacanon. No workflows were executed, queried or polled.",
+    "verified_blobs": {
       "dialogue": "9b0f7fe281a38a3595edd421620f81bc7636cba8",
       "chronicle": "f74170eeb79d05e0d97e4557e4fbfdf8a5ac1c3f",
       "output": "fc5e7cf3517a3760d22ea09f0f11d6a32b621204",
@@ -347,6 +348,6 @@
       "metacanon": "cae8387a576ba4914d086a47bf57fe925717efca",
       "prompt": "6f5bd192d5928b869c5363c98fdc34c01e09b0fc"
     },
-    "validation_scope": "quick path/content/readback check only; no workflow execution or polling"
+    "note": "Evidence file itself was parsed successfully on read-back; its post-correction blob SHA is returned by the final read-back."
   }
 }
