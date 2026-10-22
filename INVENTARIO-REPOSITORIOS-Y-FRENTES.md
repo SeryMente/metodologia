@@ -27,11 +27,16 @@ Las rutas se registran por evidencia, no por uniformidad estética. Un OCP exist
 | Ruta observada antes de esta taxonomía | Clasificación actual | Acción |
 | --- | --- | --- |
 | `scripts/validate-canonical-bootstrap.py` | Infraestructura del repositorio | Permanece en raíz. |
-| `scripts/bootstrap-entorno-persistente.ps1` | Propio de Entorno Persistente por nombre y alcance, pero invocadores externos no exhaustivamente comprobados. | Conservar temporalmente la ruta raíz hasta auditar consumidores; luego decidir mover o mantener un adaptador compatible. |
-| `scripts/bootstrap-entorno-persistente-ep.ps1` | Variante de Entorno Persistente; consumidor real no demostrado. | No borrar ni consolidar sin descubrir el consumidor y comparar comportamiento. |
-| `scripts/bootstrap-cibercafe-cli.ps1` | Asociado a CIBERCAFE. | Conservar temporalmente; confirmar si su invocación/canal de distribución depende de la ruta raíz. |
+| `scripts/bootstrap-entorno-persistente.ps1` | Corte M26 en `main`: acepta `-ObserverOnly`, `-WorkRoot` y `-TerminalId`; genera `CIBERCAFE/<PC-N>/ESTADO.md` y eventos, copia el propio archivo desde `$PSCommandPath` a `<WorkRoot>\scripts\bootstrap-entorno-persistente.ps1`, y descarga/valida por commit `14756d289f1ddc4c74c6736f5aa021121158541c` + SHA-256 `19D254602AEAA17F08D9E4D09B20B665DC48588C46EB41F1C9E53F2EF62E0154` el `bootstrap-cibercafe-cli.ps1` que luego ejecuta con `-PrepareOnly`. El alcance observado es mixto EP/CIBERCAFE, no EP-only. | No mover ni consolidar; primero identificar invocadores externos y definir propietario contractual entre EP/CIBERCAFE. |
+| `scripts/bootstrap-entorno-persistente-ep.ps1` | Corte M26 en `main`: variante funcionalmente distinta que acepta `-WorkRoot`, exige identidad elevada `MantenimientoRCI`, encuentra un perfil Fila4 único y restringe el `WorkRoot` a ese perfil (por defecto `Desktop\EP`); aísla configuración, cachés y TEMP. Invocador directo no verificado. | Conservar ruta y variante separadas; no consolidar con el bootstrap general sin rastrear consumidor y comparar contratos/pruebas. |
+| `scripts/bootstrap-cibercafe-cli.ps1` | `CIBERCAFE/PC-4/ESTADO.md` lo declara script canónico y registra commit probado `14756d289f1ddc4c74c6736f5aa021121158541c` + SHA-256 `19D254602AEAA17F08D9E4D09B20B665DC48588C46EB41F1C9E53F2EF62E0154`. El código valida `Desktop\metodologia`, exige dentro del clon la ruta exacta `scripts\bootstrap-cibercafe-cli.ps1` y lee `SI-METACOGNITIVO.md`/`METODOLOGIA.md`. El bootstrap general de arriba ejecuta una descarga de este script fijada por commit/hash. | Mantener ruta raíz. Un traslado rompería la autocomprobación de ruta salvo que se diseñe y pruebe una compatibilidad explícita. |
 | `scripts/clone-public-repo-to-desktop.ps1` | Utilidad candidata a compartida; número de consumidores sin verificar. | No mover hasta demostrar su alcance real. |
 | `scripts/obs-chrome-camera-fix.ps1` | Utilidad de entorno; propietario/consumidores aún no confirmados. | No mover hasta identificar su alcance y punto de invocación. |
+
+
+### Corte M26 · referencias y dependencias rápidas (2026-10-22)
+
+La lectura directa de los tres scripts y de `CIBERCAFE/PC-4/ESTADO.md` confirma el vínculo interno entre el bootstrap general de Entorno Persistente y el CLI canónico de CIBERCAFE, además de dos contratos EP distintos. La búsqueda de código conectada no devolvió coincidencias para los nombres de archivo; como la indexación/cobertura de búsqueda no está demostrada, ese cero **no acredita ausencia de invocadores**. No se obtuvo una lista exhaustiva de consumidores externos. Los tres archivos se conservan en `scripts/`; no se ha movido ni consolidado código. No se consultaron ni ejecutaron workflows.
 
 ## Regla de mantenimiento
 
