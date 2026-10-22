@@ -20,7 +20,7 @@
   "transfer": {
     "event_id": "C-METACANON-REINSTANTANCIACION-M26",
     "cycle_folio": "C-20261022-D49F7B2C",
-    "status": "transferred_pending_readback",
+    "status": "transferred",
     "recorded_on": "2026-10-22",
     "authorization": {
       "status": "explicit",
@@ -58,6 +58,16 @@
       "exact_code_search_result_count": 0,
       "declared_scope": "exact code search across accessible SeryMente repositories plus four readable CONTROL-RESPONSABILIDAD.json controls; not proof of global uniqueness",
       "unverified_path": "SeryMente/personal:frentes/repertorio-canto-personal/CONTROL-RESPONSABILIDAD.json returned NOT_FOUND and is not counted as checked"
+    },
+    "verification": {
+      "status": "read_back_verified",
+      "control_blob_sha_after_first_write": "e9b06b4ffed0e7e79119a10e54672b9c84eac497",
+      "owner_thread_matches": true,
+      "instance_matches": true,
+      "session_folio_matches": true,
+      "generation_matches": true,
+      "authorization_record_matches": true,
+      "verified_on": "2026-10-22"
     }
   },
   "session_folio": "SES-20261022-5E7C91A4",
@@ -191,7 +201,8 @@
       "receiver_identity_kind": "operator-authorized operational alias; native conversation ID unavailable",
       "authorization_scope": "Metacanon/front frentes/metacanon/ transfer to new session only",
       "authorization_verbatim": "Si",
-      "method": "contents API update conditioned on observed blob SHA, followed by canonical read-back"
+      "method": "contents API update conditioned on observed blob SHA, followed by canonical read-back",
+      "status": "transferred"
     }
   ],
   "previous_transfer": {
