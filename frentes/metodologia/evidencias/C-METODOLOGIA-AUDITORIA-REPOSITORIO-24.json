@@ -194,38 +194,40 @@
       "readme_blob_sha": "3910737c7dcc6a384fd84cf8f55ecedea7940833"
     },
     "static_assertions": {
-      "status": "key content assertions manually evaluated against main reads",
+      "status": "manually evaluated against read-back content from main; do not equate to CI",
       "passed": [
         "Sam v339 / NX-339m, P001 cascade and P038 anchor",
-        "Root SI legacy banner, version/name, historical gate and RDC markers",
+        "Root SI legacy banner/version/name, historical gate and RDC markers",
         "Archive pointer points to root SI and avoids a second full copy",
         "INICIO and bootstrap link to current Sam, Metacanon and GOW",
         "Output contract v1.7.7 and fields RA/F",
-        "RDC annex paths and handshake markers"
+        "RDC annex paths and handshake markers",
+        "Root README internal links resolve 40/40",
+        "Active OCP manifest points at the current OCP README SHA"
       ],
-      "note": "The JSON schema check should be executed by Python/CI itself; the manual in-tool check does not claim the CI run passed."
+      "note": "The Python validator and GitHub Actions themselves must pass to claim automated validation."
     },
     "github_actions": {
-      "last_checked_commit": "3e47165cccfeaa12bb41903fa6cb9b32b2ef6e99",
+      "last_checked_commit": "8fe03cdc52c0d5f0371d465877e2abd3b5e1f05f",
       "runs": [
         {
           "workflow": "validate-canonical-bootstrap",
-          "run_id": 39716795724,
+          "run_id": 39717006007,
           "conclusion": "failure",
-          "logs": "unavailable; job step list empty and log download returned BlobNotFound",
-          "url": "https://github.com/SeryMente/metodologia/actions/runs/39716795724"
+          "logs": "unavailable; job has no steps in the returned payload and download returns BlobNotFound",
+          "url": "https://github.com/SeryMente/metodologia/actions/runs/39717006007"
         },
         {
           "workflow": "Validate RDC Governance",
-          "run_id": 39716795737,
+          "run_id": 39717006042,
           "conclusion": "failure",
-          "logs": "unavailable; job step list empty and log download returned BlobNotFound",
-          "url": "https://github.com/SeryMente/metodologia/actions/runs/39716795737"
+          "logs": "unavailable; job has no steps in the returned payload and download returns BlobNotFound",
+          "url": "https://github.com/SeryMente/metodologia/actions/runs/39717006042"
         }
       ],
       "ci_pass_claimed": false,
       "latest_failure_rechecked": true,
-      "note": "Static checks of the principal assertions were evaluated from current main reads, but do not substitute for Actions PASS. The precise failure cause remains unverified because GitHub's job log blobs are unavailable."
+      "note": "These failed runs correspond to the read-back-complete M24 state on commit 8fe03cdc52c0d5f0371d465877e2abd3b5e1f05f. Static assertions were also evaluated from repository reads, but do not substitute for Actions PASS. The exact failure cause remains unverified because GitHub's job log blobs are unavailable."
     },
     "legacy_si_compatibility": {
       "root_path": "SI-METACOGNITIVO.md",
