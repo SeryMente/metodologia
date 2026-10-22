@@ -37,4 +37,4 @@ Las rutas se registran por evidencia, no por uniformidad estética. Un OCP exist
 
 Actualizar este inventario en la misma migración que cree, mueva o retire un OCP/recurso. En cada repositorio, el README o punto de entrada local indica sus OCP conocidos y áreas auxiliares; este inventario central registra la visión entre repositorios. No es un segundo control de responsabilidad ni sustituye el estado vivo de ningún frente.
 
-Para las reglas normativas vigentes, consultar [Metacanon §51](METACANON-OBJETOS-CANONICOS.md#51-taxonomia-de-organizacion-repositorios-frentes-y-recursos). El inventario no implica sincronización automática entre repositorios, no certifica una enumeración completa de la organización y no autoriza movimientos adicionales.
+Para las reglas normativas vigentes, consultar [Metacanon](METACANON-OBJETOS-CANONICOS.md) §51. El inventario no implica sincronización automática entre repositorios, no certifica una enumeración completa de la organización y no autoriza movimientos adicionales.
