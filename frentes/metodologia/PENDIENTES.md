@@ -23,6 +23,7 @@ Primero lo urgente y después la mejora continua. Conservar las notas de lo que 
 - **DOC-01 · Requisito ratificado:** el frente contiene copias de los documentos producidos en aplicaciones especializadas. GitHub sostiene la persistencia transversal de la organización SeryMente; las aplicaciones son superficies de trabajo, no una dependencia exclusiva.
 - **GLOS-01 · Requisito ratificado:** «frente de trabajo» es la denominación corta de «objeto canónico de persistencia de frente de trabajo». Enumerar formalmente sus características generales a partir de la práctica de estas semanas, no inventar complejidad por anticipación.
 - **GOB-02 · Parcial:** el metaprompt de Samantha es el gobierno general del repositorio y la organización, como el mismo documento sincronizado, no un gobierno paralelo. El espejo actual v333 se coteja con la fuente; las referencias v332 documentan la migración anterior.
+- **SAM-ATOM-01 · Especificación registrada; auditoría pendiente:** revisar los 40 principios vigentes de Sam según Metacanon §50: folio Pnnn sin renumeración, peso 0–1, título «Principio D…», enunciado atómico de hasta 300 caracteres, redundancia, anexos tipificados por definir, alcance por plataforma y enlaces bidireccionales. Sam permanece v339 · NX-339m; no se ha reescrito en el ciclo M23. La auditoría completa y cualquier enmienda siguen pendientes.
 
 ## Diferidos explícitamente
 
