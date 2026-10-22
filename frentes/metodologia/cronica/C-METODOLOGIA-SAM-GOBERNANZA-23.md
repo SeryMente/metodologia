@@ -58,7 +58,7 @@ La referencia aporta un patrón de **hipertexto ubicuo con enlaces bidireccional
 - **README OCP:** blob SHA `54c59cb7fb81e04132fb9b8e0f1216ea77982d14`; se actualizó versión y el puntero a la última salida persistida.
 - **PENDIENTES.md:** blob SHA `ce9278319026d42cfcc2ecfaa548db441defb8f1`; se agregó `SAM-ATOM-01` como auditoría pendiente.
 - **Manifiesto activo de continuidad:** blob SHA `41f95759839eec1c9bbb323b5d662bfb0660702f`; los dos campos de puntero vivo al README se refrescaron de `b84fa52d4aa10a527c779bea2c6df26a70e1d894` a `54c59cb7fb81e04132fb9b8e0f1216ea77982d14`. La razón y ambos valores quedaron anotados en `live_pointer_refresh`; el JSON de evidencia M22 continúa siendo la evidencia histórica de aquella ejecución.
-- **Salida §4 de diez campos:** blob SHA `2557bfb01034a7d371e2a8e499b2b074f5d5e204`.
+- **Salida §4 de diez campos, revisada para registrar la regresión final:** blob SHA `49ccf34735ca3fa61b5ec392220e6060b944f202`. La primera persistencia fue el blob `2557bfb01034a7d371e2a8e499b2b074f5d5e204`; quedó supersedida por la actualización que incorpora PASS 17/17.
 - **Sam:** sin cambio; sigue v339 · NX-339m, blob SHA `fdc996078bd611492e46d6b3abf569fbb4a6effa`.
 
 ## 6. Validación y corrección durante la regresión
