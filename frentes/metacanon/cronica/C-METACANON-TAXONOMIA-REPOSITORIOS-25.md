@@ -31,3 +31,7 @@ El repositorio ya mostraba el OCP activo `frentes/metacanon/`, un puntero en `fr
 - Los workflows centrales de Metodología fallaron en el corte consultado y los jobs no expusieron pasos/logs. Se registran también los fallos observados de KHORA/GDP y el fallo del contrato público v1.7.0 en OGP. Ninguno se presenta como PASS.
 
 La [salida final §4](../entregas/CHATGPT-v0.3/C-METACANON-TAXONOMIA-REPOSITORIOS-25-salida-final.md) contiene el resumen operacional completo. La [evidencia JSON](../evidencias/C-METACANON-TAXONOMIA-REPOSITORIOS-25.json) aporta SHA de blobs y estado de las lecturas de vuelta.
+
+## Instrucción posterior del operador · validación rápida
+
+Dictado literal añadido al diálogo: “Si vas a validar valida rapida no te tarde shoras”. Alcance operativo: mantener la comprobación proporcional y rápida; no extender la validación a una auditoría exhaustiva. La taxonomía/renombre ya ejecutados no se repiten ni se revierten.
