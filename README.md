@@ -42,7 +42,7 @@ Consulta estos documentos cuando la tarea pertenezca a su ámbito; no es necesar
 
 ## Compatibilidad histórica
 
-- [SI-METACOGNITIVO.md](SI-METACOGNITIVO.md) es un puntero a un sistema anterior archivado; **no es el gobierno vigente**.
+- [SI-METACOGNITIVO.md](SI-METACOGNITIVO.md) conserva temporalmente el texto legado completo con banner **GOBIERNO GENERAL SUPERSEDIDO** porque KHORA aún lo consume en `CANONICAL_SI_PATH`; no es el gobierno general vigente de Metodología. Su [puntero de archivo](gobernanza/antecedentes/SI-METACOGNITIVO-v1.6.21-historico.md) conserva esa distinción. No retirar esta compatibilidad hasta migrar y probar KHORA.
 - [CONTINUIDAD-ENTRE-CONVERSACIONES.md](CONTINUIDAD-ENTRE-CONVERSACIONES.md) es un puntero a una guía anterior. Para arrancar, usa `INICIO.md` y `BOOTSTRAP-CONTEXTO-GLOBAL.md`.
 
 Las conversaciones originales, crónicas, evidencias y entregas versionadas de cada frente se conservan bajo sus carpetas correspondientes. Sus contenidos históricos no deben cargarse todos por defecto ni convertirse en normas solo por existir.
