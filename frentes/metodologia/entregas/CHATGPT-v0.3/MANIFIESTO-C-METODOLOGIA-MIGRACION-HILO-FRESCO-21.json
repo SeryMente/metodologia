@@ -89,7 +89,7 @@
     },
     "ocp_entrypoint": {
       "path": "frentes/metodologia/README.md",
-      "blob": "54c59cb7fb81e04132fb9b8e0f1216ea77982d14"
+      "blob": "c65304a96a642a387615a6c671d4032beb271976"
     },
     "e2e_test": {
       "path": "frentes/metodologia/pruebas/continuidad/C-METODOLOGIA-VERBATIM-E2E-22.cjs",
@@ -160,7 +160,7 @@
     },
     "ocp_entrypoint": {
       "path": "frentes/metodologia/README.md",
-      "blob": "54c59cb7fb81e04132fb9b8e0f1216ea77982d14"
+      "blob": "c65304a96a642a387615a6c671d4032beb271976"
     },
     "reusable_prompt": {
       "path": "frentes/metodologia/entregas/CHATGPT-v0.3/PROMPT-CONTINUIDAD-METODOLOGIA-VERBATIM-E2E-22.txt",
@@ -239,11 +239,31 @@
     ]
   },
   "live_pointer_refresh": {
-    "event": "C-METODOLOGIA-SAM-GOBERNANZA-23",
-    "reason": "README is the live OCP navigation pointer; Metacanon v1.20 and the M23 output supersede its former navigation links. The M22 evidence JSON remains the historical evidence of the M22 test cut.",
-    "prior_blob": "b84fa52d4aa10a527c779bea2c6df26a70e1d894",
-    "current_blob": "54c59cb7fb81e04132fb9b8e0f1216ea77982d14",
+    "event": "C-METODOLOGIA-AUDITORIA-REPOSITORIO-24",
+    "reason": "README is the live OCP navigation pointer and now points to the latest persisted M24 output, verbatim dialogue, chronicle and evidence. The M21/M22 manifest history remains historical; only the live OCP pointer is refreshed.",
+    "prior_blob": "54c59cb7fb81e04132fb9b8e0f1216ea77982d14",
+    "current_blob": "c65304a96a642a387615a6c671d4032beb271976",
     "updated_at": "2026-10-21",
     "status": "persisted_and_readback_verified"
+  },
+  "live_pointer_refresh_history": [
+    {
+      "event": "C-METODOLOGIA-SAM-GOBERNANZA-23",
+      "reason": "README is the live OCP navigation pointer; Metacanon v1.20 and the M23 output supersede its former navigation links. The M22 evidence JSON remains the historical evidence of the M22 test cut.",
+      "prior_blob": "b84fa52d4aa10a527c779bea2c6df26a70e1d894",
+      "current_blob": "54c59cb7fb81e04132fb9b8e0f1216ea77982d14",
+      "updated_at": "2026-10-21",
+      "status": "persisted_and_readback_verified"
+    }
+  ],
+  "current_ocp_navigation": {
+    "event": "C-METODOLOGIA-AUDITORIA-REPOSITORIO-24",
+    "path": "frentes/metodologia/README.md",
+    "blob": "c65304a96a642a387615a6c671d4032beb271976",
+    "latest_output": "frentes/metodologia/entregas/CHATGPT-v0.3/C-METODOLOGIA-AUDITORIA-REPOSITORIO-24-salida-final.md",
+    "latest_dialogue": "frentes/metodologia/conversaciones/C-METODOLOGIA-AUDITORIA-REPOSITORIO-24-dialogo.jsonl",
+    "latest_chronicle": "frentes/metodologia/cronica/C-METODOLOGIA-AUDITORIA-REPOSITORIO-24.md",
+    "evidence": "frentes/metodologia/evidencias/C-METODOLOGIA-AUDITORIA-REPOSITORIO-24.json",
+    "scope_note": "Solo se reconcilia el puntero vivo del OCP; el evento raíz del manifiesto continúa siendo la transferencia M21 y su historia M22."
   }
 }
