@@ -351,7 +351,7 @@ Siguiente paso: <siguiente paso at贸mico citado de la VCU, o "ninguno urgente 鈥
 ---
 
 <a id="representaci贸n-estructurada-para-m谩quinas"></a>
-## III. REPRESENTACI脫N ESTRUCTURADA PARA M脕QUINAS
+## II. Representaci贸n estructurada para m谩quinas
 
 Esta secci贸n se deriva de la secci贸n humana de este mismo archivo. Los textos normativos se conservan y cada registro enlaza con su ancla humana. No constituye una fuente normativa independiente.
 
