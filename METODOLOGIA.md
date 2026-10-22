@@ -194,13 +194,13 @@ El encabezado metodológico de un ciclo debe permitir identificar conjuntamente:
 8. Nombre de versión de la Metodología.
 9. Último cambio canónico de la Metodología.
 
-Las identidades del SI y de la Metodología son independientes y no deben intercambiarse ni derivarse una de la otra.
+La identidad del gobierno general vigente (Sam) y la identidad de la Metodología son distintas y no deben intercambiarse ni derivarse una de la otra. La ficha histórica del SI se mantiene solo por compatibilidad del consumidor KHORA.
 
 ## 4.0 Frescura del gobierno vigente y compatibilidad heredada
 
 Cada ciclo debe adquirir el gobierno general vigente de Sam con doble lectura de `main`: `H1` → recuperar `gobernanza/METAPROMPT-CANONICO-SAMANTHA.md` exactamente en `H1` → `H2`. La frescura solo puede declararse positiva cuando `H1 = H2`, la versión `v339`, la firma `NX-339m` y el blob SHA corresponden a la misma instantánea. No se aceptan cachés no demostradas ni copias de turnos anteriores. Si `H1 ≠ H2` o falla cualquier comprobación, la frescura está no verificada y el gobierno general no puede declararse adquirido.
 
-La identidad activa se obtiene de la versión y firma declaradas por Sam en la instantánea exacta. `SI-METACOGNITIVO.md` es un puntero al régimen histórico; no es una fuente normativa activa. **Compatibilidad pendiente:** `FORMATO-REGISTRO-VERIFICACION-CICLO.md` y su esquema v1.7.7 aún conservan campos y terminología del contrato anterior (`SI CARGADO`, `H1 → SI@H1`). Se preservan temporalmente para no romper consumidores no auditados; no se deben usar como evidencia de que el SI histórico gobierna el ciclo. La migración completa de ese contrato queda pendiente de auditar sus consumidores.
+La identidad activa se obtiene de la versión y firma declaradas por Sam en la instantánea exacta. `SI-METACOGNITIVO.md` conserva el texto legado completo con el banner `GOBIERNO GENERAL SUPERSEDIDO` porque KHORA aún lo consume como `CANONICAL_SI_PATH`; esto es compatibilidad técnica, no autoridad general sobre Metodología. `gobernanza/antecedentes/SI-METACOGNITIVO-v1.6.21-historico.md` es un puntero al archivo raíz. **Compatibilidad pendiente:** `FORMATO-REGISTRO-VERIFICACION-CICLO.md` y su esquema v1.7.7 todavía conservan los campos `SI CARGADO` y `H1 → SI@H1`. KHORA mantiene una copia local del mismo esquema y una prueba de sincronización exacta; cualquier cambio requiere migración versionada coordinada y pruebas del consumidor. El contrato no se altera en este ciclo.
 
 ## 4.1 Gate de ejecución cognitiva
 
@@ -212,7 +212,7 @@ Ese anexo es obligatorio para todo ciclo cuya plataforma sea ChatGPT.
 
 El **gobierno general vigente** es el [Metaprompt Canónico de Samantha (Sam)](gobernanza/METAPROMPT-CANONICO-SAMANTHA.md), v339 · NX-339m. Su principio de cascada vigente es P001; la fuente y la precedencia documental se explican en [gobernanza/README.md](gobernanza/README.md).
 
-`SI-METACOGNITIVO.md` se conserva únicamente como puntero de compatibilidad al régimen histórico supersedido. El texto íntegro del SI anterior está archivado en [gobernanza/antecedentes/SI-METACOGNITIVO-v1.6.21-historico.md](gobernanza/antecedentes/SI-METACOGNITIVO-v1.6.21-historico.md); sus versiones y gates no son el gobierno general vigente y no deben reactivarse por una referencia antigua.
+`SI-METACOGNITIVO.md` se conserva únicamente como archivo legado de compatibilidad, con el banner `GOBIERNO GENERAL SUPERSEDIDO`; no es el gobierno general vigente. KHORA todavía consume esta ruta, por lo que su retiro o reducción requiere migrar y probar primero `CANONICAL_SI_PATH`. El puntero [histórico](gobernanza/antecedentes/SI-METACOGNITIVO-v1.6.21-historico.md) remite al archivo raíz, no crea una segunda copia ni autoridad.
 
 La metodología mantiene separadas las normas fundamentales de sus desarrollos, procedimientos, herramientas y mecanismos de implementación.
 
