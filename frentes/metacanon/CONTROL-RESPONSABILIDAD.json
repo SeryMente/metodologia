@@ -2,82 +2,84 @@
   "schema": "responsabilidad/1",
   "front": "metacanon",
   "status": "owned",
-  "owner_thread": "chatgpt-C-METODOLOGIA-MIGRACION-HILO-FRESCO-21-SES-20261021-6B9E2F41",
-  "instance": "chatgpt-metodologia-metacanon-migracion21-6B9E2F41",
-  "generation": 3,
-  "authorization_ref": "METACANON-OBJETOS-CANONICOS.md#42-M42; autorización explícita de transferencia registrada en CONTROL-RESPONSABILIDAD.json/handoff_preparation para C-METODOLOGIA-MIGRACION-HILO-FRESCO-21; identidad del destino como alias operativo, ID nativo no expuesto.",
-  "scope": "one active owner; generation 3 supersedes generation 2 by explicit operator authorization for C-METODOLOGIA-MIGRACION-HILO-FRESCO-21; owner_thread is an operational alias, not a native platform thread ID; cooperative preflight, not server-enforced fencing of arbitrary repository writes",
+  "owner_thread": "chatgpt-C-METACANON-REINSTANTANCIACION-M26-SES-20261022-5E7C91A4",
+  "instance": "chatgpt-metacanon-reinstanciacion-m26-2026-10-22",
+  "generation": 4,
+  "authorization_ref": "C-METACANON-REINSTANTANCIACION-M26; explicit operator authorization in this conversation; METACANON-OBJETOS-CANONICOS.md#42-M42; Sam P037.",
+  "scope": "one active owner; generation 3 supersedes generation 2 by explicit operator authorization for C-METACANON-REINSTANTANCIACION-M26; owner_thread is an operational alias, not a native platform thread ID; cooperative preflight, not server-enforced fencing of arbitrary repository writes",
   "expiry": null,
-  "handoff": "Transferred in C-METODOLOGIA-MIGRACION-HILO-FRESCO-21 from operator-authorized-transfer:C-METODOLOGIA-COLISION-RESPONSABILIDAD-14 (instance chatgpt-metacanon-collision-remediation-2026-10-21, generation 2, folio SES-20261021-C4D81A7F) to chatgpt-C-METODOLOGIA-MIGRACION-HILO-FRESCO-21-SES-20261021-6B9E2F41 (instance chatgpt-metodologia-metacanon-migracion21-6B9E2F41, generation 3, folio SES-20261021-6B9E2F41); conditioned on observed control blob SHA 3125ea6a222d531f479292b69bd68c34b82f1ee7 and verified by canonical read-back. Alias is operational, not a native platform ID. This registry is cooperative, not universal writer fencing.",
+  "handoff": "Transferred in C-METACANON-REINSTANTANCIACION-M26 from chatgpt-C-METODOLOGIA-MIGRACION-HILO-FRESCO-21-SES-20261021-6B9E2F41 (instance chatgpt-metodologia-metacanon-migracion21-6B9E2F41, generation 3, folio SES-20261021-6B9E2F41) to chatgpt-C-METACANON-REINSTANTANCIACION-M26-SES-20261022-5E7C91A4 (instance chatgpt-metacanon-reinstanciacion-m26-2026-10-22, generation 4, folio SES-20261022-5E7C91A4); operator answered \"Si\" to: \"¿Autorizas transferir el frente Metacanon desde el titular/folio activo que consta en el control a esta nueva sesión?\" on 2026-10-22; conditioned on observed control blob SHA 1d857624215d8825e784e0ffed671213b2f0271a; canonical read-back required and performed after write. Alias is operational, not a native platform ID. This registry is cooperative, not universal writer fencing.",
   "previous_owner": {
-    "owner_thread": "operator-authorized-transfer:C-METODOLOGIA-COLISION-RESPONSABILIDAD-14",
-    "instance": "chatgpt-metacanon-collision-remediation-2026-10-21",
-    "generation": 2,
-    "session_folio": "SES-20261021-C4D81A7F",
-    "observed_blob_sha": "3125ea6a222d531f479292b69bd68c34b82f1ee7",
+    "owner_thread": "chatgpt-C-METODOLOGIA-MIGRACION-HILO-FRESCO-21-SES-20261021-6B9E2F41",
+    "instance": "chatgpt-metodologia-metacanon-migracion21-6B9E2F41",
+    "generation": 3,
+    "session_folio": "SES-20261021-6B9E2F41",
+    "observed_blob_sha": "1d857624215d8825e784e0ffed671213b2f0271a",
     "status": "owned"
   },
   "transfer": {
-    "event_id": "C-METODOLOGIA-MIGRACION-HILO-FRESCO-21",
-    "status": "transferred",
-    "recorded_on": "2026-10-21",
+    "event_id": "C-METACANON-REINSTANTANCIACION-M26",
+    "cycle_folio": "C-20261022-D49F7B2C",
+    "status": "transferred_pending_readback",
+    "recorded_on": "2026-10-22",
     "authorization": {
       "status": "explicit",
-      "verbatim": "Actualiza OCP para migrar instancia a hilo fresco y dame el prompt que necesito para reinstanciar",
-      "scope": "single transfer of Metodología/Metacanon only"
+      "question_verbatim": "¿Autorizas transferir el frente Metacanon desde el titular/folio activo que consta en el control a esta nueva sesión?",
+      "response_verbatim": "Si",
+      "scope": "single transfer of Metacanon/front frentes/metacanon/ to this fresh session only"
     },
     "from": {
-      "owner_thread": "operator-authorized-transfer:C-METODOLOGIA-COLISION-RESPONSABILIDAD-14",
-      "instance": "chatgpt-metacanon-collision-remediation-2026-10-21",
-      "generation": 2,
-      "session_folio": "SES-20261021-C4D81A7F",
-      "observed_blob_sha": "3125ea6a222d531f479292b69bd68c34b82f1ee7",
-      "status": "owned"
-    },
-    "to": {
       "owner_thread": "chatgpt-C-METODOLOGIA-MIGRACION-HILO-FRESCO-21-SES-20261021-6B9E2F41",
       "instance": "chatgpt-metodologia-metacanon-migracion21-6B9E2F41",
       "generation": 3,
       "session_folio": "SES-20261021-6B9E2F41",
+      "status": "owned",
+      "observed_blob_sha": "1d857624215d8825e784e0ffed671213b2f0271a"
+    },
+    "to": {
+      "owner_thread": "chatgpt-C-METACANON-REINSTANTANCIACION-M26-SES-20261022-5E7C91A4",
+      "instance": "chatgpt-metacanon-reinstanciacion-m26-2026-10-22",
+      "generation": 4,
+      "session_folio": "SES-20261022-5E7C91A4",
       "identity_kind": "operational alias; native conversation ID unavailable"
     },
-    "observed_control_blob_sha": "3125ea6a222d531f479292b69bd68c34b82f1ee7",
-    "observed_source_generation": 2,
-    "new_generation": 3,
+    "observed_control_blob_sha": "1d857624215d8825e784e0ffed671213b2f0271a",
+    "observed_source_generation": 3,
+    "new_generation": 4,
     "method": "SHA-conditioned GitHub contents update using observed current blob SHA, followed by canonical read-back",
     "collision_check": {
-      "candidate_folio": "SES-20261021-6B9E2F41",
+      "candidate_folio": "SES-20261022-5E7C91A4",
       "checked_controls": [
+        "SeryMente/metodologia:frentes/metacanon/CONTROL-RESPONSABILIDAD.json",
         "SeryMente/khora:docs/frentes/harmonia/CONTROL-RESPONSABILIDAD.json",
         "SeryMente/signal-interpreter:docs/frentes/signal-interpreter/CONTROL-RESPONSABILIDAD.json",
-        "SeryMente/metodologia:frentes/acceso/CONTROL-RESPONSABILIDAD.json",
-        "SeryMente/metodologia:frentes/metodologia/CONTROL-RESPONSABILIDAD.json"
+        "SeryMente/metodologia:frentes/acceso/CONTROL-RESPONSABILIDAD.json"
       ],
       "exact_code_search_result_count": 0,
-      "declared_scope": "four readable CONTROL-RESPONSABILIDAD.json files and code search across the nine accessible SeryMente repositories; does not prove global uniqueness",
-      "unverified_path": "SeryMente/personal:frentes/repertorio-canto-personal/CONTROL-RESPONSABILIDAD.json returned NOT_FOUND"
+      "declared_scope": "exact code search across accessible SeryMente repositories plus four readable CONTROL-RESPONSABILIDAD.json controls; not proof of global uniqueness",
+      "unverified_path": "SeryMente/personal:frentes/repertorio-canto-personal/CONTROL-RESPONSABILIDAD.json returned NOT_FOUND and is not counted as checked"
     }
   },
-  "session_folio": "SES-20261021-6B9E2F41",
+  "session_folio": "SES-20261022-5E7C91A4",
   "session_assignment": {
     "status": "active",
-    "folio": "SES-20261021-6B9E2F41",
-    "assigned_on": "2026-10-21",
+    "folio": "SES-20261022-5E7C91A4",
+    "assigned_on": "2026-10-22",
     "front_ocp": "frentes/metacanon/",
-    "owner_alias": "chatgpt-C-METODOLOGIA-MIGRACION-HILO-FRESCO-21-SES-20261021-6B9E2F41",
-    "instance": "chatgpt-metodologia-metacanon-migracion21-6B9E2F41",
-    "generation": 3,
+    "owner_alias": "chatgpt-C-METACANON-REINSTANTANCIACION-M26-SES-20261022-5E7C91A4",
+    "instance": "chatgpt-metacanon-reinstanciacion-m26-2026-10-22",
+    "generation": 4,
     "identity_kind": "operational session folio; not a native ChatGPT conversation ID",
-    "uniqueness_check": "Manual check on 2026-10-21: no matching folio in the four readable controls listed below and exact code search across accessible SeryMente repositories returned zero matches. The attempted personal OCP control path returned NOT_FOUND. The nine-repository inventory is accessible scope, not proof of all organization repositories; no global uniqueness or server-enforced exclusivity is claimed.",
-    "source_sha_before": "3125ea6a222d531f479292b69bd68c34b82f1ee7",
+    "uniqueness_check": "Manual check on 2026-10-22: exact code search returned zero results for SES-20261022-5E7C91A4; checked four readable CONTROL-RESPONSABILIDAD.json files as listed in transfer.collision_check. The attempted personal OCP control path returned NOT_FOUND. The accessible scope is not proof of global uniqueness or server-enforced exclusivity.",
+    "source_sha_before": "1d857624215d8825e784e0ffed671213b2f0271a",
     "checked_control_scope": [
+      "SeryMente/metodologia:frentes/metacanon/CONTROL-RESPONSABILIDAD.json",
       "SeryMente/khora:docs/frentes/harmonia/CONTROL-RESPONSABILIDAD.json",
       "SeryMente/signal-interpreter:docs/frentes/signal-interpreter/CONTROL-RESPONSABILIDAD.json",
-      "SeryMente/metodologia:frentes/acceso/CONTROL-RESPONSABILIDAD.json",
-      "SeryMente/metodologia:frentes/metodologia/CONTROL-RESPONSABILIDAD.json"
+      "SeryMente/metodologia:frentes/acceso/CONTROL-RESPONSABILIDAD.json"
     ],
     "unverified_control_paths": [
-      "SeryMente/personal:frentes/repertorio-canto-personal/CONTROL-RESPONSABILIDAD.json (NOT_FOUND; not counted as checked)"
+      "SeryMente/personal:frentes/repertorio-canto-personal/CONTROL-RESPONSABILIDAD.json returned NOT_FOUND and is not counted as checked"
     ]
   },
   "handoff_preparation": {
@@ -143,24 +145,35 @@
       "session_folio": "SES-20261021-C4D81A7F",
       "observed_blob_sha": "3125ea6a222d531f479292b69bd68c34b82f1ee7",
       "status": "owned"
+    },
+    {
+      "owner_thread": "chatgpt-C-METODOLOGIA-MIGRACION-HILO-FRESCO-21-SES-20261021-6B9E2F41",
+      "instance": "chatgpt-metodologia-metacanon-migracion21-6B9E2F41",
+      "generation": 3,
+      "session_folio": "SES-20261021-6B9E2F41",
+      "observed_blob_sha": "1d857624215d8825e784e0ffed671213b2f0271a",
+      "status": "superseded_by_explicit_transfer"
     }
   ],
   "previous_session_assignment": {
     "status": "active",
-    "folio": "SES-20261021-C4D81A7F",
+    "folio": "SES-20261021-6B9E2F41",
     "assigned_on": "2026-10-21",
     "front_ocp": "frentes/metacanon/",
-    "owner_alias": "operator-authorized-transfer:C-METODOLOGIA-COLISION-RESPONSABILIDAD-14",
-    "instance": "chatgpt-metacanon-collision-remediation-2026-10-21",
-    "generation": 2,
+    "owner_alias": "chatgpt-C-METODOLOGIA-MIGRACION-HILO-FRESCO-21-SES-20261021-6B9E2F41",
+    "instance": "chatgpt-metodologia-metacanon-migracion21-6B9E2F41",
+    "generation": 3,
     "identity_kind": "operational session folio; not a native ChatGPT conversation ID",
-    "uniqueness_check": "Manual cross-control check completed on 2026-10-21: no matching folio found in the four accessible CONTROL-RESPONSABILIDAD.json files across SeryMente/khora (Harmonia), SeryMente/signal-interpreter, and SeryMente/metodologia (acceso, metodologia). The tool exposed nine repositories owned by SeryMente but no organization membership listing; other repositories did not expose a recognized control path in the inspected tree. This proves no duplicate only within the checked controls, not organization-wide uniqueness or server-enforced exclusivity.",
-    "source_sha_before": "50e444c86342226362392e5fc2fe243fed751857",
+    "uniqueness_check": "Manual check on 2026-10-21: no matching folio in the four readable controls listed below and exact code search across accessible SeryMente repositories returned zero matches. The attempted personal OCP control path returned NOT_FOUND. The nine-repository inventory is accessible scope, not proof of all organization repositories; no global uniqueness or server-enforced exclusivity is claimed.",
+    "source_sha_before": "3125ea6a222d531f479292b69bd68c34b82f1ee7",
     "checked_control_scope": [
       "SeryMente/khora:docs/frentes/harmonia/CONTROL-RESPONSABILIDAD.json",
       "SeryMente/signal-interpreter:docs/frentes/signal-interpreter/CONTROL-RESPONSABILIDAD.json",
       "SeryMente/metodologia:frentes/acceso/CONTROL-RESPONSABILIDAD.json",
       "SeryMente/metodologia:frentes/metodologia/CONTROL-RESPONSABILIDAD.json"
+    ],
+    "unverified_control_paths": [
+      "SeryMente/personal:frentes/repertorio-canto-personal/CONTROL-RESPONSABILIDAD.json (NOT_FOUND; not counted as checked)"
     ]
   },
   "transfer_history": [
@@ -170,6 +183,15 @@
       "receiver_identity_kind": "operator-authorized operational alias; native conversation ID unavailable",
       "authorization_scope": "Metacanon/front metodología control for this transfer only",
       "method": "contents API update conditioned on the observed Git blob SHA, followed by canonical read-back"
+    },
+    {
+      "event_id": "C-METACANON-REINSTANTANCIACION-M26",
+      "recorded_on": "2026-10-22",
+      "cycle_folio": "C-20261022-D49F7B2C",
+      "receiver_identity_kind": "operator-authorized operational alias; native conversation ID unavailable",
+      "authorization_scope": "Metacanon/front frentes/metacanon/ transfer to new session only",
+      "authorization_verbatim": "Si",
+      "method": "contents API update conditioned on observed blob SHA, followed by canonical read-back"
     }
   ],
   "previous_transfer": {
