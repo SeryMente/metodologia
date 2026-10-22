@@ -69,7 +69,7 @@ require("gobernanza/METAPROMPT-CANONICO-SAMANTHA.md" in bootstrap
         and "Metacanon §4, formato obligatorio en cada ciclo" in bootstrap
         and "gobernanza/GLOSARIO-WORKSPACE.md" in bootstrap,
         "The bootstrap must point directly to current Sam, Metacanon §4, and the GOW.")
-require("INICIO.md" in entry
+require("gobernanza/METAPROMPT-CANONICO-SAMANTHA.md" in entry
         and "METACANON-OBJETOS-CANONICOS.md" in entry
         and "GLOSARIO-WORKSPACE.md" in entry,
         "INICIO.md is missing one of the current canonical entrypoints.")
