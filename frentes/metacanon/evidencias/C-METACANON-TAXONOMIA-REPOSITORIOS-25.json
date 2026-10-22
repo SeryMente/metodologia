@@ -189,11 +189,11 @@
   "cycle_artifacts": [
     {
       "path": "frentes/metacanon/conversaciones/C-METACANON-TAXONOMIA-REPOSITORIOS-25-dialogo.jsonl",
-      "blob_sha": "202744b78f5e31fc3e908bfbe6b7a592aa9cc9ba"
+      "blob_sha": "644ce3dc0954dcc44aeb1f1ac8fd5960049492fe"
     },
     {
       "path": "frentes/metacanon/cronica/C-METACANON-TAXONOMIA-REPOSITORIOS-25.md",
-      "blob_sha": "ee8a931b5dc85fa061d3b7a7fe1d6711a0549edf"
+      "blob_sha": "f4e032598395416c25c5dc01295340e777a68e06"
     },
     {
       "path": "frentes/metacanon/entregas/CHATGPT-v0.3/C-METACANON-TAXONOMIA-REPOSITORIOS-25-salida-final.md",
@@ -261,12 +261,12 @@
       },
       "dialogue": {
         "path": "frentes/metacanon/conversaciones/C-METACANON-TAXONOMIA-REPOSITORIOS-25-dialogo.jsonl",
-        "blob_sha": "202744b78f5e31fc3e908bfbe6b7a592aa9cc9ba",
+        "blob_sha": "644ce3dc0954dcc44aeb1f1ac8fd5960049492fe",
         "operator_instructions_verbatim": 2
       },
       "chronicle": {
         "path": "frentes/metacanon/cronica/C-METACANON-TAXONOMIA-REPOSITORIOS-25.md",
-        "blob_sha": "ee8a931b5dc85fa061d3b7a7fe1d6711a0549edf"
+        "blob_sha": "f4e032598395416c25c5dc01295340e777a68e06"
       },
       "final_output": {
         "path": "frentes/metacanon/entregas/CHATGPT-v0.3/C-METACANON-TAXONOMIA-REPOSITORIOS-25-salida-final.md",
@@ -302,5 +302,10 @@
       "GDP's single-file sprint object has not been migrated to folder OCP.",
       "tercer-ambito/etica formal OCP/control classification remains pending."
     ]
+  },
+  "operator_followup": {
+    "verbatim": "Si vas a validar valida rapida no te tarde shoras",
+    "recorded": true,
+    "scope": "fast validation only; no exhaustive audit requested"
   }
 }
