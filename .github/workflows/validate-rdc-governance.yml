@@ -4,7 +4,6 @@ on:
   push:
     branches: [main]
   pull_request:
-    branches: [main]
 
 jobs:
   validate:
@@ -41,8 +40,6 @@ jobs:
           grep -Fq 'v339' gobernanza/METAPROMPT-CANONICO-SAMANTHA.md
           grep -Fq 'NX-339m' gobernanza/METAPROMPT-CANONICO-SAMANTHA.md
           grep -Fq 'puntero histórico' SI-METACOGNITIVO.md
-          grep -Fq 'v339' gobernanza/METAPROMPT-CANONICO-SAMANTHA.md
-          grep -Fq 'NX-339m' gobernanza/METAPROMPT-CANONICO-SAMANTHA.md
           grep -qi 'puntero histórico' SI-METACOGNITIVO.md
           grep -Fq 'GOBIERNO GENERAL SUPERSEDIDO' gobernanza/antecedentes/SI-METACOGNITIVO-v1.6.21-historico.md
           grep -Fq 'Metacanon §4, formato obligatorio en cada ciclo' BOOTSTRAP-CONTEXTO-GLOBAL.md
@@ -50,9 +47,7 @@ jobs:
 
           python3 scripts/validate-canonical-bootstrap.py
           grep -q 'ANTES.*KHORA\|antes.*KHORA\|antes.*HEALTH MCP.*KHORA' gobernanza/antecedentes/SI-METACOGNITIVO-v1.6.21-historico.md
-          test -f gobernanza/antecedentes/SI-METACOGNITIVO-v1.6.21-historico.md
           grep -q 'RDC-REINSTANTIAR' gobernanza/antecedentes/SI-METACOGNITIVO-v1.6.21-historico.md
-          test -f gobernanza/antecedentes/SI-METACOGNITIVO-v1.6.21-historico.md
 
           grep -q 'ESTADO-RDC-ACTIVO.md' ANEXO-GOBERNANZA-ESTADO-GLOBAL-RDC.md
           grep -q 'HANDSHAKE → VALIDAR → ESCRIBIR ESTADO GLOBAL → VERIFICAR LECTURA DE VUELTA → RESOLVER' ANEXO-GOBERNANZA-ESTADO-GLOBAL-RDC.md
@@ -63,6 +58,5 @@ jobs:
           grep -q 'READ-BACK\|read-back' ANEXO-PROCEDIMIENTO-REINSTANTIACION-RDC.md
           grep -q 'npx @wonderwhy-er/desktop-commander@latest remote' ANEXO-PROCEDIMIENTO-REINSTANTIACION-RDC.md
           grep -q 'P033 · Precedencia del Estado Operativo Global' gobernanza/antecedentes/SI-METACOGNITIVO-v1.6.21-historico.md
-          test -f gobernanza/antecedentes/SI-METACOGNITIVO-v1.6.21-historico.md
 
           echo "RDC governance invariants: PASS"
