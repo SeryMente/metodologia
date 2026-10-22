@@ -27,10 +27,10 @@
       "gobernanza",
       "scripts"
     ],
-    "root_readme_internal_links": 39,
+    "root_readme_internal_links": 40,
     "broken_root_readme_links": 0,
     "finalized_tree": {
-      "observed_head_before_final_evidence_update": "130b26e20a58e432372b2262b6724512000af538",
+      "observed_head_before_final_evidence_update": "3e47165cccfeaa12bb41903fa6cb9b32b2ef6e99",
       "tree_entries": 350,
       "blobs": 304,
       "tree_truncated": false,
@@ -50,7 +50,7 @@
       "path": "METACANON-OBJETOS-CANONICOS.md",
       "version": "1.20",
       "prior_blob_sha": "eb066d7b7445710cd96d6abb3acf2c33639d8f41",
-      "new_blob_sha": "8913c8e37c0129da6963c8dcc8c7790904d466a5"
+      "new_blob_sha": "d1a0057913a5a0ac2bde2781684d7fd0e75e18fd"
     },
     "gow": {
       "path": "gobernanza/GLOSARIO-WORKSPACE.md",
@@ -61,7 +61,7 @@
       "path": "METODOLOGIA.md",
       "prior_blob_sha": "6203e7220883d95ad19a4712f5086cce74872738",
       "cleaned_blob_sha": "5535267d56968e5866481adb59c1d2ff59ccfcc1",
-      "current_blob_sha": "d704ff30d63510a5917acddde659bb5ffd6a52cd"
+      "current_blob_sha": "f2fb95c144e7ca2c55f8fafd32940182697f7f06"
     }
   },
   "changes": [
@@ -114,13 +114,6 @@
     },
     {
       "kind": "archive_with_compatibility_pointer",
-      "from": "SI-METACOGNITIVO.md",
-      "to": "gobernanza/antecedentes/SI-METACOGNITIVO-v1.6.21-historico.md",
-      "original_blob_sha": "1c1e8746d70807ad3274bf98f723f08915585efe",
-      "rebased_blob_sha": "1d3d88768ea4847579a3bcc430135237b7485c87"
-    },
-    {
-      "kind": "archive_with_compatibility_pointer",
       "from": "CONTINUIDAD-ENTRE-CONVERSACIONES.md",
       "to": "frentes/metodologia/antecedentes/CONTINUIDAD-ENTRE-CONVERSACIONES-historico.md",
       "blob_sha": "9c8720a3c8c39e58e1e38c4dcd05689a15e9540b"
@@ -128,7 +121,7 @@
     {
       "kind": "rewrite_navigation",
       "path": "README.md",
-      "blob_sha": "b2cf491f92fe666fd7b43bf8c410e6b3e65d3785"
+      "blob_sha": "3910737c7dcc6a384fd84cf8f55ecedea7940833"
     },
     {
       "kind": "validation",
@@ -136,7 +129,32 @@
         "scripts/validate-canonical-bootstrap.py",
         ".github/workflows/validate-rdc-governance.yml"
       ],
-      "status": "static content assertions pass; Actions reported failure, logs unavailable"
+      "status": "static assertions were aligned and read-back verified; GitHub Actions still reports failure, with logs unavailable",
+      "blobs": {
+        "validator": "47eeb521034e3b6ddd17c327323fb3c5ab9a06cc",
+        "workflow": "6d2cbfa7f868c9754ab7bcd27a91d54465962893"
+      }
+    },
+    {
+      "kind": "restore_legacy_compatibility_source",
+      "path": "SI-METACOGNITIVO.md",
+      "original_blob_sha": "1c1e8746d70807ad3274bf98f723f08915585efe",
+      "current_blob_sha": "1c1e8746d70807ad3274bf98f723f08915585efe",
+      "reason": "Restored exact original blob in its established root path after verifying that KHORA main declares it as CANONICAL_SI_PATH and parses its version/name. The source includes GOBIERNO GENERAL SUPERSEDIDO; it is compatibility-only, not the current general governance authority for Metodología.",
+      "consumer": {
+        "repository": "SeryMente/khora",
+        "ref": "main",
+        "path": "khora-web/lib/server/norm-check.ts",
+        "blob_sha": "8d8293b0d140ab3b7b6f7e18c4db7e54d3daf4c4",
+        "field": "CANONICAL_SI_PATH"
+      }
+    },
+    {
+      "kind": "replace_duplicate_archive_copy_with_pointer",
+      "path": "gobernanza/antecedentes/SI-METACOGNITIVO-v1.6.21-historico.md",
+      "blob_sha": "7d94cc5957263417ad152db96709036d732c0cf1",
+      "target": "../../SI-METACOGNITIVO.md",
+      "reason": "The historic route now points to the root compatibility copy rather than storing a second full SI copy."
     }
   ],
   "rationale_for_preservation": [
@@ -160,40 +178,69 @@
         "scripts/bootstrap-entorno-persistente-ep.ps1"
       ],
       "reason": "Distinct scripts; downstream/portable use not established, so neither was deleted."
+    },
+    {
+      "pair": [
+        "SeryMente/metodologia/SI-METACOGNITIVO.md",
+        "SeryMente/khora/khora-web/lib/server/norm-check.ts"
+      ],
+      "reason": "KHORA main still consumes the root path and parses version/name; removing the full file would break its current contract. Preserve compatibility until a coordinated migration passes tests."
     }
   ],
   "validation": {
     "root_readme_links": {
-      "checked": 39,
+      "checked": 40,
       "broken": 0,
-      "readme_blob_sha": "b2cf491f92fe666fd7b43bf8c410e6b3e65d3785"
+      "readme_blob_sha": "3910737c7dcc6a384fd84cf8f55ecedea7940833"
     },
     "static_assertions": {
-      "validator": 14,
-      "rdc_workflow": 16,
-      "status": "passed by direct content evaluation against current main reads"
+      "status": "key content assertions manually evaluated against main reads",
+      "passed": [
+        "Sam v339 / NX-339m, P001 cascade and P038 anchor",
+        "Root SI legacy banner, version/name, historical gate and RDC markers",
+        "Archive pointer points to root SI and avoids a second full copy",
+        "INICIO and bootstrap link to current Sam, Metacanon and GOW",
+        "Output contract v1.7.7 and fields RA/F",
+        "RDC annex paths and handshake markers"
+      ],
+      "note": "The JSON schema check should be executed by Python/CI itself; the manual in-tool check does not claim the CI run passed."
     },
     "github_actions": {
-      "last_checked_commit": "130b26e20a58e432372b2262b6724512000af538",
+      "last_checked_commit": "3e47165cccfeaa12bb41903fa6cb9b32b2ef6e99",
       "runs": [
         {
           "workflow": "validate-canonical-bootstrap",
-          "run_id": 39715494792,
+          "run_id": 39716795724,
           "conclusion": "failure",
-          "logs": "unavailable; step list empty",
-          "url": "https://github.com/SeryMente/metodologia/actions/runs/39715494792"
+          "logs": "unavailable; job step list empty and log download returned BlobNotFound",
+          "url": "https://github.com/SeryMente/metodologia/actions/runs/39716795724"
         },
         {
           "workflow": "Validate RDC Governance",
-          "run_id": 39715494840,
+          "run_id": 39716795737,
           "conclusion": "failure",
-          "logs": "unavailable; step list empty",
-          "url": "https://github.com/SeryMente/metodologia/actions/runs/39715494840"
+          "logs": "unavailable; job step list empty and log download returned BlobNotFound",
+          "url": "https://github.com/SeryMente/metodologia/actions/runs/39716795737"
         }
       ],
       "ci_pass_claimed": false,
       "latest_failure_rechecked": true,
-      "note": "Este corte de evidencia se actualiza después de consultar los estados de estos dos runs; el commit que actualiza el recibo dispara nuevas ejecuciones, que deben comprobarse de forma independiente."
+      "note": "Static checks of the principal assertions were evaluated from current main reads, but do not substitute for Actions PASS. The precise failure cause remains unverified because GitHub's job log blobs are unavailable."
+    },
+    "legacy_si_compatibility": {
+      "root_path": "SI-METACOGNITIVO.md",
+      "root_blob_sha": "1c1e8746d70807ad3274bf98f723f08915585efe",
+      "banner": "GOBIERNO GENERAL SUPERSEDIDO",
+      "archive_pointer_path": "gobernanza/antecedentes/SI-METACOGNITIVO-v1.6.21-historico.md",
+      "archive_pointer_blob_sha": "7d94cc5957263417ad152db96709036d732c0cf1",
+      "downstream_consumer_repository": "SeryMente/khora",
+      "downstream_consumer_path": "khora-web/lib/server/norm-check.ts",
+      "consumer_blob_sha": "8d8293b0d140ab3b7b6f7e18c4db7e54d3daf4c4",
+      "schema_sync_test": "khora-web/tests/unit/methodology_contract_sync.test.ts",
+      "schema_sync_test_blob_sha": "599746d007580840909e5a1a561a9d62ce27de0b",
+      "current_schema_version": "v1.7.7",
+      "schema_blob_sha": "232590a1f6339e2517e67038e1b5f7e8bd1638e",
+      "migration_required_before_removal": true
     }
   },
   "open_items": [
@@ -201,11 +248,6 @@
       "id": "REPO-01",
       "status": "open",
       "description": "Full semantic review of the 300 repository blobs has not been performed line by line."
-    },
-    {
-      "id": "SCHEMA-01",
-      "status": "open",
-      "description": "Audit downstream consumers before migrating legacy SI fields in output contract/schema v1.7.7 to Sam identity."
     },
     {
       "id": "CI-01",
@@ -221,24 +263,34 @@
       "id": "SAM-ATOM-01",
       "status": "open",
       "description": "Audit atomicity, redundancy, and length of Sam's 40 current principles; Sam was not modified."
+    },
+    {
+      "id": "SCHEMA-01",
+      "status": "open",
+      "description": "Coordinated migration required: KHORA main uses SI-METACOGNITIVO.md as CANONICAL_SI_PATH and exact-syncs its local copy of schema v1.7.7 with Metodología. Do not change schema or remove the SI path until contract/runtime tests pass in both repos."
+    },
+    {
+      "id": "SI-KHORA-01",
+      "status": "open",
+      "description": "The full legacy SI file remains at the root solely for KHORA compatibility; its own header marks it as superseded. The archive path is only a pointer. Migrate KHORA away from CANONICAL_SI_PATH before removal."
     }
   ],
   "artifacts": {
     "output": {
       "path": "frentes/metodologia/entregas/CHATGPT-v0.3/C-METODOLOGIA-AUDITORIA-REPOSITORIO-24-salida-final.md",
-      "blob_sha": "2c197d9c764442a9bc53d172ffca513dcf6e8a42",
-      "chars": 6721
+      "blob_sha": "9a7fc41be29e7fddac97b4adbadec943bfa26214",
+      "chars": 7362
     },
     "dialogue": {
       "path": "frentes/metodologia/conversaciones/C-METODOLOGIA-AUDITORIA-REPOSITORIO-24-dialogo.jsonl",
-      "blob_sha": "6cf0602dddad2bfe5850e4aec5898a01dac6eb10",
+      "blob_sha": "c223a9e4f3939b7548b17762fd9aed0007a60880",
       "records": 4,
       "verbatim_user_messages": 3
     },
     "chronicle": {
       "path": "frentes/metodologia/cronica/C-METODOLOGIA-AUDITORIA-REPOSITORIO-24.md",
-      "blob_sha": "b546efbea27a3fca48fe49c9ee40821d3fb40aa8",
-      "chars": 5841
+      "blob_sha": "7c968020bef289e41b45e8719d4d1ca00750e274",
+      "chars": 6804
     },
     "ocp_readme": {
       "path": "frentes/metodologia/README.md",
@@ -247,11 +299,21 @@
     },
     "active_manifest": {
       "path": "frentes/metodologia/entregas/CHATGPT-v0.3/MANIFIESTO-C-METODOLOGIA-MIGRACION-HILO-FRESCO-21.json",
-      "prior_blob_sha": "41f95759839eec1c9bbb323b5d662bfb0660702f",
-      "current_blob_sha": "10093c9e24fe631900c3c6330fba37fe490a2235",
+      "blob_sha": "10093c9e24fe631900c3c6330fba37fe490a2235",
       "current_entrypoint_blob": "c65304a96a642a387615a6c671d4032beb271976",
       "both_pointer_locations_match": true,
       "current_pointer_event": "C-METODOLOGIA-AUDITORIA-REPOSITORIO-24"
+    },
+    "current_governance_blobs": {
+      "root_readme": "3910737c7dcc6a384fd84cf8f55ecedea7940833",
+      "governance_readme": "11d0a86911565586917a90a29e5934c40b6a501a",
+      "methodology": "f2fb95c144e7ca2c55f8fafd32940182697f7f06",
+      "metacanon": "d1a0057913a5a0ac2bde2781684d7fd0e75e18fd",
+      "pending": "b936345fe3a1b81d93b7b0854130ea6518d89198",
+      "validator": "47eeb521034e3b6ddd17c327323fb3c5ab9a06cc",
+      "rdc_workflow": "6d2cbfa7f868c9754ab7bcd27a91d54465962893",
+      "legacy_si_root": "1c1e8746d70807ad3274bf98f723f08915585efe",
+      "archive_pointer": "7d94cc5957263417ad152db96709036d732c0cf1"
     }
   },
   "note": "El SHA de este mismo recibo se verifica desde GitHub después de crearlo y se conserva externamente en la salida final; no se incluye un hash autorreferencial dentro del propio JSON."
