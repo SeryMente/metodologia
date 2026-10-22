@@ -12,16 +12,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Validate canonical RDC invariants
+      - name: Validate current governance and RDC compatibility
         shell: bash
         run: |
           set -euo pipefail
 
           test -f SI-METACOGNITIVO.md
+          test -f gobernanza/antecedentes/SI-METACOGNITIVO-v1.6.21-historico.md
           test -f gobernanza/METAPROMPT-CANONICO-SAMANTHA.md
           test -f gobernanza/GLOSARIO-WORKSPACE.md
           test -f METACANON-OBJETOS-CANONICOS.md
-          test -f gobernanza/antecedentes/SI-METACOGNITIVO-v1.6.21-historico.md
           test -f METODOLOGIA.md
           test -f ESTADO-RDC-ACTIVO.md
           test -f ANEXO-GATE-CONTEXTO-OPERATIVO-FAIL-CLOSED.md
@@ -29,25 +29,27 @@ jobs:
           test -f ANEXO-GOBERNANZA-ESTADO-GLOBAL-RDC.md
           test -f BOOTSTRAP-CONTEXTO-GLOBAL.md
 
-          si_version="$(sed -n 's/^\*\*Versión:\*\* //p' gobernanza/antecedentes/SI-METACOGNITIVO-v1.6.21-historico.md | head -1)"
-          si_name="$(sed -n 's/^\*\*Nombre de versión:\*\* //p' gobernanza/antecedentes/SI-METACOGNITIVO-v1.6.21-historico.md | head -1)"
+          si_version="$(sed -n 's/^\*\*Versión:\*\* //p' SI-METACOGNITIVO.md | head -1)"
+          si_name="$(sed -n 's/^\*\*Nombre de versión:\*\* //p' SI-METACOGNITIVO.md | head -1)"
           method_version="$(sed -n 's/^- \*\*Versión:\*\* //p' METODOLOGIA.md | head -1)"
           method_name="$(sed -n 's/^- \*\*Nombre de versión:\*\* //p' METODOLOGIA.md | head -1)"
 
-          test -n "$si_version"
-          test -n "$si_name"
+          test "$si_version" = "v1.6.21"
+          test "$si_name" = "Ordenamiento por Preponderancia y Categorías"
           test -n "$method_version"
           test -n "$method_name"
+
           grep -Fq 'v339' gobernanza/METAPROMPT-CANONICO-SAMANTHA.md
           grep -Fq 'NX-339m' gobernanza/METAPROMPT-CANONICO-SAMANTHA.md
-          grep -Fq 'puntero histórico' SI-METACOGNITIVO.md
-          grep -qi 'puntero histórico' SI-METACOGNITIVO.md
-          grep -Fq 'GOBIERNO GENERAL SUPERSEDIDO' gobernanza/antecedentes/SI-METACOGNITIVO-v1.6.21-historico.md
+          grep -Fq 'GOBIERNO GENERAL SUPERSEDIDO' SI-METACOGNITIVO.md
+          grep -Fq 'puntero histórico' gobernanza/antecedentes/SI-METACOGNITIVO-v1.6.21-historico.md
+          grep -Fq 'gobernanza/METAPROMPT-CANONICO-SAMANTHA.md' INICIO.md
           grep -Fq 'Metacanon §4, formato obligatorio en cada ciclo' BOOTSTRAP-CONTEXTO-GLOBAL.md
           grep -Fq 'gobernanza/GLOSARIO-WORKSPACE.md' BOOTSTRAP-CONTEXTO-GLOBAL.md
 
-          grep -q 'ANTES.*KHORA\|antes.*KHORA\|antes.*HEALTH MCP.*KHORA' gobernanza/antecedentes/SI-METACOGNITIVO-v1.6.21-historico.md
-          grep -q 'RDC-REINSTANTIAR' gobernanza/antecedentes/SI-METACOGNITIVO-v1.6.21-historico.md
+          grep -q 'ANTES.*KHORA\|antes.*KHORA\|antes.*HEALTH MCP.*KHORA' SI-METACOGNITIVO.md
+          grep -q 'RDC-REINSTANTIAR' SI-METACOGNITIVO.md
+          grep -q 'P033 · Precedencia del Estado Operativo Global' SI-METACOGNITIVO.md
 
           grep -q 'ESTADO-RDC-ACTIVO.md' ANEXO-GOBERNANZA-ESTADO-GLOBAL-RDC.md
           grep -q 'HANDSHAKE → VALIDAR → ESCRIBIR ESTADO GLOBAL → VERIFICAR LECTURA DE VUELTA → RESOLVER' ANEXO-GOBERNANZA-ESTADO-GLOBAL-RDC.md
@@ -57,6 +59,5 @@ jobs:
           grep -q 'RDC-HANDSHAKE' ANEXO-PROCEDIMIENTO-REINSTANTIACION-RDC.md
           grep -q 'READ-BACK\|read-back' ANEXO-PROCEDIMIENTO-REINSTANTIACION-RDC.md
           grep -q 'npx @wonderwhy-er/desktop-commander@latest remote' ANEXO-PROCEDIMIENTO-REINSTANTIACION-RDC.md
-          grep -q 'P033 · Precedencia del Estado Operativo Global' gobernanza/antecedentes/SI-METACOGNITIVO-v1.6.21-historico.md
 
-          echo "RDC governance invariants: PASS"
+          echo "RDC governance compatibility checks: PASS"
