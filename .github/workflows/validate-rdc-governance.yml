@@ -18,6 +18,9 @@ jobs:
           set -euo pipefail
 
           test -f SI-METACOGNITIVO.md
+          test -f gobernanza/METAPROMPT-CANONICO-SAMANTHA.md
+          test -f gobernanza/GLOSARIO-WORKSPACE.md
+          test -f METACANON-OBJETOS-CANONICOS.md
           test -f gobernanza/antecedentes/SI-METACOGNITIVO-v1.6.21-historico.md
           test -f METODOLOGIA.md
           test -f ESTADO-RDC-ACTIVO.md
@@ -38,10 +41,14 @@ jobs:
           grep -Fq 'v339' gobernanza/METAPROMPT-CANONICO-SAMANTHA.md
           grep -Fq 'NX-339m' gobernanza/METAPROMPT-CANONICO-SAMANTHA.md
           grep -Fq 'puntero histórico' SI-METACOGNITIVO.md
-          grep -Fq "$si_version — $si_name" METODOLOGIA.md
+          grep -Fq 'v339' gobernanza/METAPROMPT-CANONICO-SAMANTHA.md
+          grep -Fq 'NX-339m' gobernanza/METAPROMPT-CANONICO-SAMANTHA.md
+          grep -qi 'puntero histórico' SI-METACOGNITIVO.md
+          grep -Fq 'GOBIERNO GENERAL SUPERSEDIDO' gobernanza/antecedentes/SI-METACOGNITIVO-v1.6.21-historico.md
+          grep -Fq 'Metacanon §4, formato obligatorio en cada ciclo' BOOTSTRAP-CONTEXTO-GLOBAL.md
+          grep -Fq 'gobernanza/GLOSARIO-WORKSPACE.md' BOOTSTRAP-CONTEXTO-GLOBAL.md
 
-          grep -q 'P033 · Precedencia del Estado Operativo Global' gobernanza/antecedentes/SI-METACOGNITIVO-v1.6.21-historico.md
-          test -f gobernanza/antecedentes/SI-METACOGNITIVO-v1.6.21-historico.md
+          python3 scripts/validate-canonical-bootstrap.py
           grep -q 'ANTES.*KHORA\|antes.*KHORA\|antes.*HEALTH MCP.*KHORA' gobernanza/antecedentes/SI-METACOGNITIVO-v1.6.21-historico.md
           test -f gobernanza/antecedentes/SI-METACOGNITIVO-v1.6.21-historico.md
           grep -q 'RDC-REINSTANTIAR' gobernanza/antecedentes/SI-METACOGNITIVO-v1.6.21-historico.md
@@ -54,9 +61,6 @@ jobs:
           grep -q 'npx @wonderwhy-er/desktop-commander@latest remote' ANEXO-GATE-CONTEXTO-OPERATIVO-FAIL-CLOSED.md
           grep -q 'RDC-HANDSHAKE' ANEXO-PROCEDIMIENTO-REINSTANTIACION-RDC.md
           grep -q 'READ-BACK\|read-back' ANEXO-PROCEDIMIENTO-REINSTANTIACION-RDC.md
-          grep -q 'ESTADO-RDC-ACTIVO.md' BOOTSTRAP-CONTEXTO-GLOBAL.md
-          grep -qi 'antes de.*HEALTH' BOOTSTRAP-CONTEXTO-GLOBAL.md
-          grep -q 'RDC-REINSTANTIAR' FORMATO-REGISTRO-VERIFICACION-CICLO.md
           grep -q 'npx @wonderwhy-er/desktop-commander@latest remote' ANEXO-PROCEDIMIENTO-REINSTANTIACION-RDC.md
           grep -q 'P033 · Precedencia del Estado Operativo Global' gobernanza/antecedentes/SI-METACOGNITIVO-v1.6.21-historico.md
           test -f gobernanza/antecedentes/SI-METACOGNITIVO-v1.6.21-historico.md
