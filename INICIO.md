@@ -7,11 +7,15 @@ Punto de entrada de lectura; no es otro objeto de estado ni otra autoridad.
 **Bootstrap reutilizable:** [BOOTSTRAP-CONTEXTO-GLOBAL.md](BOOTSTRAP-CONTEXTO-GLOBAL.md) contiene el BCR actualizado para adquirir y revisar estas fuentes desde main. Es un mecanismo de arranque, no una fuente normativa competidora; si difiere de Sam, Metacanon o el GOW, prevalecen estos cánones en main.
 
 1. Adquiere el [gobierno general: Metaprompt Canónico de Samantha (Sam), v339 · NX-339m](gobernanza/METAPROMPT-CANONICO-SAMANTHA.md). Consulta [procedencia, alcance y límites](gobernanza/README.md). No asumir que el contenido se cargó por recibir solo un enlace.
-2. Para crear, mantener o retomar un frente, adquiere el [Metacanon](METACANON-OBJETOS-CANONICOS.md), su LEER PRIMERO, §9 y §§29–50; consulta después las reglas pertinentes restantes. Versión 1.20, sello METACANON-OBJETOS-v1.20. Aplica §§43–45 para preponderancia y fuente única, §§46–48 para OCP/retoma y rutas heredadas, §49 para distinguir GOW/Hub y §50 para los requisitos de revisión estructural de Sam; §4 define la salida obligatoria por ciclo. La auditoría de los 40 principios y el aligeramiento/separación de antecedentes siguen pendientes: este índice no constituye esas ejecuciones.
+2. Para crear, mantener o retomar un frente, adquiere el [Metacanon](METACANON-OBJETOS-CANONICOS.md), su LEER PRIMERO, §9 y §§29–51; consulta después las reglas pertinentes restantes. Versión 1.21, sello METACANON-OBJETOS-v1.21. Aplica §§43–45 para preponderancia y fuente única, §§46–48 para OCP/retoma y rutas heredadas, §49 para distinguir GOW/Hub y §50 para los requisitos de revisión estructural de Sam, §51 para la taxonomía multi-repositorio; §4 define la salida obligatoria por ciclo. La auditoría de los 40 principios y el aligeramiento/separación de antecedentes siguen pendientes: este índice no constituye esas ejecuciones.
 3. Adquiere y revisa el único [Glosario Operativo del Workspace (GOW)](gobernanza/GLOSARIO-WORKSPACE.md), versión 2.2, desde main al inicio y al cierre de cada ciclo. `GLOSARIO-OPERATIVO.md` es solo un puntero de compatibilidad; su versión original se conserva en antecedentes. Nunca trates una copia externa como una autoridad rival.
 4. Identifica el frente y su núcleo operativo único; lee gobierno particular, estado, pendientes y siguiente paso, y solo después los materiales que exija la tarea. No activar proyectos o protocolos por aparecer en una cita.
 5. Comprueba revisión y frescura de lo adquirido por los medios efectivamente disponibles. Sin lectura directa del repositorio, utiliza copias completas suministradas por el operador y declara su procedencia/frescura; nunca afirmar una lectura o escritura de GitHub inexistente. El transporte manual es una vía de contingencia, no cumplimiento de sincronización automática.
 6. Conserva originales/crónica, actualiza el estado y verifica el guardado al finalizar conforme al método. No hay memoria ni tareas en segundo plano garantizadas por estos archivos.
+
+## Arquitectura de repositorios y frentes
+
+Consulta el [inventario multi-repositorio](INVENTARIO-REPOSITORIOS-Y-FRENTES.md) para localizar los OCP conocidos y clasificar recursos por alcance. El inventario declara explícitamente qué repositorios pudieron leerse; no presume cobertura global fuera de ese inventario accesible.
 
 ## Pendientes destacados
 
@@ -24,15 +28,15 @@ El gobierno general anterior de `SI-METACOGNITIVO.md` es histórico. Los procedi
 
 ## Continuidad entre conversaciones
 
-Usa el [prompt universal](PROMPT-UNIVERSAL-REINSTANCIACION.md) y el [contrato de continuidad](CONTINUIDAD-ENTRE-CONVERSACIONES.md). En Notion comprueba el metaprompt recibido por configuración; fuera de Notion cárgalo expresamente. La versión automática puede ser antigua. El núcleo del frente de metodología sigue en el metacanon, §9; [ideas pendientes](frentes/metodologia/PENDIENTES.md). Pruebas mecánicas no equivalen a ensayo semántico de otro modelo.
+Usa el [prompt universal](PROMPT-UNIVERSAL-REINSTANCIACION.md) y el [contrato de continuidad](CONTINUIDAD-ENTRE-CONVERSACIONES.md). En Notion comprueba el metaprompt recibido por configuración; fuera de Notion cárgalo expresamente. La versión automática puede ser antigua. El núcleo del frente de metodología sigue en el metacanon, §9; [ideas pendientes](frentes/metacanon/PENDIENTES.md). Pruebas mecánicas no equivalen a ensayo semántico de otro modelo.
 
 ## Vía portable ejecutable · kit 0.1.2
 
-Herramientas y lectura de arranque en `frentes/metodologia/kit/0.1.2/README.md`; estado único en §9 del metacanon. Usar el prompt universal y el recibo breve; los paquetes transportados conservan revisión/cobertura y declaran frescura desconocida sin cotejo. No sustituyen el canon ni certifican comprensión semántica.
+Herramientas y lectura de arranque en `frentes/metacanon/kit/0.1.2/README.md`; estado único en §9 del metacanon. Usar el prompt universal y el recibo breve; los paquetes transportados conservan revisión/cobertura y declaran frescura desconocida sin cotejo. No sustituyen el canon ni certifican comprensión semántica.
 
 ## Revisión integral1.10
 
-Las dieciséis categorías son ejes de auditoría, no sustituyen el molde de trece bloques. Aplicar§36 y distinguir revisión cerrada de aceptación funcional abierta. Informe y delta: frentes/metodologia/revisiones/C-METODOLOGIA-REVISION-INTEGRAL-10.md.
+Las dieciséis categorías son ejes de auditoría, no sustituyen el molde de trece bloques. Aplicar§36 y distinguir revisión cerrada de aceptación funcional abierta. Informe y delta: frentes/metacanon/revisiones/C-METODOLOGIA-REVISION-INTEGRAL-10.md.
 
 ## Refresco de la fuente · ciclo10
 

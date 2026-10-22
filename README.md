@@ -38,7 +38,7 @@ Consulta estos documentos cuando la tarea pertenezca a su ámbito; no es necesar
 - [Frentes de trabajo y sus OCP](frentes/).
 - [Registro de equipos Cybercafé](CIBERCAFE/).
 - [Entregables](ENTREGABLES/); los análisis de principios anteriores están archivados en [principios-historicos](ENTREGABLES/principios-historicos/).
-- Las revisiones históricas de Metacanon están en [frentes/metodologia/antecedentes/revisiones](frentes/metodologia/antecedentes/revisiones/), fuera del arranque rutinario.
+- Las revisiones históricas de Metacanon están en [frentes/metacanon/antecedentes/revisiones](frentes/metacanon/antecedentes/revisiones/), fuera del arranque rutinario.
 
 ## Compatibilidad histórica
 
@@ -46,3 +46,7 @@ Consulta estos documentos cuando la tarea pertenezca a su ámbito; no es necesar
 - [CONTINUIDAD-ENTRE-CONVERSACIONES.md](CONTINUIDAD-ENTRE-CONVERSACIONES.md) es un puntero a una guía anterior. Para arrancar, usa `INICIO.md` y `BOOTSTRAP-CONTEXTO-GLOBAL.md`.
 
 Las conversaciones originales, crónicas, evidencias y entregas versionadas de cada frente se conservan bajo sus carpetas correspondientes. Sus contenidos históricos no deben cargarse todos por defecto ni convertirse en normas solo por existir.
+
+## Arquitectura multi-repositorio
+
+El nombre operativo del frente es **Metacanon**; el repositorio conserva su nombre `SeryMente/metodologia` porque repositorio y frente son identidades distintas. La taxonomía y el corte de repositorios/OCP observados se registran en [INVENTARIO-REPOSITORIOS-Y-FRENTES.md](INVENTARIO-REPOSITORIOS-Y-FRENTES.md); el estándar vigente está en [Metacanon §51](METACANON-OBJETOS-CANONICOS.md#51-taxonomia-de-organizacion-repositorios-frentes-y-recursos). Los OCP históricos de otros frentes conservan sus rutas declaradas.

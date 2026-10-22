@@ -7,10 +7,10 @@
     "branch": "main",
     "precedence": "preponderant"
   },
-  "front": "metodologia",
-  "ocp": "frentes/metodologia/",
+  "front": "metacanon",
+  "ocp": "frentes/metacanon/",
   "sourceControl": {
-    "path": "frentes/metodologia/CONTROL-RESPONSABILIDAD.json",
+    "path": "frentes/metacanon/CONTROL-RESPONSABILIDAD.json",
     "sha_before_preparation": "f810835002e235ebd12cedc75a02678aa1073f2b",
     "generation": 2,
     "folio": "SES-20261021-C4D81A7F",
@@ -40,39 +40,39 @@
   },
   "artifacts": {
     "prompt": {
-      "path": "frentes/metodologia/entregas/CHATGPT-v0.3/PROMPT-MIGRACION-HILO-FRESCO-21.txt",
+      "path": "frentes/metacanon/entregas/CHATGPT-v0.3/PROMPT-MIGRACION-HILO-FRESCO-21.txt",
       "blob": "b7481a86b3cf679e80c9463456f8e403c666dc51"
     },
     "checkpoint": {
-      "path": "frentes/metodologia/entregas/CHATGPT-v0.3/CHECKPOINT-MIGRACION-HILO-FRESCO-21.md",
+      "path": "frentes/metacanon/entregas/CHATGPT-v0.3/CHECKPOINT-MIGRACION-HILO-FRESCO-21.md",
       "blob": "0a7e919f13a5765e7c5c8e2f8fef1e382d2779be"
     },
     "last_persisted_model_output": {
-      "path": "frentes/metodologia/entregas/CHATGPT-v0.3/C-METODOLOGIA-AUDITORIA-REQUISITOS-20-salida-final.md",
+      "path": "frentes/metacanon/entregas/CHATGPT-v0.3/C-METODOLOGIA-AUDITORIA-REQUISITOS-20-salida-final.md",
       "blob": "6978db55681c9df5e64580c8b90e793b2d7b23fa"
     },
     "event_output": {
-      "path": "frentes/metodologia/entregas/CHATGPT-v0.3/C-METODOLOGIA-MIGRACION-HILO-FRESCO-21-salida-final.md",
+      "path": "frentes/metacanon/entregas/CHATGPT-v0.3/C-METODOLOGIA-MIGRACION-HILO-FRESCO-21-salida-final.md",
       "blob": "bce09ec165988bf004a711ac1bc2683b4447863a"
     },
     "chronicle": {
-      "path": "frentes/metodologia/cronica/C-METODOLOGIA-MIGRACION-HILO-FRESCO-21.md",
+      "path": "frentes/metacanon/cronica/C-METODOLOGIA-MIGRACION-HILO-FRESCO-21.md",
       "blob": "b14f9ecaa29c47b5fc4be585fa25052bc8f126e5"
     },
     "dialogue": {
-      "path": "frentes/metodologia/conversaciones/C-METODOLOGIA-MIGRACION-HILO-FRESCO-21-dialogo.jsonl",
+      "path": "frentes/metacanon/conversaciones/C-METODOLOGIA-MIGRACION-HILO-FRESCO-21-dialogo.jsonl",
       "blob": "da1cc1d2bbd10aded3e0584cbeac9f7b4ea56818"
     },
     "evidence": {
-      "path": "frentes/metodologia/evidencias/C-METODOLOGIA-MIGRACION-HILO-FRESCO-21-readback.json",
+      "path": "frentes/metacanon/evidencias/C-METODOLOGIA-MIGRACION-HILO-FRESCO-21-readback.json",
       "blob": "fa704c6ebdc7c2088c52d0cb24bb7e26db9c6890"
     },
     "control": {
-      "path": "frentes/metodologia/CONTROL-RESPONSABILIDAD.json",
+      "path": "frentes/metacanon/CONTROL-RESPONSABILIDAD.json",
       "blob": "08f0ac0e9e3797d44f6f0827fabf90eb1cd139e0"
     },
     "pending": {
-      "path": "frentes/metodologia/PENDIENTES.md",
+      "path": "frentes/metacanon/PENDIENTES.md",
       "blob": "75ed42c66fa5b937e8c36d099a31b9662c35168a"
     },
     "metacanon": {
@@ -80,23 +80,23 @@
       "blob": "99cddf94b2b52d3bd1140112d198d50a5e274a7d"
     },
     "current_continuation_prompt": {
-      "path": "frentes/metodologia/entregas/CHATGPT-v0.3/PROMPT-CONTINUIDAD-METODOLOGIA-VERBATIM-E2E-22.txt",
+      "path": "frentes/metacanon/entregas/CHATGPT-v0.3/PROMPT-CONTINUIDAD-METODOLOGIA-VERBATIM-E2E-22.txt",
       "blob": "51ef7b85ac59f79f3dda2776c5fb3a0e4da1aa24"
     },
     "current_checklist": {
-      "path": "frentes/metodologia/entregas/CHATGPT-v0.3/CHECKLIST-VERBATIM-21.md",
+      "path": "frentes/metacanon/entregas/CHATGPT-v0.3/CHECKLIST-VERBATIM-21.md",
       "blob": "c65e634644e6088c60ea84d00794137d746062f8"
     },
     "ocp_entrypoint": {
-      "path": "frentes/metodologia/README.md",
-      "blob": "c65304a96a642a387615a6c671d4032beb271976"
+      "path": "frentes/metacanon/README.md",
+      "blob": "8ca79f71c97cb112cf5c43a332db8baf36ed566e"
     },
     "e2e_test": {
-      "path": "frentes/metodologia/pruebas/continuidad/C-METODOLOGIA-VERBATIM-E2E-22.cjs",
+      "path": "frentes/metacanon/pruebas/continuidad/C-METODOLOGIA-VERBATIM-E2E-22.cjs",
       "blob": "c7e25fa907c7375f131ffc8989b0277505ce56c0"
     },
     "current_output": {
-      "path": "frentes/metodologia/entregas/CHATGPT-v0.3/C-METODOLOGIA-VERBATIM-E2E-22-salida-final.md",
+      "path": "frentes/metacanon/entregas/CHATGPT-v0.3/C-METODOLOGIA-VERBATIM-E2E-22-salida-final.md",
       "blob": "51450a8a9daef2661530d69c92aaf8ca046c07c0",
       "commit": "5c5518457919f4bb29e0c56a4c72da586a2bfabf",
       "status": "persisted_and_readback_verified"
@@ -137,7 +137,7 @@
     "Still open: global uniqueness / all organization repositories / server-side writer fencing are not claimed."
   ],
   "currentControl": {
-    "path": "frentes/metodologia/CONTROL-RESPONSABILIDAD.json",
+    "path": "frentes/metacanon/CONTROL-RESPONSABILIDAD.json",
     "blob": "08f0ac0e9e3797d44f6f0827fabf90eb1cd139e0",
     "commit": "d2b070183fe0b0fcc21279dcdd862234fcdd9374",
     "status": "owned",
@@ -150,48 +150,48 @@
   "current_cycle": {
     "event": "C-METODOLOGIA-VERBATIM-E2E-22",
     "source_verbatim": {
-      "path": "frentes/metodologia/conversaciones/C-METODOLOGIA-AUDITORIA-REQUISITOS-20-dialogo.jsonl",
+      "path": "frentes/metacanon/conversaciones/C-METODOLOGIA-AUDITORIA-REQUISITOS-20-dialogo.jsonl",
       "blob": "7d6a6c0716a81d78199653c547c74e0363015229",
       "literal_count": 9
     },
     "checklist": {
-      "path": "frentes/metodologia/entregas/CHATGPT-v0.3/CHECKLIST-VERBATIM-21.md",
+      "path": "frentes/metacanon/entregas/CHATGPT-v0.3/CHECKLIST-VERBATIM-21.md",
       "blob": "c65e634644e6088c60ea84d00794137d746062f8"
     },
     "ocp_entrypoint": {
-      "path": "frentes/metodologia/README.md",
-      "blob": "c65304a96a642a387615a6c671d4032beb271976"
+      "path": "frentes/metacanon/README.md",
+      "blob": "8ca79f71c97cb112cf5c43a332db8baf36ed566e"
     },
     "reusable_prompt": {
-      "path": "frentes/metodologia/entregas/CHATGPT-v0.3/PROMPT-CONTINUIDAD-METODOLOGIA-VERBATIM-E2E-22.txt",
+      "path": "frentes/metacanon/entregas/CHATGPT-v0.3/PROMPT-CONTINUIDAD-METODOLOGIA-VERBATIM-E2E-22.txt",
       "blob": "51ef7b85ac59f79f3dda2776c5fb3a0e4da1aa24"
     },
     "e2e_test": {
-      "path": "frentes/metodologia/pruebas/continuidad/C-METODOLOGIA-VERBATIM-E2E-22.cjs",
+      "path": "frentes/metacanon/pruebas/continuidad/C-METODOLOGIA-VERBATIM-E2E-22.cjs",
       "blob": "c7e25fa907c7375f131ffc8989b0277505ce56c0",
       "expected_checks": 17
     },
     "final_output": {
-      "path": "frentes/metodologia/entregas/CHATGPT-v0.3/C-METODOLOGIA-VERBATIM-E2E-22-salida-final.md",
+      "path": "frentes/metacanon/entregas/CHATGPT-v0.3/C-METODOLOGIA-VERBATIM-E2E-22-salida-final.md",
       "blob": "51450a8a9daef2661530d69c92aaf8ca046c07c0",
       "commit": "5c5518457919f4bb29e0c56a4c72da586a2bfabf",
       "status": "persisted_and_readback_verified"
     },
     "dialogue": {
-      "path": "frentes/metodologia/conversaciones/C-METODOLOGIA-VERBATIM-E2E-22-dialogo.jsonl",
+      "path": "frentes/metacanon/conversaciones/C-METODOLOGIA-VERBATIM-E2E-22-dialogo.jsonl",
       "blob": "f2c6ce93d66921ad2c0e08934e80adfc0b48e323",
       "entries": 15
     },
     "chronicle": {
-      "path": "frentes/metodologia/cronica/C-METODOLOGIA-VERBATIM-E2E-22.md",
+      "path": "frentes/metacanon/cronica/C-METODOLOGIA-VERBATIM-E2E-22.md",
       "blob": "61ed65b8054654d9a641c6ee54c425e708bc94d9"
     },
     "evidence": {
-      "path": "frentes/metodologia/evidencias/C-METODOLOGIA-VERBATIM-E2E-22.json",
+      "path": "frentes/metacanon/evidencias/C-METODOLOGIA-VERBATIM-E2E-22.json",
       "purpose": "authoritative final E2E result, all source hashes, regression receipts, failure/correction history, and final IPZ blocker reassessment"
     },
     "ipz": {
-      "path": "frentes/metodologia/entregas/CHATGPT-v0.3/IPZ-CAMPO-CHATGPT.txt",
+      "path": "frentes/metacanon/entregas/CHATGPT-v0.3/IPZ-CAMPO-CHATGPT.txt",
       "blob": "ff456fbc02f60c93d0dc35a70ee602ceb47626c8",
       "characters": 1451,
       "links_verified": 3,
@@ -203,7 +203,7 @@
       "version": "1.19"
     },
     "pending": {
-      "path": "frentes/metodologia/PENDIENTES.md",
+      "path": "frentes/metacanon/PENDIENTES.md",
       "blob": "75ed42c66fa5b937e8c36d099a31b9662c35168a"
     },
     "status": "The final OCP entrypoints and the prepared final response are persisted/read-back verified. The linked M22 evidence JSON is the authoritative source for the final E2E result and latest source hashes.",
@@ -242,7 +242,7 @@
     "event": "C-METODOLOGIA-AUDITORIA-REPOSITORIO-24",
     "reason": "README is the live OCP navigation pointer and now points to the latest persisted M24 output, verbatim dialogue, chronicle and evidence. The M21/M22 manifest history remains historical; only the live OCP pointer is refreshed.",
     "prior_blob": "54c59cb7fb81e04132fb9b8e0f1216ea77982d14",
-    "current_blob": "c65304a96a642a387615a6c671d4032beb271976",
+    "current_blob": "8ca79f71c97cb112cf5c43a332db8baf36ed566e",
     "updated_at": "2026-10-21",
     "status": "persisted_and_readback_verified"
   },
@@ -258,12 +258,12 @@
   ],
   "current_ocp_navigation": {
     "event": "C-METODOLOGIA-AUDITORIA-REPOSITORIO-24",
-    "path": "frentes/metodologia/README.md",
-    "blob": "c65304a96a642a387615a6c671d4032beb271976",
-    "latest_output": "frentes/metodologia/entregas/CHATGPT-v0.3/C-METODOLOGIA-AUDITORIA-REPOSITORIO-24-salida-final.md",
-    "latest_dialogue": "frentes/metodologia/conversaciones/C-METODOLOGIA-AUDITORIA-REPOSITORIO-24-dialogo.jsonl",
-    "latest_chronicle": "frentes/metodologia/cronica/C-METODOLOGIA-AUDITORIA-REPOSITORIO-24.md",
-    "evidence": "frentes/metodologia/evidencias/C-METODOLOGIA-AUDITORIA-REPOSITORIO-24.json",
+    "path": "frentes/metacanon/README.md",
+    "blob": "8ca79f71c97cb112cf5c43a332db8baf36ed566e",
+    "latest_output": "frentes/metacanon/entregas/CHATGPT-v0.3/C-METODOLOGIA-AUDITORIA-REPOSITORIO-24-salida-final.md",
+    "latest_dialogue": "frentes/metacanon/conversaciones/C-METODOLOGIA-AUDITORIA-REPOSITORIO-24-dialogo.jsonl",
+    "latest_chronicle": "frentes/metacanon/cronica/C-METODOLOGIA-AUDITORIA-REPOSITORIO-24.md",
+    "evidence": "frentes/metacanon/evidencias/C-METODOLOGIA-AUDITORIA-REPOSITORIO-24.json",
     "scope_note": "Solo se reconcilia el puntero vivo del OCP; el evento raíz del manifiesto continúa siendo la transferencia M21 y su historia M22."
   }
 }

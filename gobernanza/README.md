@@ -31,7 +31,7 @@ Este ciclo prepara una copia puntual y referencias de gobierno; no instala un se
 
 Fuente actual adquirida y editada: Metaprompt v333 · NX-333m, con un principio añadido de continuidad por frentes y 34 previos preservados literalmente. Glosario central de Notion v1.6 conservado en `GLOSARIO-WORKSPACE.md` como espejo, no otro gobierno; el glosario metodológico de la raíz conserva su alcance propio. Estos números actualizan los de la migración inicial descrita arriba. Los espejos no instalan sincronización automática. La configuración nativa de Notion puede cargar otra página/revisión: comprobar fuente, no asumir vigencia.
 
-**Rectificación vigente por C-GOW-METODOLOGIA-GLOSARIOS-02 / Metacanon 1.16:** el glosario metodológico de la raíz dejó de tener autoridad propia. `GLOSARIO-OPERATIVO.md` es ahora un puntero de compatibilidad; su original v1.3.1 está preservado en `frentes/metodologia/antecedentes/GLOSARIO-OPERATIVO-v1.3.1.md`. El único glosario canónico es `gobernanza/GLOSARIO-WORKSPACE.md`, v1.9; contiene el corpus heredado con su procedencia y alcances. Esta rectificación supersede la afirmación histórica anterior y evita dos fuentes normativas.
+**Rectificación vigente por C-GOW-METODOLOGIA-GLOSARIOS-02 / Metacanon 1.16:** el glosario metodológico de la raíz dejó de tener autoridad propia. `GLOSARIO-OPERATIVO.md` es ahora un puntero de compatibilidad; su original v1.3.1 está preservado en `frentes/metacanon/antecedentes/GLOSARIO-OPERATIVO-v1.3.1.md`. El único glosario canónico es `gobernanza/GLOSARIO-WORKSPACE.md`, v1.9; contiene el corpus heredado con su procedencia y alcances. Esta rectificación supersede la afirmación histórica anterior y evita dos fuentes normativas.
 
 
 ## C-GOW-METODOLOGIA-GLOSARIOS-02 · GOW único
