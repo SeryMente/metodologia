@@ -8,7 +8,7 @@ La fuente documental preponderante es este repositorio privado, rama `main`. Ant
 
 - [INICIO.md](INICIO.md) — orden de adquisición y arranque del trabajo.
 - [Metaprompt Canónico de Samantha (Sam)](gobernanza/METAPROMPT-CANONICO-SAMANTHA.md) — gobierno general, v339 · NX-339m.
-- [Metacanon](METACANON-OBJETOS-CANONICOS.md) — método de frentes, v1.20; estado vivo en §9.
+- [Metacanon](METACANON-OBJETOS-CANONICOS.md) — método de frentes, v1.21; estado vivo en §9.
 - [Glosario Operativo del Workspace (GOW)](gobernanza/GLOSARIO-WORKSPACE.md) — vocabulario compartido, v2.2; no es un Hub.
 - [Gobierno general y precedencia](gobernanza/README.md).
 
