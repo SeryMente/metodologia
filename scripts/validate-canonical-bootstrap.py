@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate current Sam governance and the compatibility bridge for archived SI references."""
+"""Validate current Sam governance, the archived SI pointer, and the cycle output contract."""
 
 from __future__ import annotations
 
@@ -14,6 +14,7 @@ SI_POINTER_PATH = ROOT / "SI-METACOGNITIVO.md"
 LEGACY_SI_PATH = ROOT / "gobernanza" / "antecedentes" / "SI-METACOGNITIVO-v1.6.21-historico.md"
 METHOD_PATH = ROOT / "METODOLOGIA.md"
 BOOTSTRAP_PATH = ROOT / "BOOTSTRAP-CONTEXTO-GLOBAL.md"
+ENTRY_PATH = ROOT / "INICIO.md"
 OUTPUT_PATH = ROOT / "FORMATO-REGISTRO-VERIFICACION-CICLO.md"
 SCHEMA_PATH = ROOT / "FORMATO-REGISTRO-VERIFICACION-CICLO.schema.json"
 
@@ -38,6 +39,7 @@ si_pointer = SI_POINTER_PATH.read_text(encoding="utf-8")
 legacy_si = LEGACY_SI_PATH.read_text(encoding="utf-8")
 method = METHOD_PATH.read_text(encoding="utf-8")
 bootstrap = BOOTSTRAP_PATH.read_text(encoding="utf-8")
+entry = ENTRY_PATH.read_text(encoding="utf-8")
 output = OUTPUT_PATH.read_text(encoding="utf-8")
 schema = json.loads(SCHEMA_PATH.read_text(encoding="utf-8"))
 
@@ -58,16 +60,22 @@ require("GOBIERNO GENERAL SUPERSEDIDO" in legacy_si,
         "The archived SI must explicitly remain superseded historical material.")
 require("### 5.0.1.1 Gate de identidad normativa del snapshot" in legacy_si
         and "Con F:! la ejecución es fail-closed." in legacy_si,
-        "The archived historical SI no longer contains its documented historical identity gate.")
+        "The archived historical SI no longer contains its historical identity gate.")
 require("P033 · Precedencia del Estado Operativo Global" in legacy_si
         and "RDC-REINSTANTIAR" in legacy_si,
-        "The archived historical SI no longer contains the legacy RDC invariants this repo retains.")
+        "The archived historical SI no longer contains its legacy RDC invariants.")
 
-require("### Gate de arranque fail-closed" in bootstrap
-        and "H1 → SI@H1 → H2 → CABECERA ACTIVA → CONSISTENCIA DE ESPEJOS → F:✓ → REANCLAJE INICIAL" in bootstrap,
-        "BOOTSTRAP-CONTEXTO-GLOBAL.md is missing the fail-closed startup gate.")
+require("gobernanza/METAPROMPT-CANONICO-SAMANTHA.md" in bootstrap
+        and "Metacanon §4, formato obligatorio en cada ciclo" in bootstrap
+        and "gobernanza/GLOSARIO-WORKSPACE.md" in bootstrap,
+        "The bootstrap must point directly to current Sam, Metacanon §4, and the GOW.")
+require("INICIO.md" in entry
+        and "METACANON-OBJETOS-CANONICOS.md" in entry
+        and "GLOSARIO-WORKSPACE.md" in entry,
+        "INICIO.md is missing one of the current canonical entrypoints.")
+
 require("F:! es **fail-closed**" in output and "RA:" in output and "SI CARGADO" in output,
-        "FORMATO-REGISTRO-VERIFICACION-CICLO.md is missing the visible fail-closed contract.")
+        "The cycle output contract is missing its visible fail-closed/re-anchor fields.")
 require(schema.get("version") == "v1.7.7", "Output schema version is not v1.7.7.")
 schema_text = json.dumps(schema, ensure_ascii=False)
 require('"name": "RA"' in schema_text, "Output schema is missing RA.")
@@ -83,5 +91,5 @@ print("CANONICAL GOVERNANCE VALIDATION: PASS")
 print(f"- Current governance: Sam {sam_version} / {sam_signature}")
 print(f"- Methodology: {method_version}")
 print("- Legacy SI: preserved in archive; root path is a compatibility pointer")
-print("- Bootstrap: fail-closed freshness gate present")
+print("- Bootstrap: direct links to Sam, Metacanon §4, and GOW")
 print("- Output contract: visible re-anchor and schema v1.7.7 present")
