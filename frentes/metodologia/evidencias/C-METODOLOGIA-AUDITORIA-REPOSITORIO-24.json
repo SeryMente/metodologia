@@ -1,0 +1,232 @@
+{
+  "schema_version": "1.0",
+  "event": "C-METODOLOGIA-AUDITORIA-REPOSITORIO-24",
+  "cycle_folio": "C-20261021-9C4F6A12",
+  "local_date": "2026-10-21",
+  "repository": {
+    "name": "SeryMente/metodologia",
+    "branch": "main",
+    "source_head_before_cycle": "2fd5ca10b58b5a60ecb26cc86a400073151e5c31",
+    "private": true
+  },
+  "active_session": {
+    "session_folio": "SES-20261021-6B9E2F41",
+    "generation": 3,
+    "control_blob_sha": "08f0ac0e9e3797d44f6f0827fabf90eb1cd139e0"
+  },
+  "entry_inventory": {
+    "recursive_tree_entries": 346,
+    "blobs": 300,
+    "tree_truncated": false,
+    "root_file_count": 30,
+    "root_top_level_directories": [
+      ".github",
+      "CIBERCAFE",
+      "ENTREGABLES",
+      "frentes",
+      "gobernanza",
+      "scripts"
+    ],
+    "root_readme_internal_links": 39,
+    "broken_root_readme_links": 0
+  },
+  "governance_sources": {
+    "sam": {
+      "path": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.md",
+      "version": "v339",
+      "signature": "NX-339m",
+      "blob_sha": "fdc996078bd611492e46d6b3abf569fbb4a6effa",
+      "modified": false
+    },
+    "metacanon": {
+      "path": "METACANON-OBJETOS-CANONICOS.md",
+      "version": "1.20",
+      "prior_blob_sha": "eb066d7b7445710cd96d6abb3acf2c33639d8f41",
+      "new_blob_sha": "8913c8e37c0129da6963c8dcc8c7790904d466a5"
+    },
+    "gow": {
+      "path": "gobernanza/GLOSARIO-WORKSPACE.md",
+      "version": "2.2",
+      "blob_sha": "6d4f8aff292ae173d9ceeba03694597bd2f16488"
+    },
+    "methodology": {
+      "path": "METODOLOGIA.md",
+      "prior_blob_sha": "6203e7220883d95ad19a4712f5086cce74872738",
+      "cleaned_blob_sha": "5535267d56968e5866481adb59c1d2ff59ccfcc1",
+      "current_blob_sha": "d704ff30d63510a5917acddde659bb5ffd6a52cd"
+    }
+  },
+  "changes": [
+    {
+      "kind": "delete",
+      "path": "frentes/metodologia/entregas/CHATGPT-v0.3/SAM-v339/SAM-v339.machine.json",
+      "reason": "Fue creado antes de acordar el diseño; retirado tras la interrupción explícita del operador."
+    },
+    {
+      "kind": "delete",
+      "path": "frentes/metodologia/entregas/CHATGPT-v0.3/SAM-v339/SAM-v339.humano.md",
+      "reason": "Fue creado antes de acordar el diseño; retirado tras la interrupción explícita del operador."
+    },
+    {
+      "kind": "delete",
+      "path": "frentes/metodologia/entregas/CHATGPT-v0.3/SAM-v339/SAM-v339.schema.json",
+      "reason": "Fue creado antes de acordar el diseño; retirado tras la interrupción explícita del operador."
+    },
+    {
+      "kind": "archive",
+      "count": 15,
+      "pattern": "REVISION-METACANON-*.json",
+      "destination": "frentes/metodologia/antecedentes/revisiones/",
+      "preserve_blobs": true
+    },
+    {
+      "kind": "archive",
+      "paths": [
+        [
+          "ANALISIS-PRINCIPIOS-METODOLOGIA-20261006.md",
+          "ENTREGABLES/principios-historicos/ANALISIS-PRINCIPIOS-METODOLOGIA-20261006.md"
+        ],
+        [
+          "PRINCIPIOS.md",
+          "ENTREGABLES/principios-historicos/PRINCIPIOS.md"
+        ],
+        [
+          "PRINCIPIOS_METODOLOGICOS.md",
+          "ENTREGABLES/principios-historicos/PRINCIPIOS_METODOLOGICOS.md"
+        ],
+        [
+          "PRINCIPIOS-PROMPT-EJECUTOR.md",
+          "ENTREGABLES/principios-historicos/PRINCIPIOS-PROMPT-EJECUTOR.md"
+        ],
+        [
+          "ENTREGABLES/PRINCIPIOS-2026-10-06.md",
+          "ENTREGABLES/principios-historicos/PRINCIPIOS-2026-10-06.md"
+        ]
+      ]
+    },
+    {
+      "kind": "archive_with_compatibility_pointer",
+      "from": "SI-METACOGNITIVO.md",
+      "to": "gobernanza/antecedentes/SI-METACOGNITIVO-v1.6.21-historico.md",
+      "original_blob_sha": "1c1e8746d70807ad3274bf98f723f08915585efe",
+      "rebased_blob_sha": "1d3d88768ea4847579a3bcc430135237b7485c87"
+    },
+    {
+      "kind": "archive_with_compatibility_pointer",
+      "from": "CONTINUIDAD-ENTRE-CONVERSACIONES.md",
+      "to": "frentes/metodologia/antecedentes/CONTINUIDAD-ENTRE-CONVERSACIONES-historico.md",
+      "blob_sha": "9c8720a3c8c39e58e1e38c4dcd05689a15e9540b"
+    },
+    {
+      "kind": "rewrite_navigation",
+      "path": "README.md",
+      "blob_sha": "b2cf491f92fe666fd7b43bf8c410e6b3e65d3785"
+    },
+    {
+      "kind": "validation",
+      "paths": [
+        "scripts/validate-canonical-bootstrap.py",
+        ".github/workflows/validate-rdc-governance.yml"
+      ],
+      "status": "static content assertions pass; Actions reported failure, logs unavailable"
+    }
+  ],
+  "rationale_for_preservation": [
+    {
+      "pair": [
+        "frentes/metodologia/kit/0.1.1/ARRANQUE-PROMPT.txt",
+        "frentes/metodologia/entregas/CHATGPT-v0.2/PROMPT-ENTRADA.txt"
+      ],
+      "reason": "Exact same blob, but used as an independently addressable prompt in two versioned packages."
+    },
+    {
+      "pair": [
+        "frentes/metodologia/pruebas/benchmark/C-METODOLOGIA-IMPLEMENTACION-06-regresion-python.json",
+        "frentes/metodologia/pruebas/continuidad/resultado.json"
+      ],
+      "reason": "Exact same blob; the continuity path is used by the essay script as its output location."
+    },
+    {
+      "pair": [
+        "scripts/bootstrap-entorno-persistente.ps1",
+        "scripts/bootstrap-entorno-persistente-ep.ps1"
+      ],
+      "reason": "Distinct scripts; downstream/portable use not established, so neither was deleted."
+    }
+  ],
+  "validation": {
+    "root_readme_links": {
+      "checked": 39,
+      "broken": 0
+    },
+    "static_assertions": {
+      "validator": 14,
+      "rdc_workflow": 16,
+      "status": "passed by direct content evaluation against current main reads"
+    },
+    "github_actions": {
+      "last_checked_commit": "40536af20d8b0bcfe995a4ef17f1255c8c1d4cea",
+      "runs": [
+        {
+          "workflow": "validate-canonical-bootstrap",
+          "run_id": 39715084951,
+          "conclusion": "failure",
+          "logs": "unavailable; step list empty"
+        },
+        {
+          "workflow": "Validate RDC Governance",
+          "run_id": 39715084878,
+          "conclusion": "failure",
+          "logs": "unavailable; step list empty"
+        }
+      ],
+      "ci_pass_claimed": false
+    }
+  },
+  "open_items": [
+    {
+      "id": "REPO-01",
+      "status": "open",
+      "description": "Full semantic review of the 300 repository blobs has not been performed line by line."
+    },
+    {
+      "id": "SCHEMA-01",
+      "status": "open",
+      "description": "Audit downstream consumers before migrating legacy SI fields in output contract/schema v1.7.7 to Sam identity."
+    },
+    {
+      "id": "CI-01",
+      "status": "open",
+      "description": "Obtain usable GitHub Actions logs/annotations and diagnose failed checks."
+    },
+    {
+      "id": "EP-SCRIPTS-01",
+      "status": "open",
+      "description": "Determine actual consumers/contracts of both EP bootstrap scripts."
+    },
+    {
+      "id": "SAM-ATOM-01",
+      "status": "open",
+      "description": "Audit atomicity, redundancy, and length of Sam's 40 current principles; Sam was not modified."
+    }
+  ],
+  "artifacts": {
+    "output": {
+      "path": "frentes/metodologia/entregas/CHATGPT-v0.3/C-METODOLOGIA-AUDITORIA-REPOSITORIO-24-salida-final.md",
+      "blob_sha": "2c197d9c764442a9bc53d172ffca513dcf6e8a42",
+      "chars": 6721
+    },
+    "dialogue": {
+      "path": "frentes/metodologia/conversaciones/C-METODOLOGIA-AUDITORIA-REPOSITORIO-24-dialogo.jsonl",
+      "blob_sha": "6cf0602dddad2bfe5850e4aec5898a01dac6eb10",
+      "records": 4,
+      "verbatim_user_messages": 3
+    },
+    "chronicle": {
+      "path": "frentes/metodologia/cronica/C-METODOLOGIA-AUDITORIA-REPOSITORIO-24.md",
+      "blob_sha": "b546efbea27a3fca48fe49c9ee40821d3fb40aa8",
+      "chars": 5841
+    }
+  },
+  "note": "El SHA de este mismo recibo se verifica desde GitHub después de crearlo y se conserva externamente en la salida final; no se incluye un hash autorreferencial dentro del propio JSON."
+}
