@@ -1,0 +1,168 @@
+{
+  "schema": "metodologia-sam-gobernanza-evidence/1",
+  "event": "C-METODOLOGIA-SAM-GOBERNANZA-23",
+  "cycle_folio": "C-20261021-E671BF14",
+  "local_date": "2026-10-21",
+  "active_session": {
+    "session_folio": "SES-20261021-6B9E2F41",
+    "generation": 3,
+    "control_blob_sha": "08f0ac0e9e3797d44f6f0827fabf90eb1cd139e0",
+    "identity_note": "El folio del ciclo es independiente del folio de sesión. La búsqueda exacta del folio de ciclo no halló coincidencias en los nueve repositorios devueltos por la conexión; no prueba unicidad global."
+  },
+  "source_baseline": {
+    "repository": "SeryMente/metodologia",
+    "branch": "main",
+    "sam": {
+      "path": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.md",
+      "version": "v339",
+      "signature": "NX-339m",
+      "blob_sha": "fdc996078bd611492e46d6b3abf569fbb4a6effa"
+    },
+    "metacanon_before": {
+      "path": "METACANON-OBJETOS-CANONICOS.md",
+      "version": "1.19",
+      "blob_sha": "99cddf94b2b52d3bd1140112d198d50a5e274a7d"
+    },
+    "gow": {
+      "path": "gobernanza/GLOSARIO-WORKSPACE.md",
+      "version": "2.2",
+      "blob_sha": "6d4f8aff292ae173d9ceeba03694597bd2f16488"
+    }
+  },
+  "operator_verbatim": {
+    "path": "frentes/metodologia/conversaciones/C-METODOLOGIA-SAM-GOBERNANZA-23-dialogo.jsonl",
+    "blob_sha": "8c77cccf06d92c964926110d9c3df777bba719d0",
+    "jsonl_records": 3,
+    "user_instruction_entries": [
+      {
+        "seq": 1,
+        "kind": "instruction_verbatim",
+        "stored": true,
+        "character_count": 5075
+      },
+      {
+        "seq": 2,
+        "kind": "verbatim_persistence_reminder",
+        "stored": true,
+        "character_count": 119
+      }
+    ],
+    "final_reminder_exact": "No te quiero interrumpir, pero no te olvides de documentar mis instrucciones verbatim en el OCP. Sobre todo las últimas"
+  },
+  "reference_attachment": {
+    "filename": "AthanorJue20260319-normativo_v0943(1).html",
+    "bytes": 714674,
+    "lines": 7499,
+    "sha256": "f16e3aedafe2b2d7919d700373343f4a5beee14bd23d940789980d5a977bdcb5",
+    "use": "Se analizó su patrón de índice, anclas, retornos al índice, miníndices por categoría y referencias cruzadas.",
+    "copied_to_repository": false,
+    "note": "No se afirma que el HTML original esté materializado en el OCP; los hallazgos relevantes están descritos en Metacanon §50 y la crónica M23."
+  },
+  "findings": {
+    "current_folio_pattern": "P + tres dígitos, por ejemplo P001 y P038",
+    "declared_current_principles": 40,
+    "current_cascade_principle": "P001 — Principio de Cascada Starship",
+    "priority_weight_field_0_to_1_present_in_current_sam": false,
+    "dedicated_starship_annex_found": false,
+    "annexes_seen": [
+      "ART-007",
+      "ART-008",
+      "ART-009",
+      "ART-010",
+      "ART-011"
+    ],
+    "art_011_subject": "MOTOR-1C; no se atribuye a Starship",
+    "requested_enunciado_limit_characters": 300,
+    "requested_atomicity": "un principio, un aspecto, una función de gobernanza",
+    "requested_navigation": "hipertexto ubicuo: índice, retornos, referencias cruzadas y enlaces bidireccionales principio↔anexo",
+    "sam_modified_in_this_cycle": false,
+    "new_weights_assigned": false,
+    "principles_rewritten": false,
+    "annexes_created": false
+  },
+  "persisted_artifacts": {
+    "METACANON-OBJETOS-CANONICOS.md": {
+      "blob_sha": "eb066d7b7445710cd96d6abb3acf2c33639d8f41",
+      "version": "1.20",
+      "commit": "02228fddb6cddf2a272110419882d36ad368ee99",
+      "status": "persisted_and_readback_verified"
+    },
+    "frentes/metodologia/conversaciones/C-METODOLOGIA-SAM-GOBERNANZA-23-dialogo.jsonl": {
+      "blob_sha": "8c77cccf06d92c964926110d9c3df777bba719d0",
+      "status": "persisted_and_readback_verified"
+    },
+    "frentes/metodologia/entregas/CHATGPT-v0.3/C-METODOLOGIA-SAM-GOBERNANZA-23-salida-final.md": {
+      "blob_sha": "49ccf34735ca3fa61b5ec392220e6060b944f202",
+      "fields": 10,
+      "status": "persisted_and_readback_verified"
+    },
+    "frentes/metodologia/cronica/C-METODOLOGIA-SAM-GOBERNANZA-23.md": {
+      "blob_sha": "7fd1609d094137250d102567355baf7426cdb289",
+      "status": "persisted_and_readback_verified"
+    },
+    "INICIO.md": {
+      "blob_sha": "ae86ee00f09fbd0f513be8095fe23310b47b8b58",
+      "status": "version_aligned_1.20"
+    },
+    "frentes/metodologia/README.md": {
+      "blob_sha": "54c59cb7fb81e04132fb9b8e0f1216ea77982d14",
+      "status": "version_aligned_1.20_and_current_output_pointer"
+    },
+    "frentes/metodologia/PENDIENTES.md": {
+      "blob_sha": "ce9278319026d42cfcc2ecfaa548db441defb8f1",
+      "status": "SAM-ATOM-01_added"
+    },
+    "frentes/metodologia/entregas/CHATGPT-v0.3/MANIFIESTO-C-METODOLOGIA-MIGRACION-HILO-FRESCO-21.json": {
+      "blob_sha": "41f95759839eec1c9bbb323b5d662bfb0660702f",
+      "pointer_refresh": {
+        "prior_readme_blob": "b84fa52d4aa10a527c779bea2c6df26a70e1d894",
+        "current_readme_blob": "54c59cb7fb81e04132fb9b8e0f1216ea77982d14",
+        "commit": "1b3d21052d5a3b8d2cc26b48c80f8033e99dc99d"
+      },
+      "status": "persisted_and_readback_verified"
+    }
+  },
+  "validation": {
+    "api_readback_checks": {
+      "passed": 14,
+      "total": 14,
+      "status": "PASS"
+    },
+    "jsonl_parse": "PASS",
+    "output_required_fields": "10/10",
+    "historical_e2e_runs": [
+      {
+        "stage": "after M23 documentation write, before pointer reconciliation",
+        "source_commit": "687e3871e7d1de8f467e193e520b7f9a2644fd8e",
+        "executed_at_utc": "2026-10-22T02:09:05.191Z",
+        "node": "v22.23.3",
+        "platform": "win32",
+        "passed": 16,
+        "total": 17,
+        "result": "FAIL",
+        "failed_check": "manifest-blob-actual-de-dialogo-cronica-y-readme",
+        "cause": "El manifiesto activo todavía comparaba el README M23 con el SHA del README previo a la actualización."
+      },
+      {
+        "stage": "after manifest live README pointer refresh",
+        "source_commit": "1b3d21052d5a3b8d2cc26b48c80f8033e99dc99d",
+        "executed_at_utc": "2026-10-22T02:10:39.475Z",
+        "node": "v22.23.3",
+        "platform": "win32",
+        "passed": 17,
+        "total": 17,
+        "exit_code": 0,
+        "result": "PASS"
+      }
+    ],
+    "scope_note": "La regresión valida la cadena de artefactos de los nueve requisitos verbatim previos. No demuestra atomicidad semántica de los 40 principios ni aceptación de otro modelo."
+  },
+  "remaining_work": [
+    "Auditar los 40 principios vigentes: conteo de caracteres, atomicidad, brevedad, redundancia y referencias.",
+    "Definir ponderaciones numéricas 0–1 sin cambiar los folios Pnnn.",
+    "Diseñar la taxonomía de tipos/categorías de anexos y declarar su aplicabilidad por plataforma.",
+    "Determinar si existe un anexo Starship específico o preparar una propuesta respaldada por instrucciones del operador.",
+    "Diseñar y validar enlaces bidireccionales, anclas estables y detección de enlaces rotos."
+  ],
+  "scope_limit": "El ciclo actual actualiza Metacanon y el OCP; no reescribe Sam ni asigna valores. La auditoría íntegra sigue pendiente."
+}
