@@ -28,7 +28,15 @@
       "scripts"
     ],
     "root_readme_internal_links": 39,
-    "broken_root_readme_links": 0
+    "broken_root_readme_links": 0,
+    "finalized_tree": {
+      "observed_head_before_final_evidence_update": "3cfa5d435d2fdf4ae6554b6a9248646434a72586",
+      "tree_entries": 350,
+      "blobs": 304,
+      "tree_truncated": false,
+      "root_file_count": 30,
+      "root_directory_count": 6
+    }
   },
   "governance_sources": {
     "sam": {
@@ -157,7 +165,8 @@
   "validation": {
     "root_readme_links": {
       "checked": 39,
-      "broken": 0
+      "broken": 0,
+      "readme_blob_sha": "b2cf491f92fe666fd7b43bf8c410e6b3e65d3785"
     },
     "static_assertions": {
       "validator": 14,
@@ -165,22 +174,25 @@
       "status": "passed by direct content evaluation against current main reads"
     },
     "github_actions": {
-      "last_checked_commit": "40536af20d8b0bcfe995a4ef17f1255c8c1d4cea",
+      "last_checked_commit": "3cfa5d435d2fdf4ae6554b6a9248646434a72586",
       "runs": [
         {
           "workflow": "validate-canonical-bootstrap",
-          "run_id": 39715084951,
+          "run_id": 39715430997,
           "conclusion": "failure",
-          "logs": "unavailable; step list empty"
+          "logs": "unavailable; step list empty",
+          "url": "https://github.com/SeryMente/metodologia/actions/runs/39715430997"
         },
         {
           "workflow": "Validate RDC Governance",
-          "run_id": 39715084878,
+          "run_id": 39715431020,
           "conclusion": "failure",
-          "logs": "unavailable; step list empty"
+          "logs": "unavailable; step list empty",
+          "url": "https://github.com/SeryMente/metodologia/actions/runs/39715431020"
         }
       ],
-      "ci_pass_claimed": false
+      "ci_pass_claimed": false,
+      "latest_failure_rechecked": true
     }
   },
   "open_items": [
@@ -226,6 +238,19 @@
       "path": "frentes/metodologia/cronica/C-METODOLOGIA-AUDITORIA-REPOSITORIO-24.md",
       "blob_sha": "b546efbea27a3fca48fe49c9ee40821d3fb40aa8",
       "chars": 5841
+    },
+    "ocp_readme": {
+      "path": "frentes/metodologia/README.md",
+      "blob_sha": "c65304a96a642a387615a6c671d4032beb271976",
+      "contains_current_m24_output": true
+    },
+    "active_manifest": {
+      "path": "frentes/metodologia/entregas/CHATGPT-v0.3/MANIFIESTO-C-METODOLOGIA-MIGRACION-HILO-FRESCO-21.json",
+      "prior_blob_sha": "41f95759839eec1c9bbb323b5d662bfb0660702f",
+      "current_blob_sha": "10093c9e24fe631900c3c6330fba37fe490a2235",
+      "current_entrypoint_blob": "c65304a96a642a387615a6c671d4032beb271976",
+      "both_pointer_locations_match": true,
+      "current_pointer_event": "C-METODOLOGIA-AUDITORIA-REPOSITORIO-24"
     }
   },
   "note": "El SHA de este mismo recibo se verifica desde GitHub después de crearlo y se conserva externamente en la salida final; no se incluye un hash autorreferencial dentro del propio JSON."
