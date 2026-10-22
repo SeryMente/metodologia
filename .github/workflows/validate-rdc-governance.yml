@@ -18,6 +18,7 @@ jobs:
           set -euo pipefail
 
           test -f SI-METACOGNITIVO.md
+          test -f gobernanza/antecedentes/SI-METACOGNITIVO-v1.6.21-historico.md
           test -f METODOLOGIA.md
           test -f ESTADO-RDC-ACTIVO.md
           test -f ANEXO-GATE-CONTEXTO-OPERATIVO-FAIL-CLOSED.md
@@ -25,8 +26,8 @@ jobs:
           test -f ANEXO-GOBERNANZA-ESTADO-GLOBAL-RDC.md
           test -f BOOTSTRAP-CONTEXTO-GLOBAL.md
 
-          si_version="$(sed -n 's/^\*\*Versión:\*\* //p' SI-METACOGNITIVO.md | head -1)"
-          si_name="$(sed -n 's/^\*\*Nombre de versión:\*\* //p' SI-METACOGNITIVO.md | head -1)"
+          si_version="$(sed -n 's/^\*\*Versión:\*\* //p' gobernanza/antecedentes/SI-METACOGNITIVO-v1.6.21-historico.md | head -1)"
+          si_name="$(sed -n 's/^\*\*Nombre de versión:\*\* //p' gobernanza/antecedentes/SI-METACOGNITIVO-v1.6.21-historico.md | head -1)"
           method_version="$(sed -n 's/^- \*\*Versión:\*\* //p' METODOLOGIA.md | head -1)"
           method_name="$(sed -n 's/^- \*\*Nombre de versión:\*\* //p' METODOLOGIA.md | head -1)"
 
@@ -34,11 +35,17 @@ jobs:
           test -n "$si_name"
           test -n "$method_version"
           test -n "$method_name"
+          grep -Fq 'v339' gobernanza/METAPROMPT-CANONICO-SAMANTHA.md
+          grep -Fq 'NX-339m' gobernanza/METAPROMPT-CANONICO-SAMANTHA.md
+          grep -Fq 'puntero histórico' SI-METACOGNITIVO.md
           grep -Fq "$si_version — $si_name" METODOLOGIA.md
 
-          grep -q 'P033 · Precedencia del Estado Operativo Global' SI-METACOGNITIVO.md
-          grep -q 'ANTES.*KHORA\|antes.*KHORA\|antes.*HEALTH MCP.*KHORA' SI-METACOGNITIVO.md
-          grep -q 'RDC-REINSTANTIAR' SI-METACOGNITIVO.md
+          grep -q 'P033 · Precedencia del Estado Operativo Global' gobernanza/antecedentes/SI-METACOGNITIVO-v1.6.21-historico.md
+          test -f gobernanza/antecedentes/SI-METACOGNITIVO-v1.6.21-historico.md
+          grep -q 'ANTES.*KHORA\|antes.*KHORA\|antes.*HEALTH MCP.*KHORA' gobernanza/antecedentes/SI-METACOGNITIVO-v1.6.21-historico.md
+          test -f gobernanza/antecedentes/SI-METACOGNITIVO-v1.6.21-historico.md
+          grep -q 'RDC-REINSTANTIAR' gobernanza/antecedentes/SI-METACOGNITIVO-v1.6.21-historico.md
+          test -f gobernanza/antecedentes/SI-METACOGNITIVO-v1.6.21-historico.md
 
           grep -q 'ESTADO-RDC-ACTIVO.md' ANEXO-GOBERNANZA-ESTADO-GLOBAL-RDC.md
           grep -q 'HANDSHAKE → VALIDAR → ESCRIBIR ESTADO GLOBAL → VERIFICAR LECTURA DE VUELTA → RESOLVER' ANEXO-GOBERNANZA-ESTADO-GLOBAL-RDC.md
@@ -51,6 +58,7 @@ jobs:
           grep -qi 'antes de.*HEALTH' BOOTSTRAP-CONTEXTO-GLOBAL.md
           grep -q 'RDC-REINSTANTIAR' FORMATO-REGISTRO-VERIFICACION-CICLO.md
           grep -q 'npx @wonderwhy-er/desktop-commander@latest remote' ANEXO-PROCEDIMIENTO-REINSTANTIACION-RDC.md
-          grep -q 'P033 · Precedencia del Estado Operativo Global' SI-METACOGNITIVO.md
+          grep -q 'P033 · Precedencia del Estado Operativo Global' gobernanza/antecedentes/SI-METACOGNITIVO-v1.6.21-historico.md
+          test -f gobernanza/antecedentes/SI-METACOGNITIVO-v1.6.21-historico.md
 
           echo "RDC governance invariants: PASS"
