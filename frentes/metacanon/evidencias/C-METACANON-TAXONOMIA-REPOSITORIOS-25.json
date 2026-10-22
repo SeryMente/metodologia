@@ -1,0 +1,238 @@
+{
+  "event": "C-METACANON-TAXONOMIA-REPOSITORIOS-25",
+  "cycle_folio": "C-20261022-7B31A9D4",
+  "cycle_folio_global_uniqueness": "NOT_VERIFIED",
+  "date_local": "2026-10-22",
+  "session": {
+    "folio": "SES-20261021-6B9E2F41",
+    "generation": 3,
+    "control_path": "frentes/metacanon/CONTROL-RESPONSABILIDAD.json",
+    "control_blob_sha": "1d857624215d8825e784e0ffed671213b2f0271a",
+    "status": "owned"
+  },
+  "authority": {
+    "repository": "SeryMente/metodologia",
+    "branch": "main",
+    "repo_name_retained": true,
+    "operational_front_name": "Metacanon",
+    "ocp": "frentes/metacanon/",
+    "compatibility_pointer": "frentes/metodologia/"
+  },
+  "governance": {
+    "metacanon_version": "1.21",
+    "metacanon_seal": "METACANON-OBJETOS-v1.21",
+    "sam_version": "v339",
+    "sam_signature": "NX-339m",
+    "sam_modified": false,
+    "gow_version": "v2.2",
+    "gow_modified": false,
+    "mcp_normative": "DISABLED"
+  },
+  "taxonomy": {
+    "hierarchy": [
+      "organization",
+      "repository",
+      "work_front_OCP",
+      "front_materials"
+    ],
+    "auxiliary_scopes": [
+      "front-owned",
+      "repository-infrastructure",
+      "shared-within-repository",
+      "shared-across-repositories",
+      "historical-evidence"
+    ],
+    "policy": "No empty OCP/shared-resource folders. Preserve inherited OCP paths until separately authorized and dependency-verified. Do not move scripts until owners, consumers, invokers, route dependencies, and tests are identified."
+  },
+  "repository_scope": {
+    "owner": "SeryMente",
+    "repositories_accessible": 9,
+    "claims_all_org_repositories": false,
+    "tree_snapshot_complete_for_accessible_repositories": true
+  },
+  "repository_readbacks": [
+    {
+      "repository": "SeryMente/metodologia",
+      "branch": "main",
+      "head_sha": "b512e0837e0908662c95bdd8e62f264e7dee2fac",
+      "tree_entries": 354,
+      "entry_path": "README.md",
+      "entry_blob_sha": "5412bbc2b9a0b25fb97e17881b90900245b1547b",
+      "taxonomy_section": true,
+      "ocp_paths": [
+        "frentes/metacanon/",
+        "frentes/ep/",
+        "frentes/acceso/",
+        "frentes/blog-personal/"
+      ],
+      "note": "frentes/metodologia/ is compatibility pointer only"
+    },
+    {
+      "repository": "SeryMente/khora",
+      "branch": "main",
+      "head_sha": "8f520cc13eada37f3b7c5c390a57ad99847d4ded",
+      "tree_entries": 1378,
+      "entry_path": "README.md",
+      "entry_blob_sha": "c2fffa2145e30da524a8095a986a94c82f7e7821",
+      "taxonomy_section": true,
+      "ocp_paths": [
+        "docs/frentes/dictado-voz/",
+        "docs/frentes/harmonia/",
+        "docs/frentes/tareas-automaticas/"
+      ],
+      "note": "inherited OCP paths preserved"
+    },
+    {
+      "repository": "SeryMente/serymente",
+      "branch": "main",
+      "head_sha": "ba0f2a1f143912a72520ebba486e77ecf9272d5e",
+      "tree_entries": 84,
+      "entry_path": "README.md",
+      "entry_blob_sha": "3d3a32c1b2f3bae089577126d2b0f6a27dbff04a",
+      "taxonomy_section": true,
+      "ocp_paths": [],
+      "note": "no frentes/ or docs/frentes/ OCP folder observed; site assets preserved"
+    },
+    {
+      "repository": "SeryMente/otrogranprograma",
+      "branch": "main",
+      "head_sha": "6e4360be340a3eaf8f58b2c4b6202c922d9c59e4",
+      "tree_entries": 187,
+      "entry_path": "README.md",
+      "entry_blob_sha": "afe285e0991fbfdb7f1c1f8cda8110ad9ccfe29a",
+      "taxonomy_section": true,
+      "ocp_paths": [],
+      "note": "no OCP folder observed; docs/blog/code preserved"
+    },
+    {
+      "repository": "SeryMente/GDP",
+      "branch": "main",
+      "head_sha": "b1d74bc63b3c0b231324459114786be0ba42feb2",
+      "tree_entries": 646,
+      "entry_path": "README.md",
+      "entry_blob_sha": "1dc9f4fd0d3b694515754304681832011d416c43",
+      "taxonomy_section": true,
+      "ocp_paths": [],
+      "note": "README identifies docs/SPRINT-CONSAR-AFORE-NSS.md as single-file canonical sprint object; folder OCP migration/classification remains pending"
+    },
+    {
+      "repository": "SeryMente/khora-effectif",
+      "branch": "main",
+      "head_sha": "81ac12565f1ac29eb6560dbe090bfb1e94baa839",
+      "tree_entries": 25,
+      "entry_path": "README.txt",
+      "entry_blob_sha": "3f5969fd05ea54b06aa22a4f5c640de1edc5f106",
+      "taxonomy_section": true,
+      "ocp_paths": [],
+      "note": "extension/worker structure preserved; no OCP folder observed"
+    },
+    {
+      "repository": "SeryMente/signal-interpreter",
+      "branch": "main",
+      "head_sha": "046dc79cb722395d4a62170454393e477588f312",
+      "tree_entries": 11572,
+      "entry_path": "README.md",
+      "entry_blob_sha": "5362173b67267437ab44202d893344480cc0763d",
+      "taxonomy_section": true,
+      "ocp_paths": [
+        "docs/frentes/signal-interpreter/"
+      ],
+      "note": "inherited OCP path preserved"
+    },
+    {
+      "repository": "SeryMente/tercer-ambito",
+      "branch": "main",
+      "head_sha": "ef6cb65fda473972cf201ab16e0cd8ac3666d365",
+      "tree_entries": 40,
+      "entry_path": "README.md",
+      "entry_blob_sha": "4910bef9fa5ce2d95dde07e1b7bd8bbc36d126fd",
+      "taxonomy_section": true,
+      "ocp_paths": [],
+      "note": "etica/ has core/docs/evidence; formal OCP/control classification remains pending"
+    },
+    {
+      "repository": "SeryMente/personal",
+      "branch": "main",
+      "head_sha": "622f7994d87d5d1af5c575d6afd703e9e454b017",
+      "tree_entries": 29,
+      "entry_path": "README.md",
+      "entry_blob_sha": "0aa202ade2c8a1bb55b101a2fb8c8049f500dfdf",
+      "taxonomy_section": true,
+      "ocp_paths": [
+        "frentes/repertorio-canto-personal/"
+      ],
+      "note": "OCP path preserved"
+    }
+  ],
+  "central_changes": [
+    {
+      "commit": "4ce94de73f2d9dbfc1a5a033bc4cff49443c8dc2",
+      "meaning": "Set front operational name Metacanon and OCP frentes/metacanon; old route as pointer"
+    },
+    {
+      "commit": "a9d104e320b56b44f36c45cea7f80be4c54dce86",
+      "meaning": "Update root README to Metacanon v1.21"
+    },
+    {
+      "commit": "2650bf8c551c85fb1e4526fec5a8a53e625dfcb5",
+      "meaning": "Correct GDP inventory classification"
+    },
+    {
+      "commit": "1ff295f7b5d88ffc8007e06c68a7a9a19622b157",
+      "meaning": "Record this cycle in Metacanon §9"
+    },
+    {
+      "commit": "b512e0837e0908662c95bdd8e62f264e7dee2fac",
+      "meaning": "Persist cycle dialogue, chronicle, and §4 output"
+    }
+  ],
+  "cycle_artifacts": [
+    {
+      "path": "frentes/metacanon/conversaciones/C-METACANON-TAXONOMIA-REPOSITORIOS-25-dialogo.jsonl",
+      "blob_sha": "202744b78f5e31fc3e908bfbe6b7a592aa9cc9ba"
+    },
+    {
+      "path": "frentes/metacanon/cronica/C-METACANON-TAXONOMIA-REPOSITORIOS-25.md",
+      "blob_sha": "ee8a931b5dc85fa061d3b7a7fe1d6711a0549edf"
+    },
+    {
+      "path": "frentes/metacanon/entregas/CHATGPT-v0.3/C-METACANON-TAXONOMIA-REPOSITORIOS-25-salida-final.md",
+      "blob_sha": "e6f4301cc6ac3cc5d7105aa46e36a4081e7384a9"
+    }
+  ],
+  "script_classification": {
+    "scripts/validate-canonical-bootstrap.py": "repository infrastructure",
+    "scripts/bootstrap-entorno-persistente.ps1": "EP-associated; keep route until consumers/invokers verified",
+    "scripts/bootstrap-entorno-persistente-ep.ps1": "EP variant; consumer not verified; do not consolidate",
+    "scripts/bootstrap-cibercafe-cli.ps1": "CIBERCAFE-associated; keep route pending invoker/route dependency audit",
+    "scripts/clone-public-repo-to-desktop.ps1": "potential reusable utility; actual consumers unverified",
+    "scripts/obs-chrome-camera-fix.ps1": "environment utility; owner/consumers unverified"
+  },
+  "ci_observation": {
+    "observed_before_current_cycle_artifact_commit": true,
+    "head_sha": "2650bf8c551c85fb1e4526fec5a8a53e625dfcb5",
+    "runs": [
+      {
+        "workflow": "validate-canonical-bootstrap",
+        "run_id": "39843029055",
+        "conclusion": "failure"
+      },
+      {
+        "workflow": "Validate RDC Governance",
+        "run_id": "39843029033",
+        "conclusion": "failure"
+      }
+    ],
+    "jobs_api_exposed_steps": false,
+    "exact_failure_cause": "NOT_VERIFIED",
+    "note": "Will re-query after cycle artifacts are persisted; do not treat other repository workflows as part of this central CI result."
+  },
+  "nonchanges": [
+    "No Sam edit",
+    "No GOW edit",
+    "No scripts moved or consolidated",
+    "No inherited OCP paths moved",
+    "No empty shared-resource folders created",
+    "No OCP created in repositories whose need was not evidenced"
+  ]
+}
