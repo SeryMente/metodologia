@@ -1,10 +1,10 @@
 {
-  "canonical_source": "https://github.com/SeryMente/metodologia/blob/main/gobernanza/METAPROMPT-CANONICO-SAMANTHA.md",
+  "canonical_source": "https://github.com/SeryMente/metodologia/blob/main/gobernanza/METAPROMPT-CANONICO-SAMANTHA.html",
   "canonical_repository": "SeryMente/metodologia",
   "canonical_branch": "main",
-  "source_title": "Metaprompt Canónico de Samantha (Sam) · v339 · NX-339m",
-  "canonical_blob_sha": "fdc996078bd611492e46d6b3abf569fbb4a6effa",
-  "canonical_precedence": "Sam P038 establishes SeryMente/metodologia/main as preponderant; P008 mandates GOW review at every cycle start/close; P039 defines FT retake/folio; P040 requires OCP discovery from authoritative files and preserves existing OCP paths.",
+  "source_title": "Gobernanza única de Ser y Mente / Samantha · v340 · NX-340m",
+  "canonical_blob_sha": "9c1ec1a6877588d7304206c6656989d43ba8613b",
+  "canonical_precedence": "Sole normative authority: the integrated HTML file v340. The human section governs the derived machine representation. Prior Markdown source files are compatibility/historical references, not independent authorities.",
   "prior_notion_origin": "https://app.notion.com/p/a925d4a3b2508393b2b7817f1cf431da",
   "notion_mirror_readback": {
     "url": "https://app.notion.com/p/c85a41878241830588e181f4c02fbab4",
@@ -26,6 +26,6 @@
     }
   },
   "source_content_sha256": null,
-  "sync_status": "Sam v339 was persisted to main and read back. The Notion mirror was updated and checked for v339/NX-339m, corrected P008, E-34 and footer. The GOW mirror was updated and checked at v2.2 for glossary-only scope and the contextual Hub entry. Key normative content was read back; byte-for-byte equality of each full page was not tested. Point-in-time sync only; no continuous synchronization is installed.",
-  "hash_status": "SHA-256 was not recalculated; Git blob SHA is used as revision evidence."
+  "sync_status": "The unified HTML document v340 was committed to main, read back, and validated for embedded JSON syntax, 40 principles, 5 annexes, 52 Metacanon sections, 13 GOW sections and 95 glossary index terms. The Samantha and Metacanon Markdown files are now compatibility pointers; GOW Markdown is explicitly marked historical/non-normative. Point-in-time verification only; no continuous synchronization is installed.",
+  "hash_status": "Git blob SHA records the current published HTML content; SHA-256 was not recalculated."
 }
