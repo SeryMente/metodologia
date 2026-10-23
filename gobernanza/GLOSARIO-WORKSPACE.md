@@ -1,3 +1,7 @@
+> **ESTADO: ARCHIVO HISTÓRICO NO NORMATIVO.** El GOW vigente está integrado en el [documento canónico único v340 · NX-340m](METAPROMPT-CANONICO-SAMANTHA.html#glosario). Este archivo se conserva temporalmente para trazabilidad y enlaces legados; no adquieras ni modifiques aquí reglas terminológicas vigentes.
+
+---
+
 <callout icon="📜" color="gray_bg">
 📍 Versión actual · v2.2 · evento C-METODOLOGIA-GOW-HUB-19 · Canon Declarativo · Tier Bloqueante · Alcance: todo el WS · todos los proyectos y frentes de trabajo · Propietario: operador (Black Sheep), toda modificación requiere su autorización explícita
 </callout>
