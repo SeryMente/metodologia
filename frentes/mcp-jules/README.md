@@ -17,6 +17,7 @@ Este es el índice del frente **MCP Jules**. El único estado vivo del frente es
 11. [Endurecimiento de pruebas y estado de entrega](cronica/C-MCP-JULES-004.md).
 12. [Restauración del OCP y estado de la punta](cronica/C-MCP-JULES-005.md).
 13. [Diagnóstico y corrección del entorno E2E](cronica/C-MCP-JULES-006.md).
+14. [Estado consolidado de aceptación](cronica/C-MCP-JULES-007.md).
 
 ## Frontera entre documentación e implementación
 
