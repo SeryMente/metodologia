@@ -22,6 +22,6 @@ El objeto de persistencia de este frente vive en `SeryMente/metodologia/frentes/
 
 - Frente separado del OCP Metacanon existente: sí.
 - Contrato de alcance y criterios de aceptación: registrados.
-- Código MCP Jules: en construcción, no declarado desplegado ni probado en producción.
+- Código MCP Jules: candidato implementado en la rama de Khora `feat/mcp-jules-tools-20261025`; tests y despliegue no verificados.
 - Credencial `JULES_API_KEY`: nunca se guarda en Git; debe configurarse en el entorno de servidor autorizado.
 - Automatización continua: investigación y arquitectura registradas; un sondeo persistente requiere infraestructura externa activa.
