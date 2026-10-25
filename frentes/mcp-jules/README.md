@@ -13,6 +13,8 @@ Este es el índice del frente **MCP Jules**. El único estado vivo del frente es
 7. [Guía de replicación en otros frentes](replicacion/GUIA-REPLICACION-FRENTES.md) — conexión al servidor común, permisos mínimos y prueba de adopción.
 8. [Crónica del ciclo inicial](cronica/C-MCP-JULES-001.md).
 9. [Estado y aceptación de la implementación candidata](cronica/C-MCP-JULES-002.md).
+10. [Evidencia inicial de CI](cronica/C-MCP-JULES-003.md).
+11. [Endurecimiento de pruebas y estado de entrega](cronica/C-MCP-JULES-004.md).
 
 ## Frontera entre documentación e implementación
 
@@ -22,6 +24,6 @@ El objeto de persistencia de este frente vive en `SeryMente/metodologia/frentes/
 
 - Frente separado del OCP Metacanon existente: sí.
 - Contrato de alcance y criterios de aceptación: registrados.
-- Código MCP Jules: candidato implementado en la rama de Khora `feat/mcp-jules-tools-20261025`; tests y despliegue no verificados.
+- Código MCP Jules: candidato implementado en [PR Khora #336](https://github.com/SeryMente/khora/pull/336), rama `feat/mcp-jules-tools-20261025`; la CI de la punta actual sigue en verificación. Vercel bloquea builds con `build-rate-limit`; no se declara despliegue ni conexión real.
 - Credencial `JULES_API_KEY`: nunca se guarda en Git; debe configurarse en el entorno de servidor autorizado.
 - Automatización continua: investigación y arquitectura registradas; un sondeo persistente requiere infraestructura externa activa.
