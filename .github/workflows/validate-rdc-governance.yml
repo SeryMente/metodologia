@@ -19,9 +19,7 @@ jobs:
 
           test -f SI-METACOGNITIVO.md
           test -f gobernanza/antecedentes/SI-METACOGNITIVO-v1.6.21-historico.md
-          test -f gobernanza/METAPROMPT-CANONICO-SAMANTHA.md
-          test -f gobernanza/GLOSARIO-WORKSPACE.md
-          test -f METACANON-OBJETOS-CANONICOS.md
+          test -f gobernanza/METAPROMPT-CANONICO-SAMANTHA.html
           test -f METODOLOGIA.md
           test -f ESTADO-RDC-ACTIVO.md
           test -f ANEXO-GATE-CONTEXTO-OPERATIVO-FAIL-CLOSED.md
@@ -39,13 +37,16 @@ jobs:
           test -n "$method_version"
           test -n "$method_name"
 
-          grep -Fq 'v339' gobernanza/METAPROMPT-CANONICO-SAMANTHA.md
-          grep -Fq 'NX-339m' gobernanza/METAPROMPT-CANONICO-SAMANTHA.md
+          grep -Fq 'Gobernanza única Samantha v340' gobernanza/METAPROMPT-CANONICO-SAMANTHA.html
+          grep -Fq 'NX-340m' gobernanza/METAPROMPT-CANONICO-SAMANTHA.html
+          grep -Fq '"metacanon_version":"1.21"' gobernanza/METAPROMPT-CANONICO-SAMANTHA.html
+          grep -Fq '"gow_version":"2.2"' gobernanza/METAPROMPT-CANONICO-SAMANTHA.html
           grep -Fq 'GOBIERNO GENERAL SUPERSEDIDO' SI-METACOGNITIVO.md
           grep -Fq 'puntero histórico' gobernanza/antecedentes/SI-METACOGNITIVO-v1.6.21-historico.md
-          grep -Fq 'gobernanza/METAPROMPT-CANONICO-SAMANTHA.md' INICIO.md
-          grep -Fq 'Metacanon §4, formato obligatorio en cada ciclo' BOOTSTRAP-CONTEXTO-GLOBAL.md
-          grep -Fq 'gobernanza/GLOSARIO-WORKSPACE.md' BOOTSTRAP-CONTEXTO-GLOBAL.md
+          grep -Fq 'gobernanza/METAPROMPT-CANONICO-SAMANTHA.html' INICIO.md
+          grep -Fq 'gobernanza/METAPROMPT-CANONICO-SAMANTHA.html' BOOTSTRAP-CONTEXTO-GLOBAL.md
+          grep -Fq '#metacanon' BOOTSTRAP-CONTEXTO-GLOBAL.md
+          grep -Fq '#glosario' BOOTSTRAP-CONTEXTO-GLOBAL.md
 
           grep -q 'ANTES.*KHORA\|antes.*KHORA\|antes.*HEALTH MCP.*KHORA' SI-METACOGNITIVO.md
           grep -q 'RDC-REINSTANTIAR' SI-METACOGNITIVO.md
