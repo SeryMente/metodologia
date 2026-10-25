@@ -1,6 +1,6 @@
 # Inventario de repositorios, frentes y recursos · Ser y Mente
 
-**Corte de revisión:** 2026-10-22. **Fuente de inventario:** árboles `main` leídos mediante la conexión GitHub disponible para el propietario `SeryMente`. **Cobertura:** nueve repositorios accesibles en esa consulta; no demuestra que sean todos los repositorios existentes en la organización GitHub. El inventario describe rutas observadas y no prueba por sí solo la integridad semántica de todos los archivos.
+**Corte de revisión:** 2026-10-25. **Fuente de inventario:** árboles `main` leídos mediante la conexión GitHub disponible para el propietario `SeryMente`. **Cobertura:** nueve repositorios accesibles en esa consulta; no demuestra que sean todos los repositorios existentes en la organización GitHub. El inventario describe rutas observadas y no prueba por sí solo la integridad semántica de todos los archivos.
 
 ## Modelo operativo
 
@@ -12,7 +12,7 @@ Las rutas se registran por evidencia, no por uniformidad estética. Un OCP exist
 
 | Repositorio | OCP/frentes observados | Recursos y notas de alcance |
 | --- | --- | --- |
-| [`SeryMente/metodologia`](https://github.com/SeryMente/metodologia) | `frentes/acceso/`; `frentes/blog-personal/`; `frentes/ep/`; `frentes/metacanon/` (nombre operativo vigente). | `.github/` y `scripts/validate-canonical-bootstrap.py` son infraestructura de validación del repositorio. `gobernanza/` contiene cánones compartidos. `CIBERCAFE/` es un área operativa del repositorio. Los demás scripts raíz requieren identificación de invocadores antes de trasladarse o consolidarse. `frentes/metodologia/` queda como compatibilidad solo con punteros, sin un segundo control de responsabilidad. |
+| [`SeryMente/metodologia`](https://github.com/SeryMente/metodologia) | `frentes/acceso/`; `frentes/blog-personal/`; `frentes/ep/`; `frentes/metacanon/` (nombre operativo vigente); `frentes/mcp-jules/` (frente independiente, este corte). | `.github/` y `scripts/validate-canonical-bootstrap.py` son infraestructura de validación del repositorio. `gobernanza/` contiene cánones compartidos. `CIBERCAFE/` es un área operativa del repositorio. Los demás scripts raíz requieren identificación de invocadores antes de trasladarse o consolidarse. `frentes/metodologia/` queda como compatibilidad solo con punteros, sin un segundo control de responsabilidad. |
 | [`SeryMente/khora`](https://github.com/SeryMente/khora) | `docs/frentes/dictado-voz/`; `docs/frentes/harmonia/`; `docs/frentes/tareas-automaticas/`. | Los OCP conservan la ruta heredada bajo `docs/frentes/`; no trasladar por normalización. Código de producto y automatizaciones permanecen en sus áreas propias. |
 | [`SeryMente/signal-interpreter`](https://github.com/SeryMente/signal-interpreter) | `docs/frentes/signal-interpreter/`. | OCP histórico bajo `docs/frentes/`; preservar la ubicación declarada. La gran cantidad de archivos de datos no equivale a una gran cantidad de frentes. |
 | [`SeryMente/personal`](https://github.com/SeryMente/personal) | `frentes/repertorio-canto-personal/`. | El OCP contiene scripts, originales, guías y evidencias específicas; no se mueve. |
