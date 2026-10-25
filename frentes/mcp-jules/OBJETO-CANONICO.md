@@ -10,7 +10,7 @@
 - **Repositorio de implementación:** `SeryMente/khora`, `khora-web`, servidor MCP existente.
 - **Rama de documentación:** `feat/metacanon-mcp-jules-20261025-c32f81`.
 - **Rama de implementación:** `feat/mcp-jules-mvp-20261025-a71c9e2`.
-- **Estado:** especificación, investigación y cambios candidatos registrados; pruebas automatizadas pendientes de ejecución y aceptación funcional real pendiente.
+- **Estado:** OCP y criterios registrados; implementación candidata referenciada en [Khora PR #337](https://github.com/SeryMente/khora/pull/337). Los tests de GitHub Actions siguen en cola y las previsualizaciones Vercel devuelven límite de compilaciones del plan; ninguna ejecución de tests se declara aprobada. Merge, API key real, conexión ChatGPT y aceptación funcional siguen pendientes.
 - **Fuente de titularidad:** [CONTROL-RESPONSABILIDAD.json](CONTROL-RESPONSABILIDAD.json). No modifica ni sustituye el control del frente padre Metacanon.
 
 ## 2. LEER PRIMERO
@@ -96,7 +96,7 @@ Un asistente puede localizar fuentes de Jules, crear una sesión con prompt comp
 
 ## 8. Estado vivo
 
-**Acción actual:** integrar, comprobar y documentar las siete herramientas MCP de Jules.
+**Acción actual:** revisar los resultados de CI de Khora PR #337; corregir fallos verificables y completar la prueba autenticada cuando la credencial de Jules esté disponible.
 
 **Siguiente acción:** completar read-back de las ramas limpias; validar consistencia de catálogo/scopes/fixtures; abrir PR en borrador para ejecutar CI; corregir fallos observados; registrar salida real de tests. No fusionar ni desplegar por inferencia.
 
