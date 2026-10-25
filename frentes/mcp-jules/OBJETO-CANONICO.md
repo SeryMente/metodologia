@@ -3,14 +3,14 @@
 ## 1. Control e identidad
 
 - **Nombre canónico:** Frente MCP Jules.
-- **Versión documental:** v0.1.0 · especificación inicial del producto mínimo viable.
+- **Versión documental:** v0.2.0 · contrato y primera implementación candidata del producto mínimo viable.
 - **Evento de creación:** C-MCP-JULES-001.
 - **Folio de sesión:** SES-20261025-6F8A2C9D; generación del control: 1.
 - **Repositorio / ruta OCP:** `SeryMente/metodologia` / `frentes/mcp-jules/`.
 - **Repositorio de implementación:** `SeryMente/khora`, dentro del servidor MCP existente.
 - **Rama de documentación de trabajo:** `feat/ft-mcp-jules-20261025`.
 - **Rama de implementación de trabajo:** `feat/mcp-jules-tools-20261025`.
-- **Estado:** diseño funcional y criterios de aceptación registrados; implementación y pruebas todavía en curso.
+- **Estado:** las siete herramientas MCP y los scopes específicos se implementaron en una rama candidata de Khora; se actualizaron pruebas y catálogo. La ejecución real de pruebas, el PR, la conexión con Jules, el despliegue y la credencial siguen NO VERIFICADOS.
 - **Persistencia:** borrador versionado en la rama de trabajo; no declarar que esté publicado en `main` hasta verificar merge y lectura de vuelta.
 - **Control:** [CONTROL-RESPONSABILIDAD.json](CONTROL-RESPONSABILIDAD.json), SHA y generación se verifican al finalizar cada mutación.
 
@@ -94,11 +94,11 @@ Proveer herramientas remotas mediante las que el asistente pueda (1) listar fuen
 
 ## 8. Estado vivo
 
-**Acción actual:** construir y documentar el puente MCP Jules en el servidor existente.
+**Acción actual:** revisar y validar la primera implementación candidata del puente MCP Jules, sin crear un segundo servidor.
 
-**Siguiente paso atómico:** completar las siete herramientas MCP y propagar los dos scopes por catálogo, autenticación manual/OAuth, UI y pruebas.
+**Siguiente paso atómico:** verificar el diff de la rama de Khora; ejecutar mediante CI las pruebas de contrato/autenticación/documentación; corregir fallos y leer de vuelta los resultados.
 
-**Después:** ejecutar las pruebas relevantes, corregir cualquier incumplimiento, documentar la evidencia real, abrir PR, verificar CI/merge si las herramientas lo permiten y leer `main` de vuelta.
+**Después:** abrir y verificar PR de implementación y PR documental; corregir fallos; merge solo si la evidencia lo permite; configurar/verificar la credencial desde la bóveda/entorno autorizado, probar conexión real de ChatGPT y separar el estado del despliegue del estado del código.
 
 **Pendientes ordenados:**
 1. Implementar y validar las herramientas en Khora.
@@ -136,10 +136,12 @@ Aplicar los diez campos de Metacanon §4 en cada ciclo sustantivo: identidad/gob
 ## 11. Crónica y fuentes
 
 - Ciclo de creación: [C-MCP-JULES-001](cronica/C-MCP-JULES-001.md).
+- Implementación candidata y estado de aceptación: [C-MCP-JULES-002](cronica/C-MCP-JULES-002.md).
 - Investigación y procedencia: [API oficial, conexión ChatGPT y límites de sondeo](fuentes/INVESTIGACION-API-JULES-CHATGPT.md).
 - Plan de aceptación: [PLAN-ACEPTACION-MVP.md](pruebas/PLAN-ACEPTACION-MVP.md).
 - Plantillas operativas: [ASISTENTE-MCP.md](prompts/ASISTENTE-MCP.md) y [JULES-CONSTRUCTOR.md](prompts/JULES-CONSTRUCTOR.md).
-- Implementación: `SeryMente/khora`, rama `feat/mcp-jules-tools-20261025`; estado de merge/despliegue se actualizará solo con evidencia real.
+- [Guía de replicación en otros frentes](replicacion/GUIA-REPLICACION-FRENTES.md).
+- Implementación candidata en `SeryMente/khora`, rama `feat/mcp-jules-tools-20261025`: adaptador de Jules con paginación de actividades; siete herramientas MCP; scopes `jules:read`/`jules:write`; OAuth/Bearer manual; UI de permisos; contrato documental y fixtures/pruebas ajustadas. No se ha ejecutado todavía una suite ni se ha comprobado la conexión real. Estado de merge/despliegue se actualizará solo con evidencia real.
 
 ## 12. Reinstanciación
 
