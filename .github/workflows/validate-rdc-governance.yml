@@ -12,22 +12,47 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Validate current governance and RDC compatibility
+      - name: Validate the single integrated governance source
         shell: bash
         run: |
           set -euo pipefail
 
+          test -f gobernanza/METAPROMPT-CANONICO-SAMANTHA.html
           test -f SI-METACOGNITIVO.md
           test -f gobernanza/antecedentes/SI-METACOGNITIVO-v1.6.21-historico.md
-          test -f gobernanza/METAPROMPT-CANONICO-SAMANTHA.md
-          test -f gobernanza/GLOSARIO-WORKSPACE.md
-          test -f METACANON-OBJETOS-CANONICOS.md
           test -f METODOLOGIA.md
           test -f ESTADO-RDC-ACTIVO.md
           test -f ANEXO-GATE-CONTEXTO-OPERATIVO-FAIL-CLOSED.md
           test -f ANEXO-PROCEDIMIENTO-REINSTANTIACION-RDC.md
           test -f ANEXO-GOBERNANZA-ESTADO-GLOBAL-RDC.md
           test -f BOOTSTRAP-CONTEXTO-GLOBAL.md
+          test -f INICIO.md
+
+          python3 - <<'PY'
+          import json
+          import re
+          from pathlib import Path
+
+          root = Path(".")
+          html = (root / "gobernanza/METAPROMPT-CANONICO-SAMANTHA.html").read_text(encoding="utf-8")
+          match = re.search(r'<script\s+id="gov-data"\s+type="application/json">([\s\S]*?)</script>', html)
+          assert match, "Canonical HTML does not contain gov-data JSON"
+          data = json.loads(match.group(1))
+          document = data["document"]
+          assert document["canonical_source"] == "SeryMente/metodologia/main:gobernanza/METAPROMPT-CANONICO-SAMANTHA.html"
+          assert re.fullmatch(r"v\d+", document["version"]), "Current Samantha version missing"
+          assert re.fullmatch(r"NX-\d+m", document["signature"]), "Current Samantha signature missing"
+          assert document["principles"] == len(data["principles"]) == 40
+          assert document["annexes"] == len(data["artifacts"])
+          ids = {section["id"] for section in data["sections"]}
+          assert {"samantha", "metacanon", "gow"} <= ids
+          assert 'id="metacanon"' in html and 'id="glosario"' in html and 'id="gobierno-general"' in html
+          footer = re.search(r"<footer[^>]*>([\s\S]*?)</footer>", html)
+          assert footer and document["version"] in footer.group(1) and document["signature"] in footer.group(1)
+          assert "GOBIERNO GENERAL SUPERSEDIDO" in (root / "SI-METACOGNITIVO.md").read_text(encoding="utf-8")
+          assert "gobernanza/METAPROMPT-CANONICO-SAMANTHA.html" in (root / "INICIO.md").read_text(encoding="utf-8")
+          print(f"Integrated governance source: PASS — {document['version']} / {document['signature']}")
+          PY
 
           si_version="$(sed -n 's/^\*\*Versión:\*\* //p' SI-METACOGNITIVO.md | head -1)"
           si_name="$(sed -n 's/^\*\*Nombre de versión:\*\* //p' SI-METACOGNITIVO.md | head -1)"
@@ -39,13 +64,11 @@ jobs:
           test -n "$method_version"
           test -n "$method_name"
 
-          grep -Fq 'v339' gobernanza/METAPROMPT-CANONICO-SAMANTHA.md
-          grep -Fq 'NX-339m' gobernanza/METAPROMPT-CANONICO-SAMANTHA.md
           grep -Fq 'GOBIERNO GENERAL SUPERSEDIDO' SI-METACOGNITIVO.md
-          grep -Fq 'puntero histórico' gobernanza/antecedentes/SI-METACOGNITIVO-v1.6.21-historico.md
-          grep -Fq 'gobernanza/METAPROMPT-CANONICO-SAMANTHA.md' INICIO.md
-          grep -Fq 'Metacanon §4, formato obligatorio en cada ciclo' BOOTSTRAP-CONTEXTO-GLOBAL.md
-          grep -Fq 'gobernanza/GLOSARIO-WORKSPACE.md' BOOTSTRAP-CONTEXTO-GLOBAL.md
+          grep -Fq 'puntero de archivo' gobernanza/antecedentes/SI-METACOGNITIVO-v1.6.21-historico.md
+          grep -Fq 'gobernanza/METAPROMPT-CANONICO-SAMANTHA.html' INICIO.md
+          grep -Fq 'gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#metacanon' BOOTSTRAP-CONTEXTO-GLOBAL.md
+          grep -Fq 'gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#glosario' BOOTSTRAP-CONTEXTO-GLOBAL.md
 
           grep -q 'ANTES.*KHORA\|antes.*KHORA\|antes.*HEALTH MCP.*KHORA' SI-METACOGNITIVO.md
           grep -q 'RDC-REINSTANTIAR' SI-METACOGNITIVO.md
