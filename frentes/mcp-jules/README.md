@@ -10,7 +10,9 @@ Este es el índice del frente **MCP Jules**. El único estado vivo del frente es
 4. [Plan de aceptación del producto mínimo viable (MVP)](pruebas/PLAN-ACEPTACION-MVP.md) — pruebas falsables.
 5. [Prompt del asistente MCP](prompts/ASISTENTE-MCP.md) — contrato operativo de uso desde ChatGPT.
 6. [Prompt para Jules constructor](prompts/JULES-CONSTRUCTOR.md) — plantilla reutilizable con cláusula explícita de no simulación.
-7. [Crónica del ciclo inicial](cronica/C-MCP-JULES-001.md).
+7. [Guía de replicación en otros frentes](replicacion/GUIA-REPLICACION-FRENTES.md) — conexión al servidor común, permisos mínimos y prueba de adopción.
+8. [Crónica del ciclo inicial](cronica/C-MCP-JULES-001.md).
+9. [Estado y aceptación de la implementación candidata](cronica/C-MCP-JULES-002.md).
 
 ## Frontera entre documentación e implementación
 
