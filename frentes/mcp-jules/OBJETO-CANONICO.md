@@ -10,7 +10,7 @@
 - **Repositorio de implementación:** `SeryMente/khora`, `khora-web`, servidor MCP existente.
 - **Rama de documentación:** `feat/metacanon-mcp-jules-20261025-c32f81`.
 - **Rama de implementación:** `feat/mcp-jules-mvp-20261025-final`.
-- **Estado:** OCP y criterios registrados; implementación candidata referenciada en [Khora PR #338](https://github.com/SeryMente/khora/pull/338). Los tests de GitHub Actions siguen en cola y las previsualizaciones Vercel devuelven límite de compilaciones del plan; ninguna ejecución de tests se declara aprobada. Merge, API key real, conexión ChatGPT y aceptación funcional siguen pendientes.
+- **Estado:** OCP y criterios registrados; implementación candidata en [Khora PR #338](https://github.com/SeryMente/khora/pull/338). En CI, typecheck/ui-review/ui:contract y API tests pasan; la suite unitaria tiene 547 PASS/1 FAIL por falta de GH_TOKEN para leer el esquema privado de Metacanon, Ruff falla en dos archivos ajenos y build/E2E fallan aguas abajo. Merge, llamada real a Jules, conexión ChatGPT y aceptación funcional siguen pendientes.
 - **Fuente de titularidad:** [CONTROL-RESPONSABILIDAD.json](CONTROL-RESPONSABILIDAD.json). No modifica ni sustituye el control del frente padre Metacanon.
 
 ## 2. LEER PRIMERO
@@ -92,19 +92,19 @@ Un asistente puede localizar fuentes de Jules, crear una sesión con prompt comp
 - Transporte MCP existente de Khora: endpoint remoto `/api/mcp` sobre HTTPS, con OAuth/Bearer ya existentes.
 - Fuente/repo de Jules: debe copiarse literalmente de `jules_list_sources`; la rama se verifica antes de crear la sesión.
 - Cuenta y plan de ChatGPT no se declaran verificados. La compatibilidad con escritura depende del plan y permisos reales del espacio de trabajo.
-- La clave real y la llamada autenticada a Jules no han sido verificadas en esta documentación; se necesita `JULES_API_KEY` en el entorno de servidor autorizado.
+- La lista de variables de Vercel para `khora-web` confirma que `JULES_API_KEY` está definida como variable sensible de producción. Se consultó con `decrypt=false`; su valor nunca se recuperó ni expuso. La validez de la clave y una llamada API aceptada siguen NO VERIFICADAS.
 
 ## 8. Estado vivo
 
 **Acción actual:** revisar los resultados de CI de Khora PR #338; corregir fallos verificables y completar la prueba autenticada cuando la credencial de Jules esté disponible. PR #337 se cerró sin merge por quedar su SHA desfasado; PR #338 es el candidato vigente.
 
-**Siguiente acción:** completar read-back de las ramas limpias; validar consistencia de catálogo/scopes/fixtures; abrir PR en borrador para ejecutar CI; corregir fallos observados; registrar salida real de tests. No fusionar ni desplegar por inferencia.
+**Siguiente acción:** provisionar acceso de lectura interrepositorio autorizado en CI para el esquema privado de Metacanon; tratar los dos findings Ruff con el frente responsable; volver a ejecutar CI. Después probar la API de Jules con la variable ya configurada (sin leer su valor), conectar un cliente ChatGPT con escritura y solo entonces decidir merge/despliegue. No hacerlo por inferencia.
 
 **Pendientes ordenados:**
-1. Ejecutar suite dirigida de contrato MCP, autenticación y OAuth; ejecutar typecheck/build según las dependencias disponibles.
+1. Repetir la suite completa tras resolver el acceso de lectura interrepositorio; conservar como evidencia que el typecheck, `ui-review:check`, `ui:contract`, API tests y los tests específicos Jules pasan en el último CI observado.
 2. Abrir PR del delta limpio de Khora y leer estados de CI reales.
 3. Revisar el diff y aprobar por separado merge/producción; no declarar aceptación por PR abierto.
-4. Configurar `JULES_API_KEY` en la bóveda/entorno de producción autorizado sin poner el valor en Git.
+4. Verificar una llamada API de Jules desde el entorno autorizado usando `JULES_API_KEY`, definida pero no validada todavía; no recuperar ni registrar su valor.
 5. Hacer prueba autenticada: listar fuentes → crear sesión con aprobación de plan obligatoria → recuperar plan/actividad → aprobar explícitamente → esperar actividad → responder cuando Jules solicite información.
 6. Conectar desde un cliente ChatGPT real que admita herramientas MCP con escritura; confirmar plan y permisos.
 7. Si se necesita vigilancia cuando ChatGPT está inactivo, diseñar/implantar trabajador externo persistente con checkpoint, deduplicación, backoff, logs saneados, apagado y revisión humana.
@@ -118,13 +118,13 @@ Un asistente puede localizar fuentes de Jules, crear una sesión con prompt comp
 |---|---|---|
 | Listar fuentes Jules | Devuelve fuentes reales y paginación correcta | Código en rama; API real no probada |
 | Listar/consultar sesiones | ID validado, estado y token de página correctos | Código en rama; API real no probada |
-| Leer retroalimentación | Recupera `agentMessaged`, `userMessaged`, `planGenerated`, progreso, fallo/completado y paginación | Código en rama; tests pendientes |
+| Leer retroalimentación | Recupera `agentMessaged`, `userMessaged`, `planGenerated`, progreso, fallo/completado y paginación | Código en rama; contrato probado; llamada real pendiente |
 | Crear sesión | Fuente y rama verificadas; prompt completo; fuerza `requirePlanApproval=true` | Código en rama; API real no probada |
 | Responder | Mismo ID de sesión; envía solo en estado permitido; luego vuelve a consultar actividades | Código en rama; API real no probada |
 | Aprobar plan | Rechaza salvo `AWAITING_PLAN_APPROVAL` y usa scope de escritura | Código en rama; prueba pendiente |
-| Aislar permisos | Lectura no permite escribir; escritura no da acceso a lectura/otras funciones | Tests añadidos; ejecución pendiente |
+| Aislar permisos | Lectura no permite escribir; escritura no da acceso a lectura/otras funciones | Test de scopes/OAuth PASS; suite completa bloqueada por GH_TOKEN ajeno al diff |
 | Preservar gobierno | Las siete herramientas pasan por la validación del ciclo normativo | Código y fixture añadidos; ejecución pendiente |
-| Proteger la clave | `JULES_API_KEY` no aparece en respuestas, prompts ni repositorio | Revisión pendiente; nunca introducir el valor real |
+| Proteger la clave | `JULES_API_KEY` no aparece en respuestas, prompts ni repositorio | Variable sensible definida en Vercel producción; no se desencriptó; llamadas y revisión final pendientes |
 | Uso real en ChatGPT | Herramientas descubiertas y secuencia bidireccional probada desde el cliente final | No verificado |
 | Automatización persistente | Proceso programado con checkpoint, idempotencia y recuperación tras reinicio | Fuera de alcance hasta aprobar implementación del trabajador |
 
