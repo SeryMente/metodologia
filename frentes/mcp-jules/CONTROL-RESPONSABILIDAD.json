@@ -1,0 +1,41 @@
+{
+  "schema": "responsabilidad/1",
+  "front": "mcp-jules",
+  "status": "owned",
+  "owner_thread": "chatgpt-C-MCP-JULES-001-SES-20261025-84D3B2F1",
+  "instance": "chatgpt-mcp-jules-2026-10-25",
+  "generation": 1,
+  "authorization_ref": "C-MCP-JULES-001; direct operator authorization in this conversation; independent front inside Metacanon; Samantha v340 P004/P006/P007/P019/P024/P037/P039; Metacanon §§46–48 and §51.",
+  "scope": "Exclusive working responsibility for frentes/mcp-jules/ only. Does not transfer or mutate ownership of frentes/metacanon/ or any other front. Cooperative control; not server-enforced fencing against arbitrary writers.",
+  "expiry": null,
+  "session_folio": "SES-20261025-84D3B2F1",
+  "session_assignment": {
+    "status": "active",
+    "folio": "SES-20261025-84D3B2F1",
+    "assigned_on": "2026-10-25",
+    "front_ocp": "frentes/mcp-jules/",
+    "owner_alias": "chatgpt-C-MCP-JULES-001-SES-20261025-84D3B2F1",
+    "instance": "chatgpt-mcp-jules-2026-10-25",
+    "generation": 1,
+    "identity_kind": "operational alias and folio; not a native ChatGPT conversation ID",
+    "uniqueness_check": "Bounded check on 2026-10-25: the candidate folio did not appear in connected GitHub code search or the readable main-branch controls inspected across SeryMente repositories. This does not prove organization-wide uniqueness beyond the accessible files.",
+    "checked_scope": [
+      "SeryMente/metodologia:frentes/metacanon/CONTROL-RESPONSABILIDAD.json",
+      "SeryMente/metodologia:frentes/acceso/CONTROL-RESPONSABILIDAD.json",
+      "SeryMente/khora:docs/frentes/dictado-voz/CONTROL-RESPONSABILIDAD.json",
+      "SeryMente/khora:docs/frentes/harmonia/CONTROL-RESPONSABILIDAD.json",
+      "SeryMente/signal-interpreter:docs/frentes/signal-interpreter/CONTROL-RESPONSABILIDAD.json",
+      "SeryMente/personal:frentes/repertorio-canto-personal/CONTROL-RESPONSABILIDAD.json"
+    ],
+    "unverified_scope": [
+      "Inaccessible repositories or controls not exposed by the connected GitHub integration",
+      "Global uniqueness beyond the accessible main-branch files"
+    ]
+  },
+  "transfer": {
+    "status": "new independent front; no parent ownership transfer",
+    "parent_front": "metacanon",
+    "parent_control_blob_sha": "8f9d04b86114e0e7fe47e6c6977c8ce6a9d047c7",
+    "note": "The canonical Metacanon control remains at generation 4 and retains its existing owner/folio. This control applies only to the new mcp-jules front."
+  }
+}
