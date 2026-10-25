@@ -3,14 +3,14 @@
 ## 1. Control e identidad
 
 - **Nombre canónico:** Frente MCP Jules.
-- **Versión documental:** v0.5.0 · siete herramientas en PR, CI de unidad en verde, E2E y despliegue en verificación.
+- **Versión documental:** v0.6.0 · estado de aceptación actualizado: CI/unit PASS, E2E con tres fallos existentes de grafo, despliegue y conexión real pendientes.
 - **Evento de creación:** C-MCP-JULES-001.
 - **Folio de sesión:** SES-20261025-6F8A2C9D; generación del control: 1.
 - **Repositorio / ruta OCP:** `SeryMente/metodologia` / `frentes/mcp-jules/`.
 - **Repositorio de implementación:** `SeryMente/khora`, dentro del servidor MCP existente.
 - **Rama de documentación de trabajo:** `feat/ft-mcp-jules-20261025`.
 - **Rama de implementación de trabajo:** `feat/mcp-jules-tools-20261025`.
-- **Estado:** PR documental [Metacanon #18](https://github.com/SeryMente/metodologia/pull/18) y PR de implementación [Khora #336](https://github.com/SeryMente/khora/pull/336) abiertos, no fusionados. Para la punta `8a8d8404aaaee39898665530f711d3ca927e6ea8`, CI terminó PASS y G-4 también terminó PASS. UI Quality y `khora-ok` siguen en ejecución; el test E2E anterior falló por seis tokens firmados con una clave sintética distinta de la inyectada por Playwright. Se alineó el secreto de prueba y se disparó un nuevo ciclo; la aceptación E2E permanece NO VERIFICADA. Los checks de Vercel siguen en FAIL por `build-rate-limit` y bloquean el despliegue de esa rama.
+- **Estado:** PR documental [Metacanon #18](https://github.com/SeryMente/metodologia/pull/18) y PR de implementación [Khora #336](https://github.com/SeryMente/khora/pull/336) abiertos, no fusionados. En la revisión Khora `8a8d8404aaaee39898665530f711d3ca927e6ea8`, CI, G-4 y UI Contract pasaron; UI E2E falló con 17 pruebas PASS y 3 fallidas en `/grafo`/accesibilidad del nodo. El archivo UI E2E es idéntico a `main`, por lo que esos fallos no apuntan a herramientas Jules, pero mantienen el gate en rojo. `khora-ok` y las pruebas de la punta posterior `2c2c31037999339708dac4a1684d127f76a38f87` no tenían resultado final en la última consulta. Los validadores de Metacanon siguen fallando sin pasos/logs recuperables; causa NO VERIFICADA. Vercel bloquea despliegues con `build-rate-limit`.
 - **Persistencia:** borrador versionado en la rama de trabajo; no declarar que esté publicado en `main` hasta verificar merge y lectura de vuelta.
 - **Control:** [CONTROL-RESPONSABILIDAD.json](CONTROL-RESPONSABILIDAD.json), SHA y generación se verifican al finalizar cada mutación.
 
@@ -94,9 +94,9 @@ Proveer herramientas remotas mediante las que el asistente pueda (1) listar fuen
 
 ## 8. Estado vivo
 
-**Acción actual:** comprobar el cierre de UI Quality y `khora-ok` en la punta `8a8d8404aaaee39898665530f711d3ca927e6ea8`; seguir preservando la limitación no verificada de los validadores de Metacanon.
+**Acción actual:** obtener y validar los resultados finales de CI, UI Quality y `khora-ok` sobre la punta actual de Khora; documentar explícitamente los tres fallos E2E existentes y no declarar el MVP remoto utilizable hasta probar ChatGPT→Jules de extremo a extremo.
 
-**Siguiente paso atómico:** leer resultados finales de los workflows para `8a8d8404aaaee39898665530f711d3ca927e6ea8`; corregir cualquier error demostrado, sin copiar resultados de commits anteriores.
+**Siguiente paso atómico:** consultar el resultado real del commit `2c2c31037999339708dac4a1684d127f76a38f87`; si los gates de código pasan, resolver la causa del bloqueo de Vercel y verificar conexión real de Jules/ChatGPT. Mantener abiertos los PR mientras no se verifiquen los bloqueos materiales.
 
 **Después:** completar CI, resolver el estado no verificable de los workflows de Metacanon, integrar únicamente con checks satisfactorios, desplegar y probar una sesión Jules desde ChatGPT; después planear el trabajador de sondeo persistente como extensión separada.
 
@@ -142,11 +142,12 @@ Aplicar los diez campos de Metacanon §4 en cada ciclo sustantivo: identidad/gob
 - Endurecimiento de pruebas y estado de entrega: [C-MCP-JULES-004](cronica/C-MCP-JULES-004.md).
 - Restauración del OCP y estado de la punta: [C-MCP-JULES-005](cronica/C-MCP-JULES-005.md).
 - Diagnóstico y corrección del entorno E2E: [C-MCP-JULES-006](cronica/C-MCP-JULES-006.md).
+- Estado consolidado de aceptación: [C-MCP-JULES-007](cronica/C-MCP-JULES-007.md).
 - Investigación y procedencia: [API oficial, conexión ChatGPT y límites de sondeo](fuentes/INVESTIGACION-API-JULES-CHATGPT.md).
 - Plan de aceptación: [PLAN-ACEPTACION-MVP.md](pruebas/PLAN-ACEPTACION-MVP.md).
 - Plantillas operativas: [ASISTENTE-MCP.md](prompts/ASISTENTE-MCP.md) y [JULES-CONSTRUCTOR.md](prompts/JULES-CONSTRUCTOR.md).
 - [Guía de replicación en otros frentes](replicacion/GUIA-REPLICACION-FRENTES.md).
-- Implementación candidata: [SeryMente/khora #336](https://github.com/SeryMente/khora/pull/336), rama `feat/mcp-jules-tools-20261025`; punta actual `8a8d8404aaaee39898665530f711d3ca927e6ea8`. CI y G-4: PASS; UI Quality y `khora-ok`: aún en curso en el último sondeo. Vercel bloquea el despliegue con `build-rate-limit`. El proyecto muestra `JULES_API_KEY` presente como variable sensible de producción consultada con descifrado desactivado; no se leyó el valor ni se comprobó la autenticación real.
+- Implementación candidata: [SeryMente/khora #336](https://github.com/SeryMente/khora/pull/336), rama `feat/mcp-jules-tools-20261025`. La revisión validada más reciente `8a8d8404aaaee39898665530f711d3ca927e6ea8` tiene CI/G-4/UI Contract PASS pero UI E2E FAIL (17 PASS / 3 FAIL en pruebas existentes de grafo); la punta `2c2c31037999339708dac4a1684d127f76a38f87` aún requiere resultado de sus workflows. Vercel bloquea build/preview con `build-rate-limit`. `JULES_API_KEY` está presente como variable sensible de producción consultada con descifrado desactivado; su valor no se leyó y no se ha probado la autenticación real.
 
 ## 12. Reinstanciación
 
