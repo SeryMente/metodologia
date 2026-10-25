@@ -1,0 +1,25 @@
+# Frente MCP Jules · índice
+
+Este es el índice del frente **MCP Jules**. El único estado vivo del frente está en [OBJETO-CANONICO.md](OBJETO-CANONICO.md); la titularidad, folio y generación proceden exclusivamente de [CONTROL-RESPONSABILIDAD.json](CONTROL-RESPONSABILIDAD.json). No crear estados paralelos.
+
+## Entrada operativa
+
+1. [Objeto canónico](OBJETO-CANONICO.md) — propósito, alcance, estado, aceptación y siguientes pasos.
+2. [Control de responsabilidad](CONTROL-RESPONSABILIDAD.json) — titularidad de este frente.
+3. [Investigación Jules API / ChatGPT / automatización](fuentes/INVESTIGACION-API-JULES-CHATGPT.md) — capacidades verificadas y límites.
+4. [Plan de aceptación del producto mínimo viable (MVP)](pruebas/PLAN-ACEPTACION-MVP.md) — pruebas falsables.
+5. [Prompt del asistente MCP](prompts/ASISTENTE-MCP.md) — contrato operativo de uso desde ChatGPT.
+6. [Prompt para Jules constructor](prompts/JULES-CONSTRUCTOR.md) — plantilla reutilizable con cláusula explícita de no simulación.
+7. [Crónica del ciclo inicial](cronica/C-MCP-JULES-001.md).
+
+## Frontera entre documentación e implementación
+
+El objeto de persistencia de este frente vive en `SeryMente/metodologia/frentes/mcp-jules/`. La implementación del servidor MCP se integra en el servidor existente de `SeryMente/khora`, no como un segundo servicio independiente. La ubicación y el versionado del código se verificarán contra la rama canónica de Khora en cada corte.
+
+## Estado inicial
+
+- Frente separado del OCP Metacanon existente: sí.
+- Contrato de alcance y criterios de aceptación: registrados.
+- Código MCP Jules: en construcción, no declarado desplegado ni probado en producción.
+- Credencial `JULES_API_KEY`: nunca se guarda en Git; debe configurarse en el entorno de servidor autorizado.
+- Automatización continua: investigación y arquitectura registradas; un sondeo persistente requiere infraestructura externa activa.
