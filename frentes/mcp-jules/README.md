@@ -13,6 +13,7 @@ Este es el índice de navegación del frente MCP Jules. El único estado vivo es
 8. [Guía de replicación](replicacion/GUIA-REPLICACION-FRENTES.md).
 9. [Crónica inicial](cronica/C-MCP-JULES-001.md).
 10. [Implementación candidata y estado de CI](cronica/C-MCP-JULES-002.md).
+12. [C-MCP-JULES-004](cronica/C-MCP-JULES-004.md) — diagnóstico canónico y PR vigente.
 11. [Khora PR #338](https://github.com/SeryMente/khora/pull/338), candidato vigente, y [Metacanon PR #19](https://github.com/SeryMente/metodologia/pull/19), ambos en borrador. [PR #337](https://github.com/SeryMente/khora/pull/337) quedó cerrado sin merge por desfase del SHA.
 
 ## Relación entre documentación y código
