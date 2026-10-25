@@ -1,0 +1,42 @@
+{
+  "schema": "responsabilidad/1",
+  "front": "mcp-jules",
+  "status": "owned",
+  "owner_thread": "chatgpt-C-MCP-JULES-001-SES-20261025-6F8A2C9D",
+  "instance": "chatgpt-mcp-jules-2026-10-25",
+  "generation": 1,
+  "authorization_ref": "C-MCP-JULES-001; explicit operator authorization in this conversation to build a separate Jules MCP front inside Metacanon; Metacanon §46–48 and §51.2–51.6; Samantha v340 P004/P005/P006/P007/P019/P024/P037 and P039. Applies only to this new FT.",
+  "scope": "Exclusive working responsibility for frentes/mcp-jules/ only. Does not transfer, overwrite, or change ownership of frentes/metacanon/ or any other FT. Cooperative preflight; not server-enforced fencing of arbitrary repository writers.",
+  "expiry": null,
+  "session_folio": "SES-20261025-6F8A2C9D",
+  "session_assignment": {
+    "status": "active",
+    "folio": "SES-20261025-6F8A2C9D",
+    "assigned_on": "2026-10-25",
+    "front_ocp": "frentes/mcp-jules/",
+    "owner_alias": "chatgpt-C-MCP-JULES-001-SES-20261025-6F8A2C9D",
+    "instance": "chatgpt-mcp-jules-2026-10-25",
+    "generation": 1,
+    "identity_kind": "operational alias and folio; not a native ChatGPT conversation ID",
+    "uniqueness_check": "Manual bounded scan of main tree and readable CONTROL-RESPONSABILIDAD.json files in nine repositories accessible to the connected GitHub tool on 2026-10-25. Candidate folio did not occur in scanned controls. Search scope is limited to those accessible repositories/files; global uniqueness is not proven.",
+    "checked_scope": [
+      "SeryMente/khora:docs/frentes/dictado-voz/CONTROL-RESPONSABILIDAD.json",
+      "SeryMente/khora:docs/frentes/harmonia/CONTROL-RESPONSABILIDAD.json",
+      "SeryMente/signal-interpreter:docs/frentes/signal-interpreter/CONTROL-RESPONSABILIDAD.json",
+      "SeryMente/metodologia:frentes/acceso/CONTROL-RESPONSABILIDAD.json",
+      "SeryMente/metodologia:frentes/metacanon/CONTROL-RESPONSABILIDAD.json",
+      "SeryMente/personal:frentes/repertorio-canto-personal/CONTROL-RESPONSABILIDAD.json"
+    ],
+    "unverified_scope": [
+      "Repositories or controls inaccessible/not exposed by the current GitHub connection",
+      "Controls not present in the scanned main trees",
+      "Organization-wide folio uniqueness outside the accessible nine-repository inventory"
+    ]
+  },
+  "transfer": {
+    "status": "new front created; no transfer of Metacanon",
+    "parent_front": "metacanon",
+    "parent_control_sha_observed": "8f9d04b86114e0e7fe47e6c6977c8ce6a9d047c7",
+    "note": "The existing Metacanon front retains its existing owner and generation. This control is scoped exclusively to the newly created mcp-jules FT."
+  }
+}
