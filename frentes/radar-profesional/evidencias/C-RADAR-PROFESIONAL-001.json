@@ -162,5 +162,48 @@
     "native_thread_id_exposed": false,
     "global_uniqueness": "not_verified",
     "responsibility_enforcement": "cooperative; not server-enforced"
-  }
+  },
+  "creation_commit_sha": "3a6ec5865519965b7d2c08868f727335863c4497",
+  "creation_commit_url": "https://github.com/SeryMente/metodologia/commit/3a6ec5865519965b7d2c08868f727335863c4497",
+  "creation_commit_message": "Crea OCP Radar Profesional v1.0 y actualiza inventario",
+  "readback_verification": {
+    "status": "passed",
+    "verified_on": "2026-10-28",
+    "verified_head": "3a6ec5865519965b7d2c08868f727335863c4497",
+    "core_sections": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "core_section_count": 13,
+    "core_single_state_heading_count": 1,
+    "purpose_exact_in_core": true,
+    "purpose_exact_in_original": true,
+    "operator_confirmation_saved": true,
+    "jsonl_valid_records": 7,
+    "control_session_folio": "SES-20261028-4F6A9D2B",
+    "control_generation": 1,
+    "inventory_contains_front": true,
+    "source_files_read_back": true,
+    "blob_shas": {
+      "frentes/radar-profesional/RADAR-PROFESIONAL.md": "002c001eab81301a54a281afb46539c9f06d30ba",
+      "frentes/radar-profesional/README.md": "ec393a6289179da59103d05495079d001186c5a8",
+      "frentes/radar-profesional/CONTROL-RESPONSABILIDAD.json": "ebedb865d9d813c731f6ebcf2b63bf37efe3efc1",
+      "frentes/radar-profesional/conversaciones/C-RADAR-PROFESIONAL-001.jsonl": "1cbb3fdcc66d114a4d199229a2b0e13550fdcf52",
+      "frentes/radar-profesional/cronica/C-RADAR-PROFESIONAL-001.md": "991fa2367351b2a1315d6a92f82ef521168f33e7",
+      "INVENTARIO-REPOSITORIOS-Y-FRENTES.md": "67a11122d8b37db4b1e3ba96a7e7626764dfc9a5"
+    }
+  },
+  "manifest_self_reference_excluded": true,
+  "manifest_note": "The evidence file itself is excluded from initial_files blob hashes to avoid a self-referential blob hash. Its path, read-back and content SHA are verified separately."
 }
