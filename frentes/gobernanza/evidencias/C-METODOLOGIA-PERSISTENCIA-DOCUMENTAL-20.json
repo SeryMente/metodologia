@@ -15,17 +15,19 @@
   },
   "canonical_source": {
     "path": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.html",
-    "version": "v352",
-    "signature": "NX-352m",
-    "blob_sha": "94473eccb6fa71303d5908ce678f7efeb191c215",
+    "version": "v353",
+    "signature": "NX-353m",
+    "blob_sha": "16c93745311a5405166a31b583c2a648fda0d044",
     "principles": 41,
     "annexes": 8,
     "metacanon_version": "1.21",
     "gow_version": "2.3",
     "gow_terms": 99,
-    "p041_normative_length": 282,
+    "p041_normative_length": 294,
     "p041_normative_matches_first_rendered_paragraph": true,
+    "attachment_default_scope": "Each attachment in a conversation responsible for an FT/FDT is operational input by default; no separate save instruction is required.",
     "art014_exists": true,
+    "art014_section_2": true,
     "embedded_json_parses": true,
     "inline_scripts": 2,
     "script_syntax_compile_only": true,
@@ -34,12 +36,13 @@
   },
   "metadata": {
     "path": "gobernanza/GLOSARIO-WORKSPACE.fuente.json",
-    "blob_sha": "94473eccb6fa71303d5908ce678f7efeb191c215",
+    "blob_sha": "c2e24ab541e92f8f9de99e39661934a98fa33373",
+    "canonical_blob_sha": "16c93745311a5405166a31b583c2a648fda0d044",
     "points_to_current_dug": true,
     "gow_version_in_source_title": "Documento Único de Gobernanza (DUG) · GOW v2.3",
     "notion_mirror_status": "HISTORICAL_VERIFIED_READBACK",
     "notion_current_verification": "NOT_VERIFIED_IN_THIS_CYCLE",
-    "continuous_sync": "Historical record only: GOW v2.2 was previously written to and read back from the Notion mirror. The current canonical GOW is DUG #glosario v2.3 at Git blob 94473eccb6fa71303d5908ce678f7efeb191c215. This cycle did not update or read back the Notion mirror; no continuous synchronization is installed."
+    "continuous_sync": "Historical record only: GOW v2.2 was previously written to and read back from the Notion mirror. The current canonical GOW is DUG v353 #glosario v2.3 at Git blob 16c93745311a5405166a31b583c2a648fda0d044. This cycle did not update or read back the Notion mirror; no continuous synchronization is installed."
   },
   "responsibility_transfer": {
     "control_path": "frentes/gobernanza/CONTROL-RESPONSABILIDAD.json",
@@ -54,7 +57,12 @@
     "transfer_commit": "0074427119b098b46bf5591243a78cf7e6f83644",
     "new_control_blob_sha": "7739102ac4623690a0aeeb470ff989bb27963cce",
     "exact_readback": true,
-    "native_conversation_id": "NOT_EXPOSED; operational alias used"
+    "native_conversation_id": "NOT_EXPOSED; operational alias used",
+    "current_control_blob_sha": "7739102ac4623690a0aeeb470ff989bb27963cce",
+    "current_generation": 2,
+    "current_owner": "chatgpt-C-METODOLOGIA-PERSISTENCIA-DOCUMENTAL-20-SES-20261028-CPD20-1606",
+    "current_session_folio": "SES-20261028-CPD20-1606",
+    "transfer_recorded": true
   },
   "changes": [
     {
@@ -100,6 +108,71 @@
       "commit_sha": "aca1316968531da4c55048008b7b69ff90e538b2",
       "blob_sha": "b583dee8a2638171286ca7b4c94bebeb5901b63b",
       "readback_exact": true
+    },
+    {
+      "path": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.html",
+      "commit_sha": "868a8e9db9ede8611c1dc814d5b6a54060dd9269",
+      "blob_sha": "16c93745311a5405166a31b583c2a648fda0d044",
+      "readback_exact": true,
+      "change": "DUG v353: updated P041 and expanded ART-014 with default attachment handling"
+    },
+    {
+      "path": "gobernanza/GLOSARIO-WORKSPACE.fuente.json",
+      "commit_sha": "623645f5f814fbe3b1e7c7684479360fe39648dc",
+      "blob_sha": "c2e24ab541e92f8f9de99e39661934a98fa33373",
+      "readback_exact": true,
+      "change": "canonical_blob_sha points to DUG v353"
+    },
+    {
+      "path": "INICIO.md",
+      "commit_sha": "87ca2649040c26b4f834de0c63bc6cec36a4410e",
+      "blob_sha": "14356b2cb5316b0ef6b62b7c40fe62055dae84d1",
+      "readback_exact": true,
+      "change": "version and signature updated to v353"
+    },
+    {
+      "path": "frentes/metacanon/README.md",
+      "commit_sha": "0a771d6d76914fcd4b6547f58b81b39afdf20f83",
+      "blob_sha": "9ef490ce21270fd73236b053adde750080f09d25",
+      "readback_exact": true,
+      "change": "active governance links versioned to DUG v353"
+    },
+    {
+      "path": "frentes/metacanon/entregas/CHATGPT-v0.3/IPZ-CAMPO-CHATGPT.txt",
+      "commit_sha": "6048162f086f890c0330b7e9d59175d79bf75831",
+      "blob_sha": "f6f9de81267f22d0aa71db0fff4aa92656385d5d",
+      "readback_exact": true,
+      "characters": 1492,
+      "native_ipz_installation": "NOT_VERIFIED",
+      "change": "added direct ART-014 entry point and attachment policy within 1500-character artifact budget"
+    },
+    {
+      "path": "frentes/gobernanza/README.md",
+      "commit_sha": "397f8f8375cc52b367d54ffa9c9b683083648b5f",
+      "blob_sha": "aedb1fbb0b503506f63f3c2934cdd1a2549f6b96",
+      "readback_exact": true,
+      "change": "current DUG version and links to cycle record"
+    },
+    {
+      "path": "frentes/gobernanza/GOBERNANZA.md",
+      "commit_sha": "cab2a3bf53f61264cafad063e7d927127a1ec1da",
+      "blob_sha": "d7f53bd9267c0745c558c73eb072ee018406313f",
+      "readback_exact": true,
+      "change": "historical v352 separated from final v353 state"
+    },
+    {
+      "path": "frentes/gobernanza/PENDIENTES.md",
+      "commit_sha": "a5b8c817f5054622c811b70bffcf1f6757c776f0",
+      "blob_sha": "937e269931638b4b472a857af4c99ffb29253ee5",
+      "readback_exact": true,
+      "change": "current statuses updated against v353"
+    },
+    {
+      "path": "frentes/gobernanza/cronica/C-METODOLOGIA-PERSISTENCIA-DOCUMENTAL-20.md",
+      "commit_sha": "c00fee26c1e07e1e4989d425f59acb1245e90c22",
+      "blob_sha": "a90c97f7d460c049f2c300993a8a8e55d0350343",
+      "readback_exact": true,
+      "change": "added final articulation v353"
     }
   ],
   "anchor_checks": {
@@ -115,6 +188,8 @@
     "spdf": "gow-spdf",
     "spd": "gow-spd",
     "dug": "gow-dug",
+    "art014_section_2": true,
+    "allNewCrossReferencesPointToDug": true,
     "runtime_anchor_audit": "NOT_RUN"
   },
   "validation_scope": {
@@ -125,14 +200,33 @@
     "complete_spdf_e2e": "BLOCKED_NO_REAL_ATTACHMENT",
     "attachment_preservation": "NOT_PERFORMED_NO_ATTACHMENT_AVAILABLE",
     "second_authorized_instance_recovery": "NOT_TESTED",
-    "sync_app_to_repository": "NOT_IMPLEMENTED_OR_VERIFIED_IN_THIS_CYCLE"
+    "sync_app_to_repository": "NOT_IMPLEMENTED_OR_VERIFIED_IN_THIS_CYCLE",
+    "embedded_json": "PARSES",
+    "javascript": "SYNTAX_COMPILE_ONLY_PASSED",
+    "p041_normative_length": 294,
+    "principles": 41,
+    "annexes": 8,
+    "gow_terms": 99,
+    "ipz_artifact_chars": 1492,
+    "native_ipz_field": "NOT_WRITTEN_OR_READ_BACK",
+    "browser_render": "NOT_RUN",
+    "dynamic_anchor_and_reciprocal_link_audit": "NOT_RUN",
+    "continuous_sync": "NOT_IMPLEMENTED_OR_VERIFIED"
   },
   "open_items": [
     "GOV-RDC-01: literal PowerShell validation remains open; no command executed",
-    "GOV-IPZ-01: native Custom Instructions field installation is unverified",
-    "GOV-LINK-01: dynamic browser audit of links and reciprocal returns remains open",
-    "GOV-SPDF-E2E-01: real attachment capture and independent authorized-instance recovery remain blocked",
-    "Notion mirror and continuous synchronization remain unverified"
+    "GOV-IPZ-01: IPZ artifact is prepared and read back at 1492 characters; native Custom Instructions field is unverified",
+    "GOV-LINK-01: dynamic browser render and reciprocal-anchor audit remain open",
+    "GOV-SPDF-E2E-01: real attachment preservation, manifest, readback comparison and recovery by a second authorized instance remain blocked until a real original is available",
+    "Notion mirror was not updated or read back; continuous application-to-repository synchronization remains unverified"
   ],
-  "main_head_before_receipt_revision": "aca1316968531da4c55048008b7b69ff90e538b2"
+  "main_head_before_receipt_revision": "c00fee26c1e07e1e4989d425f59acb1245e90c22",
+  "canonical_version_after_articulation": {
+    "previous_version": "v352 · NX-352m",
+    "current_version": "v353 · NX-353m",
+    "previous_blob": "94473eccb6fa71303d5908ce678f7efeb191c215",
+    "current_blob": "16c93745311a5405166a31b583c2a648fda0d044",
+    "commit": "868a8e9db9ede8611c1dc814d5b6a54060dd9269",
+    "scope": "Only existing P041 and ART-014 were articulated; no new principle or annex was added."
+  }
 }
