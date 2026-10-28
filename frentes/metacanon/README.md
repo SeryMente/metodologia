@@ -11,7 +11,7 @@ Corte del 2026-10-22 · Metacanon v1.21. [Salida final](entregas/CHATGPT-v0.3/C-
 ## Arranque recomendado para un hilo nuevo
 
 1. [INICIO.md](../../INICIO.md) — puerta de entrada canónica.
-2. [Gobierno general de Samantha](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#gobierno-general) — DUG v352 · NX-352m.
+2. [Gobierno general de Samantha](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#gobierno-general) — DUG v353 · NX-353m.
 3. [Metacanon integrado en el DUG](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#metacanon) — v1.21; leer LEER PRIMERO, §9, §§29–51 y §4.
 4. [GOW integrado en el DUG](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#glosario) — v2.3; revisar al inicio y cierre.
 5. [Control de responsabilidad](CONTROL-RESPONSABILIDAD.json) y [pendientes](PENDIENTES.md).
