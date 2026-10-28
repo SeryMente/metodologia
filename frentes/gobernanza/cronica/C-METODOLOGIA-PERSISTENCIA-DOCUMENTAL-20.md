@@ -35,3 +35,12 @@ Cada archivo modificado se leyó de vuelta desde `main` y su contenido se cotej�
 La prueba integral no pudo ejecutarse: esta conversación no contiene un archivo adjunto real que permita conservar/cotejar sus bytes o contenido original. El texto del mensaje no se convirtió en archivo ni se simuló captura; no se creó un manifiesto vacío. La recuperación desde otra instancia autorizada tampoco se probó. El ticket `GOV-SPDF-E2E-01` permanece bloqueado hasta que haya un original real y un segundo lector autorizado verificable.
 
 No se consultaron ni ejecutaron GitHub Actions/workflows. El espejo de Notion no se actualizó ni se releyó; su sincronización actual sigue sin verificar.
+## Articulación final · DUG v353 · NX-353m
+
+Tras la reconciliación v352, se determinó que el alcance podía quedar articulado con el principio existente P041 y el anexo existente ART-014, sin agregar otro principio o anexo. P041 se fijó en 294 caracteres para incluir el disparador por adjunto en una conversación responsable de un FT/FDT, preservación en el OCP autorizado, procedencia, read-back/cotejo, bloqueos, no sustitución por derivados y ausencia de sincronización presumida.
+
+ART-014 incorporó la sección 2 de activación por responsabilidad y tratamiento de adjuntos; define que todos los adjuntos de trabajo de esa conversación son insumo operativo por defecto, incluye revisión de adjuntos previos aún accesibles cuando se asume responsabilidad, exige resolver el OCP con el control vigente, guardar original antes de procesar, registrar el manifiesto, leer de vuelta y cotejar; explicita el contrato multiplataforma y que IPZ de ChatGPT es solo un punto de entrada subordinado, sin presumir instalación nativa. Los apartados anteriores se renumeraron hasta el §11.
+
+La fuente DUG v353 fue escrita y releída exactamente: commit `868a8e9db9ede8611c1dc814d5b6a54060dd9269`, blob `16c93745311a5405166a31b583c2a648fda0d044`. El metadato GOW apunta a ese blob (commit `623645f5f814fbe3b1e7c7684479360fe39648dc`). IPZ quedó en 1492 caracteres (commit `6048162f086f890c0330b7e9d59175d79bf75831`), pero el campo nativo no fue instalado ni verificado.
+
+Después se alinearon el punto de entrada, README de Metacanon y README de Gobernanza a v353. La prueba E2E con archivo real sigue bloqueada por falta de un adjunto original accesible; la auditoría dinámica de navegador, RDC literal, espejo de Notion y sincronización continua siguen abiertos.
