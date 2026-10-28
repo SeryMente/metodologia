@@ -5,14 +5,14 @@ Frente operativo separado para trabajar inicialmente sobre el **documento único
 - Núcleo operativo: [GOBERNANZA.md](GOBERNANZA.md)
 - Pendientes activos: [PENDIENTES.md](PENDIENTES.md)
 - Control único de responsabilidad: [CONTROL-RESPONSABILIDAD.json](CONTROL-RESPONSABILIDAD.json)
-- Fuente normativa única vigente: [DUG · Samantha v353 · NX-353m](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html)
+- Fuente normativa única vigente: [DUG · Samantha v354 · NX-354m](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html)
 - Diálogo literal de apertura: [conversación](conversaciones/C-GOBERNANZA-INICIO-01-dialogo.jsonl)
-- Crónica del ciclo vigente: [C-METODOLOGIA-PERSISTENCIA-DOCUMENTAL-20](cronica/C-METODOLOGIA-PERSISTENCIA-DOCUMENTAL-20.md)
-- Recibo verificable del ciclo: [C-METODOLOGIA-PERSISTENCIA-DOCUMENTAL-20](evidencias/C-METODOLOGIA-PERSISTENCIA-DOCUMENTAL-20.json)
+- Crónica del ciclo vigente: [C-GOBERNANZA-TAXONOMIA-ESTRUCTURAL-SYM-01](cronica/C-GOBERNANZA-TAXONOMIA-ESTRUCTURAL-SYM-01.md)
+- Recibo verificable del ciclo: [C-GOBERNANZA-TAXONOMIA-ESTRUCTURAL-SYM-01](evidencias/C-GOBERNANZA-TAXONOMIA-ESTRUCTURAL-SYM-01.json)
 - Crónica: [C-GOBERNANZA-INICIO-01](cronica/C-GOBERNANZA-INICIO-01.md)
 - Evidencia y hashes: [C-GOBERNANZA-INICIO-01](evidencias/C-GOBERNANZA-INICIO-01.json)
 - Salida de apertura: [C-GOBERNANZA-INICIO-01](entregas/CHATGPT-v0.3/C-GOBERNANZA-INICIO-01-salida-final.md)
 
-**Separación de identidades:** el frente Metacanon sigue activo en `frentes/metacanon/`; el nombre del método sigue siendo Metacanon v1.21. La creación de Gobernanza no mueve ni renombra el OCP previo.
+**Separación de identidades:** el frente Metacanon sigue activo en `frentes/metacanon/`; el nombre del método sigue siendo Metacanon v1.22. La creación de Gobernanza no mueve ni renombra el OCP previo.
 
 Este README es índice y no reemplaza el núcleo operativo ni el documento normativo. No se duplicará la gobernanza normativa en Markdown.
