@@ -1,6 +1,6 @@
 {
   "schema": "responsabilidad/1",
-  "front": "metacanon",
+  "front": "gobernanza",
   "status": "owned",
   "owner_thread": "chatgpt-C-METACANON-REINSTANTANCIACION-M27-SES-20261028-8D7A31C2",
   "instance": "chatgpt-metacanon-reinstanciacion-m27-2026-10-28",
@@ -314,5 +314,19 @@
       "authorization_record_matches": true,
       "verified_on": "2026-10-22"
     }
-  }
+  },
+  "rename_history": [
+    {
+      "event_id": "C-GOBERNANZA-RENOMBRE-FRENTE-01",
+      "cycle_folio": "C-20261028-6C9A3E71",
+      "recorded_on": "2026-10-28",
+      "from": "metacanon",
+      "to": "gobernanza",
+      "authorization": "Explicit operator instruction in this conversation: «renombra frente de trabajo Metacanon, del repositorio Metacanon, con el término gobernanza.»",
+      "repository": "SeryMente/metodologia",
+      "ocp_path": "frentes/metacanon/",
+      "path_change": "none; legacy OCP path retained",
+      "method_name_retained": "Metacanon v1.21 · METACANON-OBJETOS-v1.21 remains the name of the methodology, not the operational front"
+    }
+  ]
 }
