@@ -2,7 +2,7 @@
 
 Punto de entrada del repositorio; no es una fuente normativa.
 
-**Documento único de gobernanza:** [Gobernanza de Ser y Mente / Samantha · v340 · NX-340m](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html). Este único archivo integra el gobierno general, los 40 principios, los 5 anexos, Metacanon, GOW, la navegación y revisión interactiva y la representación estructurada para máquinas.
+**Documento Único de Gobernanza:** [DUG · Samantha v352 · NX-352m](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html). Este archivo integra el gobierno general (41 principios), ocho anexos, Metacanon v1.21, GOW v2.3, navegación y revisión interactiva, y la representación estructurada para máquinas. Versión y contadores comprobados en `main` el 2026-10-28.
 
 La sección humana gobierna la representación estructurada incorporada en el mismo archivo. No hay documentos normativos paralelos ni sincronización automática implícita con Notion, instrucciones personalizadas, memorias o copias locales. La rama `main` de `SeryMente/metodologia` es la fuente documental; si no puede leerse, declara `METODOLOGÍA NO VERIFICADA`. Las políticas obligatorias, los permisos reales y las autorizaciones aplicables conservan precedencia.
 
