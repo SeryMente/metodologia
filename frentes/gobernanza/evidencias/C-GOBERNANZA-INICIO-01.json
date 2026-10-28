@@ -20,7 +20,7 @@
       "event": 0,
       "cycle_folio": 0,
       "session_folio": 0,
-      "owner_alias": 0
+      "owner_alias_prefix": 0
     },
     "initial_tree_check": "Recursive main tree contained no frentes/gobernanza/ path before creation.",
     "scope": "Bounded accessible GitHub search and repository tree, not proof of global uniqueness."
