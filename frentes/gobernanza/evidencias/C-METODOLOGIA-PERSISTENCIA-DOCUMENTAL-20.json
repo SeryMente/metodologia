@@ -24,7 +24,7 @@
     "gow_version": "2.3",
     "gow_terms": 99,
     "p041_normative_length": 282,
-    "p041_normative_matches_first_rendered_paragraph": false,
+    "p041_normative_matches_first_rendered_paragraph": true,
     "art014_exists": true,
     "embedded_json_parses": true,
     "inline_scripts": 2,
@@ -94,6 +94,12 @@
       "commit_sha": "8111d5c7bd89886a7992080a9b80b3877eaf8ef5",
       "blob_sha": "315b14db4101c1ba6b5c13d17a8fb8df326f9330",
       "readback_exact": true
+    },
+    {
+      "path": "frentes/gobernanza/README.md",
+      "commit_sha": "aca1316968531da4c55048008b7b69ff90e538b2",
+      "blob_sha": "b583dee8a2638171286ca7b4c94bebeb5901b63b",
+      "readback_exact": true
     }
   ],
   "anchor_checks": {
@@ -127,5 +133,6 @@
     "GOV-LINK-01: dynamic browser audit of links and reciprocal returns remains open",
     "GOV-SPDF-E2E-01: real attachment capture and independent authorized-instance recovery remain blocked",
     "Notion mirror and continuous synchronization remain unverified"
-  ]
+  ],
+  "main_head_before_receipt_revision": "aca1316968531da4c55048008b7b69ff90e538b2"
 }
