@@ -1,0 +1,131 @@
+{
+  "event": "C-METODOLOGIA-PERSISTENCIA-DOCUMENTAL-20",
+  "date_local": "2026-10-28",
+  "timezone": "America/Mexico_City",
+  "repository": "SeryMente/metodologia",
+  "branch": "main",
+  "main_head_before_receipt_commit": "8111d5c7bd89886a7992080a9b80b3877eaf8ef5",
+  "historic_receipt": {
+    "version": "v351",
+    "dugCommit": "1f11863f70f9b8c0768843fb9e8b0ec08668f1d4",
+    "dugBlob": "fc16ee88a7ae7192e3b03718c819ecd6925dc5ef",
+    "metaCommit": "265f26f78040fd943d61e1f76b83153d9ec5fbce",
+    "metaBlob": "b2156416df39e0782c65f23928946e0bce04e10b",
+    "status": "HISTORICAL_ONLY_NOT_CURRENT"
+  },
+  "canonical_source": {
+    "path": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.html",
+    "version": "v352",
+    "signature": "NX-352m",
+    "blob_sha": "94473eccb6fa71303d5908ce678f7efeb191c215",
+    "principles": 41,
+    "annexes": 8,
+    "metacanon_version": "1.21",
+    "gow_version": "2.3",
+    "gow_terms": 99,
+    "p041_normative_length": 282,
+    "p041_normative_matches_first_rendered_paragraph": false,
+    "art014_exists": true,
+    "embedded_json_parses": true,
+    "inline_scripts": 2,
+    "script_syntax_compile_only": true,
+    "static_duplicate_ids": 0,
+    "dynamic_browser_audit": "NOT_RUN"
+  },
+  "metadata": {
+    "path": "gobernanza/GLOSARIO-WORKSPACE.fuente.json",
+    "blob_sha": "94473eccb6fa71303d5908ce678f7efeb191c215",
+    "points_to_current_dug": true,
+    "gow_version_in_source_title": "Documento Único de Gobernanza (DUG) · GOW v2.3",
+    "notion_mirror_status": "HISTORICAL_VERIFIED_READBACK",
+    "notion_current_verification": "NOT_VERIFIED_IN_THIS_CYCLE",
+    "continuous_sync": "Historical record only: GOW v2.2 was previously written to and read back from the Notion mirror. The current canonical GOW is DUG #glosario v2.3 at Git blob 94473eccb6fa71303d5908ce678f7efeb191c215. This cycle did not update or read back the Notion mirror; no continuous synchronization is installed."
+  },
+  "responsibility_transfer": {
+    "control_path": "frentes/gobernanza/CONTROL-RESPONSABILIDAD.json",
+    "observed_main_head_sha": "480d057bea7e0810628ff246f771c8feb0a7d9ea",
+    "old_control_blob_sha": "826574e7cf1d346960e0a48f33bb396588f307e2",
+    "old_generation": 1,
+    "old_owner": "chatgpt-C-GOBERNANZA-INICIO-01-SES-20261028-3F2B7A91",
+    "new_generation": 2,
+    "new_owner": "chatgpt-C-METODOLOGIA-PERSISTENCIA-DOCUMENTAL-20-SES-20261028-CPD20-1606",
+    "instance_alias": "chatgpt-gobernanza-persistencia-documental-20-2026-10-28",
+    "session_folio": "SES-20261028-CPD20-1606",
+    "transfer_commit": "0074427119b098b46bf5591243a78cf7e6f83644",
+    "new_control_blob_sha": "7739102ac4623690a0aeeb470ff989bb27963cce",
+    "exact_readback": true,
+    "native_conversation_id": "NOT_EXPOSED; operational alias used"
+  },
+  "changes": [
+    {
+      "path": "INICIO.md",
+      "commit_sha": "93dc800fb20297df16f5296282eeedf62bb9705d",
+      "blob_sha": "5cbb0c93b3c982c2453b6ef9af2b971a2d7710c8",
+      "readback_exact": true
+    },
+    {
+      "path": "frentes/metacanon/README.md",
+      "commit_sha": "22521ad52304eb0a122de088d4a560c41ad4566f",
+      "blob_sha": "78b93ad639e98cf400ff84523dfbd505171b8d10",
+      "readback_exact": true
+    },
+    {
+      "path": "frentes/metacanon/entregas/CHATGPT-v0.3/IPZ-CAMPO-CHATGPT.txt",
+      "commit_sha": "75527d6df9007a30af642112ff4f7ab0c0086f28",
+      "blob_sha": "a220515e8373740084161c93c8ec7557b2d2ec5b",
+      "readback_exact": true,
+      "characters": 1479,
+      "native_ipz_installation": "NOT_VERIFIED"
+    },
+    {
+      "path": "frentes/gobernanza/GOBERNANZA.md",
+      "commit_sha": "fd77b85efdffa8a125ab8dad5bc1ae8bb1f2c746",
+      "blob_sha": "b9bf6687353697263c830f379bf54203207ed58f",
+      "readback_exact": true
+    },
+    {
+      "path": "frentes/gobernanza/PENDIENTES.md",
+      "commit_sha": "882b58c7ec03b0ab2eaaf1b75407dfee5254ea3b",
+      "blob_sha": "4176c69734637d5516a8db733ed489dd99f123d6",
+      "readback_exact": true
+    },
+    {
+      "path": "frentes/gobernanza/cronica/C-METODOLOGIA-PERSISTENCIA-DOCUMENTAL-20.md",
+      "commit_sha": "8111d5c7bd89886a7992080a9b80b3877eaf8ef5",
+      "blob_sha": "315b14db4101c1ba6b5c13d17a8fb8df326f9330",
+      "readback_exact": true
+    }
+  ],
+  "anchor_checks": {
+    "sectionIds": [
+      "gobierno-general",
+      "metacanon",
+      "glosario",
+      "representacion-maquina",
+      "integridad"
+    ],
+    "p041": "P041",
+    "art014": "ART-014",
+    "spdf": "gow-spdf",
+    "spd": "gow-spd",
+    "dug": "gow-dug",
+    "runtime_anchor_audit": "NOT_RUN"
+  },
+  "validation_scope": {
+    "relative_markdown_links_in_inicio_and_metacanon_readme": "all checked targets exist",
+    "stale_sam_metacanon_gow_markdown_references_in_three_entrypoints": "none remain",
+    "github_actions_workflows": "NOT_QUERIED_NOT_RUN",
+    "notion_mirror": "NOT_UPDATED_NOT_READ_BACK",
+    "complete_spdf_e2e": "BLOCKED_NO_REAL_ATTACHMENT",
+    "attachment_preservation": "NOT_PERFORMED_NO_ATTACHMENT_AVAILABLE",
+    "second_authorized_instance_recovery": "NOT_TESTED",
+    "sync_app_to_repository": "NOT_IMPLEMENTED_OR_VERIFIED_IN_THIS_CYCLE"
+  },
+  "open_items": [
+    "GOV-RDC-01: literal PowerShell validation remains open; no command executed",
+    "GOV-IPZ-01: native Custom Instructions field installation is unverified",
+    "GOV-LINK-01: dynamic browser audit of links and reciprocal returns remains open",
+    "GOV-SPDF-E2E-01: real attachment capture and independent authorized-instance recovery remain blocked",
+    "Notion mirror and continuous synchronization remain unverified"
+  ]
+}
