@@ -4,7 +4,7 @@
 
 ## Modelo operativo
 
-La jerarquía es **organización → repositorio → frentes/OCP → materiales del frente**, con recursos auxiliares cuyo alcance puede ser de frente, de repositorio o compartido entre repositorios. El repositorio de metodología conserva el nombre `SeryMente/metodologia`; el nombre operativo de su frente central es **Metacanon**. No son la misma identidad.
+La taxonomía normativa se consulta en el [DUG, ART-015](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-015): identidad conceptual Ser y Mente (S y M) → cadena de infraestructura verificada (cuenta titular si aplica → organización GitHub → repositorios → FT/OCP → materiales), con ámbitos funcionales transversales que pueden cruzar frentes/repositorios. Los anexos ART-016 a ART-022 especifican los nodos; ART-014 define el procedimiento SPDF. La relación de una cuenta individual/empresarial superior a SeryMente no está verificada. El inventario tiene cobertura declarada y no presume exhaustividad global. El repositorio de metodología conserva el nombre `SeryMente/metodologia`; el nombre operativo de su frente central es **Metacanon**. No son la misma identidad.
 
 Las rutas se registran por evidencia, no por uniformidad estética. Un OCP existente en una ruta heredada se conserva hasta una migración propia expresamente autorizada, coordinada y verificada. No se crean OCP ni carpetas compartidas vacíos por simetría.
 
@@ -42,4 +42,4 @@ La lectura directa de los tres scripts y de `CIBERCAFE/PC-4/ESTADO.md` confirma 
 
 Actualizar este inventario en la misma migración que cree, mueva o retire un OCP/recurso. En cada repositorio, el README o punto de entrada local indica sus OCP conocidos y áreas auxiliares; este inventario central registra la visión entre repositorios. No es un segundo control de responsabilidad ni sustituye el estado vivo de ningún frente.
 
-Para las reglas normativas vigentes, consultar [Metacanon](METACANON-OBJETOS-CANONICOS.md) §51. El inventario no implica sincronización automática entre repositorios, no certifica una enumeración completa de la organización y no autoriza movimientos adicionales.
+Para las reglas normativas vigentes, consultar [DUG](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#metacanon) §51 y la entrada global [ART-015](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-015). El inventario no implica sincronización automática entre repositorios, no certifica una enumeración completa de la organización y no autoriza movimientos adicionales.
