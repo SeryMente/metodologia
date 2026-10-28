@@ -45,7 +45,7 @@ El OCP previo `frentes/metacanon/` mantiene su nombre y su control. **Metacanon*
 
 **ABIERTO · En preflight.** La creación de este frente y su control de responsabilidad sí se leyeron de vuelta. La corrección del HTML, el anexo RDC y la instalación de IPZ siguen pendientes. Consulte [Pendientes](PENDIENTES.md) y el [control de responsabilidad](CONTROL-RESPONSABILIDAD.json).
 
-## Estado actual · C-METODOLOGIA-PERSISTENCIA-DOCUMENTAL-20 · 2026-10-28
+## Estado previo a la articulación definitiva · DUG v352 · mismo evento
 
 Responsabilidad transferida y verificada: control de `main` actualizado de generación 1 a 2. El titular receptor es `chatgpt-C-METODOLOGIA-PERSISTENCIA-DOCUMENTAL-20-SES-20261028-CPD20-1606` (alias operativo no nativo). Blob de control anterior `826574e7cf1d346960e0a48f33bb396588f307e2`, blob de lectura de vuelta `7739102ac4623690a0aeeb470ff989bb27963cce`, commit `0074427119b098b46bf5591243a78cf7e6f83644`.
 
@@ -54,3 +54,12 @@ El DUG vigente leído desde `main` es v352 · NX-352m, blob `94473eccb6fa71303d5
 Puntos de entrada actualizados y leídos de vuelta: `INICIO.md` blob `5cbb0c93b3c982c2453b6ef9af2b971a2d7710c8`, `frentes/metacanon/README.md` blob `78b93ad639e98cf400ff84523dfbd505171b8d10`, IPZ blob `a220515e8373740084161c93c8ec7557b2d2ec5b` (1479 caracteres). No se verificó instalación del campo nativo de Instrucciones Personalizadas.
 
 La prueba E2E del SPDF no se ejecutó: no hay un archivo adjunto real que preservar en esta conversación; el mensaje no se sustituyó por un archivo fabricado y no se creó un manifiesto vacío. Tampoco está verificada una recuperación por una segunda instancia autorizada.
+## Articulación normativa definitiva · DUG v353 · NX-353m · 2026-10-28
+
+El principio mínimo y sus reglas concretas quedaron incorporados en la fuente normativa única. P041 ahora dispone que, en toda conversación responsable de un FT/FDT, cada adjunto es insumo operativo, preservado como original en el OCP autorizado y verificado por lectura de vuelta y cotejo. Texto normativo: 294 caracteres.
+
+ART-014 recibió una nueva sección 2, “Activación por responsabilidad y tratamiento de adjuntos”, que establece: disparador predeterminado; revisión de adjuntos previos todavía accesibles al asumir el frente; resolución del OCP desde nombre canónico/núcleo/README/control; captura del original antes de procesarlo; actualización del manifiesto; lectura de vuelta y cotejo; contrato multiplataforma y límites de herramientas; uso de las Instrucciones Personalizadas de ChatGPT como punto de entrada subordinado, nunca como fuente normativa ni instalación presumida. Las secciones siguientes se renumeraron, sin añadir un anexo ni un principio independiente.
+
+Fuente actual: `gobernanza/METAPROMPT-CANONICO-SAMANTHA.html`, blob `16c93745311a5405166a31b583c2a648fda0d044`; commit `868a8e9db9ede8611c1dc814d5b6a54060dd9269`. JSON parseado y JavaScript comprobado por compilación sintáctica aislada; no se afirma ejecución de navegador.
+
+Metadato GOW alineado al nuevo blob mediante commit `623645f5f814fbe3b1e7c7684479360fe39648dc`. El artefacto IPZ mide 1492 caracteres y referencia directamente ART-014; no se pudo instalar/verificar el campo nativo de Instrucciones Personalizadas. El objeto de persistencia real E2E sigue pendiente porque no hay un adjunto original disponible en esta conversación.
