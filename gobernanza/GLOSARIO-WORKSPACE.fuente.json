@@ -2,8 +2,8 @@
   "canonical_source": "https://github.com/SeryMente/metodologia/blob/main/gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#glosario",
   "canonical_repository": "SeryMente/metodologia",
   "canonical_branch": "main",
-  "source_title": "Documento Único de Gobernanza (DUG) · GOW v2.3",
-  "canonical_blob_sha": "16c93745311a5405166a31b583c2a648fda0d044",
+  "source_title": "Documento Único de Gobernanza (DUG) · GOW v2.4",
+  "canonical_blob_sha": "695d83ea6913ab3962a87e49b008c366f512e34e",
   "canonical_precedence": "The only normative GOW is the glossary section #glosario in gobernanza/METAPROMPT-CANONICO-SAMANTHA.html on SeryMente/metodologia/main. This JSON is derived source metadata and not an independent glossary authority. Other platforms, including the Notion page below, are mirrors and must not be treated as current unless read back and reconciled.",
   "prior_notion_source": "https://app.notion.com/p/247a418782418399a86001aae61ae938",
   "notion_mirror_readback": {
@@ -37,6 +37,6 @@
     "method": "Merged terms into Group 10 with provenance and scope; duplicates were consolidated against the existing GOW entries; old root file is a pointer, not a glossary authority."
   },
   "source_content_sha256": null,
-  "sync_status": "Historical record only: GOW v2.2 was previously written to and read back from the Notion mirror. The current canonical GOW is DUG v353 #glosario v2.3 at Git blob 16c93745311a5405166a31b583c2a648fda0d044. This cycle did not update or read back the Notion mirror; no continuous synchronization is installed.",
-  "hash_status": "SHA-256 was not recalculated; Git blob SHA is used as revision evidence."
+  "sync_status": "Fuente canónica GOW v2.4 en DUG v354 · NX-354m, blob 695d83ea6913ab3962a87e49b008c366f512e34e, commit 012eba06f4cd729d9c989862f701a6842aa59a36. Se añadieron 3 términos taxonómicos y se jerarquizaron 16 anexos. El espejo de Notion no fue actualizado ni releído en este ciclo; no existe sincronización continua verificada.",
+  "hash_status": "No se recalculó SHA-256 del contenido; la revisión se identifica por Git blob SHA."
 }
