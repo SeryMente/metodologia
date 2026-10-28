@@ -1,0 +1,126 @@
+{
+  "event": "C-GOBERNANZA-INICIO-01",
+  "cycle_folio": "C-20261028-4B81D65C",
+  "date_local": "2026-10-28",
+  "organization": "SeryMente",
+  "repository": "SeryMente/metodologia",
+  "branch": "main",
+  "main_head_at_artifact_readback": "340419b887c205c9586ae77771f3252814251341",
+  "authorization": {
+    "initiating_instruction": "renombra frente de trabajo Metacanon, del repositorio Metacanon, con el término gobernanza.",
+    "correction": "corrección, mantiene el nombre del frente de trabajo Matacana e inaugura un nuevo frente de trabajo aparte denominado gobernanza para trabajar lo que tiene que ver con el documento que contiene el sistema de instrucciones, el documento único de gobernanza, por lo pronto.",
+    "interpretation": "Retain the Metacanon front and create a separate Gobernanza front focused initially on the one canonical governance document."
+  },
+  "collision_check": {
+    "event_id": "C-GOBERNANZA-INICIO-01",
+    "cycle_folio": "C-20261028-4B81D65C",
+    "session_folio": "SES-20261028-3F2B7A91",
+    "owner_alias": "chatgpt-C-GOBERNANZA-INICIO-01-SES-20261028-3F2B7A91",
+    "exact_search_result_counts": {
+      "event": 0,
+      "cycle_folio": 0,
+      "session_folio": 0,
+      "owner_alias": 0
+    },
+    "initial_tree_check": "Recursive main tree contained no frentes/gobernanza/ path before creation.",
+    "scope": "Bounded accessible GitHub search and repository tree, not proof of global uniqueness."
+  },
+  "fronts": {
+    "metacanon": {
+      "path": "frentes/metacanon/",
+      "control_blob_sha_after_correction": "0eaf612b01de0ae630b7a4775849be455ebda6c8",
+      "control_front": "metacanon",
+      "generation": 5,
+      "session_folio": "SES-20261028-8D7A31C2",
+      "owner_alias": "chatgpt-C-METACANON-REINSTANTANCIACION-M27-SES-20261028-8D7A31C2",
+      "correction_commits": [
+        "60aca686c427422d06ee8287664a69def127d5a2",
+        "bd7fa3a1f6ab5285c44018c72a3b02cb4553bb0b"
+      ],
+      "path_moved": false
+    },
+    "gobernanza": {
+      "path": "frentes/gobernanza/",
+      "control": {
+        "path": "frentes/gobernanza/CONTROL-RESPONSABILIDAD.json",
+        "blob_sha": "826574e7cf1d346960e0a48f33bb396588f307e2",
+        "commit_sha": "5c870e157345df15fdaa88a0f7388bb4800afd35",
+        "front": "gobernanza",
+        "status": "owned",
+        "generation": 1,
+        "session_folio": "SES-20261028-3F2B7A91",
+        "owner_alias": "chatgpt-C-GOBERNANZA-INICIO-01-SES-20261028-3F2B7A91"
+      },
+      "artifacts": {
+        "GOBERNANZA.md": {
+          "blob_sha": "229199c7566318fcd9cfe3ddffda5c2aa7c8766f",
+          "commit_sha": "13585ff7ae2c1c153854e407de8b9f61bab158c4",
+          "readback_exact": true
+        },
+        "README.md": {
+          "blob_sha": "ef9bdf72ee12d4bf5e9facddba4fb0957161e3b0",
+          "commit_sha": "a0a5f030ae47663a56040fb6b74de2bfd1f34cbc",
+          "readback_exact": true
+        },
+        "PENDIENTES.md": {
+          "blob_sha": "8a8f16fbd77fdb8f4503627544612a7635a42bb7",
+          "commit_sha": "9a8711554ae59ccc3bd1364d0884669d4a41da1e",
+          "readback_exact": true
+        },
+        "conversaciones/C-GOBERNANZA-INICIO-01-dialogo.jsonl": {
+          "blob_sha": "8fd3ff8e314aadede2913380ac4c15084d5fc4ba",
+          "commit_sha": "4268ca34353ab759020d2889147a09476eeb688e",
+          "readback_exact": true
+        },
+        "cronica/C-GOBERNANZA-INICIO-01.md": {
+          "blob_sha": "f35eb778ec1779a5df96a59b8f0528dba2e01bbd",
+          "commit_sha": "ad2955020e5a329c875babb22e43657dba49ab4c",
+          "readback_exact": true
+        },
+        "entregas/CHATGPT-v0.3/C-GOBERNANZA-INICIO-01-salida-final.md": {
+          "blob_sha": "e4f2eb0007fd108db5b31e121cd0db8c186c9295",
+          "commit_sha": "340419b887c205c9586ae77771f3252814251341",
+          "readback_exact": true
+        }
+      }
+    }
+  },
+  "canonical_governance": {
+    "path": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.html",
+    "title": "Gobernanza única Samantha v345",
+    "blob_sha": "4d4d4f7077d58ed48d12bc856bc81ec414fe8733",
+    "changed_in_this_cycle": false,
+    "embedded_json_parse": "FAIL",
+    "initial_error": "SyntaxError: Bad control character in string literal in JSON at position 97306",
+    "observed_context": "HTML/JSON extraction places a <script> tag and renderer JavaScript in the ART-013 data region; exact repair not attempted.",
+    "isolated_js_syntax": {
+      "extracted_script_blocks": 4,
+      "newFunction_passed": 4,
+      "browser_render_test": "NOT_RUN"
+    }
+  },
+  "validation": {
+    "every_new_artifact_read_back": true,
+    "new_front_control_read_back_verified": true,
+    "metacanon_control_read_back_restored": true,
+    "main_tree_complete_not_truncated": true,
+    "github_actions_or_workflows": "NOT_RUN_NOT_QUERIED",
+    "normative_mcp": "DISABLED_NOT_RUN",
+    "rdc_device_list_only": "PC-8 ID 364d99aa-c0c7-480a-91ef-8cccae02c6c2 appeared Online; no command executed.",
+    "ipz_native_field_write": "NOT_AVAILABLE_IN_EXPOSED_TOOLS"
+  },
+  "pending": [
+    "Repair embedded JSON safely without losing or reinterpreting human content.",
+    "Resolve RDC annex ID collision; existing ART-012 and ART-013 must not be duplicated or silently renumbered.",
+    "Correct stale INICIO.md v340 reference and navigation links in Metacanon README to integrated HTML anchors.",
+    "Validate the literal RDC PowerShell command; preserve original and separate any proposed correction.",
+    "Prepare IPZ text; native installation remains unverified/pending.",
+    "Run a fresh current-version internal-link/return audit after repair."
+  ],
+  "limitations": [
+    "No broad normative change to Samantha or GOW.",
+    "No governance HTML edit in this cycle.",
+    "No workflows consulted or executed.",
+    "No global uniqueness or global repository coverage claim."
+  ]
+}
