@@ -1,0 +1,120 @@
+{
+  "schema": "responsabilidad/1",
+  "front": "radar-profesional",
+  "repository": "SeryMente/metodologia",
+  "front_ocp": "frentes/radar-profesional/",
+  "state_object": "frentes/radar-profesional/RADAR-PROFESIONAL.md",
+  "status": "owned",
+  "owner_thread": "chatgpt-C-RADAR-PROFESIONAL-001-SES-20261028-4F6A9D2B",
+  "owner_thread_identity_kind": "operational alias; native ChatGPT conversation ID not exposed by tools",
+  "instance": "chatgpt-radar-profesional-001-2026-10-28",
+  "generation": 1,
+  "authorization_ref": "frentes/radar-profesional/conversaciones/C-RADAR-PROFESIONAL-001.jsonl#U003-U004",
+  "scope": "One active owner for Radar Profesional only. Initialization and documentary/prospecting research within the ratified purpose. External communications, expenditures, account/credential changes, data migration and automated extraction remain subject to their own applicable authorizations and checks.",
+  "expiry": null,
+  "handoff": "Initial assignment of a newly created OCP; no prior canonical path/control was present. The alias is not a native platform identifier. Cooperative registry, not server-enforced fencing of arbitrary writes.",
+  "session_folio": "SES-20261028-4F6A9D2B",
+  "session_assignment": {
+    "status": "active",
+    "folio": "SES-20261028-4F6A9D2B",
+    "assigned_on": "2026-10-28",
+    "front_ocp": "frentes/radar-profesional/",
+    "owner_alias": "chatgpt-C-RADAR-PROFESIONAL-001-SES-20261028-4F6A9D2B",
+    "instance": "chatgpt-radar-profesional-001-2026-10-28",
+    "generation": 1,
+    "identity_kind": "operational alias and session folio; not a native ChatGPT conversation ID",
+    "uniqueness_check": {
+      "exact_code_searches": [
+        {
+          "term": "C-RADAR-PROFESIONAL-001",
+          "matches_found": 0
+        },
+        {
+          "term": "C-20261028-5B2D8A17",
+          "matches_found": 0
+        },
+        {
+          "term": "SES-20261028-4F6A9D2B",
+          "matches_found": 0
+        },
+        {
+          "term": "chatgpt-C-RADAR-PROFESIONAL-001-SES-20261028-4F6A9D2B",
+          "matches_found": 0
+        }
+      ],
+      "direct_controls_inspected": [
+        {
+          "path": "SeryMente/metodologia:frentes/acceso/CONTROL-RESPONSABILIDAD.json",
+          "sha": "d77dbf55ca188d79d5126e168edd202ec63ac811",
+          "result": "read"
+        },
+        {
+          "path": "SeryMente/metodologia:frentes/metacanon/CONTROL-RESPONSABILIDAD.json",
+          "sha": "0eaf612b01de0ae630b7a4775849be455ebda6c8",
+          "result": "read"
+        },
+        {
+          "path": "SeryMente/metodologia:frentes/gobernanza/CONTROL-RESPONSABILIDAD.json",
+          "sha": "826574e7cf1d346960e0a48f33bb396588f307e2",
+          "result": "read"
+        },
+        {
+          "path": "SeryMente/khora:docs/frentes/harmonia/CONTROL-RESPONSABILIDAD.json",
+          "sha": "636a43c6e89355bba94154f2e48f465226030396",
+          "result": "read"
+        },
+        {
+          "path": "SeryMente/khora:docs/frentes/dictado-voz/CONTROL-RESPONSABILIDAD.json",
+          "sha": "09b9e497abf16771827b2602308562abc4484ed2",
+          "result": "read"
+        },
+        {
+          "path": "SeryMente/signal-interpreter:docs/frentes/signal-interpreter/CONTROL-RESPONSABILIDAD.json",
+          "sha": "1d3cdb2045dae6e9999dac90f33ebfc68d998854",
+          "result": "read"
+        },
+        {
+          "path": "SeryMente/personal:frentes/repertorio-canto-personal/CONTROL-RESPONSABILIDAD.json",
+          "sha": "fa92efd677b3a57520b8d3a1cf4feb0fa792b978",
+          "result": "read"
+        },
+        {
+          "path": "SeryMente/khora:docs/frentes/tareas-automaticas/CONTROL-RESPONSABILIDAD.json",
+          "sha": null,
+          "result": "NOT_FOUND"
+        },
+        {
+          "path": "SeryMente/tercer-ambito:etica/CONTROL-RESPONSABILIDAD.json",
+          "sha": null,
+          "result": "NOT_FOUND"
+        }
+      ],
+      "absent_directory_confirmed": true,
+      "scope": "Exact indexed searches plus seven readable responsibility controls and two not-found control paths across accessible repositories. Does not prove global uniqueness in all repositories or native platform exclusivity.",
+      "global_uniqueness": "not_verified"
+    },
+    "source_revision_before_creation": {
+      "main_head": "fe88a682d372127402bdd8aab9d412559e845fd0",
+      "governance_blob_sha": "bc46e261eedb270546f22d3935cd9fdadb47d75c",
+      "inventory_blob_sha": "910299b1ddeaa2c85f433f4e39a1d11d175f8b03"
+    }
+  },
+  "initialization": {
+    "event_id": "C-RADAR-PROFESIONAL-001",
+    "cycle_folio": "C-20261028-5B2D8A17",
+    "recorded_on": "2026-10-28",
+    "authorization": "Operator instruction to canonize Radar Profesional and open a new front; purpose gated until operator dictated U003 and confirmed it verbatim at U004.",
+    "purpose_original_path": "frentes/radar-profesional/conversaciones/C-RADAR-PROFESIONAL-001.jsonl",
+    "repository": "SeryMente/metodologia",
+    "ocp_path": "frentes/radar-profesional/",
+    "state_object": "frentes/radar-profesional/RADAR-PROFESIONAL.md",
+    "canonical_governance_version": "Sam v346 · NX-346m",
+    "observed_governance_blob_sha": "bc46e261eedb270546f22d3935cd9fdadb47d75c",
+    "observed_main_commit": "fe88a682d372127402bdd8aab9d412559e845fd0",
+    "metacanon_version": "1.21",
+    "gow_version": "2.2",
+    "prior_canonical_path_state": "NOT_FOUND at frentes/radar-profesional/",
+    "previous_owner": null,
+    "initial_scope": "Documentary initialization and subsequent research/inventory; no database platform or ingestion/automation choice yet."
+  }
+}

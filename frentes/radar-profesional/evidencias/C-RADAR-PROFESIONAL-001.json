@@ -1,0 +1,166 @@
+{
+  "schema": "radar-profesional-initialization-evidence/v1",
+  "event_id": "C-RADAR-PROFESIONAL-001",
+  "cycle_folio": "C-20261028-5B2D8A17",
+  "session_folio": "SES-20261028-4F6A9D2B",
+  "recorded_on": "2026-10-28",
+  "front": "Radar Profesional",
+  "repository": "SeryMente/metodologia",
+  "branch": "main",
+  "base_main_commit": "fe88a682d372127402bdd8aab9d412559e845fd0",
+  "base_tree_sha": "956c2cbfa999b4f25aff8bee885f63fef97fd133",
+  "previous_governance_blob_sha": "bc46e261eedb270546f22d3935cd9fdadb47d75c",
+  "previous_inventory_blob_sha": "910299b1ddeaa2c85f433f4e39a1d11d175f8b03",
+  "governance": {
+    "source_path": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.html",
+    "version": "Sam v346 · NX-346m",
+    "metacanon_version": "1.21",
+    "gow_version": "2.2",
+    "sha": "bc46e261eedb270546f22d3935cd9fdadb47d75c",
+    "url": "https://github.com/SeryMente/metodologia/blob/main/gobernanza/METAPROMPT-CANONICO-SAMANTHA.html"
+  },
+  "purpose_verbatim": "Crear y mantener un sistema personal, trazable y ampliable para detectar oportunidades profesionales y comerciales; extraer y verificar sus datos; evaluar su pertinencia y elegibilidad; eliminar duplicados; registrar las oportunidades, contactos, fuentes y decisiones en una base maestra; y organizar las comunicaciones y los seguimientos hasta su resolución o descarte. Debe abarcar tanto empleos y contratos como la captación de clientes, agencias y colaboradores para los servicios profesionales ofrecidos, utilizando correo electrónico, portales, publicaciones, referencias y otras fuentes pertinentes, sin quedar limitado a una plataforma, un canal o un sector.",
+  "confirmation_verbatim": "Asi que quede.",
+  "preflight": {
+    "prior_frentes_entries": [
+      "acceso",
+      "blog-personal",
+      "ep",
+      "gobernanza",
+      "mcp-jules",
+      "metacanon",
+      "metodologia"
+    ],
+    "target_directory_preexisting": false,
+    "search_results": [
+      {
+        "term": "C-RADAR-PROFESIONAL-001",
+        "count": 0,
+        "results": []
+      },
+      {
+        "term": "C-20261028-5B2D8A17",
+        "count": 0,
+        "results": []
+      },
+      {
+        "term": "SES-20261028-4F6A9D2B",
+        "count": 0,
+        "results": []
+      },
+      {
+        "term": "chatgpt-C-RADAR-PROFESIONAL-001-SES-20261028-4F6A9D2B",
+        "count": 0,
+        "results": []
+      }
+    ],
+    "controls_inspected": [
+      {
+        "path": "SeryMente/metodologia:frentes/acceso/CONTROL-RESPONSABILIDAD.json",
+        "sha": "d77dbf55ca188d79d5126e168edd202ec63ac811",
+        "result": "read"
+      },
+      {
+        "path": "SeryMente/metodologia:frentes/metacanon/CONTROL-RESPONSABILIDAD.json",
+        "sha": "0eaf612b01de0ae630b7a4775849be455ebda6c8",
+        "result": "read"
+      },
+      {
+        "path": "SeryMente/metodologia:frentes/gobernanza/CONTROL-RESPONSABILIDAD.json",
+        "sha": "826574e7cf1d346960e0a48f33bb396588f307e2",
+        "result": "read"
+      },
+      {
+        "path": "SeryMente/khora:docs/frentes/harmonia/CONTROL-RESPONSABILIDAD.json",
+        "sha": "636a43c6e89355bba94154f2e48f465226030396",
+        "result": "read"
+      },
+      {
+        "path": "SeryMente/khora:docs/frentes/dictado-voz/CONTROL-RESPONSABILIDAD.json",
+        "sha": "09b9e497abf16771827b2602308562abc4484ed2",
+        "result": "read"
+      },
+      {
+        "path": "SeryMente/signal-interpreter:docs/frentes/signal-interpreter/CONTROL-RESPONSABILIDAD.json",
+        "sha": "1d3cdb2045dae6e9999dac90f33ebfc68d998854",
+        "result": "read"
+      },
+      {
+        "path": "SeryMente/personal:frentes/repertorio-canto-personal/CONTROL-RESPONSABILIDAD.json",
+        "sha": "fa92efd677b3a57520b8d3a1cf4feb0fa792b978",
+        "result": "read"
+      },
+      {
+        "path": "SeryMente/khora:docs/frentes/tareas-automaticas/CONTROL-RESPONSABILIDAD.json",
+        "sha": null,
+        "result": "NOT_FOUND"
+      },
+      {
+        "path": "SeryMente/tercer-ambito:etica/CONTROL-RESPONSABILIDAD.json",
+        "sha": null,
+        "result": "NOT_FOUND"
+      }
+    ],
+    "statement": "Exact connector-index searches returned zero results for the event, cycle folio, session folio and owner alias. The target OCP directory was absent in the currently listed frentes tree. Global uniqueness is not asserted."
+  },
+  "sources_consulted": [
+    {
+      "name": "Job Search Log — Victor H. Torres · Medical Interpreter · Jul 2026",
+      "url": "https://app.notion.com/p/e86a418782418363a2f801860cf0065e",
+      "kind": "Historical job-search record; used as background, not authority."
+    },
+    {
+      "name": "Job Applications — Medical Interpreter",
+      "url": "https://app.notion.com/p/b8fa41878241837588b20127e0a1e568",
+      "kind": "Notion database schema; existence of full/valid rows is not assumed."
+    }
+  ],
+  "initial_files": {
+    "frentes/radar-profesional/RADAR-PROFESIONAL.md": {
+      "blob_sha": "002c001eab81301a54a281afb46539c9f06d30ba",
+      "character_count": 22137,
+      "version": "RADAR-PROFESIONAL-v1.0"
+    },
+    "frentes/radar-profesional/README.md": {
+      "blob_sha": "ec393a6289179da59103d05495079d001186c5a8",
+      "character_count": 1062
+    },
+    "frentes/radar-profesional/CONTROL-RESPONSABILIDAD.json": {
+      "blob_sha": "ebedb865d9d813c731f6ebcf2b63bf37efe3efc1",
+      "character_count": 5578,
+      "session_folio": "SES-20261028-4F6A9D2B"
+    },
+    "frentes/radar-profesional/conversaciones/C-RADAR-PROFESIONAL-001.jsonl": {
+      "blob_sha": "1cbb3fdcc66d114a4d199229a2b0e13550fdcf52",
+      "character_count": 6828
+    },
+    "frentes/radar-profesional/cronica/C-RADAR-PROFESIONAL-001.md": {
+      "blob_sha": "991fa2367351b2a1315d6a92f82ef521168f33e7",
+      "character_count": 4339
+    },
+    "INVENTARIO-REPOSITORIOS-Y-FRENTES.md": {
+      "blob_sha": "67a11122d8b37db4b1e3ba96a7e7626764dfc9a5",
+      "character_count": 8394
+    }
+  },
+  "inventory": {
+    "path": "INVENTARIO-REPOSITORIOS-Y-FRENTES.md",
+    "previous_blob_sha": "910299b1ddeaa2c85f433f4e39a1d11d175f8b03",
+    "updated_incrementally": true,
+    "scope_note": "Incremental addition only; not a new global inventory audit."
+  },
+  "claims_and_limits": {
+    "purpose_gate_met": true,
+    "exact_purpose_preserved": true,
+    "front_directory_created_after_gate": true,
+    "one_state_object": true,
+    "operational_database_created": false,
+    "records_migrated": false,
+    "external_messages_sent": false,
+    "scraping_or_automation_enabled": false,
+    "functional_end_to_end_tested": false,
+    "native_thread_id_exposed": false,
+    "global_uniqueness": "not_verified",
+    "responsibility_enforcement": "cooperative; not server-enforced"
+  }
+}
