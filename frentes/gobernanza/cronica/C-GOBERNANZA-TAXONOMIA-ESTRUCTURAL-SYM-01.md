@@ -58,3 +58,8 @@ Estas comprobaciones son mecánicas. **No se ejecutó el renderizador ni el audi
 - Control: frentes/gobernanza/CONTROL-RESPONSABILIDAD.json, blob ed6aecfd49eb8fda1f8795434009a903622f8305.
 - Núcleo de Gobernanza: frentes/gobernanza/GOBERNANZA.md, blob b4c975be39b4a61b605f2517f78a194880c4c5e8.
 - Pendientes: frentes/gobernanza/PENDIENTES.md, blob b36f14ffc6bc2ef91b978616eb9b1be8ba4213a7.
+
+
+## Última sincronización del punto de entrada de Gobernanza
+
+README de Gobernanza actualizado para señalar DUG v354 y enlazar esta crónica y su recibo; blob de lectura de vuelta `e7df1e22d52e853842359b7b38a85f5faadc44e1`. El cambio se cotejó exactamente tras la escritura.
