@@ -188,6 +188,16 @@
       "blob_sha": "c6b9077637175302a72eec1c5e0a3222a2517dfd",
       "canonical_blob_sha": "695d83ea6913ab3962a87e49b008c366f512e34e",
       "readback_exact": true
+    },
+    {
+      "path": "frentes/gobernanza/README.md",
+      "blob_sha": "e7df1e22d52e853842359b7b38a85f5faadc44e1",
+      "readback_exact": true
+    },
+    {
+      "path": "frentes/gobernanza/cronica/C-GOBERNANZA-TAXONOMIA-ESTRUCTURAL-SYM-01.md",
+      "blob_sha": "9d29d719bf70b8eea84d81a818fe8b437f4d4f70",
+      "readback_exact": true
     }
   ],
   "open_items": [
