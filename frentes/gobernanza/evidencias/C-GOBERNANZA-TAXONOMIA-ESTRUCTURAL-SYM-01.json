@@ -1,0 +1,201 @@
+{
+  "event": "C-GOBERNANZA-TAXONOMIA-ESTRUCTURAL-SYM-01",
+  "date_local": "2026-10-28",
+  "timezone": "America/Mexico_City",
+  "repository": "SeryMente/metodologia",
+  "branch": "main",
+  "authorization": "Explicit operator request in the current conversation to modify the canonical DUG and GOW taxonomy and structure appendices.",
+  "canonical_source": {
+    "path": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.html",
+    "version": "v354",
+    "signature": "NX-354m",
+    "commit": "012eba06f4cd729d9c989862f701a6842aa59a36",
+    "blob_sha": "695d83ea6913ab3962a87e49b008c366f512e34e",
+    "previous_version": "v353 · NX-353m",
+    "previous_blob": "16c93745311a5405166a31b583c2a648fda0d044",
+    "readback_exact": true,
+    "principles": 41,
+    "annexes": 16,
+    "metacanon_version": "1.22",
+    "gow_version": "2.4",
+    "gow_terms": 102
+  },
+  "glossary_additions": [
+    {
+      "name": "Ser y Mente",
+      "id": "gow-ser-y-mente",
+      "status": "ADDED"
+    },
+    {
+      "name": "S y M",
+      "id": "gow-s-y-m",
+      "equivalent_to": "Ser y Mente",
+      "status": "ADDED"
+    },
+    {
+      "name": "Taxonomía estructural de S y M",
+      "id": "gow-taxonomia-estructural-de-s-y-m",
+      "equivalent_to": "Taxonomía estructural",
+      "status": "ADDED"
+    }
+  ],
+  "hierarchy": {
+    "explicit_fields": [
+      "level",
+      "parent_id"
+    ],
+    "index": "RECURSIVE_NESTED",
+    "audit_checks": [
+      "missing parent",
+      "parent-child level compatibility",
+      "root must be level 1"
+    ],
+    "annexes": [
+      {
+        "id": "ART-015",
+        "level": 1,
+        "parent_id": null
+      },
+      {
+        "id": "ART-016",
+        "level": 2,
+        "parent_id": "ART-015"
+      },
+      {
+        "id": "ART-017",
+        "level": 2,
+        "parent_id": "ART-015"
+      },
+      {
+        "id": "ART-018",
+        "level": 2,
+        "parent_id": "ART-015"
+      },
+      {
+        "id": "ART-019",
+        "level": 2,
+        "parent_id": "ART-015"
+      },
+      {
+        "id": "ART-020",
+        "level": 2,
+        "parent_id": "ART-015"
+      },
+      {
+        "id": "ART-021",
+        "level": 2,
+        "parent_id": "ART-015"
+      },
+      {
+        "id": "ART-022",
+        "level": 2,
+        "parent_id": "ART-015"
+      },
+      {
+        "id": "ART-014",
+        "level": 3,
+        "parent_id": "ART-022"
+      },
+      {
+        "id": "ART-007",
+        "level": 1,
+        "parent_id": null
+      },
+      {
+        "id": "ART-008",
+        "level": 1,
+        "parent_id": null
+      },
+      {
+        "id": "ART-009",
+        "level": 1,
+        "parent_id": null
+      },
+      {
+        "id": "ART-010",
+        "level": 1,
+        "parent_id": null
+      },
+      {
+        "id": "ART-011",
+        "level": 1,
+        "parent_id": null
+      },
+      {
+        "id": "ART-012",
+        "level": 1,
+        "parent_id": null
+      },
+      {
+        "id": "ART-013",
+        "level": 1,
+        "parent_id": null
+      }
+    ],
+    "preserved_legacy_annexes": true,
+    "placeholders_count": 16,
+    "taxonomy_exported_for_machine": true
+  },
+  "validation": {
+    "readback_json_parse": "PASS",
+    "operational_javascript_syntax": "PASS_COMPILE_ONLY",
+    "static_duplicate_ids": 0,
+    "annex_placeholder_count_matches": true,
+    "annex_relationships": "PASS_DATA_INSPECTION",
+    "auxiliary_files_readback_exact": true,
+    "browser_render": "NOT_RUN",
+    "dynamic_link_and_reciprocal_anchor_audit": "NOT_RUN",
+    "github_actions": "NOT_QUERIED_NOT_RUN",
+    "notion_mirror": "NOT_UPDATED_NOT_READ_BACK",
+    "native_ipz": "NOT_WRITTEN_OR_VERIFIED",
+    "real_attachment_spdf_e2e": "BLOCKED_NO_REAL_ATTACHMENT",
+    "second_authorized_instance_recovery": "NOT_TESTED",
+    "continuous_app_to_repository_sync": "NOT_IMPLEMENTED_OR_VERIFIED"
+  },
+  "changed_files": [
+    {
+      "path": "INICIO.md",
+      "blob_sha": "4d884580a3334dd62f53d0d229ee909d69006aa7",
+      "readback_exact": true
+    },
+    {
+      "path": "frentes/metacanon/README.md",
+      "blob_sha": "d1aac07f8a7ba33ac3f5eb77da0ead1fad0176a5",
+      "readback_exact": true
+    },
+    {
+      "path": "INVENTARIO-REPOSITORIOS-Y-FRENTES.md",
+      "blob_sha": "726ff9abfc7822d55b4fb3132651513fc9ecf792",
+      "readback_exact": true
+    },
+    {
+      "path": "frentes/gobernanza/CONTROL-RESPONSABILIDAD.json",
+      "blob_sha": "ed6aecfd49eb8fda1f8795434009a903622f8305",
+      "readback_exact": true
+    },
+    {
+      "path": "frentes/gobernanza/GOBERNANZA.md",
+      "blob_sha": "b4c975be39b4a61b605f2517f78a194880c4c5e8",
+      "readback_exact": true
+    },
+    {
+      "path": "frentes/gobernanza/PENDIENTES.md",
+      "blob_sha": "b36f14ffc6bc2ef91b978616eb9b1be8ba4213a7",
+      "readback_exact": true
+    },
+    {
+      "path": "gobernanza/GLOSARIO-WORKSPACE.fuente.json",
+      "blob_sha": "c6b9077637175302a72eec1c5e0a3222a2517dfd",
+      "canonical_blob_sha": "695d83ea6913ab3962a87e49b008c366f512e34e",
+      "readback_exact": true
+    }
+  ],
+  "open_items": [
+    "GOV-RDC-01: validación del literal PowerShell pendiente; ningún comando ejecutado.",
+    "GOV-IPZ-01: campo nativo de Instrucciones Personalizadas no escrito/verificado.",
+    "GOV-LINK-02: renderizado y auditoría dinámica de enlaces/retornos pendiente.",
+    "GOV-SPDF-E2E-01: falta adjunto original real para captura, manifiesto, read-back/cotejo y recuperación por segunda instancia.",
+    "Notion no actualizado ni releído; sincronización continua no verificada."
+  ],
+  "last_observed_main_head_before_receipt_creation": "48c0d7be7effa72e64aa7b9a2397a8c92b4105e7"
+}
