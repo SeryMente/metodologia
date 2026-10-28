@@ -1,16 +1,16 @@
 {
-  "canonical_source": "https://github.com/SeryMente/metodologia/blob/main/gobernanza/GLOSARIO-WORKSPACE.md",
+  "canonical_source": "https://github.com/SeryMente/metodologia/blob/main/gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#glosario",
   "canonical_repository": "SeryMente/metodologia",
   "canonical_branch": "main",
-  "source_title": "Glosario Operativo del Workspace (GOW) · v2.2",
-  "canonical_blob_sha": "6d4f8aff292ae173d9ceeba03694597bd2f16488",
-  "canonical_precedence": "GOW in SeryMente/metodologia/main is exclusively the operational glossary for terms, abbreviations, semantic equivalences and authorized transcription normalizations. It is not the Hub, an orchestrator, or a general authority for project governance; the current Metacanon work thread is the contextual Hub for this construction cycle.",
+  "source_title": "Documento Único de Gobernanza (DUG) · GOW v2.3",
+  "canonical_blob_sha": "a4c90bd8ff1cd360b1f1662ff55371bd1b56b4cd",
+  "canonical_precedence": "The only normative GOW is the glossary section #glosario in gobernanza/METAPROMPT-CANONICO-SAMANTHA.html on SeryMente/metodologia/main. This JSON is derived source metadata and not an independent glossary authority. Other platforms, including the Notion page below, are mirrors and must not be treated as current unless read back and reconciled.",
   "prior_notion_source": "https://app.notion.com/p/247a418782418399a86001aae61ae938",
   "notion_mirror_readback": {
     "url": "https://app.notion.com/p/247a418782418399a86001aae61ae938",
     "title": "Glosario Operativo del Workspace (GOW) · Canon v2.2",
     "observed_version": "v2.2",
-    "status": "VERIFIED_READBACK",
+    "status": "HISTORICAL_VERIFIED_READBACK",
     "checks": {
       "v2_2": true,
       "Metacanon119": true,
@@ -25,7 +25,8 @@
       "directGOWLink": true,
       "directMetacanonSection4Link": true,
       "directSamCascadeLink": true
-    }
+    },
+    "current_verification": "NOT_VERIFIED_IN_THIS_CYCLE"
   },
   "imported_corpus": {
     "source_path": "GLOSARIO-OPERATIVO.md",
@@ -36,6 +37,6 @@
     "method": "Merged terms into Group 10 with provenance and scope; duplicates were consolidated against the existing GOW entries; old root file is a pointer, not a glossary authority."
   },
   "source_content_sha256": null,
-  "sync_status": "GOW v2.2 was read from main, written to the Notion mirror, and the mirror was read back at title/version v2.2. The canonical body separates GOW's glossary-only scope from the contextual Hub designation in Metacanon §49. Point-in-time synchronization only; no continuous synchronization is installed.",
+  "sync_status": "Historical record only: GOW v2.2 was written to the Notion mirror and read back at that time. The current canonical GOW is DUG #glosario v2.3 at Git blob a4c90bd8ff1cd360b1f1662ff55371bd1b56b4cd. This cycle did not update or read back the Notion mirror; no continuous synchronization is installed.",
   "hash_status": "SHA-256 was not recalculated; Git blob SHA is used as revision evidence."
 }
