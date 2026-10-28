@@ -41,3 +41,36 @@ Inventariar las fuentes y registros actuales (Notion, correo, portales, publicac
 ## Resultado y límites
 
 La creación cumple la compuerta de propósito dictado y deja un OCP con ruta y titularidad propias. El chequeo de identificadores es acotado a las herramientas/repositorios consultados: **unicidad global no verificada**. El control es cooperativo, no un cerrojo de servidor. Persistencia documental no equivale a aceptación funcional.
+
+---
+
+## Cierre visible del ciclo · texto preparado y conservado antes de emitir
+
+## Radar Profesional creado y verificado
+
+**Versión inicial:** `RADAR-PROFESIONAL-v1.0 · Núcleo inicial`
+
+**Gobernanza consultada:** Sam v346 · NX-346m; Metacanon v1.21; GOW v2.2.
+
+**Ubicación del frente:** [`frentes/radar-profesional/`](https://github.com/SeryMente/metodologia/tree/main/frentes/radar-profesional)
+
+El propósito que dictaste quedó conservado literalmente en el núcleo y en el registro original; la confirmación «Asi que quede.» también quedó registrada.
+
+### Artefactos creados
+
+- [Núcleo operativo `RADAR-PROFESIONAL.md`](https://github.com/SeryMente/metodologia/blob/main/frentes/radar-profesional/RADAR-PROFESIONAL.md), con los trece bloques requeridos y un único estado vivo.
+- [Control de responsabilidad y sesión](https://github.com/SeryMente/metodologia/blob/main/frentes/radar-profesional/CONTROL-RESPONSABILIDAD.json), generación 1, folio `SES-20261028-4F6A9D2B`. El titular figura como alias operativo; las herramientas no expusieron un ID nativo de conversación.
+- [Registro original de la creación](https://github.com/SeryMente/metodologia/blob/main/frentes/radar-profesional/conversaciones/C-RADAR-PROFESIONAL-001.jsonl), con siete registros JSONL válidos.
+- [Crónica del ciclo](https://github.com/SeryMente/metodologia/blob/main/frentes/radar-profesional/cronica/C-RADAR-PROFESIONAL-001.md).
+- [Evidencia de creación y lectura de vuelta](https://github.com/SeryMente/metodologia/blob/main/frentes/radar-profesional/evidencias/C-RADAR-PROFESIONAL-001.json).
+- [Inventario del repositorio actualizado](https://github.com/SeryMente/metodologia/blob/main/INVENTARIO-REPOSITORIOS-Y-FRENTES.md), con alta incremental del nuevo OCP.
+
+**Commit de creación:** [`3a6ec5865519965b7d2c08868f727335863c4497`](https://github.com/SeryMente/metodologia/commit/3a6ec5865519965b7d2c08868f727335863c4497). El núcleo, el control, los originales, la crónica, la evidencia inicial y la actualización del inventario se incorporaron en ese mismo commit. Después se añadió al manifiesto la huella del commit y el resultado de la lectura de vuelta.
+
+### Resultado y límite
+
+La estructura documental quedó persistida y verificada: se comprobó el orden de los trece bloques, la coincidencia exacta del propósito, la validez del registro JSONL, el control de sesión y la fila del inventario. Las búsquedas exactas previas no encontraron colisiones para el evento, el ciclo, el folio ni el alias dentro del índice accesible; eso no demuestra unicidad global.
+
+Todavía **no** se ha creado una base maestra operativa, importado registros, conectado el correo, enviado comunicaciones, habilitado scraping ni probado un flujo funcional de extremo a extremo. El siguiente paso es inventariar fuentes y datos existentes, y solo después diseñar la base maestra.
+
+**Próximo checkpoint:** identificar las fuentes y registros actuales, verificar qué acceso existe realmente y separar la información histórica de las oportunidades vigentes.
