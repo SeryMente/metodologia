@@ -63,3 +63,14 @@ ART-014 recibió una nueva sección 2, “Activación por responsabilidad y trat
 Fuente actual: `gobernanza/METAPROMPT-CANONICO-SAMANTHA.html`, blob `16c93745311a5405166a31b583c2a648fda0d044`; commit `868a8e9db9ede8611c1dc814d5b6a54060dd9269`. JSON parseado y JavaScript comprobado por compilación sintáctica aislada; no se afirma ejecución de navegador.
 
 Metadato GOW alineado al nuevo blob mediante commit `623645f5f814fbe3b1e7c7684479360fe39648dc`. El artefacto IPZ mide 1492 caracteres y referencia directamente ART-014; no se pudo instalar/verificar el campo nativo de Instrucciones Personalizadas. El objeto de persistencia real E2E sigue pendiente porque no hay un adjunto original disponible en esta conversación.
+
+
+## Actualización taxonómica · DUG v354 · NX-354m · 2026-10-28
+
+Por instrucción explícita del operador se actualizó la fuente normativa única `gobernanza/METAPROMPT-CANONICO-SAMANTHA.html` para incorporar la taxonomía estructural de Ser y Mente (S y M), las equivalencias terminológicas del GOW y una jerarquía de anexos con niveles explícitos. La lectura de vuelta confirma DUG v354 · NX-354m, Metacanon 1.22, GOW 2.4, 41 principios, 16 anexos y 102 términos.
+
+- Fuente DUG: blob `695d83ea6913ab3962a87e49b008c366f512e34e`, commit `012eba06f4cd729d9c989862f701a6842aa59a36`.
+- Anexos nuevos: ART-015 nivel 1; ART-016 a ART-022 nivel 2; ART-014 queda como nivel 3 bajo ART-022. Los anexos preexistentes ART-007 a ART-013 se preservan como raíces de nivel 1.
+- Validación: JSON embebido parseado; compilación sintáctica del JavaScript operativo aislado aprobada; cero IDs duplicados en el HTML estático; 16 marcadores de anexo coinciden con 16 artefactos estructurados.
+- No se ejecutó el renderizado ni la auditoría dinámica del navegador. Notion y el campo nativo IPZ no se actualizaron/verificaron; la prueba SPDF E2E con original real continúa pendiente.
+- Metacanon §46/§51 y los puntos de entrada/inventario se alinearon con v1.22, S y M y el tratamiento de ámbitos funcionales transversales.
