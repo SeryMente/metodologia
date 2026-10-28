@@ -65,7 +65,7 @@ Fuente actual: `gobernanza/METAPROMPT-CANONICO-SAMANTHA.html`, blob `16c93745311
 Metadato GOW alineado al nuevo blob mediante commit `623645f5f814fbe3b1e7c7684479360fe39648dc`. El artefacto IPZ mide 1492 caracteres y referencia directamente ART-014; no se pudo instalar/verificar el campo nativo de Instrucciones Personalizadas. El objeto de persistencia real E2E sigue pendiente porque no hay un adjunto original disponible en esta conversación.
 
 
-## Actualización taxonómica · DUG v354 · NX-354m · 2026-10-28
+## Actualización taxonómica · C-GOBERNANZA-TAXONOMIA-ESTRUCTURAL-SYM-01 · DUG v354 · NX-354m · 2026-10-28
 
 Por instrucción explícita del operador se actualizó la fuente normativa única `gobernanza/METAPROMPT-CANONICO-SAMANTHA.html` para incorporar la taxonomía estructural de Ser y Mente (S y M), las equivalencias terminológicas del GOW y una jerarquía de anexos con niveles explícitos. La lectura de vuelta confirma DUG v354 · NX-354m, Metacanon 1.22, GOW 2.4, 41 principios, 16 anexos y 102 términos.
 
