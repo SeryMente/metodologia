@@ -1,6 +1,6 @@
 # OCP · Frente Metacanon
 
-Este README es un índice de navegación, **no un segundo estado vivo**. El estado metodológico canónico se mantiene en `/METACANON-OBJETOS-CANONICOS.md` §9; la titularidad/folio solo se obtiene de `CONTROL-RESPONSABILIDAD.json`. Si hay discrepancia, relee esas fuentes desde `main` y no infieras qué copia prevalece.
+Este README es un índice de navegación, **no un segundo estado vivo**. El método canónico Metacanon está integrado en el [DUG](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#metacanon), §9; la titularidad/folio solo se obtiene de `CONTROL-RESPONSABILIDAD.json`. Si hay discrepancia, relee esas fuentes desde `main` y no infieras qué copia prevalece.
 
 
 ## Último ciclo persistido · C-METACANON-TAXONOMIA-REPOSITORIOS-25
@@ -11,9 +11,9 @@ Corte del 2026-10-22 · Metacanon v1.21. [Salida final](entregas/CHATGPT-v0.3/C-
 ## Arranque recomendado para un hilo nuevo
 
 1. [INICIO.md](../../INICIO.md) — puerta de entrada canónica.
-2. [Metaprompt Canónico de Samantha (Sam)](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.md) — v339 · NX-339m.
-3. [Metacanon](../../METACANON-OBJETOS-CANONICOS.md) — v1.21; leer LEER PRIMERO, §9, §§29–51 y §4.
-4. [Glosario Operativo del Workspace (GOW)](../../gobernanza/GLOSARIO-WORKSPACE.md) — v2.2; revisar al inicio y cierre.
+2. [Gobierno general de Samantha](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#gobierno-general) — DUG v352 · NX-352m.
+3. [Metacanon integrado en el DUG](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#metacanon) — v1.21; leer LEER PRIMERO, §9, §§29–51 y §4.
+4. [GOW integrado en el DUG](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#glosario) — v2.3; revisar al inicio y cierre.
 5. [Control de responsabilidad](CONTROL-RESPONSABILIDAD.json) y [pendientes](PENDIENTES.md).
 6. [Checklist de los nueve requisitos verbatim](entregas/CHATGPT-v0.3/CHECKLIST-VERBATIM-21.md) y [diálogo literal de origen](conversaciones/C-METODOLOGIA-AUDITORIA-REQUISITOS-20-dialogo.jsonl).
 7. [Salida persistida previa M24 — auditoría del repositorio](entregas/CHATGPT-v0.3/C-METODOLOGIA-AUDITORIA-REPOSITORIO-24-salida-final.md) — reproducir literalmente en la primera respuesta del nuevo hilo, con procedencia; si no se lee, declarar NO DISPONIBLE. [Diálogo verbatim](conversaciones/C-METODOLOGIA-AUDITORIA-REPOSITORIO-24-dialogo.jsonl) · [Crónica](cronica/C-METODOLOGIA-AUDITORIA-REPOSITORIO-24.md) · [Evidencia/hash](evidencias/C-METODOLOGIA-AUDITORIA-REPOSITORIO-24.json).
