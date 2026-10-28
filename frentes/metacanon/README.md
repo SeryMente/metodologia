@@ -16,10 +16,10 @@ Corte del 2026-10-22 · Metacanon v1.21. [Salida final](entregas/CHATGPT-v0.3/C-
 4. [GOW integrado en el DUG](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#glosario) — v2.4; 102 términos y 16 anexos jerarquizados; revisar al inicio y cierre.
 5. [Taxonomía estructural de S y M](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-015) — ART-015 global; ART-016 a ART-022 por entidad y ámbito; ART-014 para procedimiento SPDF.
 6. [Control de responsabilidad](CONTROL-RESPONSABILIDAD.json) y [pendientes](PENDIENTES.md).
-6. [Checklist de los nueve requisitos verbatim](entregas/CHATGPT-v0.3/CHECKLIST-VERBATIM-21.md) y [diálogo literal de origen](conversaciones/C-METODOLOGIA-AUDITORIA-REQUISITOS-20-dialogo.jsonl).
-7. [Salida persistida previa M24 — auditoría del repositorio](entregas/CHATGPT-v0.3/C-METODOLOGIA-AUDITORIA-REPOSITORIO-24-salida-final.md) — reproducir literalmente en la primera respuesta del nuevo hilo, con procedencia; si no se lee, declarar NO DISPONIBLE. [Diálogo verbatim](conversaciones/C-METODOLOGIA-AUDITORIA-REPOSITORIO-24-dialogo.jsonl) · [Crónica](cronica/C-METODOLOGIA-AUDITORIA-REPOSITORIO-24.md) · [Evidencia/hash](evidencias/C-METODOLOGIA-AUDITORIA-REPOSITORIO-24.json).
-8. [Prompt reutilizable de continuidad](entregas/CHATGPT-v0.3/PROMPT-CONTINUIDAD-METODOLOGIA-VERBATIM-E2E-22.txt).
-9. [Prueba de cadena de artefactos E2E](pruebas/continuidad/C-METODOLOGIA-VERBATIM-E2E-22.cjs) y [evidencia de resultados y hashes](evidencias/C-METODOLOGIA-VERBATIM-E2E-22.json).
+7. [Checklist de los nueve requisitos verbatim](entregas/CHATGPT-v0.3/CHECKLIST-VERBATIM-21.md) y [diálogo literal de origen](conversaciones/C-METODOLOGIA-AUDITORIA-REQUISITOS-20-dialogo.jsonl).
+8. [Salida persistida previa M24 — auditoría del repositorio](entregas/CHATGPT-v0.3/C-METODOLOGIA-AUDITORIA-REPOSITORIO-24-salida-final.md) — reproducir literalmente en la primera respuesta del nuevo hilo, con procedencia; si no se lee, declarar NO DISPONIBLE. [Diálogo verbatim](conversaciones/C-METODOLOGIA-AUDITORIA-REPOSITORIO-24-dialogo.jsonl) · [Crónica](cronica/C-METODOLOGIA-AUDITORIA-REPOSITORIO-24.md) · [Evidencia/hash](evidencias/C-METODOLOGIA-AUDITORIA-REPOSITORIO-24.json).
+9. [Prompt reutilizable de continuidad](entregas/CHATGPT-v0.3/PROMPT-CONTINUIDAD-METODOLOGIA-VERBATIM-E2E-22.txt).
+10. [Prueba de cadena de artefactos E2E](pruebas/continuidad/C-METODOLOGIA-VERBATIM-E2E-22.cjs) y [evidencia de resultados y hashes](evidencias/C-METODOLOGIA-VERBATIM-E2E-22.json).
 
 ## Traspaso y titularidad
 
