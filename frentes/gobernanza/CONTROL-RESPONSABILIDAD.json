@@ -1,0 +1,46 @@
+{
+  "schema": "responsabilidad/1",
+  "front": "gobernanza",
+  "status": "owned",
+  "owner_thread": "chatgpt-C-GOBERNANZA-INICIO-01-SES-20261028-3F2B7A91",
+  "instance": "chatgpt-gobernanza-inicio-2026-10-28",
+  "generation": 1,
+  "authorization_ref": "Explicit operator instruction in this conversation dated 2026-10-28: retain the Metacanon front and inaugurate a separate Gobernanza front to work initially on the single canonical governance document.",
+  "scope": "One active owner for this new work front only. Scope: operational maintenance and validation of the unique canonical governance document and its navigation, including only previously authorized minimal repairs. No broad substantive amendment to Samantha or the GOW without explicit authorization. The canonical normative content remains in the single HTML document.",
+  "expiry": null,
+  "handoff": "This is the initial assignment of a newly created front, not a transfer from an existing owner. owner_thread is an operational alias, not a native ChatGPT conversation ID. Responsibility is cooperative preflight, not server-enforced fencing of arbitrary repository writes.",
+  "session_folio": "SES-20261028-3F2B7A91",
+  "session_assignment": {
+    "status": "active",
+    "folio": "SES-20261028-3F2B7A91",
+    "assigned_on": "2026-10-28",
+    "front_ocp": "frentes/gobernanza/",
+    "owner_alias": "chatgpt-C-GOBERNANZA-INICIO-01-SES-20261028-3F2B7A91",
+    "instance": "chatgpt-gobernanza-inicio-2026-10-28",
+    "generation": 1,
+    "identity_kind": "operational alias and session folio; not a native ChatGPT conversation ID",
+    "uniqueness_check": "Exact GitHub searches for the event, cycle folio, session folio and owner alias returned zero before creation. The main tree had no frentes/gobernanza/ path. This is a bounded accessible check, not proof of global uniqueness.",
+    "source_sha_before": "bd7fa3a1f6ab5285c44018c72a3b02cb4553bb0b",
+    "checked_paths": [
+      "SeryMente/metodologia:frentes/gobernanza/ (absent in recursive main tree before creation)"
+    ]
+  },
+  "initialization": {
+    "event_id": "C-GOBERNANZA-INICIO-01",
+    "cycle_folio": "C-20261028-4B81D65C",
+    "recorded_on": "2026-10-28",
+    "authorization": "Explicit instruction in this conversation to retain the name Metacanon and create a separate Gobernanza work front for the single canonical governance document, for now.",
+    "repository": "SeryMente/metodologia",
+    "ocp_path": "frentes/gobernanza/",
+    "canonical_governance_path": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.html",
+    "canonical_governance_version": "Gobernanza única Samantha v345",
+    "observed_governance_blob_sha": "4d4d4f7077d58ed48d12bc856bc81ec414fe8733",
+    "initial_state": "The source HTML and its embedded JSON are not yet repaired; see GOBERNANZA.md.",
+    "boundaries": {
+      "metacanon_front_preserved": true,
+      "canonical_normative_document_remains_single": true,
+      "broad_normative_rewrite_authorized": false,
+      "ipz_native_write_capability_confirmed": false
+    }
+  }
+}
