@@ -56,7 +56,7 @@
     ],
     "interpretation": "Los campos y estados retirados no se declaran inútiles para cualquier caso; quedan fuera del estándar común hasta que una instrucción expresa o un caso real justifique su inclusión.",
     "reason": "Aplicar cero bloating, conservar literal con procedencia y separar la fuente original de su interpretación.",
-    "scope_necessity_still_open": "El ámbito Tareas es una propuesta no canonizada; primero debe demostrarse que aporta una capacidad necesaria frente a los mecanismos existentes."
+    "scope_necessity_still_open": "Before retaining/canonizing Tareas, demonstrate that it provides a needed capability not covered more simply by existing mechanisms; if not, do not retain it by default."
   },
   "previous_candidate": {
     "event_id": "C-TAREAS-ESTANDAR-REUTILIZABLE-01",
@@ -103,8 +103,8 @@
     },
     {
       "path": "ambitos/tareas/DISEÑO-TAREAS-v1.0.md",
-      "blob_sha": "2dab12c8aa94dab3b3f8748fb98780415f215315",
-      "commit_sha": "a6ed20c622e0df2569139c319338ca5e66cd15dd",
+      "blob_sha": "2730ca77be4daff234e37a1ddeb6ef0c527d2768",
+      "commit_sha": "f4eb5a85cc31f5bdf7eaa7ed1b48cb2554c3f10d",
       "readback": true
     },
     {
