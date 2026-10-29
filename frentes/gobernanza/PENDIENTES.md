@@ -50,3 +50,6 @@ Los estados iniciales correspondían a la lectura de Samantha v345. Su redacció
 
 
 17. **GOV-LINK-04 · COMPROBACIÓN ESTÁTICA PARCIAL · C-GOBERNANZA-RETOMA-02.** DUG v358 · NX-358m, blob 89a28e4d05f5baab9c4b86abdb9fbfc532690c75: 27 atributos id, cero duplicados; 16 enlaces locales #..., siete destinos únicos, cero destinos estáticos ausentes en la capa HTML con bloques script excluidos. El chequeo no abarca renderizado ni enlaces generados en runtime; GOV-LINK-01/02/03 continúan abiertos para auditoría dinámica.
+
+
+18. **GOV-TAREAS-01 · ABIERTO · 2026-10-28.** Se inauguró [Tareas v1.0](../../ambitos/tareas/README.md) como diseño en incubación, con [propuesta conceptual/operativa](../../ambitos/tareas/DISEÑO-TAREAS-v1.0.md), [instrucciones de ámbito](../../ambitos/tareas/INSTRUCCIONES-TAREAS-v1.0.md) y [texto candidato para IPZ](../../ambitos/tareas/IPZ-TAREAS-CANDIDATO.txt). DUG v358 · NX-358m sigue vigente y define solamente Persistencia documental y Gestión conversacional como ámbitos funcionales actuales. Pendiente cerrar propósito, fronteras, esquema, estados y materialización; después preparar una enmienda explícita del DUG/GOW, sin escritura normativa hasta autorización expresa. IPZ nativo no instalado/verificado; no se ha probado tarea real ni integración.
