@@ -148,12 +148,133 @@
     "control_json_parse": "PASS",
     "dialogue_jsonl_parse": "PASS",
     "final_output_exact_match_between_dialogue_and_delivery": true,
-    "static_markdown_link_audit": "PENDIENTE EN ESTE MANIFIESTO; los enlaces clave de README y Gobernanza apuntan a los artefactos recién creados.",
+    "static_markdown_link_audit": "PASS PARCIAL: 19 referencias locales de los archivos de entrada modificados dirigidas al DUG o a ambitos/tareas/; 0 destinos ausentes dentro del conjunto de artefactos comprobados. No constituye auditoría de todos los enlaces históricos ni prueba de renderizado en navegador.",
     "dug_or_gow_written": false,
     "native_ipz_field_written_or_read_back": false,
     "end_to_end_real_task_test": false,
     "browser_render_test": false,
-    "global_task_registry_or_external_sync": false
+    "global_task_registry_or_external_sync": false,
+    "static_markdown_links": {
+      "checked_count": 19,
+      "missing_count": 0,
+      "missing": [],
+      "links": [
+        {
+          "source": "ambitos/tareas/README.md",
+          "href": "../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html",
+          "target": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.html",
+          "verified_target": true
+        },
+        {
+          "source": "ambitos/tareas/README.md",
+          "href": "DISEÑO-TAREAS-v1.0.md",
+          "target": "ambitos/tareas/DISEÑO-TAREAS-v1.0.md",
+          "verified_target": true
+        },
+        {
+          "source": "ambitos/tareas/README.md",
+          "href": "INSTRUCCIONES-TAREAS-v1.0.md",
+          "target": "ambitos/tareas/INSTRUCCIONES-TAREAS-v1.0.md",
+          "verified_target": true
+        },
+        {
+          "source": "ambitos/tareas/README.md",
+          "href": "IPZ-TAREAS-CANDIDATO.txt",
+          "target": "ambitos/tareas/IPZ-TAREAS-CANDIDATO.txt",
+          "verified_target": true
+        },
+        {
+          "source": "ambitos/tareas/README.md",
+          "href": "PENDIENTES.md",
+          "target": "ambitos/tareas/PENDIENTES.md",
+          "verified_target": true
+        },
+        {
+          "source": "ambitos/tareas/README.md",
+          "href": "CONTROL-RESPONSABILIDAD.json",
+          "target": "ambitos/tareas/CONTROL-RESPONSABILIDAD.json",
+          "verified_target": true
+        },
+        {
+          "source": "ambitos/tareas/README.md",
+          "href": "cronica/C-TAREAS-INICIO-01.md",
+          "target": "ambitos/tareas/cronica/C-TAREAS-INICIO-01.md",
+          "verified_target": true
+        },
+        {
+          "source": "ambitos/tareas/README.md",
+          "href": "evidencias/C-TAREAS-INICIO-01.json",
+          "target": "ambitos/tareas/evidencias/C-TAREAS-INICIO-01.json",
+          "verified_target": true
+        },
+        {
+          "source": "ambitos/tareas/README.md",
+          "href": "conversaciones/C-TAREAS-INICIO-01-dialogo.jsonl",
+          "target": "ambitos/tareas/conversaciones/C-TAREAS-INICIO-01-dialogo.jsonl",
+          "verified_target": true
+        },
+        {
+          "source": "frentes/gobernanza/README.md",
+          "href": "../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html",
+          "target": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.html",
+          "verified_target": true
+        },
+        {
+          "source": "frentes/gobernanza/README.md",
+          "href": "../../ambitos/tareas/README.md",
+          "target": "ambitos/tareas/README.md",
+          "verified_target": true
+        },
+        {
+          "source": "frentes/gobernanza/README.md",
+          "href": "../../ambitos/tareas/DISEÑO-TAREAS-v1.0.md",
+          "target": "ambitos/tareas/DISEÑO-TAREAS-v1.0.md",
+          "verified_target": true
+        },
+        {
+          "source": "frentes/gobernanza/README.md",
+          "href": "../../ambitos/tareas/INSTRUCCIONES-TAREAS-v1.0.md",
+          "target": "ambitos/tareas/INSTRUCCIONES-TAREAS-v1.0.md",
+          "verified_target": true
+        },
+        {
+          "source": "frentes/gobernanza/GOBERNANZA.md",
+          "href": "../../ambitos/tareas/README.md",
+          "target": "ambitos/tareas/README.md",
+          "verified_target": true
+        },
+        {
+          "source": "frentes/gobernanza/GOBERNANZA.md",
+          "href": "../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html",
+          "target": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.html",
+          "verified_target": true
+        },
+        {
+          "source": "frentes/gobernanza/PENDIENTES.md",
+          "href": "../../ambitos/tareas/README.md",
+          "target": "ambitos/tareas/README.md",
+          "verified_target": true
+        },
+        {
+          "source": "frentes/gobernanza/PENDIENTES.md",
+          "href": "../../ambitos/tareas/DISEÑO-TAREAS-v1.0.md",
+          "target": "ambitos/tareas/DISEÑO-TAREAS-v1.0.md",
+          "verified_target": true
+        },
+        {
+          "source": "frentes/gobernanza/PENDIENTES.md",
+          "href": "../../ambitos/tareas/INSTRUCCIONES-TAREAS-v1.0.md",
+          "target": "ambitos/tareas/INSTRUCCIONES-TAREAS-v1.0.md",
+          "verified_target": true
+        },
+        {
+          "source": "frentes/gobernanza/PENDIENTES.md",
+          "href": "../../ambitos/tareas/IPZ-TAREAS-CANDIDATO.txt",
+          "target": "ambitos/tareas/IPZ-TAREAS-CANDIDATO.txt",
+          "verified_target": true
+        }
+      ]
+    }
   },
   "next_step": [
     "TAR-01: validar problema, propósito y beneficiarios",
