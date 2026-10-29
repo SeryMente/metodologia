@@ -108,10 +108,11 @@
     },
     {
       "path": "ambitos/tareas/conversaciones/C-TAREAS-ESTANDAR-REUTILIZABLE-01-dialogo.jsonl",
-      "blob_sha": "ae432c6540a14faaf004be322b4d6ce701dbcca2",
-      "commit_sha": "e32187a5cf44804955838743494761257bce6ac6",
+      "blob_sha": "f6d4d0fe641fc62e31a1abb60d78d308b98eb366",
+      "commit_sha": "069ef5abb7268fb6831682a7349aba6793c18a24",
       "readback": true,
-      "validation": "JSONL parse PASS; 5 records"
+      "validation": "JSONL parse PASS; 5 records",
+      "jsonl_lines": 6
     },
     {
       "path": "ambitos/tareas/entregas/CHATGPT-v1.0/C-TAREAS-ESTANDAR-REUTILIZABLE-01-salida-final.md",
@@ -144,6 +145,7 @@
     "next_step": "Validar el estándar con dos o tres casos autorizados de naturaleza diferente y eliminar campos innecesarios antes de proponer v1.0.",
     "instructions_link_to_standard": "PASS; candidate contract explicitly linked; not canonized",
     "task_ipz_repository_candidate": "PASS read-back, 1139 chars",
-    "native_chatgpt_ipz_field": "NOT WRITTEN OR READ BACK"
+    "native_chatgpt_ipz_field": "NOT WRITTEN OR READ BACK",
+    "final_output_literal_in_dialogue": "PASS; the last JSONL record exactly matches the delivery artifact."
   }
 }
