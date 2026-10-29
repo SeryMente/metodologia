@@ -74,7 +74,18 @@
     "native_chatgpt_ipz_written_or_read_back": false,
     "tasks_canonized": false,
     "user_instruction_verbatim_preservation": "PASS; exact incoming message is in JSONL",
-    "final_output_literal_in_dialogue": "PASS; last JSONL record exactly matches delivery artifact"
+    "final_output_literal_in_dialogue": "PASS; last JSONL record exactly matches delivery artifact",
+    "final_rechecks": {
+      "standard_v0_2_readback": "PASS",
+      "schema_v0_2_json_parse": "PASS",
+      "task_design_readback": "PASS",
+      "task_instructions_readback": "PASS",
+      "task_ipz_file_readback": "PASS; native ChatGPT field not modified",
+      "user_message_exact_in_dialogue": "PASS",
+      "final_output_exact_in_dialogue": "PASS",
+      "full_json_schema_validation": "NOT RUN",
+      "end_to_end_task_test": "NOT RUN"
+    }
   },
   "artifacts": [
     {
@@ -142,7 +153,53 @@
       "jsonl_lines": 5,
       "verbatim_user_message_preserved": true,
       "final_output_literal_match": true
+    },
+    {
+      "path": "ambitos/tareas/evidencias/C-TAREAS-ESTANDAR-REUTILIZABLE-01.json",
+      "blob_sha": "43eae5664d6138535ddc3b3ebeac7341216ed7e3",
+      "readback": true,
+      "superseded_by": "C-TAREAS-ESTANDAR-MINIMO-02"
+    },
+    {
+      "path": "frentes/gobernanza/GOBERNANZA.md",
+      "blob_sha": "3284a2fbb63dad7ef4e5d5b0c60e2ae8517e64b8",
+      "commit_sha": "a211e5514d7807f0214cf2a629615847e3722f1f",
+      "readback": true
+    },
+    {
+      "path": "frentes/gobernanza/PENDIENTES.md",
+      "blob_sha": "9edb8e4aa0fd16f2d220bec39bbaa25cba4d9929",
+      "commit_sha": "3d9002c44d28f4380a6ae0ffb22c50882d292ce1",
+      "readback": true
+    },
+    {
+      "path": "frentes/gobernanza/evidencias/C-GOBERNANZA-TAXONOMIA-CONCEPTUAL-INFRAESTRUCTURA-01.json",
+      "blob_sha": "a006b2cd07078a491860fb1a0d9b8d5d81ccec41",
+      "readback": true,
+      "json_parse": "PASS"
     }
   ],
-  "next_step": "Antes de ampliar el estándar, determinar si Tareas aporta una capacidad necesaria; después evaluar el núcleo mínimo con casos autorizados, sin fijar por anticipado un número arbitrario de pruebas."
+  "next_step": "Antes de ampliar el estándar, determinar si Tareas aporta una capacidad necesaria; después evaluar el núcleo mínimo con casos autorizados, sin fijar por anticipado un número arbitrario de pruebas.",
+  "collision_check": {
+    "exact_searches": [
+      {
+        "identifier": "C-TAREAS-ESTANDAR-MINIMO-02",
+        "matches": 0
+      },
+      {
+        "identifier": "C-20261029-4F7A2C91",
+        "matches": 0
+      },
+      {
+        "identifier": "SES-20261028-TA6F31C9",
+        "matches": 0
+      },
+      {
+        "identifier": "chatgpt-C-TAREAS-INICIO-01-SES-20261028-TA6F31C9",
+        "matches": 0
+      }
+    ],
+    "scope": "Búsquedas exactas en SeryMente/metodologia, ref main",
+    "limitation": "No constituye prueba de unicidad global ni de exclusión de escritores fuera del conjunto accesible."
+  }
 }
