@@ -1,5 +1,7 @@
 # Plan de aceptación · MVP MCP Jules
 
+> Este documento define pruebas de aceptación para la fase de implementación y release. La fase vigente es Fase 1 — planeación integral del componente v1.0, definida en [PLAN-INTEGRAL-MCP-JULES-v1.0.md](../PLAN-INTEGRAL-MCP-JULES-v1.0.md). Las etiquetas heredadas de código/tests reflejan el candidato previo y no constituyen evidencia de que un gate esté actualmente aprobado; refrescar contra los heads vigentes.
+
 | Capacidad | Resultado exigido | Estado |
 |---|---|---|
 | Fuentes | `jules_list_sources` devuelve fuentes reales y token de paginación | Código candidato; API real pendiente |
