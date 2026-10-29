@@ -1,0 +1,72 @@
+{
+  "event": "C-GOBERNANZA-CONTINUIDAD-03",
+  "cycle_folio": "C-20261028-7C4A91D6",
+  "date_local": "2026-10-28",
+  "timezone": "America/Mexico_City",
+  "repository": "SeryMente/metodologia",
+  "branch": "main",
+  "front": "gobernanza",
+  "ocp": "frentes/gobernanza/",
+  "session": {
+    "folio": "SES-20261028-GV3K8P6Q",
+    "generation": 3,
+    "owner_alias": "chatgpt-C-GOBERNANZA-RETOMA-02-SES-20261028-GV3K8P6Q",
+    "control_blob_sha": "c15403adde2ec480f81955cdba0458065bb50611"
+  },
+  "source": {
+    "path": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.html",
+    "version": "v358 · NX-358m",
+    "blob_sha": "89a28e4d05f5baab9c4b86abdb9fbfc532690c75",
+    "commit_sha": "1dd88b177d8782bae5e266310979f5307665d750",
+    "metacanon": "1.23",
+    "gow": "2.7",
+    "principles": 41,
+    "annexes": 16,
+    "gow_terms": 108
+  },
+  "input": {
+    "operator_verbatim": "Te documetno con el ultimo fragmento de la covnerascion predecesora.",
+    "content_type": "long predecessor-conversation fragment pasted into a single current user message",
+    "native_message_id": "NOT_EXPOSED",
+    "full_verbatim_archive": "NOT_CLAIMED",
+    "reason": "No native conversation export/file or message ID was exposed by current tools; artifact provides provenance and summary, not an exact full transcript."
+  },
+  "historical_context": {
+    "prior_versions_mentioned": [
+      "DUG v353 · NX-353m",
+      "DUG v354 · NX-354m",
+      "DUG v355 · NX-355m"
+    ],
+    "topics": [
+      "P041 and ART-014 for persistence documentary",
+      "Taxonomía estructural de Ser y Mente (S y M)",
+      "ART-015 to ART-022 hierarchical annexes",
+      "GOW equivalence terms: Ámbito, Ámbito de frente de trabajo, Ámbito de OCP"
+    ],
+    "interpretation": "Historical background only; current authority remains DUG v358."
+  },
+  "normative_change": {
+    "performed": false,
+    "reason": "User supplied predecessor context; no new explicit request to amend the single normative DUG in this turn."
+  },
+  "artifacts": [
+    {
+      "path": "frentes/gobernanza/conversaciones/C-GOBERNANZA-CONTINUIDAD-03-fragmento-predecesor.jsonl",
+      "commit": "466842943a3d51671a04bbe8e598f9f86b64b1f9",
+      "blob": "0d054900da65d1ba50660fa65241915e95861ab3",
+      "readback_exact": true
+    },
+    {
+      "path": "frentes/gobernanza/cronica/C-GOBERNANZA-CONTINUIDAD-03.md",
+      "commit": "d3158a6e29dc30ed05cc1bf24ee3edf0c9829576",
+      "blob": "49c0e105601c79e5852ae92a63f444d73ba86596",
+      "readback_exact": true
+    },
+    {
+      "path": "frentes/gobernanza/entregas/CHATGPT-v0.3/C-GOBERNANZA-CONTINUIDAD-03-salida-final.md",
+      "commit": "d480667f6ad951151763e8cb9f7e9f6a72327e71",
+      "blob": "c6a8076e014e6b33f42d9945e7757709155d250d",
+      "readback_exact": true
+    }
+  ]
+}
