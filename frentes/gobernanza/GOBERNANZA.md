@@ -8,12 +8,22 @@
 **Sesión inicial (histórica):** `SES-20261028-3F2B7A91`, generación 1.
 **Titular actual:** `chatgpt-C-GOBERNANZA-RETOMA-02-SES-20261028-GV3K8P6Q` (alias operativo, no ID nativo).
 **Instancia actual:** `chatgpt-gobernanza-retoma-2026-10-28-GV3K8P6Q`.
-**Sesión actual:** `SES-20261028-GV3K8P6Q`, generación 3; ciclo `C-20261028-94B6C2D8`.
-**Control actual leído de vuelta:** blob `c15403adde2ec480f81955cdba0458065bb50611`, commit de evidencia de verificación `a760933d81c7d75d53a60a613492e5b2188274b6`.
+**Sesión actual:** `SES-20261028-GV3K8P6Q`, generación 3; ciclo vigente `C-20261028-5E83B1D7`.
+**Control actual leído de vuelta:** blob `a3cebd377ba1cb996e3bc14a48a1a1d24bb67670`; actualización de autorización específica en commit `73e11c31403f0d27950bd5091bfee7830b942ad8`.
+
+## Estado normativo y ciclo vigente · C-GOBERNANZA-TAXONOMIA-CONCEPTUAL-INFRAESTRUCTURA-01 · 2026-10-28
+
+Fuente canónica leída de vuelta desde `main`: [DUG v359 · NX-359m](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html), blob `b2ff2845a5a99dc4ce3cafafc4f8e43607d48145`, commit `1377e697cfe7d18b7558ab1eab46e0154e16426d`. Metacanon 1.24; GOW 2.8 con 109 términos; 41 principios; 16 anexos; taxonomía estructural 1.3.
+
+La taxonomía mantiene **Ámbitos** como categoría conceptual diferenciada de la infraestructura GitHub. Se canoniza **Propósito** como elemento conceptual declarativo asociado al alcance de un FT, materializable como archivo compacto o sección de un documento raíz, sin directorio obligatorio. Los ámbitos funcionales transversales canónicos siguen siendo Persistencia documental y Gestión conversacional. La taxonomía no exige un directorio `ambitos/` en cada repositorio OCP.
+
+El ajuste se registró en ART-015, ART-019, ART-020, ART-021, Metacanon §§46/51, la taxonomía estructurada y GOW. DUG/GOW se actualizaron con la autorización expresa del operador limitada a este cambio. No se añadió un principio ni un anexo, y Tareas continúa en incubación, sin canonización. Se parseó el JSON incrustado; la compilación sintáctica aislada del JavaScript pasó; se detectaron 27 IDs estáticos y cero duplicados. No se ejecutó el navegador/renderizado ni la auditoría dinámica completa.
+
+Evidencia del ciclo: [crónica](cronica/C-GOBERNANZA-TAXONOMIA-CONCEPTUAL-INFRAESTRUCTURA-01.md) · [evidencia](evidencias/C-GOBERNANZA-TAXONOMIA-CONCEPTUAL-INFRAESTRUCTURA-01.json) · [salida](entregas/CHATGPT-v0.4/C-GOBERNANZA-TAXONOMIA-CONCEPTUAL-INFRAESTRUCTURA-01-salida-final.md) · [diálogo](conversaciones/C-GOBERNANZA-TAXONOMIA-CONCEPTUAL-INFRAESTRUCTURA-01-dialogo.jsonl).
 
 ## Ámbito funcional propuesto · Tareas v1.0 · 2026-10-28
 
-El operador instruyó inaugurar el ámbito Tareas y desarrollar una versión inicial conceptual y operativa durante ciclos sucesivos. La materialización de incubación está en [ambitos/tareas/README.md](../../ambitos/tareas/README.md); el diseño y las instrucciones siguen siendo propuestas. DUG v358 · NX-358m continúa siendo la norma vigente y enumera solo Persistencia documental y Gestión conversacional. No se ha modificado el DUG ni el GOW para incorporar Tareas; cualquier enmienda queda pendiente de definición, diff concreto y autorización expresa. La ubicación ambitos/tareas/ es una decisión de persistencia operativa del objeto en incubación, no una nueva regla taxonómica general.
+El operador instruyó inaugurar el ámbito Tareas y desarrollar una versión inicial conceptual y operativa durante ciclos sucesivos. La materialización de incubación está en [ambitos/tareas/README.md](../../ambitos/tareas/README.md); el diseño y las instrucciones siguen siendo propuestas. DUG v359 · NX-359m es la norma vigente. Propósito se canonizó como elemento conceptual, mientras que los ámbitos funcionales transversales canónicos siguen siendo Persistencia documental y Gestión conversacional. No se ha modificado el DUG ni el GOW para incorporar Tareas; cualquier enmienda queda pendiente de definición, diff concreto y autorización expresa. La ubicación ambitos/tareas/ es una decisión de persistencia operativa del objeto en incubación, no una nueva regla taxonómica general.
 
 ## Estado de transferencia · C-GOBERNANZA-RETOMA-02 · 2026-10-28 (histórico)
 
