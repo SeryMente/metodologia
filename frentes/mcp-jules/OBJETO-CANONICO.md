@@ -3,14 +3,14 @@
 ## 1. Control e identidad
 
 - **Nombre canónico:** Frente MCP Jules.
-- **Versión del artefacto:** v0.1.0 · especificación del producto mínimo viable en construcción.
+- **Versión del artefacto:** v0.1.1 · actualización de continuidad y titularidad.
 - **Evento de creación:** C-MCP-JULES-001.
-- **Folio de sesión:** SES-20261025-84D3B2F1; generación del control nuevo: 1.
+- **Folio de sesión vigente:** SES-20261029-6C2F9A17; generación del control: 2. El folio anterior queda preservado en el historial de transferencia.
 - **OCP:** `SeryMente/metodologia/frentes/mcp-jules/`.
 - **Repositorio de implementación:** `SeryMente/khora`, `khora-web`, servidor MCP existente.
 - **Rama de documentación:** `feat/metacanon-mcp-jules-20261025-c32f81`.
 - **Rama de implementación:** `feat/mcp-jules-mvp-20261025-final`.
-- **Estado:** OCP y criterios registrados; implementación candidata en [Khora PR #338](https://github.com/SeryMente/khora/pull/338). En CI, typecheck/ui-review/ui:contract y API tests pasan; la suite unitaria tiene 547 PASS/1 FAIL por falta de GH_TOKEN para leer el esquema privado de Metacanon, Ruff falla en dos archivos ajenos y build/E2E fallan aguas abajo. Merge, llamada real a Jules, conexión ChatGPT y aceptación funcional siguen pendientes.
+- **Estado:** OCP y criterios registrados; la titularidad de este frente se transfirió a la sesión vigente el 2026-10-29 mediante comparación de SHA y lectura de vuelta. La documentación continúa en [Metodología PR #19](https://github.com/SeryMente/metodologia/pull/19), todavía en borrador. La implementación candidata sigue en [Khora PR #338](https://github.com/SeryMente/khora/pull/338). El último diagnóstico persistido reporta typecheck/ui-review/ui:contract y API tests aprobados; 547 PASS/1 FAIL en la suite unitaria por GH_TOKEN ausente para leer el esquema privado de Metacanon; Ruff falla en dos archivos ajenos; build/E2E fallan aguas abajo. Estos resultados aún requieren refresco sobre los heads actuales. Merge, llamada real a Jules, conexión ChatGPT y aceptación funcional siguen pendientes.
 - **Fuente de titularidad:** [CONTROL-RESPONSABILIDAD.json](CONTROL-RESPONSABILIDAD.json). No modifica ni sustituye el control del frente padre Metacanon.
 
 ## 2. LEER PRIMERO
@@ -23,10 +23,10 @@ Orden de uso: leer la fuente canónica Samantha/Metacanon/GOW; leer este OCP y s
 
 ## 3. Referencia metodológica
 
-- Fuente normativa única consultada: [Gobernanza única de Samantha v340 · NX-340m](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html), evento `C-METODOLOGIA-GOBERNANZA-UNICA-20`.
-- Marco de objetos canónicos: Metacanon **1.21**, sección integrada en el mismo documento normativo; §§3, 4, 27–29, 46–48 y 51 aplicables.
-- Glosario Operativo del Workspace (GOW): **2.2**, integrado en el documento canónico.
-- Control del frente padre observado en `main`: `frentes/metacanon/CONTROL-RESPONSABILIDAD.json`, blob `8f9d04b86114e0e7fe47e6c6977c8ce6a9d047c7`, generación 4, folio `SES-20261022-5E7C91A4`. Su titularidad permanece intacta.
+- Fuente normativa única consultada en este ciclo: [Documento Único de Gobernanza (DUG) · Samantha v360 · NX-360m](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html), rama `main`, leído el 2026-10-29.
+- Marco de objetos canónicos: Metacanon **1.24**, sección integrada en el mismo documento normativo; §§4, 29–51 aplicables según el ciclo.
+- Glosario Operativo del Workspace (GOW): **2.9**, integrado en el documento canónico.
+- Control vigente del frente padre leído desde `main`: `frentes/metacanon/CONTROL-RESPONSABILIDAD.json`, blob `0eaf612b01de0ae630b7a4775849be455ebda6c8`, generación 5, folio `SES-20261028-8D7A31C2`. No fue modificado por la transferencia de MCP Jules.
 - API de Jules: [referencia REST oficial](https://developers.google.com/jules/api/reference/rest), versión `v1alpha`.
 - Conexión MCP en ChatGPT: [documentación oficial de OpenAI](https://help.openai.com/en/articles/12584461-connecting-custom-mcp-servers-in-chatgpt).
 - Investigación específica: [INVESTIGACION-API-JULES-CHATGPT.md](fuentes/INVESTIGACION-API-JULES-CHATGPT.md).
@@ -96,7 +96,7 @@ Un asistente puede localizar fuentes de Jules, crear una sesión con prompt comp
 
 ## 8. Estado vivo
 
-**Acción actual:** revisar los resultados de CI de Khora PR #338; corregir fallos verificables y completar la prueba autenticada cuando la credencial de Jules esté disponible. PR #337 se cerró sin merge por quedar su SHA desfasado; PR #338 es el candidato vigente.
+**Acción actual:** continuar el frente bajo la titularidad verificada de `C-MCP-JULES-005`. El PR documental #19 sigue abierto en borrador. Actualizar la crónica y refrescar los checks del head vigente antes de decidir cómo resolver los bloqueos. PR #337 de Khora se cerró sin merge por desfase de SHA; PR #338 es el candidato de implementación conocido.
 
 **Siguiente acción:** provisionar acceso de lectura interrepositorio autorizado en CI para el esquema privado de Metacanon; tratar los dos findings Ruff con el frente responsable; volver a ejecutar CI. Después probar la API de Jules con la variable ya configurada (sin leer su valor), conectar un cliente ChatGPT con escritura y solo entonces decidir merge/despliegue. No hacerlo por inferencia.
 
@@ -137,6 +137,7 @@ Aplicar Metacanon §4 en cada ciclo sustantivo: identidad/gobierno; dónde estam
 ## 11. Crónica y fuentes
 
 - [Ciclo de creación C-MCP-JULES-001](cronica/C-MCP-JULES-001.md).
+- [Ciclo de transferencia y estado C-MCP-JULES-005](cronica/C-MCP-JULES-005.md).
 - [Texto original del operador](originales/C-MCP-JULES-001-operador.txt).
 - [Investigación de API, ChatGPT y automatización](fuentes/INVESTIGACION-API-JULES-CHATGPT.md).
 - [Plan de aceptación](pruebas/PLAN-ACEPTACION-MVP.md).
