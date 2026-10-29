@@ -31,4 +31,4 @@ Completar la revisión de consistencia del plan integral contra el OCP, el plan 
 
 ## Persistencia
 
-En este ciclo se actualizan el núcleo y el README para apuntar al plan y reflejar la fase actual. Se leerán de vuelta los archivos recién creados/actualizados. El inventario ya contiene la entrada MCP Jules en esta rama; no se crea una segunda entrada ni un nuevo control.
+En este ciclo se actualizan el núcleo y el README para apuntar al plan y reflejar la fase actual. Se leyeron de vuelta el plan integral, el núcleo, el README, el plan de aceptación y esta crónica; los contenidos coinciden con las escrituras reportadas. El inventario ya contiene la entrada MCP Jules en esta rama; no se crea una segunda entrada ni un nuevo control.
