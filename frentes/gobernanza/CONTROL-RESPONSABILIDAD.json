@@ -189,7 +189,24 @@
         ],
         "scope_limit": "Nine accessible repository trees were checked and none was truncated; only controls visible through the available connection were scanned. This is not proof of complete organization-wide uniqueness or server-enforced exclusivity."
       },
-      "mutation_result": "Control write uses observed SHA; canonical read-back must verify this event before transfer is considered complete."
+      "mutation_result": "Control write applied; immediate canonical read-back verified front, status, owner alias, instance, generation 3, folio, and explicit authorization.",
+      "verification": {
+        "status": "read_back_verified",
+        "initial_readback_blob_sha": "13875812c545e2f65571d5b3d0a7d59d9507c13e",
+        "fields_verified": [
+          "front",
+          "status",
+          "owner_thread",
+          "instance",
+          "generation",
+          "session_folio",
+          "session_assignment.status",
+          "session_assignment.folio",
+          "authorization verbatim"
+        ],
+        "verified_on": "2026-10-28",
+        "scope_limit": "Operational record and GitHub Contents API read-back; not cryptographic verification of the operator's platform identity and not server-enforced fencing."
+      }
     }
   ]
 }
