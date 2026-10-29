@@ -13,17 +13,21 @@ Este directorio es una materialización operativa elegida para trabajar durante 
 
 Tareas se diseña como una capacidad transversal del entorno Ser y Mente/Metodología: puede relacionarse con diversos frentes de trabajo y repositorios. No es, por definición, un frente de trabajo adicional ni un hijo físico de otro frente. La ubicación aquí seleccionada responde a la necesidad concreta de mantener una definición, decisiones, instrucciones y pruebas propias durante la incubación; se reevaluará antes de cualquier ratificación de v1.0.
 
-## Último ciclo de diseño del estándar común
+## Ciclo vigente · C-TAREAS-ESTANDAR-MINIMO-02
 
-- **C-TAREAS-ESTANDAR-REUTILIZABLE-01 · C-20261028-8B4D930F:** [crónica](cronica/C-TAREAS-ESTANDAR-REUTILIZABLE-01.md) · [evidencia](evidencias/C-TAREAS-ESTANDAR-REUTILIZABLE-01.json) · [salida](entregas/CHATGPT-v1.0/C-TAREAS-ESTANDAR-REUTILIZABLE-01-salida-final.md) · [diálogo](conversaciones/C-TAREAS-ESTANDAR-REUTILIZABLE-01-dialogo.jsonl).
-- [Estándar común de tarea v0.1](ESTANDAR-COMUN-DE-TAREA-v0.1.md) y [esquema JSON candidato](ESQUEMA-TAREA-COMUN-v0.1.json): borradores reutilizables, no canonizados ni validados en producción.
+- **Ciclo:** C-20261029-4F7A2C91 · se reduce el estándar común por instrucción expresa del operador.
+- [Estándar común mínimo v0.2](ESTANDAR-COMUN-DE-TAREA-v0.2.md) · [esquema JSON mínimo v0.2](ESQUEMA-TAREA-COMUN-v0.2.json).
+- [Crónica](cronica/C-TAREAS-ESTANDAR-MINIMO-02.md) · [evidencia](evidencias/C-TAREAS-ESTANDAR-MINIMO-02.json) · [salida](entregas/CHATGPT-v1.0/C-TAREAS-ESTANDAR-MINIMO-02-salida-final.md) · [diálogo literal](conversaciones/C-TAREAS-ESTANDAR-MINIMO-02-dialogo.jsonl).
+
+La propuesta v0.2 reduce el núcleo a identidad, enunciado, referencia de origen y estado; la referencia de ámbito solo se añade cuando el contexto no lo deja claro. La v0.1 se conserva como antecedente histórico, no como propuesta vigente.
 
 ## Punto de entrada
 
 - [Diseño inicial Tareas v1.0](DISEÑO-TAREAS-v1.0.md): propósito, alcance candidato y arquitectura conceptual/operativa.
 - [Instrucciones operativas Tareas v1.0](INSTRUCCIONES-TAREAS-v1.0.md): reglas candidatas de trabajo dentro del ámbito.
-- [Estándar común de tarea v0.1](ESTANDAR-COMUN-DE-TAREA-v0.1.md): contrato reutilizable candidato para otros ámbitos.
-- [Esquema JSON de tarea común v0.1](ESQUEMA-TAREA-COMUN-v0.1.json): primera proyección técnica del contrato, aún no de producción.
+- [Estándar común de tarea v0.2](ESTANDAR-COMUN-DE-TAREA-v0.2.md): núcleo mínimo candidato reutilizable.
+- [Esquema JSON de tarea común v0.2](ESQUEMA-TAREA-COMUN-v0.2.json): proyección técnica mínima candidata.
+- [Versión anterior v0.1](ESTANDAR-COMUN-DE-TAREA-v0.1.md): antecedente histórico ampliado; sustituido como propuesta vigente por v0.2.
 - [Texto candidato IPZ](IPZ-TAREAS-CANDIDATO.txt): propuesta breve no instalada en el campo nativo.
 - [Pendientes y plan de definición](PENDIENTES.md): decisiones abiertas y secuencia de ciclos.
 - [Control de responsabilidad del ámbito](CONTROL-RESPONSABILIDAD.json): titularidad operativa de este OCP.
