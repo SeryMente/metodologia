@@ -1,0 +1,137 @@
+{
+  "event": "C-GOBERNANZA-CONTEXTO-GESTION-CONVERSACIONAL-01",
+  "cycle_folio": "C-20261028-869AF58C",
+  "date_local": "2026-10-28",
+  "timezone": "America/Mexico_City",
+  "repository": "SeryMente/metodologia",
+  "branch": "main",
+  "authorization": "Explicit operator request in the current conversation to incorporate Contexto as functional-scope level 1 and Gestión conversacional as functional-scope level 2 beneath it, defining both in the structural taxonomy and canonical DUG.",
+  "previous": {
+    "dug_version": "v355 · NX-355m",
+    "dug_blob": "aea6628f3e3b117468ef70a8655ebfac124a522d",
+    "dug_commit": "a563e6c9a0ac3eb58d31c498af40342fa7a01d0d",
+    "taxonomy_version": "1.0",
+    "metacanon_version": "1.22",
+    "gow_version": "2.5",
+    "gow_terms": 105,
+    "principles": 41,
+    "annexes": 16
+  },
+  "current": {
+    "dug_version": "v356 · NX-356m",
+    "dug_blob": "c364e179e8e9b6a3d566a8e690dfa1a7cce91798",
+    "dug_commit": "706e02a0dc0074e751667de8033d09411fad5ad9",
+    "taxonomy_version": "1.1",
+    "metacanon_version": "1.22",
+    "gow_version": "2.6",
+    "gow_terms": 107,
+    "principles": 41,
+    "annexes": 16
+  },
+  "functional_scope_hierarchy": [
+    {
+      "level": 1,
+      "name": "Contexto",
+      "term_id": "gow-contexto",
+      "parent": null,
+      "definition_status": "INITIAL_AND_OPEN",
+      "definition": "Ámbito superior para organizar el contexto de trabajo de un frente; el alcance integral permanece abierto."
+    },
+    {
+      "level": 2,
+      "name": "Gestión conversacional",
+      "term_id": "gow-gestion-conversacional",
+      "parent": "Contexto",
+      "definition_status": "DEFINED_AT_MINIMUM",
+      "definition": "Ámbito para identificar, registrar, organizar y recuperar conversaciones de trabajo, y facilitar su continuidad entre conversaciones o instancias a partir de registros disponibles."
+    }
+  ],
+  "annex_hierarchy_separation": {
+    "artifact": "ART-020",
+    "artifact_title": "Taxonomía estructural de ámbitos funcionales",
+    "annex_level": 2,
+    "parent_id": "ART-015",
+    "rule": "Los niveles funcionales Contexto 1 → Gestión conversacional 2 son distintos de los niveles documentales de los anexos del DUG. ART-020 mantiene su nivel documental 2.",
+    "unassigned_scopes": [
+      "Persistencia documental",
+      "Gestión de tareas",
+      "Otros ámbitos no definidos en este evento"
+    ]
+  },
+  "new_terms": [
+    {
+      "id": "gow-contexto",
+      "name": "Contexto",
+      "anchor": "#gow-contexto"
+    },
+    {
+      "id": "gow-gestion-conversacional",
+      "name": "Gestión conversacional",
+      "anchor": "#gow-gestion-conversacional"
+    }
+  ],
+  "updated_files": [
+    {
+      "path": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.html",
+      "blob": "c364e179e8e9b6a3d566a8e690dfa1a7cce91798",
+      "commit": "706e02a0dc0074e751667de8033d09411fad5ad9"
+    },
+    {
+      "path": "frentes/gobernanza/CONTROL-RESPONSABILIDAD.json",
+      "blob": "61827f7dd304268d413ecebf6cd0ebb173ae7e82",
+      "commit": "fc880a7dcf935d160c3366da98fef4dc9445400f"
+    },
+    {
+      "path": "gobernanza/GLOSARIO-WORKSPACE.fuente.json",
+      "blob": "73d7c00cf3bf1dd4eb6bc95be4d9dea2460330cb",
+      "commit": "9039e6969dc4b07c93b3864a4a2aecb14d7f9987"
+    },
+    {
+      "path": "INICIO.md",
+      "blob": "e0b0afacd517608a1806056a39aefe1ebe356b09",
+      "commit": "12f62905682cb0d411eacdf843b93d9e4aad7520"
+    },
+    {
+      "path": "frentes/metacanon/README.md",
+      "blob": "c194aa1de45ff315b6f568ac220c9ee647dfe1b9",
+      "commit": "226e10b892aae393d197aa25fa308d6bdff1ca35"
+    },
+    {
+      "path": "frentes/gobernanza/README.md",
+      "blob": "f7c0821a08ab867bceb106e7cf03f003a3037721",
+      "commit": "a29cd45a168b8f0bc2485a0619dc9826fec6c5cf"
+    },
+    {
+      "path": "frentes/gobernanza/PENDIENTES.md",
+      "blob": "5738289f038e49a99a904764b3ba51c6375ba278",
+      "commit": "45fd1fa6d4b0d629a77795388fd855d0a9fdaf9e"
+    },
+    {
+      "path": "frentes/gobernanza/GOBERNANZA.md",
+      "blob": "44135a40860d4a4eb0aac9dec1c7642939e1a157",
+      "commit": "d65f9770c15e7ab40f0949a4efa7f0f09c86e17b"
+    },
+    {
+      "path": "frentes/gobernanza/cronica/C-GOBERNANZA-CONTEXTO-GESTION-CONVERSACIONAL-01.md",
+      "blob": "aea28216d826b37b17539b7c5aac9dfff2e52c8d",
+      "commit": "50c1e7c48bf1a8453bfd8ffe868d20c807c73418"
+    }
+  ],
+  "validation": {
+    "embedded_json_parse": "PASS",
+    "javascript_syntax_compile": "PASS_COMPILE_ONLY",
+    "readback_dug_exact": true,
+    "static_duplicate_html_ids": 0,
+    "content_anchor_duplicate_ids": 0,
+    "new_term_anchors_present": true,
+    "glossary_human_and_structured_entries": "PASS",
+    "support_metadata_and_entrypoints_aligned": true,
+    "browser_render": "NOT_RUN",
+    "dynamic_crosslink_audit": "NOT_RUN",
+    "notion_mirror": "NOT_UPDATED_NOT_READ_BACK",
+    "native_ipz": "NOT_WRITTEN_OR_VERIFIED",
+    "spdf_e2e": "PENDING_NO_REAL_ATTACHMENT",
+    "second_authorized_instance_recovery": "NOT_TESTED",
+    "github_actions": "NOT_QUERIED_NOT_RUN"
+  }
+}
