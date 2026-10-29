@@ -5,7 +5,7 @@
 **Evento inaugural:** C-TAREAS-INICIO-01  
 **Ciclo:** C-20261028-TA6F31C9  
 **OCP materializado provisionalmente en:** ambitos/tareas/  
-**Fuente normativa superior:** [Documento Único de Gobernanza (DUG) de Samantha](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html), vigente al inicio de este ciclo en **v358 · NX-358m**.
+**Fuente normativa superior:** [Documento Único de Gobernanza (DUG) de Samantha](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html). Fuente vigente releída el 2026-10-28: **v359 · NX-359m**, Metacanon 1.24, GOW 2.8 y taxonomía 1.3.
 
 ## Qué es esta carpeta
 
@@ -17,6 +17,8 @@ Tareas se diseña como una capacidad transversal del entorno Ser y Mente/Metodol
 
 - [Diseño inicial Tareas v1.0](DISEÑO-TAREAS-v1.0.md): propósito, alcance candidato y arquitectura conceptual/operativa.
 - [Instrucciones operativas Tareas v1.0](INSTRUCCIONES-TAREAS-v1.0.md): reglas candidatas de trabajo dentro del ámbito.
+- [Estándar común de tarea v0.1](ESTANDAR-COMUN-DE-TAREA-v0.1.md): contrato reutilizable candidato para otros ámbitos.
+- [Esquema JSON de tarea común v0.1](ESQUEMA-TAREA-COMUN-v0.1.json): primera proyección técnica del contrato, aún no de producción.
 - [Texto candidato IPZ](IPZ-TAREAS-CANDIDATO.txt): propuesta breve no instalada en el campo nativo.
 - [Pendientes y plan de definición](PENDIENTES.md): decisiones abiertas y secuencia de ciclos.
 - [Control de responsabilidad del ámbito](CONTROL-RESPONSABILIDAD.json): titularidad operativa de este OCP.
@@ -26,6 +28,6 @@ Tareas se diseña como una capacidad transversal del entorno Ser y Mente/Metodol
 
 ## Límite canónico
 
-Al inicio de esta incubación, la taxonomía normativa vigente en DUG v358 declara dos ámbitos funcionales: **Persistencia documental** y **Gestión conversacional**. Tareas es una **propuesta de tercer ámbito funcional**, pendiente de definición, contraste y autorización expresa para su incorporación al DUG y al GOW. No describirlo como canonizado hasta que esa modificación sea autorizada, escrita y leída de vuelta en la fuente normativa.
+Al inicio de esta incubación, el DUG v358 declaraba dos ámbitos funcionales. Tras la revisión normativa de este ciclo, el DUG vigente es **v359 · NX-359m**: los ámbitos funcionales transversales canónicos siguen siendo **Persistencia documental** y **Gestión conversacional**, y **Propósito** queda incorporado como elemento conceptual canónico asociado al alcance de un FT. Tareas continúa en incubación y no está canonizado. Tareas es una **propuesta de tercer ámbito funcional**, pendiente de definición, contraste y autorización expresa para su incorporación al DUG y al GOW. No describirlo como canonizado hasta que esa modificación sea autorizada, escrita y leída de vuelta en la fuente normativa.
 
 No se crea todavía un registro vacío de tareas, no se presume una integración con herramientas externas y no se afirma que el campo nativo de Instrucciones Personalizadas de ChatGPT haya sido modificado.
