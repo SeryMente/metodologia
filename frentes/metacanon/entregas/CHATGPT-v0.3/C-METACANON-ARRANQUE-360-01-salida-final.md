@@ -33,9 +33,9 @@ La comparación contra el SHA observado, el incremento de generación, la conser
 | `BOOTSTRAP-CONTEXTO-GLOBAL.md` | Reconciliado con el DUG integrado y con la puerta común de ART-024; blob `d5e7bca9225fb040d73ebbeca52e36c8637d3afd`. |
 | `frentes/metacanon/entregas/CHATGPT-v0.3/IPZ-CAMPO-CHATGPT.txt` | Candidato actualizado, 1.365 caracteres; blob `7400b5109987bcf81301861b666715bf53636468`. |
 | `INICIO.md` | Apunta explícitamente al prompt universal y al BCR y declara los límites de instalación/prueba; blob `345d2b383f07c762afbdcc2dc567ce27451aa6e5`. |
-| `README.md` | Índice raíz reconciliado con el DUG v360 integrado; blob `be7008d25dfd3d218a706d8133aeb6d733b01040`. |
+| `README.md` | Índice raíz reconciliado con el DUG v360 integrado; blob `181862468cf99bca8609b6cd38b5758ec2dcb566`. |
 | `CONTINUIDAD-ENTRE-CONVERSACIONES.md` | Delegación de arranque actualizada; blob `b3d9c1494b631e83cacecc2b6f60f085a4ba657a`. |
-| `frentes/metacanon/README.md` | Índice del frente actualizado a DUG v360/GOW 2.9 y enlazado al ciclo; blob `d19ccd8a06cdd1225ad2bf076895f8b4232fc75a`. |
+| `frentes/metacanon/README.md` | Índice del frente actualizado a DUG v360/GOW 2.9 y enlazado al ciclo; blob `31d683aaf3df9e25af47d9ff0921950711d4a85c`. |
 | `frentes/metacanon/PENDIENTES.md` | CONT-02 actualizado a implementación documental con prueba semántica e IPZ nativa pendientes; blob `761d6c79b2d577728cf962e4a58ee091abb30eac`. |
 | Registro conversacional | Se conservó el UUIDv7 local existente y se actualizó el último folio; blob `62bf29733441928392348aa3f26138cf94c2985e`. |
 | Fuentes verbatim de origen | Solicitud actual y autorización registradas con procedencia y sin inventar IDs nativos; blob `ed1c597a84e6f575d7c61caee5ee9aca234c46e1`. |
