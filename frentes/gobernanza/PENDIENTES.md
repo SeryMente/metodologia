@@ -1,8 +1,12 @@
 # Pendientes · Frente Gobernanza
 
-## Estado operativo actualizado · C-GOBERNANZA-REFERENCIAS-VERSION-01 · 2026-10-28
+## Estado operativo actualizado · C-GOBERNANZA-RETOMA-02 · 2026-10-28
 
 **Corte vigente:** DUG v358 · NX-358m, blob `89a28e4d05f5baab9c4b86abdb9fbfc532690c75`, commit `1dd88b177d8782bae5e266310979f5307665d750`; Metacanon 1.23; GOW 2.7 con 108 términos; 41 principios y 16 anexos jerarquizados. Taxonomía estructural v1.2. Los ámbitos funcionales vigentes son Persistencia documental y Gestión conversacional, ambos al mismo nivel; los subámbitos de nivel 2..N son posibles, pero no están instanciados. La Metodología en sentido general y abstracto es el OCP raíz y cada nivel taxonómico es OCP, sin implicar ruta física exclusiva. JSON embebido parseado, JavaScript operativo aislado compilado por sintaxis y lectura de vuelta exacta; la auditoría de navegador/renderizado dinámico no se ejecutó. La alineación de referencia de versión no cambia la semántica de los ámbitos ni de OCP.
+
+
+
+**Titularidad de Gobernanza:** chatgpt-C-GOBERNANZA-RETOMA-02-SES-20261028-GV3K8P6Q, sesión SES-20261028-GV3K8P6Q, generación 3; control blob c15403adde2ec480f81955cdba0458065bb50611 (commit a760933d81c7d75d53a60a613492e5b2188274b6). DUG v358 · NX-358m, blob 89a28e4d05f5baab9c4b86abdb9fbfc532690c75, Metacanon 1.23, GOW 2.7. La comprobación estática de esta retoma encontró 27 IDs sin duplicados, 16 enlaces locales de fragmento, siete destinos distintos y cero destinos estáticos ausentes; renderizado de navegador/auditoría dinámica no ejecutados. La salida final dedicada al ciclo previo inmediato no está disponible/verificada; la única salida dedicada encontrada es la de apertura histórica v345.
 
 Los estados iniciales correspondían a la lectura de Samantha v345. Su redacción anterior permanece en el historial Git de este archivo; los puntos siguientes expresan el estado vigente observado.
 
@@ -39,3 +43,6 @@ Los estados iniciales correspondían a la lectura de Samantha v345. Su redacció
 15. **GOV-OCP-UBICUO-01 · PERSISTIDO Y RELEÍDO.** Se define OCP como objeto canónico de persistencia de cada unidad de su nivel taxonómico; la Metodología en sentido general y abstracto es el OCP raíz. OCP no es un nivel adicional y no implica una carpeta/repositorio físico exclusivo. GOW v2.7 incorpora campo `definition` separado de aliases/equivalencias, añade las entradas OCP y Persistencia documental y deja Contexto fuera de la taxonomía funcional vigente. Se permite definir subámbitos de nivel 2..N en el futuro, sin instanciarlos por simetría. Lectura de vuelta exacta, JSON parseado, JS compilado por sintaxis aislada; renderizado dinámico y enlaces pendientes.
 
 16. **GOV-VERSION-REF-01 · PERSISTIDO Y RELEÍDO.** Se corrigió una referencia actual interna en el resumen humano de Metacanon que aún citaba Gobierno general v356 · NX-356m, dejándola alineada con Gobierno general v358 · NX-358m. No cambia la semántica de Metacanon 1.23, GOW 2.7, taxonomía 1.2 ni los dos ámbitos funcionales actuales. DUG blob `89a28e4d05f5baab9c4b86abdb9fbfc532690c75`; lectura de vuelta exacta, JSON válido y JS compilado sintácticamente de forma aislada. Renderizado del navegador y auditoría dinámica de enlaces pendientes.
+
+
+17. **GOV-LINK-04 · COMPROBACIÓN ESTÁTICA PARCIAL · C-GOBERNANZA-RETOMA-02.** DUG v358 · NX-358m, blob 89a28e4d05f5baab9c4b86abdb9fbfc532690c75: 27 atributos id, cero duplicados; 16 enlaces locales #..., siete destinos únicos, cero destinos estáticos ausentes en la capa HTML con bloques script excluidos. El chequeo no abarca renderizado ni enlaces generados en runtime; GOV-LINK-01/02/03 continúan abiertos para auditoría dinámica.
