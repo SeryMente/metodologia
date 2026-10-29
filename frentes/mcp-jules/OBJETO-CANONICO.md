@@ -3,14 +3,14 @@
 ## 1. Control e identidad
 
 - **Nombre canónico:** Frente MCP Jules.
-- **Versión del artefacto:** v0.1.3 · consolidación del plan integral MCP Jules v1.0.
+- **Versión del artefacto:** v0.1.4 · cierre de planeación integral MCP Jules v1.0.
 - **Evento de creación:** C-MCP-JULES-001.
 - **Folio de sesión vigente:** SES-20261029-6C2F9A17; generación del control: 2. El folio anterior queda preservado en el historial de transferencia.
 - **OCP:** `SeryMente/metodologia/frentes/mcp-jules/`.
 - **Repositorio de implementación:** `SeryMente/khora`, `khora-web`, servidor MCP existente.
 - **Rama de documentación:** `feat/metacanon-mcp-jules-20261025-c32f81`.
 - **Rama de implementación:** `feat/mcp-jules-mvp-20261025-final`.
-- **Estado:** la titularidad se transfirió y verificó el 2026-10-29. La fase 1 vigente es la planeación plena y completa del componente MCP Jules v1.0; no debe confundirse con la implementación candidata de [Khora PR #338](https://github.com/SeryMente/khora/pull/338). La línea base de diseño queda en [PLAN-INTEGRAL-MCP-JULES-v1.0.md](PLAN-INTEGRAL-MCP-JULES-v1.0.md). La documentación continúa en [Metodología PR #19](https://github.com/SeryMente/metodologia/pull/19), abierta en borrador y todavía no integrada a `main`. El último diagnóstico persistido reporta typecheck/UI contract/API tests aprobados en el candidato, una falla unitaria por acceso al esquema privado, findings Ruff ajenos y fallos de build/E2E aguas abajo; todo resultado técnico debe refrescarse contra los heads vigentes. API Jules real, elegibilidad de ChatGPT para escritura, conexión desde el cliente final, aceptación funcional, merge y despliegue siguen pendientes.
+- **Estado:** la titularidad se transfirió y verificó el 2026-10-29. La fase 1 de planeación integral del componente MCP Jules v1.0 se declaró COMPLETA como diseño listo para implementar; no debe confundirse con la implementación candidata de [Khora PR #338](https://github.com/SeryMente/khora/pull/338). La línea base de diseño queda en [PLAN-INTEGRAL-MCP-JULES-v1.0.md](PLAN-INTEGRAL-MCP-JULES-v1.0.md). La documentación continúa en [Metodología PR #19](https://github.com/SeryMente/metodologia/pull/19), abierta en borrador y todavía no integrada a `main`. El último diagnóstico persistido reporta typecheck/UI contract/API tests aprobados en el candidato, una falla unitaria por acceso al esquema privado, findings Ruff ajenos y fallos de build/E2E aguas abajo; todo resultado técnico debe refrescarse contra los heads vigentes. API Jules real, elegibilidad de ChatGPT para escritura, conexión desde el cliente final, aceptación funcional, merge y despliegue siguen pendientes.
 - **Fuente de titularidad:** [CONTROL-RESPONSABILIDAD.json](CONTROL-RESPONSABILIDAD.json). No modifica ni sustituye el control del frente padre Metacanon.
 
 ## 2. LEER PRIMERO
@@ -98,21 +98,19 @@ Un asistente puede localizar fuentes de Jules, crear una sesión con prompt comp
 
 ## 8. Estado vivo
 
-**Acción actual:** continuar el frente bajo la titularidad verificada de `C-MCP-JULES-005`. El PR documental #19 sigue abierto en borrador. Actualizar la crónica y refrescar los checks del head vigente antes de decidir cómo resolver los bloqueos. PR #337 de Khora se cerró sin merge por desfase de SHA; PR #338 es el candidato de implementación conocido.
+**Fase 1 — PLANEACIÓN INTEGRAL: COMPLETA como diseño.** La línea base es [PLAN-INTEGRAL-MCP-JULES-v1.0.md](PLAN-INTEGRAL-MCP-JULES-v1.0.md), con 24 secciones, decisiones ADR, contrato de API, matriz de trazabilidad, 25 pruebas/gates, política de errores/reintentos, amenazas y procedimiento de release/rollback. Cierre documentado en [C-MCP-JULES-007](cronica/C-MCP-JULES-007.md). No se modificó código de producto en este ciclo.
 
-**Siguiente acción:** provisionar acceso de lectura interrepositorio autorizado en CI para el esquema privado de Metacanon; tratar los dos findings Ruff con el frente responsable; volver a ejecutar CI. Después probar la API de Jules con la variable ya configurada (sin leer su valor), conectar un cliente ChatGPT con escritura y solo entonces decidir merge/despliegue. No hacerlo por inferencia.
+**Estado de integración:** el PR documental #19 sigue abierto en borrador. El candidato de código sigue en [Khora PR #338](https://github.com/SeryMente/khora/pull/338), todavía no aceptado. Los gates de API real, elegibilidad de ChatGPT con escritura, E2E, CI actual, merge y despliegue permanecen pendientes hasta obtener evidencia.
 
-**Pendientes ordenados:**
-1. Repetir la suite completa tras resolver el acceso de lectura interrepositorio; conservar como evidencia que el typecheck, `ui-review:check`, `ui:contract`, API tests y los tests específicos Jules pasan en el último CI observado.
-2. Abrir PR del delta limpio de Khora y leer estados de CI reales.
-3. Revisar el diff y aprobar por separado merge/producción; no declarar aceptación por PR abierto.
-4. Verificar una llamada API de Jules desde el entorno autorizado usando `JULES_API_KEY`, definida pero no validada todavía; no recuperar ni registrar su valor.
-5. Hacer prueba autenticada: listar fuentes → crear sesión con aprobación de plan obligatoria → recuperar plan/actividad → aprobar explícitamente → esperar actividad → responder cuando Jules solicite información.
-6. Conectar desde un cliente ChatGPT real que admita herramientas MCP con escritura; confirmar plan y permisos.
-7. Si se necesita vigilancia cuando ChatGPT está inactivo, diseñar/implantar trabajador externo persistente con checkpoint, deduplicación, backoff, logs saneados, apagado y revisión humana.
-8. Actualizar versión, crónica, evidencias e inventario después de cada resultado verificado.
+**Siguiente fase prevista:** reconciliación/implementación contra la línea base. Antes de usar el modo complemento nativo debe comprobarse el plan/espacio real de ChatGPT: la documentación consultada lista escritura MCP para Business y Enterprise/Edu, mientras que Pro tiene lectura/recuperación; Plus no figura expresamente en la disponibilidad de escritura. No se declara que el cliente del operador sea elegible sin verificación.
 
-**Recordatorio latente:** la API de Jules es `v1alpha`; contratos y parámetros requieren revalidación si el proveedor los modifica.
+**Pendientes técnicos priorizados:**
+1. En fase 2, comparar el head actual de Khora PR #338 con la matriz de diseño; corregir la validación source/branch server-side.
+2. Separar reintentos GET de los POST no idempotentes; evitar duplicar sesión/mensaje/aprobación después de resultados ambiguos.
+3. Usar `pageToken` documentado, revisar helpers heredados que usan `createTime` como cursor y probar paginación.
+4. Refrescar la suite completa, resolver el acceso privado requerido por CI y coordinar findings Ruff ajenos con su frente responsable.
+5. Probar `JULES_API_KEY` sin revelar el valor y el ciclo real con el cliente ChatGPT que tenga escritura.
+6. Conservar trabajador persistente, autorespuesta ilimitada, auto-merge y auto-deploy fuera de v1.0.
 
 ## 9. Aceptación y viabilidad
 
@@ -140,8 +138,9 @@ Aplicar Metacanon §4 en cada ciclo sustantivo: identidad/gobierno; dónde estam
 
 - [Ciclo de creación C-MCP-JULES-001](cronica/C-MCP-JULES-001.md).
 - [Ciclo de transferencia y estado C-MCP-JULES-005](cronica/C-MCP-JULES-005.md).
-- [Ciclo vigente C-MCP-JULES-006](cronica/C-MCP-JULES-006.md) — definición de la fase 1.
-- [Plan integral del componente MCP Jules v1.0](PLAN-INTEGRAL-MCP-JULES-v1.0.md) — línea base de diseño; Fase 1, sin implementación.
+- [Ciclo histórico C-MCP-JULES-006](cronica/C-MCP-JULES-006.md) — apertura de la fase de planeación.
+- [Ciclo vigente C-MCP-JULES-007](cronica/C-MCP-JULES-007.md) — cierre de la planeación integral.
+- [Plan integral del componente MCP Jules v1.0](PLAN-INTEGRAL-MCP-JULES-v1.0.md) — línea base de diseño completa; la implementación y validación siguen pendientes.
 - [Texto original del operador](originales/C-MCP-JULES-001-operador.txt).
 - [Investigación de API, ChatGPT y automatización](fuentes/INVESTIGACION-API-JULES-CHATGPT.md).
 - [Plan de aceptación](pruebas/PLAN-ACEPTACION-MVP.md).
