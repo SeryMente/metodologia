@@ -1,0 +1,271 @@
+{
+  "schema": "metacanon-cycle-evidence/v1",
+  "event_id": "C-METACANON-ARRANQUE-360-01",
+  "cycle_folio": "C-20261029-7F4A9C21",
+  "date_local": "2026-10-29",
+  "timezone": "America/Mexico_City",
+  "front": "Metacanon",
+  "repository": "SeryMente/metodologia",
+  "branch": "main",
+  "authority": {
+    "document": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.html",
+    "version": "Samantha v360 · NX-360m",
+    "metacanon_version": "1.24",
+    "gow_version": "2.9",
+    "gow_terms": 111,
+    "taxonomy_version": "1.3",
+    "principles": 41,
+    "annexes": 17,
+    "blob_sha": "3cda9d38db1bee76ff0ca752f3ecde8719c70d41"
+  },
+  "user_input": {
+    "request": "Bien, antes de continuar tareas me pregunto cómo puedo pasar de estar diseñando los otros dos elementos, es decir, gestor conversacional y AT, a ya tenerlos implementados y que por lo menos, por lo menos, a partir de la siguiente conversación que cualquier frente de trabajo tenga que iniciar ya se inicie con la nueva metodología actualizada hasta este punto y luego ya ponerme a resolver tareas.",
+    "transfer_authorization_verbatim": "Si",
+    "provenance": "Textos visibles en esta conversación; los conectores no exponen IDs nativos de mensaje."
+  },
+  "ownership_transfer": {
+    "status": "read_back_verified",
+    "observed_source_blob_sha": "0eaf612b01de0ae630b7a4775849be455ebda6c8",
+    "source_generation": 5,
+    "previous_owner": "chatgpt-C-METACANON-REINSTANTANCIACION-M27-SES-20261028-8D7A31C2",
+    "previous_session_folio": "SES-20261028-8D7A31C2",
+    "authorization_question": "¿Autorizas que esta conversación asuma el frente Metacanon y sustituya la titularidad actualmente registrada?",
+    "authorization_verbatim": "Si",
+    "new_owner": "chatgpt-C-METACANON-ARRANQUE-360-SES-20261029-7F4A9C21",
+    "new_instance": "chatgpt-metacanon-arranque-v360-2026-10-29",
+    "new_generation": 6,
+    "new_session_folio": "SES-20261029-7F4A9C21",
+    "post_write_blob_sha": "86f0e4fa59e37976704231290b460cf6dc9252b0",
+    "commit_sha": "4cb58ba1927d858d2c3cffd5f8376c15fee402c4",
+    "alias_is_native_platform_id": false,
+    "collision_check": {
+      "controls_checked": 5,
+      "checked_paths": [
+        "SeryMente/metodologia:frentes/metacanon/CONTROL-RESPONSABILIDAD.json",
+        "SeryMente/metodologia:frentes/acceso/CONTROL-RESPONSABILIDAD.json",
+        "SeryMente/khora:docs/frentes/harmonia/CONTROL-RESPONSABILIDAD.json",
+        "SeryMente/signal-interpreter:docs/frentes/signal-interpreter/CONTROL-RESPONSABILIDAD.json",
+        "SeryMente/personal:frentes/repertorio-canto-personal/CONTROL-RESPONSABILIDAD.json"
+      ],
+      "global_uniqueness_verified": false,
+      "server_side_writer_exclusion": false
+    }
+  },
+  "artifacts": {
+    "dug": {
+      "path": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.html",
+      "blob_sha": "3cda9d38db1bee76ff0ca752f3ecde8719c70d41",
+      "length": 780106
+    },
+    "control": {
+      "path": "frentes/metacanon/CONTROL-RESPONSABILIDAD.json",
+      "blob_sha": "86f0e4fa59e37976704231290b460cf6dc9252b0",
+      "length": 22237
+    },
+    "prompt": {
+      "path": "PROMPT-UNIVERSAL-REINSTANTANCIACION.md",
+      "blob_sha": "7ef052146416add46260cf9d51eaa34c2fa83caa",
+      "length": 5164
+    },
+    "bootstrap": {
+      "path": "BOOTSTRAP-CONTEXTO-GLOBAL.md",
+      "blob_sha": "d5e7bca9225fb040d73ebbeca52e36c8637d3afd",
+      "length": 12214
+    },
+    "ipz": {
+      "path": "frentes/metacanon/entregas/CHATGPT-v0.3/IPZ-CAMPO-CHATGPT.txt",
+      "blob_sha": "7400b5109987bcf81301861b666715bf53636468",
+      "length": 1365
+    },
+    "inicio": {
+      "path": "INICIO.md",
+      "blob_sha": "345d2b383f07c762afbdcc2dc567ce27451aa6e5",
+      "length": 6411
+    },
+    "root": {
+      "path": "README.md",
+      "blob_sha": "181862468cf99bca8609b6cd38b5758ec2dcb566",
+      "length": 5251
+    },
+    "continuity": {
+      "path": "CONTINUIDAD-ENTRE-CONVERSACIONES.md",
+      "blob_sha": "b3d9c1494b631e83cacecc2b6f60f085a4ba657a",
+      "length": 1086
+    },
+    "pending": {
+      "path": "frentes/metacanon/PENDIENTES.md",
+      "blob_sha": "761d6c79b2d577728cf962e4a58ee091abb30eac",
+      "length": 42421
+    },
+    "frontReadme": {
+      "path": "frentes/metacanon/README.md",
+      "blob_sha": "31d683aaf3df9e25af47d9ff0921950711d4a85c",
+      "length": 4898
+    },
+    "out": {
+      "path": "frentes/metacanon/entregas/CHATGPT-v0.3/C-METACANON-ARRANQUE-360-01-salida-final.md",
+      "blob_sha": "50da20037280d20b03270941ec722fb80360d507",
+      "length": 9479
+    },
+    "dialog": {
+      "path": "frentes/metacanon/conversaciones/C-METACANON-ARRANQUE-360-01-dialogo.jsonl",
+      "blob_sha": "67115b134f17a965a1aeb3ea0017bb6ff7be0c5b",
+      "length": 11886
+    },
+    "chronicle": {
+      "path": "frentes/metacanon/cronica/C-METACANON-ARRANQUE-360-01.md",
+      "blob_sha": "ac58fdedde151fb5eaf432fce7bec0bf5c9e7523",
+      "length": 7401
+    },
+    "sources": {
+      "path": "ambitos/gestion-conversacional/FUENTES-VERBATIM-ORIGEN.jsonl",
+      "blob_sha": "ed1c597a84e6f575d7c61caee5ee9aca234c46e1",
+      "length": 6825
+    },
+    "traces": {
+      "path": "ambitos/gestion-conversacional/REGISTRO-TRAZABILIDAD-SEMANTICA.jsonl",
+      "blob_sha": "e225feedb255695f81ed95fc89a64c5b92b15235",
+      "length": 5854
+    },
+    "registry": {
+      "path": "ambitos/gestion-conversacional/REGISTRO-CONVERSACIONES.csv",
+      "blob_sha": "62bf29733441928392348aa3f26138cf94c2985e",
+      "length": 402
+    },
+    "managerReadme": {
+      "path": "ambitos/gestion-conversacional/README.md",
+      "blob_sha": "b5a84a4508e078aa9f160e8cdb1177bf0c76affe",
+      "length": 2837
+    }
+  },
+  "primary_commits": {
+    "transfer": "4cb58ba1927d858d2c3cffd5f8376c15fee402c4",
+    "prompt_created": "723c048cf14a957a91e78d5a7d76112a53f5559f",
+    "bootstrap_updated": "7d68ab0174a4b1a488beb84b9e3a4830f9429fa2",
+    "ipz_updated": "73ef0e0f939bbaa60ff3dc0ae0b1883d5afe9dfc",
+    "inicio_updated": "d30f907882a7a88945449c473a151372ae8257a2",
+    "continuity_updated": "9665d27585e5a479b371c9f786ea0c79a53c6648",
+    "pending_updated": "0b4f84778bbc560a2ba43e56eb1be8bdebc8c3bc",
+    "output_final": "b7d0bbfc11ef85f014121de50ed41e82c9792be2",
+    "dialogue_final": "9ec73b8a240d1b805fafe535a1527a954cbe24ab",
+    "chronicle_final": "fc4e019f91ab581eca06170e540db5f669252208",
+    "root_readme_current": "341b55485c150f65e176783926dc96c073e6013b",
+    "front_readme_current": "882b6a3e116f170c7a71e270db6d085c4972069e"
+  },
+  "verification": {
+    "core_document_chain": {
+      "passed": 9,
+      "total": 9,
+      "status": "PASS",
+      "tests": [
+        {
+          "id": "G01",
+          "name": "DUG v360/NX-360m leído desde main",
+          "status": "PASS",
+          "evidence": "3cda9d38db1bee76ff0ca752f3ecde8719c70d41"
+        },
+        {
+          "id": "G02",
+          "name": "Prompt universal disponible con ART-024 y precedencia main",
+          "status": "PASS",
+          "evidence": "7ef052146416add46260cf9d51eaa34c2fa83caa"
+        },
+        {
+          "id": "G03",
+          "name": "BCR apunta al DUG integrado y no contiene links canónicos Markdown antiguos",
+          "status": "PASS",
+          "evidence": "d5e7bca9225fb040d73ebbeca52e36c8637d3afd"
+        },
+        {
+          "id": "G04",
+          "name": "IPZ candidata <= 1500 caracteres, con ART-024 y prompt universal",
+          "status": "PASS",
+          "evidence": "1365 caracteres; 7400b5109987bcf81301861b666715bf53636468"
+        },
+        {
+          "id": "G05",
+          "name": "INICIO enlaza prompt/BCR/IPZ e indica límite de instalación nativa",
+          "status": "PASS",
+          "evidence": "345d2b383f07c762afbdcc2dc567ce27451aa6e5"
+        },
+        {
+          "id": "G06",
+          "name": "README raíz remite a DUG v360 y Metacanon integrado",
+          "status": "PASS",
+          "evidence": "181862468cf99bca8609b6cd38b5758ec2dcb566"
+        },
+        {
+          "id": "G07",
+          "name": "Puntero de continuidad remite a prompt/BCR y declara límite de prueba semántica",
+          "status": "PASS",
+          "evidence": "b3d9c1494b631e83cacecc2b6f60f085a4ba657a"
+        },
+        {
+          "id": "G08",
+          "name": "Transferencia verificada en lectura de vuelta",
+          "status": "PASS",
+          "evidence": "86f0e4fa59e37976704231290b460cf6dc9252b0; generation 6"
+        },
+        {
+          "id": "G09",
+          "name": "AT no ratificado silenciosamente",
+          "status": "PASS",
+          "evidence": "761d6c79b2d577728cf962e4a58ee091abb30eac"
+        }
+      ]
+    },
+    "persistence_integrity": {
+      "passed": 6,
+      "total": 6,
+      "status": "PASS",
+      "tests": [
+        {
+          "id": "I01",
+          "name": "Diálogo JSONL parseable y S idéntica a salida final",
+          "status": "PASS",
+          "evidence": "67115b134f17a965a1aeb3ea0017bb6ff7be0c5b; 2 records"
+        },
+        {
+          "id": "I02",
+          "name": "Fuentes verbatim JSONL parseable",
+          "status": "PASS",
+          "evidence": "ed1c597a84e6f575d7c61caee5ee9aca234c46e1; 7 records"
+        },
+        {
+          "id": "I03",
+          "name": "Trazabilidad semántica JSONL parseable",
+          "status": "PASS",
+          "evidence": "e225feedb255695f81ed95fc89a64c5b92b15235; 13 records"
+        },
+        {
+          "id": "I04",
+          "name": "CSV apunta al diálogo actual y al folio correcto",
+          "status": "PASS",
+          "evidence": "62bf29733441928392348aa3f26138cf94c2985e"
+        },
+        {
+          "id": "I05",
+          "name": "Crónica sin placeholders y con hashes de salida/diálogo vigentes",
+          "status": "PASS",
+          "evidence": "ac58fdedde151fb5eaf432fce7bec0bf5c9e7523"
+        },
+        {
+          "id": "I06",
+          "name": "Índice OCP enlaza salida, diálogo, crónica y evidencia",
+          "status": "PASS",
+          "evidence": "31d683aaf3df9e25af47d9ff0921950711d4a85c"
+        }
+      ]
+    },
+    "exact_final_output_matches_dialogue_S": true,
+    "native_custom_instructions_installed_or_read_back": false,
+    "fresh_conversation_semantic_test": "PENDING",
+    "next_task_front_AT_status": "UNCHANGED_NOT_RATIFIED_BY_THIS_CYCLE",
+    "claim_of_automatic_capture_or_cross_application_sync": false
+  },
+  "outstanding": {
+    "native_ipz": "El contenido candidato está listo y dentro del límite conservador de 1500 caracteres; el operador debe pegarlo/guardarlo en Configuración > Personalización > Instrucciones personalizadas. Las herramientas no permiten confirmar la configuración nativa.",
+    "fresh_thread_test": "Prueba semántica en un chat realmente nuevo pendiente. CONT-01 y CONT-02 no deben marcarse cerrados de forma integral hasta documentar esa prueba.",
+    "AT": "Sin modificación ni ratificación normativa en este ciclo."
+  }
+}
