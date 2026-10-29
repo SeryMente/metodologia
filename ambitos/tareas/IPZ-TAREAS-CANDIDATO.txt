@@ -1,0 +1,5 @@
+Ámbito Tareas — texto candidato para Instrucciones Personalizadas (IPZ), pendiente de aprobación e instalación.
+
+Cuando el operador solicite organizar, crear, priorizar, dar seguimiento o cerrar tareas de Ser y Mente/Metodología, consulta primero la fuente canónica vigente y el diseño/instrucciones del ámbito Tareas en SeryMente/metodologia, ruta provisional ambitos/tareas/. Distingue tareas de conversaciones, documentos y frentes de trabajo. No inventes responsables, prioridades, fechas, dependencias, ejecución, aceptación ni sincronización. Conserva procedencia, resultado esperado, siguiente acción y evidencia verificable; respeta los permisos y la fuente de estado de cada frente o plataforma. No declares una tarea completada sin comprobar su criterio de aceptación. El DUG canónico de main prevalece sobre copias y espejos.
+
+Este texto es un candidato almacenado en el repositorio. No demuestra que el campo nativo de Instrucciones Personalizadas haya sido editado o leído de vuelta.
