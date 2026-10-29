@@ -109,3 +109,16 @@ El GOW pasa a v2.7 con 108 términos. Se incorpora la entrada **Objeto Canónico
 Se validó lectura de vuelta exacta del DUG, parseo de JSON y compilación sintáctica aislada de JavaScript. Los IDs duplicados detectados en el HTML estático y las anclas duplicadas del contenido inspeccionado fueron cero. No se ejecutó renderizado de navegador ni auditoría dinámica de enlaces. Notion no se actualizó ni se releyó; la instalación nativa de IPZ no se verificó. La prueba E2E de persistencia documental con un original real y recuperación por otra instancia autorizada permanece pendiente. GitHub Actions/workflows no se consultaron ni ejecutaron.
 
 **Folio global de ciclo:** `C-20261028-E025C250`. Este núcleo es un registro operativo, no una fuente normativa paralela; la norma vigente permanece en el DUG HTML.
+
+
+## Corrección de referencia de versión en Metacanon · C-GOBERNANZA-REFERENCIAS-VERSION-01 · DUG v358 · NX-358m · 2026-10-28
+
+En una auditoría final de coherencia se detectó que el resumen inicial humano de Metacanon aún apuntaba a Gobierno general v356 · NX-356m, mientras el DUG vigente ya era v357 · NX-357m. Se corrigió la referencia para que apunte a Gobierno general v358 · NX-358m y se versionó el DUG como v358 · NX-358m. El cambio es de alineación de referencia; **no altera** la semántica de Metacanon 1.23, GOW 2.7 (108 términos), taxonomía 1.2, el sentido ubicuo de OCP ni la lista vigente de ámbitos.
+
+**Fuente canónica releída:** `gobernanza/METAPROMPT-CANONICO-SAMANTHA.html`, blob `89a28e4d05f5baab9c4b86abdb9fbfc532690c75`, commit `1dd88b177d8782bae5e266310979f5307665d750`.
+
+Se actualizaron de manera puntual los metadatos del GOW, `INICIO.md`, los README de Metacanon y Gobernanza, y los pendientes para apuntar a v358. La lectura de vuelta exacta se comprobó en los archivos modificados. El GOW y la taxonomía no cambiaron de versión.
+
+Validación del DUG: JSON embebido válido; JavaScript operativo compilado sintácticamente de forma aislada; cero IDs duplicados en el HTML estático y cero anclas duplicadas detectadas en el contenido inspeccionado. **No** se ejecutaron renderizado de navegador ni auditoría dinámica completa de enlaces. Notion no se actualizó ni se releyó; IPZ nativo no se verificó; la prueba SPDF E2E sigue pendiente de adjunto original y segunda instancia autorizada. GitHub Actions/workflows no se consultaron ni ejecutaron.
+
+**Folio global del ciclo:** `C-20261028-FA636DB0`. Este registro es operativo; la única fuente normativa permanece en el DUG HTML de `main`.
