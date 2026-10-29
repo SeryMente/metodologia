@@ -43,16 +43,16 @@ La historia del propietario anterior fue conservada y la comprobación de lectur
 | `BOOTSTRAP-CONTEXTO-GLOBAL.md` | `7d68ab0174a4b1a488beb84b9e3a4830f9429fa2` | `d5e7bca9225fb040d73ebbeca52e36c8637d3afd` |
 | `frentes/metacanon/entregas/CHATGPT-v0.3/IPZ-CAMPO-CHATGPT.txt` | `73ef0e0f939bbaa60ff3dc0ae0b1883d5afe9dfc` | `7400b5109987bcf81301861b666715bf53636468`; 1.365 caracteres |
 | `INICIO.md` | `d30f907882a7a88945449c473a151372ae8257a2` | `345d2b383f07c762afbdcc2dc567ce27451aa6e5` |
-| `README.md` raíz | actualizado y leído de vuelta | `be7008d25dfd3d218a706d8133aeb6d733b01040` |
+| `README.md` raíz | actualizado y leído de vuelta | `181862468cf99bca8609b6cd38b5758ec2dcb566` |
 | `CONTINUIDAD-ENTRE-CONVERSACIONES.md` | `9665d27585e5a479b371c9f786ea0c79a53c6648` | `b3d9c1494b631e83cacecc2b6f60f085a4ba657a` |
 | `frentes/metacanon/PENDIENTES.md` | `0b4f84778bbc560a2ba43e56eb1be8bdebc8c3bc` | `761d6c79b2d577728cf962e4a58ee091abb30eac` |
-| `frentes/metacanon/README.md` | `00277b8cb9df9e10a8931295f14cb10f2a6af052` | `d19ccd8a06cdd1225ad2bf076895f8b4232fc75a` |
+| `frentes/metacanon/README.md` | `882b6a3e116f170c7a71e270db6d085c4972069e` | `31d683aaf3df9e25af47d9ff0921950711d4a85c` |
 | Registro de conversación | `1a33bce39a79c205ec8fab1206f80500789e358d` | `62bf29733441928392348aa3f26138cf94c2985e` |
 | Fuentes verbatim | `9fbb49332c3dcec3a605f559a09c2a352338054a` | `ed1c597a84e6f575d7c61caee5ee9aca234c46e1` |
 | Trazabilidad semántica | `f7b97e43ef3ba715e5aeb5351ec3f29375cbf95e` | `e225feedb255695f81ed95fc89a64c5b92b15235` |
 | Índice de Gestión conversacional | `90b46e1f6340c7055948adfa201a1d1d314cfd5f` | `b5a84a4508e078aa9f160e8cdb1177bf0c76affe` |
-| Salida final del ciclo | `a06adf27cb6c3cfcc98e855d3400db55cac40c0b` | `8815c97d3f2b073271909dd6a09c41b2ffaa4073` |
-| Diálogo JSONL del ciclo | `a5f46ed7798432e1a4d55555b562780e9469a7cd` | `900527dee8ecfb770565b96bfab1f0eae9654ea6`; 2 registros E/S, 4 salidas auxiliares |
+| Salida final del ciclo | `OUT_COMMIT_PENDING` | `50da20037280d20b03270941ec722fb80360d507` |
+| Diálogo JSONL del ciclo | `9ec73b8a240d1b805fafe535a1527a954cbe24ab` | `67115b134f17a965a1aeb3ea0017bb6ff7be0c5b`; 2 registros E/S, 4 salidas auxiliares |
 
 ## 6. Comprobación mecánica
 
