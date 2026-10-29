@@ -1,0 +1,162 @@
+{
+  "schema": "ser-y-mente-cycle-evidence/v1",
+  "event_id": "C-TAREAS-INICIO-01",
+  "cycle_folio": "C-20261028-TA6F31C9",
+  "session_folio": "SES-20261028-TA6F31C9",
+  "recorded_on": "2026-10-28",
+  "scope": "Inauguración de Tareas v1.0 como diseño conceptual y operativo en incubación",
+  "status": "MATERIALIZADO_Y_LEIDO_DE_VUELTA; INCUBACION_ABIERTA",
+  "canonical_source": {
+    "repository": "SeryMente/metodologia",
+    "branch": "main",
+    "path": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.html",
+    "blob_sha": "89a28e4d05f5baab9c4b86abdb9fbfc532690c75",
+    "readback_verified": true,
+    "dug_version": "v358",
+    "signature": "NX-358m",
+    "metacanon_version": "1.23",
+    "gow_version": "2.7",
+    "principles": 41,
+    "annexes": 16,
+    "taxonomy_version": "1.2",
+    "current_functional_scopes": [
+      "Persistencia documental",
+      "Gestión conversacional"
+    ],
+    "tasks_in_canonical_taxonomy": false
+  },
+  "authorization": {
+    "operator_instruction": "Inaugurar el ámbito Tareas y, durante ciclos sucesivos, definir propósito, alcance, versión conceptual de cara al DUG y articulación operativa desde IPZ hasta las instrucciones del ámbito y la especificación taxonómica.",
+    "scope_applied": "Materialización operativa provisional, diseño v1.0, instrucciones candidatas y registro del ciclo.",
+    "canonical_normative_amendment_authorized": false,
+    "reason": "El alcance y propósito siguen abiertos; una propuesta de diseño no debe convertirse por accidente en norma canónica. Toda modificación del DUG/GOW requiere autorización expresa anterior a la escritura."
+  },
+  "identifiers": {
+    "owner_alias": "chatgpt-C-TAREAS-INICIO-01-SES-20261028-TA6F31C9",
+    "instance": "chatgpt-tareas-inicio-2026-10-28-TA6F31C9",
+    "generation": 1,
+    "identity_kind": "alias operativo y folio de sesión, no ID nativo de ChatGPT"
+  },
+  "collision_check": {
+    "exact_search_counts": {
+      "C-TAREAS-INICIO-01": 0,
+      "C-20261028-TA6F31C9": 0,
+      "SES-20261028-TA6F31C9": 0,
+      "chatgpt-C-TAREAS-INICIO-01-SES-20261028-TA6F31C9": 0
+    },
+    "checked_control_count": 9,
+    "control_paths_checked": [
+      "SeryMente/khora:docs/frentes/dictado-voz/CONTROL-RESPONSABILIDAD.json",
+      "SeryMente/khora:docs/frentes/harmonia/CONTROL-RESPONSABILIDAD.json",
+      "SeryMente/khora:frentes/custodia/CONTROL-RESPONSABILIDAD.json",
+      "SeryMente/signal-interpreter:docs/frentes/signal-interpreter/CONTROL-RESPONSABILIDAD.json",
+      "SeryMente/metodologia:frentes/gobernanza/CONTROL-RESPONSABILIDAD.json",
+      "SeryMente/metodologia:frentes/metacanon/CONTROL-RESPONSABILIDAD.json",
+      "SeryMente/metodologia:frentes/acceso/CONTROL-RESPONSABILIDAD.json",
+      "SeryMente/metodologia:frentes/radar-profesional/CONTROL-RESPONSABILIDAD.json",
+      "SeryMente/personal:frentes/repertorio-canto-personal/CONTROL-RESPONSABILIDAD.json"
+    ],
+    "matching_occurrences_found": 0,
+    "limitation": "La búsqueda y los nueve controles visibles no prueban unicidad global ni exclusión técnica de escritores concurrentes fuera del conjunto accesible."
+  },
+  "materialization": {
+    "ocp_path": "ambitos/tareas/",
+    "rationale": "Ubicación provisional elegida para sostener el diseño, las instrucciones y las pruebas de un ámbito funcional transversal durante múltiples ciclos. No se declara una convención taxonómica general ni se representa Tareas como un FT.",
+    "registry_created": false,
+    "platform_integration_implemented": false
+  },
+  "artifacts": [
+    {
+      "path": "ambitos/tareas/README.md",
+      "blob_sha": "bb4e8561f3a7979f94b86f6926beee907bb46765",
+      "commit_sha": "165d43d8b1d4fd3a22e57cda304f471c53d86140",
+      "readback": true
+    },
+    {
+      "path": "ambitos/tareas/DISEÑO-TAREAS-v1.0.md",
+      "blob_sha": "086b7eeaedc19ebedd57752fb2e1b2f3209b6b74",
+      "commit_sha": "058665142c965bf6878019259cca41951e733f61",
+      "readback": true
+    },
+    {
+      "path": "ambitos/tareas/INSTRUCCIONES-TAREAS-v1.0.md",
+      "blob_sha": "4537c050dbb77a1052b7e20df9dd13842d840a9e",
+      "commit_sha": "e4c75889e31035a2a7e9eb32094f672bfa23f01c",
+      "readback": true
+    },
+    {
+      "path": "ambitos/tareas/IPZ-TAREAS-CANDIDATO.txt",
+      "blob_sha": "13af36c6f4ae1cb8b6dea3231a6de1738a94dcc8",
+      "commit_sha": "ea6a3963dc264bc61c7b6d0c6282804e76fe5875",
+      "readback": true
+    },
+    {
+      "path": "ambitos/tareas/PENDIENTES.md",
+      "blob_sha": "bc793edac782e86e3c87ebf74fc78e7fbd8f0511",
+      "commit_sha": "56afc6b041f276772222818a82f026a5b7abf36f",
+      "readback": true
+    },
+    {
+      "path": "ambitos/tareas/CONTROL-RESPONSABILIDAD.json",
+      "blob_sha": "b0c19b0c2ce7db13a74243b03183756519f7cfe0",
+      "commit_sha": "4cfd90386eb19779d8b950d0ea8e5af2c18ad74b",
+      "readback": true,
+      "validation": "JSON válido"
+    },
+    {
+      "path": "ambitos/tareas/cronica/C-TAREAS-INICIO-01.md",
+      "blob_sha": "e3db42729123f353937ebc7b9cc003b2e247bb50",
+      "commit_sha": "5de46936008e37f894749c7cde90d6a43b192afd",
+      "readback": true
+    },
+    {
+      "path": "ambitos/tareas/conversaciones/C-TAREAS-INICIO-01-dialogo.jsonl",
+      "blob_sha": "ee8ae6c2e421898086587a7d3a78f37d6a40b405",
+      "commit_sha": "8267be6f308fd0d18f9fa3fe0c3e4ca41de42822",
+      "readback": true,
+      "validation": "JSONL válido, 6 líneas; la salida final coincide con el artefacto de entrega"
+    },
+    {
+      "path": "ambitos/tareas/entregas/CHATGPT-v1.0/C-TAREAS-INICIO-01-salida-final.md",
+      "blob_sha": "671525293e7bfbe89862e4ec894b38ef24626b6b",
+      "commit_sha": "fb0e6d22a97b21a67c0a985891ccf253bcd25c82",
+      "readback": true
+    }
+  ],
+  "governance_index_updates": [
+    {
+      "path": "frentes/gobernanza/README.md",
+      "blob_sha": "474d0f0dafe180021c0cce1128ec506fd4d77d1e",
+      "commit_sha": "bd8e0ec85d4e6c6ef0ba9a6f269c880a05fc6d54",
+      "readback": true
+    },
+    {
+      "path": "frentes/gobernanza/GOBERNANZA.md",
+      "blob_sha": "dc29d0ff430905b45178133c3e1ec5531518491a",
+      "commit_sha": "3094fb1b763129226625852a3f9b97cd713ade0c",
+      "readback": true
+    },
+    {
+      "path": "frentes/gobernanza/PENDIENTES.md",
+      "blob_sha": "9d01f83ee9951f641572882333afb927fdf45d37",
+      "commit_sha": "52b45ffad0221cb4c2a9a237dcffe027ae2b4676",
+      "readback": true
+    }
+  ],
+  "validation": {
+    "canonical_source_unchanged_from_preflight": true,
+    "control_json_parse": "PASS",
+    "dialogue_jsonl_parse": "PASS",
+    "final_output_exact_match_between_dialogue_and_delivery": true,
+    "static_markdown_link_audit": "PENDIENTE EN ESTE MANIFIESTO; los enlaces clave de README y Gobernanza apuntan a los artefactos recién creados.",
+    "dug_or_gow_written": false,
+    "native_ipz_field_written_or_read_back": false,
+    "end_to_end_real_task_test": false,
+    "browser_render_test": false,
+    "global_task_registry_or_external_sync": false
+  },
+  "next_step": [
+    "TAR-01: validar problema, propósito y beneficiarios",
+    "TAR-02: validar fronteras con Persistencia documental, Gestión conversacional y los frentes responsables"
+  ]
+}
