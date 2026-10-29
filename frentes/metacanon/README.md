@@ -3,19 +3,19 @@
 Este README es un índice de navegación, **no un segundo estado vivo**. El método canónico Metacanon está integrado en el [DUG](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#metacanon), §9; la titularidad/folio solo se obtiene de `CONTROL-RESPONSABILIDAD.json`. Si hay discrepancia, relee esas fuentes desde `main` y no infieras qué copia prevalece.
 
 
-Este README es un índice y no sustituye la fuente normativa. **Corte normativo releído el 2026-10-28:** DUG v359 · NX-359m, Metacanon 1.24, GOW 2.8 (109 términos), taxonomía 1.3. ART-015 separa taxonomía conceptual e infraestructura; Propósito es elemento conceptual canónico y no exige directorio propio. El último ciclo local de Metacanon enumerado aquí es anterior a este cambio de Gobernanza.
+Este README es un índice y no sustituye la fuente normativa. **Corte normativo releído el 2026-10-29:** DUG v360 · NX-360m, Metacanon 1.24, GOW 2.9 (111 términos, 17 anexos jerarquizados), taxonomía 1.3. ART-015 separa taxonomía conceptual e infraestructura; Propósito es elemento conceptual canónico y no exige directorio propio. El último ciclo local de Metacanon enumerado aquí es anterior a este cambio de Gobernanza.
 
-## Último ciclo persistido · C-METACANON-TAXONOMIA-REPOSITORIOS-25
+## Último ciclo persistido · C-METACANON-ARRANQUE-360-01
 
-Corte del 2026-10-22 · Metacanon v1.21. [Salida final](entregas/CHATGPT-v0.3/C-METACANON-TAXONOMIA-REPOSITORIOS-25-salida-final.md) · [Dictado literal](conversaciones/C-METACANON-TAXONOMIA-REPOSITORIOS-25-dialogo.jsonl) · [Crónica](cronica/C-METACANON-TAXONOMIA-REPOSITORIOS-25.md) · [Evidencia y hashes](evidencias/C-METACANON-TAXONOMIA-REPOSITORIOS-25.json) · [Prompt de reinstanciación fresca](entregas/CHATGPT-v0.3/PROMPT-REINSTANTIACION-METACANON-M25.txt) · [Inventario de repositorios/frentes](../../INVENTARIO-REPOSITORIOS-Y-FRENTES.md).
+Corte del 2026-10-29 · Metacanon 1.24. [Salida final](entregas/CHATGPT-v0.3/C-METACANON-ARRANQUE-360-01-salida-final.md) · [Diálogo literal](conversaciones/C-METACANON-ARRANQUE-360-01-dialogo.jsonl) · [Crónica](cronica/C-METACANON-ARRANQUE-360-01.md) · [Evidencia y hashes](evidencias/C-METACANON-ARRANQUE-360-01.json) · [Prompt universal](../../PROMPT-UNIVERSAL-REINSTANTANCIACION.md) · [Prompt de continuidad anterior](entregas/CHATGPT-v0.3/PROMPT-CONTINUIDAD-METODOLOGIA-VERBATIM-E2E-22.txt) · [Inventario de repositorios/frentes](../../INVENTARIO-REPOSITORIOS-Y-FRENTES.md).
 
 
 ## Arranque recomendado para un hilo nuevo
 
 1. [INICIO.md](../../INICIO.md) — puerta de entrada canónica.
-2. [Gobierno general de Samantha](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#gobierno-general) — DUG v359 · NX-359m.
+2. [Gobierno general de Samantha](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#P001) — DUG v360 · NX-360m.
 3. [Metacanon integrado en el DUG](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#metacanon) — v1.24; leer LEER PRIMERO, §9, §§29–51 y §4.
-4. [GOW integrado en el DUG](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#glosario) — v2.8; 109 términos y 16 anexos jerarquizados; revisar al inicio y cierre.
+4. [GOW integrado en el DUG](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#glosario) — v2.9; 111 términos y 17 anexos jerarquizados; revisar al inicio y cierre.
 5. [Taxonomía estructural de S y M](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-015) — ART-015 global; ART-020 distingue Persistencia documental y Gestión conversacional como ámbitos funcionales transversales de Propósito como elemento conceptual canónico asociado al alcance de un FT. Ámbitos es categoría conceptual, no un directorio obligatorio; Propósito puede ser archivo o sección raíz. La Metodología abstracta es el OCP raíz y el OCP no impone ruta física exclusiva. ART-016 a ART-022 por entidad/elemento; ART-014 para procedimiento SPDF.
 6. [Control de responsabilidad](CONTROL-RESPONSABILIDAD.json) y [pendientes](PENDIENTES.md).
 7. [Checklist de los nueve requisitos verbatim](entregas/CHATGPT-v0.3/CHECKLIST-VERBATIM-21.md) y [diálogo literal de origen](conversaciones/C-METODOLOGIA-AUDITORIA-REQUISITOS-20-dialogo.jsonl).
@@ -29,7 +29,8 @@ El prompt de un solo uso `PROMPT-MIGRACION-HILO-FRESCO-21.txt` corresponde al re
 
 ## Límites persistentes conocidos
 
-- El campo nativo de Instrucciones Personalizadas de ChatGPT (IPZ) no es legible/escribible por los conectores usados en el corte previo; el archivo canónico se puede verificar, pero no inferir que está instalado.
+- La IPZ candidata v360 se encuentra en `entregas/CHATGPT-v0.3/IPZ-CAMPO-CHATGPT.txt` (1.365 caracteres). El campo nativo de Instrucciones Personalizadas no es legible/escribible por estos conectores; su instalación no está verificada.
 - MCP normativo permanece DESACTIVADO; revisión manual de Sam/GOW.
-- Los ensayos mecánicos no validan comprensión semántica de un modelo independiente.
+- Los ensayos mecánicos no validan comprensión semántica de un modelo independiente ni la aplicación en una conversación realmente nueva.
+- El prompt universal y el BCR son procedimientos de arranque; no constituyen sincronización automática de la IPZ ni garantizan que otros hilos hayan adquirido el DUG vigente.
 - Los repositorios/control accesibles no equivalen a un inventario global de la organización; no se afirma unicidad global ni bloqueo de servidor.
