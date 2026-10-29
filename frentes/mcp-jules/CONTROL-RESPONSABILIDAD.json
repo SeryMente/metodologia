@@ -79,6 +79,19 @@
     "old_generation": 1,
     "new_generation": 2,
     "scope": "frentes/mcp-jules/ only; parent Metacanon and all other front controls remain unchanged",
-    "write_status": "submitted; read-back pending"
+    "write_status": "verified_readback",
+    "verification": {
+      "readback_blob_sha": "138a589e9a74df8a8c320f4e86c2d752e267c8a1",
+      "verified_fields": [
+        "owner_thread",
+        "instance",
+        "session_folio",
+        "generation",
+        "prior_control_blob_sha",
+        "event"
+      ],
+      "verified_generation": 2,
+      "verified_at": "2026-10-29"
+    }
   }
 }
