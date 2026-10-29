@@ -2,31 +2,38 @@
   "schema": "responsabilidad/1",
   "front": "gobernanza",
   "status": "owned",
-  "owner_thread": "chatgpt-C-METODOLOGIA-PERSISTENCIA-DOCUMENTAL-20-SES-20261028-CPD20-1606",
-  "instance": "chatgpt-gobernanza-persistencia-documental-20-2026-10-28",
-  "generation": 2,
-  "authorization_ref": "Explicit operator authorization in the current conversation dated 2026-10-28 for transfer of the Gobernanza front under event C-METODOLOGIA-PERSISTENCIA-DOCUMENTAL-20. Además, el operador autorizó explícitamente en esta conversación la enmienda taxonómica del DUG y el GOW para C-GOBERNANZA-TAXONOMIA-ESTRUCTURAL-SYM-01 el 2026-10-28. Además, autorización explícita del operador para el evento C-GOBERNANZA-EQUIVALENCIAS-AMBITO-01 del 2026-10-28: incorporar al GOW los términos operativamente equivalentes Ámbito, Ámbito de frente de trabajo y Ámbito de OCP, y versionar el DUG/GOW. Autorización explícita del operador en la conversación vigente para C-GOBERNANZA-CONTEXTO-GESTION-CONVERSACIONAL-01 (2026-10-28): actualizar el DUG y GOW, incorporar en ART-020 la jerarquía funcional Contexto (nivel funcional 1) → Gestión conversacional (nivel funcional 2), actualizar la proyección estructurada y registrar puntos de entrada, crónica y evidencia. La autorización no asigna otros ámbitos a la rama ni habilita cambios futuros no solicitados. Autorización explícita del operador en la conversación vigente para C-GOBERNANZA-OCP-UBICUO-REVERSA-CONTEXTO-01 (2026-10-28): corregir la taxonomía para que los únicos ámbitos funcionales actuales sean Persistencia documental y Gestión conversacional; retirar Contexto como ámbito y cancelar la relación jerárquica Contexto → Gestión conversacional; preservar como posibilidad la subdivisión futura en niveles 2..N; definir OCP como aplicable a cada nivel taxonómico, con la Metodología en sentido general y abstracto como OCP raíz; añadir al GOW una definición breve de OCP separada de equivalencias terminológicas y alinear DUG, proyección estructurada, puntos de entrada, crónica y evidencia. La autorización no elimina registros históricos ni habilita cambios futuros no solicitados. Autorización operativa derivada del encargo explícito del operador en C-GOBERNANZA-OCP-UBICUO-REVERSA-CONTEXTO-01 (2026-10-28), para C-GOBERNANZA-REFERENCIAS-VERSION-01: corregir una referencia de versión interna obsoleta en el resumen humano de Metacanon, versionar el DUG y alinear metadatos, puntos de entrada, crónica y evidencia. No amplía el contenido sustantivo autorizado ni cambia el esquema de ámbitos u OCP.",
+  "owner_thread": "chatgpt-C-GOBERNANZA-RETOMA-02-SES-20261028-GV3K8P6Q",
+  "instance": "chatgpt-gobernanza-retoma-2026-10-28-GV3K8P6Q",
+  "generation": 3,
+  "authorization_ref": "Explicit operator authorization in the current conversation dated 2026-10-28 for transfer of the Gobernanza front under event C-METODOLOGIA-PERSISTENCIA-DOCUMENTAL-20. Además, el operador autorizó explícitamente en esta conversación la enmienda taxonómica del DUG y el GOW para C-GOBERNANZA-TAXONOMIA-ESTRUCTURAL-SYM-01 el 2026-10-28. Además, autorización explícita del operador para el evento C-GOBERNANZA-EQUIVALENCIAS-AMBITO-01 del 2026-10-28: incorporar al GOW los términos operativamente equivalentes Ámbito, Ámbito de frente de trabajo y Ámbito de OCP, y versionar el DUG/GOW. Autorización explícita del operador en la conversación vigente para C-GOBERNANZA-CONTEXTO-GESTION-CONVERSACIONAL-01 (2026-10-28): actualizar el DUG y GOW, incorporar en ART-020 la jerarquía funcional Contexto (nivel funcional 1) → Gestión conversacional (nivel funcional 2), actualizar la proyección estructurada y registrar puntos de entrada, crónica y evidencia. La autorización no asigna otros ámbitos a la rama ni habilita cambios futuros no solicitados. Autorización explícita del operador en la conversación vigente para C-GOBERNANZA-OCP-UBICUO-REVERSA-CONTEXTO-01 (2026-10-28): corregir la taxonomía para que los únicos ámbitos funcionales actuales sean Persistencia documental y Gestión conversacional; retirar Contexto como ámbito y cancelar la relación jerárquica Contexto → Gestión conversacional; preservar como posibilidad la subdivisión futura en niveles 2..N; definir OCP como aplicable a cada nivel taxonómico, con la Metodología en sentido general y abstracto como OCP raíz; añadir al GOW una definición breve de OCP separada de equivalencias terminológicas y alinear DUG, proyección estructurada, puntos de entrada, crónica y evidencia. La autorización no elimina registros históricos ni habilita cambios futuros no solicitados. Autorización operativa derivada del encargo explícito del operador en C-GOBERNANZA-OCP-UBICUO-REVERSA-CONTEXTO-01 (2026-10-28), para C-GOBERNANZA-REFERENCIAS-VERSION-01: corregir una referencia de versión interna obsoleta en el resumen humano de Metacanon, versionar el DUG y alinear metadatos, puntos de entrada, crónica y evidencia. No amplía el contenido sustantivo autorizado ni cambia el esquema de ámbitos u OCP. Explicit operator authorization in the receiving conversation on 2026-10-28 for the single transfer event C-GOBERNANZA-RETOMA-02; verbatim: \"Retoma repsonsbiidad del frente de trabajo Gobernanz, de Metodologia considerate previamente autorizado\". Scope limited to frentes/gobernanza/ and this receiving conversation.",
   "scope": "One active owner for this new work front only. Scope: operational maintenance and validation of the unique canonical governance document and its navigation, including only previously authorized minimal repairs. No broad substantive amendment to Samantha or the GOW without explicit authorization. The canonical normative content remains in the single HTML document. Alcance de la autorización adicional: C-GOBERNANZA-TAXONOMIA-ESTRUCTURAL-SYM-01, DUG v354, glosario y estructura jerárquica de anexos. Esta autorización se limita a lo solicitado en el evento y no habilita cambios futuros no autorizados. Alcance autorizado adicional: C-GOBERNANZA-EQUIVALENCIAS-AMBITO-01; actualización de glosario GOW a v2.5 y DUG v355, con tres entradas intercambiables operativamente y puntos de entrada/recibo correspondientes. Esta autorización no se extiende a cambios futuros no solicitados. Autorización explícita del operador en la conversación vigente para C-GOBERNANZA-CONTEXTO-GESTION-CONVERSACIONAL-01 (2026-10-28): actualizar el DUG y GOW, incorporar en ART-020 la jerarquía funcional Contexto (nivel funcional 1) → Gestión conversacional (nivel funcional 2), actualizar la proyección estructurada y registrar puntos de entrada, crónica y evidencia. La autorización no asigna otros ámbitos a la rama ni habilita cambios futuros no solicitados. Autorización explícita del operador en la conversación vigente para C-GOBERNANZA-OCP-UBICUO-REVERSA-CONTEXTO-01 (2026-10-28): corregir la taxonomía para que los únicos ámbitos funcionales actuales sean Persistencia documental y Gestión conversacional; retirar Contexto como ámbito y cancelar la relación jerárquica Contexto → Gestión conversacional; preservar como posibilidad la subdivisión futura en niveles 2..N; definir OCP como aplicable a cada nivel taxonómico, con la Metodología en sentido general y abstracto como OCP raíz; añadir al GOW una definición breve de OCP separada de equivalencias terminológicas y alinear DUG, proyección estructurada, puntos de entrada, crónica y evidencia. La autorización no elimina registros históricos ni habilita cambios futuros no solicitados. Autorización operativa derivada del encargo explícito del operador en C-GOBERNANZA-OCP-UBICUO-REVERSA-CONTEXTO-01 (2026-10-28), para C-GOBERNANZA-REFERENCIAS-VERSION-01: corregir una referencia de versión interna obsoleta en el resumen humano de Metacanon, versionar el DUG y alinear metadatos, puntos de entrada, crónica y evidencia. No amplía el contenido sustantivo autorizado ni cambia el esquema de ámbitos u OCP.",
   "expiry": null,
-  "handoff": "Transfer authorized by the operator from chatgpt-C-GOBERNANZA-INICIO-01-SES-20261028-3F2B7A91 (generation 1) to chatgpt-C-METODOLOGIA-PERSISTENCIA-DOCUMENTAL-20-SES-20261028-CPD20-1606 (generation 2). Platform-native conversation ID is not exposed; the receiver is identified by this operational alias. Applied only to the Gobernanza front.",
-  "session_folio": "SES-20261028-CPD20-1606",
+  "handoff": "Transferred under C-GOBERNANZA-RETOMA-02 from chatgpt-C-METODOLOGIA-PERSISTENCIA-DOCUMENTAL-20-SES-20261028-CPD20-1606 (instance chatgpt-gobernanza-persistencia-documental-20-2026-10-28, generation 2, folio SES-20261028-CPD20-1606) to chatgpt-C-GOBERNANZA-RETOMA-02-SES-20261028-GV3K8P6Q (instance chatgpt-gobernanza-retoma-2026-10-28-GV3K8P6Q, generation 3, folio SES-20261028-GV3K8P6Q). Operator authorization: \"Retoma repsonsbiidad del frente de trabajo Gobernanz, de Metodologia considerate previamente autorizado\". Native conversation ID is not exposed; receiver is an operational alias. This transfer applies only to the Gobernanza front.",
+  "session_folio": "SES-20261028-GV3K8P6Q",
   "session_assignment": {
     "status": "active",
-    "folio": "SES-20261028-CPD20-1606",
+    "folio": "SES-20261028-GV3K8P6Q",
     "assigned_on": "2026-10-28",
     "front_ocp": "frentes/gobernanza/",
-    "owner_alias": "chatgpt-C-METODOLOGIA-PERSISTENCIA-DOCUMENTAL-20-SES-20261028-CPD20-1606",
-    "instance": "chatgpt-gobernanza-persistencia-documental-20-2026-10-28",
-    "generation": 2,
-    "identity_kind": "operational alias and session folio; not a native ChatGPT conversation ID",
-    "uniqueness_check": "Bounded check of currently readable responsibility controls in SeryMente/metodologia found no collision for this session folio; no global uniqueness claim.",
-    "source_sha_before": "826574e7cf1d346960e0a48f33bb396588f307e2",
+    "owner_alias": "chatgpt-C-GOBERNANZA-RETOMA-02-SES-20261028-GV3K8P6Q",
+    "instance": "chatgpt-gobernanza-retoma-2026-10-28-GV3K8P6Q",
+    "generation": 3,
+    "identity_kind": "operational session folio; not a native ChatGPT conversation ID",
+    "uniqueness_check": "Exact code searches for event, cycle folio, session folio and alias returned zero; direct scans of all visible responsibility controls in nine accessible, non-truncated repository trees found zero candidate occurrences. Global uniqueness and server-enforced exclusivity are not established.",
+    "source_sha_before": "0ac0a819794622857fb2ef8ebab3385873ab2f68",
     "checked_paths": [
       "SeryMente/metodologia:frentes/gobernanza/CONTROL-RESPONSABILIDAD.json",
-      "SeryMente/metodologia:frentes/metacanon/CONTROL-RESPONSABILIDAD.json",
+      "SeryMente/khora:docs/frentes/dictado-voz/CONTROL-RESPONSABILIDAD.json",
+      "SeryMente/khora:docs/frentes/harmonia/CONTROL-RESPONSABILIDAD.json",
+      "SeryMente/khora:frentes/custodia/CONTROL-RESPONSABILIDAD.json",
+      "SeryMente/signal-interpreter:docs/frentes/signal-interpreter/CONTROL-RESPONSABILIDAD.json",
       "SeryMente/metodologia:frentes/acceso/CONTROL-RESPONSABILIDAD.json",
-      "SeryMente/metodologia:frentes/radar-profesional/CONTROL-RESPONSABILIDAD.json"
-    ]
+      "SeryMente/metodologia:frentes/metacanon/CONTROL-RESPONSABILIDAD.json",
+      "SeryMente/metodologia:frentes/radar-profesional/CONTROL-RESPONSABILIDAD.json",
+      "SeryMente/personal:frentes/repertorio-canto-personal/CONTROL-RESPONSABILIDAD.json"
+    ],
+    "cycle_folio": "C-20261028-94B6C2D8",
+    "event_id": "C-GOBERNANZA-RETOMA-02"
   },
   "initialization": {
     "event_id": "C-GOBERNANZA-INICIO-01",
@@ -48,17 +55,20 @@
   },
   "previous_session_assignment": {
     "status": "active",
-    "folio": "SES-20261028-3F2B7A91",
+    "folio": "SES-20261028-CPD20-1606",
     "assigned_on": "2026-10-28",
     "front_ocp": "frentes/gobernanza/",
-    "owner_alias": "chatgpt-C-GOBERNANZA-INICIO-01-SES-20261028-3F2B7A91",
-    "instance": "chatgpt-gobernanza-inicio-2026-10-28",
-    "generation": 1,
+    "owner_alias": "chatgpt-C-METODOLOGIA-PERSISTENCIA-DOCUMENTAL-20-SES-20261028-CPD20-1606",
+    "instance": "chatgpt-gobernanza-persistencia-documental-20-2026-10-28",
+    "generation": 2,
     "identity_kind": "operational alias and session folio; not a native ChatGPT conversation ID",
-    "uniqueness_check": "Exact GitHub searches for the event, cycle folio, session folio and owner alias returned zero before creation. The main tree had no frentes/gobernanza/ path. This is a bounded accessible check, not proof of global uniqueness.",
-    "source_sha_before": "bd7fa3a1f6ab5285c44018c72a3b02cb4553bb0b",
+    "uniqueness_check": "Bounded check of currently readable responsibility controls in SeryMente/metodologia found no collision for this session folio; no global uniqueness claim.",
+    "source_sha_before": "826574e7cf1d346960e0a48f33bb396588f307e2",
     "checked_paths": [
-      "SeryMente/metodologia:frentes/gobernanza/ (absent in recursive main tree before creation)"
+      "SeryMente/metodologia:frentes/gobernanza/CONTROL-RESPONSABILIDAD.json",
+      "SeryMente/metodologia:frentes/metacanon/CONTROL-RESPONSABILIDAD.json",
+      "SeryMente/metodologia:frentes/acceso/CONTROL-RESPONSABILIDAD.json",
+      "SeryMente/metodologia:frentes/radar-profesional/CONTROL-RESPONSABILIDAD.json"
     ]
   },
   "transfers": [
@@ -83,6 +93,103 @@
       },
       "native_conversation_id": "NOT_EXPOSED; operational alias used",
       "mutation_result": "Control write applied; same-cycle read-back verification performed immediately after write."
+    },
+    {
+      "event_id": "C-GOBERNANZA-RETOMA-02",
+      "cycle_folio": "C-20261028-94B6C2D8",
+      "recorded_on": "2026-10-28",
+      "authorized_on": "2026-10-28",
+      "authorization": {
+        "status": "explicit",
+        "source": "operator message in the receiving conversation",
+        "verbatim": "Retoma repsonsbiidad del frente de trabajo Gobernanz, de Metodologia considerate previamente autorizado",
+        "scope": "single transfer of the Gobernanza work front at frentes/gobernanza/ to this current conversation only"
+      },
+      "source_branch": "main",
+      "source_control_blob_sha": "0ac0a819794622857fb2ef8ebab3385873ab2f68",
+      "source_generation": 2,
+      "from": {
+        "owner_thread": "chatgpt-C-METODOLOGIA-PERSISTENCIA-DOCUMENTAL-20-SES-20261028-CPD20-1606",
+        "instance": "chatgpt-gobernanza-persistencia-documental-20-2026-10-28",
+        "generation": 2,
+        "session_folio": "SES-20261028-CPD20-1606",
+        "status": "owned",
+        "observed_blob_sha": "0ac0a819794622857fb2ef8ebab3385873ab2f68"
+      },
+      "to": {
+        "owner_thread": "chatgpt-C-GOBERNANZA-RETOMA-02-SES-20261028-GV3K8P6Q",
+        "instance": "chatgpt-gobernanza-retoma-2026-10-28-GV3K8P6Q",
+        "generation": 3,
+        "session_folio": "SES-20261028-GV3K8P6Q",
+        "identity_kind": "operational alias; native ChatGPT conversation ID unavailable"
+      },
+      "native_conversation_id": "NOT_EXPOSED; operational alias used",
+      "method": "GitHub Contents API update conditioned on the immediately observed control blob SHA, followed by canonical read-back",
+      "collision_check": {
+        "exact_code_search_result_count": 0,
+        "candidates": [
+          "C-GOBERNANZA-RETOMA-02",
+          "C-20261028-94B6C2D8",
+          "SES-20261028-GV3K8P6Q",
+          "chatgpt-C-GOBERNANZA-RETOMA-02-SES-20261028-GV3K8P6Q"
+        ],
+        "scanned_current_control": true,
+        "checked_sibling_controls": [
+          {
+            "path": "SeryMente/khora:docs/frentes/dictado-voz/CONTROL-RESPONSABILIDAD.json",
+            "sha": "ff3a148420e547323717a620c1c5b695a4fa79e5",
+            "occurrences": 0
+          },
+          {
+            "path": "SeryMente/khora:docs/frentes/harmonia/CONTROL-RESPONSABILIDAD.json",
+            "sha": "2b8e5091e621b1017ed1e55f2796cc48f9ba444b",
+            "occurrences": 0
+          },
+          {
+            "path": "SeryMente/khora:frentes/custodia/CONTROL-RESPONSABILIDAD.json",
+            "sha": "2da19e588e30fe3835696d22fe110a7570a8758f",
+            "occurrences": 0
+          },
+          {
+            "path": "SeryMente/signal-interpreter:docs/frentes/signal-interpreter/CONTROL-RESPONSABILIDAD.json",
+            "sha": "d2ffe7c39ae04028275279b5033f2ee334305388",
+            "occurrences": 0
+          },
+          {
+            "path": "SeryMente/metodologia:frentes/acceso/CONTROL-RESPONSABILIDAD.json",
+            "sha": "d77dbf55ca188d79d5126e168edd202ec63ac811",
+            "occurrences": 0
+          },
+          {
+            "path": "SeryMente/metodologia:frentes/metacanon/CONTROL-RESPONSABILIDAD.json",
+            "sha": "0eaf612b01de0ae630b7a4775849be455ebda6c8",
+            "occurrences": 0
+          },
+          {
+            "path": "SeryMente/metodologia:frentes/radar-profesional/CONTROL-RESPONSABILIDAD.json",
+            "sha": "ebedb865d9d813c731f6ebcf2b63bf37efe3efc1",
+            "occurrences": 0
+          },
+          {
+            "path": "SeryMente/personal:frentes/repertorio-canto-personal/CONTROL-RESPONSABILIDAD.json",
+            "sha": "fa92efd677b3a57520b8d3a1cf4feb0fa792b978",
+            "occurrences": 0
+          }
+        ],
+        "searched_repository_scope": [
+          "SeryMente/khora",
+          "SeryMente/serymente",
+          "SeryMente/otrogranprograma",
+          "SeryMente/GDP",
+          "SeryMente/khora-effectif",
+          "SeryMente/signal-interpreter",
+          "SeryMente/metodologia",
+          "SeryMente/tercer-ambito",
+          "SeryMente/personal"
+        ],
+        "scope_limit": "Nine accessible repository trees were checked and none was truncated; only controls visible through the available connection were scanned. This is not proof of complete organization-wide uniqueness or server-enforced exclusivity."
+      },
+      "mutation_result": "Control write uses observed SHA; canonical read-back must verify this event before transfer is considered complete."
     }
   ]
 }
