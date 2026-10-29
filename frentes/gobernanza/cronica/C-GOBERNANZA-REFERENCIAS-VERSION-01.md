@@ -1,0 +1,3 @@
+# Crónica · C-GOBERNANZA-REFERENCIAS-VERSION-01
+
+Folio global de ciclo: C-20261028-FA636DB0.
