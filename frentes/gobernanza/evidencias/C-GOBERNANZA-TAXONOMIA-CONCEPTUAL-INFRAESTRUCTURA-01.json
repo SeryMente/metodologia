@@ -151,10 +151,11 @@
     },
     {
       "path": "ambitos/tareas/evidencias/C-TAREAS-ESTANDAR-REUTILIZABLE-01.json",
-      "blob_sha": "22721357267eee1b449df00af3351c902f620c54",
+      "blob_sha": "43eae5664d6138535ddc3b3ebeac7341216ed7e3",
       "readback": true,
       "json_parse": "PASS",
-      "commit_sha": "aca694106ff823e4fa0b22bf4f6bc8746cc8c6a6"
+      "commit_sha": "aca694106ff823e4fa0b22bf4f6bc8746cc8c6a6",
+      "superseded_by": "C-TAREAS-ESTANDAR-MINIMO-02"
     },
     {
       "path": "ambitos/tareas/evidencias/C-TAREAS-ESTANDAR-REUTILIZABLE-01.json",
@@ -179,15 +180,76 @@
     },
     {
       "path": "ambitos/tareas/INSTRUCCIONES-TAREAS-v1.0.md",
-      "blob_sha": "4c7c12263e0112899ca230e168ea2a474f9a8845",
-      "readback": true
+      "blob_sha": "cd0f6d90913916cb13b6d397d8093f17e67fd353",
+      "readback": true,
+      "commit_sha": "c223b7fac8c1935b8da84686e85b854d030e6fd5"
     },
     {
       "path": "ambitos/tareas/IPZ-TAREAS-CANDIDATO.txt",
-      "blob_sha": "dcd5abf6f1bcc74fe6bba77982a6383f5245edc1",
-      "chars": 1139,
+      "blob_sha": "d355a92ef56fd38f0674ee2f3fa4f36d10ad09bb",
+      "chars": 929,
       "readback": true,
-      "native_field_updated": false
+      "native_field_updated": false,
+      "commit_sha": "1fdf7fea6795b72fc06863fc9ab65184c04602ad"
+    },
+    {
+      "path": "ambitos/tareas/ESTANDAR-COMUN-DE-TAREA-v0.2.md",
+      "blob_sha": "dc409997e4b65ebe7f8be94749509d88b99eb503",
+      "commit_sha": "e180783f96a93e01389dc4a73b0680468874f82e",
+      "readback": true,
+      "status": "candidate; current proposal"
+    },
+    {
+      "path": "ambitos/tareas/ESQUEMA-TAREA-COMUN-v0.2.json",
+      "blob_sha": "6a3b6196a6251fd8627c128ab81f8853609aa101",
+      "commit_sha": "6ad1611b903d6b3f02c90c92bfda64d7d27a87e2",
+      "readback": true,
+      "json_parse": "PASS; full JSON Schema validation not run"
+    },
+    {
+      "path": "ambitos/tareas/DISEÑO-TAREAS-v1.0.md",
+      "blob_sha": "cecaa92f8262d398b71566dde0084491c765cca7",
+      "commit_sha": "d06ffe6ce7e7e8c2156ab0f1226da0851af2848c",
+      "readback": true
+    },
+    {
+      "path": "ambitos/tareas/README.md",
+      "blob_sha": "8ecce00a0da0ab84e1fc43566f9bd95778a43613",
+      "commit_sha": "68b8ec19ec75235cd32b3db769a01b55fe768450",
+      "readback": true
+    },
+    {
+      "path": "ambitos/tareas/PENDIENTES.md",
+      "blob_sha": "aea0b3bc90dfcc4012e8b59eac55bd162aabc4ec",
+      "commit_sha": "9bcac1bcfce5818fabbf6dcab2b2cbca42b63e13",
+      "readback": true
+    },
+    {
+      "path": "ambitos/tareas/cronica/C-TAREAS-ESTANDAR-MINIMO-02.md",
+      "blob_sha": "f687ce10534fb78d10b94ecc155c321f691c2d7f",
+      "commit_sha": "aceecf485a47648d6365e0a221312e26a3247240",
+      "readback": true
+    },
+    {
+      "path": "ambitos/tareas/conversaciones/C-TAREAS-ESTANDAR-MINIMO-02-dialogo.jsonl",
+      "blob_sha": "285fab9aee7efb207e9eedb3b08a4f7f7a981fe2",
+      "commit_sha": "0e745761f2306f88258982043982ec6cbb57e795",
+      "readback": true,
+      "jsonl_lines": 5,
+      "verbatim_user_instruction_preserved": true
+    },
+    {
+      "path": "ambitos/tareas/entregas/CHATGPT-v1.0/C-TAREAS-ESTANDAR-MINIMO-02-salida-final.md",
+      "blob_sha": "64cb7265a760edde8f315d5f6aaf800fd560d07c",
+      "commit_sha": "8e96e6dd4f2d41f6832c4af0c03c9f38ebea1158",
+      "readback": true
+    },
+    {
+      "path": "ambitos/tareas/evidencias/C-TAREAS-ESTANDAR-MINIMO-02.json",
+      "blob_sha": "9dada1e61d516dae0a1dfec1963b903341dd2012",
+      "commit_sha": "a2ee57e17fc3be876c158b74dfe5749a9f4cc720",
+      "readback": true,
+      "json_parse": "PASS"
     }
   ],
   "remaining": {
@@ -199,5 +261,14 @@
     "next_step": "Tareas: validate common contract with two or three authorized cases of different kinds; keep Tareas uncanonized until separate authorization",
     "tasks_common_standard": "CANDIDATE v0.1; JSON parses, full schema validation and end-to-end tests pending",
     "task_ipz_repository_file": "Updated/read back as candidate only"
+  },
+  "task_standard_reduction": {
+    "event_id": "C-TAREAS-ESTANDAR-MINIMO-02",
+    "cycle_folio": "C-20261029-4F7A2C91",
+    "current_candidate": "ESTANDAR-COMUN-DE-TAREA-v0.2.md",
+    "decision": "Reduce el núcleo a identidad, enunciado, referencia al origen y estado; scope_ref solo cuando haga falta por ambigüedad de contexto.",
+    "v0_1_preserved_as_historical": true,
+    "no_canonical_governance_changes": true,
+    "tasks_not_canonized": true
   }
 }
