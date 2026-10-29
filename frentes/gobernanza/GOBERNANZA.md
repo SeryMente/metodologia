@@ -6,12 +6,18 @@
 **Evento de apertura:** `C-GOBERNANZA-INICIO-01`.  
 **Ciclo:** `C-20261028-4B81D65C`.  
 **Sesión inicial (histórica):** `SES-20261028-3F2B7A91`, generación 1.
-**Titular actual:** `chatgpt-C-GOBERNANZA-RETOMA-02-SES-20261028-GV3K8P6Q` (alias operativo, no ID nativo).
-**Instancia actual:** `chatgpt-gobernanza-retoma-2026-10-28-GV3K8P6Q`.
-**Sesión actual:** `SES-20261028-GV3K8P6Q`, generación 3; ciclo vigente `C-20261028-5E83B1D7`.
-**Control actual leído de vuelta:** blob `a3cebd377ba1cb996e3bc14a48a1a1d24bb67670`; actualización de autorización específica en commit `73e11c31403f0d27950bd5091bfee7830b942ad8`.
+**Titular actual según control:** `chatgpt-C-GOBERNANZA-RETOMA-03-SES-20261029-GV4M8Q2R` (alias operativo, no ID nativo).
+**Instancia actual según control:** `chatgpt-gobernanza-retoma-2026-10-29-GV4M8Q2R`.
+**Sesión actual según control:** `SES-20261029-GV4M8Q2R`, generación 4; ciclo vigente `C-20261029-E3DA7D1D`.
+**Control actual leído de vuelta:** blob `3cbefef3f1788067ba59f7f4f09c4c90a16b7069`; evento de control `C-GOBERNANZA-RETOMA-03`.
 
-## Ciclo vigente · C-GOBERNANZA-LISA-ARTICULACION-01 · 2026-10-29
+## Ciclo vigente · C-GOBERNANZA-GESTION-CONVERSACIONAL-01 · 2026-10-29
+
+Gestión conversacional queda normada en el DUG v360 · NX-360m mediante ART-024, hijo documental de ART-020, con dos componentes internos: Registro conversacional y Trazabilidad semántica. El GOW es v2.9 con 111 términos; no se añaden principios, no cambia Metacanon 1.24 y no se crean subámbitos taxonómicos. La materialización inicial está en [ambitos/gestion-conversacional/](../../ambitos/gestion-conversacional/README.md). La prueba de uso registra una pareja E/S, un UUIDv7 local estable, folio y referencias de repositorio/frente, además de etiquetas de trazabilidad y extractos verbatim históricos con procedencia. Captura automática y el campo nativo IPZ no se declaran instalados.
+
+Evidencia del ciclo: [crónica](cronica/C-GOBERNANZA-GESTION-CONVERSACIONAL-01.md) · [evidencia](evidencias/C-GOBERNANZA-GESTION-CONVERSACIONAL-01.json) · [salida](entregas/CHATGPT-v0.6/C-GOBERNANZA-GESTION-CONVERSACIONAL-01-salida-final.md) · [diálogo](conversaciones/C-GOBERNANZA-GESTION-CONVERSACIONAL-01-dialogo.jsonl).
+
+## Ciclo anterior · C-GOBERNANZA-LISA-ARTICULACION-01 · 2026-10-29
 
 **Persistencia documental.** Los originales históricos [Athanor / Lisa Hub v0.9.43](documentos/originales/AthanorJue20260319-normativo_v0943.html) y [LISA · Explicación Consolidada v1.0](<documentos/originales/LISA-Explicacion-Consolidada-v1.0%20%281%29.pdf>) viven en el OCP bajo documentos/originales/. Manifiesto: [MANIFIESTO-DOCUMENTAL.json](documentos/MANIFIESTO-DOCUMENTAL.json). Commit inicial de originales: 70dd52c716e01676f33eff234db31a1100cbe90f; la lectura de vuelta comparó exactamente el Base64 de ambos archivos fuente contra la respuesta de GitHub.
 
