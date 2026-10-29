@@ -27,13 +27,13 @@ Haz la preparación sin ceremonia ni checklist visible; actúa sobre mi petició
 La [matriz de escenarios v0.1](https://github.com/SeryMente/metodologia/blob/main/frentes/metacanon/entregas/CHATGPT-v0.4/MATRIZ-ESCENARIOS-INICIO-FT-v0.1.md) contiene **16 escenarios prácticos**. Los límites importantes son:
 
 - Chat normal personalizado, inicio de frente dentro de una conversación existente, voz/dictado y chat temporal personalizado: cobertura prevista después de instalar la IPZ.
-- Proyectos de ChatGPT con instrucciones propias: hay que incorporar allí el mismo disparador, porque las instrucciones del Proyecto tienen precedencia sobre las globales. Los GPT personalizados no consumen las instrucciones personalizadas globales; requieren configurar sus propias instrucciones. Un chat temporal sin personalización no recibe la IPZ. 【turn325455search3】【turn750380search0】【turn590447search6】
+- Proyectos de ChatGPT con instrucciones propias: hay que incorporar allí el mismo disparador, porque las instrucciones del Proyecto tienen precedencia sobre las globales. Los GPT personalizados no consumen las instrucciones personalizadas globales; requieren configurar sus propias instrucciones. Un chat temporal sin personalización no recibe la IPZ. 
 - API, Codex/IDE y otros proveedores: la IPZ de ChatGPT no se propaga; necesitan su configuración de instrucciones equivalente.
 - Sin acceso comprobable a `main`: declarar `METODOLOGÍA NO VERIFICADA`. Si hay titular incompatible, bloquear escrituras y preguntar una vez. Si la tarea no abre ni retoma un frente de este sistema, no forzar el bootstrap.
 
 ## Única activación pendiente
 
-No puedo escribir el campo nativo de Instrucciones Personalizadas a través de la integración de repositorio; OpenAI indica que no ofrece una API para ese campo. 【turn590447search0】
+No puedo escribir el campo nativo de Instrucciones Personalizadas a través de la integración de repositorio; OpenAI documenta que no ofrece una API para ese campo ([Centro de ayuda](https://help.openai.com/es-es/articles/8096356-chatgpt-custom-instructions)). 
 
 Una única vez: abre **Configuración → Personalización → Instrucciones personalizadas**, verifica que la personalización esté activada, reemplaza el campo con la IPZ anterior y guarda. Después no tendrás que pegar ese prompt por frente; el mecanismo debe arrancar al detectar la tarea.
 
