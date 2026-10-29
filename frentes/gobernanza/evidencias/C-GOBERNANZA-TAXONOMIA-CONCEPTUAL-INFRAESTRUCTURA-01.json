@@ -138,9 +138,10 @@
     },
     {
       "path": "ambitos/tareas/conversaciones/C-TAREAS-ESTANDAR-REUTILIZABLE-01-dialogo.jsonl",
-      "blob_sha": "ae432c6540a14faaf004be322b4d6ce701dbcca2",
+      "blob_sha": "f6d4d0fe641fc62e31a1abb60d78d308b98eb366",
       "readback": true,
-      "jsonl_lines": 5
+      "jsonl_lines": 6,
+      "commit_sha": "069ef5abb7268fb6831682a7349aba6793c18a24"
     },
     {
       "path": "ambitos/tareas/entregas/CHATGPT-v1.0/C-TAREAS-ESTANDAR-REUTILIZABLE-01-salida-final.md",
@@ -149,10 +150,10 @@
     },
     {
       "path": "ambitos/tareas/evidencias/C-TAREAS-ESTANDAR-REUTILIZABLE-01.json",
-      "blob_sha": "c6298bc54c2b85c8ef78ab5f4880159bc1b097a6",
+      "blob_sha": "22721357267eee1b449df00af3351c902f620c54",
       "readback": true,
       "json_parse": "PASS",
-      "commit_sha": "9960f70e36f6ad3247ef433268acef1e19f047dd"
+      "commit_sha": "aca694106ff823e4fa0b22bf4f6bc8746cc8c6a6"
     },
     {
       "path": "ambitos/tareas/evidencias/C-TAREAS-ESTANDAR-REUTILIZABLE-01.json",
