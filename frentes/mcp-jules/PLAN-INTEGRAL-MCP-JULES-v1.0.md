@@ -2,12 +2,12 @@
 
 **Versión del plan:** 1.0  
 **Frente:** MCP Jules  
-**Fase vigente:** Fase 1 — planeación integral; no implementación.  
+**Fase completada:** Fase 1 — planeación integral de diseño; no se implementó código de producto.  
 **Fecha de corte documental:** 2026-10-29  
 **OCP:** `frentes/mcp-jules/`  
 **Control de responsabilidad:** `CONTROL-RESPONSABILIDAD.json`, generación 2, folio `SES-20261029-6C2F9A17`.  
 **Gobierno consultado:** Documento Único de Gobernanza (DUG) Samantha v360 · NX-360m; Metacanon 1.24; GOW 2.9, leídos desde `SeryMente/metodologia/main`.  
-**Estado:** línea base de diseño para revisión; no equivale a código aceptado, API validada, conexión de ChatGPT, despliegue ni release.
+**Estado:** planeación integral completada como especificación lista para implementación; la aceptación del código, la API real, la conexión ChatGPT, el despliegue y el release siguen pendientes.
 
 ## 1. Decisión de fase
 
@@ -307,7 +307,7 @@ La aceptación exige evidencia real. Un test que utiliza mocks no acredita conec
 
 ## 15. Secuencia de fases posterior a la planeación
 
-### Fase 1 — Planeación integral del componente v1.0 (vigente)
+### Fase 1 — Planeación integral del componente v1.0 (COMPLETA — cierre de diseño)
 
 - Establecer requisitos, arquitectura y límites.
 - Especificar contratos de las siete herramientas y estados.
