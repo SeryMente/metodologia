@@ -116,3 +116,12 @@ La distinción operativa queda así:
 La facultad de realizar cambios **no equivale a autorización autónoma** para modificar todo sistema que la AT pueda analizar. Análisis, permiso y ejecución son funciones distinguibles; las escrituras quedan sujetas al gobierno, la titularidad y las autorizaciones de cada destino. La AT debe ejecutar lo necesario y autorizado, no implementar automáticamente toda consecuencia posible.
 
 Por tanto, la composición compatible se entiende como **flujo integral de cambio** —origen e intención → análisis de impacto → autorización y alcance → realización coordinada → verificación y evidencia—, con LISA como anclaje de intención y especificación cuando corresponda. Esta adenda documenta la aclaración del operador; no canoniza la AT ni modifica el DUG, Metacanon, GOW o el Canon LISA.
+
+
+## Aclaración posterior · Responsabilidad realizadora de AT · 2026-10-29
+
+El operador precisó el sentido de la función realizadora de la Articulación Trazable (AT): no se trata solo de que AT esté disponible como canal o medio para aplicar cambios. **AT es el mecanismo responsable de realizarlos**, dentro de la medida y los límites que permitan las reglas, la titularidad, los permisos, las precondiciones y las compuertas del destino correspondiente.
+
+Esta responsabilidad cubre llevar el cambio analizado y delimitado a su realización efectiva, coordinando las herramientas o ejecutores autorizados y verificando el resultado. No convierte a AT en autoridad autónoma ni le permite eludir restricciones. Cuando un destino prohíba, limite o no autorice una modificación, AT debe respetar el límite: excluir o ajustar la acción, dejar constancia del bloqueo y solicitar la decisión o autorización que falte, en vez de ejecutar por fuera de la compuerta.
+
+Por tanto, AT no solo diagnostica ni se limita a recomendar cambios: responde operativamente por la aplicación de los cambios que corresponden, en la medida autorizada, y por la verificación y el registro de su resultado. Esta precisión aclara el concepto de trabajo; **no lo canoniza** ni modifica el DUG, Metacanon, GOW, Canon LISA o Notion.
