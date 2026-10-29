@@ -1,0 +1,173 @@
+{
+  "schema": "metacanon-cycle-evidence/v1",
+  "event_id": "C-METACANON-AUTOARRANQUE-FT-01",
+  "cycle_folio": "C-20261029-6A84D3F1",
+  "date_local": "2026-10-29",
+  "timezone": "America/Mexico_City",
+  "repository": "SeryMente/metodologia",
+  "branch": "main",
+  "front": "Metacanon",
+  "owner_check": {
+    "status": "verified_before_mutations",
+    "owner_thread": "chatgpt-C-METACANON-ARRANQUE-360-SES-20261029-7F4A9C21",
+    "generation": 6,
+    "session_folio": "SES-20261029-7F4A9C21",
+    "observed_control_blob_sha": "86f0e4fa59e37976704231290b460cf6dc9252b0"
+  },
+  "artifacts": [
+    {
+      "path": "frentes/metacanon/entregas/CHATGPT-v0.4/IPZ-CAMPO-CHATGPT.txt",
+      "blob_sha": "1c664c4d406dba69fa70ed518bfc76f23fa25963",
+      "commit_sha": "82afc1efcf062d6c4638dc38fe6bd2ef9ae078a3",
+      "characters": 1266,
+      "status": "created_readback_verified"
+    },
+    {
+      "path": "frentes/metacanon/entregas/CHATGPT-v0.4/MATRIZ-ESCENARIOS-INICIO-FT-v0.1.md",
+      "blob_sha": "b7c4e792adeaf20ee3eb92707479ed5002f35b2d",
+      "commit_sha": "89cf7a88fd0adc3c4f75f475780b88b40b4f0111",
+      "scenario_count": 16,
+      "status": "created_readback_verified"
+    },
+    {
+      "path": "PROMPT-UNIVERSAL-REINSTANTANCIACION.md",
+      "blob_sha": "23330e8a9802c2d984699c5c0d2603013335f310",
+      "commit_sha": "c7d35b28f885d09207c0a12136cf8a572a6b8e90",
+      "status": "updated_readback_verified"
+    },
+    {
+      "path": "BOOTSTRAP-CONTEXTO-GLOBAL.md",
+      "blob_sha": "3fc9345a31e8c6ad2a44dc2c09e8b62b07e8668f",
+      "commit_sha": "f9cd68080ebccac7b619d3ea3809727be324e8a1",
+      "status": "updated_readback_verified"
+    },
+    {
+      "path": "INICIO.md",
+      "blob_sha": "ab16d7e6aa986a9d086e034831ea1466df71ba83",
+      "commit_sha": "fb753db8ff508318c6306e3e7850adea74d06052",
+      "status": "updated_readback_verified"
+    },
+    {
+      "path": "CONTINUIDAD-ENTRE-CONVERSACIONES.md",
+      "blob_sha": "0f2b7862d78716f15024bd929d5d3f3dc90626c0",
+      "commit_sha": "e0441d294471e526703d417baa4b1fe60a3d60c9",
+      "status": "updated_readback_verified"
+    },
+    {
+      "path": "frentes/metacanon/README.md",
+      "blob_sha": "a51e07f93f65f598d67b7dbd6933a37487d337d9",
+      "commit_sha": "71469151530caac9f5610be2d81bf64a6d52979b",
+      "status": "updated_readback_verified"
+    },
+    {
+      "path": "frentes/metacanon/PENDIENTES.md",
+      "blob_sha": "5cc0047cce669e85a6901cd2e8af9fb0e4e72d48",
+      "commit_sha": "d165ba91fb7d2ab095d0343ba7b3e0e70e291d75",
+      "status": "updated_readback_verified"
+    },
+    {
+      "path": "frentes/metacanon/entregas/CHATGPT-v0.4/C-METACANON-AUTOARRANQUE-FT-01-salida-final.md",
+      "blob_sha": "b1d35b28a64dd26e8cf83ecda8f8ecb4e5a776a3",
+      "commit_sha": "a0fdb13b6f4abcb151e44f5395162f37ace28d4c",
+      "status": "created_and_sources_cleaned_readback_verified"
+    },
+    {
+      "path": "frentes/metacanon/conversaciones/C-METACANON-AUTOARRANQUE-FT-01-dialogo.jsonl",
+      "blob_sha": "a733ddd4b7e2aa4e969386bfbaf0449d6378131c",
+      "commit_sha": "e2c7212f0030250c7460b73e8b8bcce8cd394b5a",
+      "status": "created_readback_verified"
+    },
+    {
+      "path": "frentes/metacanon/cronica/C-METACANON-AUTOARRANQUE-FT-01.md",
+      "blob_sha": "8b895a02f0ff2657e7b3a4f67cd9698e836995f7",
+      "commit_sha": "cda14d5e4af676f8fc3983370392546eb3ba3364",
+      "status": "created_readback_verified"
+    }
+  ],
+  "checks": [
+    {
+      "id": "CHK-01",
+      "statement": "The current Metacanon control identifies this conversation as owner at generation 6 before writes.",
+      "status": "PASS"
+    },
+    {
+      "id": "CHK-02",
+      "statement": "Candidate cycle folio was absent from the current responsibility control, conversation CSV, previous dialogue, and source registry before creation.",
+      "status": "PASS",
+      "scope": "bounded; not global uniqueness"
+    },
+    {
+      "id": "CHK-03",
+      "statement": "IPZ character count is below the conservative 1,500-character cap.",
+      "status": "PASS",
+      "observed": 1266
+    },
+    {
+      "id": "CHK-04",
+      "statement": "IPZ, matrix, universal prompt, BCR and INICIO were each read back after writes.",
+      "status": "PASS"
+    },
+    {
+      "id": "CHK-05",
+      "statement": "Scenario matrix has 16 operational scenarios and links official help sources.",
+      "status": "PASS"
+    },
+    {
+      "id": "CHK-06",
+      "statement": "The official native Custom Instructions field was written or independently read back.",
+      "status": "PENDING",
+      "reason": "No supported API/tool for that field; one-time manual installation required."
+    },
+    {
+      "id": "CHK-07",
+      "statement": "A genuinely new conversation autonomously acquired current main and the relevant OCP without a methodology reminder.",
+      "status": "PENDING",
+      "reason": "Must be tested after native IPZ installation."
+    },
+    {
+      "id": "CHK-08",
+      "statement": "AT status changed or was ratified.",
+      "status": "NOT_IN_SCOPE",
+      "reason": "No AT normative change was requested or made in this cycle."
+    }
+  ],
+  "scenario_coverage": {
+    "total": 16,
+    "expected_global_custom_instruction_scope": [
+      "normal personalized chats",
+      "new front inside existing chat",
+      "new front without naming methodology",
+      "personalized temporary chat",
+      "normal voice/dictation client"
+    ],
+    "requires_surface_specific_configuration": [
+      "Projects with project instructions",
+      "custom GPTs"
+    ],
+    "explicit_exceptions": [
+      "unpersonalized temporary chat",
+      "API/IDE/Codex/external provider",
+      "disabled personalization or account change"
+    ],
+    "safe_failures": [
+      "main inaccessible",
+      "conflicting active front owner"
+    ],
+    "intentionally_skipped": [
+      "unrelated non-front requests"
+    ]
+  },
+  "final_state": {
+    "documentation": "implemented_and_readback_verified",
+    "native_ipz": "not_installed_or_verified",
+    "new_conversation_semantic_test": "pending",
+    "AT": "unchanged",
+    "universal_compliance_claim": "not_made"
+  },
+  "official_sources": [
+    "https://help.openai.com/es-es/articles/8096356-chatgpt-custom-instructions",
+    "https://help.openai.com/es-es/articles/10169521-using-projects-in-chatgpt",
+    "https://help.openai.com/es-es/articles/8914046-chat-temporal-en-chatgpt",
+    "https://help.openai.com/en/articles/8554407-gpts-in-chatgpt"
+  ]
+}
