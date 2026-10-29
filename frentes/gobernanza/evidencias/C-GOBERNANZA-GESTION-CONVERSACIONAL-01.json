@@ -1,0 +1,145 @@
+{
+  "schema": "ser-y-mente-cycle-evidence/v1",
+  "event_id": "C-GOBERNANZA-GESTION-CONVERSACIONAL-01",
+  "cycle_folio": "C-20261029-E3DA7D1D",
+  "conversation_id": "01a1896b-3ac9-7be6-9258-7aed888528aa",
+  "session_folio": "SES-20261029-GV4M8Q2R",
+  "generation": 4,
+  "recorded_on": "2026-10-29",
+  "status": "PERSISTIDO_Y_RELEIDO; CONTRATO CANONICO v1.0 INCORPORADO; ALCANCE CERRADO",
+  "scope": "Normar y articular Registro conversacional y Trazabilidad semántica dentro de Gestión conversacional, preservar extractos verbatim esenciales y no esenciales con procedencia, materializar una prueba inicial y verificar el cierre para volver a Tareas.",
+  "authorization": {
+    "status": "explicit",
+    "source": "Instrucción directa del operador en este ciclo",
+    "scope": "Normar y articular los dos módulos longitudinalmente solo en lo necesario; documentar el no esencial procedente de los verbatim; cerrar el alcance para volver a Tareas."
+  },
+  "canonical_source": {
+    "repository": "SeryMente/metodologia",
+    "branch": "main",
+    "path": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.html",
+    "dug_blob_sha": "3cda9d38db1bee76ff0ca752f3ecde8719c70d41",
+    "dug_commit_sha": "16f0df3e3b37ec6c6949d6d8c7b4055f5c956782",
+    "version": "v360",
+    "signature": "NX-360m",
+    "principles": 41,
+    "annexes": 17,
+    "metacanon_version": "1.24",
+    "gow_version": "2.9",
+    "gow_term_count": 111,
+    "taxonomy_version": "1.3",
+    "new_annex": {
+      "id": "ART-024",
+      "level": 3,
+      "parent_id": "ART-020"
+    }
+  },
+  "impact": {
+    "ART-020": "Actualizado para identificar ambos módulos internos de Gestión conversacional; se mantienen los dos únicos ámbitos funcionales canónicos, sin subámbito taxonómico nuevo.",
+    "ART-024": "Creado como contrato conjunto de los dos módulos, hijo de ART-020.",
+    "GOW": "Añadidos gow-registro-conversacional y gow-trazabilidad-semantica, con definiciones y anclas en la sección humana y representación estructurada.",
+    "principles": "No se añade principio nuevo; se reutilizan reglas vigentes de anti-bloat, no-simulación, autorización, continuidad, persistencia y registro literal.",
+    "metacanon": "No modificado; §28 ya cubre conservación literal y registro de ciclo/procedencia/evidencia.",
+    "LISA/Notion": "No modificados; la trazabilidad conversacional es complementaria y no sustituye L0/REQ/ACR."
+  },
+  "artifacts": {
+    "gobernanza/METAPROMPT-CANONICO-SAMANTHA.html": {
+      "blob": "3cda9d38db1bee76ff0ca752f3ecde8719c70d41",
+      "checked": "DUG machine JSON parse PASS; ART-024 parent and human link PASS; 41 principles/17 annexes; GOW 2.9/111 terms."
+    },
+    "gobernanza/GLOSARIO-WORKSPACE.fuente.json": {
+      "blob": "a611593f89f105aeec06deb114bbda46764036b0",
+      "checked": "JSON parse PASS; canonical_blob_sha points to the DUG blob."
+    },
+    "INICIO.md": {
+      "blob": "6115ba854bc4f3ee2ff5ff5e421d09cf0c6b173a",
+      "checked": "Updated entrypoint to DUG v360 and linked ART-024/initial module materialization."
+    },
+    "ambitos/gestion-conversacional/README.md": {
+      "blob": "c8b81d49f4b185977b3d246658a9e7ca79bea1e3"
+    },
+    "ambitos/gestion-conversacional/REGISTRO-CONVERSACIONAL-v1.0.md": {
+      "blob": "bb38cef0e999db4cee91ea7c5f71fad9a8e58b6c"
+    },
+    "ambitos/gestion-conversacional/TRAZABILIDAD-SEMANTICA-v1.0.md": {
+      "blob": "0b6e99792e8273c29387d9e8bd7d25a954e6d5ff"
+    },
+    "ambitos/gestion-conversacional/REGISTRO-CONVERSACIONES.csv": {
+      "blob": "6509308da801475ffac238ab6f21e99dca409a72",
+      "rows": 1,
+      "local_uuidv7": "01a1896b-3ac9-7be6-9258-7aed888528aa",
+      "native_platform_conversation_id": "NOT_EXPOSED"
+    },
+    "ambitos/gestion-conversacional/FUENTES-VERBATIM-ORIGEN.jsonl": {
+      "blob": "abfad551508f20c4d05e16401deeb35bf0ea789b",
+      "entries": 5,
+      "parse": "PASS"
+    },
+    "ambitos/gestion-conversacional/REGISTRO-TRAZABILIDAD-SEMANTICA.jsonl": {
+      "blob": "ca4e9b21c9f028cee6a8294064ef28ca74224e59",
+      "entries": 11,
+      "parse": "PASS"
+    },
+    "ambitos/gestion-conversacional/ESQUEMA-CICLO-CONVERSACIONAL-v1.0.json": {
+      "blob": "8213892ce38a74701c1b34b1b29be9fdb65e38a3",
+      "parse": "PASS"
+    },
+    "ambitos/gestion-conversacional/ESQUEMA-TRAZABILIDAD-SEMANTICA-v1.0.json": {
+      "blob": "84703339b9591b798ed5e39a7e6e8c10354b15cb",
+      "parse": "PASS"
+    },
+    "frentes/gobernanza/conversaciones/C-GOBERNANZA-GESTION-CONVERSACIONAL-01-dialogo.jsonl": {
+      "blob": "1d40829efbb9d265f16b87c7564400afa5407e14",
+      "records": 2,
+      "sides": [
+        "E",
+        "S"
+      ],
+      "input_exact_match": true,
+      "assistant_final_matches_saved_output": true,
+      "visible_auxiliary_outputs": 5,
+      "parse": "PASS"
+    },
+    "frentes/gobernanza/entregas/CHATGPT-v0.6/C-GOBERNANZA-GESTION-CONVERSACIONAL-01-salida-final.md": {
+      "blob": "29610837ab454abd8b7e674c24f329cd7f09ef37"
+    },
+    "frentes/gobernanza/cronica/C-GOBERNANZA-GESTION-CONVERSACIONAL-01.md": {
+      "blob": "1b4da0c5abd03d315d8bf2e9d992b40bff8db629"
+    },
+    "frentes/gobernanza/README.md": {
+      "blob": "1e99f7c6d71a66a4aca6fd0980f2f208d5674605"
+    },
+    "frentes/gobernanza/GOBERNANZA.md": {
+      "blob": "2161cd863b9cb9a40e7f066b363364c2c090e35b"
+    },
+    "frentes/gobernanza/PENDIENTES.md": {
+      "blob": "a38e70570c49f348a8965b3f7429d7f2df829647"
+    }
+  },
+  "verbatim_registry": {
+    "origin": "Transcripción pegada por el operador, no recuperación nativa independiente",
+    "total_extracts": 5,
+    "classifications": [
+      "restriccion_de_diseno",
+      "requisitos_funcionales_de_origen",
+      "decision_terminologica",
+      "contexto_no_esencial",
+      "contexto_no_esencial_fuera_de_alcance"
+    ],
+    "treatment": "Se conservan los extractos y su procedencia; lo no esencial queda documentado como contexto no normativo/fuera de alcance, sin elevarse a norma."
+  },
+  "limits": [
+    "No se ejecutó validador completo externo de JSON Schema 2020-12; los esquemas y registros estructurados sí se parsearon.",
+    "No hubo renderizado en navegador ni prueba independiente de captura cross-platform.",
+    "No se afirma captura automática, sincronización continua, cobertura de todo el historial, ni recuperación de mensajes ausentes.",
+    "El campo nativo IPZ no fue escrito ni verificado.",
+    "El archivo candidato IPZ dentro de frentes/metacanon/ no se modificó porque su control de responsabilidad señala otra titularidad activa.",
+    "GOV-AT-01 permanece abierto e independiente; artefactos de Tareas no fueron modificados."
+  ],
+  "incident": "Una escritura intermedia del DUG produjo temporalmente JSON embebido truncado. La lectura de vuelta lo detectó; una escritura posterior recompuso el documento desde la revisión v359, escapando caracteres HTML dentro del JSON. El DUG vigente en main es v360 y su representación estructurada se parsea y relee correctamente; el blob vigente es el registrado arriba.",
+  "closure": {
+    "registry_conversational": "CERRADO PARA CONTRATO Y MATERIALIZACIÓN INICIAL v1.0",
+    "semantic_traceability": "CERRADO PARA CONTRATO Y MATERIALIZACIÓN INICIAL v1.0",
+    "next_objective": "Volver a Tareas; resolver por separado la discrepancia preexistente entre documentación que referencia v0.2 y el candidato operativo v1.0."
+  },
+  "main_head_before_evidence": "9ed3040261466fbe2bada21d29e8e6ba088ef617"
+}
