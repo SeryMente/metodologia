@@ -11,11 +11,17 @@
 **Sesión actual:** `SES-20261028-GV3K8P6Q`, generación 3; ciclo `C-20261028-94B6C2D8`.
 **Control actual leído de vuelta:** blob `c15403adde2ec480f81955cdba0458065bb50611`, commit de evidencia de verificación `a760933d81c7d75d53a60a613492e5b2188274b6`.
 
-## Estado vivo de la retoma · C-GOBERNANZA-RETOMA-02 · 2026-10-28
+## Estado de transferencia · C-GOBERNANZA-RETOMA-02 · 2026-10-28 (histórico)
 
 La titularidad de Gobernanza se transfirió mediante compare-and-swap por SHA y lectura de vuelta: generación 2 → 3. DUG vigente v358 · NX-358m, Metacanon 1.23, GOW 2.7; fuente blob 89a28e4d05f5baab9c4b86abdb9fbfc532690c75. El chequeo estático de la capa HTML fuera de los scripts encontró 27 IDs, cero duplicados y cero destinos de fragmento ausentes. No es una prueba de navegador ni cierra la auditoría dinámica.
 
 El último ciclo previo tiene crónica y evidencia, pero no se localizó su salida final dedicada; la única salida final antigua corresponde a la apertura v345 y no se presenta como la más reciente. Véase [crónica de retoma](cronica/C-GOBERNANZA-RETOMA-02.md), [evidencia](evidencias/C-GOBERNANZA-RETOMA-02.json), [salida](entregas/CHATGPT-v0.3/C-GOBERNANZA-RETOMA-02-salida-final.md) y [diálogo disponible](conversaciones/C-GOBERNANZA-RETOMA-02-dialogo.jsonl).
+
+## Continuidad del predecesor · C-GOBERNANZA-CONTINUIDAD-03 · 2026-10-28
+
+El operador remitió un fragmento extenso de una conversación anterior que documenta los hitos históricos DUG v353, v354 y v355 relativos a P041/ART-014, la taxonomía estructural de S y M, los anexos ART-015 a ART-022 y las equivalencias del GOW para Ámbito. El estado normativo actual se adquiere desde el DUG v358 · NX-358m, blob 89a28e4d05f5baab9c4b86abdb9fbfc532690c75; no se infieren pruebas actuales del resumen histórico.
+
+La conversación fue pegada dentro de un único mensaje y no se dispone de exportación nativa ni ID de mensaje. Se guarda un índice/síntesis con procedencia y se declara expresamente que el fragmento completo no se ha archivado literalmente. Véase [crónica](cronica/C-GOBERNANZA-CONTINUIDAD-03.md), [evidencia](evidencias/C-GOBERNANZA-CONTINUIDAD-03.json), [salida](entregas/CHATGPT-v0.3/C-GOBERNANZA-CONTINUIDAD-03-salida-final.md) e [índice del fragmento](conversaciones/C-GOBERNANZA-CONTINUIDAD-03-fragmento-predecesor.jsonl).
 
 ## Propósito y límite
 
