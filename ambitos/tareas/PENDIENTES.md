@@ -18,6 +18,10 @@
 10. **TAR-10 · enmienda normativa.** Presentar diff explícito para DUG/GOW y taxonomía. Requiere autorización expresa anterior a cualquier escritura normativa.
 11. **TAR-11 · aceptación v1.0.** Read-back de artefactos, pruebas completadas, pendientes residuales y ratificación del operador.
 
+## Ciclo de estándar común · C-TAREAS-ESTANDAR-REUTILIZABLE-01
+
+Se produjo el contrato candidato [ESTANDAR-COMUN-DE-TAREA-v0.1.md](ESTANDAR-COMUN-DE-TAREA-v0.1.md) y su proyección [ESQUEMA-TAREA-COMUN-v0.1.json](ESQUEMA-TAREA-COMUN-v0.1.json). El JSON se leyó de vuelta y parsea; aún no se ejecutó un validador completo de JSON Schema, ni casos end-to-end. El estándar sigue en estado CANDIDATO v0.1, no canonizado.
+
 ## Estado inicial
 
 - TAR-01 a TAR-11: ABIERTOS; el diseño v1.0 y el estándar común v0.1 sirven como hipótesis iniciales.
