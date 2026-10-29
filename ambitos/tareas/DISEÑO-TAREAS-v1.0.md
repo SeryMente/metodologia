@@ -90,9 +90,9 @@ La cadena propuesta separa las funciones y la autoridad:
 4. Validar si basta el ciclo de cuatro estados; cualquier campo/estado adicional debe demostrar necesidad en un caso real.
 5. Decidir el registro canónico y qué plataformas, si alguna, serán fuentes de estado para determinados tipos de tarea.
 6. Aprobar las instrucciones específicas del ámbito y el texto de IPZ; verificar el campo nativo cuando la herramienta lo permita.
-7. Probar con tareas reales autorizadas, cubrir estados problemáticos y verificar lectura de vuelta/recuperación.
+7. Comprobar con casos autorizados si el núcleo mínimo representa fielmente el trabajo. No fijar por anticipado un número de casos ni una cobertura hipotética; añadirlos según las diferencias observadas.
 8. Preparar una propuesta concreta de cambios en ART-015, ART-020, la taxonomía estructurada y el GOW, sin escribir norma hasta recibir autorización explícita.
-9. Confirmar criterios de aceptación y ratificar o revisar formalmente esta versión.
+9. Ratificar o revisar la versión tras la comprobación; no convertir los criterios de aceptación del propio estándar en campos obligatorios de cada tarea.
 
 ## 9. Criterio de cierre de la incubación
 
