@@ -11,10 +11,10 @@ Corte del 2026-10-22 · Metacanon v1.21. [Salida final](entregas/CHATGPT-v0.3/C-
 ## Arranque recomendado para un hilo nuevo
 
 1. [INICIO.md](../../INICIO.md) — puerta de entrada canónica.
-2. [Gobierno general de Samantha](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#gobierno-general) — DUG v356 · NX-356m.
-3. [Metacanon integrado en el DUG](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#metacanon) — v1.22; leer LEER PRIMERO, §9, §§29–51 y §4.
-4. [GOW integrado en el DUG](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#glosario) — v2.6; 107 términos y 16 anexos jerarquizados; revisar al inicio y cierre.
-5. [Taxonomía estructural de S y M](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-015) — ART-015 global; ART-020 distingue Contexto (nivel funcional 1) → Gestión conversacional (nivel 2), jerarquía distinta de los niveles de anexos; ART-016 a ART-022 por entidad y ámbito; ART-014 para procedimiento SPDF.
+2. [Gobierno general de Samantha](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#gobierno-general) — DUG v357 · NX-357m.
+3. [Metacanon integrado en el DUG](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#metacanon) — v1.23; leer LEER PRIMERO, §9, §§29–51 y §4.
+4. [GOW integrado en el DUG](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#glosario) — v2.7; 108 términos y 16 anexos jerarquizados; revisar al inicio y cierre.
+5. [Taxonomía estructural de S y M](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-015) — ART-015 global; ART-020 define Persistencia documental y Gestión conversacional al mismo nivel funcional, con subámbitos de nivel 2..N como posibilidad no instanciada; la Metodología abstracta es el OCP raíz y cada nivel taxonómico es OCP sin implicar ruta física exclusiva. ART-016 a ART-022 por entidad y ámbito; ART-014 para procedimiento SPDF.
 6. [Control de responsabilidad](CONTROL-RESPONSABILIDAD.json) y [pendientes](PENDIENTES.md).
 7. [Checklist de los nueve requisitos verbatim](entregas/CHATGPT-v0.3/CHECKLIST-VERBATIM-21.md) y [diálogo literal de origen](conversaciones/C-METODOLOGIA-AUDITORIA-REQUISITOS-20-dialogo.jsonl).
 8. [Salida persistida previa M24 — auditoría del repositorio](entregas/CHATGPT-v0.3/C-METODOLOGIA-AUDITORIA-REPOSITORIO-24-salida-final.md) — reproducir literalmente en la primera respuesta del nuevo hilo, con procedencia; si no se lee, declarar NO DISPONIBLE. [Diálogo verbatim](conversaciones/C-METODOLOGIA-AUDITORIA-REPOSITORIO-24-dialogo.jsonl) · [Crónica](cronica/C-METODOLOGIA-AUDITORIA-REPOSITORIO-24.md) · [Evidencia/hash](evidencias/C-METODOLOGIA-AUDITORIA-REPOSITORIO-24.json).
