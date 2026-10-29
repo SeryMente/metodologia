@@ -125,3 +125,14 @@ El operador precisó el sentido de la función realizadora de la Articulación T
 Esta responsabilidad cubre llevar el cambio analizado y delimitado a su realización efectiva, coordinando las herramientas o ejecutores autorizados y verificando el resultado. No convierte a AT en autoridad autónoma ni le permite eludir restricciones. Cuando un destino prohíba, limite o no autorice una modificación, AT debe respetar el límite: excluir o ajustar la acción, dejar constancia del bloqueo y solicitar la decisión o autorización que falte, en vez de ejecutar por fuera de la compuerta.
 
 Por tanto, AT no solo diagnostica ni se limita a recomendar cambios: responde operativamente por la aplicación de los cambios que corresponden, en la medida autorizada, y por la verificación y el registro de su resultado. Esta precisión aclara el concepto de trabajo; **no lo canoniza** ni modifica el DUG, Metacanon, GOW, Canon LISA o Notion.
+
+
+## Adenda · Cierre acotado de AT v1.0 y evaluación de subcomponentes · 2026-10-29
+
+El objetivo inmediato queda acotado a **llevar la definición operativa de la Articulación Trazable (AT) a v1.0**, sin abrir un rediseño más amplio ni prolongar esta línea de trabajo más de lo necesario. Esto no autoriza por sí mismo implementar software ni canonizar la definición.
+
+Queda como tarea pendiente verificar, con fundamento en la naturaleza multifacética de la necesidad que AT debe aliviar, si conviene descomponer el componente en subcomponentes o submódulos. AT debe observar/analizar el cambio, controlar y limitar su impacto, mitigarlo, acotar dónde corresponde que impacte, dirigir y facilitar la propagación pertinente y servir como mecanismo responsable de realizar los cambios dentro de los permisos y límites de cada destino. Esta diversidad funcional justifica **evaluar** la modularización, no darla por necesaria de antemano ni asumir una correspondencia automática de un submódulo por cada verbo.
+
+La evaluación deberá identificar responsabilidades realmente separables, dependencias e interfaces, y aportar evidencia suficiente para justificar una descomposición. Se resolverá en esta etapa solo en la medida en que resulte necesario o urgente para conseguir una AT v1.0 coherente, delimitada y verificable. Si no bloquea ese cierre, se documentará como evolución posterior, sin convertirla en motivo de demora ni ampliar el alcance actual.
+
+**Criterio de trabajo:** cerrar AT v1.0 con la estructura mínima que cubra la necesidad demostrada; no añadir módulos por simetría, anticipación o elegancia arquitectónica. La validación debe contemplar tanto un cambio que se propaga correctamente a los destinos necesarios como una acción limitada o bloqueada por un destino. La AT permanece como propuesta en diseño, no canonizada.
