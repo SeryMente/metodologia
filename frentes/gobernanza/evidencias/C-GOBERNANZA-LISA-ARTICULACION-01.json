@@ -144,17 +144,24 @@
     "l2": "LISA §EI.11 permite Documentos Fuente Aprobados solo con aprobación explícita, congelación/versionado y huella; los originales preservados no reciben esa designación automáticamente.",
     "l3": "Cadena vigente L0 → REQ L1 → L2 → RE (0–4) → ACR → COD.",
     "l4": "El Anclaje 2026-07-18 declara diferida la integración de LISA/LSV/MAT en Cora OS v1.0 hasta sellar RAP 2–6 y obtener orden expresa; esto es distinto de la posterior ratificación del Canon LISA v1.2.",
-    "l5": "AT puede complementar LISA como proceso de análisis de impacto, alcance afectado/no afectado, autorización, aplicación mínima y verificación; no debe duplicar L0 ni crear una cadena de autoridad paralela.",
+    "l5": "AT complementa LISA como mecanismo transversal responsable de analizar impactos y realizar los cambios que correspondan, con alcance afectado/no afectado, autorización, aplicación mínima, verificación y evidencia; su responsabilidad realizadora está limitada por las reglas, permisos, titularidad, precondiciones y compuertas de cada destino.",
     "l6": "La metodología OCP ya aporta autorización explícita, compuerta preescritura, anti-bloat, continuidad, fuente preponderante y persistencia/read-back (P005, P022, P024, P025, P035, P038, P041; ART-014/022; Metacanon §§26/28/42/43/46).",
     "l7": "Tareas es un ámbito funcional transversal en incubación, no un frente; la ruta física ambitos/tareas/ no es una regla general de infraestructura.",
     "at_status": "Nombre y canon AT no ratificados; no se añadió norma ni L0 inventado.",
-    "final_verdict": "COMPATIBLE POR COMPOSICIÓN CON FRONTERAS: LISA = intención y cadena de especificación; AT = análisis de impacto y propagación controlada.",
+    "final_verdict": "COMPATIBLE POR COMPOSICIÓN CON FRONTERAS: LISA = intención y cadena de especificación; AT = mecanismo responsable del ciclo transversal de análisis, delimitación, realización autorizada y verificación, dentro de los límites de cada destino.",
     "operator_scope_clarification": {
       "recorded_on": "2026-10-29",
       "recorded_at_local": "2026-10-29 12:46 (America/Mexico_City)",
       "verbatim": "De acuerdo con la distinción de qué articulación trazable, además de hacer lo que dices, que hace o haría, también tendría por alcance el servir de medio para la realización de los cambios que a su vez analiza.",
       "interpretation": "AT abarca tanto el análisis transversal del cambio como el mecanismo operativo para realizar cambios autorizados derivados de ese análisis. Autorización y ejecución siguen siendo compuertas distintas.",
       "implementation_scope": "Documentar esta precisión en el informe/registro del ciclo únicamente; no canonizar ni alterar DUG, Metacanon, GOW, Canon LISA o Notion.",
+      "status": "DOCUMENTED; NOT_CANONIZED"
+    },
+    "operator_scope_clarification_2": {
+      "recorded_on": "2026-10-29",
+      "verbatim": "Osea es el mecanismo responsable de realizarlos, en la medida que lso permite, o los limite.",
+      "interpretation": "AT es el mecanismo responsable de realizar los cambios que analiza y delimita, en la medida en que las reglas, la titularidad, los permisos, las precondiciones y las compuertas del destino lo permiten o restringen. No es un canal opcional ni un mero recomendador. Si una acción queda prohibida, limitada o sin autorización suficiente, AT debe respetar el límite, dejar evidencia del bloqueo y tramitar la decisión o autorización faltante; no eludir la compuerta.",
+      "implementation_scope": "Aclaración conceptual agregada al registro del ciclo; no modificar canon ni páginas de Notion.",
       "status": "DOCUMENTED; NOT_CANONIZED"
     }
   },
