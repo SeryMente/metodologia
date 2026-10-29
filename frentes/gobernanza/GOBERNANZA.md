@@ -81,3 +81,14 @@ Por instrucción explícita del operador se actualizó la fuente normativa únic
 Por instrucción explícita del operador se añadieron al GOW v2.5 tres términos: **Ámbito**, **Ámbito de frente de trabajo** y **Ámbito de OCP**. Se declaran operativamente intercambiables cuando denotan el mismo alcance delimitado; los calificadores precisan contexto pero no crean un FT, un OCP ni una ubicación obligatorios.
 
 Fuente canónica releída: `gobernanza/METAPROMPT-CANONICO-SAMANTHA.html`, blob `aea6628f3e3b117468ef70a8655ebfac124a522d`, commit `a563e6c9a0ac3eb58d31c498af40342fa7a01d0d`. DUG v355 · NX-355m; Metacanon 1.22; GOW 2.5; 41 principios, 16 anexos y 105 términos. El JSON embebido parsea y el JavaScript operativo superó compilación sintáctica aislada; renderizado dinámico en navegador no ejecutado. Los puntos de entrada y los metadatos se actualizaron y leyeron de vuelta. Notion/IPZ y la prueba SPDF E2E permanecen sin verificación.
+
+
+## Jerarquía funcional Contexto → Gestión conversacional · C-GOBERNANZA-CONTEXTO-GESTION-CONVERSACIONAL-01 · DUG v356 · NX-356m · 2026-10-28
+
+Se incorporó a la taxonomía estructural de Ser y Mente la jerarquía funcional **Contexto (nivel funcional 1) → Gestión conversacional (nivel funcional 2)**. Contexto conserva una definición deliberadamente inicial y abierta. Gestión conversacional abarca identificar, registrar, organizar y recuperar conversaciones de trabajo, así como facilitar la continuidad entre conversaciones o instancias a partir de registros disponibles.
+
+Esta jerarquía funcional es distinta de la jerarquía documental del DUG: **ART-020 sigue siendo un anexo de nivel documental 2, subordinado a ART-015**. La relación de persistencia documental y gestión de tareas con Contexto no se determina en este evento; no se reubican sus reglas ni se crea una carpeta, FT u OCP por simetría.
+
+El GOW sube a v2.6 con 107 términos y la proyección estructurada de la taxonomía a v1.1. Se verificaron lectura de vuelta exacta del DUG, parseo del JSON embebido y compilación sintáctica aislada del JavaScript operativo. **No** se ejecutó renderizado de navegador ni auditoría dinámica de enlaces. Notion no se actualizó ni releyó; la instalación nativa de IPZ continúa sin verificar. No se afirma captura automática, sincronización continua ni conservación íntegra de todas las conversaciones.
+
+**Folio global de ciclo:** C-20261028-869AF58C. **Fuente canónica releída:** `gobernanza/METAPROMPT-CANONICO-SAMANTHA.html`, blob `c364e179e8e9b6a3d566a8e690dfa1a7cce91798`, commit `706e02a0dc0074e751667de8033d09411fad5ad9`.
