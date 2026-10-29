@@ -1,0 +1,120 @@
+{
+  "event": "C-GOBERNANZA-EQUIVALENCIAS-AMBITO-01",
+  "date_local": "2026-10-28",
+  "timezone": "America/Mexico_City",
+  "repository": "SeryMente/metodologia",
+  "branch": "main",
+  "authorization": "Explicit operator request in the current conversation to add operationally interchangeable scope terms to the canonical glossary.",
+  "previous": {
+    "dug_version": "v354 · NX-354m",
+    "dug_blob": "695d83ea6913ab3962a87e49b008c366f512e34e",
+    "gow_version": "2.4",
+    "gow_terms": 102
+  },
+  "current": {
+    "dug_version": "v355 · NX-355m",
+    "dug_commit": "a563e6c9a0ac3eb58d31c498af40342fa7a01d0d",
+    "dug_blob": "aea6628f3e3b117468ef70a8655ebfac124a522d",
+    "metacanon_version": "1.22",
+    "gow_version": "2.5",
+    "gow_terms": 105,
+    "principles": 41,
+    "annexes": 16
+  },
+  "terms": [
+    {
+      "id": "gow-ambito",
+      "name": "Ámbito",
+      "anchor": "#gow-ambito",
+      "aliases": [
+        "Ámbito de frente de trabajo",
+        "Ámbito de OCP"
+      ],
+      "meaning": "Scope term; aliases indicate operational equivalence when they denote the same bounded scope."
+    },
+    {
+      "id": "gow-ambito-de-frente-de-trabajo",
+      "name": "Ámbito de frente de trabajo",
+      "anchor": "#gow-ambito-de-frente-de-trabajo",
+      "equivalent_to": [
+        "Ámbito",
+        "Ámbito de OCP"
+      ],
+      "meaning": "Equivalent phrasing with FT context; does not create an extra FT or directory."
+    },
+    {
+      "id": "gow-ambito-de-ocp",
+      "name": "Ámbito de OCP",
+      "anchor": "#gow-ambito-de-ocp",
+      "equivalent_to": [
+        "Ámbito",
+        "Ámbito de frente de trabajo"
+      ],
+      "meaning": "Equivalent phrasing with persistence context; does not assert that the scope and OCP are identical or require a dedicated OCP."
+    }
+  ],
+  "validation": {
+    "json_embedded_parse": "PASS",
+    "javascript_syntax_compile": "PASS_COMPILE_ONLY",
+    "static_duplicate_ids": 0,
+    "terms_and_anchors_added": 3,
+    "readback_dug_exact": true,
+    "readback_metadata_exact": true,
+    "readback_entrypoints_exact": true,
+    "browser_render": "NOT_RUN",
+    "dynamic_crosslink_audit": "NOT_RUN",
+    "notion_mirror": "NOT_UPDATED_NOT_READ_BACK",
+    "native_ipz": "NOT_WRITTEN_OR_VERIFIED",
+    "spdf_e2e": "PENDING_NO_REAL_ATTACHMENT",
+    "second_authorized_instance_recovery": "NOT_TESTED",
+    "github_actions": "NOT_QUERIED_NOT_RUN"
+  },
+  "updated_files": [
+    {
+      "path": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.html",
+      "blob": "aea6628f3e3b117468ef70a8655ebfac124a522d",
+      "commit": "a563e6c9a0ac3eb58d31c498af40342fa7a01d0d"
+    },
+    {
+      "path": "gobernanza/GLOSARIO-WORKSPACE.fuente.json",
+      "blob": "584218cb4e677916c0707c20e600e5fd6f9277b6",
+      "commit": "f5b2088153453bf6866c7efcf63338a203efec42"
+    },
+    {
+      "path": "INICIO.md",
+      "blob": "7635907225483c67fa2f8618b2dabd0f7661e57a",
+      "commit": "d974b183f9c858292cbf526b5bfa4e9a03e4b6d1"
+    },
+    {
+      "path": "frentes/metacanon/README.md",
+      "blob": "f3382a250be53dd1ec4f3f54e87b5b8af831ca42",
+      "commit": "17ab01f33048718dfbb9f8deb4c96bed5b635fde"
+    },
+    {
+      "path": "frentes/gobernanza/README.md",
+      "blob": "9359823d8fe3de388a55d0635eef0c2e039e7bb6",
+      "commit": "a520245700d52b3c7357f668516c427c29cf130d"
+    },
+    {
+      "path": "frentes/gobernanza/CONTROL-RESPONSABILIDAD.json",
+      "blob": "3d694f9ea41a7b82f2f06c992e54c34ed9098cae",
+      "commit": "b35447cc8157601f38aa510dde20866b864fe091"
+    },
+    {
+      "path": "frentes/gobernanza/GOBERNANZA.md",
+      "blob": "852a889211b8412c9a4434488c4bb24f3e08fddc",
+      "commit": "31c4cf6c30ba9da07e67c9816d6497286d5fa68c"
+    },
+    {
+      "path": "frentes/gobernanza/PENDIENTES.md",
+      "blob": "c72beda66418eccd1e14f698533c5c2414b9c2a9",
+      "commit": "a1bc624ef8097b4cae0f96124370cc5bc4d53502"
+    }
+  ],
+  "open_items": [
+    "Browser render and full dynamic anchor/reciprocal-link audit not executed.",
+    "Notion mirror not updated or read back; continuous synchronization not verified.",
+    "Native ChatGPT Custom Instructions/IPZ field not written/read back.",
+    "Real attachment SPDF E2E and recovery by second authorized instance remain pending."
+  ]
+}
