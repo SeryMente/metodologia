@@ -5,7 +5,17 @@
 **OCP:** `frentes/gobernanza/`.  
 **Evento de apertura:** `C-GOBERNANZA-INICIO-01`.  
 **Ciclo:** `C-20261028-4B81D65C`.  
-**Sesión inicial:** `SES-20261028-3F2B7A91`, generación 1.
+**Sesión inicial (histórica):** `SES-20261028-3F2B7A91`, generación 1.
+**Titular actual:** `chatgpt-C-GOBERNANZA-RETOMA-02-SES-20261028-GV3K8P6Q` (alias operativo, no ID nativo).
+**Instancia actual:** `chatgpt-gobernanza-retoma-2026-10-28-GV3K8P6Q`.
+**Sesión actual:** `SES-20261028-GV3K8P6Q`, generación 3; ciclo `C-20261028-94B6C2D8`.
+**Control actual leído de vuelta:** blob `c15403adde2ec480f81955cdba0458065bb50611`, commit de evidencia de verificación `a760933d81c7d75d53a60a613492e5b2188274b6`.
+
+## Estado vivo de la retoma · C-GOBERNANZA-RETOMA-02 · 2026-10-28
+
+La titularidad de Gobernanza se transfirió mediante compare-and-swap por SHA y lectura de vuelta: generación 2 → 3. DUG vigente v358 · NX-358m, Metacanon 1.23, GOW 2.7; fuente blob 89a28e4d05f5baab9c4b86abdb9fbfc532690c75. El chequeo estático de la capa HTML fuera de los scripts encontró 27 IDs, cero duplicados y cero destinos de fragmento ausentes. No es una prueba de navegador ni cierra la auditoría dinámica.
+
+El último ciclo previo tiene crónica y evidencia, pero no se localizó su salida final dedicada; la única salida final antigua corresponde a la apertura v345 y no se presenta como la más reciente. Véase [crónica de retoma](cronica/C-GOBERNANZA-RETOMA-02.md), [evidencia](evidencias/C-GOBERNANZA-RETOMA-02.json), [salida](entregas/CHATGPT-v0.3/C-GOBERNANZA-RETOMA-02-salida-final.md) y [diálogo disponible](conversaciones/C-GOBERNANZA-RETOMA-02-dialogo.jsonl).
 
 ## Propósito y límite
 
@@ -13,7 +23,7 @@ Este frente separado se ocupa inicialmente del mantenimiento operativo, integrid
 
 [`gobernanza/METAPROMPT-CANONICO-SAMANTHA.html`](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html)
 
-El OCP previo `frentes/metacanon/` mantiene su nombre y su control. **Metacanon** sigue nombrando el método (v1.21, `METACANON-OBJETOS-v1.21`); **Gobernanza** es el nuevo nombre de este frente separado. Este núcleo registra estado de trabajo y no duplica las normas del HTML ni constituye una fuente normativa paralela.
+El OCP previo `frentes/metacanon/` mantiene su nombre y su control. **Metacanon** sigue nombrando el método (v1.23, integrado en el DUG vigente); **Gobernanza** es el nuevo nombre de este frente separado. Este núcleo registra estado de trabajo y no duplica las normas del HTML ni constituye una fuente normativa paralela.
 
 ## Fuente canónica observada al abrir el frente · registro histórico
 
