@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Trazabilidad semántica · vínculo de instrucción a resultado · v1.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "trace_id",
+    "source_ref",
+    "classification",
+    "literal_excerpt",
+    "result_refs",
+    "status"
+  ],
+  "properties": {
+    "trace_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_ref": {
+      "type": "string",
+      "minLength": 1,
+      "description": "ID de registro E o extracto importado con procedencia declarada."
+    },
+    "classification": {
+      "enum": [
+        "instruccion",
+        "restriccion_de_alcance",
+        "criterio_de_cierre",
+        "requisito_funcional",
+        "decision_terminologica",
+        "contexto_no_esencial",
+        "contexto_no_esencial_fuera_de_alcance",
+        "restriccion_de_diseno"
+      ]
+    },
+    "literal_excerpt": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Extracto literal; no se inserta la etiqueta dentro del original."
+    },
+    "result_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "status": {
+      "enum": [
+        "verificada",
+        "parcial",
+        "pendiente",
+        "bloqueada",
+        "no_verificada",
+        "documentada_no_normativa"
+      ]
+    }
+  }
+}
