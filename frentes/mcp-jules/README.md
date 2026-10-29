@@ -1,23 +1,25 @@
 # Frente MCP Jules · índice
 
-**Ciclo vigente:** [C-MCP-JULES-005 · transferencia de responsabilidad](cronica/C-MCP-JULES-005.md). Núcleo `OBJETO-CANONICO.md`, titularidad en generación 2.
+**Ciclo vigente:** [C-MCP-JULES-006 · planeación integral v1.0](cronica/C-MCP-JULES-006.md). Núcleo `OBJETO-CANONICO.md`, titularidad en generación 2.
 
 Este es el índice de navegación del frente MCP Jules. El único estado vivo está en [OBJETO-CANONICO.md](OBJETO-CANONICO.md); la titularidad y la generación solo proceden de [CONTROL-RESPONSABILIDAD.json](CONTROL-RESPONSABILIDAD.json). No crear un segundo estado.
 
 ## Entrada operativa
-1. [Objeto canónico](OBJETO-CANONICO.md) — propósito, alcance, aceptación y estado vivo.
-2. [Plan integral MCP Jules v1.0](PLAN-INTEGRAL-MCP-JULES-v1.0.md) — planeación completa del componente, contratos, arquitectura, seguridad y aceptación.
-2. [Control de responsabilidad](CONTROL-RESPONSABILIDAD.json) — titularidad de este frente independiente.
-3. [Instrucción original](originales/C-MCP-JULES-001-operador.txt).
-4. [Investigación técnica](fuentes/INVESTIGACION-API-JULES-CHATGPT.md).
-5. [Plan de aceptación](pruebas/PLAN-ACEPTACION-MVP.md).
-6. [Contrato del asistente MCP](prompts/ASISTENTE-MCP.md).
-7. [Contrato de prompts a Jules](prompts/JULES-CONSTRUCTOR.md).
-8. [Guía de replicación](replicacion/GUIA-REPLICACION-FRENTES.md).
-9. [Crónica inicial](cronica/C-MCP-JULES-001.md).
-10. [Implementación candidata y estado de CI](cronica/C-MCP-JULES-002.md).
-13. [C-MCP-JULES-004](cronica/C-MCP-JULES-004.md) — diagnóstico canónico y PR vigente.
-12. [Khora PR #338](https://github.com/SeryMente/khora/pull/338), candidato vigente, y [Metacanon PR #19](https://github.com/SeryMente/metodologia/pull/19), ambos en borrador. [PR #337](https://github.com/SeryMente/khora/pull/337) quedó cerrado sin merge por desfase del SHA.
+1. [Objeto canónico](OBJETO-CANONICO.md) — propósito, alcance y estado vivo.
+2. [Plan integral MCP Jules v1.0](PLAN-INTEGRAL-MCP-JULES-v1.0.md) — línea base de diseño.
+3. [Control de responsabilidad](CONTROL-RESPONSABILIDAD.json) — titularidad del frente independiente.
+4. [Instrucción original](originales/C-MCP-JULES-001-operador.txt).
+5. [Investigación técnica](fuentes/INVESTIGACION-API-JULES-CHATGPT.md).
+6. [Plan de aceptación MVP](pruebas/PLAN-ACEPTACION-MVP.md).
+7. [Contrato del asistente MCP](prompts/ASISTENTE-MCP.md).
+8. [Contrato de prompts a Jules](prompts/JULES-CONSTRUCTOR.md).
+9. [Guía de replicación](replicacion/GUIA-REPLICACION-FRENTES.md).
+10. [Crónica de creación C-MCP-JULES-001](cronica/C-MCP-JULES-001.md).
+11. [Crónica de implementación candidata C-MCP-JULES-002](cronica/C-MCP-JULES-002.md).
+12. [Diagnóstico de CI C-MCP-JULES-004](cronica/C-MCP-JULES-004.md).
+13. [Transferencia de titularidad C-MCP-JULES-005](cronica/C-MCP-JULES-005.md).
+14. [Decisión de fase y plan v1.0 C-MCP-JULES-006](cronica/C-MCP-JULES-006.md).
+15. [Khora PR #338](https://github.com/SeryMente/khora/pull/338), candidato de implementación, y [Metodología PR #19](https://github.com/SeryMente/metodologia/pull/19), documentación; ambos siguen en borrador. [Khora PR #337](https://github.com/SeryMente/khora/pull/337) quedó cerrado sin merge por desfase del SHA.
 
 ## Relación entre documentación y código
 El OCP vive en `SeryMente/metodologia/frentes/mcp-jules/`. El servidor MCP y el adaptador se integran en el único servidor existente de `SeryMente/khora`. Los repositorios se versionan por separado, y los cambios no se consideran publicados hasta leer de vuelta la rama/PR/merge correspondiente.
