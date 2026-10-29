@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Tarea común Tareas v1.0 (candidato operativo)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "task_id",
+    "statement",
+    "origin_ref",
+    "status"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Identidad estable de la tarea al persistirla."
+    },
+    "statement": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Enunciado breve y fiel del trabajo solicitado."
+    },
+    "origin_ref": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Referencia recuperable al mensaje o fuente original."
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pendiente",
+        "en_curso",
+        "completada",
+        "cancelada"
+      ]
+    },
+    "scope_ref": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Referencia opcional, solo si el contexto no delimita claramente el frente o ámbito."
+    },
+    "priority": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Orden relativo en la sesión actual: 1 significa trabajar primero. Omitir cuando no haga falta comparar tareas o no haya base para ordenar."
+    }
+  }
+}
