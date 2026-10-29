@@ -1,0 +1,134 @@
+{
+  "schema": "ser-y-mente-cycle-evidence/v1",
+  "event_id": "C-TAREAS-ESTANDAR-REUTILIZABLE-01",
+  "cycle_folio": "C-20261028-8B4D930F",
+  "session_folio": "SES-20261028-TA6F31C9",
+  "recorded_on": "2026-10-28",
+  "status": "CANDIDATO_V0.1_MATERIALIZADO_Y_RELEIDO; NO_CANONIZADO",
+  "scope": "Diseño de un estándar común de tarea reutilizable entre ámbitos, con extensiones específicas por dominio",
+  "canonical_source": {
+    "repository": "SeryMente/metodologia",
+    "branch": "main",
+    "path": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.html",
+    "blob_sha": "b2ff2845a5a99dc4ce3cafafc4f8e43607d48145",
+    "readback_verified": true,
+    "dug_version": "v359",
+    "signature": "NX-359m",
+    "metacanon_version": "1.24",
+    "gow_version": "2.8",
+    "terms": 109,
+    "taxonomy_version": "1.3",
+    "principles": 41,
+    "annexes": 16,
+    "canonical_functional_scopes": [
+      "Persistencia documental",
+      "Gestión conversacional"
+    ],
+    "purpose_canonical_element": true,
+    "tasks_canonical": false
+  },
+  "identifiers": {
+    "owner_alias": "chatgpt-C-TAREAS-INICIO-01-SES-20261028-TA6F31C9",
+    "instance": "chatgpt-tareas-inicio-2026-10-28-TA6F31C9",
+    "generation": 1,
+    "identity_kind": "alias operativo y folio de sesión, no ID nativo de ChatGPT"
+  },
+  "collision_check": {
+    "search_candidates": [
+      "C-TAREAS-ESTANDAR-REUTILIZABLE-01",
+      "C-20261028-8B4D930F",
+      "SES-20261028-TA6F31C9",
+      "chatgpt-C-TAREAS-INICIO-01-SES-20261028-TA6F31C9"
+    ],
+    "exact_search_counts": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "visible_controls_scanned": 9,
+    "collisions_found": 0,
+    "limitation": "La búsqueda exacta y nueve controles accesibles no prueban unicidad global ni exclusión técnica de escritores fuera del conjunto consultado."
+  },
+  "decision": {
+    "recommendation": "Adoptar un contrato semántico mínimo de tarea, separado del subsistema gestor y extensible mediante perfiles versionados por dominio.",
+    "contract_elements": [
+      "identidad estable",
+      "título accionable",
+      "procedencia",
+      "alcance/contexto",
+      "estado",
+      "resultado esperado",
+      "criterios de aceptación",
+      "siguiente acción",
+      "responsable y prioridad solo si se confirman",
+      "fecha límite explícita",
+      "relaciones tipadas",
+      "bloqueos",
+      "evidencia",
+      "trazabilidad temporal",
+      "extensiones versionadas"
+    ],
+    "storage_neutral": true,
+    "domain_extensions": true,
+    "standard_status": "CANDIDATO v0.1",
+    "canonical_amendment_authorized": false
+  },
+  "artifacts": [
+    {
+      "path": "ambitos/tareas/ESTANDAR-COMUN-DE-TAREA-v0.1.md",
+      "blob_sha": "c335ef76b9a13bfb4af814a5b8f257a6d3976ae7",
+      "commit_sha": "263ceee7d68d573bc0ad316b760e8b53610d81ce",
+      "readback": true
+    },
+    {
+      "path": "ambitos/tareas/ESQUEMA-TAREA-COMUN-v0.1.json",
+      "blob_sha": "f8a8dbb4b90931cc24c91ea7e1af581a85ff81e3",
+      "commit_sha": "04bd562a6c1bdfeaf438c2b43fbfa615e1f9462f",
+      "readback": true,
+      "validation": "JSON.parse PASS; no full JSON Schema validator run"
+    },
+    {
+      "path": "ambitos/tareas/README.md",
+      "blob_sha": "f12314f7132a465720904be7e311018cf575cdb3",
+      "commit_sha": "33dbd0ce1d8cf913fc103d9d4b34382183e2b0ee",
+      "readback": true
+    },
+    {
+      "path": "ambitos/tareas/PENDIENTES.md",
+      "blob_sha": "eacd6fc3713286a828045cc3090f7c576bfc25a2",
+      "commit_sha": "76e7cf343b80b7463eaf307b7b6a3cac03bf6fe1",
+      "readback": true
+    },
+    {
+      "path": "ambitos/tareas/cronica/C-TAREAS-ESTANDAR-REUTILIZABLE-01.md",
+      "blob_sha": "6e8f65555a812ee4a273feaeb1bbf8c2fe57443c",
+      "commit_sha": "8558b142849eda286d061be8f2332501e32721c7",
+      "readback": true
+    },
+    {
+      "path": "ambitos/tareas/conversaciones/C-TAREAS-ESTANDAR-REUTILIZABLE-01-dialogo.jsonl",
+      "blob_sha": "ae432c6540a14faaf004be322b4d6ce701dbcca2",
+      "commit_sha": "e32187a5cf44804955838743494761257bce6ac6",
+      "readback": true,
+      "validation": "JSONL parse PASS; 5 records"
+    },
+    {
+      "path": "ambitos/tareas/entregas/CHATGPT-v1.0/C-TAREAS-ESTANDAR-REUTILIZABLE-01-salida-final.md",
+      "blob_sha": "7c90fb646bdf6ecb559ab4b19098ef43979e4a40",
+      "commit_sha": "167a1dc15a029d05dbee1697d27122aaab9c3449",
+      "readback": true
+    }
+  ],
+  "validation": {
+    "markdown_readbacks": "PASS",
+    "schema_json_parse": "PASS",
+    "schema_draft_2020_12_validation": "NOT RUN",
+    "tasks_end_to_end_test": "NOT RUN",
+    "registry_created": false,
+    "canonical_storage_chosen": false,
+    "external_integrations_tested": false,
+    "native_chatgpt_custom_instructions_written_or_read_back": false,
+    "next_step": "Validar el estándar con dos o tres casos autorizados de naturaleza diferente y eliminar campos innecesarios antes de proponer v1.0."
+  }
+}
