@@ -208,8 +208,8 @@
     },
     {
       "path": "ambitos/tareas/DISEÑO-TAREAS-v1.0.md",
-      "blob_sha": "2dab12c8aa94dab3b3f8748fb98780415f215315",
-      "commit_sha": "a6ed20c622e0df2569139c319338ca5e66cd15dd",
+      "blob_sha": "2730ca77be4daff234e37a1ddeb6ef0c527d2768",
+      "commit_sha": "f4eb5a85cc31f5bdf7eaa7ed1b48cb2554c3f10d",
       "readback": true
     },
     {
@@ -246,7 +246,7 @@
     },
     {
       "path": "ambitos/tareas/evidencias/C-TAREAS-ESTANDAR-MINIMO-02.json",
-      "blob_sha": "ffad61c5ebf9eeac2f5cfabebcfdc230d3525994",
+      "blob_sha": "3d8ce70aaaf2f6a99a10e1dbb86a33e4065798b4",
       "commit_sha": "a2ee57e17fc3be876c158b74dfe5749a9f4cc720",
       "readback": true,
       "json_parse": "PASS"
@@ -266,7 +266,7 @@
     "event_id": "C-TAREAS-ESTANDAR-MINIMO-02",
     "cycle_folio": "C-20261029-4F7A2C91",
     "current_candidate": "ESTANDAR-COMUN-DE-TAREA-v0.2.md",
-    "decision": "Reduce el núcleo a identidad, enunciado, referencia al origen y estado; scope_ref solo cuando haga falta por ambigüedad de contexto.",
+    "decision": "Reduce el núcleo a identidad, enunciado, referencia al origen y estado; scope_ref solo cuando haga falta por ambigüedad de contexto. Antes de mantener Tareas como ámbito, demostrar que aporta una capacidad necesaria frente a mecanismos más simples existentes.",
     "v0_1_preserved_as_historical": true,
     "no_canonical_governance_changes": true,
     "tasks_not_canonized": true
