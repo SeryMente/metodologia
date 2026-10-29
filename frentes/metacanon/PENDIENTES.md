@@ -9,7 +9,7 @@ Primero lo urgente y después la mejora continua. Conservar las notas de lo que 
 ## Urgente
 
 - **CONT-01 · Parcial, banco mecánico verificado y prueba semántica pendiente:** ensayar en un entorno virtual la continuidad de contexto entre conversaciones; iterar sobre los fallos observados. Distinguir pruebas de archivos y recuperación de estado de pruebas semánticas con modelos independientes. No prometer perfección universal.
-- **CONT-02 · Disparador preparado, validación semántica pendiente:** consolidar un prompt universal de reinstanciación que recupere el frente desde la revisión persistida, sin depender de la memoria del chat anterior. Debe cubrir cortes imprevistos y conversaciones limitadas, no solo traspasos planificados.
+- **CONT-02 · Implementado documentalmente en el corte 2026-10-29; validación semántica pendiente:** prompt universal restaurado en la raíz, BCR reconciliado con el DUG integrado v360 y artefacto IPZ actualizado a 1.365 caracteres. La instalación de la IPZ nativa y la prueba en una conversación realmente nueva siguen pendientes; no declarar continuidad universal aceptada.
 - **GOB-01 · Aplicado y cotejado en v333; conserva 34 principios previos:** añadir al metaprompt de Samantha únicamente lo necesario para dar cabida a los frentes y su continuidad, preservando identidad, dinámica y normas existentes. No equivale a autorización para rehacerlo.
 - **PORT-01 · Parcial:** terminar la portabilidad del metacanon. Ya existe el primer bloque documental 1.7 en GitHub; todavía no acredita arranque ligero ni funcionamiento sin acceso a Notion. La dependencia de conectores y el modo de transporte sin conector requieren resolución explícita.
 - **CUST-01 · En curso:** mantener entradas del operador y salidas visibles del asistente en la carpeta del frente, con secuencia y límites de conversación, plataforma y modelo. Archivar metadatos solo cuando sean conocidos; no inferir modelo, rol o persona.
@@ -250,3 +250,12 @@ Estado E2E de este corte: ocho aspectos comprobados en los artefactos/operación
 - **SAM-ATOM-01 · Continúa pendiente:** auditoría de atomicidad, redundancia y longitud de los 40 principios de Sam, sin editar Sam ni modificar sus pesos sin autorización expresa.
 
 - **SI-KHORA-01 · Dependencia externa confirmada:** `SI-METACOGNITIVO.md` permanece completo en la raíz, bajo su banner `GOBIERNO GENERAL SUPERSEDIDO`, únicamente por compatibilidad. Su ruta de archivo es un puntero. El retiro definitivo requiere migrar KHORA desde `CANONICAL_SI_PATH` hacia una identidad de Sam verificable y probar el contrato/runtime; KHORA no se modifica en esta limpieza.
+
+## Actualización C-METACANON-ARRANQUE-360-01 · 2026-10-29
+
+- **Titularidad:** transferencia del frente Metacanon a la conversación receptora verificada por lectura de vuelta; generación 6, folio `SES-20261029-7F4A9C21`, evento `C-METACANON-ARRANQUE-360-01`. El alias es operativo y no un ID nativo. Control posterior SHA `86f0e4fa59e37976704231290b460cf6dc9252b0`; commit del control `4cb58ba1927d858d2c3cffd5f8376c15fee402c4`.
+- **Prompt universal:** el enlace de `INICIO.md` apuntaba a un archivo que no existía en la revisión consultada; el prompt fue creado en la raíz y leído de vuelta, blob `7ef052146416add46260cf9d51eaa34c2fa83caa`.
+- **Bootstrap:** referencias a los antiguos archivos Markdown de Sam/Metacanon/GOW se reconciliaron para apuntar al DUG integrado y se añadió la puerta de arranque común con ART-024. Blob `d5e7bca9225fb040d73ebbeca52e36c8637d3afd`.
+- **IPZ candidata:** contenido actualizado desde el DUG v360 · NX-360m, con ART-024, la comprobación de responsabilidad y el prompt universal; 1.365 caracteres y lectura de vuelta, blob `7400b5109987bcf81301861b666715bf53636468`. La configuración nativa de ChatGPT no es accesible a estas herramientas: instalación/lectura de vuelta **PENDIENTE**.
+- **Prueba de arranque:** revisión mecánica de los archivos en curso; no equivale a prueba semántica en una conversación nueva. CONT-01 y CONT-02 no se cierran integralmente hasta dicha prueba. Sin afirmar sincronización automática ni recepción por otros hilos.
+- **AT:** su estado normativo no se modifica por esta transferencia; no se presenta como ratificado por esta ejecución.
