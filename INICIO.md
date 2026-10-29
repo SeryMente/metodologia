@@ -2,7 +2,7 @@
 
 Punto de entrada del repositorio; no es una fuente normativa.
 
-**Documento Único de Gobernanza:** [DUG · Samantha v358 · NX-358m](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html). Este archivo integra el gobierno general (41 principios), 16 anexos jerarquizados (niveles 1–3), Metacanon v1.23, GOW v2.7 con 108 términos, navegación y revisión interactiva, y la representación estructurada para máquinas. Versión y contadores comprobados en `main` el 2026-10-28.
+**Documento Único de Gobernanza:** [DUG · Samantha v359 · NX-359m](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html). Integra 41 principios, 16 anexos jerarquizados, Metacanon 1.24, GOW 2.8 con 109 términos, taxonomía estructural 1.3, navegación y representación estructurada. Fuente y contadores releídos en `main` el 2026-10-28.
 
 La sección humana gobierna la representación estructurada incorporada en el mismo archivo. No hay documentos normativos paralelos ni sincronización automática implícita con Notion, instrucciones personalizadas, memorias o copias locales. La rama `main` de `SeryMente/metodologia` es la fuente documental; si no puede leerse, declara `METODOLOGÍA NO VERIFICADA`. Las políticas obligatorias, los permisos reales y las autorizaciones aplicables conservan precedencia.
 
@@ -10,9 +10,9 @@ La sección humana gobierna la representación estructurada incorporada en el mi
 
 Consulta el [DUG · Taxonomía estructural de S y M](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-015) y el [inventario multi-repositorio](INVENTARIO-REPOSITORIOS-Y-FRENTES.md) para localizar los OCP conocidos y clasificar recursos por alcance. El inventario declara explícitamente qué repositorios pudieron leerse; no presume cobertura global fuera de ese inventario accesible.
 
-La taxonomía funcional vigente define dos ámbitos al mismo nivel: [Persistencia documental](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#gow-persistencia-documental) y [Gestión conversacional](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#gow-gestion-conversacional). Cada unidad taxonómica es OCP de su nivel; la Metodología, en sentido general y abstracto, es el OCP raíz. La taxonomía puede profundizar en subámbitos de nivel 2 o N cuando se justifique, sin instanciarlos por defecto ni exigir una ubicación física exclusiva. La decisión anterior de situar Contexto como ámbito y padre de Gestión conversacional está revertida.
+La taxonomía separa el plano conceptual del arreglo de infraestructura. **Ámbitos** es una categoría conceptual, no un directorio obligatorio. Los ámbitos funcionales transversales canónicos al mismo nivel son [Persistencia documental](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#gow-persistencia-documental) y [Gestión conversacional](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#gow-gestion-conversacional); [Propósito](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#gow-proposito-de-frente) es un elemento conceptual canónico asociado al alcance de un FT. Puede materializarse como archivo de texto o sección de documento raíz. No se exige `ambitos/` por repositorio OCP. La Metodología abstracta es el OCP raíz; cada OCP se materializa según necesidad y recuperabilidad.
 
-La taxonomía funcional inicial del [ART-020](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-020) define **Contexto (nivel funcional 1) → Gestión conversacional (nivel funcional 2)**. Estos niveles no son la jerarquía documental de anexos; la ubicación jerárquica de otros ámbitos permanece abierta.
+El histórico **Contexto → Gestión conversacional** está supersedido y revertido; no es la taxonomía vigente. [ART-015](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-015) separa el mapa conceptual de la infraestructura, y [ART-020](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-020) distingue los ámbitos funcionales de los elementos conceptuales asociados.
 
 ## Pendientes destacados
 
