@@ -5,7 +5,7 @@ Frente operativo separado para trabajar inicialmente sobre el **documento único
 - Núcleo operativo: [GOBERNANZA.md](GOBERNANZA.md)
 - Pendientes activos: [PENDIENTES.md](PENDIENTES.md)
 - Control único de responsabilidad: [CONTROL-RESPONSABILIDAD.json](CONTROL-RESPONSABILIDAD.json)
-- Fuente normativa única vigente: [DUG · Samantha v357 · NX-357m](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html)
+- Fuente normativa única vigente: [DUG · Samantha v358 · NX-358m](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html)
 - Diálogo literal de apertura: [conversación](conversaciones/C-GOBERNANZA-INICIO-01-dialogo.jsonl)
 - Crónica del ciclo vigente: [C-GOBERNANZA-OCP-UBICUO-REVERSA-CONTEXTO-01](cronica/C-GOBERNANZA-OCP-UBICUO-REVERSA-CONTEXTO-01.md)
 - Recibo verificable del ciclo: [C-GOBERNANZA-OCP-UBICUO-REVERSA-CONTEXTO-01](evidencias/C-GOBERNANZA-OCP-UBICUO-REVERSA-CONTEXTO-01.json)
