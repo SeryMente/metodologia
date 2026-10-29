@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Registro lateral de ciclo conversacional · v1.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "record_id",
+    "conversation_id",
+    "cycle_folio",
+    "side",
+    "sequence",
+    "speaker",
+    "text",
+    "repository_ref",
+    "front_ref",
+    "source_kind"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "record_id": {
+      "type": "string",
+      "pattern": "^C-[0-9]{8}-[A-F0-9]{8}-[ES]$"
+    },
+    "conversation_id": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$",
+      "description": "UUIDv7 estable del registro; no es un ID nativo de la plataforma."
+    },
+    "cycle_folio": {
+      "type": "string",
+      "pattern": "^C-[0-9]{8}-[A-F0-9]{8}$"
+    },
+    "side": {
+      "enum": [
+        "E",
+        "S"
+      ]
+    },
+    "sequence": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "speaker": {
+      "enum": [
+        "operator",
+        "assistant"
+      ]
+    },
+    "text": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Texto literal, sin correcciones ni normalización."
+    },
+    "repository_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "front_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_kind": {
+      "enum": [
+        "live_user_message",
+        "visible_final_response"
+      ]
+    },
+    "native_platform_conversation_id": {
+      "type": "string"
+    },
+    "native_platform_message_id": {
+      "type": "string"
+    },
+    "visible_auxiliary_outputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "sequence",
+          "text"
+        ],
+        "properties": {
+          "sequence": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  }
+}
