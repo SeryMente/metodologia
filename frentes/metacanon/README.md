@@ -5,7 +5,13 @@ Este README es un índice de navegación, **no un segundo estado vivo**. El mét
 
 Este README es un índice y no sustituye la fuente normativa. **Corte normativo releído el 2026-10-29:** DUG v360 · NX-360m, Metacanon 1.24, GOW 2.9 (111 términos, 17 anexos jerarquizados), taxonomía 1.3. ART-015 separa taxonomía conceptual e infraestructura; Propósito es elemento conceptual canónico y no exige directorio propio. El ciclo actual documentado en este índice es C-METACANON-ARRANQUE-360-01 (2026-10-29); los ciclos anteriores se conservan como historia.
 
-## Último ciclo persistido · C-METACANON-ARRANQUE-360-01
+## Último ciclo persistido · C-METACANON-AUTOARRANQUE-FT-01
+
+Corte del 2026-10-29 · arranque automático por IPZ. [Salida final](entregas/CHATGPT-v0.4/C-METACANON-AUTOARRANQUE-FT-01-salida-final.md) · [Matriz de escenarios](entregas/CHATGPT-v0.4/MATRIZ-ESCENARIOS-INICIO-FT-v0.1.md) · [IPZ candidata 1.266 caracteres](entregas/CHATGPT-v0.4/IPZ-CAMPO-CHATGPT.txt) · [Diálogo literal](conversaciones/C-METACANON-AUTOARRANQUE-FT-01-dialogo.jsonl) · [Crónica](cronica/C-METACANON-AUTOARRANQUE-FT-01.md) · [Evidencia](evidencias/C-METACANON-AUTOARRANQUE-FT-01.json) · [Prompt universal](../../PROMPT-UNIVERSAL-REINSTANTANCIACION.md).
+
+**Estado operativo:** disparador y procedimiento guardados y leídos de vuelta. IPZ nativa y prueba semántica en chat nuevo **PENDIENTES**; no se declara activación global por la existencia del archivo.
+
+## Ciclo anterior · C-METACANON-ARRANQUE-360-01
 
 Corte del 2026-10-29 · Metacanon 1.24. [Salida final](entregas/CHATGPT-v0.3/C-METACANON-ARRANQUE-360-01-salida-final.md) · [Diálogo literal](conversaciones/C-METACANON-ARRANQUE-360-01-dialogo.jsonl) · [Crónica](cronica/C-METACANON-ARRANQUE-360-01.md) · [Evidencia y hashes](evidencias/C-METACANON-ARRANQUE-360-01.json) · [Prompt universal](../../PROMPT-UNIVERSAL-REINSTANTANCIACION.md) · [Prompt de continuidad anterior](entregas/CHATGPT-v0.3/PROMPT-CONTINUIDAD-METODOLOGIA-VERBATIM-E2E-22.txt) · [Inventario de repositorios/frentes](../../INVENTARIO-REPOSITORIOS-Y-FRENTES.md).
 
@@ -29,7 +35,7 @@ El prompt de un solo uso `PROMPT-MIGRACION-HILO-FRESCO-21.txt` corresponde al re
 
 ## Límites persistentes conocidos
 
-- La IPZ candidata v360 se encuentra en `entregas/CHATGPT-v0.3/IPZ-CAMPO-CHATGPT.txt` (1.365 caracteres). El campo nativo de Instrucciones Personalizadas no es legible/escribible por estos conectores; su instalación no está verificada.
+- La IPZ candidata anterior v0.3 se conserva como historia. La versión vigente propuesta es `entregas/CHATGPT-v0.4/IPZ-CAMPO-CHATGPT.txt` (1.266 caracteres); el campo nativo de Instrucciones Personalizadas no es legible/escribible por estas herramientas y requiere instalación única.
 - MCP normativo permanece DESACTIVADO; revisión manual de Sam/GOW.
 - Los ensayos mecánicos no validan comprensión semántica de un modelo independiente ni la aplicación en una conversación realmente nueva.
 - El prompt universal y el BCR son procedimientos de arranque; no constituyen sincronización automática de la IPZ ni garantizan que otros hilos hayan adquirido el DUG vigente.
