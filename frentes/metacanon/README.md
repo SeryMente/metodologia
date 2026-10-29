@@ -3,7 +3,7 @@
 Este README es un índice de navegación, **no un segundo estado vivo**. El método canónico Metacanon está integrado en el [DUG](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#metacanon), §9; la titularidad/folio solo se obtiene de `CONTROL-RESPONSABILIDAD.json`. Si hay discrepancia, relee esas fuentes desde `main` y no infieras qué copia prevalece.
 
 
-Este README es un índice y no sustituye la fuente normativa. **Corte normativo releído el 2026-10-29:** DUG v360 · NX-360m, Metacanon 1.24, GOW 2.9 (111 términos, 17 anexos jerarquizados), taxonomía 1.3. ART-015 separa taxonomía conceptual e infraestructura; Propósito es elemento conceptual canónico y no exige directorio propio. El último ciclo local de Metacanon enumerado aquí es anterior a este cambio de Gobernanza.
+Este README es un índice y no sustituye la fuente normativa. **Corte normativo releído el 2026-10-29:** DUG v360 · NX-360m, Metacanon 1.24, GOW 2.9 (111 términos, 17 anexos jerarquizados), taxonomía 1.3. ART-015 separa taxonomía conceptual e infraestructura; Propósito es elemento conceptual canónico y no exige directorio propio. El ciclo actual documentado en este índice es C-METACANON-ARRANQUE-360-01 (2026-10-29); los ciclos anteriores se conservan como historia.
 
 ## Último ciclo persistido · C-METACANON-ARRANQUE-360-01
 
