@@ -3,6 +3,8 @@
 Este README es un índice de navegación, **no un segundo estado vivo**. El método canónico Metacanon está integrado en el [DUG](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#metacanon), §9; la titularidad/folio solo se obtiene de `CONTROL-RESPONSABILIDAD.json`. Si hay discrepancia, relee esas fuentes desde `main` y no infieras qué copia prevalece.
 
 
+Este README es un índice y no sustituye la fuente normativa. **Corte normativo releído el 2026-10-28:** DUG v359 · NX-359m, Metacanon 1.24, GOW 2.8 (109 términos), taxonomía 1.3. ART-015 separa taxonomía conceptual e infraestructura; Propósito es elemento conceptual canónico y no exige directorio propio. El último ciclo local de Metacanon enumerado aquí es anterior a este cambio de Gobernanza.
+
 ## Último ciclo persistido · C-METACANON-TAXONOMIA-REPOSITORIOS-25
 
 Corte del 2026-10-22 · Metacanon v1.21. [Salida final](entregas/CHATGPT-v0.3/C-METACANON-TAXONOMIA-REPOSITORIOS-25-salida-final.md) · [Dictado literal](conversaciones/C-METACANON-TAXONOMIA-REPOSITORIOS-25-dialogo.jsonl) · [Crónica](cronica/C-METACANON-TAXONOMIA-REPOSITORIOS-25.md) · [Evidencia y hashes](evidencias/C-METACANON-TAXONOMIA-REPOSITORIOS-25.json) · [Prompt de reinstanciación fresca](entregas/CHATGPT-v0.3/PROMPT-REINSTANTIACION-METACANON-M25.txt) · [Inventario de repositorios/frentes](../../INVENTARIO-REPOSITORIOS-Y-FRENTES.md).
@@ -11,10 +13,10 @@ Corte del 2026-10-22 · Metacanon v1.21. [Salida final](entregas/CHATGPT-v0.3/C-
 ## Arranque recomendado para un hilo nuevo
 
 1. [INICIO.md](../../INICIO.md) — puerta de entrada canónica.
-2. [Gobierno general de Samantha](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#gobierno-general) — DUG v358 · NX-358m.
-3. [Metacanon integrado en el DUG](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#metacanon) — v1.23; leer LEER PRIMERO, §9, §§29–51 y §4.
-4. [GOW integrado en el DUG](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#glosario) — v2.7; 108 términos y 16 anexos jerarquizados; revisar al inicio y cierre.
-5. [Taxonomía estructural de S y M](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-015) — ART-015 global; ART-020 define Persistencia documental y Gestión conversacional al mismo nivel funcional, con subámbitos de nivel 2..N como posibilidad no instanciada; la Metodología abstracta es el OCP raíz y cada nivel taxonómico es OCP sin implicar ruta física exclusiva. ART-016 a ART-022 por entidad y ámbito; ART-014 para procedimiento SPDF.
+2. [Gobierno general de Samantha](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#gobierno-general) — DUG v359 · NX-359m.
+3. [Metacanon integrado en el DUG](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#metacanon) — v1.24; leer LEER PRIMERO, §9, §§29–51 y §4.
+4. [GOW integrado en el DUG](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#glosario) — v2.8; 109 términos y 16 anexos jerarquizados; revisar al inicio y cierre.
+5. [Taxonomía estructural de S y M](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-015) — ART-015 global; ART-020 distingue Persistencia documental y Gestión conversacional como ámbitos funcionales transversales de Propósito como elemento conceptual canónico asociado al alcance de un FT. Ámbitos es categoría conceptual, no un directorio obligatorio; Propósito puede ser archivo o sección raíz. La Metodología abstracta es el OCP raíz y el OCP no impone ruta física exclusiva. ART-016 a ART-022 por entidad/elemento; ART-014 para procedimiento SPDF.
 6. [Control de responsabilidad](CONTROL-RESPONSABILIDAD.json) y [pendientes](PENDIENTES.md).
 7. [Checklist de los nueve requisitos verbatim](entregas/CHATGPT-v0.3/CHECKLIST-VERBATIM-21.md) y [diálogo literal de origen](conversaciones/C-METODOLOGIA-AUDITORIA-REQUISITOS-20-dialogo.jsonl).
 8. [Salida persistida previa M24 — auditoría del repositorio](entregas/CHATGPT-v0.3/C-METODOLOGIA-AUDITORIA-REPOSITORIO-24-salida-final.md) — reproducir literalmente en la primera respuesta del nuevo hilo, con procedencia; si no se lee, declarar NO DISPONIBLE. [Diálogo verbatim](conversaciones/C-METODOLOGIA-AUDITORIA-REPOSITORIO-24-dialogo.jsonl) · [Crónica](cronica/C-METODOLOGIA-AUDITORIA-REPOSITORIO-24.md) · [Evidencia/hash](evidencias/C-METODOLOGIA-AUDITORIA-REPOSITORIO-24.json).
