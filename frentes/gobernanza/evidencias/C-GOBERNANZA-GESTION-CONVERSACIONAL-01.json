@@ -112,7 +112,8 @@
       "blob": "2161cd863b9cb9a40e7f066b363364c2c090e35b"
     },
     "frentes/gobernanza/PENDIENTES.md": {
-      "blob": "a38e70570c49f348a8965b3f7429d7f2df829647"
+      "blob": "de2c1ed4e1f24fb5f7273b07c07bd73f06e4055e",
+      "checked": "GOV-GC-01 marcado cerrado para este alcance; GOV-AT-01 permanece abierto y se conserva la discrepancia de Tareas como asunto separado."
     }
   },
   "verbatim_registry": {
@@ -141,5 +142,14 @@
     "semantic_traceability": "CERRADO PARA CONTRATO Y MATERIALIZACIÓN INICIAL v1.0",
     "next_objective": "Volver a Tareas; resolver por separado la discrepancia preexistente entre documentación que referencia v0.2 y el candidato operativo v1.0."
   },
-  "main_head_before_evidence": "9ed3040261466fbe2bada21d29e8e6ba088ef617"
+  "main_head_before_evidence": "9ed3040261466fbe2bada21d29e8e6ba088ef617",
+  "verification_final": {
+    "status": "READBACK_RECHECKED_AFTER_PENDING_INDEX_UPDATE",
+    "pending_blob": "de2c1ed4e1f24fb5f7273b07c07bd73f06e4055e",
+    "pending_mentions_gc_close": true,
+    "pending_at_still_open": true,
+    "dialogue_pair_consistency": "E literal equals the current user message; S equals saved final-output artifact; visible auxiliary outputs are stored separately.",
+    "no_changes_to_tasks_artifacts": true,
+    "no_changes_to_lisa_notion": true
+  }
 }
