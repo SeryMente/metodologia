@@ -1,0 +1,138 @@
+{
+  "event": "C-GOBERNANZA-OCP-UBICUO-REVERSA-CONTEXTO-01",
+  "cycle_folio": "C-20261028-E025C250",
+  "date_local": "2026-10-28",
+  "timezone": "America/Mexico_City",
+  "repository": "SeryMente/metodologia",
+  "branch": "main",
+  "authorization": "Explicit operator instruction in the current conversation to define OCP as ubiquitous at every taxonomic level, with abstract Methodology as root OCP; supersede and reverse Contexto as a scope and its parent relation to Gestión conversacional; retain only Persistencia documental and Gestión conversacional as current scopes; preserve future subscopes level 2..N as possible but uninstantiated; and add a concise definition field separate from terminology equivalences.",
+  "prior_decision": {
+    "event": "C-GOBERNANZA-CONTEXTO-GESTION-CONVERSACIONAL-01",
+    "status": "SUPERSEDED_AND_REVERTED",
+    "prior_dug": "v356 · NX-356m",
+    "prior_blob": "c364e179e8e9b6a3d566a8e690dfa1a7cce91798",
+    "prior_commit": "706e02a0dc0074e751667de8033d09411fad5ad9",
+    "prior_functional_hierarchy": [
+      "Contexto · level 1",
+      "Gestión conversacional · level 2 child of Contexto"
+    ],
+    "current_rule": "Contexto is no longer a current functional scope or parent; the prior chronicle remains historical evidence only."
+  },
+  "current": {
+    "dug_version": "v357 · NX-357m",
+    "dug_path": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.html",
+    "dug_blob": "87627e52a4cd5227b6a011cb4ba87a5289ce836d",
+    "dug_commit": "1cf0f767a7771db52a48ac59dd8b51fc914d9620",
+    "metacanon_version": "1.23",
+    "metacanon_seal": "METACANON-OBJETOS-v1.23",
+    "gow_version": "2.7",
+    "gow_terms": 108,
+    "taxonomy_version": "1.2",
+    "principles": 41,
+    "annexes": 16
+  },
+  "ocp_definition": {
+    "term": "Objeto Canónico de Persistencia (OCP)",
+    "field": "definition",
+    "definition": "Un OCP es el objeto canónico de persistencia correspondiente a un nivel de la taxonomía. La Metodología en sentido general y abstracto es el OCP raíz; la organización, cada repositorio, cada frente, cada ámbito y cada subámbito también son OCP de su propio nivel. OCP no es un nivel adicional ni implica una carpeta, repositorio o sincronización exclusivos. La identidad taxonómica y su materialización física se determinan por separado.",
+    "aliases_and_equivalences_separate_from_definition": true
+  },
+  "functional_scopes": [
+    {
+      "level": "current functional level",
+      "name": "Persistencia documental",
+      "term_id": "gow-persistencia-documental",
+      "annex": "ART-022",
+      "operational_specification": "ART-014",
+      "definition": "Conservación y recuperación verificable de documentos, diferenciando originales, derivados, manifiesto y evidencia."
+    },
+    {
+      "level": "current functional level",
+      "name": "Gestión conversacional",
+      "term_id": "gow-gestion-conversacional",
+      "annex": "ART-020",
+      "definition": "Identificación, registro, organización y recuperación de conversaciones de trabajo y continuidad a partir de registros disponibles."
+    }
+  ],
+  "future_subscopes": {
+    "allowed": true,
+    "levels": "2..N",
+    "status": "POTENTIAL_NOT_INSTANTIATED",
+    "rule": "Only define subscopes when a bounded need justifies them; do not create them by symmetry."
+  },
+  "taxonomy_distinction": {
+    "artifact": "ART-020",
+    "artifact_title": "Taxonomía estructural de ámbitos funcionales",
+    "annex_level": 2,
+    "parent_id": "ART-015",
+    "rule": "The annex's document-hierarchy level is distinct from the functional-scope hierarchy; ART-020 remains a document-level 2 child of ART-015."
+  },
+  "updated_files": [
+    {
+      "path": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.html",
+      "blob": "87627e52a4cd5227b6a011cb4ba87a5289ce836d",
+      "commit": "1cf0f767a7771db52a48ac59dd8b51fc914d9620"
+    },
+    {
+      "path": "frentes/gobernanza/CONTROL-RESPONSABILIDAD.json",
+      "blob": "49d8cfa53043655f369c5ce21fdca0f94dfaa04d",
+      "commit": "3b41996b20646d65fd0717189bc94945cfb36a70"
+    },
+    {
+      "path": "gobernanza/GLOSARIO-WORKSPACE.fuente.json",
+      "blob": "a4945d56e210a8dc167eb95d4540184b1ca9ac22",
+      "commit": "a9bce8b244bc9b6bbf4da6b7ec7b15db0b7f459d"
+    },
+    {
+      "path": "INICIO.md",
+      "blob": "7053edd354f7a1d63e10891b1fb1566eccb250ed",
+      "commit": "d42292355e0f51c5c5ad9508130b1eaa8d124253"
+    },
+    {
+      "path": "frentes/metacanon/README.md",
+      "blob": "4b10d79404eb4be3d17d90e7097d07f8fa8e1795",
+      "commit": "1540f196652bbd84d1dcc19c67c0918d384e6163"
+    },
+    {
+      "path": "frentes/gobernanza/README.md",
+      "blob": "255affc88a91b2dfaabac3fc696988c0f956b275",
+      "commit": "0094b4a9a5e61a2a30b54bc28419922c609feacd"
+    },
+    {
+      "path": "frentes/gobernanza/PENDIENTES.md",
+      "blob": "98fc4b5f828211100a05439a8c708ae22c4318b6",
+      "commit": "225ceb78a89a7f0b8e1711a85b718ecabaf586a1"
+    },
+    {
+      "path": "frentes/gobernanza/GOBERNANZA.md",
+      "blob": "d7597458b06dedca0eb7dd6013af0da82c01c099",
+      "commit": "ca9c7cc7e5cc9f09e9ff76763bcd6521ebd799d5"
+    },
+    {
+      "path": "frentes/gobernanza/cronica/C-GOBERNANZA-OCP-UBICUO-REVERSA-CONTEXTO-01.md",
+      "blob": "cc8dc62419d386cfd9f5f6f18534af0a8decaf28",
+      "commit": "4b4edeb48cfcb5db64ab34d326d8b72ee23764dc"
+    }
+  ],
+  "validation": {
+    "embedded_json_parse": "PASS",
+    "javascript_syntax_compile": "PASS_COMPILE_ONLY",
+    "dug_exact_readback": true,
+    "glossary_human_and_structured_projection": "PASS",
+    "definition_field_distinct_from_equivalences": true,
+    "current_scope_count": 2,
+    "current_scopes_same_level": true,
+    "context_term_id_absent": true,
+    "old_context_parent_relation_marked_superseded": true,
+    "future_subscopes_allowed_but_not_instantiated": true,
+    "static_duplicate_html_ids": 0,
+    "duplicate_content_anchors_in_inspected_area": 0,
+    "support_files_exact_readback": true,
+    "browser_render": "NOT_RUN",
+    "dynamic_crosslink_audit": "NOT_RUN",
+    "notion_mirror": "NOT_UPDATED_NOT_READ_BACK",
+    "native_ipz": "NOT_WRITTEN_OR_VERIFIED",
+    "spdf_e2e": "PENDING_REAL_ATTACHMENT_AND_SECOND_AUTHORIZED_INSTANCE",
+    "github_actions_workflows": "NOT_QUERIED_NOT_RUN"
+  }
+}
