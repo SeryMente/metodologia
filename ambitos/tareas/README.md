@@ -13,6 +13,11 @@ Este directorio es una materialización operativa elegida para trabajar durante 
 
 Tareas se diseña como una capacidad transversal del entorno Ser y Mente/Metodología: puede relacionarse con diversos frentes de trabajo y repositorios. No es, por definición, un frente de trabajo adicional ni un hijo físico de otro frente. La ubicación aquí seleccionada responde a la necesidad concreta de mantener una definición, decisiones, instrucciones y pruebas propias durante la incubación; se reevaluará antes de cualquier ratificación de v1.0.
 
+## Último ciclo de diseño del estándar común
+
+- **C-TAREAS-ESTANDAR-REUTILIZABLE-01 · C-20261028-8B4D930F:** [crónica](cronica/C-TAREAS-ESTANDAR-REUTILIZABLE-01.md) · [evidencia](evidencias/C-TAREAS-ESTANDAR-REUTILIZABLE-01.json) · [salida](entregas/CHATGPT-v1.0/C-TAREAS-ESTANDAR-REUTILIZABLE-01-salida-final.md) · [diálogo](conversaciones/C-TAREAS-ESTANDAR-REUTILIZABLE-01-dialogo.jsonl).
+- [Estándar común de tarea v0.1](ESTANDAR-COMUN-DE-TAREA-v0.1.md) y [esquema JSON candidato](ESQUEMA-TAREA-COMUN-v0.1.json): borradores reutilizables, no canonizados ni validados en producción.
+
 ## Punto de entrada
 
 - [Diseño inicial Tareas v1.0](DISEÑO-TAREAS-v1.0.md): propósito, alcance candidato y arquitectura conceptual/operativa.
