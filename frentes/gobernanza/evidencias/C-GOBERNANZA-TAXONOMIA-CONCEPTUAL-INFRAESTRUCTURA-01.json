@@ -109,8 +109,9 @@
     },
     {
       "path": "frentes/gobernanza/GOBERNANZA.md",
-      "blob_sha": "74185c2d53e17838befd06ac9e0bbecae0ef9d46",
-      "readback": true
+      "blob_sha": "d0afc114a9e3f2f2d645a15fd2f797dc0b413c79",
+      "readback": true,
+      "commit_sha": "57d57056bd3df577695763993349c7d604960ec9"
     },
     {
       "path": "frentes/gobernanza/PENDIENTES.md",
