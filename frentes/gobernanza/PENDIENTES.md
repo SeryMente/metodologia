@@ -2,7 +2,7 @@
 
 ## Estado operativo actualizado · C-GOBERNANZA-TAXONOMIA-ESTRUCTURAL-SYM-01 · 2026-10-28
 
-**Corte vigente:** DUG v354 · NX-354m, blob `695d83ea6913ab3962a87e49b008c366f512e34e`, commit `012eba06f4cd729d9c989862f701a6842aa59a36`; Metacanon 1.22; GOW 2.4 con 102 términos; 41 principios y 16 anexos jerarquizados. JSON de lectura de vuelta parseado, JavaScript operativo aislado compilado por sintaxis, cero IDs estáticos duplicados y 16 marcadores de anexo. La auditoría de navegador/renderizado dinámico no se ejecutó.
+**Corte vigente:** DUG v355 · NX-355m, blob `aea6628f3e3b117468ef70a8655ebfac124a522d`, commit `a563e6c9a0ac3eb58d31c498af40342fa7a01d0d`; Metacanon 1.22; GOW 2.5 con 105 términos; 41 principios y 16 anexos jerarquizados. JSON de lectura de vuelta parseado, JavaScript operativo aislado compilado por sintaxis, cero IDs estáticos duplicados y 16 marcadores de anexo. La auditoría de navegador/renderizado dinámico no se ejecutó.
 
 Los estados iniciales correspondían a la lectura de Samantha v345. Su redacción anterior permanece en el historial Git de este archivo; los puntos siguientes expresan el estado vigente observado.
 
@@ -29,3 +29,7 @@ Los estados iniciales correspondían a la lectura de Samantha v345. Su redacció
 9. **GOV-LINK-02 · PARCIAL.** Se parseó JSON y se compiló el JavaScript operativo aislado; cero IDs estáticos duplicados. No se afirma que todos los enlaces cruzados o retornos sean correctos hasta ejecutar el renderizador/auditoría dinámica en navegador.
 10. **GOV-SPDF-E2E-01 · SIGUE BLOQUEADO.** No hay original adjunto disponible que preservar en este ciclo; no se fabricó documento de prueba. La prueba real de captura, manifiesto, read-back y recuperación por segunda instancia queda pendiente.
 11. **GOV-NOTION-01 · NO VERIFICADO.** El metadato local apunta al blob actual de DUG/GOW v2.4. El espejo de Notion no se actualizó ni se leyó de vuelta; no existe sincronización perpetua comprobada.
+
+
+12. **GOV-GOW-02 · PERSISTIDO Y RELEÍDO.** El GOW v2.5 añade “Ámbito”, “Ámbito de frente de trabajo” y “Ámbito de OCP” como expresiones operativamente intercambiables cuando nombran el mismo alcance. La entrada genérica remite a las dos variantes; cada definición aclara que el calificador no crea un FT/OCP ni cambia por sí solo la ubicación o titularidad. DUG v355 · NX-355m, blob `aea6628f3e3b117468ef70a8655ebfac124a522d`.
+13. **GOV-LINK-03 · PARCIAL.** JSON parseado y JavaScript operativo compilado por sintaxis; la auditoría dinámica de navegador/enlaces todavía no se ejecutó.
