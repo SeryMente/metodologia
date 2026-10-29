@@ -16,6 +16,8 @@ Tareas se diseña como una capacidad transversal del entorno Ser y Mente/Metodol
 ## Punto de entrada
 
 - [Diseño inicial Tareas v1.0](DISEÑO-TAREAS-v1.0.md): propósito, alcance candidato y arquitectura conceptual/operativa.
+- [Instrucciones operativas Tareas v1.0](INSTRUCCIONES-TAREAS-v1.0.md): reglas candidatas de trabajo dentro del ámbito.
+- [Texto candidato IPZ](IPZ-TAREAS-CANDIDATO.txt): propuesta breve no instalada en el campo nativo.
 - [Pendientes y plan de definición](PENDIENTES.md): decisiones abiertas y secuencia de ciclos.
 - [Control de responsabilidad del ámbito](CONTROL-RESPONSABILIDAD.json): titularidad operativa de este OCP.
 - [Crónica del ciclo inaugural](cronica/C-TAREAS-INICIO-01.md).
