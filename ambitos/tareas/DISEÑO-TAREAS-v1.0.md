@@ -8,9 +8,9 @@
 
 ## 1. Propósito candidato
 
-Proveer una capacidad transversal para **identificar, formular, relacionar, priorizar, asignar, ejecutar con seguimiento, verificar y cerrar tareas** dentro del entorno de trabajo Ser y Mente/Metodología, conservando la trazabilidad entre la petición que las origina, el resultado esperado, el estado observado, el siguiente paso y la evidencia de aceptación.
+Proponer una capacidad transversal mínima para **identificar tareas originadas por instrucciones o decisiones explícitas, conservar la referencia a su fuente y registrar su estado**. El alcance concreto del ámbito sigue siendo candidato y debe limitarse a lo que el operador ratifique.
 
-La hipótesis de valor es reducir pérdida de compromisos entre conversaciones y frentes, ambigüedad sobre qué acción sigue, duplicados y cierres declarados sin evidencia. El diseño todavía debe probar que este alcance es coherente, suficientemente acotado y distinto de los ámbitos funcionales existentes.
+La hipótesis de valor —todavía por validar— es evitar que una tarea explícita se pierda o se confunda con la conversación, documento o frente que la originó. No se añaden de partida priorización, asignación, recordatorios, dependencias ni automatización.
 
 ## 2. Identidad taxonómica propuesta
 
@@ -21,15 +21,15 @@ La hipótesis de valor es reducir pérdida de compromisos entre conversaciones y
 - **OCP:** conforme a la regla general vigente, cada entidad taxonómica es el objeto canónico de persistencia de su nivel. La forma y ubicación físicas se deciden por separado.
 - **Materialización operativa de incubación:** ambitos/tareas/, elegida expresamente para mantener el diseño, la responsabilidad, las decisiones y las pruebas de varios ciclos. Es una decisión operativa provisional, no un cambio de ART-019/ART-020 ni una convención normativa general de rutas.
 
-## 3. Alcance incluido candidato
+## 3. Alcance mínimo candidato
 
-1. Capturar una tarea cuando exista una petición o decisión suficientemente clara, conservando la procedencia.
-2. Formularla como una unidad accionable con resultado esperado y criterio observable de aceptación.
-3. Asignar identidad estable y distinguir la tarea de su conversación fuente, documentos, proyecto, FT o subtareas.
-4. Registrar estado, responsable cuando esté confirmado, prioridad cuando se haya decidido, siguiente acción, bloqueos, dependencias y fechas solo cuando sean explícitas o verificadas.
-5. Relacionar tareas con conversaciones, decisiones, frentes, repositorios, documentos, artefactos y tareas dependientes sin duplicar innecesariamente sus fuentes.
-6. Dar seguimiento, detectar vencimientos o bloqueos solo con datos verificables, revisar evidencia y registrar cierre, cancelación o aplazamiento.
-7. Definir contratos para posibles vistas, interfaces e integraciones por plataforma, sin presumir conectividad, permisos ni sincronización.
+1. Identificar una tarea solo cuando exista una acción o compromiso reconocible en una instrucción o decisión explícita.
+2. Registrar un enunciado fiel y una referencia recuperable a su fuente original.
+3. Distinguir la tarea de la conversación, documento o frente que le da contexto.
+4. Registrar uno de cuatro estados sencillos: pendiente, en curso, completada o cancelada.
+5. Añadir una referencia de ámbito solo cuando el OCP, el origen o el contexto no lo hagan inequívoco.
+
+No se presupone prioridad, asignación, fecha límite, siguiente acción, grafo de dependencias, recordatorios, automatización ni integración externa.
 
 ## 4. Exclusiones candidatas
 
@@ -44,40 +44,27 @@ La hipótesis de valor es reducir pérdida de compromisos entre conversaciones y
 
 ## 5. Modelo mínimo de una tarea (candidato)
 
-| Campo | Función candidata | Regla de integridad |
-|---|---|---|
-| task_id | Identidad estable | No reutilizar; política de generación pendiente de ratificación. |
-| title | Acción resumida | Verbo/resultado concreto; evitar título que sea solo un tema. |
-| expected_outcome | Resultado esperado | Debe describir una condición observable. |
-| status | Estado del ciclo de vida | Solo transiciones definidas; el estado debe reflejar evidencia disponible. |
-| origin | Petición/decisión que la origina | Referencia y fecha solo cuando sean observables. |
-| scope_ref | Ámbito, FT o contexto responsable | No inventar el responsable ni confundirlo con el ámbito Tareas. |
-| owner | Responsable confirmado | Puede ser desconocido o pendiente; no inferir una asignación. |
-| priority | Orden relativo de atención | Regla de priorización por definir; no asignar por defecto una prioridad artificial. |
-| next_action | Siguiente paso ejecutable | Una tarea activa sin siguiente paso válido debe detectarse como problema de seguimiento. |
-| due_date | Fecha límite | Solo si fue fijada o confirmada; conservar procedencia. |
-| dependencies / blockers | Relaciones y bloqueos | Referencias explícitas, estado verificable y motivo. |
-| acceptance | Criterio de terminación | Debe permitir revisar si el resultado está completo. |
-| evidence_refs | Evidencias de ejecución/aceptación | Enlaces o rutas recuperables; no sustituir el original. |
-| updated_at / verified_at | Vigencia del registro | Registrar solo fechas de operaciones efectivamente observadas. |
+El [Estándar común de tarea v0.2](ESTANDAR-COMUN-DE-TAREA-v0.2.md) y el [esquema JSON v0.2](ESQUEMA-TAREA-COMUN-v0.2.json) sustituyen como propuesta vigente al primer borrador v0.1. El núcleo contiene solo:
 
-Este esquema es una hipótesis de trabajo; no existe aún un registro canónico ni una integración implementada. Para evitar que cada ámbito invente un esquema incompatible, se abrió el artefacto separado [Estándar común de tarea v0.1](ESTANDAR-COMUN-DE-TAREA-v0.1.md) con su [esquema JSON candidato](ESQUEMA-TAREA-COMUN-v0.1.json). El contrato común debe conservar un núcleo pequeño y permitir perfiles de dominio versionados. La primera prueba con casos reales determinará qué campos se mantienen.
+| Campo | Regla |
+|---|---|
+| `task_id` | Identidad estable, necesaria al persistir la tarea; el mecanismo generador queda pendiente. |
+| `statement` | Enunciado fiel y breve de la tarea, sin requisitos añadidos por inferencia. |
+| `origin_ref` | Referencia recuperable al original que la origina. |
+| `status` | `pendiente`, `en_curso`, `completada` o `cancelada`. |
+| `scope_ref` | Condicional: solo si el contexto de origen no delimita el ámbito con claridad. |
 
-## 6. Ciclo de vida candidato
+No son campos del núcleo: título separado, resultado esperado separado, criterios de aceptación separados, siguiente acción, responsable, prioridad, fecha límite, relaciones, bloqueos, evidencia por campo ni marcas temporales. No se eliminan del método para todos los casos: se dejan fuera del estándar común hasta que una necesidad real o una instrucción expresa justifique alguno.
 
-Flujo inicial para contrastar: **CAPTURADA → POR DEFINIR → DEFINIDA → LISTA → EN CURSO → EN REVISIÓN → COMPLETADA**. Estados laterales posibles: **BLOQUEADA**, **APLAZADA** y **CANCELADA**.
+## 6. Ciclo de vida mínimo candidato
 
-- **CAPTURADA:** hay una petición/decisión de origen, pero todavía puede faltar estructura.
-- **POR DEFINIR:** requiere aclarar resultado, alcance o condición de aceptación.
-- **DEFINIDA:** acción y aceptación son suficientemente claras; aún puede requerir priorización o dependencia.
-- **LISTA:** reúne las condiciones acordadas para comenzar.
-- **EN CURSO:** la ejecución está realmente en marcha; no basta con haber hablado de ella.
-- **BLOQUEADA:** existe un impedimento concreto registrado y un siguiente paso para resolverlo, si se conoce.
-- **EN REVISIÓN:** el resultado candidato está disponible y se coteja contra la aceptación.
-- **COMPLETADA:** la condición de aceptación está demostrada por evidencia accesible o verificación explícita válida.
-- **APLAZADA/CANCELADA:** la decisión y su procedencia quedan registradas; no se confunden con una tarea terminada.
+- **PENDIENTE:** tarea identificada que no consta en curso ni completada.
+- **EN CURSO:** existe evidencia de que el trabajo comenzó.
+- **COMPLETADA:** la solicitud expresada fue atendida según la fuente y la verificación que correspondan.
+- **CANCELADA:** existe una decisión identificable de no continuar.
 
-Las transiciones permitidas, excepciones, recurrencias y reaperturas son pendientes de ciclo. Este mapa no se debe convertir aún en una máquina de estados de producción.
+“Bloqueada”, “aplazada”, “por definir” y “en revisión” no se incorporan al conjunto común inicial. Si algún caso real necesita una distinción adicional, se documentará como propuesta específica y no se ampliará el estándar por anticipación.
+
 
 ## 7. Articulación operativa provisional
 
@@ -89,18 +76,18 @@ La cadena propuesta separa las funciones y la autoridad:
 4. **IPZ — Instrucciones Personalizadas de ChatGPT.** Deben funcionar solo como punto de entrada breve hacia el DUG y el OCP. La existencia de un archivo candidato no equivale a escritura en el campo nativo; esa operación sigue pendiente de capacidad y lectura de vuelta.
 5. **Instrucciones específicas del ámbito.** Este diseño establece el contrato operacional provisional. Tras su validación habrá que separarlo de las reglas largas y generar una versión estable dirigida al agente que trabaje dentro de Tareas.
 6. **Registro y adaptadores por plataforma.** Elegir en ciclos posteriores la fuente de estado por clase de tarea. Evitar doble escritura silenciosa; si una plataforma existente es autoridad para una tarea, el índice Tareas podrá enlazarla en vez de competir con ella.
-7. **Evidencia y recuperación.** Cada cambio de estado relevante debe permitir responder qué cambió, por qué, con qué fuente, quién lo autorizó, cuál es el siguiente paso y cómo se comprobó.
+7. **Procedencia y estado.** Cada cambio de estado debe mantenerse coherente con la fuente disponible y la regla que autorice la operación. Los registros de auditoría/evidencia se conservan donde la metodología los exija, no como campos adicionales obligatorios de toda tarea.
 
 ### Texto candidato para IPZ (no instalado)
 
-> Para gestionar tareas de Ser y Mente/Metodología, consulta la fuente canónica y el diseño vigente del ámbito Tareas en el repositorio SeryMente/metodologia (ruta provisional ambitos/tareas/). Distingue tareas de conversaciones, documentos y frentes de trabajo. No inventes estado, responsable, prioridad, fechas, ejecución ni sincronización. Conserva origen, resultado esperado, siguiente acción y evidencia verificable; respeta los límites y permisos de cada fuente. El repositorio canónico prevalece sobre copias o espejos. Este texto es candidato para revisión y no demuestra que el campo nativo de Instrucciones Personalizadas haya sido actualizado.
+> Para tareas de Ser y Mente/Metodología, consulta la fuente canónica y el diseño vigente de Tareas en SeryMente/metodologia, ruta provisional ambitos/tareas/. Conserva un enunciado fiel, referencia al origen y estado observado; añade referencia de ámbito solo si no está clara por el contexto. No inventes requisitos ni amplíes la instrucción original. El repositorio canónico prevalece sobre copias. Este texto es candidato y no demuestra que el campo nativo de Instrucciones Personalizadas se haya actualizado.
 
 ## 8. Decisiones pendientes para alcanzar una v1.0 aceptada
 
 1. Confirmar propósito, beneficiarios y límites del ámbito.
 2. Ratificar su ubicación taxonómica y su relación horizontal con los dos ámbitos funcionales vigentes.
-3. Validar el modelo mínimo de tarea e identidad estable, deduplicación, relaciones y procedencia.
-4. Validar el ciclo de vida y los criterios de prioridad, fechas, bloqueos, reapertura y cierre.
+3. Validar el modelo mínimo de cuatro campos y la referencia de ámbito condicional; no añadir relaciones, prioridad, fechas o seguimiento adicional sin justificación.
+4. Validar si basta el ciclo de cuatro estados; cualquier campo/estado adicional debe demostrar necesidad en un caso real.
 5. Decidir el registro canónico y qué plataformas, si alguna, serán fuentes de estado para determinados tipos de tarea.
 6. Aprobar las instrucciones específicas del ámbito y el texto de IPZ; verificar el campo nativo cuando la herramienta lo permita.
 7. Probar con tareas reales autorizadas, cubrir estados problemáticos y verificar lectura de vuelta/recuperación.
