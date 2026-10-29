@@ -74,3 +74,10 @@ Por instrucción explícita del operador se actualizó la fuente normativa únic
 - Validación: JSON embebido parseado; compilación sintáctica del JavaScript operativo aislado aprobada; cero IDs duplicados en el HTML estático; 16 marcadores de anexo coinciden con 16 artefactos estructurados.
 - No se ejecutó el renderizado ni la auditoría dinámica del navegador. Notion y el campo nativo IPZ no se actualizaron/verificaron; la prueba SPDF E2E con original real continúa pendiente.
 - Metacanon §46/§51 y los puntos de entrada/inventario se alinearon con v1.22, S y M y el tratamiento de ámbitos funcionales transversales.
+
+
+## Equivalencias operativas de ámbito · C-GOBERNANZA-EQUIVALENCIAS-AMBITO-01 · DUG v355 · NX-355m · 2026-10-28
+
+Por instrucción explícita del operador se añadieron al GOW v2.5 tres términos: **Ámbito**, **Ámbito de frente de trabajo** y **Ámbito de OCP**. Se declaran operativamente intercambiables cuando denotan el mismo alcance delimitado; los calificadores precisan contexto pero no crean un FT, un OCP ni una ubicación obligatorios.
+
+Fuente canónica releída: `gobernanza/METAPROMPT-CANONICO-SAMANTHA.html`, blob `aea6628f3e3b117468ef70a8655ebfac124a522d`, commit `a563e6c9a0ac3eb58d31c498af40342fa7a01d0d`. DUG v355 · NX-355m; Metacanon 1.22; GOW 2.5; 41 principios, 16 anexos y 105 términos. El JSON embebido parsea y el JavaScript operativo superó compilación sintáctica aislada; renderizado dinámico en navegador no ejecutado. Los puntos de entrada y los metadatos se actualizaron y leyeron de vuelta. Notion/IPZ y la prueba SPDF E2E permanecen sin verificación.
