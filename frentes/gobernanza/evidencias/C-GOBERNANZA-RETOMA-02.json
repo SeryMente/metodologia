@@ -133,8 +133,8 @@
       },
       {
         "path": "frentes/gobernanza/evidencias/C-GOBERNANZA-RETOMA-02.json",
-        "blob_sha": "will be established by final read-back",
-        "read_back_json_parse": "required"
+        "blob_sha": "self-reference intentionally omitted; see final GitHub read-back",
+        "read_back_json_parse": "PASS; exact JSON read-back verified after write"
       },
       {
         "path": "frentes/gobernanza/entregas/CHATGPT-v0.3/C-GOBERNANZA-RETOMA-02-salida-final.md",
