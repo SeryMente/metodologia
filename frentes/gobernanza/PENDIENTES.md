@@ -1,6 +1,6 @@
 # Pendientes · Frente Gobernanza
 
-## Estado operativo actualizado · C-GOBERNANZA-TAXONOMIA-CONCEPTUAL-INFRAESTRUCTURA-01 · 2026-10-28
+## Estado operativo actualizado · C-GOBERNANZA-GESTION-CONVERSACIONAL-01 · 2026-10-29
 
 **Corte vigente:** DUG v360 · NX-360m, blob `3cda9d38db1bee76ff0ca752f3ecde8719c70d41`, commit `16f0df3e3b37ec6c6949d6d8c7b4055f5c956782`; Metacanon 1.24; GOW 2.9 con 111 términos; taxonomía estructural 1.3; 41 principios y 17 anexos jerarquizados. Gestión conversacional mantiene su nivel funcional; Registro conversacional y Trazabilidad semántica son componentes internos definidos en ART-024. Tareas continúa en incubación sin canonizar.
 
