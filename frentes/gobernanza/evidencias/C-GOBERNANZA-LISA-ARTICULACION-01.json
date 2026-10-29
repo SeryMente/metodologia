@@ -163,6 +163,28 @@
       "interpretation": "AT es el mecanismo responsable de realizar los cambios que analiza y delimita, en la medida en que las reglas, la titularidad, los permisos, las precondiciones y las compuertas del destino lo permiten o restringen. No es un canal opcional ni un mero recomendador. Si una acción queda prohibida, limitada o sin autorización suficiente, AT debe respetar el límite, dejar evidencia del bloqueo y tramitar la decisión o autorización faltante; no eludir la compuerta.",
       "implementation_scope": "Aclaración conceptual agregada al registro del ciclo; no modificar canon ni páginas de Notion.",
       "status": "DOCUMENTED; NOT_CANONIZED"
+    },
+    "at_v1_0_scope": {
+      "status": "PENDING_DESIGN_CLOSURE",
+      "immediate_goal": "Cerrar la definición operativa de AT v1.0 con la estructura mínima suficiente; no abrir un rediseño más amplio ni presumir implementación o canonización.",
+      "multifaceted_functions": [
+        "observar y analizar el cambio y su impacto",
+        "controlar y limitar el impacto",
+        "mitigar consecuencias no deseadas",
+        "acotar los destinos donde el cambio debe impactar",
+        "dirigir y facilitar la propagación correcta",
+        "realizar los cambios correspondientes dentro de las autorizaciones y restricciones de cada destino",
+        "verificar y registrar el resultado"
+      ],
+      "pending_decomposition_review": {
+        "question": "¿La naturaleza multifacética de la necesidad que AT alivia justifica separar responsabilidades en subcomponentes/submódulos?",
+        "method": "Identificar responsabilidades realmente separables, dependencias, interfaces y evidencia; no crear un módulo por cada verbo ni modularizar por simetría.",
+        "urgency_rule": "Resolver ahora solo en la medida necesaria o urgente para una AT v1.0 coherente y verificable. Si no bloquea el cierre, registrar y diferir como evolución posterior.",
+        "status": "OPEN"
+      },
+      "validation_focus": "Contrastar al menos un cambio que se propague correctamente a los destinos necesarios y otro que deba limitarse/bloquearse por las reglas del destino.",
+      "canonical_status": "NOT_CANONIZED",
+      "implementation_authorized": false
     }
   },
   "validation": {
