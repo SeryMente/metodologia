@@ -11,6 +11,10 @@
 **Sesión actual:** `SES-20261028-GV3K8P6Q`, generación 3; ciclo `C-20261028-94B6C2D8`.
 **Control actual leído de vuelta:** blob `c15403adde2ec480f81955cdba0458065bb50611`, commit de evidencia de verificación `a760933d81c7d75d53a60a613492e5b2188274b6`.
 
+## Ámbito funcional propuesto · Tareas v1.0 · 2026-10-28
+
+El operador instruyó inaugurar el ámbito Tareas y desarrollar una versión inicial conceptual y operativa durante ciclos sucesivos. La materialización de incubación está en [ambitos/tareas/README.md](../../ambitos/tareas/README.md); el diseño y las instrucciones siguen siendo propuestas. DUG v358 · NX-358m continúa siendo la norma vigente y enumera solo Persistencia documental y Gestión conversacional. No se ha modificado el DUG ni el GOW para incorporar Tareas; cualquier enmienda queda pendiente de definición, diff concreto y autorización expresa. La ubicación ambitos/tareas/ es una decisión de persistencia operativa del objeto en incubación, no una nueva regla taxonómica general.
+
 ## Estado de transferencia · C-GOBERNANZA-RETOMA-02 · 2026-10-28 (histórico)
 
 La titularidad de Gobernanza se transfirió mediante compare-and-swap por SHA y lectura de vuelta: generación 2 → 3. DUG vigente v358 · NX-358m, Metacanon 1.23, GOW 2.7; fuente blob 89a28e4d05f5baab9c4b86abdb9fbfc532690c75. El chequeo estático de la capa HTML fuera de los scripts encontró 27 IDs, cero duplicados y cero destinos de fragmento ausentes. No es una prueba de navegador ni cierra la auditoría dinámica.
