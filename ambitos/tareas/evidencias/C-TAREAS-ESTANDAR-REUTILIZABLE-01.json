@@ -147,5 +147,12 @@
     "task_ipz_repository_candidate": "PASS read-back, 1139 chars",
     "native_chatgpt_ipz_field": "NOT WRITTEN OR READ BACK",
     "final_output_literal_in_dialogue": "PASS; the last JSONL record exactly matches the delivery artifact."
+  },
+  "current_supersession": {
+    "current_proposal": "ESTANDAR-COMUN-DE-TAREA-v0.2.md",
+    "current_schema": "ESQUEMA-TAREA-COMUN-v0.2.json",
+    "superseding_event_id": "C-TAREAS-ESTANDAR-MINIMO-02",
+    "superseding_cycle_folio": "C-20261029-4F7A2C91",
+    "status": "La propuesta v0.1 se conserva como evidencia histórica del primer diseño más amplio; no es la propuesta vigente."
   }
 }
