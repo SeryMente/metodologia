@@ -11,7 +11,7 @@
 
 Proponer una capacidad transversal mínima para **identificar tareas originadas por instrucciones o decisiones explícitas, conservar la referencia a su fuente y registrar su estado**. El alcance concreto del ámbito sigue siendo candidato y debe limitarse a lo que el operador ratifique.
 
-La hipótesis de valor —todavía por validar— es evitar que una tarea explícita se pierda o se confunda con la conversación, documento o frente que la originó. No se añaden de partida priorización, asignación, recordatorios, dependencias ni automatización.
+La hipótesis de valor —todavía por validar— es evitar que una tarea explícita se pierda o se confunda con la conversación, documento o frente que la originó. No se añaden de partida priorización, asignación, recordatorios, dependencias ni automatización. Antes de adoptar Tareas como ámbito estable, debe demostrarse que esa capacidad no queda cubierta de forma más simple por los mecanismos existentes; si no añade una necesidad real, no se debe conservar ni canonizar por defecto.
 
 ## 2. Identidad taxonómica propuesta
 
