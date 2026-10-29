@@ -9,6 +9,8 @@
 - [Fuentes verbatim históricos](FUENTES-VERBATIM-ORIGEN.jsonl): extractos de la transcripción aportada por el operador, con procedencia y clasificación.
 - [Ciclo de referencia](../../frentes/gobernanza/conversaciones/C-GOBERNANZA-GESTION-CONVERSACIONAL-01-dialogo.jsonl): entrada/salida literal del ciclo de materialización.
 
+- [Ciclo de reinstanciación universal v360](../../frentes/metacanon/conversaciones/C-METACANON-ARRANQUE-360-01-dialogo.jsonl): solicitud, autorización, resultado y procedencia de la intervención documental del 2026-10-29.
+
 ## Operación
 
 1. Asignar una sola vez un UUIDv7 propio del registro; conservarlo durante las migraciones. No es ID nativo de plataforma.
