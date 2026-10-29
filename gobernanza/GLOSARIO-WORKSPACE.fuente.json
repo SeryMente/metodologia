@@ -2,8 +2,8 @@
   "canonical_source": "https://github.com/SeryMente/metodologia/blob/main/gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#glosario",
   "canonical_repository": "SeryMente/metodologia",
   "canonical_branch": "main",
-  "source_title": "Documento Único de Gobernanza (DUG) · GOW v2.5",
-  "canonical_blob_sha": "aea6628f3e3b117468ef70a8655ebfac124a522d",
+  "source_title": "Documento Único de Gobernanza (DUG) · GOW v2.6",
+  "canonical_blob_sha": "c364e179e8e9b6a3d566a8e690dfa1a7cce91798",
   "canonical_precedence": "The only normative GOW is the glossary section #glosario in gobernanza/METAPROMPT-CANONICO-SAMANTHA.html on SeryMente/metodologia/main. This JSON is derived source metadata and not an independent glossary authority. Other platforms, including the Notion page below, are mirrors and must not be treated as current unless read back and reconciled.",
   "prior_notion_source": "https://app.notion.com/p/247a418782418399a86001aae61ae938",
   "notion_mirror_readback": {
@@ -37,6 +37,6 @@
     "method": "Merged terms into Group 10 with provenance and scope; duplicates were consolidated against the existing GOW entries; old root file is a pointer, not a glossary authority."
   },
   "source_content_sha256": null,
-  "sync_status": "Fuente canónica GOW v2.5 en DUG v355 · NX-355m, blob aea6628f3e3b117468ef70a8655ebfac124a522d, commit a563e6c9a0ac3eb58d31c498af40342fa7a01d0d. Se añadieron tres términos operativos equivalentes: Ámbito, Ámbito de frente de trabajo y Ámbito de OCP. El espejo de Notion no se actualizó ni releyó en este ciclo; no hay sincronización continua verificada.",
+  "sync_status": "Fuente canónica GOW v2.6 en DUG v356 · NX-356m, blob c364e179e8e9b6a3d566a8e690dfa1a7cce91798, commit 706e02a0dc0074e751667de8033d09411fad5ad9. Se formaliza en ART-020 la jerarquía funcional Contexto (nivel 1) → Gestión conversacional (nivel 2). Se añaden ambos términos al GOW, que queda en 107 términos; Contexto conserva definición inicial abierta y esta enmienda no asigna otros ámbitos a esa rama. El espejo de Notion no se actualizó ni releyó en este ciclo; no hay sincronización continua verificada.",
   "hash_status": "No se recalculó SHA-256 del contenido; se conserva el Git blob SHA como evidencia de revisión."
 }
