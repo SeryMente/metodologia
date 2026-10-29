@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:serymente:task-contract:0.2",
+  "title": "Tarea común Ser y Mente v0.2 — núcleo mínimo",
+  "description": "Esquema candidato mínimo. No canonizado ni validado con un motor JSON Schema.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "task_id",
+    "statement",
+    "origin_ref",
+    "status"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Identidad estable; la política del generador queda fuera de esta versión."
+    },
+    "statement": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Enunciado breve y fiel; no añadir contenido no respaldado por la instrucción."
+    },
+    "origin_ref": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Referencia recuperable a la fuente original."
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pendiente",
+        "en_curso",
+        "completada",
+        "cancelada"
+      ]
+    },
+    "scope_ref": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Opcional: incluir solo si el alcance no queda inequívoco por el OCP o la fuente de origen."
+    }
+  }
+}
