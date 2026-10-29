@@ -253,7 +253,7 @@
     }
   ],
   "remaining": {
-    "tasks_standard_status": "CANDIDATE v0.1, not canonized",
+    "tasks_standard_status": "CANDIDATE MINIMAL v0.2; not canonized",
     "schema_validation": "Complete JSON Schema Draft 2020-12 validator not run",
     "real_task_end_to_end": "Not run",
     "native_ipz_field": "NOT modified or verified",
