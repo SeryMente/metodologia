@@ -1,0 +1,51 @@
+{
+  "schema": "responsabilidad/1",
+  "front": "Tareas",
+  "scope_type": "ámbito funcional transversal (incubación, no canonizado todavía en el DUG)",
+  "ocp_path": "ambitos/tareas/",
+  "status": "owned",
+  "owner_thread": "chatgpt-C-TAREAS-INICIO-01-SES-20261028-TA6F31C9",
+  "instance": "chatgpt-tareas-inicio-2026-10-28-TA6F31C9",
+  "generation": 1,
+  "authorization_ref": "Instrucción explícita del operador en la conversación del 2026-10-28: inaugurar el ámbito Tareas y desarrollar progresivamente la versión inicial 1.0 en lo conceptual y operativo. Este control autoriza la materialización operativa provisional de Tareas y su diseño; no autoriza por sí solo modificar el DUG/GOW ni canonizar las propuestas.",
+  "scope": "Incubación y desarrollo del ámbito funcional Tareas v1.0; propósito, fronteras, modelo de tarea, ciclo de vida, fuente de estado, instrucciones y pruebas. La taxonomía normativa actual continúa sin Tareas hasta ratificación y escritura expresa en DUG/GOW.",
+  "expiry": null,
+  "handoff": null,
+  "session_folio": "SES-20261028-TA6F31C9",
+  "session_assignment": {
+    "status": "active",
+    "folio": "SES-20261028-TA6F31C9",
+    "assigned_on": "2026-10-28",
+    "front_ocp": "ambitos/tareas/",
+    "owner_alias": "chatgpt-C-TAREAS-INICIO-01-SES-20261028-TA6F31C9",
+    "instance": "chatgpt-tareas-inicio-2026-10-28-TA6F31C9",
+    "generation": 1,
+    "identity_kind": "folio de sesión operativa y alias de ámbito; no es un ID nativo de conversación ChatGPT",
+    "uniqueness_check": "La búsqueda exacta por evento, ciclo, folio y alias dio cero resultados; se revisaron controles de responsabilidad visibles en nueve repositorios accesibles y no se encontró colisión para estos identificadores. Esto no prueba unicidad global ni exclusividad impuesta por servidor.",
+    "checked_paths": [
+      "SeryMente/khora:docs/frentes/dictado-voz/CONTROL-RESPONSABILIDAD.json",
+      "SeryMente/khora:docs/frentes/harmonia/CONTROL-RESPONSABILIDAD.json",
+      "SeryMente/khora:frentes/custodia/CONTROL-RESPONSABILIDAD.json",
+      "SeryMente/signal-interpreter:docs/frentes/signal-interpreter/CONTROL-RESPONSABILIDAD.json",
+      "SeryMente/metodologia:frentes/gobernanza/CONTROL-RESPONSABILIDAD.json",
+      "SeryMente/metodologia:frentes/metacanon/CONTROL-RESPONSABILIDAD.json",
+      "SeryMente/metodologia:frentes/acceso/CONTROL-RESPONSABILIDAD.json",
+      "SeryMente/metodologia:frentes/radar-profesional/CONTROL-RESPONSABILIDAD.json",
+      "SeryMente/personal:frentes/repertorio-canto-personal/CONTROL-RESPONSABILIDAD.json"
+    ],
+    "cycle_folio": "C-20261028-TA6F31C9",
+    "event_id": "C-TAREAS-INICIO-01"
+  },
+  "initialization": {
+    "event_id": "C-TAREAS-INICIO-01",
+    "cycle_folio": "C-20261028-TA6F31C9",
+    "recorded_on": "2026-10-28",
+    "status": "incubación abierta",
+    "authorization": "Instrucción expresa del operador para inaugurar Tareas y desarrollar su versión inicial 1.0 durante ciclos sucesivos.",
+    "normative_amendment_authorized": false,
+    "canonical_source": "SeryMente/metodologia/main:gobernanza/METAPROMPT-CANONICO-SAMANTHA.html",
+    "canonical_source_blob": "89a28e4d05f5baab9c4b86abdb9fbfc532690c75",
+    "observed_normative_state": "DUG v358 · NX-358m; Metacanon 1.23; GOW 2.7; taxonomía 1.2. Los únicos ámbitos funcionales normativos son Persistencia documental y Gestión conversacional."
+  },
+  "transfers": []
+}
