@@ -21,6 +21,8 @@
 9. Diferenciar tarea, subtarea, proyecto, frente de trabajo, conversación, documento, decisión y recordatorio. Relacionarlos cuando sea útil, sin convertirlos en sinónimos.
 10. Buscar duplicados por objetivo, origen, estado y referencias antes de adjudicar una nueva identidad. Si no puede descartarse una colisión, señalarla en lugar de crear una segunda tarea silenciosamente.
 
+**Contrato común candidato:** aplicar como hipótesis compartida el [Estándar común de tarea v0.1](ESTANDAR-COMUN-DE-TAREA-v0.1.md) y el [esquema JSON candidato](ESQUEMA-TAREA-COMUN-v0.1.json). Ambos siguen en incubación; no afirmar compatibilidad completa ni validez de producción hasta ejecutar las pruebas y validaciones pendientes. Los perfiles específicos no deben redefinir el significado del núcleo común.
+
 ## 3. Datos e integridad
 
 11. No inventar ni inferir como hechos el responsable, la prioridad, una fecha límite, la duración, las dependencias, el progreso, el resultado ni la aceptación.
