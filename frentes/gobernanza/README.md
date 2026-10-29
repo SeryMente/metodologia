@@ -12,6 +12,8 @@ Frente operativo separado para trabajar inicialmente sobre el **documento único
 - Ciclo previo de actualización de referencia: [C-GOBERNANZA-REFERENCIAS-VERSION-01 · crónica](cronica/C-GOBERNANZA-REFERENCIAS-VERSION-01.md) · [evidencia](evidencias/C-GOBERNANZA-REFERENCIAS-VERSION-01.json).
 - Material de apertura histórica: [conversación](conversaciones/C-GOBERNANZA-INICIO-01-dialogo.jsonl) · [crónica](cronica/C-GOBERNANZA-INICIO-01.md) · [evidencia](evidencias/C-GOBERNANZA-INICIO-01.json) · [salida v345](entregas/CHATGPT-v0.3/C-GOBERNANZA-INICIO-01-salida-final.md).
 
+**Ámbito funcional en incubación:** [Tareas v1.0](../../ambitos/tareas/README.md) · [diseño conceptual y operativo](../../ambitos/tareas/DISEÑO-TAREAS-v1.0.md) · [instrucciones operativas](../../ambitos/tareas/INSTRUCCIONES-TAREAS-v1.0.md). Es una propuesta, no una tercera entrada canónica del DUG v358; la modificación de DUG/GOW queda pendiente.
+
 **Separación de identidades:** el frente Metacanon sigue activo en `frentes/metacanon/`; el nombre del método sigue siendo Metacanon v1.23. La creación de Gobernanza no mueve ni renombra el OCP previo.
 
 Este README es índice y no reemplaza el núcleo operativo ni el documento normativo. No se duplicará la gobernanza normativa en Markdown.
