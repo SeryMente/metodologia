@@ -11,7 +11,17 @@
 **Sesión actual:** `SES-20261028-GV3K8P6Q`, generación 3; ciclo vigente `C-20261028-5E83B1D7`.
 **Control actual leído de vuelta:** blob `a3cebd377ba1cb996e3bc14a48a1a1d24bb67670`; actualización de autorización específica en commit `73e11c31403f0d27950bd5091bfee7830b942ad8`.
 
-## Estado normativo y ciclo vigente · C-GOBERNANZA-TAXONOMIA-CONCEPTUAL-INFRAESTRUCTURA-01 · 2026-10-28
+## Ciclo vigente · C-GOBERNANZA-LISA-ARTICULACION-01 · 2026-10-29
+
+**Persistencia documental.** Los originales históricos [Athanor / Lisa Hub v0.9.43](documentos/originales/AthanorJue20260319-normativo_v0943.html) y [LISA · Explicación Consolidada v1.0](<documentos/originales/LISA-Explicacion-Consolidada-v1.0%20%281%29.pdf>) viven en el OCP bajo documentos/originales/. Manifiesto: [MANIFIESTO-DOCUMENTAL.json](documentos/MANIFIESTO-DOCUMENTAL.json). Commit inicial de originales: 70dd52c716e01676f33eff234db31a1100cbe90f; la lectura de vuelta comparó exactamente el Base64 de ambos archivos fuente contra la respuesta de GitHub.
+
+**Compatibilidad LISA ↔ AT.** Se revisó el Canon LISA v1.2 y las dependencias relevantes en Notion. Dictamen: compatible por composición; LISA conserva la raíz de intención y la cadena L0→REQ→L2→RE→ACR→COD; la AT propuesta puede ocuparse del análisis transversal de impacto, delimitación de componentes afectados/no afectados, autorización, cambio mínimo y verificación. La AT no está ratificada, no tiene nombre expandido canonizado y no se añadió un L0 por inferencia del modelo.
+
+**Estado de autorización.** No hubo cambio al DUG v359 · NX-359m, Metacanon 1.24 ni GOW 2.8, tampoco a Canon LISA, FIAT, Convención de Código Firmado, PCA o Notion. La especificación LISA v1.2 está ratificada en Notion; la integración LISA/LSV/MAT en Cora OS v1.0 sigue sujeta a los candados del [Anclaje LISA ↔ Cora OS](https://app.notion.com/p/386a4187824182a1ae9201e95cc592ce). La consulta disponible a Notion devuelve cortes fechados el 2026-10-20; no se certifican cambios posteriores.
+
+Evidencia del ciclo: [crónica](cronica/C-GOBERNANZA-LISA-ARTICULACION-01.md) · [evidencia](evidencias/C-GOBERNANZA-LISA-ARTICULACION-01.json) · [salida](entregas/CHATGPT-v0.5/C-GOBERNANZA-LISA-ARTICULACION-01-salida-final.md) · [diálogo](conversaciones/C-GOBERNANZA-LISA-ARTICULACION-01-dialogo.jsonl).
+
+## Ciclo anterior · C-GOBERNANZA-TAXONOMIA-CONCEPTUAL-INFRAESTRUCTURA-01 · 2026-10-28
 
 Fuente canónica leída de vuelta desde `main`: [DUG v359 · NX-359m](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html), blob `b2ff2845a5a99dc4ce3cafafc4f8e43607d48145`, commit `1377e697cfe7d18b7558ab1eab46e0154e16426d`. Metacanon 1.24; GOW 2.8 con 109 términos; 41 principios; 16 anexos; taxonomía estructural 1.3.
 

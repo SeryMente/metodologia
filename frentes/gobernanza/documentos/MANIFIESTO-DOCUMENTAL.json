@@ -3,9 +3,9 @@
   "front": "Gobernanza",
   "ocp_path": "frentes/gobernanza/",
   "event_id": "C-GOBERNANZA-LISA-ARTICULACION-01",
-  "cycle_folio": "C-20261029-LISA-AT-01",
+  "cycle_folio": "C-20261029-8B41F2D7",
   "recorded_on": "2026-10-29",
-  "status": "ESCRITO_NO_VERIFICADO",
+  "status": "PERSISTIDO_Y_VERIFICADO",
   "rule": "P041 + ART-014 + ART-022; conservar originales sin transformar y declarar persistencia solo tras lectura de vuelta y cotejo.",
   "documents": [
     {
@@ -20,10 +20,13 @@
       "size_bytes": 714674,
       "sha256": "F16E3AEDAFE2B2D7919D700373343F4A5BEEE14BD23D940789980D5A977BDCB5",
       "git_blob_sha": "616ebf40384f5f70fef129526d1d821dd38e8859",
-      "status": "ESCRITO_NO_VERIFICADO",
+      "status": "PERSISTIDO_Y_VERIFICADO",
       "verification": {
-        "readback": false,
-        "content_cotejo": false
+        "readback": true,
+        "content_cotejo": true,
+        "method": "Base64 exact match: RDC source bytes == GitHub Contents API read-back bytes",
+        "readback_blob_sha": "616ebf40384f5f70fef129526d1d821dd38e8859",
+        "verified_on": "2026-10-29"
       }
     },
     {
@@ -38,11 +41,23 @@
       "size_bytes": 360350,
       "sha256": "78B3904FA7D585E6C407C30227A571F2229203DE651D08C3B2595899361C80CF",
       "git_blob_sha": "b5e25527747d74db2b9e5cfe8e855b100d5b6fc7",
-      "status": "ESCRITO_NO_VERIFICADO",
+      "status": "PERSISTIDO_Y_VERIFICADO",
       "verification": {
-        "readback": false,
-        "content_cotejo": false
+        "readback": true,
+        "content_cotejo": true,
+        "method": "Base64 exact match: RDC source bytes == GitHub Contents API read-back bytes",
+        "readback_blob_sha": "b5e25527747d74db2b9e5cfe8e855b100d5b6fc7",
+        "verified_on": "2026-10-29"
       }
     }
-  ]
+  ],
+  "originals_commit_sha": "70dd52c716e01676f33eff234db31a1100cbe90f",
+  "verification": {
+    "verified_on": "2026-10-29",
+    "readback_method": "GitHub Contents API fetch_file encoding=base64, comparación exacta contra cada archivo local leído por RDC",
+    "result": "PASS",
+    "byte_for_byte_match": true,
+    "documents_verified": 2,
+    "note": "El SHA-256 se calculó en la fuente local; la lectura de vuelta Base64 coincide íntegramente con el archivo fuente."
+  }
 }

@@ -1,0 +1,201 @@
+{
+  "schema": "ser-y-mente-cycle-evidence/v1",
+  "event_id": "C-GOBERNANZA-LISA-ARTICULACION-01",
+  "cycle_folio": "C-20261029-8B41F2D7",
+  "session_folio": "SES-20261028-GV3K8P6Q",
+  "generation": 3,
+  "recorded_on": "2026-10-29",
+  "scope": "Preservar los originales históricos de Athanor/LISA en el OCP de Gobernanza y evaluar su compatibilidad con la AT en diseño y con el método OCP vigente, sin cambiar normas.",
+  "status": "PERSISTIDO_Y_VERIFICADO; REVISION_DOCUMENTAL_REGISTRADA; SIN_ENMIENDA_NORMATIVA",
+  "authorization": {
+    "status": "explicit_for_custody_and_review",
+    "operator_scope": "Conservar los dos originales en Persistencia Documental de Gobernanza y revisar su relación con LISA/AT y la metodología OCP. No autoriza canonizar AT ni alterar DUG/GOW/Metacanon/Canon LISA o Cora OS.",
+    "no_normative_amendment": true,
+    "no_notion_mutations": true
+  },
+  "responsibility": {
+    "front": "Gobernanza",
+    "ocp_path": "frentes/gobernanza/",
+    "owner_thread": "chatgpt-C-GOBERNANZA-RETOMA-02-SES-20261028-GV3K8P6Q",
+    "generation": 3,
+    "control_blob_sha": "a3cebd377ba1cb996e3bc14a48a1a1d24bb67670",
+    "control_re_read": true,
+    "transfer_performed": false,
+    "reason": "El control vigente ya identifica el alias de esta sesión como titular activo de Gobernanza."
+  },
+  "canonical_source": {
+    "repository": "SeryMente/metodologia",
+    "branch": "main",
+    "path": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.html",
+    "blob_sha": "b2ff2845a5a99dc4ce3cafafc4f8e43607d48145",
+    "dug_version": "v359",
+    "signature": "NX-359m",
+    "metacanon_version": "1.24",
+    "gow_version": "2.8",
+    "principles": 41,
+    "annexes": 16
+  },
+  "document_persistence": {
+    "status": "PERSISTIDO_Y_VERIFICADO",
+    "source_device": "PC-14",
+    "source_profile": "C:\\Users\\PC 13",
+    "originals_commit_sha": "70dd52c716e01676f33eff234db31a1100cbe90f",
+    "manifest_path": "frentes/gobernanza/documentos/MANIFIESTO-DOCUMENTAL.json",
+    "method": "RDC source read; source SHA-256 calculation; exact Base64 transfer; GitHub Contents API read-back; exact Base64 equality.",
+    "byte_for_byte_match": true,
+    "documents": [
+      {
+        "path": "frentes/gobernanza/documentos/originales/AthanorJue20260319-normativo_v0943.html",
+        "bytes": 714674,
+        "source_sha256": "F16E3AEDAFE2B2D7919D700373343F4A5BEEE14BD23D940789980D5A977BDCB5",
+        "git_blob_sha": "616ebf40384f5f70fef129526d1d821dd38e8859",
+        "readback_exact_base64_match": true,
+        "verified_on": "2026-10-29"
+      },
+      {
+        "path": "frentes/gobernanza/documentos/originales/LISA-Explicacion-Consolidada-v1.0 (1).pdf",
+        "bytes": 360350,
+        "source_sha256": "78B3904FA7D585E6C407C30227A571F2229203DE651D08C3B2595899361C80CF",
+        "git_blob_sha": "b5e25527747d74db2b9e5cfe8e855b100d5b6fc7",
+        "readback_exact_base64_match": true,
+        "verified_on": "2026-10-29"
+      }
+    ],
+    "derivatives_created_from_originals": false
+  },
+  "research": {
+    "access_cutoff": "Los fetches de Notion devuelven cortes/fechas de lectura de 2026-10-20; no se certifica ausencia de cambios posteriores.",
+    "search_queries": [
+      {
+        "query": "LISA",
+        "returned": 29
+      },
+      {
+        "query": "Athanor",
+        "returned": 17
+      },
+      {
+        "query": "LSV MAT",
+        "returned": 14
+      },
+      {
+        "query": "LISA trazabilidad universal",
+        "returned": 25
+      },
+      {
+        "query": "Articulación Trazable",
+        "returned": 10
+      }
+    ],
+    "documents_read": [
+      {
+        "title": "Canon LISA · Especificación de Intención v1.2",
+        "url": "https://app.notion.com/p/968a41878241825a960b01d1d241cb08"
+      },
+      {
+        "title": "Anclaje LISA · Cora OS v1.0 ↔ Marco LISA",
+        "url": "https://app.notion.com/p/386a4187824182a1ae9201e95cc592ce"
+      },
+      {
+        "title": "Documento Normativo · Athanor / Lisa Hub v0.9.43 — Transcripción Verbatim",
+        "url": "https://app.notion.com/p/46fa4187824182eaa4d301360c21e505"
+      },
+      {
+        "title": "Handoff 2026-07-20 · Canon LISA + Convención + PDCP",
+        "url": "https://app.notion.com/p/faba418782418215991a013a5989041e"
+      },
+      {
+        "title": "Convención de Código Firmado v1.1",
+        "url": "https://app.notion.com/p/bf6a4187824183ebb9e6012950ec0a50"
+      },
+      {
+        "title": "Protocolo FIAT v0.40",
+        "url": "https://app.notion.com/p/99ba4187824182e7aedf011a6d452bce"
+      },
+      {
+        "title": "MDC v1.1",
+        "url": "https://app.notion.com/p/f55a418782418304a3d581adad1a71f6"
+      },
+      {
+        "title": "PDCP v1.0",
+        "url": "https://app.notion.com/p/594a41878241827b9b8b01316843616b"
+      },
+      {
+        "title": "PCA v0.2",
+        "url": "https://app.notion.com/p/5ada418782418220811d01451dec1c40"
+      },
+      {
+        "title": "Chasis Cora OS v1.0",
+        "url": "https://app.notion.com/p/64ba41878241835186df81ba74ac686d"
+      },
+      {
+        "title": "Guía de despacho · Tablero listo para Jules",
+        "url": "https://app.notion.com/p/605a41878241825c94cc01a6d9d59272"
+      },
+      {
+        "title": "Metodología de uso general · marco replicable",
+        "url": "https://app.notion.com/p/0e8a418782418248a42e8171ca6ae282"
+      }
+    ],
+    "coverage_limit": "Investigación dirigida a canon LISA y dependencias relevantes; los resultados incidentales del buscador no fueron revisados íntegramente línea por línea."
+  },
+  "compatibility": {
+    "l1": "LISA v1.2 §EI.10 requiere traza de todo cambio de sistema aplicable a un L0; permite dosificar presencia humana, no suprimir trazabilidad.",
+    "l2": "LISA §EI.11 permite Documentos Fuente Aprobados solo con aprobación explícita, congelación/versionado y huella; los originales preservados no reciben esa designación automáticamente.",
+    "l3": "Cadena vigente L0 → REQ L1 → L2 → RE (0–4) → ACR → COD.",
+    "l4": "El Anclaje 2026-07-18 declara diferida la integración de LISA/LSV/MAT en Cora OS v1.0 hasta sellar RAP 2–6 y obtener orden expresa; esto es distinto de la posterior ratificación del Canon LISA v1.2.",
+    "l5": "AT puede complementar LISA como proceso de análisis de impacto, alcance afectado/no afectado, autorización, aplicación mínima y verificación; no debe duplicar L0 ni crear una cadena de autoridad paralela.",
+    "l6": "La metodología OCP ya aporta autorización explícita, compuerta preescritura, anti-bloat, continuidad, fuente preponderante y persistencia/read-back (P005, P022, P024, P025, P035, P038, P041; ART-014/022; Metacanon §§26/28/42/43/46).",
+    "l7": "Tareas es un ámbito funcional transversal en incubación, no un frente; la ruta física ambitos/tareas/ no es una regla general de infraestructura.",
+    "at_status": "Nombre y canon AT no ratificados; no se añadió norma ni L0 inventado.",
+    "final_verdict": "COMPATIBLE POR COMPOSICIÓN CON FRONTERAS: LISA = intención y cadena de especificación; AT = análisis de impacto y propagación controlada."
+  },
+  "validation": {
+    "source_sha256_calculation": "PASS",
+    "original_blob_sha_match": "PASS",
+    "exact_base64_readback_match": "PASS (2/2)",
+    "manifest_json_before_final_update": "PASS",
+    "dug_modified": false,
+    "metacanon_modified": false,
+    "gow_modified": false,
+    "notion_modified": false,
+    "browser_or_runtime_tests": "NOT APPLICABLE",
+    "known_limit": "Notion last-read metadata is dated 2026-10-20; no assertion about changes after that snapshot."
+  },
+  "artifacts": [
+    {
+      "path": "frentes/gobernanza/documentos/originales/AthanorJue20260319-normativo_v0943.html",
+      "blob_sha": "616ebf40384f5f70fef129526d1d821dd38e8859",
+      "commit_sha": "70dd52c716e01676f33eff234db31a1100cbe90f",
+      "readback_exact": true
+    },
+    {
+      "path": "frentes/gobernanza/documentos/originales/LISA-Explicacion-Consolidada-v1.0 (1).pdf",
+      "blob_sha": "b5e25527747d74db2b9e5cfe8e855b100d5b6fc7",
+      "commit_sha": "70dd52c716e01676f33eff234db31a1100cbe90f",
+      "readback_exact": true
+    },
+    {
+      "path": "frentes/gobernanza/documentos/MANIFIESTO-DOCUMENTAL.json",
+      "status": "updated_to_verified_in_this_commit"
+    },
+    {
+      "path": "frentes/gobernanza/cronica/C-GOBERNANZA-LISA-ARTICULACION-01.md"
+    },
+    {
+      "path": "frentes/gobernanza/conversaciones/C-GOBERNANZA-LISA-ARTICULACION-01-dialogo.jsonl"
+    },
+    {
+      "path": "frentes/gobernanza/evidencias/C-GOBERNANZA-LISA-ARTICULACION-01.json"
+    },
+    {
+      "path": "frentes/gobernanza/entregas/CHATGPT-v0.5/C-GOBERNANZA-LISA-ARTICULACION-01-salida-final.md"
+    },
+    {
+      "path": "frentes/gobernanza/README.md"
+    },
+    {
+      "path": "frentes/gobernanza/GOBERNANZA.md"
+    }
+  ]
+}
