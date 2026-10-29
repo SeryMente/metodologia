@@ -112,5 +112,53 @@
     "chronicle": "frentes/gobernanza/cronica/C-GOBERNANZA-RETOMA-02.md",
     "evidence": "frentes/gobernanza/evidencias/C-GOBERNANZA-RETOMA-02.json",
     "output": "frentes/gobernanza/entregas/CHATGPT-v0.3/C-GOBERNANZA-RETOMA-02-salida-final.md"
+  },
+  "persistence_readback": {
+    "status": "verified",
+    "control": {
+      "path": "frentes/gobernanza/CONTROL-RESPONSABILIDAD.json",
+      "blob_sha": "c15403adde2ec480f81955cdba0458065bb50611",
+      "verification_commit": "a760933d81c7d75d53a60a613492e5b2188274b6"
+    },
+    "cycle_artifacts": [
+      {
+        "path": "frentes/gobernanza/conversaciones/C-GOBERNANZA-RETOMA-02-dialogo.jsonl",
+        "blob_sha": "d55469c6d7dba7488a0b74679bedb666ccdbaa9a",
+        "read_back_parse": "PASS; 8 JSONL records"
+      },
+      {
+        "path": "frentes/gobernanza/cronica/C-GOBERNANZA-RETOMA-02.md",
+        "blob_sha": "9428cafdaa5d02af0a9480024a85092290b9cb49",
+        "read_back_exact": true
+      },
+      {
+        "path": "frentes/gobernanza/evidencias/C-GOBERNANZA-RETOMA-02.json",
+        "blob_sha": "will be established by final read-back",
+        "read_back_json_parse": "required"
+      },
+      {
+        "path": "frentes/gobernanza/entregas/CHATGPT-v0.3/C-GOBERNANZA-RETOMA-02-salida-final.md",
+        "blob_sha": "d481076e28b33e52c73414d2c09a22d5a4e92a36",
+        "read_back_exact": true
+      }
+    ],
+    "operational_documents": [
+      {
+        "path": "frentes/gobernanza/README.md",
+        "blob_sha": "7875cca538fb84abe65921755e70ff02bbfa916f",
+        "read_back_exact": true
+      },
+      {
+        "path": "frentes/gobernanza/GOBERNANZA.md",
+        "blob_sha": "adcc4046a8c6cf5dbbc6cf56c5b1d3ba1754a2ef",
+        "read_back_exact": true
+      },
+      {
+        "path": "frentes/gobernanza/PENDIENTES.md",
+        "blob_sha": "614d969092a2b3b66814c255ea8fac736675d584",
+        "read_back_exact": true
+      }
+    ],
+    "commit_note": "The control transfer commit and the subsequent verification-record commit are recorded above. The front's entry points and operating-status documents have each been read back after their updates."
   }
 }
