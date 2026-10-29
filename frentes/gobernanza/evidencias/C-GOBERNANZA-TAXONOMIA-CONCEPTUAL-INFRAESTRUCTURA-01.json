@@ -1,0 +1,160 @@
+{
+  "schema": "ser-y-mente-cycle-evidence/v1",
+  "event_id": "C-GOBERNANZA-TAXONOMIA-CONCEPTUAL-INFRAESTRUCTURA-01",
+  "cycle_folio": "C-20261028-5E83B1D7",
+  "session_folio": "SES-20261028-GV3K8P6Q",
+  "generation": 3,
+  "recorded_on": "2026-10-28",
+  "scope": "Separar taxonomía conceptual e infraestructura en la metodología y canonizar Propósito como elemento conceptual declarativo asociado al alcance de un FT; documentar por separado la incubación de Tareas y su estándar común candidato.",
+  "status": "PERSISTIDO_Y_RELEIDO; AUDITORIA_DE_NAVEGADOR_PENDIENTE",
+  "authorization": {
+    "operator_request": "El operador solicitó mantener Ámbitos como categoría conceptual de la taxonomía; canonizar Propósito como enunciado compacto y autocontenido que define el alcance de un frente, materializable como archivo o sección raíz; documentar por separado la infraestructura que deriva de estos conceptos; y continuar con Tareas y evaluar un estándar común reutilizable.",
+    "normative_scope": "DUG/Metacanon/GOW actualizados únicamente para separar concepto e infraestructura y canonizar Propósito. Tareas y el estándar común de tarea permanecen no canonizados.",
+    "tasks_canonization_authorized": false
+  },
+  "canonical_source": {
+    "repository": "SeryMente/metodologia",
+    "branch": "main",
+    "path": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.html",
+    "blob_sha": "b2ff2845a5a99dc4ce3cafafc4f8e43607d48145",
+    "commit_sha": "1377e697cfe7d18b7558ab1eab46e0154e16426d",
+    "readback_exact": true,
+    "dug_version": "v359",
+    "signature": "NX-359m",
+    "metacanon_version": "1.24",
+    "gow_version": "2.8",
+    "gow_terms": 109,
+    "taxonomy_version": "1.3",
+    "principles": 41,
+    "annexes": 16,
+    "canonical_functional_scopes": [
+      "Persistencia documental",
+      "Gestión conversacional"
+    ],
+    "canonical_conceptual_element": "Propósito de frente",
+    "canonical_tasks_scope": false
+  },
+  "conceptual_infrastructure_decision": {
+    "conceptual_category": "Ámbitos",
+    "taxonomy_includes_category": true,
+    "repository_ocp_requires_ambitos_directory": false,
+    "purpose_definition": "Enunciado compacto, autocontenido y legible que establece para qué existe un FT y delimita su alcance.",
+    "purpose_materializations": [
+      "archivo de texto en la raíz del OCP del FT",
+      "sección identificada de un documento raíz"
+    ],
+    "purpose_requires_dedicated_directory": false,
+    "no_one_to_one_concept_directory_mapping": true,
+    "tasks_incubation_path": "ambitos/tareas/",
+    "tasks_path_is_general_infrastructure_rule": false
+  },
+  "validation": {
+    "gov_data_json_parse": "PASS",
+    "javascript_syntax_compilation": "PASS in isolation, code not executed",
+    "static_html_id_count": 27,
+    "duplicate_static_html_ids": 0,
+    "purpose_glossary_term_count": 1,
+    "purpose_glossary_anchor_count": 1,
+    "browser_render": "NOT RUN",
+    "dynamic_link_audit": "NOT RUN",
+    "full_semantic_review_of_41_principles": "NOT RUN",
+    "external_custom_instructions_field_modified_or_verified": false
+  },
+  "artifacts": [
+    {
+      "path": "frentes/gobernanza/cronica/C-GOBERNANZA-TAXONOMIA-CONCEPTUAL-INFRAESTRUCTURA-01.md",
+      "blob_sha": "63e61b56fc13ec0afa5efed00d4c7436579b2990",
+      "commit_sha": "e6d858779ed89b0342b8329540e1d20f935bdc2b",
+      "readback": true
+    },
+    {
+      "path": "frentes/gobernanza/conversaciones/C-GOBERNANZA-TAXONOMIA-CONCEPTUAL-INFRAESTRUCTURA-01-dialogo.jsonl",
+      "blob_sha": "8dde964fe9b6187f58d707068fc62cecbadffcac",
+      "commit_sha": "5fc353a111967fc577df9b533c659ed26535cb8e",
+      "readback": true
+    },
+    {
+      "path": "frentes/gobernanza/entregas/CHATGPT-v0.4/C-GOBERNANZA-TAXONOMIA-CONCEPTUAL-INFRAESTRUCTURA-01-salida-final.md",
+      "blob_sha": "dd99985073f66e272f5ab35a8b02bcfd88e9a256",
+      "readback": true
+    },
+    {
+      "path": "INICIO.md",
+      "blob_sha": "760fb80afbbc51c448d21bb630cbba8ee21efdf3",
+      "commit_sha": "425c66aa946ce15ee29444c88ebc5e7705b13b5d",
+      "readback": true
+    },
+    {
+      "path": "frentes/metacanon/README.md",
+      "blob_sha": "2845f032b29d781de6dfa2121e79f3d4cd138994",
+      "commit_sha": "85ee6910992d1d6ed20d70e5cc31eb57c18497b4",
+      "readback": true
+    },
+    {
+      "path": "frentes/metacanon/entregas/CHATGPT-v0.3/IPZ-CAMPO-CHATGPT.txt",
+      "blob_sha": "022da3ba52bfac7885a0dbef6ec5da15840f27fb",
+      "commit_sha": "878f80402673b426231078d619d1dce83151e193",
+      "chars": 1468,
+      "readback": true,
+      "native_field_updated": false
+    },
+    {
+      "path": "frentes/gobernanza/README.md",
+      "blob_sha": "efba792a11e9f9f65de33f4dc3007d068558fe87",
+      "readback": true
+    },
+    {
+      "path": "frentes/gobernanza/GOBERNANZA.md",
+      "blob_sha": "74185c2d53e17838befd06ac9e0bbecae0ef9d46",
+      "readback": true
+    },
+    {
+      "path": "frentes/gobernanza/PENDIENTES.md",
+      "blob_sha": "abb31bd8e300f1d656500b3c4d11c00105ba8516",
+      "readback": true
+    },
+    {
+      "path": "ambitos/tareas/ESTANDAR-COMUN-DE-TAREA-v0.1.md",
+      "blob_sha": "c335ef76b9a13bfb4af814a5b8f257a6d3976ae7",
+      "commit_sha": "263ceee7d68d573bc0ad316b760e8b53610d81ce",
+      "readback": true
+    },
+    {
+      "path": "ambitos/tareas/ESQUEMA-TAREA-COMUN-v0.1.json",
+      "blob_sha": "f8a8dbb4b90931cc24c91ea7e1af581a85ff81e3",
+      "commit_sha": "04bd562a6c1bdfeaf438c2b43fbfa615e1f9462f",
+      "readback": true,
+      "json_parse": "PASS; full JSON Schema validation not run"
+    },
+    {
+      "path": "ambitos/tareas/cronica/C-TAREAS-ESTANDAR-REUTILIZABLE-01.md",
+      "blob_sha": "6e8f65555a812ee4a273feaeb1bbf8c2fe57443c",
+      "readback": true
+    },
+    {
+      "path": "ambitos/tareas/conversaciones/C-TAREAS-ESTANDAR-REUTILIZABLE-01-dialogo.jsonl",
+      "blob_sha": "ae432c6540a14faaf004be322b4d6ce701dbcca2",
+      "readback": true,
+      "jsonl_lines": 5
+    },
+    {
+      "path": "ambitos/tareas/entregas/CHATGPT-v1.0/C-TAREAS-ESTANDAR-REUTILIZABLE-01-salida-final.md",
+      "blob_sha": "7c90fb646bdf6ecb559ab4b19098ef43979e4a40",
+      "readback": true
+    },
+    {
+      "path": "ambitos/tareas/evidencias/C-TAREAS-ESTANDAR-REUTILIZABLE-01.json",
+      "blob_sha": "18a74b4004a02d4ab95986534cfb488a5f44adcd",
+      "readback": true,
+      "json_parse": "PASS"
+    }
+  ],
+  "remaining": {
+    "tasks_standard_status": "CANDIDATE v0.1, not canonized",
+    "schema_validation": "Complete JSON Schema Draft 2020-12 validator not run",
+    "real_task_end_to_end": "Not run",
+    "native_ipz_field": "Not written or read back",
+    "browser_audit": "Not run",
+    "next_step": "Test common task standard with two or three authorized cases of different kinds; then assess if it can be promoted to v1.0."
+  }
+}
