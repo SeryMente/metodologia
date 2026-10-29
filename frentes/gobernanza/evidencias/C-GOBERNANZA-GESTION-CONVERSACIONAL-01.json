@@ -112,8 +112,8 @@
       "blob": "2161cd863b9cb9a40e7f066b363364c2c090e35b"
     },
     "frentes/gobernanza/PENDIENTES.md": {
-      "blob": "de2c1ed4e1f24fb5f7273b07c07bd73f06e4055e",
-      "checked": "GOV-GC-01 marcado cerrado para este alcance; GOV-AT-01 permanece abierto y se conserva la discrepancia de Tareas como asunto separado."
+      "blob": "b795baade801a0b51521752caa1cda28bd0c3d1a",
+      "checked": "Estado operativo actualizado con el ciclo actual; GOV-GC-01 cerrado para su alcance; GOV-AT-01 permanece abierto."
     }
   },
   "verbatim_registry": {
@@ -145,7 +145,7 @@
   "main_head_before_evidence": "9ed3040261466fbe2bada21d29e8e6ba088ef617",
   "verification_final": {
     "status": "READBACK_RECHECKED_AFTER_PENDING_INDEX_UPDATE",
-    "pending_blob": "de2c1ed4e1f24fb5f7273b07c07bd73f06e4055e",
+    "pending_blob": "b795baade801a0b51521752caa1cda28bd0c3d1a",
     "pending_mentions_gc_close": true,
     "pending_at_still_open": true,
     "dialogue_pair_consistency": "E literal equals the current user message; S equals saved final-output artifact; visible auxiliary outputs are stored separately.",
