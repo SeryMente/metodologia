@@ -18,8 +18,9 @@ Este es el índice de navegación del frente MCP Jules. El único estado vivo es
 11. [Crónica de implementación candidata C-MCP-JULES-002](cronica/C-MCP-JULES-002.md).
 12. [Diagnóstico de CI C-MCP-JULES-004](cronica/C-MCP-JULES-004.md).
 13. [Transferencia de titularidad C-MCP-JULES-005](cronica/C-MCP-JULES-005.md).
-14. [Decisión de fase y plan v1.0 C-MCP-JULES-006](cronica/C-MCP-JULES-006.md).
-15. [Khora PR #338](https://github.com/SeryMente/khora/pull/338), candidato de implementación, y [Metodología PR #19](https://github.com/SeryMente/metodologia/pull/19), documentación; ambos siguen en borrador. [Khora PR #337](https://github.com/SeryMente/khora/pull/337) quedó cerrado sin merge por desfase del SHA.
+14. [Decisión de fase y plan v1.0 C-MCP-JULES-006](cronica/C-MCP-JULES-006.md) — antecedente de planeación.
+15. [Cierre verificable de Fase 1 C-MCP-JULES-007](cronica/C-MCP-JULES-007.md) — planeación integral completa.
+16. [Khora PR #338](https://github.com/SeryMente/khora/pull/338), candidato de implementación, y [Metodología PR #19](https://github.com/SeryMente/metodologia/pull/19), documentación; ambos siguen en borrador. [Khora PR #337](https://github.com/SeryMente/khora/pull/337) quedó cerrado sin merge por desfase del SHA.
 
 ## Relación entre documentación y código
 El OCP vive en `SeryMente/metodologia/frentes/mcp-jules/`. El servidor MCP y el adaptador se integran en el único servidor existente de `SeryMente/khora`. Los repositorios se versionan por separado, y los cambios no se consideran publicados hasta leer de vuelta la rama/PR/merge correspondiente.
