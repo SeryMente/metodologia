@@ -58,7 +58,9 @@
     "browser_render": "NOT RUN",
     "dynamic_link_audit": "NOT RUN",
     "full_semantic_review_of_41_principles": "NOT RUN",
-    "external_custom_instructions_field_modified_or_verified": false
+    "external_custom_instructions_field_modified_or_verified": false,
+    "markdown_link_audit": "PARTIAL: root entrypoint, Governance README, Governance final-output references and Tareas README links were edited and important paths were spot-checked; no full repository-wide audit or browser rendering was run.",
+    "native_ipz_field": "NOT_WRITTEN_OR_READ_BACK; only the repository candidate file frentes/metacanon/entregas/CHATGPT-v0.3/IPZ-CAMPO-CHATGPT.txt was updated and read back (1468 characters)."
   },
   "artifacts": [
     {
@@ -69,14 +71,16 @@
     },
     {
       "path": "frentes/gobernanza/conversaciones/C-GOBERNANZA-TAXONOMIA-CONCEPTUAL-INFRAESTRUCTURA-01-dialogo.jsonl",
-      "blob_sha": "8dde964fe9b6187f58d707068fc62cecbadffcac",
-      "commit_sha": "5fc353a111967fc577df9b533c659ed26535cb8e",
-      "readback": true
+      "blob_sha": "9026c446eb240422abb0a6bbf539a63311a2831b",
+      "commit_sha": "8ecd80b77e92e4660c0cdd0f05b4b9bc8e5fea9c",
+      "readback": true,
+      "jsonl_lines": 7
     },
     {
       "path": "frentes/gobernanza/entregas/CHATGPT-v0.4/C-GOBERNANZA-TAXONOMIA-CONCEPTUAL-INFRAESTRUCTURA-01-salida-final.md",
-      "blob_sha": "dd99985073f66e272f5ab35a8b02bcfd88e9a256",
-      "readback": true
+      "blob_sha": "e7eb470b40eb736a1cd00ee876dc1cc2a77b173c",
+      "readback": true,
+      "commit_sha": "d4b5e53470e662618fc0445546ba5247237892eb"
     },
     {
       "path": "INICIO.md",
@@ -110,8 +114,9 @@
     },
     {
       "path": "frentes/gobernanza/PENDIENTES.md",
-      "blob_sha": "abb31bd8e300f1d656500b3c4d11c00105ba8516",
-      "readback": true
+      "blob_sha": "da1a10fb236e7910564fe279acc42fbba2de5c4b",
+      "readback": true,
+      "commit_sha": "cd67dd7e66ff57adb9a79a5b3805e76002137fee"
     },
     {
       "path": "ambitos/tareas/ESTANDAR-COMUN-DE-TAREA-v0.1.md",
@@ -147,6 +152,27 @@
       "blob_sha": "18a74b4004a02d4ab95986534cfb488a5f44adcd",
       "readback": true,
       "json_parse": "PASS"
+    },
+    {
+      "path": "ambitos/tareas/evidencias/C-TAREAS-ESTANDAR-REUTILIZABLE-01.json",
+      "blob_sha": "18a74b4004a02d4ab95986534cfb488a5f44adcd",
+      "commit_sha": "2bc1897d60d7d04dac2f422321faf926f764a24d",
+      "readback": true,
+      "json_parse": "PASS"
+    },
+    {
+      "path": "frentes/metacanon/README.md",
+      "blob_sha": "2845f032b29d781de6dfa2121e79f3d4cd138994",
+      "commit_sha": "85ee6910992d1d6ed20d70e5cc31eb57c18497b4",
+      "readback": true
+    },
+    {
+      "path": "frentes/metacanon/entregas/CHATGPT-v0.3/IPZ-CAMPO-CHATGPT.txt",
+      "blob_sha": "022da3ba52bfac7885a0dbef6ec5da15840f27fb",
+      "commit_sha": "878f80402673b426231078d619d1dce83151e193",
+      "chars": 1468,
+      "readback": true,
+      "native_field_updated": false
     }
   ],
   "remaining": {
