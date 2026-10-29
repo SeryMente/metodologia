@@ -2,13 +2,15 @@
 
 Punto de entrada del repositorio; no es una fuente normativa.
 
-**Documento Único de Gobernanza:** [DUG · Samantha v355 · NX-355m](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html). Este archivo integra el gobierno general (41 principios), 16 anexos jerarquizados (niveles 1–3), Metacanon v1.22, GOW v2.5 con 105 términos, navegación y revisión interactiva, y la representación estructurada para máquinas. Versión y contadores comprobados en `main` el 2026-10-28.
+**Documento Único de Gobernanza:** [DUG · Samantha v356 · NX-356m](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html). Este archivo integra el gobierno general (41 principios), 16 anexos jerarquizados (niveles 1–3), Metacanon v1.22, GOW v2.6 con 107 términos, navegación y revisión interactiva, y la representación estructurada para máquinas. Versión y contadores comprobados en `main` el 2026-10-28.
 
 La sección humana gobierna la representación estructurada incorporada en el mismo archivo. No hay documentos normativos paralelos ni sincronización automática implícita con Notion, instrucciones personalizadas, memorias o copias locales. La rama `main` de `SeryMente/metodologia` es la fuente documental; si no puede leerse, declara `METODOLOGÍA NO VERIFICADA`. Las políticas obligatorias, los permisos reales y las autorizaciones aplicables conservan precedencia.
 
 ## Arquitectura de repositorios y frentes
 
 Consulta el [DUG · Taxonomía estructural de S y M](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-015) y el [inventario multi-repositorio](INVENTARIO-REPOSITORIOS-Y-FRENTES.md) para localizar los OCP conocidos y clasificar recursos por alcance. El inventario declara explícitamente qué repositorios pudieron leerse; no presume cobertura global fuera de ese inventario accesible.
+
+La taxonomía funcional inicial del [ART-020](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-020) define **Contexto (nivel funcional 1) → Gestión conversacional (nivel funcional 2)**. Estos niveles no son la jerarquía documental de anexos; la ubicación jerárquica de otros ámbitos permanece abierta.
 
 ## Pendientes destacados
 
