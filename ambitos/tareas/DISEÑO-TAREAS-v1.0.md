@@ -2,7 +2,7 @@
 
 **Estado:** borrador inaugural en incubación; no es norma canónica.  
 **Evento:** C-TAREAS-INICIO-01 · **Ciclo:** C-20261028-TA6F31C9 · **Fecha:** 2026-10-28.  
-**Base normativa contrastada:** DUG v358 · NX-358m; Metacanon 1.23; GOW 2.7; taxonomía estructural 1.2. Fuente: gobernanza/METAPROMPT-CANONICO-SAMANTHA.html, blob 89a28e4d05f5baab9c4b86abdb9fbfc532690c75.
+**Base normativa observada al inaugurar el ámbito:** DUG v358 · NX-358m; Metacanon 1.23; GOW 2.7; taxonomía estructural 1.2. **Revisión canónica posterior:** DUG v359 · NX-359m; Metacanon 1.24; GOW 2.8; taxonomía 1.3, blob `b2ff2845a5a99dc4ce3cafafc4f8e43607d48145`.
 
 > **Regla de estado:** esta es una primera versión de diseño para iniciar la construcción progresiva. Sus definiciones son propuestas de trabajo. No modifica el DUG ni el GOW, y no debe usarse para afirmar que Tareas ya integra la taxonomía normativa vigente.
 
@@ -16,7 +16,7 @@ La hipótesis de valor es reducir pérdida de compromisos entre conversaciones y
 
 - **Nombre canónico candidato:** Tareas.
 - **Clase:** ámbito funcional transversal, propuesto en el nivel funcional actual, como par de Persistencia documental y Gestión conversacional.
-- **Estado normativo real:** no incorporado aún al DUG v358; la taxonomía normativa vigente sigue enumerando solo los otros dos ámbitos.
+- **Estado normativo real:** no incorporado al DUG vigente v359; Tareas sigue en incubación. La taxonomía conserva dos ámbitos funcionales transversales canónicos y separa de ellos el elemento conceptual canónico Propósito.
 - **Relación con frentes/repositorios:** puede cruzarlos; no se clasifica automáticamente como hijo de un FT ni como un proyecto independiente.
 - **OCP:** conforme a la regla general vigente, cada entidad taxonómica es el objeto canónico de persistencia de su nivel. La forma y ubicación físicas se deciden por separado.
 - **Materialización operativa de incubación:** ambitos/tareas/, elegida expresamente para mantener el diseño, la responsabilidad, las decisiones y las pruebas de varios ciclos. Es una decisión operativa provisional, no un cambio de ART-019/ART-020 ni una convención normativa general de rutas.
@@ -61,7 +61,7 @@ La hipótesis de valor es reducir pérdida de compromisos entre conversaciones y
 | evidence_refs | Evidencias de ejecución/aceptación | Enlaces o rutas recuperables; no sustituir el original. |
 | updated_at / verified_at | Vigencia del registro | Registrar solo fechas de operaciones efectivamente observadas. |
 
-Este esquema es una hipótesis de trabajo; no existe aún un registro canónico vacío ni una integración implementada. La primera tarea real servirá para comprobar el mínimo necesario y podar los campos que no aporten valor.
+Este esquema es una hipótesis de trabajo; no existe aún un registro canónico ni una integración implementada. Para evitar que cada ámbito invente un esquema incompatible, se abrió el artefacto separado [Estándar común de tarea v0.1](ESTANDAR-COMUN-DE-TAREA-v0.1.md) con su [esquema JSON candidato](ESQUEMA-TAREA-COMUN-v0.1.json). El contrato común debe conservar un núcleo pequeño y permitir perfiles de dominio versionados. La primera prueba con casos reales determinará qué campos se mantienen.
 
 ## 6. Ciclo de vida candidato
 
@@ -111,4 +111,4 @@ La cadena propuesta separa las funciones y la autoridad:
 
 La v1.0 se considerará **aceptada** solo cuando exista: definición de propósito y alcance; límites; lugar en la taxonomía; esquema y estados demostrados con casos; reglas de autoridad/persistencia; instrucciones del ámbito; texto IPZ verificado o limitación explícita; propuesta normativa revisada; y aprobación expresa del operador seguida por escritura y lectura de vuelta de cualquier enmienda autorizada.
 
-Hasta ese cierre, el estado correcto es **Tareas v1.0 · diseño inicial en incubación** y el DUG vigente sigue siendo v358 · NX-358m.
+Hasta ese cierre, el estado correcto es **Tareas v1.0 · diseño inicial en incubación**; el DUG vigente es v359 · NX-359m. Propósito es canónico como elemento conceptual, pero Tareas no se ha incorporado a la taxonomía normativa.
