@@ -118,6 +118,18 @@
       "blob_sha": "7c90fb646bdf6ecb559ab4b19098ef43979e4a40",
       "commit_sha": "167a1dc15a029d05dbee1697d27122aaab9c3449",
       "readback": true
+    },
+    {
+      "path": "ambitos/tareas/INSTRUCCIONES-TAREAS-v1.0.md",
+      "blob_sha": "4c7c12263e0112899ca230e168ea2a474f9a8845",
+      "readback": true
+    },
+    {
+      "path": "ambitos/tareas/IPZ-TAREAS-CANDIDATO.txt",
+      "blob_sha": "dcd5abf6f1bcc74fe6bba77982a6383f5245edc1",
+      "chars": 1139,
+      "readback": true,
+      "native_field_written": false
     }
   ],
   "validation": {
@@ -129,6 +141,9 @@
     "canonical_storage_chosen": false,
     "external_integrations_tested": false,
     "native_chatgpt_custom_instructions_written_or_read_back": false,
-    "next_step": "Validar el estándar con dos o tres casos autorizados de naturaleza diferente y eliminar campos innecesarios antes de proponer v1.0."
+    "next_step": "Validar el estándar con dos o tres casos autorizados de naturaleza diferente y eliminar campos innecesarios antes de proponer v1.0.",
+    "instructions_link_to_standard": "PASS; candidate contract explicitly linked; not canonized",
+    "task_ipz_repository_candidate": "PASS read-back, 1139 chars",
+    "native_chatgpt_ipz_field": "NOT WRITTEN OR READ BACK"
   }
 }
