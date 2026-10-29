@@ -92,3 +92,20 @@ Esta jerarquía funcional es distinta de la jerarquía documental del DUG: **ART
 El GOW sube a v2.6 con 107 términos y la proyección estructurada de la taxonomía a v1.1. Se verificaron lectura de vuelta exacta del DUG, parseo del JSON embebido y compilación sintáctica aislada del JavaScript operativo. **No** se ejecutó renderizado de navegador ni auditoría dinámica de enlaces. Notion no se actualizó ni releyó; la instalación nativa de IPZ continúa sin verificar. No se afirma captura automática, sincronización continua ni conservación íntegra de todas las conversaciones.
 
 **Folio global de ciclo:** C-20261028-869AF58C. **Fuente canónica releída:** `gobernanza/METAPROMPT-CANONICO-SAMANTHA.html`, blob `c364e179e8e9b6a3d566a8e690dfa1a7cce91798`, commit `706e02a0dc0074e751667de8033d09411fad5ad9`.
+
+
+## OCP ubicuo y reversión de Contexto · C-GOBERNANZA-OCP-UBICUO-REVERSA-CONTEXTO-01 · DUG v357 · NX-357m · 2026-10-28
+
+Por instrucción expresa del operador, la taxonomía define **OCP como aplicable a cada unidad de su nivel taxonómico**. La Metodología, en sentido general y abstracto, es el OCP raíz; organización, repositorios, frentes, ámbitos y futuros subámbitos son OCP de su propio nivel. OCP no constituye un nivel adicional ni exige por sí mismo una carpeta, repositorio físico, núcleo adicional o sincronización exclusiva. La identidad taxonómica y su materialización física se determinan por separado.
+
+La decisión previa registrada en `C-GOBERNANZA-CONTEXTO-GESTION-CONVERSACIONAL-01` queda **SUPERSEDIDA Y REVERTIDA** en la norma vigente: Contexto ya no es un ámbito funcional independiente y Gestión conversacional ya no depende de Contexto. El historial Git, la crónica y la evidencia del evento anterior se conservan como antecedente histórico; no se borran ni se consideran la definición actual.
+
+Los únicos ámbitos funcionales definidos actualmente son **Persistencia documental** y **Gestión conversacional**, ambos al mismo nivel taxonómico. ART-020 permite que cualquiera se subdivida en subámbitos de nivel 2 o N cuando una necesidad delimitada lo justifique, pero esa capacidad es potencial y no crea subámbitos automáticamente. ART-022 y ART-014 siguen definiendo la estructura y el procedimiento de materialización documental aplicable, sin convertir el ámbito transversal en un directorio adicional por simetría.
+
+El GOW pasa a v2.7 con 108 términos. Se incorpora la entrada **Objeto Canónico de Persistencia (OCP)** y el campo estructurado `definition`, distinto de aliases y equivalencias terminológicas. Metacanon pasa a 1.23 y la taxonomía estructurada a 1.2. DUG v357 conserva 41 principios y 16 anexos.
+
+**Fuente canónica releída:** `gobernanza/METAPROMPT-CANONICO-SAMANTHA.html`, blob `87627e52a4cd5227b6a011cb4ba87a5289ce836d`, commit `1cf0f767a7771db52a48ac59dd8b51fc914d9620`.
+
+Se validó lectura de vuelta exacta del DUG, parseo de JSON y compilación sintáctica aislada de JavaScript. Los IDs duplicados detectados en el HTML estático y las anclas duplicadas del contenido inspeccionado fueron cero. No se ejecutó renderizado de navegador ni auditoría dinámica de enlaces. Notion no se actualizó ni se releyó; la instalación nativa de IPZ no se verificó. La prueba E2E de persistencia documental con un original real y recuperación por otra instancia autorizada permanece pendiente. GitHub Actions/workflows no se consultaron ni ejecutaron.
+
+**Folio global de ciclo:** `C-20261028-E025C250`. Este núcleo es un registro operativo, no una fuente normativa paralela; la norma vigente permanece en el DUG HTML.
