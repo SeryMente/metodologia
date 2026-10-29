@@ -123,8 +123,8 @@
     "cycle_artifacts": [
       {
         "path": "frentes/gobernanza/conversaciones/C-GOBERNANZA-RETOMA-02-dialogo.jsonl",
-        "blob_sha": "d55469c6d7dba7488a0b74679bedb666ccdbaa9a",
-        "read_back_parse": "PASS; 8 JSONL records"
+        "blob_sha": "0431cc3eeb252daad8e914da909e6873e3886009",
+        "read_back_parse": "PASS; 9 JSONL records, visible messages ordered and parsed"
       },
       {
         "path": "frentes/gobernanza/cronica/C-GOBERNANZA-RETOMA-02.md",
