@@ -1,0 +1,48 @@
+{
+  "schema": "ser-y-mente-document-manifest/v1",
+  "front": "Gobernanza",
+  "ocp_path": "frentes/gobernanza/",
+  "event_id": "C-GOBERNANZA-LISA-ARTICULACION-01",
+  "cycle_folio": "C-20261029-LISA-AT-01",
+  "recorded_on": "2026-10-29",
+  "status": "ESCRITO_NO_VERIFICADO",
+  "rule": "P041 + ART-014 + ART-022; conservar originales sin transformar y declarar persistencia solo tras lectura de vuelta y cotejo.",
+  "documents": [
+    {
+      "document_id": "DOC-GOV-ATHANOR-NORMATIVO-V0943",
+      "original_name": "AthanorJue20260319-normativo_v0943.html",
+      "path": "documentos/originales/AthanorJue20260319-normativo_v0943.html",
+      "class": "original",
+      "source_path": "C:\\Users\\PC 13\\Downloads\\AthanorJue20260319-normativo_v0943.html",
+      "source_device": "PC-14",
+      "captured_via": "Remote Desktop Commander; byte content transported as Base64 without document transformation.",
+      "media_type": "text/html",
+      "size_bytes": 714674,
+      "sha256": "F16E3AEDAFE2B2D7919D700373343F4A5BEEE14BD23D940789980D5A977BDCB5",
+      "git_blob_sha": "616ebf40384f5f70fef129526d1d821dd38e8859",
+      "status": "ESCRITO_NO_VERIFICADO",
+      "verification": {
+        "readback": false,
+        "content_cotejo": false
+      }
+    },
+    {
+      "document_id": "DOC-GOV-LISA-EXPLICACION-CONSOLIDADA-V1",
+      "original_name": "LISA-Explicacion-Consolidada-v1.0 (1).pdf",
+      "path": "documentos/originales/LISA-Explicacion-Consolidada-v1.0 (1).pdf",
+      "class": "original",
+      "source_path": "C:\\Users\\PC 13\\Downloads\\LISA-Explicacion-Consolidada-v1.0 (1).pdf",
+      "source_device": "PC-14",
+      "captured_via": "Remote Desktop Commander; byte content transported as Base64 without document transformation.",
+      "media_type": "application/pdf",
+      "size_bytes": 360350,
+      "sha256": "78B3904FA7D585E6C407C30227A571F2229203DE651D08C3B2595899361C80CF",
+      "git_blob_sha": "b5e25527747d74db2b9e5cfe8e855b100d5b6fc7",
+      "status": "ESCRITO_NO_VERIFICADO",
+      "verification": {
+        "readback": false,
+        "content_cotejo": false
+      }
+    }
+  ]
+}
