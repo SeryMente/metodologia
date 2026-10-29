@@ -7,15 +7,16 @@ La fuente documental preponderante es este repositorio privado, rama `main`. Ant
 ## Gobierno canónico
 
 - [INICIO.md](INICIO.md) — orden de adquisición y arranque del trabajo.
-- [Metaprompt Canónico de Samantha (Sam)](gobernanza/METAPROMPT-CANONICO-SAMANTHA.md) — gobierno general, v339 · NX-339m.
-- [Metacanon](METACANON-OBJETOS-CANONICOS.md) — método de frentes, v1.21; estado vivo en §9.
-- [Glosario Operativo del Workspace (GOW)](gobernanza/GLOSARIO-WORKSPACE.md) — vocabulario compartido, v2.2; no es un Hub.
-- [Gobierno general y precedencia](gobernanza/README.md).
+- [DUG integrado · Samantha (Sam)](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#P001) — v360 · NX-360m; verifica siempre la revisión viva de `main`.
+- [Metacanon integrado](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#metacanon) — v1.24; fuente única dentro del DUG.
+- [GOW integrado](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#glosario) — v2.9, 111 términos; no es un Hub.
+- [Gobierno general y precedencia](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html).
 
 ## Método transversal y continuidad
 
 - [Metodología operativa](METODOLOGIA.md) y [lineamientos](LINEAMIENTOS.md).
-- [Bootstrap de contexto global](BOOTSTRAP-CONTEXTO-GLOBAL.md) — procedimiento vigente de continuidad.
+- [Prompt universal de reinstanciación](PROMPT-UNIVERSAL-REINSTANTANCIACION.md) — puerta de arranque para cualquier FT/FDT.
+- [Bootstrap de contexto global](BOOTSTRAP-CONTEXTO-GLOBAL.md) — procedimiento vigente de continuidad y verificación.
 - [Ancla metodológica](ANCLA.md).
 - [Especificación de evidencia normativa por ciclo](ESPECIFICACION-EVIDENCIA-NORMATIVA-POR-CICLO.md).
 - [Formato de registro de verificación](FORMATO-REGISTRO-VERIFICACION-CICLO.md) y [su esquema JSON](FORMATO-REGISTRO-VERIFICACION-CICLO.schema.json).
@@ -43,7 +44,7 @@ Consulta estos documentos cuando la tarea pertenezca a su ámbito; no es necesar
 ## Compatibilidad histórica
 
 - [SI-METACOGNITIVO.md](SI-METACOGNITIVO.md) conserva temporalmente el texto legado completo con banner **GOBIERNO GENERAL SUPERSEDIDO** porque KHORA aún lo consume en `CANONICAL_SI_PATH`; no es el gobierno general vigente de Metodología. Su [puntero de archivo](gobernanza/antecedentes/SI-METACOGNITIVO-v1.6.21-historico.md) conserva esa distinción. No retirar esta compatibilidad hasta migrar y probar KHORA.
-- [CONTINUIDAD-ENTRE-CONVERSACIONES.md](CONTINUIDAD-ENTRE-CONVERSACIONES.md) es un puntero a una guía anterior. Para arrancar, usa `INICIO.md` y `BOOTSTRAP-CONTEXTO-GLOBAL.md`.
+- [CONTINUIDAD-ENTRE-CONVERSACIONES.md](CONTINUIDAD-ENTRE-CONVERSACIONES.md) es un puntero a una guía anterior. Para arrancar cualquier conversación de trabajo, usa `INICIO.md`, `PROMPT-UNIVERSAL-REINSTANTANCIACION.md` y `BOOTSTRAP-CONTEXTO-GLOBAL.md`. La instalación de la IPZ nativa se verifica aparte; el repositorio no demuestra por sí solo su aplicación.
 
 Las conversaciones originales, crónicas, evidencias y entregas versionadas de cada frente se conservan bajo sus carpetas correspondientes. Sus contenidos históricos no deben cargarse todos por defecto ni convertirse en normas solo por existir.
 
