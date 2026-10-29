@@ -2,8 +2,8 @@
   "canonical_source": "https://github.com/SeryMente/metodologia/blob/main/gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#glosario",
   "canonical_repository": "SeryMente/metodologia",
   "canonical_branch": "main",
-  "source_title": "Documento Único de Gobernanza (DUG) · GOW v2.6",
-  "canonical_blob_sha": "c364e179e8e9b6a3d566a8e690dfa1a7cce91798",
+  "source_title": "Documento Único de Gobernanza (DUG) · GOW v2.7",
+  "canonical_blob_sha": "87627e52a4cd5227b6a011cb4ba87a5289ce836d",
   "canonical_precedence": "The only normative GOW is the glossary section #glosario in gobernanza/METAPROMPT-CANONICO-SAMANTHA.html on SeryMente/metodologia/main. This JSON is derived source metadata and not an independent glossary authority. Other platforms, including the Notion page below, are mirrors and must not be treated as current unless read back and reconciled.",
   "prior_notion_source": "https://app.notion.com/p/247a418782418399a86001aae61ae938",
   "notion_mirror_readback": {
@@ -37,6 +37,6 @@
     "method": "Merged terms into Group 10 with provenance and scope; duplicates were consolidated against the existing GOW entries; old root file is a pointer, not a glossary authority."
   },
   "source_content_sha256": null,
-  "sync_status": "Fuente canónica GOW v2.6 en DUG v356 · NX-356m, blob c364e179e8e9b6a3d566a8e690dfa1a7cce91798, commit 706e02a0dc0074e751667de8033d09411fad5ad9. Se formaliza en ART-020 la jerarquía funcional Contexto (nivel 1) → Gestión conversacional (nivel 2). Se añaden ambos términos al GOW, que queda en 107 términos; Contexto conserva definición inicial abierta y esta enmienda no asigna otros ámbitos a esa rama. El espejo de Notion no se actualizó ni releyó en este ciclo; no hay sincronización continua verificada.",
+  "sync_status": "Fuente canónica GOW v2.7 en DUG v357 · NX-357m, blob 87627e52a4cd5227b6a011cb4ba87a5289ce836d, commit 1cf0f767a7771db52a48ac59dd8b51fc914d9620. OCP se define como ubicuo en cada nivel taxonómico, con la Metodología general y abstracta como OCP raíz; los ámbitos funcionales actualmente definidos son Persistencia documental y Gestión conversacional, al mismo nivel. La taxonomía admite subámbitos de nivel 2..N como posibilidad, no instanciada por defecto. La relación anterior Contexto → Gestión conversacional queda revertida. GOW v2.7 tiene 108 términos y separa el campo definition de equivalencias/aliases. El espejo de Notion no se actualizó ni releyó en este ciclo; no existe sincronización continua verificada.",
   "hash_status": "No se recalculó SHA-256 del contenido; se conserva el Git blob SHA como evidencia de revisión."
 }
