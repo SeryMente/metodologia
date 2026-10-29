@@ -11,7 +11,7 @@ Corte del 2026-10-22 · Metacanon v1.21. [Salida final](entregas/CHATGPT-v0.3/C-
 ## Arranque recomendado para un hilo nuevo
 
 1. [INICIO.md](../../INICIO.md) — puerta de entrada canónica.
-2. [Gobierno general de Samantha](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#gobierno-general) — DUG v357 · NX-357m.
+2. [Gobierno general de Samantha](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#gobierno-general) — DUG v358 · NX-358m.
 3. [Metacanon integrado en el DUG](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#metacanon) — v1.23; leer LEER PRIMERO, §9, §§29–51 y §4.
 4. [GOW integrado en el DUG](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#glosario) — v2.7; 108 términos y 16 anexos jerarquizados; revisar al inicio y cierre.
 5. [Taxonomía estructural de S y M](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-015) — ART-015 global; ART-020 define Persistencia documental y Gestión conversacional al mismo nivel funcional, con subámbitos de nivel 2..N como posibilidad no instanciada; la Metodología abstracta es el OCP raíz y cada nivel taxonómico es OCP sin implicar ruta física exclusiva. ART-016 a ART-022 por entidad y ámbito; ART-014 para procedimiento SPDF.
