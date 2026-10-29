@@ -48,3 +48,8 @@ El operador precisó que la Articulación Trazable (AT), además de analizar los
 ## Aclaración posterior · Responsabilidad realizadora de AT · 2026-10-29
 
 El operador precisó que AT es el **mecanismo responsable de realizar los cambios que analiza y delimita**, no solo un canal opcional para aplicarlos. Esa responsabilidad opera dentro de lo que permitan o limiten las reglas, la titularidad, los permisos, las precondiciones y las compuertas del destino. Si falta autorización o el destino prohíbe/restringe la acción, AT debe respetar el límite, registrar el bloqueo y solicitar la decisión pendiente; no eludirlo. La ejecución puede valerse de herramientas o ejecutores autorizados, pero la responsabilidad de coordinarla y verificar el resultado corresponde al mecanismo AT. No se canoniza AT ni se modifican cánones.
+
+
+## Adenda · Alcance inmediato de AT v1.0 y modularización pendiente · 2026-10-29
+
+Se fija como objetivo inmediato cerrar la definición operativa de AT v1.0, sin prolongar el desvío conceptual ni abrir implementación/canonización no autorizadas. Queda pendiente evaluar si su función multifacética —observar/analizar, controlar y limitar el impacto, mitigar, acotar destinos, dirigir y facilitar la propagación y realizar los cambios dentro de los permisos aplicables— requiere subcomponentes o submódulos diferenciados. La descomposición debe justificarse mediante responsabilidades separables, dependencias/interfaces y evidencia; no se presume por la enumeración de funciones. Resolver solo lo urgente/necesario para una v1.0 coherente y verificable; de lo contrario registrar y diferir. Se mantienen los límites de destino y las compuertas de autorización. No se canoniza AT ni se autoriza implementación por esta anotación.
