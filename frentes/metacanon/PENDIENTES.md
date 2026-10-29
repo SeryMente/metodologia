@@ -259,3 +259,11 @@ Estado E2E de este corte: ocho aspectos comprobados en los artefactos/operación
 - **IPZ candidata:** contenido actualizado desde el DUG v360 · NX-360m, con ART-024, la comprobación de responsabilidad y el prompt universal; 1.365 caracteres y lectura de vuelta, blob `7400b5109987bcf81301861b666715bf53636468`. La configuración nativa de ChatGPT no es accesible a estas herramientas: instalación/lectura de vuelta **PENDIENTE**.
 - **Prueba de arranque:** revisión mecánica de los archivos en curso; no equivale a prueba semántica en una conversación nueva. CONT-01 y CONT-02 no se cierran integralmente hasta dicha prueba. Sin afirmar sincronización automática ni recepción por otros hilos.
 - **AT:** su estado normativo no se modifica por esta transferencia; no se presenta como ratificado por esta ejecución.
+
+## Actualización C-METACANON-AUTOARRANQUE-FT-01 · 2026-10-29
+
+- **CONT-02 · Implementado documentalmente, instalación nativa pendiente:** IPZ v0.4 de 1.266 caracteres creada; el prompt universal y el BCR ahora definen un disparador automático sin prompt repetido ni checklist visible como preámbulo. INICIO y el puntero de continuidad enlazan la nueva versión.
+- **Escenarios de cobertura:** matriz práctica de 16 escenarios; chats normales personalizados tienen cobertura prevista, pero Proyectos con instrucciones propias, GPT personalizados, chats temporales sin personalización y plataformas/API externas requieren configuración específica o quedan fuera del alcance nativo. La fuente inaccesible y los conflictos de titularidad fallan de forma segura.
+- **No cerrado por documentación:** el campo nativo de ChatGPT todavía no está instalado/verificado desde las herramientas disponibles; falta una prueba semántica con un hilo realmente nuevo que empiece con una petición corriente sin repetir el procedimiento. No declarar arranque global aceptado antes de esa evidencia.
+- **AT:** sin cambio de estado normativo en este ciclo.
+- Artefactos: `entregas/CHATGPT-v0.4/C-METACANON-AUTOARRANQUE-FT-01-salida-final.md`, `entregas/CHATGPT-v0.4/MATRIZ-ESCENARIOS-INICIO-FT-v0.1.md` y la evidencia del ciclo.
