@@ -68,8 +68,9 @@
     },
     {
       "path": "frentes/gobernanza/README.md",
-      "blob_sha": "babfe3f06a6e9730bb3a69e1527d69af6bcbe617",
-      "read_back_exact": true
+      "blob_sha": "13d32755f865a0ea3f056f256bd70390d941108f",
+      "read_back_exact": true,
+      "commit_sha": "d3e62b9c8523e1868a390972e53ec9713df1f00b"
     },
     {
       "path": "frentes/gobernanza/GOBERNANZA.md",
@@ -84,7 +85,8 @@
   ],
   "evidence_readback": {
     "json_parse": "PASS",
-    "prior_blob_sha": "bd5abdb18bd5165526f4d63e12474684afb30af1",
-    "scope": "This metadata records the other artifacts' read-back hashes; it does not claim literal full-transcript preservation."
+    "previous_blob_sha": "592c2b7d31440bd62a742279ebfd42f42da3c14b",
+    "latest_readback_verified": true,
+    "note": "README relative-link correction is included in the final recorded hash."
   }
 }
