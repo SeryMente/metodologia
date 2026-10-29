@@ -2,7 +2,8 @@
 
 **Estado:** borrador inaugural en incubación; no es norma canónica.  
 **Evento:** C-TAREAS-INICIO-01 · **Ciclo:** C-20261028-TA6F31C9 · **Fecha:** 2026-10-28.  
-**Base normativa observada al inaugurar el ámbito:** DUG v358 · NX-358m; Metacanon 1.23; GOW 2.7; taxonomía estructural 1.2. **Revisión canónica posterior:** DUG v359 · NX-359m; Metacanon 1.24; GOW 2.8; taxonomía 1.3, blob `b2ff2845a5a99dc4ce3cafafc4f8e43607d48145`.
+**Base normativa observada al inaugurar el ámbito:** DUG v358 · NX-358m; Metacanon 1.23; GOW 2.7; taxonomía estructural 1.2. **Revisión canónica posterior:** DUG v359 · NX-359m; Metacanon 1.24; GOW 2.8; taxonomía 1.3, blob `b2ff2845a5a99dc4ce3cafafc4f8e43607d48145`.  
+**Último recorte de diseño:** C-TAREAS-ESTANDAR-MINIMO-02 · C-20261029-4F7A2C91; estándar común vigente como candidato v0.2 mínimo.
 
 > **Regla de estado:** esta es una primera versión de diseño para iniciar la construcción progresiva. Sus definiciones son propuestas de trabajo. No modifica el DUG ni el GOW, y no debe usarse para afirmar que Tareas ya integra la taxonomía normativa vigente.
 
