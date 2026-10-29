@@ -1,0 +1,98 @@
+{
+  "event": "C-GOBERNANZA-REFERENCIAS-VERSION-01",
+  "cycle_folio": "C-20261028-FA636DB0",
+  "date_local": "2026-10-28",
+  "timezone": "America/Mexico_City",
+  "repository": "SeryMente/metodologia",
+  "branch": "main",
+  "authorization": "Operationally bounded correction derived from the operator's explicit request in C-GOBERNANZA-OCP-UBICUO-REVERSA-CONTEXTO-01: align the stale active Metacanon summary reference to the current Gobierno general version, version the DUG and align current entry points and records. No semantic changes to OCP, the scope taxonomy, Metacanon rules or GOW were made.",
+  "previous": {
+    "dug_version": "v357 · NX-357m",
+    "dug_blob": "87627e52a4cd5227b6a011cb4ba87a5289ce836d",
+    "dug_commit": "1cf0f767a7771db52a48ac59dd8b51fc914d9620",
+    "metacanon": "1.23",
+    "gow": "2.7",
+    "terms": 108,
+    "taxonomy": "1.2"
+  },
+  "current": {
+    "dug_version": "v358 · NX-358m",
+    "dug_blob": "89a28e4d05f5baab9c4b86abdb9fbfc532690c75",
+    "dug_commit": "1dd88b177d8782bae5e266310979f5307665d750",
+    "document_event": "C-GOBERNANZA-REFERENCIAS-VERSION-01",
+    "metacanon": "1.23",
+    "gow": "2.7",
+    "terms": 108,
+    "taxonomy": "1.2",
+    "principles": 41,
+    "annexes": 16
+  },
+  "correction": {
+    "target": "Metacanon human summary of the current Gobierno general reference",
+    "previous_reference": "v356 · NX-356m",
+    "current_reference": "v358 · NX-358m",
+    "semantic_taxonomy_changed": false
+  },
+  "updated_files": [
+    {
+      "path": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.html",
+      "blob": "89a28e4d05f5baab9c4b86abdb9fbfc532690c75",
+      "commit": "1dd88b177d8782bae5e266310979f5307665d750"
+    },
+    {
+      "path": "frentes/gobernanza/CONTROL-RESPONSABILIDAD.json",
+      "blob": "0ac0a819794622857fb2ef8ebab3385873ab2f68",
+      "commit": "a31e32027e6e318d61778b91e0ea7b8f8262605d"
+    },
+    {
+      "path": "gobernanza/GLOSARIO-WORKSPACE.fuente.json",
+      "blob": "73e0bf548c09839047fe204545e7b59e5237f278",
+      "commit": "8281490b8a096b08fc43724342d8dd5fdddffcbf"
+    },
+    {
+      "path": "INICIO.md",
+      "blob": "59abada2fabc64fc78b72b4fabaa2959423f5490",
+      "commit": "626c018fc41d1574457f4236dfc3612cd9569087"
+    },
+    {
+      "path": "frentes/metacanon/README.md",
+      "blob": "9f04eea320ec337f83badf614009e60f6c797694",
+      "commit": "b8c518bd71934e7b3b6a80054c1385a6222ab003"
+    },
+    {
+      "path": "frentes/gobernanza/README.md",
+      "blob": "003135608ed10b952f6715a4dca1f902c30cfb6e",
+      "commit": "ded28bc10319eeaed09769b2b773996bbb63d72b"
+    },
+    {
+      "path": "frentes/gobernanza/PENDIENTES.md",
+      "blob": "1e8fb63ad0bd865189f7cee87777ac32ea0654a7",
+      "commit": "c17a26bed53bb30720fa7f9334c57c44f854300d"
+    },
+    {
+      "path": "frentes/gobernanza/GOBERNANZA.md",
+      "blob": "e17600e146665be9355474df540058c84785d64c",
+      "commit": "a0bf3ea7755803a32754692a31556ae027ee999f"
+    },
+    {
+      "path": "frentes/gobernanza/cronica/C-GOBERNANZA-REFERENCIAS-VERSION-01.md",
+      "blob": "5b3e27b0c02aeacc7169f317a2d14b9aa9275231",
+      "commit": "cebada348d6f28b0942496fe067e5bbdf6b80080"
+    }
+  ],
+  "validation": {
+    "embedded_json_parse": "PASS",
+    "javascript_syntax_compile": "PASS_COMPILE_ONLY",
+    "dug_exact_readback": true,
+    "stale_metacanon_reference_corrected": true,
+    "static_duplicate_html_ids": 0,
+    "duplicate_scope_content_anchors": 0,
+    "current_metadata_and_entrypoints_read_back": true,
+    "browser_render": "NOT_RUN",
+    "dynamic_crosslink_audit": "NOT_RUN",
+    "notion_mirror": "NOT_UPDATED_NOT_READ_BACK",
+    "native_ipz": "NOT_WRITTEN_OR_VERIFIED",
+    "spdf_e2e": "PENDING_REAL_ATTACHMENT_AND_SECOND_AUTHORIZED_INSTANCE",
+    "github_actions_workflows": "NOT_QUERIED_NOT_RUN"
+  }
+}
