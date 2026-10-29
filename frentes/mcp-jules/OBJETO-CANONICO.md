@@ -3,14 +3,14 @@
 ## 1. Control e identidad
 
 - **Nombre canónico:** Frente MCP Jules.
-- **Versión del artefacto:** v0.1.1 · actualización de continuidad y titularidad.
+- **Versión del artefacto:** v0.1.2 · definición de la fase 1 de planeación integral de MCP Jules v1.0.
 - **Evento de creación:** C-MCP-JULES-001.
 - **Folio de sesión vigente:** SES-20261029-6C2F9A17; generación del control: 2. El folio anterior queda preservado en el historial de transferencia.
 - **OCP:** `SeryMente/metodologia/frentes/mcp-jules/`.
 - **Repositorio de implementación:** `SeryMente/khora`, `khora-web`, servidor MCP existente.
 - **Rama de documentación:** `feat/metacanon-mcp-jules-20261025-c32f81`.
 - **Rama de implementación:** `feat/mcp-jules-mvp-20261025-final`.
-- **Estado:** OCP y criterios registrados; la titularidad de este frente se transfirió a la sesión vigente el 2026-10-29 mediante comparación de SHA y lectura de vuelta. La documentación continúa en [Metodología PR #19](https://github.com/SeryMente/metodologia/pull/19), todavía en borrador. La implementación candidata sigue en [Khora PR #338](https://github.com/SeryMente/khora/pull/338). El último diagnóstico persistido reporta typecheck/ui-review/ui:contract y API tests aprobados; 547 PASS/1 FAIL en la suite unitaria por GH_TOKEN ausente para leer el esquema privado de Metacanon; Ruff falla en dos archivos ajenos; build/E2E fallan aguas abajo. Estos resultados aún requieren refresco sobre los heads actuales. Merge, llamada real a Jules, conexión ChatGPT y aceptación funcional siguen pendientes.
+- **Estado:** la titularidad se transfirió y verificó el 2026-10-29. La fase 1 vigente es la planeación plena y completa del componente MCP Jules v1.0; no debe confundirse con la implementación candidata de [Khora PR #338](https://github.com/SeryMente/khora/pull/338). La línea base de diseño queda en [PLAN-INTEGRAL-MCP-JULES-v1.0.md](PLAN-INTEGRAL-MCP-JULES-v1.0.md). La documentación continúa en [Metodología PR #19](https://github.com/SeryMente/metodologia/pull/19), abierta en borrador y todavía no integrada a `main`. El último diagnóstico persistido reporta typecheck/UI contract/API tests aprobados en el candidato, una falla unitaria por acceso al esquema privado, findings Ruff ajenos y fallos de build/E2E aguas abajo; todo resultado técnico debe refrescarse contra los heads vigentes. API Jules real, elegibilidad de ChatGPT para escritura, conexión desde el cliente final, aceptación funcional, merge y despliegue siguen pendientes.
 - **Fuente de titularidad:** [CONTROL-RESPONSABILIDAD.json](CONTROL-RESPONSABILIDAD.json). No modifica ni sustituye el control del frente padre Metacanon.
 
 ## 2. LEER PRIMERO
@@ -35,6 +35,8 @@ Orden de uso: leer la fuente canónica Samantha/Metacanon/GOW; leer este OCP y s
 ## 4. Propósito y alcance
 
 **Propósito dictado por el operador:** construir un frente de trabajo independiente dentro de Metacanon que defina e implemente la comunicación con Jules para entregar prompts de desarrollo, recuperar sus preguntas y solicitudes de retroalimentación, responderlas dentro de la misma sesión, investigar hasta qué punto puede automatizarse el proceso MCP y llegar a un producto mínimo viable replicable en los frentes sujetos a esta metodología. El original completo se conserva en [C-MCP-JULES-001-operador.txt](originales/C-MCP-JULES-001-operador.txt).
+
+**Secuencia ratificada en este ciclo:** la primera fase es la planeación plena y completa del componente MCP Jules v1.0. El plan especifica el comportamiento conversacional tipo complemento, la arquitectura del MCP central de Khora, los siete contratos de herramientas, el ciclo bidireccional con Jules, la seguridad, los criterios de aceptación y los gates de viabilidad. La implementación posterior deberá reconciliarse contra [el plan integral v1.0](PLAN-INTEGRAL-MCP-JULES-v1.0.md).
 
 ### Arquitectura aprobada
 
@@ -138,6 +140,7 @@ Aplicar Metacanon §4 en cada ciclo sustantivo: identidad/gobierno; dónde estam
 
 - [Ciclo de creación C-MCP-JULES-001](cronica/C-MCP-JULES-001.md).
 - [Ciclo de transferencia y estado C-MCP-JULES-005](cronica/C-MCP-JULES-005.md).
+- [Plan integral del componente MCP Jules v1.0](PLAN-INTEGRAL-MCP-JULES-v1.0.md) — línea base de diseño; Fase 1, sin implementación.
 - [Texto original del operador](originales/C-MCP-JULES-001-operador.txt).
 - [Investigación de API, ChatGPT y automatización](fuentes/INVESTIGACION-API-JULES-CHATGPT.md).
 - [Plan de aceptación](pruebas/PLAN-ACEPTACION-MVP.md).
