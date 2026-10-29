@@ -51,7 +51,7 @@ La historia del propietario anterior fue conservada y la comprobación de lectur
 | Fuentes verbatim | `9fbb49332c3dcec3a605f559a09c2a352338054a` | `ed1c597a84e6f575d7c61caee5ee9aca234c46e1` |
 | Trazabilidad semántica | `f7b97e43ef3ba715e5aeb5351ec3f29375cbf95e` | `e225feedb255695f81ed95fc89a64c5b92b15235` |
 | Índice de Gestión conversacional | `90b46e1f6340c7055948adfa201a1d1d314cfd5f` | `b5a84a4508e078aa9f160e8cdb1177bf0c76affe` |
-| Salida final del ciclo | `OUT_COMMIT_PENDING` | `50da20037280d20b03270941ec722fb80360d507` |
+| Salida final del ciclo | `b7d0bbfc11ef85f014121de50ed41e82c9792be2` | `50da20037280d20b03270941ec722fb80360d507` |
 | Diálogo JSONL del ciclo | `9ec73b8a240d1b805fafe535a1527a954cbe24ab` | `67115b134f17a965a1aeb3ea0017bb6ff7be0c5b`; 2 registros E/S, 4 salidas auxiliares |
 
 ## 6. Comprobación mecánica
