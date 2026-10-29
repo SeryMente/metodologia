@@ -3,7 +3,7 @@
 ## 1. Control e identidad
 
 - **Nombre canónico:** Frente MCP Jules.
-- **Versión del artefacto:** v0.1.2 · definición de la fase 1 de planeación integral de MCP Jules v1.0.
+- **Versión del artefacto:** v0.1.3 · consolidación del plan integral MCP Jules v1.0.
 - **Evento de creación:** C-MCP-JULES-001.
 - **Folio de sesión vigente:** SES-20261029-6C2F9A17; generación del control: 2. El folio anterior queda preservado en el historial de transferencia.
 - **OCP:** `SeryMente/metodologia/frentes/mcp-jules/`.
@@ -140,6 +140,7 @@ Aplicar Metacanon §4 en cada ciclo sustantivo: identidad/gobierno; dónde estam
 
 - [Ciclo de creación C-MCP-JULES-001](cronica/C-MCP-JULES-001.md).
 - [Ciclo de transferencia y estado C-MCP-JULES-005](cronica/C-MCP-JULES-005.md).
+- [Ciclo vigente C-MCP-JULES-006](cronica/C-MCP-JULES-006.md) — definición de la fase 1.
 - [Plan integral del componente MCP Jules v1.0](PLAN-INTEGRAL-MCP-JULES-v1.0.md) — línea base de diseño; Fase 1, sin implementación.
 - [Texto original del operador](originales/C-MCP-JULES-001-operador.txt).
 - [Investigación de API, ChatGPT y automatización](fuentes/INVESTIGACION-API-JULES-CHATGPT.md).
