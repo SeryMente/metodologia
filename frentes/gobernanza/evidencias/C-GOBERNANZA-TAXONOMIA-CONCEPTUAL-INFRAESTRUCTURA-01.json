@@ -208,8 +208,8 @@
     },
     {
       "path": "ambitos/tareas/DISEÑO-TAREAS-v1.0.md",
-      "blob_sha": "cecaa92f8262d398b71566dde0084491c765cca7",
-      "commit_sha": "d06ffe6ce7e7e8c2156ab0f1226da0851af2848c",
+      "blob_sha": "2dab12c8aa94dab3b3f8748fb98780415f215315",
+      "commit_sha": "a6ed20c622e0df2569139c319338ca5e66cd15dd",
       "readback": true
     },
     {
@@ -246,7 +246,7 @@
     },
     {
       "path": "ambitos/tareas/evidencias/C-TAREAS-ESTANDAR-MINIMO-02.json",
-      "blob_sha": "9dada1e61d516dae0a1dfec1963b903341dd2012",
+      "blob_sha": "ffad61c5ebf9eeac2f5cfabebcfdc230d3525994",
       "commit_sha": "a2ee57e17fc3be876c158b74dfe5749a9f4cc720",
       "readback": true,
       "json_parse": "PASS"
@@ -258,8 +258,8 @@
     "real_task_end_to_end": "Not run",
     "native_ipz_field": "NOT modified or verified",
     "browser_audit": "Not run",
-    "next_step": "Tareas: validate common contract with two or three authorized cases of different kinds; keep Tareas uncanonized until separate authorization",
-    "tasks_common_standard": "CANDIDATE v0.1; JSON parses, full schema validation and end-to-end tests pending",
+    "next_step": "Before expanding, determine whether Tareas adds a necessary capability; then test the minimal contract against authorized cases without fixing an arbitrary test count.",
+    "tasks_common_standard": "CANDIDATE MINIMAL v0.2; JSON parses, full schema validation and end-to-end tests pending",
     "task_ipz_repository_file": "Updated/read back as candidate only"
   },
   "task_standard_reduction": {
