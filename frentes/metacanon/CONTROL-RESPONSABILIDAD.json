@@ -2,93 +2,99 @@
   "schema": "responsabilidad/1",
   "front": "metacanon",
   "status": "owned",
-  "owner_thread": "chatgpt-C-METACANON-REINSTANTANCIACION-M27-SES-20261028-8D7A31C2",
-  "instance": "chatgpt-metacanon-reinstanciacion-m27-2026-10-28",
-  "generation": 5,
-  "authorization_ref": "C-METACANON-REINSTANTANCIACION-M27; authorization verbatim in the operator prompt dated 2026-10-28; source control blob SHA 8f9d04b86114e0e7fe47e6c6977c8ce6a9d047c7; P037 and Metacanon §42 in the integrated governance HTML v345.",
-  "scope": "one active owner; generation 4 superseded by explicit single-transfer authorization for C-METACANON-REINSTANTANCIACION-M27; owner_thread is an operational alias, not a native platform conversation ID; cooperative preflight, not server-enforced fencing of arbitrary repository writes",
+  "owner_thread": "chatgpt-C-METACANON-ARRANQUE-360-SES-20261029-7F4A9C21",
+  "instance": "chatgpt-metacanon-arranque-v360-2026-10-29",
+  "generation": 6,
+  "authorization_ref": "C-METACANON-ARRANQUE-360-01; operador respondió literalmente \"Si\" a la pregunta directa de transferencia en esta conversación, 2026-10-29; control fuente SHA 0eaf612b01de0ae630b7a4775849be455ebda6c8; P037 y Metacanon §42 del DUG v360.",
+  "scope": "one active owner; generation 5 superseded by explicit single-transfer authorization for C-METACANON-ARRANQUE-360-01; owner_thread and instance are operational aliases, not native platform conversation IDs; cooperative preflight, not server-enforced fencing of arbitrary repository writes",
   "expiry": null,
-  "handoff": "Transferred in C-METACANON-REINSTANTANCIACION-M27 from chatgpt-C-METACANON-REINSTANTANCIACION-M26-SES-20261022-5E7C91A4 (instance chatgpt-metacanon-reinstanciacion-m26-2026-10-22, generation 4, folio SES-20261022-5E7C91A4) to chatgpt-C-METACANON-REINSTANTANCIACION-M27-SES-20261028-8D7A31C2 (instance chatgpt-metacanon-reinstanciacion-m27-2026-10-28, generation 5, folio SES-20261028-8D7A31C2); the operator's prompt dated 2026-10-28 explicitly authorizes one transfer for frentes/metacanon/ only; compare-and-swap conditioned on observed control blob SHA 8f9d04b86114e0e7fe47e6c6977c8ce6a9d047c7; canonical read-back required and performed. Alias is operational, not a native platform ID.",
+  "handoff": "Transferred in C-METACANON-ARRANQUE-360-01 from chatgpt-C-METACANON-REINSTANTANCIACION-M27-SES-20261028-8D7A31C2 (instance chatgpt-metacanon-reinstanciacion-m27-2026-10-28, generation 5, folio SES-20261028-8D7A31C2) to chatgpt-C-METACANON-ARRANQUE-360-SES-20261029-7F4A9C21 (instance chatgpt-metacanon-arranque-v360-2026-10-29, generation 6, folio SES-20261029-7F4A9C21); operator explicitly answered \"Si\" to the transfer question on 2026-10-29. Single-front scope frentes/metacanon/ only. SHA-conditioned update from 0eaf612b01de0ae630b7a4775849be455ebda6c8; canonical read-back required. Receiving identity is an operational alias, not a native platform ID.",
   "previous_owner": {
-    "owner_thread": "chatgpt-C-METACANON-REINSTANTANCIACION-M26-SES-20261022-5E7C91A4",
-    "instance": "chatgpt-metacanon-reinstanciacion-m26-2026-10-22",
-    "generation": 4,
-    "session_folio": "SES-20261022-5E7C91A4",
+    "owner_thread": "chatgpt-C-METACANON-REINSTANTANCIACION-M27-SES-20261028-8D7A31C2",
+    "instance": "chatgpt-metacanon-reinstanciacion-m27-2026-10-28",
+    "generation": 5,
+    "session_folio": "SES-20261028-8D7A31C2",
     "status": "owned",
-    "observed_blob_sha": "8f9d04b86114e0e7fe47e6c6977c8ce6a9d047c7"
+    "observed_blob_sha": "0eaf612b01de0ae630b7a4775849be455ebda6c8"
   },
   "transfer": {
-    "event_id": "C-METACANON-REINSTANTANCIACION-M27",
-    "cycle_folio": "C-20261028-7AE91C43",
+    "event_id": "C-METACANON-ARRANQUE-360-01",
+    "cycle_folio": "C-20261029-7F4A9C21",
     "status": "transferred",
-    "recorded_on": "2026-10-28",
+    "recorded_on": "2026-10-29",
     "authorization": {
       "status": "explicit",
-      "source": "operator prompt in the receiving conversation, dated 2026-10-28",
-      "verbatim": "AUTORIZACIÓN PREVIA Y EXPLÍCITA: por medio de este prompt, el operador autoriza a la instancia de ChatGPT que lo recibe a ejecutar una transferencia única de la responsabilidad de Metacanon desde el titular activo que conste en frentes/metacanon/CONTROL-RESPONSABILIDAD.json hacia esta nueva conversación.",
-      "scope": "single transfer of Metacanon/front frentes/metacanon/ to this receiving conversation only"
+      "source": "operator response to the direct authorization question in this conversation, dated 2026-10-29",
+      "question_verbatim": "¿Autorizas que esta conversación asuma el frente Metacanon y sustituya la titularidad actualmente registrada?",
+      "verbatim": "Si",
+      "scope": "single transfer of Metacanon/front frentes/metacanon/ from the currently recorded active owner to this receiving conversation only"
     },
     "from": {
-      "owner_thread": "chatgpt-C-METACANON-REINSTANTANCIACION-M26-SES-20261022-5E7C91A4",
-      "instance": "chatgpt-metacanon-reinstanciacion-m26-2026-10-22",
-      "generation": 4,
-      "session_folio": "SES-20261022-5E7C91A4",
-      "status": "owned",
-      "observed_blob_sha": "8f9d04b86114e0e7fe47e6c6977c8ce6a9d047c7"
-    },
-    "to": {
       "owner_thread": "chatgpt-C-METACANON-REINSTANTANCIACION-M27-SES-20261028-8D7A31C2",
       "instance": "chatgpt-metacanon-reinstanciacion-m27-2026-10-28",
       "generation": 5,
       "session_folio": "SES-20261028-8D7A31C2",
+      "status": "owned",
+      "observed_blob_sha": "0eaf612b01de0ae630b7a4775849be455ebda6c8"
+    },
+    "to": {
+      "owner_thread": "chatgpt-C-METACANON-ARRANQUE-360-SES-20261029-7F4A9C21",
+      "instance": "chatgpt-metacanon-arranque-v360-2026-10-29",
+      "generation": 6,
+      "session_folio": "SES-20261029-7F4A9C21",
       "identity_kind": "operational alias; native conversation ID unavailable"
     },
-    "observed_control_blob_sha": "8f9d04b86114e0e7fe47e6c6977c8ce6a9d047c7",
-    "observed_source_generation": 4,
-    "new_generation": 5,
-    "method": "SHA-conditioned GitHub contents update using observed current blob SHA, followed by canonical read-back",
+    "observed_control_blob_sha": "0eaf612b01de0ae630b7a4775849be455ebda6c8",
+    "observed_source_generation": 5,
+    "new_generation": 6,
+    "method": "GitHub contents update conditioned on the observed current blob SHA, followed by canonical read-back",
     "collision_check": {
-      "event_id_candidate": "C-METACANON-REINSTANTANCIACION-M27",
-      "cycle_folio_candidate": "C-20261028-7AE91C43",
-      "session_folio_candidate": "SES-20261028-8D7A31C2",
+      "event_id_candidate": "C-METACANON-ARRANQUE-360-01",
+      "cycle_folio_candidate": "C-20261029-7F4A9C21",
+      "session_folio_candidate": "SES-20261029-7F4A9C21",
       "exact_search_result_count": 0,
       "checked_controls": [
         {
           "path": "SeryMente/metodologia:frentes/metacanon/CONTROL-RESPONSABILIDAD.json",
-          "sha": "8f9d04b86114e0e7fe47e6c6977c8ce6a9d047c7"
+          "sha": "0eaf612b01de0ae630b7a4775849be455ebda6c8",
+          "occurrences": 0
         },
         {
           "path": "SeryMente/metodologia:frentes/acceso/CONTROL-RESPONSABILIDAD.json",
-          "sha": "d77dbf55ca188d79d5126e168edd202ec63ac811"
+          "sha": "d77dbf55ca188d79d5126e168edd202ec63ac811",
+          "candidate_occurrences": 0
         },
         {
           "path": "SeryMente/khora:docs/frentes/harmonia/CONTROL-RESPONSABILIDAD.json",
-          "sha": "636a43c6e89355bba94154f2e48f465226030396"
+          "sha": "2b8e5091e621b1017ed1e55f2796cc48f9ba444b",
+          "candidate_occurrences": 0
         },
         {
           "path": "SeryMente/signal-interpreter:docs/frentes/signal-interpreter/CONTROL-RESPONSABILIDAD.json",
-          "sha": "1d3cdb2045dae6e9999dac90f33ebfc68d998854"
+          "sha": "d2ffe7c39ae04028275279b5033f2ee334305388",
+          "candidate_occurrences": 0
         },
         {
           "path": "SeryMente/personal:frentes/repertorio-canto-personal/CONTROL-RESPONSABILIDAD.json",
-          "sha": "fa92efd677b3a57520b8d3a1cf4feb0fa792b978"
+          "sha": "fa92efd677b3a57520b8d3a1cf4feb0fa792b978",
+          "candidate_occurrences": 0
         }
       ],
-      "declared_scope": "Exact GitHub code searches for the candidate event, cycle folio, and session folio returned zero matches; direct content scans of the listed five accessible authoritative controls found zero occurrences of the candidates. This is bounded accessible scope, not proof of global uniqueness."
+      "declared_scope": "Candidate identifiers were directly scanned in the current Metacanon control and four currently accessible sibling authoritative controls. Search connector returned no indexed exact matches. This is bounded accessible scope, not proof of global uniqueness."
     }
   },
-  "session_folio": "SES-20261028-8D7A31C2",
+  "session_folio": "SES-20261029-7F4A9C21",
   "session_assignment": {
     "status": "active",
-    "folio": "SES-20261028-8D7A31C2",
-    "assigned_on": "2026-10-28",
+    "folio": "SES-20261029-7F4A9C21",
+    "assigned_on": "2026-10-29",
     "front_ocp": "frentes/metacanon/",
-    "owner_alias": "chatgpt-C-METACANON-REINSTANTANCIACION-M27-SES-20261028-8D7A31C2",
-    "instance": "chatgpt-metacanon-reinstanciacion-m27-2026-10-28",
-    "generation": 5,
-    "identity_kind": "operational session folio; not a native ChatGPT conversation ID",
-    "uniqueness_check": "Manual bounded check on 2026-10-28: exact code searches for event, cycle folio, and session folio returned zero results; direct scans of the current Metacanon and four other accessible authoritative controls found zero occurrences of these candidates. This does not establish global uniqueness or server-enforced exclusivity.",
-    "source_sha_before": "8f9d04b86114e0e7fe47e6c6977c8ce6a9d047c7",
+    "owner_alias": "chatgpt-C-METACANON-ARRANQUE-360-SES-20261029-7F4A9C21",
+    "instance": "chatgpt-metacanon-arranque-v360-2026-10-29",
+    "generation": 6,
+    "identity_kind": "operator-authorized operational session folio; native ChatGPT conversation ID unavailable",
+    "uniqueness_check": "Bounded check on 2026-10-29: candidate event, cycle and session identifiers were absent from the live control and from four accessible sibling authoritative controls listed below. Search indexing is not treated as proof of global uniqueness; this does not establish global uniqueness or server-enforced exclusivity.",
+    "source_sha_before": "0eaf612b01de0ae630b7a4775849be455ebda6c8",
     "checked_control_scope": [
       "SeryMente/metodologia:frentes/metacanon/CONTROL-RESPONSABILIDAD.json",
       "SeryMente/metodologia:frentes/acceso/CONTROL-RESPONSABILIDAD.json",
@@ -97,7 +103,7 @@
       "SeryMente/personal:frentes/repertorio-canto-personal/CONTROL-RESPONSABILIDAD.json"
     ],
     "unverified_control_paths": [
-      "SeryMente/metodologia:frentes/metodologia/CONTROL-RESPONSABILIDAD.json (legacy path; not counted as an authoritative control)"
+      "Other repositories/controls not exposed by available connectors; global uniqueness not established."
     ]
   },
   "handoff_preparation": {
@@ -179,28 +185,36 @@
       "session_folio": "SES-20261022-5E7C91A4",
       "status": "superseded_by_explicit_transfer",
       "observed_blob_sha": "8f9d04b86114e0e7fe47e6c6977c8ce6a9d047c7"
+    },
+    {
+      "owner_thread": "chatgpt-C-METACANON-REINSTANTANCIACION-M27-SES-20261028-8D7A31C2",
+      "instance": "chatgpt-metacanon-reinstanciacion-m27-2026-10-28",
+      "generation": 5,
+      "session_folio": "SES-20261028-8D7A31C2",
+      "status": "superseded_by_explicit_transfer",
+      "observed_blob_sha": "0eaf612b01de0ae630b7a4775849be455ebda6c8"
     }
   ],
   "previous_session_assignment": {
-    "status": "active",
-    "folio": "SES-20261022-5E7C91A4",
-    "assigned_on": "2026-10-22",
+    "status": "superseded_by_explicit_transfer",
+    "folio": "SES-20261028-8D7A31C2",
+    "assigned_on": "2026-10-28",
     "front_ocp": "frentes/metacanon/",
-    "owner_alias": "chatgpt-C-METACANON-REINSTANTANCIACION-M26-SES-20261022-5E7C91A4",
-    "instance": "chatgpt-metacanon-reinstanciacion-m26-2026-10-22",
-    "generation": 4,
+    "owner_alias": "chatgpt-C-METACANON-REINSTANTANCIACION-M27-SES-20261028-8D7A31C2",
+    "instance": "chatgpt-metacanon-reinstanciacion-m27-2026-10-28",
+    "generation": 5,
     "identity_kind": "operational session folio; not a native ChatGPT conversation ID",
-    "uniqueness_check": "Manual bounded check on 2026-10-22: exact code search for SES-20261022-5E7C91A4 returned zero before transfer; the pre-write Metacanon control had a different active folio. A direct content scan after transfer found no occurrence of this candidate in four currently readable sibling CONTROL-RESPONSABILIDAD.json files: SeryMente/khora Harmonia, SeryMente/signal-interpreter, SeryMente/metodologia/acceso, and SeryMente/personal/repertorio-canto-personal. The Metodologia legacy-pointer control path frentes/metodologia/CONTROL-RESPONSABILIDAD.json returned NOT_FOUND and is not treated as a control. This does not establish global uniqueness or server-enforced exclusivity.",
-    "source_sha_before": "1d857624215d8825e784e0ffed671213b2f0271a",
+    "uniqueness_check": "Manual bounded check on 2026-10-28: exact code searches for event, cycle folio, and session folio returned zero results; direct scans of the current Metacanon and four other accessible authoritative controls found zero occurrences of these candidates. This does not establish global uniqueness or server-enforced exclusivity.",
+    "source_sha_before": "8f9d04b86114e0e7fe47e6c6977c8ce6a9d047c7",
     "checked_control_scope": [
-      "SeryMente/metodologia:frentes/metacanon/CONTROL-RESPONSABILIDAD.json (pre-write snapshot; different active folio)",
+      "SeryMente/metodologia:frentes/metacanon/CONTROL-RESPONSABILIDAD.json",
+      "SeryMente/metodologia:frentes/acceso/CONTROL-RESPONSABILIDAD.json",
       "SeryMente/khora:docs/frentes/harmonia/CONTROL-RESPONSABILIDAD.json",
       "SeryMente/signal-interpreter:docs/frentes/signal-interpreter/CONTROL-RESPONSABILIDAD.json",
-      "SeryMente/metodologia:frentes/acceso/CONTROL-RESPONSABILIDAD.json",
       "SeryMente/personal:frentes/repertorio-canto-personal/CONTROL-RESPONSABILIDAD.json"
     ],
     "unverified_control_paths": [
-      "SeryMente/metodologia:frentes/metodologia/CONTROL-RESPONSABILIDAD.json (NOT_FOUND; legacy path contains no parallel control)"
+      "SeryMente/metodologia:frentes/metodologia/CONTROL-RESPONSABILIDAD.json (legacy path; not counted as an authoritative control)"
     ]
   },
   "transfer_history": [
@@ -232,6 +246,54 @@
       "observed_source_generation": 4,
       "new_generation": 5,
       "method": "GitHub contents update conditioned on observed control blob SHA, followed by canonical read-back",
+      "status": "transferred"
+    },
+    {
+      "event_id": "C-METACANON-ARRANQUE-360-01",
+      "recorded_on": "2026-10-29",
+      "cycle_folio": "C-20261029-7F4A9C21",
+      "receiver_identity_kind": "operator-authorized operational alias; native conversation ID unavailable",
+      "authorization_scope": "Metacanon/front frentes/metacanon/ transfer to this receiving conversation only",
+      "authorization_verbatim": "Si",
+      "question_verbatim": "¿Autorizas que esta conversación asuma el frente Metacanon y sustituya la titularidad actualmente registrada?",
+      "source_control_blob_sha": "0eaf612b01de0ae630b7a4775849be455ebda6c8",
+      "observed_source_generation": 5,
+      "new_generation": 6,
+      "method": "GitHub contents update conditioned on observed control blob SHA, followed by canonical read-back",
+      "collision_check": {
+        "event_id_candidate": "C-METACANON-ARRANQUE-360-01",
+        "cycle_folio_candidate": "C-20261029-7F4A9C21",
+        "session_folio_candidate": "SES-20261029-7F4A9C21",
+        "exact_search_result_count": 0,
+        "checked_controls": [
+          {
+            "path": "SeryMente/metodologia:frentes/metacanon/CONTROL-RESPONSABILIDAD.json",
+            "sha": "0eaf612b01de0ae630b7a4775849be455ebda6c8",
+            "occurrences": 0
+          },
+          {
+            "path": "SeryMente/metodologia:frentes/acceso/CONTROL-RESPONSABILIDAD.json",
+            "sha": "d77dbf55ca188d79d5126e168edd202ec63ac811",
+            "candidate_occurrences": 0
+          },
+          {
+            "path": "SeryMente/khora:docs/frentes/harmonia/CONTROL-RESPONSABILIDAD.json",
+            "sha": "2b8e5091e621b1017ed1e55f2796cc48f9ba444b",
+            "candidate_occurrences": 0
+          },
+          {
+            "path": "SeryMente/signal-interpreter:docs/frentes/signal-interpreter/CONTROL-RESPONSABILIDAD.json",
+            "sha": "d2ffe7c39ae04028275279b5033f2ee334305388",
+            "candidate_occurrences": 0
+          },
+          {
+            "path": "SeryMente/personal:frentes/repertorio-canto-personal/CONTROL-RESPONSABILIDAD.json",
+            "sha": "fa92efd677b3a57520b8d3a1cf4feb0fa792b978",
+            "candidate_occurrences": 0
+          }
+        ],
+        "declared_scope": "Candidate identifiers were directly scanned in the current Metacanon control and four currently accessible sibling authoritative controls. Search connector returned no indexed exact matches. This is bounded accessible scope, not proof of global uniqueness."
+      },
       "status": "transferred"
     }
   ],
