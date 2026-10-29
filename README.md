@@ -50,4 +50,4 @@ Las conversaciones originales, crónicas, evidencias y entregas versionadas de c
 
 ## Arquitectura multi-repositorio
 
-El nombre operativo del frente es **Metacanon**; el repositorio conserva su nombre `SeryMente/metodologia` porque repositorio y frente son identidades distintas. La taxonomía y el corte de repositorios/OCP observados se registran en [INVENTARIO-REPOSITORIOS-Y-FRENTES.md](INVENTARIO-REPOSITORIOS-Y-FRENTES.md); el estándar vigente está en [Metacanon](METACANON-OBJETOS-CANONICOS.md) (§51). Los OCP históricos de otros frentes conservan sus rutas declaradas.
+El nombre operativo del frente es **Metacanon**; el repositorio conserva su nombre `SeryMente/metodologia` porque repositorio y frente son identidades distintas. La taxonomía y el corte de repositorios/OCP observados se registran en [INVENTARIO-REPOSITORIOS-Y-FRENTES.md](INVENTARIO-REPOSITORIOS-Y-FRENTES.md); el estándar vigente está en [Metacanon integrado](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#metacanon) (§51). Los OCP históricos de otros frentes conservan sus rutas declaradas.
