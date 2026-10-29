@@ -33,7 +33,7 @@ Se revisó la crónica y el recibo de evidencia del último ciclo previo, C-GOBE
 
 ## Qué cambió / qué no ocurrió
 
-Cambió el control único de Gobernanza, su titular, generación y folio. Se prepara el recibo de esta retoma y se apuntarán los puntos de entrada y el estado operativo a este ciclo. No se escribió en el DUG, no se modificó el control de Metacanon, no se ejecutó RDC, no se actualizó/leyó Notion o IPZ nativo, y no se consultaron ni ejecutaron workflows.
+Cambió el control único de Gobernanza, su titular, generación y folio. Se persistieron diálogo disponible, crónica, evidencia y salida; el README, el núcleo operativo y los pendientes se actualizaron y leyeron de vuelta. Los SHA de lectura de vuelta se recogen en el recibo de evidencia del ciclo. No se escribió en el DUG, no se modificó el control de Metacanon, no se ejecutó RDC, no se actualizó/leyó Notion o IPZ nativo, y no se consultaron ni ejecutaron workflows.
 
 ## Estado y siguiente acción
 
