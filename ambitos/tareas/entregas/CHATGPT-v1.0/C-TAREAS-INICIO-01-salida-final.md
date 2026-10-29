@@ -1,26 +1,28 @@
-# Salida final · Inauguración de Tareas v1.0
+Queda inaugurado **Tareas v1.0** como **diseño inicial en incubación**, con materialización operativa provisional en `ambitos/tareas/` y control de responsabilidad propio. La versión queda documentada, pero todavía no ratificada como norma canónica.
 
-El ámbito **Tareas** queda inaugurado como un diseño inicial en incubación, con un OCP operativo provisional bajo ambitos/tareas/. Este ciclo no canoniza Tareas en el DUG ni modifica el GOW.
+## Artefactos creados
 
-## Artefactos principales
+- [Punto de entrada de Tareas](https://github.com/SeryMente/metodologia/blob/main/ambitos/tareas/README.md)
+- [Diseño conceptual y operativo Tareas v1.0](https://github.com/SeryMente/metodologia/blob/main/ambitos/tareas/DISEÑO-TAREAS-v1.0.md)
+- [Instrucciones operativas específicas v1.0](https://github.com/SeryMente/metodologia/blob/main/ambitos/tareas/INSTRUCCIONES-TAREAS-v1.0.md)
+- [Texto candidato para Instrucciones Personalizadas de ChatGPT (IPZ)](https://github.com/SeryMente/metodologia/blob/main/ambitos/tareas/IPZ-TAREAS-CANDIDATO.txt)
+- [Pendientes y secuencia de ciclos](https://github.com/SeryMente/metodologia/blob/main/ambitos/tareas/PENDIENTES.md)
+- [Control de responsabilidad](https://github.com/SeryMente/metodologia/blob/main/ambitos/tareas/CONTROL-RESPONSABILIDAD.json)
+- [Crónica del ciclo inaugural](https://github.com/SeryMente/metodologia/blob/main/ambitos/tareas/cronica/C-TAREAS-INICIO-01.md)
+- [Registro del diálogo](https://github.com/SeryMente/metodologia/blob/main/ambitos/tareas/conversaciones/C-TAREAS-INICIO-01-dialogo.jsonl)
+- [Evidencia y lecturas de vuelta](https://github.com/SeryMente/metodologia/blob/main/ambitos/tareas/evidencias/C-TAREAS-INICIO-01.json)
+- [Entrega de cierre del ciclo](https://github.com/SeryMente/metodologia/blob/main/ambitos/tareas/entregas/CHATGPT-v1.0/C-TAREAS-INICIO-01-salida-final.md)
 
-- [Diseño conceptual y operativo Tareas v1.0](../../DISEÑO-TAREAS-v1.0.md)
-- [Instrucciones operativas Tareas v1.0](../../INSTRUCCIONES-TAREAS-v1.0.md)
-- [Texto candidato para IPZ](../../IPZ-TAREAS-CANDIDATO.txt)
-- [Pendientes y secuencia de definición](../../PENDIENTES.md)
-- [Control de responsabilidad](../../CONTROL-RESPONSABILIDAD.json)
-- [Crónica](../../cronica/C-TAREAS-INICIO-01.md)
-- [Evidencia](../../evidencias/C-TAREAS-INICIO-01.json)
-- [Diálogo registrado](../../conversaciones/C-TAREAS-INICIO-01-dialogo.jsonl)
+## Qué contiene esta primera versión
 
-## Estado normativo al abrir
+El diseño inicial propone un propósito transversal para capturar, formular, relacionar, seguir, verificar y cerrar tareas; delimita lo que correspondería a Tareas frente a Persistencia documental, Gestión conversacional y los frentes responsables; introduce un modelo mínimo de tarea y un ciclo de vida candidato; y separa la cadena operativa entre DUG, GOW, IPZ, instrucciones específicas del ámbito, registro/plataformas y evidencia.
 
-DUG v358 · NX-358m, Metacanon 1.23, GOW 2.7 y taxonomía estructural 1.2. La taxonomía vigente sigue declarando dos ámbitos funcionales: Persistencia documental y Gestión conversacional. La incorporación de Tareas como tercer ámbito es una propuesta pendiente de definición y autorización expresa antes de editar el DUG/GOW.
+## Límites mantenidos
 
-## Alcance de v1.0 inicial
+El DUG vigente sigue en **v358 · NX-358m**, con Metacanon 1.23, GOW 2.7 y taxonomía estructural 1.2. En ese estado solo figuran como ámbitos funcionales **Persistencia documental** y **Gestión conversacional**. Tareas está planteado como una posible tercera entrada del mismo nivel, pero **no se ha incorporado al DUG ni al GOW**.
 
-La propuesta separa el propósito transversal, las fronteras, el modelo mínimo de tarea, el ciclo de vida, las instrucciones específicas, el texto breve de IPZ y las verificaciones pendientes. No se ha creado aún un registro canónico de tareas ni una integración externa. El texto candidato de IPZ está almacenado, pero el campo nativo no se ha actualizado ni leído de vuelta.
+El texto de IPZ es únicamente un candidato guardado en el repositorio: no se modificó ni verificó el campo nativo de ChatGPT. Tampoco se ha creado un registro vacío de tareas, se ha elegido una plataforma como fuente canónica, ni se ha probado una tarea real de extremo a extremo.
 
-## Próximo paso
+## Siguiente ciclo
 
-Empezar por TAR-01 y TAR-02: cerrar el problema que resuelve Tareas y sus límites respecto de Persistencia documental, Gestión conversacional y los frentes de trabajo. La decisión taxonómica y cualquier cambio normativo vendrán después de revisar la propuesta y obtener autorización explícita.
+El primer paso es **TAR-01 y TAR-02**: cerrar el problema que Tareas debe resolver, quién se beneficiará y cuáles serán sus fronteras. Con eso definido, podremos validar el modelo de tarea y el ciclo de vida antes de preparar cualquier propuesta de cambio normativo.
