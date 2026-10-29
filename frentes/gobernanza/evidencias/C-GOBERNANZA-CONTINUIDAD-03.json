@@ -52,21 +52,39 @@
   "artifacts": [
     {
       "path": "frentes/gobernanza/conversaciones/C-GOBERNANZA-CONTINUIDAD-03-fragmento-predecesor.jsonl",
-      "commit": "466842943a3d51671a04bbe8e598f9f86b64b1f9",
-      "blob": "0d054900da65d1ba50660fa65241915e95861ab3",
-      "readback_exact": true
+      "blob_sha": "0d054900da65d1ba50660fa65241915e95861ab3",
+      "lines": 4,
+      "read_back_jsonl_parse": "PASS"
     },
     {
       "path": "frentes/gobernanza/cronica/C-GOBERNANZA-CONTINUIDAD-03.md",
-      "commit": "d3158a6e29dc30ed05cc1bf24ee3edf0c9829576",
-      "blob": "49c0e105601c79e5852ae92a63f444d73ba86596",
-      "readback_exact": true
+      "blob_sha": "49c0e105601c79e5852ae92a63f444d73ba86596",
+      "read_back_exact": true
     },
     {
       "path": "frentes/gobernanza/entregas/CHATGPT-v0.3/C-GOBERNANZA-CONTINUIDAD-03-salida-final.md",
-      "commit": "d480667f6ad951151763e8cb9f7e9f6a72327e71",
-      "blob": "c6a8076e014e6b33f42d9945e7757709155d250d",
-      "readback_exact": true
+      "blob_sha": "c6a8076e014e6b33f42d9945e7757709155d250d",
+      "read_back_exact": true
+    },
+    {
+      "path": "frentes/gobernanza/README.md",
+      "blob_sha": "babfe3f06a6e9730bb3a69e1527d69af6bcbe617",
+      "read_back_exact": true
+    },
+    {
+      "path": "frentes/gobernanza/GOBERNANZA.md",
+      "blob_sha": "4b7dfe5bbf376d6f05fdd274a6c4d3918dd51cd2",
+      "read_back_exact": true
+    },
+    {
+      "path": "frentes/gobernanza/PENDIENTES.md",
+      "blob_sha": "546f313e91e9eeaebc5e1a1e0d5eaea9f786a910",
+      "read_back_exact": true
     }
-  ]
+  ],
+  "evidence_readback": {
+    "json_parse": "PASS",
+    "prior_blob_sha": "bd5abdb18bd5165526f4d63e12474684afb30af1",
+    "scope": "This metadata records the other artifacts' read-back hashes; it does not claim literal full-transcript preservation."
+  }
 }
