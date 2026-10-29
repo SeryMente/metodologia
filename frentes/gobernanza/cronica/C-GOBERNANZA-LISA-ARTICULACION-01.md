@@ -43,3 +43,8 @@ Al retomar AT, mapear su flujo a LISA §EI.10/§EI.11 y a P005, P022, P024, P025
 ## Aclaración posterior del operador · 2026-10-29 12:46 (America/Mexico_City)
 
 El operador precisó que la Articulación Trazable (AT), además de analizar los cambios y sus efectos, debe servir como medio para realizar los cambios que analiza. El informe se amplía para distinguir: (1) análisis de impacto, (2) autorización y delimitación, (3) realización coordinada de cambios autorizados y (4) verificación/registro. Esta ampliación no concede autoridad autónoma para escribir en cualquier destino ni convierte la AT en canon. DUG, Metacanon, GOW, Canon LISA y Notion permanecen sin modificación.
+
+
+## Aclaración posterior · Responsabilidad realizadora de AT · 2026-10-29
+
+El operador precisó que AT es el **mecanismo responsable de realizar los cambios que analiza y delimita**, no solo un canal opcional para aplicarlos. Esa responsabilidad opera dentro de lo que permitan o limiten las reglas, la titularidad, los permisos, las precondiciones y las compuertas del destino. Si falta autorización o el destino prohíbe/restringe la acción, AT debe respetar el límite, registrar el bloqueo y solicitar la decisión pendiente; no eludirlo. La ejecución puede valerse de herramientas o ejecutores autorizados, pero la responsabilidad de coordinarla y verificar el resultado corresponde al mecanismo AT. No se canoniza AT ni se modifican cánones.
