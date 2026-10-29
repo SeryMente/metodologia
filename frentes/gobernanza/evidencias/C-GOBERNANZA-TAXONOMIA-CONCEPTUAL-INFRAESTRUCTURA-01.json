@@ -149,9 +149,10 @@
     },
     {
       "path": "ambitos/tareas/evidencias/C-TAREAS-ESTANDAR-REUTILIZABLE-01.json",
-      "blob_sha": "18a74b4004a02d4ab95986534cfb488a5f44adcd",
+      "blob_sha": "c6298bc54c2b85c8ef78ab5f4880159bc1b097a6",
       "readback": true,
-      "json_parse": "PASS"
+      "json_parse": "PASS",
+      "commit_sha": "9960f70e36f6ad3247ef433268acef1e19f047dd"
     },
     {
       "path": "ambitos/tareas/evidencias/C-TAREAS-ESTANDAR-REUTILIZABLE-01.json",
@@ -173,14 +174,28 @@
       "chars": 1468,
       "readback": true,
       "native_field_updated": false
+    },
+    {
+      "path": "ambitos/tareas/INSTRUCCIONES-TAREAS-v1.0.md",
+      "blob_sha": "4c7c12263e0112899ca230e168ea2a474f9a8845",
+      "readback": true
+    },
+    {
+      "path": "ambitos/tareas/IPZ-TAREAS-CANDIDATO.txt",
+      "blob_sha": "dcd5abf6f1bcc74fe6bba77982a6383f5245edc1",
+      "chars": 1139,
+      "readback": true,
+      "native_field_updated": false
     }
   ],
   "remaining": {
     "tasks_standard_status": "CANDIDATE v0.1, not canonized",
     "schema_validation": "Complete JSON Schema Draft 2020-12 validator not run",
     "real_task_end_to_end": "Not run",
-    "native_ipz_field": "Not written or read back",
+    "native_ipz_field": "NOT modified or verified",
     "browser_audit": "Not run",
-    "next_step": "Test common task standard with two or three authorized cases of different kinds; then assess if it can be promoted to v1.0."
+    "next_step": "Tareas: validate common contract with two or three authorized cases of different kinds; keep Tareas uncanonized until separate authorization",
+    "tasks_common_standard": "CANDIDATE v0.1; JSON parses, full schema validation and end-to-end tests pending",
+    "task_ipz_repository_file": "Updated/read back as candidate only"
   }
 }
