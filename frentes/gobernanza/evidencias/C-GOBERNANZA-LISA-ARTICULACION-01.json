@@ -6,7 +6,7 @@
   "generation": 3,
   "recorded_on": "2026-10-29",
   "scope": "Preservar los originales históricos de Athanor/LISA en el OCP de Gobernanza y evaluar su compatibilidad con la AT en diseño y con el método OCP vigente, sin cambiar normas.",
-  "status": "PERSISTIDO_Y_VERIFICADO; REVISION_DOCUMENTAL_REGISTRADA; SIN_ENMIENDA_NORMATIVA",
+  "status": "PERSISTIDO_Y_VERIFICADO; ACLARACIÓN DE ALCANCE REGISTRADA; SIN ENMIENDA NORMATIVA",
   "authorization": {
     "status": "explicit_for_custody_and_review",
     "operator_scope": "Conservar los dos originales en Persistencia Documental de Gobernanza y revisar su relación con LISA/AT y la metodología OCP. No autoriza canonizar AT ni alterar DUG/GOW/Metacanon/Canon LISA o Cora OS.",
@@ -148,7 +148,15 @@
     "l6": "La metodología OCP ya aporta autorización explícita, compuerta preescritura, anti-bloat, continuidad, fuente preponderante y persistencia/read-back (P005, P022, P024, P025, P035, P038, P041; ART-014/022; Metacanon §§26/28/42/43/46).",
     "l7": "Tareas es un ámbito funcional transversal en incubación, no un frente; la ruta física ambitos/tareas/ no es una regla general de infraestructura.",
     "at_status": "Nombre y canon AT no ratificados; no se añadió norma ni L0 inventado.",
-    "final_verdict": "COMPATIBLE POR COMPOSICIÓN CON FRONTERAS: LISA = intención y cadena de especificación; AT = análisis de impacto y propagación controlada."
+    "final_verdict": "COMPATIBLE POR COMPOSICIÓN CON FRONTERAS: LISA = intención y cadena de especificación; AT = análisis de impacto y propagación controlada.",
+    "operator_scope_clarification": {
+      "recorded_on": "2026-10-29",
+      "recorded_at_local": "2026-10-29 12:46 (America/Mexico_City)",
+      "verbatim": "De acuerdo con la distinción de qué articulación trazable, además de hacer lo que dices, que hace o haría, también tendría por alcance el servir de medio para la realización de los cambios que a su vez analiza.",
+      "interpretation": "AT abarca tanto el análisis transversal del cambio como el mecanismo operativo para realizar cambios autorizados derivados de ese análisis. Autorización y ejecución siguen siendo compuertas distintas.",
+      "implementation_scope": "Documentar esta precisión en el informe/registro del ciclo únicamente; no canonizar ni alterar DUG, Metacanon, GOW, Canon LISA o Notion.",
+      "status": "DOCUMENTED; NOT_CANONIZED"
+    }
   },
   "validation": {
     "source_sha256_calculation": "PASS",

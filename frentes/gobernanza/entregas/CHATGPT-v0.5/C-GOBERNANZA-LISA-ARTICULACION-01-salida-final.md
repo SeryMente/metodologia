@@ -100,3 +100,19 @@ La página antigua [Metodología de uso general · marco replicable](https://app
 ## Dictamen
 
 **Compatible por composición, con una frontera clara.** LISA aporta la raíz de intención y la cadena de especificación verificable; AT puede aportar el procedimiento universal de cambio, impacto, alcance negativo y propagación. Su futura definición debe heredar los permisos, la persistencia y las compuertas vigentes, además de mantener el L0 como origen cuando proceda. No hace falta ampliar hoy el canon de metodología ni editar LISA. La decisión segura en este ciclo es preservar las dos fuentes históricas, dejar esta relación documentada y retomar el diseño de AT sin convertirlo todavía en norma.
+
+
+## Adenda · Precisión posterior del alcance funcional de AT · 2026-10-29 12:46 (America/Mexico_City)
+
+El operador precisó que la **Articulación Trazable (AT)** no solo analiza el cambio y sus efectos, sino que también debe servir como **medio para realizar los cambios que analiza**. Esta precisión amplía explícitamente su alcance funcional desde el análisis y la delimitación hasta la ejecución coordinada de los cambios resultantes.
+
+La distinción operativa queda así:
+
+1. **Analizar:** preservar y rastrear la instrucción de origen; derivar sus consecuencias necesarias; examinar dependencias, impactos y componentes afectados o no afectados.
+2. **Autorizar y delimitar:** comprobar titularidad, permisos y compuertas; decidir qué cambios están autorizados y cuáles deben excluirse o quedar bloqueados.
+3. **Realizar:** servir como mecanismo operativo para aplicar los cambios autorizados en sus componentes y destinos correspondientes, mediante herramientas o ejecutores competentes, conservando el límite de alcance.
+4. **Verificar y registrar:** releer los resultados, cotejarlos con lo solicitado, evidenciar el estado y dejar recuperable la relación entre instrucción, análisis, autorización, ejecución y resultado.
+
+La facultad de realizar cambios **no equivale a autorización autónoma** para modificar todo sistema que la AT pueda analizar. Análisis, permiso y ejecución son funciones distinguibles; las escrituras quedan sujetas al gobierno, la titularidad y las autorizaciones de cada destino. La AT debe ejecutar lo necesario y autorizado, no implementar automáticamente toda consecuencia posible.
+
+Por tanto, la composición compatible se entiende como **flujo integral de cambio** —origen e intención → análisis de impacto → autorización y alcance → realización coordinada → verificación y evidencia—, con LISA como anclaje de intención y especificación cuando corresponda. Esta adenda documenta la aclaración del operador; no canoniza la AT ni modifica el DUG, Metacanon, GOW o el Canon LISA.
