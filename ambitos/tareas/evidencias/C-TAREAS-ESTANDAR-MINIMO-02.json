@@ -72,7 +72,9 @@
     "canonical_storage_chosen": false,
     "external_integrations_tested": false,
     "native_chatgpt_ipz_written_or_read_back": false,
-    "tasks_canonized": false
+    "tasks_canonized": false,
+    "user_instruction_verbatim_preservation": "PASS; exact incoming message is in JSONL",
+    "final_output_literal_in_dialogue": "PASS; last JSONL record exactly matches delivery artifact"
   },
   "artifacts": [
     {
@@ -134,10 +136,12 @@
     },
     {
       "path": "ambitos/tareas/conversaciones/C-TAREAS-ESTANDAR-MINIMO-02-dialogo.jsonl",
-      "blob_sha": "2a5f894931a8aa55ad508d64660af7256a48e16a",
-      "commit_sha": "d24a0f3c9b2456f44097f6ad5c622141cce0c007",
+      "blob_sha": "285fab9aee7efb207e9eedb3b08a4f7f7a981fe2",
+      "commit_sha": "0e745761f2306f88258982043982ec6cbb57e795",
       "readback": true,
-      "jsonl_lines": 4
+      "jsonl_lines": 5,
+      "verbatim_user_message_preserved": true,
+      "final_output_literal_match": true
     }
   ],
   "next_step": "Antes de ampliar el estándar, determinar si Tareas aporta una capacidad necesaria; después evaluar el núcleo mínimo con casos autorizados, sin fijar por anticipado un número arbitrario de pruebas."
