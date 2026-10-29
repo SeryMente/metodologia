@@ -1,2 +1,2 @@
 conversation_id,id_kind,title,repository_ref,front_ref,first_cycle_folio,last_cycle_folio,record_ref,native_platform_conversation_id,status
-01a1896b-3ac9-7be6-9258-7aed888528aa,UUIDv7_local,"Gestión conversacional · definición y materialización v1.0",SeryMente/metodologia,Gobernanza,C-20261029-E3DA7D1D,C-20261029-E3DA7D1D,../../frentes/gobernanza/conversaciones/C-GOBERNANZA-GESTION-CONVERSACIONAL-01-dialogo.jsonl,,activa
+01a1896b-3ac9-7be6-9258-7aed888528aa,UUIDv7_local,"Gestión conversacional y arranque universal v1.0",SeryMente/metodologia,Metacanon,C-20261029-E3DA7D1D,C-20261029-7F4A9C21,../../frentes/metacanon/conversaciones/C-METACANON-ARRANQUE-360-01-dialogo.jsonl,,activa
