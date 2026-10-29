@@ -25,7 +25,7 @@ El gobierno general anterior de `SI-METACOGNITIVO.md` es histórico. Los procedi
 
 ## Continuidad entre conversaciones
 
-Usa el [prompt universal](PROMPT-UNIVERSAL-REINSTANCIACION.md) y el [contrato de continuidad](CONTINUIDAD-ENTRE-CONVERSACIONES.md). En Notion comprueba el metaprompt recibido por configuración; fuera de Notion cárgalo expresamente. La versión automática puede ser antigua. El núcleo del frente de metodología sigue en la [sección Metacanon integrada](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#metacanon), §9; [ideas pendientes](frentes/metacanon/PENDIENTES.md). Pruebas mecánicas no equivalen a ensayo semántico de otro modelo.
+Para cada conversación nueva que vaya a trabajar en cualquier FT/FDT, utiliza el [prompt universal de reinstanciación](PROMPT-UNIVERSAL-REINSTANTANCIACION.md) y sigue el [Bootstrap Conversacional Recursivo](BOOTSTRAP-CONTEXTO-GLOBAL.md), subordinados al DUG vigente y al OCP del frente. Revisa la [sección Metacanon integrada](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#metacanon), especialmente el formato por ciclo y las reglas de responsabilidad; el GOW se consulta desde el mismo DUG al inicio y cierre de cada ciclo. La IPZ candidata preparada para la configuración nativa está en [IPZ-CAMPO-CHATGPT.txt](frentes/metacanon/entregas/CHATGPT-v0.3/IPZ-CAMPO-CHATGPT.txt) (1.365 caracteres al corte); el repositorio no puede confirmar que ese texto esté instalado en la configuración nativa ni que una conversación nueva haya superado la prueba semántica. Mantén esas comprobaciones como pendientes explícitos.
 
 ## Vía portable ejecutable · kit 0.1.2
 
