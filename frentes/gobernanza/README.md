@@ -6,12 +6,10 @@ Frente operativo separado para trabajar inicialmente sobre el **documento único
 - Pendientes activos: [PENDIENTES.md](PENDIENTES.md)
 - Control único de responsabilidad: [CONTROL-RESPONSABILIDAD.json](CONTROL-RESPONSABILIDAD.json)
 - Fuente normativa única vigente: [DUG · Samantha v358 · NX-358m](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html)
-- Diálogo literal de apertura: [conversación](conversaciones/C-GOBERNANZA-INICIO-01-dialogo.jsonl)
-- Crónica del ciclo vigente: [C-GOBERNANZA-REFERENCIAS-VERSION-01](cronica/C-GOBERNANZA-REFERENCIAS-VERSION-01.md)
-- Recibo verificable del ciclo: [C-GOBERNANZA-REFERENCIAS-VERSION-01](evidencias/C-GOBERNANZA-REFERENCIAS-VERSION-01.json)
-- Crónica: [C-GOBERNANZA-INICIO-01](cronica/C-GOBERNANZA-INICIO-01.md)
-- Evidencia y hashes: [C-GOBERNANZA-INICIO-01](evidencias/C-GOBERNANZA-INICIO-01.json)
-- Salida de apertura: [C-GOBERNANZA-INICIO-01](entregas/CHATGPT-v0.3/C-GOBERNANZA-INICIO-01-salida-final.md)
+- **Ciclo operativo vigente:** [C-GOBERNANZA-RETOMA-02 · crónica](cronica/C-GOBERNANZA-RETOMA-02.md) · [evidencia](evidencias/C-GOBERNANZA-RETOMA-02.json) · [salida](entregas/CHATGPT-v0.3/C-GOBERNANZA-RETOMA-02-salida-final.md) · [diálogo disponible](conversaciones/C-GOBERNANZA-RETOMA-02-dialogo.jsonl).
+- **Control activo:** folio SES-20261028-GV3K8P6Q, generación 3; titular chatgpt-C-GOBERNANZA-RETOMA-02-SES-20261028-GV3K8P6Q.
+- Ciclo previo de actualización de referencia: [C-GOBERNANZA-REFERENCIAS-VERSION-01 · crónica](cronica/C-GOBERNANZA-REFERENCIAS-VERSION-01.md) · [evidencia](evidencias/C-GOBERNANZA-REFERENCIAS-VERSION-01.json).
+- Material de apertura histórica: [conversación](conversaciones/C-GOBERNANZA-INICIO-01-dialogo.jsonl) · [crónica](cronica/C-GOBERNANZA-INICIO-01.md) · [evidencia](evidencias/C-GOBERNANZA-INICIO-01.json) · [salida v345](entregas/CHATGPT-v0.3/C-GOBERNANZA-INICIO-01-salida-final.md).
 
 **Separación de identidades:** el frente Metacanon sigue activo en `frentes/metacanon/`; el nombre del método sigue siendo Metacanon v1.23. La creación de Gobernanza no mueve ni renombra el OCP previo.
 
