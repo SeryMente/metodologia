@@ -4,14 +4,26 @@
 **Repositorio:** `SeryMente/metodologia`.  
 **OCP:** `frentes/gobernanza/`.  
 **Evento de apertura:** `C-GOBERNANZA-INICIO-01`.  
-**Ciclo vigente:** `C-20261029-5510927B` · `C-GOBERNANZA-AT-ENDURECIMIENTO-01`. **Evento de control:** `C-GOBERNANZA-RETOMA-04`.  
+**Ciclo vigente:** `C-GOBERNANZA-FOLIACION-SECUENCIAL-01` · FOL1 preparado, no activo. **Evento de control:** `C-GOBERNANZA-RETOMA-04`.  
 **Sesión inicial (histórica):** `SES-20261028-3F2B7A91`, generación 1.
 **Titular actual según control:** `chatgpt-C-GOBERNANZA-RETOMA-04-SES-20261029-GV5KGJY8U5J` (alias operativo, no ID nativo).
 **Instancia actual según control:** `chatgpt-gobernanza-retoma-2026-10-29-GV5KGJY8U5J`.
 **Sesión actual según control:** `SES-20261029-GV5KGJY8U5J`, generación 5; ciclo `C-20261029-01A18A7F`.
-**Control actual leído de vuelta:** blob `0ca6b63ea0613bebb32f28642c13124176cad24e`; evento `C-GOBERNANZA-RETOMA-04`.
+**Control actual leído de vuelta:** blob `4768d6db0a620652f753262b6250c8cb4b891ca9`; evento `C-GOBERNANZA-RETOMA-04`.
 
-## Ciclo actual · C-GOBERNANZA-AT-ENDURECIMIENTO-01 · 2026-10-29
+## Ciclo actual · C-GOBERNANZA-FOLIACION-SECUENCIAL-01 · 2026-10-30
+
+Por instrucción expresa del operador se incorporó **P042 · Foliación Global y por OCP**, se amplió **ART-024** con el contrato de conversación/ciclo/A/B y asignación central, y se actualizaron Metacanon a **1.25** y GOW a **2.12**. La fuente canónica fue leída de vuelta: DUG v363 · NX-363m, 42 principios, 18 anexos y 125 términos GOW.
+
+La materialización FOL1 contiene el [registro maestro](../../ambitos/gestion-conversacional/REGISTRO-MAESTRO-FOLIACION.json), el [esquema maestro](../../ambitos/gestion-conversacional/ESQUEMA-FOLIACION-MAESTRA-v1.0.json), el [esquema A/B v1.1](../../ambitos/gestion-conversacional/ESQUEMA-CICLO-CONVERSACIONAL-v1.1.json) y la [guía operativa v1.1](../../ambitos/gestion-conversacional/REGISTRO-CONVERSACIONAL-v1.1.md). El catálogo contiene 23 contextos OCP conocidos: 20 elegibles y tres bloqueados; otros cinco candidatos no se admiten todavía por identidad/clasificación pendiente. La cobertura se declara `KNOWN_INVENTORY_ONLY`.
+
+**Estado:** FOL1 `PREPARADO_PENDIENTE_ACTIVACION_IPZ`; generación 0; contadores globales y por OCP en cero; asignaciones vacías. No se renumeran folios históricos. La IPZ no se ha modificado y ART-025 permanece intacto. La activación queda condicionada a la preparación de la nueva IPZ y al corte en una conversación nueva.
+
+**Límites:** el maestro central y compare/read-back por SHA ofrecen serialización cooperativa, no bloqueo de servidor; el alcance OCP es el inventario conocido, no una prueba exhaustiva de todos los contextos organizacionales. No se ha ejecutado todavía una prueba de concurrencia real ni validación completa con un motor JSON Schema externo.
+
+Evidencia técnica: [DUG](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#P042) · [registro maestro](../../ambitos/gestion-conversacional/REGISTRO-MAESTRO-FOLIACION.json) · [guía](../../ambitos/gestion-conversacional/REGISTRO-CONVERSACIONAL-v1.1.md).
+
+## Ciclo histórico · C-GOBERNANZA-AT-ENDURECIMIENTO-01 · 2026-10-29
 
 Por instrucción del operador, se endureció la definición operativa de AT, preservando AT v1.0 como antecedente. **AT v1.1** incorpora el contrato verificable del vector semántico como fuente de verdad de intención/requisito, la separación entre original/vector/interpretación, reglas para incertidumbre, enlaces en ambos sentidos, recuperación prioritaria de dictados ya persistidos, convergencia separada con Persistencia documental y Registro conversacional, compatibilidad futura LISA, protocolo obligatorio por ciclo y pruebas falsables.
 
