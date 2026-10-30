@@ -1,11 +1,11 @@
 # Plan de aceptación · MVP MCP Jules v1.0
 
-**Versión:** 1.0  
+**Versión:** 1.1  
 **Fase:** criterios de aceptación para las fases posteriores de implementación, validación integrada y release.  
 **Plan rector:** [PLAN-INTEGRAL-MCP-JULES-v1.0.md](../PLAN-INTEGRAL-MCP-JULES-v1.0.md).  
 **Estado de pruebas al corte:** PENDIENTE de ejecutar/actualizar contra los heads vigentes. La existencia de un test, PR o salida histórica no equivale a PASS actual.
 
-La primera fase de planeación está completa. Este documento no describe funciones implementadas: fija resultados que deberán demostrarse con evidencia real.
+La Fase 1 fue reabierta para incorporar el requisito explícito de ChatGPT Free y la exclusión de Codex; esta matriz refleja su cierre R2. No describe funciones implementadas: fija resultados que deberán demostrarse con evidencia real. Codex no se utilizará en ninguna fase.
 
 ## Matriz de aceptación
 
@@ -25,7 +25,7 @@ La primera fase de planeación está completa. Este documento no describe funcio
 | T12 | Secretos | Clave no aparece en resultado MCP, excepciones, logs, snapshots, prompts o Git. | 2 | PENDIENTE |
 | T13 | Prompt injection | Mensajes/artefactos maliciosos de Jules no cambian scopes, fuente/branch, permisos ni autorización. | 2 | PENDIENTE |
 | T14 | API real | `JULES_API_KEY` se acepta en una llamada autorizada, sin registrar su valor. | 3 | PENDIENTE |
-| T15 | Cliente ChatGPT | La app se conecta y expone las siete herramientas desde el cliente/espacio real previsto. | 3 | PENDIENTE |
+| T15 | Cliente ChatGPT Free | El plugin MCP público se instala desde el directorio en una cuenta Free y expone las siete herramientas en chat normal. | 3 | PENDIENTE |
 | T16 | E2E bidireccional | Fuente → sesión con plan requerido → revisión humana → aprobación → avance → feedback → respuesta misma sesión → cierre/outputs. | 3 | PENDIENTE |
 | T17 | Persistencia/reinstanciación | IDs, fuente/branch, estado, cursor y evidencia se guardan y la siguiente sesión retoma sin inventar contexto. | 3 | PENDIENTE |
 | T18 | Release | PR revisado; CI verde o excepción explícita aceptada; autorización de merge/despliegue; smoke test posterior. | 4 | PENDIENTE |
@@ -33,9 +33,15 @@ La primera fase de planeación está completa. Este documento no describe funcio
 | T20 | Auto PR controlado | Create usa `AUTO_CREATE_PR`; PR se verifica por URL/estado real; no ocurre auto-merge/deploy. | 2–3 | PENDIENTE |
 | T21 | Retry diferenciado | GET permite reintentos acotados/backoff; POST no usa un retry común para resultados ambiguos. | 2 | PENDIENTE |
 | T22 | Plan vigente | Si cambia plan/actividad tras revisión, se bloquea la aprobación y se solicita consentimiento sobre el plan actual. | 2–3 | PENDIENTE |
-| T23 | Elegibilidad de escritura | Plan/espacio real tiene soporte MCP personalizado de escritura; si no, gate FAIL/BLOCKED, no lectura-only disfrazada de aceptación. | 3 | PENDIENTE |
-| T24 | Uso conversacional normal | App puede usarse en chat normal y volver a mencionarse cuando otro mensaje requiere acción; Agent/Deep Research quedan fuera del camino de escritura. | 3 | PENDIENTE |
+| T23 | Elegibilidad ChatGPT Free | Una cuenta personal Free real, sin Developer Mode ni workspace pagado, instala el plugin publicado y ejecuta una escritura no destructiva. Si no, BLOCKED/FAIL. | 3 | PENDIENTE |
+| T24 | Uso conversacional Free | Plugin operable en chat normal; se puede volver a mencionar/seleccionar en turnos posteriores; se registra la conducta ante límites Free. Agent/Deep Research no se usan para escritura. | 3 | PENDIENTE |
 | T25 | Negativos de fuente | Fuente desconectada, respuesta Source malformada, error upstream y rama inexistente nunca alcanzan `sessions.create`. | 2 | PENDIENTE |
+| T26 | Publicación de plugin | Paquete MCP, dominio, escaneo, revisión y publicación oficial verificados. Sin aprobación no se declara disponibilidad pública. | 2–4 | PENDIENTE |
+| T27 | OAuth y aislamiento | OAuth 2.1/PKCE identifica sujeto; servidor valida issuer/audience/expiry/scopes y filtra fuentes/repos/ramas. Usuario no autorizado no lista ni muta recursos ajenos. | 2–3 | PENDIENTE |
+| T28 | Cuotas Free y reanudación | Ante límite de ChatGPT Free, se detiene sin duplicar POST y retoma desde checkpoint verificado. | 3 | PENDIENTE |
+| T29 | No dependencia de GPT Actions | Instalación y escritura funcionan sin crear/editar GPT personalizado ni configurar GPT Actions. | 2–3 | PENDIENTE |
+| T30 | Exclusión de Codex | Desarrollo, pruebas, publicación, instalación y operación no invocan ni requieren Codex. | 2–4 | PENDIENTE |
+| T31 | Actualización de herramientas | El directorio refleja la versión aprobada; una modificación de herramientas no escaneada/aprobada no se declara disponible. | 4 | PENDIENTE |
 
 ## Secuencia de aceptación integrada
 
@@ -49,8 +55,8 @@ La primera fase de planeación está completa. Este documento no describe funcio
 8. Esperar solicitud de feedback o generar una prueba controlada; responder mediante `jules_send_message` en la misma sesión y volver a leer activities.
 9. Verificar outputs/PR reales; revisar diff y pruebas sin equiparar creación de PR con merge/aceptación.
 10. Registrar datos no sensibles y outputs reales con lectura de vuelta del OCP.
-11. Conectar el cliente ChatGPT real y probar el circuito desde un chat normal con escritura habilitada.
-12. Revisar gates de release, autorización y rollback antes de integración y despliegue.
+11. Instalar el plugin público aprobado desde el directorio en una cuenta ChatGPT Free real; completar OAuth y probar las siete herramientas desde un chat normal, sin Developer Mode.
+12. Revisar aprobación del directorio, cuota Free, autorización por repositorio, gates de release y rollback antes de despliegue.
 
 ## Criterios globales de PASS
 
@@ -58,9 +64,11 @@ La primera fase de planeación está completa. Este documento no describe funcio
 - **TESTS:** PASS solo si se ejecutaron en ese head y se conserva output/estado real.
 - **CI:** se lee de GitHub; resultado histórico no prueba el head actual.
 - **API KEY VALIDADA:** una llamada real fue aceptada; el valor jamás se expone.
-- **CHATGPT CONECTADO:** el cliente real descubrió tools y realizó llamada autorizada.
+- **PLUGIN PUBLICADO:** el directorio muestra el paquete aprobado y sus herramientas activas.
+- **CHATGPT FREE CONECTADO:** una cuenta personal Free instaló el plugin, completó OAuth, descubrió tools y realizó escritura autorizada desde chat normal.
+- **SIN CODEX:** ninguna etapa ni alternativa invocó Codex.
 - **E2E:** el circuito bidireccional completo se comprobó en una sesión real.
 - **MVP UTILIZABLE:** todos los gates requeridos pasan; no hay excepción silenciosa.
-- **BLOQUEADO:** la capacidad necesaria no está disponible en el plan/espacio o falta credencial/permisión; conservar como bloqueado, no como aprobado.
+- **BLOQUEADO:** el plugin, la escritura en Free, OAuth, aislamiento, credencial o permiso necesario no está disponible; conservar como bloqueado, no aprobado. No sustituir por plan de pago, GPT Actions, Codex o relevo manual.
 
 Los estados no se heredan de anteriores ramas, PRs ni crónicas. `AUTO_CREATE_PR` no autoriza merge y la aprobación de un plan no autoriza operaciones de producción no incluidas en él.
