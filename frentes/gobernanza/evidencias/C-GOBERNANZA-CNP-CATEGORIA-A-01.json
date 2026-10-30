@@ -50,7 +50,29 @@
       "member_ordinal_fields": false,
       "principle_cnp_id_fields": false
     },
-    "glossary_version": "2.13"
+    "glossary_version": "2.13",
+    "latest_version": "v368",
+    "latest_signature": "NX-368m",
+    "latest_commit": "1412057878829b71b5c262879d6341cbceac1fb4",
+    "latest_blob_sha": "2ba096f565807d7c19df0a9a8cab9e8410110a15",
+    "gow_version": "2.14",
+    "terms": 127,
+    "revision_history": [
+      {
+        "version": "v367",
+        "signature": "NX-367m",
+        "commit": "8268055b23493dc55a1b6afc62ef0c32c276f0f3",
+        "blob_sha": "abb4d397bf78aa60d1fd340ac54535f1e3b1d55a",
+        "change": "Remove CNP ordinal position identifiers; category A identifies membership."
+      },
+      {
+        "version": "v368",
+        "signature": "NX-368m",
+        "commit": "1412057878829b71b5c262879d6341cbceac1fb4",
+        "blob_sha": "2ba096f565807d7c19df0a9a8cab9e8410110a15",
+        "change": "Version GOW 2.14 after revising its CNP definition."
+      }
+    ]
   },
   "ipz_comparison": {
     "v07_characters": 2467,
