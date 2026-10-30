@@ -316,7 +316,8 @@ El registro semántico de AT debe poder expresar, como mínimo, estos campos:
 | trace_id | Identificador estable del vector; no se reutiliza ni se recicla. |
 | source_ref | Referencia al mensaje E íntegro o a una fuente importada con procedencia explícita. |
 | conversation_id | UUIDv7 local estable; separado del ID nativo si la plataforma lo expone. |
-| cycle_folio | Folio compartido por entrada E y salida visible S. |
+| source_cycle_folio | Folio del ciclo de la fuente E íntegra a la que apunta source_ref. |
+| record_cycle_folio | Folio del ciclo en que se creó/actualizó esta traza. |
 | literal_excerpt | Extracto exacto que puede cotejarse dentro de la entrada original. |
 | classification | Clase de vector o contexto; no se infiere requisito por mera presencia. |
 | interpretation | Lectura derivada, separada del literal y con nivel de certeza. |
