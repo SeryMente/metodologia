@@ -4,14 +4,28 @@
 **Repositorio:** `SeryMente/metodologia`.  
 **OCP:** `frentes/gobernanza/`.  
 **Evento de apertura:** `C-GOBERNANZA-INICIO-01`.  
-**Ciclo:** `C-20261028-4B81D65C`.  
+**Ciclo vigente:** `C-20261029-01A18A7F` · `C-GOBERNANZA-IPZ-GOW-VERIFICACION-01`. **Evento de control:** `C-GOBERNANZA-RETOMA-04`.  
 **Sesión inicial (histórica):** `SES-20261028-3F2B7A91`, generación 1.
-**Titular actual según control:** `chatgpt-C-GOBERNANZA-RETOMA-03-SES-20261029-GV4M8Q2R` (alias operativo, no ID nativo).
-**Instancia actual según control:** `chatgpt-gobernanza-retoma-2026-10-29-GV4M8Q2R`.
-**Sesión actual según control:** `SES-20261029-GV4M8Q2R`, generación 4; ciclo vigente `C-20261029-E3DA7D1D`.
-**Control actual leído de vuelta:** blob `3cbefef3f1788067ba59f7f4f09c4c90a16b7069`; evento de control `C-GOBERNANZA-RETOMA-03`.
+**Titular actual según control:** `chatgpt-C-GOBERNANZA-RETOMA-04-SES-20261029-GV5KGJY8U5J` (alias operativo, no ID nativo).
+**Instancia actual según control:** `chatgpt-gobernanza-retoma-2026-10-29-GV5KGJY8U5J`.
+**Sesión actual según control:** `SES-20261029-GV5KGJY8U5J`, generación 5; ciclo `C-20261029-01A18A7F`.
+**Control actual leído de vuelta:** blob `0ca6b63ea0613bebb32f28642c13124176cad24e`; evento `C-GOBERNANZA-RETOMA-04`.
 
-## Ciclo vigente · C-GOBERNANZA-GESTION-CONVERSACIONAL-01 · 2026-10-29
+## Ciclo vigente · C-GOBERNANZA-IPZ-GOW-VERIFICACION-01 · 2026-10-29
+
+Se verificó la finalización documental de la especificación de entrada de ChatGPT sin reescribir una canonización ya persistida. Fuente canónica leída de vuelta desde `main`: DUG v362 · NX-362m, blob `b7593409c428e209d35f53a5f13501652208d949`, 41 principios, 18 anexos, Metacanon 1.24 y GOW 2.11.
+
+Auditoría GOW: 122 términos; 122 definiciones y anclas presentes; ninguna entrada sin definición/ancla; longitud máxima observada 308 caracteres; máximo tres oraciones; ninguna definición rebasa la guía de 40 palabras. El contrato de definición establece un párrafo de una a cuatro oraciones, lenguaje sencillo, práctico y directo, hasta 40 palabras como guía, separando alias, equivalencias, alcance, procedencia y notas.
+
+§ARR contiene 21 términos esenciales; todos resuelven a entradas canónicas existentes. Su configuración exige lectura antes de interpretar el resto de las instrucciones personalizadas y limita la adquisición inicial a lo indispensable. §SUM y §EI describen el propósito ampliado del GOW: fijar significados, abreviaturas, equivalencias y asociaciones autorizadas de transcripción, y ofrecer vocabulario inicial para comprender el sistema. El GOW no gobierna ni concede permisos.
+
+ART-025 ya canoniza el propósito y el contrato de la IPZ: acceso compacto, primero vocabulario, después DUG y principios en su orden; anexos solo por remisión de los principios; refuerzo selectivo sin activar capacidades ni crear autoridad paralela. El candidato IPZ v0.5 se leyó desde `main`, blob `281f20daad92284fe29151372e83114a037f83f5`, 1362 unidades UTF-16. No se verificó su instalación en el campo nativo de ChatGPT.
+
+No se modificó DUG/GOW en este ciclo: el contrato ya se encontraba canonizado en el evento `C-GOBERNANZA-IPZ-GOW-BOOTSTRAP-01`. Se actualizan este núcleo, el índice y los pendientes para reflejar las fuentes y el control vigentes. La prueba funcional en una conversación nueva sigue pendiente porque no puede acreditarse desde esta lectura documental.
+
+Evidencia: [crónica](cronica/C-GOBERNANZA-IPZ-GOW-VERIFICACION-01.md) · [evidencia](evidencias/C-GOBERNANZA-IPZ-GOW-VERIFICACION-01.json) · [salida](entregas/CHATGPT-v0.7/C-GOBERNANZA-IPZ-GOW-VERIFICACION-01-salida-final.md) · [diálogo](conversaciones/C-GOBERNANZA-IPZ-GOW-VERIFICACION-01-dialogo.jsonl).
+
+## Ciclo previo · C-GOBERNANZA-GESTION-CONVERSACIONAL-01 · 2026-10-29
 
 Gestión conversacional queda normada en el DUG v360 · NX-360m mediante ART-024, hijo documental de ART-020, con dos componentes internos: Registro conversacional y Trazabilidad semántica. El GOW es v2.9 con 111 términos; no se añaden principios, no cambia Metacanon 1.24 y no se crean subámbitos taxonómicos. La materialización inicial está en [ambitos/gestion-conversacional/](../../ambitos/gestion-conversacional/README.md). La prueba de uso registra una pareja E/S, un UUIDv7 local estable, folio y referencias de repositorio/frente, además de etiquetas de trazabilidad y extractos verbatim históricos con procedencia. Captura automática y el campo nativo IPZ no se declaran instalados.
 
