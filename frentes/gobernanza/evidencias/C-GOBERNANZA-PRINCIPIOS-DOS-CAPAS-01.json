@@ -19,15 +19,16 @@
     "version": "v370",
     "signature": "NX-370m",
     "event_id": "C-GOBERNANZA-PRINCIPIOS-DOS-CAPAS-01",
-    "commit": "fa628f865941e64891bcda4ff11e3b48c57ff395",
-    "blob_sha": "a97991bc680fdda8a10cd155432da92f40ed5f44",
+    "commit": "f91b0e6cc1c78730bcf642420c638afc802c0dac",
+    "blob_sha": "c016e442be13ad0c28e6f4a467b1ea79ffb70574",
     "readback_exact": true,
     "principles": 43,
     "annexes": 20,
     "new_annex": "ART-027",
     "catalogue_entries": 43,
     "sink_aliases_defined": 43,
-    "sink_links_created": 0
+    "sink_links_created": 0,
+    "direct_principle_links_in_catalog": 0
   },
   "design": {
     "strategy": "two-layer principle selection, individual retrieval and telemetry",
@@ -39,7 +40,9 @@
     ],
     "cycle_record": "ART-024 principle_usage extension specified in ART-027",
     "application_metric_source": "Persisted cycle records applied[]",
-    "consultation_metric_source": "Sink visit/analytics; approximate and not proof of application"
+    "consultation_metric_source": "Sink visit/analytics; approximate and not proof of application",
+    "sink_only_counted_consultation": true,
+    "procedure_level_exclusivity": true
   },
   "sink": {
     "repository": "miantiao-me/Sink",
