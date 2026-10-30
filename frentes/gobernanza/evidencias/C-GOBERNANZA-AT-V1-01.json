@@ -63,7 +63,7 @@
     "dug_embedded_json": "VALIDATED_BY_JSON_PARSE",
     "taxonomy_and_principle_hierarchy": "INSPECTED_FROM_EMBEDDED_GOVERNANCE_DATA",
     "at_definition": "CREATED_AND_READ_BACK",
-    "dialogue_jsonl": "3_RECORDS; JSONL PARSE NOT YET RUN",
+    "dialogue_jsonl": "3 RECORDS; JSON.parse PER LINE PASS",
     "positive_case": "RETROSPECTIVE_WALKTHROUGH; historical DUG change evidence verified",
     "negative_case": "DESKTOP_WALKTHROUGH; current DUG and Tareas status verified",
     "browser_runtime": "NOT RUN",
@@ -72,7 +72,9 @@
     "metacanon_modified": false,
     "gow_modified": false,
     "canon_lisa_modified": false,
-    "tasks_ocp_modified": false
+    "tasks_ocp_modified": false,
+    "governance_indexes": "README, GOBERNANZA core and PENDIENTES updated and read back",
+    "ipz_new_conversation_test_tracking": "Removed from current pending list per operator instruction; not followed up by assistant"
   },
   "artifacts": [
     {
@@ -96,9 +98,19 @@
       "blob_sha": "182393ddeb114f183a6990636e1e1dad85531e81"
     },
     {
-      "path": "frentes/gobernanza/evidencias/C-GOBERNANZA-AT-V1-01.json",
-      "status": "JSON_READBACK_CONFIRMED",
-      "blob_sha": "TO_BE_UPDATED_AFTER_THIS_COMMIT"
+      "path": "frentes/gobernanza/README.md",
+      "status": "READ_BACK_CONFIRMED",
+      "blob_sha": "37edc56a5c24e7887a9c99bea99088fcf39397f0"
+    },
+    {
+      "path": "frentes/gobernanza/GOBERNANZA.md",
+      "status": "READ_BACK_CONFIRMED",
+      "blob_sha": "6cd79cc3a48a0525e13e2f04584090fd5925d194"
+    },
+    {
+      "path": "frentes/gobernanza/PENDIENTES.md",
+      "status": "READ_BACK_CONFIRMED",
+      "blob_sha": "cdc1517565695c502eddb54c76001b34c4b6dffa"
     }
   ],
   "non_actions": {
@@ -110,5 +122,6 @@
     "at_canonized": false,
     "automated_at_runtime_implemented": false
   },
-  "next_step": "Retomar el ámbito Tareas aplicando AT v1.0; comprobar CONTROL-RESPONSABILIDAD.json del OCP Tareas antes de escribir o transferir titularidad."
+  "next_step": "Retomar el ámbito Tareas aplicando AT v1.0; comprobar CONTROL-RESPONSABILIDAD.json del OCP Tareas antes de escribir o transferir titularidad.",
+  "main_commit_before_final_evidence": "3d62661365f3910f9e18544845bb334ac3b164f3"
 }
