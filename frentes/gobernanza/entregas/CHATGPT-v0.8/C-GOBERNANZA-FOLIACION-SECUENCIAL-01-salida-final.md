@@ -28,7 +28,7 @@ Los tres ciclos visibles de esta conversación se documentaron con números natu
 
 ## Estado de activación
 
-<badge color="warning">FOL1 PREPARADO · NO ACTIVO</badge>
+**Estado:** FOL1 PREPARADO · NO ACTIVO.
 
 Generación 0; contadores globales y por OCP en cero; cero asignaciones. No se ha consumido ninguna secuencia nueva. Los folios históricos no se renumeran. El nuevo esquema se activará únicamente tras preparar la nueva IPZ y realizar el corte en una conversación nueva.
 
