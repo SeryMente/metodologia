@@ -1,0 +1,322 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ser-y-mente:at:semantic-trace:1.1",
+  "title": "Registro de vector semántico y propagación AT · v1.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "trace_id",
+    "source_ref",
+    "related_source_refs",
+    "conversation_id",
+    "cycle_folio",
+    "classification",
+    "literal_excerpt",
+    "excerpt_exact_match",
+    "interpretation",
+    "rule_refs",
+    "destination_refs",
+    "impact",
+    "result_refs",
+    "reverse_link_refs",
+    "authorization",
+    "lisa",
+    "verification",
+    "status"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.1"
+    },
+    "trace_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_ref": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Referencia recuperable a la entrada E íntegra o a la fuente original importada."
+    },
+    "related_source_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "conversation_id": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$",
+      "description": "UUIDv7 local; no sustituye un identificador nativo de plataforma."
+    },
+    "cycle_folio": {
+      "type": "string",
+      "pattern": "^C-[0-9]{8}-[A-F0-9]{8}$"
+    },
+    "classification": {
+      "enum": [
+        "instruccion",
+        "requisito_funcional",
+        "restriccion_de_alcance",
+        "restriccion_de_diseno",
+        "decision_terminologica",
+        "criterio_de_cierre",
+        "documento_fuente_aprobado",
+        "contexto_no_esencial",
+        "contexto_no_esencial_fuera_de_alcance"
+      ]
+    },
+    "literal_excerpt": {
+      "type": "string",
+      "minLength": 1
+    },
+    "excerpt_exact_match": {
+      "const": true,
+      "description": "Solo se marca true tras cotejar el extracto con el texto original de source_ref."
+    },
+    "interpretation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "text",
+        "certainty",
+        "operator_confirmation"
+      ],
+      "properties": {
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "certainty": {
+          "enum": [
+            "directa",
+            "implicacion_clara",
+            "inferencia_conservadora",
+            "ambigua"
+          ]
+        },
+        "operator_confirmation": {
+          "enum": [
+            "not_required",
+            "pending",
+            "confirmed",
+            "rejected"
+          ]
+        }
+      }
+    },
+    "rule_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "destination_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "impact": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "destination_ref",
+          "disposition",
+          "rationale",
+          "status"
+        ],
+        "properties": {
+          "destination_ref": {
+            "type": "string",
+            "minLength": 1
+          },
+          "disposition": {
+            "enum": [
+              "cambio_requerido",
+              "comprobar_compatibilidad",
+              "sin_cambio_justificado",
+              "incierto",
+              "bloqueado"
+            ]
+          },
+          "rationale": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "enum": [
+              "pendiente",
+              "bloqueado",
+              "intento_no_confirmado",
+              "escrito_no_verificado",
+              "verificado"
+            ]
+          }
+        }
+      }
+    },
+    "result_refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "reverse_link_refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true,
+      "description": "Índice o referencia desde el resultado hacia los trace_id de origen."
+    },
+    "authorization": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "scope"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "not_required",
+            "pending",
+            "granted",
+            "denied",
+            "blocked"
+          ]
+        },
+        "authorization_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "scope": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "lisa": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "applicability",
+        "status",
+        "canon_ref",
+        "canon_version",
+        "l0_refs",
+        "chain_refs"
+      ],
+      "properties": {
+        "applicability": {
+          "enum": [
+            "required",
+            "conditional",
+            "not_applicable"
+          ]
+        },
+        "status": {
+          "enum": [
+            "not_integrated",
+            "integration_pending",
+            "linked",
+            "blocked",
+            "not_applicable"
+          ]
+        },
+        "canon_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "canon_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "l0_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "chain_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "verification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "source_readback",
+        "forward_links_checked",
+        "reverse_links_checked",
+        "results_readback",
+        "evidence_refs"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "pending",
+            "partial",
+            "verified",
+            "blocked"
+          ]
+        },
+        "source_readback": {
+          "type": "boolean"
+        },
+        "forward_links_checked": {
+          "type": "boolean"
+        },
+        "reverse_links_checked": {
+          "type": "boolean"
+        },
+        "results_readback": {
+          "type": "boolean"
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "status": {
+      "enum": [
+        "capturado",
+        "clasificado",
+        "interpretacion_pendiente",
+        "enlace_parcial",
+        "bloqueado",
+        "verificado",
+        "supersedido"
+      ]
+    }
+  }
+}
