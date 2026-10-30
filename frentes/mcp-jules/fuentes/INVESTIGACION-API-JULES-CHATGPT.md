@@ -1,6 +1,6 @@
 # Investigación · API de Jules, MCP y automatización
 
-**Revisión documental:** 2026-10-29 · R2, cierre de Fase 1. **Restricciones del operador:** ChatGPT Free obligatorio; Codex nunca se utilizará. **Objeto:** verificar el contrato oficial de Jules, la superficie de uso de MCP personalizada en ChatGPT y los deltas relevantes del candidato de Khora. **Límite:** no se ejecutó una llamada real autenticada a Jules; no se probó la credencial y no se validó conexión de ChatGPT desde el cliente final.
+**Revisión documental:** 2026-10-30 · R3, contraste de documentación viva y revisión de implementación Fase 2. **Restricciones del operador:** ChatGPT Free obligatorio; Codex nunca se utilizará. **Objeto:** verificar el contrato oficial de Jules, la superficie de uso de MCP personalizada en ChatGPT y los deltas relevantes del candidato de Khora. **Límite:** no se ejecutó una llamada real autenticada a Jules; no se probó la credencial y no se validó conexión de ChatGPT desde el cliente final.
 
 ## Fuentes primarias vigentes
 
@@ -8,6 +8,9 @@
 - [Jules Session resource, estados y outputs](https://developers.google.com/jules/api/reference/rest/v1alpha/sessions)
 - [Jules sources.list](https://developers.google.com/jules/api/reference/rest/v1alpha/sources/list)
 - [Jules Source resource](https://developers.google.com/jules/api/reference/rest/v1alpha/sources)
+- [Jules Sources API actual — list/get](https://jules.google/docs/api/reference/sources/)
+- [Jules Sessions API actual — create/list/get/activities](https://jules.google/docs/api/reference/sessions)
+- [Jules API types actuales — GitHubRepo/GitHubBranch](https://jules.google/docs/api/reference/types/)
 - [Jules sessions.create](https://developers.google.com/jules/api/reference/rest/v1alpha/sessions/create)
 - [Jules sessions.list](https://developers.google.com/jules/api/reference/rest/v1alpha/sessions/list)
 - [Jules sessions.activities.list](https://developers.google.com/jules/api/reference/rest/v1alpha/sessions.activities/list)
@@ -23,17 +26,18 @@
 
 ## Contrato Jules verificado
 
-La base REST es `https://jules.googleapis.com/v1alpha`; la autenticación documentada para la API es mediante `X-Goog-Api-Key`. La API publicada contiene recursos `sources`, `sessions` y `sessions/{session}/activities`, y métodos para listar/consultar fuente, crear/listar/consultar sesión, listar actividades, enviar mensaje y aprobar plan.
+La base REST continúa siendo `https://jules.googleapis.com/v1alpha`. Las referencias vivas de Jules consultadas el 2026-10-30 describen `sources`, `sessions` y `sessions/{session}/activities` y documentan los métodos actuales de listado, consulta, creación, feedback y aprobación.
 
-- Sources: `GET /v1alpha/sources`; parámetros `pageSize` de 1 a 100 y `pageToken`; respuesta `sources[]` y `nextPageToken`. Cada Source expone el nombre de recurso, el repositorio GitHub y sus ramas.
-- Source: la API publica un método `get`; por tanto, el servidor puede verificar la fuente y la rama internamente antes de crear una sesión sin añadir una octava herramienta MCP visible.
-- Sessions: `GET /v1alpha/sessions`, `pageSize` 1–100 y `pageToken`; `GET /v1alpha/{name=sessions/*}` devuelve datos como id/name, state, timestamps, URL y outputs.
-- Activities: `GET /v1alpha/{parent=sessions/*}/activities`, `pageSize` 1–100 y `pageToken`; el contrato consultado no documenta `createTime` como cursor de la operación de listado.
-- Create: el payload lleva `prompt`, `sourceContext.source` y `githubRepoContext.startingBranch`. `requirePlanApproval=true` evita aprobación automática del plan. `automationMode=AUTO_CREATE_PR` pide crear rama/PR cuando Jules produce un parche final aplicable. Ambos campos son input-only: su ausencia en la respuesta no demuestra que el servidor no los enviara.
+- Sources: `GET /v1alpha/sources`; `pageSize` de 1 a 100, `pageToken` y filtro opcional; la respuesta contiene `sources[]` y `nextPageToken`.
+- Source names: el recurso conserva el patrón `sources/{source}`. Las referencias actuales muestran tanto nombres con estructura `sources/github/{owner}/{repo}` como identificadores `sources/github-{owner}-{repo}`; la validación del servidor admite segmentos seguros bajo `sources/` y excluye traversal, URLs y query/fragment arbitrarios.
+- Source data: `githubRepo` documenta `owner`, `repo`, `isPrivate`, `defaultBranch.displayName` y `branches[].displayName`. La rama predeterminada puede no repetirse dentro de `branches[]`; al enumerar ramas autorizadas, el servidor debe considerar ambas fuentes de datos, deduplicarlas y aplicar ACL exacta antes de devolverlas.
+- `sources.get`: `GET /v1alpha/sources/{sourceId}`; permite consultar los detalles de una fuente, incluidas las ramas activas. Se usa como preflight server-side antes de crear una sesión. La API lee fuentes conectadas; su creación/instalación se efectúa desde la interfaz de Jules.
+- Sessions: `GET /v1alpha/sessions`, parámetros `pageSize` 1–100 y `pageToken`; `GET /v1alpha/{name=sessions/*}` devuelve ID/nombre, estado, URL, marcas de tiempo, contexto y outputs.
+- Activities: `GET /v1alpha/{parent=sessions/*}/activities`, con paginación `pageSize`/`pageToken`; no se usa `createTime` como cursor de listado.
+- Create: el payload lleva `prompt`, `sourceContext.source` y `githubRepoContext.startingBranch`. `requirePlanApproval=true` exige aprobación explícita del plan; si se omite, la referencia indica que los planes pueden autoaprobarse. `automationMode=AUTO_CREATE_PR` solicita una rama/PR automáticamente cuando corresponda. Ambos campos son input-only: que no aparezcan en respuesta no demuestra que el servidor no los enviara.
 - Estados publicados: `STATE_UNSPECIFIED`, `QUEUED`, `PLANNING`, `AWAITING_PLAN_APPROVAL`, `AWAITING_USER_FEEDBACK`, `IN_PROGRESS`, `PAUSED`, `FAILED` y `COMPLETED`.
-- Activities incluye eventos de plan generado/aprobado, mensaje de usuario/agente, progreso, finalización y fallo; la unión de Activity también puede incluir artefactos.
-- `sendMessage` recibe `{prompt}` y devuelve cuerpo vacío cuando se acepta; `approvePlan` usa cuerpo vacío y también devuelve una respuesta vacía. En ambos casos hay que volver a consultar estado/actividades para verificar el efecto.
-- La documentación consultada es `v1alpha`; el contrato se debe revalidar antes de implementar y antes del release.
+- Activity incluye plan generado/aprobado, mensajes de usuario/agente, progreso, finalización, fallo y artefactos. Tras `sendMessage` o `approvePlan`, que devuelven respuesta vacía al aceptarse, se reconsulta la sesión y/o las actividades para verificar el efecto.
+- El contrato sigue en `v1alpha` y puede cambiar; revalidar antes de un release y ante cualquier respuesta no conforme.
 
 ## Contratos de automatización fijados para v1.0
 
@@ -96,18 +100,22 @@ El plugin debe seleccionarse/mencionarse en los mensajes que necesiten herramien
 
 La referencia REST consultada no documenta un webhook para cada actividad nueva; no se promete uno.
 
-## Implementación candidata y delta de diseño
+## Implementación candidata y delta de diseño · corte 2026-10-30
 
-En la rama de Khora `feat/mcp-jules-mvp-20261025-final` se observaron el cliente `khora-web/lib/jules/client.ts`, la ruta MCP existente `khora-web/app/api/mcp/route.ts`, scopes separados, metadata OAuth y siete herramientas. El candidato:
-- ya fuerza `requirePlanApproval=true`;
-- establece `automationMode=AUTO_CREATE_PR`;
-- comprueba estados antes de enviar mensaje/aprobar;
-- usa `listActivitiesPage` en la ruta MCP;
-- no verifica fuente/branch con GET server-side inmediatamente antes de crear;
-- usa retries HTTP comunes para algunas solicitudes POST, que se deben separar por idempotencia;
-- no tiene evidencia de una llamada real a Jules ni de una conexión cliente ChatGPT con escritura.
+La implementación está versionada en [KHORA PR #344](https://github.com/SeryMente/khora/pull/344), rama `feat/mcp-jules-f2-20261029-6c2f9a17`, head `3c7691bf4e69260b66d616f605e0ef32d5adc099` al momento de esta revisión documental. Se mantiene en borrador y apilada sobre la PR de Custodia #340 para no introducir su base pendiente en `main` prematuramente.
 
-Los estados de CI persistidos en `C-MCP-JULES-004` son históricos y se deben refrescar contra los heads actuales en fase 2. La crónica anterior reportó una falla unitaria por ausencia de acceso interrepositorio al esquema privado, findings Ruff fuera del diff y fallos de build/E2E aguas abajo. No se declara que esos resultados se hayan vuelto a ejecutar en esta revisión.
+- Las siete herramientas Jules se integran al servidor MCP existente `/api/mcp`; no se crea servidor paralelo.
+- Se publican scopes separados `jules:read` y `jules:write`, sin agregarlos a los scopes predeterminados de otros clientes.
+- ACL privada `khora_private.jules_source_acl`: coincidencia exacta `subject + source + branch`, permisos de lectura/escritura separados, denegación por defecto y fallo cerrado ante consulta no disponible. Se filtran fuentes, ramas y sesiones; consulta de actividades, mensaje y aprobación requieren una sesión cuyo contexto coincida con el grant exacto.
+- Antes de crear una sesión, se valida un grant de escritura exacto, se llama a `sources.get` y se confirma la rama en `branches`/`defaultBranch`; de lo contrario `sessions.create` no se ejecuta.
+- El adaptador conserva `pageToken`, elimina el helper heredado con cursor `createTime` y distingue GET/HEAD reintentables de POST no reintentables cuando el resultado es ambiguo.
+- `jules_create_session` fuerza `requirePlanApproval=true` y `AUTO_CREATE_PR`; el estado se relee antes de enviar mensaje/aprobar.
+- Tests sintéticos de ruta y cliente, fixtures ACL, control de branches y retry están escritos y versionados. Una auditoría estática corrigió el conteo de llamadas del fixture a 27 y el caso donde la default branch no se repite en `branches[]`.
+- La migración `033_jules_source_acl.sql` está añadida al PR pero NO aplicada. No se concede permiso al rol productivo sin identificarlo y verificar que solo recibe `USAGE` y `SELECT` de la ACL privada.
+
+**Validación real al corte:** CI y UI Quality para el head actual finalizaron con jobs `steps: null`, también tras rerun; no hay logs de runner ni output de pruebas recuperable. Los checks Vercel fallan por la restricción de deploy de repositorios privados de organización en el plan actual. Por tanto, no hay evidencia de que el head compile ni de que los tests se hayan ejecutado. La llamada real de Jules, OAuth/aislamiento real, plugin publicado, escritura en ChatGPT Free, E2E, merge y despliegue siguen pendientes. T01–T32 permanecen PENDIENTE.
+
+El candidato anterior PR #338 ya no es el head vigente; permanece como evidencia histórica sin merge. La Fase 2 continúa EN CURSO, no aceptada.
 
 ## Dictamen de viabilidad
 
