@@ -1,5 +1,20 @@
 # Pendientes · Frente Gobernanza
 
+## Estado vigente · C-GOBERNANZA-PRINCIPIOS-DOS-CAPAS-01 · 2026-10-30
+
+**Persistido y releído:** DUG v370 · NX-370m; 43 principios, 20 anexos; ART-027 creado. El inventario de dos capas contiene 43 IDs/nombres/abstracciones y 43 aliases Sink previstos (p001–p043).
+
+**No desplegado:** no existen todavía una instancia Sink verificada ni 43 enlaces activos. Pendientes: fork de Sink; Cloudflare Worker con D1/DB, KV/KV y Analytics Engine/ANALYTICS; variables de despliegue; secretos protegidos; API REST y creación idempotente de aliases; resolución privada autenticada de principios; extensión real de registros de ciclo ART-024; agregador de aplicaciones; pruebas E2E y negativas.
+
+**Bloqueos de acceso:** esta sesión no dispone de conector/cuenta Cloudflare ni de credenciales; el conector GitHub actual no ofrece create_fork. La privacidad del DUG y el acceso autenticado del modelo no están resueltos por una redirección pública; no publicar el repositorio ni insertar credenciales en URLs/Git como atajo.
+
+**Telemetría:** Sink contará visitas/consultas (potencialmente aproximadas o muestreadas); las aplicaciones se contarán por `applied[]` en cada registro de ciclo, no por clics. El esquema `principle_usage` está definido en ART-027; su materialización en el registro operativo y agregación aún no se han probado.
+
+**Límites:** sin aliases creados, despliegue, consulta privada ni eventos de telemetría reales. No se ejecutó navegador ni auditoría dinámica de anclas P001–P043. FOL1 permanece `PREPARADO_PENDIENTE_ACTIVACION_IPZ`, sin folio para este evento. ART-025 y la IPZ nativa/candidata permanecen intactos.
+
+Registro: [crónica](cronica/C-GOBERNANZA-PRINCIPIOS-DOS-CAPAS-01.md) · [evidencia](evidencias/C-GOBERNANZA-PRINCIPIOS-DOS-CAPAS-01.json) · [DUG v370 · ART-027](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-027).
+
+
 ## Estado vigente · C-GOBERNANZA-CNP-CATEGORIA-A-01 · 2026-10-30
 
 **Persistido y releído:** DUG v368 · NX-368m; 43 principios, 19 anexos; GOW 2.14. La categoría A identifica por sí sola la pertenencia al CNP; se eliminaron los ordinales CNP-01…CNP-05 y los campos `cnp_id`. Se conservan los cinco principios P001/P004/P005/P038/P043 y sus decimales relativos A · 0.9/0.8/0.7/0.6/0.5. Sin identificador ordinal adicional.
