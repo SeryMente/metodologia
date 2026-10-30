@@ -3,14 +3,14 @@
 ## 1. Control e identidad
 
 - **Nombre canónico:** Frente MCP Jules.
-- **Versión del artefacto:** v0.1.5 · revisión R2 y cierre integral de Fase 1 MCP Jules v1.0.
+- **Versión del artefacto:** v0.1.6 · modelo de dos fases, cierre R3 de Fase 1 MCP Jules v1.0.
 - **Evento de creación:** C-MCP-JULES-001.
 - **Folio de sesión vigente:** SES-20261029-6C2F9A17; generación del control: 2. El folio anterior queda preservado en el historial de transferencia.
 - **OCP:** `SeryMente/metodologia/frentes/mcp-jules/`.
 - **Repositorio de implementación:** `SeryMente/khora`, `khora-web`, servidor MCP existente.
 - **Rama de documentación:** `feat/metacanon-mcp-jules-20261025-c32f81`.
 - **Rama de implementación:** `feat/mcp-jules-mvp-20261025-final`.
-- **Estado:** la titularidad se transfirió y verificó el 2026-10-29. La Fase 1 se reabrió para incorporar ChatGPT Free como cliente final obligatorio y la exclusión absoluta de Codex. Se vuelve a cerrar en R2 como diseño integral; no debe confundirse con el candidato de [Khora PR #338](https://github.com/SeryMente/khora/pull/338). La línea base de diseño queda en [PLAN-INTEGRAL-MCP-JULES-v1.0.md](PLAN-INTEGRAL-MCP-JULES-v1.0.md). La documentación continúa en [Metodología PR #19](https://github.com/SeryMente/metodologia/pull/19), abierta en borrador y todavía no integrada a `main`. El último diagnóstico persistido reporta typecheck/UI contract/API tests aprobados en el candidato, una falla unitaria por acceso al esquema privado, findings Ruff ajenos y fallos de build/E2E aguas abajo; todo resultado técnico debe refrescarse contra los heads vigentes. API Jules real, disponibilidad de escritura del plugin en ChatGPT Free, OAuth por usuario, aislamiento por repositorio, aceptación funcional, merge y despliegue siguen pendientes.
+- **Estado:** la titularidad se transfirió y verificó el 2026-10-29. La Fase 1 se reabrió para incorporar ChatGPT Free, excluir Codex y fijar exactamente dos fases. Se vuelve a cerrar en R3 como diseño integral; no debe confundirse con el candidato de [Khora PR #338](https://github.com/SeryMente/khora/pull/338). La línea base de diseño queda en [PLAN-INTEGRAL-MCP-JULES-v1.0.md](PLAN-INTEGRAL-MCP-JULES-v1.0.md). La documentación continúa en [Metodología PR #19](https://github.com/SeryMente/metodologia/pull/19), abierta en borrador y todavía no integrada a `main`. El último diagnóstico persistido reporta typecheck/UI contract/API tests aprobados en el candidato, una falla unitaria por acceso al esquema privado, findings Ruff ajenos y fallos de build/E2E aguas abajo; todo resultado técnico debe refrescarse contra los heads vigentes. API Jules real, disponibilidad de escritura del plugin en ChatGPT Free, OAuth por usuario, aislamiento por repositorio, aceptación funcional, merge y despliegue siguen pendientes.
 - **Fuente de titularidad:** [CONTROL-RESPONSABILIDAD.json](CONTROL-RESPONSABILIDAD.json). No modifica ni sustituye el control del frente padre Metacanon.
 
 ## 2. LEER PRIMERO
@@ -103,13 +103,13 @@ Un asistente puede localizar fuentes de Jules, crear una sesión con prompt comp
 
 ## 8. Estado vivo
 
-**Fase 1 — PLANEACIÓN INTEGRAL: COMPLETA como diseño R2.** La línea base [PLAN-INTEGRAL-MCP-JULES-v1.0.md](PLAN-INTEGRAL-MCP-JULES-v1.0.md) conserva 24 secciones y ahora contiene 32 pruebas/gates; define siete herramientas, API, arquitectura, plugin MCP público para ChatGPT Free, OAuth 2.1, identidad/aislamiento, ciclo de sesión, ADR, trazabilidad, seguridad, fases 2–4, release y rollback. Cierre vigente en [C-MCP-JULES-008](cronica/C-MCP-JULES-008.md). C-MCP-JULES-007 queda como antecedente del cierre R1.
+**Fase 1 — PLANEACIÓN INTEGRAL: COMPLETA como diseño R3.** La línea base [PLAN-INTEGRAL-MCP-JULES-v1.0.md](PLAN-INTEGRAL-MCP-JULES-v1.0.md) conserva 24 secciones y 32 pruebas/gates. El proyecto tiene exactamente dos fases: Fase 1 planeación integral (completa) y Fase 2 implementación E2E hasta que el sistema esté utilizable desde ChatGPT Free. Las etapas 2.1–2.5 son trabajo interno de Fase 2, no fases nuevas. Cierre vigente en [C-MCP-JULES-009](cronica/C-MCP-JULES-009.md); C-MCP-JULES-007 y C-MCP-JULES-008 quedan como antecedentes.
 
 **Estado de integración:** Metodología PR #19 sigue en borrador; candidato [Khora PR #338](https://github.com/SeryMente/khora/pull/338) no aceptado. API Jules real, revisión/publicación del plugin, disponibilidad de escritura desde ChatGPT Free, OAuth por usuario, aislamiento de repositorios, E2E, CI actual, merge y despliegue siguen pendientes de evidencia.
 
 **Cliente y distribución:** ChatGPT Free en chat normal, instalando un plugin MCP público aprobado por OpenAI. El plugin apunta al mismo endpoint /api/mcp de KHORA; no se crea un MCP por frente. El directorio es visible en los planes, algunos plugins pueden usarse en Free y ChatGPT web consume herramientas MCP remotas mediante plugins; la disponibilidad y escritura del plugin concreto siguen sujetas a plan, cuenta y región. Las extensiones nativas de plugins (sidebar/composer/file viewer) son independientes y no se necesitan para v1.0; su disponibilidad web en Free está pendiente, sin que ello por sí solo descarte las herramientas MCP básicas. Codex está excluido.
 
-**Siguiente fase:** Fase 2 — reconciliación e implementación, comenzando por el gate temprano de plugin público/ChatGPT Free y OAuth. Si Free no puede instalar o escribir, bloquear la declaración de MVP y solicitar decisión arquitectónica; no usar plan de pago, GPT Actions, relevo manual ni Codex como sustituto.
+**Siguiente y única fase restante:** Fase 2 — implementación end-to-end, que incorpora reconciliación, implementación, validación, publicación, despliegue, aceptación y puesta en servicio. Sus etapas internas son 2.1 preflight/reconciliación, 2.2 implementación, 2.3 validación E2E, 2.4 release/despliegue y 2.5 aceptación/operación; no son fases adicionales. Si Free no puede instalar o escribir, Fase 2 permanece BLOCKED; no usar plan de pago, GPT Actions, relevo manual ni Codex como sustituto.
 
 **Pendientes técnicos priorizados:**
 1. Reconciliar el head vigente de Khora PR #338 con la matriz de diseño.
@@ -118,7 +118,7 @@ Un asistente puede localizar fuentes de Jules, crear una sesión con prompt comp
 4. Corregir validación server-side source/branch, retry GET/POST y paginación pageToken.
 5. Preparar paquete público, dominio, identidad verificada, privacidad/soporte, escaneo, revisión y publicación.
 6. Validar JULES_API_KEY y ciclo real Jules sin exponer el valor.
-7. Ejecutar 31 pruebas/gates, incluyendo cliente ChatGPT Free, aislamiento, cuotas y E2E.
+7. Ejecutar 32 pruebas/gates, incluyendo cliente ChatGPT Free, aislamiento, cuotas y E2E.
 8. Mantener fuera de v1.0 trabajador persistente, autorespuesta ilimitada, aprobación automática, auto-merge, auto-deploy y Codex.
 
 ## 9. Aceptación y viabilidad
@@ -148,8 +148,8 @@ Aplicar Metacanon §4 en cada ciclo sustantivo: identidad/gobierno; dónde estam
 - [Ciclo de creación C-MCP-JULES-001](cronica/C-MCP-JULES-001.md).
 - [Ciclo de transferencia y estado C-MCP-JULES-005](cronica/C-MCP-JULES-005.md).
 - [Ciclo histórico C-MCP-JULES-006](cronica/C-MCP-JULES-006.md) — apertura de la fase de planeación.
-- [Ciclo histórico C-MCP-JULES-007](cronica/C-MCP-JULES-007.md) — cierre R1, superado por R2.
-- [Ciclo vigente C-MCP-JULES-008](cronica/C-MCP-JULES-008.md) — cierre R2 con ChatGPT Free y no Codex.
+- [Ciclo histórico C-MCP-JULES-007](cronica/C-MCP-JULES-007.md) — cierre R1.
+- [Ciclo histórico C-MCP-JULES-008](cronica/C-MCP-JULES-008.md) — cierre R2, requisito Free y no Codex.
 - [Plan integral del componente MCP Jules v1.0](PLAN-INTEGRAL-MCP-JULES-v1.0.md) — línea base de diseño completa; la implementación y validación siguen pendientes.
 - [Texto original del operador](originales/C-MCP-JULES-001-operador.txt).
 - [Investigación de API, ChatGPT y automatización](fuentes/INVESTIGACION-API-JULES-CHATGPT.md).
