@@ -3,7 +3,7 @@
 ## 1. Control e identidad
 
 - **Nombre canónico:** Frente MCP Jules.
-- **Versión del artefacto:** v0.1.7 · estado de implementación Fase 2, candidato #344.
+- **Versión del artefacto:** v0.1.8 · implementación candidata Fase 2, actualización estática y CI pre-run.
 - **Evento de creación:** C-MCP-JULES-001.
 - **Folio de sesión vigente:** SES-20261029-6C2F9A17; generación del control: 2. El folio anterior queda preservado en el historial de transferencia.
 - **OCP:** `SeryMente/metodologia/frentes/mcp-jules/`.
@@ -107,11 +107,11 @@ Un asistente puede localizar fuentes de Jules, crear una sesión con prompt comp
 
 **Fase 1 — PLANEACIÓN INTEGRAL: COMPLETA como diseño R3.** La línea base [PLAN-INTEGRAL-MCP-JULES-v1.0.md](PLAN-INTEGRAL-MCP-JULES-v1.0.md) conserva 24 secciones y 32 pruebas/gates. Cierre de diseño en [C-MCP-JULES-009](cronica/C-MCP-JULES-009.md); el ciclo de implementación actual queda en [C-MCP-JULES-010](cronica/C-MCP-JULES-010.md).
 
-**Fase 2 — CANDIDATO DE IMPLEMENTACIÓN:** [Khora PR #344](https://github.com/SeryMente/khora/pull/344), rama `feat/mcp-jules-f2-20261029-6c2f9a17`, head `c4ca7615a481de1cd2b447f31bd9a7fb569cf9b5`. Se encuentra en borrador y usa como base `fix/custodia-recovery-verified-20261029`, head `e2ec67600885315fd4493911da89af1d4aafc297`, para mantener el trabajo de Custodia separado del cambio Jules. El PR #340 de Custodia sigue en borrador; no cambiar la base a `main` ni fusionar prematuramente. El antiguo PR #338 queda como antecedente obsoleto, sin merge.
+**Fase 2 — CANDIDATO DE IMPLEMENTACIÓN:** [Khora PR #344](https://github.com/SeryMente/khora/pull/344), rama `feat/mcp-jules-f2-20261029-6c2f9a17`, head `3c7691bf4e69260b66d616f605e0ef32d5adc099`. Se encuentra en borrador y usa como base `fix/custodia-recovery-verified-20261029`, head `e2ec67600885315fd4493911da89af1d4aafc297`, para mantener el trabajo de Custodia separado del cambio Jules. El PR #340 de Custodia sigue en borrador; no cambiar la base a `main` ni fusionar prematuramente. El antiguo PR #338 queda como antecedente obsoleto, sin merge.
 
 **Implementación contenida en #344:** las siete herramientas Jules están integradas en el endpoint MCP existente `/api/mcp`; OAuth y tokens manuales reconocen `jules:read`/`jules:write` sin añadirlos al conjunto predeterminado; la capa `jules-access.ts` aplica denegación por defecto y coincidencia exacta de sujeto, source y branch; se filtran fuentes, ramas y sesiones; `sources.get` valida la rama antes de crear; el adaptador usa paginación oficial `pageToken` y reintenta solo GET/HEAD; los POST ambiguos se devuelven como `JULES_WRITE_RESULT_AMBIGUOUS` sin repetición automática. Se añadieron la migración `033_jules_source_acl.sql`, documentación específica y fixtures/tests sintéticos.
 
-**Validación actual:** los tests y los contratos están escritos, pero no existe resultado PASS de CI para el head final. Los workflows CI y UI Quality terminaron con jobs `steps: null`; los logs devuelven `BlobNotFound`, incluso después de repetir los jobs. No se ejecutaron comandos de test en runner. Los checks Vercel fallan por la restricción de despliegue de repositorios privados de organización en el plan Hobby. Esto es un bloqueo de infraestructura/servicio de CI o deploy, no una conclusión sobre compilación. T01–T32 permanecen PENDIENTE.
+**Validación actual:** los tests y los contratos están escritos, pero no existe resultado PASS de CI para el head final. Los workflows CI y UI Quality terminaron con jobs `steps: null` en el head anterior `c4ca7615…` y nuevamente en el head actual `3c7691bf…`; un rerun también finalizó sin steps. Los logs no están disponibles (`BlobNotFound`). No se ejecutaron comandos de test en runner. Los checks Vercel fallan por la restricción de despliegue de repositorios privados de organización en el plan Hobby. Esto es un bloqueo pre-run de CI/deploy, no una conclusión sobre compilación. T01–T32 permanecen PENDIENTE.
 
 **ACL y base de datos:** `033_jules_source_acl.sql` está versionada pero NO aplicada. El rol real usado por `KHORA_READONLY_DATABASE_URL` debe identificarse y verificarse antes de recibir únicamente `USAGE` en `khora_private` y `SELECT` en `khora_private.jules_source_acl`. No se emitieron concesiones productivas ni se realizó read-back de ACL.
 
@@ -125,13 +125,13 @@ Un asistente puede localizar fuentes de Jules, crear una sesión con prompt comp
 
 | Requisito | Criterio verificable | Estado inicial |
 |---|---|---|
-| Listar fuentes Jules | Devuelve fuentes reales y paginación correcta | Código en rama; API real no probada |
-| Listar/consultar sesiones | ID validado, estado y token de página correctos | Código en rama; API real no probada |
-| Leer retroalimentación | Recupera `agentMessaged`, `userMessaged`, `planGenerated`, progreso, fallo/completado y paginación | Código en rama; contrato probado; llamada real pendiente |
-| Crear sesión | Fuente y rama verificadas; prompt completo; fuerza `requirePlanApproval=true` | Código en rama; API real no probada |
+| Listar fuentes Jules | Devuelve fuentes reales, solo ramas autorizadas y paginación correcta | Código y fixture actualizados para la rama default; CI no ejecutado y API real no probada |
+| Listar/consultar sesiones | ID validado, estado y token de página correctos | Código y fixture ACL versionados; CI no ejecutado y API real no probada |
+| Leer retroalimentación | Recupera `agentMessaged`, `userMessaged`, `planGenerated`, progreso, fallo/completado y paginación | Código/contrato versionados; CI no ejecutado y llamada real pendiente |
+| Crear sesión | Fuente y rama verificadas; prompt completo; fuerza `requirePlanApproval=true` | `sources.get`, validación branch y fixture versionados; CI no ejecutado y API real pendiente |
 | Responder | Mismo ID de sesión; envía solo en estado permitido; luego vuelve a consultar actividades | Código en rama; API real no probada |
 | Aprobar plan | Rechaza salvo `AWAITING_PLAN_APPROVAL` y usa scope de escritura | Código en rama; prueba pendiente |
-| Aislar permisos | Lectura no permite escribir; escritura no da acceso a lectura/otras funciones | Test de scopes/OAuth PASS; suite completa bloqueada por GH_TOKEN ajeno al diff |
+| Aislar permisos | Lectura no permite escribir; escritura no da acceso a lectura/otras funciones y la ACL exacta se aplica por sujeto/fuente/rama | Implementación y pruebas sintéticas versionadas; CI actual no ejecutó steps, aislamiento real pendiente |
 | Preservar gobierno | Las siete herramientas pasan por la validación del ciclo normativo | Código y fixture añadidos; ejecución pendiente |
 | Proteger secretos | El secreto del proveedor permanece server-side y no aparece en respuestas, prompts ni repositorio | Regla de implementación presente; pruebas ejecutadas y llamada real pendientes |
 | Uso real en ChatGPT Free | Plugin público instalado en cuenta Free, siete tools descubiertas y ciclo de escritura E2E probado | No verificado; gates T23/T26 |
@@ -162,7 +162,7 @@ Aplicar Metacanon §4 en cada ciclo sustantivo: identidad/gobierno; dónde estam
 
 ## 12. Reinstanciación
 
-En una sesión nueva, leer este núcleo y [CONTROL-RESPONSABILIDAD.json](CONTROL-RESPONSABILIDAD.json), cotejar folio/generación y revisar [C-MCP-JULES-010](cronica/C-MCP-JULES-010.md) como última crónica, sin saltarse el control y la matriz de aceptación. Leer la investigación y el plan de aceptación antes de ejecutar acciones externas. Después, obtener el árbol de Khora en la rama/PR real y comprobar estados actuales. La salida anterior solo se reproduce literalmente si está conservada; en caso contrario declarar `NO DISPONIBLE / NO VERIFICADA`.
+En una sesión nueva, leer este núcleo y [CONTROL-RESPONSABILIDAD.json](CONTROL-RESPONSABILIDAD.json), cotejar folio/generación y revisar [C-MCP-JULES-011](cronica/C-MCP-JULES-011.md) como última crónica, sin saltarse el control y la matriz de aceptación. Leer la investigación y el plan de aceptación antes de ejecutar acciones externas. Después, obtener el árbol de Khora en la rama/PR real y comprobar estados actuales. La salida anterior solo se reproduce literalmente si está conservada; en caso contrario declarar `NO DISPONIBLE / NO VERIFICADA`.
 
 No adquirir, transferir ni modificar el control de `frentes/metacanon/`; el frente MCP Jules es independiente. No copiar a otros OCP el control, la credencial, la titularidad ni un estado vivo alternativo.
 
