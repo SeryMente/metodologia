@@ -157,7 +157,7 @@ AT v1.0 satisface su propósito cuando, ante un cambio conceptual concreto, perm
 
 **Resultado de validación:** el límite está determinado por la fuente vigente y por P005/P024. Es una comprobación de escritorio sobre el estado actual, no una prueba de ejecución automática.
 
-## 8. Decisión de arquitectura y límites de evolución
+## 10. Decisión de arquitectura y límites de evolución
 
 La v1.0 utiliza un solo mecanismo coordinador con etapas A–F y un único registro de articulación. La diversidad de funciones no demuestra por sí misma la necesidad de submódulos: análisis, clasificación, impacto, autorización, realización y verificación operan sobre el mismo cambio y la misma cadena de dependencias.
 
