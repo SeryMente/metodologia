@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0",
+  "event_id": "C-GOBERNANZA-FOLIACION-SECUENCIAL-01",
+  "status": "PREPARADO_PENDIENTE_ACTIVACION_IPZ",
+  "generation": 0,
+  "global_scope": {
+    "scope_id": "SERYMENTE-METODOLOGIA-GLOBAL",
+    "description": "Foliación global y por OCP para los contextos registrados; cobertura basada en inventario conocido, no exhaustividad organizacional.",
+    "master_repository": "SeryMente/metodologia",
+    "coverage_source": [
+      "DUG v363 ART-015 a ART-024",
+      "INVENTARIO-REPOSITORIOS-Y-FRENTES.md"
+    ],
+    "coverage_completeness": "KNOWN_INVENTORY_ONLY"
+  },
+  "counters": {
+    "global": {
+      "conversation": 0,
+      "cycle": 0,
+      "A": 0,
+      "B": 0
+    },
+    "by_ocp": {}
+  },
+  "ocp_catalog": [],
+  "allocations": [],
+  "unresolved_contexts": [],
+  "activation": {
+    "generation_name": "FOL1",
+    "prepared_on": "2026-10-30",
+    "activated_on": null,
+    "cutover_event": null,
+    "activation_gate": "No activar hasta verificar esquemas y maestro y preparar la nueva IPZ. Primer folio posterior al corte: 1; sin asignaciones retroactivas."
+  },
+  "legacy_policy": {
+    "legacy_cycle_pattern": "C-AAAAMMDD-XXXXXXXX",
+    "legacy_side_suffixes": [
+      "-E",
+      "-S"
+    ],
+    "renumber_legacy": false,
+    "retroactive_allocation": false,
+    "legacy_status": "EXCLUDED_FROM_FOL1"
+  }
+}
