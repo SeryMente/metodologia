@@ -4,15 +4,15 @@
 
 **Persistido y releído:** DUG v364 · NX-364m; P042; ART-024; Metacanon 1.26; GOW 2.12/125 términos; 42 principios y 18 anexos. FOL1 maestro/schema/registro A/B v1.1 y guía v1.1 existen en `ambitos/gestion-conversacional/`.
 
-**FOL1:** `PREPARADO_PENDIENTE_ACTIVACION_IPZ`, generación 0, contadores en cero, sin asignaciones. El inventario incluye 23 contextos OCP conocidos, 20 elegibles y tres con asignación bloqueada; cinco contextos adicionales permanecen sin clasificación/admisión. Cobertura no exhaustiva. Los folios heredados C-/E/S no se renumeran. Metacanon §22/§37.2/§37.4 fija únicamente IPZ y DUG como indicadores compactos de salida ChatGPT; ART-024 permite extender folios OCP tardíos sin duplicar el folio global.
+**FOL1:** `PREPARADO_PENDIENTE_ACTIVACION_IPZ`, generación 2, contadores en cero, sin asignaciones. El inventario incluye 25 contextos OCP conocidos, 22 elegibles y tres con asignación bloqueada; cinco contextos adicionales permanecen sin clasificación/admisión. Cobertura no exhaustiva. Los folios heredados C-/E/S no se renumeran. Metacanon §22/§37.2/§37.4 fija únicamente IPZ y DUG como indicadores compactos de salida ChatGPT; ART-024 permite extender folios OCP tardíos sin duplicar el folio global.
 
-**Pendientes para el corte:** preparar la nueva IPZ como último artefacto; comprobar por lectura de vuelta la copia candidata y que no se alteró ART-025 antes de ese paso; luego realizar el corte/activación únicamente cuando la nueva configuración esté realmente disponible para la conversación nueva. La instalación nativa de IPZ no es verificable por las herramientas actuales y requiere confirmación observable del operador.
+**Pendientes para el corte:** la candidata [IPZ v0.7](entregas/CHATGPT-v0.8/IPZ-CAMPO-CHATGPT-v0.7-PROPUESTA.txt) ya fue creada y leída de vuelta; incorpora la regla de eficiencia temporal y conserva los metadatos IPZ/DUG y FOL1. Falta que el operador la instale en el campo nativo y que su disponibilidad se confirme en una conversación nueva; después podrá ejecutarse el corte FOL1. ART-025 no se modificó. La instalación nativa de IPZ no es verificable por las herramientas actuales y requiere confirmación observable del operador.
 
 **Pruebas pendientes:** validación completa JSON Schema 2020-12 con validador independiente; prueba de idempotencia y colisión por concurrencia; prueba real de asignación global y por todos los OCP aplicables en una conversación nueva; ampliación del catálogo cuando se resuelvan los contextos bloqueados o aparezcan nuevos OCP; verificación de que cada salida aplica los dos indicadores de frescura d.h.m. Sin estas pruebas no se declara captura automática, exclusividad de servidor ni cobertura organizacional exhaustiva.
 
 ## Control de aceptación FOL1
 
-- **GOV-FOL1-CUTOVER-01 · PREPARADO_PENDIENTE_ACTIVACION_IPZ.** Preparar la nueva IPZ como último artefacto. Después, instalar/confirmar su disponibilidad efectiva en una conversación nueva, ejecutar el corte y marcar ACTIVO mediante actualización del maestro + SHA/read-back. Hasta entonces no asignar FOL1 ni ciclos naturales nuevos.
+- **GOV-FOL1-CUTOVER-01 · PREPARADO_PENDIENTE_ACTIVACION_IPZ.** IPZ v0.7 candidata preparada y releída; resta instalación observable en el campo nativo, prueba en conversación nueva y actualización del maestro con SHA/read-back. Hasta entonces no asignar FOL1. Hasta entonces no asignar FOL1 ni ciclos naturales nuevos.
 - **GOV-FOL1-CATALOG-01 · ABIERTO.** Cobertura `KNOWN_INVENTORY_ONLY`. Resolver controles de Blog personal, EP y Tareas automáticas; conciliación de rama OCP EP; clasificación/control de Etica y sprint GDP; identificar y revisar nuevos repositorios/OCP fuera del inventario accesible. Mantener Tareas dentro de Gobernanza y `frentes/metodologia/` como alias, no OCP.
 - **GOV-FOL1-E2E-01 · ABIERTO.** Validar primera asignación conversación/ciclo/A/B y todos los OCP aplicables; idempotencia; colisión concurrente por SHA; relectura exacta; cancelación sin reutilización; y retorno del folio al ciclo/registro.
 - **GOV-FOL1-SCHEMA-01 · PARCIAL.** El esquema A/B v1.1 fue corregido para separar folio global de identificador de registro, distinguir A/B y validar estados FOL1/legado, permitir `cycle_number=null` cuando el histórico no es recuperable y exigir folio heredado solo en `LEGACY_PRE_CUTOVER`. El JSON parsea; falta ejecutar validador independiente JSON Schema 2020-12 y pruebas negativas, además de comprobar semánticamente la correspondencia completa entre `ocp_refs` y los mapas de folios.
@@ -27,7 +27,7 @@
 
 
 
-**Titularidad de Gobernanza según lectura de vuelta:** chatgpt-C-GOBERNANZA-RETOMA-04-SES-20261029-GV5KGJY8U5J, sesión SES-20261029-GV5KGJY8U5J, generación 5; control blob `0ca6b63ea0613bebb32f28642c13124176cad24e`; evento C-GOBERNANZA-RETOMA-04. Se conserva el historial de generaciones y el traspaso se aplicó por comparación del SHA del control seguido de lectura de vuelta. La prueba de renderizado/auditoría dinámica completa del DUG no forma parte de este ciclo.
+**Titularidad de Gobernanza según lectura de vuelta:** chatgpt-C-GOBERNANZA-RETOMA-05-SES-20261030-GV89CFA5D5, sesión SES-20261030-GV89CFA5D5, generación 6; control blob `6c6ba034382a8350e27f7bbe3d0dc50d87c7d81`; evento C-GOBERNANZA-RETOMA-05. Se conserva el historial de generaciones y el traspaso se aplicó por comparación del SHA del control seguido de lectura de vuelta. La prueba de renderizado/auditoría dinámica completa del DUG no forma parte de este ciclo.
 
 
 
