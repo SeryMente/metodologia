@@ -1,0 +1,126 @@
+{
+  "schema": "ser-y-mente-governance-cycle-evidence/v1",
+  "event_id": "C-GOBERNANZA-IPZ-GOW-VERIFICACION-01",
+  "cycle_folio": "C-20261029-01A18A7F",
+  "local_conversation_uuidv7": "01a18a7f-18c2-7c7f-ab43-632c189ce08d",
+  "recorded_on": "2026-10-29",
+  "repository": "SeryMente/metodologia",
+  "branch": "main",
+  "front": "Gobernanza",
+  "ocp": "frentes/gobernanza/",
+  "ownership_transfer": {
+    "event_id": "C-GOBERNANZA-RETOMA-04",
+    "authorized": true,
+    "authorization_verbatim": "Tomna repsonsabilida ddel frtente gobernanza y usa esta converacion qu t e adjunto par aadquirir contexto, y terminar, de ser posible ne lso 13 minutos ue restanb, usalos todos, bueno usa 10 minutos como maximo par aver si puedes temrtinar lo que hacia, tienes autorizacion previa para tomar repsonsabilida del frente",
+    "from_generation": 4,
+    "to_generation": 5,
+    "source_control_blob_sha": "3cbefef3f1788067ba59f7f4f09c4c90a16b7069",
+    "readback_control_blob_sha": "0ca6b63ea0613bebb32f28642c13124176cad24e",
+    "readback_verified": true,
+    "owner_alias": "chatgpt-C-GOBERNANZA-RETOMA-04-SES-20261029-GV5KGJY8U5J",
+    "session_folio": "SES-20261029-GV5KGJY8U5J",
+    "identity_kind": "operational alias; native ChatGPT conversation ID not exposed"
+  },
+  "sources": {
+    "inicio": {
+      "path": "INICIO.md",
+      "blob_sha": "3557bfe0ebd69e8520b11ec7733ed9f7e61daae5"
+    },
+    "dug": {
+      "path": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.html",
+      "blob_sha": "b7593409c428e209d35f53a5f13501652208d949",
+      "version": "v362",
+      "signature": "NX-362m",
+      "principles": 41,
+      "annexes": 18,
+      "metacanon": "1.24",
+      "gow": "2.11"
+    },
+    "universal_prompt": {
+      "path": "PROMPT-UNIVERSAL-REINSTANTANCIACION.md",
+      "blob_sha": "4350dfad505cb3d2150ca1b3ba9d56f93869cf4c"
+    },
+    "ipz_candidate": {
+      "path": "frentes/metacanon/entregas/CHATGPT-v0.5/IPZ-CAMPO-CHATGPT.txt",
+      "blob_sha": "281f20daad92284fe29151372e83114a037f83f5",
+      "utf16_units": 1362,
+      "native_installation": "NOT_VERIFIED"
+    }
+  },
+  "findings": {
+    "gow": {
+      "terms": 122,
+      "definitions_present": 122,
+      "anchors_present": 122,
+      "missing_definitions": 0,
+      "missing_anchors": 0,
+      "max_definition_characters": 308,
+      "max_sentences": 3,
+      "definitions_over_40_words": 0,
+      "definition_contract": "1–4 sentences; simple, practical, direct; <=40 words as guideline; aliases/equivalences/scope/provenance/notes separated"
+    },
+    "entry_vocabulary": {
+      "anchor": "#gow-arranque-chatgpt",
+      "required_before_rest": true,
+      "term_count": 21,
+      "unresolved_terms": 0
+    },
+    "gow_purpose": {
+      "existing_purpose_preserved": true,
+      "initial_vocabulary_role_added": true,
+      "not_governance_authority": true,
+      "not_permission_source": true
+    },
+    "art025": {
+      "anchor": "#ART-025",
+      "purpose_and_contract_present": true,
+      "principles_are_only_direct_governance_element": true,
+      "annexes_subordinate": true,
+      "capabilities_not_activated": true
+    },
+    "native_ipz_installation": "NOT_VERIFIED",
+    "new_chat_behavioral_test": "PENDING"
+  },
+  "mutations": [
+    {
+      "path": "frentes/gobernanza/CONTROL-RESPONSABILIDAD.json",
+      "blob_sha": "0ca6b63ea0613bebb32f28642c13124176cad24e",
+      "status": "EXECUTED_AND_READ_BACK"
+    },
+    {
+      "path": "frentes/gobernanza/README.md",
+      "blob_sha": "21acd36f6343aa6fae5bb97c25ea46b87822cbd1",
+      "status": "EXECUTED_AND_READ_BACK"
+    },
+    {
+      "path": "frentes/gobernanza/GOBERNANZA.md",
+      "blob_sha": "7df1aea6f2cc561624ccc40bdc1d8c554117cef2",
+      "status": "EXECUTED_AND_READ_BACK"
+    },
+    {
+      "path": "frentes/gobernanza/PENDIENTES.md",
+      "blob_sha": "42e7b6fc3e33a8f27853d4edbce34e26d4fe586a",
+      "status": "EXECUTED_AND_READ_BACK"
+    },
+    {
+      "path": "gobernanza/GLOSARIO-WORKSPACE.fuente.json",
+      "blob_sha": "363b9dbe953871866176cd73eb46d259d8041991",
+      "status": "EXECUTED_AND_READ_BACK"
+    }
+  ],
+  "limits": [
+    "No se modificó DUG/GOW porque el diseño ya estaba canonizado en C-GOBERNANZA-IPZ-GOW-BOOTSTRAP-01.",
+    "No se escribió ni verificó el campo nativo de Instrucciones Personalizadas de ChatGPT.",
+    "El espejo de Notion se mantiene como lectura histórica v2.2 y no fue actualizado.",
+    "No se ejecutó prueba de comportamiento en chat nuevo ni auditoría dinámica de navegador.",
+    "GOV-AT-01 continúa abierto; TAREAS permanece en incubación y no fue modificado.",
+    "La auditoría cubrió estructura, contrato de definición, formato y vocabulario inicial; no revalidó semánticamente cada término histórico."
+  ],
+  "status": {
+    "documentary_review": "CLOSED_FOR_THIS_SCOPE",
+    "native_ipz": "NOT_VERIFIED",
+    "new_chat_test": "PENDING",
+    "at": "OPEN",
+    "tasks": "INCUBATING"
+  }
+}
