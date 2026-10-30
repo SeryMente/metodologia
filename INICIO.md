@@ -25,6 +25,8 @@ El gobierno general anterior de `SI-METACOGNITIVO.md` es histórico. Los procedi
 
 ## Continuidad entre conversaciones
 
+El contrato de foliación FOL1 está preparado, todavía no activo, en el OCP [Gestión conversacional](ambitos/gestion-conversacional/README.md): [registro maestro global y por OCP](ambitos/gestion-conversacional/REGISTRO-MAESTRO-FOLIACION.json), [esquema del maestro](ambitos/gestion-conversacional/ESQUEMA-FOLIACION-MAESTRA-v1.0.json), [esquema A/B v1.1](ambitos/gestion-conversacional/ESQUEMA-CICLO-CONVERSACIONAL-v1.1.json) y [guía operativa v1.1](ambitos/gestion-conversacional/REGISTRO-CONVERSACIONAL-v1.1.md). FOL1 comienza después de preparar la nueva IPZ y abrir una conversación nueva; no renumera registros históricos. La cobertura del maestro es el inventario OCP conocido, no una certificación de exhaustividad de toda la organización.
+
 En una conversación nueva de ChatGPT, la [IPZ candidata v0.5](frentes/metacanon/entregas/CHATGPT-v0.5/IPZ-CAMPO-CHATGPT.txt) establece el orden de entrada: primero adquirir [§ARR · Vocabulario de entrada](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#gow-arranque-chatgpt), después consultar el DUG y seguir sus principios en el orden establecido. El propósito y contrato de la IPZ están canonizados en [ART-025](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-025). Las demás reglas del campo refuerzan selectivamente continuidad, trazabilidad, responsabilidad e integridad; no activan capacidades ni crean otra autoridad. El [prompt universal](PROMPT-UNIVERSAL-REINSTANTANCIACION.md) y el [BCR](BOOTSTRAP-CONTEXTO-GLOBAL.md) desarrollan la retoma del frente y su estado.
 
 ## Vía portable ejecutable · kit 0.1.2
@@ -37,7 +39,7 @@ Las dieciséis categorías son ejes de auditoría, no sustituyen el molde de tre
 
 ## Refresco de la fuente · ciclo10
 
-Aplicar§37 en cada ciclo activo: comprobar versión/huella y commit de la ruta central por un medio real; recuperar/adoptar solo delta compatible ya autorizado. Mostrar versión adquirida, antigüedad de modificación y estado de comprobación. Sin acceso/reloj/origen: vigencia o edad NO VERIFICADA. No fingir refresco entre turnos o de instrucciones nativas.
+Aplicar §37 en cada ciclo activo: comprobar versión/huella y commit de la ruta central por un medio real; recuperar/adoptar solo delta compatible ya autorizado. En ChatGPT, mostrar IPZ y DUG con versión y antigüedad d.h.m desde el último commit de cada archivo exacto, conforme a §37.4. Sin acceso/reloj/origen: vigencia o edad NO VERIFICADA. Sin acceso/reloj/origen: vigencia o edad NO VERIFICADA. No fingir refresco entre turnos o de instrucciones nativas.
 
 ## Responsabilidad exclusiva · método1.14§§38/42
 
