@@ -7,9 +7,9 @@ La fuente documental preponderante es este repositorio privado, rama `main`. Ant
 ## Gobierno canónico
 
 - [INICIO.md](INICIO.md) — orden de adquisición y arranque del trabajo.
-- [DUG integrado · Samantha (Sam)](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#P001) — v362 · NX-362m; verifica siempre la revisión viva de `main`.
-- [Metacanon integrado](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#metacanon) — v1.24; fuente única dentro del DUG.
-- [GOW integrado](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#glosario) — v2.11, 122 términos con definición estructurada; incluye §ARR como vocabulario inicial para ChatGPT y no es autoridad de gobernanza.
+- [DUG integrado · Samantha (Sam)](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#P001) — v363 · NX-363m; verifica siempre la revisión viva de `main`.
+- [Metacanon integrado](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#metacanon) — v1.25; fuente única dentro del DUG.
+- [GOW integrado](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#glosario) — v2.12, 125 términos con definición estructurada; incluye §ARR como vocabulario inicial para ChatGPT y no es autoridad de gobernanza.
 - [Gobierno general y precedencia](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html).
 
 ## Método transversal y continuidad
@@ -22,6 +22,8 @@ La fuente documental preponderante es este repositorio privado, rama `main`. Ant
 - [Formato de registro de verificación](FORMATO-REGISTRO-VERIFICACION-CICLO.md) y [su esquema JSON](FORMATO-REGISTRO-VERIFICACION-CICLO.schema.json).
 - [Estado RDC activo](ESTADO-RDC-ACTIVO.md) y [historial RDC](HISTORIAL-RDC.md).
 - [Glosario de compatibilidad](GLOSARIO-OPERATIVO.md) — solo puntero; el GOW canónico está en `gobernanza/`.
+
+- **Foliación FOL1:** contrato en [P042](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#P042) y [ART-024](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-024); [registro maestro](ambitos/gestion-conversacional/REGISTRO-MAESTRO-FOLIACION.json), [esquema maestro](ambitos/gestion-conversacional/ESQUEMA-FOLIACION-MAESTRA-v1.0.json) y [guía A/B](ambitos/gestion-conversacional/REGISTRO-CONVERSACIONAL-v1.1.md). Estado: PREPARADO, no ACTIVO, pendiente de preparar la nueva IPZ y ejecutar el corte en una conversación nueva.
 
 ## Cánones y anexos por ámbito
 
