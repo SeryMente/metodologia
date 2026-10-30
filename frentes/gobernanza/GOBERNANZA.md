@@ -4,12 +4,20 @@
 **Repositorio:** `SeryMente/metodologia`.  
 **OCP:** `frentes/gobernanza/`.  
 **Evento de apertura:** `C-GOBERNANZA-INICIO-01`.  
-**Último ciclo legado del histórico anterior:** `C-20261029-5510927B` · `C-GOBERNANZA-AT-ENDURECIMIENTO-01`. **Conversación de foliación:** UUIDv7 local `01a18d91-e030-7683-a4fa-7391408f989c`; tres ciclos naturales pre-corte `C-20261030-F0D12375`, `C-20261030-2FB9018D` y `C-20261030-25A998EA`, con lados A/B y folios legados. No son folios FOL1 ni IDs nativos. **Evento más reciente:** `C-GOBERNANZA-CNP-01` / `C-GOBERNANZA-IPZ-CNP-01`; DUG v366 · NX-366m, CNP/PAI/ART-026 materializados, IPZ v0.8 candidata lista; instalación nativa no verificada. FOL1 sigue preparado, sin asignaciones globales/OCP. **Evento de control:** `C-GOBERNANZA-RETOMA-05`.  
+**Último ciclo legado del histórico anterior:** `C-20261029-5510927B` · `C-GOBERNANZA-AT-ENDURECIMIENTO-01`. **Conversación de foliación:** UUIDv7 local `01a18d91-e030-7683-a4fa-7391408f989c`; tres ciclos naturales pre-corte `C-20261030-F0D12375`, `C-20261030-2FB9018D` y `C-20261030-25A998EA`, con lados A/B y folios legados. No son folios FOL1 ni IDs nativos. **Evento más reciente:** `C-GOBERNANZA-CNP-01` / `C-GOBERNANZA-IPZ-CNP-01`; DUG v367 · NX-367m, CNP por categoría A, PAI/ART-026 materializados; la IPZ v0.8 no es sustitución íntegra de v0.7. Instalación nativa no verificada. FOL1 sigue preparado, sin asignaciones globales/OCP. **Evento de control:** `C-GOBERNANZA-RETOMA-05`.  
 **Sesión inicial (histórica):** `SES-20261028-3F2B7A91`, generación 1.
 **Titular actual según control:** `chatgpt-C-GOBERNANZA-RETOMA-05-SES-20261030-GV89CFA5D5` (alias operativo, no ID nativo).
 **Instancia actual según control:** `chatgpt-gobernanza-retoma-2026-10-30-GV89CFA5D5`.
 **Sesión actual según control:** `SES-20261030-GV89CFA5D5`, generación 6; ciclo legado de transferencia `C-20261030-89CFA5D5`.
-**Control actual leído de vuelta:** blob `6c6ba034382a8350e27f7bbe3d0dc50d87c7d81`; evento `C-GOBERNANZA-RETOMA-05`.
+**Control actual leído de vuelta:** blob `93b3790cbfe2a9b28bd34ee6cd9cf6dc5f56c6ac`; evento `C-GOBERNANZA-RETOMA-05`.
+
+## Evento más reciente · C-GOBERNANZA-CNP-CATEGORIA-A-01 · 2026-10-30
+
+Se eliminó la variable de posición del CNP y los identificadores ordinales CNP-01…CNP-05. En DUG v367 · NX-367m, la categoría A basta para identificar la pertenencia al CNP; los decimales solo ordenan la preponderancia relativa. La estructura JSON de miembros ya no contiene ordinal ni `cnp_id`; la tabla humana tampoco tiene columna de posición. Se conservan los cinco principios P001, P004, P005, P038 y P043.
+
+**Registros:** [crónica](cronica/C-GOBERNANZA-CNP-CATEGORIA-A-01.md) · [evidencia](evidencias/C-GOBERNANZA-CNP-CATEGORIA-A-01.json). Commit DUG: `8268055b23493dc55a1b6afc62ef0c32c276f0f3`; blob releído: `abb4d397bf78aa60d1fd340ac54535f1e3b1d55a` (coincidente). JSON parseado; 43 principios, 19 anexos, cinco miembros CNP y cero campos ordinales actuales.
+
+**IPZ v0.8:** el cotejo contra v0.7 confirmó que no es una sustitución sin pérdida aunque mida 1.488 caracteres. No instalarla como reemplazo íntegro hasta reconciliar las omisiones señaladas en la crónica. La IPZ nativa no se modificó ni verificó. FOL1 continúa preparado y sin asignaciones.
 
 ## Evento más reciente · C-GOBERNANZA-CNP-01 / C-GOBERNANZA-IPZ-CNP-01 · 2026-10-30
 
