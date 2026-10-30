@@ -25,40 +25,48 @@
       "AT-C-20261029-5510927B-05",
       "AT-C-20261029-5510927B-06"
     ],
-    "exact_source_match": "pending read-back verification"
+    "exact_source_match": true
   },
   "artifacts": {
     "at_v1_1": {
       "path": "frentes/gobernanza/entregas/CHATGPT-v0.8/AT-v1.1.md",
-      "status": "created"
+      "status": "READ_BACK_VERIFIED",
+      "blob_sha": "052385aef862c46fee419f6bce5f4061d8bc55d6"
     },
     "schema_v1_1": {
       "path": "frentes/gobernanza/entregas/CHATGPT-v0.8/ESQUEMA-VECTORES-SEMANTICOS-AT-v1.1.json",
-      "status": "created"
+      "status": "JSON_PARSED_AND_READ_BACK",
+      "blob_sha": "93d4e70884fa45c9c71b466d71de034702da8565"
     },
     "dialogue": {
       "path": "frentes/gobernanza/conversaciones/C-GOBERNANZA-AT-ENDURECIMIENTO-01-dialogo.jsonl",
-      "status": "E-only; S pending"
+      "status": "E_AND_S_READ_BACK_VERIFIED",
+      "blob_sha": "410656b7b08b9cea055f321bba41c66280d79f0d"
     },
     "output": {
       "path": "frentes/gobernanza/entregas/CHATGPT-v0.8/C-GOBERNANZA-AT-ENDURECIMIENTO-01-salida-final.md",
-      "status": "created"
+      "status": "READ_BACK_VERIFIED_AND_MATCHES_DIALOGUE_S",
+      "blob_sha": "2389c43256a028d1ef5edf870ee6c70b62d42bbb"
     },
     "chronicle": {
       "path": "frentes/gobernanza/cronica/C-GOBERNANZA-AT-ENDURECIMIENTO-01.md",
-      "status": "created"
+      "status": "READ_BACK_VERIFIED",
+      "blob_sha": "cb39a11d3756c1366eb396ef9dd82de7686670d6"
     },
     "source_registry": {
       "path": "ambitos/gestion-conversacional/FUENTES-VERBATIM-ORIGEN.jsonl",
-      "status": "updated"
+      "status": "READ_BACK_VERIFIED",
+      "blob_sha": "71aa7d60797da83d0312d8891afb07809c226e0c"
     },
     "trace_registry": {
       "path": "ambitos/gestion-conversacional/REGISTRO-TRAZABILIDAD-SEMANTICA.jsonl",
-      "status": "updated"
+      "status": "READ_BACK_VERIFIED; SIX AT v1.1 TRACES VERIFIED",
+      "blob_sha": "d87c4ab298ed32eafd10f3c7cf70aeb8aebf64a8"
     },
     "conversation_index": {
       "path": "ambitos/gestion-conversacional/REGISTRO-CONVERSACIONES.csv",
-      "status": "updated"
+      "status": "READ_BACK_VERIFIED",
+      "blob_sha": "c0b02f8713d1089f6dcb543c0313de069e3f8862"
     },
     "governance_readme": {
       "path": "frentes/gobernanza/README.md",
@@ -90,8 +98,17 @@
     "chronicle": "b69a178ca7e9fac317b7109f31e04f746af2ba7c"
   },
   "verification": {
-    "status": "partial",
-    "dialogue_pair_complete": false,
-    "readback_pending": true
+    "status": "VERIFIED_FOR_THIS_CYCLE",
+    "schema_json_parse": "PASS",
+    "at_section_order_and_formatting": "PASS",
+    "six_trace_records_required_fields": "PASS",
+    "literal_excerpt_exactness": "6/6 PASS against the persisted verbatim sources",
+    "source_and_record_cycle_folios": "DISTINGUISHED_AND_MATCHED",
+    "forward_trace_links": "PASS",
+    "reverse_lookup_by_each_result_ref": "PASS; six trace IDs recoverable for each registered result",
+    "dialogue_E_S_jsonl": "PASS; two records",
+    "assistant_output_exact_match": "PASS; dialogue S matches saved output",
+    "DUG_blob_unchanged": "PASS; b7593409c428e209d35f53a5f13501652208d949",
+    "limits": "No full external JSON Schema validator, no independent AT runtime, no automatic capture, no multi-OCP E2E propagation test."
   }
 }
