@@ -27,8 +27,8 @@
   "artifacts": {
     "at_definition": {
       "path": "frentes/gobernanza/entregas/CHATGPT-v0.8/AT-v1.0.md",
-      "status": "READ_BACK_VERIFIED",
-      "blob_sha": "063685ce2ab6456a23cf2361478b4429e4510cf0"
+      "status": "UPDATED_AND_READ_BACK",
+      "blob_sha": "61b40cc36908514c53c889516553313a84c5072c"
     },
     "conversation_registry": {
       "path": "ambitos/gestion-conversacional/REGISTRO-CONVERSACIONES.csv",
@@ -93,9 +93,10 @@
       "cycleRecords": 4
     },
     "at": {
-      "sha": "063685ce2ab6456a23cf2361478b4429e4510cf0",
+      "sha": "61b40cc36908514c53c889516553313a84c5072c",
       "semanticCapability": true,
-      "lisaCompatibility": true
+      "lisaCompatibility": true,
+      "sourceTruth": "PASS: semantic vectors are source of operator intent/requirements; they do not override DUG hierarchy or authorization gates."
     },
     "chronicle": {
       "sha": "d653e2ff8a227243e07989015d5a487d212b0d31",
