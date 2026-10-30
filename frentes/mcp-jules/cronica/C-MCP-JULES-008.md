@@ -80,3 +80,8 @@ Todos los tests nuevos permanecen PENDIENTE. No se marca PASS sin evidencia real
 **Fase 1: COMPLETA como diseño integral R2.** La especificación ahora guía el resultado desde el requisito de ChatGPT Free hasta las cuatro fases de entrega, con gates falsables y una restricción absoluta de no utilizar Codex. La compatibilidad real de escritura en Free sigue NO VERIFICADA y es el primer gate externo de Fase 2/3, no un hecho declarado.
 
 **Siguiente fase autorizable:** Fase 2 — reconciliación e implementación, empezando por demostrar el canal de plugin público/Free y el contrato OAuth/aislamiento. El cierre de Fase 1 no autoriza merge, publicación ni despliegue.
+
+
+## Nota histórica de supersesión
+
+Este cierre R2 es un antecedente documental. La nomenclatura de cuatro fases que aparece en esta crónica fue sustituida por instrucción expresa del operador en [C-MCP-JULES-009](C-MCP-JULES-009.md): el proyecto tiene exactamente dos fases. La Fase 1 es planeación integral; la Fase 2 incluye reconciliación, implementación, validación, release, despliegue y puesta en servicio. Las etapas 2.1–2.5 no son fases adicionales. La crónica vigente y la fuente rectora actual prevalecen para la estructura del proyecto.
