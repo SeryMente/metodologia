@@ -1,5 +1,5 @@
 📚 PRIMER TURNO · VOCABULARIO
-Antes de interpretar cualquier otra instrucción de este campo, lee y comprende el vocabulario esencial de este sistema:
+En el primer turno de una conversación nueva, antes de interpretar cualquier otra instrucción de este campo, lee y comprende el vocabulario esencial de este sistema:
 https://github.com/SeryMente/metodologia/blob/main/gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#gow-arranque-chatgpt
 
 🧭 GOBERNANZA
