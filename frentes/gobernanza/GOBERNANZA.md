@@ -4,14 +4,28 @@
 **Repositorio:** `SeryMente/metodologia`.  
 **OCP:** `frentes/gobernanza/`.  
 **Evento de apertura:** `C-GOBERNANZA-INICIO-01`.  
-**Ciclo vigente:** `C-20261029-34641998` · `C-GOBERNANZA-AT-V1-01`. **Evento de control:** `C-GOBERNANZA-RETOMA-04`.  
+**Ciclo vigente:** `C-20261030-9D7E31A2` · `C-GOBERNANZA-ARTICULACION-REGISTRO-01`. **Evento de control:** `C-GOBERNANZA-RETOMA-04`.  
 **Sesión inicial (histórica):** `SES-20261028-3F2B7A91`, generación 1.
 **Titular actual según control:** `chatgpt-C-GOBERNANZA-RETOMA-04-SES-20261029-GV5KGJY8U5J` (alias operativo, no ID nativo).
 **Instancia actual según control:** `chatgpt-gobernanza-retoma-2026-10-29-GV5KGJY8U5J`.
 **Sesión actual según control:** `SES-20261029-GV5KGJY8U5J`, generación 5; ciclo `C-20261029-01A18A7F`.
 **Control actual leído de vuelta:** blob `0ca6b63ea0613bebb32f28642c13124176cad24e`; evento `C-GOBERNANZA-RETOMA-04`.
 
-## Ciclo actual · C-GOBERNANZA-AT-V1-01 · 2026-10-29
+## Ciclo actual · C-GOBERNANZA-ARTICULACION-REGISTRO-01 · 2026-10-30
+
+El operador confirmó que **Gobernanza es el frente responsable** y que Tareas es trabajo/ámbito en desarrollo dentro de ese frente, no un frente independiente. No se requiere transferencia de titularidad de Tareas.
+
+Se revisó AT v1.0 para incorporar la **trazabilidad semántica como capacidad fundamental de AT**: los vectores semánticos son segmentos verbatim de las entradas del operador y deben enlazar bidireccionalmente con reglas/principios, anexos, OCP, cambios, pruebas y resultados. Persistencia documental custodia documentos originales/derivados; Registro conversacional conserva los ciclos literales E/S y sus metadatos; AT usa esos registros como fuentes para justificar la propagación. La relación entre los tres componentes es de convergencia y enlace, no de fusión.
+
+AT v1.0 también establece compatibilidad futura con LISA: vector literal como origen y referencia a L0→REQ→ACR cuando aplique, sin que el modelo invente o ratifique L0. La integración completa de LISA sigue pendiente.
+
+**Conflicto normativo identificado:** DUG v362 ART-020/024 todavía clasifica Trazabilidad semántica como módulo interno de Gestión conversacional. La definición operativa revisada propone reclasificarla como capacidad de AT y mantener Registro conversacional en Gestión conversacional. No se modificó DUG/GOW: P005 exige autorización explícita previa y el control activo excluye enmiendas sustantivas no autorizadas.
+
+**Persistencia:** se guardó el dictado íntegro como `SRC-C-20261030-9D7E31A2-USER`, ciclo `C-20261030-9D7E31A2`, UUIDv7 local `01a18a1b-3000-7b4c-892a-8d31e5f6a7b8`; pareja E/S, registro maestro y trazas semánticas añadidos. La captura fue manual y leída de vuelta; IPZA no prueba ni activa captura automática.
+
+Evidencia: [crónica](cronica/C-GOBERNANZA-ARTICULACION-REGISTRO-01.md) · [evidencia](evidencias/C-GOBERNANZA-ARTICULACION-REGISTRO-01.json) · [AT v1.0 revisada](entregas/CHATGPT-v0.8/AT-v1.0.md) · [salida](entregas/CHATGPT-v0.8/C-GOBERNANZA-ARTICULACION-REGISTRO-01-salida-final.md) · [diálogo](conversaciones/C-GOBERNANZA-ARTICULACION-REGISTRO-01-dialogo.jsonl).
+
+## Ciclo previo · C-GOBERNANZA-AT-V1-01 · 2026-10-29
 
 Se cerró la definición operativa de **Articulación Trazable (AT) v1.0** para el alcance precisado por el operador: articular cambios conceptuales/metodológicos longitudinalmente a través de los niveles OCP, el sistema de gobierno del DUG, el orden de principios, la jerarquía subordinada de anexos y los destinos que realmente dependan del cambio. AT no se amplía a un sistema universal de gestión de cambios.
 
