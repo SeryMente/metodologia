@@ -44,26 +44,27 @@ No se crean ocho fases ni se cambia la secuencia canónica aprobada.
 
 ## Aceptación
 
-La matriz crece de 25 a **31 pruebas/gates**, incorporando:
+La matriz crece de 25 a **32 pruebas/gates**, incorporando:
 - publicación y aprobación del plugin público;
 - OAuth y aislamiento por usuario/fuente/repositorio/rama;
 - cuotas Free y reanudación;
 - no dependencia de GPT Actions;
 - exclusión absoluta de Codex;
-- actualización controlada de herramientas publicadas.
+- actualización controlada de herramientas publicadas;
+- independencia de las extensiones nativas de plugin: v1.0 usa herramientas MCP básicas desde chat web normal, no depende de sidebar/composer/file-viewer; la disponibilidad de escritura del plugin concreto en Free sigue sujeta a prueba.
 
 Todos los tests nuevos permanecen PENDIENTE. No se marca PASS sin evidencia real.
 
 ## Artefactos actualizados
 
-- `PLAN-INTEGRAL-MCP-JULES-v1.0.md`: R2, 24 secciones, 31 tests/gates; blob `79fc509ce97d75e6959dd2c425dceb933153df62`.
-- `OBJETO-CANONICO.md`: v0.1.5, estado/cliente Free/pendientes alineados; blob `3ac7b56c9df56ee65b578767be0f02d745fab6ef`.
-- `pruebas/PLAN-ACEPTACION-MVP.md`: 31 pruebas/gates; blob `c3f5b65bbca5aade86bd708d7c248b1accce9a81`.
-- `fuentes/INVESTIGACION-API-JULES-CHATGPT.md`: ruta pública y OAuth documentados; blob `e4d5ddb28e93421c34dcdc549cc49b06dc050ddb`.
+- `PLAN-INTEGRAL-MCP-JULES-v1.0.md`: R2, 24 secciones, 31 tests/gates; blob `50aa0d2f93e5a4f1168aa8d12c3e0d86e5e2a1e7`.
+- `OBJETO-CANONICO.md`: v0.1.5, estado/cliente Free/pendientes alineados; blob `6c754fdf740d273d71b8c80559bade41d11cc20a`.
+- `pruebas/PLAN-ACEPTACION-MVP.md`: 32 pruebas/gates; blob `12a72f46f07df0be62a0abdc8de68bf3b9c36c72`.
+- `fuentes/INVESTIGACION-API-JULES-CHATGPT.md`: ruta pública y OAuth documentados; blob `bf9fe28b5a62a8e33814763196cba4a7a8270432`.
 - `prompts/ASISTENTE-MCP.md`: cliente Free, plugin público y no Codex; blob `8f6f8b1dd4c246c33098f8bd10318c1a51cf5a9d`.
 - `prompts/JULES-CONSTRUCTOR.md`: restricciones Free/no Codex; blob `8e8f42c98741116135e4b0ad48cad4833a7eb72b`.
 - `replicacion/GUIA-REPLICACION-FRENTES.md`: instalación del plugin y aislamiento por usuario; blob `bd8c32b7b5a4691c942abb83a75fd2e75bae9587`.
-- `README.md`: ciclo vigente y estado alineados; blob `955ccec593435b68726c68eaa703d6f9d4a9db4d`.
+- `README.md`: ciclo vigente y estado alineados; blob `30acad913ddc9e8cc94a73fed7d376400efef510`.
 
 ## Límites y no ejecución
 
