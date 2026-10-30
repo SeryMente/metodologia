@@ -4,7 +4,7 @@
 **Repositorio:** `SeryMente/metodologia`.  
 **OCP:** `frentes/gobernanza/`.  
 **Evento de apertura:** `C-GOBERNANZA-INICIO-01`.  
-**Último ciclo con folio legado:** `C-20261029-5510927B` · `C-GOBERNANZA-AT-ENDURECIMIENTO-01`. **Evento más reciente (pre-corte):** `C-GOBERNANZA-FOLIACION-SECUENCIAL-01`; FOL1 preparado, sin número de ciclo ni folio asignado. **Evento de control:** `C-GOBERNANZA-RETOMA-04`.  
+**Último ciclo legado del histórico anterior:** `C-20261029-5510927B` · `C-GOBERNANZA-AT-ENDURECIMIENTO-01`. **Conversación de foliación:** UUIDv7 local `01a18d91-e030-7683-a4fa-7391408f989c`; tres ciclos naturales pre-corte `C-20261030-F0D12375`, `C-20261030-2FB9018D` y `C-20261030-25A998EA`, con lados A/B y folios legados. No son folios FOL1 ni IDs nativos. **Evento más reciente:** `C-GOBERNANZA-FOLIACION-SECUENCIAL-01`; FOL1 preparado, sin asignaciones globales/OCP. **Evento de control:** `C-GOBERNANZA-RETOMA-04`.  
 **Sesión inicial (histórica):** `SES-20261028-3F2B7A91`, generación 1.
 **Titular actual según control:** `chatgpt-C-GOBERNANZA-RETOMA-04-SES-20261029-GV5KGJY8U5J` (alias operativo, no ID nativo).
 **Instancia actual según control:** `chatgpt-gobernanza-retoma-2026-10-29-GV5KGJY8U5J`.
@@ -12,6 +12,8 @@
 **Control actual leído de vuelta:** blob `4768d6db0a620652f753262b6250c8cb4b891ca9`; evento `C-GOBERNANZA-RETOMA-04`.
 
 ## Evento más reciente · C-GOBERNANZA-FOLIACION-SECUENCIAL-01 · 2026-10-30 (pre-corte FOL1)
+
+**Registros del ciclo:** [crónica](cronica/C-GOBERNANZA-FOLIACION-SECUENCIAL-01.md) · [salida](entregas/CHATGPT-v0.8/C-GOBERNANZA-FOLIACION-SECUENCIAL-01-salida-final.md) · [diálogo A/B](conversaciones/C-GOBERNANZA-FOLIACION-SECUENCIAL-01-dialogo.jsonl) · [evidencia](evidencias/C-GOBERNANZA-FOLIACION-SECUENCIAL-01.json).
 
 Por instrucción expresa del operador se incorporó **P042 · Foliación Global y por OCP**, se amplió **ART-024** con el contrato de conversación/ciclo/A/B y asignación central, y se actualizaron Metacanon a **1.25** y GOW a **2.12**. La fuente canónica fue leída de vuelta: DUG v363 · NX-363m, 42 principios, 18 anexos y 125 términos GOW.
 
