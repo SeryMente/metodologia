@@ -2,6 +2,9 @@
 
 **Estado:** implementación inicial; el contrato normativo reside en [ART-024 del DUG](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-024). Esta carpeta es un OCP materializado para los artefactos que necesita este ciclo; no es una fuente normativa paralela.
 
+
+> **Nota de alineación conceptual posterior · 2026-10-30:** el DUG v362 vigente todavía clasifica Trazabilidad semántica como módulo de Gestión conversacional en ART-020/024. La definición operativa revisada de [AT v1.0](../../frentes/gobernanza/entregas/CHATGPT-v0.8/AT-v1.0.md) la sitúa como capacidad fundamental de AT: los registros de esta carpeta siguen siendo el soporte físico provisional para conservar las trazas, pero la responsabilidad conceptual propuesta corresponde a AT. Esta reclasificación requiere enmienda explícita del DUG conforme a P005; hasta entonces prevalece ART-024 vigente. Registro conversacional permanece en Gestión conversacional. La instalación de IPZA no activa captura automática.
+
 ## Componentes
 
 - **Registro conversacional:** [contrato](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-024), [registro maestro](REGISTRO-CONVERSACIONES.csv), [esquema E/S](ESQUEMA-CICLO-CONVERSACIONAL-v1.0.json), [guía](REGISTRO-CONVERSACIONAL-v1.0.md).
