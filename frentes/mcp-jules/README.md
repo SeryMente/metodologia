@@ -1,6 +1,6 @@
 # Frente MCP Jules · índice
 
-**Ciclo vigente:** [C-MCP-JULES-008 · cierre R2 de Fase 1 para ChatGPT Free sin Codex](cronica/C-MCP-JULES-007.md). Núcleo `OBJETO-CANONICO.md`, titularidad en generación 2.
+**Ciclo vigente:** [C-MCP-JULES-008 · cierre R2 de Fase 1 para ChatGPT Free sin Codex](cronica/C-MCP-JULES-008.md). Núcleo `OBJETO-CANONICO.md`, titularidad en generación 2.
 
 Este es el índice de navegación del frente MCP Jules. El único estado vivo está en [OBJETO-CANONICO.md](OBJETO-CANONICO.md); la titularidad y la generación solo proceden de [CONTROL-RESPONSABILIDAD.json](CONTROL-RESPONSABILIDAD.json). No crear un segundo estado.
 
