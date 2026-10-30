@@ -63,10 +63,12 @@ Si OpenAI no permite herramientas MCP de escritura desde ChatGPT Free por ningun
 ## Artefactos reconciliados
 
 - [Plan integral v1.0](../PLAN-INTEGRAL-MCP-JULES-v1.0.md): §15 define exactamente dos fases y etapas 2.1–2.5; §22 contiene el procedimiento único de Fase 2. Blob `0872f0caadcb2835bbc2cffbacc7de4c564449f7`.
-- [Objeto canónico](../OBJETO-CANONICO.md): v0.1.6, dos fases; blob `3d1071ac66c70b1d4892f291a03df8c5bf425906`.
+- [Objeto canónico](../OBJETO-CANONICO.md): v0.1.6, dos fases; blob `5feea0e930a62c7573012f02c2523076bd98c70e`.
 - [Plan de aceptación](../pruebas/PLAN-ACEPTACION-MVP.md): versión 1.3, 32 criterios, todos asociados a Fase 2 y pendientes; blob `3862754635bb449d0b4df13dc87ce1d3909c338b`.
-- [README](../README.md): índice y estado vivo pendientes de lectura de vuelta tras esta crónica.
-- Investigación, prompts y guía de replicación conservan ChatGPT Free y la prohibición de Codex.
+- [README](../README.md): índice y estado vivo leídos de vuelta; blob `17e99baf2d762a94f9bfa158d60cd16455e33122`.
+- Investigación y guía de replicación conservan ChatGPT Free y la prohibición de Codex.
+- [Contrato operativo del asistente](../prompts/ASISTENTE-MCP.md): modelo de dos fases; blob `9903dcc70fd37ddf9fe8fd6ab6d496fcd5d3e46c`.
+- [Contrato del constructor Jules](../prompts/JULES-CONSTRUCTOR.md): modelo de dos fases y exclusión de Codex; blob `c9f921eb4e9e43ff9d17a996ea23a9568da7b77c`.
 
 ## Límites de ejecución de este ciclo
 
