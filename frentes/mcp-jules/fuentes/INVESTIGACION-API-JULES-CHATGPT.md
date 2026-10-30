@@ -47,7 +47,7 @@ La base REST continúa siendo `https://jules.googleapis.com/v1alpha`. Las refere
 4. GET usa `pageToken` documentado y puede reintentarse de forma limitada. No usar helpers con cursor `createTime` no documentado.
 5. El candidato usa `listActivitiesPage` con `pageToken` documentado; el helper heredado que agregaba `createTime` fue retirado del adaptador.
 6. `fetchWithBackoff` distingue GET/HEAD de POST. Los POST create/message/approve no se reintentan en fallos de red, 5xx ambiguos ni 429; los tests sintéticos cubren esas rutas, pero todavía no se han ejecutado en CI.
-7. La ruta candidata relee la sesión y verifica el estado antes de enviar mensaje/aprobar. Eso no vincula el contenido del plan aprobado con una huella del plan que el operador revisó. El gate T22 sigue pendiente: diseñar una huella/versionado verificable del plan actual y bloquear la aprobación si el plan cambió; no afirmar una barrera criptográfica hasta implementarla y probarla.
+7. La herramienta de aprobación exige `plan_id` y `plan_sha256` obtenidos en `jules_list_activities`; el servidor calcula la huella de forma canónica sobre `Plan`, relee sesión/actividades paginadas dos veces y bloquea cambios de ID o contenido antes del POST. La API `sessions.approvePlan` solo acepta la sesión y cuerpo vacío; no expone plan_id, ETag ni If-Match, por lo que la última lectura y el POST no son atómicos. T22 permanece parcialmente mitigado pero PENDIENTE de resolver mediante soporte condicional del proveedor o bloquear/limitar el flujo; no afirmar atomicidad.
 8. El servidor no puede probar por sí solo quién escribió una confirmación en la conversación. El contrato exige consentimiento explícito del operador y respeta cualquier confirmación de la plataforma; no se afirma una barrera criptográfica independiente.
 
 ## Compatibilidad ChatGPT Free y modelo de distribución
@@ -102,7 +102,7 @@ La referencia REST consultada no documenta un webhook para cada actividad nueva;
 
 ## Implementación candidata y delta de diseño · corte 2026-10-30
 
-La implementación está versionada en [KHORA PR #344](https://github.com/SeryMente/khora/pull/344), rama `feat/mcp-jules-f2-20261029-6c2f9a17`, head `0ef171cbff42b77eb89593b70d573026145b28ac` al momento de esta revisión documental. Se mantiene en borrador y apilada sobre la PR de Custodia #340 para no introducir su base pendiente en `main` prematuramente.
+La implementación está versionada en [KHORA PR #344](https://github.com/SeryMente/khora/pull/344), rama `feat/mcp-jules-f2-20261029-6c2f9a17`, head `ad7826a186ff9f74b51874aa4bae04725a2e33c4` al momento de esta revisión documental. Se mantiene en borrador y apilada sobre la PR de Custodia #340 para no introducir su base pendiente en `main` prematuramente.
 
 - Las siete herramientas Jules se integran al servidor MCP existente `/api/mcp`; no se crea servidor paralelo.
 - Se publican scopes separados `jules:read` y `jules:write`, sin agregarlos a los scopes predeterminados de otros clientes.
@@ -110,10 +110,10 @@ La implementación está versionada en [KHORA PR #344](https://github.com/SeryMe
 - Antes de crear una sesión, se valida un grant de escritura exacto, se llama a `sources.get` y se confirma la rama en `branches`/`defaultBranch`; de lo contrario `sessions.create` no se ejecuta.
 - El adaptador conserva `pageToken`, elimina el helper heredado con cursor `createTime` y distingue GET/HEAD reintentables de POST no reintentables cuando el resultado es ambiguo.
 - `jules_create_session` fuerza `requirePlanApproval=true` y `AUTO_CREATE_PR`; el estado se relee antes de enviar mensaje/aprobar.
-- Tests sintéticos de ruta y cliente, fixtures ACL, control de branches y retry están escritos y versionados. Una auditoría estática corrigió el conteo de llamadas del fixture a 27 y el caso donde la default branch no se repite en `branches[]`; se añadieron negativos de ACL caída, fuente/rama/sesión no autorizadas y POST 429 sin replay.
+- Tests sintéticos de ruta y cliente, fixtures ACL, control de branches/retry y doble preflight de aprobación están escritos y versionados. Se añadieron negativos de ACL caída, fuente/rama/sesión no autorizadas, cambios del plan por ID y por huella de contenido, y POST 429 sin replay.
 - La migración `033_jules_source_acl.sql` está añadida al PR pero NO aplicada. No se concede permiso al rol productivo sin identificarlo y verificar que solo recibe `USAGE` y `SELECT` de la ACL privada.
 
-**Validación real al corte:** UI Quality `41086322565` y CI `41086322753` para el head actual finalizaron con jobs `steps: null`; CI `41086312312` fue repetición adicional, también sin ejecutar steps. No hay logs de runner ni output de pruebas recuperable. Los checks Vercel fallan por la restricción de deploy de repositorios privados de organización en el plan actual. Por tanto, no hay evidencia de que el head compile ni de que los tests se hayan ejecutado. La llamada real de Jules, OAuth/aislamiento real, plugin publicado, escritura en ChatGPT Free, E2E, merge y despliegue siguen pendientes. T01–T32 permanecen PENDIENTE; T22 sigue bloqueado hasta vincular de forma verificable el plan exacto revisado con la aprobación.
+**Validación real al corte:** UI Quality `41086322565` y CI `41086322753` para el head actual finalizaron con jobs `steps: null`; CI `41086312312` fue repetición adicional, también sin ejecutar steps. No hay logs de runner ni output de pruebas recuperable. Los checks Vercel fallan por la restricción de deploy de repositorios privados de organización en el plan actual. Por tanto, no hay evidencia de que el head compile ni de que los tests se hayan ejecutado. La llamada real de Jules, OAuth/aislamiento real, plugin publicado, escritura en ChatGPT Free, E2E, merge y despliegue siguen pendientes. T01–T32 permanecen PENDIENTE. T22 está parcialmente mitigado con ID/huella y doble lectura, pero no puede cerrarse atómicamente mientras `approvePlan` no acepte una precondición por plan.
 
 El candidato anterior PR #338 ya no es el head vigente; permanece como evidencia histórica sin merge. La Fase 2 continúa EN CURSO, no aceptada.
 
