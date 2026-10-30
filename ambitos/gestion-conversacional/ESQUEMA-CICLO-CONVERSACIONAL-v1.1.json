@@ -1,21 +1,16 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Registro conversacional lateral A/B · foliación FOL1 · v1.1",
+  "title": "Registro conversacional A/B · FOL1 y legado pre-corte · v1.1",
   "type": "object",
   "additionalProperties": false,
   "required": [
     "record_id",
     "event_id",
     "conversation_id",
-    "conversation_folio_global",
-    "conversation_folios_by_ocp",
     "cycle_number",
-    "cycle_folio_global",
-    "cycle_folios_by_ocp",
+    "legacy_cycle_folio",
     "side",
     "sequence_in_cycle",
-    "record_folio_global",
-    "record_folios_by_ocp",
     "speaker",
     "text",
     "repository_ref",
@@ -28,7 +23,7 @@
   "properties": {
     "record_id": {
       "type": "string",
-      "minLength": 1
+      "pattern": "^C-[0-9]{8}-[A-F0-9]{8}-[ES]$"
     },
     "event_id": {
       "type": "string",
@@ -118,11 +113,15 @@
       }
     },
     "foliation_generation": {
-      "const": "FOL1"
+      "enum": [
+        "FOL1",
+        "LEGACY"
+      ]
     },
     "folio_status": {
       "enum": [
         "ASSIGNED_VERIFIED",
+        "PARTIAL_OCP_COVERAGE",
         "PENDING",
         "LEGACY_PRE_CUTOVER"
       ]
@@ -175,9 +174,77 @@
           "type": "string"
         }
       }
+    },
+    "legacy_cycle_folio": {
+      "type": "string",
+      "pattern": "^C-[0-9]{8}-[A-F0-9]{8}$"
     }
   },
   "allOf": [
+    {
+      "if": {
+        "properties": {
+          "folio_status": {
+            "const": "ASSIGNED_VERIFIED"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "conversation_folio_global",
+          "conversation_folios_by_ocp",
+          "cycle_folio_global",
+          "cycle_folios_by_ocp",
+          "record_folio_global",
+          "record_folios_by_ocp"
+        ],
+        "properties": {
+          "foliation_generation": {
+            "const": "FOL1"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "folio_status": {
+            "const": "PARTIAL_OCP_COVERAGE"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "conversation_folio_global",
+          "cycle_folio_global",
+          "record_folio_global"
+        ],
+        "properties": {
+          "foliation_generation": {
+            "const": "FOL1"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "folio_status": {
+            "const": "LEGACY_PRE_CUTOVER"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "legacy_cycle_folio"
+        ],
+        "properties": {
+          "foliation_generation": {
+            "const": "LEGACY"
+          }
+        }
+      }
+    },
     {
       "if": {
         "properties": {
@@ -193,6 +260,9 @@
           },
           "speaker": {
             "const": "operator"
+          },
+          "record_id": {
+            "pattern": "^C-[0-9]{8}-[A-F0-9]{8}-E$"
           },
           "record_folio_global": {
             "pattern": "^A-G[0-9]{8}$"
@@ -215,6 +285,9 @@
           },
           "speaker": {
             "const": "assistant"
+          },
+          "record_id": {
+            "pattern": "^C-[0-9]{8}-[A-F0-9]{8}-S$"
           },
           "record_folio_global": {
             "pattern": "^B-G[0-9]{8}$"
