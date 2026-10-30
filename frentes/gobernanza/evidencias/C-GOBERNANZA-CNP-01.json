@@ -1,0 +1,103 @@
+{
+  "schema": "governance-cycle-evidence/1",
+  "event_id": "C-GOBERNANZA-CNP-01",
+  "recorded_on": "2026-10-30",
+  "status": "documentary_changes_executed_readback_verified",
+  "cycle_folio": null,
+  "fol1_status": "PREPARADO_PENDIENTE_ACTIVACION_IPZ",
+  "authorization": {
+    "control_path": "frentes/gobernanza/CONTROL-RESPONSABILIDAD.json",
+    "commit": "1568f3ff5b9cc98c4d1ad0596dbf74a929997032",
+    "blob_sha": "a227c49a5ff794b0bb516f87d6b325bab0b33003",
+    "owner_generation": 6,
+    "readback_verified": true
+  },
+  "changes": [
+    {
+      "event_id": "C-GOBERNANZA-CNP-01",
+      "path": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.html",
+      "version": "v365",
+      "signature": "NX-365m",
+      "commit": "79f373f73f19089cdaf988d441abc61253440cfd",
+      "blob_sha": "3c9c3dbd16ffa814a2ae7a6cda654d23a514d813",
+      "readback_exact": true,
+      "details": {
+        "principles": 43,
+        "annexes": 19,
+        "gow": "2.13",
+        "cnp": [
+          [
+            "CNP-01",
+            "P001",
+            "A · 0.9"
+          ],
+          [
+            "CNP-02",
+            "P004",
+            "A · 0.8"
+          ],
+          [
+            "CNP-03",
+            "P005",
+            "A · 0.7"
+          ],
+          [
+            "CNP-04",
+            "P038",
+            "A · 0.6"
+          ],
+          [
+            "CNP-05",
+            "P043",
+            "A · 0.5"
+          ]
+        ],
+        "new_principle": "P043 · Principio Anti-Ineficiencia (PAI)",
+        "new_annex": "ART-026 · Fundamento del PAI"
+      }
+    },
+    {
+      "event_id": "C-GOBERNANZA-IPZ-CNP-01",
+      "path": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.html",
+      "version": "v366",
+      "signature": "NX-366m",
+      "commit": "b9493d50ce1d89b2f73c2bc2626f5acfcc276d19",
+      "blob_sha": "679195bd66198b267414f4615fc382170d20754a",
+      "readback_exact": true,
+      "details": {
+        "artifact_updated": "ART-025",
+        "cnp_every_turn": true,
+        "full_dug_preserved": true,
+        "annexes_by_principle_referral": true
+      }
+    },
+    {
+      "path": "frentes/gobernanza/entregas/CHATGPT-v0.8/IPZ-CAMPO-CHATGPT-v0.8-PROPUESTA.txt",
+      "version": "v0.8",
+      "commit": "ba7aa952bc93b4add6504cadba8da45d0aa26fee",
+      "blob_sha": "4176b4e328becfe4a98b5f96241e2ac198eccd80",
+      "readback_exact": true,
+      "characters": 1488,
+      "limit": 1500,
+      "native_installation": "not modified; not verified"
+    }
+  ],
+  "verification": {
+    "embedded_json_parse": true,
+    "principles": 43,
+    "annexes": 19,
+    "cnp_members": 5,
+    "duplicate_principle_ids": 0,
+    "duplicate_artifact_ids": 0,
+    "duplicate_glossary_term_ids": 0,
+    "html_audit_uses_declared_principle_count": true,
+    "browser_rendering": false,
+    "dynamic_link_audit": false
+  },
+  "pending": [
+    "Native IPZ installation and observable confirmation in a new conversation",
+    "Browser rendering and dynamic anchor/return audit",
+    "FOL1 activation and real E2E sequence tests",
+    "Empirical recalibration of category/decimal assignments and PAI application"
+  ]
+}
