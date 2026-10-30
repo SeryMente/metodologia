@@ -72,6 +72,12 @@ Se requiere probar desde una cuenta personal ChatGPT Free real, en la región/su
 
 Si el plugin no está disponible o la escritura se deniega en Free, el estado es BLOCKED/FAIL. No se sustituye por conexión MCP privada de plan de pago, GPT Actions, relevo manual ni Codex. El cambio de arquitectura requiere decisión explícita del operador.
 
+### Herramientas del plugin vs. extensiones nativas
+
+Debe distinguirse la capacidad de invocar herramientas MCP desde un plugin de las extensiones nativas de plugin que añaden superficies específicas de ChatGPT (barra lateral, compositor, visores de archivos e interacciones enriquecidas). La documentación de OpenAI dice que las extensiones web están pendientes para Free y Go, mientras que la funcionalidad existente del plugin no se ve afectada. Asimismo, ChatGPT web utiliza herramientas MCP remotas a través de plugins. Por tanto, no se requiere una extensión nativa para el ciclo MCP Jules v1.0; el sistema debe exponer herramientas básicas desde chat web normal. Aun así, esto no demuestra por sí solo que cada plugin y cada escritura sean elegibles en Free: la disponibilidad final se prueba con la cuenta objetivo.
+
+Fuentes: [Plugin Extensions](https://developers.openai.com/plugins/build/extensions), [Plugins en ChatGPT](https://help.openai.com/en/articles/20001256-plugins-in-chatgpt), [Model Context Protocol en ChatGPT Learn](https://learn.chatgpt.com/docs/extend/mcp), [solución de problemas de plugins y apps](https://help.openai.com/en/articles/20001497-troubleshooting-plugins-and-apps).
+
 ### GPT Actions y Codex
 
 Se descartan GPT Actions como dependencia: las cuentas personales Free no pueden crear ni publicar GPTs personalizados nuevos. **Codex queda expresamente excluido** del desarrollo, pruebas, publicación, instalación, operación y contingencias. No se recomienda ni invoca ese producto.
