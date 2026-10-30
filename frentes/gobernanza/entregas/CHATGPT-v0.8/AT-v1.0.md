@@ -165,7 +165,7 @@ La posible descomposición se difiere. Solo se reabrirá si el uso real demuestr
 
 ## 9. Trazabilidad semántica como fundamento de AT
 
-La trazabilidad semántica es una **capacidad interna y fundamental de AT**, no un ámbito funcional transversal independiente ni, en el diseño objetivo de AT, un módulo subordinado a Gestión conversacional. Su objeto específico es conservar el anclaje causal y justificativo de los cambios que AT analiza, decide propagar y realiza: cada cambio debe remontarse a uno o varios vectores semánticos originados en instrucciones, decisiones o restricciones verbatim del operador.
+La trazabilidad semántica es una **capacidad interna y fundamental de AT**, no un ámbito funcional transversal independiente ni, en el diseño objetivo de AT, un módulo subordinado a Gestión conversacional. Su objeto específico es conservar el anclaje causal y justificativo de los cambios que AT analiza, decide propagar y realiza: cada cambio debe remontarse a uno o varios vectores semánticos originados en instrucciones, decisiones o restricciones verbatim del operador. **Para los efectos que el sistema realiza por instrucciones del operador, esos vectores son la fuente de verdad de la intención y del requisito de origen.** No sustituyen, sin embargo, la jerarquía normativa del DUG ni las compuertas de autorización: un vector no concede por sí solo permiso para modificar un principio, anexo u OCP.
 
 El contrato distingue tres artefactos que convergen, pero no se fusionan:
 
