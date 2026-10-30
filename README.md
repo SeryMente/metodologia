@@ -7,8 +7,8 @@ La fuente documental preponderante es este repositorio privado, rama `main`. Ant
 ## Gobierno canónico
 
 - [INICIO.md](INICIO.md) — orden de adquisición y arranque del trabajo.
-- [DUG integrado · Samantha (Sam)](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#P001) — v363 · NX-363m; verifica siempre la revisión viva de `main`.
-- [Metacanon integrado](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#metacanon) — v1.25; fuente única dentro del DUG.
+- [DUG integrado · Samantha (Sam)](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#P001) — v364 · NX-364m; verifica siempre la revisión viva de `main`.
+- [Metacanon integrado](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#metacanon) — v1.26; fuente única dentro del DUG.
 - [GOW integrado](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#glosario) — v2.12, 125 términos con definición estructurada; incluye §ARR como vocabulario inicial para ChatGPT y no es autoridad de gobernanza.
 - [Gobierno general y precedencia](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html).
 
