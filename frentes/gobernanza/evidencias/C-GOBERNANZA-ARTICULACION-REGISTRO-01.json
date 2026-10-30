@@ -49,7 +49,7 @@
     "dialogue": {
       "path": "frentes/gobernanza/conversaciones/C-GOBERNANZA-ARTICULACION-REGISTRO-01-dialogo.jsonl",
       "status": "READ_BACK_VERIFIED",
-      "blob_sha": "0f4cee7523d0f07993e5104ff8e17087b88aa02a"
+      "blob_sha": "4322ccce3d080b04a22bda5b717d23125b7a7a6a"
     },
     "chronicle": {
       "path": "frentes/gobernanza/cronica/C-GOBERNANZA-ARTICULACION-REGISTRO-01.md",
@@ -59,7 +59,7 @@
     "output": {
       "path": "frentes/gobernanza/entregas/CHATGPT-v0.8/C-GOBERNANZA-ARTICULACION-REGISTRO-01-salida-final.md",
       "status": "READ_BACK_VERIFIED",
-      "blob_sha": "7054f7e7b4291589b94afdb683337b49122167fe"
+      "blob_sha": "414b0154d761946ffcd0a8ecaf9ecc42e25c9942"
     }
   },
   "authorization_gate": {
@@ -70,7 +70,7 @@
   },
   "verification": {
     "dialogue": {
-      "sha": "0f4cee7523d0f07993e5104ff8e17087b88aa02a",
+      "sha": "4322ccce3d080b04a22bda5b717d23125b7a7a6a",
       "jsonl": "PASS",
       "records": 2,
       "entryChars": 4458,
@@ -103,7 +103,7 @@
       "present": true
     },
     "output": {
-      "sha": "7054f7e7b4291589b94afdb683337b49122167fe",
+      "sha": "414b0154d761946ffcd0a8ecaf9ecc42e25c9942",
       "complete": true
     },
     "indexes": {
@@ -118,7 +118,8 @@
     "automatic_capture": "NOT_AVAILABLE_OR_NOT_VERIFIED; IPZA alone does not implement a background writer",
     "cycle_persistence": "MANUAL_GITHUB_WRITE_AND_READBACK_CONFIRMED",
     "global_sync": "NOT_CLAIMED",
-    "dug_change": "NOT_PERFORMED; DUG blob unchanged"
+    "dug_change": "NOT_PERFORMED; DUG blob unchanged",
+    "cycle_continuity_commitment": "Recorded: for each substantive cycle in this work, persist visible E/S and link relevant vectors; if unavailable, declare the gap before acting. This is manual, not background automation."
   },
   "next_step": "Obtain explicit P005 authorization for the narrowly scoped DUG/GOW amendment. Tareas remains work within Gobernanza; no ownership transfer."
 }
