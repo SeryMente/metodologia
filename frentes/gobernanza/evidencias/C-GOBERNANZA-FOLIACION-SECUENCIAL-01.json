@@ -1,0 +1,219 @@
+{
+  "schema": "ser-y-mente-governance-cycle-evidence/v1",
+  "event_id": "C-GOBERNANZA-FOLIACION-SECUENCIAL-01",
+  "recorded_on": "2026-10-30",
+  "front": "Gobernanza",
+  "repository": "SeryMente/metodologia",
+  "scope": "Articular y materializar la foliación secuencial global y por OCP de conversación, ciclo natural y registros A/B; actualizar los elementos de gobernanza y registro necesarios; dejar la preparación de la nueva IPZ para el último paso.",
+  "authorization": {
+    "status": "granted",
+    "source": "Mensaje literal del operador en la conversación titular del frente.",
+    "scope": "La instrucción vigente autoriza los cambios necesarios para la foliación global/OCP y A/B; excluye modificar ART-025, el archivo candidato IPZ o la IPZ nativa durante esta fase.",
+    "control_path": "frentes/gobernanza/CONTROL-RESPONSABILIDAD.json",
+    "control_blob_sha": "4768d6db0a620652f753262b6250c8cb4b891ca9",
+    "owner_thread": "chatgpt-C-GOBERNANZA-RETOMA-04-SES-20261029-GV5KGJY8U5J",
+    "instance": "chatgpt-gobernanza-retoma-2026-10-29-GV5KGJY8U5J",
+    "generation": 5,
+    "recorded_in_control": true
+  },
+  "canonical_source": {
+    "path": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.html",
+    "version": "v363",
+    "signature": "NX-363m",
+    "event": "C-GOBERNANZA-FOLIACION-SECUENCIAL-01",
+    "blob_sha": "35c0f8f12d7c7f417cd6986f55851759667bd4ca",
+    "last_commit_sha": "2d172d4857d9a596936e31ad7ccf5e69e1c3e349",
+    "last_commit_date_utc": "2026-10-30T16:12:45Z",
+    "principles": 42,
+    "annexes": 18,
+    "metacanon_version": "1.25",
+    "gow_version": "2.12",
+    "gow_terms": 125,
+    "embedded_json_parse": "PASS",
+    "p042_present": true,
+    "art024_contains_fol1_contract": true,
+    "audit_principle_counter_42": true,
+    "art025_unchanged_vs_base": true
+  },
+  "conversation": {
+    "conversation_id": "01a18d91-e030-7683-a4fa-7391408f989c",
+    "identity_kind": "UUIDv7 local del registro; no ID nativo de ChatGPT",
+    "native_conversation_id": "NOT_EXPOSED",
+    "cycles": [
+      {
+        "cycle_number": 1,
+        "legacy_cycle_folio": "C-20261030-F0D12375",
+        "A_record_id": "C-20261030-F0D12375-E",
+        "B_record_id": "C-20261030-F0D12375-S"
+      },
+      {
+        "cycle_number": 2,
+        "legacy_cycle_folio": "C-20261030-2FB9018D",
+        "A_record_id": "C-20261030-2FB9018D-E",
+        "B_record_id": "C-20261030-2FB9018D-S"
+      },
+      {
+        "cycle_number": 3,
+        "legacy_cycle_folio": "C-20261030-25A998EA",
+        "A_record_id": "C-20261030-25A998EA-E",
+        "B_record_id": "C-20261030-25A998EA-S"
+      }
+    ],
+    "record_count": 6,
+    "semantic_sides": [
+      "A",
+      "B"
+    ],
+    "physical_legacy_suffix_mapping": {
+      "A": "-E",
+      "B": "-S"
+    },
+    "foliation_generation": "LEGACY",
+    "folio_status": "LEGACY_PRE_CUTOVER",
+    "retroactive_fol1_allocation": false,
+    "native_ids_not_exposed": true,
+    "applicable_ocp_refs": [
+      "ocp-metodologia-root",
+      "ocp-repo-metodologia",
+      "ocp-front-gobernanza",
+      "ocp-functional-persistencia-documental",
+      "ocp-functional-gestion-conversacional"
+    ]
+  },
+  "foliation": {
+    "generation": "FOL1",
+    "status": "PREPARADO_PENDIENTE_ACTIVACION_IPZ",
+    "registry_generation": 0,
+    "registry_path": "ambitos/gestion-conversacional/REGISTRO-MAESTRO-FOLIACION.json",
+    "registry_blob_sha": "6d040888bdce8f2464d9094a1a35886e15bc5328",
+    "master_schema_path": "ambitos/gestion-conversacional/ESQUEMA-FOLIACION-MAESTRA-v1.0.json",
+    "master_schema_blob_sha": "7231f38e1720adab54743766b85a75a5660934a4",
+    "cycle_schema_path": "ambitos/gestion-conversacional/ESQUEMA-CICLO-CONVERSACIONAL-v1.1.json",
+    "cycle_schema_blob_sha": "69b7cf46d1b384b9a6cb50cebc0e3caf89ff26c6",
+    "counters_global": {
+      "conversation": 0,
+      "cycle": 0,
+      "A": 0,
+      "B": 0
+    },
+    "counters_by_ocp_count": 23,
+    "ocp_catalog_count": 23,
+    "allocation_eligible_count": 20,
+    "allocation_blocked_count": 3,
+    "unresolved_context_count": 5,
+    "allocations_count": 0,
+    "coverage_completeness": "KNOWN_INVENTORY_ONLY",
+    "catalog_counter_keys_match": true,
+    "counters_all_zero": true,
+    "activation_gate": "No activar antes de preparar la nueva IPZ y realizar el corte en una conversación nueva."
+  },
+  "artifacts": {
+    "output": {
+      "path": "frentes/gobernanza/entregas/CHATGPT-v0.8/C-GOBERNANZA-FOLIACION-SECUENCIAL-01-salida-final.md",
+      "blob_sha": "baac1640f476a5a84a9ffc5ba4de3e0fb6bd44f0",
+      "status": "READ_BACK_VERIFIED",
+      "dialogue_B3_matches_output": true,
+      "ages_at_local_observation": "IPZ 0.14.48; DUG 0.0.14; observed 2026-10-30T10:27:05-06:00"
+    },
+    "chronicle": {
+      "path": "frentes/gobernanza/cronica/C-GOBERNANZA-FOLIACION-SECUENCIAL-01.md",
+      "blob_sha": "ecf68d5b13aa08a5158655f14863cbf9993ee927",
+      "status": "READ_BACK_VERIFIED"
+    },
+    "dialogue": {
+      "path": "frentes/gobernanza/conversaciones/C-GOBERNANZA-FOLIACION-SECUENCIAL-01-dialogo.jsonl",
+      "blob_sha": "cff11b7cdc6b7944a46b4f6c8fa256cff3b68055",
+      "status": "READ_BACK_VERIFIED; SIX A/B LEGACY RECORDS"
+    },
+    "conversation_index": {
+      "path": "ambitos/gestion-conversacional/REGISTRO-CONVERSACIONES.csv",
+      "blob_sha": "04e858b04721787d0ccbedf33634085991c012bf",
+      "rows": 3,
+      "columns": 16,
+      "status": "READ_BACK_VERIFIED"
+    },
+    "source_registry": {
+      "path": "ambitos/gestion-conversacional/FUENTES-VERBATIM-ORIGEN.jsonl",
+      "blob_sha": "06b0321dbf2ad5394c2634ee5153a1e1623d5179",
+      "total_records": 13,
+      "new_source_refs": [
+        "SRC-C-20261030-F0D12375-USER",
+        "SRC-C-20261030-2FB9018D-USER",
+        "SRC-C-20261030-25A998EA-USER"
+      ],
+      "status": "READ_BACK_VERIFIED"
+    },
+    "semantic_trace_registry": {
+      "path": "ambitos/gestion-conversacional/REGISTRO-TRAZABILIDAD-SEMANTICA.jsonl",
+      "blob_sha": "5d07979e56bf183f3680a3e41b1d549356050cbb",
+      "total_records": 29,
+      "new_trace_ids": [
+        "AT-C-20261030-25A998EA-01",
+        "AT-C-20261030-25A998EA-02",
+        "AT-C-20261030-25A998EA-03",
+        "AT-C-20261030-25A998EA-04"
+      ],
+      "exact_source_excerpt_match": "4/4 PASS",
+      "forward_links_checked": true,
+      "reverse_lookup_distinct_result_refs": 14,
+      "each_result_ref_returns_all_four_new_trace_ids": true,
+      "status": "READ_BACK_VERIFIED; FOUR NEW AT TRACES"
+    },
+    "governance_core": {
+      "path": "frentes/gobernanza/GOBERNANZA.md",
+      "blob_sha": "c0599347d0f4f0228ca95108142b6c296964fe12",
+      "status": "READ_BACK_VERIFIED"
+    },
+    "governance_pending": {
+      "path": "frentes/gobernanza/PENDIENTES.md",
+      "blob_sha": "a938a87ae560af8a511aa645819610f16f5a8e5a",
+      "status": "READ_BACK_VERIFIED"
+    },
+    "governance_readme": {
+      "path": "frentes/gobernanza/README.md",
+      "blob_sha": "9f123179eb204b256ae5e3f5ff2dfbf65fe05552",
+      "status": "READ_BACK_VERIFIED"
+    },
+    "repository_entry": {
+      "path": "INICIO.md",
+      "blob_sha": "5556bfd5a44872d946eb6678bf5657f11ac1946d",
+      "status": "READ_BACK_VERIFIED"
+    },
+    "repository_readme": {
+      "path": "README.md",
+      "blob_sha": "dbf1b6ab4e865baada66d7ad580b98a9f2d184cd",
+      "status": "READ_BACK_VERIFIED"
+    }
+  },
+  "unchanged_assets": {
+    "ipz_candidate_path": "frentes/metacanon/entregas/CHATGPT-v0.5/IPZ-CAMPO-CHATGPT.txt",
+    "ipz_candidate_blob_sha": "281f20daad92284fe29151372e83114a037f83f5",
+    "ipz_candidate_last_commit": "9f84f7b74dabb62c1dd873e4c94075abfb21f618",
+    "ipz_candidate_last_commit_date_utc": "2026-10-30T01:38:31Z",
+    "ipz_candidate_unchanged": true,
+    "art025_unchanged": true
+  },
+  "verification": {
+    "status": "VERIFIED_FOR_THIS_CYCLE_WITH_EXPLICIT_LIMITS",
+    "dug_embedded_json_parse": "PASS",
+    "master_and_schemas_json_parse": "PASS",
+    "master_required_fields": "PASS",
+    "catalog_counter_correspondence": "PASS",
+    "counters_zero_and_no_allocations": "PASS",
+    "dialogue_A_B_records": "PASS; 3 natural cycle numbers and 6 legacy records",
+    "exact_source_records": "PASS; three user inputs preserved and matched",
+    "trace_excerpt_exactness": "PASS; 4/4",
+    "forward_and_reverse_trace_lookup": "PASS; 14 distinct result refs each return all four new trace IDs",
+    "output_B3_match": "PASS; dialogue B3 exactly equals persisted output file",
+    "art025_unchanged": "PASS",
+    "ipz_candidate_unchanged": "PASS",
+    "limitations": [
+      "No independent full JSON Schema 2020-12 validator was executed; JSON parsing and structural checks were performed.",
+      "No real concurrent-writer/contention test was run; compare-by-SHA with read-back is cooperative serialization, not a server lock.",
+      "No end-to-end FOL1 allocation was executed in a new conversation; FOL1 remains prepared, generation 0, counters zero.",
+      "OCP catalogue coverage is KNOWN_INVENTORY_ONLY, not exhaustive for all organizational repositories or levels.",
+      "Native ChatGPT IPZ installation and automatic capture/synchronization are not verified.",
+      "Browser rendering and dynamic DUG navigation audit were not run."
+    ]
+  }
+}
