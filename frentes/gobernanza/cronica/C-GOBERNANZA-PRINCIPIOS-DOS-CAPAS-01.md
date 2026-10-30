@@ -10,16 +10,16 @@ El operador autorizó expresamente crear ART-027, incorporar un inventario compa
 
 - DUG anterior: v369 · NX-369m; blob previo observado `ea1eefd62a092079fa2cfdfa546cb739b63450eb`.
 - DUG final: **v370 · NX-370m**, evento `C-GOBERNANZA-PRINCIPIOS-DOS-CAPAS-01`.
-- Commit final de alineación visual y versión: `fa628f865941e64891bcda4ff11e3b48c57ff395`.
-- Blob final leído de vuelta: `a97991bc680fdda8a10cd155432da92f40ed5f44`.
-- Representación estructurada parseada: 43 principios, 20 anexos, ART-027 presente; 43 entradas de catálogo y 43 aliases lógicos especificados.
+- Commit final de alineación visual y versión: `f91b0e6cc1c78730bcf642420c638afc802c0dac`.
+- Blob final leído de vuelta: `c016e442be13ad0c28e6f4a467b1ea79ffb70574`.
+- Representación estructurada parseada: 43 principios, 20 anexos, ART-027 presente; 43 entradas de catálogo y 43 aliases lógicos especificados; cero enlaces directos al ancla desde el catálogo.
 - ART-027 quedó enlazado desde la sección humana con el ancla `#estrategia-dos-capas-principios` y el identificador `[[A:ART-027]]`.
 
 ## Diseño materializado
 
 La primera capa contiene, para cada principio P001–P043, su identificador, nombre canónico y una abstracción general de una sola frase. No duplica el texto normativo desarrollado.
 
-La segunda capa define un alias Sink determinista `p001`…`p043`, exclusivo por principio y asociado a su ancla canónica `#Pxxx`. Los aliases están definidos en ART-027, pero no son URLs activas; no se inventaron host ni redirecciones.
+La segunda capa define un alias Sink determinista `p001`…`p043`, exclusivo por principio y asociado a su ancla canónica `#Pxxx`. Los aliases están definidos en ART-027, pero no son URLs activas; no se inventaron host ni redirecciones. El catálogo y el mapa no contienen enlaces directos alternativos a los anclajes Pxxx: la consulta individual contable debe comenzar por Sink.
 
 El protocolo por ciclo exige adquirir el DUG completo, considerar el catálogo de 43, seleccionar el subconjunto contextual, acceder al alias Sink de cada principio seleccionado, recuperar su texto desarrollado desde una ruta autenticada del DUG, y registrar por separado los estados considerado/seleccionado/consultado/aplicado. Un clic no prueba aplicación. El conteo de aplicaciones procede del arreglo `applied[]` en los registros de ciclo de ART-024; Sink mide navegación/consulta y sus estadísticas pueden ser aproximadas o muestreadas.
 
