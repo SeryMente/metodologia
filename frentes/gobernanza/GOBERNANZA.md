@@ -4,14 +4,28 @@
 **Repositorio:** `SeryMente/metodologia`.  
 **OCP:** `frentes/gobernanza/`.  
 **Evento de apertura:** `C-GOBERNANZA-INICIO-01`.  
-**Ciclo vigente:** `C-20261029-01A18A7F` · `C-GOBERNANZA-IPZ-GOW-VERIFICACION-01`. **Evento de control:** `C-GOBERNANZA-RETOMA-04`.  
+**Ciclo vigente:** `C-20261029-34641998` · `C-GOBERNANZA-AT-V1-01`. **Evento de control:** `C-GOBERNANZA-RETOMA-04`.  
 **Sesión inicial (histórica):** `SES-20261028-3F2B7A91`, generación 1.
 **Titular actual según control:** `chatgpt-C-GOBERNANZA-RETOMA-04-SES-20261029-GV5KGJY8U5J` (alias operativo, no ID nativo).
 **Instancia actual según control:** `chatgpt-gobernanza-retoma-2026-10-29-GV5KGJY8U5J`.
 **Sesión actual según control:** `SES-20261029-GV5KGJY8U5J`, generación 5; ciclo `C-20261029-01A18A7F`.
 **Control actual leído de vuelta:** blob `0ca6b63ea0613bebb32f28642c13124176cad24e`; evento `C-GOBERNANZA-RETOMA-04`.
 
-## Ciclo vigente · C-GOBERNANZA-IPZ-GOW-VERIFICACION-01 · 2026-10-29
+## Ciclo actual · C-GOBERNANZA-AT-V1-01 · 2026-10-29
+
+Se cerró la definición operativa de **Articulación Trazable (AT) v1.0** para el alcance precisado por el operador: articular cambios conceptuales/metodológicos longitudinalmente a través de los niveles OCP, el sistema de gobierno del DUG, el orden de principios, la jerarquía subordinada de anexos y los destinos que realmente dependan del cambio. AT no se amplía a un sistema universal de gestión de cambios.
+
+La definición establece un solo mecanismo integrado con etapas internas: adquirir origen/autoridad; clasificar nivel; trazar destinos afectados y no afectados; comprobar autorización por destino; realizar en orden de dependencia; verificar y registrar por lectura de vuelta. Se distingue la jerarquía conceptual OCP, la jerarquía documental de anexos y la materialización física. Los principios siguen siendo el único elemento de gobierno directo; los anexos no adquieren autoridad independiente. AT es responsable de realizar lo autorizado, pero no se autoautoriza ni elude restricciones.
+
+No se justificó crear submódulos para v1.0: las funciones comparten origen, mapa de dependencias, compuertas y registro. La descomposición se difiere hasta que el uso real demuestre responsabilidades o contratos independientes.
+
+**Validación:** (1) walkthrough retrospectivo positivo con el cambio de taxonomía/Propósito de C-GOBERNANZA-TAXONOMIA-CONCEPTUAL-INFRAESTRUCTURA-01; (2) walkthrough negativo con Tareas, que continúa en incubación y no puede promoverse al canon por la sola existencia de carpeta/diseño/estándar local. Son pruebas de escritorio basadas en antecedentes y fuente vigente, no ejecución automatizada de AT.
+
+**Estado:** AT v1.0 cerrada como definición operativa propuesta, no canonizada. DUG v362, Metacanon 1.24, GOW 2.11, Canon LISA y el OCP Tareas no se modificaron.
+
+Evidencia: [crónica](cronica/C-GOBERNANZA-AT-V1-01.md) · [evidencia](evidencias/C-GOBERNANZA-AT-V1-01.json) · [definición](entregas/CHATGPT-v0.8/AT-v1.0.md) · [salida](entregas/CHATGPT-v0.8/C-GOBERNANZA-AT-V1-01-salida-final.md) · [diálogo](conversaciones/C-GOBERNANZA-AT-V1-01-dialogo.jsonl).
+
+## Ciclo previo · C-GOBERNANZA-IPZ-GOW-VERIFICACION-01 · 2026-10-29
 
 Se verificó la finalización documental de la especificación de entrada de ChatGPT sin reescribir una canonización ya persistida. Fuente canónica leída de vuelta desde `main`: DUG v362 · NX-362m, blob `b7593409c428e209d35f53a5f13501652208d949`, 41 principios, 18 anexos, Metacanon 1.24 y GOW 2.11.
 
