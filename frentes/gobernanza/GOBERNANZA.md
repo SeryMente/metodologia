@@ -4,14 +4,28 @@
 **Repositorio:** `SeryMente/metodologia`.  
 **OCP:** `frentes/gobernanza/`.  
 **Evento de apertura:** `C-GOBERNANZA-INICIO-01`.  
-**Ciclo vigente:** `C-20261030-9D7E31A2` · `C-GOBERNANZA-ARTICULACION-REGISTRO-01`. **Evento de control:** `C-GOBERNANZA-RETOMA-04`.  
+**Ciclo vigente:** `C-20261029-5510927B` · `C-GOBERNANZA-AT-ENDURECIMIENTO-01`. **Evento de control:** `C-GOBERNANZA-RETOMA-04`.  
 **Sesión inicial (histórica):** `SES-20261028-3F2B7A91`, generación 1.
 **Titular actual según control:** `chatgpt-C-GOBERNANZA-RETOMA-04-SES-20261029-GV5KGJY8U5J` (alias operativo, no ID nativo).
 **Instancia actual según control:** `chatgpt-gobernanza-retoma-2026-10-29-GV5KGJY8U5J`.
 **Sesión actual según control:** `SES-20261029-GV5KGJY8U5J`, generación 5; ciclo `C-20261029-01A18A7F`.
 **Control actual leído de vuelta:** blob `0ca6b63ea0613bebb32f28642c13124176cad24e`; evento `C-GOBERNANZA-RETOMA-04`.
 
-## Ciclo actual · C-GOBERNANZA-ARTICULACION-REGISTRO-01 · 2026-10-30
+## Ciclo actual · C-GOBERNANZA-AT-ENDURECIMIENTO-01 · 2026-10-29
+
+Por instrucción del operador, se endureció la definición operativa de AT, preservando AT v1.0 como antecedente. **AT v1.1** incorpora el contrato verificable del vector semántico como fuente de verdad de intención/requisito, la separación entre original/vector/interpretación, reglas para incertidumbre, enlaces en ambos sentidos, recuperación prioritaria de dictados ya persistidos, convergencia separada con Persistencia documental y Registro conversacional, compatibilidad futura LISA, protocolo obligatorio por ciclo y pruebas falsables.
+
+Se creó el [esquema de vectores semánticos AT v1.1](entregas/CHATGPT-v0.8/ESQUEMA-VECTORES-SEMANTICOS-AT-v1.1.json), que exige referencias de fuente, ciclo, interpretación, destinos, impactos, resultados, retorno, autorización, estado LISA y verificación. La solicitud literal se conservó como `SRC-C-20261029-5510927B-USER` y se enlazó a los vectores del dictado anterior `SRC-C-20261030-9D7E31A2-USER`.
+
+La implementación mantiene separadas tres responsabilidades: Persistencia documental custodia originales/derivados; Registro conversacional conserva pares E/S; AT consume esas fuentes y propaga cambios desde vectores semánticos. La relación de cada vector con sus resultados y el retorno desde cada resultado se debe comprobar en ambos sentidos.
+
+**Compuerta normativa:** DUG v362 ART-020/024 aún clasifican Trazabilidad semántica dentro de Gestión conversacional. AT v1.1 fija la definición operativa objetivo, pero no altera ART-020/024 ni el GOW. La alineación normativa permanece pendiente de autorización expresa P005. El canon LISA no se modificó; la integración completa LISA/FIAT/LSV/MAT sigue pendiente.
+
+**Límites operativos:** el esquema/registro v1.1 no crea un motor autónomo ni captura automática. Este ciclo se registra manualmente con la infraestructura disponible; solo se declarará persistido tras lectura de vuelta.
+
+Evidencia: [crónica](cronica/C-GOBERNANZA-AT-ENDURECIMIENTO-01.md) · [evidencia](evidencias/C-GOBERNANZA-AT-ENDURECIMIENTO-01.json) · [AT v1.1](entregas/CHATGPT-v0.8/AT-v1.1.md) · [esquema](entregas/CHATGPT-v0.8/ESQUEMA-VECTORES-SEMANTICOS-AT-v1.1.json) · [diálogo](conversaciones/C-GOBERNANZA-AT-ENDURECIMIENTO-01-dialogo.jsonl).
+
+## Ciclo previo · C-GOBERNANZA-ARTICULACION-REGISTRO-01 · 2026-10-30
 
 El operador confirmó que **Gobernanza es el frente responsable** y que Tareas es trabajo/ámbito en desarrollo dentro de ese frente, no un frente independiente. No se requiere transferencia de titularidad de Tareas.
 
