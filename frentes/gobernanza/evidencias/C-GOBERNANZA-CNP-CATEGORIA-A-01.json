@@ -1,0 +1,88 @@
+{
+  "schema": "governance-cycle-evidence/1",
+  "event_id": "C-GOBERNANZA-CNP-CATEGORIA-A-01",
+  "recorded_on": "2026-10-30",
+  "status": "executed_readback_verified",
+  "cycle_folio": null,
+  "fol1_status": "PREPARADO_PENDIENTE_ACTIVACION_IPZ",
+  "authorization": {
+    "control_path": "frentes/gobernanza/CONTROL-RESPONSABILIDAD.json",
+    "commit": "ee9a9b15569a3c85febded49c00194c28467fbce",
+    "blob_sha": "93b3790cbfe2a9b28bd34ee6cd9cf6dc5f56c6ac",
+    "owner": "chatgpt-C-GOBERNANZA-RETOMA-05-SES-20261030-GV89CFA5D5",
+    "generation": 6,
+    "readback_verified": true
+  },
+  "canonical_change": {
+    "path": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.html",
+    "version": "v367",
+    "signature": "NX-367m",
+    "commit": "8268055b23493dc55a1b6afc62ef0c32c276f0f3",
+    "blob_sha": "abb4d397bf78aa60d1fd340ac54535f1e3b1d55a",
+    "readback_exact": true,
+    "principles": 43,
+    "annexes": 19,
+    "cnp": {
+      "category": "A",
+      "members": [
+        {
+          "principle_id": "P001",
+          "decimal": 0.9
+        },
+        {
+          "principle_id": "P004",
+          "decimal": 0.8
+        },
+        {
+          "principle_id": "P005",
+          "decimal": 0.7
+        },
+        {
+          "principle_id": "P038",
+          "decimal": 0.6
+        },
+        {
+          "principle_id": "P043",
+          "decimal": 0.5
+        }
+      ],
+      "ordinal_position_ids": false,
+      "member_ordinal_fields": false,
+      "principle_cnp_id_fields": false
+    },
+    "glossary_version": "2.13"
+  },
+  "ipz_comparison": {
+    "v07_characters": 2467,
+    "v08_characters": 1488,
+    "v08_limit": 1500,
+    "lossless_replacement": false,
+    "omissions": [
+      "propuesto/autorizado/intentado/ejecutado/verificado/aceptado",
+      "La edad IPZ no prueba instalación nativa",
+      "Muestra solo",
+      "detalle operativo de eficiencia: vía suficiente de menor costo/latencia",
+      "anti-redundancia de auditorías, búsquedas, relecturas y comprobaciones",
+      "agrupar lecturas seguras y mantener secuenciales escrituras con SHA/read-back",
+      "ciclos breves, entrega inmediata de resultado útil, límites y siguiente acción",
+      "no retener por perfección marginal ni prometer trabajo en segundo plano"
+    ],
+    "ipz_candidate_modified": false,
+    "native_installation": "not modified; not verified"
+  },
+  "verification": {
+    "embedded_json_parse": true,
+    "cnp_member_count": 5,
+    "ordinal_label_occurrences_in_current_machine_data": 0,
+    "member_ordinal_fields": 0,
+    "principle_cnp_id_fields": 0,
+    "browser_rendering": false,
+    "dynamic_link_audit": false
+  },
+  "pending": [
+    "Reconcile all v0.7 protections with the CNP/PAI reinforcement within 1,500 characters before replacing the candidate",
+    "Browser rendering and dynamic anchor/return audit",
+    "Native IPZ installation and observable confirmation in a new conversation",
+    "FOL1 activation and real E2E sequence tests"
+  ]
+}
