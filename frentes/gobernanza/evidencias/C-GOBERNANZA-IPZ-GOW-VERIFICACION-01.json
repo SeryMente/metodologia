@@ -99,7 +99,7 @@
     },
     {
       "path": "frentes/gobernanza/PENDIENTES.md",
-      "blob_sha": "42e7b6fc3e33a8f27853d4edbce34e26d4fe586a",
+      "blob_sha": "a4a28fa64266466a12b31b1f53fc851bcdec4287",
       "status": "EXECUTED_AND_READ_BACK"
     },
     {
@@ -122,5 +122,11 @@
     "new_chat_test": "PENDING",
     "at": "OPEN",
     "tasks": "INCUBATING"
+  },
+  "main_head_at_close": {
+    "branch": "main",
+    "commit_sha": "6216699d1202585bd704e6164f0b830a7a7dcd1b",
+    "message": "governance: normalize audit entry in pending register",
+    "readback_confirmed": true
   }
 }
