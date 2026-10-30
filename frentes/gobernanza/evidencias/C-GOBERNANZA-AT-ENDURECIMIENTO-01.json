@@ -61,7 +61,7 @@
     "trace_registry": {
       "path": "ambitos/gestion-conversacional/REGISTRO-TRAZABILIDAD-SEMANTICA.jsonl",
       "status": "READ_BACK_VERIFIED; SIX AT v1.1 TRACES VERIFIED",
-      "blob_sha": "d87c4ab298ed32eafd10f3c7cf70aeb8aebf64a8"
+      "blob_sha": "58e5f7a886ee78b69ee5fcbf0f8c4329c03c96c6"
     },
     "conversation_index": {
       "path": "ambitos/gestion-conversacional/REGISTRO-CONVERSACIONES.csv",
@@ -74,7 +74,8 @@
     },
     "governance_core": {
       "path": "frentes/gobernanza/GOBERNANZA.md",
-      "status": "updated"
+      "status": "READ_BACK_VERIFIED",
+      "blob_sha": "6bac7c30deeb4cabd6c45174968684457166150d"
     },
     "governance_pending": {
       "path": "frentes/gobernanza/PENDIENTES.md",
@@ -105,10 +106,12 @@
     "literal_excerpt_exactness": "6/6 PASS against the persisted verbatim sources",
     "source_and_record_cycle_folios": "DISTINGUISHED_AND_MATCHED",
     "forward_trace_links": "PASS",
-    "reverse_lookup_by_each_result_ref": "PASS; six trace IDs recoverable for each registered result",
+    "reverse_lookup_by_each_result_ref": "PASS; six trace IDs recoverable for each of six registered result references",
     "dialogue_E_S_jsonl": "PASS; two records",
     "assistant_output_exact_match": "PASS; dialogue S matches saved output",
     "DUG_blob_unchanged": "PASS; b7593409c428e209d35f53a5f13501652208d949",
-    "limits": "No full external JSON Schema validator, no independent AT runtime, no automatic capture, no multi-OCP E2E propagation test."
+    "limits": "No full external JSON Schema validator, no independent AT runtime, no automatic capture, no multi-OCP E2E propagation test.",
+    "six_trace_sources": "6/6 exact excerpt match against their source records, including the current instruction source",
+    "governance_core_readback": "PASS; operational core updated to reflect the completed bidirectional checks"
   }
 }
