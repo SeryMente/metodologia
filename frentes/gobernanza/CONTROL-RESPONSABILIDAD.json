@@ -2,29 +2,41 @@
   "schema": "responsabilidad/1",
   "front": "gobernanza",
   "status": "active",
-  "owner_thread": "chatgpt-C-GOBERNANZA-RETOMA-04-SES-20261029-GV5KGJY8U5J",
-  "instance": "chatgpt-gobernanza-retoma-2026-10-29-GV5KGJY8U5J",
-  "generation": 5,
-  "authorization_ref": "C-GOBERNANZA-RETOMA-04",
+  "owner_thread": "chatgpt-C-GOBERNANZA-RETOMA-05-SES-20261030-GV89CFA5D5",
+  "instance": "chatgpt-gobernanza-retoma-2026-10-30-GV89CFA5D5",
+  "generation": 6,
+  "authorization_ref": "C-GOBERNANZA-RETOMA-05",
   "scope": "One active owner for this new work front only. Scope: operational maintenance and validation of the unique canonical governance document and its navigation, including only previously authorized minimal repairs. No broad substantive amendment to Samantha or the GOW without explicit authorization. The canonical normative content remains in the single HTML document. Alcance de la autorización adicional: C-GOBERNANZA-TAXONOMIA-ESTRUCTURAL-SYM-01, DUG v354, glosario y estructura jerárquica de anexos. Esta autorización se limita a lo solicitado en el evento y no habilita cambios futuros no autorizados. Alcance autorizado adicional: C-GOBERNANZA-EQUIVALENCIAS-AMBITO-01; actualización de glosario GOW a v2.5 y DUG v355, con tres entradas intercambiables operativamente y puntos de entrada/recibo correspondientes. Esta autorización no se extiende a cambios futuros no solicitados. Autorización explícita del operador en la conversación vigente para C-GOBERNANZA-CONTEXTO-GESTION-CONVERSACIONAL-01 (2026-10-28): actualizar el DUG y GOW, incorporar en ART-020 la jerarquía funcional Contexto (nivel funcional 1) → Gestión conversacional (nivel funcional 2), actualizar la proyección estructurada y registrar puntos de entrada, crónica y evidencia. La autorización no asigna otros ámbitos a la rama ni habilita cambios futuros no solicitados. Autorización explícita del operador en la conversación vigente para C-GOBERNANZA-OCP-UBICUO-REVERSA-CONTEXTO-01 (2026-10-28): corregir la taxonomía para que los únicos ámbitos funcionales actuales sean Persistencia documental y Gestión conversacional; retirar Contexto como ámbito y cancelar la relación jerárquica Contexto → Gestión conversacional; preservar como posibilidad la subdivisión futura en niveles 2..N; definir OCP como aplicable a cada nivel taxonómico, con la Metodología en sentido general y abstracto como OCP raíz; añadir al GOW una definición breve de OCP separada de equivalencias terminológicas y alinear DUG, proyección estructurada, puntos de entrada, crónica y evidencia. La autorización no elimina registros históricos ni habilita cambios futuros no solicitados. Autorización operativa derivada del encargo explícito del operador en C-GOBERNANZA-OCP-UBICUO-REVERSA-CONTEXTO-01 (2026-10-28), para C-GOBERNANZA-REFERENCIAS-VERSION-01: corregir una referencia de versión interna obsoleta en el resumen humano de Metacanon, versionar el DUG y alinear metadatos, puntos de entrada, crónica y evidencia. No amplía el contenido sustantivo autorizado ni cambia el esquema de ámbitos u OCP.\n\nAlcance adicional de C-GOBERNANZA-RETOMA-03: retomar la responsabilidad operativa del frente Gobernanza y recuperar/repetir el último ciclo. No habilita por sí solo cambios normativos ni mutaciones en otros frentes.\n\nAutorización expresa del operador en la conversación titular vigente para C-GOBERNANZA-FOLIACION-SECUENCIAL-01 (2026-10-30), texto literal: \"Todavía no prepares el IPZ. primero articula y materializa todo lo demás y al final preparamos la nueva versión del IPZ. haz las modificaciones que tengas que hacer.\" Alcance: articular y materializar la foliación secuencial global y por cada OCP aplicable; modificar únicamente los principios, anexos, glosario, Metacanon, esquemas, registros e índices que sean necesarios para este contrato. Exclusión expresa: no modificar ART-025, el archivo candidato IPZ ni las Instrucciones Personalizadas nativas en esta fase; la nueva IPZ se prepara después. No autoriza reclasificar AT ni cambios normativos ajenos a foliación.",
   "expiry": null,
-  "handoff": "Transferred under C-GOBERNANZA-RETOMA-04 from chatgpt-C-GOBERNANZA-RETOMA-03-SES-20261029-GV4M8Q2R (instance chatgpt-gobernanza-retoma-2026-10-29-GV4M8Q2R, generation 4, folio SES-20261029-GV4M8Q2R) to chatgpt-C-GOBERNANZA-RETOMA-04-SES-20261029-GV5KGJY8U5J (instance chatgpt-gobernanza-retoma-2026-10-29-GV5KGJY8U5J, generation 5, folio SES-20261029-GV5KGJY8U5J). Operator authorization in the receiving conversation: \"Tomna repsonsabilida ddel frtente gobernanza y usa esta converacion qu t e adjunto par aadquirir contexto, y terminar, de ser posible ne lso 13 minutos ue restanb, usalos todos, bueno usa 10 minutos como maximo par aver si puedes temrtinar lo que hacia, tienes autorizacion previa para tomar repsonsabilida del frente\". Scope: this single transfer of frentes/gobernanza/ and continuation/closure of the interrupted governance cycle. Native ChatGPT conversation ID is not exposed; receiver identity is an operational alias. Source control blob SHA: 3cbefef3f1788067ba59f7f4f09c4c90a16b7069; source main head: f09eb5f7cab24f7e000ee2701406dc9314d21fe8.",
-  "session_folio": "SES-20261029-GV5KGJY8U5J",
+  "handoff": "Transferred under C-GOBERNANZA-RETOMA-05 from chatgpt-C-GOBERNANZA-RETOMA-04-SES-20261029-GV5KGJY8U5J (instance chatgpt-gobernanza-retoma-2026-10-29-GV5KGJY8U5J, generation 5, folio SES-20261029-GV5KGJY8U5J) to chatgpt-C-GOBERNANZA-RETOMA-05-SES-20261030-GV89CFA5D5 (instance chatgpt-gobernanza-retoma-2026-10-30-GV89CFA5D5, generation 6, folio SES-20261030-GV89CFA5D5). Operator explicitly requested resumption. Scope remains the existing authorized foliación sequence. The native ChatGPT conversation ID is not exposed.",
+  "session_folio": "SES-20261030-GV89CFA5D5",
   "session_assignment": {
     "status": "active",
-    "folio": "SES-20261029-GV5KGJY8U5J",
-    "assigned_on": "2026-10-29",
+    "folio": "SES-20261030-GV89CFA5D5",
+    "assigned_on": "2026-10-30",
     "front_ocp": "frentes/gobernanza/",
-    "owner_alias": "chatgpt-C-GOBERNANZA-RETOMA-04-SES-20261029-GV5KGJY8U5J",
-    "instance": "chatgpt-gobernanza-retoma-2026-10-29-GV5KGJY8U5J",
-    "generation": 5,
+    "owner_alias": "chatgpt-C-GOBERNANZA-RETOMA-05-SES-20261030-GV89CFA5D5",
+    "instance": "chatgpt-gobernanza-retoma-2026-10-30-GV89CFA5D5",
+    "generation": 6,
     "identity_kind": "operational alias; native ChatGPT conversation ID not exposed",
-    "uniqueness_check": "The new session folio/owner alias were checked against the current control contents and generated locally for this transfer; global uniqueness across all repositories/platforms is not established.",
-    "source_sha_before": "3cbefef3f1788067ba59f7f4f09c4c90a16b7069",
-    "source_main_head_sha": "f09eb5f7cab24f7e000ee2701406dc9314d21fe8",
-    "cycle_folio": "C-20261029-01A18A7F",
-    "event_id": "C-GOBERNANZA-RETOMA-04",
-    "local_conversation_uuidv7": "01a18a7f-18c2-7c7f-ab43-632c189ce08d"
+    "uniqueness_check": "Event, cycle, session folio and alias were absent from exact searches across the four accessible repositories; nine sibling responsibility controls were inspected in addition to the current control. Global uniqueness is not established.",
+    "checked_control_scope": [
+      "SeryMente/metodologia:frentes/gobernanza/CONTROL-RESPONSABILIDAD.json",
+      "frentes/metacanon/CONTROL-RESPONSABILIDAD.json",
+      "frentes/acceso/CONTROL-RESPONSABILIDAD.json",
+      "frentes/radar-profesional/CONTROL-RESPONSABILIDAD.json",
+      "ambitos/tareas/CONTROL-RESPONSABILIDAD.json",
+      "docs/frentes/dictado-voz/CONTROL-RESPONSABILIDAD.json",
+      "docs/frentes/harmonia/CONTROL-RESPONSABILIDAD.json",
+      "frentes/custodia/CONTROL-RESPONSABILIDAD.json",
+      "docs/frentes/signal-interpreter/CONTROL-RESPONSABILIDAD.json",
+      "frentes/repertorio-canto-personal/CONTROL-RESPONSABILIDAD.json"
+    ],
+    "source_sha_before": "4768d6db0a620652f753262b6250c8cb4b891ca9",
+    "source_main_head_sha": "d76dacfb90a29a442f62ee800ebb2305abcbc2c8",
+    "cycle_folio": "C-20261030-89CFA5D5",
+    "event_id": "C-GOBERNANZA-RETOMA-05",
+    "local_conversation_uuidv7": "01a18dd1-8140-75c4-a51a-629b5f5d9d96"
   },
   "initialization": {
     "event_id": "C-GOBERNANZA-INICIO-01",
@@ -46,58 +58,76 @@
   },
   "previous_session_assignment": {
     "status": "superseded",
-    "folio": "SES-20261029-GV4M8Q2R",
+    "folio": "SES-20261029-GV5KGJY8U5J",
     "assigned_on": "2026-10-29",
     "front_ocp": "frentes/gobernanza/",
-    "owner_alias": "chatgpt-C-GOBERNANZA-RETOMA-03-SES-20261029-GV4M8Q2R",
-    "instance": "chatgpt-gobernanza-retoma-2026-10-29-GV4M8Q2R",
-    "generation": 4,
-    "identity_kind": "operational session folio; not a native ChatGPT conversation ID",
-    "uniqueness_check": "Exact code searches for event, cycle folio, session folio, owner alias, and instance returned zero. Responsibility controls in visible trees of nine accessible repositories were scanned; trees were non-truncated. Global uniqueness and server-enforced exclusivity are not established.",
-    "source_sha_before": "a3cebd377ba1cb996e3bc14a48a1a1d24bb67670",
-    "source_main_head_sha": "8e02f0e4b66eb6e10c25ccc7c9c1106b90291865",
-    "checked_paths": [
-      "SeryMente/khora:docs/frentes/dictado-voz/CONTROL-RESPONSABILIDAD.json",
-      "SeryMente/khora:docs/frentes/harmonia/CONTROL-RESPONSABILIDAD.json",
-      "SeryMente/khora:frentes/custodia/CONTROL-RESPONSABILIDAD.json",
-      "SeryMente/signal-interpreter:docs/frentes/signal-interpreter/CONTROL-RESPONSABILIDAD.json",
-      "SeryMente/metodologia:ambitos/tareas/CONTROL-RESPONSABILIDAD.json",
-      "SeryMente/metodologia:frentes/acceso/CONTROL-RESPONSABILIDAD.json",
-      "SeryMente/metodologia:frentes/gobernanza/CONTROL-RESPONSABILIDAD.json",
-      "SeryMente/metodologia:frentes/metacanon/CONTROL-RESPONSABILIDAD.json",
-      "SeryMente/metodologia:frentes/radar-profesional/CONTROL-RESPONSABILIDAD.json",
-      "SeryMente/personal:frentes/repertorio-canto-personal/CONTROL-RESPONSABILIDAD.json"
-    ],
-    "cycle_folio": "C-20261029-B7D3F901",
-    "event_id": "C-GOBERNANZA-RETOMA-03",
-    "superseded_on": "2026-10-29",
-    "superseded_by_event": "C-GOBERNANZA-RETOMA-04",
+    "owner_alias": "chatgpt-C-GOBERNANZA-RETOMA-04-SES-20261029-GV5KGJY8U5J",
+    "instance": "chatgpt-gobernanza-retoma-2026-10-29-GV5KGJY8U5J",
+    "generation": 5,
+    "identity_kind": "operational alias; native ChatGPT conversation ID not exposed",
+    "uniqueness_check": "The new session folio/owner alias were checked against the current control contents and generated locally for this transfer; global uniqueness across all repositories/platforms is not established.",
+    "source_sha_before": "3cbefef3f1788067ba59f7f4f09c4c90a16b7069",
+    "source_main_head_sha": "f09eb5f7cab24f7e000ee2701406dc9314d21fe8",
+    "cycle_folio": "C-20261029-01A18A7F",
+    "event_id": "C-GOBERNANZA-RETOMA-04",
+    "local_conversation_uuidv7": "01a18a7f-18c2-7c7f-ab43-632c189ce08d",
+    "superseded_on": "2026-10-30",
+    "superseded_by_event": "C-GOBERNANZA-RETOMA-05",
     "predecessor_assignment": {
       "status": "superseded",
-      "folio": "SES-20261028-GV3K8P6Q",
-      "assigned_on": "2026-10-28",
+      "folio": "SES-20261029-GV4M8Q2R",
+      "assigned_on": "2026-10-29",
       "front_ocp": "frentes/gobernanza/",
-      "owner_alias": "chatgpt-C-GOBERNANZA-RETOMA-02-SES-20261028-GV3K8P6Q",
-      "instance": "chatgpt-gobernanza-retoma-2026-10-28-GV3K8P6Q",
-      "generation": 3,
+      "owner_alias": "chatgpt-C-GOBERNANZA-RETOMA-03-SES-20261029-GV4M8Q2R",
+      "instance": "chatgpt-gobernanza-retoma-2026-10-29-GV4M8Q2R",
+      "generation": 4,
       "identity_kind": "operational session folio; not a native ChatGPT conversation ID",
-      "uniqueness_check": "Exact code searches for event, cycle folio, session folio and alias returned zero; direct scans of all visible responsibility controls in nine accessible, non-truncated repository trees found zero candidate occurrences. Global uniqueness and server-enforced exclusivity are not established.",
-      "source_sha_before": "0ac0a819794622857fb2ef8ebab3385873ab2f68",
+      "uniqueness_check": "Exact code searches for event, cycle folio, session folio, owner alias, and instance returned zero. Responsibility controls in visible trees of nine accessible repositories were scanned; trees were non-truncated. Global uniqueness and server-enforced exclusivity are not established.",
+      "source_sha_before": "a3cebd377ba1cb996e3bc14a48a1a1d24bb67670",
+      "source_main_head_sha": "8e02f0e4b66eb6e10c25ccc7c9c1106b90291865",
       "checked_paths": [
-        "SeryMente/metodologia:frentes/gobernanza/CONTROL-RESPONSABILIDAD.json",
         "SeryMente/khora:docs/frentes/dictado-voz/CONTROL-RESPONSABILIDAD.json",
         "SeryMente/khora:docs/frentes/harmonia/CONTROL-RESPONSABILIDAD.json",
         "SeryMente/khora:frentes/custodia/CONTROL-RESPONSABILIDAD.json",
         "SeryMente/signal-interpreter:docs/frentes/signal-interpreter/CONTROL-RESPONSABILIDAD.json",
+        "SeryMente/metodologia:ambitos/tareas/CONTROL-RESPONSABILIDAD.json",
         "SeryMente/metodologia:frentes/acceso/CONTROL-RESPONSABILIDAD.json",
+        "SeryMente/metodologia:frentes/gobernanza/CONTROL-RESPONSABILIDAD.json",
         "SeryMente/metodologia:frentes/metacanon/CONTROL-RESPONSABILIDAD.json",
         "SeryMente/metodologia:frentes/radar-profesional/CONTROL-RESPONSABILIDAD.json",
         "SeryMente/personal:frentes/repertorio-canto-personal/CONTROL-RESPONSABILIDAD.json"
       ],
-      "cycle_folio": "C-20261028-94B6C2D8",
-      "event_id": "C-GOBERNANZA-RETOMA-02",
+      "cycle_folio": "C-20261029-B7D3F901",
+      "event_id": "C-GOBERNANZA-RETOMA-03",
       "superseded_on": "2026-10-29",
-      "superseded_by_event": "C-GOBERNANZA-RETOMA-03"
+      "superseded_by_event": "C-GOBERNANZA-RETOMA-04",
+      "predecessor_assignment": {
+        "status": "superseded",
+        "folio": "SES-20261028-GV3K8P6Q",
+        "assigned_on": "2026-10-28",
+        "front_ocp": "frentes/gobernanza/",
+        "owner_alias": "chatgpt-C-GOBERNANZA-RETOMA-02-SES-20261028-GV3K8P6Q",
+        "instance": "chatgpt-gobernanza-retoma-2026-10-28-GV3K8P6Q",
+        "generation": 3,
+        "identity_kind": "operational session folio; not a native ChatGPT conversation ID",
+        "uniqueness_check": "Exact code searches for event, cycle folio, session folio and alias returned zero; direct scans of all visible responsibility controls in nine accessible, non-truncated repository trees found zero candidate occurrences. Global uniqueness and server-enforced exclusivity are not established.",
+        "source_sha_before": "0ac0a819794622857fb2ef8ebab3385873ab2f68",
+        "checked_paths": [
+          "SeryMente/metodologia:frentes/gobernanza/CONTROL-RESPONSABILIDAD.json",
+          "SeryMente/khora:docs/frentes/dictado-voz/CONTROL-RESPONSABILIDAD.json",
+          "SeryMente/khora:docs/frentes/harmonia/CONTROL-RESPONSABILIDAD.json",
+          "SeryMente/khora:frentes/custodia/CONTROL-RESPONSABILIDAD.json",
+          "SeryMente/signal-interpreter:docs/frentes/signal-interpreter/CONTROL-RESPONSABILIDAD.json",
+          "SeryMente/metodologia:frentes/acceso/CONTROL-RESPONSABILIDAD.json",
+          "SeryMente/metodologia:frentes/metacanon/CONTROL-RESPONSABILIDAD.json",
+          "SeryMente/metodologia:frentes/radar-profesional/CONTROL-RESPONSABILIDAD.json",
+          "SeryMente/personal:frentes/repertorio-canto-personal/CONTROL-RESPONSABILIDAD.json"
+        ],
+        "cycle_folio": "C-20261028-94B6C2D8",
+        "event_id": "C-GOBERNANZA-RETOMA-02",
+        "superseded_on": "2026-10-29",
+        "superseded_by_event": "C-GOBERNANZA-RETOMA-03"
+      }
     }
   },
   "transfers": [
@@ -337,6 +367,108 @@
       },
       "method": "GitHub Contents API compare-and-swap against the immediately observed control blob SHA, followed by canonical read-back",
       "mutation_result": "Attempted; read-back verification pending."
+    },
+    {
+      "event_id": "C-GOBERNANZA-RETOMA-05",
+      "cycle_folio": "C-20261030-89CFA5D5",
+      "recorded_on": "2026-10-30",
+      "authorized_on": "2026-10-30",
+      "authorization": {
+        "status": "explicit",
+        "source": "operator instruction in the receiving conversation",
+        "verbatim": "RETOMA OCN URGENCIA RESPONSABILIDAD PREVIAMENTE AUTORIZXAD D EFREBNTE D TRBAJAO GOBERNANZA",
+        "scope": "Single transfer of frentes/gobernanza/ to this conversation; continue the already authorized C-GOBERNANZA-FOLIACION-SECUENCIAL-01 work within its existing limits. IPZ and ART-025 remain excluded until the final preparation phase."
+      },
+      "source_branch": "main",
+      "source_main_head_sha": "d76dacfb90a29a442f62ee800ebb2305abcbc2c8",
+      "source_control_blob_sha": "4768d6db0a620652f753262b6250c8cb4b891ca9",
+      "source_generation": 5,
+      "from": {
+        "owner_thread": "chatgpt-C-GOBERNANZA-RETOMA-04-SES-20261029-GV5KGJY8U5J",
+        "instance": "chatgpt-gobernanza-retoma-2026-10-29-GV5KGJY8U5J",
+        "generation": 5,
+        "session_folio": "SES-20261029-GV5KGJY8U5J",
+        "status": "active",
+        "observed_blob_sha": "4768d6db0a620652f753262b6250c8cb4b891ca9"
+      },
+      "to": {
+        "owner_thread": "chatgpt-C-GOBERNANZA-RETOMA-05-SES-20261030-GV89CFA5D5",
+        "instance": "chatgpt-gobernanza-retoma-2026-10-30-GV89CFA5D5",
+        "generation": 6,
+        "session_folio": "SES-20261030-GV89CFA5D5",
+        "identity_kind": "operational alias; native ChatGPT conversation ID not exposed"
+      },
+      "native_conversation_id": "NOT_EXPOSED; operational alias used",
+      "method": "GitHub Contents API update conditioned on the immediately observed control blob SHA, followed by canonical read-back",
+      "collision_check": {
+        "exact_search_repositories": [
+          "SeryMente/metodologia",
+          "SeryMente/khora",
+          "SeryMente/signal-interpreter",
+          "SeryMente/personal"
+        ],
+        "identifiers": [
+          "C-GOBERNANZA-RETOMA-05",
+          "C-20261030-89CFA5D5",
+          "SES-20261030-GV89CFA5D5",
+          "chatgpt-C-GOBERNANZA-RETOMA-05-SES-20261030-GV89CFA5D5"
+        ],
+        "match_counts": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "inspected_controls": [
+          {
+            "path": "frentes/metacanon/CONTROL-RESPONSABILIDAD.json",
+            "sha": "86f0e4fa59e37976704231290b460cf6dc9252b0",
+            "result": "read; no candidate identifier present"
+          },
+          {
+            "path": "frentes/acceso/CONTROL-RESPONSABILIDAD.json",
+            "sha": "d77dbf55ca188d79d5126e168edd202ec63ac811",
+            "result": "read; no candidate identifier present"
+          },
+          {
+            "path": "frentes/radar-profesional/CONTROL-RESPONSABILIDAD.json",
+            "sha": "ebedb865d9d813c731f6ebcf2b63bf37efe3efc1",
+            "result": "read; no candidate identifier present"
+          },
+          {
+            "path": "ambitos/tareas/CONTROL-RESPONSABILIDAD.json",
+            "sha": "b0c19b0c2ce7db13a74243b03183756519f7cfe0",
+            "result": "read; no candidate identifier present"
+          },
+          {
+            "path": "docs/frentes/dictado-voz/CONTROL-RESPONSABILIDAD.json",
+            "sha": "a954353055ef30770aae0b5ca40e1f61cfc3d8dd",
+            "result": "read; no candidate identifier present"
+          },
+          {
+            "path": "docs/frentes/harmonia/CONTROL-RESPONSABILIDAD.json",
+            "sha": "2b8e5091e621b1017ed1e55f2796cc48f9ba444b",
+            "result": "read; no candidate identifier present"
+          },
+          {
+            "path": "frentes/custodia/CONTROL-RESPONSABILIDAD.json",
+            "sha": "3731c8b5f7cdded5f3406e446369779771f20af5",
+            "result": "read; no candidate identifier present"
+          },
+          {
+            "path": "docs/frentes/signal-interpreter/CONTROL-RESPONSABILIDAD.json",
+            "sha": "d057a5db249939c381892f831d76a81103190074",
+            "result": "read; no candidate identifier present"
+          },
+          {
+            "path": "frentes/repertorio-canto-personal/CONTROL-RESPONSABILIDAD.json",
+            "sha": "fa92efd677b3a57520b8d3a1cf4feb0fa792b978",
+            "result": "read; no candidate identifier present"
+          }
+        ],
+        "scope_limit": "Bounded to the four accessible repositories searched and the ten readable responsibility controls; global uniqueness and server-enforced exclusivity are not established."
+      },
+      "mutation_result": "Prepared; pending write and immediate read-back."
     }
   ]
 }
