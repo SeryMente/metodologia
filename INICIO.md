@@ -2,7 +2,7 @@
 
 Punto de entrada del repositorio; no es una fuente normativa.
 
-**Documento Único de Gobernanza:** [DUG · Samantha v368 · NX-368m](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html). Integra 43 principios, 19 anexos jerarquizados, Metacanon 1.26, GOW 2.14 con 127 términos definidos e indexados, §ARR con el vocabulario inicial de ChatGPT, taxonomía estructural 1.3, navegación y representación estructurada. Fuente y contadores releídos en `main` el 2026-10-30.
+**Documento Único de Gobernanza:** [DUG · Samantha v370 · NX-370m](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html). Integra 43 principios, 20 anexos jerarquizados, Metacanon 1.26, GOW 2.14 con 127 términos definidos e indexados, §ARR con el vocabulario inicial de ChatGPT, taxonomía estructural 1.3, navegación y representación estructurada. Fuente y contadores releídos en `main` el 2026-10-30.
 
 La sección humana gobierna la representación estructurada incorporada en el mismo archivo. No hay documentos normativos paralelos ni sincronización automática implícita con Notion, instrucciones personalizadas, memorias o copias locales. La rama `main` de `SeryMente/metodologia` es la fuente documental; si no puede leerse, declara `METODOLOGÍA NO VERIFICADA`. Las políticas obligatorias, los permisos reales y las autorizaciones aplicables conservan precedencia.
 
@@ -13,6 +13,10 @@ Consulta el [DUG · Taxonomía estructural de S y M](gobernanza/METAPROMPT-CANON
 La taxonomía separa el plano conceptual del arreglo de infraestructura. **Ámbitos** es una categoría conceptual, no un directorio obligatorio. Los ámbitos funcionales transversales canónicos al mismo nivel son [Persistencia documental](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#gow-persistencia-documental) y [Gestión conversacional](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#gow-gestion-conversacional). Gestión conversacional se articula mediante los módulos [Registro conversacional y Trazabilidad semántica](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-024), con materialización operativa provisional en [ambitos/gestion-conversacional/](ambitos/gestion-conversacional/README.md); [Propósito](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#gow-proposito-de-frente) es un elemento conceptual canónico asociado al alcance de un FT. Puede materializarse como archivo de texto o sección de documento raíz. No se exige `ambitos/` por repositorio OCP. La Metodología abstracta es el OCP raíz; cada OCP se materializa según necesidad y recuperabilidad.
 
 El histórico **Contexto → Gestión conversacional** está supersedido y revertido; no es la taxonomía vigente. [ART-015](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-015) separa el mapa conceptual de la infraestructura, y [ART-020](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-020) distingue los ámbitos funcionales de los elementos conceptuales asociados.
+
+## Estrategia de dos capas de principios
+
+[DUG · ART-027](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-027) define un catálogo de 43 abstracciones, aliases individuales previstos p001–p043 mediante Sink y telemetría separada de consideración/selección/consulta/aplicación. El documento está materializado en DUG v370. La instancia Sink, los enlaces reales y la lectura privada E2E no están desplegados ni verificados; el repositorio sigue privado. El conteo de aplicaciones procederá de los registros de ciclo, no de los clics.
 
 ## Pendientes destacados
 
