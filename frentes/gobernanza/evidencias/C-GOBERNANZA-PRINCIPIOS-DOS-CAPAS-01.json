@@ -1,0 +1,65 @@
+{
+  "schema": "governance-cycle-evidence/1",
+  "event_id": "C-GOBERNANZA-PRINCIPIOS-DOS-CAPAS-01",
+  "recorded_on": "2026-10-30",
+  "status": "documentation_materialized_readback_verified_external_implementation_pending",
+  "cycle_folio": null,
+  "fol1_status": "PREPARADO_PENDIENTE_ACTIVACION_IPZ",
+  "authorization": {
+    "control_path": "frentes/gobernanza/CONTROL-RESPONSABILIDAD.json",
+    "blob_sha_readback": "e0cc42a4c7f3ab351d733dc0689cbe355d3ec9f9",
+    "owner": "chatgpt-C-GOBERNANZA-RETOMA-05-SES-20261030-GV89CFA5D5",
+    "instance": "chatgpt-gobernanza-retoma-2026-10-30-GV89CFA5D5",
+    "generation": 6,
+    "authorization_recorded": true,
+    "readback_verified": true
+  },
+  "canonical_change": {
+    "path": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.html",
+    "version": "v370",
+    "signature": "NX-370m",
+    "event_id": "C-GOBERNANZA-PRINCIPIOS-DOS-CAPAS-01",
+    "commit": "fa628f865941e64891bcda4ff11e3b48c57ff395",
+    "blob_sha": "a97991bc680fdda8a10cd155432da92f40ed5f44",
+    "readback_exact": true,
+    "principles": 43,
+    "annexes": 20,
+    "new_annex": "ART-027",
+    "catalogue_entries": 43,
+    "sink_aliases_defined": 43,
+    "sink_links_created": 0
+  },
+  "design": {
+    "strategy": "two-layer principle selection, individual retrieval and telemetry",
+    "states": [
+      "considered",
+      "selected",
+      "consulted",
+      "applied"
+    ],
+    "cycle_record": "ART-024 principle_usage extension specified in ART-027",
+    "application_metric_source": "Persisted cycle records applied[]",
+    "consultation_metric_source": "Sink visit/analytics; approximate and not proof of application"
+  },
+  "sink": {
+    "repository": "miantiao-me/Sink",
+    "deployment": "NOT_DEPLOYED",
+    "fork": "NOT_CREATED",
+    "cloudflare_worker": "NOT_CREATED",
+    "d1_db_binding": "NOT_PROVISIONED",
+    "kv_binding": "NOT_PROVISIONED",
+    "analytics_engine": "NOT_PROVISIONED",
+    "api_credentials": "NOT_PROVIDED_NOT_STORED",
+    "aliases": "DEFINED_NOT_CREATED",
+    "private_source_resolution": "NOT_VERIFIED",
+    "browser_anchor_resolution": "NOT_TESTED",
+    "end_to_end_tests": "NOT_RUN"
+  },
+  "limitations": [
+    "No Cloudflare connector/account access or credentials are available in this session.",
+    "No GitHub create-fork tool is available in the connected GitHub actions.",
+    "The canonical GitHub repository remains private and was not published.",
+    "No actual Sink short links or click telemetry exist yet.",
+    "Dynamic Pxxx anchor resolution has not been tested in a real browser."
+  ]
+}
