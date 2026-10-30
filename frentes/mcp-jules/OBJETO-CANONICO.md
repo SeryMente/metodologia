@@ -103,6 +103,8 @@ Un asistente puede localizar fuentes de Jules, crear una sesión con prompt comp
 
 ## 8. Estado vivo
 
+**Modelo rector:** el proyecto tiene exactamente dos fases: Fase 1 planeación integral (completa) y Fase 2 implementación end-to-end hasta uso real desde ChatGPT Free. Reconciliación, implementación, validación, release y puesta en servicio son etapas internas 2.1–2.5 de la Fase 2, nunca fases adicionales.
+
 **Fase 1 — PLANEACIÓN INTEGRAL: COMPLETA como diseño R3.** La línea base [PLAN-INTEGRAL-MCP-JULES-v1.0.md](PLAN-INTEGRAL-MCP-JULES-v1.0.md) conserva 24 secciones y 32 pruebas/gates. El proyecto tiene exactamente dos fases: Fase 1 planeación integral (completa) y Fase 2 implementación E2E hasta que el sistema esté utilizable desde ChatGPT Free. Las etapas 2.1–2.5 son trabajo interno de Fase 2, no fases nuevas. Cierre vigente en [C-MCP-JULES-009](cronica/C-MCP-JULES-009.md); C-MCP-JULES-007 y C-MCP-JULES-008 quedan como antecedentes.
 
 **Estado de integración:** Metodología PR #19 sigue en borrador; candidato [Khora PR #338](https://github.com/SeryMente/khora/pull/338) no aceptado. API Jules real, revisión/publicación del plugin, disponibilidad de escritura desde ChatGPT Free, OAuth por usuario, aislamiento de repositorios, E2E, CI actual, merge y despliegue siguen pendientes de evidencia.
