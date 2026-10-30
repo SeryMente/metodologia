@@ -4,10 +4,15 @@
 Los frentes no necesitan servidores MCP propios. La familia de herramientas se expone en el servidor único de Khora; cada OCP conserva propósito, criterios, prompts, estado, control de responsabilidad y crónica. Se replica el patrón de uso y la configuración mínima del frente, no la infraestructura, las claves ni los controles.
 
 ## Prerrequisitos de cliente
-1. Usar un cliente/espacio de trabajo ChatGPT que permita aplicaciones MCP personalizadas con escritura. La documentación consultada lista esa capacidad para Business y Enterprise/Edu; no se presume que cualquier plan personal la tenga.
-2. La conexión debe apuntar al servidor remoto HTTPS/túnel seguro admitido y usar autenticación configurada.
-3. La app debe seleccionarse/mencionarse en el mensaje que necesita acciones; la selección no garantiza invocación automática en mensajes futuros.
-4. No considerar Agent mode ni Deep Research como sustitutos de la sesión conversacional normal para el ciclo de escritura. No se promete operación persistente de fondo.
+
+1. El cliente objetivo es una cuenta personal ChatGPT Free que instala el plugin MCP Jules público desde el directorio oficial; probar en la cuenta y región reales.
+2. El plugin debe estar aprobado/publicado por OpenAI y conectado al servidor HTTPS central de KHORA en /api/mcp. Los frentes no despliegan servidores MCP propios.
+3. Cada usuario completa OAuth 2.1 y recibe permisos únicamente para sus fuentes Jules, repositorios, ramas y acciones autorizadas.
+4. Seleccionar/mencionar el plugin en cada mensaje que requiera una acción; no garantizar invocación automática en todos los turnos, Agent/Deep Research para escritura ni trabajo en segundo plano.
+5. La disponibilidad y capacidades de un plugin individual dependen del plan, región y cuenta. La disponibilidad general del directorio no demuestra escritura en Free; comprobarlo con T23/T26/T27.
+6. Al alcanzar límites Free, conservar checkpoint y reanudar en otro turno cuando el servicio lo permita; nunca reintentar un POST ambiguo.
+7. Codex queda expresamente excluido. No utilizarlo como cliente, herramienta, canal de pruebas, fallback o requisito.
+8. No usar conexión privada de MCP desde un plan de pago como prueba de aceptación de Free ni depender de GPT Actions/GPTs personalizados.
 
 ## Para adoptar un frente
 1. Leer el gobierno canónico y el OCP propio; comprobar control y autorización de ese frente.
