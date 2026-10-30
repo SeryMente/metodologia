@@ -17,7 +17,7 @@ Por instrucción del operador, se endureció la definición operativa de AT, pre
 
 Se creó el [esquema de vectores semánticos AT v1.1](entregas/CHATGPT-v0.8/ESQUEMA-VECTORES-SEMANTICOS-AT-v1.1.json), que exige referencias de fuente, ciclo, interpretación, destinos, impactos, resultados, retorno, autorización, estado LISA y verificación. La solicitud literal se conservó como `SRC-C-20261029-5510927B-USER` y se enlazó a los vectores del dictado anterior `SRC-C-20261030-9D7E31A2-USER`.
 
-La implementación mantiene separadas tres responsabilidades: Persistencia documental custodia originales/derivados; Registro conversacional conserva pares E/S; AT consume esas fuentes y propaga cambios desde vectores semánticos. La relación de cada vector con sus resultados y el retorno desde cada resultado se debe comprobar en ambos sentidos.
+La implementación mantiene separadas tres responsabilidades: Persistencia documental custodia originales/derivados; Registro conversacional conserva pares E/S; AT consume esas fuentes y propaga cambios desde vectores semánticos. La relación de cada vector con sus resultados y el retorno desde cada resultado se comprobó en ambos sentidos en este ciclo: seis vectores literales, seis resultados consultables por retorno y pareja E/S releída.
 
 **Compuerta normativa:** DUG v362 ART-020/024 aún clasifican Trazabilidad semántica dentro de Gestión conversacional. AT v1.1 fija la definición operativa objetivo, pero no altera ART-020/024 ni el GOW. La alineación normativa permanece pendiente de autorización expresa P005. El canon LISA no se modificó; la integración completa LISA/FIAT/LSV/MAT sigue pendiente.
 
