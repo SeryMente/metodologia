@@ -4,7 +4,7 @@
 **Repositorio:** `SeryMente/metodologia`.  
 **OCP:** `frentes/gobernanza/`.  
 **Evento de apertura:** `C-GOBERNANZA-INICIO-01`.  
-**Último ciclo legado del histórico anterior:** `C-20261029-5510927B` · `C-GOBERNANZA-AT-ENDURECIMIENTO-01`. **Conversación de foliación:** UUIDv7 local `01a18d91-e030-7683-a4fa-7391408f989c`; tres ciclos naturales pre-corte `C-20261030-F0D12375`, `C-20261030-2FB9018D` y `C-20261030-25A998EA`, con lados A/B y folios legados. No son folios FOL1 ni IDs nativos. **Evento más reciente:** `C-GOBERNANZA-CNP-01` / `C-GOBERNANZA-IPZ-CNP-01`; DUG v367 · NX-367m, CNP por categoría A, PAI/ART-026 materializados; la IPZ v0.8 no es sustitución íntegra de v0.7. Instalación nativa no verificada. FOL1 sigue preparado, sin asignaciones globales/OCP. **Evento de control:** `C-GOBERNANZA-RETOMA-05`.  
+**Último ciclo legado del histórico anterior:** `C-20261029-5510927B` · `C-GOBERNANZA-AT-ENDURECIMIENTO-01`. **Conversación de foliación:** UUIDv7 local `01a18d91-e030-7683-a4fa-7391408f989c`; tres ciclos naturales pre-corte `C-20261030-F0D12375`, `C-20261030-2FB9018D` y `C-20261030-25A998EA`, con lados A/B y folios legados. No son folios FOL1 ni IDs nativos. **Evento más reciente:** `C-GOBERNANZA-CNP-01` / `C-GOBERNANZA-IPZ-CNP-01`; DUG v368 · NX-368m, CNP por categoría A, PAI/ART-026 materializados; la IPZ v0.8 no es sustitución íntegra de v0.7. Instalación nativa no verificada. FOL1 sigue preparado, sin asignaciones globales/OCP. **Evento de control:** `C-GOBERNANZA-RETOMA-05`.  
 **Sesión inicial (histórica):** `SES-20261028-3F2B7A91`, generación 1.
 **Titular actual según control:** `chatgpt-C-GOBERNANZA-RETOMA-05-SES-20261030-GV89CFA5D5` (alias operativo, no ID nativo).
 **Instancia actual según control:** `chatgpt-gobernanza-retoma-2026-10-30-GV89CFA5D5`.
@@ -13,7 +13,7 @@
 
 ## Evento más reciente · C-GOBERNANZA-CNP-CATEGORIA-A-01 · 2026-10-30
 
-Se eliminó la variable de posición del CNP y los identificadores ordinales CNP-01…CNP-05. En DUG v367 · NX-367m, la categoría A basta para identificar la pertenencia al CNP; los decimales solo ordenan la preponderancia relativa. La estructura JSON de miembros ya no contiene ordinal ni `cnp_id`; la tabla humana tampoco tiene columna de posición. Se conservan los cinco principios P001, P004, P005, P038 y P043.
+Se eliminó la variable de posición del CNP y los identificadores ordinales CNP-01…CNP-05. En DUG v368 · NX-368m, la categoría A basta para identificar la pertenencia al CNP; los decimales solo ordenan la preponderancia relativa. La estructura JSON de miembros ya no contiene ordinal ni `cnp_id`; la tabla humana tampoco tiene columna de posición. Se conservan los cinco principios P001, P004, P005, P038 y P043.
 
 **Registros:** [crónica](cronica/C-GOBERNANZA-CNP-CATEGORIA-A-01.md) · [evidencia](evidencias/C-GOBERNANZA-CNP-CATEGORIA-A-01.json). Commit DUG: `8268055b23493dc55a1b6afc62ef0c32c276f0f3`; blob releído: `abb4d397bf78aa60d1fd340ac54535f1e3b1d55a` (coincidente). JSON parseado; 43 principios, 19 anexos, cinco miembros CNP y cero campos ordinales actuales.
 
@@ -25,7 +25,7 @@ Se eliminó la variable de posición del CNP y los identificadores ordinales CNP
 
 Se incorporó al DUG v365 el **Conjunto Nuclear de Principios (CNP)**: P001, P004, P005, P038 y P043, todos en categoría A, con decimales internos 0.9, 0.8, 0.7, 0.6 y 0.5. Se estableció la escala A–Z, de mayor a menor preponderancia, con decimales abiertos entre 0 y 1 y precisión mínima necesaria. Se añadió **P043 · Principio Anti-Ineficiencia (PAI)** y **ART-026 · Fundamento del PAI**. GOW pasó a 2.13 y §ARR incorporó las entradas CNP/PAI. [DUG v365, revisión de incorporación](https://github.com/SeryMente/metodologia/blob/79f373f73f19089cdaf988d441abc61253440cfd/gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#cnp-conjunto-nuclear-de-principios).
 
-Después, DUG v366 actualizó **ART-025**: la IPZ debe reforzar la consideración expresa de los cinco principios del CNP en cada turno, sin sustituir la obligación de considerar el DUG completo y aplicar los demás principios pertinentes. Se preparó [IPZ v0.8](entregas/CHATGPT-v0.8/IPZ-CAMPO-CHATGPT-v0.8-PROPUESTA.txt), de 1.488 caracteres. [DUG v366 · ART-025](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-025).
+Después, DUG v368 actualizó **ART-025**: la IPZ debe reforzar la consideración expresa de los cinco principios del CNP en cada turno, sin sustituir la obligación de considerar el DUG completo y aplicar los demás principios pertinentes. Se preparó [IPZ v0.8](entregas/CHATGPT-v0.8/IPZ-CAMPO-CHATGPT-v0.8-PROPUESTA.txt), de 1.488 caracteres. [DUG v368 · ART-025](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-025).
 
 **Verificación:** JSON embebido parseado; 43 principios, 19 anexos y cinco miembros CNP leídos de vuelta. Los commits y blobs exactos se registran en la crónica/evidencia. No se ejecutó renderizado de navegador ni auditoría dinámica completa. La IPZ nativa no fue modificada/verificada. FOL1 permanece preparado y sin asignaciones; no se crean folios para estos eventos.
 
