@@ -4,7 +4,7 @@
 **Frente:** MCP Jules  
 **Fase completada:** Fase 1 — planeación integral de diseño; no se implementó código de producto.  
 **Fecha de corte documental:** 2026-10-29  
-**Revisión de cierre:** R2 · C-MCP-JULES-008; requisito ChatGPT Free y exclusión absoluta de Codex  
+**Revisión de cierre:** R3 · C-MCP-JULES-009; modelo de dos fases ratificado por el operador  
 **OCP:** `frentes/mcp-jules/`  
 **Control de responsabilidad:** `CONTROL-RESPONSABILIDAD.json`, generación 2, folio `SES-20261029-6C2F9A17`.  
 **Gobierno consultado:** Documento Único de Gobernanza (DUG) Samantha v360 · NX-360m; Metacanon 1.24; GOW 2.9, leídos desde `SeryMente/metodologia/main`.  
@@ -16,7 +16,7 @@ La primera fase del frente es la **planeación plena y completa del componente M
 
 Durante esta fase no se añade ni modifica código de producto, no se despliega ni se fusiona por el solo hecho de que exista una rama candidata. Las PR existentes se usan como evidencia y material de comparación, no como prueba de que el diseño ya esté completo o funcione.
 
-La fase 1 se considera cerrada cuando el plan tenga trazabilidad entre requisitos, arquitectura y aceptación, y cada bloqueo material figure como resuelto con evidencia o como decisión explícita pendiente del operador. La implementación y su validación pertenecen a fases posteriores.
+La fase 1 se considera cerrada cuando el plan tenga trazabilidad entre requisitos, arquitectura y aceptación, y cada bloqueo material figure como resuelto con evidencia o como decisión explícita pendiente del operador. La implementación, validación, publicación, despliegue y puesta en servicio pertenecen íntegramente a la Fase 2. No existen fases de proyecto adicionales.
 
 ## 2. Propósito del componente
 
@@ -349,77 +349,94 @@ La aceptación exige evidencia real. Un test que utiliza mocks no acredita conec
 8. **Revisión/publicación externa:** OpenAI puede rechazar o demorar el plugin o exigir cambios de metadata, privacidad, seguridad o autenticación. La aprobación es externa y no se presume.
 9. **Aislamiento de usuario/repositorio:** el servidor actual debe demostrar autorización por sujeto y recurso antes de exponerse públicamente; read/write global no basta para proteger repositorios privados.
 
-## 15. Secuencia de fases posterior a la planeación
+## 15. Modelo rector: exactamente dos fases de proyecto
 
-### Fase 1 — Planeación integral del componente v1.0 (COMPLETA — cierre de diseño)
+El proyecto MCP Jules v1.0 tiene **exactamente dos fases**. Las etapas internas, compuertas, pruebas, autorizaciones y entregables parciales no constituyen fases adicionales.
 
-- Establecer requisitos, arquitectura y límites.
-- Especificar contratos de las siete herramientas y estados.
-- Definir seguridad, trazabilidad, persistencia, fallos, operación y recuperación.
-- Completar pruebas y criterios de aceptación.
-- Resolver o registrar formalmente las compuertas de viabilidad y los riesgos.
-- Hacer revisión de consistencia entre plan, OCP, plan de aceptación y PR candidato.
+### Fase 1 — Planeación integral end-to-end (COMPLETA)
 
-**Salida:** plan v1.0 consistente, trazable y revisable. No cambia código de producto.
+Objetivo: producir una línea base suficientemente completa, coherente y ejecutable para que la Fase 2 implemente el resultado final sin redescubrir requisitos ni tomar decisiones de arquitectura implícitas.
 
-### Fase 2 — Reconciliación e implementación
+Entregables de Fase 1:
+- Propósito, experiencia y resultado final definidos: desarrollar repositorios desde ChatGPT Free, sin Codex.
+- Arquitectura, interfaces, contratos de las siete herramientas, ciclo bidireccional Jules y estados definidos.
+- Canal de distribución para ChatGPT Free, OAuth, identidad, aislamiento de repositorios y permisos especificados con límites de plataforma explícitos.
+- Seguridad, secretos, errores, reintentos, concurrencia, persistencia, recuperación, observabilidad y límites de uso definidos.
+- 32 pruebas/gates, matriz requisito-diseño-aceptación y procedimientos de integración, despliegue, reversión y operación.
+- Plan de ejecución de Fase 2 desglosado en etapas internas, dependencias, artefactos, gates, evidencia requerida y criterios de salida.
 
-- Comparar PR #338 y el código del servidor con la línea base; matriz de deltas por archivo/requisito.
-- Revalidar API Jules v1alpha, contratos KHORA y OAuth 2.1 para plugins MCP públicos.
-- Ejecutar primero un gate temprano de viabilidad: usar el endpoint central de KHORA, preparar un paquete MCP de prueba, verificar dominio/identidad, escanear tools e intentar instalar/autenticar desde ChatGPT Free. No crear un segundo servidor. Si OpenAI no permite prueba antes de revisión/publicación, documentar ese requisito antes de seguir.
-- Auditar autorización por sujeto/recurso: identidad OAuth → KHORA → source/repo/branch allowlist → scopes. No filtrar fuentes de Jules que el sujeto no pueda usar.
-- Corregir source/branch server-side, retries GET/POST, pageToken, estados, diagnósticos, contratos y pruebas.
-- Preparar paquete, metadatos, privacidad, soporte, acceso demo aislado y evidencias para el proceso de revisión del directorio.
-- Aislar fallos ajenos al diff y documentar sus responsables; ejecutar suite actual y leer de vuelta evidencia.
+**Criterio de salida de Fase 1:** plan rector único, trazable, sin decisiones funcionales críticas implícitas y suficientemente preciso para ejecutar la Fase 2 de principio a fin. No cambia código de producto ni declara conectividad o capacidad externa ya probada.
 
-**Salida:** candidato alineado y paquete sometido/aceptado según evidencia; todavía no MVP utilizable hasta que Free supere Fase 3.
+### Fase 2 — Implementación end-to-end, liberación y puesta en servicio
 
-### Fase 3 — Validación integrada real
+Objetivo: ejecutar el plan completo y entregar el sistema ya utilizable desde una cuenta personal ChatGPT Free, en chat normal, conectado al servidor MCP central de KHORA y a Jules. Esta fase no termina al compilar, al tener las herramientas MCP o al generar una PR: termina cuando el sistema está desplegado, publicado/instalable donde corresponda, autenticado, validado y puede completar un desarrollo real de repositorio.
 
-- Validar JULES_API_KEY por llamada real sin mostrar su valor.
-- Instalar el plugin publicado desde el directorio en una cuenta personal ChatGPT Free real, en la región/superficie objetivo; sin Developer Mode ni cuenta de pago.
-- Completar OAuth y verificar que el sujeto solo ve fuentes/repos/ramas autorizados.
-- Descubrir las siete herramientas y validar scopes de lectura/escritura.
-- Ejecutar ciclo no destructivo en repositorio sandbox: crear → plan → aprobación humana → ejecución → feedback → respuesta en la misma sesión → PR/outputs → verificación independiente.
-- Probar cuota Free, OAuth expirado/revocado, timeout ambiguo, 429/5xx, paginación, fuente desconectada, branch inexistente y usuario sin permiso.
-- Interrumpir y reanudar desde checkpoint sin worker persistente ni duplicados.
-- Persistir outputs y evidencias en OCP.
+Fase 2 se ejecuta como un único flujo, con las siguientes **etapas internas** (no son fases separadas):
 
-**Salida:** E2E reproducible desde ChatGPT Free; si escritura Free no está disponible, gate BLOCKED y no se declara MVP.
+#### Etapa 2.1 — Preflight de viabilidad y reconciliación
+- Leer esta línea base y verificar la rama/candidato real de KHORA y el estado vigente de CI.
+- Revalidar los contratos actuales de Jules, KHORA y OpenAI.
+- Demostrar lo antes posible el canal real desde ChatGPT Free: distribución/plugin MCP, invocación de herramientas MCP básicas desde chat normal y escritura autorizada. No usar Developer Mode, cuenta pagada, Codex, GPT Actions ni relevo manual como sustituto.
+- Si la vía candidata no está disponible, investigar dentro de las restricciones expresas las alternativas soportadas por ChatGPT Free. Si no existe ruta técnica admitida por OpenAI, detener únicamente la ejecución dependiente, conservar evidencia precisa del bloqueo y no declarar la solución terminada ni sustituir el requisito sin autorización.
+- Auditar identidad, OAuth y autorización por usuario, fuente, repositorio y rama antes de exponer el servidor a una distribución pública.
+- Comparar PR #338 y el código actual con cada requisito; producir una matriz de deltas conforme/falta/contradicción/no verificable.
 
-### Fase 4 — Release y replicación controlada
+#### Etapa 2.2 — Implementación completa
+- Implementar todos los deltas de la matriz, manteniendo el servidor único `/api/mcp` de KHORA.
+- Completar siete herramientas, cliente Jules, scopes, OAuth, autorización granular, verificación source/branch, paginación, estados, aprobación humana, feedback en la misma sesión y persistencia.
+- Corregir política de reintentos diferenciada, escrituras ambiguas, diagnósticos seguros, límites de cuota y recuperación.
+- Preparar y someter el paquete de plugin público si esa es la ruta admitida y verificada; completar identidad/editor, dominio, privacidad, soporte, escaneo y revisión de OpenAI.
+- Resolver dependencias de CI, contratos y acceso a esquemas privados; aislar fallos ajenos al diff sin ocultarlos.
 
-- Revisar diff, CI vigente, findings del plugin, credenciales, privacidad, permisos y autorizaciones.
-- Completar merge y despliegue solo con autorización; la aprobación OpenAI del plugin no sustituye revisión de código.
-- Publicar/activar plugin aprobado y comprobar que listing y tools reflejan la versión aprobada.
-- Ejecutar smoke desde ChatGPT Free tras despliegue: instalación, OAuth, descubrimiento, lectura y escritura no destructiva.
-- Publicar guía de instalación/operación/replicación; todos los frentes reutilizan plugin y servidor central.
-- Documentar límites Free, revocación, rollback, soporte y ámbito de acceso.
-- Declarar v1.0 utilizable solo con todos los gates aplicables, especialmente T23/T26/T27.
+#### Etapa 2.3 — Validación técnica e integrada
+- Ejecutar los 32 criterios T01–T32 contra el head candidato y conservar outputs verificables.
+- Validar `JULES_API_KEY` por llamada real sin mostrarla.
+- Instalar y autenticar desde ChatGPT Free real, descubrir las siete herramientas y demostrar aislamiento por usuario/recurso.
+- Ejecutar un ciclo completo sobre un repositorio sandbox: delegación, plan, consentimiento humano, ejecución, retroalimentación, respuesta en la misma sesión, PR/artefactos y verificación independiente.
+- Probar escenarios negativos, cuotas, interrupciones, expiración/revocación, paginación, timeouts ambiguos, 429/5xx y reanudación.
+- No convertir mocks, CI parcial, listing de directorio, acceso de solo lectura ni una prueba en plan de pago en PASS de aceptación Free.
 
-**Salida:** release verificado y utilizable desde ChatGPT Free, guía de instalación/operación y matriz de límites.
+#### Etapa 2.4 — Release, despliegue y activación
+- Revisar código, diff, CI, seguridad, privacidad, autorizaciones y findings del plugin.
+- Obtener las autorizaciones de merge y despliegue requeridas; ni la creación de PR ni la aprobación de OpenAI las sustituyen.
+- Integrar el código en la rama canónica y desplegar el servidor central de KHORA de acuerdo con su procedimiento vigente.
+- Publicar/activar el plugin aprobado cuando aplique y comprobar que el directorio refleja las herramientas de la versión desplegada.
+- Desde ChatGPT Free, hacer smoke test de OAuth, descubrimiento, lectura y una escritura no destructiva.
+- Ejecutar un procedimiento de rollback probado y conservar evidencia de release.
 
-### Evolución futura
+#### Etapa 2.5 — Aceptación operativa y entrega
+- Completar un desarrollo real de repositorio desde ChatGPT Free, con cambios verificados y PR revisable.
+- Entregar guía de instalación, autenticación, uso, recuperación, límites de Free, revocación y soporte.
+- Verificar lectura de vuelta de código, configuración pública, artefactos, CI, release y evidencias en OCP.
+- Declarar el producto UTILIZABLE solo al satisfacer todos los gates obligatorios.
 
-Si se solicita sondeo persistente, notificaciones, respuesta automática acotada u orquestación avanzada de PR/CI, planificar una versión posterior con su propio diseño de disponibilidad, coste, idempotencia, seguridad, permisos, checkpoint y aceptación. No inferir su inclusión a partir de v1.0.
+**Criterio de salida de Fase 2:** el usuario puede iniciar desde ChatGPT Free una tarea real de desarrollo, Jules completa el ciclo bajo aprobación humana, ChatGPT atiende el feedback, el sistema produce una entrega verificable y el servicio está desplegado, publicado/instalable y documentado. Si la plataforma impide el acceso requerido, la Fase 2 permanece BLOQUEADA; no se etiqueta como terminada ni se sustituye el objetivo.
+
+### Regla de nomenclatura
+
+Solo existen Fase 1 y Fase 2. «Etapa 2.1» a «Etapa 2.5» identifican trabajo interno de la Fase 2; nunca deben abreviarse como Fase 3, Fase 4 ni convertirse en fases de proyecto nuevas.
+
+### Evolución posterior a v1.0
+
+Trabajador persistente, sondeo fuera del turno, notificaciones, autorespuesta acotada, orquestación avanzada de CI/PR, auto-merge o auto-deploy no se incorporan automáticamente. Requerirán una versión futura y autorización explícita, sin alterar retroactivamente las dos fases del MVP v1.0.
 
 ## 16. Condiciones para declarar completa la fase 1
 
-- Propósito y resultado con ChatGPT Free como cliente obligatorio y Codex excluido.
-- Ciclo bidireccional y contratos de las siete herramientas, scopes, estados, errores y pruebas.
-- Ruta de distribución definida: plugin MCP público, mismo endpoint central KHORA /api/mcp.
-- Diferencia documentada entre conexión MCP privada (no objetivo de Free) y plugin público (candidato Free con capacidades por probar).
-- Proceso de paquete, verificación de dominio, OAuth, escaneo, revisión, publicación e instalación.
-- OAuth 2.1, identidad KHORA y permisos granulares por sujeto/fuente/repositorio/rama.
-- Seguridad, control normativo, aprobación humana, source/branch, pageToken, retry diferenciado, persistencia, recuperación y errores.
-- Límites Free, interrupciones, checkpoints y reanudación.
-- Gates de aceptación con evidencias, fases y resultados explícitos; pruebas de plugin/Free/OAuth/aislamiento/no-Codex.
-- Secuencia de solo cuatro fases posteriores: Fase 2 reconciliación e implementación; Fase 3 validación integrada real; Fase 4 release y replicación controlada.
-- Consistencia entre plan, OCP, README, investigación, prompts, guía de replicación y aceptación.
-- Control de responsabilidad de este frente sin cambios; DUG y control del frente padre intactos.
-- Plan guardado y verificado mediante lectura de vuelta.
+Fase 1 está completa solo cuando:
+- El propósito y resultado final están definidos con ChatGPT Free como cliente obligatorio y Codex excluido.
+- El ciclo bidireccional completo y las siete herramientas tienen contratos, scopes, estados, errores y pruebas.
+- La arquitectura central de KHORA y el canal ChatGPT Free están especificados con restricciones y gates externos explícitos.
+- OAuth, identidad, autorización por sujeto/recurso, aislamiento de fuentes/repositorios/ramas y secretos tienen diseño verificable.
+- Persistencia, recuperación, reintentos, concurrencia, fallos, límites de cuota, observabilidad, despliegue y rollback están diseñados.
+- Los 32 criterios de aceptación son falsables y enlazan requisitos, diseños, etapas internas de Fase 2 y evidencia.
+- Fase 2 contiene un procedimiento ejecutable de extremo a extremo desde reconciliación hasta uso real; no quedan tareas que deban inventarse durante la implementación.
+- Plan, OCP, matriz de aceptación, prompts, investigación, guía y crónica son consistentes.
+- No se confunden fases de proyecto con etapas internas de ejecución.
+- El plan está guardado y verificado mediante lectura de vuelta.
 
-Completar el diseño no equivale a publicar el plugin, validar la API, instalar en Free, demostrar escritura, desplegar o aceptar código. Son gates posteriores; la viabilidad Free no se marca PASS por inferencia.
+La Fase 1 no exige que ChatGPT Free, Jules, OpenAI o el plugin hayan sido conectados ni que el código esté implementado. Sí exige que las dependencias estén investigadas, que el camino de ejecución esté definido y que toda incertidumbre material tenga un gate, salida y conducta ante fallo dentro de Fase 2.
+
+**Salida exclusiva de Fase 1:** el plan rector que guía la totalidad de Fase 2 sin rediseño ni redescubrimiento.
 
 ## 17. Fuentes técnicas consultadas
 
@@ -538,41 +555,55 @@ El helper HTTP no debe aplicar una única política de retry a todos los método
 
 El registro operativo incluye IDs y tiempos mínimos, estados, errores de clase, correlación y checkpoint. No debe copiar cuerpos completos, prompts sensibles ni secretos a telemetría. Las pruebas con repositorios privados requieren fuente y rama de prueba autorizadas.
 
-## 22. Procedimiento de implementación y release posterior
+## 22. Procedimiento integral de Fase 2
 
-### Fase 2 — reconciliación
+El trabajo operativo se organiza por etapas 2.1–2.5 dentro de una única Fase 2. La secuencia es dependiente; una etapa no autoriza por sí sola declarar el sistema utilizable.
 
-1. Obtener el head actual de Khora PR #338 y comparar sus archivos con el diseño de este plan.
-2. Crear matriz de deltas: conforme, falta, contradicción, no verificable.
-3. Implementar primero la validación interna source/branch, política de retries por método, contratos input-only, estados, diagnósticos y pruebas.
-4. Corregir la paginación con `pageToken` exclusivamente; retirar o aislar helpers antiguos que usen parámetros no documentados.
-5. No incluir fixes de Ruff ajenos al diff de Jules sin coordinación con su frente responsable.
-6. Mantener `JULES_API_KEY` fuera de Git y no leer su valor para depurar; la prueba debe informar éxito/fallo y metadatos mínimos.
-7. Auditar OAuth 2.1 del endpoint: metadata de recurso/autorización, PKCE S256, resource, issuer, audience, expiración y scopes.
-8. Implementar autorización por sujeto y recurso; no devolver fuentes Jules que el sujeto KHORA no puede usar.
-9. Preparar paquete MCP público con un solo servidor remoto, identidad verificada, dominio, metadata, privacidad/soporte, escaneo y revisión oficial. No usar GPT Actions ni Codex.
+### Etapa 2.1 — Preflight y reconciliación
+1. Leer el head vigente de KHORA PR #338 y obtener diff/checks actuales.
+2. Revalidar Jules API v1alpha, contrato MCP KHORA y especificación viva de OpenAI.
+3. Probar el camino de herramientas MCP desde ChatGPT Free en chat normal tan pronto como el entorno lo permita; registrar resultado real.
+4. Verificar identidad del usuario, OAuth, ACL por recurso y dominio antes de abrir el endpoint al plugin público.
+5. Crear matriz de deltas por requisito/archivo y fijar el orden mínimo de cambios.
 
-### Fase 3 — validación integrada
+### Etapa 2.2 — Implementación
+1. Corregir validación source/branch server-side, con Source actual de Jules y branch exacta.
+2. Separar retries: GET limitados; POST de create/message/approve no se repiten automáticamente cuando el resultado es ambiguo.
+3. Corregir paginación oficial `pageToken`; retirar o aislar cursores no documentados.
+4. Completar los siete schemas/tools, scopes y gates normativos, controles de estado y aprobación.
+5. Implementar OAuth/PKCE y aislamiento sujeto→KHORA→fuente→repo→rama; negar por defecto lo no asignado.
+6. Verificar que `JULES_API_KEY` solo exista server-side; probarla sin leer ni registrar el valor.
+7. Preparar y enviar el plugin MCP público a conexión/escaneo/revisión cuando la ruta haya sido confirmada.
+8. Resolver CI del diff y coordinar findings externos sin atribuirlos ni esconderlos.
 
-1. Obtener una fuente y rama de prueba reales a partir de Jules.
-2. Crear una sesión inocua y comprobar el estado `AWAITING_PLAN_APPROVAL`; el test de payload comprueba `requirePlanApproval=true` aunque la respuesta omita ese campo input-only.
-3. Revisar el plan con el operador y recibir aprobación explícita.
-4. Aprobar, reconsultar y verificar ejecución/actividad real.
-5. Simular/ejecutar una solicitud de feedback y responder en la misma sesión.
-6. Instalar el plugin publicado en cuenta ChatGPT Free real desde el directorio; completar OAuth sin Developer Mode.
-7. Confirmar las siete tools, scopes y aislamiento por sujeto/fuente/repo/branch.
-8. Ejecutar escritura real no destructiva, aprobación humana y feedback bidireccional en el mismo session ID.
-9. Probar cuota Free y reanudar desde checkpoint.
-10. Probar timeout ambiguo, 429/5xx, paginación, fuente desconectada, branch inexistente, OAuth revocado y usuario sin permiso.
+### Etapa 2.3 — Pruebas y E2E
+1. Ejecutar T01–T32 en el head identificado; guardar outputs, run IDs y pruebas pertinentes.
+2. Ejecutar llamada no destructiva real a Jules y validar credencial.
+3. Desde ChatGPT Free real, instalar el plugin aprobado, completar OAuth y descubrir las siete herramientas.
+4. Ejecutar un ciclo real sobre sandbox, desde el prompt hasta PR/outputs y verificación independiente.
+5. Probar fuentes/ramas inválidas, scopes insuficientes, prompt injection, timeout ambiguo, 429/5xx, cuotas Free, interrupción y reanudación.
+6. Actualizar OCP, matriz y crónica con resultados observados; todos los PASS tienen evidencia.
 
-### Fase 4 — release/reversión
+### Etapa 2.4 — Integración y release
+1. Revisar diff completo, CI, seguridad, findings, permisos y autorizaciones de publicación, merge y despliegue.
+2. No fusionar ni desplegar mientras exista un gate duro fallido o no verificable.
+3. Integrar con el procedimiento oficial de KHORA y desplegar solo tras las autorizaciones aplicables.
+4. Publicar/activar el plugin aprobado, comprobar su listing y descubrir tools desde el cliente Free.
+5. Ejecutar smoke de lectura y escritura no destructiva; demostrar rollback/revocación.
 
-1. Publicar el plugin aprobado y comprobar que listing/tools reflejan la versión real; después de cambios, solicitar/resolver escaneo y verificar actualización. No depender de Developer Mode ni de MCP privado de pago.
-2. Confirmar CI, diff, revisión humana y autorización aplicable antes de merge.
-3. Desplegar solo con autorización y compuertas de Khora; revisar la URL canónica y estado de producción.
-4. Ejecutar prueba de humo no destructiva: health/lectura de fuentes; crear sesión real solo en fuente/rama aprobada.
-5. **Rollback:** si una regresión afecta el endpoint MCP común, detener nuevas acciones Jules, revocar/deshabilitar scopes Jules en la app/tokens según la capacidad existente, revertir el commit mediante el procedimiento de Khora y comprobar que las herramientas previas funcionan. No borrar sesiones o PR creados. Si hay sospecha de clave comprometida, rotarla en el proveedor/entorno autorizado y verificar sin imprimirla.
-6. Rehabilitar escritura solo después de releer el despliegue, descubrir las herramientas desde ChatGPT Free y pasar smoke. Ante abuso, revocar sujeto/OAuth/scopes o publicación.
+### Etapa 2.5 — Puesta en servicio y aceptación
+1. Desarrollar una tarea real en repositorio autorizado usando el flujo ChatGPT Free → MCP KHORA → Jules → MCP KHORA → ChatGPT Free.
+2. Comprobar plan aprobado por humano, feedback resuelto en la misma sesión y PR/diff verificable.
+3. Publicar guía y registrar límites, checkpoints, recuperación, soporte y revocación.
+4. Declarar `UTILIZABLE` solo con todos los gates obligatorios PASS y evidencias leídas de vuelta.
+
+### Reversión
+
+Si una regresión afecta el endpoint MCP común, detener nuevas escrituras Jules, revocar/deshabilitar scopes y/o acceso del plugin según el mecanismo disponible, revertir mediante el procedimiento de KHORA y comprobar que las herramientas previas funcionan. No borrar sesiones o PR creados. Si hay sospecha de compromiso de clave, rotarla en la bóveda/proveedor autorizado sin imprimirla. Rehabilitar solo tras revalidar despliegue, OAuth, herramientas y smoke test.
+
+### Bloqueo externo de plataforma
+
+Si OpenAI no ofrece un mecanismo soportado para que ChatGPT Free invoque las herramientas MCP de escritura necesarias, registrar evidencia del bloqueo, detener el trabajo que presupone ese acceso y conservar Fase 2 como `BLOCKED`. No migrar a plan pagado, Developer Mode, Codex, GPT Actions ni relevo manual para declarar cumplimiento. El operador decidirá un cambio de requisito o se esperará una capacidad oficial compatible.
 
 ## 23. Matriz de trazabilidad requisito → diseño → aceptación
 
@@ -601,7 +632,7 @@ El registro operativo incluye IDs y tiempos mínimos, estados, errores de clase,
 
 ## 24. Cierre verificable de la Fase 1
 
-**Resultado de planeación: COMPLETO como especificación integral que guía las cuatro fases del resultado MCP Jules v1.0.** Esta revisión R2 incorpora el requisito del operador: desarrollar repositorios desde ChatGPT Free y no utilizar Codex en el futuro previsible. La completitud del diseño no afirma que el código exista, que OpenAI haya aprobado el plugin o que Free haya demostrado escritura.
+**Resultado de planeación: COMPLETO como especificación integral que guía exactamente las dos fases del proyecto MCP Jules v1.0.** Esta revisión R2 incorpora el requisito del operador: desarrollar repositorios desde ChatGPT Free y no utilizar Codex en el futuro previsible. La completitud del diseño no afirma que el código exista, que OpenAI haya aprobado el plugin o que Free haya demostrado escritura.
 
 ### Decisiones cerradas
 
@@ -617,7 +648,7 @@ El registro operativo incluye IDs y tiempos mínimos, estados, errores de clase,
 - Operación: cuotas Free, checkpoints y reanudación; sin worker permanente.
 - Exclusiones: Codex, GPT Actions, aprobación automática, autorespuesta ilimitada, auto-merge y auto-deploy.
 - Aceptación: 31 pruebas/gates; incluye plugin público, OAuth/aislamiento y prueba real desde Free.
-- Secuencia posterior exacta: Fase 2 reconciliación e implementación; Fase 3 validación integrada real; Fase 4 release y replicación controlada.
+- Secuencia posterior exacta: una sola Fase 2 de implementación end-to-end, con etapas internas de preflight/reconciliación, implementación, validación, release y puesta en servicio.
 
 ### Gates que no pueden pasar por decisión documental
 
@@ -631,4 +662,4 @@ El registro operativo incluye IDs y tiempos mínimos, estados, errores de clase,
 
 Ninguno se declara PASS sin evidencia. La disponibilidad general del directorio no prueba escritura del plugin en Free. Si Free bloquea el plugin o la escritura, el objetivo queda BLOCKED y se requiere nueva decisión arquitectónica; no se sustituye silenciosamente por plan pagado, GPT Actions, Codex o relevo manual.
 
-**Estado de Fase 1:** cerrada como diseño integral y trazable. **Siguiente fase autorizable:** Fase 2 — reconciliación e implementación, comenzando por el gate temprano de plugin público/ChatGPT Free y autorización OAuth. No autoriza aún merge, publicación ni despliegue productivo.
+**Estado de Fase 1:** cerrada como diseño integral y trazable. **Siguiente y única fase restante:** Fase 2 — implementación end-to-end, incluyendo reconciliación, pruebas, publicación, despliegue, aceptación y puesta en servicio. Ninguna de estas etapas se contabiliza como fase adicional.
