@@ -49,7 +49,7 @@
     "dialogue": {
       "path": "frentes/gobernanza/conversaciones/C-GOBERNANZA-ARTICULACION-REGISTRO-01-dialogo.jsonl",
       "status": "READ_BACK_VERIFIED",
-      "blob_sha": "43ab68209072ad88f54ec5f627d95efa95a74e1a"
+      "blob_sha": "0f4cee7523d0f07993e5104ff8e17087b88aa02a"
     },
     "chronicle": {
       "path": "frentes/gobernanza/cronica/C-GOBERNANZA-ARTICULACION-REGISTRO-01.md",
@@ -59,7 +59,7 @@
     "output": {
       "path": "frentes/gobernanza/entregas/CHATGPT-v0.8/C-GOBERNANZA-ARTICULACION-REGISTRO-01-salida-final.md",
       "status": "READ_BACK_VERIFIED",
-      "blob_sha": "67508380cd5c206c157de7d4543b6858e30e7a0c"
+      "blob_sha": "7054f7e7b4291589b94afdb683337b49122167fe"
     }
   },
   "authorization_gate": {
@@ -70,7 +70,7 @@
   },
   "verification": {
     "dialogue": {
-      "sha": "43ab68209072ad88f54ec5f627d95efa95a74e1a",
+      "sha": "0f4cee7523d0f07993e5104ff8e17087b88aa02a",
       "jsonl": "PASS",
       "records": 2,
       "entryChars": 4458,
@@ -96,14 +96,14 @@
       "sha": "61b40cc36908514c53c889516553313a84c5072c",
       "semanticCapability": true,
       "lisaCompatibility": true,
-      "sourceTruth": "PASS: semantic vectors are source of operator intent/requirements; they do not override DUG hierarchy or authorization gates."
+      "sourceTruth": "PASS: vectors are the source of truth for operator intent/requirements; they do not override DUG authority or authorization gates."
     },
     "chronicle": {
       "sha": "d653e2ff8a227243e07989015d5a487d212b0d31",
       "present": true
     },
     "output": {
-      "sha": "67508380cd5c206c157de7d4543b6858e30e7a0c",
+      "sha": "7054f7e7b4291589b94afdb683337b49122167fe",
       "complete": true
     },
     "indexes": {
