@@ -1,0 +1,71 @@
+{
+  "schema": "ser-y-mente-cycle-evidence/v1",
+  "event_id": "C-GOBERNANZA-ARTICULACION-REGISTRO-01",
+  "cycle_folio": "C-20261030-9D7E31A2",
+  "conversation_id": "01a18a1b-3000-7b4c-892a-8d31e5f6a7b8",
+  "conversation_id_kind": "UUIDv7 local; no ID nativo de plataforma",
+  "recorded_on": "2026-10-30",
+  "front": "Gobernanza",
+  "repository": "SeryMente/metodologia",
+  "scope": "Revisar AT v1.0 para que la trazabilidad semántica sea capacidad fundamental de AT, converger Persistencia documental y Registro conversacional, conservar vectores verbatim y asegurar compatibilidad futura LISA.",
+  "canonical_source": {
+    "path": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.html",
+    "version": "v362",
+    "signature": "NX-362m",
+    "blob_sha": "b7593409c428e209d35f53a5f13501652208d949"
+  },
+  "operator_corrections": {
+    "task": "Tareas es trabajo/ámbito en desarrollo dentro del frente Gobernanza, no un frente independiente.",
+    "semantic_traceability": "Capacidad fundamental de AT; no módulo conceptual de Gestión conversacional en la arquitectura objetivo.",
+    "convergence": "Persistencia documental custodia originales/derivados; Registro conversacional conserva ciclos E/S; AT enlaza vectores verbatim con cambios y resultados."
+  },
+  "lisa_compatibility": {
+    "reference": "Canon LISA v1.2, revisión documental histórica registrada en C-GOBERNANZA-LISA-ARTICULACION-01",
+    "chain": "Vector verbatim → L0 (cuando aplique y esté ratificado) → REQ → ACR → resultado",
+    "limits": "El modelo no inventa ni ratifica L0; documento fuente aprobado complementa, no sustituye L0; integración completa no implementada."
+  },
+  "artifacts": {
+    "at_definition": {
+      "path": "frentes/gobernanza/entregas/CHATGPT-v0.8/AT-v1.0.md",
+      "status": "UPDATED"
+    },
+    "conversation_registry": {
+      "path": "ambitos/gestion-conversacional/REGISTRO-CONVERSACIONES.csv",
+      "status": "UPDATED"
+    },
+    "verbatim_source": {
+      "path": "ambitos/gestion-conversacional/FUENTES-VERBATIM-ORIGEN.jsonl",
+      "source_id": "SRC-C-20261030-9D7E31A2-USER",
+      "status": "UPDATED"
+    },
+    "semantic_trace": {
+      "path": "ambitos/gestion-conversacional/REGISTRO-TRAZABILIDAD-SEMANTICA.jsonl",
+      "status": "UPDATED"
+    },
+    "dialogue": {
+      "path": "frentes/gobernanza/conversaciones/C-GOBERNANZA-ARTICULACION-REGISTRO-01-dialogo.jsonl",
+      "status": "E_AND_S_WRITTEN"
+    },
+    "chronicle": {
+      "path": "frentes/gobernanza/cronica/C-GOBERNANZA-ARTICULACION-REGISTRO-01.md",
+      "status": "CREATED"
+    },
+    "output": {
+      "path": "frentes/gobernanza/entregas/CHATGPT-v0.8/C-GOBERNANZA-ARTICULACION-REGISTRO-01-salida-final.md",
+      "status": "CREATED"
+    }
+  },
+  "authorization_gate": {
+    "rule": "P005",
+    "dug_change": "NOT_PERFORMED",
+    "reason": "No separate explicit confirmation for the exact normative amendment was obtained. The active control scope excludes broad substantive DUG/GOW amendment without explicit authorization.",
+    "proposed_change": "Amend ART-020/024 and only affected GOW entries: keep Registro conversacional in Gestión conversacional; classify Trazabilidad semántica as fundamental AT capability; create bidirectional references to principles, annexes, OCP and source/result records; add no new principle or functional domain."
+  },
+  "verification": {
+    "automatic_capture": "NOT_VERIFIED; IPZA does not itself create capture automation",
+    "cycle_persistence": "MANUAL_GITHUB_WRITE; read-back pending",
+    "global_sync": "NOT_CLAIMED",
+    "DUG_json": "Not modified in this cycle"
+  },
+  "next_step": "Obtain explicit P005 authorization for the narrowly scoped DUG/GOW amendment. Tareas remains work within Gobernanza; no ownership transfer."
+}
