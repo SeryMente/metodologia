@@ -29,6 +29,12 @@ El contrato de foliación FOL1 está preparado, todavía no activo, en el OCP [G
 
 En una conversación nueva de ChatGPT, la [IPZ candidata v0.5](frentes/metacanon/entregas/CHATGPT-v0.5/IPZ-CAMPO-CHATGPT.txt) establece el orden de entrada: primero adquirir [§ARR · Vocabulario de entrada](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#gow-arranque-chatgpt), después consultar el DUG y seguir sus principios en el orden establecido. El propósito y contrato de la IPZ están canonizados en [ART-025](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-025). Las demás reglas del campo refuerzan selectivamente continuidad, trazabilidad, responsabilidad e integridad; no activan capacidades ni crean otra autoridad. El [prompt universal](PROMPT-UNIVERSAL-REINSTANTANCIACION.md) y el [BCR](BOOTSTRAP-CONTEXTO-GLOBAL.md) desarrollan la retoma del frente y su estado.
 
+## Foliación secuencial FOL1 · estado preparado
+
+[P042](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#P042) y [ART-024](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-024) establecen folios globales y por cada OCP aplicable para conversación (`CV`), ciclo (`CY`) y los registros A/B. El ciclo conserva además su número natural local dentro de la conversación. La asignación única reside en [REGISTRO-MAESTRO-FOLIACION.json](ambitos/gestion-conversacional/REGISTRO-MAESTRO-FOLIACION.json); el [esquema maestro](ambitos/gestion-conversacional/ESQUEMA-FOLIACION-MAESTRA-v1.0.json) y el [esquema A/B](ambitos/gestion-conversacional/ESQUEMA-CICLO-CONVERSACIONAL-v1.1.json) definen los datos.
+
+**FOL1 está PREPARADO, no ACTIVO.** Sus contadores comienzan en cero; no se emiten folios nuevos ni se renumeran los registros históricos hasta completar el ciclo de preparación de la IPZ y el corte autorizado. El catálogo contiene 23 contextos conocidos, 20 elegibles y tres bloqueados; cobertura `KNOWN_INVENTORY_ONLY`, no exhaustiva. La asignación exige lectura del maestro, escritura condicionada a SHA y lectura de vuelta; es serialización cooperativa, no bloqueo de servidor.
+
 ## Vía portable ejecutable · kit 0.1.2
 
 Herramientas y lectura de arranque en `frentes/metacanon/kit/0.1.2/README.md`; reglas normativas en [Metacanon integrado](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#metacanon) y estado operativo en el registro del frente. Usar el prompt universal y el recibo breve; los paquetes transportados conservan revisión/cobertura y declaran frescura desconocida sin cotejo. No sustituyen el canon ni certifican comprensión semántica.
