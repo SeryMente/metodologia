@@ -4,14 +4,14 @@
 **Repositorio:** `SeryMente/metodologia`.  
 **OCP:** `frentes/gobernanza/`.  
 **Evento de apertura:** `C-GOBERNANZA-INICIO-01`.  
-**Ciclo vigente:** `C-GOBERNANZA-FOLIACION-SECUENCIAL-01` · FOL1 preparado, no activo. **Evento de control:** `C-GOBERNANZA-RETOMA-04`.  
+**Último ciclo con folio legado:** `C-20261029-5510927B` · `C-GOBERNANZA-AT-ENDURECIMIENTO-01`. **Evento más reciente (pre-corte):** `C-GOBERNANZA-FOLIACION-SECUENCIAL-01`; FOL1 preparado, sin número de ciclo ni folio asignado. **Evento de control:** `C-GOBERNANZA-RETOMA-04`.  
 **Sesión inicial (histórica):** `SES-20261028-3F2B7A91`, generación 1.
 **Titular actual según control:** `chatgpt-C-GOBERNANZA-RETOMA-04-SES-20261029-GV5KGJY8U5J` (alias operativo, no ID nativo).
 **Instancia actual según control:** `chatgpt-gobernanza-retoma-2026-10-29-GV5KGJY8U5J`.
 **Sesión actual según control:** `SES-20261029-GV5KGJY8U5J`, generación 5; ciclo `C-20261029-01A18A7F`.
 **Control actual leído de vuelta:** blob `4768d6db0a620652f753262b6250c8cb4b891ca9`; evento `C-GOBERNANZA-RETOMA-04`.
 
-## Ciclo actual · C-GOBERNANZA-FOLIACION-SECUENCIAL-01 · 2026-10-30
+## Evento más reciente · C-GOBERNANZA-FOLIACION-SECUENCIAL-01 · 2026-10-30 (pre-corte FOL1)
 
 Por instrucción expresa del operador se incorporó **P042 · Foliación Global y por OCP**, se amplió **ART-024** con el contrato de conversación/ciclo/A/B y asignación central, y se actualizaron Metacanon a **1.25** y GOW a **2.12**. La fuente canónica fue leída de vuelta: DUG v363 · NX-363m, 42 principios, 18 anexos y 125 términos GOW.
 
