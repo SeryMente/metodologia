@@ -435,6 +435,8 @@ Completar el diseño no equivale a publicar el plugin, validar la API, instalar 
 - [OpenAI Developers: Upload and submit your plugin](https://developers.openai.com/plugins/deploy/submission) — paquete, identidad, conexión/escaneo, revisión y publicación.
 - [OpenAI Developers: Authenticate your users](https://developers.openai.com/plugins/build/auth) — OAuth 2.1, PKCE S256 y autenticación MCP.
 - [OpenAI: ChatGPT Free Tier FAQ](https://help.openai.com/en/articles/9275245-chatgpt-free-tier-faq) — límites Free y creación de GPT personales no disponible.
+- [OpenAI: Plugin Extensions](https://developers.openai.com/plugins/build/extensions) — extensiones nativas de sidebar/composer/file viewer son distintas de las herramientas MCP del plugin; extensión web pendiente para Free/Go, funcionalidad existente del plugin no afectada.
+- [ChatGPT Learn: Model Context Protocol](https://learn.chatgpt.com/docs/extend/mcp) — ChatGPT web consume herramientas MCP remotas a través de plugins; el empaquetado debe declarar compatibilidad con web.
 - [OpenAI: GPTs in ChatGPT](https://help.openai.com/en/articles/8554407-gpts-in-chatgpt) y [GPT Actions](https://developers.openai.com/api/docs/actions/introduction) — no seleccionado como dependencia.
 
 La disponibilidad general del directorio no garantiza que este plugin tenga escritura en Free; esa incertidumbre sigue siendo un gate real.
