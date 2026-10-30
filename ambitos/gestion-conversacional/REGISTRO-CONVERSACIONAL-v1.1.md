@@ -4,7 +4,7 @@ El contrato normativo reside en [ART-024 del DUG](../../gobernanza/METAPROMPT-CA
 
 ## Estado
 
-**FOL1 está PREPARADO, no ACTIVO.** El registro maestro tiene todos los contadores en cero y ninguna asignación. No se asignarán folios globales/OCP FOL1 durante esta fase; la activación se realizará solo después de preparar la nueva IPZ y comenzar una conversación nueva bajo el formato. El esquema v1.1 permite registrar mientras tanto ciclos heredados: `cycle_number` natural, `side` A/B y `folio_status=LEGACY_PRE_CUTOVER`; se conservan los folios C- existentes y los sufijos físicos `-E/-S`. No se renumera ni se finge FOL1.
+**FOL1 está PREPARADO, no ACTIVO.** El registro maestro tiene todos los contadores en cero y ninguna asignación. No se asignarán folios globales/OCP FOL1 durante esta fase; la activación se realizará solo después de preparar la nueva IPZ y comenzar una conversación nueva bajo el formato. El esquema v1.1 permite registrar mientras tanto ciclos heredados: `cycle_number` natural cuando esté documentado (o `null` si el número no puede conocerse sin inferencia), `side` A/B y `folio_status=LEGACY_PRE_CUTOVER`; se conservan los folios C- existentes y los sufijos físicos `-E/-S`. No se renumera ni se finge FOL1.
 
 ## Fuentes
 
@@ -29,7 +29,8 @@ El contrato normativo reside en [ART-024 del DUG](../../gobernanza/METAPROMPT-CA
 3. Consultar la clave de idempotencia. Una asignación ya verificada se reutiliza exactamente; nunca se duplica.
 4. Incrementar el contador global y todos los contadores OCP aplicables en una sola actualización del maestro condicionada al SHA leído. No ejecutar escrituras paralelas.
 5. Releer el maestro desde main y cotejar contadores, clave, folios y referencias. Solo emitir folios después de ese read-back.
-6. Ante conflicto, relectura o permiso fallido, no reutilizar ni improvisar números. Mostrar FOLIACIÓN NO ASIGNADA/NO VERIFICADA.
+6. Si una conversación ya tiene folio global y posteriormente se determina un OCP adicional que sí le aplica, conservar el folio global y todos los folios OCP previamente emitidos; añadir únicamente el folio local faltante en ese OCP mediante una asignación idempotente `clase + objeto + ocp_id`. Nunca crear un segundo folio global para la misma conversación, ciclo o lado A/B.
+7. Ante conflicto, relectura o permiso fallido, no reutilizar ni improvisar números. Mostrar FOLIACIÓN NO ASIGNADA/NO VERIFICADA.
 
 El control por SHA es serialización cooperativa entre escritores que respetan el contrato; no es un bloqueo de servidor ni impide que un escritor lo eluda. La unicidad global queda limitada al catálogo y cobertura efectivamente accesibles/verificados.
 
@@ -41,7 +42,7 @@ El inventario central consultado cubre repositorios accesibles, no acredita que 
 
 ## Compatibilidad histórica y preservación
 
-Los folios C-AAAAMMDD-XXXXXXXX con sufijos -E/-S permanecen como identificadores heredados. La lectura lógica del lado se expresa A/B, mientras el sufijo heredado se conserva físicamente (A↔E, B↔S); no se modifica el ID original. No se asigna FOL1 retroactivamente a conversaciones abiertas antes del corte. Los mensajes auxiliares visibles se guardan aparte; no se concatenan a B. No se registra razonamiento interno oculto ni se simula captura automática.
+Los folios C-AAAAMMDD-XXXXXXXX con sufijos -E/-S permanecen como identificadores heredados. El esquema v1.1 separa la identidad de registro (`record_id`) del folio FOL1 (`record_folio_global`); no exige que el identificador legado se convierta en un folio FOL1. La lectura lógica del lado se expresa A/B, mientras el sufijo heredado se conserva físicamente (A↔E, B↔S); no se modifica el ID original. No se asigna FOL1 retroactivamente a conversaciones abiertas antes del corte. Los mensajes auxiliares visibles se guardan aparte; no se concatenan a B. No se registra razonamiento interno oculto ni se simula captura automática.
 
 ## Formato mínimo de salida tras activación
 
