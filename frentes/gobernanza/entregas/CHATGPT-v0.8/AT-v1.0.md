@@ -37,7 +37,7 @@ AT v1.0 se materializa como **un mecanismo integrado con etapas internas**, no c
 
 ### Etapa A · Adquirir origen y autoridad
 
-- Conservar la instrucción o decisión de origen literalmente cuando esté disponible, con su procedencia; separar el texto original de la interpretación.
+- Conservar la instrucción o decisión de origen literalmente como vector semántico, con procedencia y folio de ciclo; separar el texto íntegro, los segmentos trazables y la interpretación derivada. Cada cambio propagado por AT debe poder justificarse mediante uno o más vectores semánticos de origen, o declararse explícitamente sin anclaje suficiente y quedar bloqueado/pendiente.
 - Identificar el OCP donde nace el trabajo y el objeto conceptual que se pretende cambiar.
 - Leer desde `SeryMente/metodologia/main` la versión vigente del DUG y las secciones de Metacanon/GOW pertinentes; leer los README, núcleo, control y fuentes del OCP afectado.
 - Registrar versión, revisión o SHA observados. Si la fuente necesaria no puede verificarse, declarar `METODOLOGÍA NO VERIFICADA` y no ejecutar acciones que dependan de esa vigencia.
@@ -56,7 +56,7 @@ El GOW fija vocabulario y equivalencias; no crea por sí mismo normas ni permiso
 
 ### Etapa C · Trazar la propagación longitudinal
 
-Construir una matriz breve de origen → regla aplicable → nivel/destino → efecto requerido. La matriz debe distinguir:
+Construir una matriz breve de vector semántico de origen → regla aplicable → nivel/destino → efecto requerido. Cada vector debe enlazar a los resultados y cada resultado debe devolver el enlace a los vectores que lo justifican. La matriz debe distinguir:
 
 - destinos que deben modificarse;
 - destinos que solo requieren comprobar compatibilidad;
@@ -113,7 +113,7 @@ Cada cambio sustantivo atendido por AT deja una matriz recuperable con estos cam
 
 | Campo | Contenido |
 |---|---|
-| Origen e intención | Instrucción/decisión, procedencia y OCP de origen |
+| Vector semántico | ID de fuente, folio conversacional/ciclo, segmento literal y procedencia |\n| Origen e intención | Instrucción/decisión, interpretación separada y OCP de origen |
 | Base normativa | DUG, Metacanon, GOW y revisiones consultadas |
 | Clasificación | Principio, anexo, taxonomía, definición, OCP o materialización |
 | Regla aplicable | Principios y disposiciones subordinadas pertinentes |
@@ -130,14 +130,14 @@ Este registro es una herramienta de trazabilidad operativa; no crea otro canon, 
 
 AT v1.0 satisface su propósito cuando, ante un cambio conceptual concreto, permite demostrar que:
 
-1. se identificó su origen, intención, OCP y autoridad vigente;
-2. se clasificó correctamente el nivel al que pertenece, sin confundir principios, anexos, conceptos, OCP ni rutas físicas;
-3. se determinó si el cambio requiere gobierno directo, desarrollo subordinado, ajuste taxonómico/GOW o solo actualización local;
-4. se respetó el orden vigente de los principios y la subordinación documental de los anexos;
-5. se identificaron los destinos que cambian, los que permanecen intactos y los que están bloqueados, con justificación;
-6. cada escritura se hizo solo tras satisfacer la autorización y las compuertas particulares;
-7. AT coordinó y realizó los cambios permitidos y verificó por lectura de vuelta sus resultados;
-8. no se afirmó canonización, sincronización, propagación global ni verificación que no estuviera respaldada por evidencia.
+1. se identificó su origen, vector semántico literal, interpretación separada, OCP y autoridad vigente;\n2. cada cambio y resultado puede rastrearse bidireccionalmente hasta los vectores que lo justifican;
+3. se clasificó correctamente el nivel al que pertenece, sin confundir principios, anexos, conceptos, OCP ni rutas físicas;
+4. se determinó si el cambio requiere gobierno directo, desarrollo subordinado, ajuste taxonómico/GOW o solo actualización local;
+5. se respetó el orden vigente de los principios y la subordinación documental de los anexos;
+6. se identificaron los destinos que cambian, los que permanecen intactos y los que están bloqueados, con justificación;
+7. cada escritura se hizo solo tras satisfacer la autorización y las compuertas particulares;
+8. AT coordinó y realizó los cambios permitidos y verificó por lectura de vuelta sus resultados;
+9. no se afirmó canonización, sincronización, propagación global ni verificación que no estuviera respaldada por evidencia.
 
 ## 7. Validación conceptual de los dos casos requeridos
 
@@ -163,11 +163,56 @@ La v1.0 utiliza un solo mecanismo coordinador con etapas A–F y un único regis
 
 La posible descomposición se difiere. Solo se reabrirá si el uso real demuestra responsabilidades con ciclo de vida, estado, titularidad o contrato de interfaz independientes. No se crea un submódulo por verbo, por simetría o por anticipación.
 
-## 9. Estado
+## 9. Trazabilidad semántica como fundamento de AT
 
-**AT v1.0: DEFINICIÓN OPERATIVA CERRADA PARA EL ALCANCE SOLICITADO.**  
+La trazabilidad semántica es una **capacidad interna y fundamental de AT**, no un ámbito funcional transversal independiente ni, en el diseño objetivo de AT, un módulo subordinado a Gestión conversacional. Su objeto específico es conservar el anclaje causal y justificativo de los cambios que AT analiza, decide propagar y realiza: cada cambio debe remontarse a uno o varios vectores semánticos originados en instrucciones, decisiones o restricciones verbatim del operador.
+
+El contrato distingue tres artefactos que convergen, pero no se fusionan:
+
+1. **Persistencia documental:** conserva los originales y derivados documentales que el frente recibe o produce —incluidos adjuntos, fuentes, manifiestos, evidencias y documentos de trabajo— conforme a ART-022/014. Es la capacidad de custodia y recuperación documental.
+2. **Registro conversacional:** conserva el texto literal visible de cada ciclo registrado como pareja entrada del operador (`-E`) y salida visible del modelo (`-S`), con identidad local estable de conversación, folio de ciclo, secuencia, repositorio, frente y referencia recuperable al diálogo. Es la fuente documental de la conversación y su índice de localización.
+3. **Trazabilidad semántica de AT:** selecciona dentro de las entradas los segmentos verbatim pertinentes, los clasifica como vectores semánticos y enlaza cada vector con las decisiones, impactos, cambios, destinos, pruebas y resultados que justifica. No sustituye al registro íntegro ni a la custodia documental.
+
+La convergencia consiste en que los registros conversacionales y los documentos adjuntos son objetos que deben persistirse y recuperarse; AT consume esas fuentes y enlaza semánticamente los cambios. No implica que Persistencia documental, Registro conversacional y AT sean un único ámbito, ni que la ruta física de un registro determine su titularidad conceptual. Los registros de conversación pueden permanecer físicamente en el OCP de Gestión conversacional mientras se resuelve la alineación normativa de la clasificación de Trazabilidad semántica.
+
+### 9.1 Vector semántico y relación bidireccional
+
+- El texto íntegro de cada entrada se conserva sin corrección, normalización ni resumen en el registro conversacional.
+- De esa entrada se extraen uno o varios segmentos literales pertinentes. Cada segmento recibe un identificador estable y una clasificación; el extracto no reemplaza el original.
+- El vector apunta a los cambios, anexos, principios, OCP, archivos y evidencias que derivan de él.
+- Cada cambio o resultado incorpora referencias inversas a los vectores que lo justifican. Si una pieza no puede llevar metadatos propios, su registro de cambio o índice canónico debe contener el enlace inverso.
+- Una instrucción puede originar varios cambios y un cambio puede responder a varios vectores. Los vínculos parciales, inferidos, pendientes o no demostrables se marcan como tales; no se inventa causalidad.
+- La relación debe recorrer los niveles aplicables: vector → regla/principio → anexo subordinado → definición/taxonomía → OCP afectado → materialización/resultado; y desde cada resultado debe poder recorrerse el camino inverso hasta el vector original.
+- Los cambios que no puedan justificarse suficientemente en los vectores quedan sin propagación automatizada/ejecutiva hasta aclaración o ratificación. El modelo puede proponer una interpretación, pero no reescribe el vector ni eleva una inferencia a instrucción literal.
+
+### 9.2 Contrato mínimo de registro
+
+Cada vector semántico enlazado a un cambio registra, como mínimo: `trace_id`; `source_ref` al registro de entrada; `conversation_id` local; `cycle_folio`; `literal_excerpt`; clasificación; interpretación derivada separada; referencias a principios/anexos y versiones consultadas; OCP y destinos; resultado(s); autorización aplicable; estado de vínculo y verificación. El registro conversacional conserva, por separado, el texto íntegro y la pareja E/S.
+
+La trazabilidad se declara **VERIFICADA** solo cuando la fuente literal, el enlace de ida, el enlace de retorno y los resultados referenciados fueron leídos de vuelta y cotejados. Si solo se guardó la fuente, el vínculo está **PENDIENTE**; si no existe anclaje suficiente, queda **NO VERIFICADO/BLOQUEADO**.
+
+### 9.3 Compatibilidad con la integración futura de LISA
+
+AT v1.0 debe ser compatible con el Canon LISA y con la futura integración de LISA en la metodología, sin anticipar ni simular esa integración:
+
+- El vector semántico conserva la instrucción de primera mano y su procedencia; no se confunde automáticamente con un L0 ratificado.
+- Cuando LISA aplique, AT referencia el L0 correspondiente y, si procede, la cadena L0 → REQ → ACR → resultado/código. Los elementos derivados se identifican como derivados.
+- El modelo no inventa, firma ni ratifica un L0 en nombre del operador. Se respetan las compuertas de ratificación definidas por el Canon LISA/FIAT cuando se integren.
+- Un Documento Fuente Aprobado, si existe, complementa el vector/L0 con contenido mecánico verificable; no sustituye la intención del operador ni se presume aprobado por estar archivado.
+- La matriz de impacto de AT complementa la cadena de especificación LISA; no crea una cadena de autoridad paralela. Los cambios upstream activan revisión de compatibilidad de dependencias downstream.
+- La integración completa de LISA, FIAT, LSV, MAT u otros instrumentos sigue siendo trabajo futuro sujeto a sus propias autorizaciones y validaciones. AT v1.0 solo define los puntos de enlace y preserva la compatibilidad.
+
+### 9.4 Relación con el DUG y estado de alineación
+
+El DUG v362 actualmente ubica Trazabilidad semántica como módulo interno de Gestión conversacional en ART-020/024. La clasificación conceptual precisada por el operador para AT v1.0 requiere revisar esa ubicación: Registro conversacional permanece en Gestión conversacional; Trazabilidad semántica pasa a ser capacidad fundamental de AT. Persistencia documental sigue siendo un ámbito funcional transversal paralelo, con el que los registros conversacionales convergen en su custodia.
+
+Esta corrección se documenta aquí como definición operativa propuesta. **No se modifica el DUG ni el GOW sin autorización normativa expresa previa conforme a P005.** Hasta que esa enmienda se autorice y se materialice, el DUG vigente conserva precedencia y la reclasificación se considera propuesta pendiente de alineación normativa.
+
+## 11. Estado
+
+**AT v1.0: DEFINICIÓN OPERATIVA REVISADA; TRAZABILIDAD SEMÁNTICA INCORPORADA COMO CAPACIDAD FUNDAMENTAL.**  
 **Canonización en el DUG: NO REALIZADA.**  
 **Implementación automatizada independiente: NO REALIZADA NI REQUERIDA PARA ESTE CIERRE.**  
-**DUG, Metacanon, GOW y Canon LISA: SIN MODIFICACIONES EN ESTE CICLO.**
+**DUG v362 / ART-020 / ART-024 y GOW: SIN MODIFICACIONES; alineación normativa pendiente de autorización expresa. Canon LISA: sin modificaciones.**
 
-El siguiente trabajo vuelve al ámbito Tareas. AT v1.0 queda como mecanismo de articulación que se aplicará al desarrollar ese ámbito; no se presume que Tareas ya esté canonizado ni que sus artefactos locales tengan autoridad normativa superior.
+El siguiente trabajo dentro del frente Gobernanza puede volver a la tarea de desarrollar Tareas cuando se resuelva la alineación normativa necesaria. Tareas no es un frente independiente. AT v1.0 queda como mecanismo de articulación que se aplicará al desarrollar ese ámbito; no se presume que Tareas ya esté canonizado ni que sus artefactos locales tengan autoridad normativa superior.
