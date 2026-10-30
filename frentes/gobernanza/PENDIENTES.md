@@ -1,6 +1,18 @@
 # Pendientes · Frente Gobernanza
 
-## Estado operativo actualizado · C-GOBERNANZA-AT-ENDURECIMIENTO-01 · 2026-10-29
+## Estado actual · C-GOBERNANZA-FOLIACION-SECUENCIAL-01 · 2026-10-30
+
+**Persistido y releído:** DUG v363 · NX-363m; P042; ART-024; Metacanon 1.25; GOW 2.12/125 términos; 42 principios y 18 anexos. FOL1 maestro/schema/registro A/B v1.1 y guía v1.1 existen en `ambitos/gestion-conversacional/`.
+
+**FOL1:** `PREPARADO_PENDIENTE_ACTIVACION_IPZ`, generación 0, contadores en cero, sin asignaciones. El inventario incluye 23 contextos OCP conocidos, 20 elegibles y tres con asignación bloqueada; cinco contextos adicionales permanecen sin clasificación/admisión. Cobertura no exhaustiva. Los folios heredados C-/E/S no se renumeran.
+
+**Pendientes para el corte:** preparar la nueva IPZ como último artefacto; comprobar por lectura de vuelta la copia candidata y que no se alteró ART-025 antes de ese paso; luego realizar el corte/activación únicamente cuando la nueva configuración esté realmente disponible para la conversación nueva. La instalación nativa de IPZ no es verificable por las herramientas actuales y requiere confirmación observable del operador.
+
+**Pruebas pendientes:** validación completa JSON Schema 2020-12 con validador independiente; prueba de idempotencia y colisión por concurrencia; prueba real de asignación global y por todos los OCP aplicables en una conversación nueva; ampliación del catálogo cuando se resuelvan los contextos bloqueados o aparezcan nuevos OCP; verificación de que cada salida aplica los dos indicadores de frescura d.h.m. Sin estas pruebas no se declara captura automática, exclusividad de servidor ni cobertura organizacional exhaustiva.
+
+---
+
+## Estado histórico · Estado operativo actualizado · C-GOBERNANZA-AT-ENDURECIMIENTO-01 · 2026-10-29
 
 **Corte vigente:** DUG v362 · NX-362m, blob `b7593409c428e209d35f53a5f13501652208d949`; Metacanon 1.24; GOW 2.11 con 122 términos; taxonomía estructural 1.3; 41 principios y 18 anexos jerarquizados. AT v1.1 endurecida: vector literal como fuente de verdad de intención/requisito, doble enlace, recuperación de dictados, convergencia de persistencia, compatibilidad futura LISA, protocolo por ciclo y pruebas falsables. DUG/GOW aún requieren autorización P005 para alinear ART-020/024. Tareas es trabajo en desarrollo dentro del frente Gobernanza, no un frente independiente.
 
