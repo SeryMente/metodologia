@@ -27,32 +27,39 @@
   "artifacts": {
     "at_definition": {
       "path": "frentes/gobernanza/entregas/CHATGPT-v0.8/AT-v1.0.md",
-      "status": "UPDATED"
+      "status": "UPDATED_AND_READ_BACK",
+      "blob_sha": "063685ce2ab6456a23cf2361478b4429e4510cf0"
     },
     "conversation_registry": {
       "path": "ambitos/gestion-conversacional/REGISTRO-CONVERSACIONES.csv",
-      "status": "UPDATED"
+      "status": "UPDATED_AND_READ_BACK",
+      "blob_sha": "5d5a8413feff69b814f45a760f7d6e57493e2aef"
     },
     "verbatim_source": {
       "path": "ambitos/gestion-conversacional/FUENTES-VERBATIM-ORIGEN.jsonl",
       "source_id": "SRC-C-20261030-9D7E31A2-USER",
-      "status": "UPDATED"
+      "status": "UPDATED_AND_READ_BACK",
+      "blob_sha": "e4d09412d673ff71f498b336a64c0410e1ef9922"
     },
     "semantic_trace": {
       "path": "ambitos/gestion-conversacional/REGISTRO-TRAZABILIDAD-SEMANTICA.jsonl",
-      "status": "UPDATED"
+      "status": "UPDATED_AND_READ_BACK",
+      "blob_sha": "985c6736949dc1103ae293204a234ef0df244ea2"
     },
     "dialogue": {
       "path": "frentes/gobernanza/conversaciones/C-GOBERNANZA-ARTICULACION-REGISTRO-01-dialogo.jsonl",
-      "status": "E_AND_S_WRITTEN"
+      "status": "E_AND_S_READ_BACK_VERIFIED",
+      "blob_sha": "4929c8b8f5f83c1761d1a6ad735245d670c9cb1b"
     },
     "chronicle": {
       "path": "frentes/gobernanza/cronica/C-GOBERNANZA-ARTICULACION-REGISTRO-01.md",
-      "status": "CREATED"
+      "status": "CREATED_AND_READ_BACK",
+      "blob_sha": "d653e2ff8a227243e07989015d5a487d212b0d31"
     },
     "output": {
       "path": "frentes/gobernanza/entregas/CHATGPT-v0.8/C-GOBERNANZA-ARTICULACION-REGISTRO-01-salida-final.md",
-      "status": "CREATED"
+      "status": "CREATED_AND_READ_BACK",
+      "blob_sha": "676a51ebff75c22cee4391f6e14c07cfffb7aec5"
     }
   },
   "authorization_gate": {
@@ -62,10 +69,67 @@
     "proposed_change": "Amend ART-020/024 and only affected GOW entries: keep Registro conversacional in Gestión conversacional; classify Trazabilidad semántica as fundamental AT capability; create bidirectional references to principles, annexes, OCP and source/result records; add no new principle or functional domain."
   },
   "verification": {
-    "automatic_capture": "NOT_VERIFIED; IPZA does not itself create capture automation",
-    "cycle_persistence": "MANUAL_GITHUB_WRITE; read-back pending",
-    "global_sync": "NOT_CLAIMED",
-    "DUG_json": "Not modified in this cycle"
+    "at_definition": {
+      "sha": "063685ce2ab6456a23cf2361478b4429e4510cf0",
+      "semantic_section": true,
+      "lisa_section": true,
+      "numbering": true
+    },
+    "conversation_registry": {
+      "sha": "5d5a8413feff69b814f45a760f7d6e57493e2aef",
+      "row_present": true,
+      "rows": 2
+    },
+    "verbatim_source": {
+      "sha": "e4d09412d673ff71f498b336a64c0410e1ef9922",
+      "source_id_present": true,
+      "source_chars": 4458
+    },
+    "semantic_trace": {
+      "sha": "985c6736949dc1103ae293204a234ef0df244ea2",
+      "jsonl_parse": "PASS",
+      "added_traces": 4
+    },
+    "dialogue": {
+      "sha": "4929c8b8f5f83c1761d1a6ad735245d670c9cb1b",
+      "jsonl_parse": "PASS",
+      "records": 2,
+      "entry": "E",
+      "output": "S",
+      "assistant_output_exact": true
+    },
+    "chronicle": {
+      "sha": "d653e2ff8a227243e07989015d5a487d212b0d31",
+      "present": true
+    },
+    "output": {
+      "sha": "676a51ebff75c22cee4391f6e14c07cfffb7aec5",
+      "assistant_text_present": true
+    },
+    "gc_readme": {
+      "sha": "90dea258dc2e6672cd4847df8fbbe7f1b7337b53",
+      "transition_note": true
+    },
+    "gc_semantic_guide": {
+      "sha": "fbfdd6ca87ccc1cf8b348e726a42da7c89dd9d90",
+      "transition_note": true
+    },
+    "governance_readme": {
+      "sha": "6f6771a531b674aa86267f5de082a05abfa5aa98",
+      "current_cycle": true
+    },
+    "governance_core": {
+      "sha": "a0462b338a6851a800f882db86eb3768e1babe67",
+      "current_cycle": true
+    },
+    "pending": {
+      "sha": "17b02e1d6c7f7229bb2757e900641e28a7e7979b",
+      "at_status": true,
+      "dug_approval_pending": true
+    },
+    "automatic_capture": "NOT_AVAILABLE_OR_NOT_VERIFIED; IPZA alone does not implement a background writer",
+    "cycle_persistence": "MANUAL_GITHUB_WRITE_AND_READBACK_CONFIRMED",
+    "global_sync": "NOT_CLAIMED"
   },
   "next_step": "Obtain explicit P005 authorization for the narrowly scoped DUG/GOW amendment. Tareas remains work within Gobernanza; no ownership transfer."
 }
