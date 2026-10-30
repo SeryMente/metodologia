@@ -110,10 +110,11 @@
   "artifacts": {
     "output": {
       "path": "frentes/gobernanza/entregas/CHATGPT-v0.8/C-GOBERNANZA-FOLIACION-SECUENCIAL-01-salida-final.md",
-      "blob_sha": "baac1640f476a5a84a9ffc5ba4de3e0fb6bd44f0",
+      "blob_sha": "87ac7126763599839fefef3fa18f475b1c4d2418",
       "status": "READ_BACK_VERIFIED",
       "dialogue_B3_matches_output": true,
-      "ages_at_local_observation": "IPZ 0.14.48; DUG 0.0.14; observed 2026-10-30T10:27:05-06:00"
+      "ages_at_local_observation": "IPZ 0.14.52; DUG 0.0.18; observed 2026-10-30T10:31:15-06:00",
+      "dialogue_B3_matches": true
     },
     "chronicle": {
       "path": "frentes/gobernanza/cronica/C-GOBERNANZA-FOLIACION-SECUENCIAL-01.md",
@@ -122,7 +123,7 @@
     },
     "dialogue": {
       "path": "frentes/gobernanza/conversaciones/C-GOBERNANZA-FOLIACION-SECUENCIAL-01-dialogo.jsonl",
-      "blob_sha": "cff11b7cdc6b7944a46b4f6c8fa256cff3b68055",
+      "blob_sha": "8d9c39e40a3d1a0fb8a601fc2c46d366bfd93826",
       "status": "READ_BACK_VERIFIED; SIX A/B LEGACY RECORDS"
     },
     "conversation_index": {
