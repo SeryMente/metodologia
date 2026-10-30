@@ -31,7 +31,7 @@ El plugin se selecciona o menciona en los mensajes que requieren invocación. No
 
 ## 3. Resultado esperado de v1.0
 
-La versión 1.0 debe permitir que un asistente autorizado:
+La versión 1.0 debe permitir que una cuenta personal ChatGPT Free, mediante el plugin MCP público aprobado y en conversación normal, complete el siguiente ciclo sin Codex:
 
 1. Descubra las fuentes de Jules accesibles y seleccione un repositorio devuelto realmente por la API.
 2. Compruebe la fuente y la rama antes de iniciar una sesión.
@@ -471,14 +471,14 @@ Fuentes oficiales: [catálogo REST](https://developers.google.com/jules/api/refe
 | ID | Decisión v1.0 | Motivo | Consecuencia / prueba |
 |---|---|---|---|
 | ADR-01 | Un solo servidor MCP central de Khora, ruta `/api/mcp`. | Reduce duplicación y mantiene controles comunes. | No desplegar servidor por frente; T01/T02. |
-| ADR-02 | Siete herramientas públicas; operaciones de lectura de fuente/branch adicionales se hacen internamente en el cliente. | Mantiene el contrato conversacional acotado sin sacrificar validación. | T01/T05/T25. |
+| ADR-02 | Siete herramientas públicas; la lectura/validación de fuente y branch se realiza internamente en el servidor/adaptador Jules. | Mantiene el contrato acotado y evita confiar en argumentos del modelo. | T01/T05/T19/T25. |
 | ADR-03 | Cada creación fuerza `requirePlanApproval=true`. | Impide que la sesión empiece sin revisión del plan. | El parámetro no se expone al modelo; T06. |
 | ADR-04 | Crear con `automationMode=AUTO_CREATE_PR`. | El componente está destinado a desarrollo delegado y debe entregar un PR cuando se genera un parche aplicable. | PR no equivale a merge; T20/T18. |
 | ADR-05 | Lectura y escritura quedan separadas por `jules:read` y `jules:write`, y conservan el ciclo normativo existente de Khora. | Principio de privilegio mínimo y coherencia con el servidor común. | Los tokens no reciben scopes Jules por defecto; T03/T04. |
 | ADR-06 | La aprobación requiere consentimiento explícito en la conversación y comprobación del estado/plan inmediatamente antes de invocar la herramienta. | La aprobación habilita ejecución en un proveedor externo. | El MCP de v1.0 comprueba el estado, pero no puede probar por sí solo quién escribió el consentimiento; se debe obedecer además la confirmación de la plataforma cuando se presente. No declarar una barrera criptográfica de aprobación. T07/T22. |
 | ADR-07 | GET permite reintentos acotados; POST de creación/mensaje/aprobación no se reintenta automáticamente ante timeout de red o 5xx ambiguo. | El contrato no documenta clave de idempotencia y ciertos POST responden vacío. | Read-after-ambiguous-write y decisión explícita antes de repetir; T10/T21. |
 | ADR-08 | El endpoint de creación valida fuente y rama desde el servidor antes del POST. | No confiar únicamente en argumentos generados por el modelo. | Obtener Source actual y comparar branch exacta; T19/T25. |
-| ADR-09 | El modo objetivo es chat web conversacional normal con app MCP personalizada habilitada para escritura. | La disponibilidad depende del plan y espacio de trabajo; Agent/Deep Research no son un runtime de escritura equivalente. | Gate externo de cliente/plan; T15/T23/T24. |
+| ADR-09 | El modo objetivo es chat web conversacional normal con plugin MCP público aprobado e instalado en ChatGPT Free. | El directorio y la capacidad de escritura de cada plugin dependen de plan/cuenta/región; Agent/Deep Research no son runtime de escritura equivalente. | Gate externo de publicación y Free real; T15/T23/T24/T26. |
 | ADR-10 | Sin worker persistente, autorespuesta ilimitada, auto-merge ni auto-deploy en v1.0. | Mantiene el MVP acotado y evita conceder autonomía no solicitada. | Seguimiento invocado por herramientas durante turnos activos; extensiones fuera de alcance. |
 | ADR-11 | OCP: núcleo como estado vivo único y crónicas como historial verificable; no crear otra DB solo por simetría. | Respeta el objeto canónico y el requisito de continuidad. | Registrar IDs/cursor/estado/resultados mínimos; T17. |
 | ADR-12 | Distribución v1.0 como plugin MCP público en el directorio ChatGPT, conectado al endpoint único KHORA /api/mcp. | MCP privado con escritura no es la ruta Free; directorio de plugins incluye varios planes, capacidades individuales no garantizadas. | Paquete/revisión/publicación y prueba Free; T15/T23/T26/T31. |
@@ -524,6 +524,7 @@ El helper HTTP no debe aplicar una única política de retry a todos los método
 | Acceso cruzado entre frentes | Cada petición queda sujeta al token, permisos y OCP de destino; no copiar control ni secretos entre frentes. | Tests de autorización/contexto y revisión de uso. |
 | Exposición de respuesta upstream | Código de diagnóstico público; nunca propagar cuerpo upstream no saneado. | T11/T12. |
 | Paginación truncada | Conservar `nextPageToken`; no confundir ausencia de resultados de una página con final de colección. | T09. |
+| Acceso indebido por plugin público | OAuth identifica sujeto; autorización server-side por fuente, repositorio y rama; rechazo por defecto. | T27. |
 | Saturación / coste | PageSize 1–100; backoff limitado para GET; sin loops infinitos ni trabajador persistente. | Pruebas de límite/reintento. |
 | Plugin no visible/no habilitado en Free | Confirmar listing, plan, región y superficie; bloquear, no sustituir con MCP privado de otro plan. | T23/T26. |
 | Sujeto OAuth sin permiso de fuente | Rechazar sin filtrar fuente, rama, sesión ni actividad ajena. | T27. |
