@@ -403,6 +403,14 @@
           },
           "speaker": {
             "const": "operator"
+          },
+          "record_folios_by_ocp": {
+            "type": "object",
+            "minProperties": 1,
+            "additionalProperties": {
+              "type": "string",
+              "pattern": "^A-OCP-[A-Z0-9-]+-[0-9]{8}$"
+            }
           }
         }
       }
@@ -425,6 +433,14 @@
           },
           "speaker": {
             "const": "assistant"
+          },
+          "record_folios_by_ocp": {
+            "type": "object",
+            "minProperties": 1,
+            "additionalProperties": {
+              "type": "string",
+              "pattern": "^B-OCP-[A-Z0-9-]+-[0-9]{8}$"
+            }
           }
         }
       }
