@@ -3,13 +3,17 @@
 Este README es un índice de navegación, **no un segundo estado vivo**. El método canónico Metacanon está integrado en el [DUG](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#metacanon), §9; la titularidad/folio solo se obtiene de `CONTROL-RESPONSABILIDAD.json`. Si hay discrepancia, relee esas fuentes desde `main` y no infieras qué copia prevalece.
 
 
-Este README es un índice y no sustituye la fuente normativa. **Corte normativo releído el 2026-10-29:** DUG v360 · NX-360m, Metacanon 1.24, GOW 2.9 (111 términos, 17 anexos jerarquizados), taxonomía 1.3. ART-015 separa taxonomía conceptual e infraestructura; Propósito es elemento conceptual canónico y no exige directorio propio. El ciclo actual documentado en este índice es C-METACANON-ARRANQUE-360-01 (2026-10-29); los ciclos anteriores se conservan como historia.
+Este README es un índice y no sustituye la fuente normativa. **Corte normativo releído el 2026-10-29:** DUG v362 · NX-362m, Metacanon 1.24, GOW 2.11 (122 términos definidos e indexados, 18 anexos jerarquizados), taxonomía 1.3. §ARR establece el vocabulario inicial para ChatGPT; ART-025 canoniza el propósito y contrato de la IPZ. ART-015 separa taxonomía conceptual e infraestructura; Propósito es elemento conceptual canónico y no exige directorio propio. El ciclo actual documentado en este índice es C-GOBERNANZA-IPZ-GOW-BOOTSTRAP-01 (2026-10-29); los ciclos anteriores se conservan como historia.
 
-## Último ciclo persistido · C-METACANON-AUTOARRANQUE-FT-01
+## Último ciclo persistido · C-GOBERNANZA-IPZ-GOW-BOOTSTRAP-01
 
-Corte del 2026-10-29 · arranque automático por IPZ. [Salida final](entregas/CHATGPT-v0.4/C-METACANON-AUTOARRANQUE-FT-01-salida-final.md) · [Matriz de escenarios](entregas/CHATGPT-v0.4/MATRIZ-ESCENARIOS-INICIO-FT-v0.1.md) · [IPZ candidata 1.266 caracteres](entregas/CHATGPT-v0.4/IPZ-CAMPO-CHATGPT.txt) · [Diálogo literal](conversaciones/C-METACANON-AUTOARRANQUE-FT-01-dialogo.jsonl) · [Crónica](cronica/C-METACANON-AUTOARRANQUE-FT-01.md) · [Evidencia](evidencias/C-METACANON-AUTOARRANQUE-FT-01.json) · [Prompt universal](../../PROMPT-UNIVERSAL-REINSTANTANCIACION.md).
+Corte del 2026-10-29 · DUG v362 · NX-362m · GOW 2.11. [Salida final](entregas/CHATGPT-v0.5/C-GOBERNANZA-IPZ-GOW-BOOTSTRAP-01-salida-final.md) · [IPZ candidata v0.5 · 1.362 caracteres](entregas/CHATGPT-v0.5/IPZ-CAMPO-CHATGPT.txt) · [Diálogo literal](conversaciones/C-GOBERNANZA-IPZ-GOW-BOOTSTRAP-01-dialogo.jsonl) · [Crónica](cronica/C-GOBERNANZA-IPZ-GOW-BOOTSTRAP-01.md) · [Evidencia](evidencias/C-GOBERNANZA-IPZ-GOW-BOOTSTRAP-01.json) · [§ARR](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#gow-arranque-chatgpt) · [ART-025](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-025).
 
-**Estado operativo:** disparador y procedimiento guardados y leídos de vuelta. IPZ nativa y prueba semántica en chat nuevo **PENDIENTES**; no se declara activación global por la existencia del archivo.
+**Estado documental:** propósito del GOW ampliado; §ARR, 122 definiciones estructuradas y ART-025 canonizados y leídos de vuelta; IPZ v0.5 alineada y leída de vuelta. El ensayo conductual en una conversación realmente nueva sigue siendo una verificación separada.
+
+## Ciclo anterior · C-METACANON-AUTOARRANQUE-FT-01
+
+[Salida](entregas/CHATGPT-v0.4/C-METACANON-AUTOARRANQUE-FT-01-salida-final.md) · [Matriz de 16 escenarios](entregas/CHATGPT-v0.4/MATRIZ-ESCENARIOS-INICIO-FT-v0.1.md) · [IPZ v0.4](entregas/CHATGPT-v0.4/IPZ-CAMPO-CHATGPT.txt) · [Diálogo](conversaciones/C-METACANON-AUTOARRANQUE-FT-01-dialogo.jsonl) · [Crónica](cronica/C-METACANON-AUTOARRANQUE-FT-01.md) · [Evidencia](evidencias/C-METACANON-AUTOARRANQUE-FT-01.json).
 
 ## Ciclo anterior · C-METACANON-ARRANQUE-360-01
 
@@ -19,9 +23,9 @@ Corte del 2026-10-29 · Metacanon 1.24. [Salida final](entregas/CHATGPT-v0.3/C-M
 ## Arranque recomendado para un hilo nuevo
 
 1. [INICIO.md](../../INICIO.md) — puerta de entrada canónica.
-2. [Gobierno general de Samantha](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#P001) — DUG v360 · NX-360m.
+2. [Gobierno general de Samantha](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#P001) — DUG v362 · NX-362m.
 3. [Metacanon integrado en el DUG](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#metacanon) — v1.24; leer LEER PRIMERO, §9, §§29–51 y §4.
-4. [GOW integrado en el DUG](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#glosario) — v2.9; 111 términos y 17 anexos jerarquizados; revisar al inicio y cierre.
+4. [GOW integrado en el DUG](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#glosario) — v2.11; 122 términos definidos e indexados. Leer §ARR como vocabulario de entrada y revisar el GOW al inicio y cierre.
 5. [Taxonomía estructural de S y M](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-015) — ART-015 global; ART-020 distingue Persistencia documental y Gestión conversacional como ámbitos funcionales transversales de Propósito como elemento conceptual canónico asociado al alcance de un FT. Ámbitos es categoría conceptual, no un directorio obligatorio; Propósito puede ser archivo o sección raíz. La Metodología abstracta es el OCP raíz y el OCP no impone ruta física exclusiva. ART-016 a ART-022 por entidad/elemento; ART-014 para procedimiento SPDF.
 6. [Control de responsabilidad](CONTROL-RESPONSABILIDAD.json) y [pendientes](PENDIENTES.md).
 7. [Checklist de los nueve requisitos verbatim](entregas/CHATGPT-v0.3/CHECKLIST-VERBATIM-21.md) y [diálogo literal de origen](conversaciones/C-METODOLOGIA-AUDITORIA-REQUISITOS-20-dialogo.jsonl).
@@ -35,7 +39,7 @@ El prompt de un solo uso `PROMPT-MIGRACION-HILO-FRESCO-21.txt` corresponde al re
 
 ## Límites persistentes conocidos
 
-- La IPZ candidata anterior v0.3 se conserva como historia. La versión vigente propuesta es `entregas/CHATGPT-v0.4/IPZ-CAMPO-CHATGPT.txt` (1.266 caracteres); el campo nativo de Instrucciones Personalizadas no es legible/escribible por estas herramientas y requiere instalación única.
+- La IPZ candidata vigente es `entregas/CHATGPT-v0.5/IPZ-CAMPO-CHATGPT.txt` (1.362 caracteres). Su primera instrucción remite al vocabulario §ARR; después remite al DUG y a sus principios. La aceptación conductual de esta secuencia requiere una conversación nueva de prueba.
 - MCP normativo permanece DESACTIVADO; revisión manual de Sam/GOW.
 - Los ensayos mecánicos no validan comprensión semántica de un modelo independiente ni la aplicación en una conversación realmente nueva.
 - El prompt universal y el BCR son procedimientos de arranque; no constituyen sincronización automática de la IPZ ni garantizan que otros hilos hayan adquirido el DUG vigente.
