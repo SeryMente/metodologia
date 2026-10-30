@@ -2,14 +2,15 @@
   "schema_version": "1.0",
   "event_id": "C-GOBERNANZA-FOLIACION-SECUENCIAL-01",
   "status": "PREPARADO_PENDIENTE_ACTIVACION_IPZ",
-  "generation": 0,
+  "generation": 1,
   "global_scope": {
     "scope_id": "SERYMENTE-METODOLOGIA-GLOBAL",
     "description": "Foliación global y por OCP para los contextos registrados; cobertura basada en inventario conocido, no exhaustividad organizacional.",
     "master_repository": "SeryMente/metodologia",
     "coverage_source": [
       "DUG v363 ART-015 a ART-024",
-      "INVENTARIO-REPOSITORIOS-Y-FRENTES.md"
+      "INVENTARIO-REPOSITORIOS-Y-FRENTES.md",
+      "Alta incremental Filo Sangriento: SeryMente/filo-sangriento; inventario blob ed9991b599aaceac27ff096896e70c866583a2e8; 2026-10-30."
     ],
     "coverage_completeness": "KNOWN_INVENTORY_ONLY"
   },
@@ -154,6 +155,18 @@
         "B": 0
       },
       "ocp-front-tareas-automaticas": {
+        "conversation": 0,
+        "cycle": 0,
+        "A": 0,
+        "B": 0
+      },
+      "ocp-repo-filo-sangriento": {
+        "conversation": 0,
+        "cycle": 0,
+        "A": 0,
+        "B": 0
+      },
+      "ocp-front-filo-sangriento": {
         "conversation": 0,
         "cycle": 0,
         "A": 0,
@@ -684,6 +697,53 @@
         "A": 0,
         "B": 0
       }
+    },
+    {
+      "ocp_id": "ocp-repo-filo-sangriento",
+      "code": "REP-FS",
+      "name": "Repositorio SeryMente/filo-sangriento",
+      "kind": "repository",
+      "repository": "SeryMente/filo-sangriento",
+      "canonical_path": null,
+      "taxonomy_level": "repository",
+      "identity_status": "VERIFIED_REPOSITORY",
+      "allocation_eligible": true,
+      "source_evidence": [
+        "Repositorio GitHub privado comprobado el 2026-10-30; listado de 10 repositorios accesibles."
+      ],
+      "control": null,
+      "counter_set": {
+        "conversation": 0,
+        "cycle": 0,
+        "A": 0,
+        "B": 0
+      }
+    },
+    {
+      "ocp_id": "ocp-front-filo-sangriento",
+      "code": "FS",
+      "name": "Filo Sangriento",
+      "kind": "front",
+      "repository": "SeryMente/filo-sangriento",
+      "canonical_path": "frentes/filo-sangriento/",
+      "taxonomy_level": 1,
+      "identity_status": "VERIFIED_CONTROL_AND_PATH",
+      "allocation_eligible": true,
+      "source_evidence": [
+        "OCP de trece bloques y control unassigned, generación 0, leídos de vuelta el 2026-10-30."
+      ],
+      "control": {
+        "path": "frentes/filo-sangriento/CONTROL-RESPONSABILIDAD.json",
+        "blob_sha": "76f895e319f8d659ddc96e666ce7ee6081b613d6",
+        "status": "unassigned",
+        "generation": 0
+      },
+      "counter_set": {
+        "conversation": 0,
+        "cycle": 0,
+        "A": 0,
+        "B": 0
+      }
     }
   ],
   "allocations": [],
@@ -749,7 +809,7 @@
     "prepared_on": "2026-10-30",
     "activated_on": null,
     "cutover_event": null,
-    "activation_gate": "No activar hasta verificar esquemas y maestro y preparar la nueva IPZ. Primer folio posterior al corte: 1; sin asignaciones retroactivas."
+    "activation_gate": "No activar hasta verificar esquemas y maestro y preparar la nueva IPZ. Filo Sangriento y su repositorio quedaron catalogados sin folios ni asignaciones; primer folio posterior al corte: 1; sin asignaciones retroactivas."
   },
   "legacy_policy": {
     "legacy_cycle_pattern": "C-AAAAMMDD-XXXXXXXX",
