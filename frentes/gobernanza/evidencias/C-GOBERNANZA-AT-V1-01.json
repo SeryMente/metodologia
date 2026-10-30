@@ -1,0 +1,104 @@
+{
+  "schema": "ser-y-mente-cycle-evidence/v1",
+  "event_id": "C-GOBERNANZA-AT-V1-01",
+  "cycle_folio": "C-20261029-34641998",
+  "session_folio": "SES-20261029-GV5KGJY8U5J",
+  "generation": 5,
+  "recorded_on": "2026-10-29",
+  "scope": "Definir y cerrar AT v1.0 exclusivamente para la articulación longitudinal de cambios conceptuales/metodológicos entre niveles OCP, gobierno del DUG, principios, anexos y destinos dependientes.",
+  "status": "AT_V1.0_DEFINICION_OPERATIVA_CERRADA; NO_CANONIZADA; SIN_ENMIENDA_NORMATIVA",
+  "authorization": {
+    "operator_instruction": "El operador acotó AT v1.0 a la necesidad de que los cambios conceptuales de la metodología respeten los niveles OCP y se articulen longitudinalmente, incluyendo el DUG, el sistema y orden de principios, la jerarquía de anexos y los OCP correspondientes. Indicó que, concluida AT v1.0, se retome Tareas.",
+    "scope": "Diseño y documentación operativa propuesta de AT v1.0 dentro del OCP Gobernanza; no autoriza canonizar AT ni modificar DUG/Metacanon/GOW/Canon LISA ni asumir titularidad del OCP Tareas."
+  },
+  "responsibility": {
+    "front": "Gobernanza",
+    "ocp_path": "frentes/gobernanza/",
+    "owner_alias": "chatgpt-C-GOBERNANZA-RETOMA-04-SES-20261029-GV5KGJY8U5J",
+    "instance": "chatgpt-gobernanza-retoma-2026-10-29-GV5KGJY8U5J",
+    "generation": 5,
+    "session_folio": "SES-20261029-GV5KGJY8U5J",
+    "control_blob_sha": "0ca6b63ea0613bebb32f28642c13124176cad24e",
+    "read_back": true
+  },
+  "canonical_source": {
+    "repository": "SeryMente/metodologia",
+    "branch": "main",
+    "pre_change_head": "54ce54491ab2075730e7acc569c4fcaa355d34c9",
+    "dug_path": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.html",
+    "dug_blob_sha": "b7593409c428e209d35f53a5f13501652208d949",
+    "dug_version": "v362",
+    "signature": "NX-362m",
+    "metacanon_version": "1.24",
+    "gow_version": "2.11",
+    "gow_terms": 122,
+    "taxonomy_version": "1.3",
+    "principles": 41,
+    "annexes": 18
+  },
+  "design_decisions": {
+    "scope": "Cambios conceptuales/metodológicos de Ser y Mente y propagación longitudinal de sus efectos realmente dependientes.",
+    "architecture": "Un mecanismo integrado con etapas internas; no se crean submódulos en v1.0.",
+    "reason": "Las etapas comparten origen, mapa de dependencias, compuertas de autorización y registro; no se demostraron interfaces, estados ni titulares autónomos.",
+    "invariants": [
+      "Los principios son el único elemento de gobierno directo y su orden/precedencia se conserva.",
+      "Los anexos son subordinados a principios y no tienen autoridad de gobierno independiente.",
+      "La jerarquía documental de anexos no equivale a los niveles conceptuales OCP.",
+      "La Metodología abstracta es el OCP raíz; cada unidad taxonómica correspondiente es OCP de su propio nivel.",
+      "Identidad conceptual y materialización física son dimensiones distintas; no se propagan cambios por simetría.",
+      "El GOW aporta vocabulario, no crea normas ni permisos; la representación estructurada deriva del contenido humano.",
+      "Cada destino tiene compuerta de autorización propia; AT no se autoautoriza."
+    ],
+    "stages": [
+      "Adquirir origen y autoridad",
+      "Clasificar el cambio y su nivel",
+      "Trazar destinos afectados/no afectados",
+      "Aplicar autorización y restricciones por destino",
+      "Realizar en orden de dependencia",
+      "Verificar y registrar"
+    ]
+  },
+  "validation": {
+    "positive_case": {
+      "basis": "C-GOBERNANZA-TAXONOMIA-CONCEPTUAL-INFRAESTRUCTURA-01",
+      "status": "WALKTHROUGH_RETROSPECTIVO",
+      "summary": "El cambio conceptual Propósito se articuló mediante ART-015/019/020/021, Metacanon §§46/51, GOW y proyección estructurada; no se añadió principio ni anexo. DUG v359 fue leído de vuelta; JSON parseó y JS pasó compilación sintáctica aislada.",
+      "limits": "No fue una ejecución automatizada de AT v1.0. No se ejecutó renderizado de navegador ni auditoría dinámica completa de enlaces."
+    },
+    "negative_case": {
+      "basis": "DUG v362 y ambitos/tareas/README.md; estado actual de Tareas en incubación.",
+      "status": "WALKTHROUGH_DE_ESCRITORIO",
+      "summary": "La carpeta y el estándar candidato local no promueven Tareas a ámbito funcional canónico. La propagación a DUG/GOW queda bloqueada sin autorización normativa explícita; el trabajo local independiente puede continuar conforme a su OCP.",
+      "limits": "No fue una prueba de runtime de AT ni se modificó el OCP Tareas."
+    }
+  },
+  "artifacts": [
+    {
+      "path": "frentes/gobernanza/entregas/CHATGPT-v0.8/AT-v1.0.md",
+      "status": "CREATED_AND_READ_BACK",
+      "blob_sha": "86cc03912e3ab55d8b000ed0355c8950c0c6d307"
+    },
+    {
+      "path": "frentes/gobernanza/cronica/C-GOBERNANZA-AT-V1-01.md",
+      "status": "TO_BE_READ_BACK"
+    },
+    {
+      "path": "frentes/gobernanza/conversaciones/C-GOBERNANZA-AT-V1-01-dialogo.jsonl",
+      "status": "TO_BE_READ_BACK"
+    },
+    {
+      "path": "frentes/gobernanza/entregas/CHATGPT-v0.8/C-GOBERNANZA-AT-V1-01-salida-final.md",
+      "status": "TO_BE_READ_BACK"
+    }
+  ],
+  "non_actions": {
+    "dug_modified": false,
+    "metacanon_modified": false,
+    "gow_modified": false,
+    "canon_lisa_modified": false,
+    "tasks_ocp_modified": false,
+    "at_canonized": false,
+    "automated_at_runtime_implemented": false
+  },
+  "next_step": "Retomar el ámbito Tareas aplicando AT v1.0; comprobar CONTROL-RESPONSABILIDAD.json del OCP Tareas antes de escribir o transferir titularidad."
+}
