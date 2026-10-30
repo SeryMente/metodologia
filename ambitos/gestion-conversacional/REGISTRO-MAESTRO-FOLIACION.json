@@ -20,11 +20,730 @@
       "A": 0,
       "B": 0
     },
-    "by_ocp": {}
+    "by_ocp": {
+      "ocp-metodologia-root": {
+        "conversation": 0,
+        "cycle": 0,
+        "A": 0,
+        "B": 0
+      },
+      "ocp-repo-metodologia": {
+        "conversation": 0,
+        "cycle": 0,
+        "A": 0,
+        "B": 0
+      },
+      "ocp-repo-khora": {
+        "conversation": 0,
+        "cycle": 0,
+        "A": 0,
+        "B": 0
+      },
+      "ocp-repo-signal-interpreter": {
+        "conversation": 0,
+        "cycle": 0,
+        "A": 0,
+        "B": 0
+      },
+      "ocp-repo-personal": {
+        "conversation": 0,
+        "cycle": 0,
+        "A": 0,
+        "B": 0
+      },
+      "ocp-repo-tercer-ambito": {
+        "conversation": 0,
+        "cycle": 0,
+        "A": 0,
+        "B": 0
+      },
+      "ocp-repo-serymente": {
+        "conversation": 0,
+        "cycle": 0,
+        "A": 0,
+        "B": 0
+      },
+      "ocp-repo-otrogranprograma": {
+        "conversation": 0,
+        "cycle": 0,
+        "A": 0,
+        "B": 0
+      },
+      "ocp-repo-gdp": {
+        "conversation": 0,
+        "cycle": 0,
+        "A": 0,
+        "B": 0
+      },
+      "ocp-repo-khora-effectif": {
+        "conversation": 0,
+        "cycle": 0,
+        "A": 0,
+        "B": 0
+      },
+      "ocp-functional-persistencia-documental": {
+        "conversation": 0,
+        "cycle": 0,
+        "A": 0,
+        "B": 0
+      },
+      "ocp-functional-gestion-conversacional": {
+        "conversation": 0,
+        "cycle": 0,
+        "A": 0,
+        "B": 0
+      },
+      "ocp-front-acceso": {
+        "conversation": 0,
+        "cycle": 0,
+        "A": 0,
+        "B": 0
+      },
+      "ocp-front-gobernanza": {
+        "conversation": 0,
+        "cycle": 0,
+        "A": 0,
+        "B": 0
+      },
+      "ocp-front-metacanon": {
+        "conversation": 0,
+        "cycle": 0,
+        "A": 0,
+        "B": 0
+      },
+      "ocp-front-radar-profesional": {
+        "conversation": 0,
+        "cycle": 0,
+        "A": 0,
+        "B": 0
+      },
+      "ocp-front-dictado-voz": {
+        "conversation": 0,
+        "cycle": 0,
+        "A": 0,
+        "B": 0
+      },
+      "ocp-front-harmonia": {
+        "conversation": 0,
+        "cycle": 0,
+        "A": 0,
+        "B": 0
+      },
+      "ocp-front-signal-interpreter": {
+        "conversation": 0,
+        "cycle": 0,
+        "A": 0,
+        "B": 0
+      },
+      "ocp-front-repertorio-canto-personal": {
+        "conversation": 0,
+        "cycle": 0,
+        "A": 0,
+        "B": 0
+      },
+      "ocp-front-blog-personal": {
+        "conversation": 0,
+        "cycle": 0,
+        "A": 0,
+        "B": 0
+      },
+      "ocp-front-ep": {
+        "conversation": 0,
+        "cycle": 0,
+        "A": 0,
+        "B": 0
+      },
+      "ocp-front-tareas-automaticas": {
+        "conversation": 0,
+        "cycle": 0,
+        "A": 0,
+        "B": 0
+      }
+    }
   },
-  "ocp_catalog": [],
+  "ocp_catalog": [
+    {
+      "ocp_id": "ocp-metodologia-root",
+      "code": "MET",
+      "name": "Metodología raíz",
+      "kind": "methodology_root",
+      "repository": "SeryMente/metodologia",
+      "canonical_path": null,
+      "taxonomy_level": "root",
+      "identity_status": "VERIFIED_CONCEPTUAL",
+      "allocation_eligible": true,
+      "source_evidence": [
+        "DUG v363 ART-015/018/020/024; inventario/control leído en main"
+      ],
+      "control": null,
+      "counter_set": {
+        "conversation": 0,
+        "cycle": 0,
+        "A": 0,
+        "B": 0
+      }
+    },
+    {
+      "ocp_id": "ocp-repo-metodologia",
+      "code": "REP-MET",
+      "name": "Repositorio SeryMente/metodologia",
+      "kind": "repository",
+      "repository": "SeryMente/metodologia",
+      "canonical_path": null,
+      "taxonomy_level": "repository",
+      "identity_status": "VERIFIED_REPOSITORY",
+      "allocation_eligible": true,
+      "source_evidence": [
+        "DUG v363 ART-015/018/020/024; inventario/control leído en main"
+      ],
+      "control": null,
+      "counter_set": {
+        "conversation": 0,
+        "cycle": 0,
+        "A": 0,
+        "B": 0
+      }
+    },
+    {
+      "ocp_id": "ocp-repo-khora",
+      "code": "REP-KHO",
+      "name": "Repositorio SeryMente/khora",
+      "kind": "repository",
+      "repository": "SeryMente/khora",
+      "canonical_path": null,
+      "taxonomy_level": "repository",
+      "identity_status": "VERIFIED_REPOSITORY",
+      "allocation_eligible": true,
+      "source_evidence": [
+        "DUG v363 ART-015/018/020/024; inventario/control leído en main"
+      ],
+      "control": null,
+      "counter_set": {
+        "conversation": 0,
+        "cycle": 0,
+        "A": 0,
+        "B": 0
+      }
+    },
+    {
+      "ocp_id": "ocp-repo-signal-interpreter",
+      "code": "REP-SI",
+      "name": "Repositorio SeryMente/signal-interpreter",
+      "kind": "repository",
+      "repository": "SeryMente/signal-interpreter",
+      "canonical_path": null,
+      "taxonomy_level": "repository",
+      "identity_status": "VERIFIED_REPOSITORY",
+      "allocation_eligible": true,
+      "source_evidence": [
+        "DUG v363 ART-015/018/020/024; inventario/control leído en main"
+      ],
+      "control": null,
+      "counter_set": {
+        "conversation": 0,
+        "cycle": 0,
+        "A": 0,
+        "B": 0
+      }
+    },
+    {
+      "ocp_id": "ocp-repo-personal",
+      "code": "REP-PER",
+      "name": "Repositorio SeryMente/personal",
+      "kind": "repository",
+      "repository": "SeryMente/personal",
+      "canonical_path": null,
+      "taxonomy_level": "repository",
+      "identity_status": "VERIFIED_REPOSITORY",
+      "allocation_eligible": true,
+      "source_evidence": [
+        "DUG v363 ART-015/018/020/024; inventario/control leído en main"
+      ],
+      "control": null,
+      "counter_set": {
+        "conversation": 0,
+        "cycle": 0,
+        "A": 0,
+        "B": 0
+      }
+    },
+    {
+      "ocp_id": "ocp-repo-tercer-ambito",
+      "code": "REP-TA",
+      "name": "Repositorio SeryMente/tercer-ambito",
+      "kind": "repository",
+      "repository": "SeryMente/tercer-ambito",
+      "canonical_path": null,
+      "taxonomy_level": "repository",
+      "identity_status": "VERIFIED_REPOSITORY",
+      "allocation_eligible": true,
+      "source_evidence": [
+        "DUG v363 ART-015/018/020/024; inventario/control leído en main"
+      ],
+      "control": null,
+      "counter_set": {
+        "conversation": 0,
+        "cycle": 0,
+        "A": 0,
+        "B": 0
+      }
+    },
+    {
+      "ocp_id": "ocp-repo-serymente",
+      "code": "REP-WEB",
+      "name": "Repositorio SeryMente/serymente",
+      "kind": "repository",
+      "repository": "SeryMente/serymente",
+      "canonical_path": null,
+      "taxonomy_level": "repository",
+      "identity_status": "VERIFIED_REPOSITORY",
+      "allocation_eligible": true,
+      "source_evidence": [
+        "DUG v363 ART-015/018/020/024; inventario/control leído en main"
+      ],
+      "control": null,
+      "counter_set": {
+        "conversation": 0,
+        "cycle": 0,
+        "A": 0,
+        "B": 0
+      }
+    },
+    {
+      "ocp_id": "ocp-repo-otrogranprograma",
+      "code": "REP-OGP",
+      "name": "Repositorio SeryMente/otrogranprograma",
+      "kind": "repository",
+      "repository": "SeryMente/otrogranprograma",
+      "canonical_path": null,
+      "taxonomy_level": "repository",
+      "identity_status": "VERIFIED_REPOSITORY",
+      "allocation_eligible": true,
+      "source_evidence": [
+        "DUG v363 ART-015/018/020/024; inventario/control leído en main"
+      ],
+      "control": null,
+      "counter_set": {
+        "conversation": 0,
+        "cycle": 0,
+        "A": 0,
+        "B": 0
+      }
+    },
+    {
+      "ocp_id": "ocp-repo-gdp",
+      "code": "REP-GDP",
+      "name": "Repositorio SeryMente/GDP",
+      "kind": "repository",
+      "repository": "SeryMente/GDP",
+      "canonical_path": null,
+      "taxonomy_level": "repository",
+      "identity_status": "VERIFIED_REPOSITORY",
+      "allocation_eligible": true,
+      "source_evidence": [
+        "DUG v363 ART-015/018/020/024; inventario/control leído en main"
+      ],
+      "control": null,
+      "counter_set": {
+        "conversation": 0,
+        "cycle": 0,
+        "A": 0,
+        "B": 0
+      }
+    },
+    {
+      "ocp_id": "ocp-repo-khora-effectif",
+      "code": "REP-KE",
+      "name": "Repositorio SeryMente/khora-effectif",
+      "kind": "repository",
+      "repository": "SeryMente/khora-effectif",
+      "canonical_path": null,
+      "taxonomy_level": "repository",
+      "identity_status": "VERIFIED_REPOSITORY",
+      "allocation_eligible": true,
+      "source_evidence": [
+        "DUG v363 ART-015/018/020/024; inventario/control leído en main"
+      ],
+      "control": null,
+      "counter_set": {
+        "conversation": 0,
+        "cycle": 0,
+        "A": 0,
+        "B": 0
+      }
+    },
+    {
+      "ocp_id": "ocp-functional-persistencia-documental",
+      "code": "PD",
+      "name": "Persistencia documental",
+      "kind": "functional_area",
+      "repository": "SeryMente/metodologia",
+      "canonical_path": null,
+      "taxonomy_level": 1,
+      "identity_status": "VERIFIED_CONCEPTUAL",
+      "allocation_eligible": true,
+      "source_evidence": [
+        "DUG v363 ART-015/018/020/024; inventario/control leído en main"
+      ],
+      "control": null,
+      "counter_set": {
+        "conversation": 0,
+        "cycle": 0,
+        "A": 0,
+        "B": 0
+      }
+    },
+    {
+      "ocp_id": "ocp-functional-gestion-conversacional",
+      "code": "GC",
+      "name": "Gestión conversacional",
+      "kind": "functional_area",
+      "repository": "SeryMente/metodologia",
+      "canonical_path": "ambitos/gestion-conversacional/",
+      "taxonomy_level": 1,
+      "identity_status": "VERIFIED_CONCEPTUAL",
+      "allocation_eligible": true,
+      "source_evidence": [
+        "DUG v363 ART-015/018/020/024; inventario/control leído en main"
+      ],
+      "control": null,
+      "counter_set": {
+        "conversation": 0,
+        "cycle": 0,
+        "A": 0,
+        "B": 0
+      }
+    },
+    {
+      "ocp_id": "ocp-front-acceso",
+      "code": "AC",
+      "name": "acceso",
+      "kind": "front",
+      "repository": "SeryMente/metodologia",
+      "canonical_path": "frentes/acceso/",
+      "taxonomy_level": 1,
+      "identity_status": "VERIFIED_CONTROL_AND_PATH",
+      "allocation_eligible": true,
+      "source_evidence": [
+        "DUG v363 ART-015/018/020/024; inventario/control leído en main"
+      ],
+      "control": {
+        "path": "frentes/acceso/CONTROL-RESPONSABILIDAD.json",
+        "blob_sha": "d77dbf55ca188d79d5126e168edd202ec63ac811",
+        "status": "owned",
+        "generation": 1
+      },
+      "counter_set": {
+        "conversation": 0,
+        "cycle": 0,
+        "A": 0,
+        "B": 0
+      }
+    },
+    {
+      "ocp_id": "ocp-front-gobernanza",
+      "code": "GOB",
+      "name": "gobernanza",
+      "kind": "front",
+      "repository": "SeryMente/metodologia",
+      "canonical_path": "frentes/gobernanza/",
+      "taxonomy_level": 1,
+      "identity_status": "VERIFIED_CONTROL_AND_PATH",
+      "allocation_eligible": true,
+      "source_evidence": [
+        "DUG v363 ART-015/018/020/024; inventario/control leído en main"
+      ],
+      "control": {
+        "path": "frentes/gobernanza/CONTROL-RESPONSABILIDAD.json",
+        "blob_sha": "4768d6db0a620652f753262b6250c8cb4b891ca9",
+        "status": "active",
+        "generation": 5
+      },
+      "counter_set": {
+        "conversation": 0,
+        "cycle": 0,
+        "A": 0,
+        "B": 0
+      }
+    },
+    {
+      "ocp_id": "ocp-front-metacanon",
+      "code": "MC",
+      "name": "metacanon",
+      "kind": "front",
+      "repository": "SeryMente/metodologia",
+      "canonical_path": "frentes/metacanon/",
+      "taxonomy_level": 1,
+      "identity_status": "VERIFIED_CONTROL_AND_PATH",
+      "allocation_eligible": true,
+      "source_evidence": [
+        "DUG v363 ART-015/018/020/024; inventario/control leído en main"
+      ],
+      "control": {
+        "path": "frentes/metacanon/CONTROL-RESPONSABILIDAD.json",
+        "blob_sha": "86f0e4fa59e37976704231290b460cf6dc9252b0",
+        "status": "owned",
+        "generation": 6
+      },
+      "counter_set": {
+        "conversation": 0,
+        "cycle": 0,
+        "A": 0,
+        "B": 0
+      }
+    },
+    {
+      "ocp_id": "ocp-front-radar-profesional",
+      "code": "RAD",
+      "name": "radar-profesional",
+      "kind": "front",
+      "repository": "SeryMente/metodologia",
+      "canonical_path": "frentes/radar-profesional/",
+      "taxonomy_level": 1,
+      "identity_status": "VERIFIED_CONTROL_AND_PATH",
+      "allocation_eligible": true,
+      "source_evidence": [
+        "DUG v363 ART-015/018/020/024; inventario/control leído en main"
+      ],
+      "control": {
+        "path": "frentes/radar-profesional/CONTROL-RESPONSABILIDAD.json",
+        "blob_sha": "ebedb865d9d813c731f6ebcf2b63bf37efe3efc1",
+        "status": "owned",
+        "generation": 1
+      },
+      "counter_set": {
+        "conversation": 0,
+        "cycle": 0,
+        "A": 0,
+        "B": 0
+      }
+    },
+    {
+      "ocp_id": "ocp-front-dictado-voz",
+      "code": "DVO",
+      "name": "dictado-voz",
+      "kind": "front",
+      "repository": "SeryMente/khora",
+      "canonical_path": "docs/frentes/dictado-voz/",
+      "taxonomy_level": 1,
+      "identity_status": "VERIFIED_CONTROL_AND_PATH",
+      "allocation_eligible": true,
+      "source_evidence": [
+        "DUG v363 ART-015/018/020/024; inventario/control leído en main"
+      ],
+      "control": {
+        "path": "docs/frentes/dictado-voz/CONTROL-RESPONSABILIDAD.json",
+        "blob_sha": "ff3a148420e547323717a620c1c5b695a4fa79e5",
+        "status": "assigned",
+        "generation": 3
+      },
+      "counter_set": {
+        "conversation": 0,
+        "cycle": 0,
+        "A": 0,
+        "B": 0
+      }
+    },
+    {
+      "ocp_id": "ocp-front-harmonia",
+      "code": "HAR",
+      "name": "harmonia",
+      "kind": "front",
+      "repository": "SeryMente/khora",
+      "canonical_path": "docs/frentes/harmonia/",
+      "taxonomy_level": 1,
+      "identity_status": "VERIFIED_CONTROL_AND_PATH",
+      "allocation_eligible": true,
+      "source_evidence": [
+        "DUG v363 ART-015/018/020/024; inventario/control leído en main"
+      ],
+      "control": {
+        "path": "docs/frentes/harmonia/CONTROL-RESPONSABILIDAD.json",
+        "blob_sha": "2b8e5091e621b1017ed1e55f2796cc48f9ba444b",
+        "status": "assigned",
+        "generation": 8
+      },
+      "counter_set": {
+        "conversation": 0,
+        "cycle": 0,
+        "A": 0,
+        "B": 0
+      }
+    },
+    {
+      "ocp_id": "ocp-front-signal-interpreter",
+      "code": "SIG",
+      "name": "signal-interpreter",
+      "kind": "front",
+      "repository": "SeryMente/signal-interpreter",
+      "canonical_path": "docs/frentes/signal-interpreter/",
+      "taxonomy_level": 1,
+      "identity_status": "VERIFIED_CONTROL_AND_PATH",
+      "allocation_eligible": true,
+      "source_evidence": [
+        "DUG v363 ART-015/018/020/024; inventario/control leído en main"
+      ],
+      "control": {
+        "path": "docs/frentes/signal-interpreter/CONTROL-RESPONSABILIDAD.json",
+        "blob_sha": "d057a5db249939c381892f831d76a81103190074",
+        "status": "present",
+        "generation": null
+      },
+      "counter_set": {
+        "conversation": 0,
+        "cycle": 0,
+        "A": 0,
+        "B": 0
+      }
+    },
+    {
+      "ocp_id": "ocp-front-repertorio-canto-personal",
+      "code": "RCP",
+      "name": "repertorio-canto-personal",
+      "kind": "front",
+      "repository": "SeryMente/personal",
+      "canonical_path": "frentes/repertorio-canto-personal/",
+      "taxonomy_level": 1,
+      "identity_status": "VERIFIED_CONTROL_AND_PATH",
+      "allocation_eligible": true,
+      "source_evidence": [
+        "DUG v363 ART-015/018/020/024; inventario/control leído en main"
+      ],
+      "control": {
+        "path": "frentes/repertorio-canto-personal/CONTROL-RESPONSABILIDAD.json",
+        "blob_sha": "fa92efd677b3a57520b8d3a1cf4feb0fa792b978",
+        "status": "owned",
+        "generation": 1
+      },
+      "counter_set": {
+        "conversation": 0,
+        "cycle": 0,
+        "A": 0,
+        "B": 0
+      }
+    },
+    {
+      "ocp_id": "ocp-front-blog-personal",
+      "code": "BLOG",
+      "name": "Blog personal",
+      "kind": "front",
+      "repository": "SeryMente/metodologia",
+      "canonical_path": "frentes/blog-personal/",
+      "taxonomy_level": 1,
+      "identity_status": "PENDING_CONTROL",
+      "allocation_eligible": false,
+      "source_evidence": [
+        "DUG v363 ART-015/018/020/024; inventario/control leído en main"
+      ],
+      "control": null,
+      "counter_set": {
+        "conversation": 0,
+        "cycle": 0,
+        "A": 0,
+        "B": 0
+      }
+    },
+    {
+      "ocp_id": "ocp-front-ep",
+      "code": "EP",
+      "name": "Frente EP",
+      "kind": "front",
+      "repository": "SeryMente/metodologia",
+      "canonical_path": "frentes/ep/",
+      "taxonomy_level": 1,
+      "identity_status": "PENDING_BRANCH_RECONCILIATION",
+      "allocation_eligible": false,
+      "source_evidence": [
+        "DUG v363 ART-015/018/020/024; inventario/control leído en main"
+      ],
+      "control": null,
+      "counter_set": {
+        "conversation": 0,
+        "cycle": 0,
+        "A": 0,
+        "B": 0
+      }
+    },
+    {
+      "ocp_id": "ocp-front-tareas-automaticas",
+      "code": "TAU",
+      "name": "Tareas automáticas",
+      "kind": "front",
+      "repository": "SeryMente/khora",
+      "canonical_path": "docs/frentes/tareas-automaticas/",
+      "taxonomy_level": 1,
+      "identity_status": "PENDING_CONTROL",
+      "allocation_eligible": false,
+      "source_evidence": [
+        "DUG v363 ART-015/018/020/024; inventario/control leído en main"
+      ],
+      "control": null,
+      "counter_set": {
+        "conversation": 0,
+        "cycle": 0,
+        "A": 0,
+        "B": 0
+      }
+    }
+  ],
   "allocations": [],
-  "unresolved_contexts": [],
+  "unresolved_contexts": [
+    {
+      "candidate_id": "ctx-etica",
+      "name": "Etica / Tercer ámbito",
+      "repository": "SeryMente/tercer-ambito",
+      "path": "etica/",
+      "reason": "Clasificación formal OCP y control pendientes.",
+      "allocation_blocked": true,
+      "source_evidence": [
+        "Inventario central; control NOT_FOUND en main"
+      ]
+    },
+    {
+      "candidate_id": "ctx-gdp",
+      "name": "Sprint GDP CONSAR AFORE NSS",
+      "repository": "SeryMente/GDP",
+      "path": "docs/SPRINT-CONSAR-AFORE-NSS.md",
+      "reason": "Objeto heredado de archivo único; clasificación/migración OCP pendiente.",
+      "allocation_blocked": true,
+      "source_evidence": [
+        "Inventario central"
+      ]
+    },
+    {
+      "candidate_id": "ctx-metodologia-alias",
+      "name": "frentes/metodologia",
+      "repository": "SeryMente/metodologia",
+      "path": "frentes/metodologia/",
+      "reason": "Puntero de compatibilidad de Metacanon, no OCP independiente.",
+      "allocation_blocked": true,
+      "source_evidence": [
+        "README del puntero"
+      ]
+    },
+    {
+      "candidate_id": "ctx-tareas",
+      "name": "Tareas dentro de Gobernanza",
+      "repository": "SeryMente/metodologia",
+      "path": "ambitos/tareas/",
+      "reason": "Trabajo dentro del frente Gobernanza, no frente/OCP separado.",
+      "allocation_blocked": true,
+      "source_evidence": [
+        "Instrucción contextual del operador"
+      ]
+    },
+    {
+      "candidate_id": "ctx-mcp-jules",
+      "name": "Directorio mcp-jules",
+      "repository": "SeryMente/metodologia",
+      "path": "frentes/mcp-jules/",
+      "reason": "No figura en inventario ni tiene núcleo recuperado; identidad OCP no verificada.",
+      "allocation_blocked": true,
+      "source_evidence": [
+        "Árbol main; README NOT_FOUND"
+      ]
+    }
+  ],
   "activation": {
     "generation_name": "FOL1",
     "prepared_on": "2026-10-30",
