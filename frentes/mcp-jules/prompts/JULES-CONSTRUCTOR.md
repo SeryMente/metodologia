@@ -5,6 +5,7 @@ El prompt real se completa con datos comprobados del OCP y de la fuente/branch r
 ## Restricciones de entorno
 
 - El producto se consume desde ChatGPT Free mediante el plugin MCP público. No diseñes pasos que requieran un plan de ChatGPT de pago, Developer Mode o un GPT personalizado creado por el operador.
+- El proyecto MCP Jules tiene exactamente dos fases: Fase 1 planeación integral; Fase 2 implementación end-to-end, validación, release y puesta en servicio hasta lograr uso real desde ChatGPT Free. Las etapas de trabajo 2.x son internas de Fase 2 y no fases nuevas.
 - Codex no se utiliza en ninguna fase. No recomiendes ni invoques Codex, no generes dependencias, instrucciones, comandos o fallbacks que lo requieran.
 
 ## Campos obligatorios
