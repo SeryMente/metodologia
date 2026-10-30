@@ -5,6 +5,9 @@
 
 > **Nota de alineación conceptual posterior · 2026-10-30:** el DUG v362 vigente todavía clasifica Trazabilidad semántica como módulo de Gestión conversacional en ART-020/024. La definición operativa revisada de [AT v1.0](../../frentes/gobernanza/entregas/CHATGPT-v0.8/AT-v1.0.md) la sitúa como capacidad fundamental de AT: los registros de esta carpeta siguen siendo el soporte físico provisional para conservar las trazas, pero la responsabilidad conceptual propuesta corresponde a AT. Esta reclasificación requiere enmienda explícita del DUG conforme a P005; hasta entonces prevalece ART-024 vigente. Registro conversacional permanece en Gestión conversacional. La instalación de IPZA no activa captura automática.
 
+
+> **Extensión de trazabilidad AT v1.1:** los nuevos registros de vectores semánticos derivados por AT usan el [esquema AT v1.1](../../frentes/gobernanza/entregas/CHATGPT-v0.8/ESQUEMA-VECTORES-SEMANTICOS-AT-v1.1.json) y la definición de [AT v1.1](../../frentes/gobernanza/entregas/CHATGPT-v0.8/AT-v1.1.md). El registro JSONL de esta carpeta se conserva como materialización física histórica/compartida; la responsabilidad conceptual de la trazabilidad se define en AT, pendiente de alineación normativa de ART-020/024 conforme P005.
+
 ## Componentes
 
 - **Registro conversacional:** [contrato](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-024), [registro maestro](REGISTRO-CONVERSACIONES.csv), [esquema E/S](ESQUEMA-CICLO-CONVERSACIONAL-v1.0.json), [guía](REGISTRO-CONVERSACIONAL-v1.0.md).
