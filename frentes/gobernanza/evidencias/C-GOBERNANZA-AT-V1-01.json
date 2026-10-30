@@ -59,36 +59,46 @@
     ]
   },
   "validation": {
-    "positive_case": {
-      "basis": "C-GOBERNANZA-TAXONOMIA-CONCEPTUAL-INFRAESTRUCTURA-01",
-      "status": "WALKTHROUGH_RETROSPECTIVO",
-      "summary": "El cambio conceptual Propósito se articuló mediante ART-015/019/020/021, Metacanon §§46/51, GOW y proyección estructurada; no se añadió principio ni anexo. DUG v359 fue leído de vuelta; JSON parseó y JS pasó compilación sintáctica aislada.",
-      "limits": "No fue una ejecución automatizada de AT v1.0. No se ejecutó renderizado de navegador ni auditoría dinámica completa de enlaces."
-    },
-    "negative_case": {
-      "basis": "DUG v362 y ambitos/tareas/README.md; estado actual de Tareas en incubación.",
-      "status": "WALKTHROUGH_DE_ESCRITORIO",
-      "summary": "La carpeta y el estándar candidato local no promueven Tareas a ámbito funcional canónico. La propagación a DUG/GOW queda bloqueada sin autorización normativa explícita; el trabajo local independiente puede continuar conforme a su OCP.",
-      "limits": "No fue una prueba de runtime de AT ni se modificó el OCP Tareas."
-    }
+    "source_acquisition": "PASS: INICIO, Gobernanza OCP and DUG read from main",
+    "dug_embedded_json": "VALIDATED_BY_JSON_PARSE",
+    "taxonomy_and_principle_hierarchy": "INSPECTED_FROM_EMBEDDED_GOVERNANCE_DATA",
+    "at_definition": "CREATED_AND_READ_BACK",
+    "dialogue_jsonl": "3_RECORDS; JSONL PARSE NOT YET RUN",
+    "positive_case": "RETROSPECTIVE_WALKTHROUGH; historical DUG change evidence verified",
+    "negative_case": "DESKTOP_WALKTHROUGH; current DUG and Tareas status verified",
+    "browser_runtime": "NOT RUN",
+    "automated_at_runtime": "NOT IMPLEMENTED",
+    "dug_modified": false,
+    "metacanon_modified": false,
+    "gow_modified": false,
+    "canon_lisa_modified": false,
+    "tasks_ocp_modified": false
   },
   "artifacts": [
     {
       "path": "frentes/gobernanza/entregas/CHATGPT-v0.8/AT-v1.0.md",
-      "status": "CREATED_AND_READ_BACK",
+      "status": "READ_BACK_CONFIRMED",
       "blob_sha": "86cc03912e3ab55d8b000ed0355c8950c0c6d307"
     },
     {
       "path": "frentes/gobernanza/cronica/C-GOBERNANZA-AT-V1-01.md",
-      "status": "TO_BE_READ_BACK"
+      "status": "READ_BACK_CONFIRMED",
+      "blob_sha": "2713181cbf6fdc122786229f42ae730394fd6aae"
     },
     {
       "path": "frentes/gobernanza/conversaciones/C-GOBERNANZA-AT-V1-01-dialogo.jsonl",
-      "status": "TO_BE_READ_BACK"
+      "status": "READ_BACK_CONFIRMED",
+      "blob_sha": "b52588e1a09aa16a5f9ab8aa9c61fa0c5b4dce39"
     },
     {
       "path": "frentes/gobernanza/entregas/CHATGPT-v0.8/C-GOBERNANZA-AT-V1-01-salida-final.md",
-      "status": "TO_BE_READ_BACK"
+      "status": "READ_BACK_CONFIRMED",
+      "blob_sha": "182393ddeb114f183a6990636e1e1dad85531e81"
+    },
+    {
+      "path": "frentes/gobernanza/evidencias/C-GOBERNANZA-AT-V1-01.json",
+      "status": "JSON_READBACK_CONFIRMED",
+      "blob_sha": "TO_BE_UPDATED_AFTER_THIS_COMMIT"
     }
   ],
   "non_actions": {
