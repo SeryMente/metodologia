@@ -2,23 +2,23 @@
 
 ## Estado vigente · C-GOBERNANZA-CNP-CATEGORIA-A-01 · 2026-10-30
 
-**Persistido y releído:** DUG v367 · NX-367m; 43 principios, 19 anexos; GOW 2.13. La categoría A identifica por sí sola la pertenencia al CNP; se eliminaron los ordinales CNP-01…CNP-05 y los campos `cnp_id`. Se conservan los cinco principios P001/P004/P005/P038/P043 y sus decimales relativos A · 0.9/0.8/0.7/0.6/0.5. Sin identificador ordinal adicional.
+**Persistido y releído:** DUG v368 · NX-368m; 43 principios, 19 anexos; GOW 2.14. La categoría A identifica por sí sola la pertenencia al CNP; se eliminaron los ordinales CNP-01…CNP-05 y los campos `cnp_id`. Se conservan los cinco principios P001/P004/P005/P038/P043 y sus decimales relativos A · 0.9/0.8/0.7/0.6/0.5. Sin identificador ordinal adicional.
 
 **IPZ v0.8 · NO CONFORME COMO SUSTITUCIÓN ÍNTEGRA:** cotejada contra v0.7 (2.467 caracteres), v0.8 (1.488) omite los seis estados de autorización/ejecución, la advertencia de que edad IPZ no demuestra instalación, «Muestra solo» y parte de las instrucciones de eficiencia detalladas. No instalar v0.8 como reemplazo íntegro. La IPZ nativa sigue sin modificarse ni verificarse.
 
 **Límites:** SHA/read-back exactos del DUG v367, 43 principios, 19 anexos, cinco miembros CNP y cero campos ordinales. No se ejecutó renderizado de navegador ni auditoría dinámica de enlaces. FOL1 sigue `PREPARADO_PENDIENTE_ACTIVACION_IPZ`, sin asignaciones ni folios para este evento.
 
-Registro: [crónica](cronica/C-GOBERNANZA-CNP-CATEGORIA-A-01.md) · [evidencia](evidencias/C-GOBERNANZA-CNP-CATEGORIA-A-01.json) · [DUG v367](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html).
+Registro: [crónica](cronica/C-GOBERNANZA-CNP-CATEGORIA-A-01.md) · [evidencia](evidencias/C-GOBERNANZA-CNP-CATEGORIA-A-01.json) · [DUG v368](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html).
 
 ## Estado vigente · C-GOBERNANZA-CNP-01 / C-GOBERNANZA-IPZ-CNP-01 · 2026-10-30
 
-**Estado del evento anterior, supersedido por la actualización de categoría A:** DUG v366 · NX-366m; 43 principios, 19 anexos; Metacanon 1.26; GOW 2.13. El CNP incluye P001/P004/P005/P038/P043 con ponderaciones A · 0.9/0.8/0.7/0.6/0.5. P043 se denomina Principio Anti-Ineficiencia (PAI) y remite a ART-026. ART-025 refuerza la consideración expresa del CNP en cada turno y mantiene la obligación de aplicar el DUG completo.
+**Estado del evento anterior, supersedido por la actualización de categoría A:** DUG v368 · NX-368m; 43 principios, 19 anexos; Metacanon 1.26; GOW 2.14. El CNP incluye P001/P004/P005/P038/P043 con ponderaciones A · 0.9/0.8/0.7/0.6/0.5. P043 se denomina Principio Anti-Ineficiencia (PAI) y remite a ART-026. ART-025 refuerza la consideración expresa del CNP en cada turno y mantiene la obligación de aplicar el DUG completo.
 
 **IPZ:** candidata [v0.8](entregas/CHATGPT-v0.8/IPZ-CAMPO-CHATGPT-v0.8-PROPUESTA.txt) creada y leída de vuelta: 1.488/1.500 caracteres, pero el cotejo contra v0.7 detectó pérdida de contenido. No instalar como sustitución íntegra. El campo nativo no fue modificado ni verificado; v0.7 se conserva como antecedente.
 
 **Límites de verificación:** JSON embebido parseado; SHA/read-back exactos de DUG v365, DUG v366 y candidata v0.8; no se ejecutó renderizado de navegador ni auditoría dinámica completa de anclas/retornos. FOL1 continúa `PREPARADO_PENDIENTE_ACTIVACION_IPZ`, sin asignaciones y sin folios asignados a estos eventos. La ponderación y aplicación de PAI quedan abiertas a calibración empírica.
 
-Registro: [crónica](cronica/C-GOBERNANZA-CNP-01.md) · [evidencia](evidencias/C-GOBERNANZA-CNP-01.json) · [DUG v367](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html) · [IPZ v0.8](entregas/CHATGPT-v0.8/IPZ-CAMPO-CHATGPT-v0.8-PROPUESTA.txt).
+Registro: [crónica](cronica/C-GOBERNANZA-CNP-01.md) · [evidencia](evidencias/C-GOBERNANZA-CNP-01.json) · [DUG v368](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html) · [IPZ v0.8](entregas/CHATGPT-v0.8/IPZ-CAMPO-CHATGPT-v0.8-PROPUESTA.txt).
 
 ## Estado actual · C-GOBERNANZA-FOLIACION-SECUENCIAL-01 · 2026-10-30
 
