@@ -10,7 +10,6 @@
     "source_ref",
     "related_source_refs",
     "conversation_id",
-    "cycle_folio",
     "classification",
     "literal_excerpt",
     "excerpt_exact_match",
@@ -23,7 +22,9 @@
     "authorization",
     "lisa",
     "verification",
-    "status"
+    "status",
+    "source_cycle_folio",
+    "record_cycle_folio"
   ],
   "properties": {
     "schema_version": {
@@ -50,10 +51,6 @@
       "type": "string",
       "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$",
       "description": "UUIDv7 local; no sustituye un identificador nativo de plataforma."
-    },
-    "cycle_folio": {
-      "type": "string",
-      "pattern": "^C-[0-9]{8}-[A-F0-9]{8}$"
     },
     "classification": {
       "enum": [
@@ -317,6 +314,16 @@
         "verificado",
         "supersedido"
       ]
+    },
+    "source_cycle_folio": {
+      "type": "string",
+      "pattern": "^C-[0-9]{8}-[A-F0-9]{8}$",
+      "description": "Folio del ciclo de la fuente E original a la que apunta source_ref."
+    },
+    "record_cycle_folio": {
+      "type": "string",
+      "pattern": "^C-[0-9]{8}-[A-F0-9]{8}$",
+      "description": "Folio del ciclo en que se creó o actualizó este registro de trazabilidad."
     }
   }
 }
