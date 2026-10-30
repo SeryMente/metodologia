@@ -1,0 +1,482 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/SeryMente/metodologia/blob/main/ambitos/gestion-conversacional/ESQUEMA-FOLIACION-MAESTRA-v1.0.json",
+  "title": "Registro maestro de foliación jerárquica global y por OCP",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "event_id",
+    "status",
+    "generation",
+    "global_scope",
+    "counters",
+    "ocp_catalog",
+    "allocations",
+    "unresolved_contexts",
+    "activation",
+    "legacy_policy"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "event_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "PREPARADO_PENDIENTE_ACTIVACION_IPZ",
+        "ACTIVO",
+        "SUSPENDIDO",
+        "BLOQUEADO"
+      ]
+    },
+    "generation": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "global_scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scope_id",
+        "description",
+        "master_repository",
+        "coverage_source",
+        "coverage_completeness"
+      ],
+      "properties": {
+        "scope_id": {
+          "const": "SERYMENTE-METODOLOGIA-GLOBAL"
+        },
+        "description": {
+          "type": "string"
+        },
+        "master_repository": {
+          "const": "SeryMente/metodologia"
+        },
+        "coverage_source": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "coverage_completeness": {
+          "enum": [
+            "VERIFIED_EXHAUSTIVE",
+            "KNOWN_INVENTORY_ONLY",
+            "NOT_VERIFIED"
+          ]
+        }
+      }
+    },
+    "counters": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "global",
+        "by_ocp"
+      ],
+      "properties": {
+        "global": {
+          "$ref": "#/$defs/counter_set"
+        },
+        "by_ocp": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/counter_set"
+          }
+        }
+      }
+    },
+    "ocp_catalog": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "ocp_id",
+          "code",
+          "name",
+          "kind",
+          "repository",
+          "canonical_path",
+          "identity_status",
+          "allocation_eligible",
+          "source_evidence",
+          "counter_set"
+        ],
+        "properties": {
+          "ocp_id": {
+            "type": "string",
+            "pattern": "^ocp-[a-z0-9-]+$"
+          },
+          "code": {
+            "type": "string",
+            "pattern": "^[A-Z0-9-]+$"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "enum": [
+              "methodology_root",
+              "repository",
+              "functional_area",
+              "front",
+              "subarea"
+            ]
+          },
+          "repository": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "canonical_path": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "taxonomy_level": {
+            "type": [
+              "integer",
+              "string",
+              "null"
+            ]
+          },
+          "identity_status": {
+            "enum": [
+              "VERIFIED_CONCEPTUAL",
+              "VERIFIED_REPOSITORY",
+              "VERIFIED_CONTROL_AND_PATH",
+              "VERIFIED_INVENTORY_PATH",
+              "PENDING_CLASSIFICATION",
+              "PENDING_BRANCH_RECONCILIATION",
+              "PENDING_CONTROL"
+            ]
+          },
+          "allocation_eligible": {
+            "type": "boolean"
+          },
+          "source_evidence": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            }
+          },
+          "control": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "additionalProperties": false,
+            "required": [
+              "path",
+              "blob_sha",
+              "status",
+              "generation"
+            ],
+            "properties": {
+              "path": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "blob_sha": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "status": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "generation": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 0
+              }
+            }
+          },
+          "counter_set": {
+            "$ref": "#/$defs/counter_set"
+          }
+        }
+      }
+    },
+    "allocations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "allocation_id",
+          "idempotency_key",
+          "record_class",
+          "target_kind",
+          "target_id",
+          "sequence_number",
+          "global_folio",
+          "ocp_folios",
+          "status",
+          "registry_generation",
+          "source_event_id",
+          "recorded_at",
+          "readback"
+        ],
+        "properties": {
+          "allocation_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "idempotency_key": {
+            "type": "string",
+            "minLength": 1
+          },
+          "record_class": {
+            "enum": [
+              "conversation",
+              "cycle",
+              "A",
+              "B"
+            ]
+          },
+          "target_kind": {
+            "enum": [
+              "conversation",
+              "cycle",
+              "side"
+            ]
+          },
+          "target_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "conversation_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+          },
+          "cycle_number": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 1
+          },
+          "sequence_number": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "global_folio": {
+            "type": "string",
+            "pattern": "^(CV-G|CY-G|A-G|B-G)[0-9]{8}$"
+          },
+          "ocp_folios": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string",
+              "pattern": "^(CV|CY|A|B)-OCP-[A-Z0-9-]+-[0-9]{8}$"
+            }
+          },
+          "status": {
+            "enum": [
+              "RESERVED",
+              "VERIFIED",
+              "CANCELLED"
+            ]
+          },
+          "registry_generation": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "source_event_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "recorded_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "readback": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "verified",
+              "commit_sha",
+              "blob_sha"
+            ],
+            "properties": {
+              "verified": {
+                "type": "boolean"
+              },
+              "commit_sha": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "blob_sha": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "unresolved_contexts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "candidate_id",
+          "name",
+          "repository",
+          "path",
+          "reason",
+          "allocation_blocked"
+        ],
+        "properties": {
+          "candidate_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "repository": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "allocation_blocked": {
+            "const": true
+          },
+          "source_evidence": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "activation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "generation_name",
+        "prepared_on",
+        "activated_on",
+        "cutover_event",
+        "activation_gate"
+      ],
+      "properties": {
+        "generation_name": {
+          "const": "FOL1"
+        },
+        "prepared_on": {
+          "type": "string",
+          "format": "date"
+        },
+        "activated_on": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "cutover_event": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "activation_gate": {
+          "type": "string"
+        }
+      }
+    },
+    "legacy_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "legacy_cycle_pattern",
+        "legacy_side_suffixes",
+        "renumber_legacy",
+        "retroactive_allocation"
+      ],
+      "properties": {
+        "legacy_cycle_pattern": {
+          "const": "C-AAAAMMDD-XXXXXXXX"
+        },
+        "legacy_side_suffixes": {
+          "const": [
+            "-E",
+            "-S"
+          ]
+        },
+        "renumber_legacy": {
+          "const": false
+        },
+        "retroactive_allocation": {
+          "const": false
+        },
+        "legacy_status": {
+          "const": "EXCLUDED_FROM_FOL1"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "counter_set": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "conversation",
+        "cycle",
+        "A",
+        "B"
+      ],
+      "properties": {
+        "conversation": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "cycle": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "A": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "B": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    }
+  }
+}
