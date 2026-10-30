@@ -8,7 +8,6 @@
     "event_id",
     "conversation_id",
     "cycle_number",
-    "legacy_cycle_folio",
     "side",
     "sequence_in_cycle",
     "speaker",
@@ -23,7 +22,7 @@
   "properties": {
     "record_id": {
       "type": "string",
-      "pattern": "^C-[0-9]{8}-[A-F0-9]{8}-[ES]$"
+      "minLength": 1
     },
     "event_id": {
       "type": "string",
@@ -46,7 +45,10 @@
       }
     },
     "cycle_number": {
-      "type": "integer",
+      "type": [
+        "integer",
+        "null"
+      ],
       "minimum": 1
     },
     "cycle_folio_global": {
@@ -261,9 +263,6 @@
           "speaker": {
             "const": "operator"
           },
-          "record_id": {
-            "pattern": "^C-[0-9]{8}-[A-F0-9]{8}-E$"
-          },
           "record_folio_global": {
             "pattern": "^A-G[0-9]{8}$"
           }
@@ -285,9 +284,6 @@
           },
           "speaker": {
             "const": "assistant"
-          },
-          "record_id": {
-            "pattern": "^C-[0-9]{8}-[A-F0-9]{8}-S$"
           },
           "record_folio_global": {
             "pattern": "^B-G[0-9]{8}$"
