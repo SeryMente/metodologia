@@ -2,6 +2,11 @@
 
 El prompt real se completa con datos comprobados del OCP y de la fuente/branch reales; no se envían campos ficticios.
 
+## Restricciones de entorno
+
+- El producto se consume desde ChatGPT Free mediante el plugin MCP público. No diseñes pasos que requieran un plan de ChatGPT de pago, Developer Mode o un GPT personalizado creado por el operador.
+- Codex no se utiliza en ninguna fase. No recomiendes ni invoques Codex, no generes dependencias, instrucciones, comandos o fallbacks que lo requieran.
+
 ## Campos obligatorios
 - Propósito y resultado verificable.
 - Fuente Jules exacta obtenida por `jules_list_sources` y validada por el servidor.
