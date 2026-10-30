@@ -21,7 +21,7 @@ La implementación mantiene separadas tres responsabilidades: Persistencia docum
 
 **Compuerta normativa:** DUG v362 ART-020/024 aún clasifican Trazabilidad semántica dentro de Gestión conversacional. AT v1.1 fija la definición operativa objetivo, pero no altera ART-020/024 ni el GOW. La alineación normativa permanece pendiente de autorización expresa P005. El canon LISA no se modificó; la integración completa LISA/FIAT/LSV/MAT sigue pendiente.
 
-**Límites operativos:** el esquema/registro v1.1 no crea un motor autónomo ni captura automática. Este ciclo se registra manualmente con la infraestructura disponible; solo se declarará persistido tras lectura de vuelta.
+**Límites operativos:** el esquema/registro v1.1 no crea un motor autónomo ni captura automática. Este ciclo se registró manualmente y quedó persistido tras lectura de vuelta.
 
 Evidencia: [crónica](cronica/C-GOBERNANZA-AT-ENDURECIMIENTO-01.md) · [evidencia](evidencias/C-GOBERNANZA-AT-ENDURECIMIENTO-01.json) · [AT v1.1](entregas/CHATGPT-v0.8/AT-v1.1.md) · [esquema](entregas/CHATGPT-v0.8/ESQUEMA-VECTORES-SEMANTICOS-AT-v1.1.json) · [diálogo](conversaciones/C-GOBERNANZA-AT-ENDURECIMIENTO-01-dialogo.jsonl).
 
