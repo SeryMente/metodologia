@@ -2,7 +2,7 @@
 
 Punto de entrada del repositorio; no es una fuente normativa.
 
-**Documento Único de Gobernanza:** [DUG · Samantha v360 · NX-360m](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html). Integra 41 principios, 17 anexos jerarquizados, Metacanon 1.24, GOW 2.9 con 111 términos, taxonomía estructural 1.3, navegación y representación estructurada. Fuente y contadores releídos en `main` el 2026-10-29.
+**Documento Único de Gobernanza:** [DUG · Samantha v362 · NX-362m](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html). Integra 41 principios, 18 anexos jerarquizados, Metacanon 1.24, GOW 2.11 con 122 términos definidos e indexados, §ARR con el vocabulario inicial de ChatGPT, taxonomía estructural 1.3, navegación y representación estructurada. Fuente y contadores releídos en `main` el 2026-10-29.
 
 La sección humana gobierna la representación estructurada incorporada en el mismo archivo. No hay documentos normativos paralelos ni sincronización automática implícita con Notion, instrucciones personalizadas, memorias o copias locales. La rama `main` de `SeryMente/metodologia` es la fuente documental; si no puede leerse, declara `METODOLOGÍA NO VERIFICADA`. Las políticas obligatorias, los permisos reales y las autorizaciones aplicables conservan precedencia.
 
@@ -25,7 +25,7 @@ El gobierno general anterior de `SI-METACOGNITIVO.md` es histórico. Los procedi
 
 ## Continuidad entre conversaciones
 
-Cuando una petición abra, retome, cambie o asuma un FT/FDT gobernado por esta metodología, la IPZ global debe activar el arranque sin que el operador vuelva a pedirlo. El procedimiento vive en el [prompt universal](PROMPT-UNIVERSAL-REINSTANTANCIACION.md) y el [Bootstrap Conversacional Recursivo](BOOTSTRAP-CONTEXTO-GLOBAL.md); la autoridad sigue siendo el DUG integrado y el estado de cada frente su OCP real. La nueva IPZ candidata está en [IPZ-CAMPO-CHATGPT.txt](frentes/metacanon/entregas/CHATGPT-v0.4/IPZ-CAMPO-CHATGPT.txt) ( 1266 caracteres); la [matriz de escenarios](frentes/metacanon/entregas/CHATGPT-v0.4/MATRIZ-ESCENARIOS-INICIO-FT-v0.1.md) distingue cobertura plena, configuración adicional y fallos seguros. El repositorio no puede escribir ni verificar el campo nativo de Instrucciones Personalizadas: la instalación única y la prueba semántica en una conversación realmente nueva siguen pendientes.
+En una conversación nueva de ChatGPT, la [IPZ candidata v0.5](frentes/metacanon/entregas/CHATGPT-v0.5/IPZ-CAMPO-CHATGPT.txt) establece el orden de entrada: primero adquirir [§ARR · Vocabulario de entrada](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#gow-arranque-chatgpt), después consultar el DUG y seguir sus principios en el orden establecido. El propósito y contrato de la IPZ están canonizados en [ART-025](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-025). Las demás reglas del campo refuerzan selectivamente continuidad, trazabilidad, responsabilidad e integridad; no activan capacidades ni crean otra autoridad. El [prompt universal](PROMPT-UNIVERSAL-REINSTANTANCIACION.md) y el [BCR](BOOTSTRAP-CONTEXTO-GLOBAL.md) desarrollan la retoma del frente y su estado.
 
 ## Vía portable ejecutable · kit 0.1.2
 
