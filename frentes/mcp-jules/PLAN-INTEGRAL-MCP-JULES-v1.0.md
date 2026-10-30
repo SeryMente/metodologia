@@ -4,10 +4,11 @@
 **Frente:** MCP Jules  
 **Fase completada:** Fase 1 — planeación integral de diseño; no se implementó código de producto.  
 **Fecha de corte documental:** 2026-10-29  
+**Revisión de cierre:** R2 · C-MCP-JULES-008; requisito ChatGPT Free y exclusión absoluta de Codex  
 **OCP:** `frentes/mcp-jules/`  
 **Control de responsabilidad:** `CONTROL-RESPONSABILIDAD.json`, generación 2, folio `SES-20261029-6C2F9A17`.  
 **Gobierno consultado:** Documento Único de Gobernanza (DUG) Samantha v360 · NX-360m; Metacanon 1.24; GOW 2.9, leídos desde `SeryMente/metodologia/main`.  
-**Estado:** planeación integral completada como especificación lista para implementación; la aceptación del código, la API real, la conexión ChatGPT, el despliegue y el release siguen pendientes.
+**Estado:** especificación de Fase 1 revisada y completada como línea base integral; cliente final obligatorio ChatGPT Free, sin Codex. Ruta candidata: plugin MCP público del directorio de ChatGPT, aún sujeta a prueba real de disponibilidad y escritura en Free. Código, API real, publicación/aprobación del plugin, E2E, despliegue y release siguen pendientes.
 
 ## 1. Decisión de fase
 
@@ -19,13 +20,14 @@ La fase 1 se considera cerrada cuando el plan tenga trazabilidad entre requisito
 
 ## 2. Propósito del componente
 
-MCP Jules debe funcionar como una integración de herramientas adicional, disponible para ChatGPT junto con otras integraciones como Remote Desktop Commander (RDC). Dentro del flujo activo de una conversación, ChatGPT podrá seleccionar e invocar las herramientas MCP para delegar trabajo de desarrollo a Jules, consultar lo que está ocurriendo, recuperar preguntas o solicitudes de retroalimentación y responderlas dentro de la misma sesión.
+MCP Jules permitirá desarrollar repositorios desde una conversación normal de ChatGPT Free mediante un plugin público de ChatGPT conectado al servidor MCP central de KHORA. **Codex queda excluido de forma absoluta**: no se usará para construir, ejecutar, probar, publicar, operar ni como alternativa o contingencia.
 
-La función principal no es simplemente enviar un prompt. Es cerrar el ciclo:
-
+La unidad funcional no es simplemente enviar un prompt. Es cerrar el ciclo:
 **ChatGPT analiza y formula → Jules planea → el operador aprueba el plan → Jules ejecuta → ChatGPT recupera actividad y preguntas → ChatGPT responde con contexto verificado → Jules continúa → ChatGPT comprueba la entrega.**
 
-La integración se invoca como una aplicación/herramienta MCP disponible en el ciclo activo de resolución de problemas de ChatGPT, de modo análogo a otras herramientas como RDC. Para ejecutar una acción nueva, el usuario debe tener el app disponible y seleccionado/mencionado en el mensaje correspondiente; la selección de una app no garantiza que se invoque automáticamente en todos los turnos. Esto describe el uso de herramientas durante la resolución, no acceso a un proceso de razonamiento privado invisible. El modo Agent no se considera runtime objetivo para esta v1.0 y la investigación profunda solo admite lectura/recuperación, no escritura, conforme a la documentación actual de OpenAI.
+El plugin se descubrirá e instalará desde el directorio público de plugins de ChatGPT y expondrá el mismo endpoint central de KHORA, no un servidor paralelo. La publicación, disponibilidad individual en Free y capacidad real de escritura son gates externos: no se presumen. El usuario debe operar desde chat normal sin plan de pago, Developer Mode, GPT personalizado creado por él o Codex.
+
+El plugin se selecciona o menciona en los mensajes que requieren invocación. No se garantiza invocación automática en todos los turnos, ejecución oculta ni trabajo cuando la conversación está inactiva.
 
 ## 3. Resultado esperado de v1.0
 
@@ -48,32 +50,29 @@ La versión 1.0 debe permitir que un asistente autorizado:
 
 ### Incluido en v1.0
 
-- Siete herramientas MCP para lectura de fuentes/sesiones/actividades y para crear, responder y aprobar planes.
-- Creación de sesión con `requirePlanApproval=true` y `automationMode=AUTO_CREATE_PR`, ambos establecidos por el servidor y no elegibles como parámetros libres del asistente; la API marca ambos campos como input-only.
-- Verificación de fuente/branch dentro del servidor contra el recurso fuente actual de Jules antes de crear sesión.
-- PR automático por Jules como artefacto de salida permitido tras aprobar el plan; nunca auto-merge ni auto-deploy.
-- Integración en la ruta MCP existente de Khora.
-- Autenticación ChatGPT → Khora mediante el mecanismo OAuth/Bearer existente.
-- Autenticación Khora → Jules mediante `JULES_API_KEY` guardada exclusivamente en el entorno seguro del servidor.
-- Scopes diferenciados `jules:read` y `jules:write`, dentro del contrato de autorización que ya emplea Khora.
-- Compatibilidad con el ciclo normativo existente de Khora, sus tokens/controles y diagnósticos.
-- Paginación, validación de identificadores, errores estandarizados y pruebas positivas y negativas.
-- Uso interactivo desde un cliente ChatGPT real que admita las capacidades de escritura necesarias.
-- Registro de sesión, fuente, rama, eventos, checkpoints, resultados, fallos y siguiente paso en el OCP.
+- Un solo servidor MCP central de KHORA, endpoint /api/mcp, con siete herramientas públicas.
+- Consumo desde ChatGPT Free mediante un plugin MCP público aprobado y publicado en el directorio oficial; prueba Free real obligatoria.
+- Paquete de plugin, metadatos, identidad de editor verificada, dominio HTTPS, política de privacidad, soporte, escaneo y revisión de OpenAI.
+- OAuth 2.1 compatible con el cliente ChatGPT: Authorization Code + PKCE S256, metadatos de recurso protegido/autorización y validación de issuer, audience, expiración, sujeto y scopes.
+- Autorización por sujeto y recurso: identidad OAuth → identidad KHORA → fuentes Jules permitidas → repositorios → ramas → scopes. Sin acceso anónimo ni filtración de fuentes privadas.
+- Scopes jules:read y jules:write separados, además del ciclo normativo y controles existentes de KHORA.
+- Validación server-side de fuente y rama antes de crear sesión; requirePlanApproval=true y automationMode=AUTO_CREATE_PR.
+- Seguimiento conversacional, actividades paginadas, feedback en la misma sesión, aprobación humana y verificación independiente.
+- Tratamiento explícito de cuotas Free, interrupciones y reanudación mediante checkpoint; no se promete uso ilimitado.
+- Pruebas de API real, OAuth, aislamiento, revisión/publicación del plugin, uso en Free y E2E en repositorio sandbox.
+- Guía de instalación/replicación con el plugin y servidor central, sin copiar secretos ni controles.
 
 ### Excluido de v1.0
 
-- Un segundo servidor MCP o un servidor dedicado por proyecto.
-- Un trabajador permanente que sondee Jules cuando ChatGPT está inactivo.
-- Webhooks de actividad que no estén documentados y disponibles en la API usada.
-- Autorespuesta ilimitada, aprobación automática del plan o delegación que amplíe permisos.
-- Merge, despliegue a producción o cambios de arquitectura realizados solo porque Jules los proponga.
-- Copiar la clave de Jules, tokens de ChatGPT, credenciales o secretos al prompt, cliente, Git, evidencia o logs.
-- Garantizar disponibilidad permanente de ChatGPT, ejecución en segundo plano o invocación de herramientas en cada ciclo.
-- Usar herramientas MCP de escritura desde Agent mode o Deep Research como si fueran equivalentes al chat conversacional normal.
-- Declarar que todos los repositorios de la organización están conectados a Jules sin comprobar la lista de fuentes.
+- **Codex en cualquier producto, superficie o modo**: no instalar, invocar, documentar como ruta ni utilizar como fallback.
+- Conexión privada directa de un servidor MCP personalizado como ruta objetivo de Free; su compatibilidad de escritura documentada corresponde a otros planes.
+- GPT personalizados/GPT Actions como integración objetivo; las cuentas personales Free no pueden crear/publicar GPTs nuevos.
+- Servidor MCP por frente, segundo servidor Jules, trabajador persistente, webhook no documentado o ejecución sin turno activo.
+- Aprobación automática, autorespuesta ilimitada, auto-merge o auto-deploy.
+- Acceso anónimo o acceso indiscriminado a todos los repositorios por instalar el plugin.
+- Declarar compatibilidad Free por la sola presencia del directorio; se requiere prueba real de instalación, descubrimiento y escritura.
 
-El sondeo persistente, notificaciones, políticas de respuesta automática acotada y orquestación ampliada de PR/CI son posibles evoluciones posteriores, no condiciones implícitas de v1.0.
+La publicación pública distribuye el plugin, no concede autorización sobre KHORA, Jules ni GitHub. Cada llamada permanece autenticada y limitada al sujeto y recursos permitidos.
 
 ## 5. Arquitectura lógica
 
@@ -228,23 +227,57 @@ No guardar claves ni bearer tokens. Evitar copiar el historial completo de una s
 11. No se afirma exclusión de concurrencia global: el control de responsabilidad del OCP es cooperativo y gobierna solo este frente.
 12. El producto no promete ejecución perpetua ni acceso entre turnos. Una ejecución persistente necesitaría trabajador externo, checkpoints, idempotencia, recuperación y gobierno propios.
 
-## 11. Compatibilidad real con ChatGPT
+## 11. Compatibilidad real con ChatGPT Free y distribución
 
-La documentación oficial de OpenAI consultada el 2026-10-29 indica que las conexiones personalizadas MCP con escritura están disponibles para ChatGPT Business y Enterprise/Edu; Pro puede conectar servidores personalizados con permisos de lectura/recuperación, no la misma compatibilidad completa de escritura. El artículo no lista Plus entre los planes compatibles con escritura; si el espacio de trabajo real es Plus u otro no incluido expresamente, no debe presumirse capacidad de escritura: queda **NO VERIFICADA y constituye un gate go/no-go para la integración nativa v1.0**. El objetivo de release es un cliente ChatGPT web donde la app MCP personalizada, la autenticación y las acciones de escritura estén habilitadas.
+### 11.1 Requisito obligatorio
 
-OpenAI también especifica que la app personalizada se selecciona para el mensaje en el que se usa; hay que volver a mencionarla si un mensaje posterior requiere nuevos datos/acciones. La documentación actual dice que Agent mode no usa apps personalizadas y que Deep Research no admite acciones de escritura. Por tanto, v1.0 garantiza uso dentro del flujo conversacional normal cuando la herramienta está disponible/seleccionada; no garantiza invocación en cada mensaje, Agent mode, Deep Research ni ejecución de fondo.
+El cliente final es una cuenta personal ChatGPT Free en chat normal y web. No se aceptará como sustituto probar solo con Business, Enterprise, Edu, Pro o Plus, ni exclusivamente desde Developer Mode. La prueba debe usar una cuenta Free real en la región de operación.
 
-Antes de cerrar la compuerta de integración, se debe verificar en el entorno real:
+**Codex no forma parte del sistema:** ninguna fase, instrucción, artefacto, CI, publicación, operación o contingencia dependerá de ese producto.
 
-- plan y espacio de trabajo efectivo;
-- permiso para crear/conectar una app MCP personalizada;
-- soporte de acciones de escritura;
-- URL pública HTTPS del servidor o un túnel admitido;
-- método de autenticación y refresh-token cuando corresponda;
-- descubrimiento de las siete herramientas y sus scopes;
-- ejecución de llamadas reales desde una conversación nueva.
+### 11.2 Rutas evaluadas
 
-No se debe inferir elegibilidad porque la API de Jules o el servidor Khora sean técnicamente viables. Si el cliente/plan no habilita escritura, la integración nativa del objetivo de v1.0 no es viable en ese cliente hasta resolver una vía compatible; no se presenta la lectura-only como sustituto equivalente.
+1. **MCP personalizado privado:** descartado como ruta de Free. OpenAI documenta compatibilidad completa de MCP con escritura para Business y Enterprise/Edu; Pro dispone de lectura/recuperación. No se debe inferir que Free puede conectar directamente un servidor MCP personalizado con escritura.
+2. **Plugin MCP público del directorio ChatGPT:** ruta objetivo seleccionada para validar Free. OpenAI indica que el directorio de plugins está disponible en distintos planes y que los plugins pueden incorporar conexiones MCP y ejecutarse en ChatGPT. Sin embargo, la disponibilidad y capacidades de cada plugin dependen del plan, cuenta y región. Directorio disponible no equivale a escritura garantizada para este plugin.
+3. **GPT personalizado/GPT Actions:** no seleccionado. Free no puede crear ni publicar GPTs personales nuevos; no es una dependencia estable del diseño.
+4. **Codex:** prohibido como herramienta, cliente, canal de prueba o alternativa.
+
+### 11.3 Distribución e instalación
+
+1. Preparar un paquete de plugin con un solo servidor MCP remoto apuntando al endpoint HTTPS existente de KHORA /api/mcp.
+2. Verificar la identidad del editor en el portal de desarrolladores de OpenAI; incluir metadatos, nombre/descrición, recursos gráficos requeridos, política de privacidad y soporte. No incluir secretos.
+3. Verificar el dominio, conectar el MCP, completar autenticación y escaneo automatizado de las siete herramientas.
+4. Corregir findings y someter el paquete a revisión. Publicar solo después de aprobación real de OpenAI.
+5. Desde ChatGPT Free, encontrar/instalar el plugin publicado y conectar KHORA mediante OAuth.
+6. Seleccionar o mencionar el plugin en chat normal para invocar herramientas. Confirmar continuidad de autorización sin reinstalación y respetar revocación/expiración.
+
+### 11.4 OAuth, identidad y permisos
+
+El servidor deberá cumplir el contrato OAuth 2.1 publicado para plugins MCP: metadata del recurso protegido y del servidor de autorización; Authorization Code + PKCE S256; método de identificación/registro de cliente admitido (CIMD o DCR según configuración); preservación del parámetro resource; validación de issuer, audience, expiración, sujeto y scopes en cada llamada.
+
+El sujeto OAuth debe resolverse a una identidad KHORA autorizada. Cada herramienta aplica permiso por sujeto, fuente, repositorio, rama y scope. jules_list_sources filtra las fuentes autorizadas; jules_create_session vuelve a obtener Source desde Jules y confirma la rama contra esa autorización. Si la asignación no puede verificarse, falla cerrado. JULES_API_KEY permanece solo en el servidor.
+
+Un plugin público no vuelve público el acceso a repositorios privados. La autorización debe ocurrir en el servidor, no quedar delegada a instrucciones del modelo.
+
+### 11.5 Gate de ChatGPT Free
+
+PASS exige evidencia desde una cuenta Free real, sin Developer Mode ni plan de pago:
+- listing público localizable y plugin instalable;
+- OAuth exitoso en la superficie y región objetivo;
+- descubrimiento de las siete herramientas y schemas;
+- lectura con permisos mínimos;
+- una escritura real y no destructiva desde chat normal;
+- ciclo completo: sesión → plan → confirmación humana → ejecución → feedback → respuesta misma sesión → entrega verificada;
+- manejo de cuota Free e interrupción sin duplicados ni pérdida de checkpoint.
+
+Si el plugin no aparece, no se instala o las escrituras están bloqueadas para Free, el gate es BLOCKED/FAIL. No se reporta PASS por lectura solamente, por una cuenta de pago, por Developer Mode o por un relevo manual. Cambiar arquitectura requiere nueva decisión explícita.
+
+### 11.6 Límites del plan Free
+
+- No prometer cuota, prioridad ni disponibilidad ilimitada.
+- Ante límite o indisponibilidad, conservar el último checkpoint verificado y comunicar cómo reanudar.
+- Nunca repetir un POST ambiguo al alcanzar una cuota o cortarse un turno.
+- La interrupción de ChatGPT, plugin, OAuth o Jules bloquea la operación dependiente; no autoriza usar un cliente excluido ni omitir aprobación.
 
 ## 12. Requisitos no funcionales
 
@@ -281,7 +314,7 @@ La aceptación exige evidencia real. Un test que utiliza mocks no acredita conec
 | T12 | Secretos | Clave ausente/rechazada no se filtra por salida, error, prompt, test snapshot ni log. |
 | T13 | Datos no confiables | Texto malicioso de Jules no modifica scopes, autorización ni reglas de ejecución. |
 | T14 | API real | `JULES_API_KEY` aceptada sin revelar su valor; prueba no destructiva en fuente/rama autorizada. |
-| T15 | Cliente real | ChatGPT descubre y llama a las herramientas desde el cliente/espacio de trabajo previsto, incluyendo escritura. |
+| T15 | Cliente real | ChatGPT Free instala el plugin público aprobado, descubre las siete herramientas y ejecuta acciones desde chat normal. |
 | T16 | E2E | Secuencia creación → plan → aprobación explícita → avance → feedback → respuesta → cierre/entrega verificada. |
 | T17 | Persistencia | Núcleo/crónica reflejan exactamente el resultado comprobado y sobreviven a una reinstanciación. |
 | T18 | Liberación | PR revisado y aprobado conforme a autorización; checks pertinentes verdes o excepción explícita, documentada y aceptada. |
@@ -289,21 +322,29 @@ La aceptación exige evidencia real. Un test que utiliza mocks no acredita conec
 | T20 | Modo de salida | La solicitud de creación usa `AUTO_CREATE_PR`; cualquier PR se verifica por URL/estado real, sin asumir merge. |
 | T21 | Seguridad de reintento | Tests demuestran cero reintentos automáticos de POST no idempotentes ante red/5xx ambiguos; GET aplica límites. |
 | T22 | Plan exacto vigente | Si cambia el plan/actividad después de su revisión, se bloquea la aprobación hasta recabar consentimiento para el plan actual. |
-| T23 | Disponibilidad ChatGPT | Se documenta cliente/plan/espacio de trabajo compatible con escritura y descubrimiento actualizado de herramientas; si falta, el gate falla cerrado. |
-| T24 | Uso conversacional real | Se prueba uso en chat normal y disponibilidad/reselección para mensajes posteriores; Agent/Deep Research quedan fuera del camino de escritura. |
+| T23 | Disponibilidad ChatGPT Free | Una cuenta Free real, sin Developer Mode ni workspace pagado, instala el plugin y ejecuta escritura no destructiva; de lo contrario BLOCKED/FAIL. |
+| T24 | Uso conversacional Free | El plugin funciona en chat normal y se puede volver a seleccionar/mencionar; se registra conducta ante límites Free. Agent/Deep Research no son runtime de escritura. |
 | T25 | Branch/source negatives | Fuente desconectada, rama inexistente, respuesta malformada o error al obtener fuente no llama a `sessions.create`. |
+| T26 | Publicación plugin | Paquete MCP, dominio, escaneo, revisión y publicación oficial comprobados. Sin aprobación no se declara disponibilidad pública. |
+| T27 | OAuth y aislamiento | OAuth 2.1/PKCE identifica sujeto; el servidor valida issuer/audience/expiry/scopes y filtra fuentes/repos/ramas. Usuario no autorizado no lista ni muta recursos ajenos. |
+| T28 | Cuotas Free y reanudación | Al alcanzar límite Free, se detiene sin duplicar POST y retoma desde el último checkpoint. |
+| T29 | No dependencia de GPT Actions | La instalación y escritura funcionan sin crear/editar un GPT personalizado ni usar GPT Actions. |
+| T30 | Exclusión Codex | Desarrollo, pruebas, publicación, instalación y operación no invocan ni requieren Codex. |
+| T31 | Actualización de tools | El directorio refleja la versión aprobada; un cambio de herramientas no escaneado/aprobado no se declara disponible. |
 
-**Gate de release:** T01–T13 deben pasar según sus ámbitos; T14–T16 deben ejecutarse con API y cliente reales. T17 debe tener lectura de vuelta. No se declara MVP utilizable mientras un gate necesario permanezca pendiente o fallido. Las excepciones no se silencian ni se interpretan como PASS.
+**Gate de release:** T01–T13 pasan según ámbito; T14–T17 se ejecutan con API, plugin y ChatGPT Free reales. T18 tiene lectura de vuelta; T23, T26 y T27 son gates duros; T28–T31 también deben pasar. No se declara MVP utilizable con gates pendientes o fallidos. Las excepciones no se silencian ni se interpretan como PASS.
 
 ## 14. Bloqueos y riesgos conocidos al iniciar la planeación
 
-1. **Elegibilidad de ChatGPT para acciones de escritura:** no verificada para el espacio de trabajo que usará MCP Jules; consultar requisitos oficiales antes de cerrar diseño de integración.
+1. **Disponibilidad real del plugin MCP público en ChatGPT Free:** el directorio abarca distintos planes, pero cada plugin tiene disponibilidad/capacidades propias por plan y región. Escritura Free aún NO VERIFICADA; requiere prueba real.
 2. **Credencial Jules:** `JULES_API_KEY` figura configurada como variable sensible en Vercel producción según el registro previo, consultada sin descifrar. Su validez no está demostrada; no recuperar ni exponer el valor.
 3. **CI de Khora:** el último diagnóstico persistido para PR #338 reporta typecheck/UI review/contratos UI/API tests aprobados, suite unitaria 547 PASS/1 FAIL por lectura del esquema privado de Metodología sin `GH_TOKEN`, dos findings Ruff fuera del diff y build/E2E fallidos aguas abajo. Debe refrescarse contra el head vigente antes de tomar decisiones.
 4. **CI de Metodología:** `validate-canonical-bootstrap.py` y un workflow de gobernanza muestran runs fallidos. La fuente de validación contiene expectativas antiguas de Samantha v339/NX-339m y varios archivos Markdown de compatibilidad; el canon vigente es el DUG HTML v360/NX-360m. El diseño de corrección debe preservar una fuente normativa única y distinguir interfaces de compatibilidad de autoridad normativa. Los logs del run no fueron recuperables, por lo que no se atribuye a un paso exacto la causa de una ejecución concreta.
 5. **Límite de API:** Jules documenta la API `v1alpha`; el contrato puede cambiar. Revalidar los esquemas al comenzar implementación y antes de release.
 6. **Automatización persistente:** no hay trabajador externo aprobado/implementado por este plan. La interacción MCP ocurre cuando se invocan herramientas durante una conversación activa.
 7. **PR documental sin integrar:** Metodología PR #19 sigue en borrador en la rama de trabajo. El plan y los artefactos no están disponibles todavía como estado de `main`.
+8. **Revisión/publicación externa:** OpenAI puede rechazar o demorar el plugin o exigir cambios de metadata, privacidad, seguridad o autenticación. La aprobación es externa y no se presume.
+9. **Aislamiento de usuario/repositorio:** el servidor actual debe demostrar autorización por sujeto y recurso antes de exponerse públicamente; read/write global no basta para proteger repositorios privados.
 
 ## 15. Secuencia de fases posterior a la planeación
 
@@ -320,33 +361,40 @@ La aceptación exige evidencia real. Un test que utiliza mocks no acredita conec
 
 ### Fase 2 — Reconciliación e implementación
 
-- Comparar PR #338 y el código actual del servidor con el diseño aceptado; construir una matriz de delta.
-- Confirmar contratos actuales de la API Jules y del servidor Khora.
-- Ejecutar la corrección mínima en la rama de implementación autorizada.
-- Mantener aisladas las modificaciones de Jules frente a fallos ajenos al diff y documentar sus responsables.
-- Volver a ejecutar pruebas con evidencia real.
+- Comparar PR #338 y el código del servidor con la línea base; matriz de deltas por archivo/requisito.
+- Revalidar API Jules v1alpha, contratos KHORA y OAuth 2.1 para plugins MCP públicos.
+- Ejecutar primero un gate temprano de viabilidad: usar el endpoint central de KHORA, preparar un paquete MCP de prueba, verificar dominio/identidad, escanear tools e intentar instalar/autenticar desde ChatGPT Free. No crear un segundo servidor. Si OpenAI no permite prueba antes de revisión/publicación, documentar ese requisito antes de seguir.
+- Auditar autorización por sujeto/recurso: identidad OAuth → KHORA → source/repo/branch allowlist → scopes. No filtrar fuentes de Jules que el sujeto no pueda usar.
+- Corregir source/branch server-side, retries GET/POST, pageToken, estados, diagnósticos, contratos y pruebas.
+- Preparar paquete, metadatos, privacidad, soporte, acceso demo aislado y evidencias para el proceso de revisión del directorio.
+- Aislar fallos ajenos al diff y documentar sus responsables; ejecutar suite actual y leer de vuelta evidencia.
 
-**Salida:** candidato de implementación alineado, no todavía release aceptado.
+**Salida:** candidato alineado y paquete sometido/aceptado según evidencia; todavía no MVP utilizable hasta que Free supere Fase 3.
 
 ### Fase 3 — Validación integrada real
 
-- Validar la credencial por una llamada real sin mostrarla.
-- Completar la secuencia de sesión con aprobación obligatoria y feedback en la misma sesión.
-- Probar conexión ChatGPT y permisos efectivos de escritura.
-- Probar recuperación tras timeout, paginación, errores y reanudación.
-- Persistir resultados en el OCP.
+- Validar JULES_API_KEY por llamada real sin mostrar su valor.
+- Instalar el plugin publicado desde el directorio en una cuenta personal ChatGPT Free real, en la región/superficie objetivo; sin Developer Mode ni cuenta de pago.
+- Completar OAuth y verificar que el sujeto solo ve fuentes/repos/ramas autorizados.
+- Descubrir las siete herramientas y validar scopes de lectura/escritura.
+- Ejecutar ciclo no destructivo en repositorio sandbox: crear → plan → aprobación humana → ejecución → feedback → respuesta en la misma sesión → PR/outputs → verificación independiente.
+- Probar cuota Free, OAuth expirado/revocado, timeout ambiguo, 429/5xx, paginación, fuente desconectada, branch inexistente y usuario sin permiso.
+- Interrumpir y reanudar desde checkpoint sin worker persistente ni duplicados.
+- Persistir outputs y evidencias en OCP.
 
-**Salida:** evidencia end-to-end reproducible y bloqueos restantes explícitos.
+**Salida:** E2E reproducible desde ChatGPT Free; si escritura Free no está disponible, gate BLOCKED y no se declara MVP.
 
 ### Fase 4 — Release y replicación controlada
 
-- Revisar el diff, los checks y las autorizaciones de integración.
-- Completar el merge y despliegue solo con autorización y verificación pertinentes.
-- Comprobar tools descubiertas después del despliegue y ejecutar prueba de humo.
-- Publicar guía de consumo y replicación por frente, usando el servidor central.
-- Declarar v1.0 utilizable solo cuando los gates de aceptación se satisfagan.
+- Revisar diff, CI vigente, findings del plugin, credenciales, privacidad, permisos y autorizaciones.
+- Completar merge y despliegue solo con autorización; la aprobación OpenAI del plugin no sustituye revisión de código.
+- Publicar/activar plugin aprobado y comprobar que listing y tools reflejan la versión aprobada.
+- Ejecutar smoke desde ChatGPT Free tras despliegue: instalación, OAuth, descubrimiento, lectura y escritura no destructiva.
+- Publicar guía de instalación/operación/replicación; todos los frentes reutilizan plugin y servidor central.
+- Documentar límites Free, revocación, rollback, soporte y ámbito de acceso.
+- Declarar v1.0 utilizable solo con todos los gates aplicables, especialmente T23/T26/T27.
 
-**Salida:** release verificado, guía de uso y matriz de capacidades/limitaciones.
+**Salida:** release verificado y utilizable desde ChatGPT Free, guía de instalación/operación y matriz de límites.
 
 ### Evolución futura
 
@@ -354,20 +402,21 @@ Si se solicita sondeo persistente, notificaciones, respuesta automática acotada
 
 ## 16. Condiciones para declarar completa la fase 1
 
-La planeación estará completa cuando:
+- Propósito y resultado con ChatGPT Free como cliente obligatorio y Codex excluido.
+- Ciclo bidireccional y contratos de las siete herramientas, scopes, estados, errores y pruebas.
+- Ruta de distribución definida: plugin MCP público, mismo endpoint central KHORA /api/mcp.
+- Diferencia documentada entre conexión MCP privada (no objetivo de Free) y plugin público (candidato Free con capacidades por probar).
+- Proceso de paquete, verificación de dominio, OAuth, escaneo, revisión, publicación e instalación.
+- OAuth 2.1, identidad KHORA y permisos granulares por sujeto/fuente/repositorio/rama.
+- Seguridad, control normativo, aprobación humana, source/branch, pageToken, retry diferenciado, persistencia, recuperación y errores.
+- Límites Free, interrupciones, checkpoints y reanudación.
+- Gates de aceptación con evidencias, fases y resultados explícitos; pruebas de plugin/Free/OAuth/aislamiento/no-Codex.
+- Secuencia de solo cuatro fases posteriores: Fase 2 reconciliación e implementación; Fase 3 validación integrada real; Fase 4 release y replicación controlada.
+- Consistencia entre plan, OCP, README, investigación, prompts, guía de replicación y aceptación.
+- Control de responsabilidad de este frente sin cambios; DUG y control del frente padre intactos.
+- Plan guardado y verificado mediante lectura de vuelta.
 
-- El propósito y el comportamiento esperado estén definidos inequívocamente.
-- Cada función tenga contrato, scope, estado esperado, errores y prueba asignada.
-- Las transiciones de la sesión y las decisiones de aprobación estén definidas.
-- La arquitectura conserve el servidor MCP central de Khora y sus controles existentes.
-- Los dos planos de credenciales estén delimitados y la clave solo exista en servidor.
-- Persistencia, recuperación, reintentos, concurrencia, errores y seguridad tengan tratamiento.
-- Cada gate de aceptación tenga un resultado esperado y evidencia identificable.
-- Las dependencias externas, elegibilidad de ChatGPT y bloqueos de CI estén nombrados, sin inventar solución ni resultado.
-- La relación entre el plan, `OBJETO-CANONICO.md`, el plan de aceptación y los PR sea consistente.
-- El plan completo esté escrito en este OCP y verificado mediante lectura de vuelta.
-
-Completar la planeación no equivale a aceptar la implementación, validar la API, conectar ChatGPT ni autorizar despliegue. Esas son salidas posteriores, sujetas a evidencia.
+Completar el diseño no equivale a publicar el plugin, validar la API, instalar en Free, demostrar escritura, desplegar o aceptar código. Son gates posteriores; la viabilidad Free no se marca PASS por inferencia.
 
 ## 17. Fuentes técnicas consultadas
 
@@ -377,7 +426,15 @@ Completar la planeación no equivale a aceptar la implementación, validar la AP
 - [Jules sessions.sendMessage](https://developers.google.com/jules/api/reference/rest/v1alpha/sessions/sendMessage) — envío de mensajes a una sesión.
 - [Jules sessions.approvePlan](https://developers.google.com/jules/api/reference/rest/v1alpha/sessions/approvePlan) — aprobación de plan.
 - [Jules sessions.activities.list](https://developers.google.com/jules/api/reference/rest/v1alpha/sessions.activities/list) — actividades y paginación.
-- [OpenAI: Connecting custom MCP servers in ChatGPT](https://help.openai.com/en/articles/12584461-connecting-custom-mcp-servers-in-chatgpt) — disponibilidad según plan/espacio de trabajo, selección por mensaje, HTTPS/túnel y confirmaciones de escritura. Consultado el 2026-10-29; full MCP con escritura figura para Business y Enterprise/Edu, mientras que Pro figura con lectura/recuperación.
+- [OpenAI: Connecting custom MCP servers in ChatGPT](https://help.openai.com/en/articles/12584461-connecting-custom-mcp-servers-in-chatgpt) — disponibilidad de conexión MCP privada y escritura por plan; no se usa como ruta Free.
+- [OpenAI: Plugins in ChatGPT](https://help.openai.com/en/articles/20001256-plugins-in-chatgpt) — directorio disponible en distintos planes; plugin individual sujeto a plan, cuenta, región y capacidades.
+- [OpenAI: Apps in ChatGPT](https://help.openai.com/en/articles/11487775-apps-in-chatgpt) — terminología/disponibilidad.
+- [OpenAI Developers: Upload and submit your plugin](https://developers.openai.com/plugins/deploy/submission) — paquete, identidad, conexión/escaneo, revisión y publicación.
+- [OpenAI Developers: Authenticate your users](https://developers.openai.com/plugins/build/auth) — OAuth 2.1, PKCE S256 y autenticación MCP.
+- [OpenAI: ChatGPT Free Tier FAQ](https://help.openai.com/en/articles/9275245-chatgpt-free-tier-faq) — límites Free y creación de GPT personales no disponible.
+- [OpenAI: GPTs in ChatGPT](https://help.openai.com/en/articles/8554407-gpts-in-chatgpt) y [GPT Actions](https://developers.openai.com/api/docs/actions/introduction) — no seleccionado como dependencia.
+
+La disponibilidad general del directorio no garantiza que este plugin tenga escritura en Free; esa incertidumbre sigue siendo un gate real.
 - [Investigación específica ya persistida en el OCP](fuentes/INVESTIGACION-API-JULES-CHATGPT.md) — antecedentes de automatización y comparación del cliente.
 - [Contrato operativo del asistente](prompts/ASISTENTE-MCP.md) y [contrato de prompts a Jules](prompts/JULES-CONSTRUCTOR.md) — material previo a reconciliar contra este plan.
 
@@ -424,6 +481,11 @@ Fuentes oficiales: [catálogo REST](https://developers.google.com/jules/api/refe
 | ADR-09 | El modo objetivo es chat web conversacional normal con app MCP personalizada habilitada para escritura. | La disponibilidad depende del plan y espacio de trabajo; Agent/Deep Research no son un runtime de escritura equivalente. | Gate externo de cliente/plan; T15/T23/T24. |
 | ADR-10 | Sin worker persistente, autorespuesta ilimitada, auto-merge ni auto-deploy en v1.0. | Mantiene el MVP acotado y evita conceder autonomía no solicitada. | Seguimiento invocado por herramientas durante turnos activos; extensiones fuera de alcance. |
 | ADR-11 | OCP: núcleo como estado vivo único y crónicas como historial verificable; no crear otra DB solo por simetría. | Respeta el objeto canónico y el requisito de continuidad. | Registrar IDs/cursor/estado/resultados mínimos; T17. |
+| ADR-12 | Distribución v1.0 como plugin MCP público en el directorio ChatGPT, conectado al endpoint único KHORA /api/mcp. | MCP privado con escritura no es la ruta Free; directorio de plugins incluye varios planes, capacidades individuales no garantizadas. | Paquete/revisión/publicación y prueba Free; T15/T23/T26/T31. |
+| ADR-13 | ChatGPT Free es el cliente obligatorio; Codex se excluye de construcción, pruebas, publicación, operación y contingencia. | Restricción expresa del operador. | T23/T29/T30. |
+| ADR-14 | No depender de GPTs personalizados ni GPT Actions. | Free no crea/publica GPTs personales nuevos; no es dependencia estable del MVP. | T29. |
+| ADR-15 | Cada llamada exige OAuth 2.1 y autorización del sujeto por source/repo/branch además de scopes Jules. | Publicar el plugin no debe abrir repos privados. | T27 y negativos de aislamiento. |
+| ADR-16 | Escritura desde ChatGPT Free es NO VERIFICADA hasta prueba real. | Directorio general no garantiza acciones de cada plugin por plan/región. | Gate T23/T26; si falla se detiene la declaración de MVP. |
 
 ### Límite de la aprobación
 
@@ -463,7 +525,10 @@ El helper HTTP no debe aplicar una única política de retry a todos los método
 | Exposición de respuesta upstream | Código de diagnóstico público; nunca propagar cuerpo upstream no saneado. | T11/T12. |
 | Paginación truncada | Conservar `nextPageToken`; no confundir ausencia de resultados de una página con final de colección. | T09. |
 | Saturación / coste | PageSize 1–100; backoff limitado para GET; sin loops infinitos ni trabajador persistente. | Pruebas de límite/reintento. |
-| Herramienta no disponible en el plan | Gate de elegibilidad del cliente/espacio de trabajo; no declarar viable antes de confirmarlo. | T23/T24. |
+| Plugin no visible/no habilitado en Free | Confirmar listing, plan, región y superficie; bloquear, no sustituir con MCP privado de otro plan. | T23/T26. |
+| Sujeto OAuth sin permiso de fuente | Rechazar sin filtrar fuente, rama, sesión ni actividad ajena. | T27. |
+| Plugin/cambio de tools no aprobado | No simular publicación; conservar versión aprobada anterior o bloquear función. | T26/T31. |
+| Cuota Free agotada | Preservar checkpoint y reanudar explícitamente; no repetir POST ambiguo. | T28.
 
 El registro operativo incluye IDs y tiempos mínimos, estados, errores de clase, correlación y checkpoint. No debe copiar cuerpos completos, prompts sensibles ni secretos a telemetría. Las pruebas con repositorios privados requieren fuente y rama de prueba autorizadas.
 
@@ -477,6 +542,9 @@ El registro operativo incluye IDs y tiempos mínimos, estados, errores de clase,
 4. Corregir la paginación con `pageToken` exclusivamente; retirar o aislar helpers antiguos que usen parámetros no documentados.
 5. No incluir fixes de Ruff ajenos al diff de Jules sin coordinación con su frente responsable.
 6. Mantener `JULES_API_KEY` fuera de Git y no leer su valor para depurar; la prueba debe informar éxito/fallo y metadatos mínimos.
+7. Auditar OAuth 2.1 del endpoint: metadata de recurso/autorización, PKCE S256, resource, issuer, audience, expiración y scopes.
+8. Implementar autorización por sujeto y recurso; no devolver fuentes Jules que el sujeto KHORA no puede usar.
+9. Preparar paquete MCP público con un solo servidor remoto, identidad verificada, dominio, metadata, privacidad/soporte, escaneo y revisión oficial. No usar GPT Actions ni Codex.
 
 ### Fase 3 — validación integrada
 
@@ -485,17 +553,20 @@ El registro operativo incluye IDs y tiempos mínimos, estados, errores de clase,
 3. Revisar el plan con el operador y recibir aprobación explícita.
 4. Aprobar, reconsultar y verificar ejecución/actividad real.
 5. Simular/ejecutar una solicitud de feedback y responder en la misma sesión.
-6. Confirmar en el cliente ChatGPT real la disponibilidad de herramientas de escritura y los prompts de confirmación.
-7. Probar timeout ambiguo, 429, 5xx, página siguiente, fuente desconectada y branch inexistente.
+6. Instalar el plugin publicado en cuenta ChatGPT Free real desde el directorio; completar OAuth sin Developer Mode.
+7. Confirmar las siete tools, scopes y aislamiento por sujeto/fuente/repo/branch.
+8. Ejecutar escritura real no destructiva, aprobación humana y feedback bidireccional en el mismo session ID.
+9. Probar cuota Free y reanudar desde checkpoint.
+10. Probar timeout ambiguo, 429/5xx, paginación, fuente desconectada, branch inexistente, OAuth revocado y usuario sin permiso.
 
 ### Fase 4 — release/reversión
 
-1. Actualizar/revisar la app MCP en ChatGPT para que descubra la versión real de herramientas; los cambios no tienen por qué activarse automáticamente.
+1. Publicar el plugin aprobado y comprobar que listing/tools reflejan la versión real; después de cambios, solicitar/resolver escaneo y verificar actualización. No depender de Developer Mode ni de MCP privado de pago.
 2. Confirmar CI, diff, revisión humana y autorización aplicable antes de merge.
 3. Desplegar solo con autorización y compuertas de Khora; revisar la URL canónica y estado de producción.
 4. Ejecutar prueba de humo no destructiva: health/lectura de fuentes; crear sesión real solo en fuente/rama aprobada.
 5. **Rollback:** si una regresión afecta el endpoint MCP común, detener nuevas acciones Jules, revocar/deshabilitar scopes Jules en la app/tokens según la capacidad existente, revertir el commit mediante el procedimiento de Khora y comprobar que las herramientas previas funcionan. No borrar sesiones o PR creados. Si hay sospecha de clave comprometida, rotarla en el proveedor/entorno autorizado y verificar sin imprimirla.
-6. Rehabilitar escritura solo después de releer el despliegue, descubrir de nuevo las herramientas y pasar una prueba de humo.
+6. Rehabilitar escritura solo después de releer el despliegue, descubrir las herramientas desde ChatGPT Free y pasar smoke. Ante abuso, revocar sujeto/OAuth/scopes o publicación.
 
 ## 23. Matriz de trazabilidad requisito → diseño → aceptación
 
@@ -517,31 +588,41 @@ El registro operativo incluye IDs y tiempos mínimos, estados, errores de clase,
 | REQ-14 No declarar aceptación sin E2E real | §13, §22 | T14–T18 | Definido |
 | REQ-15 Seguimiento continuo y respuesta autónoma | §4 | Fuera de v1.0; plan futuro | Excluido intencionalmente |
 | REQ-16 Release y reversión seguros | §22 | T18 y smoke/rollback | Definido |
+| REQ-17 ChatGPT Free cliente obligatorio | §§2/11, ADR-13/16 | T15/T23/T24 | Definido; prueba real pendiente |
+| REQ-18 Distribución plugin MCP público | §11.3, ADR-12 | T26/T31 | Diseñado; publicación pendiente |
+| REQ-19 OAuth y autorización por recurso | §11.4, ADR-15, §21 | T27 | Definido; contrato KHORA por reconciliar |
+| REQ-20 Exclusión Codex/GPT Actions | §§4/11, ADR-13/14 | T29/T30 | Restricción expresa y documentada |
 
 ## 24. Cierre verificable de la Fase 1
 
-**Resultado de planeación: COMPLETO como especificación de diseño lista para implementación**, sujeto a los gates externos de validación posteriores. La completitud de la fase significa que no quedan decisiones funcionales implícitas para construir el MVP; no significa que el sistema ya funcione.
+**Resultado de planeación: COMPLETO como especificación integral que guía las cuatro fases del resultado MCP Jules v1.0.** Esta revisión R2 incorpora el requisito del operador: desarrollar repositorios desde ChatGPT Free y no utilizar Codex en el futuro previsible. La completitud del diseño no afirma que el código exista, que OpenAI haya aprobado el plugin o que Free haya demostrado escritura.
 
-Decisiones cerradas:
-- producto y propósito: complemento MCP usado en el ciclo de resolución conversacional;
-- arquitectura: servidor MCP central de Khora;
-- contrato público: siete herramientas;
-- flujo de desarrollo: crear sesión con aprobación obligatoria y generación de PR automática cuando haya parche;
-- autoridad: read/write separados más el ciclo normativo existente;
-- fuente/rama: verificación server-side;
-- robustez: paginación oficial y no retry ciego de POST;
-- seguridad: secretos server-side, diagnósticos saneados y outputs externos no confiables;
-- aceptación: 25 pruebas/gates con resultado verificable;
-- límites: sin worker persistente, auto-respuesta ilimitada, auto-merge ni auto-deploy;
-- release/reversión: procedimientos definidos.
+### Decisiones cerradas
 
-Gates que no pueden cerrarse solo mediante planeación:
-1. La cuenta/espacio real de ChatGPT debe disponer de escritura MCP personalizada. Si no, la ruta de complemento nativo no es viable en ese cliente bajo la documentación actual.
-2. La clave Jules debe probarse mediante llamada real sin revelar el valor.
-3. Deben corregirse los deltas del candidato y comprobar CI/contratos.
-4. Debe ejecutarse la secuencia E2E en una fuente/branch autorizada.
-5. El PR documental debe superar sus validaciones heredadas y entrar en `main` bajo la gobernanza correspondiente.
+- Producto: integración bidireccional para delegación, aprobación, ejecución, feedback y verificación.
+- Cliente final: ChatGPT Free en chat normal.
+- Distribución: plugin MCP público del directorio oficial; no conexión privada MCP para un cliente cuyo plan no la admita.
+- Transporte: servidor MCP central KHORA /api/mcp, siete herramientas.
+- Identidad: OAuth 2.1, sujeto autenticado y permisos por fuente/repositorio/rama.
+- Credencial Jules: JULES_API_KEY únicamente en servidor.
+- Flujo: aprobación humana forzada, AUTO_CREATE_PR, respuesta en misma sesión y verificación independiente.
+- Robustez: validación source/branch, pageToken, retry seguro, recuperación de escritura ambigua y estados.
+- Seguridad: scopes mínimos, aislamiento por sujeto/recurso, salida Jules no confiable, errores saneados.
+- Operación: cuotas Free, checkpoints y reanudación; sin worker permanente.
+- Exclusiones: Codex, GPT Actions, aprobación automática, autorespuesta ilimitada, auto-merge y auto-deploy.
+- Aceptación: 31 pruebas/gates; incluye plugin público, OAuth/aislamiento y prueba real desde Free.
+- Secuencia posterior exacta: Fase 2 reconciliación e implementación; Fase 3 validación integrada real; Fase 4 release y replicación controlada.
 
-Ninguno de esos gates se reporta como PASS antes de tener evidencia. Esos son prerrequisitos de implementación, integración y release, no lagunas del diseño. El código candidato será reconciliado contra este plan; no se acepta por antigüedad ni por existir un PR abierto.
+### Gates que no pueden pasar por decisión documental
 
-**Estado de la fase:** cerrada en planeación; siguiente fase autorizable: reconciliación e implementación contra este contrato, después de comprobar el cliente/plan de ChatGPT previsto.
+1. Plugin MCP conectado, escaneado, aprobado y publicado en el directorio.
+2. Instalación y escritura demostradas en una cuenta Free real, en la región/superficie objetivo, sin Developer Mode ni plan pagado.
+3. OAuth y autorización granular comprobados; ningún sujeto ve recursos ajenos.
+4. JULES_API_KEY validada por llamada real sin revelar su valor.
+5. Deltas de implementación corregidos y CI ejecutado contra head vigente.
+6. E2E completo en repositorio sandbox con evidencia por transición.
+7. Release autorizado, smoke y rollback verificados.
+
+Ninguno se declara PASS sin evidencia. La disponibilidad general del directorio no prueba escritura del plugin en Free. Si Free bloquea el plugin o la escritura, el objetivo queda BLOCKED y se requiere nueva decisión arquitectónica; no se sustituye silenciosamente por plan pagado, GPT Actions, Codex o relevo manual.
+
+**Estado de Fase 1:** cerrada como diseño integral y trazable. **Siguiente fase autorizable:** Fase 2 — reconciliación e implementación, comenzando por el gate temprano de plugin público/ChatGPT Free y autorización OAuth. No autoriza aún merge, publicación ni despliegue productivo.
