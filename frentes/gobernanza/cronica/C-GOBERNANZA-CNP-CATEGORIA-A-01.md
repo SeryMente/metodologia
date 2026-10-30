@@ -8,15 +8,15 @@ El operador autorizó expresamente eliminar la variable ordinal/posición CNP-01
 
 ## Modificación
 
-En DUG v367 · NX-367m se eliminaron los campos ordinales `id: CNP-01…CNP-05` de la lista de miembros y los campos `cnp_id` de los cinco principios. La tabla humana dejó de mostrar la columna de posición. Se conservaron los identificadores reales de principios P001, P004, P005, P038 y P043 y sus decimales A · 0.9, A · 0.8, A · 0.7, A · 0.6 y A · 0.5.
+En DUG v368 · NX-368m se eliminaron los campos ordinales `id: CNP-01…CNP-05` de la lista de miembros y los campos `cnp_id` de los cinco principios. La tabla humana dejó de mostrar la columna de posición. Se conservaron los identificadores reales de principios P001, P004, P005, P038 y P043 y sus decimales A · 0.9, A · 0.8, A · 0.7, A · 0.6 y A · 0.5.
 
 El DUG declara ahora que A es la categoría de máxima preponderancia y que identifica la pertenencia al CNP. No se asigna ordinal adicional. Las categorías B–Z permanecen como categorías inferiores. El GOW actualizó la definición de CNP para reflejar la misma regla.
 
 ## Verificación
 
 - DUG v367 · NX-367m, evento `C-GOBERNANZA-CNP-CATEGORIA-A-01`.
-- Commit: `8268055b23493dc55a1b6afc62ef0c32c276f0f3`.
-- Blob de lectura de vuelta: `abb4d397bf78aa60d1fd340ac54535f1e3b1d55a`, idéntico al SHA del contenido actualizado.
+- Commit de incorporación: `8268055b23493dc55a1b6afc62ef0c32c276f0f3`. El GOW se versionó a 2.14 y el DUG quedó en v368 · NX-368m mediante commit `1412057878829b71b5c262879d6341cbceac1fb4`.
+- Blob de incorporación: `abb4d397bf78aa60d1fd340ac54535f1e3b1d55a`. Blob canónico final de DUG v368: `2ba096f565807d7c19df0a9a8cab9e8410110a15`, releído exactamente.
 - JSON embebido parseado; 43 principios y 19 anexos.
 - La lista CNP conserva cinco miembros Pxxx. No queda `CNP-01…CNP-05`, ningún campo de miembro `id`, ni campos `cnp_id` en los principios. Los valores decimales se mantienen.
 
