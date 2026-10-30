@@ -4,12 +4,12 @@
 **Repositorio:** `SeryMente/metodologia`.  
 **OCP:** `frentes/gobernanza/`.  
 **Evento de apertura:** `C-GOBERNANZA-INICIO-01`.  
-**Último ciclo legado del histórico anterior:** `C-20261029-5510927B` · `C-GOBERNANZA-AT-ENDURECIMIENTO-01`. **Conversación de foliación:** UUIDv7 local `01a18d91-e030-7683-a4fa-7391408f989c`; tres ciclos naturales pre-corte `C-20261030-F0D12375`, `C-20261030-2FB9018D` y `C-20261030-25A998EA`, con lados A/B y folios legados. No son folios FOL1 ni IDs nativos. **Evento más reciente:** `C-GOBERNANZA-FOLIACION-SECUENCIAL-01`; FOL1 preparado, sin asignaciones globales/OCP. **Evento de control:** `C-GOBERNANZA-RETOMA-04`.  
+**Último ciclo legado del histórico anterior:** `C-20261029-5510927B` · `C-GOBERNANZA-AT-ENDURECIMIENTO-01`. **Conversación de foliación:** UUIDv7 local `01a18d91-e030-7683-a4fa-7391408f989c`; tres ciclos naturales pre-corte `C-20261030-F0D12375`, `C-20261030-2FB9018D` y `C-20261030-25A998EA`, con lados A/B y folios legados. No son folios FOL1 ni IDs nativos. **Evento más reciente:** `C-GOBERNANZA-FOLIACION-SECUENCIAL-01`; FOL1 preparado, sin asignaciones globales/OCP. **Evento de control:** `C-GOBERNANZA-RETOMA-05`.  
 **Sesión inicial (histórica):** `SES-20261028-3F2B7A91`, generación 1.
-**Titular actual según control:** `chatgpt-C-GOBERNANZA-RETOMA-04-SES-20261029-GV5KGJY8U5J` (alias operativo, no ID nativo).
-**Instancia actual según control:** `chatgpt-gobernanza-retoma-2026-10-29-GV5KGJY8U5J`.
-**Sesión actual según control:** `SES-20261029-GV5KGJY8U5J`, generación 5; ciclo `C-20261029-01A18A7F`.
-**Control actual leído de vuelta:** blob `4768d6db0a620652f753262b6250c8cb4b891ca9`; evento `C-GOBERNANZA-RETOMA-04`.
+**Titular actual según control:** `chatgpt-C-GOBERNANZA-RETOMA-05-SES-20261030-GV89CFA5D5` (alias operativo, no ID nativo).
+**Instancia actual según control:** `chatgpt-gobernanza-retoma-2026-10-30-GV89CFA5D5`.
+**Sesión actual según control:** `SES-20261030-GV89CFA5D5`, generación 6; ciclo legado de transferencia `C-20261030-89CFA5D5`.
+**Control actual leído de vuelta:** blob `6c6ba034382a8350e27f7bbe3d0dc50d87c7d81`; evento `C-GOBERNANZA-RETOMA-05`.
 
 ## Evento más reciente · C-GOBERNANZA-FOLIACION-SECUENCIAL-01 · 2026-10-30 (pre-corte FOL1)
 
@@ -17,9 +17,9 @@
 
 Por instrucción expresa del operador se incorporó **P042 · Foliación Global y por OCP**, se amplió **ART-024** con el contrato de conversación/ciclo/A/B y asignación central, y se actualizaron Metacanon a **1.26** y GOW a **2.12**. La revisión final de Metacanon §22/§37.2/§37.4 fija para ChatGPT solo los indicadores IPZ y DUG; ART-024 incorpora idempotencia local para OCP reconocidos tardíamente, sin duplicar el folio global. La fuente canónica fue leída de vuelta: DUG v364 · NX-364m, 42 principios, 18 anexos y 125 términos GOW.
 
-La materialización FOL1 contiene el [registro maestro](../../ambitos/gestion-conversacional/REGISTRO-MAESTRO-FOLIACION.json), el [esquema maestro](../../ambitos/gestion-conversacional/ESQUEMA-FOLIACION-MAESTRA-v1.0.json), el [esquema A/B v1.1](../../ambitos/gestion-conversacional/ESQUEMA-CICLO-CONVERSACIONAL-v1.1.json) y la [guía operativa v1.1](../../ambitos/gestion-conversacional/REGISTRO-CONVERSACIONAL-v1.1.md). El catálogo contiene 23 contextos OCP conocidos: 20 elegibles y tres bloqueados; otros cinco candidatos no se admiten todavía por identidad/clasificación pendiente. La cobertura se declara `KNOWN_INVENTORY_ONLY`.
+La materialización FOL1 contiene el [registro maestro](../../ambitos/gestion-conversacional/REGISTRO-MAESTRO-FOLIACION.json), el [esquema maestro](../../ambitos/gestion-conversacional/ESQUEMA-FOLIACION-MAESTRA-v1.0.json), el [esquema A/B v1.1](../../ambitos/gestion-conversacional/ESQUEMA-CICLO-CONVERSACIONAL-v1.1.json) y la [guía operativa v1.1](../../ambitos/gestion-conversacional/REGISTRO-CONVERSACIONAL-v1.1.md). El catálogo contiene 25 contextos OCP conocidos: 22 elegibles y tres bloqueados; otros cinco candidatos no se admiten todavía por identidad/clasificación pendiente. La cobertura se declara `KNOWN_INVENTORY_ONLY`.
 
-**Estado:** FOL1 `PREPARADO_PENDIENTE_ACTIVACION_IPZ`; generación 0; contadores globales y por OCP en cero; asignaciones vacías. No se renumeran folios históricos. La IPZ no se ha modificado y ART-025 permanece intacto. La activación queda condicionada a la preparación de la nueva IPZ y al corte en una conversación nueva.
+**Estado:** FOL1 `PREPARADO_PENDIENTE_ACTIVACION_IPZ`; generación 2; contadores globales y por OCP en cero; asignaciones vacías. No se renumeran folios históricos. La IPZ candidata de Gobernanza v0.7 fue preparada y leída de vuelta; incorpora una regla expresa de eficiencia temporal que obliga a minimizar demoras evitables sin omitir controles esenciales.  el campo nativo de ChatGPT no se modificó y ART-025 permanece intacto. La activación queda condicionada a la preparación de la nueva IPZ y al corte en una conversación nueva.
 
 **Límites:** el maestro central y compare/read-back por SHA ofrecen serialización cooperativa, no bloqueo de servidor; el alcance OCP es el inventario conocido, no una prueba exhaustiva de todos los contextos organizacionales. No se ha ejecutado todavía una prueba de concurrencia real ni validación completa con un motor JSON Schema externo.
 
