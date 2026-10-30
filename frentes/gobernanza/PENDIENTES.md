@@ -1,22 +1,32 @@
 # Pendientes · Frente Gobernanza
 
+## Estado vigente · C-GOBERNANZA-CNP-01 / C-GOBERNANZA-IPZ-CNP-01 · 2026-10-30
+
+**Persistido y releído:** DUG v366 · NX-366m; 43 principios, 19 anexos; Metacanon 1.26; GOW 2.13. El CNP incluye P001/P004/P005/P038/P043 con ponderaciones A · 0.9/0.8/0.7/0.6/0.5. P043 se denomina Principio Anti-Ineficiencia (PAI) y remite a ART-026. ART-025 refuerza la consideración expresa del CNP en cada turno y mantiene la obligación de aplicar el DUG completo.
+
+**IPZ:** candidata [v0.8](entregas/CHATGPT-v0.8/IPZ-CAMPO-CHATGPT-v0.8-PROPUESTA.txt) creada y leída de vuelta: 1.488/1.500 caracteres. El campo nativo no fue modificado y su instalación no está verificada. La v0.7 se conserva como antecedente.
+
+**Límites de verificación:** JSON embebido parseado; SHA/read-back exactos de DUG v365, DUG v366 y candidata v0.8; no se ejecutó renderizado de navegador ni auditoría dinámica completa de anclas/retornos. FOL1 continúa `PREPARADO_PENDIENTE_ACTIVACION_IPZ`, sin asignaciones y sin folios asignados a estos eventos. La ponderación y aplicación de PAI quedan abiertas a calibración empírica.
+
+Registro: [crónica](cronica/C-GOBERNANZA-CNP-01.md) · [evidencia](evidencias/C-GOBERNANZA-CNP-01.json) · [DUG v366](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html) · [IPZ v0.8](entregas/CHATGPT-v0.8/IPZ-CAMPO-CHATGPT-v0.8-PROPUESTA.txt).
+
 ## Estado actual · C-GOBERNANZA-FOLIACION-SECUENCIAL-01 · 2026-10-30
 
 **Persistido y releído:** DUG v364 · NX-364m; P042; ART-024; Metacanon 1.26; GOW 2.12/125 términos; 42 principios y 18 anexos. FOL1 maestro/schema/registro A/B v1.1 y guía v1.1 existen en `ambitos/gestion-conversacional/`.
 
 **FOL1:** `PREPARADO_PENDIENTE_ACTIVACION_IPZ`, generación 2, contadores en cero, sin asignaciones. El inventario incluye 25 contextos OCP conocidos, 22 elegibles y tres con asignación bloqueada; cinco contextos adicionales permanecen sin clasificación/admisión. Cobertura no exhaustiva. Los folios heredados C-/E/S no se renumeran. Metacanon §22/§37.2/§37.4 fija únicamente IPZ y DUG como indicadores compactos de salida ChatGPT; ART-024 permite extender folios OCP tardíos sin duplicar el folio global.
 
-**Pendientes para el corte:** la candidata [IPZ v0.7](entregas/CHATGPT-v0.8/IPZ-CAMPO-CHATGPT-v0.7-PROPUESTA.txt) ya fue creada y leída de vuelta; incorpora la regla de eficiencia temporal y conserva los metadatos IPZ/DUG y FOL1. Falta que el operador la instale en el campo nativo y que su disponibilidad se confirme en una conversación nueva; después podrá ejecutarse el corte FOL1. ART-025 no se modificó. La instalación nativa de IPZ no es verificable por las herramientas actuales y requiere confirmación observable del operador.
+**Pendientes para el corte:** la candidata IPZ v0.8 fue creada después de materializar CNP/PAI y ART-025; consta en el estado vigente de este archivo. Falta instalarla en el campo nativo y confirmar su disponibilidad observable en una conversación nueva; después podrá evaluarse el corte FOL1. La instalación nativa no es verificable por las herramientas actuales y requiere confirmación observable del operador.
 
 **Pruebas pendientes:** validación completa JSON Schema 2020-12 con validador independiente; prueba de idempotencia y colisión por concurrencia; prueba real de asignación global y por todos los OCP aplicables en una conversación nueva; ampliación del catálogo cuando se resuelvan los contextos bloqueados o aparezcan nuevos OCP; verificación de que cada salida aplica los dos indicadores de frescura d.h.m. Sin estas pruebas no se declara captura automática, exclusividad de servidor ni cobertura organizacional exhaustiva.
 
 ## Control de aceptación FOL1
 
-- **GOV-FOL1-CUTOVER-01 · PREPARADO_PENDIENTE_ACTIVACION_IPZ.** IPZ v0.7 candidata preparada y releída; resta instalación observable en el campo nativo, prueba en conversación nueva y actualización del maestro con SHA/read-back. Hasta entonces no asignar FOL1. Hasta entonces no asignar FOL1 ni ciclos naturales nuevos.
+- **GOV-FOL1-CUTOVER-01 · PREPARADO_PENDIENTE_ACTIVACION_IPZ.** IPZ v0.8 candidata preparada y releída; resta instalación observable en el campo nativo, prueba en conversación nueva y actualización del maestro con SHA/read-back. Hasta entonces no asignar FOL1. Hasta entonces no asignar FOL1 ni ciclos naturales nuevos.
 - **GOV-FOL1-CATALOG-01 · ABIERTO.** Cobertura `KNOWN_INVENTORY_ONLY`. Resolver controles de Blog personal, EP y Tareas automáticas; conciliación de rama OCP EP; clasificación/control de Etica y sprint GDP; identificar y revisar nuevos repositorios/OCP fuera del inventario accesible. Mantener Tareas dentro de Gobernanza y `frentes/metodologia/` como alias, no OCP.
 - **GOV-FOL1-E2E-01 · ABIERTO.** Validar primera asignación conversación/ciclo/A/B y todos los OCP aplicables; idempotencia; colisión concurrente por SHA; relectura exacta; cancelación sin reutilización; y retorno del folio al ciclo/registro.
 - **GOV-FOL1-SCHEMA-01 · PARCIAL.** El esquema A/B v1.1 fue corregido para separar folio global de identificador de registro, distinguir A/B y validar estados FOL1/legado, permitir `cycle_number=null` cuando el histórico no es recuperable y exigir folio heredado solo en `LEGACY_PRE_CUTOVER`. El JSON parsea; falta ejecutar validador independiente JSON Schema 2020-12 y pruebas negativas, además de comprobar semánticamente la correspondencia completa entre `ocp_refs` y los mapas de folios.
-- **GOV-FOL1-RENDER-01 · PARCIAL.** DUG `gov-data` parsea y el contador de auditoría está ajustado a 42; falta renderizado de navegador y auditoría dinámica de anclas/enlaces/retornos.
+- **GOV-FOL1-RENDER-01 · PARCIAL.** DUG v366 `gov-data` parsea y el contador de auditoría compara con el total declarado de principios (43); falta renderizado de navegador y auditoría dinámica de anclas/enlaces/retornos.
 - **GOV-FOL1-OUTPUT-01 · ABIERTO.** Verificar en la conversación nueva que cada salida de ChatGPT emite únicamente IPZ y DUG con versión y antigüedad `d.h.m`, tomando el último commit del archivo exacto. No declarar actualizada la configuración nativa IPZ sin lectura observable.
 
 ---
