@@ -15,7 +15,7 @@
 
 **Registros:** [crónica](cronica/C-GOBERNANZA-CNP-01.md) · [evidencia](evidencias/C-GOBERNANZA-CNP-01.json).
 
-Se incorporó al DUG v365 el **Conjunto Nuclear de Principios (CNP)**: P001, P004, P005, P038 y P043, todos en categoría A, con decimales internos 0.9, 0.8, 0.7, 0.6 y 0.5. Se estableció la escala A–Z, de mayor a menor preponderancia, con decimales abiertos entre 0 y 1 y precisión mínima necesaria. Se añadió **P043 · Principio Anti-Ineficiencia (PAI)** y **ART-026 · Fundamento del PAI**. GOW pasó a 2.13 y §ARR incorporó las entradas CNP/PAI. [DUG v365](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#cnp-conjunto-nuclear-de-principios).
+Se incorporó al DUG v365 el **Conjunto Nuclear de Principios (CNP)**: P001, P004, P005, P038 y P043, todos en categoría A, con decimales internos 0.9, 0.8, 0.7, 0.6 y 0.5. Se estableció la escala A–Z, de mayor a menor preponderancia, con decimales abiertos entre 0 y 1 y precisión mínima necesaria. Se añadió **P043 · Principio Anti-Ineficiencia (PAI)** y **ART-026 · Fundamento del PAI**. GOW pasó a 2.13 y §ARR incorporó las entradas CNP/PAI. [DUG v365, revisión de incorporación](https://github.com/SeryMente/metodologia/blob/79f373f73f19089cdaf988d441abc61253440cfd/gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#cnp-conjunto-nuclear-de-principios).
 
 Después, DUG v366 actualizó **ART-025**: la IPZ debe reforzar la consideración expresa de los cinco principios del CNP en cada turno, sin sustituir la obligación de considerar el DUG completo y aplicar los demás principios pertinentes. Se preparó [IPZ v0.8](entregas/CHATGPT-v0.8/IPZ-CAMPO-CHATGPT-v0.8-PROPUESTA.txt), de 1.488 caracteres. [DUG v366 · ART-025](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-025).
 
