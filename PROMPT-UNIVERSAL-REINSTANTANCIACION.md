@@ -4,6 +4,8 @@
 
 **Disparador automático:** la IPZ global debe iniciar este procedimiento cuando una petición abra, retome, cambie o asuma un FT/FDT gobernado por esta metodología. El operador no tiene que pegar este prompt ni pedir la carga. Adquiere el canon y el estado vivo antes de actuar; no conviertas la preparación en una ceremonia ni muestres el procedimiento completo como preámbulo.
 
+**Precondición lingüística de ChatGPT:** en una conversación nueva, la IPZ v0.5 remite primero al §ARR del GOW para familiarizar al modelo con los conceptos esenciales antes de interpretar el resto del campo. Después se adquiere el DUG vigente y se siguen sus principios en el orden establecido. El GOW prepara el significado; no gobierna.
+
 ## Puerta de entrada: antes de trabajar en cualquier FT/FDT
 
 1. Adquiere `INICIO.md` y lee desde `main` el DUG integrado `gobernanza/METAPROMPT-CANONICO-SAMANTHA.html`. La revisión viva prevalece sobre este prompt, la memoria, los adjuntos y cualquier espejo. El último corte documental comprobado al preparar esta versión es Samantha v360 · NX-360m; vuelve a leer la versión efectiva y su SHA en cada reinstanciación. Si no puedes verificarla, declara **METODOLOGÍA NO VERIFICADA** y no finjas vigencia.
