@@ -238,13 +238,15 @@ El cliente final es una cuenta personal ChatGPT Free en chat normal y web. No se
 ### 11.2 Rutas evaluadas
 
 1. **MCP personalizado privado:** descartado como ruta de Free. OpenAI documenta compatibilidad completa de MCP con escritura para Business y Enterprise/Edu; Pro dispone de lectura/recuperación. No se debe inferir que Free puede conectar directamente un servidor MCP personalizado con escritura.
-2. **Plugin MCP público del directorio ChatGPT:** ruta objetivo seleccionada para validar Free. OpenAI indica que el directorio de plugins está disponible en distintos planes y que los plugins pueden incorporar conexiones MCP y ejecutarse en ChatGPT. Sin embargo, la disponibilidad y capacidades de cada plugin dependen del plan, cuenta y región. Directorio disponible no equivale a escritura garantizada para este plugin.
+2. **Plugin público con herramientas MCP:** ruta objetivo para validar Free. La documentación indica que el directorio es visible en todos los planes, que algunos plugins están disponibles en Free y que ChatGPT web usa herramientas MCP remotas a través de plugins. La disponibilidad y capacidades concretas dependen del plan, cuenta, región y plugin; no hay garantía de que MCP Jules pueda escribir en Free. Se debe probar el plugin publicado en chat normal con cuenta Free real.
+
+   **Distinción de extensión:** las extensiones nativas de plugins (superficies propias de barra lateral, compositor o visores de archivos) son una capacidad separada de las herramientas del plugin. OpenAI indica que las extensiones web aún están pendientes para Free/Go, pero que la funcionalidad existente de plugins no se afecta. MCP Jules no dependerá de esas extensiones; utilizará únicamente herramientas MCP en chat normal. La falta de extensiones nativas no demuestra por sí sola que la invocación básica esté bloqueada ni demuestra que la escritura de este plugin esté habilitada.
 3. **GPT personalizado/GPT Actions:** no seleccionado. Free no puede crear ni publicar GPTs personales nuevos; no es una dependencia estable del diseño.
 4. **Codex:** prohibido como herramienta, cliente, canal de prueba o alternativa.
 
 ### 11.3 Distribución e instalación
 
-1. Preparar un paquete de plugin con un solo servidor MCP remoto apuntando al endpoint HTTPS existente de KHORA /api/mcp.
+1. Preparar un paquete de plugin con un solo servidor MCP remoto apuntando al endpoint HTTPS existente de KHORA /api/mcp. Debe ser utilizable desde ChatGPT web en chat normal, sin extensión nativa de sidebar/composer/file-viewer ni dependencia de la superficie Work.
 2. Verificar la identidad del editor en el portal de desarrolladores de OpenAI; incluir metadatos, nombre/descrición, recursos gráficos requeridos, política de privacidad y soporte. No incluir secretos.
 3. Verificar el dominio, conectar el MCP, completar autenticación y escaneo automatizado de las siete herramientas.
 4. Corregir findings y someter el paquete a revisión. Publicar solo después de aprobación real de OpenAI.
@@ -261,7 +263,7 @@ Un plugin público no vuelve público el acceso a repositorios privados. La auto
 
 ### 11.5 Gate de ChatGPT Free
 
-PASS exige evidencia desde una cuenta Free real, sin Developer Mode ni plan de pago:
+PASS exige evidencia desde una cuenta Free real, en chat normal, sin Developer Mode, extensión nativa de plugin ni plan de pago:
 - listing público localizable y plugin instalable;
 - OAuth exitoso en la superficie y región objetivo;
 - descubrimiento de las siete herramientas y schemas;
@@ -331,8 +333,9 @@ La aceptación exige evidencia real. Un test que utiliza mocks no acredita conec
 | T29 | No dependencia de GPT Actions | La instalación y escritura funcionan sin crear/editar un GPT personalizado ni usar GPT Actions. |
 | T30 | Exclusión Codex | Desarrollo, pruebas, publicación, instalación y operación no invocan ni requieren Codex. |
 | T31 | Actualización de tools | El directorio refleja la versión aprobada; un cambio de herramientas no escaneado/aprobado no se declara disponible. |
+| T32 | Sin extensiones nativas | El ciclo de herramientas MCP funciona en chat web normal sin depender de extensiones de sidebar/composer/file-viewer no disponibles aún en Free. |
 
-**Gate de release:** T01–T13 pasan según ámbito; T14–T17 se ejecutan con API, plugin y ChatGPT Free reales. T18 tiene lectura de vuelta; T23, T26 y T27 son gates duros; T28–T31 también deben pasar. No se declara MVP utilizable con gates pendientes o fallidos. Las excepciones no se silencian ni se interpretan como PASS.
+**Gate de release:** T01–T13 pasan según ámbito; T14–T17 se ejecutan con API, plugin y ChatGPT Free reales. T18 tiene lectura de vuelta; T23, T26 y T27 son gates duros; T28–T32 también deben pasar. No se declara MVP utilizable con gates pendientes o fallidos. Las excepciones no se silencian ni se interpretan como PASS.
 
 ## 14. Bloqueos y riesgos conocidos al iniciar la planeación
 
