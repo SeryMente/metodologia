@@ -15,7 +15,7 @@
 
 DUG v370 · NX-370m; ART-027 contiene el catálogo de los 43 principios (ID, nombre canónico y abstracción de una frase), la tabla de 43 aliases previstos p001–p043, el procedimiento por ciclo y el contrato de telemetría que separa consideración, selección, consulta y aplicación. Se estableció que las aplicaciones se cuentan desde los registros de ciclo y no desde los clics Sink. La instancia Sink y los enlaces no se han creado; la privacidad de la lectura del DUG sigue pendiente de prueba.
 
-**Registros:** [crónica](C-GOBERNANZA-PRINCIPIOS-DOS-CAPAS-01.md) · [evidencia](../evidencias/C-GOBERNANZA-PRINCIPIOS-DOS-CAPAS-01.json) · [DUG v370 · ART-027](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-027). Commit `fa628f865941e64891bcda4ff11e3b48c57ff395`, blob `a97991bc680fdda8a10cd155432da92f40ed5f44`, lectura de vuelta exacta. 43 principios, 20 anexos, 43 aliases lógicos, cero enlaces Sink activos. No se ejecutó prueba de navegador ni prueba E2E. FOL1 sigue preparado, sin folio asignado a este evento; ART-025/IPZ sin modificación.
+**Registros:** [crónica](C-GOBERNANZA-PRINCIPIOS-DOS-CAPAS-01.md) · [evidencia](../evidencias/C-GOBERNANZA-PRINCIPIOS-DOS-CAPAS-01.json) · [DUG v370 · ART-027](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-027). Commit `f91b0e6cc1c78730bcf642420c638afc802c0dac`, blob `c016e442be13ad0c28e6f4a467b1ea79ffb70574`, lectura de vuelta exacta. 43 principios, 20 anexos, 43 aliases lógicos, cero enlaces Sink activos y cero enlaces directos alternativos desde el catálogo. No se ejecutó prueba de navegador ni prueba E2E. FOL1 sigue preparado, sin folio asignado a este evento; ART-025/IPZ sin modificación.
 
 ## Evento anterior · C-GOBERNANZA-CNP-CATEGORIA-A-01 · 2026-10-30
 
