@@ -4,13 +4,13 @@ El contrato normativo reside en [ART-024 del DUG](../../gobernanza/METAPROMPT-CA
 
 ## Estado
 
-**FOL1 está PREPARADO, no ACTIVO.** El registro maestro tiene todos los contadores en cero y ninguna asignación. No se asignarán folios FOL1 durante esta fase; la activación se realizará solo después de preparar la nueva IPZ y comenzar una conversación nueva bajo el formato. No se renumeran ni migran retrospectivamente conversaciones existentes.
+**FOL1 está PREPARADO, no ACTIVO.** El registro maestro tiene todos los contadores en cero y ninguna asignación. No se asignarán folios globales/OCP FOL1 durante esta fase; la activación se realizará solo después de preparar la nueva IPZ y comenzar una conversación nueva bajo el formato. El esquema v1.1 permite registrar mientras tanto ciclos heredados: `cycle_number` natural, `side` A/B y `folio_status=LEGACY_PRE_CUTOVER`; se conservan los folios C- existentes y los sufijos físicos `-E/-S`. No se renumera ni se finge FOL1.
 
 ## Fuentes
 
 - [Registro maestro global y por OCP](REGISTRO-MAESTRO-FOLIACION.json): única fuente de contadores, catálogo de contextos y asignaciones.
 - [Esquema del registro maestro](ESQUEMA-FOLIACION-MAESTRA-v1.0.json): contrato de datos del maestro.
-- [Esquema de ciclo A/B](ESQUEMA-CICLO-CONVERSACIONAL-v1.1.json): un registro independiente para A o B.
+- [Esquema de ciclo A/B](ESQUEMA-CICLO-CONVERSACIONAL-v1.1.json): un registro independiente para A o B; contempla registros FOL1 verificados y registros A/B de legado pre-corte.
 - [Índice de conversaciones](REGISTRO-CONVERSACIONES.csv): localizador; no incrementa ni gobierna contadores.
 - [Esquema y guía históricos E/S](ESQUEMA-CICLO-CONVERSACIONAL-v1.0.json) · [guía v1.0](REGISTRO-CONVERSACIONAL-v1.0.md): preservados como antecedente.
 
@@ -19,7 +19,7 @@ El contrato normativo reside en [ART-024 del DUG](../../gobernanza/METAPROMPT-CA
 - UUIDv7 local identifica de forma estable el registro de conversación. No es un folio ni un ID nativo de ChatGPT.
 - La conversación tiene folio global CV-G######## y uno CV-OCP-<código>-######## por cada OCP que realmente aplique.
 - Dentro de cada conversación, cycle_number es un natural consecutivo 1, 2, 3… El ciclo también recibe CY-G######## y un CY-OCP-<código>-######## por cada OCP aplicable.
-- A conserva literalmente la entrada del operador; B conserva la salida visible final del modelo. Son registros separados con folios propios A-G######## / A-OCP-<código>-######## y B-G######## / B-OCP-<código>-########. Su orden dentro del ciclo es A=1 y B=2.
+- A conserva literalmente la entrada del operador; B conserva la salida visible final del modelo. Son registros separados. Tras el corte FOL1 reciben folios A-G######## / A-OCP-<código>-######## y B-G######## / B-OCP-<código>-########. Antes del corte, A/B son las etiquetas semánticas; se preserva el identificador heredado `C-...-E` / `C-...-S` y se declara `LEGACY_PRE_CUTOVER`. Su orden dentro del ciclo es A=1 y B=2 en ambas generaciones.
 - Conversación, ciclo, A y B utilizan contadores independientes globales y contadores independientes por cada OCP. Un ciclo puede relacionarse con varios OCP; los OCP no pertinentes no reciben folio.
 
 ## Asignación controlada
@@ -41,7 +41,7 @@ El inventario central consultado cubre repositorios accesibles, no acredita que 
 
 ## Compatibilidad histórica y preservación
 
-Los folios C-AAAAMMDD-XXXXXXXX con sufijos -E/-S permanecen como identificadores heredados. No se renumeran ni se convierten en A/B. No se asigna FOL1 retroactivamente a conversaciones abiertas antes del corte. Los mensajes auxiliares visibles se guardan aparte; no se concatenan a B. No se registra razonamiento interno oculto ni se simula captura automática.
+Los folios C-AAAAMMDD-XXXXXXXX con sufijos -E/-S permanecen como identificadores heredados. La lectura lógica del lado se expresa A/B, mientras el sufijo heredado se conserva físicamente (A↔E, B↔S); no se modifica el ID original. No se asigna FOL1 retroactivamente a conversaciones abiertas antes del corte. Los mensajes auxiliares visibles se guardan aparte; no se concatenan a B. No se registra razonamiento interno oculto ni se simula captura automática.
 
 ## Formato mínimo de salida tras activación
 
