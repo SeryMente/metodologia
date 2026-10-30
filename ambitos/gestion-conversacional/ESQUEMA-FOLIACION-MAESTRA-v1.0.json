@@ -243,7 +243,8 @@
           },
           "idempotency_key": {
             "type": "string",
-            "minLength": 1
+            "minLength": 1,
+            "description": "Clave global idempotente por clase de registro + identidad del objeto; garantiza un solo folio global por conversación, ciclo o lado A/B."
           },
           "record_class": {
             "enum": [
@@ -251,14 +252,16 @@
               "cycle",
               "A",
               "B"
-            ]
+            ],
+            "description": "Clase independiente de contador: conversation, cycle, A o B."
           },
           "target_kind": {
             "enum": [
               "conversation",
               "cycle",
               "side"
-            ]
+            ],
+            "description": "Tipo de objeto identificado; debe corresponder a record_class."
           },
           "target_id": {
             "type": "string",
@@ -284,10 +287,13 @@
           },
           "global_folio": {
             "type": "string",
-            "pattern": "^(CV-G|CY-G|A-G|B-G)[0-9]{8}$"
+            "pattern": "^(CV-G|CY-G|A-G|B-G)[0-9]{8}$",
+            "description": "Folio global único del objeto. Una misma asignación no genera un segundo folio global al descubrir un OCP adicional."
           },
           "ocp_folios": {
             "type": "object",
+            "minProperties": 1,
+            "description": "Mapa ocp_id → folio local. Cada folio local usa idempotencia clase + objeto + ocp_id. Un OCP posterior se incorpora al mapa sin cambiar el folio global ni los folios OCP existentes.",
             "additionalProperties": {
               "type": "string",
               "pattern": "^(CV|CY|A|B)-OCP-[A-Z0-9-]+-[0-9]{8}$"
@@ -478,5 +484,116 @@
         }
       }
     }
-  }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "record_class": {
+            "const": "conversation"
+          }
+        },
+        "required": [
+          "record_class"
+        ]
+      },
+      "then": {
+        "properties": {
+          "target_kind": {
+            "const": "conversation"
+          },
+          "global_folio": {
+            "pattern": "^CV-G[0-9]{8}$"
+          },
+          "ocp_folios": {
+            "additionalProperties": {
+              "pattern": "^CV-OCP-[A-Z0-9-]+-[0-9]{8}$"
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "record_class": {
+            "const": "cycle"
+          }
+        },
+        "required": [
+          "record_class"
+        ]
+      },
+      "then": {
+        "properties": {
+          "target_kind": {
+            "const": "cycle"
+          },
+          "global_folio": {
+            "pattern": "^CY-G[0-9]{8}$"
+          },
+          "ocp_folios": {
+            "additionalProperties": {
+              "pattern": "^CY-OCP-[A-Z0-9-]+-[0-9]{8}$"
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "record_class": {
+            "const": "A"
+          }
+        },
+        "required": [
+          "record_class"
+        ]
+      },
+      "then": {
+        "properties": {
+          "target_kind": {
+            "const": "side"
+          },
+          "global_folio": {
+            "pattern": "^A-G[0-9]{8}$"
+          },
+          "ocp_folios": {
+            "additionalProperties": {
+              "pattern": "^A-OCP-[A-Z0-9-]+-[0-9]{8}$"
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "record_class": {
+            "const": "B"
+          }
+        },
+        "required": [
+          "record_class"
+        ]
+      },
+      "then": {
+        "properties": {
+          "target_kind": {
+            "const": "side"
+          },
+          "global_folio": {
+            "pattern": "^B-G[0-9]{8}$"
+          },
+          "ocp_folios": {
+            "additionalProperties": {
+              "pattern": "^B-OCP-[A-Z0-9-]+-[0-9]{8}$"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "$comment": "JSON Schema valida forma y prefijos; el escritor debe comprobar la clave global y la clave local clase+objeto+ocp_id dentro de una única actualización condicionada a SHA. La unicidad frente a escritores que eludan el contrato no está garantizada."
 }
