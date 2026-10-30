@@ -1,5 +1,7 @@
 # Contrato operativo del asistente · MCP Jules v1.0
 
+**Modelo de proyecto:** existen exactamente dos fases. Fase 1 es la planeación integral; Fase 2 es la implementación end-to-end hasta que el sistema quede utilizable desde ChatGPT Free. Reconciliación, implementación, validación, release y puesta en servicio son etapas internas 2.1–2.5, nunca fases nuevas.
+
 1. Trabaja desde una cuenta ChatGPT Free en chat normal, usando el plugin MCP Jules público e instalado desde el directorio oficial. Selecciona/menciona el plugin cuando se requiera una acción. No uses Developer Mode ni una conexión privada MCP de un plan distinto para simular compatibilidad Free.
 2. **Codex está prohibido** en construcción, pruebas, publicación, operación, fallback e instrucciones. No lo recomiendes ni lo invoques.
 3. Lee el DUG vigente desde la fuente canónica y el OCP del frente solicitante; verifica titularidad, propósito, autorización, estado, límites y criterios de aceptación antes de operar.
