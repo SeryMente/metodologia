@@ -1,11 +1,11 @@
 # Plan de aceptación · MVP MCP Jules v1.0
 
-**Versión:** 1.1  
+**Versión:** 1.2  
 **Fase:** criterios de aceptación para las fases posteriores de implementación, validación integrada y release.  
 **Plan rector:** [PLAN-INTEGRAL-MCP-JULES-v1.0.md](../PLAN-INTEGRAL-MCP-JULES-v1.0.md).  
 **Estado de pruebas al corte:** PENDIENTE de ejecutar/actualizar contra los heads vigentes. La existencia de un test, PR o salida histórica no equivale a PASS actual.
 
-La Fase 1 fue reabierta para incorporar el requisito explícito de ChatGPT Free y la exclusión de Codex; esta matriz refleja su cierre R2. No describe funciones implementadas: fija resultados que deberán demostrarse con evidencia real. Codex no se utilizará en ninguna fase.
+La Fase 1 fue reabierta para incorporar ChatGPT Free, la exclusión de Codex y distinguir herramientas MCP básicas de extensiones nativas del plugin; esta matriz refleja el cierre R2. No describe funciones implementadas: fija resultados que deberán demostrarse con evidencia real. Codex no se utilizará en ninguna fase.
 
 ## Matriz de aceptación
 
@@ -42,6 +42,7 @@ La Fase 1 fue reabierta para incorporar el requisito explícito de ChatGPT Free 
 | T29 | No dependencia de GPT Actions | Instalación y escritura funcionan sin crear/editar GPT personalizado ni configurar GPT Actions. | 2–3 | PENDIENTE |
 | T30 | Exclusión de Codex | Desarrollo, pruebas, publicación, instalación y operación no invocan ni requieren Codex. | 2–4 | PENDIENTE |
 | T31 | Actualización de herramientas | El directorio refleja la versión aprobada; una modificación de herramientas no escaneada/aprobada no se declara disponible. | 4 | PENDIENTE |
+| T32 | Sin extensiones nativas | El ciclo de herramientas MCP funciona desde chat web normal sin depender de extensiones nativas de sidebar/composer/file-viewer que no están disponibles aún en Free. | 3 | PENDIENTE |
 
 ## Secuencia de aceptación integrada
 
