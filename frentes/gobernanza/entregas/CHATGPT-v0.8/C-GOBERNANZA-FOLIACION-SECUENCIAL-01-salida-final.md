@@ -4,8 +4,8 @@
 
 ```text
 GOBERNANZA
-IPZ: v0.5 · 0.14.52
-DUG: v363 · NX-363m · 0.0.18
+IPZ: v0.5 · 0.14.56
+DUG: v363 · NX-363m · 0.0.22
 
 CONVERSACIÓN: FOLIO GLOBAL NO ASIGNADO · UUIDv7 local 01a18d91-e030-7683-a4fa-7391408f989c
 CICLO: 3 · C-20261030-25A998EA · LEGACY_PRE_CUTOVER
@@ -32,7 +32,7 @@ Los tres ciclos visibles de esta conversación se documentaron con números natu
 
 Generación 0; contadores globales y por OCP en cero; cero asignaciones. No se ha consumido ninguna secuencia nueva. Los folios históricos no se renumeran. El nuevo esquema se activará únicamente tras preparar la nueva IPZ y realizar el corte en una conversación nueva.
 
-**IPZ:** no modificada; el archivo candidato continúa en v0.5, blob `281f20daad92284fe29151372e83114a037f83f5`. **ART-025:** sin cambios. La instalación nativa de Instrucciones Personalizadas no se puede verificar desde las herramientas disponibles.
+**IPZ:** la propuesta v0.6 de 1,496 caracteres está preparada en [IPZ-CAMPO-CHATGPT-v0.6-PROPUESTA.txt](IPZ-CAMPO-CHATGPT-v0.6-PROPUESTA.txt), blob `a28caf1c10ee664eb648c84c879852d4c91866ca`. Es una propuesta del OCP Gobernanza, no la candidata canónica ni una instalación nativa. La versión v0.5 de Metacanon permanece intacta, blob `281f20daad92284fe29151372e83114a037f83f5`; ART-025 tampoco se modificó. El control de Metacanon está activo en otra sesión, generación 6; por eso la aplicación en su ruta canónica queda pendiente de transferencia explícita y lectura de vuelta.
 
 ## Límites de verificación
 
@@ -42,4 +42,4 @@ Generación 0; contadores globales y por OCP en cero; cero asignaciones. No se h
 - Los JSON fueron parseados y se realizaron comprobaciones estructurales y de consistencia de contadores/catálogo. No se ejecutó un validador JSON Schema 2020-12 independiente, una prueba de concurrencia real ni una asignación end-to-end en una conversación nueva.
 - No hay captura automática ni sincronización omnicanal acreditada.
 
-**Siguiente y último componente de esta secuencia:** preparar la nueva versión candidata de IPZ con el acceso a §ARR, DUG y el formato de salida ya materializados. La IPZ se dejó intacta deliberadamente hasta este punto.
+**Cierre de esta fase:** el contrato, los registros, la evidencia y la propuesta IPZ v0.6 están preparados. El único paso externo pendiente es transferir explícitamente la responsabilidad de Metacanon o actuar desde su titular actual, aplicar allí la propuesta v0.6 y releerla; hasta entonces no se proclama una actualización canónica ni instalación nativa.
