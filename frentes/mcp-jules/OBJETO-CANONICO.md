@@ -3,14 +3,14 @@
 ## 1. Control e identidad
 
 - **Nombre canónico:** Frente MCP Jules.
-- **Versión del artefacto:** v0.1.10 · aprobación vinculada a huella de plan con doble preflight; CI pre-run bloqueado.
+- **Versión del artefacto:** v0.1.11 · auditoría de identidad, fixture y redacción de observabilidad; CI pre-run bloqueado.
 - **Evento de creación:** C-MCP-JULES-001.
 - **Folio de sesión vigente:** SES-20261029-6C2F9A17; generación del control: 2. El folio anterior queda preservado en el historial de transferencia.
 - **OCP:** `SeryMente/metodologia/frentes/mcp-jules/`.
 - **Repositorio de implementación:** `SeryMente/khora`, `khora-web`, servidor MCP existente.
 - **Rama de documentación:** `feat/metacanon-mcp-jules-20261025-c32f81`.
 - **Rama de implementación:** `feat/mcp-jules-f2-20261029-6c2f9a17`.
-- **Estado:** la titularidad permanece en generación 2 y folio `SES-20261029-6C2F9A17`, conforme al control vigente que no se modifica. Fase 1 continúa COMPLETA como diseño integral. Fase 2 ya tiene un candidato de implementación versionado en KHORA, rama `feat/mcp-jules-f2-20261029-6c2f9a17`, presentado como [PR #344](https://github.com/SeryMente/khora/pull/344), en borrador y apilado sobre la rama de Custodia `fix/custodia-recovery-verified-20261029` (head base `e2ec67600885315fd4493911da89af1d4aafc297`). El PR anterior #338 permanece como antecedente obsoleto y no se fusiona. El candidato contiene siete herramientas MCP, scopes separados, ACL privada por sujeto/fuente/rama, validación de fuente y rama, y protección contra reintentos ambiguos de escritura. La migración 033 está en Git, no aplicada; las pruebas nuevas están escritas, pero el CI de este head finalizó sin ejecutar steps (`steps: null`) y sin logs recuperables. Los checks Vercel también fallan por la restricción del plan para repositorios privados de organización; no son una validación de compilación. API Jules real, OAuth, base ACL operativa, publicación del plugin, ChatGPT Free, E2E, merge y despliegue siguen pendientes de evidencia. La última crónica es [C-MCP-JULES-013](cronica/C-MCP-JULES-013.md).
+- **Estado:** la titularidad permanece en generación 2 y folio `SES-20261029-6C2F9A17`, conforme al control vigente que no se modifica. Fase 1 continúa COMPLETA como diseño integral. Fase 2 tiene un candidato versionado en KHORA, rama `feat/mcp-jules-f2-20261029-6c2f9a17`, PR #344 en borrador, head `33aabd5fa5a6b3a34cbf45e9dda1228aee1644f6`, apilado sobre Custodia `fix/custodia-recovery-verified-20261029` (base `e2ec67600885315fd4493911da89af1d4aafc297`). C013 dejó versionada la huella de plan con doble preflight; los tres commits posteriores corrigen el fixture de aprobación (digest sintético y total 30 llamadas), prueban que la ACL usa el sujeto autenticado y añaden redacción completa de rutas `sources/**`/IDs de sesión con test. La migración 033 sigue en Git y no aplicada. CI y UI Quality del head actual terminaron pre-run con `steps: null`; los logs no están recuperables. Vercel sigue bloqueado por restricción de plan para repositorios privados de organización. No hay ejecución válida de build/test para este head. API Jules real, OAuth/ACL productiva, plugin público, ChatGPT Free, E2E, merge y despliegue siguen pendientes. T22 permanece parcial por la ausencia de aprobación condicional atómica en la API de Jules. La última crónica es [C-MCP-JULES-014](cronica/C-MCP-JULES-014.md).
 - **Fuente de titularidad:** [CONTROL-RESPONSABILIDAD.json](CONTROL-RESPONSABILIDAD.json). No modifica ni sustituye el control del frente padre Metacanon.
 
 ## 2. LEER PRIMERO
@@ -133,9 +133,9 @@ Un asistente puede localizar fuentes de Jules, crear una sesión con prompt comp
 | Crear sesión | Fuente y rama verificadas; prompt completo; fuerza `requirePlanApproval=true` | `sources.get`, validación branch y fixture versionados; CI no ejecutado y API real pendiente |
 | Responder | Mismo ID de sesión; envía solo en estado permitido; luego vuelve a consultar actividades | Código en rama; API real no probada |
 | Aprobar plan | Rechaza salvo `AWAITING_PLAN_APPROVAL` y usa scope de escritura | Código en rama; prueba pendiente |
-| Aislar permisos | Lectura no permite escribir; escritura no da acceso a lectura/otras funciones y la ACL exacta se aplica por sujeto/fuente/rama | Implementación y pruebas sintéticas versionadas; CI actual no ejecutó steps, aislamiento real pendiente |
+| Aislar permisos | Lectura no permite escribir; escritura no da acceso a lectura/otras funciones y la ACL exacta se aplica por sujeto/fuente/rama | Implementación y negativos versionados; test confirma JWT `sub` como sujeto ACL; CI no ejecutó steps, aislamiento real pendiente |
 | Preservar gobierno | Las siete herramientas pasan por la validación del ciclo normativo | Código y fixture añadidos; ejecución pendiente |
-| Proteger secretos | El secreto del proveedor permanece server-side y no aparece en respuestas, prompts ni repositorio | Regla de implementación presente; pruebas ejecutadas y llamada real pendientes |
+| Proteger secretos | El secreto del proveedor permanece server-side y no aparece en respuestas, prompts, logs ni repositorio | Rutas de fuente y sesión se redactan antes de observabilidad; test versionado, CI no ejecutado, llamada real pendiente |
 | Uso real en ChatGPT Free | Plugin público instalado en cuenta Free, siete tools descubiertas y ciclo de escritura E2E probado | No verificado; gates T23/T26 |
 | Automatización persistente | Proceso programado con checkpoint, idempotencia y recuperación tras reinicio | Fuera de alcance hasta aprobar implementación del trabajador |
 
