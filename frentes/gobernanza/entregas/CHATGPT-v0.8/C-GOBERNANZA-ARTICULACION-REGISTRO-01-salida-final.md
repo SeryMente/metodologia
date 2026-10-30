@@ -16,7 +16,7 @@ La lectura del DUG vigente muestra el punto que todavía impide afirmar que todo
 - **ART-020/024** mantienen actualmente Trazabilidad semántica como módulo de Gestión conversacional.
 - La arquitectura que acabas de precisar requiere mantener Registro conversacional en Gestión conversacional y situar Trazabilidad semántica como capacidad fundamental de AT.
 
-La revisión histórica de LISA v1.2 confirma compatibilidad por composición: Vector Semántico L0 como anclaje de intención; cadena L0 → REQ → ACR → resultado; L0 derivado marcado y ratificado cuando corresponda; documentos fuente aprobados como complemento, nunca sustituto. La integración completa de LISA/FIAT en esta metodología no está ejecutada.
+La revisión histórica de LISA v1.2 confirma compatibilidad por composición: Vector Semántico L0 como anclaje de intención; cadena L0 → REQ → ACR → resultado; L0 derivado marcado y ratificado cuando corresponda; documentos fuente aprobados como complemento, nunca sustituto. La integración completa de LISA/FIAT en esta metodología no está ejecutada. En AT, el vector verbatim es la fuente de verdad de la intención y del requisito de origen; no desplaza la autoridad normativa del DUG ni concede permisos.
 
 **Este ciclo sí quedó persistido y verificado:**
 - Folio: `C-20261030-9D7E31A2`.
