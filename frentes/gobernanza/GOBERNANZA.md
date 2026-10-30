@@ -4,14 +4,20 @@
 **Repositorio:** `SeryMente/metodologia`.  
 **OCP:** `frentes/gobernanza/`.  
 **Evento de apertura:** `C-GOBERNANZA-INICIO-01`.  
-**Último ciclo legado del histórico anterior:** `C-20261029-5510927B` · `C-GOBERNANZA-AT-ENDURECIMIENTO-01`. **Conversación de foliación:** UUIDv7 local `01a18d91-e030-7683-a4fa-7391408f989c`; tres ciclos naturales pre-corte `C-20261030-F0D12375`, `C-20261030-2FB9018D` y `C-20261030-25A998EA`, con lados A/B y folios legados. No son folios FOL1 ni IDs nativos. **Evento más reciente:** `C-GOBERNANZA-CNP-CATEGORIA-A-01`; DUG v368 · NX-368m, GOW 2.14, CNP identificado por categoría A, PAI/ART-026 materializados; la IPZ v0.8 no es sustitución íntegra de v0.7. Instalación nativa no verificada. FOL1 sigue preparado, sin asignaciones globales/OCP. **Evento de control:** `C-GOBERNANZA-RETOMA-05`.  
+**Último ciclo legado del histórico anterior:** `C-20261029-5510927B` · `C-GOBERNANZA-AT-ENDURECIMIENTO-01`. **Conversación de foliación:** UUIDv7 local `01a18d91-e030-7683-a4fa-7391408f989c`; tres ciclos naturales pre-corte `C-20261030-F0D12375`, `C-20261030-2FB9018D` y `C-20261030-25A998EA`, con lados A/B y folios legados. No son folios FOL1 ni IDs nativos. **Evento más reciente:** `C-GOBERNANZA-PRINCIPIOS-DOS-CAPAS-01`; DUG v370 · NX-370m, ART-027 con catálogo de 43 principios y estrategia de dos capas documentada; 43 aliases lógicos especificados, todavía no activos. Sink/Cloudflare y lectura privada E2E pendientes. ART-025/IPZ sin cambios; FOL1 sigue preparado. Instalación nativa no verificada. FOL1 sigue preparado, sin asignaciones globales/OCP. **Evento de control:** `C-GOBERNANZA-RETOMA-05`.  
 **Sesión inicial (histórica):** `SES-20261028-3F2B7A91`, generación 1.
 **Titular actual según control:** `chatgpt-C-GOBERNANZA-RETOMA-05-SES-20261030-GV89CFA5D5` (alias operativo, no ID nativo).
 **Instancia actual según control:** `chatgpt-gobernanza-retoma-2026-10-30-GV89CFA5D5`.
 **Sesión actual según control:** `SES-20261030-GV89CFA5D5`, generación 6; ciclo legado de transferencia `C-20261030-89CFA5D5`.
-**Control actual leído de vuelta:** blob `93b3790cbfe2a9b28bd34ee6cd9cf6dc5f56c6ac`; evento `C-GOBERNANZA-RETOMA-05`.
+**Control actual leído de vuelta:** blob `e0cc42a4c7f3ab351d733dc0689cbe355d3ec9f9`; evento `C-GOBERNANZA-RETOMA-05`.
 
-## Evento más reciente · C-GOBERNANZA-CNP-CATEGORIA-A-01 · 2026-10-30
+## Evento más reciente · C-GOBERNANZA-PRINCIPIOS-DOS-CAPAS-01 · 2026-10-30
+
+DUG v370 · NX-370m; ART-027 contiene el catálogo de los 43 principios (ID, nombre canónico y abstracción de una frase), la tabla de 43 aliases previstos p001–p043, el procedimiento por ciclo y el contrato de telemetría que separa consideración, selección, consulta y aplicación. Se estableció que las aplicaciones se cuentan desde los registros de ciclo y no desde los clics Sink. La instancia Sink y los enlaces no se han creado; la privacidad de la lectura del DUG sigue pendiente de prueba.
+
+**Registros:** [crónica](C-GOBERNANZA-PRINCIPIOS-DOS-CAPAS-01.md) · [evidencia](../evidencias/C-GOBERNANZA-PRINCIPIOS-DOS-CAPAS-01.json) · [DUG v370 · ART-027](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-027). Commit `fa628f865941e64891bcda4ff11e3b48c57ff395`, blob `a97991bc680fdda8a10cd155432da92f40ed5f44`, lectura de vuelta exacta. 43 principios, 20 anexos, 43 aliases lógicos, cero enlaces Sink activos. No se ejecutó prueba de navegador ni prueba E2E. FOL1 sigue preparado, sin folio asignado a este evento; ART-025/IPZ sin modificación.
+
+## Evento anterior · C-GOBERNANZA-CNP-CATEGORIA-A-01 · 2026-10-30
 
 Se eliminó la variable de posición del CNP y los identificadores ordinales. En DUG v368 · NX-368m, la categoría A basta para identificar la pertenencia al CNP; los decimales solo ordenan la preponderancia relativa. La estructura JSON de miembros ya no contiene ordinal ni `cnp_id`; la tabla humana tampoco tiene columna de posición. Se conservan los cinco principios P001, P004, P005, P038 y P043. GOW 2.14 refleja la misma definición.
 
