@@ -4,12 +4,22 @@
 **Repositorio:** `SeryMente/metodologia`.  
 **OCP:** `frentes/gobernanza/`.  
 **Evento de apertura:** `C-GOBERNANZA-INICIO-01`.  
-**Último ciclo legado del histórico anterior:** `C-20261029-5510927B` · `C-GOBERNANZA-AT-ENDURECIMIENTO-01`. **Conversación de foliación:** UUIDv7 local `01a18d91-e030-7683-a4fa-7391408f989c`; tres ciclos naturales pre-corte `C-20261030-F0D12375`, `C-20261030-2FB9018D` y `C-20261030-25A998EA`, con lados A/B y folios legados. No son folios FOL1 ni IDs nativos. **Evento más reciente:** `C-GOBERNANZA-FOLIACION-SECUENCIAL-01`; FOL1 preparado, sin asignaciones globales/OCP. **Evento de control:** `C-GOBERNANZA-RETOMA-05`.  
+**Último ciclo legado del histórico anterior:** `C-20261029-5510927B` · `C-GOBERNANZA-AT-ENDURECIMIENTO-01`. **Conversación de foliación:** UUIDv7 local `01a18d91-e030-7683-a4fa-7391408f989c`; tres ciclos naturales pre-corte `C-20261030-F0D12375`, `C-20261030-2FB9018D` y `C-20261030-25A998EA`, con lados A/B y folios legados. No son folios FOL1 ni IDs nativos. **Evento más reciente:** `C-GOBERNANZA-CNP-01` / `C-GOBERNANZA-IPZ-CNP-01`; DUG v366 · NX-366m, CNP/PAI/ART-026 materializados, IPZ v0.8 candidata lista; instalación nativa no verificada. FOL1 sigue preparado, sin asignaciones globales/OCP. **Evento de control:** `C-GOBERNANZA-RETOMA-05`.  
 **Sesión inicial (histórica):** `SES-20261028-3F2B7A91`, generación 1.
 **Titular actual según control:** `chatgpt-C-GOBERNANZA-RETOMA-05-SES-20261030-GV89CFA5D5` (alias operativo, no ID nativo).
 **Instancia actual según control:** `chatgpt-gobernanza-retoma-2026-10-30-GV89CFA5D5`.
 **Sesión actual según control:** `SES-20261030-GV89CFA5D5`, generación 6; ciclo legado de transferencia `C-20261030-89CFA5D5`.
 **Control actual leído de vuelta:** blob `6c6ba034382a8350e27f7bbe3d0dc50d87c7d81`; evento `C-GOBERNANZA-RETOMA-05`.
+
+## Evento más reciente · C-GOBERNANZA-CNP-01 / C-GOBERNANZA-IPZ-CNP-01 · 2026-10-30
+
+**Registros:** [crónica](cronica/C-GOBERNANZA-CNP-01.md) · [evidencia](evidencias/C-GOBERNANZA-CNP-01.json).
+
+Se incorporó al DUG v365 el **Conjunto Nuclear de Principios (CNP)**: P001, P004, P005, P038 y P043, todos en categoría A, con decimales internos 0.9, 0.8, 0.7, 0.6 y 0.5. Se estableció la escala A–Z, de mayor a menor preponderancia, con decimales abiertos entre 0 y 1 y precisión mínima necesaria. Se añadió **P043 · Principio Anti-Ineficiencia (PAI)** y **ART-026 · Fundamento del PAI**. GOW pasó a 2.13 y §ARR incorporó las entradas CNP/PAI. [DUG v365](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#cnp-conjunto-nuclear-de-principios).
+
+Después, DUG v366 actualizó **ART-025**: la IPZ debe reforzar la consideración expresa de los cinco principios del CNP en cada turno, sin sustituir la obligación de considerar el DUG completo y aplicar los demás principios pertinentes. Se preparó [IPZ v0.8](entregas/CHATGPT-v0.8/IPZ-CAMPO-CHATGPT-v0.8-PROPUESTA.txt), de 1.488 caracteres. [DUG v366 · ART-025](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-025).
+
+**Verificación:** JSON embebido parseado; 43 principios, 19 anexos y cinco miembros CNP leídos de vuelta. Los commits y blobs exactos se registran en la crónica/evidencia. No se ejecutó renderizado de navegador ni auditoría dinámica completa. La IPZ nativa no fue modificada/verificada. FOL1 permanece preparado y sin asignaciones; no se crean folios para estos eventos.
 
 ## Evento más reciente · C-GOBERNANZA-FOLIACION-SECUENCIAL-01 · 2026-10-30 (pre-corte FOL1)
 
