@@ -267,3 +267,13 @@ Estado E2E de este corte: ocho aspectos comprobados en los artefactos/operación
 - **No cerrado por documentación:** el campo nativo de ChatGPT todavía no está instalado/verificado desde las herramientas disponibles; falta una prueba semántica con un hilo realmente nuevo que empiece con una petición corriente sin repetir el procedimiento. No declarar arranque global aceptado antes de esa evidencia.
 - **AT:** sin cambio de estado normativo en este ciclo.
 - Artefactos: `entregas/CHATGPT-v0.4/C-METACANON-AUTOARRANQUE-FT-01-salida-final.md`, `entregas/CHATGPT-v0.4/MATRIZ-ESCENARIOS-INICIO-FT-v0.1.md` y la evidencia del ciclo.
+
+## Actualización C-GOBERNANZA-IPZ-GOW-BOOTSTRAP-01 · 2026-10-29
+
+- **GOW · propósito ampliado y §ARR definido:** se conserva el propósito terminológico previo y se añade la función de familiarización lingüística inicial para ChatGPT. §ARR contiene el vocabulario mínimo que debe adquirirse antes de interpretar el resto de las instrucciones personalizadas.
+- **Estructura y definiciones:** 122 términos indexados, 122 definiciones estructuradas, cada una en un párrafo de hasta 40 palabras y no más de cuatro oraciones; 122 anclas únicas verificadas. Las notas de alcance, procedencia, excepciones, historia y procedimientos se conservan fuera del campo de definición.
+- **Gobernanza y anexo:** DUG v362 · NX-362m; GOW v2.11; 18 anexos. ART-025 canoniza propósito, orden de lectura, jerarquía principios/anexos y criterios de composición de la IPZ. No se crea una autoridad normativa paralela.
+- **IPZ candidata:** v0.5 guardada y leída de vuelta, 1.362 caracteres. El primer bloque remite a §ARR antes del resto del campo; luego dirige al DUG y a sus principios ordenados. El espacio restante refuerza continuidad, trazabilidad, responsabilidad e integridad; no activa capacidades existentes.
+- **Prueba conductual:** pendiente de observación en una conversación nueva que reciba la secuencia de entrada sin recordatorio del operador. No se declara aceptada por la sola coherencia documental.
+- **AT:** sin cambio de estado normativo en este ciclo.
+- **Artefactos:** `entregas/CHATGPT-v0.5/C-GOBERNANZA-IPZ-GOW-BOOTSTRAP-01-salida-final.md`, `entregas/CHATGPT-v0.5/IPZ-CAMPO-CHATGPT.txt`, DUG §ARR y ART-025.
