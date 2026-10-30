@@ -10,6 +10,15 @@
 
 **Pruebas pendientes:** validación completa JSON Schema 2020-12 con validador independiente; prueba de idempotencia y colisión por concurrencia; prueba real de asignación global y por todos los OCP aplicables en una conversación nueva; ampliación del catálogo cuando se resuelvan los contextos bloqueados o aparezcan nuevos OCP; verificación de que cada salida aplica los dos indicadores de frescura d.h.m. Sin estas pruebas no se declara captura automática, exclusividad de servidor ni cobertura organizacional exhaustiva.
 
+## Control de aceptación FOL1
+
+- **GOV-FOL1-CUTOVER-01 · PREPARADO_PENDIENTE_ACTIVACION_IPZ.** Preparar la nueva IPZ como último artefacto. Después, instalar/confirmar su disponibilidad efectiva en una conversación nueva, ejecutar el corte y marcar ACTIVO mediante actualización del maestro + SHA/read-back. Hasta entonces no asignar FOL1 ni ciclos naturales nuevos.
+- **GOV-FOL1-CATALOG-01 · ABIERTO.** Cobertura `KNOWN_INVENTORY_ONLY`. Resolver controles de Blog personal, EP y Tareas automáticas; conciliación de rama OCP EP; clasificación/control de Etica y sprint GDP; identificar y revisar nuevos repositorios/OCP fuera del inventario accesible. Mantener Tareas dentro de Gobernanza y `frentes/metodologia/` como alias, no OCP.
+- **GOV-FOL1-E2E-01 · ABIERTO.** Validar primera asignación conversación/ciclo/A/B y todos los OCP aplicables; idempotencia; colisión concurrente por SHA; relectura exacta; cancelación sin reutilización; y retorno del folio al ciclo/registro.
+- **GOV-FOL1-SCHEMA-01 · PARCIAL.** Los JSON y esquemas parsean estructuralmente; falta ejecutar validador independiente JSON Schema 2020-12 y pruebas negativas de formato, obligatoriedad, clases y relación A/B.
+- **GOV-FOL1-RENDER-01 · PARCIAL.** DUG `gov-data` parsea y el contador de auditoría está ajustado a 42; falta renderizado de navegador y auditoría dinámica de anclas/enlaces/retornos.
+- **GOV-FOL1-OUTPUT-01 · ABIERTO.** Verificar en la conversación nueva que cada salida de ChatGPT emite únicamente IPZ y DUG con versión y antigüedad `d.h.m`, tomando el último commit del archivo exacto. No declarar actualizada la configuración nativa IPZ sin lectura observable.
+
 ---
 
 ## Estado histórico · Estado operativo actualizado · C-GOBERNANZA-AT-ENDURECIMIENTO-01 · 2026-10-29
