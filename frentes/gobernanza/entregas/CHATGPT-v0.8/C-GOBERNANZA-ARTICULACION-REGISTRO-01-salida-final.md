@@ -1,38 +1,33 @@
-# Salida final · C-GOBERNANZA-ARTICULACION-REGISTRO-01
+# Salida visible del ciclo · C-GOBERNANZA-ARTICULACION-REGISTRO-01
 
-Corregido: **Gobernanza es el frente; Tareas es el trabajo que desarrollamos dentro de ese frente.** No hay transferencia de titularidad de Tareas que realizar.
+## Mensaje auxiliar visible
 
-### Qué queda definido
+Queda corregida la estructura de trabajo: **Gobernanza es el frente responsable; Tareas es el trabajo/ámbito que estamos desarrollando dentro de ese frente**, no un frente independiente. Por tanto, retiro la pregunta de transferencia de titularidad del OCP Tareas. No corresponde tratarlo como un cambio de responsable entre frentes.
 
-La convergencia que describes no significa fusionar los tres componentes, sino articular sus responsabilidades:
+También identifico una precisión importante: **la trazabilidad semántica no es un componente ajeno a AT ni un sinónimo de AT**. Es una capacidad fundamental de AT: permite que cada cambio que AT propaga pueda remontarse a una instrucción tuya, conservada literalmente, y justificar qué interpretación y qué efectos se derivaron de ella.
 
-1. **Persistencia documental** custodia originales, adjuntos, derivados, manifiestos y evidencias.
-2. **Registro conversacional** conserva y localiza los ciclos literales: UUIDv7 local de conversación, folio de ciclo, entrada `-E`, salida visible `-S`, secuencia, repositorio y frente.
-3. **Trazabilidad semántica** es una capacidad fundamental de **AT**. Extrae los vectores verbatim pertinentes de las entradas y enlaza cada vector con principios, anexos, OCP, cambios, pruebas y resultados. Cada resultado debe devolver el enlace a los vectores que lo justifican.
+Y hay que separar dos cosas que no debo confundir: que el registro conversacional esté normado y tenga una materialización documental no demuestra que la captura automática, ciclo a ciclo, ya esté funcionando en ChatGPT ni que IPZA la haya activado. Eso requiere evidencia operativa.
 
-La relación es bidireccional: vector → regla/principio → anexo → OCP → cambio/evidencia; y desde cada resultado se regresa al vector original. Los vínculos parciales o no demostrados se etiquetan como tales. No se inventa causalidad.
+## Respuesta final visible
 
-### Qué revisé y persistí
+La lectura del DUG vigente muestra el punto que todavía impide afirmar que todo está alineado:
 
-- Revisé DUG v362, especialmente ART-015, ART-020, ART-022 y ART-024, junto con Metacanon §28 y la revisión previa de compatibilidad LISA.
-- Actualicé la definición operativa de [AT v1.0](https://github.com/SeryMente/metodologia/blob/main/frentes/gobernanza/entregas/CHATGPT-v0.8/AT-v1.0.md): ahora incorpora la trazabilidad semántica como fundamento de AT y define su compatibilidad futura con LISA.
-- Guardé tu dictado íntegro como fuente verbatim `SRC-C-20261030-9D7E31A2-USER` y registré este ciclo con folio `C-20261030-9D7E31A2` y UUIDv7 local `01a18a1b-3000-7b4c-892a-8d31e5f6a7b8`.
-- Añadí los vínculos semánticos y la referencia del ciclo en el repositorio. La entrada literal y los registros escritos quedaron leídos de vuelta.
+- **ART-022/014** regulan la custodia de documentos originales y derivados, con manifiesto y verificación.
+- **ART-020/024** mantienen actualmente Trazabilidad semántica como módulo de Gestión conversacional.
+- La arquitectura que acabas de precisar requiere mantener Registro conversacional en Gestión conversacional y situar Trazabilidad semántica como capacidad fundamental de AT.
 
-Referencias:
-- [Fuente verbatim persistida](https://github.com/SeryMente/metodologia/blob/main/ambitos/gestion-conversacional/FUENTES-VERBATIM-ORIGEN.jsonl)
-- [Registro maestro de conversaciones](https://github.com/SeryMente/metodologia/blob/main/ambitos/gestion-conversacional/REGISTRO-CONVERSACIONES.csv)
-- [Diálogo del ciclo](https://github.com/SeryMente/metodologia/blob/main/frentes/gobernanza/conversaciones/C-GOBERNANZA-ARTICULACION-REGISTRO-01-dialogo.jsonl)
-- [Registro de trazabilidad semántica](https://github.com/SeryMente/metodologia/blob/main/ambitos/gestion-conversacional/REGISTRO-TRAZABILIDAD-SEMANTICA.jsonl)
+La revisión histórica de LISA v1.2 confirma compatibilidad por composición: Vector Semántico L0 como anclaje de intención; cadena L0 → REQ → ACR → resultado; L0 derivado marcado y ratificado cuando corresponda; documentos fuente aprobados como complemento, nunca sustituto. La integración completa de LISA/FIAT en esta metodología no está ejecutada.
 
-### Dos límites que no voy a presentar como resueltos
+**Este ciclo sí quedó persistido y verificado:**
+- Folio: `C-20261030-9D7E31A2`.
+- Conversación local UUIDv7: `01a18a1b-3000-7b4c-892a-8d31e5f6a7b8` (no es ID nativo de ChatGPT).
+- Dictado íntegro: [fuente verbatim `SRC-C-20261030-9D7E31A2-USER`](https://github.com/SeryMente/metodologia/blob/main/ambitos/gestion-conversacional/FUENTES-VERBATIM-ORIGEN.jsonl).
+- Pareja E/S: [diálogo literal](https://github.com/SeryMente/metodologia/blob/main/frentes/gobernanza/conversaciones/C-GOBERNANZA-ARTICULACION-REGISTRO-01-dialogo.jsonl).
+- Registro maestro: [conversaciones](https://github.com/SeryMente/metodologia/blob/main/ambitos/gestion-conversacional/REGISTRO-CONVERSACIONES.csv).
+- Vínculos semánticos: [registro](https://github.com/SeryMente/metodologia/blob/main/ambitos/gestion-conversacional/REGISTRO-TRAZABILIDAD-SEMANTICA.jsonl).
+- Definición revisada: [AT v1.0](https://github.com/SeryMente/metodologia/blob/main/frentes/gobernanza/entregas/CHATGPT-v0.8/AT-v1.0.md).
+- [Crónica](https://github.com/SeryMente/metodologia/blob/main/frentes/gobernanza/cronica/C-GOBERNANZA-ARTICULACION-REGISTRO-01.md) · [evidencia](https://github.com/SeryMente/metodologia/blob/main/frentes/gobernanza/evidencias/C-GOBERNANZA-ARTICULACION-REGISTRO-01.json).
 
-**1. Clasificación normativa en el DUG.** ART-020/024 todavía ubican Trazabilidad semántica como módulo de Gestión conversacional. Eso contradice la arquitectura que acabas de precisar para AT. Ya documenté la corrección en la definición operativa, pero no alteré el DUG ni el GOW: P005 exige autorización explícita previa para modificar la norma única. Hasta esa enmienda, ART-024 vigente conserva precedencia.
+La entrada y salida están guardadas como dos registros, los JSONL se parsearon y se confirmó lectura de vuelta. Los vínculos que dependen de la reclasificación normativa permanecen **parciales**, no verificados como canon.
 
-**2. Captura automática.** IPZA aporta instrucciones de arranque; no instala por sí sola un mecanismo que capture y escriba cada intercambio en GitHub. El ciclo actual sí quedó persistido manualmente. Puedo mantener esta operación manual al cierre de cada ciclo sustantivo mientras trabajemos aquí, con lectura de vuelta; no puedo afirmar captura automática permanente ni sincronización omnicanal.
-
-### LISA
-
-AT queda compatible por diseño con la futura integración: el vector verbatim es la fuente de origen; cuando aplique LISA, se enlazará con L0 y su descendencia L0 → REQ → ACR → resultado. El modelo no inventa ni ratifica L0 por inferencia. El Canon LISA v1.2 y sus compuertas FIAT/ratificación siguen siendo la referencia externa revisada; su integración completa en esta metodología continúa pendiente.
-
-**¿Autorizas explícitamente una enmienda puntual al DUG v362 —ART-020, ART-024 y únicamente las entradas GOW afectadas— para dejar Registro conversacional en Gestión conversacional y reclasificar Trazabilidad semántica como capacidad fundamental de AT, con enlaces bidireccionales a principios, anexos y registros, sin crear un principio ni un ámbito funcional nuevo?**
+Para completar la articulación longitudinal falta una enmienda normativa muy acotada. **¿Autorizas expresamente modificar ART-020, ART-024 y únicamente las entradas GOW afectadas del DUG v362**, para mantener Registro conversacional en Gestión conversacional y reclasificar Trazabilidad semántica como capacidad fundamental de AT, incorporando enlaces bidireccionales entre vectores verbatim, principios, anexos, OCP, cambios y evidencias, sin crear principios ni ámbitos funcionales nuevos?
