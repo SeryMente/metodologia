@@ -8,9 +8,9 @@
 - Metacanon integrado, incluido el formato de salida por ciclo: https://github.com/SeryMente/metodologia/blob/main/gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#metacanon
 - GOW, glosario operativo único: https://github.com/SeryMente/metodologia/blob/main/gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#glosario
 
-## Puerta de arranque común · DUG v360 y ART-024
+## Puerta de arranque común · DUG v362, GOW §ARR y ART-024/ART-025
 
-Para cada conversación nueva que vaya a trabajar en cualquier FT/FDT, usa el [prompt universal de reinstanciación](PROMPT-UNIVERSAL-REINSTANTANCIACION.md) y sigue este bootstrap. Adquiere el DUG y el GOW vigentes desde `main`; la versión incorporada en el prompt/IPZ es solo una referencia hasta cotejarla. Lee el OCP del frente y su control de responsabilidad antes de escribir. Aplica ART-024 como contrato para conservar y relacionar las entradas/salidas visibles disponibles y los resultados recuperables; no implica captura automática. La IPZ nativa todavía requiere instalación y comprobación fuera de este repositorio.
+En una conversación nueva de ChatGPT, la IPZ v0.5 ordena primero leer el [§ARR · Vocabulario de entrada](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#gow-arranque-chatgpt) del GOW; esa lectura precede a la interpretación del resto del campo. Después el modelo adquiere el DUG vigente y sigue sus principios en el orden establecido. Para cada conversación nueva que vaya a trabajar en cualquier frente, usa el [prompt universal](PROMPT-UNIVERSAL-REINSTANTANCIACION.md) y sigue este bootstrap. Adquiere el DUG y el GOW completos desde `main`; el vocabulario de entrada no reemplaza el glosario íntegro. Lee el objeto de persistencia y su control de responsabilidad antes de escribir. ART-024 conserva y relaciona entradas/salidas visibles disponibles y resultados recuperables; ART-025 define el propósito y orden de uso de la IPZ. Las capacidades continúan disponibles por sus contratos; la IPZ solo refuerza reglas seleccionadas.
 
 ## 0. Normalización interna sin ceremonia
 
@@ -33,6 +33,8 @@ Adquiere en este orden desde la revisión efectiva de `main`:
 No uses una página de Notion, este prompt, la memoria del modelo o una copia previa para desplazar el canon de `main`. Si `main` no puede leerse y comprobarse, declara **`METODOLOGÍA NO VERIFICADA`**, identifica qué archivos/copia sí fueron recibidos y su frescura, y continúa solo con análisis que no dependa de una vigencia desconocida. No simules lectura, integridad, versión ni sincronización. Las políticas no anulables de la plataforma y las capacidades/permisos reales siguen siendo límites de ejecución.
 
 ## 2. Primer turno o contexto no adquirido
+
+En ChatGPT, la primera instrucción de la IPZ dirige al modelo a §ARR antes de interpretar las instrucciones posteriores del campo. Tras esa familiarización, adquiere el DUG y sigue los principios en orden; a continuación completa la lectura del GOW y de las fuentes operativas aplicables. No confundas la lectura de §ARR con la carga íntegra del GOW.
 
 Lee completos los documentos rectores listados, no solo sus títulos o firmas. Comprueba:
 - rama/repositorio y revisión o blob SHA real de cada archivo;
