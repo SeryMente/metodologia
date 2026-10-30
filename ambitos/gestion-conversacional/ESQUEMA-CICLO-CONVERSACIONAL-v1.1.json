@@ -22,7 +22,8 @@
   "properties": {
     "record_id": {
       "type": "string",
-      "minLength": 1
+      "minLength": 1,
+      "description": "Identidad del registro A/B. En legado conserva literalmente el identificador C-...-E/S; en FOL1 es distinto del folio global y local."
     },
     "event_id": {
       "type": "string",
@@ -49,7 +50,8 @@
         "integer",
         "null"
       ],
-      "minimum": 1
+      "minimum": 1,
+      "description": "Número natural consecutivo dentro de la conversación; null solo cuando el antecedente no permite conocerlo sin inferencia."
     },
     "cycle_folio_global": {
       "type": "string",
@@ -189,10 +191,14 @@
           "folio_status": {
             "const": "ASSIGNED_VERIFIED"
           }
-        }
+        },
+        "required": [
+          "folio_status"
+        ]
       },
       "then": {
         "required": [
+          "cycle_number",
           "conversation_folio_global",
           "conversation_folios_by_ocp",
           "cycle_folio_global",
@@ -201,9 +207,18 @@
           "record_folios_by_ocp"
         ],
         "properties": {
+          "cycle_number": {
+            "type": "integer",
+            "minimum": 1
+          },
           "foliation_generation": {
             "const": "FOL1"
           }
+        },
+        "not": {
+          "required": [
+            "legacy_cycle_folio"
+          ]
         }
       }
     },
@@ -213,18 +228,104 @@
           "folio_status": {
             "const": "PARTIAL_OCP_COVERAGE"
           }
-        }
+        },
+        "required": [
+          "folio_status"
+        ]
       },
       "then": {
         "required": [
+          "cycle_number",
           "conversation_folio_global",
+          "conversation_folios_by_ocp",
           "cycle_folio_global",
-          "record_folio_global"
+          "cycle_folios_by_ocp",
+          "record_folio_global",
+          "record_folios_by_ocp"
         ],
+        "properties": {
+          "cycle_number": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "foliation_generation": {
+            "const": "FOL1"
+          },
+          "conversation_folios_by_ocp": {
+            "type": "object",
+            "minProperties": 1
+          },
+          "cycle_folios_by_ocp": {
+            "type": "object",
+            "minProperties": 1
+          },
+          "record_folios_by_ocp": {
+            "type": "object",
+            "minProperties": 1
+          }
+        },
+        "not": {
+          "required": [
+            "legacy_cycle_folio"
+          ]
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "folio_status": {
+            "const": "PENDING"
+          }
+        },
+        "required": [
+          "folio_status"
+        ]
+      },
+      "then": {
         "properties": {
           "foliation_generation": {
             "const": "FOL1"
           }
+        },
+        "not": {
+          "anyOf": [
+            {
+              "required": [
+                "conversation_folio_global"
+              ]
+            },
+            {
+              "required": [
+                "conversation_folios_by_ocp"
+              ]
+            },
+            {
+              "required": [
+                "cycle_folio_global"
+              ]
+            },
+            {
+              "required": [
+                "cycle_folios_by_ocp"
+              ]
+            },
+            {
+              "required": [
+                "record_folio_global"
+              ]
+            },
+            {
+              "required": [
+                "record_folios_by_ocp"
+              ]
+            },
+            {
+              "required": [
+                "legacy_cycle_folio"
+              ]
+            }
+          ]
         }
       }
     },
@@ -234,7 +335,10 @@
           "folio_status": {
             "const": "LEGACY_PRE_CUTOVER"
           }
-        }
+        },
+        "required": [
+          "folio_status"
+        ]
       },
       "then": {
         "required": [
@@ -244,6 +348,40 @@
           "foliation_generation": {
             "const": "LEGACY"
           }
+        },
+        "not": {
+          "anyOf": [
+            {
+              "required": [
+                "conversation_folio_global"
+              ]
+            },
+            {
+              "required": [
+                "conversation_folios_by_ocp"
+              ]
+            },
+            {
+              "required": [
+                "cycle_folio_global"
+              ]
+            },
+            {
+              "required": [
+                "cycle_folios_by_ocp"
+              ]
+            },
+            {
+              "required": [
+                "record_folio_global"
+              ]
+            },
+            {
+              "required": [
+                "record_folios_by_ocp"
+              ]
+            }
+          ]
         }
       }
     },
@@ -253,7 +391,10 @@
           "side": {
             "const": "A"
           }
-        }
+        },
+        "required": [
+          "side"
+        ]
       },
       "then": {
         "properties": {
@@ -262,7 +403,52 @@
           },
           "speaker": {
             "const": "operator"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "side": {
+            "const": "B"
+          }
+        },
+        "required": [
+          "side"
+        ]
+      },
+      "then": {
+        "properties": {
+          "sequence_in_cycle": {
+            "const": 2
           },
+          "speaker": {
+            "const": "assistant"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "side": {
+            "const": "A"
+          },
+          "folio_status": {
+            "enum": [
+              "ASSIGNED_VERIFIED",
+              "PARTIAL_OCP_COVERAGE"
+            ]
+          }
+        },
+        "required": [
+          "side",
+          "folio_status"
+        ]
+      },
+      "then": {
+        "properties": {
           "record_folio_global": {
             "pattern": "^A-G[0-9]{8}$"
           }
@@ -274,22 +460,73 @@
         "properties": {
           "side": {
             "const": "B"
+          },
+          "folio_status": {
+            "enum": [
+              "ASSIGNED_VERIFIED",
+              "PARTIAL_OCP_COVERAGE"
+            ]
           }
-        }
+        },
+        "required": [
+          "side",
+          "folio_status"
+        ]
       },
       "then": {
         "properties": {
-          "sequence_in_cycle": {
-            "const": 2
-          },
-          "speaker": {
-            "const": "assistant"
-          },
           "record_folio_global": {
             "pattern": "^B-G[0-9]{8}$"
           }
         }
       }
+    },
+    {
+      "if": {
+        "properties": {
+          "side": {
+            "const": "A"
+          },
+          "folio_status": {
+            "const": "LEGACY_PRE_CUTOVER"
+          }
+        },
+        "required": [
+          "side",
+          "folio_status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "record_id": {
+            "pattern": "^C-[0-9]{8}-[A-F0-9]{8}-E$"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "side": {
+            "const": "B"
+          },
+          "folio_status": {
+            "const": "LEGACY_PRE_CUTOVER"
+          }
+        },
+        "required": [
+          "side",
+          "folio_status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "record_id": {
+            "pattern": "^C-[0-9]{8}-[A-F0-9]{8}-S$"
+          }
+        }
+      }
     }
-  ]
+  ],
+  "$comment": "La cobertura por OCP y la correspondencia entre ocp_refs y los mapas de folios requieren validación semántica adicional; JSON Schema no demuestra exhaustividad del catálogo ni exclusividad de servidor."
 }
