@@ -28,6 +28,8 @@ La revisión histórica de LISA v1.2 confirma compatibilidad por composición: V
 - Definición revisada: [AT v1.0](https://github.com/SeryMente/metodologia/blob/main/frentes/gobernanza/entregas/CHATGPT-v0.8/AT-v1.0.md).
 - [Crónica](https://github.com/SeryMente/metodologia/blob/main/frentes/gobernanza/cronica/C-GOBERNANZA-ARTICULACION-REGISTRO-01.md) · [evidencia](https://github.com/SeryMente/metodologia/blob/main/frentes/gobernanza/evidencias/C-GOBERNANZA-ARTICULACION-REGISTRO-01.json).
 
+Desde este punto, para cada ciclo sustantivo de este trabajo, usaré estos registros como fuentes recuperables: conservaré la entrada y la salida visibles y enlazaré los vectores pertinentes con sus resultados. No te pediré repetir instrucciones que ya estén persistidas y accesibles; si una fuente no puede recuperarse, declararé la laguna antes de actuar.
+
 La entrada y salida están guardadas como dos registros, los JSONL se parsearon y se confirmó lectura de vuelta. Los vínculos que dependen de la reclasificación normativa permanecen **parciales**, no verificados como canon.
 
 Para completar la articulación longitudinal falta una enmienda normativa muy acotada. **¿Autorizas expresamente modificar ART-020, ART-024 y únicamente las entradas GOW afectadas del DUG v362**, para mantener Registro conversacional en Gestión conversacional y reclasificar Trazabilidad semántica como capacidad fundamental de AT, incorporando enlaces bidireccionales entre vectores verbatim, principios, anexos, OCP, cambios y evidencias, sin crear principios ni ámbitos funcionales nuevos?
