@@ -2,7 +2,7 @@
     "product":  "OCP MCP",
     "identity":  "MCP-METODOLOGIA",
     "version":  "0.1.0",
-    "source_code_commit":  "a7fcc0837f77979b3345d104c8bef199df97ae33",
+    "source_code_commit":  "d5b6cc7563c52ae5d37846c87df98add7b5956c0",
     "branch":  "build/ocp-mcp-mvp-0.1.0",
     "target_framework":  "net10.0",
     "runtime_identifier":  "win-x64",
@@ -14,13 +14,13 @@
              ],
     "transport":  "stdio",
     "component_count":  200,
-    "build_manifest_sha256":  "5a2c6145eae5ba058d1f1231f9673ab63e0d2c971840b065b8c87d71032a13a1",
-    "source_manifest_sha256":  "95c3ce99ba68542c880f4dde37417da0ce6d27ed66627cb98dd78abbd734db97",
+    "build_manifest_sha256":  "ab49131c857a8425ebf59c7c28a4a26273c0de0e7e5e5dfe5adda2d9046890f0",
+    "source_manifest_sha256":  "1eb23985ab0d371ab4f505119758d9d516b69c8d412a732623fad1a06f24774b",
     "package_asset":  "ocp-mcp-0.1.0-win-x64.zip",
-    "package_size_bytes":  39690400,
-    "package_sha256":  "67d2950556dd6e3549e9c4c0930dda874f08ac6df1d02ed4a0ca44190381b7ad",
+    "package_size_bytes":  39690752,
+    "package_sha256":  "4f8c27536aec7480409487c6f6943471058498ed123325c5e2110a718a80a324",
     "unit_tests":  {
-                       "passed":  26,
+                       "passed":  31,
                        "failed":  0
                    },
     "integration_tests":  {
@@ -29,6 +29,13 @@
                           },
     "status":  "BUILT_AND_TESTED_NOT_INSTALLED",
     "mcp_normativo":  "DESACTIVADO",
+    "principle_selection_readiness":  "BLOCKED_OCPMSP",
+    "missing_metadata":  [
+                             "applicability",
+                             "activation_conditions",
+                             "mandatory",
+                             "dependencies"
+                         ],
     "ep_installation":  "PENDING_EP",
-    "created_at_utc":  "2026-10-31T19:41:35.8236264+00:00"
+    "created_at_utc":  "2026-10-31T19:51:59.7032049+00:00"
 }

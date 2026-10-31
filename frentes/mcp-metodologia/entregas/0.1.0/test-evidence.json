@@ -1,11 +1,11 @@
 {
     "product":  "OCP MCP",
     "version":  "0.1.0",
-    "source_code_commit":  "a7fcc0837f77979b3345d104c8bef199df97ae33",
+    "source_code_commit":  "d5b6cc7563c52ae5d37846c87df98add7b5956c0",
     "sdk_version":  "10.0.403",
     "unit_tests":  {
                        "status":  "PASS",
-                       "passed":  26,
+                       "passed":  31,
                        "failed":  0
                    },
     "stdio_integration_tests":  {
@@ -13,5 +13,5 @@
                                     "passed":  29,
                                     "failed":  0
                                 },
-    "created_at_utc":  "2026-10-31T19:40:34.9121522+00:00"
+    "created_at_utc":  "2026-10-31T19:51:43.6812099+00:00"
 }

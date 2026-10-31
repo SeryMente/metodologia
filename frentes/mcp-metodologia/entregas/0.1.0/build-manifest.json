@@ -3,7 +3,7 @@
     "product":  "OCP MCP",
     "identity":  "MCP-METODOLOGIA",
     "version":  "0.1.0",
-    "source_code_commit":  "a7fcc0837f77979b3345d104c8bef199df97ae33",
+    "source_code_commit":  "d5b6cc7563c52ae5d37846c87df98add7b5956c0",
     "target_framework":  "net10.0",
     "runtime_identifier":  "win-x64",
     "sdk_version":  "10.0.403",
@@ -15,7 +15,7 @@
                  "serve"
              ],
     "transport":  "stdio",
-    "source_manifest_sha256":  "95c3ce99ba68542c880f4dde37417da0ce6d27ed66627cb98dd78abbd734db97",
+    "source_manifest_sha256":  "1eb23985ab0d371ab4f505119758d9d516b69c8d412a732623fad1a06f24774b",
     "sources":  [
                     {
                         "source_id":  "metodologia.dug.canonical",
@@ -24,7 +24,7 @@
                         "commit_id":  "e4243414b0099ede9b9556b3cfa0bb20bc706576",
                         "git_blob_sha":  "cac4525de77d4f47a8a59c25201968ecf2056b90",
                         "content_sha256":  "f1e3921250c29c1cd418384bc26a95eb5bae0ad95faea894992ae325bf4590dc",
-                        "captured_at_utc":  "2026-10-31T19:39:52.567Z",
+                        "captured_at_utc":  "2026-10-31T19:51:06.535Z",
                         "verification_status":  "VERIFIED_AT_BUILD",
                         "freshness_status":  "NOT_CHECKED_AGAINST_MAIN"
                     },
@@ -35,7 +35,7 @@
                         "commit_id":  "e4243414b0099ede9b9556b3cfa0bb20bc706576",
                         "git_blob_sha":  "0dd9c4a7594833f99cb658e6108c8439464babd8",
                         "content_sha256":  "772e42a5b1d11089ea21c3b10254fcca7151f0c32a9e9f3c357c0a142af9f958",
-                        "captured_at_utc":  "2026-10-31T19:39:52.567Z",
+                        "captured_at_utc":  "2026-10-31T19:51:06.535Z",
                         "verification_status":  "VERIFIED_AT_BUILD",
                         "freshness_status":  "NOT_CHECKED_AGAINST_MAIN"
                     }
@@ -94,7 +94,7 @@
                        {
                            "path":  "initial-sources.manifest.json",
                            "size_bytes":  1686,
-                           "sha256":  "95c3ce99ba68542c880f4dde37417da0ce6d27ed66627cb98dd78abbd734db97"
+                           "sha256":  "1eb23985ab0d371ab4f505119758d9d516b69c8d412a732623fad1a06f24774b"
                        },
                        {
                            "path":  "Microsoft.CSharp.dll",
@@ -173,18 +173,18 @@
                        },
                        {
                            "path":  "OcpMcp.dll",
-                           "size_bytes":  237568,
-                           "sha256":  "cd76e99075f9d2e4d2bcd673e479a0251c2b81286cde9f68394ae77f9c4bbee4"
+                           "size_bytes":  238080,
+                           "sha256":  "fc593930cd46d9a50d871fff401a5d408c09bc9ba760660d7bee07d50befc175"
                        },
                        {
                            "path":  "OcpMcp.exe",
                            "size_bytes":  162304,
-                           "sha256":  "52c55c0fefbe9f351dda8f097a00924e4b917468e09f78dc4219848184b7f2cd"
+                           "sha256":  "600961d648565442a8c42a963fc68386f53c3471bbddc8f57efb0aebb4f2f867"
                        },
                        {
                            "path":  "OcpMcp.pdb",
-                           "size_bytes":  39964,
-                           "sha256":  "2adc0f446b4c4e0c273aa0af413bd5286601344dfe9f4e0be042779dbc092260"
+                           "size_bytes":  39984,
+                           "sha256":  "625ff0fc815f090b0499badec8d37a4026b4d7ff9e9bcafbe8bd963cdbf6c1a1"
                        },
                        {
                            "path":  "OcpMcp.runtimeconfig.json",
@@ -1042,5 +1042,5 @@
                            "sha256":  "a88115b54a4782631612f995f857624994143e783aca58dfe2fe0800417a49e6"
                        }
                    ],
-    "created_at_utc":  "2026-10-31T19:40:04.9421286+00:00"
+    "created_at_utc":  "2026-10-31T19:51:18.2538354+00:00"
 }
