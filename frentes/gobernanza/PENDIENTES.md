@@ -1,3 +1,19 @@
+
+
+## Orden ejecutivo Gobernanza 1.0 · C-GOBERNANZA-RETOMA-07 · 2026-10-31
+
+1. **GOV-TASK-010 — admisión obligatoria:** tarea ya creada. Compuerta fail-closed; sin frente explícito, OCP y control verificados, no hay trabajo sustantivo ni consultas ajenas al frente.
+2. **GOV-TASK-007 — IPZ/FOL1:** reconstruir IPZ preservando salvaguardas de v0.7; dos enlaces Sync acortados (§ARR/GOW y DUG); refuerzo de admisión después de ambos; máximo 1.500 caracteres; instalación nativa con read-back antes de activar FOL1.
+3. **Coordinación OCP MCP:** validar vínculo entre ciclo y sesión; servir los 43 nombres DI/MDP; recibir selección; devolver enlaces Sync individuales; telemetría de frecuencia por acceso; permitir reconsulta por insuficiencia; emitir hash del paquete exacto para incluirlo en la salida.
+4. **GOV-TASK-008/002/003:** alinear aislamiento y consulta individual con Sync/OCP MCP. Sink/Cloudflare queda en revisión; no desplegar por inercia ni asumir equivalencia Sink/Sync.
+5. **GOV-TASK-009:** conservar §ARR/GOW como primera referencia; DUG como segunda y fuente normativa única.
+6. **GOV-TASK-006:** inventariar y resolver los documentos satélite para Gobernanza 1.0, preservando procedencia e historia.
+7. **Diferimiento:** GOV-TASK-004 y GOV-TASK-005 no bloquean el MVP inmediato.
+
+Gobernanza define y acepta; OCP MCP implementa dentro de su OCP; EP atiende alojamiento/instalación bajo su control. No modificar DUG, ART-025/027, IPZ nativa o controles ajenos. FOL1 sigue inactivo.
+
+---
+
 ## Intervención OCPMSP — C-GOBERNANZA-OCPMSP-DECISIONES-01 — 2026-10-31
 
 **Decisiones de diseño aprobadas; implementación bloqueada por titularidad.** OCPMSP se define como motor del OCP existente MCP-METODOLOGIA, no como OCP separado. El control MCP sigue owned, generación 1, con titular distinto y alcance documental. No se ha transferido ni ampliado. Antes de autorizar especificación ejecutable, código, instalación, credenciales y pruebas, se requiere transferencia explícita, nueva generación, ampliación de alcance, compare-and-swap por SHA y read-back.
