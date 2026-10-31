@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "event_id": "C-GOBERNANZA-FOLIACION-SECUENCIAL-01",
   "status": "PREPARADO_PENDIENTE_ACTIVACION_IPZ",
-  "generation": 2,
+  "generation": 3,
   "global_scope": {
     "scope_id": "SERYMENTE-METODOLOGIA-GLOBAL",
     "description": "Foliación global y por OCP para los contextos registrados; cobertura basada en inventario conocido, no exhaustividad organizacional.",
@@ -10,7 +10,8 @@
     "coverage_source": [
       "DUG v364 ART-015 a ART-024",
       "INVENTARIO-REPOSITORIOS-Y-FRENTES.md",
-      "Alta incremental Filo Sangriento: SeryMente/filo-sangriento; inventario blob ed9991b599aaceac27ff096896e70c866583a2e8; 2026-10-30."
+      "Alta incremental Filo Sangriento: SeryMente/filo-sangriento; inventario blob ed9991b599aaceac27ff096896e70c866583a2e8; 2026-10-30.",
+      "Alta Hugging Face: SeryMente/filo-sangriento/frentes/huggingface; OCP ocp-front-huggingface / HF; 2026-10-30; sin folios asignados."
     ],
     "coverage_completeness": "KNOWN_INVENTORY_ONLY"
   },
@@ -167,6 +168,12 @@
         "B": 0
       },
       "ocp-front-filo-sangriento": {
+        "conversation": 0,
+        "cycle": 0,
+        "A": 0,
+        "B": 0
+      },
+      "ocp-front-huggingface": {
         "conversation": 0,
         "cycle": 0,
         "A": 0,
@@ -730,11 +737,39 @@
       "identity_status": "VERIFIED_CONTROL_AND_PATH",
       "allocation_eligible": true,
       "source_evidence": [
-        "OCP de trece bloques y control unassigned, generación 0, leídos de vuelta el 2026-10-30."
+        "OCP de trece bloques y control unassigned, generación 0, leídos de vuelta el 2026-10-30.",
+        "Control Filo Sangriento actualizado por transferencia explícita: blob 74dad207fd8ffac9724ad9842fdf2060839f4cdd, generación 1, sesión sin folio por FOL1 pendiente."
       ],
       "control": {
         "path": "frentes/filo-sangriento/CONTROL-RESPONSABILIDAD.json",
-        "blob_sha": "76f895e319f8d659ddc96e666ce7ee6081b613d6",
+        "blob_sha": "74dad207fd8ffac9724ad9842fdf2060839f4cdd",
+        "status": "assigned",
+        "generation": 1
+      },
+      "counter_set": {
+        "conversation": 0,
+        "cycle": 0,
+        "A": 0,
+        "B": 0
+      }
+    },
+    {
+      "ocp_id": "ocp-front-huggingface",
+      "code": "HF",
+      "name": "Hugging Face",
+      "kind": "front",
+      "repository": "SeryMente/filo-sangriento",
+      "canonical_path": "frentes/huggingface/",
+      "taxonomy_level": 1,
+      "identity_status": "VERIFIED_CONTROL_AND_PATH",
+      "allocation_eligible": true,
+      "source_evidence": [
+        "OCP Hugging Face y control propio leídos de vuelta en SeryMente/filo-sangriento/main el 2026-10-30; propósito aceptado por el operador.",
+        "Núcleo blob 639e0f1e93fbe0d5b9cc4c73f7132b0fd8e6012d; control blob 66475dfe0c5a145fdaa6b02854d8218cfe60bd91."
+      ],
+      "control": {
+        "path": "frentes/huggingface/CONTROL-RESPONSABILIDAD.json",
+        "blob_sha": "66475dfe0c5a145fdaa6b02854d8218cfe60bd91",
         "status": "unassigned",
         "generation": 0
       },
