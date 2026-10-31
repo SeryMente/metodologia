@@ -1,6 +1,19 @@
 # Pendientes · Frente Gobernanza
 
-## Estado vigente · C-GOBERNANZA-PRINCIPIOS-DOS-CAPAS-01 · 2026-10-30
+## Estado histórico · C-GOBERNANZA-MDP-OCP-01 · 2026-10-30
+
+**Persistido y releído:** DUG v371 · NX-371m; 43 principios, 20 anexos; ART-027 contiene 43 MDP de 11–16 palabras. El MDP orienta significado y activación, pero es insuficiente para aplicar el principio. Cuando exista pertinencia, la consulta de la norma desarrollada por Sink es obligatoria. La telemetría inicial mide solo frecuencia de acceso por alias; no existe medición de aplicación ni registro `principle_usage` por ciclo.
+
+**OCP provisionales:** [registro de siete tareas](../%F0%9F%93%81%20%F0%9F%A7%AD%20-%20Tareas%20provisionales/README.md), cada una con núcleo propio y responsabilidad heredada del OCP Gobernanza. No se ha creado ni canonizado el ámbito funcional Tareas.
+
+**Pendientes ejecutivos:** validar los MDP; desplegar Sink y crear aliases p001–p043; probar la consulta privada Sink→GitHub; concluir la incubación de Tareas; resolver las referencias incompletas P020/P021/P033/P034 con autorización P005; reconciliar divergencias documentales de Gobernanza; y reconciliar IPZ/FOL1.
+
+**Límites:** Sink y Cloudflare no desplegados; cero aliases activos y cero telemetría real. `ambitos/tareas/` sigue en incubación bajo titularidad distinta (chatgpt-C-TAREAS-INICIO-01-SES-20261028-TA6F31C9, generación 1); no se modificó ni transfirió. FOL1 permanece `PREPARADO_PENDIENTE_ACTIVACION_IPZ`. ART-025 y la IPZ nativa/candidata permanecen intactos.
+
+Registro: [crónica](C-GOBERNANZA-MDP-OCP-01.md) · [evidencia](evidencias/C-GOBERNANZA-MDP-OCP-01.json) · [DUG v371 · ART-027](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-027).
+
+
+## Estado histórico supersedido · C-GOBERNANZA-PRINCIPIOS-DOS-CAPAS-01 · 2026-10-30
 
 **Persistido y releído:** DUG v370 · NX-370m; 43 principios, 20 anexos; ART-027 creado. El inventario de dos capas contiene 43 IDs/nombres/abstracciones y 43 aliases Sink previstos (p001–p043).
 
@@ -15,7 +28,7 @@
 Registro: [crónica](cronica/C-GOBERNANZA-PRINCIPIOS-DOS-CAPAS-01.md) · [evidencia](evidencias/C-GOBERNANZA-PRINCIPIOS-DOS-CAPAS-01.json) · [DUG v370 · ART-027](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-027).
 
 
-## Estado vigente · C-GOBERNANZA-CNP-CATEGORIA-A-01 · 2026-10-30
+## Estado histórico · C-GOBERNANZA-CNP-CATEGORIA-A-01 · 2026-10-30
 
 **Persistido y releído:** DUG v368 · NX-368m; 43 principios, 19 anexos; GOW 2.14. La categoría A identifica por sí sola la pertenencia al CNP; se eliminaron los ordinales CNP-01…CNP-05 y los campos `cnp_id`. Se conservan los cinco principios P001/P004/P005/P038/P043 y sus decimales relativos A · 0.9/0.8/0.7/0.6/0.5. Sin identificador ordinal adicional.
 
@@ -25,7 +38,7 @@ Registro: [crónica](cronica/C-GOBERNANZA-PRINCIPIOS-DOS-CAPAS-01.md) · [eviden
 
 Registro: [crónica](cronica/C-GOBERNANZA-CNP-CATEGORIA-A-01.md) · [evidencia](evidencias/C-GOBERNANZA-CNP-CATEGORIA-A-01.json) · [DUG v368](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html).
 
-## Estado vigente · C-GOBERNANZA-CNP-01 / C-GOBERNANZA-IPZ-CNP-01 · 2026-10-30
+## Estado histórico · C-GOBERNANZA-CNP-01 / C-GOBERNANZA-IPZ-CNP-01 · 2026-10-30
 
 **Estado del evento anterior, supersedido por la actualización de categoría A:** DUG v366 · NX-366m; 43 principios, 19 anexos; Metacanon 1.26; GOW 2.13. El CNP incluye P001/P004/P005/P038/P043 con ponderaciones A · 0.9/0.8/0.7/0.6/0.5. P043 se denomina Principio Anti-Ineficiencia (PAI) y remite a ART-026. ART-025 refuerza la consideración expresa del CNP en cada turno y mantiene la obligación de aplicar el DUG completo.
 
@@ -35,7 +48,7 @@ Registro: [crónica](cronica/C-GOBERNANZA-CNP-CATEGORIA-A-01.md) · [evidencia](
 
 Registro: [crónica](cronica/C-GOBERNANZA-CNP-01.md) · [evidencia](evidencias/C-GOBERNANZA-CNP-01.json) · [DUG v368](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html) · [IPZ v0.8](entregas/CHATGPT-v0.8/IPZ-CAMPO-CHATGPT-v0.8-PROPUESTA.txt).
 
-## Estado actual · C-GOBERNANZA-FOLIACION-SECUENCIAL-01 · 2026-10-30
+## Estado histórico · C-GOBERNANZA-FOLIACION-SECUENCIAL-01 · 2026-10-30
 
 **Persistido y releído:** DUG v364 · NX-364m; P042; ART-024; Metacanon 1.26; GOW 2.12/125 términos; 42 principios y 18 anexos. FOL1 maestro/schema/registro A/B v1.1 y guía v1.1 existen en `ambitos/gestion-conversacional/`.
 
