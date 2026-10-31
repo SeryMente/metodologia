@@ -31,6 +31,11 @@ Contrastar los MDP con entradas representativas y ajustar solo aquellos que no p
 
 **Alcance de esta comprobación:** valida identidad, sincronización y extensión; no demuestra por sí sola que cada MDP identifique correctamente todos los casos de pertinencia ni que su insuficiencia deliberada esté bien calibrada. Se requieren pruebas semánticas con entradas variadas.
 
+
+## Matriz semántica de prueba
+
+Se creó [MATRIZ-PRUEBAS-MDP-v1.md](./MATRIZ-PRUEBAS-MDP-v1.md), con 43 entradas positivas (una por principio), ocho controles negativos/de frontera y criterios para exigir Sink antes de aplicar. El archivo es un protocolo de prueba, no evidencia de ejecución. Pendiente ejecutar los casos en una vista inicial MDP-only y registrar falsos positivos y negativos; Sink aún no está desplegado.
+
 ## Criterio de cierre
 
 Marcar como completada solo cuando el enunciado haya sido atendido, la evidencia correspondiente sea recuperable y el resultado haya sido leído de vuelta en la fuente canónica aplicable.
