@@ -1,0 +1,70 @@
+{
+  "schema": "ocp-mcp/operational-authorization-transfer/1",
+  "event_id": "C-MCP-METODOLOGIA-TRANSFER-20261031-01",
+  "date": "2026-10-31",
+  "repository": "SeryMente/metodologia",
+  "branch": "main",
+  "control_path": "frentes/mcp-metodologia/CONTROL-RESPONSABILIDAD.json",
+  "authorization_A": {
+    "status": "AUTHORIZED_AND_EXECUTED",
+    "source": "direct operator instruction in this conversation",
+    "operator_text": "Tienes autorizacion previa, para esto y lo qu enecesites, resuelve de extremo a extremo",
+    "interpretation": "explicit authorization to transfer the MCP OCP control to the previously Governance-accepted recipient",
+    "expected_previous_control_blob_sha": "ffa27d9c62c557aa4894eebfd8c4cbf44ed09335",
+    "previous_owner": "chatgpt-C-MCP-METODOLOGIA-001-01a192b3-1063-7916-be41-ebfa974ede73",
+    "previous_generation": 1,
+    "recipient": "chatgpt-ocp-mcp-01a192fb-8346-710a-ba99-54350ab2dfd9",
+    "new_generation": 2
+  },
+  "authorization_B": {
+    "status": "AUTHORIZED",
+    "source": "direct operator instruction in this conversation",
+    "scope": "implementation, code, automated tests, compilation in build environment, defect correction, manifest generation and artifact packaging inside frentes/mcp-metodologia/",
+    "excluded_scope": [
+      "installation or operation on the EP host",
+      "EP local configuration, ACL, registry, firewall, services, scheduled tasks or processes",
+      "DUG",
+      "ART-025",
+      "ART-027",
+      "IPZ",
+      "Sink production",
+      "MCP-NORMATIVO activation",
+      "Khora",
+      "public deployment or network exposure",
+      "external credentials",
+      "paths outside frentes/mcp-metodologia/"
+    ]
+  },
+  "transfer": {
+    "method": "compare-and-swap update using the exact previously observed control blob SHA",
+    "main_head_before": "22725d388e8879b2fee9ccfa9d81858d7ae78f91",
+    "control_blob_sha_before": "ffa27d9c62c557aa4894eebfd8c4cbf44ed09335",
+    "transfer_commit": "d540b1ae246c53cd3877abb0e74722d24afeb1ec",
+    "immediate_readback_blob_sha": "a8b186de6d6424312b836c931a42f0156ff53b23",
+    "verification_commit": "4d49ab5de15bf368f2e0401208163f951805096a",
+    "final_control_blob_sha": "4a4742a51f0517a1b152a9c04ac6c185de024389",
+    "readback_owner": "chatgpt-ocp-mcp-01a192fb-8346-710a-ba99-54350ab2dfd9",
+    "readback_generation": 2,
+    "readback_scope": "Matches authorized code/build/test/package scope, excluding EP host installation and all explicit exclusions",
+    "result": "VERIFIED"
+  },
+  "identity": {
+    "recipient_alias": "chatgpt-ocp-mcp-01a192fb-8346-710a-ba99-54350ab2dfd9",
+    "uuidv7_local": "01a192fb-8346-710a-ba99-54350ab2dfd9",
+    "native_conversation_id_exposed": false,
+    "global_uuid_uniqueness": "not independently verified"
+  },
+  "foliation": {
+    "fol1": "PREPARADO_PENDIENTE_ACTIVACION_IPZ",
+    "global_conversation_cycle_A_B_folios": "PENDING_NOT_ASSIGNED"
+  },
+  "execution_limits": {
+    "control_transfer": "executed and read-back verified",
+    "implementation_authorized": "yes",
+    "implementation_started": "not yet at time of this record",
+    "EP_host_modified": false,
+    "installation_performed": false,
+    "MCP_normativo": "DESACTIVADO",
+    "Sink": "outside MVP"
+  }
+}
