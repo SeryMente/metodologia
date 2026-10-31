@@ -644,3 +644,40 @@ Un intento de diagnóstico read-only con `start_process` produjo errores de sint
 **No ejecutado:** instalación, bootstrap del workspace en CECEQ, materialización de repositorios, instalación de CLI B2, acceso a Backblaze, backup o restauración del servidor.
 
 **Siguiente paso admisible:** esperar/obtener el dispositivo RDC que corresponda inequívocamente a CECEQ y ejecutar el preflight exclusivamente dentro de la sesión de trabajo fila4; usar `C:\Users\fila4\Desktop\Ser y Mente` solo cuando esa ruta haya sido comprobada en el host CECEQ. Mantener la raíz `Ser y Mente`, no `EP`. Antes de seguir, adquirir la entrega 0.1.0 real y resolver el acceso independiente B2. El plazo por sí solo no autoriza a operar sobre otro equipo.
+
+## 18.15. Refresco de bloqueos para la entrega MVP y segunda ubicación · 2026-10-31 · 13:24 · America/Mexico_City
+
+**Objetivo del ciclo:** contestar qué impide actualmente disponer de la persistencia B2 y del respaldo funcional OCP MCP, revalidando únicamente inventario RDC y fuentes GitHub remotas; sin operaciones de archivos locales.
+
+### 18.15.1. Inventario RDC refrescado
+
+Se volvió a consultar el inventario del conector RDC. El único dispositivo `ONLINE` devuelto fue `PC10RCIF4EI4`, UUID `d0bbb2a3-d7b4-45e1-8870-652c2c3844fc`, versión Desktop Commander 0.3.1. Los registros PC-14, PC-8 y PC-4 figuran `OFFLINE`. No aparece un dispositivo identificado como CECEQ. Conforme a la separación documentada en §18.13, PC10 no se utilizará como sustituto de la terminal del cibercafé. No se abrió sesión remota, no se consultaron rutas ni se ejecutaron comandos en ese host durante este refresco.
+
+### 18.15.2. Rama de construcción OCP MCP revalidada
+
+Se volvió a consultar `build/ocp-mcp-mvp-0.1.0`, que conserva HEAD `e4243414b0099ede9b9556b3cfa0bb20bc706576`. El árbol completo de la rama contiene 583 rutas, sin truncamiento. Una búsqueda por extensiones de código/compilación/paquete (`.cs`, `.csproj`, `.sln`, `.dll`, `.exe`, `.zip`, `.nupkg`, `.sqlite`, `.db`) devolvió cero archivos; tampoco aparecieron scripts PowerShell con nombre/ruta OCP/MCP. Por tanto, el remoto inspeccionado no aporta todavía un servidor compilado ni un conjunto de datos/DB empaquetado para respaldo. Esta observación no descarta archivos locales del constructor no publicados ni entregas futuras, pero no existe artefacto remoto que EP pueda instalar o respaldar ahora.
+
+### 18.15.3. Matriz de bloqueos y condición de salida
+
+| Componente | Estado actual | Qué falta para desbloquearlo |
+|---|---|---|
+| Terminal CECEQ | BLOQUEADO / NO VINCULADA | Que el dispositivo exacto aparezca en RDC, cotejar UUID y confirmar sesión interactiva `fila4` no elevada. No usar PC10 como equivalente. |
+| Workspace `Ser y Mente` | DESTINO DEFINIDO; materialización CECEQ NO EJECUTADA | Crear/usar `<Desktop-real-de-fila4>\Ser y Mente\` únicamente en CECEQ, desde el token de trabajo fila4. |
+| Servidor OCP MCP 0.1.0 | ARTEFACTO NO PRESENTE EN EL REMOTO CONSULTADO | Entrega publicada/recibida con fuente, paquete ejecutable, manifiesto SHA-256, runtime, contrato de arranque, DB/snapshot y procedimiento restore. |
+| Acceso Backblaze B2 | NO CONFIGURADO / NO PROBADO | Cuenta y autorización independiente para Metodología, key de mínimo privilegio suministrada por canal seguro, bucket privado y prefijo aprobado. No usar secretos de Khora/Vercel. |
+| Prueba de almacenamiento | NO EJECUTADA | Upload y download de un archivo sintético/no sensible, read-back y SHA-256 coincidente. |
+| Backup real OCP | NO EJECUTADO | Snapshot consistente de SQLite/datos, manifiesto, upload, descarga a staging y hashes cotejados. |
+| Apertura en segunda computadora | NO DEMOSTRADA | Restaurar en una ubicación distinta, comprobar integridad y arrancar el servidor con una operación funcional. |
+
+Los bloqueos son paralelos: conectar CECEQ no produce el artefacto del servidor ni concede credenciales B2; recibir el artefacto tampoco autoriza el host; configurar B2 sin snapshot/read-back no constituye persistencia funcional. No hay dependencia de bearer token Cora para este OCP local.
+
+### 18.15.4. Siguiente secuencia exacta
+
+1. Conectar/autorizar el dispositivo RDC correspondiente a CECEQ y comprobar el token efectivo de fila4. No operar en PC10 mientras no sea el host correcto.
+2. Recibir del constructor OCP MCP la versión 0.1.0 con paquete y manifiesto. No enviar una solicitud duplicada si ya existe un turno pendiente según el protocolo serial; procesar primero esa respuesta.
+3. Proporcionar acceso B2 independiente por un mecanismo seguro, seleccionar bucket privado/prefijo EP/OCP y validar permisos mínimos sin exponer valores secretos.
+4. Desde la sesión no elevada de fila4 en CECEQ, preparar el workspace `Ser y Mente`, realizar una prueba sintética upload/download y cotejar SHA-256.
+5. Crear snapshot consistente del servidor, subirlo, descargarlo a staging y emitir recibo. Solo entonces declarar `RESPALDADO`.
+6. Dejar runbook de restauración y probar el arranque en el segundo equipo el 2026-11-01. Hasta completar esa restauración, la continuidad multiubicación sigue `PENDIENTE`.
+
+**Resultado del ciclo:** no apareció CECEQ en el inventario RDC ni un artefacto ejecutable del servidor en la rama remota. Se reitera que la persistencia B2 no está configurada ni probada. No hubo uso del host PC10 ni cambios técnicos locales o en Backblaze.
