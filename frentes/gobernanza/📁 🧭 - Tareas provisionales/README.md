@@ -25,12 +25,12 @@ El núcleo de cada objeto conserva identificador local, enunciado, referencia re
 | GOV-TASK-004 | pendiente | Concluir la incubación y decidir el ámbito Tareas | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-004%20-%20Incubaci%C3%B3n%20del%20%C3%A1mbito%20Tareas/README.md) |
 | GOV-TASK-005 | pendiente | Resolver referencias incompletas P020/P021/P033/P034 | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-005%20-%20Integridad%20de%20principios/README.md) |
 | GOV-TASK-006 | en_curso | Reconciliar divergencias documentales de Gobernanza | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-006%20-%20Reconciliaci%C3%B3n%20documental/README.md) |
-| GOV-TASK-007 | pendiente | Reconciliar IPZ y cerrar el corte FOL1 | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-007%20-%20IPZ%20y%20FOL1/README.md) |
+| GOV-TASK-007 | en_curso | Reconciliar IPZ y cerrar el corte FOL1 | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-007%20-%20IPZ%20y%20FOL1/README.md) |
 | GOV-TASK-008 | en_curso | Aislar técnicamente la norma desarrollada detrás de Sink | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-008%20-%20Aislamiento%20de%20capa%20desarrollada/README.md) |
 
 ## Estado de continuidad observado · 2026-10-30
 
-GOV-TASK-001, GOV-TASK-006 y GOV-TASK-008 se encuentran `en_curso`; las otras cinco permanecen `pendiente`. El cambio de estado no crea controles, sesiones ni folios propios. La discrepancia GOW 2.12/2.14 y la falta de acceso Cloudflare están registradas en [Pendientes](../PENDIENTES.md).
+GOV-TASK-001, GOV-TASK-006, GOV-TASK-007 y GOV-TASK-008 se encuentran `en_curso`; GOV-TASK-002/003/004/005 permanecen `pendiente`. El cambio de estado no crea controles, sesiones ni folios propios. La discrepancia GOW 2.12/2.14 y la falta de acceso Cloudflare están registradas en [Pendientes](../PENDIENTES.md).
 
 ## Regla de mantenimiento
 
