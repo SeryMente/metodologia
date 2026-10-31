@@ -409,3 +409,76 @@ El siguiente evento esperado es la respuesta de OCP a la última solicitud focal
 - A/B siguen PENDIENTES. No hay implementación, compilación, instalación ni pruebas de aceptación iniciadas.
 
 Esta actualización prevalece sobre el estado anterior de la sección 13 únicamente en lo relativo al nuevo intercambio OCP y mantiene intactos los antecedentes.
+
+ 
+## 15. Resolución de Gobernanza — cierre de diseño y habilitación de aceptación
+
+**Evento de coordinación:** resolución recibida del operador · 2026-10-31.
+
+### Decisión
+
+**DECISIÓN A: DISEÑO CERRADO Y ACEPTACIÓN HABILITADA SUJETA A AUTORIZACIONES OPERATIVAS.**
+
+La conciliación EP se toma como compatible con el procedimiento de alojamiento/bootstrap v1.0 y las decisiones previas aceptadas. El procedimiento v1.0 queda congelado como base de implementación y aceptación; no se reabre arquitectura por ausencia de pruebas locales. Se conservan las precisiones aceptadas: manifiesto como autoridad de entrypoint/args; readiness máximo 15 s y estados/códigos; backup 7 diarios + 4 semanales; HOME del entorno efectivo con fail-closed; prueba temporal controlada de escritura/lectura/eliminación; control de concurrencia y read-back de configuración; preservación de servidores Copilot ajenos; proceso stdio propiedad del harness.
+
+Rutas congeladas:
+- Aplicación: <FOLDERID_Desktop>\SeryMente\OCP\OCP MCP\app\versions\0.1.0\.
+- Datos: <FOLDERID_LocalAppData>\SeryMente\OCP MCP\.
+- Copilot: COPILOT_HOME\mcp-config.json si está definido y es válido; si no está definido, $HOME\.copilot\mcp-config.json desde el entorno efectivo del host. Un valor definido inválido bloquea, sin fallback.
+
+### Bloqueos
+
+**Bloqueos de diseño P0:** ninguno identificado para el MVP de alojamiento/bootstrap.
+
+**Compuertas operativas P0, pendientes de evidencia:**
+
+1. **Autorización y titularidad OCP:** el control observado continúa owned, generación 1, con alcance documental. A — transferencia de titularidad — no está ejecutada/verificada; B — implementación — no está autorizada. Levantamiento: autorización expresa A, CAS sobre SHA actual, read-back de titular/generación/alcance; después autorización B dentro de su alcance expreso.
+2. **Autorización de actos sobre el equipo:** no hay evidencia en esta resolución de autorización local para inspección, prueba temporal, materialización, cambio de configuración Copilot ni ciclo de proceso. Levantamiento: instrucciones explícitas del operador que enumeren cada acción, host/usuario, rutas y límites. Una sola instrucción puede cubrir varios actos únicamente si los enumera expresamente.
+3. **EP: autoridad operativa actual:** el listado de frentes/ep en main no muestra CONTROL-RESPONSABILIDAD.json; esto no demuestra que no exista en la fuente/rama operativa que EP utiliza. Antes de cualquier mutación, EP identifica fuente/rama/control vigente, titular y alcance, o presenta autorización directa del operador suficiente para esa acción.
+4. **Manifiesto y artefacto 0.1.0:** OCP 1.2 declaró que el manifiesto publicado y el ejecutable real todavía no habían sido recibidos/cotejados. Levantamiento: publicación preparada por OCP tras B; manifiesto íntegro, entrypoint/args exactos y SHA-256 por componente, cotejados con archivos materiales. Hasta entonces no se modifica Copilot ni se inicia servidor.
+5. **Preflight local:** no hay evidencia aquí de SID, sesión, Known Folders, volumen, sincronización, reparse points, ACL efectivas ni pruebas temporales en el equipo objetivo. Levantamiento: evidencia EP obtenida después de las autorizaciones de inspección y prueba temporal.
+
+Estos bloqueos impiden solo las acciones dependientes. No reabren el diseño ni impiden preparar documentación. No se afirma que ninguna prueba esté realizada.
+
+### Matriz de autorización por acto
+
+Todas las autorizaciones operativas las concede el **operador**. EP ejecuta acciones de entorno después de verificar su autoridad vigente; OCP construye y entrega el artefacto dentro de A/B; el harness Copilot inicia, detiene y reinicia el proceso stdio.
+
+| Acto | Autorización necesaria | Ejecutor y evidencia |
+|---|---|---|
+| Inspección read-only de identidad, rutas, volumen, sincronización, reparse points y ACL | Autorización explícita del operador limitada a inspección; no habilita cambios | EP; reporte de SID/sesión, rutas reales, volumen, flags de sincronización y ACL efectivas |
+| Prueba temporal de escritura/lectura/eliminación | Autorización separada y explícita del operador, especificando destinos y limpieza | EP; archivo temporal único, bytes conocidos, flush, read-back exacto, SHA-256, eliminación y ausencia confirmada |
+| Implementación/compilación del servidor y manifiesto | A verificada y B explícita | OCP; commit, configuración de build, SDK/runtime, artefacto y manifiesto |
+| Materialización/instalación de versión inmutable y directorios de datos | Autorización explícita del operador dentro de B o mandato operativo específico; solo tras preflight y hash válido | EP; inventario, rutas, SHA-256 antes/después y no sobrescritura de versión existente |
+| Modificación de mcp-config.json | Autorización explícita específica; no se infiere de inspeccionar ni instalar | EP; copia recuperable, fingerprint original, JSON temporal validado, control de concurrencia, reemplazo atómico, read-back y comparación semántica de todas las demás propiedades y entradas mcpServers |
+| Inicio del servidor | Autorización explícita de inicio tras instalación/configuración verificadas | Copilot harness inicia; EP observa PID, ruta, SID, stdio y logs redactados |
+| Detención normal | Autorización explícita de detención | Copilot harness realiza cierre; EP verifica PID ausente y cierre SQLite sin residuo |
+| Reinicio | Autorización explícita de reinicio | Copilot harness reinicia; EP verifica nueva instancia, conexión, health y persistencia |
+
+A y B no son permisos tácitos para todos los cambios locales. Ningún permiso de esta matriz autoriza modificar ACL, propietario/herencia, firewall, registro, servicios o tareas programadas.
+
+### Secuencia de aceptación
+
+1. **Preflight e identidad:** SID/token y sesión interactiva; Known Folders; ruta absoluta; volumen fijo local; ausencia de UNC/red/extraíble/sincronización incompatible; reparse points clasificados; ACL efectivas suficientes sin modificación. Después, prueba temporal autorizada: write → flush → read-back → SHA-256 → delete → confirmar ausencia. Evidencia: reporte identificado por ejecución, rutas y resultados.
+2. **Manifiesto y ejecutable:** OCP entrega publicación 0.1.0 inmutable y manifiesto verificable. EP comprueba entrypoint relativo, vector exacto de args, arquitectura, runtime, commit y SHA-256 de los componentes. No se inventa nombre ni argumentos; si manifiesto y prueba de lanzamiento difieren, detener.
+3. **Configuración portable:** resolver COPILOT_HOME fail-closed o HOME del host real. Leer y validar JSON; conservar copia recuperable; cambiar solo mcpServers.ocp-mcp; temporal en el mismo directorio; comprobar fingerprint para detectar concurrencia; reemplazo atómico; read-back. Demostrar que todas las demás propiedades superiores y entradas mcpServers permanecen semánticamente idénticas. Registrar SHA-256 del antes y después.
+4. **Inicio y conexión:** autorizado expresamente; Copilot harness crea el proceso con command/args del manifiesto y conecta stdio. stdout solo MCP; diagnóstico por stderr/logs redactados. Evidencia del intercambio MCP inicial, PID, ruta ejecutable, SID y proceso padre como dato diagnóstico, no autenticación criptográfica.
+5. **Diagnóstico/readiness:** diagnose --json y get_health; inicialización ≤15 s; estado/código coherentes: READY 0, DEGRADED 1, NOT_READY 2. Evidencia: JSON, hora UTC, versión, comprobaciones, exit code y respuesta MCP.
+6. **Persistencia:** con operación de prueba expresamente autorizada, crear dato sintético no sensible, verificar read-back SQLite, WAL/integridad y backup cuando corresponda. No usar datos reales ni activar funciones ajenas al alcance. Las escrituras protegidas continúan bloqueadas si la raíz de confianza no ha superado sus pruebas; la prueba de bootstrap no autoriza por sí misma todo el flujo funcional OCP 1.2.
+7. **Detención y reinicio:** autorización explícita; cierre normal por harness; verificar PID ausente, SQLite cerrado y ausencia de proceso residual. Reiniciar por Copilot; verificar nueva conexión, get_health, diagnóstico y lectura del dato persistido.
+8. **Cierre:** cotejar la evidencia completa, reportar desviaciones y conservar archivos, hashes, resultados y read-back. El operador acepta o rechaza el MVP.
+
+### Estados de aceptación
+
+- **ACCEPTED / READY:** todas las etapas aplicables pasan; manifiesto/hashes coinciden; configuración preserva todo salvo la entrada objetivo; stdio y health funcionan dentro del límite; persistencia, backup y reinicio requeridos quedan verificados; no hay residuos.
+- **DEGRADED:** conexión y lectura/diagnóstico funcionan, pero falla el backup diario obligatorio u otra condición expresamente degradable. Escrituras protegidas bloqueadas. No se acepta el MVP como plenamente operativo mientras persista una degradación que afecte la aceptación.
+- **NOT_READY / STOP:** SID/sesión incorrectos; ubicación remota/sincronizada/no verificable; ACL insuficientes; artefacto/hash/manifest discrepante; JSON inválido o concurrencia; fallo MCP/stdio; inicialización >15 s sin estado admisible; corrupción/descifrado fallido; pérdida de datos; proceso no cerrable o residuos. Detener sin nuevos cambios, conservar evidencia y no reparar permisos ni saltar gates.
+
+### Siguiente acción
+
+**Primera acción autorizable:** el operador debe emitir autorización de solo lectura a EP para inspeccionar el host objetivo y resolver el preflight de identidad, rutas, localidad, sincronización, reparse points y ACL. Esta autorización no incluye la prueba temporal ni cambios.
+
+**Ejecutor:** EP, una vez identificado su control/titular operativo vigente.  
+**Evidencia de salida:** informe read-only con SID/sesión, Known Folders absolutas, volumen y flags de localidad/sincronización, reparse points clasificados y ACL efectivas. Si el preflight es compatible, EP informa y espera autorización separada para prueba temporal write/read/delete. Si falla, detiene únicamente la acción afectada y no intenta corregirla.
+
+Esta resolución no ejecuta acciones en el equipo, no transfiere titularidad, no concede B y no modifica OEP, README, ACL, propietario, herencia, firewall, registro ni entorno.
