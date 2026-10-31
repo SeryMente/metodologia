@@ -351,6 +351,43 @@ Cada actualización debe preservar la secuencia y distinguir lo observado de lo 
 
 Al aceptar el MVP, registrar cierre, versión final, artefactos, SHAs, pruebas y backlog diferido. Después, el operador decidirá si el objeto se archiva, se conserva como antecedente o se propone formalizar alguna práctica en la metodología. No se canoniza automáticamente.
 
+
+## 13. Actualización de continuidad — 2026-10-31 · 12:24 · America/Mexico_City
+
+Esta actualización prevalece sobre los estados pendientes de la fotografía inicial de la sección 9, sin borrar su procedencia histórica.
+
+### OCP MCP
+
+- **Respuesta recibida:** `OCP MCP — Contrato técnico consolidado 1.2`.
+- Se analizaron sus respuestas a la conciliación focalizada anterior. La revisión 1.2 resolvió los puntos relativos a la ruta de datos, los límites EP/Copilot, el estado desactivado de MCP-NORMATIVO/Sink, la raíz local de confianza para autorización y la superficie funcional inicial (herramientas de lectura, operaciones protegidas, SQLite, eventos, telemetría, recibos y pruebas).
+- **Puntos técnicos que requieren una última corrección acotada antes de congelar el contrato:**
+  1. El contenido de fuentes canónicas y snapshots debe cifrarse también en reposo en la base local, con AES-256-GCM y clave protegida mediante DPAPI CurrentUser; no basta con cifrar los backups.
+  2. Debe definirse la carga inicial verificable de un conjunto mínimo de fuentes canónicas: bundle o procedimiento local con commit, ruta, Git blob SHA y SHA-256 de contenido, sin fingir frescura ni requerir Sink.
+  3. `BUILD_SNAPSHOT` debe definir consistencia entre artefacto local, transacción SQLite, evento y recibo; no se presupone atomicidad común entre filesystem y SQLite. Elegir BLOB transaccional o staging/rename con recuperación idempotente.
+- Los schemas JSON exactos de herramientas, salidas y errores se exigirán como artefactos de implementación y pruebas, no como una nueva ronda general de arquitectura.
+- `prepare_operation` debe quedar etiquetado con precisión como registro preparatorio sin efecto gobernado y sin grant de operador; `execute_operation` conserva la autorización expresa.
+- El modelo central preparó una última solicitud focalizada para OCP. Su reenvío a la sesión OCP **NO VERIFICADO**; su respuesta queda **PENDIENTE**. No preparar otra solicitud a OCP antes de recibirla y analizarla.
+- La revisión 1.2 no equivale a autorización de implementación ni aceptación del producto.
+
+### Entorno Persistente (EP)
+
+- La última solicitud de cotejo de alojamiento permanece **RESPUESTA PENDIENTE**.
+- No se prepara una nueva solicitud para EP antes de recibir y analizar esa respuesta.
+- El estado de EP debe actualizarse desde la fuente y rama que el propio frente identifique; no inferir titularidad ni permisos a partir de la ausencia de un control en `main`.
+
+### Gobernanza, autorizaciones y ejecución
+
+- Gobernanza continúa siendo un frente independiente. La titularidad observada en su control no se transfiere por este objeto.
+- A: **PENDIENTE**; transferencia no ejecutada ni verificada.
+- B: **PENDIENTE**; implementación no autorizada ni iniciada.
+- Código, compilación, instalación y ejecución local: **NO INICIADOS** en este estado.
+- Pruebas de aceptación: **PENDIENTES**.
+- FOL1: no declarado activo; folios globales continúan **PENDIENTES/NO ASIGNADOS**.
+
+### Regla de continuación
+
+El siguiente evento esperado es la respuesta de OCP a la última solicitud focalizada o la respuesta pendiente de EP, según cuál aporte primero el operador. Se analiza cada respuesta antes de abrir otro turno a ese mismo frente. No se reinicia la arquitectura; se cierra el delta material y se avanza a A/B y construcción del MVP cuando proceda.
+
 ---
 
 **Regla de oro de continuidad:** el modelo central administra una sola secuencia de trabajo entre Gobernanza, EP y OCP MCP; espera cada respuesta antes de abrir una nueva solicitud al mismo frente; interviene solo cuando su análisis añade valor material; y conduce el sprint desde la deliberación hacia la construcción y aceptación del MVP sin sacrificar autorización, seguridad ni integridad.
