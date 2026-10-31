@@ -16,11 +16,11 @@ ambitos/tareas/README.md; DISEÑO-TAREAS-v1.0.md; ESTANDAR-COMUN-DE-TAREA-v0.2.m
 
 ## Dependencias y límites
 
-El OCP ambitos/tareas/ está en incubación, no canonizado, y su control permanece owned por chatgpt-C-TAREAS-INICIO-01-SES-20261028-TA6F31C9, generación 1. No modificar ese OCP ni transferirlo por inferencia.
+El OCP `ambitos/tareas/` está en incubación, no canonizado, y su control leído de vuelta tiene blob `b0c19b0c2ce7db13a74243b03183756519f7cfe0`, estado `owned`, titular `chatgpt-C-TAREAS-INICIO-01-SES-20261028-TA6F31C9`, generación 1, sin expiración. El propio control limita la autorización vigente al diseño/materialización provisional y no autoriza canonizar propuestas ni modificar DUG/GOW. No modificar ese OCP ni transferirlo por inferencia.
 
 ## Siguiente actuación
 
-Resolver primero la titularidad del OCP existente o conseguir autorización expresa de su responsable; después reconciliar v0.2/v1.0 y revisar alcance, modelo mínimo y propuesta taxonómica.
+Esperar una transferencia expresa del titular actual o una autorización directa para un alcance concreto que no altere su control; después reconciliar v0.2/v1.0 y preparar una propuesta de alcance, modelo mínimo y posición taxonómica para ratificación. No pedir al operador que intervenga hasta que el titular actual permita la continuidad.
 
 ## Criterio de cierre
 
