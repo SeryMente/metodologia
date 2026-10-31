@@ -2,9 +2,13 @@
 
 Punto de entrada del repositorio; no es una fuente normativa.
 
-**Documento Único de Gobernanza:** [DUG · Samantha v370 · NX-370m](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html). Integra 43 principios, 20 anexos jerarquizados, Metacanon 1.26, GOW 2.14 con 127 términos definidos e indexados, §ARR con el vocabulario inicial de ChatGPT, taxonomía estructural 1.3, navegación y representación estructurada. Fuente y contadores releídos en `main` el 2026-10-30.
+**Documento Único de Gobernanza:** [DUG · Samantha v371 · NX-371m](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html). Integra 43 principios, 20 anexos jerarquizados, Metacanon 1.26, GOW 2.14 con 127 términos definidos e indexados, §ARR con el vocabulario inicial de ChatGPT, taxonomía estructural 1.3, navegación y representación estructurada. Fuente y contadores releídos en `main` el 2026-10-30.
 
 La sección humana gobierna la representación estructurada incorporada en el mismo archivo. No hay documentos normativos paralelos ni sincronización automática implícita con Notion, instrucciones personalizadas, memorias o copias locales. La rama `main` de `SeryMente/metodologia` es la fuente documental; si no puede leerse, declara `METODOLOGÍA NO VERIFICADA`. Las políticas obligatorias, los permisos reales y las autorizaciones aplicables conservan precedencia.
+
+## Inventario MDP y tareas provisionales de Gobernanza
+
+[DUG · ART-027](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-027) define los 43 microdescriptores de pertinencia (MDP). Cuando un MDP indica pertinencia, la consulta Sink del principio desarrollado es obligatoria antes de aplicarlo; la telemetría inicial mide únicamente frecuencia de acceso por alias. Gobernanza conserva siete [OCP provisionales de tareas](frentes/gobernanza/%F0%9F%93%81%20%F0%9F%A7%AD%20-%20Tareas%20provisionales/README.md), sin canonizar el ámbito funcional Tareas.
 
 ## Arquitectura de repositorios y frentes
 
