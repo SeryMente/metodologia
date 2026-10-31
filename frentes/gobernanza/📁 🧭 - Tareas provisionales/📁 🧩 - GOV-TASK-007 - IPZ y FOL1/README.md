@@ -34,3 +34,18 @@ Cotejar v0.7 frente a v0.8 y ART-025/ART-027, preparar una versión completa den
 ## Criterio de cierre
 
 Marcar como completada solo cuando el enunciado haya sido atendido, la evidencia correspondiente sea recuperable y el resultado haya sido leído de vuelta en la fuente canónica aplicable.
+
+
+## Reorientación prioritaria · instrucción del operador · 2026-10-31
+
+Este alcance precisa y amplía el enunciado anterior. El IPZ debe ser una instrucción de entrada compacta, no un resumen del DUG ni una fuente normativa paralela:
+
+1. Máximo estricto de 1.500 caracteres en el campo nativo.
+2. Primera referencia Sync acortada: GOW/§ARR, para que el modelo adquiera el vocabulario operativo.
+3. Segunda referencia Sync acortada: DUG, documento único de gobernanza y sistema de instrucciones.
+4. Después de ambas referencias, refuerzo de la compuerta obligatoria de admisión: no iniciar trabajo sustantivo sin frente asignado explícitamente y titularidad/exclusividad verificada mediante el protocolo vigente.
+5. El modelo no acepta consultas ajenas al frente asignado ni infiere un frente a partir de una pregunta general.
+6. El folio de ciclo no sustituye el control de titularidad de conversación. La integración de FOL1 ocurre después de instalar y verificar el IPZ, respetando sus compuertas.
+7. IPZ debe preservar las salvaguardas vigentes de v0.7 y su formato de salida, sin perder los estados de autorización/ejecución ni el contrato de eficiencia temporal.
+
+**Criterio ampliado de cierre:** contenido dentro de 1.500 caracteres; ambas referencias Sync resuelven a los destinos correctos; refuerzo de admisión probado con casos positivos y negativos; instalación en el campo nativo leída de vuelta; y solo entonces activar FOL1 conforme al protocolo. No se afirma instalación ni activación por la preparación del texto.
