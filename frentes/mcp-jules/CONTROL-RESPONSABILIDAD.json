@@ -79,18 +79,24 @@
     "old_generation": 2,
     "new_generation": 3,
     "scope": "frentes/mcp-jules/ only. No ownership change to frentes/metacanon/ or any other front.",
-    "write_status": "committed_pending_readback",
+    "write_status": "verified_readback",
     "verification": {
-      "status": "pending",
-      "folio_status": "PENDING_NOT_ASSIGNED_FOL1_INACTIVE",
+      "status": "verified_readback",
+      "readback_blob_sha": "6d103040170aa3fcc5e8721f5bf2b3f44dd6156d",
+      "verified_generation": 3,
       "verified_fields": [
         "owner_thread",
         "instance",
         "generation",
         "session_folio",
+        "authorization_ref",
         "prior_control_blob_sha",
-        "event"
-      ]
+        "event",
+        "scope"
+      ],
+      "verified_at": "2026-10-30",
+      "folio_status": "PENDING_NOT_ASSIGNED_FOL1_INACTIVE",
+      "note": "Folio intentionally not assigned: FOL1 is inactive; alias is explicitly non-native."
     }
   },
   "ownership_transfer_history": [
