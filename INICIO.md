@@ -10,6 +10,10 @@ La sección humana gobierna la representación estructurada incorporada en el mi
 
 [DUG · ART-027](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-027) define los 43 microdescriptores de pertinencia (MDP). Cuando un MDP indica pertinencia, la consulta Sink del principio desarrollado es obligatoria antes de aplicarlo; la telemetría inicial mide únicamente frecuencia de acceso por alias. Gobernanza conserva siete [OCP provisionales de tareas](frentes/gobernanza/%F0%9F%93%81%20%F0%9F%A7%AD%20-%20Tareas%20provisionales/README.md), sin canonizar el ámbito funcional Tareas.
 
+## MDP y tareas provisionales de Gobernanza
+
+[DUG · ART-027](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-027) define 43 microdescriptores de pertinencia (MDP). Cuando un MDP indica pertinencia, la consulta Sink del principio desarrollado es obligatoria antes de aplicarlo; la telemetría inicial mide únicamente frecuencia de acceso por alias. Gobernanza mantiene ocho [OCP provisionales de tareas](frentes/gobernanza/%F0%9F%93%81%20%F0%9F%A7%AD%20-%20Tareas%20provisionales/README.md). Tareas permanece sin canonizar. GOV-TASK-008 registra el aislamiento técnico pendiente de la norma desarrollada.
+
 ## Arquitectura de repositorios y frentes
 
 Consulta el [DUG · Taxonomía estructural de S y M](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-015) y el [inventario multi-repositorio](INVENTARIO-REPOSITORIOS-Y-FRENTES.md) para localizar los OCP conocidos y clasificar recursos por alcance. El inventario declara explícitamente qué repositorios pudieron leerse; no presume cobertura global fuera de ese inventario accesible.
