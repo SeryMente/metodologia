@@ -39,6 +39,9 @@ Se creó el contenedor `frentes/gobernanza/📁 🧭 - Tareas provisionales/` de
 | GOV-TASK-005 | Resolver referencias incompletas en principios |
 | GOV-TASK-006 | Reconciliar divergencias documentales de Gobernanza |
 | GOV-TASK-007 | Reconciliar IPZ y cerrar el corte FOL1 |
+| GOV-TASK-008 | Aislar técnicamente la norma desarrollada detrás de Sink |
+
+GOV-TASK-008 documenta un límite importante: el DUG aún contiene los textos desarrollados en `gov-data`; la consulta Sink es obligatoria por procedimiento, pero no existe aislamiento técnico que impida la lectura directa. La tarea deberá diseñar una vista inicial MDP-only y servir el texto ampliado individualmente, sin publicar ni duplicar la fuente.
 
 La materialización es provisional y local a Gobernanza; no declara una entidad taxonómica nueva. Se inspira en el mínimo de tarea en incubación, pero no canoniza su estándar v0.2 ni el candidato v1.0.
 
