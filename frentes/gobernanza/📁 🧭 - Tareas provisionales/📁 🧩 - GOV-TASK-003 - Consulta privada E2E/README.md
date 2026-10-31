@@ -12,15 +12,15 @@ Verificar de extremo a extremo que cada alias Sink redirige al principio correct
 
 ## Referencia de origen
 
-DUG v371 · ART-027 · secciones 4 y 7; repositorio SeryMente/metodologia.
+ART-027 vigente en DUG v373 · NX-373m; repositorio privado SeryMente/metodologia.
 
 ## Dependencias y límites
 
-Depende de GOV-TASK-002; repositorio GitHub privado y conector autenticado.
+Depende de GOV-TASK-002 y GOV-TASK-008; repositorio GitHub privado y canal autenticado que entregue un único principio. El conector GitHub disponible recupera el HTML completo, por lo que no constituye por sí solo una prueba de aislamiento.
 
 ## Siguiente actuación
 
-Tras desplegar Sink, probar un alias representativo, observar el fragmento Pxxx, recuperar gov-data con el conector GitHub y cotejar el texto y la revisión.
+Tras desplegar el resolvedor, probar un alias piloto y verificar que responde únicamente el objeto del ID solicitado, con versión/firma/SHA de fuente; probar IDs inexistentes, autenticación inválida y fuente no disponible con respuesta fail-closed. No usar el HTML completo ni `gov-data` completo como resultado de prueba.
 
 ## Criterio de cierre
 
