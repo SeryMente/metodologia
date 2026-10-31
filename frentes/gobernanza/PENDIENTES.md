@@ -177,3 +177,25 @@ Los estados iniciales correspondían a la lectura de Samantha v345. Su redacció
 
 
 24. **GOV-AT-TRACE-E2E-01 · PENDIENTE DE VALIDACIÓN AMPLIADA.** AT v1.1 y su esquema v1.1 se diseñaron y se aplicarán en ciclos reales. La verificación de este ciclo comprobará parseo, exactitud verbatim y enlaces directos/inversos de los registros creados; una prueba adicional deberá recorrer un cambio sustantivo que afecte más de un OCP/destino y verificar los resultados sin modificar el DUG fuera de autorización.
+
+
+## Objetivo rector actualizado · Gobernanza 1.0 · 2026-10-31
+
+La instrucción del operador establece como resultado una primera versión funcional de Gobernanza integrada con IPZ y OCP MCP. El IPZ tendrá un límite estricto de 1.500 caracteres y dirigirá mediante enlaces Sync acortados, en este orden, al GOW/§ARR y al DUG. El espacio restante reforzará una compuerta obligatoria: el modelo no inicia trabajo sustantivo sin asignación explícita de frente y verificación de titularidad/exclusividad conforme al protocolo vigente. La conversación no admite desvíos a consultas ajenas al frente asignado.
+
+El folio global de ciclo —distinto del folio de conversación— será el identificador contextual presentado a OCP MCP. El servidor debe devolver el inventario de 43 principios con nombre canónico «Principio DI · [denominación atómica de 1–3 términos]» y MDP breves: suficientes para reconocer significado y pertinencia, insuficientes para aplicar la norma completa. El modelo considera todos los principios, selecciona los aplicables al ciclo y comunica la selección. OCP MCP devuelve enlaces Sync individuales a los textos desarrollados; cada acceso genera telemetría de frecuencia. El modelo consulta los textos, comprueba suficiencia y solicita principios adicionales si procede. OCP MCP emite un hash verificable del paquete de enlaces, que se incorpora a la salida del ciclo.
+
+La telemetría mide frecuencia de acceso, no aplicación; no habilita descartar principios automáticamente. El hash debe cubrir el paquete exacto entregado. OCP MCP debe validar y vincular el folio de ciclo con la sesión autorizada; no se presume que el folio por sí solo sea una credencial criptográfica.
+
+### Responsabilidades por frente
+
+- Gobernanza: IPZ, admisión normativa, contrato de selección, nomenclatura/MDP, DUG único, telemetría y criterios de aceptación.
+- OCP MCP: capacidades y contratos del servidor para validar ciclo/sesión, servir el inventario, recibir selección, entregar enlaces Sync individuales, registrar frecuencia y emitir hash. Debe presentar brechas entre 0.1.0 y estos requisitos.
+- EP: instalación/operación local, cliente MCP, RDC, persistencia y restauración. No se administran aquí sus tareas ni objetos.
+- Gobernanza 1.0: resolver los elementos satélite alrededor del DUG, preservando procedencia e historia.
+
+El diseño anterior de Sink/Cloudflare queda en revisión. No desplegar ni declarar equivalencia con Sync hasta que se confirme el mecanismo técnico y su contrato con OCP MCP.
+
+GOV-TASK-010 fue creado para la admisión obligatoria y titularidad exclusiva. La matriz de reorientación está en el índice de tareas provisionales. GOV-TASK-007 es el bloque crítico de IPZ/FOL1; GOV-TASK-002/003/008 requieren reconciliar el diseño histórico Sink con Sync/OCP MCP; GOV-TASK-004 y GOV-TASK-005 no bloquean el MVP inmediato.
+
+No se modifica por este registro el DUG, ART-025, ART-027, IPZ nativo ni los controles de OCP MCP/EP. La instrucción se materializa primero como alcance provisional y contrato de coordinación.
