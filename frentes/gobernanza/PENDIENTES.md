@@ -1,3 +1,18 @@
+## Prioridad ejecutiva Gobernanza 1.0 · C-GOBERNANZA-RETOMA-07 · 2026-10-31
+
+1. **GOV-TASK-010:** ya existe; admisión fail-closed. Sin frente explícito, titularidad y exclusividad verificadas no se inicia trabajo sustantivo ni se atienden consultas ajenas.
+2. **GOV-TASK-007:** reconstruir IPZ preservando salvaguardas v0.7; enlaces Sync abreviados §ARR/GOW y DUG; refuerzo de admisión después de ambos; máximo 1.500 caracteres; instalación/read-back antes de FOL1.
+3. **OCP MCP:** validar vínculo ciclo/sesión; servir 43 nombres DI/MDP; recibir selección; devolver enlaces Sync individuales; medir frecuencia de acceso; permitir reconsulta por insuficiencia; emitir hash del paquete exacto para la salida.
+4. **GOV-TASK-008/002/003:** alinear aislamiento/consulta individual con Sync/OCP MCP. Sink/Cloudflare queda en revisión; no desplegar por inercia ni asumir equivalencia Sink/Sync.
+5. **GOV-TASK-009:** §ARR/GOW como primera referencia; DUG como segunda y fuente normativa única.
+6. **GOV-TASK-006:** inventariar y resolver documentos satélite para 1.0, preservando procedencia e historia.
+7. **Diferimiento:** GOV-TASK-004 y GOV-TASK-005 no bloquean el MVP inmediato.
+
+Gobernanza define y acepta; OCP MCP implementa dentro de su OCP; EP atiende alojamiento/instalación. No modificar DUG, ART-025/027, IPZ nativa o controles ajenos. FOL1 sigue inactivo.
+
+---
+
+
 
 
 ## Orden ejecutivo Gobernanza 1.0 · C-GOBERNANZA-RETOMA-07 · 2026-10-31
