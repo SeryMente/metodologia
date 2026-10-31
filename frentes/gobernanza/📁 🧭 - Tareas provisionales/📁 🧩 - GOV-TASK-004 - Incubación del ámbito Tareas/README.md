@@ -25,3 +25,8 @@ Esperar una transferencia expresa del titular actual o una autorización directa
 ## Criterio de cierre
 
 Marcar como completada solo cuando el enunciado haya sido atendido, la evidencia correspondiente sea recuperable y el resultado haya sido leído de vuelta en la fuente canónica aplicable.
+
+
+## Priorización frente al MVP de Gobernanza · 2026-10-31
+
+Esta tarea queda diferida y no constituye dependencia del objetivo inmediato de IPZ + admisión + OCP MCP. Su continuidad depende de la titularidad del OCP separado `ambitos/tareas/`; Gobernanza no modifica ese control, no asume su sesión ni canoniza el ámbito por esta reorientación. Solo se retomará cuando el MVP de Gobernanza esté asegurado o exista una necesidad explícita que lo convierta en bloqueo.
