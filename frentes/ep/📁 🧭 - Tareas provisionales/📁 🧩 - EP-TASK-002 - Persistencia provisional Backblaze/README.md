@@ -532,3 +532,77 @@ Esta instrucción **resuelve la ambigüedad semántica** entre cuenta de elevaci
 **Rectificación de estado:** se sustituye la lectura de §18.11 que trataba la prohibición como si impidiera utilizar la cuenta de elevación `MantenimientoRCI`. Lo que permanece prohibido es operar sobre archivos bajo la raíz de su perfil. El usuario y destino de trabajo se interpretan como `fila4`, tal como acaba de precisar el operador. Esta precisión no demuestra por sí sola el UUID RDC, SID real, ruta física de Desktop, estado del equipo CSEQ/CECEQ o disponibilidad de Backblaze; esas verificaciones técnicas siguen pendientes y deben realizarse únicamente dentro del perfil/rutas permitidos.
 
 **Impacto sobre el plazo:** queda eliminado el falso bloqueo conceptual «no usar la cuenta MantenimientoRCI». La vía de ejecución puede usar su elevación para preparar/instalar en el entorno fila4, sin escribir en el perfil RCI. Siguen siendo gates reales: autorización del dispositivo concreto, artefacto OCP MCP disponible, acceso independiente a B2 y prueba de upload/download con hashes. No se declara que esos gates estén ya satisfechos.
+
+
+## 18.13. Corrección operativa final: CECEQ y ejecución exclusiva como fila4 — instrucción directa del operador · 2026-10-31 · 13:19 · America/Mexico_City
+
+Esta sección registra la última precisión directa del operador y rectifica cualquier lectura incompatible de §18.11–§18.12. Se conserva la historia de esas secciones; para ejecutar las operaciones futuras prevalece esta instrucción más reciente y específica.
+
+### 18.13.1. Identidad correcta de la terminal
+
+La terminal objetivo se denomina CECEQ. «CSEQ» fue un error de transcripción y queda descartado como designación. En adelante se utilizará CECEQ exclusivamente. El nombre técnico/hostname y el UUID del dispositivo RDC todavía deben confirmarse mediante un handshake vivo; el nombre proporcionado no basta para inventar esa correspondencia.
+
+### 18.13.2. Separación estricta de conexión RDC y sesión de trabajo
+
+| Elemento | Identidad | Regla |
+|---|---|---|
+| Conexión RDC | MantenimientoRCI | Cuenta técnica utilizada únicamente para establecer/administrar el acceso RDC. La elevación se invoca solo para RDC. |
+| Trabajo Windows del operador | fila4 | Usuario Windows interactivo desde el que trabaja el operador. Todas las operaciones de trabajo se ejecutan como este usuario, con su token no elevado. |
+| Terminal física | CECEQ | Equipo objetivo del cibercafé; UUID RDC aún no cotejado. |
+| Perfil de ubicación | LOC-LUIS-PASTEUR | Perfil OEP de la ubicación; no sustituye la identidad del terminal ni del usuario. |
+
+La elevación de MantenimientoRCI no autoriza a ejecutar tareas de trabajo ni operaciones de archivos bajo ese token. No se permite utilizar RCI elevado para instalar software, clonar repositorios, materializar EP, sincronizar datos o escribir en una ruta de fila4. Apuntar a una carpeta de fila4 no convierte el proceso RCI en un proceso fila4.
+
+### 18.13.3. Operaciones obligatoriamente ejecutadas por fila4
+
+Todas las operaciones siguientes deben ejecutarse desde el proceso/sesión Windows interactiva cuyo token efectivo corresponda a fila4, sin elevación:
+
+- Instalación de aplicaciones y herramientas; se priorizan instaladores per-user y aplicaciones portables.
+- Creación y materialización de <Desktop-real-de-fila4>/EP/.
+- Clonación, fetch, checkout, pull, actualización y mantenimiento de repositorios.
+- Lectura, creación, escritura, edición, copia, movimiento, sincronización y borrado de archivos/directorios.
+- Configuración, perfiles, preferencias, cachés, temporales, logs, manifiestos y datos de usuario.
+- CLI B2, carga/descarga de snapshots, verificación de hashes y restauración.
+- Generación y restauración de snapshots, ejecución de herramientas del workspace y preparación de la sesión de trabajo canónica.
+
+No se utilizará MantenimientoRCI elevado para ejecutar estas tareas, ni siquiera indicando rutas absolutas dentro de fila4. Tampoco se simulará la identidad mediante variables USERPROFILE, HOME, APPDATA o TEMP, Start-Process con variables alteradas o directorios de trabajo elegidos manualmente. La identidad se acredita por el token efectivo del proceso que realiza la operación, comprobando SID, nombre de cuenta y sesión interactiva.
+
+Si RDC permite únicamente ejecutar comandos como MantenimientoRCI, ese canal queda limitado a administración del propio acceso RDC. Antes de cualquier operación sobre archivos o aplicaciones debe existir un mecanismo verificable para ejecutar el trabajo dentro de la sesión interactiva no elevada de fila4. Si no se puede demostrar el token fila4, la acción no se ejecuta. Si una instalación exige elevación administrativa, se detiene y se busca una alternativa per-user/portable; no se utiliza la elevación RCI como sustituto.
+
+### 18.13.4. Rectificación del bootstrap existente
+
+La revisión del código de scripts/bootstrap-entorno-persistente-ep.ps1 (blob 6740025719ea44de5751dd2507331d7e199235d0) muestra que el script exige que el proceso actual sea MantenimientoRCI elevado; posteriormente localiza el perfil fila4 y crea directorios, configura el workspace, clona repositorios y ejecuta mantenimiento dentro de rutas de fila4. El proceso conserva el token RCI durante esas operaciones aunque cambie variables de entorno.
+
+Dictamen actualizado: NO APTO PARA CECEQ bajo la instrucción vigente. No ejecutarlo tal como está ni interpretar sus rutas fila4 como prueba de ejecución por fila4. Requiere separar el arranque/conexión RDC del proceso de trabajo: RDC puede iniciarse con el contexto técnico autorizado; el bootstrap y toda operación sobre archivos deben arrancarse desde la sesión interactiva fila4 y verificar su token antes de actuar. Esta sección no modifica el script ni autoriza su refactorización/ejecución.
+
+El antecedente scripts/bootstrap-cibercafe-cli.ps1 (blob bad15eddd4feca2d0c576ee6390863c94618faa4) tampoco se ejecutó ni se considera compatible hasta verificar el token real de cada operación.
+
+### 18.13.5. Estado vivo de RDC tras la corrección
+
+Se volvió a consultar el inventario RDC después de recibir esta instrucción. Resultado de esa fotografía: PC10RCIF4EI4 seguía siendo el único dispositivo ONLINE, UUID d0bbb2a3-d7b4-45e1-8870-652c2c3844fc; las entradas PC-14, PC-8 y PC-4 figuraban OFFLINE. No apareció CECEQ. PC10 corresponde al ámbito de Harmonia restringido en §§17–18 y no se utilizará como sustituto.
+
+La consulta fue exclusivamente al inventario de dispositivos. No se abrió una terminal remota, no se ejecutó PowerShell en ningún host ni se inspeccionaron archivos. El trabajo en CECEQ queda pendiente hasta que el dispositivo exacto aparezca y pueda verificarse su sesión.
+
+### 18.13.6. Memoria persistente preexistente del cibercafé
+
+Se recuperó un patrón documental que conviene reutilizar sin crear otra arquitectura: CIBERCAFE/README.md (blob 17ccf369e837a2402968b84f00bad0f01bad3266) define una memoria por terminal, independiente de la sesión local, y continuidad ante DeepFreeze; CIBERCAFE/REGISTRO-TERMINALES.md (blob 0a1145c9e069b7b10e329d743a3f14c736e269ad) enumera PC-4 y PC-7. Los registros CIBERCAFE/PC-4/ESTADO.md (blob e493553bcf490cc793124b8b4e8ecf2c90808f9e) y CIBERCAFE/PC-7/ESTADO.md (blob e68c64abcb3b649e00b580f8f6823b87cfb0dbf0) son ejemplos de estado por terminal; ninguno autoriza mapear CECEQ a PC-4 o PC-7.
+
+El patrón fija PRESUPUESTO-REINICIO = 0: no provocar reinicio, apagado, reset ni programar reinicios. El README prevé sincronizar eventos importantes y un SYNC_FLUSH antes de logoff/reinicio/DeepFreeze cuando sea observable. La convención conceptual para CECEQ puede ser CIBERCAFE/CECEQ/ESTADO.md y EVENTOS-YYYY-MM.md, pero no se dio de alta ni modificó esa ruta en este ciclo. La identidad terminal CECEQ debe mantenerse separada del UUID RDC, que corresponde a una sesión de conexión.
+
+### 18.13.7. Estado de entrega OCP MCP y Backblaze
+
+La rama build/ocp-mcp-mvp-0.1.0 existe, con HEAD e4243414b0099ede9b9556b3cfa0bb20bc706576 y árbol remoto 2cf2c4b7a429e13e2c94811e20c33a5cbba5ff65 (583 rutas, truncamiento=false). En el árbol consultado no aparecen archivos .csproj, .sln, .cs, .dll, .exe, .zip ni .nupkg. Sí aparecen scripts PowerShell y documentos de bootstrap; por tanto, el hecho de que exista una rama de build no prueba que exista el servidor .NET 0.1.0 compilado. No se descarta una copia local del constructor o una entrega aún no publicada; no hay evidencia remota de ese artefacto en la rama consultada.
+
+La autorización de construcción del OCP MCP sigue separada de la instalación/operación del host EP. La persistencia Backblaze sigue sin tener, en esta revisión, evidencia de CLI y credenciales utilizables en CECEQ, bucket/prefijo autorizado, transferencia sintética, descarga, restore o backup real del servidor. No se reutilizan secretos de Khora/Vercel ni bearer tokens de Cora para el OCP de Metodología.
+
+### 18.13.8. Resultado, pendientes y siguiente secuencia
+
+Decisión recibida: CECEQ es el nombre correcto; MantenimientoRCI se limita a la conexión RDC y solo puede elevarse para esa finalidad; fila4 es el único contexto válido para el trabajo Windows y todas las operaciones de archivos/aplicaciones deben ejecutarse sin elevación desde su sesión interactiva.
+
+Pendiente de evidencia: UUID/hostname de CECEQ; SID/token fila4; sesión interactiva y Known Folder Desktop; mecanismo efectivo para lanzar procesos como fila4 desde el canal RDC; disponibilidad real de B2; credencial/bucket/prefijo autorizados; artefacto OCP MCP 0.1.0; snapshot y restore verificables.
+
+No ejecutado: conexión a CECEQ; instalación; clonación/materialización; cambios o borrados; ejecución del bootstrap; configuración o transferencias B2; restauración del servidor OCP MCP.
+
+Siguiente secuencia admisible: (1) detectar CECEQ y cotejar el UUID RDC; (2) verificar metadatos de sesión fila4 y que el proceso de trabajo pueda ejecutarse con su token no elevado; (3) materializar el workspace y repositorios desde fila4; (4) recibir y verificar el artefacto OCP MCP y su manifiesto; (5) configurar B2 desde fila4 y realizar upload/download sintéticos con SHA-256; (6) respaldar snapshot coherente del servidor y dejar runbook de restauración. Ninguna etapa posterior se considera satisfecha por la anterior.
+
+Continuidad: se mantiene un solo objeto de persistencia provisional, EP-TASK-002; no se crea EP-TASK-003 ni otra bitácora. La corrección queda agregada a la crónica acumulativa para que un hilo nuevo recupere la regla sin reinterpretar la conversación.
