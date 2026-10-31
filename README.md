@@ -39,6 +39,7 @@ Consulta estos documentos cuando la tarea pertenezca a su ámbito; no es necesar
 
 - [Scripts](scripts/) y [validaciones automáticas](.github/workflows/).
 - [OCP provisional · KHORA Workstation Bootstrap](frentes/khora-workstation-bootstrap/README.md) — auditoría y continuidad del único bootstrap PowerShell; no es una aplicación Next.js.
+- [MCP de Metodología](frentes/mcp-metodologia/README.md) — servidor local para desarrollo y gobernanza bajo la Metodología; distinto del MCP de Khora.
 - [Frentes de trabajo y sus OCP](frentes/).
 - [Registro de equipos Cybercafé](CIBERCAFE/).
 - [Entregables](ENTREGABLES/); los análisis de principios anteriores están archivados en [principios-historicos](ENTREGABLES/principios-historicos/).

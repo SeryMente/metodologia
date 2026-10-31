@@ -1,0 +1,74 @@
+{
+  "schema": "mcp-metodologia.creation-evidence/1",
+  "event_id": "C-MCP-METODOLOGIA-001",
+  "date": "2026-10-31",
+  "repository": "SeryMente/metodologia",
+  "base_main_commit": "f74082148d28b575c232e8fc291607bef8861794",
+  "base_root_tree_sha": "8fb8ed534ca57924cca84736b025341a5069908a",
+  "local_conversation_uuidv7": "01a192b3-1063-7916-be41-ebfa974ede73",
+  "native_conversation_id_exposed": false,
+  "operational_alias": "chatgpt-C-MCP-METODOLOGIA-001-01a192b3-1063-7916-be41-ebfa974ede73",
+  "foliation": {
+    "status": "PENDIENTE/NO ASIGNADO",
+    "master_blob": "b93cbef77f2fa1a6e4290ae8177e957a1616e47b",
+    "master_state": "PREPARADO_PENDIENTE_ACTIVACION_IPZ",
+    "activation": null,
+    "allocation_made": false
+  },
+  "governance": {
+    "dug_version": "v373",
+    "dug_signature": "NX-373m",
+    "dug_blob_sha": "cac4525de77d4f47a8a59c25201968ecf2056b90",
+    "metacanon_version": "1.26",
+    "gow_version": "2.14",
+    "mcp_normative": "DESACTIVADO"
+  },
+  "collision_checks": {
+    "new_path_absent_on_base": true,
+    "legacy_mcp_jules": {
+      "path": "frentes/mcp-jules/",
+      "nucleus": false,
+      "control": false,
+      "identity": "NO VERIFICADA",
+      "historical_chronicle_blob": "db3efa256590704a447d83a10da20c155ab1eadc"
+    },
+    "khora_mcp": {
+      "repository": "SeryMente/khora",
+      "ocp": "docs/frentes/observabilidad-mcp/",
+      "nucleus_blob": "949ff876de7e060c1d50d61b5a4e5b591f8a018d",
+      "control_blob": "c0d7731bad4701f5d7e69235ae23ef0bdd039964",
+      "generation": 4,
+      "status": "assigned",
+      "not_modified": true
+    }
+  },
+  "authorization": {
+    "opening_instruction": "Inaugura frente de trabajo OCP MCP en  repositorio de metodologia",
+    "purpose_verbatim": "Ok, esa es una buena pregunta. El MSP de metodología es el MSP que va a absorber, por ejemplo, las tareas de desarrollo y que no forman parte del ámbito del alcance de la prótesis cognitiva. Es decir, Cora tiene su MSP, por ejemplo, para servirle a los modelos un acceso a los dictados, un acceso a los medios de persistencia en la nube, a descargar MP3, al grafo de relaciones, es decir, cosas que tienen que ver con Cora. Pero necesitamos un MSP de la metodología OCP para tareas de desarrollo, por ejemplo, verificación de gobernanza para los modelos sometidos bajo la metodología, etcétera, etcétera. Son dos ámbitos muy heterogéneos y conviene tenerlos por separado. Además, OCP necesita un MSP local que trabaje por localhost o por RDC y Cora está de cara al internet mediante Vercel, entonces por eso la separación.",
+    "scope": "create this OCP and its documentation/indexes only"
+  },
+  "file_plan": [
+    "frentes/mcp-metodologia/README.md",
+    "frentes/mcp-metodologia/MCP-METODOLOGIA.md",
+    "frentes/mcp-metodologia/CONTROL-RESPONSABILIDAD.json",
+    "frentes/mcp-metodologia/conversaciones/C-MCP-METODOLOGIA-001-dialogo.jsonl",
+    "frentes/mcp-metodologia/cronica/C-MCP-METODOLOGIA-001.md",
+    "frentes/mcp-metodologia/evidencias/C-MCP-METODOLOGIA-001.json",
+    "README.md",
+    "INVENTARIO-REPOSITORIOS-Y-FRENTES.md"
+  ],
+  "verification_plan": {
+    "atomic_tree_commit": true,
+    "expected_parent": "f74082148d28b575c232e8fc291607bef8861794",
+    "required_readback": true,
+    "sha_cotejo": true
+  },
+  "execution_limits": {
+    "code_written": false,
+    "local_process_started": false,
+    "rdc_used": false,
+    "public_deploy": false,
+    "khora_files_modified": false,
+    "normative_mcp_run": false
+  }
+}
