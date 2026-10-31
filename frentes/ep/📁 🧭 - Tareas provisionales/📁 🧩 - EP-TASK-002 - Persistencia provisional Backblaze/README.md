@@ -1,7 +1,7 @@
 # 📝 EP-TASK-002 · Persistencia provisional con Backblaze B2 para datos de usuario y continuidad de la sesión canónica
 
 **Naturaleza:** tarea provisional del frente Entorno Persistente; materialización auxiliar del registro de tareas, no un OEP nuevo, no un frente independiente y no una decisión de arquitectura canónica.  
-**Estado:** `en_curso` — servidor OCP MCP 0.1.0 construido y probado en entorno aislado según reporte de OCP; estructura de código presente en la rama remota verificada; integración EP, configuración/transferencias Backblaze B2 y restauración multiubicación NO INICIADAS.  
+**Estado:** `en_curso` — OCP MCP 0.1.0 construido y probado según reporte del constructor; rama remota avanzó con trabajo de catálogo y operación protegida; publicación/transferencia del paquete, integración EP, configuración/transferencias B2 y restauración multiubicación pendientes.  
 **Responsabilidad:** vinculada a `frentes/ep/`; sin control, sesión, titularidad ni folio global propios.  
 **task_id:** `EP-TASK-002` (identificador local estable; no es folio global).  
 **scope_ref:** `frentes/ep/`  
@@ -894,3 +894,123 @@ Se mantienen todas las reglas de §18.13: CECEQ es la designación correcta; Man
 6. El 2026-11-01 se ejecuta la restauración en el segundo equipo y se comprueba arranque y operación funcional. Hasta entonces, la continuidad entre ubicaciones permanece pendiente.
 
 **Cierre del registro:** se mantiene un solo objeto documental, EP-TASK-002. Este informe no crea EP-TASK-003, no modifica OEP, DUG ni los controles del frente OCP, no integra la rama en main, no instala software en CECEQ, no configura Backblaze y no declara restauración aceptada. La atribución de cada dato a reporte OCP o a cotejo GitHub queda explícita para evitar convertir resultados declarados en verificación de EP.
+
+
+## 20. Reconciliación del antecedente enviado desde EP, delta de código OCP y control del sprint · 2026-10-31 · 13:34 · America/Mexico_City
+
+### 20.1. Procedencia del bloque recibido y deduplicación documental
+
+El operador entrega en este hilo un bloque retrospectivo proveniente de EP que incluye la solicitud original de disponibilidad antes de las 15:00, el objetivo de abrir el OCP MCP en otra computadora el domingo 01-11-2026, la separación del OCP de Metodología frente a Cora/Khora, la modalidad de acceso local/RDC, el perfil Cibernet/Deep Freeze, las correcciones de identidad Windows y los resultados documentales atribuidos a ciclos anteriores.
+
+Se cotejó contra el README canónico vigente de EP-TASK-002. El contenido sustantivo ya estaba incorporado, con su procedencia y rectificaciones, en:
+
+- §§18.1–18.4: objetivo de disponibilidad, persistencia selectiva del OCP MCP, separación OCP local frente a Khora/Cora, perfil LOC-LUIS-PASTEUR/Cibernet, CECEQ/I1 y supuesto de sesión efímera Deep Freeze.
+- §§18.11–18.13: aclaraciones históricas sobre identidad de conexión, elevación y regla definitiva CECEQ/fila4; prevalece §18.13 sobre cualquier interpretación incompatible de §18.11–§18.12.
+- §§18.14–18.15: raíz de workspace Ser y Mente, error/desviación histórica de selección de host y estado de inventario.
+- §18.16: corrección del alcance de la consulta RDC, perfil de aplicación key B2, capacidades mínimas y protocolo de prueba de transferencia.
+- §19: reporte OCP MCP 0.1.0, paquete/hashes declarados, resultados de prueba, pendientes y continuidad hacia 0.1.1.
+
+No se crea otro objeto. La referencia sugerida en el bloque recibido como EP-TAGS-100002 ya había sido evaluada en §18.1: se reutiliza **EP-TASK-002**, sin crear EP-TAGS-100002, EP-TASK-003 ni una bitácora paralela. El bloque se registra como nueva recepción y conciliación de contexto; no se duplican literalmente sus afirmaciones históricas ni se elevan a evidencia independiente.
+
+### 20.2. Rectificaciones y reglas vigentes confirmadas
+
+El bloque recibido es coherente con las decisiones ya canonizadas en el objeto:
+
+1. El OCP MCP de Metodología es local; se accede mediante localhost y/o RDC autorizado. No requiere bearer tokens, sesiones, endpoints ni permisos de Cora/Vercel. El MCP separado de Khora/Cora conserva su propio dominio.
+2. Backblaze B2 es destino privado de persistencia/recuperación, no host de ejecución ni endpoint MCP ni remoto de Git.
+3. La ubicación informada es Cibernet, avenida Luis Pasteur, perfil candidato LOC-LUIS-PASTEUR; la sesión puede desaparecer por Deep Freeze y la nueva sesión se debe tratar como materialización limpia.
+4. El nombre de terminal que debe usarse es CECEQ. I1 se conserva como etiqueta reportada cuya semántica no está verificada.
+5. MantenimientoRCI es únicamente la cuenta técnica de conexión/elevación RDC; fila4 es el único contexto válido para instalaciones, repositorios, archivos, configuración, transferencias B2 y restauración, mediante su token Windows no elevado.
+6. La raíz de workspace es <Desktop-real-de-fila4>\Ser y Mente\.
+7. La consulta de inventario Desktop Commander no demuestra ni invalida por sí sola el uso general de RDC que reportó el operador. §18.16.1 conserva la declaración directa de uso RDC durante la mañana y limita el hallazgo negativo a que no se observó un agente Desktop Commander con alias CECEQ.
+
+No se vuelve a presentar como bloqueo la mera utilización de MantenimientoRCI para establecer la conexión RDC. El gate pendiente es distinto: demostrar que el proceso de trabajo que opera sobre archivos y aplicaciones se ejecuta efectivamente bajo el token interactivo no elevado de fila4 en el host/sesión destino exactos.
+
+### 20.3. Avance remoto de OCP posterior al commit 0.1.0 reportado
+
+Se comparó en GitHub la referencia remota build/ocp-mcp-mvp-0.1.0 contra el commit de reporte 0.1.0 85b6969d74b32ead7b7358da65d62b47aa2d2cfd. La comparación devolvió estado ahead, ahead_by=1, behind_by=0 y un conjunto de siete rutas modificadas/agregadas:
+
+| Ruta | Delta en la rama respecto de 85b6969 |
+|---|---:|
+| frentes/mcp-metodologia/README.md | +2 / -2 |
+| src/OcpMcp/Program.cs | +4 / -3 |
+| src/OcpMcp/Protocol/McpServer.cs | +21 / -19 |
+| src/OcpMcp/Services/OperationService.cs | +111 / -17 |
+| src/OcpMcp/Services/PrincipleCatalog.cs | +102 / 0 |
+| tests/OcpMcp.UnitTests/Program.cs | +216 / -3 |
+| tests/Smoke.ps1 | +11 / -4 |
+
+La respuesta de comparación no expuso el SHA del commit nuevo; por ello, **el avance de un commit y el delta de rutas están verificados, pero el SHA exacto del nuevo HEAD queda NO EXPUESTO por esta consulta**. Se preserva el último commit identificable del reporte 0.1.0 como referencia base y no se inventa un identificador para el commit posterior.
+
+### 20.4. Hallazgos concretos del código de catálogo y selección normativa
+
+Se leyó el código remoto actual de la rama:
+
+- PrincipleCatalog.cs, blob `d116d4087db46ffc4434acf8a0fa4de3d6f16b23`.
+- OperationService.cs, blob `acf5cbbf28da08823f3db5eed659eed3cd9e14e5`.
+- README del frente OCP MCP, blob `db1779e90657dd7011760d6ab7f67da622e5fdd3`.
+- Pruebas unitarias, blob `55ab4e0486563b685aa71dc96c95b17be0ba1432`.
+- Pruebas de humo, blob `ea940c1b9b34914c0eb6bc5fa5254209ed31ba62`.
+
+Hallazgos comprobados por lectura del código/documentación remota:
+
+1. `PrincipleCatalog` espera 43 principios y valida el conjunto completo de IDs P001–P043.
+2. El CNP esperado está fijado como P001, P004, P005, P038 y P043. La carga valida que coincida con los miembros CNP declarados en el DUG canónico.
+3. La carga exige título, texto normativo y microdescriptor para cada principio.
+4. El catálogo declara incompletos los metadatos `applicability`, `activation_conditions`, `mandatory` y `dependencies`; el código no los inventa ni los completa por inferencia.
+5. `DeriveBaseSelection` exige las 43 clasificaciones válidas y deriva APLICA/INCIERTO más el CNP obligatorio.
+6. `OperationService` contiene una fase de cierre transitivo de dependencias, pero bloquea la selección cuando faltan metadatos normativos o dependencias; el snapshot también exige metadatos completos.
+7. El README actualizado expone `get_principle_catalog` para IDs/títulos/MDP y mantiene el texto normativo completo fuera de la respuesta MCP del catálogo. También registra que la selección/snapshot permanecen bloqueados hasta que Gobernanza proporcione los cuatro metadatos.
+8. En la lectura realizada de `OperationService.cs` no se encontró implementación explícita de detección SCC ni de bloqueo por componentes fuertemente conexas. No se declara esa capacidad terminada. Debe confirmarse su implementación y pruebas antes de aceptar el requisito SCC como resuelto.
+
+La fuente canónica DUG vigente consultada conserva cinco miembros en el CNP. El catálogo actual no altera ni sustituye la autoridad del DUG; deriva datos desde la fuente canónica importada. Este ciclo no modifica principios, metadatos normativos, OEP ni DUG.
+
+### 20.5. Pruebas: presencia de casos en fuente frente a resultados de ejecución
+
+La lectura estática de las fuentes actuales encontró 26 invocaciones de comprobación `Check` en el programa de pruebas unitarias y 30 aserciones `Assert-True` en la prueba Smoke. Son **conteos de casos expresados en el código fuente**, no resultados de una ejecución. No se convierten en PASS ni se suman a los resultados reportados en §19.4/§19.6.
+
+El código de pruebas incluye casos para:
+- Preservar CNP incluso si los 43 principios se clasifican NO_APLICA.
+- Incorporar a la selección base un principio clasificado APLICA.
+- Rechazar un conjunto de 42 clasificaciones incompleto.
+- Ejecutar operaciones protegidas con grant sintético, validar binding del payload, consumo, recibo, replay idempotente y rechazo de recibo o grant manipulado.
+- Verificar en Smoke el catálogo de 43 principios, membresía CNP, retención del texto normativo fuera de la superficie de catálogo, bloqueo fail-closed por metadatos faltantes, operación MCP stdio y backup/restore aislados.
+
+**No verificado en este ciclo:** que el commit posterior se haya compilado, que las 26 comprobaciones unitarias hayan resultado PASS, que las 30 aserciones Smoke hayan pasado, que el conjunto de pruebas produzca los mismos totales del reporte previo o que SCC esté implementado y probado. Se necesita la evidencia de ejecución vinculada al nuevo commit.
+
+### 20.6. Divergencia de ramas y riesgo de integración
+
+La comparación de la rama de construcción contra main devolvió estado `diverged`: rama de construcción ahead_by=3 y behind_by=12 respecto de la base de comparación, con merge base `e4243414b0099ede9b9556b3cfa0bb20bc706576`. Esto significa que ambas referencias contienen evolución independiente posterior a su ancestro común.
+
+**Riesgo:** un merge automático o una integración apresurada puede mezclar la entrega OCP con actualizaciones concurrentes de main o introducir conflictos en README, contrato y fuentes. La rama no debe fusionarse ni rebasarse automáticamente para cumplir el sprint. Primero se requiere revisar commits/deltas, identificar si los cambios documentales de main afectan las fuentes importadas y repetir build/tests sobre el estado candidato. La integridad del commit publicado no equivale a actualidad normativa respecto de main.
+
+No se alteró la rama de construcción, no se ejecutó merge/cherry-pick/rebase y no se integró OCP en main.
+
+### 20.7. Control de sprint y problemas que requieren aviso
+
+Hora local observada durante esta revisión: 2026-10-31 13:33:57, America/Mexico_City. Límite solicitado: 15:00. Tiempo restante en ese corte: aproximadamente 1 hora y 26 minutos. La hora de corte no modifica el orden de autorización ni convierte un estado pendiente en aceptado.
+
+**Prioridad inmediata para maximizar la posibilidad de continuidad mañana:**
+
+1. Obtener el ZIP 0.1.0 y su manifiesto desde el workspace/canal del constructor; cotejar SHA-256 antes de extraer o materializar. No esperar a que 0.1.1 esté completo para preservar 0.1.0.
+2. Desbloquear el acceso independiente de Backblaze: bucket privado dedicado y Standard Application Key limitada al bucket/prefijo con `listBuckets`, `listFiles`, `readFiles`, `writeFiles`; excluir permisos de borrado y administración. La clave se introduce únicamente en el prompt local seguro de fila4 y nunca en ChatGPT.
+3. Identificar el canal RDC y ejecutar el preflight de token/SID/sesión de fila4. La conexión técnica MantenimientoRCI puede sostener RDC; no puede ser el token que ejecuta instalaciones o trabaja archivos.
+4. Correr el smoke test B2 con archivo sintético, upload, listado, download y SHA-256 idéntico. No usar `--delete` ni reglas lifecycle destructivas.
+5. Preparar el paquete OCP, manifiesto, configuración no secreta, snapshot coherente SQLite/datos y runbook; subirlos a prefijo B2 dedicado y verificar read-back desde staging.
+6. Mantener explícita la restauración en un segundo equipo el 2026-11-01 como prueba de aceptación independiente; no marcar continuidad multiubicación solo por éxito de upload.
+
+**Problemas/alertas que deben comunicarse inmediatamente si persisten:**
+
+- No se tiene aún cuenta/bucket/key B2 independiente ni una transferencia sintética ejecutada.
+- El ZIP 0.1.0 permanece reportado en el workspace temporal del constructor; no se ha verificado recepción por EP ni publicación del paquete.
+- El token efectivo fila4 en el canal de trabajo del asistente no está verificado en la sesión/host destino; no es un problema de la cuenta de elevación RDC, sino de acreditar el proceso que trabajará los archivos.
+- DPAPI CurrentUser vincula el material protegido a la identidad Windows local; no debe suponerse portabilidad automática de claves entre la máquina de construcción y el segundo equipo. El operador debe aprovisionarse en el equipo destino bajo su propia identidad autorizada.
+- Faltan los cuatro metadatos canónicos de los principios y la evidencia de SCC; la selección/snapshot debe permanecer bloqueada si esos metadatos siguen ausentes.
+- La rama de construcción está divergida de main y necesita conciliación deliberada, sin integración automática.
+- No hay evidencia de restore real en el segundo equipo. Esta es la prueba de continuidad decisiva para el domingo.
+
+### 20.8. Resultado de conciliación
+
+El bloque retrospectivo de EP queda reconciliado con el historial existente y no abre una tarea adicional. El avance OCP posterior al reporte 0.1.0 queda agregado como delta nuevo con evidencia de la comparación remota y lectura de fuentes. Se mantienen separados los estados `reportado`, `observado en GitHub`, `leído estáticamente`, `ejecutado` y `aceptado`.
+
+EP-TASK-002 continúa en curso. No se ejecutaron operaciones sobre CECEQ, no se instaló el servidor, no se configuró B2, no se cargó ningún artefacto y no se realizó restore en este ciclo. La siguiente actividad debe atacar primero la obtención verificable del paquete 0.1.0 y el desbloqueo de B2, a la vez que se permite a OCP continuar el trabajo de 0.1.1 en su rama aislada.
