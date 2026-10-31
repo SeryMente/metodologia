@@ -117,6 +117,7 @@ La fuente del script no se conserva como archivo local persistente. El flujo sí
 
 ### No demostrado
 
+- Prueba fría del lanzador el 2026-10-30: FALLÓ antes del login. `gh auth status` escribió su diagnóstico normal en `stderr`; el lanzador lo redirigió con `*> $null` bajo `$ErrorActionPreference='Stop'`, PowerShell lo elevó a `NativeCommandError` y abortó antes de evaluar `$LASTEXITCODE`. No se solicitó device code, no se accedió a la API privada y V6 no se descargó ni ejecutó. El bloque del lanzador se corrigió en el inventario; falta verificarlo en el equipo.
 - Login GitHub inicial desde estado limpio/sin token anterior.
 - Recuperación cuando `gh auth status` es válido pero el token es de otra cuenta o carece de `repo`/acceso al repositorio.
 - Arranque RDC fresco completo con autorización del dispositivo, `Device ready`, estado Online y read-back SHA.

@@ -42,10 +42,71 @@ Las rutas se registran por evidencia, no por uniformidad estética. Un OCP exist
 **Comando definitivo · PowerShell 5.1 · ejecución desde memoria, sin copia local:**
 
 ```powershell
-& { param([switch]$SelfTest,[switch]$PreflightOnly); $ErrorActionPreference='Stop'; $ghCommand=Get-Command gh.exe -ErrorAction SilentlyContinue | Where-Object {$_.CommandType -eq 'Application'} | Select-Object -First 1; $gh=$null; if($ghCommand){$gh=$ghCommand.Source}; if(-not $gh){foreach($candidate in @('C:\Program Files\GitHub CLI\gh.exe',(Join-Path $env:LOCALAPPDATA 'Programs\GitHub CLI\gh.exe'))){if(Test-Path -LiteralPath $candidate -PathType Leaf){$gh=$candidate;break}}}; if(-not $gh){$winget=Join-Path $env:LOCALAPPDATA 'Microsoft\WindowsApps\winget.exe';if(-not(Test-Path -LiteralPath $winget -PathType Leaf)){throw 'GitHub CLI y winget no están disponibles.'};& $winget install --id GitHub.cli --exact --silent --accept-package-agreements --accept-source-agreements --disable-interactivity;if($LASTEXITCODE -ne 0 -and $LASTEXITCODE -ne -1978335189){throw 'No se pudo instalar GitHub CLI.'};$gh='C:\Program Files\GitHub CLI\gh.exe'}; if(-not(Test-Path -LiteralPath $gh -PathType Leaf)){throw 'No se encontró gh.exe después de la instalación.'}; & $gh auth status --hostname github.com *> $null; if($LASTEXITCODE -ne 0){& $gh auth login --hostname github.com --git-protocol https --web --scopes repo --skip-ssh-key;if($LASTEXITCODE -ne 0){throw 'La autenticación web de GitHub no terminó.'}}; & $gh auth status --hostname github.com *> $null; if($LASTEXITCODE -ne 0){throw 'La autenticación GitHub no quedó verificada.'}; $response=& $gh api 'repos/SeryMente/metodologia/contents/scripts/khora-workstation-bootstrap-v6.ps1?ref=aa45426ece7374e9812868e04e0ce5f783cebf4d'; if($LASTEXITCODE -ne 0){throw 'No se pudo leer el bootstrap privado desde GitHub.'}; $doc=($response -join [Environment]::NewLine | ConvertFrom-Json); if($doc.type -ne 'file' -or $doc.encoding -ne 'base64' -or $doc.sha -ne '862e63bd00a84cdbe5c2d913794cc17de373356a'){throw 'Git blob SHA, tipo o codificación inesperados.'}; $bytes=[Convert]::FromBase64String(($doc.content -replace '\s','')); if([int]$doc.size -ne $bytes.Length){throw 'Tamaño del bootstrap descargado no coincide.'}; $sha=[Security.Cryptography.SHA256]::Create(); try{$actual=[BitConverter]::ToString($sha.ComputeHash($bytes)).Replace('-','').ToLowerInvariant()}finally{$sha.Dispose()}; if($actual -ne 'dd71b638fab3694e89ae58d7faf265941cd6a289ecbf9602bf0d434837635d7b'){throw 'SHA-256 del bootstrap no coincide.'}; $source=[Text.Encoding]::UTF8.GetString($bytes); if(-not $source.StartsWith('[CmdletBinding()]') -or $source -notmatch '--no-persist-session'){throw 'La estructura del bootstrap no pasó la validación.'}; $scriptBlock=[scriptblock]::Create($source); & $scriptBlock -SelfTest:$SelfTest -PreflightOnly:$PreflightOnly }
+& {
+    param([switch]$SelfTest,[switch]$PreflightOnly)
+    $ErrorActionPreference = 'Stop'
+    $ghCommand = Get-Command gh.exe -ErrorAction SilentlyContinue | Where-Object {$_.CommandType -eq 'Application'} | Select-Object -First 1
+    $gh = $null
+    if ($ghCommand) { $gh = $ghCommand.Source }
+    if (-not $gh) {
+        foreach ($candidate in @('C:\Program Files\GitHub CLI\gh.exe',(Join-Path $env:LOCALAPPDATA 'Programs\GitHub CLI\gh.exe'))) {
+            if (Test-Path -LiteralPath $candidate -PathType Leaf) { $gh = $candidate; break }
+        }
+    }
+    if (-not $gh) {
+        $winget = Join-Path $env:LOCALAPPDATA 'Microsoft\WindowsApps\winget.exe'
+        if (-not (Test-Path -LiteralPath $winget -PathType Leaf)) { throw 'GitHub CLI y winget no están disponibles.' }
+        & $winget install --id GitHub.cli --exact --silent --accept-package-agreements --accept-source-agreements --disable-interactivity 2>&1 | ForEach-Object { Write-Host $_ }
+        $installExit = $LASTEXITCODE
+        if ($installExit -ne 0 -and $installExit -ne -1978335189) { throw ('No se pudo instalar GitHub CLI; exit=' + $installExit) }
+        $gh = 'C:\Program Files\GitHub CLI\gh.exe'
+    }
+    if (-not (Test-Path -LiteralPath $gh -PathType Leaf)) { throw 'No se encontró gh.exe después de la instalación.' }
+
+    $authOutput = @(& $gh auth status --hostname github.com 2>&1)
+    $authExit = $LASTEXITCODE
+    if ($authExit -ne 0) {
+        Write-Host 'No hay una sesión GitHub válida. Iniciando autorización web/device flow con scope repo.' -ForegroundColor Yellow
+        & $gh auth login --hostname github.com --git-protocol https --web --scopes repo --skip-ssh-key 2>&1 | ForEach-Object { Write-Host $_ }
+        $loginExit = $LASTEXITCODE
+        if ($loginExit -ne 0) { throw ('La autenticación web de GitHub no terminó; exit=' + $loginExit) }
+    }
+
+    $authOutput = @(& $gh auth status --hostname github.com 2>&1)
+    $authExit = $LASTEXITCODE
+    if ($authExit -ne 0) { throw 'La autenticación GitHub no quedó verificada; no se consultó el repositorio privado.' }
+
+    $apiPath = 'repos/SeryMente/metodologia/contents/scripts/khora-workstation-bootstrap-v6.ps1?ref=aa45426ece7374e9812868e04e0ce5f783cebf4d'
+    $response = @(& $gh api $apiPath 2>&1)
+    $apiExit = $LASTEXITCODE
+    if ($apiExit -ne 0) {
+        Write-Host 'La sesión existe, pero no pudo leer el archivo privado. Se solicitará reautorización del scope repo.' -ForegroundColor Yellow
+        & $gh auth refresh --hostname github.com --scopes repo 2>&1 | ForEach-Object { Write-Host $_ }
+        $refreshExit = $LASTEXITCODE
+        if ($refreshExit -ne 0) { throw ('La reautorización de GitHub no terminó; exit=' + $refreshExit + '. No se descargó ni ejecutó el bootstrap.') }
+        $authOutput = @(& $gh auth status --hostname github.com 2>&1)
+        $authExit = $LASTEXITCODE
+        if ($authExit -ne 0) { throw 'La sesión GitHub no pasó la verificación después de reautorizar.' }
+        $response = @(& $gh api $apiPath 2>&1)
+        $apiExit = $LASTEXITCODE
+        if ($apiExit -ne 0) { throw 'La cuenta activa sigue sin acceso de lectura al repositorio privado. Selecciona la cuenta autorizada con gh auth switch --hostname github.com y vuelve a ejecutar. No se descargó ni ejecutó el bootstrap.' }
+    }
+
+    $doc = ($response -join [Environment]::NewLine | ConvertFrom-Json)
+    if ($doc.type -ne 'file' -or $doc.encoding -ne 'base64' -or $doc.sha -ne '862e63bd00a84cdbe5c2d913794cc17de373356a') { throw 'Git blob SHA, tipo o codificación inesperados.' }
+    $bytes = [Convert]::FromBase64String(($doc.content -replace '\s',''))
+    if ([int]$doc.size -ne $bytes.Length) { throw 'Tamaño del bootstrap descargado no coincide.' }
+    $sha = [Security.Cryptography.SHA256]::Create()
+    try { $actual = [BitConverter]::ToString($sha.ComputeHash($bytes)).Replace('-','').ToLowerInvariant() } finally { $sha.Dispose() }
+    if ($actual -ne 'dd71b638fab3694e89ae58d7faf265941cd6a289ecbf9602bf0d434837635d7b') { throw 'SHA-256 del bootstrap no coincide.' }
+    $source = [Text.Encoding]::UTF8.GetString($bytes)
+    if (-not $source.StartsWith('[CmdletBinding()]') -or $source -notmatch '--no-persist-session') { throw 'La estructura del bootstrap no pasó la validación.' }
+    $scriptBlock = [scriptblock]::Create($source)
+    & $scriptBlock -SelfTest:$SelfTest -PreflightOnly:$PreflightOnly
+}
 ```
 
-El lanzador instala GitHub CLI desde winget solo cuando falta, solicita autenticación web si hace falta, recupera el archivo privado desde el commit inmutable y verifica tipo, tamaño, blob SHA y SHA-256 antes de ejecutarlo en memoria. `-SelfTest` ejecuta solo autopruebas; `-PreflightOnly` valida dependencias/autenticación sin abrir otro RDC. Sin parámetros, ejecuta el bootstrap completo.
+El lanzador captura `stderr` de GitHub CLI como salida ordinaria para que `$ErrorActionPreference='Stop'` no interrumpa el manejo de códigos de salida. Si falta sesión, inicia `gh auth login` con device/web flow y scope `repo`; después prueba la lectura privada real. Si la sesión existe pero el archivo privado no es accesible, solicita `gh auth refresh --scopes repo` y reintenta una sola vez. Si la cuenta activa sigue sin acceso, se detiene sin descargar ni ejecutar el bootstrap y pide seleccionar la cuenta autorizada. Solo tras leer el archivo verifica tipo, tamaño, blob SHA y SHA-256 y lo ejecuta en memoria. `-SelfTest` ejecuta solo autopruebas; `-PreflightOnly` valida dependencias/autenticación sin abrir otro RDC. No crea una copia local persistente del `.ps1`.
 
 ### Corte M26 · referencias y dependencias rápidas (2026-10-22)
 

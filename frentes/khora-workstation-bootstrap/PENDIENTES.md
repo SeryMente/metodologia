@@ -4,7 +4,7 @@ Este listado depende del núcleo `KHORA-WORKSTATION-BOOTSTRAP.md`; no mantiene u
 
 ## Críticos
 
-1. **Acceso GitHub efectivo y reautorización.** El lanzador no debe considerar suficiente que `gh auth status` sea exitoso. Debe verificar la lectura real del repositorio privado; si la cuenta/scope no bastan, iniciar `gh auth refresh --scopes repo` o el device flow correspondiente, reintentar una sola vez y detenerse con un diagnóstico inequívoco si persiste el fallo.
+1. **Acceso GitHub efectivo y reautorización.** El lanzador captura `stderr` de `gh auth status` como salida ordinaria; el comportamiento anterior con `*> $null` y `$ErrorActionPreference='Stop'` quedó demostrado defectuoso el 2026-10-30 y se corrigió en el bloque publicado del inventario. Debe comprobar lectura real del archivo privado, no solo `gh auth status`; si la sesión existe pero no hay acceso, iniciar `gh auth refresh --hostname github.com --scopes repo` y reintentar una sola vez. Si persiste, detenerse y pedir seleccionar la cuenta autorizada. La corrección aún requiere ejecución real.
 2. **Login GitHub desde estado limpio.** Probar el device flow en un entorno aislado sin credenciales previas, sin revocar ni alterar el acceso actual del operador. Confirmar código/URL, acción humana de autorización, scope repo y posterior lectura privada.
 3. **Hand­shake RDC fresco.** Bajo autorización e intervención del operador, probar una única instancia `--no-persist-session`, dispositivo autorizado, Device ready, Online y bloque de handshake con SHA/read-back. No terminar instancias activas automáticamente.
 
