@@ -42,3 +42,8 @@ Se cotejaron las cuatro entradas en la fuente canónica actual y en las revision
 ## Criterio de cierre
 
 Marcar como completada solo cuando el enunciado haya sido atendido, la evidencia correspondiente sea recuperable y el resultado haya sido leído de vuelta en la fuente canónica aplicable.
+
+
+## Priorización frente al MVP de Gobernanza · 2026-10-31
+
+La tarea se conserva como mantenimiento de integridad documental, pero queda diferida respecto del MVP IPZ + admisión + OCP MCP. Los vacíos P020/P021/P033/P034 no se rellenan por inferencia y no bloquean la integración salvo que una prueba demuestre que uno afecta directamente a un principio seleccionado. Cualquier enmienda normativa sigue requiriendo procedencia suficiente y autorización expresa P005.
