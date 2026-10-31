@@ -1,7 +1,7 @@
 # 📝 EP-TASK-002 · Persistencia provisional con Backblaze B2 para datos de usuario y continuidad de la sesión canónica
 
 **Naturaleza:** tarea provisional del frente Entorno Persistente; materialización auxiliar del registro de tareas, no un OEP nuevo, no un frente independiente y no una decisión de arquitectura canónica.  
-**Estado:** `en_curso` — OCP MCP 0.1.0 construido y probado según reporte del constructor; rama remota avanzó con trabajo de catálogo y operación protegida; publicación/transferencia del paquete, integración EP, configuración/transferencias B2 y restauración multiubicación pendientes.  
+**Estado:** `en_curso` — OCP MCP 0.1.0 publicado como borrador privado con ZIP y evidencia en GitHub; integración EP, instalación, configuración/transferencias B2 y restauración multiubicación pendientes. Regla operativa corregida: el proceso RDC MantenimientoRCI puede escribir, bajo autorización expresa y rutas verificadas, en el Escritorio real de fila4; las operaciones dependientes del contexto de usuario siguen requiriendo ejecución/provisión en el contexto adecuado.  
 **Responsabilidad:** vinculada a `frentes/ep/`; sin control, sesión, titularidad ni folio global propios.  
 **task_id:** `EP-TASK-002` (identificador local estable; no es folio global).  
 **scope_ref:** `frentes/ep/`  
@@ -1041,3 +1041,86 @@ Por tanto, después de identificar PC10 se detuvo la ejecución antes de localiz
 **NO EJECUTADO:** creación de cuenta, bucket o Application Key B2; ninguna transferencia.
 
 La siguiente acción válida es establecer un canal de ejecución que opere realmente dentro de la sesión interactiva no elevada de `fila4` en el PC seleccionado. No se debe simular la identidad cambiando variables de entorno ni trasladar archivos al perfil técnico.
+
+
+## 22. Norma provisional de identidad de canal, identidad de destino y operaciones sobre el Escritorio de fila4 · 2026-10-31 · instrucción expresa del operador
+
+### 22.1. Rectificación vinculante del criterio operativo anterior
+
+El operador corrige expresamente la regla que había provocado bloqueos repetidos: **el proceso RDC que se ejecuta como `MantenimientoRCI` sí debe utilizarse para escribir archivos en el Escritorio del usuario operativo `fila4`**, siempre que la ruta real de ese Escritorio haya sido resuelta y la operación esté dentro del alcance autorizado. MantenimientoRCI es la cuenta técnica de conexión/elevación; fila4 es el usuario propietario del espacio de trabajo y destino de los archivos.
+
+Esta instrucción autoriza el uso del proceso RDC disponible para materializar archivos ordinarios en el Escritorio real de fila4. No debe volver a bloquearse una escritura únicamente porque `whoami` del proceso RDC devuelva `MantenimientoRCI`. La identidad del proceso que transporta/ejecuta la orden y la identidad del usuario propietario del destino son dimensiones distintas.
+
+La regla anterior de §§18.13, 20.2 y 21.3 que exigía que toda escritura se ejecutara necesariamente bajo el token de fila4 queda **rectificada y supersedida para operaciones ordinarias de archivos en el Escritorio de fila4**. Los apartados anteriores se conservan como historial de la interpretación que causó el bloqueo, no como regla vigente para ese caso.
+
+### 22.2. Modelo de identidad de cuatro dimensiones
+
+Toda operación remota debe declarar y no confundir:
+
+1. **Identidad de conexión/transporte:** cuenta que autentica el agente RDC o administra el canal. En este caso, `MantenimientoRCI`.
+2. **Identidad efectiva del proceso:** usuario/SID/token y nivel de integridad del proceso que ejecuta la orden. En el canal actualmente observado, el proceso puede ser `MantenimientoRCI`.
+3. **Identidad de destino/propietario:** usuario de Windows cuyo espacio de trabajo recibirá el resultado. En este caso, `fila4`.
+4. **Ruta efectiva de destino:** ruta física real del Escritorio de fila4, resuelta desde la información del perfil/sesión y comprobada antes de escribir. No se debe inferir únicamente a partir de `USERPROFILE`, `HOME`, `APPDATA`, `TEMP` ni cambiar esas variables para simular otro usuario.
+
+Por tanto, `process_user != target_user` **no es por sí mismo un error ni una condición de aborto**. La pregunta correcta es si el proceso autorizado tiene acceso efectivo al destino explícito, si la ruta corresponde realmente al Escritorio de fila4 y si la operación concreta está permitida.
+
+### 22.3. Matriz provisional de operaciones
+
+| Clase de operación | Proceso MantenimientoRCI sobre destino fila4 | Condición |
+|---|---|---|
+| Crear/escribir/copiar/extraer archivos ordinarios en `<Desktop-real-fila4>\EP\` | **PERMITIDO** | Autorización expresa vigente, ruta resuelta, acceso efectivo, destino dentro del alcance y verificación SHA-256/read-back. |
+| Crear estructura de carpetas de workspace bajo `<Desktop-real-fila4>\EP\` | **PERMITIDO** | Mismas condiciones; no modificar ACL ni tomar posesión para forzar acceso. |
+| Descargar el ZIP OCP y sus manifiestos al Escritorio de fila4 | **PERMITIDO** | Cotejar SHA-256 publicado antes de extraer; registrar resultado y verificar archivos extraídos. |
+| Instalar aplicación portable o materializar binarios como archivos en `EP\` | **PERMITIDO CON PREFLIGHT** | Validar firma/hash, arquitectura, rutas y ausencia de instalador que requiera contexto adicional. |
+| Ejecutar instaladores per-user, escribir HKCU, Credential Manager, DPAPI CurrentUser o configuración ligada al usuario | **NO PRESUMIR EQUIVALENCIA** | Debe ejecutarse/provisionarse en el contexto real de fila4 o utilizar un mecanismo de aprovisionamiento explícito soportado por la aplicación. |
+| Crear servicios, modificar HKLM, firewall, ACL, tareas privilegiadas o configuración de máquina | **FUERA DE ESTA AUTORIZACIÓN** | Requiere autorización específica para cada cambio y control separado. |
+| Leer, escribir o materializar bajo `C:\Users\MantenimientoRCI\` | **NO AUTORIZADO** | La prohibición sobre la raíz del perfil técnico permanece intacta. |
+| Borrar, sincronizar con `--delete`, reemplazar masivamente o alterar retención B2 | **NO AUTORIZADO POR DEFECTO** | Requiere autorización específica y salvaguardas adicionales. |
+
+### 22.4. Preflight mínimo para escritura dirigida a fila4
+
+Antes de cada primera escritura de una sesión o después de un cambio de host:
+
+1. Consultar identidad del host/dispositivo y estado de la conexión RDC.
+2. Resolver la cuenta de fila4 y su perfil real mediante información del sistema; confirmar que el Escritorio destino pertenece a ese perfil. No leer contenido de la raíz prohibida de MantenimientoRCI.
+3. Canonizar la ruta y comprobar que el destino permanece dentro de `<Desktop-real-fila4>\EP\`; rechazar rutas UNC, junctions/reparse points o redirecciones inesperadas que saquen el destino del ámbito.
+4. Comprobar acceso efectivo del proceso RDC con una prueba no destructiva o un archivo temporal de prueba dentro del destino autorizado. No cambiar ACL ni propietario para conseguir acceso.
+5. Registrar por separado proceso/SID, usuario destino, ruta resuelta, operación, autorización y hora. No etiquetar el proceso como fila4 si sigue siendo MantenimientoRCI.
+6. Ejecutar únicamente las escrituras autorizadas; producir inventario de archivos y SHA-256.
+7. Hacer read-back desde el destino y cotejar hashes. Si hay discrepancia, detenerse, conservar evidencia y no declarar la operación verificada.
+8. Limpiar únicamente temporales creados por la propia prueba, nunca archivos preexistentes sin autorización.
+
+La ruta `<Desktop-real-fila4>\EP\` es el destino canónico de trabajo de esta tarea; la carpeta raíz `EP` debe crearse si no existe, sin crear una segunda raíz ni una estructura paralela.
+
+### 22.5. Límite técnico: archivos ordinarios frente a estado ligado al usuario
+
+La autorización de escritura dirigida permite que MantenimientoRCI materialice archivos ordinarios en el Escritorio de fila4. No transforma el token del proceso ni convierte operaciones dependientes de Windows en operaciones de fila4.
+
+En particular, DPAPI `CurrentUser`, HKCU, Credential Manager, perfiles de navegador y aplicaciones que derivan claves/secretos de la identidad del usuario continúan ligados al contexto efectivo correspondiente. No se debe simular ese contexto cambiando variables de entorno. Cuando el producto requiera identidad fila4, se debe usar una vía explícita para iniciar el componente en su sesión o un procedimiento de aprovisionamiento/recuperación diseñado para ello.
+
+Este límite es especialmente relevante para OCP MCP 0.1.0: su código de backup cifra la DEK con DPAPI `CurrentUser`. Copiar el ZIP o el archivo `.ocpbak` al Escritorio de fila4 no demuestra por sí solo que la identidad destino pueda descifrarlo. Antes de declarar portabilidad entre equipos debe existir una prueba de restauración real bajo la identidad de destino, o una versión de recuperación que resuelva explícitamente la portabilidad de claves sin exportar secretos de forma insegura.
+
+### 22.6. Autorización recibida y alcance
+
+La instrucción directa del operador en esta conversación constituye autorización expresa para utilizar el proceso RDC actualmente disponible para escribir archivos ordinarios en el Escritorio real de fila4, bajo las condiciones de §§22.3–22.4. Esta autorización no equivale a autorizar cambios de sistema, instalaciones machine-wide, modificaciones de ACL, acceso al perfil MantenimientoRCI, borrado masivo, cambios de políticas B2 ni publicación pública del Release.
+
+No se declara ejecutada ninguna escritura por el solo hecho de registrar esta autorización. El estado de cada acción futura deberá distinguir `AUTORIZADA`, `INTENTADA`, `EJECUTADA`, `READ-BACK VERIFICADO` y `ACEPTADA`.
+
+### 22.7. Norma que deberá promoverse a Gobernanza/IPZ cuando OCP MCP e IPZ tengan su primera versión funcional
+
+El operador solicita que esta separación de identidades se convierta posteriormente en una regla normativa transversal, para impedir que los modelos repitan el bloqueo observado. La promoción deberá realizarse cuando exista una primera versión funcional de Gobernanza con OCP MCP e IPZ; **no se modifica DUG, OEP ni el contrato canónico en este acto**.
+
+Propuesta de principio normativo a evaluar y aprobar en ese momento:
+
+> **Principio — Separación entre identidad de canal, identidad de ejecución e identidad de destino.** Una operación remota no se rechazará únicamente porque la identidad efectiva del proceso de transporte/elevación difiera del usuario propietario del destino. El agente deberá resolver y verificar explícitamente la identidad del destino, la ruta canónica, el acceso efectivo y la autorización de la operación. Las operaciones de archivos ordinarios podrán ejecutarse desde el proceso de canal autorizado hacia una ruta de destino perteneciente al usuario objetivo, con alcance, integridad y read-back verificables. Las operaciones que dependan de estado ligado al usuario (DPAPI CurrentUser, HKCU, Credential Manager, sesión interactiva o perfil de aplicación) deberán ejecutarse mediante un mecanismo que proporcione el contexto de usuario requerido o un aprovisionamiento equivalente, sin suplantación por variables de entorno. La identidad del proceso nunca se falseará ni se confundirá con la del propietario del destino.
+
+La futura norma deberá incluir: (a) esquema de identidades y SID; (b) matriz de capacidades por clase de operación; (c) prueba de pertenencia/ruta del destino; (d) control de reparse points y traversal; (e) autorización explícita y límites de alcance; (f) evidencia de hashes/read-back; (g) manejo de errores y rollback; (h) excepciones para DPAPI y estado per-user; (i) auditoría append-only y recibo OCP; (j) pruebas negativas para impedir escrituras fuera del destino autorizado.
+
+### 22.8. Estado de ejecución tras la instrucción
+
+**AUTORIZACIÓN:** recibida para escribir archivos ordinarios en el Escritorio real de fila4 usando el proceso RDC disponible.  
+**EJECUCIÓN:** no se declara iniciada en esta anotación.  
+**PENDIENTE DE PREFLIGHT:** confirmar de nuevo el host seleccionado, resolver el Escritorio real de fila4 y comprobar que el proceso RDC tiene acceso efectivo a esa ruta.  
+**FUERA DE ALCANCE:** perfil MantenimientoRCI, cambios de sistema no autorizados, operaciones destructivas y secretos en ChatGPT.
+
+Esta sección supersede las interpretaciones anteriores incompatibles en §§18.13, 20.2 y 21.3 para el caso de escrituras ordinarias dirigidas al Escritorio de fila4. Las demás restricciones expresamente preservadas continúan vigentes.
