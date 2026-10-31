@@ -1,0 +1,52 @@
+{
+  "schema": "governance-cycle-evidence/1",
+  "event_id": "C-GOBERNANZA-RETOMA-07",
+  "recorded_on": "2026-10-31",
+  "front": "gobernanza",
+  "repository": "SeryMente/metodologia",
+  "instruction": {
+    "source": "operator instruction in receiving conversation",
+    "verbatim": "Retoma responsabilidad de gobernanza, cuidadosamente retomando el contexto de las tareas pendientes",
+    "scope": "Assume front responsibility, preserve named original, maintain provisional tasks and coordinate EP/OCP MCP."
+  },
+  "original": {
+    "source_path": "C:\\Users\\fila4\\Downloads\\ChatGPT-Gobernanza-20261031-1432.md",
+    "canonical_path": "frentes/gobernanza/documentos/originales/ChatGPT-Gobernanza-20261031-1432.md",
+    "bytes": 637277,
+    "sha256": "73A087BA953FD01F0804A482452E505E0D5AC160237AF18B467E677D2BAA2219",
+    "git_blob_sha": "d17f575fcd5bf0c0da1bb459a40e42e47c081a31",
+    "local_readback": true,
+    "remote_readback": true,
+    "byte_for_byte_match": true,
+    "status": "PERSISTIDO_Y_VERIFICADO"
+  },
+  "transfer": {
+    "from_generation": 8,
+    "to_generation": 9,
+    "from_alias": "chatgpt-C-GOBERNANZA-OCPMSP-01-SES-20261031-GV7EEE951A77",
+    "to_alias": "chatgpt-C-GOBERNANZA-RETOMA-07-SES-20261031-GV8AA51721",
+    "instance": "chatgpt-gobernanza-retoma-2026-10-31-8AA51721",
+    "session": "SES-20261031-GV8AA51721",
+    "local_uuidv7": "01a193a9-7a00-7286-9216-45a477d294c1",
+    "cycle_folio": null,
+    "control_readback": true,
+    "control_blob_readback": "3e79c83f16a36dcc9d169c60a531ca60020e819d"
+  },
+  "limits": {
+    "dug_modified": false,
+    "art025_modified": false,
+    "art027_modified": false,
+    "ipz_native_modified": false,
+    "ocp_mcp_control_modified": false,
+    "ep_control_modified": false,
+    "fol1_activated": false,
+    "mcp_normative": "DESACTIVADO",
+    "sink_cloudflare_deployed": false
+  },
+  "notes": [
+    "GOV-TASK-010 ya existe; no se duplicó.",
+    "IPZ nativa no instalada ni leída de vuelta.",
+    "OCP MCP y EP mantienen sus propios controles y titularidad.",
+    "No se asignó folio global porque FOL1 permanece inactivo."
+  ]
+}
