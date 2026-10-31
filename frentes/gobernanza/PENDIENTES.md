@@ -6,11 +6,11 @@
 
 **No desplegado:** no existen todavía una instancia Sink verificada ni 43 enlaces activos. Pendientes: fork de Sink; Cloudflare Worker con D1/DB, KV/KV y Analytics Engine/ANALYTICS; variables de despliegue; secretos protegidos; API REST y creación idempotente de aliases; resolución privada autenticada de principios; extensión real de registros de ciclo ART-024; agregador de aplicaciones; pruebas E2E y negativas.
 
-**Bloqueos de acceso:** esta sesión no dispone de conector/cuenta Cloudflare ni de credenciales; el conector GitHub actual no ofrece create_fork. La privacidad del DUG y el acceso autenticado del modelo no están resueltos por una redirección pública; no publicar el repositorio ni insertar credenciales en URLs/Git como atajo.
+**Bloqueos de acceso:** esta sesión no dispone de conector/cuenta Cloudflare ni de credenciales; el conector GitHub actual no ofrece create_fork. La ruta prevista conserva el DUG privado: el redirect público Sink apunta a GitHub privado y el modelo recupera el texto con el conector GitHub autenticado. Esa secuencia E2E aún no se ha probado; si no permite extraer el fragmento Pxxx o leer la fuente, evaluar REST Sink autenticado y después un resolvedor privado. No publicar el repositorio ni insertar credenciales en URLs/Git como atajo.
 
 **Telemetría:** Sink contará visitas/consultas (potencialmente aproximadas o muestreadas); las aplicaciones se contarán por `applied[]` en cada registro de ciclo, no por clics. El esquema `principle_usage` está definido en ART-027; su materialización en el registro operativo y agregación aún no se han probado.
 
-**Límites:** sin aliases creados, despliegue, consulta privada ni eventos de telemetría reales. No se ejecutó navegador ni auditoría dinámica de anclas P001–P043. FOL1 permanece `PREPARADO_PENDIENTE_ACTIVACION_IPZ`, sin folio para este evento. ART-025 y la IPZ nativa/candidata permanecen intactos.
+**Límites:** sin aliases creados, despliegue ni eventos de telemetría reales. El conector GitHub autenticado está disponible, pero no se ejecutó la secuencia E2E de abrir alias Sink, recuperar el fragmento Pxxx y leer el principio privado. El ancla se usa como selector del ID estructurado; no depende del renderizado visual de la tarjeta. FOL1 permanece `PREPARADO_PENDIENTE_ACTIVACION_IPZ`, sin folio para este evento. ART-025 y la IPZ nativa/candidata permanecen intactos.
 
 Registro: [crónica](cronica/C-GOBERNANZA-PRINCIPIOS-DOS-CAPAS-01.md) · [evidencia](evidencias/C-GOBERNANZA-PRINCIPIOS-DOS-CAPAS-01.json) · [DUG v370 · ART-027](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-027).
 
