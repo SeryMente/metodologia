@@ -1014,3 +1014,30 @@ Hora local observada durante esta revisión: 2026-10-31 13:33:57, America/Mexico
 El bloque retrospectivo de EP queda reconciliado con el historial existente y no abre una tarea adicional. El avance OCP posterior al reporte 0.1.0 queda agregado como delta nuevo con evidencia de la comparación remota y lectura de fuentes. Se mantienen separados los estados `reportado`, `observado en GitHub`, `leído estáticamente`, `ejecutado` y `aceptado`.
 
 EP-TASK-002 continúa en curso. No se ejecutaron operaciones sobre CECEQ, no se instaló el servidor, no se configuró B2, no se cargó ningún artefacto y no se realizó restore en este ciclo. La siguiente actividad debe atacar primero la obtención verificable del paquete 0.1.0 y el desbloqueo de B2, a la vez que se permite a OCP continuar el trabajo de 0.1.1 en su rama aislada.
+
+## 21. Identificación del equipo disponible y bloqueo de identidad NCL/B2 · 2026-10-31
+
+### 21.1. Corrección de interpretación del operador
+
+El operador aclara que **CECEQ es la ubicación**, no el nombre del dispositivo. Indica que el equipo ya había sido identificado correctamente y ordena comenzar por el PC. Se toma como equipo seleccionado para esta comprobación el único dispositivo Desktop Commander que el inventario presentó en línea: `PC10RCIF4EI4`, ID `d0bbb2a3-d7b4-45e1-8870-652c2c3844fc`. La asociación física PC10↔CECEQ procede de la aclaración del operador; el inventario remoto por sí solo no geolocaliza el equipo.
+
+### 21.2. Comprobaciones remotas de solo lectura
+
+- `list_devices`: PC10RCIF4EI4 en línea; los registros PC-14, PC-8 y PC-4 consultados estaban fuera de línea.
+- `get_config` sobre PC10: agente Desktop Commander 0.3.1, Windows x64, Node.js 24.0.0, PowerShell predeterminado.
+- Sonda mínima de identidad en `cmd.exe`: `echo %USERNAME% & echo %SESSIONNAME% & hostname`. Resultado observado: usuario `MantenimientoRCI`; `SESSIONNAME` no se expandió en esa sesión de proceso; hostname `PC10RCIF4EI4`.
+
+La sonda solo identificó el contexto del proceso remoto del agente. **No acredita** el SID, el token no elevado, ni la sesión interactiva de `fila4`; tampoco acredita por sí misma que el proceso remoto comparta el escritorio interactivo del usuario.
+
+### 21.3. Decisión de seguridad y estado
+
+La regla de §20.2 y §19.9 sigue vigente: las operaciones de archivos, instalaciones, Git, workspace, configuración, transferencias B2 y restauración deben ejecutarse desde la sesión interactiva no elevada de `fila4`. `MantenimientoRCI` sirve para establecer la conexión RDC y la elevación autorizada, no como identidad de trabajo.
+
+Por tanto, después de identificar PC10 se detuvo la ejecución antes de localizar/leer el handoff, inspeccionar perfiles o pestañas, o ejecutar `run-playwright-mcp.cmd`. No se accedió a `C:\Users\MantenimientoRCI\`; no se abrió ni modificó Chrome; no se inició NCL; no se introdujo `NCL-OCP-AUTORIZADO`; no se realizó ninguna operación en Backblaze.
+
+**HECHO:** PC10 está disponible y el proceso de Desktop Commander ejecuta como `MantenimientoRCI`.  
+**NO VERIFICADO:** sesión interactiva de `fila4`, SID/token efectivo no elevado, identidad del perfil OCP desde el Chrome que el operador reconoce y ubicación exacta del handoff/lanzador.  
+**BLOQUEADO:** iniciar NCL y manipular archivos desde este canal, hasta disponer de ejecución acreditada bajo `fila4`.  
+**NO EJECUTADO:** creación de cuenta, bucket o Application Key B2; ninguna transferencia.
+
+La siguiente acción válida es establecer un canal de ejecución que opere realmente dentro de la sesión interactiva no elevada de `fila4` en el PC seleccionado. No se debe simular la identidad cambiando variables de entorno ni trasladar archivos al perfil técnico.
