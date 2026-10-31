@@ -34,3 +34,20 @@ No se implementó código, no se instaló ni arrancó proceso local, no se abri�
 ## Siguiente checkpoint
 
 Convertir el propósito en requisitos mínimos del servidor local: actores/clientes, catálogo de herramientas de desarrollo/gobernanza, fuentes OCP permitidas, scopes de lectura/escritura, transporte local, autenticación, límites de ejecución, observabilidad y pruebas. Antes de cualquier uso de RDC, verificar cuenta, conector, dispositivo, equipo y necesidad; antes de habilitar validación normativa automática, resolver autorización y gobierno del DUG.
+
+## Verificación de lectura de vuelta
+
+Commit de creación en main: 63060667bf13b9c1abcb110857ba3eab85bfc915 (parent f74082148d28b575c232e8fc291607bef8861794). El árbol de main se releyó y se obtuvieron los siguientes SHA, idénticos a los SHA del árbol para cada ruta:
+
+| Archivo | Blob SHA leído de vuelta |
+|---|---|
+| frentes/mcp-metodologia/README.md | db9a01e2f9a058398e9d5b2de8d9e2397fb055c5 |
+| frentes/mcp-metodologia/MCP-METODOLOGIA.md | f63459afb30c95ec3ccea018855135f7f6047d26 |
+| frentes/mcp-metodologia/CONTROL-RESPONSABILIDAD.json | ffa27d9c62c557aa4894eebfd8c4cbf44ed09335 |
+| frentes/mcp-metodologia/conversaciones/C-MCP-METODOLOGIA-001-dialogo.jsonl | 91ae2f09de67295e1e4cacf43fc6e2d5dcca1a0a |
+| frentes/mcp-metodologia/cronica/C-MCP-METODOLOGIA-001.md | 05e938bcd0b9c3d40acd7cd832b8a99c30531eab |
+| frentes/mcp-metodologia/evidencias/C-MCP-METODOLOGIA-001.json | 51d617a831b3119ace04a2ea14d8ff343451b816 |
+| README.md | ace4db38b2bba6dc30a02ca4d8491305ab158b72 |
+| INVENTARIO-REPOSITORIOS-Y-FRENTES.md | 66435c9509f9563ca5a7363fb734b7bf84788c41 |
+
+**Resultado:** 8/8 rutas leídas; 8/8 SHA coincidentes. Propósito original coincidente en diálogo y núcleo; trece bloques presentes; control generación 1; folio global pendiente. El commit está sin firma criptográfica verificada (`verification.verified=false`, razón `unsigned`); no se afirma firma de commit verificada.

@@ -70,5 +70,42 @@
     "public_deploy": false,
     "khora_files_modified": false,
     "normative_mcp_run": false
-  }
+  },
+  "creation_readback": {
+    "status": "VERIFIED",
+    "commit": "63060667bf13b9c1abcb110857ba3eab85bfc915",
+    "parent": "f74082148d28b575c232e8fc291607bef8861794",
+    "tree_sha": "3b64f1279ca69d43c8f6db695eb1bbc5af1250b4",
+    "checks": {
+      "files_read": 8,
+      "tree_blob_sha_matches_readback_sha": "8/8",
+      "purpose_verbatim_in_original": true,
+      "purpose_verbatim_in_core": true,
+      "core_blocks": "13/13",
+      "responsibility_generation": 1,
+      "native_conversation_id": null,
+      "session_folio": null,
+      "fol1_pending": true,
+      "root_readme_link": true,
+      "inventory_link": true
+    },
+    "readback_blob_sha": {
+      "frentes/mcp-metodologia/README.md": "db9a01e2f9a058398e9d5b2de8d9e2397fb055c5",
+      "frentes/mcp-metodologia/MCP-METODOLOGIA.md": "f63459afb30c95ec3ccea018855135f7f6047d26",
+      "frentes/mcp-metodologia/CONTROL-RESPONSABILIDAD.json": "ffa27d9c62c557aa4894eebfd8c4cbf44ed09335",
+      "frentes/mcp-metodologia/conversaciones/C-MCP-METODOLOGIA-001-dialogo.jsonl": "91ae2f09de67295e1e4cacf43fc6e2d5dcca1a0a",
+      "frentes/mcp-metodologia/cronica/C-MCP-METODOLOGIA-001.md": "05e938bcd0b9c3d40acd7cd832b8a99c30531eab",
+      "frentes/mcp-metodologia/evidencias/C-MCP-METODOLOGIA-001.json": "51d617a831b3119ace04a2ea14d8ff343451b816",
+      "README.md": "ace4db38b2bba6dc30a02ca4d8491305ab158b72",
+      "INVENTARIO-REPOSITORIOS-Y-FRENTES.md": "66435c9509f9563ca5a7363fb734b7bf84788c41"
+    },
+    "purpose_verbatim_in_original": true,
+    "purpose_verbatim_in_core": true,
+    "thirteen_core_blocks": true,
+    "commit_signature": {
+      "verified": false,
+      "reason": "unsigned"
+    }
+  },
+  "final_output_path": "frentes/mcp-metodologia/entregas/CHATGPT-v0.1/C-MCP-METODOLOGIA-001-salida-final.md"
 }

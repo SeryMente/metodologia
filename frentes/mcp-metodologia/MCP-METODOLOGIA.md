@@ -4,7 +4,7 @@
 
 - **Nombre canónico:** MCP de Metodología.
 - **Identidad:** MCP-METODOLOGIA.
-- **Versión/sello:** MCP-METODOLOGIA-v0.1.0 · núcleo inaugural.
+- **Versión/sello:** MCP-METODOLOGIA-v0.1.1 · núcleo inaugural.
 - **Repositorio propietario:** SeryMente/metodologia, rama main.
 - **OCP canónico:** frentes/mcp-metodologia/.
 - **Núcleo operativo único:** este archivo, MCP-METODOLOGIA.md.
@@ -13,7 +13,7 @@
 - **Sesión:** UUIDv7 local 01a192b3-1063-7916-be41-ebfa974ede73; alias operativo chatgpt-C-MCP-METODOLOGIA-001-01a192b3-1063-7916-be41-ebfa974ede73. No es un ID nativo de ChatGPT.
 - **Titularidad inicial:** adjudicada a esta instancia por instrucción expresa de apertura; control generación 1.
 - **Folio de conversación/ciclo/A/B:** PENDIENTE/NO ASIGNADO. FOL1 continúa PREPARADO_PENDIENTE_ACTIVACION_IPZ; no se fabrican secuencias ni asignaciones.
-- **Estado de persistencia:** creación documental en main, condicionada a lectura de vuelta y cotejo de todos los archivos del evento.
+- **Estado de persistencia:** creación documental verificada por lectura de vuelta y cotejo de SHA de los ocho archivos del evento; commit de creación 63060667bf13b9c1abcb110857ba3eab85bfc915.
 
 ## 2. LEER PRIMERO
 
@@ -165,6 +165,7 @@ Mientras FOL1 continúe PREPARADO_PENDIENTE_ACTIVACION_IPZ, la foliación se dec
 - **Originales:** conversaciones/C-MCP-METODOLOGIA-001-dialogo.jsonl.
 - **Crónica:** cronica/C-MCP-METODOLOGIA-001.md.
 - **Evidencia:** evidencias/C-MCP-METODOLOGIA-001.json.
+- **Salida final conservada:** entregas/CHATGPT-v0.1/C-MCP-METODOLOGIA-001-salida-final.md.
 - **Fuente normativa:** ../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html.
 - **Inventario multi-repositorio:** ../../INVENTARIO-REPOSITORIOS-Y-FRENTES.md.
 - **Khora MCP independiente:** https://github.com/SeryMente/khora/blob/main/docs/frentes/observabilidad-mcp/OBJETO-CANONICO.md.
@@ -189,4 +190,4 @@ En cada ciclo sustantivo, conservar entradas directas y salidas visibles disponi
 
 La sincronización automática no se presume. La autoridad documental del frente reside en las rutas de este OCP en main; las copias locales y otras superficies son subordinadas.
 
-**Revisión inaugural:** pendiente de verificación mediante lectura de vuelta del commit de creación.
+**Revisión inaugural:** VERIFICADA por lectura de vuelta del commit 63060667bf13b9c1abcb110857ba3eab85bfc915. Ocho de ocho entradas de archivo cotejadas: SHA del árbol main = SHA de la lectura de contenido.
