@@ -12,15 +12,15 @@ Desplegar Sink en Cloudflare, provisionar sus recursos, crear los 43 aliases p00
 
 ## Referencia de origen
 
-DUG v371 · ART-027 · sección 7; C-GOBERNANZA-MDP-OCP-01.
+ART-027 vigente en DUG v373 · NX-373m; diseño originado en C-GOBERNANZA-MDP-OCP-01.
 
 ## Dependencias y límites
 
-Cuenta/conector Cloudflare, fork autorizado de miantiao-me/Sink, D1, KV y secretos protegidos; sin credenciales en Git.
+Cuenta y acceso autorizado a Cloudflare, integración/conector o vía de despliegue, fork autorizado de miantiao-me/Sink, D1, KV y secretos protegidos; sin credenciales en Git. La comprobación de PC-14 (RDC) devolvió `WRANGLER_NOT_INSTALLED`; la sesión no dispone de integración Cloudflare. La lista de herramientas GitHub tampoco ofrece una operación de fork.
 
 ## Siguiente actuación
 
-Obtener acceso autorizado a Cloudflare y al repositorio fork; provisionar Worker, D1, KV, secretos y, si procede, Analytics Engine.
+Obtener acceso autorizado a Cloudflare y habilitar la vía autorizada de fork/despliegue; solo después provisionar Worker, D1, KV, secretos y, si procede, Analytics Engine. No instalar CLI ni desplegar recursos a ciegas.
 
 ## Criterio de cierre
 
