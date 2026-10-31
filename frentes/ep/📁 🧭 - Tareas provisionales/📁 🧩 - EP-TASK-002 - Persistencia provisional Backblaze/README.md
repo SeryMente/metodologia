@@ -249,3 +249,76 @@ Cada una de esas acciones deberá estar cubierta por las autorizaciones vigentes
 **Viabilidad preliminar:** técnicamente plausible con una solución de sincronización de archivos y orquestador local; no está demostrada para este entorno ni para todas las aplicaciones. El principal condicionante no es NCL, sino identificar fuentes de datos coherentes, credenciales vigentes, conflictos y una restauración real en una segunda ubicación. No es responsable estimar tiempo o ciclos de cierre sin inventario.
 
 **Siguiente acción propuesta:** realizar auditoría no destructiva del entorno B2/CLI y crear inventario inicial de datos candidatos, sin leer valores de secretos ni transferir datos reales.
+
+
+### Ciclo de auditoría remota y diagnóstico local interrumpido · 2026-10-31
+
+**Estado del ciclo:** PARCIALMENTE RESUELTO. Auditoría documental/remota de configuración y código terminada; inventario local invalidado por restricción de acceso; ninguna implementación ni transferencia realizada.
+
+#### 16.1 Fuentes y revisiones adquiridas
+
+- OEP: `SeryMente/metodologia`, rama `docs/metacanon-objetos-20261011`, v0.3.18 / VCU-EP-v20, blob `e1e045cdc9b1a286047c6d47c47a5111a0b52bce`. Los §§23–26 sitúan la persistencia remota, continuidad Git y libro mayor EP. No se encontró decisión que declare Backblaze proveedor canónico.
+- Metacanon: versión 1.5 / `METACANON-OBJETOS-v1.5`, misma rama documental, blob `32c7a65ff2e83b3b76752ba2160427bd6e851a8f`.
+- DUG: Samantha v373 / NX-373m, `SeryMente/metodologia/main`, blob `cac4525de77d4f47a8a59c25201968ecf2056b90`.
+- KHORA: `SeryMente/khora/main`, HEAD observado `4463009fdf8ebd7f5e6e0fd493dba93efa9868d6`.
+- Frente Harmonia: `docs/frentes/harmonia/OBJETO-CANONICO.md`, blob `15b37bc71b4bedfa13785d9adfd3d88f8caf3704`, objeto v0.38, corte 2026-10-31.
+- Código actual de rutas de audio en KHORA/main:
+  - `khora-web/app/api/audio/route.ts`, blob `0711b9e720d3b3df50f3101f5e684adc78095cc9`.
+  - `khora-web/lib/server/audio-mp3.ts`, blob `8c5250010556ec1ddcf7c78b6ac8402dd697e395`.
+  - `khora-web/app/api/transcribir/archivo/route.ts`, blob `d4500d6ecf38ec9f4b380e0020c9bd1765202669`.
+  - `khora-web/app/api/audio/importar/procesar/route.ts`, blob `02731043d98d18539e3aaac5d2ede3240deaff75`.
+  - `khora-web/package.json`, blob `9d3124a7a0cbd231d7eb5451b541c501d2b407f5`.
+- Estado de PR #346 de Harmonia: abierta, borrador, no fusionada; base `main`; head `feat/harmonia-cora-provisional-persistence-20261030`, SHA `4ef43b4dacb9d230c62f31fe09ee419c3d9d12ae`; actualización remota observada 2026-10-31T01:25:00Z. Su persistencia provisional Cora corresponde a telemetría estructural anonimizada y no equivale al respaldo general de datos de usuario pedido en EP-TASK-002.
+
+#### 16.2 Hallazgos remotos observados
+
+**Configuración Vercel:** mediante lectura de metadatos de variables del proyecto `khora-web` (team `victorhugotorresmendez-8991s-projects`, plan Hobby), usando `decrypt=false`, se observaron las siguientes entradas, sin recuperar ni divulgar valores:
+
+| Variable | Tipo/visibilidad observada | Entorno | Última actualización observada (UTC) |
+|---|---|---|---|
+| `KHORA_B2_BUCKET_NAME` | sensitive / secret | production | 2026-10-31 17:58:21.973 |
+| `KHORA_B2_BUCKET_ID` | sensitive / secret | production | 2026-10-31 17:58:19.289 |
+| `KHORA_B2_APPLICATION_KEY` | sensitive / secret | production | 2026-10-31 17:58:16.410 |
+| `KHORA_B2_KEY_ID` | sensitive / secret | production | 2026-10-31 17:56:28.378 |
+| `KHORA_OBJECT_STORAGE` | sensitive / secret | production | 2026-10-20 18:47:29.721 |
+| `BLOB_READ_WRITE_TOKEN` | encrypted | production, preview, development | 2026-07-29 17:40:56.832 |
+
+La presencia de esas variables demuestra configuración declarada en Vercel, **no** que los valores sean válidos, estén vigentes, no estén vacíos, que el bucket responda o que la aplicación escriba en Backblaze. Los valores no fueron descifrados, copiados ni utilizados. No se llamó al API de Backblaze ni se consultó el contenido de ningún bucket.
+
+**Código de producción:** las cuatro rutas de audio examinadas importan `@vercel/blob`; la búsqueda de los nombres `KHORA_B2_*` y de referencias directas a Backblaze en el código actual no encontró llamadas B2. Por tanto, el código consultado apunta a Vercel Blob y no acredita una ruta de escritura B2. Esto es consistente con el original de Harmonia `docs/frentes/harmonia/originales/ChatGPT-HARMONIA-20261030-1915.txt`, que reporta que el almacén `khora-audio` estaba suspendido por cuota, con 636 objetos y 1,010,497,194 bytes, mientras la ruta activa usaba Vercel Blob. Esa cifra es un **reporte histórico**, no una lectura actual del bucket ni un estado revalidado.
+
+**Separación de proyectos:** PR #346 no es una solución de respaldo general. Su propósito es telemetría estructural anonimizada a Cora; no autoriza ni satisface el respaldo de archivos de usuario de aplicaciones portables. El contrato existente `khora-web/docs/observability-services.md`, blob `1311c77b623ad923703bc6313479711aeb21aeeb`, también diferencia observabilidad de frontera y almacenamiento durable de eventos; no debe duplicarse ni reemplazarse con B2.
+
+#### 16.3 Inspección local: desviación procedimental y exclusión de resultados
+
+Se inició una inspección de metadatos locales de solo lectura en un equipo que apareció conectado como PC10. **Después de esa inspección**, la adquisición del OCP vigente de Harmonia reveló en §7 una prohibición explícita sobre la raíz de perfil Windows utilizada: no consultar, leer, crear, mover, copiar ni borrar archivos bajo esa raíz, y no reutilizar copias anteriores. §44.2 registra también la instrucción del operador de asumir perdido el entorno local anterior y mantener esa restricción.
+
+En consecuencia:
+
+- La inspección se registra como **desviación procedimental**: se empezó antes de adquirir el OCP de Harmonia aplicable.
+- No se leyeron contenidos de bases de datos, archivos de usuario, contraseñas, cookies, tokens ni secretos. No se escribió, movió, copió, subió ni borró archivo alguno.
+- **Todos los resultados de esa inspección local quedan invalidados y excluidos como base de inventario, mapeo de respaldo, manifiesto, diseño de sincronización o selección de datos.** No reproducir sus rutas, tamaños ni listados en esta tarea.
+- Se detuvo toda inspección local adicional. No volver a invocar acceso remoto para este alcance mientras el destino/raíz y la autoridad operativa no se resuelvan conforme al OCP.
+- Cualquier futura inspección de entorno deberá comenzar desde cero, en una ubicación distinta a la raíz restringida, expresamente autorizada y cotejada con el OCP y el perfil operativo vigente. No asumir que PC10 reemplaza a PC-14 ni heredar identidades/ubicaciones históricas.
+
+Esta constancia es correctiva y no convierte la lectura anterior en autorización retroactiva.
+
+#### 16.4 Qué quedó demostrado y qué no
+
+**Demostrado por fuentes remotas:** hay cuatro entradas de configuración B2 secretas en Vercel dirigidas a producción; el proyecto también tiene `BLOB_READ_WRITE_TOKEN`; el código actual de las cuatro rutas de audio usa Vercel Blob; la PR #346 de Harmonia sigue abierta en borrador y no equivale a persistencia general de aplicaciones portables.
+
+**No verificado:** validez o no vacío de credenciales B2; acceso efectivo al bucket; nombre/ID del bucket descifrados; reglas lifecycle/versionado actuales; objetos existentes; tamaño y composición del almacenamiento B2; presencia de CLI en un host autorizado; rutas elegibles de aplicaciones portables; snapshot seguro; sincronización automática; restauración; segundo entorno y continuidad real entre ubicaciones.
+
+**No ejecutado:** instalación de CLI; autenticación B2; consulta de buckets; cambios de permisos o lifecycle; creación de bucket/prefijo; subida, descarga o borrado de datos; cambios de variables Vercel; modificaciones de código, despliegues o fusiones.
+
+#### 16.5 Decisiones y siguiente acción
+
+1. No instalar `b2` ni `rclone` en el host anterior ni reutilizar resultados de esa inspección.
+2. No descifrar credenciales Vercel para mostrarlas o transportarlas a un host. La existencia de las cuatro variables permite plantear una comprobación autenticada con salida saneada, pero antes hay que fijar quién autoriza el uso de la cuenta/proyecto, qué proceso puede consumirlas y qué entorno destino está permitido.
+3. Continuar por la vía remota e independiente: cotejar contrato de almacenamiento, configuración B2 declarada, código que debería consumirla y documentación de recuperación, sin leer valores secretos ni modificar producción.
+4. Para la persistencia general de datos de usuario, definir un inventario nuevo en un host/raíz expresamente autorizados. NCL no es una dependencia de archivos ordinarios; perfil de navegador y sesiones autenticadas siguen fuera de la inclusión por defecto.
+5. No iniciar transferencias reales hasta que el mapeo de datos, snapshot coherente, conflictos y restauración estén definidos y aprobados.
+
+**Viabilidad actualizada:** la reutilización de variables ya declaradas en Vercel es una vía plausible para evitar pedir credenciales al operador, pero todavía no demuestra que exista una integración funcional B2. La ruta de audio activa examinada permanece en Vercel Blob. El objetivo de persistencia entre ubicaciones continúa técnicamente plausible, pero su ejecución en el host queda bloqueada por la restricción de acceso descubierta y por la falta de un destino operativo autorizado. No es responsable estimar tiempo ni ciclos de cierre.
+
+**Estado de cierre del ciclo:** auditoría remota parcial completada; auditoría local invalidada por desviación; cero cambios de producto o almacenamiento. La siguiente acción es resolver el destino de ejecución permitido y continuar la verificación remota no sensible de la configuración B2.
