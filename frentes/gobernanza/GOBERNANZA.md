@@ -2,7 +2,7 @@
 
 ## Entrada documental recibida · C-GOBERNANZA-PERSISTENCIA-DOCUMENTAL-01 · 2026-10-30
 
-Se incorporó como original el archivo [ChatGPT-GOBERNANZA-20261030-1857.md](documentos/originales/ChatGPT-GOBERNANZA-20261030-1857.md), exportación de conversación de 3,391 líneas y 177,693 bytes recibida desde `C:\\Users\\PC 13\\Downloads` mediante RDC. SHA-256 de origen: `73C0BDA50D67840782C6E1B98A4F14803184CD029FB62D1A60CE77589CCA6C48`. Blob Git: `5f6754d1eda125056b661cb7505614cb988eafa5`. Manifiesto: [MANIFIESTO-DOCUMENTAL.json](documentos/MANIFIESTO-DOCUMENTAL.json). Estado en esta escritura: `ESCRITO_NO_VERIFICADO`; la lectura de vuelta determinará el estado final.
+Se incorporó como original el archivo [ChatGPT-GOBERNANZA-20261030-1857.md](documentos/originales/ChatGPT-GOBERNANZA-20261030-1857.md), exportación de conversación de 3,391 líneas y 177,693 bytes recibida desde `C:\\Users\\PC 13\\Downloads` mediante RDC. SHA-256 de origen: `73C0BDA50D67840782C6E1B98A4F14803184CD029FB62D1A60CE77589CCA6C48`. Blob Git: `5f6754d1eda125056b661cb7505614cb988eafa5`. Manifiesto: [MANIFIESTO-DOCUMENTAL.json](documentos/MANIFIESTO-DOCUMENTAL.json). Estado: `PERSISTIDO_Y_VERIFICADO`; lectura de vuelta byte por byte desde `main` confirmada.
 
 **Responsabilidad transferida:** `chatgpt-C-GOBERNANZA-RETOMA-06-SES-20261030-GVC9594230`, sesión `SES-20261030-GVC9594230`, generación 7; UUIDv7 local `01a18f86-7da3-7135-8012-c3dbc9594230`, no ID nativo. Evento `C-GOBERNANZA-RETOMA-06`. FOL1 sigue preparado e inactivo; no se asignó folio global de ciclo. El DUG v373 · NX-373m se conservó sin modificación en esta operación; tampoco se modificaron ART-025, IPZ nativa ni `ambitos/tareas/`.
 
