@@ -403,3 +403,102 @@ NCL sigue sin ser requisito para respaldar archivos ordinarios o los artefactos 
 **Siguiente acción:** recibir y analizar la respuesta de EP a la investigación de persistencia que el operador informó como activa; comprobar que su propuesta cubre expresamente el respaldo del artefacto y los datos persistentes de OCP MCP. En paralelo, OCP MCP debe entregar a EP el inventario real de componentes respaldables y el método de snapshot/restore cuando esos entregables existan. No se prepara una nueva solicitud redundante a EP mientras su investigación actual siga en ejecución. No estimar fecha de habilitación hasta conocer el proveedor, la ruta autorizada, el inventario real y el resultado de una restauración.
 
 **Resultado del ciclo:** alcance funcional de EP-TASK-002 ampliado documentalmente para incluir el respaldo recuperable de OCP MCP; hallazgos locales excluidos; ningún producto o almacenamiento modificado; la implementación de persistencia continúa pendiente.
+
+## 18. Cambio de modelo operativo OCP local, perfil Cibernet/Deep Freeze y objetivo de disponibilidad antes de las 15:00 · 2026-10-31 · 13:13 · America/Mexico_City
+
+**Estado del ciclo:** DECISIÓN DE ALCANCE DOCUMENTADA; PLAN DE MVP Y BLOQUEOS IDENTIFICADOS. No se configuró Backblaze, no se instalaron componentes, no se realizó acceso local/RDC, no se recuperó ni ejecutó el servidor y no se realizó transferencia. El objetivo temporal expresado por el operador es disponer de una versión funcional del Entorno Persistente con Backblaze configurado antes de las 15:00 locales del 31-10-2026, para poder recuperar y abrir el MVP del servidor OCP MCP desde otra computadora el domingo 01-11-2026.
+
+### 18.1. Instrucción del operador y resultado que persigue
+
+El operador prioriza conseguir, antes de las 15:00 hora de `America/Mexico_City`, una primera materialización funcional de persistencia remota Backblaze para conservar artefactos y estado que ya deben sobrevivir a la pérdida de una sesión local. El primer conjunto de importancia es el **MVP del servidor OCP MCP de Metodología** y los datos mínimos que permitan reanudarlo en otro equipo. La meta no consiste en respaldar indiscriminadamente la computadora ni en copiar el perfil completo de Windows; consiste en un conjunto de artefactos seleccionados, identificados, íntegros, recuperables y vinculados a una versión verificable.
+
+El operador solicita que el contenido de esta entrada y los próximos hallazgos sustantivos sobre persistencia queden incorporados en este objeto provisional o en el mínimo número de objetos necesarios. Se reutiliza `EP-TASK-002`; no se crea `EP-TASK-003`, `EP-TAGS-100002` ni una bitácora adicional. `EP-TASK-002` sigue siendo un identificador local de tarea, no un folio global.
+
+### 18.2. Separación de dominios: OCP MCP local frente a Khora/Cora
+
+El operador ratifica como dirección de arquitectura que el servidor MCP que atiende los objetos canónicos de persistencia (OCP) pertenece al dominio de Metodología y debe ejecutarse en un entorno **local**, accesible por `localhost` y/o administrado mediante una conexión RDC autorizada. No forma parte del MSP/MCP de la prótesis cognitiva Khora/Cora. En consecuencia, para arrancar, autenticar y operar la parte OCP del servidor **no se debe depender de bearer tokens de Cora, sesiones de Cora, endpoints de Vercel ni de la infraestructura de Khora**. Esta separación no modifica ni desactiva el MCP propio de Khora/Cora: son dos dominios y autorizaciones distintos.
+
+La lectura canónica del OCP de Metodología conserva la denominación **MCP de Metodología / OCP MCP**. El dictado del operador usó también la forma «MSP»; por continuidad con la identidad documental existente, este ciclo lo interpreta como una referencia oral al servidor MCP de Metodología, sin crear un segundo producto ni reescribir el dictado histórico.
+
+Backblaze B2 se considera aquí un **destino de persistencia y recuperación de archivos/artefactos**, no un host de ejecución del servidor, no un endpoint MCP y no una sustitución de Git como remoto de código. La operación del servidor sigue siendo local. Las variables B2 encontradas previamente en el proyecto Vercel de Khora no se consideran credenciales reutilizables para este ámbito: pertenecen a otro proyecto/dominio, sus valores no se leyeron y su funcionamiento nunca quedó demostrado. No se autoriza inferir, copiar o reutilizar secretos entre Khora y Metodología.
+
+### 18.3. Reutilización del objeto y perfil de ubicación informado
+
+Se reutiliza el perfil de ubicación que ya aparece en el OEP como candidato `LOC-LUIS-PASTEUR`; no se crea todavía otro OEP ni un perfil canónico paralelo. La descripción aportada por el operador en este ciclo es:
+
+- **Ubicación/alias existente a cotejar:** `LOC-LUIS-PASTEUR`.
+- **Establecimiento:** cibercafé Cibernet, avenida Luis Pasteur, Querétaro (dirección exacta no precisada en este ciclo).
+- **Tipo de entorno reportado:** sesiones Windows efímeras protegidas por un mecanismo tipo Deep Freeze.
+- **Identificador de equipo dictado:** el operador dijo inicialmente `CSEQ` y lo deletreó después `C-E-C-E-Q` (`CECEQ`). Se conserva la discrepancia de transcripción; `CECEQ` es la forma deletreada, no una identidad técnica verificada.
+- **Etiqueta adicional reportada:** `I1`; su semántica exacta (instancia, estación, perfil u otra) queda `NO VERIFICADA`.
+- **Perfil Windows interactivo, SID, UUID nativo RDC, versión de Windows, privilegios, Escritorio físico y disponibilidad efectiva de escritura:** `NO VERIFICADOS`.
+
+El operador establece para este perfil una regla conservadora de continuidad: cuando aporte al modelo los datos de una **nueva sesión RDC** de ese equipo/ubicación, deberá asumirse que la sesión local anterior se reinició y que el trabajo materializado localmente pudo perderse por Deep Freeze. La nueva sesión se tratará como una materialización limpia; no se reutilizarán archivos, cachés, procesos ni estados locales de la sesión previa como si fueran persistentes. Este es un supuesto operativo declarado por el operador, no una prueba independiente del reinicio, del mecanismo Deep Freeze o del UUID de equipo.
+
+### 18.4. Regla de materialización en la sesión Windows correcta
+
+Cuando exista una conexión RDC expresamente autorizada para el dispositivo concreto y el destino no esté bajo ninguna raíz prohibida, el bootstrap deberá instalar/materializar lo mínimo necesario en la carpeta `EP` bajo el **Escritorio real del usuario Windows interactivo desde cuya sesión trabaja el operador**. No se debe asumir que el usuario del proceso RDC, el usuario del servicio/conector, `$env:USERPROFILE` del proceso remoto o la sesión técnica coinciden con el usuario interactivo. Antes de escribir, el launcher debe resolver y mostrar de forma saneada identidad Windows, SID, sesión interactiva, perfil y Known Folder Desktop; si no puede demostrar la correspondencia, aborta sin escribir.
+
+El destino se resolverá dinámicamente para cada host/sesión; no se fijará una ruta absoluta heredada de otra computadora ni se confiará en `Environment.GetFolderPath('Desktop')` ejecutado bajo un token RDC que pueda pertenecer a otro usuario. La ruta física final se registra solo después de una observación autorizada y se asocia al perfil de ubicación, no se convierte en identidad del conjunto remoto.
+
+El uso de RDC debe respetar el OEP §89: RDC es una capacidad exclusiva del asistente y solo se usa para una misión necesaria, acotada y autorizada. La autorización de un dispositivo por RDC no reemplaza las restricciones de acceso aplicables a sus perfiles y carpetas. En particular, la prohibición vigente de Harmonia sobre `C:\Users\MantenimientoRCI\` continúa intacta; ningún equipo/perfil podrá operarse bajo esa raíz ni reutilizar materializaciones previas situadas allí. La etiqueta aportada `CECEQ`/`CSEQ` no se ha reconciliado con el UUID de PC10 u otro dispositivo y no permite inferir que sea un equipo distinto o autorizado.
+
+### 18.5. Conjunto MVP que debe persistir en Backblaze
+
+El primer conjunto de respaldo se limita al servidor OCP MCP y sus datos recuperables, sujeto al manifiesto real que entregue el constructor:
+
+1. Paquete versionado del servidor, con versión, commit de procedencia, runtime/arquitectura declarados, entrypoint, manifiesto de archivos y SHA-256 por componente.
+2. Base SQLite y datos de aplicación mediante snapshot consistente (backup API/SQLite Backup o cierre controlado), incluyendo el tratamiento de WAL; nunca copiar una base activa como un archivo plano sin garantizar consistencia.
+3. Contenido asociado y fuentes de datos realmente referenciadas por la base, con IDs lógicos, conteos, tamaños y hashes.
+4. Configuración no secreta, versión de esquema, identificador lógico de instalación y parámetros mínimos para reinstanciar el servidor local y conectarlo al harness/cliente MCP.
+5. Recibo de snapshot y transferencia, estado de verificación, hora UTC, versión/objeto remoto cuando esté disponible, y resultado de una prueba de descarga/restauración.
+6. Runbook breve de bootstrap/restore para una segunda computadora: materializar en Desktop/EP de la sesión interactiva correcta, recuperar el snapshot autorizado, validar hashes/esquema, iniciar el servidor local por el transporte realmente implementado y probar una operación de lectura.
+
+Quedan excluidos tokens, bearer tokens Cora, credenciales de Vercel, application keys B2, contraseñas, cookies, secretos, llaves privadas, volcados completos de perfiles del navegador y datos no identificados. Los secretos necesarios para B2 deberán inyectarse por un mecanismo de credenciales separado y protegido; nunca se guardarán en Git, manifiestos, logs, objetos de conversación ni en el paquete de respaldo general. No copiar claves DPAPI `CurrentUser` como si fueran portables a otro SID/equipo.
+
+### 18.6. Configuración Backblaze y criterio mínimo de seguridad
+
+El bucket/prefijo concreto para este conjunto, su titularidad, estado, permisos, retención/versionado y credencial dedicada todavía están `NO VERIFICADOS`. El MVP debe utilizar un bucket privado existente expresamente autorizado o un bucket nuevo privado dedicado a EP/OCP; antes de seleccionar uno se verifica cuenta, bucket, región, lifecycle y permisos mínimos. No usar automáticamente el bucket histórico `khora-audio`, las variables B2 de Vercel/Khora ni el token `BLOB_READ_WRITE_TOKEN`.
+
+La primera prueba debe ser no destructiva, con artefacto sintético o paquete no sensible, en prefijo dedicado: autorización B2, listado del destino, upload, lectura/listado de vuelta, descarga, SHA-256 y comparación byte a byte; después, snapshot real mínimo. `--delete`, borrado remoto, sincronización bidireccional automática, Object Lock, reglas lifecycle destructivas y modificación de políticas se excluyen del MVP de hoy. La ausencia de confirmación de upload o hash coincidente significa `NO SINCRONIZADO`, nunca éxito parcial.
+
+### 18.7. Fuentes y evidencia adquiridas en este ciclo
+
+- DUG: `SeryMente/metodologia/main:gobernanza/METAPROMPT-CANONICO-SAMANTHA.html`, Samantha v373 / NX-373m, blob `cac4525de77d4f47a8a59c25201968ecf2056b90`.
+- OEP: `frentes/ep/OEP.md`, v0.3.18 / VCU-EP-v20, rama canónica documental `docs/metacanon-objetos-20261011`, blob `e1e045cdc9b1a286047c6d47c47a5111a0b52bce`. Su §4 ya contiene `LOC-LUIS-PASTEUR`; §5/§21 requieren descubrir el Escritorio dinámicamente; §73 fija la custodia del frente; §89 reserva RDC al asistente y exige adquisición/autorización verificables. No se modificó OEP.
+- `EP-TASK-002` antes de este ciclo: `main`, blob `e0dbc2212cea7d1dd95af75ca87a700e2d99a61e`; sección 17 ya registraba el alcance de respaldo OCP MCP y la exclusión de resultados locales.
+- `frentes/mcp-metodologia/MCP-METODOLOGIA.md`: `main`, blob `0dd9c4a7594833f99cb658e6108c8439464babd8`; identidad separada, transporte local aún por decidir en el texto base y no se declara servidor implementado en esa fuente.
+- `frentes/mcp-metodologia/CONTROL-RESPONSABILIDAD.json`: `main`, generación 2, blob `4a4742a51f0517a1b152a9c04ac6c185de024389`; autoriza construcción/compilación/pruebas/paquete en `frentes/mcp-metodologia/`, pero excluye instalación/operación y configuración del host EP.
+- Protocolo `COORDINACION-SPRINT-OCP-MCP-v0.1.md`, `main`, blob `1cac3a438cc316b9bb98859ccebeced66410adc5`; confirma la separación entre construcción OCP MCP y alojamiento/integración EP, la mediación de coordinación y la distinción entre prompt preparado, reenviado y recibido.
+- Repositorio `SeryMente/metodologia/main`: HEAD adquirido `9d8a72c51bef93ecdd4a643c75441b9d2bf17f3e`, committer date `2026-10-31T19:06:43Z` (13:06:43 `America/Mexico_City`).
+- Rama de construcción `build/ocp-mcp-mvp-0.1.0`: HEAD `e4243414b0099ede9b9556b3cfa0bb20bc706576`. El árbol consultado bajo `frentes/mcp-metodologia/` contiene el núcleo/control/documentos de coordinación y evidencias, pero ningún archivo de código/solución/paquete con extensiones de implementación consultadas (`.cs`, `.csproj`, `.sln`, `.json` ejecutable de artefacto, `.ps1`, `.ts`, `.js`, `.zip`, etc.). Esto demuestra únicamente que el árbol remoto de esa rama, en la ruta del frente, aún no expone un artefacto de implementación; no descarta un trabajo local no publicado o una entrega posterior.
+- OCP Harmonia `SeryMente/khora/main:docs/frentes/harmonia/OBJETO-CANONICO.md`, blob `15b37bc71b4bedfa13785d9adfd3d88f8caf3704`, §7 y §44.2; control generación 11, blob `80a0f7d4b4662c95e79d17c3c49d5f3db189ab1f`. La restricción de raíz y la no reutilización del entorno previo siguen aplicando; el perfil/UUID `CECEQ` aún no se ha cotejado con dichos controles.
+
+### 18.8. Estado verificado, reportado y no ejecutado
+
+**Decisión/reportado por el operador:** meta de tener persistencia configurada antes de las 15:00 locales del 31-10-2026; apertura del MVP el domingo desde otra computadora; separación de dominio OCP local frente a Khora/Cora; no requerir bearer tokens Cora para esta operación; perfil temporal de cibercafé Cibernet/Avenida Luis Pasteur, sesiones tipo Deep Freeze; convención de considerar perdida la materialización local al aportar una nueva sesión RDC; materializar únicamente en Desktop del usuario interactivo de la sesión desde la que trabaja.
+
+**Verificado en fuentes:** existe el perfil nominal `LOC-LUIS-PASTEUR` en el OEP; el OCP MCP tiene identidad y control separados; el control generación 2 autoriza construcción del artefacto pero no instalación/operación en el host EP; la rama remota de construcción observada todavía no contiene archivos de implementación en la ruta del frente; el OEP exige adquisición y autorización y reserva RDC al asistente.
+
+**No verificado:** que `CECEQ`/`CSEQ` corresponda a un UUID RDC; qué significa `I1`; qué cuenta Windows interactiva se utiliza en Cibernet; si el dispositivo está autorizado y en línea; la ruta exacta de Desktop; si la sesión está elevada; efecto real de Deep Freeze; CLI B2 disponible; cuenta, bucket y prefijo B2; credencial válida; ACL/permisos; existencia de servidor ejecutable; esquema/DB real; snapshot consistente; upload, descarga y restauración; segunda computadora de destino.
+
+**No ejecutado:** ninguna consulta al host CSEQ/CECEQ; ninguna operación RDC en esta sesión; ninguna lectura/escritura local; ninguna instalación; ninguna llamada a Backblaze; ningún descifrado/uso de secretos; ningún cambio Vercel; ninguna subida, borrado o modificación de bucket; ninguna ejecución/integración del servidor MCP.
+
+### 18.9. Plan de trabajo priorizado para la ventana antes de las 15:00
+
+El plazo restante no autoriza a omitir controles. La secuencia con mayor probabilidad de producir una entrega útil es:
+
+1. **Gate de host y sesión (bloqueante):** identificar de forma inequívoca UUID RDC, nombre de dispositivo, identidad/SID Windows interactivo, perfil y Desktop real de Cibernet; cotejar el host contra la raíz prohibida de Harmonia y demás controles. Si coincide con la raíz prohibida, detener toda operación local. No reutilizar los resultados inválidos de la auditoría anterior.
+2. **Gate de artefacto OCP MCP (bloqueante):** recibir el paquete 0.1.0 y su manifiesto/DB/contrato del constructor, o verificar una rama que ya los contenga. El árbol remoto revisado no expone todavía el código ni el paquete; hasta que llegue, no existe evidencia suficiente para respaldar el servidor como producto funcional.
+3. **Gate de cuenta B2 (bloqueante):** disponer de acceso autorizado al account/key de Backblaze con permisos mínimos, sin pegar secretos en el chat. Seleccionar o crear de forma expresa un bucket privado y prefijo exclusivo EP/OCP; no utilizar credenciales ni recursos de Khora/Vercel.
+4. **Prueba B2 mínima:** cargar un archivo de prueba no sensible, enumerar/listar, descargar y comparar SHA-256; conservar recibo. No ejecutar sincronización con `--delete` ni mover el dataset real antes del pase de esta prueba.
+5. **Primer backup OCP:** generar snapshot coherente, paquete y manifiesto SHA-256; subir al prefijo aprobado; descargar a una ubicación de staging distinta y cotejar integridad. Marcar `RESPALDADO` únicamente después de leer de vuelta y verificar.
+6. **Runbook de mañana:** dejar una instrucción reproducible de bootstrap/restore que detecte el Escritorio de la sesión interactiva, reconstruya localmente el runtime efímero, recupere el último snapshot confirmado, valide integridad y arranque el servicio mediante el transporte probado (stdio o localhost-loopback, según la implementación real).
+
+**Criterio de corte a las 15:00:** si cualquiera de los gates 1–3 no está satisfecho, cerrar con documentación y un artefacto/runbook preparado, declarando explícitamente `MVP NO OPERATIVO / BACKUP NO VERIFICADO`; no crear una falsa versión funcional. Si se satisfacen, aceptar solo el resultado demostrado: CLI lista, acceso mínimo B2 confirmado, upload y download con SHA coincidente, artefacto/DB consistentes y arranque local con una prueba funcional. La recuperación en una segunda computadora seguirá `PENDIENTE` hasta ejecutarse realmente allí el domingo.
+
+### 18.10. Próxima acción y cierre del ciclo
+
+La siguiente acción documental es sincronizar esta especificación con la respuesta real del constructor OCP MCP sin duplicar solicitudes ni saltarse la regla serial del protocolo: primero determinar si ya existe una entrega o solicitud pendiente; después recibir el manifiesto/paquete 0.1.0 y sus instrucciones de snapshot/restore. En EP, mantener la tarea concentrada en la identificación del perfil autorizado y la preparación del flujo de B2. No cambiar OEP canónico, control de responsabilidad, DUG ni la arquitectura de Khora/Cora en este ciclo.
+
+**Resultado:** la decisión de separación de dominios y el perfil provisional Cibernet/Deep Freeze quedan preservados en EP-TASK-002; el MVP de persistencia sigue sin estar configurado ni probado. No se ha prometido la disponibilidad antes de las 15:00 porque tres prerrequisitos materiales siguen sin evidencia.
