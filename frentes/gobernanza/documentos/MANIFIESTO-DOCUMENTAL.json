@@ -121,7 +121,7 @@
     "result": "PASS",
     "byte_for_byte_match": true,
     "documents_verified": 5,
-    "note": "ChatGPT-Gobernanza-20261031-1432.md read back from origin/main; 637277 bytes and SHA-256 match RDC source. Git blob d17f575fcd5bf0c0da1bb459a40e42e47c081a31.",
+    "note": "Original 20261031-1432 read back from origin/main; 637277 bytes and SHA-256 match RDC source.",
     "latest_document_status": "PERSISTIDO_Y_VERIFICADO",
     "latest_document_id": "DOC-GOV-CHATGPT-GOBERNANZA-20261031-1432"
   },
