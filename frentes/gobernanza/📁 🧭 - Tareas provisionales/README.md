@@ -9,11 +9,11 @@
 
 ## Naturaleza y límites
 
-Este contenedor agrupa siete objetos provisionales de persistencia de tarea, cada uno con su directorio y núcleo propio. No son frentes independientes ni unidades de una taxonomía ya aprobada. La responsabilidad, sesión y autorización se heredan del OCP padre; no se crean controles, sesiones ni folios independientes para cada tarea.
+Este contenedor agrupa ocho objetos provisionales de persistencia de tarea, cada uno con su directorio y núcleo propio. No son frentes independientes ni unidades de una taxonomía ya aprobada. La responsabilidad, sesión y autorización se heredan del OCP padre; no se crean controles, sesiones ni folios independientes para cada tarea.
 
 El núcleo de cada objeto conserva identificador local, enunciado, referencia recuperable al origen y estado. El patrón se inspira en el diseño mínimo de Tareas v0.2, pero no declara ratificado ese estándar ni adopta como vigente el candidato v1.0. Cada ID `GOV-TASK-###` es estable dentro de este registro; no se afirma unicidad global.
 
-**Separación respecto del ámbito Tareas:** el directorio existente `ambitos/tareas/` sigue en incubación y no está canonizado en el DUG. Su control conserva como titular `chatgpt-C-TAREAS-INICIO-01-SES-20261028-TA6F31C9`, generación 1. No se ha transferido ni modificado. GOV-TASK-004 registra la continuación pendiente cuando se resuelva esa titularidad.
+**Separación respecto del ámbito Tareas:** el directorio existente `ambitos/tareas/` sigue en incubación y no está canonizado en el DUG. Su control conserva como titular `chatgpt-C-TAREAS-INICIO-01-SES-20261028-TA6F31C9`, generación 1. No se ha transferido ni modificado. GOV-TASK-004 registra la continuación pendiente cuando se resuelva esa titularidad. GOV-TASK-008 registra la necesidad de aislar técnicamente la norma desarrollada detrás de Sink, pues el DUG actual aún contiene todo el texto en `gov-data`.
 
 ## Registro ejecutivo
 
@@ -26,6 +26,7 @@ El núcleo de cada objeto conserva identificador local, enunciado, referencia re
 | GOV-TASK-005 | pendiente | Resolver referencias incompletas P020/P021/P033/P034 | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-005%20-%20Integridad%20de%20principios/README.md) |
 | GOV-TASK-006 | pendiente | Reconciliar divergencias documentales de Gobernanza | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-006%20-%20Reconciliaci%C3%B3n%20documental/README.md) |
 | GOV-TASK-007 | pendiente | Reconciliar IPZ y cerrar el corte FOL1 | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-007%20-%20IPZ%20y%20FOL1/README.md) |
+| GOV-TASK-008 | pendiente | Aislar técnicamente la norma desarrollada detrás de Sink | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-008%20-%20Aislamiento%20de%20capa%20desarrollada/README.md) |
 
 ## Regla de mantenimiento
 
