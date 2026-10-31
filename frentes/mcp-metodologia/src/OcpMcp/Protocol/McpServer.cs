@@ -201,9 +201,13 @@ public sealed class McpServer(SqliteStore store, OperationService operations)
         byte[] publicKey=(byte[]?)pub.ExecuteScalar()??throw new CryptographicException("RECEIPT_PUBLIC_KEY_NOT_FOUND");
         byte[] bytes=Encoding.UTF8.GetBytes(json);
         string actual=Convert.ToHexStringLower(SHA256.HashData(bytes));
+        string publicFingerprint=Convert.ToHexStringLower(SHA256.HashData(publicKey));
+        using var receiptDocument=JsonDocument.Parse(json);
+        string embeddedFingerprint=receiptDocument.RootElement.GetProperty("signing_public_key_sha256").GetString()??"";
         bool hashOk=actual==hash;
-        bool signatureOk=hashOk&&ReceiptSigner.Verify(publicKey,bytes,sig);
-        return new{receipt=JsonDocument.Parse(json).RootElement.Clone(),payload_sha256=hash,signature=Convert.ToBase64String(sig),signing_key_id=keyId,hash_valid=hashOk,signature_valid=signatureOk,public_key=Convert.ToBase64String(publicKey)};
+        bool publicKeyMatch=string.Equals(publicFingerprint,embeddedFingerprint,StringComparison.Ordinal);
+        bool signatureOk=hashOk&&publicKeyMatch&&ReceiptSigner.Verify(publicKey,bytes,sig);
+        return new{receipt=receiptDocument.RootElement.Clone(),payload_sha256=hash,signature=Convert.ToBase64String(sig),signing_key_id=keyId,hash_valid=hashOk,public_key_fingerprint=publicFingerprint,embedded_public_key_match=publicKeyMatch,signature_valid=signatureOk,public_key=Convert.ToBase64String(publicKey)};
     }
 
     private object ListEvents(string cycleId,int limit)

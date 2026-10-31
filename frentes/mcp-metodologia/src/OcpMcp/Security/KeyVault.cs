@@ -27,13 +27,17 @@ public sealed class KeyVault(SqliteStore store)
         {
             if(installation.OperatorSid!=sid)throw new UnauthorizedAccessException("OPERATOR_ALREADY_PROVISIONED_FOR_ANOTHER_SID");
             using var exists=c.CreateCommand();
-            exists.CommandText="SELECT COUNT(*) FROM key_store WHERE purpose='hmac-authority' AND key_version=$v AND status='ACTIVE';";
+            exists.CommandText="SELECT (SELECT COUNT(*) FROM key_store WHERE purpose='hmac-authority' AND key_version=$v AND status='ACTIVE') + (SELECT COUNT(*) FROM key_metadata WHERE key_id='receipt-ed25519-v1' AND status='ACTIVE');";
             exists.Parameters.AddWithValue("$v",installation.HmacKeyVersion);
-            if(Convert.ToInt32(exists.ExecuteScalar())==1)
+            int materialCount=Convert.ToInt32(exists.ExecuteScalar());
+            if(materialCount==2)
             {
+                string fingerprint=GetReceiptPublicKeyFingerprint(c);
                 Console.WriteLine("OPERATOR_ALREADY_PROVISIONED_FOR_THIS_SID; no keys changed.");
+                Console.WriteLine("RECEIPT_SIGNING_KEY_SHA256="+fingerprint);
                 return;
             }
+            throw new CryptographicException("PARTIAL_OPERATOR_PROVISIONING_REQUIRES_RECOVERY");
         }
 
         Console.WriteLine("OCP MCP — Registro local de operador");
@@ -63,6 +67,7 @@ public sealed class KeyVault(SqliteStore store)
         }
         finally{CryptographicOperations.ZeroMemory(hmacKey);}
         Console.WriteLine("OPERATOR_PROVISIONED");
+        Console.WriteLine("RECEIPT_SIGNING_KEY_SHA256="+GetReceiptPublicKeyFingerprint(c));
     }
 
     public byte[] LoadHmacKey(SqliteConnection c,SqliteTransaction? tx=null)
@@ -246,6 +251,14 @@ public sealed class KeyVault(SqliteStore store)
             meta.Parameters.AddWithValue("$utc",DateTimeOffset.UtcNow.ToString("O"));meta.ExecuteNonQuery();
         }
         finally{CryptographicOperations.ZeroMemory(pair.PrivateKey);}
+    }
+
+    public static string GetReceiptPublicKeyFingerprint(SqliteConnection c)
+    {
+        using var cmd=c.CreateCommand();
+        cmd.CommandText="SELECT public_key FROM key_metadata WHERE key_id='receipt-ed25519-v1' AND status='ACTIVE';";
+        byte[] publicKey=(byte[]?)cmd.ExecuteScalar()??throw new CryptographicException("RECEIPT_PUBLIC_KEY_NOT_FOUND");
+        return Convert.ToHexStringLower(SHA256.HashData(publicKey));
     }
 
     private static void EnsureInteractiveConsole()

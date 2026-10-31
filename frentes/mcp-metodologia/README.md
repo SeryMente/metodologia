@@ -52,7 +52,7 @@ El manifiesto es la autoridad para `entrypoint` y `args`; no fijar esos valores 
 .rentes\mcp-metodologia\tests\Smoke.ps1
 ```
 
-Las pruebas usan un directorio temporal aislado mediante `OCPMCP_TEST_DATA_ROOT`, sin modificar el perfil real del usuario ni EP. Comprueban importación, cifrado en reposo, MCP stdio, fuentes, health, solicitud pendiente, bloqueo de escritura sin grant, cadena de eventos, telemetría y cierre EOF.
+El build ejecuta primero `tests/OcpMcp.UnitTests` (AES-GCM/DPAPI, Ed25519, HMAC, cadena de eventos, rollback SQLite y triggers append-only). Después `tests/Smoke.ps1` utiliza `OCPMCP_TEST_MODE=1` y un directorio temporal aislado, sin modificar el perfil real del usuario ni EP. Comprueba manifiesto/hashes, estados de diagnóstico, rechazo de confirmación canalizada, importación, cifrado en reposo, MCP stdio, fuentes, health, solicitud pendiente, bloqueo de escritura sin grant, cadena de eventos, telemetría, cierre EOF, backup y restauración.
 
 ## Integración por EP
 
@@ -84,7 +84,7 @@ Debe realizarlo el operador desde la consola Windows interactiva del usuario aut
 & "<ruta-absoluta>\OcpMcp.exe" provision-operator
 ```
 
-El operador debe confirmar escribiendo el SID completo. Esta operación genera las claves HMAC y Ed25519 y las protege con DPAPI CurrentUser. Si no existe esta raíz de confianza, las escrituras protegidas permanecen bloqueadas.
+El operador debe confirmar escribiendo el SID completo. Esta operación genera las claves HMAC y Ed25519 y las protege con DPAPI CurrentUser. La consola imprime `RECEIPT_SIGNING_KEY_SHA256`; el operador debe conservar y fijar ese fingerprint fuera del almacén para verificar recibos independientemente. `get_receipt` verifica hash, fingerprint embebido y firma frente a la clave pública registrada localmente. Si no existe esta raíz de confianza, las escrituras protegidas permanecen bloqueadas.
 
 Para autorizar una solicitud creada mediante `prepare_operation`, el operador ejecuta desde esa misma consola:
 

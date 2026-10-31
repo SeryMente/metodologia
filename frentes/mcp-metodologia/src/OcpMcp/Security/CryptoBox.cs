@@ -48,11 +48,13 @@ public static class CryptoBox
             aes.Decrypt(encrypted.Nonce, encrypted.Ciphertext, encrypted.Tag, plaintext, aad);
             string actual = Convert.ToHexStringLower(SHA256.HashData(plaintext));
             if (!CryptographicOperations.FixedTimeEquals(Convert.FromHexString(actual), Convert.FromHexString(encrypted.ContentSha256)))
-            {
-                CryptographicOperations.ZeroMemory(plaintext);
                 throw new CryptographicException("CONTENT_SHA256_MISMATCH");
-            }
             return plaintext;
+        }
+        catch
+        {
+            CryptographicOperations.ZeroMemory(plaintext);
+            throw;
         }
         finally
         {

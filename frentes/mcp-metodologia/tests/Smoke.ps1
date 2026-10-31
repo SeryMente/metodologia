@@ -53,6 +53,7 @@ try {
     }
     Assert-True "MANIFEST_COMPONENT_HASHES" $componentOk
 
+    $env:OCPMCP_TEST_MODE="1"
     $env:OCPMCP_TEST_DATA_ROOT="C:\Temp\OcpMcpBuild\SmokeData"
     if(Test-Path $env:OCPMCP_TEST_DATA_ROOT){Remove-Item -LiteralPath $env:OCPMCP_TEST_DATA_ROOT -Recurse -Force}
     $notReadyRaw=& $Exe diagnose --json
@@ -176,6 +177,7 @@ catch {
 finally {
     if($proc -and -not $proc.HasExited){$proc.Kill()}
     $env:OCPMCP_TEST_DATA_ROOT=$null
+    $env:OCPMCP_TEST_MODE=$null
 }
 Write-Output "TEST_SUMMARY PASS=$script:Passed FAIL=$script:Failed"
 if($script:Failed -gt 0){exit 1}else{exit 0}

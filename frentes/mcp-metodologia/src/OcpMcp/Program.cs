@@ -15,7 +15,9 @@ internal static class Program
         try
         {
             string local=GetKnownFolder(FolderIdLocalAppData);
-            string dataRoot=Environment.GetEnvironmentVariable("OCPMCP_TEST_DATA_ROOT") is string testRoot && !string.IsNullOrWhiteSpace(testRoot)
+            bool testMode=Environment.GetEnvironmentVariable("OCPMCP_TEST_MODE")=="1";
+            string? testRoot=Environment.GetEnvironmentVariable("OCPMCP_TEST_DATA_ROOT");
+            string dataRoot=testMode && !string.IsNullOrWhiteSpace(testRoot)
                 ? Path.GetFullPath(testRoot)
                 : Path.Combine(local,"SeryMente","OCP MCP");
             var store=new SqliteStore(dataRoot);
