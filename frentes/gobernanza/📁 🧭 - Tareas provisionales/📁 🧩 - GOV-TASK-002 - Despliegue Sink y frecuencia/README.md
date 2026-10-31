@@ -25,3 +25,10 @@ Obtener acceso autorizado a Cloudflare y habilitar la vía autorizada de fork/de
 ## Criterio de cierre
 
 Marcar como completada solo cuando el enunciado haya sido atendido, la evidencia correspondiente sea recuperable y el resultado haya sido leído de vuelta en la fuente canónica aplicable.
+
+
+## Revisión de alcance · instrucción del operador · 2026-10-31
+
+El título y diseño Sink/Cloudflare quedan como antecedente histórico en revisión, no como autorización vigente para desplegar esa infraestructura. El objetivo actual es obtener enlaces Sync acortados e individuales para GOW/§ARR, DUG y principios desarrollados, con resolución y telemetría de frecuencia compatibles con el contrato de OCP MCP.
+
+**No ejecutar** despliegue Sink, creación de aliases p001–p043 ni recursos Cloudflare por inercia. Primero OCP MCP debe informar si su arquitectura 0.1.0 puede generar/servir los enlaces Sync requeridos, registrar cada acceso y devolver evidencia de integridad. Gobernanza define requisitos y acepta resultados; la implementación del servidor pertenece al OCP MCP. No asumir que «Sink» y «Sync» son el mismo servicio.
