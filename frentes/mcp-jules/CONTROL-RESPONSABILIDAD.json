@@ -2,30 +2,34 @@
   "schema": "responsabilidad/1",
   "front": "mcp-jules",
   "status": "owned",
-  "owner_thread": "chatgpt-C-MCP-JULES-005-SES-20261029-6C2F9A17",
-  "instance": "chatgpt-mcp-jules-2026-10-29-6C2F9A17",
-  "generation": 2,
-  "authorization_ref": "C-MCP-JULES-001; direct operator authorization in this conversation; independent front inside Metacanon; Samantha v340 P004/P006/P007/P019/P024/P037/P039; Metacanon §§46–48 and §51. Explicit operator authorization in the receiving conversation on 2026-10-29: “Sí”, approving this conversation to assume frentes/mcp-jules/ and replace the registered owner. Scope is limited to this front and observed control.",
+  "owner_thread": "chatgpt-C-MCP-JULES-015-01a18f95-61cf-70ce-9321-c56fbd3cc99d",
+  "instance": "chatgpt-mcp-jules-2026-10-30-01a18f95",
+  "generation": 3,
+  "authorization_ref": "C-MCP-JULES-001; direct operator authorization in this conversation; independent front inside Metacanon; Samantha v340 P004/P006/P007/P019/P024/P037/P039; Metacanon §§46–48 and §51. Explicit operator authorization in the receiving conversation on 2026-10-29: “Sí”, approving this conversation to assume frentes/mcp-jules/ and replace the registered owner. Scope is limited to this front and observed control. Explicit current operator instruction on 2026-10-30: use the sole active RDC session and assume the current MCP Jules front. The operator also confirmed no manual Bearer/token copy/paste and no manual commands; ChatGPT must operate through RDC and Khora OAuth. Transfer event C-MCP-JULES-015; limited to frentes/mcp-jules/ and this observed generation-2 control.",
   "scope": "Exclusive working responsibility for frentes/mcp-jules/ only. Does not transfer or mutate ownership of frentes/metacanon/ or any other front. Cooperative control; not server-enforced fencing against arbitrary writers.",
   "expiry": null,
-  "session_folio": "SES-20261029-6C2F9A17",
+  "session_folio": null,
   "session_assignment": {
     "status": "active",
-    "folio": "SES-20261029-6C2F9A17",
-    "assigned_on": "2026-10-29",
+    "folio": null,
+    "folio_status": "PENDING_NOT_ASSIGNED_FOL1_INACTIVE",
+    "assigned_on": "2026-10-30",
     "front_ocp": "frentes/mcp-jules/",
-    "owner_alias": "chatgpt-C-MCP-JULES-005-SES-20261029-6C2F9A17",
-    "instance": "chatgpt-mcp-jules-2026-10-29-6C2F9A17",
-    "generation": 2,
-    "identity_kind": "operational alias and folio; not a native ChatGPT conversation ID",
-    "uniqueness_check": "Exact candidate folio searched in connected GitHub code search across SeryMente on 2026-10-29; zero results. This is a bounded check, not proof of organization-wide uniqueness.",
+    "owner_alias": "chatgpt-C-MCP-JULES-015-01a18f95-61cf-70ce-9321-c56fbd3cc99d",
+    "instance": "chatgpt-mcp-jules-2026-10-30-01a18f95",
+    "generation": 3,
+    "identity_kind": "operational alias; not a native ChatGPT conversation ID",
+    "uniqueness_check": "Exact owner alias and event searched through connected GitHub code search scoped to SeryMente/metodologia; zero matches returned. This is a bounded check, not proof of global uniqueness.",
     "checked_scope": [
-      "GitHub code search query SES-20261029-6C2F9A17 scoped to SeryMente",
-      "SeryMente/metodologia:frentes/mcp-jules/CONTROL-RESPONSABILIDAD.json read from the PR branch before transfer"
+      "SeryMente/metodologia branch feat/metacanon-mcp-jules-20261025-c32f81: CONTROL-RESPONSABILIDAD.json read at blob 6b5e9cb7a93af95e029100b48bcaa74d618354a2",
+      "Exact alias search: chatgpt-C-MCP-JULES-015-01a18f95-61cf-70ce-9321-c56fbd3cc99d",
+      "Exact event search: C-MCP-JULES-015",
+      "Current OCP branch head observed after original document upload: a5a42c8a4f9c9aec16463b36b367ebbfa521ba13"
     ],
     "unverified_scope": [
       "Repositories/controls not exposed or indexed by the connected GitHub integration",
-      "Global uniqueness outside accessible and indexed sources"
+      "Global uniqueness beyond accessible and indexed sources",
+      "FOL1 activation and global/OCP folio assignment"
     ]
   },
   "transfer": {
@@ -35,63 +39,120 @@
     "note": "The canonical Metacanon control remains at generation 4 and retains its existing owner/folio. This control applies only to the new mcp-jules front."
   },
   "ownership_transfer": {
-    "event": "C-MCP-JULES-005",
-    "date": "2026-10-29",
+    "event": "C-MCP-JULES-015",
+    "date": "2026-10-30",
     "previous_owner": {
-      "owner_thread": "chatgpt-C-MCP-JULES-001-SES-20261025-84D3B2F1",
-      "instance": "chatgpt-mcp-jules-2026-10-25",
-      "generation": 1,
-      "session_folio": "SES-20261025-84D3B2F1",
+      "owner_thread": "chatgpt-C-MCP-JULES-005-SES-20261029-6C2F9A17",
+      "instance": "chatgpt-mcp-jules-2026-10-29-6C2F9A17",
+      "generation": 2,
+      "session_folio": "SES-20261029-6C2F9A17",
       "session_assignment": {
         "status": "active",
-        "folio": "SES-20261025-84D3B2F1",
-        "assigned_on": "2026-10-25",
+        "folio": "SES-20261029-6C2F9A17",
+        "assigned_on": "2026-10-29",
         "front_ocp": "frentes/mcp-jules/",
-        "owner_alias": "chatgpt-C-MCP-JULES-001-SES-20261025-84D3B2F1",
-        "instance": "chatgpt-mcp-jules-2026-10-25",
-        "generation": 1,
+        "owner_alias": "chatgpt-C-MCP-JULES-005-SES-20261029-6C2F9A17",
+        "instance": "chatgpt-mcp-jules-2026-10-29-6C2F9A17",
+        "generation": 2,
         "identity_kind": "operational alias and folio; not a native ChatGPT conversation ID",
-        "uniqueness_check": "Bounded check on 2026-10-25: the candidate folio did not appear in connected GitHub code search or the readable main-branch controls inspected across SeryMente repositories. This does not prove organization-wide uniqueness beyond the accessible files.",
+        "uniqueness_check": "Exact candidate folio searched in connected GitHub code search across SeryMente on 2026-10-29; zero results. This is a bounded check, not proof of organization-wide uniqueness.",
         "checked_scope": [
-          "SeryMente/metodologia:frentes/metacanon/CONTROL-RESPONSABILIDAD.json",
-          "SeryMente/metodologia:frentes/acceso/CONTROL-RESPONSABILIDAD.json",
-          "SeryMente/khora:docs/frentes/dictado-voz/CONTROL-RESPONSABILIDAD.json",
-          "SeryMente/khora:docs/frentes/harmonia/CONTROL-RESPONSABILIDAD.json",
-          "SeryMente/signal-interpreter:docs/frentes/signal-interpreter/CONTROL-RESPONSABILIDAD.json",
-          "SeryMente/personal:frentes/repertorio-canto-personal/CONTROL-RESPONSABILIDAD.json"
+          "GitHub code search query SES-20261029-6C2F9A17 scoped to SeryMente",
+          "SeryMente/metodologia:frentes/mcp-jules/CONTROL-RESPONSABILIDAD.json read from the PR branch before transfer"
         ],
         "unverified_scope": [
-          "Inaccessible repositories or controls not exposed by the connected GitHub integration",
-          "Global uniqueness beyond the accessible main-branch files"
+          "Repositories/controls not exposed or indexed by the connected GitHub integration",
+          "Global uniqueness outside accessible and indexed sources"
         ]
       }
     },
-    "authorization": "Operator explicitly answered “Sí” to authorize this conversation to assume MCP Jules and replace the registered owner.",
+    "authorization": "Current operator explicitly instructed: “La sesion local activa de RDC, es la unica disponible, yte s la que debes usar. no te la compliquyes mas con ese tema, y asume la sesiona ctual, coo la unica.” Interpretation: assign this active RDC session as the sole receiver and transfer responsibility of the MCP Jules front. No native ChatGPT conversation ID is exposed; the receiver is identified only by the operational alias below.",
     "receiver": {
-      "owner_thread": "chatgpt-C-MCP-JULES-005-SES-20261029-6C2F9A17",
-      "instance": "chatgpt-mcp-jules-2026-10-29-6C2F9A17",
-      "session_folio": "SES-20261029-6C2F9A17",
+      "owner_thread": "chatgpt-C-MCP-JULES-015-01a18f95-61cf-70ce-9321-c56fbd3cc99d",
+      "instance": "chatgpt-mcp-jules-2026-10-30-01a18f95",
+      "session_folio": null,
       "identity_kind": "operational alias; not a native conversation ID"
     },
-    "prior_control_blob_sha": "d71de863f2edbf3d9094f321c956257169640628",
+    "prior_control_blob_sha": "6b5e9cb7a93af95e029100b48bcaa74d618354a2",
     "observed_document_branch": "feat/metacanon-mcp-jules-20261025-c32f81",
-    "observed_pr_head_sha": "085731916f1a2435bdfb67b0aee9c05df304ee4d",
-    "old_generation": 1,
-    "new_generation": 2,
-    "scope": "frentes/mcp-jules/ only; parent Metacanon and all other front controls remain unchanged",
-    "write_status": "verified_readback",
+    "observed_pr_head_sha": "a5a42c8a4f9c9aec16463b36b367ebbfa521ba13",
+    "old_generation": 2,
+    "new_generation": 3,
+    "scope": "frentes/mcp-jules/ only. No ownership change to frentes/metacanon/ or any other front.",
+    "write_status": "committed_pending_readback",
     "verification": {
-      "readback_blob_sha": "138a589e9a74df8a8c320f4e86c2d752e267c8a1",
+      "status": "pending",
+      "folio_status": "PENDING_NOT_ASSIGNED_FOL1_INACTIVE",
       "verified_fields": [
         "owner_thread",
         "instance",
-        "session_folio",
         "generation",
+        "session_folio",
         "prior_control_blob_sha",
         "event"
-      ],
-      "verified_generation": 2,
-      "verified_at": "2026-10-29"
+      ]
     }
-  }
+  },
+  "ownership_transfer_history": [
+    {
+      "event": "C-MCP-JULES-005",
+      "date": "2026-10-29",
+      "previous_owner": {
+        "owner_thread": "chatgpt-C-MCP-JULES-001-SES-20261025-84D3B2F1",
+        "instance": "chatgpt-mcp-jules-2026-10-25",
+        "generation": 1,
+        "session_folio": "SES-20261025-84D3B2F1",
+        "session_assignment": {
+          "status": "active",
+          "folio": "SES-20261025-84D3B2F1",
+          "assigned_on": "2026-10-25",
+          "front_ocp": "frentes/mcp-jules/",
+          "owner_alias": "chatgpt-C-MCP-JULES-001-SES-20261025-84D3B2F1",
+          "instance": "chatgpt-mcp-jules-2026-10-25",
+          "generation": 1,
+          "identity_kind": "operational alias and folio; not a native ChatGPT conversation ID",
+          "uniqueness_check": "Bounded check on 2026-10-25: the candidate folio did not appear in connected GitHub code search or the readable main-branch controls inspected across SeryMente repositories. This does not prove organization-wide uniqueness beyond the accessible files.",
+          "checked_scope": [
+            "SeryMente/metodologia:frentes/metacanon/CONTROL-RESPONSABILIDAD.json",
+            "SeryMente/metodologia:frentes/acceso/CONTROL-RESPONSABILIDAD.json",
+            "SeryMente/khora:docs/frentes/dictado-voz/CONTROL-RESPONSABILIDAD.json",
+            "SeryMente/khora:docs/frentes/harmonia/CONTROL-RESPONSABILIDAD.json",
+            "SeryMente/signal-interpreter:docs/frentes/signal-interpreter/CONTROL-RESPONSABILIDAD.json",
+            "SeryMente/personal:frentes/repertorio-canto-personal/CONTROL-RESPONSABILIDAD.json"
+          ],
+          "unverified_scope": [
+            "Inaccessible repositories or controls not exposed by the connected GitHub integration",
+            "Global uniqueness beyond the accessible main-branch files"
+          ]
+        }
+      },
+      "authorization": "Operator explicitly answered “Sí” to authorize this conversation to assume MCP Jules and replace the registered owner.",
+      "receiver": {
+        "owner_thread": "chatgpt-C-MCP-JULES-005-SES-20261029-6C2F9A17",
+        "instance": "chatgpt-mcp-jules-2026-10-29-6C2F9A17",
+        "session_folio": "SES-20261029-6C2F9A17",
+        "identity_kind": "operational alias; not a native conversation ID"
+      },
+      "prior_control_blob_sha": "d71de863f2edbf3d9094f321c956257169640628",
+      "observed_document_branch": "feat/metacanon-mcp-jules-20261025-c32f81",
+      "observed_pr_head_sha": "085731916f1a2435bdfb67b0aee9c05df304ee4d",
+      "old_generation": 1,
+      "new_generation": 2,
+      "scope": "frentes/mcp-jules/ only; parent Metacanon and all other front controls remain unchanged",
+      "write_status": "verified_readback",
+      "verification": {
+        "readback_blob_sha": "138a589e9a74df8a8c320f4e86c2d752e267c8a1",
+        "verified_fields": [
+          "owner_thread",
+          "instance",
+          "session_folio",
+          "generation",
+          "prior_control_blob_sha",
+          "event"
+        ],
+        "verified_generation": 2,
+        "verified_at": "2026-10-29"
+      }
+    }
+  ]
 }
