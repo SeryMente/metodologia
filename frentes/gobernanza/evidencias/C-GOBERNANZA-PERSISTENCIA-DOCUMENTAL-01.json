@@ -1,0 +1,63 @@
+{
+  "schema": "governance-cycle-evidence/1",
+  "event_id": "C-GOBERNANZA-PERSISTENCIA-DOCUMENTAL-01",
+  "recorded_on": "2026-10-30",
+  "status": "write_and_transfer_commit_prepared_readback_pending",
+  "cycle_folio": null,
+  "fol1_status": "PREPARADO_PENDIENTE_ACTIVACION_IPZ",
+  "authorization": {
+    "status": "explicit",
+    "source": "operator instruction in the receiving conversation",
+    "verbatim": "ChatGPT-GOBERNANZA-20261030-1857.md\n\nusa rdc local para ir a downloads y adjuntar este texto a persistencia documental de frente GOBERNANZA, y asume repsonsabilidad del frente.",
+    "transfer_event": "C-GOBERNANZA-RETOMA-06",
+    "source_control_path": "frentes/gobernanza/CONTROL-RESPONSABILIDAD.json",
+    "source_control_blob_sha": "f670960bdedf1a4747743b3216cd181722a924ec",
+    "source_generation": 6,
+    "target_owner": "chatgpt-C-GOBERNANZA-RETOMA-06-SES-20261030-GVC9594230",
+    "target_instance": "chatgpt-gobernanza-documental-2026-10-30-C9594230",
+    "target_session_folio": "SES-20261030-GVC9594230",
+    "target_generation": 7,
+    "target_local_conversation_uuidv7": "01a18f86-7da3-7135-8012-c3dbc9594230",
+    "native_conversation_id": "NOT_EXPOSED",
+    "sibling_controls_checked": 9,
+    "sibling_collisions": 0,
+    "global_uniqueness": "NOT_ESTABLISHED"
+  },
+  "original": {
+    "document_id": "DOC-GOV-CHATGPT-GOBERNANZA-20261030-1857",
+    "original_name": "ChatGPT-GOBERNANZA-20261030-1857.md",
+    "source_path": "C:\\Users\\PC 13\\Downloads\\ChatGPT-GOBERNANZA-20261030-1857.md",
+    "source_device": "PC-14",
+    "target_path": "frentes/gobernanza/documentos/originales/ChatGPT-GOBERNANZA-20261030-1857.md",
+    "size_bytes": 177693,
+    "line_count": 3391,
+    "sha256": "73C0BDA50D67840782C6E1B98A4F14803184CD029FB62D1A60CE77589CCA6C48",
+    "git_blob_sha": "5f6754d1eda125056b661cb7505614cb988eafa5",
+    "method": "RDC local bytes -> Base64 -> Git blob encoding=base64; no content transformation",
+    "manifest_path": "frentes/gobernanza/documentos/MANIFIESTO-DOCUMENTAL.json",
+    "readback_verified": false,
+    "status": "ESCRITO_NO_VERIFICADO"
+  },
+  "canonical_source": {
+    "path": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.html",
+    "version": "v373",
+    "signature": "NX-373m",
+    "gow": "2.14",
+    "modified": false
+  },
+  "boundaries": {
+    "dug_modified": false,
+    "art_025_modified": false,
+    "ipz_native_modified": false,
+    "fol1_activated": false,
+    "separate_tareas_ocp_modified": false,
+    "separate_tareas_ocp_transferred": false,
+    "global_conversation_cycle_ab_folios_assigned": false
+  },
+  "expected_main_parent": "1dd4c4e35d5097d28485b86c0f37ec0faf096cb9",
+  "verification_pending": [
+    "GitHub main ref compare-and-swap and new commit confirmation",
+    "Original read-back via fetch_file encoding=base64 and exact comparison",
+    "Manifest entry and control generation 7 read-back"
+  ]
+}

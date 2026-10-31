@@ -1,15 +1,24 @@
 # Núcleo operativo · Gobernanza
 
+## Entrada documental recibida · C-GOBERNANZA-PERSISTENCIA-DOCUMENTAL-01 · 2026-10-30
+
+Se incorporó como original el archivo [ChatGPT-GOBERNANZA-20261030-1857.md](documentos/originales/ChatGPT-GOBERNANZA-20261030-1857.md), exportación de conversación de 3,391 líneas y 177,693 bytes recibida desde `C:\\Users\\PC 13\\Downloads` mediante RDC. SHA-256 de origen: `73C0BDA50D67840782C6E1B98A4F14803184CD029FB62D1A60CE77589CCA6C48`. Blob Git: `5f6754d1eda125056b661cb7505614cb988eafa5`. Manifiesto: [MANIFIESTO-DOCUMENTAL.json](documentos/MANIFIESTO-DOCUMENTAL.json). Estado en esta escritura: `ESCRITO_NO_VERIFICADO`; la lectura de vuelta determinará el estado final.
+
+**Responsabilidad transferida:** `chatgpt-C-GOBERNANZA-RETOMA-06-SES-20261030-GVC9594230`, sesión `SES-20261030-GVC9594230`, generación 7; UUIDv7 local `01a18f86-7da3-7135-8012-c3dbc9594230`, no ID nativo. Evento `C-GOBERNANZA-RETOMA-06`. FOL1 sigue preparado e inactivo; no se asignó folio global de ciclo. El DUG v373 · NX-373m se conservó sin modificación en esta operación; tampoco se modificaron ART-025, IPZ nativa ni `ambitos/tareas/`.
+
+---
+
+
 **Frente:** Gobernanza.  
 **Repositorio:** `SeryMente/metodologia`.  
 **OCP:** `frentes/gobernanza/`.  
 **Evento de apertura:** `C-GOBERNANZA-INICIO-01`.  
-**Último ciclo legado del histórico anterior:** `C-20261029-5510927B` · `C-GOBERNANZA-AT-ENDURECIMIENTO-01`. **Conversación de foliación:** UUIDv7 local `01a18d91-e030-7683-a4fa-7391408f989c`; tres ciclos naturales pre-corte `C-20261030-F0D12375`, `C-20261030-2FB9018D` y `C-20261030-25A998EA`, con lados A/B y folios legados. No son folios FOL1 ni IDs nativos. **Evento más reciente:** `C-GOBERNANZA-MDP-OCP-01`; DUG v371 · NX-371m, ART-027 con 43 microdescriptores de pertinencia (MDP) de 11–16 palabras, consulta Sink obligatoria antes de aplicar un principio pertinente y telemetría solo de frecuencia de consulta. Ocho OCP provisionales de tarea cuelgan de este frente; no canonizan Tareas. Sink y aliases aún no desplegados. ART-025/IPZ sin cambios; FOL1 sigue preparado, sin asignaciones globales/OCP. Instalación nativa no verificada. **Evento de control:** `C-GOBERNANZA-RETOMA-05`.  
+**Último ciclo legado del histórico anterior:** `C-20261029-5510927B` · `C-GOBERNANZA-AT-ENDURECIMIENTO-01`. **Conversación de foliación:** UUIDv7 local `01a18d91-e030-7683-a4fa-7391408f989c`; tres ciclos naturales pre-corte `C-20261030-F0D12375`, `C-20261030-2FB9018D` y `C-20261030-25A998EA`, con lados A/B y folios legados. No son folios FOL1 ni IDs nativos. **Evento más reciente:** `C-GOBERNANZA-MDP-OCP-01`; DUG v373 · NX-373m, ART-027 con 43 microdescriptores de pertinencia (MDP) de 11–16 palabras, consulta Sink obligatoria antes de aplicar un principio pertinente y telemetría solo de frecuencia de consulta. Ocho OCP provisionales de tarea cuelgan de este frente; no canonizan Tareas. Sink y aliases aún no desplegados. ART-025/IPZ sin cambios; FOL1 sigue preparado, sin asignaciones globales/OCP. Instalación nativa no verificada. **Evento de control:** `C-GOBERNANZA-RETOMA-05`.  
 **Sesión inicial (histórica):** `SES-20261028-3F2B7A91`, generación 1.
-**Titular actual según control:** `chatgpt-C-GOBERNANZA-RETOMA-05-SES-20261030-GV89CFA5D5` (alias operativo, no ID nativo).
-**Instancia actual según control:** `chatgpt-gobernanza-retoma-2026-10-30-GV89CFA5D5`.
-**Sesión actual según control:** `SES-20261030-GV89CFA5D5`, generación 6; ciclo legado de transferencia `C-20261030-89CFA5D5`.
-**Control actual leído de vuelta:** blob `f670960bdedf1a4747743b3216cd181722a924ec`; evento `C-GOBERNANZA-RETOMA-05`.
+**Titular actual según control:** `chatgpt-C-GOBERNANZA-RETOMA-06-SES-20261030-GVC9594230` (alias operativo, no ID nativo).
+**Instancia actual según control:** `chatgpt-gobernanza-documental-2026-10-30-C9594230`.
+**Sesión actual según control:** `SES-20261030-GVC9594230`, generación 7; evento de transferencia `C-GOBERNANZA-RETOMA-06`; UUIDv7 local `01a18f86-7da3-7135-8012-c3dbc9594230`; folio de ciclo global no asignado (FOL1 inactivo).
+**Control actual:** transferencia `C-GOBERNANZA-RETOMA-06` escrita en el commit de este ciclo; lectura de vuelta pendiente. Blob anterior: `f670960bdedf1a4747743b3216cd181722a924ec`.
 
 ## Evento más reciente · C-GOBERNANZA-MDP-OCP-01 · 2026-10-30
 

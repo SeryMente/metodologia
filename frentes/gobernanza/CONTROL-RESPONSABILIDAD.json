@@ -2,16 +2,62 @@
   "schema": "responsabilidad/1",
   "front": "gobernanza",
   "status": "active",
-  "owner_thread": "chatgpt-C-GOBERNANZA-RETOMA-05-SES-20261030-GV89CFA5D5",
-  "instance": "chatgpt-gobernanza-retoma-2026-10-30-GV89CFA5D5",
-  "generation": 6,
-  "authorization_ref": "C-GOBERNANZA-RETOMA-05",
-  "scope": "One active owner for this new work front only. Scope: operational maintenance and validation of the unique canonical governance document and its navigation, including only previously authorized minimal repairs. No broad substantive amendment to Samantha or the GOW without explicit authorization. The canonical normative content remains in the single HTML document. Alcance de la autorización adicional: C-GOBERNANZA-TAXONOMIA-ESTRUCTURAL-SYM-01, DUG v354, glosario y estructura jerárquica de anexos. Esta autorización se limita a lo solicitado en el evento y no habilita cambios futuros no autorizados. Alcance autorizado adicional: C-GOBERNANZA-EQUIVALENCIAS-AMBITO-01; actualización de glosario GOW a v2.5 y DUG v355, con tres entradas intercambiables operativamente y puntos de entrada/recibo correspondientes. Esta autorización no se extiende a cambios futuros no solicitados. Autorización explícita del operador en la conversación vigente para C-GOBERNANZA-CONTEXTO-GESTION-CONVERSACIONAL-01 (2026-10-28): actualizar el DUG y GOW, incorporar en ART-020 la jerarquía funcional Contexto (nivel funcional 1) → Gestión conversacional (nivel funcional 2), actualizar la proyección estructurada y registrar puntos de entrada, crónica y evidencia. La autorización no asigna otros ámbitos a la rama ni habilita cambios futuros no solicitados. Autorización explícita del operador en la conversación vigente para C-GOBERNANZA-OCP-UBICUO-REVERSA-CONTEXTO-01 (2026-10-28): corregir la taxonomía para que los únicos ámbitos funcionales actuales sean Persistencia documental y Gestión conversacional; retirar Contexto como ámbito y cancelar la relación jerárquica Contexto → Gestión conversacional; preservar como posibilidad la subdivisión futura en niveles 2..N; definir OCP como aplicable a cada nivel taxonómico, con la Metodología en sentido general y abstracto como OCP raíz; añadir al GOW una definición breve de OCP separada de equivalencias terminológicas y alinear DUG, proyección estructurada, puntos de entrada, crónica y evidencia. La autorización no elimina registros históricos ni habilita cambios futuros no solicitados. Autorización operativa derivada del encargo explícito del operador en C-GOBERNANZA-OCP-UBICUO-REVERSA-CONTEXTO-01 (2026-10-28), para C-GOBERNANZA-REFERENCIAS-VERSION-01: corregir una referencia de versión interna obsoleta en el resumen humano de Metacanon, versionar el DUG y alinear metadatos, puntos de entrada, crónica y evidencia. No amplía el contenido sustantivo autorizado ni cambia el esquema de ámbitos u OCP.\n\nAlcance adicional de C-GOBERNANZA-RETOMA-03: retomar la responsabilidad operativa del frente Gobernanza y recuperar/repetir el último ciclo. No habilita por sí solo cambios normativos ni mutaciones en otros frentes.\n\nAutorización expresa del operador en la conversación titular vigente para C-GOBERNANZA-FOLIACION-SECUENCIAL-01 (2026-10-30), texto literal: \"Todavía no prepares el IPZ. primero articula y materializa todo lo demás y al final preparamos la nueva versión del IPZ. haz las modificaciones que tengas que hacer.\" Alcance: articular y materializar la foliación secuencial global y por cada OCP aplicable; modificar únicamente los principios, anexos, glosario, Metacanon, esquemas, registros e índices que sean necesarios para este contrato. Exclusión expresa: no modificar ART-025, el archivo candidato IPZ ni las Instrucciones Personalizadas nativas en esta fase; la nueva IPZ se prepara después. No autoriza reclasificar AT ni cambios normativos ajenos a foliación. Autorización expresa adicional del operador en la conversación vigente (2026-10-30): incorporar al DUG el Conjunto Nuclear de Principios (CNP) con cinco integrantes —P001, P004, P005, P038 y nuevo P043 (Principio Anti-Ineficiencia, PAI)—; establecer la nomenclatura de preponderancia por categoría A–Z y decimal interno; crear ART-026 como anexo subordinado de fundamento del PAI; actualizar la proyección estructurada y las definiciones GOW/§ARR necesarias. La IPZ debe reforzar la consideración del CNP en cada turno sin sustituir la obligación de considerar el DUG completo. Preparar la actualización de ART-025 y del archivo candidato IPZ solo después de materializar las demás modificaciones. No se autoriza ni se afirma la modificación de las Instrucciones Personalizadas nativas de la plataforma. Autorización expresa adicional del operador (2026-10-30): eliminar la variable de posición y los identificadores ordinales CNP-01 a CNP-05. La categoría de preponderancia A identifica por sí sola la pertenencia al Conjunto Nuclear de Principios (CNP); conservar, cuando proceda, el decimal interno para ordenar la preponderancia relativa, sin asignar ordinal CNP. Ajustar el DUG humano y estructurado, GOW y artefactos operativos afectados. Preservar los identificadores de principios Pxxx, la pertenencia de los cinco principios y el resto de normas.\n\nAutorización expresa del operador en la conversación titular vigente (2026-10-30): ampliar ART-025 para documentar la arquitectura de la IPZ como interfaz compacta de navegación y refuerzo selectivo del DUG, no como duplicado de instrucciones ni fuente normativa paralela; establecer como requisito que el DUG mantenga secciones concretas con anclas estables y enlaces profundos verificables; documentar la secuencia, los criterios de diseño, legibilidad funcional mediante emojis, versionado obligatorio, límite estricto inferior a 1.500 caracteres, validación semántica y de enlaces, y la prohibición de guardar propuestas/candidatas IPZ en el repositorio. Se autoriza añadir únicamente los anclajes de navegación mínimos de ART-024 que permitan referencias directas de IPZ a registro, trazabilidad y foliación; no se autoriza guardar el contenido IPZ candidato en ningún archivo del repositorio ni modificar las Instrucciones Personalizadas nativas.\n\nAutorización expresa del operador en la conversación titular vigente (2026-10-30) para C-GOBERNANZA-PRINCIPIOS-DOS-CAPAS-01: calcular dependencias, incorporar al DUG el catálogo de los 43 principios con nombre canónico y abstracción general de una frase, documentar la estrategia de dos capas mediante un nuevo anexo ART-027, establecer la consulta individual de principios desarrollados mediante enlaces Sink y registrar telemetría diferenciando consideración, selección, consulta y aplicación. Se autoriza actualizar el DUG, sus índices/puntos de entrada y los registros de crónica/evidencia del frente Gobernanza. Límites de esta autorización: no modificar los enunciados normativos existentes ni ART-025/IPZ; no publicar el repositorio o sus principios privados; no almacenar credenciales en Git; no declarar creados o verificados enlaces, instancia Sink, despliegue Cloudflare o telemetría real sin evidencia. Los elementos que requieran cuenta, credenciales, despliegue externo o decisión de exposición privada quedan documentados como dependencias pendientes y no se simulan.\n\nAutorización expresa del operador en la conversación titular vigente (2026-10-30) para C-GOBERNANZA-MDP-OCP-01: redefinir ART-027 y la estrategia de dos capas para que el inventario contenga únicamente el nombre canónico y un microdescriptor de pertinencia (MDP) deliberadamente insuficiente para aplicar íntegramente el principio, pero suficiente para reconocer su significado general y sus circunstancias probables de activación; exigir por defecto la consulta de la versión normativa desarrollada mediante Sink antes de aplicar un principio pertinente; medir únicamente la frecuencia de consulta por principio, sin telemetría de aplicación ni registros semánticos de aplicación por ciclo. Se autoriza también crear dentro del OCP Gobernanza una agrupación provisional con objetos persistentes individuales para las tareas pendientes de este frente, sin declarar construido o canonizado el ámbito funcional Tareas. Cada objeto heredará la responsabilidad del OCP Gobernanza; no se crearán controles/sesiones independientes ni se modificará el OCP existente ambitos/tareas/ mientras su titularidad siga en la sesión distinta registrada. Se autoriza actualizar DUG, índices, crónica, evidencia, núcleo, pendientes y punto de entrada del frente en el alcance estrictamente necesario. No se autoriza modificar los enunciados normativos de principios distintos de ART-027 ni canonizar el ámbito Tareas.",
+  "owner_thread": "chatgpt-C-GOBERNANZA-RETOMA-06-SES-20261030-GVC9594230",
+  "instance": "chatgpt-gobernanza-documental-2026-10-30-C9594230",
+  "generation": 7,
+  "authorization_ref": "C-GOBERNANZA-RETOMA-06",
+  "scope": "One active owner for this new work front only. Scope: operational maintenance and validation of the unique canonical governance document and its navigation, including only previously authorized minimal repairs. No broad substantive amendment to Samantha or the GOW without explicit authorization. The canonical normative content remains in the single HTML document. Alcance de la autorización adicional: C-GOBERNANZA-TAXONOMIA-ESTRUCTURAL-SYM-01, DUG v354, glosario y estructura jerárquica de anexos. Esta autorización se limita a lo solicitado en el evento y no habilita cambios futuros no autorizados. Alcance autorizado adicional: C-GOBERNANZA-EQUIVALENCIAS-AMBITO-01; actualización de glosario GOW a v2.5 y DUG v355, con tres entradas intercambiables operativamente y puntos de entrada/recibo correspondientes. Esta autorización no se extiende a cambios futuros no solicitados. Autorización explícita del operador en la conversación vigente para C-GOBERNANZA-CONTEXTO-GESTION-CONVERSACIONAL-01 (2026-10-28): actualizar el DUG y GOW, incorporar en ART-020 la jerarquía funcional Contexto (nivel funcional 1) → Gestión conversacional (nivel funcional 2), actualizar la proyección estructurada y registrar puntos de entrada, crónica y evidencia. La autorización no asigna otros ámbitos a la rama ni habilita cambios futuros no solicitados. Autorización explícita del operador en la conversación vigente para C-GOBERNANZA-OCP-UBICUO-REVERSA-CONTEXTO-01 (2026-10-28): corregir la taxonomía para que los únicos ámbitos funcionales actuales sean Persistencia documental y Gestión conversacional; retirar Contexto como ámbito y cancelar la relación jerárquica Contexto → Gestión conversacional; preservar como posibilidad la subdivisión futura en niveles 2..N; definir OCP como aplicable a cada nivel taxonómico, con la Metodología en sentido general y abstracto como OCP raíz; añadir al GOW una definición breve de OCP separada de equivalencias terminológicas y alinear DUG, proyección estructurada, puntos de entrada, crónica y evidencia. La autorización no elimina registros históricos ni habilita cambios futuros no solicitados. Autorización operativa derivada del encargo explícito del operador en C-GOBERNANZA-OCP-UBICUO-REVERSA-CONTEXTO-01 (2026-10-28), para C-GOBERNANZA-REFERENCIAS-VERSION-01: corregir una referencia de versión interna obsoleta en el resumen humano de Metacanon, versionar el DUG y alinear metadatos, puntos de entrada, crónica y evidencia. No amplía el contenido sustantivo autorizado ni cambia el esquema de ámbitos u OCP.\n\nAlcance adicional de C-GOBERNANZA-RETOMA-03: retomar la responsabilidad operativa del frente Gobernanza y recuperar/repetir el último ciclo. No habilita por sí solo cambios normativos ni mutaciones en otros frentes.\n\nAutorización expresa del operador en la conversación titular vigente para C-GOBERNANZA-FOLIACION-SECUENCIAL-01 (2026-10-30), texto literal: \"Todavía no prepares el IPZ. primero articula y materializa todo lo demás y al final preparamos la nueva versión del IPZ. haz las modificaciones que tengas que hacer.\" Alcance: articular y materializar la foliación secuencial global y por cada OCP aplicable; modificar únicamente los principios, anexos, glosario, Metacanon, esquemas, registros e índices que sean necesarios para este contrato. Exclusión expresa: no modificar ART-025, el archivo candidato IPZ ni las Instrucciones Personalizadas nativas en esta fase; la nueva IPZ se prepara después. No autoriza reclasificar AT ni cambios normativos ajenos a foliación. Autorización expresa adicional del operador en la conversación vigente (2026-10-30): incorporar al DUG el Conjunto Nuclear de Principios (CNP) con cinco integrantes —P001, P004, P005, P038 y nuevo P043 (Principio Anti-Ineficiencia, PAI)—; establecer la nomenclatura de preponderancia por categoría A–Z y decimal interno; crear ART-026 como anexo subordinado de fundamento del PAI; actualizar la proyección estructurada y las definiciones GOW/§ARR necesarias. La IPZ debe reforzar la consideración del CNP en cada turno sin sustituir la obligación de considerar el DUG completo. Preparar la actualización de ART-025 y del archivo candidato IPZ solo después de materializar las demás modificaciones. No se autoriza ni se afirma la modificación de las Instrucciones Personalizadas nativas de la plataforma. Autorización expresa adicional del operador (2026-10-30): eliminar la variable de posición y los identificadores ordinales CNP-01 a CNP-05. La categoría de preponderancia A identifica por sí sola la pertenencia al Conjunto Nuclear de Principios (CNP); conservar, cuando proceda, el decimal interno para ordenar la preponderancia relativa, sin asignar ordinal CNP. Ajustar el DUG humano y estructurado, GOW y artefactos operativos afectados. Preservar los identificadores de principios Pxxx, la pertenencia de los cinco principios y el resto de normas.\n\nAutorización expresa del operador en la conversación titular vigente (2026-10-30): ampliar ART-025 para documentar la arquitectura de la IPZ como interfaz compacta de navegación y refuerzo selectivo del DUG, no como duplicado de instrucciones ni fuente normativa paralela; establecer como requisito que el DUG mantenga secciones concretas con anclas estables y enlaces profundos verificables; documentar la secuencia, los criterios de diseño, legibilidad funcional mediante emojis, versionado obligatorio, límite estricto inferior a 1.500 caracteres, validación semántica y de enlaces, y la prohibición de guardar propuestas/candidatas IPZ en el repositorio. Se autoriza añadir únicamente los anclajes de navegación mínimos de ART-024 que permitan referencias directas de IPZ a registro, trazabilidad y foliación; no se autoriza guardar el contenido IPZ candidato en ningún archivo del repositorio ni modificar las Instrucciones Personalizadas nativas.\n\nAutorización expresa del operador en la conversación titular vigente (2026-10-30) para C-GOBERNANZA-PRINCIPIOS-DOS-CAPAS-01: calcular dependencias, incorporar al DUG el catálogo de los 43 principios con nombre canónico y abstracción general de una frase, documentar la estrategia de dos capas mediante un nuevo anexo ART-027, establecer la consulta individual de principios desarrollados mediante enlaces Sink y registrar telemetría diferenciando consideración, selección, consulta y aplicación. Se autoriza actualizar el DUG, sus índices/puntos de entrada y los registros de crónica/evidencia del frente Gobernanza. Límites de esta autorización: no modificar los enunciados normativos existentes ni ART-025/IPZ; no publicar el repositorio o sus principios privados; no almacenar credenciales en Git; no declarar creados o verificados enlaces, instancia Sink, despliegue Cloudflare o telemetría real sin evidencia. Los elementos que requieran cuenta, credenciales, despliegue externo o decisión de exposición privada quedan documentados como dependencias pendientes y no se simulan.\n\nAutorización expresa del operador en la conversación titular vigente (2026-10-30) para C-GOBERNANZA-MDP-OCP-01: redefinir ART-027 y la estrategia de dos capas para que el inventario contenga únicamente el nombre canónico y un microdescriptor de pertinencia (MDP) deliberadamente insuficiente para aplicar íntegramente el principio, pero suficiente para reconocer su significado general y sus circunstancias probables de activación; exigir por defecto la consulta de la versión normativa desarrollada mediante Sink antes de aplicar un principio pertinente; medir únicamente la frecuencia de consulta por principio, sin telemetría de aplicación ni registros semánticos de aplicación por ciclo. Se autoriza también crear dentro del OCP Gobernanza una agrupación provisional con objetos persistentes individuales para las tareas pendientes de este frente, sin declarar construido o canonizado el ámbito funcional Tareas. Cada objeto heredará la responsabilidad del OCP Gobernanza; no se crearán controles/sesiones independientes ni se modificará el OCP existente ambitos/tareas/ mientras su titularidad siga en la sesión distinta registrada. Se autoriza actualizar DUG, índices, crónica, evidencia, núcleo, pendientes y punto de entrada del frente en el alcance estrictamente necesario. No se autoriza modificar los enunciados normativos de principios distintos de ART-027 ni canonizar el ámbito Tareas. Additional explicit scope (C-GOBERNANZA-RETOMA-06, 2026-10-30): assume responsibility for frentes/gobernanza/ in this receiving session and preserve the supplied conversation export at the canonical documentary path. No normative changes to the DUG, ART-025, IPZ, or the separate ambitos/tareas/ OCP are authorized by this transfer.",
   "expiry": null,
-  "handoff": "Transferred under C-GOBERNANZA-RETOMA-05 from chatgpt-C-GOBERNANZA-RETOMA-04-SES-20261029-GV5KGJY8U5J (instance chatgpt-gobernanza-retoma-2026-10-29-GV5KGJY8U5J, generation 5, folio SES-20261029-GV5KGJY8U5J) to chatgpt-C-GOBERNANZA-RETOMA-05-SES-20261030-GV89CFA5D5 (instance chatgpt-gobernanza-retoma-2026-10-30-GV89CFA5D5, generation 6, folio SES-20261030-GV89CFA5D5). Operator explicitly requested resumption. Scope remains the existing authorized foliación sequence. The native ChatGPT conversation ID is not exposed.",
-  "session_folio": "SES-20261030-GV89CFA5D5",
+  "handoff": "Transferred under C-GOBERNANZA-RETOMA-06 from chatgpt-C-GOBERNANZA-RETOMA-05-SES-20261030-GV89CFA5D5 (generation 6) to chatgpt-C-GOBERNANZA-RETOMA-06-SES-20261030-GVC9594230 (generation 7). Native ChatGPT conversation ID not exposed; operational UUIDv7 assigned locally. FOL1 remains prepared/inactive; no global cycle folio assigned.",
+  "session_folio": "SES-20261030-GVC9594230",
   "session_assignment": {
     "status": "active",
+    "folio": "SES-20261030-GVC9594230",
+    "assigned_on": "2026-10-30",
+    "front_ocp": "frentes/gobernanza/",
+    "owner_alias": "chatgpt-C-GOBERNANZA-RETOMA-06-SES-20261030-GVC9594230",
+    "instance": "chatgpt-gobernanza-documental-2026-10-30-C9594230",
+    "generation": 7,
+    "identity_kind": "operational alias; native ChatGPT conversation ID not exposed",
+    "uniqueness_check": "No collision in nine accessible sibling responsibility controls; global uniqueness is not established.",
+    "checked_control_scope": [
+      "SeryMente/metodologia:frentes/gobernanza/CONTROL-RESPONSABILIDAD.json",
+      "SeryMente/metodologia:frentes/metacanon/CONTROL-RESPONSABILIDAD.json",
+      "SeryMente/metodologia:frentes/acceso/CONTROL-RESPONSABILIDAD.json",
+      "SeryMente/metodologia:frentes/radar-profesional/CONTROL-RESPONSABILIDAD.json",
+      "SeryMente/metodologia:ambitos/tareas/CONTROL-RESPONSABILIDAD.json",
+      "SeryMente/khora:docs/frentes/dictado-voz/CONTROL-RESPONSABILIDAD.json",
+      "SeryMente/khora:docs/frentes/harmonia/CONTROL-RESPONSABILIDAD.json",
+      "SeryMente/khora:frentes/custodia/CONTROL-RESPONSABILIDAD.json",
+      "SeryMente/signal-interpreter:docs/frentes/signal-interpreter/CONTROL-RESPONSABILIDAD.json",
+      "SeryMente/personal:frentes/repertorio-canto-personal/CONTROL-RESPONSABILIDAD.json"
+    ],
+    "source_sha_before": "f670960bdedf1a4747743b3216cd181722a924ec",
+    "source_main_head_sha": "1dd4c4e35d5097d28485b86c0f37ec0faf096cb9",
+    "cycle_folio": null,
+    "event_id": "C-GOBERNANZA-RETOMA-06",
+    "local_conversation_uuidv7": "01a18f86-7da3-7135-8012-c3dbc9594230"
+  },
+  "initialization": {
+    "event_id": "C-GOBERNANZA-INICIO-01",
+    "cycle_folio": "C-20261028-4B81D65C",
+    "recorded_on": "2026-10-28",
+    "authorization": "Explicit instruction in this conversation to retain the name Metacanon and create a separate Gobernanza work front for the single canonical governance document, for now.",
+    "repository": "SeryMente/metodologia",
+    "ocp_path": "frentes/gobernanza/",
+    "canonical_governance_path": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.html",
+    "canonical_governance_version": "Gobernanza única Samantha v345",
+    "observed_governance_blob_sha": "4d4d4f7077d58ed48d12bc856bc81ec414fe8733",
+    "initial_state": "The source HTML and its embedded JSON are not yet repaired; see GOBERNANZA.md.",
+    "boundaries": {
+      "metacanon_front_preserved": true,
+      "canonical_normative_document_remains_single": true,
+      "broad_normative_rewrite_authorized": false,
+      "ipz_native_write_capability_confirmed": false
+    }
+  },
+  "previous_session_assignment": {
+    "status": "superseded",
     "folio": "SES-20261030-GV89CFA5D5",
     "assigned_on": "2026-10-30",
     "front_ocp": "frentes/gobernanza/",
@@ -36,99 +82,9 @@
     "source_main_head_sha": "d76dacfb90a29a442f62ee800ebb2305abcbc2c8",
     "cycle_folio": "C-20261030-89CFA5D5",
     "event_id": "C-GOBERNANZA-RETOMA-05",
-    "local_conversation_uuidv7": "01a18dd1-8140-75c4-a51a-629b5f5d9d96"
-  },
-  "initialization": {
-    "event_id": "C-GOBERNANZA-INICIO-01",
-    "cycle_folio": "C-20261028-4B81D65C",
-    "recorded_on": "2026-10-28",
-    "authorization": "Explicit instruction in this conversation to retain the name Metacanon and create a separate Gobernanza work front for the single canonical governance document, for now.",
-    "repository": "SeryMente/metodologia",
-    "ocp_path": "frentes/gobernanza/",
-    "canonical_governance_path": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.html",
-    "canonical_governance_version": "Gobernanza única Samantha v345",
-    "observed_governance_blob_sha": "4d4d4f7077d58ed48d12bc856bc81ec414fe8733",
-    "initial_state": "The source HTML and its embedded JSON are not yet repaired; see GOBERNANZA.md.",
-    "boundaries": {
-      "metacanon_front_preserved": true,
-      "canonical_normative_document_remains_single": true,
-      "broad_normative_rewrite_authorized": false,
-      "ipz_native_write_capability_confirmed": false
-    }
-  },
-  "previous_session_assignment": {
-    "status": "superseded",
-    "folio": "SES-20261029-GV5KGJY8U5J",
-    "assigned_on": "2026-10-29",
-    "front_ocp": "frentes/gobernanza/",
-    "owner_alias": "chatgpt-C-GOBERNANZA-RETOMA-04-SES-20261029-GV5KGJY8U5J",
-    "instance": "chatgpt-gobernanza-retoma-2026-10-29-GV5KGJY8U5J",
-    "generation": 5,
-    "identity_kind": "operational alias; native ChatGPT conversation ID not exposed",
-    "uniqueness_check": "The new session folio/owner alias were checked against the current control contents and generated locally for this transfer; global uniqueness across all repositories/platforms is not established.",
-    "source_sha_before": "3cbefef3f1788067ba59f7f4f09c4c90a16b7069",
-    "source_main_head_sha": "f09eb5f7cab24f7e000ee2701406dc9314d21fe8",
-    "cycle_folio": "C-20261029-01A18A7F",
-    "event_id": "C-GOBERNANZA-RETOMA-04",
-    "local_conversation_uuidv7": "01a18a7f-18c2-7c7f-ab43-632c189ce08d",
+    "local_conversation_uuidv7": "01a18dd1-8140-75c4-a51a-629b5f5d9d96",
     "superseded_on": "2026-10-30",
-    "superseded_by_event": "C-GOBERNANZA-RETOMA-05",
-    "predecessor_assignment": {
-      "status": "superseded",
-      "folio": "SES-20261029-GV4M8Q2R",
-      "assigned_on": "2026-10-29",
-      "front_ocp": "frentes/gobernanza/",
-      "owner_alias": "chatgpt-C-GOBERNANZA-RETOMA-03-SES-20261029-GV4M8Q2R",
-      "instance": "chatgpt-gobernanza-retoma-2026-10-29-GV4M8Q2R",
-      "generation": 4,
-      "identity_kind": "operational session folio; not a native ChatGPT conversation ID",
-      "uniqueness_check": "Exact code searches for event, cycle folio, session folio, owner alias, and instance returned zero. Responsibility controls in visible trees of nine accessible repositories were scanned; trees were non-truncated. Global uniqueness and server-enforced exclusivity are not established.",
-      "source_sha_before": "a3cebd377ba1cb996e3bc14a48a1a1d24bb67670",
-      "source_main_head_sha": "8e02f0e4b66eb6e10c25ccc7c9c1106b90291865",
-      "checked_paths": [
-        "SeryMente/khora:docs/frentes/dictado-voz/CONTROL-RESPONSABILIDAD.json",
-        "SeryMente/khora:docs/frentes/harmonia/CONTROL-RESPONSABILIDAD.json",
-        "SeryMente/khora:frentes/custodia/CONTROL-RESPONSABILIDAD.json",
-        "SeryMente/signal-interpreter:docs/frentes/signal-interpreter/CONTROL-RESPONSABILIDAD.json",
-        "SeryMente/metodologia:ambitos/tareas/CONTROL-RESPONSABILIDAD.json",
-        "SeryMente/metodologia:frentes/acceso/CONTROL-RESPONSABILIDAD.json",
-        "SeryMente/metodologia:frentes/gobernanza/CONTROL-RESPONSABILIDAD.json",
-        "SeryMente/metodologia:frentes/metacanon/CONTROL-RESPONSABILIDAD.json",
-        "SeryMente/metodologia:frentes/radar-profesional/CONTROL-RESPONSABILIDAD.json",
-        "SeryMente/personal:frentes/repertorio-canto-personal/CONTROL-RESPONSABILIDAD.json"
-      ],
-      "cycle_folio": "C-20261029-B7D3F901",
-      "event_id": "C-GOBERNANZA-RETOMA-03",
-      "superseded_on": "2026-10-29",
-      "superseded_by_event": "C-GOBERNANZA-RETOMA-04",
-      "predecessor_assignment": {
-        "status": "superseded",
-        "folio": "SES-20261028-GV3K8P6Q",
-        "assigned_on": "2026-10-28",
-        "front_ocp": "frentes/gobernanza/",
-        "owner_alias": "chatgpt-C-GOBERNANZA-RETOMA-02-SES-20261028-GV3K8P6Q",
-        "instance": "chatgpt-gobernanza-retoma-2026-10-28-GV3K8P6Q",
-        "generation": 3,
-        "identity_kind": "operational session folio; not a native ChatGPT conversation ID",
-        "uniqueness_check": "Exact code searches for event, cycle folio, session folio and alias returned zero; direct scans of all visible responsibility controls in nine accessible, non-truncated repository trees found zero candidate occurrences. Global uniqueness and server-enforced exclusivity are not established.",
-        "source_sha_before": "0ac0a819794622857fb2ef8ebab3385873ab2f68",
-        "checked_paths": [
-          "SeryMente/metodologia:frentes/gobernanza/CONTROL-RESPONSABILIDAD.json",
-          "SeryMente/khora:docs/frentes/dictado-voz/CONTROL-RESPONSABILIDAD.json",
-          "SeryMente/khora:docs/frentes/harmonia/CONTROL-RESPONSABILIDAD.json",
-          "SeryMente/khora:frentes/custodia/CONTROL-RESPONSABILIDAD.json",
-          "SeryMente/signal-interpreter:docs/frentes/signal-interpreter/CONTROL-RESPONSABILIDAD.json",
-          "SeryMente/metodologia:frentes/acceso/CONTROL-RESPONSABILIDAD.json",
-          "SeryMente/metodologia:frentes/metacanon/CONTROL-RESPONSABILIDAD.json",
-          "SeryMente/metodologia:frentes/radar-profesional/CONTROL-RESPONSABILIDAD.json",
-          "SeryMente/personal:frentes/repertorio-canto-personal/CONTROL-RESPONSABILIDAD.json"
-        ],
-        "cycle_folio": "C-20261028-94B6C2D8",
-        "event_id": "C-GOBERNANZA-RETOMA-02",
-        "superseded_on": "2026-10-29",
-        "superseded_by_event": "C-GOBERNANZA-RETOMA-03"
-      }
-    }
+    "superseded_by_event": "C-GOBERNANZA-RETOMA-06"
   },
   "transfers": [
     {
@@ -469,6 +425,58 @@
         "scope_limit": "Bounded to the four accessible repositories searched and the ten readable responsibility controls; global uniqueness and server-enforced exclusivity are not established."
       },
       "mutation_result": "Prepared; pending write and immediate read-back."
+    },
+    {
+      "event_id": "C-GOBERNANZA-RETOMA-06",
+      "cycle_folio": null,
+      "recorded_on": "2026-10-30",
+      "authorized_on": "2026-10-30",
+      "authorization": {
+        "status": "explicit",
+        "source": "operator instruction in the receiving conversation",
+        "verbatim": "ChatGPT-GOBERNANZA-20261030-1857.md\n\nusa rdc local para ir a downloads y adjuntar este texto a persistencia documental de frente GOBERNANZA, y asume repsonsabilidad del frente.",
+        "scope": "Single transfer of frentes/gobernanza/ to this conversation and preservation of the supplied original export; no additional normative amendment or FOL1 activation."
+      },
+      "source_branch": "main",
+      "source_main_head_sha": "1dd4c4e35d5097d28485b86c0f37ec0faf096cb9",
+      "source_control_blob_sha": "f670960bdedf1a4747743b3216cd181722a924ec",
+      "source_generation": 6,
+      "from": {
+        "owner_thread": "chatgpt-C-GOBERNANZA-RETOMA-05-SES-20261030-GV89CFA5D5",
+        "instance": "chatgpt-gobernanza-retoma-2026-10-30-GV89CFA5D5",
+        "generation": 6,
+        "session_folio": "SES-20261030-GV89CFA5D5",
+        "status": "active",
+        "observed_blob_sha": "f670960bdedf1a4747743b3216cd181722a924ec"
+      },
+      "to": {
+        "owner_thread": "chatgpt-C-GOBERNANZA-RETOMA-06-SES-20261030-GVC9594230",
+        "instance": "chatgpt-gobernanza-documental-2026-10-30-C9594230",
+        "generation": 7,
+        "session_folio": "SES-20261030-GVC9594230",
+        "identity_kind": "operational alias; native ChatGPT conversation ID not exposed"
+      },
+      "native_conversation_id": "NOT_EXPOSED; operational alias used",
+      "local_conversation_uuidv7": "01a18f86-7da3-7135-8012-c3dbc9594230",
+      "collision_check": {
+        "checked_control_scope": [
+          "SeryMente/metodologia:frentes/gobernanza/CONTROL-RESPONSABILIDAD.json",
+          "SeryMente/metodologia:frentes/metacanon/CONTROL-RESPONSABILIDAD.json",
+          "SeryMente/metodologia:frentes/acceso/CONTROL-RESPONSABILIDAD.json",
+          "SeryMente/metodologia:frentes/radar-profesional/CONTROL-RESPONSABILIDAD.json",
+          "SeryMente/metodologia:ambitos/tareas/CONTROL-RESPONSABILIDAD.json",
+          "SeryMente/khora:docs/frentes/dictado-voz/CONTROL-RESPONSABILIDAD.json",
+          "SeryMente/khora:docs/frentes/harmonia/CONTROL-RESPONSABILIDAD.json",
+          "SeryMente/khora:frentes/custodia/CONTROL-RESPONSABILIDAD.json",
+          "SeryMente/signal-interpreter:docs/frentes/signal-interpreter/CONTROL-RESPONSABILIDAD.json",
+          "SeryMente/personal:frentes/repertorio-canto-personal/CONTROL-RESPONSABILIDAD.json"
+        ],
+        "accessible_sibling_controls": 9,
+        "conflicting_occurrences": 0,
+        "scope_limit": "No collision in nine accessible sibling control records; global uniqueness and server-enforced exclusivity are not established."
+      },
+      "method": "Git tree/commit and main ref compare-and-swap using expected_sha, followed by canonical read-back.",
+      "mutation_result": "COMMIT_PENDING"
     }
   ]
 }

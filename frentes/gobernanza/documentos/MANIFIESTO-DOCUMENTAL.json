@@ -49,6 +49,27 @@
         "readback_blob_sha": "b5e25527747d74db2b9e5cfe8e855b100d5b6fc7",
         "verified_on": "2026-10-29"
       }
+    },
+    {
+      "document_id": "DOC-GOV-CHATGPT-GOBERNANZA-20261030-1857",
+      "original_name": "ChatGPT-GOBERNANZA-20261030-1857.md",
+      "path": "documentos/originales/ChatGPT-GOBERNANZA-20261030-1857.md",
+      "class": "original",
+      "source_path": "C:\\Users\\PC 13\\Downloads\\ChatGPT-GOBERNANZA-20261030-1857.md",
+      "source_device": "PC-14",
+      "captured_via": "Remote Desktop Commander; source bytes transported as Base64 without document transformation.",
+      "media_type": "text/markdown",
+      "size_bytes": 177693,
+      "sha256": "73C0BDA50D67840782C6E1B98A4F14803184CD029FB62D1A60CE77589CCA6C48",
+      "git_blob_sha": "5f6754d1eda125056b661cb7505614cb988eafa5",
+      "status": "ESCRITO_NO_VERIFICADO",
+      "verification": {
+        "readback": false,
+        "content_cotejo": false,
+        "method": "GitHub Contents API fetch_file encoding=base64; exact byte comparison against RDC source bytes.",
+        "readback_blob_sha": null,
+        "verified_on": null
+      }
     }
   ],
   "originals_commit_sha": "70dd52c716e01676f33eff234db31a1100cbe90f",
@@ -58,6 +79,15 @@
     "result": "PASS",
     "byte_for_byte_match": true,
     "documents_verified": 2,
-    "note": "El SHA-256 se calculó en la fuente local; la lectura de vuelta Base64 coincide íntegramente con el archivo fuente."
+    "note": "El SHA-256 se calculó en la fuente local; la lectura de vuelta Base64 coincide íntegramente con el archivo fuente.",
+    "latest_document_status": "ESCRITO_NO_VERIFICADO",
+    "latest_document_id": "DOC-GOV-CHATGPT-GOBERNANZA-20261030-1857"
+  },
+  "latest_addition_event": {
+    "event_id": "C-GOBERNANZA-PERSISTENCIA-DOCUMENTAL-01",
+    "recorded_on": "2026-10-30",
+    "document_id": "DOC-GOV-CHATGPT-GOBERNANZA-20261030-1857",
+    "verification_status": "ESCRITO_NO_VERIFICADO",
+    "responsibility_transfer": "C-GOBERNANZA-RETOMA-06"
   }
 }
