@@ -1,16 +1,26 @@
 # Pendientes · Frente Gobernanza
 
-## Estado vigente · C-GOBERNANZA-MDP-OCP-01 · 2026-10-30
+## Estado operativo vigente · lectura de continuidad (2026-10-30)
 
-**Persistido y releído:** DUG v371 · NX-371m; ART-027 contiene 43 MDP de 11–16 palabras. El MDP comunica significado y señal de activación, pero es insuficiente para aplicar completamente el principio. Cuando resulte pertinente, la consulta del texto desarrollado vía Sink es obligatoria. La telemetría inicial mide solo frecuencia de acceso; no mide aplicación.
+**Fuente canónica:** DUG v373 · NX-373m; blob `cac4525de77d4f47a8a59c25201968ecf2056b90`. ART-027 contiene la arquitectura de dos capas: 43 MDP para reconocer pertinencia y consulta obligatoria de la norma desarrollada mediante Sink antes de aplicarla. La telemetría aprobada sigue limitada a frecuencia de acceso por alias.
 
-**OCP provisionales:** [registro de ocho tareas](../%F0%9F%93%81%20%F0%9F%A7%AD%20-%20Tareas%20provisionales/README.md). Ocho núcleos con estado pendiente, control heredado de Gobernanza. Tareas no canonizado.
+**Auditoría estructural MDP:** 43/43 IDs únicos; 43 MDP humanos y 43 estructurados con coincidencia literal; todos dentro del rango de 11–16 palabras. La validación semántica mediante casos de entrada permanece abierta (GOV-TASK-001).
 
-**Pendientes ejecutivos:** validar MDP; desplegar Sink y crear aliases p001–p043; probar consulta privada Sink→GitHub; aislar técnicamente la norma desarrollada detrás de Sink (GOV-TASK-008); resolver la incubación Tareas respetando su titular actual; corregir referencias P020/P021/P033/P034 con evidencia y P005; reconciliar divergencias documentales; reconciliar IPZ y activar FOL1 solo tras su aceptación e instalación observable.
+**Responsabilidad del frente:** generación 7, titular `chatgpt-C-GOBERNANZA-RETOMA-06-SES-20261030-GVC9594230`; control leído de vuelta, blob `c41c3cddc866de999827fc6ae36c23dde400344f`. Las ocho tareas provisionales heredan este control y no poseen sesiones ni folios independientes.
 
-**Límites:** Sink/Cloudflare no desplegados; cero aliases activos y cero telemetría real. El DUG aún contiene los 43 textos desarrollados en `gov-data`; la consulta Sink obligatoria es procedimental y no impide técnicamente un acceso directo. `ambitos/tareas/` conserva titularidad de otra sesión, sin modificaciones ni transferencia. FOL1 permanece `PREPARADO_PENDIENTE_ACTIVACION_IPZ`. ART-025 e IPZ permanecen intactos.
+**Estado de tareas:** GOV-TASK-001, GOV-TASK-006 y GOV-TASK-008 en curso; GOV-TASK-002, 003, 004, 005 y 007 pendientes.
 
-Registro: [crónica](cronica/C-GOBERNANZA-MDP-OCP-01.md) · [evidencia](evidencias/C-GOBERNANZA-MDP-OCP-01.json) · [DUG v371 · ART-027](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-027).
+**Pendientes ejecutivos y dependencias:**
+- GOV-TASK-008: definir y ejecutar el aislamiento MDP-only y la recuperación individual; el DUG todavía expone los 43 textos desarrollados en `gov-data`.
+- GOV-TASK-002/003: Sink, Worker, 43 aliases y prueba privada E2E siguen sin desplegar. Wrangler no está instalado en PC-14 y no hay conector Cloudflare disponible; se requiere acceso autorizado a la cuenta y a los secretos, sin copiarlos a Git.
+- GOV-TASK-004: `ambitos/tareas/` mantiene control propio y titularidad de otra sesión, generación 1. No modificar ni transferir desde Gobernanza.
+- GOV-TASK-005: referencias incompletas P020/P021/P033/P034; preservar los vacíos hasta hallar procedencia y obtener autorización P005 antes de cambiar principios.
+- GOV-TASK-006: alinear índices y registros activos; preservar registros históricos. Se detectó una divergencia GOW: el DUG estructurado declara 2.14, el banner humano indica 2.12 y el JSON auxiliar conserva v2.11. Requiere resolver cuál versión debe figurar antes de corregir el contenido canónico.
+- GOV-TASK-007: IPZ nativa sin modificación/verificación; FOL1 permanece `PREPARADO_PENDIENTE_ACTIVACION_IPZ`. No activar ni escribir el campo nativo sin las compuertas y autorización correspondientes.
+
+**Límites confirmados:** Sink no desplegado; cero aliases activos y cero telemetría real. No se ha aplicado cambio normativo al DUG/GOW, ART-025, IPZ ni `ambitos/tareas/` en esta reconciliación.
+
+Registro funcional de origen: [C-GOBERNANZA-MDP-OCP-01 · crónica](cronica/C-GOBERNANZA-MDP-OCP-01.md) · [evidencia](evidencias/C-GOBERNANZA-MDP-OCP-01.json) · [DUG v373 · ART-027](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-027) · [ocho tareas provisionales](../%F0%9F%93%81%20%F0%9F%A7%AD%20-%20Tareas%20provisionales/README.md)
 
 ---
 
