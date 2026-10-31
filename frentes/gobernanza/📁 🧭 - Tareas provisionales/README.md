@@ -49,3 +49,29 @@ GOV-TASK-001, GOV-TASK-006, GOV-TASK-007 y GOV-TASK-008 se encuentran `en_curso`
 - [Pendientes Gobernanza](../PENDIENTES.md)
 - [Crónica de creación](../cronica/C-GOBERNANZA-MDP-OCP-01.md)
 - [Evidencia](../evidencias/C-GOBERNANZA-MDP-OCP-01.json)
+
+
+## Reorientación del objetivo · 2026-10-31
+
+Objetivo rector: primera versión funcional de Gobernanza integrada con IPZ y OCP MCP. El IPZ tendrá un máximo de 1.500 caracteres y dos referencias Sync acortadas, en este orden: GOW/§ARR y DUG. Después reforzará la admisión obligatoria: no iniciar trabajo sustantivo sin frente explícitamente asignado y titularidad/exclusividad verificadas por el protocolo vigente.
+
+Cada ciclo —no cada conversación— se identifica con su folio global. El modelo consulta en OCP MCP el inventario de 43 principios, considera todos, selecciona los pertinentes y comunica la selección. Los principios se nombran con el patrón «Principio DI · [denominación atómica de 1–3 términos]». El MDP permite reconocer significado y pertinencia, pero no aplicar la norma completa. OCP MCP entrega enlaces Sync individuales a las versiones desarrolladas; cada acceso alimenta telemetría de frecuencia. El modelo verifica suficiencia y solicita principios adicionales cuando sea necesario. OCP MCP genera el hash del paquete de enlaces y el modelo lo incluye en la salida del ciclo.
+
+### Reorientación de los objetos existentes
+
+- GOV-TASK-001: conservar; validar semánticamente los 43 MDP.
+- GOV-TASK-002: diseño histórico Sink/Cloudflare en revisión; no desplegar por inercia. Reconciliar con enlaces Sync y OCP MCP.
+- GOV-TASK-003: redefinir su E2E como consulta individual privada mediante OCP MCP/Sync.
+- GOV-TASK-004: diferir; el ámbito Tareas no bloquea el MVP y tiene titularidad separada.
+- GOV-TASK-005: mantenimiento diferido; no reconstruir referencias por inferencia.
+- GOV-TASK-006: ampliar a reconciliación documental y resolución de elementos satélite para Gobernanza 1.0.
+- GOV-TASK-007: prioridad crítica; IPZ de dos referencias más compuerta de admisión, límite 1.500 caracteres, instalación verificable y FOL1 posterior.
+- GOV-TASK-008: mantener el aislamiento de la norma desarrollada, alineado con OCP MCP; un ancla del HTML no equivale a entrega individual.
+- GOV-TASK-009: conservar y priorizar §ARR/GOW como primera referencia del IPZ.
+- GOV-TASK-010: nueva tarea de admisión y titularidad exclusiva.
+
+Gobernanza define el contrato normativo y los criterios de aceptación; OCP MCP implementa capacidades del servidor dentro de su propio OCP/control; EP administra entorno, instalación, RDC y persistencia. No se transfieren responsabilidades entre frentes por inferencia.
+
+La telemetría aprobada aquí mide frecuencia de acceso, no aplicación, y no autoriza descartar principios automáticamente. El hash debe corresponder al paquete exacto emitido. El folio de ciclo es el identificador contextual exigido, pero OCP MCP debe verificar su vínculo con la sesión autorizada; no se presume que un folio predecible sea por sí solo una credencial criptográfica.
+
+El cierre del frente exige IPZ instalado y verificado, admisión efectiva, protocolo de ciclo operativo, consulta/selección/Sync/telemetría/hash E2E y resolución de satélites del DUG para 1.0.
