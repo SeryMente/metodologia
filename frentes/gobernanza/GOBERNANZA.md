@@ -6,6 +6,17 @@ Se incorporó como original el archivo [ChatGPT-GOBERNANZA-20261030-1857.md](doc
 
 **Responsabilidad transferida:** `chatgpt-C-GOBERNANZA-RETOMA-06-SES-20261030-GVC9594230`, sesión `SES-20261030-GVC9594230`, generación 7; UUIDv7 local `01a18f86-7da3-7135-8012-c3dbc9594230`, no ID nativo. Evento `C-GOBERNANZA-RETOMA-06`. FOL1 sigue preparado e inactivo; no se asignó folio global de ciclo. El DUG v373 · NX-373m se conservó sin modificación en esta operación; tampoco se modificaron ART-025, IPZ nativa ni `ambitos/tareas/`.
 
+## Estado operativo de referencia · lectura de continuidad (2026-10-30)
+
+- **Fuente normativa leída:** DUG v373 · NX-373m; blob `cac4525de77d4f47a8a59c25201968ecf2056b90`. ART-027 mantiene la estrategia MDP y Sink, incorporada inicialmente en v371.
+- **Auditoría estructural MDP:** 43/43 IDs únicos; 43 filas humanas y 43 descriptores estructurados; coincidencia literal de los 43 textos; extensión entre 11 y 16 palabras en todos los casos. Esta comprobación no sustituye la validación semántica con entradas reales.
+- **Titularidad:** generación 7; control vigente leído de vuelta, blob `c41c3cddc866de999827fc6ae36c23dde400344f`. Las tareas no tienen controles, sesiones ni folios propios.
+- **Estado provisional:** GOV-TASK-001, GOV-TASK-006 y GOV-TASK-008 en curso; GOV-TASK-002/003/004/005/007 pendientes.
+- **Infraestructura:** Sink no desplegado; cero aliases activos y cero telemetría real. PC-14 está en línea, pero Wrangler no está instalado; no hay integración Cloudflare disponible en esta sesión.
+- **Divergencia que requiere revisión normativa:** el DUG declara GOW 2.14 en `gov-data.document.gow_version` y `gov-data.glossary.version`, mientras que el banner humano de la sección GOW todavía indica v2.12. `GLOSARIO-WORKSPACE.fuente.json` conserva además metadatos históricos v2.11. No se alteró el DUG, GOW ni ese archivo auxiliar en esta reconciliación.
+
+---
+
 **Registros:** [manifiesto documental](documentos/MANIFIESTO-DOCUMENTAL.json) · [diálogo A/B](conversaciones/C-GOBERNANZA-PERSISTENCIA-DOCUMENTAL-01-dialogo.jsonl) · [crónica](cronica/C-GOBERNANZA-PERSISTENCIA-DOCUMENTAL-01.md) · [evidencia](evidencias/C-GOBERNANZA-PERSISTENCIA-DOCUMENTAL-01.json).
 
 ---
@@ -20,7 +31,7 @@ Se incorporó como original el archivo [ChatGPT-GOBERNANZA-20261030-1857.md](doc
 **Titular actual según control:** `chatgpt-C-GOBERNANZA-RETOMA-06-SES-20261030-GVC9594230` (alias operativo, no ID nativo).
 **Instancia actual según control:** `chatgpt-gobernanza-documental-2026-10-30-C9594230`.
 **Sesión actual según control:** `SES-20261030-GVC9594230`, generación 7; evento de transferencia `C-GOBERNANZA-RETOMA-06`; UUIDv7 local `01a18f86-7da3-7135-8012-c3dbc9594230`; folio de ciclo global no asignado (FOL1 inactivo).
-**Control actual:** transferencia `C-GOBERNANZA-RETOMA-06` escrita en el commit de este ciclo; lectura de vuelta pendiente. Blob anterior: `f670960bdedf1a4747743b3216cd181722a924ec`.
+**Control actual:** transferencia `C-GOBERNANZA-RETOMA-06` leída de vuelta desde `main`; generación 7 confirmada. Blob actual `c41c3cddc866de999827fc6ae36c23dde400344f`; el blob `f670960bdedf1a4747743b3216cd181722a924ec` es antecedente de generación 6.
 
 ## Evento más reciente · C-GOBERNANZA-MDP-OCP-01 · 2026-10-30
 
