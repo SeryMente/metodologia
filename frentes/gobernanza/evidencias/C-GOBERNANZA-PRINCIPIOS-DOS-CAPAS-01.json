@@ -19,8 +19,8 @@
     "version": "v370",
     "signature": "NX-370m",
     "event_id": "C-GOBERNANZA-PRINCIPIOS-DOS-CAPAS-01",
-    "commit": "0577403f792eeb873f1dd26c08525e98466995ba",
-    "blob_sha": "abbd66e39e71fd78df534e619594d42aa0ce079f",
+    "commit": "c5c3bfc7d3b33304dd9d7b248fc7b472582ade04",
+    "blob_sha": "c0026d37d50950555a0c742795cd7639f3e3333b",
     "readback_exact": true,
     "principles": 43,
     "annexes": 20,
@@ -28,7 +28,16 @@
     "catalogue_entries": 43,
     "sink_aliases_defined": 43,
     "sink_links_created": 0,
-    "direct_principle_links_in_catalog": 0
+    "direct_principle_links_in_catalog": 0,
+    "latest_readback_verified": true,
+    "source_integrity_gaps": [
+      "P020",
+      "P021",
+      "P033",
+      "P034"
+    ],
+    "aliases_defined": 43,
+    "aliases_created": 0
   },
   "design": {
     "strategy": "two-layer principle selection, individual retrieval and telemetry",
@@ -42,7 +51,10 @@
     "application_metric_source": "Persisted cycle records applied[]",
     "consultation_metric_source": "Sink visit/analytics; approximate and not proof of application",
     "sink_only_counted_consultation": true,
-    "procedure_level_exclusivity": true
+    "procedure_level_exclusivity": true,
+    "application_counter_source": "Persisted cycle record principle_usage.applied[]",
+    "sink_first_route_required": true,
+    "consideration_selection_consultation_application_distinct": true
   },
   "sink": {
     "repository": "miantiao-me/Sink",
@@ -54,7 +66,7 @@
     "analytics_engine": "NOT_PROVISIONED",
     "api_credentials": "NOT_PROVIDED_NOT_STORED",
     "aliases": "DEFINED_NOT_CREATED",
-    "private_source_resolution": "AUTHENTICATED_GITHUB_CONNECTOR_AVAILABLE_E2E_UNTESTED",
+    "private_source_resolution": "DESIGN_DEFINED; END_TO_END_UNTESTED",
     "browser_anchor_resolution": "FRAGMENT_USED_AS_STRUCTURED_PRINCIPLE_ID; REDIRECT_E2E_NOT_TESTED",
     "end_to_end_tests": "NOT_RUN",
     "redirect_target_pattern": "https://github.com/SeryMente/metodologia/blob/main/gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#Pxxx",
@@ -62,14 +74,28 @@
     "github_repo_private": true,
     "github_connector_read_available": true,
     "analytics_engine_billing": "CURRENTLY_NOT_BILLED; CLOUDflare_DOCUMENTS_FUTURE_BILLING",
-    "mcp_endpoint_used": false
+    "mcp_endpoint_used": false,
+    "github_read_strategy": "Open short alias; inspect redirect target fragment #Pxxx; fetch private canonical DUG via authenticated GitHub connector; extract structured principle record from gov-data at the matching commit.",
+    "api_rest_routes": [
+      "/api/link/upsert",
+      "/api/link/search",
+      "/api/link/list",
+      "/api/link/check",
+      "/api/stats/**",
+      "/api/logs/**"
+    ],
+    "upsert_behavior": "Existing slug is not overwritten; inspect and compare existing destination.",
+    "analytics_sampling": "Visit analytics may be sampled/approximate; not proof of application.",
+    "analytics_engine_cost": "Currently not billed according to source consulted; future billing anticipated/documented.",
+    "dashboard_initialization": "Dashboard -> Links must be opened once after first deployment before API usage."
   },
   "limitations": [
-    "No Cloudflare connector/account access or credentials are available in this session.",
+    "No Cloudflare connector/account access or Cloudflare credentials are available in this session.",
     "No GitHub create-fork tool is available in the connected GitHub actions.",
-    "The canonical GitHub repository remains private and was not published.",
-    "No actual Sink short links or click telemetry exist yet.",
-    "The end-to-end sequence (open Sink alias, capture redirect fragment, fetch private DUG through GitHub connector) has not been tested.",
-    "No real cycle records were written using principle_usage and no aggregation job exists."
+    "No Sink fork or Cloudflare Worker/D1/KV/Analytics Engine was created.",
+    "No real Sink aliases or click telemetry exist.",
+    "Private GitHub repository was not made public; redirect-to-private-Blob then authenticated GitHub connector route is designed but E2E untested.",
+    "No cycle event has yet been persisted with a live principle_usage block and no aggregation job exists.",
+    "No browser E2E test was run."
   ]
 }
