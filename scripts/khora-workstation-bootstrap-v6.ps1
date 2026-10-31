@@ -1,5 +1,5 @@
 [CmdletBinding()]
-param([switch]$SelfTest)
+param([switch]$SelfTest,[switch]$PreflightOnly)
 $ErrorActionPreference = 'Continue'
 $ProgressPreference = 'SilentlyContinue'
 $script:LogPath = $null
@@ -324,6 +324,7 @@ try {
     Progress-Tone 75
     $chrome=Find-Chrome
     if (-not $chrome) { Stop-Fatal 'Google Chrome not found for RDC verification.' }
+    if ($PreflightOnly) { Write-Log 'PREFLIGHT PASS: all dependency/auth checks passed; RDC launch intentionally skipped.' 'Green'; exit 0 }
     Start-RdcSession $node $chrome
     Play-Tone 880 150
     Play-Tone 880 150
