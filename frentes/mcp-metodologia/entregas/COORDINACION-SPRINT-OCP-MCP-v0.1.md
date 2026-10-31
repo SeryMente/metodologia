@@ -391,3 +391,21 @@ El siguiente evento esperado es la respuesta de OCP a la última solicitud focal
 ---
 
 **Regla de oro de continuidad:** el modelo central administra una sola secuencia de trabajo entre Gobernanza, EP y OCP MCP; espera cada respuesta antes de abrir una nueva solicitud al mismo frente; interviene solo cuando su análisis añade valor material; y conduce el sprint desde la deliberación hacia la construcción y aceptación del MVP sin sacrificar autorización, seguridad ni integridad.
+
+
+## 14. Actualización de continuidad — respuesta OCP 1.2 y última corrección
+
+**Evento conversacional:** 2026-10-31 · recepción y análisis de OCP Contrato técnico consolidado 1.2.
+
+- La respuesta OCP 1.2 fue recibida y analizada. Resolvió la conciliación previa sobre rutas, límites de responsabilidad EP/Copilot, MCP-NORMATIVO/Sink, emisor/raíz local de autorización y superficie funcional inicial.
+- Se preparó una última instrucción focalizada para OCP sobre tres puntos materiales:
+  1. cifrado AES-256-GCM del contenido canónico y snapshots en reposo dentro del almacenamiento local, con clave protegida por DPAPI CurrentUser;
+  2. bundle inicial verificable de fuentes canónicas con commit, ruta, Git blob SHA, SHA-256 de contenido y fecha de captura;
+  3. consistencia y recuperación de `BUILD_SNAPSHOT` respecto de su artefacto, transacción SQLite, evento y recibo; sin presumir atomicidad entre filesystem y SQLite.
+- La instrucción pide además precisar que `prepare_operation` es una solicitud preparatoria sin efecto gobernado ni grant de operador; los schemas JSON exactos se aportan como artefactos de implementación y pruebas, sin nueva ronda de arquitectura.
+- **Estado de la nueva instrucción:** PROMPT PREPARADO; reenvío a OCP NO VERIFICADO; respuesta PENDIENTE. No preparar otro prompt para OCP antes de recibir y analizar esa respuesta.
+- EP: su respuesta a la solicitud anterior sigue PENDIENTE. No se generó un nuevo prompt para EP.
+- Gobernanza: sin nuevo turno solicitado; el modelo central conserva la coordinación y no asume titularidad del frente.
+- A/B siguen PENDIENTES. No hay implementación, compilación, instalación ni pruebas de aceptación iniciadas.
+
+Esta actualización prevalece sobre el estado anterior de la sección 13 únicamente en lo relativo al nuevo intercambio OCP y mantiene intactos los antecedentes.
