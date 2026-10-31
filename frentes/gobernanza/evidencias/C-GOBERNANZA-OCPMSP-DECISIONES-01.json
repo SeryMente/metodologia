@@ -2,7 +2,7 @@
     "schema":  "governance-cycle-evidence/1",
     "event_id":  "C-GOBERNANZA-OCPMSP-DECISIONES-01",
     "recorded_on":  "2026-10-31",
-    "status":  "decisions_documented_original_copied_remote_readback_pending",
+    "status":  "original_persisted_and_verified_decisions_documented",
     "cycle_folio":  null,
     "fol1_status":  "PREPARADO_PENDIENTE_ACTIVACION_IPZ",
     "governance_control":  {
@@ -35,7 +35,12 @@
                      "sha256":  "E16A915288DD5D04DDAF87DA4DFD01C1CB0BC361EBA274D6CB76ECCE62A6DC53",
                      "local_copy_sha256":  "E16A915288DD5D04DDAF87DA4DFD01C1CB0BC361EBA274D6CB76ECCE62A6DC53",
                      "local_copy_verified":  true,
-                     "remote_readback_verified":  false
+                     "git_blob_sha":  "c0bac0f77b18538d49d2e8431c97b75a613b0ac0",
+                     "remote_readback_verified":  true,
+                     "readback_main":  "533b6128caf4e9110b8b58bec49979489fb350f5",
+                     "remote_sha256":  "E16A915288DD5D04DDAF87DA4DFD01C1CB0BC361EBA274D6CB76ECCE62A6DC53",
+                     "remote_size_bytes":  194951,
+                     "readback_method":  "git cat-file blob origin/main; raw-byte SHA-256 comparison with RDC source and local copy"
                  },
     "decisions":  {
                       "A1_A2":  "APPROVED",

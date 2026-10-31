@@ -5,7 +5,7 @@
     "event_id":  "C-GOBERNANZA-OCPMSP-DECISIONES-01",
     "cycle_folio":  "C-20261029-8B41F2D7",
     "recorded_on":  "2026-10-31",
-    "status":  "PERSISTENCIA_EN_CURSO",
+    "status":  "PERSISTIDO_Y_VERIFICADO",
     "rule":  "P041 + ART-014 + ART-022; conservar originales sin transformar y declarar persistencia solo tras lectura de vuelta y cotejo.",
     "documents":  [
                       {
@@ -82,34 +82,34 @@
                           "media_type":  "text/markdown",
                           "size_bytes":  194951,
                           "sha256":  "E16A915288DD5D04DDAF87DA4DFD01C1CB0BC361EBA274D6CB76ECCE62A6DC53",
-                          "git_blob_sha":  null,
-                          "status":  "PERSISTENCIA_EN_CURSO",
+                          "git_blob_sha":  "c0bac0f77b18538d49d2e8431c97b75a613b0ac0",
+                          "status":  "PERSISTIDO_Y_VERIFICADO",
                           "verification":  {
-                                               "readback":  false,
-                                               "content_cotejo":  false,
-                                               "method":  "Pendiente de publicación y lectura de vuelta desde origin/main",
-                                               "readback_blob_sha":  null,
-                                               "verified_on":  null
+                                               "readback":  true,
+                                               "content_cotejo":  true,
+                                               "method":  "SHA-256 byte-for-byte: RDC source == local copy == origin/main blob; Git blob SHA cotejado.",
+                                               "readback_blob_sha":  "c0bac0f77b18538d49d2e8431c97b75a613b0ac0",
+                                               "verified_on":  "2026-10-31"
                                            }
                       }
                   ],
-    "originals_commit_sha":  "70dd52c716e01676f33eff234db31a1100cbe90f",
+    "originals_commit_sha":  "533b6128caf4e9110b8b58bec49979489fb350f5",
     "verification":  {
-                         "verified_on":  "2026-10-30",
+                         "verified_on":  "2026-10-31",
                          "readback_method":  "GitHub Contents API fetch_file encoding=base64, comparación exacta contra cada archivo local leído por RDC",
                          "result":  "PASS",
                          "byte_for_byte_match":  true,
-                         "documents_verified":  3,
-                         "note":  "El original ChatGPT-GOBERNANZA-20261030-1857.md fue leído de vuelta desde main y el Base64 coincide exactamente con los bytes fuente; el blob SHA coincide.",
+                         "documents_verified":  4,
+                         "note":  "El original ChatGPT-GOBERNANZA-20261031-1043.md fue leído de vuelta desde origin/main; SHA-256 byte por byte coincide con RDC y copia local; Git blob SHA c0bac0f77b18538d49d2e8431c97b75a613b0ac0.",
                          "latest_document_status":  "PERSISTIDO_Y_VERIFICADO",
-                         "latest_document_id":  "DOC-GOV-CHATGPT-GOBERNANZA-20261030-1857"
+                         "latest_document_id":  "DOC-GOV-CHATGPT-GOBERNANZA-20261031-1043"
                      },
     "latest_addition_event":  {
                                   "event_id":  "C-GOBERNANZA-OCPMSP-DECISIONES-01",
                                   "recorded_on":  "2026-10-31",
                                   "document_id":  "DOC-GOV-CHATGPT-GOBERNANZA-20261031-1043",
-                                  "verification_status":  "PENDIENTE",
+                                  "verification_status":  "PERSISTIDO_Y_VERIFICADO",
                                   "responsibility_transfer":  "C-GOBERNANZA-OCPMSP-01",
-                                  "verified_on":  null
+                                  "verified_on":  "2026-10-31"
                               }
 }
