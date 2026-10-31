@@ -1,0 +1,8 @@
+/artifacts/
+/resources/initial-sources.manifest.json
+/src/OcpMcp/bin/
+/src/OcpMcp/obj/
+/TestData/
+/SmokeData/
+*.user
+*.suo
