@@ -1,7 +1,7 @@
 # 📝 EP-TASK-002 · Persistencia provisional con Backblaze B2 para datos de usuario y continuidad de la sesión canónica
 
 **Naturaleza:** tarea provisional del frente Entorno Persistente; materialización auxiliar del registro de tareas, no un OEP nuevo, no un frente independiente y no una decisión de arquitectura canónica.  
-**Estado:** `en_curso` — auditoría remota/documental parcial; inventario local NO ACEPTADO por restricción vigente; implementación técnica, transferencias y restauración NO INICIADAS.  
+**Estado:** `en_curso` — servidor OCP MCP 0.1.0 construido y probado en entorno aislado según reporte de OCP; estructura de código presente en la rama remota verificada; integración EP, configuración/transferencias Backblaze B2 y restauración multiubicación NO INICIADAS.  
 **Responsabilidad:** vinculada a `frentes/ep/`; sin control, sesión, titularidad ni folio global propios.  
 **task_id:** `EP-TASK-002` (identificador local estable; no es folio global).  
 **scope_ref:** `frentes/ep/`  
@@ -752,3 +752,145 @@ Fuentes oficiales del procedimiento:
 Se requiere que el operador confirme que dispone de acceso administrador a una cuenta Backblaze B2 y, desde su consola, cree (o identifique) un bucket privado dedicado y una Standard Application Key limitada a ese bucket y al prefijo acordado. La clave secreta se introduce solo en el prompt local seguro; no debe copiarse al chat. En paralelo, el canal RDC ya utilizado por el operador debe quedar identificado como sesión destino ejecutable desde fila4 no elevado antes de iniciar cualquier operación local.
 
 **Resultado del ciclo:** se corrige el falso negativo del punto 1; se acepta el uso de RDC reportado por el operador, sin confundirlo con el inventario de agentes Desktop Commander. Para los puntos 3 y 4 se definió un perfil B2 mínimo y un protocolo de prueba verificable, con fuentes oficiales actuales. No se conectó a B2 ni se transfirió información porque no hay cuenta/clave independiente ni canal de ejecución fila4/CECEQ verificado. Se mantiene un único objeto acumulativo EP-TASK-002.
+
+
+## 19. Informe de progreso OCP MCP 0.1.0, prueba adicional de operación protegida y continuidad hacia 0.1.1 · 2026-10-31 · 13:27 · America/Mexico_City
+
+**Procedencia:** reporte de progreso proporcionado por el operador y atribuido al constructor OCP MCP. El corte declarado del informe es el 31 de octubre de 2026. Las cifras de compilación y pruebas, la generación del paquete local y el resultado de las pruebas adicionales se registran como declaraciones del constructor; EP no ejecutó esas pruebas ni accedió al workspace temporal del constructor. Se separan de los elementos que sí pudieron cotejarse en GitHub.
+
+### 19.1. Resultado general comunicado
+
+OCP informa que el MVP 0.1.0 está compilado y probado en un entorno aislado Windows x64. La instalación e integración en EP permanecen pendientes y no fueron ejecutadas. El estado declarado por área es:
+
+| Área | Estado comunicado por OCP |
+|---|---|
+| Transferencia de control A | Ejecutada y verificada; generación 2 |
+| Autorización material B | Registrada dentro del alcance del frente |
+| Código del servidor | Implementado en la rama de construcción |
+| Compilación Release | Correcta; 0 advertencias y 0 errores |
+| Publicación autocontenida | Generada para Windows x64 |
+| Pruebas unitarias | 10 PASS / 0 FAIL |
+| Pruebas de integración MCP | 25 PASS / 0 FAIL |
+| Integración e instalación EP | Pendiente; no ejecutada |
+| Activación MCP-NORMATIVO | DESACTIVADO |
+
+Configuración declarada: .NET SDK 10.0.403, target net10.0, RID win-x64, publicación autocontenida, Release y transporte MCP stdio. El constructor informa que el pipeline completo terminó con código de salida 0 y que verificó los hashes de los componentes extraídos del ZIP.
+
+### 19.2. Rama, commit y cotejo independiente del repositorio
+
+Rama declarada por OCP: build/ocp-mcp-mvp-0.1.0. Commit que el informe identifica como actual y publicado: 85b6969d74b32ead7b7358da65d62b47aa2d2cfd.
+
+**Cotejo GitHub realizado por EP:**
+
+- GitHub reconoce la rama build/ocp-mcp-mvp-0.1.0.
+- El commit 85b6969d74b32ead7b7358da65d62b47aa2d2cfd existe y su diff está accesible: https://github.com/SeryMente/metodologia/commit/85b6969d74b32ead7b7358da65d62b47aa2d2cfd
+- El diff de ese commit incluye código del servidor y pruebas: frentes/mcp-metodologia/src/OcpMcp/Program.cs, Protocol/McpServer.cs, Security/CryptoBox.cs, Security/KeyVault.cs, src/OcpMcp/OcpMcp.csproj, tests/OcpMcp.UnitTests/OcpMcp.UnitTests.csproj, tests/OcpMcp.UnitTests/Program.cs, tests/Smoke.ps1 y scripts/Build.ps1, entre otros.
+- La lectura remota por la referencia de rama devolvió OcpMcp.csproj (blob 5d1f619af7f727bb19c65323896f59a000a1d998), proyecto de pruebas unitarias (blob 0e6391928af594c06380a0691a4320d4303b80ae), McpServer.cs (blob aa1ce610158ac4350730923550528ca91e88eae7) y Build.ps1 (blob ddfb1ea5e42008e51fa5d6ebc13bd27dcc539ca2).
+
+Por ello, la conclusión de §18.15.2 —que en el remoto consultado no había proyecto ni código .NET del servidor— queda históricamente conservada como fotografía de las 13:24, pero superada por esta evidencia posterior. La rama ya contiene una estructura real de proyecto, fuentes y pruebas. La consulta de ramas confirmó su existencia; el informe de OCP afirma que su HEAD apunta exactamente al commit citado. En el cotejo de EP quedó verificada la existencia del commit y la presencia de los archivos en la referencia de rama, pero no se obtuvo un campo independiente que exponga el SHA del HEAD de esa rama; la igualdad exacta del puntero se conserva como dato reportado por OCP.
+
+### 19.3. Módulos y superficie MCP comunicados
+
+El constructor declara implementados los siguientes componentes:
+
+- **Protocolo:** servidor MCP sobre stdio, inicialización JSON-RPC, listado y ejecución de herramientas.
+- **Persistencia:** SQLite, WAL y transacciones; tablas para fuentes, ciclos, clasificaciones, selecciones, solicitudes, grants, snapshots, eventos, telemetría, recibos y backups.
+- **Seguridad:** DPAPI CurrentUser, DEK AES-256-GCM, HMAC-SHA256, nonce, expiración, grants de consumo único y firma Ed25519.
+- **Trazabilidad:** eventos append-only con cadena SHA-256 y recibos firmados.
+- **Fuentes:** importador desde objetos Git locales que coteja commit, Git blob y SHA-256 antes de cifrar.
+- **Recuperación:** backup cifrado, comprobación de integridad, restauración y retención diaria/semanal.
+
+Herramientas declaradas (10): get_health, list_canonical_sources, read_canonical_source, get_cycle, get_operation_status, get_receipt, list_cycle_events, list_telemetry_events, prepare_operation y execute_operation.
+
+Invariante de autorización descrita por OCP: prepare_operation crea una solicitud pendiente, pero no ejecuta la operación; la ejecución se bloquea si no existe un grant aprobado localmente por el operador.
+
+### 19.4. Pruebas de 0.1.0 comunicadas
+
+La suite unitaria se reporta con 10 PASS / 0 FAIL e incluye AES-GCM/DPAPI, rechazo de alteración, Ed25519, HMAC, cadena de eventos, rollback SQLite y append-only.
+
+La suite de integración MCP se reporta con 25 PASS / 0 FAIL e incluye manifiesto y hashes, estados de diagnóstico, rechazo de autorización canalizada, importación, cifrado en reposo, transporte MCP stdio, lectura de fuentes, bloqueo sin grant, telemetría, cierre, backup y restauración.
+
+Estas cifras son resultados comunicados por el constructor; EP no las reproduce ni las eleva a verificación independiente. Una prueba ejecutada en el equipo aislado de construcción no prueba compatibilidad con CECEQ, con el token Windows de fila4 ni con el host persistente.
+
+### 19.5. Artefacto 0.1.0 y hashes comunicados
+
+El constructor identifica como paquete generado en su workspace temporal:
+
+C:\Temp\OcpMcpBuild\metodologia\frentes\mcp-metodologia\artifacts\packages\ocp-mcp-0.1.0-win-x64.zip
+
+| Elemento | Valor comunicado |
+|---|---|
+| Versión | 0.1.0 |
+| Entry point | OcpMcp.exe |
+| Argumentos | ["serve"] |
+| Componentes en manifiesto | 200 |
+| SHA-256 ZIP | 71c58cb7b7204b710486633eb714aaf5d214beef97ec3557232ca95775f29059 |
+| SHA-256 build manifest | 76213f17e1969972a5429ff65ef4e8cc9d3fae5afedbca60064fe173cae4814d |
+| SHA-256 manifiesto de fuentes | e4ce3b45ff5cd1195aaeaaa69529b6c541752a2c82979a0069224306d674417b |
+
+Rutas de evidencia que el constructor declara presentes en su workspace: artifacts/build-evidence.json y artifacts/test-evidence.json; ambos registran BUILT_AND_TESTED, 10/10 y 25/25, según el informe. El manifiesto fija fuentes a commits y blobs, pero también declara NOT_CHECKED_AGAINST_MAIN; por tanto, no se debe afirmar que las fuentes importadas sean la última versión de main.
+
+**Límite de publicación:** OCP informa que el paquete ZIP y las evidencias permanecen en su workspace temporal, no están publicados como GitHub Release y no se ha integrado la rama en main. La consulta de EP tampoco encontró los archivos frentes/mcp-metodologia/artifacts/build-evidence.json ni test-evidence.json en esa ruta de GitHub. El commit accesible acredita código fuente, no la presencia remota del ZIP. El paquete no está materializado en CECEQ ni disponible como respaldo B2 por el solo hecho de existir en C:\Temp del constructor.
+
+### 19.6. Prueba adicional de operación protegida 21/21
+
+Después de la publicación del commit indicado, el constructor comunicó una prueba adicional 21 PASS / 0 FAIL en un almacén aislado. Según el informe, el escenario cubre:
+
+1. Preparación de una operación.
+2. Grant sintético presentado como aprobado, con HMAC y nonce vinculados al payload.
+3. Consumo atómico del grant.
+4. Operación persistida.
+5. Recibo Ed25519.
+6. Replay idempotente.
+7. Rechazo de MAC manipulado sin efecto lateral.
+
+El constructor aclara que el fixture verifica el verificador y la transacción, pero no sustituye la confirmación humana interactiva del operador en EP. Por tanto, 21/21 no debe interpretarse como una validación del circuito humano completo ni como aceptación de una operación protegida real en CECEQ. Tampoco se suman mecánicamente 10 + 25 + 21 como una suite única: son conjuntos de pruebas que el reporte presenta por separado.
+
+El commit 85b6969d74b32ead7b7358da65d62b47aa2d2cfd incluye endurecimiento de la verificación de recibos: compara el fingerprint SHA-256 de la clave pública guardada con el fingerprint embebido en el recibo y exige esa coincidencia junto con el hash y la firma. La cobertura 21/21 del escenario sintético sigue siendo un resultado reportado por OCP, no reejecutado por EP.
+
+### 19.7. Pendientes técnicos reconocidos por OCP
+
+OCP identifica como pendientes reales:
+
+1. **Confirmación interactiva real:** ejecutar y firmar una operación protegida con aprobación humana interactiva de extremo a extremo; las pruebas actuales usan un fixture sintético.
+2. **Raíz de confianza externa:** fijar el fingerprint Ed25519 fuera de SQLite para validar recibos desde una referencia independiente.
+3. **Selección normativa de 43 principios:** clasificar los 43 principios; implementar CNP obligatorio, cierre transitivo de dependencias y bloqueo por SCC/inconsistencias conforme al dictamen de Gobernanza, sin inventar reglas de aplicabilidad.
+4. **Integración EP:** extracción/materialización al destino persistente, importación bajo la identidad Windows efectiva, aprovisionamiento del operador, configuración del cliente MCP y ciclo de vida gestionado por EP.
+
+OCP declara no tener un bloqueo técnico que impida continuar construyendo o compilando. Esa declaración no elimina los bloqueos de integración de EP ni autoriza a instalar u operar el servidor en un host persistente.
+
+### 19.8. Próximo hito anunciado: OCP MCP 0.1.1
+
+El siguiente hito comunicado es 0.1.1 — operación protegida de extremo a extremo, con aprobación interactiva, consumo atómico del grant, ejecución persistida, recibo Ed25519 verificable y replay/idempotencia. Después, OCP continuará con la lógica normativa de los 43 principios y el wrapper obligatorio de cliente.
+
+El constructor manifiesta que seguirá trabajando mientras el operador y EP leen el reporte; no debe pausar la construcción esperando esa lectura ni convertir el reporte en una nueva fase de espera. Esta continuidad opera dentro del alcance de construcción y pruebas ya autorizado. No amplía el permiso de instalación, integración o ejecución en el host EP.
+
+### 19.9. Estado EP, Backblaze y regla CECEQ/fila4
+
+La entrega 0.1.0 reduce el bloqueo de disponibilidad de código, pero no satisface la persistencia solicitada. Siguen sin demostrarse:
+
+- La recepción del ZIP desde el workspace temporal del constructor por un canal de entrega verificable.
+- Cotejo local del SHA-256 del ZIP y del manifiesto contra los valores declarados.
+- Materialización en <Desktop-real-de-fila4>\Ser y Mente\ desde la sesión interactiva no elevada de fila4 en CECEQ.
+- Aprovisionamiento interactivo del operador y su clave DPAPI CurrentUser en la identidad destino, sin asumir que el almacén protegido del equipo de construcción es portable.
+- Bucket privado y prefijo dedicado EP/OCP, autorización independiente de Backblaze y permisos mínimos.
+- Prueba sintética de upload/download con SHA-256 de read-back.
+- Snapshot consistente de SQLite y datos, backup en B2, descarga en staging y cotejo de hashes.
+- Restauración real en la segunda computadora el 2026-11-01, arranque del servidor y ejecución de una operación funcional.
+
+Se mantienen todas las reglas de §18.13: CECEQ es la designación correcta; MantenimientoRCI solo proporciona la conexión RDC y la elevación solo se invoca para administrar RDC; todas las instalaciones, materializaciones, operaciones de archivos, configuración, transferencias B2 y restauraciones deben correr como el token no elevado de fila4. No operar en PC10 por aproximación, no usar secretos Khora/Vercel/Cora y no considerar B2 como host del servidor ni sustituto de Git.
+
+### 19.10. Reconciliación del estado y siguiente secuencia
+
+**Actualización respecto de §18.15:** la ausencia remota de proyecto/código OCP que se registró a las 13:24 fue superada por la publicación de código en la rama de construcción. La rama contiene proyecto .NET, servidor, herramientas, seguridad y pruebas. No obstante, el ZIP y las evidencias están reportados en un workspace local temporal y no se localizaron en las rutas de artefactos consultadas del remoto. Las pruebas siguen siendo declaraciones del constructor hasta que se entreguen y reproduzcan o se inspeccionen sus evidencias originales.
+
+**Siguiente secuencia coordinada:**
+
+1. OCP continúa con 0.1.1 y publica incrementalmente commits y evidencias reproducibles; no espera la revisión del informe.
+2. OCP entrega a EP el paquete 0.1.0, manifiesto, hashes y runbook desde una ubicación/canal acordado, sin presuponer que el workspace C:\Temp sea accesible desde CECEQ.
+3. EP verifica recepción y hashes, sin alterar la rama de construcción ni integrar en main por anticipado.
+4. Una vez disponible CECEQ y acreditado el token no elevado de fila4, EP prepara la raíz Ser y Mente, materializa el paquete y aprovisiona el operador en el host de destino.
+5. Se valida primero B2 con un archivo sintético; después, snapshot y backup real, descarga a staging y comparación de hashes.
+6. El 2026-11-01 se ejecuta la restauración en el segundo equipo y se comprueba arranque y operación funcional. Hasta entonces, la continuidad entre ubicaciones permanece pendiente.
+
+**Cierre del registro:** se mantiene un solo objeto documental, EP-TASK-002. Este informe no crea EP-TASK-003, no modifica OEP, DUG ni los controles del frente OCP, no integra la rama en main, no instala software en CECEQ, no configura Backblaze y no declara restauración aceptada. La atribución de cada dato a reporte OCP o a cotejo GitHub queda explícita para evitar convertir resultados declarados en verificación de EP.
