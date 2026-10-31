@@ -17,9 +17,9 @@ DUG v373 · NX-373m · GOW declarado en los metadatos como v2.14; en particular,
 
 ## Observación inicial verificada · 2026-10-30
 
-- §ARR ya existe y se identifica expresamente como primera lectura lingüística de una conversación nueva.
-- §ARR contiene 25 conceptos iniciales, entre ellos Ser y Mente, GOW, DUG, principio de gobernanza, anexo, IPZ, repositorio/main, OCP, control de responsabilidad, continuidad conversacional, folios, UUIDv7 local, MCP normativo, CNP y PAI.
-- Los 12 nombres que no aparecían literalmente en la sección canónica §A sí están incluidos en §ARR; por tanto, ya son visibles en el vocabulario inicial.
+- §ARR ya existe y se identifica expresamente como primera lectura lingüística de una conversación nueva. Verificación: 25 entradas numeradas, 26 conceptos y 26 IDs estructurados, todos con término y ancla resolubles.
+- §ARR contiene 25 entradas numeradas que cubren 26 conceptos (el punto 17 agrupa Ciclo y Conversación), entre ellos Ser y Mente, GOW, DUG, principio de gobernanza, anexo, IPZ, repositorio/main, OCP, control de responsabilidad, continuidad conversacional, folios, UUIDv7 local, MCP normativo, CNP y PAI.
+- Los 12 nombres que no aparecían literalmente en la sección canónica §A sí están incluidos en §ARR; por tanto, ya son visibles en el vocabulario inicial. La lista coincide con entry_vocabulary.term_ids (26 IDs; 26/26 resueltos).
 - La entrada estructurada `MDP` conserva una definición histórica como “Método Estándar para Documentar Protocolos”, mientras que el DUG utiliza actualmente “microdescriptor de pertinencia”. Debe resolverse la colisión por alcance y procedencia, sin asumir equivalencia.
 - La estructura humana y los metadatos muestran una divergencia de versión GOW (2.12 frente a 2.14) que requiere cotejo y reconciliación autorizada.
 
