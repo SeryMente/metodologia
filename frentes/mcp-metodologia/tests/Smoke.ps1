@@ -82,12 +82,8 @@ try {
     $clear=Get-GitBytes -Repo $RepoRoot -Blob $source.git_blob_sha
     $probe=$clear[0..([Math]::Min(63,$clear.Length-1))]
     $dbBytes=[System.IO.File]::ReadAllBytes($db)
-    $found=$false
-    for($i=0;$i -le $dbBytes.Length-$probe.Length;$i++){
-        $same=$true
-        for($j=0;$j -lt $probe.Length;$j++){if($dbBytes[$i+$j] -ne $probe[$j]){$same=$false;break}}
-        if($same){$found=$true;break}
-    }
+    $latin1=[System.Text.Encoding]::GetEncoding(28591)
+    $found=$latin1.GetString($dbBytes).Contains($latin1.GetString($probe))
     Assert-True "CANONICAL_SOURCE_NOT_PLAINTEXT_IN_SQLITE" (-not $found)
 
     $psi=[System.Diagnostics.ProcessStartInfo]::new()

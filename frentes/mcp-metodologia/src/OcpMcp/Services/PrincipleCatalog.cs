@@ -77,7 +77,7 @@ public sealed class PrincipleCatalog(SqliteStore store)
             if(ordered.Any(p=>string.IsNullOrWhiteSpace(p.Title)||string.IsNullOrWhiteSpace(p.NormativeText)||string.IsNullOrWhiteSpace(p.Microdescriptor)))
                 throw new InvalidDataException("PRINCIPLE_SOURCE_CONTENT_INCOMPLETE");
 
-            var cnp=root.GetProperty("cnp").GetProperty("members").EnumerateArray()
+            var cnp=root.GetProperty("document").GetProperty("cnp").GetProperty("members").EnumerateArray()
                 .Select(x=>x.GetProperty("principle_id").GetString()?.ToUpperInvariant()??"")
                 .Order(StringComparer.Ordinal).ToArray();
             if(!cnp.SequenceEqual(ExpectedCnp.Order(StringComparer.Ordinal),StringComparer.Ordinal))
