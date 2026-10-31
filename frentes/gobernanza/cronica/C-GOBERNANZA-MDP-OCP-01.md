@@ -28,7 +28,7 @@ La telemetría queda limitada a frecuencia de accesos por alias y periodo. No se
 
 ## OCP provisionales de tarea
 
-Se creó el contenedor `frentes/gobernanza/📁 🧭 - Tareas provisionales/` dentro del OCP Gobernanza. Contiene siete directorios, cada uno con un README núcleo y su enunciado, origen, estado inicial `pendiente`, dependencias y siguiente actuación. Los objetos heredan titularidad y control del OCP padre; no tienen controles, sesiones ni folios independientes.
+Se creó el contenedor `frentes/gobernanza/📁 🧭 - Tareas provisionales/` dentro del OCP Gobernanza. Contiene ocho directorios, cada uno con un README núcleo y su enunciado, origen, estado inicial `pendiente`, dependencias y siguiente actuación. Los objetos heredan titularidad y control del OCP padre; no tienen controles, sesiones ni folios independientes.
 
 | ID | Tarea |
 |---|---|
@@ -54,4 +54,4 @@ La materialización es provisional y local a Gobernanza; no declara una entidad 
 
 ## Verificación
 
-Se releyó el DUG v371 y se parseó `gov-data`; se verificaron 43 MDP humanos y estructurados, longitud de 11–16 palabras y exclusión de telemetría de aplicación. Se releyeron los núcleos de los siete OCP provisionales y el índice de colección. Los archivos de entrada del frente se actualizaron y leyeron de vuelta. No se declara desplegada infraestructura externa.
+Se releyó el DUG v371 y se parseó `gov-data`; se verificaron 43 MDP humanos y estructurados, longitud de 11–16 palabras y exclusión de telemetría de aplicación. Se releyeron los núcleos de los ocho OCP provisionales y el índice de colección. Los archivos de entrada del frente se actualizaron y leyeron de vuelta. No se declara desplegada infraestructura externa.
