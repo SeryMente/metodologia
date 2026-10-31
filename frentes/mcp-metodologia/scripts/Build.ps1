@@ -31,6 +31,7 @@ try {
 
     # Unit-level cryptography, SQLite rollback, event-chain and immutability tests.
     $unitProject = Join-Path $OcpRoot "tests\OcpMcp.UnitTests\OcpMcp.UnitTests.csproj"
+    $env:OCPMCP_UNIT_REPO_ROOT = $RepoRoot
     $unitLines = & $Dotnet run --project $unitProject --configuration Release 2>&1
     $unitExit = $LASTEXITCODE
     $unitLines | ForEach-Object { Write-Output $_ }

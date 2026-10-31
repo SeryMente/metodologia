@@ -15,6 +15,8 @@ public sealed class SourceImporter(SqliteStore store)
     public void Import(string repositoryRoot)
     {
         string manifestPath=Path.Combine(AppContext.BaseDirectory,"initial-sources.manifest.json");
+        if(!File.Exists(manifestPath))
+            manifestPath=Path.Combine(repositoryRoot,"frentes","mcp-metodologia","resources","initial-sources.manifest.json");
         if(!File.Exists(manifestPath)) throw new FileNotFoundException("INITIAL_SOURCES_MANIFEST_NOT_FOUND",manifestPath);
         var manifest=JsonSerializer.Deserialize<Manifest>(File.ReadAllText(manifestPath)) ?? throw new InvalidDataException("INVALID_SOURCE_MANIFEST");
         if(manifest.manifest_version!=1 || manifest.sources.Length==0) throw new InvalidDataException("INVALID_SOURCE_MANIFEST");

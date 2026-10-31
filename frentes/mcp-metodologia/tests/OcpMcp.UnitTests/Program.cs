@@ -52,7 +52,12 @@ try
     string tempRoot=Path.Combine(Path.GetTempPath(),"OcpMcpUnit-"+Guid.NewGuid().ToString("N"));
     var store=new SqliteStore(tempRoot);
     store.Initialize();
-    using(var connection=store.Open())
+    string unitRepoRoot=Environment.GetEnvironmentVariable("OCPMCP_UNIT_REPO_ROOT")??throw new InvalidOperationException("UNIT_REPO_ROOT_NOT_SET");
+    new SourceImporter(store).Import(unitRepoRoot);
+    string eventTempRoot=tempRoot+"-events";
+    var eventStore=new SqliteStore(eventTempRoot);
+    eventStore.Initialize();
+    using(var connection=eventStore.Open())
     {
         using(var tx=connection.BeginTransaction(deferred:false))
         {
@@ -290,7 +295,72 @@ try
         Check("TAMPERED_GRANT_NO_SIDE_EFFECT",Convert.ToInt32(count.ExecuteScalar())==1);
     }
 
+    // End-to-end fail-closed selection gate: all 43 classifications and CNP are present,
+    // but the source has no approved structured applicability/activation/mandatory/dependency metadata.
+    string blockedCycleId="blocked-selection-"+Guid.NewGuid().ToString("N");
+    using(var seed=store.Open())
+    using(var tx=seed.BeginTransaction(deferred:false))
+    {
+        using(var cycle=seed.CreateCommand())
+        {
+            cycle.Transaction=tx;
+            cycle.CommandText="INSERT INTO cycles(cycle_id,project_ref,conversation_ref,state,operator_sid,created_at_utc,updated_at_utc) VALUES($id,'selection-gate-unit','isolated','CLASSIFIED',$sid,$now,$now);";
+            cycle.Parameters.AddWithValue("$id",blockedCycleId);
+            cycle.Parameters.AddWithValue("$sid",sid);
+            cycle.Parameters.AddWithValue("$now",DateTimeOffset.UtcNow.ToString("O"));
+            cycle.ExecuteNonQuery();
+        }
+        foreach(var item in allNotApplicable)
+        {
+            using var classification=seed.CreateCommand();
+            classification.Transaction=tx;
+            classification.CommandText="INSERT INTO classifications(cycle_id,principle_id,classification,justification,evidence_refs_json,created_at_utc) VALUES($cycle,$principle,'NO_APLICA','Synthetic fixture for fail-closed selection test','[]',$now);";
+            classification.Parameters.AddWithValue("$cycle",blockedCycleId);
+            classification.Parameters.AddWithValue("$principle",item.PrincipleId);
+            classification.Parameters.AddWithValue("$now",DateTimeOffset.UtcNow.ToString("O"));
+            classification.ExecuteNonQuery();
+        }
+        tx.Commit();
+    }
+
+    using(var parameters=JsonDocument.Parse(JsonSerializer.Serialize(new{cycle_id=blockedCycleId})))
+    using(var prepared=JsonDocument.Parse(JsonSerializer.Serialize(operations.Prepare("SET_SELECTION",parameters.RootElement))))
+    {
+        string requestId=prepared.RootElement.GetProperty("request_id").GetString()!;
+        SeedGrant(requestId,true);
+        bool blocked=false;
+        try{operations.Execute(requestId);}
+        catch(InvalidOperationException ex) when(ex.Message.StartsWith("BLOCKED_OCPMSP:",StringComparison.Ordinal)){blocked=true;}
+        Check("SELECTION_BLOCKED_WITHOUT_APPROVED_METADATA",blocked);
+        using var c=store.Open();
+        using var selectionCount=c.CreateCommand();
+        selectionCount.CommandText="SELECT COUNT(*) FROM selections WHERE cycle_id=$cycle;";
+        selectionCount.Parameters.AddWithValue("$cycle",blockedCycleId);
+        Check("BLOCKED_SELECTION_HAS_NO_SIDE_EFFECT",Convert.ToInt32(selectionCount.ExecuteScalar())==0);
+        using var grantStatus=c.CreateCommand();
+        grantStatus.CommandText="SELECT status FROM authorization_grants WHERE request_id=$id;";
+        grantStatus.Parameters.AddWithValue("$id",requestId);
+        Check("BLOCKED_SELECTION_ROLLS_BACK_GRANT",Convert.ToString(grantStatus.ExecuteScalar())=="APPROVED");
+    }
+
+    using(var parameters=JsonDocument.Parse(JsonSerializer.Serialize(new{cycle_id=blockedCycleId})))
+    using(var prepared=JsonDocument.Parse(JsonSerializer.Serialize(operations.Prepare("BUILD_SNAPSHOT",parameters.RootElement))))
+    {
+        string requestId=prepared.RootElement.GetProperty("request_id").GetString()!;
+        SeedGrant(requestId,true);
+        bool blocked=false;
+        try{operations.Execute(requestId);}
+        catch(InvalidOperationException ex) when(ex.Message.StartsWith("BLOCKED_OCPMSP:",StringComparison.Ordinal)){blocked=true;}
+        Check("SNAPSHOT_BLOCKED_WITHOUT_GOVERNED_SELECTION",blocked);
+        using var c=store.Open();
+        using var snapshotCount=c.CreateCommand();
+        snapshotCount.CommandText="SELECT COUNT(*) FROM snapshots WHERE cycle_id=$cycle;";
+        snapshotCount.Parameters.AddWithValue("$cycle",blockedCycleId);
+        Check("BLOCKED_SNAPSHOT_HAS_NO_SIDE_EFFECT",Convert.ToInt32(snapshotCount.ExecuteScalar())==0);
+    }
+
     try{Directory.Delete(tempRoot,true);}catch{}
+    try{Directory.Delete(eventTempRoot,true);}catch{}
 }
 catch(Exception ex)
 {
