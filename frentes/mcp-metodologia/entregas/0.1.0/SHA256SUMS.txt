@@ -1,0 +1,3 @@
+67d2950556dd6e3549e9c4c0930dda874f08ac6df1d02ed4a0ca44190381b7ad  ocp-mcp-0.1.0-win-x64.zip
+5a2c6145eae5ba058d1f1231f9673ab63e0d2c971840b065b8c87d71032a13a1  build-manifest.json
+95c3ce99ba68542c880f4dde37417da0ce6d27ed66627cb98dd78abbd734db97  initial-sources.manifest.json

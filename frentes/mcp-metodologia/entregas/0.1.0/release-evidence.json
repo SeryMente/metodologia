@@ -1,0 +1,34 @@
+{
+    "product":  "OCP MCP",
+    "identity":  "MCP-METODOLOGIA",
+    "version":  "0.1.0",
+    "source_code_commit":  "a7fcc0837f77979b3345d104c8bef199df97ae33",
+    "branch":  "build/ocp-mcp-mvp-0.1.0",
+    "target_framework":  "net10.0",
+    "runtime_identifier":  "win-x64",
+    "sdk_version":  "10.0.403",
+    "self_contained":  true,
+    "entrypoint":  "OcpMcp.exe",
+    "args":  [
+                 "serve"
+             ],
+    "transport":  "stdio",
+    "component_count":  200,
+    "build_manifest_sha256":  "5a2c6145eae5ba058d1f1231f9673ab63e0d2c971840b065b8c87d71032a13a1",
+    "source_manifest_sha256":  "95c3ce99ba68542c880f4dde37417da0ce6d27ed66627cb98dd78abbd734db97",
+    "package_asset":  "ocp-mcp-0.1.0-win-x64.zip",
+    "package_size_bytes":  39690400,
+    "package_sha256":  "67d2950556dd6e3549e9c4c0930dda874f08ac6df1d02ed4a0ca44190381b7ad",
+    "unit_tests":  {
+                       "passed":  26,
+                       "failed":  0
+                   },
+    "integration_tests":  {
+                              "passed":  29,
+                              "failed":  0
+                          },
+    "status":  "BUILT_AND_TESTED_NOT_INSTALLED",
+    "mcp_normativo":  "DESACTIVADO",
+    "ep_installation":  "PENDING_EP",
+    "created_at_utc":  "2026-10-31T19:41:35.8236264+00:00"
+}
