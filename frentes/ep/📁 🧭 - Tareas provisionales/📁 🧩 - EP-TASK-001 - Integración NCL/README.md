@@ -235,3 +235,12 @@ Si un criterio queda bloqueado, mantenerlo explícitamente abierto; no sustituir
 Mantener esta tarea en `pendiente` durante el trabajo prioritario actual de alojamiento de OCP MCP. Cuando ese trabajo concluya —o el operador ordene expresamente cambiar la prioridad—, adquirir de nuevo OEP, DUG y las fuentes técnicas actuales; comprobar el estado del equipo y de todos los componentes desde sus fuentes reales; y comenzar por identificar el perfil OCP desde la instancia Chrome que el usuario reconoce como suya. No reutilizar datos volátiles ni asumir que el estado técnico reportado continúa vigente.
 
 **Estado al crear esta tarea:** ningún componente de NCL fue modificado, conectado, instalado, probado o aceptado en este ciclo.
+
+
+## 16. Bitácora acumulativa obligatoria por ciclo · delta 2026-10-31
+
+Por instrucción directa del operador, NCL adopta la regla común del registro de tareas provisionales: cada ciclo sustantivo de NCL debe dejar una entrada abundante, cronológica y recuperable en este mismo README antes de cerrar el ciclo. La entrada debe cubrir fuentes/revisiones adquiridas; objetivo y estado previo; hallazgos observados y reportados distinguidos; decisiones y su autoridad; cambios exactos; pruebas y resultados; SHA/read-back cuando haya escritura; limitaciones y bloqueos; viabilidad; estimación sustentada del siguiente hito y del cierre; pendientes y siguiente acción.
+
+La crónica es acumulativa: no se sustituye la historia anterior. Un NO-OP requiere cotejo y debe declararse como tal. No se crea un segundo OCP, bitácora paralela ni folio global. Las pruebas no realizadas no se describen como éxito. Esta regla no modifica el alcance técnico, el orden de activación, las autorizaciones de NCL ni convierte la tarea pendiente en tarea ejecutada.
+
+**Registro de incorporación · 2026-10-31:** se añadió el requisito documental solicitado por el operador. No se revalidó Chrome, KeePassXC, Native Messaging, Playwright, perfil OCP ni Cora en este ciclo; el estado técnico previo permanece como antecedente reportado y pendiente de revalidación.

@@ -19,6 +19,7 @@ El patrón de materialización sigue el registro de tareas provisionales de Gobe
 | ID local | Estado | Tarea | Núcleo |
 |---|---|---|---|
 | EP-TASK-001 | pendiente | NCL — Navegador Compartido Local: integración de Playwright y KeePassXC | [núcleo](./📁%20🧩%20-%20EP-TASK-001%20-%20Integración%20NCL/README.md) |
+| EP-TASK-002 | en_curso | Persistencia provisional con Backblaze B2 para datos de usuario y continuidad de la sesión canónica | [núcleo](./📁%20🧩%20-%20EP-TASK-002%20-%20Persistencia%20provisional%20Backblaze/README.md) |
 
 ## Estado de continuidad · 2026-10-31
 
@@ -38,3 +39,19 @@ EP-TASK-001 permanece `pendiente`. No debe iniciarse mientras siga activo el tra
 - [OEP — Objeto Canónico de Persistencia de Entorno](../OEP.md)
 - [DUG v373 · NX-373m](../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html)
 - [Criterios y núcleo EP-TASK-001](./📁%20🧩%20-%20EP-TASK-001%20-%20Integración%20NCL/README.md)
+
+
+## Regla obligatoria de avance y documentación por ciclo
+
+Esta regla se aplica a **EP-TASK-001 (NCL), EP-TASK-002 (Backblaze) y toda tarea provisional futura que se incorpore a este registro**. No altera por sí sola la prioridad, permisos, responsables ni criterios técnicos de cada tarea.
+
+1. Al cierre de cada ciclo sustantivo que produzca hallazgos, decisiones, cambios, pruebas o bloqueos, actualizar el README de la tarea correspondiente antes de declarar cerrado el ciclo.
+2. Mantener en ese mismo README una crónica acumulativa y cronológica. Cada ciclo agrega una entrada nueva; no sobrescribe ni elimina entradas anteriores. Las correcciones se incorporan como rectificaciones identificadas y con procedencia.
+3. Cada entrada será suficientemente detallada para que una conversación nueva pueda reanudar la tarea sin depender de la memoria de esta conversación: fecha/fuente; objetivo del ciclo; estado previo; hallazgos y datos observados; decisiones y su autoridad; trabajo realizado; archivos/rutas y cambios; evidencia, SHA/read-back cuando aplique; pruebas y resultados; limitaciones; bloqueos; viabilidad; estimación del siguiente hito y del cierre solo si existe base; pendientes y siguiente acción.
+4. Separar siempre dato observado, reporte del operador, reporte de otro agente, inferencia, propuesta, decisión aceptada y resultado verificado. Las pruebas no ejecutadas quedan explícitamente como pendientes.
+5. Registrar ciclos sin cambios sustantivos como NO-OP únicamente cuando se haya comprobado que no hubo delta; explicar qué fuentes se revisaron.
+6. No crear por defecto una bitácora, tablero u objeto de estado paralelo. El README de cada tarea es su núcleo y crónica acumulativa única; el índice de este registro solo resume identidad, estado y enlace.
+7. Antes de escribir, releer HEAD y el archivo objetivo, conservar cambios concurrentes y comprobar lectura de vuelta. Un ciclo no queda documentalmente persistido hasta comparar el contenido guardado y su SHA de Git.
+8. La regla es documental: no convierte una instrucción de seguimiento en autorización para instalar, ejecutar, transferir, borrar, configurar cuentas o modificar datos.
+
+La regla se adopta para tareas provisionales de este contenedor por instrucción directa del operador recibida el 2026-10-31. **No se afirma que haya sido propagada a otros repositorios o tareas fuera de este registro.**
