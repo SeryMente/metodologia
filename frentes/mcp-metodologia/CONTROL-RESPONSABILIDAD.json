@@ -78,7 +78,12 @@
     },
     "generation_before": 1,
     "generation_after": 2,
-    "result": "COMMIT_PENDING_READBACK"
+    "result": "VERIFIED",
+    "transfer_commit_sha": "d540b1ae246c53cd3877abb0e74722d24afeb1ec",
+    "control_readback_sha": "a8b186de6d6424312b836c931a42f0156ff53b23",
+    "generation_readback": 2,
+    "owner_readback": "chatgpt-ocp-mcp-01a192fb-8346-710a-ba99-54350ab2dfd9",
+    "readback_status": "MATCHED"
   },
   "implementation_authorization": {
     "event_id": "C-MCP-METODOLOGIA-IMPLEMENTATION-AUTH-20261031-01",
