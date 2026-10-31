@@ -1,7 +1,7 @@
 # 📝 GOV-TASK-001 · Validación de microdescriptores de pertinencia
 
 **Naturaleza:** OCP provisional de tarea; no es un frente independiente ni una unidad taxonómica canonizada.  
-**Estado:** `pendiente`  
+**Estado:** `en_curso`  
 **Responsabilidad:** heredada del control `frentes/gobernanza/CONTROL-RESPONSABILIDAD.json`; sin control ni sesión propios.  
 **task_id:** `GOV-TASK-001`  
 **scope_ref:** `frentes/gobernanza/`
@@ -12,15 +12,24 @@ Validar los 43 MDP para comprobar que permiten reconocer el significado y la se�
 
 ## Referencia de origen
 
-DUG v371 · ART-027; C-GOBERNANZA-MDP-OCP-01.
+DUG v373 · ART-027; diseño originado en C-GOBERNANZA-MDP-OCP-01.
 
 ## Dependencias y límites
 
-DUG v371 y acceso de lectura a los textos desarrollados; no inventar reglas ni alterar principios.
+DUG v373 y acceso de lectura a la fuente canónica; no inventar reglas ni alterar principios.
 
 ## Siguiente actuación
 
 Contrastar los MDP con entradas representativas y ajustar solo aquellos que no permitan reconocer la pertinencia o que revelen demasiado detalle operativo.
+
+## Comprobación estructural inicial · lectura de DUG v373
+
+- 43 IDs de principio únicos.
+- 43 MDP en la tabla humana y 43 campos `microdescriptor` en `gov-data`.
+- Coincidencia literal de los 43 MDP entre ambas representaciones.
+- Longitud mínima 11 y máxima 16 palabras; cero descriptores fuera del rango.
+
+**Alcance de esta comprobación:** valida identidad, sincronización y extensión; no demuestra por sí sola que cada MDP identifique correctamente todos los casos de pertinencia ni que su insuficiencia deliberada esté bien calibrada. Se requieren pruebas semánticas con entradas variadas.
 
 ## Criterio de cierre
 
