@@ -1124,3 +1124,26 @@ La futura norma deberá incluir: (a) esquema de identidades y SID; (b) matriz de
 **FUERA DE ALCANCE:** perfil MantenimientoRCI, cambios de sistema no autorizados, operaciones destructivas y secretos en ChatGPT.
 
 Esta sección supersede las interpretaciones anteriores incompatibles en §§18.13, 20.2 y 21.3 para el caso de escrituras ordinarias dirigidas al Escritorio de fila4. Las demás restricciones expresamente preservadas continúan vigentes.
+
+
+### 22.9. Preflight real de escritura dirigida a fila4 — ejecutado y read-back verificado
+
+Tras recibir la instrucción expresa del operador, se realizó una prueba no destructiva en el equipo que el operador asocia a CECEQ:
+
+- Host reportado por el agente: `PC10RCIF4EI4`.
+- Proceso ejecutor: `CENTRAL\MantenimientoRCI`, SID `S-1-5-21-1529298404-1161420656-882029410-2126`, nivel de integridad High.
+- Sesión interactiva observada: `CENTRAL\fila4`, consola, sesión 3, estado Activo.
+- SID de fila4: `S-1-5-21-1529298404-1161420656-882029410-5167`.
+- Perfil fila4: `C:\Users\fila4`, cargado.
+- Ruta física candidata de destino, respaldada por `Shell Folders` y por el perfil: `C:\Users\fila4\Desktop`.
+- ACL observada en esa carpeta: `CENTRAL\fila4` FullControl; `BUILTIN\Administradores` FullControl heredado; el grupo `PC10RCIF4EI4\CodexSandboxUsers` tiene ReadAndExecute. No se modificaron ACL.
+
+Se creó temporalmente `EP-TASK-002-preflight-write-test-20261031.txt` en `C:\Users\fila4\Desktop` mediante el proceso RDC MantenimientoRCI. La lectura de vuelta coincidió byte por byte con el contenido escrito; SHA-256 calculado: `1587e762ea00f6b489f036b886a828f0edef8e5f83233a2aba160a9ca23b422c`. Después se eliminó únicamente ese archivo temporal creado por la propia prueba y se comprobó su ausencia.
+
+<badge> </badge>
+
+**RESULTADO:** `WRITE=SUCCESS`, `READBACK=EXACT`, `SHA256=RECORDED`, `TEST_FILE_REMOVED=TRUE`. Queda demostrado que el proceso MantenimientoRCI puede escribir y leer archivos ordinarios en la ruta física `C:\Users\fila4\Desktop`; la diferencia entre identidad del proceso y propietario del destino no debe volver a bloquear esta clase de operación.
+
+**ANOMALÍA DE CONFIGURACIÓN QUE DEBE RESOLVERSE ANTES DE LLAMARLA “Escritorio activo”:** el valor `Shell Folders\Desktop` del hive de fila4 señala `C:\Users\fila4\Desktop`, pero `User Shell Folders\Desktop` del mismo SID señala `C:\Users\MantenimientoRCI\Desktop`. No se accedió a la ruta del perfil MantenimientoRCI ni se modificó el registro. Por esta divergencia se acredita la escritura en el directorio físico de fila4, pero la resolución definitiva del Known Folder Desktop que ve el shell interactivo queda **PENDIENTE**. Antes de usarlo como ubicación visible del usuario, resolver la redirección desde la sesión fila4 o corregirla mediante una operación separada expresamente autorizada.
+
+Esta prueba no instaló OCP MCP, no descargó ni extrajo el ZIP, no creó el workspace `EP`, no tocó DPAPI, no modificó configuraciones de usuario y no accedió a Backblaze. No se inspeccionó ni modificó `C:\Users\MantenimientoRCI\`.
