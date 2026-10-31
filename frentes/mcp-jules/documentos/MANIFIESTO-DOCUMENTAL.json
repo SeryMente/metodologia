@@ -1,0 +1,53 @@
+{
+  "schema": "spdf-manifest/1",
+  "front": "mcp-jules",
+  "ocp": "frentes/mcp-jules/",
+  "created_on": "2026-10-30",
+  "authority": "Subordinado a P041 y ART-014 del DUG en SeryMente/metodologia/main; la autoridad canónica sigue siendo main.",
+  "documents": [
+    {
+      "document_id": "01a18f96-2fa8-72ba-94c5-535b4d7a7a4d",
+      "original_name": "ChatGPT-JULES-20261030-1858.md",
+      "canonical_path": "documentos/originales/ChatGPT-JULES-20261030-1858.md",
+      "provenance": {
+        "source": "Archivo recibido por el operador y localizado mediante RDC en Downloads de la sesión Windows activa.",
+        "source_path": "C:\\Users\\PC 13\\Downloads\\ChatGPT-JULES-20261030-1858.md",
+        "device_alias": "PC-14",
+        "received_as": "original file bytes; not generated from memory or summary",
+        "exporter_metadata": {
+          "user": "Anonymous",
+          "created": "10/30/2026 11:33:18",
+          "updated": "10/30/2026 17:53:05",
+          "exported": "10/30/2026 18:58:20",
+          "conversation_url": "https://chatgpt.com/c/6ae4d4dd-e4a0-83e8-8212-285fd692ba0b"
+        }
+      },
+      "classification": "original",
+      "media_type": "text/markdown",
+      "encoding": "UTF-8 as stored by source; preserved as raw bytes",
+      "size_bytes": 241772,
+      "line_count": 4926,
+      "sha256": "B7D25FF3CBF233787D201AB0D7643E45C181EAE4430E3300876BCFE8CF3B1737",
+      "source_last_write_utc": "2026-10-31T00:58:21.0930477Z",
+      "repository": {
+        "name": "SeryMente/metodologia",
+        "branch": "feat/metacanon-mcp-jules-20261025-c32f81",
+        "commit": "a5a42c8a4f9c9aec16463b36b367ebbfa521ba13",
+        "blob_sha": "606682d92e1d4d1015dd28601ca3f0219888ef16"
+      },
+      "preservation": {
+        "method": "GitHub Contents API write using base64 of original file bytes.",
+        "transformed": false,
+        "readback_method": "Read same branch/path through GitHub Contents API, decoded base64 to a temporary file on PC-14 and recomputed SHA-256/length.",
+        "readback_sha256": "B7D25FF3CBF233787D201AB0D7643E45C181EAE4430E3300876BCFE8CF3B1737",
+        "readback_size_bytes": 241772,
+        "match": true,
+        "temporary_readback_removed": true
+      },
+      "status": "PERSISTIDO_Y_VERIFICADO_EN_RAMA_PR",
+      "main_status": "PENDIENTE_DE_MERGE_A_MAIN",
+      "derivatives": [],
+      "notes": "El original no fue editado, normalizado, convertido, resumido ni sobrescrito. La presencia en esta rama es persistencia remota verificable, no integración canónica en main."
+    }
+  ]
+}
