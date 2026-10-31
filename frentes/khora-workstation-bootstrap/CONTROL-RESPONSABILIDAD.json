@@ -1,0 +1,75 @@
+{
+  "schema": "responsabilidad/1",
+  "front": "khora-workstation-bootstrap",
+  "repository": "SeryMente/metodologia",
+  "front_ocp": "frentes/khora-workstation-bootstrap/",
+  "state_object": "frentes/khora-workstation-bootstrap/KHORA-WORKSTATION-BOOTSTRAP.md",
+  "status": "owned",
+  "owner_thread": "chatgpt-C-KHORA-WORKSTATION-BOOTSTRAP-01",
+  "owner_thread_identity_kind": "operational alias; native ChatGPT conversation ID not exposed by available tools",
+  "instance": "chatgpt-khora-workstation-bootstrap-2026-10-30",
+  "generation": 1,
+  "authorization_ref": "Instrucción expresa del operador en la conversación actual: «documentalo en un OCP provisional para este script en metodolopgia para que lo trabajes con persistencia»; alcance limitado al OCP KHORA Workstation Bootstrap.",
+  "scope": "Auditoría, documentación, endurecimiento y pruebas del único bootstrap PowerShell KHORA almacenado en SeryMente/metodologia. Incluye autenticación GitHub para acceder al repositorio privado, verificación del script, dependencias CLI y flujo RDC. Excluye Next.js, aplicaciones web, UI web, servidores web, build/deploy web, cambios al DUG y otros OCP. El script fuente no debe persistirse como copia local.",
+  "expiry": null,
+  "handoff": "Asignación inicial de un OCP nuevo: ruta/control no existían al preflight. El operador solicitó expresamente crear y mantener este OCP provisional. Alias operativo, no ID nativo. Registro cooperativo; no ofrece fencing universal frente a escritores que eludan el control.",
+  "session_folio": null,
+  "session_assignment": {
+    "status": "active_unfoliated",
+    "folio": null,
+    "front_ocp": "frentes/khora-workstation-bootstrap/",
+    "owner_alias": "chatgpt-C-KHORA-WORKSTATION-BOOTSTRAP-01",
+    "instance": "chatgpt-khora-workstation-bootstrap-2026-10-30",
+    "generation": 1,
+    "identity_kind": "operational alias; not a native ChatGPT conversation ID",
+    "foliation": "FOL1 PREPARADO, NO ACTIVO; no se asigna folio."
+  },
+  "initialization": {
+    "event_id": "C-KHORA-WORKSTATION-BOOTSTRAP-01",
+    "status": "created_provisional",
+    "recorded_on": "2026-10-30",
+    "authorization": "Instrucción expresa de creación del OCP provisional para mantener este script con persistencia.",
+    "purpose_original_path": "frentes/khora-workstation-bootstrap/conversaciones/C-KHORA-WORKSTATION-BOOTSTRAP-01-dialogo.jsonl",
+    "repository": "SeryMente/metodologia",
+    "branch": "main",
+    "ocp_path": "frentes/khora-workstation-bootstrap/",
+    "state_object": "frentes/khora-workstation-bootstrap/KHORA-WORKSTATION-BOOTSTRAP.md",
+    "previous_canonical_path_state": "NOT_FOUND",
+    "previous_owner": null,
+    "source_revision_before_creation": {
+      "main_head": "a6a88f157aca8ac4b9e7f46a2fdd95c4d4ec2d9a",
+      "inventory_blob_sha": "015ad1c137d38ba6ec6d235268f26073d2eff8c6",
+      "root_readme_blob_sha": "7c9ca79eb56893c62af270e73416372549eb6261",
+      "governance_blob_sha": "cac4525de77d4f47a8a59c25201968ecf2056b90",
+      "script_blob_sha": "862e63bd00a84cdbe5c2d913794cc17de373356a"
+    },
+    "uniqueness_check": {
+      "candidate_event_id": "C-KHORA-WORKSTATION-BOOTSTRAP-01",
+      "exact_repository_search_matches": 0,
+      "direct_control_checks": [
+        {
+          "path": "frentes/acceso/CONTROL-RESPONSABILIDAD.json",
+          "sha": "d77dbf55ca188d79d5126e168edd202ec63ac811",
+          "candidate_occurrences": 0
+        },
+        {
+          "path": "frentes/metacanon/CONTROL-RESPONSABILIDAD.json",
+          "sha": "86f0e4fa59e37976704231290b460cf6dc9252b0",
+          "candidate_occurrences": 0
+        },
+        {
+          "path": "frentes/gobernanza/CONTROL-RESPONSABILIDAD.json",
+          "sha": "c41c3cddc866de999827fc6ae36c23dde400344f",
+          "candidate_occurrences": 0
+        },
+        {
+          "path": "frentes/radar-profesional/CONTROL-RESPONSABILIDAD.json",
+          "sha": "ebedb865d9d813c731f6ebcf2b63bf37efe3efc1",
+          "candidate_occurrences": 0
+        }
+      ],
+      "scope": "Comprobación acotada en cuatro controles accesibles y búsqueda de código conectada; no demuestra unicidad global en todos los repositorios."
+    }
+  },
+  "ownership_history": []
+}

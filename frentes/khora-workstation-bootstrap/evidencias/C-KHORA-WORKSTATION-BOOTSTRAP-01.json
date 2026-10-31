@@ -1,0 +1,142 @@
+{
+  "schema": "khora-workstation-bootstrap-evidence/1",
+  "event_id": "C-KHORA-WORKSTATION-BOOTSTRAP-01",
+  "recorded_on": "2026-10-30",
+  "status": "provisional_audit_not_accepted",
+  "source": {
+    "repository": "SeryMente/metodologia",
+    "branch": "main",
+    "path": "scripts/khora-workstation-bootstrap-v6.ps1",
+    "commit": "aa45426ece7374e9812868e04e0ce5f783cebf4d",
+    "blob_sha": "862e63bd00a84cdbe5c2d913794cc17de373356a",
+    "sha256": "dd71b638fab3694e89ae58d7faf265941cd6a289ecbf9602bf0d434837635d7b"
+  },
+  "governance": {
+    "dug": "v373 · NX-373m",
+    "dug_blob_sha": "cac4525de77d4f47a8a59c25201968ecf2056b90",
+    "metacanon": "1.26 · METACANON-OBJETOS-v1.26",
+    "gow": "2.14"
+  },
+  "environment": {
+    "device_label": "PC-14",
+    "powershell": "5.1.26100.9711",
+    "node": "v26.13.0",
+    "npm": "11.20.0",
+    "git": "2.56.0.windows.4",
+    "github_cli": "2.103.3",
+    "vercel_cli": "65.9.0",
+    "desktop_commander": "0.3.1",
+    "account_identifiers": "omitted"
+  },
+  "tests": [
+    {
+      "id": "T-001",
+      "name": "Private GitHub source integrity",
+      "status": "PASS",
+      "result": "Pinned content blob, type/encoding, size and SHA-256 verified before execution in memory."
+    },
+    {
+      "id": "T-002",
+      "name": "PowerShell 5.1 parser",
+      "status": "PASS",
+      "result": "Zero parser errors and zero duplicate function names on PC-14."
+    },
+    {
+      "id": "T-003",
+      "name": "Next.js contamination scan",
+      "status": "PASS",
+      "result": "Zero Next/Next.js references in V6 source."
+    },
+    {
+      "id": "T-004",
+      "name": "V6 SelfTest",
+      "status": "PASS",
+      "result": "Tone sequence, string-sample checks and SHA-256 known vector."
+    },
+    {
+      "id": "T-005",
+      "name": "V6 PreflightOnly",
+      "status": "PASS",
+      "result": "Exit code 0; existing GitHub auth, Git HTTPS credential fill, Vercel 65.9.0 install and whoami verified."
+    },
+    {
+      "id": "T-006",
+      "name": "Desktop Commander CLI compatibility",
+      "status": "PASS",
+      "result": "Version 0.3.1 help confirms remote --no-persist-session."
+    },
+    {
+      "id": "T-007",
+      "name": "GitHub device auth from clean state",
+      "status": "NOT_RUN",
+      "result": "Existing GitHub auth was present; no isolated credential-free test."
+    },
+    {
+      "id": "T-008",
+      "name": "RDC fresh handshake",
+      "status": "NOT_RUN",
+      "result": "Three Desktop Commander processes were detected; no second launch and no process termination."
+    }
+  ],
+  "findings": [
+    {
+      "id": "F-001",
+      "severity": "HIGH",
+      "status": "OPEN",
+      "text": "Launcher treats gh auth status success as sufficient; no scope/account repair when private repository access fails."
+    },
+    {
+      "id": "F-002",
+      "severity": "HIGH",
+      "status": "OPEN",
+      "text": "Fresh GitHub device-flow has not been tested with a credential-free profile."
+    },
+    {
+      "id": "F-003",
+      "severity": "HIGH",
+      "status": "OPEN",
+      "text": "No fresh RDC Device ready/Online/handshake SHA round-trip for V6."
+    },
+    {
+      "id": "F-004",
+      "severity": "MEDIUM",
+      "status": "OPEN",
+      "text": "Self-test does not verify that all RDC handshake fields are parsed and validated together, including GUID and negative Offline case."
+    },
+    {
+      "id": "F-005",
+      "severity": "MEDIUM",
+      "status": "OPEN",
+      "text": "Node, Git and GitHub CLI are installed via floating LTS/latest package IDs rather than exact versions."
+    },
+    {
+      "id": "F-006",
+      "severity": "MEDIUM",
+      "status": "OPEN",
+      "text": "Vercel CLI/login is inherited from V5; necessity remains unconfirmed."
+    },
+    {
+      "id": "F-007",
+      "severity": "MEDIUM",
+      "status": "OPEN",
+      "text": "Automatic browser-opening flows require review under Metacanon §24; prefer terminal URL/code and explicit user authorization."
+    },
+    {
+      "id": "F-008",
+      "severity": "LOW",
+      "status": "OPEN",
+      "text": "winget is required when GitHub CLI is absent; no fallback path is validated."
+    }
+  ],
+  "next_incident": {
+    "next_in_v6": false,
+    "separate_process_observed": true,
+    "pid": 22636,
+    "observed_device_clock": "2026-10-30 19:32:13",
+    "timezone": "not verified",
+    "command": "node_modules/next/dist/bin/next build --webpack",
+    "assessment": "A separate start_process record from another working directory; not invoked by V6."
+  },
+  "acceptance": "NOT_ACCEPTED",
+  "acceptance_gate": "Resolve GitHub private access recovery, test fresh GitHub authorization and fresh RDC handshake; close or explicitly accept remaining dependency/GUI findings."
+}
