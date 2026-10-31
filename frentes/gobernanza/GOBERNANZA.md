@@ -293,3 +293,16 @@ Se actualizaron de manera puntual los metadatos del GOW, `INICIO.md`, los README
 Validación del DUG: JSON embebido válido; JavaScript operativo compilado sintácticamente de forma aislada; cero IDs duplicados en el HTML estático y cero anclas duplicadas detectadas en el contenido inspeccionado. **No** se ejecutaron renderizado de navegador ni auditoría dinámica completa de enlaces. Notion no se actualizó ni se releyó; IPZ nativo no se verificó; la prueba SPDF E2E sigue pendiente de adjunto original y segunda instancia autorizada. GitHub Actions/workflows no se consultaron ni ejecutaron.
 
 **Folio global del ciclo:** `C-20261028-FA636DB0`. Este registro es operativo; la única fuente normativa permanece en el DUG HTML de `main`.
+
+
+## Retoma vigente · C-GOBERNANZA-RETOMA-07 · 2026-10-31
+
+**Responsabilidad activa:** generación 9 · titular operativo `chatgpt-C-GOBERNANZA-RETOMA-07-SES-20261031-GV8AA51721` · sesión `SES-20261031-GV8AA51721` · UUIDv7 local `01a193a9-7a00-7286-9216-45a477d294c1` (no ID nativo). El control fue actualizado mediante compare-and-swap y leído de vuelta.
+
+**Original recibido:** [ChatGPT-Gobernanza-20261031-1432.md](documentos/originales/ChatGPT-Gobernanza-20261031-1432.md), 637.277 bytes; SHA-256 `73A087BA953FD01F0804A482452E505E0D5AC160237AF18B467E677D2BAA2219`; Git blob `d17f575fcd5bf0c0da1bb459a40e42e47c081a31`. Estado `PERSISTIDO_Y_VERIFICADO`, lectura de vuelta exacta desde `main`.
+
+**Objetivo rector Gobernanza 1.0:** IPZ de máximo estricto 1.500 caracteres, con dos enlaces Sync acortados en este orden: §ARR/GOW para familiarización léxica y DUG como documento único normativo. Después, refuerzo fail-closed de admisión: no comenzar trabajo sustantivo sin frente explícito y titularidad/exclusividad verificadas. Cada ciclo usa su folio global propio, distinto del folio conversacional. OCP MCP debe servir el inventario de 43 nombres DI y MDP; recibir la selección de aplicables; devolver enlaces Sync individuales a cada norma desarrollada; registrar frecuencia de acceso; permitir que el modelo compruebe suficiencia y solicite principios adicionales; y emitir el hash del paquete exacto de enlaces para incorporarlo a la salida del ciclo. Frecuencia no significa aplicación ni autoriza descarte automático.
+
+**Distribución de responsabilidad:** Gobernanza define el contrato, la IPZ y criterios de aceptación; OCP MCP implementa las capacidades del servidor bajo su control; EP resuelve alojamiento, instalación, RDC y persistencia bajo su propio control. No se mutan controles ajenos.
+
+**Límites:** DUG, ART-025, ART-027, IPZ nativa y controles MCP/EP no se modifican en esta retoma. FOL1 continúa inactivo y MCP-NORMATIVO permanece DESACTIVADO.
