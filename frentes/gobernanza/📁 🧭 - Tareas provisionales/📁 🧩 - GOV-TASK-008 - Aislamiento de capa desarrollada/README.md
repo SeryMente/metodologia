@@ -55,3 +55,10 @@ Implementar la opción aprobada, después de contar con acceso Cloudflare o con 
 ## Criterio de cierre
 
 La capa de inicio expone únicamente ID/nombre/MDP; la apertura del alias recupera solo el texto desarrollado del principio correspondiente; el DUG sigue siendo la fuente canónica; GitHub permanece privado; y la lectura de vuelta verifica ID, versión y contenido.
+
+
+## Revisión de alcance · instrucción del operador · 2026-10-31
+
+El requisito de aislamiento se mantiene, pero el diseño de entrega debe coordinarse con OCP MCP y no presuponer Sink/Cloudflare. El modelo recibe el inventario acotado de 43 principios, comunica cuáles aplican al ciclo y obtiene mediante OCP MCP enlaces Sync individuales a las versiones desarrolladas. Cada enlace debe resolver un único principio y conservar versión/firma/SHA de la fuente; no debe exponer los 43 textos desarrollados en la respuesta inicial.
+
+El MDP debe permitir comprender el significado y reconocer pertinencia, pero no sustituir la lectura del principio completo. La fuente normativa sigue siendo el DUG único; cualquier proyección o extracción es derivada, verificable y no adquiere autoridad independiente. La telemetría de esta tarea se limita a frecuencia de acceso.
