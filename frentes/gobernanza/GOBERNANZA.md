@@ -11,7 +11,7 @@ Se incorporó como original el archivo [ChatGPT-GOBERNANZA-20261030-1857.md](doc
 - **Fuente normativa leída:** DUG v373 · NX-373m; blob `cac4525de77d4f47a8a59c25201968ecf2056b90`. ART-027 mantiene la estrategia MDP y Sink, incorporada inicialmente en v371.
 - **Auditoría estructural MDP:** 43/43 IDs únicos; 43 filas humanas y 43 descriptores estructurados; coincidencia literal de los 43 textos; extensión entre 11 y 16 palabras en todos los casos. Esta comprobación no sustituye la validación semántica con entradas reales.
 - **Titularidad:** generación 7; control vigente leído de vuelta, blob `c41c3cddc866de999827fc6ae36c23dde400344f`. Las tareas no tienen controles, sesiones ni folios propios.
-- **Estado provisional:** GOV-TASK-001, GOV-TASK-006 y GOV-TASK-008 en curso; GOV-TASK-002/003/004/005/007 pendientes.
+- **Estado provisional:** GOV-TASK-001, GOV-TASK-006, GOV-TASK-007 y GOV-TASK-008 en curso; GOV-TASK-002/003/004/005 pendientes. GOV-TASK-007 tiene borrador IPZ v0.9 conversacional de 1.478 caracteres, no instalado; FOL1 sigue preparado, generación 3 y sin asignaciones.
 - **Infraestructura:** Sink no desplegado; cero aliases activos y cero telemetría real. PC-14 está en línea, pero Wrangler no está instalado; no hay integración Cloudflare disponible en esta sesión.
 - **Divergencia que requiere revisión normativa:** el DUG declara GOW 2.14 en `gov-data.document.gow_version` y `gov-data.glossary.version`, mientras que el banner humano de la sección GOW todavía indica v2.12. `GLOSARIO-WORKSPACE.fuente.json` conserva además metadatos históricos v2.11. No se alteró el DUG, GOW ni ese archivo auxiliar en esta reconciliación.
 
