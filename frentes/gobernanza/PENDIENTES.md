@@ -1,5 +1,20 @@
 # Pendientes · Frente Gobernanza
 
+## Estado vigente · C-GOBERNANZA-MDP-OCP-01 · 2026-10-30
+
+**Persistido y releído:** DUG v371 · NX-371m; ART-027 contiene 43 MDP de 11–16 palabras. El MDP comunica significado y señal de activación, pero es insuficiente para aplicar completamente el principio. Cuando resulte pertinente, la consulta del texto desarrollado vía Sink es obligatoria. La telemetría inicial mide solo frecuencia de acceso; no mide aplicación.
+
+**OCP provisionales:** [registro de ocho tareas](../%F0%9F%93%81%20%F0%9F%A7%AD%20-%20Tareas%20provisionales/README.md). Ocho núcleos con estado pendiente, control heredado de Gobernanza. Tareas no canonizado.
+
+**Pendientes ejecutivos:** validar MDP; desplegar Sink y crear aliases p001–p043; probar consulta privada Sink→GitHub; aislar técnicamente la norma desarrollada detrás de Sink (GOV-TASK-008); resolver la incubación Tareas respetando su titular actual; corregir referencias P020/P021/P033/P034 con evidencia y P005; reconciliar divergencias documentales; reconciliar IPZ y activar FOL1 solo tras su aceptación e instalación observable.
+
+**Límites:** Sink/Cloudflare no desplegados; cero aliases activos y cero telemetría real. El DUG aún contiene los 43 textos desarrollados en `gov-data`; la consulta Sink obligatoria es procedimental y no impide técnicamente un acceso directo. `ambitos/tareas/` conserva titularidad de otra sesión, sin modificaciones ni transferencia. FOL1 permanece `PREPARADO_PENDIENTE_ACTIVACION_IPZ`. ART-025 e IPZ permanecen intactos.
+
+Registro: [crónica](cronica/C-GOBERNANZA-MDP-OCP-01.md) · [evidencia](evidencias/C-GOBERNANZA-MDP-OCP-01.json) · [DUG v371 · ART-027](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-027).
+
+---
+
+
 ## Estado histórico · C-GOBERNANZA-MDP-OCP-01 · 2026-10-30
 
 **Persistido y releído:** DUG v371 · NX-371m; 43 principios, 20 anexos; ART-027 contiene 43 MDP de 11–16 palabras. El MDP orienta significado y activación, pero es insuficiente para aplicar el principio. Cuando exista pertinencia, la consulta de la norma desarrollada por Sink es obligatoria. La telemetría inicial mide solo frecuencia de acceso por alias; no existe medición de aplicación ni registro `principle_usage` por ciclo.
