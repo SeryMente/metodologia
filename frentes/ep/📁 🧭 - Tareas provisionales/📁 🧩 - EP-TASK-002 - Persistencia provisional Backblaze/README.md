@@ -681,3 +681,74 @@ Los bloqueos son paralelos: conectar CECEQ no produce el artefacto del servidor 
 6. Dejar runbook de restauración y probar el arranque en el segundo equipo el 2026-11-01. Hasta completar esa restauración, la continuidad multiubicación sigue `PENDIENTE`.
 
 **Resultado del ciclo:** no apareció CECEQ en el inventario RDC ni un artefacto ejecutable del servidor en la rama remota. Se reitera que la persistencia B2 no está configurada ni probada. No hubo uso del host PC10 ni cambios técnicos locales o en Backblaze.
+
+
+## 18.16. Rectificación del diagnóstico RDC y preparación verificable de B2 · 2026-10-31 · 13:27 · America/Mexico_City
+
+### 18.16.1. Corrección del punto 1: uso de RDC frente a inventario Desktop Commander
+
+El operador informa que utilizó la conexión RDC desde esta máquina durante toda la mañana. Se acepta esa declaración como evidencia directa del operador sobre el uso efectivo de su conexión RDC.
+
+La consulta ejecutada en este ciclo fue `mcp__Remote_Desktop_Commander__list_devices`. Su descripción funcional es listar los dispositivos registrados de Desktop Commander, no consultar todas las aplicaciones cliente RDP/RDC ni reconstruir el historial de conexiones del equipo desde el que opera el usuario. La respuesta actual volvió a mostrar un único agente Desktop Commander ONLINE: `PC10RCIF4EI4`, UUID `d0bbb2a3-d7b4-45e1-8870-652c2c3844fc`; no presentó un agente con alias CECEQ.
+
+Por tanto, el diagnóstico de §18.15.1 fue excesivo al convertir la ausencia de un alias CECEQ en ese inventario en una afirmación de indisponibilidad general de RDC. Se rectifica así:
+
+- **RDC utilizado desde la máquina del operador:** CONFIRMADO POR DECLARACIÓN DIRECTA DEL OPERADOR.
+- **Presencia de un agente Desktop Commander llamado CECEQ en el inventario consultado:** NO OBSERVADO.
+- **Identidad/UUID del equipo remoto o sesión destino a la que se conectó el operador:** NO VERIFICADO por la consulta de inventario.
+- **Disponibilidad de un canal de ejecución del asistente bajo el token interactivo no elevado de fila4 en CECEQ:** NO VERIFICADA.
+- **PC10:** sigue sin poder utilizarse como sustituto de CECEQ; no se abrió ni operó en ese host en este ciclo.
+
+La consulta `list_devices` no basta para invalidar ni para demostrar el uso de la conexión RDC que reporta el operador. La verificación pendiente para ejecutar tareas desde este asistente es identificar el extremo remoto concreto y probar SID, sesión interactiva y token de fila4 mediante el canal autorizado correspondiente; no debe inferirse esa identidad a partir del alias CECEQ ni de variables de entorno.
+
+### 18.16.2. Punto 3: perfil técnico B2 definido; cuenta y credencial aún no adquiridas
+
+Se buscó una integración/plugin de Backblaze B2 en las herramientas disponibles y no apareció un conector operativo de B2. No se efectuó autenticación en una cuenta Backblaze ni se creó bucket o application key.
+
+La documentación oficial vigente consultada establece que:
+- Backblaze ofrece un CLI oficial con descarga autocontenida para Windows, que evita una instalación global y puede ejecutarse desde el workspace autorizado: https://www.backblaze.com/docs/cloud-storage-command-line-tools
+- La CLI requiere la capacidad `listBuckets` para resolver nombres de bucket a IDs; cada operación requiere capacidades adicionales. La CLI permite configurar la ruta de caché de autenticación mediante `B2_ACCOUNT_INFO`; el archivo predeterminado es `~/.b2_account_info`. Ese archivo contiene información de autenticación y debe quedar excluido de sincronización y backups: https://www.backblaze.com/docs/cloud-storage-command-line-tools
+- Backblaze recomienda claves estándar de aplicación con permisos limitados frente a la master key. Pueden restringirse a un bucket, prefijo y vencimiento: https://www.backblaze.com/docs/cloud-storage-application-keys
+
+**Configuración técnica propuesta para Metodología (no creada aún):**
+
+| Parámetro | Configuración prevista |
+|---|---|
+| Bucket | Uno dedicado a Metodología, visibilidad `allPrivate` |
+| Clave | Standard Application Key; no usar master key |
+| Alcance | Un solo bucket |
+| Prefijo | `ep-ocp/` propuesto, pendiente de confirmación en consola |
+| Capacidades mínimas para CLI | `listBuckets`, `listFiles`, `readFiles`, `writeFiles` |
+| Capacidades excluidas | `deleteFiles`, `writeBuckets`, `deleteBuckets`, administración de claves, cambios de retención y permisos no requeridos |
+| Credencial | Introducción interactiva local en la sesión de fila4; nunca en ChatGPT, GitHub, README, manifiestos ni logs |
+| Caché de autorización | Ubicación temporal local no respaldada; volver a autorizar al cambiar de sesión/equipo si la caché se pierde |
+
+La restricción de bucket/prefijo y las capacidades anteriores se apoyan en la documentación de claves y de la CLI. La operación por CLI requiere `listBuckets`; para listar objetos se requiere `listFiles`, para descarga `readFiles` y para carga `writeFiles`. No se concede borrado en el smoke test. La clave no debe habilitar `listAllBucketNames` si el flujo no necesita enumerar todos los buckets: https://www.backblaze.com/docs/cloud-storage-application-keys
+
+**Para desbloquear la configuración:** se necesita una cuenta B2 con B2 Cloud Storage habilitado, bucket privado dedicado y creación de una clave estándar restringida al bucket/prefijo. El operador debe custodiar el valor secreto en su gestor seguro y escribirlo solo en el prompt local de autorización; no enviarlo por el chat. No se usan variables ni secretos del proyecto Khora/Vercel.
+
+### 18.16.3. Punto 4: protocolo de prueba upload/download/SHA-256 preparado; aún no ejecutado
+
+La secuencia mínima y no destructiva queda fijada así:
+
+1. Desde el proceso interactivo no elevado de fila4 en CECEQ, detectar arquitectura y obtener la versión autocontenida adecuada del CLI oficial; validar ejecutable y versión antes de autorizar.
+2. Definir `B2_ACCOUNT_INFO` para una ruta temporal local excluida de sincronización. Ejecutar `b2 account authorize` de forma interactiva para que la clave no aparezca en argumentos, historial ni logs. La documentación oficial confirma que la CLI almacena la autorización en su archivo local de cuenta; esa caché no se respaldará.
+3. Confirmar que la clave solo ve el bucket/prefijo previsto y que no dispone de capacidades de borrado.
+4. Crear un archivo sintético pequeño sin datos personales, secretos ni datos reales de OCP. Calcular su SHA-256 local.
+5. Subirlo con `b2 file upload <bucket> <archivo-local> ep-ocp/smoke/<nombre-único>`; verificar la entrada mediante `b2 ls`.
+6. Descargarlo a una carpeta de staging separada usando `b2 file download b2://<bucket>/ep-ocp/smoke/<nombre-único> <destino-local>`.
+7. Calcular SHA-256 del archivo descargado y comparar byte por byte/hash con el original. Guardar solo resultado, nombre sintético, tamaño, fecha y hashes; nunca credenciales.
+8. No borrar el objeto de prueba durante este MVP. No usar `b2 sync --delete`, ni ejecutar reglas lifecycle destructivas.
+
+Fuentes oficiales del procedimiento:
+- Carga y listado: https://www.backblaze.com/docs/cloud-storage-upload-files-with-the-cli
+- Sintaxis de descarga y capacidad `readFiles` (CLI 4.0.2): https://b2-command-line-tool.readthedocs.io/en/stable/
+- La descarga debe probarse contra un bucket privado con autenticación; no convertirlo a público para facilitar la verificación: https://www.backblaze.com/docs/cloud-storage-download-files-with-the-native-api
+
+**Estado real al corte:** diseño/configuración técnica de B2 PREPARADOS DOCUMENTALMENTE; cuenta, bucket, clave, CLI en CECEQ, upload, download y comparación SHA-256 NO EJECUTADOS. El backup real del servidor OCP MCP tampoco puede hacerse hasta recibir el artefacto 0.1.0 y su procedimiento de snapshot coherente. El protocolo smoke test no equivale a declarar un backup OCP ni continuidad multiubicación.
+
+### 18.16.4. Único desbloqueo externo inmediato
+
+Se requiere que el operador confirme que dispone de acceso administrador a una cuenta Backblaze B2 y, desde su consola, cree (o identifique) un bucket privado dedicado y una Standard Application Key limitada a ese bucket y al prefijo acordado. La clave secreta se introduce solo en el prompt local seguro; no debe copiarse al chat. En paralelo, el canal RDC ya utilizado por el operador debe quedar identificado como sesión destino ejecutable desde fila4 no elevado antes de iniciar cualquier operación local.
+
+**Resultado del ciclo:** se corrige el falso negativo del punto 1; se acepta el uso de RDC reportado por el operador, sin confundirlo con el inventario de agentes Desktop Commander. Para los puntos 3 y 4 se definió un perfil B2 mínimo y un protocolo de prueba verificable, con fuentes oficiales actuales. No se conectó a B2 ni se transfirió información porque no hay cuenta/clave independiente ni canal de ejecución fila4/CECEQ verificado. Se mantiene un único objeto acumulativo EP-TASK-002.
