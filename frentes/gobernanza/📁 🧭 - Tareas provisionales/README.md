@@ -3,9 +3,9 @@
 **Estado:** materialización operativa provisional; no constituye el ámbito funcional Tareas ni lo canoniza.  
 **Contenedor:** `frentes/gobernanza/📁 🧭 - Tareas provisionales/`  
 **OCP padre y fuente de responsabilidad:** `frentes/gobernanza/`  
-**Control heredado:** [CONTROL-RESPONSABILIDAD.json](../CONTROL-RESPONSABILIDAD.json), titular de Gobernanza, generación 6.  
+**Control heredado:** [CONTROL-RESPONSABILIDAD.json](../CONTROL-RESPONSABILIDAD.json), titular de Gobernanza, generación 7; blob leído de vuelta `c41c3cddc866de999827fc6ae36c23dde400344f`.  
 **Evento de creación:** C-GOBERNANZA-MDP-OCP-01 · 2026-10-30.  
-**Fuente normativa:** [DUG v371 · NX-371m](../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html).
+**Fuente normativa vigente:** [DUG v373 · NX-373m](../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html). La arquitectura MDP se originó en v371 y se leyó de vuelta en v373.
 
 ## Naturaleza y límites
 
@@ -19,14 +19,18 @@ El núcleo de cada objeto conserva identificador local, enunciado, referencia re
 
 | ID local | Estado | Tarea | Núcleo |
 |---|---|---|---|
-| GOV-TASK-001 | pendiente | Validación de microdescriptores de pertinencia | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-001%20-%20Validaci%C3%B3n%20de%20MDP/README.md) |
+| GOV-TASK-001 | en_curso | Validación de microdescriptores de pertinencia | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-001%20-%20Validaci%C3%B3n%20de%20MDP/README.md) |
 | GOV-TASK-002 | pendiente | Despliegue de Sink y telemetría de frecuencia | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-002%20-%20Despliegue%20Sink%20y%20frecuencia/README.md) |
 | GOV-TASK-003 | pendiente | Prueba de consulta privada Sink → GitHub | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-003%20-%20Consulta%20privada%20E2E/README.md) |
 | GOV-TASK-004 | pendiente | Concluir la incubación y decidir el ámbito Tareas | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-004%20-%20Incubaci%C3%B3n%20del%20%C3%A1mbito%20Tareas/README.md) |
 | GOV-TASK-005 | pendiente | Resolver referencias incompletas P020/P021/P033/P034 | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-005%20-%20Integridad%20de%20principios/README.md) |
-| GOV-TASK-006 | pendiente | Reconciliar divergencias documentales de Gobernanza | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-006%20-%20Reconciliaci%C3%B3n%20documental/README.md) |
+| GOV-TASK-006 | en_curso | Reconciliar divergencias documentales de Gobernanza | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-006%20-%20Reconciliaci%C3%B3n%20documental/README.md) |
 | GOV-TASK-007 | pendiente | Reconciliar IPZ y cerrar el corte FOL1 | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-007%20-%20IPZ%20y%20FOL1/README.md) |
-| GOV-TASK-008 | pendiente | Aislar técnicamente la norma desarrollada detrás de Sink | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-008%20-%20Aislamiento%20de%20capa%20desarrollada/README.md) |
+| GOV-TASK-008 | en_curso | Aislar técnicamente la norma desarrollada detrás de Sink | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-008%20-%20Aislamiento%20de%20capa%20desarrollada/README.md) |
+
+## Estado de continuidad observado · 2026-10-30
+
+GOV-TASK-001, GOV-TASK-006 y GOV-TASK-008 se encuentran `en_curso`; las otras cinco permanecen `pendiente`. El cambio de estado no crea controles, sesiones ni folios propios. La discrepancia GOW 2.12/2.14 y la falta de acceso Cloudflare están registradas en [Pendientes](../PENDIENTES.md).
 
 ## Regla de mantenimiento
 
@@ -39,7 +43,7 @@ El núcleo de cada objeto conserva identificador local, enunciado, referencia re
 
 ## Referencias
 
-- [DUG v371 · ART-027](../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-027)
+- [DUG v373 · ART-027](../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-027)
 - [Núcleo Gobernanza](../GOBERNANZA.md)
 - [Pendientes Gobernanza](../PENDIENTES.md)
 - [Crónica de creación](../cronica/C-GOBERNANZA-MDP-OCP-01.md)
