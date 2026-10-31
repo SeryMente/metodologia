@@ -7,17 +7,17 @@
   "state_object": "frentes/mcp-metodologia/MCP-METODOLOGIA.md",
   "status": "owned",
   "owner_thread": null,
-  "owner_thread_identity_kind": "native ChatGPT conversation ID not exposed; owner_alias is an operational alias",
-  "owner_alias": "chatgpt-C-MCP-METODOLOGIA-001-01a192b3-1063-7916-be41-ebfa974ede73",
+  "owner_thread_identity_kind": "Native ChatGPT conversation ID not exposed; owner_alias is an operational alias",
+  "owner_alias": "chatgpt-ocp-mcp-01a192fb-8346-710a-ba99-54350ab2dfd9",
   "owner_alias_type": "operational_alias_not_native_thread_id",
-  "instance": "chatgpt-mcp-metodologia-974ede73",
-  "uuidv7_local": "01a192b3-1063-7916-be41-ebfa974ede73",
-  "generation": 1,
-  "authorization_ref": "Instrucción directa del operador U001 para inaugurar el frente OCP MCP en SeryMente/metodologia y propósito dictado literalmente en U002, C-MCP-METODOLOGIA-001-dialogo.jsonl.",
-  "authorization_event": "C-MCP-METODOLOGIA-001",
-  "scope": "Inicialización documental del OCP MCP de Metodología, establecimiento de identidad/control y continuidad documental. No autoriza código, instalación/arranque local, puertos, credenciales, cambios de bases de datos, acceso RDC a un equipo concreto, activación de MCP-NORMATIVO, despliegue público/Vercel ni cambios al OCP Khora MCP.",
+  "instance": "chatgpt-ocp-mcp",
+  "uuidv7_local": "01a192fb-8346-710a-ba99-54350ab2dfd9",
+  "generation": 2,
+  "authorization_ref": "Instrucción directa del operador en la conversación del 2026-10-31: “Tienes autorizacion previa, para esto y lo qu enecesites, resuelve de extremo a extremo”, aplicada separadamente a A (transferencia CAS) y B (construcción, compilación y pruebas del servidor MCP dentro de frentes/mcp-metodologia/).",
+  "authorization_event": "C-MCP-METODOLOGIA-TRANSFER-20261031-01",
+  "scope": "Autoriza la construcción del servidor MCP de Metodología dentro de frentes/mcp-metodologia/: implementación de código, pruebas automatizadas, compilación en entorno de build, corrección de defectos, generación del manifiesto verificable y empaquetado del artefacto 0.1.0, además de documentación técnica de implementación y reportes de avance a coordinación central/EP. No autoriza instalación ni operación en el host persistente EP; cambios de configuración local EP, ACL, propietario, registro, firewall, servicios, tareas programadas o procesos del host; uso/modificación del control EP; cambios del DUG, ART-025, ART-027, IPZ, Sink productivo, MCP-NORMATIVO o Khora; despliegue público, exposición de puertos, credenciales externas ni cambios fuera de frentes/mcp-metodologia/.",
   "expiry": null,
-  "handoff": "Asignación inicial de un OCP nuevo cuya ruta y control no existían en la revisión base. Alias operativo, no ID nativo. FOL1 no está activado; no se asigna folio global ni SES. Control cooperativo, no fencing de servidor para escrituras arbitrarias.",
+  "handoff": "Transferencia CAS autorizada por instrucción directa del operador. Anterior titular: chatgpt-C-MCP-METODOLOGIA-001-01a192b3-1063-7916-be41-ebfa974ede73 (generación 1). Nuevo titular: chatgpt-ocp-mcp-01a192fb-8346-710a-ba99-54350ab2dfd9 (UUIDv7 local 01a192fb-8346-710a-ba99-54350ab2dfd9, no ID nativo; generación 2). Precondición: CONTROL-RESPONSABILIDAD.json blob SHA ffa27d9c62c557aa4894eebfd8c4cbf44ed09335. Transferencia solo válida después de commit y lectura de retorno que verifiquen titular, generación, alcance y nuevo SHA. La autorización B es acto material separado, registrada en implementation_authorization. FOL1 permanece PREPARADO_PENDIENTE_ACTIVACION_IPZ; no se asigna folio global.",
   "session_folio": null,
   "folio_status": "PENDIENTE/NO ASIGNADO; FOL1 = PREPARADO_PENDIENTE_ACTIVACION_IPZ",
   "session_assignment": {
@@ -25,16 +25,15 @@
     "folio": null,
     "assigned_on": "2026-10-31",
     "front_ocp": "frentes/mcp-metodologia/",
-    "owner_alias": "chatgpt-C-MCP-METODOLOGIA-001-01a192b3-1063-7916-be41-ebfa974ede73",
-    "instance": "chatgpt-mcp-metodologia-974ede73",
-    "uuidv7_local": "01a192b3-1063-7916-be41-ebfa974ede73",
-    "generation": 1,
+    "owner_alias": "chatgpt-ocp-mcp-01a192fb-8346-710a-ba99-54350ab2dfd9",
+    "instance": "chatgpt-ocp-mcp",
+    "uuidv7_local": "01a192fb-8346-710a-ba99-54350ab2dfd9",
+    "generation": 2,
     "identity_kind": "operational alias + local UUIDv7; not a native ChatGPT conversation ID",
     "uniqueness_check": {
       "status": "bounded OCP identity/path check; no global folio allocated",
       "path_absent_on_base_main": true,
       "target_path": "frentes/mcp-metodologia/",
-      "existing_candidate": "frentes/mcp-jules/ (legacy chronicle only; no nucleus/control; identity not verified)",
       "global_uniqueness": "not_verified",
       "fol1_activation": "PREPARADO_PENDIENTE_ACTIVACION_IPZ"
     }
@@ -56,5 +55,49 @@
     "prior_canonical_path_state": "NOT_FOUND at frentes/mcp-metodologia/",
     "previous_owner": null,
     "initial_scope": "Documentary initialization of a distinct local MCP server for methodology development and governance tasks; no software implementation, local startup, account changes or public deployment authorized by this event."
+  },
+  "transfer": {
+    "event_id": "C-MCP-METODOLOGIA-TRANSFER-20261031-01",
+    "authorization": "direct operator instruction on 2026-10-31",
+    "method": "GitHub Contents API update guarded by the observed existing blob SHA; abort if SHA differs",
+    "expected_previous_blob_sha": "ffa27d9c62c557aa4894eebfd8c4cbf44ed09335",
+    "previous_owner": {
+      "owner_alias": "chatgpt-C-MCP-METODOLOGIA-001-01a192b3-1063-7916-be41-ebfa974ede73",
+      "owner_alias_type": "operational_alias_not_native_thread_id",
+      "instance": "chatgpt-mcp-metodologia-974ede73",
+      "uuidv7_local": "01a192b3-1063-7916-be41-ebfa974ede73",
+      "generation": 1,
+      "scope": "Inicialización documental del OCP MCP de Metodología, establecimiento de identidad/control y continuidad documental. No autoriza código, instalación/arranque local, puertos, credenciales, cambios de bases de datos, acceso RDC a un equipo concreto, activación de MCP-NORMATIVO, despliegue público/Vercel ni cambios al OCP Khora MCP."
+    },
+    "new_owner": {
+      "alias": "chatgpt-ocp-mcp-01a192fb-8346-710a-ba99-54350ab2dfd9",
+      "instance": "chatgpt-ocp-mcp",
+      "uuidv7_local": "01a192fb-8346-710a-ba99-54350ab2dfd9",
+      "generation": 2,
+      "owner_alias_type": "operational_alias_not_native_thread_id"
+    },
+    "generation_before": 1,
+    "generation_after": 2,
+    "result": "COMMIT_PENDING_READBACK"
+  },
+  "implementation_authorization": {
+    "event_id": "C-MCP-METODOLOGIA-IMPLEMENTATION-AUTH-20261031-01",
+    "status": "AUTHORIZED",
+    "authorization": "direct operator instruction on 2026-10-31: end-to-end resolution within the previously agreed MVP scope",
+    "scope": "implement, compile, automate tests, package and publish manifest/artifact within frentes/mcp-metodologia/; report material milestones to EP/central coordination",
+    "exclusions": [
+      "EP host installation/operation",
+      "EP local configuration and ACL/registry/firewall/services/scheduled tasks/processes",
+      "DUG",
+      "ART-025",
+      "ART-027",
+      "IPZ",
+      "Sink production",
+      "MCP-NORMATIVO activation",
+      "Khora",
+      "public deployment or network exposure",
+      "external credentials",
+      "paths outside frentes/mcp-metodologia/"
+    ]
   }
 }
