@@ -8,7 +8,7 @@
 
 **Responsabilidad del frente:** generación 7, titular `chatgpt-C-GOBERNANZA-RETOMA-06-SES-20261030-GVC9594230`; control leído de vuelta, blob `c41c3cddc866de999827fc6ae36c23dde400344f`. Las ocho tareas provisionales heredan este control y no poseen sesiones ni folios independientes.
 
-**Estado de tareas:** GOV-TASK-001, GOV-TASK-006 y GOV-TASK-008 en curso; GOV-TASK-002, 003, 004, 005 y 007 pendientes.
+**Estado de tareas:** GOV-TASK-001, GOV-TASK-006, GOV-TASK-007 y GOV-TASK-008 en curso; GOV-TASK-002, 003, 004 y 005 pendientes.
 
 **Pendientes ejecutivos y dependencias:**
 - GOV-TASK-008: definir y ejecutar el aislamiento MDP-only y la recuperación individual; el DUG todavía expone los 43 textos desarrollados en `gov-data`.
@@ -16,7 +16,7 @@
 - GOV-TASK-004: `ambitos/tareas/` mantiene control propio y titularidad de otra sesión, generación 1. No modificar ni transferir desde Gobernanza.
 - GOV-TASK-005: referencias incompletas P020/P021/P033/P034; preservar los vacíos hasta hallar procedencia y obtener autorización P005 antes de cambiar principios.
 - GOV-TASK-006: alinear índices y registros activos; preservar registros históricos. Se detectó una divergencia GOW: el DUG estructurado declara 2.14, el banner humano indica 2.12 y el JSON auxiliar conserva v2.11. Requiere resolver cuál versión debe figurar antes de corregir el contenido canónico.
-- GOV-TASK-007: IPZ nativa sin modificación/verificación; FOL1 permanece `PREPARADO_PENDIENTE_ACTIVACION_IPZ`. No activar ni escribir el campo nativo sin las compuertas y autorización correspondientes.
+- GOV-TASK-007: v0.7 (2.467 caracteres) cotejada con v0.8 (1.488); v0.8 no conserva todos los estados ni el detalle de eficiencia. Borrador v0.9 de 1.478 caracteres preparado solo en conversación. IPZ nativa sin modificación/verificación; FOL1, generación 3, 26 OCP conocidos, cero asignaciones y contadores en cero. No activar ni escribir el campo nativo sin las compuertas y autorización correspondientes.
 
 **Límites confirmados:** Sink no desplegado; cero aliases activos y cero telemetría real. No se ha aplicado cambio normativo al DUG/GOW, ART-025, IPZ ni `ambitos/tareas/` en esta reconciliación.
 
