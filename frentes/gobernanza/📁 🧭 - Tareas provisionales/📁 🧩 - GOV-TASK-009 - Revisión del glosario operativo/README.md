@@ -39,3 +39,8 @@ Esta tarea no autoriza por sí misma una modificación normativa del DUG/GOW. Cu
 ## Criterio de cierre
 
 §ARR permite a un modelo nuevo identificar el sistema, el GOW, el DUG, la jerarquía de principios y anexos, el acceso a la fuente canónica y los mecanismos básicos de continuidad; el primer plano sigue siendo breve. La totalidad de las entradas humanas y estructuradas queda cotejada, las colisiones semánticas y divergencias de versión se resuelven con autorización, y el resultado se lee de vuelta desde `main`.
+
+
+## Prioridad para IPZ · instrucción del operador · 2026-10-31
+
+§ARR es la primera referencia del recorrido IPZ y debe familiarizar al modelo con el vocabulario mínimo necesario para entender la Metodología, la asignación de frentes, los ciclos, los folios, el DUG, los principios y OCP MCP. El DUG es la segunda referencia y conserva la autoridad normativa única. Revisar que los enlaces y términos de §ARR sean resolubles, suficientes y no creen una segunda fuente normativa. La prioridad de esta revisión aumenta porque §ARR es el primer destino de navegación del IPZ.
