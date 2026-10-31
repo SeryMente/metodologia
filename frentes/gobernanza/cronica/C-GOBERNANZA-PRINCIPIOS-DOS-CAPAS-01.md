@@ -10,8 +10,8 @@ El operador autorizó expresamente crear ART-027, incorporar un inventario compa
 
 - DUG anterior: v369 · NX-369m; blob previo observado `ea1eefd62a092079fa2cfdfa546cb739b63450eb`.
 - DUG final: **v370 · NX-370m**, evento `C-GOBERNANZA-PRINCIPIOS-DOS-CAPAS-01`.
-- Commit final de alineación visual y versión: `0577403f792eeb873f1dd26c08525e98466995ba`.
-- Blob final leído de vuelta: `abbd66e39e71fd78df534e619594d42aa0ce079f`.
+- Commit final de alineación visual y versión: `c5c3bfc7d3b33304dd9d7b248fc7b472582ade04`.
+- Blob final leído de vuelta: `c0026d37d50950555a0c742795cd7639f3e3333b`.
 - Representación estructurada parseada: 43 principios, 20 anexos, ART-027 presente; 43 entradas de catálogo y 43 aliases lógicos especificados; cero enlaces directos al ancla desde el catálogo.
 - ART-027 quedó enlazado desde la sección humana con el ancla `#estrategia-dos-capas-principios` y el identificador `[[A:ART-027]]`.
 
@@ -57,3 +57,8 @@ Cloudflare publica cuotas gratuitas, pero no se garantiza coste cero permanente:
 Se ejecutó lectura de vuelta del archivo canónico y se parseó `gov-data`. Se verificaron v370/NX-370m, 43 principios, 20 anexos, existencia de ART-027, 43 filas de abstracción y 43 aliases lógicos. La salida visible de título, indicador y footer coincide con v370.
 
 No se declara aceptación funcional de la estrategia ni telemetría en vivo. Los enlaces Sink, el Worker, el acceso privado del modelo y las estadísticas reales permanecen PENDIENTES. FOL1 sigue `PREPARADO_PENDIENTE_ACTIVACION_IPZ`; no se asignaron folios globales ni por OCP a este evento. ART-025, IPZ candidata y campo nativo permanecen sin modificación.
+
+
+## Integridad del catálogo
+
+ART-027 advierte explícitamente que las definiciones de origen presentan referencias incompletas en P020, P021, P033 y P034. Sus abstracciones no reparan estas lagunas: si alguno se selecciona, el modelo debe consultar y conservar el literal, no inferir datos ausentes y bloquear solo la parte dependiente hasta corrección autorizada.
