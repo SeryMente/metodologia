@@ -1,3 +1,13 @@
+## Intervención OCPMSP — C-GOBERNANZA-OCPMSP-DECISIONES-01 — 2026-10-31
+
+**Decisiones de diseño aprobadas; implementación bloqueada por titularidad.** OCPMSP se define como motor del OCP existente MCP-METODOLOGIA, no como OCP separado. El control MCP sigue owned, generación 1, con titular distinto y alcance documental. No se ha transferido ni ampliado. Antes de autorizar especificación ejecutable, código, instalación, credenciales y pruebas, se requiere transferencia explícita, nueva generación, ampliación de alcance, compare-and-swap por SHA y read-back.
+
+Se aprueba para diseño el aislamiento cifrado de la segunda capa dentro del DUG canónico; clave local DPAPI fuera de Git/contexto del modelo; metadatos de aplicabilidad explícitos aprobados por Gobernanza; CNP incondicional; 43 clasificaciones; dependencias cerradas con fail-closed; aliases Sink por intento; receptor HTTPS separado y polling degradado; comprobante Ed25519 con cobertura Sink separada; y BLOCKED_OCPMSP sin bypass.
+
+**Pendientes:** transferencia del control MCP; especificación detallada posterior; alineación futura de ART-027; coordinación formal con EP; definición y pruebas del transporte/identidad/ACL/DPAPI/health/backups. No modificar DUG, ART-027, ART-025, IPZ, controles MCP/EP ni recursos externos hasta autorizaciones específicas. MCP-NORMATIVO permanece DESACTIVADO.
+
+Registro: [resolución](entregas/CHATGPT-v0.9/C-GOBERNANZA-OCPMSP-DECISIONES-01-salida-final.md) · [crónica](cronica/C-GOBERNANZA-OCPMSP-DECISIONES-01.md) · [evidencia](evidencias/C-GOBERNANZA-OCPMSP-DECISIONES-01.json).
+
 # Pendientes · Frente Gobernanza
 
 ## Estado operativo vigente · lectura de continuidad (2026-10-30)

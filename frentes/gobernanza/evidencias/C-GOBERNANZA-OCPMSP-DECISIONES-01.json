@@ -1,0 +1,63 @@
+{
+    "schema":  "governance-cycle-evidence/1",
+    "event_id":  "C-GOBERNANZA-OCPMSP-DECISIONES-01",
+    "recorded_on":  "2026-10-31",
+    "status":  "decisions_documented_original_copied_remote_readback_pending",
+    "cycle_folio":  null,
+    "fol1_status":  "PREPARADO_PENDIENTE_ACTIVACION_IPZ",
+    "governance_control":  {
+                               "path":  "frentes/gobernanza/CONTROL-RESPONSABILIDAD.json",
+                               "generation":  8,
+                               "owner":  "chatgpt-C-GOBERNANZA-OCPMSP-01-SES-20261031-GV7EEE951A77",
+                               "status":  "active"
+                           },
+    "mcp_control":  {
+                        "path":  "frentes/mcp-metodologia/CONTROL-RESPONSABILIDAD.json",
+                        "generation":  1,
+                        "owner":  "chatgpt-C-MCP-METODOLOGIA-001-01a192b3-1063-7916-be41-ebfa974ede73",
+                        "status":  "owned",
+                        "transfer":  "NOT_PERFORMED",
+                        "scope_expansion":  "NOT_AUTHORIZED"
+                    },
+    "canonical_source":  {
+                             "path":  "gobernanza/METAPROMPT-CANONICO-SAMANTHA.html",
+                             "version":  "Samantha v373",
+                             "signature":  "NX-373m",
+                             "blob_sha":  "cac4525de77d4f47a8a59c25201968ecf2056b90",
+                             "observed_main":  "b0d22046b0e180f82f6c6219826841643c1a10f5",
+                             "modified":  false
+                         },
+    "original":  {
+                     "name":  "ChatGPT-GOBERNANZA-20261031-1043.md",
+                     "source_path":  "C:\\Users\\fila4\\Downloads\\ChatGPT-GOBERNANZA-20261031-1043.md",
+                     "destination":  "frentes/gobernanza/documentos/originales/ChatGPT-GOBERNANZA-20261031-1043.md",
+                     "size_bytes":  194951,
+                     "sha256":  "E16A915288DD5D04DDAF87DA4DFD01C1CB0BC361EBA274D6CB76ECCE62A6DC53",
+                     "local_copy_sha256":  "E16A915288DD5D04DDAF87DA4DFD01C1CB0BC361EBA274D6CB76ECCE62A6DC53",
+                     "local_copy_verified":  true,
+                     "remote_readback_verified":  false
+                 },
+    "decisions":  {
+                      "A1_A2":  "APPROVED",
+                      "A3":  "PENDING_TRANSFER",
+                      "B4_B6":  "APPROVED_DESIGN_ONLY",
+                      "C7_C10":  "APPROVED_DESIGN",
+                      "D11_D14":  "APPROVED_DESIGN",
+                      "E15_E17":  "APPROVED_DESIGN",
+                      "implementation":  "NOT_AUTHORIZED",
+                      "tests":  "NOT_RUN",
+                      "sink_deployment":  "NOT_DEPLOYED",
+                      "receiver":  "NOT_DEPLOYED"
+                  },
+    "unchanged":  [
+                      "DUG",
+                      "ART-025",
+                      "ART-027",
+                      "IPZ",
+                      "MCP-NORMATIVO",
+                      "MCP-METODOLOGIA_CONTROL",
+                      "EP_CONTROL",
+                      "Sink",
+                      "Cloudflare"
+                  ]
+}
