@@ -24,8 +24,16 @@
     "cycle_folio": null,
     "event_id": "C-GOBERNANZA-RETOMA-07",
     "local_conversation_uuidv7": "01a193a9-7a00-7286-9216-45a477d294c1",
-    "verified_on": null,
-    "uniqueness_check": "No global uniqueness or server-enforced fencing claimed."
+    "verified_on": "2026-10-31",
+    "uniqueness_check": "No global uniqueness or server-enforced fencing claimed.",
+    "readback_verified": true,
+    "original_document_readback": {
+      "path": "frentes/gobernanza/documentos/originales/ChatGPT-Gobernanza-20261031-1432.md",
+      "sha256": "73A087BA953FD01F0804A482452E505E0D5AC160237AF18B467E677D2BAA2219",
+      "git_blob_sha": "d17f575fcd5bf0c0da1bb459a40e42e47c081a31",
+      "bytes": 637277,
+      "status": "PERSISTIDO_Y_VERIFICADO"
+    }
   },
   "initialization": {
     "event_id": "C-GOBERNANZA-INICIO-01",
@@ -557,7 +565,15 @@
       "session": "SES-20261031-GV8AA51721",
       "local_uuidv7": "01a193a9-7a00-7286-9216-45a477d294c1",
       "method": "GitHub Contents API compare-and-swap by existing blob SHA followed by canonical read-back.",
-      "mutation_result": "COMMITTED_PENDING_READBACK"
+      "mutation_result": "COMMITTED_AND_READBACK_VERIFIED",
+      "readback_verification": {
+        "status": "verified",
+        "verified_on": "2026-10-31",
+        "generation": 9,
+        "owner_alias": "chatgpt-C-GOBERNANZA-RETOMA-07-SES-20261031-GV8AA51721",
+        "session": "SES-20261031-GV8AA51721",
+        "control_blob_before_final_status_write": "3e79c83f16a36dcc9d169c60a531ca60020e819d"
+      }
     }
   ]
 }
