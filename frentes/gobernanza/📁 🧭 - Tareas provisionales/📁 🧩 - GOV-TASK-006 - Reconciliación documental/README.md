@@ -34,3 +34,10 @@ Obtener decisión del operador sobre la autoridad objetivo del GOW: (A) completa
 ## Criterio de cierre
 
 Marcar como completada solo cuando el enunciado haya sido atendido, la evidencia correspondiente sea recuperable y el resultado haya sido leído de vuelta en la fuente canónica aplicable.
+
+
+## Ampliación de objetivo · Gobernanza 1.0 · 2026-10-31
+
+Además de las divergencias ya identificadas, esta tarea debe inventariar y resolver los elementos satélite que crecieron alrededor del DUG (por ejemplo, documentos de identidad o auxiliares que contienen reglas, definiciones o estado que debió residir en el documento único). El objetivo de 1.0 es recuperar una única fuente normativa, conservar procedencia e historia y dejar cada artefacto satélite clasificado como: índice/navegación, proyección derivada, evidencia histórica, control operativo o candidato a integración/eliminación.
+
+No borrar, fusionar ni trasladar elementos por inferencia. La decisión de cada satélite debe señalar autoridad, función, dependencia, contenido duplicado y destino. El resultado debe evitar que un elemento auxiliar se convierta inadvertidamente en una segunda fuente normativa.
