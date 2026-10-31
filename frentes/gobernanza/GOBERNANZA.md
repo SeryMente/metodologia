@@ -306,3 +306,13 @@ Validación del DUG: JSON embebido válido; JavaScript operativo compilado sint�
 **Distribución de responsabilidad:** Gobernanza define el contrato, la IPZ y criterios de aceptación; OCP MCP implementa las capacidades del servidor bajo su control; EP resuelve alojamiento, instalación, RDC y persistencia bajo su propio control. No se mutan controles ajenos.
 
 **Límites:** DUG, ART-025, ART-027, IPZ nativa y controles MCP/EP no se modifican en esta retoma. FOL1 continúa inactivo y MCP-NORMATIVO permanece DESACTIVADO.
+
+## Retoma vigente · C-GOBERNANZA-RETOMA-07 · 2026-10-31
+
+**Responsabilidad activa:** generación 9 · titular operativo `chatgpt-C-GOBERNANZA-RETOMA-07-SES-20261031-GV8AA51721` · sesión `SES-20261031-GV8AA51721` · UUIDv7 local `01a193a9-7a00-7286-9216-45a477d294c1` (no ID nativo). Control actualizado mediante compare-and-swap y lectura de vuelta.
+
+**Original recibido:** [ChatGPT-Gobernanza-20261031-1432.md](documentos/originales/ChatGPT-Gobernanza-20261031-1432.md), 637.277 bytes; SHA-256 `73A087BA953FD01F0804A482452E505E0D5AC160237AF18B467E677D2BAA2219`; estado `PERSISTIDO_Y_VERIFICADO`.
+
+**Objetivo Gobernanza 1.0:** IPZ de máximo 1.500 caracteres con enlaces Sync acortados a §ARR/GOW y DUG, seguidos de la compuerta fail-closed de admisión; ciclo con folio global propio; inventario de 43 principios DI/MDP, selección de aplicables, enlaces Sync individuales a textos desarrollados, prueba de suficiencia/reconsulta, telemetría de frecuencia y hash del paquete exacto en la salida. Frecuencia no equivale a aplicación ni autoriza descarte automático.
+
+**Responsabilidades:** Gobernanza define contrato, IPZ y criterios de aceptación; OCP MCP implementa el servidor bajo su control; EP atiende alojamiento e instalación bajo el suyo. DUG, ART-025, ART-027, IPZ nativa y controles ajenos sin cambios. FOL1 inactivo; MCP-NORMATIVO DESACTIVADO.
