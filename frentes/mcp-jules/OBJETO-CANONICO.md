@@ -3,14 +3,14 @@
 ## 1. Control e identidad
 
 - **Nombre canónico:** Frente MCP Jules.
-- **Versión del artefacto:** v0.1.11 · auditoría de identidad, fixture y redacción de observabilidad; CI pre-run bloqueado.
+- **Versión del artefacto:** v0.1.12 · retoma RDC, puente OAuth PKCE, captura documental original y transferencia de responsabilidad C-MCP-JULES-015.
 - **Evento de creación:** C-MCP-JULES-001.
-- **Folio de sesión vigente:** SES-20261029-6C2F9A17; generación del control: 2. El folio anterior queda preservado en el historial de transferencia.
+- **Folio de sesión vigente:** PENDIENTE / NO ASIGNADO (FOL1 inactivo); generación del control: 3. El folio anterior `SES-20261029-6C2F9A17` queda preservado en el historial.
 - **OCP:** `SeryMente/metodologia/frentes/mcp-jules/`.
 - **Repositorio de implementación:** `SeryMente/khora`, `khora-web`, servidor MCP existente.
 - **Rama de documentación:** `feat/metacanon-mcp-jules-20261025-c32f81`.
 - **Rama de implementación:** `feat/mcp-jules-f2-20261029-6c2f9a17`.
-- **Estado:** la titularidad permanece en generación 2 y folio `SES-20261029-6C2F9A17`, conforme al control vigente que no se modifica. Fase 1 continúa COMPLETA como diseño integral. Fase 2 tiene un candidato versionado en KHORA, rama `feat/mcp-jules-f2-20261029-6c2f9a17`, PR #344 en borrador, head `33aabd5fa5a6b3a34cbf45e9dda1228aee1644f6`, apilado sobre Custodia `fix/custodia-recovery-verified-20261029` (base `e2ec67600885315fd4493911da89af1d4aafc297`). C013 dejó versionada la huella de plan con doble preflight; los tres commits posteriores corrigen el fixture de aprobación (digest sintético y total 30 llamadas), prueban que la ACL usa el sujeto autenticado y añaden redacción completa de rutas `sources/**`/IDs de sesión con test. La migración 033 sigue en Git y no aplicada. CI y UI Quality del head actual terminaron pre-run con `steps: null`; los logs no están recuperables. Vercel sigue bloqueado por restricción de plan para repositorios privados de organización. No hay ejecución válida de build/test para este head. API Jules real, OAuth/ACL productiva, plugin público, ChatGPT Free, E2E, merge y despliegue siguen pendientes. T22 permanece parcial por la ausencia de aprobación condicional atómica en la API de Jules. La última crónica es [C-MCP-JULES-014](cronica/C-MCP-JULES-014.md).
+- **Estado:** titularidad operativa transferida y verificada en generación 3 dentro de esta rama; folio no asignado por FOL1 inactivo. Fase 1 sigue COMPLETA como diseño integral; Fase 2 sigue EN CURSO. Implementación de puente local OAuth PKCE en Khora [PR #347](https://github.com/SeryMente/khora/pull/347), rama `feat/jules-rdc-local-bridge-20261030`, head `cda38145fd74b109703be24b6e3eda4c0998b15a`; Vercel Preview `dpl_GdwKnsFJCo289dsCEfhyQaWPUJ2g` READY, protegido por SSO, Production sin cambios. Validación PC-14: 572/572 unitarias, TypeScript, UI Review, contrato de navegación, build Next.js local y 78/78 páginas PASS; OAuth real, descubrimiento de herramientas autenticado y lectura de fuentes Jules aún pendientes. La crónica más reciente es [C-MCP-JULES-015](cronica/C-MCP-JULES-015.md).
 - **Fuente de titularidad:** [CONTROL-RESPONSABILIDAD.json](CONTROL-RESPONSABILIDAD.json). No modifica ni sustituye el control del frente padre Metacanon.
 
 ## 2. LEER PRIMERO
@@ -23,10 +23,10 @@ Orden de uso: leer la fuente canónica Samantha/Metacanon/GOW; leer este OCP y s
 
 ## 3. Referencia metodológica
 
-- Fuente normativa única consultada en este ciclo: [Documento Único de Gobernanza (DUG) · Samantha v360 · NX-360m](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html), rama `main`, leído el 2026-10-29.
-- Marco de objetos canónicos: Metacanon **1.24**, sección integrada en el mismo documento normativo; §§4, 29–51 aplicables según el ciclo.
-- Glosario Operativo del Workspace (GOW): **2.9**, integrado en el documento canónico.
-- Control vigente del frente padre leído desde `main`: `frentes/metacanon/CONTROL-RESPONSABILIDAD.json`, blob `0eaf612b01de0ae630b7a4775849be455ebda6c8`, generación 5, folio `SES-20261028-8D7A31C2`. No fue modificado por la transferencia de MCP Jules.
+- Fuente normativa única consultada en este ciclo: [Documento Único de Gobernanza (DUG) · Samantha v372 · NX-372m](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html), rama `main`, SHA `28d0f255cdb3371a60310b0da45ca049dea05fdb`, leído el 2026-10-30.
+- Marco de objetos canónicos: Metacanon **1.26**, sección integrada en el mismo documento normativo; se aplica ART-014/SPDF y §§42–48 pertinentes.
+- Glosario Operativo del Workspace (GOW): **2.14**, integrado en el documento canónico.
+- Control vigente del frente padre leído desde `main`: `frentes/metacanon/CONTROL-RESPONSABILIDAD.json`, blob `86f0e4fa59e37976704231290b460cf6dc9252b0`, generación 6, folio `SES-20261029-7F4A9C21`. No fue modificado por este ciclo.
 - API de Jules: [referencia REST oficial](https://developers.google.com/jules/api/reference/rest), versión `v1alpha`.
 - Conexión MCP en ChatGPT: [documentación oficial de OpenAI](https://help.openai.com/en/articles/12584461-connecting-custom-mcp-servers-in-chatgpt).
 - Investigación específica: [INVESTIGACION-API-JULES-CHATGPT.md](fuentes/INVESTIGACION-API-JULES-CHATGPT.md).
@@ -72,7 +72,7 @@ Un asistente puede localizar fuentes de Jules, crear una sesión con prompt comp
 
 ## 5. Roles y colaboración
 
-- **Operador:** autoriza decisiones materiales, provee/configura la credencial en el entorno permitido, revisa planes de Jules y decide cambios de arquitectura/seguridad/producción.
+- **Operador:** autoriza decisiones materiales y otorga el consentimiento OAuth explícito en Khora una sola vez; no tiene que crear/pegar Bearers, configurar credenciales manuales, ejecutar comandos ni gestionar grants por repositorio.
 - **Asistente ChatGPT:** adquiere el OCP y gobierno vigente, redacta prompts autosuficientes, invoca herramientas, recupera feedback, contesta con datos verificados y conserva el estado.
 - **Jules:** recibe la solicitud y ejecuta el trabajo asíncrono en el repositorio conectado; genera planes, mensajes, avances, artefactos y estado terminal.
 - **Servidor MCP Khora:** autentica, aplica scopes y ciclo normativo, valida argumentos, llama a la API de Jules y devuelve resultados/diagnósticos saneados.
@@ -80,8 +80,8 @@ Un asistente puede localizar fuentes de Jules, crear una sesión con prompt comp
 
 ## 6. Autoridad
 
-- El operador autorizó la arquitectura de ampliación del MCP existente.
-- `jules:read` autoriza las cuatro herramientas de lectura; `jules:write` autoriza creación, mensaje y aprobación. No se concede ninguno por defecto en un nuevo token manual.
+- El operador autorizó la arquitectura de ampliación del MCP existente y la vía provisional local por RDC mediante C-MCP-JULES-015.
+- Para la identidad propietaria autenticada por `MCP_ALLOWED_EMAIL`, Khora concede `jules:read` y `jules:write` al cliente OAuth RDC sin grants manuales por repositorio. El resto de sujetos conserva ACL exacta y fail-closed; el consentimiento OAuth del propietario sigue siendo explícito.
 - Todas las herramientas sustantivas conservan la puerta del ciclo normativo de Khora.
 - La creación de sesión siempre fuerza `requirePlanApproval=true`; la herramienta MCP no permite desactivarlo.
 - Aprobar un plan es una operación externa que habilita ejecución: solo se realiza tras revisar el plan real y confirmar estado `AWAITING_PLAN_APPROVAL`.
@@ -97,31 +97,23 @@ Un asistente puede localizar fuentes de Jules, crear una sesión con prompt comp
 - API externa de Jules: `https://jules.googleapis.com/v1alpha`; clave mediante encabezado `X-Goog-Api-Key`.
 - Transporte MCP existente de Khora: endpoint remoto `/api/mcp` sobre HTTPS, con OAuth/Bearer ya existentes.
 - Fuente/repo de Jules: debe copiarse literalmente de `jules_list_sources`; la rama se verifica antes de crear la sesión.
-- Cliente final obligatorio: ChatGPT Free. La instalación y escritura del plugin público en una cuenta Free real no están verificadas y son gates obligatorios; no se acepta una prueba con plan de pago o Developer Mode como sustituto.
+- Cliente final obligatorio: ChatGPT Free mediante RDC y el cliente MCP local stdio. Esta vía no depende de un plugin MCP público ni de escritura nativa del conector en ChatGPT Free. El cliente se autentica con Khora OAuth 2.1 Authorization Code + PKCE; el propietario confirma en navegador y no manipula Bearers.
 - Codex queda expresamente excluido.
 - La credencial de Jules debe permanecer exclusivamente server-side; en esta revisión no se valida ni se utiliza ninguna credencial. La llamada API real permanece pendiente.
 
 ## 8. Estado vivo
 
-**Modelo rector:** exactamente dos fases. Fase 1 — planeación integral: COMPLETA. Fase 2 — implementación end-to-end hasta que el sistema sea utilizable desde ChatGPT Free: EN CURSO, única fase restante. Las etapas 2.1–2.5 son actividades internas y no fases adicionales.
+**Modelo rector:** exactamente dos fases. Fase 1 — planeación integral: COMPLETA como diseño R3. Fase 2 — implementación end-to-end, validación, release y puesta en servicio: EN CURSO, única fase restante. Las etapas internas no crean fases adicionales. El plan integral v1.0 se conserva como línea base histórica de alcance; la ruta de entrega de Fase 2 se ajustó mediante la decisión C-MCP-JULES-015.
 
-**Fase 1 — PLANEACIÓN INTEGRAL: COMPLETA como diseño R3.** La línea base [PLAN-INTEGRAL-MCP-JULES-v1.0.md](PLAN-INTEGRAL-MCP-JULES-v1.0.md) conserva 24 secciones y 32 pruebas/gates. Cierre de diseño en [C-MCP-JULES-009](cronica/C-MCP-JULES-009.md); las crónicas [C010](cronica/C-MCP-JULES-010.md), [C011](cronica/C-MCP-JULES-011.md) y [C012](cronica/C-MCP-JULES-012.md) preservan los cortes anteriores; la última lectura está en [C-MCP-JULES-013](cronica/C-MCP-JULES-013.md).
+**Fase 2 — puente actual:** [Khora PR #347](https://github.com/SeryMente/khora/pull/347), rama `feat/jules-rdc-local-bridge-20261030`, head `cda38145fd74b109703be24b6e3eda4c0998b15a`, abierta y no fusionada. Se sustituye la instrucción previa de Bearer manual por cliente MCP local stdio controlado por RDC y OAuth 2.1 Authorization Code + PKCE contra Khora. No se levanta un segundo servidor MCP ni un puerto permanente; el refresh token se cifra con DPAPI CurrentUser y `JULES_API_KEY` permanece en Khora Production. El propietario admitido por `MCP_ALLOWED_EMAIL` obtiene `jules:read` y `jules:write` sin grants por repositorio; otros sujetos conservan ACL exacta y fail-closed.
 
-**Fase 2 — CANDIDATO DE IMPLEMENTACIÓN:** [Khora PR #344](https://github.com/SeryMente/khora/pull/344), rama `feat/mcp-jules-f2-20261029-6c2f9a17`, head `ad7826a186ff9f74b51874aa4bae04725a2e33c4`. Se encuentra en borrador y usa como base `fix/custodia-recovery-verified-20261029`, head `e2ec67600885315fd4493911da89af1d4aafc297`, para mantener el trabajo de Custodia separado del cambio Jules. El PR #340 de Custodia sigue en borrador; no cambiar la base a `main` ni fusionar prematuramente. El antiguo PR #338 queda como antecedente obsoleto, sin merge.
+**Preview:** Vercel deployment `dpl_GdwKnsFJCo289dsCEfhyQaWPUJ2g` READY para el head de PR #347. Su URL de Preview está protegida por SSO del equipo; una petición anónima devuelve 302, por lo que la metadata OAuth no se validó por HTTP desde esta sesión. Production no se modificó ni desplegó.
 
-**Implementación contenida en #344:** siete herramientas Jules integradas en el endpoint MCP existente `/api/mcp`; scopes `jules:read`/`jules:write` sin ampliar defaults; ACL fail-closed por coincidencia exacta sujeto/fuente/rama, consultada antes de cualquier acceso al proveedor; filtrado de fuentes/ramas/sesiones; `sources.get` antes de crear; paginación `pageToken`; POST create/message/approval sin retry automático ante timeout, 5xx o 429.
+**Validación local PC-14:** `npm ci` instaló 576 paquetes; Node bridge syntax, parser PowerShell 5.1, TypeScript, UI Review, contrato de navegación, DPAPI con fixture sintético y DCR loopback allowlist: PASS. Suite unitaria **572/572 PASS**. Build local Next.js 16.4.0: PASS, 78/78 páginas. El build final usó solo una clave AUTH_SECRET aleatoria/efímera en el entorno del proceso; no se persistió ni desplegó y se eliminó al finalizar. No se descargaron secretos de Vercel Production.
 
-**Aprobación del plan:** `jules_list_activities` devuelve `planGenerated.plan_sha256`, calculado de forma canónica sobre el objeto plan. `jules_approve_plan` exige `plan_id` y `plan_sha256`, relee sesión y todas las páginas de actividades dos veces, compara ID/huella y bloquea discrepancias antes del POST. Se añadieron pruebas sintéticas de cambio de ID y cambio de contenido manteniendo el mismo ID. No obstante, el endpoint Jules `approvePlan` solo acepta el nombre de sesión y un cuerpo vacío; no admite `plan_id`, ETag o `If-Match`. Persiste una ventana de carrera entre la última lectura y el POST. T22 queda parcialmente mitigado pero NO PASS; no afirmar atomicidad ni garantía completa.
+**Falta acreditar:** consentimiento OAuth real del propietario, conexión MCP autenticada, descubrimiento de las siete herramientas en `tools/list`, lectura real de fuentes/sesiones Jules y ciclo E2E. El primer smoke test será solo de lectura; no creará sesiones ni iniciará desarrollo. T22 sigue parcial porque Jules no ofrece aprobación condicional atómica por plan/ETag/If-Match; el doble preflight no se presenta como garantía transaccional.
 
-**Validación actual:** tests y contratos están escritos, pero no existe salida PASS de build/tests para el head `ad7826a186ff9f74b51874aa4bae04725a2e33c4`. UI Quality `41088064191`, CI `41088064148` y su intento duplicado `41088053076` terminaron con jobs `steps: null`. Los logs no se recuperaron (`BlobNotFound`); los pasos del runner no se ejecutaron. Vercel checks siguen bloqueados por la restricción del plan para repositorios privados de organización. T01–T32 permanecen PENDIENTE.
-
-**ACL y base de datos:** `033_jules_source_acl.sql` está versionada pero NO aplicada. El rol real de `KHORA_READONLY_DATABASE_URL` debe identificarse antes de conceder únicamente `USAGE` en `khora_private` y `SELECT` en `khora_private.jules_source_acl`. No se emitieron concesiones productivas ni read-back.
-
-**Cliente y distribución:** ChatGPT Free en chat normal sigue siendo obligatorio; plugin MCP público aprobado sobre `/api/mcp`. No se ha publicado/instalado ni demostrado escritura desde una cuenta Free real. No sustituir por plan pagado, Developer Mode, GPT Actions, Codex, servidor MCP paralelo o relevo manual.
-
-**Pendientes que bloquean el cierre de Fase 2:** CI funcional con typecheck/contract/unit/API/E2E; revisar y corregir errores reales; resolver T22 con garantía del proveedor o mantener aprobación bloqueada/limitada; ACL productiva autorizada y read-back; API Jules y OAuth reales; publicación del plugin; instalación y escritura desde ChatGPT Free; ciclo E2E; merge/release/despliegue autorizado, smoke y rollback. Ningún gate pasa por existir código o test.
-
-**Siguiente y única fase restante:** Fase 2 — implementación end-to-end, validación, release y puesta en servicio. Las tareas internas no crean fases nuevas.
+**Documentación y titularidad:** el original `ChatGPT-JULES-20261030-1858.md` está preservado sin transformación en `documentos/originales/`, SHA-256 cotejado, con manifiesto y evidencia C015. La responsabilidad del frente está transferida y releída en generación 3, alias operativo no nativo; folio PENDIENTE/NO ASIGNADO por FOL1 inactivo. Ambos cambios se encuentran en la rama del PR documental #19, OPEN/DRAFT/NOT MERGED. No declarar `main` actualizado hasta integrar el PR.
 
 ## 9. Aceptación y viabilidad
 
@@ -136,7 +128,7 @@ Un asistente puede localizar fuentes de Jules, crear una sesión con prompt comp
 | Aislar permisos | Lectura no permite escribir; escritura no da acceso a lectura/otras funciones y la ACL exacta se aplica por sujeto/fuente/rama | Implementación y negativos versionados; test confirma JWT `sub` como sujeto ACL; CI no ejecutó steps, aislamiento real pendiente |
 | Preservar gobierno | Las siete herramientas pasan por la validación del ciclo normativo | Código y fixture añadidos; ejecución pendiente |
 | Proteger secretos | El secreto del proveedor permanece server-side y no aparece en respuestas, prompts, logs ni repositorio | Rutas de fuente y sesión se redactan antes de observabilidad; test versionado, CI no ejecutado, llamada real pendiente |
-| Uso real en ChatGPT Free | Plugin público instalado en cuenta Free, siete tools descubiertas y ciclo de escritura E2E probado | No verificado; gates T23/T26 |
+| Uso real mediante RDC en ChatGPT Free | Cliente MCP local stdio autenticado por OAuth Khora, descubrimiento de siete herramientas y lectura E2E de fuentes/sesiones | Pendiente de consentimiento OAuth real y smoke test autenticado |
 | Automatización persistente | Proceso programado con checkpoint, idempotencia y recuperación tras reinicio | Fuera de alcance hasta aprobar implementación del trabajador |
 
 **MVP realmente utilizable:** exige suite aprobada, API Jules real, plugin aprobado/publicado, instalación en cuenta ChatGPT Free real, OAuth/aislamiento por sujeto, escritura no destructiva, E2E bidireccional y release autorizado. Sin ello es candidato, no producción aceptada.
@@ -152,9 +144,11 @@ Aplicar Metacanon §4 en cada ciclo sustantivo: identidad/gobierno; dónde estam
 - [Ciclo histórico C-MCP-JULES-006](cronica/C-MCP-JULES-006.md) — apertura de la fase de planeación.
 - [Ciclo histórico C-MCP-JULES-007](cronica/C-MCP-JULES-007.md) — cierre R1.
 - [Ciclo histórico C-MCP-JULES-008](cronica/C-MCP-JULES-008.md) — cierre R2, requisito Free y no Codex.
-- [Ciclo de implementación C-MCP-JULES-010](cronica/C-MCP-JULES-010.md) — PR #344, ACL y estado de validación.
+- [Ciclo de implementación C-MCP-JULES-010](cronica/C-MCP-JULES-010.md) — antecedente de PR #344 y ACL.
+- [Retoma RDC, captura original y transferencia C-MCP-JULES-015](cronica/C-MCP-JULES-015.md).
 - [Plan integral del componente MCP Jules v1.0](PLAN-INTEGRAL-MCP-JULES-v1.0.md) — línea base de diseño completa; la implementación y validación siguen pendientes.
 - [Texto original del operador](originales/C-MCP-JULES-001-operador.txt).
+- [Exportación original ChatGPT-JULES-20261030-1858.md](documentos/originales/ChatGPT-JULES-20261030-1858.md) — original preservado y verificado por SHA-256; [manifiesto documental](documentos/MANIFIESTO-DOCUMENTAL.json).
 - [Investigación de API, ChatGPT y automatización](fuentes/INVESTIGACION-API-JULES-CHATGPT.md).
 - [Plan de aceptación](pruebas/PLAN-ACEPTACION-MVP.md).
 - [Contrato de uso por el asistente](prompts/ASISTENTE-MCP.md).
@@ -164,7 +158,7 @@ Aplicar Metacanon §4 en cada ciclo sustantivo: identidad/gobierno; dónde estam
 
 ## 12. Reinstanciación
 
-En una sesión nueva, leer este núcleo y [CONTROL-RESPONSABILIDAD.json](CONTROL-RESPONSABILIDAD.json), cotejar folio/generación y revisar [C-MCP-JULES-011](cronica/C-MCP-JULES-011.md) como última crónica, sin saltarse el control y la matriz de aceptación. Leer la investigación y el plan de aceptación antes de ejecutar acciones externas. Después, obtener el árbol de Khora en la rama/PR real y comprobar estados actuales. La salida anterior solo se reproduce literalmente si está conservada; en caso contrario declarar `NO DISPONIBLE / NO VERIFICADA`.
+En una sesión nueva, leer este núcleo y [CONTROL-RESPONSABILIDAD.json](CONTROL-RESPONSABILIDAD.json), cotejar generación 3 y el estado de folio pendiente, y revisar [C-MCP-JULES-015](cronica/C-MCP-JULES-015.md) como última crónica, sin saltarse el control y la matriz de aceptación.
 
 No adquirir, transferir ni modificar el control de `frentes/metacanon/`; el frente MCP Jules es independiente. No copiar a otros OCP el control, la credencial, la titularidad ni un estado vivo alternativo.
 
@@ -178,3 +172,13 @@ Al cierre de un ciclo:
 3. leer de vuelta el contenido y las rutas;
 4. actualizar [INVENTARIO-REPOSITORIOS-Y-FRENTES.md](../../INVENTARIO-REPOSITORIOS-Y-FRENTES.md);
 5. separar en la salida lo probado, lo reportado y lo no verificado.
+
+## 14. Retoma RDC, persistencia documental y transferencia — C-MCP-JULES-015
+
+Este ciclo registra dos instrucciones directas del operador: la sesión RDC activa es la única sesión local que debe utilizarse y asume el frente; no se solicitará un Bearer manual ni comandos manuales. El puente elegido es un cliente MCP local stdio controlado por RDC, autenticado mediante Khora OAuth 2.1 PKCE. La única interacción humana inicial es el consentimiento OAuth explícito en el navegador de Khora.
+
+El original `ChatGPT-JULES-20261030-1858.md` fue preservado en `documentos/originales/`; el SHA-256 local y la descarga de vuelta coinciden exactamente: `B7D25FF3CBF233787D201AB0D7643E45C181EAE4430E3300876BCFE8CF3B1737`. Su entrada documental está en `documentos/MANIFIESTO-DOCUMENTAL.json`; el recibo de captura y transferencia está en [evidencias/C-MCP-JULES-015.json](evidencias/C-MCP-JULES-015.json).
+
+La titularidad del único control del frente se actualizó condicionalmente desde generación 2 a 3, preservando el evento previo. Propietario operativo: `chatgpt-C-MCP-JULES-015-01a18f95-61cf-70ce-9321-c56fbd3cc99d`; instancia: `chatgpt-mcp-jules-2026-10-30-01a18f95`. No se expuso un ID nativo de ChatGPT. `session_folio=null`; FOL1 inactivo, folio global/OCP pendiente. El control padre Metacanon no se modificó.
+
+La captura del original, el manifiesto, la crónica y el control quedan guardados y releídos en `feat/metacanon-mcp-jules-20261025-c32f81`, PR #19. **Estado de integración: pendiente**. El contenido no se presenta como canónico en `main` hasta que el PR documental se integre y relea.
