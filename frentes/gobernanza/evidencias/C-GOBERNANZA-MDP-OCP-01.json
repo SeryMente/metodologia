@@ -1,0 +1,115 @@
+{
+  "schema": "governance-cycle-evidence/1",
+  "event_id": "C-GOBERNANZA-MDP-OCP-01",
+  "recorded_on": "2026-10-30",
+  "status": "dug_and_seven_provisional_task_ocps_materialized_readback_verified",
+  "cycle_folio": null,
+  "fol1_status": "PREPARADO_PENDIENTE_ACTIVACION_IPZ",
+  "authorization": {
+    "control_path": "frentes/gobernanza/CONTROL-RESPONSABILIDAD.json",
+    "blob_sha_readback": "f670960bdedf1a4747743b3216cd181722a924ec",
+    "owner": "chatgpt-C-GOBERNANZA-RETOMA-05-SES-20261030-GV89CFA5D5",
+    "generation": 6,
+    "readback_verified": true
+  },
+  "canonical_change": {
+    "path": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.html",
+    "version": "v371",
+    "signature": "NX-371m",
+    "commit": "ead12e9441d66656763c1ca5d6c8641f63da3d7a",
+    "blob_sha": "0412dc9d0ff10d74f69761b0f3307c84b3c586c2",
+    "readback_exact": true,
+    "principles": 43,
+    "annexes": 20,
+    "art_027": true,
+    "mdp_human": 43,
+    "mdp_structured": 43,
+    "mdp_words_min": 11,
+    "mdp_words_max": 16,
+    "consultation_required_before_application": true,
+    "telemetry_scope": "registered access frequency by Sink alias only",
+    "application_telemetry": false,
+    "per_cycle_application_records": false
+  },
+  "provisional_task_ocps": {
+    "container": "frentes/gobernanza/📁 🧭 - Tareas provisionales",
+    "count": 7,
+    "tasks": [
+      {
+        "task_id": "GOV-TASK-001",
+        "title": "Validación de microdescriptores de pertinencia",
+        "path": "frentes/gobernanza/📁 🧭 - Tareas provisionales/📁 🧩 - GOV-TASK-001 - Validación de MDP/README.md",
+        "status": "pendiente"
+      },
+      {
+        "task_id": "GOV-TASK-002",
+        "title": "Despliegue de Sink y telemetría de frecuencia",
+        "path": "frentes/gobernanza/📁 🧭 - Tareas provisionales/📁 🧩 - GOV-TASK-002 - Despliegue Sink y frecuencia/README.md",
+        "status": "pendiente"
+      },
+      {
+        "task_id": "GOV-TASK-003",
+        "title": "Prueba de consulta privada Sink → GitHub",
+        "path": "frentes/gobernanza/📁 🧭 - Tareas provisionales/📁 🧩 - GOV-TASK-003 - Consulta privada E2E/README.md",
+        "status": "pendiente"
+      },
+      {
+        "task_id": "GOV-TASK-004",
+        "title": "Concluir la incubación y decidir el ámbito Tareas",
+        "path": "frentes/gobernanza/📁 🧭 - Tareas provisionales/📁 🧩 - GOV-TASK-004 - Incubación del ámbito Tareas/README.md",
+        "status": "pendiente"
+      },
+      {
+        "task_id": "GOV-TASK-005",
+        "title": "Resolver referencias incompletas en principios",
+        "path": "frentes/gobernanza/📁 🧭 - Tareas provisionales/📁 🧩 - GOV-TASK-005 - Integridad de principios/README.md",
+        "status": "pendiente"
+      },
+      {
+        "task_id": "GOV-TASK-006",
+        "title": "Reconciliar divergencias documentales de Gobernanza",
+        "path": "frentes/gobernanza/📁 🧭 - Tareas provisionales/📁 🧩 - GOV-TASK-006 - Reconciliación documental/README.md",
+        "status": "pendiente"
+      },
+      {
+        "task_id": "GOV-TASK-007",
+        "title": "Reconciliar IPZ y cerrar el corte FOL1",
+        "path": "frentes/gobernanza/📁 🧭 - Tareas provisionales/📁 🧩 - GOV-TASK-007 - IPZ y FOL1/README.md",
+        "status": "pendiente"
+      }
+    ],
+    "parent_control": "frentes/gobernanza/CONTROL-RESPONSABILIDAD.json",
+    "independent_controls": false,
+    "independent_sessions": false,
+    "independent_folios": false,
+    "domain_canonized": false
+  },
+  "separate_tasks_domain": {
+    "path": "ambitos/tareas/",
+    "control_blob_sha": "b0c19b0c2ce7db13a74243b03183756519f7cfe0",
+    "owner": "chatgpt-C-TAREAS-INICIO-01-SES-20261028-TA6F31C9",
+    "generation": 1,
+    "status": "owned",
+    "modified": false,
+    "transferred": false,
+    "canonized": false
+  },
+  "sink": {
+    "fork": "NOT_CREATED",
+    "deployment": "NOT_DEPLOYED",
+    "aliases_created": 0,
+    "cloudflare_resources_provisioned": false,
+    "frequency_telemetry": "NOT_ACTIVE",
+    "application_telemetry": "OUT_OF_SCOPE",
+    "private_github_read_e2e": "DESIGNED_NOT_TESTED",
+    "repository_remains_private": true
+  },
+  "limitations": [
+    "No Cloudflare connector/account access or credentials in this session.",
+    "No Sink fork or Worker deployed; no real links or frequency data.",
+    "The private Sink-to-GitHub authenticated retrieval path has not passed E2E.",
+    "The Tareas OCP remains under another active owner and was not modified or transferred.",
+    "P020/P021/P033/P034 source-reference gaps remain open pending evidence and express normative authorization.",
+    "IPZ native field remains unmodified/unverified; FOL1 is prepared but not active."
+  ]
+}
