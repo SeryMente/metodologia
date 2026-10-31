@@ -429,7 +429,7 @@ Se reutiliza el perfil de ubicación que ya aparece en el OEP como candidato `LO
 - **Ubicación/alias existente a cotejar:** `LOC-LUIS-PASTEUR`.
 - **Establecimiento:** cibercafé Cibernet, avenida Luis Pasteur, Querétaro (dirección exacta no precisada en este ciclo).
 - **Tipo de entorno reportado:** sesiones Windows efímeras protegidas por un mecanismo tipo Deep Freeze.
-- **Identificador de equipo dictado:** el operador dijo inicialmente `CSEQ` y lo deletreó después `C-E-C-E-Q` (`CECEQ`). Se conserva la discrepancia de transcripción; `CECEQ` es la forma deletreada, no una identidad técnica verificada.
+- **Identificador de equipo dictado:** `CECEQ`. Esta es la única denominación textual válida en la crónica; la correspondencia con el hostname técnico y el UUID RDC requiere evidencia independiente.
 - **Etiqueta adicional reportada:** `I1`; su semántica exacta (instancia, estación, perfil u otra) queda `NO VERIFICADA`.
 - **Perfil Windows interactivo, SID, UUID nativo RDC, versión de Windows, privilegios, Escritorio físico y disponibilidad efectiva de escritura:** `NO VERIFICADOS`.
 
@@ -437,11 +437,11 @@ El operador establece para este perfil una regla conservadora de continuidad: cu
 
 ### 18.4. Regla de materialización en la sesión Windows correcta
 
-Cuando exista una conexión RDC expresamente autorizada para el dispositivo concreto y el destino no esté bajo ninguna raíz prohibida, el bootstrap deberá instalar/materializar lo mínimo necesario en la carpeta `EP` bajo el **Escritorio real del usuario Windows interactivo desde cuya sesión trabaja el operador**. No se debe asumir que el usuario del proceso RDC, el usuario del servicio/conector, `$env:USERPROFILE` del proceso remoto o la sesión técnica coinciden con el usuario interactivo. Antes de escribir, el launcher debe resolver y mostrar de forma saneada identidad Windows, SID, sesión interactiva, perfil y Known Folder Desktop; si no puede demostrar la correspondencia, aborta sin escribir.
+Cuando exista una conexión RDC expresamente autorizada para el dispositivo concreto y el destino no esté bajo ninguna raíz prohibida, el bootstrap deberá instalar/materializar lo mínimo necesario en la carpeta raíz `Ser y Mente` bajo el **Escritorio real del usuario Windows interactivo desde cuya sesión trabaja el operador**. No se debe asumir que el usuario del proceso RDC, el usuario del servicio/conector, `$env:USERPROFILE` del proceso remoto o la sesión técnica coinciden con el usuario interactivo. Antes de escribir, el launcher debe resolver y mostrar de forma saneada identidad Windows, SID, sesión interactiva, perfil y Known Folder Desktop; si no puede demostrar la correspondencia, aborta sin escribir.
 
 El destino se resolverá dinámicamente para cada host/sesión; no se fijará una ruta absoluta heredada de otra computadora ni se confiará en `Environment.GetFolderPath('Desktop')` ejecutado bajo un token RDC que pueda pertenecer a otro usuario. La ruta física final se registra solo después de una observación autorizada y se asocia al perfil de ubicación, no se convierte en identidad del conjunto remoto.
 
-El uso de RDC debe respetar el OEP §89: RDC es una capacidad exclusiva del asistente y solo se usa para una misión necesaria, acotada y autorizada. La autorización de un dispositivo por RDC no reemplaza las restricciones de acceso aplicables a sus perfiles y carpetas. En particular, la prohibición vigente de Harmonia sobre `C:\Users\MantenimientoRCI\` continúa intacta; ningún equipo/perfil podrá operarse bajo esa raíz ni reutilizar materializaciones previas situadas allí. La etiqueta aportada `CECEQ`/`CSEQ` no se ha reconciliado con el UUID de PC10 u otro dispositivo y no permite inferir que sea un equipo distinto o autorizado.
+El uso de RDC debe respetar el OEP §89: RDC es una capacidad exclusiva del asistente y solo se usa para una misión necesaria, acotada y autorizada. La autorización de un dispositivo por RDC no reemplaza las restricciones de acceso aplicables a sus perfiles y carpetas. En particular, la prohibición vigente de Harmonia sobre `C:\Users\MantenimientoRCI\` continúa intacta; ningún equipo/perfil podrá operarse bajo esa raíz ni reutilizar materializaciones previas situadas allí. La etiqueta aportada `CECEQ` no se ha reconciliado con el UUID de PC10 u otro dispositivo y no permite inferir que sea un equipo distinto o autorizado.
 
 ### 18.5. Conjunto MVP que debe persistir en Backblaze
 
@@ -452,7 +452,7 @@ El primer conjunto de respaldo se limita al servidor OCP MCP y sus datos recuper
 3. Contenido asociado y fuentes de datos realmente referenciadas por la base, con IDs lógicos, conteos, tamaños y hashes.
 4. Configuración no secreta, versión de esquema, identificador lógico de instalación y parámetros mínimos para reinstanciar el servidor local y conectarlo al harness/cliente MCP.
 5. Recibo de snapshot y transferencia, estado de verificación, hora UTC, versión/objeto remoto cuando esté disponible, y resultado de una prueba de descarga/restauración.
-6. Runbook breve de bootstrap/restore para una segunda computadora: materializar en Desktop/EP de la sesión interactiva correcta, recuperar el snapshot autorizado, validar hashes/esquema, iniciar el servidor local por el transporte realmente implementado y probar una operación de lectura.
+6. Runbook breve de bootstrap/restore para una segunda computadora: materializar en Desktop/Ser y Mente de la sesión interactiva correcta, recuperar el snapshot autorizado, validar hashes/esquema, iniciar el servidor local por el transporte realmente implementado y probar una operación de lectura.
 
 Quedan excluidos tokens, bearer tokens Cora, credenciales de Vercel, application keys B2, contraseñas, cookies, secretos, llaves privadas, volcados completos de perfiles del navegador y datos no identificados. Los secretos necesarios para B2 deberán inyectarse por un mecanismo de credenciales separado y protegido; nunca se guardarán en Git, manifiestos, logs, objetos de conversación ni en el paquete de respaldo general. No copiar claves DPAPI `CurrentUser` como si fueran portables a otro SID/equipo.
 
@@ -480,9 +480,9 @@ La primera prueba debe ser no destructiva, con artefacto sintético o paquete no
 
 **Verificado en fuentes:** existe el perfil nominal `LOC-LUIS-PASTEUR` en el OEP; el OCP MCP tiene identidad y control separados; el control generación 2 autoriza construcción del artefacto pero no instalación/operación en el host EP; la rama remota de construcción observada todavía no contiene archivos de implementación en la ruta del frente; el OEP exige adquisición y autorización y reserva RDC al asistente.
 
-**No verificado:** que `CECEQ`/`CSEQ` corresponda a un UUID RDC; qué significa `I1`; qué cuenta Windows interactiva se utiliza en Cibernet; si el dispositivo está autorizado y en línea; la ruta exacta de Desktop; si la sesión está elevada; efecto real de Deep Freeze; CLI B2 disponible; cuenta, bucket y prefijo B2; credencial válida; ACL/permisos; existencia de servidor ejecutable; esquema/DB real; snapshot consistente; upload, descarga y restauración; segunda computadora de destino.
+**No verificado:** que `CECEQ` corresponda a un UUID RDC; qué significa `I1`; qué cuenta Windows interactiva se utiliza en Cibernet; si el dispositivo está autorizado y en línea; la ruta exacta de Desktop; si la sesión está elevada; efecto real de Deep Freeze; CLI B2 disponible; cuenta, bucket y prefijo B2; credencial válida; ACL/permisos; existencia de servidor ejecutable; esquema/DB real; snapshot consistente; upload, descarga y restauración; segunda computadora de destino.
 
-**No ejecutado:** ninguna consulta al host CSEQ/CECEQ; ninguna operación RDC en esta sesión; ninguna lectura/escritura local; ninguna instalación; ninguna llamada a Backblaze; ningún descifrado/uso de secretos; ningún cambio Vercel; ninguna subida, borrado o modificación de bucket; ninguna ejecución/integración del servidor MCP.
+**No ejecutado:** ninguna consulta al host CECEQ; ninguna operación RDC en esta sesión; ninguna lectura/escritura local; ninguna instalación; ninguna llamada a Backblaze; ningún descifrado/uso de secretos; ningún cambio Vercel; ninguna subida, borrado o modificación de bucket; ninguna ejecución/integración del servidor MCP.
 
 ### 18.9. Plan de trabajo priorizado para la ventana antes de las 15:00
 
@@ -511,7 +511,7 @@ El operador aclara expresamente: «Ignora a RCI, osea, es el usuario de la conex
 
 **Límite que no cambia:** la prohibición de Harmonia §7 y §44.2 sobre `C:\Users\MantenimientoRCI\` permanece íntegra. La aclaración de que RCI es usuario de conexión no autoriza a leer, escribir, enumerar, mover, copiar ni borrar nada bajo esa raíz; tampoco valida ni rehabilita las inspecciones locales anteriores, que continúan excluidas. No se utilizarán `$env:USERPROFILE`, `Environment.GetFolderPath('Desktop')` ni rutas derivadas del contexto técnico RDC como sustituto del Escritorio interactivo.
 
-**Verificación pendiente:** la equivalencia operativa declarada por el operador no aporta por sí sola SID, sesión interactiva, Known Folder Desktop, UUID RDC ni asociación entre `CECEQ`/`CSEQ`, `I1` y una estación específica de Cibernet. La identificación del destino concreto debe cotejarse por un procedimiento permitido, sin explorar archivos para adivinar identidad y sin entrar en la raíz prohibida. Hasta entonces, `fila4` es el perfil operativo declarado para diseñar el bootstrap, pero la ruta física final queda `NO VERIFICADA` y no se ejecuta escritura.
+**Verificación pendiente:** la equivalencia operativa declarada por el operador no aporta por sí sola SID, sesión interactiva, Known Folder Desktop, UUID RDC ni asociación entre `CECEQ`, `I1` y una estación específica de Cibernet. La identificación del destino concreto debe cotejarse por un procedimiento permitido, sin explorar archivos para adivinar identidad y sin entrar en la raíz prohibida. Hasta entonces, `fila4` es el perfil operativo declarado para diseñar el bootstrap, pero la ruta física final queda `NO VERIFICADA` y no se ejecuta escritura.
 
 **Efecto sobre el plan:** el gate de host se redefine como «vincular conexión técnica RCI → sesión interactiva fila4 → Desktop efectivo de fila4 → dispositivo RDC exacto». No se elimina el gate ni se considera satisfecha la comprobación física del destino. La entrega antes de las 15:00 sigue condicionada a los gates de host, artefacto OCP MCP y acceso B2 descritos en §18.9; no se concede por esta aclaración ningún permiso adicional sobre el host ni sobre recursos de Khora/Vercel.
 
@@ -529,7 +529,7 @@ Esta instrucción **resuelve la ambigüedad semántica** entre cuenta de elevaci
 
 **Condición de ejecución:** antes de cualquier operación local se debe disponer de una autorización RDC aplicable al dispositivo concreto y resolver una ruta de destino del perfil `fila4` fuera de la raíz prohibida. Para tareas elevadas, especificar rutas absolutas permitidas del perfil `fila4`, configurar explícitamente el directorio de trabajo y las rutas de logs/temporales y comprobar el destino efectivo antes de escribir. Si una instalación requiere un destino global o una escritura dentro de la raíz RCI, esa parte queda bloqueada y debe sustituirse por instalación portable/per-user o por una alternativa cuyo destino esté autorizado; no se presume una excepción.
 
-**Rectificación de estado:** se sustituye la lectura de §18.11 que trataba la prohibición como si impidiera utilizar la cuenta de elevación `MantenimientoRCI`. Lo que permanece prohibido es operar sobre archivos bajo la raíz de su perfil. El usuario y destino de trabajo se interpretan como `fila4`, tal como acaba de precisar el operador. Esta precisión no demuestra por sí sola el UUID RDC, SID real, ruta física de Desktop, estado del equipo CSEQ/CECEQ o disponibilidad de Backblaze; esas verificaciones técnicas siguen pendientes y deben realizarse únicamente dentro del perfil/rutas permitidos.
+**Rectificación de estado:** se sustituye la lectura de §18.11 que trataba la prohibición como si impidiera utilizar la cuenta de elevación `MantenimientoRCI`. Lo que permanece prohibido es operar sobre archivos bajo la raíz de su perfil. El usuario y destino de trabajo se interpretan como `fila4`, tal como acaba de precisar el operador. Esta precisión no demuestra por sí sola el UUID RDC, SID real, ruta física de Desktop, estado del equipo CECEQ/CECEQ o disponibilidad de Backblaze; esas verificaciones técnicas siguen pendientes y deben realizarse únicamente dentro del perfil/rutas permitidos.
 
 **Impacto sobre el plazo:** queda eliminado el falso bloqueo conceptual «no usar la cuenta MantenimientoRCI». La vía de ejecución puede usar su elevación para preparar/instalar en el entorno fila4, sin escribir en el perfil RCI. Siguen siendo gates reales: autorización del dispositivo concreto, artefacto OCP MCP disponible, acceso independiente a B2 y prueba de upload/download con hashes. No se declara que esos gates estén ya satisfechos.
 
@@ -540,7 +540,7 @@ Esta sección registra la última precisión directa del operador y rectifica cu
 
 ### 18.13.1. Identidad correcta de la terminal
 
-La terminal objetivo se denomina CECEQ. «CSEQ» fue un error de transcripción y queda descartado como designación. En adelante se utilizará CECEQ exclusivamente. El nombre técnico/hostname y el UUID del dispositivo RDC todavía deben confirmarse mediante un handshake vivo; el nombre proporcionado no basta para inventar esa correspondencia.
+La terminal objetivo se denomina CECEQ. Esta es la designación única que debe utilizarse en nombres, prompts, informes, registros y documentación; no introducir variantes ni abreviaciones. El nombre técnico/hostname y el UUID del dispositivo RDC todavía deben confirmarse mediante un handshake vivo; el nombre proporcionado no basta para inventar esa correspondencia.
 
 ### 18.13.2. Separación estricta de conexión RDC y sesión de trabajo
 
@@ -558,7 +558,7 @@ La elevación de MantenimientoRCI no autoriza a ejecutar tareas de trabajo ni op
 Todas las operaciones siguientes deben ejecutarse desde el proceso/sesión Windows interactiva cuyo token efectivo corresponda a fila4, sin elevación:
 
 - Instalación de aplicaciones y herramientas; se priorizan instaladores per-user y aplicaciones portables.
-- Creación y materialización de <Desktop-real-de-fila4>/EP/.
+- Creación y materialización de <Desktop-real-de-fila4>/Ser y Mente/.
 - Clonación, fetch, checkout, pull, actualización y mantenimiento de repositorios.
 - Lectura, creación, escritura, edición, copia, movimiento, sincronización y borrado de archivos/directorios.
 - Configuración, perfiles, preferencias, cachés, temporales, logs, manifiestos y datos de usuario.
@@ -606,3 +606,41 @@ No ejecutado: conexión a CECEQ; instalación; clonación/materialización; camb
 Siguiente secuencia admisible: (1) detectar CECEQ y cotejar el UUID RDC; (2) verificar metadatos de sesión fila4 y que el proceso de trabajo pueda ejecutarse con su token no elevado; (3) materializar el workspace y repositorios desde fila4; (4) recibir y verificar el artefacto OCP MCP y su manifiesto; (5) configurar B2 desde fila4 y realizar upload/download sintéticos con SHA-256; (6) respaldar snapshot coherente del servidor y dejar runbook de restauración. Ninguna etapa posterior se considera satisfecha por la anterior.
 
 Continuidad: se mantiene un solo objeto de persistencia provisional, EP-TASK-002; no se crea EP-TASK-003 ni otra bitácora. La corrección queda agregada a la crónica acumulativa para que un hilo nuevo recupere la regla sin reinterpretar la conversación.
+
+## 18.14. Corrección de la raíz de workspace, nomenclatura CECEQ y registro de ejecución fallida · 2026-10-31 · America/Mexico_City
+
+**Instrucción del operador:** la carpeta raíz del workspace debe llamarse exactamente `Ser y Mente`, directamente bajo el Escritorio real de `fila4`. `EP` no es el nombre de esa carpeta raíz. La denominación correcta de la terminal es exclusivamente `CECEQ`; no debe aparecer ninguna variante incorrecta en instrucciones, nombres, prompts, informes o registros activos.
+
+### 18.14.1. Ruta de workspace
+
+Ruta objetivo declarada: `<Desktop-real-de-fila4>\Ser y Mente\`. La carpeta `Ser y Mente` es la raíz de trabajo. El OEP, los artefactos, repositorios de trabajo y materializaciones se organizarán bajo ella conforme al bootstrap que se apruebe y a las rutas canónicas de cada repositorio. No crear `Desktop\EP` como raíz sustitutiva. Esta instrucción actualiza el destino provisional descrito en §18.13.3 y el runbook de §18.9; no modifica por sí sola la ruta canónica documental de OEP en GitHub.
+
+### 18.14.2. Corrección nominal global
+
+Se rectifican las referencias históricas que habían introducido una transcripción divergente. La forma correcta y única es `CECEQ`. En esta escritura se sustituyeron las apariciones de la forma incorrecta en el contenido íntegro de este README y se normalizaron las frases que, tras la sustitución literal, habrían quedado redundantes. No se crea alias alternativo. El hostname técnico y el UUID RDC continúan siendo datos distintos que no se inventan a partir del nombre declarado.
+
+### 18.14.3. Operaciones locales de este ciclo y desviación de selección de host
+
+Tras la instrucción del operador, el asistente consultó el inventario RDC y encontró en línea únicamente `PC10RCIF4EI4`, UUID `d0bbb2a3-d7b4-45e1-8870-652c2c3844fc`; el dispositivo CECEQ no quedó identificado en ese inventario. A pesar de esa falta de correspondencia, se ejecutaron posteriormente dos operaciones de creación/verificación de rutas en el perfil `fila4` de PC10. La acción se reconoce como **desviación de selección de host**: PC10 no debía utilizarse como sustituto de CECEQ, según el estado de §18.13.5.
+
+Acciones reportadas por las respuestas de las herramientas RDC:
+
+- `C:\Users\fila4\Desktop\Ser y Mente` fue creada en PC10 y su metadata posterior confirmó que existe como directorio vacío. Esta ruta está en el perfil fila4, pero en el dispositivo equivocado/no vinculado a CECEQ; no constituye materialización válida para la ubicación Cibernet.
+- Se creó inicialmente por error `C:\Users\fila4\Desktop\EP`. La lectura del directorio no devolvió entradas; después se ejecutó `rmdir` sobre esa ruta mediante `cmd.exe`, proceso que informó finalización sin salida. No se obtuvo una segunda lectura de vuelta que confirme su ausencia. No se depositaron artefactos ni datos en esa carpeta.
+- No se escribió dentro de `C:\Users\MantenimientoRCI\`. No se instaló software, no se clonó ningún repositorio, no se modificó configuración, no se ejecutó B2 y no se transfirió contenido. El único efecto confirmado es la creación de la carpeta vacía `Ser y Mente` en PC10. La carpeta incorrecta `EP` se considera retirada por el resultado del comando, aunque su ausencia no quedó releída.
+
+Por la discrepancia de host, se detiene toda operación local adicional en PC10 y no se reutiliza esa carpeta como workspace. No se intenta limpiar ni mover la carpeta creada hasta disponer de una misión autorizada y del vínculo de dispositivo correcto; no se crea otro destino en un host por aproximación.
+
+### 18.14.4. Error de invocación PowerShell
+
+Un intento de diagnóstico read-only con `start_process` produjo errores de sintaxis PowerShell por un problema de escape/comillas al serializar el comando. El proceso terminó; no produjo el JSON de diagnóstico previsto ni una evidencia utilizable de identidad, elevación o disponibilidad de herramientas. No se interpreta como fallo del sistema operativo, de PowerShell, de CECEQ ni de B2. El comando no se reutilizará; cualquier diagnóstico posterior deberá usar una invocación con quoting/encoding probado y una prueba mínima antes del comando sustantivo. Esta incidencia no cambia los estados de instalación ni disponibilidad.
+
+### 18.14.5. Estado y siguiente acción
+
+**Verificado:** `Ser y Mente` fue creada como directorio vacío bajo el perfil fila4 de PC10; PC10 es el único dispositivo que apareció en línea en la fotografía RDC de este ciclo; el intento PowerShell falló y no produjo diagnóstico.
+
+**No verificado:** vínculo entre PC10 y CECEQ; UUID/hostname de CECEQ; carpeta `Ser y Mente` en el equipo Cibernet; identidad/token de la sesión fila4 en CECEQ; estado real de Deep Freeze; artefacto OCP MCP 0.1.0; cuenta/bucket/key B2; upload/download/restore.
+
+**No ejecutado:** instalación, bootstrap del workspace en CECEQ, materialización de repositorios, instalación de CLI B2, acceso a Backblaze, backup o restauración del servidor.
+
+**Siguiente paso admisible:** esperar/obtener el dispositivo RDC que corresponda inequívocamente a CECEQ y ejecutar el preflight exclusivamente dentro de la sesión de trabajo fila4; usar `C:\Users\fila4\Desktop\Ser y Mente` solo cuando esa ruta haya sido comprobada en el host CECEQ. Mantener la raíz `Ser y Mente`, no `EP`. Antes de seguir, adquirir la entrega 0.1.0 real y resolver el acceso independiente B2. El plazo por sí solo no autoriza a operar sobre otro equipo.
