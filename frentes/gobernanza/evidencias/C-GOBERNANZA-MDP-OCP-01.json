@@ -33,7 +33,7 @@
   },
   "provisional_task_ocps": {
     "container": "frentes/gobernanza/📁 🧭 - Tareas provisionales",
-    "count": 7,
+    "count": 8,
     "tasks": [
       {
         "task_id": "GOV-TASK-001",
@@ -76,13 +76,22 @@
         "title": "Reconciliar IPZ y cerrar el corte FOL1",
         "path": "frentes/gobernanza/📁 🧭 - Tareas provisionales/📁 🧩 - GOV-TASK-007 - IPZ y FOL1/README.md",
         "status": "pendiente"
+      },
+      {
+        "task_id": "GOV-TASK-008",
+        "title": "Aislamiento de la capa desarrollada detrás de Sink",
+        "path": "frentes/gobernanza/📁 🧭 - Tareas provisionales/📁 🧩 - GOV-TASK-008 - Aislamiento de capa desarrollada/README.md",
+        "status": "pendiente",
+        "gap": "DUG gov-data still exposes all developed principles; Sink consultation is procedure-level, not a technical access barrier."
       }
     ],
     "parent_control": "frentes/gobernanza/CONTROL-RESPONSABILIDAD.json",
     "independent_controls": false,
     "independent_sessions": false,
     "independent_folios": false,
-    "domain_canonized": false
+    "domain_canonized": false,
+    "technical_exclusive_access": false,
+    "additional_task": "GOV-TASK-008 addresses MDP-only first-layer exposure and individual expanded-principle retrieval."
   },
   "separate_tasks_domain": {
     "path": "ambitos/tareas/",
@@ -110,6 +119,7 @@
     "The private Sink-to-GitHub authenticated retrieval path has not passed E2E.",
     "The Tareas OCP remains under another active owner and was not modified or transferred.",
     "P020/P021/P033/P034 source-reference gaps remain open pending evidence and express normative authorization.",
-    "IPZ native field remains unmodified/unverified; FOL1 is prepared but not active."
+    "IPZ native field remains unmodified/unverified; FOL1 is prepared but not active.",
+    "The full developed principles remain embedded in DUG gov-data; Sink-only use is procedural, not technically enforced. GOV-TASK-008 tracks the technical isolation design."
   ]
 }
