@@ -1,14 +1,14 @@
-# 📝 GOV-TASK-002 · Despliegue de Sink y telemetría de frecuencia
+# 📝 GOV-TASK-002 · Despliegue de Sink y telemetría de frecuencia (supersedida)
 
 **Naturaleza:** OCP provisional de tarea; no es un frente independiente ni una unidad taxonómica canonizada.  
-**Estado:** `pendiente`  
+**Estado:** `cancelada`
 **Responsabilidad:** heredada del control `frentes/gobernanza/CONTROL-RESPONSABILIDAD.json`; sin control ni sesión propios.  
 **task_id:** `GOV-TASK-002`  
 **scope_ref:** `frentes/gobernanza/`
 
 ## Enunciado
 
-Desplegar Sink en Cloudflare, provisionar sus recursos, crear los 43 aliases p001–p043 y habilitar únicamente la medición de frecuencia de acceso por principio.
+Conservar el diseño Sink/Cloudflare como antecedente de una alternativa descartada para el MVP actual. No desplegar infraestructura, aliases ni recursos Cloudflare. El requisito activo de resolución individual y telemetría se atiende mediante la arquitectura Sync de OCP MCP bajo GOV-TASK-008 y GOV-TASK-003.
 
 ## Referencia de origen
 
@@ -20,11 +20,11 @@ Cuenta y acceso autorizado a Cloudflare, integración/conector o vía de desplie
 
 ## Siguiente actuación
 
-Obtener acceso autorizado a Cloudflare y habilitar la vía autorizada de fork/despliegue; solo después provisionar Worker, D1, KV, secretos y, si procede, Analytics Engine. No instalar CLI ni desplegar recursos a ciegas.
+No hay actuación de despliegue pendiente para esta tarea: se cancela Sink/Cloudflare para el MVP actual. Las necesidades de resolución individual y frecuencia pasan a GOV-TASK-008/003 bajo OCP MCP/Sync. No abrir cuentas, instalar CLI, crear aliases ni desplegar recursos.
 
 ## Criterio de cierre
 
-Marcar como completada solo cuando el enunciado haya sido atendido, la evidencia correspondiente sea recuperable y el resultado haya sido leído de vuelta en la fuente canónica aplicable.
+La tarea se cierra como `cancelada` para el despliegue Sink/Cloudflare, preservando diseño y procedencia histórica. No se interpreta como cancelación del requisito funcional de enlaces individuales y telemetría, que continúa en GOV-TASK-008/003.
 
 
 ## Revisión de alcance · instrucción del operador · 2026-10-31

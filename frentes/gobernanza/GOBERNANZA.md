@@ -1,5 +1,34 @@
 # Núcleo operativo · Gobernanza
 
+## Estado rector vigente · C-GOBERNANZA-VECTOR-SEMANTICO-01 · 2026-10-31
+
+Esta sección sustituye los resúmenes ejecutivos repetidos y fotografías anteriores que siguen debajo por procedencia histórica. El vector semántico del operador es criterio rector de toda tarea y ciclo de Gobernanza. [Crónica](cronica/C-GOBERNANZA-VECTOR-SEMANTICO-01.md) · [dictado](conversaciones/C-GOBERNANZA-VECTOR-SEMANTICO-01-dialogo.jsonl) · [evidencia](evidencias/C-GOBERNANZA-VECTOR-SEMANTICO-01.json).
+
+### Resultado y secuencia obligatoria
+
+1. **GOV-TASK-010 — admisión fail-closed:** ninguna operación sustantiva sin frente asignado explícitamente y titularidad/generación/autorización/exclusividad verificadas. Rechazar consultas ajenas al frente. No afirmar bloqueo físico de creación de chats en la plataforma.
+2. **GOV-TASK-007 — IPZ/FOL1:** máximo 1.500 caracteres; primer enlace Sync acortado GOW/§ARR, segundo enlace Sync acortado DUG; después, refuerzo de admisión. Preservar salvaguardas v0.7. Instalar y leer de vuelta antes del corte FOL1.
+3. **GOV-TASK-001/008 — catálogo y principios:** revisar los 43 MDP; nombres de vista `Principio DI · [1–3 términos]` mapeados a ID/título canónicos sin modificar el DUG; MDP solo para comprender y detectar pertinencia, no para aplicar.
+4. **OCP MCP — ciclo:** validar vínculo folio global de ciclo/sesión autorizada; considerar los 43, seleccionar pertinentes; entregar enlaces Sync individuales a textos desarrollados; telemetría de frecuencia por enlace; permitir reconsulta por insuficiencia; devolver hash del paquete exacto de enlaces para la salida.
+5. **GOV-TASK-003 — aceptación E2E:** probar en forma positiva y negativa la admisión, el vínculo ciclo/sesión, catálogo, selección, lectura individual, frecuencia, reconsulta y hash.
+6. **GOV-TASK-009 — entrada léxica:** §ARR/GOW es primera referencia; DUG es segunda y fuente normativa única.
+7. **GOV-TASK-006 — Gobernanza 1.0:** resolver divergencias y satélites del DUG con procedencia y destino. `identidad.md` no se localizó en la búsqueda acotada de refs Git accesibles; no concluir inexistencia ni borrarlo por inferencia.
+8. **Diferimiento:** GOV-TASK-004 y GOV-TASK-005 no bloquean el MVP.
+
+### Estado técnico y fronteras interfrente
+
+- **OCP MCP 0.1.0:** rama `build/ocp-mcp-mvp-0.1.0`, build y pruebas reportadas (31 unitarias + 29 integración); release indica `BUILT_AND_TESTED_NOT_INSTALLED`. Persisten bloqueos por cuatro metadatos faltantes que producen `BLOCKED_OCPMSP`, y no está demostrada la cadena Sync individual/frecuencia/hash exacto/vínculo FOL1-sesión.
+- **EP:** instalación del artefacto permanece `PENDING_EP`. No mutar el host ni su OCP/control desde Gobernanza. La respuesta EP anterior sigue pendiente en la coordinación.
+- **Serialidad:** respetar `COORDINACION-SPRINT-OCP-MCP-v0.1.md`: recibir y analizar la última respuesta de cada frente antes de preparar otra solicitud a ese mismo frente. Reenvíos no verificados no son envíos.
+- **Sink/Cloudflare:** GOV-TASK-002 queda cancelada como despliegue activo; conservar el antecedente. No desplegar por inercia ni tratar Sink como equivalente a Sync.
+- **Canon y controles:** DUG Samantha v373 · NX-373m; no se modifica DUG, GOW canónico, ART-025/027, IPZ nativa, control OCP MCP ni EP en este evento. FOL1 sigue PREPARADO_PENDIENTE_ACTIVACION_IPZ.
+
+Gobernanza define requisitos y acepta evidencia; OCP MCP implementa dentro de su ámbito autorizado; EP administra alojamiento/instalación. Todas las acciones del backlog deberán ser trazables al evento rector anterior.
+
+---
+
+## Fotografía histórica de continuidad · generación 7 · 2026-10-30
+
 ## Entrada documental recibida · C-GOBERNANZA-PERSISTENCIA-DOCUMENTAL-01 · 2026-10-30
 
 Se incorporó como original el archivo [ChatGPT-GOBERNANZA-20261030-1857.md](documentos/originales/ChatGPT-GOBERNANZA-20261030-1857.md), exportación de conversación de 3,391 líneas y 177,693 bytes recibida desde `C:\\Users\\PC 13\\Downloads` mediante RDC. SHA-256 de origen: `73C0BDA50D67840782C6E1B98A4F14803184CD029FB62D1A60CE77589CCA6C48`. Blob Git: `5f6754d1eda125056b661cb7505614cb988eafa5`. Manifiesto: [MANIFIESTO-DOCUMENTAL.json](documentos/MANIFIESTO-DOCUMENTAL.json). Estado: `PERSISTIDO_Y_VERIFICADO`; lectura de vuelta byte por byte desde `main` confirmada.

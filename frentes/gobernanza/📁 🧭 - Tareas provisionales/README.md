@@ -3,13 +3,13 @@
 **Estado:** materialización operativa provisional; no constituye el ámbito funcional Tareas ni lo canoniza.  
 **Contenedor:** `frentes/gobernanza/📁 🧭 - Tareas provisionales/`  
 **OCP padre y fuente de responsabilidad:** `frentes/gobernanza/`  
-**Control heredado:** [CONTROL-RESPONSABILIDAD.json](../CONTROL-RESPONSABILIDAD.json), titular de Gobernanza, generación 7; blob leído de vuelta `c41c3cddc866de999827fc6ae36c23dde400344f`.  
+**Control heredado:** [CONTROL-RESPONSABILIDAD.json](../CONTROL-RESPONSABILIDAD.json), titular de Gobernanza, generación 9; blob leído de vuelta `7e88662aefce286682e13fef9165757ea2d68908`.
 **Evento de creación:** C-GOBERNANZA-MDP-OCP-01 · 2026-10-30.  
 **Fuente normativa vigente:** [DUG v373 · NX-373m](../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html). La arquitectura MDP se originó en v371 y se leyó de vuelta en v373.
 
 ## Naturaleza y límites
 
-Este contenedor agrupa nueve objetos provisionales de persistencia de tarea, cada uno con su directorio y núcleo propio. No son frentes independientes ni unidades de una taxonomía ya aprobada. La responsabilidad, sesión y autorización se heredan del OCP padre; no se crean controles, sesiones ni folios independientes para cada tarea.
+Este contenedor agrupa diez objetos provisionales de persistencia de tarea, cada uno con su directorio y núcleo propio. No son frentes independientes ni unidades de una taxonomía ya aprobada. La responsabilidad, sesión y autorización se heredan del OCP padre; no se crean controles, sesiones ni folios independientes para cada tarea.
 
 El núcleo de cada objeto conserva identificador local, enunciado, referencia recuperable al origen y estado. El patrón se inspira en el diseño mínimo de Tareas v0.2, pero no declara ratificado ese estándar ni adopta como vigente el candidato v1.0. Cada ID `GOV-TASK-###` es estable dentro de este registro; no se afirma unicidad global.
 
@@ -20,16 +20,17 @@ El núcleo de cada objeto conserva identificador local, enunciado, referencia re
 | ID local | Estado | Tarea | Núcleo |
 |---|---|---|---|
 | GOV-TASK-001 | en_curso | Validación de microdescriptores de pertinencia | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-001%20-%20Validaci%C3%B3n%20de%20MDP/README.md) |
-| GOV-TASK-002 | pendiente | Despliegue de Sink y telemetría de frecuencia | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-002%20-%20Despliegue%20Sink%20y%20frecuencia/README.md) |
-| GOV-TASK-003 | pendiente | Prueba de consulta privada Sink → GitHub | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-003%20-%20Consulta%20privada%20E2E/README.md) |
+| GOV-TASK-002 | cancelada | Despliegue Sink/Cloudflare (antecedente supersedido) | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-002%20-%20Despliegue%20Sink%20y%20frecuencia/README.md) |
+| GOV-TASK-003 | pendiente | Prueba E2E de OCP MCP/Sync | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-003%20-%20Consulta%20privada%20E2E/README.md) |
 | GOV-TASK-004 | pendiente | Concluir la incubación y decidir el ámbito Tareas | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-004%20-%20Incubaci%C3%B3n%20del%20%C3%A1mbito%20Tareas/README.md) |
 | GOV-TASK-005 | pendiente | Resolver referencias incompletas P020/P021/P033/P034 | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-005%20-%20Integridad%20de%20principios/README.md) |
 | GOV-TASK-006 | en_curso | Reconciliar divergencias documentales de Gobernanza | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-006%20-%20Reconciliaci%C3%B3n%20documental/README.md) |
 | GOV-TASK-007 | en_curso | Reconciliar IPZ y cerrar el corte FOL1 | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-007%20-%20IPZ%20y%20FOL1/README.md) |
-| GOV-TASK-008 | en_curso | Aislar técnicamente la norma desarrollada detrás de Sink | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-008%20-%20Aislamiento%20de%20capa%20desarrollada/README.md) |
-| GOV-TASK-009 | pendiente | Revisar el GOW y mantener visible su vocabulario inicial esencial | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-009%20-%20Revisi%C3%B3n%20del%20glosario%20operativo/README.md) |
+| GOV-TASK-008 | en_curso | Catálogo, selección y recuperación individual mediante OCP MCP/Sync | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-008%20-%20Aislamiento%20de%20capa%20desarrollada/README.md) |
+| GOV-TASK-009 | en_curso | Revisar el GOW y mantener visible su vocabulario inicial esencial | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-009%20-%20Revisi%C3%B3n%20del%20glosario%20operativo/README.md) |
+| GOV-TASK-010 | en_curso | Admisión obligatoria y titularidad exclusiva de conversaciones | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-010%20-%20Admisión%20y%20titularidad%20de%20conversaciones/README.md) |
 
-## Estado de continuidad observado · 2026-10-30
+## Estado histórico de continuidad · 2026-10-30
 
 GOV-TASK-001, GOV-TASK-006, GOV-TASK-007 y GOV-TASK-008 se encuentran `en_curso`; GOV-TASK-002/003/004/005 permanecen `pendiente`. El cambio de estado no crea controles, sesiones ni folios propios. La discrepancia GOW 2.12/2.14 y la falta de acceso Cloudflare están registradas en [Pendientes](../PENDIENTES.md).
 
@@ -75,3 +76,10 @@ Gobernanza define el contrato normativo y los criterios de aceptación; OCP MCP 
 La telemetría aprobada aquí mide frecuencia de acceso, no aplicación, y no autoriza descartar principios automáticamente. El hash debe corresponder al paquete exacto emitido. El folio de ciclo es el identificador contextual exigido, pero OCP MCP debe verificar su vínculo con la sesión autorizada; no se presume que un folio predecible sea por sí solo una credencial criptográfica.
 
 El cierre del frente exige IPZ instalado y verificado, admisión efectiva, protocolo de ciclo operativo, consulta/selección/Sync/telemetría/hash E2E y resolución de satélites del DUG para 1.0.
+
+
+## Estado rector vigente · C-GOBERNANZA-VECTOR-SEMANTICO-01 · 2026-10-31
+
+El registro queda actualizado a diez objetos provisionales. GOV-TASK-010 ya existe y se incorpora al índice; no se crea tarea duplicada. GOV-TASK-009 pasa a `en_curso` por su dependencia directa con el primer enlace IPZ (§ARR/GOW). GOV-TASK-002 queda `cancelada` como despliegue Sink/Cloudflare activo, preservado únicamente como antecedente; GOV-TASK-003 continúa pendiente como aceptación E2E de OCP MCP/Sync. Las tareas 004 y 005 siguen diferidas. La responsabilidad de las diez tareas continúa heredada del OCP Gobernanza, generación 9; ninguna tiene control ni folio propio.
+
+Fuente rectora: [dictado](../conversaciones/C-GOBERNANZA-VECTOR-SEMANTICO-01-dialogo.jsonl) · [crónica](../cronica/C-GOBERNANZA-VECTOR-SEMANTICO-01.md) · [evidencia](../evidencias/C-GOBERNANZA-VECTOR-SEMANTICO-01.json).

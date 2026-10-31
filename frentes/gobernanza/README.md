@@ -1,8 +1,42 @@
+# Frente de trabajo · Gobernanza
+
+## Antecedentes documentales
+
 - **Original persistido y verificado · C-GOBERNANZA-RETOMA-07 (2026-10-31):** [ChatGPT-Gobernanza-20261031-1432.md](documentos/originales/ChatGPT-Gobernanza-20261031-1432.md) · [manifiesto](documentos/MANIFIESTO-DOCUMENTAL.json). 637.277 bytes; SHA-256 `73A087BA953FD01F0804A482452E505E0D5AC160237AF18B467E677D2BAA2219`; Git blob `d17f575fcd5bf0c0da1bb459a40e42e47c081a31`; lectura remota exacta confirmada.
 
 - **Original persistido y verificado · C-GOBERNANZA-RETOMA-07 (2026-10-31):** [ChatGPT-Gobernanza-20261031-1432.md](documentos/originales/ChatGPT-Gobernanza-20261031-1432.md) · [manifiesto](documentos/MANIFIESTO-DOCUMENTAL.json) · [crónica](cronica/C-GOBERNANZA-RETOMA-07.md) · [evidencia](evidencias/C-GOBERNANZA-RETOMA-07.json). 637.277 bytes; SHA-256 `73A087BA953FD01F0804A482452E505E0D5AC160237AF18B467E677D2BAA2219`; Git blob `d17f575fcd5bf0c0da1bb459a40e42e47c081a31`; lectura remota exacta confirmada.
-- **Intervención OCPMSP — C-GOBERNANZA-OCPMSP-DECISIONES-01 (2026-10-31):** [resolución](entregas/CHATGPT-v0.9/C-GOBERNANZA-OCPMSP-DECISIONES-01-salida-final.md) · [crónica](cronica/C-GOBERNANZA-OCPMSP-DECISIONES-01.md) · [evidencia](evidencias/C-GOBERNANZA-OCPMSP-DECISIONES-01.json) · [diálogo](conversaciones/C-GOBERNANZA-OCPMSP-DECISIONES-01-dialogo.jsonl). Decisiones de diseño aprobadas; transferencia MCP generación 1 pendiente. DUG/IPZ/ART-025/ART-027 y controles MCP/EP sin cambios. Original recibido: [ChatGPT-GOBERNANZA-20261031-1043.md](documentos/originales/ChatGPT-GOBERNANZA-20261031-1043.md); SHA-256 E16A915288DD5D04DDAF87DA4DFD01C1CB0BC361EBA274D6CB76ECCE62A6DC53; verificación remota pendiente.
-# Frente de trabajo · Gobernanza
+- **Intervención histórica OCP MCP — C-GOBERNANZA-OCPMSP-DECISIONES-01 (2026-10-31):** [resolución](entregas/CHATGPT-v0.9/C-GOBERNANZA-OCPMSP-DECISIONES-01-salida-final.md) · [crónica](cronica/C-GOBERNANZA-OCPMSP-DECISIONES-01.md) · [evidencia](evidencias/C-GOBERNANZA-OCPMSP-DECISIONES-01.json) · [diálogo](conversaciones/C-GOBERNANZA-OCPMSP-DECISIONES-01-dialogo.jsonl). Decisiones de diseño aprobadas; transferencia MCP generación 1 pendiente. DUG/IPZ/ART-025/ART-027 y controles MCP/EP sin cambios. Original recibido: [ChatGPT-GOBERNANZA-20261031-1043.md](documentos/originales/ChatGPT-GOBERNANZA-20261031-1043.md); SHA-256 E16A915288DD5D04DDAF87DA4DFD01C1CB0BC361EBA274D6CB76ECCE62A6DC53; verificación remota pendiente.
+## Actividad y navegación del frente
+
+## Estado rector vigente · C-GOBERNANZA-VECTOR-SEMANTICO-01 · 2026-10-31
+
+Esta sección sustituye los resúmenes ejecutivos repetidos y fotografías anteriores que siguen debajo por procedencia histórica. El vector semántico del operador es criterio rector de toda tarea y ciclo de Gobernanza. [Crónica](cronica/C-GOBERNANZA-VECTOR-SEMANTICO-01.md) · [dictado](conversaciones/C-GOBERNANZA-VECTOR-SEMANTICO-01-dialogo.jsonl) · [evidencia](evidencias/C-GOBERNANZA-VECTOR-SEMANTICO-01.json).
+
+### Resultado y secuencia obligatoria
+
+1. **GOV-TASK-010 — admisión fail-closed:** ninguna operación sustantiva sin frente asignado explícitamente y titularidad/generación/autorización/exclusividad verificadas. Rechazar consultas ajenas al frente. No afirmar bloqueo físico de creación de chats en la plataforma.
+2. **GOV-TASK-007 — IPZ/FOL1:** máximo 1.500 caracteres; primer enlace Sync acortado GOW/§ARR, segundo enlace Sync acortado DUG; después, refuerzo de admisión. Preservar salvaguardas v0.7. Instalar y leer de vuelta antes del corte FOL1.
+3. **GOV-TASK-001/008 — catálogo y principios:** revisar los 43 MDP; nombres de vista `Principio DI · [1–3 términos]` mapeados a ID/título canónicos sin modificar el DUG; MDP solo para comprender y detectar pertinencia, no para aplicar.
+4. **OCP MCP — ciclo:** validar vínculo folio global de ciclo/sesión autorizada; considerar los 43, seleccionar pertinentes; entregar enlaces Sync individuales a textos desarrollados; telemetría de frecuencia por enlace; permitir reconsulta por insuficiencia; devolver hash del paquete exacto de enlaces para la salida.
+5. **GOV-TASK-003 — aceptación E2E:** probar en forma positiva y negativa la admisión, el vínculo ciclo/sesión, catálogo, selección, lectura individual, frecuencia, reconsulta y hash.
+6. **GOV-TASK-009 — entrada léxica:** §ARR/GOW es primera referencia; DUG es segunda y fuente normativa única.
+7. **GOV-TASK-006 — Gobernanza 1.0:** resolver divergencias y satélites del DUG con procedencia y destino. `identidad.md` no se localizó en la búsqueda acotada de refs Git accesibles; no concluir inexistencia ni borrarlo por inferencia.
+8. **Diferimiento:** GOV-TASK-004 y GOV-TASK-005 no bloquean el MVP.
+
+### Estado técnico y fronteras interfrente
+
+- **OCP MCP 0.1.0:** rama `build/ocp-mcp-mvp-0.1.0`, build y pruebas reportadas (31 unitarias + 29 integración); release indica `BUILT_AND_TESTED_NOT_INSTALLED`. Persisten bloqueos por cuatro metadatos faltantes que producen `BLOCKED_OCPMSP`, y no está demostrada la cadena Sync individual/frecuencia/hash exacto/vínculo FOL1-sesión.
+- **EP:** instalación del artefacto permanece `PENDING_EP`. No mutar el host ni su OCP/control desde Gobernanza. La respuesta EP anterior sigue pendiente en la coordinación.
+- **Serialidad:** respetar `COORDINACION-SPRINT-OCP-MCP-v0.1.md`: recibir y analizar la última respuesta de cada frente antes de preparar otra solicitud a ese mismo frente. Reenvíos no verificados no son envíos.
+- **Sink/Cloudflare:** GOV-TASK-002 queda cancelada como despliegue activo; conservar el antecedente. No desplegar por inercia ni tratar Sink como equivalente a Sync.
+- **Canon y controles:** DUG Samantha v373 · NX-373m; no se modifica DUG, GOW canónico, ART-025/027, IPZ nativa, control OCP MCP ni EP en este evento. FOL1 sigue PREPARADO_PENDIENTE_ACTIVACION_IPZ.
+
+Gobernanza define requisitos y acepta evidencia; OCP MCP implementa dentro de su ámbito autorizado; EP administra alojamiento/instalación. Todas las acciones del backlog deberán ser trazables al evento rector anterior.
+
+---
+
+**Responsabilidad vigente:** generación 9 · sesión `SES-20261031-GV8AA51721`; control leído de vuelta desde `main`, blob `7e88662aefce286682e13fef9165757ea2d68908`.
+
 
 - **Archivo original recibido · C-GOBERNANZA-PERSISTENCIA-DOCUMENTAL-01 (2026-10-30):** [ChatGPT-GOBERNANZA-20261030-1857.md](documentos/originales/ChatGPT-GOBERNANZA-20261030-1857.md) · [manifiesto documental](documentos/MANIFIESTO-DOCUMENTAL.json) · [diálogo A/B](conversaciones/C-GOBERNANZA-PERSISTENCIA-DOCUMENTAL-01-dialogo.jsonl) · [crónica](cronica/C-GOBERNANZA-PERSISTENCIA-DOCUMENTAL-01.md) · [evidencia](evidencias/C-GOBERNANZA-PERSISTENCIA-DOCUMENTAL-01.json). 177,693 bytes; SHA-256 `73C0BDA50D67840782C6E1B98A4F14803184CD029FB62D1A60CE77589CCA6C48`; estado **PERSISTIDO_Y_VERIFICADO**; lectura de vuelta exacta byte por byte confirmada.
 

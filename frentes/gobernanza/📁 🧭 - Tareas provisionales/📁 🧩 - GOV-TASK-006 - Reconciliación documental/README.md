@@ -41,3 +41,12 @@ Marcar como completada solo cuando el enunciado haya sido atendido, la evidencia
 Además de las divergencias ya identificadas, esta tarea debe inventariar y resolver los elementos satélite que crecieron alrededor del DUG (por ejemplo, documentos de identidad o auxiliares que contienen reglas, definiciones o estado que debió residir en el documento único). El objetivo de 1.0 es recuperar una única fuente normativa, conservar procedencia e historia y dejar cada artefacto satélite clasificado como: índice/navegación, proyección derivada, evidencia histórica, control operativo o candidato a integración/eliminación.
 
 No borrar, fusionar ni trasladar elementos por inferencia. La decisión de cada satélite debe señalar autoridad, función, dependencia, contenido duplicado y destino. El resultado debe evitar que un elemento auxiliar se convierta inadvertidamente en una segunda fuente normativa.
+
+
+## Vector vigente y alcance satélite · C-GOBERNANZA-VECTOR-SEMANTICO-01 · 2026-10-31
+
+El cierre 1.0 requiere inventario explícito de todo elemento situado alrededor del DUG, con clase, autoridad, función, procedencia, dependencia, duplicación y destino: índice/navegación, proyección derivada, control operativo, evidencia histórica o candidato a integración/eliminación. El nombre `identidad.md` fue señalado expresamente por el operador, pero la búsqueda de nombre en el árbol y las referencias Git disponibles para esta revisión no devolvió coincidencia. Estado correcto: **no localizado en las fuentes consultadas; ubicación y procedencia pendientes**, no «inexistente». No borrar, mover, fusionar ni elevar a fuente normativa por inferencia.
+
+El GOW también presenta divergencia humana/estructurada (banner humano 2.12 frente a estructura declarada 2.14/127 términos, con 12 nombres sin coincidencia literal en el texto humano). Resolver precedencia y destino dentro de esta tarea sin cambiar el DUG/GOW canónico sin la autorización normativa requerida. El auxiliar `GLOSARIO-WORKSPACE.fuente.json` es derivado, no una segunda autoridad.
+
+La salida de esta tarea será una matriz de inventario y decisión por satélite, más evidencia de lectura de vuelta. Trazabilidad: [C-GOBERNANZA-VECTOR-SEMANTICO-01](../../cronica/C-GOBERNANZA-VECTOR-SEMANTICO-01.md).

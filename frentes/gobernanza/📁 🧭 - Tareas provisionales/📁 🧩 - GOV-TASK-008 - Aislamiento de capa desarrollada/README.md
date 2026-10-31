@@ -1,4 +1,4 @@
-# 📝 GOV-TASK-008 · Aislamiento de la capa desarrollada detrás de Sink
+# 📝 GOV-TASK-008 · Catálogo, selección y recuperación individual mediante OCP MCP/Sync
 
 **Naturaleza:** OCP provisional de tarea; no es un frente independiente ni una unidad taxonómica canonizada.  
 **Estado:** `en_curso`  
@@ -8,7 +8,7 @@
 
 ## Enunciado
 
-Diseñar y probar una arquitectura en la que el modelo reciba como vista inicial únicamente el ID, nombre canónico y MDP, y recupere la norma desarrollada individualmente por la ruta Sink, sin publicar el repositorio ni duplicar la fuente normativa.
+Definir y aceptar la semántica de dos capas del flujo OCP MCP: inventario inicial de los 43 principios con ID, nombre de vista `Principio DI · [1–3 términos]` y MDP acotado; selección de los pertinentes por ciclo; enlace Sync individual al texto desarrollado; telemetría de frecuencia por enlace; evaluación de suficiencia y reconsulta de principios adicionales; y hash del paquete exacto de URLs. Mantener el DUG como fuente normativa única y no exponer los 43 textos desarrollados en el inventario inicial.
 
 ## Referencia de origen
 
@@ -22,7 +22,7 @@ No publicar `SeryMente/metodologia`, no duplicar silenciosamente los textos y no
 
 ## Siguiente actuación
 
-Evaluar una separación de la vista modelo-facing MDP y un resolvedor privado/autenticado que devuelva solo el principio solicitado, o una extracción por principio equivalente que preserve la fuente canónica y la trazabilidad de versión. Probar que el flujo habitual no presenta los 43 textos desarrollados en el primer acceso.
+Cotejar el código y release 0.1.0 con cada etapa del vector rector; especificar exclusivamente las brechas restantes para OCP MCP. Separar los requisitos de aceptación de Gobernanza de la implementación del servidor y de la instalación/host que corresponde a EP. No desplegar Sink por inercia.
 
 ## Evaluación técnica preliminar
 
@@ -62,3 +62,21 @@ La capa de inicio expone únicamente ID/nombre/MDP; la apertura del alias recupe
 El requisito de aislamiento se mantiene, pero el diseño de entrega debe coordinarse con OCP MCP y no presuponer Sink/Cloudflare. El modelo recibe el inventario acotado de 43 principios, comunica cuáles aplican al ciclo y obtiene mediante OCP MCP enlaces Sync individuales a las versiones desarrolladas. Cada enlace debe resolver un único principio y conservar versión/firma/SHA de la fuente; no debe exponer los 43 textos desarrollados en la respuesta inicial.
 
 El MDP debe permitir comprender el significado y reconocer pertinencia, pero no sustituir la lectura del principio completo. La fuente normativa sigue siendo el DUG único; cualquier proyección o extracción es derivada, verificable y no adquiere autoridad independiente. La telemetría de esta tarea se limita a frecuencia de acceso.
+
+
+## Brecha del producto OCP MCP 0.1.0 · verificación documental · 2026-10-31
+
+Las propuestas Worker/Sink/Cloudflare descritas en las secciones precedentes son antecedentes de diseño. Quedan supersedidas como camino de implementación del MVP actual por el requisito Sync servido por OCP MCP; no constituyen autorización de despliegue ni decisión de reactivar Sink.
+
+La rama `build/ocp-mcp-mvp-0.1.0` acredita código persistido, 31 pruebas unitarias y 29 de integración aprobadas; el recibo declara `BUILT_AND_TESTED_NOT_INSTALLED`. Por ello no afirmar instalación ni aceptación E2E. El producto contiene cifrado de fuentes/snapshots AES-256-GCM con DPAPI CurrentUser, importación con commit/blob/SHA-256 y snapshot transaccional BLOB/SQLite con eventos/recibos.
+
+Brechas frente al vector que deben resolverse en OCP MCP:
+1. Los metadatos `applicability`, `activation_conditions`, `mandatory` y `dependencies` faltan; selección/snapshot devuelve `BLOCKED_OCPMSP`.
+2. El catálogo ofrece 43 IDs/títulos/MDP, pero aún no la etiqueta visible compacta `Principio DI` ni demuestra el mapeo de una a tres palabras hacia título/ID canónicos.
+3. No se observan enlaces Sync individuales a textos desarrollados ni herramienta de ampliación individual.
+4. No se demuestra telemetría de frecuencia disparada por apertura de cada enlace Sync individual.
+5. `selection_sha256` cubre la lista de IDs seleccionados; no demuestra hash del paquete exacto y ordenado de URLs Sync.
+6. No se demuestra aceptación del folio global de ciclo y verificación de su vínculo con la sesión autorizada.
+7. El manifiesto inicial observado contiene DUG y núcleo OCP, no §ARR/GOW; la frescura frente a `main` figura `NOT_CHECKED_AGAINST_MAIN`.
+
+El código/resolución del servidor corresponde a OCP MCP dentro de su autorización; instalación/host y lectura de vuelta corresponden a EP. Gobernanza define el contrato y verifica aceptación. No abrir una nueva solicitud OCP mientras siga sin recibirse y analizarse la última respuesta registrada en el protocolo bilateral. No reinstalar Sink/Cloudflare por inercia. Trazabilidad: [C-GOBERNANZA-VECTOR-SEMANTICO-01](../../cronica/C-GOBERNANZA-VECTOR-SEMANTICO-01.md).

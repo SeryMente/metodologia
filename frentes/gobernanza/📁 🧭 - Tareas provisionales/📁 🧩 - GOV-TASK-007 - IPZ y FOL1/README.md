@@ -49,3 +49,10 @@ Este alcance precisa y amplía el enunciado anterior. El IPZ debe ser una instru
 7. IPZ debe preservar las salvaguardas vigentes de v0.7 y su formato de salida, sin perder los estados de autorización/ejecución ni el contrato de eficiencia temporal.
 
 **Criterio ampliado de cierre:** contenido dentro de 1.500 caracteres; ambas referencias Sync resuelven a los destinos correctos; refuerzo de admisión probado con casos positivos y negativos; instalación en el campo nativo leída de vuelta; y solo entonces activar FOL1 conforme al protocolo. No se afirma instalación ni activación por la preparación del texto.
+
+
+## Estado rector · C-GOBERNANZA-VECTOR-SEMANTICO-01 · 2026-10-31
+
+La secuencia del campo queda fijada: (1) primer Sync acortado a GOW/§ARR; (2) segundo Sync acortado al DUG único; (3) refuerzo fail-closed de admisión, frente asignado y titularidad/exclusividad verificada; (4) reglas mínimas de sesión/ciclo y salida, dentro del máximo de 1.500 caracteres. Medir la longitud real en unidades exigidas por el campo. Mantener las seis distinciones de estado de v0.7 y el resto de salvaguardas verificadas: no sustituir con v0.8 incompleta.
+
+La instalación y lectura de vuelta del campo nativo son requisito previo a activar FOL1. El ciclo global no se inventa ni se asigna mientras FOL1 siga `PREPARADO_PENDIENTE_ACTIVACION_IPZ`. Trazabilidad: [C-GOBERNANZA-VECTOR-SEMANTICO-01](../../cronica/C-GOBERNANZA-VECTOR-SEMANTICO-01.md).

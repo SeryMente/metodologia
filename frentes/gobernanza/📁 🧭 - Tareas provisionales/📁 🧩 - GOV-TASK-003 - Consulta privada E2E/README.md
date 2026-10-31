@@ -1,4 +1,4 @@
-# 📝 GOV-TASK-003 · Prueba de consulta privada Sink → GitHub
+# 📝 GOV-TASK-003 · Prueba E2E del flujo OCP MCP/Sync
 
 **Naturaleza:** OCP provisional de tarea; no es un frente independiente ni una unidad taxonómica canonizada.  
 **Estado:** `pendiente`  
@@ -8,7 +8,7 @@
 
 ## Enunciado
 
-Verificar de extremo a extremo que cada alias Sink redirige al principio correcto y que el modelo recupera el texto desarrollado mediante GitHub autenticado sin hacer público el repositorio.
+Verificar de extremo a extremo el recorrido del ciclo en OCP MCP: validación del folio de ciclo y su vínculo con la sesión autorizada; entrega del inventario de 43 principios; selección reportada por el modelo; entrega de enlaces Sync individuales a los principios desarrollados; registro de frecuencia por acceso individual; reconsulta de principios adicionales cuando falte suficiencia; y hash verificable del paquete exacto y ordenado de enlaces.
 
 ## Referencia de origen
 
@@ -16,11 +16,11 @@ ART-027 vigente en DUG v373 · NX-373m; repositorio privado SeryMente/metodologi
 
 ## Dependencias y límites
 
-Depende de GOV-TASK-002 y GOV-TASK-008; repositorio GitHub privado y canal autenticado que entregue un único principio. El conector GitHub disponible recupera el HTML completo, por lo que no constituye por sí solo una prueba de aislamiento.
+Depende de GOV-TASK-001, GOV-TASK-007, GOV-TASK-008, OCP MCP 0.1.0 y de la instalación validada por EP. La prueba no se satisface con leer el HTML completo ni con telemetría genérica de operaciones: debe comprobar el acceso real a cada URL Sync individual. Incluye casos positivos y negativos y conserva el DUG como única fuente normativa.
 
 ## Siguiente actuación
 
-Tras desplegar el resolvedor, probar un alias piloto y verificar que responde únicamente el objeto del ID solicitado, con versión/firma/SHA de fuente; probar IDs inexistentes, autenticación inválida y fuente no disponible con respuesta fail-closed. No usar el HTML completo ni `gov-data` completo como resultado de prueba.
+Tras la entrega de OCP MCP y la instalación validada por EP, ejecutar el flujo completo de aceptación. Antes de esa condición, revisar schemas y artefactos de release; no ejecutar instalaciones en el host ni declarar prueba E2E a partir de unit tests o de telemetría genérica.
 
 ## Criterio de cierre
 

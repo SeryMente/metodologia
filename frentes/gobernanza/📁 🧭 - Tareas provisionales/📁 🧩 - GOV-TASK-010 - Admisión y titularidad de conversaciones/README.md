@@ -1,11 +1,11 @@
 # 📝 GOV-TASK-010 · Admisión obligatoria y titularidad exclusiva de conversaciones
 
 **Naturaleza:** OCP provisional de tarea del frente Gobernanza; no constituye frente independiente ni canoniza el ámbito funcional Tareas.  
-**Estado:** `pendiente`  
+**Estado:** `en_curso`
 **Responsabilidad:** heredada del control `frentes/gobernanza/CONTROL-RESPONSABILIDAD.json`; sin control, sesión ni folio propios.  
 **task_id:** `GOV-TASK-010`  
 **scope_ref:** `frentes/gobernanza/`  
-**Origen:** instrucción expresa del operador en esta conversación, 2026-10-31; captura estructurada pendiente de crónica/evidencia del evento.
+**Origen:** instrucción expresa del operador en C-GOBERNANZA-VECTOR-SEMANTICO-01, 2026-10-31; dictado, crónica y evidencia conservados en el OCP Gobernanza.
 
 ## Enunciado
 
@@ -40,6 +40,6 @@ Diseñar, especificar e integrar una compuerta obligatoria de admisión para que
 
 Pruebas positivas y negativas demuestran que: (a) una conversación con frente asignado y titularidad exclusiva verificada puede iniciar; (b) una conversación sin frente, con control ausente, titularidad ajena, generación obsoleta o colisión no puede iniciar trabajo sustantivo; (c) una pregunta general ajena al frente no desvía la conversación; (d) el resultado es coherente con el protocolo de responsabilidad; y (e) el refuerzo IPZ cabe dentro de 1.500 caracteres y se ha instalado con lectura de vuelta verificable.
 
-## Estado inicial
+## Estado vigente · C-GOBERNANZA-VECTOR-SEMANTICO-01 · 2026-10-31
 
-Pendiente. La instrucción queda delimitada en este objeto; no se afirma todavía una compuerta técnica implementada ni una IPZ nativa instalada.
+La tarea pasa a `en_curso` por prioridad crítica. La compuerta debe ubicarse en el IPZ después de los dos enlaces Sync iniciales (GOW/§ARR y DUG), exigir frente asignado explícitamente y comprobar control/titularidad/generación/autorización/exclusividad antes de cualquier trabajo sustantivo. Debe rechazar consultas generales ajenas al frente. La plataforma puede permitir abrir el chat; no afirmar bloqueo de la interfaz. La aceptación exige casos positivos/negativos y prueba dentro de 1.500 caracteres con read-back de instalación antes de FOL1. La tarea no crea control ni sesión propios y sigue heredando el control de Gobernanza.

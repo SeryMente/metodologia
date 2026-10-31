@@ -39,3 +39,10 @@ Se creó [MATRIZ-PRUEBAS-MDP-v1.md](./MATRIZ-PRUEBAS-MDP-v1.md), con 43 entradas
 ## Criterio de cierre
 
 Marcar como completada solo cuando el enunciado haya sido atendido, la evidencia correspondiente sea recuperable y el resultado haya sido leído de vuelta en la fuente canónica aplicable.
+
+
+## Vector vigente · C-GOBERNANZA-VECTOR-SEMANTICO-01 · 2026-10-31
+
+Además de la matriz semántica existente, verificar la forma compacta del nombre expuesto al modelo: `Principio DI · [1–3 términos atómicos]`. Debe existir mapeo inequívoco de cada etiqueta a su ID y título canónico del DUG, sin reescribir el título normativo. Validar los 43 MDP con positivos/negativos: el descriptor debe permitir comprender el principio y detectar pertinencia, pero no reemplazar el texto desarrollado ni habilitar aplicación segura sin consultarlo. La matriz actual es un protocolo de prueba, no evidencia de que ya se ejecutó.
+
+Trazabilidad rectora: [C-GOBERNANZA-VECTOR-SEMANTICO-01](../../cronica/C-GOBERNANZA-VECTOR-SEMANTICO-01.md).

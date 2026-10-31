@@ -1,0 +1,103 @@
+{
+  "schema": "governance-cycle-evidence/1",
+  "event_id": "C-GOBERNANZA-VECTOR-SEMANTICO-01",
+  "recorded_on": "2026-10-31",
+  "front": "gobernanza",
+  "repository": "SeryMente/metodologia",
+  "branch": "main",
+  "operator_instruction": {
+    "source": "operator dictation received in current Governance session",
+    "canonical_dialogue_path": "frentes/gobernanza/conversaciones/C-GOBERNANZA-VECTOR-SEMANTICO-01-dialogo.jsonl",
+    "dialogue_bytes": 8254,
+    "dialogue_sha256": "08280749AD5BA43C4C03FB8CBD44F42F932F3FA13E51DF90DE9046041D189080",
+    "vector_objective": "IPZ<=1500 chars with Sync §ARR/GOW then DUG; fail-closed admission; cycle folio bound to authorized session; 43 compact Principio DI names/MDP; selection; individual Sync links; per-link frequency; insufficiency reconsultation; exact link-package hash in cycle output; resolve DUG satellites for Governance 1.0; coordinate EP and OCP MCP."
+  },
+  "governance_control": {
+    "generation": 9,
+    "session": "SES-20261031-GV8AA51721",
+    "uuidv7_local": "01a193a9-7a00-7286-9216-45a477d294c1",
+    "native_conversation_id": "NOT_EXPOSED",
+    "readback_blob_sha": "7e88662aefce286682e13fef9165757ea2d68908"
+  },
+  "dug": {
+    "version": "Samantha v373 · NX-373m",
+    "blob_sha": "cac4525de77d4f47a8a59c25201968ecf2056b90",
+    "modified": false
+  },
+  "fol1": {
+    "status": "PREPARADO_PENDIENTE_ACTIVACION_IPZ",
+    "active": false,
+    "global_cycle_folio": null
+  },
+  "ocp_mcp": {
+    "branch": "build/ocp-mcp-mvp-0.1.0",
+    "branch_tip": "b37213272dc9a132d1fb181e9ce66fba6ae1becc",
+    "source_code_commit": "d5b6cc7563c52ae5d37846c87df98add7b5956c0",
+    "release_evidence_blob": "6737ca65a79157a2fcc2ae022a626fde4b84b930",
+    "test_evidence_blob": "69529828ebfaabc0fa9a72fb20aa167f12d882e4",
+    "unit_tests": {
+      "passed": 31,
+      "failed": 0
+    },
+    "integration_tests": {
+      "passed": 29,
+      "failed": 0
+    },
+    "status": "BUILT_AND_TESTED_NOT_INSTALLED",
+    "ep_installation": "PENDING_EP",
+    "observed_gaps": [
+      "applicability, activation_conditions, mandatory, dependencies missing; selection/snapshot BLOCKED_OCPMSP",
+      "compact Principio DI display names absent from current catalog",
+      "individual Sync links for developed principles not demonstrated",
+      "per-individual-link frequency telemetry not demonstrated",
+      "hash of exact ordered Sync-link package not demonstrated; current selection hash covers selected IDs",
+      "global FOL1 cycle folio/session validation not demonstrated",
+      "§ARR/GOW absent from initial source manifest",
+      "source freshness against main not checked at build"
+    ]
+  },
+  "ep": {
+    "installation": "PENDING_EP",
+    "current_operational_control": "NOT_VERIFIED_IN_MAIN",
+    "previous_response": "PENDING_IN_COORDINATION_RECORD",
+    "mutated": false
+  },
+  "tasks": {
+    "retained": [
+      "GOV-TASK-001",
+      "GOV-TASK-003",
+      "GOV-TASK-006",
+      "GOV-TASK-007",
+      "GOV-TASK-008",
+      "GOV-TASK-009",
+      "GOV-TASK-010"
+    ],
+    "cancelled": [
+      "GOV-TASK-002"
+    ],
+    "deferred": [
+      "GOV-TASK-004",
+      "GOV-TASK-005"
+    ],
+    "new_tasks_created": 0,
+    "task_index_requires_GOV_TASK_010": true
+  },
+  "satellite_search": {
+    "candidate": "identidad.md",
+    "result": "NOT_FOUND_IN_SEARCHED_MAIN_AND_AVAILABLE_GIT_PATHS",
+    "interpretation": "bounded search only; existence outside searched refs is not disproven",
+    "mutation": "none"
+  },
+  "limits": {
+    "dug_modified": false,
+    "art025_modified": false,
+    "art027_modified": false,
+    "gow_modified": false,
+    "native_ipz_modified": false,
+    "fol1_activated": false,
+    "ocp_control_modified": false,
+    "ep_control_modified": false,
+    "sink_cloudflare_deployed": false,
+    "ep_installed": false
+  }
+}

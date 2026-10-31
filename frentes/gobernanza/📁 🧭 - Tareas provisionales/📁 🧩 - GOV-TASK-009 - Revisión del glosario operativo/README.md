@@ -1,7 +1,7 @@
 # 📝 GOV-TASK-009 · Revisión del glosario operativo
 
 **Naturaleza:** OCP provisional de tarea; no es un frente independiente ni una unidad taxonómica canonizada.  
-**Estado:** `pendiente`  
+**Estado:** `en_curso`
 **Urgencia relativa:** baja; mejora no bloqueante. Se atiende después de los bloqueos operativos y sin desplazar controles esenciales.  
 **Responsabilidad:** heredada del control `frentes/gobernanza/CONTROL-RESPONSABILIDAD.json`; sin control ni sesión propios.  
 **task_id:** `GOV-TASK-009`  
@@ -44,3 +44,8 @@ Esta tarea no autoriza por sí misma una modificación normativa del DUG/GOW. Cu
 ## Prioridad para IPZ · instrucción del operador · 2026-10-31
 
 §ARR es la primera referencia del recorrido IPZ y debe familiarizar al modelo con el vocabulario mínimo necesario para entender la Metodología, la asignación de frentes, los ciclos, los folios, el DUG, los principios y OCP MCP. El DUG es la segunda referencia y conserva la autoridad normativa única. Revisar que los enlaces y términos de §ARR sean resolubles, suficientes y no creen una segunda fuente normativa. La prioridad de esta revisión aumenta porque §ARR es el primer destino de navegación del IPZ.
+
+
+## Prioridad rectora IPZ · C-GOBERNANZA-VECTOR-SEMANTICO-01 · 2026-10-31
+
+GOW/§ARR es el primer destino del IPZ y debe ofrecer el vocabulario necesario para comprender Metodología, admisión, repositorios/frentes, ciclo/folios y DUG. Debe ir antes del segundo enlace al DUG; este último conserva la autoridad normativa única. Verificar el destino Sync abreviado, resolución, anclas y compatibilidad del glosario humano/estructurado. La divergencia de banner/versiones y el inventario de satélites se resuelven con GOV-TASK-006; esta tarea valida la funcionalidad de la primera referencia, no modifica el canon. Trazabilidad: [C-GOBERNANZA-VECTOR-SEMANTICO-01](../../cronica/C-GOBERNANZA-VECTOR-SEMANTICO-01.md).
