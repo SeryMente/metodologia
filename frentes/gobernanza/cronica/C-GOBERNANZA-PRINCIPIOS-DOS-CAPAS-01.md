@@ -10,8 +10,8 @@ El operador autorizó expresamente crear ART-027, incorporar un inventario compa
 
 - DUG anterior: v369 · NX-369m; blob previo observado `ea1eefd62a092079fa2cfdfa546cb739b63450eb`.
 - DUG final: **v370 · NX-370m**, evento `C-GOBERNANZA-PRINCIPIOS-DOS-CAPAS-01`.
-- Commit final de alineación visual y versión: `f91b0e6cc1c78730bcf642420c638afc802c0dac`.
-- Blob final leído de vuelta: `c016e442be13ad0c28e6f4a467b1ea79ffb70574`.
+- Commit final de alineación visual y versión: `0577403f792eeb873f1dd26c08525e98466995ba`.
+- Blob final leído de vuelta: `abbd66e39e71fd78df534e619594d42aa0ce079f`.
 - Representación estructurada parseada: 43 principios, 20 anexos, ART-027 presente; 43 entradas de catálogo y 43 aliases lógicos especificados; cero enlaces directos al ancla desde el catálogo.
 - ART-027 quedó enlazado desde la sección humana con el ancla `#estrategia-dos-capas-principios` y el identificador `[[A:ART-027]]`.
 
@@ -19,7 +19,7 @@ El operador autorizó expresamente crear ART-027, incorporar un inventario compa
 
 La primera capa contiene, para cada principio P001–P043, su identificador, nombre canónico y una abstracción general de una sola frase. No duplica el texto normativo desarrollado.
 
-La segunda capa define un alias Sink determinista `p001`…`p043`, exclusivo por principio y asociado a su ancla canónica `#Pxxx`. Los aliases están definidos en ART-027, pero no son URLs activas; no se inventaron host ni redirecciones. El catálogo y el mapa no contienen enlaces directos alternativos a los anclajes Pxxx: la consulta individual contable debe comenzar por Sink.
+La segunda capa define un alias Sink determinista `p001`…`p043`, exclusivo por principio y asociado a su ancla canónica `#Pxxx`. Los aliases están definidos en ART-027, pero no son URLs activas; no se inventaron host ni redirecciones. El catálogo y el mapa no contienen enlaces directos alternativos a los anclajes Pxxx: la consulta individual contable debe comenzar por Sink. El patrón de destino largo es `https://github.com/SeryMente/metodologia/blob/main/gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#Pxxx`.
 
 El protocolo por ciclo exige adquirir el DUG completo, considerar el catálogo de 43, seleccionar el subconjunto contextual, acceder al alias Sink de cada principio seleccionado, recuperar su texto desarrollado desde una ruta autenticada del DUG, y registrar por separado los estados considerado/seleccionado/consultado/aplicado. Un clic no prueba aplicación. El conteo de aplicaciones procede del arreglo `applied[]` en los registros de ciclo de ART-024; Sink mide navegación/consulta y sus estadísticas pueden ser aproximadas o muestreadas.
 
@@ -30,8 +30,8 @@ El protocolo por ciclo exige adquirir el DUG completo, considerar el catálogo d
 3. Variables de despliegue `DEPLOY_D1_DATABASE_ID` y `DEPLOY_KV_NAMESPACE_ID`.
 4. Secretos protegidos `NUXT_SITE_TOKEN` y `NUXT_CF_API_TOKEN`; variable `NUXT_CF_ACCOUNT_ID`. Ninguna credencial se incorpora a Git.
 5. API REST de Sink autenticada con Bearer; alta idempotente y validación de 43 aliases.
-6. Resolución privada del DUG: GitHub sigue privado; el redirect Sink no autentica por sí mismo en GitHub.
-7. Prueba de que el modelo puede abrir el alias y recuperar el principio exacto; si el visor GitHub no ejecuta el renderizador de anclas, deberá construirse un resolvedor privado autenticado, limitado a lectura del DUG y a IDs Pxxx.
+6. Resolución privada del DUG: el alias Sink redirige al archivo privado de GitHub con fragmento `#Pxxx`; el modelo usa el conector GitHub autenticado para recuperar el mismo archivo y extraer el registro `D.principles[id]` del JSON embebido. No se depende del renderizado visual del ancla.
+7. Prueba E2E de que el modelo puede abrir el alias, observar el destino/fragmento y recuperar el principio exacto con el conector GitHub; si la plataforma no expone el destino, alternativa API REST Sink autenticada y, solo como último recurso, resolvedor privado de solo lectura.
 8. Integración del bloque `principle_usage` en el registro de ciclo de ART-024 y agregación separada de consultas y aplicaciones.
 9. Pruebas E2E y negativas de redirección, privacidad, autenticación, cambio de revisión, duplicados, bots y read-back.
 
@@ -43,8 +43,14 @@ El protocolo por ciclo exige adquirir el DUG completo, considerar el catálogo d
 - No existe herramienta GitHub disponible para crear el fork de Sink en esta sesión.
 - No se desplegó Sink y no se crearon enlaces cortos reales.
 - La privacidad del destino no está resuelta por el simple redirect; el repositorio no se hizo público.
-- No se ejecutó un navegador con renderizado del DUG, ni pruebas de los anchors dinámicos P001–P043.
+- No se ejecutó todavía una prueba E2E desde el alias Sink hasta la lectura autenticada del principio. No hace falta que el navegador renderice el ancla Pxxx: se utiliza como selector del registro estructurado, pero sí hay que verificar la redirección y la lectura del archivo privado.
 - No se creó aún un proceso de agregación sobre registros ART-024; la especificación del bloque de ciclo sí está documentada en ART-027.
+
+## Contrato API, privacidad y coste
+
+La documentación vigente de Sink confirma Bearer con `NUXT_SITE_TOKEN`, `/api/link/upsert`, `/api/link/search`, `/api/link/list`, `/api/link/check`, `/api/stats/**` y `/api/logs/**`; los métodos y payloads precisos deben tomarse del OpenAPI de la instancia. `upsert` no sobrescribe un slug existente: devuelve `status: existing`, por lo que hay que cotejar el destino existente. La API puede fallar con HTTP 423 hasta abrir Dashboard → Links una vez. No usar `/api/mcp`, porque MCP normativo está desactivado. Los enlaces cortos continúan públicos incluso al habilitar Cloudflare Access; la protección del texto se conserva porque GitHub sigue privado y exige autenticación.
+
+Cloudflare publica cuotas gratuitas, pero no se garantiza coste cero permanente: su documentación indica que Analytics Engine todavía no se factura a la fecha consultada y anticipa facturación futura. Deben comprobarse límites y activar alertas de gasto.
 
 ## Verificación y límites
 
