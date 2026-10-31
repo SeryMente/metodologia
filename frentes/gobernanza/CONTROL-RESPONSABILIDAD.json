@@ -534,7 +534,25 @@
         "scope_limit": "Bounded repository search only; does not establish global uniqueness."
       },
       "method": "GitHub Contents API update conditioned on immediately observed blob SHA, followed by canonical read-back.",
-      "mutation_result": "PENDING"
+      "mutation_result": "COMMITTED_AND_READBACK_VERIFIED",
+      "readback_verification": {
+        "status": "verified",
+        "verified_on": "2026-10-31",
+        "control_blob_sha_before_status_update": "a6daa390ec7fa1e20f43482cf903f9b35e13a737",
+        "ownership_fields_verified": [
+          "owner_thread",
+          "instance",
+          "generation",
+          "session_folio",
+          "session_assignment.status",
+          "session_assignment.local_conversation_uuidv7",
+          "previous_session_assignment.status",
+          "transfer event id",
+          "explicit authorization scope"
+        ],
+        "control_blob_sha_after_first_write": "a6daa390ec7fa1e20f43482cf903f9b35e13a737",
+        "scope_limit": "GitHub canonical read-back verifies the operational record; it does not cryptographically authenticate the platform user or enforce single-writer fencing."
+      }
     }
   ]
 }
