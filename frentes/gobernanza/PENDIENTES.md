@@ -12,10 +12,10 @@
 
 **Pendientes ejecutivos y dependencias:**
 - GOV-TASK-008: definir y ejecutar el aislamiento MDP-only y la recuperación individual; el DUG todavía expone los 43 textos desarrollados en `gov-data`.
-- GOV-TASK-002/003: Sink, Worker, 43 aliases y prueba privada E2E siguen sin desplegar. Wrangler no está instalado en PC-14 y no hay conector Cloudflare disponible; se requiere acceso autorizado a la cuenta y a los secretos, sin copiarlos a Git.
-- GOV-TASK-004: `ambitos/tareas/` mantiene control propio y titularidad de otra sesión, generación 1. No modificar ni transferir desde Gobernanza.
+- GOV-TASK-002/003: Sink, Worker, 43 aliases y prueba privada E2E siguen sin desplegar. Wrangler no está instalado en PC-14 y no hay conector Cloudflare disponible; tampoco se encontró una operación de fork en el conector GitHub. Se requiere acceso autorizado a Cloudflare y una vía aprobada para fork/despliegue; secretos solo en almacenamiento protegido, nunca en Git.
+- GOV-TASK-004: `ambitos/tareas/` conserva control leído de vuelta, estado `owned`, titular `chatgpt-C-TAREAS-INICIO-01-SES-20261028-TA6F31C9`, generación 1, blob `b0c19b0c2ce7db13a74243b03183756519f7cfe0`. No modificar ni transferir desde Gobernanza.
 - GOV-TASK-005: referencias incompletas P020/P021/P033/P034; preservar los vacíos hasta hallar procedencia y obtener autorización P005 antes de cambiar principios.
-- GOV-TASK-006: alinear índices y registros activos; preservar registros históricos. Se detectó una divergencia GOW: el DUG estructurado declara 2.14, el banner humano indica 2.12 y el JSON auxiliar conserva v2.11. Requiere resolver cuál versión debe figurar antes de corregir el contenido canónico.
+- GOV-TASK-006: DUG estructurado declara GOW 2.14/127 términos; banner humano v2.12. Solo 115 nombres estructurados aparecen literalmente en el texto humano; 12 entradas están ausentes. El JSON auxiliar describe v2.11 y es derivado. INICIO.md, bajo Metacanon gen6, conserva la telemetría antigua de ART-027 y el conteo FOL1 25/22/3 frente al maestro 26/23/3. Gobernanza no modifica el DUG/GOW sin decisión P005 ni el INICIO.md ajeno.
 - GOV-TASK-007: v0.7 (2.467 caracteres) cotejada con v0.8 (1.488); v0.8 no conserva todos los estados ni el detalle de eficiencia. Borrador v0.9 de 1.478 caracteres preparado solo en conversación. IPZ nativa sin modificación/verificación; FOL1, generación 3, 26 OCP conocidos, cero asignaciones y contadores en cero. No activar ni escribir el campo nativo sin las compuertas y autorización correspondientes.
 
 **Límites confirmados:** Sink no desplegado; cero aliases activos y cero telemetría real. No se ha aplicado cambio normativo al DUG/GOW, ART-025, IPZ ni `ambitos/tareas/` en esta reconciliación.
