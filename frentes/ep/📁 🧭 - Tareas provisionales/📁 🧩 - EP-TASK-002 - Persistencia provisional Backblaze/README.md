@@ -1,7 +1,7 @@
 # 📝 EP-TASK-002 · Persistencia provisional con Backblaze B2 para datos de usuario y continuidad de la sesión canónica
 
 **Naturaleza:** tarea provisional del frente Entorno Persistente; materialización auxiliar del registro de tareas, no un OEP nuevo, no un frente independiente y no una decisión de arquitectura canónica.  
-**Estado:** `en_curso` — definición documental e inventario inicial; implementación técnica NO INICIADA.  
+**Estado:** `en_curso` — auditoría remota/documental parcial; inventario local NO ACEPTADO por restricción vigente; implementación técnica, transferencias y restauración NO INICIADAS.  
 **Responsabilidad:** vinculada a `frentes/ep/`; sin control, sesión, titularidad ni folio global propios.  
 **task_id:** `EP-TASK-002` (identificador local estable; no es folio global).  
 **scope_ref:** `frentes/ep/`  
@@ -322,3 +322,84 @@ Esta constancia es correctiva y no convierte la lectura anterior en autorizació
 **Viabilidad actualizada:** la reutilización de variables ya declaradas en Vercel es una vía plausible para evitar pedir credenciales al operador, pero todavía no demuestra que exista una integración funcional B2. La ruta de audio activa examinada permanece en Vercel Blob. El objetivo de persistencia entre ubicaciones continúa técnicamente plausible, pero su ejecución en el host queda bloqueada por la restricción de acceso descubierta y por la falta de un destino operativo autorizado. No es responsable estimar tiempo ni ciclos de cierre.
 
 **Estado de cierre del ciclo:** auditoría remota parcial completada; auditoría local invalidada por desviación; cero cambios de producto o almacenamiento. La siguiente acción es resolver el destino de ejecución permitido y continuar la verificación remota no sensible de la configuración B2.
+
+
+## 17. Coordinación central, respaldo del servidor OCP MCP y revisión del nuevo informe local · 2026-10-31 · 13:03 · America/Mexico_City
+
+**Estado de cierre del ciclo:** DOCUMENTACIÓN ACTUALIZADA. Se incorpora al alcance provisional de EP-TASK-002 el respaldo recuperable del servidor OCP MCP dentro del Entorno Persistente. El informe de inventario local recibido fue analizado y sus resultados quedan excluidos por conflicto con la restricción vigente del frente Harmonia. No se ejecutó ninguna transferencia, instalación, modificación de configuración ni restauración.
+
+### 17.1. Fuentes y controles cotejados
+
+- Registro de tareas provisionales EP, `main`, blob `74aceb5fef4814011ebdd393a36e1191469ea328`: confirma que EP-TASK-001 y EP-TASK-002 ya existen y que la documentación acumulativa por ciclo aplica a ambas y a las tareas futuras de este contenedor.
+- EP-TASK-001 — NCL, `main`, blob `82cf0b736601892b763e1b74346232140f21aba1`: conserva su regla específica de bitácora acumulativa en la sección 16. Su estado continúa `pendiente`; no hubo implementación ni pruebas NCL en este ciclo.
+- OEP, `frentes/ep/OEP.md`, rama `docs/metacanon-objetos-20261011`, v0.3.18 / VCU-EP-v20, blob `e1e045cdc9b1a286047c6d47c47a5111a0b52bce`. Se conserva como fuente del frente EP; no se modificó. El README del frente confirma que esta rama no está integrada en `main`.
+- DUG, Samantha v373 / NX-373m, `main`, blob `cac4525de77d4f47a8a59c25201968ecf2056b90`.
+- OCP Harmonia, `SeryMente/khora/main:docs/frentes/harmonia/OBJETO-CANONICO.md`, v0.38, blob `15b37bc71b4bedfa13785d9adfd3d88f8caf3704`; control de responsabilidad, generación 11, blob `80a0f7d4b4662c95e79d17c3c49d5f3db189ab1f`.
+- OCP MCP, `frentes/mcp-metodologia/CONTROL-RESPONSABILIDAD.json`, `main`, generación 2, blob `4a4742a51f0517a1b152a9c04ac6c185de024389`. Su alcance autoriza al OCP MCP a construir, compilar, probar y empaquetar el servidor dentro de su propio frente y a reportar a coordinación central/EP; excluye instalarlo u operarlo en el host persistente EP y modificar configuración local de EP.
+- Protocolo de coordinación del sprint OCP MCP, `frentes/mcp-metodologia/entregas/COORDINACION-SPRINT-OCP-MCP-v0.1.md`, `main`, blob leído `1cac3a438cc316b9bb98859ccebeced66410adc5`. Mantiene la separación entre construcción OCP MCP, integración/entorno EP y coordinación central.
+- Base de `main` observada antes de esta escritura: commit `9728ebf600ed245cee43f9a1f82a147d046addbe`, fechado 2026-10-31T19:03:37Z. Ese commit ya había incorporado la crónica precedente de la sección 16; no se duplicó.
+
+### 17.2. Instrucción del operador y ampliación del objetivo
+
+El operador informó que ya instruyó al modelo EP para investigar persistencia de datos del Entorno Persistente y precisó que el almacenamiento remoto de ese entorno también será el destino del **respaldo del servidor OCP MCP**. Esa investigación de EP se encuentra EN EJECUCIÓN según el reporte del operador; no se atribuye a esta conversación haberla iniciado ni ejecutado.
+
+Queda fijada para esta tarea la siguiente relación funcional:
+
+- **OCP MCP construye el servidor**, genera sus entregables y reporta a EP los hitos, artefactos, manifiestos, hashes, pruebas y necesidades de restauración.
+- **EP organiza el Entorno Persistente completo**, incluyendo la solución de almacenamiento y recuperación que alojará el respaldo del servidor OCP MCP, además de los datos de usuario de las aplicaciones portables.
+- **Coordinación central** recibe y coteja los reportes de OCP MCP y EP, mantiene la continuidad de la tarea y conduce la integración y aceptación.
+- El operador conserva la dirección general y la aceptación final.
+
+Esta ampliación no transfiere titularidad ni cambia permisos de OCP o EP. El control OCP MCP generación 2 confirma la responsabilidad de construcción y sus exclusiones de host. La investigación de EP debe definir la solución de almacenamiento dentro de su ámbito autorizado; esta tarea provisional no modifica el OEP canónico.
+
+### 17.3. Componentes candidatos del respaldo OCP MCP
+
+El respaldo del servidor debe tratarse como un conjunto recuperable y verificable, no como una copia indiscriminada de una carpeta activa. Los siguientes elementos quedan como inventario candidato que OCP MCP y EP deben cotejar contra la implementación real:
+
+1. **Artefacto de versión:** paquete ejecutable inmutable de la versión aceptada (inicialmente 0.1.0), manifiesto, entrypoint/argumentos declarados, arquitectura, versión del runtime, commit de origen y SHA-256 de cada componente.
+2. **Datos persistentes:** backup SQLite coherente que incluya las tablas y registros necesarios para recuperar el estado aceptado. Debe generarse mediante mecanismo compatible con SQLite/WAL o cierre controlado; no copiar una base abierta como si fuera un archivo estático.
+3. **Contenido asociado:** fuentes canónicas importadas, snapshots y demás objetos cuyo contenido resida fuera de la base, con manifiesto que permita comprobar referencias, conteos y hashes.
+4. **Trazabilidad funcional:** eventos, recibos, telemetría y metadatos necesarios para reconstruir el estado operativo y verificar la cadena de integridad, según el esquema que finalmente entregue OCP MCP.
+5. **Configuración no secreta:** versión de esquema, parámetros no sensibles, identificador lógico de instalación, versión de producto y datos suficientes para reinstanciar la integración con el harness Copilot en una ubicación nueva.
+6. **Procedimiento de recuperación:** instrucciones reproducibles para restaurar el artefacto y los datos, validar integridad, reconciliar versión/esquema y volver a conectar el servidor mediante el harness propietario del ciclo de vida `stdio`.
+
+**Exclusiones y cautelas:** no incluir tokens, claves de aplicación B2, contraseñas, cookies ni secretos. Las claves protegidas mediante DPAPI CurrentUser tampoco deben copiarse sin más ni considerarse automáticamente recuperables en otro equipo. El contrato OCP usa protección local DPAPI; por ello, la recuperación de contenido que dependa de esas claves exige un procedimiento de continuidad de clave expresamente definido y una prueba real de restauración en otra ubicación. No se da por resuelto ese punto ni se amplía aquí el requisito general de cifrado de EP. Backblaze conserva archivos y objetos; no mantiene vivo el proceso MCP. El proceso deberá reinstanciarse en el nuevo entorno mediante EP y el harness Copilot.
+
+### 17.4. Análisis del informe de inspección local recibido
+
+El reporte aportado por el operador indica que se consultó el equipo visible `PC10RCIF4EI4` y que la identidad Windows efectiva era `CENTRAL\\MantenimientoRCI`. El control vigente de Harmonia generación 11 vincula ese nombre de dispositivo al UUID exacto `d0bbb2a3-d7b4-45e1-8870-652c2c3844fc` y registra el perfil asociado a la identidad `MantenimientoRCI`. El OCP Harmonia §7 prohíbe consultar, leer, escribir, mover, copiar o borrar archivos bajo la raíz de ese perfil; §44.2 conserva la restricción de pérdida asumida y no reutilización del entorno anterior.
+
+Por consiguiente:
+
+- La coincidencia de nombre de dispositivo, UUID registrado e identidad reportada vincula el informe con el ámbito restringido de Harmonia; el permiso RDC de ese dispositivo es específico a Harmonia y no elimina la prohibición de §7.
+- El orden narrado sitúa la inspección local antes de adquirir el OCP Harmonia vigente. Se registra una nueva **desviación de secuencia de adquisición**: se inspeccionó primero y se cotejó la restricción después.
+- Se reconoce que el ejecutor detuvo la inspección al consolidar los hallazgos. La detención evita que el alcance continúe, pero no valida retroactivamente las lecturas previas.
+- **Se excluyen íntegramente los resultados locales de ese informe** como evidencia de inventario, selección de datos, rutas, tamaños, portabilidad, CLI disponible, variables locales, configuración o preparación de sincronización. No se reproducen aquí sus rutas, listados ni tamaños.
+- No se considera demostrado que `b2` o `rclone` estén ausentes del entorno autorizado, ni que Backblaze no esté habilitado en otro host. Tampoco se concluye que las variables locales no existan.
+- No se autoriza repetir la inspección bajo ese perfil ni reutilizar sus resultados. Una futura inspección solo podrá efectuarse en un destino distinto, previamente identificado por UUID y perfil y expresamente permitido por los controles aplicables.
+
+### 17.5. Evidencia remota y límites de la información recibida
+
+El reporte enumera búsquedas y consultas en GitHub, Khora, Vercel, documentación de Harmonia, almacenamiento de objetos y PR #346, pero el resumen recibido no adjunta sus resultados concretos, URLs por consulta, SHAs de cada artefacto ni salidas de lectura. Por tanto, no se incorporan como nuevos hechos verificados los resultados de esas acciones remotas.
+
+La base documental previamente registrada en §16 permanece vigente como antecedente: existencia declarada de variables B2 sensibles en Vercel, uso de Vercel Blob en las rutas de audio examinadas y ausencia de evidencia de una escritura B2 efectiva en ese código. La presencia declarada de variables no prueba validez de credenciales ni acceso al bucket. No se ha demostrado una llamada efectiva a la API B2, upload, download, versionado, lifecycle, restauración ni continuidad entre ubicaciones.
+
+### 17.6. Relación con NCL y otras tareas provisionales
+
+El registro general ya establece la documentación acumulativa por ciclo para EP-TASK-001, EP-TASK-002 y futuras tareas provisionales. El README de NCL conserva esta regla en §16. En este ciclo se cotejó ese objeto, pero no hubo actividad técnica nueva de NCL; permanece `pendiente` y no se le atribuye ningún avance.
+
+NCL sigue sin ser requisito para respaldar archivos ordinarios o los artefactos del servidor. Los perfiles completos de navegador, cookies y sesiones autenticadas continúan excluidos de la sincronización general hasta disponer de una vía autorizada, coherente y específicamente probada.
+
+### 17.7. Estado, decisiones y siguiente acción
+
+**Demostrado en esta revisión documental:** existencia del objeto EP-TASK-002 y del protocolo de crónica por ciclo; OEP vigente en rama separada; control Harmonia generación 11 y prohibición del perfil; control OCP MCP generación 2 con alcance de construcción y reporte a EP; instrucción expresa del operador para que EP investigue persistencia y aloje el respaldo del servidor OCP MCP.
+
+**Reportado, pero no aceptado como evidencia local:** inspección del host PC10, identidad local y resultados de inventario. Sus resultados quedan excluidos por la restricción de Harmonia.
+
+**No verificado:** acceso B2, bucket/prefijo, validez de credenciales, política de versiones/lifecycle, volumen de datos, selección definitiva de datasets, CLI disponible en un host permitido, snapshot consistente del servidor, continuidad de claves DPAPI, restore en segunda ubicación, sincronización automática y apertura funcional de aplicaciones.
+
+**No ejecutado por esta coordinación:** llamadas a Backblaze; descifrado o uso de secretos Vercel; instalación de CLI; configuración de bucket; transferencias; modificación de datos locales; instalación/ejecución de OCP MCP en EP; restauración o pruebas entre ubicaciones.
+
+**Siguiente acción:** recibir y analizar la respuesta de EP a la investigación de persistencia que el operador informó como activa; comprobar que su propuesta cubre expresamente el respaldo del artefacto y los datos persistentes de OCP MCP. En paralelo, OCP MCP debe entregar a EP el inventario real de componentes respaldables y el método de snapshot/restore cuando esos entregables existan. No se prepara una nueva solicitud redundante a EP mientras su investigación actual siga en ejecución. No estimar fecha de habilitación hasta conocer el proveedor, la ruta autorizada, el inventario real y el resultado de una restauración.
+
+**Resultado del ciclo:** alcance funcional de EP-TASK-002 ampliado documentalmente para incluir el respaldo recuperable de OCP MCP; hallazgos locales excluidos; ningún producto o almacenamiento modificado; la implementación de persistencia continúa pendiente.
