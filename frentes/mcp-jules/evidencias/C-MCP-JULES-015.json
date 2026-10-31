@@ -1,0 +1,91 @@
+{
+  "schema": "mcp-jules-cycle-evidence/1",
+  "event": "C-MCP-JULES-015",
+  "event_uuid_local": "01a18f95-61cf-70ce-9321-c56fbd3cc99d",
+  "date": "2026-10-30",
+  "front": "mcp-jules",
+  "repository": "SeryMente/metodologia",
+  "branch": "feat/metacanon-mcp-jules-20261025-c32f81",
+  "governance": {
+    "dug": "v372",
+    "signature": "NX-372m",
+    "metacanon": "1.26",
+    "gow": "2.14",
+    "dug_blob_sha": "28d0f255cdb3371a60310b0da45ca049dea05fdb",
+    "source": "main"
+  },
+  "input": {
+    "document_id_local": "01a18f96-2fa8-72ba-94c5-535b4d7a7a4d",
+    "original_name": "ChatGPT-JULES-20261030-1858.md",
+    "source_path": "C:\\Users\\PC 13\\Downloads\\ChatGPT-JULES-20261030-1858.md",
+    "size_bytes": 241772,
+    "lines": 4926,
+    "source_last_write_utc": "2026-10-31T00:58:21.0930477Z",
+    "sha256": "B7D25FF3CBF233787D201AB0D7643E45C181EAE4430E3300876BCFE8CF3B1737",
+    "destination": "frentes/mcp-jules/documentos/originales/ChatGPT-JULES-20261030-1858.md",
+    "commit": "a5a42c8a4f9c9aec16463b36b367ebbfa521ba13",
+    "blob_sha": "606682d92e1d4d1015dd28601ca3f0219888ef16",
+    "readback": {
+      "method": "GitHub Contents API GET, base64 decode to temporary file on PC-14, SHA-256 and byte length comparison",
+      "sha256": "B7D25FF3CBF233787D201AB0D7643E45C181EAE4430E3300876BCFE8CF3B1737",
+      "size_bytes": 241772,
+      "match": true
+    },
+    "status": "PERSISTIDO_Y_VERIFICADO_EN_RAMA_PR",
+    "main_status": "PENDIENTE_DE_MERGE"
+  },
+  "manifest": {
+    "path": "frentes/mcp-jules/documentos/MANIFIESTO-DOCUMENTAL.json",
+    "commit": "f818744176c4f2a1b840a68554441cfec31a9595",
+    "blob_sha": "efcf43dcab2fd5ab2522285779e95ff10a3e8e63",
+    "readback": "PASS"
+  },
+  "responsibility_transfer": {
+    "path": "frentes/mcp-jules/CONTROL-RESPONSABILIDAD.json",
+    "prior_blob_sha": "6b5e9cb7a93af95e029100b48bcaa74d618354a2",
+    "first_commit": "2bb89bf72c0c2bcbf28b51bccb386aafffe086a9",
+    "first_blob_sha": "6d103040170aa3fcc5e8721f5bf2b3f44dd6156d",
+    "final_commit": "13fb78a94b47623f19cf4372ba81ce0a3f5a7fc5",
+    "final_blob_sha": "113bf1930638843d52fe68441e76b2e0879e83f5",
+    "final_readback_sha": "113bf1930638843d52fe68441e76b2e0879e83f5",
+    "old_generation": 2,
+    "new_generation": 3,
+    "prior_owner": "chatgpt-C-MCP-JULES-005-SES-20261029-6C2F9A17",
+    "current_owner_alias": "chatgpt-C-MCP-JULES-015-01a18f95-61cf-70ce-9321-c56fbd3cc99d",
+    "current_instance": "chatgpt-mcp-jules-2026-10-30-01a18f95",
+    "native_conversation_id": "NOT_EXPOSED",
+    "session_folio": null,
+    "folio_status": "PENDING_NOT_ASSIGNED_FOL1_INACTIVE",
+    "authorization": "Operator explicitly instructed to use the sole active RDC session and assume the current MCP Jules front. Scope is only frentes/mcp-jules/.",
+    "parent_metacanon_control_mutated": false,
+    "status": "TRANSFERIDO_Y_VERIFICADO_EN_RAMA_PR"
+  },
+  "khora_bridge": {
+    "repository": "SeryMente/khora",
+    "pr": 347,
+    "branch": "feat/jules-rdc-local-bridge-20261030",
+    "commit": "cda38145fd74b109703be24b6e3eda4c0998b15a",
+    "pr_status": "OPEN_NOT_MERGED",
+    "preview": {
+      "deployment_id": "dpl_GdwKnsFJCo289dsCEfhyQaWPUJ2g",
+      "url": "https://khora-5j7zjyf62-victorhugotorresmendez-8991s-projects.vercel.app",
+      "status": "READY",
+      "protection": "SSO redirect observed (HTTP 302) for unauthenticated RDC HTTP request; application OAuth metadata not inspected through this protected Preview"
+    },
+    "local_validation": {
+      "unit_tests": "572/572 PASS",
+      "typecheck": "PASS",
+      "ui_review": "PASS",
+      "ui_contract": "PASS",
+      "next_build": "PASS",
+      "static_pages": "78/78",
+      "dpapi_synthetic_roundtrip": "PASS",
+      "oauth_real_authorization": "NOT_RUN",
+      "jules_tools_list_authenticated": "NOT_RUN",
+      "jules_sources_read": "NOT_RUN",
+      "production_deploy": "NOT_DONE"
+    },
+    "auth_decision": "The manual Bearer Setup flow was rejected. The branch replaces it with Khora OAuth 2.1 Authorization Code + PKCE; a one-time explicit browser consent by the owner remains required. No user command or manual token copy/paste is required."
+  },
+  "status": "ORIGINAL_PERSISTED_AND_READBACK_VERIFIED; CONTROL_TRANSFER_GENERATION_3_VERIFIED; BOTH_PENDING_MAIN_MERGE"
+}
