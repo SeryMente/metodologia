@@ -62,32 +62,33 @@
       "size_bytes": 177693,
       "sha256": "73C0BDA50D67840782C6E1B98A4F14803184CD029FB62D1A60CE77589CCA6C48",
       "git_blob_sha": "5f6754d1eda125056b661cb7505614cb988eafa5",
-      "status": "ESCRITO_NO_VERIFICADO",
+      "status": "PERSISTIDO_Y_VERIFICADO",
       "verification": {
-        "readback": false,
-        "content_cotejo": false,
-        "method": "GitHub Contents API fetch_file encoding=base64; exact byte comparison against RDC source bytes.",
-        "readback_blob_sha": null,
-        "verified_on": null
+        "readback": true,
+        "content_cotejo": true,
+        "method": "Base64 exact match after removing API line-wrap whitespace: RDC source bytes == GitHub read-back bytes; Git blob SHA also matches.",
+        "readback_blob_sha": "5f6754d1eda125056b661cb7505614cb988eafa5",
+        "verified_on": "2026-10-30"
       }
     }
   ],
   "originals_commit_sha": "70dd52c716e01676f33eff234db31a1100cbe90f",
   "verification": {
-    "verified_on": "2026-10-29",
+    "verified_on": "2026-10-30",
     "readback_method": "GitHub Contents API fetch_file encoding=base64, comparación exacta contra cada archivo local leído por RDC",
     "result": "PASS",
     "byte_for_byte_match": true,
-    "documents_verified": 2,
-    "note": "El SHA-256 se calculó en la fuente local; la lectura de vuelta Base64 coincide íntegramente con el archivo fuente.",
-    "latest_document_status": "ESCRITO_NO_VERIFICADO",
+    "documents_verified": 3,
+    "note": "El original ChatGPT-GOBERNANZA-20261030-1857.md fue leído de vuelta desde main y el Base64 coincide exactamente con los bytes fuente; el blob SHA coincide.",
+    "latest_document_status": "PERSISTIDO_Y_VERIFICADO",
     "latest_document_id": "DOC-GOV-CHATGPT-GOBERNANZA-20261030-1857"
   },
   "latest_addition_event": {
     "event_id": "C-GOBERNANZA-PERSISTENCIA-DOCUMENTAL-01",
     "recorded_on": "2026-10-30",
     "document_id": "DOC-GOV-CHATGPT-GOBERNANZA-20261030-1857",
-    "verification_status": "ESCRITO_NO_VERIFICADO",
-    "responsibility_transfer": "C-GOBERNANZA-RETOMA-06"
+    "verification_status": "PERSISTIDO_Y_VERIFICADO",
+    "responsibility_transfer": "C-GOBERNANZA-RETOMA-06",
+    "verified_on": "2026-10-30"
   }
 }

@@ -36,7 +36,9 @@
     "source_main_head_sha": "1dd4c4e35d5097d28485b86c0f37ec0faf096cb9",
     "cycle_folio": null,
     "event_id": "C-GOBERNANZA-RETOMA-06",
-    "local_conversation_uuidv7": "01a18f86-7da3-7135-8012-c3dbc9594230"
+    "local_conversation_uuidv7": "01a18f86-7da3-7135-8012-c3dbc9594230",
+    "verified_on": "2026-10-30",
+    "readback_control_blob_sha": "a77f77f7dd10d20488f74daeb20a412340dcc7d2"
   },
   "initialization": {
     "event_id": "C-GOBERNANZA-INICIO-01",
@@ -476,7 +478,15 @@
         "scope_limit": "No collision in nine accessible sibling control records; global uniqueness and server-enforced exclusivity are not established."
       },
       "method": "Git tree/commit and main ref compare-and-swap using expected_sha, followed by canonical read-back.",
-      "mutation_result": "COMMIT_PENDING"
+      "mutation_result": "COMMITTED_AND_READBACK_VERIFIED",
+      "readback_verification": {
+        "verified_on": "2026-10-30",
+        "main_commit": "96b6c2dea63171ea48f496e4e542a612cb13c884",
+        "control_blob_sha": "a77f77f7dd10d20488f74daeb20a412340dcc7d2",
+        "original_path": "frentes/gobernanza/documentos/originales/ChatGPT-GOBERNANZA-20261030-1857.md",
+        "original_blob_sha": "5f6754d1eda125056b661cb7505614cb988eafa5",
+        "original_byte_for_byte_match": true
+      }
     }
   ]
 }

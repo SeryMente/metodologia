@@ -1,6 +1,6 @@
 # Frente de trabajo · Gobernanza
 
-- **Archivo original recibido · C-GOBERNANZA-PERSISTENCIA-DOCUMENTAL-01 (2026-10-30):** [ChatGPT-GOBERNANZA-20261030-1857.md](documentos/originales/ChatGPT-GOBERNANZA-20261030-1857.md) · [manifiesto documental](documentos/MANIFIESTO-DOCUMENTAL.json). 177,693 bytes; SHA-256 `73C0BDA50D67840782C6E1B98A4F14803184CD029FB62D1A60CE77589CCA6C48`; estado inicial de escritura registrado, pendiente de lectura de vuelta.
+- **Archivo original recibido · C-GOBERNANZA-PERSISTENCIA-DOCUMENTAL-01 (2026-10-30):** [ChatGPT-GOBERNANZA-20261030-1857.md](documentos/originales/ChatGPT-GOBERNANZA-20261030-1857.md) · [manifiesto documental](documentos/MANIFIESTO-DOCUMENTAL.json) · [diálogo A/B](conversaciones/C-GOBERNANZA-PERSISTENCIA-DOCUMENTAL-01-dialogo.jsonl) · [crónica](cronica/C-GOBERNANZA-PERSISTENCIA-DOCUMENTAL-01.md) · [evidencia](evidencias/C-GOBERNANZA-PERSISTENCIA-DOCUMENTAL-01.json). 177,693 bytes; SHA-256 `73C0BDA50D67840782C6E1B98A4F14803184CD029FB62D1A60CE77589CCA6C48`; estado **PERSISTIDO_Y_VERIFICADO**; lectura de vuelta exacta byte por byte confirmada.
 
 Frente operativo separado para trabajar inicialmente sobre el **documento único de gobernanza** de Ser y Mente.
 

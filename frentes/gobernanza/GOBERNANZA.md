@@ -6,6 +6,8 @@ Se incorporó como original el archivo [ChatGPT-GOBERNANZA-20261030-1857.md](doc
 
 **Responsabilidad transferida:** `chatgpt-C-GOBERNANZA-RETOMA-06-SES-20261030-GVC9594230`, sesión `SES-20261030-GVC9594230`, generación 7; UUIDv7 local `01a18f86-7da3-7135-8012-c3dbc9594230`, no ID nativo. Evento `C-GOBERNANZA-RETOMA-06`. FOL1 sigue preparado e inactivo; no se asignó folio global de ciclo. El DUG v373 · NX-373m se conservó sin modificación en esta operación; tampoco se modificaron ART-025, IPZ nativa ni `ambitos/tareas/`.
 
+**Registros:** [manifiesto documental](documentos/MANIFIESTO-DOCUMENTAL.json) · [diálogo A/B](conversaciones/C-GOBERNANZA-PERSISTENCIA-DOCUMENTAL-01-dialogo.jsonl) · [crónica](cronica/C-GOBERNANZA-PERSISTENCIA-DOCUMENTAL-01.md) · [evidencia](evidencias/C-GOBERNANZA-PERSISTENCIA-DOCUMENTAL-01.json).
+
 ---
 
 
