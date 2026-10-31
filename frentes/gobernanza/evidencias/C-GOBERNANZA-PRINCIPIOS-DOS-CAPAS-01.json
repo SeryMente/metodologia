@@ -19,8 +19,8 @@
     "version": "v370",
     "signature": "NX-370m",
     "event_id": "C-GOBERNANZA-PRINCIPIOS-DOS-CAPAS-01",
-    "commit": "f91b0e6cc1c78730bcf642420c638afc802c0dac",
-    "blob_sha": "c016e442be13ad0c28e6f4a467b1ea79ffb70574",
+    "commit": "0577403f792eeb873f1dd26c08525e98466995ba",
+    "blob_sha": "abbd66e39e71fd78df534e619594d42aa0ce079f",
     "readback_exact": true,
     "principles": 43,
     "annexes": 20,
@@ -54,15 +54,22 @@
     "analytics_engine": "NOT_PROVISIONED",
     "api_credentials": "NOT_PROVIDED_NOT_STORED",
     "aliases": "DEFINED_NOT_CREATED",
-    "private_source_resolution": "NOT_VERIFIED",
-    "browser_anchor_resolution": "NOT_TESTED",
-    "end_to_end_tests": "NOT_RUN"
+    "private_source_resolution": "AUTHENTICATED_GITHUB_CONNECTOR_AVAILABLE_E2E_UNTESTED",
+    "browser_anchor_resolution": "FRAGMENT_USED_AS_STRUCTURED_PRINCIPLE_ID; REDIRECT_E2E_NOT_TESTED",
+    "end_to_end_tests": "NOT_RUN",
+    "redirect_target_pattern": "https://github.com/SeryMente/metodologia/blob/main/gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#Pxxx",
+    "short_links_public_by_design": true,
+    "github_repo_private": true,
+    "github_connector_read_available": true,
+    "analytics_engine_billing": "CURRENTLY_NOT_BILLED; CLOUDflare_DOCUMENTS_FUTURE_BILLING",
+    "mcp_endpoint_used": false
   },
   "limitations": [
     "No Cloudflare connector/account access or credentials are available in this session.",
     "No GitHub create-fork tool is available in the connected GitHub actions.",
     "The canonical GitHub repository remains private and was not published.",
     "No actual Sink short links or click telemetry exist yet.",
-    "Dynamic Pxxx anchor resolution has not been tested in a real browser."
+    "The end-to-end sequence (open Sink alias, capture redirect fragment, fetch private DUG through GitHub connector) has not been tested.",
+    "No real cycle records were written using principle_usage and no aggregation job exists."
   ]
 }
