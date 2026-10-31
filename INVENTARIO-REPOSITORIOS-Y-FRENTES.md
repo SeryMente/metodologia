@@ -33,8 +33,18 @@ Las rutas se registran por evidencia, no por uniformidad estética. Un OCP exist
 | `scripts/bootstrap-cibercafe-cli.ps1` | `CIBERCAFE/PC-4/ESTADO.md` lo declara script canónico y registra commit probado `14756d289f1ddc4c74c6736f5aa021121158541c` + SHA-256 `19D254602AEAA17F08D9E4D09B20B665DC48588C46EB41F1C9E53F2EF62E0154`. El código valida `Desktop\metodologia`, exige dentro del clon la ruta exacta `scripts\bootstrap-cibercafe-cli.ps1` y lee `SI-METACOGNITIVO.md`/`METODOLOGIA.md`. El bootstrap general de arriba ejecuta una descarga de este script fijada por commit/hash. | Mantener ruta raíz. Un traslado rompería la autocomprobación de ruta salvo que se diseñe y pruebe una compatibilidad explícita. |
 | `scripts/clone-public-repo-to-desktop.ps1` | Utilidad candidata a compartida; número de consumidores sin verificar. | No mover hasta demostrar su alcance real. |
 | `scripts/obs-chrome-camera-fix.ps1` | Utilidad de entorno; propietario/consumidores aún no confirmados. | No mover hasta identificar su alcance y punto de invocación. |
-| `scripts/khora-workstation-bootstrap-v5.ps1` | Bootstrap V5 de estación Windows: Node.js LTS, Git, GitHub CLI, credenciales HTTPS, Vercel CLI y arranque RDC con `--no-persist-session`. Fuente original probada en PC-14; self-test, wrapper, SHA/tamper y protección contra doble instancia registrados en el ciclo de origen. Requiere autenticación Vercel disponible (`vercel whoami`); si falta, ejecutar `vercel login` y relanzar. Launcher PowerShell 5.1 fijado al commit: `& ([scriptblock]::Create((Invoke-RestMethod -Uri 'https://raw.githubusercontent.com/SeryMente/metodologia/a3f7cbfb5c46c29aabe0a8c6d29717553237cf52/scripts/khora-workstation-bootstrap-v5.ps1' -TimeoutSec 30)))` | Mantener separado de los bootstraps EP/CIBERCAFE; no fusionar sin identificar y probar consumidores. |
+| `scripts/khora-workstation-bootstrap-v5.ps1` | Bootstrap V5 de estación Windows: Node.js LTS, Git, GitHub CLI, credenciales HTTPS, Vercel CLI y arranque RDC con `--no-persist-session`. Fuente leída y validada desde PC-14; autoprueba remota superada el 2026-10-30. Requiere GitHub CLI instalado en `C:\Program Files\GitHub CLI\gh.exe` y autenticado; el script verifica autenticación de GitHub/Vercel y solicita `vercel login` si falta. | Mantener separado de los bootstraps EP/CIBERCAFE; no fusionar sin identificar y probar consumidores. |
 
+
+
+
+**Comando de ejecución sin copia persistente local · PowerShell 5.1:**
+
+```powershell
+& { $gh = 'C:\Program Files\GitHub CLI\gh.exe'; if (-not (Test-Path -LiteralPath $gh -PathType Leaf)) { throw 'GitHub CLI no está instalado.' }; $b = & $gh api 'repos/SeryMente/metodologia/contents/scripts/khora-workstation-bootstrap-v5.ps1?ref=a3f7cbfb5c46c29aabe0a8c6d29717553237cf52' --jq .content; if ($LASTEXITCODE -ne 0 -or -not $b) { throw 'No se pudo recuperar el bootstrap privado desde GitHub.' }; $s = [Text.Encoding]::UTF8.GetString([Convert]::FromBase64String(($b -join ''))); & ([scriptblock]::Create($s)) }
+```
+
+El comando recupera por GitHub API privada el blob fijado al commit `a3f7cbfb5c46c29aabe0a8c6d29717553237cf52`, lo decodifica en memoria y ejecuta el script; depende de GitHub CLI autenticado.
 
 ### Corte M26 · referencias y dependencias rápidas (2026-10-22)
 
