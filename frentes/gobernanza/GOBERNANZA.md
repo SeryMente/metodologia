@@ -4,14 +4,22 @@
 **Repositorio:** `SeryMente/metodologia`.  
 **OCP:** `frentes/gobernanza/`.  
 **Evento de apertura:** `C-GOBERNANZA-INICIO-01`.  
-**Último ciclo legado del histórico anterior:** `C-20261029-5510927B` · `C-GOBERNANZA-AT-ENDURECIMIENTO-01`. **Conversación de foliación:** UUIDv7 local `01a18d91-e030-7683-a4fa-7391408f989c`; tres ciclos naturales pre-corte `C-20261030-F0D12375`, `C-20261030-2FB9018D` y `C-20261030-25A998EA`, con lados A/B y folios legados. No son folios FOL1 ni IDs nativos. **Evento más reciente:** `C-GOBERNANZA-PRINCIPIOS-DOS-CAPAS-01`; DUG v370 · NX-370m, ART-027 con catálogo de 43 principios y estrategia de dos capas documentada; 43 aliases lógicos especificados, todavía no activos. Sink/Cloudflare y lectura privada E2E pendientes. ART-025/IPZ sin cambios; FOL1 sigue preparado. Instalación nativa no verificada. FOL1 sigue preparado, sin asignaciones globales/OCP. **Evento de control:** `C-GOBERNANZA-RETOMA-05`.  
+**Último ciclo legado del histórico anterior:** `C-20261029-5510927B` · `C-GOBERNANZA-AT-ENDURECIMIENTO-01`. **Conversación de foliación:** UUIDv7 local `01a18d91-e030-7683-a4fa-7391408f989c`; tres ciclos naturales pre-corte `C-20261030-F0D12375`, `C-20261030-2FB9018D` y `C-20261030-25A998EA`, con lados A/B y folios legados. No son folios FOL1 ni IDs nativos. **Evento más reciente:** `C-GOBERNANZA-MDP-OCP-01`; DUG v371 · NX-371m, ART-027 con 43 microdescriptores de pertinencia (MDP) de 11–16 palabras, consulta Sink obligatoria antes de aplicar un principio pertinente y telemetría solo de frecuencia de consulta. Siete OCP provisionales de tarea cuelgan de este frente; no canonizan Tareas. Sink y aliases aún no desplegados. ART-025/IPZ sin cambios; FOL1 sigue preparado, sin asignaciones globales/OCP. Instalación nativa no verificada. **Evento de control:** `C-GOBERNANZA-RETOMA-05`.  
 **Sesión inicial (histórica):** `SES-20261028-3F2B7A91`, generación 1.
 **Titular actual según control:** `chatgpt-C-GOBERNANZA-RETOMA-05-SES-20261030-GV89CFA5D5` (alias operativo, no ID nativo).
 **Instancia actual según control:** `chatgpt-gobernanza-retoma-2026-10-30-GV89CFA5D5`.
 **Sesión actual según control:** `SES-20261030-GV89CFA5D5`, generación 6; ciclo legado de transferencia `C-20261030-89CFA5D5`.
-**Control actual leído de vuelta:** blob `e0cc42a4c7f3ab351d733dc0689cbe355d3ec9f9`; evento `C-GOBERNANZA-RETOMA-05`.
+**Control actual leído de vuelta:** blob `f670960bdedf1a4747743b3216cd181722a924ec`; evento `C-GOBERNANZA-RETOMA-05`.
 
-## Evento más reciente · C-GOBERNANZA-PRINCIPIOS-DOS-CAPAS-01 · 2026-10-30
+## Evento más reciente · C-GOBERNANZA-MDP-OCP-01 · 2026-10-30
+
+DUG v371 · NX-371m; ART-027 contiene 43 microdescriptores de pertinencia, de 11–16 palabras, con significado general y señal de activación. Si un MDP indica pertinencia, la consulta de la norma desarrollada mediante Sink es obligatoria antes de aplicarla. La telemetría se limita a frecuencia de acceso por alias; no se registra aplicación por ciclo.
+
+Se crearon siete OCP provisionales de tarea bajo `frentes/gobernanza/📁 🧭 - Tareas provisionales/`, cada uno con núcleo propio y estado inicial pendiente. Heredan el control y la sesión del frente; no crean controles ni folios independientes. El ámbito Tareas sigue sin canonizarse. El OCP existente `ambitos/tareas/` pertenece a otra sesión activa y no fue modificado ni transferido.
+
+**Registros:** [crónica](C-GOBERNANZA-MDP-OCP-01.md) · [evidencia](../evidencias/C-GOBERNANZA-MDP-OCP-01.json) · [DUG v371 · ART-027](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-027) · [registro de tareas provisionales](../%F0%9F%93%81%20%F0%9F%A7%AD%20-%20Tareas%20provisionales/README.md). Commit DUG `ead12e9441d66656763c1ca5d6c8641f63da3d7a`, blob `0412dc9d0ff10d74f69761b0f3307c84b3c586c2`. 43/43 MDP humanos y estructurados; cero telemetría de aplicación. Sink no desplegado y aliases no creados. FOL1 continúa preparado; este evento no recibe folio.
+
+## Evento anterior · C-GOBERNANZA-PRINCIPIOS-DOS-CAPAS-01 · 2026-10-30
 
 DUG v370 · NX-370m; ART-027 contiene el catálogo de los 43 principios (ID, nombre canónico y abstracción de una frase), la tabla de 43 aliases previstos p001–p043, el procedimiento por ciclo y el contrato de telemetría que separa consideración, selección, consulta y aplicación. Se estableció que las aplicaciones se cuentan desde los registros de ciclo y no desde los clics Sink. La instancia Sink y los enlaces no se han creado. El plan conserva GitHub privado: Sink redirige a blob/main/...#Pxxx y luego el conector GitHub autenticado recupera el registro estructurado; E2E pendiente. ART-027 advierte referencias incompletas en P020/P021/P033/P034: no inferir los datos ausentes.
 
