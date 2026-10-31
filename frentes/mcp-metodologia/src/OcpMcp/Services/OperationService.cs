@@ -7,7 +7,7 @@ using System.Text.Json.Nodes;
 
 namespace OcpMcp.Services;
 
-public sealed class OperationService(SqliteStore store, KeyVault vault)
+public sealed class OperationService(SqliteStore store, KeyVault vault, PrincipleCatalog principleCatalog)
 {
     private static readonly HashSet<string> AllowedOperations = new(StringComparer.Ordinal)
     { "OPEN_CYCLE", "RECORD_CLASSIFICATION", "SET_SELECTION", "BUILD_SNAPSHOT", "RELEASE_SNAPSHOT" };
@@ -178,20 +178,62 @@ public sealed class OperationService(SqliteStore store, KeyVault vault)
                         INSERT INTO classifications(cycle_id,principle_id,classification,justification,evidence_refs_json,created_at_utc)
                         VALUES($cycle,$principle,$classification,$justification,$evidence,$now)
                         ON CONFLICT(cycle_id,principle_id) DO UPDATE SET classification=excluded.classification,justification=excluded.justification,evidence_refs_json=excluded.evidence_refs_json,created_at_utc=excluded.created_at_utc;
-                        UPDATE cycles SET state='CLASSIFIED',updated_at_utc=$now WHERE cycle_id=$cycle;
                         """;
-                    c.Parameters.AddWithValue("$cycle",cycleId!);c.Parameters.AddWithValue("$principle",GetString(p,"principle_id")??throw new InvalidDataException("PRINCIPLE_ID_REQUIRED"));
+                    c.Parameters.AddWithValue("$cycle",cycleId!);string principleId=(GetString(p,"principle_id")??throw new InvalidDataException("PRINCIPLE_ID_REQUIRED")).ToUpperInvariant();if(!principleCatalog.Load().Principles.Any(x=>x.Id==principleId))throw new InvalidDataException("UNKNOWN_CANONICAL_PRINCIPLE_ID");c.Parameters.AddWithValue("$principle",principleId);
                     string classification=GetString(p,"classification")??"";
                     if(!new[]{"APLICA","NO_APLICA","INCIERTO"}.Contains(classification))throw new InvalidDataException("CLASSIFICATION_INVALID");
                     c.Parameters.AddWithValue("$classification",classification);
                     c.Parameters.AddWithValue("$justification",GetString(p,"justification")??throw new InvalidDataException("JUSTIFICATION_REQUIRED"));
                     c.Parameters.AddWithValue("$evidence",GetRaw(p,"evidence_refs")??"[]");c.Parameters.AddWithValue("$now",now);c.ExecuteNonQuery();
                 }
-                return CanonicalJson.Serialize(new{cycle_id=cycleId,principle_id=GetString(p,"principle_id"),classification=GetString(p,"classification"),updated_at_utc=now});
+                using(var countCommand=connection.CreateCommand())
+                {
+                    countCommand.Transaction=tx;
+                    countCommand.CommandText="SELECT COUNT(*) FROM classifications WHERE cycle_id=$cycle;";
+                    countCommand.Parameters.AddWithValue("$cycle",cycleId!);
+                    int count=Convert.ToInt32(countCommand.ExecuteScalar());
+                    using var updateState=connection.CreateCommand();
+                    updateState.Transaction=tx;
+                    updateState.CommandText="UPDATE cycles SET state=$state,updated_at_utc=$now WHERE cycle_id=$cycle;";
+                    updateState.Parameters.AddWithValue("$state",count==PrincipleCatalog.ExpectedCount?"CLASSIFIED":"CLASSIFYING");
+                    updateState.Parameters.AddWithValue("$now",now);
+                    updateState.Parameters.AddWithValue("$cycle",cycleId!);
+                    updateState.ExecuteNonQuery();
+                }
+                return CanonicalJson.Serialize(new{cycle_id=cycleId,principle_id=(GetString(p,"principle_id")??"").ToUpperInvariant(),classification=GetString(p,"classification"),updated_at_utc=now});
             case "SET_SELECTION":
                 RequireCycle(connection,tx,cycleId);
-                var ids=p.GetProperty("principle_ids").EnumerateArray().Select(e=>e.GetString()??"").Distinct(StringComparer.Ordinal).Order(StringComparer.Ordinal).ToArray();
-                if(ids.Length==0)throw new InvalidDataException("SELECTION_EMPTY");
+                var classifications=new List<(string PrincipleId,string Classification)>();
+                using(var read=connection.CreateCommand())
+                {
+                    read.Transaction=tx;
+                    read.CommandText="SELECT principle_id,classification FROM classifications WHERE cycle_id=$cycle ORDER BY principle_id;";
+                    read.Parameters.AddWithValue("$cycle",cycleId!);
+                    using var reader=read.ExecuteReader();
+                    while(reader.Read())classifications.Add((reader.GetString(0),reader.GetString(1)));
+                }
+                string[] baseIds=PrincipleCatalog.DeriveBaseSelection(classifications);
+                var catalog=principleCatalog.Load();
+                if(!catalog.MetadataComplete)
+                    throw new InvalidOperationException("BLOCKED_OCPMSP:PRINCIPLE_METADATA_UNDECLARED:"+string.Join(",",catalog.MissingMetadata));
+                var byId=catalog.Principles.ToDictionary(x=>x.Id,StringComparer.Ordinal);
+                var selected=new HashSet<string>(baseIds,StringComparer.Ordinal);
+                bool changed;
+                do
+                {
+                    changed=false;
+                    foreach(string id in selected.ToArray())
+                    {
+                        if(!byId.TryGetValue(id,out var principle))throw new InvalidDataException("DEPENDENCY_PRINCIPLE_NOT_FOUND:"+id);
+                        if(principle.Dependencies is null)throw new InvalidOperationException("BLOCKED_OCPMSP:DEPENDENCY_METADATA_MISSING:"+id);
+                        foreach(string dependency in principle.Dependencies)
+                        {
+                            if(!byId.ContainsKey(dependency))throw new InvalidOperationException("BLOCKED_OCPMSP:DEPENDENCY_TARGET_UNKNOWN:"+id+":"+dependency);
+                            if(selected.Add(dependency))changed=true;
+                        }
+                    }
+                } while(changed);
+                string[] ids=selected.Order(StringComparer.Ordinal).ToArray();
                 string idsJson=CanonicalJson.Serialize(ids);
                 string selectionHash=Convert.ToHexStringLower(SHA256.HashData(Encoding.UTF8.GetBytes(idsJson)));
                 using(var c=connection.CreateCommand())
@@ -204,9 +246,17 @@ public sealed class OperationService(SqliteStore store, KeyVault vault)
                         """;
                     c.Parameters.AddWithValue("$cycle",cycleId!);c.Parameters.AddWithValue("$hash",selectionHash);c.Parameters.AddWithValue("$ids",idsJson);c.Parameters.AddWithValue("$now",now);c.ExecuteNonQuery();
                 }
-                return CanonicalJson.Serialize(new{cycle_id=cycleId,principle_ids=ids,selection_sha256=selectionHash,updated_at_utc=now});
+                return CanonicalJson.Serialize(new{cycle_id=cycleId,principle_ids=ids,selection_sha256=selectionHash,base_selection=baseIds,dependency_closure=true,updated_at_utc=now});
             case "BUILD_SNAPSHOT":
                 RequireCycle(connection,tx,cycleId);
+                using(var selectedCheck=connection.CreateCommand())
+                {
+                    selectedCheck.Transaction=tx;
+                    selectedCheck.CommandText="SELECT COUNT(*) FROM selections WHERE cycle_id=$cycle;";
+                    selectedCheck.Parameters.AddWithValue("$cycle",cycleId!);
+                    if(Convert.ToInt32(selectedCheck.ExecuteScalar())!=1)
+                        throw new InvalidOperationException("BLOCKED_OCPMSP:SELECTION_NOT_AVAILABLE");
+                }
                 string snapshotId=targetId;
                 byte[] clear=Encoding.UTF8.GetBytes(BuildSnapshotJson(connection,tx,cycleId!,snapshotId,now));
                 try
@@ -226,13 +276,17 @@ public sealed class OperationService(SqliteStore store, KeyVault vault)
                 }
                 finally{CryptographicOperations.ZeroMemory(clear);}
             case "RELEASE_SNAPSHOT":
+                if(string.IsNullOrWhiteSpace(cycleId))throw new InvalidDataException("CYCLE_ID_REQUIRED");
                 using(var c=connection.CreateCommand())
                 {
-                    c.Transaction=tx;c.CommandText="UPDATE snapshots SET status='RELEASED' WHERE snapshot_id=$id AND status='BUILT';";
+                    c.Transaction=tx;
+                    c.CommandText="UPDATE snapshots SET status='RELEASED' WHERE snapshot_id=$id AND cycle_id=$cycle AND status='BUILT';";
                     c.Parameters.AddWithValue("$id",targetId);
-                    if(c.ExecuteNonQuery()!=1)throw new InvalidOperationException("SNAPSHOT_NOT_FOUND_OR_NOT_BUILT");
-                    using var cycle=connection.CreateCommand();cycle.Transaction=tx;cycle.CommandText="UPDATE cycles SET state='RELEASED',updated_at_utc=$utc WHERE cycle_id=$cycle;";
-                    cycle.Parameters.AddWithValue("$utc",now);cycle.Parameters.AddWithValue("$cycle",cycleId??throw new InvalidDataException("CYCLE_ID_REQUIRED"));cycle.ExecuteNonQuery();
+                    c.Parameters.AddWithValue("$cycle",cycleId);
+                    if(c.ExecuteNonQuery()!=1)throw new InvalidOperationException("SNAPSHOT_NOT_FOUND_CYCLE_MISMATCH_OR_NOT_BUILT");
+                    using var cycle=connection.CreateCommand();cycle.Transaction=tx;cycle.CommandText="UPDATE cycles SET state='RELEASED',updated_at_utc=$utc WHERE cycle_id=$cycle AND state='SNAPSHOT_BUILT';";
+                    cycle.Parameters.AddWithValue("$utc",now);cycle.Parameters.AddWithValue("$cycle",cycleId);
+                    if(cycle.ExecuteNonQuery()!=1)throw new InvalidOperationException("CYCLE_NOT_IN_SNAPSHOT_BUILT_STATE");
                 }
                 return CanonicalJson.Serialize(new{snapshot_id=targetId,status="RELEASED",released_at_utc=now});
             default: throw new InvalidOperationException("OPERATION_NOT_IMPLEMENTED");
@@ -249,19 +303,31 @@ public sealed class OperationService(SqliteStore store, KeyVault vault)
             while(rd.Read())classifications.Add(new{principle_id=rd.GetString(0),classification=rd.GetString(1),justification=rd.GetString(2),evidence_refs=JsonDocument.Parse(rd.GetString(3)).RootElement.Clone(),created_at_utc=rd.GetString(4)});
         }
         object? selection=null;
+        string[] selectedIds=[];
         using(var cmd=c.CreateCommand())
         {
             cmd.Transaction=tx;cmd.CommandText="SELECT selection_sha256,principle_ids_json FROM selections WHERE cycle_id=$cycle;";
             cmd.Parameters.AddWithValue("$cycle",cycleId);using var rd=cmd.ExecuteReader();
-            if(rd.Read())selection=new{selection_sha256=rd.GetString(0),principle_ids=JsonDocument.Parse(rd.GetString(1)).RootElement.Clone()};
+            if(rd.Read())
+            {
+                selectedIds=JsonDocument.Parse(rd.GetString(1)).RootElement.EnumerateArray().Select(x=>x.GetString()??"").ToArray();
+                selection=new{selection_sha256=rd.GetString(0),principle_ids=selectedIds};
+            }
         }
+        if(selectedIds.Length==0)throw new InvalidOperationException("BLOCKED_OCPMSP:SELECTION_EMPTY");
+        var catalog=principleCatalog.Load();
+        if(!catalog.MetadataComplete)throw new InvalidOperationException("BLOCKED_OCPMSP:PRINCIPLE_METADATA_UNDECLARED");
+        var selectedPrinciples=catalog.Principles.Where(x=>selectedIds.Contains(x.Id,StringComparer.Ordinal))
+            .Select(x=>new{principle_id=x.Id,title=x.Title,normative_text=x.NormativeText,microdescriptor=x.Microdescriptor,human_anchor=x.HumanAnchor,preponderance_category=x.PreponderanceCategory,preponderance_decimal=x.PreponderanceDecimal,applicability=x.Applicability,activation_conditions=x.ActivationConditions,mandatory=x.Mandatory,dependencies=x.Dependencies})
+            .ToArray();
+        if(selectedPrinciples.Length!=selectedIds.Length)throw new InvalidDataException("SELECTED_PRINCIPLE_CONTENT_MISSING");
         var sources=new List<object>();
         using(var cmd=c.CreateCommand())
         {
             cmd.Transaction=tx;cmd.CommandText="SELECT source_id,canonical_path,commit_id,git_blob_sha,content_sha256,verification_status,freshness_status FROM canonical_sources ORDER BY source_id;";
             using var rd=cmd.ExecuteReader();while(rd.Read())sources.Add(new{source_id=rd.GetString(0),canonical_path=rd.GetString(1),commit_id=rd.GetString(2),git_blob_sha=rd.IsDBNull(3)?null:rd.GetString(3),content_sha256=rd.GetString(4),verification_status=rd.GetString(5),freshness_status=rd.GetString(6)});
         }
-        return CanonicalJson.Serialize(new{snapshot_id=snapshotId,cycle_id=cycleId,created_at_utc=utc,classifications,selection,canonical_sources=sources});
+        return CanonicalJson.Serialize(new{snapshot_id=snapshotId,cycle_id=cycleId,created_at_utc=utc,classifications,selection,selected_principles=selectedPrinciples,canonical_sources=sources,source_commit=catalog.SourceCommit,source_blob_sha=catalog.SourceBlobSha,source_content_sha256=catalog.SourceContentSha256});
     }
 
     private void RequireCycle(SqliteConnection c,SqliteTransaction tx,string? cycleId)
@@ -279,10 +345,38 @@ public sealed class OperationService(SqliteStore store, KeyVault vault)
 
     private object GetReceiptForRequest(SqliteConnection c,SqliteTransaction tx,string requestId)
     {
-        using var cmd=c.CreateCommand();cmd.Transaction=tx;cmd.CommandText="SELECT receipt_id,receipt_json,payload_sha256,signature,signing_key_id FROM receipts WHERE request_id=$id;";
-        cmd.Parameters.AddWithValue("$id",requestId);using var rd=cmd.ExecuteReader();
-        if(!rd.Read())throw new InvalidOperationException("COMPLETED_REQUEST_WITHOUT_RECEIPT");
-        return new{receipt_id=rd.GetString(0),receipt=JsonDocument.Parse(rd.GetString(1)).RootElement.Clone(),payload_sha256=rd.GetString(2),signature=Convert.ToBase64String((byte[])rd[3]),signing_key_id=rd.GetString(4),status="COMPLETED_IDEMPOTENT_REPLAY"};
+        string receiptId,json,hash,keyId;
+        byte[] signature;
+        using(var cmd=c.CreateCommand())
+        {
+            cmd.Transaction=tx;
+            cmd.CommandText="SELECT receipt_id,receipt_json,payload_sha256,signature,signing_key_id FROM receipts WHERE request_id=$id;";
+            cmd.Parameters.AddWithValue("$id",requestId);
+            using var rd=cmd.ExecuteReader();
+            if(!rd.Read())throw new InvalidOperationException("COMPLETED_REQUEST_WITHOUT_RECEIPT");
+            receiptId=rd.GetString(0);json=rd.GetString(1);hash=rd.GetString(2);signature=(byte[])rd[3];keyId=rd.GetString(4);
+        }
+        if(keyId!="receipt-ed25519-v1")throw new CryptographicException("RECEIPT_SIGNING_KEY_ID_INVALID");
+        using var pub=c.CreateCommand();
+        pub.Transaction=tx;
+        pub.CommandText="SELECT public_key,fingerprint_sha256 FROM key_metadata WHERE key_id=$id AND status='ACTIVE';";
+        pub.Parameters.AddWithValue("$id",keyId);
+        using var keyReader=pub.ExecuteReader();
+        if(!keyReader.Read())throw new CryptographicException("RECEIPT_PUBLIC_KEY_NOT_FOUND");
+        byte[] publicKey=(byte[])keyReader[0];
+        string storedFingerprint=keyReader.GetString(1);
+        keyReader.Close();
+        byte[] bytes=Encoding.UTF8.GetBytes(json);
+        string actualHash=Convert.ToHexStringLower(SHA256.HashData(bytes));
+        string actualFingerprint=Convert.ToHexStringLower(SHA256.HashData(publicKey));
+        using var document=JsonDocument.Parse(json);
+        string embeddedFingerprint=document.RootElement.GetProperty("signing_public_key_sha256").GetString()??"";
+        string embeddedRequest=document.RootElement.GetProperty("request_id").GetString()??"";
+        if(actualHash!=hash)throw new CryptographicException("RECEIPT_HASH_INVALID_ON_REPLAY");
+        if(actualFingerprint!=storedFingerprint||actualFingerprint!=embeddedFingerprint)throw new CryptographicException("RECEIPT_TRUST_FINGERPRINT_MISMATCH_ON_REPLAY");
+        if(embeddedRequest!=requestId)throw new CryptographicException("RECEIPT_REQUEST_BINDING_MISMATCH_ON_REPLAY");
+        if(!ReceiptSigner.Verify(publicKey,bytes,signature))throw new CryptographicException("RECEIPT_SIGNATURE_INVALID_ON_REPLAY");
+        return new{receipt_id=receiptId,receipt=document.RootElement.Clone(),payload_sha256=hash,signature=Convert.ToBase64String(signature),signing_key_id=keyId,public_key_fingerprint=actualFingerprint,hash_valid=true,signature_valid=true,status="COMPLETED_IDEMPOTENT_REPLAY"};
     }
 
     private string GetInstallationId(){using var c=store.Open();return SqliteStore.GetInstallation(c)!.Value.InstallationId;}

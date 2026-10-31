@@ -8,7 +8,7 @@ using System.Text.Json.Nodes;
 
 namespace OcpMcp.Protocol;
 
-public sealed class McpServer(SqliteStore store, OperationService operations)
+public sealed class McpServer(SqliteStore store, OperationService operations, PrincipleCatalog principleCatalog)
 {
     private const string ProtocolVersion="2025-06-18";
 
@@ -41,7 +41,7 @@ public sealed class McpServer(SqliteStore store, OperationService operations)
                 }
                 catch(McpException ex){await WriteError(root,ex.Code.ToString(),ex.Message,cancellationToken);}
                 catch(UnauthorizedAccessException ex){await WriteError(root,ex.Message,"Protected operation denied.",cancellationToken);}
-                catch(InvalidOperationException ex){await WriteError(root,"OPERATION_FAILED",ex.Message,cancellationToken);}
+                catch(InvalidOperationException ex){string code=ex.Message.StartsWith("BLOCKED_OCPMSP:",StringComparison.Ordinal)?"BLOCKED_OCPMSP":"OPERATION_FAILED";await WriteError(root,code,ex.Message,cancellationToken);}
                 catch(InvalidDataException ex){await WriteError(root,"INVALID_DATA",ex.Message,cancellationToken);}
                 catch(CryptographicException ex){await WriteError(root,"INTEGRITY_FAILURE",ex.Message,cancellationToken);}
                 catch(Exception ex)
@@ -63,7 +63,7 @@ public sealed class McpServer(SqliteStore store, OperationService operations)
             protocolVersion=negotiated,
             capabilities=new {tools=new {listChanged=false}},
             serverInfo=new {name="ocp-mcp",version="0.1.0"},
-            instructions="Servidor local de Metodología. MCP-NORMATIVO permanece DESACTIVADO. Lectura disponible; las escrituras requieren autorización explícita local."
+            instructions="Servidor local de Metodología. MCP-NORMATIVO permanece DESACTIVADO. El catálogo y MDP son visibles; el texto normativo completo solo puede incluirse en un snapshot cifrado después de la clasificación/selección gobernada. Las escrituras requieren autorización explícita local."
         };
     }
 
@@ -72,7 +72,7 @@ public sealed class McpServer(SqliteStore store, OperationService operations)
         {
             Tool("get_health","Read local server readiness without triggering normative validation.",new{type="object",properties=new{},additionalProperties=false}),
             Tool("list_canonical_sources","List verified source metadata; does not assert freshness against main.",new{type="object",properties=new{limit=new{type="integer",minimum=1,maximum=100}},additionalProperties=false}),
-            Tool("read_canonical_source","Read a source only after DPAPI/AES-GCM and SHA-256 verification.",new{type="object",required=new[]{"source_id"},properties=new{source_id=new{type="string"}},additionalProperties=false}),
+            Tool("get_principle_catalog","List the 43 canonical principle identifiers, titles and MDPs. Full normative text is withheld until governed selection and release.",new{type="object",properties=new{},additionalProperties=false}),
             Tool("get_cycle","Read a persisted work cycle.",new{type="object",required=new[]{"cycle_id"},properties=new{cycle_id=new{type="string"}},additionalProperties=false}),
             Tool("get_operation_status","Read an operation request status without revealing authorization material.",new{type="object",required=new[]{"request_id"},properties=new{request_id=new{type="string"}},additionalProperties=false}),
             Tool("get_receipt","Read and cryptographically verify a signed operation receipt.",new{type="object",required=new[]{"receipt_id"},properties=new{receipt_id=new{type="string"}},additionalProperties=false}),
@@ -94,7 +94,7 @@ public sealed class McpServer(SqliteStore store, OperationService operations)
         {
             "get_health"=>GetHealth(),
             "list_canonical_sources"=>ListSources(args),
-            "read_canonical_source"=>ReadSource(args),
+            "get_principle_catalog"=>GetPrincipleCatalog(),
             "get_cycle"=>GetCycle(GetRequired(args,"cycle_id")),
             "get_operation_status"=>GetOperationStatus(GetRequired(args,"request_id")),
             "get_receipt"=>GetReceipt(GetRequired(args,"receipt_id")),
@@ -124,8 +124,20 @@ public sealed class McpServer(SqliteStore store, OperationService operations)
             else backupStatus="CURRENT";
         }
         int code=backupStatus is "BACKUP_NOT_CREATED" or "DAILY_BACKUP_DUE"?1:0;
+        string catalogStatus="SOURCE_NOT_IMPORTED";
+        string[] missingMetadata=[];
+        using(var q=c.CreateCommand())
+        {
+            q.CommandText="SELECT COUNT(*) FROM canonical_sources WHERE source_id='metodologia.dug.canonical';";
+            if(Convert.ToInt32(q.ExecuteScalar())==1)
+            {
+                var catalog=principleCatalog.Load();
+                catalogStatus=catalog.MetadataComplete?"READY":"BLOCKED_OCPMSP";
+                missingMetadata=catalog.MissingMetadata;
+            }
+        }
         return new{status=code==0?"READY":"DEGRADED",code,version="0.1.0",database="ok",operator_provisioned=operatorProvisioned,backup_status=backupStatus,
-            normative_engine="DESACTIVADO",sink="OUT_OF_SCOPE",transport="stdio"};
+            normative_engine="DESACTIVADO",principle_selection_readiness=catalogStatus,missing_principle_metadata=missingMetadata,sink="OUT_OF_SCOPE",transport="stdio"};
     }
 
     private object ListSources(JsonElement args)
@@ -139,20 +151,10 @@ public sealed class McpServer(SqliteStore store, OperationService operations)
         return new{count=items.Count,sources=items};
     }
 
-    private object ReadSource(JsonElement args)
+    private object GetPrincipleCatalog()
     {
-        string sourceId=GetRequired(args,"source_id");
-        using var c=store.Open();var inst=SqliteStore.GetInstallation(c)??throw new InvalidOperationException("INSTALLATION_NOT_INITIALIZED");
-        using var cmd=c.CreateCommand();
-        cmd.CommandText="SELECT repository_uri,canonical_path,ref_name,commit_id,git_blob_sha,content_sha256,captured_at_utc,verification_status,freshness_status,content_ciphertext,content_nonce,authentication_tag,wrapped_dek,dek_id,crypto_version,key_version,aad_version FROM canonical_sources WHERE source_id=$id;";
-        cmd.Parameters.AddWithValue("$id",sourceId);
-        using var rd=cmd.ExecuteReader();if(!rd.Read())throw new InvalidOperationException("SOURCE_NOT_FOUND");
-        var meta=new{repository_uri=rd.GetString(0),canonical_path=rd.GetString(1),ref_name=rd.GetString(2),commit_id=rd.GetString(3),git_blob_sha=rd.IsDBNull(4)?null:rd.GetString(4),content_sha256=rd.GetString(5),captured_at_utc=rd.GetString(6),verification_status=rd.GetString(7),freshness_status=rd.GetString(8)};
-        var enc=new EncryptedValue((byte[])rd[9],(byte[])rd[10],(byte[])rd[11],(byte[])rd[12],rd.GetString(13),rd.GetString(5),rd.GetInt32(14),rd.GetInt32(15),rd.GetInt32(16));
-        rd.Close();
-        byte[] plaintext=CryptoBox.Decrypt(enc,inst.InstallationId,"canonical-source",sourceId);
-        try{return new{source_id=sourceId,metadata=meta,content=Encoding.UTF8.GetString(plaintext)};}
-        finally{CryptographicOperations.ZeroMemory(plaintext);}
+        var catalog=principleCatalog.Load();
+        return new{catalog_schema=catalog.CatalogSchema,source_commit=catalog.SourceCommit,source_blob_sha=catalog.SourceBlobSha,source_content_sha256=catalog.SourceContentSha256,declared_count=catalog.DeclaredCount,cnp_members=catalog.CnpMembers,metadata_complete=catalog.MetadataComplete,missing_metadata=catalog.MissingMetadata,principles=catalog.Principles.Select(p=>new{principle_id=p.Id,title=p.Title,microdescriptor=p.Microdescriptor,human_anchor=p.HumanAnchor,preponderance_category=p.PreponderanceCategory,preponderance_decimal=p.PreponderanceDecimal}),normative_text_disclosure="WITHHELD_UNTIL_GOVERNED_RELEASE"};
     }
 
     private object GetCycle(string cycleId)

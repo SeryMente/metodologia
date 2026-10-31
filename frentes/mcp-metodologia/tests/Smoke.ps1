@@ -111,19 +111,26 @@ try {
 
     $tools=Send-Mcp $proc @{jsonrpc="2.0";id=2;method="tools/list";params=@{}}
     $names=@($tools.result.tools|ForEach-Object name)
-    Assert-True "MCP_TOOLS_LIST" ($names -contains "get_health" -and $names -contains "prepare_operation" -and $names -contains "list_telemetry_events") ("count="+$names.Count)
+    Assert-True "MCP_TOOLS_LIST" ($names -contains "get_health" -and $names -contains "prepare_operation" -and $names -contains "get_principle_catalog" -and $names -notcontains "read_canonical_source") ("count="+$names.Count)
 
     $health=Send-Mcp $proc @{jsonrpc="2.0";id=3;method="tools/call";params=@{name="get_health";arguments=@{}}}
     $healthData=$health.result.content[0].text|ConvertFrom-Json
     Assert-True "HEALTH_READY" ($healthData.status -eq "READY" -and $healthData.code -eq 0) ("status="+$healthData.status)
+    Assert-True "HEALTH_REPORTS_NORMATIVE_BLOCK" ($healthData.normative_engine -eq "DESACTIVADO" -and $healthData.principle_selection_readiness -eq "BLOCKED_OCPMSP" -and $healthData.missing_principle_metadata.Count -eq 4)
 
     $sources=Send-Mcp $proc @{jsonrpc="2.0";id=4;method="tools/call";params=@{name="list_canonical_sources";arguments=@{}}}
     $sourceData=$sources.result.content[0].text|ConvertFrom-Json
     Assert-True "CANONICAL_SOURCES_LIST" ($sourceData.count -ge 2) ("count="+$sourceData.count)
 
-    $read=Send-Mcp $proc @{jsonrpc="2.0";id=5;method="tools/call";params=@{name="read_canonical_source";arguments=@{source_id="metodologia.ocp-mcp.core"}}}
-    $readData=$read.result.content[0].text|ConvertFrom-Json
-    Assert-True "CANONICAL_SOURCE_READ_DECRYPTED" ($readData.metadata.verification_status -eq "VERIFIED_AT_IMPORT" -and $readData.content.Length -gt 500) ("chars="+$readData.content.Length)
+    $catalog=Send-Mcp $proc @{jsonrpc="2.0";id=5;method="tools/call";params=@{name="get_principle_catalog";arguments=@{}}}
+    $catalogData=$catalog.result.content[0].text|ConvertFrom-Json
+    $expectedCnp=@("P001","P004","P005","P038","P043")
+    $actualCnp=@($catalogData.cnp_members|Sort-Object)
+    $cnpMatch=(@(Compare-Object $expectedCnp $actualCnp).Count -eq 0)
+    Assert-True "CANONICAL_43_PRINCIPLE_CATALOG" ($catalogData.declared_count -eq 43 -and $catalogData.principles.Count -eq 43)
+    Assert-True "CANONICAL_CNP_MEMBERS" $cnpMatch
+    Assert-True "PRINCIPLE_METADATA_FAIL_CLOSED" ($catalogData.metadata_complete -eq $false -and $catalogData.missing_metadata.Count -eq 4)
+    Assert-True "NORMATIVE_TEXT_NOT_EXPOSED_VIA_CATALOG" ($catalogData.normative_text_disclosure -eq "WITHHELD_UNTIL_GOVERNED_RELEASE" -and -not ($catalogData.principles[0].PSObject.Properties.Name -contains "normative_text"))
 
     $prepare=Send-Mcp $proc @{jsonrpc="2.0";id=6;method="tools/call";params=@{name="prepare_operation";arguments=@{operation_type="OPEN_CYCLE";parameters=@{project_ref="smoke-test";conversation_ref="isolated"}}}}
     $pending=$prepare.result.content[0].text|ConvertFrom-Json

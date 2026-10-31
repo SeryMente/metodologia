@@ -30,8 +30,9 @@ internal static class Program
                     store.Initialize();
                     try { new BackupService(store).EnsureStartupBackup(); }
                     catch(Exception backupError) { Console.Error.WriteLine($"STARTUP_BACKUP_FAILED type={backupError.GetType().Name}"); }
-                    var ops=new OperationService(store,vault);
-                    var server=new McpServer(store,ops);
+                    var catalog=new PrincipleCatalog(store);
+                    var ops=new OperationService(store,vault,catalog);
+                    var server=new McpServer(store,ops,catalog);
                     using(var cts=new CancellationTokenSource())
                     {
                         Console.CancelKeyPress+=(s,e)=>{e.Cancel=true;cts.Cancel();};
@@ -57,7 +58,7 @@ internal static class Program
                     store.Initialize();
                     string repoRoot=GetOption(args,"--repo-root")??throw new ArgumentException("--repo-root is required");
                     new SourceImporter(store).Import(Path.GetFullPath(repoRoot));
-                    Console.Error.WriteLine("SOURCE_IMPORT_COMPLETED");
+                    Console.WriteLine("SOURCE_IMPORT_COMPLETED");
                     return 0;
 
                 case "backup":

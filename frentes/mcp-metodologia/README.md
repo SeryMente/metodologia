@@ -113,8 +113,8 @@ Backup diario al inicio cuando han pasado 24 horas desde el último exitoso; sem
 
 ## Herramientas MCP
 
-Lectura: `get_health`, `list_canonical_sources`, `read_canonical_source`, `get_cycle`, `get_operation_status`, `get_receipt`, `list_cycle_events`, `list_telemetry_events`.
+Lectura: `get_health`, `list_canonical_sources`, `get_principle_catalog` (43 IDs/títulos/MDP; no entrega el texto normativo en claro), `get_cycle`, `get_operation_status`, `get_receipt`, `list_cycle_events`, `list_telemetry_events`. La lectura directa de fuentes normativas completas no está expuesta como herramienta MCP.
 
-Preparación y ejecución: `prepare_operation`, `execute_operation`. La preparación crea una solicitud pendiente; la ejecución exige un grant local aprobado, no consumido y vigente.
+Preparación y ejecución: `prepare_operation`, `execute_operation`. `RECORD_CLASSIFICATION` acepta solo P001–P043, con `APLICA`, `NO_APLICA` o `INCIERTO`, justificación y evidencia; el ciclo solo pasa a `CLASSIFIED` con las 43 clasificaciones. `SET_SELECTION` deriva la base APLICA/INCIERTO más el CNP P001/P004/P005/P038/P043, sin aceptar una lista arbitraria del cliente. La selección y el snapshot responden `BLOCKED_OCPMSP` hasta que Gobernanza estructure y apruebe para los 43 principios `applicability`, `activation_conditions`, `mandatory` y `dependencies`; el MDP no sustituye esos metadatos. La construcción del snapshot incluye textos normativos completos cifrados dentro del payload, pero solo después de superar esa compuerta. La preparación crea una solicitud pendiente; la ejecución exige un grant local aprobado, no consumido y vigente.
 
 Las respuestas y recibos acreditan efectos persistidos del servidor, no comprensión consciente del modelo. La firma se verifica contra la clave pública registrada durante el aprovisionamiento local.
