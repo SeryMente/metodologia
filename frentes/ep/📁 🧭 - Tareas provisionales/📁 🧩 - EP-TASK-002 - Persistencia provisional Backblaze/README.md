@@ -1165,3 +1165,18 @@ El operador cambió de ubicación y declaró no disponible la sesión local ante
 - No se ha subido, leído de vuelta ni verificado por SHA-256 ningún objeto en B2 durante este ciclo.
 
 **Siguiente operación válida:** obtener una sesión B2 autenticada; listar recursos de la cuenta y región; confirmar el bucket `OCP-MSP`, privacidad y alcance de las claves; verificar que `metodologia-ep-persistencia` es el recurso exacto cuya eliminación ordenó el operador y que no contiene datos que deban preservarse; después ejecutar únicamente esa eliminación y leer de vuelta el inventario. El estado de cada paso se registrará por separado. La orden de eliminación no sustituye la identificación técnica del recurso ni demuestra su ejecución.
+
+
+## 24. Rectificación del destino B2: OCP-MCP es el único bucket válido — 2026-10-31
+
+Esta sección **corrige y supersede íntegramente** el destino erróneo asentado en §23. El operador confirmó expresamente que `OCP-MCP` es el único bucket de Backblaze B2 que EP debe utilizar. Los nombres `OCP-MSP` y `metodologia-ep-persistencia` son errores; no son destinos válidos para EP.
+
+**Estado y autoridad:**
+- Bucket objetivo único: `OCP-MCP`.
+- `OCP-MSP`: destino erróneo; no crear, configurar ni utilizar. Su existencia no está verificada y no se ordena borrarlo.
+- `metodologia-ep-persistencia`: bucket erróneo creado en el contexto histórico; la instrucción anterior de eliminarlo permanece autorizada. La eliminación está **NO EJECUTADA** hasta autenticar la cuenta, comprobar el nombre exacto y revisar que no contenga datos que deban preservarse.
+- Application Key `ep-ocp`: el registro previo reporta restricción a `OCP-MCP/ep-ocp/`, que es coherente con el destino correcto. Su vigencia y capacidades actuales aún requieren validación autenticada; no declarar autenticación actual a partir del antecedente.
+- La sesión local previa y el secreto DPAPI no están disponibles desde la nueva ubicación. No usar rutas antiguas ni solicitar secretos en el chat.
+- No se realizó ninguna operación B2 en esta rectificación: ni lectura de inventario, ni creación, ni eliminación, ni modificación de permisos, ni upload/download, ni SHA remoto.
+
+**Siguiente acción:** obtener sesión B2 autenticada; verificar cuenta/región, existencia/privacidad de `OCP-MCP` y alcance de `ep-ocp`; comprobar el bucket erróneo `metodologia-ep-persistencia` y efectuar su eliminación autorizada únicamente después de verificar identidad y contenido; comprobar por read-back que `OCP-MCP` sigue siendo el único destino configurado de EP.
