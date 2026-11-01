@@ -144,3 +144,5 @@ DUG vigente observado en `main`: Samantha v375 · NX-375m; GOW 2.15; 43 principi
 - [GOV-TASK-013 — Medición y optimización de ciclos](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-013%20-%20Medici%C3%B3n%20y%20optimizaci%C3%B3n%20de%20ciclos/README.md): instrumentar marcas observables y operaciones GitHub/RDC, medir esperas diferenciadas y comparar muestras equivalentes.
 
 Ambas tareas heredan el control único de Gobernanza, generación 11; no tienen control, sesión, folio ni OCP propios. El ciclo de configuración actual no es línea base porque la captura temporal no estaba activa desde su inicio. El primer ciclo sustantivo completo posterior a esta actualización será candidato a línea base; se reunirán al menos diez ciclos comparables antes de fijar una referencia estable. Los datos ausentes se declaran `NOT_MEASURED`; no se reconstruyen retroactivamente.
+
+[Crónica](../../cronica/C-GOBERNANZA-OCP-MCP-PERFORMANCE-01.md) · [evidencia](../../evidencias/C-GOBERNANZA-OCP-MCP-PERFORMANCE-01.json).
