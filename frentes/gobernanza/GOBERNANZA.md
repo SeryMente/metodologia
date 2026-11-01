@@ -489,3 +489,5 @@ Este cierre DTC no completa EP-TASK-002. Autenticación B2, cuenta/región, buck
 **Tareas propias creadas:** GOV-TASK-012 (revisión de fluidez y desempeño) y GOV-TASK-013 (medición y optimización de ciclos), enlazadas desde el registro provisional. Heredan este OCP/control, generación 11; no poseen controles, sesiones ni folios separados. El ciclo actual de configuración queda excluido de la línea base. Primer ciclo completo posterior será candidato; mínimo diez ciclos comparables para referencia inicial estable.
 
 **Límites preservados:** FOL1 `PREPARADO_PENDIENTE_ACTIVACION_IPZ`; folios globales CV/CY/A/B PENDIENTE / NO ASIGNADO; MCP-NORMATIVO DESACTIVADO; control/host EP y control/código MCP-OCP sin cambios.
+
+**Crónica y evidencia:** [C-GOBERNANZA-OCP-MCP-PERFORMANCE-01](cronica/C-GOBERNANZA-OCP-MCP-PERFORMANCE-01.md) · [recibo JSON](evidencias/C-GOBERNANZA-OCP-MCP-PERFORMANCE-01.json).
