@@ -2,13 +2,17 @@
 
 Punto de entrada del repositorio; no es una fuente normativa.
 
-**Documento Único de Gobernanza:** [DUG · Samantha v373 · NX-373m](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html). Integra 43 principios, 20 anexos jerarquizados, Metacanon 1.26, GOW 2.14 con 127 términos definidos e indexados, §ARR con el vocabulario inicial de ChatGPT, taxonomía estructural 1.3, navegación y representación estructurada. Fuente, versión y firma releídas en `main` el 2026-10-30; verificación asociada al commit `c79ddf6f862f97cafa61955eb15a17ffaea463d0`.
+**Documento Único de Gobernanza:** [DUG · Samantha v374 · NX-374m](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html). Integra 43 principios, 21 anexos jerarquizados, Metacanon 1.26, GOW 2.14 con 127 términos definidos e indexados, §ARR con el vocabulario inicial de ChatGPT, taxonomía estructural 1.3, navegación y representación estructurada. Fuente, versión y firma releídas en `main` el 2026-10-30; verificación asociada al commit `c79ddf6f862f97cafa61955eb15a17ffaea463d0`.
 
 La sección humana gobierna la representación estructurada incorporada en el mismo archivo. No hay documentos normativos paralelos ni sincronización automática implícita con Notion, instrucciones personalizadas, memorias o copias locales. La rama `main` de `SeryMente/metodologia` es la fuente documental; si no puede leerse, declara `METODOLOGÍA NO VERIFICADA`. Las políticas obligatorias, los permisos reales y las autorizaciones aplicables conservan precedencia.
 
 ## MDP y tareas provisionales de Gobernanza
 
 [DUG · ART-027](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-027) define 43 microdescriptores de pertinencia (MDP). Cuando un MDP indica pertinencia, la consulta Sink del principio desarrollado es obligatoria antes de aplicarlo; la telemetría inicial mide únicamente frecuencia de acceso por alias. Gobernanza mantiene ocho [OCP provisionales de tareas](frentes/gobernanza/%F0%9F%93%81%20%F0%9F%A7%AD%20-%20Tareas%20provisionales/README.md). Tareas permanece sin canonizar. GOV-TASK-008 registra el aislamiento técnico pendiente de la norma desarrollada.
+
+## Persistencia remota de dos capas
+
+[DUG · ART-028](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-028) establece el hook semántico común EP Consumer Adapter: persistencia local durable primero y réplica EP verificable después. HARMONIA y Signal Interpreter conservan sus almacenes independientes; el destino remoto es OCP-MSP y el contrato de red/SDK de EP debe estar publicado antes de conectar el transporte.
 
 ## Arquitectura de repositorios y frentes
 
@@ -20,7 +24,7 @@ El histórico **Contexto → Gestión conversacional** está supersedido y rever
 
 ## Estrategia de dos capas de principios
 
-[DUG · ART-027](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-027) define un catálogo de 43 abstracciones, aliases individuales previstos p001–p043 mediante Sink y telemetría separada de consideración/selección/consulta/aplicación. El documento está materializado en DUG v373. La instancia Sink, los enlaces reales y la lectura privada E2E no están desplegados ni verificados; el repositorio sigue privado. El conteo de aplicaciones procederá de los registros de ciclo, no de los clics.
+[DUG · ART-027](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-027) define un catálogo de 43 abstracciones, aliases individuales previstos p001–p043 mediante Sink y telemetría separada de consideración/selección/consulta/aplicación. El documento está materializado en DUG v374. La instancia Sink, los enlaces reales y la lectura privada E2E no están desplegados ni verificados; el repositorio sigue privado. El conteo de aplicaciones procederá de los registros de ciclo, no de los clics.
 
 ## Pendientes destacados
 
