@@ -19,7 +19,8 @@ El patrón de materialización sigue el registro de tareas provisionales de Gobe
 | ID local | Estado | Tarea | Núcleo |
 |---|---|---|---|
 | EP-TASK-001 | pendiente | NCL — Navegador Compartido Local: integración de Playwright y KeePassXC | [núcleo](./📁%20🧩%20-%20EP-TASK-001%20-%20Integración%20NCL/README.md) |
-| EP-TASK-002 | en_curso | Persistencia provisional con Backblaze B2 para datos de usuario y continuidad de la sesión canónica | [núcleo](./📁%20🧩%20-%20EP-TASK-002%20-%20Persistencia%20provisional%20Backblaze/README.md) |
+| EP-TASK-002 | en_curso | Persistencia provisional Backblaze B2 para EP; destino ordenado: OCP-MSP | [núcleo](./📁%20🧩%20-%20EP-TASK-002%20-%20Persistencia%20provisional%20Backblaze/README.md) |
+| EP-TASK-003 | en_curso | Mapa integral de construcción EP y delta de aprovechamiento | [núcleo](./📁%20🧩%20-%20EP-TASK-003%20-%20Mapa%20integral%20de%20construcción%20EP/README.md) |
 
 ## Estado de continuidad · 2026-10-31
 
@@ -55,3 +56,35 @@ Esta regla se aplica a **EP-TASK-001 (NCL), EP-TASK-002 (Backblaze) y toda tarea
 8. La regla es documental: no convierte una instrucción de seguimiento en autorización para instalar, ejecutar, transferir, borrar, configurar cuentas o modificar datos.
 
 La regla se adopta para tareas provisionales de este contenedor por instrucción directa del operador recibida el 2026-10-31. **No se afirma que haya sido propagada a otros repositorios o tareas fuera de este registro.**
+
+
+## Compuerta obligatoria de comunicación y documentación por ciclo
+
+**Esta secuencia se ejecuta en todos los ciclos de EP. Un ciclo que omita cualquiera de las dos escrituras requeridas permanece incompleto.**
+
+### Apertura obligatoria — antes de cualquier trabajo
+
+- [ ] Completar el preflight aplicable de identidad, fuente, titularidad, generación, autorización y exclusividad de escritor.
+- [ ] Leer el objeto bilateral de Gobernanza correspondiente a EP y localizar mensajes nuevos desde el último cursor realmente procesado.
+- [ ] Escribir en ese mismo objeto la respuesta inicial: acuse, interpretación del encargo, viabilidad, bloqueos y siguiente acción inmediata.
+- [ ] Registrar el cursor/revisión/commit/blob efectivamente leídos; si no hay mensaje nuevo, escribir `SIN_NOVEDAD` con esa evidencia.
+- [ ] Releer el índice canónico de tareas provisionales y seleccionar las tareas afectadas.
+- [ ] No iniciar tareas técnicas/documentales auxiliares antes de registrar la respuesta inicial.
+
+### Procesamiento
+
+- [ ] Ejecutar únicamente trabajo dentro de la autorización y la compuerta aplicable.
+- [ ] Distinguir observado en fuente, reportado, inferido, propuesto, autorizado, intentado, ejecutado, verificado y aceptado.
+- [ ] Mantener un escritor por recurso compartido y detener solo la escritura afectada ante una colisión.
+
+### Cierre obligatorio — después de procesar el trabajo
+
+- [ ] Actualizar el mismo objeto de comunicación de Gobernanza con novedades, cambios reales, tareas/hitos afectados, fuentes y revisiones, commits/blobs/hashes, evidencia observada frente a reportada, decisiones, bloqueos, siguiente acción y pronóstico.
+- [ ] Actualizar el OEP o el núcleo de tarea que realmente haya cambiado; conservar la crónica append-only del registro de tareas.
+- [ ] Hacer lectura de vuelta del objeto bilateral y de cada documento operativo modificado; comparar el contenido exacto y el SHA de Git.
+- [ ] Marcar cada tramo según la secuencia `PUBLICADO → LEÍDO → RESPUESTA_INICIAL_REGISTRADA → PROCESADO → DOCUMENTADO_AL_CIERRE → VERIFICADO_READBACK`.
+- [ ] Si falta respuesta inicial o documentación final, declarar `CICLO_INCOMPLETO`; no cerrar por silencio, por guardar un prompt o por una respuesta en el chat.
+
+**Objeto de coordinación actual:** `frentes/ep/entregas/COORDINACION-GOBERNANZA-EP-v0.1.md`.  
+**Índice provisional actual:** `frentes/ep/📁 🧭 - Tareas provisionales/README.md`.  
+**No crear:** un OCP alternativo, un tablero/bitácora paralelos, control de responsabilidad independiente, sesión/folio propios ni un segundo objeto de estado.
