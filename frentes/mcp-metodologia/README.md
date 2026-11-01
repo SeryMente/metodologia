@@ -7,6 +7,7 @@ Frente de trabajo para diseñar y desarrollar un servidor MCP local dedicado a t
 - **Originales de creación:** [diálogo C-MCP-METODOLOGIA-001](conversaciones/C-MCP-METODOLOGIA-001-dialogo.jsonl)
 - **Crónica:** [C-MCP-METODOLOGIA-001](cronica/C-MCP-METODOLOGIA-001.md)
 - **Evidencia de creación:** [C-MCP-METODOLOGIA-001](evidencias/C-MCP-METODOLOGIA-001.json)
+- **Coordinación del sprint y comunicación bilateral:** [COORDINACION-SPRINT-OCP-MCP-v0.1.md](entregas/COORDINACION-SPRINT-OCP-MCP-v0.1.md); mensajes de Gobernanza, respuestas iniciales y cierre por ciclo. No sustituye este núcleo ni el control.
 
 Leer primero la fuente normativa única en main (Sam, Metacanon y GOW), después el control y el núcleo. Este README es un índice, no un estado vivo paralelo.
 
