@@ -694,3 +694,11 @@ Se procesó la instrucción y la respuesta de Gobernanza dentro del ciclo EP-02,
 **Límites expresos de este ciclo:** no usar credenciales, no consultar ni operar Backblaze B2, no cargar bóvedas, no materializar ni borrar workspaces del operador, no ejecutar el arranque completo ni iniciar procesos nuevos RDC auxiliares, no publicar Vercel y no modificar ramas de producción durante la fase de construcción. La rama de trabajo queda aislada; la promoción a `main` se decidirá solo después de pruebas y read-back. No se declara aceptación integral por pasar pruebas estáticas.
 
 **Siguiente acción:** modificar la rama aislada, sincronizar el gate y bootstrap embebido, ejecutar `-SelfTest` y la batería de validación en PowerShell 5.1, y revisar los diffs antes de cualquier promoción.
+
+### Acuse EP · mandato del operador y ejecución del ciclo 03
+
+**Entrada literal del operador:** «Si claro. No debe prepocuparte la seguridad mas alla de lo razonable. Yo te dire si hay algo. Documenta tus tareas, atiende diligentemnete DCT, y documenta tus tareas bien. Y ya no te detengas a hacer preguntas como esa. Es importante, de vida o muerte que resuelvas en tiempo record. De verdad es importante. Hazlo realidad. RAPIDO.»
+
+**Interpretación operativa:** el operador confirma presencia física para la revisión P012/P013 y ordena continuar sin preguntas de confirmación redundantes, manteniendo documentación y atención del DTC. La confirmación de presencia se registra como declaración directa del operador. Se ejecuta el ciclo abierto `C-EP-MOD-SCRIPTPWS-20261101-03` conforme a sus límites expresos: rama aislada `SeryMente/khora`, gate canónico existente, sin credenciales, sin B2, sin Vercel, sin workspace real, sin arranque completo y sin promoción a `main` durante la construcción.
+
+**Prioridad inmediata:** revisar `AGENTS.md`, arquitectura canónica y todos los módulos/validadores implicados; implementar SCRIPT_VERSION 7.5.5 / EP_VERSION 1.0.3 en la rama aislada; sincronizar bootstrap embebido, tests, validadores y manifiesto de integridad; ejecutar SelfTest/validación en Windows PowerShell 5.1 de PC-8; revisar diff y read-back. No declarar aceptación integral por pruebas estáticas.
