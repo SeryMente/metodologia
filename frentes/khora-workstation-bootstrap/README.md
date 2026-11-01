@@ -1,6 +1,8 @@
 # OCP provisional · KHORA Workstation Bootstrap
 
 **Estado:** PROVISIONAL · AUDITORÍA ABIERTA · NO ACEPTADO.
+**Titular operativo:** `chatgpt-C-KHORA-WORKSTATION-BOOTSTRAP-TRANSFER-20261101-01` · **generación:** 2 · alias no nativo.
+**Registro de features:** [núcleo §14](KHORA-WORKSTATION-BOOTSTRAP.md#14-registro-acumulativo-de-features-del-módulo) · F-01 registrado, implementación pendiente.
 **Núcleo único:** [KHORA-WORKSTATION-BOOTSTRAP.md](KHORA-WORKSTATION-BOOTSTRAP.md).
 **Control:** [CONTROL-RESPONSABILIDAD.json](CONTROL-RESPONSABILIDAD.json).
 **Pendientes:** [PENDIENTES.md](PENDIENTES.md).
