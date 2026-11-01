@@ -12,6 +12,7 @@
 - [Registro de tareas provisionales](📁%20🧭%20-%20Tareas%20provisionales/README.md): índice y compuerta de apertura/cierre por ciclo.
 - [Claudia](prompts/CLAUDIA.txt) y [Samantha](prompts/SAMANTHA.txt): materializaciones de rol subordinadas al OEP; verificar frescura antes de usarlas.
 - [Originales](originales/): dictados y conversaciones preservados con su procedencia.
+- [ChatGPT-JULES-20261101-1732.md](originales/ChatGPT-JULES-20261101-1732.md): conversación fuente del módulo funcional `jules` de KHORA-MCP; original resguardado por EP, sin crear un módulo/OCP de Jules en EP ni transferir la titularidad del frente padre.
 - [Evidencias](evidencias/): fuentes adquiridas y límites de custodia; una mención no demuestra recepción.
 - [Revisiones](revisiones/): recibos/manifiestos; sus hashes se cotejan contra los blobs de `main`.
 - [Artefactos](artefactos/): entregas históricas; no sustituyen el estado vivo.
