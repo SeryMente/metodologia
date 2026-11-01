@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.25. **Sello del frente:** VCU-EP-v27 (Versión de Contexto Universal). **Ancla:** rectificación explícita del operador: `OCP-MCP` es el único bucket B2 de destino; `OCP-MSP` y `metodologia-ep-persistencia` son errores. La rectificación se materializa en §91; conserva la compuerta bilateral de §90 y las tareas/propuesta de adaptación previas.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.26. **Sello del frente:** VCU-EP-v28 (Versión de Contexto Universal). **Ancla:** rectificación explícita del operador: `OCP-MCP` es el único bucket B2 de destino; `OCP-MSP` y `metodologia-ep-persistencia` son errores. La rectificación se materializa en §91; conserva la compuerta bilateral de §90 y las tareas/propuesta de adaptación previas.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -1543,7 +1543,7 @@ El operador entregó directamente el Prompt Adicional 02 a este hilo EP el 2026-
 
 ---
 
-## 94. Módulo funcional MOD-SCRIPTPWS — PowerShell para Entorno Persistente · v0.3.24 / VCU-EP-v26
+## 94. Módulo funcional MOD-SCRIPTPWS — PowerShell para Entorno Persistente · v0.3.26 / VCU-EP-v28
 
 ### Identidad, subordinación y responsabilidad funcional
 
@@ -1553,7 +1553,7 @@ El operador entregó directamente el Prompt Adicional 02 a este hilo EP el 2026-
 - **Mandato del operador:** instrucción directa recibida el 2026-11-01: «Inaugura Modulo ScriptPWS en Frente de Entorno persistente, y toma responsabilida de eel, documenta ultimo comando que funciono.»
 - **Responsabilidad funcional y técnica aceptada:** el asistente de esta conversación asume la dirección funcional de `MOD-SCRIPTPWS`: definición, diseño, implementación y mantenimiento de sus artefactos PowerShell, pruebas, documentación, auditoría técnica y continuidad, siempre dentro de las compuertas y el alcance heredado de EP. La instrucción se interpreta como asignación explícita para este módulo, no como transferencia de titularidad del FT EP ni como cambio de control del padre; no autoriza por sí sola operaciones de host, credenciales, B2, despliegues ni cambios ajenos al módulo.
 - **Identidad formal del FT padre:** el OEP §93.3.5 registra que no se localizó un `CONTROL-RESPONSABILIDAD.json` autoritativo de EP ni titular/generación formal activa. La brecha sigue abierta. No se inventa titular, generación, UUID de conversación ni control paralelo. No se reclama titularidad formal de EP.
-- **Estado del módulo:** `INAUGURADO_DOCUMENTALMENTE · EN_CURSO`; toolchain Node.js/npm/npx validado en PC-8; validación técnica integral y aceptación pendientes.
+- **Estado del módulo:** `EN_CURSO · IMPLEMENTACIÓN_EN_RAMA · ACEPTACIÓN_INTEGRAL_PENDIENTE`; KHORA 7.5.5 / EP 1.0.3 permanece en PR borrador #350; `validate-khora-ps51` y `validate-khora-tree` aprobaron el commit `e7f0d45f297563c8c698b3b6a0088943d8f67cce`; build/E2E global y pruebas reales de VHDX/BitLocker, Guardian y recuperación siguen sin aceptación.
 - **Materialización:** por ahora queda dentro de este OEP y se enlaza desde el README del frente. No se crea `modulos/scrippws/` mientras no haya volumen documental o artefactos independientes que lo justifiquen.
 
 ### Alcance y exclusiones
@@ -1610,11 +1610,32 @@ $ErrorActionPreference='Stop'; $d="$env:LOCALAPPDATA\Programs\nodejs"; $env:Path
 
 **Hallazgos del host:** PowerShell bloqueó el shim `npm.ps1` por la política local de ejecución. La corrección validada es invocar `npm.cmd` y `npx.cmd`; no se modificó `ExecutionPolicy`. Python no está disponible en el host observado. Git no fue comprobado en este ciclo.
 
-**Contador de sesiones sin fallas:** `1`, valor inicial solicitado expresamente por el operador. Este valor es una línea base de contador, no una declaración de que el ciclo de instalación completo haya estado libre de fallas: durante el ciclo quedaron observados el HTTP 400 de la primera descarga y el bloqueo de `npm.ps1`. Los incrementos posteriores requieren cierre de una sesión completa sin fallas observadas en comandos, instalación, validación y lectura de vuelta.
+**Contador de sesiones sin fallas:** `0`, restablecido por instrucción explícita del operador el 2026-11-01. El valor anterior `1` era una línea base administrativa, no un resultado limpio, y no debe conservarse como sesión sin fallos. La sesión/ciclo actual observó fallos en edición y validación del gate, además de bloqueos del CI; por tanto, la racha de sesiones completas sin fallos es cero. Solo se incrementa tras cerrar una sesión integral sin ningún fallo observado en comandos, instalación, pruebas, validación y read-back; cualquier fallo nuevo vuelve a `0`.
 
 **Identidad local de continuidad:** UUIDv7 `01a1995e-f010-73cb-b992-68d36f5593a7`; identificador local, no ID nativo de conversación, dispositivo ni GitHub.
 
 **Estado:** validación de Node/npm/npx `VERIFICADA`; RDC `ONLINE_VERIFICADO_POR_PROVEEDOR`; instalación de Python `NO_PRESENTE`; Git `NO_VERIFICADO`; autenticación GitHub/Vercel y otras dependencias no probadas. El comando de validación anterior es el último comando literal de este ciclo cuyo resultado completo quedó observado.
+
+### Resultado de construcción KHORA 7.5.5 / EP 1.0.3 y análisis de causa raíz · 2026-11-01
+
+**Implementación observada:** repositorio `SeryMente/khora`, rama `ep/mod-scrippws-7.5.5`, PR borrador [#350](https://github.com/SeryMente/khora/pull/350), HEAD `e7f0d45f297563c8c698b3b6a0088943d8f67cce`. No está fusionado en `main`, no está desplegado y no constituye aceptación de EP.
+
+**Resultado específico del módulo (commit exacto):**
+- `Khora Single Script Guard`: `success` (workflow run `41362706067`); sus jobs `validate-khora-ps51` y `validate-khora-tree` terminaron correctamente. Windows PowerShell 5.1 ejecutó `tests/validate_ep.py`, `scripts/khora/khora.ps1 -SelfTest` y `scripts/khora/tests/Test-Arranque.ps1`.
+- `api-tests`: `success` (job `125016285934`).
+- El CI agregado no quedó verde: `calidad` y `khora-web-gate` fallaron; la suite `UI Contract` y `UI E2E` también fallaron. El PR permanece borrador.
+
+**Causa raíz 1 — fallos de sintaxis introducidos durante la edición del gate:** los primeros intentos de validación encontraron el token concatenado `return}` en `scripts/khora/khora.ps1`, después otra ocurrencia en `scripts/khora/modules/08-deps.ps1`, y mezcla de finales LF/CRLF en el gate. Esto infringía la regla del repositorio que exige separar `return` de su operando y el parser PowerShell 5.1 lo detectó. Se corrigieron ambas ocurrencias, se normalizó el gate a CRLF, se regeneró el bootstrap embebido desde los bytes del gate y se recalculó el manifiesto SHA-256. El guard de PowerShell 5.1 y el guard del árbol pasaron en el HEAD final. La causa fue el método de sustitución/normalización del texto durante esta construcción; queda reconocida como fallo de implementación de este ciclo, no como fallo del host.
+
+**Causa raíz 2 — test unitario de sincronización de Metodología sin autenticación disponible en CI:** `khora-web/tests/unit/methodology_contract_sync.test.ts` ejecuta `gh api` contra el repositorio privado `SeryMente/metodologia` para leer `FORMATO-REGISTRO-VERIFICACION-CICLO.schema.json`. El job `khora-web-gate` / la suite `UI Contract` no define `GH_TOKEN`; GitHub CLI aborta explícitamente indicando que debe configurarse. El resultado observado fue 571/572 pruebas unitarias, con una única falla en ese test (jobs `125016285916` y `125016287339`). El test no fue modificado en este PR. La remediación requiere que el workflow tenga credencial de solo lectura autorizada para el repositorio Metodología o que el test deje de consultar el repo privado en tiempo de ejecución y valide un fixture/snapshot versionado. No se añadió ni almacenó ningún secreto durante este ciclo.
+
+**Causa raíz 3 — falla en cascada de build y Playwright:** el script `prebuild` de `khora-web` ejecuta `test:unit`; el `webServer` de Playwright ejecuta `npm run build && npm run start`. Al fallar el test anterior por ausencia de `GH_TOKEN`, el build termina con código distinto de cero y Playwright no alcanza a iniciar el servidor. Por ello `UI E2E` falla al crear `config.webServer`; no es evidencia de que el gate PowerShell haya fallado ni de una regresión visual causada por MOD-SCRIPTPWS.
+
+**Causa raíz 4 — Ruff baseline sin cambios en esta rama:** `calidad` reportó `I001` (orden/formato de imports) en `kernel/tests/test_graph_cycle_regressions.py` y `kernel/tests/test_runtime_leiden_contract.py`. Los blobs en `main` son respectivamente `7ea8f8e76cbb27b78cf46fbdfdccdc4668772419` y `844cc796a015c19be28a9d29dacab30ee923be54`; ambos archivos son idénticos en `main` y en la rama del PR y no forman parte del cambio. Se clasifica como fallo preexistente del baseline, sin atribuirlo a MOD-SCRIPTPWS ni reformatear pruebas ajenas.
+
+**Comprobaciones de publicación separadas:** Vercel informó que no puede desplegar el repositorio privado de organización al team Hobby sin cambio de plan; Netlify informó la misma restricción de repositorio privado de organización. Son fallos de preview del proveedor, no pruebas funcionales del script. No se modificó plan, visibilidad ni integración y no se desplegó producción.
+
+**Conclusión técnica:** el gate nuevo pasó sus validadores específicos de PowerShell 5.1 y el guard del árbol en el commit final. El CI global no está verde por las causas 2–4; la falla de Playwright deriva de la causa 2. No se ha ejecutado una sesión EP real de extremo a extremo ni se han probado en un host efímero VHDX, BitLocker, autenticación, Guardian, recuperación o cleanup. Estado: `STATIC_GUARDS_PASS · INTEGRATION_CI_BLOCKED · E2E_UNACCEPTED · HOST_E2E_NOT_RUN`. El contador de sesiones sin fallos permanece `0`.
 
 ### Entregables, aceptación y siguiente paso
 
