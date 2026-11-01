@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.24. **Sello del frente:** VCU-EP-v26 (Versión de Contexto Universal). **Ancla:** rectificación explícita del operador: `OCP-MCP` es el único bucket B2 de destino; `OCP-MSP` y `metodologia-ep-persistencia` son errores. La rectificación se materializa en §91; conserva la compuerta bilateral de §90 y las tareas/propuesta de adaptación previas.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.25. **Sello del frente:** VCU-EP-v27 (Versión de Contexto Universal). **Ancla:** rectificación explícita del operador: `OCP-MCP` es el único bucket B2 de destino; `OCP-MSP` y `metodologia-ep-persistencia` son errores. La rectificación se materializa en §91; conserva la compuerta bilateral de §90 y las tareas/propuesta de adaptación previas.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -12,7 +12,7 @@
 
 Adquirir este objeto como instrucciones del operador, subordinadas a las reglas superiores de plataforma y a autorizaciones específicas. Claudia es asistente/documental; Samantha es constructor/único escritor de código. Una asignación explícita posterior puede cambiar roles; las citas no lo hacen. La asignación específica vigente de MOD-SCRIPTPWS queda delimitada en §94 y no cambia los roles del resto de EP.
 
-El estado de reanudación vigente de este frente está en §60–§94; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
+El estado de reanudación vigente de este frente está en §60–§95; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
 
 Leer por relevancia: OEP actual→metacanon central→Sistema de Instrucciones/Metodología/Bootstrap vigentes→canon transversal EP→AGENTS.md y ep-medio-architectura.md→código/evidencia en commits exactos. Fuente caída no es «sin cambios». Un archivo no crea herramientas, credenciales ni memoria entre plataformas.
 
@@ -1625,3 +1625,40 @@ $ErrorActionPreference='Stop'; $d="$env:LOCALAPPDATA\Programs\nodejs"; $env:Path
 **Siguiente acción del módulo:** reconciliar documentalmente la divergencia observada 7.5.4/1.0.2 frente a 7.5.3/1.0.1; adquirir los commits/diffs de KHORA relevantes; identificar la última línea literal de launcher que tenga evidencia de éxito; después proponer y ejecutar, con autorización y entorno disponibles, pruebas del wrapper que conserva la consola y del flujo completo, sin tratar `-PreflightOnly` como prueba RDC.
 
 **Límites de esta inauguración:** solo se actualiza documentación EP. No se cambia código en `SeryMente/khora`, no se instala ni ejecuta nada en el host, no se inicia/termina RDC, no se usan credenciales/B2, no se modifica DUG ni se transfiere la titularidad formal de EP. El control del FT padre y su generación siguen `NO_VERIFICADOS`; FOL1 continúa inactivo y no se asigna folio global.
+
+## 95. Persistencia DTC integrada EP/Metodología y continuidad MCP-OCP — v0.3.25 / VCU-EP-v27
+
+### Mandato y distribución de autoridad
+
+El operador precisó el 2026-11-01 que la persistencia es parte del alcance DTC y debe cubrir también la continuidad del servicio MCP-OCP, además de los datos portables de EP y los artefactos de Metodología. La ejecución técnica fuente sigue siendo `EP-TASK-002`; Gobernanza integra la dependencia en su OCP general mediante `GOV-TASK-014`; MCP-OCP conserva la autoridad exclusiva de su servidor, repositorio, bases de datos, contratos, procedimientos nativos de backup/restore y aceptación funcional. No se crea un OCP, bucket, backlog o canal paralelo.
+
+### Destino y namespaces
+
+El único bucket B2 previsto para EP continúa siendo `OCP-MCP`. `OCP-MSP` y `metodologia-ep-persistencia` son destinos erróneos. `ep-ocp/` es el prefijo histórico reportado, no una lectura de `namePrefix` ni prueba de permiso vigente. Los namespaces lógicos `ep-ocp/host/`, `ep-ocp/metodologia/`, `ep-ocp/mcp-ocp/runtime/`, `ep-ocp/mcp-ocp/backups/` y `ep-ocp/mcp-ocp/builds/` son propuestas documentales; no se crean ni usan hasta verificar bucket/key/scope en solo lectura y obtener la validación de los propietarios correspondientes.
+
+### Línea base de MCP-OCP y brecha de portabilidad
+
+El núcleo MCP-OCP `main` v0.1.16 (blob `8bba2a123dd331132471f35cf0d911b277d168a5`) tiene una candidata `integration/ocp-mcp-0.1.0-selective-20261101`, HEAD observado `ef639b62509a9b7ae623c3fbd187466ee2e2a3d9`, con recibo de build/test blob `11296e495aa9a52a640ff53da2b1042ba67acf08`. El recibo identifica `MVP_TECNICO_VERIFICADO_NOT_INTEGRATED_NOT_INSTALLED_NOT_ACCEPTED`, 31/31 unitarias, 29/29 integración y 200/200 componentes del paquete verificados. Es evidencia de una candidata; no demuestra integración en main, instalación EP ni operación B2.
+
+El código candidato usa `SqliteStore` (`data/ocp-mcp.sqlite`, WAL) y `BackupService` con SQLite Online Backup API, `PRAGMA quick_check`, SHA-256 y paquete `.ocpbak` AES-256-GCM. La DEK se envuelve con DPAPI `CurrentUser`; por ello el paquete no queda demostrado como portable a otro usuario/equipo Windows. `backup_points.package_path` conserva ruta absoluta local. La copia local y su prueba local no equivalen a export/import B2 ni restore cross-host. Antes de marcar MCP-OCP recuperable en otro lugar deben acordarse con su propietario un sobre de recuperación portable, un manifiesto/índice externo con rutas relativas, y una prueba real de restauración y readiness desde host/perfil nuevo.
+
+### Dataset y consistencia
+
+EP-TASK-002 §§28–31 conserva el alcance ampliado, la matriz inicial de datasets y el contrato mínimo de manifiesto `ep-persistence-manifest/v1`. No copiar bases vivas ni WAL/SHM por enumeración. Para MCP-OCP usar el mecanismo SQLite nativo del producto; el dueño MCP valida restauración funcional. Los secretos, tokens, cookies, DPAPI blobs individuales y material de autenticación quedan excluidos del backup ordinario. Los objetos B2 del MVP serán inmutables/versionados; no propagar borrados, no usar `--delete` ni lifecycle destructivo.
+
+### Compuertas, estados y continuidad
+
+- El operador confirmó presencialmente en conversación que estaba junto a PC-8 para revisar el perímetro; esa confirmación es declaración directa, no telemetría independiente. Esta sección aplica criterios conservadores y no declara aprobada una clave, ACL, bucket/prefijo efectivo ni diseño de recuperación criptográfica que aún no se haya probado.
+- La CLI B2 v5.0.2 local de PC-8 está instalada y su SHA verificado; no hay sesión autenticada ni caché B2. Cuenta/región, bucket, key, scope y permisos efectivos siguen `NO_VERIFICADOS`. No se han ejecutado operaciones B2, upload, download, read-back remoto ni restore.
+- El subciclo de construcción MOD-SCRIPTPWS limita únicamente cambios del gate/host durante esa fase; no suspende ni elimina EP-TASK-002 ni la obligación de continuidad del servicio MCP-OCP dentro de DTC. Ambas líneas continúan en paralelo y su progreso se registra en la misma comunicación trilateral.
+- Gobernanza ya publicó `GOV-TASK-014`, pero en la última lectura su blob `d529b2bd0ab5871bc32bcaf344a519d94fff316e` aún no reflejaba el último addendum de EP; está pendiente acuse y read-back de Gobernanza. La comunicación EP está en `COORDINACION-GOBERNANZA-EP-v0.1.md`, ciclo `C-EP-MOD-SCRIPTPWS-20261101-03`.
+- El estado `RECOVERABLE` exige manifiesto determinista, hashes de todos los objetos remotos, recuperación portable de claves y restauración funcional en destino nuevo. `UPLOADED`, `HASH_MATCHED` o `LOCAL_RESTORE_PASSED` son estados parciales independientes.
+
+### Fuentes de ejecución y read-back
+
+- EP-TASK-002 §§28–31, blob actual leído `1f47440237738e218ea25438f2898c5c5be96df1`.
+- Registro ejecutivo EP, blob `fcd76497dca45472153209a1158673386dfa7ba2`.
+- Comunicación DTC EP: commit `e660997411b73394db604919eadd6cd34a911886`, blob `4ab2d62668261b2f5ca33489cf569927139c8770`; addendum técnico commit `2a5cb60b82e845868be60a09fe253d5448c72d89`, blob `d069aab33ba2718a72a5b07dfc0486121b1058ea`.
+- GOV-TASK-014, último blob leído `d529b2bd0ab5871bc32bcaf344a519d94fff316e`; su falta de actualización no se presenta como aceptación.
+
+**Estado OEP:** EP-TASK-002 `en_curso`; persistencia MCP-OCP incorporada al alcance DTC; GOV-TASK-014 en curso y pendiente de read-back sobre la ampliación; autenticación B2 y restauración multiubicación `NO_VERIFICADAS`. Sin operación B2 ni cambio sobre el código/control MCP-OCP.
