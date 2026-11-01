@@ -291,3 +291,66 @@ La entrada de este ciclo quedó integrada en el objeto GOV-TASK-011; el índice,
 - DTC global: `EN_CURSO_RECURRENT`; se conserva la obligación de revisar los tres frentes en cada ciclo sin excepción. No se abrió una solicitud nueva a MCP-OCP mientras el ciclo 06 sigue abierto.
 
 **Siguiente acción de Gobernanza:** en el próximo ciclo, recuperar de nuevo ambos objetos y sus cursores; procesar el delta de MCP-OCP 06 cuando exista cierre y read-back, y continuar únicamente trabajo independiente autorizado mientras tanto.
+
+
+## Ajuste DTC · conversaciones pares en Gobernanza y ruta terminal MCP-OCP · 2026-11-01
+
+### 1. Corrección de gobierno: conversaciones pares, no equipo subordinado
+
+El frente Gobernanza mantiene dos sesiones responsables activas registradas en su control: titular y corresponsable. **Son conversaciones pares e independientes dentro del mismo frente**. El corresponsable conserva sus propias funciones, mandato, autonomía y obligaciones; no integra un equipo dirigido por el titular de esta conversación, no queda subordinado a él y este registro no le asigna tareas, rol de revisor ni funciones nuevas. Cada sesión actúa conforme a su responsabilidad y autorización propias. El límite vigente de dos responsables activos se conserva.
+
+La DTC coordina la **interfaz entre resultados**, no dirige a las conversaciones ni redistribuye sus funciones. No crea un FT, OCP, control, sesión, canal, buzón, bitácora o backlog adicional. El registro GOV-TASK-011 sigue siendo la vista integrada de Gobernanza; cada OCP ejecutor conserva la autoridad de su detalle técnico.
+
+**Límite de transporte y observabilidad:** esta conversación no puede enviar instrucciones, inspeccionar el contexto privado ni controlar directamente el modelo de la otra conversación. Una instrucción preparada aquí no equivale a entregada, recibida o aplicada allí. Un resultado de la otra sesión solo entra al estado integrado cuando queda disponible en el objeto persistente compartido o se aporta por un medio verificable. No se presupone sincronización entre conversaciones.
+
+### 2. Contrato mínimo de interoperabilidad entre conversaciones
+
+Cada conversación conserva su propio ciclo/cursor. Para integrar un resultado basta con registrar, sin duplicar el documento de origen:
+
+- sesión responsable identificada por el alias/folio que ya conste en el control; no crear identificadores nativos ni folios globales;
+- identificador local de ciclo y tarea de origen;
+- fuente exacta leída: repositorio, rama, commit/revisión y blob;
+- delta concreto y artefactos afectados, con hashes cuando existan;
+- estado separado: reportado, observado, verificado y aceptado;
+- dependencias, bloqueo, decisión requerida y siguiente acción.
+
+La DTC no exige que una conversación espere a la otra para realizar trabajo independiente. Si ambas necesitan modificar el mismo archivo, las escrituras se serializan: releer el blob inmediatamente antes de escribir, actualizar condicionado a ese SHA y hacer read-back; ante SHA distinto, abortar esa escritura, releer y reconciliar. Pueden existir análisis o propuestas paralelas, pero no escrituras concurrentes sobre la misma revisión ni sobrescrituras de resultados ajenos.
+
+### 3. Objetivo de cierre: separar ciclo DTC de terminación técnica MCP-OCP
+
+El cumplimiento de un ciclo MCP-OCP acredita su disciplina de ciclo, **no la terminación ni aceptación del producto**. La DTC administrará dos estados distintos:
+
+1. **Ciclo local MCP-OCP:** apertura, respuesta inicial, procesamiento, documentación y read-back en el mismo objeto de coordinación.
+2. **Resultado técnico MCP-OCP:** implementación candidata reproducible, pruebas actuales, paquete/manifiestos verificados, documentación técnica y decisión explícita sobre integración/aceptación.
+
+El DTC no cerrará GOV-TASK-011 por el mero cierre de un ciclo local. Tampoco afirmará que el OCP MCP está terminado mientras el producto siga sin integración canónica o falten criterios de aceptación materiales.
+
+### 4. Ruta de menor número de ciclos para MCP-OCP
+
+**Estado de entrada observado:** coordinación MCP-OCP en `main`, blob `e6c375a79ca0a431000aa607ff2dfe9252abafd9`; ciclo local 05 cerrado y read-back en §28.4; ciclo local 06 abierto en §29. El cursor de apertura del ciclo 06 cita el blob previo `5a52046e9390019adb110d96d500d2998b637bbc`. Núcleo MCP-OCP actual en `main`, blob `e04e85fc8576244db3e4caefa0d05d2ed693fee7`; control `owned`, generación 3, blob `3e6f96e919c33c3015478b7fd0f262b1bee47b0c`, autorización B `AUTHORIZED` sin ampliación.
+
+La comparación recién observada entre `main` y `build/ocp-mcp-mvp-0.1.0` es `diverged`: 11 commits propios de build y 236 commits detrás; merge-base `e4243414b0099ede9b9556b3cfa0bb20bc706576`. La cabeza de `main` observada en la comparación es `02ddcc4159919f411ff53bf4bd22c96a18bd63d3`. El DUG vigente es v376 · NX-376m, commit `25bf9e6ed55eff010b0d8ddd53dd2cc7271b616d`, blob `657225b9c6c4d7bb46aad78fcd6c95de49ea1689`.
+
+**Regla inmediata:** no abrir otra solicitud ni un ciclo duplicado a MCP-OCP mientras §29/ciclo local 06 siga abierto. Primero debe completar en esa misma entrada el procesamiento, cierre y read-back. La DTC actualizará el estado solo después de leerlo de vuelta desde la fuente canónica.
+
+**Siguiente paquete único de ejecución, preparado para el ciclo posterior al 06; aún no enviado ni considerado recibido:**
+
+1. Partir del `main` vigente en ese ciclo y reconciliar selectivamente solo código, pruebas y scripts técnicos propios del producto. No hacer merge global de la rama divergida y no sustituir README, núcleo, control, coordinación ni documentos canónicos de `main` con sus versiones antiguas de build.
+2. Formar una candidata limpia basada en `main`; actualizar referencias/pins únicamente contra blobs actuales observados, incluido DUG v376 y el núcleo MCP-OCP vigente. Mantener gate fail-closed ante cualquier fuente desfasada.
+3. Ejecutar sobre esa candidata, en un mismo ciclo, compilación, pruebas unitarias, integración, smoke/negativas, seguridad, backup/restauración y verificación de las herramientas/contratos realmente incluidos. Regenerar ZIP, manifiestos y SHA-256 desde esa revisión; no reutilizar los resultados históricos 31/31 y 29/29 como prueba de la candidata nueva.
+4. Persistir en el OCP MCP la candidata, evidencia detallada, hashes, resultados, limitaciones y cambios de §8.1/README que sean propios del frente. Cerrar la misma entrada DTC con commit/blob y read-back exactos.
+5. Presentar un único informe de decisión: `MVP_TÉCNICO_VERIFICADO`, `BLOQUEADO` con causa/evidencia, o `CANDIDATA_NO_VERIFICADA`. No abrir rondas generales. Solo una corrección focalizada adicional si una prueba o criterio material falla; toda repetición debe nombrar el fallo que resolverá.
+
+### 5. Compuertas de alcance y decisión final
+
+- **Dentro de B vigente:** implementación, correcciones, compilación, pruebas, manifiestos, paquete y documentación técnica dentro de `frentes/mcp-metodologia/`.
+- **Integración/merge a `main`:** no está comprendida expresamente en B. Aunque la candidata pase, requiere decisión/autorización explícita del operador antes de integrar. No se presume a partir de esta DTC.
+- **Instalación/operación en EP:** corresponde al control y autorización de EP; MCP-OCP y Gobernanza no pueden ejecutarla ni aprobarla por sustitución.
+- **MCP-NORMATIVO:** permanece `DESACTIVADO`. La cobertura 0/43 de `applicability`, `activation_conditions`, `mandatory` y `dependencies` es una ausencia normativa observada, no permiso para inventar datos. El comportamiento fail-closed debe probarse y conservarse; no bloquear por sí solo el cierre del servidor MCP no normativo si el MVP satisface sus criterios sin aplicar normas.
+- **Sink y telemetría:** aliases `p001`…`p043` sin despliegue/prueba; telemetría autorizada solo de frecuencia de acceso/consulta. No afirmar disponibilidad productiva ni ampliar semántica. Si estos elementos no son requisito del MVP aceptado, quedan como dependencias explícitas posteriores; si sí lo son, exigir nueva decisión/fuente antes de implementarlos.
+- **FOL1:** preparado e inactivo. No bloquea compilación, pruebas ni paquete; todos los folios globales continúan `PENDIENTE / NO ASIGNADO`.
+- **Aceptación:** separar `MVP_TÉCNICO_VERIFICADO`, `INTEGRADO_EN_MAIN`, `INSTALADO_EN_EP` y `ACEPTADO_POR_OPERADOR`. Ningún estado sustituye a otro.
+
+La vía de eficiencia es: terminar ciclo 06 sin duplicación → una ejecución técnica consolidada y probada sobre base actual → una única decisión del operador sobre integración → trabajo de EP solo bajo su propia autorización. Si un bloqueo material impide esa secuencia, la DTC lo elevará con evidencia y una decisión concreta, no abrirá rondas exploratorias repetidas.
+
+**Estado de este ajuste:** instrumento DTC actualizado en Gobernanza; no se ha enviado el paquete a MCP-OCP, no se ha modificado su control/núcleo/código y no se ha ejecutado ni integrado el producto. La automatización sigue semiautomática; sin monitoreo ni control directo de otras conversaciones.
