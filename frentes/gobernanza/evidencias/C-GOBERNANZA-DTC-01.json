@@ -1,0 +1,71 @@
+{
+  "event_id": "C-GOBERNANZA-DTC-01",
+  "date": "2026-10-31",
+  "task_id": "GOV-TASK-011",
+  "name": "DTC — Dinámica Trilateral por Ciclo",
+  "global_cycle_folio": "PENDIENTE_NO_ASIGNADO_FOL1_INACTIVO",
+  "operator_decision": "Gobernanza verifica en cada ciclo el cumplimiento de la dinámica por Gobernanza, EP y OCP MCP.",
+  "verification_model": {
+    "accountable_front": "Gobernanza",
+    "execution_owners": [
+      "Gobernanza",
+      "EP",
+      "OCP MCP"
+    ],
+    "checked_each_governance_cycle": true,
+    "background_monitoring": false,
+    "statuses": [
+      "CUMPLE_VERIFICADO",
+      "CUMPLE_PARCIAL",
+      "NO_CUMPLE",
+      "NO_VERIFICABLE",
+      "SIN_CICLO_OBSERVADO"
+    ],
+    "criteria": [
+      "preflight/identity/authority",
+      "task-registry-and-communication-read",
+      "initial-response-before-work",
+      "authorized-processing",
+      "post-processing-close-documentation",
+      "OCP-and-task-registry-updates-when-applicable",
+      "readback-of-persisted-changes"
+    ]
+  },
+  "fronts": {
+    "governance": {
+      "status": "DTC_RULE_PERSISTED",
+      "task": "GOV-TASK-011",
+      "generation": 9
+    },
+    "ep": {
+      "source_branch": "docs/metacanon-objetos-20261011",
+      "object_path": "frentes/ep/entregas/COORDINACION-GOBERNANZA-EP-v0.1.md",
+      "object_blob": "d81b671b4fd5dcfd1d5b13135d9939e0ab49f66e",
+      "dtc_addendum": "READBACK_VERIFIED",
+      "initial_response": "PENDING",
+      "own_cycle_gate": "PENDING",
+      "cycle_proof": "PENDING"
+    },
+    "ocp_mcp": {
+      "source_branch": "main",
+      "object_path": "frentes/mcp-metodologia/entregas/COORDINACION-SPRINT-OCP-MCP-v0.1.md",
+      "object_blob": "0a9d9331728f643eb9683e53e8602ab1d416bc3e",
+      "dtc_addendum": "READBACK_VERIFIED",
+      "initial_response": "PENDING",
+      "own_cycle_gate": "PENDING",
+      "cycle_proof": "PENDING"
+    }
+  },
+  "governance_persistence": {
+    "task_blob": "5f5dcc6b1d220a293d145f5b5d539fdc3760afd4",
+    "task_index_blob": "8979d2042a8b3850732882d3e490b76fbe22b3d9",
+    "core_blob": "cfc5f1b3a69d5b3a449b7f45d59a03614ebdae0c",
+    "pending_blob": "b2f574aad0c00dc09a33f23409991e9b1266e212"
+  },
+  "boundaries": [
+    "Gobernanza verifica; no sustituye ni asume titularidad de EP/OCP MCP.",
+    "No se afirma que EP/OCP MCP ya leyeron o aplicaron los addenda.",
+    "No se modifica DUG/GOW/IPZ/FOL1 ni controles ajenos.",
+    "No hay monitoreo continuo ni trabajo en segundo plano."
+  ]
+}
