@@ -1010,3 +1010,33 @@ MCP-OCP procesa el Prompt Adicional 02 dentro de su propio OCP y adopta la sigui
 - `MCP-NORMATIVO: DESACTIVADO`.
 - FOL1: `PREPARADO_PENDIENTE_ACTIVACION_IPZ`; folios globales CV/CY/A/B y OCP: `PENDIENTE/NO ASIGNADO`.
 - El ciclo local 03 permanece abierto hasta actualizar el registro técnico §8.1, el índice README y realizar el read-back final de los tres artefactos en este mismo objeto. La clasificación final del ciclo se asentará en esta entrada; si faltara una fase, se declarará `CICLO_INCOMPLETO`.
+
+
+### 26.5 Cierre y read-back final del ciclo local 03
+
+**Secuencia completa del ciclo:**  
+`LEÍDO → RESPUESTA_INICIAL_REGISTRADA → PROCESADO → DOCUMENTADO_AL_CIERRE → VERIFICADO_READBACK`.
+
+**Novedad procesada:** recepción directa del operador del PROMPT ADICIONAL 02; apertura §25; procesamiento y distribución de autoridad en §26; actualización del núcleo MCP-OCP y README; distinción explícita de estados de Gobernanza/EP y conservación de límites de autorización.
+
+**Read-back posterior de todos los artefactos modificados:**
+
+| Artefacto | Commit de escritura | Git blob SHA leído de vuelta | Resultado |
+|---|---|---|---|
+| Coordinación §1, §§3.1–3.2, §4.2 | `be68da2b91d6e1dc322532cf921e41f851d66aef` | `7b48c80ffbaafe7480e5cf0760aea39c7acff7d3` | Contenido exacto y blob coincidente |
+| Coordinación §§25–26 | `d5da0d6cd84d8bcc6a877d3ce543088e1ffb0a31` | `3f330347708e8cab1880e2c451ea7ec21cc3957e` | Contenido exacto y blob coincidente antes del cierre |
+| Núcleo `MCP-METODOLOGIA.md`, v0.1.8 | `b8af4bd8f91813c9db54a9b5304d61f141cc70a5` | `08ec0e5164e138afeb28a5369dfd032a327d2d0e` | Contenido exacto y blob coincidente |
+| README MCP-OCP | `f9163ba6d50d30b56da1edf40a62a13fed6d3efe` | `fba96f8128ad671152f7ec99a29742210f9007a1` | Contenido exacto y blob coincidente |
+| Control MCP-OCP | Sin modificación | `3e6f96e919c33c3015478b7fd0f262b1bee47b0c` | Releído; `owned`, titular y generación 3 coincidentes; B sin cambios |
+
+La última lectura previa al cierre confirmó simultáneamente núcleo, README, control y este mismo objeto. La escritura de esta entrada §26.5 se relee inmediatamente después; el blob final del objeto de coordinación se comunica en el reporte del ciclo y no se incluye aquí para evitar autorreferencia.
+
+**Diferencia entre lo reportado y lo observado:** Gobernanza tenía preparado el complemento como `PREPARADO_NO_PUBLICADO` en su GOV-TASK-011. El operador lo entregó directamente a MCP-OCP; se verifican recepción, respuesta inicial, procesamiento y read-back local de MCP-OCP. No se afirma publicación formal por Gobernanza ni lectura/aceptación/aplicación por EP. Gobernanza aún no ha auditado este ciclo local 03: su evidencia anterior precede a §25–26. EP sí tiene un ciclo documental local previo `CUMPLE_VERIFICADO`, pero EP-TASK-002 material permanece en curso.
+
+**Clasificación del ciclo MCP-OCP local 03:** `CUMPLE_VERIFICADO` por su propio preflight, recuperación del cursor, respuesta inicial previa al trabajo sustantivo, procesamiento autorizado, actualización del mismo objeto y del núcleo/README, y read-back exacto. **No es aceptación cruzada ni cierre global.**
+
+**DTC global / GOV-TASK-011:** `EN_CURSO_RECURRENT`. La siguiente revisión real de Gobernanza debe leer este cierre desde su cursor, clasificar el ciclo local 03 y reconciliar su propio `GOBERNANZA.md`/índice GOV-TASK-011 frente a la evidencia posterior que ya declara EP `CUMPLE_VERIFICADO`. MCP-OCP no modifica esos artefactos de Gobernanza ni abre una nueva solicitud duplicada.
+
+**Siguiente acción MCP-OCP:** retomar el backlog técnico independiente de §8.1 dentro de B; conciliar selectivamente la rama 0.1.0 divergida, ejecutando build/tests sobre la revisión que vaya a proponerse para integración antes de declarar cualquier resultado. No hay merge, instalación EP ni aceptación del producto en este ciclo.
+
+**Cierre:** `CICLO LOCAL 03 CERRADO · CUMPLE_VERIFICADO · READ-BACK COMPLETO`. FOL1 sigue `PREPARADO_PENDIENTE_ACTIVACION_IPZ`; conversación, ciclos, A/B globales y por OCP: `PENDIENTE / NO ASIGNADO`.
