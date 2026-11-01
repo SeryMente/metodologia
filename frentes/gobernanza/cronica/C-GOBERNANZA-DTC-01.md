@@ -40,7 +40,7 @@ Estados permitidos: `CUMPLE_VERIFICADO`, `CUMPLE_PARCIAL`, `NO_CUMPLE`, `NO_VERI
 
 ## Referencias
 
-- [Tarea GOV-TASK-011 — DTC](../%F0%9F%93%81%20%F0%9F%A7%AD%20-%20Tareas%20provisionales/%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-011%20-%20Coordinaci%C3%B3n%20bilateral%20recurrente/README.md)
+- [Tarea GOV-TASK-011 — DTC](https://github.com/SeryMente/metodologia/blob/main/frentes/gobernanza/%F0%9F%93%81%20%F0%9F%A7%AD%20-%20Tareas%20provisionales/%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-011%20-%20Coordinaci%C3%B3n%20bilateral%20recurrente/README.md)
 - [DTC / comunicación EP](https://github.com/SeryMente/metodologia/blob/docs/metacanon-objetos-20261011/frentes/ep/entregas/COORDINACION-GOBERNANZA-EP-v0.1.md)
 - [DTC / coordinación OCP MCP](../../mcp-metodologia/entregas/COORDINACION-SPRINT-OCP-MCP-v0.1.md)
 - [Núcleo Gobernanza](../GOBERNANZA.md) · [Pendientes](../PENDIENTES.md)
