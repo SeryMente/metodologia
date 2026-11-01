@@ -874,3 +874,12 @@ Ambos archivos mantienen exactamente el mismo blob SHA en `main` y en la rama de
 **CLI confirmada por ayuda local:** `bucket list --json`, `bucket get`, `ls --json`, `file upload`, `file info`, `file download`. El subcomando `file download-by-name` no existe en esta versión; no se usará. No se ejecutaron aún operaciones B2 ni la prueba E2E; la sintaxis se inspeccionó con `--help` local. La salida cruda de `account get` no será mostrada, guardada ni publicada.
 
 **Estado:** `E2E_NOT_STARTED`; autorización interactiva pendiente de que el operador ingrese ID y secreto directamente en la terminal local PC-8; el proceso `7232` espera el ID. No se ha autenticado cuenta, consultado proveedor, listado buckets, creado objeto, descargado objeto ni restaurado datos. Este bloque establece diseño y límites; no es evidencia de ejecución.
+### Incidencia de verificador auxiliar SHA-256 · preflight de manifiesto · 2026-11-01
+
+**Operación:** ensayo no mutante del helper JavaScript SHA-256 usado para preparar un manifiesto de integridad en la actualización KHORA 7.5.6 / EP 1.0.4. **Resultado observado:** el vector conocido SHA256("abc") devolvió `5035008fdae4454ead19b0388786c22720a0b720ac991d2dcb9b25d42cbb875a`; esperado `ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad`. El hash calculado de ep-medio-architectura.md tampoco coincidió con el SHA-256 registrado en el manifiesto. **Impacto:** ninguna escritura remota ni actualización del manifiesto; la rama KHORA permaneció intacta.
+
+**Causa raíz VERIFICADA:** la implementación auxiliar asignó de forma desplazada las ocho palabras de estado SHA-256 al desestructurar las variables de ronda; las fórmulas de compresión usaron registros distintos de los exigidos por el estándar. El vector de prueba detectó el defecto antes de cualquier escritura.
+
+**Corrección/previsión:** descartar por completo ese helper. Sustituirlo por una implementación revisada contra los vectores estándar SHA-256, probar al menos el vector vacío, "abc" y un texto UTF-8 con BOM/acentos, y además cotejar un archivo existente contra el hash ya publicado en ep-integrity-manifest.sha256. No escribir ni regenerar el manifiesto hasta que todas las pruebas coincidan.
+
+**Estados:** PREFLIGHT_FALLIDO · RCA_VERIFICADA · SIN_MUTACIÓN_REMOTA · CONTADOR_0. No se repitió el cálculo defectuoso ni se reintentó la escritura.
