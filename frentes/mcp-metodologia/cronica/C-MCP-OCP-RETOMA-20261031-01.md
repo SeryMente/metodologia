@@ -56,7 +56,7 @@ Se interpreta como autorización directa para retomar la responsabilidad del OCP
 | `MCP-METODOLOGIA.md` | Núcleo actualizado a MCP-OCP v0.1.2 y sección de retoma | `25daaa7925ae0ea41823ef3b5191e5191601c1e3` | `c823be24d4759d2a9795ed68350974b53810c68b` |
 | `README.md` | Índice actualizado y conversación enlazada | `334ee65cf3b0ce000557d4a01563198bf048595b`; corrección del enlace `3c79b2a3a653381b05b5d0f2437e7500cbf829dc` | `48da1579c9e330322076c10f7089a29a0067d0d3` final |
 | `COORDINACION-SPRINT-OCP-MCP-v0.1.md` | Identidad visible actualizada y §18 incorporada | `aac00f418eb7ac29fe88db0df454b50e8578644b` | `ed3cea85ad600f019aab520f198e91b83c8ca99d` |
-| `conversaciones/ChatGPT-OCP MCP-20261031-1849.md` | Captura de mensajes visibles y síntesis de cierre | `98791d8e520443fb3993c5bf52ee47234ac3684e` | `4ba5373f8dfe5854390a9a7433d233abd8aac770` |
+| `conversaciones/ChatGPT-OCP MCP-20261031-1849.md` | Captura de mensajes visibles, síntesis de cierre y cotejo literal de la instrucción | `98791d8e520443fb3993c5bf52ee47234ac3684e` y corrección `83f534b03d5c49e4c2212d0f482c3abe31198bd4` | `76f002a2645cb9fc26b6d54a27382b32572b946f` final |
 
 La captura de conversación declara su alcance: mensajes visibles de este hilo; no es una exportación nativa exhaustiva y no incorpora metadatos internos no expuestos.
 
