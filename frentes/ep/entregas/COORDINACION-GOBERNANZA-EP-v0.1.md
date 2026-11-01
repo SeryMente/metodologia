@@ -762,3 +762,54 @@ EP contrastó el núcleo MCP-OCP `main` v0.1.16 (blob `8bba2a123dd331132471f35cf
 5. Mantener la autoridad del OCP MCP sobre su mecanismo nativo, esquema y código; EP integra el destino B2 como persistencia complementaria sin modificar su producto.
 
 **Acción de EP:** esta evidencia se incorpora al mapa de requisitos EP-TASK-002 y a la solicitud de ampliación ya publicada. No se modificó el repositorio/código/control de MCP-OCP, no se integró su candidata y no se ejecutó ningún upload, download o restore B2. Gobernanza debe actualizar su criterio integrado y solicitar/registrar el acuse técnico de MCP-OCP en su objeto DTC preexistente.
+
+
+### Registro de incidencia y causa raíz · MOD-SCRIPTPWS · ciclo 03 · 2026-11-01
+
+**Instrucción literal del operador:** «Sesiones sin fallos 0, documenta causa raiz del fallo».
+
+**Acción de control:** contador de sesiones sin fallos de MOD-SCRIPTPWS restablecido a `0` en OEP §94. Se conserva el ciclo `C-EP-MOD-SCRIPTPWS-20261101-03`; este registro amplía el mismo objeto DTC y no abre otro ciclo ni asigna folio global. Política: una sesión solo suma cuando termina integralmente sin fallas observadas; cualquier fallo observado restablece el contador a cero.
+
+**Cursor de fuentes canónicas:**
+- OEP `main`: commit `75fc9be48354f347796567e1b41617b5e102f676`, blob `986005a15858f8109921bf14e37741b360d31b54`; versión `v0.3.26 / VCU-EP-v28`. Read-back exacto confirmado.
+- Índice EP `main`: commit `e955f45de022f9a6659d7b69a444628a74b04140`, blob `777bae702c9935293b7fdf5cf78a1eb3ed3ee6bc`. Read-back exacto confirmado.
+- KHORA: PR borrador [#350](https://github.com/SeryMente/khora/pull/350), rama `ep/mod-scrippws-7.5.5`, HEAD `e7f0d45f297563c8c698b3b6a0088943d8f67cce`; no fusionado, no desplegado.
+
+### Causa raíz, hechos observados y alcance
+
+**1. Fallo de validación PowerShell introducido durante la construcción.** Los primeros jobs de Windows PowerShell 5.1 detectaron `return}` sin espacio en el gate `scripts/khora/khora.ps1`, después otra ocurrencia en `scripts/khora/modules/08-deps.ps1`, y finales de línea mezclados LF/CRLF en el gate. Causa raíz: las sustituciones de texto aplicadas durante esta implementación concatenaron el token `return` con la llave y no preservaron uniformemente CRLF. Se corrigieron ambos archivos, se normalizó el gate a CRLF, se regeneró `ep-bootstrap-content.ts` desde el gate y se actualizó `ep-integrity-manifest.sha256`. El guard Windows PowerShell 5.1 y el guard del árbol pasaron en el HEAD final.
+
+**2. Fallo unitario de sincronización de Metodología.** El test existente `khora-web/tests/unit/methodology_contract_sync.test.ts` ejecuta `gh api` contra el repo privado `SeryMente/metodologia` para consultar `FORMATO-REGISTRO-VERIFICACION-CICLO.schema.json`. El job no define `GH_TOKEN`, por lo que GitHub CLI termina con el mensaje explícito de que falta esa variable. La suite final reporta 571/572 y una falla en ese test. No se modificó ese test en el PR. La remediación pendiente es proporcionar al workflow una credencial de solo lectura que tenga acceso autorizado a Metodología, o convertir la prueba a un contrato/snapshot versionado local; no se debe usar un token sin el scope mínimo ni exponerlo en logs.
+
+**3. Fallo en cascada del build y UI E2E.** El `prebuild` de `khora-web` ejecuta `test:unit`; el servidor de Playwright se inicia con `npm run build && npm run start`. La falla de la causa 2 hace terminar el build con código distinto de cero y bloquea el inicio de `config.webServer`. Por tanto, el fallo de UI E2E es consecuencia del test sin autenticación, no evidencia de fallo del gate PowerShell ni de regresión visual demostrada por este cambio.
+
+**4. Ruff preexistente, fuera del delta.** La job `calidad` falla con `I001` (orden/formato de imports) en:
+- `kernel/tests/test_graph_cycle_regressions.py`, blob en `main` `7ea8f8e76cbb27b78cf46fbdfdccdc4668772419`.
+- `kernel/tests/test_runtime_leiden_contract.py`, blob en `main` `844cc796a015c19be28a9d29dacab30ee923be54`.
+
+Ambos archivos mantienen exactamente el mismo blob SHA en `main` y en la rama del PR, y no son parte del conjunto de archivos cambiados. Se registra como fallo de baseline ajeno a MOD-SCRIPTPWS.
+
+**5. Publicación externa.** Vercel y Netlify rechazaron deploy previews por la restricción de sus planes ante repositorio privado de organización. No se cambió el plan, visibilidad, integración ni configuración de despliegue. Estos avisos no equivalen a fallos de ejecución del script.
+
+### Resultado verificable en el HEAD final
+
+| Control | Resultado | Evidencia |
+|---|---|---|
+| Gate Windows PowerShell 5.1 | `PASS` | Workflow `41362706067`, commit `e7f0d45`; ejecutó validador Python, `-SelfTest` y `Test-Arranque.ps1` |
+| Guard del árbol KHORA | `PASS` | Workflow `41362706067` |
+| API tests | `PASS` | Job `125016285934` |
+| Calidad Ruff | `FAIL` | Workflow `41362706017`, dos errores I001 preexistentes |
+| KHORA web gate / unitarias | `FAIL` | Job `125016285916`; 571/572, falta `GH_TOKEN` |
+| UI Contract | `FAIL` | Job `125016287339`; misma falla de sincronización privada |
+| UI E2E | `FAIL` | Job `125016287503`; `webServer` no inicia por fallo del build/prebuild |
+| Preview Vercel/Netlify | `BLOCKED_EXTERNAL` | restricciones de plan/repo privado informadas por los proveedores |
+
+**Conclusión:** la nueva versión supera sus guardas específicas de PowerShell 5.1 y del árbol de scripts, pero el PR no tiene CI global verde ni aceptación E2E. No se ha ejecutado un arranque EP real ni pruebas reales de VHDX, BitLocker, autenticación, Guardian, recuperación o cleanup en un host efímero. Estado del ciclo: `STATIC_GUARDS_PASS · INTEGRATION_CI_BLOCKED · E2E_UNACCEPTED · HOST_E2E_NOT_RUN`. Contador de sesiones sin fallos: `0`.
+
+**Acciones pendientes para continuidad:**
+1. Resolver con autorización la lectura de solo lectura del repositorio privado Metodología en Actions, o usar una copia local versionada del contrato; repetir unit tests, build y UI E2E.
+2. Corregir los dos imports Ruff en su ámbito propio o registrar formalmente esa deuda de baseline, sin atribuirla al script.
+3. Con CI/E2E aceptables, realizar el test E2E EP separado en host desechable: VHDX/BitLocker, tarea AtStartup, Guardian, cierre normal/emergencia y recuperación.
+4. Mantener el PR #350 como borrador; no fusionar ni desplegar hasta revisar la divergencia de rama y obtener aceptación explícita.
+
+**Estado de este registro:** INCIDENCIA DOCUMENTADA · RCA REGISTRADO · CONTADOR RESTABLECIDO · PR NO PROMOVIDO.
