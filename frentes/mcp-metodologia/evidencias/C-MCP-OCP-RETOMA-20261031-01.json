@@ -1,0 +1,146 @@
+{
+  "schema": "mcp-ocp-retoma-evidence/1",
+  "event_id": "C-MCP-OCP-RETOMA-20261031-01",
+  "status": "VERIFIED",
+  "event_date_local": "2026-10-31",
+  "timezone": "America/Mexico_City",
+  "repository": "SeryMente/metodologia",
+  "branch": "main",
+  "main_head_before_evidence": "d983400f6185378d4544a9872c7ca573b2114b4e",
+  "main_head_commit_timestamp_utc": "2026-11-01T00:55:52Z",
+  "source_governance": {
+    "dug_version": "Samantha v373",
+    "dug_signature": "NX-373m",
+    "dug_blob_sha": "cac4525de77d4f47a8a59c25201968ecf2056b90",
+    "metacanon_version": "1.26",
+    "gow_version": "2.14",
+    "dug_last_commit_utc": "2026-10-31T01:11:26Z",
+    "age_d_h_m": "0.23.44",
+    "relevant_principles": [
+      "P001",
+      "P004",
+      "P037",
+      "P038",
+      "P042",
+      "P043"
+    ],
+    "dug_modified": false
+  },
+  "authorization": {
+    "operator_instruction_verbatim": "REtoma repsonsabilidad del Frente MCP OCP, de hecho se llama OCP MCP , pero renombrfalo, es MCP-OCP adjunta convewrascion en persistencia documental del frente.",
+    "authorizes": [
+      "transfer responsibility of this existing OCP",
+      "rename canonical documentary identity to MCP-OCP",
+      "persist visible conversation record within the front"
+    ],
+    "does_not_authorize": [
+      "change DUG/IPZ/ART-025/ART-027",
+      "alter Khora MCP",
+      "install or operate on EP host",
+      "extend prior implementation B scope",
+      "activate MCP-NORMATIVO",
+      "public deployment or changes outside this OCP"
+    ]
+  },
+  "responsibility_transfer": {
+    "previous": {
+      "owner_alias": "chatgpt-ocp-mcp-01a192fb-8346-710a-ba99-54350ab2dfd9",
+      "generation": 2
+    },
+    "current": {
+      "owner_alias": "chatgpt-mcp-ocp-01a19495-aec0-78e2-a7b6-10ab72a2be78",
+      "instance": "chatgpt-mcp-ocp",
+      "uuidv7_local": "01a19495-aec0-78e2-a7b6-10ab72a2be78",
+      "generation": 3
+    },
+    "native_conversation_id_exposed": false,
+    "cas": {
+      "expected_previous_blob_sha": "4a4742a51f0517a1b152a9c04ac6c185de024389",
+      "transfer_commit_sha": "6043ef173f88264295998601d67b38c2bf247f3f",
+      "immediate_readback_blob_sha": "31bf75570f1d414cb8f75b0a88acfe91fda03d45",
+      "verification_commit_sha": "dc55c55c66d0ce3a05ace78ac50ad88da59291e1",
+      "final_control_blob_sha": "3e6f96e919c33c3015478b7fd0f262b1bee47b0c",
+      "final_readback_status": "MATCHED",
+      "result": "VERIFIED"
+    }
+  },
+  "rename": {
+    "previous_canonical_identity": "MCP-METODOLOGIA",
+    "canonical_identity": "MCP-OCP",
+    "preserved_directory": "frentes/mcp-metodologia/",
+    "preserved_kernel_filename": "MCP-METODOLOGIA.md",
+    "rationale": "Preserve historical routes and links; the current canonical display identity is changed without moving the OCP."
+  },
+  "artifacts": [
+    {
+      "path": "frentes/mcp-metodologia/CONTROL-RESPONSABILIDAD.json",
+      "blob_sha": "3e6f96e919c33c3015478b7fd0f262b1bee47b0c",
+      "readback": "MATCHED"
+    },
+    {
+      "path": "frentes/mcp-metodologia/MCP-METODOLOGIA.md",
+      "blob_sha": "c823be24d4759d2a9795ed68350974b53810c68b",
+      "readback": "MATCHED"
+    },
+    {
+      "path": "frentes/mcp-metodologia/README.md",
+      "blob_sha": "48da1579c9e330322076c10f7089a29a0067d0d3",
+      "readback": "MATCHED"
+    },
+    {
+      "path": "frentes/mcp-metodologia/entregas/COORDINACION-SPRINT-OCP-MCP-v0.1.md",
+      "blob_sha": "ed3cea85ad600f019aab520f198e91b83c8ca99d",
+      "readback": "MATCHED"
+    },
+    {
+      "path": "frentes/mcp-metodologia/conversaciones/ChatGPT-OCP MCP-20261031-1849.md",
+      "blob_sha": "76f002a2645cb9fc26b6d54a27382b32572b946f",
+      "readback": "MATCHED"
+    },
+    {
+      "path": "frentes/mcp-metodologia/cronica/C-MCP-OCP-RETOMA-20261031-01.md",
+      "blob_sha": "23f48a655b5d1d5b1b8f8f57b6f67c8548c908f3",
+      "readback": "MATCHED"
+    }
+  ],
+  "commits": {
+    "core": "25daaa7925ae0ea41823ef3b5191e5191601c1e3",
+    "readme_initial": "334ee65cf3b0ce000557d4a01563198bf048595b",
+    "readme_link_correction": "3c79b2a3a653381b05b5d0f2437e7500cbf829dc",
+    "coordination": "aac00f418eb7ac29fe88db0df454b50e8578644b",
+    "conversation_initial": "98791d8e520443fb3993c5bf52ee47234ac3684e",
+    "conversation_verbatim_correction": "83f534b03d5c49e4c2212d0f482c3abe31198bd4",
+    "chronicle_initial": "6ed498e06988074551cd2f5253caef89412db884",
+    "chronicle_readback_update": "d983400f6185378d4544a9872c7ca573b2114b4e"
+  },
+  "conversation_capture": {
+    "path": "frentes/mcp-metodologia/conversaciones/ChatGPT-OCP MCP-20261031-1849.md",
+    "blob_sha": "76f002a2645cb9fc26b6d54a27382b32572b946f",
+    "source_scope": "Visible messages in this ChatGPT thread; not a native exhaustive export",
+    "readback": "MATCHED"
+  },
+  "constraints": {
+    "implementation_authorization_B": "UNCHANGED",
+    "build_or_software_tests_executed": false,
+    "EP_host_modified": false,
+    "installation_performed": false,
+    "MCP_NORMATIVO": "DESACTIVADO",
+    "FOL1": "PREPARADO_PENDIENTE_ACTIVACION_IPZ",
+    "folios_global_CV_CY_A_B": "PENDIENTE/NO ASIGNADO",
+    "Khora_control_modified": false
+  },
+  "ipz": {
+    "version": "v0.7",
+    "source_path": "NO_VERIFICADO",
+    "last_commit": "NO_VERIFICADO",
+    "age_d_h_m": "NO_VERIFICADO"
+  },
+  "cross_readback": {
+    "control": true,
+    "nucleus": true,
+    "readme": true,
+    "coordination": true,
+    "conversation": true,
+    "chronicle": true
+  }
+}
