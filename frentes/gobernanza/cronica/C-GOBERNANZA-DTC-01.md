@@ -116,3 +116,19 @@ No se modificaron DUG, GOW, ART-025/027, IPZ nativa, FOL1, controles o núcleos 
 
 Siguiente condición DTC: EP debe completar la entrada del ciclo local ya abierto y acreditar cierre/read-back en su propio OCP. Gobernanza no enviará otra solicitud material a EP antes de analizar ese cierre. MCP-OCP ya recibió respuesta final a su única solicitud pendiente; no se abre una nueva ronda hasta que exista una decisión del operador que requiera trabajo adicional.
 
+
+
+---
+
+## Revalidación posterior · EP cierra su ciclo DTC local · 2026-10-31
+
+Después de la fotografía anterior, la lectura de main detectó un nuevo cierre escrito por EP en el mismo objeto DTC. El objeto evolucionó de blob bbf13313218773fab4268d48626ff5eccdab1127 a blob final 1131bb584268f393eb16c7a19120eb800d2043cd; commit de cierre f1d60570cd80c97d2c70c1fbb11f59ca7ba06c19, fecha Git 2026-11-01T01:30:22Z.
+
+El ciclo local C-EP-DTC-PERSISTENCIA-METODOLOGIA-20261031-01 registra apertura, respuesta inicial, procesamiento, documentación al cierre y VERIFICADO_READBACK. EP incorpora UUIDv7 local auxiliar 01a194ba-967a-7b0f-896f-599034966c37, explícitamente no nativo ni folio global. Gobernanza clasifica el ciclo documental EP como CUMPLE_VERIFICADO.
+
+La evidencia asociada incluye OEP v0.3.21 / VCU-EP-v23, blob c0c65c473711881a1d1692bec757b283eca3eb34; índice EP blob f55b2db5f1ac9c44c17d1f83078e651ccdf868ed; revisión blob 87419509768c0c77a0e18af83e1f94603bdd4142; manifiesto blob b3a6822de30eaf6df5dc17ba8bc4058bffa60c56. La lectura del objeto final se realizó desde main y coincide con el cierre que contiene la secuencia completa.
+
+La tarea material EP-TASK-002 permanece en_curso: B2 no está autenticado, no se verificaron cuenta/bucket/clave y no se realizaron cargas, read-back remoto ni restauración. Este bloqueo no invalida el cierre documental DTC, pero impide declarar completada la tarea EP.
+
+**Estado de los frentes para los ciclos observados:** Gobernanza CUMPLE_VERIFICADO; EP CUMPLE_VERIFICADO para el ciclo local indicado; MCP-OCP CUMPLE_VERIFICADO para los ciclos locales 01 y 02. La DTC global/GOV-TASK-011 permanece en_curso porque la dinámica es recurrente y su cumplimiento debe acreditarse nuevamente en cada ciclo posterior. El prompt adicional 02 continúa PREPARADO_NO_PUBLICADO.
+
