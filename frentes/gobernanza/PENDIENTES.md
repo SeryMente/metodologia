@@ -282,3 +282,20 @@ No se modifica por este registro el DUG, ART-025, ART-027, IPZ nativo ni los con
 Control único en generación 10, dos sesiones activas, titular original preservado; SHA `403748d4a401c73abf322b2bc48bd517a9c56600`, estado `VERIFIED_READBACK`. Segunda sesión `SES-20261101-ED4A2B32`. AT v1.2 es propuesta operativa no canonizada; [AT v1.2](entregas/CHATGPT-v0.8/AT-v1.2.md), [crónica](cronica/C-GOBERNANZA-DOBLE-CORRESPONSABILIDAD-01.md), [evidencia](evidencias/C-GOBERNANZA-DOBLE-CORRESPONSABILIDAD-01.json).
 
 FOL1 sigue `PREPARADO_PENDIENTE_ACTIVACION_IPZ`; folios globales CV/CY/A/B no asignados. MCP normativo `DESACTIVADO`. Ambas sesiones releen el control y usan SHA/CAS/read-back antes de escrituras; no existe fencing universal.
+
+
+---
+
+## C-GOBERNANZA-OCP-MCP-PERFORMANCE-01 · DUG v377 y rendimiento del marco · 2026-11-01
+
+**DUG materializado y verificado:** Samantha v377 · NX-377m; Metacanon 1.28; GOW 2.17; 43 principios; 22 anexos; blob `54064c8fe00f872023a455f06596061ed69062ae`. Se incorpora MCP-OCP al GOW y se enlaza su núcleo/índice, diferenciándolo de MCP-NORMATIVO (DESACTIVADO). Metacanon §52 establece medición verificable de tiempos de procesamiento, operaciones GitHub/RDC y esperas externas. No se enmendaron los principios ni sus cuatro campos de selección ausentes.
+
+**GOV-TASK-012 — en_curso:** revisión integral del flujo de Gobernanza y búsqueda de cuellos de botella medidos, preservando las compuertas esenciales.
+
+**GOV-TASK-013 — en_curso:** instrumentación por ciclo, separación de duración de procesamiento/operación/espera, y comparación estadística de cargas semejantes. Captura en la evidencia del ciclo existente; no nueva bitácora ni registro por llamada.
+
+El ciclo que configuró la medición no es línea base: la captura no estuvo activa desde su apertura. La próxima unidad sustantiva completa será la primera candidata. Reunir al menos diez ciclos comparables para una primera referencia estable; reportar tamaño de muestra, mediana, P90 y rango. Sin marca verificable: `NOT_MEASURED`, nunca cero o estimación.
+
+**MCP-OCP:** DUG enlaza al [núcleo](../mcp-metodologia/MCP-METODOLOGIA.md) y [README](../mcp-metodologia/README.md), pero no se tocó el control ni el contenido del OCP ejecutor. El enlace de retorno desde ese núcleo debe verificarse/añadirse por su titular antes de declarar enlaces cruzados completos entre ambos OCP.
+
+FOL1 sigue `PREPARADO_PENDIENTE_ACTIVACION_IPZ`; folios globales CV/CY/A/B no asignados. MCP-NORMATIVO `DESACTIVADO`.
