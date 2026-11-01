@@ -529,15 +529,15 @@ Esta secuencia rige para todos los ciclos del frente mientras el operador no la 
 4. Mantener el backlog enfocado en el criterio rector de Gobernanza. Como dependencias visibles actuales, conservar el bloqueo por metadatos no presentes en DUG —sin editar DUG por iniciativa propia— y la brecha funcional de selección Sync individual/telemetría de frecuencia/hash exacto/vínculo del ciclo autorizado, conforme a evidencias vigentes.
 5. Devolver una respuesta de apertura que enumere el cursor procesado, el registro de tareas, contradicciones reconciliadas o pendientes, siguiente acción autorizada y evidencia que se actualizará al cierre.
 
-## Respuesta inicial de OCP MCP — completar al abrir el próximo ciclo
+## Respuesta inicial de OCP MCP — ciclo de admisión y comunicación 2026-10-31
 
-**Estado:** PENDIENTE · el guardado no acredita lectura.
-**Mensaje/cursor leído:**
-**Acuse e interpretación:**
-**Registro de tareas provisionales y revisión:**
-**Control/titularidad/generación confirmados:**
-**Contradicciones de continuidad reconciliadas:**
-**Viabilidad, bloqueos y siguiente acción inmediata:**
+**Estado:** RESPUESTA_INICIAL_REGISTRADA · lectura directa de `main` y escritura condicionada al blob previo.
+**Mensaje/cursor leído:** `MSG-GOV-BILATERAL-20261031-01` · sección 16, líneas 488–552 del objeto antes del cambio · rama `main` · blob leído `56cbe7245cdd96320948303d7c9f5185fa3ee730`. La instrucción solicita prioridad de respuesta al abrir, continuidad del backlog de Gobernanza, reconciliación del estado, registro de tareas, compuerta por ciclo y documentación de cierre.
+**Acuse e interpretación:** recibido y leído. Se aplicará como requisito operativo recurrente del frente OCP MCP. Esta respuesta no equivale a aceptación de todos los requisitos funcionales ni amplía la autorización técnica. Los cambios se limitarán a `frentes/mcp-metodologia/`.
+**Registro de tareas provisionales y revisión:** no se encontró un README/índice independiente de tareas provisionales en el árbol OCP de `main` (revisión `abb5210300d208e77e54d25f3cad03e01d9fe37b`). El estado operativo vive en `MCP-METODOLOGIA.md` §8; la coordinación y las dependencias viven en este objeto, especialmente §§14–16. Se consolidará el índice de tareas dentro de esos objetos existentes, sin crear un segundo estado.
+**Control/titularidad/generación confirmados:** `CONTROL-RESPONSABILIDAD.json` blob `4a4742a51f0517a1b152a9c04ac6c185de024389`; estado `owned`; titular operativo `chatgpt-ocp-mcp-01a192fb-8346-710a-ba99-54350ab2dfd9`; generación 2; autorización B `AUTHORIZED` para código, build, pruebas, empaquetado y documentación dentro del OCP. No habilita EP host, ACL/registro/firewall/servicios, DUG, ART-025/027, IPZ, Sink productivo, MCP-NORMATIVO, Khora ni rutas ajenas.
+**Contradicciones de continuidad reconciliadas:** el estado histórico anterior de §§9/13–15 que refleja generación 1 y A/B pendientes está superado por el control actual y por la evidencia de construcción. Se conservará como antecedente histórico, no como estado vivo. La entrega previa 0.1.0 acredita 31 pruebas unitarias y 29 de integración sobre el build reportado, pero `BUILT_AND_TESTED_NOT_INSTALLED`; no acredita instalación EP ni aceptación. La rama de construcción previa está divergida de `main`; su implementación no se atribuye al HEAD actual de `main`.
+**Viabilidad, bloqueos y siguiente acción inmediata:** la compuerta bilateral y el índice local pueden incorporarse documentalmente dentro del alcance OCP. El cierre técnico de snapshots sigue bloqueado por los cuatro metadatos normativos no presentes en la fuente (applicability, activation_conditions, mandatory, dependencies); OCP no los inferirá ni modificará DUG. La acción inmediata, después de este acuse, será consolidar el registro mínimo de tareas en el núcleo/índice existente, incorporar la checklist de apertura/cierre y reconciliar el objeto de coordinación con la revisión vigente. No se ejecutará ninguna acción en EP.
 
 ## Novedades y cierre del ciclo — completar después del procesamiento
 
