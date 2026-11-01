@@ -23,6 +23,12 @@ Esta sección sustituye los resúmenes ejecutivos repetidos y fotografías anter
 - **Sink/Cloudflare:** GOV-TASK-002 queda cancelada como despliegue activo; conservar el antecedente. No desplegar por inercia ni tratar Sink como equivalente a Sync.
 - **Canon y controles:** DUG Samantha v373 · NX-373m; no se modifica DUG, GOW canónico, ART-025/027, IPZ nativa, control OCP MCP ni EP en este evento. FOL1 sigue PREPARADO_PENDIENTE_ACTIVACION_IPZ.
 
+### Coordinación bilateral obligatoria en cada ciclo · GOV-TASK-011
+
+En todo ciclo de Gobernanza, después del preflight obligatorio de admisión y autoridad, leer primero los registros provisionales y objetos bilaterales de EP y OCP MCP; procesar las respuestas recibidas; dejar una entrada accionable (o SIN_NOVEDAD) en ambos objetos; y solo entonces continuar otras tareas. No abrir una nueva solicitud al mismo frente sin analizar la respuesta previa. Al cierre del trabajo del ciclo, registrar las novedades, cambios de tareas, evidencia, bloqueos y siguiente acción en los mismos objetos y verificar read-back. Los frentes deben instalar sus propias compuertas de apertura/respuesta y cierre en sus OCP/núcleos, sin trasladar a Gobernanza la titularidad de sus controles.
+
+Objetos de comunicación: EP en frentes/ep/entregas/COORDINACION-GOBERNANZA-EP-v0.1.md (rama docs/metacanon-objetos-20261011); OCP MCP en frentes/mcp-metodologia/entregas/COORDINACION-SPRINT-OCP-MCP-v0.1.md (main). Mensaje MSG-GOV-BILATERAL-20261031-01 persistido y verificado; lectura y respuesta de ambos frentes todavía pendientes. No afirmar que un mensaje fue leído por el solo hecho de guardarlo.
+
 Gobernanza define requisitos y acepta evidencia; OCP MCP implementa dentro de su ámbito autorizado; EP administra alojamiento/instalación. Todas las acciones del backlog deberán ser trazables al evento rector anterior.
 
 ---
