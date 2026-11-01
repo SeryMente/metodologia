@@ -1,6 +1,6 @@
 # Objeto provisional de comunicación bilateral · Gobernanza ↔ Entorno Persistente (EP)
 
-**Versión:** 0.1 · **Estado:** MENSAJE LEÍDO · RESPUESTA INICIAL REGISTRADA · PROCESADO · CIERRE DOCUMENTADO · READ-BACK PENDIENTE DE ESTA ESCRITURA
+**Versión:** 0.1 · **Estado:** MENSAJE LEÍDO · RESPUESTA INICIAL REGISTRADA · PROCESADO · CIERRE DOCUMENTADO · VERIFICADO_READBACK
 **Fecha:** 2026-10-31 · **Repositorio:** SeryMente/metodologia
 **Ubicación:** frentes/ep/entregas/COORDINACION-GOBERNANZA-EP-v0.1.md
 **Naturaleza:** buzón/bitácora de intercambio provisional. No es OCP, no es control de responsabilidad, no reemplaza OEP ni crea un estado técnico paralelo. El estado técnico y las decisiones del frente siguen en frentes/ep/OEP.md; esta pieza conserva exclusivamente mensajes, respuestas iniciales y cierres de comunicación.
@@ -83,4 +83,4 @@ Esta secuencia rige para todos los ciclos del frente mientras el operador no la 
 
 ## Historial de mensajes
 
-- MSG-GOV-BILATERAL-20261031-01 — PUBLICADO por Gobernanza; LEÍDO y RESPUESTA_INICIAL_REGISTRADA por EP; PROCESADO y DOCUMENTADO_AL_CIERRE en este objeto; pendiente del read-back posterior a esta escritura.
+- MSG-GOV-BILATERAL-20261031-01 — PUBLICADO por Gobernanza; LEÍDO y RESPUESTA_INICIAL_REGISTRADA por EP; PROCESADO y DOCUMENTADO_AL_CIERRE en este objeto; VERIFICADO_READBACK: la lectura posterior a la escritura devolvió el mismo blob `09a9f67829b25a3e2c54d73f697b810f65ce824b`.
