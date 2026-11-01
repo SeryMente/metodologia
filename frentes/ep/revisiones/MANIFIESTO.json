@@ -43,8 +43,8 @@
     {
       "path": "frentes/ep/OEP.md",
       "bytes": 237135,
-      "sha256": "06251151e6457c963fd49d4f9f02403985632d2b638b0eaf61b801dd1a95e8a0",
-      "git_blob": "f98db7c49c9c8a40bf55bf93a0d2db278e3c0d7e"
+      "sha256": "01884482aff254f47b190b147ec1455f1770d69959b3362452f0cdaa79a0292e",
+      "git_blob": "deaceadfc1de4636e0f9114a47a3d5255c04e897"
     },
     {
       "path": "frentes/ep/README.md",
@@ -348,9 +348,9 @@
     },
     {
       "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.22.json",
-      "bytes": 4901,
-      "sha256": "2b76c49d57b8d27199f4403b9fb64f0303fe53d414230c667f3bdac578b89df7",
-      "git_blob": "35f977df44a6292a300cf82740af7c46f6978f44"
+      "bytes": 4941,
+      "sha256": "463136c8a9e8ef22b60df85b15326d39c78a5a53e07451938c967f293f4979b4",
+      "git_blob": "9ff99df9a8e3dba2d496c3ee4a535234bc066263"
     }
   ],
   "exclusions": [
@@ -370,8 +370,8 @@
     "No MCP-OCP receipt/acceptance verified",
     "No B2 authentication, upload/read-back or restore occurred"
   ],
-  "prior_readback_verified": "Exact post-write GitHub fetch of OEP v0.3.22, task index, EP-TASK-002, folder README and REVISION-OEP-v0.3.22. UTF-8 SHA-256 and Git blob IDs recorded. Mutable DTC object is tracked through the same-object closing entry, not in this manifest.",
-  "latest_review_source_commit": "ae2747caf4933f9c34e006f680a365ec97728e32",
+  "prior_readback_verified": "Exact post-write fetch of OEP v0.3.22, EP task index, EP-TASK-002, folder README and REVISION-OEP-v0.3.22. UTF-8 SHA-256 and Git blob IDs recorded after final header alignment.",
+  "latest_review_source_commit": "d45af52ac5d07d9cba1638b9e05daa60ac3d2c4a",
   "current_event": "OEP v0.3.22 / VCU-EP-v24: EP incorporates Prompt Adicional 02's sprint-governance model within its own execution boundary.",
   "verification_scope": "EP documentary integration only. No Governance or MCP-OCP files, DUG, IPZ, control, host, code, Backblaze resources or credentials modified."
 }
