@@ -1,0 +1,70 @@
+{
+  "event_id": "C-GOBERNANZA-COMUNICACION-BILATERAL-01",
+  "date": "2026-10-31",
+  "task_id": "GOV-TASK-011",
+  "global_folio": "PENDIENTE_NO_ASIGNADO_FOL1_INACTIVO",
+  "objective": "Establecer comunicación bilateral prioritaria al inicio y documentación al cierre de cada ciclo entre Gobernanza, EP y OCP MCP.",
+  "sources": {
+    "ep": {
+      "branch": "docs/metacanon-objetos-20261011",
+      "path": "frentes/ep/OEP.md",
+      "version": "v0.3.18 / VCU-EP-v20",
+      "blob": "e1e045cdc9b1a286047c6d47c47a5111a0b52bce",
+      "milestones": "EP-H01–EP-H06 §76",
+      "task_registry": "NOT_LOCATED_IN_BOUNDED_PATH_CHECK; identify by EP"
+    },
+    "ocp": {
+      "branch": "main",
+      "control_blob": "4a4742a51f0517a1b152a9c04ac6c185de024389",
+      "generation": 2,
+      "core": "frentes/mcp-metodologia/MCP-METODOLOGIA.md §8/§10",
+      "coordination": "frentes/mcp-metodologia/entregas/COORDINACION-SPRINT-OCP-MCP-v0.1.md",
+      "task_registry": "NOT_LOCATED_IN_BOUNDED_PATH_CHECK; identify by OCP",
+      "release_blob": "6737ca65a79157a2fcc2ae022a626fde4b84b930",
+      "test_blob": "69529828ebfaabc0fa9a72fb20aa167f12d882e4",
+      "unit_tests": 31,
+      "integration_tests": 29,
+      "release_status": "BUILT_AND_TESTED_NOT_INSTALLED",
+      "ep_installation": "PENDING_EP",
+      "selection_readiness": "BLOCKED_OCPMSP",
+      "missing_metadata": [
+        "applicability",
+        "activation_conditions",
+        "mandatory",
+        "dependencies"
+      ]
+    }
+  },
+  "communications": {
+    "message_id": "MSG-GOV-BILATERAL-20261031-01",
+    "ep": {
+      "path": "frentes/ep/entregas/COORDINACION-GOBERNANZA-EP-v0.1.md",
+      "branch": "docs/metacanon-objetos-20261011",
+      "create_commit": "e26fa9886a7dde092a06ff941500ebb85be9767a",
+      "blob_readback": "d6b6513ebcc21e858f285f984846b08f5e9adb77",
+      "status": "PUBLISHED_READBACK_VERIFIED_RESPONSE_PENDING",
+      "main_cleanup_commit": "77070824652f2a7f34f93a3762f5b7b1717443b4"
+    },
+    "ocp": {
+      "path": "frentes/mcp-metodologia/entregas/COORDINACION-SPRINT-OCP-MCP-v0.1.md",
+      "branch": "main",
+      "commit": "dbfce573a85c6ea9f029be1aa77002619d9d908f",
+      "blob_readback": "56cbe7245cdd96320948303d7c9f5185fa3ee730",
+      "status": "PUBLISHED_READBACK_VERIFIED_RESPONSE_PENDING"
+    }
+  },
+  "acceptance": {
+    "task": "GOV-TASK-011",
+    "status": "IN_PROGRESS",
+    "front_cycle_gates": "PENDING",
+    "front_acknowledgements": "PENDING",
+    "communication_priority": "REQUIRED_AT_CYCLE_OPEN",
+    "documentation": "REQUIRED_AT_CYCLE_CLOSE"
+  },
+  "boundaries": [
+    "No DUG/GOW/IPZ/FOL1 changes",
+    "No EP or OCP responsibility control changes",
+    "No host or product code changes by Governance",
+    "No inference that Git publication means the fronts have read or applied the message"
+  ]
+}
