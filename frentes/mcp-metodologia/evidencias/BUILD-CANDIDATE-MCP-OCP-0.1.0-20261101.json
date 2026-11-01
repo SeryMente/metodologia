@@ -4,23 +4,23 @@
   "cycle_local": "C-MCP-OCP-DTC-20261101-06",
   "status": "MVP_TECNICO_VERIFICADO_NOT_INTEGRATED_NOT_INSTALLED_NOT_ACCEPTED",
   "candidate_branch": "integration/ocp-mcp-0.1.0-selective-20261101",
-  "source_code_commit": "f59bcc26ffddb7a82a4442361cda3c054d01b97e",
-  "base_main_commit": "f76cad5634c330967e4883d85885b17a0f1cb07d",
+  "source_code_commit": "5956595d5455d5b851c2ef1ff6808f0c2aeabff9",
+  "base_main_commit": "419be285373ce5390be2020a954d382f11803674",
   "source_snapshot": {
     "dug": {
       "version": "Samantha v377",
       "signature": "NX-377m",
       "metacanon": "1.28",
       "gow": "2.17",
-      "commit": "f76cad5634c330967e4883d85885b17a0f1cb07d",
+      "commit": "419be285373ce5390be2020a954d382f11803674",
       "git_blob": "54064c8fe00f872023a455f06596061ed69062ae",
       "content_sha256": "d898d012f9fd7b0f8ba4fe0eb4c269f204a2f5d63a1e37974347a63960f76fe6"
     },
     "mcp_core": {
-      "version": "MCP-OCP-v0.1.15",
-      "commit": "f76cad5634c330967e4883d85885b17a0f1cb07d",
-      "git_blob": "a668bf58a6e84c41f5455cd8cf599a950f00c233",
-      "content_sha256": "496500a254f1beb744360ef8575b48ca8278913a1b5850ef1ae7771c07fb8f31"
+      "version": "MCP-OCP-v0.1.16",
+      "commit": "419be285373ce5390be2020a954d382f11803674",
+      "git_blob": "8bba2a123dd331132471f35cf0d911b277d168a5",
+      "content_sha256": "07e59991783e2d2959500e227c5e754b47bcafd5ee59808a3a124ff1faa321de"
     },
     "freshness": "VERIFIED_AGAINST_MAIN"
   },
@@ -33,12 +33,12 @@
     "serve"
   ],
   "transport": "stdio",
-  "source_manifest_sha256": "2ced361429d0c1d40f1fda8bcd3b8b3c7da7f12384b17fe2e36a1380d3cb957e",
-  "build_manifest_sha256": "7ebdf5b4ccf3e2e0b5cb19abab614f9c2f7f23a42281d1e8a88e9dc77bdde3e6",
+  "source_manifest_sha256": "dd7bad92d026694ad443c41902c663bc20c13d88ba842ee2c21c486edbab4428",
+  "build_manifest_sha256": "368b2697e0839edcb898d00a7f8105d3ee374527ece1fcaf91dc2027994a0d93",
   "package": {
     "name": "ocp-mcp-0.1.0-win-x64.zip",
-    "size_bytes": 39690822,
-    "sha256": "09644790ced409a3704a948fdf0643fed585000a89e0e0ed7bc8387d060d14f2",
+    "size_bytes": 39690805,
+    "sha256": "96a62fc1291f501b7fa9b0792af07021db4cb2222c8658910bdadb7732bc3b2d",
     "components": 200,
     "independent_extract_readback": "PASS"
   },
@@ -73,7 +73,7 @@
     "all_component_hashes_and_sizes_match": true,
     "zip_readback": "PASS",
     "git_diff_check": "PASS",
-    "main_ref_rechecked_after_build": "f76cad5634c330967e4883d85885b17a0f1cb07d",
+    "main_ref_rechecked_after_build": "419be285373ce5390be2020a954d382f11803674",
     "runner": "PC-8",
     "toolchain": "Portable MinGit 2.56.0.windows.4 + .NET SDK 10.0.403; no elevation"
   },
