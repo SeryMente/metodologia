@@ -456,7 +456,7 @@ Este cierre DTC no completa EP-TASK-002. Autenticación B2, cuenta/región, buck
 
 **Decisión autorizada:** «Asume co-responsabilidad del frente Gobernanza, como segunda conversación.» Se ejecutó `ADD_CO_RESPONSIBLE`; no fue una transferencia de titularidad.
 
-**DUG:** v375 · NX-375m · blob `acd16402561311d4eef4a43005efea7498983352` · commit `9842370b646b34635c62994d9af722d805da4c95`. Se ajustaron P037/P039, Metacanon §§38, 42.6–42.7 y 47.2, y GOW 2.15. Se preservaron los 21 anexos y ART-028; JSON embebido parseado tras lectura de vuelta.
+**DUG:** v375 · NX-375m · blob `c993a59163c2c163b17b599a003919b53c5cf6a8` · commit `7830c14d5e6078991838c044fdbd6786f5595220`. Se ajustaron P037/P039, Metacanon §§38, 42.6–42.7 y 47.2, y GOW 2.15. Se preservaron los 21 anexos y ART-028; JSON embebido parseado tras lectura de vuelta.
 
 **Control único:** generación 10 · blob final `403748d4a401c73abf322b2bc48bd517a9c56600` · estado `VERIFIED_READBACK`. El titular primario `chatgpt-C-GOBERNANZA-RETOMA-07-SES-20261031-GV8AA51721` / `SES-20261031-GV8AA51721` / UUIDv7 local `01a193a9-7a00-7286-9216-45a477d294c1` permanece activo. Se incorporó como segunda responsable `chatgpt-C-GOBERNANZA-DOBLE-CORRESPONSABILIDAD-01-SES-20261101-ED4A2B32` / `SES-20261101-ED4A2B32` / UUIDv7 local `01a198fc-96f9-7b06-bdca-d419a8683c09`. Ambas sesiones figuran activas bajo la generación 10; límite máximo dos.
 
