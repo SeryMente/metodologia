@@ -1,0 +1,171 @@
+{
+  "schema": "mcp-ocp-dtc-cycle-evidence/1",
+  "event_id": "C-MCP-OCP-DTC-20261031-02",
+  "status": "VERIFIED_LOCAL_CYCLE",
+  "event_date_local": "2026-10-31",
+  "timezone": "America/Mexico_City",
+  "repository": "SeryMente/metodologia",
+  "branch": "main",
+  "main_head_before_evidence": "b55df1de480f0060b85fd7b28bb3388b005e6913",
+  "main_head_timestamp_utc": "2026-11-01T01:13:37Z",
+  "ownership": {
+    "canonical_identity": "MCP-OCP",
+    "historical_identity": "MCP-METODOLOGIA",
+    "owner_alias": "chatgpt-mcp-ocp-01a19495-aec0-78e2-a7b6-10ab72a2be78",
+    "uuidv7_local": "01a19495-aec0-78e2-a7b6-10ab72a2be78",
+    "native_conversation_id_exposed": false,
+    "generation": 3,
+    "control_blob_sha": "3e6f96e919c33c3015478b7fd0f262b1bee47b0c",
+    "status": "owned",
+    "implementation_authorization_B": "AUTHORIZED_UNCHANGED",
+    "scope": "Implementation/build/compile/automated tests/corrections/manifest/package only inside frentes/mcp-metodologia/. No EP host, DUG/IPZ, ART-025/027, Khora, external credentials, public deployment or unrelated paths."
+  },
+  "governance_basis": {
+    "dug": "Samantha v373 · NX-373m",
+    "dug_blob_sha": "cac4525de77d4f47a8a59c25201968ecf2056b90",
+    "dug_last_commit": "c79ddf6f862f97cafa61955eb15a17ffaea463d0",
+    "dug_last_commit_utc": "2026-10-31T01:11:26Z",
+    "dug_age_d_h_m_at_main_head": "1.00.02",
+    "metacanon": "1.26",
+    "gow": "2.14",
+    "arr_read": true,
+    "relevant_principles": [
+      "P001",
+      "P004",
+      "P005",
+      "P037",
+      "P038",
+      "P042",
+      "P043"
+    ],
+    "dug_modified": false
+  },
+  "ipz": {
+    "version": "v0.7",
+    "repository_artifact": "frentes/gobernanza/entregas/CHATGPT-v0.8/IPZ-CAMPO-CHATGPT-v0.7-PROPUESTA.txt",
+    "proposal_blob_sha": "69a6d9a2edbca6fdd6055642a86efce78ec19f5f",
+    "last_commit": "3b3f272e8c10691527b5d0cc081faee78d07e018",
+    "last_commit_utc": "2026-10-30T17:42:39Z",
+    "proposal_age_d_h_m_at_main_head": "1.07.30",
+    "native_installation": "NO_VERIFICADO"
+  },
+  "dtc": {
+    "governance_task": "GOV-TASK-011",
+    "constitution_event": "C-GOBERNANZA-DTC-01",
+    "preceding_local_cycle": "C-MCP-OCP-DTC-20261031-01",
+    "current_local_cycle": "C-MCP-OCP-DTC-20261031-02",
+    "current_cycle_opening_section": 21,
+    "current_cycle_closing_section": 22,
+    "current_cycle_status": "CUMPLE_VERIFICADO",
+    "requirements_met": [
+      "preflight: owner/generation/authorization re-read",
+      "latest governance cursor read and initial response persisted before processing",
+      "stale core DTC closing reference corrected",
+      "core and README updated",
+      "dialogue and chronicle persisted",
+      "coordination §22 documents processing/close/readback",
+      "readback of current files and hashes matched"
+    ],
+    "governance_latest_cursor": {
+      "main_head": "3ca4bfb5c1083d97295346d70d1310c6b625a1fb",
+      "governance_core_blob": "8fcf1130a628f81d266eb00cee76f2c6801cf29e",
+      "governance_pending_blob": "84dc62ffeb130039f4f98b0b72d80bf86d412370",
+      "governance_evidence_blob": "b9757ee43727727ebd3afadeccfa07da21b4d554",
+      "governance_task_readme_blob": "784d9f46b9a18c8d570b0645456d3a4274d31ca7",
+      "finding": "Governance verified cycle 01 and required correcting the stale core reference that marked §20 close as pending."
+    },
+    "governance_after_cycle02": "PENDING_NEXT_GOVERNANCE_CYCLE",
+    "governance_latest_audit_before_cycle02": {
+      "mcp_ocp_status": "CUMPLE_VERIFICADO_FOR_LOCAL_CYCLE_01",
+      "ep_status": "CUMPLE_PARCIAL",
+      "governance_status": "CUMPLE_VERIFICADO",
+      "latest_dtc_evidence_blob": "b9757ee43727727ebd3afadeccfa07da21b4d554",
+      "core_reconciliation_was_pending_in_that_snapshot": true
+    },
+    "ep": {
+      "status": "CUMPLE_PARCIAL",
+      "communication_branch": "docs/metacanon-objetos-20261011",
+      "communication_blob": "aeb7cd06c230c165e3d8892ba0572904a898806f",
+      "main_object": "NOT_FOUND",
+      "response_to_dtc_addendum": "PENDING",
+      "ep_host_modified_by_mcp_ocp": false
+    },
+    "global_dtc": "OPEN"
+  },
+  "correction": {
+    "defect": "MCP-OCP nucleus §10.2 asserted cycle 01 close/readback was pending although coordination §§20–20.6 had already been closed and read back.",
+    "corrected": true,
+    "nucleus_version": "MCP-OCP-v0.1.6",
+    "previous_core_blob": "c6ca3951d0616f33903fae427d51b2f4b63f9554",
+    "final_core_blob": "e6e96ee4edde7156ddc9f9a9e302faa9f8ed4ffa",
+    "core_commit": "cc4b1264576e42d1d603f2945e0005eb81db8ebd",
+    "corrected_status": "cycle 01 Governance-verified; cycle 02 locally verified; Governance classification of cycle 02 remains pending its next real cycle."
+  },
+  "prior_technical_state": {
+    "build_branch": "build/ocp-mcp-mvp-0.1.0",
+    "build_head": "b37213272dc9a132d1fb181e9ce66fba6ae1becc",
+    "compare_status": "diverged",
+    "ahead_by": 7,
+    "behind_by": 99,
+    "prior_reported_tests": {
+      "unit": 31,
+      "integration": 29,
+      "status": "PASS_REPORTED_NOT_RERUN"
+    },
+    "release_status": "BUILT_AND_TESTED_NOT_INSTALLED",
+    "installation": "PENDING_EP",
+    "current_cycle_build_or_tests_executed": false,
+    "current_cycle_merge_or_cherry_pick": false,
+    "four_governance_metadata_fields": "MISSING_FROM_ALL_43_DUG_PRINCIPLES",
+    "sync_individual_uri_resolver": "PENDING",
+    "exact_sync_package_hash": "PENDING",
+    "per_sync_link_frequency_telemetry": "PENDING",
+    "fol1_cycle_session_binding": "PENDING_FOL1_INACTIVE"
+  },
+  "single_open_governance_request": {
+    "id": "MSG-MCP-OCP-GOV-DEPENDENCIES-20261101-01",
+    "status": "PUBLISHED_IN_COORDINATION_PENDING_GOVERNANCE_READ_AND_RESPONSE",
+    "no_duplicate_request_opened": true
+  },
+  "artifacts": [
+    {
+      "path": "frentes/mcp-metodologia/CONTROL-RESPONSABILIDAD.json",
+      "blob_sha": "3e6f96e919c33c3015478b7fd0f262b1bee47b0c",
+      "readback": "MATCHED"
+    },
+    {
+      "path": "frentes/mcp-metodologia/MCP-METODOLOGIA.md",
+      "blob_sha": "e6e96ee4edde7156ddc9f9a9e302faa9f8ed4ffa",
+      "readback": "MATCHED"
+    },
+    {
+      "path": "frentes/mcp-metodologia/README.md",
+      "blob_sha": "4a1909bc787f20ce2ed30c7ab4b2a4529d218fdd",
+      "readback": "MATCHED"
+    },
+    {
+      "path": "frentes/mcp-metodologia/entregas/COORDINACION-SPRINT-OCP-MCP-v0.1.md",
+      "blob_sha": "67f0b012b22d1ccb9b155595736588abb6b9821f",
+      "readback": "MATCHED"
+    },
+    {
+      "path": "frentes/mcp-metodologia/conversaciones/C-MCP-OCP-DTC-20261031-02-dialogo.jsonl",
+      "blob_sha": "1d57e6f403714eda9e0f7a85a350455c6068f11a",
+      "readback": "MATCHED"
+    },
+    {
+      "path": "frentes/mcp-metodologia/cronica/C-MCP-OCP-DTC-20261031-02.md",
+      "blob_sha": "58c1ec5af949ed4c7e4696157a5efd42002ae1ea",
+      "readback": "MATCHED"
+    }
+  ],
+  "constraints": {
+    "mcp_normativo": "DESACTIVADO",
+    "fol1": "PREPARADO_PENDIENTE_ACTIVACION_IPZ",
+    "global_and_ocp_CV_CY_A_B": "PENDIENTE/NO ASIGNADO",
+    "ep_oep_or_host_modified": false,
+    "dug_ipz_artifacts_modified": false,
+    "khora_modified": false,
+    "implementation_authorization_B": "UNCHANGED"
+  }
+}
