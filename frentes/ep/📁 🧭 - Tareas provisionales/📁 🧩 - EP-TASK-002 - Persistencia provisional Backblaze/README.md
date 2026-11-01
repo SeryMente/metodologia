@@ -1211,3 +1211,19 @@ Antes de la primera escritura B2 debe comprobarse autenticación, cuenta/región
 La lista exacta de datos que debe sobrevivir a una sustitución de equipo debe reconciliarse con GitHub, EP y los consumidores sin duplicar sus almacenes existentes. La arquitectura de alto nivel y las decisiones de seguridad no se declaran finales hasta la revisión presencial requerida por P012/P013.
 
 **Siguiente acción:** abrir, con autorización expresa del operador, una sesión de inicio de sesión de Backblaze en el perfil de navegador elegido. Nunca pedir ni pegar contraseñas o claves B2 en el chat.
+
+
+---
+
+## 26. Integración DTC con el OCP general del sprint · C-EP-DTC-PROMPT02-20261031-02
+
+EP aplica el modelo centralizador definido por el operador sin trasladar la autoridad técnica del trabajo:
+
+- **Tarea técnica fuente:** EP-TASK-002; su núcleo y evidencia permanecen en este README y el OEP.
+- **Frente/OCP ejecutor:** Entorno Persistente, `frentes/ep/`; estado de esta tarea `en_curso`.
+- **Coordinación:** la integración del sprint corresponde a Gobernanza mediante su registro de tareas GOV-TASK-*. GOV-TASK-011 define el procedimiento DTC, pero no se encontró una tarea GOV-TASK-* específica que integre EP-TASK-002. EP no asigna ni crea ese enlace por inferencia.
+- **Estado reportado y observado:** la tarea continúa `en_curso`; no hay sesión B2 autenticada ni operación de buckets/keys/upload/read-back/restauración verificada en este ciclo.
+- **Cursor de apertura DTC:** objeto de comunicación EP `main`, blob de apertura `6a1d311f6077eb1c737075da3f493c646570d099`; OEP leído al abrir blob `c0c65c473711881a1d1692bec757b283eca3eb34`; índice EP blob `f55b2db5f1ac9c44c17d1f83078e651ccdf868ed`; este task README blob `8604dcbb0157b73b61671d5aee8a2be96aedcfd1`; GOV-TASK-011 blob `5654d1450a1e64b3864558a7153c9c6b268a0d82`.
+- **Límite:** Gobernanza integrará estado y dependencias en su OCP general. EP conserva el detalle técnico, reporta hechos con evidencia y no modifica el OCP, control o backlog MCP-OCP.
+
+La incorporación del Prompt 02 en EP no prueba publicación/aceptación global ni lectura de MCP-OCP. La autoridad y los permisos B2 permanecen sin cambios.
