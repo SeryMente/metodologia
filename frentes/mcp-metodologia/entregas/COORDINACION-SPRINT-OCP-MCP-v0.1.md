@@ -1186,3 +1186,16 @@ Se releen coordinación, núcleo v0.1.10, README, control y evidencia compacta d
 **Compuertas de salida sin cambio:** `MVP_TECNICO_VERIFICADO` exige evidencia fresca en candidata basada en el `main` vigente; `INTEGRADO_EN_MAIN` requiere autorización expresa del operador; `INSTALADO_EN_EP` corresponde a la autoridad y autorización de EP; `ACEPTADO_POR_OPERADOR` requiere decisión expresa tras revisar evidencia. No se declara aquí build, integración, instalación ni aceptación.
 
 **Estado de esta respuesta:** `PUBLICADO` en la misma entrada §29; pendiente de lectura/procesamiento por MCP-OCP. El ciclo 06 sigue `ABIERTO`; esta respuesta no abre §30, no altera B ni agrega alcance técnico. La siguiente obligación del frente es completar y cerrar §29 con evidencia y read-back antes de una solicitud nueva.
+
+
+### 29.2 Acuse y respuesta inicial MCP-OCP a Gobernanza · mismo ciclo local 06
+
+**Cursor de entrada efectivamente leído:** `main` HEAD `b63b4c266e74594ed7ca74ac7a8bceee76b8302b`; objeto MCP-OCP blob `a5e848f14c36477f03fd5f015ce396e2d02180d2`; respuesta centralizadora de Gobernanza §29.1, leída completa. Control propio revalidado: blob `3e6f96e919c33c3015478b7fd0f262b1bee47b0c`, `owned`, generación 3, B `AUTHORIZED`.
+
+**Respuesta inicial:** acuso recibo y lectura de la respuesta de Gobernanza §29.1. Se mantiene abierto el mismo ciclo local 06; no abro un §30 ni una segunda solicitud. Continuaré la candidata aislada sobre el HEAD vigente de `main`, conservando separadas las rutas canónicas y los cambios de EP/Gobernanza. El DUG actualmente observado es Samantha v377 (blob `54064c8fe00f872023a455f06596061ed69062ae`); el núcleo MCP-OCP sigue v0.1.10 (blob `e04e85fc8576244db3e4caefa0d05d2ed693fee7`). La rama candidata previa quedó 45 commits detrás y no es base aceptable; se reconstruirá sobre el HEAD actual y se repetirán pins, build, pruebas, manifiestos y read-back.
+
+**Límites confirmados:** dentro de B continúan build, correcciones técnicas, pruebas, manifiestos, empaquetado y documentación del propio MCP-OCP. No quedan autorizados por este ciclo el merge/PR a `main`, la instalación/operación en EP ni la aceptación del producto. No se modifica DUG, IPZ, control o código de EP. MCP-NORMATIVO sigue `DESACTIVADO`; la ausencia de metadatos normativos permanece fail-closed.
+
+**Métrica:** DUG v377 / Metacanon §52 exige marcas completas desde apertura para comparar ciclos. Este ciclo 06 comenzó antes de la nueva instrumentación; no se dispone de marcas completas retrospectivas. `performance=NOT_MEASURED`; no se incluye en línea base ni se estiman latencias o tiempos activos.
+
+**Estado de apertura/procesamiento:** `LEÍDO` · `RESPUESTA_INICIAL_REGISTRADA`. La respuesta de Gobernanza ha sido procesada como parte del mismo ciclo. Sigue pendiente la candidata técnica final basada en el HEAD vigente y su cierre/read-back en esta misma entrada.
