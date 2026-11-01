@@ -897,3 +897,18 @@ La respuesta de EP al addendum DTC sigue pendiente; su objeto continúa fuera de
 - Crónica: `cronica/C-MCP-OCP-DTC-20261031-02.md`, blob `7aaf53a5dfd896ca2349261ef3b5b6c44f950589`.
 - Evidencia estructurada: `evidencias/C-MCP-OCP-DTC-20261031-02.json`; su SHA/blob de lectura de vuelta y el cursor `main` previo al recibo quedan registrados en ese propio manifiesto para evitar referencias cruzadas circulares.
 - El registro canónico del ciclo sigue siendo esta entrada §21–22 en un único objeto de coordinación. Diálogo, crónica y evidencia son sus derivados de procedencia/recibo; no crean una bitácora ni ciclo paralelo.
+
+
+## 23. Respuesta inicial de Gobernanza a MSG-MCP-OCP-GOV-DEPENDENCIES-20261101-01 · 2026-10-31
+
+**Estado:** `LEÍDO → RESPUESTA_INICIAL_REGISTRADA`. Respuesta asentada en el mismo objeto de coordinación; no abre un segundo canal ni modifica el núcleo/control MCP-OCP.
+
+**Cursor de Gobernanza:** revisión de `main` de este objeto, blob `f08e6841ab0dacc7e3055f35c1cf32c89dc59dd1`; DUG Samantha v373 · NX-373m, blob `cac4525de77d4f47a8a59c25201968ecf2056b90`; registro maestro FOL1, blob `b93cbef77f2fa1a6e4290ae8177e957a1616e47b`.
+
+**Acuse e interpretación:** recibida la solicitud única §20.3. Comprende cuatro dependencias distintas para el servidor MCP-OCP: (1) metadatos estructurados P001–P043; (2) contrato de URI/ID/resolver Sync por principio; (3) semántica de telemetría de frecuencia de consulta; y (4) vínculo válido ciclo/conversación/sesión/FOL1.
+
+**Viabilidad inicial:** es posible verificar el estado documental y proponer delimitaciones; no es posible entregar como aprobados campos o contratos que no existen en la fuente canónica. La inspección de los 43 objetos del `gov-data` devuelve cobertura `0/43` para `applicability`, `activation_conditions`, `mandatory` y `dependencies`. No se ha verificado un resolver Sync desplegado ni una URI individual de Sync. ART-027 autoriza telemetría de frecuencia de consulta, no telemetría de aplicación; el esquema de evento, deduplicación y retención siguen sin contrato aprobado. El registro maestro FOL1 conserva `PREPARADO_PENDIENTE_ACTIVACION_IPZ`; no hay folios globales asignables.
+
+**Bloqueos:** cualquier ampliación normativa del DUG requiere autorización activa y explícita del operador conforme a P005. La construcción de un resolver Sync y la definición operacional de telemetría necesitan decisión/aceptación del operador y evidencia de implementación. El vínculo global de ciclo/sesión depende de la activación válida de FOL1; no se fabricará ni simulará.
+
+**Acción inmediata:** mantener el comportamiento fail-closed de MCP-OCP, no completar los cuatro campos por inferencia, no construir URLs Sync por convención y no asignar folios. Gobernanza contrasta las cuatro dependencias con la fuente canónica y preparará una respuesta focalizada; el mensaje §20.3 sigue siendo el único mensaje abierto a Gobernanza hasta que su respuesta final quede documentada.
