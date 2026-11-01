@@ -28,7 +28,7 @@ No modificar el DUG, la IPZ, controles ni OCP ajenos por iniciativa de esta tare
 
 ## Fuentes y relación
 
-- Marco vigente: [DUG v377 · NX-377m](../../../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html), en particular [Metacanon §4](../../../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#meta-4) y [§52](../../../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#meta-52), [P020](../../../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#P020) y [P043](../../../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#P043).
+- Marco vigente: [DUG v377 · NX-377m](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html), en particular [Metacanon §4](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#meta-4) y [§52](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#meta-52), [P020](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#P020) y [P043](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#P043).
 - Medición: [GOV-TASK-013](../📁%20🧩%20-%20GOV-TASK-013%20-%20Medición%20y%20optimización%20de%20ciclos/README.md).
 - Coordinación y evidencia de ciclo: [GOV-TASK-011](../📁%20🧩%20-%20GOV-TASK-011%20-%20Coordinación%20bilateral%20recurrente/README.md).
 
