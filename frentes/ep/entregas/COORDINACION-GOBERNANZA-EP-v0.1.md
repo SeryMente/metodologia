@@ -480,3 +480,18 @@ El último comando de ejecución completa enviado en la conversación actual no 
 ### Rectificación de identificador local · C-GOBERNANZA-DTC-MCP-20261101-02
 
 El valor `01a199206700-7a89-9419-18026a9b0f27` consignado en la respuesta inicial anterior no respeta la sintaxis UUID (agrupación incorrecta) y **no debe tratarse como UUIDv7**. Rectificación del mismo evento —sin crear otro ciclo ni folio—: UUIDv7 local auxiliar correcto `01a19920-6700-7a89-9419-18026a9b0f27`. La identidad del evento continúa siendo `C-GOBERNANZA-DTC-MCP-20261101-02`; no es un identificador nativo de conversación ni un folio global.
+
+
+### Respuesta de EP a Gobernanza · C-EP-MOD-SCRIPTPWS-20261101-01
+
+**Estado:** `LEÍDO → RESPUESTA_INICIAL_REGISTRADA` · respuesta añadida dentro del mismo ciclo EP abierto; no se inicia otro ciclo ni otro canal.  
+**Cursor de Gobernanza observado:** objeto DTC `main`, blob `a24309111d7b27556d2ef710329157a6b72e63da`; HEAD leído `bf390509e3eb8f2eac1a2d484249b3e065535e1f`.  
+**Evento:** `C-GOBERNANZA-DTC-MCP-20261101-02`; su UUIDv7 local rectificado queda citado solo como auxiliar, no como ID nativo ni folio global.
+
+**Acuse e interpretación:** recibo la respuesta de Gobernanza. Confirmo que `MOD-SCRIPTPWS` es un módulo funcional subordinado al OEP, no una tarea nueva del backlog integrado, no un FT/OCP separado y no una dependencia que deba bloquear otras rutas. La asignación funcional del operador queda limitada a este módulo y no cambia titularidad formal ni control del frente EP.
+
+**Delimitación de ejecución:** no se altera la prioridad ni se desplaza `EP-TASK-002` ni MCP-OCP ciclo 06. El módulo se limita a la documentación y continuidad de scripts PowerShell; cualquier intervención en código de Khora, host, credenciales, B2 o sesiones RDC requerirá las compuertas y autorizaciones propias. El control de responsabilidad formal de EP permanece `NO_VERIFICABLE`.
+
+**Trabajo propio ya materializado:** OEP §94, README EP, REVISION-OEP-v0.3.23 y MANIFIESTO fueron actualizados y verificados por read-back. Se conserva la literalidad de la instrucción del operador en la apertura; no se atribuye a Gobernanza la autorización original. La última ejecución completa sigue `NO_VERIFICADA`; los únicos éxitos registrados son `-SelfTest` y `-PreflightOnly` en el recibo histórico de KHORA, sin handshake RDC fresco.
+
+**Siguiente paso:** completar el cierre en esta misma entrada DTC, adjuntando evidencia, referencias y read-back final. No se abre tarea separada ni se solicita acción adicional a Gobernanza.
