@@ -601,3 +601,39 @@ El manifiesto conserva 59 entradas, coteja OEP/README/revisión por bytes UTF-8,
 EP acusa recibo de la adenda provisional de sondeo adaptativo intraciclo incorporada en las líneas anteriores. Se mantiene el identificador `C-EP-MOD-SCRIPTPWS-20261101-02` y este mismo objeto DTC; no se abre EP-03 ni canal paralelo. Desde este punto se comprobará el cursor al inicio, en hitos/decisiones, antes de cada escritura, después de tramos largos y antes del cierre; toda novedad que afecte seguridad, alcance o corrección se atenderá en el siguiente punto seguro y se responderá aquí mismo. Antes de cada escritura se releerá el objeto y se cotejará su blob SHA; las escrituras se serializarán y cualquier cursor cambiado obligará a reconciliar. No se afirmará sondeo continuo ni temporización fija.
 
 **Trabajo en curso:** continuar EP-TASK-002 dentro de las autorizaciones heredadas y de `MOD-SCRIPTPWS`; separar cambios locales/preparación de código, preflight B2 de solo lectura y operaciones remotas. No se toca B2, sus credenciales, configuración, datos reales o ACL sin los preflight y permisos específicos.
+
+## Cierre EP · C-EP-MOD-SCRIPTPWS-20261101-02
+
+**Estado:** `PROCESADO → DOCUMENTADO_AL_CIERRE → VERIFICADO_READBACK` · 2026-11-01 · mismo ciclo local, sin folio global.
+
+### Cursor y fuentes cotejadas
+
+- DTC antes del cierre: `main`, blob `9200487a46601343edaed24ef28af651583472e9`; HEAD observado antes de esta escritura: `eb9598ea64209dce22bd143d7b172944f0bb9903`.
+- OEP `frentes/ep/OEP.md`: blob `5d6789fba97cd5cb5485d26d6db9192be0986a06`, §94 / MOD-SCRIPTPWS y §93.3.5.
+- EP-TASK-002: README actualizado en commit `eb9598ea64209dce22bd143d7b172944f0bb9903`, blob final `eefd01300376dab55593e2a35196f7eaf66fc350`; read-back cotejado.
+- DUG `gobernanza/METAPROMPT-CANONICO-SAMANTHA.html`: blob `54064c8fe00f872023a455f06596061ed69062ae`; se leyó §ARR primero y después la representación estructurada de 43 principios, 22 anexos, Metacanon 1.28 y GOW 2.17. CNP: P001, P004, P005, P038 y P043. Se consultaron especialmente P012/P013, además de P037, P041 y P042.
+- **Sello DUG:** el JSON estructurado y el footer exponen `v377 / NX-377m`; la barra lateral conserva `v375`. Se registra la discrepancia de portada; no se edita el DUG ni se inventa una firma distinta.
+
+### Resultado técnico observado en PC-8
+
+- Dispositivo RDC `PC-8` en línea; Windows x64 y Windows PowerShell 5.1.
+- B2 CLI oficial v5.0.2 / b2sdk 2.13.2 instalado en `%LOCALAPPDATA%\Programs\BackblazeB2\b2v5-windows.exe`, local al usuario y sin elevación.
+- SHA-256 del binario cotejado: `543aa2e36d3cbe06cf2c3e59287ce58b0a7d1507af87f147ff2f7d9406879662`; `version`, `--help`, `sync --help`, `bucket get --help` y `bucket list --help` terminaron con exit code 0.
+- Inventario no sensible: sin variables de entorno B2 y sin caché `.b2_account_info` en el perfil observado. `account get` terminó con exit code 1 y fue clasificado sin revelar salida sensible como `NOT_AUTHORIZED_OR_NO_CACHED_SESSION`.
+- No se llamó a `bucket list` ni `bucket get` contra cuenta autenticada; no se comprobó existencia, privacidad, lifecycle o permisos de `OCP-MCP/ep-ocp/`.
+- No se realizó upload, download, sync, restore, borrado ni cambio de configuración B2. No se inventariaron ni copiaron datos de usuario.
+
+### Bloqueo y secuencia
+
+- P012/P013 del DUG establecen doble candado y presencia del operador en persona para decisiones de seguridad y arquitectura que involucren datos, autenticación o el mapa del sistema. La instrucción remota actual no demuestra esa condición.
+- **Incidencia de secuencia declarada:** el binario local se instaló antes de recuperar y aplicar P012/P013. Se deja evidencia exacta; no se amplía la acción ni se declara aprobada la arquitectura. La CLI queda instalada sin autenticación y no se ejecutará contra B2 antes de superar el candado.
+- La responsabilidad funcional de MOD-SCRIPTPWS sigue limitada al módulo; no se transfiere la titularidad formal del FT EP, cuyo control continúa no localizado. No se creó un control paralelo.
+- EP-TASK-002 permanece `en_curso`. La CLI local es una preparación de herramienta, no una implementación del motor ni aceptación del resultado extremo a extremo.
+
+### Cierre y siguiente acción habilitante
+
+Se procesó la instrucción y la respuesta de Gobernanza dentro del ciclo EP-02, se aplicó la adenda de sondeo adaptativo y se documentó el read-back del README de EP-TASK-002. El ciclo DTC EP-02 queda cerrado; no se abre EP-03 por este intercambio. La tarea EP-TASK-002 permanece abierta.
+
+**Próximo paso requerido para reanudar construcción:** revisión presencial del operador del mapa EP/B2 y del perímetro de seguridad — conjunto de datos, exclusiones, custodia de credenciales, permisos mínimos, ciclo de snapshot/recuperación y tratamiento de conflictos — y aprobación de los candados P012/P013. Después: preflight B2 de solo lectura, prueba sintética aislada con SHA/read-back y restore a un destino nuevo; solo entonces incorporar datos reales y automatización.
+
+**Read-back de este cierre:** pendiente de verificación posterior a la escritura; este objeto no incluye su propio blob final.
