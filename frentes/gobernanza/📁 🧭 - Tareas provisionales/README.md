@@ -43,7 +43,7 @@ GOV-TASK-001, GOV-TASK-006, GOV-TASK-007 y GOV-TASK-008 se encuentran `en_curso`
 4. La responsabilidad de cada objeto hereda el control del OCP Gobernanza; no se crean sesiones independientes.
 5. La existencia de estos registros no autoriza canonizar Tareas, modificar `ambitos/tareas/` ni crear integraciones externas.
 6. El cierre de una tarea exige atender su enunciado y recuperar evidencia de la fuente canónica pertinente.
-7. GOV-TASK-011 aplica la DTC — Dinámica Trilateral por Ciclo: en cada ciclo Gobernanza verifica apertura, respuesta prioritaria, procesamiento, cierre documental y read-back de Gobernanza, EP y OCP MCP.
+7. GOV-TASK-011 aplica la DTC — Dinámica Trilateral por Ciclo: Gobernanza centraliza e integra el OCP general del sprint, gestiona decisiones con el operador, mantiene tareas propias e integradoras y verifica la apertura, respuesta, procesamiento, cierre y read-back de los tres frentes en cada ciclo real.
 
 ## Referencias
 
@@ -85,3 +85,35 @@ El cierre del frente exige IPZ instalado y verificado, admisión efectiva, proto
 El registro queda actualizado a once objetos provisionales. GOV-TASK-011 establece la DTC — Dinámica Trilateral por Ciclo; Gobernanza verifica ciclo a ciclo la apertura, respuesta prioritaria, procesamiento, documentación de cierre y read-back de los tres frentes. Los objetos EP/OCP siguen con respuesta inicial pendiente hasta prueba. GOV-TASK-010 ya existe y se incorpora al índice; no se crea tarea duplicada. GOV-TASK-009 pasa a `en_curso` por su dependencia directa con el primer enlace IPZ (§ARR/GOW). GOV-TASK-002 queda `cancelada` como despliegue Sink/Cloudflare activo, preservado únicamente como antecedente; GOV-TASK-003 continúa pendiente como aceptación E2E de OCP MCP/Sync. Las tareas 004 y 005 siguen diferidas. La responsabilidad de las once tareas continúa heredada del OCP Gobernanza, generación 9; ninguna tiene control ni folio propio.
 
 Fuente rectora: [dictado](../conversaciones/C-GOBERNANZA-VECTOR-SEMANTICO-01-dialogo.jsonl) · [crónica](../cronica/C-GOBERNANZA-VECTOR-SEMANTICO-01.md) · [evidencia](../evidencias/C-GOBERNANZA-VECTOR-SEMANTICO-01.json).
+
+
+---
+
+## Endurecimiento DTC 02 · Registro de tareas como OCP general del sprint · 2026-10-31
+
+El presente índice es la representación operativa del **OCP general del sprint**, alojado dentro del OCP de Gobernanza. El conjunto de tareas provisionales bajo este directorio reúne el trabajo propio de Gobernanza y la integración transversal necesaria para completar los resultados del sprint. No es un cuarto OCP ni crea un control, sesión o titularidad independiente.
+
+### Regla de integración
+
+- Las tareas GOV-TASK-* representan entregables propios de Gobernanza y resultados integradores, decisiones, dependencias y criterios de aceptación del sprint.
+- Cuando un resultado dependa de EP o MCP-OCP, conservar el identificador de su tarea de origen, la ruta de su OCP, el cursor y la evidencia. Registrar aquí el vínculo y el estado integrado, sin duplicar su descripción operativa ni apropiarse de su backlog.
+- Los OCP de EP y MCP-OCP siguen siendo las fuentes responsables del detalle técnico y del estado interno de su trabajo. Este índice mantiene la perspectiva consolidada.
+- El estado reportado por un frente se marca como reportado hasta que Gobernanza pueda comprobar la fuente y evidencia. El cierre exige el criterio de verdad aplicable, evidencia real y read-back.
+- Gobernanza también ejecuta trabajo propio: análisis, investigación canónica, diseño de contratos, descomposición de tareas, propuestas, pruebas de aceptación, documentación y reconciliación dentro de su alcance autorizado.
+- Toda tarea nueva o cambio material debe enlazarse con el objetivo rector, su criterio de verdad, fuente responsable, dependencias, evidencia exigida y siguiente acción. No se generan tareas duplicadas para reflejar el mismo trabajo.
+- El operador y Gobernanza gestionan y deciden en esta conversación. Las propuestas de EP/MCP-OCP alimentan la decisión; no autorizan por sí mismas cambios fuera de su ámbito.
+
+### Criterio de verdad y estados
+
+El DUG canónico actual de SeryMente/metodologia/main es la fuente normativa preponderante. Para cada tarea, Gobernanza deriva el criterio verificable del DUG y del mandato explícito del operador. Distingue objetivo, requisito normativo, estado reportado, estado observado, estado verificado y aceptación. Ninguna tarea se completa por una declaración aislada ni por un cambio publicado sin lectura de vuelta.
+
+Cuando una definición, campo, URI, contrato o permiso no esté en el canon, se registra como ausente/no verificado y se mantiene la compuerta cerrada. No completar por inferencia ni presentar propuestas como decisiones adoptadas.
+
+### Cadencia de actualización
+
+En cada ciclo real de Gobernanza se revisan los cursores de EP y MCP-OCP, se procesan los mensajes disponibles, se concilian los avances y se actualiza este índice cuando cambie el estado integrado o exista un delta material. No hay vigilancia continua entre ciclos ni se presupone que un frente haya leído una publicación sin su respuesta persistida.
+
+### Reconciliación de términos
+
+Las menciones históricas a Sync en snapshots de reorientación no alteran el DUG. ART-027 vigente denomina el mecanismo individual Sink, con aliases especificados pero todavía pendientes de despliegue/prueba. Hasta una decisión autorizada y evidencia nueva, este índice no debe presentar Sync como servicio operativo ni sustituir el contrato canónico.
+
