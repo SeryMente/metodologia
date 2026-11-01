@@ -883,3 +883,14 @@ Ambos archivos mantienen exactamente el mismo blob SHA en `main` y en la rama de
 **Corrección/previsión:** descartar por completo ese helper. Sustituirlo por una implementación revisada contra los vectores estándar SHA-256, probar al menos el vector vacío, "abc" y un texto UTF-8 con BOM/acentos, y además cotejar un archivo existente contra el hash ya publicado en ep-integrity-manifest.sha256. No escribir ni regenerar el manifiesto hasta que todas las pruebas coincidan.
 
 **Estados:** PREFLIGHT_FALLIDO · RCA_VERIFICADA · SIN_MUTACIÓN_REMOTA · CONTADOR_0. No se repitió el cálculo defectuoso ni se reintentó la escritura.
+
+
+### Incidencia de preflight SHA-256 · tabla de constantes incompleta · 2026-11-01
+
+**Operación:** construcción del payload completo de actualización KHORA 7.5.6 / EP 1.0.4, antes de cualquier escritura. **Síntoma literal:** `Error: SHA256 known-vector preflight failed`. **Impacto:** la función de preflight abortó antes de invocar `update_file`; ninguna ruta ni ref del repositorio KHORA fue modificada por este intento.
+
+**Causa raíz VERIFICADA:** durante el traslado del helper SHA-256 previamente corregido al payload amplio se omitió la constante `0x5cb0a9dc` de la tabla K. La tabla quedó con 63 elementos en vez de 64; el vector conocido SHA256("abc") rechazó la implementación antes de la fase de escritura.
+
+**Corrección/previsión:** reconstruir el helper exclusivamente desde la versión cuyo vector `abc`, vector vacío, UTF-8 y cotejo con el manifiesto anterior ya pasaron; validar explícitamente `K.length === 64`, los vectores estándar y el SHA de archivos existentes antes de construir cambios o llamar herramientas de escritura. Mantener la fase completa de preflight separada de la fase de mutación.
+
+**Estados:** PREFLIGHT_FALLIDO · RCA_VERIFICADA · SIN_MUTACIÓN_REMOTA · CONTADOR_0. El payload con tabla incompleta se descarta; no se repite.
