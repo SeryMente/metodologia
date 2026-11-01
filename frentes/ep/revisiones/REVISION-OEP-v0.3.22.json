@@ -1,0 +1,97 @@
+{
+  "schema": 1,
+  "version": "v0.3.22 / VCU-EP-v24",
+  "method": {
+    "dug": "Samantha v373 / NX-373m",
+    "metacanon": "1.26",
+    "gow": "2.14"
+  },
+  "event": "EP receives and incorporates Prompt Adicional 02 in its own OCP, adopting the Governance-centered sprint OCP model within EP's execution boundary.",
+  "dtc_cycle": "C-EP-DTC-PROMPT02-20261031-02",
+  "uuidv7_local": "01a194ca-0c88-7561-8b1c-426f85de4ad1",
+  "incoming_prompt": {
+    "source": "operator message directly in current EP conversation",
+    "governance_task": "GOV-TASK-011",
+    "governance_task_blob": "5654d1450a1e64b3864558a7153c9c6b268a0d82",
+    "governance_task_state": "PREPARADO_NO_PUBLICADO in main at preflight",
+    "ep_receipt": "RECIBIDO_EN_CONVERSACION_LEIDO_RESPUESTA_INICIAL_REGISTRADA",
+    "mcp_ocp_receipt": "NOT_VERIFIED"
+  },
+  "source_cursor": {
+    "main_head_before_ep_changes": "f143eea3e81b97b93825ecc7c3d80e720114215d",
+    "coordination_blob_before_opening": "1131bb584268f393eb16c7a19120eb800d2043cd",
+    "coordination_blob_after_opening": "6a1d311f6077eb1c737075da3f493c646570d099",
+    "dug_blob": "cac4525de77d4f47a8a59c25201968ecf2056b90",
+    "governance_task_index_blob": "6cac7f4d432803f90f8dddcdb3701a23ff3a3897"
+  },
+  "interpretation": {
+    "governance": "owns the general sprint OCP/integration and central decisions with operator",
+    "ep": "owns technical detail/evidence for OEP, environment, persistence, hosting, installation and operation within authorization",
+    "mcp_ocp": "owns its server/source/test/package OCP; not modified by EP",
+    "cross_task_mapping": "EP-TASK-002 remains original task; no GOV-TASK-* technical mapping identified or invented; GOV-TASK-011 is the DTC coordinator, not a duplicate B2 task",
+    "source_of_truth": "DUG full precedence; CNP five category-A principles plus all other relevant principles"
+  },
+  "checks": {
+    "prompt02_received_directly_from_operator": true,
+    "original_prompt_preserved_in_existing_dtc_object": true,
+    "opening_and_initial_response_recorded": true,
+    "oep_section93_added": true,
+    "task_index_reference_updated": true,
+    "EP_TASK_002_reporting_boundary_added": true,
+    "readback_exact_for_modified_documents": true,
+    "no_governance_files_modified": true,
+    "no_mcp_ocp_files_modified": true,
+    "no_control_created_or_transferred": true,
+    "no_dug_or_ipz_modified": true,
+    "no_host_or_code_changed": true,
+    "no_b2_operation_performed": true
+  },
+  "findings": {
+    "ep_control_file": "NOT_LOCATED in main/frentes/ep/ and documentation branch checked; no title/generation was inferred",
+    "governance_control": "Governance generation 9 documented in its index; read only, not modified",
+    "global_folio": "FOL1 remains prepared and inactive; no global folio assigned",
+    "b2": "EP-TASK-002 remains en_curso; OCP-MCP only; auth/bucket/key/upload/readback/restore unverified or not executed"
+  },
+  "changed_files": [
+    {
+      "path": "frentes/ep/OEP.md",
+      "commit": "4da595241290b42b4dac5f4a285480539b338be2",
+      "blob": "f98db7c49c9c8a40bf55bf93a0d2db278e3c0d7e",
+      "bytes": 237135,
+      "sha256": "06251151e6457c963fd49d4f9f02403985632d2b638b0eaf61b801dd1a95e8a0",
+      "readback_exact": true
+    },
+    {
+      "path": "frentes/ep/📁 🧭 - Tareas provisionales/README.md",
+      "commit": "a88747598fe1627e63ecaf21fbe181c65a492c4a",
+      "blob": "3c1d1bb91bc4152dd783f7f3b12ba1f986c40018",
+      "bytes": 8494,
+      "sha256": "787f6aa40bbe6ef1be0c7aa3a36c978281c0c0d7080f35f1aff63f6219e98764",
+      "readback_exact": true
+    },
+    {
+      "path": "frentes/ep/README.md",
+      "commit": "051eb6c239ed1cdc560bfd03979e3861e36ceb7c",
+      "blob": "f1264cfb15bf2cc1697f7f95dd4077485bcbe571",
+      "bytes": 1365,
+      "sha256": "92b855349bbb065799b7c348ec65dc8c05e95a956639150171c72bf79de88364",
+      "readback_exact": true
+    },
+    {
+      "path": "frentes/ep/📁 🧭 - Tareas provisionales/📁 🧩 - EP-TASK-002 - Persistencia provisional Backblaze/README.md",
+      "commit": "c5c681602dfd8cbd8e9375874a63a75641f6b7f3",
+      "blob": "6d932628ac0afdf1039915bdd508f39f641a590c",
+      "bytes": 154765,
+      "sha256": "9d29cdd3f272bd1724b1633bb919efdbc727ea30c8bb934bcdff6854e69d7edd",
+      "readback_exact": true
+    }
+  ],
+  "limits": [
+    "Prepared prompt in Governance does not imply published or accepted; this EP cycle records direct operator delivery only.",
+    "No receipt, acceptance or processing by MCP-OCP is claimed.",
+    "No formal EP responsibility control was located; no transfer/generation change or parallel control was created.",
+    "Backblaze authentication and all B2 operations remain pending.",
+    "This revision records a documentary integration in EP only; Governance's central OCP state remains under Governance authority."
+  ],
+  "source_main_head_at_revision": "be68da2b91d6e1dc322532cf921e41f851d66aef"
+}
