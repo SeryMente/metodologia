@@ -2,9 +2,9 @@
   "schema": "ser-y-mente-document-manifest/v1",
   "front": "Gobernanza",
   "ocp_path": "frentes/gobernanza/",
-  "event_id": "C-GOBERNANZA-OCPMSP-DECISIONES-01",
-  "cycle_folio": "C-20261029-8B41F2D7",
-  "recorded_on": "2026-10-31",
+  "event_id": "C-GOBERNANZA-RETOMA-08",
+  "cycle_folio": null,
+  "recorded_on": "2026-11-01",
   "status": "PERSISTIDO_Y_VERIFICADO",
   "rule": "P041 + ART-014 + ART-022; conservar originales sin transformar y declarar persistencia solo tras lectura de vuelta y cotejo.",
   "documents": [
@@ -112,25 +112,46 @@
         "readback_blob_sha": "d17f575fcd5bf0c0da1bb459a40e42e47c081a31",
         "verified_on": "2026-10-31"
       }
+    },
+    {
+      "document_id": "DOC-GOV-CHATGPT-GOBERNANZA-20261101-1518",
+      "original_name": "ChatGPT-GOBERNANZA-20261101-1518.md",
+      "path": "documentos/originales/ChatGPT-GOBERNANZA-20261101-1518.md",
+      "class": "original",
+      "source_path": "conversation-upload:/mnt/data/ChatGPT-GOBERNANZA-20261101-1518.md",
+      "source_device": "ChatGPT conversation upload",
+      "captured_via": "Archivo adjunto recibido en esta conversación; texto UTF-8 reconstruido desde el adjunto, SHA-256 cotejado con el archivo de origen y lectura de vuelta exacta desde SeryMente/metodologia/main.",
+      "media_type": "text/markdown",
+      "size_bytes": 161472,
+      "sha256": "1ce5e272c9d4f80da83a5c5d4be4e36eecf8ebc29001132d5e998af8bacca0d6",
+      "git_blob_sha": "a8bf0cb9f1bf3503827c6013e56abffa1f06e697",
+      "status": "PERSISTIDO_Y_VERIFICADO",
+      "verification": {
+        "readback": true,
+        "content_cotejo": true,
+        "method": "Exact UTF-8 comparison; source upload SHA-256 equals main read-back SHA-256; Git blob SHA verified.",
+        "readback_blob_sha": "a8bf0cb9f1bf3503827c6013e56abffa1f06e697",
+        "verified_on": "2026-11-01"
+      }
     }
   ],
-  "originals_commit_sha": "533b6128caf4e9110b8b58bec49979489fb350f5",
+  "originals_commit_sha": "275854bb5d0a85cd9adb2f10ee65fcd41655e764",
   "verification": {
-    "verified_on": "2026-10-31",
-    "readback_method": "GitHub Contents API fetch_file encoding=base64, comparación exacta contra cada archivo local leído por RDC",
+    "verified_on": "2026-11-01",
+    "readback_method": "GitHub Contents API fetch_file UTF-8 exact comparison; SHA-256 independently matched against source upload; Git blob SHA read back.",
     "result": "PASS",
     "byte_for_byte_match": true,
-    "documents_verified": 5,
-    "note": "Original 20261031-1432 read back from origin/main; 637277 bytes and SHA-256 match RDC source.",
+    "documents_verified": 6,
+    "note": "Six originals registered. Latest upload 20261101-1518: 161472 bytes; SHA-256 and exact UTF-8 read-back match.",
     "latest_document_status": "PERSISTIDO_Y_VERIFICADO",
-    "latest_document_id": "DOC-GOV-CHATGPT-GOBERNANZA-20261031-1432"
+    "latest_document_id": "DOC-GOV-CHATGPT-GOBERNANZA-20261101-1518"
   },
   "latest_addition_event": {
-    "event_id": "C-GOBERNANZA-RETOMA-07",
-    "recorded_on": "2026-10-31",
-    "document_id": "DOC-GOV-CHATGPT-GOBERNANZA-20261031-1432",
+    "event_id": "C-GOBERNANZA-RETOMA-08",
+    "recorded_on": "2026-11-01",
+    "document_id": "DOC-GOV-CHATGPT-GOBERNANZA-20261101-1518",
     "verification_status": "PERSISTIDO_Y_VERIFICADO",
-    "responsibility_transfer": "C-GOBERNANZA-RETOMA-07",
-    "verified_on": "2026-10-31"
+    "responsibility_transfer": "C-GOBERNANZA-RETOMA-08",
+    "verified_on": "2026-11-01"
   }
 }
