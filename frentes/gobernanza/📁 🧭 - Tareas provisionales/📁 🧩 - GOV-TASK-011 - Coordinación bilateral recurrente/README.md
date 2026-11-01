@@ -177,3 +177,19 @@ No inventes folio global. Mientras FOL1 permanezca inactivo, usa solo identifica
 ### Condición de aceptación
 
 El contrato se considera incorporado al frente únicamente cuando el responsable lo haya leído, respondido, procesado dentro de su propio ciclo, documentado en su OCP existente y verificado mediante read-back. La publicación del prompt por Gobernanza solo prueba PUBLICADO; no prueba LEÍDO, ACEPTADO ni APLICADO.
+
+
+---
+
+## Revalidación posterior · cierre del ciclo local EP · 2026-10-31
+
+Una lectura nueva del mismo objeto EP encontró una actualización posterior al snapshot anterior. EP completó el ciclo local DTC C-EP-DTC-PERSISTENCIA-METODOLOGIA-20261031-01 en la entrada final de ese objeto:
+
+- **Secuencia registrada:** LEÍDO → RESPUESTA_INICIAL_REGISTRADA → PROCESADO → DOCUMENTADO_AL_CIERRE → VERIFICADO_READBACK.
+- **Identificador auxiliar local:** UUIDv7 01a194ba-967a-7b0f-896f-599034966c37, no ID nativo ni folio global.
+- **Objeto DTC en main:** blob 1131bb584268f393eb16c7a19120eb800d2043cd; commit de cierre f1d60570cd80c97d2c70c1fbb11f59ca7ba06c19.
+- **Artefactos relacionados observados:** OEP v0.3.21 / VCU-EP-v23, blob c0c65c473711881a1d1692bec757b283eca3eb34; índice EP, blob f55b2db5f1ac9c44c17d1f83078e651ccdf868ed; revisión REVISION-OEP-v0.3.21.json, blob 87419509768c0c77a0e18af83e1f94603bdd4142; manifiesto de revisión, blob b3a6822de30eaf6df5dc17ba8bc4058bffa60c56. El manifiesto declara lectura exacta y huellas SHA-256/Git de los documentos afectados.
+- **Estado:** CUMPLE_VERIFICADO para la compuerta documental de este ciclo local EP. La tarea EP-TASK-002 permanece en_curso: autenticación B2, bucket/clave, cargas, read-back remoto y restauración siguen no verificados/no ejecutados.
+
+Esta observación supersede la fotografía inmediatamente anterior que dejaba el ciclo EP abierto. No cierra la tarea de persistencia ni la DTC recurrente: en cada ciclo futuro se repetirá la compuerta. La DTC global/GOV-TASK-011 permanece en_curso.
+
