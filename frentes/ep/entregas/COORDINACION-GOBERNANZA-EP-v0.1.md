@@ -167,7 +167,7 @@ La instrucción canónica de OEP §91 y EP-TASK-002 §24 establece **`OCP-MCP` c
 
 ### Procesamiento ejecutado
 
-1. Se reconciliò este mismo objeto provisional, con todo su historial, desde `docs/metacanon-objetos-20261011` a `main`; no se creó un segundo registro.
+1. Se reconcilió este mismo objeto provisional, con todo su historial, desde `docs/metacanon-objetos-20261011` a `main`; no se creó un segundo registro.
 2. OEP actualizado a v0.3.21 / VCU-EP-v23; §92 documenta la ubicación canónica del objeto DTC en `main`.
 3. Índice de tareas actualizado para enlazar el objeto reconciliado y OEP §§90–92.
 4. README de EP corregido para reconocer `main` como rama canónica y enlazar OEP, comunicación DTC y tareas.
