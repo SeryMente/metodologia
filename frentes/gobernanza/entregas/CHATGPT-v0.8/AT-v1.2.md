@@ -4,7 +4,7 @@
 **Frente responsable:** Gobernanza · `frentes/gobernanza/`  
 **Evento:** C-GOBERNANZA-DOBLE-CORRESPONSABILIDAD-01  
 **Ciclo:** C-20261029-5510927B  
-**Fuente normativa cotejada:** DUG v375 · NX-375m · `gobernanza/METAPROMPT-CANONICO-SAMANTHA.html` · blob `acd16402561311d4eef4a43005efea7498983352`  
+**Fuente normativa cotejada:** DUG v375 · NX-375m · `gobernanza/METAPROMPT-CANONICO-SAMANTHA.html` · blob `c993a59163c2c163b17b599a003919b53c5cf6a8`  
 **Metacanon:** 1.26 · **GOW:** 2.15 · **taxonomía:** 1.3 · **principios/anexos:** 43/21.
 
 ## 1. Propósito
