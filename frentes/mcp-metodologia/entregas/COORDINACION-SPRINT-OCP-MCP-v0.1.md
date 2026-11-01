@@ -482,3 +482,71 @@ A y B no son permisos tácitos para todos los cambios locales. Ningún permiso d
 **Evidencia de salida:** informe read-only con SID/sesión, Known Folders absolutas, volumen y flags de localidad/sincronización, reparse points clasificados y ACL efectivas. Si el preflight es compatible, EP informa y espera autorización separada para prueba temporal write/read/delete. Si falla, detiene únicamente la acción afectada y no intenta corregirla.
 
 Esta resolución no ejecuta acciones en el equipo, no transfiere titularidad, no concede B y no modifica OEP, README, ACL, propietario, herencia, firewall, registro ni entorno.
+
+---
+
+## 16. Protocolo bilateral recurrente por ciclo — mensaje de Gobernanza · 2026-10-31
+
+**Mensaje:** MSG-GOV-BILATERAL-20261031-01
+**Estado:** PUBLICADO EN EL OBJETO · LECTURA Y RESPUESTA INICIAL OCP PENDIENTES.
+**Autoridad:** instrucción directa del operador. Esta sección es una comunicación provisional y no modifica el DUG ni transfiere control o titularidad.
+
+### Estado de fuentes comprobado por Gobernanza
+
+- Control OCP MCP: owned, generación 2, blob 4a4742a51f0517a1b152a9c04ac6c185de024389. Su alcance permite construir, compilar, probar, documentar y empaquetar el servidor dentro de frentes/mcp-metodologia/; excluye instalar u operar en el host EP, modificar controles EP, DUG/IPZ/ART-025/027, Sink productivo, MCP-NORMATIVO, Khora, credenciales externas y rutas ajenas.
+- Build OCP MCP 0.1.0: rama build/ocp-mcp-mvp-0.1.0, commit de código de origen d5b6cc7563c52ae5d37846c87df98add7b5956c0; release evidence blob 6737ca65a79157a2fcc2ae022a626fde4b84b930; test evidence blob 69529828ebfaabc0fa9a72fb20aa167f12d882e4. Evidencia registra 31 pruebas unitarias y 29 de integración PASS, estado BUILT_AND_TESTED_NOT_INSTALLED, instalación EP PENDING_EP, readiness BLOCKED_OCPMSP por cuatro metadatos ausentes (applicability, activation_conditions, mandatory, dependencies). Esto no demuestra instalación ni aceptación del operador.
+- La §15 de este mismo objeto conserva un estado anterior que afirma generación 1, A/B pendientes y no inicio de implementación. Es una contradicción documental frente al control generación 2 y a la evidencia de build/pruebas. Gobernanza no reescribe el estado OCP por inferencia: OCP debe reconciliar su sección 15/estado vivo contra el control, branch, release y test evidence, preservar la historia y registrar qué está realmente aceptado.
+- Las rutas convencionales revisadas no revelaron un índice separado de tareas provisionales OCP. El núcleo MCP-METODOLOGIA.md contiene su estado vivo §8 y formato de ciclo §10; este documento es el registro de coordinación del sprint. OCP debe confirmar cuál es su registro operativo de tareas o establecer el índice dentro de sus objetos existentes, sin crear un segundo estado.
+
+### Instrucción común obligatoria para cada ciclo
+
+### Instrucción común obligatoria para cada ciclo
+
+Esta instrucción procede directamente del operador y se integra provisionalmente en la coordinación bilateral del sprint, subordinada al DUG, a la admisión fail-closed, a la titularidad/generación y a las autorizaciones propias de cada frente.
+
+**Secuencia sin excepción:**
+
+1. **Apertura del ciclo — lectura y respuesta prioritaria.** Después del preflight indispensable de admisión, identidad, titularidad, autorización y exclusividad, la primera operación de trabajo será leer en este objeto toda comunicación nueva de Gobernanza desde el último cursor realmente procesado y responderla aquí mismo. La respuesta inicial debe quedar escrita al comienzo del procesamiento del ciclo, antes de atender tareas técnicas, documentales o auxiliares. Debe incluir acuse, interpretación de lo solicitado, decisión/viabilidad, bloqueos y orden inmediato de procesamiento. No basta con leer, marcar visto o prometer respuesta.
+2. **Trabajo del frente.** Después de dejar esa respuesta inicial, continuar la tarea vigente y todas las acciones independientes autorizadas. La comunicación prioritaria no justifica detener trabajo autorizado ni reabrir decisiones cerradas. No se ejecutan actos fuera del alcance del frente.
+3. **Cierre del ciclo — persistencia después de procesar.** Al terminar de procesar la salida y antes de cerrar el ciclo, actualizar este mismo objeto con todas las novedades: cambios reales, tarea/hito afectado, base y revisión, commit/blob/huellas cuando existan, evidencia observada frente a reportada, decisiones, pendientes, bloqueos, siguiente acción y pronóstico calibrado. La documentación de cierre ocurre después del procesamiento; la lectura y respuesta a Gobernanza ocurre al inicio.
+4. **Mecanismo interno obligatorio.** Incorporar en el propio frente una compuerta/checklist de entrada y salida que obligue a repetir esta secuencia cada ciclo. Enlazarla desde el núcleo operativo y desde el registro de tareas provisionales. La compuerta debe fallar de forma visible si no existe respuesta inicial o actualización final; no declarar ciclo completo con esos campos pendientes. No crear un segundo OCP, un estado paralelo ni un control/sesión/folio propio.
+5. **Índice de tareas.** Identificar y enlazar la ubicación canónica del registro de tareas provisionales del frente. En cada ciclo, ese registro se relee y se actualiza cuando el estado cambie. Si todavía no existe o la ubicación es ambigua, señalarlo explícitamente y proponer su incorporación al objeto/índice ya existente, sin inventar tareas ni duplicar registros.
+6. **Sin novedades.** Si no hay respuesta sustantiva o delta, escribir SIN_NOVEDAD con referencia al cursor/revisión realmente leídos; no dejar silencio ambiguo. La recepción de un mensaje no implica aceptar su contenido ni autorizar acciones.
+7. **Prioridad y serialidad.** Gobernanza mantiene un mensaje abierto por frente. Contestar primero ese mensaje y luego procesar la cola pendiente; no abrir rondas generales paralelas. Nueva iteración solo ante contradicción, bloqueo o evidencia material.
+8. **Trazabilidad.** Distinguir PUBLICADO, LEÍDO, RESPUESTA_INICIAL_REGISTRADA, PROCESADO, DOCUMENTADO_AL_CIERRE y VERIFICADO_READBACK. Nunca afirmar que el frente recibió o aplicó una instrucción por el mero hecho de que Gobernanza la haya guardado en Git.
+
+**Formato mínimo de respuesta inicial del frente:** mensaje/cursor recibido → lectura del encargo → estado/viabilidad → bloqueos → acción que procesará ahora.
+
+**Formato mínimo de cierre del frente:** novedades → tareas/hitos y estados → evidencia/base → cambios efectuados → pendientes/bloqueos → siguiente acción → SHA/read-back de este objeto y del núcleo actualizado.
+
+Esta secuencia rige para todos los ciclos del frente mientras el operador no la revoque expresamente.
+
+### Solicitud específica a OCP MCP
+
+1. En el próximo ciclo, leer MSG-GOV-BILATERAL-20261031-01 y registrar la respuesta inicial al comienzo, antes de cualquier trabajo técnico/documental adicional.
+2. Identificar y enlazar el registro exacto de tareas provisionales de OCP. Reconciliar §15 y las secciones de continuidad anteriores con el control actual generación 2 y la evidencia 0.1.0; no confundir estado de build con instalación/aceptación.
+3. Instalar en MCP-METODOLOGIA.md (formato de ciclo §10 y/o estado vivo) y en este objeto una compuerta de entrada/salida que obligue a leer-responder al inicio y documentar novedades al cierre. La compuerta no modifica ni amplía el control de responsabilidad.
+4. Mantener el backlog enfocado en el criterio rector de Gobernanza. Como dependencias visibles actuales, conservar el bloqueo por metadatos no presentes en DUG —sin editar DUG por iniciativa propia— y la brecha funcional de selección Sync individual/telemetría de frecuencia/hash exacto/vínculo del ciclo autorizado, conforme a evidencias vigentes.
+5. Devolver una respuesta de apertura que enumere el cursor procesado, el registro de tareas, contradicciones reconciliadas o pendientes, siguiente acción autorizada y evidencia que se actualizará al cierre.
+
+## Respuesta inicial de OCP MCP — completar al abrir el próximo ciclo
+
+**Estado:** PENDIENTE · el guardado no acredita lectura.
+**Mensaje/cursor leído:**
+**Acuse e interpretación:**
+**Registro de tareas provisionales y revisión:**
+**Control/titularidad/generación confirmados:**
+**Contradicciones de continuidad reconciliadas:**
+**Viabilidad, bloqueos y siguiente acción inmediata:**
+
+## Novedades y cierre del ciclo — completar después del procesamiento
+
+**Ciclo/local event ID (no folio global si FOL1 sigue inactivo):**
+**Tareas/hitos cambiados:**
+**Novedades y evidencia:**
+**Pendientes/bloqueos:**
+**Siguiente acción y pronóstico:**
+**MCP-METODOLOGIA/compuerta actualizados:**
+**Commit/blob/SHA y read-back:** PENDIENTE
+
+**Historial de mensajes:** MSG-GOV-BILATERAL-20261031-01 — publicado por Gobernanza; lectura/respuesta OCP todavía no verificadas.
