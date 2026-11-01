@@ -1,11 +1,11 @@
-# Protocolo provisional de coordinación y continuidad del sprint OCP MCP
+# MCP-OCP · Protocolo provisional de coordinación y continuidad del sprint
 
 **Versión del objeto:** v0.1  
 **Fecha de creación:** 2026-10-31  
 **Estado:** PROVISIONAL · NO CANÓNICO · PERSISTENCIA DE CONTINUIDAD  
 **Repositorio:** `SeryMente/metodologia` · rama `main`  
 **Ubicación:** `frentes/mcp-metodologia/entregas/COORDINACION-SPRINT-OCP-MCP-v0.1.md`  
-**Producto objetivo:** MCP de Metodología · identidad documental `MCP-METODOLOGIA`  
+**Producto objetivo:** MCP-OCP · identidad documental vigente `MCP-OCP` (histórica `MCP-METODOLOGIA`)  
 **Finalidad:** permitir que una conversación nueva recupere la organización del equipo, el orden de turnos, las decisiones, los límites de iteración, las autorizaciones y el estado de trabajo sin reconstruirlo desde cero.
 
 > Este objeto fue creado por instrucción expresa del operador para conservar la dinámica de este sprint. No es un nuevo OCP, no modifica el DUG, no crea una norma general ni sustituye los núcleos canónicos de EP, Gobernanza o MCP de Metodología. No crea control, titularidad, sesión, permisos ni folios propios. Hereda la responsabilidad documental del OCP donde se aloja y mantiene explícitos los límites de los demás frentes.
@@ -601,3 +601,46 @@ Esta secuencia rige para todos los ciclos del frente mientras el operador no la 
 **Compuerta:** `PASS` para este ciclo OCP: respuesta inicial previa al trabajo; novedades y estados documentados después del procesamiento; núcleo y README modificados con read-back; registro de cierre en este mismo objeto. La compuerta global de Gobernanza no se declara cerrada porque el frente EP aún debe demostrar su propia respuesta, instalación de compuerta y read-back.
 
 **MCP-NORMATIVO:** DESACTIVADO. **FOL1:** PREPARADO_PENDIENTE_ACTIVACION_IPZ. **Aceptación de operador:** NO REGISTRADA.
+
+## 18. Retoma de responsabilidad y renombramiento · 2026-10-31
+
+**Evento local:** `C-MCP-OCP-RETOMA-20261031-01` · identificador documental, no folio global.  
+**A — transferencia:** EJECUTADA Y VERIFICADA.  
+**Renombramiento:** `MCP-METODOLOGIA` → `MCP-OCP`.  
+**B — implementación:** permanece AUTHORIZED exactamente dentro del alcance ya registrado; no se amplía.
+
+### Instrucción de origen
+
+> REtoma repsonsabilidad del Frente MCP OCP, de hecho se llama OCP MCP, pero renombrfalo, es MCP-OCP adjunta convewrascion en persistencia documental del frente.
+
+La instrucción ordena retomar la responsabilidad del frente identificado en este repositorio como `frentes/mcp-metodologia/`, corregir su identidad documental a `MCP-OCP` e incorporar el registro visible de esta conversación. No ordena cambiar la ubicación del OCP ni tocar el frente separado de Khora.
+
+### Control y transferencia CAS
+
+- Antes de escribir: `CONTROL-RESPONSABILIDAD.json` blob SHA `4a4742a51f0517a1b152a9c04ac6c185de024389`, estado `owned`, generación 2, titular `chatgpt-ocp-mcp-01a192fb-8346-710a-ba99-54350ab2dfd9`.
+- Receptor: `chatgpt-mcp-ocp-01a19495-aec0-78e2-a7b6-10ab72a2be78`, generación 3, UUIDv7 local `01a19495-aec0-78e2-a7b6-10ab72a2be78`. La plataforma no expuso el ID nativo de esta conversación; el alias no se presenta como tal.
+- Commit de transferencia CAS: `6043ef173f88264295998601d67b38c2bf247f3f`.
+- Primera lectura de retorno: SHA `31bf75570f1d414cb8f75b0a88acfe91fda03d45`; coincidieron titular, generación e identidad.
+- Commit de confirmación del read-back: `dc55c55c66d0ce3a05ace78ac50ad88da59291e1`.
+- Control final leído: SHA `3e6f96e919c33c3015478b7fd0f262b1bee47b0c`; `result=VERIFIED`, `readback_status=MATCHED`.
+
+### Persistencia conversacional
+
+Se incorpora `conversaciones/ChatGPT-OCP MCP-20261031-1849.md`, con los mensajes visibles disponibles en este hilo y la procedencia explícita de la captura. El archivo no se presenta como exportación nativa exhaustiva ni contiene contenido de herramientas oculto/no visible. Su incorporación se enlaza desde README y desde el núcleo.
+
+### Reconciliación de identidad y rutas
+
+- Nombre canónico vigente del frente: `MCP-OCP`.
+- Identidad anterior: `MCP-METODOLOGIA`, conservada en los registros originales y como referencia histórica.
+- Se preservan `frentes/mcp-metodologia/`, `MCP-METODOLOGIA.md`, `CONTROL-RESPONSABILIDAD.json` y el nombre del objeto de coordinación. Se actualiza su identidad visible y no se rompen referencias históricas.
+- El OCP Khora MCP mantiene su propia ruta `SeryMente/khora/docs/frentes/observabilidad-mcp/`; no se modifica, transfiere ni mezcla con MCP-OCP.
+
+### Alcance, límites y estado
+
+La autorización B previa sigue limitada a implementación, build, pruebas, correcciones, manifiesto y empaquetado dentro de `frentes/mcp-metodologia/`. No autoriza instalación/operación EP, cambios de host/ACL/registro/firewall/servicios/tareas, DUG, ART-025/027, IPZ, Sink productivo, activación de MCP-NORMATIVO, Khora, credenciales externas, exposición pública ni rutas ajenas. En esta retoma no se ejecutaron build, pruebas de software ni instalación.
+
+**Apertura bilateral:** revisada la coordinación completa; el último mensaje de Gobernanza ya estaba procesado en §17 (`MSG-GOV-BILATERAL-20261031-01`). No se observó un cursor/mensaje nuevo posterior dentro del objeto: `SIN_NOVEDAD`; no se abrió otra ronda.
+
+**Estado persistente al cierre:** titularidad gen3 y renombramiento verificados; núcleo e índice actualizados; conversación enlazada; crónica/evidencia de este evento en incorporación.  
+**MCP-NORMATIVO:** DESACTIVADO. **FOL1:** PREPARADO_PENDIENTE_ACTIVACION_IPZ; folios CV/CY/A/B PENDIENTE/NO ASIGNADO. **Aceptación del producto por el operador:** no registrada por este acto.
+
