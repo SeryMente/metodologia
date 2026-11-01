@@ -495,3 +495,58 @@ El valor `01a199206700-7a89-9419-18026a9b0f27` consignado en la respuesta inicia
 **Trabajo propio ya materializado:** OEP §94, README EP, REVISION-OEP-v0.3.23 y MANIFIESTO fueron actualizados y verificados por read-back. Se conserva la literalidad de la instrucción del operador en la apertura; no se atribuye a Gobernanza la autorización original. La última ejecución completa sigue `NO_VERIFICADA`; los únicos éxitos registrados son `-SelfTest` y `-PreflightOnly` en el recibo histórico de KHORA, sin handshake RDC fresco.
 
 **Siguiente paso:** completar el cierre en esta misma entrada DTC, adjuntando evidencia, referencias y read-back final. No se abre tarea separada ni se solicita acción adicional a Gobernanza.
+
+
+## Cierre DTC · EP · C-EP-MOD-SCRIPTPWS-20261101-01
+
+**Estado:** `PROCESADO → DOCUMENTADO_AL_CIERRE → VERIFICADO_READBACK`.  
+**Secuencia registrada:** `SIN_NOVEDAD_GOBERNANZA → RESPUESTA_INICIAL_EP → RESPUESTA_GOBERNANZA → ACUSE/RESPUESTA_EP → MATERIALIZACIÓN_DOCUMENTAL → CIERRE → READBACK`.  
+**Clasificación:** `CUMPLE_VERIFICADO` para la inauguración documental del módulo MOD-SCRIPTPWS. No equivale a aceptación técnica del módulo, transferencia de titularidad del FT EP ni aceptación de código o despliegue.
+
+### Resultado del ciclo
+
+1. Se inauguró **MOD-SCRIPTPWS** en OEP §94, OEP v0.3.23 / VCU-EP-v25, como módulo funcional interno subordinado al frente EP. No se creó OCP, control, sesión, titularidad, carpeta física ni folio independiente.
+2. Por instrucción explícita del operador, este asistente acepta responsabilidad funcional y técnica del módulo: definición, diseño, implementación y mantenimiento de sus artefactos PowerShell, pruebas, documentación, auditoría técnica y continuidad, dentro del alcance y compuertas heredados de EP.
+3. Esta asignación no transfiere la titularidad formal del OEP padre. El OEP §93.3.5 mantiene que no se localizó control autoritativo de EP ni titular/generación formal activa; no se inventó ni creó un control sustituto.
+4. El README del frente indexa MOD-SCRIPTPWS; la revisión v0.3.23 y el manifiesto existente registran los resultados y hashes.
+5. Gobernanza respondió en el mismo objeto DTC: confirma la subordinación del módulo y precisa que no crea tarea del backlog integrado ni desplaza EP-TASK-002 o MCP-OCP ciclo 06. EP acusó esa respuesta y completó este mismo ciclo sin abrir otro canal.
+6. Se documentó una divergencia observada en KHORA main: gate `khora.ps1` declara EP 1.0.2 / script 7.5.4; `modules/00-config.ps1` y `tests/validate_ep.py` mantienen EP 1.0.1 / script 7.5.3. No se corrigió código ni validador por inferencia.
+
+### Último comando con funcionamiento acreditado
+
+La última ejecución con evidencia disponible sigue siendo la registrada en PC-14 el 2026-10-30 por el OCP separado KHORA Workstation Bootstrap:
+- `-SelfTest`: PASS.
+- `-PreflightOnly`: PASS, exit code 0.
+- Parser PowerShell 5.1 e integridad de fuente privada: PASS.
+- Compatibilidad Desktop Commander 0.3.1 con `remote --no-persist-session`: PASS.
+
+La evidencia de origen es `frentes/khora-workstation-bootstrap/evidencias/C-KHORA-WORKSTATION-BOOTSTRAP-01.json`, blob `84c80a6397443e677e5718afaf2db6040ad7c8f5`. Las invocaciones acreditadas son `& $scriptBlock -SelfTest` y `& $scriptBlock -PreflightOnly`; el recibo no guarda una línea autónoma literal completa. `-PreflightOnly` no inicia RDC.
+
+El handshake RDC fresco fue `NOT_RUN` en la evidencia histórica al detectar tres procesos Desktop Commander. El intento del operador que reportó `No se encontró gh.exe; no se modificó el entorno.` falló antes de ejecutar. El último comando de ejecución completa remitido en esta conversación no tiene resultado del operador y queda `NO_VERIFICADO`. No se declara que RDC haya arrancado en este ciclo.
+
+### Evidencia y read-back
+
+| Recurso | Commit | Git blob final | SHA-256 UTF-8 | Read-back |
+|---|---|---|---|---|
+| Apertura DTC | `4c282e153aa0b0d2867d81a743bf23d656e50383` | `b9a7503e872a6ab57c6ce4d756499e9161cd1624` | DTC mutable; se registra su blob final en el cierre, sin autorreferencia | PASS |
+| Respuesta EP a Gobernanza | `f4e77b879a991c7b5769b4e6a2855638288cddc0` | `7e3c55146647a83336612a1904c4c1f095015dd3` | DTC mutable; excluido del manifiesto | PASS |
+| OEP v0.3.23 / VCU-EP-v25 | `c1d2088840fb8d4c88dce15b8979bb75efd282a7` | `0babc46674a9dbcdc58e49e6256fc9a8fe17a304` | `809de3e87bc3bb103f10f0c85a78b46a072f2559e1fc9ef1e1ab82022fe96ced` | PASS |
+| README EP | `cfe799dba9a156186c117191cb62c90df738539f` | `07758b20f71ba024f809097a16edd2079f5d02b2` | `e3a4a8adbdd6089e471859eeed78faef79d8c431030684eabb477895321f3d4e` | PASS |
+| REVISION-OEP-v0.3.23.json | `e9e9885c778098c860a4c30a25ef5e917d26890e` | `47ff7f48b376b6eeff560331f84450993e0e6fe1` | `449abf629c3822937384849ccd46adb44d66febb3d6be0c1adf0cedfb851bf65` | PASS |
+| MANIFIESTO.json | `56d8c53ab26ce2a421659eb6b4e5e42a00a9c06d` | `a6e49eff092d39d51a81eccee09e3007219325dd` | Excluye su propio hash | PASS |
+
+El manifiesto conserva 59 entradas, coteja OEP/README/revisión por bytes UTF-8, SHA-256 y Git blob. El DTC es mutable y se excluye del manifiesto para evitar autorreferencia. Su cierre se verificará mediante lectura posterior del objeto.
+
+### Estado y siguiente acción
+
+- `MOD-SCRIPTPWS`: `INAUGURADO_DOCUMENTALMENTE · EN_CURSO`; pruebas integrales y aceptación técnica pendientes.
+- Responsabilidad funcional/técnica del módulo: aceptada por este asistente, alcance exclusivo de MOD-SCRIPTPWS.
+- Titularidad formal y generación del FT EP: `NO_VERIFICADAS`; no se modifica el control padre.
+- EP-TASK-001/002/003: sin cambio de estado. EP-TASK-003 sigue siendo el inventario as-built relacionado; no se creó una tarea duplicada.
+- MCP-OCP ciclo 06: no alterado ni bloqueado.
+- Host, código de producto KHORA, credenciales, B2 y sesiones RDC: no modificados ni ejecutados en este ciclo.
+- FOL1: inactivo; folio global no asignado.
+
+**Siguiente acción del módulo:** revisar la procedencia/diff de la divergencia 7.5.4/1.0.2 contra 7.5.3/1.0.1; recuperar el texto literal del último comando que el operador confirma que funcionó; después construir y probar el flujo PowerShell completo con conservación de ventana, sin duplicar ni finalizar sesiones RDC existentes.
+
+**Read-back del cierre:** se leerá nuevamente este objeto DTC tras guardar esta entrada. Su blob final no se incluye en su propio cuerpo.
