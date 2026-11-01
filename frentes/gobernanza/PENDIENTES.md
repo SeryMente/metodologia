@@ -7,7 +7,7 @@
 - EP: DTC local Prompt 02 `CUMPLE_VERIFICADO`; EP-TASK-002 sigue `en_curso`; no se acreditan autenticación B2, upload, read-back remoto ni restauración.
 - MCP-OCP: ciclo local 05 abierto en coordinación; `CUMPLE_PARCIAL` hasta cierre y read-back. No emitir petición paralela mientras procesa su ciclo.
 - DTC global `EN_CURSO_RECURRENT`. FOL1 preparado/inactivo; CV/CY/A/B globales y por OCP `PENDIENTE / NO ASIGNADO`.
-- DUG, GOW, ART-025/027 e IPZ nativa no modificados; controles/recursos de EP y MCP-OCP no modificados.
+- DUG vigente observado en `main`: Samantha v375 · NX-375m; GOW 2.15; 43 principios; 21 anexos; blob `c993a59163c2c163b17b599a003919b53c5cf6a8`. El adjunto preservado representa el snapshot previo v373. No se modificó el DUG, GOW, ART-025/027 ni IPZ nativa; controles/recursos de EP y MCP-OCP permanecen intactos.
 
 [Crónica](cronica/C-GOBERNANZA-RETOMA-08.md) · [Evidencia](evidencias/C-GOBERNANZA-RETOMA-08.json).
 
