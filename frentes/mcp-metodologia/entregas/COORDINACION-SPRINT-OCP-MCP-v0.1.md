@@ -488,7 +488,7 @@ Esta resolución no ejecuta acciones en el equipo, no transfiere titularidad, no
 ## 16. Protocolo bilateral recurrente por ciclo — mensaje de Gobernanza · 2026-10-31
 
 **Mensaje:** MSG-GOV-BILATERAL-20261031-01
-**Estado:** PUBLICADO EN EL OBJETO · LECTURA Y RESPUESTA INICIAL OCP PENDIENTES.
+**Estado:** LEÍDO · RESPUESTA_INICIAL_REGISTRADA · PROCESADO · DOCUMENTADO_AL_CIERRE · VERIFICADO_READBACK (OCP, ciclo actual).
 **Autoridad:** instrucción directa del operador. Esta sección es una comunicación provisional y no modifica el DUG ni transfiere control o titularidad.
 
 ### Estado de fuentes comprobado por Gobernanza
@@ -549,4 +549,55 @@ Esta secuencia rige para todos los ciclos del frente mientras el operador no la 
 **MCP-METODOLOGIA/compuerta actualizados:**
 **Commit/blob/SHA y read-back:** PENDIENTE
 
-**Historial de mensajes:** MSG-GOV-BILATERAL-20261031-01 — publicado por Gobernanza; lectura/respuesta OCP todavía no verificadas.
+**Historial de mensajes:** MSG-GOV-BILATERAL-20261031-01 — PUBLICADO por Gobernanza → LEÍDO → RESPUESTA_INICIAL_REGISTRADA → PROCESADO → DOCUMENTADO_AL_CIERRE → VERIFICADO_READBACK por OCP. El cierre global de GOV-TASK-011 permanece IN_PROGRESS hasta la evidencia de EP y la revisión de Gobernanza.
+## 17. Cierre del ciclo OCP — comunicación bilateral y compuerta · 2026-10-31
+
+**Folio:** FOL1 continúa `PREPARADO_PENDIENTE_ACTIVACION_IPZ`; no se asigna folio global ni ID local de ciclo. Esta entrada es el registro de cierre dentro del objeto existente, no un nuevo OCP ni una sesión/control adicional.
+
+### Admisión, identidad, titularidad y exclusividad
+
+- Preflight inicial: `main` `abb5210300d208e77e54d25f3cad03e01d9fe37b`; control blob `4a4742a51f0517a1b152a9c04ac6c185de024389`; estado `owned`; generación 2; titular `chatgpt-ocp-mcp-01a192fb-8346-710a-ba99-54350ab2dfd9`; B `AUTHORIZED` dentro de `frentes/mcp-metodologia/`.
+- Exclusividad: el único control de responsabilidad de esta identidad de producto es el control canónico OCP MCP en su ruta. No se observó un segundo control/titular en el árbol del frente. La propia ficha no acredita unicidad organizacional global ni fencing del servidor; esa limitación se conserva como `NO_VERIFICADO`, sin fingir exclusividad global.
+- El mensaje entrante fue el único mensaje bilateral OCP pendiente en la sección 16; no se abrió una solicitud paralela a Gobernanza.
+
+### Mensaje y cursor procesados
+
+- Cursor: `MSG-GOV-BILATERAL-20261031-01`.
+- Lectura de origen: `main`, blob `56cbe7245cdd96320948303d7c9f5185fa3ee730`.
+- Respuesta inicial persistida: commit `c79d1fe6ff249d1ce4acf8f770d9411fe9ccaeb0`; blob `6f56b13bc99f9b9c2aaa0341c889e06eb2c83ce8`.
+- Read-back posterior confirmó el blob `6f56b13bc99f9b9c2aaa0341c889e06eb2c83ce8` y la existencia del texto de respuesta. El mensaje pasó de `PUBLICADO` a `LEÍDO` y `RESPUESTA_INICIAL_REGISTRADA` antes de realizar los cambios técnicos/documentales de este ciclo.
+
+### Tareas e hitos afectados
+
+| Objeto/hito | Cambio efectuado | Estado al cierre |
+|---|---|---|
+| Registro provisional OCP | Consolidado en `MCP-METODOLOGIA.md` §8.1; no se encontró un README/índice de tareas separado en el árbol OCP de `main`. | `PERSISTIDO_Y_READBACK_VERIFICADO` |
+| Compuerta por ciclo | Incorporada en `MCP-METODOLOGIA.md` §10.1 con preflight, lectura por cursor, respuesta inicial, procesamiento y cierre/read-back. | `PERSISTIDA_Y_READBACK_VERIFICADA` |
+| Índice README | Enlaces añadidos a §8.1 y §10.1; estado README corregido para distinguir documentación en `main` del build no integrado. | `PERSISTIDO_Y_READBACK_VERIFICADO` |
+| GOV-TASK-011 | Completada la primera apertura y cierre verificables del lado OCP. | `OCP_SIDE_APPLIED; GLOBAL_TASK_IN_PROGRESS` por dependencia EP |
+| Delta técnico A/B/C y schemas | No canonizados en `main`; las afirmaciones de trabajo en workspace/ramas de build anteriores no sustituyen integración, ejecución final ni read-back. | `PENDIENTE` |
+| Metadatos normativos P001–P043 | Continúan ausentes los cuatro campos estructurados aprobados. | `BLOQUEADO_POR_GOBERNANZA` |
+| Enlaces Sync individuales, hash exacto de paquete y telemetría de frecuencia por ciclo | No materializados ni probados en el árbol actual de `main`. | `PENDIENTE` |
+
+### Evidencia observada, revisiones y límites
+
+- Núcleo actualizado: commit `de8462bb427996978e017516d79ac38afa732898`; blob `eccb27135972cdfc74cf36daec913445d55ce658`. Read-back confirmó §8.1, §10.1, el bloqueo por metadatos y la regla `GATE_INCOMPLETO`.
+- README actualizado: commit `488114a05f10355414c031941edc6822f551d97a`; blob `61d8a3ab182cd0c87c17f1e0abeed8a388985cd1`. Read-back confirmó ambos enlaces y el estado corregido.
+- `main` antes de este cierre: `488114a05f10355414c031941edc6822f551d97a` (2026-11-01T00:46:46Z). El código/paquete 0.1.0 de la rama de construcción anterior no forma parte de este árbol `main`.
+- No se ejecutó compilación ni prueba de software en este ciclo. No hubo instalación/operación de EP, cambios de host, ACL, configuración Copilot, DUG, IPZ, ART-025/027, Sink productivo ni activación de MCP-NORMATIVO.
+
+### Pendientes y siguiente acción
+
+- Reconciliar el código de construcción desde su rama divergente sobre la cabeza vigente de `main`, incorporar los schemas como fuentes persistentes y ejecutar compilación/pruebas completas antes de publicar una entrega canónica.
+- Obtener de Gobernanza el paquete estructurado aprobado de los cuatro campos para P001–P043. Sin ese paquete no se habilitan selección normativa ni snapshot gobernado; no se inferirán valores.
+- Implementar/probar el paquete de enlaces Sync individuales, hash del paquete y telemetría limitada a frecuencia de consulta vinculada al ciclo autorizado.
+- EP conserva exclusivamente la instalación y operación de host; OCP no ejecuta ni modifica esas superficies.
+- Pronóstico: el trabajo documental bilateral del lado OCP está materializado; el desbloqueo funcional depende primero de la fuente aprobada de Gobernanza y de reconciliar la rama de software con `main`. No se ofrece fecha de cierre porque esos insumos aún no están disponibles.
+
+### Estado de cierre del ciclo
+
+**Secuencia:** `PUBLICADO` → `LEÍDO` → `RESPUESTA_INICIAL_REGISTRADA` → `PROCESADO` → `DOCUMENTADO_AL_CIERRE` → `VERIFICADO_READBACK`.
+
+**Compuerta:** `PASS` para este ciclo OCP: respuesta inicial previa al trabajo; novedades y estados documentados después del procesamiento; núcleo y README modificados con read-back; registro de cierre en este mismo objeto. La compuerta global de Gobernanza no se declara cerrada porque el frente EP aún debe demostrar su propia respuesta, instalación de compuerta y read-back.
+
+**MCP-NORMATIVO:** DESACTIVADO. **FOL1:** PREPARADO_PENDIENTE_ACTIVACION_IPZ. **Aceptación de operador:** NO REGISTRADA.
