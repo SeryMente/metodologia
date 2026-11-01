@@ -1543,7 +1543,7 @@ El operador entregó directamente el Prompt Adicional 02 a este hilo EP el 2026-
 
 ---
 
-## 94. Módulo funcional MOD-SCRIPTPWS — PowerShell para Entorno Persistente · v0.3.28 / VCU-EP-v30
+## 94. Módulo funcional MOD-SCRIPTPWS — PowerShell para Entorno Persistente · v0.3.29 / VCU-EP-v31
 
 ### Identidad, subordinación y responsabilidad funcional
 
@@ -1663,6 +1663,17 @@ $ErrorActionPreference='Stop'; $d="$env:LOCALAPPDATA\Programs\nodejs"; $env:Path
 **Corrección/previsión:** descartar por completo ese helper. Sustituirlo por una implementación revisada contra los vectores estándar SHA-256, probar al menos el vector vacío, "abc" y un texto UTF-8 con BOM/acentos, y además cotejar un archivo existente contra el hash ya publicado en ep-integrity-manifest.sha256. No escribir ni regenerar el manifiesto hasta que todas las pruebas coincidan.
 
 **Estados:** PREFLIGHT_FALLIDO · RCA_VERIFICADA · SIN_MUTACIÓN_REMOTA · CONTADOR_0. No se repitió el cálculo defectuoso ni se reintentó la escritura.
+
+
+### Incidencia de preflight SHA-256 · tabla de constantes incompleta · 2026-11-01
+
+**Operación:** construcción del payload completo de actualización KHORA 7.5.6 / EP 1.0.4, antes de cualquier escritura. **Síntoma literal:** `Error: SHA256 known-vector preflight failed`. **Impacto:** la función de preflight abortó antes de invocar `update_file`; ninguna ruta ni ref del repositorio KHORA fue modificada por este intento.
+
+**Causa raíz VERIFICADA:** durante el traslado del helper SHA-256 previamente corregido al payload amplio se omitió la constante `0x5cb0a9dc` de la tabla K. La tabla quedó con 63 elementos en vez de 64; el vector conocido SHA256("abc") rechazó la implementación antes de la fase de escritura.
+
+**Corrección/previsión:** reconstruir el helper exclusivamente desde la versión cuyo vector `abc`, vector vacío, UTF-8 y cotejo con el manifiesto anterior ya pasaron; validar explícitamente `K.length === 64`, los vectores estándar y el SHA de archivos existentes antes de construir cambios o llamar herramientas de escritura. Mantener la fase completa de preflight separada de la fase de mutación.
+
+**Estados:** PREFLIGHT_FALLIDO · RCA_VERIFICADA · SIN_MUTACIÓN_REMOTA · CONTADOR_0. El payload con tabla incompleta se descarta; no se repite.
 ### Entregables, aceptación y siguiente paso
 
 **Entregables del módulo:** comandos de ejecución reproducibles y con shell identificada; inventario de entrypoints PowerShell y consumidores; contratos de parámetros/códigos de salida; diagnóstico y logs recuperables; pruebas positivas/negativas; versiones y checksums; registro de fallos y correcciones; instrucciones de reanudación; evidencia de ejecución y lectura de vuelta. Los entregables se almacenan en las fuentes canónicas de sus repositorios, con referencias desde el OEP, no como copias paralelas.
