@@ -34,11 +34,17 @@ try {
     $ManifestPath = Join-Path $OcpRoot "resources\initial-sources.manifest.json"
     $Template = Get-Content -Raw -LiteralPath $TemplatePath | ConvertFrom-Json
     $captured = [DateTimeOffset]::UtcNow.ToString("yyyy-MM-ddTHH:mm:ss.fffZ")
+    $mainCommit = (& git -C $RepoRoot rev-parse refs/remotes/origin/main).Trim()
+    Assert-ExitCode "git rev-parse origin/main"
     $sources = @()
     foreach ($source in $Template.sources) {
         $spec = "$($source.commit_id):$($source.canonical_path)"
         $blob = (& git -C $RepoRoot rev-parse $spec).Trim()
         Assert-ExitCode "git rev-parse $spec"
+        if ($source.commit_id -ne $mainCommit) { throw "Source commit is stale against origin/main for $($source.source_id)." }
+        $mainBlob = (& git -C $RepoRoot rev-parse ("$mainCommit`:$($source.canonical_path)")).Trim()
+        Assert-ExitCode "git rev-parse origin/main source path"
+        if ($mainBlob -ne $blob) { throw "Source blob is not current in origin/main for $($source.source_id)." }
         if ($blob -ne $source.git_blob_sha) {
             throw "Git blob SHA mismatch for $($source.source_id): expected $($source.git_blob_sha), got $blob"
         }
@@ -55,7 +61,7 @@ try {
             content_sha256 = $sha256
             captured_at_utc = $captured
             verification_status = "VERIFIED_AT_BUILD"
-            freshness_status = "NOT_CHECKED_AGAINST_MAIN"
+            freshness_status = "VERIFIED_AGAINST_MAIN"
         }
     }
     $manifest = [ordered]@{
