@@ -226,3 +226,40 @@ La entrada de este ciclo quedó integrada en el objeto GOV-TASK-011; el índice,
 **Siguiente acción:** recibir y analizar el cierre/read-back de MCP-OCP ciclo local 05 en su objeto actual; mantener EP-TASK-002 y las dependencias de EP abiertas hasta evidencia material. No abrir nuevos turnos paralelos mientras exista procesamiento en curso.
 
 **Folios:** CONV global, CICLO global, A/B y OCP globales: `PENDIENTE / NO ASIGNADO`. Sesión de esta titularidad: `SES-20261101-GV8A19904`.
+
+
+
+---
+
+## Revisión DTC permanente · C-GOBERNANZA-DTC-REVISION-01 · 2026-11-01
+
+**Instrucción literal del operador:** «Ciclo a ciclo sin excepcion revisaras. Documetna la comunicacion, y sigue con lo otro por mientras».
+
+**Respuesta inicial de Gobernanza:** se adopta la revisión DTC como compuerta recurrente obligatoria en cada ciclo, sin excepciones ni sustitución por fotografías históricas. Al iniciar cada ciclo de Gobernanza se releerán el control propio y los objetos de comunicación canónicos de EP y MCP-OCP, se recuperarán los cursores realmente procesados, se contrastarán los cambios posteriores y se clasificará cada frente por separado. La misma entrada se documentará con la respuesta inicial; al cierre se registrarán procesamiento, evidencia, commit/blob, read-back, bloqueos y siguiente acción. Si falta una fase, el ciclo correspondiente queda incompleto. La revisión no autoriza ejecutar en nombre de EP o MCP-OCP ni modifica sus controles o alcances.
+
+### Revisión de fuentes y estado observado
+
+| Frente / fuente | Cursor o revisión leída | Estado observado en este ciclo |
+|---|---|---|
+| Gobernanza · control | `CONTROL-RESPONSABILIDAD.json`, blob `beecec6d4a3ca166019f3271bf2715a2c64bb6f1` | Titular generación 11, sesión `SES-20261101-GV8A19904`; corresponsable conservado; dos responsables activos, dentro del máximo autorizado. |
+| EP · comunicación | `COORDINACION-GOBERNANZA-EP-v0.1.md`, blob `24939fbe18b250256116f8556d96ae3c33bde238` | Último ciclo documental visible: `C-EP-DTC-PROMPT02-20261031-02`, cerrado y read-back declarado/verificado por EP. OEP v0.3.22 / VCU-EP-v24. EP-TASK-002 sigue `en_curso`; autenticación/cuenta/región/bucket/clave B2, carga, SHA remoto, read-back remoto y restauración siguen sin ejecutar o verificar. |
+| MCP-OCP · comunicación | `COORDINACION-SPRINT-OCP-MCP-v0.1.md`, blob `e6c375a79ca0a431000aa607ff2dfe9252abafd9` | §28.4: ciclo local 05 cerrado como `CUMPLE_VERIFICADO`, con procesamiento técnico, evidencia y read-back. §29: ciclo local 06 abierto, con preflight y respuesta inicial registrados; todavía no se observa procesamiento/cierre/read-back del 06 en esta revisión. La integración a `main`, instalación en EP y aceptación siguen explícitamente pendientes. |
+| DTC global | Este registro integrado y GOV-TASK-011 | `EN_CURSO_RECURRENT`; el cierre local 05 de MCP-OCP no cierra el ciclo 06 ni la DTC global. |
+
+**Corrección de fotografía previa:** el registro anterior de Gobernanza clasificaba MCP-OCP como `CUMPLE_PARCIAL` por no observar el cierre del ciclo 05. La revisión actual encuentra §28.4 ya cerrado y read-back registrado; esa clasificación anterior queda supersedida para el ciclo 05. La novedad actual es el ciclo local 06 abierto en §29. No se envió una solicitud nueva a MCP-OCP porque su ciclo 06 ya está en curso.
+
+### Regla obligatoria para todos los ciclos siguientes
+
+1. **Preflight:** releer el control de Gobernanza y validar titular, generación, autorización y límites; consultar los objetos canónicos EP y MCP-OCP y sus controles cuando estén disponibles.
+2. **Cursor:** recuperar el último cierre/read-back real de cada objeto de comunicación; no asumir que la última sección abierta fue procesada.
+3. **Apertura y respuesta:** registrar la novedad o `SIN_NOVEDAD` y la respuesta inicial antes de trabajo sustantivo.
+4. **Contraste:** actualizar por separado el estado reportado, observado, verificado y aceptado de cada frente; revisar cambios de sus OCP/evidencias referenciadas cuando la novedad lo requiera.
+5. **Serialidad:** no duplicar solicitudes ni abrir trabajo externo paralelo mientras haya procesamiento pendiente en el mismo frente.
+6. **Cierre:** documentar en el mismo objeto la acción autorizada de Gobernanza, resultados, evidencias, rutas, commit/blob/SHA, read-back, bloqueos y siguiente paso. Leer de vuelta todo lo modificado.
+7. **Incumplimiento:** si cualquier fase no puede completarse, declarar `CICLO_INCOMPLETO` y el motivo preciso; nunca sustituir una revisión faltante por memoria o por un snapshot anterior.
+
+**Alcance:** esta regla obliga a Gobernanza a revisar y documentar cada ciclo. No crea sincronización autónoma en segundo plano, no modifica los controles de EP/MCP-OCP, no activa FOL1 ni MCP-NORMATIVO y no convierte reportes en aceptación.
+
+**Trabajo independiente autorizado:** mientras MCP-OCP procesa su ciclo 06, Gobernanza continúa la preparación estructural del DUG solicitada por el operador, sin modificar los OCP ejecutores ni esperar una respuesta que no sea dependencia material.
+
+**Folios:** este es un identificador local de revisión; no asigna folio global. CV/CY/A/B y folios OCP: `PENDIENTE / NO ASIGNADO`. Sesión Gobernanza: `SES-20261101-GV8A19904`.
