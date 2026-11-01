@@ -5,11 +5,11 @@
 **OCP padre y fuente de responsabilidad:** `frentes/gobernanza/`  
 **Control heredado:** [CONTROL-RESPONSABILIDAD.json](../CONTROL-RESPONSABILIDAD.json), titular de Gobernanza, generación 11; blob leído de vuelta `beecec6d4a3ca166019f3271bf2715a2c64bb6f1`.
 **Evento de creación:** C-GOBERNANZA-MDP-OCP-01 · 2026-10-30.  
-**Fuente normativa vigente:** [DUG Samantha v375 · NX-375m](../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html); GOW 2.15, 43 principios y 21 anexos (blob observado `c993a59163c2c163b17b599a003919b53c5cf6a8`). El snapshot v373 de registros históricos se conserva como antecedente. La arquitectura MDP se originó en v371 y se leyó de vuelta en v373.
+**Fuente normativa vigente:** [DUG Samantha v377 · NX-377m](../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html); Metacanon 1.28, GOW 2.17, 43 principios y 22 anexos (blob leído de vuelta `54064c8fe00f872023a455f06596061ed69062ae`). El snapshot v373 de registros históricos se conserva como antecedente. La arquitectura MDP se originó en v371 y se leyó de vuelta en v373.
 
 ## Naturaleza y límites
 
-Este contenedor agrupa once objetos provisionales de persistencia de tarea, cada uno con su directorio y núcleo propio. No son frentes independientes ni unidades de una taxonomía ya aprobada. La responsabilidad, sesión y autorización se heredan del OCP padre; no se crean controles, sesiones ni folios independientes para cada tarea.
+Este contenedor agrupa trece objetos provisionales de persistencia de tarea, cada uno con su directorio y núcleo propio. No son frentes independientes ni unidades de una taxonomía ya aprobada. La responsabilidad, sesión y autorización se heredan del OCP padre; no se crean controles, sesiones ni folios independientes para cada tarea.
 
 El núcleo de cada objeto conserva identificador local, enunciado, referencia recuperable al origen y estado. El patrón se inspira en el diseño mínimo de Tareas v0.2, pero no declara ratificado ese estándar ni adopta como vigente el candidato v1.0. Cada ID `GOV-TASK-###` es estable dentro de este registro; no se afirma unicidad global.
 
@@ -30,6 +30,8 @@ El núcleo de cada objeto conserva identificador local, enunciado, referencia re
 | GOV-TASK-009 | en_curso | Revisar el GOW y mantener visible su vocabulario inicial esencial | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-009%20-%20Revisi%C3%B3n%20del%20glosario%20operativo/README.md) |
 | GOV-TASK-010 | en_curso | Admisión obligatoria y titularidad exclusiva de conversaciones | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-010%20-%20Admisión%20y%20titularidad%20de%20conversaciones/README.md) |
 | GOV-TASK-011 | en_curso | DTC — Dinámica Trilateral por Ciclo | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-011%20-%20Coordinación%20bilateral%20recurrente/README.md) |
+| GOV-TASK-012 | en_curso | Revisión integral de fluidez y desempeño del marco de Gobernanza | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-012%20-%20Fluidez%20y%20desempe%C3%B1o%20del%20marco/README.md) |
+| GOV-TASK-013 | en_curso | Medición objetiva y optimización del tiempo de procesamiento de ciclos | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-013%20-%20Medici%C3%B3n%20y%20optimizaci%C3%B3n%20de%20ciclos/README.md) |
 
 ## Estado histórico de continuidad · 2026-10-30
 
@@ -132,3 +134,13 @@ Las menciones históricas a Sync en snapshots de reorientación no alteran el DU
 ### Fuente normativa verificada para la retoma 08 · 2026-11-01
 
 DUG vigente observado en `main`: Samantha v375 · NX-375m; GOW 2.15; 43 principios; 21 anexos; blob `c993a59163c2c163b17b599a003919b53c5cf6a8`. No se modificó el DUG. Las referencias v373 anteriores se conservan como fotografías históricas cuando describen ciclos precedentes.
+
+## Actualización vigente · C-GOBERNANZA-OCP-MCP-PERFORMANCE-01 · 2026-11-01
+
+**DUG:** [Samantha v377 · NX-377m](../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html) · Metacanon 1.28 · GOW 2.17 · 43 principios · 22 anexos · blob `54064c8fe00f872023a455f06596061ed69062ae`. GOW incluye MCP-OCP y lo distingue de MCP-NORMATIVO, que permanece DESACTIVADO. Metacanon §52 fija la medición temporal de ciclos.
+
+**Tareas propias de Gobernanza creadas y leídas de vuelta:**
+- [GOV-TASK-012 — Fluidez y desempeño del marco](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-012%20-%20Fluidez%20y%20desempe%C3%B1o%20del%20marco/README.md): revisar el flujo completo, localizar fricción y probar mejoras sin debilitar controles.
+- [GOV-TASK-013 — Medición y optimización de ciclos](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-013%20-%20Medici%C3%B3n%20y%20optimizaci%C3%B3n%20de%20ciclos/README.md): instrumentar marcas observables y operaciones GitHub/RDC, medir esperas diferenciadas y comparar muestras equivalentes.
+
+Ambas tareas heredan el control único de Gobernanza, generación 11; no tienen control, sesión, folio ni OCP propios. El ciclo de configuración actual no es línea base porque la captura temporal no estaba activa desde su inicio. El primer ciclo sustantivo completo posterior a esta actualización será candidato a línea base; se reunirán al menos diez ciclos comparables antes de fijar una referencia estable. Los datos ausentes se declaran `NOT_MEASURED`; no se reconstruyen retroactivamente.
