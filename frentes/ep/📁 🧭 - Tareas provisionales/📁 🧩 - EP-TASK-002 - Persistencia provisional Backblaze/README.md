@@ -1180,3 +1180,34 @@ Esta sección **corrige y supersede íntegramente** el destino erróneo asentado
 - No se realizó ninguna operación B2 en esta rectificación: ni lectura de inventario, ni creación, ni eliminación, ni modificación de permisos, ni upload/download, ni SHA remoto.
 
 **Siguiente acción:** obtener sesión B2 autenticada; verificar cuenta/región, existencia/privacidad de `OCP-MCP` y alcance de `ep-ocp`; comprobar el bucket erróneo `metodologia-ep-persistencia` y efectuar su eliminación autorizada únicamente después de verificar identidad y contenido; comprobar por read-back que `OCP-MCP` sigue siendo el único destino configurado de EP.
+
+
+---
+
+## 25. Apertura y diagnóstico del urgente de persistencia para Metodología · C-EP-DTC-PERSISTENCIA-METODOLOGIA-20261031-01
+
+**Fecha:** 2026-10-31 · America/Mexico_City  
+**Estado de tarea:** `en_curso`; sin cambio de estado terminal.  
+**Cursor:** OEP `main` v0.3.20 / VCU-EP-v22, blob `217218c48d79818451cd2cdc1cce98a94a6f122d`; índice EP, blob `934000b93de7e933d893c0055cabc4647dea57be`; este EP-TASK-002, blob previo `2f854758e7f823cdbda2ecf07ff710683ad2026b`.
+
+### Interpretación del urgente
+
+El operador identifica la persistencia para Metodología como primer urgente. La vía existente que más directamente cubre persistencia remota complementaria es esta tarea EP-TASK-002: Backblaze B2 para artefactos/datos elegibles y continuidad entre ubicaciones. GitHub `SeryMente/metodologia/main` ya es la fuente canónica y privada de documentos/gobierno; B2 no lo sustituye ni debe convertirse en un segundo núcleo de OEP, tareas, autorización o bitácora.
+
+El bucket B2 válido y único es **`OCP-MCP`**, conforme a OEP §91 y §24 de esta tarea. El prefijo históricamente reportado para la clave `ep-ocp` es `OCP-MCP/ep-ocp/`; vigencia y permisos siguen sin revalidarse. `OCP-MSP` no se creará ni utilizará. La eliminación de `metodologia-ep-persistencia` permanece autorizada, pero no ejecutada hasta verificar cuenta, bucket exacto y contenido.
+
+### Diagnóstico de acceso observado
+
+- El repositorio privado de Metodología se leyó con permiso GitHub admin/push.
+- No hay conector Backblaze B2 directo disponible en las herramientas de esta sesión.
+- Los perfiles de navegador visibles son `Default` y `Harmonia-Cora-PC10-Pilot`; ambos devuelven `signed_in_sites=[]`. No se acredita sesión B2 autenticada.
+- El usuario cambió de ubicación; no se dispone de la sesión local anterior ni de su material DPAPI. No se utilizaron rutas, credenciales ni datos de esa máquina.
+- No se ha realizado ninguna operación B2: inventario, bucket/key, upload/download, modificación de permisos, borrado, read-back SHA ni restauración siguen NO EJECUTADOS.
+
+### Límites y siguiente hito
+
+Antes de la primera escritura B2 debe comprobarse autenticación, cuenta/región, privacidad y existencia de `OCP-MCP`, alcance y vigencia de `ep-ocp`, y contenido del bucket erróneo. Después se seleccionará una muestra no destructiva de datos/artefactos y se demostrará upload, lectura de vuelta, SHA-256 y recuperación aislada. No activar `--delete`, cambios de lifecycle ni escrituras masivas por defecto.
+
+La lista exacta de datos que debe sobrevivir a una sustitución de equipo debe reconciliarse con GitHub, EP y los consumidores sin duplicar sus almacenes existentes. La arquitectura de alto nivel y las decisiones de seguridad no se declaran finales hasta la revisión presencial requerida por P012/P013.
+
+**Siguiente acción:** abrir, con autorización expresa del operador, una sesión de inicio de sesión de Backblaze en el perfil de navegador elegido. Nunca pedir ni pegar contraseñas o claves B2 en el chat.
