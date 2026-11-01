@@ -644,3 +644,15 @@ La autorización B previa sigue limitada a implementación, build, pruebas, corr
 **Estado persistente al cierre:** titularidad gen3 y renombramiento verificados; núcleo e índice actualizados; conversación enlazada; crónica/evidencia de este evento en incorporación.  
 **MCP-NORMATIVO:** DESACTIVADO. **FOL1:** PREPARADO_PENDIENTE_ACTIVACION_IPZ; folios CV/CY/A/B PENDIENTE/NO ASIGNADO. **Aceptación del producto por el operador:** no registrada por este acto.
 
+
+---
+
+### Addendum de denominación y verificación trilateral · DTC
+
+Este mismo intercambio queda denominado **DTC — Dinámica Trilateral por Ciclo**. No es una nueva solicitud ni abre una ronda separada: precisa el mensaje MSG-GOV-BILATERAL-20261031-01 ya publicado.
+
+Gobernanza asume la responsabilidad de verificar, en cada uno de sus ciclos, que los tres frentes —Gobernanza, EP y OCP MCP— cumplan la secuencia DTC. OCP MCP conserva la responsabilidad de ejecutar y evidenciar su propia compuerta, su lectura/respuesta al inicio y su documentación al cierre. La verificación de Gobernanza no transfiere titularidad ni autoridad sobre OCP MCP.
+
+En cada revisión, Gobernanza clasificará la evidencia de cada criterio como VERIFICADO, PARCIAL, NO_VERIFICADO, BLOQUEADO o SIN_CICLO_OBSERVADO. Ausencia de una respuesta o de evidencia read-back no equivale a cumplimiento. Cuando EP no haya tenido un ciclo observable desde la revisión anterior, se registrará SIN_CICLO_OBSERVADO, no cumplimiento presumido.
+
+**El contrato DTC común ya incluido en este objeto permanece íntegro.**
