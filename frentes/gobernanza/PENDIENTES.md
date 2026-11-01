@@ -12,7 +12,7 @@ Esta sección sustituye los resúmenes ejecutivos repetidos y fotografías anter
 6. **GOV-TASK-009 — entrada léxica:** §ARR/GOW es primera referencia; DUG es segunda y fuente normativa única.
 7. **GOV-TASK-006 — Gobernanza 1.0:** resolver divergencias y satélites del DUG con procedencia y destino. `identidad.md` no se localizó en la búsqueda acotada de refs Git accesibles; no concluir inexistencia ni borrarlo por inferencia.
 8. **Diferimiento:** GOV-TASK-004 y GOV-TASK-005 no bloquean el MVP.
-9. **GOV-TASK-011 — coordinación bilateral recurrente:** leer tareas provisionales y objetos de EP/OCP en cada ciclo; escribir mensaje o SIN_NOVEDAD en cada uno; analizar la respuesta al inicio del procesamiento; y exigir documentación de novedades al cierre. Comp puerta local en ambos frentes pendiente.
+9. **GOV-TASK-011 — coordinación bilateral recurrente:** leer tareas provisionales y objetos de EP/OCP en cada ciclo; escribir mensaje o SIN_NOVEDAD en cada uno; analizar la respuesta al inicio del procesamiento; y exigir documentación de novedades al cierre. Compuertas locales en ambos frentes pendientes.
 
 ### Estado técnico y fronteras interfrente
 
