@@ -263,3 +263,31 @@ La entrada de este ciclo quedó integrada en el objeto GOV-TASK-011; el índice,
 **Trabajo independiente autorizado:** mientras MCP-OCP procesa su ciclo 06, Gobernanza continúa la preparación estructural del DUG solicitada por el operador, sin modificar los OCP ejecutores ni esperar una respuesta que no sea dependencia material.
 
 **Folios:** este es un identificador local de revisión; no asigna folio global. CV/CY/A/B y folios OCP: `PENDIENTE / NO ASIGNADO`. Sesión Gobernanza: `SES-20261101-GV8A19904`.
+
+
+
+### Ejecución independiente autorizada · DUG v376 · C-GOBERNANZA-FT-MODULOS-01
+
+**Instrucción del operador:** preparar el DUG estructurado y listo para el trabajo con MCP; definir un anexo de Módulo como subfrente funcional interno para frentes multifacéticos; formalizar la estructura y las características canónicas de un FT; no modificar por ahora otros objetos distintos del DUG.
+
+**Resultado:** DUG actualizado en su única fuente canónica `gobernanza/METAPROMPT-CANONICO-SAMANTHA.html`, Samantha v376 · NX-376m, commit `25bf9e6ed55eff010b0d8ddd53dd2cc7271b616d`, blob `657225b9c6c4d7bb46aad78fcd6c95de49ea1689`. Lectura posterior desde `main`: contenido exacto coincidente.
+
+**Cambios incorporados:**
+- ART-029, hijo documental de ART-021, define Módulo de FT como subfrente funcional interno que hereda autoridad, titularidad, sesión, generación, OCP, núcleo y control del FT padre; no crea FT/OCP/control independiente por defecto.
+- ART-019 formaliza identidad, Propósito, responsabilidad, límites, autonomía de gobierno, estado y composición modular del FT.
+- ART-021 desarrolla estructura canónica, ficha mínima, características constitutivas, materialización y criterios de aceptación.
+- ART-015 y ART-020 distinguen módulos, ámbitos y subámbitos; Metacanon §§46/51 queda en 1.27; taxonomía estructurada 1.4.
+- GOW 2.16 incorpora el término «Módulo de frente de trabajo (subfrente funcional)» y lo añade a §ARR.
+- La estructura de máquina registra explícitamente que el módulo no es nivel taxonómico, no tiene OCP/núcleo/control independiente y hereda el gobierno del FT padre.
+
+**Validaciones de read-back:** JSON embebido parseado; 22 anexos declarados y 22 artefactos presentes; ART-029 → ART-021; IDs de anexos únicos; referencias internas a anexos sin destinos rotos; términos GOW y modelo estructurado del módulo presentes; título/footer v376/NX-376m coincidentes.
+
+**Límite:** las cuatro divisiones propuestas para EP (continuidad/persistencia remota; adaptación/materialización local; identidad/autenticación/sesiones; recuperación/verificación) se presentan solo como ejemplo. No se crearon ni modificaron módulos, carpetas, tareas, OCP o controles de EP. Tampoco se modificó el OCP/control/código de MCP-OCP. El JSON está estructurado y legible para consumo; no se afirma prueba de integración del DUG con el servidor MCP ni activación de MCP normativo.
+
+### Revisión DTC al cierre de esta ejecución
+
+- EP comunicación: blob `24939fbe18b250256116f8556d96ae3c33bde238`; último ciclo visible `C-EP-DTC-PROMPT02-20261031-02`, con cierre/read-back propio; EP-TASK-002 continúa `en_curso`.
+- MCP-OCP comunicación: blob `e6c375a79ca0a431000aa607ff2dfe9252abafd9`; ciclo 05 cerrado `CUMPLE_VERIFICADO` en §28.4; ciclo 06 abierto en §29, sin secciones de procesamiento/cierre observadas en este corte.
+- DTC global: `EN_CURSO_RECURRENT`; se conserva la obligación de revisar los tres frentes en cada ciclo sin excepción. No se abrió una solicitud nueva a MCP-OCP mientras el ciclo 06 sigue abierto.
+
+**Siguiente acción de Gobernanza:** en el próximo ciclo, recuperar de nuevo ambos objetos y sus cursores; procesar el delta de MCP-OCP 06 cuando exista cierre y read-back, y continuar únicamente trabajo independiente autorizado mientras tanto.
