@@ -1265,3 +1265,68 @@ Leí §29.2 y recibo el plan de reconstruir una única candidata limpia. Antes d
 **Clasificación:** GATE_INCOMPLETO / CICLO LOCAL 06 ABIERTO. Apertura/acuse y respuesta inicial están registrados; procesamiento documental y read-back completos; el build/tests actualizado sigue pendiente por runner offline. No abrir §30 ni una segunda solicitud. No PR/merge, instalación EP ni aceptación. DTC global EN_CURSO_RECURRENT; MCP-NORMATIVO DESACTIVADO; FOL1 PREPARADO_PENDIENTE_ACTIVACION_IPZ; folios globales/OCP CV/CY/A/B PENDIENTE / NO ASIGNADO.
 
 **Siguiente acción del mismo ciclo:** una vez disponible el runner Windows, leer main, alinear la candidata al HEAD actual, verificar blobs DUG/core, ejecutar una pasada completa de Build.ps1, comprobar ambas suites, manifiestos, hashes y extracción ZIP; actualizar recibo y cerrar §29 con read-back. Hasta entonces, no convertir esta espera en una ejecución presunta.
+
+
+### 29.7 Procesamiento final, evidencia técnica y cierre del ciclo local 06
+
+**Cursor final de integración leído:** main HEAD 4265382b46a8f8039c535547c2ac08d08c9b9b60; coordinación MCP-OCP blob previo afb0d67d76e2df7fa3e136b10f9b018450e7926a. El control MCP-OCP sigue blob 3e6f96e919c33c3015478b7fd0f262b1bee47b0c, owned, generación 3, autorización B AUTHORIZED. No se modificó el control.
+
+**Respuesta / delta recibido en el mismo ciclo:**
+
+- Gobernanza: control común generación 12, titular principal de generación 11 preservado y plaza corresponsable 2 reemplazada; su read-back final se marca VERIFIED_READBACK. GOV-TASK-011 sigue en el OCP de Gobernanza; no se transfieren responsabilidades ni se crea otro OCP. No apareció una nueva solicitud técnica de Gobernanza a MCP-OCP posterior a §§29.1/29.3.
+- EP: la coordinación EP blob ce85cee1383d477ccbd6c5578db8fefd5a40600e contiene la continuación del ciclo local C-EP-MOD-SCRIPTPWS-20261101-03. El branch EP permanece aislado; -SelfTest y tests/validate_ep.py siguen pendientes, los checks Vercel fallidos se relacionan con restricción de plan y no equivalen a pruebas PowerShell. EP-TASK-002 continúa en_curso y supeditada a P012/P013 para operaciones B2. No se recibió una instrucción EP que cambie el alcance MCP-OCP.
+- Main avanzó después de la base de build por modificaciones documentales de README y coordinación EP. El compare de la candidata muestra ahead 3 / behind 2, merge-base 419be285373ce5390be2020a954d382f11803674. La diferencia posterior no cambia los blobs fuente DUG/core ni el código de la candidata. No se ejecutó merge ni PR.
+
+**Fuente normativa leída para la build final:** DUG Samantha v377 / NX-377m, Metacanon 1.28, GOW 2.17, blob 54064c8fe00f872023a455f06596061ed69062ae. El HTML, footer y JSON confirman v377/NX-377m; la barra lateral todavía rotula v375/NX-375m. Se deja como discrepancia de presentación del DUG, sin modificarlo desde MCP-OCP. gov-data parseado; 43 principios, 22 anexos y CNP P001/P004/P005/P038/P043. La cobertura de applicability, activation_conditions, mandatory y dependencies sigue 0/43; el producto conserva fail-closed. MCP-NORMATIVO permanece DESACTIVADO. Sink ART-027 aliases p001…p043 no están desplegados ni probados.
+
+**Núcleo operativo vigente:** MCP-OCP-v0.1.16, main base de build 419be285373ce5390be2020a954d382f11803674, blob 8bba2a123dd331132471f35cf0d911b277d168a5. La actualización v0.1.16 corrige el registro §8.1 para reflejar el ciclo local 06 y el estado técnico de la candidata. README de main actualizado y leído de vuelta en blob aabb1b4f03b0fdc5c712cc0c92878ec1d2235820.
+
+**Build final ejecutado en PC-8:** checkout de rama integration/ocp-mcp-0.1.0-selective-20261101, commit de entrada de build 5956595d5455d5b851c2ef1ff6808f0c2aeabff9, con main refs/remotes/origin/main 419be285373ce5390be2020a954d382f11803674; MinGit portátil 2.56.0.windows.4 y .NET SDK 10.0.403; sin elevación ni instalación global. Build.ps1 terminó FINAL_BUILD_EXIT=0.
+
+**Resultados observados:**
+
+| Control | Resultado |
+|---|---|
+| Unit tests | PASS 31/31 |
+| Stdio integration tests | PASS 29/29 |
+| MCP stdio initialize / EOF shutdown | PASS |
+| Herramientas MCP expuestas | 10 |
+| Health READY y reporte del bloqueo normativo | PASS |
+| Fuentes canónicas, catálogo 43 principios y CNP | PASS |
+| Fail-closed por metadatos incompletos | PASS |
+| Escritura bloqueada sin grant | PASS |
+| Cadena de eventos y telemetría local | PASS |
+| Backup, restore y readiness después de restore | PASS |
+| ZIP extraído y componentes cotejados | PASS 200/200 |
+| Git diff --check | PASS |
+
+**Manifiestos y paquete:**
+
+- Base main usada en la build: 419be285373ce5390be2020a954d382f11803674.
+- DUG blob: 54064c8fe00f872023a455f06596061ed69062ae; contenido SHA-256 d898d012f9fd7b0f8ba4fe0eb4c269f204a2f5d63a1e37974347a63960f76fe6.
+- Núcleo MCP-OCP v0.1.16 blob: 8bba2a123dd331132471f35cf0d911b277d168a5; contenido SHA-256 07e59991783e2d2959500e227c5e754b47bcafd5ee59808a3a124ff1faa321de.
+- Source manifest SHA-256: dd7bad92d026694ad443c41902c663bc20c13d88ba842ee2c21c486edbab4428.
+- Build manifest SHA-256: 368b2697e0839edcb898d00a7f8105d3ee374527ece1fcaf91dc2027994a0d93.
+- ZIP ocp-mcp-0.1.0-win-x64.zip, 39,690,805 bytes; SHA-256 96a62fc1291f501b7fa9b0792af07021db4cb2222c8658910bdadb7732bc3b2d.
+- Lectura independiente: el ZIP se extrajo en un directorio temporal nuevo y los 200 componentes cotejaron tamaño y SHA-256 con build-manifest.json. El hash del ZIP, build-manifest y source-manifest coincidieron con build-evidence.json; main ref fue releído después de build y permanecía 419be285373ce5390be2020a954d382f11803674.
+
+**Persistencia de evidencia:** recibo BUILD-CANDIDATE-MCP-OCP-0.1.0-20261101.json actualizado en la rama candidata, blob 11296e495aa9a52a640ff53da2b1042ba67acf08; contenido exacto leído de vuelta. El recibo identifica status MVP_TECNICO_VERIFICADO_NOT_INTEGRATED_NOT_INSTALLED_NOT_ACCEPTED, build source commit 5956595d5455d5b851c2ef1ff6808f0c2aeabff9 y base main 419be285373ce5390be2020a954d382f11803674.
+
+**Clasificación por compuertas, sin conflación:**
+
+- MVP_TÉCNICO_VERIFICADO: SÍ, para la candidata y los blobs DUG v377/core v0.1.16 indicados en el recibo.
+- INTEGRADO_EN_MAIN: NO. La implementación continúa en rama candidata; no se creó PR ni se hizo merge. La rama se encuentra dos commits documentales detrás del main actual, con merge-base de build 419be…; no se atribuye esa diferencia a cambios del producto.
+- INSTALADO_EN_EP: NO. No se modificó host, OEP, control ni recursos EP.
+- ACEPTADO_POR_OPERADOR: NO. Requiere decisión expresa después de revisar el recibo técnico.
+- EP-TASK-002: en_curso; B2 y credenciales no tocados por MCP-OCP.
+- MCP-NORMATIVO: DESACTIVADO; Sink no desplegado; FOL1 PREPARADO_PENDIENTE_ACTIVACION_IPZ.
+
+**Métrica DUG §52:** performance=NOT_MEASURED. El ciclo 06 comenzó antes de la activación de medición y no tiene marcas completas desde apertura; no se incorpora a línea base ni se reconstruyen tiempos.
+
+**Secuencia de cierre:** LEÍDO → RESPUESTA_INICIAL_REGISTRADA → PROCESADO → DOCUMENTADO_AL_CIERRE → VERIFICADO_READBACK. Se releen el recibo de build/test, README y este objeto después de guardar; el control y las fuentes DUG/core no cambian durante el cierre.
+
+**Clasificación MCP-OCP local 06:** CUMPLE_VERIFICADO. El cierre acredita la ejecución y evidencia del frente MCP-OCP, no el cierre de tareas de EP/Gobernanza ni de la DTC global. DTC global permanece EN_CURSO_RECURRENT.
+
+**Siguiente decisión externa:** integrar el código en main requiere autorización expresa del operador. La instalación/operación en EP pertenece a EP y sus compuertas; la aceptación final pertenece al operador. No se ejecutan esos actos desde este ciclo.
+
+**Cierre:** CICLO LOCAL 06 CERRADO · CUMPLE_VERIFICADO · READ-BACK COMPLETO. No abrir §30 por este mismo intercambio. CV/CY/A/B y OCP globales: PENDIENTE / NO ASIGNADO; FOL1 PREPARADO_PENDIENTE_ACTIVACION_IPZ.
