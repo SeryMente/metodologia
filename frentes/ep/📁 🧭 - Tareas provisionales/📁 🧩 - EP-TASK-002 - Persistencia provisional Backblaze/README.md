@@ -1316,3 +1316,56 @@ La incorporación del Prompt 02 en EP no prueba publicación/aceptación global 
 **Política inicial:** objetos remotos inmutables/versionados; no propagar borrados locales, no usar `--delete` ni lifecycle destructivo. La retención local de BackupService (daily/weekly/pre-update) no se copia automáticamente a B2: requiere política remota independiente y pruebas.
 
 **Regla MCP-OCP:** no subir `ocp-mcp.sqlite`, sus archivos `-wal`/`-shm` ni un directorio activo por copia de archivos. Usar el snapshot SQLite nativo. El `.ocpbak` necesita manifiesto externo e identidad portable del mecanismo de descifrado antes de contar como copia multiubicación recuperable.
+
+## 31. Contrato mínimo de manifiesto común EP/MCP-OCP
+
+Cada snapshot transferible debe producir un manifiesto determinista independiente del host y de la ruta absoluta. El mismo contrato atiende archivos ordinarios EP, snapshots nativos de aplicaciones y paquetes `.ocpbak` MCP-OCP.
+
+**Campos mínimos:** `schema`, `dataset_id`, `dataset_owner`, `snapshot_id`, `created_utc`, `source` (tipo, versión, commit/blob o identificador nativo), `consistency` (método y resultado), `encryption` (algoritmo, envoltorio de clave y portabilidad), `files[]` (ruta relativa lógica, tamaño y SHA-256), `destination` (bucket/prefijo y estado de verificación), `restore` (destino nuevo, pruebas requeridas y resultado). El manifiesto no incluye contraseñas, claves, tokens, cookies, SID completo, rutas absolutas privadas ni datos de autenticación.
+
+**Ejemplo ilustrativo para el paquete MCP-OCP (no es recibo de una operación real):**
+
+```json
+{
+  "schema": "ep-persistence-manifest/v1",
+  "dataset_id": "mcp-ocp.runtime.sqlite",
+  "dataset_owner": "MCP-OCP",
+  "snapshot_id": "<content-addressed-id>",
+  "created_utc": "<ISO-8601-UTC>",
+  "source": {
+    "kind": "sqlite-native-backup-package",
+    "repository": "SeryMente/metodologia",
+    "branch": "integration/ocp-mcp-0.1.0-selective-20261101",
+    "source_commit": "5956595d5455d5b851c2ef1ff6808f0c2aeabff9",
+    "package_format": "ocpbak"
+  },
+  "consistency": {
+    "method": "sqlite-online-backup-api",
+    "quick_check": "NOT_RUN_FOR_REMOTE_SNAPSHOT"
+  },
+  "encryption": {
+    "algorithm": "AES-256-GCM",
+    "key_envelope": "DPAPI-CurrentUser",
+    "portable": false
+  },
+  "files": [],
+  "destination": {
+    "provider": "backblaze-b2",
+    "bucket": "OCP-MCP",
+    "bucket_status": "UNVERIFIED",
+    "prefix": null,
+    "upload_status": "NOT_EXECUTED"
+  },
+  "restore": {
+    "target": "new-host-new-profile",
+    "cross_host_key_recovery": "NOT_DESIGNED",
+    "sha256": "NOT_RUN",
+    "sqlite_integrity_check": "NOT_RUN",
+    "application_readiness": "NOT_RUN"
+  }
+}
+```
+
+Los valores entre `<...>` son placeholders, no hashes ni IDs. `files[]` debe enumerar objetos reales con rutas relativas, tamaños y SHA-256 antes de transferir. El ejemplo deja visible la brecha DPAPI; no es una autorización para subir el paquete ni prueba de restauración.
+
+**Invariante de aceptación:** un snapshot solo puede marcarse `RECOVERABLE` cuando el manifiesto, todos los objetos remotos, el mecanismo de recuperación de claves y una restauración funcional en destino nuevo hayan sido cotejados. `UPLOADED`, `HASH_MATCHED` o `LOCAL_RESTORE_PASSED` son estados parciales distintos.
