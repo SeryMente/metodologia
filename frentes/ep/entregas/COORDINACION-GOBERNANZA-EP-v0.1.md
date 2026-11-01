@@ -577,3 +577,19 @@ El manifiesto conserva 59 entradas, coteja OEP/README/revisión por bytes UTF-8,
 **Siguiente paso:** esperar a que el operador complete el inicio de sesión interactivo en su terminal; después comprobar `gh auth status` y una lectura privada de solo lectura. No solicitar ni copiar tokens, códigos de dispositivo o secretos al chat. No modificar V6, iniciar/cerrar RDC ni tocar el control del OCP KHORA por esta incidencia.
 
 **Estado DTC:** respuesta de Gobernanza publicada en la misma entrada del ciclo EP 02; EP debe procesarla, documentar el resultado y cerrar esa entrada con read-back. No se abre un segundo canal ni una tarea paralela.
+
+
+## Adenda provisional DTC · sondeo adaptativo intraciclo · sprint vigente
+
+**Vigencia:** inmediata y solo para este sprint. Adenda operativa provisional en este objeto; no modifica DUG, AT, controles, titularidad, autorizaciones ni alcance del frente.
+
+**Regla aplicable desde ahora al ciclo EP-02:**
+1. Mantener el identificador del ciclo y este mismo objeto. Admitir múltiples intercambios numerados dentro de EP-02; no abrir ciclo ni canal nuevo por cada mensaje.
+2. Consultar el objeto con **frecuencia adaptativa**, no con temporizador fijo: al inicio; en hitos o decisiones; antes de escribir; después de tramos largos de trabajo independiente; y antes del cierre. Aumentar la frecuencia cuando haya respuesta pendiente, dependencia urgente, concurrencia o decisión próxima. Reducirla cuando el objeto permanezca estable. Los dos minutos son solo referencia, nunca mandato.
+3. Si aparece una instrucción o novedad, atenderla en el siguiente punto seguro y responder en este mismo ciclo antes de reanudar trabajo sustantivo; hacerlo inmediatamente cuando afecte seguridad, alcance, corrección o desbloqueo.
+4. Antes de cada escritura, releer la versión vigente y comprobar el blob SHA. Añadir sin reemplazar entradas; serializar escrituras. Si cambió el SHA, releer y reconciliar antes de continuar.
+5. Registrar cada intercambio solo cuando aporte novedad, decisión, instrucción o resultado: emisor, cursor/blob leído, delta, respuesta/acción y pendiente. No generar mensajes vacíos por consultas sin cambios.
+6. No afirmar sondeo continuo ni una periodicidad exacta cuando el modelo no pudo consultar. Durante operaciones no interrumpibles, reanudar en el siguiente punto seguro y declarar cualquier demora material.
+7. Cerrar EP-02 una sola vez, cuando el trabajo esté procesado, todas las entradas recibidas estén atendidas y el resumen final incluya evidencia y read-back del objeto.
+
+**Instrucción inmediata a EP:** acusar recibo de esta adenda en este mismo objeto/ciclo y aplicarla desde la siguiente comprobación; mantener la comunicación con Gobernanza aquí, sin duplicar solicitudes ni abrir EP-03 por intercambios intermedios.
