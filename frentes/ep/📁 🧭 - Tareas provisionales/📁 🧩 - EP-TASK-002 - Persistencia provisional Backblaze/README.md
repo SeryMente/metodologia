@@ -1227,3 +1227,36 @@ EP aplica el modelo centralizador definido por el operador sin trasladar la auto
 - **Límite:** Gobernanza integrará estado y dependencias en su OCP general. EP conserva el detalle técnico, reporta hechos con evidencia y no modifica el OCP, control o backlog MCP-OCP.
 
 La incorporación del Prompt 02 en EP no prueba publicación/aceptación global ni lectura de MCP-OCP. La autoridad y los permisos B2 permanecen sin cambios.
+
+## 27. PC-8 · CLI local verificada, cuenta B2 no autenticada y compuerta de seguridad
+
+**Fecha de observación:** 2026-11-01 · host seleccionado: `PC-8` · Windows x64 · Windows PowerShell 5.1.
+
+### Resultado de herramienta local
+
+- Se descargó desde el release oficial de Backblaze B2 Command Line Tool `v5.0.2` el binario Windows `b2v5-windows.exe`.
+- Ruta local de usuario: `%LOCALAPPDATA%\Programs\BackblazeB2\b2v5-windows.exe`.
+- SHA-256 comprobado antes y después de mover el archivo: `543aa2e36d3cbe06cf2c3e59287ce58b0a7d1507af87f147ff2f7d9406879662`.
+- `b2v5-windows.exe version`: salida observada `b2 command line tool, version 5.0.2 (b2sdk version 2.13.2)`, exit code `0`.
+- `b2v5-windows.exe --help`, `sync --help`, `bucket get --help` y `bucket list --help`: exit code `0`; se verificó la interfaz necesaria sin operar la cuenta.
+- La instalación fue local al perfil, sin elevación, sin cambio de PATH global y sin instalación de Python.
+
+### Estado de autenticación y B2
+
+- No aparecieron variables de entorno `B2_*`/Backblaze.
+- No se encontró el archivo/caché local predeterminado `.b2_account_info` ni las rutas alternativas de configuración B2 inspeccionadas en este perfil.
+- `b2v5-windows.exe account get`: exit code `1`; comprobación sanitizada clasificada como `NOT_AUTHORIZED_OR_NO_CACHED_SESSION`. No se imprimió ni exportó material secreto.
+- No se autenticó la cuenta; no se listaron buckets ni se consultó `OCP-MCP` en el proveedor.
+- No se verificaron cuenta/región, privacidad real, reglas lifecycle, key ID, capacidades, `namePrefix` o permisos efectivos.
+- No se creó/modificó/eliminó ningún recurso B2; no hubo upload, download, sync, restore, lectura de objeto ni operación sobre datos reales.
+
+### Compuerta normativa y tratamiento
+
+- Durante el cotejo del DUG vigente `v377` se confirmó que P012 y P013 requieren presencia del operador para revisar en persona decisiones de seguridad y arquitectura que afectan datos, autenticación y el perímetro del sistema.
+- El operador solicitó continuar remotamente, pero este canal no acredita por sí mismo esa presencia. Se detiene la construcción del motor, el preflight que contacte la cuenta y toda operación B2 hasta la revisión presencial y aprobación correspondiente.
+- **Incidencia de secuencia:** la instalación del binario local ocurrió antes de recuperar y aplicar P012/P013. Se conserva el hecho, no se declara como autorización de seguridad. El ejecutable queda instalado pero sin cuenta autorizada ni uso remoto; no se lo invocará contra B2 hasta superar la compuerta.
+- No se modifica el DUG ni sus principios. El bucket EP sigue siendo exclusivamente `OCP-MCP`, prefijo previsto `ep-ocp/`, ambos `NO VERIFICADOS` en proveedor.
+
+**Estado de este hito:** `CLI_LOCAL_INSTALADA_Y_SHA_VERIFICADO`; `CLI_FUNCIONAL_VERIFICADA`; `B2_AUTHENTICATION_NO_VERIFICADA`; `BUCKET_PREFIJO_PERMISOS_NO_VERIFICADOS`; `UPLOAD_DOWNLOAD_RESTORE_NO_EJECUTADOS`; `MOTOR_EP_B2_NO_CONSTRUIDO_POR_COMPUERTA_P012_P013`.
+
+**Siguiente paso habilitante:** revisión presencial del perímetro y mapa de arquitectura EP/B2 por el operador, con decisión explícita sobre inclusión/exclusión de datos, custodia del key, y flujo de backup/restore. Después se ejecutará el preflight de solo lectura y, si todo coincide, la prueba sintética aislada.
