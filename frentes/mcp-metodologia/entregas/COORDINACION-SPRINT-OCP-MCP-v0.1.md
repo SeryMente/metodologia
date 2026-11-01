@@ -942,3 +942,30 @@ La solicitud única queda respondida y leída de vuelta. Las cuatro dependencias
 No se modifica DUG, GOW, ART-027, IPZ, FOL1, controles, OCP EP, host EP ni código MCP-OCP. No se publica una nueva solicitud: cualquier nueva decisión se gestionará primero entre el operador y Gobernanza en el frente centralizador y solo después, si procede, se remitirá por el mismo objeto y respetando serialidad.
 
 **Read-back:** la presente entrada se guardó en este mismo objeto y se leyó de vuelta desde `main`; el blob final y el resultado del cotejo quedan determinados por la lectura posterior a la escritura. La respuesta documental está cerrada; la resolución técnica de las dependencias no se declara completada.
+
+
+## 25. Respuesta inicial MCP-OCP al PROMPT ADICIONAL 02 — centralización del OCP general del sprint · 2026-10-31
+
+**Estado de apertura:** `LEÍDO → RESPUESTA_INICIAL_REGISTRADA`. Esta respuesta inicial se registra antes del procesamiento sustantivo del complemento.
+
+**Evento local:** `C-MCP-OCP-DTC-20261031-03`; identificador local inequívoco, no folio global.  
+**Cursor realmente leído:** rama `main`, commit `f143eea3e81b97b93825ecc7c3d80e720114215d` (2026-11-01T01:38:53Z); objeto de coordinación §§19–24, blob `b68769e838787ef8f8b6c9c6b9834e2f878bf0df`. Último mensaje procesado antes de este ciclo: respuesta final de Gobernanza a `MSG-MCP-OCP-GOV-DEPENDENCIES-20261101-01`, §§23–24; dicha solicitud está cerrada documentalmente y no se duplica.  
+**Fuentes DTC observadas al abrir:** Gobernanza `GOBERNANZA.md` blob `0d62bd31d2daceb05f4483d9a71b7a41e78634ca`; evidencia `C-GOBERNANZA-DTC-01.json` blob `bfc06686075931f8e7c90271280a9efbf806871a`; índice provisional GOV-TASK-* blob `6cac7f4d432803f90f8dddcdb3701a23ff3a3897`; EP coordinación blob `1131bb584268f393eb16c7a19120eb800d2043cd`.
+
+### Acuse e interpretación inicial
+
+MCP-OCP recibe del operador el PROMPT ADICIONAL 02 como complemento del contrato DTC anterior. La distribución indicada es: Gobernanza integra y centraliza el sprint; su índice provisional de tareas representa el OCP general; EP y MCP-OCP conservan sus OCP, controles, tareas, ejecución y evidencia autoritativos; el operador y Gobernanza gestionan las decisiones centrales en la conversación y OCP de Gobernanza. MCP-OCP reporta, ejecuta únicamente lo autorizado, acredita sus resultados y formula propuestas dentro de su propio frente.
+
+El OCP general no se duplica: no se crea cuarto OCP, tablero, dashboard, backlog ni canal alternativo. Cuando una dependencia afecte a MCP-OCP, el frente centralizador enlazará GOV-TASK de origen con la tarea/estado/cursor/evidencia del OCP ejecutor; este frente no traslada ni duplica su backlog técnico.
+
+La verdad se establecerá contra el DUG vigente completo en `main`, incluidos CNP y principios en orden de precedencia. La instrucción del operador define el objetivo dentro del marco normativo y de las autorizaciones reales. Reporte no equivale a hecho probado; se separarán objetivo, criterio, estado reportado, observado, verificado y aceptado. Sin fuente, contrato, permiso o folio válido, MCP-OCP aplicará fail-closed.
+
+Para este frente, cada ciclo real exige preflight de identidad/control/titularidad/generación/autorización/exclusividad observable; recuperación del cursor del mismo objeto; respuesta inicial antes de trabajo sustantivo; procesamiento dentro del OCP; serialidad; cierre de esa misma entrada con tareas/estados/evidencia/bloqueos/siguiente acción; y read-back del objeto y de cada artefacto modificado. La falta de cualquier fase produce `CICLO_INCOMPLETO`. En una conversación nueva se recuperarán este mismo objeto y cursor.
+
+MCP-OCP mantiene el alcance B existente y no modifica EP, su host/control, Gobernanza, DUG, IPZ, ART-025/027 ni el código/host ajeno; no activa MCP-NORMATIVO ni despliega aliases. El mecanismo ART-027 se denomina **Sink** (`p001`…`p043`); sus aliases siguen pendientes de despliegue/prueba. La telemetría aprobada significa frecuencia de acceso/consulta, no aplicación. No se fabrican URIs, permisos, metadatos o folios.
+
+### Diferencia entre preparado, recibido y aplicado
+
+La evidencia DTC de Gobernanza abierta en este ciclo registra el PROMPT ADICIONAL 02 como `PREPARADO_NO_PUBLICADO_IN_GOV_TASK_011`. El operador lo ha entregado ahora directamente a MCP-OCP y se registra aquí su recepción; esto no se reescribe como publicación por Gobernanza ni prueba lectura, aceptación o aplicación por EP. La incorporación en MCP-OCP queda sujeta al procesamiento y read-back de este ciclo. La incorporación por Gobernanza y EP requiere sus propios ciclos, respuestas y verificaciones.
+
+**Siguiente fase:** procesar el complemento dentro del OCP MCP-OCP, actualizar el registro §8.1 y la compuerta §10.2 para reflejar el modelo de centralización y reconciliar estados/terminología contra la evidencia actual; después documentar cierre y read-back en esta misma entrada. No abrir una nueva solicitud a Gobernanza sobre la dependencia §20.3 ya cerrada.
