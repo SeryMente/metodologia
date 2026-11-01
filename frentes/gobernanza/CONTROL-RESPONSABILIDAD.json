@@ -697,7 +697,7 @@
       },
       "source_control_blob_sha": "beecec6d4a3ca166019f3271bf2715a2c64bb6f1",
       "readback_required": true,
-      "readback_verified": false,
+      "readback_verified": true,
       "uniqueness_check": "UUIDv7 local generado para este asiento; no se expone ID nativo de ChatGPT ni se afirma unicidad organizacional o fencing de plataforma."
     }
   ],
@@ -788,9 +788,22 @@
       "authorization_verbatim": "REtoma repsosnbillidad de asiento 2 del frente.",
       "active_responsibles_after_write": 2,
       "maximum": 2,
-      "status": "COMMITTED_READBACK_PENDING",
+      "status": "VERIFIED_READBACK",
       "readback_required": true,
-      "readback_verified": false
+      "readback_verified": true,
+      "readback_sha": "bb1175ae18e73d5fbd65208466b2426d0bafe2cf",
+      "readback_verified_on": "2026-11-01",
+      "readback_checks": {
+        "primary_alias_preserved": "chatgpt-C-GOBERNANZA-RETOMA-08-SES-20261101-GV8A19904",
+        "primary_folio": "SES-20261101-GV8A19904",
+        "prior_co_responsible_removed": "chatgpt-C-GOBERNANZA-DOBLE-CORRESPONSABILIDAD-01-SES-20261101-ED4A2B32",
+        "new_co_responsible_active": "chatgpt-C-GOBERNANZA-ASIENTO-02-RETOMA-20261101-01-SES-20261101-GV8E89D1FF",
+        "new_session_folio": "SES-20261101-GV8E89D1FF",
+        "new_local_uuidv7": "01a19963-08ed-703e-8134-9df78e89d1ff",
+        "max_two_active": true,
+        "active_responsibles": 2,
+        "generation": 12
+      }
     }
   ]
 }

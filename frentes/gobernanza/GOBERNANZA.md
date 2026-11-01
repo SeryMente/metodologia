@@ -2,15 +2,19 @@
 
 ## Estado rector vigente · C-GOBERNANZA-VECTOR-SEMANTICO-01 · 2026-10-31
 
-## Evento vigente · C-GOBERNANZA-RETOMA-08 · 2026-11-01
+## Evento vigente · C-GOBERNANZA-ASIENTO-02-RETOMA-20261101-01 · 2026-11-01
 
-**Responsabilidad:** titular generación 11, sesión `SES-20261101-GV8A19904`, UUIDv7 local `01a19904-cac5-7351-94eb-ce3ab3837be5`; corresponsable previa preservada. Control final `beecec6d4a3ca166019f3271bf2715a2c64bb6f1`, leído de vuelta.
+**Responsabilidad común:** control generación 12, `TRANSFERENCIA_VERIFICADA_READBACK`. Titular preservado: `SES-20261101-GV8A19904`, alias `chatgpt-C-GOBERNANZA-RETOMA-08-SES-20261101-GV8A19904`, UUIDv7 local `01a19904-cac5-7351-94eb-ce3ab3837be5`, generación 11. Asiento 2 relevado: anterior `SES-20261101-ED4A2B32` retirado del conjunto activo; nuevo corresponsable `SES-20261101-GV8E89D1FF`, alias `chatgpt-C-GOBERNANZA-ASIENTO-02-RETOMA-20261101-01-SES-20261101-GV8E89D1FF`, UUIDv7 local `01a19963-08ed-703e-8134-9df78e89d1ff`, generación 12. Dos responsables activos; máximo dos. Read-back del control verificado desde blob `bb1175ae18e73d5fbd65208466b2426d0bafe2cf`; commit de transferencia `ad9c68e755112ff46115c6228602ab2d97d9d9c2`. El ID nativo de esta conversación no fue expuesto por la plataforma.
 
-**Persistencia documental:** original `ChatGPT-GOBERNANZA-20261101-1518.md` en `documentos/originales/`; 161.472 bytes, SHA-256 `1ce5e272c9d4f80da83a5c5d4be4e36eecf8ebc29001132d5e998af8bacca0d6`, blob `a8bf0cb9f1bf3503827c6013e56abffa1f06e697`; manifiesto, crónica y evidencia actualizados y leídos de vuelta.
+**Original documental:** [ChatGPT-GOBERNANZA-2-20261101-1655.md](documentos/originales/ChatGPT-GOBERNANZA-2-20261101-1655.md) · 42.949 bytes · SHA-256 `71172E0F62C10B4A34FE5F04D5520F28F9ACA6C82771DB6882F70E266CDA7AB4` · Git blob `6814f4029891f953dabe91b376254b49dcc1ce47` · commit `dacb7cff8c183d086f6bd621745ec31ebd50f39c`; lectura de vuelta byte a byte verificada. [Manifiesto](documentos/MANIFIESTO-DOCUMENTAL.json) · [crónica](cronica/C-GOBERNANZA-ASIENTO-02-RETOMA-20261101-01.md) · [evidencia](evidencias/C-GOBERNANZA-ASIENTO-02-RETOMA-20261101-01.json).
 
-**DTC observada:** EP cumple su ciclo documental local Prompt 02, pero EP-TASK-002 sigue `en_curso` y B2/upload/read-back/restauración no están verificados. MCP-OCP mantiene abierto el ciclo local 05; por tanto, su estado integrado es `CUMPLE_PARCIAL`, sin nueva solicitud paralela. El DTC global permanece `EN_CURSO_RECURRENT`.
+**DTC observada:** Gobernanza documentó y verificó este evento. EP conserva ciclo local `C-EP-MOD-SCRIPTPWS-20261101-02` abierto; falta procesar la autenticación GitHub CLI informada, comprobar acceso y cerrar con read-back; EP-TASK-002 sigue `en_curso`. MCP-OCP conserva ciclo local 06 abierto, `GATE_INCOMPLETO`: el build/tests actuales sobre DUG v377 y núcleo v0.1.13 no se ejecutaron por runner Windows offline y ausencia de SDK/workflow de build. Los frentes mantienen control y autoridad propios. DTC global `EN_CURSO_RECURRENT`; sin solicitud paralela ni cierre global.
 
-**Límites:** DUG vigente observado en `main`: Samantha v375 · NX-375m, GOW 2.15 (43 principios, 21 anexos; blob `c993a59163c2c163b17b599a003919b53c5cf6a8`). El adjunto de continuidad conserva su snapshot histórico v373. Este evento no modificó DUG, GOW, ART-025/027, IPZ nativa, controles EP/MCP-OCP ni host. FOL1 continúa `PREPARADO_PENDIENTE_ACTIVACION_IPZ`; no hay folio global asignado.
+**DUG canónico adquirido:** Samantha v377 · NX-377m · Metacanon 1.28 · GOW 2.17 · 43 principios · 22 anexos · blob `54064c8fe00f872023a455f06596061ed69062ae`. §ARR consultado antes del DUG. La barra lateral HTML indica v375 mientras título/footer/gov-data indican v377; se conserva la discrepancia, sin modificar el DUG.
+
+**Continuidad:** GOV-TASK-012 y GOV-TASK-013 permanecen `en_curso`, tareas propias del frente y responsabilidad heredada del control generación 12. La nueva corresponsable retoma el seguimiento documental del asiento 2; no adquiere titularidad ni autoridad de otros frentes.
+
+**Límites:** no se modificaron OEP/EP, MCP-OCP ni sus controles; DUG, GOW, ART-025/027 e IPZ nativa permanecen intactos; MCP-NORMATIVO `DESACTIVADO`. FOL1 `PREPARADO_PENDIENTE_ACTIVACION_IPZ`; CV/CY/A/B globales y OCP `PENDIENTE/NO ASIGNADO`.
 
 Esta sección sustituye los resúmenes ejecutivos repetidos y fotografías anteriores que siguen debajo por procedencia histórica. El vector semántico del operador es criterio rector de toda tarea y ciclo de Gobernanza. [Crónica](cronica/C-GOBERNANZA-VECTOR-SEMANTICO-01.md) · [dictado](conversaciones/C-GOBERNANZA-VECTOR-SEMANTICO-01-dialogo.jsonl) · [evidencia](evidencias/C-GOBERNANZA-VECTOR-SEMANTICO-01.json).
 

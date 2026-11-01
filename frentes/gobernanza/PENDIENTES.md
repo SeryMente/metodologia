@@ -1,17 +1,16 @@
-## Estado rector vigente · C-GOBERNANZA-VECTOR-SEMANTICO-01 · 2026-10-31
+## Estado rector vigente · C-GOBERNANZA-ASIENTO-02-RETOMA-20261101-01 · 2026-11-01
 
-### Reconciliación actual · C-GOBERNANZA-RETOMA-08 · 2026-11-01
+- Control común generación 12, `TRANSFERENCIA_VERIFICADA_READBACK`. Titular `SES-20261101-GV8A19904` (gen11) preservado; corresponsable asiento 2 `SES-20261101-GV8E89D1FF` (gen12), UUIDv7 local `01a19963-08ed-703e-8134-9df78e89d1ff`. Máximo dos activos; lectura de vuelta verificada desde blob `bb1175ae18e73d5fbd65208466b2426d0bafe2cf`.
+- Original `ChatGPT-GOBERNANZA-2-20261101-1655.md`: 42.949 bytes, SHA-256 `71172E0F62C10B4A34FE5F04D5520F28F9ACA6C82771DB6882F70E266CDA7AB4`, Git blob `6814f4029891f953dabe91b376254b49dcc1ce47`, persistido y leído de vuelta byte a byte. [Crónica](cronica/C-GOBERNANZA-ASIENTO-02-RETOMA-20261101-01.md) · [evidencia](evidencias/C-GOBERNANZA-ASIENTO-02-RETOMA-20261101-01.json).
+- EP: ciclo local `C-EP-MOD-SCRIPTPWS-20261101-02` abierto; autenticación GitHub y cierre/read-back pendientes. EP-TASK-002 `en_curso`.
+- MCP-OCP: ciclo local 06 abierto, `GATE_INCOMPLETO`; build/tests actuales no ejecutados por runner Windows offline/SDK/workflow ausentes.
+- DTC global `EN_CURSO_RECURRENT`; no cerrar el sprint global por este evento.
+- DUG actual observado: Samantha v377 · NX-377m · Metacanon 1.28 · GOW 2.17, 43 principios/22 anexos, blob `54064c8fe00f872023a455f06596061ed69062ae`. Sidebar v375 conservado como discrepancia; DUG sin modificación.
+- FOL1 `PREPARADO_PENDIENTE_ACTIVACION_IPZ`; CV/CY/A/B globales y por OCP `PENDIENTE/NO ASIGNADO`. MCP-NORMATIVO `DESACTIVADO`.
+- GOV-TASK-012 y GOV-TASK-013 `en_curso`; heredan responsabilidad del frente/control generación 12.
 
-- Responsabilidad primaria: generación 11, sesión `SES-20261101-GV8A19904`, UUIDv7 local `01a19904-cac5-7351-94eb-ce3ab3837be5`; corresponsable previa `SES-20261101-ED4A2B32` preservada. Control final blob `beecec6d4a3ca166019f3271bf2715a2c64bb6f1`.
-- Nuevo original documental persistido y verificado: `ChatGPT-GOBERNANZA-20261101-1518.md`, 161.472 bytes, SHA-256 `1ce5e272c9d4f80da83a5c5d4be4e36eecf8ebc29001132d5e998af8bacca0d6`, blob `a8bf0cb9f1bf3503827c6013e56abffa1f06e697`.
-- EP: DTC local Prompt 02 `CUMPLE_VERIFICADO`; EP-TASK-002 sigue `en_curso`; no se acreditan autenticación B2, upload, read-back remoto ni restauración.
-- MCP-OCP: ciclo local 05 abierto en coordinación; `CUMPLE_PARCIAL` hasta cierre y read-back. No emitir petición paralela mientras procesa su ciclo.
-- DTC global `EN_CURSO_RECURRENT`. FOL1 preparado/inactivo; CV/CY/A/B globales y por OCP `PENDIENTE / NO ASIGNADO`.
-- DUG vigente observado en `main`: Samantha v375 · NX-375m; GOW 2.15; 43 principios; 21 anexos; blob `c993a59163c2c163b17b599a003919b53c5cf6a8`. El adjunto preservado representa el snapshot previo v373. No se modificó el DUG, GOW, ART-025/027 ni IPZ nativa; controles/recursos de EP y MCP-OCP permanecen intactos.
-
-[Crónica](cronica/C-GOBERNANZA-RETOMA-08.md) · [Evidencia](evidencias/C-GOBERNANZA-RETOMA-08.json).
-
-Esta sección sustituye los resúmenes ejecutivos repetidos y fotografías anteriores que siguen debajo por procedencia histórica. El vector semántico del operador es criterio rector de toda tarea y ciclo de Gobernanza. [Crónica](cronica/C-GOBERNANZA-VECTOR-SEMANTICO-01.md) · [dictado](conversaciones/C-GOBERNANZA-VECTOR-SEMANTICO-01-dialogo.jsonl) · [evidencia](evidencias/C-GOBERNANZA-VECTOR-SEMANTICO-01.json).
+Esta sección sustituye los resúmenes ejecutivos repetidos y fotografías anteriores que siguen debajo por procedencia histórica.
+ El vector semántico del operador es criterio rector de toda tarea y ciclo de Gobernanza. [Crónica](cronica/C-GOBERNANZA-VECTOR-SEMANTICO-01.md) · [dictado](conversaciones/C-GOBERNANZA-VECTOR-SEMANTICO-01-dialogo.jsonl) · [evidencia](evidencias/C-GOBERNANZA-VECTOR-SEMANTICO-01.json).
 
 ### Resultado y secuencia obligatoria
 

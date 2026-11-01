@@ -3,7 +3,7 @@
 **Fecha:** 2026-11-01  
 **Frente/OCP:** `frentes/gobernanza/` · `SeryMente/metodologia` · `main`  
 **Original:** `PERSISTIDO_Y_VERIFICADO`.  
-**Responsabilidad:** relevo del asiento 2 autorizado; escritura del control todavía pendiente en esta etapa.
+**Responsabilidad:** `TRANSFERENCIA_VERIFICADA_READBACK`; control común generación 12 y dos responsables activos.
 
 ## 1. Instrucción y alcance
 
@@ -26,7 +26,7 @@ La exportación conserva la instrucción constitutiva de corresponsabilidad de e
 
 El original se preserva sin transformación. No reemplaza ni adquiere autoridad normativa frente al DUG.
 
-## 3. Preflight y autorización del asiento 2
+## 3. Relevo ejecutado y verificado del asiento 2
 
 **Control autoritativo:** `frentes/gobernanza/CONTROL-RESPONSABILIDAD.json`.
 
@@ -37,7 +37,9 @@ El original se preserva sin transformación. No reemplaza ni adquiere autoridad 
 - Activos observados: 2; máximo permitido: 2.
 - Autorización actual: explícita, verbo exacto conservado en §1.
 - Destino previsto para asiento 2: `chatgpt-C-GOBERNANZA-ASIENTO-02-RETOMA-20261101-01-SES-20261101-GV8E89D1FF` · `SES-20261101-GV8E89D1FF` · instancia `chatgpt-gobernanza-asiento-02-2026-11-01-8E89D1FF` · UUIDv7 local `01a19963-08ed-703e-8134-9df78e89d1ff`, generación 12.
-- **Estado de esta entrada:** el original y su manifiesto están persistidos; la sustitución del corresponsable aún no está ejecutada en el control. No se atribuye titularidad a la nueva sesión hasta el read-back del control.
+- **Commit de transferencia:** `ad9c68e755112ff46115c6228602ab2d97d9d9c2`; blob de control leído de vuelta `bb1175ae18e73d5fbd65208466b2426d0bafe2cf`.
+- **Read-back:** PASS. Titular principal sin cambio; nuevo asiento 2 activo; anterior corresponsable fuera del conjunto activo; exactamente dos responsables activos; generación 12.
+- **Estado:** `COMMITTED_AND_READBACK_VERIFIED`. La asignación es corresponsabilidad local, no titularidad principal ni ID nativo de la plataforma.
 
 El UUIDv7 será una identidad local documental; no es ID nativo de ChatGPT. La plataforma no expuso el ID nativo de esta conversación.
 
