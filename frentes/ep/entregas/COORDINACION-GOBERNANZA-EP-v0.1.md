@@ -813,3 +813,20 @@ Ambos archivos mantienen exactamente el mismo blob SHA en `main` y en la rama de
 4. Mantener el PR #350 como borrador; no fusionar ni desplegar hasta revisar la divergencia de rama y obtener aceptación explícita.
 
 **Estado de este registro:** INCIDENCIA DOCUMENTADA · RCA REGISTRADO · CONTADOR RESTABLECIDO · PR NO PROMOVIDO.
+
+
+### Checkpoint DTC EP · PC-8 reconectado y preflight B2 · 2026-11-01
+
+**Entrada del operador:** log de Desktop Commander Remote: `17:40:39` sesión persistida restaurada para device `7595d30a-bd63-4bc0-a274-f4ae90928247`; `17:40:41` canal suscrito, device online y `Device ready`, cliente `0.3.1`. La lista de dispositivos y `get_config` de RDC confirman PC-8 ONLINE, Windows x64, Node `26.13.0`, PowerShell por defecto, sin Python. No se reproduce el identificador personal presente en el log.
+
+**Preflight local de B2 por RDC:** `b2v5-windows.exe` 5.0.2 / SDK 2.13.2; SHA-256 del binario `543aa2e36d3cbe06cf2c3e59287ce58b0a7d1507af87f147ff2f7d9406879662`; `version` exit 0. `account get` exit 1, error nativo `Missing account data`; clasificación `NOT_AUTHORIZED_OR_NO_CACHED_SESSION`. No se encontraron variables de entorno con nombres B2/AWS examinados.
+
+**Caché preexistente preservada:** `%USERPROFILE%\.b2_account_info` existe como SQLite de 24,576 bytes y SHA-256 `0e0e6b6c02a06063cf78e61b1ccd8a14e93a64c3993b3b1db4f02cc3a012bc88`; la CLI actual no interpreta sus datos de cuenta. No se borró, renombró, migró ni sobrescribió. Se investigó un perfil `ep-ocp` aislado como vía para una futura autenticación sin tocar la caché heredada; la creación/prueba de ese perfil no quedó verificada porque el control remoto bloqueó la llamada de inicialización.
+
+**Bóveda de variables canónica:** el JSON de `SeryMente/khora/main/secrets/env-vault.enc.json`, blob `9d30e8cdab83a1c54d8dc6cb7d46d1c80cab302f`, contiene nueve nombres: NEO4J_URI, NEO4J_USER, NEO4J_PASSWORD, VERCEL_TOKEN, GROQ_API_KEY, KHORA_API_KEY, MCP_OAUTH_CLIENT_SECRET, MCP_JWT_SECRET y MCP_OAUTH_REDIRECT_URIS. No contiene `B2_APPLICATION_KEY_ID` ni `B2_APPLICATION_KEY`. No se descifró la bóveda ni se pidió su llave maestra. El `env-vault.ps1` del clon local no coincide con el blob de main: Git blob local calculado `a5baf4a6be30507b9fbf0b4997f26e4321b8d522`, main `46efce0ff43c400bccdee11f02de5bc2ddd21e4c`; no se ejecutó. La custodia temporal DPAPI `Khora\state\vault-key-temporary.dpapi.json` no existe.
+
+**Alcance preservado:** estos son sondeos locales, no llamadas autenticadas al proveedor. No se listaron buckets ni claves de B2; no se crearon keys/objetos ni se ejecutó upload, download, sync, restore o delete. No se accedió a datos de aplicaciones o del runtime MCP-OCP. La persistencia MCP-OCP sigue incorporada a EP-TASK-002/DTC y su brecha de portabilidad DPAPI CurrentUser está documentada en la matriz/manifiesto.
+
+**Siguiente paso operativo:** autenticar un perfil B2 aislado mediante el portal oficial sin exponer el secreto en el chat; luego verificar en modo de lectura cuenta/región, bucket único `OCP-MCP`, `namePrefix` y capacidades reales de la key. Tras comprobar el scope, ejecutar una prueba sintética no destructiva con manifiesto SHA-256, read-back y restore a una ruta nueva. No se declara B2 operativo ni `RECOVERABLE` antes de esas pruebas.
+
+**Cursor de comunicación:** el bloque de causa raíz MOD-SCRIPTPWS y PR #350 fue leído en el objeto DTC con blob `aaf05fa3aaad8e64281b3ccf5de0705f33aad038`. El alcance MCP-OCP solicitado previamente está publicado por EP; no se encontró todavía un acuse/read-back nuevo de Gobernanza en GOV-TASK-014. El ciclo EP-03 permanece abierto; sin TinyFish.
