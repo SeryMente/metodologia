@@ -39,3 +39,9 @@ La DTC es **semiautomática** mediante cursor, compuerta y registro obligatorio 
 Instrucción directa del operador: mantener comunicación recurrente con EP y MCP-OCP mediante los objetos provisionales existentes, con lectura/respuesta al inicio y documentación/read-back al cierre. Se conserva la constitución y sus antecedentes en [crónica DTC](../../cronica/C-GOBERNANZA-DTC-01.md) y [evidencia DTC](../../evidencias/C-GOBERNANZA-DTC-01.json).
 
 FOL1 permanece `PREPARADO_PENDIENTE_ACTIVACION_IPZ`; los folios globales CV/CY/A/B continúan `PENDIENTE / NO ASIGNADO`.
+
+## Continuidad DTC entre conversaciones
+
+Reanudar en un hilo nuevo no reinicia el historial. Tras el preflight, recuperar desde `main` el DUG vigente, el núcleo/registro del frente y el último cursor del mismo objeto de comunicación; abrir una entrada de ciclo en ese objeto, procesar serialmente, completar el cierre y hacer read-back. Si no hay mensaje nuevo, escribir `SIN_NOVEDAD` con cursor. No crear otro canal ni declarar completo un ciclo sin apertura, cierre y read-back.
+
+**Última revalidación:** Gobernanza `CUMPLE_VERIFICADO`; EP `CUMPLE_PARCIAL` (OEP §90 e índice de tareas con compuerta, pero objeto fuera de `main` y acuse específico al addendum pendiente); MCP-OCP `CUMPLE_VERIFICADO` para el ciclo local §19–20, aunque su núcleo conserva una referencia obsoleta que MCP-OCP debe corregir en su propio ciclo.
