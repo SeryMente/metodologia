@@ -42,15 +42,15 @@
     },
     {
       "path": "frentes/ep/OEP.md",
-      "bytes": 230182,
-      "sha256": "390ee384f922af3fa8f76ce957273886deaa435e76b6f819a83799efcce7069f",
-      "git_blob": "217218c48d79818451cd2cdc1cce98a94a6f122d"
+      "bytes": 231703,
+      "sha256": "f12b81aa1dc43099b9153d8741112f3399c1bb0688c0ea02768825657afde48c",
+      "git_blob": "c0c65c473711881a1d1692bec757b283eca3eb34"
     },
     {
       "path": "frentes/ep/README.md",
-      "bytes": 1224,
-      "sha256": "89dd364a956df825de60e6248f9fc5701a690e9051d236e7ea4c5141cba93154",
-      "git_blob": "fd3515eed66ce9f3206e71aa4c341b1a8136089e"
+      "bytes": 1365,
+      "sha256": "a2b36b8738320e306c80bb6afaf7118ae531cd2272f500160d15d3048c59fa1a",
+      "git_blob": "e787fd908281c9b089652425b023b92eaea7674d"
     },
     {
       "path": "frentes/ep/artefactos/EP-H03-integracion-reproducible-parcial-20261011.zip.b64",
@@ -306,15 +306,15 @@
     },
     {
       "path": "frentes/ep/📁 🧭 - Tareas provisionales/README.md",
-      "bytes": 8412,
-      "sha256": "827a615fc102c1d67afb972903ba43e63e2d991a5a14800f8ed04b0b0f15b977",
-      "git_blob": "934000b93de7e933d893c0055cabc4647dea57be"
+      "bytes": 8494,
+      "sha256": "f52eb6cf56af353b12c8b04e551ffb134f5cf0c55eaea91a63cf90619b13df98",
+      "git_blob": "f55b2db5f1ac9c44c17d1f83078e651ccdf868ed"
     },
     {
       "path": "frentes/ep/📁 🧭 - Tareas provisionales/📁 🧩 - EP-TASK-002 - Persistencia provisional Backblaze/README.md",
-      "bytes": 150127,
-      "sha256": "20d47da0f3fa9d1491dbf2739e5fb281033a56372a0e864c9f70419b814d5f73",
-      "git_blob": "2f854758e7f823cdbda2ecf07ff710683ad2026b"
+      "bytes": 153164,
+      "sha256": "0ab18b62d4b25e4ed18a2a38b33385845f62bc80bc916c8817daa60808428ff4",
+      "git_blob": "8604dcbb0157b73b61671d5aee8a2be96aedcfd1"
     },
     {
       "path": "frentes/ep/📁 🧭 - Tareas provisionales/📁 🧩 - EP-TASK-003 - Mapa integral de construcción EP/README.md",
@@ -339,6 +339,12 @@
       "bytes": 1834,
       "sha256": "bd1ae3df003ee77ddb53500a934cd963ef977e3fa6432374150c5b94e0828357",
       "git_blob": "4ec03e8a4ac28e0660719da037975f7bb1c363ce"
+    },
+    {
+      "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.21.json",
+      "bytes": 3892,
+      "sha256": "0130096b5a05fe6c4042ff1d07d8f42e55abdceac68ec66fcaf84c75787d26c8",
+      "git_blob": "87419509768c0c77a0e18af83e1f94603bdd4142"
     }
   ],
   "exclusions": [
@@ -350,10 +356,12 @@
     "OCP-MCP existence/capabilities not freshly verified in Backblaze",
     "metodologia-ep-persistencia deletion authorized but not executed",
     "OCP-MSP was not created/used/deleted; existence unknown",
-    "No B2 upload/read-back or restoration performed"
+    "No B2 upload/read-back or restoration performed",
+    "mutable DTC coordination object: final blob tracked in the same object's close entry to avoid self-referential manifest hashing",
+    "No Backblaze authentication, bucket/key verification, upload/read-back or restoration in this cycle"
   ],
-  "prior_readback_verified": "Read-back of OEP, task index, EP-TASK-002, EP-TASK-003, shared consumer prompt and REVISION-OEP-v0.3.20; current blobs and UTF-8 content SHA-256 recorded in this manifest.",
-  "latest_review_source_commit": "a141a5d57fe7d0ea35f6c3e4bbbe97ca3315c48d",
-  "current_event": "OEP v0.3.20 / VCU-EP-v22: OCP-MCP confirmed as the sole B2 destination; OCP-MSP and metodologia-ep-persistencia classified as errors.",
-  "verification_scope": "Documentation-only correction. Current main files were acquired after writes; hashes are recorded here. No Backblaze resources or permissions changed."
+  "prior_readback_verified": "Exact post-write GitHub fetch of OEP v0.3.21, task index, EP-TASK-002, folder README and REVISION-OEP-v0.3.21. UTF-8 SHA-256 and Git blob IDs recorded. The mutable DTC communication object is read back and its final blob is recorded in the DTC close entry, not in this manifest.",
+  "latest_review_source_commit": "50dc5808536abb9174c30582a47b522703a87100",
+  "current_event": "OEP v0.3.21 / VCU-EP-v23: reconcile the existing EP DTC communication object into main and register EP-TASK-002's first-urgent persistence work.",
+  "verification_scope": "Documentary changes only. Exact content read-back and UTF-8 SHA-256/Git blob comparisons completed. No B2 resources, keys, permissions, local host, DPAPI, consumer code or deployments modified."
 }
