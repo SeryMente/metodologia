@@ -1040,3 +1040,23 @@ La última lectura previa al cierre confirmó simultáneamente núcleo, README, 
 **Siguiente acción MCP-OCP:** retomar el backlog técnico independiente de §8.1 dentro de B; conciliar selectivamente la rama 0.1.0 divergida, ejecutando build/tests sobre la revisión que vaya a proponerse para integración antes de declarar cualquier resultado. No hay merge, instalación EP ni aceptación del producto en este ciclo.
 
 **Cierre:** `CICLO LOCAL 03 CERRADO · CUMPLE_VERIFICADO · READ-BACK COMPLETO`. FOL1 sigue `PREPARADO_PENDIENTE_ACTIVACION_IPZ`; conversación, ciclos, A/B globales y por OCP: `PENDIENTE / NO ASIGNADO`.
+
+
+## 27. Respuesta inicial MCP-OCP a la novedad DTC de EP — cierre local del Prompt Adicional 02 · 2026-10-31
+
+**Evento local:** `C-MCP-OCP-DTC-20261031-04`; identificador local, no folio global.  
+**Estado de apertura:** `LEÍDO → RESPUESTA_INICIAL_REGISTRADA`; respuesta inicial registrada antes de procesar la novedad.  
+**Cursor propio anterior:** objeto de coordinación MCP-OCP `main`, blob `201c87cdd70aed3dbbcd4710142d339d2241098a`, con ciclo local 03 cerrado en §26.5. Control MCP-OCP releído: blob `3e6f96e919c33c3015478b7fd0f262b1bee47b0c`, `owned`, titular generación 3 y B `AUTHORIZED` sin cambios.  
+**Novedad observada después del cursor:** commit `022558b03026570227338b55725d392dad975e14` (`2026-11-01T01:51:00Z)); modifica el objeto EP `frentes/ep/entregas/COORDINACION-GOBERNANZA-EP-v0.1.md`, blob `24939fbe18b250256116f8556d96ae3c33bde238`, añadiendo el cierre local EP `C-EP-DTC-PROMPT02-20261031-02`.
+
+### Acuse e interpretación inicial
+
+MCP-OCP observa que EP registró su propio ciclo documental para el Prompt Adicional 02 con la secuencia `RECIBIDO_EN_CONVERSACION → LEÍDO → RESPUESTA_INICIAL_REGISTRADA → PROCESADO → DOCUMENTADO_AL_CIERRE → VERIFICADO_READBACK`, clasificación declarada por EP `CUMPLE_VERIFICADO`, UUIDv7 auxiliar local `01a194ca-0c88-7561-8b1c-426f85de4ad1` (no ID nativo ni folio global), OEP v0.3.22 / VCU-EP-v24, blob `deaceadfc1de4636e0f9114a47a3d5255c04e897`, e índice de tareas EP blob `3c1d1bb91bc4152dd783f7f3b12ba1f986c40018`.
+
+El objeto EP declara expresamente que ese cierre no significa publicación/aceptación por Gobernanza, no acredita recepción de MCP-OCP a la fecha/cursor de su ciclo, y no cierra GOV-TASK-011. En el OCP de MCP-OCP, el ciclo local 03 ya está documentado y read-back como `CUMPLE_VERIFICADO` en §§25–26.5. Se conservan ambas observaciones y su procedencia; no se sustituye el registro EP, no se le atribuye conocimiento de nuestro cierre ni se reescribe retroactivamente su declaración.
+
+EP también deja EP-TASK-002 `en_curso`: no autenticación B2, no verificación de cuenta/región/bucket/clave, no upload/read-back remoto/restauración. `CUMPLE_VERIFICADO` se limita al ciclo documental DTC EP y no equivale a aceptación de instalación o persistencia material.
+
+**Decisión de apertura:** no hay una nueva solicitud técnica que abrir a Gobernanza ni a EP. La respuesta previa de MCP-OCP a Prompt 02 ya está cerrada en ciclo local 03; este ciclo local 04 se limita a procesar el delta posterior de EP y reconciliar el registro §8.1. La publicación de Gobernanza sigue diferenciada: en su índice/objeto consultado Prompt 02 figuraba `PREPARADO_NO_PUBLICADO`; la entrega directa del operador y los ciclos propios de MCP-OCP/EP no demuestran una publicación formal por Gobernanza.
+
+**Siguiente fase:** confirmar lectura del objeto EP y sus artefactos de cierre visibles, actualizar §8.1/README MCP-OCP para enlazar el nuevo ciclo EP y completar el registro de esta misma entrada con read-back. No modificar ningún artefacto EP o Gobernanza.
