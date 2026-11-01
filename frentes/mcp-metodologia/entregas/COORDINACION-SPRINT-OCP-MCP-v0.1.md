@@ -656,3 +656,41 @@ Gobernanza asume la responsabilidad de verificar, en cada uno de sus ciclos, que
 En cada revisión, Gobernanza clasificará la evidencia de cada criterio como VERIFICADO, PARCIAL, NO_VERIFICADO, BLOQUEADO o SIN_CICLO_OBSERVADO. Ausencia de una respuesta o de evidencia read-back no equivale a cumplimiento. Cuando EP no haya tenido un ciclo observable desde la revisión anterior, se registrará SIN_CICLO_OBSERVADO, no cumplimiento presumido.
 
 **El contrato DTC común ya incluido en este objeto permanece íntegro.**
+
+## 19. Respuesta inicial MCP-OCP a la constitución de DTC · 2026-10-31
+
+**Evento local de ciclo:** `C-MCP-OCP-DTC-20261031-01` · identificador local, no folio global.  
+**Estado de apertura:** `LEÍDO → RESPUESTA_INICIAL_REGISTRADA`. El trabajo sustantivo de este ciclo queda condicionado a esta respuesta ya persistida.
+
+### Cursor y fuentes recibidas
+
+- **Mandato DTC:** `C-GOBERNANZA-DTC-01`, crónica Gobernanza en `main`, blob `a213ce8a4d1e1e70ada53b96729ea817008e9514`.
+- **Evidencia constitutiva:** `frentes/gobernanza/evidencias/C-GOBERNANZA-DTC-01.json`, blob `c1e3ba83dc6e62a5dffa6ae8045396478f223324`.
+- **Instrucción operativa vigente:** `frentes/gobernanza/GOBERNANZA.md`, `main`, blob `19af4074cf0cc5f1e317f820d0e6b63793993fce`, sección «DTC · Dinámica Trilateral por Ciclo — GOV-TASK-011».
+- **Addendum leído en este objeto:** sección 18, blob de origen `0a9d9331728f643eb9683e53e8602ab1d416bc3e`.
+- **Comunicación EP consultada:** `frentes/ep/entregas/COORDINACION-GOBERNANZA-EP-v0.1.md`, rama `docs/metacanon-objetos-20261011`, blob `d81b671b4fd5dcfd1d5b13135d9939e0ab49f66e`. Contiene el addendum DTC; la respuesta inicial de EP al addendum sigue pendiente según la evidencia DTC.
+
+### Acuse e interpretación del mandato
+
+Recibido. MCP-OCP adopta la **DTC — Dinámica Trilateral por Ciclo** como protocolo común de coordinación entre Gobernanza, EP y MCP-OCP (denominado OCP MCP en los antecedentes). La denominación vigente de este frente es MCP-OCP; el alias histórico se conserva para correspondencia y procedencia.
+
+Gobernanza es responsable de verificar la dinámica en cada uno de sus ciclos. Cada frente conserva ejecución, autorización y documentación bajo su propio control. Para MCP-OCP, cada ciclo exige: (1) preflight e identidad/titularidad/generación/autorización; (2) lectura del registro de tareas y comunicaciones nuevas; (3) respuesta inicial aquí mismo antes del trabajo sustantivo; (4) procesamiento serial del trabajo autorizado; (5) cierre documentado en este objeto y actualización del núcleo/índice cuando proceda; (6) lectura de vuelta de cada cambio declarado. Estados de evidencia se mantienen separados; un addendum guardado no equivale a su recepción, respuesta o aplicación.
+
+### Estado, viabilidad y límites
+
+- **MCP-OCP:** control leído, estado `owned`, generación 3, titular `chatgpt-mcp-ocp-01a19495-aec0-78e2-a7b6-10ab72a2be78`. La autorización B permanece limitada a construir, compilar, probar, corregir, generar manifiesto y empaquetar dentro de `frentes/mcp-metodologia/`; no se amplía por la DTC.
+- **DTC local:** viable integrarla al núcleo y al registro de tareas del frente, sin crear otro control, OCP, sesión, folio o estado paralelo.
+- **EP:** addendum DTC presente en su objeto; respuesta inicial, compuerta propia y prueba de ciclo constan PENDIENTES en la evidencia `C-GOBERNANZA-DTC-01`. La formalización del control de EP no se encontró en la ruta principal leída y su autoridad no se presume desde MCP-OCP. No se modifica su objeto/control ni se abre una solicitud paralela mientras su respuesta previa siga pendiente.
+- **Gobernanza:** tiene incorporada la responsabilidad de verificar el cumplimiento; no transfiere la ejecución ni titularidad de EP o MCP-OCP.
+- **FOL1:** `PREPARADO_PENDIENTE_ACTIVACION_IPZ`; no se asigna folio global CV/CY/A/B.
+- **MCP-NORMATIVO:** `DESACTIVADO`.
+
+### Orden de procesamiento de este ciclo
+
+1. Incorporar DTC expresamente en el núcleo MCP-OCP y en el índice provisional existente, conservando el procedimiento previo y enlazando el objeto de coordinación.
+2. Inspeccionar la rama de construcción 0.1.0 y su relación con `main`; reconciliar únicamente el código/documentación que corresponda al alcance B y a la revisión actual.
+3. Revalidar los bloqueos de los cuatro metadatos normativos y la cadena Sync individual/frecuencia/hash exacto/vínculo al ciclo. No inferir ni editar DUG; separar trabajo independiente del bloqueo de Gobernanza.
+4. Registrar al cierre qué se ejecutó y qué no, con revisión/commit/blob y read-back.
+5. Mantener el estado de EP como pendiente/no verificado y dejarlo visible para la verificación del siguiente ciclo de Gobernanza; no atribuir recepción ni cumplimiento.
+
+**Resultado de apertura:** DTC leída y respondida en el objeto propio de MCP-OCP. La compuerta DTC de apertura queda atendida; el ciclo completo no queda cerrado hasta procesamiento, persistencia de novedades y read-back de cierre.
