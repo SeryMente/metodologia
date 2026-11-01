@@ -1106,3 +1106,14 @@ El README MCP-OCP se actualizó a v0.1.9 para enlazar esta misma entrada y descr
 **Siguiente acción:** Gobernanza debe procesar el delta en su propio ciclo y reconciliar su índice/núcleo; MCP-OCP continuará su backlog técnico independiente autorizado. No se requiere una nueva solicitud a EP ni a Gobernanza para la novedad aquí registrada.
 
 **Cierre:** `CICLO LOCAL 04 CERRADO · CUMPLE_VERIFICADO · READ-BACK COMPLETO`. El blob final de esta coordinación se informa en la salida del ciclo para evitar autorreferencia.
+
+
+## 28. Apertura DTC MCP-OCP — ciclo local 05: reanudación técnica de extremo a extremo
+
+**Evento local:** `C-MCP-OCP-DTC-20261101-05`; identificador local, no folio global.  
+**Cursor realmente leído:** objeto de coordinación blob `082300f8feb97ccdb87910f6310253e9bd8175a6`, cuyo último cierre procesado es ciclo local 04 §27.3. No hay mensajes posteriores en ese mismo objeto al cursor leído; `SIN_NOVEDAD` en la coordinación propia.  
+**Preflight:** control `owned`, titular `chatgpt-mcp-ocp-01a19495-aec0-78e2-a7b6-10ab72a2be78`, generación 3, blob `3e6f96e919c33c3015478b7fd0f262b1bee47b0c`; autorización B `AUTHORIZED`, sin cambios de alcance. Exclusividad: no se abre otra solicitud técnica externa; la siguiente acción será reconciliación interna de la rama de construcción autorizada y no integración ciega.
+
+**Novedad externa observada:** la cabeza de `main` avanzó desde el ciclo anterior hasta `9842370b646b34635c62994d9af722d805da4c95` (`2026-11-01T21:25:32Z`). La rama de construcción permanece en `b37213272dc9a132d1fb181e9ce66fba6ae1becc`. El nuevo ciclo se abre para volver a comparar, clasificar los cambios concurrentes y avanzar el trabajo técnico dentro del OCP, sin modificar EP, Gobernanza, DUG, IPZ, control ni host.
+
+**Respuesta inicial:** recibida la instrucción del operador de continuar el trabajo de extremo a extremo. La interpretación operativa es avanzar de forma continua mientras exista trabajo autorizado y evidencia verificable; no implica autorización para sobrepasar B, integrar sin pruebas, instalar en EP ni aceptar el producto por inferencia. La tarea de este ciclo comienza con inspección del delta y un plan de reconciliación seguro.
