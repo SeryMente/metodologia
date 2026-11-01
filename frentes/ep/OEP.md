@@ -1543,7 +1543,7 @@ El operador entregó directamente el Prompt Adicional 02 a este hilo EP el 2026-
 
 ---
 
-## 94. Módulo funcional MOD-SCRIPTPWS — PowerShell para Entorno Persistente · v0.3.27 / VCU-EP-v29
+## 94. Módulo funcional MOD-SCRIPTPWS — PowerShell para Entorno Persistente · v0.3.28 / VCU-EP-v30
 
 ### Identidad, subordinación y responsabilidad funcional
 
@@ -1653,6 +1653,16 @@ $ErrorActionPreference='Stop'; $d="$env:LOCALAPPDATA\Programs\nodejs"; $env:Path
 
 **Semántica del contador:** permanece en `0` desde el primer fallo hasta que se complete una sesión integral sin fallos, con todas las validaciones y lecturas de vuelta requeridas. La unidad de conteo es la sesión completa, no el número de comandos exitosos después de una falla.
 
+
+### Incidencia de verificador auxiliar SHA-256 · preflight de manifiesto · 2026-11-01
+
+**Operación:** ensayo no mutante del helper JavaScript SHA-256 usado para preparar un manifiesto de integridad en la actualización KHORA 7.5.6 / EP 1.0.4. **Resultado observado:** el vector conocido SHA256("abc") devolvió `5035008fdae4454ead19b0388786c22720a0b720ac991d2dcb9b25d42cbb875a`; esperado `ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad`. El hash calculado de ep-medio-architectura.md tampoco coincidió con el SHA-256 registrado en el manifiesto. **Impacto:** ninguna escritura remota ni actualización del manifiesto; la rama KHORA permaneció intacta.
+
+**Causa raíz VERIFICADA:** la implementación auxiliar asignó de forma desplazada las ocho palabras de estado SHA-256 al desestructurar las variables de ronda; las fórmulas de compresión usaron registros distintos de los exigidos por el estándar. El vector de prueba detectó el defecto antes de cualquier escritura.
+
+**Corrección/previsión:** descartar por completo ese helper. Sustituirlo por una implementación revisada contra los vectores estándar SHA-256, probar al menos el vector vacío, "abc" y un texto UTF-8 con BOM/acentos, y además cotejar un archivo existente contra el hash ya publicado en ep-integrity-manifest.sha256. No escribir ni regenerar el manifiesto hasta que todas las pruebas coincidan.
+
+**Estados:** PREFLIGHT_FALLIDO · RCA_VERIFICADA · SIN_MUTACIÓN_REMOTA · CONTADOR_0. No se repitió el cálculo defectuoso ni se reintentó la escritura.
 ### Entregables, aceptación y siguiente paso
 
 **Entregables del módulo:** comandos de ejecución reproducibles y con shell identificada; inventario de entrypoints PowerShell y consumidores; contratos de parámetros/códigos de salida; diagnóstico y logs recuperables; pruebas positivas/negativas; versiones y checksums; registro de fallos y correcciones; instrucciones de reanudación; evidencia de ejecución y lectura de vuelta. Los entregables se almacenan en las fuentes canónicas de sus repositorios, con referencias desde el OEP, no como copias paralelas.
