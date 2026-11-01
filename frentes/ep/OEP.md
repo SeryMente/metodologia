@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.26. **Sello del frente:** VCU-EP-v28 (Versión de Contexto Universal). **Ancla:** rectificación explícita del operador: `OCP-MCP` es el único bucket B2 de destino; `OCP-MSP` y `metodologia-ep-persistencia` son errores. La rectificación se materializa en §91; conserva la compuerta bilateral de §90 y las tareas/propuesta de adaptación previas.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.27. **Sello del frente:** VCU-EP-v28 (Versión de Contexto Universal). **Ancla:** rectificación explícita del operador: `OCP-MCP` es el único bucket B2 de destino; `OCP-MSP` y `metodologia-ep-persistencia` son errores. La rectificación se materializa en §91; conserva la compuerta bilateral de §90 y las tareas/propuesta de adaptación previas.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -1543,7 +1543,7 @@ El operador entregó directamente el Prompt Adicional 02 a este hilo EP el 2026-
 
 ---
 
-## 94. Módulo funcional MOD-SCRIPTPWS — PowerShell para Entorno Persistente · v0.3.26 / VCU-EP-v28
+## 94. Módulo funcional MOD-SCRIPTPWS — PowerShell para Entorno Persistente · v0.3.27 / VCU-EP-v29
 
 ### Identidad, subordinación y responsabilidad funcional
 
@@ -1636,6 +1636,22 @@ $ErrorActionPreference='Stop'; $d="$env:LOCALAPPDATA\Programs\nodejs"; $env:Path
 **Comprobaciones de publicación separadas:** Vercel informó que no puede desplegar el repositorio privado de organización al team Hobby sin cambio de plan; Netlify informó la misma restricción de repositorio privado de organización. Son fallos de preview del proveedor, no pruebas funcionales del script. No se modificó plan, visibilidad ni integración y no se desplegó producción.
 
 **Conclusión técnica:** el gate nuevo pasó sus validadores específicos de PowerShell 5.1 y el guard del árbol en el commit final. El CI global no está verde por las causas 2–4; la falla de Playwright deriva de la causa 2. No se ha ejecutado una sesión EP real de extremo a extremo ni se han probado en un host efímero VHDX, BitLocker, autenticación, Guardian, recuperación o cleanup. Estado: `STATIC_GUARDS_PASS · INTEGRATION_CI_BLOCKED · E2E_UNACCEPTED · HOST_E2E_NOT_RUN`. El contador de sesiones sin fallos permanece `0`.
+
+### Protocolo obligatorio de fallos, causa raíz y prevención de recurrencia
+
+**Mandato operativo del operador recibido el 2026-11-01:** «Siempre que falle un comando, por algún motivo, se reinicia el contador, se busca causa raíz y se documenta; nunca se comete el mismo error dos veces». Este protocolo queda incorporado como regla permanente de trabajo de MOD-SCRIPTPWS y aplica a comandos interactivos, validadores, scripts, pruebas y comandos de CI que el módulo utilice como evidencia.
+
+1. **Reinicio inmediato:** ante cualquier fallo observado —código de salida distinto de cero, excepción terminante, error de parser, timeout, precondición incumplida, artefacto ausente o salida incompatible con el contrato— el contador de sesiones sin fallos pasa inmediatamente a `0`. Un reintento exitoso no borra el fallo ni restaura la racha.
+2. **No repetir a ciegas:** queda prohibido volver a ejecutar el mismo comando bajo las mismas condiciones sin diagnóstico previo. No se permite reintento automático que oculte la primera falla. Antes de repetir se debe identificar qué cambió: causa corregida, entrada, estado del host, permisos, versión, conexión o precondición. Si no existe cambio causal verificable, no se repite.
+3. **Captura de evidencia:** conservar, cuando sea seguro y pertinente, la línea literal del comando; shell y versión; directorio de trabajo; host/perfil no sensible; repositorio, rama y SHA exactos; entradas con secretos redactados; fuente de reloj/zona y timestamp disponible; stdout, stderr, excepción y código de salida. Capturar `$LASTEXITCODE` inmediatamente después del proceso nativo, antes de ejecutar otra instrucción que pueda alterarlo. No registrar secretos ni datos personales innecesarios.
+4. **Análisis de causa raíz (RCA):** separar síntoma, causa inmediata, causa raíz y factores contribuyentes; distinguir `VERIFICADA` de `HIPÓTESIS`; vincular cada conclusión con la salida, logs, diff o prueba que la demuestra. No etiquetar como causa raíz una conjetura.
+5. **Corrección y prevención:** corregir la condición causante y añadir una guardia, prueba, aserción o preflight que detecte la misma clase de fallo antes de repetir la operación. Para fallos externos/transitorios, documentar evidencia de su carácter transitorio y el cambio de condición; limitar los intentos y comprobar idempotencia. No reintentar una operación destructiva o de escritura si no se ha comprobado antes su estado y la posibilidad de duplicación.
+6. **Revalidación y lectura de vuelta:** ejecutar la validación pertinente con la corrección aplicada, comprobar su código de salida y resultado funcional, y leer de vuelta los artefactos/documentos modificados. Registrar por separado `PROPUESTO`, `CORREGIDO`, `EJECUTADO`, `VERIFICADO` y `ACEPTADO`; no equipararlos.
+7. **Cierre del incidente:** documentar comando fallido literal, evidencia, RCA, corrección, control preventivo y resultado de revalidación en este §94 y en el DTC del ciclo ya abierto. Mantener los identificadores existentes; no crear ni renumerar ciclos o folios por reflejo. Si la causa raíz sigue sin determinarse o la repetición puede causar daño/duplicación, bloquear únicamente esa operación y continuar tareas independientes autorizadas.
+
+**Regla de no recurrencia:** una causa raíz ya diagnosticada debe impedir la repetición consciente del mismo error: el control preventivo se ejecuta antes del siguiente intento. Si la misma causa reaparece, se trata como una nueva incidencia de control, se reinicia el contador y se revisa por qué falló la prevención. Esto reduce recurrencias evitables; no equivale a garantizar que nunca surgirán fallos nuevos o imprevisibles.
+
+**Semántica del contador:** permanece en `0` desde el primer fallo hasta que se complete una sesión integral sin fallos, con todas las validaciones y lecturas de vuelta requeridas. La unidad de conteo es la sesión completa, no el número de comandos exitosos después de una falla.
 
 ### Entregables, aceptación y siguiente paso
 
