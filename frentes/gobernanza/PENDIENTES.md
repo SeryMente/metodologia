@@ -260,3 +260,14 @@ El diseño anterior de Sink/Cloudflare queda en revisión. No desplegar ni decla
 GOV-TASK-010 fue creado para la admisión obligatoria y titularidad exclusiva. La matriz de reorientación está en el índice de tareas provisionales. GOV-TASK-007 es el bloque crítico de IPZ/FOL1; GOV-TASK-002/003/008 requieren reconciliar el diseño histórico Sink con Sync/OCP MCP; GOV-TASK-004 y GOV-TASK-005 no bloquean el MVP inmediato.
 
 No se modifica por este registro el DUG, ART-025, ART-027, IPZ nativo ni los controles de OCP MCP/EP. La instrucción se materializa primero como alcance provisional y contrato de coordinación.
+
+
+---
+
+## C-GOBERNANZA-DOBLE-CORRESPONSABILIDAD-01 · 2026-11-01
+
+**MATERIALIZADO Y VERIFICADO.** DUG v375 · NX-375m/GOW 2.15 canoniza la excepción `ADD_CO_RESPONSIBLE`: una sesión responsable por defecto, dos como máximo con autorización expresa; nunca tres. P037/P039, Metacanon §§38/42.6–42.7/47.2 y GOW actualizados. ART-028 y los 21 anexos conservados.
+
+Control único en generación 10, dos sesiones activas, titular original preservado; SHA `403748d4a401c73abf322b2bc48bd517a9c56600`, estado `VERIFIED_READBACK`. Segunda sesión `SES-20261101-ED4A2B32`. AT v1.2 es propuesta operativa no canonizada; [AT v1.2](entregas/CHATGPT-v0.8/AT-v1.2.md), [crónica](cronica/C-GOBERNANZA-DOBLE-CORRESPONSABILIDAD-01.md), [evidencia](evidencias/C-GOBERNANZA-DOBLE-CORRESPONSABILIDAD-01.json).
+
+FOL1 sigue `PREPARADO_PENDIENTE_ACTIVACION_IPZ`; folios globales CV/CY/A/B no asignados. MCP normativo `DESACTIVADO`. Ambas sesiones releen el control y usan SHA/CAS/read-back antes de escrituras; no existe fencing universal.
