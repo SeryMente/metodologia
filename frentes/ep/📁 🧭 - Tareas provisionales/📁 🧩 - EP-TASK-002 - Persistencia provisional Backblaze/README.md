@@ -1278,3 +1278,23 @@ La incorporación del Prompt 02 en EP no prueba publicación/aceptación global 
 **Registro DTC:** la solicitud de ampliar GOV-TASK-014 y coordinar el acuse de MCP-OCP ya fue publicada por EP en `COORDINACION-GOBERNANZA-EP-v0.1.md` dentro del ciclo abierto `C-EP-MOD-SCRIPTPWS-20261101-03`, con respuesta inicial registrada; commit de comunicación `e660997411b73394db604919eadd6cd34a911886`, blob de read-back `4ab2d62668261b2f5ca33489cf569927139c8770`. Gobernanza aún debe acusar recibo y actualizar su integración; no se presume aceptación ni ejecución por parte de MCP-OCP.
 
 **Continuidad de trabajo:** la restricción de no operar B2 durante la subfase de construcción de MOD-SCRIPTPWS no suspende EP-TASK-002 ni la obligación de persistencia del servicio MCP-OCP dentro de DTC. Ambas líneas continúan en paralelo: estabilización/validación del gate y definición/verificación de datasets, scopes y mecanismos de recuperación. Cuenta B2, key, bucket, prefijos y permisos efectivos permanecen NO VERIFICADOS hasta un preflight autenticado; no se declara ninguna operación remota ejecutada.
+
+## 29. Línea base MCP-OCP: backup local existente y portabilidad aún no demostrada
+
+**Fuentes inspeccionadas:** núcleo MCP-OCP `main` v0.1.16, blob `8bba2a123dd331132471f35cf0d911b277d168a5`; candidata `integration/ocp-mcp-0.1.0-selective-20261101`, HEAD observado `ef639b62509a9b7ae623c3fbd187466ee2e2a3d9`; recibo de build blob `11296e495aa9a52a640ff53da2b1042ba67acf08`. La candidata declara build verificado, 31/31 unitarias, 29/29 integración y 200/200 componentes del ZIP con SHA/tamaños coincidentes. Estado: `MVP_TECNICO_VERIFICADO_NOT_INTEGRATED_NOT_INSTALLED_NOT_ACCEPTED`; ninguna de estas pruebas acredita instalación en EP o persistencia remota B2.
+
+**Estado local descubierto en la candidata:**
+
+- `SqliteStore` crea `data/ocp-mcp.sqlite` con SQLite WAL. Su esquema contiene, entre otras, tablas de instalación, key store, fuentes canónicas, ciclos, clasificaciones, selecciones, solicitudes, grants de autorización, snapshots, eventos, telemetría, recibos, metadatos de claves y puntos de backup.
+- `BackupService` usa SQLite Online Backup API para capturar la base; verifica `PRAGMA quick_check`, genera SHA-256 y empaqueta una copia `.ocpbak` con AES-256-GCM.
+- La clave de datos se envuelve mediante DPAPI `CurrentUser`; la cabecera del paquete marca `dpapi_scope=CurrentUser` y conserva `owner_sid`/`installation_id`.
+- `Restore` descifra el paquete, verifica SHA-256 y `PRAGMA integrity_check`, mueve la base activa a una ruta rollback y coloca el archivo restaurado en la ruta local de la nueva base.
+- El índice `backup_points` guarda `package_path` absoluto dentro de la propia base, por lo que un traslado fuera del host necesita un manifiesto externo y una resolución de rutas por ID lógico, no por ruta de origen.
+
+**Brecha que condiciona la aceptación:** DPAPI `CurrentUser` no acredita portabilidad de la clave envuelta entre perfiles/equipos Windows diferentes. La prueba smoke `backup/restore and readiness after restore` del recibo corresponde a la candidata de build y no demuestra restauración cross-host. No subir el paquete y declarar persistencia multiubicación por el mero hecho de que esté cifrado o porque su hash coincida.
+
+**Trabajo de integración requerido (en conjunto con el propietario MCP-OCP):** definir un sobre de recuperación o re-enveloping de la DEK mediante una clave de recuperación portable y autorizada, fuera de la base/paquete y custodiada de forma apropiada; identificar/manifiestar los paquetes sin depender de `package_path`; exportar una snapshot SQLite consistente; transferir el paquete cifrado al namespace B2 asignado; recuperar en otro host/perfil; y validar DPAPI/clave, AES-GCM, SHA-256, `integrity_check`, migraciones/schema, eventos/recibos, readiness y apertura funcional. La estrategia de clave y su rotación requieren revisión de MCP-OCP y aceptación del operador; EP no reimplementa ni modifica su `BackupService` por su cuenta.
+
+**Clasificación de aceptación:** `BACKUP_LOCAL_MCP_CANDIDATA=REPORTADO_Y_COTEJADO_EN_CODIGO`; `B2_EXPORT_IMPORT=NO_IMPLEMENTADO/NO_VERIFICADO`; `RESTORE_CROSS_HOST=NO_VERIFICADO`; `MCP_OCP_INTEGRADO_EN_MAIN=NO`; `INSTALADO_EN_EP=NO`; `ACEPTADO_POR_OPERADOR=NO`. No confundir esos estados ni reciclar la prueba local como E2E multiubicación.
+
+**DTC:** evidencia publicada para Gobernanza en `COORDINACION-GOBERNANZA-EP-v0.1.md`, mismo ciclo EP-03, addendum de persistencia MCP-OCP y portabilidad DPAPI; commit de comunicación `2a5cb60b82e845868be60a09fe253d5448c72d89`, blob/read-back `d069aab33ba2718a72a5b07dfc0486121b1058ea`. Espera respuesta de Gobernanza y acuse técnico MCP-OCP en su objeto propio; EP no escribe ni altera el núcleo/control MCP-OCP.
