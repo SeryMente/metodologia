@@ -394,3 +394,15 @@ Esta revalidación sustituye las fotografías anteriores de DTC en las que el ob
 
 **Límites de esta materialización:** no se modificaron DUG, GOW, ART-025/027, IPZ nativa, FOL1, controles EP/MCP-OCP, núcleos de esos frentes, host EP ni código del servidor. El nuevo prompt adicional DTC 02 quedó preparado dentro de GOV-TASK-011, estado PREPARADO_NO_PUBLICADO; esta persistencia no prueba lectura, aceptación o aplicación por EP/MCP-OCP.
 
+
+
+---
+
+## Corrección de estado DTC · cierre posterior del ciclo local EP · 2026-10-31
+
+Una revisión posterior del objeto de comunicación EP en main encontró el cierre que aún no estaba presente en la lectura inmediatamente anterior. La nueva revisión del objeto es blob 1131bb584268f393eb16c7a19120eb800d2043cd; commit de cierre f1d60570cd80c97d2c70c1fbb11f59ca7ba06c19. La entrada local C-EP-DTC-PERSISTENCIA-METODOLOGIA-20261031-01 registra LEÍDO, RESPUESTA_INICIAL_REGISTRADA, PROCESADO, DOCUMENTADO_AL_CIERRE y VERIFICADO_READBACK. Su UUIDv7 local auxiliar es 01a194ba-967a-7b0f-896f-599034966c37; no es ID nativo ni folio global.
+
+**Estado actualizado de EP:** CUMPLE_VERIFICADO para ese ciclo documental DTC. OEP v0.3.21 / VCU-EP-v23, blob c0c65c473711881a1d1692bec757b283eca3eb34; índice de tareas EP, blob f55b2db5f1ac9c44c17d1f83078e651ccdf868ed; revisión y manifiesto de read-back, blobs 87419509768c0c77a0e18af83e1f94603bdd4142 y b3a6822de30eaf6df5dc17ba8bc4058bffa60c56.
+
+Este cierre DTC no completa EP-TASK-002. Autenticación B2, cuenta/región, bucket/clave, upload, read-back remoto y restauración siguen no verificados/no ejecutados. El trabajo material de persistencia permanece en_curso bajo OEP. La DTC global/GOV-TASK-011 también permanece en_curso porque el protocolo es recurrente y debe repetirse en cada ciclo futuro de los tres frentes. Esta corrección supersede la fotografía previa que clasificaba el ciclo EP como parcial por falta de cierre.
+
