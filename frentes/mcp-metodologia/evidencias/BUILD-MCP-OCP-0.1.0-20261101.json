@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "artifact": "MCP-OCP 0.1.0 build evidence",
+  "cycle_local": "C-MCP-OCP-DTC-20261101-05",
+  "status": "BUILT_AND_TESTED_NOT_INSTALLED_NOT_INTEGRATED",
+  "build_branch": "build/ocp-mcp-mvp-0.1.0",
+  "source_code_commit": "70d7a1fe8b103d8084d3db8594c5e6e6585b8182",
+  "target_framework": "net10.0",
+  "runtime_identifier": "win-x64",
+  "sdk_version": "10.0.403",
+  "self_contained": true,
+  "entrypoint": "OcpMcp.exe",
+  "args": [
+    "serve"
+  ],
+  "transport": "stdio",
+  "canonical_sources": [
+    {
+      "source_id": "metodologia.dug.canonical",
+      "commit": "34d77f2ec8906e620dbacf609129f1d5aca01d31",
+      "blob": "c993a59163c2c163b17b599a003919b53c5cf6a8",
+      "content_sha256": "c15f2d62cea4467feba0b37842f02910b4e225fc353c60ee5eb9b156db846d3d",
+      "freshness": "VERIFIED_AGAINST_MAIN"
+    },
+    {
+      "source_id": "metodologia.ocp-mcp.core",
+      "commit": "34d77f2ec8906e620dbacf609129f1d5aca01d31",
+      "blob": "15d6fe1a65d52c52215378fd12a49c3a651d6d73",
+      "content_sha256": "2e2b6c2fba18db30097371a92b14ff592ff1794434cec7ba540410a4a1bcc890",
+      "freshness": "VERIFIED_AGAINST_MAIN"
+    }
+  ],
+  "source_manifest_sha256": "ceb34748b120fa1517a7381c6612aa082c72023d25bd9a0149ab9fa1300a9477",
+  "build_manifest_sha256": "539a8fb9e331b39464d7e9e5cd863847d9736b972eb9829da23e0ec932823b90",
+  "package": {
+    "name": "ocp-mcp-0.1.0-win-x64.zip",
+    "sha256": "1c8f843b0768301725e7e8338bd067984afd3849892ceb536c3b2025a028e023",
+    "size_bytes": 39690752,
+    "components": 200,
+    "zip_contents_reverified": true
+  },
+  "tests": {
+    "unit": {
+      "passed": 31,
+      "failed": 0
+    },
+    "stdio_integration": {
+      "passed": 29,
+      "failed": 0
+    }
+  },
+  "created_at_utc": "2026-11-01T21:34:06Z",
+  "limitations": [
+    "No installation in EP",
+    "No merge into main",
+    "No PR created",
+    "Principle selection remains fail-closed due to missing approved metadata",
+    "MCP-NORMATIVO remains DESACTIVADO"
+  ]
+}
