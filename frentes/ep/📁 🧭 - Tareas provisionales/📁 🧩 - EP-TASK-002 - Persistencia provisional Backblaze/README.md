@@ -1147,3 +1147,21 @@ Se creó temporalmente `EP-TASK-002-preflight-write-test-20261031.txt` en `C:\Us
 **ANOMALÍA DE CONFIGURACIÓN QUE DEBE RESOLVERSE ANTES DE LLAMARLA “Escritorio activo”:** el valor `Shell Folders\Desktop` del hive de fila4 señala `C:\Users\fila4\Desktop`, pero `User Shell Folders\Desktop` del mismo SID señala `C:\Users\MantenimientoRCI\Desktop`. No se accedió a la ruta del perfil MantenimientoRCI ni se modificó el registro. Por esta divergencia se acredita la escritura en el directorio físico de fila4, pero la resolución definitiva del Known Folder Desktop que ve el shell interactivo queda **PENDIENTE**. Antes de usarlo como ubicación visible del usuario, resolver la redirección desde la sesión fila4 o corregirla mediante una operación separada expresamente autorizada.
 
 Esta prueba no instaló OCP MCP, no descargó ni extrajo el ZIP, no creó el workspace `EP`, no tocó DPAPI, no modificó configuraciones de usuario y no accedió a Backblaze. No se inspeccionó ni modificó `C:\Users\MantenimientoRCI\`.
+
+
+## 23. Corrección del destino B2 y disponibilidad de la sesión — 2026-10-31
+
+El operador cambió de ubicación y declaró no disponible la sesión local anterior. Ordenó retirar el bucket `metodologia-ep-persistencia` y conservar como único destino B2 de EP `OCP-MSP`. Esta instrucción supersede como destino las menciones históricas a `OCP-MCP`.
+
+**Registro de estados:**
+
+- Destino ordenado: `OCP-MSP`.
+- Bucket adicional cuya eliminación se ordenó: `metodologia-ep-persistencia`.
+- Estado real de buckets, región y keys: **NO VERIFICADO**; no se dispuso de sesión B2 autenticada ni herramienta B2 directa.
+- Eliminación del bucket adicional: **AUTORIZADA**, **NO EJECUTADA**.
+- Existencia y privacidad de `OCP-MSP`: **NO VERIFICADAS**. No asumir existencia ni crear el bucket sin comprobar la cuenta y el nombre exactos.
+- La clave `ep-ocp` solo está reportada históricamente como restringida a `OCP-MCP/ep-ocp/`; no se ha demostrado que permita operar en `OCP-MSP`. No reutilizarla para el nuevo destino por inferencia.
+- El archivo DPAPI de la sesión anterior no está disponible desde la ubicación actual. No usar el host anterior ni pedir que el secreto se pegue en el chat.
+- No se ha subido, leído de vuelta ni verificado por SHA-256 ningún objeto en B2 durante este ciclo.
+
+**Siguiente operación válida:** obtener una sesión B2 autenticada; listar recursos de la cuenta y región; confirmar el bucket `OCP-MSP`, privacidad y alcance de las claves; verificar que `metodologia-ep-persistencia` es el recurso exacto cuya eliminación ordenó el operador y que no contiene datos que deban preservarse; después ejecutar únicamente esa eliminación y leer de vuelta el inventario. El estado de cada paso se registrará por separado. La orden de eliminación no sustituye la identificación técnica del recurso ni demuestra su ejecución.
