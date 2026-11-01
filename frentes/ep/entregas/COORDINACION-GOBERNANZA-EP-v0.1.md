@@ -713,3 +713,16 @@ Se procesó la instrucción y la respuesta de Gobernanza dentro del ciclo EP-02,
 **Validación pendiente:** no se obtuvo una ejecución verificable de `-SelfTest` ni de la batería en Windows PowerShell 5.1 de PC-8 en este checkpoint. El estado del branch y los contenidos fueron inspeccionados por GitHub; no se afirma PASS de parser, self-test o E2E. La arquitectura `ep-medio-architectura.md`, `scripts/khora/modules/CONTRACT.md`, `EP-VALIDATION.md` y `ep-integrity-manifest.sha256` aún requieren sincronización con los artefactos finales de la rama.
 
 **Límites mantenidos:** sin autenticación/credenciales, sin B2, sin Vercel, sin bóvedas, sin arranque completo, sin workspace real y sin promoción a `main`. La revisión presencial P012/P013 consta como declaración directa del operador.
+
+
+### Checkpoint EP · revisión de rama y alcance restante · ciclo 03
+
+**Cursor actualizado:** `SeryMente/khora` rama `ep/mod-scrippws-7.5.5`, HEAD `443136e404ca941a968945b3468238d09b256deb` (`KHORA EP: verificar VHDX no adjunto en limpieza al reinicio`). Comparación GitHub con `main`: `diverged`, 28 commits ahead y 8 behind; no fusionar ni promover sin reconciliar la divergencia.
+
+**Archivos observados en el delta (17):** workflow de single-script, `AGENTS.md`, README, manifiesto SHA-256, arquitectura v1.0.5, bootstrap embebido, gate, configuración, logging, EFS, dependencias, Chrome, cleanup, sesión, contrato modular, Test-Arranque y `tests/validate_ep.py`. El bootstrap embebido coincide byte a byte con el gate en la lectura actual. `08-deps.ps1` incorpora timeout de 45 minutos para la hidratación de dependencias; el prefetch aún no tiene timeout de 20 minutos en el blob actualmente leído. Los wrappers `Setup-Venv`, `Setup-KhoraWeb`, `Wait-DepsPreload` y `Wait-ProactiveDepPrep` ya tienen implementación.
+
+**Integridad y documentos:** arquitectura `ep-medio-architectura.md` está en v1.0.5/host 7.5.5; contrato modular en v1.0.3; `ep-integrity-manifest.sha256` tiene modificaciones de hashes dentro del delta. `EP-VALIDATION.md` conserva encabezado v1.0.1 y requiere actualización para no presentar evidencia histórica como validación de 7.5.5.
+
+**Verificación:** el estado de commit presenta cinco checks Vercel en `failure`, con destinos que muestran requisito de actualización de plan GitHub privado→Hobby; no son pruebas de PowerShell. No hay workflow run PR asociado a este commit. `-SelfTest` y `tests/validate_ep.py` en Windows PowerShell 5.1 siguen `PENDIENTES`; no se declara PASS. El branch no se fusiona ni se despliega.
+
+**Alcance:** continúa vigente la prohibición de B2, credenciales, bóvedas, Vercel, arranque completo, workspaces reales y promoción a `main` en EP-03. La siguiente acción es completar el timeout de prefetch, sincronizar `EP-VALIDATION.md` y validar el manifiesto; luego ejecutar las pruebas locales permitidas y revisar el diff final antes de solicitar cierre del mismo ciclo.
