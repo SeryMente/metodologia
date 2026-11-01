@@ -80,3 +80,16 @@ Se conserva la regla serial del documento `COORDINACION-SPRINT-OCP-MCP-v0.1.md`:
 - DUG observado: v373 · NX-373m; blob `cac4525de77d4f47a8a59c25201968ecf2056b90`.
 - Evidencia OCP release: `frentes/mcp-metodologia/entregas/0.1.0/release-evidence.json`; pruebas: `test-evidence.json`; rama `build/ocp-mcp-mvp-0.1.0`.
 - Identificadores locales de este evento no sustituyen folios globales FOL1.
+
+## Adenda al vector rector — paquete de principios de nivel 2
+
+**Fecha:** 2026-10-31 · America/Mexico_City  
+**Procedencia:** dictado directo del operador; reproducción literal incorporada en `GOBERNANZA.md` y en el JSONL de diálogo rector.  
+**Objeto:** ampliar el vector semántico para que MCP-OCP reciba la solicitud del paquete L2 vinculada al ciclo, materialice una instantánea recuperable por hash, permita su apertura por ese hash y entregue el texto completo al modelo, cuya ventana contextual puede conservarlo de forma volátil durante el ciclo.
+
+Se preservó el dictado sin normalizar las menciones originales a «MCP-OCP» y «MSP». La expansión distingue el hash de apertura del paquete (`package_sha256`) del hash del conjunto de referencias individuales (`links_sha256`), conserva la apertura por hash como requisito, permite al modelo mantener los textos en contexto y deja explícito que esa retención no reemplaza al DUG ni a la instantánea recuperable del servidor.
+
+**Diferencia normativa no resuelta:** el vector rector original utiliza «Sync»; DUG ART-027 establece «Sink» y prohíbe asumir equivalencia. Se registra la divergencia sin resolverla por inferencia.
+
+**Estado:** CRITERIO_DOCUMENTADO · IMPLEMENTACIÓN_NO_VERIFICADA. No se modificaron DUG/ART-027, núcleo o control MCP-OCP, FOL1 ni EP. La implementación queda como trabajo técnico del frente MCP-OCP y deberá pasar por su OCP DTC, con pruebas y read-back.
+
