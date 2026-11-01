@@ -81,3 +81,5 @@ DUG v377 · NX-377m · Metacanon 1.28 · GOW 2.17, blob `54064c8fe00f872023a455f
 **Tareas propias:** [GOV-TASK-012 — revisión integral de fluidez y desempeño](📁%20🧭%20-%20Tareas%20provisionales/📁%20🧩%20-%20GOV-TASK-012%20-%20Fluidez%20y%20desempe%C3%B1o%20del%20marco/README.md) y [GOV-TASK-013 — medición y optimización de ciclos](📁%20🧭%20-%20Tareas%20provisionales/📁%20🧩%20-%20GOV-TASK-013%20-%20Medici%C3%B3n%20y%20optimizaci%C3%B3n%20de%20ciclos/README.md). Ambas heredan el control único de Gobernanza, generación 11.
 
 El ciclo de configuración actual no se usa como línea base. La primera muestra elegible será el primer ciclo sustantivo completo medido desde el inicio; se reunirán al menos diez ciclos comparables antes de fijar una referencia estable. El OCP MCP externo debe incorporar/verificar su propio enlace de retorno; Gobernanza no modifica su control ni su núcleo.
+
+**Registro del evento:** [crónica](cronica/C-GOBERNANZA-OCP-MCP-PERFORMANCE-01.md) · [evidencia](evidencias/C-GOBERNANZA-OCP-MCP-PERFORMANCE-01.json).
