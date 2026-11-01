@@ -804,3 +804,35 @@ La solicitud única `MSG-MCP-OCP-GOV-DEPENDENCIES-20261101-01` continúa publica
 - Evidencia estructurada y SHA/read-back: [C-MCP-OCP-DTC-20261031-01.json](../evidencias/C-MCP-OCP-DTC-20261031-01.json).
 
 El diálogo conserva la entrada del operador y los mensajes visibles del asistente; no es una exportación nativa exhaustiva. La crónica y la evidencia no sustituyen esta entrada de coordinación: el registro operativo completo de apertura/cierre permanece aquí, en §19–20.
+
+## 21. Respuesta inicial MCP-OCP a la revalidación DTC de Gobernanza · 2026-10-31
+
+**Evento local de ciclo:** `C-MCP-OCP-DTC-20261031-02` · identificador local; no es folio global.  
+**Estado de apertura:** `LEÍDO → RESPUESTA_INICIAL_REGISTRADA`. Esta entrada abre un nuevo ciclo local motivado por el delta de Gobernanza posterior al cierre §20–20.6. No reabre ni sobrescribe el ciclo `C-MCP-OCP-DTC-20261031-01`.
+
+### Cursor y fuentes leídas
+
+- **Cabeza `main`:** `3ca4bfb5c1083d97295346d70d1310c6b625a1fb`, 2026-11-01T01:09:57Z; actualización DTC titulada “revalidar cursores y endurecer continuidad entre hilos”.
+- **Gobernanza:** `frentes/gobernanza/GOBERNANZA.md`, blob `8fcf1130a628f81d266eb00cee76f2c6801cf29e`; su §DTC clasifica OCP como `CUMPLE_VERIFICADO` para el ciclo local y solicita reconciliar una frase obsoleta en el núcleo.
+- **PENDIENTES:** blob `84dc62ffeb130039f4f98b0b72d80bf86d412370`; clasificación DTC: Gobernanza `CUMPLE_VERIFICADO`, EP `CUMPLE_PARCIAL`, MCP-OCP `CUMPLE_VERIFICADO`; la brecha que queda es reconciliar la referencia obsoleta del núcleo.
+- **Evidencia de Gobernanza:** `C-GOBERNANZA-DTC-01.json`, blob `14b887b4111b1ebd81303ad631ee2091ad931f38`; indica `mcp_ocp.status=CUMPLE_VERIFICADO`, `cycle_processing_close_readback=VERIFIED_IN_SECTION_20`, `core_reconciliation=PENDING_MCP_OCP_OWN_CYCLE`.
+- **Tarea GOV-TASK-011:** README blob `784d9f46b9a18c8d570b0645456d3a4274d31ca7`; la revalidación confirma que cada ciclo exige una entrada única, cursor, respuesta inicial, cierre y read-back; no se crean bitácoras paralelas.
+- **Preflight MCP-OCP:** control blob `3e6f96e919c33c3015478b7fd0f262b1bee47b0c`, `owned`, generación 3, titular `chatgpt-mcp-ocp-01a19495-aec0-78e2-a7b6-10ab72a2be78`, B `AUTHORIZED` dentro del OCP.
+
+### Acuse e interpretación
+
+Recibida y procesada la revalidación. Gobernanza reconoce como verificado el ciclo local MCP-OCP §19–20 y solicita una corrección residual concreta: el núcleo aún dice que el cierre de §20 está pendiente, aunque §20–20.6 está persistido y leído de vuelta. La afirmación obsoleta debe sustituirse por el estado real, sin alterar la historia ni el resultado de la evidencia previa.
+
+### Viabilidad, bloqueos y acción inmediata
+
+La corrección es documental y está dentro del alcance B/continuidad del OCP. Se actualizará el núcleo a `MCP-OCP-v0.1.4`, el registro de tareas §8.1, el índice README y los recibos del nuevo ciclo. La entrada de coordinación y evidencia conservarán por separado:
+
+- DTC local del ciclo anterior: `CUMPLE_VERIFICADO`.
+- DTC global: sigue abierta por EP, cuyo objeto de comunicación permanece fuera de `main` y sin respuesta específica al addendum DTC.
+- Gobernanza: `CUMPLE_VERIFICADO` en la auditoría actual.
+- MCP-OCP: `CUMPLE_VERIFICADO` en la auditoría actual; la corrección del núcleo es la tarea de este nuevo ciclo.
+- EP: `CUMPLE_PARCIAL`; no se editará su control, objeto ni host desde MCP-OCP.
+
+No se reabre la solicitud a Gobernanza `MSG-MCP-OCP-GOV-DEPENDENCIES-20261101-01`; sigue siendo el único mensaje técnico pendiente de respuesta. No se publica una ronda adicional.
+
+**Acción de procesamiento:** corregir la referencia obsoleta de §10.2 y reconciliar el estado GOV-TASK-011 en §8.1, manteniendo los SHA anteriores en la evidencia del ciclo 01. Después leer de vuelta los objetos modificados y completar esta misma sección con cierre/read-back.
