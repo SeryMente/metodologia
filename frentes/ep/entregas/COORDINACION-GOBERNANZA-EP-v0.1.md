@@ -744,3 +744,21 @@ Se procesó la instrucción y la respuesta de Gobernanza dentro del ciclo EP-02,
 **Estado y siguiente procesamiento:** esta instrucción amplía la interpretación integrada de GOV-TASK-014 y EP-TASK-002, sin crear otra tarea, OCP, canal, bucket o fuente canónica. Se solicita a Gobernanza que rectifique GOV-TASK-014 y su checklist de sprint y coordine el acuse de MCP-OCP en el objeto de comunicación que ya tiene asignado. EP continuará EP-TASK-002 y preparará la matriz de conjuntos/datasets y restauración del MCP en paralelo al cierre técnico de MOD-SCRIPTPWS; no se considera que la construcción del script sustituya la tarea de persistencia.
 
 **Estado del mensaje:** RESPUESTA_EP_PUBLICADA_EN_DTC; pendiente de acuse/read-back por Gobernanza y de coordinación técnica en el objeto propio de MCP-OCP. No se afirma todavía que Gobernanza o MCP-OCP hayan recibido o aplicado esta ampliación.
+
+### Evidencia de MCP-OCP para concretar GOV-TASK-014 · persistencia local existente y brecha multiubicación
+
+EP contrastó el núcleo MCP-OCP `main` v0.1.16 (blob `8bba2a123dd331132471f35cf0d911b277d168a5`) con la candidata `integration/ocp-mcp-0.1.0-selective-20261101` (HEAD observado `ef639b62509a9b7ae623c3fbd187466ee2e2a3d9`; recibo `BUILD-CANDIDATE-MCP-OCP-0.1.0-20261101.json`, blob `11296e495aa9a52a640ff53da2b1042ba67acf08`). El recibo declara la candidata `MVP_TECNICO_VERIFICADO_NOT_INTEGRATED_NOT_INSTALLED_NOT_ACCEPTED`: build exit 0, 31/31 unitarias, 29/29 integración, 200/200 componentes del ZIP con hashes/tamaños coincidentes; una smoke test incluye backup/restore y readiness después de restore. Esto es evidencia de la candidata, no del servidor integrado/instalado en EP ni de operación B2.
+
+**Hallazgo de persistencia útil para el diseño integrado:** la candidata usa `SqliteStore` con base `data/ocp-mcp.sqlite` y modo WAL. `BackupService` genera copias mediante SQLite Online Backup API, ejecuta `PRAGMA quick_check`, calcula SHA-256 y crea paquetes `.ocpbak` cifrados con AES-256-GCM. La clave de datos se envuelve con `ProtectedData`/DPAPI `CurrentUser`; la cabecera del paquete registra `dpapi_scope=CurrentUser` y el `owner_sid`. `Restore` valida integridad SQLite y sustituye la ruta local de base de datos, conservando rollback ante fallo.
+
+**Implicación:** el backup local de la candidata está verificado dentro del escenario de build, pero la lectura del código no demuestra que ese paquete pueda restaurarse en otro host/perfil de Windows. El envoltorio DPAPI `CurrentUser` y la identidad de instalación constituyen una dependencia de portabilidad que debe resolverse y probarse expresamente. Además, el índice `backup_points` y `package_path` residen en la propia SQLite; una recuperación fuera del host debe contar con un manifiesto/índice externo y rutas relativas verificables. No se declara que exista hoy un flujo B2 de exportación/importación ni una recuperación cross-host.
+
+**Criterios adicionales solicitados a Gobernanza para GOV-TASK-014:**
+
+1. Separar `backup local MCP-OCP` de `persistencia remota B2` y de `restore cross-host`; aprobar cada estado por separado.
+2. Exigir que el paquete y su índice/manifest sean transferibles sin depender de una ruta absoluta de la máquina de origen.
+3. Resolver la custodia/recuperación de la clave para un host nuevo (por ejemplo, envoltorio de recuperación o re-enveloping con un mecanismo aprobado); no copiar el DPAPI blob del perfil origen ni asumir que DPAPI `CurrentUser` sobrevive al cambio de usuario/equipo.
+4. Ejecutar restauración aislada en otro host/perfil, con verificación de AES-GCM, SHA-256, `PRAGMA integrity_check`, estado/readiness y prueba funcional del MCP-OCP por su propietario.
+5. Mantener la autoridad del OCP MCP sobre su mecanismo nativo, esquema y código; EP integra el destino B2 como persistencia complementaria sin modificar su producto.
+
+**Acción de EP:** esta evidencia se incorpora al mapa de requisitos EP-TASK-002 y a la solicitud de ampliación ya publicada. No se modificó el repositorio/código/control de MCP-OCP, no se integró su candidata y no se ejecutó ningún upload, download o restore B2. Gobernanza debe actualizar su criterio integrado y solicitar/registrar el acuse técnico de MCP-OCP en su objeto DTC preexistente.
