@@ -42,15 +42,15 @@
     },
     {
       "path": "frentes/ep/OEP.md",
-      "bytes": 231703,
-      "sha256": "f12b81aa1dc43099b9153d8741112f3399c1bb0688c0ea02768825657afde48c",
-      "git_blob": "c0c65c473711881a1d1692bec757b283eca3eb34"
+      "bytes": 237135,
+      "sha256": "06251151e6457c963fd49d4f9f02403985632d2b638b0eaf61b801dd1a95e8a0",
+      "git_blob": "f98db7c49c9c8a40bf55bf93a0d2db278e3c0d7e"
     },
     {
       "path": "frentes/ep/README.md",
       "bytes": 1365,
-      "sha256": "a2b36b8738320e306c80bb6afaf7118ae531cd2272f500160d15d3048c59fa1a",
-      "git_blob": "e787fd908281c9b089652425b023b92eaea7674d"
+      "sha256": "92b855349bbb065799b7c348ec65dc8c05e95a956639150171c72bf79de88364",
+      "git_blob": "f1264cfb15bf2cc1697f7f95dd4077485bcbe571"
     },
     {
       "path": "frentes/ep/artefactos/EP-H03-integracion-reproducible-parcial-20261011.zip.b64",
@@ -307,14 +307,14 @@
     {
       "path": "frentes/ep/📁 🧭 - Tareas provisionales/README.md",
       "bytes": 8494,
-      "sha256": "f52eb6cf56af353b12c8b04e551ffb134f5cf0c55eaea91a63cf90619b13df98",
-      "git_blob": "f55b2db5f1ac9c44c17d1f83078e651ccdf868ed"
+      "sha256": "787f6aa40bbe6ef1be0c7aa3a36c978281c0c0d7080f35f1aff63f6219e98764",
+      "git_blob": "3c1d1bb91bc4152dd783f7f3b12ba1f986c40018"
     },
     {
       "path": "frentes/ep/📁 🧭 - Tareas provisionales/📁 🧩 - EP-TASK-002 - Persistencia provisional Backblaze/README.md",
-      "bytes": 153164,
-      "sha256": "0ab18b62d4b25e4ed18a2a38b33385845f62bc80bc916c8817daa60808428ff4",
-      "git_blob": "8604dcbb0157b73b61671d5aee8a2be96aedcfd1"
+      "bytes": 154765,
+      "sha256": "9d29cdd3f272bd1724b1633bb919efdbc727ea30c8bb934bcdff6854e69d7edd",
+      "git_blob": "6d932628ac0afdf1039915bdd508f39f641a590c"
     },
     {
       "path": "frentes/ep/📁 🧭 - Tareas provisionales/📁 🧩 - EP-TASK-003 - Mapa integral de construcción EP/README.md",
@@ -345,6 +345,12 @@
       "bytes": 3892,
       "sha256": "0130096b5a05fe6c4042ff1d07d8f42e55abdceac68ec66fcaf84c75787d26c8",
       "git_blob": "87419509768c0c77a0e18af83e1f94603bdd4142"
+    },
+    {
+      "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.22.json",
+      "bytes": 4901,
+      "sha256": "2b76c49d57b8d27199f4403b9fb64f0303fe53d414230c667f3bdac578b89df7",
+      "git_blob": "35f977df44a6292a300cf82740af7c46f6978f44"
     }
   ],
   "exclusions": [
@@ -358,10 +364,14 @@
     "OCP-MSP was not created/used/deleted; existence unknown",
     "No B2 upload/read-back or restoration performed",
     "mutable DTC coordination object: final blob tracked in the same object's close entry to avoid self-referential manifest hashing",
-    "No Backblaze authentication, bucket/key verification, upload/read-back or restoration in this cycle"
+    "No Backblaze authentication, bucket/key verification, upload/read-back or restoration in this cycle",
+    "mutable DTC communication object: final blob tracked in its close entry to avoid self-referential manifest hash",
+    "Prompt Adicional 02 not published/applied by Governance to all fronts; direct receipt by EP only",
+    "No MCP-OCP receipt/acceptance verified",
+    "No B2 authentication, upload/read-back or restore occurred"
   ],
-  "prior_readback_verified": "Exact post-write GitHub fetch of OEP v0.3.21, task index, EP-TASK-002, folder README and REVISION-OEP-v0.3.21. UTF-8 SHA-256 and Git blob IDs recorded. The mutable DTC communication object is read back and its final blob is recorded in the DTC close entry, not in this manifest.",
-  "latest_review_source_commit": "50dc5808536abb9174c30582a47b522703a87100",
-  "current_event": "OEP v0.3.21 / VCU-EP-v23: reconcile the existing EP DTC communication object into main and register EP-TASK-002's first-urgent persistence work.",
-  "verification_scope": "Documentary changes only. Exact content read-back and UTF-8 SHA-256/Git blob comparisons completed. No B2 resources, keys, permissions, local host, DPAPI, consumer code or deployments modified."
+  "prior_readback_verified": "Exact post-write GitHub fetch of OEP v0.3.22, task index, EP-TASK-002, folder README and REVISION-OEP-v0.3.22. UTF-8 SHA-256 and Git blob IDs recorded. Mutable DTC object is tracked through the same-object closing entry, not in this manifest.",
+  "latest_review_source_commit": "ae2747caf4933f9c34e006f680a365ec97728e32",
+  "current_event": "OEP v0.3.22 / VCU-EP-v24: EP incorporates Prompt Adicional 02's sprint-governance model within its own execution boundary.",
+  "verification_scope": "EP documentary integration only. No Governance or MCP-OCP files, DUG, IPZ, control, host, code, Backblaze resources or credentials modified."
 }
