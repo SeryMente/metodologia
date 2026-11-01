@@ -6,8 +6,8 @@
   "timezone": "America/Mexico_City",
   "repository": "SeryMente/metodologia",
   "branch": "main",
-  "main_head_before_evidence": "6d6aef8cb41d51626b65a5b5bfdf9b40bfdcb99e",
-  "main_head_timestamp_utc": "2026-11-01T01:14:36Z",
+  "main_head_before_evidence": "a2286035488cfeea973da519d2c32eb481eb6e99",
+  "main_head_timestamp_utc": "2026-11-01T01:15:25Z",
   "ownership": {
     "canonical_identity": "MCP-OCP",
     "historical_identity": "MCP-METODOLOGIA",
@@ -46,7 +46,7 @@
     "proposal_blob_sha": "69a6d9a2edbca6fdd6055642a86efce78ec19f5f",
     "last_commit": "3b3f272e8c10691527b5d0cc081faee78d07e018",
     "last_commit_utc": "2026-10-30T17:42:39Z",
-    "proposal_age_d_h_m_at_main_head": "1.07.31",
+    "proposal_age_d_h_m_at_main_head": "1.07.32",
     "native_installation": "NO_VERIFICADO"
   },
   "dtc": {
@@ -91,7 +91,7 @@
       "ep_host_modified_by_mcp_ocp": false
     },
     "global_dtc": "OPEN",
-    "local_cycle_02_close_blob_sha": "3acdc16d499ba96024f9677bfa68498ff48cc609",
+    "local_cycle_02_close_blob_sha": "f08e6841ab0dacc7e3055f35c1cf32c89dc59dd1",
     "governance_reclassification_of_cycle_02": "PENDING_NEXT_GOVERNANCE_CYCLE"
   },
   "correction": {
@@ -147,17 +147,17 @@
     },
     {
       "path": "frentes/mcp-metodologia/entregas/COORDINACION-SPRINT-OCP-MCP-v0.1.md",
-      "blob_sha": "3acdc16d499ba96024f9677bfa68498ff48cc609",
+      "blob_sha": "f08e6841ab0dacc7e3055f35c1cf32c89dc59dd1",
       "readback": "MATCHED"
     },
     {
       "path": "frentes/mcp-metodologia/conversaciones/C-MCP-OCP-DTC-20261031-02-dialogo.jsonl",
-      "blob_sha": "1d57e6f403714eda9e0f7a85a350455c6068f11a",
+      "blob_sha": "1646d4557ba1459e08343ed3914b6288ffac8df5",
       "readback": "MATCHED"
     },
     {
       "path": "frentes/mcp-metodologia/cronica/C-MCP-OCP-DTC-20261031-02.md",
-      "blob_sha": "7aaf53a5dfd896ca2349261ef3b5b6c44f950589",
+      "blob_sha": "7ab47e7092a4296d82b5aaea83928ab8b0e30772",
       "readback": "MATCHED"
     }
   ],
