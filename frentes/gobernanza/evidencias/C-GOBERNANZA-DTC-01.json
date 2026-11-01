@@ -76,7 +76,8 @@
         "reconciliación"
       ],
       "constraint": "No suplanta a EP/MCP-OCP ni cruza controles, host, código o autorizaciones."
-    }
+    },
+    "overall_status": "DTC_EN_CURSO_RECURRENT; ALL_THREE_OBSERVED_FRONT_CYCLES_VERIFIED_IN_THIS_SNAPSHOT"
   },
   "fronts": {
     "governance": {
@@ -87,7 +88,7 @@
       "session_folio": "SES-20261031-GV8AA51721"
     },
     "ep": {
-      "status": "CUMPLE_PARCIAL",
+      "status": "CUMPLE_VERIFICADO",
       "source_branch": "main",
       "object_path": "frentes/ep/entregas/COORDINACION-GOBERNANZA-EP-v0.1.md",
       "object_blob": "1131bb584268f393eb16c7a19120eb800d2043cd",
@@ -97,13 +98,22 @@
       "task_registry_main_path": "frentes/ep/📁 🧭 - Tareas provisionales/README.md",
       "task_registry_main_blob": "934000b93de7e933d893c0055cabc4647dea57be",
       "own_gate": "OEP_SECTION_90_AND_TASK_INDEX_PRESENT",
-      "response_to_dtc_addendum": "ACKNOWLEDGED_IN_OPEN_CYCLE",
-      "required_action": "EP_CLOSE_OWN_OPEN_CYCLE_AND_READBACK_IN_SAME_OBJECT",
+      "response_to_dtc_addendum": "ACKNOWLEDGED",
+      "required_action": "CONTINUE_EP_TASK_002; B2_AUTHENTICATION_AND_REMOTE_PERSISTENCE_REMAIN_OPEN",
       "message_original_status": "RESPONSE_PROCESSING_CLOSE_READBACK_PRESENT",
       "dtc_addendum_response": "PENDING",
       "local_cycle_id": "C-EP-DTC-PERSISTENCIA-METODOLOGIA-20261031-01",
       "local_cycle_opening": "LEÍDO → RESPUESTA_INICIAL_REGISTRADA",
-      "local_cycle_close_readback": "PENDING_IN_CURRENT_READ"
+      "local_cycle_close_readback": "PENDING_IN_CURRENT_READ",
+      "local_cycle_uuidv7": "01a194ba-967a-7b0f-896f-599034966c37",
+      "local_cycle_processing_close_readback": "VERIFICADO_READBACK_IN_FINAL_ENTRY",
+      "local_cycle_close_commit": "f1d60570cd80c97d2c70c1fbb11f59ca7ba06c19",
+      "local_cycle_close_commit_date_utc": "2026-11-01T01:30:22Z",
+      "oep_version": "v0.3.21 / VCU-EP-v23",
+      "oep_blob": "c0c65c473711881a1d1692bec757b283eca3eb34",
+      "task_index_blob": "f55b2db5f1ac9c44c17d1f83078e651ccdf868ed",
+      "revision_manifest_blob": "87419509768c0c77a0e18af83e1f94603bdd4142",
+      "readback_manifest_blob": "b3a6822de30eaf6df5dc17ba8bc4058bffa60c56"
     },
     "mcp_ocp": {
       "status": "CUMPLE_VERIFICADO",
@@ -126,27 +136,32 @@
     }
   },
   "governance_persistence": {
-    "core_blob": "03db9d251526b0a8822d50e2bf5812ff9ef6434a",
-    "core_sha256": "111c2d0d5fba06ddeddb545a12a24e14454c740b56e69ce6d91dd6e549f16082",
-    "task_blob": "5dae82afce468fe3d8384851044f8eb425e1d681",
-    "task_sha256": "1cce6f465661dc7cc1e9d5ff769aef6cc04924ca7ba0411b13fb839e1433c218",
+    "core_blob": "0d62bd31d2daceb05f4483d9a71b7a41e78634ca",
+    "core_sha256": "d5dd51cb9277887595c628bfe70299f276d73e6f9edb6b1e009f35ce01e84ce5",
+    "task_blob": "5654d1450a1e64b3864558a7153c9c6b268a0d82",
+    "task_sha256": "e443c256499aaa6f5bdc340e45eeb4ce191e10b594ac72cadefb366d85dbf197",
     "task_index_blob": "6cac7f4d432803f90f8dddcdb3701a23ff3a3897",
-    "task_index_sha256": "226a86cfd221603134e30eea92ca8f2f8c5cbddebc8acb9c0e547029add571b7",
-    "chronicle_blob": "5a19ecfe248261043ff92bf0f54845ff2881d75f",
-    "chronicle_sha256": "aed1ce09a7eb03caf8f96f859b5f35b3bcd6db8d6ea2652e6d970048ffbee58f",
+    "task_index_sha256": "96f19ec30aa27c31058f524a26ec722181c2b501b1cbb740e3ffe892387dcc16",
+    "chronicle_blob": "0073f1e73c75acf345330701f863a9cba830eb21",
+    "chronicle_sha256": "05f782bd5a51c88610acc3f4b73905a55d0d51bc381eeac56f293e696120d9c8",
     "mcp_coordination_blob": "b68769e838787ef8f8b6c9c6b9834e2f878bf0df",
     "ep_coordination_blob": "1131bb584268f393eb16c7a19120eb800d2043cd",
     "prompt_additional_02": "PREPARADO_NO_PUBLICADO_IN_GOV_TASK_011",
-    "readback": "VERIFIED_BY_POST_WRITE_GITHUB_FETCH_EXACT_CONTENT",
+    "readback": "PREVIOUS_GOVERNANCE_WRITES_VERIFIED; FINAL_EVIDENCE_WRITE_PENDING",
     "evidence_blob_self_reference": "EXCLUDED_TO_AVOID_SELF_REFERENCE_CYCLE",
-    "evidence_final_write_base_blob": "04e874d36f6701c06b93b0ff7d8f61be2f262717"
+    "evidence_final_write_base_blob": "04e874d36f6701c06b93b0ff7d8f61be2f262717",
+    "ep_oep_blob": "c0c65c473711881a1d1692bec757b283eca3eb34",
+    "ep_task_index_blob": "f55b2db5f1ac9c44c17d1f83078e651ccdf868ed",
+    "ep_revision_manifest_blob": "87419509768c0c77a0e18af83e1f94603bdd4142",
+    "ep_readback_manifest_blob": "b3a6822de30eaf6df5dc17ba8bc4058bffa60c56"
   },
   "boundaries": [
     "Gobernanza centraliza e integra el OCP general del sprint; no asume titularidad de EP/MCP-OCP.",
     "Los OCP de EP y MCP-OCP conservan sus tareas, controles y estado técnico autoritativo.",
     "Los reportes no equivalen a verificación; se requiere fuente observada y evidencia.",
-    "No se afirma que EP haya cerrado su ciclo local; permanece parcial.",
-    "La solicitud MCP-OCP fue respondida en el mismo objeto y leída de vuelta; sus dependencias técnicas no se declaran resueltas.",
+    "EP cerró el ciclo documental local y acreditó read-back; EP-TASK-002 persiste en_curso y B2 no fue autenticado ni operado.",
+    "MCP-OCP ciclos locales 01 y 02 verificados; su única solicitud de dependencias a Gobernanza quedó respondida/read-back; las dependencias técnicas no se declaran resueltas.",
+    "DTC global permanece en_curso porque su contrato es recurrente y debe repetirse en ciclos futuros.",
     "No se modificó DUG/GOW/IPZ/FOL1/ART-025/027 ni controles/host/código ajenos.",
     "No hay monitoreo continuo ni automatización plena verificada.",
     "Prompt adicional 02 está preparado en GOV-TASK-011, no publicado a EP/MCP-OCP."
@@ -184,5 +199,6 @@
       "sha256": "3814ebf54d83691cdaba3ff50cfa6042b41366233fe5034e7686afbc222c0618",
       "commit": "700799f3543fc9e45de2cf8c0a5c6f852756315a"
     }
-  }
+  },
+  "dtc_global_status": "EN_CURSO_RECURRENT"
 }
