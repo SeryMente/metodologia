@@ -4,9 +4,9 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.23. **Sello del frente:** VCU-EP-v25 (Versión de Contexto Universal). **Ancla:** rectificación explícita del operador: `OCP-MCP` es el único bucket B2 de destino; `OCP-MSP` y `metodologia-ep-persistencia` son errores. La rectificación se materializa en §91; conserva la compuerta bilateral de §90 y las tareas/propuesta de adaptación previas.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.24. **Sello del frente:** VCU-EP-v26 (Versión de Contexto Universal). **Ancla:** rectificación explícita del operador: `OCP-MCP` es el único bucket B2 de destino; `OCP-MSP` y `metodologia-ep-persistencia` son errores. La rectificación se materializa en §91; conserva la compuerta bilateral de §90 y las tareas/propuesta de adaptación previas.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
-**Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.23 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
+**Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
 ## LEER PRIMERO
 
@@ -1543,7 +1543,7 @@ El operador entregó directamente el Prompt Adicional 02 a este hilo EP el 2026-
 
 ---
 
-## 94. Módulo funcional MOD-SCRIPTPWS — PowerShell para Entorno Persistente · v0.3.23 / VCU-EP-v25
+## 94. Módulo funcional MOD-SCRIPTPWS — PowerShell para Entorno Persistente · v0.3.24 / VCU-EP-v26
 
 ### Identidad, subordinación y responsabilidad funcional
 
@@ -1553,7 +1553,7 @@ El operador entregó directamente el Prompt Adicional 02 a este hilo EP el 2026-
 - **Mandato del operador:** instrucción directa recibida el 2026-11-01: «Inaugura Modulo ScriptPWS en Frente de Entorno persistente, y toma responsabilida de eel, documenta ultimo comando que funciono.»
 - **Responsabilidad funcional y técnica aceptada:** el asistente de esta conversación asume la dirección funcional de `MOD-SCRIPTPWS`: definición, diseño, implementación y mantenimiento de sus artefactos PowerShell, pruebas, documentación, auditoría técnica y continuidad, siempre dentro de las compuertas y el alcance heredado de EP. La instrucción se interpreta como asignación explícita para este módulo, no como transferencia de titularidad del FT EP ni como cambio de control del padre; no autoriza por sí sola operaciones de host, credenciales, B2, despliegues ni cambios ajenos al módulo.
 - **Identidad formal del FT padre:** el OEP §93.3.5 registra que no se localizó un `CONTROL-RESPONSABILIDAD.json` autoritativo de EP ni titular/generación formal activa. La brecha sigue abierta. No se inventa titular, generación, UUID de conversación ni control paralelo. No se reclama titularidad formal de EP.
-- **Estado del módulo:** `INAUGURADO_DOCUMENTALMENTE · EN_CURSO`; validación técnica integral y aceptación pendientes.
+- **Estado del módulo:** `INAUGURADO_DOCUMENTALMENTE · EN_CURSO`; toolchain Node.js/npm/npx validado en PC-8; validación técnica integral y aceptación pendientes.
 - **Materialización:** por ahora queda dentro de este OEP y se enlaza desde el README del frente. No se crea `modulos/scrippws/` mientras no haya volumen documental o artefactos independientes que lo justifiquen.
 
 ### Alcance y exclusiones
@@ -1594,10 +1594,27 @@ La evidencia recuperada del OCP independiente KHORA Workstation Bootstrap regist
 
 Las invocaciones de modo que están respaldadas por ese recibo son `& $scriptBlock -SelfTest` y `& $scriptBlock -PreflightOnly`, después de recuperar y verificar la fuente privada. El recibo no conserva una línea literal autónoma completa; no se reconstruye una cadena distinta ni se le atribuye éxito.
 
-**Comandos de la conversación actual:**
-- Intento que devolvió `No se encontró gh.exe; no se modificó el entorno.`: `FALLIDO_ANTES_DE_EJECUCIÓN`, según la salida aportada por el operador.
-- Último comando de ejecución completa emitido por el asistente, con adaptación en memoria de los cuatro `exit` de V6 para preservar la consola: resultado del operador no recibido; estado `NO_VERIFICADO`.
-- No hay evidencia de que el comando completo haya iniciado RDC ni de que se haya producido un handshake nuevo.
+**Registro de la conversación y ejecución verificada posterior (2026-11-01):**
+
+El corte anterior documentaba una ejecución de launcher no verificada. Este registro la actualiza sin atribuir éxito retroactivo a esos intentos.
+
+**Último comando de validación que terminó correctamente**, ejecutado en PowerShell sobre el host remoto PC-8 mediante RDC:
+
+```powershell
+$ErrorActionPreference='Stop'; $d="$env:LOCALAPPDATA\Programs\nodejs"; $env:Path="$d;$env:Path"; Write-Output 'NODE'; & "$d\node.exe" --version; Write-Output 'NPM'; & "$d\npm.cmd" --version; if($LASTEXITCODE -ne 0){throw 'npm.cmd failed'}; Write-Output 'NPX'; & "$d\npx.cmd" --version; if($LASTEXITCODE -ne 0){throw 'npx.cmd failed'}; Write-Output 'VALIDATION_OK'
+```
+
+**Salida observada:** `NODE → v26.13.0`; `NPM → 11.20.0`; `NPX → 11.20.0`; cierre literal `VALIDATION_OK`. El proceso terminó correctamente (PID remoto 18720; PID efímero, no identidad de sesión).
+
+**Lectura de estado RDC:** el proveedor devolvió `PC-8 = ONLINE`; `get_config` respondió desde ese host y confirmó Windows x64, Desktop Commander `0.3.1`, Node.js `v26.13.0` en `%LOCALAPPDATA%\Programs\nodejs\node.exe`. La prueba de conectividad es la lectura viva del proveedor y de configuración; no se afirma que se haya capturado el stdout de un comando literal de arranque RDC en este ciclo.
+
+**Hallazgos del host:** PowerShell bloqueó el shim `npm.ps1` por la política local de ejecución. La corrección validada es invocar `npm.cmd` y `npx.cmd`; no se modificó `ExecutionPolicy`. Python no está disponible en el host observado. Git no fue comprobado en este ciclo.
+
+**Contador de sesiones sin fallas:** `1`, valor inicial solicitado expresamente por el operador. Este valor es una línea base de contador, no una declaración de que el ciclo de instalación completo haya estado libre de fallas: durante el ciclo quedaron observados el HTTP 400 de la primera descarga y el bloqueo de `npm.ps1`. Los incrementos posteriores requieren cierre de una sesión completa sin fallas observadas en comandos, instalación, validación y lectura de vuelta.
+
+**Identidad local de continuidad:** UUIDv7 `01a1995e-f010-73cb-b992-68d36f5593a7`; identificador local, no ID nativo de conversación, dispositivo ni GitHub.
+
+**Estado:** validación de Node/npm/npx `VERIFICADA`; RDC `ONLINE_VERIFICADO_POR_PROVEEDOR`; instalación de Python `NO_PRESENTE`; Git `NO_VERIFICADO`; autenticación GitHub/Vercel y otras dependencias no probadas. El comando de validación anterior es el último comando literal de este ciclo cuyo resultado completo quedó observado.
 
 ### Entregables, aceptación y siguiente paso
 
