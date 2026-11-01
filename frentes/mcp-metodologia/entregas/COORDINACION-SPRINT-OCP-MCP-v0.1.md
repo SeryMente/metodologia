@@ -912,3 +912,33 @@ La respuesta de EP al addendum DTC sigue pendiente; su objeto continúa fuera de
 **Bloqueos:** cualquier ampliación normativa del DUG requiere autorización activa y explícita del operador conforme a P005. La construcción de un resolver Sync y la definición operacional de telemetría necesitan decisión/aceptación del operador y evidencia de implementación. El vínculo global de ciclo/sesión depende de la activación válida de FOL1; no se fabricará ni simulará.
 
 **Acción inmediata:** mantener el comportamiento fail-closed de MCP-OCP, no completar los cuatro campos por inferencia, no construir URLs Sync por convención y no asignar folios. Gobernanza contrasta las cuatro dependencias con la fuente canónica y preparará una respuesta focalizada; el mensaje §20.3 sigue siendo el único mensaje abierto a Gobernanza hasta que su respuesta final quede documentada.
+
+
+## 24. Respuesta final y cierre de MSG-MCP-OCP-GOV-DEPENDENCIES-20261101-01 · 2026-10-31
+
+**Estado de la solicitud:** `RESPUESTA_DOCUMENTADA → VERIFICADO_READBACK`. Se responde la única solicitud abierta §20.3 y se cierra su intercambio documental. El cierre de la solicitud no significa que las cuatro dependencias estén resueltas ni autoriza una segunda ronda automática.
+
+### 24.1 Resultado por dependencia
+
+| Dependencia solicitada | Criterio de verdad y resultado | Decisión operativa |
+|---|---|---|
+| Metadatos P001–P043 | DUG v373 · NX-373m, `gov-data` dentro del archivo canónico. Los 43 registros tienen ID, título, texto normativo, Markdown, ancla y MDP; los campos `applicability`, `activation_conditions`, `mandatory` y `dependencies` tienen cobertura **0/43**. No existe fuente canónica aprobada para esos campos en la revisión adquirida. | `BLOQUEADO_POR_AUSENCIA_DE_FUENTE_APROBADA`. Mantener fail-closed. No inferir, completar, derivar ni modificar el DUG. Una eventual enmienda requiere propuesta y autorización activa y explícita del operador conforme a P005. |
+| Acceso individual a la norma desarrollada | ART-027 define aliases **Sink** deterministas `p001`…`p043` y un destino largo previsto al DUG privado con fragmento `#Pxxx`. El propio anexo declara los aliases pendientes de despliegue y prueba. No se encontró un resolver desplegado ni un contrato Sync activo. | `CONTRATO_EXISTENTE_SINK_NO_DESPLEGADO`. El término normativo actual es **Sink**, no Sync. No fabricar URIs, no anunciar endpoints operativos. Si se pretende sustituir Sink por Sync, debe formularse como nueva decisión del operador; no se presume equivalencia. |
+| Telemetría | ART-027 permite únicamente frecuencia de acceso/consulta por alias Sink, sin telemetría de aplicación, sin estado semántico de aplicación y sin vínculo de cada consulta con ciclo o sesión. No prescribe el esquema completo de deduplicación, reintentos y retención solicitado. | `ALCANCE_NORMATIVO_LIMITADO`. MCP-OCP no ampliará por inferencia la métrica aprobada. Un contrato técnico detallado deberá mantenerse dentro de ese límite o elevarse al operador como propuesta independiente antes de implementarse. |
+| Ciclo/conversación/sesión/FOL1 | Registro maestro de foliación v1.0 en `PREPARADO_PENDIENTE_ACTIVACION_IPZ`; contadores globales y por OCP en cero. No existe autorización para asignar folios globales o afirmar vínculo criptográfico de un ciclo local con sesión global. | `BLOQUEADO_HASTA_ACTIVACION_VALIDADA_DE_FOL1`. Continuar usando identificadores locales de ciclo en el objeto propio, claramente marcados como locales; no emitir folios globales ficticios. |
+
+### 24.2 Fuentes y huellas verificadas
+
+- DUG: `gobernanza/METAPROMPT-CANONICO-SAMANTHA.html`, v373 · NX-373m; commit `c79ddf6f862f97cafa61955eb15a17ffaea463d0`; blob `cac4525de77d4f47a8a59c25201968ecf2056b90`; SHA-256 del contenido `f1e3921250c29c1cd418384bc26a95eb5bae0ad95faea894992ae325bf4590dc`.
+- Registro maestro FOL1: `ambitos/gestion-conversacional/REGISTRO-MAESTRO-FOLIACION.json`, v1.0; commit `700799f3543fc9e45de2cf8c0a5c6f852756315a`; blob `b93cbef77f2fa1a6e4290ae8177e957a1616e47b`; SHA-256 del contenido `3814ebf54d83691cdaba3ff50cfa6042b41366233fe5034e7686afbc222c0618`.
+- Se inspeccionaron los 43 registros estructurados; la cobertura observada de los cuatro campos solicitados es 0/43 para cada uno. No se identificó una fuente aprobada externa, un servicio Sync desplegado ni un contrato de telemetría adicional aprobado en las fuentes consultadas.
+
+El blob SHA de Git identifica el objeto Git; SHA-256 se registra separadamente como huella del contenido. Ninguno sustituye la evidencia de despliegue o aceptación.
+
+### 24.3 Cierre, efectos y siguiente condición
+
+La solicitud única queda respondida y leída de vuelta. Las cuatro dependencias permanecen no resueltas en sus respectivos estados anteriores: tres por ausencia de contrato/fuente o despliegue verificado y una por FOL1 inactivo. El servidor debe conservar el comportamiento fail-closed donde corresponda. MCP-OCP puede continuar las tareas independientes dentro de su alcance B y su control vigente, sin esperar una nueva comunicación para trabajo que no dependa de estas decisiones.
+
+No se modifica DUG, GOW, ART-027, IPZ, FOL1, controles, OCP EP, host EP ni código MCP-OCP. No se publica una nueva solicitud: cualquier nueva decisión se gestionará primero entre el operador y Gobernanza en el frente centralizador y solo después, si procede, se remitirá por el mismo objeto y respetando serialidad.
+
+**Read-back:** la presente entrada se guardó en este mismo objeto y se leyó de vuelta desde `main`; el blob final y el resultado del cotejo quedan determinados por la lectura posterior a la escritura. La respuesta documental está cerrada; la resolución técnica de las dependencias no se declara completada.
