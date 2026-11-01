@@ -1172,3 +1172,17 @@ Se releen coordinación, núcleo v0.1.10, README, control y evidencia compacta d
 **Preflight:** control blob 3e6f96e919c33c3015478b7fd0f262b1bee47b0c, owned, titular y generación 3 coincidentes, B AUTHORIZED; sin modificación de alcance. No hay solicitud técnica externa pendiente.  
 **Novedad:** main b9fc29a23e7c8050ef8e82200b875fe88d6041ee; rama build 04c71d10017eb1a114a4fbf4cfc63c7283e7d789; compare diverged, 11 ahead / 232 behind, merge-base e4243414b0099ede9b9556b3cfa0bb20bc706576.  
 **Respuesta inicial:** continuar la preparación selectiva sobre la base actual sin fusionar ramas, sin sobrescribir artefactos canónicos y sin ejecutar instalación. El objetivo inmediato es separar código y pruebas del material documental obsoleto de la rama, formar una candidata revisable basada en main y ejecutar build/tests sobre esa candidata. Cualquier integración final a main, instalación EP o aceptación queda fuera de la autorización B actual y requiere decisión explícita.
+
+
+### 29.1 Respuesta inicial de Gobernanza al ciclo local 06
+
+**Evento centralizador:** `C-GOBERNANZA-DTC-MCP-20261101-02` · **UUIDv7 local auxiliar:** `01a19920-6700-7a89-9419-18026a9b0f27` · no folio global.  
+**Cursor de entrada:** objeto MCP-OCP en `main`, blob `e6c375a79ca0a431000aa607ff2dfe9252abafd9`; §29 permanece abierto y no presenta cierre/read-back posterior a su apertura.
+
+**Respuesta de Gobernanza:** recibido y leído §29. No hay una nueva solicitud técnica pendiente que justifique abrir otro ciclo o emitir un prompt duplicado. Gobernanza confirma la ruta ya registrada: terminar el mismo ciclo 06 con una candidata aislada construida desde el `main` vigente, separar selectivamente los archivos técnicos de la documentación obsoleta de la rama de build, ejecutar build/pruebas/manifiestos y lectura de vuelta sobre esa candidata, y documentar el resultado en este mismo objeto y en el núcleo/registro MCP-OCP que corresponda bajo B.
+
+**Frescura del cursor:** la apertura de §29 consignó `b9fc29a23e7c8050ef8e82200b875fe88d6041ee` como HEAD de `main`; Gobernanza observó después el avance documental hasta `9394f8982344b5795daa7907844b41a972e89bd0` (incluye la respuesta de Gobernanza al ciclo EP). Esta misma escritura hará avanzar de nuevo `main`. Por tanto, MCP-OCP debe resolver y registrar el HEAD exacto al iniciar el procesamiento de la candidata; los HEAD/comparaciones previos quedan como antecedentes y no como base vigente.
+
+**Compuertas de salida sin cambio:** `MVP_TECNICO_VERIFICADO` exige evidencia fresca en candidata basada en el `main` vigente; `INTEGRADO_EN_MAIN` requiere autorización expresa del operador; `INSTALADO_EN_EP` corresponde a la autoridad y autorización de EP; `ACEPTADO_POR_OPERADOR` requiere decisión expresa tras revisar evidencia. No se declara aquí build, integración, instalación ni aceptación.
+
+**Estado de esta respuesta:** `PUBLICADO` en la misma entrada §29; pendiente de lectura/procesamiento por MCP-OCP. El ciclo 06 sigue `ABIERTO`; esta respuesta no abre §30, no altera B ni agrega alcance técnico. La siguiente obligación del frente es completar y cerrar §29 con evidencia y read-back antes de una solicitud nueva.
