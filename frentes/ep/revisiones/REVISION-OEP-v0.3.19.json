@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "version": "v0.3.19 / VCU-EP-v21",
+  "method_acquired": "1.5",
+  "base_commit": "4262e7f9fec3d098b10ce1748cff442acdbdf4c0",
+  "event": "Gobernanza bilateral por ciclo incorporada en §90; EP-TASK-003 y prompt compartido de adaptación creados; B2 target actualizado a OCP-MSP",
+  "checks": {
+    "core_thirteen_block_structure_preserved": true,
+    "oep_section90_cycle_gate_added": true,
+    "governance_initial_response_registered_in_same_coordination_object": true,
+    "governance_cycle_gate_linked_from_oep_and_task_index": true,
+    "ep_task_003_created_and_indexed": true,
+    "ep_task_002_target_corrected_to_ocp_msp": true,
+    "shared_consumer_prompt_created_as_non_normative_draft": true,
+    "changed_files_readback_verified": true,
+    "no_consumer_code_or_schema_changed": true,
+    "no_b2_bucket_operation_attempted": true,
+    "no_local_host_or_dpapi_used": true,
+    "no_ownership_or_generation_transfer_claimed": true
+  },
+  "provenance": {
+    "governance_message": "MSG-GOV-BILATERAL-20261031-01",
+    "dug": "Samantha v373 / NX-373m; Metacanon 1.26; GOW 2.14; §ARR acquired",
+    "canonical_branch": "main",
+    "oep_blob": "8f46c45fc377ec0100a542489a2d60b8f414d25d",
+    "oep_sha256": "ebde17f1cf63db67d2cb1c3c74e0e46f66cc8867c22605140da9cf34e69bef55",
+    "task_index_blob": "bfc052552f38d0679a57f74986159de601188f16",
+    "task_002_blob": "b3e694e5c92d1f87ec9ce61abea6982dd500dc17",
+    "task_003_blob": "97f8eefa5aa5153c003fdb35173f2fdb0f40231a",
+    "consumer_prompt_blob": "c3547556107153b47802877783001befd49b19cb",
+    "commits": [
+      "c585a706a5aadb72dbeaa8efd3705c1acce60c90",
+      "2689a5aabd20c2cdb6c6982065bf30f62f5d59c3"
+    ]
+  },
+  "scope": "Documentary governance, task registration, B2 target correction and draft consumer-alignment prompt only; no architecture freeze, product build, deployment, consumer migration, bucket creation/deletion, B2 upload/readback or external-service acceptance.",
+  "main_canonical_updated": true,
+  "branch_mirror_synced": false,
+  "external_consumers_not_notified": true,
+  "readback": "Changed main-branch files acquired again using GitHub fetch_file; returned blobs match the committed content. Exact file blob SHAs and content SHA-256 recorded in frentes/ep/revisiones/MANIFIESTO.json.",
+  "exclusions": [
+    "No B2 account/bucket/key state verified",
+    "No local DPAPI credential used",
+    "No physical in-person architecture review performed",
+    "No administrative title/generation transfer"
+  ]
+}
