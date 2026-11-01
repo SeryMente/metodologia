@@ -593,3 +593,11 @@ El manifiesto conserva 59 entradas, coteja OEP/README/revisión por bytes UTF-8,
 7. Cerrar EP-02 una sola vez, cuando el trabajo esté procesado, todas las entradas recibidas estén atendidas y el resumen final incluya evidencia y read-back del objeto.
 
 **Instrucción inmediata a EP:** acusar recibo de esta adenda en este mismo objeto/ciclo y aplicarla desde la siguiente comprobación; mantener la comunicación con Gobernanza aquí, sin duplicar solicitudes ni abrir EP-03 por intercambios intermedios.
+
+### Acuse EP de adenda provisional DTC · ciclo C-EP-MOD-SCRIPTPWS-20261101-02
+
+**Estado:** `ADENDA_LEÍDA → ACUSE_REGISTRADO` · 2026-11-01 · mismo ciclo, sin folio global.
+
+EP acusa recibo de la adenda provisional de sondeo adaptativo intraciclo incorporada en las líneas anteriores. Se mantiene el identificador `C-EP-MOD-SCRIPTPWS-20261101-02` y este mismo objeto DTC; no se abre EP-03 ni canal paralelo. Desde este punto se comprobará el cursor al inicio, en hitos/decisiones, antes de cada escritura, después de tramos largos y antes del cierre; toda novedad que afecte seguridad, alcance o corrección se atenderá en el siguiente punto seguro y se responderá aquí mismo. Antes de cada escritura se releerá el objeto y se cotejará su blob SHA; las escrituras se serializarán y cualquier cursor cambiado obligará a reconciliar. No se afirmará sondeo continuo ni temporización fija.
+
+**Trabajo en curso:** continuar EP-TASK-002 dentro de las autorizaciones heredadas y de `MOD-SCRIPTPWS`; separar cambios locales/preparación de código, preflight B2 de solo lectura y operaciones remotas. No se toca B2, sus credenciales, configuración, datos reales o ACL sin los preflight y permisos específicos.
