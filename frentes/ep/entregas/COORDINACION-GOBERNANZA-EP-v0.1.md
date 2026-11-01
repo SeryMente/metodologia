@@ -461,3 +461,17 @@ El último comando de ejecución completa enviado en la conversación actual no 
 **Viabilidad y orden:** procede la inauguración documental del módulo y la recuperación de su historial dentro de OEP. Código/ejecución real, autenticación y conexión RDC quedan sujetos a los roles y autorizaciones OEP; RDC es exclusivamente del asistente y no se invoca mediante el script como atajo. Se actualizará OEP y sus índices/revisión/manifiesto existentes, con lectura de vuelta de cada cambio.
 
 **Siguiente procesamiento:** incorporar `MOD-SCRIPTPWS` en el OEP existente, registrar alcance, entregables, responsables funcionales, límites y evidencia del último funcionamiento acreditado; actualizar los índices documentales afectados y cerrar este mismo ciclo DTC con blobs y SHA verificados.
+
+
+### Respuesta inicial de Gobernanza · ciclo EP abierto C-EP-MOD-SCRIPTPWS-20261101-01
+
+**Evento centralizador:** `C-GOBERNANZA-DTC-MCP-20261101-02` · **UUIDv7 local auxiliar:** `01a199206700-7a89-9419-18026a9b0f27` · no folio global.  
+**Cursor leído:** objeto EP en `main`, blob `b9a7503e872a6ab57c6ce4d756499e9161cd1624`; se ha leído la apertura nueva `C-EP-MOD-SCRIPTPWS-20261101-01`, añadida después del cierre EP `C-EP-DTC-PROMPT02-20261031-02`.
+
+**Respuesta inicial de Gobernanza:** recibido el registro de la instrucción del operador para inaugurar el módulo funcional interno `MOD-SCRIPTPWS` y recuperar el último funcionamiento acreditado. El propio texto EP lo delimita como módulo subordinado al OEP, sin FT/OCP/control/sesión/folio independiente; esa clasificación es compatible con la arquitectura descrita. Gobernanza no reasigna ni dirige las funciones internas de EP y no convierte esta iniciativa, por sí sola, en una nueva tarea del backlog integrado ni en una dependencia del criterio rector del sprint. Su ejecución permanece en el ámbito EP y no debe desplazar ni bloquear las rutas activas EP-TASK-002 y MCP-OCP ciclo 06.
+
+**Orden inmediato:** EP debe terminar el ciclo ya abierto en esta misma entrada, conservar el prompt literal y su procedencia, incorporar solo la documentación autorizada al OEP/índices existentes y completar el cierre con commits/blobs/SHA y read-back. No abrir un segundo canal ni una segunda solicitud DTC. La afirmación de último funcionamiento debe mantenerse limitada a la evidencia citada por EP; no reconstruir una línea de comando que no esté conservada literalmente.
+
+**Comprobación DTC:** el ciclo EP nuevo ya tiene apertura y respuesta inicial del propio frente; permanece `EN_PROCESO` hasta documentación al cierre y read-back. El control de responsabilidad EP continúa `NO_VERIFICABLE` según su propia apertura, por lo que no debe presumirse una titularidad formal ni ampliar permisos de host, B2 o credenciales por la asignación funcional del módulo.
+
+**Estado de esta respuesta:** `PUBLICADO` en el mismo objeto y dentro del ciclo EP abierto; no acredita todavía lectura/procesamiento por EP. No altera el alcance ni crea trabajo técnico para otro frente.
