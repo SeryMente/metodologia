@@ -4,7 +4,7 @@
 
 - **Nombre canónico vigente:** MCP-OCP (anteriormente MCP-METODOLOGIA).
 - **Identidad canónica vigente:** MCP-OCP. **Identidad histórica:** MCP-METODOLOGIA.
-- **Versión/sello:** MCP-OCP-v0.1.2 · retoma de responsabilidad y renombramiento documental.
+- **Versión/sello:** MCP-OCP-v0.1.3 · DTC por ciclo, reconciliación técnica 0.1.0 y dependencias de Gobernanza.
 - **Repositorio propietario:** SeryMente/metodologia, rama main.
 - **OCP canónico:** frentes/mcp-metodologia/.
 - **Núcleo operativo único:** este archivo, MCP-METODOLOGIA.md.
@@ -140,7 +140,7 @@ Las autorizaciones futuras deberán quedar vinculadas a la operación concreta y
 
 **Control:** `owned`, generación 3; titular actual `chatgpt-mcp-ocp-01a19495-aec0-78e2-a7b6-10ab72a2be78`; autorización B `AUTHORIZED`, acotada a `frentes/mcp-metodologia/` sin ampliación. No habilita actos en EP, cambios normativos, instalación/host, ni rutas ajenas.
 
-**Normativa:** `MCP-NORMATIVO: DESACTIVADO`. La selección y `BUILD_SNAPSHOT` permanecen bloqueados hasta disponer de los cuatro metadatos estructurados aprobados para P001–P043; el OCP no los infiere ni modifica el DUG.
+**Normativa:** `MCP-NORMATIVO: DESACTIVADO`. El objeto `gov-data` vigente no contiene `applicability`, `activation_conditions`, `mandatory` ni `dependencies` para ninguno de los 43 principios; el código 0.1.0 fail-closed refleja esa ausencia. La selección y `BUILD_SNAPSHOT` permanecen bloqueados hasta recibir una fuente aprobada; MCP-OCP no los infiere ni modifica el DUG.
 
 **Folio:** FOL1 `PREPARADO_PENDIENTE_ACTIVACION_IPZ`; conversación/ciclo/A/B globales y por OCP `PENDIENTE/NO ASIGNADO`.
 
@@ -150,13 +150,13 @@ Este apartado es el registro provisional canónico de trabajo del frente mientra
 
 | Tarea / dependencia | Estado vigente | Resultado exigido / límite |
 |---|---|---|
-| `GOV-TASK-011` — coordinación bilateral recurrente (lado OCP) | **APLICADA EN ESTE CICLO; recurrente** | Respuesta inicial y documentación de cierre de un ciclo, compuerta local instalada y read-back. El cierre global de Gobernanza sigue dependiendo también de EP y de su evidencia. |
-| Reconciliar implementación MCP 0.1.0 con `main` | **PENDIENTE** | Incorporar la rama de construcción de forma reconciliada sobre la cabeza vigente de `main`; compilar, probar, generar manifiestos y verificar artefactos antes de declararlos canónicos. No tratar ramas divergentes como si fueran `main`. |
+| `GOV-TASK-011` — DTC, Dinámica Trilateral por Ciclo (lado MCP-OCP) | **APLICADA DOCUMENTALMENTE; prueba recurrente pendiente** | §10.2 instala la compuerta DTC propia; la respuesta inicial al mandato está en la coordinación §19. El ciclo actual solo se cierra con la sección de cierre y read-back. La tarea global sigue abierta por EP y la verificación de Gobernanza. |
+| Reconciliar implementación MCP 0.1.0 con `main` | **PENDIENTE · RAMA DIVERGIDA** | Rama `build/ocp-mcp-mvp-0.1.0` en `b37213272dc9a132d1fb181e9ce66fba6ae1becc`: 7 commits ahead/99 behind `main` (`b5b479e8c81025039d31c60fed4899bcdf9a6ad0` al cotejo); sin PR abierto. Solo el árbol de construcción contiene `src/`, `tests/`, scripts y artefactos. Su manifest de fuentes conserva un núcleo anterior y marca freshness `NOT_CHECKED_AGAINST_MAIN`. Reconciliar archivos de código por separado, sin sobrescribir núcleo/control/README/coord/conversación/evidencia vigentes; después ejecutar build/test integral y reemitir manifest/ZIP con identidad MCP-OCP. |
 | Delta técnico A/B/C y schemas JSON | **PENDIENTE DE CANONIZAR/VERIFICAR EN `main`** | AES-256-GCM/DPAPI en fuentes y snapshots; bundle verificable de fuentes; consistencia transaccional de snapshots; schemas exactos de herramientas/entradas/salidas/errores y pruebas. El informe anterior sobre un workspace temporal no sustituye commit/read-back ni ejecución final. |
-| Metadatos de selección normativa P001–P043 | **BLOQUEADO POR GOBERNANZA** | Recibir fuente estructurada aprobada con `applicability`, `activation_conditions`, `mandatory` y `dependencies`, junto con commit, ruta, blob, SHA-256, versión y aprobación. No completar por inferencia ni alterar DUG. |
-| Paquete de principios seleccionados y enlaces Sync individuales | **PENDIENTE DE IMPLEMENTACIÓN/PRUEBA** | Recibir selección de aplicables, resolver y devolver enlace Sync de cada norma desarrollada, permitir que el modelo evalúe suficiencia y solicite elementos adicionales, y producir hash del paquete exacto vinculado al ciclo autorizado. |
-| Telemetría de frecuencia de consulta y vínculo al ciclo | **PENDIENTE DE IMPLEMENTACIÓN/PRUEBA** | Registrar frecuencia de consulta por principio y vincularla al paquete/ciclo; no equiparar consulta con aplicación ni crear telemetría semántica de aplicación no solicitada. |
-| Instalación e integración del cliente en EP | **PENDIENTE_EP · FUERA DE EJECUCIÓN OCP** | EP debe realizar su propio preflight, instalación e integración con autorización y control vigentes. OCP no toca el host ni su configuración. |
+| Metadatos de selección normativa P001–P043 | **BLOQUEADO POR GOBERNANZA** | La lectura del `gov-data` vigente confirma que los cuatro campos `applicability`, `activation_conditions`, `mandatory` y `dependencies` no están presentes en los 43 principios. El código fail-closed los registra como `UNDECLARED_IN_CANONICAL_DUG`. Recibir de Gobernanza una fuente estructurada aprobada con tipos, semántica, cobertura 43/43, ruta, versión, commit/blob, SHA-256 y autorización; no completar por inferencia ni alterar DUG. |
+| Paquete de principios seleccionados y enlaces Sync individuales | **PENDIENTE DE CONTRATO Y IMPLEMENTACIÓN/PRUEBA** | El servidor 0.1.0 entrega ID/título/MDP/anchor, no enlaces Sync individuales. Solicitar a Gobernanza el URI/resolver canónico y reglas de acceso para cada texto desarrollado, con criterio de suficiencia y reconsulta. El hash actual `selection_sha256` solo cubre la lista de IDs seleccionados, no un paquete exacto de enlaces. |
+| Telemetría de frecuencia de consulta y vínculo al ciclo | **PENDIENTE DE CONTRATO Y IMPLEMENTACIÓN/PRUEBA** | El esquema contiene `telemetry_events` y el servidor puede listar eventos locales, pero no se encontró en `OperationService` una escritura específica por consulta de enlace Sync. Definir evento, contador/ventana, vínculo al ciclo y minimización; no equiparar consulta con aplicación ni crear telemetría semántica de aplicación. |
+| Instalación e integración del cliente en EP | **PENDIENTE_EP · FUERA DE EJECUCIÓN MCP-OCP** | EP debe realizar su propio preflight, instalación e integración con autorización y control vigentes. MCP-OCP no toca el host ni su configuración. La respuesta de EP al addendum DTC permanece pendiente en la evidencia de Gobernanza. |
 
 Las tareas anteriores proceden del mensaje de Gobernanza `MSG-GOV-BILATERAL-20261031-01`, de la coordinación del sprint §§14–16 y del bloqueo técnico verificado. No se crean IDs de tareas locales adicionales; los estados cambian únicamente al persistir evidencia.
 
@@ -200,6 +200,35 @@ Esta compuerta rige todos los ciclos del frente mientras el operador no la revoq
 - [ ] Marcar `DOCUMENTADO_AL_CIERRE` y `VERIFICADO_READBACK` solo con evidencia observada. Si falta respuesta inicial, actualización final o read-back, el ciclo queda `GATE_INCOMPLETO` y no puede declararse completo.
 
 El cumplimiento de la compuerta no asigna folios ni crea una sesión/control nuevos. `FOL1` permanece sujeto a su propia activación.
+
+### 10.2 Compuerta DTC — Dinámica Trilateral por Ciclo
+
+**DTC** es el protocolo recurrente entre Gobernanza, EP y MCP-OCP establecido por GOV-TASK-011. Se añade a la compuerta bilateral §10.1, no la sustituye. Cada frente conserva su control, titularidad, permisos y ejecución propios; Gobernanza verifica por ciclo, sin vigilancia continua ni trabajo en segundo plano.
+
+**Apertura de cada ciclo MCP-OCP, después del preflight y antes de otro trabajo sustantivo:**
+
+- [ ] Leer desde `main` DUG/Metacanon/GOW vigentes, este núcleo, el control, el registro de tareas §8.1 y el objeto de coordinación.
+- [ ] Verificar titularidad, generación, autorización y exclusividad observable del frente; no inferir ID nativo ni unicidad global.
+- [ ] Leer las comunicaciones nuevas de Gobernanza desde el último cursor realmente procesado y responder en el objeto de coordinación antes del trabajo sustantivo. Si no hay delta, escribir `SIN_NOVEDAD` con fuente/revisión/blob.
+- [ ] Distinguir el addendum DTC persistido de la lectura, respuesta y ejecución real. Un objeto guardado por Gobernanza no acredita que otro frente lo haya recibido.
+
+**Procesamiento:**
+
+- [ ] Continuar el backlog autorizado de MCP-OCP y las tareas independientes después de persistir la respuesta inicial.
+- [ ] Mantener serialidad con Gobernanza: no abrir otra solicitud a ese frente hasta recibir y analizar la respuesta a la solicitud anterior.
+- [ ] No editar DUG, IPZ, control ni objetos EP/Khora; no inferir metadatos normativos ni activar MCP-NORMATIVO.
+- [ ] Mantener visibles los estados de EP a partir de la evidencia DTC; no marcar su cumplimiento mientras respuesta, compuerta y ciclo no estén acreditados.
+
+**Cierre de cada ciclo MCP-OCP:**
+
+- [ ] Documentar en el mismo objeto de coordinación las novedades procesadas, tareas/hitos, estado técnico, fuentes/commits/blobs, bloqueos, decisiones y siguiente acción.
+- [ ] Actualizar §8.1 si cambia el backlog y este núcleo si cambia el estado operativo.
+- [ ] Leer de vuelta control, núcleo, README, coordinación y evidencias modificadas; anotar SHA/blob y coincidencia.
+- [ ] Clasificar el ciclo propio como `CUMPLE_VERIFICADO`, `CUMPLE_PARCIAL`, `NO_CUMPLE`, `NO_VERIFICABLE` o `SIN_CICLO_OBSERVADO` solo con evidencia. No cerrar la DTC global por el solo cumplimiento de MCP-OCP.
+
+**Responsabilidad de verificación:** Gobernanza evalúa los tres frentes en cada ciclo real suyo. EP ejecuta su propia compuerta en su objeto de comunicación de la rama documentada vigente; MCP-OCP hace lo propio aquí. La ausencia de respuesta/ciclo se conserva como pendiente o `SIN_CICLO_OBSERVADO`, nunca como cumplimiento presumido.
+
+**Evidencia de apertura en este ciclo:** respuesta inicial MCP-OCP a `C-GOBERNANZA-DTC-01` persistida en `entregas/COORDINACION-SPRINT-OCP-MCP-v0.1.md` §19. El cierre de este ciclo queda pendiente de procesamiento y read-back de §20 del mismo objeto.
 
 ## 11. Crónica y fuentes
 
