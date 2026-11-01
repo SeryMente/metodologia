@@ -45,7 +45,7 @@ Para cada elemento, clasificarlo como:
 Comparar el mapa con la ruta urgente vigente de EP:
 
 1. fijar la arquitectura común de persistencia bajo responsabilidad de EP y su compuerta de aprobación;
-2. dejar operativo el recurso B2 correcto: exclusivamente `OCP-MSP`; conservarlo como destino y verificar el estado real de acceso;
+2. dejar operativo el recurso B2 correcto: exclusivamente `OCP-MCP`; conservarlo como destino y verificar el estado real de acceso;
 3. retirar `metodologia-ep-persistencia` únicamente después de identificar inequívocamente el bucket y confirmar que no contiene datos que deban preservarse;
 4. implementar la interfaz común versionada de EP, sus mecanismos de autenticación/autorización, lectura/escritura, integridad y recuperación;
 5. construir el cliente/adaptador reusable de EP;
@@ -119,4 +119,4 @@ La evaluación de salvamento, simplificación o descarte de los componentes no u
 
 **No observado/no verificado:** estado actual de host/local y cualquier clave DPAPI; estado actual de login de B2; buckets y keys en cuenta B2; conexión de HARMONIA en un host vivo; sesiones Vercel actuales; uso/aceptación de producción por cada consumidor; restauración real multiubicación; inventario exhaustivo de Khora, MCP y artefactos históricos.
 
-**Siguiente acción:** ampliar el mapa por árbol de KHORA y Signal Interpreter, completar la reconciliación de EP-TASK-002 con la orden OCP-MSP, crear el prompt común no normativo para los consumidores y calcular el delta provisional frente a los requisitos urgentes. No se descarta ni modifica componente alguno.
+**Siguiente acción:** ampliar el mapa por árbol de KHORA y Signal Interpreter, completar la reconciliación de EP-TASK-002 con la orden OCP-MCP, crear el prompt común no normativo para los consumidores y calcular el delta provisional frente a los requisitos urgentes. No se descarta ni modifica componente alguno.
