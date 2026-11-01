@@ -137,7 +137,9 @@
     "mcp_coordination_blob": "b68769e838787ef8f8b6c9c6b9834e2f878bf0df",
     "ep_coordination_blob": "1131bb584268f393eb16c7a19120eb800d2043cd",
     "prompt_additional_02": "PREPARADO_NO_PUBLICADO_IN_GOV_TASK_011",
-    "readback": "ALL_GOVERNANCE_OBJECTS_PREVIOUSLY_READ; EVIDENCE_WRITE_PENDING"
+    "readback": "VERIFIED_BY_POST_WRITE_GITHUB_FETCH_EXACT_CONTENT",
+    "evidence_blob_self_reference": "EXCLUDED_TO_AVOID_SELF_REFERENCE_CYCLE",
+    "evidence_final_write_base_blob": "04e874d36f6701c06b93b0ff7d8f61be2f262717"
   },
   "boundaries": [
     "Gobernanza centraliza e integra el OCP general del sprint; no asume titularidad de EP/MCP-OCP.",
