@@ -4,7 +4,7 @@
 
 - **Nombre canónico vigente:** MCP-OCP (anteriormente MCP-METODOLOGIA).
 - **Identidad canónica vigente:** MCP-OCP. **Identidad histórica:** MCP-METODOLOGIA.
-- **Versión/sello:** MCP-OCP-v0.1.5 · cierre del segundo ciclo DTC y reconciliación del núcleo.
+- **Versión/sello:** MCP-OCP-v0.1.6 · precisión de auditoría DTC y continuidad entre ciclos.
 - **Repositorio propietario:** SeryMente/metodologia, rama main.
 - **OCP canónico:** frentes/mcp-metodologia/.
 - **Núcleo operativo único:** este archivo, MCP-METODOLOGIA.md.
@@ -150,7 +150,7 @@ Este apartado es el registro provisional canónico de trabajo del frente mientra
 
 | Tarea / dependencia | Estado vigente | Resultado exigido / límite |
 |---|---|---|
-| `GOV-TASK-011` — DTC, Dinámica Trilateral por Ciclo (lado MCP-OCP) | **CICLOS LOCALES 01 Y 02 CUMPLE_VERIFICADO; DTC GLOBAL EN CURSO** | §10.2 instala la compuerta DTC; ciclo 01 abierto/cerrado en §§19–20.6 y ciclo 02 abierto/cerrado en §§21–22, ambos con read-back. Gobernanza confirmó `CUMPLE_VERIFICADO` para el ciclo 01 y revalidó el cierre local del segundo ciclo conforme a su evidencia vigente. DTC global permanece abierta por EP (`CUMPLE_PARCIAL`) y por la verificación de los ciclos futuros. |
+| `GOV-TASK-011` — DTC, Dinámica Trilateral por Ciclo (lado MCP-OCP) | **CICLOS LOCALES 01 Y 02 CUMPLE_VERIFICADO; DTC GLOBAL EN CURSO** | §10.2 instala la compuerta DTC; ciclo 01 abierto/cerrado en §§19–20.6 y ciclo 02 abierto/cerrado en §§21–22, ambos con read-back. Gobernanza clasificó el ciclo 01 `CUMPLE_VERIFICADO`; el ciclo 02 quedó persistido después de ese cursor y está pendiente de lectura/clasificación por Gobernanza en su siguiente ciclo real. DTC global permanece abierta por EP (`CUMPLE_PARCIAL`) y por la verificación de los ciclos futuros. |
 | Reconciliar implementación MCP 0.1.0 con `main` | **PENDIENTE · RAMA DIVERGIDA** | Rama `build/ocp-mcp-mvp-0.1.0` en `b37213272dc9a132d1fb181e9ce66fba6ae1becc`: 7 commits ahead/99 behind `main` (`b5b479e8c81025039d31c60fed4899bcdf9a6ad0` al cotejo); sin PR abierto. Solo el árbol de construcción contiene `src/`, `tests/`, scripts y artefactos. Su manifest de fuentes conserva un núcleo anterior y marca freshness `NOT_CHECKED_AGAINST_MAIN`. Reconciliar archivos de código por separado, sin sobrescribir núcleo/control/README/coord/conversación/evidencia vigentes; después ejecutar build/test integral y reemitir manifest/ZIP con identidad MCP-OCP. |
 | Delta técnico A/B/C y schemas JSON | **PENDIENTE DE CANONIZAR/VERIFICAR EN `main`** | AES-256-GCM/DPAPI en fuentes y snapshots; bundle verificable de fuentes; consistencia transaccional de snapshots; schemas exactos de herramientas/entradas/salidas/errores y pruebas. El informe anterior sobre un workspace temporal no sustituye commit/read-back ni ejecución final. |
 | Metadatos de selección normativa P001–P043 | **BLOQUEADO POR GOBERNANZA** | La lectura del `gov-data` vigente confirma que los cuatro campos `applicability`, `activation_conditions`, `mandatory` y `dependencies` no están presentes en los 43 principios. El código fail-closed los registra como `UNDECLARED_IN_CANONICAL_DUG`. Recibir de Gobernanza una fuente estructurada aprobada con tipos, semántica, cobertura 43/43, ruta, versión, commit/blob, SHA-256 y autorización; no completar por inferencia ni alterar DUG. |
