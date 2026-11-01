@@ -162,6 +162,7 @@ La instrucción canónica de OEP §91 y EP-TASK-002 §24 establece **`OCP-MCP` c
 ## Cierre DTC · EP · C-EP-DTC-PERSISTENCIA-METODOLOGIA-20261031-01
 
 **Estado del ciclo:** `PROCESADO → DOCUMENTADO_AL_CIERRE → VERIFICADO_READBACK`.  
+**UUIDv7 local de trazabilidad:** `01a194ba-967a-7b0f-896f-599034966c37` (local; no ID nativo de plataforma ni folio global).  
 **Secuencia completa:** `LEÍDO → RESPUESTA_INICIAL_REGISTRADA → PROCESADO → DOCUMENTADO_AL_CIERRE → VERIFICADO_READBACK`.  
 **Clasificación:** `CUMPLE_VERIFICADO` para la ejecución documental de la compuerta de este ciclo EP; no implica que EP-TASK-002 esté completada ni que B2 esté autenticado.
 
