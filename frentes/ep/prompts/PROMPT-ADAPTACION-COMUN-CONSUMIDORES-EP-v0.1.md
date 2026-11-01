@@ -3,7 +3,7 @@
 **Estado:** borrador de alineación operativa v0.1 · no es todavía el contrato técnico ni una autorización de cambios de código.  
 **Destinatarios:** modelo/agente responsable de KHORA/HARMONIA y modelo/agente responsable de Signal Interpreter.  
 **Emisor:** frente Entorno Persistente (EP).  
-**Ámbito de almacenamiento remoto:** exclusivamente el bucket Backblaze B2 `OCP-MSP`, bajo la arquitectura y el servicio que EP publique. No usar `OCP-MCP` ni `metodologia-ep-persistencia` como destinos de EP.
+**Ámbito de almacenamiento remoto:** exclusivamente el bucket Backblaze B2 `OCP-MCP`, bajo la arquitectura y el servicio que EP publique. No usar `OCP-MSP` ni `metodologia-ep-persistencia` como destinos de EP.
 
 ## 1. Decisión de responsabilidad
 
