@@ -357,6 +357,19 @@
       "bytes": 5486,
       "sha256": "449abf629c3822937384849ccd46adb44d66febb3d6be0c1adf0cedfb851bf65",
       "git_blob": "47ff7f48b376b6eeff560331f84450993e0e6fe1"
+    },
+    {
+      "path": "frentes/ep/originales/ChatGPT-EP-20261101-1552.md",
+      "bytes": 184444,
+      "sha256": "8F1B3BEA8D4CF6C3291B4D4B908593D8C907763E2ADC2ADAE8D1E37368FF7494",
+      "git_blob": "fb07c78383b1beb1f64712f74290468b2dd361dd",
+      "provenance": {
+        "source_path": "C:\\Users\\PC 13\\Downloads\\ChatGPT-EP-20261101-1552.md",
+        "source_device": "PC-14",
+        "acquisition": "RDC read of original file; bytes transferred as base64 without text normalization",
+        "export_timestamp": "2026-11-01 15:52:46",
+        "status": "captured_blob_readback_verified; commit pending"
+      }
     }
   ],
   "exclusions": [
@@ -380,6 +393,6 @@
   ],
   "prior_readback_verified": "Final OEP v0.3.23, README EP and REVISION-OEP-v0.3.23 fetched from main after last writes; Git blobs, UTF-8 byte counts and SHA-256 recalculated and cross-checked. DTC opening and Governance response preserved in the existing mutable DTC object; final close read-back recorded there.",
   "latest_review_source_commit": "e9e9885c778098c860a4c30a25ef5e917d26890e",
-  "current_event": "MOD-SCRIPTPWS inaugurated as internal EP module in OEP §94; this assistant accepts functional/technical responsibility for the module only; no EP parent control transfer.",
-  "verification_scope": "EP documentary integration only. No Governance or MCP-OCP files, DUG, IPZ, control, host, code, Backblaze resources or credentials modified."
+  "current_event": "EP OCP: archive original conversation export ChatGPT-EP-20261101-1552.md; Backblaze EP-TASK-002 remains separate and blocked pending RDC device reconnection.",
+  "verification_scope": "Original conversation file preserved from PC-14 Downloads into frentes/ep/originales; source SHA-256 recorded and Git blob SHA identified. Backblaze account/bucket/key and B2 upload/sync/restore not performed."
 }
