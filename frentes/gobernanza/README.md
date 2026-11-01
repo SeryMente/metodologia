@@ -72,4 +72,12 @@ Frente operativo separado para trabajar inicialmente sobre el **documento único
 
 Este README es índice y no reemplaza el núcleo operativo ni el documento normativo. No se duplicará la gobernanza normativa en Markdown.
 
-**Doble corresponsabilidad · C-GOBERNANZA-DOBLE-CORRESPONSABILIDAD-01:** [procedimiento AT v1.2](entregas/CHATGPT-v0.8/AT-v1.2.md) · [crónica](cronica/C-GOBERNANZA-DOBLE-CORRESPONSABILIDAD-01.md) · [evidencia](evidencias/C-GOBERNANZA-DOBLE-CORRESPONSABILIDAD-01.json). DUG v375 · NX-375m, GOW 2.15; una conversación por defecto, dos como máximo mediante ADD_CO_RESPONSIBLE. FOL1 continúa inactivo.
+**Doble corresponsabilidad · C-GOBERNANZA-DOBLE-CORRESPONSABILIDAD-01:** [procedimiento AT v1.2](entregas/CHATGPT-v0.8/AT-v1.2.md) · [crónica](cronica/C-GOBERNANZA-DOBLE-CORRESPONSABILIDAD-01.md) · [evidencia](evidencias/C-GOBERNANZA-DOBLE-CORRESPONSABILIDAD-01.json). Registro preservado como antecedente. DUG vigente v377 · NX-377m, Metacanon 1.28, GOW 2.17; FOL1 continúa inactivo.
+
+## Desempeño del marco y preparación MCP-OCP · C-GOBERNANZA-OCP-MCP-PERFORMANCE-01 · 2026-11-01
+
+DUG v377 · NX-377m · Metacanon 1.28 · GOW 2.17, blob `54064c8fe00f872023a455f06596061ed69062ae`. Se incorporó el término MCP-OCP con enlaces al [núcleo](../../frentes/mcp-metodologia/MCP-METODOLOGIA.md) y [README](../../frentes/mcp-metodologia/README.md), y se distinguió de MCP-NORMATIVO, que sigue DESACTIVADO. Metacanon §52 fija la medición objetiva de ciclos; no afirma que el servidor MCP-OCP esté integrado, instalado o aceptado.
+
+**Tareas propias:** [GOV-TASK-012 — revisión integral de fluidez y desempeño](📁%20🧭%20-%20Tareas%20provisionales/📁%20🧩%20-%20GOV-TASK-012%20-%20Fluidez%20y%20desempe%C3%B1o%20del%20marco/README.md) y [GOV-TASK-013 — medición y optimización de ciclos](📁%20🧭%20-%20Tareas%20provisionales/📁%20🧩%20-%20GOV-TASK-013%20-%20Medici%C3%B3n%20y%20optimizaci%C3%B3n%20de%20ciclos/README.md). Ambas heredan el control único de Gobernanza, generación 11.
+
+El ciclo de configuración actual no se usa como línea base. La primera muestra elegible será el primer ciclo sustantivo completo medido desde el inicio; se reunirán al menos diez ciclos comparables antes de fijar una referencia estable. El OCP MCP externo debe incorporar/verificar su propio enlace de retorno; Gobernanza no modifica su control ni su núcleo.
