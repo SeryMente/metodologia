@@ -24,9 +24,9 @@
     },
     {
       "path": "frentes/ep/OEP.md",
-      "commit": "f6c0ccc039fc29656b26063accffc6a9852539d7",
-      "blob": "4cab4d8ec8ecb28085e30242e787430f6ea6f975",
-      "sha256": "258de630ddedd613dc873d04fc3e52602b1f340397cb0505e06337b203d8e136",
+      "commit": "57f1581bc1d6455c5c3616d4f39180f8455f7095",
+      "blob": "c0c65c473711881a1d1692bec757b283eca3eb34",
+      "sha256": "f12b81aa1dc43099b9153d8741112f3399c1bb0688c0ea02768825657afde48c",
       "bytes": 231703,
       "readback_exact": true,
       "change": "OEP v0.3.21 / VCU-EP-v23; §92 links canonical DTC object in main"
@@ -69,7 +69,8 @@
     "b2_authenticated": false,
     "b2_resources_or_permissions_modified": false,
     "host_or_dpapi_used": false,
-    "consumer_code_schema_or_deployment_modified": false
+    "consumer_code_schema_or_deployment_modified": false,
+    "oep_internal_version_and_resume_references_aligned": true
   },
   "limits": [
     "EP has no separate CONTROL-RESPONSABILIDAD.json in main/frentes/ep; no titular generation was invented or a parallel control created.",
