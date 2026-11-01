@@ -797,3 +797,10 @@ En esa fotografía, Gobernanza registra OCP MCP como `CUMPLE_PARCIAL` porque su 
 
 La solicitud única `MSG-MCP-OCP-GOV-DEPENDENCIES-20261101-01` continúa publicada en §20.3 y pendiente de lectura/respuesta. No se abre un segundo mensaje ni una ronda paralela; la revalidación DTC por Gobernanza se registra como parte del procesamiento de esa comunicación cuando corresponda.
 
+#### Artefactos del ciclo y custodia
+
+- Diálogo visible A/B: [C-MCP-OCP-DTC-20261031-01-dialogo.jsonl](../conversaciones/C-MCP-OCP-DTC-20261031-01-dialogo.jsonl).
+- Crónica narrativa y procedencia: [C-MCP-OCP-DTC-20261031-01.md](../cronica/C-MCP-OCP-DTC-20261031-01.md).
+- Evidencia estructurada y SHA/read-back: [C-MCP-OCP-DTC-20261031-01.json](../evidencias/C-MCP-OCP-DTC-20261031-01.json).
+
+El diálogo conserva la entrada del operador y los mensajes visibles del asistente; no es una exportación nativa exhaustiva. La crónica y la evidencia no sustituyen esta entrada de coordinación: el registro operativo completo de apertura/cierre permanece aquí, en §19–20.
