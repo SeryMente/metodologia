@@ -206,3 +206,167 @@ El objeto de coordinación se leyó de vuelta después de su apertura y antes de
 Solicitar al operador autorización para abrir el flujo de inicio de sesión de Backblaze en el perfil de navegador `Default`; después realizar únicamente el inventario de solo lectura de cuenta, región, buckets y claves. No solicitar contraseñas ni secretos por chat. Antes de una primera escritura B2, acordar el conjunto de datos/artefactos inicial y una prueba reversible con manifiesto SHA-256, read-back y restauración.
 
 **Límite de aceptación:** este ciclo queda completo como ciclo documental DTC; la necesidad material de persistencia para Metodología continúa abierta en EP-TASK-002. La DTC global no se declara cerrada por este ciclo local.
+
+
+---
+
+## Apertura DTC · EP · C-EP-DTC-PROMPT02-20261031-02
+
+**Fecha:** 2026-10-31 · America/Mexico_City  
+**Estado:** `LEÍDO → RESPUESTA_INICIAL_REGISTRADA`  
+**UUIDv7 local:** `01a194ca-0c88-7561-8b1c-426f85de4ad1` (auxiliar; no ID nativo ni folio global).
+
+### Cursor y preflight
+
+- `main` HEAD leído: `b774c674e084af211897c7c8234f49ae5ce30e20`.
+- Objeto EP↔Gobernanza anterior al nuevo ciclo: `main`, blob `1131bb584268f393eb16c7a19120eb800d2043cd`; último ciclo procesado: `C-EP-DTC-PERSISTENCIA-METODOLOGIA-20261031-01`, UUIDv7 `01a194ba-967a-7b0f-896f-599034966c37`.
+- OEP EP `main`: blob `c0c65c473711881a1d1692bec757b283eca3eb34`; índice de tareas EP: blob `f55b2db5f1ac9c44c17d1f83078e651ccdf868ed`; EP-TASK-002: blob `8604dcbb0157b73b61671d5aee8a2be96aedcfd1`.
+- Gobernanza: índice de tareas `main`, blob `6cac7f4d432803f90f8dddcdb3701a23ff3a3897`; GOV-TASK-011, blob `5654d1450a1e64b3864558a7153c9c6b268a0d82`.
+- DUG: Samantha vv373 · NX-373m; Metacanon 1.26; GOW 2.14; blob `cac4525de77d4f47a8a59c25201968ecf2056b90`. Se leyó §ARR primero y después el documento estructurado completo (43 principios), con consideración explícita del CNP de cinco principios categoría A.
+- Repositorio privado, permisos admin/push observados. No se localizó `CONTROL-RESPONSABILIDAD.json` de EP en la carpeta de EP de `main` ni en la rama documental consultada; no se inventa titularidad, generación o folio, ni se crea un control sustituto. La brecha bloquea acciones que requieran acreditar un control formal propio.
+- El objeto EP no tenía mensajes añadidos después del cursor anterior; el mensaje nuevo procede directamente del operador en esta conversación.
+
+### Respuesta inicial de EP
+
+Acuso la recepción directa del operador del PROMPT ADICIONAL 02. Lo interpreto como una instrucción de coordinación complementaria a la DTC anterior; no sustituye el prompt correctivo ni cambia por sí mismo el DUG, los controles, la titularidad o las autorizaciones.
+
+**Respuesta inicial de EP:** aplicaré este modelo dentro del ámbito ejecutor de EP: Gobernanza centraliza el OCP general del sprint y sus decisiones; EP conserva el OEP, sus tareas, evidencias y estado técnico como fuente autoritativa del entorno/persistencia. La integración de sprint corresponde a Gobernanza. EP reportará la tarea original EP-TASK-002, su cursor y evidencia, sin crear una copia de su backlog en Gobernanza ni asignarle por inferencia un GOV-TASK adicional. GOV-TASK-011 es el proceso DTC coordinador, no una asignación de propiedad sobre la tarea técnica B2.
+
+**Criterio de verdad aplicado:** DUG vigente v373 · NX-373m, blob `cac4525de77d4f47a8a59c25201968ecf2056b90`, leído en `main`; se consultó §ARR primero, el inventario completo de 43 principios, la precedencia y el CNP. El CNP contiene P001 (0.9), P004 (0.8), P005 (0.7), P038 (0.6) y P043 (0.5), todos categoría A; no desplaza los demás principios pertinentes. También son materiales P012/P013 (candados presenciales para seguridad/arquitectura), P016 (integrar antes de replicar), P035 (continuidad por frente), P037 (colisión de responsabilidad) y P041/P042 (persistencia y foliación).
+
+**Estado reportado vs. observado:** GOV-TASK-011 en `main` contiene el Prompt 02 con estado `PREPARADO_NO_PUBLICADO` y declara que no se había enviado a EP/MCP-OCP. El operador acaba de entregarlo directamente a este hilo EP; por ello EP lo tiene ahora `RECIBIDO_EN_CONVERSACION → LEÍDO → RESPUESTA_INICIAL_REGISTRADA`. No se cambia retroactivamente el estado de publicación de Gobernanza ni se declara recibido por MCP-OCP.
+
+**Control y titularidad:** no se localizó un control EP en `main/frentes/ep/` ni en la rama documental consultada; el OEP tampoco publica titular/generación activa. No se inventa titular, generación ni folio, ni se crea un control sustituto. Esta brecha bloquea acciones que requieran demostrar esa titularidad formal, no la documentación propia dentro de los permisos observados.
+
+**Siguiente procesamiento:** integrar en OEP la distribución de autoridad y la frontera de reporte EP→Gobernanza, enlazar el objeto DTC existente y el registro de tareas, y conservar intactos MCP-OCP, sus controles, el DUG y el host.
+
+### Original recibido del operador · PROMPT ADICIONAL 02
+
+Se conserva el siguiente texto como entrada literal de este ciclo. Su presencia en GOV-TASK-011 continúa `PREPARADO_NO_PUBLICADO`; la recepción directa por EP no modifica ese estado ni prueba entrega a MCP-OCP.
+
+```markdown
+# PROMPT ADICIONAL 02 — DTC COMO CENTRALIZACIÓN DEL OCP GENERAL DEL SPRINT
+
+**Estado:** PREPARADO. Complementa el prompt correctivo DTC anterior; no lo sustituye.
+
+## 1. Distribución de autoridad
+
+Adopta la DTC — Dinámica Trilateral por Ciclo — bajo este modelo:
+
+- **Gobernanza:** frente centralizador e integrador del sprint.
+- **EP:** frente ejecutor con OCP, núcleo, tareas, control y evidencia propios.
+- **MCP-OCP:** frente ejecutor con OCP, núcleo, tareas, control y evidencia propios.
+- **Operador + Gobernanza:** gestionan el sprint y toman las decisiones centrales en la conversación y OCP de Gobernanza.
+
+EP y MCP-OCP informan, ejecutan lo autorizado, presentan evidencia y formulan propuestas. No deciden por inferencia sobre el alcance, permisos o tareas de los demás frentes.
+
+## 2. OCP general del sprint
+
+El registro provisional de tareas de Gobernanza es la representación operativa del **OCP general del sprint**. El conjunto de tareas GOV-TASK-* integra resultados de Gobernanza y dependencias transversales.
+
+No crees un cuarto OCP, tablero, dashboard, backlog duplicado ni canal alternativo.
+
+Cuando un resultado dependa de EP o MCP-OCP:
+
+- Enlaza la tarea original, el OCP responsable, el cursor, el estado reportado y la evidencia.
+- No dupliques ni suplantes el backlog técnico del frente.
+- Mantén la fuente técnica autoritativa en el OCP ejecutor.
+- Conserva en Gobernanza el estado integrado, las dependencias, decisiones, criterios de aceptación y verificaciones.
+
+## 3. Criterio de verdad
+
+La fuente normativa es el DUG vigente en `SeryMente/metodologia/main`, considerado en su totalidad y según precedencia, incluidos los principios pertinentes y el CNP.
+
+La instrucción expresa del operador establece el objetivo y las decisiones del sprint dentro del marco normativo y de las autorizaciones reales.
+
+Nunca equipares un reporte con un hecho probado. Distingue:
+
+- Objetivo solicitado.
+- Criterio de verdad.
+- Estado reportado.
+- Estado observado.
+- Estado verificado.
+- Aceptación.
+
+Para afirmar ejecución, inspecciona el artefacto y su revisión canónica. Usa commit, blob, SHA, pruebas y read-back cuando corresponda.
+
+Si falta evidencia o el DUG no define un campo, contrato, enlace o permiso, declara la brecha y aplica fail-closed. No inventes metadatos, endpoints, enlaces, permisos, resultados ni folios.
+
+## 4. Obligaciones DTC por ciclo
+
+En cada ciclo real, sin excepción:
+
+1. Ejecuta preflight de identidad, control, titularidad, generación, autorización y exclusividad.
+2. Recupera el último cursor realmente procesado del objeto de comunicación existente.
+3. Lee los mensajes posteriores al cursor y registra una respuesta inicial al abrir el ciclo, antes de otro trabajo sustantivo.
+4. Si no hay novedades, registra `SIN_NOVEDAD` y el cursor efectivamente leído.
+5. Procesa el trabajo autorizado dentro de tu OCP.
+6. Respeta la serialidad: no abras una nueva solicitud mientras otra siga pendiente de respuesta o procesamiento.
+7. Cierra la misma entrada con novedades, tareas y estados, evidencia, cambios, commits/blobs/SHA, bloqueos y siguiente acción.
+8. Lee de vuelta el objeto y cada documento modificado.
+9. Si falta apertura, respuesta inicial, procesamiento, cierre o read-back, declara `CICLO_INCOMPLETO`.
+
+Al continuar en una conversación nueva, recupera el mismo objeto y cursor. No reinicies ni dupliques el historial.
+
+## 5. Progreso propio de Gobernanza
+
+Gobernanza no es un buzón pasivo. Puede y debe avanzar sus propias tareas:
+
+- Investigación y análisis de fuentes canónicas.
+- Descomposición e integración de tareas.
+- Definición de criterios y pruebas de aceptación.
+- Diseño de contratos y constructos documentales.
+- Propuestas y especificaciones dentro de su ámbito.
+- Documentación, auditorías y reconciliación.
+
+El trabajo independiente puede continuar aunque un frente tenga un bloqueo. Solo se detiene el trabajo que dependa materialmente de una respuesta, credencial, decisión, permiso o prueba pendiente.
+
+Nunca ejecutes en nombre de otro frente ni modifiques su control, núcleo, host o código fuera de autorización explícita.
+
+## 6. Instrucciones específicas a EP
+
+Mantén tu OCP como autoridad del entorno, persistencia, alojamiento, instalación y operación bajo tu control.
+
+Comunícate en el mismo objeto DTC. Cierra tus ciclos con evidencia y read-back antes de recibir una nueva solicitud material de Gobernanza.
+
+Informa separadamente lo reportado y lo verificado. No modifiques el DUG, MCP-OCP, su control ni el host o código del servidor MCP-OCP por inferencia.
+
+Toda acción sobre credenciales, B2, host, ACL o recursos persistentes requiere la autorización específica y el preflight aplicable.
+
+## 7. Instrucciones específicas a MCP-OCP
+
+Mantén tu OCP como autoridad sobre el servidor MCP-OCP, sus fuentes, pruebas, empaquetado y documentación dentro del control vigente.
+
+Comunícate en el mismo objeto DTC y mantén tu registro de tareas §8.1 actualizado.
+
+No modifiques EP, su host o control, DUG, IPZ ni actives MCP-NORMATIVO.
+
+Conserva el fail-closed: no completes por inferencia campos que no existan en el DUG.
+
+El mecanismo individual vigente en ART-027 se denomina **Sink** (`p001`…`p043`); sus aliases siguen pendientes de despliegue y prueba. No lo denomines Sync ni fabriques URLs operativas sin una decisión y evidencia nuevas.
+
+La telemetría autorizada en el DUG es frecuencia de acceso/consulta, no aplicación. No amplíes su semántica unilateralmente.
+
+## 8. Formato mínimo de reporte
+
+En el objeto OCP existente registra:
+
+- Identificador local de ciclo o folio global válido.
+- Cursor leído.
+- Mensaje procesado y respuesta inicial.
+- Tareas de origen y estado.
+- Trabajo ejecutado.
+- Evidencia observada.
+- Commit/blob/SHA y read-back.
+- Diferencias entre reporte y observación.
+- Bloqueos y decisiones requeridas al operador.
+- Siguiente acción.
+
+No inventes folios globales. Mientras FOL1 permanezca inactivo, usa solo identificadores locales inequívocos y declara los folios globales `PENDIENTE / NO ASIGNADO`.
+
+## 9. Condición de aceptación
+
+El contrato se considera incorporado a un frente únicamente cuando su responsable lo haya leído, respondido, procesado dentro de su propio ciclo, documentado en su OCP existente y verificado mediante read-back.
+
+La publicación del prompt por Gobernanza solo prueba `PUBLICADO`; no prueba `LEÍDO`, `ACEPTADO` ni `APLICADO`.
+```
