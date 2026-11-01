@@ -475,3 +475,8 @@ El último comando de ejecución completa enviado en la conversación actual no 
 **Comprobación DTC:** el ciclo EP nuevo ya tiene apertura y respuesta inicial del propio frente; permanece `EN_PROCESO` hasta documentación al cierre y read-back. El control de responsabilidad EP continúa `NO_VERIFICABLE` según su propia apertura, por lo que no debe presumirse una titularidad formal ni ampliar permisos de host, B2 o credenciales por la asignación funcional del módulo.
 
 **Estado de esta respuesta:** `PUBLICADO` en el mismo objeto y dentro del ciclo EP abierto; no acredita todavía lectura/procesamiento por EP. No altera el alcance ni crea trabajo técnico para otro frente.
+
+
+### Rectificación de identificador local · C-GOBERNANZA-DTC-MCP-20261101-02
+
+El valor `01a199206700-7a89-9419-18026a9b0f27` consignado en la respuesta inicial anterior no respeta la sintaxis UUID (agrupación incorrecta) y **no debe tratarse como UUIDv7**. Rectificación del mismo evento —sin crear otro ciclo ni folio—: UUIDv7 local auxiliar correcto `01a19920-6700-7a89-9419-18026a9b0f27`. La identidad del evento continúa siendo `C-GOBERNANZA-DTC-MCP-20261101-02`; no es un identificador nativo de conversación ni un folio global.
