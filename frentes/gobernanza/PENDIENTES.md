@@ -1,5 +1,16 @@
 ## Estado rector vigente · C-GOBERNANZA-VECTOR-SEMANTICO-01 · 2026-10-31
 
+### Reconciliación actual · C-GOBERNANZA-RETOMA-08 · 2026-11-01
+
+- Responsabilidad primaria: generación 11, sesión `SES-20261101-GV8A19904`, UUIDv7 local `01a19904-cac5-7351-94eb-ce3ab3837be5`; corresponsable previa `SES-20261101-ED4A2B32` preservada. Control final blob `beecec6d4a3ca166019f3271bf2715a2c64bb6f1`.
+- Nuevo original documental persistido y verificado: `ChatGPT-GOBERNANZA-20261101-1518.md`, 161.472 bytes, SHA-256 `1ce5e272c9d4f80da83a5c5d4be4e36eecf8ebc29001132d5e998af8bacca0d6`, blob `a8bf0cb9f1bf3503827c6013e56abffa1f06e697`.
+- EP: DTC local Prompt 02 `CUMPLE_VERIFICADO`; EP-TASK-002 sigue `en_curso`; no se acreditan autenticación B2, upload, read-back remoto ni restauración.
+- MCP-OCP: ciclo local 05 abierto en coordinación; `CUMPLE_PARCIAL` hasta cierre y read-back. No emitir petición paralela mientras procesa su ciclo.
+- DTC global `EN_CURSO_RECURRENT`. FOL1 preparado/inactivo; CV/CY/A/B globales y por OCP `PENDIENTE / NO ASIGNADO`.
+- DUG, GOW, ART-025/027 e IPZ nativa no modificados; controles/recursos de EP y MCP-OCP no modificados.
+
+[Crónica](cronica/C-GOBERNANZA-RETOMA-08.md) · [Evidencia](evidencias/C-GOBERNANZA-RETOMA-08.json).
+
 Esta sección sustituye los resúmenes ejecutivos repetidos y fotografías anteriores que siguen debajo por procedencia histórica. El vector semántico del operador es criterio rector de toda tarea y ciclo de Gobernanza. [Crónica](cronica/C-GOBERNANZA-VECTOR-SEMANTICO-01.md) · [dictado](conversaciones/C-GOBERNANZA-VECTOR-SEMANTICO-01-dialogo.jsonl) · [evidencia](evidencias/C-GOBERNANZA-VECTOR-SEMANTICO-01.json).
 
 ### Resultado y secuencia obligatoria
