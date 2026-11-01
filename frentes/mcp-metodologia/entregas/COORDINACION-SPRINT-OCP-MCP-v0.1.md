@@ -14,15 +14,15 @@
 
 ## 1. Modelo de equipo y coordinación
 
-El sprint se organiza alrededor de **tres frentes funcionales coordinados por un modelo central**:
+La DTC distribuye autoridad entre un frente centralizador y dos frentes ejecutores:
 
-1. **Gobernanza:** mantiene el alcance, la jerarquía normativa, las autorizaciones y los controles de integridad. Evita que el sprint derive en cambios normativos o revisiones generales innecesarias.
-2. **Entorno Persistente (EP):** resuelve el alojamiento y la integración con el entorno Windows: preflight, Known Folders, identidad, localidad, permisos efectivos, bootstrap, configuración portable de Copilot, diagnóstico del entorno y aceptación de la instalación.
-3. **MCP de Metodología / OCP MCP:** define y construye el producto: contrato, servidor .NET, herramientas MCP, persistencia SQLite, telemetría, recibos, compilación, publicación, integración con el cliente y pruebas.
+1. **Gobernanza — frente centralizador e integrador del sprint:** el operador y Gobernanza gestionan el sprint y toman las decisiones centrales en la conversación y OCP de Gobernanza. El registro provisional de tareas GOV-TASK-* representa operativamente el OCP general del sprint y reúne el trabajo propio de Gobernanza, dependencias, decisiones, criterios de aceptación, estado integrado y verificaciones.
+2. **Entorno Persistente (EP) — frente ejecutor:** conserva su OEP, núcleo, tareas, control, titularidad, autoridad de entorno/host, instalación, persistencia y evidencia propios.
+3. **MCP-OCP — frente ejecutor:** conserva su OCP, núcleo, tareas, control, titularidad, autoridad técnica del servidor MCP, fuentes, pruebas, empaquetado, documentación y evidencia propios.
 
-**Modelo central:** la conversación que coordina este sprint ocupa la posición de integración entre los tres frentes. Recibe las entregas, conserva su procedencia, coteja contra las decisiones y la evidencia, identifica contradicciones, determina el siguiente turno, prepara instrucciones focalizadas y conduce el trabajo hacia la aceptación del MVP. No debe comportarse como un cuarto frente ni asumir automáticamente la titularidad de los otros OCP.
+**OCP general del sprint:** no crea un cuarto OCP, tablero, dashboard, backlog duplicado ni canal alternativo. Gobernanza enlaza cada resultado transversal con su tarea de origen, OCP responsable, cursor, estado reportado y evidencia; no duplica ni suplanta el backlog técnico del frente ejecutor. La fuente técnica autoritativa permanece en el OCP correspondiente.
 
-El operador conserva la autoridad sobre prioridades, decisiones de producto, autorizaciones materiales A y B y aceptación final. Los modelos/frentes auxiliares no se comunican entre sí por inferencia: el modelo central media el intercambio y conserva la secuencia.
+Los frentes ejecutores informan, ejecutan solo lo autorizado, aportan evidencia y formulan propuestas. No deciden por inferencia sobre alcance, permisos o tareas de los demás. La centralización de Gobernanza no transfiere titularidad ni amplía autorizaciones. Las comunicaciones entre frentes se gestionan a través del operador y los objetos existentes; no se presume transporte entre sesiones.
 
 ## 2. Principios operativos del sprint
 
@@ -41,7 +41,7 @@ El operador conserva la autoridad sobre prioridades, decisiones de producto, aut
 
 **No se prepara un nuevo prompt para un frente si todavía no se ha recibido la respuesta al último prompt preparado para ese mismo frente.**
 
-La respuesta debe llegar primero al modelo central. Este la lee, la coteja, actualiza el estado y decide si hace falta una corrección focalizada o si el frente puede cerrarse y ceder el turno.
+La respuesta llega al operador y se registra/procesa en la conversación y OCP de Gobernanza para la integración central del sprint. Gobernanza coteja contra DUG, decisiones y evidencia; el operador y Gobernanza determinan la siguiente acción central. Cada frente mantiene y cierra sus respuestas técnicas en su propio objeto DTC. No se presume que una respuesta de una sesión se haya transmitido a otra sin entrega verificable del operador o un mecanismo acreditado.
 
 No se emiten prompts repetidos, paralelos o acumulativos al mismo frente mientras exista una solicitud anterior sin respuesta. Una nueva solicitud solo se prepara después de haber recibido y analizado la respuesta previa.
 
@@ -49,16 +49,15 @@ Los prompts redactados en esta conversación son instrucciones preparadas para q
 
 ### 3.2 Orden de turnos
 
-La secuencia es serial y está administrada por el modelo central:
+La secuencia es serial y se administra desde la conversación/OCP de Gobernanza por el operador y Gobernanza:
 
-1. El modelo central identifica el frente responsable del siguiente resultado.
-2. Prepara una única solicitud concreta y define su criterio de respuesta.
-3. El operador la reenvía al frente correspondiente.
-4. El frente responde en su sesión.
-5. El operador aporta la respuesta al modelo central.
-6. El modelo central coteja la respuesta con el contrato, las fuentes vigentes y las decisiones anteriores.
-7. El modelo central resuelve, o prepara una sola solicitud correctiva si es estrictamente necesaria.
-8. Resuelto el punto, el turno pasa al siguiente frente que dependa de ese resultado.
+1. El operador y Gobernanza identifican la tarea de integración o decisión y el frente ejecutor responsable.
+2. Gobernanza registra el origen GOV-TASK-*, el criterio de aceptación, dependencia y referencia al OCP ejecutor; no copia su backlog técnico.
+3. El operador entrega al frente una solicitud focalizada por el mismo objeto de comunicación existente.
+4. El frente abre ciclo propio, recupera su cursor, responde inicialmente y procesa dentro de su autorización.
+5. El frente documenta cierre y read-back en su propio OCP; el operador aporta la respuesta/evidencia a Gobernanza.
+6. Gobernanza coteja el reporte y la evidencia observada contra el DUG, registra el estado integrado y las decisiones centrales.
+7. El operador y Gobernanza deciden la siguiente tarea/turno o aceptación; una nueva solicitud al mismo frente respeta la serialidad y no se abre mientras la anterior siga pendiente.
 
 Se prefiere que exista **un solo turno activo de coordinación cada vez**. Si al reinstanciar ya existen solicitudes independientes pendientes de respuesta en dos frentes, no se añaden otras: se reciben y procesan esas respuestas antes de abrir nuevos turnos.
 
@@ -100,19 +99,14 @@ No existe un máximo rígido que obligue a aceptar un producto defectuoso ni a p
 - Acepta o rechaza el producto después de revisar la evidencia.
 - No necesita arbitrar detalles técnicos ya delegados cuando estén dentro del alcance acordado.
 
-### 4.2 Modelo central
+### 4.2 Gobernanza — frente centralizador e integrador
 
-- Es el punto único de integración y memoria operativa del sprint.
-- Consulta primero el DUG vigente, los controles aplicables y los núcleos de los frentes.
-- Mantiene el registro de decisiones, solicitudes abiertas, respuestas y bloqueos.
-- Decide qué frente debe intervenir y evita solicitar trabajo redundante.
-- Revisa técnicamente cada entrega sin reiniciar el diseño.
-- Concilia las respuestas de EP, Gobernanza y OCP MCP.
-- Prepara prompts únicamente cuando corresponde por la regla de espera.
-- Mantiene visible el estado real de las autorizaciones y la evidencia.
-- Conduce a la construcción del MVP tan pronto como sea viable.
-
-El modelo central no debe afirmar que envió mensajes a sesiones externas ni que ejecutó operaciones en sus entornos cuando solo preparó una instrucción o recibió un informe.
+- Mantiene el OCP general del sprint representado por su registro provisional de GOV-TASK-* dentro del OCP de Gobernanza; no crea un cuarto OCP ni un tablero duplicado.
+- Integra el trabajo propio de Gobernanza y las dependencias transversales; registra origen, frente ejecutor, OCP responsable, cursor, estado reportado/observado/verificado, evidencia, decisiones y criterios de aceptación.
+- Gestiona con el operador las decisiones y prioridades centrales; avanza sus propias tareas aunque haya bloqueos en otro frente cuando el trabajo sea independiente.
+- Verifica por ciclo real de Gobernanza la evidencia de los tres frentes, sin monitoreo en segundo plano.
+- No ejecuta en nombre de EP/MCP-OCP ni modifica sus controles, núcleos, hosts, código o backlogs. No afirma lectura, publicación, aplicación o aceptación sin evidencia.
+- Distingue estado integrado de Gobernanza del estado técnico autoritativo en el OCP ejecutor.
 
 ### 4.3 Gobernanza
 
