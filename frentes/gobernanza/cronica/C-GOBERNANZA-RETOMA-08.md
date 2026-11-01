@@ -68,4 +68,4 @@ No se abre una solicitud nueva ni paralela a MCP-OCP mientras su ciclo 05 está 
 
 ## 6. Fuentes normativas y límites
 
-DUG vigente de referencia en el frente: Samantha v373 · NX-373m. La edad de IPZ/DUG y la instalación nativa IPZ no se certifican en este evento. No se modificó DUG, GOW canónico, ART-025, ART-027, IPZ nativa, FOL1, MCP-NORMATIVO, EP ni MCP-OCP.
+El adjunto conservado refleja el contexto documental Samantha v373 · NX-373m. La lectura independiente actual de `main` acredita que el DUG ya avanzó a Samantha v375 · NX-375m, GOW 2.15, 43 principios y 21 anexos; blob actual `c993a59163c2c163b17b599a003919b53c5cf6a8`. Este evento no modifica el DUG. La edad del DUG/IPZ y la instalación nativa IPZ no se certifican aquí. No se modificó DUG, GOW canónico, ART-025, ART-027, IPZ nativa, FOL1, MCP-NORMATIVO, EP ni MCP-OCP.
