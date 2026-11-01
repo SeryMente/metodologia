@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "repository": "SeryMente/metodologia",
-  "branch": "docs/metacanon-objetos-20261011",
+  "branch": "main",
   "front_folder": "frentes/ep",
   "files": [
     {
@@ -42,9 +42,9 @@
     },
     {
       "path": "frentes/ep/OEP.md",
-      "bytes": 227048,
-      "sha256": "43ce0d2cadf5b1313902f0eb5400b2f8f5748692e7a5800e3bbb9705aa02daee",
-      "git_blob": "e1e045cdc9b1a286047c6d47c47a5111a0b52bce"
+      "bytes": 228268,
+      "sha256": "ebde17f1cf63db67d2cb1c3c74e0e46f66cc8867c22605140da9cf34e69bef55",
+      "git_blob": "8f46c45fc377ec0100a542489a2d60b8f414d25d"
     },
     {
       "path": "frentes/ep/README.md",
@@ -303,14 +303,47 @@
       "bytes": 2462,
       "sha256": "c00ed129152a6c7d81641da16675aac6949b73be2d8e67dd0293da09edeead49",
       "git_blob": "4fbeecec4be792a84d55f7f0303405cfd79d528a"
+    },
+    {
+      "path": "frentes/ep/📁 🧭 - Tareas provisionales/README.md",
+      "bytes": 8412,
+      "sha256": "2a3f0c3600f185ddb1dc2052fbf6cb14f2cc7bdbc1ff7db38a8a4efc2c99fbd9",
+      "git_blob": "bfc052552f38d0679a57f74986159de601188f16"
+    },
+    {
+      "path": "frentes/ep/📁 🧭 - Tareas provisionales/📁 🧩 - EP-TASK-002 - Persistencia provisional Backblaze/README.md",
+      "bytes": 148274,
+      "sha256": "291cfacc8b238b5cabb41b61d94dc74863b668c0e52bd8b6ab2baf90b05eb04a",
+      "git_blob": "b3e694e5c92d1f87ec9ce61abea6982dd500dc17"
+    },
+    {
+      "path": "frentes/ep/📁 🧭 - Tareas provisionales/📁 🧩 - EP-TASK-003 - Mapa integral de construcción EP/README.md",
+      "bytes": 11751,
+      "sha256": "779ee61a72503943b2df2ea60a81d4a39aaffbdf063a412c1f56928cb3abb2ef",
+      "git_blob": "97f8eefa5aa5153c003fdb35173f2fdb0f40231a"
+    },
+    {
+      "path": "frentes/ep/prompts/PROMPT-ADAPTACION-COMUN-CONSUMIDORES-EP-v0.1.md",
+      "bytes": 8195,
+      "sha256": "495fa433df6890838a9e3dd4359a0a4e34fa6936c4f43238d318c9eb6ae69c52",
+      "git_blob": "c3547556107153b47802877783001befd49b19cb"
+    },
+    {
+      "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.19.json",
+      "bytes": 2506,
+      "sha256": "a757a6390cfe37b9bbdc44b7002f00783a62302ddca5184044cbe88526a1b728",
+      "git_blob": "0fa01e7937be3fbe968d4903e61aaa75b7bfedba"
     }
   ],
   "exclusions": [
     "self hash",
-    "Downloads files not recovered"
+    "Downloads files not recovered",
+    "Backblaze bucket/key state not authenticated or verified",
+    "No physical high-level architecture review",
+    "No consumer runtime/build/deployment or migration accepted"
   ],
-  "prior_readback_verified": "49e64d0636392c4d2f6f36e3e6d4484d465f0630; seven blobs matched and OEP content exact",
-  "latest_review_source_commit": "4262e7f9fec3d098b10ce1748cff442acdbdf4c0",
-  "current_event": "M33/M34 acquisition / common core / assistant-only RDC",
-  "verification_scope": "changed files require exact read-back; unchanged entries preserve previous manifest, not fresh product evidence"
+  "prior_readback_verified": "Main read-back verified for OEP, provisional task index, EP-TASK-002, EP-TASK-003, shared consumer prompt and REVISION-OEP-v0.3.19; blobs and content SHA-256 recorded in this manifest.",
+  "latest_review_source_commit": "2689a5aabd20c2cdb6c6982065bf30f62f5d59c3",
+  "current_event": "OEP v0.3.19 / VCU-EP-v21: §90 bilateral cycle gate; EP-TASK-003 map/delta; shared consumer adaptation prompt; EP-TASK-002 B2 target correction to OCP-MSP.",
+  "verification_scope": "Changed main-branch files were fetched after commit and their blob IDs matched the write results; SHA-256 recomputed over UTF-8 read-back. Documentation only; external Backblaze actions and consumer runtime remain unverified."
 }
