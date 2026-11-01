@@ -3,7 +3,7 @@
 **Estado:** materialización operativa provisional; no constituye el ámbito funcional Tareas ni lo canoniza.  
 **Contenedor:** `frentes/gobernanza/📁 🧭 - Tareas provisionales/`  
 **OCP padre y fuente de responsabilidad:** `frentes/gobernanza/`  
-**Control heredado:** [CONTROL-RESPONSABILIDAD.json](../CONTROL-RESPONSABILIDAD.json), titular de Gobernanza, generación 9; blob leído de vuelta `7e88662aefce286682e13fef9165757ea2d68908`.
+**Control heredado:** [CONTROL-RESPONSABILIDAD.json](../CONTROL-RESPONSABILIDAD.json), titular de Gobernanza, generación 11; blob leído de vuelta `beecec6d4a3ca166019f3271bf2715a2c64bb6f1`.
 **Evento de creación:** C-GOBERNANZA-MDP-OCP-01 · 2026-10-30.  
 **Fuente normativa vigente:** [DUG v373 · NX-373m](../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html). La arquitectura MDP se originó en v371 y se leyó de vuelta en v373.
 
@@ -116,4 +116,14 @@ En cada ciclo real de Gobernanza se revisan los cursores de EP y MCP-OCP, se pro
 ### Reconciliación de términos
 
 Las menciones históricas a Sync en snapshots de reorientación no alteran el DUG. ART-027 vigente denomina el mecanismo individual Sink, con aliases especificados pero todavía pendientes de despliegue/prueba. Hasta una decisión autorizada y evidencia nueva, este índice no debe presentar Sync como servicio operativo ni sustituir el contrato canónico.
+
+
+
+## Estado actual del control y la DTC · C-GOBERNANZA-RETOMA-08 · 2026-11-01
+
+- Control heredado único: generación 11, titular `SES-20261101-GV8A19904`; corresponsable preservada `SES-20261101-ED4A2B32`. No se abren controles/sesiones de tarea.
+- EP: `CUMPLE_VERIFICADO` en ciclo DTC documental local Prompt 02. Su tarea material EP-TASK-002 permanece `en_curso`; operaciones B2 no verificadas.
+- MCP-OCP: coordinación registra ciclo local 05 abierto; estado integrado `CUMPLE_PARCIAL` hasta cierre/read-back. Su control de generación 3 y su OCP siguen bajo su propia titularidad.
+- DTC global: `EN_CURSO_RECURRENT`. La siguiente verificación atenderá el cierre real de MCP-OCP; no se duplica solicitud durante su ciclo abierto.
+- Evidencia transversal: [retoma 08](../cronica/C-GOBERNANZA-RETOMA-08.md) · [read-back](../evidencias/C-GOBERNANZA-RETOMA-08.json).
 
