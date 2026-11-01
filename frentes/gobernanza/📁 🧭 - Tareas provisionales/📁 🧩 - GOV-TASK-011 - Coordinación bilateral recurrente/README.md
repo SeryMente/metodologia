@@ -74,3 +74,8 @@ Estados de verificación: `CUMPLE_VERIFICADO`, `CUMPLE_PARCIAL`, `NO_CUMPLE`, `N
 ## Denominación
 
 **DTC = Dinámica Trilateral por Ciclo.** Esta es la denominación compacta de la secuencia recurrente entre Gobernanza, EP y OCP MCP. Se emplea desde esta revisión en lugar de referirse al mecanismo únicamente como coordinación bilateral.
+## Constitución formal de la DTC · 2026-10-31
+
+Denominación: **DTC — Dinámica Trilateral por Ciclo**. Gobernanza asume la verificación de cumplimiento de los tres frentes en cada ciclo de Gobernanza, con evidencia por frente y estados controlados. La matriz y el evento de constitución se conservan en [C-GOBERNANZA-DTC-01](../../cronica/C-GOBERNANZA-DTC-01.md) y su [evidencia](../../evidencias/C-GOBERNANZA-DTC-01.json).
+
+Esta responsabilidad no equivale a vigilancia en segundo plano ni transfiere la ejecución o titularidad de EP/OCP MCP. Los ciclos no observables se marcan `SIN_CICLO_OBSERVADO`, sin inferir cumplimiento.
