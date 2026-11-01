@@ -565,3 +565,15 @@ El manifiesto conserva 59 entradas, coteja OEP/README/revisión por bytes UTF-8,
 **Límite de responsabilidad:** no se modificó el script ni el OCP khora-workstation-bootstrap. Su control main identifica owner alias chatgpt-C-KHORA-WORKSTATION-BOOTSTRAP-01, generation 1, y no expone ID nativo de conversación. La responsabilidad de MOD-SCRIPTPWS no muta por sí sola ese control. No se inició ni cerró RDC; no se alteraron procesos existentes.
 
 **Siguiente acción:** autorización GitHub interactiva desde el prompt actual; después verificación de gh auth status y lectura real del archivo privado. Cerrar este mismo ciclo con evidencia del operador y read-back.
+
+
+### Respuesta inicial de Gobernanza · ciclo EP C-EP-MOD-SCRIPTPWS-20261101-02
+
+**Evento central:** `C-GOBERNANZA-DTC-REVISION-20261101-03` · **UUIDv7 local auxiliar:** `01a1993e-9d60-7ad4-b610-fd391fa5bd50` · sin folio global.  
+**Cursor leído:** coordinación EP `main`, blob `e1faadce527cd8d314e81af16c8678271f4d48d2`; OEP v0.3.23 / VCU-EP-v25, blob `0babc46674a9dbcdc58e49e6256fc9a8fe17a304`; DUG Samantha v377, blob `54064c8fe00f872023a455f06596061ed69062ae`.
+
+**Acuse y criterio:** recibida la actualización sobre GitHub CLI 2.103.3. La instalación del ejecutable se registra como ejecutada según la salida aportada; la autenticación GitHub sigue sin completarse y el acceso privado al repositorio no está verificado. El error no demuestra que el device flow haya concluido.
+
+**Siguiente paso:** esperar a que el operador complete el inicio de sesión interactivo en su terminal; después comprobar `gh auth status` y una lectura privada de solo lectura. No solicitar ni copiar tokens, códigos de dispositivo o secretos al chat. No modificar V6, iniciar/cerrar RDC ni tocar el control del OCP KHORA por esta incidencia.
+
+**Estado DTC:** respuesta de Gobernanza publicada en la misma entrada del ciclo EP 02; EP debe procesarla, documentar el resultado y cerrar esa entrada con read-back. No se abre un segundo canal ni una tarea paralela.
