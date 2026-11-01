@@ -18,7 +18,8 @@
     "git_blob_sha": "a8bf0cb9f1bf3503827c6013e56abffa1f06e697",
     "commit_sha": "275854bb5d0a85cd9adb2f10ee65fcd41655e764",
     "readback_exact": true,
-    "status": "PERSISTIDO_Y_VERIFICADO"
+    "status": "PERSISTIDO_Y_VERIFICADO",
+    "dug_snapshot_in_original": "Samantha v373 · NX-373m (historical snapshot in the uploaded export)"
   },
   "responsibility": {
     "generation_before": 10,
@@ -80,5 +81,15 @@
     "ep_modified": false,
     "mcp_ocp_modified": false,
     "mcp_normativo_activated": false
+  },
+  "current_dug": {
+    "version": "Samantha v375",
+    "signature": "NX-375m",
+    "gow_version": "2.15",
+    "principles": 43,
+    "annexes": 21,
+    "main_blob_sha": "c993a59163c2c163b17b599a003919b53c5cf6a8",
+    "observed_on": "2026-11-01",
+    "modified_by_this_event": false
   }
 }
