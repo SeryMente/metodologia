@@ -155,3 +155,53 @@ La instrucción canónica de OEP §91 y EP-TASK-002 §24 establece **`OCP-MCP` c
 - La arquitectura de alto nivel/seguridad no se da por decidida: P012/P013 mantienen la revisión presencial aplicable antes de cerrar esas decisiones.
 
 **Acción inmediata:** solicitar autorización del operador para abrir una sesión de inicio de sesión de Backblaze en el perfil de navegador elegido; una vez autenticada, verificar solo lectura cuenta/región/buckets/keys antes de cualquier escritura o borrado. No solicitar contraseñas ni secretos en el chat.
+
+
+---
+
+## Cierre DTC · EP · C-EP-DTC-PERSISTENCIA-METODOLOGIA-20261031-01
+
+**Estado del ciclo:** `PROCESADO → DOCUMENTADO_AL_CIERRE → VERIFICADO_READBACK`.  
+**Secuencia completa:** `LEÍDO → RESPUESTA_INICIAL_REGISTRADA → PROCESADO → DOCUMENTADO_AL_CIERRE → VERIFICADO_READBACK`.  
+**Clasificación:** `CUMPLE_VERIFICADO` para la ejecución documental de la compuerta de este ciclo EP; no implica que EP-TASK-002 esté completada ni que B2 esté autenticado.
+
+### Procesamiento ejecutado
+
+1. Se reconciliò este mismo objeto provisional, con todo su historial, desde `docs/metacanon-objetos-20261011` a `main`; no se creó un segundo registro.
+2. OEP actualizado a v0.3.21 / VCU-EP-v23; §92 documenta la ubicación canónica del objeto DTC en `main`.
+3. Índice de tareas actualizado para enlazar el objeto reconciliado y OEP §§90–92.
+4. README de EP corregido para reconocer `main` como rama canónica y enlazar OEP, comunicación DTC y tareas.
+5. EP-TASK-002 §25 actualizado con la interpretación del primer urgente de Metodología, el destino B2 único, la falta de autenticación y los pasos pendientes.
+6. Creada `REVISION-OEP-v0.3.21.json` y actualizado `MANIFIESTO.json` con bytes, SHA-256 UTF-8 y Git blob de los documentos afectados.
+7. No se transfirió titularidad de Metacanon. No se alteraron controles de responsabilidad, DUG, host, DPAPI, consumidores ni código.
+
+### Evidencia de read-back
+
+| Recurso | Commit de escritura | Git blob de read-back | SHA-256 UTF-8 |
+|---|---|---|---|
+| OEP.md v0.3.21 | `57f1581bc1d6455c5c3616d4f39180f8455f7095` | `c0c65c473711881a1d1692bec757b283eca3eb34` | `f12b81aa1dc43099b9153d8741112f3399c1bb0688c0ea02768825657afde48c` |
+| Índice de tareas EP | `e95594a30626c4a2cd4a723c940b706346bf55cb` | `f55b2db5f1ac9c44c17d1f83078e651ccdf868ed` | `f52eb6cf56af353b12c8b04e551ffb134f5cf0c55eaea91a63cf90619b13df98` |
+| EP-TASK-002 README | `1df8dc8e2538b25dd3a7ee16b6d18ce8dcea7a56` | `8604dcbb0157b73b61671d5aee8a2be96aedcfd1` | `0ab18b62d4b25e4ed18a2a38b33385845f62bc80bc916c8817daa60808428ff4` |
+| README EP | `09e1cc4327d63d9204d85e166ff0b1ee46e2ebd8` | `e787fd908281c9b089652425b023b92eaea7674d` | `a2b36b8738320e306c80bb6afaf7118ae531cd2272f500160d15d3048c59fa1a` |
+| REVISION-OEP-v0.3.21.json | `50dc5808536abb9174c30582a47b522703a87100` | `87419509768c0c77a0e18af83e1f94603bdd4142` | `0130096b5a05fe6c4042ff1d07d8f42e55abdceac68ec66fcaf84c75787d26c8` |
+| MANIFIESTO.json | `35945ddd6fa6e712e80f8932b21af1072f5a0d06` | `b3a6822de30eaf6df5dc17ba8bc4058bffa60c56` | `a89f82fd8a90c8cd693b41f6ce20dbd9ce348fb73c6f89fa209295b955eb9b7b` |
+
+El objeto de coordinación se leyó de vuelta después de su apertura y antes de esta entrada; su blob de apertura fue `bbf13313218773fab4268d48626ff5eccdab1127`. Después de guardar este cierre se hará una nueva lectura exacta. El blob final de este mismo objeto se informa en la salida del ciclo y no se inserta en sí mismo para evitar una referencia circular.
+
+### Estado de EP-TASK-002 y bloqueos
+
+- **Estado:** `en_curso`.
+- **Destino único:** bucket B2 `OCP-MCP`; prefijo histórico previsto `ep-ocp/`.
+- **Autenticación B2:** NO DISPONIBLE/NO VERIFICADA. Los perfiles de navegador listados no tienen sitios autenticados registrados; no hay herramienta B2 directa.
+- **Cuenta/región, existencia/privacidad del bucket, vigencia y scope de `ep-ocp`:** NO VERIFICADOS.
+- **Eliminación de `metodologia-ep-persistencia`:** AUTORIZADA, NO EJECUTADA; se requiere inspeccionar su contenido antes de borrar.
+- **OCP-MSP:** no crear, usar ni eliminar por inferencia.
+- **Upload, SHA remoto, read-back y restauración:** NO EJECUTADOS.
+- **Arquitectura de alto nivel/seguridad:** pendiente de revisión presencial conforme a P012/P013.
+- **FOL1:** `PREPARADO_PENDIENTE_ACTIVACION_IPZ`; folios globales CV/CY/A/B y OCP siguen `PENDIENTE/NO ASIGNADO`.
+
+### Siguiente acción
+
+Solicitar al operador autorización para abrir el flujo de inicio de sesión de Backblaze en el perfil de navegador `Default`; después realizar únicamente el inventario de solo lectura de cuenta, región, buckets y claves. No solicitar contraseñas ni secretos por chat. Antes de una primera escritura B2, acordar el conjunto de datos/artefactos inicial y una prueba reversible con manifiesto SHA-256, read-back y restauración.
+
+**Límite de aceptación:** este ciclo queda completo como ciclo documental DTC; la necesidad material de persistencia para Metodología continúa abierta en EP-TASK-002. La DTC global no se declara cerrada por este ciclo local.
