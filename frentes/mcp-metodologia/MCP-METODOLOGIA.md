@@ -1,16 +1,17 @@
-# MCP de Metodología · Objeto Canónico de Persistencia
+# MCP-OCP · Objeto Canónico de Persistencia
 
 ## 1. Control e identidad
 
-- **Nombre canónico:** MCP de Metodología.
-- **Identidad:** MCP-METODOLOGIA.
-- **Versión/sello:** MCP-METODOLOGIA-v0.1.1 · núcleo inaugural.
+- **Nombre canónico vigente:** MCP-OCP (anteriormente MCP-METODOLOGIA).
+- **Identidad canónica vigente:** MCP-OCP. **Identidad histórica:** MCP-METODOLOGIA.
+- **Versión/sello:** MCP-OCP-v0.1.2 · retoma de responsabilidad y renombramiento documental.
 - **Repositorio propietario:** SeryMente/metodologia, rama main.
 - **OCP canónico:** frentes/mcp-metodologia/.
 - **Núcleo operativo único:** este archivo, MCP-METODOLOGIA.md.
 - **Control autoritativo:** CONTROL-RESPONSABILIDAD.json.
-- **Evento constitutivo:** C-MCP-METODOLOGIA-001. Es un identificador local de evento, no un folio global.
-- **Sesión:** UUIDv7 local 01a192b3-1063-7916-be41-ebfa974ede73; alias operativo chatgpt-C-MCP-METODOLOGIA-001-01a192b3-1063-7916-be41-ebfa974ede73. No es un ID nativo de ChatGPT.
+- **Evento constitutivo:** C-MCP-METODOLOGIA-001. Evento local, no folio global.  
+- **Identidad vigente:** MCP-OCP desde C-MCP-OCP-RETOMA-20261031-01; el nombre anterior se conserva como antecedente.
+- **Titular actual:** alias operativo `chatgpt-mcp-ocp-01a19495-aec0-78e2-a7b6-10ab72a2be78`; UUIDv7 local `01a19495-aec0-78e2-a7b6-10ab72a2be78`; generación 3. No es un ID nativo de ChatGPT.
 - **Titularidad inicial:** adjudicada a esta instancia por instrucción expresa de apertura; control generación 1.
 - **Folio de conversación/ciclo/A/B:** PENDIENTE/NO ASIGNADO. FOL1 continúa PREPARADO_PENDIENTE_ACTIVACION_IPZ; no se fabrican secuencias ni asignaciones.
 - **Estado de persistencia:** creación documental verificada por lectura de vuelta y cotejo de SHA de los ocho archivos del evento; commit de creación 63060667bf13b9c1abcb110857ba3eab85bfc915.
@@ -45,7 +46,7 @@ Antes de cada ciclo sustantivo:
 
 > Ok, esa es una buena pregunta. El MSP de metodología es el MSP que va a absorber, por ejemplo, las tareas de desarrollo y que no forman parte del ámbito del alcance de la prótesis cognitiva. Es decir, Cora tiene su MSP, por ejemplo, para servirle a los modelos un acceso a los dictados, un acceso a los medios de persistencia en la nube, a descargar MP3, al grafo de relaciones, es decir, cosas que tienen que ver con Cora. Pero necesitamos un MSP de la metodología OCP para tareas de desarrollo, por ejemplo, verificación de gobernanza para los modelos sometidos bajo la metodología, etcétera, etcétera. Son dos ámbitos muy heterogéneos y conviene tenerlos por separado. Además, OCP necesita un MSP local que trabaje por localhost o por RDC y Cora está de cara al internet mediante Vercel, entonces por eso la separación.
 
-**Procedencia:** mensaje directo U002 de C-MCP-METODOLOGIA-001, conservado literalmente en conversaciones/C-MCP-METODOLOGIA-001-dialogo.jsonl. El primer encargo U001 denominó al frente «OCP MCP». El dictado U002 conserva la forma «MSP»; la identidad canónica MCP de Metodología sigue la denominación del encargo inicial y no reescribe el original.
+**Procedencia:** mensaje directo U002 de C-MCP-METODOLOGIA-001, conservado literalmente en conversaciones/C-MCP-METODOLOGIA-001-dialogo.jsonl. El primer encargo U001 denominó al frente «OCP MCP». El dictado U002 conserva la forma «MSP»; la identidad canónica MCP de Metodología sigue la denominación del encargo inicial y no reescribe el original. El operador renombró expresamente la identidad documental a «MCP-OCP» el 2026-10-31; U001/U002 permanecen intactos y el nombre anterior se conserva solo como histórico.
 
 ### Lectura operativa separada
 
@@ -137,7 +138,7 @@ Las autorizaciones futuras deberán quedar vinculadas a la operación concreta y
 
 **Estado documental comprobado en `main`:** este núcleo, el control y el objeto de coordinación están presentes. El árbol OCP de `main` no contiene todavía `src/`, `tests/`, `scripts/` ni artefactos 0.1.0; por tanto, el producto construido y probado que se reportó en la rama `build/ocp-mcp-mvp-0.1.0` no se atribuye a esta revisión de `main`, no se considera integrado en la rama canónica ni aceptado.
 
-**Control:** `owned`, generación 2; autorización B `AUTHORIZED`, acotada a `frentes/mcp-metodologia/`. No habilita actos en EP, cambios normativos, instalación/host, ni rutas ajenas.
+**Control:** `owned`, generación 3; titular actual `chatgpt-mcp-ocp-01a19495-aec0-78e2-a7b6-10ab72a2be78`; autorización B `AUTHORIZED`, acotada a `frentes/mcp-metodologia/` sin ampliación. No habilita actos en EP, cambios normativos, instalación/host, ni rutas ajenas.
 
 **Normativa:** `MCP-NORMATIVO: DESACTIVADO`. La selección y `BUILD_SNAPSHOT` permanecen bloqueados hasta disponer de los cuatro metadatos estructurados aprobados para P001–P043; el OCP no los infiere ni modifica el DUG.
 
@@ -222,6 +223,37 @@ Una instancia nueva debe leer INICIO.md, DUG, Metacanon y GOW desde main; despu�
 El primer ciclo de cada sesión debe recuperar la última salida visible del modelo efectivamente conservada en este OCP; si no existe, declararla NO DISPONIBLE/NO VERIFICADA sin reconstrucción. La reinstanciación no importa estado, credenciales ni permisos desde Khora.
 
 No se asignó constructor ni segundo rol. No emitir dos prompts de roles que no existen.
+
+## 14. Retoma de responsabilidad y renombramiento · 2026-10-31
+
+**Evento local:** `C-MCP-OCP-RETOMA-20261031-01` (no es folio global).  
+**Instrucción directa del operador:** «REtoma repsonsabilidad del Frente MCP OCP, de hecho se llama OCP MCP, pero renombrfalo, es MCP-OCP adjunta convewrascion en persistencia documental del frente.»  
+**Identidad:** `MCP-METODOLOGIA` → `MCP-OCP`. El nombre vigente es MCP-OCP; el anterior se conserva en originales y antecedentes.  
+**Ruta preservada:** `frentes/mcp-metodologia/`; también se conserva el nombre físico histórico `MCP-METODOLOGIA.md` para no romper referencias existentes.  
+**Titularidad:** generación 2 `chatgpt-ocp-mcp-01a192fb-8346-710a-ba99-54350ab2dfd9` → generación 3 `chatgpt-mcp-ocp-01a19495-aec0-78e2-a7b6-10ab72a2be78`. El receptor usa UUIDv7 local `01a19495-aec0-78e2-a7b6-10ab72a2be78`; el ID nativo de conversación no está expuesto.
+
+### Transferencia y read-back
+
+- Control previo observado: blob SHA `4a4742a51f0517a1b152a9c04ac6c185de024389`, estado `owned`, generación 2.
+- Commit de transferencia CAS: `6043ef173f88264295998601d67b38c2bf247f3f`.
+- Lectura inmediata de retorno: blob SHA `31bf75570f1d414cb8f75b0a88acfe91fda03d45`; titular, generación 3 e identidad MCP-OCP coincidentes.
+- Commit de confirmación de read-back: `dc55c55c66d0ce3a05ace78ac50ad88da59291e1`.
+- Control final leído: blob SHA `3e6f96e919c33c3015478b7fd0f262b1bee47b0c`; estado `VERIFIED`, `readback_status=MATCHED`.
+
+### Alcance y límites
+
+La transferencia afecta únicamente la responsabilidad del OCP y su identidad documental. La autorización B existente conserva íntegramente su alcance: construir, compilar, probar, corregir y empaquetar el producto dentro de esta ruta. No habilita instalación ni operación en EP, modificaciones del host, DUG/IPZ/ART-025/027, Sink productivo, MCP-NORMATIVO, Khora, credenciales externas, exposición pública ni cambios fuera del frente. No se ejecutaron build, pruebas de software ni instalación en este ciclo.
+
+**Separación preservada:** este MCP-OCP continúa separado del OCP Khora MCP; no se importan ni transfieren controles, secretos, permisos o infraestructura entre ambos.
+
+### Conversación incorporada
+
+- Archivo solicitado por el operador: [ChatGPT-OCP MCP-20261031-1849.md](conversaciones/ChatGPT-OCP%20MCP-20261031-1849.md).
+- La captura conserva los mensajes visibles disponibles en este hilo; no se presenta como exportación nativa exhaustiva de ChatGPT.
+- Crónica: [C-MCP-OCP-RETOMA-20261031-01](cronica/C-MCP-OCP-RETOMA-20261031-01.md).
+- Evidencia: [C-MCP-OCP-RETOMA-20261031-01](evidencias/C-MCP-OCP-RETOMA-20261031-01.json).
+
+**Foliación:** FOL1 sigue `PREPARADO_PENDIENTE_ACTIVACION_IPZ`; conversación/ciclo/A/B globales y por OCP continúan `PENDIENTE/NO ASIGNADO`. No se asigna folio global ni se presenta el UUIDv7 local como ID de plataforma.
 
 ## 13. Persistencia y revisión
 
