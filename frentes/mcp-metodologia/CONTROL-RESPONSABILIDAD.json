@@ -77,8 +77,13 @@
     "generation_after": 3,
     "rename_from": "MCP-METODOLOGIA",
     "rename_to": "MCP-OCP",
-    "result": "COMMITTED_PENDING_READBACK",
-    "readback_status": "PENDING"
+    "result": "VERIFIED",
+    "readback_status": "MATCHED",
+    "transfer_commit_sha": "6043ef173f88264295998601d67b38c2bf247f3f",
+    "immediate_readback_blob_sha": "31bf75570f1d414cb8f75b0a88acfe91fda03d45",
+    "generation_readback": 3,
+    "owner_readback": "chatgpt-mcp-ocp-01a19495-aec0-78e2-a7b6-10ab72a2be78",
+    "identity_readback": "MCP-OCP"
   },
   "implementation_authorization": {
     "event_id": "C-MCP-METODOLOGIA-IMPLEMENTATION-AUTH-20261031-01",
