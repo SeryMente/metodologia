@@ -1,6 +1,6 @@
 # Objeto provisional de comunicación bilateral · Gobernanza ↔ Entorno Persistente (EP)
 
-**Versión:** 0.1 · **Estado:** MENSAJE DE GOBERNANZA PUBLICADO · RESPUESTA EP PENDIENTE
+**Versión:** 0.1 · **Estado:** MENSAJE LEÍDO · RESPUESTA INICIAL REGISTRADA · PROCESADO · CIERRE DOCUMENTADO · READ-BACK PENDIENTE DE ESTA ESCRITURA
 **Fecha:** 2026-10-31 · **Repositorio:** SeryMente/metodologia
 **Ubicación:** frentes/ep/entregas/COORDINACION-GOBERNANZA-EP-v0.1.md
 **Naturaleza:** buzón/bitácora de intercambio provisional. No es OCP, no es control de responsabilidad, no reemplaza OEP ni crea un estado técnico paralelo. El estado técnico y las decisiones del frente siguen en frentes/ep/OEP.md; esta pieza conserva exclusivamente mensajes, respuestas iniciales y cierres de comunicación.
@@ -48,16 +48,39 @@ Esta secuencia rige para todos los ciclos del frente mientras el operador no la 
 **Titularidad/generación/fuente/autoridad:** Identidad GitHub autenticada `1interprete1`; permisos de repositorio observados: admin/push. Esto prueba capacidad de escritura del conector, no titularidad de frente. OEP leído en `docs/metacanon-objetos-20261011`: v0.3.18 / VCU-EP-v20, blob `e1e045cdc9b1a286047c6d47c47a5111a0b52bce`; README del frente dice explícitamente que la rama no está integrada en `main`. OEP define asistencia documental y a Samantha como constructor de código, con posibilidad de reasignación expresa. El operador acaba de asignar a esta instancia la responsabilidad arquitectónica de EP; la asunción operativa de ese encargo queda acusada. No se ha localizado un CONTROL-RESPONSABILIDAD específico de EP en los objetos leídos, por lo que titularidad formal/generación siguen SIN_VERIFICAR y no se afirma mutación de control. DUG canónico leído desde `main`: Samantha v373 · NX-373m; Metacanon 1.26; GOW 2.14. Se aplican, entre otros, P001, P004, P005, P012/P013, P016, P035, P037 y P038.
 **Viabilidad, bloqueos y siguiente acción inmediata:** Es viable continuar lectura, inventario documental, diagnóstico de componentes existentes y elaboración de un borrador de prompt. La sesión local está fuera del alcance actual: no se utilizarán RDC, DPAPI ni rutas de host anteriores. El diseño/decisión de arquitectura de alto nivel queda sujeto a P012/P013; no se construirá ni alterará producto ni se emitirán especificaciones técnicas como definitivas sin la compuerta aplicable. La localización del índice de tareas y el control de titularidad requiere cotejo adicional. No hay evidencia en este ciclo de que Backblaze se haya modificado; el bucket y la eliminación ordenados quedan para verificación mediante un acceso remoto B2 autorizado, sin inferir que se ejecutaron. Siguiente acción: recuperar las fuentes EP y consumidores, separar inventario «construido» de «en uso», derivar la matriz de urgencias/delta y producir un único borrador de adaptación para ambos consumidores.
 
-## Novedades y cierre del ciclo — completar después del procesamiento
+## Novedades y cierre del ciclo — 2026-10-31 · America/Mexico_City
 
-**Ciclo/local event ID (no folio global si FOL1 sigue inactivo):**
+**Estado de comunicación:** PUBLICADO → LEÍDO → RESPUESTA_INICIAL_REGISTRADA → PROCESADO → DOCUMENTADO_AL_CIERRE. La lectura de vuelta de este mismo objeto se realizará después de guardar esta actualización.
+**Mensaje/cursor:** `MSG-GOV-BILATERAL-20261031-01`; respuesta inicial ya estaba registrada al abrir el ciclo. Blob del objeto antes de este cierre: `e4985ec37080a9c59f79236f41345fc83520998e`.
 **Tareas/hitos cambiados:**
-**Novedades y evidencia:**
+- `EP-TASK-002`: corrección del destino B2 solicitado a `OCP-MSP`; eliminación de `metodologia-ep-persistencia` registrada como AUTORIZADA / NO EJECUTADA.
+- `EP-TASK-003`: creada e indexada, estado `en_curso`, para inventariar toda la construcción EP y calcular el delta de aprovechamiento; la evaluación de salvamento/descarte se difiere hasta resolver las urgencias.
+- `EP-TASK-001`: permanece `pendiente`; sin cambio de estado.
+**Novedades y evidencia observada:**
+- OEP `SeryMente/metodologia/main` actualizado a v0.3.19 / VCU-EP-v21 con §90, compuerta bilateral obligatoria por ciclo. El índice de tareas incorpora el checklist y el vínculo a OEP.
+- Se guardó un único borrador de prompt de adaptación para ambos consumidores. No se envió a los modelos/agentes consumidores ni se modificó código, esquemas o despliegues de KHORA/HARMONIA o Signal Interpreter.
+- Lectura de `SeryMente/khora/main`: `ep-medio-architectura.md` v1.0.4 describe VHDX/BitLocker, OIDC/JWT, GitHub/Vercel, Neon y libro mayor `ep_sessions` / `ep_bootstrap_tokens` / `ep_events` con hash chaining. OEP §88 conserva el último checkpoint reportado de 603 archivos con integridad global RECHAZADA por 144 ausentes y 43 divergencias; no hay build/typecheck completo, SQL aplicado ni aceptación integral demostrada.
+- HARMONIA: colector local en `127.0.0.1:47321`, esquema de evento propio, índice/fingerprints y persistencia local. OCP HARMONIA v0.39 §44 reporta POST/GET/idempotencia Cora/Neon como NO EJECUTADOS. La estructura local del consumidor se mantiene intacta.
+- Signal Interpreter: arquitectura v2 local-first con IndexedDB → relay Vercel → GitHub API/inbox → GitHub Actions → paquete `observations/`; el manifiesto actual leído enumera 10,659 batches, secuencia 7,965 y paquete con snapshots/deltas/call reports. No se acredita integración con EP/B2.
+- Primer delta: ya existe persistencia remota EP/Neon para la bitácora de sesiones del entorno y persistencia remota separada en GitHub para Signal Interpreter; HARMONIA mantiene colector local y una ruta Cora/Neon pendiente de prueba. Backblaze no se ha demostrado integrado. OCP MCP como servicio/producto no debe confundirse con el nombre del bucket B2 `OCP-MSP`.
+**Evidencia reportada, no revalidada:** el historial del fragmento aportado por el operador reportó `ep-ocp` restringida a `OCP-MCP/ep-ocp/`. Ese dato no prueba acceso a `OCP-MSP` y no se trasladó a los consumidores.
 **Pendientes/bloqueos:**
-**Siguiente acción y pronóstico:**
-**OEP/compuerta actualizados:**
-**Commit/blob/SHA y read-back:** PENDIENTE
+- La sesión local anterior no está disponible; no se usó RDC, DPAPI ni rutas de host anteriores.
+- No hay sesión B2 autenticada en los perfiles de navegador consultados y no existe herramienta B2 directa en esta conexión. Buckets/keys actuales y existencia de `OCP-MSP`: NO VERIFICADOS. La eliminación autorizada no se intentó.
+- El contrato de arquitectura común está en borrador; P012/P013 mantienen la compuerta de revisión presencial antes de cerrar arquitectura de alto nivel/seguridad. El prompt es alineación de responsabilidades, no API final.
+- No se ha formalizado transferencia de titularidad/generación del OCP ni se modificaron controles de responsabilidad.
+**Siguiente acción y pronóstico:** continuar EP-TASK-003 desde fuentes remotas GitHub, recorriendo módulos y artefactos no usados; cerrar la autenticación B2 y verificar `OCP-MSP`/eliminación solo mediante sesión autorizada; someter las decisiones de arquitectura de alto nivel a la revisión presencial y luego publicar el contrato/SDK para los dos adaptadores. No hay pronóstico temporal defendible para las compuertas externas.
+**OEP/compuerta actualizados:** `frentes/ep/OEP.md` v0.3.19 / VCU-EP-v21 §90; índice provisional actualizado con EP-TASK-003 y checklist; EP-TASK-002 §23; prompt compartido v0.1; revisión y manifiesto actualizados en `main`.
+**Commit/blob/SHA y read-back de los documentos main:**
+- OEP: commit `c585a706a5aadb72dbeaa8efd3705c1acce60c90`, blob `8f46c45fc377ec0100a542489a2d60b8f414d25d`, SHA-256 `ebde17f1cf63db67d2cb1c3c74e0e46f66cc8867c22605140da9cf34e69bef55`.
+- Índice de tareas: blob `bfc052552f38d0679a57f74986159de601188f16`, SHA-256 `2a3f0c3600f185ddb1dc2052fbf6cb14f2cc7bdbc1ff7db38a8a4efc2c99fbd9`.
+- EP-TASK-002: commit `2689a5aabd20c2cdb6c6982065bf30f62f5d59c3`, blob `b3e694e5c92d1f87ec9ce61abea6982dd500dc17`, SHA-256 `291cfacc8b238b5cabb41b61d94dc74863b668c0e52bd8b6ab2baf90b05eb04a`.
+- EP-TASK-003: blob `97f8eefa5aa5153c003fdb35173f2fdb0f40231a`, SHA-256 `779ee61a72503943b2df2ea60a81d4a39aaffbdf063a412c1f56928cb3abb2ef`.
+- Prompt común: blob `c3547556107153b47802877783001befd49b19cb`, SHA-256 `495fa433df6890838a9e3dd4359a0a4e34fa6936c4f43238d318c9eb6ae69c52`.
+- Revisión OEP v0.3.19: blob `0fa01e7937be3fbe968d4903e61aaa75b7bfedba`, SHA-256 `a757a6390cfe37b9bbdc44b7002f00783a62302ddca5184044cbe88526a1b728`.
+- Manifiesto: commit `55dce2a33a8ecd3677be75fb1cfefe5193a3c9f7`, blob `296708c781c7fda2a60e2e473d6f8ceaf8f06deb`; el manifiesto excluye su propio hash.
+**Límite de read-back:** los archivos main anteriores fueron adquiridos después de escribir y sus blobs y SHA-256 se registraron en `frentes/ep/revisiones/MANIFIESTO.json`. Este objeto bilateral se debe leer de vuelta tras esta escritura para alcanzar `VERIFICADO_READBACK`.
 
 ## Historial de mensajes
 
-- MSG-GOV-BILATERAL-20261031-01 — publicado por Gobernanza; lectura/respuesta EP todavía no verificadas.
+- MSG-GOV-BILATERAL-20261031-01 — PUBLICADO por Gobernanza; LEÍDO y RESPUESTA_INICIAL_REGISTRADA por EP; PROCESADO y DOCUMENTADO_AL_CIERRE en este objeto; pendiente del read-back posterior a esta escritura.
