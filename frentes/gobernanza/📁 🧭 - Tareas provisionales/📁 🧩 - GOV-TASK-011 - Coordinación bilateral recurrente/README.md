@@ -1,6 +1,6 @@
 # GOV-TASK-011 — DTC · Dinámica Trilateral por Ciclo
 
-**Estado:** en_curso · **Responsable de verificación:** Gobernanza, generación 9. **Ejecución/evidencia:** cada frente, bajo su propio control.
+**Estado:** en_curso · **Responsable de verificación:** Gobernanza, generación 11 (sesión `SES-20261101-GV8A19904`). **Ejecución/evidencia:** cada frente, bajo su propio control.
 
 ## Regla mínima — sin excepción
 
@@ -193,3 +193,36 @@ Una lectura nueva del mismo objeto EP encontró una actualización posterior al 
 
 Esta observación supersede la fotografía inmediatamente anterior que dejaba el ciclo EP abierto. No cierra la tarea de persistencia ni la DTC recurrente: en cada ciclo futuro se repetirá la compuerta. La DTC global/GOV-TASK-011 permanece en_curso.
 
+
+
+---
+
+## Reanudación y auditoría DTC · C-GOBERNANZA-RETOMA-08 · 2026-11-01
+
+**Ciclo local de Gobernanza:** `C-GOBERNANZA-RETOMA-08` (identificador de evento local; no folio global). FOL1 inactivo.
+
+### Cursores adquiridos
+
+| Fuente | Revisión leída en `main` | Estado observado |
+|---|---|---|
+| OEP EP | blob `deaceadfc1de4636e0f9114a47a3d5255c04e897`, v0.3.22 / VCU-EP-v24 | vigente en `main` |
+| Índice tareas EP | blob `3c1d1bb91bc4152dd783f7f3b12ba1f986c40018` | EP-TASK-002 `en_curso` |
+| Comunicación EP | blob `24939fbe18b250256116f8556d96ae3c33bde238` | ciclo local `C-EP-DTC-PROMPT02-20261031-02` cerrado/read-back por EP |
+| Núcleo MCP-OCP | blob `15d6fe1a65d52c52215378fd12a49c3a651d6d73`, v0.1.9 | §8.1 aún conserva fotografía histórica ciclo 03/04 |
+| Control MCP-OCP | blob `3e6f96e919c33c3015478b7fd0f262b1bee47b0c`, generación 3 | autoridad del frente sin cambios |
+| Comunicación MCP-OCP | blob `4c6f9c12be9c227f66f71c149cef2d00db7dd17f` | ciclo local 05 abierto en §28; no se observó cierre/read-back del 05 |
+
+### Verificación por frente
+
+- **Gobernanza — `CUMPLE_VERIFICADO` para este evento:** transferencia primaria generación 11, persistencia documental, manifiesto, crónica/evidencia e índices propios actualizados y leídos de vuelta.
+- **EP — `CUMPLE_VERIFICADO` limitado al ciclo documental local:** EP registró apertura, respuesta, procesamiento, documentación y read-back del Prompt Adicional 02. No confundir con cierre de EP-TASK-002: autenticación B2, bucket/clave, upload, SHA remoto, read-back y restauración no ejecutados/verificados.
+- **MCP-OCP — `CUMPLE_PARCIAL`:** el objeto de coordinación abrió ciclo local 05 y registró respuesta inicial/SIN_NOVEDAD respecto de su cursor previo. No se observó cierre/read-back del ciclo 05. La discrepancia entre el estado de §8.1 del núcleo y §28 de la coordinación queda a cargo de MCP-OCP; Gobernanza no modifica su OCP/control ni abre una solicitud duplicada.
+- **DTC global — `EN_CURSO_RECURRENT`:** no se cierra por el cumplimiento de un ciclo local de uno de los frentes.
+
+### Cierre de Gobernanza
+
+La entrada de este ciclo quedó integrada en el objeto GOV-TASK-011; el índice, núcleo, pendientes, manifiesto, crónica, evidencia, control y original se leyeron de vuelta en `main`. Los estados ajenos se conservan como observados en sus fuentes, no como ejecución propia ni aceptación del operador.
+
+**Siguiente acción:** recibir y analizar el cierre/read-back de MCP-OCP ciclo local 05 en su objeto actual; mantener EP-TASK-002 y las dependencias de EP abiertas hasta evidencia material. No abrir nuevos turnos paralelos mientras exista procesamiento en curso.
+
+**Folios:** CONV global, CICLO global, A/B y OCP globales: `PENDIENTE / NO ASIGNADO`. Sesión de esta titularidad: `SES-20261101-GV8A19904`.
