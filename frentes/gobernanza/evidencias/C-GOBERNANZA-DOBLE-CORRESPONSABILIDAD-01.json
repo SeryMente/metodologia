@@ -1,0 +1,89 @@
+{
+  "schema": "governance-event-evidence/1",
+  "event_id": "C-GOBERNANZA-DOBLE-CORRESPONSABILIDAD-01",
+  "recorded_on": "2026-11-01",
+  "status": "PERSISTIDO_Y_VERIFICADO_READBACK",
+  "authorization": {
+    "status": "explicit",
+    "source": "operator message in this conversation",
+    "literal": "Asume co-responsabilidad del frente Gobernanza, como segunda conversación.",
+    "operation": "ADD_CO_RESPONSIBLE",
+    "front": "gobernanza",
+    "scope": "Add this conversation as the second responsible session; preserve the current holder; maximum two active responsible conversations."
+  },
+  "identities": {
+    "primary": {
+      "role": "titular",
+      "alias": "chatgpt-C-GOBERNANZA-RETOMA-07-SES-20261031-GV8AA51721",
+      "instance": "chatgpt-gobernanza-retoma-2026-10-31-8AA51721",
+      "session_folio": "SES-20261031-GV8AA51721",
+      "local_uuidv7": "01a193a9-7a00-7286-9216-45a477d294c1"
+    },
+    "added": {
+      "role": "corresponsable",
+      "alias": "chatgpt-C-GOBERNANZA-DOBLE-CORRESPONSABILIDAD-01-SES-20261101-ED4A2B32",
+      "instance": "chatgpt-gobernanza-corresponsable-2026-11-01-ED4A2B32",
+      "session_folio": "SES-20261101-ED4A2B32",
+      "local_uuidv7": "01a198fc-96f9-7b06-bdca-d419a8683c09",
+      "native_platform_conversation_id": "NOT_EXPOSED"
+    }
+  },
+  "control": {
+    "path": "frentes/gobernanza/CONTROL-RESPONSABILIDAD.json",
+    "generation_before": 9,
+    "generation_after": 10,
+    "active_responsibles": 2,
+    "max_active_responsibles": 2,
+    "source_blob_sha": "7e88662aefce286682e13fef9165757ea2d68908",
+    "initial_write_commit": "fe508f1f490a7665d1bf6da75423ce0aecc2ca70",
+    "verification_commit": "e5e623ad972ac64b4547c4ee7bd2c40f6da30c84",
+    "final_blob_sha": "403748d4a401c73abf322b2bc48bd517a9c56600",
+    "readback_status": "VERIFIED_READBACK",
+    "primary_preserved": true,
+    "third_responsible_blocked": true,
+    "fencing": "cooperative SHA/CAS/read-back only; no universal fencing claimed"
+  },
+  "normative_source": {
+    "path": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.html",
+    "version": "v375",
+    "signature": "NX-375m",
+    "gow_version": "2.15",
+    "previous_blob_sha": "2827d6edc3c07613c59dabf90ddea918e84bb06a",
+    "commit": "9842370b646b34635c62994d9af722d805da4c95",
+    "blob_sha": "acd16402561311d4eef4a43005efea7498983352",
+    "embedded_json_parse": "PASS",
+    "preserved_artifacts": [
+      "ART-028"
+    ],
+    "preserved_annex_count": 21,
+    "updated_rules": [
+      "P037",
+      "P039",
+      "Metacanon §38",
+      "Metacanon §§42.6–42.7",
+      "Metacanon §47.2",
+      "GOW 2.15"
+    ]
+  },
+  "procedure": {
+    "path": "frentes/gobernanza/entregas/CHATGPT-v0.8/AT-v1.2.md",
+    "based_on": "AT v1.1",
+    "status": "operational proposal; not an independently canonized DUG annex",
+    "commit": "702e61f800c5a4d56e9f28bc8b96528ebe15a50c",
+    "blob_sha": "ebe5f0f627865532647cbd226a46c05b48d69d77",
+    "vector_schema_changed": false
+  },
+  "foliation": {
+    "session_folio": "SES-20261101-ED4A2B32",
+    "global_conversation_folio": "PENDIENTE / NO ASIGNADO",
+    "global_cycle_folio": "PENDIENTE / NO ASIGNADO",
+    "conversation_and_cycle_global_folios_not_allocated": true,
+    "fol1_status": "PREPARADO_PENDIENTE_ACTIVACION_IPZ"
+  },
+  "constraints": {
+    "max_responsibles": 2,
+    "default_responsibles": 1,
+    "no_other_front_controls_modified": true,
+    "normative_mcp_status": "DESACTIVADO"
+  }
+}
