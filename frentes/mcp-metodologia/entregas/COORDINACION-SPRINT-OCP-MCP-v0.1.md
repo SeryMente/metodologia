@@ -1244,3 +1244,24 @@ Leí §29.2 y recibo el plan de reconstruir una única candidata limpia. Antes d
 **Continuación obligatoria en el mismo ciclo:** cuando un runner Windows vuelva a estar Online, sincronizar main y la rama candidata, comprobar de nuevo que ambos blobs fuente coinciden con el árbol de main, ejecutar una sola pasada de Build.ps1 con SDK 10.0.403, comprobar UNIT_SUMMARY y TEST_SUMMARY, manifiesto, ZIP y hashes, actualizar este recibo y cerrar §29 con read-back. No abrir otra solicitud/ciclo ni reutilizar la prueba histórica v376/v0.1.10.
 
 **Estado al cierre de este registro parcial:** LEÍDO · RESPUESTA_INICIAL_REGISTRADA · PROCESADO_PARCIAL · DOCUMENTADO · READBACK_DOCUMENTAL_VERIFICADO · BUILD_ACTUAL_PENDIENTE. DTC global EN_CURSO_RECURRENT. Folios globales CV/CY/A/B y OCP: PENDIENTE / NO ASIGNADO; FOL1 PREPARADO_PENDIENTE_ACTIVACION_IPZ.
+
+
+### 29.6 Reconciliación del nuevo main, corrección de versión y estado actual del ciclo 06
+
+**Cursor y control:** main HEAD leído c0255eb229f023f268e892e6b50f58fe3a5126e0; coordinación en blob previo effa574b6480e4542f4a2207304c13848059c62f; control MCP-OCP sin cambio, blob 3e6f96e919c33c3015478b7fd0f262b1bee47b0c, owned, generación 3, B AUTHORIZED. No apareció una respuesta nueva de Gobernanza en GOV-TASK-011 ni un mensaje EP dirigido a MCP-OCP. La actualización EP leída pertenece a su flujo MOD-SCRIPTPWS/GitHub CLI y no crea dependencia técnica para este servidor.
+
+**Delta externo de main:** los commits posteriores a la base 04ec89adea2b23caf5d6fcb8ba5d242fa8c37735 modifican únicamente frentes/khora-workstation-bootstrap/CONTROL-RESPONSABILIDAD.json y KHORA-WORKSTATION-BOOTSTRAP.md. No se tocaron DUG, EP, MCP-OCP ni este control. Se preserva separación de frentes; no se incorpora código ni autoridad de KHORA.
+
+**Corrección del estado documental MCP-OCP:** el núcleo se actualizó a MCP-OCP-v0.1.13, blob bf30c9554f11bc39a171a2e64d71488da2cdafc0; su §8.1 sustituye la descripción anterior por el estado pendiente actual y deja la prueba histórica separada. README fue actualizado a v0.1.13, blob 7153800a156379d4c433a7d533649b38eaf15c41. Ambos se leyeron de vuelta exactamente.
+- La última prueba exitosa histórica fue commit candidato 2c1cc3db2f2a085d3a2d93a41daf2e82c5ea5605: 31/31 unitarias y 29/29 integración PASS, SDK 10.0.403, DUG v376/NX-376m blob 657225b9c6c4d7bb46aad78fcd6c95de49ea1689, núcleo v0.1.10 blob e04e85fc8576244db3e4caefa0d05d2ed693fee7, ZIP SHA-256 29c9f02a356d9970f22c202741c7b44d4a53f2d4da8b5144dbd1cb549c67adfb.
+- **No atribuir esa prueba a DUG v377 ni núcleo v0.1.13.** El build nuevo no se ha ejecutado.
+
+**Estado DUG:** Samantha v377/NX-377m, Metacanon 1.28, GOW 2.17, blob 54064c8fe00f872023a455f06596061ed69062ae; gov-data JSON parseado, 43 principios/22 anexos y CNP P001/P004/P005/P038/P043. La barra lateral sigue mostrando v375/NX-375m mientras título/footer/JSON indican v377/NX-377m. No se altera DUG desde MCP-OCP. Métrica del ciclo 06: performance=NOT_MEASURED; inició antes de la instrumentación y carece de marcas completas.
+
+**Candidata selectiva al último cursor observado:** rama integration/ocp-mcp-0.1.0-selective-20261101; último HEAD conocido 28cd054f9ebf7d183624fa412c7a75ad1d704f4f, compare contra main diverged, 3 ahead / 2 behind, merge-base 04ec89adea2b23caf5d6fcb8ba5d242fa8c37735. Contiene solo 22 rutas selectivas de implementación/pruebas/build/evidencia sobre el main preservado; se excluyen los README/artefactos históricos de la rama original. Se alineará de nuevo al main tras este cierre documental y se repincharán los blobs DUG/core v0.1.13/v377.
+
+**Bloqueo sin simulación:** al último listado los 13 dispositivos RDC estaban Offline; el contenedor no tiene SDK .NET; el repositorio no tiene workflow MCP-OCP de build/test y el conector no ofrece dispatch de workflows. No hay un runner verificable para ejecutar el Build.ps1 actual. El recibo candidato mantiene REBUILD_PENDING_RUNNER_OFFLINE; no hay BUILD_EXIT, test summary, ZIP ni SHA actual para DUG v377/núcleo v0.1.13. No se declara MVP_TÉCNICO_VERIFICADO.
+
+**Clasificación:** GATE_INCOMPLETO / CICLO LOCAL 06 ABIERTO. Apertura/acuse y respuesta inicial están registrados; procesamiento documental y read-back completos; el build/tests actualizado sigue pendiente por runner offline. No abrir §30 ni una segunda solicitud. No PR/merge, instalación EP ni aceptación. DTC global EN_CURSO_RECURRENT; MCP-NORMATIVO DESACTIVADO; FOL1 PREPARADO_PENDIENTE_ACTIVACION_IPZ; folios globales/OCP CV/CY/A/B PENDIENTE / NO ASIGNADO.
+
+**Siguiente acción del mismo ciclo:** una vez disponible el runner Windows, leer main, alinear la candidata al HEAD actual, verificar blobs DUG/core, ejecutar una pasada completa de Build.ps1, comprobar ambas suites, manifiestos, hashes y extracción ZIP; actualizar recibo y cerrar §29 con read-back. Hasta entonces, no convertir esta espera en una ejecución presunta.
