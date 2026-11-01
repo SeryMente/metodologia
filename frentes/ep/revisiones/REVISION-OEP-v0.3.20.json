@@ -1,0 +1,35 @@
+{
+  "schema": 1,
+  "version": "v0.3.20 / VCU-EP-v22",
+  "method_acquired": "1.5",
+  "event": "Operador rectifica destino único B2 de EP: OCP-MCP. OCP-MSP y metodologia-ep-persistencia se clasifican como errores. OEP §91 y tareas/prompt corregidos.",
+  "checks": {
+    "operator_correction_acquired_and_registered": true,
+    "oep_section91_added": true,
+    "oep_current_version_advanced": true,
+    "task_index_corrected_to_ocp_mcp": true,
+    "task_002_section24_supersedes_erroneous_section23": true,
+    "task_003_references_corrected_to_ocp_mcp": true,
+    "shared_consumer_prompt_corrected_to_ocp_mcp": true,
+    "prior_erroneous_history_preserved_and_superseded": true,
+    "governance_response_registered_in_same_coordination_object": true,
+    "no_b2_resource_created_or_deleted": true,
+    "no_b2_key_permissions_changed": true,
+    "no_local_host_or_dpapi_used": true,
+    "no_consumer_code_or_schema_changed": true
+  },
+  "provenance": {
+    "operator_correction": "OCP-MCP is the only destination; OCP-MSP and metodologia-ep-persistencia are errors",
+    "governance_object_branch": "docs/metacanon-objetos-20261011",
+    "dug": "Samantha v373 / NX-373m; Metacanon 1.26; GOW 2.14",
+    "canonical_branch": "main"
+  },
+  "scope": "Documentary correction only. B2 inventory/authentication and deletion of metodologia-ep-persistencia remain unexecuted; OCP-MSP was not verified and was not created/used/deleted.",
+  "limitations": [
+    "No authenticated Backblaze session in current environment",
+    "Current existence/region/privacy of OCP-MCP not freshly verified",
+    "Reported historical ep-ocp key and OCP-MCP/ep-ocp/ restriction require fresh validation",
+    "Deletion of metodologia-ep-persistencia remains authorized but not executed",
+    "OCP-MSP existence unknown; no deletion authorization inferred"
+  ]
+}
