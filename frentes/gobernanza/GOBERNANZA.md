@@ -16,6 +16,49 @@ Esta sección sustituye los resúmenes ejecutivos repetidos y fotografías anter
 8. **Diferimiento:** GOV-TASK-004 y GOV-TASK-005 no bloquean el MVP.
 9. **GOV-TASK-011 — DTC · Dinámica Trilateral por Ciclo:** Gobernanza verifica en cada ciclo el cumplimiento de la secuencia por los tres frentes: Gobernanza, EP y OCP MCP.
 
+
+### Ampliación del vector rector — solicitud y apertura del paquete de principios de nivel 2
+
+**Dictado del operador — reproducción literal, sin normalización ni paráfrasis:**  
+Fuente primaria: [diálogo rector, registro de instrucciones del operador](conversaciones/C-GOBERNANZA-VECTOR-SEMANTICO-01-dialogo.jsonl).
+
+```text
+O sea, para esta implementación nos vamos a basar en el criterio rector y según las instrucciones verbatim, el servidor MCP-OCP debe de contar con alguna rutina que permita recibir la petición del paquete de principios de nivel 2 por parte del modelo, junto con el folio del ciclo, para procesarlo, el folio, emitir el hash que tendrá que ser usado para abrir el paquete de principios de nivel 2 y... está bien si el modelo almacena en su ventana el contenido de los principios. Esa sería, me parece, la única manera a la que podría acceder a la capa 2 sin el hash que emite el servidor MSP, ya que la ventana de contexto del modelo es efímera y volátil. Entonces no representa un... Para empezar, estos principios no son información sensible, nada más hay que controlar el flujo. Por otras razones no es una cuestión de seguridad de la información. Entonces el cómo el servidor MSP materializa o realiza estas instrucciones en lo concreto, eso te lo dejo a ti, siempre y cuando haya un apego estricto al criterio rector en tanto que vector semántico y a estas instrucciones también.
+```
+
+**Mandato de preservación — reproducción literal:**
+
+```text
+Recuerda que ese criterio rector siempre debe poder ser consultado verbatim, tal y como yo lo dicté, para que sirva de criterio de verdad para el desarrollo, manteniendo siempre el foco.
+```
+
+El bloque de dictado anterior forma parte del criterio rector y debe permanecer consultable verbatim. Las explicaciones técnicas que siguen son una expansión subordinada: no sustituyen, corrigen ni reescriben la instrucción original. Toda implementación o cambio de alcance debe poder trazarse a este vector y conservar el foco en completar el recorrido de gobernanza.
+
+#### Desarrollo operativo derivado para MCP-OCP
+
+1. **Solicitud del modelo:** el servidor MCP-OCP deberá exponer una rutina para recibir la petición de apertura del paquete de nivel 2. La solicitud deberá llevar el folio global real del ciclo y la referencia de sesión autorizada, además de los identificadores de los principios seleccionados en la capa 1. El folio es el vínculo de trazabilidad del ciclo; no se presumirá que por sí solo sea un secreto criptográfico ni sustituirá la validación de la sesión.
+2. **Foliación no activa:** mientras FOL1 continúe inactivo, no se inventará ni se presentará una referencia local como folio global. Una referencia local de ciclo podrá servir para pruebas o trazabilidad provisional, claramente etiquetada como tal, pero no satisface el requisito de folio global ni habilita una operación productiva que dependa de él.
+3. **Resolución canónica:** MCP-OCP resolverá cada ID contra el DUG vigente en `SeryMente/metodologia/main`, recuperando el texto normativo desarrollado y sus metadatos de procedencia. La respuesta conservará como mínimo ID y título canónicos, versión DUG, commit, blob SHA, SHA-256 del contenido y referencia individual del principio. No se completarán datos normativos ausentes por inferencia.
+4. **Materialización del paquete:** el servidor construirá una instantánea inmutable y determinísticamente serializada del conjunto solicitado, con manifiesto, orden de principios, referencias individuales y textos completos. La instantánea se conservará en el almacenamiento administrado por MCP-OCP, direccionada por su hash, de modo que el hash permita recuperar exactamente el mismo paquete aunque cambie la ventana de contexto del modelo o avance después el DUG.
+5. **Hash de apertura:** MCP-OCP calculará un `package_sha256` sobre la serialización canónica del manifiesto, las referencias individuales y los textos incluidos. Ese hash será el identificador direccionable que el modelo deberá presentar en una segunda llamada para abrir/recuperar el paquete. La apertura comprobará que el contenido recuperado reproduce el mismo hash y que el paquete corresponde al ciclo autorizado. El hash no es una contraseña ni una medida de confidencialidad: es identificador de contenido e integridad del flujo.
+6. **Conservación del requisito previo de enlaces:** el manifiesto incluirá la lista exacta, ordenada y serializada de referencias individuales. Se conservará también la comprobación del conjunto de enlaces exigida por el vector original; podrá expresarse como `links_sha256` dentro del manifiesto, mientras `package_sha256` es el hash principal para abrir el paquete completo. Ninguno de los dos se sustituye por un hash de la mera lista de IDs.
+7. **Entrega al modelo:** después de abrir el paquete, MCP-OCP devolverá los textos completos al modelo. Está permitido que el modelo los mantenga en su ventana de contexto durante el procesamiento del ciclo. Esa retención conversacional es volátil y no crea una fuente normativa paralela: el DUG sigue siendo la fuente de verdad y MCP-OCP conserva la instantánea recuperable por hash. Si el contexto se pierde o se compacta, el modelo vuelve a abrir el mismo paquete mediante el hash, sujeto a la validación del ciclo.
+8. **Ampliación por insuficiencia:** después de leer los textos recibidos, el modelo podrá solicitar principios adicionales que no estuvieran en el paquete inicial. MCP-OCP generará una nueva instantánea y un nuevo hash, preservando el paquete anterior y su evidencia; no sobrescribirá el historial ni alterará silenciosamente el contenido ya entregado.
+9. **Telemetría y límites:** se registrará la frecuencia de consulta individual por principio/referencia conforme al alcance aprobado. El folio recibido y el hash emitido sirven para vincular la operación y acreditar la integridad del paquete; no autorizan a inferir comprensión, selección semántica, aplicación del principio ni cumplimiento del ciclo. No se convertirá esta telemetría en medición de aplicación.
+10. **Naturaleza del control:** el objetivo es controlar el flujo de selección, entrega, apertura, integridad y trazabilidad. Los textos de principios no se tratarán como información confidencial por defecto ni se justificará el diseño con una necesidad de ocultarlos al modelo. Las credenciales y permisos de infraestructura, cuando existan, conservan su protección ordinaria, pero no son el fundamento semántico de este mecanismo.
+11. **Divergencia Sync/Sink:** el dictado rector original utiliza la denominación `Sync`; ART-027 del DUG vigente denomina `Sink` a los aliases individuales `p001`–`p043` y prohíbe tratarlos como equivalentes. Esta divergencia debe permanecer explícita hasta una decisión y reconciliación documental autorizada. La implementación no inventará aliases, URLs ni equivalencias; resolverá por ID y fuente canónica mientras el contrato de nombres/rutas siga pendiente.
+12. **Fallo cerrado:** si no puede validarse el ciclo/sesión, obtenerse la fuente canónica, materializarse el paquete, conservarse la instantánea o comprobarse el hash, MCP-OCP no entregará un contenido parcial como si fuera la capa 2 íntegra. Devolverá un estado de fallo identificable y la causa verificable.
+
+#### Secuencia funcional de referencia
+
+`solicitud(ciclo, sesión, IDs seleccionados) → resolución canónica → materialización y persistencia del paquete → emisión de package_sha256 → apertura por package_sha256 → entrega de textos completos → lectura del modelo → eventual solicitud adicional y nuevo hash`.
+
+Los nombres de operaciones y campos anteriores describen el contrato funcional requerido; no afirman que existan ya herramientas MCP, endpoints o almacenamiento implementados con esos nombres.
+
+#### Estado y límites de esta ampliación
+
+Esta ampliación queda **documentada como criterio rector de Gobernanza**. No modifica el DUG, ART-027, el núcleo ni el control de MCP-OCP, FOL1, EP, ni despliega aliases. La implementación corresponde al frente MCP-OCP dentro de su autoridad y deberá entrar por su mismo OCP de coordinación DTC, con contrato, código, pruebas positivas/negativas y read-back. El criterio rector no se considera implementado ni aceptado por el hecho de haber sido documentado.
+
 ### Estado técnico y fronteras interfrente
 
 - **OCP MCP 0.1.0:** rama `build/ocp-mcp-mvp-0.1.0`, build y pruebas reportadas (31 unitarias + 29 integración); release indica `BUILT_AND_TESTED_NOT_INSTALLED`. Persisten bloqueos por cuatro metadatos faltantes que producen `BLOCKED_OCPMSP`, y no está demostrada la cadena Sync individual/frecuencia/hash exacto/vínculo FOL1-sesión.
