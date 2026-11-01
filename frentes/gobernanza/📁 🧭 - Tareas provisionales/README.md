@@ -29,7 +29,7 @@ El núcleo de cada objeto conserva identificador local, enunciado, referencia re
 | GOV-TASK-008 | en_curso | Catálogo, selección y recuperación individual mediante OCP MCP/Sync | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-008%20-%20Aislamiento%20de%20capa%20desarrollada/README.md) |
 | GOV-TASK-009 | en_curso | Revisar el GOW y mantener visible su vocabulario inicial esencial | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-009%20-%20Revisi%C3%B3n%20del%20glosario%20operativo/README.md) |
 | GOV-TASK-010 | en_curso | Admisión obligatoria y titularidad exclusiva de conversaciones | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-010%20-%20Admisión%20y%20titularidad%20de%20conversaciones/README.md) |
-| GOV-TASK-011 | en_curso | Coordinación bilateral recurrente con EP y OCP MCP | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-011%20-%20Coordinación%20bilateral%20recurrente/README.md) |
+| GOV-TASK-011 | en_curso | DTC — Dinámica Trilateral por Ciclo | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-011%20-%20Coordinación%20bilateral%20recurrente/README.md) |
 
 ## Estado histórico de continuidad · 2026-10-30
 
@@ -43,7 +43,7 @@ GOV-TASK-001, GOV-TASK-006, GOV-TASK-007 y GOV-TASK-008 se encuentran `en_curso`
 4. La responsabilidad de cada objeto hereda el control del OCP Gobernanza; no se crean sesiones independientes.
 5. La existencia de estos registros no autoriza canonizar Tareas, modificar `ambitos/tareas/` ni crear integraciones externas.
 6. El cierre de una tarea exige atender su enunciado y recuperar evidencia de la fuente canónica pertinente.
-7. GOV-TASK-011 es una tarea recurrente: en cada ciclo leer el registro de tareas y el objeto bilateral de EP y OCP MCP, dejar mensaje o SIN_NOVEDAD en ambos y verificar respuestas/read-back sin inferir recepción.
+7. GOV-TASK-011 aplica la DTC — Dinámica Trilateral por Ciclo: en cada ciclo Gobernanza verifica apertura, respuesta prioritaria, procesamiento, cierre documental y read-back de Gobernanza, EP y OCP MCP.
 
 ## Referencias
 
@@ -82,6 +82,6 @@ El cierre del frente exige IPZ instalado y verificado, admisión efectiva, proto
 
 ## Estado rector vigente · C-GOBERNANZA-VECTOR-SEMANTICO-01 · 2026-10-31
 
-El registro queda actualizado a once objetos provisionales. GOV-TASK-011 exige leer y responder la comunicación EP/OCP al inicio de cada ciclo y documentar las novedades al cierre; los dos objetos bilaterales están publicados con respuesta pendiente. GOV-TASK-010 ya existe y se incorpora al índice; no se crea tarea duplicada. GOV-TASK-009 pasa a `en_curso` por su dependencia directa con el primer enlace IPZ (§ARR/GOW). GOV-TASK-002 queda `cancelada` como despliegue Sink/Cloudflare activo, preservado únicamente como antecedente; GOV-TASK-003 continúa pendiente como aceptación E2E de OCP MCP/Sync. Las tareas 004 y 005 siguen diferidas. La responsabilidad de las once tareas continúa heredada del OCP Gobernanza, generación 9; ninguna tiene control ni folio propio.
+El registro queda actualizado a once objetos provisionales. GOV-TASK-011 establece la DTC — Dinámica Trilateral por Ciclo; Gobernanza verifica ciclo a ciclo la apertura, respuesta prioritaria, procesamiento, documentación de cierre y read-back de los tres frentes. Los objetos EP/OCP siguen con respuesta inicial pendiente hasta prueba. GOV-TASK-010 ya existe y se incorpora al índice; no se crea tarea duplicada. GOV-TASK-009 pasa a `en_curso` por su dependencia directa con el primer enlace IPZ (§ARR/GOW). GOV-TASK-002 queda `cancelada` como despliegue Sink/Cloudflare activo, preservado únicamente como antecedente; GOV-TASK-003 continúa pendiente como aceptación E2E de OCP MCP/Sync. Las tareas 004 y 005 siguen diferidas. La responsabilidad de las once tareas continúa heredada del OCP Gobernanza, generación 9; ninguna tiene control ni folio propio.
 
 Fuente rectora: [dictado](../conversaciones/C-GOBERNANZA-VECTOR-SEMANTICO-01-dialogo.jsonl) · [crónica](../cronica/C-GOBERNANZA-VECTOR-SEMANTICO-01.md) · [evidencia](../evidencias/C-GOBERNANZA-VECTOR-SEMANTICO-01.json).
