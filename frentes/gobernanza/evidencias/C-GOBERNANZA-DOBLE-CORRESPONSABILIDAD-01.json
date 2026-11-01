@@ -49,8 +49,8 @@
     "signature": "NX-375m",
     "gow_version": "2.15",
     "previous_blob_sha": "2827d6edc3c07613c59dabf90ddea918e84bb06a",
-    "commit": "9842370b646b34635c62994d9af722d805da4c95",
-    "blob_sha": "acd16402561311d4eef4a43005efea7498983352",
+    "commit": "7830c14d5e6078991838c044fdbd6786f5595220",
+    "blob_sha": "c993a59163c2c163b17b599a003919b53c5cf6a8",
     "embedded_json_parse": "PASS",
     "preserved_artifacts": [
       "ART-028"
@@ -63,7 +63,8 @@
       "Metacanon §§42.6–42.7",
       "Metacanon §47.2",
       "GOW 2.15"
-    ]
+    ],
+    "final_export_filename": "gobernanza-v375.json"
   },
   "procedure": {
     "path": "frentes/gobernanza/entregas/CHATGPT-v0.8/AT-v1.2.md",
@@ -85,5 +86,11 @@
     "default_responsibles": 1,
     "no_other_front_controls_modified": true,
     "normative_mcp_status": "DESACTIVADO"
+  },
+  "indexes": {
+    "readme_blob": "06357e373a9b5def03b6b7bad75c7a162c3ce36f",
+    "core_blob": "191d7c68172d0ddb7c9f70be6104ab34df2e2fa3",
+    "pending_blob": "36719fef0200175e60107da1d6086002dbf55871",
+    "chronicle_blob": "eed4d85e0950d95f0e6491a2546cacc4ca450117"
   }
 }
