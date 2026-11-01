@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.20. **Sello del frente:** VCU-EP-v22 (Versión de Contexto Universal). **Ancla:** rectificación explícita del operador: `OCP-MCP` es el único bucket B2 de destino; `OCP-MSP` y `metodologia-ep-persistencia` son errores. La rectificación se materializa en §91; conserva la compuerta bilateral de §90 y las tareas/propuesta de adaptación previas.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.21. **Sello del frente:** VCU-EP-v23 (Versión de Contexto Universal). **Ancla:** rectificación explícita del operador: `OCP-MCP` es el único bucket B2 de destino; `OCP-MSP` y `metodologia-ep-persistencia` son errores. La rectificación se materializa en §91; conserva la compuerta bilateral de §90 y las tareas/propuesta de adaptación previas.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.20 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -1475,3 +1475,18 @@ El operador rectifica expresamente la selección del bucket: **`OCP-MCP` es el �
 6. Ninguna operación de creación, borrado, cambio de permisos, escritura de objetos o migración queda ejecutada por esta corrección documental.
 
 **Estado de esta rectificación:** instrucción LEÍDA y documentada; read-back pendiente hasta la verificación posterior a la escritura. La documentación previa se conserva como historial, pero queda supersedida en todo lo que nombró `OCP-MSP` como destino.
+
+
+---
+
+## 92. Reconciliación del objeto DTC en main — v0.3.21 / VCU-EP-v23
+
+El objeto provisional de comunicación existente `COORDINACION-GOBERNANZA-EP-v0.1.md` fue reconciliado en la carpeta canónica `frentes/ep/entregas/` de la rama `main`, conservando íntegramente el historial que anteriormente solo se encontraba en `docs/metacanon-objetos-20261011`. No se creó otro objeto, OCP, canal, control, sesión, bitácora ni foliación.
+
+- **Ruta canónica:** [COORDINACION-GOBERNANZA-EP-v0.1.md](entregas/COORDINACION-GOBERNANZA-EP-v0.1.md).
+- **Origen reconciliado:** rama `docs/metacanon-objetos-20261011`, blob `aeb7cd06c230c165e3d8892ba0572904a898806f`.
+- **Primera materialización en main:** commit `583ecf14afe44df7c0e5e0ef1f40a15da571c2e6`, blob de read-back `bbf13313218773fab4268d48626ff5eccdab1127`.
+- **Ciclo local abierto:** `C-EP-DTC-PERSISTENCIA-METODOLOGIA-20261031-01`; su entrada de apertura/respuesta inicial está al final del mismo objeto. No es folio global.
+- **Estado:** el historial se conserva y la respuesta específica al addendum DTC ha quedado registrada. El procesamiento de EP-TASK-002 continúa; el cierre de este ciclo requiere completar el mismo objeto tras las actualizaciones y leer de vuelta todos los documentos modificados.
+
+La reconciliación corrige la ausencia del objeto en `main`; no cambia control, titularidad, generación, permisos de producto ni estado físico de EP. La existencia de este archivo en GitHub no acredita autenticación ni operación de Backblaze B2.
