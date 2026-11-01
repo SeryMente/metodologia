@@ -14,7 +14,7 @@ Esta sección sustituye los resúmenes ejecutivos repetidos y fotografías anter
 6. **GOV-TASK-009 — entrada léxica:** §ARR/GOW es primera referencia; DUG es segunda y fuente normativa única.
 7. **GOV-TASK-006 — Gobernanza 1.0:** resolver divergencias y satélites del DUG con procedencia y destino. `identidad.md` no se localizó en la búsqueda acotada de refs Git accesibles; no concluir inexistencia ni borrarlo por inferencia.
 8. **Diferimiento:** GOV-TASK-004 y GOV-TASK-005 no bloquean el MVP.
-9. **GOV-TASK-011 — coordinación bilateral:** lectura prioritaria de tareas y mensajes EP/OCP en cada apertura, respuesta al inicio y documentación/read-back al cierre.
+9. **GOV-TASK-011 — DTC · Dinámica Trilateral por Ciclo:** Gobernanza verifica en cada ciclo el cumplimiento de la secuencia por los tres frentes: Gobernanza, EP y OCP MCP.
 
 ### Estado técnico y fronteras interfrente
 
@@ -24,9 +24,9 @@ Esta sección sustituye los resúmenes ejecutivos repetidos y fotografías anter
 - **Sink/Cloudflare:** GOV-TASK-002 queda cancelada como despliegue activo; conservar el antecedente. No desplegar por inercia ni tratar Sink como equivalente a Sync.
 - **Canon y controles:** DUG Samantha v373 · NX-373m; no se modifica DUG, GOW canónico, ART-025/027, IPZ nativa, control OCP MCP ni EP en este evento. FOL1 sigue PREPARADO_PENDIENTE_ACTIVACION_IPZ.
 
-### Coordinación bilateral obligatoria en cada ciclo · GOV-TASK-011
+### DTC · Dinámica Trilateral por Ciclo — GOV-TASK-011
 
-En todo ciclo de Gobernanza, después del preflight obligatorio de admisión y autoridad, leer primero los registros provisionales y objetos bilaterales de EP y OCP MCP; procesar las respuestas recibidas; dejar una entrada accionable (o SIN_NOVEDAD) en ambos objetos; y solo entonces continuar otras tareas. No abrir una nueva solicitud al mismo frente sin analizar la respuesta previa. Al cierre del trabajo del ciclo, registrar las novedades, cambios de tareas, evidencia, bloqueos y siguiente acción en los mismos objetos y verificar read-back. Los frentes deben instalar sus propias compuertas de apertura/respuesta y cierre en sus OCP/núcleos, sin trasladar a Gobernanza la titularidad de sus controles.
+**DTC = Dinámica Trilateral por Ciclo.** En cada ciclo de Gobernanza, después del preflight obligatorio de admisión y autoridad, leer primero los registros provisionales y objetos de comunicación de EP y OCP MCP; procesar las respuestas recibidas; dejar una entrada accionable (o SIN_NOVEDAD) en ambos objetos; y solo entonces continuar otras tareas. Gobernanza verifica además su propio cumplimiento de apertura, respuesta, procesamiento, documentación de cierre y read-back. En cada ciclo observado de EP y OCP MCP se verifica la misma secuencia: lectura y respuesta inicial al inicio, trabajo dentro del ámbito autorizado, documentación de novedades al terminar de procesar y read-back. No abrir una nueva solicitud al mismo frente sin analizar la respuesta previa. Registrar por frente `CUMPLE_VERIFICADO`, `CUMPLE_PARCIAL`, `NO_CUMPLE`, `NO_VERIFICABLE` o `SIN_CICLO_OBSERVADO`, citando fuente/commit/evidencia. No confundir falta de ciclo observable con cumplimiento. La responsabilidad de Gobernanza es verificar y registrar; EP y OCP MCP ejecutan y documentan sus propios ciclos bajo sus controles. No hay vigilancia en segundo plano.
 
 Objetos de comunicación: EP en frentes/ep/entregas/COORDINACION-GOBERNANZA-EP-v0.1.md (rama docs/metacanon-objetos-20261011); OCP MCP en frentes/mcp-metodologia/entregas/COORDINACION-SPRINT-OCP-MCP-v0.1.md (main). Mensaje MSG-GOV-BILATERAL-20261031-01 persistido y verificado; lectura y respuesta de ambos frentes todavía pendientes. No afirmar que un mensaje fue leído por el solo hecho de guardarlo.
 
