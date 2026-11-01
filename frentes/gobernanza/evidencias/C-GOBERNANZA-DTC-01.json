@@ -57,10 +57,12 @@
     }
   },
   "governance_persistence": {
-    "task_blob": "5f5dcc6b1d220a293d145f5b5d539fdc3760afd4",
+    "task_blob": "58b460ac2a85f8515658b1716e2ba18aecd3e47c",
     "task_index_blob": "8979d2042a8b3850732882d3e490b76fbe22b3d9",
-    "core_blob": "cfc5f1b3a69d5b3a449b7f45d59a03614ebdae0c",
-    "pending_blob": "b2f574aad0c00dc09a33f23409991e9b1266e212"
+    "core_blob": "19af4074cf0cc5f1e317f820d0e6b63793993fce",
+    "pending_blob": "657fb2b6668610c58756566526ece91f1a944f41",
+    "chronicle_blob": "a213ce8a4d1e1e70ada53b96729ea817008e9514",
+    "readback": "VERIFIED_BY_GITHUB_FILE_READ"
   },
   "boundaries": [
     "Gobernanza verifica; no sustituye ni asume titularidad de EP/OCP MCP.",
