@@ -86,6 +86,6 @@ La regla se adopta para tareas provisionales de este contenedor por instrucción
 - [ ] Si falta respuesta inicial o documentación final, declarar `CICLO_INCOMPLETO`; no cerrar por silencio, por guardar un prompt o por una respuesta en el chat.
 
 **Objeto de coordinación DTC canónico en `main`:** [COORDINACION-GOBERNANZA-EP-v0.1.md](../entregas/COORDINACION-GOBERNANZA-EP-v0.1.md).  
-**OEP:** [OEP.md](../OEP.md) §90–§92.  
+**OEP:** [OEP.md](../OEP.md) §90–§93.  
 **Índice provisional:** `frentes/ep/📁 🧭 - Tareas provisionales/README.md`.  
 **No crear:** un OCP alternativo, un tablero/bitácora paralelos, control de responsabilidad independiente, sesión/folio propios ni un segundo objeto de estado.
