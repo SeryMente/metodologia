@@ -14,8 +14,8 @@
     ],
     "checked_each_governance_cycle": true,
     "background_monitoring": false,
-    "automation": "SEMIAUTOMATICA_POR_CURSOR_Y_COMPUERTA",
-    "full_automation": "NO_VERIFICADA",
+    "automation": "SEMIAUTOMATICA_CURSOR_AND_PER_FRONT_CYCLE_GATE",
+    "full_automation": "NOT_VERIFIED_NO_ENFORCING_BACKGROUND_TRIGGER",
     "minimum_cycle_record": [
       "cycle_id_or_valid_global_folio",
       "opening_source_cursor_branch_revision_blob",
@@ -45,7 +45,8 @@
       "post_processing_close_documentation",
       "OCP_and_task_registry_updates_when_applicable",
       "readback_of_persisted_changes"
-    ]
+    ],
+    "new_thread_resume_rule": "A resumed work cycle in a new conversation must retrieve the persistent object cursor and continue in the same object; no parallel channel or reset of history."
   },
   "fronts": {
     "governance": {
@@ -65,25 +66,29 @@
       "oep_main_blob": "217218c48d79818451cd2cdc1cce98a94a6f122d",
       "task_registry_main_path": "frentes/ep/📁 🧭 - Tareas provisionales/README.md",
       "task_registry_main_blob": "934000b93de7e933d893c0055cabc4647dea57be",
-      "own_gate": "PRESENT_IN_OEP_SECTION_90_AND_TASK_INDEX",
+      "own_gate": "OEP_SECTION_90_AND_TASK_INDEX_PRESENT",
       "response_to_dtc_addendum": "PENDING",
-      "required_action": "EP_RECONCILE_SAME_COMM_OBJECT_TO_MAIN_AND_RESPOND_CLOSE_READBACK"
+      "required_action": "EP_RECONCILE_SAME_OBJECT_TO_MAIN_PRESERVE_HISTORY_AND_ACK_DTC_ADDENDUM",
+      "message_original_status": "RESPONSE_PROCESSING_CLOSE_READBACK_PRESENT",
+      "dtc_addendum_response": "PENDING"
     },
     "mcp_ocp": {
-      "status": "CUMPLE_PARCIAL",
+      "status": "CUMPLE_VERIFICADO",
       "source_branch": "main",
       "object_path": "frentes/mcp-metodologia/entregas/COORDINACION-SPRINT-OCP-MCP-v0.1.md",
-      "object_blob": "2780c4f1ac246e63c44dc08db1931a86234ea3e5",
+      "object_blob": "f05cd5762b5f0366714096d6de8c435581dcadd8",
       "control_blob": "3e6f96e919c33c3015478b7fd0f262b1bee47b0c",
       "control_status": "owned",
       "generation": 3,
       "core_path": "frentes/mcp-metodologia/MCP-METODOLOGIA.md",
-      "core_blob": "c823be24d4759d2a9795ed68350974b53810c68b",
+      "core_blob": "cd73b8d141dd401360d6736b859140876ba96738",
       "task_registry": "MCP-METODOLOGIA.md §8.1",
       "own_gate": "MCP-METODOLOGIA.md §10.1",
       "dtc_initial_response": "PERSISTED_IN_SECTION_19",
       "dtc_cycle_close_readback": "PENDING",
-      "required_action": "COMPLETE_SECTION_19_CYCLE_CLOSE_AND_READBACK"
+      "required_action": "RECONCILE_STALE_CORE_STATUS_AND_READBACK",
+      "cycle_processing_close_readback": "VERIFIED_IN_SECTION_20",
+      "core_reconciliation": "PENDING_MCP_OCP_OWN_CYCLE"
     }
   },
   "governance_persistence": {
@@ -92,7 +97,7 @@
     "task_blob": "170aa37f11d4174497588a98bf18483f28aaefb4",
     "task_index_blob": "8979d2042a8b3850732882d3e490b76fbe22b3d9",
     "chronicle_blob": "2359eeecb05dff4e839e47286a9cd3e17a3c24d2",
-    "readback": "VERIFIED_BY_POST_WRITE_GITHUB_FETCH"
+    "readback": "PENDING_FINAL_READBACK"
   },
   "boundaries": [
     "Gobernanza verifica; no sustituye ni asume titularidad de EP/MCP-OCP.",
