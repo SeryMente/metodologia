@@ -1163,3 +1163,12 @@ Se releen coordinación, núcleo v0.1.10, README, control y evidencia compacta d
 **Siguiente acción técnica:** reconciliar los archivos de código/infraestructura exclusivos contra la base actual, preservar íntegros los artefactos de Gobernanza/EP/MCP-OCP ya presentes en main, y ejecutar build/tests en la revisión reconciliada. No fusionar ni instalar por inferencia.
 
 **Cierre:** CICLO LOCAL 05 CERRADO · CUMPLE_VERIFICADO · READ-BACK COMPLETO. Folios globales CV/CY/A/B y OCP: PENDIENTE / NO ASIGNADO; FOL1 continúa PREPARADO_PENDIENTE_ACTIVACION_IPZ.
+
+
+## 29. Apertura DTC MCP-OCP — ciclo local 06: preparación de integración selectiva
+
+**Evento local:** C-MCP-OCP-DTC-20261101-06; identificador local, no folio global.  
+**Cursor realmente leído:** coordinación MCP-OCP blob 5a52046e9390019adb110d96d500d2998b637bbc, con ciclo 05 cerrado en §28.4. No se observan mensajes posteriores en este objeto al cursor leído: SIN_NOVEDAD.  
+**Preflight:** control blob 3e6f96e919c33c3015478b7fd0f262b1bee47b0c, owned, titular y generación 3 coincidentes, B AUTHORIZED; sin modificación de alcance. No hay solicitud técnica externa pendiente.  
+**Novedad:** main b9fc29a23e7c8050ef8e82200b875fe88d6041ee; rama build 04c71d10017eb1a114a4fbf4cfc63c7283e7d789; compare diverged, 11 ahead / 232 behind, merge-base e4243414b0099ede9b9556b3cfa0bb20bc706576.  
+**Respuesta inicial:** continuar la preparación selectiva sobre la base actual sin fusionar ramas, sin sobrescribir artefactos canónicos y sin ejecutar instalación. El objetivo inmediato es separar código y pruebas del material documental obsoleto de la rama, formar una candidata revisable basada en main y ejecutar build/tests sobre esa candidata. Cualquier integración final a main, instalación EP o aceptación queda fuera de la autorización B actual y requiere decisión explícita.
