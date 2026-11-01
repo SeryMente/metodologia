@@ -2,6 +2,8 @@
 
 ## Antecedentes documentales
 
+- **Retoma 08 · 2026-11-01:** [original adjunto y persistido](documentos/originales/ChatGPT-GOBERNANZA-20261101-1518.md) · [crónica](cronica/C-GOBERNANZA-RETOMA-08.md) · [evidencia](evidencias/C-GOBERNANZA-RETOMA-08.json) · [manifiesto](documentos/MANIFIESTO-DOCUMENTAL.json). Titularidad primaria generación 11, sesión `SES-20261101-GV8A19904`; corresponsable previa preservada. Original 161.472 bytes; SHA-256 `1ce5e272c9d4f80da83a5c5d4be4e36eecf8ebc29001132d5e998af8bacca0d6`; read-back exacto.
+
 - **Original persistido y verificado · C-GOBERNANZA-RETOMA-07 (2026-10-31):** [ChatGPT-Gobernanza-20261031-1432.md](documentos/originales/ChatGPT-Gobernanza-20261031-1432.md) · [manifiesto](documentos/MANIFIESTO-DOCUMENTAL.json). 637.277 bytes; SHA-256 `73A087BA953FD01F0804A482452E505E0D5AC160237AF18B467E677D2BAA2219`; Git blob `d17f575fcd5bf0c0da1bb459a40e42e47c081a31`; lectura remota exacta confirmada.
 
 - **Original persistido y verificado · C-GOBERNANZA-RETOMA-07 (2026-10-31):** [ChatGPT-Gobernanza-20261031-1432.md](documentos/originales/ChatGPT-Gobernanza-20261031-1432.md) · [manifiesto](documentos/MANIFIESTO-DOCUMENTAL.json) · [crónica](cronica/C-GOBERNANZA-RETOMA-07.md) · [evidencia](evidencias/C-GOBERNANZA-RETOMA-07.json). 637.277 bytes; SHA-256 `73A087BA953FD01F0804A482452E505E0D5AC160237AF18B467E677D2BAA2219`; Git blob `d17f575fcd5bf0c0da1bb459a40e42e47c081a31`; lectura remota exacta confirmada.
