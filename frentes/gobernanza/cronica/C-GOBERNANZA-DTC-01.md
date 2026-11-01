@@ -44,3 +44,19 @@ Estados permitidos: `CUMPLE_VERIFICADO`, `CUMPLE_PARCIAL`, `NO_CUMPLE`, `NO_VERI
 - [DTC / comunicación EP](https://github.com/SeryMente/metodologia/blob/docs/metacanon-objetos-20261011/frentes/ep/entregas/COORDINACION-GOBERNANZA-EP-v0.1.md)
 - [DTC / coordinación OCP MCP](../../mcp-metodologia/entregas/COORDINACION-SPRINT-OCP-MCP-v0.1.md)
 - [Núcleo Gobernanza](../GOBERNANZA.md) · [Pendientes](../PENDIENTES.md)
+
+---
+
+## Auditoría de integridad y eficacia · 2026-10-31
+
+La DTC queda reducida a una regla repetible: **una entrada por ciclo en el objeto de comunicación existente**. Apertura: ciclo + cursor (rama/revisión/blob) + respuesta inicial o `SIN_NOVEDAD`. Cierre: delta o `SIN_NOVEDAD`, tareas/estados, bloqueos, siguiente acción y evidencia. Después, read-back. Si falta cualquiera de esos tramos, el ciclo no se declara completo. No se crean canales, bitácoras ni estados paralelos.
+
+**Resultado observado en este ciclo:**
+
+- **Gobernanza — `CUMPLE_VERIFICADO`:** preflight, lectura de los dos objetos y registros de tareas, actualización de la DTC propia, persistencia y read-back de los artefactos de Gobernanza.
+- **EP — `CUMPLE_PARCIAL`:** OEP `main` v0.3.20 / VCU-EP-v22 (blob `217218c48d79818451cd2cdc1cce98a94a6f122d`) y registro provisional `main` (blob `934000b93de7e933d893c0055cabc4647dea57be`) contienen compuertas. El objeto de comunicación está solo en `docs/metacanon-objetos-20261011` (nuevo blob `aeb7cd06c230c165e3d8892ba0572904a898806f`); la ruta equivalente en `main` devuelve NOT_FOUND. El addendum DTC aún no tiene respuesta específica. Reconciliación requerida por EP.
+- **MCP-OCP — `CUMPLE_PARCIAL`:** control `owned`, generación 3; núcleo `main` (blob `c823be24d4759d2a9795ed68350974b53810c68b`) con registro §8.1 y compuerta §10.1; respuesta inicial DTC en §19. Su objeto `main` tiene el nuevo blob `2780c4f1ac246e63c44dc08db1931a86234ea3e5`; el cierre/read-back del ciclo de §19 sigue pendiente.
+
+**Automatización:** semiautomática por cursor y compuerta obligatoria. No se verificó un mecanismo de escritura automática ni vigilancia continua entre ciclos; no se declara automatización plena.
+
+**Límites:** no se modificaron DUG, GOW, IPZ nativa, ART-025/027, controles EP/OCP, host ni código. FOL1 continúa preparado e inactivo.
