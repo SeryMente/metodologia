@@ -35,7 +35,7 @@ Gobernanza define requisitos y acepta evidencia; OCP MCP implementa dentro de su
 
 ---
 
-**Responsabilidad vigente:** generación 9 · sesión `SES-20261031-GV8AA51721`; control leído de vuelta desde `main`, blob `7e88662aefce286682e13fef9165757ea2d68908`.
+**Responsabilidad vigente:** generación 10 · dos sesiones activas autorizadas en el mismo control: titular `SES-20261031-GV8AA51721` y corresponsable `SES-20261101-ED4A2B32`. Titularidad preservada; máximo dos responsables. Control leído de vuelta desde `main`, blob `403748d4a401c73abf322b2bc48bd517a9c56600`.
 
 
 - **Archivo original recibido · C-GOBERNANZA-PERSISTENCIA-DOCUMENTAL-01 (2026-10-30):** [ChatGPT-GOBERNANZA-20261030-1857.md](documentos/originales/ChatGPT-GOBERNANZA-20261030-1857.md) · [manifiesto documental](documentos/MANIFIESTO-DOCUMENTAL.json) · [diálogo A/B](conversaciones/C-GOBERNANZA-PERSISTENCIA-DOCUMENTAL-01-dialogo.jsonl) · [crónica](cronica/C-GOBERNANZA-PERSISTENCIA-DOCUMENTAL-01.md) · [evidencia](evidencias/C-GOBERNANZA-PERSISTENCIA-DOCUMENTAL-01.json). 177,693 bytes; SHA-256 `73C0BDA50D67840782C6E1B98A4F14803184CD029FB62D1A60CE77589CCA6C48`; estado **PERSISTIDO_Y_VERIFICADO**; lectura de vuelta exacta byte por byte confirmada.
@@ -69,3 +69,5 @@ Frente operativo separado para trabajar inicialmente sobre el **documento único
 **Separación de identidades:** el frente Metacanon sigue activo en `frentes/metacanon/`; el nombre del método sigue siendo Metacanon v1.26. La creación de Gobernanza no mueve ni renombra el OCP previo.
 
 Este README es índice y no reemplaza el núcleo operativo ni el documento normativo. No se duplicará la gobernanza normativa en Markdown.
+
+**Doble corresponsabilidad · C-GOBERNANZA-DOBLE-CORRESPONSABILIDAD-01:** [procedimiento AT v1.2](entregas/CHATGPT-v0.8/AT-v1.2.md) · [crónica](cronica/C-GOBERNANZA-DOBLE-CORRESPONSABILIDAD-01.md) · [evidencia](evidencias/C-GOBERNANZA-DOBLE-CORRESPONSABILIDAD-01.json). DUG v375 · NX-375m, GOW 2.15; una conversación por defecto, dos como máximo mediante ADD_CO_RESPONSIBLE. FOL1 continúa inactivo.
