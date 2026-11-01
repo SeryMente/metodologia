@@ -352,3 +352,45 @@ Validación del DUG: JSON embebido válido; JavaScript operativo compilado sint�
 **Objetivo Gobernanza 1.0:** IPZ de máximo 1.500 caracteres con enlaces Sync acortados a §ARR/GOW y DUG, seguidos de la compuerta fail-closed de admisión; ciclo con folio global propio; inventario de 43 principios DI/MDP, selección de aplicables, enlaces Sync individuales a textos desarrollados, prueba de suficiencia/reconsulta, telemetría de frecuencia y hash del paquete exacto en la salida. Frecuencia no equivale a aplicación ni autoriza descarte automático.
 
 **Responsabilidades:** Gobernanza define contrato, IPZ y criterios de aceptación; OCP MCP implementa el servidor bajo su control; EP atiende alojamiento e instalación bajo el suyo. DUG, ART-025, ART-027, IPZ nativa y controles ajenos sin cambios. FOL1 inactivo; MCP-NORMATIVO DESACTIVADO.
+
+
+---
+
+## DTC reforzada · Gobernanza centraliza el OCP general del sprint · 2026-10-31
+
+**Decisión operativa expresa del operador:** la DTC — Dinámica Trilateral por Ciclo — organiza tres frentes: Gobernanza es el frente centralizador; EP y MCP-OCP son los frentes ejecutores/reportantes. El operador y Gobernanza gestionan y toman las decisiones centrales en esta conversación y este OCP. Esta distribución refuerza GOV-TASK-011 y no cambia los controles, permisos ni titularidad de los otros dos frentes.
+
+### Función centralizadora
+
+Gobernanza no es solo auditor. Integra los avances y evidencias que EP y MCP-OCP registran en sus propios objetos de comunicación; contrasta cada reporte con el DUG y el estado real de los artefactos; mantiene dependencias, criterios de aceptación, decisiones pendientes y tareas integradoras; y desarrolla sus propios constructos y entregables autorizados para completar el sprint. El trabajo independiente de Gobernanza continúa aunque exista un bloqueo en otro frente; solo se detiene el trabajo que dependa materialmente de la evidencia, credencial, decisión, prueba o permiso faltante.
+
+### OCP general del sprint
+
+El registro provisional existente de tareas de Gobernanza es la representación operativa del OCP general del sprint. El conjunto de tareas GOV-TASK-* bajo el OCP Gobernanza constituye la vista integrada del trabajo. No se crea un cuarto OCP, tablero, dashboard, espejo ni backlog duplicado.
+
+Las tareas centrales integran resultados propios y dependencias cruzadas. Cuando una acción pertenece técnicamente a EP o MCP-OCP, la tarea de Gobernanza conserva la referencia al identificador original, OCP, cursor, estado y evidencia; no duplica ni reemplaza el backlog ejecutor. Los OCP de EP y MCP-OCP siguen siendo fuentes de verdad para el detalle de sus tareas técnicas. Gobernanza conserva la verdad del estado integrado, las decisiones tomadas aquí, las dependencias, las pruebas de aceptación y la perspectiva de sprint.
+
+### Criterio rector / verdad
+
+El DUG canónico vigente en SeryMente/metodologia/main constituye el marco normativo preponderante. La instrucción expresa del operador determina el objetivo y las decisiones del sprint dentro de dicho marco y de las autorizaciones efectivas. Para cada tarea se explicita: objetivo, criterio de verdad derivado del DUG, fuente responsable, estado reportado, estado observado, estado verificado, evidencia necesaria, aceptación y siguiente acción.
+
+Un reporte de EP/MCP-OCP es una entrada informativa; no equivale automáticamente a una ejecución verificada. La verificación exige inspeccionar la fuente y revisión identificadas y recuperar artefacto, prueba, commit/blob/SHA y read-back aplicables. La aceptación tampoco se presume por publicación o persistencia. Si el DUG no define un campo o contrato, se mantiene como no definido/no verificado; no se completan valores, enlaces, permisos ni folios por inferencia.
+
+### Cadencia DTC
+
+En cada ciclo real de Gobernanza se recupera el último cursor persistente de cada frente, se leen y procesan las respuestas disponibles y se actualiza el registro integrado cuando exista un delta material. EP y MCP-OCP abren y cierran cada ciclo en el mismo objeto de comunicación de su OCP, con cursor, respuesta inicial o SIN_NOVEDAD, trabajo autorizado, cierre, evidencia y read-back. Un hilo nuevo recupera el mismo cursor; no reinicia el historial. Gobernanza no envía una nueva solicitud a un frente mientras exista otra pendiente de respuesta/procesamiento. Sin apertura, cierre y read-back, el ciclo del frente es incompleto. No se afirma monitoreo continuo ni disparador de escritura autónomo.
+
+### Revalidación de estados · 2026-10-31
+
+Esta revalidación sustituye las fotografías anteriores de DTC en las que el objeto EP aparecía solo en la rama documental o el ciclo MCP-OCP 02 seguía pendiente:
+
+- **Gobernanza — CUMPLE_VERIFICADO para el ciclo actual de centralización:** control propio active, generación 9, blob 7e88662aefce286682e13fef9165757ea2d68908. Esta calificación se refiere a la lectura, respuesta, procesamiento y persistencia de los artefactos de Gobernanza descritos en la evidencia del ciclo; no asigna folio global.
+- **EP — CUMPLE_PARCIAL:** el mismo objeto de comunicación está reconciliado en main, blob bbf13313218773fab4268d48626ff5eccdab1127, y contiene el acuse específico del addendum DTC. El ciclo local C-EP-DTC-PERSISTENCIA-METODOLOGIA-20261031-01 tiene apertura y respuesta inicial; no se observa todavía cierre/read-back de ese ciclo. La reconciliación del objeto no se confunde con el cierre de ciclo.
+- **MCP-OCP — CUMPLE_VERIFICADO para ciclos locales 01 y 02:** §§19–20 y §§21–22 del objeto de coordinación documentan apertura, procesamiento, cierre y read-back. Su núcleo es MCP-OCP-v0.1.6, blob e6e96ee4edde7156ddc9f9a9e302faa9f8ed4ffa; el control owned, generación 3, blob 3e6f96e919c33c3015478b7fd0f262b1bee47b0c.
+- **Solicitud única MSG-MCP-OCP-GOV-DEPENDENCIES-20261101-01:** Gobernanza la leyó, respondió y cerró documentalmente en §§23–24 del mismo objeto, cuya lectura final de main devolvió blob b68769e838787ef8f8b6c9c6b9834e2f878bf0df. La respuesta no declara resueltas las dependencias. Los cuatro metadatos DUG solicitados tienen cobertura 0/43; ART-027 especifica Sink, no Sync, y mantiene los aliases pendientes de despliegue/prueba; la telemetría normativa es solo frecuencia de acceso, sin extensión de aplicación/sesión/ciclo; FOL1 sigue preparado e inactivo. MCP-OCP conserva fail-closed y puede continuar tareas independientes dentro de su alcance.
+- **DTC global / GOV-TASK-011:** permanece en_curso, porque EP aún tiene un ciclo abierto sin cierre/read-back y porque la comprobación es recurrente. El cumplimiento local de MCP-OCP no cierra la DTC global.
+
+**Fuentes rectoras adquiridas:** DUG v373 · NX-373m, blob cac4525de77d4f47a8a59c25201968ecf2056b90; FOL1 v1.0, blob b93cbef77f2fa1a6e4290ae8177e957a1616e47b, estado PREPARADO_PENDIENTE_ACTIVACION_IPZ. CV/CY/A/B globales y por OCP permanecen PENDIENTE / NO ASIGNADO.
+
+**Límites de esta materialización:** no se modificaron DUG, GOW, ART-025/027, IPZ nativa, FOL1, controles EP/MCP-OCP, núcleos de esos frentes, host EP ni código del servidor. El nuevo prompt adicional DTC 02 quedó preparado dentro de GOV-TASK-011, estado PREPARADO_NO_PUBLICADO; esta persistencia no prueba lectura, aceptación o aplicación por EP/MCP-OCP.
+
