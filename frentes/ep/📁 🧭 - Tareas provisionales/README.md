@@ -19,7 +19,7 @@ El patrón de materialización sigue el registro de tareas provisionales de Gobe
 | ID local | Estado | Tarea | Núcleo |
 |---|---|---|---|
 | EP-TASK-001 | pendiente | NCL — Navegador Compartido Local: integración de Playwright y KeePassXC | [núcleo](./📁%20🧩%20-%20EP-TASK-001%20-%20Integración%20NCL/README.md) |
-| EP-TASK-002 | en_curso | Persistencia provisional Backblaze B2 para EP; destino ordenado: OCP-MCP | [núcleo](./📁%20🧩%20-%20EP-TASK-002%20-%20Persistencia%20provisional%20Backblaze/README.md) |
+| EP-TASK-002 | en_curso | Persistencia multiubicación EP/Metodología y continuidad del servicio MCP-OCP; bucket único OCP-MCP | [núcleo](./📁%20🧩%20-%20EP-TASK-002%20-%20Persistencia%20provisional%20Backblaze/README.md) |
 | EP-TASK-003 | en_curso | Mapa integral de construcción EP y delta de aprovechamiento | [núcleo](./📁%20🧩%20-%20EP-TASK-003%20-%20Mapa%20integral%20de%20construcción%20EP/README.md) |
 
 ## Estado de continuidad · 2026-10-31
