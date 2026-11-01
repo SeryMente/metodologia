@@ -1,0 +1,81 @@
+{
+  "schema": 1,
+  "version": "v0.3.21 / VCU-EP-v23",
+  "method": {
+    "dug": "Samantha v373 / NX-373m",
+    "metacanon": "1.26",
+    "gow": "2.14"
+  },
+  "event": "Reconcile the existing EP-Governance DTC communication object to canonical main, document the urgent Methodology persistence work in EP-TASK-002, and correct OEP/task-index/README references.",
+  "dtc_cycle": "C-EP-DTC-PERSISTENCIA-METODOLOGIA-20261031-01",
+  "source": {
+    "branch": "docs/metacanon-objetos-20261011",
+    "coordination_blob": "aeb7cd06c230c165e3d8892ba0572904a898806f"
+  },
+  "changes": [
+    {
+      "path": "frentes/ep/entregas/COORDINACION-GOBERNANZA-EP-v0.1.md",
+      "commit": "583ecf14afe44df7c0e5e0ef1f40a15da571c2e6",
+      "blob": "bbf13313218773fab4268d48626ff5eccdab1127",
+      "sha256": "556503a5367a94504ed78cb3e7411ff891bb88f96a8d89958641e7c128905a92",
+      "bytes": 25551,
+      "readback_exact": true,
+      "change": "full historical object reconciled from documentation branch to main; DTC opening recorded"
+    },
+    {
+      "path": "frentes/ep/OEP.md",
+      "commit": "f6c0ccc039fc29656b26063accffc6a9852539d7",
+      "blob": "4cab4d8ec8ecb28085e30242e787430f6ea6f975",
+      "sha256": "258de630ddedd613dc873d04fc3e52602b1f340397cb0505e06337b203d8e136",
+      "bytes": 231703,
+      "readback_exact": true,
+      "change": "OEP v0.3.21 / VCU-EP-v23; §92 links canonical DTC object in main"
+    },
+    {
+      "path": "frentes/ep/📁 🧭 - Tareas provisionales/README.md",
+      "commit": "e95594a30626c4a2cd4a723c940b706346bf55cb",
+      "blob": "f55b2db5f1ac9c44c17d1f83078e651ccdf868ed",
+      "sha256": "f52eb6cf56af353b12c8b04e551ffb134f5cf0c55eaea91a63cf90619b13df98",
+      "bytes": 8494,
+      "readback_exact": true,
+      "change": "task index now links the same canonical DTC object and OEP §90–§92"
+    },
+    {
+      "path": "frentes/ep/📁 🧭 - Tareas provisionales/📁 🧩 - EP-TASK-002 - Persistencia provisional Backblaze/README.md",
+      "commit": "1df8dc8e2538b25dd3a7ee16b6d18ce8dcea7a56",
+      "blob": "8604dcbb0157b73b61671d5aee8a2be96aedcfd1",
+      "sha256": "0ab18b62d4b25e4ed18a2a38b33385845f62bc80bc916c8817daa60808428ff4",
+      "bytes": 153164,
+      "readback_exact": true,
+      "change": "EP-TASK-002 §25 records urgency, B2 target and access blockers"
+    },
+    {
+      "path": "frentes/ep/README.md",
+      "commit": "09e1cc4327d63d9204d85e166ff0b1ee46e2ebd8",
+      "blob": "e787fd908281c9b089652425b023b92eaea7674d",
+      "sha256": "a2b36b8738320e306c80bb6afaf7118ae531cd2272f500160d15d3048c59fa1a",
+      "bytes": 1365,
+      "readback_exact": true,
+      "change": "folder index now points to canonical main sources"
+    }
+  ],
+  "checks": {
+    "canonical_repo_private_revalidated": true,
+    "same_coordination_object_reconciled_without_parallel_object": true,
+    "complete_history_preserved_from_documentation_branch": true,
+    "dtc_addendum_acknowledged_in_opening": true,
+    "oep_and_task_index_references_reconciled": true,
+    "metacanon_ownership_transfer_requested_or_performed": false,
+    "b2_authenticated": false,
+    "b2_resources_or_permissions_modified": false,
+    "host_or_dpapi_used": false,
+    "consumer_code_schema_or_deployment_modified": false
+  },
+  "limits": [
+    "EP has no separate CONTROL-RESPONSABILIDAD.json in main/frentes/ep; no titular generation was invented or a parallel control created.",
+    "Backblaze browser profiles had no signed_in_sites; no B2 direct connector is available in this session.",
+    "OCP-MCP existence/privacy/key scope and any remote object state remain unverified.",
+    "Deletion of metodologia-ep-persistencia remains authorized but not executed pending authenticated inspection.",
+    "High-level persistence/security architecture remains subject to the in-person review under P012/P013."
+  ]
+}
