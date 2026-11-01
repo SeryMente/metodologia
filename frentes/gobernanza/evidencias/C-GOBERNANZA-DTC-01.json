@@ -4,9 +4,9 @@
   "task_id": "GOV-TASK-011",
   "name": "DTC — Dinámica Trilateral por Ciclo",
   "global_cycle_folio": "PENDIENTE_NO_ASIGNADO_FOL1_INACTIVO",
-  "operator_decision": "Gobernanza verifica en cada ciclo el cumplimiento por Gobernanza, EP y MCP-OCP; cada frente conserva la ejecución y evidencia de su propio ciclo.",
+  "operator_decision": "DTC centralizada: Gobernanza integra el OCP general del sprint; operador y Gobernanza gestionan y deciden aquí; EP y MCP-OCP reportan y ejecutan en sus propios OCP.",
   "verification_model": {
-    "accountable_front": "Gobernanza",
+    "accountable_front": "Gobernanza — frente centralizador e integrador del sprint",
     "execution_owners": [
       "Gobernanza",
       "EP",
@@ -46,7 +46,37 @@
       "OCP_and_task_registry_updates_when_applicable",
       "readback_of_persisted_changes"
     ],
-    "new_thread_resume_rule": "A resumed work cycle in a new conversation must retrieve the persistent object cursor and continue in the same object; no parallel channel or reset of history."
+    "new_thread_resume_rule": "A resumed work cycle in a new conversation must retrieve the persistent object cursor and continue in the same object; no parallel channel or reset of history.",
+    "sprint_ocp": {
+      "representation": "El índice provisional de tareas bajo frentes/gobernanza es la vista integrada del OCP general del sprint.",
+      "new_ocp_created": false,
+      "governance_tasks": "Entregables propios, dependencias, decisiones, criterios de aceptación e integración.",
+      "front_task_authority": "EP y MCP-OCP conservan sus backlogs y estado técnico autoritativo; Gobernanza enlaza tareas de origen y evidencia sin duplicarlos.",
+      "no_parallel_dashboard_or_channel": true
+    },
+    "truth_criterion": {
+      "normative_source": "DUG canónico SeryMente/metodologia/main",
+      "operator_instruction": "Define objetivos y decisiones dentro del DUG y las autorizaciones reales.",
+      "reported_is_not_verified": true,
+      "requires_observed_source_revision_artifact_and_readback": true,
+      "separates_reported_observed_verified_accepted": true,
+      "missing_canonical_contract_or_authorization": "FAIL_CLOSED"
+    },
+    "governance_own_progress": {
+      "enabled": true,
+      "scope": [
+        "análisis",
+        "investigación canónica",
+        "descomposición de tareas",
+        "criterios de aceptación",
+        "constructos",
+        "propuestas",
+        "documentación",
+        "pruebas de aceptación",
+        "reconciliación"
+      ],
+      "constraint": "No suplanta a EP/MCP-OCP ni cruza controles, host, código o autorizaciones."
+    }
   },
   "fronts": {
     "governance": {
@@ -58,51 +88,99 @@
     },
     "ep": {
       "status": "CUMPLE_PARCIAL",
-      "source_branch": "docs/metacanon-objetos-20261011",
+      "source_branch": "main",
       "object_path": "frentes/ep/entregas/COORDINACION-GOBERNANZA-EP-v0.1.md",
-      "object_blob": "aeb7cd06c230c165e3d8892ba0572904a898806f",
+      "object_blob": "1131bb584268f393eb16c7a19120eb800d2043cd",
       "canonical_branch_expectation": "main",
-      "canonical_object_in_main": "NOT_FOUND",
+      "canonical_object_in_main": "PRESENTE",
       "oep_main_blob": "217218c48d79818451cd2cdc1cce98a94a6f122d",
       "task_registry_main_path": "frentes/ep/📁 🧭 - Tareas provisionales/README.md",
       "task_registry_main_blob": "934000b93de7e933d893c0055cabc4647dea57be",
       "own_gate": "OEP_SECTION_90_AND_TASK_INDEX_PRESENT",
-      "response_to_dtc_addendum": "PENDING",
-      "required_action": "EP_RECONCILE_SAME_OBJECT_TO_MAIN_PRESERVE_HISTORY_AND_ACK_DTC_ADDENDUM",
+      "response_to_dtc_addendum": "ACKNOWLEDGED_IN_OPEN_CYCLE",
+      "required_action": "EP_CLOSE_OWN_OPEN_CYCLE_AND_READBACK_IN_SAME_OBJECT",
       "message_original_status": "RESPONSE_PROCESSING_CLOSE_READBACK_PRESENT",
-      "dtc_addendum_response": "PENDING"
+      "dtc_addendum_response": "PENDING",
+      "local_cycle_id": "C-EP-DTC-PERSISTENCIA-METODOLOGIA-20261031-01",
+      "local_cycle_opening": "LEÍDO → RESPUESTA_INICIAL_REGISTRADA",
+      "local_cycle_close_readback": "PENDING_IN_CURRENT_READ"
     },
     "mcp_ocp": {
       "status": "CUMPLE_VERIFICADO",
       "source_branch": "main",
       "object_path": "frentes/mcp-metodologia/entregas/COORDINACION-SPRINT-OCP-MCP-v0.1.md",
-      "object_blob": "f05cd5762b5f0366714096d6de8c435581dcadd8",
+      "object_blob": "b68769e838787ef8f8b6c9c6b9834e2f878bf0df",
       "control_blob": "3e6f96e919c33c3015478b7fd0f262b1bee47b0c",
       "control_status": "owned",
       "generation": 3,
       "core_path": "frentes/mcp-metodologia/MCP-METODOLOGIA.md",
-      "core_blob": "cd73b8d141dd401360d6736b859140876ba96738",
+      "core_blob": "e6e96ee4edde7156ddc9f9a9e302faa9f8ed4ffa",
       "task_registry": "MCP-METODOLOGIA.md §8.1",
       "own_gate": "MCP-METODOLOGIA.md_SECTION_10_2",
       "dtc_initial_response": "PERSISTED_IN_SECTION_19",
       "dtc_cycle_close_readback": "VERIFIED_IN_SECTION_20",
-      "required_action": "RECONCILE_STALE_CORE_STATUS_IN_OWN_CYCLE_AND_READBACK",
+      "required_action": "CONTINUE_INDEPENDENT_AUTHORIZED_BACKLOG; NO_NEW_REQUEST_UNTIL_OPERATOR_DECISION",
       "cycle_processing_close_readback": "VERIFIED_IN_SECTION_20",
-      "core_reconciliation": "PENDING_MCP_OCP_OWN_CYCLE"
+      "core_reconciliation": "PENDING_MCP_OCP_OWN_CYCLE",
+      "cycle_02_open_close_readback": "VERIFIED_IN_SECTIONS_21_22"
     }
   },
   "governance_persistence": {
-    "core_blob": "8fcf1130a628f81d266eb00cee76f2c6801cf29e",
-    "pending_blob": "84dc62ffeb130039f4f98b0b72d80bf86d412370",
-    "task_blob": "784d9f46b9a18c8d570b0645456d3a4274d31ca7",
-    "task_index_blob": "8979d2042a8b3850732882d3e490b76fbe22b3d9",
-    "chronicle_blob": "b5f32dd5f533634a28412a6300b82542f0e3f8db",
-    "readback": "VERIFIED_BY_POST_WRITE_GITHUB_FETCH"
+    "core_blob": "03db9d251526b0a8822d50e2bf5812ff9ef6434a",
+    "core_sha256": "111c2d0d5fba06ddeddb545a12a24e14454c740b56e69ce6d91dd6e549f16082",
+    "task_blob": "5dae82afce468fe3d8384851044f8eb425e1d681",
+    "task_sha256": "1cce6f465661dc7cc1e9d5ff769aef6cc04924ca7ba0411b13fb839e1433c218",
+    "task_index_blob": "6cac7f4d432803f90f8dddcdb3701a23ff3a3897",
+    "task_index_sha256": "226a86cfd221603134e30eea92ca8f2f8c5cbddebc8acb9c0e547029add571b7",
+    "chronicle_blob": "5a19ecfe248261043ff92bf0f54845ff2881d75f",
+    "chronicle_sha256": "aed1ce09a7eb03caf8f96f859b5f35b3bcd6db8d6ea2652e6d970048ffbee58f",
+    "mcp_coordination_blob": "b68769e838787ef8f8b6c9c6b9834e2f878bf0df",
+    "ep_coordination_blob": "1131bb584268f393eb16c7a19120eb800d2043cd",
+    "prompt_additional_02": "PREPARADO_NO_PUBLICADO_IN_GOV_TASK_011",
+    "readback": "ALL_GOVERNANCE_OBJECTS_PREVIOUSLY_READ; EVIDENCE_WRITE_PENDING"
   },
   "boundaries": [
-    "Gobernanza verifica; no sustituye ni asume titularidad de EP/MCP-OCP.",
-    "No se afirma que un frente haya leído o aplicado un addendum por la sola publicación.",
-    "No se modifica DUG/GOW/IPZ/ART-025/027 ni controles ajenos.",
-    "No hay monitoreo continuo ni automatización plena verificada."
-  ]
+    "Gobernanza centraliza e integra el OCP general del sprint; no asume titularidad de EP/MCP-OCP.",
+    "Los OCP de EP y MCP-OCP conservan sus tareas, controles y estado técnico autoritativo.",
+    "Los reportes no equivalen a verificación; se requiere fuente observada y evidencia.",
+    "No se afirma que EP haya cerrado su ciclo local; permanece parcial.",
+    "La solicitud MCP-OCP fue respondida en el mismo objeto y leída de vuelta; sus dependencias técnicas no se declaran resueltas.",
+    "No se modificó DUG/GOW/IPZ/FOL1/ART-025/027 ni controles/host/código ajenos.",
+    "No hay monitoreo continuo ni automatización plena verificada.",
+    "Prompt adicional 02 está preparado en GOV-TASK-011, no publicado a EP/MCP-OCP."
+  ],
+  "mcp_ocp_request": {
+    "message_id": "MSG-MCP-OCP-GOV-DEPENDENCIES-20261101-01",
+    "source_section": "§20.3",
+    "initial_response_section": "§23",
+    "final_response_section": "§24",
+    "status": "RESPUESTA_DOCUMENTADA_READBACK_VERIFICADO",
+    "object_path": "frentes/mcp-metodologia/entregas/COORDINACION-SPRINT-OCP-MCP-v0.1.md",
+    "object_blob": "b68769e838787ef8f8b6c9c6b9834e2f878bf0df",
+    "response_commit": "8bf96225d88cf0bc74209345c21f8eba091d2f1a",
+    "remaining_dependencies": {
+      "metadata_fields": "0/43; no approved source; fail-closed",
+      "individual_normative_access": "Sink aliases specified but not deployed/tested; Sync not verified",
+      "telemetry": "Only access-frequency scope canonical; no application or cycle/session extension",
+      "global_folio_session": "FOL1 prepared/inactive"
+    },
+    "second_request_opened": false
+  },
+  "canonical_sources": {
+    "dug": {
+      "path": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.html",
+      "version": "v373 · NX-373m",
+      "blob": "cac4525de77d4f47a8a59c25201968ecf2056b90",
+      "sha256": "f1e3921250c29c1cd418384bc26a95eb5bae0ad95faea894992ae325bf4590dc",
+      "commit": "c79ddf6f862f97cafa61955eb15a17ffaea463d0"
+    },
+    "fol1": {
+      "path": "ambitos/gestion-conversacional/REGISTRO-MAESTRO-FOLIACION.json",
+      "version": "1.0",
+      "status": "PREPARADO_PENDIENTE_ACTIVACION_IPZ",
+      "blob": "b93cbef77f2fa1a6e4290ae8177e957a1616e47b",
+      "sha256": "3814ebf54d83691cdaba3ff50cfa6042b41366233fe5034e7686afbc222c0618",
+      "commit": "700799f3543fc9e45de2cf8c0a5c6f852756315a"
+    }
+  }
 }
