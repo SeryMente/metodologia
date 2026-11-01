@@ -626,7 +626,8 @@
       },
       "source_control_blob_sha": "7e88662aefce286682e13fef9165757ea2d68908",
       "uniqueness_check": "Alias and UUIDv7 local generated for this registration. No organization-wide uniqueness or platform-native identity is claimed.",
-      "readback_required": true
+      "readback_required": true,
+      "readback_verified": true
     }
   ],
   "co_responsibility": {
@@ -657,7 +658,17 @@
       "added_local_uuidv7": "01a198fc-96f9-7b06-bdca-d419a8683c09",
       "active_responsibles_after_write": 2,
       "maximum": 2,
-      "status": "WRITE_APPLIED_READBACK_PENDING"
+      "status": "VERIFIED_READBACK",
+      "readback_sha": "8b4ce3f3e4d9b95eb52fe1d7955714c11a0b261a",
+      "readback_verified_on": "2026-11-01",
+      "readback_checks": {
+        "primary_alias_preserved": "chatgpt-C-GOBERNANZA-RETOMA-07-SES-20261031-GV8AA51721",
+        "primary_folio": "SES-20261031-GV8AA51721",
+        "second_alias": "chatgpt-C-GOBERNANZA-DOBLE-CORRESPONSABILIDAD-01-SES-20261101-ED4A2B32",
+        "second_folio": "SES-20261101-ED4A2B32",
+        "second_local_uuidv7": "01a198fc-96f9-7b06-bdca-d419a8683c09",
+        "max_two_enforced_in_record": true
+      }
     }
   ]
 }
