@@ -1117,3 +1117,49 @@ El README MCP-OCP se actualizó a v0.1.9 para enlazar esta misma entrada y descr
 **Novedad externa observada:** la cabeza de `main` avanzó desde el ciclo anterior hasta `9842370b646b34635c62994d9af722d805da4c95` (`2026-11-01T21:25:32Z`). La rama de construcción permanece en `b37213272dc9a132d1fb181e9ce66fba6ae1becc`. El nuevo ciclo se abre para volver a comparar, clasificar los cambios concurrentes y avanzar el trabajo técnico dentro del OCP, sin modificar EP, Gobernanza, DUG, IPZ, control ni host.
 
 **Respuesta inicial:** recibida la instrucción del operador de continuar el trabajo de extremo a extremo. La interpretación operativa es avanzar de forma continua mientras exista trabajo autorizado y evidencia verificable; no implica autorización para sobrepasar B, integrar sin pruebas, instalar en EP ni aceptar el producto por inferencia. La tarea de este ciclo comienza con inspección del delta y un plan de reconciliación seguro.
+
+
+### 28.1 Procesamiento técnico autorizado: reconstrucción reproducible y frescura de fuentes
+
+**Trabajo ejecutado dentro de MCP-OCP:**
+
+1. Inspección del delta main vs. rama de construcción. La divergencia actual observada al cierre es diverged, rama build 11 commits ahead / 231 behind, merge base e4243414b0099ede9b9556b3cfa0bb20bc706576. El delta de main contiene cambios transversales en Gobernanza, EP, control, núcleo, coordinación y evidencia; por ello no se hizo merge global ni se sustituyó README/objetos actuales con versiones antiguas de la rama.
+2. Localización de un checkout aislado en %LOCALAPPDATA%\Temp\mcp-ocp-cycle05; rama build/ocp-mcp-mvp-0.1.0, commit original de código b37213272dc9a132d1fb181e9ce66fba6ae1becc. El dispositivo no tenía SDK instalado, solo runtime .NET 8.0.11. Se instaló SDK 10.0.403 en %LOCALAPPDATA%\OcpMcpSdk10, sin elevación ni modificación del runtime global.
+3. Se identificó que Prepare-Sources.ps1 solo cotejaba commit/blob fijados y declaraba NOT_CHECKED_AGAINST_MAIN, sin verificar el árbol vigente. Se corrigió para consultar refs/remotes/origin/main, comparar el Git blob de cada ruta canónica contra el blob fijado y fallar cerrado ante divergencia; solo marca VERIFIED_AGAINST_MAIN cuando ambos blobs coinciden.
+4. Se actualizaron los pins de fuente DUG y núcleo a los blobs vigentes observados. El cotejo de build contra el snapshot origin/main ada70cc36d0eb55cfe31f81e9c250e4fa6eb6ffb dio coincidencia; una relectura posterior de los archivos en main volvió a observar DUG blob c993a59163c2c163b17b599a003919b53c5cf6a8 y núcleo blob 15d6fe1a65d52c52215378fd12a49c3a651d6d73.
+5. Se ejecutó de nuevo el pipeline completo desde el commit de código 70d7a1fe8b103d8084d3db8594c5e6e6585b8182, rama build. Resultado: UNIT_SUMMARY PASS=31 FAIL=0; TEST_SUMMARY PASS=29 FAIL=0; salida final BUILD_EXIT=0. La prueba de humo verificó 10 herramientas MCP, inicialización stdio, health, lectura de fuentes, catálogo 43/CNP, fail-closed por metadatos, bloqueo sin grant, cadena de eventos, telemetría local y backup/restauración.
+6. El ZIP fue extraído en el verificador del propio Build.ps1 y cada componente/manifest cotejado por SHA-256. Resultado: 200 componentes; paquete ocp-mcp-0.1.0-win-x64.zip, 39,690,752 bytes, SHA-256 1c8f843b0768301725e7e8338bd067984afd3849892ceb536c3b2025a028e023. Build manifest SHA-256 539a8fb9e331b39464d7e9e5cd863847d9736b972eb9829da23e0ec932823b90; source manifest SHA-256 ceb34748b120fa1517a7381c6612aa082c72023d25bd9a0149ab9fa1300a9477.
+
+### 28.2 Persistencia de correcciones y evidencia de build
+
+| Recurso en rama de construcción | Commit | Blob SHA / estado |
+|---|---|---|
+| Pins de initial-sources.template.json | 9588e10151b67430321d012cf4d93c8012f78b3f | 8b7eca5246cf0021d46ebd458ad6e21d18dd62b6 · leído de vuelta |
+| Gate de frescura Prepare-Sources.ps1 | 70d7a1fe8b103d8084d3db8594c5e6e6585b8182 | 2cea4a6fef4734084a01aea876753c3fa3e9f882 · leído de vuelta |
+| Evidencia BUILD-MCP-OCP-0.1.0-20261101.json | 04c71d10017eb1a114a4fbf4cfc63c7283e7d789 | 74946ba3caa6fa99617257ee3f854d85d81f5bf9 · contenido exacto leído de vuelta |
+| Núcleo MCP-OCP §8.1, v0.1.10 | 6b20b9d038af56c26713b1571c71b864a095ea9b | e04e85fc8576244db3e4caefa0d05d2ed693fee7 · contenido exacto leído de vuelta |
+| README MCP-OCP | 245ad080a6bc797acedc9be802e4443003064c75 | 383ff59e442f3b7d784e3d670878eb6b31073b36 · contenido exacto leído de vuelta |
+
+La evidencia detallada está en el OCP ejecutor, rama build; este objeto de coordinación mantiene el estado integrado y los límites. El ZIP y los archivos de build permanecen como artefactos locales del checkout aislado; no se declara publicación como GitHub Release ni instalación en EP.
+
+### 28.3 Estado técnico, brechas y decisión de integración
+
+- **Estado reportado por la evidencia ejecutada:** BUILT_AND_TESTED para commit de código 70d7a1f..., SDK 10.0.403, 31 unitarias y 29 integración PASS.
+- **Estado observado:** pipeline completo terminó con código 0; hashes del ZIP, manifiesto y componentes fueron generados y verificados por extracción/read-back del paquete. La evidencia compacta fue publicada en la rama de construcción y leída de vuelta.
+- **Estado integrado:** no integrado en main. La rama conserva 11 commits propios y 231 commits nuevos de main respecto del merge-base; no se creó PR ni se hizo merge. El README antiguo de la rama y los manifiestos previos no deben sustituir las revisiones actuales.
+- **Estado de instalación/aceptación:** no instalado en EP, no ejecutado sobre el host de EP, no aceptado por operador. No se inició servidor en perfil real; las pruebas usaron directorios temporales aislados.
+- **Bloqueo normativo:** cobertura de metadatos de selección continúa 0/43 para applicability, activation_conditions, mandatory, dependencies; el producto falla cerrado, como exige el contrato. No se inventan valores.
+- **Sink:** aliases p001…p043 continúan sin despliegue/prueba; no se inventan URLs. Telemetría solo frecuencia de acceso/consulta, no aplicación.
+- **Decisión pendiente:** para llevar el código a main se requiere reconciliación selectiva de archivos técnicos exclusivos, nueva prueba sobre la revisión reconciliada y una decisión explícita de integración. La autorización B vigente cubre build/compilación/pruebas/fixes/manifest/packaging, no autoriza por sí sola merge, instalación EP ni aceptación. Se mantiene fail-closed para esos actos.
+
+### 28.4 Cierre y read-back del ciclo local 05
+
+**Secuencia:** LEÍDO → RESPUESTA_INICIAL_REGISTRADA → PROCESADO → DOCUMENTADO_AL_CIERRE → VERIFICADO_READBACK.
+
+Se releen coordinación, núcleo v0.1.10, README, control y evidencia compacta de build en la rama ejecutora. La actualización de §8.1 registra BUILT_AND_TESTED_NOT_INSTALLED_NOT_INTEGRATED, no aceptación. El control no fue modificado; continúa owned, generación 3, autorización B AUTHORIZED.
+
+**Clasificación del ciclo MCP-OCP local 05:** CUMPLE_VERIFICADO por preflight, cursor, respuesta inicial, reconciliación técnica dentro de B, ejecución del pipeline, evidencia, documentación y read-back. El producto permanece BUILT_AND_TESTED_NOT_INSTALLED_NOT_INTEGRATED; la DTC global sigue EN_CURSO_RECURRENT.
+
+**Siguiente acción técnica:** reconciliar los archivos de código/infraestructura exclusivos contra la base actual, preservar íntegros los artefactos de Gobernanza/EP/MCP-OCP ya presentes en main, y ejecutar build/tests en la revisión reconciliada. No fusionar ni instalar por inferencia.
+
+**Cierre:** CICLO LOCAL 05 CERRADO · CUMPLE_VERIFICADO · READ-BACK COMPLETO. Folios globales CV/CY/A/B y OCP: PENDIENTE / NO ASIGNADO; FOL1 continúa PREPARADO_PENDIENTE_ACTIVACION_IPZ.
