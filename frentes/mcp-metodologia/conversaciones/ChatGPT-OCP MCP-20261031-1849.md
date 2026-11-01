@@ -12,7 +12,7 @@
 
 > ChatGPT-OCP MCP-20261031-1849.md
 >
-> REtoma repsonsabilidad del Frente MCP OCP, de hecho se llama OCP MCP, pero renombrfalo, es MCP-OCP
+> REtoma repsonsabilidad del Frente MCP OCP, de hecho se llama OCP MCP , pero renombrfalo, es MCP-OCP
 >
 > adjunta convewrascion en persistencia documental del frente.
 
