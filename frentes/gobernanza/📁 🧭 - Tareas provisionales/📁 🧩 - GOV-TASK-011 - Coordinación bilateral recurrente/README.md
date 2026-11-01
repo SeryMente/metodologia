@@ -295,6 +295,12 @@ La entrada de este ciclo quedó integrada en el objeto GOV-TASK-011; el índice,
 
 ## Ajuste DTC · conversaciones pares en Gobernanza y ruta terminal MCP-OCP · 2026-11-01
 
+**Evento local:** `C-GOBERNANZA-DTC-MCP-20261101-01` (no es folio global).  
+**UUIDv7 local:** `01a1991b-1591-7c08-b783-5975e26e4d31` (identificador auxiliar local; no ID nativo de plataforma).  
+**Secuencia de este ciclo:** `PREFLIGHT → CURSORES_LEÍDOS → RESPUESTA_INICIAL → AJUSTE_DTC_PROCESADO → DOCUMENTADO → VERIFICADO_READBACK`.  
+**Cursor base de Gobernanza:** GOV-TASK-011 blob `3aecf91e82c199e03eba703a6650250db65e3c14`; evidencia DTC blob `48fb2dcec0a1d9b90bd565069c5c36b7e0180eda`.  
+**Decisión de apertura:** no enviar solicitud nueva a MCP-OCP mientras ciclo local 06 permanezca abierto; conservar la única entrada/canal vigente.  
+
 ### 1. Corrección de gobierno: conversaciones pares, no equipo subordinado
 
 El frente Gobernanza mantiene dos sesiones responsables activas registradas en su control: titular y corresponsable. **Son conversaciones pares e independientes dentro del mismo frente**. El corresponsable conserva sus propias funciones, mandato, autonomía y obligaciones; no integra un equipo dirigido por el titular de esta conversación, no queda subordinado a él y este registro no le asigna tareas, rol de revisor ni funciones nuevas. Cada sesión actúa conforme a su responsabilidad y autorización propias. El límite vigente de dos responsables activos se conserva.
