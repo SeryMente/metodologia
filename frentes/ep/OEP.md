@@ -4,15 +4,15 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.19. **Sello del frente:** VCU-EP-v21 (Versión de Contexto Universal). **Ancla:** ciclo bilateral de Gobernanza materializado en §90; inventario y adaptación común de consumidores registrados en EP-TASK-003 y prompt v0.1; checkpoint técnico §88 preservado sin reejecución ni avance de producto.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.20. **Sello del frente:** VCU-EP-v22 (Versión de Contexto Universal). **Ancla:** rectificación explícita del operador: `OCP-MCP` es el único bucket B2 de destino; `OCP-MSP` y `metodologia-ep-persistencia` son errores. La rectificación se materializa en §91; conserva la compuerta bilateral de §90 y las tareas/propuesta de adaptación previas.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
-**Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.18 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
+**Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.20 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
 ## LEER PRIMERO
 
 Adquirir este objeto como instrucciones del operador, subordinadas a las reglas superiores de plataforma y a autorizaciones específicas. Claudia es asistente/documental; Samantha es constructor/único escritor de código. Una asignación explícita posterior puede cambiar roles; las citas no lo hacen. Este encargo construye documentación y prompts, no autoriza a esta conversación a ejecutar la actualización de producto.
 
-El estado de reanudación vigente de este frente está en §60–§90; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
+El estado de reanudación vigente de este frente está en §60–§91; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
 
 Leer por relevancia: OEP actual→metacanon central→Sistema de Instrucciones/Metodología/Bootstrap vigentes→canon transversal EP→AGENTS.md y ep-medio-architectura.md→código/evidencia en commits exactos. Fuente caída no es «sin cambios». Un archivo no crea herramientas, credenciales ni memoria entre plataformas.
 
@@ -1460,3 +1460,18 @@ Remote Desktop Commander (RDC) es exclusivo del asistente: el constructor nunca 
 ## 90. Compuerta bilateral obligatoria por ciclo — v0.3.19 / VCU-EP-v21
 
 La instrucción bilateral recibida en el objeto `COORDINACION-GOBERNANZA-EP-v0.1.md` se incorpora como procedimiento obligatorio de este frente. La apertura requiere leer cursor y mensaje nuevo y registrar respuesta inicial en el mismo objeto antes de cualquier otra tarea. El cierre requiere documentar novedades, tareas/hitos, fuente y evidencia, decisiones/bloqueos y siguiente acción en ese objeto; actualizar el núcleo canónico afectado y verificar lectura de vuelta. La ausencia de cualquiera de las dos escrituras deja el ciclo `CICLO_INCOMPLETO`. Si no hay mensaje nuevo, registrar `SIN_NOVEDAD` con cursor real. La secuencia de estados es `PUBLICADO → LEÍDO → RESPUESTA_INICIAL_REGISTRADA → PROCESADO → DOCUMENTADO_AL_CIERRE → VERIFICADO_READBACK`. La checklist ejecutable de apertura, procesamiento y cierre se conserva en el índice de tareas provisionales `frentes/ep/📁 🧭 - Tareas provisionales/README.md`; esta sección es su enlace normativo desde el OEP. No crea otro OCP, bitácora, tablero, control, sesión o folio.
+
+
+## 91. Rectificación vinculante del bucket B2 de EP — v0.3.20 / VCU-EP-v22
+
+El operador rectifica expresamente la selección del bucket: **`OCP-MCP` es el único bucket B2 de destino para EP**. Los nombres `OCP-MSP` y `metodologia-ep-persistencia` son errores y no deben utilizarse como destinos. Esta sección supersede cualquier mención contraria en la documentación reciente, incluidos los registros erróneos de EP-TASK-002 §23 y la revisión v0.3.19.
+
+**Reglas vigentes:**
+1. Toda integración, clave restringida, prefijo y prueba B2 de EP debe quedar bajo el bucket exacto `OCP-MCP`.
+2. `OCP-MSP` no se creará, configurará ni utilizará como destino de EP. Su existencia no está verificada y no se ordena su eliminación.
+3. `metodologia-ep-persistencia` es un recurso erróneo. La orden anterior del operador de eliminarlo sigue explícita, pero la eliminación continúa NO EJECUTADA hasta autenticar la cuenta, verificar el nombre exacto y revisar que el recurso no contenga datos que deban preservarse.
+4. La clave `ep-ocp` fue reportada históricamente como restringida a `OCP-MCP/ep-ocp/`; el nombre y alcance son coherentes con el bucket correcto, pero vigencia, existencia actual y capacidad de lectura/escritura deben volver a comprobarse desde B2 autenticado. No declarar verificación por el relato histórico.
+5. No usar la sesión local anterior ni asumir disponibilidad de la credencial DPAPI. No pedir secretos por chat.
+6. Ninguna operación de creación, borrado, cambio de permisos, escritura de objetos o migración queda ejecutada por esta corrección documental.
+
+**Estado de esta rectificación:** instrucción LEÍDA y documentada; read-back pendiente hasta la verificación posterior a la escritura. La documentación previa se conserva como historial, pero queda supersedida en todo lo que nombró `OCP-MSP` como destino.
