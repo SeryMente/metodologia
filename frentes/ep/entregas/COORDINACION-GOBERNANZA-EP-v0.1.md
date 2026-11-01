@@ -81,6 +81,14 @@ Esta secuencia rige para todos los ciclos del frente mientras el operador no la 
 - Manifiesto: commit `55dce2a33a8ecd3677be75fb1cfefe5193a3c9f7`, blob `296708c781c7fda2a60e2e473d6f8ceaf8f06deb`; el manifiesto excluye su propio hash.
 **Límite de read-back:** los archivos main anteriores fueron adquiridos después de escribir y sus blobs y SHA-256 se registraron en `frentes/ep/revisiones/MANIFIESTO.json`. La versión de cierre anterior fue leída de vuelta y coincidió con el blob `09a9f67829b25a3e2c54d73f697b810f65ce824b`. La actualización de estado presente también fue leída de vuelta y devolvió el blob `4a83fe36d9a6426512d8c7cdb88fb1043b1a3364`; por ello el estado de comunicación queda `VERIFICADO_READBACK`.
 
+
+## Corrección del operador · MSG-OP-DESTINO-B2-20261031-02
+
+**Acuse inicial:** LEÍDO · RESPUESTA_INICIAL_REGISTRADA. El operador rectifica expresamente el destino: `OCP-MCP` es el único bucket B2 de EP. `OCP-MSP` y `metodologia-ep-persistencia` fueron errores; no deben usarse como destinos. Esta corrección supersede el destino erróneo asentado en el cierre anterior y en EP-TASK-002 §23.
+**Interpretación y viabilidad:** viable corregir inmediatamente toda la documentación operativa y el prompt de los consumidores. La instrucción anterior de eliminar `metodologia-ep-persistencia` se mantiene como autorización explícita de eliminación, pero la ejecución solo será válida después de verificar la cuenta, el nombre exacto del bucket y su contenido. La existencia de `OCP-MSP` no está verificada y no se creará, usará ni eliminará por inferencia.
+**Bloqueos:** no hay sesión Backblaze autenticada disponible ni se ha observado el estado actual de buckets/keys. La clave `ep-ocp` reportada históricamente corresponde precisamente al prefijo `OCP-MCP/ep-ocp/`; su validez actual aún debe revalidarse en B2.
+**Acción inmediata:** corregir OEP, índice de tareas, EP-TASK-002, EP-TASK-003 y el prompt compartido a `OCP-MCP`; conservar esta rectificación como fuente de precedencia sobre el error documental anterior. No realizar operaciones B2 mientras no exista autenticación verificable.
+
 ## Historial de mensajes
 
 - MSG-GOV-BILATERAL-20261031-01 — PUBLICADO por Gobernanza; LEÍDO y RESPUESTA_INICIAL_REGISTRADA por EP; PROCESADO y DOCUMENTADO_AL_CIERRE en este objeto; VERIFICADO_READBACK: la lectura posterior a la escritura devolvió el mismo blob `09a9f67829b25a3e2c54d73f697b810f65ce824b`.
