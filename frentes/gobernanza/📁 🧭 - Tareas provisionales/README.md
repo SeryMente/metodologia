@@ -32,6 +32,7 @@ El núcleo de cada objeto conserva identificador local, enunciado, referencia re
 | GOV-TASK-011 | en_curso | DTC — Dinámica Trilateral por Ciclo | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-011%20-%20Coordinación%20bilateral%20recurrente/README.md) |
 | GOV-TASK-012 | en_curso | Revisión integral de fluidez y desempeño del marco de Gobernanza | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-012%20-%20Fluidez%20y%20desempe%C3%B1o%20del%20marco/README.md) |
 | GOV-TASK-013 | en_curso | Medición objetiva y optimización del tiempo de procesamiento de ciclos | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-013%20-%20Medici%C3%B3n%20y%20optimizaci%C3%B3n%20de%20ciclos/README.md) |
+| GOV-TASK-014 | en_curso | Integración y aceptación de persistencia Backblaze para Metodología y OCP | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-014%20-%20Persistencia%20Backblaze%20de%20Metodolog%C3%ADa%20y%20OCP/README.md) |
 
 ## Estado histórico de continuidad · 2026-10-30
 
@@ -146,3 +147,16 @@ DUG vigente observado en `main`: Samantha v375 · NX-375m; GOW 2.15; 43 principi
 Ambas tareas heredan el control único de Gobernanza, generación 11; no tienen control, sesión, folio ni OCP propios. El ciclo de configuración actual no es línea base porque la captura temporal no estaba activa desde su inicio. El primer ciclo sustantivo completo posterior a esta actualización será candidato a línea base; se reunirán al menos diez ciclos comparables antes de fijar una referencia estable. Los datos ausentes se declaran `NOT_MEASURED`; no se reconstruyen retroactivamente.
 
 [Crónica](../../cronica/C-GOBERNANZA-OCP-MCP-PERFORMANCE-01.md) · [evidencia](../../evidencias/C-GOBERNANZA-OCP-MCP-PERFORMANCE-01.json).
+
+
+## Dependencia integrada del sprint · GOV-TASK-014 · 2026-11-01
+
+Se incorpora **GOV-TASK-014 — Integración y aceptación de persistencia Backblaze para Metodología y OCP** como tarea integradora de Gobernanza, vinculada a la fuente técnica EP-TASK-002. No duplica su implementación ni altera el OEP.
+
+- Fuente técnica: `frentes/ep/📁 🧭 - Tareas provisionales/📁 🧩 - EP-TASK-002 - Persistencia provisional Backblaze/README.md`, blob observado `eefd01300376dab55593e2a35196f7eaf66fc350`.
+- Estado EP: `en_curso`; CLI local B2 v5.0.2 instalada y verificada según recibo EP; cuenta B2 no autenticada; bucket/prefijo/permisos no verificados; ninguna operación remota ejecutada.
+- Destino declarado por EP: bucket `OCP-MCP`; prefijo previsto `ep-ocp/`. GitHub `SeryMente/metodologia/main` sigue siendo la fuente canónica; B2 es complemento de persistencia y recuperación.
+- Compuerta: EP registra que P012/P013 exigen revisión presencial del operador antes de construir el motor o contactar la cuenta B2. No ejecutar operaciones remotas hasta superar esa compuerta.
+- Gobernanza integra criterios y estado; EP conserva implementación/evidencia técnica. MCP-OCP conserva su OCP/control y no queda modificado por esta tarea.
+
+La ficha GOV-TASK-014 contiene el alcance, los criterios de aceptación, las dependencias, las exclusiones y la ruta de cierre. No se declara completada ninguna operación B2.
