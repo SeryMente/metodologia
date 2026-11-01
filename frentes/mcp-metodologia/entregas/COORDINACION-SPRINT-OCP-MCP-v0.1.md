@@ -854,8 +854,8 @@ La frase obsoleta fue sustituida. El núcleo ahora refleja que el ciclo 01 se ab
 
 | Recurso | Cambio | Commit | Blob SHA / read-back |
 |---|---|---|---|
-| Núcleo `MCP-METODOLOGIA.md` | MCP-OCP v0.1.5; reconciliación de §8.1 y §10.2 | `691160712d7d9bd37a214a66a895f0fdba761a76` | `c312cb071dc57af9d23733ecffcfbfb1a3e08e05` |
-| README | Actualizado a v0.1.5 y cierre de ciclos 01/02 | `245cf920f62fe63b0ee1c1d614e6d5eb317a1b60` | `820f008009ba990f814c5d60c7a04c82a5ec7351` |
+| Núcleo `MCP-METODOLOGIA.md` | MCP-OCP v0.1.6; reconciliación DTC y precisión de auditoría | `cc4b1264576e42d1d603f2945e0005eb81db8ebd` | `e6e96ee4edde7156ddc9f9a9e302faa9f8ed4ffa` |
+| README | Actualizado a v0.1.6; cierre local 02 y estado de auditoría de Gobernanza distinguidos | `b5a785491845b0449f47d948523942cec5a5ae36` | `4a1909bc787f20ce2ed30c7ab4b2a4529d218fdd` |
 | Diálogo | Registro visible del cursor de Gobernanza, respuesta inicial y salida B002 | `a9401c092d2c4e115672fc60596b15e4be4f3b23` | `1d57e6f403714eda9e0f7a85a350455c6068f11a` |
 | Crónica | Narrativa, procedencia, decisión y límites del ciclo 02 | `c53936159feef339f7c09d362bef4d1f97a72d70` | `58c1ec5af949ed4c7e4696157a5efd42002ae1ea` |
 
@@ -863,8 +863,8 @@ Control releído: `3e6f96e919c33c3015478b7fd0f262b1bee47b0c`, `owned`, generaci�
 
 ### 22.3 Estado DTC después de la reconciliación
 
-- **Gobernanza:** `CUMPLE_VERIFICADO` en la auditoría vigente.
-- **MCP-OCP:** ciclos locales 01 y 02 `CUMPLE_VERIFICADO`; la evidencia del ciclo 01 ya reconocía su cierre y la acción residual de este ciclo corrigió el núcleo.
+- **Gobernanza:** `CUMPLE_VERIFICADO` para su ciclo en la última evidencia disponible. Esa evidencia reconoce y clasifica el ciclo local 01 de MCP-OCP; la clasificación de ciclo02 aún no ha ocurrido.
+- **MCP-OCP:** ciclos locales 01 y 02 `CUMPLE_VERIFICADO` por read-back propio. El ciclo02 corrigió la referencia obsoleta del núcleo; su lectura y clasificación por Gobernanza quedan pendientes para el siguiente ciclo real de ese frente.
 - **EP:** `CUMPLE_PARCIAL`. El objeto de comunicación sigue en la rama `docs/metacanon-objetos-20261011` (blob `aeb7cd06c230c165e3d8892ba0572904a898806f`), ausente de `main`; falta el acuse específico al addendum DTC y la reconciliación del mismo objeto en `main`. EP debe resolverlo bajo su propio control.
 - **DTC global / GOV-TASK-011:** ABIERTA. No equivale a cierre global que dos ciclos locales de MCP-OCP estén verificados.
 
@@ -877,3 +877,16 @@ Control releído: `3e6f96e919c33c3015478b7fd0f262b1bee47b0c`, `owned`, generaci�
 - Autorización B permanece sin cambios; `MCP-NORMATIVO: DESACTIVADO`; `FOL1: PREPARADO_PENDIENTE_ACTIVACION_IPZ`; folios CV/CY/A/B globales y por OCP `PENDIENTE/NO ASIGNADO`.
 
 **Estado de cierre del ciclo local 02:** `CUMPLE_VERIFICADO` para lectura del cursor, respuesta inicial previa, corrección autorizada, documentación, read-back y registro en el objeto existente. La DTC global continúa abierta por EP y la verificación recurrente de Gobernanza.
+
+### 22.5 Estado de la auditoría cruzada y read-back final
+
+La última evidencia de Gobernanza leída para la apertura de este ciclo (`C-GOBERNANZA-DTC-01.json`, blob `14b887b4111b1ebd81303ad631ee2091ad931f38`) calificaba el ciclo local 01 de MCP-OCP como `CUMPLE_VERIFICADO` y señalaba `core_reconciliation=PENDING_MCP_OCP_OWN_CYCLE`. Después de ese cursor se ejecutó este ciclo 02 y se corrigió el núcleo. La clasificación del ciclo02 por Gobernanza no se presume: queda pendiente de lectura/read-back en su siguiente ciclo real.
+
+Read-back posterior de los artefactos propios:
+- Núcleo: blob `e6e96ee4edde7156ddc9f9a9e302faa9f8ed4ffa`, v0.1.6.
+- README: blob `4a1909bc787f20ce2ed30c7ab4b2a4529d218fdd`, v0.1.6.
+- Diálogo de ciclo02: blob `1d57e6f403714eda9e0f7a85a350455c6068f11a`.
+- Crónica de ciclo02: blob `58c1ec5af949ed4c7e4696157a5efd42002ae1ea`.
+- Control: blob `3e6f96e919c33c3015478b7fd0f262b1bee47b0c`; titular/gen3 coincidente y B sin cambios.
+
+La respuesta de EP al addendum DTC sigue pendiente; su objeto continúa fuera de `main`. La DTC global/GOV-TASK-011 no se cierra. La solicitud técnica única a Gobernanza mantiene estado pendiente de lectura/respuesta.
