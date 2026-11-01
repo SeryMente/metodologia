@@ -360,3 +360,8 @@ La comparación recién observada entre `main` y `build/ocp-mcp-mvp-0.1.0` es `d
 La vía de eficiencia es: terminar ciclo 06 sin duplicación → una ejecución técnica consolidada y probada sobre base actual → una única decisión del operador sobre integración → trabajo de EP solo bajo su propia autorización. Si un bloqueo material impide esa secuencia, la DTC lo elevará con evidencia y una decisión concreta, no abrirá rondas exploratorias repetidas.
 
 **Estado de este ajuste:** instrumento DTC actualizado en Gobernanza; no se ha enviado el paquete a MCP-OCP, no se ha modificado su control/núcleo/código y no se ha ejecutado ni integrado el producto. La automatización sigue semiautomática; sin monitoreo ni control directo de otras conversaciones.
+
+
+## Medición del rendimiento dentro de DTC · DUG v377 / Metacanon §52
+
+Desde el primer ciclo sustantivo de Gobernanza que pueda medirse íntegramente desde su apertura, incorporar el bloque `performance` definido por [GOV-TASK-013](../📁%20🧩%20-%20GOV-TASK-013%20-%20Medición%20y%20optimización%20de%20ciclos/README.md) a la evidencia ya existente del ciclo. No crear una bitácora o un OCP separado ni registrar cada llamada como ciclo. Medir inicio/fin de procesamiento; distinguir roundtrip observado de GitHub/RDC y esperas externas; declarar `NOT_MEASURED` cuando falten marcas. El ciclo que preparó esta instrumentación queda fuera de la línea base porque el registro no comenzó con él. La primera muestra se construye con ciclos completos y comparables; no se proclama mejora antes de contar con distribución suficiente (mediana, P90, rango y tamaño de muestra).
