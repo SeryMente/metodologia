@@ -370,3 +370,59 @@ El contrato se considera incorporado a un frente únicamente cuando su responsab
 
 La publicación del prompt por Gobernanza solo prueba `PUBLICADO`; no prueba `LEÍDO`, `ACEPTADO` ni `APLICADO`.
 ```
+
+
+---
+
+## Cierre DTC · EP · C-EP-DTC-PROMPT02-20261031-02
+
+**Estado:** `PROCESADO → DOCUMENTADO_AL_CIERRE → VERIFICADO_READBACK`.  
+**Secuencia EP:** `RECIBIDO_EN_CONVERSACION → LEÍDO → RESPUESTA_INICIAL_REGISTRADA → PROCESADO → DOCUMENTADO_AL_CIERRE → VERIFICADO_READBACK`.  
+**UUIDv7 local:** `01a194ca-0c88-7561-8b1c-426f85de4ad1`; auxiliar, no ID nativo ni folio global.  
+**Clasificación:** `CUMPLE_VERIFICADO` para este ciclo documental propio de EP; no equivale a publicación/aceptación de Gobernanza ni a recepción de MCP-OCP, y no cierra GOV-TASK-011 global.
+
+### Procesamiento del Prompt Adicional 02 en EP
+
+1. Se conservó el prompt original íntegro y la respuesta inicial en la apertura de esta misma entrada.
+2. OEP pasó a v0.3.22 / VCU-EP-v24; §93 incorpora la centralización del OCP general del sprint por Gobernanza y delimita la autoridad técnica propia de EP y MCP-OCP.
+3. El índice provisional EP se actualizó a OEP §§90–93.
+4. El README de la carpeta EP identifica `main` como rama canónica y OEP v0.3.22.
+5. EP-TASK-002 §26 conserva su tarea técnica original, cursor y estado `en_curso`, y define su reporte a Gobernanza sin duplicar backlog ni inventar un GOV-TASK técnico. GOV-TASK-011 se identifica como procedimiento DTC coordinador, no como una tarea de persistencia B2.
+6. Se creó `REVISION-OEP-v0.3.22.json` y se actualizó `MANIFIESTO.json` con hashes UTF-8 y blobs finales.
+7. No se escribió ni modificó ningún archivo de Gobernanza ni de MCP-OCP. No se transfirió ni creó un control de responsabilidad, no se modificó el DUG/IPZ, host, código, credenciales o recursos B2.
+
+### Estados de recepción y publicación por frente
+
+- **Gobernanza:** GOV-TASK-011 `main` contenía Prompt 02 en estado `PREPARADO_NO_PUBLICADO` al inicio de este ciclo. El operador lo entregó directamente a este hilo. EP no convierte esa entrega directa en una publicación retroactiva de Gobernanza.
+- **EP:** recibió el texto en esta conversación, lo leyó, respondió y lo incorporó a OEP §93 y EP-TASK-002 §26. Read-back propio completado en este mismo ciclo.
+- **MCP-OCP:** no se ha demostrado entrega, lectura, respuesta, procesamiento o aceptación. Sin afirmación de cumplimiento.
+- **OCP general del sprint:** sigue bajo autoridad de Gobernanza. EP aporta enlaces/estado y evidencia de su tarea original; la integración y eventual asignación de tarea GOV-TASK-* quedan del lado de Gobernanza.
+
+### Evidencia y read-back de documentos EP
+
+| Recurso | Commit de escritura | Git blob final | SHA-256 UTF-8 |
+|---|---|---|---|
+| OEP v0.3.22 / VCU-EP-v24 | `763aa04eb55a33e8ea6085e74590f2786b240bbe` | `deaceadfc1de4636e0f9114a47a3d5255c04e897` | `01884482aff254f47b190b147ec1455f1770d69959b3362452f0cdaa79a0292e` |
+| Índice de tareas EP | `a88747598fe1627e63ecaf21fbe181c65a492c4a` | `3c1d1bb91bc4152dd783f7f3b12ba1f986c40018` | `787f6aa40bbe6ef1be0c7aa3a36c978281c0c0d7080f35f1aff63f6219e98764` |
+| EP-TASK-002 README | `c5c681602dfd8cbd8e9375874a63a75641f6b7f3` | `6d932628ac0afdf1039915bdd508f39f641a590c` | `9d29cdd3f272bd1724b1633bb919efdbc727ea30c8bb934bcdff6854e69d7edd` |
+| README EP | `051eb6c239ed1cdc560bfd03979e3861e36ceb7c` | `f1264cfb15bf2cc1697f7f95dd4077485bcbe571` | `92b855349bbb065799b7c348ec65dc8c05e95a956639150171c72bf79de88364` |
+| REVISION-OEP-v0.3.22.json | `d45af52ac5d07d9cba1638b9e05daa60ac3d2c4a` | `9ff99df9a8e3dba2d496c3ee4a535234bc066263` | `463136c8a9e8ef22b60df85b15326d39c78a5a53e07451938c967f293f4979b4` |
+| MANIFIESTO.json | `c3c51e6066ad09ab023f5df99a7187999226583a` | `83ef3c1e3041c3506907f9e951f7981926a898c5` | `a2b69e1eae34b7b82635cb6a5369fab562a288b90eedef9e8e3433aa72b6c353` |
+
+**Objeto DTC:** blob de apertura `6a1d311f6077eb1c737075da3f493c646570d099`; la lectura de vuelta de cierre se realizará tras guardar esta entrada y su blob final no se introduce en sí mismo, evitando la autorreferencia.
+
+### Estado de la urgencia de persistencia
+
+- **Tarea técnica:** EP-TASK-002, `en_curso`; autoridad técnica: OEP y su README.
+- **Destino autorizado:** bucket B2 `OCP-MCP` únicamente; prefijo históricamente previsto `ep-ocp/`.
+- **Autenticación B2, cuenta/región, existencia/privacidad actual de bucket y vigencia/scope de clave:** `NO_VERIFICADOS`.
+- **Eliminación de `metodologia-ep-persistencia`:** autorizada, no ejecutada; requiere autenticación, inspección de identidad y contenido.
+- **Carga, SHA remoto, read-back y restauración:** no ejecutados.
+- **Control EP:** no localizado en las rutas verificadas; no se inventó titular/generación ni se creó sustituto.
+- **DTC global:** `EN_CURSO` por su naturaleza recurrente y por falta de evidencia de aplicación de los demás frentes.
+
+### Próxima acción
+
+La próxima acción material de EP-TASK-002 sigue siendo abrir el acceso de Backblaze en perfil de navegador autorizado, verificar solo lectura cuenta/región/buckets/keys, y posteriormente ejecutar una prueba pequeña, reversible y verificable. El Prompt 02 no autoriza por sí solo operaciones B2 ni cambios de host/ACL.
+
+**Límite de aceptación:** el Prompt 02 queda incorporado y verificado en el OCP de EP. No se declara incorporado en Gobernanza ni MCP-OCP; la recepción por este hilo EP no sustituye esos ciclos propios.
