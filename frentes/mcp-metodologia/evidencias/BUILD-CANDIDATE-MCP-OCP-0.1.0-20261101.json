@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "artifact": "MCP-OCP 0.1.0 selective candidate build evidence",
+  "cycle_local": "C-MCP-OCP-DTC-20261101-06",
+  "status": "MVP_TECNICO_VERIFICADO_NOT_INTEGRATED_NOT_INSTALLED_NOT_ACCEPTED",
+  "candidate_branch": "integration/ocp-mcp-0.1.0-selective-20261101",
+  "source_code_commit": "f59bcc26ffddb7a82a4442361cda3c054d01b97e",
+  "base_main_commit": "f76cad5634c330967e4883d85885b17a0f1cb07d",
+  "source_snapshot": {
+    "dug": {
+      "version": "Samantha v377",
+      "signature": "NX-377m",
+      "metacanon": "1.28",
+      "gow": "2.17",
+      "commit": "f76cad5634c330967e4883d85885b17a0f1cb07d",
+      "git_blob": "54064c8fe00f872023a455f06596061ed69062ae",
+      "content_sha256": "d898d012f9fd7b0f8ba4fe0eb4c269f204a2f5d63a1e37974347a63960f76fe6"
+    },
+    "mcp_core": {
+      "version": "MCP-OCP-v0.1.15",
+      "commit": "f76cad5634c330967e4883d85885b17a0f1cb07d",
+      "git_blob": "a668bf58a6e84c41f5455cd8cf599a950f00c233",
+      "content_sha256": "496500a254f1beb744360ef8575b48ca8278913a1b5850ef1ae7771c07fb8f31"
+    },
+    "freshness": "VERIFIED_AGAINST_MAIN"
+  },
+  "target_framework": "net10.0",
+  "runtime_identifier": "win-x64",
+  "sdk_version": "10.0.403",
+  "self_contained": true,
+  "entrypoint": "OcpMcp.exe",
+  "args": [
+    "serve"
+  ],
+  "transport": "stdio",
+  "source_manifest_sha256": "2ced361429d0c1d40f1fda8bcd3b8b3c7da7f12384b17fe2e36a1380d3cb957e",
+  "build_manifest_sha256": "7ebdf5b4ccf3e2e0b5cb19abab614f9c2f7f23a42281d1e8a88e9dc77bdde3e6",
+  "package": {
+    "name": "ocp-mcp-0.1.0-win-x64.zip",
+    "size_bytes": 39690822,
+    "sha256": "09644790ced409a3704a948fdf0643fed585000a89e0e0ed7bc8387d060d14f2",
+    "components": 200,
+    "independent_extract_readback": "PASS"
+  },
+  "tests": {
+    "unit": {
+      "passed": 31,
+      "failed": 0,
+      "status": "PASS"
+    },
+    "stdio_integration": {
+      "passed": 29,
+      "failed": 0,
+      "status": "PASS"
+    },
+    "smoke_checks": [
+      "MCP stdio initialize and EOF shutdown",
+      "10 tools exposed",
+      "health READY and reports normative block",
+      "canonical sources list and 43-principle catalog",
+      "CNP membership",
+      "fail-closed on incomplete principle metadata",
+      "write blocked without authorization grant",
+      "event chain and local telemetry",
+      "backup/restore and readiness after restore"
+    ]
+  },
+  "verification": {
+    "build_exit": 0,
+    "zip_sha256_matches_build_evidence": true,
+    "build_manifest_sha256_matches_build_evidence": true,
+    "source_manifest_sha256_matches_build_evidence": true,
+    "all_component_hashes_and_sizes_match": true,
+    "zip_readback": "PASS",
+    "git_diff_check": "PASS",
+    "main_ref_rechecked_after_build": "f76cad5634c330967e4883d85885b17a0f1cb07d",
+    "runner": "PC-8",
+    "toolchain": "Portable MinGit 2.56.0.windows.4 + .NET SDK 10.0.403; no elevation"
+  },
+  "limitations": [
+    "No PR submitted and no merge to main",
+    "No installation or operation in EP",
+    "No operator acceptance",
+    "MCP-NORMATIVO remains DESACTIVADO",
+    "Principle application remains fail-closed until approved metadata is available",
+    "ART-027 Sink aliases p001...p043 have not been deployed or tested"
+  ]
+}

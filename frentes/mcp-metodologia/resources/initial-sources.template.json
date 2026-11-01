@@ -1,0 +1,28 @@
+{
+  "manifest_version": 1,
+  "repository": "https://github.com/SeryMente/metodologia",
+  "sources": [
+    {
+      "source_id": "metodologia.dug.canonical",
+      "canonical_path": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.html",
+      "ref_name": "main",
+      "commit_id": "f76cad5634c330967e4883d85885b17a0f1cb07d",
+      "git_blob_sha": "54064c8fe00f872023a455f06596061ed69062ae",
+      "content_sha256": null,
+      "captured_at_utc": null,
+      "verification_status": "PENDING_BUILD_MANIFEST",
+      "freshness_status": "NOT_CHECKED_AGAINST_MAIN"
+    },
+    {
+      "source_id": "metodologia.ocp-mcp.core",
+      "canonical_path": "frentes/mcp-metodologia/MCP-METODOLOGIA.md",
+      "ref_name": "main",
+      "commit_id": "f76cad5634c330967e4883d85885b17a0f1cb07d",
+      "git_blob_sha": "a668bf58a6e84c41f5455cd8cf599a950f00c233",
+      "content_sha256": null,
+      "captured_at_utc": null,
+      "verification_status": "PENDING_BUILD_MANIFEST",
+      "freshness_status": "NOT_CHECKED_AGAINST_MAIN"
+    }
+  ]
+}
