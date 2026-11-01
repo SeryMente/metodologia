@@ -175,7 +175,7 @@
     "mcp_coordination_blob": "b68769e838787ef8f8b6c9c6b9834e2f878bf0df",
     "ep_coordination_blob": "1131bb584268f393eb16c7a19120eb800d2043cd",
     "prompt_additional_02": "PREPARADO_NO_PUBLICADO_IN_GOV_TASK_011",
-    "readback": "VERIFIED_BY_POST_WRITE_GITHUB_FETCH_EXACT_CONTENT",
+    "readback": "VERIFIED_EXACT_CONTENT_AFTER_EACH_SEQUENTIAL_WRITE",
     "evidence_blob_self_reference": "EXCLUDED_TO_AVOID_SELF_REFERENCE_CYCLE",
     "evidence_final_write_base_blob": "cd40aa922e60d88a2fbffe9f9f4c05637391ada7",
     "ep_oep_blob": "c0c65c473711881a1d1692bec757b283eca3eb34",
@@ -189,7 +189,9 @@
     "ep_revision_manifest_sha256": "0130096b5a05fe6c4042ff1d07d8f42e55abdceac68ec66fcaf84c75787d26c8",
     "ep_readback_manifest_sha256": "a89f82fd8a90c8cd693b41f6ce20dbd9ce348fb73c6f89fa209295b955eb9b7b",
     "mcp_core_blob": "e6e96ee4edde7156ddc9f9a9e302faa9f8ed4ffa",
-    "mcp_core_sha256": "7418674a679056c6bb324f387fc9ccda658fbd78bbfc48f5ae169fd83130b9ab"
+    "mcp_core_sha256": "7418674a679056c6bb324f387fc9ccda658fbd78bbfc48f5ae169fd83130b9ab",
+    "latest_dtc_task_commit": "c7cc446ad00b92c052b6639fca398eec8afae542",
+    "latest_dtc_task_blob": "ac608c63dd58fae4b2fdb662f9005d0e0b0358f1"
   },
   "boundaries": [
     "Gobernanza centraliza e integra el OCP general del sprint; no asume titularidad de EP/MCP-OCP.",
@@ -303,5 +305,42 @@
     "dug_blob": "657225b9c6c4d7bb46aad78fcd6c95de49ea1689",
     "global_folios": "PENDIENTE / NO ASIGNADO",
     "fol1": "PREPARADO_PENDIENTE_ACTIVACION_IPZ"
+  },
+  "latest_governance_dtc_cycle": {
+    "event_id": "C-GOBERNANZA-DTC-MCP-20261101-01",
+    "uuidv7_local": "01a1991b-1591-7c08-b783-5975e26e4d31",
+    "folio_type": "LOCAL_EVENT_AND_AUXILIARY_UUID; NOT_GLOBAL_FOLIO",
+    "global_cycle_folio": "PENDIENTE / NO ASIGNADO",
+    "date": "2026-11-01",
+    "responsible_session": "SES-20261101-GV8A19904",
+    "preflight": "VERIFIED",
+    "source_cursors": {
+      "governance_task_before_write": "3aecf91e82c199e03eba703a6650250db65e3c14",
+      "governance_evidence_before_write": "48fb2dcec0a1d9b90bd565069c5c36b7e0180eda",
+      "mcp_coordination": "e6c375a79ca0a431000aa607ff2dfe9252abafd9",
+      "mcp_core": "e04e85fc8576244db3e4caefa0d05d2ed693fee7",
+      "mcp_control": "3e6f96e919c33c3015478b7fd0f262b1bee47b0c",
+      "ep_coordination": "24939fbe18b250256116f8556d96ae3c33bde238",
+      "dug": "657225b9c6c4d7bb46aad78fcd6c95de49ea1689"
+    },
+    "initial_response": "RECORDED_IN_CURRENT_CONVERSATION",
+    "processing": "DTC corrected to preserve two peer-independent Governance conversations; serial shared-path writes; MCP closure route and separate acceptance gates documented.",
+    "request_to_mcp": "NONE; cycle local 06 remains open, no duplicate request sent/prepared as delivered.",
+    "writebacks": {
+      "governance_task": {
+        "commit": "c7cc446ad00b92c052b6639fca398eec8afae542",
+        "blob": "ac608c63dd58fae4b2fdb662f9005d0e0b0358f1",
+        "exact_readback": true
+      },
+      "evidence": "This record's final blob will be verified after the sequential evidence write."
+    },
+    "final_status": "CUMPLE_VERIFICADO_PARA_ESTE_CICLO_DE_GOBERNANZA",
+    "global_dtc_status": "EN_CURSO_RECURRENT; MCP_CYCLE_06_OPEN",
+    "limits": [
+      "No direct dispatch/control or private inspection of the other Governance conversation.",
+      "No assignment or redistribution of the co-responsible's functions.",
+      "No change to MCP OCP/core/control/code, EP, DUG, IPZ or FOL1.",
+      "No integration, installation or operator acceptance asserted."
+    ]
   }
 }
