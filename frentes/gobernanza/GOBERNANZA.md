@@ -2,6 +2,16 @@
 
 ## Estado rector vigente · C-GOBERNANZA-VECTOR-SEMANTICO-01 · 2026-10-31
 
+## Evento vigente · C-GOBERNANZA-RETOMA-08 · 2026-11-01
+
+**Responsabilidad:** titular generación 11, sesión `SES-20261101-GV8A19904`, UUIDv7 local `01a19904-cac5-7351-94eb-ce3ab3837be5`; corresponsable previa preservada. Control final `beecec6d4a3ca166019f3271bf2715a2c64bb6f1`, leído de vuelta.
+
+**Persistencia documental:** original `ChatGPT-GOBERNANZA-20261101-1518.md` en `documentos/originales/`; 161.472 bytes, SHA-256 `1ce5e272c9d4f80da83a5c5d4be4e36eecf8ebc29001132d5e998af8bacca0d6`, blob `a8bf0cb9f1bf3503827c6013e56abffa1f06e697`; manifiesto, crónica y evidencia actualizados y leídos de vuelta.
+
+**DTC observada:** EP cumple su ciclo documental local Prompt 02, pero EP-TASK-002 sigue `en_curso` y B2/upload/read-back/restauración no están verificados. MCP-OCP mantiene abierto el ciclo local 05; por tanto, su estado integrado es `CUMPLE_PARCIAL`, sin nueva solicitud paralela. El DTC global permanece `EN_CURSO_RECURRENT`.
+
+**Límites:** DUG Samantha v373 · NX-373m permanece fuente normativa única de referencia; no se modificaron DUG, GOW canónico, ART-025/027, IPZ nativa, controles EP/MCP-OCP ni host. FOL1 continúa `PREPARADO_PENDIENTE_ACTIVACION_IPZ`; no hay folio global asignado.
+
 Esta sección sustituye los resúmenes ejecutivos repetidos y fotografías anteriores que siguen debajo por procedencia histórica. El vector semántico del operador es criterio rector de toda tarea y ciclo de Gobernanza. [Crónica](cronica/C-GOBERNANZA-VECTOR-SEMANTICO-01.md) · [dictado](conversaciones/C-GOBERNANZA-VECTOR-SEMANTICO-01-dialogo.jsonl) · [evidencia](evidencias/C-GOBERNANZA-VECTOR-SEMANTICO-01.json).
 
 ### Resultado y secuencia obligatoria
