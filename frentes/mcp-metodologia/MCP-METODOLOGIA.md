@@ -133,15 +133,31 @@ Las autorizaciones futuras deberán quedar vinculadas a la operación concreta y
 
 ## 8. Estado vivo
 
-**Acción en curso:** OCP MCP de Metodología inaugurado documentalmente.
+**Acción en curso:** mantener el producto MCP local y su backlog de Gobernanza verificables, reconciliando el código de construcción con `main` antes de declararlo entrega canónica.
 
-**Siguiente paso:** elaborar la especificación funcional mínima del servidor local: actores/clientes, herramientas de desarrollo y gobernanza, fuentes OCP permitidas, límites lectura/escritura, transporte local, autenticación y estrategia de pruebas.
+**Estado documental comprobado en `main`:** este núcleo, el control y el objeto de coordinación están presentes. El árbol OCP de `main` no contiene todavía `src/`, `tests/`, `scripts/` ni artefactos 0.1.0; por tanto, el producto construido y probado que se reportó en la rama `build/ocp-mcp-mvp-0.1.0` no se atribuye a esta revisión de `main`, no se considera integrado en la rama canónica ni aceptado.
 
-**Hechos verificados:** ruta OCP nueva ausente en la línea base; OCP Khora MCP existente identificado en otro repositorio; propósito U002 conservado; gobierno DUG v373 / Metacanon 1.26 / GOW 2.14 adquirido.
+**Control:** `owned`, generación 2; autorización B `AUTHORIZED`, acotada a `frentes/mcp-metodologia/`. No habilita actos en EP, cambios normativos, instalación/host, ni rutas ajenas.
 
-**No realizado:** código, instalación, proceso localhost, conexión RDC, conexión MCP cliente, herramientas activas, autenticación, pruebas, despliegue e integración.
+**Normativa:** `MCP-NORMATIVO: DESACTIVADO`. La selección y `BUILD_SNAPSHOT` permanecen bloqueados hasta disponer de los cuatro metadatos estructurados aprobados para P001–P043; el OCP no los infiere ni modifica el DUG.
 
-**Folio:** conversación/ciclo/A/B globales y por OCP pendientes porque FOL1 no está activado.
+**Folio:** FOL1 `PREPARADO_PENDIENTE_ACTIVACION_IPZ`; conversación/ciclo/A/B globales y por OCP `PENDIENTE/NO ASIGNADO`.
+
+### 8.1 Registro provisional de tareas OCP
+
+Este apartado es el registro provisional canónico de trabajo del frente mientras no exista un índice separado. No crea otro OCP ni un estado técnico paralelo. `README.md` debe enlazar aquí; el objeto de coordinación conserva mensajes bilaterales y evidencias de ciclo.
+
+| Tarea / dependencia | Estado vigente | Resultado exigido / límite |
+|---|---|---|
+| `GOV-TASK-011` — coordinación bilateral recurrente (lado OCP) | **APLICADA EN ESTE CICLO; recurrente** | Respuesta inicial y documentación de cierre de un ciclo, compuerta local instalada y read-back. El cierre global de Gobernanza sigue dependiendo también de EP y de su evidencia. |
+| Reconciliar implementación MCP 0.1.0 con `main` | **PENDIENTE** | Incorporar la rama de construcción de forma reconciliada sobre la cabeza vigente de `main`; compilar, probar, generar manifiestos y verificar artefactos antes de declararlos canónicos. No tratar ramas divergentes como si fueran `main`. |
+| Delta técnico A/B/C y schemas JSON | **PENDIENTE DE CANONIZAR/VERIFICAR EN `main`** | AES-256-GCM/DPAPI en fuentes y snapshots; bundle verificable de fuentes; consistencia transaccional de snapshots; schemas exactos de herramientas/entradas/salidas/errores y pruebas. El informe anterior sobre un workspace temporal no sustituye commit/read-back ni ejecución final. |
+| Metadatos de selección normativa P001–P043 | **BLOQUEADO POR GOBERNANZA** | Recibir fuente estructurada aprobada con `applicability`, `activation_conditions`, `mandatory` y `dependencies`, junto con commit, ruta, blob, SHA-256, versión y aprobación. No completar por inferencia ni alterar DUG. |
+| Paquete de principios seleccionados y enlaces Sync individuales | **PENDIENTE DE IMPLEMENTACIÓN/PRUEBA** | Recibir selección de aplicables, resolver y devolver enlace Sync de cada norma desarrollada, permitir que el modelo evalúe suficiencia y solicite elementos adicionales, y producir hash del paquete exacto vinculado al ciclo autorizado. |
+| Telemetría de frecuencia de consulta y vínculo al ciclo | **PENDIENTE DE IMPLEMENTACIÓN/PRUEBA** | Registrar frecuencia de consulta por principio y vincularla al paquete/ciclo; no equiparar consulta con aplicación ni crear telemetría semántica de aplicación no solicitada. |
+| Instalación e integración del cliente en EP | **PENDIENTE_EP · FUERA DE EJECUCIÓN OCP** | EP debe realizar su propio preflight, instalación e integración con autorización y control vigentes. OCP no toca el host ni su configuración. |
+
+Las tareas anteriores proceden del mensaje de Gobernanza `MSG-GOV-BILATERAL-20261031-01`, de la coordinación del sprint §§14–16 y del bloqueo técnico verificado. No se crean IDs de tareas locales adicionales; los estados cambian únicamente al persistir evidencia.
 
 ## 9. Aceptación y viabilidad
 
@@ -158,6 +174,31 @@ Aplicar en cada ciclo los diez campos de Metacanon §4: identidad y gobierno; d�
 Siempre declarar Sam, Metacanon y GOW adquiridos; revisión/commit; cascada revisada manualmente; MCP-NORMATIVO: DESACTIVADO; estado del control y generación; folio SES si y solo si existe asignación válida; y folios globales/OCP de conversación, ciclo, A y B cuando FOL1 esté activado.
 
 Mientras FOL1 continúe PREPARADO_PENDIENTE_ACTIVACION_IPZ, la foliación se declara PENDIENTE/NO ASIGNADO. No usar C001 como folio global; es solo un ID de evento local.
+
+### 10.1 Compuerta obligatoria de comunicación bilateral por ciclo
+
+Esta compuerta rige todos los ciclos del frente mientras el operador no la revoque. La secuencia es serial y la evidencia de cada ejecución se registra en `entregas/COORDINACION-SPRINT-OCP-MCP-v0.1.md`; este núcleo contiene la regla y el registro provisional, no duplica el historial de mensajes.
+
+**Apertura — después del preflight y antes de cualquier otro trabajo:**
+
+- [ ] Verificar admisión, identidad operativa, control/titularidad, generación, autorización para el acto y exclusividad; abortar ante control alterado o conflicto material.
+- [ ] Leer el objeto bilateral OCP y todos los mensajes nuevos de Gobernanza posteriores al último cursor efectivamente procesado, conservando la referencia exacta de revisión/blob.
+- [ ] Responder en el mismo objeto antes de cualquier trabajo técnico/documental: acuse, interpretación, viabilidad, bloqueos y acción inmediata. Si no hay delta, escribir `SIN_NOVEDAD` con revisión/cursor leído.
+- [ ] Registrar el estado de apertura como `LEÍDO` y `RESPUESTA_INICIAL_REGISTRADA`; no declarar recepción de mensajes posteriores por inferencia.
+
+**Procesamiento:**
+
+- [ ] Solo después de registrar la respuesta inicial, procesar el backlog autorizado y las tareas independientes. Releer este registro provisional y actualizar los estados cuando cambien.
+- [ ] No abrir una segunda solicitud a Gobernanza mientras exista una comunicación previa de ese frente sin procesar; no reabrir decisiones cerradas sin evidencia material.
+
+**Cierre — después de procesar la salida y antes de cerrar el ciclo:**
+
+- [ ] Registrar novedades, cambios reales, tareas/hitos afectados, estados, fuente/revisión/commit/blob/hashes, evidencia observada frente a reportada, decisiones, pendientes, bloqueos, siguiente acción y pronóstico.
+- [ ] Actualizar este registro provisional si cambió el backlog; actualizar el mismo objeto bilateral de Gobernanza con la documentación final.
+- [ ] Leer de vuelta el objeto bilateral y los documentos operativos modificados; registrar commit, blob SHA y resultado del cotejo.
+- [ ] Marcar `DOCUMENTADO_AL_CIERRE` y `VERIFICADO_READBACK` solo con evidencia observada. Si falta respuesta inicial, actualización final o read-back, el ciclo queda `GATE_INCOMPLETO` y no puede declararse completo.
+
+El cumplimiento de la compuerta no asigna folios ni crea una sesión/control nuevos. `FOL1` permanece sujeto a su propia activación.
 
 ## 11. Crónica y fuentes
 
