@@ -1,0 +1,84 @@
+{
+  "schema": "governance-event-evidence/1",
+  "event_id": "C-GOBERNANZA-RETOMA-08",
+  "recorded_on": "2026-11-01",
+  "front": "gobernanza",
+  "repository": "SeryMente/metodologia",
+  "branch": "main",
+  "authorization": {
+    "status": "explicit",
+    "source": "operator instruction in the receiving conversation",
+    "verbatim": "ADjunta en Persistenica Docuemtnald e Gobernanza, y toma responsabilidad de Gobernanza 1"
+  },
+  "document": {
+    "document_id": "DOC-GOV-CHATGPT-GOBERNANZA-20261101-1518",
+    "path": "frentes/gobernanza/documentos/originales/ChatGPT-GOBERNANZA-20261101-1518.md",
+    "bytes": 161472,
+    "source_sha256": "1ce5e272c9d4f80da83a5c5d4be4e36eecf8ebc29001132d5e998af8bacca0d6",
+    "git_blob_sha": "a8bf0cb9f1bf3503827c6013e56abffa1f06e697",
+    "commit_sha": "275854bb5d0a85cd9adb2f10ee65fcd41655e764",
+    "readback_exact": true,
+    "status": "PERSISTIDO_Y_VERIFICADO"
+  },
+  "responsibility": {
+    "generation_before": 10,
+    "generation_after": 11,
+    "old_primary": "chatgpt-C-GOBERNANZA-RETOMA-07-SES-20261031-GV8AA51721",
+    "new_primary": "chatgpt-C-GOBERNANZA-RETOMA-08-SES-20261101-GV8A19904",
+    "session_folio": "SES-20261101-GV8A19904",
+    "instance": "chatgpt-gobernanza-retoma-2026-11-01-GV8A19904",
+    "local_uuidv7": "01a19904-cac5-7351-94eb-ce3ab3837be5",
+    "co_responsible_preserved": "chatgpt-C-GOBERNANZA-DOBLE-CORRESPONSABILIDAD-01-SES-20261101-ED4A2B32",
+    "active_responsibles": 2,
+    "maximum_active_responsibles": 2,
+    "control_final_blob_sha": "beecec6d4a3ca166019f3271bf2715a2c64bb6f1",
+    "first_commit_sha": "5c5d480a92adb57db959011619f2652940101031",
+    "verification_commit_sha": "34d77f2ec8906e620dbacf609129f1d5aca01d31",
+    "status": "COMMITTED_AND_READBACK_VERIFIED",
+    "native_conversation_id": "NOT_EXPOSED"
+  },
+  "dtc": {
+    "governance": {
+      "status": "CUMPLE_VERIFICADO",
+      "scope": "own event writes and read-back only"
+    },
+    "ep": {
+      "status": "CUMPLE_VERIFICADO",
+      "local_cycle": "C-EP-DTC-PROMPT02-20261031-02",
+      "coordination_blob": "24939fbe18b250256116f8556d96ae3c33bde238",
+      "oep_blob": "deaceadfc1de4636e0f9114a47a3d5255c04e897",
+      "tasks_blob": "3c1d1bb91bc4152dd783f7f3b12ba1f986c40018",
+      "material_task_EP_TASK_002": "en_curso",
+      "b2_upload_readback_restore": "NOT_EXECUTED_NOT_VERIFIED"
+    },
+    "mcp_ocp": {
+      "status": "CUMPLE_PARCIAL",
+      "local_cycle": "C-MCP-OCP-DTC-20261101-05",
+      "coordination_blob": "4c6f9c12be9c227f66f71c149cef2d00db7dd17f",
+      "core_blob": "15d6fe1a65d52c52215378fd12a49c3a651d6d73",
+      "control_generation": 3,
+      "control_blob": "3e6f96e919c33c3015478b7fd0f262b1bee47b0c",
+      "cycle_closed": false,
+      "readback_of_cycle05": false,
+      "core_81_snapshot_stale": true
+    },
+    "global": "EN_CURSO_RECURRENT"
+  },
+  "foliation": {
+    "FOL1": "PREPARADO_PENDIENTE_ACTIVACION_IPZ",
+    "CV": "PENDIENTE/NO ASIGNADO",
+    "CY": "PENDIENTE/NO ASIGNADO",
+    "A": "PENDIENTE/NO ASIGNADO",
+    "B": "PENDIENTE/NO ASIGNADO",
+    "cycle_folio": null
+  },
+  "boundaries": {
+    "dug_modified": false,
+    "art025_modified": false,
+    "art027_modified": false,
+    "ipz_native_modified": false,
+    "ep_modified": false,
+    "mcp_ocp_modified": false,
+    "mcp_normativo_activated": false
+  }
+}
