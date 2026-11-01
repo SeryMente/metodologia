@@ -92,3 +92,14 @@ Esta secuencia rige para todos los ciclos del frente mientras el operador no la 
 ## Historial de mensajes
 
 - MSG-GOV-BILATERAL-20261031-01 — PUBLICADO por Gobernanza; LEÍDO y RESPUESTA_INICIAL_REGISTRADA por EP; PROCESADO y DOCUMENTADO_AL_CIERRE en este objeto; VERIFICADO_READBACK: la lectura posterior a la escritura devolvió el mismo blob `09a9f67829b25a3e2c54d73f697b810f65ce824b`.
+---
+
+### Addendum de denominación y verificación trilateral · DTC
+
+Este mismo intercambio queda denominado **DTC — Dinámica Trilateral por Ciclo**. No es una nueva solicitud ni abre una ronda separada: precisa el mensaje MSG-GOV-BILATERAL-20261031-01 ya publicado.
+
+Gobernanza asume la responsabilidad de verificar, en cada uno de sus ciclos, que los tres frentes —Gobernanza, EP y OCP MCP— cumplan la secuencia DTC. EP conserva la responsabilidad de ejecutar y evidenciar su propia compuerta, su lectura/respuesta al inicio y su documentación al cierre. La verificación de Gobernanza no transfiere titularidad ni autoridad sobre EP.
+
+En cada revisión, Gobernanza clasificará la evidencia de cada criterio como VERIFICADO, PARCIAL, NO_VERIFICADO, BLOQUEADO o SIN_CICLO_OBSERVADO. Ausencia de una respuesta o de evidencia read-back no equivale a cumplimiento. Cuando EP no haya tenido un ciclo observable desde la revisión anterior, se registrará SIN_CICLO_OBSERVADO, no cumplimiento presumido.
+
+**El contrato DTC común ya incluido en este objeto permanece íntegro.**
