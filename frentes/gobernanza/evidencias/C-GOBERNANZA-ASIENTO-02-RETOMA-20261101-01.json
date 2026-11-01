@@ -1,0 +1,94 @@
+{
+  "schema": "governance-event-evidence/1",
+  "event_id": "C-GOBERNANZA-ASIENTO-02-RETOMA-20261101-01",
+  "recorded_on": "2026-11-01",
+  "front": "gobernanza",
+  "repository": "SeryMente/metodologia",
+  "branch": "main",
+  "authorization": {
+    "status": "explicit",
+    "source": "operator instruction in the receiving conversation",
+    "verbatim": "REtoma repsosnbillidad de asiento 2 del frente.",
+    "operation": "REPLACE_CO_RESPONSIBLE",
+    "scope": "Relevar únicamente la plaza corresponsable del asiento 2; preservar al titular y mantener máximo dos responsables activos."
+  },
+  "document": {
+    "document_id": "DOC-GOV-CHATGPT-GOBERNANZA-2-20261101-1655",
+    "path": "frentes/gobernanza/documentos/originales/ChatGPT-GOBERNANZA-2-20261101-1655.md",
+    "bytes": 42949,
+    "source_device": "PC-8",
+    "source_sha256": "71172E0F62C10B4A34FE5F04D5520F28F9ACA6C82771DB6882F70E266CDA7AB4",
+    "git_blob_sha": "6814f4029891f953dabe91b376254b49dcc1ce47",
+    "commit_sha": "dacb7cff8c183d086f6bd621745ec31ebd50f39c",
+    "readback_exact": true,
+    "status": "PERSISTIDO_Y_VERIFICADO",
+    "method": "Remote PowerShell SHA-256 and byte Base64 comparison to GitHub main read-back."
+  },
+  "responsibility": {
+    "generation_before": 11,
+    "generation_after": 12,
+    "retained_primary": "chatgpt-C-GOBERNANZA-RETOMA-08-SES-20261101-GV8A19904",
+    "retained_primary_folio": "SES-20261101-GV8A19904",
+    "replaced_co_responsible": "chatgpt-C-GOBERNANZA-DOBLE-CORRESPONSABILIDAD-01-SES-20261101-ED4A2B32",
+    "replaced_session_folio": "SES-20261101-ED4A2B32",
+    "new_co_responsible": "chatgpt-C-GOBERNANZA-ASIENTO-02-RETOMA-20261101-01-SES-20261101-GV8E89D1FF",
+    "new_session_folio": "SES-20261101-GV8E89D1FF",
+    "new_instance": "chatgpt-gobernanza-asiento-02-2026-11-01-8E89D1FF",
+    "new_local_uuidv7": "01a19963-08ed-703e-8134-9df78e89d1ff",
+    "active_responsibles_before": 2,
+    "active_responsibles_after": 2,
+    "maximum_active_responsibles": 2,
+    "native_conversation_id": "NOT_EXPOSED",
+    "control_source_blob_sha": "beecec6d4a3ca166019f3271bf2715a2c64bb6f1",
+    "status": "AUTHORIZED_PENDING_CONTROL_CAS",
+    "readback_verified": false
+  },
+  "dtc": {
+    "governance": {
+      "status": "ORIGINAL_PERSISTED_CONTROL_TRANSFER_PENDING"
+    },
+    "ep": {
+      "status": "CUMPLE_PARCIAL",
+      "local_cycle": "C-EP-MOD-SCRIPTPWS-20261101-02",
+      "coordination_blob": "9200487a46601343edaed24ef28af651583472e9",
+      "EP_TASK_002": "en_curso",
+      "authentication_and_cycle_close": "PENDING"
+    },
+    "mcp_ocp": {
+      "status": "CUMPLE_PARCIAL",
+      "local_cycle": "06",
+      "coordination_blob": "afb0d67d76e2df7fa3e136b10f9b018450e7926a",
+      "current_build_tests": "NOT_EXECUTED_RUNNER_OFFLINE",
+      "cycle_closed": false
+    },
+    "global": "EN_CURSO_RECURRENT"
+  },
+  "foliation": {
+    "FOL1": "PREPARADO_PENDIENTE_ACTIVACION_IPZ",
+    "CV": "PENDIENTE/NO ASIGNADO",
+    "CY": "PENDIENTE/NO ASIGNADO",
+    "A": "PENDIENTE/NO ASIGNADO",
+    "B": "PENDIENTE/NO ASIGNADO",
+    "cycle_folio": null
+  },
+  "boundaries": {
+    "dug_modified": false,
+    "gow_modified": false,
+    "art025_modified": false,
+    "art027_modified": false,
+    "ipz_native_modified": false,
+    "ep_modified": false,
+    "mcp_ocp_modified": false,
+    "mcp_normativo_activated": false
+  },
+  "current_dug": {
+    "version": "Samantha v377",
+    "signature": "NX-377m",
+    "metacanon": "1.28",
+    "gow": "2.17",
+    "principles": 43,
+    "annexes": 22,
+    "main_blob_sha": "54064c8fe00f872023a455f06596061ed69062ae",
+    "modified_by_event": false
+  }
+}
