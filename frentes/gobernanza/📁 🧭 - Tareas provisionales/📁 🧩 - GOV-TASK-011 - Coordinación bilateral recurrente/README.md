@@ -2,6 +2,47 @@
 
 **Estado:** en_curso · **Responsable de verificación:** Gobernanza, generación 11 (sesión `SES-20261101-GV8A19904`). **Ejecución/evidencia:** cada frente, bajo su propio control.
 
+
+## 📍 REANUDACIÓN PRIORITARIA · DTC entre hilos · snapshot 2026-11-01
+
+**Esta sección es la tarjeta operativa de recuperación.** Un hilo nuevo debe comenzar aquí y continuar sobre los mismos objetos y cursores; no debe reconstruir el sprint desde memoria conversacional ni crear buzones, tareas, OCP o dashboards paralelos.
+
+### 1. Punto de entrada y orden de recuperación
+
+1. Confirmar repositorio `SeryMente/metodologia`, rama `main` y HEAD actual. Leer `frentes/gobernanza/CONTROL-RESPONSABILIDAD.json`; comprobar titularidad, sesión, generación, autorización y exclusividad. Si el control cambió, detener solo las escrituras afectadas y reconciliar.
+2. Leer el DUG completo vigente: `gobernanza/METAPROMPT-CANONICO-SAMANTHA.html`. En este snapshot: **Samantha v377 · NX-377m; Metacanon 1.28; GOW 2.17; blob `54064c8fe00f872023a455f06596061ed69062ae`**. Volver a resolver la revisión actual en cada hilo; este hash es un cursor, no una presunción de vigencia eterna.
+3. Leer el índice `frentes/gobernanza/📁 🧭 - Tareas provisionales/README.md`; localizar esta tarea **GOV-TASK-011** y el recibo `frentes/gobernanza/evidencias/C-GOBERNANZA-DTC-01.json`. El índice de tareas es la vista integrada del OCP general del sprint; no crear un cuarto OCP.
+4. Leer esta tarea completa y recuperar el último evento propio procesado del recibo DTC. Después, leer primero el objeto EP y luego el MCP-OCP (o el orden serial que indiquen sus respuestas pendientes); comparar sus entradas desde el cursor real anterior.
+5. Para EP, leer `frentes/ep/entregas/COORDINACION-GOBERNANZA-EP-v0.1.md`, `frentes/ep/OEP.md`, el índice de tareas EP y la tarea original afectada. Para MCP-OCP, leer `frentes/mcp-metodologia/entregas/COORDINACION-SPRINT-OCP-MCP-v0.1.md`, `MCP-METODOLOGIA.md` y su `CONTROL-RESPONSABILIDAD.json`.
+6. Registrar la respuesta inicial de Gobernanza en el mismo objeto de comunicación que corresponda antes de otro trabajo sustantivo. Si no existe mensaje nuevo, dejar `SIN_NOVEDAD` y el cursor leído. No emitir una nueva solicitud mientras la anterior siga pendiente.
+
+### 2. Secuencia obligatoria por ciclo
+
+`PREFLIGHT → RECUPERAR_CURSOR → LEER_NOVEDADES → RESPUESTA_INICIAL / SIN_NOVEDAD → PROCESAR_TRABAJO_AUTORIZADO → DOCUMENTAR_CIERRE_EN_EL_MISMO_OBJETO → READBACK_EXACTO → INTEGRAR_EN_GOVERNANZA`.
+
+La secuencia observable de comunicación es `PUBLICADO → LEÍDO → RESPUESTA_INICIAL_REGISTRADA → PROCESADO → DOCUMENTADO_AL_CIERRE → VERIFICADO_READBACK`. Si falta una fase, el ciclo es `CICLO_INCOMPLETO`. No se infiere lectura por publicación ni aceptación por read-back. Registrar lo reportado, observado, verificado y aceptado como estados separados. La falta de un ciclo observable es `SIN_CICLO_OBSERVADO`, no cumplimiento.
+
+### 3. Estado de reanudación observado en este snapshot
+
+| Frente | Cursor/estado persistido | Estado DTC actual |
+|---|---|---|
+| Gobernanza | Control blob `beecec6d4a3ca166019f3271bf2715a2c64bb6f1`; titular `SES-20261101-GV8A19904`, generación 11. Evento central `C-GOBERNANZA-DTC-MCP-20261101-02`, UUIDv7 local `01a19920-6700-7a89-9419-18026a9b0f27`. | El ciclo de Gobernanza solo se marca verificado tras el read-back del registro y la evidencia del evento actual. La sesión corresponsable es par independiente: no reasignar sus funciones ni tareas. |
+| EP | Objeto de comunicación blob `a24309111d7b27556d2ef710329157a6b72e63da`; ciclo EP abierto `C-EP-MOD-SCRIPTPWS-20261101-01`. OEP v0.3.23 / VCU-EP-v25 blob `3aebadf2f6e563128e69c3aed026fad01f86388f`; índice blob `3c1d1bb91bc4152dd783f7f3b12ba1f986c40018`; EP-TASK-002 blob `6d932628ac0afdf1039915bdd508f39f641a590c`. | `CUMPLE_PARCIAL`: apertura y respuesta inicial EP registradas; respuesta de Gobernanza publicada en el mismo objeto; EP aún debe leer/procesar, documentar el cierre y hacer read-back. Su control de responsabilidad no fue localizado en la fuente comprobada; titularidad/generación formal EP `NO_VERIFICABLE`. La actividad MOD-SCRIPTPWS pertenece a EP y no desplaza ni bloquea EP-TASK-002/MCP ciclo 06. |
+| MCP-OCP | Objeto de coordinación blob `a5e848f14c36477f03fd5f015ce396e2d02180d2`; ciclo local 06 abierto en §29. Núcleo blob `e04e85fc8576244db3e4caefa0d05d2ed693fee7`; control blob `3e6f96e919c33c3015478b7fd0f262b1bee47b0c`, `owned`, generación 3, B `AUTHORIZED`. | `CUMPLE_PARCIAL`: Gobernanza respondió en §29.1 del mismo objeto; MCP-OCP aún debe leer/procesar la respuesta, completar §29, publicar evidencias/read-back y cerrar ciclo 06 antes de cualquier solicitud nueva. Build/test históricos no equivalen a pruebas frescas con main/DUG v377. |
+
+**Rectificación histórica:** el bloque «Resultado de auditoría · 2026-10-31» y las menciones posteriores a EP fuera de `main`, OEP v0.3.20/21, DUG v373/v376 y MCP ciclos anteriores describen snapshots históricos. No describen este estado. La reconciliación de EP en `main` está asentada en OEP §92; el OEP actual visible es v0.3.23 / VCU-EP-v25. El ciclo MCP 05 cerró en §28.4; el ciclo vivo ahora es el 06 / §29. Se conserva el historial, pero esta tarjeta y el recibo DTC vigente lo rectifican para la reanudación.
+
+### 4. Reglas que protegen la continuidad y el cierre del sprint
+
+- Un objeto persistente por contraparte: EP usa su archivo de coordinación existente; MCP-OCP usa el suyo. Una sola entrada por ciclo, cursor verificable y respuestas append-only. Gobernanza integra en GOV-TASK-* y en el recibo de evidencia DTC.
+- No crear una cuarta parte, OCP general adicional, buzón alternativo, tablero, dashboard o canal duplicado. No abrir otra solicitud a un frente con mensaje abierto.
+- EP y MCP-OCP conservan sus controles, titulares, generación, autorizaciones, backlog y ejecución. Centralizar no significa suplantar. Las dos sesiones de Gobernanza registradas son corresponsables pares con mandatos independientes.
+- La DTC es semiautomática por compuertas y cursores; no hay evidencia de disparador continuo autónomo. El procedimiento está persistido y se ha recuperado en este ciclo leyendo los objetos canónicos, pero una prueba de arranque en un hilo nuevo aún no se ha ejecutado: `COLD_START_TEST_PENDING`.
+- El sprint solo puede declararse terminado cuando se verifique cada criterio rector y los estados terminales pertinentes. En MCP se distinguen `MVP_TECNICO_VERIFICADO`, `INTEGRADO_EN_MAIN` (autorización expresa del operador), `INSTALADO_EN_EP` (autoridad/autorización EP) y `ACEPTADO_POR_OPERADOR`. Ninguno se infiere de otro. Las tareas independientes de EP continúan en su OCP y solo entran en el sprint si la trazabilidad prueba dependencia con el criterio rector.
+- FOL1 sigue `PREPARADO_PENDIENTE_ACTIVACION_IPZ`; los folios globales CV/CY/A/B siguen `PENDIENTE / NO ASIGNADO`. MCP-NORMATIVO permanece `DESACTIVADO`.
+
+**Reanudación segura:** tras un reinicio, volver a leer las revisiones en `main`, identificar el último cursor *realmente procesado* por cada frente, leer cualquier mensaje posterior y continuar en la misma entrada abierta. No copiar sin verificación los blobs de este snapshot a modo de verdad actual; sirven para detectar cambios y evitar reiniciar la historia.
+
 ## Regla mínima — sin excepción
 
 En cada ciclo real de Gobernanza, EP y MCP-OCP:
@@ -20,7 +61,7 @@ En cada ciclo propio, verificar los tres frentes y registrar uno de estos estado
 
 ## Objetos y registros
 
-- **EP:** [comunicación provisional](../../../ep/entregas/COORDINACION-GOBERNANZA-EP-v0.1.md), actualmente en `docs/metacanon-objetos-20261011`; pendiente de reconciliar por EP con `main`. OEP e índice de tareas se consultan en `main`.
+- **EP:** [comunicación provisional](../../../ep/entregas/COORDINACION-GOBERNANZA-EP-v0.1.md), reconciliada por EP y visible en `main`; el cursor vigente se conserva en la tarjeta de reanudación de este documento. OEP e índice de tareas se consultan en `main`.
 - **MCP-OCP:** [comunicación provisional](../../../mcp-metodologia/entregas/COORDINACION-SPRINT-OCP-MCP-v0.1.md), en `main`; registro de tareas §8.1 y compuerta §10.1 de `MCP-METODOLOGIA.md`.
 - **Gobernanza:** esta tarea, `GOBERNANZA.md`, `PENDIENTES.md` y la evidencia DTC.
 
