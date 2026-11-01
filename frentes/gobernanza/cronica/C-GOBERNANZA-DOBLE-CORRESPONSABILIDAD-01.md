@@ -8,7 +8,7 @@ La instrucción expresa del operador autoriza la operación `ADD_CO_RESPONSIBLE`
 
 ## B · resultado materializado
 
-Se publicó DUG v375 · NX-375m en `gobernanza/METAPROMPT-CANONICO-SAMANTHA.html`, blob `acd16402561311d4eef4a43005efea7498983352`, commit `9842370b646b34635c62994d9af722d805da4c95`. La edición ajusta P037 y P039, Metacanon §§38, 42.6–42.7 y 47.2, y GOW 2.15. El JSON embebido se parseó después de la escritura. Se conservaron los 21 anexos existentes y ART-028.
+Se publicó DUG v375 · NX-375m en `gobernanza/METAPROMPT-CANONICO-SAMANTHA.html`, blob `c993a59163c2c163b17b599a003919b53c5cf6a8`, commit `7830c14d5e6078991838c044fdbd6786f5595220`. La edición ajusta P037 y P039, Metacanon §§38, 42.6–42.7 y 47.2, y GOW 2.15. El JSON embebido se parseó después de la escritura. Se conservaron los 21 anexos existentes y ART-028.
 
 Se publicó el procedimiento operativo derivado `entregas/CHATGPT-v0.8/AT-v1.2.md`, blob `ebe5f0f627865532647cbd226a46c05b48d69d77`, commit `702e61f800c5a4d56e9f28bc8b96528ebe15a50c`. AT v1.2 sigue siendo propuesta operativa, no un anexo independiente canonizado. AT v1.1 y su esquema quedan intactos.
 
