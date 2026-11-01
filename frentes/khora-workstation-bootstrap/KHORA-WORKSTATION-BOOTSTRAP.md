@@ -1,16 +1,18 @@
 # KHORA Workstation Bootstrap · OCP provisional
 
 **Estado:** PROVISIONAL · AUDITORÍA ABIERTA · NO ACEPTADO COMO BOOTSTRAP FINAL  
-**Versión del objeto:** v0.1.0  
-**Evento:** C-KHORA-WORKSTATION-BOOTSTRAP-01  
+**Versión del objeto:** v0.1.1  
+**Evento de inicialización:** C-KHORA-WORKSTATION-BOOTSTRAP-01  
+**Transferencia vigente:** `C-KHORA-WORKSTATION-BOOTSTRAP-TRANSFER-20261101-01` · UUIDv7 local `01a19945-ec5e-75ff-88e4-c5bd06857f9c`  
+**Titular vigente:** `chatgpt-C-KHORA-WORKSTATION-BOOTSTRAP-TRANSFER-20261101-01` · generación 2  
 **OCP:** `frentes/khora-workstation-bootstrap/`  
 **Única fuente ejecutable:** `scripts/khora-workstation-bootstrap-v6.ps1`  
 **Fuente documental:** `SeryMente/metodologia/main`
 
 ## 1. Control e identidad
 
-- Titular operativo: `chatgpt-C-KHORA-WORKSTATION-BOOTSTRAP-01`; instancia: `chatgpt-khora-workstation-bootstrap-2026-10-30`. Son alias, no IDs nativos.
-- Generación inicial: 1. Control: `CONTROL-RESPONSABILIDAD.json`.
+- Titular operativo vigente: `chatgpt-C-KHORA-WORKSTATION-BOOTSTRAP-TRANSFER-20261101-01`; instancia: `chatgpt-khora-workstation-bootstrap-transfer-20261101-01`. Son alias operativos, no IDs nativos.
+- Generación vigente: 2. La titularidad previa y generación 1 se conservan en `ownership_history` del control.
 - Folio SES: NO ASIGNADO. FOL1 está PREPARADO, no ACTIVO.
 - UUIDv7 local del ciclo de inicialización: `01a18f9a-a9ac-7e72-8da7-4ad78ccf3b3e`.
 - Script base V6: commit `aa45426ece7374e9812868e04e0ce5f783cebf4d`; blob SHA `862e63bd00a84cdbe5c2d913794cc17de373356a`; SHA-256 `dd71b638fab3694e89ae58d7faf265941cd6a289ecbf9602bf0d434837635d7b`.
@@ -73,7 +75,7 @@ Mantener y endurecer un solo bootstrap PowerShell, almacenado en el repositorio 
 ## 5. Roles y colaboración
 
 - Operador: dicta la intención y realiza los pasos de autorización de cuenta/dispositivo que el flujo requiera.
-- Asistente titular: audita, modifica el único archivo mediante GitHub, verifica hash/read-back y mantiene el OCP.
+- Asistente titular vigente (alias de generación 2): audita, modifica el único archivo mediante GitHub, verifica hash/read-back y mantiene este OCP.
 - Constructor separado: NO ASIGNADO. No inventar un segundo rol.
 - No utilizar GUI compartida sin autorización concreta conforme a §24.
 
@@ -164,3 +166,16 @@ Leer INICIO.md, DUG/GOW vigentes, este control y núcleo; comparar titularidad y
 ## 13. Persistencia y revisión
 
 La única fuente ejecutable es `scripts/khora-workstation-bootstrap-v6.ps1` en `main`; este OCP documenta estado, procedencia y evidencia pero no duplica el .ps1. Los cambios de código se publican desde GitHub con comprobación de revisión, SHA/read-back. Aceptación final exige cubrir los bloqueos críticos de `PENDIENTES.md` y conservar evidencia reproducible.
+## 14. Registro acumulativo de features del módulo
+
+Los requisitos funcionales solicitados por el operador se conservan en esta lista del OCP. Cada alta recibe un identificador estable, redacción verificable, estado y criterios de aceptación. No se crean OCP independientes por feature.
+
+### F-01 — Ejecución unattended sin preguntas Yes/No
+
+**Estado:** REQUISITO REGISTRADO · IMPLEMENTACIÓN PENDIENTE · NO PROBADO.
+
+**Requisito:** el bootstrap debe realizar automáticamente las instalaciones, configuraciones y comprobaciones previsibles, sin solicitar respuestas Yes/No, confirmaciones de consola ni decisiones rutinarias. Debe utilizar parámetros no interactivos, valores deterministas y opciones silenciosas compatibles con cada herramienta. No debe esperar indefinidamente entrada del operador. Las operaciones de riesgo que no puedan resolverse con una política segura deben fallar de forma controlada, nunca convertirse en una pregunta interactiva.
+
+**Límite externo:** el requisito no autoriza a suplantar al operador ni a eludir autenticación, MFA o consentimiento de proveedores. Cuando una autorización externa sea obligatoria, el script no simulará su concesión: finalizará con timeout finito, código de salida y diagnóstico accionable. La ejecución completamente unattended se exige cuando las credenciales y permisos requeridos ya están provisionados.
+
+**Criterios de aceptación:** ejecución en entorno limpio con dependencias y credenciales disponibles sin intervención ni entrada estándar; análisis del flujo completo sin confirmaciones interactivas alcanzables; operaciones CLI en modo silencioso/no interactivo; pruebas de credenciales ausentes o expiradas con salida finita y sin preguntas; registro de fase, código de salida y causa sin secretos; read-back de fuente y requisito tras cada cambio.
