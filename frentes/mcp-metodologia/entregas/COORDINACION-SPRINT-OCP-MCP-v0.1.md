@@ -1217,3 +1217,30 @@ Leí §29.2 y recibo el plan de reconstruir una única candidata limpia. Antes d
 **Límite operativo actualizado:** el runner RDC observado en el ciclo quedó offline y los 13 dispositivos registrados aparecen offline al último listado. El contenedor de ejecución no tiene SDK .NET; el repositorio no dispone de workflow MCP-OCP preexistente ni existe acción de dispatch en el conector. Por tanto, el build nuevo no se presume. Mantendré la candidata y la evidencia como `REBUILD_PENDING_RUNNER_OFFLINE` hasta ejecutar de verdad el pipeline sobre v377/v0.1.11. No reutilizaré la prueba histórica v376/v0.1.10 como si cubriera esta revisión.
 
 **Estado:** `LEÍDO` · `RESPUESTA_INICIAL_REGISTRADA`; misma entrada §29, mismo ciclo local 06.
+
+
+### 29.5 Resultado de procesamiento MCP-OCP · ciclo local 06 · candidata preparada, build actual bloqueado
+
+**Cursor/autoridad al procesar:** main HEAD d6a52e9ba5888a905f1a8b4ebdafbb16eff5c99c; coordinación previa blob 27ca31f8ef6054d48353b551cc65ab09f54d732b; control sin cambio blob 3e6f96e919c33c3015478b7fd0f262b1bee47b0c, owned, generación 3, B AUTHORIZED. Se procesaron las dos respuestas de Gobernanza §§29.1 y 29.3 en este mismo §29; no se abrió §30 ni otra solicitud.
+
+**Fuente canónica vigente:** DUG Samantha v377 / NX-377m, Metacanon 1.28, GOW 2.17; blob 54064c8fe00f872023a455f06596061ed69062ae. El JSON embebido gov-data se parseó y cotejó: 43 principios, 22 anexos, CNP P001/P004/P005/P038/P043. Metacanon §§4/52 y principios P001/P004/P005/P020/P038/P043 aplicados. La barra lateral del mismo HTML conserva v375/NX-375m mientras título/footer/gov-data indican v377/NX-377m; no se modifica DUG desde MCP-OCP. El ciclo local 06 carece de marcas temporales completas desde su inicio, por lo que performance=NOT_MEASURED y no integra la línea base.
+
+**Núcleo/índice actualizados bajo B y verificados:**
+- Núcleo MCP-OCP v0.1.11, blob 9b9f13b06a9797b5f9b9ff5b80dd511b26163321. Se añadió §3.1 con cursor de adquisición DUG v377, Metacanon/GOW, CNP, estado histórico v373 separado y anomalía de presentación del sidebar. §11 ahora contiene backlink explícito a DUG v377.
+- README MCP-OCP blob 43c2d6ce17279984c5bf05e02040881263d50cd8. Refleja v0.1.11, DUG v377, ciclo 06 abierto y la corrección del build histórico.
+- Ambas escrituras se leyeron de vuelta con contenido exacto; control sin mutación.
+
+**Candidata selectiva preservada:**
+- Rama: integration/ocp-mcp-0.1.0-selective-20261101.
+- HEAD de rama al último read-back: a0818565a221fa60512017921b68ac1227af1356.
+- Base exacta: main d6a52e9ba5888a905f1a8b4ebdafbb16eff5c99c; compare ahead 3 / behind 0; merge-base igual a main. Se conserva el main completo y solo se injertan los archivos de código/pruebas/Build/Prepare-Sources y recibo propio del candidato; no se copia el README viejo ni los manifiestos de entrega anteriores. Selección: 22 rutas.
+- Template de fuentes, blob  ef0a1aaafbcc2b53850ab5f2b47f36528c13fb5e: ambas entradas pinneadas al main d6a52e9ba5888a905f1a8b4ebdafbb16eff5c99c; DUG blob 54064c8fe00f872023a455f06596061ed69062ae; núcleo blob 9b9f13b06a9797b5f9b9ff5b80dd511b26163321. Se leyeron de vuelta y coinciden.
+- Recibo de candidata, blob 88a52ec8fadcbcbf345e25d7f545300c9a2fab3e: REBUILD_PENDING_RUNNER_OFFLINE. Conserva por separado la ejecución histórica de commit 2c1cc3db2f2a085d3a2d93a41daf2e82c5ea5605, que sí dio 31/31 unitarias y 29/29 integración PASS con DUG v376/NX-376m y núcleo v0.1.10; ese resultado no valida DUG v377/núcleo v0.1.11.
+
+**Bloqueo material de verificación:** los 13 dispositivos RDC registrados aparecen Offline; el PC-14 usado en el build anterior consta Offline. El contenedor de ejecución no tiene SDK .NET. Los dos workflows existentes del repositorio validan bootstrap canónico y gobernanza RDC; ninguno compila MCP-OCP. El conector actual no expone dispatch de workflows. No se inventó ni se sustituyó un runner. Por ello no se ejecutó el pipeline posterior a la actualización del núcleo v0.1.11: no hay nuevo BUILD_EXIT, resumen 31/29, build-manifest, package SHA ni read-back de artefacto para la revisión actual.
+
+**Clasificación honesta:** GATE_INCOMPLETO / CICLO LOCAL 06 ABIERTO. Las etapas LEÍDO y RESPUESTA_INICIAL_REGISTRADA se cumplieron; el trabajo documental de cursor, backlink, candidata y pins fue procesado y leído de vuelta. Falta el build/tests completos sobre DUG v377 y núcleo v0.1.11 requerido por Gobernanza, por indisponibilidad del runner. No se declara MVP_TÉCNICO_VERIFICADO para la candidata actual. No se creó PR, no se hizo merge, no se instaló en EP ni se aceptó el producto. MCP-NORMATIVO sigue DESACTIVADO; selección normativa permanece fail-closed por ausencia de metadatos aprobados. Sink continúa sin despliegue/prueba.
+
+**Continuación obligatoria en el mismo ciclo:** cuando un runner Windows vuelva a estar Online, sincronizar main y la rama candidata, comprobar de nuevo que ambos blobs fuente coinciden con el árbol de main, ejecutar una sola pasada de Build.ps1 con SDK 10.0.403, comprobar UNIT_SUMMARY y TEST_SUMMARY, manifiesto, ZIP y hashes, actualizar este recibo y cerrar §29 con read-back. No abrir otra solicitud/ciclo ni reutilizar la prueba histórica v376/v0.1.10.
+
+**Estado al cierre de este registro parcial:** LEÍDO · RESPUESTA_INICIAL_REGISTRADA · PROCESADO_PARCIAL · DOCUMENTADO · READBACK_DOCUMENTAL_VERIFICADO · BUILD_ACTUAL_PENDIENTE. DTC global EN_CURSO_RECURRENT. Folios globales CV/CY/A/B y OCP: PENDIENTE / NO ASIGNADO; FOL1 PREPARADO_PENDIENTE_ACTIVACION_IPZ.
