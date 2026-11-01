@@ -4,7 +4,7 @@
 
 - **Nombre canónico vigente:** MCP-OCP (anteriormente MCP-METODOLOGIA).
 - **Identidad canónica vigente:** MCP-OCP. **Identidad histórica:** MCP-METODOLOGIA.
-- **Versión/sello:** MCP-OCP-v0.1.10 · build 0.1.0 reproducible y reconciliación de fuentes.
+- **Versión/sello:** MCP-OCP-v0.1.11 · cursor DUG v377 y referencia normativa recíproca.
 - **Repositorio propietario:** SeryMente/metodologia, rama main.
 - **OCP canónico:** frentes/mcp-metodologia/.
 - **Núcleo operativo único:** este archivo, MCP-METODOLOGIA.md.
@@ -39,6 +39,19 @@ Antes de cada ciclo sustantivo:
 - **Registro maestro FOL1 leído:** ambitos/gestion-conversacional/REGISTRO-MAESTRO-FOLIACION.json, blob b93cbef77f2fa1a6e4290ae8177e957a1616e47b; estado PREPARADO_PENDIENTE_ACTIVACION_IPZ.
 - **Método aplicado:** Metacanon §§2–7, 27–31, 39, 42, 46–48 y 51; principios Sam P001/P038/P004/P005/P037/P035/P041/P042/P043, entre otros pertinentes.
 - La versión adquirida es una línea de base de creación, no garantía de vigencia futura. Revalidar main en cada ciclo.
+
+
+### 3.1 Cursor normativo verificado · ciclo local MCP-OCP 06
+
+- **DUG canónico actual leído:** Samantha v377 · NX-377m · evento C-GOBERNANZA-OCP-MCP-PERFORMANCE-01.
+- **Revisión de main al recuperar este cursor:** 73c3d90c9d5e86fec1b2c3e0426015b72a6cd318; DUG blob 54064c8fe00f872023a455f06596061ed69062ae.
+- **Metacanon:** 1.28; **GOW:** 2.17; 43 principios, 22 anexos. El JSON embebido gov-data se parseó correctamente y coincide en document.version=v377, document.signature=NX-377m, versiones Metacanon/GOW y miembros del CNP.
+- **CNP confirmado:** P001 (A/0.9), P004 (A/0.8), P005 (A/0.7), P038 (A/0.6) y P043 (A/0.5). La pertenencia deriva de categoría A; el decimal solo ordena dentro de la categoría.
+- **Aplicación al ciclo:** Metacanon §§4 y 52; P001, P004, P005, P020, P038 y P043, sin sustituir la lectura integral del DUG. §52 exige marcas completas desde apertura para comparar ciclos; ciclo local 06 comenzó antes de activarse la medición y queda performance=NOT_MEASURED, fuera de línea base.
+- **Anomalía de presentación observada:** el título HTML, el footer y gov-data declaran v377/NX-377m, mientras que la barra lateral aún muestra v375 · NX-375m. No se modifica el DUG desde MCP-OCP; se conserva como discrepancia visible de presentación para el propietario de Gobernanza.
+- **Línea base histórica preservada:** los datos de §3 relativos a Samantha v373/NX-373m son la adquisición de creación del OCP y no se sustituyen ni se presentan como vigentes. El cursor actual queda separado en esta subsección.
+
+
 
 ## 4. Propósito y alcance
 
@@ -246,7 +259,7 @@ El cumplimiento de la compuerta no asigna folios ni crea una sesión/control nue
 - **Crónica:** cronica/C-MCP-METODOLOGIA-001.md.
 - **Evidencia:** evidencias/C-MCP-METODOLOGIA-001.json.
 - **Salida final conservada:** entregas/CHATGPT-v0.1/C-MCP-METODOLOGIA-001-salida-final.md.
-- **Fuente normativa:** ../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html.
+- **Fuente normativa canónica vigente:** [DUG Samantha v377 · NX-377m · Metacanon 1.28 · GOW 2.17](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html); cursor de adquisición MCP-OCP ciclo local 06: main 73c3d90c9d5e86fec1b2c3e0426015b72a6cd318, blob 54064c8fe00f872023a455f06596061ed69062ae.
 - **Inventario multi-repositorio:** ../../INVENTARIO-REPOSITORIOS-Y-FRENTES.md.
 - **Khora MCP independiente:** https://github.com/SeryMente/khora/blob/main/docs/frentes/observabilidad-mcp/OBJETO-CANONICO.md.
 - **Control Khora MCP observado:** https://github.com/SeryMente/khora/blob/main/docs/frentes/observabilidad-mcp/CONTROL-RESPONSABILIDAD.json.
