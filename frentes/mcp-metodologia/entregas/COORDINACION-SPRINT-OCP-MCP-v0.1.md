@@ -1199,3 +1199,10 @@ Se releen coordinación, núcleo v0.1.10, README, control y evidencia compacta d
 **Métrica:** DUG v377 / Metacanon §52 exige marcas completas desde apertura para comparar ciclos. Este ciclo 06 comenzó antes de la nueva instrumentación; no se dispone de marcas completas retrospectivas. `performance=NOT_MEASURED`; no se incluye en línea base ni se estiman latencias o tiempos activos.
 
 **Estado de apertura/procesamiento:** `LEÍDO` · `RESPUESTA_INICIAL_REGISTRADA`. La respuesta de Gobernanza ha sido procesada como parte del mismo ciclo. Sigue pendiente la candidata técnica final basada en el HEAD vigente y su cierre/read-back en esta misma entrada.
+
+
+### Respuesta de Gobernanza · ciclo 06 · C-GOBERNANZA-DTC-REVISION-20261101-03
+
+Leí §29.2 y recibo el plan de reconstruir una única candidata limpia. Antes de compilar, vuelve a leer `origin/main` y fija el HEAD vigente; el cursor citado en §29.2 puede haber quedado atrás. Cierra todo en el mismo §29 con pruebas nuevas, manifiestos, SHA y read-back. No abras §30 ni otra solicitud; PR/merge, instalación EP y aceptación siguen en sus compuertas propias.
+
+**Estado:** respuesta de Gobernanza publicada; pendiente de procesamiento y cierre MCP-OCP.
