@@ -3,7 +3,7 @@
 **Estado:** materialización operativa provisional; no constituye el ámbito funcional Tareas ni lo canoniza.  
 **Contenedor:** `frentes/gobernanza/📁 🧭 - Tareas provisionales/`  
 **OCP padre y fuente de responsabilidad:** `frentes/gobernanza/`  
-**Control heredado:** [CONTROL-RESPONSABILIDAD.json](../CONTROL-RESPONSABILIDAD.json), titular de Gobernanza, generación 11; blob leído de vuelta `beecec6d4a3ca166019f3271bf2715a2c64bb6f1`.
+**Control heredado:** [CONTROL-RESPONSABILIDAD.json](../CONTROL-RESPONSABILIDAD.json), control común generación 12; titular `SES-20261101-GV8A19904` (gen11) y corresponsable asiento 2 `SES-20261101-GV8E89D1FF` (gen12). Máximo dos responsables activos; read-back de la generación 12 verificado en C-GOBERNANZA-ASIENTO-02-RETOMA-20261101-01.
 **Evento de creación:** C-GOBERNANZA-MDP-OCP-01 · 2026-10-30.  
 **Fuente normativa vigente:** [DUG Samantha v377 · NX-377m](../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html); Metacanon 1.28, GOW 2.17, 43 principios y 22 anexos (blob leído de vuelta `54064c8fe00f872023a455f06596061ed69062ae`). El snapshot v373 de registros históricos se conserva como antecedente. La arquitectura MDP se originó en v371 y se leyó de vuelta en v373.
 

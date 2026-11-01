@@ -1,6 +1,6 @@
 # GOV-TASK-012 — Revisión integral de fluidez y desempeño del marco de Gobernanza
 
-**Estado:** en_curso · **Tipo:** tarea propia de Gobernanza · **Responsabilidad:** heredada del OCP Gobernanza, generación 11. No crea un FT, OCP, control, sesión ni folio independiente.
+**Estado:** en_curso · **Tipo:** tarea propia de Gobernanza · **Responsabilidad:** heredada del OCP Gobernanza, control común generación 12 (titular gen11 preservado; asiento 2 `SES-20261101-GV8E89D1FF`, gen12). No crea control ni folio independiente. No crea un FT, OCP, control, sesión ni folio independiente.
 
 ## Objetivo
 

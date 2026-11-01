@@ -1,6 +1,6 @@
 # Frente de trabajo · Gobernanza
 
-- **Original de conversación 2 persistido · C-GOBERNANZA-ASIENTO-02-RETOMA-20261101-01 (2026-11-01):** [original](documentos/originales/ChatGPT-GOBERNANZA-2-20261101-1655.md) · [crónica](cronica/C-GOBERNANZA-ASIENTO-02-RETOMA-20261101-01.md) · [evidencia](evidencias/C-GOBERNANZA-ASIENTO-02-RETOMA-20261101-01.json) · [manifiesto](documentos/MANIFIESTO-DOCUMENTAL.json). 42.949 bytes; SHA-256 `71172E0F62C10B4A34FE5F04D5520F28F9ACA6C82771DB6882F70E266CDA7AB4`; Git blob `6814f4029891f953dabe91b376254b49dcc1ce47`; read-back byte a byte verificado. El relevo del asiento 2 está autorizado y en proceso, pendiente de escritura CAS.
+- **Original de conversación 2 persistido · C-GOBERNANZA-ASIENTO-02-RETOMA-20261101-01 (2026-11-01):** [original](documentos/originales/ChatGPT-GOBERNANZA-2-20261101-1655.md) · [crónica](cronica/C-GOBERNANZA-ASIENTO-02-RETOMA-20261101-01.md) · [evidencia](evidencias/C-GOBERNANZA-ASIENTO-02-RETOMA-20261101-01.json) · [manifiesto](documentos/MANIFIESTO-DOCUMENTAL.json). 42.949 bytes; SHA-256 `71172E0F62C10B4A34FE5F04D5520F28F9ACA6C82771DB6882F70E266CDA7AB4`; Git blob `6814f4029891f953dabe91b376254b49dcc1ce47`; read-back byte a byte verificado. Asiento 2 relevado y read-back del control verificado: titular generación 11 preservado; nueva corresponsable `SES-20261101-GV8E89D1FF`, generación 12; dos responsables activos, máximo dos.
 
 ## Antecedentes documentales
 
