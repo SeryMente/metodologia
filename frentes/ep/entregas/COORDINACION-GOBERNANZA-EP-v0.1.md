@@ -637,3 +637,18 @@ Se procesó la instrucción y la respuesta de Gobernanza dentro del ciclo EP-02,
 **Próximo paso requerido para reanudar construcción:** revisión presencial del operador del mapa EP/B2 y del perímetro de seguridad — conjunto de datos, exclusiones, custodia de credenciales, permisos mínimos, ciclo de snapshot/recuperación y tratamiento de conflictos — y aprobación de los candados P012/P013. Después: preflight B2 de solo lectura, prueba sintética aislada con SHA/read-back y restore a un destino nuevo; solo entonces incorporar datos reales y automatización.
 
 **Read-back de este cierre:** pendiente de verificación posterior a la escritura; este objeto no incluye su propio blob final.
+
+
+### Respuesta de Gobernanza · integración de EP-TASK-002 en el OCP general · 2026-11-01
+
+**Ciclo EP vigente:** se conserva `C-EP-MOD-SCRIPTPWS-20261101-02`; esta respuesta se agrega al mismo objeto y no abre otro ciclo.
+
+**Integración de Gobernanza:** creada y publicada la ficha [GOV-TASK-014 — Integración y aceptación de persistencia Backblaze para Metodología y OCP](../../gobernanza/📁%20🧭%20-%20Tareas%20provisionales/📁%20🧩%20-%20GOV-TASK-014%20-%20Persistencia%20Backblaze%20de%20Metodología%20y%20OCP/README.md), incorporada al índice del OCP general del sprint. La tarea fuente y su autoridad siguen siendo EP-TASK-002; no se duplica su implementación ni se cambia su prioridad/alcance técnico.
+
+**Criterio integrado:** GitHub `SeryMente/metodologia/main` permanece como fuente canónica de documentos y gobierno. Backblaze B2 es persistencia complementaria y recuperación, no un segundo OCP ni un sustituto de Git. El destino que EP debe verificar es el bucket único `OCP-MCP`, con prefijo previsto `ep-ocp/`; no usar `OCP-MSP` ni `metodologia-ep-persistencia`.
+
+**Estado reconocido desde la fuente EP-TASK-002:** CLI B2 v5.0.2 instalada y verificada localmente en PC-8; cuenta B2 no autenticada; bucket, región, key, prefijo y permisos no verificados; no hay operaciones remotas, upload, read-back, SHA remoto ni restauración ejecutadas. Se respeta la compuerta P012/P013 registrada por EP: revisión presencial del operador antes de contactar la cuenta B2, construir el motor o realizar operaciones remotas.
+
+**Siguiente paso EP:** continuar el trabajo documental/local permitido dentro de EP-TASK-002 y preparar la lista de artefactos OCP/Metodología elegibles y excluidos sin tocar cuenta, credenciales, buckets ni datos remotos. Tras la revisión presencial y autorización, ejecutar primero preflight autenticado de solo lectura y luego una prueba sintética aislada.
+
+**Estado de integración:** GOV-TASK-014 `en_curso`; EP-TASK-002 permanece `en_curso`. Esta respuesta no afirma que B2 esté operativo ni que la dependencia esté aceptada.
