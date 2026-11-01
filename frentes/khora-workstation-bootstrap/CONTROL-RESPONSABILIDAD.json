@@ -5,23 +5,23 @@
   "front_ocp": "frentes/khora-workstation-bootstrap/",
   "state_object": "frentes/khora-workstation-bootstrap/KHORA-WORKSTATION-BOOTSTRAP.md",
   "status": "owned",
-  "owner_thread": "chatgpt-C-KHORA-WORKSTATION-BOOTSTRAP-01",
-  "owner_thread_identity_kind": "operational alias; native ChatGPT conversation ID not exposed by available tools",
-  "instance": "chatgpt-khora-workstation-bootstrap-2026-10-30",
-  "generation": 1,
-  "authorization_ref": "Instrucción expresa del operador en la conversación actual: «documentalo en un OCP provisional para este script en metodolopgia para que lo trabajes con persistencia»; alcance limitado al OCP KHORA Workstation Bootstrap.",
+  "owner_thread": "chatgpt-C-KHORA-WORKSTATION-BOOTSTRAP-TRANSFER-20261101-01",
+  "owner_thread_identity_kind": "alias operativo; ID nativo de conversación de ChatGPT no expuesto por las herramientas disponibles",
+  "instance": "chatgpt-khora-workstation-bootstrap-transfer-20261101-01",
+  "generation": 2,
+  "authorization_ref": "Instrucción expresa del operador en la conversación actual: «documentalo en un OCP provisional para este script en metodolopgia para que lo trabajes con persistencia»; alcance limitado al OCP KHORA Workstation Bootstrap. Transferencia expresamente autorizada por el operador el 2026-11-01: «Trasnfer REsponsibility»; interpretación TRANSFER_RESPONSIBILITY; evento C-KHORA-WORKSTATION-BOOTSTRAP-TRANSFER-20261101-01.",
   "scope": "Auditoría, documentación, endurecimiento y pruebas del único bootstrap PowerShell KHORA almacenado en SeryMente/metodologia. Incluye autenticación GitHub para acceder al repositorio privado, verificación del script, dependencias CLI y flujo RDC. Excluye Next.js, aplicaciones web, UI web, servidores web, build/deploy web, cambios al DUG y otros OCP. El script fuente no debe persistirse como copia local.",
   "expiry": null,
-  "handoff": "Asignación inicial de un OCP nuevo: ruta/control no existían al preflight. El operador solicitó expresamente crear y mantener este OCP provisional. Alias operativo, no ID nativo. Registro cooperativo; no ofrece fencing universal frente a escritores que eludan el control.",
+  "handoff": "TRANSFER_RESPONSIBILITY: titular anterior chatgpt-C-KHORA-WORKSTATION-BOOTSTRAP-01 sustituido por chatgpt-C-KHORA-WORKSTATION-BOOTSTRAP-TRANSFER-20261101-01; instancia chatgpt-khora-workstation-bootstrap-transfer-20261101-01; generación 1 → 2. ID nativo no expuesto; alias operativo y UUIDv7 local registrados. Evento C-KHORA-WORKSTATION-BOOTSTRAP-TRANSFER-20261101-01. FOL1 PREPARADO, NO ACTIVO; sin folio.",
   "session_folio": null,
   "session_assignment": {
     "status": "active_unfoliated",
     "folio": null,
     "front_ocp": "frentes/khora-workstation-bootstrap/",
-    "owner_alias": "chatgpt-C-KHORA-WORKSTATION-BOOTSTRAP-01",
-    "instance": "chatgpt-khora-workstation-bootstrap-2026-10-30",
-    "generation": 1,
-    "identity_kind": "operational alias; not a native ChatGPT conversation ID",
+    "owner_alias": "chatgpt-C-KHORA-WORKSTATION-BOOTSTRAP-TRANSFER-20261101-01",
+    "instance": "chatgpt-khora-workstation-bootstrap-transfer-20261101-01",
+    "generation": 2,
+    "identity_kind": "alias operativo; ID nativo de conversación de ChatGPT no expuesto por las herramientas disponibles",
     "foliation": "FOL1 PREPARADO, NO ACTIVO; no se asigna folio."
   },
   "initialization": {
@@ -71,5 +71,26 @@
       "scope": "Comprobación acotada en cuatro controles accesibles y búsqueda de código conectada; no demuestra unicidad global en todos los repositorios."
     }
   },
-  "ownership_history": []
+  "ownership_history": [
+    {
+      "event_id": "C-KHORA-WORKSTATION-BOOTSTRAP-TRANSFER-20261101-01",
+      "uuidv7_local": "01a19945-ec5e-75ff-88e4-c5bd06857f9c",
+      "operation": "TRANSFER_RESPONSIBILITY",
+      "authorization_literal": "Trasnfer REsponsibility",
+      "authorization_interpretation": "Autorización afirmativa explícita para sustituir al titular.",
+      "authorization_recorded_at": "2026-11-01T22:40:58.974Z",
+      "previous_owner": "chatgpt-C-KHORA-WORKSTATION-BOOTSTRAP-01",
+      "previous_instance": "chatgpt-khora-workstation-bootstrap-2026-10-30",
+      "previous_generation": 1,
+      "previous_control_blob_sha": "e6ed85ae78f5ad614d593c91d56361f16056582f",
+      "new_owner_alias": "chatgpt-C-KHORA-WORKSTATION-BOOTSTRAP-TRANSFER-20261101-01",
+      "new_instance_alias": "chatgpt-khora-workstation-bootstrap-transfer-20261101-01",
+      "native_conversation_id": null,
+      "identity_kind": "alias operativo; ID nativo de conversación de ChatGPT no expuesto por las herramientas disponibles",
+      "new_generation": 2,
+      "scope": "frentes/khora-workstation-bootstrap/ y su único script bootstrap PowerShell",
+      "session_folio": null,
+      "foliation": "FOL1 PREPARADO, NO ACTIVO; sin folio asignado."
+    }
+  ]
 }
