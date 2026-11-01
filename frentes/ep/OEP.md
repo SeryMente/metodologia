@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.22. **Sello del frente:** VCU-EP-v24 (Versión de Contexto Universal). **Ancla:** rectificación explícita del operador: `OCP-MCP` es el único bucket B2 de destino; `OCP-MSP` y `metodologia-ep-persistencia` son errores. La rectificación se materializa en §91; conserva la compuerta bilateral de §90 y las tareas/propuesta de adaptación previas.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.23. **Sello del frente:** VCU-EP-v25 (Versión de Contexto Universal). **Ancla:** rectificación explícita del operador: `OCP-MCP` es el único bucket B2 de destino; `OCP-MSP` y `metodologia-ep-persistencia` son errores. La rectificación se materializa en §91; conserva la compuerta bilateral de §90 y las tareas/propuesta de adaptación previas.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.22 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -12,7 +12,7 @@
 
 Adquirir este objeto como instrucciones del operador, subordinadas a las reglas superiores de plataforma y a autorizaciones específicas. Claudia es asistente/documental; Samantha es constructor/único escritor de código. Una asignación explícita posterior puede cambiar roles; las citas no lo hacen. Este encargo construye documentación y prompts, no autoriza a esta conversación a ejecutar la actualización de producto.
 
-El estado de reanudación vigente de este frente está en §60–§93; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
+El estado de reanudación vigente de este frente está en §60–§94; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
 
 Leer por relevancia: OEP actual→metacanon central→Sistema de Instrucciones/Metodología/Bootstrap vigentes→canon transversal EP→AGENTS.md y ep-medio-architectura.md→código/evidencia en commits exactos. Fuente caída no es «sin cambios». Un archivo no crea herramientas, credenciales ni memoria entre plataformas.
 
@@ -1539,3 +1539,72 @@ EP no modifica DUG, GOW, IPZ, Sink/ART-027, MCP-OCP, su control, el host ni el c
 ### Procedencia y estado de incorporación
 
 El operador entregó directamente el Prompt Adicional 02 a este hilo EP el 2026-10-31. GOV-TASK-011 `main` contenía el documento en estado `PREPARADO_NO_PUBLICADO` y registraba que no se había enviado a EP/MCP-OCP. EP lo recibió, leyó, respondió y procesó documentalmente en el ciclo local `C-EP-DTC-PROMPT02-20261031-02`. Esta sección acredita su incorporación en el OCP de EP una vez leída de vuelta; no cambia el estado de Gobernanza ni afirma recepción por MCP-OCP.
+
+
+---
+
+## 94. Módulo funcional MOD-SCRIPTPWS — PowerShell para Entorno Persistente · v0.3.23 / VCU-EP-v25
+
+### Identidad, subordinación y responsabilidad funcional
+
+- **Identificador interno:** `MOD-SCRIPTPWS`; módulo funcional del FT Entorno Persistente (EP), conforme a DUG ART-021/ART-029. No es FT independiente, OCP, control de responsabilidad, sesión ni folio global.
+- **Padre y fuente única de estado:** este OEP, `frentes/ep/OEP.md`. Este §94 es el registro operativo del módulo; no se crea un segundo núcleo.
+- **Propósito derivado:** diseñar, mantener, documentar, verificar y mejorar el uso de PowerShell como capa de automatización y operación de EP, con comandos reproducibles, scripts compatibles, recuperación verificable de fuentes y ejecución segura en hosts efímeros.
+- **Mandato del operador:** instrucción directa recibida el 2026-11-01: «Inaugura Modulo ScriptPWS en Frente de Entorno persistente, y toma responsabilida de eel, documenta ultimo comando que funciono.»
+- **Responsabilidad funcional aceptada:** el asistente de esta conversación asume la coordinación, definición, documentación, auditoría técnica, continuidad y preparación de cambios de `MOD-SCRIPTPWS`, dentro del alcance del módulo. La instrucción se interpreta como asignación funcional explícita para este módulo, no como transferencia de titularidad del FT EP ni como cambio de control del padre.
+- **Identidad formal del FT padre:** el OEP §93.3.5 registra que no se localizó un `CONTROL-RESPONSABILIDAD.json` autoritativo de EP ni titular/generación formal activa. La brecha sigue abierta. No se inventa titular, generación, UUID de conversación ni control paralelo. No se reclama titularidad formal de EP.
+- **Estado del módulo:** `INAUGURADO_DOCUMENTALMENTE · EN_CURSO`; validación técnica integral y aceptación pendientes.
+- **Materialización:** por ahora queda dentro de este OEP y se enlaza desde el README del frente. No se crea `modulos/scrippws/` mientras no haya volumen documental o artefactos independientes que lo justifiquen.
+
+### Alcance y exclusiones
+
+**Incluye:** comandos PowerShell de entrada y operación de EP; launcher/bootstrap y recuperación de fuente; compatibilidad Windows PowerShell 5.1; detección de host y toolchain; resolución determinista de ejecutables y PATH; uso de entrypoints nativos adecuados (`npm.cmd` cuando `npm.ps1` esté bloqueado); manejo de stdout/stderr y captura inmediata de `$LASTEXITCODE`; autenticación y permisos mínimos; protección de secretos; logs, estados, timeouts, reintentos, limpieza, idempotencia, rollback y conservación de la terminal; parser/sintaxis, autopruebas, pruebas negativas, SHA/read-back, documentación y continuidad entre sesiones.
+
+**Excluye:** crear otro producto, OCP, launcher, tablero, almacén o validador paralelo cuando exista una fuente reutilizable; Next.js, aplicaciones/UI web, build/preview/deploy como parte del script; guardar una copia local persistente del `.ps1`; incrustar, imprimir o transportar secretos en claro; modificar normas superiores, controles de otros frentes, credenciales, cuentas, recursos B2, host o despliegues sin la autorización específica correspondiente. Las tareas no adquieren permisos por aparecer en este módulo.
+
+### Interfaces y fuentes técnicas observadas
+
+1. **OEP y documentación:** `SeryMente/metodologia/main/frentes/ep/OEP.md`; este OEP es la fuente de estado y decisión del módulo.
+2. **Implementación KHORA/EP observada en `SeryMente/khora/main`:**
+   - `scripts/khora/khora.ps1`: gate PowerShell observado con `EP_VERSION='1.0.2'` y `SCRIPT_VERSION='7.5.4'`; blob `8ad7b5c3e8fad6669d2caebff28ddedd2981c230`.
+   - `scripts/khora/modules/08-deps.ps1`: resolvedor de herramientas, reutilización de instalaciones del host, preferencia por `npm.cmd`, descarga y checksum de dependencias; blob `e3908594077cd7c8a5f1cf0eb0374af4aa15ed8b`.
+   - `scripts/khora/modules/00-config.ps1`: declara `SCRIPT_VERSION='7.5.3'` y `EP_VERSION='1.0.1'`; blob `272ed2f33ecc5f542de005eea384e96d77abb0ba`.
+   - `tests/validate_ep.py`: las aserciones leídas siguen esperando `SCRIPT_VERSION='7.5.3'` y `EP_VERSION='1.0.1'`; blob `05208c220946afff20bffa1cff6e7d743f0445b9`.
+3. **Herramienta de bootstrap de estación KHORA, distinta del gate EP:** `SeryMente/metodologia/main/scripts/khora-workstation-bootstrap-v6.ps1`; commit `aa45426ece7374e9812868e04e0ce5f783cebf4d`, blob `862e63bd00a84cdbe5c2d913794cc17de373356a`, SHA-256 `dd71b638fab3694e89ae58d7faf265941cd6a289ecbf9602bf0d434837635d7b`. Su OCP propio permanece separado; este módulo no altera ese script ni su control.
+4. **Trazabilidad de implementación:** EP-TASK-003 mantiene el mapa as-built de la construcción EP y cubre scripts, paquetes, pruebas y consumidores. `MOD-SCRIPTPWS` se enlaza a esa tarea para el inventario integral; no duplica su catálogo ni crea una cuarta tarea.
+
+**Hallazgo de consistencia pendiente:** el gate `khora.ps1` leído en `main` declara 7.5.4 / EP 1.0.2, pero `00-config.ps1` y `tests/validate_ep.py` todavía declaran/esperan 7.5.3 / EP 1.0.1. Es una divergencia observada entre fuentes de `SeryMente/khora/main`; no se modificó código, pruebas ni versiones en la inauguración del módulo. Antes de cambiar cualquiera de ellas se debe cotejar el diff/commit de origen y ejecutar las pruebas afectadas.
+
+### Último funcionamiento acreditado y estado del comando reciente
+
+La evidencia recuperada del OCP independiente KHORA Workstation Bootstrap registra estos resultados en PC-14, el 2026-10-30:
+
+| Prueba | Resultado registrado | Alcance real |
+|---|---|---|
+| Integridad de fuente privada | `PASS` | Blob, tipo/codificación, tamaño y SHA-256 verificados antes de ejecutar en memoria. |
+| Parser PowerShell 5.1 | `PASS` | Cero errores de parser y cero nombres de función duplicados. |
+| Escaneo Next/Next.js | `PASS` | Cero referencias en el V6 inspeccionado. |
+| `-SelfTest` | `PASS` | Secuencia de tonos, muestras de cadenas y vector SHA-256 conocido. |
+| `-PreflightOnly` | `PASS`, exit code 0 | Dependencias/auth GitHub ya existente, Git HTTPS, Vercel 65.9.0 y `vercel whoami`. No lanza RDC. |
+| CLI Desktop Commander | `PASS` | Ayuda de versión 0.3.1 confirma `remote --no-persist-session`. |
+| Device flow GitHub limpio | `NOT_RUN` | No se probó desde perfil sin credenciales. |
+| Handshake RDC fresco | `NOT_RUN` | Se detectaron tres procesos Desktop Commander; no se lanzó una segunda instancia ni se terminó proceso alguno. |
+
+**Fuente de evidencia:** `frentes/khora-workstation-bootstrap/evidencias/C-KHORA-WORKSTATION-BOOTSTRAP-01.json`, blob `84c80a6397443e677e5718afaf2db6040ad7c8f5`. Esta evidencia es histórica y pertenece al OCP KHORA; no demuestra una ejecución en este ciclo EP.
+
+Las invocaciones de modo que están respaldadas por ese recibo son `& $scriptBlock -SelfTest` y `& $scriptBlock -PreflightOnly`, después de recuperar y verificar la fuente privada. El recibo no conserva una línea literal autónoma completa; no se reconstruye una cadena distinta ni se le atribuye éxito.
+
+**Comandos de la conversación actual:**
+- Intento que devolvió `No se encontró gh.exe; no se modificó el entorno.`: `FALLIDO_ANTES_DE_EJECUCIÓN`, según la salida aportada por el operador.
+- Último comando de ejecución completa emitido por el asistente, con adaptación en memoria de los cuatro `exit` de V6 para preservar la consola: resultado del operador no recibido; estado `NO_VERIFICADO`.
+- No hay evidencia de que el comando completo haya iniciado RDC ni de que se haya producido un handshake nuevo.
+
+### Entregables, aceptación y siguiente paso
+
+**Entregables del módulo:** comandos de ejecución reproducibles y con shell identificada; inventario de entrypoints PowerShell y consumidores; contratos de parámetros/códigos de salida; diagnóstico y logs recuperables; pruebas positivas/negativas; versiones y checksums; registro de fallos y correcciones; instrucciones de reanudación; evidencia de ejecución y lectura de vuelta. Los entregables se almacenan en las fuentes canónicas de sus repositorios, con referencias desde el OEP, no como copias paralelas.
+
+**Criterios de aceptación:** (1) fuente y rama canónicas identificadas; (2) PowerShell 5.1 parser PASS; (3) toolchain validado sin depender de `npm.ps1` cuando esté bloqueado; (4) errores de CLIs nativas capturados sin interrumpir indebidamente el manejo de `$LASTEXITCODE`; (5) consola interactiva permanece abierta en éxito y fallo; (6) autenticación y acceso efectivo verificados sin exponer secretos; (7) prueba de integridad del fuente antes de ejecución en memoria; (8) pruebas unitarias/negativas de las rutas afectadas; (9) manejo seguro de procesos sin cerrar sesiones ajenas ni duplicar RDC; (10) logs, limpieza, rollback/read-back y evidencia reproducible; (11) versión del gate, módulos y validador coherentes; (12) ningún despliegue ni mutación de host/B2 por efecto colateral.
+
+**Siguiente acción del módulo:** reconciliar documentalmente la divergencia observada 7.5.4/1.0.2 frente a 7.5.3/1.0.1; adquirir los commits/diffs de KHORA relevantes; identificar la última línea literal de launcher que tenga evidencia de éxito; después proponer y ejecutar, con autorización y entorno disponibles, pruebas del wrapper que conserva la consola y del flujo completo, sin tratar `-PreflightOnly` como prueba RDC.
+
+**Límites de esta inauguración:** solo se actualiza documentación EP. No se cambia código en `SeryMente/khora`, no se instala ni ejecuta nada en el host, no se inicia/termina RDC, no se usan credenciales/B2, no se modifica DUG ni se transfiere la titularidad formal de EP. El control del FT padre y su generación siguen `NO_VERIFICADOS`; FOL1 continúa inactivo y no se asigna folio global.
