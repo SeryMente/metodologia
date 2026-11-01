@@ -1,23 +1,23 @@
 {
   "schema": "responsabilidad/1",
   "front": "mcp-metodologia",
-  "canonical_identity": "MCP-METODOLOGIA",
+  "canonical_identity": "MCP-OCP",
   "repository": "SeryMente/metodologia",
   "front_ocp": "frentes/mcp-metodologia/",
   "state_object": "frentes/mcp-metodologia/MCP-METODOLOGIA.md",
   "status": "owned",
   "owner_thread": null,
   "owner_thread_identity_kind": "Native ChatGPT conversation ID not exposed; owner_alias is an operational alias",
-  "owner_alias": "chatgpt-ocp-mcp-01a192fb-8346-710a-ba99-54350ab2dfd9",
+  "owner_alias": "chatgpt-mcp-ocp-01a19495-aec0-78e2-a7b6-10ab72a2be78",
   "owner_alias_type": "operational_alias_not_native_thread_id",
-  "instance": "chatgpt-ocp-mcp",
-  "uuidv7_local": "01a192fb-8346-710a-ba99-54350ab2dfd9",
-  "generation": 2,
-  "authorization_ref": "Instrucción directa del operador en la conversación del 2026-10-31: “Tienes autorizacion previa, para esto y lo qu enecesites, resuelve de extremo a extremo”, aplicada separadamente a A (transferencia CAS) y B (construcción, compilación y pruebas del servidor MCP dentro de frentes/mcp-metodologia/).",
-  "authorization_event": "C-MCP-METODOLOGIA-TRANSFER-20261031-01",
+  "instance": "chatgpt-mcp-ocp",
+  "uuidv7_local": "01a19495-aec0-78e2-a7b6-10ab72a2be78",
+  "generation": 3,
+  "authorization_ref": "Instrucción directa del operador en esta conversación (2026-10-31): REtoma repsonsabilidad del Frente MCP OCP, de hecho se llama OCP MCP, pero renombrfalo, es MCP-OCP adjunta convewrascion en persistencia documental del frente. Aplicada a la transferencia A y al renombramiento documental del mismo OCP; no amplía B ni autoriza operaciones fuera del alcance ya registrado.",
+  "authorization_event": "C-MCP-OCP-RETOMA-20261031-01",
   "scope": "Autoriza la construcción del servidor MCP de Metodología dentro de frentes/mcp-metodologia/: implementación de código, pruebas automatizadas, compilación en entorno de build, corrección de defectos, generación del manifiesto verificable y empaquetado del artefacto 0.1.0, además de documentación técnica de implementación y reportes de avance a coordinación central/EP. No autoriza instalación ni operación en el host persistente EP; cambios de configuración local EP, ACL, propietario, registro, firewall, servicios, tareas programadas o procesos del host; uso/modificación del control EP; cambios del DUG, ART-025, ART-027, IPZ, Sink productivo, MCP-NORMATIVO o Khora; despliegue público, exposición de puertos, credenciales externas ni cambios fuera de frentes/mcp-metodologia/.",
   "expiry": null,
-  "handoff": "Transferencia CAS autorizada por instrucción directa del operador. Anterior titular: chatgpt-C-MCP-METODOLOGIA-001-01a192b3-1063-7916-be41-ebfa974ede73 (generación 1). Nuevo titular: chatgpt-ocp-mcp-01a192fb-8346-710a-ba99-54350ab2dfd9 (UUIDv7 local 01a192fb-8346-710a-ba99-54350ab2dfd9, no ID nativo; generación 2). Precondición: CONTROL-RESPONSABILIDAD.json blob SHA ffa27d9c62c557aa4894eebfd8c4cbf44ed09335. Transferencia solo válida después de commit y lectura de retorno que verifiquen titular, generación, alcance y nuevo SHA. La autorización B es acto material separado, registrada en implementation_authorization. FOL1 permanece PREPARADO_PENDIENTE_ACTIVACION_IPZ; no se asigna folio global.",
+  "handoff": "Transferencia CAS autorizada por instrucción directa del operador en esta conversación. Anterior titular: chatgpt-ocp-mcp-01a192fb-8346-710a-ba99-54350ab2dfd9 (generación 2). Nuevo titular: chatgpt-mcp-ocp-01a19495-aec0-78e2-a7b6-10ab72a2be78 (UUIDv7 local 01a19495-aec0-78e2-a7b6-10ab72a2be78; no ID nativo; generación 3). Identidad canónica renombrada de MCP-METODOLOGIA a MCP-OCP. Se conserva la ruta frentes/mcp-metodologia/ y el objeto state_object existente. Transferencia válida tras commit y read-back de titular, generación, identidad y alcance. B conserva exactamente el alcance previamente autorizado; no se amplía. FOL1 continúa PREPARADO_PENDIENTE_ACTIVACION_IPZ.",
   "session_folio": null,
   "folio_status": "PENDIENTE/NO ASIGNADO; FOL1 = PREPARADO_PENDIENTE_ACTIVACION_IPZ",
   "session_assignment": {
@@ -25,13 +25,13 @@
     "folio": null,
     "assigned_on": "2026-10-31",
     "front_ocp": "frentes/mcp-metodologia/",
-    "owner_alias": "chatgpt-ocp-mcp-01a192fb-8346-710a-ba99-54350ab2dfd9",
-    "instance": "chatgpt-ocp-mcp",
-    "uuidv7_local": "01a192fb-8346-710a-ba99-54350ab2dfd9",
-    "generation": 2,
+    "owner_alias": "chatgpt-mcp-ocp-01a19495-aec0-78e2-a7b6-10ab72a2be78",
+    "instance": "chatgpt-mcp-ocp",
+    "uuidv7_local": "01a19495-aec0-78e2-a7b6-10ab72a2be78",
+    "generation": 3,
     "identity_kind": "operational alias + local UUIDv7; not a native ChatGPT conversation ID",
     "uniqueness_check": {
-      "status": "bounded OCP identity/path check; no global folio allocated",
+      "status": "bounded OCP path/control update; no global folio allocated",
       "path_absent_on_base_main": true,
       "target_path": "frentes/mcp-metodologia/",
       "global_uniqueness": "not_verified",
@@ -57,33 +57,28 @@
     "initial_scope": "Documentary initialization of a distinct local MCP server for methodology development and governance tasks; no software implementation, local startup, account changes or public deployment authorized by this event."
   },
   "transfer": {
-    "event_id": "C-MCP-METODOLOGIA-TRANSFER-20261031-01",
-    "authorization": "direct operator instruction on 2026-10-31",
-    "method": "GitHub Contents API update guarded by the observed existing blob SHA; abort if SHA differs",
-    "expected_previous_blob_sha": "ffa27d9c62c557aa4894eebfd8c4cbf44ed09335",
+    "event_id": "C-MCP-OCP-RETOMA-20261031-01",
+    "authorization": "Instrucción directa del operador en esta conversación (2026-10-31): REtoma repsonsabilidad del Frente MCP OCP, de hecho se llama OCP MCP, pero renombrfalo, es MCP-OCP adjunta convewrascion en persistencia documental del frente.",
+    "method": "GitHub Contents API update guarded by the exact observed control blob SHA; abort on mismatch",
+    "expected_previous_blob_sha": "4a4742a51f0517a1b152a9c04ac6c185de024389",
     "previous_owner": {
-      "owner_alias": "chatgpt-C-MCP-METODOLOGIA-001-01a192b3-1063-7916-be41-ebfa974ede73",
-      "owner_alias_type": "operational_alias_not_native_thread_id",
-      "instance": "chatgpt-mcp-metodologia-974ede73",
-      "uuidv7_local": "01a192b3-1063-7916-be41-ebfa974ede73",
-      "generation": 1,
-      "scope": "Inicialización documental del OCP MCP de Metodología, establecimiento de identidad/control y continuidad documental. No autoriza código, instalación/arranque local, puertos, credenciales, cambios de bases de datos, acceso RDC a un equipo concreto, activación de MCP-NORMATIVO, despliegue público/Vercel ni cambios al OCP Khora MCP."
+      "owner_alias": "chatgpt-ocp-mcp-01a192fb-8346-710a-ba99-54350ab2dfd9",
+      "generation": 2,
+      "instance": "chatgpt-ocp-mcp"
     },
     "new_owner": {
-      "alias": "chatgpt-ocp-mcp-01a192fb-8346-710a-ba99-54350ab2dfd9",
-      "instance": "chatgpt-ocp-mcp",
-      "uuidv7_local": "01a192fb-8346-710a-ba99-54350ab2dfd9",
-      "generation": 2,
-      "owner_alias_type": "operational_alias_not_native_thread_id"
+      "owner_alias": "chatgpt-mcp-ocp-01a19495-aec0-78e2-a7b6-10ab72a2be78",
+      "owner_alias_type": "operational_alias_not_native_thread_id",
+      "instance": "chatgpt-mcp-ocp",
+      "uuidv7_local": "01a19495-aec0-78e2-a7b6-10ab72a2be78",
+      "generation": 3
     },
-    "generation_before": 1,
-    "generation_after": 2,
-    "result": "VERIFIED",
-    "transfer_commit_sha": "d540b1ae246c53cd3877abb0e74722d24afeb1ec",
-    "control_readback_sha": "a8b186de6d6424312b836c931a42f0156ff53b23",
-    "generation_readback": 2,
-    "owner_readback": "chatgpt-ocp-mcp-01a192fb-8346-710a-ba99-54350ab2dfd9",
-    "readback_status": "MATCHED"
+    "generation_before": 2,
+    "generation_after": 3,
+    "rename_from": "MCP-METODOLOGIA",
+    "rename_to": "MCP-OCP",
+    "result": "COMMITTED_PENDING_READBACK",
+    "readback_status": "PENDING"
   },
   "implementation_authorization": {
     "event_id": "C-MCP-METODOLOGIA-IMPLEMENTATION-AUTH-20261031-01",
@@ -104,5 +99,45 @@
       "external credentials",
       "paths outside frentes/mcp-metodologia/"
     ]
+  },
+  "transfer_history": [
+    {
+      "event_id": "C-MCP-METODOLOGIA-TRANSFER-20261031-01",
+      "authorization": "direct operator instruction on 2026-10-31",
+      "method": "GitHub Contents API update guarded by the observed existing blob SHA; abort if SHA differs",
+      "expected_previous_blob_sha": "ffa27d9c62c557aa4894eebfd8c4cbf44ed09335",
+      "previous_owner": {
+        "owner_alias": "chatgpt-C-MCP-METODOLOGIA-001-01a192b3-1063-7916-be41-ebfa974ede73",
+        "owner_alias_type": "operational_alias_not_native_thread_id",
+        "instance": "chatgpt-mcp-metodologia-974ede73",
+        "uuidv7_local": "01a192b3-1063-7916-be41-ebfa974ede73",
+        "generation": 1,
+        "scope": "Inicialización documental del OCP MCP de Metodología, establecimiento de identidad/control y continuidad documental. No autoriza código, instalación/arranque local, puertos, credenciales, cambios de bases de datos, acceso RDC a un equipo concreto, activación de MCP-NORMATIVO, despliegue público/Vercel ni cambios al OCP Khora MCP."
+      },
+      "new_owner": {
+        "alias": "chatgpt-ocp-mcp-01a192fb-8346-710a-ba99-54350ab2dfd9",
+        "instance": "chatgpt-ocp-mcp",
+        "uuidv7_local": "01a192fb-8346-710a-ba99-54350ab2dfd9",
+        "generation": 2,
+        "owner_alias_type": "operational_alias_not_native_thread_id"
+      },
+      "generation_before": 1,
+      "generation_after": 2,
+      "result": "VERIFIED",
+      "transfer_commit_sha": "d540b1ae246c53cd3877abb0e74722d24afeb1ec",
+      "control_readback_sha": "a8b186de6d6424312b836c931a42f0156ff53b23",
+      "generation_readback": 2,
+      "owner_readback": "chatgpt-ocp-mcp-01a192fb-8346-710a-ba99-54350ab2dfd9",
+      "readback_status": "MATCHED"
+    }
+  ],
+  "display_name": "MCP-OCP",
+  "previous_canonical_identity": "MCP-METODOLOGIA",
+  "rename": {
+    "event_id": "C-MCP-OCP-RETOMA-20261031-01",
+    "previous_identity": "MCP-METODOLOGIA",
+    "canonical_identity": "MCP-OCP",
+    "authorization": "Instrucción directa del operador en esta conversación (2026-10-31): REtoma repsonsabilidad del Frente MCP OCP, de hecho se llama OCP MCP, pero renombrfalo, es MCP-OCP adjunta convewrascion en persistencia documental del frente.",
+    "scope": "Renombramiento de identidad documental del frente existente. Se preservan el slug, las rutas, el núcleo y la separación de dominio; no se amplía la autorización técnica."
   }
 }
