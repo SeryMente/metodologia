@@ -652,3 +652,45 @@ Se procesó la instrucción y la respuesta de Gobernanza dentro del ciclo EP-02,
 **Siguiente paso EP:** continuar el trabajo documental/local permitido dentro de EP-TASK-002 y preparar la lista de artefactos OCP/Metodología elegibles y excluidos sin tocar cuenta, credenciales, buckets ni datos remotos. Tras la revisión presencial y autorización, ejecutar primero preflight autenticado de solo lectura y luego una prueba sintética aislada.
 
 **Estado de integración:** GOV-TASK-014 `en_curso`; EP-TASK-002 permanece `en_curso`. Esta respuesta no afirma que B2 esté operativo ni que la dependencia esté aceptada.
+
+
+## Apertura DTC · EP · C-EP-MOD-SCRIPTPWS-20261101-03
+
+**Fecha:** 2026-11-01 · ciclo local EP, sin folio global.  
+**UUIDv7 local de continuidad:** `01a19967-9f98-7e8b-9890-b6f67e4efcb7` · identidad asignada localmente, no ID nativo de conversación/plataforma.  
+**Estado de apertura:** `LEÍDO → RESPUESTA_INICIAL_REGISTRADA → EN_PROCESO`.
+
+### Cursor, fuente y preflight
+
+- DTC `main` leído antes de esta apertura: blob `6076ce2dac7dbed45fde50b183638c67e8622e26`; commit observado más reciente: `6ec2bcd6f3e255b25289bdc63914ae848f806430`.
+- OEP `main`: v0.3.24 / VCU-EP-v26, blob `5d6789fba97cd5cb5485d26d6db9192be0986a06`; §94 leído completo.
+- DUG `main`: v377 / NX-377m, blob `54064c8fe00f872023a455f06596061ed69062ae`; §ARR leído primero, después principios aplicables y Metacanon/GOW disponibles.
+- Repositorio de implementación: `SeryMente/khora`, `main` en commit `be43574107f0dd6b5336b229a473e30556423ebd`. `AGENTS.md` leído: gate único `scripts/khora/khora.ps1`, carga modular única por `khora.barrel.ps1`, incremento de versión en el mismo cambio, lectura obligatoria de `ep-medio-architectura.md`, sincronización de arquitectura y `ep-integrity-manifest.sha256` si cambia el flujo o la seguridad.
+- Rama aislada creada: `ep/mod-scrippws-7.5.5`, desde el SHA observado de `main`; aún no contiene cambios de código.
+- No se localizó un OCP/control de responsabilidad independiente para este gate en el árbol del repo KHORA; su documentación estructural se encuentra en `ep-medio-architectura.md` y el encargo técnico está delimitado por OEP §94. No se reclama titularidad de otro FT.
+
+### Instrucción del operador y respuesta inicial
+
+**Entrada literal:** «Bueno, construye una nueva version del script canonico, que contenga todo eso, y que si fucnione como la que ya tenemos documetnada.»
+
+**Interpretación aceptada:** construir una nueva versión del gate canónico y sus módulos existentes, no crear un lanzador paralelo. La implementación se mantiene en `SeryMente/khora`; MOD-SCRIPTPWS coordina el alcance de PowerShell dentro de EP, heredando límites, contratos y autorización del operador. Se preservan los contratos/IDs `EP-IN-xxx`, `EP-RUN-xxx` y `EP-OUT-xxx`, y los comportamientos existentes que no contradigan la especificación vigente.
+
+**Hallazgos iniciales observados en `main` de KHORA:**
+
+1. Gate `7.5.4 / EP 1.0.2`, pero `modules/00-config.ps1` establece `7.5.3 / EP 1.0.1`; los validadores aún esperan versiones históricas distintas. La fuente de verdad de versión no está sincronizada.
+2. Módulos existentes incluyen resolvedor de herramientas, npm.cmd, verificación SHA, Git/GitHub, workspace multi-repo, bitácora, cifrado, Guardian, cleanup y despliegue exacto. No se reemplazará esa arquitectura modular.
+3. Existen wrappers deliberadamente vacíos/no implementados en `08-deps.ps1`, utilidades UI, Chrome y Handoff; deberán clasificarse según contrato (opcional, reservado o requerido) sin inventar comportamiento ajeno.
+4. Hallazgo de seguridad: la secuencia de cleanup desregistra la tarea al reinicio aun cuando no confirma que el contenedor y el VHDX hayan desaparecido; el gate debe conservar esa tarea cuando queden residuos.
+5. El host PC-8 reportó PowerShell 5.1.22621.6133 en una consulta RDC. No se ha ejecutado todavía el nuevo gate ni una sesión de EP real.
+
+**Plan de construcción y verificación:**
+
+- nueva versión objetivo propuesta: `SCRIPT_VERSION 7.5.5`, `EP_VERSION 1.0.3`; sincronizar gate, configuración, arquitectura/contrato, embedded bootstrap, validadores y manifiesto de integridad.
+- añadir un modo `-SelfTest` inocuo que analice sintaxis PowerShell 5.1, presencia/orden de módulos, coherencia de versiones, entrypoints npm.cmd, invariantes de no exponer secretos y equivalencia byte a byte del bootstrap embebido; no montará VHDX, no autenticará, no modificará host ni desplegará.
+- endurecer el resolvedor/toolchain y completar los wrappers necesarios para detección, verificación de npm.cmd, hidratación, timeouts y manejo de errores.
+- endurecer cierre: comprobar bloqueo/desmontaje/eliminación; desregistrar la limpieza al reinicio solo después de confirmar que no existen VHDX ni carpeta exterior.
+- actualizar tests/validadores y ejecutar parser/validación en Windows PowerShell 5.1. El test estático no sustituye un arranque real, BitLocker, autenticación ni E2E.
+
+**Límites expresos de este ciclo:** no usar credenciales, no consultar ni operar Backblaze B2, no cargar bóvedas, no materializar ni borrar workspaces del operador, no ejecutar el arranque completo ni iniciar procesos nuevos RDC auxiliares, no publicar Vercel y no modificar ramas de producción durante la fase de construcción. La rama de trabajo queda aislada; la promoción a `main` se decidirá solo después de pruebas y read-back. No se declara aceptación integral por pasar pruebas estáticas.
+
+**Siguiente acción:** modificar la rama aislada, sincronizar el gate y bootstrap embebido, ejecutar `-SelfTest` y la batería de validación en PowerShell 5.1, y revisar los diffs antes de cualquier promoción.
