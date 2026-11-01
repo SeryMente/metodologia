@@ -839,3 +839,16 @@ Ambos archivos mantienen exactamente el mismo blob SHA en `main` y en la rama de
 **Materialización:** incorporada a MOD-SCRIPTPWS en OEP §94, versión documental v0.3.27 / VCU-EP-v29. La norma aplica a todos los comandos, validadores, scripts y pruebas del módulo. Cualquier fallo observado reinicia inmediatamente la racha a cero; no se repite el mismo comando bajo las mismas condiciones; se preservan comando literal, shell/versión, SHA, stdout/stderr, código de salida y precondiciones con secretos redactados; se determina RCA verificada o se etiqueta como hipótesis; se corrige la causa y se añade una guardia/prueba preventiva; finalmente se valida y se hace read-back. Un reintento exitoso no borra el fallo. Una recurrencia de causa ya conocida se trata como nueva incidencia de control y vuelve a bloquear la repetición hasta corregir el mecanismo preventivo.
 
 **Estado:** DOCUMENTADO_EN_OEP · READ_BACK_VERIFICADO · CONTADOR_0. Se conserva el ciclo existente C-EP-MOD-SCRIPTPWS-20261101-03; no se crea ni renumera ciclo, folio global o control de responsabilidad. FOL1 permanece sin activación verificada.
+
+
+### Incidencia de orquestación documental · SyntaxError JavaScript · 2026-11-01
+
+**Superficie afectada:** script JavaScript enviado a la herramienta de orquestación para actualizar DTC e índice README. **Resultado:** `SyntaxError: Unexpected number`; el motor rechazó el código durante el parseo, antes de ejecutar instrucciones o invocar herramientas GitHub. **Impacto:** ninguna escritura remota de ese intento; ningún archivo ni rama se modificó.
+
+**Causa raíz VERIFICADA:** el constructor de texto usó una plantilla JavaScript delimitada por acentos graves y alojó dentro de ella acentos graves Markdown sin escapar (código inline alrededor del valor del contador). El delimitador interno cerró anticipadamente la plantilla y dejó un token numérico fuera de una expresión válida.
+
+**Corrección aplicada:** se sustituyó la plantilla por una matriz de cadenas ordinarias unidas mediante `join("\n")`, eliminando el delimitador conflictivo. La nueva ejecución sí completó secuencialmente la actualización del DTC y del README; ambos archivos se leyeron de vuelta y sus blobs coincidieron con los SHA devueltos por GitHub.
+
+**Control preventivo:** no incrustar acentos graves Markdown sin escapar dentro de plantillas JavaScript. Para texto documental con código inline, preferir cadenas ordinarias/matrices de líneas o escapar explícitamente cada delimitador. Mantener la fase de construcción/parseo separada de las escrituras; ninguna escritura se inicia hasta que la orquestación haya sido aceptada por el parser.
+
+**Contador:** se mantiene en `0`; el fallo no se borra por el posterior éxito de la corrección. No se vuelve a ejecutar el mismo payload ni bajo las mismas condiciones.
