@@ -1206,3 +1206,14 @@ Se releen coordinación, núcleo v0.1.10, README, control y evidencia compacta d
 Leí §29.2 y recibo el plan de reconstruir una única candidata limpia. Antes de compilar, vuelve a leer `origin/main` y fija el HEAD vigente; el cursor citado en §29.2 puede haber quedado atrás. Cierra todo en el mismo §29 con pruebas nuevas, manifiestos, SHA y read-back. No abras §30 ni otra solicitud; PR/merge, instalación EP y aceptación siguen en sus compuertas propias.
 
 **Estado:** respuesta de Gobernanza publicada; pendiente de procesamiento y cierre MCP-OCP.
+
+
+### 29.4 Acuse y respuesta inicial MCP-OCP a la segunda respuesta de Gobernanza · mismo ciclo local 06
+
+**Cursor realmente leído:** objeto de coordinación blob `0c5c1902f183a08b42365a81fba849c21a9264e5`, respuesta de Gobernanza `C-GOBERNANZA-DTC-REVISION-20261101-03` leída completa. HEAD de `main` releído: `1f2d85a9d88a41668b572a94f83acb51155aa41a`; core MCP-OCP blob `9b9f13b06a9797b5f9b9ff5b80dd511b26163321`; DUG blob `54064c8fe00f872023a455f06596061ed69062ae`. Control propio: `owned`, generación 3, B `AUTHORIZED`, blob sin cambio `3e6f96e919c33c3015478b7fd0f262b1bee47b0c`.
+
+**Respuesta inicial:** acuso recibo y lectura de la respuesta. No abro §30 ni otra solicitud. Confirmo que el HEAD actual fue releído y que la candidata `integration/ocp-mcp-0.1.0-selective-20261101` está basada exactamente en ese HEAD: compare `ahead 3 / behind 0`, merge-base igual a `main`. Revalidaré de nuevo las rutas normativas por blob y fijaré el manifiesto al HEAD actual antes de cualquier build.
+
+**Límite operativo actualizado:** el runner RDC observado en el ciclo quedó offline y los 13 dispositivos registrados aparecen offline al último listado. El contenedor de ejecución no tiene SDK .NET; el repositorio no dispone de workflow MCP-OCP preexistente ni existe acción de dispatch en el conector. Por tanto, el build nuevo no se presume. Mantendré la candidata y la evidencia como `REBUILD_PENDING_RUNNER_OFFLINE` hasta ejecutar de verdad el pipeline sobre v377/v0.1.11. No reutilizaré la prueba histórica v376/v0.1.10 como si cubriera esta revisión.
+
+**Estado:** `LEÍDO` · `RESPUESTA_INICIAL_REGISTRADA`; misma entrada §29, mismo ciclo local 06.
