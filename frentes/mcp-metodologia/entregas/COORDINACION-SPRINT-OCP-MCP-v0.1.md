@@ -963,3 +963,50 @@ MCP-OCP mantiene el alcance B existente y no modifica EP, su host/control, Gober
 La evidencia DTC de Gobernanza abierta en este ciclo registra el PROMPT ADICIONAL 02 como `PREPARADO_NO_PUBLICADO_IN_GOV_TASK_011`. El operador lo ha entregado ahora directamente a MCP-OCP y se registra aquí su recepción; esto no se reescribe como publicación por Gobernanza ni prueba lectura, aceptación o aplicación por EP. La incorporación en MCP-OCP queda sujeta al procesamiento y read-back de este ciclo. La incorporación por Gobernanza y EP requiere sus propios ciclos, respuestas y verificaciones.
 
 **Siguiente fase:** procesar el complemento dentro del OCP MCP-OCP, actualizar el registro §8.1 y la compuerta §10.2 para reflejar el modelo de centralización y reconciliar estados/terminología contra la evidencia actual; después documentar cierre y read-back en esta misma entrada. No abrir una nueva solicitud a Gobernanza sobre la dependencia §20.3 ya cerrada.
+
+
+## 26. Procesamiento del PROMPT ADICIONAL 02 y centralización DTC · ciclo local 03
+
+**Evento local:** `C-MCP-OCP-DTC-20261031-03`; no constituye folio global.  
+**Cursor de apertura heredado de §25:** `main` commit `f143eea3e81b97b93825ecc7c3d80e720114215d`; coordinación blob `b68769e838787ef8f8b6c9c6b9834e2f878bf0df).  
+**Apertura:** `LEÍDO → RESPUESTA_INICIAL_REGISTRADA` en §25, persistida mediante commit `b774c674e084af211897c7c8234f49ae5ce30e20`, blob `58a76536ee08269a757bec8b33abd8bca2d5a2b0`, read-back exacto.  
+**Procesamiento:** `EN CURSO DOCUMENTAL`; no se ejecutaron operaciones sobre EP, Gobernanza ni el host.
+
+### 26.1 Interpretación operativa incorporada
+
+MCP-OCP procesa el Prompt Adicional 02 dentro de su propio OCP y adopta la siguiente distribución, sin transferir autoridad ni alterar controles:
+
+- Gobernanza es el frente centralizador e integrador del sprint. El índice provisional GOV-TASK-* bajo su OCP es la representación operativa del OCP general del sprint. El operador y Gobernanza gestionan las decisiones centrales en la conversación y OCP de Gobernanza.
+- EP y MCP-OCP siguen siendo frentes ejecutores con OCP, núcleo, tareas, control, titularidad, alcance y evidencia propios. El estado técnico detallado de cada ejecutor sigue siendo autoritativo en su OCP.
+- El índice GOV-TASK-* registra entregables propios de Gobernanza e integración transversal. Ante dependencias EP/MCP-OCP conserva referencias a tarea de origen, OCP responsable, cursor, estado y evidencia; no copia ni suplanta backlog técnico.
+- No existe cuarto OCP, dashboard, tablero duplicado ni canal alternativo. La coordinación permanece en los objetos ya existentes.
+- Gobernanza puede avanzar trabajo propio (análisis, investigación, descomposición, criterios, contratos/propuestas, documentación, pruebas de aceptación y reconciliación) mientras otro frente tenga bloqueos; solo detiene el trabajo que dependa materialmente del pendiente.
+- Los reportes se separan de observación, verificación y aceptación. Se usa como verdad normativa el DUG vigente completo en `main`, según precedencia, con principios pertinentes y CNP; no se completa por inferencia ningún dato, contrato, permiso, enlace o folio ausente.
+- La comunicación a otros frentes no se presume. Publicación, preparación, recepción, lectura, respuesta, procesamiento, verificación y aceptación son estados diferentes; la entrega directa del operador a MCP-OCP no demuestra que Gobernanza haya publicado o que EP haya leído/aplicado.
+
+### 26.2 Cambios persistidos en este ciclo
+
+| Recurso | Cambio | Commit | Blob SHA / lectura de vuelta |
+|---|---|---|---|
+| Objeto de coordinación — §1, §§3.1–3.2 y §4.2 | Sustituye el antiguo modelo de “modelo central” por Gobernanza como centralizador; asigna decisiones centrales a operador + Gobernanza; preserva serialidad y límites ejecutores | `be68da2b91d6e1dc322532cf921e41f851d66aef` | `7b48c80ffbaafe7480e5cf0760aea39c7acff7d3` · contenido exacto y SHA coincidente verificados |
+| Núcleo MCP-OCP | v0.1.7; roles, registro técnico §8.1, compuerta DTC §10.2, CNP y control de evidencia actualizados | `a91c0e6cbcd5dc8449a7d5af29acc4170cdce905` | `f4df6b9ac943c4a49f8465f371a77ebc4188a654` · contenido exacto y SHA coincidente verificados |
+
+### 26.3 Reconciliación de evidencia, tareas y bloqueos
+
+**Gobernanza:** el snapshot vigente observado en `C-GOBERNANZA-DTC-01.json`, blob `bfc06686075931f8e7c90271280a9efbf806871a`, registra `CUMPLE_VERIFICADO` para su ciclo y la verificación de los tres ciclos observados, incluido el ciclo documental EP y los ciclos MCP-OCP 01/02. Mantiene `DTC_EN_CURSO_RECURRENT`. El núcleo `GOBERNANZA.md`, blob `0d62bd31d2daceb05f4483d9a71b7a41e78634ca`, conserva párrafos anteriores que aún describen EP como `CUMPLE_PARCIAL`; la discrepancia queda observada para que Gobernanza la reconcilie en su propio ciclo. MCP-OCP no altera ese núcleo, tareas ni control.
+
+**EP:** el objeto canónico de comunicación ya está en `main`, blob `1131bb584268f393eb16c7a19120eb800d2043cd`; la evidencia más reciente clasifica como `CUMPLE_VERIFICADO` el ciclo documental local `C-EP-DTC-PERSISTENCIA-METODOLOGIA-20261031-01`, con read-back. No significa que EP-TASK-002 esté completada: autenticación B2, cuenta/región, bucket/clave, upload, read-back remoto, restauración y aceptación material siguen no verificados/no ejecutados. EP mantiene autoridad sobre OEP, host, persistencia e instalación.
+
+**Dependencia técnica única a Gobernanza:** `MSG-MCP-OCP-GOV-DEPENDENCIES-20261101-01` fue respondida y cerrada documentalmente en §§23–24. No se abre una solicitud duplicada. Permanecen las brechas ya informadas: cuatro metadatos en 0/43; aliases Sink sin despliegue/prueba y sin URI operativa verificada; telemetría limitada a frecuencia de acceso/consulta; FOL1 preparado/inactivo.
+
+**MCP-OCP:** la autoridad de su backlog sigue siendo §8.1. La rama `build/ocp-mcp-mvp-0.1.0` (head `b37213272dc9a132d1fb181e9ce66fba6ae1becc`) contra `main` `f143eea3e81b97b93825ecc7c3d80e720114215d` estaba `diverged`, 7 commits ahead / 169 behind, merge base `e4243414b0099ede9b9556b3cfa0bb20bc706576`. No se fusionó ni integró. No se ejecutaron build, compilación, tests ni instalación en este ciclo; los resultados históricos 31 unitarios + 29 integración no se vuelven a declarar como pruebas nuevas.
+
+### 26.4 Límites y estado de cierre pendiente
+
+- Control MCP-OCP continúa `owned`, generación 3, blob `3e6f96e919c33c3015478b7fd0f262b1bee47b0c`; autorización B no cambia.
+- No se modifica el DUG, GOW, IPZ, ART-025/027, FOL1, Gobernanza, EP, OEP, control EP, host, ACL, código ajeno ni recursos Khora.
+- ART-027 denomina el mecanismo individual **Sink** (`p001`…`p043`), no Sync. No se inventan URLs; aliases pendientes de despliegue/prueba.
+- Telemetría canónica: frecuencia de acceso/consulta, no aplicación ni comprensión.
+- `MCP-NORMATIVO: DESACTIVADO`.
+- FOL1: `PREPARADO_PENDIENTE_ACTIVACION_IPZ`; folios globales CV/CY/A/B y OCP: `PENDIENTE/NO ASIGNADO`.
+- El ciclo local 03 permanece abierto hasta actualizar el registro técnico §8.1, el índice README y realizar el read-back final de los tres artefactos en este mismo objeto. La clasificación final del ciclo se asentará en esta entrada; si faltara una fase, se declarará `CICLO_INCOMPLETO`.
