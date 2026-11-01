@@ -10,7 +10,7 @@
 
 **DTC observada:** EP cumple su ciclo documental local Prompt 02, pero EP-TASK-002 sigue `en_curso` y B2/upload/read-back/restauración no están verificados. MCP-OCP mantiene abierto el ciclo local 05; por tanto, su estado integrado es `CUMPLE_PARCIAL`, sin nueva solicitud paralela. El DTC global permanece `EN_CURSO_RECURRENT`.
 
-**Límites:** DUG Samantha v373 · NX-373m permanece fuente normativa única de referencia; no se modificaron DUG, GOW canónico, ART-025/027, IPZ nativa, controles EP/MCP-OCP ni host. FOL1 continúa `PREPARADO_PENDIENTE_ACTIVACION_IPZ`; no hay folio global asignado.
+**Límites:** DUG vigente observado en `main`: Samantha v375 · NX-375m, GOW 2.15 (43 principios, 21 anexos; blob `c993a59163c2c163b17b599a003919b53c5cf6a8`). El adjunto de continuidad conserva su snapshot histórico v373. Este evento no modificó DUG, GOW, ART-025/027, IPZ nativa, controles EP/MCP-OCP ni host. FOL1 continúa `PREPARADO_PENDIENTE_ACTIVACION_IPZ`; no hay folio global asignado.
 
 Esta sección sustituye los resúmenes ejecutivos repetidos y fotografías anteriores que siguen debajo por procedencia histórica. El vector semántico del operador es criterio rector de toda tarea y ciclo de Gobernanza. [Crónica](cronica/C-GOBERNANZA-VECTOR-SEMANTICO-01.md) · [dictado](conversaciones/C-GOBERNANZA-VECTOR-SEMANTICO-01-dialogo.jsonl) · [evidencia](evidencias/C-GOBERNANZA-VECTOR-SEMANTICO-01.json).
 
