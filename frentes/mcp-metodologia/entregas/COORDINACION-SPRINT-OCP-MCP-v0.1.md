@@ -857,7 +857,7 @@ La frase obsoleta fue sustituida. El núcleo ahora refleja que el ciclo 01 se ab
 | Núcleo `MCP-METODOLOGIA.md` | MCP-OCP v0.1.6; reconciliación DTC y precisión de auditoría | `cc4b1264576e42d1d603f2945e0005eb81db8ebd` | `e6e96ee4edde7156ddc9f9a9e302faa9f8ed4ffa` |
 | README | Actualizado a v0.1.6; cierre local 02 y estado de auditoría de Gobernanza distinguidos | `b5a785491845b0449f47d948523942cec5a5ae36` | `4a1909bc787f20ce2ed30c7ab4b2a4529d218fdd` |
 | Diálogo | Registro visible del cursor de Gobernanza, respuesta inicial y salida B002 | `a9401c092d2c4e115672fc60596b15e4be4f3b23` | `1d57e6f403714eda9e0f7a85a350455c6068f11a` |
-| Crónica | Narrativa, procedencia, decisión y límites del ciclo 02 | `c53936159feef339f7c09d362bef4d1f97a72d70` | `58c1ec5af949ed4c7e4696157a5efd42002ae1ea` |
+| Crónica | Narrativa, procedencia, decisión, límites y enlace a evidencia del ciclo 02 | `690af69cc5ff69e8046ead6193bac956497a3c19` | `7aaf53a5dfd896ca2349261ef3b5b6c44f950589` |
 
 Control releído: `3e6f96e919c33c3015478b7fd0f262b1bee47b0c`, `owned`, generación 3, titular coincidente; autorización B no modificada.
 
@@ -890,3 +890,10 @@ Read-back posterior de los artefactos propios:
 - Control: blob `3e6f96e919c33c3015478b7fd0f262b1bee47b0c`; titular/gen3 coincidente y B sin cambios.
 
 La respuesta de EP al addendum DTC sigue pendiente; su objeto continúa fuera de `main`. La DTC global/GOV-TASK-011 no se cierra. La solicitud técnica única a Gobernanza mantiene estado pendiente de lectura/respuesta.
+
+### 22.6 Recibo y custodia documental
+
+- Diálogo visible: `conversaciones/C-MCP-OCP-DTC-20261031-02-dialogo.jsonl`, blob `1d57e6f403714eda9e0f7a85a350455c6068f11a`.
+- Crónica: `cronica/C-MCP-OCP-DTC-20261031-02.md`, blob `7aaf53a5dfd896ca2349261ef3b5b6c44f950589`.
+- Evidencia estructurada: `evidencias/C-MCP-OCP-DTC-20261031-02.json`, blob `c6b9d6fd4885e6c0bef88e8a4e888cca2aba8b61` en la lectura inicial; el recibo debe releerse después de esta actualización de coordinación para actualizar su cursor y SHA final.
+- El registro canónico del ciclo sigue siendo esta entrada §21–22 en un único objeto de coordinación. Diálogo, crónica y evidencia son sus derivados de procedencia/recibo; no crean una bitácora ni ciclo paralelo.
