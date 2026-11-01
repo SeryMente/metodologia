@@ -33,3 +33,8 @@ No modificar el DUG, la IPZ, controles ni OCP ajenos por iniciativa de esta tare
 - Coordinación y evidencia de ciclo: [GOV-TASK-011](../📁%20🧩%20-%20GOV-TASK-011%20-%20Coordinación%20bilateral%20recurrente/README.md).
 
 **Siguiente acción:** obtener una primera muestra de ciclos completos medidos y construir el mapa de flujo sobre evidencia real.
+
+
+## Trazabilidad MCP-OCP y enlace de retorno
+
+El DUG enlaza al núcleo operativo y al README del OCP MCP desde el término canónico GOW. Esta tarea comprobará en su siguiente revisión si el núcleo MCP-OCP contiene un vínculo Markdown de retorno al DUG v377, y si sus referencias siguen resolviendo. No modificar el OCP/control MCP-OCP desde Gobernanza: cualquier backlink faltante se solicitará a su titular en el mismo objeto de coordinación; hasta entonces la bidireccionalidad entre DUG y OCP externo se clasificará como pendiente de verificación, no como completa. Los enlaces y retornos internos del propio DUG se auditan por separado.
