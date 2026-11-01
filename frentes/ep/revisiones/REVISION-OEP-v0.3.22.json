@@ -44,7 +44,8 @@
     "no_control_created_or_transferred": true,
     "no_dug_or_ipz_modified": true,
     "no_host_or_code_changed": true,
-    "no_b2_operation_performed": true
+    "no_b2_operation_performed": true,
+    "oep_version_header_aligned": true
   },
   "findings": {
     "ep_control_file": "NOT_LOCATED in main/frentes/ep/ and documentation branch checked; no title/generation was inferred",
@@ -55,10 +56,10 @@
   "changed_files": [
     {
       "path": "frentes/ep/OEP.md",
-      "commit": "4da595241290b42b4dac5f4a285480539b338be2",
-      "blob": "f98db7c49c9c8a40bf55bf93a0d2db278e3c0d7e",
+      "commit": "763aa04eb55a33e8ea6085e74590f2786b240bbe",
+      "blob": "deaceadfc1de4636e0f9114a47a3d5255c04e897",
       "bytes": 237135,
-      "sha256": "06251151e6457c963fd49d4f9f02403985632d2b638b0eaf61b801dd1a95e8a0",
+      "sha256": "01884482aff254f47b190b147ec1455f1770d69959b3362452f0cdaa79a0292e",
       "readback_exact": true
     },
     {
