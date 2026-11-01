@@ -42,15 +42,15 @@
     },
     {
       "path": "frentes/ep/OEP.md",
-      "bytes": 237135,
-      "sha256": "01884482aff254f47b190b147ec1455f1770d69959b3362452f0cdaa79a0292e",
-      "git_blob": "deaceadfc1de4636e0f9114a47a3d5255c04e897"
+      "bytes": 246921,
+      "sha256": "b0e76cb8c2103a84e46ac4e8de6ae65dd7c69ef97e5195b26b496aa3810942cb",
+      "git_blob": "3aebadf2f6e563128e69c3aed026fad01f86388f"
     },
     {
       "path": "frentes/ep/README.md",
-      "bytes": 1365,
-      "sha256": "92b855349bbb065799b7c348ec65dc8c05e95a956639150171c72bf79de88364",
-      "git_blob": "f1264cfb15bf2cc1697f7f95dd4077485bcbe571"
+      "bytes": 1604,
+      "sha256": "e3a4a8adbdd6089e471859eeed78faef79d8c431030684eabb477895321f3d4e",
+      "git_blob": "07758b20f71ba024f809097a16edd2079f5d02b2"
     },
     {
       "path": "frentes/ep/artefactos/EP-H03-integracion-reproducible-parcial-20261011.zip.b64",
@@ -351,6 +351,12 @@
       "bytes": 4941,
       "sha256": "463136c8a9e8ef22b60df85b15326d39c78a5a53e07451938c967f293f4979b4",
       "git_blob": "9ff99df9a8e3dba2d496c3ee4a535234bc066263"
+    },
+    {
+      "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.23.json",
+      "bytes": 4889,
+      "sha256": "6e0e88c9aa3cc2deb854d7203b8c1911c75964a67a6a14827c39bfeadea3b6a5",
+      "git_blob": "14ed0abf5efc3ecc4ad9056b3e7f939b34295d5d"
     }
   ],
   "exclusions": [
@@ -368,10 +374,12 @@
     "mutable DTC communication object: final blob tracked in its close entry to avoid self-referential manifest hash",
     "Prompt Adicional 02 not published/applied by Governance to all fronts; direct receipt by EP only",
     "No MCP-OCP receipt/acceptance verified",
-    "No B2 authentication, upload/read-back or restore occurred"
+    "No B2 authentication, upload/read-back or restore occurred",
+    "No KHORA product code or host execution performed during MOD-SCRIPTPWS inauguration.",
+    "Formal EP responsibility control not located; no transfer or independent module control created."
   ],
-  "prior_readback_verified": "Exact post-write fetch of OEP v0.3.22, EP task index, EP-TASK-002, folder README and REVISION-OEP-v0.3.22. UTF-8 SHA-256 and Git blob IDs recorded after final header alignment.",
-  "latest_review_source_commit": "d45af52ac5d07d9cba1638b9e05daa60ac3d2c4a",
-  "current_event": "OEP v0.3.22 / VCU-EP-v24: EP incorporates Prompt Adicional 02's sprint-governance model within its own execution boundary.",
+  "prior_readback_verified": "OEP v0.3.23, EP README and REVISION-OEP-v0.3.23 were fetched from main after sequential writes; exact content/commit blobs read back; UTF-8 byte counts and SHA-256 recorded. DTC opening cycle C-EP-MOD-SCRIPTPWS-20261101-01 read back as b9a7503e872a6ab57c6ce4d756499e9161cd1624; DTC final close entry to follow.",
+  "latest_review_source_commit": "50e9b50867cc51575b939e847692afbcca545a4c",
+  "current_event": "MOD-SCRIPTPWS inaugurated as internal EP module in OEP §94; functional assignment recorded at module scope; no EP control transfer, host, product code, credentials, B2 or RDC operation.",
   "verification_scope": "EP documentary integration only. No Governance or MCP-OCP files, DUG, IPZ, control, host, code, Backblaze resources or credentials modified."
 }
