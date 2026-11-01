@@ -60,3 +60,15 @@ La DTC queda reducida a una regla repetible: **una entrada por ciclo en el objet
 **Automatización:** semiautomática por cursor y compuerta obligatoria. No se verificó un mecanismo de escritura automática ni vigilancia continua entre ciclos; no se declara automatización plena.
 
 **Límites:** no se modificaron DUG, GOW, IPZ nativa, ART-025/027, controles EP/OCP, host ni código. FOL1 continúa preparado e inactivo.
+
+---
+
+## Revalidación DTC · actualización de cursores y estados
+
+La revisión posterior encontró que la fotografía anterior estaba desactualizada para MCP-OCP: el frente persistió el procesamiento y cierre de su ciclo en §20 y marcó `VERIFICADO_READBACK`. El objeto vigente en `main` es blob `f05cd5762b5f0366714096d6de8c435581dcadd8`; por tanto MCP-OCP queda `CUMPLE_VERIFICADO` para ese ciclo local. Su núcleo vigente, blob `cd73b8d141dd401360d6736b859140876ba96738`, aún contiene texto previo que dice que el cierre §20 está pendiente; requiere reconciliación por MCP-OCP.
+
+EP sí tiene compuerta en OEP §90 (blob `217218c48d79818451cd2cdc1cce98a94a6f122d`) e índice de tareas en `main` (blob `934000b93de7e933d893c0055cabc4647dea57be`). El mensaje bilateral original en su objeto de rama documental incluye respuesta, procesamiento y read-back. Sin embargo, el objeto no existe en `main` y el addendum DTC carece de respuesta específica. Estado `CUMPLE_PARCIAL`; reconciliación y acuse corresponden a EP.
+
+La persistencia ante hilo nuevo queda exigida por el cursor del objeto: preflight → leer el último cursor → abrir entrada en el mismo objeto → procesar → completar cierre → read-back. Reanudar trabajo en hilo nuevo inicia un ciclo nuevo, no una historia nueva. No se crea un segundo canal. La automatización sigue semiautomática; no se verificó un disparador capaz de forzar escrituras ni vigilancia entre ciclos.
+
+No se modificaron objetos, controles, núcleo ni host de EP/MCP-OCP; esta revalidación corrige únicamente la documentación de Gobernanza.
