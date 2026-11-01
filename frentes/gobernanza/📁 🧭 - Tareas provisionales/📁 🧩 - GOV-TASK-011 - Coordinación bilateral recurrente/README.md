@@ -25,8 +25,8 @@ En cada ciclo de Gobernanza, sin excepción, leer los registros de tareas provis
 
 ## Objetos bilaterales persistentes
 
-- EP: [COORDINACION-GOBERNANZA-EP-v0.1.md](../../../../ep/entregas/COORDINACION-GOBERNANZA-EP-v0.1.md), en rama docs/metacanon-objetos-20261011. El estado técnico sigue en OEP.md.
-- OCP MCP: [COORDINACION-SPRINT-OCP-MCP-v0.1.md](../../../../mcp-metodologia/entregas/COORDINACION-SPRINT-OCP-MCP-v0.1.md), en main. El estado técnico sigue en MCP-METODOLOGIA.md y la evidencia de release.
+- EP: [COORDINACION-GOBERNANZA-EP-v0.1.md](../../../ep/entregas/COORDINACION-GOBERNANZA-EP-v0.1.md), en rama docs/metacanon-objetos-20261011. El estado técnico sigue en OEP.md.
+- OCP MCP: [COORDINACION-SPRINT-OCP-MCP-v0.1.md](../../../mcp-metodologia/entregas/COORDINACION-SPRINT-OCP-MCP-v0.1.md), en main. El estado técnico sigue en MCP-METODOLOGIA.md y la evidencia de release.
 
 ## Hallazgos de la primera lectura
 
