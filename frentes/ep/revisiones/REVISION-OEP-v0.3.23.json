@@ -94,7 +94,7 @@
       "commit": "c1d2088840fb8d4c88dce15b8979bb75efd282a7",
       "blob": "0babc46674a9dbcdc58e49e6256fc9a8fe17a304",
       "bytes": 247120,
-      "sha256": "4ddb00e78fb6252beaead11270c14bbb59aa8544a554db99fdbd6537e2387142",
+      "sha256": "809de3e87bc3bb103f10f0c85a78b46a072f2559e1fc9ef1e1ab82022fe96ced",
       "readback_exact": true
     },
     {
@@ -116,6 +116,10 @@
     {
       "commit": "c1d2088840fb8d4c88dce15b8979bb75efd282a7",
       "description": "Amended MOD-SCRIPTPWS role to explicitly include script implementation and maintenance, confined to the module."
+    },
+    {
+      "commit": "c1d2088840fb8d4c88dce15b8979bb75efd282a7",
+      "description": "Finalized module responsibility scope and recalculated final OEP UTF-8 SHA-256 after read-back."
     }
   ]
 }
