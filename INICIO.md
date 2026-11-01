@@ -2,7 +2,7 @@
 
 Punto de entrada del repositorio; no es una fuente normativa.
 
-**Documento Único de Gobernanza:** [DUG · Samantha v374 · NX-374m](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html). Integra 43 principios, 21 anexos jerarquizados, Metacanon 1.26, GOW 2.14 con 127 términos definidos e indexados, §ARR con el vocabulario inicial de ChatGPT, taxonomía estructural 1.3, navegación y representación estructurada. Fuente, versión y firma releídas en `main` el 2026-10-30; verificación asociada al commit `c79ddf6f862f97cafa61955eb15a17ffaea463d0`.
+**Documento Único de Gobernanza:** [DUG · Samantha v377 · NX-377m](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html). Integra 43 principios, 22 anexos jerarquizados, Metacanon 1.28, GOW 2.17 con 131 términos definidos e indexados, §ARR con el vocabulario inicial, taxonomía estructural 1.4, navegación bidireccional y representación estructurada. Fuente, versión, firma y JSON embebido releídos en `main` el 2026-11-01; commit `8ee2482866b3dd085e58e05006727256d0274376`, blob `54064c8fe00f872023a455f06596061ed69062ae`.
 
 La sección humana gobierna la representación estructurada incorporada en el mismo archivo. No hay documentos normativos paralelos ni sincronización automática implícita con Notion, instrucciones personalizadas, memorias o copias locales. La rama `main` de `SeryMente/metodologia` es la fuente documental; si no puede leerse, declara `METODOLOGÍA NO VERIFICADA`. Las políticas obligatorias, los permisos reales y las autorizaciones aplicables conservan precedencia.
 
@@ -24,7 +24,7 @@ El histórico **Contexto → Gestión conversacional** está supersedido y rever
 
 ## Estrategia de dos capas de principios
 
-[DUG · ART-027](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-027) define un catálogo de 43 abstracciones, aliases individuales previstos p001–p043 mediante Sink y telemetría separada de consideración/selección/consulta/aplicación. El documento está materializado en DUG v374. La instancia Sink, los enlaces reales y la lectura privada E2E no están desplegados ni verificados; el repositorio sigue privado. El conteo de aplicaciones procederá de los registros de ciclo, no de los clics.
+[DUG · ART-027](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-027) define un catálogo de 43 abstracciones, aliases individuales previstos p001–p043 mediante Sink y telemetría separada de consideración/selección/consulta/aplicación. El documento está materializado en DUG v377. La instancia Sink, los enlaces reales y la lectura privada E2E no están desplegados ni verificados; el repositorio sigue privado. El conteo de aplicaciones procederá de los registros de ciclo, no de los clics.
 
 ## Pendientes destacados
 
