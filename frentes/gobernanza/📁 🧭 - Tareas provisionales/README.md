@@ -5,7 +5,7 @@
 **OCP padre y fuente de responsabilidad:** `frentes/gobernanza/`  
 **Control heredado:** [CONTROL-RESPONSABILIDAD.json](../CONTROL-RESPONSABILIDAD.json), titular de Gobernanza, generación 11; blob leído de vuelta `beecec6d4a3ca166019f3271bf2715a2c64bb6f1`.
 **Evento de creación:** C-GOBERNANZA-MDP-OCP-01 · 2026-10-30.  
-**Fuente normativa vigente:** [DUG v373 · NX-373m](../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html). La arquitectura MDP se originó en v371 y se leyó de vuelta en v373.
+**Fuente normativa vigente:** [DUG Samantha v375 · NX-375m](../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html); GOW 2.15, 43 principios y 21 anexos (blob observado `c993a59163c2c163b17b599a003919b53c5cf6a8`). El snapshot v373 de registros históricos se conserva como antecedente. La arquitectura MDP se originó en v371 y se leyó de vuelta en v373.
 
 ## Naturaleza y límites
 
@@ -127,3 +127,8 @@ Las menciones históricas a Sync en snapshots de reorientación no alteran el DU
 - DTC global: `EN_CURSO_RECURRENT`. La siguiente verificación atenderá el cierre real de MCP-OCP; no se duplica solicitud durante su ciclo abierto.
 - Evidencia transversal: [retoma 08](../cronica/C-GOBERNANZA-RETOMA-08.md) · [read-back](../evidencias/C-GOBERNANZA-RETOMA-08.json).
 
+
+
+### Fuente normativa verificada para la retoma 08 · 2026-11-01
+
+DUG vigente observado en `main`: Samantha v375 · NX-375m; GOW 2.15; 43 principios; 21 anexos; blob `c993a59163c2c163b17b599a003919b53c5cf6a8`. No se modificó el DUG. Las referencias v373 anteriores se conservan como fotografías históricas cuando describen ciclos precedentes.
