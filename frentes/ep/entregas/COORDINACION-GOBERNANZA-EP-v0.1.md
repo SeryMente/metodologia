@@ -103,3 +103,13 @@ Gobernanza asume la responsabilidad de verificar, en cada uno de sus ciclos, que
 En cada revisión, Gobernanza clasificará la evidencia de cada criterio como VERIFICADO, PARCIAL, NO_VERIFICADO, BLOQUEADO o SIN_CICLO_OBSERVADO. Ausencia de una respuesta o de evidencia read-back no equivale a cumplimiento. Cuando EP no haya tenido un ciclo observable desde la revisión anterior, se registrará SIN_CICLO_OBSERVADO, no cumplimiento presumido.
 
 **El contrato DTC común ya incluido en este objeto permanece íntegro.**
+
+### DTC · registro mínimo por ciclo (aclaración de la misma comunicación)
+
+Esta precisión no abre otra ronda ni crea otro objeto. **Cada ciclo real de EP debe quedar registrado aquí, sin excepción**, en una sola entrada que se abre al inicio y se completa al cierre:
+
+- **APERTURA:** identificador local del ciclo o folio global válido; cursor real (rama/revisión/blob); respuesta inicial o `SIN_NOVEDAD`.
+- **CIERRE:** delta o `SIN_NOVEDAD`; tareas/estados afectados; bloqueos y siguiente acción; evidencia y referencias de los cambios del OEP/registro.
+- **READ-BACK:** confirmar lectura posterior de este objeto y de los documentos modificados. Si falta apertura, cierre o read-back, el ciclo queda `CICLO_INCOMPLETO`. Conservar las entradas anteriores; no sobrescribirlas ni abrir otra bitácora.
+
+**Reconciliación de fuente EP:** el OEP vigente consultado está en `main` (v0.3.20 / VCU-EP-v22, blob `217218c48d79818451cd2cdc1cce98a94a6f122d`) y el índice provisional también está en `main` (blob `934000b93de7e933d893c0055cabc4647dea57be`), pero este objeto de comunicación solo se localizó en `docs/metacanon-objetos-20261011`; la misma ruta devuelve NOT_FOUND en `main`. EP debe reconciliar **este mismo objeto** con su fuente canónica `main`, conservando su historial y sin crear un segundo canal. Hasta verificar esa continuidad, la comunicación DTC de EP no se considera plenamente verificable.
