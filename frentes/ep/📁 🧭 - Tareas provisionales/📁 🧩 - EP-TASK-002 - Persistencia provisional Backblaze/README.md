@@ -1379,3 +1379,40 @@ Los valores entre `<...>` son placeholders, no hashes ni IDs. `files[]` debe enu
 **Estado de operación B2:** `b2v5` local funcional y SHA verificado; no hay sesión autenticada/caché B2 en PC-8. Cuenta/región, existencia/privacidad de `OCP-MCP`, key/scope `ep-ocp/` y capacidades siguen `NO_VERIFICADOS`; no hubo operaciones remotas. La siguiente etapa técnica permitida en EP-TASK-002 es preflight de proveedor en solo lectura una vez que el perfil de navegador autorizado disponga de una sesión Backblaze autenticada; nunca se solicitan secretos en chat. Después de ese preflight, la primera escritura será una prueba sintética aislada con manifiesto, SHA remoto, read-back y restore a una ruta nueva.
 
 **Gobernanza:** la petición de alcance ampliado está publicada en el objeto DTC existente; `GOV-TASK-014` permanece `EN_CURSO` y el blob leído más recientemente aún no incorpora este addendum. No se atribuye respuesta ni aceptación de Gobernanza ni MCP-OCP. Se mantiene la comunicación en el mismo DTC, sin canal paralelo.
+
+## 33. Ejecución B2 E2E de una sola pasada y fail-closed
+
+**Mandato del operador (2026-11-01):** entregar el procedimiento a prueba de fallos y no repetir pruebas; el operador concede un ciclo de trabajo. Se mantiene el ciclo DTC existente `C-EP-MOD-SCRIPTPWS-20261101-03`; no abrir un ciclo paralelo.
+
+### Estado previo observable
+
+- PC-8 ONLINE en RDC, Windows x64, PowerShell por defecto.
+- CLI `b2v5-windows.exe` v5.0.2 / SDK 2.13.2, SHA-256 `543aa2e36d3cbe06cf2c3e59287ce58b0a7d1507af87f147ff2f7d9406879662`.
+- Caché anterior `%USERPROFILE%\.b2_account_info` preservada; la sesión nueva usa `%LOCALAPPDATA%\Khora\state\b2-ep-ocp.sqlite` vía `B2_ACCOUNT_INFO`.
+- Proceso RDC `7232` está abierto en `b2 account authorize`, esperando `Backblaze application key ID`; no se recibió ni mostró ID/secret en ChatGPT.
+- La bóveda KHORA no contiene nombres `B2_APPLICATION_KEY_ID`/`B2_APPLICATION_KEY`; no se abrió ni se pidió su llave maestra.
+- `account get` sin autorización devuelve `Missing account data`; no se ha autenticado contra B2 ni consultado bucket/keys.
+
+### Procedimiento único
+
+**A. Autorización local:** continuar el proceso `7232` que ya está esperando el ID. La Application Key se crea en el panel Backblaze con bucket `OCP-MCP`, prefijo `ep-ocp/` y capacidades exactas `listBuckets`, `listFiles`, `readFiles`, `writeFiles`; sin capabilities adicionales. Los valores se introducen únicamente en la terminal local de PC-8. No iniciar otro `authorize` ni copiar secretos por chat.
+
+**B. Preflight proveedor solo lectura, antes de cualquier objeto:** ejecutar en el mismo script de control, con `B2_ACCOUNT_INFO` apuntando al caché aislado. Capturar `account get` completamente en memoria, nunca imprimir/salvar su salida cruda porque contiene auth token y material de clave. Parsear `allowed`; exigir bucketId+bucketName exactos (`OCP-MCP`), `namePrefix` exacto (`ep-ocp/`) y conjunto exacto de cuatro capabilities permitidas. Contrastar bucket con `bucket list --json`, confirmar tipo `allPrivate`, y ejecutar `ls --json` de `b2://OCP-MCP/ep-ocp/`. No continuar si hay scope más amplio, key de cuenta, bucket/prefijo distinto, capability extra, parseo ambiguo, comando no-cero o respuesta inconsistente.
+
+**C. Preparación local:** crear un GUID aleatorio y un fixture JSON autocontenido con payload aleatorio Base64 y SHA-256 interno. Escribir fuente y futura restauración en dos directorios recién creados bajo `%LOCALAPPDATA%\Khora\state\ep-b2-e2e\<GUID>\`. Comparar que ambos destinos estén vacíos/no existan; calcular tamaño, SHA-1 para la CLI y SHA-256 para aceptación.
+
+**D. Lock de una sola pasada:** únicamente después de superar A–C, abrir `one-shot.lock` con `FileMode.CreateNew` y escribir un recibo local `RUNNING`. Si el lock ya existe, abortar sin subir ni reintentar. El lock contiene GUID y timestamp, no secretos.
+
+**E. Única prueba E2E:** un solo objeto remoto `ep-ocp/_e2e/one-shot/<GUID>.json`; `b2 file upload --no-progress --sha1`; después `b2 file info` sobre la URI exacta y `b2 file download --no-progress` a la ruta de restauración nueva. Verificar igualdad de bytes/tamaño/SHA-256 fuente-descarga y SHA-256 del payload decodificado; guardar recibo sanitizado de ejecución con outputs sensibles omitidos, exit codes y huellas. Conservar el objeto remoto como evidencia; no borrar, ocultar, sobrescribir ni ejecutar lifecycle.
+
+### Regla de fallo y no repetición
+
+- Preflight fallido: cero escrituras remotas y E2E `NOT_STARTED`; documentar requisito ausente y no llamar al script de subida.
+- Después del lock: no reintentar ni volver a subir el mismo objeto. Ante cualquier fallo, detener; conservar el lock, recibo parcial y todo objeto remoto que sí haya quedado; no usar delete/cleanup remoto. Registrar causa raíz, impacto y estado `PARTIAL/FAILED`, nunca PASS.
+- No ejecutar una segunda prueba exploratoria para validar la corrección. Una eventual nueva prueba necesitará una decisión explícita del operador y un ciclo nuevo o reapertura formal conforme al DTC.
+
+### Sintaxis local verificada (solo ayuda de CLI, sin operaciones proveedor)
+
+En `b2v5` 5.0.2 están disponibles `bucket list --json`, `bucket get`, `ls --json`, `file upload`, `file info` y `file download`. `file download-by-name` no existe en esta versión; no usarlo. `account get` incluye credenciales de sesión en su salida; nunca imprimir salida cruda. La inspección de ayuda no ha ejecutado upload/download/restore.
+
+**Estado:** `AUTHORIZATION_PENDING` · proceso `7232` espera el Application Key ID en PC-8 · `B2_PREFLIGHT_NOT_RUN` · `E2E_NOT_STARTED` · `UPLOAD_NOT_EXECUTED` · `RESTORE_NOT_EXECUTED`. El objeto DTC contiene el mismo compromiso y read-back en commit `631ffc6d2805d71f5a17dd812fa18eff35fe6ef9`, blob `da0c20ca4b85ccb3a42e8ea286425dc79bc21533`.
