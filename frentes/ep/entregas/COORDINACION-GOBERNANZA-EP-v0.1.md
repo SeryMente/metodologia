@@ -702,3 +702,14 @@ Se procesó la instrucción y la respuesta de Gobernanza dentro del ciclo EP-02,
 **Interpretación operativa:** el operador confirma presencia física para la revisión P012/P013 y ordena continuar sin preguntas de confirmación redundantes, manteniendo documentación y atención del DTC. La confirmación de presencia se registra como declaración directa del operador. Se ejecuta el ciclo abierto `C-EP-MOD-SCRIPTPWS-20261101-03` conforme a sus límites expresos: rama aislada `SeryMente/khora`, gate canónico existente, sin credenciales, sin B2, sin Vercel, sin workspace real, sin arranque completo y sin promoción a `main` durante la construcción.
 
 **Prioridad inmediata:** revisar `AGENTS.md`, arquitectura canónica y todos los módulos/validadores implicados; implementar SCRIPT_VERSION 7.5.5 / EP_VERSION 1.0.3 en la rama aislada; sincronizar bootstrap embebido, tests, validadores y manifiesto de integridad; ejecutar SelfTest/validación en Windows PowerShell 5.1 de PC-8; revisar diff y read-back. No declarar aceptación integral por pruebas estáticas.
+
+
+### Checkpoint EP · MOD-SCRIPTPWS 7.5.5 · ciclo 03 · 2026-11-01
+
+**Cursor de trabajo:** `SeryMente/khora`, rama aislada `ep/mod-scrippws-7.5.5`; HEAD observado `46869d689e1a8c63bd82b3129189ef826c5b342b` (`KHORA EP: regenerar bootstrap embebido desde gate 7.5.5`). No se modificó `main` ni producción.
+
+**Cambios observados en la rama:** gate canónico `7.5.5 / EP 1.0.3` con `-SelfTest`; `00-config.ps1` con guard de versión; `08-deps.ps1` ampliado con inventario de toolchain, validación de `npm.cmd`, pruebas de ejecución nativa, hidratación y wrappers; `05-efs.ps1` valida identidad/ruta del VHDX y estado Attached antes de borrar; `11-cleanup.ps1` conserva la tarea AtStartup cuando no verifica ausencia de residuos; `Test-Arranque.ps1` y `tests/validate_ep.py` alineados a 7.5.5/1.0.3; `ep-bootstrap-content.ts` regenerado desde gate.
+
+**Validación pendiente:** no se obtuvo una ejecución verificable de `-SelfTest` ni de la batería en Windows PowerShell 5.1 de PC-8 en este checkpoint. El estado del branch y los contenidos fueron inspeccionados por GitHub; no se afirma PASS de parser, self-test o E2E. La arquitectura `ep-medio-architectura.md`, `scripts/khora/modules/CONTRACT.md`, `EP-VALIDATION.md` y `ep-integrity-manifest.sha256` aún requieren sincronización con los artefactos finales de la rama.
+
+**Límites mantenidos:** sin autenticación/credenciales, sin B2, sin Vercel, sin bóvedas, sin arranque completo, sin workspace real y sin promoción a `main`. La revisión presencial P012/P013 consta como declaración directa del operador.
