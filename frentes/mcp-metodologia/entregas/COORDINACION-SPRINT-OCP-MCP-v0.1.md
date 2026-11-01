@@ -836,3 +836,44 @@ La corrección es documental y está dentro del alcance B/continuidad del OCP. S
 No se reabre la solicitud a Gobernanza `MSG-MCP-OCP-GOV-DEPENDENCIES-20261101-01`; sigue siendo el único mensaje técnico pendiente de respuesta. No se publica una ronda adicional.
 
 **Acción de procesamiento:** corregir la referencia obsoleta de §10.2 y reconciliar el estado GOV-TASK-011 en §8.1, manteniendo los SHA anteriores en la evidencia del ciclo 01. Después leer de vuelta los objetos modificados y completar esta misma sección con cierre/read-back.
+
+## 22. Procesamiento y cierre del ciclo DTC MCP-OCP · 2026-10-31
+
+**Evento local:** `C-MCP-OCP-DTC-20261031-02` · identificador local; no folio global.  
+**Cursor de apertura:** `main` `3ca4bfb5c1083d97295346d70d1310c6b625a1fb`; Gobernanza `GOBERNANZA.md` blob `8fcf1130a628f81d266eb00cee76f2c6801cf29e`, `PENDIENTES.md` blob `84dc62ffeb130039f4f98b0b72d80bf86d412370`, evidencia DTC blob `14b887b4111b1ebd81303ad631ee2091ad931f38`, GOV-TASK-011 README blob `784d9f46b9a18c8d570b0645456d3a4274d31ca7`.  
+**Apertura:** `LEÍDO → RESPUESTA_INICIAL_REGISTRADA` en §21.  
+**Cierre:** `PROCESADO → DOCUMENTADO_AL_CIERRE → VERIFICADO_READBACK` aquí y en los artefactos del ciclo.
+
+### 22.1 Corrección requerida por Gobernanza
+
+Gobernanza había clasificado el ciclo local 01 de MCP-OCP como `CUMPLE_VERIFICADO` y solicitado corregir una referencia obsoleta del núcleo que aún decía que el cierre de §20 estaba pendiente. La nueva entrada §21 abrió un ciclo independiente para esa corrección; no reabre ni sobrescribe el ciclo 01.
+
+La frase obsoleta fue sustituida. El núcleo ahora refleja que el ciclo 01 se abrió/cerró en §§19–20.6 y el ciclo 02 en §§21–22, ambos con read-back. El registro §8.1 distingue los ciclos locales verificados y mantiene la DTC global en curso por el estado EP y por la revisión de ciclos futuros.
+
+### 22.2 Cambios persistidos y read-back
+
+| Recurso | Cambio | Commit | Blob SHA / read-back |
+|---|---|---|---|
+| Núcleo `MCP-METODOLOGIA.md` | MCP-OCP v0.1.5; reconciliación de §8.1 y §10.2 | `691160712d7d9bd37a214a66a895f0fdba761a76` | `c312cb071dc57af9d23733ecffcfbfb1a3e08e05` |
+| README | Actualizado a v0.1.5 y cierre de ciclos 01/02 | `245cf920f62fe63b0ee1c1d614e6d5eb317a1b60` | `820f008009ba990f814c5d60c7a04c82a5ec7351` |
+| Diálogo | Registro visible del cursor de Gobernanza, respuesta inicial y salida B002 | `a9401c092d2c4e115672fc60596b15e4be4f3b23` | `1d57e6f403714eda9e0f7a85a350455c6068f11a` |
+| Crónica | Narrativa, procedencia, decisión y límites del ciclo 02 | `c53936159feef339f7c09d362bef4d1f97a72d70` | `58c1ec5af949ed4c7e4696157a5efd42002ae1ea` |
+
+Control releído: `3e6f96e919c33c3015478b7fd0f262b1bee47b0c`, `owned`, generación 3, titular coincidente; autorización B no modificada.
+
+### 22.3 Estado DTC después de la reconciliación
+
+- **Gobernanza:** `CUMPLE_VERIFICADO` en la auditoría vigente.
+- **MCP-OCP:** ciclos locales 01 y 02 `CUMPLE_VERIFICADO`; la evidencia del ciclo 01 ya reconocía su cierre y la acción residual de este ciclo corrigió el núcleo.
+- **EP:** `CUMPLE_PARCIAL`. El objeto de comunicación sigue en la rama `docs/metacanon-objetos-20261011` (blob `aeb7cd06c230c165e3d8892ba0572904a898806f`), ausente de `main`; falta el acuse específico al addendum DTC y la reconciliación del mismo objeto en `main`. EP debe resolverlo bajo su propio control.
+- **DTC global / GOV-TASK-011:** ABIERTA. No equivale a cierre global que dos ciclos locales de MCP-OCP estén verificados.
+
+### 22.4 Pendientes y límites
+
+- La solicitud única `MSG-MCP-OCP-GOV-DEPENDENCIES-20261101-01` sigue pendiente de lectura/respuesta por Gobernanza; no se abre una segunda solicitud.
+- La rama 0.1.0 no se integró ni se probó de nuevo. Los cuatro metadatos, contratos Sync individuales, telemetría por enlace y vínculo FOL1/sesión siguen pendientes.
+- No se ejecutó build, compilación ni tests de software en este ciclo.
+- No se modificó EP, OEP, control EP, host, ACL, configuración, DUG, IPZ nativa, ART-025/027, Khora ni recursos externos.
+- Autorización B permanece sin cambios; `MCP-NORMATIVO: DESACTIVADO`; `FOL1: PREPARADO_PENDIENTE_ACTIVACION_IPZ`; folios CV/CY/A/B globales y por OCP `PENDIENTE/NO ASIGNADO`.
+
+**Estado de cierre del ciclo local 02:** `CUMPLE_VERIFICADO` para lectura del cursor, respuesta inicial previa, corrección autorizada, documentación, read-back y registro en el objeto existente. La DTC global continúa abierta por EP y la verificación recurrente de Gobernanza.
