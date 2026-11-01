@@ -426,3 +426,38 @@ La publicación del prompt por Gobernanza solo prueba `PUBLICADO`; no prueba `LE
 La próxima acción material de EP-TASK-002 sigue siendo abrir el acceso de Backblaze en perfil de navegador autorizado, verificar solo lectura cuenta/región/buckets/keys, y posteriormente ejecutar una prueba pequeña, reversible y verificable. El Prompt 02 no autoriza por sí solo operaciones B2 ni cambios de host/ACL.
 
 **Límite de aceptación:** el Prompt 02 queda incorporado y verificado en el OCP de EP. No se declara incorporado en Gobernanza ni MCP-OCP; la recepción por este hilo EP no sustituye esos ciclos propios.
+
+
+---
+
+## Apertura DTC · EP · C-EP-MOD-SCRIPTPWS-20261101-01
+
+**Fecha:** 2026-11-01 · America/Mexico_City  
+**Estado de apertura:** `LEÍDO → RESPUESTA_INICIAL_REGISTRADA`  
+**Identificador:** local de ciclo EP; no es folio global ni activa FOL1.
+
+### Cursor y preflight
+
+- Rama canónica observada: `main`; HEAD leído: `04d2a9bd496c63fd498892abb783fe02e633a638`.
+- Objeto DTC existente: `frentes/ep/entregas/COORDINACION-GOBERNANZA-EP-v0.1.md`; blob leído: `24939fbe18b250256116f8556d96ae3c33bde238`.
+- Último ciclo EP cerrado en el objeto: `C-EP-DTC-PROMPT02-20261031-02`; secuencia registrada completa hasta `VERIFICADO_READBACK`.
+- **Gobernanza:** `SIN_NOVEDAD` en el objeto DTC desde el último ciclo procesado; cursor observado en `main` y blob indicado arriba. La solicitud que se procesa ahora fue dictada directamente por el operador en esta conversación.
+- OEP `main`: `v0.3.22 / VCU-EP-v24`, blob `deaceadfc1de4636e0f9114a47a3d5255c04e897`.
+- DUG actual leído completo: `Samantha v377 · NX-377m`, blob `54064c8fe00f872023a455f06596061ed69062ae`; Metacanon `1.26`; GOW `2.14`. Aplican §ARR, CNP y, de forma específica, P037, ART-021 y ART-029.
+- Índice de tareas provisionales EP: blob `3c1d1bb91bc4152dd783f7f3b12ba1f986c40018`; tareas activas/referenciadas EP-TASK-001/002/003.
+- No se localizó un `CONTROL-RESPONSABILIDAD.json` autoritativo de EP ni un titular/generación formal vigente en OEP. No se crea control paralelo ni se declara transferencia del FT padre.
+- Identificador candidato `C-EP-MOD-SCRIPTPWS-20261101-01`: búsqueda textual exacta en OEP, índice de tareas y DTC actual sin coincidencias. Esto es un chequeo acotado de colisión, no unicidad global.
+
+### Respuesta inicial al operador
+
+Acuso la instrucción literal: **«Inaugura Modulo ScriptPWS en Frente de Entorno persistente, y toma responsabilida de eel, documenta ultimo comando que funciono.»** La materializaré como módulo funcional interno `MOD-SCRIPTPWS`, subordinado al único OEP de EP, sin crear otro FT, OCP, control, sesión, titularidad ni folio global.
+
+Acepto el encargo funcional de coordinación, definición, documentación, auditoría técnica y continuidad de `MOD-SCRIPTPWS` en esta conversación, dentro del alcance autorizado por el operador. Esta asignación de módulo no se presenta como transferencia de la titularidad formal de EP, cuyo control no está localizado. Tampoco amplía por sí sola permisos de host, credenciales, B2, publicación, ni altera OEP/Khora u otros repositorios. El módulo hereda el gobierno y las compuertas de EP.
+
+**Último funcionamiento acreditado, no confundir con el último comando emitido en chat:** la evidencia del OCP separado KHORA Workstation Bootstrap registra en PC-14 (2026-10-30) `-SelfTest` PASS y `-PreflightOnly` PASS (exit 0), además de parser PowerShell 5.1 PASS e integridad privada del script verificada. El preflight no inicia RDC. La prueba de handshake RDC fresco figura `NOT_RUN` porque se detectaron tres procesos Desktop Commander existentes y no se lanzó otra instancia. Fuente: `frentes/khora-workstation-bootstrap/evidencias/C-KHORA-WORKSTATION-BOOTSTRAP-01.json`, blob `84c80a6397443e677e5718afaf2db6040ad7c8f5`; script V6 commit `aa45426ece7374e9812868e04e0ce5f783cebf4d`, blob `862e63bd00a84cdbe5c2d913794cc17de373356a`, SHA-256 `dd71b638fab3694e89ae58d7faf265941cd6a289ecbf9602bf0d434837635d7b`. La evidencia no conserva el texto literal de una línea ejecutable completa; no se reconstruirá ni etiquetará una línea posterior como exitosa sin salida verificable.
+
+El último comando de ejecución completa enviado en la conversación actual no tiene resultado de usuario y queda `NO_VERIFICADO`. El intento que recibió el error `No se encontró gh.exe` queda `FALLIDO_ANTES_DE_EJECUCIÓN`; según la salida aportada, se detuvo antes de modificar el entorno. No hay evidencia de arranque RDC correcto en este ciclo.
+
+**Viabilidad y orden:** procede la inauguración documental del módulo y la recuperación de su historial dentro de OEP. Código/ejecución real, autenticación y conexión RDC quedan sujetos a los roles y autorizaciones OEP; RDC es exclusivamente del asistente y no se invoca mediante el script como atajo. Se actualizará OEP y sus índices/revisión/manifiesto existentes, con lectura de vuelta de cada cambio.
+
+**Siguiente procesamiento:** incorporar `MOD-SCRIPTPWS` en el OEP existente, registrar alcance, entregables, responsables funcionales, límites y evidencia del último funcionamiento acreditado; actualizar los índices documentales afectados y cerrar este mismo ciclo DTC con blobs y SHA verificados.
