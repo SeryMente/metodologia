@@ -830,3 +830,12 @@ Ambos archivos mantienen exactamente el mismo blob SHA en `main` y en la rama de
 **Siguiente paso operativo:** autenticar un perfil B2 aislado mediante el portal oficial sin exponer el secreto en el chat; luego verificar en modo de lectura cuenta/región, bucket único `OCP-MCP`, `namePrefix` y capacidades reales de la key. Tras comprobar el scope, ejecutar una prueba sintética no destructiva con manifiesto SHA-256, read-back y restore a una ruta nueva. No se declara B2 operativo ni `RECOVERABLE` antes de esas pruebas.
 
 **Cursor de comunicación:** el bloque de causa raíz MOD-SCRIPTPWS y PR #350 fue leído en el objeto DTC con blob `aaf05fa3aaad8e64281b3ccf5de0705f33aad038`. El alcance MCP-OCP solicitado previamente está publicado por EP; no se encontró todavía un acuse/read-back nuevo de Gobernanza en GOV-TASK-014. El ciclo EP-03 permanece abierto; sin TinyFish.
+
+
+### Directiva operativa permanente MOD-SCRIPTPWS · control de fallos y no recurrencia · 2026-11-01
+
+**Instrucción literal del operador:** «Bien, siempre que falle un comando, por algun motivo, se reinicia el contador, se busca causa raiz, y se documenta, nunca se comete el mismo error dos veces .de acuerdo?»
+
+**Materialización:** incorporada a MOD-SCRIPTPWS en OEP §94, versión documental v0.3.27 / VCU-EP-v29. La norma aplica a todos los comandos, validadores, scripts y pruebas del módulo. Cualquier fallo observado reinicia inmediatamente la racha a cero; no se repite el mismo comando bajo las mismas condiciones; se preservan comando literal, shell/versión, SHA, stdout/stderr, código de salida y precondiciones con secretos redactados; se determina RCA verificada o se etiqueta como hipótesis; se corrige la causa y se añade una guardia/prueba preventiva; finalmente se valida y se hace read-back. Un reintento exitoso no borra el fallo. Una recurrencia de causa ya conocida se trata como nueva incidencia de control y vuelve a bloquear la repetición hasta corregir el mecanismo preventivo.
+
+**Estado:** DOCUMENTADO_EN_OEP · READ_BACK_VERIFICADO · CONTADOR_0. Se conserva el ciclo existente C-EP-MOD-SCRIPTPWS-20261101-03; no se crea ni renumera ciclo, folio global o control de responsabilidad. FOL1 permanece sin activación verificada.
