@@ -550,3 +550,18 @@ El manifiesto conserva 59 entradas, coteja OEP/README/revisión por bytes UTF-8,
 **Siguiente acción del módulo:** revisar la procedencia/diff de la divergencia 7.5.4/1.0.2 contra 7.5.3/1.0.1; recuperar el texto literal del último comando que el operador confirma que funcionó; después construir y probar el flujo PowerShell completo con conservación de ventana, sin duplicar ni finalizar sesiones RDC existentes.
 
 **Read-back del cierre:** se leerá nuevamente este objeto DTC tras guardar esta entrada. Su blob final no se incluye en su propio cuerpo.
+
+
+## Apertura DTC · EP · C-EP-MOD-SCRIPTPWS-20261101-02
+
+**Estado:** LEÍDO → RESPUESTA_INICIAL_REGISTRADA · 2026-11-01 · ciclo local EP, sin folio global.
+
+**Cursor:** OEP main v0.3.23, blob 0babc46674a9dbcdc58e49e6256fc9a8fe17a304; DTC anterior blob 9a01d4d9a67ec1de476d6f9aa4f331ca5006cccf; DUG main título v377, blob 54064c8fe00f872023a455f06596061ed69062ae. La portada del DUG aún dice v375 / NX-375m; firma de v377 NO VERIFICADA.
+
+**Entrada del operador:** informó que en una instalación fresca de cibercafé winget instaló GitHub CLI 2.103.3 correctamente, tras lo cual apareció: “ERROR: You are not logged into any GitHub hosts. To log in, run: gh auth login”. La consola quedó abierta y no se cerraron procesos RDC existentes.
+
+**Respuesta inicial EP:** instalación de GH CLI = EJECUTADA según salida del operador. La sesión GitHub sigue NO AUTENTICADA; lectura privada del repositorio NO VERIFICADA. El texto de error no permite identificar qué proceso lo emitió ni probar si hubo intento de device flow. No hay código/URL de dispositivo en la salida. La fuente V6 usa gh auth status en líneas 136, 289 y 291; hay que capturar stderr como salida ordinaria y tomar LASTEXITCODE inmediatamente. La acción directa propuesta para desbloquear la sesión es gh auth login --hostname github.com --git-protocol https --web --scopes repo --skip-ssh-key.
+
+**Límite de responsabilidad:** no se modificó el script ni el OCP khora-workstation-bootstrap. Su control main identifica owner alias chatgpt-C-KHORA-WORKSTATION-BOOTSTRAP-01, generation 1, y no expone ID nativo de conversación. La responsabilidad de MOD-SCRIPTPWS no muta por sí sola ese control. No se inició ni cerró RDC; no se alteraron procesos existentes.
+
+**Siguiente acción:** autorización GitHub interactiva desde el prompt actual; después verificación de gh auth status y lectura real del archivo privado. Cerrar este mismo ciclo con evidencia del operador y read-back.
