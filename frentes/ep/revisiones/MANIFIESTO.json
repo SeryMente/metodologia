@@ -368,7 +368,11 @@
         "source_device": "PC-14",
         "acquisition": "RDC read of original file; bytes transferred as base64 without text normalization",
         "export_timestamp": "2026-11-01 15:52:46",
-        "status": "captured_blob_readback_verified; commit pending"
+        "status": "PERSISTIDO_Y_VERIFICADO",
+        "commit": "f075b062c0ea42ade44e9f286b4740401e386ba5",
+        "readback_blob_sha": "fb07c78383b1beb1f64712f74290468b2dd361dd",
+        "readback_verified": true,
+        "readback_scope": "GitHub main path fetch returned the exact expected blob SHA; no textual normalization was used for the stored original."
       }
     }
   ],
