@@ -694,3 +694,14 @@ Gobernanza es responsable de verificar la dinámica en cada uno de sus ciclos. C
 5. Mantener el estado de EP como pendiente/no verificado y dejarlo visible para la verificación del siguiente ciclo de Gobernanza; no atribuir recepción ni cumplimiento.
 
 **Resultado de apertura:** DTC leída y respondida en el objeto propio de MCP-OCP. La compuerta DTC de apertura queda atendida; el ciclo completo no queda cerrado hasta procesamiento, persistencia de novedades y read-back de cierre.
+
+
+### DTC · registro mínimo por ciclo (aclaración de la misma comunicación)
+
+Esta precisión no abre otro OCP ni otra ronda. **Cada ciclo real de MCP-OCP debe quedar registrado aquí, sin excepción**, en una sola entrada que se abre al inicio y se completa al cierre:
+
+- **APERTURA:** identificador local del ciclo o folio global válido; cursor real (rama/revisión/blob); respuesta inicial o `SIN_NOVEDAD`.
+- **CIERRE:** delta o `SIN_NOVEDAD`; tareas/estados afectados; bloqueos y siguiente acción; evidencia y referencias de los cambios del núcleo/registro.
+- **READ-BACK:** confirmar lectura posterior de este objeto y de los documentos modificados. Si falta apertura, cierre o read-back, el ciclo queda `GATE_INCOMPLETO`. Conservar entradas anteriores; no sobrescribirlas ni crear otra bitácora.
+
+La respuesta de apertura ya registrada en §19 se conserva. Debe completarse el cierre de ese mismo ciclo después de procesar su trabajo; no se declara completo por la sola respuesta inicial.
