@@ -299,3 +299,5 @@ El ciclo que configuró la medición no es línea base: la captura no estuvo act
 **MCP-OCP:** DUG enlaza al [núcleo](../mcp-metodologia/MCP-METODOLOGIA.md) y [README](../mcp-metodologia/README.md), pero no se tocó el control ni el contenido del OCP ejecutor. El enlace de retorno desde ese núcleo debe verificarse/añadirse por su titular antes de declarar enlaces cruzados completos entre ambos OCP.
 
 FOL1 sigue `PREPARADO_PENDIENTE_ACTIVACION_IPZ`; folios globales CV/CY/A/B no asignados. MCP-NORMATIVO `DESACTIVADO`.
+
+[Crónica](cronica/C-GOBERNANZA-OCP-MCP-PERFORMANCE-01.md) · [evidencia](evidencias/C-GOBERNANZA-OCP-MCP-PERFORMANCE-01.json).
