@@ -1298,3 +1298,21 @@ La incorporación del Prompt 02 en EP no prueba publicación/aceptación global 
 **Clasificación de aceptación:** `BACKUP_LOCAL_MCP_CANDIDATA=REPORTADO_Y_COTEJADO_EN_CODIGO`; `B2_EXPORT_IMPORT=NO_IMPLEMENTADO/NO_VERIFICADO`; `RESTORE_CROSS_HOST=NO_VERIFICADO`; `MCP_OCP_INTEGRADO_EN_MAIN=NO`; `INSTALADO_EN_EP=NO`; `ACEPTADO_POR_OPERADOR=NO`. No confundir esos estados ni reciclar la prueba local como E2E multiubicación.
 
 **DTC:** evidencia publicada para Gobernanza en `COORDINACION-GOBERNANZA-EP-v0.1.md`, mismo ciclo EP-03, addendum de persistencia MCP-OCP y portabilidad DPAPI; commit de comunicación `2a5cb60b82e845868be60a09fe253d5448c72d89`, blob/read-back `d069aab33ba2718a72a5b07dfc0486121b1058ea`. Espera respuesta de Gobernanza y acuse técnico MCP-OCP en su objeto propio; EP no escribe ni altera el núcleo/control MCP-OCP.
+
+
+## 30. Matriz inicial de conjuntos y namespaces · propuesta para DTC
+
+| Conjunto lógico | Fuente/captura | Clasificación inicial | Destino lógico propuesto | Condición para habilitar |
+|---|---|---|---|---|
+| `ep-host-user-data` | Datos elegibles de aplicaciones portables y workspace; inventario EP aún pendiente | Candidato principal EP | `ep-ocp/host/` | Selección por app/dataset, snapshot coherente y manifiesto SHA-256 |
+| `metodologia-canonical-docs` | `SeryMente/metodologia/main` | GitHub es fuente canónica; copia B2 complementaria si Gobernanza la exige | `ep-ocp/metodologia/` | Snapshot identificado por commit/tree; no duplicar OEP/tareas/bitácoras como autoridad |
+| `mcp-ocp-runtime-sqlite` | `data/ocp-mcp.sqlite` de la candidata MCP-OCP | Estado operativo potencialmente persistente; no hay evidencia de instalación/DB viva en EP | `ep-ocp/mcp-ocp/runtime/` | Captura nativa con SQLite Online Backup API/BackupService, integridad y validación del dueño MCP-OCP |
+| `mcp-ocp-backup-packages` | `<dataRoot>/backups/<backup-id>.ocpbak` | Paquete local cifrado; portabilidad cross-host NO VERIFICADA por DPAPI `CurrentUser` | `ep-ocp/mcp-ocp/backups/` | Resolver envoltorio portable/recovery y sidecar manifest; restore en otro host/perfil |
+| `mcp-ocp-build-evidence` | Recibo, source/build manifests y ZIP de la candidata | Artefactos versionados por rama/commit; no sustituyen runtime state | `ep-ocp/mcp-ocp/builds/` (opcional) | Gobernanza/MCP-OCP deciden retención; GitHub conserva procedencia |
+| `secrets-and-live-auth` | Tokens, claves, credenciales, cookies, DPAPI blobs individuales y material de sesión autenticada | EXCLUIDO del backup ordinario | ninguno | Solo mecanismo de secretos separado y autorizado; nunca copia recursiva |
+
+**Nota de namespace:** estos paths son propuestas lógicas, no carpetas B2 observadas. Dependen de verificar el único bucket `OCP-MCP` y que la key activa limite realmente a `ep-ocp/`. Los subdirectorios separan conjuntos por propietario; no crean bucket, key, ACL ni autoridad canónica adicional.
+
+**Política inicial:** objetos remotos inmutables/versionados; no propagar borrados locales, no usar `--delete` ni lifecycle destructivo. La retención local de BackupService (daily/weekly/pre-update) no se copia automáticamente a B2: requiere política remota independiente y pruebas.
+
+**Regla MCP-OCP:** no subir `ocp-mcp.sqlite`, sus archivos `-wal`/`-shm` ni un directorio activo por copia de archivos. Usar el snapshot SQLite nativo. El `.ocpbak` necesita manifiesto externo e identidad portable del mecanismo de descifrado antes de contar como copia multiubicación recuperable.
