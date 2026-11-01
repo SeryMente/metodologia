@@ -99,5 +99,49 @@
     "ep_control_modified": false,
     "sink_cloudflare_deployed": false,
     "ep_installed": false
+  },
+  "operator_addendum": {
+    "source": "operator_instruction_verbatim",
+    "source_path": "frentes/gobernanza/conversaciones/C-GOBERNANZA-VECTOR-SEMANTICO-01-dialogo.jsonl",
+    "source_record_type": "operator_addendum_verbatim",
+    "verbatim_text": "O sea, para esta implementación nos vamos a basar en el criterio rector y según las instrucciones verbatim, el servidor MCP-OCP debe de contar con alguna rutina que permita recibir la petición del paquete de principios de nivel 2 por parte del modelo, junto con el folio del ciclo, para procesarlo, el folio, emitir el hash que tendrá que ser usado para abrir el paquete de principios de nivel 2 y... está bien si el modelo almacena en su ventana el contenido de los principios. Esa sería, me parece, la única manera a la que podría acceder a la capa 2 sin el hash que emite el servidor MSP, ya que la ventana de contexto del modelo es efímera y volátil. Entonces no representa un... Para empezar, estos principios no son información sensible, nada más hay que controlar el flujo. Por otras razones no es una cuestión de seguridad de la información. Entonces el cómo el servidor MSP materializa o realiza estas instrucciones en lo concreto, eso te lo dejo a ti, siempre y cuando haya un apego estricto al criterio rector en tanto que vector semántico y a estas instrucciones también.",
+    "preservation_instruction_verbatim": "Recuerda que ese criterio rector siempre debe poder ser consultado verbatim, tal y como yo lo dicté, para que sirva de criterio de verdad para el desarrollo, manteniendo siempre el foco.",
+    "criterion_expansion": "PACKAGE_HASH_OPENS_IMMUTABLE_LEVEL2_SNAPSHOT",
+    "required_flow": [
+      "request_by_model_with_cycle_folio_session_and_selected_principle_ids",
+      "resolve_full_texts_from_canonical_DUG_main",
+      "materialize_deterministic_immutable_package",
+      "emit_package_sha256_as_open_handle",
+      "open_package_by_hash_and_verify_integrity_and_cycle_binding",
+      "deliver_full_texts_to_model_context",
+      "allow_volatile_context_retention_for_current_cycle",
+      "reopen_same_snapshot_by_hash_if_context_is_lost",
+      "allow_additional_principles_as_new_immutable_package",
+      "record_frequency_of_individual_principle_queries_without_inference_of_application"
+    ],
+    "hash_semantics": {
+      "package_sha256": "Primary content-addressed package identifier and integrity digest; used to open/retrieve exact package",
+      "links_sha256": "Digest of exact ordered individual references, retained as an additional proof for the original vector criterion",
+      "neither_is_secret_or_confidentiality_credential": true
+    },
+    "outstanding_normative_divergence": "Original vector says Sync; DUG ART-027 says Sink. No equivalence inferred.",
+    "status": "DOCUMENTED_NOT_IMPLEMENTED"
+  },
+  "persistence": {
+    "addendum_readback": {
+      "governance": {
+        "blob_sha": "a2e960c219c0147d687d0618dcfa8cb7d8fa1f0b",
+        "exact_content_match": true
+      },
+      "dialogue": {
+        "blob_sha": "bcd82f967185c32e6a26c2d5d539aedaf114f1eb",
+        "exact_content_match": true
+      },
+      "chronicle": {
+        "blob_sha": "028b46c2bbc2f1def25abb9fc36bff85f0246402",
+        "exact_content_match": true
+      },
+      "evidence_status": "WILL_BE_VERIFIED_AFTER_THIS_WRITE"
+    }
   }
 }
