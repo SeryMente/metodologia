@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.21. **Sello del frente:** VCU-EP-v23 (Versión de Contexto Universal). **Ancla:** rectificación explícita del operador: `OCP-MCP` es el único bucket B2 de destino; `OCP-MSP` y `metodologia-ep-persistencia` son errores. La rectificación se materializa en §91; conserva la compuerta bilateral de §90 y las tareas/propuesta de adaptación previas.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.22. **Sello del frente:** VCU-EP-v24 (Versión de Contexto Universal). **Ancla:** rectificación explícita del operador: `OCP-MCP` es el único bucket B2 de destino; `OCP-MSP` y `metodologia-ep-persistencia` son errores. La rectificación se materializa en §91; conserva la compuerta bilateral de §90 y las tareas/propuesta de adaptación previas.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.21 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -12,7 +12,7 @@
 
 Adquirir este objeto como instrucciones del operador, subordinadas a las reglas superiores de plataforma y a autorizaciones específicas. Claudia es asistente/documental; Samantha es constructor/único escritor de código. Una asignación explícita posterior puede cambiar roles; las citas no lo hacen. Este encargo construye documentación y prompts, no autoriza a esta conversación a ejecutar la actualización de producto.
 
-El estado de reanudación vigente de este frente está en §60–§92; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
+El estado de reanudación vigente de este frente está en §60–§93; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
 
 Leer por relevancia: OEP actual→metacanon central→Sistema de Instrucciones/Metodología/Bootstrap vigentes→canon transversal EP→AGENTS.md y ep-medio-architectura.md→código/evidencia en commits exactos. Fuente caída no es «sin cambios». Un archivo no crea herramientas, credenciales ni memoria entre plataformas.
 
@@ -1490,3 +1490,52 @@ El objeto provisional de comunicación existente `COORDINACION-GOBERNANZA-EP-v0.
 - **Estado:** el historial se conserva y la respuesta específica al addendum DTC ha quedado registrada. El procesamiento de EP-TASK-002 continúa; el cierre de este ciclo requiere completar el mismo objeto tras las actualizaciones y leer de vuelta todos los documentos modificados.
 
 La reconciliación corrige la ausencia del objeto en `main`; no cambia control, titularidad, generación, permisos de producto ni estado físico de EP. La existencia de este archivo en GitHub no acredita autenticación ni operación de Backblaze B2.
+
+
+---
+
+## 93. DTC como centralización del OCP general del sprint — v0.3.22 / VCU-EP-v24
+
+### Distribución de autoridad aplicada por EP
+
+EP recibe y aplica este modelo exclusivamente dentro de su ámbito ejecutor:
+
+- **Gobernanza** centraliza e integra el OCP general del sprint mediante su registro provisional de tareas GOV-TASK-*; gestiona con el operador las decisiones centrales, dependencias, estado integrado y criterios de aceptación.
+- **EP** conserva el OEP y sus registros propios como fuente técnica autoritativa de entorno, persistencia, alojamiento, instalación y operación bajo su autorización.
+- **MCP-OCP** conserva su propio OCP y autoridad técnica sobre el servidor, fuentes, pruebas, empaquetado y documentación. EP no ejecuta ni modifica en su nombre.
+
+No se crea un cuarto OCP, tablero, dashboard, backlog duplicado ni canal alternativo. Gobernanza integra resultados y referencias; EP mantiene su detalle técnico y evidencia. La adopción en esta sección no demuestra lectura, aceptación o aplicación por MCP-OCP.
+
+### Enlace de tareas y estado hacia Gobernanza
+
+Cuando un resultado EP tenga dependencia en el sprint general, EP reportará desde su OCP original, sin duplicar el backlog:
+
+1. ID local de tarea EP y su ruta canónica.
+2. OCP responsable y enlace al núcleo técnico.
+3. Cursor real de `main` (commit/blob) y estado observado.
+4. Estado reportado, evidencia observada y estado verificado, separados.
+5. Bloqueos, decisión requerida, siguiente acción y criterio de aceptación pendiente.
+
+Para la urgencia actual, el objeto de trabajo fuente es **EP-TASK-002**, bajo `frentes/ep/📁 🧭 - Tareas provisionales/`; OEP y su tarea conservan autoridad sobre la persistencia B2. **No se identifica todavía una tarea GOV-TASK-* específica que integre esta dependencia técnica.** GOV-TASK-011 es el procedimiento DTC de coordinación, no una asignación sustitutiva de EP-TASK-002. La asignación de la dependencia al OCP general corresponde a Gobernanza; EP no inventa ese vínculo ni crea una tarea paralela.
+
+### Criterio de verdad y estados
+
+El DUG completo en `SeryMente/metodologia/main` conserva la precedencia normativa. Se aplican los cinco miembros del CNP (P001, P004, P005, P038 y P043, todos categoría A) sin limitar la consulta de los demás principios pertinentes. Para este ámbito son relevantes también P012/P013, P016, P035, P037, P041 y P042. El CNP no es una autoridad ni un OCP separado.
+
+EP distingue siempre: **objetivo solicitado → criterio normativo/de aceptación → estado reportado → estado observado → estado verificado → aceptación**. Reporte de otro agente u operador no equivale por sí solo a prueba. Una ejecución se afirma solo tras inspeccionar la revisión canónica, evidencia/pruebas y read-back aplicables. Si falta evidencia o definición normativa/contractual, EP declara la brecha y falla de forma cerrada; no completa metadatos, endpoints, permisos, enlaces, resultados o folios por inferencia.
+
+### Ejecución DTC en EP
+
+Cada ciclo real de EP recupera el último cursor del mismo objeto `COORDINACION-GOBERNANZA-EP-v0.1.md`, lee y responde al mensaje nuevo antes de otro trabajo sustantivo, procesa solo lo autorizado dentro del OEP, y completa la misma entrada con cambios/NO-OP, tarea original, estados, evidencia, commits/blobs/SHA, bloqueos y siguiente acción. El objeto y cada documento modificado se leen de vuelta. Si falta apertura, respuesta inicial, procesamiento, cierre o read-back, el ciclo queda `CICLO_INCOMPLETO`. En una conversación nueva se continúa desde ese cursor sin reiniciar ni duplicar el historial.
+
+Si no hay mensaje nuevo, registrar `SIN_NOVEDAD` y el cursor efectivamente leído. La serialidad impide abrir una solicitud nueva mientras otra permanezca pendiente de respuesta/procesamiento.
+
+### Control, autorización y límites
+
+La búsqueda en `main/frentes/ep/` y en la rama documental consultada no localizó un `CONTROL-RESPONSABILIDAD.json` propio de EP ni un registro canónico de titular/generación activa en OEP. Esta brecha se declara, no se rellena por inferencia ni se compensa creando un control paralelo. Las acciones que requieran una transferencia, un titular/generación formal o control exclusivo quedan bloqueadas hasta reconciliar la fuente autoritativa mediante el procedimiento correspondiente. La documentación dentro del OCP y con los permisos de repositorio observados no se presenta como una transferencia de titularidad.
+
+EP no modifica DUG, GOW, IPZ, Sink/ART-027, MCP-OCP, su control, el host ni el código del servidor. La mención de Sink y sus límites en el Prompt 02 se reconoce como frontera del frente MCP-OCP, no como autorización de EP para implementarlo. Las acciones B2, credenciales, host, ACL o recursos persistentes mantienen sus autorizaciones y preflight específicos; el Prompt 02 no amplía permisos de ejecución.
+
+### Procedencia y estado de incorporación
+
+El operador entregó directamente el Prompt Adicional 02 a este hilo EP el 2026-10-31. GOV-TASK-011 `main` contenía el documento en estado `PREPARADO_NO_PUBLICADO` y registraba que no se había enviado a EP/MCP-OCP. EP lo recibió, leyó, respondió y procesó documentalmente en el ciclo local `C-EP-DTC-PROMPT02-20261031-02`. Esta sección acredita su incorporación en el OCP de EP una vez leída de vuelta; no cambia el estado de Gobernanza ni afirma recepción por MCP-OCP.
