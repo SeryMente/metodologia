@@ -85,6 +85,7 @@ La regla se adopta para tareas provisionales de este contenedor por instrucción
 - [ ] Marcar cada tramo según la secuencia `PUBLICADO → LEÍDO → RESPUESTA_INICIAL_REGISTRADA → PROCESADO → DOCUMENTADO_AL_CIERRE → VERIFICADO_READBACK`.
 - [ ] Si falta respuesta inicial o documentación final, declarar `CICLO_INCOMPLETO`; no cerrar por silencio, por guardar un prompt o por una respuesta en el chat.
 
-**Objeto de coordinación actual:** `frentes/ep/entregas/COORDINACION-GOBERNANZA-EP-v0.1.md`.  
-**Índice provisional actual:** `frentes/ep/📁 🧭 - Tareas provisionales/README.md`.  
+**Objeto de coordinación DTC canónico en `main`:** [COORDINACION-GOBERNANZA-EP-v0.1.md](../entregas/COORDINACION-GOBERNANZA-EP-v0.1.md).  
+**OEP:** [OEP.md](../OEP.md) §90–§92.  
+**Índice provisional:** `frentes/ep/📁 🧭 - Tareas provisionales/README.md`.  
 **No crear:** un OCP alternativo, un tablero/bitácora paralelos, control de responsabilidad independiente, sesión/folio propios ni un segundo objeto de estado.
