@@ -79,7 +79,7 @@ Esta secuencia rige para todos los ciclos del frente mientras el operador no la 
 - Prompt común: blob `c3547556107153b47802877783001befd49b19cb`, SHA-256 `495fa433df6890838a9e3dd4359a0a4e34fa6936c4f43238d318c9eb6ae69c52`.
 - Revisión OEP v0.3.19: blob `0fa01e7937be3fbe968d4903e61aaa75b7bfedba`, SHA-256 `a757a6390cfe37b9bbdc44b7002f00783a62302ddca5184044cbe88526a1b728`.
 - Manifiesto: commit `55dce2a33a8ecd3677be75fb1cfefe5193a3c9f7`, blob `296708c781c7fda2a60e2e473d6f8ceaf8f06deb`; el manifiesto excluye su propio hash.
-**Límite de read-back:** los archivos main anteriores fueron adquiridos después de escribir y sus blobs y SHA-256 se registraron en `frentes/ep/revisiones/MANIFIESTO.json`. Este objeto bilateral se debe leer de vuelta tras esta escritura para alcanzar `VERIFICADO_READBACK`.
+**Límite de read-back:** los archivos main anteriores fueron adquiridos después de escribir y sus blobs y SHA-256 se registraron en `frentes/ep/revisiones/MANIFIESTO.json`. La versión de cierre anterior fue leída de vuelta y coincidió con el blob `09a9f67829b25a3e2c54d73f697b810f65ce824b`. La actualización de estado presente también fue leída de vuelta y devolvió el blob `4a83fe36d9a6426512d8c7cdb88fb1043b1a3364`; por ello el estado de comunicación queda `VERIFICADO_READBACK`.
 
 ## Historial de mensajes
 
