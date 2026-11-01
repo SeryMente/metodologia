@@ -41,7 +41,6 @@ try {
         $spec = "$($source.commit_id):$($source.canonical_path)"
         $blob = (& git -C $RepoRoot rev-parse $spec).Trim()
         Assert-ExitCode "git rev-parse $spec"
-        if ($source.commit_id -ne $mainCommit) { throw "Source commit is stale against origin/main for $($source.source_id)." }
         $mainBlob = (& git -C $RepoRoot rev-parse ("$mainCommit`:$($source.canonical_path)")).Trim()
         Assert-ExitCode "git rev-parse origin/main source path"
         if ($mainBlob -ne $blob) { throw "Source blob is not current in origin/main for $($source.source_id)." }
