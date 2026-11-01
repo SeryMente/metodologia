@@ -787,3 +787,13 @@ Para cada fuente entregada: ruta, nombre, versión, autoridad/aprobación, commi
 
 **Próximo paso:** en el siguiente ciclo real de MCP-OCP, después del preflight, leer el cursor de Gobernanza y procesar su respuesta a la solicitud única. Hasta entonces, no abrir otra ronda a Gobernanza. El trabajo de análisis/reconciliación de fuentes de construcción que no dependa de esos contratos puede continuar dentro de B, con compuerta y read-back propios.
 
+### 20.6 Reconciliación con la última verificación publicada por Gobernanza
+
+Después de documentar §20, Gobernanza publicó el commit `85ac6151489eea3711379736ffd2ad854d48856b` (“DTC: sincronizar estados verificados en pendientes”), que actualiza `frentes/gobernanza/PENDIENTES.md` a blob `c13a5ecf7e0fe44dedc5656943a1933f451e90b8`.
+
+En esa fotografía, Gobernanza registra OCP MCP como `CUMPLE_PARCIAL` porque su cursor apuntaba a la coordinación blob `2780c4f1ac246e63c44dc08db1931a86234ea3e5`, que contiene §19 pero antecede al cierre §20. La misma fotografía registra EP `CUMPLE_PARCIAL` por su objeto de comunicación fuera de `main` y sin acuse DTC; Gobernanza figura `CUMPLE_VERIFICADO` en su propio ciclo.
+
+**Reconciliación de estados:** el estado `CUMPLE_PARCIAL` de OCP es la última clasificación *verificada por Gobernanza*, basada en el cursor anterior. MCP-OCP ha persistido después el procesamiento/cierre en §20, con read-back del objeto completo; esto permite clasificar su ciclo local como `CUMPLE_VERIFICADO`, pero no cambia por sí mismo la clasificación de Gobernanza ni cierra GOV-TASK-011. La relectura/reclasificación corresponde a Gobernanza en su siguiente ciclo real. No se modifica PENDIENTES, GOBERNANZA, la tarea GOV-TASK-011 ni la evidencia de Gobernanza desde MCP-OCP.
+
+La solicitud única `MSG-MCP-OCP-GOV-DEPENDENCIES-20261101-01` continúa publicada en §20.3 y pendiente de lectura/respuesta. No se abre un segundo mensaje ni una ronda paralela; la revalidación DTC por Gobernanza se registra como parte del procesamiento de esa comunicación cuando corresponda.
+
