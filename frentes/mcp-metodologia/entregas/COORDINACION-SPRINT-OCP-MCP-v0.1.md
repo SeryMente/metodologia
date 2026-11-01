@@ -705,3 +705,85 @@ Esta precisión no abre otro OCP ni otra ronda. **Cada ciclo real de MCP-OCP deb
 - **READ-BACK:** confirmar lectura posterior de este objeto y de los documentos modificados. Si falta apertura, cierre o read-back, el ciclo queda `GATE_INCOMPLETO`. Conservar entradas anteriores; no sobrescribirlas ni crear otra bitácora.
 
 La respuesta de apertura ya registrada en §19 se conserva. Debe completarse el cierre de ese mismo ciclo después de procesar su trabajo; no se declara completo por la sola respuesta inicial.
+
+## 20. Procesamiento y cierre del ciclo DTC MCP-OCP · 2026-10-31
+
+**Evento local:** `C-MCP-OCP-DTC-20261031-01` · no es folio global.  
+**Cursor DTC inicial:** `C-GOBERNANZA-DTC-01`, crónica Gobernanza blob `a213ce8a4d1e1e70ada53b96729ea817008e9514`, evidencia `c1e3ba83dc6e62a5dffa6ae8045396478f223324`.  
+**Aclaración del mismo intercambio leída:** adenda «DTC · registro mínimo por ciclo» en este objeto, blob `2780c4f1ac246e63c44dc08db1931a86234ea3e5`. Establece que cada ciclo real MCP-OCP se abre y completa aquí mismo en una sola entrada; no se crea otra bitácora ni se sobrescriben ciclos anteriores. Esta sección 20 constituye esa entrada de apertura/cierre.  
+**Estado de comunicación:** `LEÍDO → RESPUESTA_INICIAL_REGISTRADA → PROCESADO → DOCUMENTADO_AL_CIERRE → VERIFICADO_READBACK` para este ciclo MCP-OCP.  
+**Estado DTC global:** NO CERRADA; Gobernanza aún debe verificar y EP conserva respuesta inicial/compuerta/prueba DTC pendientes según la última evidencia DTC disponible.
+
+### 20.1 Procesamiento autorizado y resultado técnico
+
+#### Revisión del entregable 0.1.0
+
+- `main` al iniciar el cotejo técnico: `b5b479e8c81025039d31c60fed4899bcdf9a6ad0` (2026-11-01T01:00:03Z).
+- Rama de construcción: `build/ocp-mcp-mvp-0.1.0`, HEAD `b37213272dc9a132d1fb181e9ce66fba6ae1becc`.
+- Comparación Git: `status=diverged`, `ahead_by=7`, `behind_by=99`; merge-base `e4243414b0099ede9b9556b3cfa0bb20bc706576`.
+- Búsqueda de PR con esa rama como head: resultado vacío; no hay PR abierto identificado.
+- Árbol de construcción: incluye `src/OcpMcp/`, `tests/`, `scripts/`, `resources/` y `entregas/0.1.0/`; esas rutas no están integradas en `main`.
+- No se hizo merge, cherry-pick, actualización de rama ni publicación. No se sobrescribieron las materializaciones vigentes del OCP.
+
+#### Evidencia anterior — alcance exacto
+
+- `release-evidence.json`, blob `6737ca65a79157a2fcc2ae022a626fde4b84b930`, reporta SDK 10.0.403, `win-x64`, self-contained, transporte `stdio`, 31 pruebas unitarias y 29 de integración PASS; estado `BUILT_AND_TESTED_NOT_INSTALLED`, EP `PENDING_EP` y selección `BLOCKED_OCPMSP`.
+- `test-evidence.json`, blob `69529828ebfaabc0fa9a72fb20aa167f12d882e4`, contiene los mismos conteos reportados. Son evidencia persistida de la ejecución anterior; no se repitieron en este ciclo y no se presentan como una ejecución nueva.
+- `initial-sources.manifest.json`, blob `2162e7da0741d53b92166196896c4af41c611bcf`, fija el núcleo anterior en blob `0dd9c4a7594833f99cb658e6108c8439464babd8` y marca frescura `NOT_CHECKED_AGAINST_MAIN`. No sirve como manifiesto vigente tras los cambios canónicos.
+- Existe una ejecución de Actions observada (run `41236098862`) con conclusión `failure`; el workflow `validate-canonical-bootstrap` ejecuta solo `python3 scripts/validate-canonical-bootstrap.py`, no compila ni prueba el servidor .NET. Por tanto, ese fallo no certifica ni refuta la compilación .NET. No se hizo rerun.
+- Estado correcto al cierre: código/artefacto 0.1.0 construido y probado **según la evidencia anterior**, pero no integrado en `main`, no instalado en EP y no aceptado por el operador. Esta sesión no ejecutó build, tests, instalación ni operación del host.
+
+#### Inspección estática del código de construcción
+
+- `McpServer` declara diez herramientas MCP: salud, fuentes canónicas, catálogo de principios, ciclo, estado de operación, recibo, eventos, telemetría, preparar operación y ejecutar operación.
+- El catálogo expone IDs/títulos/MDP/anchors; el texto normativo se retiene hasta una liberación gobernada.
+- `PrincipleCatalog` parsea los 43 principios del `gov-data`, pero asigna a todos `UNDECLARED_IN_CANONICAL_DUG`, deja nulos los cuatro metadatos y devuelve `MetadataComplete=false`.
+- El DUG v373 leído desde `main` tampoco contiene esos campos en ninguno de los 43 registros. La compuerta `SET_SELECTION` y `BUILD_SNAPSHOT` bloquea en ausencia de los metadatos. Se conserva el fail-closed; no se completan valores por inferencia.
+- No se encontró una operación/respuesta que entregue URI Sync individual por principio. `selection_sha256` es el hash de la lista ordenada de IDs, no el hash de un paquete exacto de enlaces Sync.
+- La tabla `telemetry_events` y la herramienta de lectura existen, pero no se encontró en `OperationService` escritura de evento de consulta por enlace Sync ni contador de frecuencia por enlace.
+- `OPEN_CYCLE` genera un GUID local aleatorio para `cycle_id`; no se observa validación ni vinculación con folios globales/de OCP FOL1 o con una sesión autorizada. FOL1 continúa inactivo, por lo que no debe inventarse ese vínculo ni simular una asignación.
+- Estos puntos son hallazgos de inspección estática de blobs de la rama de construcción; no sustituyen una ejecución ni una prueba causal.
+
+### 20.2 Registro de tareas actualizado
+
+El registro provisional único sigue siendo `MCP-METODOLOGIA.md` §8.1. La revisión del núcleo MCP-OCP v0.1.3 actualiza estos estados:
+
+- GOV-TASK-011 / DTC: compuerta local persistida en §10.2; respuesta inicial persistida en §19; procesamiento y cierre de este ciclo documentados aquí. La tarea global permanece abierta por EP y la verificación de Gobernanza.
+- Reconciliar 0.1.0 con `main`: continúa PENDIENTE por divergencia 7/99, sin PR ni integración selectiva.
+- Metadatos P001–P043: BLOQUEADO POR GOBERNANZA.
+- URIs Sync individuales, hash de paquete exacto y frecuencia por enlace: pendientes de contrato aprobado y luego implementación/prueba.
+- Vínculo a folio global/OCP y sesión: pendiente de contrato de FOL1 y de su activación/verificación.
+- Instalación EP: pendiente y fuera del alcance de ejecución MCP-OCP.
+
+### 20.3 Solicitud única pendiente a Gobernanza
+
+**Mensaje:** `MSG-MCP-OCP-GOV-DEPENDENCIES-20261101-01`  
+**Estado:** `PUBLICADO_EN_OBJETO` y read-back verificado; **PENDIENTE_DE_LECTURA/RESPUESTA** por Gobernanza. Esta publicación no equivale a envío fuera de GitHub, recepción, aprobación ni cambio del DUG.
+
+Se solicita que Gobernanza entregue, en una única respuesta focalizada y con procedencia verificable:
+
+1. **Metadatos P001–P043:** fuente estructurada aprobada y cobertura 43/43 de `applicability`, `activation_conditions`, `mandatory` y `dependencies`; tipos, semántica, enumeraciones, valores nulos permitidos, consistencia entre referencias y versión/esquema. Si la solución exige enmendar el DUG, preparar la propuesta y obtener la autorización activa y explícita del operador conforme a P005 antes de cualquier modificación; MCP-OCP no modifica DUG.
+2. **Sync individual:** contrato del URI/ID/resolver canónico de cada texto desarrollado, política de vigencia/acceso y vínculo inequívoco entre principio, revisión y contenido. No se construirán URLs por convención o inferencia.
+3. **Telemetría de consulta:** evento y campos mínimos para contar consultas a cada enlace Sync, regla de deduplicación/reintento, vínculo al ciclo y retención/redacción. La frecuencia mide acceso, no aplicación ni comprensión normativa.
+4. **Ciclo, conversación y sesión:** contrato exacto de vinculación con FOL1 y con la sesión autorizada (campos, validación, procedencia y respuesta cuando FOL1 esté inactivo). No se solicita activar FOL1 por esta vía ni asignar folios ficticios.
+
+Para cada fuente entregada: ruta, nombre, versión, autoridad/aprobación, commit, blob SHA y SHA-256 de contenido. No se solicita una auditoría general ni reabrir decisiones ajenas a esos cuatro bloqueos. Se mantiene un solo mensaje abierto a Gobernanza; no se publicará otra solicitud hasta recibir y analizar esta respuesta.
+
+### 20.4 Estado de EP y límites
+
+- **Gobernanza:** DTC/GOV-TASK-011 vigentes; responsable de verificar los tres frentes en cada ciclo propio. La solicitud anterior queda pendiente de lectura/respuesta.
+- **EP:** el objeto de comunicación de la rama `docs/metacanon-objetos-20261011` conserva el addendum DTC y read-back histórico. La evidencia DTC disponible sigue marcando respuesta inicial al addendum, compuerta propia y prueba de ciclo como PENDIENTES. No se modificó ese objeto, OEP, control, host ni sus recursos. No se observó en este turno un nuevo ciclo/respuesta EP posterior a la última evidencia; se mantiene pendiente/no verificado, no cumplimiento presumido.
+- **MCP-OCP:** respuesta inicial §19; compuerta instalada §10.2; procesamiento y cierre de este ciclo registrados aquí; núcleo y README actualizados; diálogo visible y evidencia del ciclo materializados.
+- **Control MCP-OCP:** `owned`, generación 3; autorización B sin cambios.
+- **MCP-NORMATIVO:** `DESACTIVADO`.
+- **FOL1:** `PREPARADO_PENDIENTE_ACTIVACION_IPZ`; CV/CY/A/B globales y por OCP `PENDIENTE/NO ASIGNADO`.
+- **EP host/instalación:** no modificados; no ejecutados.
+
+### 20.5 Cierre y read-back
+
+**Compuerta DTC MCP-OCP:** `CUMPLE_VERIFICADO` para la apertura, respuesta, procesamiento, documentación y read-back local de este ciclo, según las referencias y blobs citados. Esto no equivale al cierre global de GOV-TASK-011 ni verifica EP.
+
+**Pendientes materiales:** respuesta a `MSG-MCP-OCP-GOV-DEPENDENCIES-20261101-01`; reconciliación selectiva de código 0.1.0 desde rama divergida; build/tests nuevos sobre la revisión reconciliada; contrato aprobado Sync/telemetría/FOL1; instalación EP bajo su propio control.
+
+**Próximo paso:** en el siguiente ciclo real de MCP-OCP, después del preflight, leer el cursor de Gobernanza y procesar su respuesta a la solicitud única. Hasta entonces, no abrir otra ronda a Gobernanza. El trabajo de análisis/reconciliación de fuentes de construcción que no dependa de esos contratos puede continuar dentro de B, con compuerta y read-back propios.
+
