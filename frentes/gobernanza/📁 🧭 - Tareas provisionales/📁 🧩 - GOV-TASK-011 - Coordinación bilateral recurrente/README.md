@@ -1,12 +1,12 @@
-# GOV-TASK-011 — Coordinación bilateral recurrente con EP y OCP MCP
+# GOV-TASK-011 — DTC · Dinámica Trilateral por Ciclo
 
 **Estado:** en_curso · **Tipo:** tarea provisional del OCP Gobernanza · **Responsabilidad:** heredada del control Gobernanza, generación 9. No crea control, sesión, titularidad ni folio independiente.
 
 ## Enunciado
 
-En cada ciclo de Gobernanza, sin excepción, leer los registros de tareas provisionales y el objeto persistente de comunicación de los frentes Entorno Persistente (EP) y OCP MCP; verificar novedades, estados y dependencias contra el criterio rector semántico del backlog; dejar en cada objeto un mensaje breve y accionable; recibir y analizar la respuesta de cada frente; y mantener el intercambio serial, trazable y orientado a completar el objetivo de Gobernanza. La comunicación es prioritaria: después del preflight obligatorio de admisión, titularidad, autorización y exclusividad, es la primera actividad de trabajo del ciclo.
+En cada ciclo, Gobernanza es responsable de verificar que los tres frentes —Gobernanza, Entorno Persistente (EP) y OCP MCP— cumplen la DTC · Dinámica Trilateral por Ciclo. La comunicación es prioritaria: después del preflight obligatorio de admisión, titularidad, autorización y exclusividad, cada frente debe leer y responder la comunicación pendiente al inicio de su propio ciclo, antes de cualquier otro trabajo; al terminar de procesar la salida debe documentar las novedades y verificar la persistencia al cierre. Gobernanza comprueba el cumplimiento con evidencia, registra el resultado por frente y conserva la serialidad. Esta verificación no transfiere a Gobernanza la ejecución, titularidad ni autorización de EP u OCP MCP.
 
-## Secuencia obligatoria de Gobernanza por ciclo
+## DTC — obligación recurrente de Gobernanza
 
 1. Revalidar la asignación y los controles del frente propio, la generación y el permiso de la operación.
 2. Leer los registros provisionales de tareas de EP y OCP MCP desde sus fuentes operativas actuales. Registrar path, rama/ref, revisión/blob y resultado. Si el registro no está identificado o no existe en las rutas consultadas, no inferir su inexistencia: usar temporalmente el estado del OCP vigente, dejar la brecha en ambos objetos y exigir al frente el path canónico.
@@ -15,7 +15,7 @@ En cada ciclo de Gobernanza, sin excepción, leer los registros de tareas provis
 5. Analizar cada respuesta antes de formular otra solicitud a ese frente. Comparar con el backlog rector, tareas, evidencia, controles y límites de EP/OCP. Resolver contradicciones o formular una única corrección material.
 6. Al cierre del ciclo de Gobernanza, actualizar este objeto, GOBERNANZA.md/PENDIENTES.md e índice de tareas cuando haya cambios; verificar lectura de vuelta por SHA. No afirmar que EP/OCP leyeron o aplicaron un mensaje sin una respuesta registrada en su objeto.
 
-## Compuerta que EP y OCP deben instalar en sus propios frentes
+## Compuertas que los tres frentes deben instalar y demostrar
 
 - En la apertura de cada ciclo, después de sus preflight obligatorios, cada frente lee la comunicación nueva y deja su respuesta inicial en el mismo objeto antes de iniciar otra tarea técnica/documental.
 - Tras esa respuesta inicial, continúa el trabajo autorizado e independiente.
@@ -43,3 +43,34 @@ EP y OCP tienen un registro de tareas localizable y leído cada ciclo; ambos tie
 Creada por instrucción directa del operador del 2026-10-31: «Vas a leer las tareas provisionales de los frentes ... EP y OCP MCP ... en cada uno ... un objeto provisional de persistencia para comunicarte con ellos» y posterior aclaración de prioridad de lectura/respuesta al inicio del ciclo y documentación al terminar de procesar la salida.
 
 **Crónica:** [C-GOBERNANZA-COMUNICACION-BILATERAL-01](../../cronica/C-GOBERNANZA-COMUNICACION-BILATERAL-01.md) · **Evidencia:** [JSON](../../evidencias/C-GOBERNANZA-COMUNICACION-BILATERAL-01.json).
+## Matriz de cumplimiento DTC por los tres frentes
+
+### Gobernanza
+
+- **Apertura:** cumplir admisión fail-closed; leer las tareas provisionales, los objetos de comunicación y las últimas respuestas de EP y OCP MCP; verificar novedades/cursor; escribir o actualizar la comunicación a ambos antes de otra actividad sustantiva.
+- **Procesamiento:** analizar las respuestas primero; cotejarlas con el vector semántico y los controles de los tres frentes; después continuar el backlog propio y trabajo independiente autorizado.
+- **Cierre:** registrar el resultado DTC de los tres frentes, novedades, tareas/estados, bloqueos, siguiente acción y pronóstico en GOBERNANZA/PENDIENTES/esta tarea y evidencia; read-back por SHA.
+
+### Entorno Persistente (EP)
+
+- **Apertura de cada ciclo EP:** realizar preflight propio; leer el objeto de comunicación Gobernanza y el cursor nuevo; registrar respuesta inicial antes de otra tarea.
+- **Procesamiento:** continuar tareas/hitos de EP dentro de su autorización.
+- **Cierre:** documentar novedades al terminar de procesar la salida en el objeto bilateral, OEP y registro de tareas; conservar evidencia y read-back.
+
+### OCP MCP
+
+- **Apertura de cada ciclo OCP:** realizar preflight propio; leer el objeto de coordinación del sprint y el cursor nuevo; registrar respuesta inicial antes de otra tarea.
+- **Procesamiento:** continuar construcción, pruebas y tareas OCP dentro del control vigente.
+- **Cierre:** documentar novedades al terminar de procesar la salida en el objeto del sprint, MCP-METODOLOGIA y registro de tareas; conservar evidencia y read-back.
+
+### Criterios de verificación de Gobernanza
+
+Para cada uno de los tres frentes, verificar separadamente: (1) ciclo/identidad y fuente vigentes; (2) lectura de las comunicaciones nuevas; (3) respuesta inicial registrada antes del trabajo sustantivo; (4) continuidad de trabajo dentro del alcance autorizado; (5) novedades documentadas después del procesamiento y antes del cierre; (6) actualización de OCP/núcleo y registro de tareas cuando proceda; (7) lectura de vuelta de los artefactos/commits declarados. Un mensaje guardado no demuestra lectura; un informe de éxito no sustituye evidencia; una prueba de build no demuestra instalación o aceptación.
+
+Estados de verificación: `CUMPLE_VERIFICADO`, `CUMPLE_PARCIAL`, `NO_CUMPLE`, `NO_VERIFICABLE`, `SIN_CICLO_OBSERVADO`. Este último se usa cuando no hay ciclo observable del frente desde la revisión anterior; no se presume cumplimiento ni incumplimiento. Toda brecha debe conservar criterio, evidencia ausente, propietario del frente y acción correctiva. La verificación es ciclo a ciclo, no un control continuo entre turnos; no prometer vigilancia ni ejecución en segundo plano.
+
+**Responsable de verificación transversal:** Gobernanza, por medio de GOV-TASK-011. **Responsables de ejecución y evidencia propia:** cada frente, dentro de su control. **Criterio rector:** backlog semántico de Gobernanza.
+
+## Denominación
+
+**DTC = Dinámica Trilateral por Ciclo.** Esta es la denominación compacta de la secuencia recurrente entre Gobernanza, EP y OCP MCP. Se emplea desde esta revisión en lugar de referirse al mecanismo únicamente como coordinación bilateral.
