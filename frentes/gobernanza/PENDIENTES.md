@@ -12,14 +12,17 @@ Esta sección sustituye los resúmenes ejecutivos repetidos y fotografías anter
 6. **GOV-TASK-009 — entrada léxica:** §ARR/GOW es primera referencia; DUG es segunda y fuente normativa única.
 7. **GOV-TASK-006 — Gobernanza 1.0:** resolver divergencias y satélites del DUG con procedencia y destino. `identidad.md` no se localizó en la búsqueda acotada de refs Git accesibles; no concluir inexistencia ni borrarlo por inferencia.
 8. **Diferimiento:** GOV-TASK-004 y GOV-TASK-005 no bloquean el MVP.
+9. **GOV-TASK-011 — coordinación bilateral recurrente:** leer tareas provisionales y objetos de EP/OCP en cada ciclo; escribir mensaje o SIN_NOVEDAD en cada uno; analizar la respuesta al inicio del procesamiento; y exigir documentación de novedades al cierre. Comp puerta local en ambos frentes pendiente.
 
 ### Estado técnico y fronteras interfrente
 
 - **OCP MCP 0.1.0:** rama `build/ocp-mcp-mvp-0.1.0`, build y pruebas reportadas (31 unitarias + 29 integración); release indica `BUILT_AND_TESTED_NOT_INSTALLED`. Persisten bloqueos por cuatro metadatos faltantes que producen `BLOCKED_OCPMSP`, y no está demostrada la cadena Sync individual/frecuencia/hash exacto/vínculo FOL1-sesión.
-- **EP:** instalación del artefacto permanece `PENDING_EP`. No mutar el host ni su OCP/control desde Gobernanza. La respuesta EP anterior sigue pendiente en la coordinación.
-- **Serialidad:** respetar `COORDINACION-SPRINT-OCP-MCP-v0.1.md`: recibir y analizar la última respuesta de cada frente antes de preparar otra solicitud a ese mismo frente. Reenvíos no verificados no son envíos.
+- **EP:** instalación del artefacto permanece `PENDING_EP`. No mutar el host ni su OCP/control desde Gobernanza. Objeto bilateral publicado en la rama documental de EP; respuesta inicial pendiente. §76 de OEP contiene hitos EP-H01–H06; EP debe confirmar el registro canónico de tareas provisionales.
+- **Serialidad y prioridad de comunicación:** GOV-TASK-011 exige leer/responder al inicio de cada ciclo y documentar novedades al cierre. Objeto EP y §16 OCP publicados; ambas respuestas iniciales pendientes. No confundir publicación con recepción.
 - **Sink/Cloudflare:** GOV-TASK-002 queda cancelada como despliegue activo; conservar el antecedente. No desplegar por inercia ni tratar Sink como equivalente a Sync.
 - **Canon y controles:** DUG Samantha v373 · NX-373m; no se modifica DUG, GOW canónico, ART-025/027, IPZ nativa, control OCP MCP ni EP en este evento. FOL1 sigue PREPARADO_PENDIENTE_ACTIVACION_IPZ.
+
+- **Registro OCP MCP:** el control actual es generación 2 y el release 0.1.0 registra 31 unitarias + 29 integración PASS, no instalado y bloqueado por cuatro metadatos. §15 de la coordinación contiene un estado anterior que OCP debe reconciliar. No se localizó índice separado de tareas provisionales en las rutas convencionales consultadas.
 
 Gobernanza define requisitos y acepta evidencia; OCP MCP implementa dentro de su ámbito autorizado; EP administra alojamiento/instalación. Todas las acciones del backlog deberán ser trazables al evento rector anterior.
 
