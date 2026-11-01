@@ -475,3 +475,17 @@ Este cierre DTC no completa EP-TASK-002. Autenticación B2, cuenta/región, buck
 **Límites:** una sesión activa por defecto; la segunda requiere autorización expresa; una tercera se bloquea. Antes de cada escritura canónica, ambas conversaciones deben releer el control y usar SHA/CAS/read-back. No se afirma fencing universal. FOL1 sigue `PREPARADO_PENDIENTE_ACTIVACION_IPZ`; folios globales CV/CY/A/B permanecen PENDIENTE / NO ASIGNADO. MCP normativo permanece `DESACTIVADO`.
 
 **Registro:** [crónica](cronica/C-GOBERNANZA-DOBLE-CORRESPONSABILIDAD-01.md) · [evidencia](evidencias/C-GOBERNANZA-DOBLE-CORRESPONSABILIDAD-01.json).
+
+---
+
+## DUG v377 y desempeño de ciclos · C-GOBERNANZA-OCP-MCP-PERFORMANCE-01 · 2026-11-01
+
+**Fuente normativa vigente:** [DUG Samantha v377 · NX-377m](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html), blob `54064c8fe00f872023a455f06596061ed69062ae`; Metacanon 1.28; GOW 2.17. Lectura de vuelta y parseo del JSON embebido completados. Conserva 43 principios y 22 anexos.
+
+**Preparación MCP-OCP:** GOW define MCP-OCP como servidor local auxiliar para desarrollo y gobernanza, sujeto a control y autorización; enlaza al [núcleo MCP-OCP](../mcp-metodologia/MCP-METODOLOGIA.md) y su [índice](../mcp-metodologia/README.md). Se diferencia expresamente de MCP-NORMATIVO, que permanece DESACTIVADO. La edición no modifica el OCP/control MCP-OCP, no instala ni integra el servidor y no altera los metadatos ausentes de los 43 principios; se conserva su comportamiento fail-closed. El enlace de retorno desde el núcleo externo del MCP-OCP queda por verificar por su titular; no se afirma bidireccionalidad completa entre ambos OCP hasta ese read-back.
+
+**Medición de rendimiento:** Metacanon §52 define marcas observables de ciclo, duración de operaciones GitHub/RDC, esperas externas, cobertura y comparación por muestras semejantes. No se confunde duración de ida/vuelta del conector con latencia de red, ni intervalo observado con tiempo activo puro. Ausencias se registran como `NOT_MEASURED`.
+
+**Tareas propias creadas:** GOV-TASK-012 (revisión de fluidez y desempeño) y GOV-TASK-013 (medición y optimización de ciclos), enlazadas desde el registro provisional. Heredan este OCP/control, generación 11; no poseen controles, sesiones ni folios separados. El ciclo actual de configuración queda excluido de la línea base. Primer ciclo completo posterior será candidato; mínimo diez ciclos comparables para referencia inicial estable.
+
+**Límites preservados:** FOL1 `PREPARADO_PENDIENTE_ACTIVACION_IPZ`; folios globales CV/CY/A/B PENDIENTE / NO ASIGNADO; MCP-NORMATIVO DESACTIVADO; control/host EP y control/código MCP-OCP sin cambios.
