@@ -83,21 +83,21 @@
       "core_path": "frentes/mcp-metodologia/MCP-METODOLOGIA.md",
       "core_blob": "cd73b8d141dd401360d6736b859140876ba96738",
       "task_registry": "MCP-METODOLOGIA.md §8.1",
-      "own_gate": "MCP-METODOLOGIA.md §10.1",
+      "own_gate": "MCP-METODOLOGIA.md_SECTION_10_2",
       "dtc_initial_response": "PERSISTED_IN_SECTION_19",
-      "dtc_cycle_close_readback": "PENDING",
-      "required_action": "RECONCILE_STALE_CORE_STATUS_AND_READBACK",
+      "dtc_cycle_close_readback": "VERIFIED_IN_SECTION_20",
+      "required_action": "RECONCILE_STALE_CORE_STATUS_IN_OWN_CYCLE_AND_READBACK",
       "cycle_processing_close_readback": "VERIFIED_IN_SECTION_20",
       "core_reconciliation": "PENDING_MCP_OCP_OWN_CYCLE"
     }
   },
   "governance_persistence": {
-    "core_blob": "4b4f1445ba7471d8a7a2c25fddf8dc01416296ad",
-    "pending_blob": "c13a5ecf7e0fe44dedc5656943a1933f451e90b8",
-    "task_blob": "170aa37f11d4174497588a98bf18483f28aaefb4",
+    "core_blob": "8fcf1130a628f81d266eb00cee76f2c6801cf29e",
+    "pending_blob": "84dc62ffeb130039f4f98b0b72d80bf86d412370",
+    "task_blob": "784d9f46b9a18c8d570b0645456d3a4274d31ca7",
     "task_index_blob": "8979d2042a8b3850732882d3e490b76fbe22b3d9",
-    "chronicle_blob": "2359eeecb05dff4e839e47286a9cd3e17a3c24d2",
-    "readback": "PENDING_FINAL_READBACK"
+    "chronicle_blob": "b5f32dd5f533634a28412a6300b82542f0e3f8db",
+    "readback": "VERIFIED_BY_POST_WRITE_GITHUB_FETCH"
   },
   "boundaries": [
     "Gobernanza verifica; no sustituye ni asume titularidad de EP/MCP-OCP.",
