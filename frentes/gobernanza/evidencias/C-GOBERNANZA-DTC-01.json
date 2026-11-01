@@ -77,7 +77,33 @@
       ],
       "constraint": "No suplanta a EP/MCP-OCP ni cruza controles, host, código o autorizaciones."
     },
-    "overall_status": "DTC_EN_CURSO_RECURRENT; ALL_THREE_OBSERVED_FRONT_CYCLES_VERIFIED_IN_THIS_SNAPSHOT"
+    "overall_status": "DTC_EN_CURSO_RECURRENT; ALL_THREE_OBSERVED_FRONT_CYCLES_VERIFIED_IN_THIS_SNAPSHOT",
+    "conversation_parallelism": {
+      "status": "TWO_PEER_SESSIONS_SAME_GOVERNANCE_FRONT",
+      "max_active_responsibles": 2,
+      "active_responsibles": [
+        {
+          "role": "titular",
+          "session_folio": "SES-20261101-GV8A19904",
+          "generation": 11,
+          "owner_alias": "chatgpt-C-GOBERNANZA-RETOMA-08-SES-20261101-GV8A19904"
+        },
+        {
+          "role": "corresponsable",
+          "session_folio": "SES-20261101-ED4A2B32",
+          "generation": 10,
+          "owner_alias": "chatgpt-C-GOBERNANZA-DOBLE-CORRESPONSABILIDAD-01-SES-20261101-ED4A2B32"
+        }
+      ],
+      "relationship": "PEER_INDEPENDENT_RESPONSIBILITIES",
+      "subordinate_relationship": false,
+      "team_assignment_by_this_session": false,
+      "function_assignment_by_this_session": false,
+      "coordination_scope": "Integrate traceable results, dependencies, decisions and evidence without reallocating either session's mandate or functions.",
+      "cross_conversation_dispatch_or_control": "NOT_AVAILABLE_FROM_THIS_CONVERSATION",
+      "acceptance_rule": "A result is integrated only after it is visible in the shared canonical object or supplied through a verifiable handoff.",
+      "shared_write_rule": "Serialize writes to the same mutable path; reread current blob, write with SHA guard, abort on mismatch, reconcile and perform exact read-back."
+    }
   },
   "fronts": {
     "governance": {
@@ -210,5 +236,72 @@
       "commit": "700799f3543fc9e45de2cf8c0a5c6f852756315a"
     }
   },
-  "dtc_global_status": "EN_CURSO_RECURRENT"
+  "dtc_global_status": "EN_CURSO_RECURRENT",
+  "mcp_completion_route": {
+    "status": "IN_PROGRESS_CYCLE_06_OPEN",
+    "coordination_path": "frentes/mcp-metodologia/entregas/COORDINACION-SPRINT-OCP-MCP-v0.1.md",
+    "coordination_blob": "e6c375a79ca0a431000aa607ff2dfe9252abafd9",
+    "active_cycle": "C-MCP-OCP-DTC-20261101-06",
+    "active_cycle_section": "§29",
+    "previous_cycle": "C-MCP-OCP-DTC-20261101-05",
+    "previous_cycle_close_section": "§28.4",
+    "previous_cycle_status": "CUMPLE_VERIFICADO",
+    "mcp_core_path": "frentes/mcp-metodologia/MCP-METODOLOGIA.md",
+    "mcp_core_blob": "e04e85fc8576244db3e4caefa0d05d2ed693fee7",
+    "mcp_control_blob": "3e6f96e919c33c3015478b7fd0f262b1bee47b0c",
+    "mcp_control_status": "owned",
+    "mcp_generation": 3,
+    "mcp_authorization_b": "AUTHORIZED_SCOPE_UNCHANGED",
+    "main_head_observed": "02ddcc4159919f411ff53bf4bd22c96a18bd63d3",
+    "build_branch": "build/ocp-mcp-mvp-0.1.0",
+    "branch_compare": {
+      "status": "diverged",
+      "ahead_by": 11,
+      "behind_by": 236,
+      "merge_base": "e4243414b0099ede9b9556b3cfa0bb20bc706576"
+    },
+    "current_dug": {
+      "version": "Samantha v376 · NX-376m",
+      "commit": "25bf9e6ed55eff010b0d8ddd53dd2cc7271b616d",
+      "blob": "657225b9c6c4d7bb46aad78fcd6c95de49ea1689"
+    },
+    "next_action": "Close and read back cycle 06 in the same MCP coordination object; do not open a duplicate request. After closure, one consolidated technical execution on a clean candidate based on the current main, with fresh build/tests/manifests/read-back.",
+    "next_request_status": "PREPARED_IN_DTC_NOT_SENT",
+    "acceptance_gates": {
+      "technical_mvp": "Require candidate based on current main, fresh compilation/unit/integration/smoke/negative/security/backup-restore tests, package and SHA-256 manifests, exact read-back.",
+      "main_integration": "REQUIRES_EXPLICIT_OPERATOR_AUTHORIZATION_NOT_INCLUDED_IN_CURRENT_B",
+      "ep_installation": "REQUIRES_EP_OWN_AUTHORITY_AND_AUTHORIZATION",
+      "normative_mode": "MCP_NORMATIVO_DESACTIVADO; no inferred 0/43 metadata",
+      "sink": "Aliases p001-p043 not deployed/tested; no production URI asserted",
+      "telemetry": "Access/consultation frequency only",
+      "fol1": "PREPARADO_PENDIENTE_ACTIVACION_IPZ; does not block build/test/package; global folios remain unassigned"
+    },
+    "terminal_states": [
+      "MVP_TECNICO_VERIFICADO",
+      "INTEGRADO_EN_MAIN",
+      "INSTALADO_EN_EP",
+      "ACEPTADO_POR_OPERADOR"
+    ],
+    "dtc_global_status": "EN_CURSO_RECURRENT",
+    "evidence_limit": "Historical 31/31 unit and 29/29 integration test results are not evidence of a fresh test on a candidate reconciled with the current main and DUG v376."
+  },
+  "current_snapshot": {
+    "observed_on": "2026-11-01",
+    "governance_task_path": "frentes/gobernanza/📁 🧭 - Tareas provisionales/📁 🧩 - GOV-TASK-011 - Coordinación bilateral recurrente/README.md",
+    "governance_task_commit": "6ce979a79fb8012ef860819312a641b7a449d5ad",
+    "governance_task_blob": "3aecf91e82c199e03eba703a6650250db65e3c14",
+    "ep_coordination_blob": "24939fbe18b250256116f8556d96ae3c33bde238",
+    "ep_oep_blob": "deaceadfc1de4636e0f9114a47a3d5255c04e897",
+    "ep_task_index_blob": "3c1d1bb91bc4152dd783f7f3b12ba1f986c40018",
+    "ep_cycle": "C-EP-DTC-PROMPT02-20261031-02",
+    "ep_cycle_status": "CUMPLE_VERIFICADO_REPORTED_IN_EP_OBJECT",
+    "ep_task_002_status": "EN_CURSO",
+    "mcp_coordination_blob": "e6c375a79ca0a431000aa607ff2dfe9252abafd9",
+    "mcp_active_cycle": "C-MCP-OCP-DTC-20261101-06",
+    "mcp_active_cycle_status": "OPEN_NO_PROCESSING_CLOSE_READBACK_OBSERVED_IN_THIS_READ",
+    "dug_version": "v376 · NX-376m",
+    "dug_blob": "657225b9c6c4d7bb46aad78fcd6c95de49ea1689",
+    "global_folios": "PENDIENTE / NO ASIGNADO",
+    "fol1": "PREPARADO_PENDIENTE_ACTIVACION_IPZ"
+  }
 }
