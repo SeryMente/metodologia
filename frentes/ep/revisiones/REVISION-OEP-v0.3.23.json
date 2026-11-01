@@ -1,0 +1,115 @@
+{
+  "schema": 1,
+  "version": "OEP v0.3.23 / VCU-EP-v25",
+  "module": {
+    "id": "MOD-SCRIPTPWS",
+    "parent_ft": "Entorno Persistente (EP)",
+    "parent_ocp": "frentes/ep/OEP.md §94",
+    "status": "INAUGURADO_DOCUMENTALMENTE_EN_CURSO",
+    "independent_ocp": false
+  },
+  "event": "C-EP-MOD-SCRIPTPWS-20261101-01",
+  "method": {
+    "dug": "Samantha v377 / NX-377m",
+    "dug_blob": "54064c8fe00f872023a455f06596061ed69062ae",
+    "metacanon": "1.26",
+    "gow": "2.14"
+  },
+  "authority": {
+    "operator_instruction": "Inaugura Modulo ScriptPWS en Frente de Entorno persistente, y toma responsabilida de eel, documenta ultimo comando que funciono.",
+    "functional_assignment": "Assistant of this conversation accepts functional coordination, definition, documentation, technical audit and continuity of MOD-SCRIPTPWS only.",
+    "formal_ep_ownership": "NOT_VERIFIED; no authoritative EP responsibility control located; no parent transfer claimed.",
+    "independent_module_control": "NOT_APPLICABLE; inherits parent authority/control; no separate control/session/OCP/folio created.",
+    "global_folio": "NOT_ASSIGNED; FOL1 inactive"
+  },
+  "source_cursor": {
+    "branch": "main",
+    "head_before_dtc_open": "04d2a9bd496c63fd498892abb783fe02e633a638",
+    "dtc_open_commit": "4c282e153aa0b0d2867d81a743bf23d656e50383",
+    "dtc_open_blob": "b9a7503e872a6ab57c6ce4d756499e9161cd1624",
+    "oep_base_blob": "deaceadfc1de4636e0f9114a47a3d5255c04e897",
+    "dug_blob": "54064c8fe00f872023a455f06596061ed69062ae"
+  },
+  "observed_implementation": {
+    "repository": "SeryMente/khora",
+    "branch": "main",
+    "gate": {
+      "path": "scripts/khora/khora.ps1",
+      "blob": "8ad7b5c3e8fad6669d2caebff28ddedd2981c230",
+      "ep_version": "1.0.2",
+      "script_version": "7.5.4"
+    },
+    "dependencies": {
+      "path": "scripts/khora/modules/08-deps.ps1",
+      "blob": "e3908594077cd7c8a5f1cf0eb0374af4aa15ed8b"
+    },
+    "config": {
+      "path": "scripts/khora/modules/00-config.ps1",
+      "blob": "272ed2f33ecc5f542de005eea384e96d77abb0ba",
+      "ep_version": "1.0.1",
+      "script_version": "7.5.3"
+    },
+    "validator": {
+      "path": "tests/validate_ep.py",
+      "blob": "05208c220946afff20bffa1cff6e7d743f0445b9",
+      "expected_ep_version": "1.0.1",
+      "expected_script_version": "7.5.3"
+    },
+    "inconsistency": "Gate main declares 1.0.2/7.5.4; config and validator still declare/expect 1.0.1/7.5.3. Observed only; no code/test modified."
+  },
+  "known_good": {
+    "source_ocp": "SeryMente/metodologia/frentes/khora-workstation-bootstrap/",
+    "evidence_path": "evidencias/C-KHORA-WORKSTATION-BOOTSTRAP-01.json",
+    "evidence_blob": "84c80a6397443e677e5718afaf2db6040ad7c8f5",
+    "evidence_date": "2026-10-30",
+    "host_label": "PC-14",
+    "passing_tests": [
+      "T-001 private source integrity",
+      "T-002 PowerShell 5.1 parser",
+      "T-003 no Next.js contamination",
+      "T-004 V6 -SelfTest",
+      "T-005 V6 -PreflightOnly exit 0",
+      "T-006 Desktop Commander CLI --no-persist-session help"
+    ],
+    "proven_invocation_fragments": [
+      "& $scriptBlock -SelfTest",
+      "& $scriptBlock -PreflightOnly"
+    ],
+    "exact_standalone_command_preserved": false,
+    "crucial_limit": "-PreflightOnly does not launch RDC.",
+    "not_run": [
+      "T-007 GitHub cold device authorization",
+      "T-008 fresh RDC Device ready/Online/handshake; three existing processes were detected, no duplicate launch or process termination."
+    ]
+  },
+  "current_attempts": {
+    "missing_gh_attempt": "FALLIDO_ANTES_DE_EJECUCIÓN; user observed 'No se encontró gh.exe; no se modificó el entorno.'",
+    "latest_full_run_command": "NO_VERIFICADO; no execution output received from operator.",
+    "terminal_preservation_patch": "Proposed in-memory replacement of four V6 exit statements; not tested in the reported environment.",
+    "fresh_rdc_handshake": "NOT_VERIFIED"
+  },
+  "changed_files": [
+    {
+      "path": "frentes/ep/OEP.md",
+      "commit": "d11a83288a10b6763183da3b164ed7881a865c21",
+      "blob": "3aebadf2f6e563128e69c3aed026fad01f86388f",
+      "bytes": 246921,
+      "sha256": "b0e76cb8c2103a84e46ac4e8de6ae65dd7c69ef97e5195b26b496aa3810942cb",
+      "readback_exact": true
+    },
+    {
+      "path": "frentes/ep/README.md",
+      "commit": "cfe799dba9a156186c117191cb62c90df738539f",
+      "blob": "07758b20f71ba024f809097a16edd2079f5d02b2",
+      "bytes": 1604,
+      "sha256": "e3a4a8adbdd6089e471859eeed78faef79d8c431030684eabb477895321f3d4e",
+      "readback_exact": true
+    }
+  ],
+  "limits": [
+    "Documentary inauguration only in this cycle.",
+    "No KHORA product code, host, credentials, B2, RDC session, DUG, IPZ or parent control was modified.",
+    "The module inherits EP authority; no independent control/session/OCP/folio.",
+    "Technical acceptance of a complete PowerShell flow remains pending."
+  ]
+}
