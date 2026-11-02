@@ -33,7 +33,9 @@
     },
     "uniqueness_check": "Búsquedas exactas del evento, folio, UUIDv7 y alias: cero resultados en SeryMente/metodologia antes del commit; no acredita unicidad organizacional ni fencing universal.",
     "readback_required": true,
-    "readback_verified": false
+    "readback_verified": true,
+    "verified_on": "2026-11-01",
+    "source_control_blob_sha": "2ee173463375c06f716c69ceb937e40632e45dcb"
   },
   "initialization": {
     "event_id": "C-GOBERNANZA-INICIO-01",
@@ -707,10 +709,12 @@
         "repository_persistence": "PENDING_RDC_DEVICE_OFFLINE"
       },
       "method": "GitHub Contents API compare-and-swap against observed control blob; canonical read-back immediately after write.",
-      "mutation_result": "PENDING",
+      "mutation_result": "COMMITTED_AND_READBACK_VERIFIED",
       "readback_required": true,
-      "readback_verified": false,
-      "created_at": "2026-11-02T00:59:26.891Z"
+      "readback_verified": true,
+      "created_at": "2026-11-02T00:59:26.891Z",
+      "readback_sha": "2ee173463375c06f716c69ceb937e40632e45dcb",
+      "verified_at": "2026-11-02T00:59:29.773Z"
     }
   ],
   "active_responsibles": [
