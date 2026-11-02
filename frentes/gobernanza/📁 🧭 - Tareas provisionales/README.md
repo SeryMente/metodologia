@@ -35,7 +35,7 @@ El núcleo de cada objeto conserva identificador local, enunciado, referencia re
 | GOV-TASK-014 | en_curso | Integración y aceptación de persistencia Backblaze para Metodología y OCP | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-014%20-%20Persistencia%20Backblaze%20de%20Metodolog%C3%ADa%20y%20OCP/README.md) |
 
 
-## Checklist ejecutivo del sprint · corte vigente · 2026-11-01, 20:28:46 America/Mexico_City
+## Checklist ejecutivo del sprint · corte vigente · 2026-11-01, 20:32:23 America/Mexico_City
 
 **Estado general:** `EN_CURSO · NO_ACEPTADO`. El criterio rector es entregar la primera versión funcional de Gobernanza integrada con IPZ y OCP MCP, con la persistencia operativa incorporada como dependencia de continuidad. No se calcula porcentaje: no existen ponderaciones aprobadas.
 
@@ -52,8 +52,8 @@ El núcleo de cada objeto conserva identificador local, enunciado, referencia re
 | 5 | Consulta individual del texto desarrollado, ampliación ante insuficiencia y telemetría de frecuencia por acceso individual | `NO_E2E · BLOQUEADO` | GOV-TASK-008; OCP MCP | No está demostrado que un enlace individual entregue exactamente un principio, que cada apertura dispare frecuencia ni que se puedan pedir principios adicionales. La candidata 0.1.0 no sirve como aceptación actual: su recibo 31/31 unitarias, 29/29 integración y 200/200 piezas está pinned a core v0.1.16, no es build fresco de v0.1.18. |
 | 6 | Decisión canónica de ruta `Sync` vs `Sink` | `RECONCILIACIÓN PENDIENTE` | GOV-TASK-006/008/009; DUG ART-027; vector rector | El vector operativo pide Sync; el texto vigente DUG/ART-027 conserva Sink. No tratarlos como equivalentes ni desplegar Sink por inercia. Resolver la precedencia con autorización y actualizar contrato/implementación coherentemente. |
 | 7 | E2E OCP MCP: sesión/folio, inventario, selección, enlaces individuales, frecuencia, reconsulta y hash exacto del paquete de URLs | `PENDIENTE · NO_ACEPTADO` | GOV-TASK-003; OCP MCP | Pruebas positivas/negativas de ciclo y sesión, ID inexistente, URL no resoluble, fuente obsoleta, hash alterado, fallo cerrado, manifiesto vigente frente a main y hash del paquete exacto y ordenado de URLs; instalar y verificar con EP. |
-| 8 | Persistencia de artefactos/Metodología y continuidad del estado/datasets MCP-OCP: backup local, B2 remoto y restore cross-host como resultados separados | `BLOQUEADO · B2/RESTORE NO_VERIFICADOS` | EP-TASK-002; GOV-TASK-014; MCP-OCP | Backup local PASS solo en fixture histórica; backup real de host no verificado. B2 remoto no autenticado/no probado. Restore cross-host no probado; falta segundo host autorizado y revisión del diseño portable P012/P013. Integración en main NO, instalación EP NO, aceptación operador NO. |
-| 9 | DTC recurrente: lectura, respuesta, procesamiento, documentación, read-back y retroalimentación por frente cada ciclo | `EN_CURSO_RECURRENT` | GOV-TASK-011; EP DTC; MCP DTC | EP-03 permanece OPEN y espera read-back/acuse de la última respuesta de Gobernanza. MCP ciclo local 08 está CLOSED_VERIFIED; acuse post-cierre a la rectificación de Gobernanza queda para el próximo ciclo MCP. Sin monitoreo de fondo; verificación ocurre en cada ciclo real de Gobernanza. |
+| 8 | Persistencia de artefactos/Metodología y continuidad del estado/datasets MCP-OCP: preparación local, backup local, B2 remoto y restore cross-host como resultados separados | `BLOQUEADO · B2/RESTORE NO_VERIFICADOS` | EP-TASK-002; GOV-TASK-014; MCP-OCP | EP tiene autorización para preparar un almacén local independiente, pero la creación/captura aún no está ejecutada. Backup real de host no verificado; B2 remoto no autorizado/no probado; restore cross-host no probado y requiere segundo host autorizado más revisión P012/P013. Integración en main NO, instalación EP NO, aceptación operador NO. |
+| 9 | DTC recurrente: lectura, respuesta, procesamiento, documentación, read-back y retroalimentación por frente cada ciclo | `EN_CURSO_RECURRENT` | GOV-TASK-011; EP DTC; MCP DTC | EP-03 sigue OPEN; última respuesta de Gobernanza commit `efd4cd00f2088004a75b78e551e41adeeca7f99c`, blob `4875e272b25b6f2b4aa32f6f0caf6333a71f6bb2`; EP debe hacer read-back/acuse. MCP ciclo local 08 sigue CLOSED_VERIFIED; acuse post-cierre diferido al siguiente ciclo MCP. Sin monitoreo de fondo. |
 | 10 | Reconciliación de satélites y Gobernanza 1.0; GOW/§ARR sin autoridad normativa paralela | `EN_CURSO` | GOV-TASK-006/009 | GOV-TASK-006 todavía contiene referencias de DUG v373/control gen7, obsoletas respecto de v377/gen13. GOW humano declara 2.12 frente a estructura 2.14/127 términos; 12 nombres no aparecen literalmente en la sección humana. `identidad.md` no localizado en fuentes consultadas (no declarado inexistente). Inventario completo y decisión por satélite pendientes. |
 | 11 | Integridad documental de principios P020/P021/P033/P034 | `PENDIENTE · NO_BLOQUEANTE_SALVO_DEPENDENCIA` | GOV-TASK-005 | Las búsquedas históricas no recuperaron originales completos. No reconstruir por inferencia. Requiere fuente original adicional o instrucción de enmienda autorizada P005. |
 | 12 | Incubación y eventual decisión del ámbito Tareas | `PENDIENTE · DIFERIDO` | GOV-TASK-004; OCP `ambitos/tareas/` | El OCP separado sigue bajo titularidad gen. 1; no hay transferencia ni autorización de canonización. Reconciliar v0.2/v1.0 solo cuando el titular/operador habilite el alcance. No bloquea el MVP inmediato. |
@@ -86,17 +86,17 @@ El núcleo de cada objeto conserva identificador local, enunciado, referencia re
 | Frente | Cursor | Estado DTC | Trabajo técnico |
 |---|---|---|---|
 | Gobernanza | `C-GOBERNANZA-SPRINT-CHECKLIST-20261101-01` · UUIDv7 local `01a19a14-9761-7df8-bd58-4d558721b869` | Integración del checklist y sincronización persistida; read-back propio pendiente de esta actualización de dashboard. | Control activo gen13; sin monitoreo autónomo entre ciclos. |
-| EP | DTC blob `4d141b78defd45bfb3e795d442842f048bb0fab7`; commit de Gobernanza `82208ee496fa8922c8f0c0e98f6265dccd3c7a81` | `OPEN`; EP debe leer de vuelta y acusar la última respuesta. | Presencia de 015RENTA01 declarada por el operador en EP §36; revisión/credenciales/B2/operaciones remotas siguen sin autorización. Vault divergence no resuelta. |
+| EP | DTC blob `4875e272b25b6f2b4aa32f6f0caf6333a71f6bb2`; commit de Gobernanza `efd4cd00f2088004a75b78e551e41adeeca7f99c` | `OPEN`; la última respuesta de Gobernanza debe ser leída de vuelta por EP. | Presencia 015RENTA01 declarada para ese host/ciclo. Almacén local EP autorizado pero aún no ejecutado. No autoriza operaciones remotas. Divergencia del archivo compartido sigue sin causa/contenido verificados. |
 | MCP-OCP | DTC blob `dacb3ef3aef725980fc29067ff6b4b82eb2b2f34`; commit `400ea2ad3c4ec67ebc4d5f6479db3246066c141e` | Ciclo 08 `CLOSED_VERIFIED`; `SIN_NOVEDAD` en esta revalidación; acuse post-cierre de Gobernanza diferido al siguiente ciclo MCP. | `BLOCKED_PENDING_OPERATOR_SECURITY_REVIEW_AND_SECOND_HOST`; sin build fresco, B2, restore, merge, instalación o aceptación. |
 
 ### Checklist de control del ciclo de Gobernanza
 
 - [x] Control, titularidad, generación y autorización revalidados.
 - [x] §ARR consultado primero y DUG vigente v377 comprobado.
-- [x] EP leído; §36 contrastado; corrección de presencia publicada en el mismo EP-03 con read-back exacto.
+- [x] EP leído; §36 y autorización local acotada contrastados; respuesta de Gobernanza publicada en el mismo EP-03 con read-back exacto.
 - [x] MCP-OCP leído; no hay respuesta nueva; `SIN_NOVEDAD` y acuse pendiente registrados en el mismo objeto con read-back exacto.
 - [x] GOV-TASK-011 sincronizada con ambos cursores.
-- [ ] GOV-TASK-014 y dashboard leídos de vuelta con el nuevo corte.
+- [ ] Sincronizar GOV-TASK-014 con la autorización local acotada de EP; dashboard leído de vuelta con este corte.
 - [ ] EP acusa y lee de vuelta la última respuesta de Gobernanza.
 - [ ] MCP-OCP acusa la rectificación post-cierre en su próximo ciclo, sin reabrir el 08.
 
