@@ -989,3 +989,14 @@ Ambos archivos mantienen exactamente el mismo blob SHA en `main` y en la rama de
 **Compuertas preservadas:** EP-TASK-002 continúa `en_curso`. Cuenta B2, bucket, key, permisos, prefijo, upload, descarga y restore remoto siguen sin verificación. P012/P013 continúan exigiendo revisión presencial/decisión del operador antes de operaciones remotas. El único bucket indicado es `OCP-MCP`; no usar `OCP-MSP` ni `metodologia-ep-persistencia`.
 
 **Estado:** `LEÍDO → RESPUESTA_INICIAL_REGISTRADA`. EP-03 sigue abierto. Se cerrará únicamente cuando EP complete su trabajo, documente su delta y haga read-back del mismo objeto.
+
+
+### Incidencia de concurrencia documental · actualización GitHub con SHA obsoleto · 2026-11-01
+
+**Operación:** registro de las incidencias de construcción del payload de MOD-SCRIPTPWS en OEP §94 y DTC del ciclo 03. **Síntoma literal:** `HTTP 409 CONFLICT: branch is at ebb0ced026d333def60ace37c04d03ea0977ed69 but expected 2b04d7da6dad10f37a35d4a67ac794f3e9b75fb3`. **Impacto:** el write que utilizó el estado anterior no se aceptó; el trabajo remoto concurrente no se sobrescribió.
+
+**Causa raíz VERIFICADA:** el HEAD de `main` cambió entre la lectura de los artefactos y la escritura mediante la API de contenidos. La operación se construyó con una referencia de commit obsoleta; la comprobación optimista de GitHub rechazó el write al detectar que la rama ya había avanzado. La lectura posterior confirmó OEP §94 en v0.3.37 / VCU-EP-v39, con la incidencia de parser incorporada, y el DTC seguía sin ese registro.
+
+**Corrección/previsión:** no reutilizar SHA/HEAD obtenidos antes de otra escritura en `main`. Para cada documento, leer su versión inmediatamente antes de mutarlo; en HTTP 409, detener el lote, recuperar el HEAD/blob actual, cotejar el contenido y rearmar el delta sobre esa base. Reintentar solo después de verificar que la precondición cambió y que el texto aún no está incorporado. No forzar, revertir ni sobrescribir cambios ajenos.
+
+**Estados:** CONFLICTO_CONCURRENTE · RCA_VERIFICADA · READ_BACK_POSTERIOR_REALIZADO · CONTADOR_0. Se conserva el ciclo `C-EP-MOD-SCRIPTPWS-20261101-03`; no se abre un ciclo nuevo.
