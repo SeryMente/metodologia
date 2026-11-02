@@ -35,7 +35,7 @@ El núcleo de cada objeto conserva identificador local, enunciado, referencia re
 | GOV-TASK-014 | en_curso | Integración y aceptación de persistencia Backblaze para Metodología y OCP | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-014%20-%20Persistencia%20Backblaze%20de%20Metodolog%C3%ADa%20y%20OCP/README.md) |
 
 
-## Corte ejecutivo vigente · DTC y persistencia · 2026-11-01, 19:46:06 America/Mexico_City
+## Corte ejecutivo vigente · DTC y persistencia · 2026-11-01, 19:48:25 America/Mexico_City
 
 **Estado del sprint:** `EN_CURSO · NO_ACEPTADO`. No se asigna porcentaje: no existe ponderación aprobada y los estados técnicos no son intercambiables.
 
@@ -45,34 +45,35 @@ El núcleo de cada objeto conserva identificador local, enunciado, referencia re
 
 | Frente | Ciclo local | Estado de comunicación | Trabajo técnico / bloqueo | Retroalimentación |
 |---|---|---|---|---|
-| Gobernanza | `C-GOBERNANZA-DTC-REFUERZO-20261101-01` · UUIDv7 local `01a199ee-0631-788e-88e9-287fcc74b02d` | Actualización de protocolo y dashboard con read-back en curso de cierre de este ciclo. DTC global `EN_CURSO_RECURRENT`. | Integra evidencia y mantiene límites de titularidad/compuertas. | Retroalimentación publicada a ambos modelos; el acuse de las últimas entradas permanece pendiente. |
-| EP | `C-EP-MOD-SCRIPTPWS-20261101-03` | `OPEN`; EP ya respondió a la primera retroalimentación y separó `DTC_CYCLE_STATUS=OPEN` / `EP-TASK-002_STATUS=en_curso`. Última respuesta de Gobernanza commit `0c16f20f710424d876de5d9568a94b87831f44aa`, blob/read-back `347ef5d037394644a65484121d8739c089b3aa47`; EP debe leerla de vuelta antes de cerrar. | EP-TASK-002 sigue en curso; B2 sin autenticación, upload, read-back remoto o restore. Presencia en 015RENTA01 reportada por EP, no verificada aquí. Revisión de custodia/credenciales pendiente; bóveda cifrada versionada observada según EP, sin evidencia de exposición de valores en claro. | Acuse de Gobernanza publicado; read-back/respuesta EP pendiente. |
-| MCP-OCP | Ciclo local 08 | `CLOSED_VERIFIED` para procesamiento documental, reconciliación y read-back, según §32 y sus artefactos. | Objetivo longitudinal `BLOCKED_PENDING_OPERATOR_SECURITY_REVIEW_AND_SECOND_HOST`. Núcleo v0.1.18 gen4. Sin build/test fresco, B2, restore cross-host, merge, instalación o aceptación. | Retroalimentación y rectificación de Gobernanza publicadas en el mismo objeto; blob/read-back `dc041dfa626ff649d76a12e067dad5357484c9e1`, commit `5af20eafeee1308f1c73d7f14f21cb3c0fbdcb8d`. Acuse del modelo en siguiente ciclo pendiente; el ciclo 08 no se reabre. |
+| Gobernanza | `C-GOBERNANZA-DTC-REFUERZO-20261101-01` · UUIDv7 local `01a199ee-0631-788e-88e9-287fcc74b02d` | Refuerzo de protocolo y tablero persistidos; read-back exacto. DTC global `EN_CURSO_RECURRENT`. | Integra evidencia, conserva autoridades y compuertas; sin supervisión autónoma entre ciclos. | Retroalimentación publicada a EP y MCP-OCP; los acuses de los últimos mensajes permanecen pendientes. |
+| EP | `C-EP-MOD-SCRIPTPWS-20261101-03` | `OPEN`; EP ya respondió a la primera retroalimentación y separó `DTC_CYCLE_STATUS=OPEN` / `EP-TASK-002_STATUS=en_curso`. Última respuesta de Gobernanza al addendum commit `1eac442432dc893b88840c84ee50a86cb87ff32d`, blob/read-back `1b5ce2c98316757889a5160c0267c15ffd85b198`; lectura de vuelta/acuse EP pendiente. | EP-TASK-002 sigue en curso; B2 no autenticado, sin upload, read-back remoto ni restore. Presencia en 015RENTA01 solo reportada por EP. Bóveda cifrada con working tree 3.656 bytes/blob `912bf1a0a5e84b0b5cb93268272bfb1ce27c3b43` vs índice/remoto 3.607 bytes/blob `9d30e8cdab83a1c54d8dc6cb7d46d1c80cab302f`; causa/contenido desconocidos. Sin afirmación de exposición en claro. Credenciales/B2 bloqueados. | Gobernanza respondió al delta de integridad en el mismo EP-03; read-back y respuesta EP pendientes. |
+| MCP-OCP | Ciclo local 08 | `CLOSED_VERIFIED` para procesamiento documental, reconciliación y read-back, según §32. La rectificación de Gobernanza es posterior al cierre. | Objetivo longitudinal `BLOCKED_PENDING_OPERATOR_SECURITY_REVIEW_AND_SECOND_HOST`. Núcleo v0.1.18 gen4. Sin build/test fresco, B2, restore cross-host, merge, instalación o aceptación. | Retroalimentación y rectificación de Gobernanza publicadas en el mismo objeto; blob/read-back `dc041dfa626ff649d76a12e067dad5357484c9e1`, commit `5af20eafeee1308f1c73d7f14f21cb3c0fbdcb8d`. Acuse en siguiente ciclo pendiente; ciclo 08 no se reabre. |
 
 ### Evidencia y cambios aplicados en este corte
 
-- EP DTC: cursor blob `347ef5d037394644a65484121d8739c089b3aa47`; commit de respuesta de Gobernanza `0c16f20f710424d876de5d9568a94b87831f44aa`. Se reconoce la respuesta EP sobre la retroalimentación y el nuevo hallazgo de custodia; no se autorizan nuevas credenciales, B2 ni cambios del control Custodia.
-- MCP-OCP DTC: cursor blob `dc041dfa626ff649d76a12e067dad5357484c9e1`; commit de rectificación `5af20eafeee1308f1c73d7f14f21cb3c0fbdcb8d`. Se corrige la lectura incompleta inicial de §32 y se reconoce el cierre del ciclo local 08, sin convertirlo en aceptación del E2E.
-- GOV-TASK-014: blob/read-back `38557c3854d58664bd4d1329f05b0247f1755be7`. Integra los bloqueos B2, P012/P013, segundo host y el hallazgo de la bóveda como riesgo de custodia reportado.
-- GOV-TASK-011: blob/read-back `47924b0a1c73ede24446b1c65529bef76c14d6eb`. Refuerza la compuerta de relectura, la separación de estados, la retroalimentación material por frente y el checklist visible por ciclo.
-- La respuesta inicial EP registra la ejecución de `account get` antes de releer el cursor; el propio registro la clasifica como desviación procedimental sin impacto remoto destructivo observado. El control nuevo obliga read-back tras cada apertura y nueva lectura antes de cada acción sustantiva/seguridad.
-- La bóveda reportada por EP está cifrada y versionada; el estado de exposición histórica del repositorio no está determinado. No se afirma filtración de valores en claro ni se altera el historial por inferencia.
+- **EP DTC:** cursor `1b5ce2c98316757889a5160c0267c15ffd85b198`; respuesta de Gobernanza commit `1eac442432dc893b88840c84ee50a86cb87ff32d`. El addendum compara índice/remoto `9d30e8cdab83a1c54d8dc6cb7d46d1c80cab302f` con working tree `912bf1a0a5e84b0b5cb93268272bfb1ce27c3b43`; 3.656 vs 3.607 bytes. EP no leyó valores ni estableció causa. Gobernanza pidió preservación sin mutaciones, sin descifrado ni nuevas credenciales.
+- **MCP-OCP DTC:** cursor `dc041dfa626ff649d76a12e067dad5357484c9e1`; rectificación commit `5af20eafeee1308f1c73d7f14f21cb3c0fbdcb8d`. §32 ya cerró documentalmente el ciclo 08; E2E sigue bloqueado. Núcleo v0.1.18 gen4, blob `9c2cdc01b2f5be3b39ee49ce179084f4fb75b436`.
+- **GOV-TASK-014:** blob/read-back actual `bf21c185566dfef96147bcaf79e6a7d6f21eccbd`. Integra B2, P012/P013, segundo host y discrepancia de working tree de bóveda.
+- **GOV-TASK-011:** blob/read-back actual `41df72e17ad56270ab66bb337e3f1b751a9b37b1`. Refuerza relectura de cursor, separación DTC/tarea técnica, retroalimentación por frente y checklist ejecutivo por ciclo.
+- **Dashboard:** este corte reemplaza la fotografía ejecutiva anterior con los cursores actuales; las fotografías anteriores se preservan como históricas supersedidas.
+- **Hallazgo procedimental EP:** el registro EP documentó una ejecución de `account get` antes de releer la respuesta vigente; la causa identificada fue no revalidar el cursor antes de la acción. No se reportó llamada efectiva al proveedor ni mutación remota destructiva.
 
 ### Checklist ejecutivo obligatorio por ciclo de Gobernanza
 
-- [ ] Revalidar control, titularidad, generación, autorización, sesión y exclusividad.
-- [ ] Leer §ARR primero; consultar DUG vigente y principios pertinentes.
-- [ ] Leer cursor EP; responder novedades en el mismo objeto; dejar feedback, `RESPUESTA_PENDIENTE` o `SIN_NOVEDAD`.
-- [ ] Leer cursor MCP-OCP; procesar novedades en el mismo objeto; dejar feedback, `RESPUESTA_PENDIENTE` o `SIN_NOVEDAD`.
-- [ ] Separar ciclo DTC de tarea/resultado técnico; preservar los estados declarados por cada propietario.
-- [ ] Integrar cambios materiales en GOV-TASK-* y dashboard desde las fuentes vigentes.
-- [ ] Verificar SHA/blob y read-back exacto de cada escritura; resolver conflictos CAS sin sobrescribir.
-- [ ] Mostrar al operador este checklist con bloqueos, acciones no ejecutadas, decisiones necesarias y responsables.
+- [x] Revalidar control, titularidad, generación, autorización y sesión.
+- [x] Leer §ARR y DUG vigente; identificar principios pertinentes.
+- [x] Leer cursor EP, responder deltas en el mismo objeto y documentar el estado pendiente de read-back.
+- [x] Leer cursor MCP-OCP, procesar el cierre local 08 y corregir la descripción inicial incompleta.
+- [x] Separar estado DTC de tarea/resultado técnico.
+- [x] Integrar cambios en GOV-TASK-011, GOV-TASK-014 y el dashboard.
+- [x] Verificar SHA/blob y read-back exacto de cada escritura propia.
+- [ ] Recibir read-back/acuse EP de la última respuesta de Gobernanza.
+- [ ] Recibir acuse MCP-OCP de la rectificación posterior al cierre 08 en su siguiente ciclo.
+- [ ] Mantener Custodia/B2 bloqueados hasta autorización competente; no ejecutar acciones sobre la bóveda divergente.
 
-**Regla de datos:** cada cambio debe citar observación, fuente/cursor/sección, impacto demostrado, ajuste, criterio de verificación y límite de lo no probado. No emitir puntuaciones/porcentajes sin baseline. No repetir builds/lecturas cuando no exista delta causal. Los datos ausentes son `NOT_MEASURED`/`NOT_VERIFIED`.
+**Regla de datos:** cada cambio cita observación, fuente/cursor/sección, impacto demostrado, ajuste, criterio de verificación y límites de lo no probado. No asignar puntuaciones/porcentajes sin baseline. No repetir operaciones sin delta causal. Ausencia de medición: `NOT_MEASURED`; ausencia de prueba: `NOT_VERIFIED`.
 
-**Límites actuales:** P012/P013 no están satisfechos por la sola presencia reportada o por RDC ONLINE; no se autoriza B2, credenciales, restore cross-host, diseño criptográfico, merge o instalación por este corte. MCP-NORMATIVO continúa `DESACTIVADO`; FOL1 `PREPARADO_PENDIENTE_ACTIVACION`; folios globales CV/CY/A/B `PENDIENTE / NO ASIGNADO`.
-
+**Límites actuales:** P012/P013 no se satisfacen por presencia reportada ni RDC ONLINE; no se autoriza B2, credenciales, restore cross-host, diseño criptográfico, merge o instalación por este corte. MCP-NORMATIVO continúa `DESACTIVADO`; FOL1 `PREPARADO_PENDIENTE_ACTIVACION`; folios globales CV/CY/A/B `PENDIENTE / NO ASIGNADO`.
 ## Snapshot histórico supersedido · tablero ejecutivo · corte 2026-11-01 19:18 · America/Mexico_City
 
 **Estado global:** `EN_CURSO · NO_ACEPTADO`. Criterio rector: primera versión funcional de Gobernanza integrada con IPZ y OCP MCP, trazable al dictado verbatim [C-GOBERNANZA-VECTOR-SEMANTICO-01](../conversaciones/C-GOBERNANZA-VECTOR-SEMANTICO-01-dialogo.jsonl). No se asigna porcentaje: las tareas no tienen ponderaciones aprobadas y los resultados no son intercambiables.
