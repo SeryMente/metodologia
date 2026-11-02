@@ -4,7 +4,7 @@
 
 - **Nombre canónico vigente:** MCP-OCP (anteriormente MCP-METODOLOGIA).
 - **Identidad canónica vigente:** MCP-OCP. **Identidad histórica:** MCP-METODOLOGIA.
-- **Versión/sello:** MCP-OCP-v0.1.18 · gen. 4; ciclo DTC local 08 y bloqueo P012/P013.
+- **Versión/sello:** MCP-OCP-v0.1.19 · gen. 4; ciclo DTC local 09 · PPR v1 aprobada, implementación aislada autorizada.
 - **Repositorio propietario:** SeryMente/metodologia, rama main.
 - **OCP canónico:** frentes/mcp-metodologia/.
 - **Núcleo operativo único:** este archivo, MCP-METODOLOGIA.md.
@@ -170,7 +170,7 @@ Las autorizaciones futuras deberán quedar vinculadas a la operación concreta y
 
 ## 8. Estado vivo
 
-**Acción en curso:** resolver la continuidad de MCP-OCP en una sola línea de trabajo: cerrar los vacíos de backup autónomo, recuperación criptográfica, manifiesto, cross-host, integración y aceptación, coordinando con EP y Gobernanza en sus objetos existentes. Ciclo local 08 abierto; análisis, reconciliación y propuesta documental avanzados. La implementación portable queda bloqueada por el candado de seguridad/arquitectura P012/P013 y presencia física del operador en 015RENTA01.
+**Acción en curso:** implementar Portable Recovery Package v1 en la rama aislada `feature/mcp-ocp-portable-recovery-v1-20261101`, dentro de `frentes/mcp-metodologia/`. El operador aprobó presencialmente la arquitectura PPR v1 en ciclo local 09; se acusó recibo de la rectificación y checklist de Gobernanza. Se importaron selectivamente 21 archivos fuente de la candidata histórica (sin importar recibos/estado antiguo) y se publicaron el contrato PPR v1 y el esquema estricto del manifiesto. El código PPR aún no está implementado. RDC 015RENTA01 no tiene Git ni SDK .NET 10; solo runtime .NET 8.0.11, por lo que build/test local están bloqueados hasta un entorno .NET 10 compatible. No se instala tooling ni se modifica host EP por inferencia.
 
 **Estado canónico del producto:** el núcleo MCP-OCP está en main v0.1.18. La candidata técnica 0.1.0 sigue aislada en integration/ocp-mcp-0.1.0-selective-20261101 (código 5956595d5455d5b851c2ef1ff6808f0c2aeabff9, HEAD observado ef639b62509a9b7ae623c3fbd187466ee2e2a3d9). Su recibo 31/31 unitarias, 29/29 integración y 200/200 componentes corresponde a DUG v377 y núcleo v0.1.16; es evidencia histórica de esa revisión, no un build actualizado a v0.1.18. No se ejecutó build/test nuevo en ciclo 08. Se requiere nueva candidata/recibo después de aprobar e implementar la arquitectura, no antes.
 
@@ -206,10 +206,10 @@ Este apartado es el registro provisional autoritativo del backlog técnico MCP-O
 
 | Tarea / dependencia de origen | Estado observado al ciclo local 08 | Resultado exigido / límite / evidencia |
 |---|---|---|
-| GOV-TASK-011 — DTC, Dinámica Trilateral por Ciclo | Ciclos MCP-OCP 01–07: cierres locales verificados; ciclo 08: reconciliación/planificación procesada con bloqueo P012/P013; DTC global EN_CURSO_RECURRENT | Gobernanza integra el sprint en su registro GOV-TASK-*; EP conserva OEP/host y MCP-OCP su autoridad técnica. Ciclo 08 se registra en DTC §32 del mismo objeto. |
-| Reconciliar implementación MCP 0.1.0 con main | CANDIDATA TÉCNICA HISTÓRICA · RECIBO PINNED A CORE v0.1.16; NO INTEGRADA | Recibo de candidata: 31/31 unitarias, 29/29 integración y 200 componentes; base 419be285…, código 5956595d…. No prueba core v0.1.18 ni arquitectura portable. Regenerar manifiesto/build/recibo después de implementar y probar el diseño aprobado. No PR/merge, instalación EP ni aceptación por inferencia. |
-| GOV-TASK-014 — Continuidad, backup, portabilidad de claves y restauración | C07: ANÁLISIS DOCUMENTAL VERIFICADO. C08: PROPUESTA TÉCNICA DOCUMENTADA; IMPLEMENTACIÓN BLOQUEADA P012/P013 | Propuesta de paquete portable y mapa de recuperación en §8 y DTC §32. Requiere revisión presencial/aprobación del operador. EP conserva B2/host; no acceso a secretos ni operaciones remotas desde MCP-OCP. |
-| Restore portable MCP-OCP | BLOQUEADO POR ARQUITECTURA/SEGURIDAD NO APROBADA Y AUSENCIA DE HOST DESTINO | Manifiesto externo, snapshot AES-GCM, recovery envelope Argon2id y mapa cifrado de DEKs/HMAC/Ed25519; re-enveloping DPAPI CurrentUser en destino, revocación de grants pendientes, preservación de recibos/cadena. Propuesta, no código. Requiere candado P012/P013 y segundo host/perfil autorizado. |
+| GOV-TASK-011 — DTC, Dinámica Trilateral por Ciclo | Ciclos MCP-OCP 01–08: cierres locales documentales verificados; ciclo 09 abierto para acusar rectificación/checklist y ejecutar aprobación/implementación de PPR v1. DTC global EN_CURSO_RECURRENT | Gobernanza integra el sprint en su registro GOV-TASK-*; EP conserva OEP/host y MCP-OCP su autoridad técnica. Ciclo 09 se registra en DTC §33 del mismo objeto. |
+| Reconciliar implementación MCP 0.1.0 con main | CANDIDATA TÉCNICA HISTÓRICA · RECIBO PINNED A CORE v0.1.16; NO INTEGRADA | Recibo histórico: 31/31 unitarias, 29/29 integración y 200 componentes; base/código históricos no prueban core v0.1.19 ni PPR. Los 21 archivos fuente fueron importados desde esa candidata a `feature/mcp-ocp-portable-recovery-v1-20261101`; build/test nuevo aún no ejecutados. Revalidar con SDK .NET 10 y recibo nuevo. No PR/merge, instalación EP ni aceptación por inferencia. |
+| GOV-TASK-014 — Continuidad, backup, portabilidad de claves y restauración | C07: ANÁLISIS DOCUMENTAL VERIFICADO. C08: PROPUESTA DOCUMENTADA Y CERRADA. C09: PPR v1 APROBADO POR EL OPERADOR; contrato/schema persistidos y fuentes importadas en rama; implementación pendiente. | Aprobación P012/P013 registrada en DTC §33. La construcción queda autorizada solo dentro de frentes/mcp-metodologia/. EP conserva B2/host; no acceso a secretos ni operaciones remotas desde MCP-OCP. |
+| Restore portable MCP-OCP | IMPLEMENTACIÓN AUTORIZADA; DISEÑO BASELINE DOCUMENTADO, CÓDIGO PPR PENDIENTE | Contrato `PPR-V1-CONTRACT.md` y `schemas/portable-recovery-package-v1.schema.json` publicados en rama feature. Fuentes históricos importados; faltan servicio export/import, comandos CLI, pruebas y build con SDK .NET 10. Restore real cross-host sigue requiriendo segundo host/perfil autorizado. |
 | Metadatos de selección normativa P001–P043 | BLOQUEADO POR AUSENCIA DE FUENTE CANÓNICA APROBADA | DUG v377 gov-data no declara applicability, activation_conditions, mandatory ni dependencies para los 43 registros (0/43). Mantener fail-closed; no inferir ni alterar DUG. |
 | Acceso individual al texto desarrollado por principio | CONTRATO SINK EXISTENTE; ALIASES PENDIENTES | ART-027 establece consulta de capa 2 por Sink cuando el MDP indica pertinencia. Los aliases p001…p043 no están desplegados/probados; declarar la limitación, no sustituir con una consulta ficticia. |
 | Integración e instalación del cliente en EP | AUTORIDAD EP · NO EJECUTAR DESDE MCP-OCP | EP-TASK-002 sigue en_curso; B2 CLI local presente, pero PHYSICAL_PRESENCE_GATE_PENDING, sin autenticación, preflight, upload, read-back remoto o restore. No tocar host/control/configuración EP. |
@@ -219,12 +219,12 @@ Las tareas enlazan GOV-TASK-011/GOV-TASK-014 y dependencias de origen; no replic
 
 ### 8.2 Ruta longitudinal de ejecución tras desbloqueo
 
-1. Gate operador: revisión presencial de arquitectura/seguridad P012/P013; aprobar o corregir el formato portable, recuperación de clave, control de grants y criterio de aceptación.
-2. Implementación MCP-OCP: crear export/import portable, manifiesto, envelope, migración de claves y rollback; pruebas positivas/negativas y fixtures sintéticos. Build reproducible con pins actuales DUG/core.
-3. Prueba local real: con presencia autorizada y sobre un dataset de prueba controlado, crear snapshot online; exportar paquete; validar hashes, AES-GCM, integrity_check, foreign_key_check, evento y recibos.
+1. Gate operador P012/P013: COMPLETADO para el diseño PPR v1 conforme al acuse/aprobación literal del ciclo 09. No se extiende a credenciales, B2, host EP ni instalación.
+2. Implementación MCP-OCP: completar export/import portable, manifiesto, envelope, recovery map, re-enveloping DPAPI y rollback; pruebas positivas/negativas y fixtures sintéticos. Los fuentes están importados; el código PPR no está implementado todavía.
+3. Build/test sintético: requiere un entorno con SDK .NET 10. RDC 015RENTA01 solo tiene runtime .NET 8.0.11 y no Git; build/test no se ejecutó ni se declara PASS.
 4. Cross-host: requiere segundo host/perfil destino activado y autorizado; restaurar de forma aislada, re-envelopar DPAPI, comprobar readiness/10 tools y test funcional. Si solo hay un host, no se declara cross-host.
 5. EP/B2: EP resuelve su compuerta presencial, autorización exacta OCP-MCP/ep-ocp/, upload/read-back y recuperación remota de su ciclo de una sola pasada; MCP-OCP valida su propio backup/restore; no se mezclan estados.
-6. Integración/aceptación: PR/merge a main y aceptación por operador solo con autorización expresa y todas las verificaciones. Cada estado terminal queda independiente.
+6. Integración/aceptación: PR/merge a main y aceptación por operador requieren autorización adicional expresa y evidencia completa. La rama feature no se integra por inferencia.
 
 ## 9. Aceptación y viabilidad
 
