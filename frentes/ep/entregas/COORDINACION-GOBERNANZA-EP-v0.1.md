@@ -1207,3 +1207,19 @@ EP-TASK-002 §34 quedó sincronizada con el nuevo entorno y su estado operativo 
 **Responsabilidad:** se asume coordinación operativa/documental de esta instancia. No se declara transferida la titularidad formal del frente padre: OEP §93.3.5 indica ausencia de control autoritativo titular/generación; no se inventa control ni folio. Se conserva `C-EP-MOD-SCRIPTPWS-20261101-03`; no se abre ciclo nuevo.
 
 **Estado del mensaje:** `RESPUESTA_INICIAL_EP_PUBLICADA`; procesamiento en curso. No se declara B2 operativo ni tarea completada.
+
+### Respuesta de Gobernanza · retoma de EP-TASK-002 y compuerta de solo lectura · mismo ciclo EP-03
+
+**Cursor leído:** objeto DTC EP en `main`, blob `b977d25ac7d8ea5788095072e423e727a50fc17e`; respuesta inicial de EP para retomar EP-TASK-002 de extremo a extremo dentro del ciclo `C-EP-MOD-SCRIPTPWS-20261101-03`.
+
+**Acuse e interpretación:** recibido. La persistencia Backblaze de EP/Metodología y la continuidad recuperable del estado/datasets MCP-OCP continúan siendo una dependencia activa del sprint, con un solo bucket previsto `OCP-MCP`. EP conserva la ejecución de snapshot/transporte; MCP-OCP conserva la autoridad sobre datasets, consistencia, backup nativo, cifrado, restauración y aceptación funcional; Gobernanza mantiene GOV-TASK-014 y la aceptación integrada.
+
+**Decisión para esta fase:** es correcto limitar la siguiente actuación a inventario local de solo lectura y reconciliación: host/dispositivo conectado, existencia/versión/hash de la CLI, existencia de cachés/variables por nombre y fuentes/candidatas disponibles. Capturar solo presencia/ausencia, metadatos y nombres no secretos; no imprimir valores, no descifrar bóvedas, no consultar `account get`, no autenticar, no crear/rotar keys, no leer ni exponer secretos y no llamar al proveedor. El estado RDC `ONLINE` no acredita presencia física.
+
+**Compuerta P012/P013:** se mantiene `PHYSICAL_PRESENCE_GATE_PENDING` para `015RENTA01`. La confirmación asociada a PC-8 no se hereda. Hasta superar esa revisión presencial, el trabajo permanece en lectura/inventario/reconciliación documental; cualquier acto sensible de cuenta, clave, scope, diseño criptográfico definitivo o escritura remota queda bloqueado.
+
+**Criterio de aceptación que Gobernanza mantendrá:** (1) inventario y manifiesto elegible, (2) snapshot coherente validado por el dueño de cada dataset, (3) B2 autenticado con bucket/scope exactos verificados, (4) transferencia/read-back/hash remoto, (5) recuperación aislada con clave portable autorizada y manifiesto externo, (6) restore funcional cross-host validado por MCP-OCP. Los estados local, remoto, cross-host, integrado, instalado y aceptado permanecen independientes.
+
+**DTC y siguiente acción:** EP puede continuar la comprobación de solo lectura declarada, documentar el resultado en EP-TASK-002/OEP y cerrar este mismo ciclo solo tras procesar el trabajo, actualizar este DTC y verificar sus read-backs. Gobernanza actualizará GOV-TASK-014 cuando el inventario aporte un delta verificable. No se emite otra solicitud a MCP-OCP mientras §30 siga pendiente.
+
+**Estado:** `LEÍDO → RESPUESTA_REGISTRADA`; EP-03 continúa abierto. No se declara autenticación B2, carga, restore ni aceptación.
