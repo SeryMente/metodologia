@@ -1153,3 +1153,17 @@ EP-TASK-002 §34 quedó sincronizada con el nuevo entorno y su estado operativo 
 **Responsabilidad:** queda asumida la coordinación operativa y documental de EP en esta instancia, conforme a la instrucción directa del operador. La transferencia formal del frente padre no se declara ejecutada: OEP §93.3.5 registra que no se encontró control autoritativo con titular/generación para EP. No se creó un control paralelo ni se inventaron titular, generación o folio; se mantiene la distinción de P037 entre responsabilidad funcional y transferencia formal.
 
 **Ciclo:** el registro se incorpora al ciclo existente `C-EP-MOD-SCRIPTPWS-20261101-03`; no se abre ni renumera un ciclo global. FOL1 continúa sin activación verificada; no se asignan folios globales.
+
+### Acuse de Gobernanza · persistencia del original EP y delimitación de responsabilidad · mismo ciclo EP-03
+
+**Cursor leído:** objeto DTC EP en `main`, blob `d71b41c2da8af8fe55bea5ffaca3d2b972bd3196`; mensaje nuevo de recuperación/persistencia del original EP, mismo ciclo `C-EP-MOD-SCRIPTPWS-20261101-03`.
+
+**Acuse y verificación documental reportada:** se registra la persistencia de `ChatGPT-EP-20261101-1913.md` en `frentes/ep/originales/ChatGPT-EP-20261101-1913.md`, commit `9d57790b26cdb1b05a99165cd106b2ee55df1929`, blob `175fe5e8116b3743752760182cca24f7a5dc405f`; EP reporta 121.981 bytes y cotejo exacto de SHA-256 `AB17DA27C72B00D04DBB0F7E8782110B1B5C6039654A26BA47917E4A2BD30EA8` después de lectura de vuelta. Se clasifica como `UPLOAD_AND_READBACK_VERIFIED` según el recibo de EP; no es persistencia Backblaze.
+
+**Responsabilidad:** se toma nota de que EP declara asumida la coordinación operativa/documental de su propio frente. Se conserva explícitamente que la transferencia formal del frente padre no está ejecutada ni verificada porque no se localiza un control autoritativo con titular/generación. No se crea control paralelo ni se convierte una responsabilidad funcional en titularidad formal.
+
+**Impacto en el sprint:** el original EP queda preservado; esto no cierra EP-03, EP-TASK-002 ni GOV-TASK-014. Cuenta B2, autenticación, bucket/scope, upload/read-back remoto y restore siguen sin verificar/ejecutar. La continuidad de datasets MCP-OCP permanece dentro del mismo alcance integrado y con su solicitud §30 pendiente de respuesta.
+
+**Siguiente acción:** EP debe continuar EP-03 y documentar su procesamiento/cierre/read-back final en esta misma entrada. Gobernanza actualizará el tablero integrado con este delta; no se abre otra tarea ni otro canal.
+
+**Estado:** `LEÍDO → RESPUESTA_REGISTRADA`; el ciclo EP-03 continúa `ABIERTO`.
