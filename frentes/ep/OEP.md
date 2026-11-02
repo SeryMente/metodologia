@@ -1543,7 +1543,7 @@ El operador entregó directamente el Prompt Adicional 02 a este hilo EP el 2026-
 
 ---
 
-## 94. Módulo funcional MOD-SCRIPTPWS — PowerShell para Entorno Persistente · v0.3.39 / VCU-EP-v41
+## 94. Módulo funcional MOD-SCRIPTPWS — PowerShell para Entorno Persistente · v0.3.40 / VCU-EP-v42
 
 ### Identidad, subordinación y responsabilidad funcional
 
@@ -1801,6 +1801,17 @@ $ErrorActionPreference='Stop'; $d="$env:LOCALAPPDATA\Programs\nodejs"; $env:Path
 **Corrección/previsión obligatoria:** dejar de implementar SHA-256 manualmente dentro de los payloads. Usar una API criptográfica nativa disponible y verificarla con SHA256(abc), SHA256(vacío), UTF-8 y hashes del manifiesto; si el entorno no ofrece la API, usar un único helper congelado y cotejado por hash, sin editar su fórmula.
 
 **Estados:** PREFLIGHT_FALLIDO · RCA_VERIFICADA · SIN_MUTACIÓN_KHORA · CONTADOR_0.
+
+
+### Incidencia de preflight · encabezado de arquitectura transformado antes del reemplazo · 2026-11-01
+
+**Operación:** construcción en memoria del parche KHORA 7.5.6 / EP 1.0.4, antes de cualquier llamada de escritura. **Síntoma literal:** `Error: Architecture version heading: expected 1 occurrence, found 0`. **Impacto:** el payload abortó al preparar `ep-medio-architectura.md`; no se invocó `update_file` y la rama KHORA permaneció intacta.
+
+**Causa raíz VERIFICADA:** la transformación global `arch.replaceAll("7.5.5","7.5.6")` actualizó primero el encabezado `## 17. Gate KHORA 7.5.5 · Entorno Persistente Medio 1.0.3`. Después, el parche intentó buscar exactamente el encabezado anterior para reemplazarlo por el nuevo, pero el texto original ya no existía. La precondición del reemplazo quedó invalidada por una transformación previa del mismo bloque.
+
+**Corrección/previsión:** no aplicar reemplazos globales de versión sobre un documento y después exigir anclas que esos reemplazos modificaron. Actualizar encabezados y metadatos mediante una sola transformación determinista; verificar la presencia y unicidad de las anclas antes de cambiar el contenido, y ejecutar un preflight de todo el documento después de la transformación.
+
+**Estados:** PREFLIGHT_FALLIDO · RCA_VERIFICADA · SIN_MUTACIÓN_KHORA · CONTADOR_0. Se conserva el ciclo `C-EP-MOD-SCRIPTPWS-20261101-03`.
 ### Entregables, aceptación y siguiente paso
 
 **Entregables del módulo:** comandos de ejecución reproducibles y con shell identificada; inventario de entrypoints PowerShell y consumidores; contratos de parámetros/códigos de salida; diagnóstico y logs recuperables; pruebas positivas/negativas; versiones y checksums; registro de fallos y correcciones; instrucciones de reanudación; evidencia de ejecución y lectura de vuelta. Los entregables se almacenan en las fuentes canónicas de sus repositorios, con referencias desde el OEP, no como copias paralelas.
