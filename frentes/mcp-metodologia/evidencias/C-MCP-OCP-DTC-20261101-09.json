@@ -34,7 +34,23 @@
     "DUG": "Samantha v377 / NX-377m; Metacanon 1.28; GOW 2.17",
     "candidate_branch": "integration/ocp-mcp-0.1.0-selective-20261101",
     "candidate_head": "ef639b62509a9b7ae623c3fbd187466ee2e2a3d9",
-    "new_branch": "feature/mcp-ocp-portable-recovery-v1-20261101"
+    "new_branch": "feature/mcp-ocp-portable-recovery-v1-20261101",
+    "main_head_at_branch_creation": "f2969421d0410e82af554642487b2c197fa80707",
+    "main_head_revalidated": "439ccbdca9b2e02b299253ca7bc73b3ab1292aba",
+    "main_delta": {
+      "commit": "439ccbdca9b2e02b299253ca7bc73b3ab1292aba",
+      "message": "docs(governance): update sprint checklist with EP local authorization scope",
+      "changed_paths": [
+        "frentes/ep/entregas/COORDINACION-GOBERNANZA-EP-v0.1.md",
+        "frentes/gobernanza/📁 🧭 - Tareas provisionales/README.md"
+      ],
+      "MCP_front_changed": false,
+      "core_main_blob": "9c2cdc01b2f5be3b39ee49ce179084f4fb75b436",
+      "coordination_main_blob": "dacb3ef3aef725980fc29067ff6b4b82eb2b2f34",
+      "control_main_blob": "ecb27b04aaba04025ef596b3f0ed6c049bc2420d",
+      "DUG_blob": "54064c8fe00f872023a455f06596061ed69062ae",
+      "branch_not_merged_or_rebased": true
+    }
   },
   "preflight_RDC": {
     "device": "015RENTA01",
@@ -180,5 +196,17 @@
   "sink_aliases": "p001-p043 NOT DEPLOYED/TESTED",
   "fol1": "PREPARADO_PENDIENTE_ACTIVACION_IPZ",
   "global_and_ocp_folios": "PENDIENTE/NO ASIGNADO",
-  "current_branch_head_before_evidence": "f6068ec2fafcaa408da95bf2af258c7b274720b0"
+  "current_branch_head_before_evidence": "f6068ec2fafcaa408da95bf2af258c7b274720b0",
+  "cross_front_latest_readback": {
+    "EP_DTC_blob": "4875e272b25b6f2b4aa32f6f0caf6333a71f6bb2",
+    "EP_DTC_status": "OPEN",
+    "EP_TASK_002_blob": "e2b8c32a22bcacfd03f204b29fc39249f6f67c25",
+    "EP_TASK_002_status": "en_curso",
+    "EP_local_vault_authorization": "AUTHORIZED_BY_OPERATOR; READBACK_NOT_EXECUTED",
+    "B2_provider_authorization": "NOT_AUTHORIZED",
+    "B2_remote_operation": "NOT_GRANTED",
+    "GOV_TASK_014_blob": "571731bc07f9933ee0677089cf0e2d01d58f6f87",
+    "GOV_TASK_014_status": "EN_CURSO",
+    "interpretation": "No B2 upload/download/restore, no credential access, no EP changes by MCP-OCP."
+  }
 }
