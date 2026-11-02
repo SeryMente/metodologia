@@ -1,10 +1,10 @@
 # GOV-TASK-014 — Integración y aceptación de persistencia Backblaze para Metodología y OCP
 
-**Estado:** en_curso · **Tipo:** tarea integradora propia de Gobernanza · **Responsabilidad:** heredada del OCP Gobernanza, generación 11. No crea FT, OCP, control, sesión ni folio independiente.
+**Estado:** en_curso · **Tipo:** tarea integradora propia de Gobernanza · **Responsabilidad:** heredada del OCP Gobernanza, generación 13. No crea FT, OCP, control, sesión ni folio independiente.
 
 ## 1. Objetivo
 
-Integrar en el OCP general del sprint la dependencia técnica EP-TASK-002 para habilitar persistencia remota complementaria de los artefactos elegibles de Metodología y OCP en Backblaze B2, con recuperación verificable entre ubicaciones. Gobernanza define el resultado integrado, las fronteras entre fuentes canónicas, los criterios de aceptación y las decisiones que requieren al operador; EP conserva y ejecuta la implementación de entorno/persistencia en su OEP. Esta tarea no duplica EP-TASK-002 ni transfiere a Gobernanza la autoridad técnica de EP.
+Integrar en el OCP general del sprint la dependencia técnica EP-TASK-002 y la continuidad recuperable de dos planos: (1) documentos y artefactos versionados de Metodología/OCP, cuya fuente canónica sigue siendo GitHub; y (2) estado y datasets operativos del servidor MCP-OCP que su titular técnico identifique como necesarios para reanudación funcional. El resultado separará backup local, persistencia remota B2 y restauración cross-host; no asumirá que uno demuestra los otros. Gobernanza integra criterios y aceptación; EP ejecuta transporte/persistencia de entorno bajo su OEP; MCP-OCP define y valida su mecanismo nativo y sus datos. Esta tarea no duplica EP-TASK-002 ni transfiere la autoridad técnica de ninguno de los dos frentes.
 
 ## 2. Fuente técnica y trazabilidad
 
@@ -24,6 +24,7 @@ Integrar en el OCP general del sprint la dependencia técnica EP-TASK-002 para h
 5. Mantener como destinos inválidos `OCP-MSP` y `metodologia-ep-persistencia`. La eliminación de este último figura autorizada en el historial de EP, pero no se considera ejecutada: EP debe verificar cuenta, identidad y contenido antes de actuar.
 6. Obtener evidencia de carga de muestra no sensible, lectura de vuelta, SHA-256, restauración aislada y verificación funcional en una segunda ubicación, bajo las autorizaciones y compuertas de EP.
 7. Integrar el resultado en el checklist del sprint, separando diseño, preparación local, autenticación, operación remota, sincronización, restauración y aceptación.
+8. Para MCP-OCP, incluir datasets/estado operativo elegibles, consistencia de captura, backup nativo, manifiesto/índice portable, dependencias de clave y validación funcional por su titular. El bucket B2, el prefijo y el alcance de la key se aceptarán únicamente después de que EP verifique el `namePrefix` y los permisos efectivos.
 
 ## 4. Estado de entrada observado
 
@@ -40,6 +41,12 @@ Integrar en el OCP general del sprint la dependencia técnica EP-TASK-002 para h
 
 **Estado de verdad:** CLI local instalada/verificada según evidencia de EP; cuenta B2 y operaciones remotas no verificadas/no ejecutadas. La tarea integradora de Gobernanza no certifica los resultados técnicos de EP.
 
+### 4.1 Evidencia actual del plano operativo MCP-OCP
+
+EP comunicó en el objeto DTC, ciclo local `C-EP-MOD-SCRIPTPWS-20261101-03`, que la candidata MCP-OCP v0.1.0 utiliza `SqliteStore`/WAL y `BackupService` con SQLite Online Backup API, `PRAGMA quick_check`, SHA-256 y paquetes `.ocpbak` AES-256-GCM; la clave se envuelve mediante DPAPI `CurrentUser` y el índice `backup_points/package_path` reside dentro de SQLite. El recibo de la candidata informa 31/31 pruebas unitarias, 29/29 integración y 200/200 componentes cotejados, con estado `MVP_TECNICO_VERIFICADO_NOT_INTEGRATED_NOT_INSTALLED_NOT_ACCEPTED`.
+
+Esta evidencia acredita la candidata bajo su escenario de build, no su integración/instalación, operación B2 ni restauración entre usuarios/equipos. DPAPI `CurrentUser` está ligado al perfil/SID de origen; no se copiará ese blob para fingir portabilidad. La recuperación cross-host requiere que MCP-OCP determine un mecanismo autorizado de re-enveloping/recuperación de clave y un manifiesto externo con rutas transferibles. Gobernanza no prescribe ni modifica el código o esquema de MCP-OCP.
+
 ## 5. Criterios de aceptación integrados
 
 - [ ] Operador revisa y decide presencialmente el perímetro de datos, arquitectura, custodia de credenciales y flujo de recuperación exigido por P012/P013.
@@ -51,6 +58,11 @@ Integrar en el OCP general del sprint la dependencia técnica EP-TASK-002 para h
 - [ ] Se demuestra sincronización idempotente, recuperación ante interrupción y detección/preservación de conflictos, conforme al alcance MVP de EP.
 - [ ] EP actualiza EP-TASK-002/OEP y su objeto DTC con evidencia, limitaciones, commits/blobs, hashes y read-back.
 - [ ] Gobernanza verifica la evidencia fuente y actualiza el estado integrado sin duplicar el detalle técnico.
+- [ ] MCP-OCP identifica desde su OCP los datasets/estado operativo que necesita para continuidad, su fuente de verdad y el mecanismo nativo consistente para capturarlos, sin incluir secretos ni material de autorización.
+- [ ] Se acredita por separado el backup local MCP-OCP (SQLite Online Backup/validación), el transporte remoto B2 y el restore cross-host; ningún estado se infiere de otro.
+- [ ] MCP-OCP y EP acuerdan un manifiesto/índice portable con rutas relativas y una estrategia autorizada de recuperación/re-enveloping de la clave, sin trasladar el DPAPI blob `CurrentUser` del host origen.
+- [ ] En host/perfil de destino aislado, el titular MCP-OCP valida autenticidad AES-GCM, SHA-256, `PRAGMA integrity_check`, readiness y una prueba funcional del servicio después de restaurar.
+- [ ] EP confirma que bucket, prefijo y `namePrefix` efectivo permiten exactamente los conjuntos autorizados; no amplía permisos ni scopes por inferencia.
 - [ ] El operador acepta expresamente el resultado integrado.
 
 ## 6. Dependencias, límites y decisiones
@@ -58,6 +70,7 @@ Integrar en el OCP general del sprint la dependencia técnica EP-TASK-002 para h
 - EP es responsable de la implementación, credenciales, CLI, host, bucket, transferencias, restauración y evidencia técnica, bajo su control y compuertas.
 - Gobernanza es responsable de integrar la dependencia, fijar criterios de aceptación del sprint, revisar la trazabilidad y elevar decisiones al operador.
 - MCP-OCP conserva la autoridad técnica de su servidor, código, pruebas y empaquetado. La persistencia B2 no autoriza a Gobernanza o EP a modificar su OCP/control/código.
+- MCP-OCP determina datasets, consistencia, exportación nativa, clave y aceptación funcional de sus restauraciones. EP no lee ni copia bases vivas por inferencia; Gobernanza no modifica el OCP, control, código o host MCP-OCP.
 - No crear un bucket alternativo, un segundo OCP, un mirror canónico independiente ni una bitácora paralela.
 - No imprimir, almacenar en Git ni enviar al chat claves, tokens, contraseñas o secretos.
 - No ejecutar `--delete`, cambios lifecycle, cambios ACL o transferencias masivas sin compuerta y autorización específica.
@@ -78,9 +91,9 @@ La comunicación con MCP-OCP permanece en su objeto existente `COORDINACION-SPRI
 
 ## 8. Estado y siguiente acción
 
-**Estado actual:** `EN_CURSO`; dependencia identificada y ahora enlazada al OCP general del sprint. No se declara autenticación B2, carga, sincronización ni restauración.
+**Estado actual:** `EN_CURSO`. La ampliación de EP sobre continuidad del propio servicio MCP-OCP fue recibida en el objeto DTC existente y respondida por Gobernanza dentro del ciclo EP-03. Blob de EP antes de la respuesta `ce7e80aef47224f83c7e82892c44473b30bdf9db`; respuesta publicada/read-back en blob `0db054c79abebe40d7a6a686744e2adcd566b69b`. La tarea distingue ahora artefactos versionados y datos operativos MCP-OCP. No se declara autenticación B2, carga, sincronización remota ni restauración cross-host.
 
-**Siguiente acción material:** Gobernanza registra esta integración en el objeto DTC EP existente; EP continúa en EP-TASK-002 y espera la revisión presencial/decisión del operador antes de cualquier operación remota. Una vez habilitada la compuerta, EP ejecuta el preflight autenticado de solo lectura y la prueba sintética aislada.
+**Siguiente acción material:** MCP-OCP debe definir y validar su inventario de datasets, consistencia de backup, manifiesto portable y recuperación de clave/restauración funcional; EP integra la matriz y continúa EP-TASK-002 bajo P012/P013. Antes de cualquier operación remota B2 sigue siendo obligatoria la revisión/decisión presencial del operador.
 
 **Cierre:** solo cuando la evidencia de EP satisfaga los criterios anteriores, Gobernanza haga read-back de las fuentes y el operador acepte el resultado integrado.
 
