@@ -1612,3 +1612,43 @@ El núcleo v0.1.18, el objeto de coordinación, control, DUG, OEP/EP DTC, EP-TAS
 **Fundamento:** cursor sin delta comunicativo; comparación de commit c4f3a8b… frente a b0eaed…; diálogo B y evidencia ciclo08 con read-back. P004/P038/P043: no simular un acuse, prevalecer la lectura de `main` y no duplicar solicitudes sin delta.
 
 **Estado de esta revalidación:** `SIN_NOVEDAD` para comunicación nueva; la respuesta pendiente se conserva explícita. Este registro no inicia un ciclo MCP-OCP ni altera su control/autorización.
+
+---
+
+## §33. Apertura DTC MCP-OCP · ciclo local 09 · aprobación PPR v1 e implementación aislada
+
+**Identidad/continuidad:** ciclo local C-MCP-OCP-DTC-20261101-09, en el mismo OCP y objeto DTC; no se reabre ni renumera el ciclo 08. Titular MCP-OCP generación 4 chatgpt-mcp-ocp-01a199d8-9209-725c-b764-a0a66ac54882; control previo en main blob ecb27b04aaba04025ef596b3f0ed6c049bc2420d, estado owned, B AUTHORIZED sin ampliación. Sesión local conservada: SES-20261101-3D504C5A. Folios globales CV/CY/A/B y por OCP continúan PENDIENTE/NO ASIGNADO; FOL1 PREPARADO_PENDIENTE_ACTIVACION_IPZ.
+
+**Cursor de apertura:** repo SeryMente/metodologia, main HEAD observado f2969421d0410e82af554642487b2c197fa80707; DTC de entrada blob dacb3ef3aef725980fc29067ff6b4b82eb2b2f34; núcleo MCP-OCP-v0.1.18 blob 9c2cdc01b2f5be3b39ee49ce179084f4fb75b436; control blob ecb27b04aaba04025ef596b3f0ed6c049bc2420d. La lectura de main incluye la rectificación de Gobernanza C-GOBERNANZA-DTC-REFUERZO-20261101-01 y la revalidación C-GOBERNANZA-SPRINT-CHECKLIST-20261101-01 (cursor DTC previo b0eaed6102861e17026a55f1bd28dbd9f7268a30).
+
+### 33.1 Acuse de Gobernanza y mandato literal del operador
+
+**Acuse formal:** MCP-OCP acusa recibo y adopta la rectificación de Gobernanza: el ciclo local 08 está DTC_CYCLE_STATUS=CLOSED_VERIFIED; su clasificación de cierre documental no acredita aceptación del producto ni finalización técnica. La lectura incompleta previa queda corregida. También acusa el checklist/revalidación posterior, que pidió diferir este acuse al siguiente ciclo real; se atiende aquí sin duplicar solicitud ni alterar el ciclo 08.
+
+**Entrada A (literal, mensajes consecutivos del operador):**
+1. Si — respuesta afirmativa a la pregunta de aprobación expresa de Portable Recovery Package v1 en los términos descritos.
+2. Si, usa rdc los minutos que tienes y luego prepara todo para que te quedes trabajando en giuthub el tiempo qeu se pueda
+
+**Decisión de seguridad del operador:** aprobación expresa de Portable Recovery Package v1 en los términos ya expuestos: manifiesto externo sin secretos; snapshot SQLite AES-256-GCM; PMK aleatoria; recovery envelope AES-GCM con KEK derivada interactivamente mediante Argon2id; recovery map cifrado para DEK de fuentes/snapshots y claves HMAC/Ed25519; validación criptográfica/integridad; re-enveloping DPAPI CurrentUser en destino; actualización SID; revocación de grants no consumidos y requests pendientes del SID anterior; preservación de identidad, clave pública, recibos históricos y cadena de eventos; swap/rollback. La frase de recuperación permanece fuera de banda y nunca se registra en Git, manifiesto, argumentos, entorno, B2 o logs.
+
+**Alcance resultante:** queda autorizada la construcción, pruebas sintéticas, compilación, corrección y empaquetado de PPR v1 únicamente dentro de frentes/mcp-metodologia/, conforme al alcance B vigente. La aprobación satisface la revisión presencial del operador para esta propuesta, pero no amplía B. No autoriza B2, acceso a credenciales, operaciones en EP, configuración/cambios de host, instalación, restauración real, segundo host, integración/merge en main, ni operaciones fuera de la ruta MCP-OCP.
+
+### 33.2 Preflight RDC y superficie de trabajo
+
+- RDC observó 015RENTA01 Online, Windows x64, PowerShell 5.1; PC-8 y PC-14 Offline. Uso RDC reportado: 77% de llamadas mensuales restantes al inicio de esta sesión.
+- Búsqueda local de repositorios en Desktop/Documents/Downloads encontró clones Khora, pero no un clon local de SeryMente/metodologia. git no está disponible en el PATH; no se modificó ninguno de esos clones.
+- Repo remoto privado SeryMente/metodologia, default branch main, permisos GitHub observados con push/admin. main no se modifica. Se creó la rama aislada feature/mcp-ocp-portable-recovery-v1-20261101 desde el HEAD f2969421d0410e82af554642487b2c197fa80707.
+- La disponibilidad local de .NET SDK aún debe verificarse; sin herramienta de build disponible no se declarará compilación ni pruebas locales. No se ejecutaron B2, DB real, restore, credenciales o cambios de host.
+
+### 33.3 Secuencia de procesamiento autorizada
+
+1. Importar selectivamente el código fuente de la candidata histórica a la rama nueva, conservando main actual como base documental y evitando arrastrar recibos/documentos históricos incompatibles.
+2. Implementar PPR v1 como formato separado; conservar compatibilidad del .ocpbak local.
+3. Agregar pruebas unitarias/fixtures sintéticas para manifest/path validation, hash/size, Argon2id envelope, AES-GCM tamper rejection, recovery-map secrecy, SQLite integrity/FK, re-envelope DPAPI y revocación de autorizaciones antiguas.
+4. Ejecutar build/test solo en un entorno que demuestre SDK/dependencias y Windows DPAPI. Registrar cada resultado, incluyendo NOT_MEASURED/NOT_VERIFIED donde corresponda.
+5. Read-back de cada modificación, commit/blob y SHA; abrir PR solo tras autorización adicional y evidencia suficiente. No mergear por inferencia.
+6. Mantener pendientes la restauración real cross-host (segundo host/perfil autorizado), el tramo B2 propiedad de EP, instalación y aceptación del operador.
+
+**Estado de apertura:** DTC_CYCLE_STATUS=OPEN. MCP_TECHNICAL_STATUS=IMPLEMENTATION_AUTHORIZED_IN_ISOLATED_BRANCH; BUILD_TEST_AND_CROSS_HOST_NOT_VERIFIED. DTC global EN_CURSO_RECURRENT. EP-03 permanece abierto; EP-TASK-002 en_curso; GOV-TASK-014 EN_CURSO. MCP-NORMATIVO DESACTIVADO; Sink p001–p043 sin despliegue/prueba.
+
+**Siguiente acción inmediata:** traer los fuentes existentes de la candidata histórica a la rama de trabajo, revisar dependencias/métodos de custodia y desarrollar PPR v1 en commits acotados.
