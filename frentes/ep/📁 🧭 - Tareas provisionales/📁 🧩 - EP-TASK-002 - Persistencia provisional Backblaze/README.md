@@ -1443,3 +1443,45 @@ Se instaló la CLI oficial B2 v5.0.2 en `%LOCALAPPDATA%\Programs\BackblazeB2\b2v
 **Estado vigente §34:** `RDC_CONNECTED` · `ENV_RESET_DECLARED` · `B2_CLI_INSTALLED_HASH_VERIFIED` · `LOCAL_HELP_CONFORMANCE_PASS` · `PHYSICAL_PRESENCE_GATE_PENDING` · `AUTHORIZATION_NOT_STARTED` · `B2_PREFLIGHT_NOT_RUN` · `E2E_NOT_STARTED` · `UPLOAD_NOT_EXECUTED` · `RESTORE_NOT_EXECUTED`.
 
 **Relación DTC:** mismo ciclo `C-EP-MOD-SCRIPTPWS-20261101-03`, sin abrir otro. La persistencia del evento se verificó en `frentes/ep/entregas/COORDINACION-GOBERNANZA-EP-v0.1.md`, commit `8aedfa05a04f076f5167dd01c65f3dca1947f361`, blob `8ea765db88462b1d9a859128650397273deef943`.
+
+
+## 35. Reanudación EP-03 · inventario RDC 015RENTA01 y compuerta B2 · 2026-11-01
+
+### Fuentes y cursores adquiridos
+
+- DUG `main`: Samantha v377 · NX-377m · Metacanon 1.28 · GOW 2.17, blob `54064c8fe00f872023a455f06596061ed69062ae`.
+- OEP `main`, blob `75c10a9ae85c91857b5e1d5e95d60e58d96e7a2f`; cabecera todavía declara v0.3.27 / VCU-EP-v28.
+- Índice EP `main`, blob `fb57e25f8fe03e81b03cbcaf64189de994509f12`; declara OEP v0.3.44 / VCU-EP-v46. La divergencia se conserva como pendiente de reconciliación; no se modifica versión por inferencia.
+- Índice provisional de tareas `main`, blob `fcd76497dca45472153209a1158673386dfa7ba2`; EP-TASK-002 permanece `en_curso`.
+- DTC EP `main`: cursor previo `e156ff79745b9835e7562d5050eafec378cf4e90`; esta entrada se procesa después de la respuesta de Gobernanza y el inventario RDC. Recibo DTC commit `c42ece813c60188d083e58d22559bb9560473bd4`, blob leído de vuelta `2779e2706f1bbf21d97cbd87f81c7912394326f1`.
+
+### Inventario RDC local · observado, no inferido
+
+- Dispositivo `015RENTA01`, Online; Windows PowerShell `5.1.26100.7920`, x64; perfil `C:\Users\PC`.
+- B2 CLI `C:\Users\PC\AppData\Local\Programs\BackblazeB2\b2v5-windows.exe`; versión 5.0.2 / SDK 2.13.2; SHA-256 `543AA2E36D3CBE06CF2C3E59287CE58B0A7D1507AF87F147FF2F7D9406879662`.
+- No se detectaron variables de entorno con nombres `B2*` o `AWS*`.
+- El perfil aislado previsto `%LOCALAPPDATA%\Khora\state\b2-ep-ocp.sqlite` no existe.
+- Existe `%USERPROFILE%\.b2_account_info`, 24.576 bytes; creación `2026-11-02T01:08:00.1738462Z`, modificación `2026-11-02T01:08:00.8922756Z`. La ACL observada limita acceso a SYSTEM, Administradores y la cuenta local del dispositivo. No se extrajo ni versionó su contenido. Un intento de interpretarlo como JSON falló con `ArgumentException`; el formato y la validez del perfil son `NO_VERIFICADOS`. El archivo se conserva intacto.
+- Snapshot de procesos: sin nombres coincidentes `mcp`, `ocp`, `dotnet`, `khora`, `backblaze` o `b2`; sin directorios `OCP`, `MCP` o `Khora` directamente bajo `%LOCALAPPDATA%`. Esto no excluye instalaciones en otras rutas ni acredita ausencia global del servicio.
+- Descargas contiene `ChatGPT-EP-20261101-1913.md`, `ChatGPT-Khora MCP-20261101-1912.md`, varias exportaciones OCP MCP y el ZIP ajeno `ebn-Uni-7.222.5412.313.zip`. La exportación OCP MCP 1917 tiene 54.916 bytes / 1.137 líneas; el escaneo acotado de patrones conocidos de secretos devolvió cero coincidencias. No se ha persistido esa exportación desde este ciclo ni se han leído secretos.
+
+### Desviación procedimental registrada · `b2 account get`
+
+Durante el inventario se ejecutó una sola vez `b2 account get` sobre el perfil local por defecto. El proceso terminó con exit 1; la respuesta parseable como JSON no contenía bloque `allowed`. La salida cruda no se mostró ni se guardó; no se introdujeron valores, no se ejecutó `account authorize`, no se usó Application Key y no se consultaron buckets/objetos. No hubo comandos `bucket list`, `ls`, `file upload`, `file info`, `file download` ni restore.
+
+La respuesta de Gobernanza adquirida después en el mismo DTC prohíbe `account get` y limita este tramo a presencia/ausencia, metadatos y nombres no secretos. Como no se releyó el cursor DTC inmediatamente después de la respuesta inicial de EP, no puede acreditarse que el permiso operativo estuviera actualizado antes de esa invocación. Se registra como `DESVIACIÓN_PROCEDIMENTAL_LOCAL · IMPACTO_NO_DESTRUCTIVO_OBSERVADO`; no se oculta ni repite. Control preventivo: releer el mismo objeto DTC después de cada escritura de apertura y antes de toda operación local; aplicar el allowlist del cursor más reciente. Desde esta entrada, `account get` queda fuera de alcance hasta que Gobernanza/operador habiliten expresamente la siguiente fase.
+
+### Reconciliación del plano MCP-OCP
+
+- Control autoritativo actual `frentes/mcp-metodologia/CONTROL-RESPONSABILIDAD.json`, blob `ecb27b04aaba04025ef596b3f0ed6c049bc2420d`: `owned`, generación 4, alias operativo `chatgpt-mcp-ocp-01a199d8-9209-725c-b764-a0a66ac54882`. Su autorización B cubre código, pruebas, build y documentación dentro de `frentes/mcp-metodologia/`; excluye instalación/operación del host EP y configuración/credenciales B2.
+- El núcleo `MCP-METODOLOGIA.md` blob `8bba2a123dd331132471f35cf0d911b277d168a5` continúa mostrando titular/generación 3. Se registra como espejo desactualizado respecto del control; EP no lo modifica.
+- La rama candidata `integration/ocp-mcp-0.1.0-selective-20261101` existe. El recibo `BUILD-CANDIDATE-MCP-OCP-0.1.0-20261101.json`, blob `11296e495aa9a52a640ff53da2b1042ba67acf08`, declara build exit 0, 31/31 unitarias, 29/29 integración, 200 componentes verificados y ZIP SHA-256 `96a62fc1291f501b7fa9b0792af07021db4cb2222c8658910bdadb7732bc3b2d`. Su estado explícito es `MVP_TECNICO_VERIFICADO_NOT_INTEGRATED_NOT_INSTALLED_NOT_ACCEPTED`; no acredita servicio instalado ni dataset de runtime en EP.
+- El objeto DTC de MCP-OCP contiene §30 con una solicitud pendiente a su titular sobre datasets, consistencia, backup/export nativo, envoltura de clave portable, manifiesto externo y restore cross-host. No se crea solicitud ni canal duplicado.
+
+### Decisión, estado y siguiente acción
+
+Se procesa la respuesta de Gobernanza: inventario de solo lectura y reconciliación completados; se conserva `PHYSICAL_PRESENCE_GATE_PENDING` para `015RENTA01`. `RDC_CONNECTED` no prueba presencia física. No hay autenticación B2, bucket/scope verificados, objeto remoto, upload, read-back remoto, descarga, restore ni E2E one-shot. No se creó el `one-shot.lock` ni se hizo una segunda prueba.
+
+El siguiente hito depende de la revisión presencial explícita del operador junto a `015RENTA01` y de una autorización B2 válida con scope exacto `OCP-MCP/ep-ocp/`; después se ejecutará únicamente el preflight y la prueba E2E de una pasada ya documentados en §§33–34, sin reintentos ni borrados. La restauración de MCP-OCP requiere además la entrega y validación del paquete nativo portable por su titular actual.
+
+**Estado de EP-TASK-002:** `en_curso`. **Ciclo EP-03:** abierto. No se declara persistencia operativa, restauración multiubicación ni aceptación.
