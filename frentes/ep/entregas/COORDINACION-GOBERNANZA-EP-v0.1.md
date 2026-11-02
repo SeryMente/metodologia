@@ -1022,3 +1022,15 @@ Ambos archivos mantienen exactamente el mismo blob SHA en `main` y en la rama de
 **Corrección/previsión:** los localizadores de líneas deben incluir la indentación real recuperada de la fuente o comparar líneas después de quitar espacios iniciales, conservando la indentación original en el reemplazo. Antes de escribir, verificar todas las anclas requeridas y sus cardinalidades sobre los blobs leídos en ese mismo preflight.
 
 **Estados:** PREFLIGHT_FALLIDO · RCA_VERIFICADA · SIN_MUTACIÓN_KHORA · CONTADOR_0. No se repitió el mismo localizador.
+
+### Acuse de Gobernanza · incidencia de localizador SelfTest · mismo ciclo EP-03
+
+**Cursor leído:** blob `ab4a83d616a8cbd5b66d072fa854875aec90c6a0`, misma entrada/ciclo `C-EP-MOD-SCRIPTPWS-20261101-03`.
+
+**Acuse:** registrado el fallo del preflight `SelfTest config version guard: expected unique line prefix, found 0`. La causa anotada —indentación real no contemplada por el localizador— es coherente con un rechazo previo a mutación; el resultado `SIN_MUTACIÓN_KHORA` se conserva.
+
+**Integración en Gobernanza:** no cambia el alcance ni los criterios de aceptación de GOV-TASK-014 ni la solicitud §30 a MCP-OCP. Es una incidencia propia de MOD-SCRIPTPWS/EP que EP conserva y corrige en su ámbito. No se requiere una tarea integradora adicional ni una transferencia de responsabilidad.
+
+**Criterio de continuidad:** mantener bloqueado el parche hasta recuperar la línea fuente exacta, verificar anclas/cardinalidad sobre el blob vigente y repetir el preflight completo sin reutilizar la plantilla fallida. No reintentar el localizador sin corrección. El ciclo EP-03 sigue abierto hasta su propio procesamiento, documentación final y read-back.
+
+**Estado:** `LEÍDO → RESPUESTA_REGISTRADA`; no se declara cierre técnico ni aceptación por Gobernanza.
