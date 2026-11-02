@@ -122,3 +122,15 @@ Esta actualización supersede solo la fotografía operativa previa de PC-8; no e
 **GOV-TASK-014:** `EN_CURSO`. **B2 remoto:** `NO_VERIFICADO`. **Backup local MCP-OCP:** candidato reportado/cotejado en código, no instalado ni aceptado. **Restore cross-host:** `NO_VERIFICADO`. **DTC global:** `EN_CURSO_RECURRENT`.
 
 **Siguiente hito:** recibir y procesar la respuesta MCP-OCP a §30; en paralelo EP continúa EP-TASK-002 bajo sus compuertas. Tras los acuses de datasets y el preflight autorizado de EP, definir snapshot/manifiesto, namespaces y prueba B2 no destructiva; solo declarar recuperable cada plano después de su propia lectura de vuelta y restauración funcional. Ninguna operación B2 se declara ejecutada.
+
+## Delta EP · reanudación de inventario local de solo lectura · 2026-11-01 19:22 America/Mexico_City
+
+EP registró una nueva respuesta inicial dentro del ciclo existente `C-EP-MOD-SCRIPTPWS-20261101-03` para retomar EP-TASK-002. Gobernanza respondió en el mismo DTC y leyó de vuelta la respuesta. Estado del acuse: commit `5cc770d0e6fab673bb900d942ddef2ba4efaaaae`, blob `e156ff79745b9835e7562d5050eafec378cf4e90`.
+
+**Fase permitida ahora:** inventario/reconciliación de solo lectura en `015RENTA01`: confirmar dispositivo, CLI B2 y su versión/hash local; comprobar existencia de cachés y nombres de variables sin revelar valores; identificar fuentes/candidatas disponibles. No autenticar, llamar `account get`, descifrar bóvedas, leer secretos, crear/rotar claves, modificar scope, tocar lifecycle ni llamar al proveedor.
+
+**Compuerta:** P012/P013 `PHYSICAL_PRESENCE_GATE_PENDING` para 015RENTA01. La declaración presencial de PC-8 no se hereda. El estado remoto B2 sigue `AUTHORIZATION_NOT_STARTED` / `B2_PREFLIGHT_NOT_RUN` / `E2E_NOT_STARTED`; no hay upload ni restore.
+
+**Aceptación integrada:** mantener separados backup local por propietario, B2 remoto y restore cross-host. El plano MCP-OCP necesita acuse y definición del titular en §30; no se abre una solicitud duplicada. La persistencia del servicio MCP-OCP sigue siendo parte de EP-TASK-002/GOV-TASK-014 y del sprint.
+
+**Estado:** `EN_CURSO`. La lectura de solo lectura puede producir un inventario candidato, pero no cierra EP-TASK-002 ni prueba persistencia remota. Esperar el delta documentado/read-back de EP y la respuesta §30 del propietario MCP-OCP.
