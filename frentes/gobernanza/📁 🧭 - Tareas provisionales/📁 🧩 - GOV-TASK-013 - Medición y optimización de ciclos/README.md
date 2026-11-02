@@ -1,6 +1,14 @@
 # GOV-TASK-013 — Medición objetiva y optimización del tiempo de procesamiento de ciclos
 
-**Estado:** en_curso · **Tipo:** tarea propia de Gobernanza · **Responsabilidad:** heredada del OCP Gobernanza, control común generación 12 (titular gen11 preservado; asiento 2 `SES-20261101-GV8E89D1FF`, gen12). No crea control ni folio independiente. No crea un FT, OCP, control, sesión ni folio independiente.
+**Estado:** en_curso · **Tipo:** tarea propia de Gobernanza · **Responsabilidad:** Gobernanza 2 (asiento corresponsable activo `SES-20261101-GV8E89D1FF`, generación 12), por delimitación operativa expresa del operador. Esta atribución no transfiere la titularidad primaria del frente ni modifica su control.
+
+## Delimitación de responsabilidades
+
+- **Gobernanza 2:** responsable de GOV-TASK-013 y de su diseño de medición, instrumentación, captura, análisis, línea base, KPI y experimentos de optimización. También conserva GOV-TASK-012 dentro de su ámbito propio.
+- **Gobernanza 1:** titular primario y responsable exclusivo de la DTC (Dinámica Trilateral por Ciclo), incluida GOV-TASK-011, el sprint DTC, la coordinación interfrente, sus ciclos, cursores, solicitudes, integración, dependencias y aceptación.
+- **Límite de esta tarea:** GOV-TASK-013 no abre, procesa ni cierra ciclos DTC; no opera cursores o mensajes EP/MCP-OCP; no emite solicitudes interfrente ni modifica GOV-TASK-011, tableros o artefactos de coordinación pertenecientes a Gobernanza 1.
+- Si una medición revela una dependencia interfrente, Gobernanza 2 documenta el hallazgo y lo canaliza a Gobernanza 1. No ejecuta por sustitución el trabajo del titular DTC.
+- Esta separación es una asignación funcional de tareas; no altera el roster, la titularidad ni el control común del frente.
 
 ## Objetivo
 
@@ -49,6 +57,6 @@ Si no existe una marca verificable, usar `NOT_MEASURED`; nunca estimar, asignar 
 
 - Norma: [DUG v377 · NX-377m](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html), [Metacanon §52](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#meta-52), [§4](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#meta-4), [§28](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#meta-28), [P020](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#P020) y [P043](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#P043).
 - Análisis y experimentos: [GOV-TASK-012](../📁%20🧩%20-%20GOV-TASK-012%20-%20Fluidez%20y%20desempeño%20del%20marco/README.md).
-- Incorporación al ciclo recurrente: [GOV-TASK-011](../📁%20🧩%20-%20GOV-TASK-011%20-%20Coordinación%20bilateral%20recurrente/README.md).
-
-**Siguiente acción:** capturar las marcas completas del próximo ciclo sustantivo de Gobernanza desde su primera acción efectiva.
+- Incorporación al ciclo recurrente: [GOV-TASK-011](../📁%20🧩%20-%20GOV-TASK-011%20-%20Coordinación%20bilateral%20recurrente/README.md), bajo responsabilidad exclusiva de Gobernanza 1 para el DTC.
+ 
+**Siguiente acción:** diseñar el esquema de medición y KPI respetando la delimitación anterior; iniciar la captura en el primer ciclo sustantivo elegible y completo desde su primera acción efectiva.
