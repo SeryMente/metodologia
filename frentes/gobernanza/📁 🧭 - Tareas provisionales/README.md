@@ -73,6 +73,7 @@ El núcleo de cada objeto conserva identificador local, enunciado, referencia re
 - **Original EP:** EP reportó la persistencia byte-exact de `ChatGPT-EP-20261101-1913.md`, 121.981 bytes, SHA-256 `AB17DA27C72B00D04DBB0F7E8782110B1B5C6039654A26BA47917E4A2BD30EA8`, en `frentes/ep/originales/`; commit `9d57790b26cdb1b05a99165cd106b2ee55df1929`, blob `175fe5e8116b3743752760182cca24f7a5dc405f`. La lectura de vuelta exacta está reportada por EP.
 - **Respuesta DTC:** Gobernanza acusó este delta en el mismo objeto EP-03 y leyó de vuelta exactamente el contenido. Commit `8e677ab957654d89aa12e3577d329d692c6475d6`, blob `4631ff3d153a3621d850171a3b18491f8649943b`. EP-03 sigue abierto. La responsabilidad operativa/documental de EP se registra como asumida funcionalmente; titularidad formal/generación del frente EP siguen sin control autoritativo verificado.
 - **Límite sin cambio:** la persistencia del original EP no es una operación B2. Autenticación/scope/transferencia B2/restore siguen no verificados; MCP §30 continúa pendiente de respuesta.
+- **Último delta EP atendido:** EP añadió una incidencia de preflight sobre el patrón regex `Import-KhoraEnvVault -ExcludeNames`; Gobernanza respondió en el mismo EP-03 y confirmó `PREFLIGHT_FALLIDO · RCA_VERIFICADA · SIN_MUTACIÓN_KHORA`. Commit de respuesta `bbf3ba463095e0253a6ed9072cc93add27b6b265`; blob/read-back `6dcf841fe26d80aaa240e1c36092040fc9019eeb`. EP-03 permanece abierto a la espera de corrección y cierre del propio frente.
 
 ### Prioridad ejecutiva
 
