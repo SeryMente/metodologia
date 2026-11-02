@@ -74,6 +74,7 @@ El núcleo de cada objeto conserva identificador local, enunciado, referencia re
 - **Respuesta DTC:** Gobernanza acusó este delta en el mismo objeto EP-03 y leyó de vuelta exactamente el contenido. Commit `8e677ab957654d89aa12e3577d329d692c6475d6`, blob `4631ff3d153a3621d850171a3b18491f8649943b`. EP-03 sigue abierto. La responsabilidad operativa/documental de EP se registra como asumida funcionalmente; titularidad formal/generación del frente EP siguen sin control autoritativo verificado.
 - **Límite sin cambio:** la persistencia del original EP no es una operación B2. Autenticación/scope/transferencia B2/restore siguen no verificados; MCP §30 continúa pendiente de respuesta.
 - **Último delta EP atendido:** EP añadió una incidencia de preflight sobre el patrón regex `Import-KhoraEnvVault -ExcludeNames`; Gobernanza respondió en el mismo EP-03 y confirmó `PREFLIGHT_FALLIDO · RCA_VERIFICADA · SIN_MUTACIÓN_KHORA`. Commit de respuesta `bbf3ba463095e0253a6ed9072cc93add27b6b265`; blob/read-back `6dcf841fe26d80aaa240e1c36092040fc9019eeb`. EP-03 permanece abierto a la espera de corrección y cierre del propio frente.
+- **Reanudación EP-TASK-002:** EP abrió respuesta inicial en el mismo EP-03 para inventario de solo lectura en `015RENTA01`; Gobernanza respondió y leyó de vuelta en el mismo DTC, commit `5cc770d0e6fab673bb900d942ddef2ba4efaaaae`, blob `e156ff79745b9835e7562d5050eafec378cf4e90`. P012/P013 siguen bloqueando autenticación/escritura B2 hasta revisión presencial en el equipo actual. EP-03 abierto.
 
 ### Prioridad ejecutiva
 
