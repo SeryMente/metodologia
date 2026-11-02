@@ -1435,4 +1435,25 @@ No se ejecutó restauración cross-host: solo se observó un dispositivo RDC en 
 
 **Evidencia de lectura/código:** DUG blob `54064c8fe00f872023a455f06596061ed69062ae`; núcleo previo blob `8bba2a123dd331132471f35cf0d911b277d168a5`; control actual gen. 4 blob `ecb27b04aaba04025ef596b3f0ed6c049bc2420d`; source commit candidata `5956595d5455d5b851c2ef1ff6808f0c2aeabff9`; rama HEAD `ef639b62509a9b7ae623c3fbd187466ee2e2a3d9`; receipt blob `11296e495aa9a52a640ff53da2b1042ba67acf08`; SHA de `BackupService.cs` `f25b7ccde5a0f2addcf089fb1c7ec5007f127fe0`, `SqliteStore.cs` `6e83e879bcd235ce8c075bf74606980c69fe6d51`, `CryptoBox.cs` `98bd0d4209f5769d86539bc346c3b39061d71cc4`, `KeyVault.cs` `93899ad8c542b55c86f93f698dc1c4440c24e11e`, `Program.cs` `f92f170594d498a5d7f7657dbf333db82035f428` y `SourceImporter.cs` `feb83543b89d610a11d1e5aeda1bbc7501334596`. No se ejecutó build ni se modificó código en este ciclo.
 
-**Cierre documental:** `LEÍDO → RESPUESTA_INICIAL_REGISTRADA → PROCESADO → DOCUMENTADO_AL_CIERRE → PENDIENTE_READBACK`. El read-back final se consignará después de guardar núcleo, evidencia, crónica e índice.
+#### Cierre y read-back final · ciclo local 07
+
+**Estado de cierre:** `LEÍDO → RESPUESTA_INICIAL_REGISTRADA → PROCESADO → DOCUMENTADO_AL_CIERRE → VERIFICADO_READBACK`. El procesamiento de §30 quedó documentado en este mismo objeto; la inspección fue estática/de solo lectura sobre la candidata y las verificaciones documentales fueron ejecutadas sobre `main`.
+
+**Artefactos modificados y cotejados después de escribir:**
+
+| Artefacto | Commit | Blob leído de vuelta | Resultado |
+|---|---|---|---|
+| Control de responsabilidad, gen. 4 | `066791ee69ea3b6c48153763fab5f044c3efd42d` | `ecb27b04aaba04025ef596b3f0ed6c049bc2420d` | `VERIFIED/MATCHED` |
+| Conversación original del operador | `e6e7041d9fdfd71c1ce18aa3f831ced1e7ffcff5` | `bebd00b312f5db1f11910682452de9d95ef5ca08` | Cotejo literal, 54.916 bytes |
+| Núcleo MCP-OCP v0.1.17 | `441c02eebed106e354a5bd008a11a3370bdd9466` | `654bd4f833f2b10f3022b256fa6e21153331d0cf` | Cotejo literal |
+| Evidencia ciclo local 07 | `d33e6b179a3e2add10b097c36e53ffec58ebfd5f` | `e5206322d2b0d83c80c0d61f0e36d4867997444e` | Cotejo literal |
+| Crónica ciclo local 07 | `a7566dc4b067d3009a2d33db19d2b137b3f798d9` | `b62f120c4753f4d9354f41fbe1d8b9409ec30728` | Cotejo literal |
+| Diálogo A/B y salida anterior recuperada | `b11c5fedbd6db32ab0da2836525f31d714660aed` | `afb7b8bd86fad0fba6310c1ec3b0c6e780768294` | 3 registros; cotejo literal |
+| README del frente | `262ee8443fdf6861428c4a6ec3fc53d2a313c094` | `739526964b7c0e74942d33a87bdeb3e4fe221bf9` | Cotejo literal |
+
+**Cursor de cierre observado:** `main` HEAD antes de esta escritura `d33e6b179a3e2add10b097c36e53ffec58ebfd5f`; coordinación previa blob `4cb8076fc813a1b7412c684bde5020193291dc22`; titular/control gen. 4 `owned`, B `AUTHORIZED`, sin ampliación. Núcleo v0.1.17, DUG v377/NX-377m, Metacanon 1.28, GOW 2.17.
+
+**Resultado local:** ciclo 07 `CUMPLE_VERIFICADO` únicamente para recepción, análisis, documentación y read-back del requerimiento de continuidad. Los seis estados técnicos permanecen como en la matriz de §31. DTC global `EN_CURSO_RECURRENT`; no se declara aceptación de Gobernanza/EP/operador, no se ejecutaron operaciones B2, restore cross-host, build, instalación o merge.
+
+**Foliación:** sesión local `SES-20261101-3D504C5A`; ciclo local `C-MCP-OCP-DTC-20261101-07`. FOL1 `PREPARADO_PENDIENTE_ACTIVACION_IPZ`; folios globales CV/CY/A/B y por OCP `PENDIENTE/NO ASIGNADO`.
+
