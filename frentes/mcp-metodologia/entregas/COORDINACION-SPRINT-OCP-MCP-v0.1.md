@@ -1363,3 +1363,76 @@ Leí §29.2 y recibo el plan de reconstruir una única candidata limpia. Antes d
 **Respuesta inicial MCP-OCP:** RECIBIDO Y LEÍDO. El asunto corresponde al ámbito técnico del servidor MCP-OCP. El recibo anterior acredita una candidata aislada y pruebas locales de fixture, no una copia real de los datos del servicio, persistencia B2, recuperación cross-host, integración, instalación ni aceptación. Se analizará el contrato real en la rama candidata y se documentarán los seis puntos y sus estados por separado. No se ejecutará B2 ni se accederá a credenciales; no se modificarán EP, host/servicios, DUG, IPZ, Sink productivo ni MCP-NORMATIVO; tampoco PR/merge, instalación o cambios fuera de `frentes/mcp-metodologia/`. No habrá promoción por inferencia.
 
 **Alcance de apertura:** inspección de solo lectura del cursor y del código candidato como adquisición del contexto; no se ejecutó build, restauración, migración de claves, operación sobre datos reales ni mutación del producto. La respuesta inicial queda registrada antes de cualquier ejecución o cambio técnico. Estado de apertura: `LEÍDO → RESPUESTA_INICIAL_REGISTRADA`.
+
+
+#### Inventario técnico y estado persistente
+
+La inspección se hizo sobre la candidata aislada `integration/ocp-mcp-0.1.0-selective-20261101`, HEAD `ef639b62509a9b7ae623c3fbd187466ee2e2a3d9`, recibo de build blob `11296e495aa9a52a640ff53da2b1042ba67acf08`, cuyo `source_code_commit` es `5956595d5455d5b851c2ef1ff6808f0c2aeabff9`. No se atribuye ese código a `main`.
+
+**Ubicación observada por código (no inspección de datos reales):**
+
+- Raíz productiva configurada por `Program.cs`: `%LOCALAPPDATA%\SeryMente\OCP MCP\`; en modo de prueba puede sustituirse por `OCPMCP_TEST_DATA_ROOT`.
+- Base SQLite: `data\ocp-mcp.sqlite`.
+- Paquetes de backup: `backups\<backup_id>.ocpbak`, directorio hermano de `data\`.
+- Mientras opera SQLite en modo WAL pueden existir `ocp-mcp.sqlite-wal` y `ocp-mcp.sqlite-shm`. El WAL es parte del estado transaccional mientras haya páginas comprometidas aún no volcadas al archivo principal; SHM es coordinación transitoria reconstruible. Ninguno debe copiarse en bruto como sustituto del snapshot online.
+- El ZIP de aplicación `ocp-mcp-0.1.0-win-x64.zip` es un artefacto versionado separado de la base: 39,690,805 bytes, SHA-256 `96a62fc1291f501b7fa9b0792af07021db4cb2222c8658910bdadb7732bc3b2d`, 200 componentes verificados en el recibo de candidata. La configuración de lanzamiento MCP `stdio` reside fuera de la base, en el host cliente/registrador; no se encontró un archivo de configuración operativo independiente que forme parte del estado SQLite.
+- `SourceImporter` carga `initial-sources.manifest.json` desde el directorio de la aplicación o desde `resources/` del repositorio al ejecutar la importación inicial. Una vez importadas, las fuentes cifradas y sus metadatos quedan en `canonical_sources`; el manifiesto de bootstrap no sustituye esa persistencia.
+
+**Esquema SQLite observado:** `schema_meta` (versión 1), `installation`, `key_store`, `canonical_sources`, `cycles`, `classifications`, `selections`, `operation_requests`, `authorization_grants`, `snapshots`, `events`, `telemetry_events`, `receipts`, `key_metadata` y `backup_points` (15 tablas). Incluye el índice `ix_events_cycle_sequence` y triggers que impiden UPDATE/DELETE en `events` y `receipts`. Las tablas, índices, triggers, cadenas de eventos, recibos, claves envueltas, ciclos, grants y snapshots forman el estado persistente del servicio.
+
+**Clasificación:** autoritativo local = base SQLite y sus artefactos criptográficos cifrados; backup recuperable = archivo `.ocpbak` con su metadato de integridad; runtime = ZIP versionado y definición externa de lanzamiento `stdio`; reconstructible = ejecutable/build desde código y manifiestos canónicos, índices SQLite recreables solo desde el esquema y sidecar SHM; transitorio = SHM; WAL = registro transaccional activo, no caché descartable. No se observó un cache de aplicación separado. Este inventario describe el código candidato y no certifica la presencia, tamaño o integridad de una instalación o base real en EP.
+
+#### Consistencia de captura y contrato actual
+
+`BackupService.CreateBackup` abre la conexión viva del servicio y usa `SqliteConnection.BackupDatabase(target)`, la API online de backup de SQLite, para copiar una instantánea coherente a un DB de staging. No realiza una copia manual del archivo principal ni concatena WAL/SHM. Después ejecuta `PRAGMA quick_check` sobre el staging, calcula SHA-256 del archivo SQLite, cifra el snapshot con AES-256-GCM y envuelve la DEK con DPAPI `CurrentUser`. `VerifyPackage` descifra bajo el mismo contexto de usuario, valida el tag GCM y coteja el SHA-256 del contenido; el paquete se escribe con `Flush(true)`, se mueve a su nombre final y después se registra en `backup_points`. El registro se inserta después del snapshot: ese snapshot no contiene su propia fila de inventario.
+
+La restauración `Restore(backupId)` no importa un paquete autónomo: primero consulta `backup_points` en la base existente para obtener `package_path`; luego descifra/autentica, coteja `database_sha256`, escribe un archivo temporal, ejecuta `PRAGMA integrity_check`, limpia los sidecars de destino y sustituye la DB conservando una copia rollback. La prueba smoke posterior ejecuta `diagnose --json` y exige readiness `READY`.
+
+**Brecha verificada:** `backup_points.package_path` es una ruta absoluta y el índice reside dentro de la misma base que se pretende recuperar. Perder la base o cambiar de host/perfil elimina precisamente la referencia que el comando `restore` necesita. La retención también consume esas rutas. Por tanto, el `.ocpbak` actual está cifrado y verificado en el contexto de origen, pero no es por sí solo un paquete portable restaurable desde cero.
+
+`quick_check` valida la consistencia estructural rápida del snapshot; `integrity_check` valida el DB restaurado. Ninguno prueba por sí solo portabilidad de claves, integridad del conjunto de archivos, recuperación de todas las claves internas, readiness del proceso MCP ni continuidad funcional. La suite smoke de la candidata sí reporta backup/restore y readiness posteriores en su fixture, pero no ejecutó una migración cross-host.
+
+#### Portabilidad criptográfica y límite de autorización
+
+El código usa DPAPI `DataProtectionScope.CurrentUser` en más de una capa:
+
+1. La DEK del contenedor `.ocpbak` se envuelve con DPAPI `CurrentUser`; el header del paquete registra `dpapi_scope=CurrentUser`, `owner_sid`, `installation_id`, `wrapped_dek`, nonce, tag y hash del DB.
+2. `CryptoBox.Encrypt` también envuelve las DEK de fuentes/snapshots. Sus blobs quedan en `canonical_sources.wrapped_dek` y `snapshots.wrapped_dek`, con `dpapi_scope=CurrentUser`.
+3. `KeyVault` guarda las claves de autoridad HMAC y la clave privada Ed25519 de recibos en `key_store.wrapped_key`, también protegidas por DPAPI `CurrentUser`. `installation.operator_sid` vincula la autoridad al SID de origen; `ProvisionOperator` requiere consola interactiva y rechaza otra SID con `OPERATOR_ALREADY_PROVISIONED_FOR_ANOTHER_SID`.
+
+El SID anotado en el header no es suficiente para recrear las claves DPAPI: el acceso depende del contexto/perfil y material maestro DPAPI del usuario de origen. Copiar el blob cifrado a otro perfil/host no lo convierte en portable. No existe en el código observado un comando de exportación/re-enveloping que recupere todas esas capas y las vuelva a proteger para el usuario destino. La prueba `AES_GCM_DPAPI_ROUNDTRIP` verifica ida/vuelta en el contexto de su fixture; no acredita portabilidad.
+
+**Dictamen:** hoy no hay procedimiento cross-host soportado y verificable. La vía de migración tendría que ser una operación diseñada y revisada bajo P012/P013, ejecutada con presencia del operador: abrir el backup y las claves bajo el contexto fuente autorizado; migrar en memoria y re-envelopar cada DEK/clave para el contexto destino; actualizar el vínculo de operador preservando verificación de históricos; comprobar hash, GCM, HMAC/Ed25519, cadena de eventos, readiness y herramientas MCP; borrar memoria temporal y no emitir secretos por logs/args/env/manifiesto. Alternativamente puede diseñarse un envelope de recuperación portátil de doble envoltura, pero eso agrega un mecanismo de custodia de alto nivel y requiere la misma revisión presencial. Ninguna de las dos vías está implementada ni autorizada por esta respuesta; no se copia el DPAPI blob fuente ni se guardan claves/tokens en Git.
+
+#### Contrato propuesto de paquete portable (no implementado)
+
+El paquete futuro debería separar datos, código y metadatos: `manifest.json` externo a la DB, `backups/<backup_id>.ocpbak`, paquete ejecutable versionado (o referencia inmutable a él) y procedimiento de recuperación. El manifiesto, versionado por esquema, debería declarar:
+
+- identificador y fecha observada del backup; versión del servicio, commit de código, RID, build-manifest SHA-256 y versión del esquema DB;
+- lista de artefactos con rutas relativas, tamaño en bytes y SHA-256, sin depender de `package_path` absoluto;
+- algoritmo de cifrado, versiones crypto/AAD, ámbito DPAPI y **referencia opaca** al mecanismo/envelope de recuperación aprobado; no incluir DPAPI blobs, claves, tokens, SID innecesario ni secretos;
+- hash de contenido del DB y referencia de instalación/backup para reconciliar header y manifiesto;
+- orden de restauración y precondiciones de perfil/clave, versión runtime y verificación funcional.
+
+**Orden de restore propuesto:** validar versión/esquema del manifiesto; resolver rutas relativas dentro de un directorio aislado y bloquear traversal; verificar tamaño/SHA-256 de cada artefacto; resolver el envelope conforme al procedimiento de claves aprobado; autenticar AES-256-GCM y hash interno; escribir staging; ejecutar `integrity_check` y `foreign_key_check`; re-envelopar todas las claves DPAPI para el usuario destino; hacer swap con rollback solo con el servicio detenido; arrancar en entorno aislado; comprobar readiness, reapertura de las 10 herramientas MCP y una prueba funcional de solo lectura; registrar recibo verificable. Todo este contrato queda como **propuesta documental**, no como schema/código aceptado.
+
+#### Prueba cross-host y estado de los seis resultados
+
+No se ejecutó restauración cross-host: solo se observó un dispositivo RDC en línea (`015RENTA01`); no se dispuso de un segundo host/perfil independiente autorizado para esta prueba. Tampoco se creó un usuario, se alteró el host, se accedió a credenciales ni se operó EP. La suite/build existente es evidencia de la candidata y no sustituye esta prueba.
+
+| Estado exigido | Resultado observado | Alcance de la evidencia |
+|---|---|---|
+| `BACKUP_LOCAL_VERIFICADO` | **PASS EN FIXTURE DE CANDIDATA; DATOS REALES NO VERIFICADOS** | Recibo de candidata: 31/31 unitarias, 29/29 integración; smoke backup/restore y readiness. No acredita backup de una instalación real. |
+| `PERSISTENCIA_REMOTA_B2_VERIFICADA` | **NO VERIFICADA** | No se ejecutó B2. Transporte/almacén remoto pertenecen a EP. |
+| `RESTORE_CROSS_HOST_VERIFICADO` | **NO VERIFICADO** | Sin host/perfil destino y sin mecanismo de re-enveloping soportado. |
+| `INTEGRADO_EN_MAIN` | **NO** | Código y pruebas permanecen en rama candidata; no PR ni merge. |
+| `INSTALADO_EN_EP` | **NO** | No hay instalación ni operación EP acreditada en este ciclo. |
+| `ACEPTADO_POR_OPERADOR` | **NO** | No consta aceptación del artefacto ni de la arquitectura de recuperación. |
+
+**Límites entre frentes:** MCP-OCP mantiene el diseño técnico de su servidor, DB, backup/restore, portabilidad criptográfica y pruebas. EP conserva B2, sus credenciales/host/operación y aceptación de instalación, sujetos a P012/P013. Gobernanza mantiene la integración de criterios en GOV-TASK-014 y su propia verificación. Esta respuesta no modifica OCP EP ni Gobernanza, no promueve la candidata, no instala, no accede a secretos y no activa MCP-NORMATIVO/Sink.
+
+**Resultado del ciclo local 07:** procesamiento y diagnóstico documental del requerimiento §30 **CUMPLE_VERIFICADO**; las capacidades técnicas subyacentes de B2 y restore cross-host permanecen **NO VERIFICADAS/BLOQUEADAS**. No se confunden estos estados con el cierre de DTC global, que sigue `EN_CURSO_RECURRENT`. Siguiente decisión material: revisión presencial P012/P013 y autorización de una arquitectura de recuperación de claves antes de construirla y antes de probarla en otro perfil/host.
+
+**Evidencia de lectura/código:** DUG blob `54064c8fe00f872023a455f06596061ed69062ae`; núcleo previo blob `8bba2a123dd331132471f35cf0d911b277d168a5`; control actual gen. 4 blob `ecb27b04aaba04025ef596b3f0ed6c049bc2420d`; source commit candidata `5956595d5455d5b851c2ef1ff6808f0c2aeabff9`; rama HEAD `ef639b62509a9b7ae623c3fbd187466ee2e2a3d9`; receipt blob `11296e495aa9a52a640ff53da2b1042ba67acf08`; SHA de `BackupService.cs` `f25b7ccde5a0f2addcf089fb1c7ec5007f127fe0`, `SqliteStore.cs` `6e83e879bcd235ce8c075bf74606980c69fe6d51`, `CryptoBox.cs` `98bd0d4209f5769d86539bc346c3b39061d71cc4`, `KeyVault.cs` `93899ad8c542b55c86f93f698dc1c4440c24e11e`, `Program.cs` `f92f170594d498a5d7f7657dbf333db82035f428` y `SourceImporter.cs` `feb83543b89d610a11d1e5aeda1bbc7501334596`. No se ejecutó build ni se modificó código en este ciclo.
+
+**Cierre documental:** `LEÍDO → RESPUESTA_INICIAL_REGISTRADA → PROCESADO → DOCUMENTADO_AL_CIERRE → PENDIENTE_READBACK`. El read-back final se consignará después de guardar núcleo, evidencia, crónica e índice.
