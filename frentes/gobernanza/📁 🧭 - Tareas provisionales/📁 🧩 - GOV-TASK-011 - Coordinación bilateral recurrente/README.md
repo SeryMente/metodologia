@@ -406,3 +406,28 @@ La vía de eficiencia es: terminar ciclo 06 sin duplicación → una ejecución 
 ## Medición del rendimiento dentro de DTC · DUG v377 / Metacanon §52
 
 Desde el primer ciclo sustantivo de Gobernanza que pueda medirse íntegramente desde su apertura, incorporar el bloque `performance` definido por [GOV-TASK-013](../📁%20🧩%20-%20GOV-TASK-013%20-%20Medición%20y%20optimización%20de%20ciclos/README.md) a la evidencia ya existente del ciclo. No crear una bitácora o un OCP separado ni registrar cada llamada como ciclo. Medir inicio/fin de procesamiento; distinguir roundtrip observado de GitHub/RDC y esperas externas; declarar `NOT_MEASURED` cuando falten marcas. El ciclo que preparó esta instrumentación queda fuera de la línea base porque el registro no comenzó con él. La primera muestra se construye con ciclos completos y comparables; no se proclama mejora antes de contar con distribución suficiente (mediana, P90, rango y tamaño de muestra).
+
+## Compuerta ejecutiva DTC sin excepciones · mandato del operador · 2026-11-01
+
+**Regla:** en TODO ciclo real de Gobernanza, sin excepción, ejecutar y documentar la conciliación trilateral de los objetos canónicos de EP y MCP-OCP antes de cerrar el ciclo propio. No basta con revisar el estado integrado de una fotografía anterior.
+
+### Checklist obligatorio por ciclo de Gobernanza
+
+- [ ] Releer control propio, DUG vigente, índice ejecutivo del sprint y último cursor de EP y MCP-OCP.
+- [ ] Leer ambos objetos DTC desde `main`; registrar blob/revisión, ciclo local abierto/cerrado y mensajes posteriores al cursor procesado.
+- [ ] Atender primero cada mensaje nuevo: acuse, interpretación, viabilidad, bloqueos y acción inmediata en el mismo objeto del frente emisor.
+- [ ] Procesar en este ciclo toda acción que pertenezca a Gobernanza: reconciliar alcance, estado de tareas, dependencia, criterio de aceptación, evidencia y decisión requerida.
+- [ ] Para acciones técnicas de EP/MCP-OCP, mantener el ID y la fuente propietarios; no duplicar tareas, no asumir titularidad y no declarar ejecución/aceptación sin evidencia del frente responsable.
+- [ ] Si el frente mantiene un ciclo o solicitud abierta, no emitir una solicitud duplicada; conservar el cursor pendiente y esperar su respuesta en el mismo objeto mientras se continúa el trabajo independiente autorizado.
+- [ ] Si no hay delta, escribir `SIN_NOVEDAD` con el cursor real leído; el silencio no cuenta como cumplimiento.
+- [ ] Actualizar este registro y el tablero ejecutivo cuando cambie el estado integrado; incluir commit/blob y hash/read-back de cada escritura.
+- [ ] Verificar por lectura de vuelta el objeto DTC de cada respuesta y los artefactos de Gobernanza modificados.
+- [ ] No cerrar el ciclo de Gobernanza si falta revisar alguno de los dos frentes, responder un delta nuevo, documentar el estado pendiente o verificar read-back. Declarar `CICLO_INCOMPLETO` y el bloqueo concreto.
+
+### Aplicación en el corte vigente · 2026-11-01 19:18 America/Mexico_City
+
+- **EP:** el ciclo `C-EP-MOD-SCRIPTPWS-20261101-03` sigue abierto. Gobernanza respondió en el mismo objeto a cinco incidencias (SHA-256 Sigma0, encabezado de arquitectura, aserción `git -C read-tree`, recurrencia de doble `.join()` y helper `insertAfterLine` inexistente). Commit `1f934f1254620cc6e60339afa812c53469241819`; blob/read-back `312c3e7a328e726c88b43c38e37e99d67125cef4`; coincidencia exacta verificada. EP conserva la corrección técnica y su cierre.
+- **MCP-OCP:** ciclo local 06 cerrado `CUMPLE_VERIFICADO`; §30 del objeto `COORDINACION-SPRINT-OCP-MCP-v0.1.md`, blob `3ea63f4c18de6f185430617add5bd2df67f15258`, sigue pendiente de lectura/respuesta por MCP-OCP. No se abre una segunda solicitud mientras §30 siga pendiente.
+- **DTC global:** `EN_CURSO_RECURRENT`. La respuesta de Gobernanza a EP no cierra EP-03 ni la solicitud §30; el cierre local de MCP-OCP 06 no cierra la dependencia de persistencia ni la aceptación del sprint.
+
+**Criterio de cumplimiento de GOV-TASK-011:** cada ciclo de Gobernanza deja evidencia verificable de que los dos cursores fueron revisados, cada delta nuevo fue respondido/procesado o quedó explícitamente pendiente por autoridad/permiso/respuesta externa, y los cambios propios tuvieron read-back. Un ciclo que omita una de estas condiciones es `CICLO_INCOMPLETO`; no se registrará como cumplido.
