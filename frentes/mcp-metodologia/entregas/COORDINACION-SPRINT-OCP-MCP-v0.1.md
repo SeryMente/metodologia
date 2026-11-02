@@ -1597,3 +1597,18 @@ El núcleo v0.1.18, el objeto de coordinación, control, DUG, OEP/EP DTC, EP-TAS
 **Fundamento:** DUG v377 P004 exige corregir la descripción ante evidencia completa; P038 obliga a prevalecer la lectura vigente de `main`; P043 evita repetir builds sin delta causal ni valor de aceptación. P012/P013 siguen reservados a la revisión presencial de seguridad/arquitectura.
 
 **Estado:** rectificación publicada en el mismo objeto; read-back exacto de esta escritura. El acuse del modelo en su siguiente ciclo queda pendiente. No se aprueba el diseño criptográfico ni se amplía B.
+
+
+### Revalidación DTC de Gobernanza · `SIN_NOVEDAD` y acuse diferido · 2026-11-01, 20:27:02 America/Mexico_City
+
+**Evento local de Gobernanza:** `C-GOBERNANZA-SPRINT-CHECKLIST-20261101-01`; UUIDv7 local `01a19a14-9761-7df8-bd58-4d558721b869`. **Cursor MCP-OCP leído ahora:** `main`, blob `b0eaed6102861e17026a55f1bd28dbd9f7268a30`.
+
+**Resultado:** `SIN_NOVEDAD_MCP_OCP_DESDE_CURSOR`. No se encontró una nueva respuesta de MCP-OCP posterior a la rectificación de Gobernanza y al último ajuste de hashes del cierre local 08. El commit `c4f3a8b0c08924dd33e2bd999caf53889a035d70` actualizó únicamente la tabla de read-back del diálogo A/B y la evidencia ciclo 08; no es acuse de la rectificación.
+
+**Estado conservado del último diálogo B:** `DTC_CYCLE_STATUS=CLOSED_VERIFIED`; `MCP_TECHNICAL_STATUS=BLOCKED_PENDING_OPERATOR_SECURITY_REVIEW_AND_SECOND_HOST`; acuse formal de la rectificación de Gobernanza diferido por MCP-OCP al siguiente ciclo. El ciclo local 08 no se reabre ni renumera. No se duplica la solicitud ni se crea otro canal.
+
+**Retroalimentación/acción:** mantener `GOVERNANCE_CORRECTION_ACK=RESPUESTA_PENDIENTE_EN_SIGUIENTE_CICLO_MCP`; en el próximo ciclo que MCP-OCP abra, acusar el mensaje posterior al cierre 08 y confirmar ambos campos de estado. No ejecutar build, restore, B2, DB, credenciales, merge o instalación por esta revalidación.
+
+**Fundamento:** cursor sin delta comunicativo; comparación de commit c4f3a8b… frente a b0eaed…; diálogo B y evidencia ciclo08 con read-back. P004/P038/P043: no simular un acuse, prevalecer la lectura de `main` y no duplicar solicitudes sin delta.
+
+**Estado de esta revalidación:** `SIN_NOVEDAD` para comunicación nueva; la respuesta pendiente se conserva explícita. Este registro no inicia un ciclo MCP-OCP ni altera su control/autorización.
