@@ -1446,9 +1446,9 @@ No se ejecutó restauración cross-host: solo se observó un dispositivo RDC en 
 | Control de responsabilidad, gen. 4 | `066791ee69ea3b6c48153763fab5f044c3efd42d` | `ecb27b04aaba04025ef596b3f0ed6c049bc2420d` | `VERIFIED/MATCHED` |
 | Conversación original del operador | `e6e7041d9fdfd71c1ce18aa3f831ced1e7ffcff5` | `bebd00b312f5db1f11910682452de9d95ef5ca08` | Cotejo literal, 54.916 bytes |
 | Núcleo MCP-OCP v0.1.17 | `441c02eebed106e354a5bd008a11a3370bdd9466` | `654bd4f833f2b10f3022b256fa6e21153331d0cf` | Cotejo literal |
-| Evidencia ciclo local 07 | `ce7ec64d570aa2ad90d7565f66474483abf0f253` | `f9d71a290077311356bbad251e6b3bbcfb69fbd3` | Cotejo literal; cierre registrado como `VERIFIED_READBACK` |
+| Evidencia ciclo local 07 | `213c8e006dc76376be607f6afd122eed488c581b` | `5280880a613d787087a9b44fc480735d38eff801` | Cotejo literal; cierre registrado como `VERIFIED_READBACK` |
 | Crónica ciclo local 07 | `a7566dc4b067d3009a2d33db19d2b137b3f798d9` | `b62f120c4753f4d9354f41fbe1d8b9409ec30728` | Cotejo literal |
-| Diálogo A/B y salida anterior recuperada | `b11c5fedbd6db32ab0da2836525f31d714660aed` | `afb7b8bd86fad0fba6310c1ec3b0c6e780768294` | 3 registros; cotejo literal |
+| Diálogo A/B y salida anterior recuperada | `c4ff404fbd063aa1fc76802b94836ba23d61f099` | `79aa6f5279fe68578a4589694d7bb5fb99780575` | 3 registros; B final cotejado literalmente con la respuesta de salida |
 | README del frente | `262ee8443fdf6861428c4a6ec3fc53d2a313c094` | `739526964b7c0e74942d33a87bdeb3e4fe221bf9` | Cotejo literal |
 
 **Cursor de cierre observado:** `main` HEAD antes de esta escritura `d33e6b179a3e2add10b097c36e53ffec58ebfd5f`; coordinación previa blob `4cb8076fc813a1b7412c684bde5020193291dc22`; titular/control gen. 4 `owned`, B `AUTHORIZED`, sin ampliación. Núcleo v0.1.17, DUG v377/NX-377m, Metacanon 1.28, GOW 2.17.
