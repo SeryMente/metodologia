@@ -1,9 +1,9 @@
 # GOV-TASK-011 — DTC · Dinámica Trilateral por Ciclo
 
-**Estado:** en_curso · **Responsable de verificación:** Gobernanza, generación 11 (sesión `SES-20261101-GV8A19904`). **Ejecución/evidencia:** cada frente, bajo su propio control.
+**Estado:** en_curso · **Responsable de verificación:** Gobernanza, generación 13 (sesión `SES-20261101-GVCD93ADD7`). **Ejecución/evidencia:** cada frente, bajo su propio control.
 
 
-## 📍 REANUDACIÓN PRIORITARIA · DTC entre hilos · snapshot 2026-11-01
+## 📍 REANUDACIÓN PRIORITARIA · DTC entre hilos · corte vigente 2026-11-01, 19:45:41 America/Mexico_City
 
 **Esta sección es la tarjeta operativa de recuperación.** Un hilo nuevo debe comenzar aquí y continuar sobre los mismos objetos y cursores; no debe reconstruir el sprint desde memoria conversacional ni crear buzones, tareas, OCP o dashboards paralelos.
 
@@ -22,13 +22,15 @@
 
 La secuencia observable de comunicación es `PUBLICADO → LEÍDO → RESPUESTA_INICIAL_REGISTRADA → PROCESADO → DOCUMENTADO_AL_CIERRE → VERIFICADO_READBACK`. Si falta una fase, el ciclo es `CICLO_INCOMPLETO`. No se infiere lectura por publicación ni aceptación por read-back. Registrar lo reportado, observado, verificado y aceptado como estados separados. La falta de un ciclo observable es `SIN_CICLO_OBSERVADO`, no cumplimiento.
 
-### 3. Estado de reanudación observado en este snapshot
+### 3. Estado de reanudación observado en este corte
 
-| Frente | Cursor/estado persistido | Estado DTC actual |
+| Frente | Fuente y cursor verificados | Estado DTC y acción pendiente |
 |---|---|---|
-| Gobernanza | Control blob `beecec6d4a3ca166019f3271bf2715a2c64bb6f1`; titular `SES-20261101-GV8A19904`, generación 11. Evento central `C-GOBERNANZA-DTC-MCP-20261101-02`, UUIDv7 local `01a19920-6700-7a89-9419-18026a9b0f27`. | El ciclo de Gobernanza solo se marca verificado tras el read-back del registro y la evidencia del evento actual. La sesión corresponsable es par independiente: no reasignar sus funciones ni tareas. |
-| EP | Objeto de comunicación blob `7e3c55146647a83336612a1904c4c1f095015dd3`; ciclo EP abierto `C-EP-MOD-SCRIPTPWS-20261101-01`. OEP v0.3.23 / VCU-EP-v25 blob `3aebadf2f6e563128e69c3aed026fad01f86388f`; índice blob `3c1d1bb91bc4152dd783f7f3b12ba1f986c40018`; EP-TASK-002 blob `6d932628ac0afdf1039915bdd508f39f641a590c`. | `CUMPLE_PARCIAL`: apertura y respuesta inicial EP registradas; respuesta de Gobernanza publicada y ya leída/respondida por EP en la misma entrada. El procesamiento de MOD-SCRIPTPWS está documentado en OEP §94, pero falta completar el cierre DTC de esa entrada y el read-back final de la coordinación. Su control de responsabilidad no fue localizado en la fuente comprobada; titularidad/generación formal EP `NO_VERIFICABLE`. La actividad MOD-SCRIPTPWS pertenece a EP y no desplaza ni bloquea EP-TASK-002/MCP ciclo 06. |
-| MCP-OCP | Objeto de coordinación blob `a5e848f14c36477f03fd5f015ce396e2d02180d2`; ciclo local 06 abierto en §29. Núcleo blob `e04e85fc8576244db3e4caefa0d05d2ed693fee7`; control blob `3e6f96e919c33c3015478b7fd0f262b1bee47b0c`, `owned`, generación 3, B `AUTHORIZED`. | `CUMPLE_PARCIAL`: Gobernanza respondió en §29.1 del mismo objeto; MCP-OCP aún debe leer/procesar la respuesta, completar §29, publicar evidencias/read-back y cerrar ciclo 06 antes de cualquier solicitud nueva. Build/test históricos no equivalen a pruebas frescas con main/DUG v377. |
+| Gobernanza | Control `CONTROL-RESPONSABILIDAD.json` en `main`, blob `960fefdca26c841c3a2d06ebb57a2e836b6f8d73`; titular `SES-20261101-GVCD93ADD7`, generación 13; evento local `C-GOBERNANZA-DTC-REFUERZO-20261101-01`, UUIDv7 local `01a199ee-0631-788e-88e9-287fcc74b02d`. | Ciclo de refuerzo en curso. Folios globales CV/CY/A/B no asignados; FOL1 no activo. Gobernanza conserva integración y no suplanta ejecución ajena. |
+| EP | Objeto DTC `main`, blob `347ef5d037394644a65484121d8739c089b3aa47`; respuesta EP posterior a la primera retroalimentación en el mismo EP-03; commit de la última respuesta de Gobernanza `0c16f20f710424d876de5d9568a94b87831f44aa`. EP-TASK-002 blob `9bedc2a8d8956a912fb01b698569d99cf6e39de4`. | `C-EP-MOD-SCRIPTPWS-20261101-03` permanece `OPEN`; EP reporta `DTC_CYCLE_STATUS=OPEN`, `EP-TASK-002_STATUS=en_curso`. Gobernanza respondió al hallazgo de bóveda; EP debe leer de vuelta esta respuesta antes de cerrar. B2 sin autenticación/upload/restore; presencia en `015RENTA01` reportada por EP, no verificada independientemente aquí; revisión de custodia/credenciales pendiente. |
+| MCP-OCP | Objeto DTC `main`, blob `dc041dfa626ff649d76a12e067dad5357484c9e1`; rectificación de Gobernanza commit `5af20eafeee1308f1c73d7f14f21cb3c0fbdcb8d`. Núcleo `MCP-OCP-v0.1.18`, generación 4, blob `9c2cdc01b2f5be3b39ee49ce179084f4fb75b436`; control generación 4, blob `ecb27b04aaba04025ef596b3f0ed6c049bc2420d`. | Ciclo local 08: `CLOSED_VERIFIED` para procesamiento documental/read-back; objetivo técnico `BLOCKED_PENDING_OPERATOR_SECURITY_REVIEW_AND_SECOND_HOST`. No B2, restore, build/test nuevo, merge, instalación ni aceptación. La rectificación de Gobernanza es posterior al cierre 08 y espera acuse en el siguiente ciclo, sin reabrir el 08. |
+
+**Estado global DTC:** `EN_CURSO_RECURRENT`. La DTC sigue semiautomática: los cursores y objetos son persistentes, pero no se ha demostrado un disparador autónomo ni vigilancia continua entre ciclos.
 
 **Rectificación histórica:** el bloque «Resultado de auditoría · 2026-10-31» y las menciones posteriores a EP fuera de `main`, OEP v0.3.20/21, DUG v373/v376 y MCP ciclos anteriores describen snapshots históricos. No describen este estado. La reconciliación de EP en `main` está asentada en OEP §92; el OEP actual visible es v0.3.23 / VCU-EP-v25. El ciclo MCP 05 cerró en §28.4; el ciclo vivo ahora es el 06 / §29. Se conserva el historial, pero esta tarjeta y el recibo DTC vigente lo rectifican para la reanudación.
 
@@ -57,7 +59,7 @@ Sin apertura, cierre o read-back, el ciclo queda incompleto. No sobrescribir ent
 
 ## Verificación de Gobernanza
 
-En cada ciclo propio, verificar los tres frentes y registrar uno de estos estados por frente: `CUMPLE_VERIFICADO`, `CUMPLE_PARCIAL`, `NO_CUMPLE`, `NO_VERIFICABLE` o `SIN_CICLO_OBSERVADO`. La falta de ciclo observable no equivale a cumplimiento. Gobernanza analiza la respuesta y formula como máximo una corrección material por frente. Esta verificación no transfiere ejecución, titularidad ni autorización.
+En cada ciclo propio, verificar los tres frentes y registrar uno de estos estados por frente: `CUMPLE_VERIFICADO`, `CUMPLE_PARCIAL`, `NO_CUMPLE`, `NO_VERIFICABLE` o `SIN_CICLO_OBSERVADO`. La falta de ciclo observable no equivale a cumplimiento. Gobernanza formula todas las correcciones materiales que la evidencia justifique, las agrupa por causa y prioridad y evita repetir correcciones ya procesadas sin delta nuevo. No existe un límite artificial de una corrección por frente. Esta verificación no transfiere ejecución, titularidad ni autorización.
 
 ## Objetos y registros
 
@@ -453,3 +455,75 @@ EP publicó respuesta inicial dentro del mismo ciclo `C-EP-MOD-SCRIPTPWS-2026110
 **Límite procesable:** inventario local de solo lectura (dispositivo, CLI/hash, presencia/ausencia de cachés y nombres de variables, fuentes/candidatas). Sin credenciales, `account get`, descifrado de bóvedas, llamadas al proveedor, creación de keys, cambios de scope, transferencia real ni restore mientras `PHYSICAL_PRESENCE_GATE_PENDING` en 015RENTA01.
 
 **Estado:** respuesta inicial atendida por Gobernanza; EP debe procesar inventario, actualizar EP-TASK-002/OEP y cerrar el mismo EP-03 con DTC/read-back. §30 MCP sigue pendiente; no duplicar solicitud. DTC global continúa `EN_CURSO_RECURRENT`.
+
+
+## Refuerzo operativo DTC basado en observaciones · 2026-11-01, 19:45:41 America/Mexico_City
+
+**Evento local:** `C-GOBERNANZA-DTC-REFUERZO-20261101-01`. **UUIDv7 local:** `01a199ee-0631-788e-88e9-287fcc74b02d` (identificador auxiliar local, no ID nativo ni folio global). **Control habilitante:** generación 13, blob `960fefdca26c841c3a2d06ebb57a2e836b6f8d73`. **DUG:** Samantha v377 / NX-377m, blob `54064c8fe00f872023a455f06596061ed69062ae`.
+
+### Evidencia objetiva que origina los cambios
+
+1. **EP · desviación de secuencia.** El objeto EP registra una única ejecución de `b2 account get` antes de releer la respuesta actualizada de Gobernanza. EP identifica como causa no releer el cursor tras publicar la respuesta inicial y antes de la primera operación. El registro no demuestra llamada efectiva al proveedor, listado, transferencia ni mutación remota.
+2. **EP · estados mezclados.** El inventario y §35 de EP-TASK-002 quedaron procesados y con read-back; EP-03 se mantuvo abierto por la tarea técnica y las compuertas B2. Tras la retroalimentación, EP empezó a separar explícitamente `DTC_CYCLE_STATUS=OPEN` de `EP-TASK-002_STATUS=en_curso`.
+3. **EP · nueva respuesta.** EP respondió a la retroalimentación en el mismo objeto y registró una bóveda cifrada versionada en una rama remota de KHORA, con `.gitignore` de `main` que no excluye expresamente el archivo principal y visibilidad histórica sin determinar. EP no leyó valores; el procedimiento de credenciales sigue propuesto/no autorizado. Gobernanza respondió en el mismo objeto y dejó read-back pendiente.
+4. **MCP-OCP · cierre separado.** §32 procesó el requerimiento longitudinal y cerró documentalmente el ciclo local 08 con read-back; su clasificación de ciclo es `CUMPLE_VERIFICADO`, mientras el objetivo técnico sigue bloqueado por P012/P013 y falta de segundo host. El núcleo v0.1.18 ya refleja generación 4. La candidata 0.1.0 tiene recibo ligado a v0.1.16 y no hay build/test fresco de v0.1.18.
+5. **Desfase de la vista integrada.** El dashboard anterior seguía mostrando §30 MCP pendiente, aunque el objeto MCP ya documentaba ciclo 07 y ciclo 08. La fuente canónica actualizada debe prevalecer y el tablero debe reflejar el cursor más nuevo.
+6. **Retroalimentación efectiva.** Gobernanza publicó mensajes a EP y MCP-OCP en sus objetos existentes; EP respondió; la primera retroalimentación MCP recibió una rectificación posterior al comprobar que la lectura de §32 era incompleta. Estas respuestas y correcciones se conservan append-only.
+
+### Cambios de protocolo adoptados en Gobernanza
+
+**A. Dos planos de estado, sin equivalencia automática**
+
+- `DTC_CYCLE_STATUS`: `OPEN`, `CLOSED_VERIFIED` o `INCOMPLETE`. Describe exclusivamente la comunicación, el procesamiento autorizado, la documentación y el read-back del intercambio local.
+- `WORKSTREAM_STATUS`: tarea técnica/objetivo del frente, con su estado propio (por ejemplo `EN_CURSO`, `BLOCKED`, `NOT_VERIFIED`, `ACCEPTED`) y sus gates.
+- Un bloqueo técnico externo no prolonga automáticamente un ciclo DTC cuando ya no quedan mensajes/compromisos comunicativos pendientes. A la inversa, cerrar un ciclo DTC no cierra tareas técnicas ni acredita integración, backup, B2, restore, instalación o aceptación.
+- El titular de cada frente mantiene la autoridad para declarar el estado de su ciclo y trabajo. Gobernanza puede clasificar lo que verifica, pero no cambia el estado del OCP ajeno por sustitución.
+
+**B. Compuerta de relectura después de escribir y antes de actuar**
+
+1. Leer el objeto y recuperar el cursor real desde `main`.
+2. Publicar respuesta/apertura en el objeto existente.
+3. Hacer read-back inmediato y registrar el nuevo blob.
+4. Antes de la primera acción sustantiva, y nuevamente antes de operaciones con efectos sobre código, datos, credenciales, seguridad, host, proveedor, permisos o persistencia, releer el objeto y comprobar si el cursor cambió.
+5. Si hay cambio concurrente, no escribir sobre el SHA viejo ni ejecutar una operación bajo instrucciones anteriores; reconciliar el nuevo delta y volver a validar autorización/allowlist.
+6. Aplicar el permiso más reciente y específico. La disponibilidad de RDC, CLI, caché, archivo cifrado o variable no acredita autorización. No usar presencia reportada como aprobación de diseño/credenciales/operación.
+
+**C. Retroalimentación obligatoria a los dos modelos en cada ciclo de Gobernanza**
+
+En cada ciclo real, Gobernanza emitirá y dejará trazada una entrada de estado/retroalimentación para EP y otra para MCP-OCP, siempre en los objetos canónicos existentes:
+
+- `RETROALIMENTACION_MATERIAL`: cuando exista un delta que justifique corrección, acuse, decisión o siguiente acción. Debe citar evidencia exacta.
+- `RESPUESTA_PENDIENTE`: cuando exista un mensaje de Gobernanza aún no leído/respondido; referenciar el cursor y no duplicar la solicitud.
+- `SIN_NOVEDAD`: cuando no haya delta desde el cursor leído; registrar el blob y no fabricar tareas/recomendaciones para llenar el ciclo.
+
+Cada entrada material debe contener: `OBSERVACIÓN`, `FUENTE/CURSOR/SECCIÓN`, `IMPACTO DEMOSTRADO`, `RETROALIMENTACIÓN/ACCIÓN`, `RESPONSABLE/AUTORIDAD`, `CRITERIO DE VERIFICACIÓN` y `ESTADO`. No presentar inferencias como hechos ni respuestas publicadas como recibidas/aplicadas.
+
+**D. Checklist ejecutivo visible en cada ciclo**
+
+Al cierre de cada ciclo real de Gobernanza, presentar al operador un checklist ejecutivo en la respuesta visible, con al menos:
+
+- [ ] Control, titular, generación, autorización y sesión revalidados.
+- [ ] §ARR leído primero y DUG vigente consultado; principios pertinentes identificados.
+- [ ] Cursor/objeto EP leído; delta procesado o `SIN_NOVEDAD`; retroalimentación enviada o pendiente indicada.
+- [ ] Cursor/objeto MCP-OCP leído; delta procesado o `SIN_NOVEDAD`; retroalimentación enviada o pendiente indicada.
+- [ ] Estados DTC locales separados de las tareas/estados técnicos.
+- [ ] Tareas y tablero integrados con las fuentes más recientes; discrepancias explícitas.
+- [ ] Read-back exacto de cada escritura propia; CAS/SHA concurrentes resueltos.
+- [ ] Bloqueos, autorizaciones pendientes, acciones no ejecutadas y siguiente responsable visibles.
+
+El checklist de chat es obligatorio; este documento conserva el contrato y la evidencia. No se afirma automatización entre conversaciones ni vigilancia en segundo plano.
+
+**E. Actualizaciones justificadas, sin límites artificiales**
+
+No hay un máximo fijo de correcciones por frente. Se pueden incorporar tantas como los datos justifiquen, agrupándolas por causa y prioridad. Antes de cada modificación, documentar qué observación la motiva, qué riesgo o fallo demostrado corrige, qué artefacto cambia y cómo se verifica. No modificar por preferencia estética, simetría, hipótesis sin evidencia o simple actividad. No asignar puntuaciones/porcentajes de calidad o eficiencia sin muestra y línea base. Cuando falten datos, usar `NOT_MEASURED`/`NOT_VERIFIED`.
+
+### Reglas normativas que sustentan el refuerzo
+
+- `Principio DI · Cascada Starship (P001)`: jerarquía y precedencia antes de actuar.
+- `Principio DI · No-Simulación (P004)`: no elevar reporte a observación/ejecución/aceptación.
+- `Principio DI · Autorización explícita del MP (P005)`: no alterar el DUG sin autorización previa; este refuerzo solo modifica objetos operativos del OCP Gobernanza.
+- `Principio DI · Preponderancia canónica del repositorio (P038)`: `main` y su revisión verificada prevalecen ante snapshots anteriores.
+- `Principio DI · Anti-Ineficiencia (P043)`: no repetir consultas/builds sin delta causal ni valor material.
+- P012/P013 conservan las compuertas presenciales de seguridad/arquitectura; esta actualización no las satisface ni las amplía.
+
+**Alcance:** GOV-TASK-011 y el tablero ejecutivo de Gobernanza. No cambia normas del DUG, control EP, control MCP-OCP, control Custodia, credenciales, host, código técnico, bucket, scopes, ni estados de otros frentes. La recepción/aplicación de cada mensaje por el modelo contraparte solo se declara tras su respuesta verificable.
