@@ -1543,7 +1543,7 @@ El operador entregó directamente el Prompt Adicional 02 a este hilo EP el 2026-
 
 ---
 
-## 94. Módulo funcional MOD-SCRIPTPWS — PowerShell para Entorno Persistente · v0.3.34 / VCU-EP-v36
+## 94. Módulo funcional MOD-SCRIPTPWS — PowerShell para Entorno Persistente · v0.3.35 / VCU-EP-v37
 
 ### Identidad, subordinación y responsabilidad funcional
 
@@ -1729,6 +1729,17 @@ $ErrorActionPreference='Stop'; $d="$env:LOCALAPPDATA\Programs\nodejs"; $env:Path
 **Corrección/previsión:** antes de cotejar o regenerar hashes de archivos `.ps1`, aplicar la normalización canónica UTF-8 BOM + CRLF; para los demás archivos conservar sus bytes/texto sin conversión de saltos. Verificar varios artefactos históricos contra su manifiesto antes de permitir una escritura.
 
 **Estados:** PREFLIGHT_FALLIDO_POR_REPRESENTACIÓN · CAUSA_VERIFICADA · SIN_MUTACIÓN_REMOTA · CONTADOR_0. El manifiesto existente se conserva hasta verificar todo el conjunto.
+
+
+### Incidencia de parser en consulta de historial · paréntesis de salida sin cerrar · 2026-11-01
+
+**Operación:** construcción de una consulta de solo lectura para inspeccionar el blob y el historial de `07-git-wip.ps1`. **Síntoma literal:** `SyntaxError: missing ) after argument list`. **Impacto:** el runtime rechazó el payload antes de ejecutar sus llamadas; no hubo lectura remota ni escritura.
+
+**Causa raíz VERIFICADA:** la expresión final de salida abrió `text(` y un objeto literal, pero cerró el objeto con `};` sin cerrar la llamada con `)`. El parser detectó el delimitador desequilibrado antes de iniciar la operación.
+
+**Corrección/previsión:** evitar objetos de salida excesivamente anidados en payloads largos; emitir resultados en llamadas `text(...)` independientes y comprobar el cierre balanceado del bloque antes de invocar herramientas.
+
+**Estados:** PARSER_FALLIDO · RCA_VERIFICADA · SIN_EJECUCIÓN · CONTADOR_0. El payload original se descarta.
 ### Entregables, aceptación y siguiente paso
 
 **Entregables del módulo:** comandos de ejecución reproducibles y con shell identificada; inventario de entrypoints PowerShell y consumidores; contratos de parámetros/códigos de salida; diagnóstico y logs recuperables; pruebas positivas/negativas; versiones y checksums; registro de fallos y correcciones; instrucciones de reanudación; evidencia de ejecución y lectura de vuelta. Los entregables se almacenan en las fuentes canónicas de sus repositorios, con referencias desde el OEP, no como copias paralelas.
