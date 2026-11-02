@@ -1057,3 +1057,22 @@ Ambos archivos mantienen exactamente el mismo blob SHA en `main` y en la rama de
 **Corrección/previsión:** no aplicar reemplazos globales de versión sobre un documento y después exigir anclas que esos reemplazos modificaron. Actualizar encabezados y metadatos mediante una sola transformación determinista; verificar la presencia y unicidad de las anclas antes de cambiar el contenido, y ejecutar un preflight de todo el documento después de la transformación.
 
 **Estados:** PREFLIGHT_FALLIDO · RCA_VERIFICADA · SIN_MUTACIÓN_KHORA · CONTADOR_0. Se conserva el ciclo `C-EP-MOD-SCRIPTPWS-20261101-03`.
+
+
+### Reinstanciación local tras pérdida declarada de entorno · RDC 015RENTA01 · mismo ciclo EP-03 · 2026-11-01
+
+**Declaración del operador:** la sesión local anterior se reinició y debe tratarse como pérdida total del estado de entorno/sesión; se recibe una conexión RDC fresca para continuar. Se registra como declaración del operador, no como prueba forense de borrado de todos los medios.
+
+**Nueva conexión observada:** dispositivo RDC `015RENTA01`, ID `aacf2eb5-17f4-428e-9242-c24a1fe4a2ec`, versión 0.3.1; Windows x64, PowerShell, Node 24.22.2. PC-8 (`7595d30a-bd63-4bc0-a274-f4ae90928247`) aparece Offline. No se reutiliza el PID 7232 ni ninguna sesión de PC-8.
+
+**Auditoría local de solo lectura al reinstanciar:** no estaban presentes el ejecutable B2, la caché aislada `%LOCALAPPDATA%\Khora\state\b2-ep-ocp.sqlite`, la caché predeterminada `.b2_account_info`, el directorio `%LOCALAPPDATA%\Khora\state`, ni clones conocidos en source/repos/Projects; Git, GitHub CLI y VS Code CLI no se encontraron en PATH. El único artefacto histórico observado fue la exportación `Downloads\ChatGPT-OCP MCP-20261101-1859.md`; se leyó como antecedente, no como estado operativo ni autorización.
+
+**Restablecimiento local efectivamente realizado:** B2 CLI v5.0.2 instalada en `%LOCALAPPDATA%\Programs\BackblazeB2\b2v5-windows.exe`. Lectura de vuelta: 18,639,088 bytes; SHA-256 `543aa2e36d3cbe06cf2c3e59287ce58b0a7d1507af87f147ff2f7d9406879662`, igual al hash esperado previamente verificado. Ejecución `version`: `b2 command line tool, version 5.0.2 (b2sdk version 2.13.2)`, exit 0. Ayudas locales validadas con exit 0 para `account authorize --help`, `bucket list --help`, `ls --help`, `file upload --help`, `file info --help` y `file download --help`; flags requeridos `--json` y `--sha1` confirmados. Estas lecturas no contactaron al proveedor.
+
+**Seguridad y alcance:** no se leyó, imprimió ni almacenó Application Key ID, Application Key, token ni salida cruda de `account get`. No se ejecutó `account authorize`, `account get`, `bucket list`, `bucket get`, `ls`, upload, info, download ni restore. La caché nueva aislada sigue sin crear. La existencia/estado de cualquier Application Key remota creada antes del reset no se verificó; no crear otra clave por duplicado ni inferir que la anterior quedó revocada.
+
+**Compuerta presencial:** P012/P013 de DUG v377 requieren revisión presencial del operador para autenticación y decisiones de seguridad/arquitectura. La declaración presencial anterior correspondía a PC-8 y no se transfiere por inferencia a `015RENTA01`; esta nueva revisión permanece pendiente. Solo después de la declaración presencial para el equipo actual se podrá preparar la autorización interactiva local, con caché aislada y entrada de ambos valores directamente en la terminal del equipo, nunca en el chat.
+
+**Estados verificados al cierre de este checkpoint:** `NEW_RDC_CONNECTED` · `LOCAL_ENVIRONMENT_RESET_DECLARED` · `B2_CLI_INSTALLED_HASH_VERIFIED` · `LOCAL_HELP_CONFORMANCE_PASS` · `AUTHORIZATION_NOT_STARTED` · `B2_PREFLIGHT_NOT_RUN` · `E2E_NOT_STARTED` · `UPLOAD_NOT_EXECUTED` · `RESTORE_NOT_EXECUTED`.
+
+**Continuidad:** se conserva `C-EP-MOD-SCRIPTPWS-20261101-03`, abierto. No se crea ciclo, solicitud ni canal paralelo. El procedimiento B2 one-shot de esta entrega y EP-TASK-002 permanece sujeto a su preflight exacto, sin reintentos ni operaciones de borrado.
