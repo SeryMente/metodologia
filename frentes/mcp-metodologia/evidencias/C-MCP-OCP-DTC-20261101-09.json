@@ -107,8 +107,26 @@
     },
     "readme": {
       "path": "frentes/mcp-metodologia/README.md",
-      "commit": "5cc4037be88b9a71f2a997377103ed4efd90c5f0",
-      "blob": "006ded56a70c5abeb2b644ea24c4050ad6c932ca",
+      "commit": "6738f9c5f598e2b1f8fb73c6087fd424643f2389",
+      "blob": "ac67c01875aace5627547f30421b4640adaa5a48",
+      "readback": "EXACT"
+    },
+    "coordination_cursor_before_final_evidence_update": {
+      "commit": "7aef9cdbdc5964ae5c87b5ec44dbd1fd7b3b942d",
+      "blob": "cf379a1746ce1f3de346f9a44b12182d4d517759",
+      "readback": "EXACT"
+    },
+    "dialogue": {
+      "path": "frentes/mcp-metodologia/conversaciones/C-MCP-OCP-DTC-20261101-09-dialogo.jsonl",
+      "commit": "dae10b0d5913ed5668009185f5371ece0eb14f13",
+      "blob": "484335162cd1845d3194f845ac385ad274ff4569",
+      "records": 3,
+      "readback": "EXACT"
+    },
+    "coordination_latest_checkpoint": {
+      "path": "frentes/mcp-metodologia/entregas/COORDINACION-SPRINT-OCP-MCP-v0.1.md",
+      "commit": "7aef9cdbdc5964ae5c87b5ec44dbd1fd7b3b942d",
+      "blob": "cf379a1746ce1f3de346f9a44b12182d4d517759",
       "readback": "EXACT"
     }
   },
