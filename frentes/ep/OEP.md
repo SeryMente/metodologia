@@ -1543,7 +1543,7 @@ El operador entregó directamente el Prompt Adicional 02 a este hilo EP el 2026-
 
 ---
 
-## 94. Módulo funcional MOD-SCRIPTPWS — PowerShell para Entorno Persistente · v0.3.36 / VCU-EP-v38
+## 94. Módulo funcional MOD-SCRIPTPWS — PowerShell para Entorno Persistente · v0.3.37 / VCU-EP-v39
 
 ### Identidad, subordinación y responsabilidad funcional
 
@@ -1753,6 +1753,19 @@ $ErrorActionPreference='Stop'; $d="$env:LOCALAPPDATA\Programs\nodejs"; $env:Path
 **Corrección/previsión:** la nueva versión sustituirá el módulo, calculará su SHA sobre bytes canónicos BOM+CRLF y actualizará su entrada en el manifiesto. Antes de finalizar se leerá de vuelta tanto el archivo como la entrada y se cotejarán con el contenido publicado. No conservar una entrada antigua solo porque esté presente en `main`.
 
 **Estados:** DERIVA_HEREDADA_DETECTADA · CAUSA_INMEDIATA_VERIFICADA · ORIGEN_HISTÓRICO_NO_DETERMINADO · SIN_MUTACIÓN_REMOTA · CONTADOR_0.
+
+
+### Recurrencia de parser JavaScript · plantilla con acentos graves Markdown · 2026-11-01
+
+**Operación:** preflight de construcción de la candidata KHORA 7.5.6 / EP 1.0.4, antes de cualquier llamada de escritura a KHORA. **Síntoma literal:** `SyntaxError: Unexpected identifier 'EP'`. **Impacto:** el parser rechazó el payload completo; ninguna lectura/escritura posterior se ejecutó y la rama KHORA permaneció intacta.
+
+**Causa raíz VERIFICADA:** el payload volvió a incluir acentos graves Markdown dentro de un literal JavaScript delimitado por acentos graves (plantilla), esta vez en la sección de arquitectura. El delimitador embebido cerró prematuramente la plantilla y dejó texto `EP...` como identificador inesperado. La causa es la misma familia ya registrada: mezcla de delimitadores Markdown y plantilla JavaScript sin escape.
+
+**Fallo de prevención:** la incidencia anterior ya exigía sustituir plantillas por arreglos/cadenas ordinarias, pero esa salvaguarda no se aplicó al bloque nuevo. Se registra como recurrencia del control preventivo, no como causa técnica nueva.
+
+**Corrección/previsión obligatoria:** queda prohibido usar template literals JavaScript para texto documental o PowerShell que pueda contener acentos graves Markdown. Construir esos bloques mediante arreglos de cadenas ordinarias unidos con `join('\n')`; antes de cualquier llamada GitHub, pasar un control estático que rechace el delimitador de plantilla en los bloques de contenido o use exclusivamente delimitadores alternativos demostrablemente seguros. La construcción debe finalizar y validarse antes de entrar a la fase de escritura.
+
+**Estados:** RECURRENCIA_DE_PARSER · RCA_VERIFICADA · CONTROL_PREVENTIVO_NO_APLICADO · SIN_MUTACIÓN_KHORA · CONTADOR_0.
 ### Entregables, aceptación y siguiente paso
 
 **Entregables del módulo:** comandos de ejecución reproducibles y con shell identificada; inventario de entrypoints PowerShell y consumidores; contratos de parámetros/códigos de salida; diagnóstico y logs recuperables; pruebas positivas/negativas; versiones y checksums; registro de fallos y correcciones; instrucciones de reanudación; evidencia de ejecución y lectura de vuelta. Los entregables se almacenan en las fuentes canónicas de sus repositorios, con referencias desde el OEP, no como copias paralelas.
