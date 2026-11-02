@@ -1,0 +1,198 @@
+{
+  "schema_version": 1,
+  "artifact": "MCP-OCP DTC local cycle 08 — end-to-end continuity planning and operator security gate",
+  "cycle_local": "C-MCP-OCP-DTC-20261101-08",
+  "session_folio": "SES-20261101-3D504C5A",
+  "owner": {
+    "alias": "chatgpt-mcp-ocp-01a199d8-9209-725c-b764-a0a66ac54882",
+    "uuidv7_local": "01a199d8-9209-725c-b764-a0a66ac54882",
+    "native_chatgpt_conversation_id": "NOT_EXPOSED",
+    "generation": 4
+  },
+  "A_literal": "Bien, actualiza tus tareas, asegúrate de cumplir con toda la dinámica de TC e intenta resolver de extremo a extremo, o sea longitudinalmente, en un solo ciclo. No te detengas a menos de que haya un bloqueo o algo no trivial que merezca la pausa. De lo contrario, insisto resuelve de extremo a extremo, por favor no te tardes. Es vida o muerte que resolvamos pronto.",
+  "normative": {
+    "dug": {
+      "version": "Samantha v377",
+      "signature": "NX-377m",
+      "metacanon": "1.28",
+      "gow": "2.17",
+      "blob": "54064c8fe00f872023a455f06596061ed69062ae",
+      "latest_commit": "8ee2482866b3dd085e58e05006727256d0274376"
+    },
+    "arr_read": true,
+    "cnp": [
+      "P001",
+      "P004",
+      "P005",
+      "P038",
+      "P043"
+    ],
+    "relevant_mdps": [
+      "P001",
+      "P004",
+      "P005",
+      "P012",
+      "P013",
+      "P038",
+      "P043"
+    ],
+    "sink_aliases": "NOT_DEPLOYED_NOT_TESTED",
+    "mcp_normative": "DESACTIVADO",
+    "principles_applied_to_cycle": [
+      "P001",
+      "P004",
+      "P005",
+      "P012",
+      "P013",
+      "P038",
+      "P043"
+    ],
+    "layer2_sink_fulfilment": "NOT_AVAILABLE; not claimed"
+  },
+  "sources": {
+    "main_at_open": "6595cc1b0229735ab76ba1bcf4e58be1a2f5a4bf",
+    "control": {
+      "blob": "ecb27b04aaba04025ef596b3f0ed6c049bc2420d",
+      "owner": "chatgpt-mcp-ocp-01a199d8-9209-725c-b764-a0a66ac54882",
+      "generation": 4,
+      "status": "owned",
+      "B": "AUTHORIZED"
+    },
+    "core_before": {
+      "version": "MCP-OCP-v0.1.17",
+      "blob": "654bd4f833f2b10f3022b256fa6e21153331d0cf"
+    },
+    "ep": {
+      "coordination_blob": "62b5f06c8988e32e82b14517af9aac270de0159c",
+      "oep_blob": "75c10a9ae85c91857b5e1d5e95d60e58d96e7a2f",
+      "task002_blob": "9bedc2a8d8956a912fb01b698569d99cf6e39de4",
+      "cycle": "C-EP-MOD-SCRIPTPWS-20261101-03",
+      "status": "OPEN",
+      "task002": "en_curso",
+      "physical_presence": "PHYSICAL_PRESENCE_GATE_PENDING",
+      "b2_auth": "NOT_STARTED",
+      "b2_preflight": "NOT_RUN",
+      "upload": "NOT_EXECUTED",
+      "restore": "NOT_EXECUTED"
+    },
+    "governance": {
+      "core_blob": "27d6d826f39b57f53722fbced2b963f6fe7153ff",
+      "task014_blob": "9332c37cd44005c7dcc02771af15783010b9cdaf",
+      "task014_status": "EN_CURSO"
+    },
+    "candidate": {
+      "branch": "integration/ocp-mcp-0.1.0-selective-20261101",
+      "head": "ef639b62509a9b7ae623c3fbd187466ee2e2a3d9",
+      "source_code_commit": "5956595d5455d5b851c2ef1ff6808f0c2aeabff9",
+      "receipt_blob": "11296e495aa9a52a640ff53da2b1042ba67acf08",
+      "pinned_core": "MCP-OCP-v0.1.16",
+      "tests": {
+        "unit": "31/31 PASS",
+        "stdio": "29/29 PASS",
+        "components": "200/200 PASS"
+      },
+      "status": "HISTORICAL_CANDIDATE_NOT_INTEGRATED_NOT_INSTALLED_NOT_ACCEPTED"
+    },
+    "rdc_devices": {
+      "online": [
+        "015RENTA01"
+      ],
+      "offline": [
+        "PC-8",
+        "PC-14"
+      ],
+      "second_host_available": false
+    }
+  },
+  "task_update": {
+    "modified": "frentes/mcp-metodologia/MCP-METODOLOGIA.md §8.1/§8.2",
+    "new_core_version": "MCP-OCP-v0.1.18",
+    "commit": "9f9781784562deb47268800ecead544a68296b77",
+    "blob": "9c2cdc01b2f5be3b39ee49ce179084f4fb75b436",
+    "GOV_TASK_014": "C07 documentary analysis verified; C08 portable recovery proposal documented, implementation blocked by P012/P013",
+    "no_new_task_or_ocp": true
+  },
+  "recommended_architecture": {
+    "status": "PROPOSED_NOT_APPROVED_NOT_IMPLEMENTED",
+    "format": "Portable Recovery Package v1, separate from existing local .ocpbak",
+    "artifacts": [
+      "manifest.json",
+      "snapshot.sqlite.enc",
+      "recovery-envelope.bin",
+      "recovery-map.enc"
+    ],
+    "cryptography": {
+      "snapshot": "AES-256-GCM",
+      "pmk": "random 256-bit per-package portable master key",
+      "kdf": "Argon2id",
+      "kek": "derived from recovery passphrase entered interactively",
+      "local_runtime": "retain DPAPI CurrentUser for local at-rest operation"
+    },
+    "recovery_map": [
+      "DEKs for canonical_sources",
+      "DEKs for snapshots",
+      "active HMAC authority key",
+      "Ed25519 receipt signing private key"
+    ],
+    "restore": [
+      "verify relative paths, sizes and SHA-256",
+      "unlock PMK and authenticate portable envelope",
+      "decrypt snapshot and recovery map",
+      "PRAGMA integrity_check and foreign_key_check",
+      "rewrap all keys with DPAPI CurrentUser for target profile",
+      "update installation.operator_sid",
+      "revoke unconsumed grants and pending requests for old SID",
+      "preserve installation identity, Ed25519 public key, historical receipts and SHA event chain",
+      "atomic staged restore with rollback while service stopped",
+      "health READY, 10 MCP tools, read-only functional smoke"
+    ],
+    "recovery_secret_policy": "passphrase kept out-of-band, not in Git, manifest, B2, CLI args, env vars, or logs",
+    "existing_local_backup": "keep current .ocpbak backward-compatible and separate"
+  },
+  "blockers": [
+    {
+      "id": "P012_P013_OPERATOR_REVIEW",
+      "status": "BLOCKING",
+      "detail": "High-level security/architecture and portable key custody require explicit in-person operator review at 015RENTA01 before construction or migration."
+    },
+    {
+      "id": "SECOND_HOST_PROFILE",
+      "status": "BLOCKING",
+      "detail": "Only 015RENTA01 is online; PC-8/PC-14 are offline; no independent authorized destination for cross-host restore."
+    },
+    {
+      "id": "EP_B2_GATE",
+      "status": "BLOCKING",
+      "detail": "EP-03 physical presence gate pending; no B2 authentication, bucket/scope verification, or remote transfer."
+    },
+    {
+      "id": "SINK_LAYER2",
+      "status": "LIMITATION",
+      "detail": "Sink p001-p043 unavailable; no layer-2 Sink retrieval is claimed."
+    }
+  ],
+  "six_states": {
+    "BACKUP_LOCAL_VERIFICADO": "PASS_IN_HISTORICAL_CANDIDATE_FIXTURE_ONLY; REAL_HOST_BACKUP_NOT_VERIFIED",
+    "PERSISTENCIA_REMOTA_B2_VERIFICADA": "NOT_VERIFIED; EP_OWNED; NOT_EXECUTED",
+    "RESTORE_CROSS_HOST_VERIFICADO": "NOT_VERIFIED; NO_AUTHORIZED_SECOND_HOST_OR_APPROVED_PORTABLE_RECOVERY",
+    "INTEGRADO_EN_MAIN": "NO",
+    "INSTALADO_EN_EP": "NO",
+    "ACEPTADO_POR_OPERADOR": "NO"
+  },
+  "execution": {
+    "code_changes": false,
+    "build": false,
+    "new_tests": false,
+    "restore": false,
+    "real_db_access": false,
+    "b2": false,
+    "credential_access": false,
+    "host_changes": false,
+    "pr_or_merge": false,
+    "installation": false,
+    "cycle_local_status": "DOCUMENTARY_PLAN_VERIFIED_WITH_EXTERNAL_SECURITY_BLOCKER",
+    "objective": "BLOCKED_PENDING_P012_P013_AND_SECOND_HOST",
+    "global_dtc": "EN_CURSO_RECURRENT"
+  },
+  "next_action": "Operator confirms physical presence at 015RENTA01 and explicitly reviews/approves or revises Portable Recovery Package v1; then authorized implementation/build/test; second host/profile must be activated for cross-host restore."
+}
