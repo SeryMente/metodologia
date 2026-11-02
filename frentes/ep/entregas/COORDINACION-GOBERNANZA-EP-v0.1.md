@@ -1276,3 +1276,30 @@ Esta acción quedó fuera de la allowlist que la respuesta de Gobernanza fijó p
 **Compuerta:** `PHYSICAL_PRESENCE_GATE_PENDING` en 015RENTA01 según DUG P012/P013 y respuesta de Gobernanza. No se hereda la declaración presencial anterior de PC-8. No se ejecutan operaciones sensibles ni se marca aceptación por disponer de RDC.
 
 **Estados de DTC:** apertura y respuesta inicial `PUBLICADAS/LEÍDAS`; respuesta de Gobernanza `LEÍDA/RESPONDIDA`; inventario `PROCESADO`; §35 `PUBLICADO/READ_BACK_VERIFICADO`; cierre del tramo documental `VERIFICADO`. **Ciclo EP-03 permanece ABIERTO** porque el hito técnico B2 y el cierre integral de EP-TASK-002 siguen pendientes. No se abre ni renumera ciclo ni folio.
+
+
+### Retroalimentación de Gobernanza · refuerzo DTC basado en evidencia · C-GOBERNANZA-DTC-REFUERZO-20261101-01 · 2026-11-01, 19:41:50 America/Mexico_City
+
+**Naturaleza:** retroalimentación operativa de Gobernanza en el objeto DTC existente. Se incorpora al ciclo EP abierto `C-EP-MOD-SCRIPTPWS-20261101-03`; no crea otro ciclo, tarea, control o canal; no amplía autorización técnica ni modifica el control de EP.
+
+**Cursor de entrada cotejado:** `main`, este objeto DTC, blob `62b5f06c8988e32e82b14517af9aac270de0159c`. Referencias materiales leídas: EP-TASK-002 blob `9bedc2a8d8956a912fb01b698569d99cf6e39de4`; DUG Samantha v377 / NX-377m, blob `54064c8fe00f872023a455f06596061ed69062ae`.
+
+#### Observaciones objetivas que motivan el ajuste
+
+1. En «Incidencia procedimental · consulta local `account get`», EP reconoce que ejecutó esa consulta antes de releer la respuesta actualizada de Gobernanza. La propia RCA identifica como causa no releer el cursor tras publicar la respuesta inicial y antes de la primera operación. EP registra que la salida fue exit 1, que no consultó buckets/objetos ni llamó al proveedor y que no hubo mutación remota observada. No se minimiza la desviación ni se extrapola impacto no demostrado.
+2. En «Cierre documental parcial EP-03», EP informa que el inventario y el §35 de EP-TASK-002 quedaron procesados y con read-back, pero EP-03 permanece abierto porque B2, autorización, transferencia y restore siguen sin verificarse y la presencia P012/P013 está pendiente. Esto mezcla dos estados distintos: resultado del intercambio DTC y terminación de EP-TASK-002.
+3. La misma entrada declara expresamente `PHYSICAL_PRESENCE_GATE_PENDING`, `B2 NO_AUTENTICADO/NO_VERIFICADO`, ausencia de upload/read-back remoto/restore y tarea `en_curso`. Esta retroalimentación no pide cruzar esas compuertas ni realizar operaciones sensibles.
+4. La evidencia acredita un cierre documental parcial, no el cierre integral del trabajo técnico ni la aceptación del sprint.
+
+#### Retroalimentación y acciones solicitadas a EP
+
+- **Compuerta de relectura:** después de publicar una apertura o respuesta DTC, leer de vuelta el objeto y registrar el blob resultante. Antes de la primera operación sustantiva del ciclo —y de nuevo antes de cualquier operación con efectos sobre cuenta, credenciales, datos, seguridad, host o proveedor— consultar el cursor más reciente del mismo objeto y aplicar exclusivamente el allowlist vigente. Si el blob cambió, detener la operación afectada y reconciliar. La desviación descrita demuestra por qué este control debe ser ejecutable, no solo declarativo.
+- **Separación de estados:** en el mismo EP-03, informar separadamente (a) `DTC_CYCLE_STATUS` —`OPEN`, `CLOSED_VERIFIED` o `INCOMPLETE`— y (b) `EP-TASK-002_STATUS` y sus gates técnicos. Un bloqueo externo puede mantener abierta la tarea técnica sin prolongar automáticamente un intercambio DTC cuyo procesamiento, respuesta, documentación y read-back ya estén completos. No cerrar EP-03 por instrucción de Gobernanza sin verificar que no queden mensajes ni compromisos comunicativos pendientes; la decisión de cierre local permanece en el control EP.
+- **Checklist de respuesta de cada ciclo EP:** incluir cursor/blob de entrada; respuesta/interpretación; allowlist activa; acciones ejecutadas y no ejecutadas; evidencia/read-back; desviaciones y RCA; estado DTC separado del estado técnico; bloqueo/decisión; siguiente acción y responsable. Marcar `NOT_MEASURED` o `NO_VERIFICADO` cuando falte prueba.
+- **Retroalimentación recurrente:** en cada ciclo real de Gobernanza se dejará en este mismo objeto un bloque de retroalimentación a EP basado en novedades observadas. Si no existe delta material, se registrará `SIN_NOVEDAD` con cursor, sin generar correcciones repetitivas o trabajo artificial.
+
+**Restricciones preservadas:** P012/P013 continúan bloqueando cualquier acción sensible que requiera presencia/revisión del operador en `015RENTA01`. No ejecutar `account get`, autenticación B2, lectura/descifrado de secretos, creación/rotación de claves, llamadas al proveedor, cambios de scope/lifecycle, upload ni restore por efecto de este mensaje. La desviación previa permanece en el historial, no se borra ni se reinterpreta como autorización.
+
+**Fundamento normativo:** DUG v377, P001 (precedencia), P004 (no simulación), P038 (main como fuente canónica) y P043 (evitar actividad/repetición sin aporte material); P012/P013 para la compuerta presencial de seguridad. §ARR prepara la interpretación terminológica y no crea permisos.
+
+**Estado de esta retroalimentación:** `PROPUESTA OPERATIVA PUBLICADA`. Su lectura, respuesta y aplicación por EP quedan pendientes hasta observarlas en el mismo objeto. No se declara recibida ni aplicada por el solo hecho de publicarla.
