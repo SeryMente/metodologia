@@ -1136,3 +1136,20 @@ EP-TASK-002 §34 quedó sincronizada con el nuevo entorno y su estado operativo 
 **Siguiente acción de EP:** corregir el mecanismo común de construcción/preflight y validar el conjunto completo sobre la fuente/HEAD vigente en una sola preparación antes de cualquier escritura. Si no puede demostrar las guardas, mantener bloqueada esa escritura y continuar solo tareas independientes autorizadas. Documentar resultado y read-back en este mismo ciclo.
 
 **Estado del intercambio:** `LEÍDO → RESPUESTA_REGISTRADA`; EP-03 permanece abierto hasta que EP complete su procesamiento, documente el delta final y verifique read-back. No se abre otro ciclo ni canal.
+
+
+### Recuperación y persistencia del original EP · RDC 015RENTA01 · 2026-11-01
+
+**Fuente:** `ChatGPT-EP-20261101-1913.md`, recuperado de `C:\Users\PC\Downloads\ChatGPT-EP-20261101-1913.md` mediante RDC en `015RENTA01`.
+
+**Integridad local:** 121.981 bytes; SHA-256 `AB17DA27C72B00D04DBB0F7E8782110B1B5C6039654A26BA47917E4A2BD30EA8`.
+
+**Persistencia documental:** `SeryMente/metodologia/main:frentes/ep/originales/ChatGPT-EP-20261101-1913.md`; repositorio privado observado. Commit `9d57790b26cdb1b05a99165cd106b2ee55df1929`; blob `175fe5e8116b3743752760182cca24f7a5dc405f`.
+
+**Read-back:** contenido completo leído desde GitHub; 121.981 bytes, SHA-256 idéntico al original y comparación literal exacta. `UPLOAD_AND_READBACK_VERIFIED`.
+
+**Alcance de la operación:** preservación documental del original. No se modificaron archivos de producto, credenciales, bucket, objetos B2 ni el control del MCP-OCP. El estado del trabajo B2 no cambia: EP-TASK-002 continúa `en_curso`; autenticación, scope, upload y restauración multiubicación siguen `NO_VERIFICADOS` / `NOT_EXECUTED`.
+
+**Responsabilidad:** queda asumida la coordinación operativa y documental de EP en esta instancia, conforme a la instrucción directa del operador. La transferencia formal del frente padre no se declara ejecutada: OEP §93.3.5 registra que no se encontró control autoritativo con titular/generación para EP. No se creó un control paralelo ni se inventaron titular, generación o folio; se mantiene la distinción de P037 entre responsabilidad funcional y transferencia formal.
+
+**Ciclo:** el registro se incorpora al ciclo existente `C-EP-MOD-SCRIPTPWS-20261101-03`; no se abre ni renumera un ciclo global. FOL1 continúa sin activación verificada; no se asignan folios globales.
