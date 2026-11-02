@@ -1547,3 +1547,31 @@ El núcleo v0.1.18, el objeto de coordinación, control, DUG, OEP/EP DTC, EP-TAS
 **Fundamento normativo:** DUG v377: P001 (precedencia), P004 (no simulación), P038 (main como fuente canónica), P043 (eficiencia proporcional) y P012/P013 (compuertas de seguridad/presencia). §ARR sirve de entrada lingüística; no confiere autorización.
 
 **Estado de esta retroalimentación:** `PUBLICADA` en el mismo objeto; lectura, respuesta y aplicación por MCP-OCP pendientes de evidencia posterior. Esta publicación no acredita recepción, ejecución ni aceptación.
+
+#### Cierre y read-back final · ciclo local 08
+
+**Secuencia:** `LEÍDO → RESPUESTA_INICIAL_REGISTRADA → PROCESADO → DOCUMENTADO_AL_CIERRE → VERIFICADO_READBACK`. Este ciclo procesó la instrucción del operador, la reconciliación trilateral, la actualización del backlog y la propuesta técnica de recuperación portable; no implementó ni ejecutó la restauración por los bloqueos materiales consignados.
+
+**Artefactos del frente releídos después de guardar:**
+
+| Artefacto | Commit | Blob final leído de vuelta | Resultado |
+|---|---|---|---|
+| Núcleo MCP-OCP v0.1.18, backlog §8.1/§8.2 | `9f9781784562deb47268800ecead544a68296b77` | `9c2cdc01b2f5be3b39ee49ce179084f4fb75b436` | MATCHED |
+| Crónica DTC local 08 | `16d8853b08b1a83d80b773cd04d609d1d50290ef` | `8e82da83a2e6c6d99764d9433c45d59fc6ab6fcb` | MATCHED |
+| Diálogo A/B local 08 | `108283db20a1a06c1e7b4326cc27ccf34407a89e` | `8759a53a5f912dbc6929b8a497ce2ff6ad5267df` | 2 registros; MATCHED |
+| Evidencia estructurada local 08 | `93c51612960c1a3e2089906671cc603adea61654` | `9efaf4ad9d2c7576c18381f3ba9d54d3c802be0e` | MATCHED |
+| README del frente | Commit de actualización ciclo 08 pendiente de obtener en cursor final | `776dac2fcc54365d944305e054e36cf0fe50ab18` | MATCHED |
+| Control responsabilidad | `066791ee69ea3b6c48153763fab5f044c3efd42d` | `ecb27b04aaba04025ef596b3f0ed6c049bc2420d` | gen. 4, `VERIFIED/MATCHED` |
+
+**Original del ciclo precedente:** la exportación `ChatGPT-OCP MCP-20261101-1917.md` sigue preservada en `conversaciones/`, 54.916 bytes, 1.137 líneas, SHA-256 `27D1074A72A1DB571984675396B847C229B76F803D2EFFFDEFAD4B7B1190B4D1`, blob `bebd00b312f5db1f11910682452de9d95ef5ca08`. El original local no fue modificado.
+
+**Control y cursor de cierre:** titular gen. 4 `chatgpt-mcp-ocp-01a199d8-9209-725c-b764-a0a66ac54882`, SES local `SES-20261101-3D504C5A`, B `AUTHORIZED` sin ampliación; DUG v377/NX-377m, Metacanon 1.28, GOW 2.17; `main` HEAD antes de esta escritura `93c51612960c1a3e2089906671cc603adea61654`; coordinación previa blob `0242e603a3cadbe71c128f1d5b5dfd2c09dcc683`.
+
+**Estados de verdad:** backup local PASS solo en fixture histórica de candidata; backup real NO VERIFICADO; B2 remoto NO VERIFICADO; restore cross-host NO VERIFICADO; integración en main NO; instalación EP NO; aceptación del operador NO. EP-03 continúa ABIERTO y EP-TASK-002 `en_curso`; Gobernanza GOV-TASK-014 `EN_CURSO`; DTC global `EN_CURSO_RECURRENT`. La propuesta portable está documentada, no aprobada ni implementada.
+
+**Bloqueos que impiden declarar E2E resuelto:** revisión/aprobación presencial P012/P013 para la arquitectura y custodia de claves en `015RENTA01`; disponibilidad de un segundo host/perfil autorizado para restore cross-host; y la compuerta B2 propia de EP. No se ejecutaron build, tests nuevos, restore, B2, acceso a credenciales, cambios de host, PR/merge o instalación.
+
+**Clasificación local:** `CUMPLE_VERIFICADO` para procesamiento documental, reconciliación, actualización del backlog y read-back; objetivo longitudinal `BLOCKED_PENDING_OPERATOR_SECURITY_REVIEW_AND_SECOND_HOST`. `performance=NOT_MEASURED`: no se capturaron desde apertura todas las marcas temporales requeridas por Metacanon §52; no se reconstruyen tiempos.
+
+**Foliación:** ciclo local `C-MCP-OCP-DTC-20261101-08`; SES local `SES-20261101-3D504C5A`. FOL1 `PREPARADO_PENDIENTE_ACTIVACION_IPZ`; CV/CY/A/B globales y por OCP `PENDIENTE/NO ASIGNADO`. MCP-NORMATIVO `DESACTIVADO`; Sink aliases sin despliegue/prueba.
+
