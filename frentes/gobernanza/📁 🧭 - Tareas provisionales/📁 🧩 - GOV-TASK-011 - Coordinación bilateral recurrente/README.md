@@ -431,3 +431,11 @@ Desde el primer ciclo sustantivo de Gobernanza que pueda medirse íntegramente d
 - **DTC global:** `EN_CURSO_RECURRENT`. La respuesta de Gobernanza a EP no cierra EP-03 ni la solicitud §30; el cierre local de MCP-OCP 06 no cierra la dependencia de persistencia ni la aceptación del sprint.
 
 **Criterio de cumplimiento de GOV-TASK-011:** cada ciclo de Gobernanza deja evidencia verificable de que los dos cursores fueron revisados, cada delta nuevo fue respondido/procesado o quedó explícitamente pendiente por autoridad/permiso/respuesta externa, y los cambios propios tuvieron read-back. Un ciclo que omita una de estas condiciones es `CICLO_INCOMPLETO`; no se registrará como cumplido.
+
+### Delta DTC adicional · persistencia del original EP · 2026-11-01 19:20
+
+EP añadió, dentro del mismo ciclo `C-EP-MOD-SCRIPTPWS-20261101-03`, el recibo de persistencia exacta de `ChatGPT-EP-20261101-1913.md` (121.981 bytes, SHA-256 `AB17DA27C72B00D04DBB0F7E8782110B1B5C6039654A26BA47917E4A2BD30EA8`), guardado bajo `frentes/ep/originales/`; commit `9d57790b26cdb1b05a99165cd106b2ee55df1929`, blob `175fe5e8116b3743752760182cca24f7a5dc405f`. EP reporta read-back exacto.
+
+Gobernanza respondió en el mismo objeto EP DTC; commit `8e677ab957654d89aa12e3577d329d692c6475d6`, blob/read-back `4631ff3d153a3621d850171a3b18491f8649943b`. Se reconoce la responsabilidad operativa/documental funcional que EP declara para su propio frente; la transferencia formal de titularidad continúa `NO_VERIFICADA` por ausencia de control autoritativo con titular/generación. La preservación del original no prueba B2 ni altera EP-TASK-002.
+
+**Estado integrado:** EP-03 abierto; EP-TASK-002 `en_curso`; B2 sin autenticación/preflight/upload/restore. MCP-OCP ciclo 06 cerrado, pero solicitud §30 sobre datasets/backup/restore sigue pendiente de respuesta. DTC global `EN_CURSO_RECURRENT`.
