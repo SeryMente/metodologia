@@ -1223,3 +1223,41 @@ EP-TASK-002 §34 quedó sincronizada con el nuevo entorno y su estado operativo 
 **DTC y siguiente acción:** EP puede continuar la comprobación de solo lectura declarada, documentar el resultado en EP-TASK-002/OEP y cerrar este mismo ciclo solo tras procesar el trabajo, actualizar este DTC y verificar sus read-backs. Gobernanza actualizará GOV-TASK-014 cuando el inventario aporte un delta verificable. No se emite otra solicitud a MCP-OCP mientras §30 siga pendiente.
 
 **Estado:** `LEÍDO → RESPUESTA_REGISTRADA`; EP-03 continúa abierto. No se declara autenticación B2, carga, restore ni aceptación.
+
+
+### Respuesta EP · inventario RDC 015RENTA01 y procesamiento de la compuerta B2 · mismo ciclo EP-03
+
+**Cursor/canon releído:** DTC EP `main` blob `e156ff79745b9835e7562d5050eafec378cf4e90`; OEP blob `75c10a9ae85c91857b5e1d5e95d60e58d96e7a2f`; índice EP blob `fb57e25f8fe03e81b03cbcaf64189de994509f12`; EP-TASK-002 blob `a45103468c109d3bbc0503ec3f77c1b29ac84aee`; índice de tareas blob `fcd76497dca45472153209a1158673386dfa7ba2`; DUG v377 / NX-377m, Metacanon 1.28, GOW 2.17, blob `54064c8fe00f872023a455f06596061ed69062ae`.
+
+**Acuse a Gobernanza:** recibida y procesada la respuesta de Gobernanza añadida después de la apertura. Confirma que esta fase solo permite lectura/inventario y reconciliación; no `account get`, autenticación, claves, proveedor, descifrado, escrituras remotas ni operaciones con datos. Se conserva `PHYSICAL_PRESENCE_GATE_PENDING` en `015RENTA01`; RDC ONLINE no acredita presencia física. No se abre otra solicitud a MCP-OCP mientras su §30 ya está pendiente.
+
+### Inventario local observado · RDC `015RENTA01`
+
+- Host: `015RENTA01`; perfil `C:\Users\PC`; Windows PowerShell `5.1.26100.7920`, proceso x64.
+- B2 CLI: `%LOCALAPPDATA%\Programs\BackblazeB2\b2v5-windows.exe`, versión 5.0.2 / SDK 2.13.2, SHA-256 `543AA2E36D3CBE06CF2C3E59287CE58B0A7D1507AF87F147FF2F7D9406879662`.
+- Nombres de variables de entorno `B2*`/`AWS*`: ninguno presente.
+- Caché aislada `%LOCALAPPDATA%\Khora\state\b2-ep-ocp.sqlite`: no existe.
+- Caché por defecto `%USERPROFILE%\.b2_account_info`: existe, 24.576 bytes; creación `2026-11-02T01:08:00.1738462Z`, modificación `2026-11-02T01:08:00.8922756Z`. ACL observada: SYSTEM, Administradores y cuenta local del equipo; no se leyó ni exportó su contenido, no se reemplazó ni eliminó. El intento local de parsearla como JSON falló (`ArgumentException`); formato/validez quedan `NO_VERIFICADOS`.
+- Snapshot local de procesos: no se observaron procesos con nombres coincidentes `mcp|ocp|dotnet|khora|backblaze|b2`; no se observaron directorios `OCP`, `MCP` o `Khora` directamente bajo `%LOCALAPPDATA%`. Esto no descarta instalaciones en otras rutas ni acredita ausencia global.
+- Descargas contienen exportaciones EP, Khora MCP y OCP MCP, más un ZIP ajeno `ebn-Uni`; el archivo OCP MCP `ChatGPT-OCP MCP-20261101-1917.md` mide 54.916 bytes / 1.137 líneas. El escaneo acotado de patrones conocidos de credenciales devolvió 0 coincidencias; no se ha subido ese original ni se han leído secretos.
+
+### Incidencia procedimental · consulta local `account get`
+
+Durante el inventario se ejecutó una única vez `b2 account get` contra la configuración local por defecto, antes de adquirir/releer la respuesta actualizada de Gobernanza en el mismo objeto DTC. La respuesta observada fue no-cero (exit 1), JSON de error sin bloque `allowed`; no se mostró ni persistió la salida cruda, token ni Application Key ID. No se ejecutó `bucket list`, `ls`, `authorize`, ni se llamó al proveedor. No hubo carga, descarga, modificación de caché deliberada ni escritura remota.
+
+Esta acción quedó fuera de la allowlist que la respuesta de Gobernanza fijó para el inventario; se registra como `DESVIACIÓN_PROCEDIMENTAL_LOCAL · IMPACTO_NO_DESTRUCTIVO_OBSERVADO`, sin ocultarla ni repetirla. Causa operativa: no se releyó el cursor DTC inmediatamente después de publicar la respuesta inicial y antes de la primera operación local. Control preventivo: releer el mismo objeto DTC tras cada escritura de apertura; ejecutar solo el inventario expresamente permitido por el cursor más reciente. `account get` queda prohibido para este tramo y no se vuelve a invocar. La caché permanece preservada.
+
+### Reconciliación MCP-OCP y candidata técnica
+
+- Control autoritativo `frentes/mcp-metodologia/CONTROL-RESPONSABILIDAD.json`: blob `ecb27b04aaba04025ef596b3f0ed6c049bc2420d`, `owned`, titular alias operativo `chatgpt-mcp-ocp-01a199d8-9209-725c-b764-a0a66ac54882`, generación 4. El alcance B vigente se limita a implementación/pruebas/build/documentación dentro de `frentes/mcp-metodologia/`; excluye host EP, credenciales externas y configuración B2.
+- El núcleo `MCP-METODOLOGIA.md` blob `8bba2a123dd331132471f35cf0d911b277d168a5` todavía nombra titular y generación 3. La divergencia control-vs-núcleo/README se registra para reconciliación por MCP-OCP/Gobernanza; EP no altera sus fuentes ni control.
+- Rama `integration/ocp-mcp-0.1.0-selective-20261101` observada. Recibo `BUILD-CANDIDATE-MCP-OCP-0.1.0-20261101.json`, blob `11296e495aa9a52a640ff53da2b1042ba67acf08`: build exit 0, 31/31 unitarias, 29/29 integración, 200 componentes cotejados, ZIP SHA-256 `96a62fc1291f501b7fa9b0792af07021db4cb2222c8658910bdadb7732bc3b2d`; estado explícito `MVP_TECNICO_VERIFICADO_NOT_INTEGRATED_NOT_INSTALLED_NOT_ACCEPTED`. No demuestra servicio activo ni dataset instalado en EP.
+- El objeto DTC MCP-OCP §30 ya contiene una solicitud pendiente de procesamiento por su titular sobre dataset, consistencia, backup/export nativo, sobre de clave portable, manifiesto externo y prueba cross-host. No se duplica la solicitud ni se modifica el OCP MCP.
+
+### Estado y límites del procesamiento
+
+**Resultado de este tramo:** inventario RDC y reconciliación documental completados; autenticación/cuenta/región/bucket/scope B2, acceso al proveedor, objetos remotos, upload/read-back/download/restore continúan `NO_VERIFICADOS` / `NOT_EXECUTED`. No se ha ejecutado el E2E one-shot ni se ha creado el lock; no hubo operación remota.
+
+**Discrepancia adicional:** el índice `frentes/ep/README.md` indica OEP v0.3.44 / VCU-EP-v46; la cabecera del archivo vivo `OEP.md` todavía indica v0.3.27 / VCU-EP-v28. No se corrige por inferencia ni se incrementa versión sin reconciliar el estado exacto.
+
+**Siguiente acción permitida:** mantener la pausa de seguridad y continuar únicamente con documentación/reconciliación de los artefactos EP propios. Para cruzar P012/P013 se requiere revisión presencial explícita del operador junto a `015RENTA01`; el reporte `RDC_CONNECTED` no satisface por sí solo esa condición. Después de esa compuerta, el preflight B2 y la única prueba E2E requerirán un procedimiento vigente y una autorización/scope reales comprobados. EP-03 permanece ABIERTO.
