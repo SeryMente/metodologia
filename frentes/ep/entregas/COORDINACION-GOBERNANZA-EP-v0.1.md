@@ -1261,3 +1261,18 @@ Esta acción quedó fuera de la allowlist que la respuesta de Gobernanza fijó p
 **Discrepancia adicional:** el índice `frentes/ep/README.md` indica OEP v0.3.44 / VCU-EP-v46; la cabecera del archivo vivo `OEP.md` todavía indica v0.3.27 / VCU-EP-v28. No se corrige por inferencia ni se incrementa versión sin reconciliar el estado exacto.
 
 **Siguiente acción permitida:** mantener la pausa de seguridad y continuar únicamente con documentación/reconciliación de los artefactos EP propios. Para cruzar P012/P013 se requiere revisión presencial explícita del operador junto a `015RENTA01`; el reporte `RDC_CONNECTED` no satisface por sí solo esa condición. Después de esa compuerta, el preflight B2 y la única prueba E2E requerirán un procedimiento vigente y una autorización/scope reales comprobados. EP-03 permanece ABIERTO.
+
+
+### Cierre documental parcial EP-03 · inventario RDC y §35 de EP-TASK-002 · mismo ciclo
+
+**Documento de tarea actualizado:** `frentes/ep/📁 🧭 - Tareas provisionales/📁 🧩 - EP-TASK-002 - Persistencia provisional Backblaze/README.md`, §35. Commit `cee0605b446679211fd7f6a0b8673e9eeb021659`; blob de contenido leído de vuelta `9bedc2a8d8956a912fb01b698569d99cf6e39de4`. Read-back exacto confirmado.
+
+**Resultado procesado:** inventario local RDC y reconciliación de fuentes/candidata completados; la respuesta de Gobernanza se recibió y respetó para la fase restante. Se documentó expresamente la desviación del único `account get` local; no se repitió ni se consultó bucket/objetos. El perfil `.b2_account_info` queda preservado y sin validar.
+
+**Estado material:** B2 sigue `NO_AUTENTICADO/NO_VERIFICADO`; no bucket/scope verificados, no upload, no descarga, no read-back remoto, no restore ni prueba E2E. No se creó `one-shot.lock` ni se consumió el ciclo de una sola pasada. EP-TASK-002 sigue `en_curso`.
+
+**Frontera MCP-OCP:** control fuente generation 4 / owner alias `chatgpt-mcp-ocp-01a199d8-9209-725c-b764-a0a66ac54882`; alcance B no autoriza operaciones host EP ni acceso a credenciales externas. El núcleo/README aún muestran gen3; inconsistencia delegada al OCP propietario/Gobernanza. El paquete candidato 0.1.0 sigue no integrado, no instalado y no aceptado. La solicitud MCP-OCP §30 ya existe y no se duplica.
+
+**Compuerta:** `PHYSICAL_PRESENCE_GATE_PENDING` en 015RENTA01 según DUG P012/P013 y respuesta de Gobernanza. No se hereda la declaración presencial anterior de PC-8. No se ejecutan operaciones sensibles ni se marca aceptación por disponer de RDC.
+
+**Estados de DTC:** apertura y respuesta inicial `PUBLICADAS/LEÍDAS`; respuesta de Gobernanza `LEÍDA/RESPONDIDA`; inventario `PROCESADO`; §35 `PUBLICADO/READ_BACK_VERIFICADO`; cierre del tramo documental `VERIFICADO`. **Ciclo EP-03 permanece ABIERTO** porque el hito técnico B2 y el cierre integral de EP-TASK-002 siguen pendientes. No se abre ni renumera ciclo ni folio.
