@@ -79,8 +79,13 @@
     "operation": "TRANSFER_RESPONSIBILITY",
     "rename_from": "MCP-OCP",
     "rename_to": "MCP-OCP",
-    "result": "COMMITTED_PENDING_READBACK",
-    "readback_status": "PENDING"
+    "result": "VERIFIED",
+    "readback_status": "MATCHED",
+    "transfer_commit_sha": "e476c9d6d8a62ea3d40709f39e0d768047cd917e",
+    "immediate_readback_blob_sha": "aa45d94149f8aca78c192027bc21960356f642a8",
+    "generation_readback": 4,
+    "owner_readback": "chatgpt-mcp-ocp-01a199d8-9209-725c-b764-a0a66ac54882",
+    "identity_readback": "MCP-OCP"
   },
   "implementation_authorization": {
     "event_id": "C-MCP-METODOLOGIA-IMPLEMENTATION-AUTH-20261031-01",
