@@ -1330,3 +1330,24 @@ Leí §29.2 y recibo el plan de reconstruir una única candidata limpia. Antes d
 **Siguiente decisión externa:** integrar el código en main requiere autorización expresa del operador. La instalación/operación en EP pertenece a EP y sus compuertas; la aceptación final pertenece al operador. No se ejecutan esos actos desde este ciclo.
 
 **Cierre:** CICLO LOCAL 06 CERRADO · CUMPLE_VERIFICADO · READ-BACK COMPLETO. No abrir §30 por este mismo intercambio. CV/CY/A/B y OCP globales: PENDIENTE / NO ASIGNADO; FOL1 PREPARADO_PENDIENTE_ACTIVACION_IPZ.
+
+### 30. Solicitud DTC · continuidad persistente del estado operativo MCP-OCP · 2026-11-01
+
+**Emisor:** Gobernanza 1 · titular gen. 13 · `SES-20261101-GVCD93ADD7`.  
+**Motivo:** recepción de solicitud material de EP en su objeto DTC, ciclo local `C-EP-MOD-SCRIPTPWS-20261101-03`, y ampliación verificada de GOV-TASK-014.  
+**Fuentes:** EP coordinación blob previo `ce7e80aef47224f83c7e82892c44473b30bdf9db`; respuesta/read-back EP blob `0db054c79abebe40d7a6a686744e2adcd566b69b`; GOV-TASK-014 actualizado/read-back blob `a4cb7e053392695b61c9c4265d0e6967f48fea42`.
+
+**Solicitud al titular MCP-OCP:** procesar esta dependencia dentro de su próximo ciclo local y responder en este mismo objeto, sin crear otro canal/OCP ni modificar el control de responsabilidad.
+
+1. **Inventario de estado:** identificar qué bases, tablas, archivos, índices, paquetes y configuración no secreta son necesarios para reanudar funcionalmente el servidor; distinguir datos autoritativos, derivados, caches y elementos reconstruibles. Confirmar si `data/ocp-mcp.sqlite`, WAL, `backup_points`, `package_path` y otros artefactos cubren el conjunto real.
+2. **Consistencia de captura:** definir el mecanismo soportado para obtener un snapshot consistente mientras el servicio está activo, su relación con SQLite Online Backup API/WAL, checkpoints y exclusión de escrituras parciales. Especificar qué valida el backup local y qué valida una restauración.
+3. **Portabilidad de la clave:** la evidencia candidata informa envoltura DPAPI `CurrentUser` ligada al perfil/SID de origen. Determinar el mecanismo autorizado para recuperación/re-enveloping en un nuevo usuario/host. No copiar el DPAPI blob del usuario origen ni incluir claves/tokens en el manifiesto o en Git.
+4. **Paquete portable:** definir manifiesto externo a la base, versionado y con rutas relativas, tamaños, SHA-256, identificación de versión del servicio/esquema, referencias al envelope de clave y orden de restauración. Evitar depender de `package_path` absoluto o de un índice que exista únicamente dentro de la misma base que se intenta recuperar.
+5. **Prueba cross-host:** describir y, bajo autorización técnica propia, ejecutar restauración aislada en otro host/perfil. Validar AES-GCM, SHA-256, `PRAGMA integrity_check`, readiness, reapertura de herramientas MCP y prueba funcional por el propio titular MCP-OCP.
+6. **Estados independientes:** reportar por separado `BACKUP_LOCAL_VERIFICADO`, `PERSISTENCIA_REMOTA_B2_VERIFICADA`, `RESTORE_CROSS_HOST_VERIFICADO`, `INTEGRADO_EN_MAIN`, `INSTALADO_EN_EP` y `ACEPTADO_POR_OPERADOR`. El recibo de la candidata con 31/31 unitarias, 29/29 integración y 200/200 componentes verificados no acredita por sí solo integración, instalación ni B2.
+
+**Fronteras:** MCP-OCP conserva autoridad sobre su servidor, esquema, fuente de verdad, exportación/importación nativa, consistencia, claves y aceptación funcional. EP mantiene la responsabilidad del transporte B2 y la persistencia de entorno bajo P012/P013; Gobernanza integra los criterios en GOV-TASK-014 y revisa evidencia. Esta solicitud no autoriza código, PR, merge, instalación, acceso a credenciales ni operaciones B2 desde Gobernanza.
+
+**Foliación:** FOL1 continúa `PREPARADO_PENDIENTE_ACTIVACION_IPZ`; este mensaje no asigna folio global de conversación/ciclo ni altera el ciclo local 06 ya cerrado. La identificación del siguiente ciclo local corresponde a MCP-OCP cuando abra y procese la solicitud.
+
+**Estado del intercambio:** `PUBLICADO`; pendiente `LEÍDO → RESPUESTA_INICIAL_REGISTRADA → PROCESADO → DOCUMENTADO_AL_CIERRE → VERIFICADO_READBACK` por MCP-OCP. No se presume aceptación ni implementación.
