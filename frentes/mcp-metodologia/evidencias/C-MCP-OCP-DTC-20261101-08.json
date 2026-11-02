@@ -229,7 +229,10 @@
       "readback": "EXACT",
       "cycle08_closure_commit": "726efba953a3c9b497ef8a179feb76b1768b4a47",
       "cycle08_closure_blob": "452f1163ca3dfe46623bf7afac4f2f0058dac83b",
-      "cycle08_closure_readback": "EXACT"
+      "cycle08_closure_readback": "EXACT",
+      "latest_commit": "aa0fecc7c147ba2bb539a9af7f0f3501893b9f10",
+      "latest_blob": "9666024ab0bfbb6f9eac2f8fd8a32479b3076da2",
+      "latest_readback": "EXACT"
     }
   }
 }
