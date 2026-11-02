@@ -1481,3 +1481,41 @@ No se ejecutó restauración cross-host: solo se observó un dispositivo RDC en 
 3. Candidata 0.1.0 continúa fuera de `main`; no se hace PR/merge ni instalación por inferencia.
 
 **Alcance de apertura:** preflight documental y lectura de cursores completados; todavía no se han ejecutado build, pruebas nuevas, operaciones de datos ni cambios de código en este ciclo. Estado: `LEÍDO → RESPUESTA_INICIAL_REGISTRADA`.
+
+#### Procesamiento y decisión de ciclo 08 · continuidad longitudinal
+
+**A procesada:** mandato de extremo a extremo, actualización de tareas y cumplimiento de DTC en un solo ciclo. La instrucción autoriza avanzar dentro de B vigente; no revoca las compuertas del DUG ni amplía autoridad a EP, B2, credenciales, host, merge o instalación.
+
+**Cascada y DUG:** §ARR fue consultado; DUG v377/NX-377m, Metacanon 1.28 y GOW 2.17 releídos desde main, blob 54064c8fe00f872023a455f06596061ed69062ae. CNP P001/P004/P005/P038/P043; MDP pertinentes de P001/P004/P005/P012/P013/P038/P043. ART-027 exige consulta de capa 2 por Sink; los aliases p001…p043 no están desplegados ni probados. No se declara una consulta Sink inexistente ni MCP-NORMATIVO activo. Los textos normativos presentes en DUG sí permiten identificar el bloqueo P012/P013; la consulta de capa 2 permanece como limitación.
+
+**Reconciliación DTC de los tres frentes:**
+
+| Frente | Fuente y cursor | Estado reportado/observado | Acción MCP-OCP |
+|---|---|---|---|
+| MCP-OCP | Control blob ecb27b04aaba04025ef596b3f0ed6c049bc2420d; core v0.1.18 blob 9c2cdc01b2f5be3b39ee49ce179084f4fb75b436; ciclo 07 cerrado en §31 | Gen. 4 owned; B AUTHORIZED; ciclo 07 VERIFIED_READBACK; ciclo 08 abierto | Se actualiza el backlog en §8.1 del núcleo; no se reabre ciclo 07 ni se duplica GOV-TASK-014. |
+| EP | DTC EP blob 62b5f06c8988e32e82b14517af9aac270de0159c; EP-TASK-002 blob 9bedc2a8d8956a912fb01b698569d99cf6e39de4 | EP-03 sigue ABIERTO; EP-TASK-002 en_curso; PHYSICAL_PRESENCE_GATE_PENDING en 015RENTA01; B2 sin autenticar, sin preflight, upload, read-back remoto ni restore. La desviación account get permanece declarada y no se repite. | MCP-OCP no opera B2, no lee credenciales ni modifica EP/host. EP conserva el transporte y la compuerta de su entorno. |
+| Gobernanza | GOV-TASK-014 blob 9332c37cd44005c7dcc02771af15783010b9cdaf | EN_CURSO; solicita dataset, backup nativo, recuperación portable, evidencia cross-host y separación de seis estados. No hay aceptación central nueva que se pueda inferir de la publicación MCP-OCP. | Se entrega propuesta y estado por este objeto DTC; Gobernanza conserva integración y aceptación en GOV-TASK-014. |
+
+**Decisión técnica propuesta (no aprobada ni construida):** se recomienda un Portable Recovery Package separado del backup local vigente: (1) manifiesto externo versionado sin secretos, con rutas relativas, tamaño, SHA-256, versión del producto/código/RID/esquema y metadata KDF; (2) snapshot SQLite online cifrado con AES-256-GCM bajo una PMK aleatoria; (3) recovery envelope que envuelve PMK mediante AES-256-GCM y KEK derivada con Argon2id de una frase introducida solo en consola; (4) recovery map cifrado con PMK que contiene las DEK de canonical_sources/snapshots y las claves HMAC/Ed25519, identificadas por propósito/versión; (5) restore desde manifiesto sin consultar backup_points de la base de origen, seguido de validación AES-GCM/SHA/integrity_check/foreign_key_check, re-enveloping DPAPI CurrentUser en destino, actualización de SID, revocación de grants/requests pendientes del SID previo y preservación de la clave pública/recibos históricos/cadena de eventos; (6) readiness, 10 herramientas MCP y prueba funcional de solo lectura. El .ocpbak local actual permanece compatible y separado. BouncyCastle.Cryptography 2.7.0 ya está declarado en el proyecto; la presencia de la dependencia no prueba que la implementación Argon2id exista o compile.
+
+**Custodia de recuperación:** la frase de recuperación no se almacena en Git, B2, manifiesto, args, variables de entorno o logs; se mantiene fuera de banda y separada del paquete. La pérdida de la frase implica pérdida de recuperación portable. Este contrato no está implementado ni aprobado.
+
+**Candados que impiden terminar el E2E ahora:**
+1. P012/P013: recuperación criptográfica, custodia de claves y migración SID son decisiones de seguridad/arquitectura de alto nivel. El operador debe revisarlas presencialmente en el ciclo y aprobarlas antes de iniciar construcción o migración. El mandato general de extremo a extremo no identifica el diseño ni demuestra presencia física.
+2. RDC muestra 015RENTA01 Online, pero no acredita presencia física. PC-8 y PC-14 están Offline; no existe segundo host/perfil destino autorizado en línea para la prueba cross-host.
+3. EP mantiene PHYSICAL_PRESENCE_GATE_PENDING en 015RENTA01; B2 no autenticado y sin scope/bucket confirmado. No se accede a la caché .b2_account_info ni se repite account get.
+4. La candidata 0.1.0 conserva recibo pinned a core v0.1.16; tras el nuevo core v0.1.18 su recibo no es evidencia fresca de esa revisión. Rebuild/test se ejecutará cuando la implementación aprobada produzca un delta de código; repetir hoy el build antiguo no altera la decisión ni satisface la portabilidad.
+
+**Actualización de tareas del frente:** GOV-TASK-014 queda en MCP-OCP como: C07 análisis documental verificado; C08 propuesta de recuperación documentada, implementación bloqueada P012/P013 y segundo host. La fila de candidata se marca histórica/pinned a core v0.1.16. No se crea un GOV-TASK, EP-TASK, OCP, bucket ni canal nuevo; las tareas fuente siguen en sus OCP respectivos.
+
+**Estado de ejecución:** no code changes, no build/test, no restore, no real DB access, no B2, no credential access, no host changes, no PR/merge, no installation. Se detiene aquí el tramo ejecutable porque concurren los bloqueos P012/P013 y la ausencia de host destino; no se declara resuelto el E2E.
+
+**Resultado de ciclo local 08:** reconciliación DTC, actualización del backlog y propuesta técnica procesadas documentalmente. Clasificación local: `CUMPLE_VERIFICADO_CON_BLOQUEO_EXTERNO`. Objetivo longitudinal: `BLOCKED_PENDING_OPERATOR_SECURITY_REVIEW_AND_SECOND_HOST`. DTC global permanece `EN_CURSO_RECURRENT`.
+
+**Siguiente paso único requerido:** el operador confirma presencia física frente a 015RENTA01 y aprueba o corrige expresamente la propuesta de Portable Recovery Package P012/P013. Después se ejecuta la implementación/build/tests y se requiere habilitar un segundo host/perfil para el restore cross-host. Hasta entonces, no despachar código de recuperación ni operar B2.
+
+#### Cierre documental y read-back · ciclo local 08
+
+El núcleo v0.1.18, el objeto de coordinación, control, DUG, OEP/EP DTC, EP-TASK-002 y GOV-TASK-014 fueron releídos en main antes de este cierre. El registro final incluirá commit/blob y cotejo exacto de cada archivo modificado; no se infiere aceptación de Gobernanza/EP ni la finalización del E2E.
+
+**Cursor de procesamiento:** main HEAD 9f9781784562deb47268800ecead544a68296b77; coordinación previa blob 24ea19d0a3d9dfec5827df1a5f64b509bbb69414; núcleo v0.1.18 blob 9c2cdc01b2f5be3b39ee49ce179084f4fb75b436; control gen. 4 blob ecb27b04aaba04025ef596b3f0ed6c049bc2420d; EP DTC blob 62b5f06c8988e32e82b14517af9aac270de0159c; EP-TASK-002 blob 9bedc2a8d8956a912fb01b698569d99cf6e39de4; GOV-TASK-014 blob 9332c37cd44005c7dcc02771af15783010b9cdaf.
