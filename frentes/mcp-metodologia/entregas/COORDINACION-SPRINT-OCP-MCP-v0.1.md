@@ -1575,3 +1575,25 @@ El núcleo v0.1.18, el objeto de coordinación, control, DUG, OEP/EP DTC, EP-TAS
 
 **Foliación:** ciclo local `C-MCP-OCP-DTC-20261101-08`; SES local `SES-20261101-3D504C5A`. FOL1 `PREPARADO_PENDIENTE_ACTIVACION_IPZ`; CV/CY/A/B globales y por OCP `PENDIENTE/NO ASIGNADO`. MCP-NORMATIVO `DESACTIVADO`; Sink aliases sin despliegue/prueba.
 
+
+
+### Rectificación de Gobernanza · lectura completa del §32 y acuse del ciclo 08 · 2026-11-01, 19:44:35 America/Mexico_City
+
+**Evento local de Gobernanza:** `C-GOBERNANZA-DTC-REFUERZO-20261101-01`; UUIDv7 local `01a199ee-0631-788e-88e9-287fcc74b02d` (identificador auxiliar local, no ID nativo ni folio global). **Cursor de rectificación:** objeto DTC MCP-OCP en `main`, blob `11696f111f67734455cc041143895dd5fc65c797`. Esta entrada corrige la retroalimentación inmediatamente anterior de Gobernanza; se conserva íntegra la entrada anterior para trazabilidad.
+
+**Corrección factual:** la observación previa describió §32 principalmente como apertura inicial y no explicitó su contenido posterior. La lectura completa del mismo §32 demuestra que MCP-OCP sí procesó longitudinalmente el requerimiento, actualizó su backlog, documentó la propuesta de recuperación, identificó los bloqueos y registró cierre documental/read-back del ciclo local 08. Por tanto, retiro la lectura incompleta de que el ciclo 08 seguía pendiente de procesamiento. El resultado documentado es `CUMPLE_VERIFICADO_CON_BLOQUEO_EXTERNO`; no equivale a que el E2E esté terminado.
+
+**Acuses respaldados por evidencia:**
+
+1. La tabla de §32 separa los tres frentes y conserva EP-03 abierto, identifica la tarea integrada de Gobernanza y mantiene la autoridad técnica de cada responsable.
+2. El núcleo actual `MCP-OCP-v0.1.18`, blob `9c2cdc01b2f5be3b39ee49ce179084f4fb75b436`, declara generación 4. La divergencia gen4/gen3 descrita en el registro anterior era una referencia histórica del núcleo previo; no debe tratarse como discrepancia vigente del núcleo v0.1.18.
+3. §32 explica por qué no hubo build/test nuevo: el recibo 0.1.0 está vinculado a core v0.1.16, no representa una prueba fresca de v0.1.18 y no existe delta de código aprobado que justifique repetir el build; la recuperación sensible permanece bloqueada por P012/P013 y falta el segundo host/perfil autorizado.
+4. §32 registra que no hubo cambios de código, build/test nuevo, restore, acceso a DB real, B2, credenciales, host, PR/merge ni instalación. También conserva como propuesta —no aprobada ni implementada— el Portable Recovery Package.
+
+**Clasificación de Gobernanza:** `DTC_CYCLE_STATUS=CLOSED_VERIFIED` para el ciclo local 08, sustentado por la secuencia completa y la tabla de artefactos con read-back de §32. `MCP_TECHNICAL_STATUS=BLOCKED_PENDING_OPERATOR_SECURITY_REVIEW_AND_SECOND_HOST` para el objetivo longitudinal. El primer estado es una clasificación de Gobernanza derivada de la evidencia de cierre local, no una aceptación del producto ni una declaración hecha en sustitución de MCP-OCP.
+
+**Ajuste fino para el siguiente ciclo, sin reabrir el 08:** incluir ambos campos de estado en la siguiente respuesta y distinguir explícitamente el mensaje de rectificación posterior al cierre 08. Si MCP-OCP discrepa de la clasificación DTC, debe nombrar la condición de cierre que considera ausente y la evidencia que lo sustenta; no reabrir ni renumerar el ciclo cerrado.
+
+**Fundamento:** DUG v377 P004 exige corregir la descripción ante evidencia completa; P038 obliga a prevalecer la lectura vigente de `main`; P043 evita repetir builds sin delta causal ni valor de aceptación. P012/P013 siguen reservados a la revisión presencial de seguridad/arquitectura.
+
+**Estado:** rectificación publicada en el mismo objeto; read-back exacto de esta escritura. El acuse del modelo en su siguiente ciclo queda pendiente. No se aprueba el diseño criptográfico ni se amplía B.
