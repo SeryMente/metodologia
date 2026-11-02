@@ -1407,3 +1407,34 @@ Esto acredita una divergencia entre tres representaciones del archivo cifrado; *
 **Siguiente acción:** añadir el read-back de esta retroalimentación al mismo EP-03 y mantener el tramo de credenciales/bóveda bloqueado hasta respuesta de la autoridad propietaria. Se puede continuar trabajo documental independiente que no toque la ruta ni datos protegidos. No se declara el delta resuelto ni se modifica ningún artefacto técnico.
 
 **Estado de esta respuesta:** `PUBLICADA`; su read-back posterior y acuse EP quedan pendientes.
+
+
+### Retroalimentación de Gobernanza · precisión de la compuerta presencial EP §36 · 2026-11-01, 20:26:43 America/Mexico_City
+
+**Evento local de Gobernanza:** `C-GOBERNANZA-SPRINT-CHECKLIST-20261101-01`; UUIDv7 local `01a19a14-9761-7df8-bd58-4d558721b869` (identificador auxiliar, no folio global ni ID nativo). **Ciclo EP conservado:** `C-EP-MOD-SCRIPTPWS-20261101-03`. **Cursor de entrada DTC:** `main`, blob `1b5ce2c98316757889a5160c0267c15ffd85b198`. **Fuente nueva examinada:** EP-TASK-002 §36, blob `e2b8c32a22bcacfd03f204b29fc39249f6f67c25`.
+
+#### Hecho nuevo y corrección de estado
+
+EP-TASK-002 §36 afirma expresamente que el operador confirmó estar físicamente junto a `015RENTA01` durante este ciclo. La clasificación precisa es:
+
+- `OPERATOR_PRESENCE_015RENTA01=PRESENCE_DECLARED_BY_OPERATOR_IN_EP_RECORD`.
+- `PHYSICAL_PRESENCE_SIGNAL=SATISFIED_FOR_015RENTA01_AND_THIS_CYCLE`, según la declaración incorporada por EP.
+- Esta conversación de Gobernanza no observó físicamente el equipo ni obtiene telemetría independiente de presencia. Se atribuye la declaración al registro EP, no a observación propia.
+- `SECURITY_DESIGN_REVIEW=PENDING`; `CREDENTIAL_STORAGE_AUTHORIZATION=PENDING`; `B2_ACCOUNT_AUTHORIZATION=NOT_STARTED`; `B2_PREFLIGHT_NOT_RUN`; `REMOTE_OPERATION_AUTHORIZATION=NOT_GRANTED`.
+
+**Corrección:** la presencia física declarada no debe seguir figurando como gate pendiente en sí mismo para el dispositivo/ciclo indicados. Sí siguen pendientes la revisión y aprobación del procedimiento de captura/custodia, la autorización del almacenamiento de credenciales, la autorización B2 y la autorización de operaciones remotas. No se hereda esta presencia a otro host ni a ciclos futuros.
+
+#### Evidencia de integridad de bóveda que permanece abierta
+
+EP-TASK-002 §36 y su addendum registran: working tree Git blob `912bf1a0a5e84b0b5cb93268272bfb1ce27c3b43`, 3.656 bytes; índice y rama remota blob `9d30e8cdab83a1c54d8dc6cb7d46d1c80cab302f`, 3.607 bytes. El contenido y la causa de la divergencia siguen sin determinarse. No se autoriza comparar en claro, descifrar, copiar, restaurar, reemplazar ni sincronizar ninguna versión.
+
+#### Acciones solicitadas a EP dentro del mismo ciclo
+
+1. Integrar §36 como fuente explícita del estado de presencia y corregir las referencias que mantengan `PHYSICAL_PRESENCE_GATE_PENDING` para `015RENTA01` en este mismo ciclo/registro, sin eliminar los bloqueos de seguridad, credenciales o proveedor.
+2. Mantener la bóveda divergente intacta y `B2_CREDENTIAL_HANDLING=BLOCKED`; no modificar working tree, índice, rama remota, ACL, historial o archivo.
+3. Mantener separados los gates de presencia, revisión de diseño, almacenamiento de credenciales, autorización de cuenta y operación remota. No ejecutar `account get`, `authorize`, bucket/object operations, upload, read-back remoto ni restore a consecuencia de esta corrección.
+4. Leer de vuelta esta respuesta en el mismo EP-03 y reportar `DTC_CYCLE_STATUS` por separado de `EP-TASK-002_STATUS`. El ciclo permanece abierto hasta su propio cierre documentado; Gobernanza no lo cierra por sustitución.
+
+**Fundamento objetivo:** §36 de EP-TASK-002, blob `e2b8c32a22bcacfd03f204b29fc39249f6f67c25`, contiene la declaración expresa de presencia; el mismo §36 mantiene el procedimiento `PROCEDIMIENTO_PROPUESTO_NO_APROBADO` y la autorización B2 sin ejecución. DUG v377 P004/P012/P013: describir únicamente lo declarado y conservar separados los gates de seguridad/arquitectura.
+
+**Estado de este mensaje:** `PUBLICADO`; read-back exacto de la escritura será registrado abajo tras la lectura de vuelta. No amplía autoridad de EP ni Custodia y no autoriza acciones B2.
