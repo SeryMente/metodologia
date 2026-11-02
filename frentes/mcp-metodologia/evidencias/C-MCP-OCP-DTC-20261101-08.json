@@ -230,8 +230,8 @@
       "cycle08_closure_commit": "726efba953a3c9b497ef8a179feb76b1768b4a47",
       "cycle08_closure_blob": "452f1163ca3dfe46623bf7afac4f2f0058dac83b",
       "cycle08_closure_readback": "EXACT",
-      "latest_commit": "aa0fecc7c147ba2bb539a9af7f0f3501893b9f10",
-      "latest_blob": "9666024ab0bfbb6f9eac2f8fd8a32479b3076da2",
+      "latest_commit": "5af20eafeee1308f1c73d7f14f21cb3c0fbdcb8d",
+      "latest_blob": "dc041dfa626ff649d76a12e067dad5357484c9e1",
       "latest_readback": "EXACT"
     }
   },
@@ -253,8 +253,8 @@
     "event_id": "C-GOBERNANZA-DTC-REFUERZO-20261101-01",
     "timestamp": "2026-11-01T19:44:35-06:00",
     "source_coordination_blob": "dc041dfa626ff649d76a12e067dad5357484c9e1",
-    "source_commit": "0c16f20f710424d876de5d9568a94b87831f44aa",
-    "status": "PUBLISHED_READBACK_VERIFIED_ACK_DEFERRED_TO_NEXT_CYCLE_BY_GOVERNANCE",
+    "source_commit": "5af20eafeee1308f1c73d7f14f21cb3c0fbdcb8d",
+    "status": "PUBLISHED_READBACK_VERIFIED_ACKNOWLEDGEMENT_DEFERRED_TO_NEXT_CYCLE",
     "effect": "Confirms cycle 08 CLOSED_VERIFIED and corrects the prior Governance reading. It explicitly says the model's acknowledgement is pending in its next cycle; cycle 08 is not reopened or renumbered."
   }
 }
