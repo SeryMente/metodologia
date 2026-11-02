@@ -68,6 +68,12 @@ El núcleo de cada objeto conserva identificador local, enunciado, referencia re
 - **MCP-OCP:** ciclo local 06 cerrado `CUMPLE_VERIFICADO`; §30 sobre continuidad de datasets/backup/restore continúa `PUBLICADO`, pendiente de lectura/respuesta. No duplicar la solicitud mientras no haya respuesta o evidencia nueva.
 - **Backblaze:** CLI v5.0.2 instalada y hash local verificado en `015RENTA01`; presencia P012/P013 para ese equipo aún pendiente; autenticación, preflight proveedor, bucket/scope efectivo, upload, read-back remoto y restore no ejecutados. Bucket previsto único `OCP-MCP`, prefijo reportado `ep-ocp/`; no usar `OCP-MSP` ni `metodologia-ep-persistencia`.
 
+### Delta posterior al primer corte · 2026-11-01 19:20 America/Mexico_City
+
+- **Original EP:** EP reportó la persistencia byte-exact de `ChatGPT-EP-20261101-1913.md`, 121.981 bytes, SHA-256 `AB17DA27C72B00D04DBB0F7E8782110B1B5C6039654A26BA47917E4A2BD30EA8`, en `frentes/ep/originales/`; commit `9d57790b26cdb1b05a99165cd106b2ee55df1929`, blob `175fe5e8116b3743752760182cca24f7a5dc405f`. La lectura de vuelta exacta está reportada por EP.
+- **Respuesta DTC:** Gobernanza acusó este delta en el mismo objeto EP-03 y leyó de vuelta exactamente el contenido. Commit `8e677ab957654d89aa12e3577d329d692c6475d6`, blob `4631ff3d153a3621d850171a3b18491f8649943b`. EP-03 sigue abierto. La responsabilidad operativa/documental de EP se registra como asumida funcionalmente; titularidad formal/generación del frente EP siguen sin control autoritativo verificado.
+- **Límite sin cambio:** la persistencia del original EP no es una operación B2. Autenticación/scope/transferencia B2/restore siguen no verificados; MCP §30 continúa pendiente de respuesta.
+
 ### Prioridad ejecutiva
 
 1. **P0 · completar la ruta central:** GOV-TASK-007 + GOV-TASK-010; eliminar la brecha entre IPZ preparado e IPZ instalado/verificado y probar admisión.
