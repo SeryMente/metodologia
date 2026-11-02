@@ -1766,6 +1766,17 @@ $ErrorActionPreference='Stop'; $d="$env:LOCALAPPDATA\Programs\nodejs"; $env:Path
 **Corrección/previsión obligatoria:** queda prohibido usar template literals JavaScript para texto documental o PowerShell que pueda contener acentos graves Markdown. Construir esos bloques mediante arreglos de cadenas ordinarias unidos con `join('\n')`; antes de cualquier llamada GitHub, pasar un control estático que rechace el delimitador de plantilla en los bloques de contenido o use exclusivamente delimitadores alternativos demostrablemente seguros. La construcción debe finalizar y validarse antes de entrar a la fase de escritura.
 
 **Estados:** RECURRENCIA_DE_PARSER · RCA_VERIFICADA · CONTROL_PREVENTIVO_NO_APLICADO · SIN_MUTACIÓN_KHORA · CONTADOR_0.
+
+
+### Incidencia de concurrencia documental · actualización GitHub con SHA obsoleto · 2026-11-01
+
+**Operación:** registro de las incidencias de construcción del payload de MOD-SCRIPTPWS en OEP §94 y DTC del ciclo 03. **Síntoma literal:** `HTTP 409 CONFLICT: branch is at ebb0ced026d333def60ace37c04d03ea0977ed69 but expected 2b04d7da6dad10f37a35d4a67ac794f3e9b75fb3`. **Impacto:** el write que utilizó el estado anterior no se aceptó; el trabajo remoto concurrente no se sobrescribió.
+
+**Causa raíz VERIFICADA:** el HEAD de `main` cambió entre la lectura de los artefactos y la escritura mediante la API de contenidos. La operación se construyó con una referencia de commit obsoleta; la comprobación optimista de GitHub rechazó el write al detectar que la rama ya había avanzado. La lectura posterior confirmó OEP §94 en v0.3.37 / VCU-EP-v39, con la incidencia de parser incorporada, y el DTC seguía sin ese registro.
+
+**Corrección/previsión:** no reutilizar SHA/HEAD obtenidos antes de otra escritura en `main`. Para cada documento, leer su versión inmediatamente antes de mutarlo; en HTTP 409, detener el lote, recuperar el HEAD/blob actual, cotejar el contenido y rearmar el delta sobre esa base. Reintentar solo después de verificar que la precondición cambió y que el texto aún no está incorporado. No forzar, revertir ni sobrescribir cambios ajenos.
+
+**Estados:** CONFLICTO_CONCURRENTE · RCA_VERIFICADA · READ_BACK_POSTERIOR_REALIZADO · CONTADOR_0. Se conserva el ciclo `C-EP-MOD-SCRIPTPWS-20261101-03`; no se abre un ciclo nuevo.
 ### Entregables, aceptación y siguiente paso
 
 **Entregables del módulo:** comandos de ejecución reproducibles y con shell identificada; inventario de entrypoints PowerShell y consumidores; contratos de parámetros/códigos de salida; diagnóstico y logs recuperables; pruebas positivas/negativas; versiones y checksums; registro de fallos y correcciones; instrucciones de reanudación; evidencia de ejecución y lectura de vuelta. Los entregables se almacenan en las fuentes canónicas de sus repositorios, con referencias desde el OEP, no como copias paralelas.
