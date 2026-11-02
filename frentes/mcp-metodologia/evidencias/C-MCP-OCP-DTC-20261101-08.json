@@ -211,10 +211,11 @@
     },
     "dialogue": {
       "path": "frentes/mcp-metodologia/conversaciones/C-MCP-OCP-DTC-20261101-08-dialogo.jsonl",
-      "commit": "108283db20a1a06c1e7b4326cc27ccf34407a89e",
-      "blob": "8759a53a5f912dbc6929b8a497ce2ff6ad5267df",
+      "commit": "b7d268b6ca85d4ba1308ea952068fb9ac48dbc9d",
+      "blob": "8cea32d002445336641a87b3c5b5e041dd82cd96",
       "records": 2,
-      "readback": "EXACT"
+      "readback": "EXACT",
+      "B_literal_length": 3709
     },
     "readme": {
       "path": "frentes/mcp-metodologia/README.md",
