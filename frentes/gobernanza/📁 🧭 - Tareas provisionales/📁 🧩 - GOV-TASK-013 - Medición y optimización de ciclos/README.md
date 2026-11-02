@@ -14,6 +14,27 @@
 
 Establecer una línea base reproducible del tiempo de procesamiento de ciclos sustantivos y permitir comparar mejoras, con atención especial a GitHub y RDC. Medir desde el primer ciclo completo cuyo registro temporal pueda comenzar al inicio; no reconstruir marcas históricas.
 
+## Restricciones de diseño vigentes · instrucción del operador 2026-11-02
+
+1. **Una sola magnitud primaria por ahora:** duración observable del ciclo sustantivo completo. No diseñar ni desplegar KPIs derivados, tokenización/costo, primera respuesta, latencia por herramienta, tasas de error, reintentos ni instrumentación adicional sin nueva decisión. La clasificación de ciclo se conserva únicamente para poder contar la frecuencia por categoría; el catálogo de categorías queda pendiente de diseño.
+2. **Checkpoint inicial común:** capturar el evento canónico `cycle.accepted` en el límite de entrada del orquestador/adaptador, después de que el entorno recibe y admite la entrada y antes de cualquier procesamiento específico de proveedor/modelo. No usar la primera acción interna observable del modelo.
+3. **Checkpoint final común:** capturar `cycle.completed` cuando termina el turno/ciclo completo y la salida final visible queda disponible para el consumidor, una vez concluidas las iteraciones de herramientas y orquestación que pertenezcan al mismo ciclo. El evento terminal de una sola respuesta de modelo no equivale automáticamente al cierre del ciclo externo.
+4. **Portabilidad:** los nombres anteriores son eventos semánticos del contrato común, no nombres de API impuestos a proveedores. Cada adaptador mapea señales nativas verificables al contrato. Cuando no exista señal fiable, registrar `NOT_MEASURED` y el motivo; no sustituirla por una acción detectiva distinta ni completar por inferencia.
+5. **Reloj:** conservar fecha UTC y procedencia/precisión del reloj; calcular duración con reloj monotónico cuando el adaptador controle ambos extremos. No depender de restar relojes de pared susceptibles de ajuste.
+6. **Integración conversacional/AT:** vincular la medición al UUIDv7 local de conversación y al ciclo real; relacionar el registro A/B y, cuando aplique, los vectores AT mediante referencias recuperables. La telemetría no duplica el texto conversacional ni crea un registro por herramienta.
+7. **Ámbito físico:** reutilizar el OCP transversal existente `ambitos/gestion-conversacional/` para el contrato común y sus referencias; no crear una copia de telemetría por frente. Cada frente conserva en su propia evidencia únicamente las referencias que le correspondan.
+8. **Captura de contenido:** conservar A/B literal según ART-024, sin razonamiento interno oculto ni secretos. Captura automática y sincronización entre plataformas no se presumen: requieren un adaptador real, permisos y prueba de lectura de vuelta.
+9. **FOL1:** continúa PREPARADO_PENDIENTE_ACTIVACION_IPZ. No asignar folios nuevos ni declarar activación desde esta conversación; el contrato vigente exige preparar la IPZ y comenzar una conversación nueva para el corte.
+10. **Base de datos:** motor/proveedor y política de retención/acceso permanecen pendientes de decisión. Cualquier proyecto existente ajeno a Metodología queda fuera de alcance; no provisionar ni reutilizar infraestructura antes de aprobar el destino.
+
+### Verificación documental inicial de OpenAI
+
+- Responses API streaming documenta eventos de ciclo de vida `response.created`, `response.completed` y `error`; son señales del ciclo de una respuesta API y solo pueden mapearse al ciclo externo cuando la arquitectura de orquestación confirme esa equivalencia: https://developers.openai.com/api/docs/guides/streaming-responses
+- La exportación ordinaria de ChatGPT entrega una copia descargable del historial; no es un hook de captura en vivo por turno: https://help.openai.com/en/articles/7260999-exporting-your-chatgpt-history-and-data
+- La Compliance Platform expone registros/metadatos de conversaciones en espacios Enterprise/Edu elegibles, con permisos administrativos y retención documentada de 30 días en el servicio de logs; no se presume disponible en una cuenta ni sustituye un hook universal: https://help.openai.com/en/articles/9261474-openai-compliance-platform-for-enterprise-and-edu-customers
+
+**Estado de diseño:** checkpoints semánticos propuestos; adaptador nativo de ChatGPT UI no identificado en documentación pública consultada; catálogo de categorías pendiente; base de datos pendiente; activación FOL1 pendiente de su compuerta. No se declara una implementación activa.
+
 ## Instrumentación por ciclo
 
 Incorporar un único bloque `performance` al recibo/evidencia del ciclo ya existente. No crear una bitácora paralela ni una entrada por cada llamada.
