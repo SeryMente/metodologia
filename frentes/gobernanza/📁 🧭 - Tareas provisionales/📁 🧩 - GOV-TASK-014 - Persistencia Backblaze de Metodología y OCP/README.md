@@ -134,3 +134,40 @@ EP registró una nueva respuesta inicial dentro del ciclo existente `C-EP-MOD-SC
 **Aceptación integrada:** mantener separados backup local por propietario, B2 remoto y restore cross-host. El plano MCP-OCP necesita acuse y definición del titular en §30; no se abre una solicitud duplicada. La persistencia del servicio MCP-OCP sigue siendo parte de EP-TASK-002/GOV-TASK-014 y del sprint.
 
 **Estado:** `EN_CURSO`. La lectura de solo lectura puede producir un inventario candidato, pero no cierra EP-TASK-002 ni prueba persistencia remota. Esperar el delta documentado/read-back de EP y la respuesta §30 del propietario MCP-OCP.
+
+
+## Actualización integrada DTC · ciclo local MCP-OCP 08 y nueva respuesta EP · 2026-11-01, 19:45:00 America/Mexico_City
+
+**Criterio de actualización:** solo se incorporan hechos visibles en los objetos propietarios y sus read-backs. No se cambia el estado técnico de la tarea por cierre documental DTC; no se infiere autorización, operación o aceptación.
+
+### Fuentes y cursores cotejados
+
+- DUG Samantha v377 / NX-377m: blob `54064c8fe00f872023a455f06596061ed69062ae`.
+- EP DTC `COORDINACION-GOBERNANZA-EP-v0.1.md`: blob tras la respuesta de Gobernanza `347ef5d037394644a65484121d8739c089b3aa47`; commit de esta respuesta `0c16f20f710424d876de5d9568a94b87831f44aa`.
+- EP-TASK-002: blob `9bedc2a8d8956a912fb01b698569d99cf6e39de4`.
+- MCP-OCP DTC `COORDINACION-SPRINT-OCP-MCP-v0.1.md`: blob tras la rectificación de Gobernanza `dc041dfa626ff649d76a12e067dad5357484c9e1`; commit `5af20eafeee1308f1c73d7f14f21cb3c0fbdcb8d`.
+- Núcleo MCP-OCP: `MCP-OCP-v0.1.18`, generación 4, blob `9c2cdc01b2f5be3b39ee49ce179084f4fb75b436`.
+- Control MCP-OCP: generación 4, `owned`, blob `ecb27b04aaba04025ef596b3f0ed6c049bc2420d`.
+
+### Estado EP · EP-03 y compuerta de custodia
+
+- El ciclo local `C-EP-MOD-SCRIPTPWS-20261101-03` permanece `OPEN`; EP informó `DTC_CYCLE_STATUS=OPEN` y `EP-TASK-002_STATUS=en_curso`. La respuesta de EP a la retroalimentación de Gobernanza está publicada; la nueva respuesta de Gobernanza solicita el read-back antes del cierre.
+- EP-TASK-002 continúa `en_curso`. B2 sigue sin autenticación verificada, bucket/scope comprobados, upload, read-back remoto ni restore. La presencia de `015RENTA01` fue reportada por EP como declaración del operador; Gobernanza no la verificó presencialmente en esta conversación.
+- EP reportó que `secrets/env-vault.enc.json` está versionado en una rama remota de KHORA, 3.656 bytes, SHA-256 `6D3648E0E434250794DABA89F0682451CBCB5EEAF1CF1A93A3324B6914CA683F`, con nueve nombres cifrados y sin valores descifrados. El `.gitignore` de `main` no excluye expresamente el archivo principal y la visibilidad histórica del repositorio sigue sin determinarse según el registro EP/Custodia.
+- Esto justifica mantener bloqueada la incorporación de nuevas credenciales a esa copia y elevar la revisión al titular de Custodia. **No demuestra exposición de valores en claro ni compromiso de claves.** No se borra/reescribe el archivo, historial, ACL o ramas por inferencia.
+- El procedimiento de captura/almacenamiento de credenciales sigue `PROPUESTO`, no autorizado ni ejecutado. EP reporta que el control de Custodia gen. 6 excluye cambios de credenciales y de seguridad/configuración efectiva del bucket. EP no puede ampliar ese mandato.
+
+### Estado MCP-OCP · cierre local 08 y bloqueo longitudinal
+
+- MCP-OCP documentó en §32 el procesamiento del requerimiento, la actualización de su backlog, la propuesta de Portable Recovery Package y el cierre documental/read-back del ciclo local 08. La clasificación del frente para ese ciclo es `CUMPLE_VERIFICADO`; Gobernanza separa ese cierre de la ruta técnica, que permanece `BLOCKED_PENDING_OPERATOR_SECURITY_REVIEW_AND_SECOND_HOST`.
+- El núcleo vigente `MCP-OCP-v0.1.18` ya refleja generación 4. Una mención gen3 en material histórico anterior no se mantiene como discrepancia vigente del núcleo actual.
+- El recibo de candidata 0.1.0 permanece ligado a core v0.1.16; no es evidencia fresca de v0.1.18. En el ciclo 08 no se hicieron cambios de código ni build/test nuevo; no se justificó repetir el build antiguo sin delta causal.
+- Portable Recovery Package (manifest externo, snapshot SQLite, envelope de recuperación y re-enveloping): **propuesta documental únicamente**, no aprobada ni implementada. P012/P013 y la falta de un segundo host/perfil autorizado impiden la construcción/validación cross-host descrita. No hubo B2, acceso a credenciales, restore, PR/merge ni instalación.
+
+### Retroalimentación DTC y estado integrado
+
+- Gobernanza publicó retroalimentación basada en la desviación procedimental `account get`, en la separación entre ciclo DTC y tarea técnica, y en la relectura obligatoria de cursor antes de operaciones sustantivas. EP respondió y aplicó explícitamente la separación de estados; el nuevo read-back sigue pendiente.
+- Gobernanza publicó retroalimentación a MCP-OCP sobre la separación entre ciclo local y estado técnico. Tras detectar que su primera lectura de §32 era incompleta, publicó una rectificación con acuse del cierre local 08 y read-back exacto. El siguiente acuse de MCP-OCP queda pendiente; no se reabre ciclo 08.
+- **Estado de esta tarea:** `EN_CURSO`. Persistencia documental Git y análisis de propuesta no demuestran B2 remoto, backup real, restore cross-host, integración, instalación ni aceptación. No se cambia ningún criterio de aceptación técnico.
+
+**Siguiente paso material:** mantener EP-TASK-002 en pausa para operaciones B2/credenciales hasta resolver las autorizaciones y custodia correspondientes; continuar trabajo documental permitido. MCP-OCP conserva la propuesta para revisión P012/P013 y debe esperar un segundo host autorizado para la prueba cross-host. Gobernanza actualizará esta tarea únicamente ante nuevos deltas verificables; no repetirá las mismas solicitudes pendientes.
