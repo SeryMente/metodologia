@@ -51,7 +51,8 @@
       "opening_commit": "828ef98e4ce51905c04ffb8c3242806a481847b3",
       "processing_commit": "64038e8007a21e552c676155c6c9bf06ae19f268",
       "processed_blob": "4cb8076fc813a1b7412c684bde5020193291dc22",
-      "section": "§31"
+      "section": "§31",
+      "closure_status": "PROCESSED_DOCUMENTED_AWAITING_FINAL_CYCLE_READBACK"
     },
     "control": {
       "path": "frentes/mcp-metodologia/CONTROL-RESPONSABILIDAD.json",
@@ -239,5 +240,40 @@
     "fol1": "PREPARADO_PENDIENTE_ACTIVACION_IPZ",
     "global_folios": "PENDIENTE_NO_ASIGNADO"
   },
-  "next_gate": "Operator-present P012/P013 review of the proposed key-recovery architecture. Do not implement or perform cross-host restore until approved. EP retains B2/host responsibility."
+  "next_gate": "Operator-present P012/P013 review of the proposed key-recovery architecture. Do not implement or perform cross-host restore until approved. EP retains B2/host responsibility.",
+  "documentation_artifacts": {
+    "core": {
+      "path": "frentes/mcp-metodologia/MCP-METODOLOGIA.md",
+      "version": "MCP-OCP-v0.1.17",
+      "commit": "441c02eebed106e354a5bd008a11a3370bdd9466",
+      "blob": "654bd4f833f2b10f3022b256fa6e21153331d0cf",
+      "readback": "EXACT"
+    },
+    "chronicle": {
+      "path": "frentes/mcp-metodologia/cronica/C-MCP-OCP-DTC-20261101-07.md",
+      "commit": "a7566dc4b067d3009a2d33db19d2b137b3f798d9",
+      "blob": "b62f120c4753f4d9354f41fbe1d8b9409ec30728",
+      "readback": "EXACT"
+    },
+    "dialogue": {
+      "path": "frentes/mcp-metodologia/conversaciones/C-MCP-OCP-DTC-20261101-07-dialogo.jsonl",
+      "commit": "b11c5fedbd6db32ab0da2836525f31d714660aed",
+      "blob": "afb7b8bd86fad0fba6310c1ec3b0c6e780768294",
+      "records": 3,
+      "readback": "EXACT"
+    },
+    "readme": {
+      "path": "frentes/mcp-metodologia/README.md",
+      "commit": "262ee8443fdf6861428c4a6ec3fc53d2a313c094",
+      "blob": "739526964b7c0e74942d33a87bdeb3e4fe221bf9",
+      "readback": "EXACT"
+    },
+    "original_conversation": {
+      "path": "frentes/mcp-metodologia/conversaciones/ChatGPT-OCP MCP-20261101-1917.md",
+      "commit": "e6e7041d9fdfd71c1ce18aa3f831ced1e7ffcff5",
+      "blob": "bebd00b312f5db1f11910682452de9d95ef5ca08",
+      "sha256": "27D1074A72A1DB571984675396B847C229B76F803D2EFFFDEFAD4B7B1190B4D1",
+      "readback": "LITERAL_MATCH"
+    }
+  }
 }
