@@ -1666,7 +1666,7 @@ El núcleo v0.1.18, el objeto de coordinación, control, DUG, OEP/EP DTC, EP-TAS
 | JSON Schema manifest PPR v1 | f402ee483acfc7603177523431fde8cde4792848 | 7d3126c40d19e43c5123b3acbfc2f4b53c1f7767 | EXACT; JSON parseado |
 | Núcleo MCP-OCP v0.1.19 / backlog | 3c7bcd077902af34ab1764842fd3a7d3906b39fc | 3390099890e3734be9a829be003ab2d217b60690 | EXACT |
 | Crónica ciclo 09 | f6068ec2fafcaa408da95bf2af258c7b274720b0 | b6d9ec31b040a9fc4bbd763cc36042366ffda6eb | EXACT |
-| Evidencia ciclo 09 | 9f6b6d5935f4d5d93984ebcf02831ec150cd3f5d | 30e3adadf492c6ad94e1d97946190aa21b7eecff | EXACT; JSON parseado |
+| Evidencia ciclo 09 | 2e3691f8973a25b8bdfdeda106e480d34953880d | 33e42254cc16df859767fdd7bc1c5af988e23dc5 | EXACT; JSON parseado |
 | README índice | 6738f9c5f598e2b1f8fb73c6087fd424643f2389 | ac67c01875aace5627547f30421b4640adaa5a48 | EXACT |
 | Diálogo A/B ciclo 09 | dae10b0d5913ed5668009185f5371ece0eb14f13 | 484335162cd1845d3194f845ac385ad274ff4569 | 3 registros (2 A + 1 B); EXACT |
 
@@ -1677,3 +1677,16 @@ El núcleo v0.1.18, el objeto de coordinación, control, DUG, OEP/EP DTC, EP-TAS
 **Estado separado:** DTC_CYCLE_STATUS=OPEN — la aprobación, el acuse y la preparación documental quedaron registrados/read-back, pero el procesamiento técnico solicitado sigue abierto. MCP_TECHNICAL_STATUS=IMPLEMENTATION_AUTHORIZED_IN_ISOLATED_BRANCH; PPR_CODE_NOT_IMPLEMENTED; BUILD_TEST_NOT_VERIFIED. Los gates second-host/cross-host y EP/B2 siguen pendientes en sus autoridades correspondientes.
 
 **Siguiente acción inmediata:** implementar el servicio PPR y sus comandos en esta rama; obtener build/test en entorno Windows autorizado con SDK .NET 10. No declarar E2E ni cierre del ciclo antes de contar con implementación, build/test y evidencia de aceptación de su alcance local.
+
+
+### 33.5 Revalidación de main y compuertas externas
+
+**Main revalidado:** HEAD 439ccbdca9b2e02b299253ca7bc73b3ab1292aba, posterior a la creación de la rama. Los tres commits nuevos desde la base f2969421d0410e82af554642487b2c197fa80707 afectan solo coordinación EP y el índice de tareas de Gobernanza; no cambian el frente MCP-OCP, el control, el núcleo ni el DUG. Main conserva núcleo v0.1.18/blob 9c2cdc01b2f5be3b39ee49ce179084f4fb75b436, coordinación DTC/blob dacb3ef3aef725980fc29067ff6b4b82eb2b2f34, control generación 4/blob ecb27b04aaba04025ef596b3f0ed6c049bc2420d y DUG Samantha v377/NX-377m/blob 54064c8fe00f872023a455f06596061ed69062ae. La rama feature conserva la base de trabajo f296… y no se rebasea/mergea por este delta ajeno; no hay conflicto MCP-OCP detectado.
+
+**EP y Gobernanza re-leídos desde main:**
+- EP DTC blob 4875e272b25b6f2b4aa32f6f0caf6333a71f6bb2; EP-03 OPEN. EP-TASK-002 blob e2b8c32a22bcacfd03f204b29fc39249f6f67c25; estado en_curso.
+- EP recibió autorización acotada del operador para crear/capturar una bóveda local EP; read-back todavía NO EJECUTADO.
+- B2_PROVIDER_AUTHORIZATION=NOT_AUTHORIZED; B2_REMOTE_OPERATION=NOT_GRANTED. No hay upload/download/restore autorizado por esa respuesta.
+- GOV-TASK-014 blob 571731bc07f9933ee0677089cf0e2d01d58f6f87; EN_CURSO. No se cambia el estado técnico del frente por el cierre documental.
+
+**Efecto sobre MCP-OCP:** ninguna de estas novedades autoriza MCP-OCP a operar B2, acceder a credenciales, modificar EP, usar un segundo host ni cambiar su configuración. La autorización actual sigue siendo PPR v1 dentro de frentes/mcp-metodologia/. El ciclo 09 sigue OPEN; el código PPR y build/test siguen pendientes.
