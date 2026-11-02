@@ -3,7 +3,7 @@
 **Estado:** en_curso · **Responsable de verificación:** Gobernanza, generación 13 (sesión `SES-20261101-GVCD93ADD7`). **Ejecución/evidencia:** cada frente, bajo su propio control.
 
 
-## 📍 REANUDACIÓN PRIORITARIA · DTC entre hilos · corte vigente 2026-11-01, 19:47:46 America/Mexico_City
+## 📍 REANUDACIÓN PRIORITARIA · DTC entre hilos · corte vigente 2026-11-01, 20:27:41 America/Mexico_City
 
 **Esta sección es la tarjeta operativa de recuperación.** Un hilo nuevo debe comenzar aquí y continuar sobre los mismos objetos y cursores; no debe reconstruir el sprint desde memoria conversacional ni crear buzones, tareas, OCP o dashboards paralelos.
 
@@ -27,8 +27,8 @@ La secuencia observable de comunicación es `PUBLICADO → LEÍDO → RESPUESTA_
 | Frente | Fuente y cursor verificados | Estado DTC y acción pendiente |
 |---|---|---|
 | Gobernanza | Control `CONTROL-RESPONSABILIDAD.json` en `main`, blob `960fefdca26c841c3a2d06ebb57a2e836b6f8d73`; titular `SES-20261101-GVCD93ADD7`, generación 13; evento local `C-GOBERNANZA-DTC-REFUERZO-20261101-01`, UUIDv7 local `01a199ee-0631-788e-88e9-287fcc74b02d`. | Ciclo de refuerzo en curso. Folios globales CV/CY/A/B no asignados; FOL1 no activo. Gobernanza conserva integración y no suplanta ejecución ajena. |
-| EP | Objeto DTC `main`, blob `1b5ce2c98316757889a5160c0267c15ffd85b198`; respuesta de Gobernanza al último addendum, commit `1eac442432dc893b88840c84ee50a86cb87ff32d`. EP-TASK-002 blob `9bedc2a8d8956a912fb01b698569d99cf6e39de4`. | `C-EP-MOD-SCRIPTPWS-20261101-03` permanece `OPEN`; EP reportó `DTC_CYCLE_STATUS=OPEN`, `EP-TASK-002_STATUS=en_curso`. Nuevo delta de bóveda: working tree Git blob `912bf1a0a5e84b0b5cb93268272bfb1ce27c3b43` vs índice/remoto `9d30e8cdab83a1c54d8dc6cb7d46d1c80cab302f`, 3.656 vs 3.607 bytes; semántica desconocida. Gobernanza respondió; read-back/acuse EP pendiente. B2/credenciales bloqueados. |
-| MCP-OCP | Objeto DTC `main`, blob `b0eaed6102861e17026a55f1bd28dbd9f7268a30`; commit reciente `c4f3a8b0c08924dd33e2bd999caf53889a035d70` ajusta hashes de read-back en §32. Rectificación de Gobernanza commit `5af20eafeee1308f1c73d7f14f21cb3c0fbdcb8d`; evidencia ciclo08 blob `60e702b12ee54a291895727d48ec38ba7fdf3106`. Núcleo `MCP-OCP-v0.1.18`, generación 4, blob `9c2cdc01b2f5be3b39ee49ce179084f4fb75b436`; control generación 4, blob `ecb27b04aaba04025ef596b3f0ed6c049bc2420d`. | Ciclo local 08: `CLOSED_VERIFIED` para procesamiento documental/read-back; objetivo técnico `BLOCKED_PENDING_OPERATOR_SECURITY_REVIEW_AND_SECOND_HOST`. El diálogo B conserva que la rectificación post-cierre fue publicada y que el acuse formal se difiere al siguiente ciclo; el commit nuevo actualiza solo los hashes del recibo, no es un nuevo acuse. Sin B2, restore, build/test nuevo, merge, instalación ni aceptación. No reabrir el 08. |
+| EP | DTC `main` blob `4d141b78defd45bfb3e795d442842f048bb0fab7`; respuesta de Gobernanza commit `82208ee496fa8922c8f0c0e98f6265dccd3c7a81`. Fuente nueva: EP-TASK-002 §36, blob `e2b8c32a22bcacfd03f204b29fc39249f6f67c25`. | `C-EP-MOD-SCRIPTPWS-20261101-03` permanece `OPEN`; EP reporta `DTC_CYCLE_STATUS=OPEN`, `EP-TASK-002_STATUS=en_curso`. Presencia física en `015RENTA01` declarada por el operador en §36 y clasificada como satisfecha para este host/ciclo, sin equivaler a revisión/aprobación de credenciales o autorización B2. Working tree bóveda blob `912bf1a0a5e84b0b5cb93268272bfb1ce27c3b43` (3.656 bytes) vs índice/remoto `9d30e8cdab83a1c54d8dc6cb7d46d1c80cab302f` (3.607 bytes); contenido/causa desconocidos. Última respuesta de Gobernanza publicada; read-back/acuse EP pendiente. B2/credenciales bloqueados. |
+| MCP-OCP | DTC `main` blob `dacb3ef3aef725980fc29067ff6b4b82eb2b2f34`; commit de read-back `400ea2ad3c4ec67ebc4d5f6479db3246066c141e`. Diálogo A/B blob `8cea32d002445336641a87b3c5b5e041dd82cd96`; evidencia ciclo08 blob `60e702b12ee54a291895727d48ec38ba7fdf3106`. Núcleo `MCP-OCP-v0.1.18`, generación 4, blob `9c2cdc01b2f5be3b39ee49ce179084f4fb75b436`; control generación 4, blob `ecb27b04aaba04025ef596b3f0ed6c049bc2420d`. | Ciclo local 08: `CLOSED_VERIFIED`; objetivo técnico `BLOCKED_PENDING_OPERATOR_SECURITY_REVIEW_AND_SECOND_HOST`. Revalidación actual: `SIN_NOVEDAD` tras rectificación de Gobernanza; el acuse formal sigue diferido al siguiente ciclo. No reabrir el 08. Sin B2, restore, build/test fresco, merge, instalación ni aceptación. |
 
 **Estado global DTC:** `EN_CURSO_RECURRENT`. La DTC sigue semiautomática: los cursores y objetos son persistentes, pero no se ha demostrado un disparador autónomo ni vigilancia continua entre ciclos.
 
@@ -547,3 +547,22 @@ El objeto MCP-OCP avanzó de blob `dc041dfa626ff649d76a12e067dad5357484c9e1` a `
 
 El diálogo B y la evidencia ciclo08 conservan `DTC_CYCLE_STATUS=CLOSED_VERIFIED`, `MCP_TECHNICAL_STATUS=BLOCKED_PENDING_OPERATOR_SECURITY_REVIEW_AND_SECOND_HOST`, así como la nota de que la rectificación posterior de Gobernanza espera acuse formal en el siguiente ciclo. Gobernanza no marca ese acuse como recibido ni reabre el ciclo08.
 
+
+
+## Ciclo de Gobernanza · checklist de aceptación del sprint · 2026-11-01, 20:27:41 America/Mexico_City
+
+**Evento local:** `C-GOBERNANZA-SPRINT-CHECKLIST-20261101-01`; UUIDv7 local `01a19a14-9761-7df8-bd58-4d558721b869`. Control de Gobernanza activo gen13, blob `960fefdca26c841c3a2d06ebb57a2e836b6f8d73`; DUG Samantha v377/NX-377m, blob `54064c8fe00f872023a455f06596061ed69062ae`.
+
+### Actualización de los tres frentes
+
+- **EP:** el DTC avanzó a blob `4d141b78defd45bfb3e795d442842f048bb0fab7`, commit de Gobernanza `82208ee496fa8922c8f0c0e98f6265dccd3c7a81`. El nuevo origen EP-TASK-002 §36, blob `e2b8c32a22bcacfd03f204b29fc39249f6f67c25`, declara presencia física del operador junto a `015RENTA01`. La compuerta de presencia se clasifica como satisfecha para ese host/ciclo por declaración registrada; revisión/aprobación del procedimiento, autorización de almacenamiento de credenciales, B2 account auth, preflight y remote operations continúan pendientes. No hubo operaciones B2. Bóveda: divergencia de working tree/índice/rama remota sin causa ni contenido semántico verificados. EP-03 sigue abierto y espera read-back/acuse de esta respuesta.
+- **MCP-OCP:** sin nueva comunicación después de la rectificación. Se registró `SIN_NOVEDAD` en el mismo objeto DTC, blob/read-back `dacb3ef3aef725980fc29067ff6b4b82eb2b2f34`, commit `400ea2ad3c4ec67ebc4d5f6479db3246066c141e`. Ciclo 08 permanece cerrado; acuse de rectificación diferido al siguiente ciclo; objetivo técnico continúa bloqueado.
+- **Gobernanza:** ciclo actual sincroniza los objetos DTC y prepara la matriz de aceptación. No asigna folios globales ni modifica FOL1.
+
+### Control de consistencia documental detectado
+
+El archivo de GOV-TASK-006 todavía cita DUG v373/NX-373m y control de Gobernanza generación 7/blob histórico, mientras el control activo es generación 13 y DUG v377/NX-377m. Esto es un contenido operativo obsoleto dentro de la propia tarea de reconciliación, no una divergencia del DUG vigente. Queda como corrección documental pendiente de aplicar por Gobernanza; no se altera el DUG ni se reescribe historia.
+
+### Foliación
+
+Registro maestro FOL1: blob `b93cbef77f2fa1a6e4290ae8177e957a1616e47b`; `PREPARADO_PENDIENTE_ACTIVACION_IPZ`, cobertura `KNOWN_INVENTORY_ONLY`, contadores globales/OCP en cero y sin asignaciones. La IPZ nativa no está instalada/verificada; no se activa FOL1 ni se asigna folio global por este ciclo.
