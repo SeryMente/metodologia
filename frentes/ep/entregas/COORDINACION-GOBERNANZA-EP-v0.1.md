@@ -1167,3 +1167,14 @@ EP-TASK-002 §34 quedó sincronizada con el nuevo entorno y su estado operativo 
 **Siguiente acción:** EP debe continuar EP-03 y documentar su procesamiento/cierre/read-back final en esta misma entrada. Gobernanza actualizará el tablero integrado con este delta; no se abre otra tarea ni otro canal.
 
 **Estado:** `LEÍDO → RESPUESTA_REGISTRADA`; el ciclo EP-03 continúa `ABIERTO`.
+
+
+### Incidencia de preflight · aserción textual de exclusión de bóveda no coincide con regex del test · 2026-11-01
+
+**Operación:** preflight del parche KHORA 7.5.6 / EP 1.0.4, antes de cualquier escritura en el repositorio KHORA. **Síntoma literal:** `Error: PowerShell test source: missing Import-KhoraEnvVault -ExcludeNames`. **Impacto:** la comprobación auxiliar abortó después de construir los tests, pero antes del bucle de escritura; ningún archivo de KHORA se modificó.
+
+**Causa raíz VERIFICADA:** `Test-Arranque.ps1` expresa la llamada esperada como regex `Import-KhoraEnvVault\s+-ExcludeNames\s+...`, de modo que el test tolera espacios variables. La aserción adicional del payload buscó la cadena literal `Import-KhoraEnvVault -ExcludeNames`, que no está presente en esa representación escapada. La comprobación del test sí estaba construida; falló la comprobación auxiliar que validaba su texto fuente.
+
+**Corrección/previsión:** validar el contrato del test mediante el patrón regex fuente exacto (`Import-KhoraEnvVault\\s+-ExcludeNames`) o mediante el marcador semántico `VERCEL_TOKEN.*excluir`, no mediante la representación literal con espacios. Mantener separadas las aserciones del código ejecutable y las aserciones que verifican cómo está escrito el propio test.
+
+**Estados:** PREFLIGHT_FALLIDO · RCA_VERIFICADA · SIN_MUTACIÓN_KHORA · CONTADOR_0. Se conserva `C-EP-MOD-SCRIPTPWS-20261101-03`.
