@@ -1457,3 +1457,27 @@ No se ejecutó restauración cross-host: solo se observó un dispositivo RDC en 
 
 **Foliación:** sesión local `SES-20261101-3D504C5A`; ciclo local `C-MCP-OCP-DTC-20261101-07`. FOL1 `PREPARADO_PENDIENTE_ACTIVACION_IPZ`; folios globales CV/CY/A/B y por OCP `PENDIENTE/NO ASIGNADO`.
 
+
+### 32. Apertura y respuesta inicial MCP-OCP · ciclo local 08 · 2026-11-01
+
+**A · instrucción del operador, literal:** «Bien, actualiza tus tareas, asegúrate de cumplir con toda la dinámica de TC e intenta resolver de extremo a extremo, o sea longitudinalmente, en un solo ciclo. No te detengas a menos de que haya un bloqueo o algo no trivial que merezca la pausa. De lo contrario, insisto resuelve de extremo a extremo, por favor no te tardes. Es vida o muerte que resolvamos pronto.»
+
+**Sesión titular:** `SES-20261101-3D504C5A` · alias `chatgpt-mcp-ocp-01a199d8-9209-725c-b764-a0a66ac54882` · generación 4. El UUIDv7 local asociado es `01a199d8-9209-725c-b764-a0a66ac54882`, no ID nativo de ChatGPT.
+
+**Cursor de apertura:** `main` HEAD `b91fc1a4c7b716a6f1ced72c80de8549a890b65b`; coordinación previa blob `6e86e846c0fd865f7422f9175b725c4bbed03249`; control MCP-OCP blob `ecb27b04aaba04025ef596b3f0ed6c049bc2420d` (`owned`, gen. 4, B `AUTHORIZED`); núcleo MCP-OCP v0.1.17 blob `654bd4f833f2b10f3022b256fa6e21153331d0cf`; DUG Samantha v377/NX-377m, Metacanon 1.28, GOW 2.17, blob `54064c8fe00f872023a455f06596061ed69062ae`.
+
+**Cascada aplicada:** P001, P004, P005, P012, P013, P038 y P043 considerados junto al CNP y al DUG íntegro. P038 fija `main` como fuente canónica; P004 prohíbe simular ejecución; P012/P013 mantienen candado presencial para arquitectura/seguridad. La urgencia del operador no elimina ese candado ni amplía B.
+
+**DTC trilateral — cursores externos releídos:**
+- EP: coordinación blob `62b5f06c8988e32e82b14517af9aac270de0159c`; EP-TASK-002 blob `9bedc2a8d8956a912fb01b698569d99cf6e39de4`. EP-03 `C-EP-MOD-SCRIPTPWS-20261101-03` sigue ABIERTO; su último inventario §35 declara `PHYSICAL_PRESENCE_GATE_PENDING`, B2 no autenticado, sin preflight, upload, read-back remoto ni restore. La desviación única de `b2 account get` quedó declarada; no se repite ni se consulta la caché.
+- Gobernanza: GOV-TASK-014 blob `9332c37cd44005c7dcc02771af15783010b9cdaf`, estado `EN_CURSO`; criterios siguen requiriendo validación por MCP-OCP, persistencia B2 ejecutada por EP y aceptación integrada. No consta una nueva respuesta de Gobernanza posterior a §30; no se infiere lectura de §31.
+- MCP-OCP: ciclo local 07 cerrado `VERIFICADO_READBACK`; no se reabre. La respuesta de este ciclo va en este mismo objeto.
+
+**B · respuesta inicial MCP-OCP:** RECIBIDO. Haré el recorrido longitudinal de una sola pasada: reconciliar las tareas del frente con EP/Gobernanza, completar el inventario y las pruebas que estén dentro de la autorización B vigente, actualizar el backlog y dejar evidencia y read-back en el mismo DTC. Se avanzará todo trabajo no bloqueado; no se abrirán tareas/canales paralelos ni se duplicará EP-TASK-002/GOV-TASK-014.
+
+**Bloqueos explícitos conocidos al abrir:**
+1. Arquitectura portable de claves/backup es una decisión de seguridad de alto nivel sujeta a revisión presencial del operador por P012/P013. La solicitud general de extremo a extremo no selecciona ni aprueba un diseño criptográfico concreto; no se inicia construcción sensible ni se simula aprobación.
+2. Persistencia remota B2, identidad/scope/bucket y una prueba cross-host dependen de EP y de su compuerta presencial. B de MCP-OCP no autoriza acceso a credenciales B2, host EP ni operaciones remotas.
+3. Candidata 0.1.0 continúa fuera de `main`; no se hace PR/merge ni instalación por inferencia.
+
+**Alcance de apertura:** preflight documental y lectura de cursores completados; todavía no se han ejecutado build, pruebas nuevas, operaciones de datos ni cambios de código en este ciclo. Estado: `LEÍDO → RESPUESTA_INICIAL_REGISTRADA`.
