@@ -927,3 +927,14 @@ Ambos archivos mantienen exactamente el mismo blob SHA en `main` y en la rama de
 **Corrección/previsión:** no reescribir fórmulas criptográficas al copiar entre payloads. Reutilizar el helper aislado validado como una unidad indivisible; comparar el texto/identidad del helper, verificar 64 constantes, SHA256(abc), SHA256(vacío), UTF-8 y un hash histórico del manifiesto. Cualquier vector fallido bloquea toda escritura.
 
 **Estados:** PREFLIGHT_FALLIDO · RCA_VERIFICADA · SIN_MUTACIÓN_REMOTA · CONTADOR_0. No se reintentó la escritura; se descarta el payload.
+
+
+### Incidencia de payload JavaScript · doble join de cadena · 2026-11-01
+
+**Operación:** construcción en memoria de KHORA 7.5.6 / EP 1.0.4, antes del primer `update_file`. **Síntoma literal:** `TypeError: deployLines.join is not a function`. **Impacto:** ejecución abortada durante el armado de `scripts/khora/modules/14-deploy.ps1`; ningún archivo del repositorio KHORA ni referencia de rama se modificó por este intento.
+
+**Causa raíz VERIFICADA:** la variable `deployLines` se asignó con el resultado de `array.join("\n")`, que ya es una cadena; posteriormente se invocó `deployLines.join("\n")` como si siguiera siendo un array. El error de tipo fue detectado por el runtime antes de la fase de escritura.
+
+**Corrección/previsión:** construir el texto una sola vez como `deployText`, validar `typeof deployText === "string"` y asignarlo directamente; reservar `.join()` para arrays. Mantener la construcción completa y sus validaciones antes de iniciar escrituras secuenciales.
+
+**Estados:** PREFLIGHT_FALLIDO · RCA_VERIFICADA · SIN_MUTACIÓN_REMOTA · CONTADOR_0. No se repitió el payload defectuoso.
