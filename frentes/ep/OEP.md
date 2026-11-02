@@ -1543,7 +1543,7 @@ El operador entregó directamente el Prompt Adicional 02 a este hilo EP el 2026-
 
 ---
 
-## 94. Módulo funcional MOD-SCRIPTPWS — PowerShell para Entorno Persistente · v0.3.43 / VCU-EP-v45
+## 94. Módulo funcional MOD-SCRIPTPWS — PowerShell para Entorno Persistente · v0.3.44 / VCU-EP-v46
 
 ### Identidad, subordinación y responsabilidad funcional
 
@@ -1845,6 +1845,17 @@ $ErrorActionPreference='Stop'; $d="$env:LOCALAPPDATA\Programs\nodejs"; $env:Path
 **Causa raíz VERIFICADA:** el helper declarado en el payload se llama `insertAfter`, pero el bloque de modificación de pruebas lo invocó como `insertAfterLine`. La función no existía en ese ámbito JavaScript, por lo que el runtime lanzó `ReferenceError`.
 
 **Corrección/previsión:** utilizar una sola nomenclatura de helper y comprobar, antes de construir los artefactos, que cada función invocada está declarada. Para el parche, sustituir las llamadas erróneas por `insertAfter` y añadir una validación estática de los identificadores de helpers usados.
+
+**Estados:** PREFLIGHT_FALLIDO · RCA_VERIFICADA · SIN_MUTACIÓN_KHORA · CONTADOR_0. Se conserva `C-EP-MOD-SCRIPTPWS-20261101-03`.
+
+
+### Incidencia de preflight · aserción textual de exclusión de bóveda no coincide con regex del test · 2026-11-01
+
+**Operación:** preflight del parche KHORA 7.5.6 / EP 1.0.4, antes de cualquier escritura en el repositorio KHORA. **Síntoma literal:** `Error: PowerShell test source: missing Import-KhoraEnvVault -ExcludeNames`. **Impacto:** la comprobación auxiliar abortó después de construir los tests, pero antes del bucle de escritura; ningún archivo de KHORA se modificó.
+
+**Causa raíz VERIFICADA:** `Test-Arranque.ps1` expresa la llamada esperada como regex `Import-KhoraEnvVault\s+-ExcludeNames\s+...`, de modo que el test tolera espacios variables. La aserción adicional del payload buscó la cadena literal `Import-KhoraEnvVault -ExcludeNames`, que no está presente en esa representación escapada. La comprobación del test sí estaba construida; falló la comprobación auxiliar que validaba su texto fuente.
+
+**Corrección/previsión:** validar el contrato del test mediante el patrón regex fuente exacto (`Import-KhoraEnvVault\\s+-ExcludeNames`) o mediante el marcador semántico `VERCEL_TOKEN.*excluir`, no mediante la representación literal con espacios. Mantener separadas las aserciones del código ejecutable y las aserciones que verifican cómo está escrito el propio test.
 
 **Estados:** PREFLIGHT_FALLIDO · RCA_VERIFICADA · SIN_MUTACIÓN_KHORA · CONTADOR_0. Se conserva `C-EP-MOD-SCRIPTPWS-20261101-03`.
 ### Entregables, aceptación y siguiente paso
