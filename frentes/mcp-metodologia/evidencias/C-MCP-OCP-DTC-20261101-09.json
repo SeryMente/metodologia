@@ -144,6 +144,12 @@
       "commit": "7aef9cdbdc5964ae5c87b5ec44dbd1fd7b3b942d",
       "blob": "cf379a1746ce1f3de346f9a44b12182d4d517759",
       "readback": "EXACT"
+    },
+    "coordination_final_cursor_before_evidence_pointer_pin": {
+      "path": "frentes/mcp-metodologia/entregas/COORDINACION-SPRINT-OCP-MCP-v0.1.md",
+      "commit": "a239d673dc85fccf9cf8f22549b637b512f67d18",
+      "blob": "7619f3531855a6f02a264e3c622b408f1ede21dc",
+      "readback": "EXACT"
     }
   },
   "task_update": {
