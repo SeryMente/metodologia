@@ -1543,7 +1543,7 @@ El operador entregó directamente el Prompt Adicional 02 a este hilo EP el 2026-
 
 ---
 
-## 94. Módulo funcional MOD-SCRIPTPWS — PowerShell para Entorno Persistente · v0.3.37 / VCU-EP-v39
+## 94. Módulo funcional MOD-SCRIPTPWS — PowerShell para Entorno Persistente · v0.3.38 / VCU-EP-v40
 
 ### Identidad, subordinación y responsabilidad funcional
 
@@ -1777,6 +1777,17 @@ $ErrorActionPreference='Stop'; $d="$env:LOCALAPPDATA\Programs\nodejs"; $env:Path
 **Corrección/previsión:** no reutilizar SHA/HEAD obtenidos antes de otra escritura en `main`. Para cada documento, leer su versión inmediatamente antes de mutarlo; en HTTP 409, detener el lote, recuperar el HEAD/blob actual, cotejar el contenido y rearmar el delta sobre esa base. Reintentar solo después de verificar que la precondición cambió y que el texto aún no está incorporado. No forzar, revertir ni sobrescribir cambios ajenos.
 
 **Estados:** CONFLICTO_CONCURRENTE · RCA_VERIFICADA · READ_BACK_POSTERIOR_REALIZADO · CONTADOR_0. Se conserva el ciclo `C-EP-MOD-SCRIPTPWS-20261101-03`; no se abre un ciclo nuevo.
+
+
+### Incidencia de preflight · localizador de SelfTest no incluyó indentación · 2026-11-01
+
+**Operación:** construcción en memoria de la candidata KHORA 7.5.6 / EP 1.0.4, fase previa a toda escritura. **Síntoma literal:** `Error: SelfTest config version guard: expected unique line prefix, found 0`. **Impacto:** el preflight abortó al transformar `scripts/khora/khora.ps1`; ninguna llamada `update_file` fue realizada.
+
+**Causa raíz VERIFICADA:** el localizador de línea buscó el prefijo `if ($configText -notmatch` desde la primera columna, pero la línea fuente tiene cuatro espacios de indentación. La precondición textual no coincidió; el guard de unicidad detuvo el parche como estaba diseñado.
+
+**Corrección/previsión:** los localizadores de líneas deben incluir la indentación real recuperada de la fuente o comparar líneas después de quitar espacios iniciales, conservando la indentación original en el reemplazo. Antes de escribir, verificar todas las anclas requeridas y sus cardinalidades sobre los blobs leídos en ese mismo preflight.
+
+**Estados:** PREFLIGHT_FALLIDO · RCA_VERIFICADA · SIN_MUTACIÓN_KHORA · CONTADOR_0. No se repitió el mismo localizador.
 ### Entregables, aceptación y siguiente paso
 
 **Entregables del módulo:** comandos de ejecución reproducibles y con shell identificada; inventario de entrypoints PowerShell y consumidores; contratos de parámetros/códigos de salida; diagnóstico y logs recuperables; pruebas positivas/negativas; versiones y checksums; registro de fallos y correcciones; instrucciones de reanudación; evidencia de ejecución y lectura de vuelta. Los entregables se almacenan en las fuentes canónicas de sus repositorios, con referencias desde el OEP, no como copias paralelas.
