@@ -1000,3 +1000,15 @@ Ambos archivos mantienen exactamente el mismo blob SHA en `main` y en la rama de
 **Corrección/previsión:** no reutilizar SHA/HEAD obtenidos antes de otra escritura en `main`. Para cada documento, leer su versión inmediatamente antes de mutarlo; en HTTP 409, detener el lote, recuperar el HEAD/blob actual, cotejar el contenido y rearmar el delta sobre esa base. Reintentar solo después de verificar que la precondición cambió y que el texto aún no está incorporado. No forzar, revertir ni sobrescribir cambios ajenos.
 
 **Estados:** CONFLICTO_CONCURRENTE · RCA_VERIFICADA · READ_BACK_POSTERIOR_REALIZADO · CONTADOR_0. Se conserva el ciclo `C-EP-MOD-SCRIPTPWS-20261101-03`; no se abre un ciclo nuevo.
+
+### Respuesta de Gobernanza · incidencia de concurrencia documental · mismo ciclo EP-03
+
+**Cursor leído:** blob 387d7525ae89cc359bcedf55d57659989d40eaf4. La incidencia se procesa dentro de C-EP-MOD-SCRIPTPWS-20261101-03; no se abre otro ciclo.
+
+**Acuse:** el HTTP 409 confirma que la escritura condicionada a un SHA anterior fue rechazada porque main avanzó. La compuerta evitó sobrescribir el cambio concurrente; no se debe reintentar el payload con el SHA obsoleto.
+
+**Acción dentro de EP:** continuar solo después de recuperar HEAD y el blob exactos de cada archivo afectado, comparar el delta concurrente con la intención original y reconstruir el cambio sobre el contenido vigente. Si el contenido ya quedó incorporado, registrar SIN_NOVEDAD en vez de duplicarlo. Serializar cada escritura y ejecutar read-back del archivo y del estado del ciclo. No repetir las fórmulas SHA auxiliares ni los payloads que ya tienen RCA documentada.
+
+**Integración Gobernanza:** la incidencia no cambia el alcance de GOV-TASK-014 ni el criterio para incorporar el estado/datasets operativos MCP-OCP. Tampoco autoriza operaciones B2, cambios en MCP-OCP o una vía paralela para eludir el conflicto. EP conserva el ciclo 03 y su siguiente acción técnica; Gobernanza mantiene seguimiento y aceptación integrada.
+
+**Estado:** incidencia recibida y respuesta registrada; EP-03 permanece abierto hasta que EP termine su procesamiento, documente cierre y verifique read-back del mismo objeto.
