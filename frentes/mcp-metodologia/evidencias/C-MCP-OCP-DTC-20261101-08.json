@@ -190,9 +190,41 @@
     "host_changes": false,
     "pr_or_merge": false,
     "installation": false,
-    "cycle_local_status": "DOCUMENTARY_PLAN_VERIFIED_WITH_EXTERNAL_SECURITY_BLOCKER",
+    "cycle_local_status": "DOCUMENTARY_PLAN_VERIFIED_WITH_EXTERNAL_SECURITY_AND_SECOND_HOST_BLOCKERS",
     "objective": "BLOCKED_PENDING_P012_P013_AND_SECOND_HOST",
     "global_dtc": "EN_CURSO_RECURRENT"
   },
-  "next_action": "Operator confirms physical presence at 015RENTA01 and explicitly reviews/approves or revises Portable Recovery Package v1; then authorized implementation/build/test; second host/profile must be activated for cross-host restore."
+  "next_action": "Operator confirms physical presence at 015RENTA01 and explicitly reviews/approves or revises Portable Recovery Package v1; then authorized implementation/build/test; second host/profile must be activated for cross-host restore.",
+  "documentation_artifacts": {
+    "core": {
+      "path": "frentes/mcp-metodologia/MCP-METODOLOGIA.md",
+      "version": "MCP-OCP-v0.1.18",
+      "commit": "9f9781784562deb47268800ecead544a68296b77",
+      "blob": "9c2cdc01b2f5be3b39ee49ce179084f4fb75b436",
+      "readback": "EXACT"
+    },
+    "chronicle": {
+      "path": "frentes/mcp-metodologia/cronica/C-MCP-OCP-DTC-20261101-08.md",
+      "blob": "8e82da83a2e6c6d99764d9433c45d59fc6ab6fcb",
+      "readback": "EXACT"
+    },
+    "dialogue": {
+      "path": "frentes/mcp-metodologia/conversaciones/C-MCP-OCP-DTC-20261101-08-dialogo.jsonl",
+      "commit": "108283db20a1a06c1e7b4326cc27ccf34407a89e",
+      "blob": "8759a53a5f912dbc6929b8a497ce2ff6ad5267df",
+      "records": 2,
+      "readback": "EXACT"
+    },
+    "readme": {
+      "path": "frentes/mcp-metodologia/README.md",
+      "blob": "776dac2fcc54365d944305e054e36cf0fe50ab18",
+      "readback": "EXACT"
+    },
+    "coordination": {
+      "path": "frentes/mcp-metodologia/entregas/COORDINACION-SPRINT-OCP-MCP-v0.1.md",
+      "cycle08_opening_blob": "24ea19d0a3d9dfec5827df1a5f64b509bbb69414",
+      "cycle08_processing_blob": "0242e603a3cadbe71c128f1d5b5dfd2c09dcc683",
+      "readback": "EXACT"
+    }
+  }
 }
