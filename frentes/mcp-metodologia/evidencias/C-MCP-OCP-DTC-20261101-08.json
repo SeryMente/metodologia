@@ -206,7 +206,8 @@
     "chronicle": {
       "path": "frentes/mcp-metodologia/cronica/C-MCP-OCP-DTC-20261101-08.md",
       "blob": "8e82da83a2e6c6d99764d9433c45d59fc6ab6fcb",
-      "readback": "EXACT"
+      "readback": "EXACT",
+      "commit": "16d8853b08b1a83d80b773cd04d609d1d50290ef"
     },
     "dialogue": {
       "path": "frentes/mcp-metodologia/conversaciones/C-MCP-OCP-DTC-20261101-08-dialogo.jsonl",
@@ -218,13 +219,17 @@
     "readme": {
       "path": "frentes/mcp-metodologia/README.md",
       "blob": "776dac2fcc54365d944305e054e36cf0fe50ab18",
-      "readback": "EXACT"
+      "readback": "EXACT",
+      "commit": "1b9553ee3fd87d3af1f61d0bd1af56e38dd7dce9"
     },
     "coordination": {
       "path": "frentes/mcp-metodologia/entregas/COORDINACION-SPRINT-OCP-MCP-v0.1.md",
       "cycle08_opening_blob": "24ea19d0a3d9dfec5827df1a5f64b509bbb69414",
       "cycle08_processing_blob": "0242e603a3cadbe71c128f1d5b5dfd2c09dcc683",
-      "readback": "EXACT"
+      "readback": "EXACT",
+      "cycle08_closure_commit": "726efba953a3c9b497ef8a179feb76b1768b4a47",
+      "cycle08_closure_blob": "452f1163ca3dfe46623bf7afac4f2f0058dac83b",
+      "cycle08_closure_readback": "EXACT"
     }
   }
 }
