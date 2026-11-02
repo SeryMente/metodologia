@@ -3,7 +3,7 @@
 **Estado:** en_curso · **Responsable de verificación:** Gobernanza, generación 13 (sesión `SES-20261101-GVCD93ADD7`). **Ejecución/evidencia:** cada frente, bajo su propio control.
 
 
-## 📍 REANUDACIÓN PRIORITARIA · DTC entre hilos · corte vigente 2026-11-01, 19:45:41 America/Mexico_City
+## 📍 REANUDACIÓN PRIORITARIA · DTC entre hilos · corte vigente 2026-11-01, 19:47:46 America/Mexico_City
 
 **Esta sección es la tarjeta operativa de recuperación.** Un hilo nuevo debe comenzar aquí y continuar sobre los mismos objetos y cursores; no debe reconstruir el sprint desde memoria conversacional ni crear buzones, tareas, OCP o dashboards paralelos.
 
@@ -27,7 +27,7 @@ La secuencia observable de comunicación es `PUBLICADO → LEÍDO → RESPUESTA_
 | Frente | Fuente y cursor verificados | Estado DTC y acción pendiente |
 |---|---|---|
 | Gobernanza | Control `CONTROL-RESPONSABILIDAD.json` en `main`, blob `960fefdca26c841c3a2d06ebb57a2e836b6f8d73`; titular `SES-20261101-GVCD93ADD7`, generación 13; evento local `C-GOBERNANZA-DTC-REFUERZO-20261101-01`, UUIDv7 local `01a199ee-0631-788e-88e9-287fcc74b02d`. | Ciclo de refuerzo en curso. Folios globales CV/CY/A/B no asignados; FOL1 no activo. Gobernanza conserva integración y no suplanta ejecución ajena. |
-| EP | Objeto DTC `main`, blob `347ef5d037394644a65484121d8739c089b3aa47`; respuesta EP posterior a la primera retroalimentación en el mismo EP-03; commit de la última respuesta de Gobernanza `0c16f20f710424d876de5d9568a94b87831f44aa`. EP-TASK-002 blob `9bedc2a8d8956a912fb01b698569d99cf6e39de4`. | `C-EP-MOD-SCRIPTPWS-20261101-03` permanece `OPEN`; EP reporta `DTC_CYCLE_STATUS=OPEN`, `EP-TASK-002_STATUS=en_curso`. Gobernanza respondió al hallazgo de bóveda; EP debe leer de vuelta esta respuesta antes de cerrar. B2 sin autenticación/upload/restore; presencia en `015RENTA01` reportada por EP, no verificada independientemente aquí; revisión de custodia/credenciales pendiente. |
+| EP | Objeto DTC `main`, blob `1b5ce2c98316757889a5160c0267c15ffd85b198`; respuesta de Gobernanza al último addendum, commit `1eac442432dc893b88840c84ee50a86cb87ff32d`. EP-TASK-002 blob `9bedc2a8d8956a912fb01b698569d99cf6e39de4`. | `C-EP-MOD-SCRIPTPWS-20261101-03` permanece `OPEN`; EP reportó `DTC_CYCLE_STATUS=OPEN`, `EP-TASK-002_STATUS=en_curso`. Nuevo delta de bóveda: working tree Git blob `912bf1a0a5e84b0b5cb93268272bfb1ce27c3b43` vs índice/remoto `9d30e8cdab83a1c54d8dc6cb7d46d1c80cab302f`, 3.656 vs 3.607 bytes; semántica desconocida. Gobernanza respondió; read-back/acuse EP pendiente. B2/credenciales bloqueados. |
 | MCP-OCP | Objeto DTC `main`, blob `dc041dfa626ff649d76a12e067dad5357484c9e1`; rectificación de Gobernanza commit `5af20eafeee1308f1c73d7f14f21cb3c0fbdcb8d`. Núcleo `MCP-OCP-v0.1.18`, generación 4, blob `9c2cdc01b2f5be3b39ee49ce179084f4fb75b436`; control generación 4, blob `ecb27b04aaba04025ef596b3f0ed6c049bc2420d`. | Ciclo local 08: `CLOSED_VERIFIED` para procesamiento documental/read-back; objetivo técnico `BLOCKED_PENDING_OPERATOR_SECURITY_REVIEW_AND_SECOND_HOST`. No B2, restore, build/test nuevo, merge, instalación ni aceptación. La rectificación de Gobernanza es posterior al cierre 08 y espera acuse en el siguiente ciclo, sin reabrir el 08. |
 
 **Estado global DTC:** `EN_CURSO_RECURRENT`. La DTC sigue semiautomática: los cursores y objetos son persistentes, pero no se ha demostrado un disparador autónomo ni vigilancia continua entre ciclos.
@@ -527,3 +527,15 @@ No hay un máximo fijo de correcciones por frente. Se pueden incorporar tantas c
 - P012/P013 conservan las compuertas presenciales de seguridad/arquitectura; esta actualización no las satisface ni las amplía.
 
 **Alcance:** GOV-TASK-011 y el tablero ejecutivo de Gobernanza. No cambia normas del DUG, control EP, control MCP-OCP, control Custodia, credenciales, host, código técnico, bucket, scopes, ni estados de otros frentes. La recepción/aplicación de cada mensaje por el modelo contraparte solo se declara tras su respuesta verificable.
+
+
+### Delta de reanudación · addendum de integridad EP y respuesta Gobernanza · 2026-11-01, 19:47:46 America/Mexico_City
+
+**Fuente/cursor EP:** DTC `main`, blob `1b5ce2c98316757889a5160c0267c15ffd85b198`; respuesta de Gobernanza commit `1eac442432dc893b88840c84ee50a86cb87ff32d`, blob/read-back `1b5ce2c98316757889a5160c0267c15ffd85b198`.
+
+**Observación:** EP reportó diferencia entre working tree Git blob `912bf1a0a5e84b0b5cb93268272bfb1ce27c3b43` y el índice/rama remota `9d30e8cdab83a1c54d8dc6cb7d46d1c80cab302f`; 3.656 vs 3.607 bytes. Contenido/causa no examinados: `SEMANTIC_DIFF_UNKNOWN`. No se afirma exposición en claro ni manipulación maliciosa.
+
+**Respuesta/estado:** Gobernanza respondió en el mismo EP-03 con instrucciones de no mutación, preservación no destructiva y bloqueo de nuevas credenciales. EP-03 `OPEN`; EP-TASK-002 `en_curso`; read-back y acuse EP de esta última respuesta pendientes. No se ejecutan B2, lectura de secretos, checkout/restore/reset/clean/stash/add/commit/push ni modificación de la bóveda.
+
+**Impacto:** se actualiza la reanudación y el estado integrado porque el delta afecta integridad/custodia del conjunto de credenciales; no altera el alcance ni criterio técnico de persistencia B2. Control Custodia gen.6 conserva su autoridad; Gobernanza no lo modifica.
+
