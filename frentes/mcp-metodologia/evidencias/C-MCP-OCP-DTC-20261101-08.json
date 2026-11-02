@@ -234,5 +234,27 @@
       "latest_blob": "9666024ab0bfbb6f9eac2f8fd8a32479b3076da2",
       "latest_readback": "EXACT"
     }
+  },
+  "status_separation": {
+    "DTC_CYCLE_STATUS": "CLOSED_VERIFIED",
+    "DTC_CYCLE_SCOPE": "Cycle 08 receipt, trilateral reconciliation, backlog update, portable-recovery proposal, documentation, and exact read-backs are complete.",
+    "MCP_TECHNICAL_STATUS": {
+      "CANDIDATE": "HISTORICAL_CANDIDATE_PINNED_TO_CORE_v0.1.16_NOT_FRESH_FOR_v0.1.18",
+      "BACKUP_LOCAL_VERIFICADO": "PASS_IN_HISTORICAL_CANDIDATE_FIXTURE_ONLY; REAL_HOST_BACKUP_NOT_VERIFIED",
+      "PERSISTENCIA_REMOTA_B2_VERIFICADA": "NOT_VERIFIED_EP_OWNED",
+      "RESTORE_CROSS_HOST_VERIFICADO": "NOT_VERIFIED_PENDING_P012_P013_AND_SECOND_HOST",
+      "INTEGRADO_EN_MAIN": "NO",
+      "INSTALADO_EN_EP": "NO",
+      "ACEPTADO_POR_OPERADOR": "NO"
+    },
+    "longitudinal_objective": "BLOCKED_PENDING_OPERATOR_SECURITY_REVIEW_AND_SECOND_HOST"
+  },
+  "post_closure_governance_message": {
+    "event_id": "C-GOBERNANZA-DTC-REFUERZO-20261101-01",
+    "timestamp": "2026-11-01T19:44:35-06:00",
+    "source_coordination_blob": "dc041dfa626ff649d76a12e067dad5357484c9e1",
+    "source_commit": "0c16f20f710424d876de5d9568a94b87831f44aa",
+    "status": "PUBLISHED_READBACK_VERIFIED_ACK_DEFERRED_TO_NEXT_CYCLE_BY_GOVERNANCE",
+    "effect": "Confirms cycle 08 CLOSED_VERIFIED and corrects the prior Governance reading. It explicitly says the model's acknowledgement is pending in its next cycle; cycle 08 is not reopened or renumbered."
   }
 }
