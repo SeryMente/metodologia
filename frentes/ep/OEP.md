@@ -1543,7 +1543,7 @@ El operador entregó directamente el Prompt Adicional 02 a este hilo EP el 2026-
 
 ---
 
-## 94. Módulo funcional MOD-SCRIPTPWS — PowerShell para Entorno Persistente · v0.3.38 / VCU-EP-v40
+## 94. Módulo funcional MOD-SCRIPTPWS — PowerShell para Entorno Persistente · v0.3.39 / VCU-EP-v41
 
 ### Identidad, subordinación y responsabilidad funcional
 
@@ -1788,6 +1788,19 @@ $ErrorActionPreference='Stop'; $d="$env:LOCALAPPDATA\Programs\nodejs"; $env:Path
 **Corrección/previsión:** los localizadores de líneas deben incluir la indentación real recuperada de la fuente o comparar líneas después de quitar espacios iniciales, conservando la indentación original en el reemplazo. Antes de escribir, verificar todas las anclas requeridas y sus cardinalidades sobre los blobs leídos en ese mismo preflight.
 
 **Estados:** PREFLIGHT_FALLIDO · RCA_VERIFICADA · SIN_MUTACIÓN_KHORA · CONTADOR_0. No se repitió el mismo localizador.
+
+
+### Incidencia de preflight SHA-256 · rotación Sigma0 mal transcrita · 2026-11-01
+
+**Operación:** preflight del payload KHORA 7.5.6 / EP 1.0.4 antes de cualquier escritura. **Síntoma literal:** `Error: SHA256 standard-vector preflight failed`. **Impacto:** el vector SHA-256 rechazó el helper y abortó la construcción antes de las llamadas `update_file`; no hubo mutación en KHORA.
+
+**Causa raíz VERIFICADA:** al trasladar de nuevo la rutina SHA-256 al payload amplio, el término Sigma0 se escribió con desplazamiento lógico `a >>> 22` en vez de rotación a la derecha `ROTR(a,22)`. Las constantes generadas eran 64/64; el error estaba en la fórmula de compresión, por lo que los vectores estándar detectaron la discrepancia.
+
+**Fallo de prevención:** la versión anterior del helper había pasado los vectores, pero se volvió a transcribir manualmente en vez de reutilizarse como unidad validada. La generación automática de constantes no evita errores al copiar las funciones.
+
+**Corrección/previsión obligatoria:** dejar de implementar SHA-256 manualmente dentro de los payloads. Usar una API criptográfica nativa disponible y verificarla con SHA256(abc), SHA256(vacío), UTF-8 y hashes del manifiesto; si el entorno no ofrece la API, usar un único helper congelado y cotejado por hash, sin editar su fórmula.
+
+**Estados:** PREFLIGHT_FALLIDO · RCA_VERIFICADA · SIN_MUTACIÓN_KHORA · CONTADOR_0.
 ### Entregables, aceptación y siguiente paso
 
 **Entregables del módulo:** comandos de ejecución reproducibles y con shell identificada; inventario de entrypoints PowerShell y consumidores; contratos de parámetros/códigos de salida; diagnóstico y logs recuperables; pruebas positivas/negativas; versiones y checksums; registro de fallos y correcciones; instrucciones de reanudación; evidencia de ejecución y lectura de vuelta. Los entregables se almacenan en las fuentes canónicas de sus repositorios, con referencias desde el OEP, no como copias paralelas.
