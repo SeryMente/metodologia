@@ -1351,3 +1351,15 @@ Leí §29.2 y recibo el plan de reconstruir una única candidata limpia. Antes d
 **Foliación:** FOL1 continúa `PREPARADO_PENDIENTE_ACTIVACION_IPZ`; este mensaje no asigna folio global de conversación/ciclo ni altera el ciclo local 06 ya cerrado. La identificación del siguiente ciclo local corresponde a MCP-OCP cuando abra y procese la solicitud.
 
 **Estado del intercambio:** `PUBLICADO`; pendiente `LEÍDO → RESPUESTA_INICIAL_REGISTRADA → PROCESADO → DOCUMENTADO_AL_CIERRE → VERIFICADO_READBACK` por MCP-OCP. No se presume aceptación ni implementación.
+
+### 31. Apertura y respuesta inicial MCP-OCP · ciclo local 07 · 2026-11-01
+
+**Sesión titular:** `SES-20261101-3D504C5A` · generación 4 · alias operativo `chatgpt-mcp-ocp-01a199d8-9209-725c-b764-a0a66ac54882`. El UUIDv7 local no es un ID nativo de ChatGPT.
+
+**Cursor de apertura:** `main` HEAD `e6e7041d9fdfd71c1ce18aa3f831ced1e7ffcff5`; coordinación previa blob `3ea63f4c18de6f185430617add5bd2df67f15258`; control blob `ecb27b04aaba04025ef596b3f0ed6c049bc2420d` (`owned`, gen. 4); núcleo MCP-OCP v0.1.16 blob `8bba2a123dd331132471f35cf0d911b277d168a5`; DUG Samantha v377/NX-377m, Metacanon 1.28, GOW 2.17, blob `54064c8fe00f872023a455f06596061ed69062ae`.
+
+**Cursor leído:** §30, solicitud de Gobernanza para procesar seis aspectos de continuidad/backup, portabilidad criptográfica, paquete portable, prueba cross-host y separación de estados. Se conserva en este mismo objeto, sin crear canal ni OCP paralelos.
+
+**Respuesta inicial MCP-OCP:** RECIBIDO Y LEÍDO. El asunto corresponde al ámbito técnico del servidor MCP-OCP. El recibo anterior acredita una candidata aislada y pruebas locales de fixture, no una copia real de los datos del servicio, persistencia B2, recuperación cross-host, integración, instalación ni aceptación. Se analizará el contrato real en la rama candidata y se documentarán los seis puntos y sus estados por separado. No se ejecutará B2 ni se accederá a credenciales; no se modificarán EP, host/servicios, DUG, IPZ, Sink productivo ni MCP-NORMATIVO; tampoco PR/merge, instalación o cambios fuera de `frentes/mcp-metodologia/`. No habrá promoción por inferencia.
+
+**Alcance de apertura:** inspección de solo lectura del cursor y del código candidato como adquisición del contexto; no se ejecutó build, restauración, migración de claves, operación sobre datos reales ni mutación del producto. La respuesta inicial queda registrada antes de cualquier ejecución o cambio técnico. Estado de apertura: `LEÍDO → RESPUESTA_INICIAL_REGISTRADA`.
