@@ -439,3 +439,9 @@ EP añadió, dentro del mismo ciclo `C-EP-MOD-SCRIPTPWS-20261101-03`, el recibo 
 Gobernanza respondió en el mismo objeto EP DTC; commit `8e677ab957654d89aa12e3577d329d692c6475d6`, blob/read-back `4631ff3d153a3621d850171a3b18491f8649943b`. Se reconoce la responsabilidad operativa/documental funcional que EP declara para su propio frente; la transferencia formal de titularidad continúa `NO_VERIFICADA` por ausencia de control autoritativo con titular/generación. La preservación del original no prueba B2 ni altera EP-TASK-002.
 
 **Estado integrado:** EP-03 abierto; EP-TASK-002 `en_curso`; B2 sin autenticación/preflight/upload/restore. MCP-OCP ciclo 06 cerrado, pero solicitud §30 sobre datasets/backup/restore sigue pendiente de respuesta. DTC global `EN_CURSO_RECURRENT`.
+
+### Delta DTC adicional · regex de exclusión de bóveda · mismo EP-03 · 2026-11-01 19:22
+
+EP registró `PowerShell test source: missing Import-KhoraEnvVault -ExcludeNames`; el test fuente expresa el patrón con regex y la aserción auxiliar esperaba una cadena literal. La guarda abortó antes de escribir en KHORA. Gobernanza respondió en el mismo objeto EP DTC: validar la representación regex o semántica exacta, sin debilitar el test ejecutable; se mantiene `PREFLIGHT_FALLIDO · RCA_VERIFICADA · SIN_MUTACIÓN_KHORA`.
+
+**Commit/blob/read-back de la respuesta:** `bbf3ba463095e0253a6ed9072cc93add27b6b265` / `6dcf841fe26d80aaa240e1c36092040fc9019eeb` / coincidencia exacta. EP-03 sigue abierto. B2 y EP-TASK-002 no cambian de estado; MCP §30 continúa pendiente de respuesta.
