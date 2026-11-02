@@ -171,3 +171,28 @@ EP registró una nueva respuesta inicial dentro del ciclo existente `C-EP-MOD-SC
 - **Estado de esta tarea:** `EN_CURSO`. Persistencia documental Git y análisis de propuesta no demuestran B2 remoto, backup real, restore cross-host, integración, instalación ni aceptación. No se cambia ningún criterio de aceptación técnico.
 
 **Siguiente paso material:** mantener EP-TASK-002 en pausa para operaciones B2/credenciales hasta resolver las autorizaciones y custodia correspondientes; continuar trabajo documental permitido. MCP-OCP conserva la propuesta para revisión P012/P013 y debe esperar un segundo host autorizado para la prueba cross-host. Gobernanza actualizará esta tarea únicamente ante nuevos deltas verificables; no repetirá las mismas solicitudes pendientes.
+
+
+## Delta integrado EP · divergencia del working tree de bóveda · 2026-11-01, 19:47:31 America/Mexico_City
+
+**Cursor EP de entrada:** `frentes/ep/entregas/COORDINACION-GOBERNANZA-EP-v0.1.md`, `main`, blob `1b5ce2c98316757889a5160c0267c15ffd85b198`. Commit de la respuesta de Gobernanza al delta: `1eac442432dc893b88840c84ee50a86cb87ff32d`; blob/read-back `1b5ce2c98316757889a5160c0267c15ffd85b198`.
+
+### Evidencia reportada por EP
+
+- `secrets/env-vault.enc.json` figura en el índice Git local con object ID `9d30e8cdab83a1c54d8dc6cb7d46d1c80cab302f`, coincidente con el blob reportado en la rama remota `feat/khora-mcp-module-jules-20261101`.
+- El working tree actual produce Git blob `912bf1a0a5e84b0b5cb93268272bfb1ce27c3b43`, distinto del índice y la versión remota.
+- Tamaños reportados: working tree 3.656 bytes; remoto 3.607 bytes; diferencia de 49 bytes.
+- EP no inspeccionó valores/campos, no determinó el contenido del cambio y no estableció su causa. Estado semántico: `NO_VERIFICADO`.
+
+### Clasificación y controles
+
+`LOCAL_WORKTREE_MODIFIED_UNCOMMITTED` · `INDEX_REMOTE_DIVERGENCE` · `SEMANTIC_DIFF_UNKNOWN`.
+
+El dato demuestra divergencia entre working tree, índice y rama remota; no demuestra alteración maliciosa, exposición en claro, compromiso criptográfico ni cuál versión es correcta. El delta de tamaño no se interpreta como contenido.
+
+Gobernanza respondió en el mismo EP-03 y estableció preservación no destructiva: no `checkout/restore/reset/clean/stash/add/commit/push`, sincronización, copia, movimiento, descifrado, exportación, reescritura o eliminación sin autorización competente; mantener `B2_CREDENTIAL_HANDLING=BLOCKED`. La preservación byte-exacta fuera de Git requiere procedimiento autorizado por Custodia y operador. La autorización del control Custodia gen. 6 no cubre cambios de credenciales ni seguridad efectiva del bucket.
+
+**Estado actual integrado:** EP-03 `OPEN`; EP-TASK-002 `en_curso`; respuesta más reciente de Gobernanza `PUBLICADA`, read-back/acuse EP pendiente. `CREDENTIAL_STORAGE_AUTHORIZATION=PENDING`; `B2_ACCOUNT_AUTHORIZATION=NOT_STARTED`; `REMOTE_OPERATION_AUTHORIZATION=NOT_GRANTED`. No hay operación B2, lectura de secretos, modificación de bóveda/ACL/historial, upload o restore.
+
+**Criterio de cierre:** el ciclo EP solo cambia a `CLOSED_VERIFIED` cuando EP lea de vuelta la última respuesta y procese cualquier mensaje posterior, documentando el estado del ciclo por separado de EP-TASK-002. Esta actualización no cierra el ciclo ni la tarea técnica.
+
