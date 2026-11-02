@@ -1,8 +1,28 @@
 # Núcleo operativo · Gobernanza
 
+## Evento vigente · C-GOBERNANZA-RETOMA-09 · 2026-11-01
+
+**Responsabilidad:** control generación 13, transferencia verificada por read-back. Titular Gobernanza 1: SES-20261101-GVCD93ADD7; alias chatgpt-C-GOBERNANZA-1-20261101-1717-SES-20261101-GVCD93ADD7; UUIDv7 local 01a199c3-a374-7e1f-8191-1ff6cd93add7. Titular anterior SES-20261101-GV8A19904 supersedido. Corresponsable asiento 2 SES-20261101-GV8E89D1FF (gen12) preservada. Dos responsables activos, máximo dos.
+
+**Control:** commit de transferencia 57ca88a8f19908d1dc110428249116403a85ef61; commit de confirmación 404c49cede3a19afcc0df28a5a58e2f404dbf1fb; blob final 960fefdca26c841c3a2d06ebb57a2e836b6f8d73. Folio de sesión local, sin CV/CY/A/B globales.
+
+**Original solicitado:** ChatGPT-GOBERNANZA-1-20261101-1717.md, 93.402 bytes, SHA-256 local verificado 703542FC7CB57785AA352A2020D940037C1C47CA2C2C37C13B26B9BA7F71D8C8. El dispositivo PC-8 pasó a Offline antes de recuperar el contenido íntegro para Git. Persistencia del export pendiente; no está en originales ni en el manifiesto documental.
+
+**DTC:** EP-03 recibió respuesta/read-back de Gobernanza en el mismo objeto, pero su cierre final sigue pendiente; EP-TASK-002 continúa en_curso. MCP-OCP ciclo local 06 quedó CUMPLE_VERIFICADO en §29.7; nueva solicitud §30 sobre persistencia de datasets/estado operativo publicada/read-back en blob 3ea63f4c18de6f185430617add5bd2df67f15258, pendiente de recepción/respuesta de MCP. DTC global EN_CURSO_RECURRENT.
+
+**GOV-TASK-014:** ficha ampliada y leída de vuelta; blob a4cb7e053392695b61c9c4265d0e6967f48fea42. Se separan documentos versionados, datasets operativos MCP-OCP, backup local, persistencia remota B2 y restore cross-host. No se declara operación B2 ejecutada.
+
+**DUG:** Samantha v377 · NX-377m · Metacanon 1.28 · GOW 2.17 · 43 principios · 22 anexos; blob 54064c8fe00f872023a455f06596061ed69062ae. No se modificaron DUG/GOW/ART-025/ART-027 ni IPZ nativa. FOL1 preparado/inactivo; MCP-NORMATIVO desactivado.
+
+**Límites:** no se modificaron controles, código ni hosts de EP/MCP-OCP; la candidata MCP no está integrada, instalada ni aceptada; no se ejecutó B2 ni restauración remota.
+
+**Crónica y evidencia:** C-GOBERNANZA-RETOMA-09.
+
+---
+
 ## Estado rector vigente · C-GOBERNANZA-VECTOR-SEMANTICO-01 · 2026-10-31
 
-## Evento vigente · C-GOBERNANZA-ASIENTO-02-RETOMA-20261101-01 · 2026-11-01
+## Evento histórico supersedido · C-GOBERNANZA-ASIENTO-02-RETOMA-20261101-01 · 2026-11-01
 
 **Responsabilidad común:** control generación 12, `TRANSFERENCIA_VERIFICADA_READBACK`. Titular preservado: `SES-20261101-GV8A19904`, alias `chatgpt-C-GOBERNANZA-RETOMA-08-SES-20261101-GV8A19904`, UUIDv7 local `01a19904-cac5-7351-94eb-ce3ab3837be5`, generación 11. Asiento 2 relevado: anterior `SES-20261101-ED4A2B32` retirado del conjunto activo; nuevo corresponsable `SES-20261101-GV8E89D1FF`, alias `chatgpt-C-GOBERNANZA-ASIENTO-02-RETOMA-20261101-01-SES-20261101-GV8E89D1FF`, UUIDv7 local `01a19963-08ed-703e-8134-9df78e89d1ff`, generación 12. Dos responsables activos; máximo dos. Read-back del control verificado desde blob `bb1175ae18e73d5fbd65208466b2426d0bafe2cf`; commit de transferencia `ad9c68e755112ff46115c6228602ab2d97d9d9c2`. El ID nativo de esta conversación no fue expuesto por la plataforma.
 
