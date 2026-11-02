@@ -98,3 +98,27 @@ La comunicación con MCP-OCP permanece en su objeto existente `COORDINACION-SPRI
 **Cierre:** solo cuando la evidencia de EP satisfaga los criterios anteriores, Gobernanza haga read-back de las fuentes y el operador acepte el resultado integrado.
 
 **Vigencia:** tarea provisional del sprint actual; no canoniza un estándar general ni modifica el DUG.
+
+## Actualización ejecutiva de estado DTC · reinstanciación EP y solicitud MCP-OCP · 2026-11-01 19:18 America/Mexico_City
+
+Esta actualización supersede solo la fotografía operativa previa de PC-8; no elimina el registro histórico ni cambia el alcance técnico de EP-TASK-002.
+
+### EP · fuente actual
+
+- EP-TASK-002 continúa `en_curso`; §34 fue releída desde `main`, blob `a45103468c109d3bbc0503ec3f77c1b29ac84aee` (commit `7a79ac7f14b346646f84349935e0da1d59f88757`). El entorno operativo nuevo es RDC `015RENTA01`; PC-8/PID histórico `7232` no se reutiliza.
+- B2 CLI v5.0.2 está instalada localmente y su SHA-256 coincide con `543aa2e36d3cbe06cf2c3e59287ce58b0a7d1507af87f147ff2f7d9406879662`. Esto acredita la herramienta local, no una sesión de cuenta.
+- Estado explícito: `PHYSICAL_PRESENCE_GATE_PENDING` · `AUTHORIZATION_NOT_STARTED` · `B2_PREFLIGHT_NOT_RUN` · `E2E_NOT_STARTED` · `UPLOAD_NOT_EXECUTED` · `RESTORE_NOT_EXECUTED`. Cuenta, bucket, key, `namePrefix` y capacidades efectivas siguen sin verificación.
+- EP añadió a OEP §94 y al mismo DTC EP-03 nuevas incidencias de preflight/recurrencia. Gobernanza respondió a cinco incidencias dentro del mismo objeto; commit `1f934f1254620cc6e60339afa812c53469241819`, blob/read-back `312c3e7a328e726c88b43c38e37e99d67125cef4`. EP-03 sigue abierto a la espera de corrección, procesamiento y cierre/read-back del propio frente.
+- La persistencia de continuidad MCP-OCP permanece dentro de EP-TASK-002; no queda suspendida por el subciclo MOD-SCRIPTPWS.
+
+### MCP-OCP · dependencia de datos operativos
+
+- Ciclo local 06: `CUMPLE_VERIFICADO` y cerrado; no equivale a integración, instalación ni aceptación del producto.
+- Solicitud DTC §30 del objeto MCP, blob `3ea63f4c18de6f185430617add5bd2df67f15258`: `PUBLICADO`, pendiente de respuesta del titular MCP-OCP. Requiere inventario de datasets/estado operativo, captura consistente, manifiesto portable, estrategia autorizada de recuperación de clave, prueba aislada cross-host y estados independientes.
+- No abrir otra solicitud mientras §30 permanezca pendiente. MCP-OCP conserva la autoridad sobre sus datasets, backup nativo, esquema, clave y aceptación funcional.
+
+### Estado integrado y próxima condición
+
+**GOV-TASK-014:** `EN_CURSO`. **B2 remoto:** `NO_VERIFICADO`. **Backup local MCP-OCP:** candidato reportado/cotejado en código, no instalado ni aceptado. **Restore cross-host:** `NO_VERIFICADO`. **DTC global:** `EN_CURSO_RECURRENT`.
+
+**Siguiente hito:** recibir y procesar la respuesta MCP-OCP a §30; en paralelo EP continúa EP-TASK-002 bajo sus compuertas. Tras los acuses de datasets y el preflight autorizado de EP, definir snapshot/manifiesto, namespaces y prueba B2 no destructiva; solo declarar recuperable cada plano después de su propia lectura de vuelta y restauración funcional. Ninguna operación B2 se declara ejecutada.
