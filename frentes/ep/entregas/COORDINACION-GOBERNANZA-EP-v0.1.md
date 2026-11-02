@@ -894,3 +894,14 @@ Ambos archivos mantienen exactamente el mismo blob SHA en `main` y en la rama de
 **Corrección/previsión:** reconstruir el helper exclusivamente desde la versión cuyo vector `abc`, vector vacío, UTF-8 y cotejo con el manifiesto anterior ya pasaron; validar explícitamente `K.length === 64`, los vectores estándar y el SHA de archivos existentes antes de construir cambios o llamar herramientas de escritura. Mantener la fase completa de preflight separada de la fase de mutación.
 
 **Estados:** PREFLIGHT_FALLIDO · RCA_VERIFICADA · SIN_MUTACIÓN_REMOTA · CONTADOR_0. El payload con tabla incompleta se descarta; no se repite.
+
+
+### Incidencia de preflight de parche · Test-Arranque.ps1 · ancla literal no encontrada · 2026-11-01
+
+**Operación:** construcción en memoria del parche de KHORA 7.5.6 / EP 1.0.4, fase de preflight previa a cualquier llamada de escritura. **Síntoma literal:** `Error: Test-Arranque prepare-only assertions expected 1 occurrence; found 0`. **Impacto:** la transformación de `Test-Arranque.ps1` abortó antes del bucle `update_file`; ninguna ruta de KHORA ni ref de la rama se modificó por este intento.
+
+**Causa raíz VERIFICADA:** el parche agrupó dos aserciones heredadas de publicación como un bloque exacto y asumió que su texto/mensajes coincidían literalmente con el archivo remoto. La fuente real no satisfizo esa precondición; el reemplazador de ocurrencia única rechazó correctamente la mutación. El error fue de inspección/contrato textual del parche, no del PowerShell ni de la prueba ejecutada.
+
+**Corrección/previsión:** inspeccionar y recuperar las líneas exactas del archivo remoto, reemplazar cada aserción mediante ancla individual verificada o reconstrucción explícita del archivo, comprobar unicidad de cada ancla y ejecutar un preflight de todas las transformaciones antes de la primera escritura. No usar un bloque combinado supuesto. El archivo remoto se vuelve a leer y se coteja SHA/blob antes de construir el parche.
+
+**Estados:** PREFLIGHT_FALLIDO · RCA_VERIFICADA · SIN_MUTACIÓN_REMOTA · CONTADOR_0. El payload completo se descarta; no se repite con el mismo bloque supuesto.
