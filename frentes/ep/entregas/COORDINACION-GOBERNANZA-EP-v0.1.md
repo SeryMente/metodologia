@@ -1076,3 +1076,8 @@ Ambos archivos mantienen exactamente el mismo blob SHA en `main` y en la rama de
 **Estados verificados al cierre de este checkpoint:** `NEW_RDC_CONNECTED` · `LOCAL_ENVIRONMENT_RESET_DECLARED` · `B2_CLI_INSTALLED_HASH_VERIFIED` · `LOCAL_HELP_CONFORMANCE_PASS` · `AUTHORIZATION_NOT_STARTED` · `B2_PREFLIGHT_NOT_RUN` · `E2E_NOT_STARTED` · `UPLOAD_NOT_EXECUTED` · `RESTORE_NOT_EXECUTED`.
 
 **Continuidad:** se conserva `C-EP-MOD-SCRIPTPWS-20261101-03`, abierto. No se crea ciclo, solicitud ni canal paralelo. El procedimiento B2 one-shot de esta entrega y EP-TASK-002 permanece sujeto a su preflight exacto, sin reintentos ni operaciones de borrado.
+
+
+### Read-back cruzado de EP-TASK-002 §34 · mismo ciclo EP-03
+
+EP-TASK-002 §34 quedó sincronizada con el nuevo entorno y su estado operativo fue leído de vuelta desde `main`. Commit: `7a79ac7f14b346646f84349935e0da1d59f88757`; blob: `a45103468c109d3bbc0503ec3f77c1b29ac84aee`. La sección §33 conserva su contenido histórico, pero el proceso `7232` figura como `SUPERSEDED_BY_§34`; el único estado operativo vigente es el del checkpoint de reinstanciación §34. Esta sincronización no modifica el alcance, no activa autorización B2 y no cierra EP-03.
