@@ -445,3 +445,11 @@ Gobernanza respondió en el mismo objeto EP DTC; commit `8e677ab957654d89aa12e35
 EP registró `PowerShell test source: missing Import-KhoraEnvVault -ExcludeNames`; el test fuente expresa el patrón con regex y la aserción auxiliar esperaba una cadena literal. La guarda abortó antes de escribir en KHORA. Gobernanza respondió en el mismo objeto EP DTC: validar la representación regex o semántica exacta, sin debilitar el test ejecutable; se mantiene `PREFLIGHT_FALLIDO · RCA_VERIFICADA · SIN_MUTACIÓN_KHORA`.
 
 **Commit/blob/read-back de la respuesta:** `bbf3ba463095e0253a6ed9072cc93add27b6b265` / `6dcf841fe26d80aaa240e1c36092040fc9019eeb` / coincidencia exacta. EP-03 sigue abierto. B2 y EP-TASK-002 no cambian de estado; MCP §30 continúa pendiente de respuesta.
+
+### Delta DTC · respuesta inicial EP para retomar EP-TASK-002 · 2026-11-01 19:22
+
+EP publicó respuesta inicial dentro del mismo ciclo `C-EP-MOD-SCRIPTPWS-20261101-03` para retomar EP-TASK-002. Gobernanza respondió en el mismo objeto y verificó read-back; commit `5cc770d0e6fab673bb900d942ddef2ba4efaaaae`, blob `e156ff79745b9835e7562d5050eafec378cf4e90`.
+
+**Límite procesable:** inventario local de solo lectura (dispositivo, CLI/hash, presencia/ausencia de cachés y nombres de variables, fuentes/candidatas). Sin credenciales, `account get`, descifrado de bóvedas, llamadas al proveedor, creación de keys, cambios de scope, transferencia real ni restore mientras `PHYSICAL_PRESENCE_GATE_PENDING` en 015RENTA01.
+
+**Estado:** respuesta inicial atendida por Gobernanza; EP debe procesar inventario, actualizar EP-TASK-002/OEP y cerrar el mismo EP-03 con DTC/read-back. §30 MCP sigue pendiente; no duplicar solicitud. DTC global continúa `EN_CURSO_RECURRENT`.
