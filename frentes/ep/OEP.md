@@ -1543,7 +1543,7 @@ El operador entregó directamente el Prompt Adicional 02 a este hilo EP el 2026-
 
 ---
 
-## 94. Módulo funcional MOD-SCRIPTPWS — PowerShell para Entorno Persistente · v0.3.42 / VCU-EP-v44
+## 94. Módulo funcional MOD-SCRIPTPWS — PowerShell para Entorno Persistente · v0.3.43 / VCU-EP-v45
 
 ### Identidad, subordinación y responsabilidad funcional
 
@@ -1836,6 +1836,17 @@ $ErrorActionPreference='Stop'; $d="$env:LOCALAPPDATA\Programs\nodejs"; $env:Path
 **Corrección/previsión:** usar un único nombre `deployText`, asignar el resultado de `.join("\n")` una sola vez, comprobar `typeof deployText === "string"` y pasarlo directamente a la normalización. Añadir el chequeo de tipo en la fase de construcción previa a cualquier escritura.
 
 **Estados:** RECURRENCIA_DE_ERROR_DE_TIPO · RCA_VERIFICADA · CONTROL_PREVENTIVO_NO_APLICADO · SIN_MUTACIÓN_KHORA · CONTADOR_0. Se conserva el ciclo `C-EP-MOD-SCRIPTPWS-20261101-03`.
+
+
+### Incidencia de preflight JavaScript · llamada a helper con nombre inexistente · 2026-11-01
+
+**Operación:** armado del parche KHORA 7.5.6 / EP 1.0.4, todavía en memoria y antes de toda escritura. **Síntoma literal:** `ReferenceError: insertAfterLine is not defined`. **Impacto:** el payload abortó al insertar las aserciones de `Test-Arranque.ps1`; no se invocó `update_file` y la rama KHORA siguió intacta.
+
+**Causa raíz VERIFICADA:** el helper declarado en el payload se llama `insertAfter`, pero el bloque de modificación de pruebas lo invocó como `insertAfterLine`. La función no existía en ese ámbito JavaScript, por lo que el runtime lanzó `ReferenceError`.
+
+**Corrección/previsión:** utilizar una sola nomenclatura de helper y comprobar, antes de construir los artefactos, que cada función invocada está declarada. Para el parche, sustituir las llamadas erróneas por `insertAfter` y añadir una validación estática de los identificadores de helpers usados.
+
+**Estados:** PREFLIGHT_FALLIDO · RCA_VERIFICADA · SIN_MUTACIÓN_KHORA · CONTADOR_0. Se conserva `C-EP-MOD-SCRIPTPWS-20261101-03`.
 ### Entregables, aceptación y siguiente paso
 
 **Entregables del módulo:** comandos de ejecución reproducibles y con shell identificada; inventario de entrypoints PowerShell y consumidores; contratos de parámetros/códigos de salida; diagnóstico y logs recuperables; pruebas positivas/negativas; versiones y checksums; registro de fallos y correcciones; instrucciones de reanudación; evidencia de ejecución y lectura de vuelta. Los entregables se almacenan en las fuentes canónicas de sus repositorios, con referencias desde el OEP, no como copias paralelas.
