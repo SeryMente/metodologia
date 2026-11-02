@@ -1081,3 +1081,14 @@ Ambos archivos mantienen exactamente el mismo blob SHA en `main` y en la rama de
 ### Read-back cruzado de EP-TASK-002 §34 · mismo ciclo EP-03
 
 EP-TASK-002 §34 quedó sincronizada con el nuevo entorno y su estado operativo fue leído de vuelta desde `main`. Commit: `7a79ac7f14b346646f84349935e0da1d59f88757`; blob: `a45103468c109d3bbc0503ec3f77c1b29ac84aee`. La sección §33 conserva su contenido histórico, pero el proceso `7232` figura como `SUPERSEDED_BY_§34`; el único estado operativo vigente es el del checkpoint de reinstanciación §34. Esta sincronización no modifica el alcance, no activa autorización B2 y no cierra EP-03.
+
+
+### Incidencia de preflight · aserción de read-tree no reconoce git -C · 2026-11-01
+
+**Operación:** verificación estática del parche KHORA 7.5.6 / EP 1.0.4, todavía antes de toda escritura. **Síntoma literal:** `Error: Prepare-only runtime requirements: missing git read-tree`. **Impacto:** el preflight abortó al validar la inicialización Git no destructiva; ninguna llamada `update_file` fue ejecutada y KHORA no recibió cambios.
+
+**Causa raíz VERIFICADA:** el código implementa la operación como `git -C $REPO_DIR read-tree $sha`, pero la aserción buscó la subcadena literal contigua `git read-tree`. El modificador válido `-C $REPO_DIR` interrumpe esa secuencia de caracteres; la comprobación no reconoció la operación existente.
+
+**Corrección/previsión:** validar la orden por su token operativo `read-tree $sha` o con un patrón que admita los argumentos intermedios de `git -C`. Mantener la comprobación complementaria de `update-ref refs/heads/main`; no debilitar la exigencia funcional de indexación autenticada.
+
+**Estados:** PREFLIGHT_FALLIDO · RCA_VERIFICADA · SIN_MUTACIÓN_KHORA · CONTADOR_0. Se conserva `C-EP-MOD-SCRIPTPWS-20261101-03`.
