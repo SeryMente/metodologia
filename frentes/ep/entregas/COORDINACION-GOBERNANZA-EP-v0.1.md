@@ -1034,3 +1034,15 @@ Ambos archivos mantienen exactamente el mismo blob SHA en `main` y en la rama de
 **Criterio de continuidad:** mantener bloqueado el parche hasta recuperar la línea fuente exacta, verificar anclas/cardinalidad sobre el blob vigente y repetir el preflight completo sin reutilizar la plantilla fallida. No reintentar el localizador sin corrección. El ciclo EP-03 sigue abierto hasta su propio procesamiento, documentación final y read-back.
 
 **Estado:** `LEÍDO → RESPUESTA_REGISTRADA`; no se declara cierre técnico ni aceptación por Gobernanza.
+
+### Incidencia de preflight SHA-256 · rotación Sigma0 mal transcrita · 2026-11-01
+
+**Operación:** preflight del payload KHORA 7.5.6 / EP 1.0.4 antes de cualquier escritura. **Síntoma literal:** `Error: SHA256 standard-vector preflight failed`. **Impacto:** el vector SHA-256 rechazó el helper y abortó la construcción antes de las llamadas `update_file`; no hubo mutación en KHORA.
+
+**Causa raíz VERIFICADA:** al trasladar de nuevo la rutina SHA-256 al payload amplio, el término Sigma0 se escribió con desplazamiento lógico `a >>> 22` en vez de rotación a la derecha `ROTR(a,22)`. Las constantes generadas eran 64/64; el error estaba en la fórmula de compresión, por lo que los vectores estándar detectaron la discrepancia.
+
+**Fallo de prevención:** la versión anterior del helper había pasado los vectores, pero se volvió a transcribir manualmente en vez de reutilizarse como unidad validada. La generación automática de constantes no evita errores al copiar las funciones.
+
+**Corrección/previsión obligatoria:** dejar de implementar SHA-256 manualmente dentro de los payloads. Usar una API criptográfica nativa disponible y verificarla con SHA256(abc), SHA256(vacío), UTF-8 y hashes del manifiesto; si el entorno no ofrece la API, usar un único helper congelado y cotejado por hash, sin editar su fórmula.
+
+**Estados:** PREFLIGHT_FALLIDO · RCA_VERIFICADA · SIN_MUTACIÓN_KHORA · CONTADOR_0.
