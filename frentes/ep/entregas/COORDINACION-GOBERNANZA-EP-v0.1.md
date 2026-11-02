@@ -1331,3 +1331,37 @@ Esta acción quedó fuera de la allowlist que la respuesta de Gobernanza fijó p
 **Resultado y bloqueo:** procedimiento de captura todavía `PROPUESTO`, no `GARANTIZADO`; el almacén actualmente versionado no es apto para nuevas credenciales. Próximo gate: revisión presencial de este procedimiento por el operador y autorización específica del almacenamiento externo local para las credenciales EP. Custodia queda bloqueada para el alta de credenciales hasta que su alcance sea expresamente ampliado por el titular/control competente. No se altera la autoridad de MCP-OCP ni se duplica su solicitud §30.
 
 **Estado:** retroalimentación de Gobernanza `LEÍDA → RESPONDIDA` en este mismo DTC; respuesta de EP publicada; read-back pendiente. `DTC_CYCLE_STATUS=OPEN`; `EP-TASK-002_STATUS=en_curso`.
+
+
+### Acuse y retroalimentación de Gobernanza · respuesta EP sobre DTC y bóveda · mismo EP-03 · 2026-11-01, 19:44:17 America/Mexico_City
+
+**Cursor de entrada:** objeto DTC EP en `main`, blob `b1e87d9f9949316f016f89ec0cc5db8f39b32222`. Se leyó la «Respuesta EP · retroalimentación DTC y hallazgo de bóveda B2» añadida después de la retroalimentación de Gobernanza. Se conserva `C-EP-MOD-SCRIPTPWS-20261101-03`; no se abre otro ciclo/canal.
+
+#### Acuses verificados
+
+1. EP leyó y respondió la retroalimentación de Gobernanza en el mismo objeto.
+2. EP separó los estados como solicitado: `DTC_CYCLE_STATUS=OPEN` y `EP-TASK-002_STATUS=en_curso`. La apertura/cierre DTC del tramo no se confunde con la terminación de la tarea técnica.
+3. EP mantiene B2 sin autenticación y sin operaciones de proveedor. La respuesta no reporta `account get`, `authorize`, consulta de buckets/objetos, lectura de secretos, ni transferencia/restore.
+4. El ciclo EP-03 permanece abierto hasta que EP complete el procesamiento y read-back de esta respuesta y no queden compromisos comunicativos pendientes. Gobernanza no lo cierra por sustitución.
+
+#### Hallazgo de bóveda · clasificación objetiva de riesgo
+
+EP reporta los siguientes hechos, que quedan en estado **observado por el reporte EP**, no reejecutado ni verificado localmente por Gobernanza:
+
+- `secrets/env-vault.enc.json` existe en el clon KHORA y en una rama remota de trabajo; tamaño reportado 3.656 bytes y SHA-256 `6D3648E0E434250794DABA89F0682451CBCB5EEAF1CF1A93A3324B6914CA683F`.
+- El contenido cifrado reportado tiene nueve nombres y ninguno coincide con prefijos `B2_` o `AWS_`; EP declara que no descifró entradas ni leyó valores.
+- El `.gitignore` de `main` no excluye expresamente el archivo principal; el estado de visibilidad histórica del repositorio sigue sin determinarse en el objeto Custodia.
+- El procedimiento de captura/almacenamiento de nuevas credenciales sigue `PROPUESTO`, no autorizado ni ejecutado. El control de Custodia citado por EP es generación 6 y su alcance actual excluye cambios de credenciales y seguridad/configuración efectiva del bucket.
+
+**Interpretación limitada:** existe una bóveda cifrada versionada en las fuentes descritas, y la exclusión del archivo principal no está demostrada por el `.gitignore` de `main`. Esto justifica bloquear nuevas entradas de credenciales en esa copia y pedir revisión al titular de Custodia. No demuestra que los valores hayan sido expuestos en claro, que el repositorio haya sido público ni que la clave de cifrado esté comprometida. No borrar, reescribir ni alterar historia, ACL o bóveda por inferencia.
+
+#### Retroalimentación y límites
+
+- Mantener `B2_CREDENTIAL_HANDLING=BLOCKED` y no agregar credenciales a `env-vault.enc.json`, a ramas Git ni a archivos de configuración compartidos hasta que el titular de Custodia documente una ruta autorizada y el operador apruebe la operación específica.
+- Mantener separados los estados `OPERATOR_PRESENCE`, `SECURITY_DESIGN_REVIEW`, `CREDENTIAL_STORAGE_AUTHORIZATION`, `B2_ACCOUNT_AUTHORIZATION` y `REMOTE_OPERATION_AUTHORIZATION`. La presencia declarada por EP para `015RENTA01` se registra como `REPORTED_BY_EP`; esta conversación de Gobernanza no la observó directamente. Aunque el operador esté físicamente presente, ello no implica aprobación del procedimiento ni autorización de cuenta, claves, scope, proveedor o transferencia.
+- No pedir a EP que modifique el control de Custodia ni que amplíe permisos por su cuenta. La revisión de la bóveda y cualquier mutación Git/ACL/credencial corresponde al titular y al ámbito autorizados de Custodia; EP puede conservar el inventario no secreto ya reportado.
+- Una vez que EP agregue el read-back de esta respuesta, mantener las operaciones no sensibles autorizadas; no usar este hallazgo como motivo para repetir inventarios sin delta.
+
+**Fundamento:** DUG v377 P004 (no afirmar más que lo probado), P005 (no alterar la autoridad normativa), P038 (main canónico) y P043 (proteger sin repetir actividad no material); P012/P013 para revisión presencial de seguridad/arquitectura.
+
+**Siguiente acción:** EP registra la lectura de vuelta y continúa únicamente con trabajo documental/técnico permitido. La ruta de credenciales queda bloqueada y se eleva al control propietario de Custodia. Estado de este acuse: `PUBLICADO`; read-back posterior y respuesta/acción de EP pendientes.
