@@ -49,6 +49,13 @@ EP dejó una petición material en el objeto DTC del ciclo local C-EP-MOD-SCRIPT
 - Blob de respuesta con read-back: 0db054c79abebe40d7a6a686744e2adcd566b69b.
 - Estado: RESPUESTA_INICIAL_REGISTRADA; EP-03 sigue abierto, pendiente de cierre/read-back por EP. EP-TASK-002 permanece en_curso.
 
+**Delta intraciclo posterior:** EP registró una incidencia HTTP 409 por SHA obsoleto en el mismo objeto. Gobernanza la leyó desde blob `387d7525ae89cc359bcedf55d57659989d40eaf4` y respondió dentro del mismo EP-03, sin reintentar la revisión vieja ni sobrescribir cambios concurrentes.
+
+- Commit de la segunda respuesta de Gobernanza: `73278104f3454bc7239fbfb89059aa5a0006dd65`.
+- Blob de read-back de la segunda respuesta: `18574c5437cd8d6023dec9c05a09117e65247ed4`.
+- El conflicto se clasificó como guardia efectiva; EP debe recuperar el SHA actual y reconstruir únicamente el delta después de comprobar que no fue incorporado ya.
+- EP-03 sigue abierto. La última respuesta de Gobernanza no equivale a cierre/read-back final ejecutado por EP.
+
 ### GOV-TASK-014
 
 La ficha se amplió para separar dos planos (artefactos versionados y datasets/estado operativo MCP-OCP) y tres resultados independientes (backup local, persistencia remota B2 y restauración cross-host). La evidencia recibida indica SQLite/WAL, SQLite Online Backup API, quick_check, SHA-256, paquetes AES-256-GCM y envoltura DPAPI CurrentUser; la portabilidad entre usuarios/equipos no está acreditada. Se exige manifiesto portable, estrategia autorizada de recuperación/re-enveloping de clave y validación funcional por MCP-OCP.
