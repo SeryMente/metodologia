@@ -1543,7 +1543,7 @@ El operador entregó directamente el Prompt Adicional 02 a este hilo EP el 2026-
 
 ---
 
-## 94. Módulo funcional MOD-SCRIPTPWS — PowerShell para Entorno Persistente · v0.3.35 / VCU-EP-v37
+## 94. Módulo funcional MOD-SCRIPTPWS — PowerShell para Entorno Persistente · v0.3.36 / VCU-EP-v38
 
 ### Identidad, subordinación y responsabilidad funcional
 
@@ -1740,6 +1740,19 @@ $ErrorActionPreference='Stop'; $d="$env:LOCALAPPDATA\Programs\nodejs"; $env:Path
 **Corrección/previsión:** evitar objetos de salida excesivamente anidados en payloads largos; emitir resultados en llamadas `text(...)` independientes y comprobar el cierre balanceado del bloque antes de invocar herramientas.
 
 **Estados:** PARSER_FALLIDO · RCA_VERIFICADA · SIN_EJECUCIÓN · CONTADOR_0. El payload original se descarta.
+
+
+### Incidencia de integridad heredada · entrada SHA-256 de 07-git-wip obsoleta · 2026-11-01
+
+**Operación:** cotejo del manifiesto histórico antes de preparar KHORA 7.5.6. **Síntoma literal:** `Existing manifest mismatch: scripts/khora/modules/07-git-wip.ps1`. **Impacto:** el preflight bloqueó la actualización antes de cualquier escritura en KHORA.
+
+**Evidencia:** el blob de `scripts/khora/modules/07-git-wip.ps1` es idéntico en `main` y en `ep/mod-scrippws-7.5.5` (`bf7c3f8d3f8fa50ba8c3ebb40595b505fc0975aa`); la línea del manifiesto también es idéntica en ambos (`7903170ba2557889772a3f7c73a9e598cc5cb4ec1b4a828da7aa1652f3f74768`). La comprobación se ejecutó con SHA-256 validado por vectores estándar y normalización PowerShell BOM+CRLF; las demás entradas cotejadas coinciden, pero esta no.
+
+**Causa inmediata VERIFICADA:** la entrada SHA-256 heredada para `07-git-wip.ps1` no representa el contenido actual del blob, por lo que el manifiesto de `main` ya contiene una deriva de integridad. **Origen histórico:** no determinado con la evidencia accesible; no se atribuye a un commit concreto.
+
+**Corrección/previsión:** la nueva versión sustituirá el módulo, calculará su SHA sobre bytes canónicos BOM+CRLF y actualizará su entrada en el manifiesto. Antes de finalizar se leerá de vuelta tanto el archivo como la entrada y se cotejarán con el contenido publicado. No conservar una entrada antigua solo porque esté presente en `main`.
+
+**Estados:** DERIVA_HEREDADA_DETECTADA · CAUSA_INMEDIATA_VERIFICADA · ORIGEN_HISTÓRICO_NO_DETERMINADO · SIN_MUTACIÓN_REMOTA · CONTADOR_0.
 ### Entregables, aceptación y siguiente paso
 
 **Entregables del módulo:** comandos de ejecución reproducibles y con shell identificada; inventario de entrypoints PowerShell y consumidores; contratos de parámetros/códigos de salida; diagnóstico y logs recuperables; pruebas positivas/negativas; versiones y checksums; registro de fallos y correcciones; instrucciones de reanudación; evidencia de ejecución y lectura de vuelta. Los entregables se almacenan en las fuentes canónicas de sus repositorios, con referencias desde el OEP, no como copias paralelas.
