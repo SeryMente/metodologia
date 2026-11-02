@@ -1,6 +1,15 @@
 # GOV-TASK-012 — Revisión integral de fluidez y desempeño del marco de Gobernanza
 
-**Estado:** en_curso · **Tipo:** tarea propia de Gobernanza · **Responsabilidad:** heredada del OCP Gobernanza, control común generación 12 (titular gen11 preservado; asiento 2 `SES-20261101-GV8E89D1FF`, gen12). No crea control ni folio independiente. No crea un FT, OCP, control, sesión ni folio independiente.
+**Estado:** en_curso · **Tipo:** tarea propia de Gobernanza · **Responsabilidad:** Gobernanza 2 (asiento corresponsable activo `SES-20261101-GV8E89D1FF`, generación 12), por delimitación operativa expresa del operador. Esta atribución no transfiere la titularidad primaria del frente ni modifica su control.
+
+
+## Delimitación de responsabilidades
+
+- **Gobernanza 2:** responsable de GOV-TASK-012 y GOV-TASK-013 como tareas propias de análisis de fluidez, medición y desempeño.
+- **Gobernanza 1:** titular primario y responsable exclusivo de la DTC (Dinámica Trilateral por Ciclo), incluida GOV-TASK-011, el sprint DTC, la coordinación interfrente, sus ciclos, cursores, solicitudes, integración, dependencias y aceptación.
+- **Límite de esta tarea:** GOV-TASK-012 analiza el desempeño y formula experimentos; no abre, procesa ni cierra ciclos DTC, no opera cursores o mensajes EP/MCP-OCP, no emite solicitudes interfrente ni modifica GOV-TASK-011, tableros o artefactos de coordinación pertenecientes a Gobernanza 1.
+- Si el análisis identifica una dependencia interfrente, Gobernanza 2 documenta el hallazgo y lo canaliza a Gobernanza 1. No ejecuta por sustitución el trabajo del titular DTC.
+- Esta separación es una asignación funcional de tareas; no altera el roster, la titularidad ni el control común del frente.
 
 ## Objetivo
 
@@ -37,4 +46,4 @@ No modificar el DUG, la IPZ, controles ni OCP ajenos por iniciativa de esta tare
 
 ## Trazabilidad MCP-OCP y enlace de retorno
 
-El DUG enlaza al núcleo operativo y al README del OCP MCP desde el término canónico GOW. Esta tarea comprobará en su siguiente revisión si el núcleo MCP-OCP contiene un vínculo Markdown de retorno al DUG v377, y si sus referencias siguen resolviendo. No modificar el OCP/control MCP-OCP desde Gobernanza: cualquier backlink faltante se solicitará a su titular en el mismo objeto de coordinación; hasta entonces la bidireccionalidad entre DUG y OCP externo se clasificará como pendiente de verificación, no como completa. Los enlaces y retornos internos del propio DUG se auditan por separado.
+El DUG enlaza al núcleo operativo y al README del OCP MCP desde el término canónico GOW. Esta tarea puede comprobar por lectura si el núcleo MCP-OCP contiene un vínculo Markdown de retorno al DUG v377 y si sus referencias siguen resolviendo. No modificar el OCP/control MCP-OCP ni emitir solicitudes interfrente desde Gobernanza 2. Si se identifica un backlink faltante o una dependencia del titular MCP-OCP, documentar el hallazgo y canalizarlo a Gobernanza 1 para su tratamiento dentro de la DTC. Los enlaces y retornos internos del propio DUG se auditan por separado.
