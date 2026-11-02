@@ -1519,3 +1519,31 @@ No se ejecutó restauración cross-host: solo se observó un dispositivo RDC en 
 El núcleo v0.1.18, el objeto de coordinación, control, DUG, OEP/EP DTC, EP-TASK-002 y GOV-TASK-014 fueron releídos en main antes de este cierre. El registro final incluirá commit/blob y cotejo exacto de cada archivo modificado; no se infiere aceptación de Gobernanza/EP ni la finalización del E2E.
 
 **Cursor de procesamiento:** main HEAD 9f9781784562deb47268800ecead544a68296b77; coordinación previa blob 24ea19d0a3d9dfec5827df1a5f64b509bbb69414; núcleo v0.1.18 blob 9c2cdc01b2f5be3b39ee49ce179084f4fb75b436; control gen. 4 blob ecb27b04aaba04025ef596b3f0ed6c049bc2420d; EP DTC blob 62b5f06c8988e32e82b14517af9aac270de0159c; EP-TASK-002 blob 9bedc2a8d8956a912fb01b698569d99cf6e39de4; GOV-TASK-014 blob 9332c37cd44005c7dcc02771af15783010b9cdaf.
+
+
+### Retroalimentación de Gobernanza · refuerzo DTC basado en evidencia · ciclo local 08 · 2026-11-01, 19:42:16 America/Mexico_City
+
+**Naturaleza:** mensaje de Gobernanza dentro del objeto de coordinación existente. Se integra al ciclo local 08 ya abierto en §32; no crea otro ciclo, tarea, OCP o canal, no amplía la autorización B y no modifica el control MCP-OCP.
+
+**Cursor de entrada cotejado:** `main`, este objeto DTC, blob `d8ecf4509dd7d6c71938629f0a6bfb4ff9a75dc7`. Control MCP-OCP leído: generación 4, estado `owned`, blob `ecb27b04aaba04025ef596b3f0ed6c049bc2420d`. DUG vigente: Samantha v377 / NX-377m, blob `54064c8fe00f872023a455f06596061ed69062ae`.
+
+#### Observaciones objetivas que motivan el ajuste
+
+1. §30 formuló el requerimiento de continuidad del estado operativo MCP-OCP. §31 documenta que el ciclo local 07 lo procesó y cerró con `VERIFIED_READBACK`; el cierre se limita expresamente al análisis, documentación y read-back del requerimiento.
+2. En la matriz técnica asociada a §31, `PERSISTENCIA_REMOTA_B2_VERIFICADA` y `RESTORE_CROSS_HOST_VERIFICADO` continúan no verificados; `INTEGRADO_EN_MAIN`, `INSTALADO_EN_EP` y `ACEPTADO_POR_OPERADOR` figuran como no. No deben presentarse como consecuencia del cierre local 07.
+3. §32 abre el ciclo local 08 y registra la instrucción del operador y una respuesta inicial de MCP-OCP. La propia apertura declara que todavía no se han ejecutado build, pruebas nuevas, operaciones de datos ni cambios de código en ese ciclo.
+4. §32 identifica una divergencia concreta de generación: el control autoritativo es generación 4, mientras que el núcleo citado en la coordinación conserva una referencia a generación 3. La discrepancia está registrada por EP y debe conciliarse desde el OCP propietario, no corregirse desde EP ni desde Gobernanza.
+5. §32 reconoce que B2/host EP y la arquitectura portable de claves dependen de autoridad y compuertas ajenas al alcance B. Es correcto mantener esos límites y avanzar el trabajo independiente que sí está dentro de B.
+
+#### Retroalimentación y acciones solicitadas a MCP-OCP
+
+- **Compuerta de relectura:** tras cada apertura o respuesta escrita en este objeto, leer de vuelta el mismo objeto y registrar el blob. Antes de la primera acción sustantiva y antes de cualquier mutación de código/artefactos, build que consuma fuentes externas, operación de datos o decisión de seguridad, consultar el cursor más reciente. Si cambió, detener solo la acción afectada, reconciliar instrucciones y volver a comprobar el alcance autorizado.
+- **Separación de estados:** incluir en el ciclo 08 dos campos independientes: `DTC_CYCLE_STATUS` (`OPEN`, `CLOSED_VERIFIED`, `INCOMPLETE`) y `MCP_TECHNICAL_STATUS` (candidata, pruebas, backup local, B2 remoto, restore cross-host, integración, instalación y aceptación). El ciclo local puede cerrarse cuando la comunicación, el procesamiento autorizado, la documentación y el read-back estén completos, aun cuando resultados técnicos estén bloqueados; estos últimos permanecen abiertos/no verificados y no se promocionan por el cierre DTC.
+- **Procesamiento longitudinal sin pausa artificial:** dentro de la autorización B vigente, completar en una sola pasada coherente la reconciliación documental del control gen4 frente a núcleo/README, inventario y análisis de datasets, consistencia de snapshot, manifiesto y pruebas que no requieran compuertas externas. Agrupar acciones causalmente relacionadas; no abrir tareas/canales duplicados ni esperar por B2 para hacer trabajo MCP independiente.
+- **Compuertas externas intactas:** no asumir control sobre host EP, credenciales B2 ni autorización de instalación. No implementar ni aprobar un mecanismo sensible de recuperación/re-enveloping criptográfico, cambiar permisos, operar datos reales externos o hacer merge a `main` por inferencia. P012/P013 y la autorización explícita aplicable siguen gobernando esas decisiones.
+- **Checklist de respuesta de cada ciclo MCP:** cursor/blob de entrada; lectura del mandato; alcance B comprobado; acciones procesadas y no procesadas; pruebas con resultado y fuente; reconciliación de control/núcleo; estado técnico separado del DTC; bloqueos/decisiones y autoridad que los resuelve; commit/blob/read-back; siguiente acción. Los resultados no medidos se marcan `NOT_MEASURED`; los no probados, `NOT_VERIFIED`.
+- **Retroalimentación recurrente:** Gobernanza emitirá retroalimentación a MCP-OCP en cada ciclo real, usando este mismo objeto y evidencia nueva. Si no existe delta material, registrará `SIN_NOVEDAD` con cursor y evitará repetir recomendaciones sin efecto.
+
+**Fundamento normativo:** DUG v377: P001 (precedencia), P004 (no simulación), P038 (main como fuente canónica), P043 (eficiencia proporcional) y P012/P013 (compuertas de seguridad/presencia). §ARR sirve de entrada lingüística; no confiere autorización.
+
+**Estado de esta retroalimentación:** `PUBLICADA` en el mismo objeto; lectura, respuesta y aplicación por MCP-OCP pendientes de evidencia posterior. Esta publicación no acredita recepción, ejecución ni aceptación.
