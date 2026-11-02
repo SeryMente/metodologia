@@ -4,7 +4,7 @@
 
 - **Nombre canónico vigente:** MCP-OCP (anteriormente MCP-METODOLOGIA).
 - **Identidad canónica vigente:** MCP-OCP. **Identidad histórica:** MCP-METODOLOGIA.
-- **Versión/sello:** MCP-OCP-v0.1.17 · transferencia gen. 4 verificada y procesamiento DTC local 07.
+- **Versión/sello:** MCP-OCP-v0.1.18 · gen. 4; ciclo DTC local 08 y bloqueo P012/P013.
 - **Repositorio propietario:** SeryMente/metodologia, rama main.
 - **OCP canónico:** frentes/mcp-metodologia/.
 - **Núcleo operativo único:** este archivo, MCP-METODOLOGIA.md.
@@ -62,6 +62,17 @@ Antes de cada ciclo sustantivo:
 - **Candidata inspeccionada solo en lectura:** rama `integration/ocp-mcp-0.1.0-selective-20261101`, HEAD `ef639b62509a9b7ae623c3fbd187466ee2e2a3d9`, código `5956595d5455d5b851c2ef1ff6808f0c2aeabff9`, recibo blob `11296e495aa9a52a640ff53da2b1042ba67acf08`. No es `main`.
 - **Aplicación de principios pertinente:** P001 cascada; P004 no simulación; P005 no modificar el DUG sin autorización; P012/P013 candado de seguridad/arquitectura y presencia del operador; P038 preponderancia de `main`; P043 anti-ineficiencia. No se tomó decisión de arquitectura ni se implementó recuperación de claves.
 - **Medición:** edad de IPZ/DUG y d.h.m. de rutas = NO VERIFICADO en esta salida; no se reconstruyen desde la fecha de commits ni el reloj de otra zona.
+
+### 3.3 Cursor DTC trilateral · ciclo local MCP-OCP 08
+
+- DUG/Metacanon/GOW releídos: Samantha v377/NX-377m; Metacanon 1.28; GOW 2.17; blob 54064c8fe00f872023a455f06596061ed69062ae. §ARR consultado; CNP P001/P004/P005/P038/P043. MDP pertinentes identificados para P001/P004/P005/P012/P013/P038/P043. Sink aliases no están desplegados, por lo que no se declara consulta de capa 2 por Sink.
+- Main al abrir: 6595cc1b0229735ab76ba1bcf4e58be1a2f5a4bf; coordinación MCP-OCP previa blob 1f73a7cdf26b8612d4931cc833aa92118c64bd75; apertura §32 commit 6595cc1b0229735ab76ba1bcf4e58be1a2f5a4bf, blob 24ea19d0a3d9dfec5827df1a5f64b509bbb69414.
+- Control: generación 4; titular chatgpt-mcp-ocp-01a199d8-9209-725c-b764-a0a66ac54882; blob ecb27b04aaba04025ef596b3f0ed6c049bc2420d; SES local SES-20261101-3D504C5A.
+- EP: DTC blob 62b5f06c8988e32e82b14517af9aac270de0159c; EP-TASK-002 blob 9bedc2a8d8956a912fb01b698569d99cf6e39de4; OEP blob 75c10a9ae85c91857b5e1d5e95d60e58d96e7a2f. EP-03 sigue abierto; PHYSICAL_PRESENCE_GATE_PENDING, sin B2 auth/preflight/upload/restore.
+- Gobernanza: GOV-TASK-014 blob 9332c37cd44005c7dcc02771af15783010b9cdaf, estado EN_CURSO; GOBERNANZA.md blob 27d6d826f39b57f53722fbced2b963f6fe7153ff. No se presume recepción/aceptación de §31.
+- RDC: 015RENTA01 online; PC-8 y PC-14 offline. Un único host disponible; no hay segundo host/perfil autorizado online para restore cross-host.
+- Principios y aplicación: P001 cascada; P004 no simulación; P005 no modificar DUG sin autorización; P012/P013 candado de seguridad/arquitectura; P038 main; P043 anti-ineficiencia. Esta sección no modifica el DUG ni su firma.
+- Medición temporal: d.h.m. por ruta se calcula contra el último commit de esa ruta y el reloj local adquirido; instalación nativa IPZ y folios globales siguen sin verificación/asignación.
 
 ## 4. Propósito y alcance
 
@@ -159,45 +170,61 @@ Las autorizaciones futuras deberán quedar vinculadas a la operación concreta y
 
 ## 8. Estado vivo
 
-**Acción en curso:** mantener la candidata MCP-OCP 0.1.0 aislada y técnicamente verificada en su rama; procesar las dependencias de continuidad recibidas de Gobernanza; definir una ruta verificable de recuperación portable solo después del candado presencial de seguridad/arquitectura P012/P013. El ciclo local 07 respondió y documentó §30 en el mismo objeto DTC.
+**Acción en curso:** resolver la continuidad de MCP-OCP en una sola línea de trabajo: cerrar los vacíos de backup autónomo, recuperación criptográfica, manifiesto, cross-host, integración y aceptación, coordinando con EP y Gobernanza en sus objetos existentes. Ciclo local 08 abierto; análisis, reconciliación y propuesta documental avanzados. La implementación portable queda bloqueada por el candado de seguridad/arquitectura P012/P013 y presencia física del operador en 015RENTA01.
 
-**Estado técnico comprobado de la candidata:** el recibo `BUILD-CANDIDATE-MCP-OCP-0.1.0-20261101.json` registra 31/31 pruebas unitarias, 29/29 integración MCP stdio, 200/200 componentes, build exit 0 y ZIP SHA-256 `96a62fc1291f501b7fa9b0792af07021db4cb2222c8658910bdadb7732bc3b2d`. Es una evidencia de candidata basada en main `419be285373ce5390be2020a954d382f11803674` y código `5956595d5455d5b851c2ef1ff6808f0c2aeabff9`; sus pins DUG/core observados siguen correspondiendo a v377 y v0.1.16. La candidata permanece en rama `integration/ocp-mcp-0.1.0-selective-20261101` (HEAD observado `ef639b62509a9b7ae623c3fbd187466ee2e2a3d9`), no en el árbol de `main`. El ciclo local 07 no ejecutó build, tests, restore ni modificación del código. Las compuertas siguen: `MVP_TÉCNICO_VERIFICADO=SI (candidata)`, `INTEGRADO_EN_MAIN=NO`, `INSTALADO_EN_EP=NO`, `ACEPTADO_POR_OPERADOR=NO`.
+**Estado canónico del producto:** el núcleo MCP-OCP está en main v0.1.18. La candidata técnica 0.1.0 sigue aislada en integration/ocp-mcp-0.1.0-selective-20261101 (código 5956595d5455d5b851c2ef1ff6808f0c2aeabff9, HEAD observado ef639b62509a9b7ae623c3fbd187466ee2e2a3d9). Su recibo 31/31 unitarias, 29/29 integración y 200/200 componentes corresponde a DUG v377 y núcleo v0.1.16; es evidencia histórica de esa revisión, no un build actualizado a v0.1.18. No se ejecutó build/test nuevo en ciclo 08. Se requiere nueva candidata/recibo después de aprobar e implementar la arquitectura, no antes.
 
-**Control:** `owned`, generación 4; titular `chatgpt-mcp-ocp-01a199d8-9209-725c-b764-a0a66ac54882`; UUIDv7 local `01a199d8-9209-725c-b764-a0a66ac54882`; sesión `SES-20261101-3D504C5A`. Transferencia de generación 3 a 4 verificada por CAS y read-back. B sigue `AUTHORIZED` solo para código, pruebas, compilación, corrección, empaquetado y documentación dentro de `frentes/mcp-metodologia/`; no autoriza EP, host, DUG/IPZ, Sink productivo, MCP-NORMATIVO, Khora, exposición pública ni credenciales.
+**Control:** owned, generación 4; titular chatgpt-mcp-ocp-01a199d8-9209-725c-b764-a0a66ac54882; UUIDv7 local 01a199d8-9209-725c-b764-a0a66ac54882; sesión local SES-20261101-3D504C5A. B sigue AUTHORIZED para construir, compilar, probar, corregir y empaquetar dentro de frentes/mcp-metodologia/; no autoriza configuración/host EP, credenciales B2, operaciones remotas, DUG/IPZ, Sink, MCP-NORMATIVO, Khora ni rutas externas.
 
-**Continuidad/backup (GOV-TASK-014, ciclo local 07):** inspección estática de la candidata identifica 15 tablas SQLite, índice de eventos, triggers de inmutabilidad, DB `data/ocp-mcp.sqlite`, paquetes en `backups/`, runtime ZIP separado y configuración del cliente `stdio` fuera de la DB. El backup implementado usa `SqliteConnection.BackupDatabase`, `quick_check`, AES-256-GCM y DPAPI `CurrentUser`; el restore usa `backup_points.package_path` absoluto guardado en la misma DB y `integrity_check`. La copia `.ocpbak` no constituye hoy una restauración autónoma desde cero; la envoltura DPAPI CurrentUser no es portable entre perfiles por copiar el blob. No hay mecanismo implementado de re-enveloping ni manifiesto externo portable. §31 de la coordinación registra el análisis, riesgos, contrato propuesto y límites. No se inspeccionó una DB real en EP ni se verificó una instalación viva.
+**DTC trilateral observado:** EP-03 permanece abierto y EP-TASK-002 en_curso; B2 no autenticado, preflight no ejecutado, sin upload/read-back/download/restore. La desviación de account get fue documentada por EP y no se repite. Gobernanza mantiene GOV-TASK-014 EN_CURSO; su aceptación depende de evidencia de EP y MCP-OCP en sus OCP propios. MCP-OCP ciclo local 07 cerrado VERIFICADO_READBACK; ciclo local 08 procesa la nueva instrucción del operador en este mismo objeto. DTC global EN_CURSO_RECURRENT.
 
-**Candado de seguridad/arquitectura:** el mecanismo de recuperación de claves, envelope portable y el proceso de migración cross-host son decisiones de alto nivel de seguridad sujetas a P012/P013 y presencia/revisión del operador. Las alternativas documentadas son propuestas, no arquitectura aprobada. No se construyó código ni se manipularon claves/credenciales; no se copió DPAPI blob fuente.
+**Brecha técnica confirmada:** el .ocpbak local depende de backup_points.package_path absoluto guardado dentro de la misma DB, y la envoltura DPAPI CurrentUser no es portable mediante copia de blob. La candidata usa SQLite Online Backup API, AES-256-GCM, quick_check e integrity_check; su fixture no acredita backup de una instalación real ni restore entre perfiles. La base contiene 15 tablas, índice/triggers, DEKs de canonical_sources y snapshots, clave HMAC y privada Ed25519. La cadena de eventos es SHA-256 encadenada; los recibos dependen de Ed25519. La recuperación debe conservar verificabilidad histórica y re-envelopar cada clave para el SID destino.
 
-**Estados separados al cierre del ciclo local 07:**
-- `BACKUP_LOCAL_VERIFICADO`: PASS en fixture de candidata; backup de datos reales NO VERIFICADO.
-- `PERSISTENCIA_REMOTA_B2_VERIFICADA`: NO VERIFICADA; competencia de EP; no se ejecutó B2.
-- `RESTORE_CROSS_HOST_VERIFICADO`: NO VERIFICADO; no existe destino/perfil independiente autorizado ni mecanismo probado de re-enveloping.
-- `INTEGRADO_EN_MAIN`: NO.
-- `INSTALADO_EN_EP`: NO.
-- `ACEPTADO_POR_OPERADOR`: NO.
+**Arquitectura recomendada · PROPUESTA NO APROBADA:** añadir un formato de paquete portable separado del backup local actual:
+1. manifest.json externo, versionado y sin secretos: instalación/backup ID, versión app/código/RID/esquema, rutas relativas, tamaño/SHA-256, algoritmos/versión/AAD, KDF salt/parámetros y hash del envelope.
+2. snapshot.sqlite.enc: snapshot creado por SQLite Online Backup API y cifrado con AES-256-GCM bajo una clave maestra aleatoria de paquete (PMK).
+3. recovery-envelope.bin: PMK envuelta mediante AES-256-GCM bajo una KEK derivada de una frase de recuperación introducida interactivamente con Argon2id. BouncyCastle.Cryptography 2.7.0 ya está referenciado en el proyecto. La frase no se guarda en Git, manifiesto, CLI args, variables de entorno, logs ni B2; debe mantenerse fuera de banda y separada del paquete.
+4. recovery-map.enc: mapa cifrado por PMK con DEKs de canonical_sources y snapshots y claves HMAC/Ed25519, referidas por ID/purpose/version. Nunca se materializan en claro fuera de memoria del proceso.
+5. Restore independiente del índice SQLite de origen: validar manifiesto y paths seguros, tamaños/hashes, desbloquear PMK, autenticar snapshot/envelope, integrity_check y foreign_key_check; re-envelopar todas las claves con DPAPI CurrentUser del destino; actualizar installation.operator_sid; revocar grants no consumidos y requests pendientes del SID viejo; preservar instalación, public key/recibos históricos y cadena de eventos; swap con rollback con servicio detenido; comprobar readiness, 10 herramientas MCP y prueba funcional read-only.
+6. El backup local .ocpbak se conserva sin ruptura. El paquete portable es un nuevo artefacto de exportación y no sustituye Git ni el almacenamiento local.
 
-**Normativa:** `MCP-NORMATIVO: DESACTIVADO`. La cobertura de `applicability`, `activation_conditions`, `mandatory` y `dependencies` sigue ausente en los 43 registros observados; el servidor mantiene fail-closed. Sink `p001`…`p043` no desplegado ni probado. No se modifica el DUG desde este frente.
+**Condición de seguridad:** esta propuesta cambia custodia de claves, perímetro de recuperación y comportamiento del operador. No se implementa ni se prueba hasta revisión/aprobación presencial del operador conforme a P012/P013. El mandato de extremo a extremo no sustituye esta compuerta. La capa 2 de principios por Sink tampoco se declara satisfecha: aliases p001…p043 no están desplegados/probados; MCP-NORMATIVO sigue DESACTIVADO.
 
-**Foliación:** FOL1 `PREPARADO_PENDIENTE_ACTIVACION_IPZ`; `SES-20261101-3D504C5A` es solo el folio local SES. CV/CY/A/B globales y por OCP siguen `PENDIENTE/NO ASIGNADO`.
+**Estados terminales separados:**
+- BACKUP_LOCAL_VERIFICADO: PASS en fixture histórica de candidata; backup real en host instalado NO VERIFICADO.
+- PERSISTENCIA_REMOTA_B2_VERIFICADA: NO VERIFICADA; EP-owned, sin autenticación ni transferencia.
+- RESTORE_CROSS_HOST_VERIFICADO: NO VERIFICADO; no hay segundo host/perfil online/autorizado ni arquitectura aprobada.
+- INTEGRADO_EN_MAIN: NO; candidata previa no promovida.
+- INSTALADO_EN_EP: NO.
+- ACEPTADO_POR_OPERADOR: NO.
+
+**Foliación:** SES-20261101-3D504C5A es solo sesión local; FOL1 PREPARADO_PENDIENTE_ACTIVACION_IPZ; folios globales CV/CY/A/B y por OCP PENDIENTE/NO ASIGNADO.
 
 ### 8.1 Registro provisional de tareas OCP
 
 Este apartado es el registro provisional autoritativo del backlog técnico MCP-OCP. No crea un OCP adicional. El OCP general del sprint se representa en el índice provisional GOV-TASK-* de Gobernanza; aquí se conserva el detalle técnico propio y se enlaza su origen transversal. El objeto de coordinación DTC conserva mensajes, cursores, respuestas y cierres de ciclo.
 
-| Tarea / dependencia de origen | Estado observado al ciclo local 07 | Resultado exigido / límite / evidencia |
+| Tarea / dependencia de origen | Estado observado al ciclo local 08 | Resultado exigido / límite / evidencia |
 |---|---|---|
-| `GOV-TASK-011` — DTC, Dinámica Trilateral por Ciclo (dependencia integradora) | **Ciclos MCP-OCP 01–07: cierres locales documentados/verificados; DTC global: EN_CURSO_RECURRENT** | Gobernanza centraliza e integra el sprint en su registro GOV-TASK-*; EP conserva OEP/host y MCP-OCP su responsabilidad técnica. El ciclo local 07 procesó la solicitud §30 en §31 del [objeto DTC](entregas/COORDINACION-SPRINT-OCP-MCP-v0.1.md#31-apertura-y-respuesta-inicial-mcp-ocp--ciclo-local-07--2026-11-01). El cierre local no acepta el artefacto ni cierra tareas de EP/Gobernanza; DTC global permanece recurrente. |
-| Reconciliar implementación MCP 0.1.0 con `main` | **MVP_TÉCNICO_VERIFICADO EN CANDIDATA · NO INTEGRADO** | El recibo [BUILD-CANDIDATE-MCP-OCP-0.1.0-20261101.json](https://github.com/SeryMente/metodologia/blob/integration/ocp-mcp-0.1.0-selective-20261101/frentes/mcp-metodologia/evidencias/BUILD-CANDIDATE-MCP-OCP-0.1.0-20261101.json) es la fuente para código, pruebas, manifiestos y ZIP. Código fuente commit `5956595d5455d5b851c2ef1ff6808f0c2aeabff9`; candidata HEAD `ef639b62509a9b7ae623c3fbd187466ee2e2a3d9`. 31/31 unitarias, 29/29 integración, ZIP 200 componentes verificados. No PR/merge, no instalación EP, no aceptación del operador. |
-| `GOV-TASK-014` — Continuidad, backup, portabilidad de claves y restauración | **RESPONDIDA Y PROCESADA DOCUMENTALMENTE EN CICLO LOCAL 07; IMPLEMENTACIÓN NO AUTORIZADA/NO EJECUTADA** | Inventario de 15 tablas y archivos, captura SQLite online, brecha `package_path` y DPAPI CurrentUser, propuesta de manifiesto portátil y secuencia de restore, seis estados independientes en [DTC §31](entregas/COORDINACION-SPRINT-OCP-v0.1.md#31-apertura-y-respuesta-inicial-mcp-ocp--ciclo-local-07--2026-11-01). La arquitectura de recovery/re-enveloping requiere candado presencial P012/P013. B2 y host son de EP; no tocar. |
-| Delta técnico A/B/C y schemas JSON | **PENDIENTE DE CANONIZAR/VERIFICAR EN `main`** | AES-256-GCM/DPAPI, bundle de fuentes, consistencia transaccional y schemas exactos requieren inspección/pruebas sobre la revisión canónica. Código candidato no equivale a integración. |
-| Metadatos de selección normativa P001–P043 | **BLOQUEADO POR AUSENCIA DE FUENTE CANÓNICA APROBADA** | DUG v377/NX-377m, `gov-data` no declara `applicability`, `activation_conditions`, `mandatory` ni `dependencies` para los 43 registros (cobertura observada 0/43). Mantener fail-closed; no inferir ni alterar el DUG. |
-| Acceso individual al texto desarrollado por principio | **CONTRATO SINK EXISTENTE; ALIASES PENDIENTES DE DESPLIEGUE/PRUEBA** | ART-027 denomina el mecanismo `Sink`, aliases deterministas `p001`…`p043`. No llamarlo Sync, inventar URIs/endpoints o afirmar operación. |
-| Telemetría de frecuencia de consulta | **ALCANCE NORMATIVO LIMITADO; IMPLEMENTACIÓN E2E NO VERIFICADA** | El DUG autoriza frecuencia de acceso/consulta por alias Sink, no aplicación ni comprensión. El esquema `telemetry_events` no prueba emisión operativa. |
-| Integración e instalación del cliente en EP | **AUTORIDAD EP · NO EJECUTAR DESDE MCP-OCP** | EP-TASK-002 continúa `en_curso`; B2, autenticación, bucket/clave, upload/read-back/restauración y aceptación de instalación no están acreditados. MCP-OCP no toca host/control/configuración EP. |
-| Foliación global y vínculo de sesión | **BLOQUEADO HASTA ACTIVACIÓN VALIDADA DE FOL1** | Registro maestro FOL1 `PREPARADO_PENDIENTE_ACTIVACION_IPZ`; usar solo `SES-20261101-3D504C5A` como SES local y IDs C-* locales. Folios globales CV/CY/A/B/OCP pendientes. |
+| GOV-TASK-011 — DTC, Dinámica Trilateral por Ciclo | Ciclos MCP-OCP 01–07: cierres locales verificados; ciclo 08: reconciliación/planificación procesada con bloqueo P012/P013; DTC global EN_CURSO_RECURRENT | Gobernanza integra el sprint en su registro GOV-TASK-*; EP conserva OEP/host y MCP-OCP su autoridad técnica. Ciclo 08 se registra en DTC §32 del mismo objeto. |
+| Reconciliar implementación MCP 0.1.0 con main | CANDIDATA TÉCNICA HISTÓRICA · RECIBO PINNED A CORE v0.1.16; NO INTEGRADA | Recibo de candidata: 31/31 unitarias, 29/29 integración y 200 componentes; base 419be285…, código 5956595d…. No prueba core v0.1.18 ni arquitectura portable. Regenerar manifiesto/build/recibo después de implementar y probar el diseño aprobado. No PR/merge, instalación EP ni aceptación por inferencia. |
+| GOV-TASK-014 — Continuidad, backup, portabilidad de claves y restauración | C07: ANÁLISIS DOCUMENTAL VERIFICADO. C08: PROPUESTA TÉCNICA DOCUMENTADA; IMPLEMENTACIÓN BLOQUEADA P012/P013 | Propuesta de paquete portable y mapa de recuperación en §8 y DTC §32. Requiere revisión presencial/aprobación del operador. EP conserva B2/host; no acceso a secretos ni operaciones remotas desde MCP-OCP. |
+| Restore portable MCP-OCP | BLOQUEADO POR ARQUITECTURA/SEGURIDAD NO APROBADA Y AUSENCIA DE HOST DESTINO | Manifiesto externo, snapshot AES-GCM, recovery envelope Argon2id y mapa cifrado de DEKs/HMAC/Ed25519; re-enveloping DPAPI CurrentUser en destino, revocación de grants pendientes, preservación de recibos/cadena. Propuesta, no código. Requiere candado P012/P013 y segundo host/perfil autorizado. |
+| Metadatos de selección normativa P001–P043 | BLOQUEADO POR AUSENCIA DE FUENTE CANÓNICA APROBADA | DUG v377 gov-data no declara applicability, activation_conditions, mandatory ni dependencies para los 43 registros (0/43). Mantener fail-closed; no inferir ni alterar DUG. |
+| Acceso individual al texto desarrollado por principio | CONTRATO SINK EXISTENTE; ALIASES PENDIENTES | ART-027 establece consulta de capa 2 por Sink cuando el MDP indica pertinencia. Los aliases p001…p043 no están desplegados/probados; declarar la limitación, no sustituir con una consulta ficticia. |
+| Integración e instalación del cliente en EP | AUTORIDAD EP · NO EJECUTAR DESDE MCP-OCP | EP-TASK-002 sigue en_curso; B2 CLI local presente, pero PHYSICAL_PRESENCE_GATE_PENDING, sin autenticación, preflight, upload, read-back remoto o restore. No tocar host/control/configuración EP. |
+| Foliación global y vínculo de sesión | BLOQUEADO HASTA ACTIVACIÓN VALIDADA DE FOL1 | SES local SES-20261101-3D504C5A; FOL1 PREPARADO_PENDIENTE_ACTIVACION_IPZ; folios globales CV/CY/A/B/OCP pendientes. |
 
 Las tareas enlazan GOV-TASK-011/GOV-TASK-014 y dependencias de origen; no replican el registro general de Gobernanza ni los backlogs EP. Los estados se sustituyen únicamente con fuente observada, revisión, commit/blob/SHA, pruebas y read-back. Cada ciclo MCP-OCP se conserva en el mismo objeto DTC.
+
+### 8.2 Ruta longitudinal de ejecución tras desbloqueo
+
+1. Gate operador: revisión presencial de arquitectura/seguridad P012/P013; aprobar o corregir el formato portable, recuperación de clave, control de grants y criterio de aceptación.
+2. Implementación MCP-OCP: crear export/import portable, manifiesto, envelope, migración de claves y rollback; pruebas positivas/negativas y fixtures sintéticos. Build reproducible con pins actuales DUG/core.
+3. Prueba local real: con presencia autorizada y sobre un dataset de prueba controlado, crear snapshot online; exportar paquete; validar hashes, AES-GCM, integrity_check, foreign_key_check, evento y recibos.
+4. Cross-host: requiere segundo host/perfil destino activado y autorizado; restaurar de forma aislada, re-envelopar DPAPI, comprobar readiness/10 tools y test funcional. Si solo hay un host, no se declara cross-host.
+5. EP/B2: EP resuelve su compuerta presencial, autorización exacta OCP-MCP/ep-ocp/, upload/read-back y recuperación remota de su ciclo de una sola pasada; MCP-OCP valida su propio backup/restore; no se mezclan estados.
+6. Integración/aceptación: PR/merge a main y aceptación por operador solo con autorización expresa y todas las verificaciones. Cada estado terminal queda independiente.
 
 ## 9. Aceptación y viabilidad
 
@@ -273,7 +300,7 @@ El cumplimiento de la compuerta no asigna folios ni crea una sesión/control nue
 
 **Estado de las otras partes:** la última evidencia de Gobernanza blob `bfc06686075931f8e7c90271280a9efbf806871a` clasifica como verificados los ciclos observados de Gobernanza, EP y MCP-OCP y conserva DTC global `EN_CURSO_RECURRENT`. Su `GOBERNANZA.md` mantiene algunos párrafos previos que clasifican EP como parcial; esta inconsistencia se registra para reconciliación por Gobernanza en su propio ciclo y no se corrige desde MCP-OCP. EP-TASK-002 continúa en curso, aunque el ciclo documental EP esté verificado.
 
-**Trazabilidad MCP-OCP:** ciclos locales 01 `C-MCP-OCP-DTC-20261031-01`, 02 `C-MCP-OCP-DTC-20261031-02`, 03 `C-MCP-OCP-DTC-20261031-03`, y 04–06 registrados en §§27–29; ciclo local 07 `C-MCP-OCP-DTC-20261101-07`, apertura/procesamiento en §31 del mismo objeto. Son identificadores locales, no folios globales. Sesión local vigente `SES-20261101-3D504C5A`, gen. 4. Mientras FOL1 siga `PREPARADO_PENDIENTE_ACTIVACION_IPZ`, todos los folios globales CV/CY/A/B permanecen `PENDIENTE/NO ASIGNADO`.
+**Trazabilidad MCP-OCP:** ciclos locales 01 `C-MCP-OCP-DTC-20261031-01`, 02 `C-MCP-OCP-DTC-20261031-02`, 03 `C-MCP-OCP-DTC-20261031-03`, 04–06 en §§27–29, 07 en §31 y 08 en §32 del mismo objeto DTC. Son identificadores locales, no folios globales. Sesión local vigente `SES-20261101-3D504C5A`, gen. 4. FOL1 `PREPARADO_PENDIENTE_ACTIVACION_IPZ`; folios globales CV/CY/A/B permanecen `PENDIENTE/NO ASIGNADO`.
 
 ## 11. Crónica y fuentes
 
