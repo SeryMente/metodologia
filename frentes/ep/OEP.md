@@ -1543,7 +1543,7 @@ El operador entregó directamente el Prompt Adicional 02 a este hilo EP el 2026-
 
 ---
 
-## 94. Módulo funcional MOD-SCRIPTPWS — PowerShell para Entorno Persistente · v0.3.33 / VCU-EP-v35
+## 94. Módulo funcional MOD-SCRIPTPWS — PowerShell para Entorno Persistente · v0.3.34 / VCU-EP-v36
 
 ### Identidad, subordinación y responsabilidad funcional
 
@@ -1718,6 +1718,17 @@ $ErrorActionPreference='Stop'; $d="$env:LOCALAPPDATA\Programs\nodejs"; $env:Path
 **Corrección/previsión:** construir el texto una sola vez como `deployText`, validar `typeof deployText === "string"` y asignarlo directamente; reservar `.join()` para arrays. Mantener la construcción completa y sus validaciones antes de iniciar escrituras secuenciales.
 
 **Estados:** PREFLIGHT_FALLIDO · RCA_VERIFICADA · SIN_MUTACIÓN_REMOTA · CONTADOR_0. No se repitió el payload defectuoso.
+
+
+### Incidencia de preflight de manifiesto · normalización de saltos PowerShell · 2026-11-01
+
+**Operación:** verificación de SHA históricos antes de escribir KHORA 7.5.6 / EP 1.0.4. **Síntoma literal:** `Error: Existing manifest preflight mismatch: scripts/khora/modules/14-deploy.ps1`. **Impacto:** el control detuvo el payload antes de cualquier escritura en KHORA.
+
+**Causa raíz VERIFICADA:** la representación textual de `fetch_file` devuelve el archivo PowerShell normalizado a LF, pero el SHA-256 del manifiesto se generó con el contrato de archivo PowerShell UTF-8 BOM + CRLF. El hash directo del texto LF no coincidió; al normalizar el contenido de vuelta a BOM + CRLF, el SHA resultó exactamente `3dec787cc0a2dab1b792abcc8d2ca71b2584cf397e3f1e0cea25f7800b7d9e4b`, que coincide con la entrada existente. Se descartó corrupción del archivo.
+
+**Corrección/previsión:** antes de cotejar o regenerar hashes de archivos `.ps1`, aplicar la normalización canónica UTF-8 BOM + CRLF; para los demás archivos conservar sus bytes/texto sin conversión de saltos. Verificar varios artefactos históricos contra su manifiesto antes de permitir una escritura.
+
+**Estados:** PREFLIGHT_FALLIDO_POR_REPRESENTACIÓN · CAUSA_VERIFICADA · SIN_MUTACIÓN_REMOTA · CONTADOR_0. El manifiesto existente se conserva hasta verificar todo el conjunto.
 ### Entregables, aceptación y siguiente paso
 
 **Entregables del módulo:** comandos de ejecución reproducibles y con shell identificada; inventario de entrypoints PowerShell y consumidores; contratos de parámetros/códigos de salida; diagnóstico y logs recuperables; pruebas positivas/negativas; versiones y checksums; registro de fallos y correcciones; instrucciones de reanudación; evidencia de ejecución y lectura de vuelta. Los entregables se almacenan en las fuentes canónicas de sus repositorios, con referencias desde el OEP, no como copias paralelas.
