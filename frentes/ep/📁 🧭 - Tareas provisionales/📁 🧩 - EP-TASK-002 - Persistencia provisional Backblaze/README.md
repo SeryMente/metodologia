@@ -1415,4 +1415,31 @@ Los valores entre `<...>` son placeholders, no hashes ni IDs. `files[]` debe enu
 
 En `b2v5` 5.0.2 están disponibles `bucket list --json`, `bucket get`, `ls --json`, `file upload`, `file info` y `file download`. `file download-by-name` no existe en esta versión; no usarlo. `account get` incluye credenciales de sesión en su salida; nunca imprimir salida cruda. La inspección de ayuda no ha ejecutado upload/download/restore.
 
-**Estado:** `AUTHORIZATION_PENDING` · proceso `7232` espera el Application Key ID en PC-8 · `B2_PREFLIGHT_NOT_RUN` · `E2E_NOT_STARTED` · `UPLOAD_NOT_EXECUTED` · `RESTORE_NOT_EXECUTED`. El objeto DTC contiene el mismo compromiso y read-back en commit `631ffc6d2805d71f5a17dd812fa18eff35fe6ef9`, blob `da0c20ca4b85ccb3a42e8ea286425dc79bc21533`.
+**Estado de la instantánea histórica §33:** `SUPERSEDED_BY_§34`; el proceso `7232` pertenecía a PC-8 y ya no es una sesión operativa reutilizable. No inferir que la autorización llegó a completarse. El objeto DTC contiene el mismo compromiso y read-back en commit `631ffc6d2805d71f5a17dd812fa18eff35fe6ef9`, blob `da0c20ca4b85ccb3a42e8ea286425dc79bc21533`.
+
+
+## 34. Reinstanciación tras pérdida declarada del entorno local · RDC 015RENTA01 · 2026-11-01
+
+### Declaración y auditoría de entorno
+
+El operador declara que la sesión local anterior se reinició y que no sobrevivió ningún dato del entorno; esta declaración gobierna la continuidad, sin presentarse como prueba forense de borrado de todos los medios. Se autenticó una conexión RDC nueva al dispositivo `015RENTA01` (`aacf2eb5-17f4-428e-9242-c24a1fe4a2ec`), Windows x64, PowerShell, Node 24.22.2. PC-8 está Offline; el PID histórico `7232` no se reutiliza.
+
+En la auditoría local de solo lectura no se encontraron el ejecutable B2 ni las cachés `%LOCALAPPDATA%\Khora\state\b2-ep-ocp.sqlite` y `%USERPROFILE%\.b2_account_info`; tampoco existía `%LOCALAPPDATA%\Khora\state`. Git, GitHub CLI y VS Code CLI no estaban disponibles en PATH y no se encontraron clones conocidos bajo source/repos/Projects. La exportación Markdown presente en Downloads se conserva únicamente como antecedente documental.
+
+### Restauración de herramienta verificada
+
+Se instaló la CLI oficial B2 v5.0.2 en `%LOCALAPPDATA%\Programs\BackblazeB2\b2v5-windows.exe`, sin elevación. Lectura de vuelta: 18,639,088 bytes; SHA-256 `543aa2e36d3cbe06cf2c3e59287ce58b0a7d1507af87f147ff2f7d9406879662`, coincide con el pin conocido. La ejecución local devolvió `b2 command line tool, version 5.0.2 (b2sdk version 2.13.2)`, exit 0. Las ayudas locales de `account authorize`, `bucket list`, `ls`, `file upload`, `file info` y `file download` finalizaron con exit 0; `bucket list --json`, `ls --json` y `file upload --sha1` están disponibles. Esto no constituye operación contra Backblaze.
+
+### Seguridad, autorización y continuidad
+
+- No se ha leído ni introducido Application Key ID, Application Key, auth token ni salida cruda de `account get`.
+- No se ha creado la caché aislada ni ejecutado `account authorize`; no se llamó al proveedor y no se ejecutó preflight, upload, file info, download o restore.
+- La existencia y vigencia de una Application Key remota anterior son desconocidas. No crear una segunda clave por inferencia ni declarar revocada la anterior.
+- La autorización deberá usar exclusivamente `B2_ACCOUNT_INFO=%LOCALAPPDATA%\Khora\state\b2-ep-ocp.sqlite`; el usuario ingresará ID y secreto localmente en la terminal, nunca en el chat.
+- Se conserva el alcance exigido por §33: bucket `OCP-MCP`, prefijo `ep-ocp/`, capacidades exactamente `listBuckets`, `listFiles`, `readFiles`, `writeFiles`; sin delete. El preflight debe confirmar bucket privado, ID coincidente y prefijo permitido antes de cualquier escritura.
+- P012/P013 del DUG v377 exigen revisión presencial para autenticación y seguridad. La declaración física anterior correspondía a PC-8 y no se hereda por cambio de dispositivo. La presencia del operador junto a `015RENTA01` sigue pendiente de declaración explícita.
+- Después de superar el gate presencial y autorizar la cuenta, ejecutar exactamente el preflight y la prueba E2E one-shot de §33, sin exploración previa, sin retry y sin delete. Cualquier fallo tras crear el lock queda PARTIAL/FAILED y no autoriza repetición automática.
+
+**Estado vigente §34:** `RDC_CONNECTED` · `ENV_RESET_DECLARED` · `B2_CLI_INSTALLED_HASH_VERIFIED` · `LOCAL_HELP_CONFORMANCE_PASS` · `PHYSICAL_PRESENCE_GATE_PENDING` · `AUTHORIZATION_NOT_STARTED` · `B2_PREFLIGHT_NOT_RUN` · `E2E_NOT_STARTED` · `UPLOAD_NOT_EXECUTED` · `RESTORE_NOT_EXECUTED`.
+
+**Relación DTC:** mismo ciclo `C-EP-MOD-SCRIPTPWS-20261101-03`, sin abrir otro. La persistencia del evento se verificó en `frentes/ep/entregas/COORDINACION-GOBERNANZA-EP-v0.1.md`, commit `8aedfa05a04f076f5167dd01c65f3dca1947f361`, blob `8ea765db88462b1d9a859128650397273deef943`.
