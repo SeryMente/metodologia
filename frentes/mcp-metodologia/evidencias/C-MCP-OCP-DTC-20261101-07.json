@@ -1,0 +1,243 @@
+{
+  "schema_version": 1,
+  "artifact": "MCP-OCP DTC local cycle 07 — continuity, backup and restore portability analysis",
+  "cycle_local": "C-MCP-OCP-DTC-20261101-07",
+  "session_folio": "SES-20261101-3D504C5A",
+  "owner": {
+    "alias": "chatgpt-mcp-ocp-01a199d8-9209-725c-b764-a0a66ac54882",
+    "uuidv7_local": "01a199d8-9209-725c-b764-a0a66ac54882",
+    "native_chatgpt_conversation_id": "NOT_EXPOSED",
+    "generation": 4
+  },
+  "status": "DOCUMENTARY_ANALYSIS_VERIFIED_TECHNICAL_PORTABILITY_NOT_VERIFIED",
+  "scope": {
+    "authorization_event": "C-MCP-OCP-RETOMA-20261101-01",
+    "implementation_authorization_event": "C-MCP-METODOLOGIA-IMPLEMENTATION-AUTH-20261031-01",
+    "allowed": "Read-only inspection and documentation in frentes/mcp-metodologia/; existing implementation B scope unchanged.",
+    "exclusions": [
+      "No EP host/control/configuration changes",
+      "No B2 access or credentials",
+      "No PR or merge",
+      "No installation or public deployment",
+      "No DUG/IPZ/ART-025/027 changes",
+      "No MCP-NORMATIVO/Sink activation",
+      "No Khora changes",
+      "No cross-host key migration or re-enveloping"
+    ]
+  },
+  "sources": {
+    "dug": {
+      "path": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.html",
+      "version": "Samantha v377",
+      "signature": "NX-377m",
+      "metacanon": "1.28",
+      "gow": "2.17",
+      "blob": "54064c8fe00f872023a455f06596061ed69062ae"
+    },
+    "main_at_cycle_open": "e6e7041d9fdfd71c1ce18aa3f831ced1e7ffcff5",
+    "core_prior": {
+      "path": "frentes/mcp-metodologia/MCP-METODOLOGIA.md",
+      "version": "MCP-OCP-v0.1.16",
+      "blob": "8bba2a123dd331132471f35cf0d911b277d168a5"
+    },
+    "core_updated": {
+      "path": "frentes/mcp-metodologia/MCP-METODOLOGIA.md",
+      "version": "MCP-OCP-v0.1.17",
+      "commit": "441c02eebed106e354a5bd008a11a3370bdd9466",
+      "blob": "654bd4f833f2b10f3022b256fa6e21153331d0cf"
+    },
+    "coordination": {
+      "path": "frentes/mcp-metodologia/entregas/COORDINACION-SPRINT-OCP-MCP-v0.1.md",
+      "opening_commit": "828ef98e4ce51905c04ffb8c3242806a481847b3",
+      "processing_commit": "64038e8007a21e552c676155c6c9bf06ae19f268",
+      "processed_blob": "4cb8076fc813a1b7412c684bde5020193291dc22",
+      "section": "§31"
+    },
+    "control": {
+      "path": "frentes/mcp-metodologia/CONTROL-RESPONSABILIDAD.json",
+      "prior_blob": "3e6f96e919c33c3015478b7fd0f262b1bee47b0c",
+      "transfer_commit": "e476c9d6d8a62ea3d40709f39e0d768047cd917e",
+      "immediate_readback_blob": "aa45d94149f8aca78c192027bc21960356f642a8",
+      "verification_commit": "066791ee69ea3b6c48153763fab5f044c3efd42d",
+      "final_blob": "ecb27b04aaba04025ef596b3f0ed6c049bc2420d",
+      "status": "VERIFIED",
+      "readback": "MATCHED",
+      "generation": 4
+    },
+    "original_conversation": {
+      "source_path": "C:\\Users\\PC\\Downloads\\ChatGPT-OCP MCP-20261101-1917.md",
+      "destination_path": "frentes/mcp-metodologia/conversaciones/ChatGPT-OCP MCP-20261101-1917.md",
+      "bytes": 54916,
+      "lines": 1137,
+      "encoding": "UTF-8",
+      "bom": false,
+      "line_endings": "LF",
+      "sha256": "27D1074A72A1DB571984675396B847C229B76F803D2EFFFDEFAD4B7B1190B4D1",
+      "commit": "e6e7041d9fdfd71c1ce18aa3f831ced1e7ffcff5",
+      "blob": "bebd00b312f5db1f11910682452de9d95ef5ca08",
+      "readback": "LITERAL_MATCH",
+      "secret_pattern_scan": "0 known-pattern matches; not a full DLP guarantee"
+    },
+    "candidate": {
+      "branch": "integration/ocp-mcp-0.1.0-selective-20261101",
+      "head": "ef639b62509a9b7ae623c3fbd187466ee2e2a3d9",
+      "source_code_commit": "5956595d5455d5b851c2ef1ff6808f0c2aeabff9",
+      "receipt_path": "frentes/mcp-metodologia/evidencias/BUILD-CANDIDATE-MCP-OCP-0.1.0-20261101.json",
+      "receipt_blob": "11296e495aa9a52a640ff53da2b1042ba67acf08",
+      "test_evidence": {
+        "unit": "31/31 PASS",
+        "stdio_integration": "29/29 PASS",
+        "package_components": "200/200",
+        "build_exit": 0,
+        "zip_sha256": "96a62fc1291f501b7fa9b0792af07021db4cb2222c8658910bdadb7732bc3b2d"
+      },
+      "main_status": "NOT_INTEGRATED"
+    },
+    "inspected_source_blobs": [
+      {
+        "path": "src/OcpMcp/Services/BackupService.cs",
+        "blob": "f25b7ccde5a0f2addcf089fb1c7ec5007f127fe0"
+      },
+      {
+        "path": "src/OcpMcp/Storage/SqliteStore.cs",
+        "blob": "6e83e879bcd235ce8c075bf74606980c69fe6d51"
+      },
+      {
+        "path": "src/OcpMcp/Security/CryptoBox.cs",
+        "blob": "98bd0d4209f5769d86539bc346c3b39061d71cc4"
+      },
+      {
+        "path": "src/OcpMcp/Security/KeyVault.cs",
+        "blob": "93899ad8c542b55c86f93f698dc1c4440c24e11e"
+      },
+      {
+        "path": "src/OcpMcp/Program.cs",
+        "blob": "f92f170594d498a5d7f7657dbf333db82035f428"
+      },
+      {
+        "path": "src/OcpMcp/Services/SourceImporter.cs",
+        "blob": "feb83543b89d610a11d1e5aeda1bbc7501334596"
+      }
+    ]
+  },
+  "findings": {
+    "sqlite_schema_tables": [
+      "schema_meta",
+      "installation",
+      "key_store",
+      "canonical_sources",
+      "cycles",
+      "classifications",
+      "selections",
+      "operation_requests",
+      "authorization_grants",
+      "snapshots",
+      "events",
+      "telemetry_events",
+      "receipts",
+      "key_metadata",
+      "backup_points"
+    ],
+    "index": "ix_events_cycle_sequence",
+    "immutable_triggers": [
+      "events_no_update",
+      "events_no_delete",
+      "receipts_no_update",
+      "receipts_no_delete"
+    ],
+    "paths": {
+      "data": "%LOCALAPPDATA%\\SeryMente\\OCP MCP\\data\\ocp-mcp.sqlite",
+      "backup": "%LOCALAPPDATA%\\SeryMente\\OCP MCP\\backups\\<backup_id>.ocpbak",
+      "runtime_package": "ocp-mcp-0.1.0-win-x64.zip",
+      "stdio_config": "Outside SQLite, in the host/client MCP registration"
+    },
+    "snapshot": {
+      "method": "Microsoft.Data.Sqlite SqliteConnection.BackupDatabase to staging DB",
+      "checks": [
+        "PRAGMA quick_check",
+        "SHA-256",
+        "AES-256-GCM authentication/decrypt verification"
+      ],
+      "envelope": "Backup DEK DPAPI CurrentUser",
+      "write": "Flush(true), atomic final rename, then backup_points row insertion"
+    },
+    "restore": {
+      "lookup": "backup_points in existing DB",
+      "package_path": "Absolute path",
+      "checks": [
+        "GCM authentication",
+        "database SHA-256",
+        "PRAGMA integrity_check"
+      ],
+      "replacement": "temporary DB then target swap with rollback"
+    },
+    "portability_gap": "The .ocpbak relies on backup_points.package_path stored in the very DB required for restore. It is not a standalone from-zero restore artifact. DPAPI CurrentUser wrapping is tied to source user context/profile; no all-key re-enveloping operation is implemented.",
+    "key_material_affected": [
+      "backup DEK",
+      "canonical_sources wrapped DEKs",
+      "snapshots wrapped DEKs",
+      "HMAC authority key in key_store",
+      "Ed25519 receipt signing private key in key_store"
+    ],
+    "candidate_fixture_tests_do_not_prove": [
+      "real installed DB backup",
+      "remote B2 persistence",
+      "different host/user/profile restore",
+      "portable recovery or operator acceptance"
+    ]
+  },
+  "proposed_not_implemented": {
+    "external_versioned_manifest": [
+      "backup id/date",
+      "service version/source commit/RID/build manifest hash",
+      "SQLite schema version",
+      "relative artifact paths",
+      "sizes and SHA-256",
+      "crypto/AAD versions",
+      "opaque recovery envelope reference only",
+      "header/database hash linkage",
+      "restore order and preconditions"
+    ],
+    "no_secret_policy": "No DPAPI blob, plaintext key, token, credential, or unnecessary SID in Git/manifest/logs.",
+    "restore_outline": [
+      "validate manifest and safe relative paths",
+      "verify sizes and SHA-256",
+      "resolve only an approved recovery envelope",
+      "authenticate AES-GCM and DB hash",
+      "stage DB; integrity_check and foreign_key_check",
+      "re-envelop every required key for destination context",
+      "service stopped during controlled swap with rollback",
+      "isolated start; readiness and reopen MCP tools",
+      "read-only functional check and signed receipt"
+    ],
+    "architecture_gate": "P012/P013 operator-present security and high-level architecture review required before implementation/testing."
+  },
+  "six_statuses": {
+    "BACKUP_LOCAL_VERIFICADO": "PASS_IN_CANDIDATE_FIXTURE_ONLY; REAL_INSTALLATION_NOT_VERIFIED",
+    "PERSISTENCIA_REMOTA_B2_VERIFICADA": "NOT_VERIFIED; EP_OWNED; NOT_EXECUTED",
+    "RESTORE_CROSS_HOST_VERIFICADO": "NOT_VERIFIED; NO_AUTHORIZED_SECOND_HOST_PROFILE_OR_PORTABLE_REENVELOPING",
+    "INTEGRADO_EN_MAIN": "NO",
+    "INSTALADO_EN_EP": "NO",
+    "ACEPTADO_POR_OPERADOR": "NO"
+  },
+  "execution": {
+    "code_changes": false,
+    "build_or_tests": false,
+    "restore": false,
+    "real_database_access": false,
+    "b2": false,
+    "ep_host_changes": false,
+    "credential_access": false,
+    "cross_host_test": false,
+    "pr_or_merge": false,
+    "installation": false,
+    "only_device_observed": "015RENTA01 (one RDC device online)",
+    "cycle_local_status": "CUMPLE_VERIFICADO_DOCUMENTARY_ANALYSIS",
+    "global_dtc": "EN_CURSO_RECURRENT",
+    "normative_mcp": "DESACTIVADO",
+    "sink_aliases": "NOT_DEPLOYED_NOT_TESTED",
+    "fol1": "PREPARADO_PENDIENTE_ACTIVACION_IPZ",
+    "global_folios": "PENDIENTE_NO_ASIGNADO"
+  },
+  "next_gate": "Operator-present P012/P013 review of the proposed key-recovery architecture. Do not implement or perform cross-host restore until approved. EP retains B2/host responsibility."
+}
