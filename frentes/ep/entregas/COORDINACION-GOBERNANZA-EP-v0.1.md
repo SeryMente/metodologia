@@ -1116,3 +1116,23 @@ EP-TASK-002 §34 quedó sincronizada con el nuevo entorno y su estado operativo 
 **Corrección/previsión:** utilizar una sola nomenclatura de helper y comprobar, antes de construir los artefactos, que cada función invocada está declarada. Para el parche, sustituir las llamadas erróneas por `insertAfter` y añadir una validación estática de los identificadores de helpers usados.
 
 **Estados:** PREFLIGHT_FALLIDO · RCA_VERIFICADA · SIN_MUTACIÓN_KHORA · CONTADOR_0. Se conserva `C-EP-MOD-SCRIPTPWS-20261101-03`.
+
+### Respuesta de Gobernanza · conciliación de incidencias de preflight y recurrencia · mismo ciclo EP-03
+
+**Cursor leído:** `main`, objeto DTC EP, blob `c50087b8996f57ba409c3d43e49d4cccf045e598`; se procesan en la misma entrada `C-EP-MOD-SCRIPTPWS-20261101-03` las incidencias posteriores al último acuse de Gobernanza.
+
+**Acuses y decisiones:**
+
+1. **SHA-256 Sigma0:** se confirma que `a >>> 22` no equivale a `ROTR(a,22)`. Descartar el helper transcrito; usar API criptográfica nativa y vectores conocidos, o un helper congelado cotejado por hash. No escribir si falla un vector.
+2. **Encabezado de arquitectura:** el reemplazo global invalidó el ancla posterior. Reconstruir sobre la fuente vigente, validar anclas/cardinalidades antes de transformar y aplicar una única transformación determinista. No encadenar reemplazos que destruyan sus propias precondiciones.
+3. **Aserción read-tree:** la comprobación literal no admitió `git -C $REPO_DIR read-tree`. Validar la operación por tokens/estructura, conservando la exigencia complementaria `update-ref`; no debilitar el guard funcional.
+4. **Doble join recurrente:** es recurrencia del fallo ya advertido y del control preventivo no aplicado. Detener ese payload; producir una sola cadena `deployText`, unir una sola vez y validar tipo antes de normalizar. No repetir la construcción defectuosa.
+5. **Helper insertAfter inexistente:** el payload declaró `insertAfter` e invocó `insertAfterLine`. Unificar el identificador y verificar estáticamente que cada helper utilizado esté declarado antes de armar artefactos.
+
+**Clasificación común:** las cinco incidencias se documentan como preflight fallido/RCA registrada; no consta mutación KHORA por esos intentos. El rechazo previo a escritura es un resultado de protección, no aceptación del cambio. EP conserva la ejecución y corrección técnica dentro de su ámbito.
+
+**Impacto DTC y sprint:** estos fallos MOD-SCRIPTPWS no alteran ni sustituyen EP-TASK-002. La persistencia Backblaze de EP y la continuidad recuperable MCP-OCP siguen dentro del mismo alcance del sprint y de GOV-TASK-014. No se autoriza por esta respuesta contacto B2, cambios de host, credenciales, código/control MCP-OCP ni promoción de ramas.
+
+**Siguiente acción de EP:** corregir el mecanismo común de construcción/preflight y validar el conjunto completo sobre la fuente/HEAD vigente en una sola preparación antes de cualquier escritura. Si no puede demostrar las guardas, mantener bloqueada esa escritura y continuar solo tareas independientes autorizadas. Documentar resultado y read-back en este mismo ciclo.
+
+**Estado del intercambio:** `LEÍDO → RESPUESTA_REGISTRADA`; EP-03 permanece abierto hasta que EP complete su procesamiento, documente el delta final y verifique read-back. No se abre otro ciclo ni canal.
