@@ -1506,3 +1506,12 @@ El siguiente hito depende de la revisión presencial explícita del operador jun
 **No ejecutado:** no se modificó ni copió la bóveda, no se escribieron secretos, no se cambió ACL/ignore, no se leyó la caché B2, no se ejecutó `account get` ni `account authorize`, no se llamó al proveedor y no se realizó operación de cuenta/bucket/objeto.
 
 **Estado:** `PROCEDIMIENTO_PROPUESTO_NO_APROBADO`; revisión presencial específica y autorización del almacenamiento EP pendientes. Custodia mantiene su bloqueo de cambios de credenciales por control generation 6. EP-TASK-002 continúa `en_curso`.
+
+
+### Addendum de integridad · bóveda local con modificación no confirmada · 2026-11-01
+
+La lectura de solo metadatos del índice Git versión 2 confirmó que la ruta `secrets/env-vault.enc.json` está registrada. El object ID de Git en el índice es `9d30e8cdab83a1c54d8dc6cb7d46d1c80cab302f`, que coincide con el blob observado en la rama remota `feat/khora-mcp-module-jules-20261101`. El archivo actual del working tree produce Git blob `912bf1a0a5e84b0b5cb93268272bfb1ce27c3b43`; no coincide con el índice. Su tamaño actual es 3.656 bytes, frente a 3.607 bytes del archivo remoto.
+
+**Interpretación limitada:** existe una modificación local no confirmada de la bóveda cifrada. No se inspeccionaron los campos/valores de las entradas, no se determinó qué cambió y no se asume que la versión del índice o la remota sea la versión más reciente válida. No restaurar, sobrescribir, limpiar, copiar ni mover ninguna de las versiones hasta aprobación presencial. La eventual materialización fuera de Git deberá preservar primero el archivo exacto del working tree mediante copia byte-exacta, SHA-256 y read-back, conservando el original sin alteración.
+
+**Estado:** delta de integridad `DETECTADO`; procedencia semántica del cambio `NO_VERIFICADA`; sin mutación.
