@@ -905,3 +905,14 @@ Ambos archivos mantienen exactamente el mismo blob SHA en `main` y en la rama de
 **Corrección/previsión:** inspeccionar y recuperar las líneas exactas del archivo remoto, reemplazar cada aserción mediante ancla individual verificada o reconstrucción explícita del archivo, comprobar unicidad de cada ancla y ejecutar un preflight de todas las transformaciones antes de la primera escritura. No usar un bloque combinado supuesto. El archivo remoto se vuelve a leer y se coteja SHA/blob antes de construir el parche.
 
 **Estados:** PREFLIGHT_FALLIDO · RCA_VERIFICADA · SIN_MUTACIÓN_REMOTA · CONTADOR_0. El payload completo se descarta; no se repite con el mismo bloque supuesto.
+
+
+### Incidencia SHA-256 · tabla K incompleta detectada por guarda de longitud · 2026-11-01
+
+**Operación:** preflight del payload KHORA 7.5.6 / EP 1.0.4, antes de cualquier escritura. **Síntoma literal:** `Error: SHA256 K constant count mismatch: 63`. **Impacto:** la guarda `K.length === 64` abortó al calcular el primer vector; ningún `update_file` fue invocado y la rama KHORA no se modificó por este intento.
+
+**Causa raíz VERIFICADA:** al copiar manualmente la tabla de redondeo SHA-256 al payload de construcción se omitió otra constante, `0xd6990624`. La tabla quedó en 63 entradas; el control de longitud detectó la inconsistencia de forma fail-closed. Este es un nuevo fallo de integridad del helper auxiliar, no un fallo del código PowerShell.
+
+**Corrección/previsión:** dejar de reconstruir o transcribir la tabla de constantes manualmente. Reutilizar exactamente el bloque de K ya validado contra SHA256(abc), SHA256(vacío), UTF-8 y el manifiesto previo; exigir longitud 64, cotejo del bloque por hash/identidad, vectores conocidos y match del manifiesto antes de cualquier escritura.
+
+**Estados:** PREFLIGHT_FALLIDO · RCA_VERIFICADA · SIN_MUTACIÓN_REMOTA · CONTADOR_0. El preflight protegió la rama; el payload con tabla incompleta se descarta.
