@@ -1652,3 +1652,27 @@ El núcleo v0.1.18, el objeto de coordinación, control, DUG, OEP/EP DTC, EP-TAS
 **Estado de apertura:** DTC_CYCLE_STATUS=OPEN. MCP_TECHNICAL_STATUS=IMPLEMENTATION_AUTHORIZED_IN_ISOLATED_BRANCH; BUILD_TEST_AND_CROSS_HOST_NOT_VERIFIED. DTC global EN_CURSO_RECURRENT. EP-03 permanece abierto; EP-TASK-002 en_curso; GOV-TASK-014 EN_CURSO. MCP-NORMATIVO DESACTIVADO; Sink p001–p043 sin despliegue/prueba.
 
 **Siguiente acción inmediata:** traer los fuentes existentes de la candidata histórica a la rama de trabajo, revisar dependencias/métodos de custodia y desarrollar PPR v1 en commits acotados.
+
+
+### 33.4 Checkpoint de preparación · read-back y estado técnico
+
+**Trabajo publicado en la rama feature**, sin escribir main:
+
+| Artefacto | Commit | Blob/hash | Read-back |
+|---|---|---|---|
+| Apertura ciclo 09 / §33 | 8feaec1e3b37bfed213b6d2a76bd412891287294 | f9c3e0ce43a5bb31ff2bd6c6d11b23bd7c8d300c | EXACT |
+| Importación selectiva de fuentes (21 archivos) | 5c84d689ca1c6593e4b95c749a3a767576b1a30c | árbol a38c111a4658627d163b8531cdcf0e99efa490cb | referencia de blobs confirmada |
+| Contrato PPR v1 | d1b97095116a7e9aa7f719f822b56f29239e6453 | dda67e5107f100b27f1e4d76680c81d41cafb1de | EXACT |
+| JSON Schema manifest PPR v1 | f402ee483acfc7603177523431fde8cde4792848 | 7d3126c40d19e43c5123b3acbfc2f4b53c1f7767 | EXACT; JSON parseado |
+| Núcleo MCP-OCP v0.1.19 / backlog | 3c7bcd077902af34ab1764842fd3a7d3906b39fc | 3390099890e3734be9a829be003ab2d217b60690 | EXACT |
+| Crónica ciclo 09 | 014f87fa0868ea0b2dee86a9637c5a673b9504b3 | 83f9fcee3f423e0a819b5d8d6c5dfa8d5ce39234 | EXACT |
+| Evidencia ciclo 09 | dbc655fb4341144a63384cfd9470afd0c9b9f95a | 37aa2e9b8a64ada341250ad7c2f8909d160c9827 | EXACT; JSON parseado |
+| README índice | 5cc4037be88b9a71f2a997377103ed4efd90c5f0 | 006ded56a70c5abeb2b644ea24c4050ad6c932ca | EXACT |
+
+**Estado RDC observado:** 015RENTA01 Online; Git/GitHub CLI no disponibles en PATH; dotnet presente sin SDK registrado, runtime .NET 8.0.11; proyecto net10.0. No se ejecutó build ni tests y no se modificó tooling/host. PC-8/PC-14 Offline.
+
+**Estado de la implementación:** la arquitectura y el esquema de manifest están baselined; los fuentes históricos están importados. PortableRecoveryService, comandos portable-export/portable-restore y tests PPR aún NO IMPLEMENTADOS. Build/test NO VERIFICADOS. No se alteró main, no hay PR/merge, no se instaló el servidor.
+
+**Estado separado:** DTC_CYCLE_STATUS=OPEN — la aprobación, el acuse y la preparación documental quedaron registrados/read-back, pero el procesamiento técnico solicitado sigue abierto. MCP_TECHNICAL_STATUS=IMPLEMENTATION_AUTHORIZED_IN_ISOLATED_BRANCH; PPR_CODE_NOT_IMPLEMENTED; BUILD_TEST_NOT_VERIFIED. Los gates second-host/cross-host y EP/B2 siguen pendientes en sus autoridades correspondientes.
+
+**Siguiente acción inmediata:** implementar el servicio PPR y sus comandos en esta rama; obtener build/test en entorno Windows autorizado con SDK .NET 10. No declarar E2E ni cierre del ciclo antes de contar con implementación, build/test y evidencia de aceptación de su alcance local.
