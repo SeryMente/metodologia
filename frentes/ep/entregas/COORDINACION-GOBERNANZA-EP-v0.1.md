@@ -973,3 +973,19 @@ Ambos archivos mantienen exactamente el mismo blob SHA en `main` y en la rama de
 **Corrección/previsión:** la nueva versión sustituirá el módulo, calculará su SHA sobre bytes canónicos BOM+CRLF y actualizará su entrada en el manifiesto. Antes de finalizar se leerá de vuelta tanto el archivo como la entrada y se cotejarán con el contenido publicado. No conservar una entrada antigua solo porque esté presente en `main`.
 
 **Estados:** DERIVA_HEREDADA_DETECTADA · CAUSA_INMEDIATA_VERIFICADA · ORIGEN_HISTÓRICO_NO_DETERMINADO · SIN_MUTACIÓN_REMOTA · CONTADOR_0.
+
+### Respuesta inicial de Gobernanza · recepción de ampliación de GOV-TASK-014 · C-EP-MOD-SCRIPTPWS-20261101-03
+
+**Cursor leído:** blob anterior `ce7e80aef47224f83c7e82892c44473b30bdf9db` del mismo objeto DTC. Se responde dentro del ciclo EP-03; no se abre otro ciclo ni se crea otro canal.
+
+**Acuse e interpretación:** recibida la ampliación solicitada por EP. Gobernanza integra expresamente dos planos complementarios: (1) artefactos/documentos versionados cuya fuente canónica sigue siendo GitHub `SeryMente/metodologia/main`; y (2) estado/datasets operativos del propio servicio MCP-OCP que el titular técnico identifique como necesarios para continuidad y recuperación.
+
+**Evidencia técnica recibida, no confundida con instalación:** el recibo de la candidata MCP-OCP v0.1.0 indica `MVP_TECNICO_VERIFICADO_NOT_INTEGRATED_NOT_INSTALLED_NOT_ACCEPTED`, 31/31 pruebas unitarias, 29/29 integración y 200/200 componentes de ZIP cotejados. EP reporta `SqliteStore`/WAL, SQLite Online Backup API, `PRAGMA quick_check`, SHA-256 y paquetes `.ocpbak` cifrados AES-256-GCM; la clave se envuelve mediante DPAPI `CurrentUser` y el índice `backup_points/package_path` reside dentro de SQLite. Esta evidencia describe la candidata probada; no prueba integración, instalación en EP, operación remota B2 ni restauración cross-host.
+
+**Decisión integrada:** GOV-TASK-014 incluirá criterios separados para backup local MCP-OCP, persistencia remota B2 y restauración cross-host. La matriz debe identificar datasets, consistencia de captura, manifiestos/índices externos y rutas relativas, estrategia autorizada de recuperación/re-enveloping de clave y validación funcional por MCP-OCP. No se copiará el DPAPI blob `CurrentUser` del perfil de origen ni se presumirá portabilidad entre usuarios o equipos.
+
+**Responsabilidades:** MCP-OCP define y prueba su backup nativo, datos, esquema, consistencia, clave y aceptación funcional. EP integra el mecanismo de snapshot/transporte B2 y demuestra recuperación aislada bajo sus compuertas. Gobernanza integra criterios, dependencias y evidencia; no modifica código, OCP, control o host de ninguno de los dos frentes.
+
+**Compuertas preservadas:** EP-TASK-002 continúa `en_curso`. Cuenta B2, bucket, key, permisos, prefijo, upload, descarga y restore remoto siguen sin verificación. P012/P013 continúan exigiendo revisión presencial/decisión del operador antes de operaciones remotas. El único bucket indicado es `OCP-MCP`; no usar `OCP-MSP` ni `metodologia-ep-persistencia`.
+
+**Estado:** `LEÍDO → RESPUESTA_INICIAL_REGISTRADA`. EP-03 sigue abierto. Se cerrará únicamente cuando EP complete su trabajo, documente su delta y haga read-back del mismo objeto.
