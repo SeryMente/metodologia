@@ -1543,7 +1543,7 @@ El operador entregó directamente el Prompt Adicional 02 a este hilo EP el 2026-
 
 ---
 
-## 94. Módulo funcional MOD-SCRIPTPWS — PowerShell para Entorno Persistente · v0.3.32 / VCU-EP-v34
+## 94. Módulo funcional MOD-SCRIPTPWS — PowerShell para Entorno Persistente · v0.3.33 / VCU-EP-v35
 
 ### Identidad, subordinación y responsabilidad funcional
 
@@ -1707,6 +1707,17 @@ $ErrorActionPreference='Stop'; $d="$env:LOCALAPPDATA\Programs\nodejs"; $env:Path
 **Corrección/previsión:** no reescribir fórmulas criptográficas al copiar entre payloads. Reutilizar el helper aislado validado como una unidad indivisible; comparar el texto/identidad del helper, verificar 64 constantes, SHA256(abc), SHA256(vacío), UTF-8 y un hash histórico del manifiesto. Cualquier vector fallido bloquea toda escritura.
 
 **Estados:** PREFLIGHT_FALLIDO · RCA_VERIFICADA · SIN_MUTACIÓN_REMOTA · CONTADOR_0. No se reintentó la escritura; se descarta el payload.
+
+
+### Incidencia de payload JavaScript · doble join de cadena · 2026-11-01
+
+**Operación:** construcción en memoria de KHORA 7.5.6 / EP 1.0.4, antes del primer `update_file`. **Síntoma literal:** `TypeError: deployLines.join is not a function`. **Impacto:** ejecución abortada durante el armado de `scripts/khora/modules/14-deploy.ps1`; ningún archivo del repositorio KHORA ni referencia de rama se modificó por este intento.
+
+**Causa raíz VERIFICADA:** la variable `deployLines` se asignó con el resultado de `array.join("\n")`, que ya es una cadena; posteriormente se invocó `deployLines.join("\n")` como si siguiera siendo un array. El error de tipo fue detectado por el runtime antes de la fase de escritura.
+
+**Corrección/previsión:** construir el texto una sola vez como `deployText`, validar `typeof deployText === "string"` y asignarlo directamente; reservar `.join()` para arrays. Mantener la construcción completa y sus validaciones antes de iniciar escrituras secuenciales.
+
+**Estados:** PREFLIGHT_FALLIDO · RCA_VERIFICADA · SIN_MUTACIÓN_REMOTA · CONTADOR_0. No se repitió el payload defectuoso.
 ### Entregables, aceptación y siguiente paso
 
 **Entregables del módulo:** comandos de ejecución reproducibles y con shell identificada; inventario de entrypoints PowerShell y consumidores; contratos de parámetros/códigos de salida; diagnóstico y logs recuperables; pruebas positivas/negativas; versiones y checksums; registro de fallos y correcciones; instrucciones de reanudación; evidencia de ejecución y lectura de vuelta. Los entregables se almacenan en las fuentes canónicas de sus repositorios, con referencias desde el OEP, no como copias paralelas.
