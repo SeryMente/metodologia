@@ -1,0 +1,133 @@
+{
+  "schema": "governance-event-evidence/1",
+  "event_id": "C-GOBERNANZA-RETOMA-09",
+  "recorded_on": "2026-11-01",
+  "front": "gobernanza",
+  "repository": "SeryMente/metodologia",
+  "branch": "main",
+  "authorization": {
+    "status": "explicit",
+    "source": "operator instruction in receiving conversation",
+    "verbatim": "ChatGPT-GOBERNANZA-1-20261101-1717.md\nAdjunta converascion en persistencia de frente GOBERNANZA para covnerascion 1.\n\nRetoma repsosnabilidad en tiempo record.\n\nPROHIBIDO TARDARTE MAS DFE LO ESTRICTAMNET NECESARIO PARA INICIAR CONVERSACION. Tienes maximo 5 minutos para resolver el primer ciclo.\n\nSin excusas."
+  },
+  "responsibility": {
+    "operation": "TRANSFER_PRIMARY_TITULAR",
+    "generation_before": 12,
+    "generation_after": 13,
+    "previous_primary": {
+      "alias": "chatgpt-C-GOBERNANZA-RETOMA-08-SES-20261101-GV8A19904",
+      "session_folio": "SES-20261101-GV8A19904",
+      "generation": 11,
+      "status": "superseded"
+    },
+    "new_primary": {
+      "alias": "chatgpt-C-GOBERNANZA-1-20261101-1717-SES-20261101-GVCD93ADD7",
+      "instance": "chatgpt-gobernanza-1-2026-11-01-CD93ADD7",
+      "session_folio": "SES-20261101-GVCD93ADD7",
+      "local_uuidv7": "01a199c3-a374-7e1f-8191-1ff6cd93add7",
+      "generation": 13,
+      "source_export_conversation_id": "6ae7acb7-95a8-83e8-a417-64a48c91ce65",
+      "native_current_chat_id": "NOT_EXPOSED"
+    },
+    "co_responsible_preserved": {
+      "alias": "chatgpt-C-GOBERNANZA-ASIENTO-02-RETOMA-20261101-01-SES-20261101-GV8E89D1FF",
+      "session_folio": "SES-20261101-GV8E89D1FF",
+      "local_uuidv7": "01a19963-08ed-703e-8134-9df78e89d1ff",
+      "generation": 12
+    },
+    "maximum_active_responsibles": 2,
+    "active_responsibles_after_write": 2,
+    "source_control_blob": "8ac857342d5a01a8f4bb160f1cbdb2298f9cbc41",
+    "first_commit": "57ca88a8f19908d1dc110428249116403a85ef61",
+    "confirmation_commit": "404c49cede3a19afcc0df28a5a58e2f404dbf1fb",
+    "final_control_blob": "960fefdca26c841c3a2d06ebb57a2e836b6f8d73",
+    "readback_verified": true,
+    "cycle_local_id": "C-GOBERNANZA-RETOMA-09-CY01",
+    "cycle_local_uuidv7": "01a199c4-afe7-736b-870d-fe886cfbc11c",
+    "global_cycle_folio": null
+  },
+  "document": {
+    "filename": "ChatGPT-GOBERNANZA-1-20261101-1717.md",
+    "source_device": "PC-8",
+    "source_path": "C:/Users/PC 8/Downloads/ChatGPT-GOBERNANZA-1-20261101-1717.md",
+    "bytes": 93402,
+    "modified_at_local": "2026-11-01 17:17:53",
+    "source_sha256": "703542FC7CB57785AA352A2020D940037C1C47CA2C2C37C13B26B9BA7F71D8C8",
+    "source_conversation_url_id": "6ae7acb7-95a8-83e8-a417-64a48c91ce65",
+    "local_file_read_and_hash": "VERIFIED_ON_PC8",
+    "repository_path": "frentes/gobernanza/documentos/originales/ChatGPT-GOBERNANZA-1-20261101-1717.md",
+    "repository_persistence": "PENDING_RDC_DEVICE_OFFLINE",
+    "manifest_updated": false,
+    "status": "CAPTURED_LOCALLY_NOT_PERSISTED"
+  },
+  "dtc": {
+    "governance": {
+      "status": "CUMPLE_VERIFICADO",
+      "scope": "responsibility control write/read-back; task integration and own communication writes read-back"
+    },
+    "ep": {
+      "status": "CUMPLE_PARCIAL",
+      "local_cycle": "C-EP-MOD-SCRIPTPWS-20261101-03",
+      "source_blob": "ce7e80aef47224f83c7e82892c44473b30bdf9db",
+      "response_commit": "51614cc6ea37fa828726ae51b584e1a61f994041",
+      "response_blob": "0db054c79abebe40d7a6a686744e2adcd566b69b",
+      "initial_response_readback": true,
+      "cycle_closed": false,
+      "final_readback_pending": true,
+      "EP_TASK_002": "en_curso"
+    },
+    "mcp_ocp": {
+      "previous_local_cycle": "C-MCP-OCP-DTC-20261101-06",
+      "previous_cycle_status": "CUMPLE_VERIFICADO",
+      "control_generation": 3,
+      "control_blob": "3e6f96e919c33c3015478b7fd0f262b1bee47b0c",
+      "new_message_section": "§30",
+      "commit": "a9467aa34f3d19f6c8d178cbe3060547d73329ec",
+      "coordination_blob": "3ea63f4c18de6f185430617add5bd2df67f15258",
+      "governance_readback": true,
+      "mcp_response": "PENDING"
+    },
+    "global": "EN_CURSO_RECURRENT"
+  },
+  "tasks": {
+    "GOV_TASK_014": {
+      "status": "en_curso",
+      "scope": "two persistence planes; local backup, remote B2, cross-host restore distinct",
+      "commit": "a844eb8f1d94fff99f9d197c06f8e0bf9641d1bd",
+      "blob": "a4cb7e053392695b61c9c4265d0e6967f48fea42",
+      "index_commit": "2ff1ec20a13ec5e1abd16872a6e4e5a99d9921a2",
+      "index_blob": "5f33b70070c8af4fcdb125cf33561178b52261ad",
+      "readback_verified": true
+    }
+  },
+  "dug": {
+    "version": "Samantha v377",
+    "signature": "NX-377m",
+    "metacanon": "1.28",
+    "gow": "2.17",
+    "principles": 43,
+    "annexes": 22,
+    "main_blob": "54064c8fe00f872023a455f06596061ed69062ae",
+    "modified_by_event": false
+  },
+  "foliation": {
+    "FOL1": "PREPARADO_PENDIENTE_ACTIVACION_IPZ",
+    "CV": "PENDIENTE/NO ASIGNADO",
+    "CY": "PENDIENTE/NO ASIGNADO",
+    "A": "PENDIENTE/NO ASIGNADO",
+    "B": "PENDIENTE/NO ASIGNADO",
+    "global_cycle_folio": null
+  },
+  "boundaries": {
+    "dug_modified": false,
+    "gow_modified": false,
+    "art025_modified": false,
+    "art027_modified": false,
+    "ipz_native_modified": false,
+    "ep_control_or_host_modified": false,
+    "mcp_ocp_control_or_code_modified": false,
+    "mcp_normativo_activated": false,
+    "b2_remote_operation_executed": false,
+    "candidate_integrated_or_installed": false
+  }
+}
