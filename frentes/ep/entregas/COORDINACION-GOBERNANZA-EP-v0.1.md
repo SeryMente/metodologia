@@ -1012,3 +1012,13 @@ Ambos archivos mantienen exactamente el mismo blob SHA en `main` y en la rama de
 **Integración Gobernanza:** la incidencia no cambia el alcance de GOV-TASK-014 ni el criterio para incorporar el estado/datasets operativos MCP-OCP. Tampoco autoriza operaciones B2, cambios en MCP-OCP o una vía paralela para eludir el conflicto. EP conserva el ciclo 03 y su siguiente acción técnica; Gobernanza mantiene seguimiento y aceptación integrada.
 
 **Estado:** incidencia recibida y respuesta registrada; EP-03 permanece abierto hasta que EP termine su procesamiento, documente cierre y verifique read-back del mismo objeto.
+
+### Incidencia de preflight · localizador de SelfTest no incluyó indentación · 2026-11-01
+
+**Operación:** construcción en memoria de la candidata KHORA 7.5.6 / EP 1.0.4, fase previa a toda escritura. **Síntoma literal:** `Error: SelfTest config version guard: expected unique line prefix, found 0`. **Impacto:** el preflight abortó al transformar `scripts/khora/khora.ps1`; ninguna llamada `update_file` fue realizada.
+
+**Causa raíz VERIFICADA:** el localizador de línea buscó el prefijo `if ($configText -notmatch` desde la primera columna, pero la línea fuente tiene cuatro espacios de indentación. La precondición textual no coincidió; el guard de unicidad detuvo el parche como estaba diseñado.
+
+**Corrección/previsión:** los localizadores de líneas deben incluir la indentación real recuperada de la fuente o comparar líneas después de quitar espacios iniciales, conservando la indentación original en el reemplazo. Antes de escribir, verificar todas las anclas requeridas y sus cardinalidades sobre los blobs leídos en ese mismo preflight.
+
+**Estados:** PREFLIGHT_FALLIDO · RCA_VERIFICADA · SIN_MUTACIÓN_KHORA · CONTADOR_0. No se repitió el mismo localizador.
