@@ -3,7 +3,7 @@
 **Estado:** materialización operativa provisional; no constituye el ámbito funcional Tareas ni lo canoniza.  
 **Contenedor:** `frentes/gobernanza/📁 🧭 - Tareas provisionales/`  
 **OCP padre y fuente de responsabilidad:** `frentes/gobernanza/`  
-**Control heredado:** [CONTROL-RESPONSABILIDAD.json](../CONTROL-RESPONSABILIDAD.json), control común generación 12; titular `SES-20261101-GV8A19904` (gen11) y corresponsable asiento 2 `SES-20261101-GV8E89D1FF` (gen12). Máximo dos responsables activos; read-back de la generación 12 verificado en C-GOBERNANZA-ASIENTO-02-RETOMA-20261101-01.
+**Control heredado:** [CONTROL-RESPONSABILIDAD.json](../CONTROL-RESPONSABILIDAD.json), control común generación 13; titular `SES-20261101-GVCD93ADD7` (gen13, Gobernanza 1) y corresponsable asiento 2 `SES-20261101-GV8E89D1FF` (gen12). Máximo dos responsables activos; titularidad transferida y control final leído de vuelta en C-GOBERNANZA-RETOMA-09 (blob `960fefdca26c841c3a2d06ebb57a2e836b6f8d73`).
 **Evento de creación:** C-GOBERNANZA-MDP-OCP-01 · 2026-10-30.  
 **Fuente normativa vigente:** [DUG Samantha v377 · NX-377m](../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html); Metacanon 1.28, GOW 2.17, 43 principios y 22 anexos (blob leído de vuelta `54064c8fe00f872023a455f06596061ed69062ae`). El snapshot v373 de registros históricos se conserva como antecedente. La arquitectura MDP se originó en v371 y se leyó de vuelta en v373.
 
@@ -151,12 +151,13 @@ Ambas tareas heredan el control único de Gobernanza, generación 11; no tienen 
 
 ## Dependencia integrada del sprint · GOV-TASK-014 · 2026-11-01
 
-Se incorpora **GOV-TASK-014 — Integración y aceptación de persistencia Backblaze para Metodología y OCP** como tarea integradora de Gobernanza, vinculada a la fuente técnica EP-TASK-002. No duplica su implementación ni altera el OEP.
+Se mantiene **GOV-TASK-014 — Integración y aceptación de persistencia Backblaze para Metodología y OCP** como tarea integradora de Gobernanza, vinculada a EP-TASK-002 y ampliada por la solicitud DTC de EP-03.
 
-- Fuente técnica: `frentes/ep/📁 🧭 - Tareas provisionales/📁 🧩 - EP-TASK-002 - Persistencia provisional Backblaze/README.md`, blob observado `eefd01300376dab55593e2a35196f7eaf66fc350`.
-- Estado EP: `en_curso`; CLI local B2 v5.0.2 instalada y verificada según recibo EP; cuenta B2 no autenticada; bucket/prefijo/permisos no verificados; ninguna operación remota ejecutada.
-- Destino declarado por EP: bucket `OCP-MCP`; prefijo previsto `ep-ocp/`. GitHub `SeryMente/metodologia/main` sigue siendo la fuente canónica; B2 es complemento de persistencia y recuperación.
-- Compuerta: EP registra que P012/P013 exigen revisión presencial del operador antes de construir el motor o contactar la cuenta B2. No ejecutar operaciones remotas hasta superar esa compuerta.
-- Gobernanza integra criterios y estado; EP conserva implementación/evidencia técnica. MCP-OCP conserva su OCP/control y no queda modificado por esta tarea.
+- **Dos planos:** (1) documentos/artefactos versionados con GitHub `SeryMente/metodologia/main` como fuente canónica; (2) estado/datasets operativos de MCP-OCP que su titular técnico declare necesarios para continuidad.
+- **Tres estados independientes:** backup local MCP-OCP, persistencia remota B2 y restauración cross-host. Un resultado no acredita los otros.
+- **Evidencia MCP recibida vía EP:** candidata local `SqliteStore`/WAL, SQLite Online Backup API, `PRAGMA quick_check`, SHA-256, `.ocpbak` AES-256-GCM y DPAPI `CurrentUser`. Sigue sin demostrar integración, instalación en EP, B2 ni restore entre usuarios/equipos; la estrategia de recuperación de clave/índice portable debe resolverla MCP-OCP.
+- **Destino B2:** bucket `OCP-MCP`; prefijo histórico `ep-ocp/` sujeto a validar `namePrefix` y permisos efectivos. No ampliar scopes ni usar destinos inválidos.
+- **Compuerta:** P012/P013 requiere revisión presencial del operador antes de operaciones remotas. Cuenta, bucket, key, carga y restore siguen sin verificación.
+- **Autoridad:** EP ejecuta transporte y persistencia del entorno; MCP-OCP determina datasets, consistencia, backup nativo, clave y prueba funcional; Gobernanza integra criterios y aceptación sin modificar OCP/control/código/host ajenos.
 
-La ficha GOV-TASK-014 contiene el alcance, los criterios de aceptación, las dependencias, las exclusiones y la ruta de cierre. No se declara completada ninguna operación B2.
+La ficha GOV-TASK-014 contiene el alcance ampliado y criterios separados. Ninguna operación B2 ni restauración cross-host se declara ejecutada.
