@@ -1666,7 +1666,7 @@ El núcleo v0.1.18, el objeto de coordinación, control, DUG, OEP/EP DTC, EP-TAS
 | JSON Schema manifest PPR v1 | f402ee483acfc7603177523431fde8cde4792848 | 7d3126c40d19e43c5123b3acbfc2f4b53c1f7767 | EXACT; JSON parseado |
 | Núcleo MCP-OCP v0.1.19 / backlog | 3c7bcd077902af34ab1764842fd3a7d3906b39fc | 3390099890e3734be9a829be003ab2d217b60690 | EXACT |
 | Crónica ciclo 09 | f6068ec2fafcaa408da95bf2af258c7b274720b0 | b6d9ec31b040a9fc4bbd763cc36042366ffda6eb | EXACT |
-| Evidencia ciclo 09 | 2e3691f8973a25b8bdfdeda106e480d34953880d | 33e42254cc16df859767fdd7bc1c5af988e23dc5 | EXACT; JSON parseado |
+| Evidencia ciclo 09 | a727c1f1372f4c3b6d253e9091b4c8c355f7efe1 | 42b391a71929380f7b6c8cc1311ac0ff2713043e | EXACT; JSON parseado |
 | README índice | 6738f9c5f598e2b1f8fb73c6087fd424643f2389 | ac67c01875aace5627547f30421b4640adaa5a48 | EXACT |
 | Diálogo A/B ciclo 09 | dae10b0d5913ed5668009185f5371ece0eb14f13 | 484335162cd1845d3194f845ac385ad274ff4569 | 3 registros (2 A + 1 B); EXACT |
 
