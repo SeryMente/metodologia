@@ -949,3 +949,14 @@ Ambos archivos mantienen exactamente el mismo blob SHA en `main` y en la rama de
 **Corrección/previsión:** antes de cotejar o regenerar hashes de archivos `.ps1`, aplicar la normalización canónica UTF-8 BOM + CRLF; para los demás archivos conservar sus bytes/texto sin conversión de saltos. Verificar varios artefactos históricos contra su manifiesto antes de permitir una escritura.
 
 **Estados:** PREFLIGHT_FALLIDO_POR_REPRESENTACIÓN · CAUSA_VERIFICADA · SIN_MUTACIÓN_REMOTA · CONTADOR_0. El manifiesto existente se conserva hasta verificar todo el conjunto.
+
+
+### Incidencia de parser en consulta de historial · paréntesis de salida sin cerrar · 2026-11-01
+
+**Operación:** construcción de una consulta de solo lectura para inspeccionar el blob y el historial de `07-git-wip.ps1`. **Síntoma literal:** `SyntaxError: missing ) after argument list`. **Impacto:** el runtime rechazó el payload antes de ejecutar sus llamadas; no hubo lectura remota ni escritura.
+
+**Causa raíz VERIFICADA:** la expresión final de salida abrió `text(` y un objeto literal, pero cerró el objeto con `};` sin cerrar la llamada con `)`. El parser detectó el delimitador desequilibrado antes de iniciar la operación.
+
+**Corrección/previsión:** evitar objetos de salida excesivamente anidados en payloads largos; emitir resultados en llamadas `text(...)` independientes y comprobar el cierre balanceado del bloque antes de invocar herramientas.
+
+**Estados:** PARSER_FALLIDO · RCA_VERIFICADA · SIN_EJECUCIÓN · CONTADOR_0. El payload original se descarta.
