@@ -93,6 +93,23 @@
       "commit": "3c7bcd077902af34ab1764842fd3a7d3906b39fc",
       "blob": "3390099890e3734be9a829be003ab2d217b60690",
       "readback": "EXACT"
+    },
+    "coordination_checkpoint": {
+      "commit": "37819c3b2bb3a03e67c6345f383938a3baecae58",
+      "blob": "466aa71b6dafbf6b5e60eec54c87eecdf44b04e9",
+      "readback": "EXACT"
+    },
+    "chronicle": {
+      "path": "frentes/mcp-metodologia/cronica/C-MCP-OCP-DTC-20261101-09.md",
+      "commit": "f6068ec2fafcaa408da95bf2af258c7b274720b0",
+      "blob": "b6d9ec31b040a9fc4bbd763cc36042366ffda6eb",
+      "readback": "EXACT"
+    },
+    "readme": {
+      "path": "frentes/mcp-metodologia/README.md",
+      "commit": "5cc4037be88b9a71f2a997377103ed4efd90c5f0",
+      "blob": "006ded56a70c5abeb2b644ea24c4050ad6c932ca",
+      "readback": "EXACT"
     }
   },
   "task_update": {
@@ -144,5 +161,6 @@
   "normative_engine": "DESACTIVADO",
   "sink_aliases": "p001-p043 NOT DEPLOYED/TESTED",
   "fol1": "PREPARADO_PENDIENTE_ACTIVACION_IPZ",
-  "global_and_ocp_folios": "PENDIENTE/NO ASIGNADO"
+  "global_and_ocp_folios": "PENDIENTE/NO ASIGNADO",
+  "current_branch_head_before_evidence": "f6068ec2fafcaa408da95bf2af258c7b274720b0"
 }
