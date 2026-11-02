@@ -1485,3 +1485,24 @@ Se procesa la respuesta de Gobernanza: inventario de solo lectura y reconciliaci
 El siguiente hito depende de la revisión presencial explícita del operador junto a `015RENTA01` y de una autorización B2 válida con scope exacto `OCP-MCP/ep-ocp/`; después se ejecutará únicamente el preflight y la prueba E2E de una pasada ya documentados en §§33–34, sin reintentos ni borrados. La restauración de MCP-OCP requiere además la entrega y validación del paquete nativo portable por su titular actual.
 
 **Estado de EP-TASK-002:** `en_curso`. **Ciclo EP-03:** abierto. No se declara persistencia operativa, restauración multiubicación ni aceptación.
+
+
+## 36. Revisión presencial y seguridad de captura de credenciales B2 · 2026-11-01
+
+**Presencia declarada:** el operador confirmó expresamente que está físicamente junto a `015RENTA01` en este ciclo. Esto satisface la señal factual de presencia para el host; no equivale por sí solo a aprobación de la arquitectura de credenciales ni a autorización de llamadas al proveedor.
+
+**Bóveda local observada:** el clon `C:\\Users\\PC\\Desktop\\Khora\\khora-jules-main` contiene `secrets/env-vault.enc.json` (3.656 bytes; SHA-256 `6D3648E0E434250794DABA89F0682451CBCB5EEAF1CF1A93A3324B6914CA683F`), con 9 entradas cifradas y ninguna variable `B2_*`/`AWS_*`. La ruta aparece en el índice Git local y existe en la rama remota `feat/khora-mcp-module-jules-20261101` (blob `9d30e8cdab83a1c54d8dc6cb7d46d1c80cab302f`). El `.gitignore` canónico de KHORA no excluye el archivo principal, solo ciertos respaldos. Por ello, esta copia queda preservada y no se le añaden credenciales. No se inspeccionaron valores descifrados.
+
+**ACL:** SYSTEM, Administradores y usuario local tienen FullControl heredado sobre `secrets` y la bóveda. No se modificaron permisos ni archivos. La ACL es una observación local, no una prueba de protección frente a administradores o compromiso del perfil.
+
+**Procedimiento propuesto:** crear una ruta de almacén fuera del árbol de cualquier repositorio, conservar el formato de la bóveda de KHORA y comprobar SHA-256/ACL/read-back; capturar valores mediante `Read-Host -AsSecureString` sin portapapeles ni argumentos; guardar en forma cifrada con escritura transaccional/atómica y validar por descifrado de prueba en memoria sin imprimir; importar solo al ámbito Process; limpiar variables y referencias al finalizar. El app key se introduciría una vez en el almacén; el desbloqueo de bóveda y la autorización/caché B2 son mecanismos distintos. No se promete desbloqueo perpetuo ni portabilidad DPAPI entre equipos.
+
+**EP:** variables nativas de CLI `B2_APPLICATION_KEY_ID` y `B2_APPLICATION_KEY`; el proveedor documenta que la CLI las detecta automáticamente para `b2 account authorize` sin poner secretos en argumentos. La clave prevista para EP debe ser una application key restringida a bucket `OCP-MCP`, prefijo histórico `ep-ocp/` y capacidades mínimas sin borrado; el bucket/prefijo efectivo todavía no están verificados. Después de autorizar, una caché SQLite aislada configurable mediante `B2_ACCOUNT_INFO` puede evitar volver a introducir la clave en el mismo host/perfil, con ACL local y sin incluirla en respaldos ordinarios.
+
+**Custodia:** la rama candidata consume `KHORA_B2_KEY_ID`, `KHORA_B2_APPLICATION_KEY`, `KHORA_B2_BUCKET_NAME` y `KHORA_B2_REGION`; `KHORA_OBJECT_STORAGE=b2` es el selector. El control autoritativo Custodia, generación 6, excluye el cambio de credenciales. No capturar, crear, rotar ni suministrar estas entradas hasta autorización adicional válida. No reutilizar la credencial de EP; emitir una clave independiente restringida a bucket/prefijo y capacidades apropiadas, una vez resuelto el alcance autorizado.
+
+**Evidencia de fuentes:** DUG v377/NX-377m, blob `54064c8fe00f872023a455f06596061ed69062ae`; KHORA `env-vault.ps1` blob `46efce0ff43c400bccdee11f02de5bc2ddd21e4c`; KHORA `.gitignore` blob `5687794c45178d620de6f1d73dbe6312561af88a`; control Custodia generación 6 blob `fd2bdd9ec38655f6d7e00ab975488383e35099da`. La documentación oficial B2 confirma variables de entorno para evitar credenciales en argumentos, restricciones de app keys por bucket/prefijo/capacidades y requisito de app key estándar para S3-compatible.
+
+**No ejecutado:** no se modificó ni copió la bóveda, no se escribieron secretos, no se cambió ACL/ignore, no se leyó la caché B2, no se ejecutó `account get` ni `account authorize`, no se llamó al proveedor y no se realizó operación de cuenta/bucket/objeto.
+
+**Estado:** `PROCEDIMIENTO_PROPUESTO_NO_APROBADO`; revisión presencial específica y autorización del almacenamiento EP pendientes. Custodia mantiene su bloqueo de cambios de credenciales por control generation 6. EP-TASK-002 continúa `en_curso`.
