@@ -1190,3 +1190,20 @@ EP-TASK-002 §34 quedó sincronizada con el nuevo entorno y su estado operativo 
 **Impacto:** no cambia el alcance de EP-TASK-002/GOV-TASK-014 ni la persistencia MCP-OCP incluida en el sprint. No consta mutación KHORA; no se autoriza B2, cambios de host ni modificaciones del OCP/control MCP-OCP.
 
 **Siguiente acción:** EP corrige el verificador auxiliar y continúa en el mismo ciclo; documenta resultado, evidencia y read-back final antes de cerrar EP-03. No repetir el payload ni abrir otra solicitud/ciclo.
+
+
+### Respuesta inicial EP · retoma extremo a extremo de EP-TASK-002 · mismo ciclo EP-03
+
+**Cursor leído:** `main`, DTC EP blob `6dcf841fe26d80aaa240e1c36092040fc9019eeb`; OEP `main` blob `75c10a9ae85c91857b5e1d5e95d60e58d96e7a2f`; índice de tareas blob `fcd76497dca45472153209a1158673386dfa7ba2`; EP-TASK-002 blob `a45103468c109d3bbc0503ec3f77c1b29ac84aee`; DUG v377 · NX-377m, blob `54064c8fe00f872023a455f06596061ed69062ae`.
+
+**Acuse e interpretación:** recibido el mandato de resolver EP-TASK-002 de extremo a extremo con RDC local. Se mantiene el alcance autorizado en OEP §95: persistencia elegible EP/Metodología y continuidad MCP-OCP; un único bucket B2 de destino `OCP-MCP`; EP ejecuta transporte/snapshot y el propietario MCP-OCP conserva autoridad sobre consistencia, datos, cifrado, restore y aceptación funcional de su servicio.
+
+**Línea base observada:** EP-TASK-002 continúa `en_curso`. La última fuente canónica no demuestra autenticación B2, bucket/privacidad/scope, objetos transferidos ni restore cross-host. La CLI B2 v5.0.2 y el estado local de `015RENTA01` se revalidarán antes de tomar decisiones operativas; los estados de PC-8/PID 7232 quedan obsoletos y no se reutilizarán.
+
+**Compuertas:** DUG v377 P012/P013 exige presencia/revisión del operador para decisiones de seguridad y arquitectura y prohíbe iniciar construcción sensible sin ese gate. El historial de presencia en PC-8 no se hereda a `015RENTA01`. En este tramo se limita el trabajo a lectura, inventario y reconciliación; no se autenticará B2, crearán claves, alterarán permisos/lifecycle, transferirán datos reales ni modificará el diseño de recuperación hasta cumplir esa compuerta. El estado RDC `ONLINE` no equivale por sí mismo a presencia física.
+
+**Prioridad y siguiente acción:** verificar el host 015RENTA01, herramienta B2, cachés/variables por existencia y nombres solamente, y disponibilidad de fuentes/candidatas OCP MCP; después preparar el procedimiento fail-closed de una sola pasada y ejecutar únicamente lo que ya esté autorizado. La prueba de recuperación multiubicación solo podrá aceptarse con evidencia real y validación MCP-OCP.
+
+**Responsabilidad:** se asume coordinación operativa/documental de esta instancia. No se declara transferida la titularidad formal del frente padre: OEP §93.3.5 indica ausencia de control autoritativo titular/generación; no se inventa control ni folio. Se conserva `C-EP-MOD-SCRIPTPWS-20261101-03`; no se abre ciclo nuevo.
+
+**Estado del mensaje:** `RESPUESTA_INICIAL_EP_PUBLICADA`; procesamiento en curso. No se declara B2 operativo ni tarea completada.
