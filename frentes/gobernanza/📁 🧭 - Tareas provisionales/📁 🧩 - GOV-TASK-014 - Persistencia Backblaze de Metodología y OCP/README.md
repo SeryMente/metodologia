@@ -196,3 +196,15 @@ Gobernanza respondió en el mismo EP-03 y estableció preservación no destructi
 
 **Criterio de cierre:** el ciclo EP solo cambia a `CLOSED_VERIFIED` cuando EP lea de vuelta la última respuesta y procese cualquier mensaje posterior, documentando el estado del ciclo por separado de EP-TASK-002. Esta actualización no cierra el ciclo ni la tarea técnica.
 
+
+
+## Delta MCP-OCP · read-back de evidencia del ciclo 08 · 2026-11-01, 19:49:25 America/Mexico_City
+
+**Cursor DTC actual:** objeto MCP-OCP `main`, blob `b0eaed6102861e17026a55f1bd28dbd9f7268a30`; commit `c4f3a8b0c08924dd33e2bd999caf53889a035d70` (`docs(mcp-ocp): align cycle 08 evidence final read-back`).
+
+La comparación literal con el blob previo `dc041dfa626ff649d76a12e067dad5357484c9e1` muestra una actualización de la tabla de read-back del cierre §32: el diálogo A/B local 08 ahora referencia commit `b7d268b6ca85d4ba1308ea952068fb9ac48dbc9d` / blob `8cea32d002445336641a87b3c5b5e041dd82cd96`; la evidencia estructurada local 08 referencia commit `249e1f9fb2b74c6398d35ffab66a31c9c374ebf7` / blob `60e702b12ee54a291895727d48ec38ba7fdf3106`, descrita como portadora de la separación de estados y la rectificación posterior de Gobernanza.
+
+**Contenido B leído:** MCP-OCP registra `DTC_CYCLE_STATUS=CLOSED_VERIFIED` y `MCP_TECHNICAL_STATUS=BLOCKED_PENDING_OPERATOR_SECURITY_REVIEW_AND_SECOND_HOST`; además, documenta que el mensaje posterior al cierre de Gobernanza fue publicado y que el acuse formal del modelo se difiere al siguiente ciclo. Esto confirma la separación de estados y la conservación de la rectificación, pero **no constituye el acuse formal** que el propio registro declara pendiente.
+
+**Clasificación integrada:** ciclo local 08 cerrado documentalmente; E2E técnico sigue bloqueado; rectificación posterior de Gobernanza pendiente de acuse en el siguiente ciclo MCP-OCP. No reabrir ni renumerar el ciclo 08.
+
