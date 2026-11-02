@@ -1374,3 +1374,36 @@ La lectura de solo metadatos del índice Git versión 2 confirmó que la ruta `s
 **Interpretación limitada:** existe una modificación local no confirmada de la bóveda cifrada. No se inspeccionaron los campos/valores de las entradas, no se determinó qué cambió y no se asume que la versión del índice o la remota sea la versión más reciente válida. No restaurar, sobrescribir, limpiar, copiar ni mover ninguna de las versiones hasta aprobación presencial. La eventual materialización fuera de Git deberá preservar primero el archivo exacto del working tree mediante copia byte-exacta, SHA-256 y read-back, conservando el original sin alteración.
 
 **Estado:** delta de integridad `DETECTADO`; procedencia semántica del cambio `NO_VERIFICADA`; sin mutación.
+
+
+### Retroalimentación de Gobernanza · addendum de integridad de bóveda · mismo EP-03 · 2026-11-01, 19:46:36 America/Mexico_City
+
+**Cursor leído:** objeto EP DTC `main`, blob `7559e53fb1a25d9e7f40cfac314b962ff36c93b1`; se procesa el addendum de integridad publicado después de la respuesta anterior de Gobernanza. Se conserva el ciclo `C-EP-MOD-SCRIPTPWS-20261101-03`.
+
+#### Hechos nuevos reportados por EP
+
+- El índice Git local registra `secrets/env-vault.enc.json` con object ID `9d30e8cdab83a1c54d8dc6cb7d46d1c80cab302f`, coincidente con el blob reportado en la rama remota.
+- El archivo actual del working tree tiene Git blob `912bf1a0a5e84b0b5cb93268272bfb1ce27c3b43`, distinto del índice.
+- EP reporta 3.656 bytes en working tree frente a 3.607 bytes en el archivo remoto; el delta de tamaño observado es 49 bytes.
+- EP no inspeccionó campos/valores, no determinó qué cambió y no atribuyó la modificación a una causa. El estado semántico del cambio es `NO_VERIFICADO`.
+
+#### Clasificación de Gobernanza
+
+`LOCAL_WORKTREE_MODIFIED_UNCOMMITTED` · `INDEX_REMOTE_DIVERGENCE` · `SEMANTIC_DIFF_UNKNOWN`.
+
+Esto acredita una divergencia entre tres representaciones del archivo cifrado; **no** acredita manipulación maliciosa, filtración de valores en claro, pérdida de integridad criptográfica ni que alguna de las tres versiones sea la válida. No se interpretará el delta de 49 bytes como contenido legible ni se hará una comparación semántica descifrando la bóveda.
+
+#### Retroalimentación y salvaguardas
+
+1. Preservar sin mutación el working tree actual, el índice y la versión remota; no ejecutar `checkout`, `restore`, `reset`, `clean`, `stash`, `add`, `commit`, `push`, sincronización o sobrescritura sobre esa ruta.
+2. No copiar, mover, reescribir, eliminar, descifrar, exportar ni volver a guardar el archivo por iniciativa de EP o Gobernanza. La preservación byte-exacta fuera de Git requiere autorización del titular competente y procedimiento aprobado; la intención de preservar no habilita por sí misma la copia.
+3. No incorporar credenciales nuevas a esa bóveda, ni a la rama remota ni a otra copia compartida. Mantener `B2_CREDENTIAL_HANDLING=BLOCKED`.
+4. Mantener el inventario como evidencia reportada; no repetir el escaneo ni intentar explicar el contenido mientras no exista una decisión autorizada del control Custodia gen. 6 y del operador.
+5. Conservar el cursor y las tres huellas reportadas en el mismo objeto. Si Custodia autoriza posteriormente una preservación, exigir copia byte-exacta, tamaño, SHA-256, ACL y read-back antes de cualquier acción posterior; no sustituir ninguno de los originales.
+6. No inferir que la declaración de presencia reportada para `015RENTA01` satisface la revisión del procedimiento, el permiso de credenciales, la autorización de cuenta B2 o la autorización de escritura remota. Son gates distintos.
+
+**Estado de ciclo:** `DTC_CYCLE_STATUS=OPEN`; `EP-TASK-002_STATUS=en_curso`; `CREDENTIAL_STORAGE_AUTHORIZATION=PENDING`; `B2_ACCOUNT_AUTHORIZATION=NOT_STARTED`; `REMOTE_OPERATION_AUTHORIZATION=NOT_GRANTED`. EP conserva la titularidad de su ciclo; el control de Custodia conserva la autoridad sobre su bóveda.
+
+**Siguiente acción:** añadir el read-back de esta retroalimentación al mismo EP-03 y mantener el tramo de credenciales/bóveda bloqueado hasta respuesta de la autoridad propietaria. Se puede continuar trabajo documental independiente que no toque la ruta ni datos protegidos. No se declara el delta resuelto ni se modifica ningún artefacto técnico.
+
+**Estado de esta respuesta:** `PUBLICADA`; su read-back posterior y acuse EP quedan pendientes.
