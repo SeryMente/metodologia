@@ -1,0 +1,148 @@
+{
+  "schema_version": 1,
+  "artifact": "MCP-OCP DTC cycle 09 evidence",
+  "cycle_local": "C-MCP-OCP-DTC-20261101-09",
+  "session_folio": "SES-20261101-3D504C5A",
+  "owner": {
+    "alias": "chatgpt-mcp-ocp-01a199d8-9209-725c-b764-a0a66ac54882",
+    "uuidv7_local": "01a199d8-9209-725c-b764-a0a66ac54882",
+    "native_chatgpt_conversation_id": "NOT_EXPOSED",
+    "generation": 4
+  },
+  "A_literal": [
+    "Si",
+    "Si, usa rdc los minutos que tienes y luego prepara todo para que te quedes trabajando en giuthub el tiempo qeu se pueda"
+  ],
+  "operator_decision": {
+    "PPR_V1": "APPROVED_BY_OPERATOR_IN_PERSON",
+    "scope": "Implementation, synthetic tests, compilation, corrections, packaging only inside frentes/mcp-metodologia/ under existing B authorization.",
+    "does_not_authorize": [
+      "B2",
+      "EP credentials or host operations",
+      "host configuration changes",
+      "real restore",
+      "second-host use",
+      "installation",
+      "PR or merge",
+      "changes outside frentes/mcp-metodologia/"
+    ]
+  },
+  "sources": {
+    "main_head": "f2969421d0410e82af554642487b2c197fa80707",
+    "control_blob": "ecb27b04aaba04025ef596b3f0ed6c049bc2420d",
+    "core_prior_blob": "9c2cdc01b2f5be3b39ee49ce179084f4fb75b436",
+    "DUG": "Samantha v377 / NX-377m; Metacanon 1.28; GOW 2.17",
+    "candidate_branch": "integration/ocp-mcp-0.1.0-selective-20261101",
+    "candidate_head": "ef639b62509a9b7ae623c3fbd187466ee2e2a3d9",
+    "new_branch": "feature/mcp-ocp-portable-recovery-v1-20261101"
+  },
+  "preflight_RDC": {
+    "device": "015RENTA01",
+    "device_status": "ONLINE",
+    "platform": "Windows x64",
+    "shell": "PowerShell 5.1",
+    "other_hosts": {
+      "PC_8": "OFFLINE",
+      "PC_14": "OFFLINE"
+    },
+    "monthly_RDC_calls_remaining_pct": 77,
+    "local_methodology_clone": "NOT_FOUND_IN_STANDARD_ROOTS",
+    "git": "NOT_FOUND_IN_PATH",
+    "gh": "NOT_FOUND_IN_PATH",
+    "dotnet_path": "C:\\Program Files\\dotnet\\dotnet.exe",
+    "dotnet_sdks": [],
+    "dotnet_runtimes": [
+      "Microsoft.NETCore.App 8.0.11",
+      "Microsoft.AspNetCore.App 8.0.11"
+    ],
+    "project_target": "net10.0",
+    "temporary_workspace": "%TEMP%\\mcp-ocp-ppr1",
+    "build": "NOT_RUN_MISSING_DOTNET_10_SDK",
+    "tests": "NOT_RUN"
+  },
+  "artifacts": {
+    "cycle_coordination": {
+      "path": "frentes/mcp-metodologia/entregas/COORDINACION-SPRINT-OCP-MCP-v0.1.md",
+      "commit": "8feaec1e3b37bfed213b6d2a76bd412891287294",
+      "blob": "f9c3e0ce43a5bb31ff2bd6c6d11b23bd7c8d300c",
+      "readback": "EXACT"
+    },
+    "source_import": {
+      "commit": "5c84d689ca1c6593e4b95c749a3a767576b1a30c",
+      "tree": "a38c111a4658627d163b8531cdcf0e99efa490cb",
+      "files": 21,
+      "origin_branch": "integration/ocp-mcp-0.1.0-selective-20261101",
+      "receipt_and_old_docs_imported": false,
+      "readback": "GIT_TREE_REF_VERIFIED"
+    },
+    "contract": {
+      "path": "frentes/mcp-metodologia/PPR-V1-CONTRACT.md",
+      "commit": "d1b97095116a7e9aa7f719f822b56f29239e6453",
+      "blob": "dda67e5107f100b27f1e4d76680c81d41cafb1de",
+      "readback": "EXACT"
+    },
+    "manifest_schema": {
+      "path": "frentes/mcp-metodologia/schemas/portable-recovery-package-v1.schema.json",
+      "commit": "f402ee483acfc7603177523431fde8cde4792848",
+      "blob": "7d3126c40d19e43c5123b3acbfc2f4b53c1f7767",
+      "readback": "EXACT_JSON_VALIDATED"
+    },
+    "core": {
+      "path": "frentes/mcp-metodologia/MCP-METODOLOGIA.md",
+      "version": "MCP-OCP-v0.1.19",
+      "commit": "3c7bcd077902af34ab1764842fd3a7d3906b39fc",
+      "blob": "3390099890e3734be9a829be003ab2d217b60690",
+      "readback": "EXACT"
+    }
+  },
+  "task_update": {
+    "core_version": "MCP-OCP-v0.1.19",
+    "backlog": "§8.1/§8.2 updated",
+    "GOV_TASK_014": "C08 proposal closed; C09 PPR v1 approved; contract/schema and source baseline published; implementation pending",
+    "no_new_OCP": true,
+    "no_EP_or_GOV_task_mutation": true
+  },
+  "execution": {
+    "DTC_CYCLE_STATUS": "OPEN",
+    "MCP_TECHNICAL_STATUS": "IMPLEMENTATION_AUTHORIZED_IN_ISOLATED_BRANCH; PPR_CODE_NOT_IMPLEMENTED; BUILD_TEST_NOT_VERIFIED",
+    "source_files_imported": true,
+    "PPR_contract_created": true,
+    "PPR_manifest_schema_created": true,
+    "PPR_service_code_implemented": false,
+    "CLI_commands_implemented": false,
+    "build": false,
+    "tests": false,
+    "real_db_access": false,
+    "restore": false,
+    "B2": false,
+    "credential_access": false,
+    "host_changes": false,
+    "PR": false,
+    "merge": false,
+    "installation": false,
+    "acceptance": false
+  },
+  "blockers": [
+    {
+      "id": "DOTNET_10_SDK",
+      "status": "BLOCKING_BUILD_TEST",
+      "detail": "015RENTA01 has only .NET 8.0.11 runtime and no SDK; project target is net10.0."
+    },
+    {
+      "id": "SECOND_HOST_PROFILE",
+      "status": "BLOCKING_CROSS_HOST",
+      "detail": "PC-8 and PC-14 are offline; no second authorized host/profile."
+    },
+    {
+      "id": "EP_B2_GATE",
+      "status": "EP_OWNED_PENDING",
+      "detail": "No B2 activity or credential access by MCP-OCP."
+    }
+  ],
+  "next_action": "Implement PortableRecoveryService and CLI methods in the authorized branch; then build/test with .NET 10 in an authorized Windows SDK environment. Cross-host and B2 remain separately gated.",
+  "global_dtc": "EN_CURSO_RECURRENT",
+  "normative_engine": "DESACTIVADO",
+  "sink_aliases": "p001-p043 NOT DEPLOYED/TESTED",
+  "fol1": "PREPARADO_PENDIENTE_ACTIVACION_IPZ",
+  "global_and_ocp_folios": "PENDIENTE/NO ASIGNADO"
+}
