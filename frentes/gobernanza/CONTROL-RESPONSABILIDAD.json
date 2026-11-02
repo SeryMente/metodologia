@@ -2,32 +2,38 @@
   "schema": "responsabilidad/1",
   "front": "gobernanza",
   "status": "active",
-  "owner_thread": "chatgpt-C-GOBERNANZA-RETOMA-08-SES-20261101-GV8A19904",
-  "instance": "chatgpt-gobernanza-retoma-2026-11-01-GV8A19904",
-  "generation": 12,
-  "authorization_ref": "C-GOBERNANZA-RETOMA-08",
-  "scope": "One active owner for this new work front only. Scope: operational maintenance and validation of the unique canonical governance document and its navigation, including only previously authorized minimal repairs. No broad substantive amendment to Samantha or the GOW without explicit authorization. The canonical normative content remains in the single HTML document. Alcance de la autorización adicional: C-GOBERNANZA-TAXONOMIA-ESTRUCTURAL-SYM-01, DUG v354, glosario y estructura jerárquica de anexos. Esta autorización se limita a lo solicitado en el evento y no habilita cambios futuros no autorizados. Alcance autorizado adicional: C-GOBERNANZA-EQUIVALENCIAS-AMBITO-01; actualización de glosario GOW a v2.5 y DUG v355, con tres entradas intercambiables operativamente y puntos de entrada/recibo correspondientes. Esta autorización no se extiende a cambios futuros no solicitados. Autorización explícita del operador en la conversación vigente para C-GOBERNANZA-CONTEXTO-GESTION-CONVERSACIONAL-01 (2026-10-28): actualizar el DUG y GOW, incorporar en ART-020 la jerarquía funcional Contexto (nivel funcional 1) → Gestión conversacional (nivel funcional 2), actualizar la proyección estructurada y registrar puntos de entrada, crónica y evidencia. La autorización no asigna otros ámbitos a la rama ni habilita cambios futuros no solicitados. Autorización explícita del operador en la conversación vigente para C-GOBERNANZA-OCP-UBICUO-REVERSA-CONTEXTO-01 (2026-10-28): corregir la taxonomía para que los únicos ámbitos funcionales actuales sean Persistencia documental y Gestión conversacional; retirar Contexto como ámbito y cancelar la relación jerárquica Contexto → Gestión conversacional; preservar como posibilidad la subdivisión futura en niveles 2..N; definir OCP como aplicable a cada nivel taxonómico, con la Metodología en sentido general y abstracto como OCP raíz; añadir al GOW una definición breve de OCP separada de equivalencias terminológicas y alinear DUG, proyección estructurada, puntos de entrada, crónica y evidencia. La autorización no elimina registros históricos ni habilita cambios futuros no solicitados. Autorización operativa derivada del encargo explícito del operador en C-GOBERNANZA-OCP-UBICUO-REVERSA-CONTEXTO-01 (2026-10-28), para C-GOBERNANZA-REFERENCIAS-VERSION-01: corregir una referencia de versión interna obsoleta en el resumen humano de Metacanon, versionar el DUG y alinear metadatos, puntos de entrada, crónica y evidencia. No amplía el contenido sustantivo autorizado ni cambia el esquema de ámbitos u OCP.\n\nAlcance adicional de C-GOBERNANZA-RETOMA-03: retomar la responsabilidad operativa del frente Gobernanza y recuperar/repetir el último ciclo. No habilita por sí solo cambios normativos ni mutaciones en otros frentes.\n\nAutorización expresa del operador en la conversación titular vigente para C-GOBERNANZA-FOLIACION-SECUENCIAL-01 (2026-10-30), texto literal: \"Todavía no prepares el IPZ. primero articula y materializa todo lo demás y al final preparamos la nueva versión del IPZ. haz las modificaciones que tengas que hacer.\" Alcance: articular y materializar la foliación secuencial global y por cada OCP aplicable; modificar únicamente los principios, anexos, glosario, Metacanon, esquemas, registros e índices que sean necesarios para este contrato. Exclusión expresa: no modificar ART-025, el archivo candidato IPZ ni las Instrucciones Personalizadas nativas en esta fase; la nueva IPZ se prepara después. No autoriza reclasificar AT ni cambios normativos ajenos a foliación. Autorización expresa adicional del operador en la conversación vigente (2026-10-30): incorporar al DUG el Conjunto Nuclear de Principios (CNP) con cinco integrantes —P001, P004, P005, P038 y nuevo P043 (Principio Anti-Ineficiencia, PAI)—; establecer la nomenclatura de preponderancia por categoría A–Z y decimal interno; crear ART-026 como anexo subordinado de fundamento del PAI; actualizar la proyección estructurada y las definiciones GOW/§ARR necesarias. La IPZ debe reforzar la consideración del CNP en cada turno sin sustituir la obligación de considerar el DUG completo. Preparar la actualización de ART-025 y del archivo candidato IPZ solo después de materializar las demás modificaciones. No se autoriza ni se afirma la modificación de las Instrucciones Personalizadas nativas de la plataforma. Autorización expresa adicional del operador (2026-10-30): eliminar la variable de posición y los identificadores ordinales CNP-01 a CNP-05. La categoría de preponderancia A identifica por sí sola la pertenencia al Conjunto Nuclear de Principios (CNP); conservar, cuando proceda, el decimal interno para ordenar la preponderancia relativa, sin asignar ordinal CNP. Ajustar el DUG humano y estructurado, GOW y artefactos operativos afectados. Preservar los identificadores de principios Pxxx, la pertenencia de los cinco principios y el resto de normas.\n\nAutorización expresa del operador en la conversación titular vigente (2026-10-30): ampliar ART-025 para documentar la arquitectura de la IPZ como interfaz compacta de navegación y refuerzo selectivo del DUG, no como duplicado de instrucciones ni fuente normativa paralela; establecer como requisito que el DUG mantenga secciones concretas con anclas estables y enlaces profundos verificables; documentar la secuencia, los criterios de diseño, legibilidad funcional mediante emojis, versionado obligatorio, límite estricto inferior a 1.500 caracteres, validación semántica y de enlaces, y la prohibición de guardar propuestas/candidatas IPZ en el repositorio. Se autoriza añadir únicamente los anclajes de navegación mínimos de ART-024 que permitan referencias directas de IPZ a registro, trazabilidad y foliación; no se autoriza guardar el contenido IPZ candidato en ningún archivo del repositorio ni modificar las Instrucciones Personalizadas nativas.\n\nAutorización expresa del operador en la conversación titular vigente (2026-10-30) para C-GOBERNANZA-PRINCIPIOS-DOS-CAPAS-01: calcular dependencias, incorporar al DUG el catálogo de los 43 principios con nombre canónico y abstracción general de una frase, documentar la estrategia de dos capas mediante un nuevo anexo ART-027, establecer la consulta individual de principios desarrollados mediante enlaces Sink y registrar telemetría diferenciando consideración, selección, consulta y aplicación. Se autoriza actualizar el DUG, sus índices/puntos de entrada y los registros de crónica/evidencia del frente Gobernanza. Límites de esta autorización: no modificar los enunciados normativos existentes ni ART-025/IPZ; no publicar el repositorio o sus principios privados; no almacenar credenciales en Git; no declarar creados o verificados enlaces, instancia Sink, despliegue Cloudflare o telemetría real sin evidencia. Los elementos que requieran cuenta, credenciales, despliegue externo o decisión de exposición privada quedan documentados como dependencias pendientes y no se simulan.\n\nAutorización expresa del operador en la conversación titular vigente (2026-10-30) para C-GOBERNANZA-MDP-OCP-01: redefinir ART-027 y la estrategia de dos capas para que el inventario contenga únicamente el nombre canónico y un microdescriptor de pertinencia (MDP) deliberadamente insuficiente para aplicar íntegramente el principio, pero suficiente para reconocer su significado general y sus circunstancias probables de activación; exigir por defecto la consulta de la versión normativa desarrollada mediante Sink antes de aplicar un principio pertinente; medir únicamente la frecuencia de consulta por principio, sin telemetría de aplicación ni registros semánticos de aplicación por ciclo. Se autoriza también crear dentro del OCP Gobernanza una agrupación provisional con objetos persistentes individuales para las tareas pendientes de este frente, sin declarar construido o canonizado el ámbito funcional Tareas. Cada objeto heredará la responsabilidad del OCP Gobernanza; no se crearán controles/sesiones independientes ni se modificará el OCP existente ambitos/tareas/ mientras su titularidad siga en la sesión distinta registrada. Se autoriza actualizar DUG, índices, crónica, evidencia, núcleo, pendientes y punto de entrada del frente en el alcance estrictamente necesario. No se autoriza modificar los enunciados normativos de principios distintos de ART-027 ni canonizar el ámbito Tareas. Additional explicit scope (C-GOBERNANZA-RETOMA-06, 2026-10-30): assume responsibility for frentes/gobernanza/ in this receiving session and preserve the supplied conversation export at the canonical documentary path. No normative changes to the DUG, ART-025, IPZ, or the separate ambitos/tareas/ OCP are authorized by this transfer.\nAlcance adicional C-GOBERNANZA-RETOMA-07: retoma de responsabilidad operativa de Gobernanza, continuidad de tareas provisionales, persistencia documental RDC y coordinación con OCP MCP y EP. No modifica DUG, ART-025/ART-027, IPZ nativa ni controles MCP/EP; no activa FOL1/MCP-NORMATIVO.\n\nAlcance adicional explícito C-GOBERNANZA-DOBLE-CORRESPONSABILIDAD-01 (2026-11-01): autorización para incorporar esta conversación como segunda corresponsable del frente Gobernanza mediante ADD_CO_RESPONSIBLE, sin transferir ni sustituir al titular vigente. Límite: máximo dos sesiones activas (titular + corresponsable), ambas identificadas por alias operativo, instancia, UUIDv7 local y folio SES propio. Toda escritura futura requiere releer este mismo control y usar SHA/CAS/read-back. FOL1 sigue inactivo; no se asignan folios globales. No se afirma fencing universal ni identidad nativa de plataforma.",
+  "owner_thread": "chatgpt-C-GOBERNANZA-1-20261101-1717-SES-20261101-GVCD93ADD7",
+  "instance": "chatgpt-gobernanza-1-2026-11-01-CD93ADD7",
+  "generation": 13,
+  "authorization_ref": "C-GOBERNANZA-RETOMA-09",
+  "scope": "One active owner for this new work front only. Scope: operational maintenance and validation of the unique canonical governance document and its navigation, including only previously authorized minimal repairs. No broad substantive amendment to Samantha or the GOW without explicit authorization. The canonical normative content remains in the single HTML document. Alcance de la autorización adicional: C-GOBERNANZA-TAXONOMIA-ESTRUCTURAL-SYM-01, DUG v354, glosario y estructura jerárquica de anexos. Esta autorización se limita a lo solicitado en el evento y no habilita cambios futuros no autorizados. Alcance autorizado adicional: C-GOBERNANZA-EQUIVALENCIAS-AMBITO-01; actualización de glosario GOW a v2.5 y DUG v355, con tres entradas intercambiables operativamente y puntos de entrada/recibo correspondientes. Esta autorización no se extiende a cambios futuros no solicitados. Autorización explícita del operador en la conversación vigente para C-GOBERNANZA-CONTEXTO-GESTION-CONVERSACIONAL-01 (2026-10-28): actualizar el DUG y GOW, incorporar en ART-020 la jerarquía funcional Contexto (nivel funcional 1) → Gestión conversacional (nivel funcional 2), actualizar la proyección estructurada y registrar puntos de entrada, crónica y evidencia. La autorización no asigna otros ámbitos a la rama ni habilita cambios futuros no solicitados. Autorización explícita del operador en la conversación vigente para C-GOBERNANZA-OCP-UBICUO-REVERSA-CONTEXTO-01 (2026-10-28): corregir la taxonomía para que los únicos ámbitos funcionales actuales sean Persistencia documental y Gestión conversacional; retirar Contexto como ámbito y cancelar la relación jerárquica Contexto → Gestión conversacional; preservar como posibilidad la subdivisión futura en niveles 2..N; definir OCP como aplicable a cada nivel taxonómico, con la Metodología en sentido general y abstracto como OCP raíz; añadir al GOW una definición breve de OCP separada de equivalencias terminológicas y alinear DUG, proyección estructurada, puntos de entrada, crónica y evidencia. La autorización no elimina registros históricos ni habilita cambios futuros no solicitados. Autorización operativa derivada del encargo explícito del operador en C-GOBERNANZA-OCP-UBICUO-REVERSA-CONTEXTO-01 (2026-10-28), para C-GOBERNANZA-REFERENCIAS-VERSION-01: corregir una referencia de versión interna obsoleta en el resumen humano de Metacanon, versionar el DUG y alinear metadatos, puntos de entrada, crónica y evidencia. No amplía el contenido sustantivo autorizado ni cambia el esquema de ámbitos u OCP.\n\nAlcance adicional de C-GOBERNANZA-RETOMA-03: retomar la responsabilidad operativa del frente Gobernanza y recuperar/repetir el último ciclo. No habilita por sí solo cambios normativos ni mutaciones en otros frentes.\n\nAutorización expresa del operador en la conversación titular vigente para C-GOBERNANZA-FOLIACION-SECUENCIAL-01 (2026-10-30), texto literal: \"Todavía no prepares el IPZ. primero articula y materializa todo lo demás y al final preparamos la nueva versión del IPZ. haz las modificaciones que tengas que hacer.\" Alcance: articular y materializar la foliación secuencial global y por cada OCP aplicable; modificar únicamente los principios, anexos, glosario, Metacanon, esquemas, registros e índices que sean necesarios para este contrato. Exclusión expresa: no modificar ART-025, el archivo candidato IPZ ni las Instrucciones Personalizadas nativas en esta fase; la nueva IPZ se prepara después. No autoriza reclasificar AT ni cambios normativos ajenos a foliación. Autorización expresa adicional del operador en la conversación vigente (2026-10-30): incorporar al DUG el Conjunto Nuclear de Principios (CNP) con cinco integrantes —P001, P004, P005, P038 y nuevo P043 (Principio Anti-Ineficiencia, PAI)—; establecer la nomenclatura de preponderancia por categoría A–Z y decimal interno; crear ART-026 como anexo subordinado de fundamento del PAI; actualizar la proyección estructurada y las definiciones GOW/§ARR necesarias. La IPZ debe reforzar la consideración del CNP en cada turno sin sustituir la obligación de considerar el DUG completo. Preparar la actualización de ART-025 y del archivo candidato IPZ solo después de materializar las demás modificaciones. No se autoriza ni se afirma la modificación de las Instrucciones Personalizadas nativas de la plataforma. Autorización expresa adicional del operador (2026-10-30): eliminar la variable de posición y los identificadores ordinales CNP-01 a CNP-05. La categoría de preponderancia A identifica por sí sola la pertenencia al Conjunto Nuclear de Principios (CNP); conservar, cuando proceda, el decimal interno para ordenar la preponderancia relativa, sin asignar ordinal CNP. Ajustar el DUG humano y estructurado, GOW y artefactos operativos afectados. Preservar los identificadores de principios Pxxx, la pertenencia de los cinco principios y el resto de normas.\n\nAutorización expresa del operador en la conversación titular vigente (2026-10-30): ampliar ART-025 para documentar la arquitectura de la IPZ como interfaz compacta de navegación y refuerzo selectivo del DUG, no como duplicado de instrucciones ni fuente normativa paralela; establecer como requisito que el DUG mantenga secciones concretas con anclas estables y enlaces profundos verificables; documentar la secuencia, los criterios de diseño, legibilidad funcional mediante emojis, versionado obligatorio, límite estricto inferior a 1.500 caracteres, validación semántica y de enlaces, y la prohibición de guardar propuestas/candidatas IPZ en el repositorio. Se autoriza añadir únicamente los anclajes de navegación mínimos de ART-024 que permitan referencias directas de IPZ a registro, trazabilidad y foliación; no se autoriza guardar el contenido IPZ candidato en ningún archivo del repositorio ni modificar las Instrucciones Personalizadas nativas.\n\nAutorización expresa del operador en la conversación titular vigente (2026-10-30) para C-GOBERNANZA-PRINCIPIOS-DOS-CAPAS-01: calcular dependencias, incorporar al DUG el catálogo de los 43 principios con nombre canónico y abstracción general de una frase, documentar la estrategia de dos capas mediante un nuevo anexo ART-027, establecer la consulta individual de principios desarrollados mediante enlaces Sink y registrar telemetría diferenciando consideración, selección, consulta y aplicación. Se autoriza actualizar el DUG, sus índices/puntos de entrada y los registros de crónica/evidencia del frente Gobernanza. Límites de esta autorización: no modificar los enunciados normativos existentes ni ART-025/IPZ; no publicar el repositorio o sus principios privados; no almacenar credenciales en Git; no declarar creados o verificados enlaces, instancia Sink, despliegue Cloudflare o telemetría real sin evidencia. Los elementos que requieran cuenta, credenciales, despliegue externo o decisión de exposición privada quedan documentados como dependencias pendientes y no se simulan.\n\nAutorización expresa del operador en la conversación titular vigente (2026-10-30) para C-GOBERNANZA-MDP-OCP-01: redefinir ART-027 y la estrategia de dos capas para que el inventario contenga únicamente el nombre canónico y un microdescriptor de pertinencia (MDP) deliberadamente insuficiente para aplicar íntegramente el principio, pero suficiente para reconocer su significado general y sus circunstancias probables de activación; exigir por defecto la consulta de la versión normativa desarrollada mediante Sink antes de aplicar un principio pertinente; medir únicamente la frecuencia de consulta por principio, sin telemetría de aplicación ni registros semánticos de aplicación por ciclo. Se autoriza también crear dentro del OCP Gobernanza una agrupación provisional con objetos persistentes individuales para las tareas pendientes de este frente, sin declarar construido o canonizado el ámbito funcional Tareas. Cada objeto heredará la responsabilidad del OCP Gobernanza; no se crearán controles/sesiones independientes ni se modificará el OCP existente ambitos/tareas/ mientras su titularidad siga en la sesión distinta registrada. Se autoriza actualizar DUG, índices, crónica, evidencia, núcleo, pendientes y punto de entrada del frente en el alcance estrictamente necesario. No se autoriza modificar los enunciados normativos de principios distintos de ART-027 ni canonizar el ámbito Tareas. Additional explicit scope (C-GOBERNANZA-RETOMA-06, 2026-10-30): assume responsibility for frentes/gobernanza/ in this receiving session and preserve the supplied conversation export at the canonical documentary path. No normative changes to the DUG, ART-025, IPZ, or the separate ambitos/tareas/ OCP are authorized by this transfer.\nAlcance adicional C-GOBERNANZA-RETOMA-07: retoma de responsabilidad operativa de Gobernanza, continuidad de tareas provisionales, persistencia documental RDC y coordinación con OCP MCP y EP. No modifica DUG, ART-025/ART-027, IPZ nativa ni controles MCP/EP; no activa FOL1/MCP-NORMATIVO.\n\nAlcance adicional explícito C-GOBERNANZA-DOBLE-CORRESPONSABILIDAD-01 (2026-11-01): autorización para incorporar esta conversación como segunda corresponsable del frente Gobernanza mediante ADD_CO_RESPONSIBLE, sin transferir ni sustituir al titular vigente. Límite: máximo dos sesiones activas (titular + corresponsable), ambas identificadas por alias operativo, instancia, UUIDv7 local y folio SES propio. Toda escritura futura requiere releer este mismo control y usar SHA/CAS/read-back. FOL1 sigue inactivo; no se asignan folios globales. No se afirma fencing universal ni identidad nativa de plataforma.\n\nAlcance adicional C-GOBERNANZA-RETOMA-09 (2026-11-01): transferencia de titularidad primaria a la conversación receptora Gobernanza 1, preservando la corresponsabilidad activa del asiento 2. La captura original del export se documentará separadamente y solo se añadirá al manifiesto cuando esté persistida byte a byte. Sin cambios normativos ni mutación de controles ajenos.",
   "expiry": null,
   "handoff": "Transferred under C-GOBERNANZA-OCPMSP-01 from generation 7 to generation 8 after explicit operator authorization in the receiving conversation. Native ChatGPT conversation ID not exposed; operational alias and local UUIDv7 assigned. FOL1 remains prepared/inactive; no global cycle folio assigned.",
-  "session_folio": "SES-20261101-GV8A19904",
+  "session_folio": "SES-20261101-GVCD93ADD7",
   "session_assignment": {
     "status": "active",
     "role": "titular",
-    "folio": "SES-20261101-GV8A19904",
+    "folio": "SES-20261101-GVCD93ADD7",
     "assigned_on": "2026-11-01",
     "front_ocp": "frentes/gobernanza/",
-    "owner_alias": "chatgpt-C-GOBERNANZA-RETOMA-08-SES-20261101-GV8A19904",
-    "instance": "chatgpt-gobernanza-retoma-2026-11-01-GV8A19904",
-    "generation": 11,
-    "identity_kind": "operational alias + local UUIDv7; not a native ChatGPT conversation ID",
-    "local_conversation_uuidv7": "01a19904-cac5-7351-94eb-ce3ab3837be5",
+    "owner_alias": "chatgpt-C-GOBERNANZA-1-20261101-1717-SES-20261101-GVCD93ADD7",
+    "instance": "chatgpt-gobernanza-1-2026-11-01-CD93ADD7",
+    "generation": 13,
+    "identity_kind": "operational alias + local UUIDv7; not native current ChatGPT conversation ID",
+    "local_conversation_uuidv7": "01a199c3-a374-7e1f-8191-1ff6cd93add7",
     "cycle_folio": null,
-    "event_id": "C-GOBERNANZA-RETOMA-08",
-    "source_control_blob_sha": "403748d4a401c73abf322b2bc48bd517a9c56600",
-    "uniqueness_check": "Alias/UUID exact search returned zero results in repository SeryMente/metodologia; no organization-wide uniqueness or server-enforced fencing claimed.",
+    "event_id": "C-GOBERNANZA-RETOMA-09",
+    "source_export_conversation_id": "6ae7acb7-95a8-83e8-a417-64a48c91ce65",
+    "authorization": {
+      "status": "explicit",
+      "source": "operator instruction in receiving conversation",
+      "verbatim": "ChatGPT-GOBERNANZA-1-20261101-1717.md\nAdjunta converascion en persistencia de frente GOBERNANZA para covnerascion 1.\n\nRetoma repsosnabilidad en tiempo record.\n\nPROHIBIDO TARDARTE MAS DFE LO ESTRICTAMNET NECESARIO PARA INICIAR CONVERSACION. Tienes maximo 5 minutos para resolver el primer ciclo.\n\nSin excusas.",
+      "operation": "TRANSFER_PRIMARY_TITULAR",
+      "scope": "Transferir titularidad primaria de frentes/gobernanza/ a la conversación receptora identificada como Gobernanza 1; retirar al titular primario previo del roster activo; preservar intacto el asiento corresponsable 2 vigente; máximo dos responsables activos. No autoriza cambios al DUG, IPZ nativa, FOL1, ni controles, host o código de EP/MCP-OCP."
+    },
+    "uniqueness_check": "Búsquedas exactas del evento, folio, UUIDv7 y alias: cero resultados en SeryMente/metodologia antes del commit; no acredita unicidad organizacional ni fencing universal.",
     "readback_required": true,
-    "readback_verified": true,
-    "verified_on": "2026-11-01"
+    "readback_verified": false
   },
   "initialization": {
     "event_id": "C-GOBERNANZA-INICIO-01",
@@ -49,31 +55,24 @@
   },
   "previous_session_assignment": {
     "status": "superseded",
-    "folio": "SES-20261031-GV8AA51721",
-    "assigned_on": "2026-10-31",
-    "front_ocp": "frentes/gobernanza/",
-    "owner_alias": "chatgpt-C-GOBERNANZA-RETOMA-07-SES-20261031-GV8AA51721",
-    "instance": "chatgpt-gobernanza-retoma-2026-10-31-8AA51721",
-    "generation": 10,
-    "identity_kind": "operational alias + local UUIDv7; not a native ChatGPT conversation ID",
-    "source_sha_before": "22ee60d4cc74a75816beaf03d8b927b8e8a22e70",
-    "source_main_head_sha": "1053c439880fad6f99c0f4174bc3a5d4c8ce1568",
-    "cycle_folio": null,
-    "event_id": "C-GOBERNANZA-RETOMA-07",
-    "local_conversation_uuidv7": "01a193a9-7a00-7286-9216-45a477d294c1",
-    "verified_on": "2026-10-31",
-    "uniqueness_check": "No global uniqueness or server-enforced fencing claimed.",
-    "readback_verified": true,
-    "original_document_readback": {
-      "path": "frentes/gobernanza/documentos/originales/ChatGPT-Gobernanza-20261031-1432.md",
-      "sha256": "73A087BA953FD01F0804A482452E505E0D5AC160237AF18B467E677D2BAA2219",
-      "git_blob_sha": "d17f575fcd5bf0c0da1bb459a40e42e47c081a31",
-      "bytes": 637277,
-      "status": "PERSISTIDO_Y_VERIFICADO"
-    },
     "role": "titular",
+    "folio": "SES-20261101-GV8A19904",
+    "assigned_on": "2026-11-01",
+    "front_ocp": "frentes/gobernanza/",
+    "owner_alias": "chatgpt-C-GOBERNANZA-RETOMA-08-SES-20261101-GV8A19904",
+    "instance": "chatgpt-gobernanza-retoma-2026-11-01-GV8A19904",
+    "generation": 11,
+    "identity_kind": "operational alias + local UUIDv7; not a native ChatGPT conversation ID",
+    "local_conversation_uuidv7": "01a19904-cac5-7351-94eb-ce3ab3837be5",
+    "cycle_folio": null,
+    "event_id": "C-GOBERNANZA-RETOMA-08",
+    "source_control_blob_sha": "403748d4a401c73abf322b2bc48bd517a9c56600",
+    "uniqueness_check": "Alias/UUID exact search returned zero results in repository SeryMente/metodologia; no organization-wide uniqueness or server-enforced fencing claimed.",
+    "readback_required": true,
+    "readback_verified": true,
+    "verified_on": "2026-11-01",
     "superseded_on": "2026-11-01",
-    "superseded_by_event": "C-GOBERNANZA-RETOMA-08"
+    "superseded_by_event": "C-GOBERNANZA-RETOMA-09"
   },
   "transfers": [
     {
@@ -654,26 +653,91 @@
           "fol1_unchanged": true
         }
       }
+    },
+    {
+      "event_id": "C-GOBERNANZA-RETOMA-09",
+      "recorded_on": "2026-11-01",
+      "authorized_on": "2026-11-01",
+      "authorization": {
+        "status": "explicit",
+        "source": "operator instruction in receiving conversation",
+        "verbatim": "ChatGPT-GOBERNANZA-1-20261101-1717.md\nAdjunta converascion en persistencia de frente GOBERNANZA para covnerascion 1.\n\nRetoma repsosnabilidad en tiempo record.\n\nPROHIBIDO TARDARTE MAS DFE LO ESTRICTAMNET NECESARIO PARA INICIAR CONVERSACION. Tienes maximo 5 minutos para resolver el primer ciclo.\n\nSin excusas.",
+        "scope": "Transferir titularidad primaria de frentes/gobernanza/ a la conversación receptora identificada como Gobernanza 1; retirar al titular primario previo del roster activo; preservar intacto el asiento corresponsable 2 vigente; máximo dos responsables activos. No autoriza cambios al DUG, IPZ nativa, FOL1, ni controles, host o código de EP/MCP-OCP."
+      },
+      "source_branch": "main",
+      "source_control_blob_sha": "8ac857342d5a01a8f4bb160f1cbdb2298f9cbc41",
+      "generation_before": 12,
+      "generation_after": 13,
+      "from": {
+        "owner_thread": "chatgpt-C-GOBERNANZA-RETOMA-08-SES-20261101-GV8A19904",
+        "instance": "chatgpt-gobernanza-retoma-2026-11-01-GV8A19904",
+        "generation": 11,
+        "session_folio": "SES-20261101-GV8A19904",
+        "role": "titular",
+        "status": "active"
+      },
+      "to": {
+        "owner_thread": "chatgpt-C-GOBERNANZA-1-20261101-1717-SES-20261101-GVCD93ADD7",
+        "instance": "chatgpt-gobernanza-1-2026-11-01-CD93ADD7",
+        "generation": 13,
+        "session_folio": "SES-20261101-GVCD93ADD7",
+        "uuidv7_local": "01a199c3-a374-7e1f-8191-1ff6cd93add7",
+        "role": "titular",
+        "source_export_conversation_id": "6ae7acb7-95a8-83e8-a417-64a48c91ce65"
+      },
+      "retained_co_responsible": {
+        "owner_alias": "chatgpt-C-GOBERNANZA-ASIENTO-02-RETOMA-20261101-01-SES-20261101-GV8E89D1FF",
+        "instance": "chatgpt-gobernanza-asiento-02-2026-11-01-8E89D1FF",
+        "generation": 12,
+        "session_folio": "SES-20261101-GV8E89D1FF",
+        "uuidv7_local": "01a19963-08ed-703e-8134-9df78e89d1ff"
+      },
+      "cycle": {
+        "local_id": "C-GOBERNANZA-RETOMA-09-CY01",
+        "local_uuidv7": "01a199c4-afe7-736b-870d-fe886cfbc11c",
+        "global_folio": null
+      },
+      "original_document": {
+        "filename": "ChatGPT-GOBERNANZA-1-20261101-1717.md",
+        "bytes": 93402,
+        "source_sha256": "703542FC7CB57785AA352A2020D940037C1C47CA2C2C37C13B26B9BA7F71D8C8",
+        "source_device": "PC-8",
+        "source_path": "C:\\Users\\PC 8\\Downloads\\ChatGPT-GOBERNANZA-1-20261101-1717.md",
+        "local_read_and_hash": "VERIFIED",
+        "repository_persistence": "PENDING_RDC_DEVICE_OFFLINE"
+      },
+      "method": "GitHub Contents API compare-and-swap against observed control blob; canonical read-back immediately after write.",
+      "mutation_result": "PENDING",
+      "readback_required": true,
+      "readback_verified": false,
+      "created_at": "2026-11-02T00:59:26.891Z"
     }
   ],
   "active_responsibles": [
     {
       "status": "active",
       "role": "titular",
-      "folio": "SES-20261101-GV8A19904",
+      "folio": "SES-20261101-GVCD93ADD7",
       "assigned_on": "2026-11-01",
       "front_ocp": "frentes/gobernanza/",
-      "owner_alias": "chatgpt-C-GOBERNANZA-RETOMA-08-SES-20261101-GV8A19904",
-      "instance": "chatgpt-gobernanza-retoma-2026-11-01-GV8A19904",
-      "generation": 11,
-      "identity_kind": "operational alias + local UUIDv7; not a native ChatGPT conversation ID",
-      "local_conversation_uuidv7": "01a19904-cac5-7351-94eb-ce3ab3837be5",
+      "owner_alias": "chatgpt-C-GOBERNANZA-1-20261101-1717-SES-20261101-GVCD93ADD7",
+      "instance": "chatgpt-gobernanza-1-2026-11-01-CD93ADD7",
+      "generation": 13,
+      "identity_kind": "operational alias + local UUIDv7; not native current ChatGPT conversation ID",
+      "local_conversation_uuidv7": "01a199c3-a374-7e1f-8191-1ff6cd93add7",
       "cycle_folio": null,
-      "event_id": "C-GOBERNANZA-RETOMA-08",
-      "source_control_blob_sha": "403748d4a401c73abf322b2bc48bd517a9c56600",
-      "uniqueness_check": "Alias/UUID exact search returned zero results in repository SeryMente/metodologia; no organization-wide uniqueness or server-enforced fencing claimed.",
+      "event_id": "C-GOBERNANZA-RETOMA-09",
+      "source_export_conversation_id": "6ae7acb7-95a8-83e8-a417-64a48c91ce65",
+      "authorization": {
+        "status": "explicit",
+        "source": "operator instruction in receiving conversation",
+        "verbatim": "ChatGPT-GOBERNANZA-1-20261101-1717.md\nAdjunta converascion en persistencia de frente GOBERNANZA para covnerascion 1.\n\nRetoma repsosnabilidad en tiempo record.\n\nPROHIBIDO TARDARTE MAS DFE LO ESTRICTAMNET NECESARIO PARA INICIAR CONVERSACION. Tienes maximo 5 minutos para resolver el primer ciclo.\n\nSin excusas.",
+        "operation": "TRANSFER_PRIMARY_TITULAR",
+        "scope": "Transferir titularidad primaria de frentes/gobernanza/ a la conversación receptora identificada como Gobernanza 1; retirar al titular primario previo del roster activo; preservar intacto el asiento corresponsable 2 vigente; máximo dos responsables activos. No autoriza cambios al DUG, IPZ nativa, FOL1, ni controles, host o código de EP/MCP-OCP."
+      },
+      "uniqueness_check": "Búsquedas exactas del evento, folio, UUIDv7 y alias: cero resultados en SeryMente/metodologia antes del commit; no acredita unicidad organizacional ni fencing universal.",
       "readback_required": true,
-      "readback_verified": true
+      "readback_verified": false
     },
     {
       "status": "active",
