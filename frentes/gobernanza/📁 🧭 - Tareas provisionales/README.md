@@ -83,7 +83,7 @@ La telemetría aprobada aquí mide frecuencia de acceso, no aplicación, y no au
 El cierre del frente exige IPZ instalado y verificado, admisión efectiva, protocolo de ciclo operativo, consulta/selección/Sync/telemetría/hash E2E y resolución de satélites del DUG para 1.0.
 
 
-## Estado rector vigente · C-GOBERNANZA-VECTOR-SEMANTICO-01 · 2026-10-31
+## Estado histórico supersedido · C-GOBERNANZA-VECTOR-SEMANTICO-01 · 2026-10-31
 
 El registro queda actualizado a once objetos provisionales. GOV-TASK-011 establece la DTC — Dinámica Trilateral por Ciclo; Gobernanza verifica ciclo a ciclo la apertura, respuesta prioritaria, procesamiento, documentación de cierre y read-back de los tres frentes. Los objetos EP/OCP siguen con respuesta inicial pendiente hasta prueba. GOV-TASK-010 ya existe y se incorpora al índice; no se crea tarea duplicada. GOV-TASK-009 pasa a `en_curso` por su dependencia directa con el primer enlace IPZ (§ARR/GOW). GOV-TASK-002 queda `cancelada` como despliegue Sink/Cloudflare activo, preservado únicamente como antecedente; GOV-TASK-003 continúa pendiente como aceptación E2E de OCP MCP/Sync. Las tareas 004 y 005 siguen diferidas. La responsabilidad de las once tareas continúa heredada del OCP Gobernanza, generación 9; ninguna tiene control ni folio propio.
 
@@ -122,7 +122,7 @@ Las menciones históricas a Sync en snapshots de reorientación no alteran el DU
 
 
 
-## Estado actual del control y la DTC · C-GOBERNANZA-RETOMA-08 · 2026-11-01
+## Estado histórico supersedido · control y DTC · C-GOBERNANZA-RETOMA-08 · 2026-11-01
 
 - Control heredado único: generación 11, titular `SES-20261101-GV8A19904`; corresponsable preservada `SES-20261101-ED4A2B32`. No se abren controles/sesiones de tarea.
 - EP: `CUMPLE_VERIFICADO` en ciclo DTC documental local Prompt 02. Su tarea material EP-TASK-002 permanece `en_curso`; operaciones B2 no verificadas.
@@ -132,9 +132,20 @@ Las menciones históricas a Sync en snapshots de reorientación no alteran el DU
 
 
 
-### Fuente normativa verificada para la retoma 08 · 2026-11-01
+### Fuente normativa observada en la retoma 08 · antecedente histórico · 2026-11-01
 
 DUG vigente observado en `main`: Samantha v375 · NX-375m; GOW 2.15; 43 principios; 21 anexos; blob `c993a59163c2c163b17b599a003919b53c5cf6a8`. No se modificó el DUG. Las referencias v373 anteriores se conservan como fotografías históricas cuando describen ciclos precedentes.
+
+## Estado actual del control y la DTC · C-GOBERNANZA-RETOMA-09 · 2026-11-01
+
+- Titular Gobernanza 1: SES-20261101-GVCD93ADD7, generación 13; UUIDv7 local 01a199c3-a374-7e1f-8191-1ff6cd93add7. Corresponsable asiento 2 SES-20261101-GV8E89D1FF, generación 12. Roster dos de dos. Control final blob 960fefdca26c841c3a2d06ebb57a2e836b6f8d73, read-back PASS.
+- Export solicitado ChatGPT-GOBERNANZA-1-20261101-1717.md, 93.402 bytes, SHA-256 local 703542FC7CB57785AA352A2020D940037C1C47CA2C2C37C13B26B9BA7F71D8C8; persistencia Git pendiente por RDC PC-8 Offline.
+- EP: respuesta de Gobernanza publicada en el mismo objeto/ciclo EP-03; cierre y read-back final de EP pendientes. EP-TASK-002 sigue en_curso.
+- MCP-OCP: ciclo local 06 CUMPLE_VERIFICADO. Gobernanza publicó nueva solicitud en §30 del objeto existente; blob 3ea63f4c18de6f185430617add5bd2df67f15258. Recepción/respuesta MCP pendiente.
+- GOV-TASK-014 integra documentos versionados y estado/datasets operativos MCP-OCP; distingue backup local, persistencia remota B2 y restore cross-host.
+- DTC global EN_CURSO_RECURRENT. FOL1 PREPARADO_PENDIENTE_ACTIVACION_IPZ; folios globales CV/CY/A/B y OCP pendientes/no asignados; MCP-NORMATIVO DESACTIVADO.
+
+[Crónica](../cronica/C-GOBERNANZA-RETOMA-09.md) · [evidencia](../evidencias/C-GOBERNANZA-RETOMA-09.json).
 
 ## Actualización vigente · C-GOBERNANZA-OCP-MCP-PERFORMANCE-01 · 2026-11-01
 
@@ -144,7 +155,7 @@ DUG vigente observado en `main`: Samantha v375 · NX-375m; GOW 2.15; 43 principi
 - [GOV-TASK-012 — Fluidez y desempeño del marco](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-012%20-%20Fluidez%20y%20desempe%C3%B1o%20del%20marco/README.md): revisar el flujo completo, localizar fricción y probar mejoras sin debilitar controles.
 - [GOV-TASK-013 — Medición y optimización de ciclos](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-013%20-%20Medici%C3%B3n%20y%20optimizaci%C3%B3n%20de%20ciclos/README.md): instrumentar marcas observables y operaciones GitHub/RDC, medir esperas diferenciadas y comparar muestras equivalentes.
 
-Ambas tareas heredan el control único de Gobernanza, generación 11; no tienen control, sesión, folio ni OCP propios. El ciclo de configuración actual no es línea base porque la captura temporal no estaba activa desde su inicio. El primer ciclo sustantivo completo posterior a esta actualización será candidato a línea base; se reunirán al menos diez ciclos comparables antes de fijar una referencia estable. Los datos ausentes se declaran `NOT_MEASURED`; no se reconstruyen retroactivamente.
+Ambas tareas heredan el control único de Gobernanza, generación 13; no tienen control, sesión, folio ni OCP propios. El ciclo de configuración actual no es línea base porque la captura temporal no estaba activa desde su inicio. El primer ciclo sustantivo completo posterior a esta actualización será candidato a línea base; se reunirán al menos diez ciclos comparables antes de fijar una referencia estable. Los datos ausentes se declaran `NOT_MEASURED`; no se reconstruyen retroactivamente.
 
 [Crónica](../../cronica/C-GOBERNANZA-OCP-MCP-PERFORMANCE-01.md) · [evidencia](../../evidencias/C-GOBERNANZA-OCP-MCP-PERFORMANCE-01.json).
 
