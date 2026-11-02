@@ -75,7 +75,7 @@
       "cycle_closed": false,
       "final_readback_pending": true,
       "EP_TASK_002": "en_curso",
-      "latest_source_blob": "387d7525ae89cc359bcedf55d57659989d40eaf4",
+      "latest_source_blob": "ab4a83d616a8cbd5b66d072fa854875aec90c6a0",
       "concurrency_incident": {
         "status": "READ_AND_RESPONDED_IN_SAME_CYCLE",
         "heading": "Incidencia de concurrencia documental · actualización GitHub con SHA obsoleto",
@@ -85,7 +85,16 @@
         "cycle_closed": false,
         "note": "HTTP 409 rejected stale SHA; no overwrite was made; Governance instructed reread and rebuild only the delta against the current blob."
       },
-      "current_coordination_blob": "18574c5437cd8d6023dec9c05a09117e65247ed4"
+      "current_coordination_blob": "086c6a2724e3f8e2fe07a9ad27171914e610832d",
+      "selftest_locator_incident": {
+        "source_blob": "ab4a83d616a8cbd5b66d072fa854875aec90c6a0",
+        "response_commit": "753664a1eca985a3396170ab75ad741ef5f868e8",
+        "response_blob": "086c6a2724e3f8e2fe07a9ad27171914e610832d",
+        "readback_verified": true,
+        "cycle": "C-EP-MOD-SCRIPTPWS-20261101-03",
+        "impact": "PRELIGHT_ABORTED_BEFORE_WRITE",
+        "governance_scope": "Acknowledged; EP retains technical execution"
+      }
     },
     "mcp_ocp": {
       "previous_local_cycle": "C-MCP-OCP-DTC-20261101-06",
