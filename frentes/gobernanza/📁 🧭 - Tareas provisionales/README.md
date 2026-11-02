@@ -34,6 +34,52 @@ El núcleo de cada objeto conserva identificador local, enunciado, referencia re
 | GOV-TASK-013 | en_curso | Medición objetiva y optimización del tiempo de procesamiento de ciclos | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-013%20-%20Medici%C3%B3n%20y%20optimizaci%C3%B3n%20de%20ciclos/README.md) |
 | GOV-TASK-014 | en_curso | Integración y aceptación de persistencia Backblaze para Metodología y OCP | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-014%20-%20Persistencia%20Backblaze%20de%20Metodolog%C3%ADa%20y%20OCP/README.md) |
 
+## Tablero ejecutivo del sprint general · corte 2026-11-01 19:18 · America/Mexico_City
+
+**Estado global:** `EN_CURSO · NO_ACEPTADO`. Criterio rector: primera versión funcional de Gobernanza integrada con IPZ y OCP MCP, trazable al dictado verbatim [C-GOBERNANZA-VECTOR-SEMANTICO-01](../conversaciones/C-GOBERNANZA-VECTOR-SEMANTICO-01-dialogo.jsonl). No se asigna porcentaje: las tareas no tienen ponderaciones aprobadas y los resultados no son intercambiables.
+
+### Resultado que debe entregar el sprint
+
+- IPZ de máximo 1.500 caracteres: primero enlace GOW/§ARR, después DUG; ambos con navegación abreviada resoluble; después refuerzo de admisión fail-closed. §ARR es la primera lectura lingüística; DUG es la única fuente normativa y se considera completo, no solo los enlaces destacados.
+- Admisión: no iniciar trabajo sustantivo hasta que el operador asigne explícitamente un FT y se comprueben control, titularidad, generación, autorización y exclusividad. Preguntas ajenas al FT no desvían la sesión.
+- Principios: considerar el inventario completo de 43 principios; usar MDP de 11–16 palabras para significado/señal de pertinencia, no para aplicar; seleccionar los principios pertinentes y consultar su desarrollo completo cuando proceda.
+- OCP MCP: consulta por ciclo/sesión autorizada, paquete exacto de enlaces individuales a principios desarrollados, telemetría limitada a frecuencia de acceso, reconsulta ante insuficiencia y hash del paquete exacto en la salida.
+- Foliación: FOL1 solo se activa después de instalar y verificar IPZ; antes de eso, folios globales CV/CY/A/B permanecen pendientes/no asignados.
+- Persistencia incorporada al sprint: Backblaze EP para artefactos elegibles y continuidad del estado/datasets del servicio MCP-OCP, con validaciones separadas de backup local, B2 remoto y restore cross-host.
+
+### Checklist ejecutivo de aceptación
+
+| Control de resultado | Estado al corte | Tarea/fuente propietaria | Evidencia que falta para cerrar |
+|---|---|---|---|
+| IPZ ≤1.500 caracteres, dos referencias en orden y read-back nativo | `BLOQUEADO` | GOV-TASK-007 | Cotejar v0.7/v0.8; v0.8 (1.488) omite salvaguardas; completar versión íntegra, instalar y leer de vuelta el campo nativo |
+| Admisión fail-closed positiva/negativa | `EN_CURSO · NO_PROBADA_E2E` | GOV-TASK-010 | Pruebas de frente explícito, control, titularidad, generación, autorización, exclusividad y rechazo de consultas ajenas |
+| Inventario y semántica de 43 MDP | `EN_CURSO` | GOV-TASK-001 | Matriz de 43 entradas, correspondencia ID/título/MDP, suficiencia de pertinencia y colisiones semánticas resueltas |
+| Lectura individual del desarrollo, telemetría y hash de paquete | `PARCIAL · NO_E2E` | GOV-TASK-008; OCP MCP | E2E de catálogo→selección→enlaces individuales→lectura→frecuencia→reconsulta→hash; no presumir que los alias están desplegados |
+| Ruta de enlace del principio: Sync vs Sink | `DECISIÓN/RECONCILIACIÓN_PENDIENTE` | GOV-TASK-006/008/009; DUG ART-027 | El vector verbatim pide Sync; el DUG v377 describe Sink. No tratarlos como equivalentes sin reconciliación autorizada; Sink no está desplegado/probado |
+| Aceptación integral del flujo OCP MCP | `PENDIENTE` | GOV-TASK-003; OCP MCP | Prueba E2E positiva/negativa, paquete/manifiesto/hash y decisión explícita de aceptación |
+| Persistencia EP/Metodología + estado operativo MCP-OCP | `EN_CURSO · B2_NO_VERIFICADO` | EP-TASK-002; GOV-TASK-014; solicitud MCP §30 | Autorización y preflight B2; snapshot consistente; manifiesto portable; upload/read-back/hash; restore aislado cross-host; validación funcional MCP |
+| DTC trilateral por ciclo | `EN_CURSO_RECURRENT` | GOV-TASK-011 | Mantener lectura, respuesta, procesamiento, cierre y read-back en cada ciclo sin excepción; EP-03 abierto, MCP §30 pendiente de respuesta |
+| Reconciliación de satélites para Gobernanza 1.0 | `EN_CURSO` | GOV-TASK-006 | Inventario completo de piezas próximas al DUG, autoridad/procedencia/uso/destino; `identidad.md` no localizado, no declarado inexistente |
+| Desempeño y eficiencia del ciclo | `INSTRUMENTADO · SIN_LÍNEA_BASE` | GOV-TASK-012/013 | Captura desde apertura y al menos 10 ciclos comparables; actualmente `NOT_MEASURED` cuando faltan marcas |
+
+### DTC · cierre ejecutivo del corte
+
+- **EP:** ciclo local `C-EP-MOD-SCRIPTPWS-20261101-03` sigue abierto. Gobernanza respondió y leyó de vuelta el acuse de las cinco incidencias acumuladas de preflight/recurrencia. La escritura quedó en el objeto EP con blob `312c3e7a328e726c88b43c38e37e99d67125cef4` (commit `1f934f1254620cc6e60339afa812c53469241819`). EP debe corregir/procesar y cerrar el mismo ciclo; la respuesta de Gobernanza no cierra su ciclo.
+- **MCP-OCP:** ciclo local 06 cerrado `CUMPLE_VERIFICADO`; §30 sobre continuidad de datasets/backup/restore continúa `PUBLICADO`, pendiente de lectura/respuesta. No duplicar la solicitud mientras no haya respuesta o evidencia nueva.
+- **Backblaze:** CLI v5.0.2 instalada y hash local verificado en `015RENTA01`; presencia P012/P013 para ese equipo aún pendiente; autenticación, preflight proveedor, bucket/scope efectivo, upload, read-back remoto y restore no ejecutados. Bucket previsto único `OCP-MCP`, prefijo reportado `ep-ocp/`; no usar `OCP-MSP` ni `metodologia-ep-persistencia`.
+
+### Prioridad ejecutiva
+
+1. **P0 · completar la ruta central:** GOV-TASK-007 + GOV-TASK-010; eliminar la brecha entre IPZ preparado e IPZ instalado/verificado y probar admisión.
+2. **P0 · hacer demostrable OCP MCP:** GOV-TASK-001/008/003; resolver explícitamente Sync/Sink y demostrar el ciclo completo de principios, telemetría y hash.
+3. **P0 · continuidad persistente:** EP-TASK-002 + GOV-TASK-014 + respuesta MCP §30; no confundir preparación local, backup local, B2 y restore cross-host.
+4. **P1 · calidad estructural:** GOV-TASK-006 y GOV-TASK-009; limpiar/reconciliar los satélites y asegurar §ARR como primer destino léxico.
+5. **P2 · optimización:** GOV-TASK-012/013; medir antes de afirmar mejoras.
+
+**Diferimientos conservados:** GOV-TASK-004 y GOV-TASK-005 no bloquean el MVP inmediato; GOV-TASK-002 está cancelada como despliegue activo. No se eliminan sus antecedentes.
+
+**Regla de lectura del tablero:** `CUMPLE_VERIFICADO` describe evidencia local de un frente o ciclo; no equivale a integración global ni aceptación del sprint. El sprint solo se acepta cuando se satisfacen los criterios centrales y sus compuertas, con pruebas/read-back y decisión expresa del operador.
+
 ## Estado histórico de continuidad · 2026-10-30
 
 GOV-TASK-001, GOV-TASK-006, GOV-TASK-007 y GOV-TASK-008 se encuentran `en_curso`; GOV-TASK-002/003/004/005 permanecen `pendiente`. El cambio de estado no crea controles, sesiones ni folios propios. La discrepancia GOW 2.12/2.14 y la falta de acceso Cloudflare están registradas en [Pendientes](../PENDIENTES.md).
