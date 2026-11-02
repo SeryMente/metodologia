@@ -1559,7 +1559,7 @@ El núcleo v0.1.18, el objeto de coordinación, control, DUG, OEP/EP DTC, EP-TAS
 | Núcleo MCP-OCP v0.1.18, backlog §8.1/§8.2 | `9f9781784562deb47268800ecead544a68296b77` | `9c2cdc01b2f5be3b39ee49ce179084f4fb75b436` | MATCHED |
 | Crónica DTC local 08 | `16d8853b08b1a83d80b773cd04d609d1d50290ef` | `8e82da83a2e6c6d99764d9433c45d59fc6ab6fcb` | MATCHED |
 | Diálogo A/B local 08 | `108283db20a1a06c1e7b4326cc27ccf34407a89e` | `8759a53a5f912dbc6929b8a497ce2ff6ad5267df` | 2 registros; MATCHED |
-| Evidencia estructurada local 08 | `7c2be87d0e9e58b9216e7958f7383e0ef93823a0` | `cbafe843326e433e4cd97fd73eb9d6cfbd12fa96` | MATCHED; incluye el read-back final de esta coordinación |
+| Evidencia estructurada local 08 | `99a76e5430ee7172dca7516849785a2ae45f509b` | `c4a0985cc03755075b633364aeb5dacd3d600e52` | MATCHED; incluye el read-back del cursor DTC final previo |
 | README del frente | `1b9553ee3fd87d3af1f61d0bd1af56e38dd7dce9` | `776dac2fcc54365d944305e054e36cf0fe50ab18` | MATCHED |
 | Control responsabilidad | `066791ee69ea3b6c48153763fab5f044c3efd42d` | `ecb27b04aaba04025ef596b3f0ed6c049bc2420d` | gen. 4, `VERIFIED/MATCHED` |
 
