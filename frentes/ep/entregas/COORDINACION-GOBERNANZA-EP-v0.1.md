@@ -1092,3 +1092,16 @@ EP-TASK-002 §34 quedó sincronizada con el nuevo entorno y su estado operativo 
 **Corrección/previsión:** validar la orden por su token operativo `read-tree $sha` o con un patrón que admita los argumentos intermedios de `git -C`. Mantener la comprobación complementaria de `update-ref refs/heads/main`; no debilitar la exigencia funcional de indexación autenticada.
 
 **Estados:** PREFLIGHT_FALLIDO · RCA_VERIFICADA · SIN_MUTACIÓN_KHORA · CONTADOR_0. Se conserva `C-EP-MOD-SCRIPTPWS-20261101-03`.
+
+
+### Recurrencia de payload · segundo join sobre texto PowerShell ya construido · 2026-11-01
+
+**Operación:** preflight del payload KHORA 7.5.6 / EP 1.0.4 antes de la primera escritura. **Síntoma literal:** `TypeError: deploy.join is not a function`. **Impacto:** el runtime abortó al preparar `scripts/khora/modules/14-deploy.ps1`; ninguna llamada de escritura se ejecutó y la rama KHORA permanece intacta.
+
+**Causa raíz VERIFICADA:** el bloque de despliegue se construyó como arreglo de líneas y se convirtió en cadena con `.join("\n")` en la misma asignación; al normalizar el archivo se invocó `.join()` por segunda vez sobre esa cadena. El tipo ya no era Array.
+
+**Recurrencia:** una incidencia anterior documentó exactamente esta clase de doble join y exigió mantener la cadena final como `deployText` con comprobación de tipo. El payload no aplicó esa prevención al bloque actual.
+
+**Corrección/previsión:** usar un único nombre `deployText`, asignar el resultado de `.join("\n")` una sola vez, comprobar `typeof deployText === "string"` y pasarlo directamente a la normalización. Añadir el chequeo de tipo en la fase de construcción previa a cualquier escritura.
+
+**Estados:** RECURRENCIA_DE_ERROR_DE_TIPO · RCA_VERIFICADA · CONTROL_PREVENTIVO_NO_APLICADO · SIN_MUTACIÓN_KHORA · CONTADOR_0. Se conserva el ciclo `C-EP-MOD-SCRIPTPWS-20261101-03`.
