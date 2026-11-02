@@ -1,4 +1,15 @@
-## Estado rector vigente · C-GOBERNANZA-ASIENTO-02-RETOMA-20261101-01 · 2026-11-01
+## Estado rector vigente · C-GOBERNANZA-RETOMA-09 · 2026-11-01
+
+- Control generación 13: titular Gobernanza 1 SES-20261101-GVCD93ADD7 / UUIDv7 local 01a199c3-a374-7e1f-8191-1ff6cd93add7; corresponsable asiento 2 SES-20261101-GV8E89D1FF (gen12) preservada. Control blob 960fefdca26c841c3a2d06ebb57a2e836b6f8d73, read-back PASS.
+- Export solicitado ChatGPT-GOBERNANZA-1-20261101-1717.md: 93.402 bytes, SHA-256 local 703542FC7CB57785AA352A2020D940037C1C47CA2C2C37C13B26B9BA7F71D8C8; persistencia Git pendiente por PC-8/RDC Offline. No añadir al manifiesto hasta cotejo byte-exact.
+- EP: respuesta de Gobernanza publicada/read-back en mismo objeto/ciclo EP-03; cierre/read-back final EP pendientes. EP-TASK-002 en_curso.
+- MCP-OCP: ciclo local 06 cerrado/verificado. Solicitud nueva §30 publicada/read-back, blob 3ea63f4c18de6f185430617add5bd2df67f15258; recepción/respuesta de MCP pendiente.
+- GOV-TASK-014 ampliada a dos planos y tres estados independientes (backup local, B2 remoto, restore cross-host); blob ficha a4cb7e053392695b61c9c4265d0e6967f48fea42. No se declara B2 operativo.
+- DTC global EN_CURSO_RECURRENT. DUG Samantha v377 · NX-377m · GOW 2.17; no modificado. IPZ v0.7 e instalación nativa no verificadas. FOL1 preparado/inactivo; CV/CY/A/B globales y OCP pendientes/no asignados; MCP-NORMATIVO desactivado.
+
+[Crónica](cronica/C-GOBERNANZA-RETOMA-09.md) · [evidencia](evidencias/C-GOBERNANZA-RETOMA-09.json).
+
+## Estado rector anterior · C-GOBERNANZA-ASIENTO-02-RETOMA-20261101-01 · 2026-11-01
 
 - Control común generación 12, `TRANSFERENCIA_VERIFICADA_READBACK`. Titular `SES-20261101-GV8A19904` (gen11) preservado; corresponsable asiento 2 `SES-20261101-GV8E89D1FF` (gen12), UUIDv7 local `01a19963-08ed-703e-8134-9df78e89d1ff`. Máximo dos activos; lectura de vuelta verificada desde blob `bb1175ae18e73d5fbd65208466b2426d0bafe2cf`.
 - Original `ChatGPT-GOBERNANZA-2-20261101-1655.md`: 42.949 bytes, SHA-256 `71172E0F62C10B4A34FE5F04D5520F28F9ACA6C82771DB6882F70E266CDA7AB4`, Git blob `6814f4029891f953dabe91b376254b49dcc1ce47`, persistido y leído de vuelta byte a byte. [Crónica](cronica/C-GOBERNANZA-ASIENTO-02-RETOMA-20261101-01.md) · [evidencia](evidencias/C-GOBERNANZA-ASIENTO-02-RETOMA-20261101-01.json).
