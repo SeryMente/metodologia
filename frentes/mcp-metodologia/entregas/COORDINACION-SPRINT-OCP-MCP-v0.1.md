@@ -1560,7 +1560,7 @@ El núcleo v0.1.18, el objeto de coordinación, control, DUG, OEP/EP DTC, EP-TAS
 | Crónica DTC local 08 | `16d8853b08b1a83d80b773cd04d609d1d50290ef` | `8e82da83a2e6c6d99764d9433c45d59fc6ab6fcb` | MATCHED |
 | Diálogo A/B local 08 | `108283db20a1a06c1e7b4326cc27ccf34407a89e` | `8759a53a5f912dbc6929b8a497ce2ff6ad5267df` | 2 registros; MATCHED |
 | Evidencia estructurada local 08 | `93c51612960c1a3e2089906671cc603adea61654` | `9efaf4ad9d2c7576c18381f3ba9d54d3c802be0e` | MATCHED |
-| README del frente | Commit de actualización ciclo 08 pendiente de obtener en cursor final | `776dac2fcc54365d944305e054e36cf0fe50ab18` | MATCHED |
+| README del frente | `1b9553ee3fd87d3af1f61d0bd1af56e38dd7dce9` | `776dac2fcc54365d944305e054e36cf0fe50ab18` | MATCHED |
 | Control responsabilidad | `066791ee69ea3b6c48153763fab5f044c3efd42d` | `ecb27b04aaba04025ef596b3f0ed6c049bc2420d` | gen. 4, `VERIFIED/MATCHED` |
 
 **Original del ciclo precedente:** la exportación `ChatGPT-OCP MCP-20261101-1917.md` sigue preservada en `conversaciones/`, 54.916 bytes, 1.137 líneas, SHA-256 `27D1074A72A1DB571984675396B847C229B76F803D2EFFFDEFAD4B7B1190B4D1`, blob `bebd00b312f5db1f11910682452de9d95ef5ca08`. El original local no fue modificado.
