@@ -1665,9 +1665,10 @@ El núcleo v0.1.18, el objeto de coordinación, control, DUG, OEP/EP DTC, EP-TAS
 | Contrato PPR v1 | d1b97095116a7e9aa7f719f822b56f29239e6453 | dda67e5107f100b27f1e4d76680c81d41cafb1de | EXACT |
 | JSON Schema manifest PPR v1 | f402ee483acfc7603177523431fde8cde4792848 | 7d3126c40d19e43c5123b3acbfc2f4b53c1f7767 | EXACT; JSON parseado |
 | Núcleo MCP-OCP v0.1.19 / backlog | 3c7bcd077902af34ab1764842fd3a7d3906b39fc | 3390099890e3734be9a829be003ab2d217b60690 | EXACT |
-| Crónica ciclo 09 | 014f87fa0868ea0b2dee86a9637c5a673b9504b3 | 83f9fcee3f423e0a819b5d8d6c5dfa8d5ce39234 | EXACT |
-| Evidencia ciclo 09 | dbc655fb4341144a63384cfd9470afd0c9b9f95a | 37aa2e9b8a64ada341250ad7c2f8909d160c9827 | EXACT; JSON parseado |
+| Crónica ciclo 09 | f6068ec2fafcaa408da95bf2af258c7b274720b0 | b6d9ec31b040a9fc4bbd763cc36042366ffda6eb | EXACT |
+| Evidencia ciclo 09 | b656820f7a49712c1312cffc1185f203f4be248a | 7ab1540384eaa685e82629f06b8bd1aebef63e51 | EXACT; JSON parseado |
 | README índice | 5cc4037be88b9a71f2a997377103ed4efd90c5f0 | 006ded56a70c5abeb2b644ea24c4050ad6c932ca | EXACT |
+| Diálogo A/B ciclo 09 | dae10b0d5913ed5668009185f5371ece0eb14f13 | 484335162cd1845d3194f845ac385ad274ff4569 | 3 registros (2 A + 1 B); EXACT |
 
 **Estado RDC observado:** 015RENTA01 Online; Git/GitHub CLI no disponibles en PATH; dotnet presente sin SDK registrado, runtime .NET 8.0.11; proyecto net10.0. No se ejecutó build ni tests y no se modificó tooling/host. PC-8/PC-14 Offline.
 
