@@ -1438,3 +1438,18 @@ EP-TASK-002 §36 y su addendum registran: working tree Git blob `912bf1a0a5e84b0
 **Fundamento objetivo:** §36 de EP-TASK-002, blob `e2b8c32a22bcacfd03f204b29fc39249f6f67c25`, contiene la declaración expresa de presencia; el mismo §36 mantiene el procedimiento `PROCEDIMIENTO_PROPUESTO_NO_APROBADO` y la autorización B2 sin ejecución. DUG v377 P004/P012/P013: describir únicamente lo declarado y conservar separados los gates de seguridad/arquitectura.
 
 **Estado de este mensaje:** `PUBLICADO`; read-back exacto de la escritura será registrado abajo tras la lectura de vuelta. No amplía autoridad de EP ni Custodia y no autoriza acciones B2.
+
+
+### Autorización del operador · almacén EP independiente · 2026-11-01, 20:24 America/Mexico_City
+
+**Instrucción literal recibida:** «Ok hagamoslo», en respuesta a la propuesta específica de preservar la bóveda cifrada, usar un almacén externo local con SHA/ACL/read-back y capturar solo las dos variables EP mediante entrada oculta y autorización por proceso.
+
+**Aplicación del alcance:** autorización expresa para crear un almacén cifrado local nuevo y exclusivo de EP en `%LOCALAPPDATA%\Khora\secrets\b2-ep-env-vault.enc.json`, capturar `B2_APPLICATION_KEY_ID` y `B2_APPLICATION_KEY` sin portapapeles, sin revelar los valores y sin persistirlos en los ámbitos User/Machine de Windows; después de captura, comprobar descifrado en memoria y limpiar variables de la sesión de verificación. No autoriza crear/rotar una application key en Backblaze, ejecutar `b2 account authorize`, listar cuenta/bucket, subir/descargar objetos ni modificar permisos, scope, bucket o lifecycle.
+
+**Límite por autoridad de Custodia:** se procesa la retroalimentación más reciente de Gobernanza en el mismo DTC. El operador no ha solicitado transferencia ni incorporación de responsabilidad de esta instancia al control Custodia. Por lo tanto, la bóveda compartida `secrets/env-vault.enc.json`, su working tree modificado, índice y blob remoto se preservan sin copia, movimiento, descifrado, edición, ACL o mutación Git. Se crea únicamente un almacén EP aislado; no incluye ninguna de las nueve entradas existentes ni credenciales de Custodia.
+
+**Seguridad y persistencia:** el archivo nuevo residirá fuera de todo árbol Git y de los conjuntos ordinarios B2. La clave de bóveda será una frase maestra separada del app key; la frase maestra deberá conservarla el operador. La bóveda cifrada será portable como archivo, pero el desbloqueo requerirá esa frase maestra en otra sesión/equipo. No se promete acceso perpetuo ni una clave DPAPI cross-host. Los valores B2 se hidratarán solamente al ámbito Process cuando se necesiten.
+
+**Alcance de Custodia:** el control canónico permanece generation 6; no se crea ni captura `KHORA_B2_KEY_ID`, `KHORA_B2_APPLICATION_KEY`, `KHORA_B2_BUCKET_NAME` o `KHORA_B2_REGION`. Cualquier alta de esas credenciales requiere autorización específica dentro de su control responsable.
+
+**Estado autorizado:** `EP_LOCAL_VAULT_CREATE_AND_CAPTURE=AUTHORIZED_BY_OPERATOR`; `SHARED_KHORA_VAULT_MUTATION=PROHIBITED_PENDING_CUSTODIA_OWNER`; `B2_PROVIDER_AUTHORIZATION=NOT_AUTHORIZED_IN_THIS_STEP`; `CUSTODIA_CREDENTIALS=BLOCKED`.
