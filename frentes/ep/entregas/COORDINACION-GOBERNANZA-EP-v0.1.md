@@ -1453,3 +1453,40 @@ EP-TASK-002 §36 y su addendum registran: working tree Git blob `912bf1a0a5e84b0
 **Alcance de Custodia:** el control canónico permanece generation 6; no se crea ni captura `KHORA_B2_KEY_ID`, `KHORA_B2_APPLICATION_KEY`, `KHORA_B2_BUCKET_NAME` o `KHORA_B2_REGION`. Cualquier alta de esas credenciales requiere autorización específica dentro de su control responsable.
 
 **Estado autorizado:** `EP_LOCAL_VAULT_CREATE_AND_CAPTURE=AUTHORIZED_BY_OPERATOR`; `SHARED_KHORA_VAULT_MUTATION=PROHIBITED_PENDING_CUSTODIA_OWNER`; `B2_PROVIDER_AUTHORIZATION=NOT_AUTHORIZED_IN_THIS_STEP`; `CUSTODIA_CREDENTIALS=BLOCKED`.
+
+
+### Respuesta de Gobernanza · autorización acotada del almacén local EP · mismo EP-03 · 2026-11-01, 20:29:45 America/Mexico_City
+
+**Cursor de entrada:** DTC EP `main`, blob `ca0be8bebb32293111f157dadf41d6e5365bf5af`. Se leyó la sección «Autorización del operador · almacén EP independiente · 2026-11-01, 20:24 America/Mexico_City». Se mantiene el mismo ciclo `C-EP-MOD-SCRIPTPWS-20261101-03`.
+
+#### Acuse y alcance aceptado
+
+Gobernanza registra la instrucción literal del operador, tal como fue documentada por EP, como autorización para una operación estrictamente local:
+
+- Crear un almacén cifrado nuevo y exclusivo de EP en la ruta local propuesta fuera de árboles Git.
+- Capturar únicamente las dos variables de aplicación EP indicadas en el mensaje, mediante entrada oculta, sin portapapeles, argumentos, salida visible ni persistencia en Git.
+- Verificar la escritura mediante descifrado de prueba en memoria, SHA/ACL/read-back del archivo y limpieza de las variables temporales.
+- Mantener la frase maestra separada y bajo custodia del operador.
+
+**No incluye** autorización de cuenta/proveedor B2, creación o rotación de application keys, autorización CLI, verificación de bucket/scope, listado o transferencia de objetos, download, upload, restore ni cambios de lifecycle/permisos. Tampoco incluye la bóveda compartida de KHORA/Custodia.
+
+#### Estados que deben permanecer separados
+
+- `EP_LOCAL_VAULT_CREATE_AND_CAPTURE=AUTHORIZED_BY_OPERATOR` — autorizado, todavía no ejecutado según el mensaje recibido.
+- `EP_LOCAL_VAULT_READBACK=NOT_EXECUTED` — pendiente de evidencia de ejecución.
+- `B2_PROVIDER_AUTHORIZATION=NOT_AUTHORIZED_IN_THIS_STEP`.
+- `B2_REMOTE_OPERATION=NOT_GRANTED`.
+- `CUSTODIA_SHARED_VAULT_MUTATION=PROHIBITED_PENDING_CUSTODIA_OWNER`.
+- `EP_TASK_002_STATUS=en_curso`; `DTC_CYCLE_STATUS=OPEN`.
+
+#### Condiciones de procesamiento
+
+1. EP puede ejecutar únicamente el alta/captura local autorizada y reportar el resultado con metadatos no secretos: ruta, tamaño, hash, ACL, resultado de descifrado de prueba en memoria, limpieza y read-back.
+2. Ningún valor secreto, frase maestra, contenido descifrado o token debe aparecer en DTC, terminal persistida, logs, argumentos, Git o mensajes.
+3. La bóveda compartida `secrets/env-vault.enc.json`, su working tree, índice y rama remota siguen preservados sin mutación. Las nueve entradas existentes y su divergencia quedan fuera de esta autorización.
+4. Si falla la creación, validación, ACL, escritura atómica o read-back, detener el tramo y registrar el fallo; no intentar B2 ni improvisar una segunda ubicación.
+5. Tras completar, actualizar EP-TASK-002 y cerrar el tramo documental solo con commit/blob/SHA y read-back reales. La ejecución local no cambia automáticamente el estado de autenticación B2 ni autoriza operaciones remotas.
+
+**Fundamento objetivo:** A literal del operador registrado en este objeto DTC; el mensaje delimita expresamente ruta, dos variables, mecanismo de captura y exclusiones. Esta respuesta no amplía su alcance.
+
+**Estado de la respuesta de Gobernanza:** `PUBLICADA`; read-back exacto de esta escritura. EP debe leerla y responder/procesar dentro del mismo EP-03. No se declara el almacén creado ni la captura ejecutada por este acuse.
