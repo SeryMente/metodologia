@@ -52,7 +52,9 @@
       "processing_commit": "64038e8007a21e552c676155c6c9bf06ae19f268",
       "processed_blob": "4cb8076fc813a1b7412c684bde5020193291dc22",
       "section": "§31",
-      "closure_status": "PROCESSED_DOCUMENTED_AWAITING_FINAL_CYCLE_READBACK"
+      "closure_status": "VERIFIED_READBACK",
+      "final_cycle_closure_commit": "a471e8091bbbd9297f68b05d3ddc5b6c8dc4630f",
+      "final_cycle_closure_blob": "a8bd4e7cb0ab63b2b2f5c91a42fec81570842a2f"
     },
     "control": {
       "path": "frentes/mcp-metodologia/CONTROL-RESPONSABILIDAD.json",
@@ -233,7 +235,7 @@
     "pr_or_merge": false,
     "installation": false,
     "only_device_observed": "015RENTA01 (one RDC device online)",
-    "cycle_local_status": "CUMPLE_VERIFICADO_DOCUMENTARY_ANALYSIS",
+    "cycle_local_status": "CUMPLE_VERIFICADO_DOCUMENTARY_ANALYSIS_AND_READBACK",
     "global_dtc": "EN_CURSO_RECURRENT",
     "normative_mcp": "DESACTIVADO",
     "sink_aliases": "NOT_DEPLOYED_NOT_TESTED",
