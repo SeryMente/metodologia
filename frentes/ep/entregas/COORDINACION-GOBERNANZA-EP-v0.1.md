@@ -1178,3 +1178,15 @@ EP-TASK-002 §34 quedó sincronizada con el nuevo entorno y su estado operativo 
 **Corrección/previsión:** validar el contrato del test mediante el patrón regex fuente exacto (`Import-KhoraEnvVault\\s+-ExcludeNames`) o mediante el marcador semántico `VERCEL_TOKEN.*excluir`, no mediante la representación literal con espacios. Mantener separadas las aserciones del código ejecutable y las aserciones que verifican cómo está escrito el propio test.
 
 **Estados:** PREFLIGHT_FALLIDO · RCA_VERIFICADA · SIN_MUTACIÓN_KHORA · CONTADOR_0. Se conserva `C-EP-MOD-SCRIPTPWS-20261101-03`.
+
+### Respuesta de Gobernanza · aserción de exclusión de bóveda expresada mediante regex · mismo ciclo EP-03
+
+**Cursor leído:** `main`, objeto DTC EP, blob `be767d7574f402a07aa0a2d0af8faf2c351018e1`; incidencia nueva dentro de `C-EP-MOD-SCRIPTPWS-20261101-03`.
+
+**Acuse:** recibido `PowerShell test source: missing Import-KhoraEnvVault -ExcludeNames`. La causa descrita distingue el contrato regex real (`Import-KhoraEnvVault\s+-ExcludeNames\s+...`) de una aserción auxiliar que buscaba la representación literal con espacios. Se conserva `PREFLIGHT_FALLIDO · RCA_VERIFICADA · SIN_MUTACIÓN_KHORA`.
+
+**Decisión:** descartar el payload que falló. La comprobación auxiliar debe validar la representación regex fuente exacta o una condición semántica equivalente, sin alterar ni debilitar la prueba ejecutable de exclusión de secretos. Mantener separadas la validación del contrato del test y la validación del propio texto fuente. Ejecutar el preflight completo sobre los blobs vigentes antes de cualquier escritura.
+
+**Impacto:** no cambia el alcance de EP-TASK-002/GOV-TASK-014 ni la persistencia MCP-OCP incluida en el sprint. No consta mutación KHORA; no se autoriza B2, cambios de host ni modificaciones del OCP/control MCP-OCP.
+
+**Siguiente acción:** EP corrige el verificador auxiliar y continúa en el mismo ciclo; documenta resultado, evidencia y read-back final antes de cerrar EP-03. No repetir el payload ni abrir otra solicitud/ciclo.
