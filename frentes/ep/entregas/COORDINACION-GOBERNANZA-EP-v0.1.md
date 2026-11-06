@@ -1531,3 +1531,20 @@ Gobernanza registra la instrucción literal del operador, tal como fue documenta
 ### Precisión literal del acuse de host actual · 2026-11-06
 
 **Corrección de procedencia A/B:** la entrada literal del operador fue «Chi.», no «Sí». Por el contexto inmediato —respuesta a la pregunta binaria de si `PC10RCIF4EI4` era la computadora utilizada en ese momento— se interpreta como afirmativa, sin sustituir el literal original. La identidad del host se sostiene además en la telemetría RDC y en la respuesta contextual del operador. La normalización semántica no debe reemplazar el literal de A en crónicas futuras.
+
+
+### Rectificación de la frontera Cora–OCP–EP y longitud libre de frase maestra · 2026-11-06
+
+**Entrada literal del operador:** la bóveda de Cora es la bóveda de EP; se separó Cora del marco de trabajo OCP para delimitar que Cora es la prótesis y OCP es la metodología de trabajo para desarrollo independiente; EP es un subámbito de la metodología por objetos canónicos de persistencia. El operador también indica que la frase maestra elegida puede ser corta y no desea imponerle un mínimo.
+
+**Delimitación que regirá esta ejecución:**
+- **Cora:** producto/prótesis, con sus responsabilidades, código, datos y runtime propios.
+- **OCP:** marco metodológico de desarrollo independiente; no es la prótesis, no absorbe su producto ni se convierte en su runtime.
+- **EP:** subámbito de OCP responsable de persistencia del entorno y continuidad de la metodología; puede prestar la capacidad de almacenamiento usada por Cora sin fusionar los ámbitos.
+- **Bóveda Cora/EP:** el operador identifica la bóveda de Cora como la bóveda operativa de EP. Esta equivalencia de uso no autoriza a mezclar secretos de producto, artefactos de Cora o datos de usuario con el contenido metodológico OCP. La clave B2 probada aquí seguirá siendo exclusiva del namespace EP autorizado. La bóveda compartida existente y los secretos ajenos a EP no se mutan en este paso; no se incorpora ninguna credencial de Custodia ni se modifica el archivo Git previamente identificado.
+
+**Rectificación criptográfica:** la condición de 16 caracteres fue introducida por el script de captura, no exigida por AES-256 ni por PBKDF2-HMAC-SHA256. El usuario pidió expresamente aceptar la longitud que elija; el control ahora rechaza únicamente una cadena vacía, exige coincidencia de ambas entradas y conserva KDF, cifrado, HMAC y verificación de descifrado en memoria. Se advierte que una frase corta es más susceptible a adivinación; no se impondrá una longitud mínima.
+
+**Resultado del primer intento:** `MASTER_PASSPHRASE_TOO_SHORT`; no se creó archivo de bóveda ni temporal y no se ejecutó llamada B2. El estado de fallo se conserva como evidencia. El script actualizado pasó de nuevo el parser PowerShell 5.1; se abrió una nueva ventana de captura local, proceso reportado `2440`, con el archivo de resultado alternativo `EP-B2-Vault-Capture-20261106.retry1.status.json`. La segunda captura está pendiente de entrada local; aún no se declara ejecutada.
+
+**Siguiente acción:** completar captura local con la frase maestra elegida por el operador y las dos variables B2 de EP; cotejar tamaño, SHA-256, ACL y read-back; después instalar/verificar CLI, autenticar la aplicación existente, hacer preflight de solo lectura y ejecutar una sola prueba sintética dentro del alcance B2 previamente autorizado.
