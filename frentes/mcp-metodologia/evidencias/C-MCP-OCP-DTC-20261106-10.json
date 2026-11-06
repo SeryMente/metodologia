@@ -69,7 +69,15 @@
       "commit": "994fee9065a70d5d3d802d5bf9b4915dc1b050c2",
       "blob": "e3b13fb557aa5acf701c8cafc42349cb0842fb57",
       "readback": "MATCHED"
-    }
+    },
+    "coordination_close": {
+      "path": "frentes/mcp-metodologia/entregas/COORDINACION-SPRINT-OCP-MCP-v0.1.md",
+      "commit": "77124ca0ea0ec4a47839546c6687e1236b14d0e5",
+      "blob": "fb52e627e5c21b433f55c4057d8b6d0b35d048a3",
+      "readback": "MATCHED",
+      "cycle_status": "INCOMPLETE"
+    },
+    "evidence_readback": "PENDING"
   },
   "mcp_jules_document_branch": {
     "branch": "feat/metacanon-mcp-jules-20261025-c32f81",
@@ -146,12 +154,12 @@
     "MCP_TECHNICAL_STATUS": "LOCAL_MVP_TASKS_CONFIGURED_DOCUMENTARY; BUILD_NOT_STARTED",
     "MCP_JULES_TASK_CONFIGURATION": "DOCUMENTS_UPDATED_READBACK_MATCHED",
     "JULES_USE_STATUS": "PAUSED_PENDING_OPERATOR_RESUME",
-    "MCP_OC P_PRODUCT_BUILD": "NOT_STARTED",
     "MCP_OCP_LOCAL_OPERATION": "NOT_VERIFIED",
     "MCP_OCP_EP_INSTALLATION": "NOT_AUTHORIZED_BY_THIS_CYCLE",
     "MCP_JULES_OAUTH_REAL": "NOT_VERIFIED",
     "MCP_JULES_E2E": "NOT_VERIFIED",
-    "MCP_NORMATIVO": "DISABLED"
+    "MCP_NORMATIVO": "DISABLED",
+    "MCP_OCP_PRODUCT_BUILD": "NOT_STARTED"
   },
   "limitations": [
     "Historical candidate 0.1.0 build receipt remains pinned to MCP-OCP core v0.1.16 and is not a fresh verification against v0.1.20.",
