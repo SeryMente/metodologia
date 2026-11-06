@@ -1642,3 +1642,24 @@ La respuesta inicial de reanudación ya fue registrada en el objeto DTC EP `fren
 ### Addendum de recibos B2 · dos intentos fallidos confirmados · 2026-11-06
 
 La inspección de metadatos/JSON de los recibos locales encontró `EP-B2-Authorize-20261106.status.json` (`UNEXPECTED_ERROR_RemoteException`; auth started; bóveda compartida intacta) y `EP-B2-Authorize-20261106.retry2.status.json` (`PROVIDER_AUTH_REJECTED`; `authorize_exit_code=1`; `account_get_exit_code` vacío; operaciones bucket=0, archivo=0; bóveda compartida intacta). La fuente del segundo estado fue inspeccionada estáticamente: el script clasifica el texto de stdout/stderr en memoria mediante patrones de rechazo de autenticación y solo escribe la clasificación y metadatos no secretos; stdout/stderr no se conservaron. El segundo recibo indica que la CLI recibió una salida compatible con rechazo de auth; no demuestra por sí solo cuál dato de la pareja de credenciales falló ni cuál fue la respuesta exacta. Esta evidencia rectifica el resumen previo: existieron dos intentos reportados antes de la revisión actual. En esta revisión no se ejecutó un tercer intento. No se repite `account authorize` ni se avanza a buckets/objetos sin nueva autorización expresa y diagnóstico. La bóveda cifrada y caché aislada mantienen su estado documentado; no se consultó el contenido de la caché.
+
+
+## 41. Diagnóstico estático de rechazo B2 y revisión de clave existente · 2026-11-06
+
+### Evidencia local nueva
+
+En `PC10RCIF4EI4` se revalidó `b2.exe`: v5.0.2 (b2sdk 2.13.2), SHA-256 `D6E5B1C0918C2755FC8C14EB5B5AA698C36B43D3FDC18FCA13EA163D829BBBBB`, Authenticode `Valid` y firmante Backblaze Inc. `b2 account authorize --help` declara que la autenticación requiere capability `listBuckets` y admite `B2_APPLICATION_KEY_ID` / `B2_APPLICATION_KEY` en entorno. La llamada fue solo `--help`, no llamó a la cuenta.
+
+El script retry2 pasó Parser PowerShell 5.1 con 0 errores. Revisión estática confirma descifrado en memoria, variables de proceso, caché B2 aislada, proceso hijo sin secretos en argumentos, stdout/stderr solo en memoria y limpieza al final. El recibo retry2 asignó `PROVIDER_AUTH_REJECTED` mediante coincidencia textual de errores de autenticación; la salida original no fue persistida. No había proceso `b2` activo al finalizar.
+
+### Lectura técnica del rechazo
+
+Backblaze documenta que HTTP 401 `unauthorized` durante `b2_authorize_account` significa que el `applicationKeyId` y/o `applicationKey` son incorrectos; distingue `unsupported` para ID válido pero no compatible con la versión de API. Como el recibo guardó solo la clasificación y no el mensaje/código crudo, no se puede asegurar cuál de estos motivos produjo el error ni identificar el campo discrepante.
+
+Las claves estándar pueden estar restringidas por bucket, prefijo y expiración. La CLI requiere `listBuckets` para `account authorize`. Backblaze indica que el valor `applicationKey` solo se presenta al crear la clave y no puede recuperarse de la consola si se pierde. Fuentes: `https://www.backblaze.com/apidocs/b2-authorize-account`; `https://github.com/Backblaze/B2_Command_Line_Tool/blob/master/doc/source/quick_start.rst`; `https://help.backblaze.com/hc/en-us/articles/360052129034-Creating-and-Managing-Application-Keys`.
+
+### Siguiente paso y bloqueo
+
+El operador revisa visualmente la Application Key ya existente en Backblaze App Keys, sin crear/eliminar/rotar nada, y confirma únicamente los metadatos: presencia/estado, bucket `OCP-MCP`, prefijo `ep-ocp/` si corresponde, expiración, `listBuckets`, lectura/escritura mínima sin `deleteFiles`, y si conserva el valor original `applicationKey` de manera segura. No compartir valores secretos ni el contenido de la bóveda. Si el valor secreto se perdió, detenerse y solicitar autorización distinta antes de crear una clave de reemplazo.
+
+No repetir `account authorize` hasta recibir nueva autorización expresa posterior al diagnóstico y cumplir la revisión/presencia P012/P013. No se inspeccionó la caché SQLite ni se ejecutaron operaciones de bucket/archivo. `EP-TASK-002` permanece `en_curso`; el siguiente hito es `APP_KEY_REVIEW`, no el upload.

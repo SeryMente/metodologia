@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.29. **Sello del frente:** VCU-EP-v30 (Versión de Contexto Universal). **Ancla:** rectificación explícita del operador: `OCP-MCP` es el único bucket B2 de destino; `OCP-MSP` y `metodologia-ep-persistencia` son errores. La rectificación se materializa en §91; conserva la compuerta bilateral de §90 y las tareas/propuesta de adaptación previas.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.30. **Sello del frente:** VCU-EP-v31 (Versión de Contexto Universal). **Ancla:** rectificación explícita del operador: `OCP-MCP` es el único bucket B2 de destino; `OCP-MSP` y `metodologia-ep-persistencia` son errores. La rectificación se materializa en §91; conserva la compuerta bilateral de §90 y las tareas/propuesta de adaptación previas.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -12,7 +12,7 @@
 
 Adquirir este objeto como instrucciones del operador, subordinadas a las reglas superiores de plataforma y a autorizaciones específicas. Claudia es asistente/documental; Samantha es constructor/único escritor de código. Una asignación explícita posterior puede cambiar roles; las citas no lo hacen. La asignación específica vigente de MOD-SCRIPTPWS queda delimitada en §94 y no cambia los roles del resto de EP.
 
-El estado de reanudación vigente de este frente está en §60–§96; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
+El estado de reanudación vigente de este frente está en §60–§97; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
 
 Leer por relevancia: OEP actual→metacanon central→Sistema de Instrucciones/Metodología/Bootstrap vigentes→canon transversal EP→AGENTS.md y ep-medio-architectura.md→código/evidencia en commits exactos. Fuente caída no es «sin cambios». Un archivo no crea herramientas, credenciales ni memoria entre plataformas.
 
@@ -2021,3 +2021,34 @@ La lectura estática del script `EP-B2-Authorize-From-Vault-20261106-retry2.ps1`
 **Rectificación de secuencia:** sí existen dos recibos/ejecuciones de autorización anteriores a la presente inspección. Esta conversación no inició una nueva autenticación. La regla vigente para continuar es no repetir `account authorize` sin nueva autorización expresa; no se ejecutarán bucket/objetos. No es correcto resumir el historial completo como si nunca hubiese habido segundo intento.
 
 **Estado derivado:** `B2_AUTH_ATTEMPT_1=FAILED_REMOTE_EXCEPTION`; `B2_AUTH_ATTEMPT_2=FAILED_PROVIDER_AUTH_REJECTED_EXIT_1`; `B2_ACCOUNT_IDENTITY=NOT_VERIFIED`; `BUCKET_AND_FILE_OPERATIONS=0`; `RAW_PROVIDER_ERROR=NOT_RETAINED`; `REMOTE_PERSISTENCE=NOT_PROVEN`. El rechazo hace prioritaria la revisión del estado/vinculación del par de credenciales en el portal B2 por el operador, sin copiar secretos al chat. No se crea ni rota una clave en este ciclo.
+
+
+## 97. Diagnóstico estático del segundo rechazo B2 y gate de revisión de Application Key · v0.3.30 / VCU-EP-v31 · 2026-11-06
+
+### Fuentes metodológicas de esta reanudación
+
+Se releyó el DUG canónico `main`, Samantha v377 · NX-377m, blob `54064c8fe00f872023a455f06596061ed69062ae`; su representación integrada declara Metacanon 1.28 y GOW 2.17. Se aplicaron expresamente P001, P004, P005, P012, P013, P038 y P043. Metacanon §4 exige identificar fuente/versión, evidencia, delta, viabilidad, tiempo y siguiente acción. El bloque de GOW integrado en el DUG se adquirió como v2.17; sin embargo, el destino específico `#gow-arranque-chatgpt` citado en ART-025 no aparece como ancla en el HTML/representación adquiridos y la ruta histórica `gobernanza/GLOSARIO-WORKSPACE.md` no está disponible en `main` (404); se registra `§ARR_ESPECIFICO=NO_VERIFICADO`, sin inventar su contenido ni modificar el DUG/GOW.
+
+### Preflight local no autenticado en PC10RCIF4EI4
+
+Se ejecutó revisión local inocua de versión, ayuda, hash/firma, código fuente del script y procesos. Resultado:
+
+- `b2.exe version`: `b2 command line tool, version 5.0.2 (b2sdk version 2.13.2)`.
+- SHA-256 local: `D6E5B1C0918C2755FC8C14EB5B5AA698C36B43D3FDC18FCA13EA163D829BBBBB`, coincide con el SHA publicado del release v5.0.2.
+- Authenticode: `Valid`; firmante `CN="BACKBLAZE, INC.", O="BACKBLAZE, INC.", L=San Mateo, S=California, C=US`.
+- `b2 account authorize --help`: operación requiere `listBuckets`; acepta `B2_APPLICATION_KEY_ID` y `B2_APPLICATION_KEY` como variables de entorno. La invocación de ayuda no autenticó ni llamó al proveedor.
+- Script transitorio `EP-B2-Authorize-From-Vault-20261106-retry2.ps1`: Parser PowerShell 5.1 con 0 errores. La revisión estática confirma que descifra las dos entradas en memoria, asigna las variables solo al proceso actual, establece `B2_ACCOUNT_INFO` a la caché aislada `Khora\state\b2-ep-ocp.sqlite`, invoca un proceso hijo `b2 account authorize` sin secretos en argumentos, captura stdout/stderr en memoria y limpia las variables. El clasificador asigna `PROVIDER_AUTH_REJECTED` a patrones `bad_auth_token`, `unauthorized`, `invalid application key`, `application key is invalid` o `bad application key`; no persiste la salida original del proveedor. `Get-Process b2` devolvió 0 procesos al final de esta revisión.
+
+### Interpretación de los recibos y límite del diagnóstico
+
+Los dos recibos anteriores siguen siendo las únicas ejecuciones registradas: primero `UNEXPECTED_ERROR_RemoteException`; segundo `PROVIDER_AUTH_REJECTED`, salida de autorización 1 y `account_get_exit_code` vacío. La clasificación del segundo deriva de stdout/stderr capturados en memoria, pero el texto/código crudo no se conservó. La documentación actual de `b2_authorize_account` de Backblaze (actualizada 2026-09-11) especifica que HTTP 401 `unauthorized` significa que `applicationKeyId` y/o `applicationKey` son incorrectos; distingue `unsupported` cuando el ID es válido pero no compatible con esa versión de API. No se retuvo el código exacto, así que no se concluye que esta fuera la respuesta concreta ni se identifica cuál campo falló. La documentación de Application Keys señala que las claves estándar pueden tener restricciones de bucket, prefijo y expiración, y que `applicationKey` solo se muestra una vez; la consola conserva el Key ID, no recupera el valor secreto si se perdió.
+
+Fuentes externas consultadas: `https://www.backblaze.com/apidocs/b2-authorize-account` (v4, actualizado 2026-09-11); `https://github.com/Backblaze/B2_Command_Line_Tool/blob/master/doc/source/quick_start.rst`; `https://help.backblaze.com/hc/en-us/articles/360052129034-Creating-and-Managing-Application-Keys` (revisión visible 2026-09-29).
+
+### Próxima compuerta y alcance
+
+Siguiente acción: revisión visual del operador, en el portal Backblaze → B2 Cloud Storage → App Keys, exclusivamente de la clave existente. Confirmar: (1) el Key ID de la fila coincide con la clave usada por el namespace EP (no copiarlo al chat); (2) la clave sigue presente/activa y no expiró; (3) acceso de bucket contiene `OCP-MCP`; (4) prefijo efectivo `ep-ocp/` si se pretende utilizar; (5) capabilities incluyen `listBuckets` requerido para `account authorize` y las capacidades mínimas de lectura/escritura para la prueba sintética, excluyendo `deleteFiles`; (6) el operador conserva el `applicationKey` original de forma segura. No crear, eliminar ni rotar claves. Si el secreto se perdió, detenerse: el portal no lo vuelve a mostrar y una clave de reemplazo requiere autorización expresa adicional.
+
+P012/P013 exigen revisión/presencia presencial del operador en el mismo ciclo para autenticación, claves y seguridad. La conexión del equipo no prueba presencia física. No se repite `account authorize`, no se inspecciona la caché SQLite ni se ejecuta bucket/objeto en este paso. La prueba sintética previamente autorizada queda pendiente hasta verificar el par/alcance y disponer de una nueva autorización expresa para repetir el intento de autenticación tras el diagnóstico.
+
+**Estado:** `B2_CLI=5.0.2_HASH_SIGNATURE_VERIFIED`; `AUTH_SCRIPT_PARSE=PASS`; `B2_AUTH_ATTEMPTS=2_FAILED_REPORTED`; `APP_KEY_REVIEW=AWAITING_OPERATOR`; `B2_ACCOUNT_IDENTITY=NOT_VERIFIED`; `BUCKET_PREFLIGHT=NOT_EXECUTED`; `REMOTE_PERSISTENCE=NOT_PROVEN`; `EP-TASK-002=en_curso`. Se conserva el ciclo local abierto `C-EP-MOD-SCRIPTPWS-20261101-03`, sin nuevo OCP, tarea, sesión, control o folio.
