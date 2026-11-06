@@ -15,6 +15,7 @@ Este es el índice de navegación del frente MCP Jules. El único estado vivo es
 8. [Contrato de prompts a Jules](prompts/JULES-CONSTRUCTOR.md).
 9. [Guía de replicación](replicacion/GUIA-REPLICACION-FRENTES.md).
 10. [Crónica C-MCP-JULES-016](cronica/C-MCP-JULES-016.md).
+11. [Evidencia C-MCP-JULES-016](evidencias/C-MCP-JULES-016.json).
 11. [Crónica C-MCP-JULES-015](cronica/C-MCP-JULES-015.md) — retoma RDC, original y transferencia.
 12. [Original documental ChatGPT-JULES-20261030-1858.md](documentos/originales/ChatGPT-JULES-20261030-1858.md) y [manifiesto](documentos/MANIFIESTO-DOCUMENTAL.json).
 13. [Evidencia C-MCP-JULES-015](evidencias/C-MCP-JULES-015.json).
