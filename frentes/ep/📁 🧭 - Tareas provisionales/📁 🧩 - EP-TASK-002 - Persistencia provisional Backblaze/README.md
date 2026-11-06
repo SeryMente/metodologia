@@ -1,7 +1,7 @@
 # 📝 EP-TASK-002 · Persistencia provisional con Backblaze B2 para datos de usuario y continuidad de la sesión canónica
 
 **Naturaleza:** tarea provisional del frente Entorno Persistente; materialización auxiliar del registro de tareas, no un OEP nuevo, no un frente independiente y no una decisión de arquitectura canónica.  
-**Estado:** `en_curso` — OCP MCP 0.1.0 publicado como borrador privado con ZIP y evidencia en GitHub; integración EP, instalación, configuración/transferencias B2 y restauración multiubicación pendientes. Regla operativa corregida: el proceso RDC MantenimientoRCI puede escribir, bajo autorización expresa y rutas verificadas, en el Escritorio real de fila4; las operaciones dependientes del contexto de usuario siguen requiriendo ejecución/provisión en el contexto adecuado.  
+**Estado:** `en_curso` — OCP MCP 0.1.0 publicado como borrador privado con ZIP y evidencia en GitHub; CLI B2 5.0.2 instalada y verificada en `PC10RCIF4EI4`; bóveda local EP presente con SHA/ACL observados; autenticación B2 fallida con `UNEXPECTED_ERROR_RemoteException`; preflight de bucket, transferencias y restauración multiubicación pendientes. Regla operativa corregida: el proceso RDC MantenimientoRCI puede escribir, bajo autorización expresa y rutas verificadas, en el Escritorio real de fila4; las operaciones dependientes del contexto de usuario siguen requiriendo ejecución/provisión en el contexto adecuado.  
 **Responsabilidad:** vinculada a `frentes/ep/`; sin control, sesión, titularidad ni folio global propios.  
 **task_id:** `EP-TASK-002` (identificador local estable; no es folio global).  
 **scope_ref:** `frentes/ep/`  
@@ -1600,3 +1600,40 @@ La entrada literal del operador fue «Chi.». Se interpreta afirmativamente por 
 **Límites:** se descargó y verificó el binario; no se llamó a `account authorize`, `account get`, `bucket list`, listados, upload, download, restore ni ninguna operación de cuenta/proveedor. No se creó caché `B2_ACCOUNT_INFO`. La CLI queda instalada y disponible para el siguiente gate, no autenticada.
 
 **Captura local EP/Cora:** continúa en ventana local PID `18752`; la verificación más reciente no encuentra archivo final, temporal ni recibo retry2. Estado `AWAITING_OPERATOR_INPUT`.
+
+
+## 40. Reanudación EP y fallo reportado de autenticación B2 · 2026-11-06
+
+### Entrada, procedencia y captura del original
+
+El operador indicó `ChatGPT-EP-20261106-1708.txt` y pidió incorporarlo a la persistencia documental EP y reanudar el trabajo. El archivo no apareció entre los adjuntos de la conversación ni en la búsqueda de título de la Biblioteca. La búsqueda recursiva amplia del perfil del host se detuvo sin resultado disponible; el sondeo acotado de Escritorio, Descargas, Documentos y Temp aún no había terminado al registrar esta entrada. El original se conserva como `NO_LOCALIZADO`: no se atribuye contenido, hash ni lectura; no se crea sustituto ni se declara incorporación verbatim. Esta crónica documenta solo evidencia accesible en este ciclo.
+
+### A literal de estado B2 reportada por el operador
+
+`EP_B2_ACCOUNT_AUTH=FAILED reason=UNEXPECTED_ERROR_RemoteException`.
+
+La salida indica que el desbloqueo local llegó a la fase de autorización de cuenta; que no se imprimieron ni persistieron secretos en texto claro; y que no se ejecutaron operaciones de buckets ni archivos. No se dispone del traceback, código de salida de `b2`, recibo del proveedor o respuesta estructurada. La excepción remota es una causa técnica indeterminada; no prueba un rechazo de credenciales ni que Backblaze haya recibido la solicitud. La clasificación es `AUTH_ATTEMPT_REPORTED_STARTED / FAILED_REPORTED / PROVIDER_RESPONSE_NOT_AVAILABLE`.
+
+### Metadatos locales observados sin revelar secretos
+
+En `PC10RCIF4EI4` se verificó que la bóveda `C:\Users\MantenimientoRCI\AppData\Local\Khora\secrets\b2-ep-env-vault.enc.json` existe, mide 836 bytes y presenta SHA-256 `C4E6B0CC309A6702115790F46E05EF44C7FCF5C8B950112F4B18831BF1994F67`. No se encontraron temporales `*.tmp` en su directorio. La ACL no heredada concede `FullControl` a `NT AUTHORITY\SYSTEM`, `BUILTIN\Administradores` y `CENTRAL\MantenimientoRCI`. También existe `C:\Users\MantenimientoRCI\AppData\Local\Khora\state\b2-ep-ocp.sqlite` con 24,576 bytes; no se leyó su contenido. Estos metadatos no prueban autenticación ni scope B2. El descifrado/read-back comunicado anteriormente no se repitió en este ciclo.
+
+### Estado y límites
+
+- `EP_LOCAL_VAULT=EXISTS_HASH_ACL_OBSERVED`.
+- `B2_CLI=5.0.2_INSTALLED_AND_VERIFIED` según la evidencia de instalación ya registrada en OEP.
+- `B2_STATE_CACHE=EXISTS_CONTENT_NOT_INSPECTED`.
+- `B2_ACCOUNT_AUTH=FAILED_REPORTED_REMOTEEXCEPTION`.
+- `B2_PROVIDER_IDENTITY_AND_KEY_SCOPE=NOT_VERIFIED`.
+- `BUCKET_PREFLIGHT=NOT_EXECUTED`; `SYNTHETIC_UPLOAD=NOT_EXECUTED`; `REMOTE_READBACK=NOT_EXECUTED`; `DOWNLOAD_AND_RESTORE=NOT_EXECUTED`.
+- `MCP_OCP_NATIVE_RESTORE=NOT_ACCEPTED`; `EP-TASK-002=en_curso`.
+
+No repetir `account authorize` ni operar buckets/archivos después del error. El permiso del operador para una prueba sintética se mantiene dentro de sus límites originales, pero el error exige detener el tramo y no reintentar sin autorización nueva. Próximo trabajo: localizar recibo/salida de error no secreta y determinar si la excepción procede de la capa RDC/ejecución, del proceso CLI o del proveedor, sin leer la caché SQLite ni volver a solicitar secretos. Si se requiere repetir autenticación, obtener nueva autorización expresa.
+
+### Frontera Cora–OCP–EP
+
+Se mantiene la instrucción del operador: la bóveda de Cora es la bóveda operativa de EP; Cora conserva su producto, datos, código y runtime; OCP permanece como marco metodológico independiente; EP conserva el ámbito de persistencia. La captura contiene exclusivamente las dos credenciales B2 del namespace EP autorizado. No se amplía a credenciales o datos adicionales de Cora ni a Custodia.
+
+### Coordinación y evidencia documental
+
+La respuesta inicial de reanudación ya fue registrada en el objeto DTC EP `frentes/ep/entregas/COORDINACION-GOBERNANZA-EP-v0.1.md`, commit `950d62ba4db8770f7a5d87f00aee10d1ea348d49`, blob `62938936ff64aedac44c907d1d5d792aa5f8e01f`. La actualización del OEP se registra en §96, versión documental v0.3.28 / VCU-EP-v29. No se inicia ciclo nuevo: se conserva `C-EP-MOD-SCRIPTPWS-20261101-03` en `OPEN`; FOL1 no consta ACTIVO. El cierre DTC/read-back queda pendiente de completar la actualización y comparar los tres objetos.

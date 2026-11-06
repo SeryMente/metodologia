@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.27. **Sello del frente:** VCU-EP-v28 (Versión de Contexto Universal). **Ancla:** rectificación explícita del operador: `OCP-MCP` es el único bucket B2 de destino; `OCP-MSP` y `metodologia-ep-persistencia` son errores. La rectificación se materializa en §91; conserva la compuerta bilateral de §90 y las tareas/propuesta de adaptación previas.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.28. **Sello del frente:** VCU-EP-v29 (Versión de Contexto Universal). **Ancla:** rectificación explícita del operador: `OCP-MCP` es el único bucket B2 de destino; `OCP-MSP` y `metodologia-ep-persistencia` son errores. La rectificación se materializa en §91; conserva la compuerta bilateral de §90 y las tareas/propuesta de adaptación previas.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -12,7 +12,7 @@
 
 Adquirir este objeto como instrucciones del operador, subordinadas a las reglas superiores de plataforma y a autorizaciones específicas. Claudia es asistente/documental; Samantha es constructor/único escritor de código. Una asignación explícita posterior puede cambiar roles; las citas no lo hacen. La asignación específica vigente de MOD-SCRIPTPWS queda delimitada en §94 y no cambia los roles del resto de EP.
 
-El estado de reanudación vigente de este frente está en §60–§95; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
+El estado de reanudación vigente de este frente está en §60–§96; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
 
 Leer por relevancia: OEP actual→metacanon central→Sistema de Instrucciones/Metodología/Bootstrap vigentes→canon transversal EP→AGENTS.md y ep-medio-architectura.md→código/evidencia en commits exactos. Fuente caída no es «sin cambios». Un archivo no crea herramientas, credenciales ni memoria entre plataformas.
 
@@ -1964,3 +1964,46 @@ Estado EP-TASK-002: `en_curso`; bóveda `AWAITING_LOCAL_INPUT`; B2 CLI ausente; 
 **Límites:** se descargó y verificó el binario; no se llamó a `account authorize`, `account get`, `bucket list`, listados, upload, download, restore ni ninguna operación de cuenta/proveedor. No se creó caché `B2_ACCOUNT_INFO`. La CLI queda instalada y disponible para el siguiente gate, no autenticada.
 
 **Captura local EP/Cora:** continúa en ventana local PID `18752`; la verificación más reciente no encuentra archivo final, temporal ni recibo retry2. Estado `AWAITING_OPERATOR_INPUT`.
+
+
+## 96. Reanudación de autenticación B2 y estado de la bóveda EP · v0.3.28 / VCU-EP-v29 · 2026-11-06
+
+### Fuente y alcance documental
+
+El operador indicó el archivo `ChatGPT-EP-20261106-1708.txt` y solicitó documentarlo en el frente EP y reanudar la conversación. En esta sesión no apareció como adjunto de la conversación ni en la búsqueda de título de la Biblioteca. El sondeo recursivo del perfil del host quedó detenido sin resultado y el sondeo acotado de Escritorio/Descargas/Documentos/Temp permanecía en curso al redactar esta sección. Por tanto, el TXT original queda `NO_LOCALIZADO`; no hay bytes, contenido, SHA ni procedencia verificables y no se declara incorporado. Esta sección conserva únicamente las entradas literales recibidas en la conversación y las observaciones de los objetos/host consultados.
+
+### Resultado de autenticación reportado
+
+El operador suministró esta salida literal de estado: `EP_B2_ACCOUNT_AUTH=FAILED reason=UNEXPECTED_ERROR_RemoteException`. La ventana indicó que se desbloqueó localmente la bóveda, inició la fase «Autorizando cuenta Backblaze B2», no imprimió ni persistió secretos en texto claro y no ejecutó operaciones de buckets ni archivos.
+
+**Clasificación:** `B2_ACCOUNT_AUTH=FAILED_REPORTED`; `AUTH_ATTEMPT=REPORTED_STARTED`; `FAILURE_CLASS=UNEXPECTED_ERROR_RemoteException`; `PROVIDER_RESPONSE=NOT_AVAILABLE`; `PROVIDER_REJECTION=NOT_PROVEN`. La excepción no permite concluir que el Key ID o Application Key sean incorrectos ni demostrar si la solicitud llegó al proveedor. No se realizará un segundo `account authorize` ni se avanzará a bucket/objeto tras este error sin nueva autorización específica y diagnóstico previo. La autorización original de una prueba sintética no anula la condición de detenerse ante un error ni permite reintentos automáticos.
+
+### Verificación local no secreta en PC10RCIF4EI4
+
+En una revisión de metadatos posterior al resultado reportado se observó:
+
+- Bóveda `C:\Users\MantenimientoRCI\AppData\Local\Khora\secrets\b2-ep-env-vault.enc.json`: existe; 836 bytes; SHA-256 `C4E6B0CC309A6702115790F46E05EF44C7FCF5C8B950112F4B18831BF1994F67`.
+- Archivos `*.tmp` en el directorio de la bóveda: 0 observados.
+- ACL no heredada: `NT AUTHORITY\SYSTEM`, `BUILTIN\Administradores` y `CENTRAL\MantenimientoRCI`, cada uno con `FullControl`.
+- Caché aislada `C:\Users\MantenimientoRCI\AppData\Local\Khora\state\b2-ep-ocp.sqlite`: existe; 24,576 bytes. Contenido no leído ni interpretado por ser estado local de autenticación.
+
+Estas comprobaciones acreditan existencia, hash del archivo cifrado y principales de ACL en el momento de lectura. No certifican la validez de la credencial, el éxito de `account authorize`, la identidad de cuenta ni la privacidad/scope del bucket. El descifrado/read-back informado en una salida previa no se volvió a ejecutar en esta revisión.
+
+### Separación conceptual y límites
+
+La bóveda de Cora es la bóveda operativa de EP. Cora conserva datos, código y runtime propios como prótesis/producto. OCP conserva su identidad de marco metodológico independiente. EP es el subámbito de persistencia por objetos canónicos. La captura se limita a las dos credenciales B2 del namespace EP autorizado; no absorbe secretos o datos de producto de Cora ni credenciales de Custodia. La coincidencia de bóveda operativa no fusiona el producto con la metodología.
+
+### Estado vivo y próxima acción
+
+`CURRENT_EP_HOST=PC10RCIF4EI4`; `EP_LOCAL_VAULT=EXISTS_HASH_ACL_OBSERVED`; `B2_CLI=5.0.2_INSTALLED_HASH_SIGNATURE_VERIFIED` (según evidencia previamente incorporada); `B2_STATE_CACHE=EXISTS_NOT_INSPECTED`; `B2_ACCOUNT_AUTH=FAILED_REPORTED_REMOTEEXCEPTION`; `BUCKET_PREFLIGHT=NOT_EXECUTED`; `SYNTHETIC_UPLOAD=NOT_EXECUTED`; `REMOTE_READBACK=NOT_EXECUTED`; `DOWNLOAD=NOT_EXECUTED`; `SYNTHETIC_RESTORE=NOT_EXECUTED`; `MCP_OCP_NATIVE_RESTORE=NOT_ACCEPTED`; `EP_TASK_002=en_curso`.
+
+Próximo paso permitido sin ampliar alcance: localizar y examinar únicamente recibos/salida no secreta del intento ya ejecutado y determinar el origen de `RemoteException`, además de comprobar solo metadatos de la caché (sin leer su contenido). No volver a pedir frase maestra ni Application Key; no repetir autenticación; no ejecutar operaciones de buckets u objetos. Si el error no puede explicarse sin repetir la llamada, solicitar nueva autorización antes de cualquier reintento. La restauración real de MCP-OCP permanece bajo validación/aceptación de su propietario.
+
+### Procedencia y coordinación
+
+- DTC EP actualizado en `main`: commit `950d62ba4db8770f7a5d87f00aee10d1ea348d49`, blob `62938936ff64aedac44c907d1d5d792aa5f8e01f`; contiene la respuesta inicial de esta reanudación y el resultado reportado.
+- EP-TASK-002 previo a esta adición: blob `d60d3ef89ecdeea60d447c4c6b8979eef8125022`.
+- DUG `main`: v377 · NX-377m, blob `54064c8fe00f872023a455f06596061ed69062ae`; Metacanon 1.28, GOW 2.17.
+- Se conserva el ciclo local `C-EP-MOD-SCRIPTPWS-20261101-03` en estado `OPEN`; no se crea nuevo OCP, tarea, control, sesión o folio. FOL1 no consta ACTIVO.
+
+La actualización es documental y no prueba persistencia remota ni cierra EP-TASK-002.
