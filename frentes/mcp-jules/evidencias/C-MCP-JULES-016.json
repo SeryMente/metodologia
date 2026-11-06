@@ -72,20 +72,33 @@
     "ocp": {
       "path": "frentes/mcp-jules/OBJETO-CANONICO.md",
       "version": "0.1.13",
-      "commit": "a8dab070ccea14d19fb446b51281227fc0c8a017",
-      "blob": "656888bc333c643bab46114a033fb77aa6ce0e27",
+      "commit": "4b18b69982ed5bf668f9ded58fb27a95fbe14fce",
+      "blob": "ca944ba79c96433812c72ee49396bd7b991b7bdb",
       "readback": "MATCHED"
     },
     "readme": {
       "path": "frentes/mcp-jules/README.md",
-      "commit": "260a7d71c8c1c1d550cd7f557641d4530342f646",
-      "blob": "aed715c35797cfb564e640f611e7c8682f486bd0",
+      "commit": "1b305fd13a645404358b14b04f3cbb3a0f99b9df",
+      "blob": "d4a3d088ab13db002f56cb11cee73073222b61ad",
       "readback": "MATCHED"
     },
     "chronicle": {
       "path": "frentes/mcp-jules/cronica/C-MCP-JULES-016.md",
-      "commit": "c469ba05f846df7f2124613d550e95dbd688fb08",
-      "blob": "09b88b77ea56e57d50217a8e72bdbcab47125e01",
+      "commit": "e7bfc330b3a613ed6201e30380a630cda8559d23",
+      "blob": "01dfce22a1e75227a746cde88492e73389e6d839",
+      "readback": "MATCHED"
+    },
+    "ocp_initial": {
+      "path": "frentes/mcp-jules/OBJETO-CANONICO.md",
+      "version": "0.1.13",
+      "commit": "a8dab070ccea14d19fb446b51281227fc0c8a017",
+      "blob": "656888bc333c643bab46114a033fb77aa6ce0e27",
+      "readback": "MATCHED"
+    },
+    "readme_initial": {
+      "path": "frentes/mcp-jules/README.md",
+      "commit": "260a7d71c8c1c1d550cd7f557641d4530342f646",
+      "blob": "aed715c35797cfb564e640f611e7c8682f486bd0",
       "readback": "MATCHED"
     }
   },
@@ -119,7 +132,8 @@
     "oauth_real": "NOT_VERIFIED",
     "e2e": "NOT_VERIFIED",
     "pr19": "OPEN_DRAFT_NOT_MERGED",
-    "control_generation": "3"
+    "control_generation": "3",
+    "readme_and_ocp_links": "MATCHED"
   },
   "correction": {
     "misplaced_chronicle_copy_in_main_blob": "09b88b77ea56e57d50217a8e72bdbcab47125e01",
@@ -127,6 +141,15 @@
     "correct_branch_blob": "09b88b77ea56e57d50217a8e72bdbcab47125e01",
     "removed_from_main_commit": "5995c20922ec4e9d16aa0a88465bf507cea73df4",
     "main_path_after_delete": "NOT_FOUND",
-    "readback_on_feature_branch": "MATCHED"
+    "readback_on_feature_branch": "MATCHED",
+    "main_copy_temporarily_created": true,
+    "misplaced_main_commit": "f0d2db000",
+    "misplaced_main_blob": "09b88b77ea56e57d50217a8e72bdbcab47125e01",
+    "branch_copy_commit": "c469ba05f846df7f2124613d550e95dbd688fb08",
+    "branch_copy_blob": "09b88b77ea56e57d50217a8e72bdbcab47125e01",
+    "main_delete_commit": "5995c20922ec4e9d16aa0a88465bf507cea73df4",
+    "main_after_delete": "NOT_FOUND",
+    "final_chronicle_commit": "e7bfc330b3a613ed6201e30380a630cda8559d23",
+    "final_chronicle_blob": "01dfce22a1e75227a746cde88492e73389e6d839"
   }
 }
