@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "ocp-metodologia": {
+      "command": "C:\\OCP\\MCP-OCP\\0.1.0\\OcpMcp.exe",
+      "args": [
+        "serve"
+      ]
+    }
+  }
+}
