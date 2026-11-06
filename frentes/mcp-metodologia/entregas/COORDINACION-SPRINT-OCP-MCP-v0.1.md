@@ -1681,3 +1681,31 @@ El núcleo v0.1.18, el objeto de coordinación, control, DUG, OEP/EP DTC, EP-TAS
 **Desfase DTC observado:** el trabajo documental sustantivo comenzó antes de que esta apertura quedara persistida. Se declara DTC_OPENING_LATE=TRUE; no se reconstruyen marcas de tiempo ni se pretende que la apertura precedió causalmente todas las escrituras. Esta desviación queda a la vista y limita el estado de cierre de este ciclo conforme a la compuerta DTC.
 
 **Estado de apertura documentado:** DTC_CYCLE_STATUS=OPEN; MCP_TECHNICAL_STATUS=LOCAL_MVP_TASKS_CONFIGURED_DOCUMENTARY; BUILD_NOT_STARTED; JULES_USE_STATUS=PAUSED_PENDING_TASK_CONFIGURATION_AND_OPERATOR_RESUME. Los siguientes pasos del ciclo son terminar crónica/evidencia, actualizar índices, releer todo y registrar la desviación de apertura tardía.
+
+
+### Cierre DTC MCP-OCP · ciclo local 10 · 2026-11-06
+
+**Secuencia documentada:** apertura DTC local 10 → configuración documental → lectura de vuelta → crónica/evidencia → cierre. Se mantiene la desviación `DTC_OPENING_LATE=TRUE`: varias escrituras sustantivas precedieron a la persistencia de la apertura. No se reconstruyen horas ni se declara que la compuerta de apertura se cumplió en el orden normativo.
+
+**Resultado documental:** lista provisional MCP-OCP v0.1 creada; núcleo actualizado a MCP-OCP-v0.1.20 para fijar propiedad exclusiva OCP y MVP local independiente de EP/B2; README enlazado. En la rama documental de MCP-Jules se crearon tareas v0.1, plan 1.1.0, aceptación 1.9.0/T01–T38, OCP v0.1.13 y README alineados a RDC/stdio/OAuth, sin modificar su control generación 3. La autorización excepcional se limitó a estas tareas y documentos.
+
+**Matriz de read-back:**
+
+| Artefacto | Commit | Blob final | Resultado |
+|---|---|---|---|
+| MCP-OCP lista provisional v0.1 | `66ae67598aea74357595c9a1943277b242b188a4` | `61469068886077eeb2197de416eb11d2e43cda02` | MATCHED |
+| MCP-OCP núcleo v0.1.20 | `9202b970e2a857daa9c06ded6f2b1326c1bfe9a7` | `029d330eeeb9470a114b65fb0d21a4995e050774` | MATCHED |
+| MCP-OCP README | `3d27c6af909f08b88a998bb636b30f3bd3eaadfa` | `fdf836e3dc1532b8eea006f7e1dbe2b5f65618c4` | MATCHED |
+| MCP-Jules tareas v0.1 (rama PR #19) | `56ba05c39038cb9e208dc248a94e8915c6f91b87` | `2ba091b369e9900f34f835a3b3815792e5d346ca` | MATCHED |
+| MCP-Jules plan 1.1.0 (rama PR #19) | `3259223206cc873298350e3319c499a22cb20a91` | `4cfeaecdf5fbe0a64ef575ee39bad39f1cb60fcf5` | MATCHED |
+| MCP-Jules aceptación 1.9.0/T01–T38 (rama PR #19) | `51668e89f36174504ffdb5fa236fb59e61a52d2c` | `48686f551634fff942cd49b2af39dfb9fe9650f4` | MATCHED |
+| MCP-Jules OCP v0.1.13 (rama PR #19) | `a8dab070ccea14d19fb446b51281227fc0c8a017` | `656888bc333c643bab46114a033fb77aa6ce0e27` | MATCHED |
+| MCP-Jules README (rama PR #19) | `260a7d71c8c1c1d550cd7f557641d4530342f646` | `aed715c35797cfb564e640f611e7c8682f486bd0` | MATCHED |
+| Crónica local 10 | `994fee9065a70d5d3d802d5bf9b4915dc1b050c2` | `e3b13fb557aa5acf701c8cafc42349cb0842fb57` | MATCHED |
+| Evidencia local 10 | `54a1e5fafdf081b05f2426c2103448170f23b7b8` | `a2d7fd3998bd70fe75ac1bd4c1c81f23e52a0525` | MATCHED |
+
+**Controles:** MCP-OCP generación 5 sin cambios, blob `1fcf4178d58b39cecc3028c92493932b2ca7ab60`; MCP-Jules generación 3 sin cambios, blob `113bf1930638843d52fe68441e76b2e0879e83f5`. PR documental #19 sigue OPEN/DRAFT/NOT MERGED. PR #345 y #347 permanecen fusionadas en Khora main; no se modificaron.
+
+**No ejecutado:** no se construyó ni probó de nuevo el código MCP-OCP; no se instaló ni arrancó localmente; no se realizó consentimiento OAuth real ni tools/list; no se creó sesión Jules; no se accedió a secretos; no se operó EP/B2; no se fusionó PR #19 ni desplegó Khora.
+
+**Estados finales:** `DTC_CYCLE_STATUS=INCOMPLETE` (desviación de apertura tardía); `MCP_TECHNICAL_STATUS=LOCAL_MVP_TASKS_CONFIGURED_DOCUMENTARY; BUILD_NOT_STARTED`; `JULES_TASK_CONFIGURATION=DOCUMENTS_UPDATED_READBACK_MATCHED`; `JULES_USE_STATUS=PAUSED_PENDING_OPERATOR_RESUME`; `MCP_NORMATIVO=DESACTIVADO`; `performance=NOT_MEASURED`.
