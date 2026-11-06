@@ -1551,3 +1551,14 @@ El operador debe revisar presencialmente el tramo junto a `015RENTA01` y poner e
 **Estado de EP-TASK-002:** `en_curso`. **Ciclo EP:** conserva `C-EP-MOD-SCRIPTPWS-20261101-03`; sigue `OPEN`. **Cierre de ciclo:** pendiente de trabajo ejecutable y verificación de read-back final.
 
 **Tiempo de registro:** 2026-11-06 · 16:14 America/Mexico_City. No se estima un plazo de cierre sin la disponibilidad del host y la compuerta presencial.
+
+
+## 38. Cambio de host activo confirmado y captura local en curso · 2026-11-06 · sesión actual · America/Mexico_City
+
+- **Corrección de host:** el operador confirmó `PC10RCIF4EI4` como su computadora actual y precisó que `015RENTA01` ya no es su equipo. `015RENTA01` permanece en el historial, pero no es el host objetivo de este ciclo. `PC10RCIF4EI4` está online en RDC y corresponde al equipo confirmado por el operador.
+- **Preflight observado en el host actual:** Windows 11 Pro, PowerShell 5.1.26100.9711, x64; Git disponible; B2 CLI ausente; `%LOCALAPPDATA%\Khora`, carpeta `secrets`, bóveda EP y estado B2 aislado aún no existen.
+- **Helper de cifrado cotejado:** `SeryMente/khora/scripts/khora/env-vault.ps1`, blob `46efce0ff43c400bccdee11f02de5bc2ddd21e4c`. La bóveda EP se mantiene separada y utiliza el formato criptográfico compatible; la bóveda compartida no se lee ni modifica.
+- **Script temporal de captura:** escrito fuera del repositorio, Parser PS 5.1 PASS; se abrió ventana local visible (proceso `18512`). Solicita frase maestra dos veces y `B2_APPLICATION_KEY_ID`/`B2_APPLICATION_KEY` en campos ocultos. No usa clipboard, argumentos, transcripción ni variables persistentes User/Machine. La captura queda pendiente de entrada del operador.
+- **Estado:** `CURRENT_EP_HOST=PC10RCIF4EI4`; `OPERATOR_PRESENCE_DECLARED_FOR_CURRENT_HOST=YES`; `VAULT_CAPTURE=AWAITING_OPERATOR_INPUT`; `VAULT_READBACK=NOT_EXECUTED`; `B2_CLI=NOT_INSTALLED`; `B2_ACCOUNT_AUTH=NOT_EXECUTED`; `B2_PREFLIGHT=NOT_EXECUTED`; `REMOTE_TEST=NOT_EXECUTED`. No se ha transmitido ni leído ningún secreto.
+- **Siguiente:** terminar la captura desde la ventana local; verificar el archivo y ACL; instalar/verificar B2 CLI oficial; autorizar el perfil aislado y correr preflight de solo lectura antes de la prueba sintética one-shot autorizada.
+- **Ciclo EP:** se conserva `C-EP-MOD-SCRIPTPWS-20261101-03`; no se abre un OCP ni folio nuevo.
