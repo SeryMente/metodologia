@@ -1726,3 +1726,30 @@ El núcleo v0.1.18, el objeto de coordinación, control, DUG, OEP/EP DTC, EP-TAS
 **Control leído:** MCP-OCP `owned`, gen. 5, blob `1fcf4178d58b39cecc3028c92493932b2ca7ab60`. **Alcance B:** build/test/correct/package local dentro de `frentes/mcp-metodologia/`; sin cambios a Khora, EP, DUG/IPZ/Sink ni despliegue público.
 
 **Estado de apertura:** `DTC_CYCLE_STATUS=OPEN`; `MCP_TECHNICAL_STATUS=PREPARING_LOCAL_BUILD_RECONCILIATION`; `MCP_JULES_TASK_CONFIGURATION=DOCUMENTARY_CONFIGURED_READBACK_MATCHED`; `JULES_USE_STATUS=PAUSED_PENDING_OPERATOR_RESUME`; `performance=NOT_MEASURED` hasta capturar métricas desde esta apertura.
+
+
+### Cierre DTC MCP-OCP · ciclo local 11 · 2026-11-06 · build local PASS y bootstrap pendiente
+
+**Secuencia comprobada:** apertura DTC antes del trabajo sustantivo → acuse inicial → inspección/reconciliación → build/test/paquete → smoke del ejecutable → smoke interactivo RDC → documentación → read-back → cierre. A diferencia del ciclo 10, no se observó desviación de apertura tardía en el ciclo 11. `performance=NOT_MEASURED` por ausencia de instrumentación completa desde apertura; no se reconstruyen tiempos.
+
+**Resultado técnico observado:** candidata local 0.1.0 construida contra DUG v377 y núcleo MCP-OCP v0.1.20; .NET SDK 10.0.403; 50/50 unitarias PASS; 30/30 stdio PASS; 200 componentes verificados; ZIP SHA-256 `37b85444534e20fcc51eeb10688ed99577bdde020576783273723ebd93cdbe76`, 39.713.025 bytes. Build exit 0. El ejecutable empaquetado respondió initialize, tools/list de 10 tools y get_health READY por stdio, con MCP-NORMATIVO DESACTIVADO, exit 0 y stderr vacío. La prueba interactiva por RDC recibió initialize, tools/list y get_health. Ambas se ejecutaron en roots temporales; no significan instalación del perfil definitivo.
+
+**Código/fuente:** rama local `feature/mcp-ocp-local-mvp-0.1.0-20261106`, commit `587a82d1accbede834b5004fc5b571953c44ba6c`; worktree limpio tras el pin. La rama no fue pushed ni transferida a GitHub; el paquete reside localmente en PC10RCIF4EI4. El recibo de build y manifest fija DUG blob `54064c8fe00f872023a455f06596061ed69062ae` y core blob `029d330eeeb9470a114b65fb0d21a4995e050774`, ambos cotejados contra origin/main. El escaneo estático acotado no encontró tipos de listener TCP/HTTP en src/**/*.cs; no se presenta como auditoría exhaustiva.
+
+**Documentación y read-back final:** núcleo MCP-OCP v0.1.21; lista provisional v0.2 con 12 tareas; runbook de operación local; ejemplo genérico stdio; README; crónica y recibo JSON. Cada artefacto fue leído de vuelta y cotejado. La lista contiene MCP-OCP-12 como gate independiente para bootstrap del perfil local definitivo.
+
+| Artefacto | Commit | Blob final | Resultado |
+|---|---|---|---|
+| Núcleo MCP-OCP v0.1.21 | `5017b87733de05645c0ff1fa5f8c5635b489972a` | `72784f9d7122395281a34db70d4713f9b885772a` | MATCHED |
+| Lista provisional MCP-OCP v0.2 | `5f297be054949fd43430044068f28ffac41bcb9c` | `ad2b85c6e0aa90f3703c16afc7e537b222aa5cfd` | MATCHED |
+| Runbook local | `63729ca6ed2ac4b6e24d1fa5818bc4d9102af653` | `a8cf29523731bdd18f197363d699d709586df1e8` | MATCHED |
+| Configuración genérica stdio | `49ec58f2a3968af9465fe96bce5e54b13c85cbfd` | `aaac354ae349f6be7f23359cf331671c20a27ca2` | MATCHED |
+| README MCP-OCP | `53915bf7f1e7fa48fde1ddf4d261fd594c251d3e` | `953b32c3db2704cc4cb657bfdd5510ab23141632` | MATCHED |
+| Crónica ciclo 11 | `c6dd88890dab337b25f12da2efffb60eb9cb7644` | `24b2528244f1a7107051e14517e3b577e51d96c6` | MATCHED |
+| Recibo build actualizado final | `2569ff6c5ed73c244fe9b8b285651fa6e44dae82` | `3d0b14bd36f92069b0a99f41ce4a458238674bd4` | MATCHED |
+
+**Bootstrap y gates no ejecutados:** el ZIP no se extrajo a una ruta estable del perfil normal; no se importaron fuentes a la DB real; no se ejecutó `provision-operator` ni se creó trust root/HMAC/Ed25519 ni enlace SID; no se dejó servicio persistente. La base usada en el smoke RDC informó `operator_provisioned=false` y `principle_selection_readiness=SOURCE_NOT_IMPORTED`; es un root de test, aunque health=READY. Por tanto, el perfil definitivo requiere MCP-OCP-12 y consentimiento interactivo explícito para `REGISTER <SID>`. No se instaló en EP, no se ejecutó B2, no hubo push/PR/merge/release ni despliegue público.
+
+**Jules permanece pausado:** no OAuth, no tools/list autenticado ni sesión Jules; no se probó coexistencia E2E con el bridge Khora. Se conservan los gates MCP-OCP-06/11 y no se modifica el control ni código de Khora.
+
+**Estados finales del ciclo:** `DTC_CYCLE_STATUS=CLOSED_VERIFIED` para procesamiento y read-back del ciclo local 11. `MCP_TECHNICAL_STATUS=BUILT_AND_TESTED_LOCAL; NORMAL_PROFILE_BOOTSTRAP_PENDING_OPERATOR_CONSENT; REMOTE_TRANSFER_NOT_DONE`. `MCP_OCP_BUILD_AND_TESTS=PASS_LOCAL`. `MCP_OCP_PROFILE_BOOTSTRAP=NOT_PERFORMED`. `MCP_OCP_EP_INSTALL=NOT_PERFORMED`. `JULES_USE_STATUS=PAUSED_PENDING_OPERATOR_RESUME`. `MCP-NORMATIVO=DESACTIVADO`. `performance=NOT_MEASURED`.
