@@ -1,28 +1,28 @@
 {
-  "manifest_version": 1,
-  "repository": "https://github.com/SeryMente/metodologia",
-  "sources": [
-    {
-      "source_id": "metodologia.dug.canonical",
-      "canonical_path": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.html",
-      "ref_name": "main",
-      "commit_id": "419be285373ce5390be2020a954d382f11803674",
-      "git_blob_sha": "54064c8fe00f872023a455f06596061ed69062ae",
-      "content_sha256": null,
-      "captured_at_utc": null,
-      "verification_status": "PENDING_BUILD_MANIFEST",
-      "freshness_status": "NOT_CHECKED_AGAINST_MAIN"
-    },
-    {
-      "source_id": "metodologia.ocp-mcp.core",
-      "canonical_path": "frentes/mcp-metodologia/MCP-METODOLOGIA.md",
-      "ref_name": "main",
-      "commit_id": "419be285373ce5390be2020a954d382f11803674",
-      "git_blob_sha": "8bba2a123dd331132471f35cf0d911b277d168a5",
-      "content_sha256": null,
-      "captured_at_utc": null,
-      "verification_status": "PENDING_BUILD_MANIFEST",
-      "freshness_status": "NOT_CHECKED_AGAINST_MAIN"
-    }
-  ]
+    "manifest_version":  1,
+    "repository":  "https://github.com/SeryMente/metodologia",
+    "sources":  [
+                    {
+                        "source_id":  "metodologia.dug.canonical",
+                        "canonical_path":  "gobernanza/METAPROMPT-CANONICO-SAMANTHA.html",
+                        "ref_name":  "main",
+                        "commit_id":  "439ccbdca9b2e02b299253ca7bc73b3ab1292aba",
+                        "git_blob_sha":  "54064c8fe00f872023a455f06596061ed69062ae",
+                        "content_sha256":  null,
+                        "captured_at_utc":  null,
+                        "verification_status":  "PENDING_BUILD_MANIFEST",
+                        "freshness_status":  "NOT_CHECKED_AGAINST_MAIN"
+                    },
+                    {
+                        "source_id":  "metodologia.ocp-mcp.core",
+                        "canonical_path":  "frentes/mcp-metodologia/MCP-METODOLOGIA.md",
+                        "ref_name":  "main",
+                        "commit_id":  "439ccbdca9b2e02b299253ca7bc73b3ab1292aba",
+                        "git_blob_sha":  "9c2cdc01b2f5be3b39ee49ce179084f4fb75b436",
+                        "content_sha256":  null,
+                        "captured_at_utc":  null,
+                        "verification_status":  "PENDING_BUILD_MANIFEST",
+                        "freshness_status":  "NOT_CHECKED_AGAINST_MAIN"
+                    }
+                ]
 }

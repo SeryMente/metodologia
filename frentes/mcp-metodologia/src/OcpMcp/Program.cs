@@ -74,6 +74,17 @@ internal static class Program
                     Console.WriteLine(JsonSerializer.Serialize(new{backup_id=restoreId,status="RESTORED"}));
                     return 0;
 
+                case "portable-export":
+                    string portableOutput=GetOption(args,"--output")??throw new ArgumentException("--output is required");
+                    string portableId=new PortableRecoveryService(store).ExportInteractive(Path.GetFullPath(portableOutput));
+                    Console.WriteLine(JsonSerializer.Serialize(new{package_id=portableId,status="EXPORTED_VERIFIED"}));
+                    return 0;
+
+                case "portable-restore":
+                    string portablePackage=GetOption(args,"--package")??throw new ArgumentException("--package is required");
+                    new PortableRecoveryService(store).RestoreInteractive(Path.GetFullPath(portablePackage));
+                    return 0;
+
                 case "revoke":
                     store.Initialize();
                     vault.RevokeRequest(GetOption(args,"--request-id")??throw new ArgumentException("--request-id is required"));
@@ -137,7 +148,7 @@ internal static class Program
 
     private static int PrintUsage()
     {
-        Console.Error.WriteLine("OcpMcp 0.1.0 commands: serve | diagnose --json | provision-operator | authorize --request-id <id> | import-sources --repo-root <path>");
+        Console.Error.WriteLine("OcpMcp 0.1.0 commands: serve | diagnose --json | provision-operator | authorize --request-id <id> | import-sources --repo-root <path> | portable-export --output <path.ocprecovery> | portable-restore --package <path.ocprecovery>");
         return 64;
     }
 

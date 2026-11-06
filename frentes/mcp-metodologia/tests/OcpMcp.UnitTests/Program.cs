@@ -359,6 +359,8 @@ try
         Check("BLOCKED_SNAPSHOT_HAS_NO_SIDE_EFFECT",Convert.ToInt32(snapshotCount.ExecuteScalar())==0);
     }
 
+    foreach(var pprTest in PortableRecoveryTests.Run()) Check(pprTest.Name,pprTest.Passed);
+
     try{Directory.Delete(tempRoot,true);}catch{}
     try{Directory.Delete(eventTempRoot,true);}catch{}
 }

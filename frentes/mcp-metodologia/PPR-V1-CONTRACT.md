@@ -1,6 +1,6 @@
 # Portable Recovery Package v1 — contrato de implementación
 
-**Estado:** APROBADO POR EL OPERADOR; implementación/código aún no implementados.  
+**Estado:** APROBADO POR EL OPERADOR; implementación y CLI completados en la rama feature; build/tests locales PASS (50 unitarias, 29 smoke stdio); restore cross-host real NO VERIFICADO.
 **Ámbito:** exclusivamente frentes/mcp-metodologia/.  
 **Versión:** PPR v1.  
 **Compatibilidad:** no sustituye ni altera el formato local .ocpbak.

@@ -34,6 +34,8 @@ internal sealed class PprDekMaterial
 
 public sealed class PortableRecoveryService(SqliteStore store)
 {
+    private sealed record PprSwapState(string TargetPath, string RollbackDb, string RollbackWal, string RollbackShm, bool MovedDb, bool MovedWal, bool MovedShm, string PackageId);
+
     private static readonly JsonSerializerOptions MapJson = new() { PropertyNameCaseInsensitive = false };
     private readonly KeyVault _vault = new(store);
 
@@ -75,10 +77,10 @@ public sealed class PortableRecoveryService(SqliteStore store)
         }
     }
 
-    internal void RestoreForTests(string packagePath, byte[] passphraseUtf8)
+    internal void RestoreForTests(string packagePath, byte[] passphraseUtf8, string? destinationSidForTests = null)
     {
         PprArchive archive = PprFormat.ReadArchive(Path.GetFullPath(packagePath));
-        try { RestoreCore(archive, passphraseUtf8); }
+        try { RestoreCore(archive, passphraseUtf8, destinationSidForTests); }
         finally { ClearArchive(archive); }
     }
 
@@ -217,14 +219,14 @@ public sealed class PortableRecoveryService(SqliteStore store)
         }
     }
 
-    private void RestoreCore(PprArchive archive, byte[] passphraseUtf8)
+    private void RestoreCore(PprArchive archive, byte[] passphraseUtf8, string? destinationSidOverride = null)
     {
         EnsureWindows();
         if (passphraseUtf8.Length < 16) throw new ArgumentException("PPR_PASSPHRASE_TOO_SHORT");
         if (archive.Manifest.SchemaVersion != SqliteStore.CurrentSchemaVersion)
             throw new InvalidDataException("PPR_SCHEMA_VERSION_UNSUPPORTED");
 
-        string destinationSid = _vault.CurrentSid();
+        string destinationSid = destinationSidOverride ?? _vault.CurrentSid();
         if (string.IsNullOrWhiteSpace(destinationSid))
             throw new UnauthorizedAccessException("PPR_DESTINATION_SID_UNAVAILABLE");
         byte[] salt = [];
@@ -233,6 +235,7 @@ public sealed class PortableRecoveryService(SqliteStore store)
         byte[] databaseBytes = [];
         byte[] mapBytes = [];
         PprRecoveryMap? map = null;
+        PprSwapState? swapState = null;
         string stagePath = store.DatabasePath + ".ppr-" + Guid.NewGuid().ToString("N") + ".tmp";
         try
         {
@@ -270,7 +273,7 @@ public sealed class PortableRecoveryService(SqliteStore store)
                 if (!chain.Valid) throw new CryptographicException("PPR_RESTORED_EVENT_CHAIN_INVALID");
             }
 
-            ReplaceDatabaseAtomically(stagePath, store.DatabasePath, archive.Manifest.PackageId);
+            swapState = ReplaceDatabaseAtomically(stagePath, store.DatabasePath, archive.Manifest.PackageId);
             using (var restored = OpenDatabase(store.DatabasePath, readOnly: true))
             {
                 VerifyDatabase(restored);
@@ -282,9 +285,13 @@ public sealed class PortableRecoveryService(SqliteStore store)
                 if (!chain.Valid) throw new CryptographicException("PPR_RESTORED_EVENT_CHAIN_INVALID");
             }
             Console.WriteLine($"PPR_RESTORE_VERIFIED package_id={archive.Manifest.PackageId} installation_id={archive.Manifest.InstallationId} destination_sid={destinationSid}");
+            if (swapState is not null && swapState.MovedDb)
+                Console.WriteLine("PPR_ROLLBACK_DATABASE_PRESERVED=" + swapState.RollbackDb);
+            swapState = null;
         }
         catch
         {
+            if (swapState is not null) RollbackDatabaseSwap(swapState);
             TryDelete(stagePath);
             TryDelete(stagePath + "-wal");
             TryDelete(stagePath + "-shm");
@@ -340,6 +347,8 @@ public sealed class PortableRecoveryService(SqliteStore store)
     private PprRecoveryMap CaptureRecoveryMap(SqliteConnection connection, string installationId, string sourceSid)
     {
         var map = new PprRecoveryMap();
+        try
+        {
         var keyIds = new HashSet<string>(StringComparer.Ordinal);
         using (var command = connection.CreateCommand())
         {
@@ -422,6 +431,12 @@ public sealed class PortableRecoveryService(SqliteStore store)
             }
         }
         return map;
+        }
+        catch
+        {
+            ZeroMap(map);
+            throw;
+        }
     }
 
     private void ApplyRecoveryMap(SqliteConnection connection, PprRecoveryMap map, string installationId,
@@ -529,15 +544,19 @@ public sealed class PortableRecoveryService(SqliteStore store)
                 row.DekId != item.DekId || row.Scope != "CurrentUser" || item.Secret.Length != PprFormat.KeyBytes)
                 throw new CryptographicException("PPR_DEK_MAP_MISMATCH");
             byte[] entropy = CryptoBox.BuildEntropy(installationId, objectType, item.ObjectId, item.DekId);
-            byte[] wrapped = CryptoBox.ProtectKey(item.Secret, entropy);
-            using var update = connection.CreateCommand();
-            update.Transaction = transaction;
-            update.CommandText = updateSql;
-            update.Parameters.AddWithValue("$wrapped", wrapped);
-            update.Parameters.AddWithValue("$id", item.ObjectId);
-            update.Parameters.AddWithValue("$dek", item.DekId);
-            if (update.ExecuteNonQuery() != 1) throw new InvalidOperationException("PPR_DEK_REWRAP_FAILED");
-            Zero(entropy, wrapped);
+            byte[] wrapped = [];
+            try
+            {
+                wrapped = CryptoBox.ProtectKey(item.Secret, entropy);
+                using var update = connection.CreateCommand();
+                update.Transaction = transaction;
+                update.CommandText = updateSql;
+                update.Parameters.AddWithValue("$wrapped", wrapped);
+                update.Parameters.AddWithValue("$id", item.ObjectId);
+                update.Parameters.AddWithValue("$dek", item.DekId);
+                if (update.ExecuteNonQuery() != 1) throw new InvalidOperationException("PPR_DEK_REWRAP_FAILED");
+            }
+            finally { Zero(entropy, wrapped); }
         }
     }
 
@@ -583,8 +602,11 @@ public sealed class PortableRecoveryService(SqliteStore store)
                 byte[] clear = CryptoBox.UnprotectKey(wrapped,
                     CryptoBox.BuildEntropy(installationId, purpose, destinationSid,
                         version.ToString(System.Globalization.CultureInfo.InvariantCulture)));
-                if (clear.Length != PprFormat.KeyBytes) throw new CryptographicException("PPR_REWRAPPED_KEY_INVALID");
-                CryptographicOperations.ZeroMemory(clear);
+                try
+                {
+                    if (clear.Length != PprFormat.KeyBytes) throw new CryptographicException("PPR_REWRAPPED_KEY_INVALID");
+                }
+                finally { CryptographicOperations.ZeroMemory(clear); }
             }
         }
         VerifyDekTable(connection, installationId, "SELECT source_id,dek_id,wrapped_dek,dpapi_scope FROM canonical_sources;", "canonical-source");
@@ -603,8 +625,11 @@ public sealed class PortableRecoveryService(SqliteStore store)
             byte[] wrapped = (byte[])reader[2];
             if (reader.GetString(3) != "CurrentUser") throw new CryptographicException("PPR_REWRAPPED_DEK_SCOPE_INVALID");
             byte[] clear = CryptoBox.UnprotectKey(wrapped, CryptoBox.BuildEntropy(installationId, objectType, objectId, dekId));
-            if (clear.Length != PprFormat.KeyBytes) throw new CryptographicException("PPR_REWRAPPED_DEK_INVALID");
-            CryptographicOperations.ZeroMemory(clear);
+            try
+            {
+                if (clear.Length != PprFormat.KeyBytes) throw new CryptographicException("PPR_REWRAPPED_DEK_INVALID");
+            }
+            finally { CryptographicOperations.ZeroMemory(clear); }
         }
     }
 
@@ -620,34 +645,37 @@ public sealed class PortableRecoveryService(SqliteStore store)
             publicKey = (byte[])reader[0];
             fingerprint = reader.GetString(1);
         }
-        string actualFingerprint = Convert.ToHexStringLower(SHA256.HashData(publicKey));
-        if (actualFingerprint != fingerprint) throw new CryptographicException("PPR_RECEIPT_PUBLIC_KEY_FINGERPRINT_INVALID");
-        using var command = connection.CreateCommand();
-        command.CommandText = "SELECT request_id,receipt_json,payload_sha256,signature,signing_key_id FROM receipts ORDER BY created_at_utc,receipt_id;";
-        using var receipts = command.ExecuteReader();
-        while (receipts.Read())
+        try
         {
-            string requestId = receipts.GetString(0);
-            byte[] bytes = Encoding.UTF8.GetBytes(receipts.GetString(1));
-            string hash = Convert.ToHexStringLower(SHA256.HashData(bytes));
-            string storedHash = receipts.GetString(2);
-            byte[] signature = (byte[])receipts[3];
-            string keyId = receipts.GetString(4);
-            try
+            string actualFingerprint = Convert.ToHexStringLower(SHA256.HashData(publicKey));
+            if (actualFingerprint != fingerprint) throw new CryptographicException("PPR_RECEIPT_PUBLIC_KEY_FINGERPRINT_INVALID");
+            using var command = connection.CreateCommand();
+            command.CommandText = "SELECT request_id,receipt_json,payload_sha256,signature,signing_key_id FROM receipts ORDER BY created_at_utc,receipt_id;";
+            using var receipts = command.ExecuteReader();
+            while (receipts.Read())
             {
-                if (keyId != "receipt-ed25519-v1" || hash != storedHash)
-                    throw new CryptographicException("PPR_RECEIPT_HASH_OR_KEY_ID_INVALID");
-                using var doc = JsonDocument.Parse(bytes);
-                string embeddedRequest = doc.RootElement.GetProperty("request_id").GetString() ?? "";
-                string embeddedFingerprint = doc.RootElement.GetProperty("signing_public_key_sha256").GetString() ?? "";
-                if (embeddedRequest != requestId || embeddedFingerprint != actualFingerprint)
-                    throw new CryptographicException("PPR_RECEIPT_BINDING_INVALID");
-                if (!ReceiptSigner.Verify(publicKey, bytes, signature))
-                    throw new CryptographicException("PPR_RECEIPT_SIGNATURE_INVALID");
+                string requestId = receipts.GetString(0);
+                byte[] bytes = Encoding.UTF8.GetBytes(receipts.GetString(1));
+                string hash = Convert.ToHexStringLower(SHA256.HashData(bytes));
+                string storedHash = receipts.GetString(2);
+                byte[] signature = (byte[])receipts[3];
+                string keyId = receipts.GetString(4);
+                try
+                {
+                    if (keyId != "receipt-ed25519-v1" || hash != storedHash)
+                        throw new CryptographicException("PPR_RECEIPT_HASH_OR_KEY_ID_INVALID");
+                    using var doc = JsonDocument.Parse(bytes);
+                    string embeddedRequest = doc.RootElement.GetProperty("request_id").GetString() ?? "";
+                    string embeddedFingerprint = doc.RootElement.GetProperty("signing_public_key_sha256").GetString() ?? "";
+                    if (embeddedRequest != requestId || embeddedFingerprint != actualFingerprint)
+                        throw new CryptographicException("PPR_RECEIPT_BINDING_INVALID");
+                    if (!ReceiptSigner.Verify(publicKey, bytes, signature))
+                        throw new CryptographicException("PPR_RECEIPT_SIGNATURE_INVALID");
+                }
+                finally { CryptographicOperations.ZeroMemory(bytes); }
             }
-            finally { CryptographicOperations.ZeroMemory(bytes); }
         }
-        CryptographicOperations.ZeroMemory(publicKey);
+        finally { CryptographicOperations.ZeroMemory(publicKey); }
     }
 
     private static void VerifyDatabase(SqliteConnection connection)
@@ -692,7 +720,7 @@ public sealed class PortableRecoveryService(SqliteStore store)
         return Convert.ToInt32(command.ExecuteScalar());
     }
 
-    private static void ReplaceDatabaseAtomically(string stagePath, string targetPath, string packageId)
+    private static PprSwapState ReplaceDatabaseAtomically(string stagePath, string targetPath, string packageId)
     {
         EnsureNoRunningServer();
         string directory = Path.GetDirectoryName(targetPath) ?? throw new InvalidDataException("PPR_TARGET_DIRECTORY_INVALID");
@@ -728,7 +756,26 @@ public sealed class PortableRecoveryService(SqliteStore store)
             if (movedDb && File.Exists(rollbackDb) && !File.Exists(targetPath)) File.Move(rollbackDb, targetPath, false);
             throw;
         }
-        if (movedDb) Console.WriteLine("PPR_ROLLBACK_DATABASE_PRESERVED=" + rollbackDb);
+        return new PprSwapState(targetPath, rollbackDb, rollbackWal, rollbackShm, movedDb, movedWal, movedShm, packageId);
+    }
+
+    private static void RollbackDatabaseSwap(PprSwapState state)
+    {
+        string failedDb = state.TargetPath + ".failed-ppr-" + state.PackageId.Replace("-", "");
+        string failedWal = failedDb + "-wal";
+        string failedShm = failedDb + "-shm";
+        if (File.Exists(state.TargetPath)) File.Move(state.TargetPath, failedDb, false);
+        if (File.Exists(state.TargetPath + "-wal")) File.Move(state.TargetPath + "-wal", failedWal, false);
+        if (File.Exists(state.TargetPath + "-shm")) File.Move(state.TargetPath + "-shm", failedShm, false);
+        if (state.MovedWal && File.Exists(state.RollbackWal)) File.Move(state.RollbackWal, state.TargetPath + "-wal", false);
+        if (state.MovedShm && File.Exists(state.RollbackShm)) File.Move(state.RollbackShm, state.TargetPath + "-shm", false);
+        if (state.MovedDb && File.Exists(state.RollbackDb)) File.Move(state.RollbackDb, state.TargetPath, false);
+        if (state.MovedDb && File.Exists(state.TargetPath))
+        {
+            using var restored = OpenDatabase(state.TargetPath, readOnly: true);
+            VerifyDatabase(restored);
+        }
+        Console.Error.WriteLine("PPR_POST_SWAP_VALIDATION_FAILED_ROLLBACK_RESTORED");
     }
 
     private static void EnsureNoRunningServer()

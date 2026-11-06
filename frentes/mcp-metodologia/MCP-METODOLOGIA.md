@@ -4,7 +4,7 @@
 
 - **Nombre canónico vigente:** MCP-OCP (anteriormente MCP-METODOLOGIA).
 - **Identidad canónica vigente:** MCP-OCP. **Identidad histórica:** MCP-METODOLOGIA.
-- **Versión/sello:** MCP-OCP-v0.1.19 · gen. 4; ciclo DTC local 09 · PPR v1 aprobada, implementación aislada autorizada.
+- **Versión/sello:** MCP-OCP-v0.1.20 · gen. 4; ciclo DTC local 09 · PPR v1 implementado en rama; build/test sintético verificado; cross-host pendiente.
 - **Repositorio propietario:** SeryMente/metodologia, rama main.
 - **OCP canónico:** frentes/mcp-metodologia/.
 - **Núcleo operativo único:** este archivo, MCP-METODOLOGIA.md.
@@ -170,7 +170,7 @@ Las autorizaciones futuras deberán quedar vinculadas a la operación concreta y
 
 ## 8. Estado vivo
 
-**Acción en curso:** implementar Portable Recovery Package v1 en la rama aislada `feature/mcp-ocp-portable-recovery-v1-20261101`, dentro de `frentes/mcp-metodologia/`. El operador aprobó presencialmente la arquitectura PPR v1 en ciclo local 09; se acusó recibo de la rectificación y checklist de Gobernanza. Se importaron selectivamente 21 archivos fuente de la candidata histórica (sin importar recibos/estado antiguo) y se publicaron el contrato PPR v1 y el esquema estricto del manifiesto. El código PPR aún no está implementado. RDC 015RENTA01 no tiene Git ni SDK .NET 10; solo runtime .NET 8.0.11, por lo que build/test local están bloqueados hasta un entorno .NET 10 compatible. No se instala tooling ni se modifica host EP por inferencia.
+**Acción en curso:** PPR v1 está implementado en el checkout aislado feature/mcp-ocp-portable-recovery-v1-20261101, dentro de frentes/mcp-metodologia/: PprFormat (Argon2id/AES-256-GCM/ZIP/manifest), PortableRecoveryService (snapshot, export/import, re-enveloping DPAPI CurrentUser, preservación de recibos/EventChain y rollback), comandos portable-export / portable-restore y fixtures sintéticos. Compilación .NET 10.0.403 sin advertencias/errores; 50/50 unitarias y 29/29 smoke MCP stdio; ZIP self-contained win-x64 de 200 componentes generado y validado por extracción/hash. El primer recibo de build todavía apuntó al HEAD previo porque el árbol de trabajo no estaba comprometido; debe regenerarse después del commit de la implementación para vincularlo al SHA exacto. No se declara build source-bound hasta ese segundo pipeline.
 
 **Estado canónico del producto:** el núcleo MCP-OCP está en main v0.1.18. La candidata técnica 0.1.0 sigue aislada en integration/ocp-mcp-0.1.0-selective-20261101 (código 5956595d5455d5b851c2ef1ff6808f0c2aeabff9, HEAD observado ef639b62509a9b7ae623c3fbd187466ee2e2a3d9). Su recibo 31/31 unitarias, 29/29 integración y 200/200 componentes corresponde a DUG v377 y núcleo v0.1.16; es evidencia histórica de esa revisión, no un build actualizado a v0.1.18. No se ejecutó build/test nuevo en ciclo 08. Se requiere nueva candidata/recibo después de aprobar e implementar la arquitectura, no antes.
 
@@ -204,12 +204,12 @@ Las autorizaciones futuras deberán quedar vinculadas a la operación concreta y
 
 Este apartado es el registro provisional autoritativo del backlog técnico MCP-OCP. No crea un OCP adicional. El OCP general del sprint se representa en el índice provisional GOV-TASK-* de Gobernanza; aquí se conserva el detalle técnico propio y se enlaza su origen transversal. El objeto de coordinación DTC conserva mensajes, cursores, respuestas y cierres de ciclo.
 
-| Tarea / dependencia de origen | Estado observado al ciclo local 08 | Resultado exigido / límite / evidencia |
+| Tarea / dependencia de origen | Estado observado al ciclo local 09 (rama aislada) | Resultado exigido / límite / evidencia |
 |---|---|---|
 | GOV-TASK-011 — DTC, Dinámica Trilateral por Ciclo | Ciclos MCP-OCP 01–08: cierres locales documentales verificados; ciclo 09 abierto para acusar rectificación/checklist y ejecutar aprobación/implementación de PPR v1. DTC global EN_CURSO_RECURRENT | Gobernanza integra el sprint en su registro GOV-TASK-*; EP conserva OEP/host y MCP-OCP su autoridad técnica. Ciclo 09 se registra en DTC §33 del mismo objeto. |
-| Reconciliar implementación MCP 0.1.0 con main | CANDIDATA TÉCNICA HISTÓRICA · RECIBO PINNED A CORE v0.1.16; NO INTEGRADA | Recibo histórico: 31/31 unitarias, 29/29 integración y 200 componentes; base/código históricos no prueban core v0.1.19 ni PPR. Los 21 archivos fuente fueron importados desde esa candidata a `feature/mcp-ocp-portable-recovery-v1-20261101`; build/test nuevo aún no ejecutados. Revalidar con SDK .NET 10 y recibo nuevo. No PR/merge, instalación EP ni aceptación por inferencia. |
-| GOV-TASK-014 — Continuidad, backup, portabilidad de claves y restauración | C07: ANÁLISIS DOCUMENTAL VERIFICADO. C08: PROPUESTA DOCUMENTADA Y CERRADA. C09: PPR v1 APROBADO POR EL OPERADOR; contrato/schema persistidos y fuentes importadas en rama; implementación pendiente. | Aprobación P012/P013 registrada en DTC §33. La construcción queda autorizada solo dentro de frentes/mcp-metodologia/. EP conserva B2/host; no acceso a secretos ni operaciones remotas desde MCP-OCP. |
-| Restore portable MCP-OCP | IMPLEMENTACIÓN AUTORIZADA; DISEÑO BASELINE DOCUMENTADO, CÓDIGO PPR PENDIENTE | Contrato `PPR-V1-CONTRACT.md` y `schemas/portable-recovery-package-v1.schema.json` publicados en rama feature. Fuentes históricos importados; faltan servicio export/import, comandos CLI, pruebas y build con SDK .NET 10. Restore real cross-host sigue requiriendo segundo host/perfil autorizado. |
+| Reconciliar implementación MCP 0.1.0 con main | CANDIDATA HISTÓRICA PINNED A CORE v0.1.16; PPR v1 IMPLEMENTADO EN FEATURE | La candidata antigua y su recibo permanecen históricos. En la rama feature se importó el baseline, se implementó PPR y se generó una compilación local provisional: 50/50 unitarias, 29/29 integración stdio y 200 componentes del ZIP. El recibo debe regenerarse tras comprometer el código para fijar el source_code_commit correcto. No PR/merge, instalación EP ni aceptación por inferencia. |
+| GOV-TASK-014 — Continuidad, backup, portabilidad de claves y restauración | C07 análisis verificado; C08 cerrado documentalmente; C09 PPR v1 implementado y validado en fixtures/build/stdio dentro de la rama | Contrato/schema, servicio, CLI, fixtures y pipeline local verificados. La restauración real cross-host requiere otro perfil/equipo Windows autorizado; EP conserva B2 y su host. No acceder a secretos ni operar B2 desde MCP-OCP. |
+| Restore portable MCP-OCP | PPR v1 IMPLEMENTADO EN FEATURE; FIXTURE SINTÉTICO PASS 50/50; BUILD/STDIO 29/29 | El paquete es autónomo en fixture; se verificaron manifest/ZIP, hashes, Argon2id/AES-GCM, re-enveloping de HMAC/Ed25519/DEKs, receipts/EventChain, revocación y rollback path. El SID destino se simuló en el mismo perfil Windows; no prueba DPAPI de otro usuario/equipo. Restore cross-host real: NO VERIFICADO, requiere segundo host/perfil autorizado. |
 | Metadatos de selección normativa P001–P043 | BLOQUEADO POR AUSENCIA DE FUENTE CANÓNICA APROBADA | DUG v377 gov-data no declara applicability, activation_conditions, mandatory ni dependencies para los 43 registros (0/43). Mantener fail-closed; no inferir ni alterar DUG. |
 | Acceso individual al texto desarrollado por principio | CONTRATO SINK EXISTENTE; ALIASES PENDIENTES | ART-027 establece consulta de capa 2 por Sink cuando el MDP indica pertinencia. Los aliases p001…p043 no están desplegados/probados; declarar la limitación, no sustituir con una consulta ficticia. |
 | Integración e instalación del cliente en EP | AUTORIDAD EP · NO EJECUTAR DESDE MCP-OCP | EP-TASK-002 sigue en_curso; B2 CLI local presente, pero PHYSICAL_PRESENCE_GATE_PENDING, sin autenticación, preflight, upload, read-back remoto o restore. No tocar host/control/configuración EP. |
@@ -217,14 +217,24 @@ Este apartado es el registro provisional autoritativo del backlog técnico MCP-O
 
 Las tareas enlazan GOV-TASK-011/GOV-TASK-014 y dependencias de origen; no replican el registro general de Gobernanza ni los backlogs EP. Los estados se sustituyen únicamente con fuente observada, revisión, commit/blob/SHA, pruebas y read-back. Cada ciclo MCP-OCP se conserva en el mismo objeto DTC.
 
-### 8.2 Ruta longitudinal de ejecución tras desbloqueo
+### 8.2 Ruta longitudinal y estado de ejecución
 
-1. Gate operador P012/P013: COMPLETADO para el diseño PPR v1 conforme al acuse/aprobación literal del ciclo 09. No se extiende a credenciales, B2, host EP ni instalación.
-2. Implementación MCP-OCP: completar export/import portable, manifiesto, envelope, recovery map, re-enveloping DPAPI y rollback; pruebas positivas/negativas y fixtures sintéticos. Los fuentes están importados; el código PPR no está implementado todavía.
-3. Build/test sintético: requiere un entorno con SDK .NET 10. RDC 015RENTA01 solo tiene runtime .NET 8.0.11 y no Git; build/test no se ejecutó ni se declara PASS.
-4. Cross-host: requiere segundo host/perfil destino activado y autorizado; restaurar de forma aislada, re-envelopar DPAPI, comprobar readiness/10 tools y test funcional. Si solo hay un host, no se declara cross-host.
-5. EP/B2: EP resuelve su compuerta presencial, autorización exacta OCP-MCP/ep-ocp/, upload/read-back y recuperación remota de su ciclo de una sola pasada; MCP-OCP valida su propio backup/restore; no se mezclan estados.
-6. Integración/aceptación: PR/merge a main y aceptación por operador requieren autorización adicional expresa y evidencia completa. La rama feature no se integra por inferencia.
+1. **Gate operador P012/P013:** COMPLETADO para el diseño PPR v1 mediante aprobación expresa del operador en ciclo local 09. No amplía B ni autoriza B2, host EP, credenciales, instalación o integración.
+2. **Implementación MCP-OCP:** COMPLETADA EN RAMA FEATURE. PprFormat, manifest/ZIP, Argon2id, AES-256-GCM, envelope, recovery map, re-enveloping DPAPI CurrentUser, revocación de grants/requests, preservación de recibos/EventChain, staging/swap/rollback y CLI portable-export / portable-restore.
+3. **Build y pruebas sintéticas:** PASS en Windows x64 con SDK 10.0.403: compilación 0 warnings/0 errors; 50/50 unitarias; 29/29 smoke MCP stdio; paquete self-contained win-x64 y 200 componentes verificados por extracción/hash. El recibo preliminar se generó con árbol modificado sin commit y no sirve aún como evidencia source-bound; se repetirá el pipeline después del commit para ligar el recibo al SHA real.
+4. **Límite de prueba DPAPI:** el fixture reenvuelve claves y DEKs para un SID destino sintético bajo el mismo perfil Windows de pruebas. Esto valida entropy/rebinding y preservación lógica; NO acredita restauración DPAPI bajo un usuario/perfil distinto ni un segundo host.
+5. **Restore cross-host real:** NO VERIFICADO. Requiere disponibilidad y autorización explícita de un segundo host/perfil Windows independiente, sin usar instalaciones o DB reales no autorizadas.
+6. **EP/B2:** EP conserva autoridad sobre su host, credenciales, bucket/scope y B2. El estado observado es B2_PROVIDER_AUTHORIZATION=NOT_AUTHORIZED y B2_REMOTE_OPERATION=NOT_GRANTED; no ejecutar upload/download/restore ni leer credenciales.
+7. **Integración/instalación/aceptación:** la rama feature no se promueve a main, no se abre PR ni se instala en EP sin autorización adicional expresa y evidencia completa.
+
+### 8.3 Evidencia técnica de PPR v1 · ciclo local 09
+
+- **Código agregado:** src/OcpMcp/Services/PprFormat.cs, src/OcpMcp/Services/PortableRecoveryService.cs; CLI en src/OcpMcp/Program.cs; fixtures en tests/OcpMcp.UnitTests/PortableRecoveryTests.cs; acceso interno de test en AssemblyInfo.cs.
+- **KDF:** Argon2id v19; 65.536 KiB; 3 iteraciones; paralelismo 1; salida de 32 bytes. El parámetro Argon2 se limpia en finally; la frase se lee sin eco y los buffers temporales se limpian.
+- **Criptografía/archivo:** AES-256-GCM con framing PPR1, nonces de 12 bytes, tags de 16 bytes, AAD ligado a package/installation/hash, ZIP de cuatro entradas exactas y manifest externo con límites, tamaños y SHA-256. .ocpbak permanece separado.
+- **Pruebas PPR:** archivo/export verificado; tamper AES-GCM rechazado; frase errónea rechazada sin alterar destino; parámetros KDF no aprobados rechazados; installation_id y clave pública/recibos preservados; SID de destino re-envelopado; grants aprobados no consumidos y requests pendientes revocados; grants consumidos intactos; DEKs canonical_sources/snapshots legibles después del rewrap; EventChain e integridad SQLite preservadas.
+- **Build integrado:** 50 unitarias PASS / 0 FAIL; 29 smoke stdio PASS / 0 FAIL; publish win-x64 self-contained; 200 componentes verificados. SHA preliminar del ZIP 373a09210f07be048415fb61ebdc1a83b28907e12c58c78611c63786be5fa9d2 (39.712.971 bytes), manifest db1af38fec2d188d6bb15eafb34ca6bbb311959911328d5cc5aa4fdd982a8976; recibo pendiente de regeneración con commit source-bound.
+- **Estados terminales separados:** backup/export PPR en fixture sintético PASS; restore cross-host real NO VERIFICADO; B2 remoto NO AUTORIZADO/NO EJECUTADO; INTEGRADO_EN_MAIN NO; INSTALADO_EN_EP NO; ACEPTADO_POR_OPERADOR NO. DTC local 09 podrá cerrar su procesamiento local verificado sin declarar resuelto el E2E transversal.
 
 ## 9. Aceptación y viabilidad
 
