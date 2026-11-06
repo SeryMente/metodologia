@@ -3,15 +3,16 @@
 ## 1. Control e identidad
 
 - **Nombre canónico:** Frente MCP Jules.
-- **Versión del artefacto:** v0.1.12 · retoma RDC, puente OAuth PKCE, captura documental original y transferencia de responsabilidad C-MCP-JULES-015.
+- **Versión del artefacto:** v0.1.13 · decisión de ruta RDC/stdio, backlog provisional y aceptación T01–T38 · C-MCP-JULES-016.
 - **Evento de creación:** C-MCP-JULES-001.
 - **Folio de sesión vigente:** PENDIENTE / NO ASIGNADO (FOL1 inactivo); generación del control: 3. El folio anterior `SES-20261029-6C2F9A17` queda preservado en el historial.
 - **OCP:** `SeryMente/metodologia/frentes/mcp-jules/`.
 - **Repositorio de implementación:** `SeryMente/khora`, `khora-web`, servidor MCP existente.
 - **Rama de documentación:** `feat/metacanon-mcp-jules-20261025-c32f81`.
 - **Rama de implementación:** `feat/mcp-jules-f2-20261029-6c2f9a17`.
-- **Estado:** titularidad operativa transferida y verificada en generación 3 dentro de esta rama; folio no asignado por FOL1 inactivo. Fase 1 sigue COMPLETA como diseño integral; Fase 2 sigue EN CURSO. Implementación de puente local OAuth PKCE en Khora [PR #347](https://github.com/SeryMente/khora/pull/347), rama `feat/jules-rdc-local-bridge-20261030`, head `cda38145fd74b109703be24b6e3eda4c0998b15a`; Vercel Preview `dpl_GdwKnsFJCo289dsCEfhyQaWPUJ2g` READY, protegido por SSO, Production sin cambios. Validación PC-14: 572/572 unitarias, TypeScript, UI Review, contrato de navegación, build Next.js local y 78/78 páginas PASS; OAuth real, descubrimiento de herramientas autenticado y lectura de fuentes Jules aún pendientes. La crónica más reciente es [C-MCP-JULES-015](cronica/C-MCP-JULES-015.md).
+- **Estado:** titularidad operativa transferida y verificada en generación 3 dentro de esta rama; folio no asignado por FOL1 inactivo. Fase 1 sigue COMPLETA como diseño integral; Fase 2 sigue EN CURSO. Las herramientas Jules quedaron integradas en Khora main por PR #345 (merge `953e69484eabb4e8dc8221d1d8fc188373531bfa`); el puente local RDC/stdio OAuth 2.1/PKCE quedó integrado por PR #347 (merge `4530e03a33c5e1743ab9646eb6c862b3c458c605`). Los tests 568/568 y 572/572, TypeScript, UI Review y build 78/78 son históricos de PC-14, no pruebas frescas del dispositivo RDC actual. OAuth real, tools/list, lectura Jules y E2E siguen pendientes. El OCP está en v0.1.13 y su lista auxiliar es [LISTA-TAREAS-PROVISIONAL.md](LISTA-TAREAS-PROVISIONAL.md), v0.1, provisional. La crónica de actualización es [C-MCP-JULES-016](cronica/C-MCP-JULES-016.md).
 - **Fuente de titularidad:** [CONTROL-RESPONSABILIDAD.json](CONTROL-RESPONSABILIDAD.json). No modifica ni sustituye el control del frente padre Metacanon.
+- **Lista provisional de tareas:** [LISTA-TAREAS-PROVISIONAL.md](LISTA-TAREAS-PROVISIONAL.md), v0.1. Esta lista no es un segundo OCP/control; el detalle activo y los gates de Fase 2 se desglosan allí y en la matriz de aceptación T01–T38.
 
 ## 2. LEER PRIMERO
 
@@ -182,3 +183,35 @@ El original `ChatGPT-JULES-20261030-1858.md` fue preservado en `documentos/origi
 La titularidad del único control del frente se actualizó condicionalmente desde generación 2 a 3, preservando el evento previo. Propietario operativo: `chatgpt-C-MCP-JULES-015-01a18f95-61cf-70ce-9321-c56fbd3cc99d`; instancia: `chatgpt-mcp-jules-2026-10-30-01a18f95`. No se expuso un ID nativo de ChatGPT. `session_folio=null`; FOL1 inactivo, folio global/OCP pendiente. El control padre Metacanon no se modificó.
 
 La captura del original, el manifiesto, la crónica y el control quedan guardados y releídos en `feat/metacanon-mcp-jules-20261025-c32f81`, PR #19. **Estado de integración: pendiente**. El contenido no se presenta como canónico en `main` hasta que el PR documental se integre y relea.
+
+
+## 15. Decisión operativa y reconfiguración de tareas · C-MCP-JULES-016 · 2026-11-06
+
+### 15.1 Ruta de integración vigente
+
+La ruta plugin MCP público mencionada en el plan original queda SUPERSEDIDA. El uso objetivo de ChatGPT Free es mediante cliente MCP local stdio operado por RDC y autenticado con OAuth 2.1 Authorization Code + PKCE contra Khora. No se exige un plugin público, un endpoint público adicional, MCP personalizado nativo con escritura ni manipulación manual de Bearers.
+
+### 15.2 Separación de productos
+
+MCP-OCP construye un servidor local de Metodología en SeryMente/metodologia, independiente y de propiedad exclusiva de su OCP. Khora conserva su servidor MCP único /api/mcp y las siete herramientas Jules. El bridge local de Jules es un cliente separado que conecta a Khora por OAuth. No se duplica servidor, endpoint, API key, refresh token, access token, ACL ni control entre frentes.
+
+### 15.3 Código integrado y límites de evidencia
+
+- PR #345 integró siete herramientas Jules y ACL por recurso en Khora main; merge commit 953e69484eabb4e8dc8221d1d8fc188373531bfa.
+- PR #347 integró bridge local RDC/stdio OAuth 2.1/PKCE en Khora main; merge commit 4530e03a33c5e1743ab9646eb6c862b3c458c605.
+- Las suites 568/568 y 572/572, TypeScript, UI Review y build 78/78 se conservan como resultados históricos de PC-14. No acreditan pruebas frescas en PC10RCIF4EI4.
+- En el perfil RDC activo PC10RCIF4EI4, la preparación local del bridge y el consentimiento OAuth real no se han ejecutado en este ciclo.
+- tools/list autenticado, lectura real de fuentes/sesiones/actividades, escrituras y E2E permanecen NO VERIFICADOS.
+- No se creó sesión Jules ni se invocaron herramientas de escritura en este ciclo.
+
+### 15.4 Configuración del backlog
+
+Se crea LISTA-TAREAS-PROVISIONAL.md v0.1. Incluye diez tareas ordenadas: reconciliación de arquitectura, preparación del bridge, consentimiento OAuth, smoke de solo lectura, verificación de seguridad/scopes, E2E sandbox, T22/reintentos, coexistencia con MCP-OCP, aceptación y reconciliación documental. La matriz de aceptación se amplía de T01–T32 a T01–T38. Las fases del proyecto siguen siendo exactamente dos; no se inventa una tercera fase.
+
+### 15.5 Pausa de uso de Jules
+
+Por instrucción del operador, no se invoca Jules ni se crean sesiones hasta que el backlog y sus criterios queden configurados y el operador ordene reanudar. Esta actualización completa la configuración documental inicial; no inicia el smoke OAuth ni el E2E. El consentimiento de navegador sigue siendo explícito y se solicitará en el momento de uso.
+
+### 15.6 Titularidad y autorización
+
+Esta actualización usa únicamente la autorización puntual del operador para modificar tareas provisionales, plan y criterios de aceptación de MCP-Jules con el fin de alinearlos a MCP-OCP. No se cambia CONTROL-RESPONSABILIDAD.json, su generación 3 ni su titular. No se modifica Khora main, código, secretos, configuración Production, EP, Metacanon ni el control padre. La PR documental #19 permanece abierta; la integración a Metodología main requiere revisión y autorización de merge separadas.
