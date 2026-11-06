@@ -41,6 +41,10 @@ try {
     $RepoRoot=(Resolve-Path (Join-Path $OcpRoot "..\..")).Path
     $Exe=Join-Path $OcpRoot "artifacts\publish\0.1.0\OcpMcp.exe"
     if(-not (Test-Path $Exe)){throw "Published executable missing"}
+    $usageOutput=& $Exe 2>&1
+    $usageExit=$LASTEXITCODE
+    $usageText=$usageOutput -join " "
+    Assert-True "PPR_CLI_COMMANDS_AVAILABLE" ($usageExit -eq 2 -and $usageText.Contains("portable-export --output") -and $usageText.Contains("portable-restore --package")) "exit=$usageExit"
     $buildManifestPath=Join-Path $OcpRoot "artifacts\publish\0.1.0\build-manifest.json"
     $buildManifest=Get-Content -Raw $buildManifestPath|ConvertFrom-Json
     Assert-True "MANIFEST_ENTRYPOINT_ARGS" ($buildManifest.entrypoint -eq "OcpMcp.exe" -and $buildManifest.args.Count -eq 1 -and $buildManifest.args[0] -eq "serve")
