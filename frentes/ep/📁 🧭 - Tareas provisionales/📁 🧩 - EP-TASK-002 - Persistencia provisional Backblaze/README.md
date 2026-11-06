@@ -1578,3 +1578,14 @@ La entrada literal del operador fue «Chi.». Se interpreta afirmativamente por 
 - **Reintento técnico corregido:** script fuera de Git actualizado; regla de longitud retirada, acepta toda frase no vacía; Parser PowerShell 5.1 PASS; se verificó que el archivo final, temporal y el recibo retry1 no existían antes de abrir la ventana. Ventana local abierta en `PC10RCIF4EI4` con PID `2440`; ruta de recibo retry1 independiente para conservar la evidencia del fallo anterior.
 - **Estado:** `MASTER_LENGTH_POLICY=OPERATOR_SELECTED_NO_MINIMUM`; `VAULT_CAPTURE=AWAITING_LOCAL_INPUT`; `VAULT_READBACK=NOT_EXECUTED`; `B2_CLI=NOT_INSTALLED`; `B2_ACCOUNT_AUTH=NOT_EXECUTED`; `B2_REMOTE_TEST=NOT_EXECUTED`.
 - **Siguiente:** completar captura y leer metadatos no secretos + SHA/ACL/read-back; después CLI, auth/preflight read-only y prueba sintética one-shot autorizada.
+
+
+### Reintento de captura vacío y relanzamiento sin mínimo · 2026-11-06
+
+**Estado observado:** el primer intento terminó por `MASTER_PASSPHRASE_TOO_SHORT`; el siguiente intento con política de longitud retirada terminó por `MASTER_PASSPHRASE_EMPTY`. Ambos recibos se conservaron. Tras ambos, el archivo final `%LOCALAPPDATA%\Khora\secrets\b2-ep-env-vault.enc.json` y su temporal no existían; no se capturó ni persistió credencial B2 y no se llamó al proveedor. El segundo fallo indica que el primer campo de frase maestra llegó vacío al proceso, no que el KDF o AES hayan rechazado una frase corta.
+
+**Corrección visible y semántica:** el encabezado de la captura ahora dice literalmente que la bóveda de Cora es la bóveda operativa de EP, que Cora conserva su producto/datos/runtime y OCP conserva su metodología independiente. La captura almacena solo las dos variables B2 del namespace EP autorizado. Esto no altera archivos/repositorios de producto ni la bóveda compartida anterior.
+
+**Reintento actual:** script temporal corregido; acepta cualquier frase maestra no vacía, confirma repetición y advierte la menor resistencia de frases cortas. Parser PowerShell 5.1 PASS. Preflight confirmó ausentes archivo final, temporal y recibo retry2. Ventana abierta en `PC10RCIF4EI4`, PID `18752`, recibo `EP-B2-Vault-Capture-20261106.retry2.status.json`. Estado: `AWAITING_OPERATOR_INPUT`; todavía sin bóveda verificada, sin autenticación y sin llamada B2.
+
+**Instrucción a la entrada local:** primer prompt = frase maestra elegida por el operador; segundo prompt = repetir exactamente la misma frase; tercer prompt = `B2_APPLICATION_KEY_ID`; cuarto prompt = `B2_APPLICATION_KEY`. Los cuatro campos son de entrada oculta según el tipo de credencial; no introducir nada en el chat.
