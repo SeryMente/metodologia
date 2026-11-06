@@ -56,35 +56,35 @@
     "initial_scope": "Documentary initialization of a distinct local MCP server for methodology development and governance tasks; no software implementation, local startup, account changes or public deployment authorized by this event."
   },
   "transfer": {
-    "event_id": "C-MCP-OCP-RETOMA-20261101-01",
-    "authorization": "Instrucción directa del operador en esta conversación (2026-11-01): «rEToma responsabilidad del frente OCP MCP.»",
-    "method": "GitHub Contents API update guarded by the exact observed CONTROL-RESPONSABILIDAD.json blob SHA; immediate read-back required",
-    "expected_previous_blob_sha": "3e6f96e919c33c3015478b7fd0f262b1bee47b0c",
+    "event_id": "C-MCP-OCP-RETOMA-20261106-01",
+    "authorization": "Instrucción directa del operador en esta conversación (2026-11-06): «ChatGPT-OCP MCP-20261106-1557.txt. Documenta enpersistencia documental, del frente d trabajo OCP MCP, y retoma la respnsabiulidad.»",
+    "method": "GitHub Contents API update conditioned on exact observed CONTROL-RESPONSABILIDAD.json blob SHA; immediate read-back required",
+    "expected_previous_blob_sha": "ecb27b04aaba04025ef596b3f0ed6c049bc2420d",
     "previous_owner": {
-      "owner_alias": "chatgpt-mcp-ocp-01a19495-aec0-78e2-a7b6-10ab72a2be78",
-      "owner_alias_type": "operational_alias_not_native_thread_id",
-      "instance": "chatgpt-mcp-ocp",
-      "uuidv7_local": "01a19495-aec0-78e2-a7b6-10ab72a2be78",
-      "generation": 3
-    },
-    "new_owner": {
       "owner_alias": "chatgpt-mcp-ocp-01a199d8-9209-725c-b764-a0a66ac54882",
       "owner_alias_type": "operational_alias_not_native_thread_id",
       "instance": "chatgpt-mcp-ocp",
       "uuidv7_local": "01a199d8-9209-725c-b764-a0a66ac54882",
-      "generation": 4
+      "generation": 4,
+      "session_folio": "SES-20261101-3D504C5A"
     },
-    "generation_before": 3,
-    "generation_after": 4,
+    "new_owner": {
+      "owner_alias": "chatgpt-mcp-ocp-01a1b2dc-8980-7046-a912-a6e84316b2c3",
+      "owner_alias_type": "operational_alias_not_native_thread_id",
+      "instance": "chatgpt-mcp-ocp",
+      "uuidv7_local": "01a1b2dc-8980-7046-a912-a6e84316b2c3",
+      "generation": 5,
+      "session_folio": "SES-20261106-CDF82783"
+    },
+    "generation_before": 4,
+    "generation_after": 5,
     "operation": "TRANSFER_RESPONSIBILITY",
-    "rename_from": "MCP-OCP",
-    "rename_to": "MCP-OCP",
     "result": "VERIFIED",
     "readback_status": "MATCHED",
-    "transfer_commit_sha": "e476c9d6d8a62ea3d40709f39e0d768047cd917e",
-    "immediate_readback_blob_sha": "aa45d94149f8aca78c192027bc21960356f642a8",
-    "generation_readback": 4,
-    "owner_readback": "chatgpt-mcp-ocp-01a199d8-9209-725c-b764-a0a66ac54882",
+    "transfer_commit_sha": "c827767ecc39d29933b04bd05eb6058c0e0ea197",
+    "immediate_readback_blob_sha": "f3b909754675d1db0b978406acf23e4243e110a3",
+    "generation_readback": 5,
+    "owner_readback": "chatgpt-mcp-ocp-01a1b2dc-8980-7046-a912-a6e84316b2c3",
     "identity_readback": "MCP-OCP"
   },
   "implementation_authorization": {
@@ -190,12 +190,14 @@
       "generation_before": 4,
       "generation_after": 5,
       "operation": "TRANSFER_RESPONSIBILITY",
-      "result": "COMMITTED_READBACK_PENDING",
-      "readback_status": "PENDING",
-      "transfer_commit_sha": null,
-      "immediate_readback_blob_sha": null,
+      "result": "VERIFIED",
+      "readback_status": "MATCHED",
+      "transfer_commit_sha": "c827767ecc39d29933b04bd05eb6058c0e0ea197",
+      "immediate_readback_blob_sha": "f3b909754675d1db0b978406acf23e4243e110a3",
       "owner_thread": null,
-      "identity_readback": null
+      "identity_readback": "MCP-OCP",
+      "generation_readback": 5,
+      "owner_readback": "chatgpt-mcp-ocp-01a1b2dc-8980-7046-a912-a6e84316b2c3"
     }
   ],
   "display_name": "MCP-OCP",
