@@ -1709,3 +1709,20 @@ El núcleo v0.1.18, el objeto de coordinación, control, DUG, OEP/EP DTC, EP-TAS
 **No ejecutado:** no se construyó ni probó de nuevo el código MCP-OCP; no se instaló ni arrancó localmente; no se realizó consentimiento OAuth real ni tools/list; no se creó sesión Jules; no se accedió a secretos; no se operó EP/B2; no se fusionó PR #19 ni desplegó Khora.
 
 **Estados finales:** `DTC_CYCLE_STATUS=INCOMPLETE` (desviación de apertura tardía); `MCP_TECHNICAL_STATUS=LOCAL_MVP_TASKS_CONFIGURED_DOCUMENTARY; BUILD_NOT_STARTED`; `JULES_TASK_CONFIGURATION=DOCUMENTS_UPDATED_READBACK_MATCHED`; `JULES_USE_STATUS=PAUSED_PENDING_OPERATOR_RESUME`; `MCP_NORMATIVO=DESACTIVADO`; `performance=NOT_MEASURED`.
+
+
+### Apertura DTC MCP-OCP · ciclo local 11 · 2026-11-06 · reconciliación y build del MVP local
+
+**Evento local:** C-MCP-OCP-DTC-20261106-11. **Sesión local:** SES-20261106-CDF82783. **Titular:** generación 5, sin cambio de control.
+
+**Cursor DTC previo:** `main`, objeto de coordinación blob `fb52e627e5c21b433f55c4057d8b6d0b35d048a3`. Se confirma que el ciclo local 10 fue clasificado `INCOMPLETE` por apertura tardía; no se reabre ni se renumera. La evidencia de read-back individual de sus artefactos permanece vigente.
+
+**Lectura de delta de Gobernanza:** no se observó una entrada posterior en el mismo objeto de coordinación al cursor anterior; se registra `SIN_NOVEDAD` con ese cursor. No se duplica solicitud. La apertura DTC no acredita aceptación de Gobernanza ni suplanta su revisión.
+
+**Instrucción A del operador vigente:** continuar con la configuración ya realizada; el operador permanecerá fuera del frente MCP-Jules hasta que el trabajo documental esté correctamente configurado. Se mantiene `JULES_USE_STATUS=PAUSED_PENDING_OPERATOR_RESUME`. No se crea sesión Jules ni se ejecutan herramientas Jules.
+
+**Respuesta inicial MCP-OCP:** `ACKNOWLEDGED`. El frente retoma ahora su trabajo propio: inspeccionar la candidata local existente en el dispositivo RDC activo, comparar el código/manifest del branch `feature/mcp-ocp-portable-recovery-v1-20261101` con el OCP `MCP-OCP-v0.1.20` en main, y determinar si procede build/test renovado. Se preserva el recibo histórico branch-local como fuente de evidencia anterior; no se lo presenta como build actual. Se reutilizará el clon/candidata existente sin crear duplicados. No se instalará en EP ni se operará B2/secretos.
+
+**Control leído:** MCP-OCP `owned`, gen. 5, blob `1fcf4178d58b39cecc3028c92493932b2ca7ab60`. **Alcance B:** build/test/correct/package local dentro de `frentes/mcp-metodologia/`; sin cambios a Khora, EP, DUG/IPZ/Sink ni despliegue público.
+
+**Estado de apertura:** `DTC_CYCLE_STATUS=OPEN`; `MCP_TECHNICAL_STATUS=PREPARING_LOCAL_BUILD_RECONCILIATION`; `MCP_JULES_TASK_CONFIGURATION=DOCUMENTARY_CONFIGURED_READBACK_MATCHED`; `JULES_USE_STATUS=PAUSED_PENDING_OPERATOR_RESUME`; `performance=NOT_MEASURED` hasta capturar métricas desde esta apertura.
