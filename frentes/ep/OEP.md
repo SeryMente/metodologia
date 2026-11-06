@@ -1928,3 +1928,8 @@ En `PC10RCIF4EI4` se observó Windows 11 Pro, PowerShell 5.1 x64, Git disponible
 **Estado vivo:** `CURRENT_EP_HOST=PC10RCIF4EI4`; `OPERATOR_PRESENCE_DECLARED_FOR_CURRENT_HOST=YES`; `VAULT_CAPTURE=AWAITING_OPERATOR_INPUT`; `VAULT_READBACK=NOT_EXECUTED`; `B2_CLI=NOT_INSTALLED`; `B2_ACCOUNT_AUTH=NOT_EXECUTED`; `B2_REMOTE_TEST=NOT_EXECUTED`. Ningún secreto ha sido leído por el asistente ni se ha hecho llamada al proveedor. La bóveda compartida permanece intacta.
 
 Siguiente paso: completar captura local, cotejar SHA/ACL/read-back, instalar la CLI B2 y continuar con autenticación/preflight de solo lectura y la prueba sintética autorizada. EP-TASK-002 continúa `en_curso`; no se declara persistencia operativa ni aceptación MCP-OCP.
+
+
+### Precisión del literal del operador sobre el host actual · 2026-11-06
+
+La entrada literal fue «Chi.», interpretada afirmativamente por el contexto inmediato de confirmación de la computadora actual `PC10RCIF4EI4`. La mención previa «Sí» fue una normalización semántica y no el literal. No cambia el host activo ni el estado pendiente de captura.
