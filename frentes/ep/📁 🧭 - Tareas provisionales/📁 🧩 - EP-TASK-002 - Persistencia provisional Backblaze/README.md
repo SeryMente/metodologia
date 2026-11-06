@@ -1562,3 +1562,8 @@ El operador debe revisar presencialmente el tramo junto a `015RENTA01` y poner e
 - **Estado:** `CURRENT_EP_HOST=PC10RCIF4EI4`; `OPERATOR_PRESENCE_DECLARED_FOR_CURRENT_HOST=YES`; `VAULT_CAPTURE=AWAITING_OPERATOR_INPUT`; `VAULT_READBACK=NOT_EXECUTED`; `B2_CLI=NOT_INSTALLED`; `B2_ACCOUNT_AUTH=NOT_EXECUTED`; `B2_PREFLIGHT=NOT_EXECUTED`; `REMOTE_TEST=NOT_EXECUTED`. No se ha transmitido ni leído ningún secreto.
 - **Siguiente:** terminar la captura desde la ventana local; verificar el archivo y ACL; instalar/verificar B2 CLI oficial; autorizar el perfil aislado y correr preflight de solo lectura antes de la prueba sintética one-shot autorizada.
 - **Ciclo EP:** se conserva `C-EP-MOD-SCRIPTPWS-20261101-03`; no se abre un OCP ni folio nuevo.
+
+
+### Precisión literal A · confirmación de host actual · 2026-11-06
+
+La entrada literal del operador fue «Chi.». Se interpreta afirmativamente por ser la respuesta contextual a la pregunta de si `PC10RCIF4EI4` era la computadora actual. La crónica anterior normalizó la respuesta como «Sí»; esta nota conserva el literal de A y no altera la conclusión operativa.
