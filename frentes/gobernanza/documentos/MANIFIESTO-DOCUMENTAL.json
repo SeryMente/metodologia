@@ -5,7 +5,7 @@
     "event_id":  "C-GOBERNANZA-ASIENTO-02-RETOMA-20261101-01",
     "cycle_folio":  null,
     "recorded_on":  "2026-11-01",
-    "status":  "PERSISTENCIA_EN_CURSO_READBACK_PENDIENTE",
+    "status":  "PERSISTIDO_Y_VERIFICADO",
     "rule":  "P041 + ART-014 + ART-022; conservar originales sin transformar y declarar persistencia solo tras lectura de vuelta y cotejo.",
     "documents":  [
                       {
@@ -162,36 +162,36 @@
                           "class":  "original",
                           "source_path":  "C:\\Users\\fila4\\Downloads\\ChatGPT-GOBERNANZA-1-20261106-1448.txt",
                           "source_device":  "PC10RCIF4EI4",
-                          "captured_via":  "RDC; copia binaria local sin transformación; tamaño y SHA-256 de origen/destino cotejados; Git blob calculado; read-back remoto pendiente.",
+                          "captured_via":  "RDC; copia binaria local sin transformación; tamaño y SHA-256 de origen/destino cotejados; Git blob SHA coincide con lectura de vuelta de SeryMente/metodologia/main.",
                           "media_type":  "text/plain",
                           "size_bytes":  85947,
                           "sha256":  "8D1454ED1DF63F1BE3A68D1EFF953DE74A37787E472F256D4356BA1F2D550EA2",
                           "git_blob_sha":  "3383d4da0104a87615cfab3e698d48c1b790861b",
-                          "status":  "COPIA_LOCAL_VERIFICADA_READBACK_PENDIENTE",
+                          "status":  "PERSISTIDO_Y_VERIFICADO",
                           "verification":  {
-                                               "readback":  false,
+                                               "readback":  true,
                                                "content_cotejo":  true,
-                                               "method":  "Comparación de longitud y SHA-256 sobre bytes de origen y destino; Git blob SHA calculado; pendiente cotejo contra main remoto.",
-                                               "readback_blob_sha":  null,
-                                               "verified_on":  null
+                                               "method":  "Comparación de tamaño y SHA-256 entre origen RDC y copia; Git blob SHA calculado en RDC y cotejado con fetch/read-back de main.",
+                                               "readback_blob_sha":  "3383d4da0104a87615cfab3e698d48c1b790861b",
+                                               "verified_on":  "2026-11-06"
                                            }
                       }
                   ],
     "originals_commit_sha":  "275854bb5d0a85cd9adb2f10ee65fcd41655e764",
     "verification":  {
-                         "readback":  false,
+                         "readback":  true,
                          "content_cotejo":  true,
                          "document_count":  8,
                          "source_sha256":  "8D1454ED1DF63F1BE3A68D1EFF953DE74A37787E472F256D4356BA1F2D550EA2",
                          "git_blob_sha":  "3383d4da0104a87615cfab3e698d48c1b790861b",
-                         "method":  "Copia RDC local byte-exacta y SHA-256; read-back main pendiente."
+                         "method":  "Byte-exact SHA-256 source/destination plus canonical main Git blob read-back."
                      },
     "latest_addition_event":  {
                                   "event_id":  "C-GOBERNANZA-RETOMA-10",
                                   "document_id":  "DOC-GOV-CHATGPT-GOBERNANZA-1-20261106-1448",
-                                  "commit_sha":  null,
+                                  "commit_sha":  "a146c307d750868a3fffc4beedba2941020b8e2c",
                                   "git_blob_sha":  "3383d4da0104a87615cfab3e698d48c1b790861b",
-                                  "readback_verified":  false
+                                  "readback_verified":  true
                               },
-    "latest_original_commit_sha":  null
+    "latest_original_commit_sha":  "a146c307d750868a3fffc4beedba2941020b8e2c"
 }

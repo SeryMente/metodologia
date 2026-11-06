@@ -2,7 +2,7 @@
 
 **Fecha:** 2026-11-06 · hora de referencia: America/Mexico_City
 **Frente/OCP:** `SeryMente/metodologia` · `main` · `frentes/gobernanza/`
-**Estado inicial:** fuente recuperada; copia local verificada; publicación y read-back pendientes de cierre
+**Estado:** PERSISTIDO_Y_VERIFICADO · TRANSFERENCIA_VERIFICADA_READBACK · DTC_EN_CURSO
 
 ## 1. Instrucción y alcance
 
@@ -37,7 +37,7 @@ Entrada literal registrada en `conversaciones/C-GOBERNANZA-RETOMA-10-dialogo.jso
 - SHA-256 fuente: `8D1454ED1DF63F1BE3A68D1EFF953DE74A37787E472F256D4356BA1F2D550EA2`.
 - Destino canónico: `frentes/gobernanza/documentos/originales/ChatGPT-GOBERNANZA-1-20261106-1448.txt`.
 - El original se conserva sin transformación; la fuente no se mueve ni se sobrescribe.
-- Blob Git, commit y lectura de vuelta se completarán en la evidencia al concluir la publicación.
+- Git blob original: `3383d4da0104a87615cfab3e698d48c1b790861b`.\n- Commit que publicó original y transferencia: `a146c307d750868a3fffc4beedba2941020b8e2c`.\n- `fetch_file` de `main` devolvió el mismo Git blob SHA; cotejo remoto PASS.\n- Control gen. 14 y roster 2/2 leídos de vuelta; titularidad y asiento corresponsable verificados.
 
 ## 5. Coordinación y continuidad
 

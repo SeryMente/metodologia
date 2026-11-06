@@ -1,7 +1,7 @@
 ## Continuidad vigente · C-GOBERNANZA-RETOMA-10 · 2026-11-06
 
 - Se reanudó la titularidad operativa primaria de Gobernanza en generación 14; el asiento corresponsable generación 12 permanece activo. Véase [control](CONTROL-RESPONSABILIDAD.json) y [crónica](cronica/C-GOBERNANZA-RETOMA-10.md).
-- Se capturó el export `ChatGPT-GOBERNANZA-1-20261106-1448.txt` como original documental. Su SHA-256 de origen es `8D1454ED1DF63F1BE3A68D1EFF953DE74A37787E472F256D4356BA1F2D550EA2`; el estado final depende del read-back de `main` registrado en la evidencia.
+- Se capturó el export `ChatGPT-GOBERNANZA-1-20261106-1448.txt` como original documental. Su SHA-256 de origen es `8D1454ED1DF63F1BE3A68D1EFF953DE74A37787E472F256D4356BA1F2D550EA2`; estado `PERSISTIDO_Y_VERIFICADO`; commit `a146c307d750868a3fffc4beedba2941020b8e2c`; blob `3383d4da0104a87615cfab3e698d48c1b790861b`.
 - El último diálogo exportado plantea Ser y Mente como OCP raíz organizacional y una autosemejanza estructural fractal con invariantes y extensiones locales. Se mantiene como **propuesta no canonizada**. La posición canónica vigente no cambia por este registro; cualquier enmienda normativa exige autorización activa y explícita conforme a P005.
 - La coordinación EP–MCP-OCP se debe revalidar leyendo los controles y DTC titulares antes de emitir nuevas solicitudes. Las respuestas y estados dentro del export son antecedentes documentales, no read-back en vivo de esos frentes.
 - FOL1 continúa `PREPARADO_PENDIENTE_ACTIVACION_IPZ`; no asignar CV/CY/A/B globales ni por OCP. IPZ nativa `NO_VERIFICADA`; MCP normativo `DESACTIVADO`.

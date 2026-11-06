@@ -32,8 +32,9 @@
                                                  },
                                "uniqueness_check":  "Búsquedas exactas del evento, folio, UUIDv7 y alias: cero resultados en SeryMente/metodologia; no acredita unicidad organizacional ni fencing universal.",
                                "readback_required":  true,
-                               "readback_verified":  false,
-                               "source_control_blob_sha":  "960fefdca26c841c3a2d06ebb57a2e836b6f8d73"
+                               "readback_verified":  true,
+                               "source_control_blob_sha":  "960fefdca26c841c3a2d06ebb57a2e836b6f8d73",
+                               "verified_on":  "2026-11-06"
                            },
     "initialization":  {
                            "event_id":  "C-GOBERNANZA-INICIO-01",
@@ -796,9 +797,25 @@
                                                 },
                           "native_conversation_id":  "NOT_EXPOSED; operational alias used",
                           "method":  "RDC local byte-preserving copy; local SHA/hash verification; Git non-force fast-forward push; canonical main read-back",
-                          "mutation_result":  "COMMIT_PENDING_READBACK",
+                          "mutation_result":  "COMMITTED_AND_READBACK_VERIFIED",
                           "readback_required":  true,
-                          "readback_verified":  false
+                          "readback_verified":  true,
+                          "readback_verification":  {
+                                                        "status":  "verified",
+                                                        "verified_on":  "2026-11-06",
+                                                        "commit_sha":  "a146c307d750868a3fffc4beedba2941020b8e2c",
+                                                        "control_blob_sha":  "acc128e23bf942ebfe559923b9188b24e5213512",
+                                                        "original_git_blob_sha":  "3383d4da0104a87615cfab3e698d48c1b790861b",
+                                                        "checks":  {
+                                                                       "new_primary_active":  true,
+                                                                       "prior_primary_superseded":  true,
+                                                                       "co_responsible_preserved":  true,
+                                                                       "generation_is_14":  true,
+                                                                       "active_responsibles_is_2":  true,
+                                                                       "original_blob_matches_main":  true,
+                                                                       "fol1_unchanged":  true
+                                                                   }
+                                                    }
                       }
                   ],
     "active_responsibles":  [
@@ -824,8 +841,9 @@
                                                       },
                                     "uniqueness_check":  "Búsquedas exactas del evento, folio, UUIDv7 y alias: cero resultados en SeryMente/metodologia; no acredita unicidad organizacional ni fencing universal.",
                                     "readback_required":  true,
-                                    "readback_verified":  false,
-                                    "source_control_blob_sha":  "960fefdca26c841c3a2d06ebb57a2e836b6f8d73"
+                                    "readback_verified":  true,
+                                    "source_control_blob_sha":  "960fefdca26c841c3a2d06ebb57a2e836b6f8d73",
+                                    "verified_on":  "2026-11-06"
                                 },
                                 {
                                     "status":  "active",
@@ -970,8 +988,9 @@
                                          "retained_co_responsible":  "chatgpt-C-GOBERNANZA-ASIENTO-02-RETOMA-20261101-01-SES-20261101-GV8E89D1FF",
                                          "active_responsibles_after_write":  2,
                                          "maximum":  2,
-                                         "status":  "PENDING_READBACK",
-                                         "readback_verified":  false
+                                         "status":  "VERIFIED_READBACK",
+                                         "readback_verified":  true,
+                                         "readback_sha":  "acc128e23bf942ebfe559923b9188b24e5213512"
                                      }
                                  ]
 }

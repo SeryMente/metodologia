@@ -10,7 +10,7 @@
 
 **Continuidad:** la coordinación EP–MCP-OCP se conserva dentro de sus controles titulares. La persistencia de datasets/estado operativo MCP-OCP y la continuidad/backup B2 siguen siendo trabajo de los frentes responsables; este evento no ejecuta B2 ni modifica EP/MCP-OCP.
 
-**Foliación y límites:** FOL1 `PREPARADO_PENDIENTE_ACTIVACION_IPZ`; CV/CY/A/B globales y por OCP `PENDIENTE / NO ASIGNADO`; ciclo local `C-GOBERNANZA-RETOMA-10-CY01` · UUIDv7 `01a1b2a5-6277-773a-92e0-0cbd706d0671`; folio global nulo. IPZ nativa no verificada; MCP normativo `DESACTIVADO`. Read-back remoto pendiente de cierre.
+**Foliación y límites:** FOL1 `PREPARADO_PENDIENTE_ACTIVACION_IPZ`; CV/CY/A/B globales y por OCP `PENDIENTE / NO ASIGNADO`; ciclo local `C-GOBERNANZA-RETOMA-10-CY01` · UUIDv7 `01a1b2a5-6277-773a-92e0-0cbd706d0671`; folio global nulo. IPZ nativa no verificada; MCP normativo `DESACTIVADO`. Read-back remoto verificado: commit `a146c307d750868a3fffc4beedba2941020b8e2c`; original blob `3383d4da0104a87615cfab3e698d48c1b790861b`; control de origen/read-back `acc128e23bf942ebfe559923b9188b24e5213512`.
 
 ---
 # Núcleo operativo · Gobernanza

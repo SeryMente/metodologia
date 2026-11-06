@@ -46,11 +46,13 @@
                                                    "repository_scope":  "SeryMente/metodologia",
                                                    "organization_wide_uniqueness":  "NOT_VERIFIED"
                                                },
-                           "readback_verified":  false,
+                           "readback_verified":  true,
                            "local_cycle_id":  "C-GOBERNANZA-RETOMA-10-CY01",
                            "local_cycle_uuidv7":  "01a1b2a5-6277-773a-92e0-0cbd706d0671",
                            "global_cycle_folio":  null,
-                           "local_commit_sha":  null
+                           "local_commit_sha":  "a146c307d750868a3fffc4beedba2941020b8e2c",
+                           "control_readback_blob_sha":  "acc128e23bf942ebfe559923b9188b24e5213512",
+                           "readback_verified_on":  "2026-11-06"
                        },
     "document":  {
                      "document_id":  "DOC-GOV-CHATGPT-GOBERNANZA-1-20261106-1448",
@@ -64,12 +66,14 @@
                      "bytes":  85947,
                      "lines":  1896,
                      "source_sha256":  "8D1454ED1DF63F1BE3A68D1EFF953DE74A37787E472F256D4356BA1F2D550EA2",
-                     "local_file_copy_status":  "PENDING",
+                     "local_file_copy_status":  "BYTE_EXACT_SHA256_VERIFIED",
                      "repository_path":  "frentes/gobernanza/documentos/originales/ChatGPT-GOBERNANZA-1-20261106-1448.txt",
-                     "git_blob_sha":  null,
-                     "main_commit_sha":  null,
-                     "repository_persistence":  "PENDING_REMOTE_READBACK",
-                     "status":  "COPIA_LOCAL_VERIFICADA_READBACK_PENDIENTE"
+                     "git_blob_sha":  "3383d4da0104a87615cfab3e698d48c1b790861b",
+                     "main_commit_sha":  "a146c307d750868a3fffc4beedba2941020b8e2c",
+                     "repository_persistence":  "PERSISTIDO_Y_VERIFICADO",
+                     "status":  "PERSISTIDO_Y_VERIFICADO",
+                     "readback_verified":  true,
+                     "readback_blob_sha":  "3383d4da0104a87615cfab3e698d48c1b790861b"
                  },
     "dug":  {
                 "version":  "Samantha v377",
