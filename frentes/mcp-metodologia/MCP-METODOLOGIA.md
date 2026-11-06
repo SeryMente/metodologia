@@ -4,7 +4,7 @@
 
 - **Nombre canónico vigente:** MCP-OCP (anteriormente MCP-METODOLOGIA).
 - **Identidad canónica vigente:** MCP-OCP. **Identidad histórica:** MCP-METODOLOGIA.
-- **Versión/sello:** MCP-OCP-v0.1.20 · gen. 5; ciclo DTC local 10; MVP local prioritario y separado de la instalación EP/B2.
+- **Versión/sello:** MCP-OCP-v0.1.21 · gen. 5; ciclo DTC local 11; candidato local 0.1.0 BUILD_AND_TESTED, bootstrap del perfil definitivo pendiente.
 - **Repositorio propietario:** SeryMente/metodologia, rama main.
 - **OCP canónico:** frentes/mcp-metodologia/.
 - **Núcleo operativo único:** este archivo, MCP-METODOLOGIA.md.
@@ -443,3 +443,59 @@ MCP-NORMATIVO permanece DESACTIVADO. No se afirma verificación normativa autom�
 ### 12.5 Estado de aceptación
 
 A la fecha de esta actualización: lista provisional creada y leída de vuelta; núcleo pendiente de lectura de vuelta tras esta escritura; código local 0.1.0 aún no renovado contra v0.1.20; build/test/paquete vigente NO VERIFICADO; ejecución local por RDC NO VERIFICADA; instalación EP NO; aceptación por operador NO. Los cierres se declaran por evidencia individual, no por cierre documental de este OCP.
+
+
+## 13. Build renovado del MVP local y gates de bootstrap · ciclo 11 · 2026-11-06
+
+### 13.1 Candidata y pins de fuente
+
+Se reutilizó la candidata local PPR v1 en el dispositivo RDC PC10RCIF4EI4, perfil Windows MantenimientoRCI, sin crear otro clon. La rama de trabajo local es feature/mcp-ocp-local-mvp-0.1.0-20261106; commit local de código/pin 587a82d1accbede834b5004fc5b571953c44ba6c. La rama no se ha publicado/pushed y este commit no debe tratarse como disponible en GitHub main.
+
+El manifiesto de build cotejó en origin/main:
+- DUG Samantha v377 · NX-377m: commit 439ccbdca9b2e02b299253ca7bc73b3ab1292aba, blob 54064c8fe00f872023a455f06596061ed69062ae.
+- Núcleo MCP-OCP v0.1.20: commit 9202b970e2a857daa9c06ded6f2b1326c1bfe9a7, blob 029d330eeeb9470a114b65fb0d21a4995e050774.
+- SDK .NET 10.0.403 aislado, con firma Authenticode Microsoft válida. No se cambió SDK global, registro ni PATH permanente.
+
+### 13.2 Build y paquete
+
+- BUILD_STATUS=BUILT_AND_TESTED; Build.ps1 exit 0.
+- Target net10.0; RID win-x64; self-contained; transporte stdio; entrypoint OcpMcp.exe serve.
+- 50/50 pruebas unitarias PASS, incluidas pruebas sintéticas PPR; 30/30 pruebas de integración/smoke stdio PASS.
+- 200/200 componentes publicados cotejados por tamaño/hash después de extraer el ZIP.
+- ZIP local ocp-mcp-0.1.0-win-x64.zip, 39.713.025 bytes, SHA-256 37b85444534e20fcc51eeb10688ed99577bdde020576783273723ebd93cdbe76.
+- Build manifest SHA-256 ddc9967bf01afd5fc9c1f72cf836f0c5ad064daceaab07e9f99e91f003d348a8; source manifest SHA-256 0980946c1c16d0f5b0cdb4f29dc0fc5d794015165878d3ccd3198616e07ab9ac.
+- Recibo estructurado: [C-MCP-OCP-LOCAL-MVP-BUILD-20261106](evidencias/C-MCP-OCP-LOCAL-MVP-BUILD-20261106.json); guía operativa: [OPERACION-LOCAL-MCP-OCP.md](OPERACION-LOCAL-MCP-OCP.md); ejemplo genérico de cliente: [mcp-servers.example.json](mcp-servers.example.json).
+
+### 13.3 Smoke del ejecutable empaquetado y prueba desde RDC
+
+El ejecutable dentro del paquete fue iniciado de forma independiente con un root temporal:
+- initialize → ocp-mcp@0.1.0;
+- tools/list → 10 herramientas;
+- get_health → READY;
+- transport=stdio, MCP-NORMATIVO=DESACTIVADO;
+- cierre EOF con exit 0 y stderr vacío.
+
+Después se inició una sesión terminal RDC interactiva contra el mismo ejecutable empaquetado. Se enviaron JSON-RPC initialize, tools/list y tools/call:get_health; las tres respuestas fueron recibidas correctamente. La prueba se ejecutó en OCPMCP_TEST_MODE=1, root C:\Temp\OcpMcp-RDC-Interactive-Cycle11, y el proceso se terminó después. No se usó la base real del perfil.
+
+El health de esa base temporal informó operator_provisioned=false y principle_selection_readiness=SOURCE_NOT_IMPORTED, a pesar de status=READY. Por tanto, READY solo demuestra salud de esa instancia temporal y no acredita una instalación de perfil lista para operación.
+
+### 13.4 Perímetro
+
+El transporte de código es MCP stdio a través de stdin/stdout. Un escaneo estático acotado sobre src/**/*.cs no encontró referencias a TcpListener, HttpListener, System.Net.Sockets, WebApplication, Kestrel o HttpClient. Esta comprobación es evidencia acotada, no una auditoría exhaustiva; el smoke no abrió ni requirió listener público, firewall rule, túnel, Vercel o endpoint externo.
+
+### 13.5 Bootstrap y límites pendientes
+
+- ZIP y guía están disponibles localmente en el dispositivo RDC; el paquete no se ha extraído a una ruta estable del perfil de operación.
+- import-sources solo se probó en el root temporal de Smoke.ps1; no se importaron fuentes a la base normal %LOCALAPPDATA% del operador.
+- No se ejecutó provision-operator; el trust root/HMAC/Ed25519 local sigue sin crear y el SID no se ha enlazado. Ese acto requiere confirmación interactiva explícita del propietario (REGISTER <SID>); no se ejecuta por inferencia.
+- El servidor no se instaló como servicio Windows ni se dejó ejecutándose de forma persistente.
+- No existe conector MCP nativo de ChatGPT Free acreditado para este proceso stdio. La ruta local probada es la invocación por la sesión RDC.
+- No se probó coexistencia E2E con el bridge Jules. El uso de Jules sigue pausado por el operador; no OAuth, sesión ni tools/list de Jules.
+- No se hizo push de la rama candidata, PR, merge, release remoto, instalación en EP ni operación B2.
+- Restore PPR cross-host real sigue NOT_VERIFIED; los casos PPR son fixtures sintéticos dentro de la suite local.
+
+### 13.6 Estado separado de aceptación
+
+MCP_OCP_BUILD_AND_TESTS=PASS_LOCAL; MCP_OCP_PACKAGE=LOCAL_ONLY_NOT_TRANSFERRED; MCP_OCP_RDC_STDIO_SMOKE=PASS_TEST_ROOT; MCP_OCP_PROFILE_BOOTSTRAP=PENDING_OPERATOR_CONSENT; MCP_OCP_EP_INSTALL=NOT_PERFORMED; MCP_JULES_USE=PAUSED_PENDING_OPERATOR_RESUME; MCP_NORMATIVO=DESACTIVADO.
+
+El build y las pruebas no equivalen a instalación en perfil, provisión del operador, integración en main, instalación EP ni aceptación por el operador. La siguiente tarea del frente es MCP-OCP-12: extracción/validación del ZIP e importación/provisión local en un perfil definitivo, solamente con consentimiento interactivo. La instalación EP continúa bajo autoridad EP y sigue siendo un gate distinto.
