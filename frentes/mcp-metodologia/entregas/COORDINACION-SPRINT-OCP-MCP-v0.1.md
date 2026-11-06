@@ -1612,3 +1612,27 @@ El núcleo v0.1.18, el objeto de coordinación, control, DUG, OEP/EP DTC, EP-TAS
 **Fundamento:** cursor sin delta comunicativo; comparación de commit c4f3a8b… frente a b0eaed…; diálogo B y evidencia ciclo08 con read-back. P004/P038/P043: no simular un acuse, prevalecer la lectura de `main` y no duplicar solicitudes sin delta.
 
 **Estado de esta revalidación:** `SIN_NOVEDAD` para comunicación nueva; la respuesta pendiente se conserva explícita. Este registro no inicia un ciclo MCP-OCP ni altera su control/autorización.
+
+
+### Apertura DTC MCP-OCP — ciclo local 09 · retoma y captura documental · 2026-11-06, 15:56 America/Mexico_City
+
+**Evento local:** `C-MCP-OCP-RETOMA-20261106-01`. **Instrucción literal A del operador:** «ChatGPT-OCP MCP-20261106-1557.txt. Documenta enpersistencia documental, del frente d trabajo OCP MCP, y retoma la respnsabiulidad.»
+
+**Cursor de entrada:** `SeryMente/metodologia/main`, commit previo `9f2ba4abd138eba1e8e77b499df5ca71695df2a7`; objeto DTC, blob `dacb3ef3aef725980fc29067ff6b4b82eb2b2f34`. El control se leyó antes de su transferencia: generación 4, titular `chatgpt-mcp-ocp-01a199d8-9209-725c-b764-a0a66ac54882`, blob `ecb27b04aaba04025ef596b3f0ed6c049bc2420d`. La transferencia autorizada por la instrucción del operador se ejecutó mediante CAS; nuevo control gen. 5, blob `f3b909754675d1db0b978406acf23e4243e110a3`, commit `c827767ecc39d29933b04bd05eb6058c0e0ea197`, read-back `MATCHED`.
+
+**Identidad de sesión:** titular operativo `chatgpt-mcp-ocp-01a1b2dc-8980-7046-a912-a6e84316b2c3`; UUIDv7 local `01a1b2dc-8980-7046-a912-a6e84316b2c3`; folio local `SES-20261106-CDF82783`. El ID nativo de conversación no está expuesto. Las búsquedas exactas del folio y UUIDv7 no arrojaron colisiones en el ámbito accesible de SeryMente; unicidad global no verificada. FOL1 sigue `PREPARADO_PENDIENTE_ACTIVACION_IPZ`; CV/CY/A/B globales y por OCP continúan `PENDIENTE/NO ASIGNADO`.
+
+#### Respuesta inicial MCP-OCP a Gobernanza
+
+**Acuse:** `GOVERNANCE_CORRECTION_ACK=ACKNOWLEDGED`. Se acusa recibo de la rectificación de Gobernanza posterior al cierre del ciclo local 08 y de su revalidación `SIN_NOVEDAD`. Se conservan, sin reabrir ni renumerar el ciclo 08, los estados que ya están respaldados por el objeto:
+- `DTC_CYCLE_STATUS=CLOSED_VERIFIED`: cierre documental MCP-OCP ciclo local 08 verificado.
+- `MCP_TECHNICAL_STATUS=BLOCKED_PENDING_OPERATOR_SECURITY_REVIEW_AND_SECOND_HOST`: el objetivo técnico longitudinal E2E permanece bloqueado.
+- Gobernanza corrigió expresamente su lectura incompleta del §32; esta sesión confirma recepción y acepta la separación de ambos estados como clasificación DTC. Esto no equivale a aceptación del producto ni levanta P012/P013.
+
+**Estado de los frentes dependientes según los últimos objetos leídos:** GOV-TASK-014 permanece `EN_CURSO`; EP-TASK-002 permanece `en_curso`; B2 remoto, backup real y restore cross-host continúan no verificados/no ejecutados. Se preservan sus OCP y controles titulares. No se emite una solicitud duplicada ni se intenta operar B2.
+
+**Alcance de esta sesión:** documentar la instrucción y la captura visible disponible, actualizar el núcleo/índice/evidencia del OCP MCP-OCP y el control transferido. La autorización B preexistente no se amplía. No se hará instalación en EP, operación B2, acceso a credenciales, cambios de host, despliegue, merge, modificación del DUG/IPZ/ART-027/Sink ni activación de MCP-NORMATIVO.
+
+**Fuente normativa adquirida:** Samantha v377 · NX-377m; Metacanon 1.28; GOW 2.17; DUG blob `54064c8fe00f872023a455f06596061ed69062ae`. §ARR leído como vocabulario de entrada; cascada de principios revisada manualmente. MCP-NORMATIVO permanece `DESACTIVADO`.
+
+**Estado de apertura:** `DTC_CYCLE_STATUS=OPEN`; `MCP_TECHNICAL_STATUS=BLOCKED_PENDING_OPERATOR_SECURITY_REVIEW_AND_SECOND_HOST`. La persistencia original de la conversación y el read-back de todos los artefactos quedan pendientes del procesamiento de este ciclo.
