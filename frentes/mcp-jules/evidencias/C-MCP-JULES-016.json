@@ -143,13 +143,14 @@
     "main_path_after_delete": "NOT_FOUND",
     "readback_on_feature_branch": "MATCHED",
     "main_copy_temporarily_created": true,
-    "misplaced_main_commit": "f0d2db000",
+    "misplaced_main_commit": "NOT_CAPTURED",
     "misplaced_main_blob": "09b88b77ea56e57d50217a8e72bdbcab47125e01",
     "branch_copy_commit": "c469ba05f846df7f2124613d550e95dbd688fb08",
     "branch_copy_blob": "09b88b77ea56e57d50217a8e72bdbcab47125e01",
     "main_delete_commit": "5995c20922ec4e9d16aa0a88465bf507cea73df4",
     "main_after_delete": "NOT_FOUND",
     "final_chronicle_commit": "e7bfc330b3a613ed6201e30380a630cda8559d23",
-    "final_chronicle_blob": "01dfce22a1e75227a746cde88492e73389e6d839"
+    "final_chronicle_blob": "01dfce22a1e75227a746cde88492e73389e6d839",
+    "note": "El commit SHA de creación accidental en main no se obtuvo en la respuesta de la herramienta; se conserva el blob real y el commit de eliminación verificable, sin inventar el commit de creación."
   }
 }
