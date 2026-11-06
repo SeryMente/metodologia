@@ -4,7 +4,7 @@
 
 - **Nombre canónico vigente:** MCP-OCP (anteriormente MCP-METODOLOGIA).
 - **Identidad canónica vigente:** MCP-OCP. **Identidad histórica:** MCP-METODOLOGIA.
-- **Versión/sello:** MCP-OCP-v0.1.19 · gen. 5; ciclo DTC local 09; continuidad técnica aún bloqueada por P012/P013 y segundo host.
+- **Versión/sello:** MCP-OCP-v0.1.20 · gen. 5; ciclo DTC local 10; MVP local prioritario y separado de la instalación EP/B2.
 - **Repositorio propietario:** SeryMente/metodologia, rama main.
 - **OCP canónico:** frentes/mcp-metodologia/.
 - **Núcleo operativo único:** este archivo, MCP-METODOLOGIA.md.
@@ -212,7 +212,7 @@ Las autorizaciones futuras deberán quedar vinculadas a la operación concreta y
 
 ### 8.1 Registro provisional de tareas OCP
 
-Este apartado es el registro provisional autoritativo del backlog técnico MCP-OCP. No crea un OCP adicional. El OCP general del sprint se representa en el índice provisional GOV-TASK-* de Gobernanza; aquí se conserva el detalle técnico propio y se enlaza su origen transversal. El objeto de coordinación DTC conserva mensajes, cursores, respuestas y cierres de ciclo.
+El backlog operativo detallado y versionado se materializa en [LISTA-TAREAS-PROVISIONAL.md](LISTA-TAREAS-PROVISIONAL.md) (0.1, PROVISIONAL), siguiendo el patrón auxiliar documentado en otros frentes. No crea un segundo OCP, núcleo ni control. Este núcleo conserva el estado vivo; el objeto DTC conserva comunicaciones, cursores, respuestas y cierres de ciclo. La lista prioriza el MVP local independiente de EP/B2 y mantiene como dependencias separadas la instalación EP, el backup portable y la coexistencia con el puente Jules.
 
 | Tarea / dependencia de origen | Estado observado al ciclo local 08 | Resultado exigido / límite / evidencia |
 |---|---|---|
@@ -410,3 +410,36 @@ En cada ciclo sustantivo, conservar entradas directas y salidas visibles disponi
 La sincronización automática no se presume. La autoridad documental del frente reside en las rutas de este OCP en main; las copias locales y otras superficies son subordinadas.
 
 **Revisión inaugural:** VERIFICADA por lectura de vuelta del commit 63060667bf13b9c1abcb110857ba3eab85bfc915. Ocho de ocho entradas de archivo cotejadas: SHA del árbol main = SHA de la lectura de contenido.
+
+
+## 12. Decisión operativa vigente · servidor local MCP-OCP · 2026-11-06
+
+> Esta subsección actualiza el objetivo y la secuencia de ejecución. Prevalece sobre formulaciones anteriores del estado vivo que subordinaban el MVP al cierre de EP/B2 o dejaban sin decidir el transporte. Las secciones históricas y sus evidencias se conservan; no se reescriben como si hubieran sido actuales en ciclos anteriores.
+
+### 12.1 Propiedad y separación de producto
+
+El servidor MCP de Metodología pertenece exclusivamente al frente MCP-OCP y al repositorio SeryMente/metodologia. No forma parte del servidor ni del producto Khora y no se despliega en Vercel. Su propósito es leer fuentes canónicas, inspeccionar repositorios y apoyar el desarrollo y la gobernanza de OCP sometidos a Metodología. La denominación MSP del dictado U002 se conserva como original histórico; la identidad técnica vigente continúa siendo MCP-OCP.
+
+Khora conserva su servidor MCP único y la familia de herramientas Jules bajo /api/mcp. El puente de Jules es un cliente local RDC/stdio separado que usa OAuth 2.1/PKCE contra Khora. JULES_API_KEY permanece exclusivamente en Khora Production. MCP-OCP no recibe ni almacena claves, tokens o controles de Khora y no implementa un segundo servidor Jules.
+
+### 12.2 Transporte y exposición
+
+La preferencia de producto es un proceso MCP local por stdio, sin listener TCP/HTTP. RDC administra el proceso y los archivos del equipo; no es una razón para abrir puertos. Si una necesidad demostrada obliga a HTTP, se limita a loopback y se añaden pruebas negativas de acceso desde LAN/WAN. Quedan excluidos endpoint público, Vercel, túneles y publicación de red.
+
+La coexistencia esperada consta de dos clientes locales independientes: (1) servidor MCP-OCP local para herramientas de Metodología y desarrollo; (2) puente Jules local, que reenvía a Khora /api/mcp con OAuth. No se presume que ChatGPT Free descubra directamente un servidor stdio; el mecanismo efectivo de invocación mediante RDC debe probarse y documentarse.
+
+### 12.3 Prioridad de ejecución
+
+El MVP local debe construirse, probarse y empaquetarse ahora, sin esperar a que EP termine B2. La candidata .NET 10/stdio 0.1.0 es una evidencia técnica histórica de una revisión anterior: su recibo 31/31 unitarias, 29/29 integración y 200 componentes está ligado al core v0.1.16 y no demuestra un build contra v0.1.20. El código se reconciliará y probará de nuevo en rama candidata antes de emitir un recibo vigente.
+
+La lista provisional enlazada en §8.1 concentra once tareas MCP-OCP. P0 cubre contrato de separación, reconciliación del código, build/test/paquete, transporte/perímetro, acceso a fuentes y coexistencia RDC con Jules. El paquete preliminar puede entregarse antes de que EP complete su trabajo.
+
+### 12.4 Límites de dependencias externas
+
+La instalación y operación dentro del host EP pertenecen al OEP/EP y requieren su autorización específica; MCP-OCP entrega el paquete y el handoff. El backup portable y el restore cross-host se conservan como P2, bloqueados por P012/P013 y un host destino autorizado; no bloquean la construcción del MVP local. La prueba real de Jules se pospone hasta que las tareas del OCP MCP-Jules estén reconfiguradas y el operador otorgue consentimiento OAuth. El primer smoke autenticado será de solo lectura.
+
+MCP-NORMATIVO permanece DESACTIVADO. No se afirma verificación normativa automática. No se modifica DUG, IPZ, Sink, Khora, EP ni controles de otros frentes por esta decisión.
+
+### 12.5 Estado de aceptación
+
+A la fecha de esta actualización: lista provisional creada y leída de vuelta; núcleo pendiente de lectura de vuelta tras esta escritura; código local 0.1.0 aún no renovado contra v0.1.20; build/test/paquete vigente NO VERIFICADO; ejecución local por RDC NO VERIFICADA; instalación EP NO; aceptación por operador NO. Los cierres se declaran por evidencia individual, no por cierre documental de este OCP.
