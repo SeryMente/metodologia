@@ -1511,3 +1511,18 @@ Gobernanza registra la instrucción literal del operador, tal como fue documenta
 **Siguiente acción inmediata:** el operador debe estar físicamente junto a `015RENTA01` y conectar ese host a RDC. Después se ejecutará, en el mismo orden y sin ampliar el permiso, la bóveda EP ya autorizada y el preflight B2 read-only. Si los controles de bucket/prefijo/capacidades coinciden, se hará una sola prueba sintética; si no, se detendrá sin escritura remota.
 
 **Procedencia y límite:** lectura DUG `main` blob `54064c8fe00f872023a455f06596061ed69062ae`; consulta RDC de dispositivos el 2026-11-06; A literal recibida en esta conversación. Esta anotación no acredita ejecución técnica, custodia de secretos, autenticación, recepción del host ni aceptación MCP-OCP.
+
+
+### Rectificación de host activo EP · PC10RCIF4EI4 confirmado por el operador · 2026-11-06 · sesión actual · America/Mexico_City
+
+**A literal:** el operador confirmó «Sí» a la identificación de `PC10RCIF4EI4` como su computadora actual y precisó que `015RENTA01` ya no es su equipo.
+
+**Rectificación de la anotación anterior:** `015RENTA01` permanece como dispositivo histórico/desconectado, pero deja de ser el destino de ejecución actual de EP. El equipo activo para esta continuación es `PC10RCIF4EI4`, observado `ONLINE` por RDC y confirmado por el operador. La nota anterior que lo trataba como sustituto no autorizado queda supersedida en cuanto a identidad del host, no eliminada del historial.
+
+**Preflight de solo lectura observado en PC10RCIF4EI4:** Windows 11 Pro; Windows PowerShell 5.1.26100.9711; sistema x64; Git disponible; Backblaze B2 CLI no encontrada; `%LOCALAPPDATA%\Khora`, `secrets`, bóveda EP y estado SQLite B2 ausentes. No se leyeron credenciales ni archivos de perfiles B2.
+
+**Acción local preparada:** se leyó el helper canónico `SeryMente/khora/scripts/khora/env-vault.ps1`, blob `46efce0ff43c400bccdee11f02de5bc2ddd21e4c`. Se preparó en `%TEMP%` un script transitorio de captura EP independiente, compatible con el formato `salt/entries/nonce/cipher/tag`, AES-256-CBC + HMAC-SHA256, PBKDF2-HMAC-SHA256, escritura atómica, ACL restrictiva y descifrado/read-back en memoria. Parser PowerShell 5.1: PASS. Se lanzó una ventana local visible para captura oculta; proceso reportado `18512`.
+
+**Estado efectivo:** `CURRENT_EP_HOST=PC10RCIF4EI4`; `OPERATOR_PRESENCE_DECLARED_FOR_CURRENT_HOST=YES`; `VAULT_CAPTURE=AWAITING_OPERATOR_INPUT`; `VAULT_FILE=NOT_YET_VERIFIED`; `B2_CLI=NOT_INSTALLED`; `B2_ACCOUNT_AUTH=NOT_EXECUTED`; `B2_REMOTE_TEST=NOT_EXECUTED`. No se ha capturado ningún valor ni se ha llamado al proveedor. La bóveda compartida KHORA permanece intacta.
+
+**Siguiente paso:** el operador introduce la frase maestra y únicamente las dos variables EP en la ventana visible local. Tras señal de éxito, EP coteja tamaño, SHA-256, ACL y read-back del archivo. Después instala/verifica la CLI oficial y procesa la autenticación/preflight de solo lectura, respetando el alcance ya autorizado.
