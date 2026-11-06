@@ -4,16 +4,16 @@
 
 - **Nombre canónico vigente:** MCP-OCP (anteriormente MCP-METODOLOGIA).
 - **Identidad canónica vigente:** MCP-OCP. **Identidad histórica:** MCP-METODOLOGIA.
-- **Versión/sello:** MCP-OCP-v0.1.18 · gen. 4; ciclo DTC local 08 y bloqueo P012/P013.
+- **Versión/sello:** MCP-OCP-v0.1.19 · gen. 5; ciclo DTC local 09; continuidad técnica aún bloqueada por P012/P013 y segundo host.
 - **Repositorio propietario:** SeryMente/metodologia, rama main.
 - **OCP canónico:** frentes/mcp-metodologia/.
 - **Núcleo operativo único:** este archivo, MCP-METODOLOGIA.md.
 - **Control autoritativo:** CONTROL-RESPONSABILIDAD.json.
 - **Evento constitutivo:** C-MCP-METODOLOGIA-001. Evento local, no folio global.  
 - **Identidad vigente:** MCP-OCP desde C-MCP-OCP-RETOMA-20261031-01; el nombre anterior se conserva como antecedente.
-- **Titular actual:** alias operativo `chatgpt-mcp-ocp-01a199d8-9209-725c-b764-a0a66ac54882`; UUIDv7 local `01a199d8-9209-725c-b764-a0a66ac54882`; generación 4. No es un ID nativo de ChatGPT.
+- **Titular actual:** alias operativo `chatgpt-mcp-ocp-01a1b2dc-8980-7046-a912-a6e84316b2c3`; UUIDv7 local `01a1b2dc-8980-7046-a912-a6e84316b2c3`; generación 5. No es un ID nativo de ChatGPT.
 - **Titularidad inicial:** adjudicada a esta instancia por instrucción expresa de apertura; control generación 1.
-- **Sesión local:** `SES-20261101-3D504C5A` (alias operativo + UUIDv7 local; sin ID nativo expuesto). **Folios globales CV/CY/A/B y por OCP:** PENDIENTE/NO ASIGNADO; FOL1 continúa PREPARADO_PENDIENTE_ACTIVACION_IPZ.
+- **Sesión local:** `SES-20261106-CDF82783` (alias operativo + UUIDv7 local; sin ID nativo expuesto). **Folios globales CV/CY/A/B y por OCP:** PENDIENTE/NO ASIGNADO; FOL1 continúa PREPARADO_PENDIENTE_ACTIVACION_IPZ.
 - **Estado de persistencia:** creación documental verificada por lectura de vuelta y cotejo de SHA de los ocho archivos del evento; commit de creación 63060667bf13b9c1abcb110857ba3eab85bfc915.
 
 ## 2. LEER PRIMERO
@@ -73,6 +73,16 @@ Antes de cada ciclo sustantivo:
 - RDC: 015RENTA01 online; PC-8 y PC-14 offline. Un único host disponible; no hay segundo host/perfil autorizado online para restore cross-host.
 - Principios y aplicación: P001 cascada; P004 no simulación; P005 no modificar DUG sin autorización; P012/P013 candado de seguridad/arquitectura; P038 main; P043 anti-ineficiencia. Esta sección no modifica el DUG ni su firma.
 - Medición temporal: d.h.m. por ruta se calcula contra el último commit de esa ruta y el reloj local adquirido; instalación nativa IPZ y folios globales siguen sin verificación/asignación.
+
+### 3.4 Cursor de retoma y persistencia · ciclo local MCP-OCP 09 · 2026-11-06
+
+- DUG/Metacanon/GOW adquiridos desde `main`: Samantha v377 · NX-377m; Metacanon 1.28; GOW 2.17; DUG blob `54064c8fe00f872023a455f06596061ed69062ae`. §ARR consultado; cascada revisada manualmente. La divergencia visual del sidebar v375 frente al cuerpo/footer/JSON v377 sigue bajo Gobernanza; MCP-OCP no modifica el DUG.
+- Control transferido en este ciclo: gen. 4 → 5 mediante `TRANSFER_RESPONSIBILITY`; commit CAS `c827767ecc39d29933b04bd05eb6058c0e0ea197`; blob inmediato `f3b909754675d1db0b978406acf23e4243e110a3`; confirmación documental/read-back commit `6280bbb2afabd278ef62f0dfd8a8dc0b27ab40e8`; control final blob `1fcf4178d58b39cecc3028c92493932b2ca7ab60`, `VERIFIED/MATCHED`.
+- Titular de esta sesión: alias operativo `chatgpt-mcp-ocp-01a1b2dc-8980-7046-a912-a6e84316b2c3`; UUIDv7 local `01a1b2dc-8980-7046-a912-a6e84316b2c3`; folio local `SES-20261106-CDF82783`. El ID nativo de ChatGPT no está expuesto. Búsqueda exacta sin colisión en el ámbito SeryMente accesible; unicidad global no verificada.
+- DTC: ciclo local 09 `C-MCP-OCP-DTC-20261106-09`; apertura commit `d5cd9ddb7f28fa1897211d90d94eb1e2600133cb`, blob `5d1bb7758d79bedd5cd1489ec93e96c821fd890b`. Se acusa recibo de la rectificación posterior al ciclo 08: `DTC_CYCLE_STATUS=CLOSED_VERIFIED` y `MCP_TECHNICAL_STATUS=BLOCKED_PENDING_OPERATOR_SECURITY_REVIEW_AND_SECOND_HOST`; ciclo 08 no se reabre.
+- Captura solicitada: `conversaciones/ChatGPT-OCP MCP-20261106-1557.txt`, blob `90059bedac67a45c9e82f39bcfaf4735affd8b84`, commit `7071655df3ffb971b6802921dd8f671ce96c440c`, read-back literal MATCHED. Es captura parcial del mensaje A visible; el archivo original no estuvo adjunto ni fue localizado y no se afirma export nativo ni copia byte a byte.
+- GOV-TASK-014 continúa `EN_CURSO`; EP-TASK-002 continúa `en_curso`; B2 remoto y restore cross-host NO VERIFICADOS. No se ejecutan operación B2, cambios EP, acceso a secretos, host, instalación, merge o despliegue. Autorización B no ampliada.
+- FOL1 `PREPARADO_PENDIENTE_ACTIVACION_IPZ`; CV/CY/A/B globales y por OCP `PENDIENTE/NO ASIGNADO`. MCP-NORMATIVO `DESACTIVADO`.
 
 ## 4. Propósito y alcance
 
@@ -374,6 +384,22 @@ La transferencia afecta únicamente la responsabilidad del OCP y su identidad do
 - Commit de persistencia `e6e7041d9fdfd71c1ce18aa3f831ced1e7ffcff5`; blob leído de vuelta `bebd00b312f5db1f11910682452de9d95ef5ca08`; cotejo literal: MATCHED.
 - Crónica y evidencia del procesamiento DTC local 07: [crónica](cronica/C-MCP-OCP-DTC-20261101-07.md), [evidencia](evidencias/C-MCP-OCP-DTC-20261101-07.json); respuesta técnica y cierre en coordinación §31.
 - El archivo original local en Downloads no fue alterado. La exportación no se presenta como captura nativa exhaustiva de toda la conversación de ChatGPT.
+
+### Tercera retoma de responsabilidad · 2026-11-06 · ciclo local 09
+
+**Evento local:** `C-MCP-OCP-RETOMA-20261106-01`. **Instrucción directa:** «ChatGPT-OCP MCP-20261106-1557.txt. Documenta enpersistencia documental, del frente d trabajo OCP MCP, y retoma la respnsabiulidad.» Se interpreta como `TRANSFER_RESPONSIBILITY`, no como `ADD_CO_RESPONSIBLE`.
+
+- Titular previo gen. 4: `chatgpt-mcp-ocp-01a199d8-9209-725c-b764-a0a66ac54882`, UUIDv7 local `01a199d8-9209-725c-b764-a0a66ac54882`; sesión `SES-20261101-3D504C5A`.
+- Nuevo titular gen. 5: `chatgpt-mcp-ocp-01a1b2dc-8980-7046-a912-a6e84316b2c3`, UUIDv7 local `01a1b2dc-8980-7046-a912-a6e84316b2c3`; sesión `SES-20261106-CDF82783`. El ID nativo de conversación no está expuesto.
+- Control previo blob `ecb27b04aaba04025ef596b3f0ed6c049bc2420d`; commit CAS `c827767ecc39d29933b04bd05eb6058c0e0ea197`; read-back inmediato blob `f3b909754675d1db0b978406acf23e4243e110a3`; commit de constatación `6280bbb2afabd278ef62f0dfd8a8dc0b27ab40e8`; control final blob `1fcf4178d58b39cecc3028c92493932b2ca7ab60`; resultado `VERIFIED/MATCHED`, gen. 5.
+- Búsqueda exacta de folio/UUIDv7 sin colisión en los repositorios SeryMente accesibles. No demuestra unicidad global fuera del ámbito accesible.
+- La autorización B anterior se conserva exactamente; no se amplía el alcance del servidor. No se transfiere control sobre EP, Gobernanza, Khora ni el DUG.
+
+### Captura documental solicitada · 2026-11-06
+
+- Ruta: [ChatGPT-OCP MCP-20261106-1557.txt](conversaciones/ChatGPT-OCP%20MCP-20261106-1557.txt).
+- Estado: `CAPTURA_DOCUMENTAL_PARCIAL`. El archivo original no estuvo adjunto ni se localizó en la biblioteca consultada. La materialización conserva el mensaje A visible y declara expresamente que no es export nativo, copia byte a byte ni conversación completa.
+- Commit `7071655df3ffb971b6802921dd8f671ce96c440c`; blob `90059bedac67a45c9e82f39bcfaf4735affd8b84`; read-back literal MATCHED.
 
 ## 13. Persistencia y revisión
 
