@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "event_id": "C-MCP-JULES-016",
+  "date": "2026-11-06",
+  "front": "mcp-jules",
+  "owner_generation": 3,
+  "owner_alias": "chatgpt-C-MCP-JULES-015-01a18f95-61cf-70ce-9321-c56fbd3cc99d",
+  "session_folio_status": "PENDING_NOT_ASSIGNED_FOL1_INACTIVE",
+  "dug": {
+    "version": "Samantha v377",
+    "signature": "NX-377m",
+    "metacanon": "1.28",
+    "gow": "2.17",
+    "blob": "54064c8fe00f872023a455f06596061ed69062ae",
+    "arr_read": true,
+    "cascade_manual_review": true
+  },
+  "authorization": {
+    "operator_authorized_provisional_task_plan_acceptance_edits": true,
+    "literal_scope": "Modify MCP-Jules provisional tasks, plan and acceptance documents to prepare early use of Jules and align it with MCP-OCP as a separate local methodology server outside Khora.",
+    "excluded": [
+      "MCP-Jules responsibility transfer",
+      "CONTROL-RESPONSABILIDAD.json mutation",
+      "Khora code/Production/secrets",
+      "EP host or installation",
+      "DUG/IPZ/Sink change",
+      "merge of Metodologia PR #19",
+      "Jules API calls/session creation"
+    ]
+  },
+  "decision": {
+    "mcp_ocp": "Independent local methodology server, exclusive to SeryMente/metodologia OCP; preferred stdio over RDC; no public listener.",
+    "khora": "Retains its single MCP /api/mcp and seven Jules tools.",
+    "jules_client": "Local RDC/stdio bridge using Khora OAuth 2.1 Authorization Code + PKCE; explicit owner consent; DPAPI CurrentUser for refresh token; access token memory-only; JULES_API_KEY remains in Khora Production.",
+    "old_public_plugin_route": "SUPERSEDED; not a gate for current delivery.",
+    "project_phases": "Exactly two; Fase 1 complete; Fase 2 in progress."
+  },
+  "khora_dependencies": {
+    "pr345": {
+      "merge_commit": "953e69484eabb4e8dc8221d1d8fc188373531bfa",
+      "status": "MERGED_TO_KHORA_MAIN"
+    },
+    "pr347": {
+      "merge_commit": "4530e03a33c5e1743ab9646eb6c862b3c458c605",
+      "status": "MERGED_TO_KHORA_MAIN"
+    },
+    "historical_tests": "568/568 and 572/572 PC-14, not fresh current-profile validation"
+  },
+  "artifacts": {
+    "provisional_task_list": {
+      "path": "frentes/mcp-jules/LISTA-TAREAS-PROVISIONAL.md",
+      "version": "0.1",
+      "commit": "56ba05c39038cb9e208dc248a94e8915c6f91b87",
+      "blob": "2ba091b369e9900f34f835a3b3815792e5d346ca",
+      "readback": "MATCHED"
+    },
+    "acceptance": {
+      "path": "frentes/mcp-jules/pruebas/PLAN-ACEPTACION-MVP.md",
+      "version": "1.9.0",
+      "criteria": "T01-T38",
+      "commit": "51668e89f36174504ffdb5fa236fb59e61a52d2c",
+      "blob": "48686f551634fff942cd49b2af39dfb9fe9650f4",
+      "readback": "MATCHED"
+    },
+    "plan": {
+      "path": "frentes/mcp-jules/PLAN-INTEGRAL-MCP-JULES-v1.0.md",
+      "version": "1.1.0",
+      "commit": "3259223206cc873298350e3319c499a22cb20a91",
+      "blob": "4cfeaecdf5fbe0a64ef575ee39bad39f1cb60fcf5",
+      "readback": "MATCHED"
+    },
+    "ocp": {
+      "path": "frentes/mcp-jules/OBJETO-CANONICO.md",
+      "version": "0.1.13",
+      "commit": "a8dab070ccea14d19fb446b51281227fc0c8a017",
+      "blob": "656888bc333c643bab46114a033fb77aa6ce0e27",
+      "readback": "MATCHED"
+    },
+    "readme": {
+      "path": "frentes/mcp-jules/README.md",
+      "commit": "260a7d71c8c1c1d550cd7f557641d4530342f646",
+      "blob": "aed715c35797cfb564e640f611e7c8682f486bd0",
+      "readback": "MATCHED"
+    },
+    "chronicle": {
+      "path": "frentes/mcp-jules/cronica/C-MCP-JULES-016.md",
+      "commit": "c469ba05f846df7f2124613d550e95dbd688fb08",
+      "blob": "09b88b77ea56e57d50217a8e72bdbcab47125e01",
+      "readback": "MATCHED"
+    }
+  },
+  "controls": {
+    "mcp_jules": {
+      "generation": 3,
+      "blob": "113bf1930638843d52fe68441e76b2e0879e83f5",
+      "mutated": false
+    },
+    "khora_mcp": {
+      "mutated": false
+    },
+    "mcp_ocp": {
+      "mutated": false
+    }
+  },
+  "execution": {
+    "local_rdc_device_observed": "PC10RCIF4EI4 online",
+    "oauth_consent": "NOT_PERFORMED",
+    "authenticated_tools_list": "NOT_VERIFIED",
+    "jules_read_calls": "NOT_PERFORMED",
+    "jules_write_calls": "NOT_PERFORMED",
+    "jules_session_created": false,
+    "e2e_sandbox": "NOT_PERFORMED",
+    "pause_status": "PAUSED_PENDING_OPERATOR_RESUME"
+  },
+  "status": {
+    "task_configuration": "DOCUMENTARY_CONFIGURED_READBACK_MATCHED",
+    "phase_1": "COMPLETE",
+    "phase_2": "IN_PROGRESS",
+    "oauth_real": "NOT_VERIFIED",
+    "e2e": "NOT_VERIFIED",
+    "pr19": "OPEN_DRAFT_NOT_MERGED",
+    "control_generation": "3"
+  },
+  "correction": {
+    "misplaced_chronicle_copy_in_main_blob": "09b88b77ea56e57d50217a8e72bdbcab47125e01",
+    "copied_to_correct_branch_commit": "c469ba05f846df7f2124613d550e95dbd688fb08",
+    "correct_branch_blob": "09b88b77ea56e57d50217a8e72bdbcab47125e01",
+    "removed_from_main_commit": "5995c20922ec4e9d16aa0a88465bf507cea73df4",
+    "main_path_after_delete": "NOT_FOUND",
+    "readback_on_feature_branch": "MATCHED"
+  }
+}
