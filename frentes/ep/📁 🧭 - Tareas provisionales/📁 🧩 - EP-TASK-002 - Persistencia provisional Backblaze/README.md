@@ -1606,7 +1606,7 @@ La entrada literal del operador fue «Chi.». Se interpreta afirmativamente por 
 
 ### Entrada, procedencia y captura del original
 
-El operador indicó `ChatGPT-EP-20261106-1708.txt` y pidió incorporarlo a la persistencia documental EP y reanudar el trabajo. El archivo no apareció entre los adjuntos de la conversación ni en la búsqueda de título de la Biblioteca. La búsqueda recursiva amplia del perfil del host se detuvo sin resultado disponible; el sondeo acotado de Escritorio, Descargas, Documentos y Temp aún no había terminado al registrar esta entrada. El original se conserva como `NO_LOCALIZADO`: no se atribuye contenido, hash ni lectura; no se crea sustituto ni se declara incorporación verbatim. Esta crónica documenta solo evidencia accesible en este ciclo.
+El operador indicó `ChatGPT-EP-20261106-1708.txt` y pidió incorporarlo a la persistencia documental EP y reanudar el trabajo. El archivo no apareció entre los adjuntos de la conversación ni en la búsqueda de título de la Biblioteca. La búsqueda recursiva amplia del perfil del host se detuvo sin resultado disponible; el sondeo acotado de Escritorio, Descargas, Documentos y Temp fue detenido después de no producir coincidencias visibles, sin completar una búsqueda exhaustiva. El original se conserva como `NO_LOCALIZADO_EN_LAS_SUPERFICIES_REVISADAS`: no se atribuye contenido, hash ni lectura; no se crea sustituto ni se declara incorporación verbatim. Esta crónica documenta solo evidencia accesible en este ciclo.
 
 ### A literal de estado B2 reportada por el operador
 

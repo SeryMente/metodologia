@@ -1591,7 +1591,7 @@ Gobernanza registra la instrucción literal del operador, tal como fue documenta
 
 ### Cierre documental EP · reanudación 2026-11-06 · ciclo local existente EP-03
 
-**Procesamiento realizado:** se leyó el OEP y el núcleo EP-TASK-002 en `main`; se incorporó la evidencia disponible del fallo `EP_B2_ACCOUNT_AUTH=FAILED reason=UNEXPECTED_ERROR_RemoteException`; se registraron metadatos locales no secretos de la bóveda cifrada y caché aislada; se mantuvo la limitación del original `ChatGPT-EP-20261106-1708.txt` como `NO_LOCALIZADO` (el sondeo acotado seguía sin salida al momento de este cierre, por lo que no se afirma su inexistencia en el equipo ni su ingestión).
+**Procesamiento realizado:** se leyó el OEP y el núcleo EP-TASK-002 en `main`; se incorporó la evidencia disponible del fallo `EP_B2_ACCOUNT_AUTH=FAILED reason=UNEXPECTED_ERROR_RemoteException`; se registraron metadatos locales no secretos de la bóveda cifrada y caché aislada; se mantuvo la limitación del original `ChatGPT-EP-20261106-1708.txt` como `NO_LOCALIZADO_EN_LAS_SUPERFICIES_REVISADAS` (los sondeos disponibles no produjeron coincidencias visibles y fueron detenidos sin completar una búsqueda exhaustiva; no se afirma inexistencia en otras rutas ni ingestión).
 
 **Persistencia documental afectada y verificación de lectura de vuelta:**
 - OEP `frentes/ep/OEP.md`: §96 materializado, versión documental v0.3.28 / VCU-EP-v29, blob `7057f82ac4a44e562c2a82567e0c3df0f0605d9f`; lectura de vuelta comparada contra el contenido escrito: coincidencia exacta.
@@ -1605,3 +1605,8 @@ Gobernanza registra la instrucción literal del operador, tal como fue documenta
 **Bloqueos/siguiente acción:** localizar el TXT original o recibirlo como adjunto; inspeccionar recibos/salida no secreta del intento B2 para determinar el origen de `RemoteException`, sin leer la bóveda ni el contenido de caché SQLite. No repetir `account authorize` ni ejecutar bucket/objeto sin nueva autorización expresa, posterior al diagnóstico. MCP-OCP mantiene autoridad exclusiva sobre su restauración nativa y aceptación.
 
 **Identidad y continuidad:** se conserva `C-EP-MOD-SCRIPTPWS-20261101-03` en `OPEN`; `EP-TASK-002=en_curso`; no se crea nuevo ciclo/OCP/control/sesión ni folio. FOL1 no consta ACTIVO; CONV/CICLO/A/B globales permanecen no asignados.
+
+
+### Rectificación de alcance de búsqueda del TXT fuente · 2026-11-06 · mismo ciclo EP-03
+
+El sondeo local acotado de `Desktop`, `Downloads`, `Documents` y `Temp` en `PC10RCIF4EI4` no produjo coincidencias visibles y fue detenido manualmente al comprobar que el proceso seguía activo sin salida. La búsqueda recursiva más amplia también fue detenida sin resultado disponible. Esto permite afirmar únicamente `NO_LOCALIZADO_EN_LAS_SUPERFICIES_REVISADAS`; no prueba que el archivo no exista en otras rutas, perfiles o medios. No se obtuvieron bytes ni SHA y no se incorporó el original. Se corrigen en ese sentido las notas de OEP §96 y EP-TASK-002 §40. El estado técnico B2 no cambia: autenticación fallida reportada, sin reintento y sin operaciones de bucket/objeto.

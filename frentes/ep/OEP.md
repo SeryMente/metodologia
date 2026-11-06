@@ -1970,7 +1970,7 @@ Estado EP-TASK-002: `en_curso`; bóveda `AWAITING_LOCAL_INPUT`; B2 CLI ausente; 
 
 ### Fuente y alcance documental
 
-El operador indicó el archivo `ChatGPT-EP-20261106-1708.txt` y solicitó documentarlo en el frente EP y reanudar la conversación. En esta sesión no apareció como adjunto de la conversación ni en la búsqueda de título de la Biblioteca. El sondeo recursivo del perfil del host quedó detenido sin resultado y el sondeo acotado de Escritorio/Descargas/Documentos/Temp permanecía en curso al redactar esta sección. Por tanto, el TXT original queda `NO_LOCALIZADO`; no hay bytes, contenido, SHA ni procedencia verificables y no se declara incorporado. Esta sección conserva únicamente las entradas literales recibidas en la conversación y las observaciones de los objetos/host consultados.
+El operador indicó el archivo `ChatGPT-EP-20261106-1708.txt` y solicitó documentarlo en el frente EP y reanudar la conversación. En esta sesión no apareció como adjunto de la conversación ni en la búsqueda de título de la Biblioteca. El sondeo recursivo del perfil del host fue detenido sin resultado disponible; el sondeo acotado de Escritorio/Descargas/Documentos/Temp se detuvo después de no producir coincidencias visibles, sin completar una búsqueda exhaustiva. Por tanto, el TXT original queda `NO_LOCALIZADO_EN_LAS_SUPERFICIES_REVISADAS`; no hay bytes, contenido, SHA ni procedencia verificables y no se declara incorporado. Esta sección conserva únicamente las entradas literales recibidas en la conversación y las observaciones de los objetos/host consultados.
 
 ### Resultado de autenticación reportado
 
