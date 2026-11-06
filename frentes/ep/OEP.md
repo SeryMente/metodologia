@@ -1904,3 +1904,16 @@ EP-TASK-002 §§28–31 conserva el alcance ampliado, la matriz inicial de datas
 - GOV-TASK-014, último blob leído `d529b2bd0ab5871bc32bcaf344a519d94fff316e`; su falta de actualización no se presenta como aceptación.
 
 **Estado OEP:** EP-TASK-002 `en_curso`; persistencia MCP-OCP incorporada al alcance DTC; GOV-TASK-014 en curso y pendiente de read-back sobre la ampliación; autenticación B2 y restauración multiubicación `NO_VERIFICADAS`. Sin operación B2 ni cambio sobre el código/control MCP-OCP.
+
+
+### Actualización de autorización y estado de ejecución · 2026-11-06
+
+El operador respondió «Si» a la solicitud explícita de autorizar la autenticación de la aplicación EP existente y una prueba remota no destructiva limitada a `OCP-MCP`. El permiso se conserva en el DTC EP, commit `a153926b8a84c372cde2cac4873859656a8693bb`, blob `549b6cbb4933666876ad312dd781e0904482bfa6`; y en EP-TASK-002 §37.
+
+**Alcance permitido cuando se satisfagan las compuertas:** autenticación de la aplicación EP existente; lectura de identidad, bucket, privacidad, prefijo y capacidades efectivas; un solo artefacto sintético cifrado con nombre único; upload, comprobación de metadatos/lectura y SHA-256 remoto, download, cotejo local y restore del artefacto sintético a un destino aislado. No se autoriza crear/rotar claves, modificar bucket/ACL/CORS/lifecycle/políticas, borrar o sobrescribir objetos existentes ni actuar sobre producción. El prefijo `ep-ocp/` sigue sujeto a confirmación efectiva del proveedor.
+
+**Bloqueos vigentes:** el DUG v377 · NX-377m P012/P013 exige revisión/presencia presencial del operador durante el mismo ciclo para autenticación, cifrado y seguridad. No se ha confirmado presencia actual junto al host `015RENTA01`; RDC muestra ese dispositivo offline. El equipo `PC10RCIF4EI4` está online pero no sustituye al host canónico autorizado. La bóveda EP y la autenticación no se han ejecutado; no hay preflight, objeto remoto, read-back, download ni restore. Las declaraciones de presencia del ciclo del 2026-11-01 no se heredan.
+
+**Estado vivo:** `EP-TASK-002=en_curso`; permiso de prueba B2 concedido por el operador pero `PENDING_P012_P013`; host `OFFLINE`; `B2_ACCOUNT_AUTH=NOT_EXECUTED`; `B2_REMOTE_TEST=NOT_EXECUTED`; `MCP_OCP_NATIVE_RESTORE=NOT_ACCEPTED`. Próxima acción: presencia/revisión en `015RENTA01`, conexión RDC, bóveda EP local, autorización con clave existente, preflight read-only y una sola prueba sintética si el alcance efectivo coincide.
+
+Esta actualización documental no certifica persistencia operativa, ni modifica la autoridad del propietario MCP-OCP sobre el backup/restore nativo, ni cierra EP-TASK-002.
