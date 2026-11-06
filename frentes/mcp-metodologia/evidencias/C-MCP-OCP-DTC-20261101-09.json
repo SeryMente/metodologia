@@ -1,218 +1,288 @@
 {
-  "schema_version": 1,
-  "artifact": "MCP-OCP DTC cycle 09 evidence",
-  "cycle_local": "C-MCP-OCP-DTC-20261101-09",
-  "session_folio": "SES-20261101-3D504C5A",
-  "owner": {
-    "alias": "chatgpt-mcp-ocp-01a199d8-9209-725c-b764-a0a66ac54882",
-    "uuidv7_local": "01a199d8-9209-725c-b764-a0a66ac54882",
-    "native_chatgpt_conversation_id": "NOT_EXPOSED",
-    "generation": 4
-  },
-  "A_literal": [
-    "Si",
-    "Si, usa rdc los minutos que tienes y luego prepara todo para que te quedes trabajando en giuthub el tiempo qeu se pueda"
-  ],
-  "operator_decision": {
-    "PPR_V1": "APPROVED_BY_OPERATOR_IN_PERSON",
-    "scope": "Implementation, synthetic tests, compilation, corrections, packaging only inside frentes/mcp-metodologia/ under existing B authorization.",
-    "does_not_authorize": [
-      "B2",
-      "EP credentials or host operations",
-      "host configuration changes",
-      "real restore",
-      "second-host use",
-      "installation",
-      "PR or merge",
-      "changes outside frentes/mcp-metodologia/"
-    ]
-  },
-  "sources": {
-    "main_head": "f2969421d0410e82af554642487b2c197fa80707",
-    "control_blob": "ecb27b04aaba04025ef596b3f0ed6c049bc2420d",
-    "core_prior_blob": "9c2cdc01b2f5be3b39ee49ce179084f4fb75b436",
-    "DUG": "Samantha v377 / NX-377m; Metacanon 1.28; GOW 2.17",
-    "candidate_branch": "integration/ocp-mcp-0.1.0-selective-20261101",
-    "candidate_head": "ef639b62509a9b7ae623c3fbd187466ee2e2a3d9",
-    "new_branch": "feature/mcp-ocp-portable-recovery-v1-20261101",
-    "main_head_at_branch_creation": "f2969421d0410e82af554642487b2c197fa80707",
-    "main_head_revalidated": "439ccbdca9b2e02b299253ca7bc73b3ab1292aba",
-    "main_delta": {
-      "commit": "439ccbdca9b2e02b299253ca7bc73b3ab1292aba",
-      "message": "docs(governance): update sprint checklist with EP local authorization scope",
-      "changed_paths": [
-        "frentes/ep/entregas/COORDINACION-GOBERNANZA-EP-v0.1.md",
-        "frentes/gobernanza/📁 🧭 - Tareas provisionales/README.md"
-      ],
-      "MCP_front_changed": false,
-      "core_main_blob": "9c2cdc01b2f5be3b39ee49ce179084f4fb75b436",
-      "coordination_main_blob": "dacb3ef3aef725980fc29067ff6b4b82eb2b2f34",
-      "control_main_blob": "ecb27b04aaba04025ef596b3f0ed6c049bc2420d",
-      "DUG_blob": "54064c8fe00f872023a455f06596061ed69062ae",
-      "branch_not_merged_or_rebased": true
-    }
-  },
-  "preflight_RDC": {
-    "device": "015RENTA01",
-    "device_status": "ONLINE",
-    "platform": "Windows x64",
-    "shell": "PowerShell 5.1",
-    "other_hosts": {
-      "PC_8": "OFFLINE",
-      "PC_14": "OFFLINE"
-    },
-    "monthly_RDC_calls_remaining_pct": 77,
-    "local_methodology_clone": "NOT_FOUND_IN_STANDARD_ROOTS",
-    "git": "NOT_FOUND_IN_PATH",
-    "gh": "NOT_FOUND_IN_PATH",
-    "dotnet_path": "C:\\Program Files\\dotnet\\dotnet.exe",
-    "dotnet_sdks": [],
-    "dotnet_runtimes": [
-      "Microsoft.NETCore.App 8.0.11",
-      "Microsoft.AspNetCore.App 8.0.11"
-    ],
-    "project_target": "net10.0",
-    "temporary_workspace": "%TEMP%\\mcp-ocp-ppr1",
-    "build": "NOT_RUN_MISSING_DOTNET_10_SDK",
-    "tests": "NOT_RUN"
-  },
-  "artifacts": {
-    "cycle_coordination": {
-      "path": "frentes/mcp-metodologia/entregas/COORDINACION-SPRINT-OCP-MCP-v0.1.md",
-      "commit": "8feaec1e3b37bfed213b6d2a76bd412891287294",
-      "blob": "f9c3e0ce43a5bb31ff2bd6c6d11b23bd7c8d300c",
-      "readback": "EXACT"
-    },
-    "source_import": {
-      "commit": "5c84d689ca1c6593e4b95c749a3a767576b1a30c",
-      "tree": "a38c111a4658627d163b8531cdcf0e99efa490cb",
-      "files": 21,
-      "origin_branch": "integration/ocp-mcp-0.1.0-selective-20261101",
-      "receipt_and_old_docs_imported": false,
-      "readback": "GIT_TREE_REF_VERIFIED"
-    },
-    "contract": {
-      "path": "frentes/mcp-metodologia/PPR-V1-CONTRACT.md",
-      "commit": "d1b97095116a7e9aa7f719f822b56f29239e6453",
-      "blob": "dda67e5107f100b27f1e4d76680c81d41cafb1de",
-      "readback": "EXACT"
-    },
-    "manifest_schema": {
-      "path": "frentes/mcp-metodologia/schemas/portable-recovery-package-v1.schema.json",
-      "commit": "f402ee483acfc7603177523431fde8cde4792848",
-      "blob": "7d3126c40d19e43c5123b3acbfc2f4b53c1f7767",
-      "readback": "EXACT_JSON_VALIDATED"
-    },
-    "core": {
-      "path": "frentes/mcp-metodologia/MCP-METODOLOGIA.md",
-      "version": "MCP-OCP-v0.1.19",
-      "commit": "3c7bcd077902af34ab1764842fd3a7d3906b39fc",
-      "blob": "3390099890e3734be9a829be003ab2d217b60690",
-      "readback": "EXACT"
-    },
-    "coordination_checkpoint": {
-      "commit": "37819c3b2bb3a03e67c6345f383938a3baecae58",
-      "blob": "466aa71b6dafbf6b5e60eec54c87eecdf44b04e9",
-      "readback": "EXACT"
-    },
-    "chronicle": {
-      "path": "frentes/mcp-metodologia/cronica/C-MCP-OCP-DTC-20261101-09.md",
-      "commit": "f6068ec2fafcaa408da95bf2af258c7b274720b0",
-      "blob": "b6d9ec31b040a9fc4bbd763cc36042366ffda6eb",
-      "readback": "EXACT"
-    },
-    "readme": {
-      "path": "frentes/mcp-metodologia/README.md",
-      "commit": "6738f9c5f598e2b1f8fb73c6087fd424643f2389",
-      "blob": "ac67c01875aace5627547f30421b4640adaa5a48",
-      "readback": "EXACT"
-    },
-    "coordination_cursor_before_final_evidence_update": {
-      "commit": "7aef9cdbdc5964ae5c87b5ec44dbd1fd7b3b942d",
-      "blob": "cf379a1746ce1f3de346f9a44b12182d4d517759",
-      "readback": "EXACT"
-    },
-    "dialogue": {
-      "path": "frentes/mcp-metodologia/conversaciones/C-MCP-OCP-DTC-20261101-09-dialogo.jsonl",
-      "commit": "dae10b0d5913ed5668009185f5371ece0eb14f13",
-      "blob": "484335162cd1845d3194f845ac385ad274ff4569",
-      "records": 3,
-      "readback": "EXACT"
-    },
-    "coordination_latest_checkpoint": {
-      "path": "frentes/mcp-metodologia/entregas/COORDINACION-SPRINT-OCP-MCP-v0.1.md",
-      "commit": "7aef9cdbdc5964ae5c87b5ec44dbd1fd7b3b942d",
-      "blob": "cf379a1746ce1f3de346f9a44b12182d4d517759",
-      "readback": "EXACT"
-    },
-    "coordination_final_cursor_before_evidence_pointer_pin": {
-      "path": "frentes/mcp-metodologia/entregas/COORDINACION-SPRINT-OCP-MCP-v0.1.md",
-      "commit": "a239d673dc85fccf9cf8f22549b637b512f67d18",
-      "blob": "7619f3531855a6f02a264e3c622b408f1ede21dc",
-      "readback": "EXACT"
-    }
-  },
-  "task_update": {
-    "core_version": "MCP-OCP-v0.1.19",
-    "backlog": "§8.1/§8.2 updated",
-    "GOV_TASK_014": "C08 proposal closed; C09 PPR v1 approved; contract/schema and source baseline published; implementation pending",
-    "no_new_OCP": true,
-    "no_EP_or_GOV_task_mutation": true
-  },
-  "execution": {
-    "DTC_CYCLE_STATUS": "OPEN",
-    "MCP_TECHNICAL_STATUS": "IMPLEMENTATION_AUTHORIZED_IN_ISOLATED_BRANCH; PPR_CODE_NOT_IMPLEMENTED; BUILD_TEST_NOT_VERIFIED",
-    "source_files_imported": true,
-    "PPR_contract_created": true,
-    "PPR_manifest_schema_created": true,
-    "PPR_service_code_implemented": false,
-    "CLI_commands_implemented": false,
-    "build": false,
-    "tests": false,
-    "real_db_access": false,
-    "restore": false,
-    "B2": false,
-    "credential_access": false,
-    "host_changes": false,
-    "PR": false,
-    "merge": false,
-    "installation": false,
-    "acceptance": false
-  },
-  "blockers": [
-    {
-      "id": "DOTNET_10_SDK",
-      "status": "BLOCKING_BUILD_TEST",
-      "detail": "015RENTA01 has only .NET 8.0.11 runtime and no SDK; project target is net10.0."
-    },
-    {
-      "id": "SECOND_HOST_PROFILE",
-      "status": "BLOCKING_CROSS_HOST",
-      "detail": "PC-8 and PC-14 are offline; no second authorized host/profile."
-    },
-    {
-      "id": "EP_B2_GATE",
-      "status": "EP_OWNED_PENDING",
-      "detail": "No B2 activity or credential access by MCP-OCP."
-    }
-  ],
-  "next_action": "Implement PortableRecoveryService and CLI methods in the authorized branch; then build/test with .NET 10 in an authorized Windows SDK environment. Cross-host and B2 remain separately gated.",
-  "global_dtc": "EN_CURSO_RECURRENT",
-  "normative_engine": "DESACTIVADO",
-  "sink_aliases": "p001-p043 NOT DEPLOYED/TESTED",
-  "fol1": "PREPARADO_PENDIENTE_ACTIVACION_IPZ",
-  "global_and_ocp_folios": "PENDIENTE/NO ASIGNADO",
-  "current_branch_head_before_evidence": "f6068ec2fafcaa408da95bf2af258c7b274720b0",
-  "cross_front_latest_readback": {
-    "EP_DTC_blob": "4875e272b25b6f2b4aa32f6f0caf6333a71f6bb2",
-    "EP_DTC_status": "OPEN",
-    "EP_TASK_002_blob": "e2b8c32a22bcacfd03f204b29fc39249f6f67c25",
-    "EP_TASK_002_status": "en_curso",
-    "EP_local_vault_authorization": "AUTHORIZED_BY_OPERATOR; READBACK_NOT_EXECUTED",
-    "B2_provider_authorization": "NOT_AUTHORIZED",
-    "B2_remote_operation": "NOT_GRANTED",
-    "GOV_TASK_014_blob": "571731bc07f9933ee0677089cf0e2d01d58f6f87",
-    "GOV_TASK_014_status": "EN_CURSO",
-    "interpretation": "No B2 upload/download/restore, no credential access, no EP changes by MCP-OCP."
-  }
+    "schema_version":  1,
+    "artifact":  "MCP-OCP DTC cycle 09 evidence",
+    "cycle_local":  "C-MCP-OCP-DTC-20261101-09",
+    "session_folio":  "SES-20261101-3D504C5A",
+    "owner":  {
+                  "alias":  "chatgpt-mcp-ocp-01a199d8-9209-725c-b764-a0a66ac54882",
+                  "uuidv7_local":  "01a199d8-9209-725c-b764-a0a66ac54882",
+                  "native_chatgpt_conversation_id":  "NOT_EXPOSED",
+                  "generation":  4
+              },
+    "A_literal":  [
+                      "Si",
+                      "Si, usa rdc los minutos que tienes y luego prepara todo para que te quedes trabajando en giuthub el tiempo qeu se pueda",
+                      "Ok continua hasta completar"
+                  ],
+    "operator_decision":  {
+                              "PPR_V1":  "APPROVED_BY_OPERATOR_IN_PERSON",
+                              "scope":  "Implementation, synthetic tests, compilation, corrections, packaging only inside frentes/mcp-metodologia/ under existing B authorization.",
+                              "does_not_authorize":  [
+                                                         "B2",
+                                                         "EP credentials or host operations",
+                                                         "host configuration changes",
+                                                         "real restore",
+                                                         "second-host use",
+                                                         "installation",
+                                                         "PR or merge",
+                                                         "changes outside frentes/mcp-metodologia/"
+                                                     ]
+                          },
+    "sources":  {
+                    "main_head":  "f2969421d0410e82af554642487b2c197fa80707",
+                    "control_blob":  "ecb27b04aaba04025ef596b3f0ed6c049bc2420d",
+                    "core_prior_blob":  "9c2cdc01b2f5be3b39ee49ce179084f4fb75b436",
+                    "DUG":  "Samantha v377 / NX-377m; Metacanon 1.28; GOW 2.17",
+                    "candidate_branch":  "integration/ocp-mcp-0.1.0-selective-20261101",
+                    "candidate_head":  "ef639b62509a9b7ae623c3fbd187466ee2e2a3d9",
+                    "new_branch":  "feature/mcp-ocp-portable-recovery-v1-20261101",
+                    "main_head_at_branch_creation":  "f2969421d0410e82af554642487b2c197fa80707",
+                    "main_head_revalidated":  "439ccbdca9b2e02b299253ca7bc73b3ab1292aba",
+                    "main_delta":  {
+                                       "commit":  "439ccbdca9b2e02b299253ca7bc73b3ab1292aba",
+                                       "message":  "docs(governance): update sprint checklist with EP local authorization scope",
+                                       "changed_paths":  [
+                                                             "frentes/ep/entregas/COORDINACION-GOBERNANZA-EP-v0.1.md",
+                                                             "frentes/gobernanza/Ã°Å¸â€œÂ Ã°Å¸Â§Â­ - Tareas provisionales/README.md"
+                                                         ],
+                                       "MCP_front_changed":  false,
+                                       "core_main_blob":  "9c2cdc01b2f5be3b39ee49ce179084f4fb75b436",
+                                       "coordination_main_blob":  "dacb3ef3aef725980fc29067ff6b4b82eb2b2f34",
+                                       "control_main_blob":  "ecb27b04aaba04025ef596b3f0ed6c049bc2420d",
+                                       "DUG_blob":  "54064c8fe00f872023a455f06596061ed69062ae",
+                                       "branch_not_merged_or_rebased":  true
+                                   },
+                    "current_feature_branch":  "feature/mcp-ocp-portable-recovery-v1-20261101",
+                    "current_feature_head":  "c77751ff635312a8fcb788935f439a2f99662269"
+                },
+    "preflight_RDC":  {
+                          "device":  "015RENTA01",
+                          "device_status":  "ONLINE",
+                          "platform":  "Windows x64",
+                          "shell":  "PowerShell 5.1",
+                          "other_hosts":  {
+                                              "PC_8":  "OFFLINE",
+                                              "PC_14":  "OFFLINE"
+                                          },
+                          "monthly_RDC_calls_remaining_pct":  77,
+                          "local_methodology_clone":  "NOT_FOUND_IN_STANDARD_ROOTS",
+                          "git":  "NOT_FOUND_IN_PATH",
+                          "gh":  "NOT_FOUND_IN_PATH",
+                          "dotnet_path":  "C:\\Program Files\\dotnet\\dotnet.exe",
+                          "dotnet_sdks":  [
+
+                                          ],
+                          "dotnet_runtimes":  [
+                                                  "Microsoft.NETCore.App 8.0.11",
+                                                  "Microsoft.AspNetCore.App 8.0.11"
+                                              ],
+                          "project_target":  "net10.0",
+                          "temporary_workspace":  "%TEMP%\\mcp-ocp-ppr1",
+                          "build":  "NOT_RUN_MISSING_DOTNET_10_SDK",
+                          "tests":  "NOT_RUN"
+                      },
+    "artifacts":  {
+                      "cycle_coordination":  {
+                                                 "path":  "frentes/mcp-metodologia/entregas/COORDINACION-SPRINT-OCP-MCP-v0.1.md",
+                                                 "commit":  "8feaec1e3b37bfed213b6d2a76bd412891287294",
+                                                 "blob":  "f9c3e0ce43a5bb31ff2bd6c6d11b23bd7c8d300c",
+                                                 "readback":  "EXACT"
+                                             },
+                      "source_import":  {
+                                            "commit":  "5c84d689ca1c6593e4b95c749a3a767576b1a30c",
+                                            "tree":  "a38c111a4658627d163b8531cdcf0e99efa490cb",
+                                            "files":  21,
+                                            "origin_branch":  "integration/ocp-mcp-0.1.0-selective-20261101",
+                                            "receipt_and_old_docs_imported":  false,
+                                            "readback":  "GIT_TREE_REF_VERIFIED"
+                                        },
+                      "contract":  {
+                                       "path":  "frentes/mcp-metodologia/PPR-V1-CONTRACT.md",
+                                       "commit":  "d1b97095116a7e9aa7f719f822b56f29239e6453",
+                                       "blob":  "dda67e5107f100b27f1e4d76680c81d41cafb1de",
+                                       "readback":  "EXACT"
+                                   },
+                      "manifest_schema":  {
+                                              "path":  "frentes/mcp-metodologia/schemas/portable-recovery-package-v1.schema.json",
+                                              "commit":  "f402ee483acfc7603177523431fde8cde4792848",
+                                              "blob":  "7d3126c40d19e43c5123b3acbfc2f4b53c1f7767",
+                                              "readback":  "EXACT_JSON_VALIDATED"
+                                          },
+                      "core":  {
+                                   "path":  "frentes/mcp-metodologia/MCP-METODOLOGIA.md",
+                                   "version":  "MCP-OCP-v0.1.19",
+                                   "commit":  "3c7bcd077902af34ab1764842fd3a7d3906b39fc",
+                                   "blob":  "3390099890e3734be9a829be003ab2d217b60690",
+                                   "readback":  "EXACT"
+                               },
+                      "coordination_checkpoint":  {
+                                                      "commit":  "37819c3b2bb3a03e67c6345f383938a3baecae58",
+                                                      "blob":  "466aa71b6dafbf6b5e60eec54c87eecdf44b04e9",
+                                                      "readback":  "EXACT"
+                                                  },
+                      "chronicle":  {
+                                        "path":  "frentes/mcp-metodologia/cronica/C-MCP-OCP-DTC-20261101-09.md",
+                                        "commit":  "f6068ec2fafcaa408da95bf2af258c7b274720b0",
+                                        "blob":  "b6d9ec31b040a9fc4bbd763cc36042366ffda6eb",
+                                        "readback":  "EXACT"
+                                    },
+                      "readme":  {
+                                     "path":  "frentes/mcp-metodologia/README.md",
+                                     "commit":  "6738f9c5f598e2b1f8fb73c6087fd424643f2389",
+                                     "blob":  "ac67c01875aace5627547f30421b4640adaa5a48",
+                                     "readback":  "EXACT"
+                                 },
+                      "coordination_cursor_before_final_evidence_update":  {
+                                                                               "commit":  "7aef9cdbdc5964ae5c87b5ec44dbd1fd7b3b942d",
+                                                                               "blob":  "cf379a1746ce1f3de346f9a44b12182d4d517759",
+                                                                               "readback":  "EXACT"
+                                                                           },
+                      "dialogue":  {
+                                       "path":  "frentes/mcp-metodologia/conversaciones/C-MCP-OCP-DTC-20261101-09-dialogo.jsonl",
+                                       "commit":  "dae10b0d5913ed5668009185f5371ece0eb14f13",
+                                       "blob":  "484335162cd1845d3194f845ac385ad274ff4569",
+                                       "records":  5,
+                                       "readback":  "JSONL_VALIDATED_AFTER_CYCLE_CLOSE"
+                                   },
+                      "coordination_latest_checkpoint":  {
+                                                             "path":  "frentes/mcp-metodologia/entregas/COORDINACION-SPRINT-OCP-MCP-v0.1.md",
+                                                             "commit":  "7aef9cdbdc5964ae5c87b5ec44dbd1fd7b3b942d",
+                                                             "blob":  "cf379a1746ce1f3de346f9a44b12182d4d517759",
+                                                             "readback":  "EXACT"
+                                                         },
+                      "coordination_final_cursor_before_evidence_pointer_pin":  {
+                                                                                    "path":  "frentes/mcp-metodologia/entregas/COORDINACION-SPRINT-OCP-MCP-v0.1.md",
+                                                                                    "commit":  "a239d673dc85fccf9cf8f22549b637b512f67d18",
+                                                                                    "blob":  "7619f3531855a6f02a264e3c622b408f1ede21dc",
+                                                                                    "readback":  "EXACT"
+                                                                                }
+                  },
+    "task_update":  {
+                        "core_version":  "MCP-OCP-v0.1.21",
+                        "backlog":  "Â§8.1/Â§8.2 reconciled with source-bound PPR v1 build; DTC cycle 09 closed locally",
+                        "GOV_TASK_014":  "C09 PPR v1 implemented, CLI/build/tests/packaging verified in isolated branch; real cross-host restore remains unverified; EP retains B2 authority",
+                        "no_new_OCP":  true,
+                        "no_EP_or_GOV_task_mutation":  true
+                    },
+    "execution":  {
+                      "DTC_CYCLE_STATUS":  "CLOSED_VERIFIED",
+                      "MCP_TECHNICAL_STATUS":  "PPR_V1_IMPLEMENTED_AND_SOURCE_BOUND_BUILD_VERIFIED; RESTORE_CROSS_HOST_NOT_VERIFIED; B2_NOT_AUTHORIZED; NOT_INSTALLED; NOT_MERGED; NOT_ACCEPTED",
+                      "source_files_imported":  true,
+                      "PPR_contract_created":  true,
+                      "PPR_manifest_schema_created":  true,
+                      "PPR_service_code_implemented":  true,
+                      "CLI_commands_implemented":  true,
+                      "build":  true,
+                      "tests":  true,
+                      "restore":  false,
+                      "B2":  false,
+                      "credential_access":  false,
+                      "host_changes":  false,
+                      "PR":  false,
+                      "merge":  false,
+                      "installation":  false,
+                      "acceptance":  false,
+                      "cross_host_restore":  "NOT_VERIFIED",
+                      "real_db_access":  false,
+                      "real_restore":  false
+                  },
+    "blockers":  [
+                     {
+                         "id":  "SECOND_HOST_PROFILE",
+                         "status":  "BLOCKING_CROSS_HOST",
+                         "detail":  "PC-8 and PC-14 are offline; no second authorized host/profile."
+                     },
+                     {
+                         "id":  "EP_B2_GATE",
+                         "status":  "EP_OWNED_PENDING",
+                         "detail":  "No B2 activity or credential access by MCP-OCP."
+                     }
+                 ],
+    "next_action":  "No ampliar alcance. La siguiente fase requiere autorizaciÃ³n expresa y disponibilidad de un segundo usuario/perfil o equipo Windows para validar DPAPI cross-host; B2, EP/host, instalaciÃ³n, PR/merge y aceptaciÃ³n permanecen bajo sus compuertas y titulares.",
+    "global_dtc":  "EN_CURSO_RECURRENT",
+    "normative_engine":  "DESACTIVADO",
+    "sink_aliases":  "p001-p043 NOT DEPLOYED/TESTED",
+    "fol1":  "PREPARADO_PENDIENTE_ACTIVACION_IPZ",
+    "global_and_ocp_folios":  "PENDIENTE/NO ASIGNADO",
+    "current_branch_head_before_evidence":  "c77751ff635312a8fcb788935f439a2f99662269",
+    "cross_front_latest_readback":  {
+                                        "EP_DTC_blob":  "4875e272b25b6f2b4aa32f6f0caf6333a71f6bb2",
+                                        "EP_DTC_status":  "OPEN",
+                                        "EP_TASK_002_blob":  "e2b8c32a22bcacfd03f204b29fc39249f6f67c25",
+                                        "EP_TASK_002_status":  "en_curso",
+                                        "EP_local_vault_authorization":  "AUTHORIZED_BY_OPERATOR; READBACK_NOT_EXECUTED",
+                                        "B2_provider_authorization":  "NOT_AUTHORIZED",
+                                        "B2_remote_operation":  "NOT_GRANTED",
+                                        "GOV_TASK_014_blob":  "571731bc07f9933ee0677089cf0e2d01d58f6f87",
+                                        "GOV_TASK_014_status":  "EN_CURSO",
+                                        "interpretation":  "No B2 upload/download/restore, no credential access, no EP changes by MCP-OCP."
+                                    },
+    "build_evidence":  {
+                           "source_code_commit":  "c77751ff635312a8fcb788935f439a2f99662269",
+                           "source_branch":  "feature/mcp-ocp-portable-recovery-v1-20261101",
+                           "remote_readback":  "MATCHED",
+                           "main_head":  "439ccbdca9b2e02b299253ca7bc73b3ab1292aba",
+                           "sdk_version":  "10.0.403",
+                           "build_exit_code":  0,
+                           "unit_tests":  {
+                                              "status":  "PASS",
+                                              "passed":  50,
+                                              "failed":  0
+                                          },
+                           "stdio_integration_tests":  {
+                                                           "status":  "PASS",
+                                                           "passed":  30,
+                                                           "failed":  0
+                                                       },
+                           "component_count":  200,
+                           "build_manifest_sha256":  "c21d6bc93c1a7d6b8b0015160e320cc2401ca6e0c406454b48ab73f83452baaf",
+                           "source_manifest_sha256":  "3d76bc421f7abfc8b0a06db9d1ee9433733aad86c65f8d8c151823f73c12c938",
+                           "package":  {
+                                           "name":  "ocp-mcp-0.1.0-win-x64.zip",
+                                           "bytes":  39712983,
+                                           "sha256":  "4d7d6ae83097a787bac8ec2deed17626f91559e70f4b0953c589b9a244b914c4",
+                                           "storage":  "local ignored artifacts/packages; not published"
+                                       },
+                           "build_evidence_path":  "frentes/mcp-metodologia/artifacts/build-evidence.json",
+                           "test_evidence_path":  "frentes/mcp-metodologia/artifacts/test-evidence.json",
+                           "status":  "BUILT_AND_TESTED"
+                       },
+    "ppr_test_fixture":  {
+                             "package_id":  "2cd1d671-42cc-41bf-814c-9b1d72a04a6d",
+                             "installation_id":  "7635b42cd727400988dc18c4eae64b5a",
+                             "synthetic_destination_sid":  "S-1-5-21-909090909-808080808-707070707-1107",
+                             "dpapi_same_test_profile":  true,
+                             "cross_user_or_host_dpapi":  "NOT_VERIFIED",
+                             "installed_database_access":  "NOT_PERFORMED"
+                         },
+    "closure":  {
+                    "DTC_CYCLE_STATUS":  "CLOSED_VERIFIED",
+                    "closure_scope":  "local authorized implementation, CLI, source-bound build/tests, package, documentation and read-back only",
+                    "cross_host_restore":  "NOT_VERIFIED",
+                    "B2_PROVIDER_AUTHORIZATION":  "NOT_AUTHORIZED",
+                    "B2_REMOTE_OPERATION":  "NOT_GRANTED",
+                    "EP_03":  "OPEN",
+                    "EP_TASK_002":  "en_curso",
+                    "GOV_TASK_014":  "EN_CURSO",
+                    "main_modified":  false,
+                    "pull_request_created":  false,
+                    "merged":  false,
+                    "installed":  false,
+                    "operator_product_acceptance":  false,
+                    "global_dtc":  "EN_CURSO_RECURRENT",
+                    "performance":  "NOT_MEASURED",
+                    "fol1":  "PREPARADO_PENDIENTE_ACTIVACION_IPZ",
+                    "global_and_ocp_folios":  "PENDIENTE/NO ASIGNADO"
+                },
+    "current_build_environment":  {
+                                      "device":  "PC10RCIF4EI4",
+                                      "device_id":  "d0bbb2a3-d7b4-45e1-8870-652c2c3844fc",
+                                      "os":  "Windows x64",
+                                      "shell":  "PowerShell 5.1",
+                                      "sdk":  "10.0.403",
+                                      "dotnet_cli_home":  "isolated",
+                                      "nuget_cache":  "isolated",
+                                      "global_path_or_registry_changed":  false
+                                  },
+    "current_dialogue_records":  5
 }

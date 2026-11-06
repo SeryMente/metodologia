@@ -1,6 +1,6 @@
 # Portable Recovery Package v1 — contrato de implementación
 
-**Estado:** APROBADO POR EL OPERADOR; implementación y CLI completados en la rama feature; build/tests locales PASS (50 unitarias, 29 smoke stdio); restore cross-host real NO VERIFICADO.
+**Estado:** APROBADO POR EL OPERADOR; implementación y CLI completados en rama feature; build source-bound PASS (50 unitarias, 30 smoke/integración stdio, 200 componentes); restore cross-host real NO VERIFICADO.
 **Ámbito:** exclusivamente frentes/mcp-metodologia/.  
 **Versión:** PPR v1.  
 **Compatibilidad:** no sustituye ni altera el formato local .ocpbak.
@@ -116,3 +116,14 @@ No incluir entropy ni valores DPAPI originales. En destino se reconstruye cada e
 - La memoria y rendimiento de Argon2id deberán medirse en el entorno mínimo soportado; registrar NOT_MEASURED hasta medir.
 - DPAPI CurrentUser exige una prueba en el usuario/perfil destino. Un build o restore en el mismo perfil no acredita un segundo host.
 - La importación de los fuentes candidatos a esta rama es una base de trabajo, no build ni prueba de PPR.
+
+## 9. Evidencia de implementación y build · ciclo local 09
+
+- Commit fuente exacto: c77751ff635312a8fcb788935f439a2f99662269 en feature/mcp-ocp-portable-recovery-v1-20261101; la referencia remota coincidió en el read-back.
+- Entorno: Windows x64, .NET SDK 10.0.403; DOTNET_CLI_HOME y caché NuGet aislados localmente, sin modificar PATH, registro o tooling global.
+- Resultado: Build.ps1 exit code 0; 50/50 pruebas unitarias; 30/30 smoke/integración stdio; 200/200 componentes verificados tras extracción/hash.
+- Build manifest SHA-256: c21d6bc93c1a7d6b8b0015160e320cc2401ca6e0c406454b48ab73f83452baaf.
+- Source manifest SHA-256: 3d76bc421f7abfc8b0a06db9d1ee9433733aad86c65f8d8c151823f73c12c938.
+- ZIP ocp-mcp-0.1.0-win-x64.zip: 39.712.983 bytes; SHA-256 4d7d6ae83097a787bac8ec2deed17626f91559e70f4b0953c589b9a244b914c4. El paquete reside localmente en artifacts/packages/ y está ignorado por Git; no se publicó como release.
+- La suite sintética generó/restauró package_id 2cd1d671-42cc-41bf-814c-9b1d72a04a6d; validó autenticación, rechazo de alteraciones/frase errónea, reenvoltura y preservación de claves/recibos/EventChain. El SID destino fue sintético y DPAPI corrió bajo el perfil de test actual: no prueba cross-user/cross-host.
+- Sin acceso a base de datos instalada, backup/restore de datos reales, B2, credenciales, cambios de host, instalación, PR, merge o aceptación de producto.

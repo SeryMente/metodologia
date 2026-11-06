@@ -1672,11 +1672,11 @@ El núcleo v0.1.18, el objeto de coordinación, control, DUG, OEP/EP DTC, EP-TAS
 
 **Estado RDC observado:** 015RENTA01 Online; Git/GitHub CLI no disponibles en PATH; dotnet presente sin SDK registrado, runtime .NET 8.0.11; proyecto net10.0. No se ejecutó build ni tests y no se modificó tooling/host. PC-8/PC-14 Offline.
 
-**Estado de la implementación:** la arquitectura y el esquema de manifest están baselined; los fuentes históricos están importados. PortableRecoveryService, comandos portable-export/portable-restore y tests PPR aún NO IMPLEMENTADOS. Build/test NO VERIFICADOS. No se alteró main, no hay PR/merge, no se instaló el servidor.
+**Estado de la implementación en este checkpoint histórico:** la arquitectura y el esquema de manifest estaban baselined; los fuentes históricos importados. PortableRecoveryService, comandos portable-export/portable-restore y tests PPR aún NO IMPLEMENTADOS en ese corte. Build/test NO VERIFICADOS en ese corte. Este checkpoint fue superado por §33.6; no se alteró main, no hubo PR/merge ni instalación.
 
-**Estado separado:** DTC_CYCLE_STATUS=OPEN — la aprobación, el acuse y la preparación documental quedaron registrados/read-back, pero el procesamiento técnico solicitado sigue abierto. MCP_TECHNICAL_STATUS=IMPLEMENTATION_AUTHORIZED_IN_ISOLATED_BRANCH; PPR_CODE_NOT_IMPLEMENTED; BUILD_TEST_NOT_VERIFIED. Los gates second-host/cross-host y EP/B2 siguen pendientes en sus autoridades correspondientes.
+**Estado separado en este checkpoint histórico (superado por §33.6):** DTC_CYCLE_STATUS=OPEN — la aprobación, el acuse y la preparación documental quedaron registrados/read-back, pero el procesamiento técnico solicitado seguía abierto en ese momento. MCP_TECHNICAL_STATUS=IMPLEMENTATION_AUTHORIZED_IN_ISOLATED_BRANCH; PPR_CODE_NOT_IMPLEMENTED; BUILD_TEST_NOT_VERIFIED. Los gates second-host/cross-host y EP/B2 siguen pendientes en sus autoridades correspondientes.
 
-**Siguiente acción inmediata:** implementar el servicio PPR y sus comandos en esta rama; obtener build/test en entorno Windows autorizado con SDK .NET 10. No declarar E2E ni cierre del ciclo antes de contar con implementación, build/test y evidencia de aceptación de su alcance local.
+**Siguiente acción inmediata en este checkpoint histórico:** implementar el servicio PPR y sus comandos en esta rama; obtener build/test en entorno Windows autorizado con SDK .NET 10. Esta acción fue completada para el alcance local MCP-OCP y quedó registrada en §33.6. El restore cross-host, B2, EP, instalación, PR/merge y aceptación de producto siguen bajo sus compuertas separadas.
 
 
 ### 33.5 Revalidación de main y compuertas externas
@@ -1690,3 +1690,26 @@ El núcleo v0.1.18, el objeto de coordinación, control, DUG, OEP/EP DTC, EP-TAS
 - GOV-TASK-014 blob 571731bc07f9933ee0677089cf0e2d01d58f6f87; EN_CURSO. No se cambia el estado técnico del frente por el cierre documental.
 
 **Efecto sobre MCP-OCP:** ninguna de estas novedades autoriza MCP-OCP a operar B2, acceder a credenciales, modificar EP, usar un segundo host ni cambiar su configuración. La autorización actual sigue siendo PPR v1 dentro de frentes/mcp-metodologia/. El ciclo 09 sigue OPEN; el código PPR y build/test siguen pendientes.
+
+### 33.6 Cierre local verificado · implementación PPR v1, build source-bound y límites · 2026-11-06
+
+**Cursor de entrada revalidado:** main HEAD 439ccbdca9b2e02b299253ca7bc73b3ab1292aba; DUG Samantha v377/NX-377m, blob 54064c8fe00f872023a455f06596061ed69062ae; Metacanon 1.28; GOW 2.17; 43 principios, 22 anexos; CNP P001/P004/P005/P038/P043. Control MCP-OCP generación 4, titular chatgpt-mcp-ocp-01a199d8-9209-725c-b764-a0a66ac54882, estado owned, B AUTHORIZED sin ampliación. Se aplican P001, P004, P005, P012, P013, P038 y P043; no se modifica DUG ni se declara ejecución de MCP-NORMATIVO.
+
+**Procesamiento y control de fuente:** se trabajó exclusivamente en PC10RCIF4EI4 (d0bbb2a3-d7b4-45e1-8870-652c2c3844fc) con workspace aislado. Se verificó que el delta pendiente era una aserción CLI en tests/Smoke.ps1. El commit 2ca6d18b87a539777d60a2162023b874d12af3d4 incorporó la prueba; el primer pipeline mostró exit code 64 para la ayuda, conforme a Program.PrintUsage(). Se corrigió la aserción (sin modificar código de producción) y se publicó c77751ff635312a8fcb788935f439a2f99662269. Push y read-back ls-remote coincidieron; el árbol quedó limpio. main se mantuvo en 439ccbdca9b2e02b299253ca7bc73b3ab1292aba.
+
+**Build y resultados medidos:** .NET SDK 10.0.403 en instalación local aislada; DOTNET_CLI_HOME y caché NuGet aislados, sin tocar PATH/registro/tooling global. Build.ps1 terminó exit code 0, con:
+- Unitarias: PASS 50 / FAIL 0.
+- Smoke/integración stdio: PASS 30 / FAIL 0, incluida PPR_CLI_COMMANDS_AVAILABLE (exit 64 y exposición de ambos comandos portable).
+- Paquete: 200/200 componentes verificados tras extracción/hash.
+- Build manifest SHA-256: c21d6bc93c1a7d6b8b0015160e320cc2401ca6e0c406454b48ab73f83452baaf.
+- Source manifest SHA-256: 3d76bc421f7abfc8b0a06db9d1ee9433733aad86c65f8d8c151823f73c12c938.
+- ZIP ocp-mcp-0.1.0-win-x64.zip: 39.712.983 bytes; SHA-256 4d7d6ae83097a787bac8ec2deed17626f91559e70f4b0953c589b9a244b914c4.
+- Los recibos locales build-evidence.json y test-evidence.json fijan source_code_commit=c77751ff635312a8fcb788935f439a2f99662269, SDK 10.0.403 y status BUILT_AND_TESTED. Los artefactos son locales/ignorados por Git; no se publicaron como release.
+
+**Pruebas PPR y límite material:** las pruebas sintéticas verificaron export/restore sobre fixture SQLite, manifest/ZIP, AES-GCM, rechazo de frase incorrecta/alteración, preservación del destino, reenvoltura de HMAC/Ed25519/DEKs, revocaciones y preservación de recibos/EventChain/integridad. Package fixture 2cd1d671-42cc-41bf-814c-9b1d72a04a6d; installation fixture 7635b42cd727400988dc18c4eae64b5a; SID destino sintético S-1-5-21-909090909-808080808-707070707-1107. La DPAPI efectiva opera bajo el perfil de test actual; el SID sintético no acredita operación DPAPI bajo un segundo usuario/perfil o equipo. No se accedió a una DB instalada real ni se ejecutó backup/restore real.
+
+**Compuertas no satisfechas:** RESTORE_CROSS_HOST_VERIFICADO=NOT_VERIFIED; no hay segundo usuario/perfil o host de destino con autorización expresa. B2_PROVIDER_AUTHORIZATION=NOT_AUTHORIZED; B2_REMOTE_OPERATION=NOT_GRANTED, EP conserva esa autoridad. No se leyeron credenciales, ni se hicieron cambios EP/host, instalación, PR, merge o aceptación del producto. EP-03=OPEN, EP-TASK-002=en_curso, GOV-TASK-014=EN_CURSO; DTC global EN_CURSO_RECURRENT. MCP-NORMATIVO=DESACTIVADO; Sink p001-p043 no desplegado/probado.
+
+**Clasificación de cierre:** DTC_CYCLE_STATUS=CLOSED_VERIFIED para el alcance local autorizado del ciclo 09: procesamiento de la aprobación, implementación y CLI PPR v1, build/test source-bound, empaquetado y documentación/read-back. MCP_TECHNICAL_STATUS=PPR_V1_IMPLEMENTED_AND_SOURCE_BOUND_BUILD_VERIFIED; RESTORE_CROSS_HOST_NOT_VERIFIED; B2_NOT_AUTHORIZED; NOT_INSTALLED; NOT_MERGED; NOT_ACCEPTED. Este cierre local no equivale a E2E transversal ni aceptación del producto.
+
+**Foliación y medición:** ciclo local C-MCP-OCP-DTC-20261101-09; sesión local SES-20261101-3D504C5A. FOL1 sigue PREPARADO_PENDIENTE_ACTIVACION_IPZ; CV/CY/A/B globales y por OCP PENDIENTE/NO ASIGNADO. performance=NOT_MEASURED: no hay marcas completas y verificables de inicio/fin desde la apertura; no se reconstruyen retroactivamente. Edades d.h.m. de rutas: NO VERIFICADO.
