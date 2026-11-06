@@ -1,4 +1,15 @@
-## Continuidad vigente · C-GOBERNANZA-RETOMA-10 · 2026-11-06
+## Continuidad vigente · C-GOBERNANZA-RETOMA-11 · 2026-11-06
+
+- Titularidad primaria transferida a esta sesión, generación 14 → 15; titular previo supersedido. Corresponsable `SES-20261101-GV8E89D1FF`, generación 12, preservada; roster 2/2. [Control](CONTROL-RESPONSABILIDAD.json) · [crónica](cronica/C-GOBERNANZA-RETOMA-11.md) · [evidencia](evidencias/C-GOBERNANZA-RETOMA-11.json).
+- El export `ChatGPT-GOBERNANZA-1-20261106-1640.txt` se conservó como original independiente: 85.947 bytes; SHA-256 `925E181C499F4086927259A1F65761516E0CA89C61399F117C95F6C7991E360D`; Git blob `e5c70c6ce07e3a73a55ac284b311f3f2b3ad226c`; commit `2953c2e234422c35d4857f58cb8af6df564360c9`; read-back PASS. El export 14:48 permanece intacto.
+- La propuesta del operador sobre Ser y Mente como OCP raíz organizacional y autosemejanza estructural recursiva/fractal queda `PROPUESTA_NO_CANONIZADA`; formalización y autorización normativa pendientes conforme a P005.
+- **§ARR pendiente:** DUG §44 lo exige como primera lectura; no se localizó sección humana §ARR diferenciada en GOW 2.17. No se usó el archivo de arranque de otro frente como sustituto. Localización/reconciliación pendiente.
+- EP y MCP-OCP se citan en el export como fotografía conversacional, no como revalidación en vivo. Releer sus fuentes titulares antes de abrir una nueva solicitud DTC.
+- FOL1 `PREPARADO_PENDIENTE_ACTIVACION_IPZ`; IPZ nativa `NO_VERIFICADA`; CV/CY/A/B globales y por OCP pendientes/no asignados; MCP normativo `DESACTIVADO`.
+
+---
+
+## Continuidad histórica · C-GOBERNANZA-RETOMA-10 · 2026-11-06
 
 - Se reanudó la titularidad operativa primaria de Gobernanza en generación 14; el asiento corresponsable generación 12 permanece activo. Véase [control](CONTROL-RESPONSABILIDAD.json) y [crónica](cronica/C-GOBERNANZA-RETOMA-10.md).
 - Se capturó el export `ChatGPT-GOBERNANZA-1-20261106-1448.txt` como original documental. Su SHA-256 de origen es `8D1454ED1DF63F1BE3A68D1EFF953DE74A37787E472F256D4356BA1F2D550EA2`; estado `PERSISTIDO_Y_VERIFICADO`; commit `a146c307d750868a3fffc4beedba2941020b8e2c`; blob `3383d4da0104a87615cfab3e698d48c1b790861b`.

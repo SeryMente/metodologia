@@ -1,0 +1,113 @@
+{
+  "schema": "governance-event-evidence/1",
+  "event_id": "C-GOBERNANZA-RETOMA-11",
+  "recorded_on": "2026-11-06",
+  "front": "gobernanza",
+  "repository": "SeryMente/metodologia",
+  "branch": "main",
+  "authorization": {
+    "status": "explicit",
+    "source": "operator instruction in receiving conversation",
+    "verbatim": "ChatGPT-GOBERNANZA-1-20261106-1640.txt\nDocumenta converascionen persietencia documetal de gobrnnza,  y retoma rsponsabiilidad de gobernanza  1.",
+    "operation": "TRANSFER_RESPONSIBILITY",
+    "scope": "Transferir titularidad primaria de frentes/gobernanza/ a la sesión receptora, conservar la corresponsabilidad generación 12, y persistir el export original 1640. No autoriza cambios normativos ni mutaciones de EP/MCP-OCP."
+  },
+  "responsibility": {
+    "operation": "TRANSFER_RESPONSIBILITY",
+    "generation_before": 14,
+    "generation_after": 15,
+    "previous_primary": {
+      "folio": "SES-20261106-GV8910D0C2",
+      "generation": 14,
+      "status": "superseded"
+    },
+    "new_primary": {
+      "alias": "chatgpt-C-GOBERNANZA-RETOMA-11-SES-20261106-A42BB5B3",
+      "instance": "chatgpt-gobernanza-1-2026-11-06-A42BB5B3",
+      "session_folio": "SES-20261106-A42BB5B3",
+      "local_uuidv7": "01a1b308-1b6a-739e-bc0a-b38da42bb5b3",
+      "generation": 15,
+      "native_current_chat_id": "NOT_EXPOSED"
+    },
+    "co_responsible_preserved": {
+      "alias": "chatgpt-C-GOBERNANZA-ASIENTO-02-RETOMA-20261101-01-SES-20261101-GV8E89D1FF",
+      "session_folio": "SES-20261101-GV8E89D1FF",
+      "generation": 12
+    },
+    "active_responsibles_after_write": 2,
+    "maximum_active_responsibles": 2,
+    "source_control_blob_sha": "d6ef51e21a6cbf43ef4234a5960540ab09b1143c",
+    "transfer_commit_sha": "35ce56045e9378c83cf14eb5d9181c1d472a8417",
+    "readback_commit_sha": "015f27c6d936a96a737758f4dbfaa97b7ad2564a",
+    "control_readback_blob_sha": "ee9065a8bc6bcd632c2f34158fdf45133b86bb5c",
+    "readback_verified": true,
+    "local_cycle_id": "C-GOBERNANZA-RETOMA-11-CY01",
+    "local_cycle_uuidv7": "01a1b309-1b6a-739e-bc0a-b38da42bb5b4",
+    "global_cycle_folio": null
+  },
+  "document": {
+    "document_id": "DOC-GOV-CHATGPT-GOBERNANZA-1-20261106-1640",
+    "filename": "ChatGPT-GOBERNANZA-1-20261106-1640.txt",
+    "source_device": "PC10RCIF4EI4",
+    "source_path": "C:/Users/fila4/Downloads/ChatGPT-GOBERNANZA-1-20261106-1640.txt",
+    "source_conversation_url": "https://chatgpt.com/c/6ae7c8a9-1de0-83e8-9896-1a0d68ed85b4",
+    "source_created_at": "2026-11-01 17:18:01",
+    "source_updated_at": "2026-11-06 14:46:05",
+    "exported_at": "2026-11-06 16:40:08",
+    "bytes": 85947,
+    "lines": 1896,
+    "source_sha256": "925E181C499F4086927259A1F65761516E0CA89C61399F117C95F6C7991E360D",
+    "local_file_copy_status": "BYTE_EXACT_SHA256_VERIFIED",
+    "repository_path": "frentes/gobernanza/documentos/originales/ChatGPT-GOBERNANZA-1-20261106-1640.txt",
+    "git_blob_sha": "e5c70c6ce07e3a73a55ac284b311f3f2b3ad226c",
+    "original_commit_sha": "2953c2e234422c35d4857f58cb8af6df564360c",
+    "repository_persistence": "PERSISTIDO_Y_VERIFICADO",
+    "status": "PERSISTIDO_Y_VERIFICADO",
+    "readback_verified": true,
+    "readback_blob_sha": "e5c70c6ce07e3a73a55ac284b311f3f2b3ad226c",
+    "prior_export_preserved": "ChatGPT-GOBERNANZA-1-20261106-1448.txt"
+  },
+  "dug": {
+    "version": "Samantha v377",
+    "signature": "NX-377m",
+    "metacanon": "1.28",
+    "gow": "2.17",
+    "principles": 43,
+    "annexes": 22,
+    "blob": "54064c8fe00f872023a455f06596061ed69062ae",
+    "modified_by_event": false
+  },
+  "gow_arr": {
+    "requirement": "DUG §44 requires §ARR as first reading",
+    "current_cycle_status": "NO_VERIFICADO",
+    "reason": "No separately identified human §ARR section was located in the retrieved GOW 2.17 content; other-front ARRANQUE-CHATGPT.md was not substituted."
+  },
+  "conceptual_proposal": {
+    "subject": "Ser y Mente como OCP raíz organizacional y autosemejanza estructural recursiva/fractal",
+    "status": "PROPUESTA_NO_CANONIZADA",
+    "operator_decision_for_normative_change": "PENDING_EXPLICIT_AUTHORIZATION",
+    "dug_modified": false,
+    "gow_modified": false
+  },
+  "foliation": {
+    "IPZ": "v0.7",
+    "IPZ_native_installation": "NO_VERIFICADA",
+    "FOL1": "PREPARADO_PENDIENTE_ACTIVACION_IPZ",
+    "CV": "PENDIENTE/NO ASIGNADO",
+    "CY": "PENDIENTE/NO ASIGNADO",
+    "A": "PENDIENTE/NO ASIGNADO",
+    "B": "PENDIENTE/NO ASIGNADO",
+    "global_cycle_folio": null
+  },
+  "boundaries": {
+    "dug_modified": false,
+    "gow_modified": false,
+    "art025_modified": false,
+    "art027_modified": false,
+    "ipz_native_modified": false,
+    "ep_control_or_host_modified": false,
+    "mcp_ocp_control_or_code_modified": false,
+    "mcp_normativo_activated": false,
+    "fol1_activated": false
+  }
+}

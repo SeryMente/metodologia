@@ -1,4 +1,18 @@
-## Evento vigente · C-GOBERNANZA-RETOMA-10 · 2026-11-06
+## Evento vigente · C-GOBERNANZA-RETOMA-11 · 2026-11-06
+
+**Responsabilidad:** titularidad primaria transferida de generación 14 a 15. Titular anterior `SES-20261106-GV8910D0C2` supersedido. Nuevo titular `SES-20261106-A42BB5B3`; alias `chatgpt-C-GOBERNANZA-RETOMA-11-SES-20261106-A42BB5B3`; instancia `chatgpt-gobernanza-1-2026-11-06-A42BB5B3`; UUIDv7 local `01a1b308-1b6a-739e-bc0a-b38da42bb5b3` (no es ID nativo de ChatGPT). Corresponsable `SES-20261101-GV8E89D1FF`, generación 12, preservada. Dos responsables activos; máximo dos. Control final blob `ee9065a8bc6bcd632c2f34158fdf45133b86bb5c`; transferencia/read-back commits `35ce56045e9378c83cf14eb5d9181c1d472a8417` / `015f27c6d936a96a737758f4dbfaa97b7ad2564a`.
+
+**Original de conversación:** [export 16:40](documentos/originales/ChatGPT-GOBERNANZA-1-20261106-1640.txt) · [crónica](cronica/C-GOBERNANZA-RETOMA-11.md) · [evidencia](evidencias/C-GOBERNANZA-RETOMA-11.json) · [diálogo A/B](conversaciones/C-GOBERNANZA-RETOMA-11-dialogo.jsonl) · [manifiesto](documentos/MANIFIESTO-DOCUMENTAL.json). 85.947 bytes; SHA-256 `925E181C499F4086927259A1F65761516E0CA89C61399F117C95F6C7991E360D`; Git blob `e5c70c6ce07e3a73a55ac284b311f3f2b3ad226c`; commit `2953c2e234422c35d4857f58cb8af6df564360c9`; lectura de vuelta de `main` verificada. El export de las 14:48 se conserva aparte, sin sobrescritura; ambos apuntan a la misma URL de conversación.
+
+**DUG y método:** Samantha v377 · NX-377m · Metacanon 1.28 · GOW 2.17 · 43 principios · 22 anexos. DUG/GOW no modificados. §ARR es exigido como primera lectura por DUG §44, pero no se identificó una sección humana §ARR diferenciada en el GOW recuperado: `NO_VERIFICADO`, pendiente de localización. No se sustituyó por ARRANQUE-CHATGPT de otro frente.
+
+**Propuesta conceptual:** Ser y Mente como OCP raíz organizacional y autosemejanza estructural/fractal permanece `PROPUESTA_NO_CANONIZADA`. No modifica la definición canónica vigente de OCP ni la posición raíz de Metodología. Cualquier cambio normativo requiere autorización expresa P005.
+
+**Foliación y límites:** FOL1 `PREPARADO_PENDIENTE_ACTIVACION_IPZ`; CV/CY/A/B globales y por OCP `PENDIENTE / NO ASIGNADO`; ciclo local `C-GOBERNANZA-RETOMA-11-CY01`; UUIDv7 local `01a1b309-1b6a-739e-bc0a-b38da42bb5b4`; folio global nulo. IPZ nativa `NO_VERIFICADA`; MCP normativo `DESACTIVADO`. Sin cambios a EP/MCP-OCP ni sus controles/hosts/código. [Crónica](cronica/C-GOBERNANZA-RETOMA-11.md) · [evidencia](evidencias/C-GOBERNANZA-RETOMA-11.json).
+
+---
+
+## Evento histórico supersedido · C-GOBERNANZA-RETOMA-10 · 2026-11-06
 
 **Responsabilidad:** relevo primario de generación 13 a 14. Titular anterior `SES-20261101-GVCD93ADD7` supersedido. Nuevo titular `SES-20261106-GV8910D0C2`; alias `chatgpt-C-GOBERNANZA-RETOMA-10-SES-20261106-GV8910D0C2`; instancia `chatgpt-gobernanza-1-2026-11-06-8910D0C2`; UUIDv7 local `01a1b2a4-de59-795e-9569-d42d8910d0c2` (no es ID nativo de ChatGPT). Corresponsable `SES-20261101-GV8E89D1FF`, generación 12, preservada. Dos responsables activos; máximo dos.
 
