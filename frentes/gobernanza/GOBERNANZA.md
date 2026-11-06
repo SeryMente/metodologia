@@ -1,6 +1,21 @@
+## Evento vigente · C-GOBERNANZA-RETOMA-10 · 2026-11-06
+
+**Responsabilidad:** relevo primario de generación 13 a 14. Titular anterior `SES-20261101-GVCD93ADD7` supersedido. Nuevo titular `SES-20261106-GV8910D0C2`; alias `chatgpt-C-GOBERNANZA-RETOMA-10-SES-20261106-GV8910D0C2`; instancia `chatgpt-gobernanza-1-2026-11-06-8910D0C2`; UUIDv7 local `01a1b2a4-de59-795e-9569-d42d8910d0c2` (no es ID nativo de ChatGPT). Corresponsable `SES-20261101-GV8E89D1FF`, generación 12, preservada. Dos responsables activos; máximo dos.
+
+**Control de origen:** `CONTROL-RESPONSABILIDAD.json` blob `960fefdca26c841c3a2d06ebb57a2e836b6f8d73`; `main` observado `439ccbdca9b2e02b299253ca7bc73b3ab1292aba`. Comprobación de colisión exacta: evento, folio, UUID y alias sin coincidencias en `SeryMente/metodologia`; no acredita unicidad organizacional ni fencing universal.
+
+**Original capturado:** `documentos/originales/ChatGPT-GOBERNANZA-1-20261106-1448.txt`; fuente RDC `C:\Users\fila4\Downloads\ChatGPT-GOBERNANZA-1-20261106-1448.txt`; 85.947 bytes; SHA-256 `8D1454ED1DF63F1BE3A68D1EFF953DE74A37787E472F256D4356BA1F2D550EA2`. [Crónica](cronica/C-GOBERNANZA-RETOMA-10.md) · [evidencia](evidencias/C-GOBERNANZA-RETOMA-10.json) · [diálogo](conversaciones/C-GOBERNANZA-RETOMA-10-dialogo.jsonl).
+
+**DUG:** Samantha v377 · NX-377m · Metacanon 1.28 · GOW 2.17 · 43 principios · 22 anexos. No modificado. §ARR fue primera lectura; la propuesta de OCP raíz organizacional Ser y Mente/autosemejanza fractal queda no canonizada y requiere autorización explícita P005 para cualquier cambio normativo.
+
+**Continuidad:** la coordinación EP–MCP-OCP se conserva dentro de sus controles titulares. La persistencia de datasets/estado operativo MCP-OCP y la continuidad/backup B2 siguen siendo trabajo de los frentes responsables; este evento no ejecuta B2 ni modifica EP/MCP-OCP.
+
+**Foliación y límites:** FOL1 `PREPARADO_PENDIENTE_ACTIVACION_IPZ`; CV/CY/A/B globales y por OCP `PENDIENTE / NO ASIGNADO`; ciclo local `C-GOBERNANZA-RETOMA-10-CY01` · UUIDv7 `01a1b2a5-6277-773a-92e0-0cbd706d0671`; folio global nulo. IPZ nativa no verificada; MCP normativo `DESACTIVADO`. Read-back remoto pendiente de cierre.
+
+---
 # Núcleo operativo · Gobernanza
 
-## Evento vigente · C-GOBERNANZA-RETOMA-09 · 2026-11-01
+## Evento histórico supersedido · C-GOBERNANZA-RETOMA-09 · 2026-11-01
 
 **Responsabilidad:** control generación 13, transferencia verificada por read-back. Titular Gobernanza 1: SES-20261101-GVCD93ADD7; alias chatgpt-C-GOBERNANZA-1-20261101-1717-SES-20261101-GVCD93ADD7; UUIDv7 local 01a199c3-a374-7e1f-8191-1ff6cd93add7. Titular anterior SES-20261101-GV8A19904 supersedido. Corresponsable asiento 2 SES-20261101-GV8E89D1FF (gen12) preservada. Dos responsables activos, máximo dos.
 

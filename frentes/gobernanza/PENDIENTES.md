@@ -1,3 +1,12 @@
+## Continuidad vigente · C-GOBERNANZA-RETOMA-10 · 2026-11-06
+
+- Se reanudó la titularidad operativa primaria de Gobernanza en generación 14; el asiento corresponsable generación 12 permanece activo. Véase [control](CONTROL-RESPONSABILIDAD.json) y [crónica](cronica/C-GOBERNANZA-RETOMA-10.md).
+- Se capturó el export `ChatGPT-GOBERNANZA-1-20261106-1448.txt` como original documental. Su SHA-256 de origen es `8D1454ED1DF63F1BE3A68D1EFF953DE74A37787E472F256D4356BA1F2D550EA2`; el estado final depende del read-back de `main` registrado en la evidencia.
+- El último diálogo exportado plantea Ser y Mente como OCP raíz organizacional y una autosemejanza estructural fractal con invariantes y extensiones locales. Se mantiene como **propuesta no canonizada**. La posición canónica vigente no cambia por este registro; cualquier enmienda normativa exige autorización activa y explícita conforme a P005.
+- La coordinación EP–MCP-OCP se debe revalidar leyendo los controles y DTC titulares antes de emitir nuevas solicitudes. Las respuestas y estados dentro del export son antecedentes documentales, no read-back en vivo de esos frentes.
+- FOL1 continúa `PREPARADO_PENDIENTE_ACTIVACION_IPZ`; no asignar CV/CY/A/B globales ni por OCP. IPZ nativa `NO_VERIFICADA`; MCP normativo `DESACTIVADO`.
+
+---
 ## Estado rector vigente · C-GOBERNANZA-RETOMA-09 · 2026-11-01
 
 - Control generación 13: titular Gobernanza 1 SES-20261101-GVCD93ADD7 / UUIDv7 local 01a199c3-a374-7e1f-8191-1ff6cd93add7; corresponsable asiento 2 SES-20261101-GV8E89D1FF (gen12) preservada. Control blob 960fefdca26c841c3a2d06ebb57a2e836b6f8d73, read-back PASS.

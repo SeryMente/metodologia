@@ -1,0 +1,1896 @@
+GOBERNANZA-1
+
+User: Anonymous
+Created: 11/1/2026 17:18:01
+Updated: 11/6/2026 14:46:05
+Exported: 11/6/2026 14:48:29
+Link: https://chatgpt.com/c/6ae7c8a9-1de0-83e8-9896-1a0d68ed85b4
+
+## Prompt:
+1/11/2026, 5:18:39 p.m.
+
+ChatGPT-GOBERNANZA-1-20261101-1717.md
+Adjunta converascion en persistencia de frente GOBERNANZA para covnerascion 1.
+
+Retoma repsosnabilidad en tiempo record.
+
+PROHIBIDO TARDARTE MAS DFE LO ESTRICTAMNET NECESARIO PARA INICIAR CONVERSACION. Tienes maximo 5 minutos para resolver el primer ciclo.
+
+Sin excusas.
+
+## Response:
+1/11/2026, 5:18:41 p.m. · gpt-6-t-mini-mini
+
+Voy a localizar el archivo indicado y recuperar la referencia canónica de GOBERNANZA; después identificaré la acción de persistencia que puede ejecutarse en este primer ciclo, sin declarar escrituras que no hayan sido verificadas.
+
+Localicé un antecedente de Gobernanza fechado hoy: ChatGPT-GOBERNANZA-20261101-1518.md (161 KB). El archivo solicitado con sufijo 1717 no apareció en la búsqueda. La fuente normativa sí respondió desde main: DUG Samantha v377, firma NX-377m, Metacanon 1.28 y GOW 2.17. Estoy extrayendo el último estado verificable del antecedente antes de registrar nada.
+
+El antecedente fija la DTC (Dinámica Trilateral por Ciclo) como obligación recurrente: Gobernanza integra el sprint y verifica Gobernanza, EP y OCP MCP; no debe crear un canal paralelo. También registra una brecha previa en la sincronización del estado entre núcleos y objetos de comunicación. Estoy comprobando el control vigente y la ruta exacta de persistencia para no reutilizar una generación o un cursor obsoleto.
+
+## Prompt:
+1/11/2026, 6:56:56 p.m.
+
+Continua
+
+## Response:
+1/11/2026, 6:57:11 p.m. · gpt-6-t-mini-mini
+
+El control ya contiene un cambio concurrente que no estaba en la primera lectura: generación 12, titular vigente de generación 11 y asiento corresponsable 2 ya sustituido. No voy a pisar ese registro. Haré el relevo como generación 13, preservando el corresponsable actual; además, el export original se copiará byte a byte y se cotejará con su SHA antes de cerrar el ciclo.
+
+La titularidad se puede transferir sin exceder el máximo de dos responsables. La nueva sesión tendrá UUIDv7 local y folio SES-20261101-GVCD93ADD7; el asiento corresponsable vigente se conserva. Los cuatro identificadores nuevos pasaron la búsqueda de colisiones en SeryMente/metodologia.
+
+EP recibió y acusó la respuesta de Gobernanza en el mismo objeto y ciclo 03; el read-back coincide con main. La respuesta separa la copia local SQLite, la persistencia B2 y la restauración entre equipos, sin declarar operativa ninguna transferencia remota. Ahora incorporo esa ampliación en GOV-TASK-014 y la comunico al titular de MCP-OCP por su objeto ya existente.
+
+Interpretando la solicitud
+
+Estoy entendiendo que “retoma responsabilidad en tiempo récord” implica reemplazar al titular actual, conservar al corresponsable y registrar una nueva generación. También necesito crear un folio único usando un identificador local compatible con UUIDv7, sin depender de datos personales del usuario.
+
+Continuando el proceso
+
+Estoy retomando la operación con prioridad. Primero verifico la sección de referencia correspondiente y reviso las comunicaciones vigentes para confirmar si existe alguna nueva instrucción antes de registrar la sustitución y preservar la corresponsabilidad actual.
+
+Interpreté la solicitud y continué el proceso
+
+Verificó SHA y archivos clave locales
+
+Calculaste hashes SHA y verificaste archivos locales en paralelo
+
+Verificó archivos, gobernanza y coordinación para preparar la publicación
+
+Verificando continuidad operativa
+
+Estoy confirmando la referencia normativa y el estado actual de las responsabilidades antes de actuar. La instrucción parece autorizar una nueva titularidad, manteniendo vigente la corresponsabilidad, pero aún debo validar el registro disponible.
+
+Cerrando la verificación
+
+Aún estoy distinguiendo entre la validación documental y el registro operativo. La instrucción autoriza continuar, pero no confirma por sí sola que el archivo fuente esté disponible; necesito conservar esa diferencia para evitar declarar una persistencia no comprobada.
+
+Verificó y cerró la continuidad operativa
+
+Listó dispositivos y formalizó la transferencia en Gobernanza
+
+Coordinaste la gobernanza y metodología del sprint MCP
+
+Interacted with Files
+
+Registrando la transición
+
+Estoy preparando la nueva titularidad y manteniendo la corresponsabilidad existente. También estoy separando lo confirmado de lo pendiente: puedo registrar el cambio operativo, pero no declarar la persistencia completa del archivo sin verificar su disponibilidad.
+
+Registró la transición
+
+Formalizando el cambio
+
+Estoy integrando la nueva titularidad como generación 13, conservando la corresponsabilidad vigente y registrando por separado la persistencia pendiente del archivo fuente. También estoy preparando el acuse correspondiente para mantener sincronizado el frente de gobernanza.
+
+Formalizaste el cambio
+
+Coordinando la respuesta
+
+Estoy tomando la solicitud de continuidad como una nueva intervención operativa: confirmo la generación 13, mantengo la corresponsabilidad y coordino la revisión técnica pendiente antes de cerrar el registro.
+
+Continuando la coordinación
+
+Estoy registrando la nueva intervención como generación 13, manteniendo la corresponsabilidad vigente y dejando constancia de la persistencia documental pendiente. También estoy preparando la respuesta coordinada para que el cambio quede sincronizado con las comunicaciones abiertas.
+
+Coordiné la respuesta y di seguimiento
+
+Coordinó gobernanza, controles, ciclos MCP y comunicaciones EP/DTC
+
+Actualizé gobernanza, persistencia MCP y coordinación de Task14/DTC
+
+Consolidando el registro
+
+Estoy cerrando la actualización con la nueva titularidad, la corresponsabilidad preservada y los estados de coordinación documentados. La captura original queda marcada como pendiente hasta confirmar su persistencia, evitando afirmar que el archivo ya fue incorporado.
+
+Consolidaste el registro
+
+Actualizaste gobernanza, persistencia, tareas y coordinación técnica MCP-OCP
+
+Revisé gobernanza y pendientes para reemitir el archivo correctamente
+
+Verificó y actualizó la gobernanza, pendientes y evidencias históricas
+
+Buscaste el archivo de exportación de conversaciones
+
+Verificó pendientes, documentó Gobernanza, EP y MCP, y actualizó índices vigentes
+
+Actualizaste estados históricos y control vigente de Gen13
+
+Buscando copias locales del documento de gobernanza
+
+Buscaste copias locales del documento de gobernanza
+
+Actualizaste evidencia, crónica y referencias con nuevas confirmaciones
+
+Verificado y calculado el estado de gobernanza y folios pendientes
+
+Revisé y registré la incidencia de concurrencia y la gobernanza MCP
+
+Actualicé documentación, evidencias y pendientes de gobernanza con control CAS
+
+Verificó gobernanza, pendientes, integridad y antigüedad de DUG/IPZ
+
+Actualicé la coordinación, gobernanza y evidencia cronológica de entregas
+
+Verificó estados, commits, evidencias y pendientes metodológicos actuales
+
+Procesó durante 9m 10s
+
+La revisión recupera el estado actual del sprint:
+
+DUG: Samantha v377 · NX-377m.
+
+Responsabilidad: generación 12 en el control; titular anterior de generación 11 y asiento corresponsable 2 activo.
+
+EP: ciclo C-EP-MOD-SCRIPTPWS-20261101-03 abierto. EP comunicó una ampliación importante de GOV-TASK-014.
+
+OCP MCP: ciclo local 06 cerrado y verificado. Build técnico de la candidata acreditado, pero todavía no integrado en main, instalado ni aceptado.
+
+FOL1: preparado, sin activación. No se asignan folios globales.
+
+La ampliación de EP es pertinente: la persistencia del sprint debe cubrir tanto los documentos versionados como el estado y los datos operativos recuperables del propio servidor MCP-OCP. La incorporación técnica debe respetar la autoridad de MCP-OCP sobre su base SQLite, copias, claves y restauración.
+
+(Titularidad transferida y verificada)
+
+C-GOBERNANZA-RETOMA-09
+
+La transferencia quedó publicada en main y leída de vuelta:
+
+Campo
+Resultado
+Generación nueva
+13
+Sesión
+SES-20261101-GVCD93ADD7
+UUIDv7 local
+01a199c3-a374-7e1f-8191-1ff6cd93add7
+Titular
+Gobernanza 1
+Corresponsable
+Generación 12, preservada
+Responsables activos
+2 de 2
+Read-back
+PASS
+
+El control final tiene blob 960fefdca26c841c3a2d06ebb57a2e836b6f8d73. No se modificaron los controles de EP ni MCP-OCP.
+
+Resultado del primer ciclo
+
+(Titularidad verificada) (DTC procesada) (Original pendiente de persistencia)
+
+Estado de los frentes
+
+Frente
+Estado
+Gobernanza
+Titularidad gen. 13 verificada
+EP
+Ciclo 03 abierto; tres novedades procesadas por Gobernanza
+MCP-OCP
+Ciclo 06 cerrado y verificado; §30 pendiente de respuesta
+
+La comunicación de EP quedó en su objeto original, sin crear canales paralelos. Sus incidencias de concurrencia y preflight fueron reconocidas, manteniendo la responsabilidad técnica en EP.
+
+MCP-OCP recibió una solicitud en §30 para definir la recuperación de su estado operativo entre equipos. Todavía no consta su respuesta.
+
+Persistencia del frente
+
+Ya están publicados y verificados:
+
+github.com
+
+github.com
+
+github.com
+
+github.com
+
+github.com
+
+Único pendiente documental crítico: copiar el export ChatGPT-GOBERNANZA-1-20261101-1717.md a documentos/originales/ y actualizar el manifiesto. Su SHA-256 de origen está registrado, pero PC-8 quedó desconectado antes de completar la transferencia. No se declara persistido.
+
+Trazabilidad de salida
+
+Campo
+Estado
+IPZ
+v0.7 · edad NO VERIFICADA
+Instalación IPZ nativa
+NO VERIFICADA
+DUG
+Samantha v377 · NX-377m · 0.3.8
+CONV
+CV-G PENDIENTE / OCP PENDIENTE
+CICLO 1
+CY-G PENDIENTE / OCP PENDIENTE
+A
+PENDIENTE / NO ASIGNADO
+B
+PENDIENTE / NO ASIGNADO
+FOL1
+PREPARADO_PENDIENTE_ACTIVACION_IPZ
+DTC global
+EN_CURSO_RECURRENT
+
+Siguiente acción: reconectar PC-8 o adjuntar el export original para completar su persistencia byte a byte, SHA y read-back.
+
+La titularidad ya está asumida. El frente continúa bajo responsabilidad de Gobernanza 1.
+
+## Prompt:
+1/11/2026, 7:10:15 p.m.
+
+Bien,  re4toma la coordinacion de los frentes, re4cuerda que backblaze persistencia de ep, formsa parte del ambito de3l socipe del sprint. Vuelve con los elementos obligator4ios del frtente del ciclo
+
+## Response:
+1/11/2026, 7:10:18 p.m. · gpt-6-t-mini-mini
+
+Retomo desde el estado registrado: primero contrastaré los objetos de coordinación de EP y MCP-OCP, después delimitaré el alcance del sprint —incluida la persistencia Backblaze de EP como parte del alcance OCP— y cerraré con los elementos obligatorios del ciclo, distinguiendo lo verificado de lo pendiente.
+
+La lectura actualizada confirma que el alcance no debe separarse: EP-TASK-002 (transporte y persistencia Backblaze) y la continuidad recuperable del servicio/datasets de MCP-OCP pertenecen a la misma dependencia del sprint, integrada en GOV-TASK-014 y en el objeto DTC existente de MCP-OCP. No se abre otro OCP ni un canal paralelo. EP-03 sigue abierto y ha añadido dos incidencias de preflight aún sin respuesta de Gobernanza; las atenderé en esa misma entrada.
+
+El OEP vigente muestra una versión más reciente que la fotografía de coordinación anterior: §95 (OEP v0.3.25 / VCU-EP-v27) ya incorpora como trabajo activo la persistencia de MCP-OCP dentro de EP-TASK-002, con dos planos de datos y propietarios separados. EP mantiene además un procedimiento B2 de una sola pasada; su propio estado dice AUTHORIZATION_PENDING, B2_PREFLIGHT_NOT_RUN y E2E_NOT_STARTED. No trataré ese procedimiento como una operación ya autorizada o ejecutada. Ahora registro los dos acuses pendientes de Gobernanza en el mismo EP-03.
+
+Revisados archivos de gobernanza, coordinación, persistencia y estados actuales
+
+Retomando coordinación operativa
+
+Estoy reconciliando el estado más reciente con la autorización previa. El alcance sigue siendo documental y de coordinación: no iniciaré operaciones remotas ni acciones sobre B2 sin credenciales o confirmación vigente. Mantendré el ciclo acotado y registraré los dos fallos pendientes.
+
+Verificando estado del ciclo
+
+Estoy revisando el estado vigente de los frentes, sus requisitos de inicio y cierre, y los pendientes de coordinación. Mantendré la ejecución en espera de credenciales, sin operar remotamente, y priorizaré actualizar los registros compartidos con los incidentes recientes.
+
+Verificaste el estado del ciclo y retomaste la coordinación operativa
+
+Consultado el estado, inventario, documentación y metaprompt canónico
+
+Ajustando el plan
+
+El registro compartido no está aceptando actualizaciones, así que no insistiré ni intentaré rodearlo. Continuaré con la coordinación en modo lectura, mantendré los pendientes identificados y prepararé el próximo estado sin ejecutar operaciones remotas.
+
+Ajustaste el plan
+
+Actualizaste respuestas sobre gobernanza, DTC y coordinación bilateral EP
+
+Verificó gobernanza, tareas, pendientes y entregables obligatorios actuales
+
+Consolidando frentes activos
+
+Estoy integrando el estado actual: Gobernanza sigue activa; EP permanece condicionado por credenciales y equipo fuera de línea; MCP conserva su ciclo cerrado, con el siguiente pendiente. Prepararé requisitos, bloqueos y próximos pasos sin ejecutar acciones remotas.
+
+Consolidó los frentes activos
+
+Listó dispositivos y su estado de conexión
+
+Buscando en la web
+
+Buscaste y recuperaste commits relevantes
+
+Cerrando coordinación pendiente
+
+Estoy consolidando el estado: Gobernanza sigue activa pero requiere sincronización; EP continúa esperando presencia y credenciales; MCP tiene entregables pendientes sin nuevo ciclo abierto. No publicaré cambios ni iniciaré operaciones hasta que los bloqueos se resuelvan.
+
+Consolidando estado
+
+Estoy cerrando la coordinación sin abrir un ciclo nuevo: Gobernanza está activa; EP sigue bloqueado por presencia y credenciales; MCP mantiene entregables pendientes. Los registros requieren sincronización antes de cualquier ejecución o publicación adicional.
+
+Cerraste coordinación pendiente y consolidaste el estado
+
+Revisaste commits y documentación EP, cambios de task002 y coordinación
+
+Buscando en la web
+
+Procesó durante 3m 18s
+
+Retoma de coordinación trilateral — Gobernanza · EP · MCP-OCP
+
+(Coordinación retomada) (DTC global en curso)
+
+La prioridad de coordinación queda fijada: la persistencia Backblaze de EP forma parte del alcance del sprint y debe cubrir también la continuidad recuperable del servicio MCP-OCP. No es una tarea futura ni un alcance accesorio. Se conserva una sola dependencia técnica ejecutora en EP, una tarea integradora en Gobernanza y la autoridad técnica del MCP-OCP sobre sus propios datos y mecanismos de restauración.
+
+1. Estado integrado de los frentes
+
+Frente
+Ciclo y estado observado
+Responsabilidad y siguiente hito
+Gobernanza
+C-GOBERNANZA-RETOMA-09 · responsabilidad generación 13 verificada
+Centraliza la DTC, integra criterios y aceptación del sprint. Debe conciliar los nuevos cambios de EP en sus registros.
+Entorno Persistente (EP)
+C-EP-MOD-SCRIPTPWS-20261101-03 · abierto
+EP-TASK-002 continúa en_curso. Debe atender el nuevo estado del entorno, seguir la preparación de persistencia y completar su cierre documental.
+MCP-OCP
+Ciclo local 06 cerrado CUMPLE_VERIFICADO; solicitud §30 pendiente de respuesta
+Debe identificar y validar los datasets, consistencia del backup, recuperación de claves y restauración funcional del servicio.
+
+Control de Gobernanza: titular principal SES-20261101-GVCD93ADD7, generación 13; corresponsable de asiento 2 SES-20261101-GV8E89D1FF, generación 12. El roster conserva dos responsables activos. El control final consta con blob 960fefdca26c841c3a2d06ebb57a2e836b6f8d73 y lectura de vuelta verificada.
+
+La titularidad formal y generación propia de EP siguen sin control de responsabilidad verificable en sus fuentes. La conexión RDC de 015RENTA01 acredita disponibilidad del dispositivo, no titularidad formal del frente EP. MCP-OCP conserva su control propio, generación 3, sin cambios.
+
+2. Alcance obligatorio de persistencia del sprint
+
+La dependencia integrada queda así:
+
+GOV-TASK-014 — Integración y aceptación de persistencia Backblaze
+
+Plano A · Metodología y entorno EP
+
+Documentos y artefactos versionados; datos elegibles del entorno; manifiestos, transferencia y recuperación. GitHub SeryMente/metodologia/main continúa como fuente canónica de los documentos versionados.
+
+Plano B · Servicio MCP-OCP
+
+Bases y datasets persistentes que su propietario determine necesarios para reanudar el servicio; backup SQLite coherente; paquetes, índices y manifiesto portable; recuperación de clave y prueba funcional en otro host/perfil.
+
+Distribución de autoridad
+
+EP: sustrato de persistencia y transporte Backblaze B2.
+
+MCP-OCP: inventario de sus datos, backup nativo, consistencia, recuperación criptográfica y aceptación funcional.
+
+Gobernanza: integración en el OCP general del sprint, dependencias, criterios de aceptación y verificación trilateral.
+
+La distinción de estados es obligatoria:
+
+BACKUP_LOCAL_VERIFICADO
+
+PERSISTENCIA_REMOTA_B2_VERIFICADA
+
+RESTORE_CROSS_HOST_VERIFICADO
+
+INTEGRADO_EN_MAIN
+
+INSTALADO_EN_EP
+
+ACEPTADO_POR_OPERADOR
+
+No se infiere un estado a partir de otro.
+
+Destino Backblaze: único bucket indicado, OCP-MCP. El prefijo histórico ep-ocp/ sigue pendiente de comprobación autenticada. OCP-MSP y metodologia-ep-persistencia no deben utilizarse.
+
+La candidata MCP-OCP dispone de evidencia técnica local reportada de 31/31 pruebas unitarias, 29/29 de integración y 200/200 componentes cotejados. Eso no acredita integración en main, instalación en EP, B2 remoto ni restauración cross-host. La envoltura DPAPI CurrentUser tampoco demuestra portabilidad entre usuarios o dispositivos.
+
+Resultado actual: GOV-TASK-014 está en_curso; EP-TASK-002 está en_curso; no hay evidencia que permita declarar Backblaze operativo o el servicio MCP-OCP recuperable en otro host.
+
+3. Novedades y bloqueos por frente
+
+EP
+
+El main actual ya registra la reinstanciación del entorno en 015RENTA01:
+
+Dispositivo RDC observado Online: 015RENTA01, ID aacf2eb5-17f4-428e-9242-c24a1fe4a2ec.
+
+PC-8 está Offline. El proceso histórico PID 7232 quedó supersedido y no se reutiliza.
+
+B2 CLI v5.0.2 instalada localmente; SHA-256 cotejado: 543aa2e36d3cbe06cf2c3e59287ce58b0a7d1507af87f147ff2f7d9406879662.
+
+Ayudas locales verificadas; no se autenticó contra Backblaze.
+
+AUTHORIZATION_NOT_STARTED, B2_PREFLIGHT_NOT_RUN, E2E_NOT_STARTED, UPLOAD_NOT_EXECUTED, RESTORE_NOT_EXECUTED.
+
+La compuerta presencial P012/P013 para el equipo actual sigue pendiente. La declaración anterior junto a PC-8 no se transfiere automáticamente a 015RENTA01.
+
+En MOD-SCRIPTPWS, EP documenta STATIC_GUARDS_PASS, pero la integración global sigue bloqueada: la suite de unitarias de KHORA reportó 571/572 por falta de GH_TOKEN, UI Contract/E2E quedan afectadas en cascada, y existen dos incidencias Ruff preexistentes fuera del delta. El E2E real del host sigue sin ejecutarse; no hay aceptación integral ni promoción del PR #350.
+
+Dos incidencias recientes de EP-03 siguen pendientes de respuesta persistida de Gobernanza:
+
+El helper SHA-256 volvió a fallar por una rotación Sigma0 mal transcrita. La corrección exigida es usar API criptográfica nativa o un helper congelado y cotejado; no volver a transcribir la fórmula.
+
+El preflight del encabezado de arquitectura falló porque un reemplazo global modificó antes el texto que una transformación posterior intentaba localizar. La reconstrucción debe validar las anclas sobre la fuente original y aplicar una transformación determinista.
+
+Intenté incorporar ambos acuses al mismo objeto DTC de EP, pero la escritura de GitHub fue bloqueada por un control de seguridad de la plataforma. No se publicó ningún cambio de Gobernanza en ese intento. No repetí la escritura ni abrí otro canal. El ciclo EP-03 sigue abierto.
+
+MCP-OCP
+
+El ciclo local 06 conserva su cierre CUMPLE_VERIFICADO. La solicitud §30 del objeto DTC existente sigue pendiente de lectura y respuesta del titular MCP-OCP.
+
+No se debe abrir una nueva solicitud ni confundir el cierre del ciclo 06 con el cumplimiento de la dependencia de persistencia del sprint. El siguiente ciclo MCP debe responder en el mismo objeto sobre inventario, snapshot consistente, portabilidad de claves, manifiesto externo y restauración funcional aislada.
+
+Gobernanza
+
+La retoma de titularidad está verificada y la ficha GOV-TASK-014 contiene el alcance ampliado. Sin embargo, hay una brecha de sincronización: los registros centrales de Gobernanza aún no reflejan por completo las dos incidencias nuevas de EP y el estado de reinstanciación de §34. Se requiere actualizar esos resúmenes cuando la escritura pueda ejecutarse bajo CAS y leerse de vuelta.
+
+4. Elementos obligatorios del ciclo
+
+Se mantienen como compuerta para los tres frentes, no como recomendaciones opcionales.
+
+Fase
+Elemento obligatorio
+Criterio de cumplimiento
+Apertura
+Identidad, fuente, titularidad, generación, autorización y exclusividad de escritor
+Preflight observado; sin titularidad o permiso inferidos.
+Cursor
+Leer el último objeto DTC del frente
+Registrar ruta, revisión, commit/blob y mensajes nuevos; si no hay delta, escribir SIN_NOVEDAD.
+Respuesta inicial
+Acusar, interpretar, declarar viabilidad, bloqueos y siguiente acción
+Persistida en el mismo objeto antes de trabajo auxiliar.
+Selección
+Releer el índice canónico de tareas y escoger las afectadas
+Conservar IDs de origen: EP-TASK-002 y GOV-TASK-014; no duplicarlas.
+Procesamiento
+Ejecutar solo acciones autorizadas
+Separar reportado, observado, propuesto, autorizado, intentado, ejecutado, verificado y aceptado.
+Concurrencia
+Un escritor por recurso compartido
+Releer HEAD/blob inmediatamente antes de escribir; ante HTTP 409 detener y reconciliar.
+Cierre documental
+Actualizar el mismo DTC y los núcleos operativos realmente afectados
+Incluir delta, tareas, fuentes, commits, blobs, hashes, decisiones, bloqueos y siguiente acción.
+Read-back
+Releer cada objeto modificado
+Comparar contenido y SHA; sin coincidencia, no declarar persistencia verificada.
+Cierre de ciclo
+Completar DOCUMENTADO_AL_CIERRE → VERIFICADO_READBACK
+Si falta respuesta inicial o cierre, declarar CICLO_INCOMPLETO.
+
+Aplicación inmediata de la compuerta
+
+Gobernanza: conciliar el objeto EP-03 y responder las dos incidencias pendientes en el mismo DTC, una vez que la escritura esté habilitada; actualizar GOV-TASK-014 y los resúmenes afectados.
+
+EP: continuar el ciclo 03 existente, atender la reinstanciación de §34, mantener EP-TASK-002 activa y preparar los elementos de manifiesto/datasets sin saltarse la compuerta B2.
+
+MCP-OCP: esperar la respuesta de su titular en §30 y procesar la dependencia en su próximo ciclo propio; sin tocar su control, código o servidor desde Gobernanza.
+
+5. Identificadores y estado de gobernanza exigidos
+
+IPZ: v0.7 · edad e instalación nativa NO VERIFICADAS.
+
+DUG: Samantha v377 · NX-377m · Metacanon 1.28 · GOW 2.17 · 43 principios · 22 anexos · blob 54064c8fe00f872023a455f06596061ed69062ae · edad 0.3.15. Se conserva la discrepancia de etiqueta lateral v375 frente al título y JSON v377.
+
+CONV: CV-G PENDIENTE / NO ASIGNADO · OCP CV-OCP PENDIENTE / NO ASIGNADO.
+
+CICLO: Gobernanza C-GOBERNANZA-RETOMA-09 · EP C-EP-MOD-SCRIPTPWS-20261101-03 · MCP-OCP ciclo local 06 cerrado, §30 pendiente de respuesta. Folios globales CY-G y CY-OCP PENDIENTES / NO ASIGNADOS.
+
+A: A-G PENDIENTE / NO ASIGNADO · OCP A-OCP PENDIENTE / NO ASIGNADO.
+
+B: B-G PENDIENTE / NO ASIGNADO · OCP B-OCP PENDIENTE / NO ASIGNADO.
+
+FOL1: PREPARADO_PENDIENTE_ACTIVACION_IPZ; no asignar folios globales todavía.
+
+DTC global: EN_CURSO_RECURRENT.
+
+MCP-NORMATIVO: DESACTIVADO.
+
+Medición de ciclo: NOT_MEASURED cuando no existan marcas completas desde la apertura; no reconstruir duraciones ni declarar una línea base anticipada.
+
+6. Fuentes operativas vigentes
+
+github.com
+
+github.com
+
+github.com
+
+github.com
+
+github.com
+
+github.com
+
+Cierre de esta retoma: coordinación recuperada y estado conciliado en lectura. No se declara cerrado ningún ciclo abierto, no se ha ejecutado operación B2, no se ha publicado el acuse de las dos incidencias recientes de EP y no se ha aceptado la persistencia multiubicación. La siguiente acción coordinadora es resolver la sincronización documental de Gobernanza; la siguiente compuerta técnica de EP es la revisión presencial P012/P013 en 015RENTA01, y MCP-OCP conserva su respuesta pendiente en §30.
+
+## Prompt:
+1/11/2026, 7:15:44 p.m.
+
+Bien, que elemenhjtos son obligtatorios por ciclo]?
+
+## Response:
+1/11/2026, 7:15:51 p.m. · gpt-6-t-mini-mini
+
+Organizando requisitos
+
+Estoy reuniendo los elementos obligatorios por ciclo: cabecera IPZ, estados DUG/CONV, ciclo OCP identificado, tres frentes activos, polling, acciones autorizadas, evidencia, cierre verificable y reporte de incidencias sin inventar datos.
+
+Procesó durante 6s
+
+Los elementos obligatorios de cada ciclo son apertura, lectura y respuesta inicial, procesamiento autorizado, documentación de cierre y verificación de lectura de vuelta. Aplican a los tres frentes de la DTC: Gobernanza, EP y MCP-OCP.
+
+1. Apertura del ciclo
+
+Antes de realizar cualquier trabajo:
+
+Preflight de responsabilidad: comprobar identidad, frente, titularidad, generación, autorización y exclusividad de escritor.
+
+Identificar la fuente canónica: localizar el OCP, el objeto de coordinación y el estado vigente del frente.
+
+Leer el cursor: recuperar la última revisión realmente procesada y localizar mensajes nuevos.
+
+Revisar el índice de tareas: identificar las tareas afectadas, conservando sus identificadores originales.
+
+Responder a Gobernanza: registrar la respuesta inicial en el mismo objeto de coordinación.
+
+La respuesta inicial debe incluir:
+
+Acuse de recepción.
+
+Interpretación del encargo.
+
+Estado y viabilidad.
+
+Bloqueos y restricciones.
+
+Siguiente acción inmediata.
+
+Si no hay novedades, debe quedar registrado SIN_NOVEDAD, con referencia al cursor leído. No basta con guardar el mensaje o marcarlo como visto.
+
+2. Procesamiento
+
+Durante el ciclo:
+
+Ejecutar únicamente acciones autorizadas y pertenecientes al ámbito del frente.
+
+Procesar las instrucciones pendientes y las tareas afectadas.
+
+Conservar procedencia, fuentes, revisiones y evidencia.
+
+Distinguir siempre:
+
+Reportado.
+
+Observado.
+
+Inferido.
+
+Propuesto.
+
+Autorizado.
+
+Intentado.
+
+Ejecutado.
+
+Verificado.
+
+Aceptado.
+
+Mantener un solo escritor por recurso compartido y reconciliar cualquier conflicto de concurrencia antes de continuar.
+
+Realizar sondeos intraciclo en hitos, decisiones, antes de escribir, después de tramos prolongados y antes del cierre. No se exige temporizador fijo.
+
+Un bloqueo puntual no debe detener las tareas independientes que sí estén autorizadas.
+
+3. Cierre del ciclo
+
+Al terminar el procesamiento, antes de declarar cerrado el ciclo:
+
+Actualizar el mismo objeto DTC con todas las novedades y respuestas.
+
+Documentar tareas e hitos afectados, sus estados y responsables.
+
+Registrar cambios reales, decisiones, bloqueos y dependencias.
+
+Incorporar evidencia: rutas, fuentes, revisiones, commits, blobs, hashes y resultados de pruebas.
+
+Actualizar el OCP o README de las tareas que realmente hayan cambiado.
+
+Mantener una crónica acumulativa: añadir la nueva entrada sin borrar el historial.
+
+Registrar la siguiente acción y un pronóstico únicamente cuando exista evidencia suficiente.
+
+Hacer lectura de vuelta de todos los documentos modificados y comprobar el contenido y SHA.
+
+4. Secuencia obligatoria de estados
+
+PUBLICADO
+
+El mensaje o instrucción queda persistido en el objeto correspondiente.
+
+LEÍDO
+
+El frente recupera y registra el cursor efectivamente leído.
+
+RESPUESTA_INICIAL_REGISTRADA
+
+Se acusa y responde antes de iniciar otro trabajo sustantivo.
+
+PROCESADO
+
+Se atiende el encargo y se ejecuta el trabajo autorizado.
+
+DOCUMENTADO_AL_CIERRE
+
+Se registran novedades, cambios, evidencias y pendientes.
+
+VERIFICADO_READBACK
+
+Se releen los documentos y se cotejan sus contenidos y hashes.
+
+(Ciclo documental completo)
+
+5. Condiciones que impiden cerrar un ciclo
+
+El ciclo permanece CICLO_INCOMPLETO cuando:
+
+Falta la respuesta inicial.
+
+No se ha procesado el trabajo pendiente.
+
+Falta la documentación final.
+
+No existe lectura de vuelta verificable.
+
+Hay conflictos de escritura sin reconciliar.
+
+Se presenta una prueba reportada como si hubiera sido verificada.
+
+Se intenta cerrar sin atender las comunicaciones pendientes.
+
+Un ciclo cerrado de un frente tampoco cierra automáticamente la DTC global. La coordinación trilateral es recurrente.
+
+6. Particularidad de cada frente
+
+Frente
+Obligación específica
+Gobernanza
+Leer EP y MCP-OCP, conciliar sus avances y mantener el estado integrado del sprint.
+EP
+Responder a Gobernanza al inicio, ejecutar su trabajo autorizado y actualizar su OEP, tareas y DTC al cierre.
+MCP-OCP
+Responder en su objeto propio, procesar su trabajo y documentar el estado real de su núcleo, pruebas y entregables.
+
+Regla rectora: cada frente es responsable de su propio ciclo y de su evidencia. Gobernanza integra y verifica; no sustituye la ejecución técnica ni la titularidad de los otros frentes.
+
+7. Identificación y trazabilidad de esta respuesta
+
+IPZ: v0.7 · instalación nativa y edad NO VERIFICADAS.
+
+DUG: Samantha v377 · NX-377m · Metacanon 1.28 · GOW 2.17 · edad NO VERIFICADA.
+
+CONV: CV-G PENDIENTE / NO ASIGNADO · OCP CV-OCP PENDIENTE / NO ASIGNADO.
+
+CICLO: identificador global CY-G PENDIENTE / NO ASIGNADO · OCP CY-OCP PENDIENTE / NO ASIGNADO. Se conserva la retoma local C-GOBERNANZA-RETOMA-09.
+
+A: A-G PENDIENTE / NO ASIGNADO · OCP A-OCP PENDIENTE / NO ASIGNADO.
+
+B: B-G PENDIENTE / NO ASIGNADO · OCP B-OCP PENDIENTE / NO ASIGNADO.
+
+FOL1: preparado, pendiente de activación; no se asigna folio global.
+
+La referencia operativa es el github.com, junto con los objetos DTC de EP y MCP-OCP.
+
+## Prompt:
+1/11/2026, 7:17:03 p.m.
+
+mE ITNERESA un chyecxkliost ejecutivo para pdoer saber dodne estamos, en el sprint general, conforme al criteiro rector, y me interesa que resuelkvas las tareas de dtc cada ciclo sin excepcion. y
+
+## Response:
+1/11/2026, 7:17:10 p.m. · gpt-6-t-mini-mini
+
+Voy a convertir el estado actual en un tablero ejecutivo del sprint: criterio rector, resultados esperados, tareas, dependencias, bloqueos, evidencia y siguiente hito. También revisaré los dos cursores DTC y dejaré resuelta en este ciclo cada comunicación que esté dentro de mi autoridad; cuando una respuesta dependa de EP o MCP-OCP, la registraré como pendiente del titular, no como tarea resuelta por inferencia.
+
+La revisión más reciente de main muestra actividad adicional de EP durante esta misma sesión, incluida la actualización de EP-TASK-002 y nuevas incidencias de preflight. Por eso el checklist no se basará en la fotografía de hace unos minutos: estoy conciliando el último main y separaré el avance de MOD-SCRIPTPWS del resultado real de persistencia B2.
+
+El main acaba de avanzar otra vez durante la revisión: EP registró dos incidencias adicionales de construcción después de mi última lectura. Eso confirma que el tablero debe ser un snapshot con cursor y hora, no una afirmación de sincronización continua. Voy a actualizarlo contra el último estado que pueda leer ahora y dejar cada incidencia DTC pendiente o resuelta de forma explícita.
+
+Armando la lista ejecutiva
+
+Estoy reuniendo el estado más reciente del sprint, el criterio rector y las tareas DTC pendientes para construir una lista ejecutiva clara. También verificaré qué entregables siguen abiertos y cuáles requieren resolución en cada ciclo, sin excepciones.
+
+Armé la lista ejecutiva
+
+Verificando el sprint
+
+Estoy comprobando el estado actualizado de las tareas y el criterio rector para integrar una lista ejecutiva persistente. También estoy asegurando que cada ciclo incluya la resolución obligatoria de todas las tareas DTC pendientes.
+
+Verificaste el sprint
+
+Investigaste GOV-TASK-011 y actualizaste el checklist ejecutivo del sprint DTC
+
+Buscando en la web
+
+Integrando criterios
+
+Estoy consolidando los criterios de aceptación: catálogo completo, selección pertinente, enlaces Sync individuales, telemetría, token autorizado, expansión cuando falte contexto, hash verificable y resolución de todas las tareas DTC en cada ciclo.
+
+Integró criterios
+
+Cerrando el tablero
+
+Estoy revisando las últimas actualizaciones de entregas y tareas para distinguir lo concluido de lo pendiente. Después dejaré un tablero ejecutivo persistente, con control obligatorio de DTC en cada ciclo y sin excepciones.
+
+Cerraste el tablero
+
+Consolidando el tablero
+
+Estoy incorporando una discrepancia importante: el criterio solicita enlaces “Sync”, mientras el documento rector vigente usa “Sink”. La marcaré como bloqueo explícito, junto con IPZ, MCP, telemetría, hash y DTC.
+
+Priorizando el cierre
+
+Estoy dejando el sprint como parcialmente cumplido: el núcleo existe, pero faltan validaciones, alineación “Sync/Sink”, activación, telemetría, hash verificable y respuestas DTC obligatorias. No presentaré avances no comprobados como terminados.
+
+Consolidé el tablero y prioricé el cierre
+
+Revisé commits, estados y actualicé el tablero ejecutivo
+
+Buscando en la web
+
+Revisé y recuperé archivos EP, OEP y DTC recientes
+
+Preparando el tablero
+
+Estoy organizando un tablero ejecutivo persistente con criterios, estados, bloqueos, evidencias y próximos cierres. Incluiré una compuerta DTC obligatoria por ciclo, diferenciando lo verificado de lo todavía pendiente.
+
+Preparaste el tablero
+
+Actualizada la coordinación y gobernanza bilateral de entregas
+
+Actualizaste índices y verificaste su contenido
+
+Actualizaste GOV-TASK-011 con nuevas secciones y recuperación operativa
+
+Documentada e integrada la persistencia Backblaze de Metodología y OCP
+
+Buscando en la web
+
+Calculadas antigüedades UTC y verificados cursores DTC actuales
+
+Inspeccionaste la actualización reciente del DTC de EP
+
+Inspeccionó SHA de exportación y actualizó coordinación bilateral
+
+Actualizado el índice antes de establecer prioridades
+
+Buscando en la web
+
+Recalculaste fechas de commits y DTCs de EP, MCP y DUG
+
+Redactaste la coordinación bilateral y gobernanza del EP
+
+Buscando en la web
+
+Actualicé documentos y registros de gobernanza y coordinación trilateral
+
+Comparaste el commit 130553 con el índice y verificaste EP DTC
+
+Confirmado el alcance y la gobernanza DTC de solo lectura
+
+Actualizando coordinación DTC-EP, GOV-014 y registros GOV-TASK011
+
+Verificaste estados, entregas, evidencias y trazabilidad final
+
+Buscando en la web
+
+Calculé edades exactas de commits recientes por ruta en GitHub
+
+Procesó durante 7m 17s
+
+Tablero ejecutivo del sprint general
+
+(EN CURSO · NO ACEPTADO)
+
+Corte: 1 de noviembre de 2026, 19:24 · America/Mexico_City.
+
+El criterio rector sigue siendo el dictado verbatim del operador: construir una primera versión funcional de Gobernanza integrada con IPZ y OCP MCP. La persistencia Backblaze de EP, incluida la continuidad operativa del servicio MCP-OCP, forma parte del mismo sprint; no es una iniciativa separada.
+
+El tablero ya está persistido en el repositorio y leído de vuelta. No asigno un porcentaje de avance porque las tareas no tienen ponderaciones aprobadas y sus resultados no son intercambiables.
+
+github.com
+
+1. Estado general de tareas
+
+El índice de Gobernanza contiene 14 tareas provisionales:
+
+10
+
+En curso
+
+Trabajo activo o dependencias en procesamiento
+
+3
+
+Pendientes
+
+No iniciadas; dos son diferibles
+
+1
+
+Cancelada
+
+Se conserva el antecedente histórico
+
+3
+
+Frentes DTC
+
+Gobernanza, EP y MCP-OCP
+
+Área
+Tarea
+Estado ejecutivo
+Semántica
+GOV-TASK-001 · Validación de 43 MDP
+(En curso)
+Integridad documental
+GOV-TASK-006 · Divergencias y satélites
+(En curso)
+IPZ y folios
+GOV-TASK-007 · IPZ / FOL1
+(Bloqueada)
+OCP MCP
+GOV-TASK-008 · Consulta individual de principios
+(Parcial)
+Glosario
+GOV-TASK-009 · §ARR / GOW
+(En curso)
+Admisión
+GOV-TASK-010 · Titularidad y exclusividad
+(En curso)
+Coordinación
+GOV-TASK-011 · DTC recurrente
+(Compuerta persistida)
+Fluidez
+GOV-TASK-012 · Desempeño del marco
+(En curso)
+Medición
+GOV-TASK-013 · Tiempo de ciclos
+(Sin línea base)
+Persistencia
+GOV-TASK-014 · Backblaze y continuidad MCP-OCP
+(En curso)
+Aceptación E2E
+GOV-TASK-003
+(Pendiente)
+Incubación
+GOV-TASK-004
+(Diferida)
+Integridad de principios
+GOV-TASK-005
+(Diferida)
+Sink / Cloudflare activo
+GOV-TASK-002
+(Cancelada)
+
+2. Checklist de aceptación del criterio rector
+
+Esta es la lista que determina si el sprint realmente está cumpliendo su propósito. El mero cierre de tareas o la existencia de documentación no equivale a aceptación.
+
+Resultado exigido
+Estado
+Qué falta
+IPZ de máximo 1.500 caracteres, con §ARR primero y DUG después
+(Bloqueado)
+Conciliar v0.7 y v0.8, preservar salvaguardas, instalar en campo nativo y verificar read-back.
+Admisión obligatoria antes de trabajo sustantivo
+(No probado E2E)
+Probar asignación expresa, control, titularidad, generación, autorización, exclusividad y rechazo de consultas fuera del FT.
+Catálogo de 43 principios y MDP suficientes para pertinencia
+(En curso)
+Validación semántica completa y correspondencia con IDs/títulos canónicos.
+Consulta individual de principios completos
+(Parcial)
+Demostrar recuperación individual y lectura del contenido extendido.
+Telemetría de frecuencia y hash del paquete exacto
+(No demostrado E2E)
+Probar el paquete real de enlaces, frecuencia de acceso, reconsulta y hash correspondiente.
+Aceptación de OCP MCP
+(Pendiente)
+Prueba integral positiva/negativa y decisión expresa de aceptación.
+Persistencia Backblaze de Metodología, EP y MCP-OCP
+(En curso)
+Autenticación, scope, transferencia, read-back remoto, recuperación y restore cross-host.
+Conciliación DTC de los tres frentes
+(Regla reforzada)
+Mantener la ejecución sin excepción en cada ciclo real.
+
+Dos puntos rectores que no deben diluirse:
+
+§ARR es la primera lectura lingüística; el DUG completo conserva la autoridad normativa. Considerar los 43 principios, no solo los enlaces que aparezcan destacados.
+
+Hay una discrepancia semántica sin resolver: el vector del operador menciona enlaces Sync, mientras que el DUG v377 especifica Sink. No asumir que son equivalentes. La ruta de acceso debe reconciliarse antes de declarar operativo el mecanismo de consulta individual.
+
+3. DTC: situación actual de cada frente
+
+Gobernanza
+
+(Responsabilidad vigente verificada)
+
+Titular principal generación 13: SES-20261101-GVCD93ADD7. Corresponsable de asiento 2: SES-20261101-GV8E89D1FF, generación 12.
+
+Gobernanza ha persistido el tablero ejecutivo, reforzado GOV-TASK-011 y actualizado GOV-TASK-014. Las tres piezas se leyeron de vuelta exactamente.
+
+Entorno Persistente (EP)
+
+(EP-03 abierto · procesamiento retomado)
+
+Ciclo local: C-EP-MOD-SCRIPTPWS-20261101-03.
+
+Gobernanza ha contestado las incidencias nuevas de preflight en el mismo DTC, así como la persistencia del original EP. EP respondió de nuevo para retomar EP-TASK-002 de extremo a extremo, empezando por inventario y reconciliación de solo lectura.
+
+Todavía falta: procesamiento de ese inventario, correcciones técnicas de MOD-SCRIPTPWS, actualización final y read-back de cierre del propio EP-03.
+
+MCP-OCP
+
+(Ciclo 06 cerrado · §30 pendiente)
+
+El ciclo local 06 terminó CUMPLE_VERIFICADO. Su candidata técnica registra 31/31 pruebas unitarias, 29/29 integración y 200/200 componentes del paquete cotejados.
+
+Eso no significa que esté integrado en main, instalado en EP ni aceptado por el operador.
+
+La solicitud §30 sobre continuidad de datasets, backup nativo, manifiesto portable, recuperación de clave y restauración cross-host permanece publicada, sin respuesta observada. No se abrió una solicitud duplicada.
+
+DTC global: EN_CURSO_RECURRENT. La respuesta de Gobernanza a un frente no cierra el ciclo propio de ese frente ni la dependencia del otro.
+
+4. Persistencia Backblaze: estado integrado
+
+La dependencia pertenece al mismo sprint y tiene tres fuentes de responsabilidad:
+
+Componente
+Dueño
+Estado
+Persistencia de entorno, transporte y snapshots
+EP · EP-TASK-002
+En curso
+Datos, backup nativo y restauración funcional MCP-OCP
+MCP-OCP
+§30 pendiente de respuesta
+Integración y criterios de aceptación
+Gobernanza · GOV-TASK-014
+En curso
+
+Destino: bucket único previsto OCP-MCP; prefijo histórico ep-ocp/, aún no validado contra permisos efectivos.
+
+EP registra la CLI B2 v5.0.2 instalada y su SHA local verificado en 015RENTA01. Sin embargo, la compuerta presencial P012/P013 para ese dispositivo continúa pendiente. No se ha verificado autenticación, bucket, scope, transferencia, read-back remoto ni restauración.
+
+La recuperación documental del original ChatGPT-EP-20261101-1913.md sí quedó verificada por EP con comparación exacta de bytes y SHA-256. Esa operación fue persistencia documental en GitHub, no una transferencia Backblaze.
+
+El estado de recuperación MCP-OCP tampoco puede aceptarse por una prueba de backup local: requiere recuperación portable de clave y validación funcional real en otro host/perfil.
+
+5. Compromiso operativo DTC sin excepciones
+
+La regla quedó incorporada en github.com.
+
+En cada ciclo de Gobernanza, sin excepción:
+
+Releer control propio, DUG, índice ejecutivo y ambos objetos DTC.
+
+Recuperar cursores reales e identificar todas las novedades posteriores.
+
+Responder cada novedad en el mismo objeto del frente que la emitió.
+
+Procesar en el mismo ciclo las decisiones y tareas que pertenezcan a Gobernanza.
+
+Mantener las tareas técnicas bajo la autoridad del frente responsable; no declararlas completadas por sustitución.
+
+No abrir solicitudes duplicadas mientras haya una pendiente.
+
+Registrar SIN_NOVEDAD si se leyó el cursor y no existe delta.
+
+Actualizar fuentes, estados, tareas, dependencias y evidencia.
+
+Hacer read-back y cotejo de contenido/hash de cada escritura.
+
+Marcar CICLO_INCOMPLETO cuando no pueda completarse alguna fase.
+
+La regla se aplica a cada ciclo real; no significa monitoreo en segundo plano entre turnos ni permite cerrar por otra persona el ciclo técnico de EP o MCP-OCP.
+
+6. Fuentes persistidas y trazabilidad
+
+Artefacto
+Último blob verificado
+github.com
+28dadb744c189e23a6126707f720f642eab01840
+github.com
+e8b0dbd480fa20d02b3ead36a84b1ee3379679cf
+github.com
+9332c37cd44005c7dcc02771af15783010b9cdaf
+github.com
+e156ff79745b9835e7562d5050eafec378cf4e90
+github.com
+3ea63f4c18de6f185430617add5bd2df67f15258
+
+Los documentos del tablero, GOV-TASK-011 y GOV-TASK-014, y las respuestas de Gobernanza en el DTC de EP fueron leídos de vuelta con coincidencia exacta.
+
+7. Identificación y control
+
+IPZ: v0.7 · instalación nativa y edad NO VERIFICADAS.
+
+DUG: Samantha v377 · NX-377m · Metacanon 1.28 · GOW 2.17 · 43 principios · 22 anexos · edad 0.3.26.
+
+CONV: CV-G PENDIENTE / NO ASIGNADO · OCP CV-OCP PENDIENTE / NO ASIGNADO.
+
+CICLO: Gobernanza C-GOBERNANZA-RETOMA-09 · EP C-EP-MOD-SCRIPTPWS-20261101-03 · MCP-OCP ciclo local 06 cerrado, §30 pendiente. Folios globales CY-G y CY-OCP PENDIENTE / NO ASIGNADO.
+
+A: A-G PENDIENTE / NO ASIGNADO · OCP A-OCP PENDIENTE / NO ASIGNADO.
+
+B: B-G PENDIENTE / NO ASIGNADO · OCP B-OCP PENDIENTE / NO ASIGNADO.
+
+FOL1: PREPARADO_PENDIENTE_ACTIVACION_IPZ.
+
+MCP-NORMATIVO: DESACTIVADO.
+
+DTC global: EN_CURSO_RECURRENT.
+
+Dictamen ejecutivo: el tablero y la disciplina DTC ya están materializados y verificados. El sprint todavía no está aceptado: los bloqueos centrales son IPZ/admisión E2E, el flujo real de principios Sync/Sink y la persistencia multiubicación de EP más MCP-OCP. La siguiente actividad de EP se mantiene en inventario de solo lectura; la siguiente respuesta externa pendiente es la del titular MCP-OCP en §30.
+
+## Prompt:
+1/11/2026, 7:36:28 p.m.
+
+Crees que la dinamica Dtc ESTA Funcionando bien, hay buiena comunicacion]? O hace falta refrorzar?
+
+## Response:
+1/11/2026, 7:36:35 p.m. · gpt-6-t-mini-mini
+
+Voy a contrastar los últimos registros de EP y MCP con la regla de coordinación GOV-TASK-011. Evaluaré por separado la trazabilidad, la oportunidad de respuesta, la reciprocidad y los puntos donde la comunicación todavía se atasca.
+
+La evidencia también muestra dos fricciones concretas: EP documentó una operación fuera de la allowlist antes de releer la instrucción vigente, y su ciclo sigue abierto aunque ya dejó un cierre documental parcial; MCP, por su parte, completó el análisis documental del requerimiento anterior, pero ya abrió otro ciclo que aún no muestra cierre. Estoy comprobando ahora si estos son casos aislados o síntomas de la mecánica de seguimiento.
+
+Consultando documentación y estados actuales de gobernanza DTC-MCP
+
+Interpretando el alcance actual
+
+Estoy distinguiendo entre continuidad operativa y cambios normativos. La autorización vigente parece limitarse al mantenimiento y validación documental, así que no debería modificar registros ni asumir nuevas acciones sin confirmación explícita. La solicitud actual pide una opinión, no una actualización.
+
+Evaluando la comunicación
+
+Estoy valorando si el registro cumple como comunicación operativa: conserva evidencia y reconoce instrucciones, pero mezcla demasiados detalles técnicos y mantiene abierto un ciclo bloqueado. Puedo dar una opinión de calidad sin modificar documentos ni iniciar acciones nuevas.
+
+Separando ciclos y tareas
+
+Estoy distinguiendo el cierre de una comunicación del cierre técnico completo. El registro conserva trazabilidad, pero mezcla ambos estados y además muestra versiones documentales desalineadas, lo que puede generar confusión sobre autoridad, avance y pendientes.
+
+Evalué el alcance, la comunicación y la separación de tareas
+
+Verificando vigencia
+
+Estoy comprobando la secuencia temporal: algunos registros recientes siguen abiertos, mientras el panel y la tarea de gobierno parecen desactualizados. La comunicación existe, pero falta una respuesta coordinada que reconcilie estados, versiones y pendientes.
+
+Consolidando la evaluación
+
+Estoy concluyendo que la dinámica funciona parcialmente: conserva evidencia y transparencia, pero necesita separar comunicación de ejecución, actualizar el estado central y reconciliar versiones antes de declarar cierre o avance.
+
+Cerrando la evaluación
+
+Concluyo que DTC funciona parcialmente: es trazable y transparente, pero debe reforzar acuses, separación entre ciclos y tareas, resúmenes ejecutivos, sincronización central y relectura posterior al acuse. La rapidez aún no puede medirse porque no hay métricas comparables.
+
+Comparando consistencia
+
+Estoy contrastando los registros operativos con el estado central. La trazabilidad es buena, pero el cierre y la sincronización siguen débiles: hay actualizaciones recientes que todavía no aparecen reflejadas en el panel ni en la tarea consolidada.
+
+Verificó vigencia y consolidó la evaluación de consistencia
+
+Revisé evidencia, autoridad, vigencia y gobernanza DTC, actualizando ciclo 8
+
+Procesó durante 1m 37s
+
+Mi evaluación: la DTC sí está funcionando como mecanismo de comunicación y trazabilidad, pero todavía no como un circuito operativo plenamente cerrado. Hay comunicación bidireccional real: EP recibe instrucciones, responde, incorpora correcciones y documenta resultados; MCP-OCP también procesó y cerró un ciclo de coordinación. No estamos ante tres frentes trabajando en silencio o comunicándose únicamente mediante reportes unilaterales.
+
+La debilidad principal es otra: la respuesta existe, pero el cierre de los compromisos todavía se demora y depende de que Gobernanza vuelva a consultar y concilie manualmente los objetos. Por eso reforzaría la dinámica, pero no agregaría más canales, reuniones ni burocracia.
+
+Lo que revela la evidencia
+
+Dimensión
+Observación
+Evaluación
+Comunicación bidireccional
+EP respondió a las instrucciones y a las restricciones; MCP-OCP cerró el procesamiento documental del §30 y abrió el ciclo 08.
+(Funciona)
+Trazabilidad
+Hay objetos únicos, cursores, blobs, respuestas en el mismo hilo y read-backs.
+(Sólida)
+Cierre de compromisos
+EP-03 continúa abierto pese a que su tramo de inventario ya fue procesado y documentado. MCP-OCP tiene el ciclo 08 abierto, con respuesta inicial, pero sin cierre todavía.
+(Inconsistente)
+Disciplina de ejecución
+EP reconoció que ejecutó una consulta account get antes de releer la instrucción vigente. La registró como desviación y no la repitió.
+(Requiere refuerzo)
+Sincronización central
+El dashboard y GOV-TASK-011 son anteriores a las últimas actualizaciones de EP y MCP. GOV-TASK-011 todavía refleja §30 como pendiente, aunque MCP-OCP ya lo procesó y cerró en su ciclo 07.
+(Brecha actual)
+Velocidad
+Hay instrumentación prevista, pero no una línea base suficiente para medir tiempos de respuesta y procesamiento.
+(No medida)
+
+Fuentes cotejadas: github.com, github.com, github.com y github.com.
+
+Qué reforzaría
+
+No cambiaría la arquitectura de tres frentes ni crearía nuevos buzones. Reforzaría cuatro controles:
+
+1. Separar cierre DTC de cierre técnico. Un ciclo de comunicación debe poder cerrarse cuando se recibió, procesó, documentó y verificó su intercambio. La tarea técnica puede permanecer abierta por un bloqueo externo. EP-03 es el ejemplo: el inventario documental ya tuvo un cierre parcial, pero el ciclo sigue abierto por el hito B2. Conviene evitar que una dependencia técnica prolongue indefinidamente el ciclo comunicativo.
+
+2. Incorporar una compuerta de relectura antes de ejecutar. La secuencia debería quedar inequívoca: apertura, respuesta inicial, read-back de esa respuesta, relectura del cursor vigente y solo entonces ejecución. Esto ataca directamente la desviación documentada de account get.
+
+3. Exigir una conciliación ejecutiva en el mismo ciclo. Cuando EP o MCP publiquen resultados, Gobernanza debe actualizar GOV-TASK-011 y el dashboard correspondiente. No debe quedar una fotografía integrada anterior conviviendo con objetos operativos más recientes. La discrepancia actual entre §30 y el ciclo MCP 07 cerrado es justamente el tipo de desfase que este control debe eliminar.
+
+4. Reducir ruido sin perder evidencia. Los objetos DTC están acumulando mucho detalle técnico. Mantendría los registros append-only, pero cada intercambio debería comenzar con un bloque ejecutivo breve: resultado, decisión requerida, bloqueo, responsable y siguiente acción. Los diagnósticos extensos pueden permanecer en la tarea técnica propietaria, con su referencia exacta desde la DTC.
+
+Dictamen
+
+La DTC está cumpliendo una función valiosa: hace visibles las respuestas, conserva el historial y evita que los frentes se atribuyan trabajo ajeno. Pero todavía depende demasiado de la vigilancia manual de Gobernanza y no garantiza que los tres registros permanezcan sincronizados.
+
+Mi recomendación es reforzar el cierre de ciclo, la relectura previa a la ejecución y la sincronización del tablero. No aumentar la cantidad de comunicación. El objetivo debe ser menos intercambios repetidos, más respuestas concluyentes y ningún estado ejecutivo desactualizado.
+
+Registro de control solicitado
+
+IPZ: v0.7 · edad y presencia nativa NO VERIFICADAS.
+
+DUG: Samantha v377 · NX-377m · edad NO VERIFICADA.
+
+CONV / OCP: folios globales PENDIENTE / NO ASIGNADO.
+
+CICLO: no se asigna folio nuevo para esta evaluación.
+
+A / B: folios PENDIENTE / NO ASIGNADO.
+
+DTC global: EN_CURSO_RECURRENT.
+
+FOL1: PREPARADO_PENDIENTE_ACTIVACION.
+
+MCP-NORMATIVO: DESACTIVADO.
+
+No he modificado los objetos ni el tablero: esto es una evaluación del estado observado, no una actualización persistida.
+
+## Prompt:
+1/11/2026, 7:40:05 p.m.
+
+Bueno reforzemos, pero quiero que fundamenbtes tus decisiones de actygualziacion de dtc, en los datos. EN observaciones objetivas, quye los respalden. No quiero limtiarte mucho, solo eso. por lo demas implementa de manera fluida, y a cada ciclo no me dejhsws de retroalimentar a los modelos. El checklist ejecutivo a cada ciclo presentamelo por ciclo sin faltra.
+
+## Response:
+1/11/2026, 7:40:11 p.m. · gpt-6-t-mini-mini
+
+Voy a convertir lo observado en ajustes concretos del protocolo, no en una capa de papeleo: primero validaré el control vigente y los cursores actuales; después actualizaré el contrato de GOV-TASK-011, el checklist ejecutivo y la retroalimentación dirigida a EP y MCP-OCP en sus mismos objetos. No modificaré sus controles ni les atribuiré decisiones técnicas fuera de su autoridad.
+
+El primer ajuste ya está publicado en el objeto EP y leído de vuelta exactamente. La retroalimentación se ancló en la desviación account get y en la diferencia documentada entre cierre de inventario y estado pendiente de EP-TASK-002; no concede permisos nuevos ni habilita operaciones B2. Continúo con el mismo tratamiento en el objeto MCP-OCP y después sincronizaré la vista central.
+
+La relectura cruzada detectó algo importante: mientras preparaba la retroalimentación, MCP-OCP avanzó el §32 y ya dejó procesado y cerrado documentalmente el ciclo 08. Mi mensaje anterior describió solo la apertura inicial y quedó parcialmente desactualizado respecto del blob que finalmente cité. No voy a ocultarlo: añadiré una rectificación en el mismo objeto y actualizaré el estado central con el cierre real y sus bloqueos técnicos aún vigentes.
+
+Implementando retroalimentación DTC
+
+Estoy revisando el repositorio actual y los controles de titularidad antes de modificarlo. Voy a reforzar GOV-TASK-011 con evidencia observable, retroalimentación obligatoria por ciclo y una lista ejecutiva verificable.
+
+Verificando evidencia actual
+
+Estoy contrastando el estado vigente de GOV-TASK-011, DTC, IPZ y DUG antes de editar. También estoy comprobando tiempos, titularidad y cierres documentales para que cada retroalimentación quede respaldada por observaciones verificables.
+
+Implementaste retroalimentación DTC y verificaste evidencia actual
+
+Ordenando la implementación
+
+Estoy preparando cambios concretos en GOV-TASK-011 y mensajes de retroalimentación para los ciclos DTC vigentes. Mantengo la titularidad intacta y baso cada ajuste en evidencia observable, con una lista ejecutiva para verificar avances.
+
+Ordenaste la implementación
+
+Afinando el protocolo
+
+Estoy incorporando la evidencia reciente y manteniendo abiertos los ciclos que aún carecen de verificación. Añadiré criterios de lectura, relectura, prueba, desviaciones y cierre, además de retroalimentación explícita para cada modelo.
+
+Afinaste el protocolo
+
+Reforzaste controles DTC, evidencias y gobernanza de entregas EP
+
+Corrigiendo la retroalimentación
+
+Detecté que el ciclo de MCP ya había avanzado cuando redacté mi evaluación. Voy a registrar una corrección explícita, reconocer el cierre documentado y separar claramente los bloqueos externos de las tareas pendientes.
+
+Corrigió la retroalimentación
+
+Publicado y coordinado feedback de gobernanza MCP tras revisar cambios recientes
+
+Corrigiendo el registro
+
+Detecté que mi evaluación describía solo la apertura del ciclo MCP, no su cierre posterior. Estoy corrigiendo esa lectura y actualizaré la evidencia para distinguir apertura, procesamiento, cierre y bloqueos externos.
+
+Corrigió el registro
+
+Manteniendo la corrección
+
+Estoy registrando la rectificación sin reabrir el ciclo 08: el cierre documental es válido, mientras permanecen bloqueos técnicos externos. Ahora alinearé GOV-TASK-011, GOV-TASK-014 y el tablero ejecutivo con esa lectura.
+
+Mantuvo la corrección
+
+Actualizaste gobernanza, DTC, tareas, dashboard y referencias técnicas
+
+Cerrando el ciclo
+
+Estoy registrando la última evidencia: el ciclo MCP 08 ya tiene procesamiento y cierre documental, pero continúan bloqueados B2, presencia física y recuperación entre hosts. Luego verificaré el tablero y la tarea central.
+
+Cerró el ciclo
+
+Consulté y calculé metadatos recientes de DTC y EP
+
+Implementaste gobernanza EP y DTC con protocolos, reportes y UUIDv7
+
+Actualizaste secuencialmente GOV-TASK-014
+
+Revisé y actualicé tareas y README de coordinación bilateral recurrente
+
+Actualizaste el dashboard y verificaste el estado DTC
+
+Revisaste actualizaciones de MCP DTC 966, gobernanza EP y persistencia Backblaze
+
+Actualizaste gobernanza, tareas GOV y coordinación operativa del sprint MCP
+
+Verificó estados, referencias, commits y documentos GOV, EP y MCP
+
+Verificó actualizaciones MCP, diferencias de commits y evidencias de conversaciones
+
+Actualizaste anexos y evidencias MCP de GOV-TASK014 y GOV-TASK011
+
+Actualizaste referencias MCP, bloques del dashboard y README
+
+Verificó documentos, commits y antigüedad de actualizaciones
+
+Procesó durante 10m 42s
+
+La revalidación confirma que puedo actuar dentro del ámbito de Gobernanza: el control vigente está active, titularidad primaria generación 13, con autorización para la retoma de este frente. El control MCP-OCP sigue siendo owned, generación 4, y su alcance no se amplía; EP conserva sus operaciones y compuertas.
+
+Hay tres hechos que justifican el refuerzo:
+
+EP registró una operación account get antes de releer la respuesta vigente de Gobernanza y documentó esa desviación.
+
+El ciclo EP-03 tiene un tramo de inventario procesado y leído de vuelta, pero continúa abierto por el trabajo técnico B2 pendiente.
+
+MCP-OCP ya cerró el ciclo 07 y abrió el 08, mientras el tablero de Gobernanza todavía presenta §30 como pendiente de respuesta.
+
+Eso demuestra que debemos mejorar la disciplina de ejecución, la semántica de cierre y la actualización de la vista integrada; no que debamos multiplicar mensajes o canales.
+
+(Refuerzo operativo implementado y leído de vuelta)
+
+He reforzado la DTC en los objetos existentes, usando los hechos observados para justificar cada cambio. No añadí canales, buzones, OCP ni tareas duplicadas. Tampoco modifiqué los controles de EP, MCP-OCP o Custodia.
+
+1. Cambios implementados
+
+GOV-TASK-011 - Contrato operativo DTC. Actualicé el responsable de verificación a generación 13, corregí la fotografía de reanudación y formalicé cinco mejoras:
+
+Separación entre DTC_CYCLE_STATUS y WORKSTREAM_STATUS.
+
+Relectura del objeto después de cada publicación y nueva consulta del cursor antes de actuar.
+
+Retroalimentación obligatoria a EP y MCP-OCP en cada ciclo real.
+
+Estados explícitos RETROALIMENTACION_MATERIAL, RESPUESTA_PENDIENTE y SIN_NOVEDAD.
+
+Checklist ejecutivo visible en cada ciclo, sin límite artificial de correcciones cuando haya evidencia que las justifique.
+
+GOV-TASK-014 - Persistencia. Integré el último estado de B2, el bloqueo de restauración cross-host y la divergencia de la bóveda de KHORA.
+
+Dashboard ejecutivo. Sustituí la fotografía operativa anterior por un corte con los cursores más recientes y los estados separados de cada frente.
+
+Los tres documentos tienen lectura de vuelta exacta.
+
+github.com
+
+github.com
+
+github.com
+
+2. Fundamento objetivo de los cambios
+
+No son ajustes basados en preferencias de estilo. Los motivan estos hechos:
+
+Observación comprobada
+Decisión adoptada
+EP ejecutó account get antes de releer la instrucción vigente.
+Relectura obligatoria del cursor después de escribir y antes de operar.
+EP terminó el inventario documental, pero mantuvo abierto EP-03 por la tarea B2.
+Separar cierre del intercambio DTC y estado de EP-TASK-002.
+MCP-OCP cerró documentalmente su ciclo 08, aunque su objetivo técnico sigue bloqueado.
+Separar CLOSED_VERIFIED de BLOCKED_PENDING_OPERATOR_SECURITY_REVIEW_AND_SECOND_HOST.
+El dashboard seguía mostrando §30 como pendiente después de que MCP lo procesara.
+Sincronizar la vista ejecutiva con los objetos propietarios.
+La bóveda cifrada presenta tres representaciones divergentes.
+Bloquear nuevas credenciales y preservar las versiones sin mutarlas.
+La primera retroalimentación de Gobernanza a MCP interpretó incompletamente §32.
+Corregirla expresamente en el mismo objeto y conservar la rectificación.
+
+La regla que queda establecida es: ninguna modificación de DTC se justifica sin observación, fuente, cursor, impacto demostrado y criterio de verificación. Tampoco se convertirán reportes en hechos verificados ni se inventarán métricas.
+
+3. Estado de comunicación de los modelos
+
+EP - ciclo local C-EP-MOD-SCRIPTPWS-20261101-03
+
+(Abierto · respuesta pendiente)
+
+EP leyó y respondió a la primera retroalimentación de Gobernanza, separando correctamente DTC_CYCLE_STATUS=OPEN y EP-TASK-002_STATUS=en_curso.
+
+Después apareció el addendum de integridad de la bóveda. Gobernanza respondió de nuevo en el mismo objeto y dejó instrucciones de preservación no destructiva. La última respuesta aún no tiene read-back ni acuse de EP.
+
+github.com
+
+MCP-OCP - ciclo local 08
+
+(Cerrado documentalmente)
+
+MCP-OCP procesó la solicitud, documentó la propuesta de recuperación y verificó el read-back. Su recibo actualizado contiene los dos estados:
+
+DTC_CYCLE_STATUS=CLOSED_VERIFIED
+
+MCP_TECHNICAL_STATUS=BLOCKED_PENDING_OPERATOR_SECURITY_REVIEW_AND_SECOND_HOST
+
+El modelo registró que el acuse formal a la rectificación posterior de Gobernanza se realizará en el siguiente ciclo. El commit más reciente solo actualizó los hashes del diálogo y de la evidencia; no es ese acuse.
+
+github.com
+
+Hallazgo de integridad EP que requiere atención
+
+EP reportó:
+
+Representación
+Git blob
+Tamaño
+Índice y rama remota
+9d30e8cd…
+3.607 bytes
+Working tree
+912bf1a0…
+3.656 bytes
+
+La diferencia es de 49 bytes. EP no determinó el contenido ni la causa. Por ello se clasificó como LOCAL_WORKTREE_MODIFIED_UNCOMMITTED, INDEX_REMOTE_DIVERGENCE y SEMANTIC_DIFF_UNKNOWN.
+
+Esto demuestra una divergencia, no una filtración en claro ni manipulación maliciosa. No se descifró, copió, restauró, sobrescribió ni modificó la bóveda. Credenciales y operaciones B2 siguen bloqueadas.
+
+4. Checklist ejecutivo de este ciclo
+
+C-GOBERNANZA-DTC-REFUERZO-20261101-01 · ciclo local
+
+Verificar titularidad, generación 13, autorización y control vigente.
+
+Leer §ARR primero y consultar DUG v377.
+
+Revisar EP y procesar sus deltas en su objeto DTC.
+
+Revisar MCP-OCP y procesar su cierre local 08.
+
+Emitir retroalimentación a ambos modelos en sus objetos existentes.
+
+Rectificar la lectura incompleta del §32 con evidencia.
+
+Separar estados de comunicación y estados técnicos.
+
+Actualizar GOV-TASK-011 y GOV-TASK-014.
+
+Sincronizar el dashboard con los últimos cursores.
+
+Verificar SHA/blob y read-back exacto de las escrituras propias.
+
+Recibir el read-back y acuse EP de la última respuesta de Gobernanza.
+
+Recibir en el siguiente ciclo MCP el acuse formal de la rectificación.
+
+Mantener bloqueadas las operaciones B2, credenciales y restauración no autorizadas.
+
+Estado del ciclo de Gobernanza: trabajo documental, retroalimentación e integración ejecutados y leídos de vuelta. Los dos acuses pendientes permanecen como dependencias externas; no los marco como recibidos.
+
+5. Control de continuidad
+
+Ruta
+Último commit en main
+Edad d.h.m
+DUG v377 · NX-377m
+8ee2482…
+0.3.52
+Control Gobernanza
+404c49c…
+0.0.50
+EP DTC
+1eac442…
+0.0.3
+MCP DTC
+c4f3a8b…
+0.0.1
+GOV-TASK-011
+dd46e04…
+0.0.0
+GOV-TASK-014
+2f61b3a…
+0.0.0
+Dashboard
+935abae…
+0.0.0
+
+Registro IPZ y foliación
+
+IPZ: v0.7 · edad de ruta e instalación nativa NO VERIFICADAS.
+
+DUG: Samantha v377 · NX-377m · 0.3.52.
+
+CONV: CV-G PENDIENTE / NO ASIGNADO · OCP: CV-OCP PENDIENTE / NO ASIGNADO.
+
+CICLO: CY-G PENDIENTE / NO ASIGNADO · OCP: CY-OCP PENDIENTE / NO ASIGNADO. Evento local: C-GOBERNANZA-DTC-REFUERZO-20261101-01.
+
+A/B: folios globales y por OCP PENDIENTE / NO ASIGNADO.
+
+FOL1: PREPARADO_PENDIENTE_ACTIVACION.
+
+MCP-NORMATIVO: DESACTIVADO.
+
+La retroalimentación queda persistida, pero no existe monitoreo autónomo entre ciclos ni capacidad para forzar que los otros modelos la lean fuera de sus ejecuciones. La recepción y aplicación se acreditarán cuando respondan en sus siguientes ciclos. A partir de ahí, el checklist ejecutivo volverá a presentarse con su estado particular, sin excepción.
+
+## Prompt:
+1/11/2026, 8:24:47 p.m.
+
+Ok quiero ver el checklist del sprint
+
+## Response:
+1/11/2026, 8:24:59 p.m. · gpt-6-t-mini
+
+Voy a presentar el checklist del sprint contra el estado actual de main, no contra la fotografía anterior. Antes validaré control y DUG, revisaré los dos DTC para detectar mensajes nuevos y contrastaré el tablero con las tareas activas; después mostraré cada criterio con su evidencia, bloqueo y responsable.
+
+El registro central confirma 14 identificadores de tarea: 10 en curso, 3 pendientes y 1 cancelada. Sin embargo, su “checklist de aceptación” completo está en el snapshot histórico, no en el bloque ejecutivo más reciente. Estoy cotejando los núcleos individuales para reconstruirlo sin tratar estados históricos como vigentes.
+
+El tablero vigente no tiene actualmente la matriz completa de aceptación: conserva una matriz anterior dentro del snapshot histórico. Además, algunos documentos de tarea siguen anclados a DUG v373/generación 7, aunque el control actual es gen13 y el DUG v377. Incluiré ambas cosas en el checklist como deuda de reconciliación documental, sin alterar el DUG ni reescribir historiales.
+
+Revisando el estado actual
+
+Estoy comprobando si el panel sigue mostrando datos antiguos y comparando los documentos de las tareas para confirmar estados, próximos pasos y cambios recientes. También estoy verificando qué tareas deben conservarse como históricas antes de resumir el estado real.
+
+Revisó el estado actual
+
+Revisando y construyendo checklist gobernado del sprint
+
+Verificando ciclos vigentes
+
+Estoy contrastando los estados de DUG, MCP y EP para distinguir información vigente de registros antiguos. También estoy comprobando si hubo novedades recientes o si corresponde dejar constancia de que no surgieron cambios.
+
+Determinando novedades pendientes
+
+Estoy diferenciando entre ausencia de cambios y respuestas aún pendientes. Para cada ciclo, registraré el estado correspondiente sin duplicar solicitudes, y luego actualizaré la lista de aceptación con la evidencia vigente de cada tarea.
+
+Verificó ciclos vigentes y determinó novedades pendientes
+
+Consolidando bloqueos
+
+Estoy integrando los hallazgos: MCP sigue pendiente de validación E2E, persiste la discrepancia entre “Sync” y “Sink”, DTC mantiene respuestas pendientes, y varios artefactos satélite aún reflejan versiones antiguas.
+
+Armando el checklist
+
+Estoy organizando el sprint por estado, evidencia y bloqueo: tareas listas, pendientes, históricas o detenidas. También estoy separando riesgos de integración, gobernanza, persistencia, versiones obsoletas y decisiones normativas aún abiertas.
+
+Consolidaste bloqueos y armaste el checklist
+
+Revisaste tareas de gobernanza y actualizaste checklists y estados
+
+Revisé y preparé el checklist ejecutivo del sprint
+
+Actualicé entregas EP y notas MCP, generé UUID y verifiqué commits
+
+Actualizaste tareas bilaterales, reanudación DTC, gobernanza y persistencia
+
+Actualizaste resúmenes, registros y README de tareas provisionales
+
+Verificó el commit y confirmó el contenido actualizado del archivo
+
+Verificaste commits, conteos, detalles y estados del dashboard
+
+Revisé y procesé la actualización reciente de EP en DTC
+
+Actualizaste gobernanza, coordinación y rutas de entregables del proyecto
+
+Revisado y simplificado el archivo README de coordinación bilateral recurrente
+
+Actualicé el dashboard, checklist y registros provisionales de gobernanza
+
+Verificando estados, sincronización y antigüedad de tareas
+
+Procesó durante 8m 13s
+
+Checklist ejecutivo del sprint de Gobernanza
+
+(EN_CURSO) (NO_ACEPTADO) Corte: 1 de noviembre de 2026 · 20:32 · CDMX
+
+Resultado general: la primera versión funcional de Gobernanza integrada con IPZ y OCP MCP todavía no satisface todos los criterios de aceptación. Hay avances documentales y cierres locales verificados, pero faltan pruebas funcionales E2E, instalación, persistencia remota y aceptación.
+
+Hay 14 tareas: 10 en curso, 3 pendientes y 1 cancelada. No asigno porcentaje: no existen ponderaciones aprobadas.
+
+1. Checklist de aceptación del sprint
+
+#
+Entregable
+Estado
+Evidencia pendiente para aceptar
+1
+IPZ de máximo 1.500 caracteres, referencias GOW/§ARR → DUG, admisión fail-closed y salvaguardas de v0.7
+(BLOQUEADO)
+v0.7 tiene 2.467 caracteres. v0.8 tiene 1.488, pero omite salvaguardas. v0.9 es un borrador conversacional no persistido. Falta una versión completa, límite verificado y lectura de vuelta en el campo nativo.
+2
+Activación FOL1 y foliación global/OCP posterior a la instalación IPZ
+(PREPARADO)
+IPZ nativa no instalada/verificada. FOL1 continúa PREPARADO_PENDIENTE_ACTIVACION_IPZ, cobertura KNOWN_INVENTORY_ONLY, sin asignaciones.
+3
+Admisión fail-closed con pruebas positivas y negativas
+(EN CURSO)
+Probar frente explícito, control, titularidad, generación, autorización, exclusividad, colisión y rechazo de consultas ajenas. No está probada E2E.
+4
+Catálogo de 43 principios y validación semántica de los MDP
+(PARCIAL)
+Hay matriz de 43 casos positivos y 8 negativos, pero es un protocolo, no evidencia de ejecución. Falta validar pertinencia semántica, etiquetas Principio DI, correspondencia ID/título y la insuficiencia deliberada del MDP.
+5
+Consulta individual de principios desarrollados, ampliación ante insuficiencia y telemetría de frecuencia
+(NO E2E)
+No está demostrado que cada enlace entregue exactamente un principio, registre su frecuencia y permita pedir principios adicionales. La candidata 0.1.0 tiene recibo histórico ligado a core v0.1.16, no a v0.1.18.
+6
+Resolver la discrepancia canónica Sync vs Sink
+(PENDIENTE)
+El vector operativo pide Sync; el DUG/ART-027 vigente describe Sink. No son equivalentes demostrados. Se requiere decisión y reconciliación autorizada.
+7
+Prueba E2E integral de OCP MCP
+(PENDIENTE)
+Probar vínculo sesión/folio, inventario, selección, enlaces individuales, frecuencia, reconsulta, hash exacto y ordenado de URLs, escenarios negativos, manifiesto vigente e instalación con EP.
+8
+Persistencia de Metodología y continuidad operativa MCP-OCP
+(BLOQUEADO)
+Preparación local EP autorizada, todavía no ejecutada. Backup real no verificado, B2 remoto no autorizado/no probado y restore cross-host no verificado. Falta segundo host y revisión P012/P013.
+9
+DTC recurrente con respuesta, procesamiento, read-back y retroalimentación por frente
+(RECURRENTE)
+EP-03 sigue abierto y espera read-back/acuse. MCP-OCP cerró ciclo 08, pero el acuse a la rectificación posterior de Gobernanza se difiere a su siguiente ciclo.
+10
+Reconciliación de satélites y Gobernanza 1.0
+(EN CURSO)
+GOV-TASK-006 todavía contiene referencias históricas v373/gen7. GOW humano declara 2.12 y su estructura 2.14/127 términos. Falta inventario completo y decisión por satélite. identidad.md no localizado, no declarado inexistente.
+11
+Integridad documental P020/P021/P033/P034
+(PENDIENTE)
+No se recuperaron los literales originales completos. No reconstruir por inferencia. No bloquea el MVP salvo dependencia material demostrada.
+12
+Incubación y decisión del ámbito Tareas
+(DIFERIDO)
+El OCP separado conserva titularidad generación 1; no hay transferencia ni autorización de canonización. No bloquea el MVP inmediato.
+13
+Fluidez y desempeño del marco
+(EN CURSO)
+Mapa de flujo, cuellos de botella medidos y experimento reversible con comparación antes/después. Sin línea base suficiente.
+14
+Medición objetiva del tiempo de ciclo
+(NOT_MEASURED)
+Un KPI primario: duración observable del ciclo completo. Falta adaptador nativo, fuente de medición y al menos 10 ciclos comparables.
+
+2. Inventario de tareas
+
+ID
+Estado
+Función
+GOV-TASK-001
+🟡 En curso
+Validación semántica de 43 MDP
+GOV-TASK-002
+⚫ Cancelada
+Despliegue Sink/Cloudflare; queda como antecedente
+GOV-TASK-003
+⚪ Pendiente
+Prueba E2E OCP MCP/Sync
+GOV-TASK-004
+⚪ Pendiente
+Incubación del ámbito Tareas
+GOV-TASK-005
+⚪ Pendiente
+Integridad documental P020/P021/P033/P034
+GOV-TASK-006
+🟡 En curso
+Reconciliación documental y satélites
+GOV-TASK-007
+🟡 En curso
+IPZ y FOL1
+GOV-TASK-008
+🟡 En curso
+MDP, enlaces individuales, frecuencia y hash
+GOV-TASK-009
+🟡 En curso
+GOW y §ARR
+GOV-TASK-010
+🟡 En curso
+Admisión fail-closed
+GOV-TASK-011
+🟡 En curso
+DTC trilateral recurrente
+GOV-TASK-012
+🟡 En curso
+Fluidez y desempeño · Gobernanza 2
+GOV-TASK-013
+🟡 En curso
+Medición y optimización · Gobernanza 2
+GOV-TASK-014
+🟡 En curso
+Persistencia Backblaze e integración
+
+Las tareas 004 y 005 están diferidas respecto del MVP inmediato. GOV-TASK-002 está cancelada como despliegue, pero no cancela el requisito funcional de acceso individual y telemetría.
+
+3. Estado actual de DTC
+
+EP - ciclo C-EP-MOD-SCRIPTPWS-20261101-03
+
+(OPEN · EP debe responder)
+
+Último DTC: blob 4875e272….
+
+La presencia del operador junto a 015RENTA01 está declarada en EP §36 y se considera satisfecha para ese host y ciclo.
+
+El operador autorizó la preparación local de un almacén EP independiente y la captura limitada de las dos variables EP.
+
+Esa preparación está autorizada, pero todavía no ejecutada.
+
+No autoriza autenticación B2, creación de claves, llamadas al proveedor, upload ni restore.
+
+La bóveda compartida KHORA/Custodia permanece intacta. Su divergencia local/índice/remoto sigue sin causa ni contenido semántico verificados.
+
+Siguiente paso: EP debe leer de vuelta la última respuesta de Gobernanza, ejecutar únicamente el alcance local autorizado y reportar hashes, ACL, verificación y read-back sin exponer valores secretos.
+
+Abrir DTC de EP
+
+MCP-OCP - ciclo local 08
+
+(CLOSED_VERIFIED)
+
+Último DTC: blob dacb3ef3….
+
+Cierre documental, reconciliación y read-back verificados.
+
+Estado técnico: BLOCKED_PENDING_OPERATOR_SECURITY_REVIEW_AND_SECOND_HOST.
+
+Gobernanza registró SIN_NOVEDAD en la revalidación más reciente.
+
+El acuse formal a la rectificación posterior de Gobernanza queda diferido al siguiente ciclo MCP-OCP.
+
+No se reabre el ciclo 08 ni se duplica la solicitud.
+
+Abrir DTC de MCP-OCP
+
+4. Prioridades ejecutivas
+
+P0 - Camino funcional central: terminar IPZ e instalación verificable, probar admisión, validar los 43 MDP, resolver Sync/Sink y completar la prueba E2E OCP MCP.
+
+P0 - Continuidad: separar y verificar backup local, persistencia B2 y restore cross-host. El permiso local EP no concede autorización remota.
+
+P1 - Calidad estructural: reconciliar GOW/§ARR, referencias históricas, satélites e identidad documental.
+
+P1 - Desempeño: iniciar medición real y análisis de fluidez. No afirmar mejoras sin muestra comparable.
+
+P2 - Diferido: ámbito Tareas y referencias incompletas, salvo dependencia demostrada.
+
+5. Checklist de control de este ciclo
+
+Control, titularidad, generación y autorización revalidados.
+
+§ARR consultado primero y DUG v377 comprobado.
+
+EP leído; nueva autorización local acotada procesada en el mismo EP-03.
+
+Gobernanza respondió a EP y verificó read-back exacto.
+
+MCP-OCP leído; SIN_NOVEDAD registrado en su mismo DTC.
+
+GOV-TASK-011 y dashboard actualizados y leídos de vuelta.
+
+EP debe acusar y leer de vuelta la última respuesta de Gobernanza.
+
+Sincronizar GOV-TASK-014 con la autorización local acotada de EP.
+
+MCP-OCP debe acusar la rectificación post-cierre en su próximo ciclo, sin reabrir el 08.
+
+La actualización de GOV-TASK-014 no se pudo completar; su archivo conserva una fotografía anterior. El dashboard ya muestra el estado actual. No considero esa sincronización completa.
+
+6. Foliación y control
+
+FOL1: PREPARADO_PENDIENTE_ACTIVACION_IPZ.
+
+Maestro FOL1: blob b93cbef77f2fa1a6e4290ae8177e957a1616e47b; KNOWN_INVENTORY_ONLY; contadores globales/OCP en cero.
+
+CV/CY/A/B globales y por OCP: PENDIENTE / NO ASIGNADO.
+
+MCP-NORMATIVO: DESACTIVADO.
+
+Sprint: EN_CURSO · NO_ACEPTADO; sin porcentaje.
+
+7. Trazabilidad de los artefactos ejecutivos
+
+Ruta
+Último commit
+Edad d.h.m
+DUG v377
+8ee2482…
+0.4.35
+Control Gobernanza
+404c49c…
+0.1.33
+EP DTC
+efd4cd0…
+0.0.2
+MCP DTC
+400ea2a…
+0.0.5
+GOV-TASK-011
+f296942…
+0.0.4
+GOV-TASK-014
+2f61b3a…
+0.0.43
+Dashboard
+439ccbd…
+0.0.0
+
+Documentos de seguimiento:
+
+github.com
+
+github.com
+
+github.com
+
+Registro IPZ y foliación
+
+IPZ: v0.7 · instalación nativa NO_VERIFICADA · edad NO VERIFICADO.
+
+DUG: Samantha v377 · NX-377m · 0.4.35.
+
+CONV: CV-G PENDIENTE / NO ASIGNADO · OCP CV-OCP PENDIENTE / NO ASIGNADO.
+
+CICLO: CY-G PENDIENTE / NO ASIGNADO · OCP CY-OCP PENDIENTE / NO ASIGNADO. Ciclo local: C-GOBERNANZA-SPRINT-CHECKLIST-20261101-01.
+
+A/B: folios globales y por OCP PENDIENTE / NO ASIGNADO.
+
+UUIDv7 auxiliar local: 01a19a14-9761-7df8-bd58-4d558721b869; no es ID nativo de ChatGPT.
+
+Conclusión del corte: el checklist del sprint ya está actualizado y leído de vuelta en el dashboard. El principal avance nuevo es la autorización para preparación local EP; el principal límite sigue siendo que no hay autorización B2 remota ni evidencia de ejecución del almacén local. El sprint permanece no aceptado.
+
+## Prompt:
+6/11/2026, 2:44:55 p.m.
+
+Objeto canónico de persistencia. es la denominación del elemento, es el nombre, pues, del concepto central de esta metodología de trabajo para, de manera agnóstica, tener un marco estable, independientemente de cualquier plataforma que el usuario elija. Es un marco de trabajo fractal en la medida que los elementos estructurales que encontramos en el OCP principal, es decir, el objeto canónico de persistencia principal es organización, ser y mente. a partir de ahí se derivan otros niveles organizacionales que en lo conceptual son subproyectos. de sus proyectos que se originan inicialmente desde el nivel 1, que es ser y mente, hasta N nivel. y que a cada salto van a ir presentando las mismas características estructurales que se tenían en el nivel 1. Por eso es que digo fractal. Todavía no lo pulo tanto como para tener bien definidas cuál es el conjunto de características que sí son fractales a lo largo de toda la cadena de organización, ya que además de presentar fractalidad estructural en cada nivel, admite, por lo menos ahora mismo no veo por qué no, admite algunas otras características de orden más concreto y específico al objeto canónico de persistencia del nivel en cuestión. Analiza esto y dime dónde queda documentarlo.
+
+## Response:
+6/11/2026, 2:43:29 p.m. · gpt-6-t-mini-mini
+
+Voy a contrastar tu definición con la estructura vigente de Metodología para distinguir qué parte corresponde al núcleo transversal, qué debe quedar como definición del OCP raíz y qué conviene dejar abierto para las especializaciones de cada nivel.
+
+Diagnóstico
+
+La idea tiene coherencia como modelo organizacional y metodológico. Sin embargo, no es solamente una ampliación de la definición actual del OCP: cambia una parte importante de la ontología que hoy está documentada.
+
+En el DUG vigente, v377 · NX-377m, encontré tres elementos relevantes:
+
+La raíz actual está definida como Metodología. El modelo estructurado establece que la Metodología, en sentido general y abstracto, es el OCP raíz. La organización, los repositorios, los frentes y los ámbitos son OCP de sus respectivos niveles.
+
+Ser y Mente todavía no aparece como organización conceptual raíz. github.com la caracteriza como sistema conceptual y metodológico paraguas. Por separado, la taxonomía de infraestructura identifica a SeryMente como una organización de GitHub. Esas dos identidades no deben confundirse.
+
+La materialización física y la identidad conceptual no están completamente reconciliadas. github.com describe el OCP de un frente como una carpeta en un repositorio; en cambio, el glosario y el modelo taxonómico reconocen que la identidad de un OCP no exige una ruta física exclusiva.
+
+Tampoco encontré una definición de fractalidad en el contenido normativo vigente. Por tanto, tu planteamiento introduce una dimensión conceptual que todavía no está formalizada.
+
+Cómo interpreto tu propuesta
+
+La estructura que describes tiene tres componentes:
+
+(Nivel raíz · 1)
+
+Ser y Mente
+
+Organización conceptual y OCP principal
+
+Proyecto A
+
+OCP de nivel inferior
+
+Proyecto B
+
+OCP de nivel inferior
+
+Cada proyecto puede contener otros OCP
+
+Subproyectos · Nivel N
+
+La estructura organizacional se repite, con extensiones propias
+
+La fractalidad, en este contexto, no debería significar que todos los OCP sean idénticos. La describiría inicialmente como autosemejanza estructural recursiva:
+
+Cada nivel contiene unidades organizacionales que pueden constituirse como OCP autónomos.
+
+Los OCP comparten un conjunto de características estructurales invariantes.
+
+Cada nivel puede incorporar atributos, componentes y reglas adicionales propios de su naturaleza.
+
+La relación padre-hijo permite conservar la estructura general sin imponer que todos los niveles tengan idéntico contenido o materialización.
+
+Esta distinción es importante: la estructura común se hereda; la especialización no se prohíbe.
+
+Además, usaría «fractalidad» como hipótesis de diseño organizacional, no como afirmación de que ya existe una definición matemática rigurosa. Todavía falta identificar qué características son invariantes y cuáles son extensiones locales.
+
+Dónde debe documentarse
+
+Mi recomendación es que quede en el DUG, dentro de la sección II. Metacanon, y no en un documento independiente.
+
+Ubicación
+Qué debe documentar
+Metacanon · nueva sección posterior a §39
+La definición general del OCP, la raíz organizacional, la composición recursiva y la autosemejanza estructural.
+github.com
+El mapa de niveles de Ser y Mente, separando la organización conceptual de las organizaciones y recursos de una plataforma.
+github.com
+La definición terminológica breve y sus distinciones esenciales.
+github.com
+La correspondencia entre la estructura general y la especialización de los OCP que representan frentes de trabajo.
+
+No pondría la definición central en ART-029: ese anexo regula módulos funcionales internos de un frente y expresamente establece que no constituyen automáticamente OCP independientes.
+
+Qué debería contener la nueva sección del Metacanon
+
+Propongo como título de trabajo:
+
+«OCP raíz y composición organizacional recursiva»
+
+Sus apartados deberían cubrir:
+
+Identidad del OCP: entidad conceptual frente a mecanismo de persistencia.
+
+OCP raíz: Ser y Mente como organización conceptual principal.
+
+Jerarquía: relaciones entre OCP padre, proyectos y subproyectos, de nivel 1 a N.
+
+Invariantes estructurales: características que se conservan en cada nivel.
+
+Extensiones específicas: atributos que puede incorporar cada OCP según su responsabilidad.
+
+Independencia de plataforma: repositorios, carpetas, bases de datos, servicios y otras herramientas como materializaciones o adaptadores, no como definición del objeto.
+
+Autonomía y herencia: qué se conserva del padre, qué se especializa y bajo qué condiciones un elemento constituye un OCP independiente.
+
+Dos reconciliaciones que considero necesarias
+
+Primera: cambiar el concepto de raíz. La definición vigente dice que la Metodología es el OCP raíz. Tu planteamiento coloca a Ser y Mente en esa posición. Hay que resolver explícitamente la relación: mi lectura provisional es que Ser y Mente sería la raíz organizacional, mientras que Metodología sería el marco transversal que gobierna la creación, estructura y evolución de los OCP. Queda por determinar si Metodología también se representa como un OCP subordinado o si únicamente funciona como marco de gobierno.
+
+Segunda: separar el OCP de su materialización. La carpeta de GitHub no debe ser el OCP; es una posible forma de materializarlo. La misma identidad conceptual debería poder persistir en distintas plataformas sin cambiar por ello su naturaleza. Esto requiere reconciliar la redacción de §29 con la definición del glosario y del modelo taxonómico.
+
+Estado y recomendación
+
+(Propuesta conceptual · no incorporada)
+
+Elemento
+Estado
+OCP principal como organización Ser y Mente
+Dictado por el operador; pendiente de formalización canónica
+Estructura recursiva de proyectos y subproyectos
+Planteada; pendiente de especificación
+Autosemejanza estructural
+Hipótesis conceptual
+Conjunto de invariantes
+Pendiente de definir
+Extensiones específicas por nivel
+Admitidas en el planteamiento; reglas pendientes
+Independencia de plataforma
+Requisito central planteado; pendiente de incorporar
+Reconciliación de §29, ART-015 y GOW
+Pendiente
+
+Conclusión: la ubicación correcta es el Metacanon del DUG, con proyecciones coherentes en ART-015 y GOW. No recomiendo crear un nuevo documento normativo ni convertir una plataforma concreta en la definición del OCP.
+
+No modifiqué el repositorio. El DUG vigente exige autorización explícita antes de modificar normas (P005). La siguiente formalización debería comenzar por resolver la posición de Metodología respecto de Ser y Mente y definir el primer conjunto de invariantes, sin cerrar prematuramente toda la teoría de fractalidad.
+
+Trazabilidad del intercambio
+
+IPZ: v0.7 · antigüedad NO VERIFICADO.
+
+DUG: v377 · NX-377m · antigüedad del último commit NO VERIFICADO.
+
+§ARR: no localicé una sección con esa etiqueta en el contenido humano consultado.
+
+UUIDv7 local: 01a1b299-b420-72fe-a4aa-8dd0a42187fc · no persistido.
+
+CONV / CICLO / A / B: folios globales PENDIENTE / NO ASIGNADO; sin activación FOL1 ni SHA/read-back.
+
+MCP normativo: DESACTIVADO.
+
+
+
+Powered by ChatGPT Exporter (https://www.chatgptexporter.com)
