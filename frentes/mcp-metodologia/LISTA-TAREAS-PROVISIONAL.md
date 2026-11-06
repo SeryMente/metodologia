@@ -1,4 +1,4 @@
-<!-- LIST_VERSION=0.1; LIST_STATUS=PROVISIONAL; NOT_A_CANONICAL_OBJECT=true -->
+<!-- LIST_VERSION=0.2; LIST_STATUS=PROVISIONAL; NOT_A_CANONICAL_OBJECT=true -->
 # Lista provisional de tareas · MCP-OCP
 
 > **ESTADO: PROVISIONAL · NO ES UN OCP NI UN CONTROL ADICIONAL.** Esta lista es una vista auxiliar enlazada desde el único núcleo MCP-OCP. El estado vivo y las decisiones de alcance permanecen en `MCP-METODOLOGIA.md`; la titularidad permanece exclusivamente en `CONTROL-RESPONSABILIDAD.json`. Las tareas y dependencias de otros frentes se enlazan sin apropiarse de sus objetos, controles o permisos.
@@ -6,7 +6,7 @@
 - **Frente:** MCP-OCP.
 - **Repositorio propietario:** `SeryMente/metodologia`.
 - **Ruta OCP:** `frentes/mcp-metodologia/`.
-- **Versión de la lista:** 0.1 (provisional; primer desglose operativo del MVP local).
+- **Versión de la lista:** 0.2 (provisional; estados de reconciliación/build/readiness actualizados con evidencia local).
 - **Última actualización:** 2026-11-06.
 - **Gobierno leído:** Samantha v377 · NX-377m; Metacanon 1.28; GOW 2.17; DUG blob `54064c8fe00f872023a455f06596061ed69062ae`. §ARR consultado; cascada revisada manualmente; CNP P001/P004/P005/P038/P043 considerado.
 - **Núcleo enlazado:** [MCP-OCP · objeto canónico](MCP-METODOLOGIA.md), v0.1.19 al inicio de esta materialización.
@@ -30,17 +30,18 @@ El servidor MCP de Metodología pertenece exclusivamente al frente MCP-OCP y a s
 
 | Orden | ID | Prioridad | Tarea | Estado | Condición principal de salida |
 |---:|---|---|---|---|---|
-| 1 | MCP-OCP-01 | P0 | Cerrar contrato de producto local y frontera OCP/Khora/Jules | EN CURSO | Decisión escrita en núcleo y tareas; ningún servidor, secreto, control o herramienta duplicada. |
-| 2 | MCP-OCP-02 | P0 | Reconciliar candidata 0.1.0 y actualizarla contra main vigente | PENDIENTE | Matriz de delta y rama de producto identificada; pins DUG/core actuales; código revisado. |
-| 3 | MCP-OCP-03 | P0 | Construir candidata local renovada, ejecutar pruebas y emitir recibo | PENDIENTE | Build reproducible, unit/integration/smoke/security PASS con hashes y read-back. |
-| 4 | MCP-OCP-04 | P0 | Verificar ejecución local, transporte y perímetro | PENDIENTE | stdio operativo; proceso termina limpiamente; ausencia de listener; loopback-only si se justifica HTTP local. |
-| 5 | MCP-OCP-05 | P0 | Verificar acceso a fuentes OCP/metodología y herramientas de desarrollo | PENDIENTE | Lecturas reales no sensibles; controles fail-closed; pruebas de permisos y trazabilidad. |
-| 6 | MCP-OCP-06 | P0 | Probar coexistencia ChatGPT/RDC: MCP-OCP local + puente Jules independiente | PENDIENTE | Flujo de lectura de OCP y listing Jules autenticado, sin duplicar servidor ni credenciales. |
-| 7 | MCP-OCP-07 | P1 | Entregar paquete preliminar y guía de uso para operador | PENDIENTE | ZIP/artefactos con hashes, manifiesto, instalación local fuera de EP documentada y rollback. |
+| 1 | MCP-OCP-01 | P0 | Cerrar contrato de producto local y frontera OCP/Khora/Jules | VERIFICADO_EN_NUCLEO_V0.1.20 | Producto local stdio propiedad exclusiva OCP; Khora y puente Jules separados; decisión leída de vuelta. |
+| 2 | MCP-OCP-02 | P0 | Reconciliar candidata 0.1.0 y actualizarla contra main vigente | COMPLETADA_LOCAL_NO_TRANSFERIDA | Rama local feature/mcp-ocp-local-mvp-0.1.0-20261106; pin DUG v377 y core v0.1.20; commit local 587a82d1…; no push. |
+| 3 | MCP-OCP-03 | P0 | Construir candidata local renovada, ejecutar pruebas y emitir recibo | PASS_LOCAL_BUILD_50_30_200 | .NET 10.0.403; 50/50 unitarias; 30/30 integración; 200 componentes; ZIP SHA-256 37b85444…; recibo C-MCP-OCP-LOCAL-MVP-BUILD-20261106. |
+| 4 | MCP-OCP-04 | P0 | Verificar ejecución local, transporte y perímetro | PASS_STDIO_RDC_SMOKE_NO_INSTALL | Ejecutable empaquetado inicializa, lista 10 tools, health READY y EOF exit 0 vía RDC; scan C# no encontró tipos listener; perfil normal no instalado. |
+| 5 | MCP-OCP-05 | P0 | Verificar acceso a fuentes OCP/metodología y herramientas de desarrollo | PASS_TEST_ROOT_REAL_PROFILE_PENDING | Build smoke importó 2 fuentes, listó 43 principios y bloqueó metadatos incompletos; perfil normal del usuario aún no ha importado fuentes. |
+| 6 | MCP-OCP-06 | P0 | Probar coexistencia ChatGPT/RDC: MCP-OCP local + puente Jules independiente | BLOQUEADO_PAUSA_MCP_JULES | No usar Jules hasta que el operador retome el frente; OAuth/listing autenticado/E2E no se han ejecutado. |
+| 7 | MCP-OCP-07 | P1 | Entregar paquete preliminar y guía de uso para operador | PAQUETE_LOCAL_Y_RUNBOOK_VERIFICADOS | ZIP local SHA 37b85444…; runbook OPERACION-LOCAL-MCP-OCP.md y mcp-servers.example.json persistidos; no extracción/instalación en perfil definitivo aún. |
 | 8 | MCP-OCP-08 | P1 | Definir y ejecutar handoff de instalación en EP | BLOQUEADO_DEPENDENCIA_EP | OEP aprueba destino, usuario, instalación, ACL, launcher, servicio/proceso y aceptación. |
-| 9 | MCP-OCP-09 | P2 | Cerrar backup local y recuperación portable/cross-host | BLOQUEADO_P012_P013_Y_HOST_DESTINO | Revisión de seguridad/arquitectura y host destino; tests reales, no solo fixture. No bloquea el paquete preliminar sin backup portable. |
-| 10 | MCP-OCP-10 | P1 | Reconciliar recursos de gobernanza y evidencia de aceptación | PENDIENTE | DUG actual consultado; fuentes y permisos declarados; no activar MCP-NORMATIVO; read-back completo. |
-| 11 | MCP-OCP-11 | P1 | Ejecutar ciclo de desarrollo de prueba mediante Jules en un repositorio sandbox | BLOQUEADO_HASTA_MCP_JULES_03_06 | Sesión creada solo tras configuración, OAuth y confirmación de plan; PR revisable y pruebas verificadas. |
+| 9 | MCP-OCP-09 | P2 | Cerrar backup local y recuperación portable/cross-host | FIXTURES_PPR_PASS_CROSSHOST_BLOCKED | PPR incluye pruebas sintéticas dentro de 50/50; restore cross-host real sigue NOT_VERIFIED y bloqueado por P012/P013/host destino. |
+| 10 | MCP-OCP-10 | P1 | Reconciliar recursos de gobernanza y evidencia de aceptación | PINS_Y_EVIDENCIA_VERIFICADOS | DUG/core pin fresh; recibo local de build y runbook con read-back; MCP-NORMATIVO sigue DESACTIVADO y Sink fuera de alcance. |
+| 11 | MCP-OCP-11 | P1 | Ejecutar ciclo de desarrollo de prueba mediante Jules en un repositorio sandbox | BLOQUEADO_PAUSA_Y_OAUTH | Tareas documentales configuradas; el operador mantiene pausado el uso; sesión sandbox y OAuth aún no autorizados/ejecutados. |
+| 12 | MCP-OCP-12 | P1 | Instalar y bootstrap del servidor en el perfil local definitivo | BLOQUEADO_CONSENTIMIENTO_OPERADOR | Extraer en ruta estable, importar fuentes en DB real y provisionar trust root solo tras consentimiento interactivo del operador. Separado de EP. |
 
 ## Fichas de tareas
 
@@ -104,6 +105,13 @@ Mantener pin de DUG/Metacanon/GOW, consulta contextual de principios y evidencia
 **Prioridad:** P1 · **Estado:** BLOQUEADO_HASTA_CONFIGURAR_MCP_JULES.
 
 Una vez configuradas y aceptadas las tareas del frente MCP-Jules, se prepara una sesión de prueba contra sandbox OCP, no contra producción ni ramas protegidas. Jules debe devolver plan; el operador confirma ese plan específico; solo entonces se permite aprobación. Resultado exigido: PR verificable, pruebas, lectura de vuelta y cierre documental. La creación de sesión no equivale a ejecución ni aceptación.
+
+
+
+### MCP-OCP-12 — Bootstrap del perfil local definitivo
+**Prioridad:** P1 · **Estado:** BLOQUEADO_CONSENTIMIENTO_OPERADOR.
+
+El paquete ya está compilado y probado en un root temporal de test. El bootstrap real debe hacerse sobre el perfil Windows que vaya a utilizar el servidor, con una ruta estable de extracción y un clon SeryMente/metodologia con los commits/blobs fijados. Después de verificar el ZIP, ejecutar import-sources para cifrar las fuentes canónicas con DPAPI CurrentUser. La provisión del operador crea claves criptográficas y enlaza el SID Windows, por lo que exige presencia y confirmación explícita en consola (`REGISTER <SID>`). No se ejecuta en esta fase documental ni se presume que el health READY de test equivale a perfil configurado. Esta tarea no instala en EP; el handoff EP continúa en MCP-OCP-08.
 
 ## Dependencias entre frentes y límite de autonomía
 
