@@ -32,9 +32,9 @@
     },
     "uniqueness_check": "Búsquedas exactas del evento, folio, UUIDv7 y alias: cero resultados en SeryMente/metodologia; no acredita unicidad organizacional ni fencing universal.",
     "readback_required": true,
-    "readback_verified": false,
+    "readback_verified": true,
     "source_control_blob_sha": "d6ef51e21a6cbf43ef4234a5960540ab09b1143c",
-    "verified_on": null
+    "verified_on": "2026-11-06"
   },
   "initialization": {
     "event_id": "C-GOBERNANZA-INICIO-01",
@@ -55,7 +55,7 @@
     }
   },
   "previous_session_assignment": {
-    "status": "active",
+    "status": "superseded",
     "role": "titular",
     "folio": "SES-20261106-GV8910D0C2",
     "assigned_on": "2026-11-06",
@@ -885,9 +885,23 @@
         "global_folio": null
       },
       "method": "GitHub Contents API conditional update using immediately observed CONTROL-RESPONSABILIDAD.json blob SHA; canonical read-back required. Cooperative control only; no universal fencing.",
-      "mutation_result": "COMMITTED_READBACK_PENDING",
+      "mutation_result": "COMMITTED_AND_READBACK_VERIFIED",
       "readback_required": true,
-      "readback_verified": false
+      "readback_verified": true,
+      "readback_verification": {
+        "status": "verified",
+        "verified_on": "2026-11-06",
+        "commit_sha": "35ce56045e9378c83cf14eb5d9181c1d472a8417",
+        "control_blob_sha": "dd7345d6f99b5a8ca04fdc1899374e0ea15d1464",
+        "checks": {
+          "new_primary_active": true,
+          "prior_primary_superseded": true,
+          "co_responsible_preserved": true,
+          "generation_is_15": true,
+          "active_responsibles_is_2": true,
+          "fol1_unchanged": true
+        }
+      }
     }
   ],
   "active_responsibles": [
@@ -915,7 +929,8 @@
       "readback_required": true,
       "readback_verified": false,
       "source_control_blob_sha": "d6ef51e21a6cbf43ef4234a5960540ab09b1143c",
-      "verified_on": null
+      "verified_on": null,
+      "alias": "chatgpt-C-GOBERNANZA-RETOMA-11-SES-20261106-A42BB5B3"
     },
     {
       "status": "active",
