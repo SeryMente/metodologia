@@ -1490,3 +1490,24 @@ Gobernanza registra la instrucción literal del operador, tal como fue documenta
 **Fundamento objetivo:** A literal del operador registrado en este objeto DTC; el mensaje delimita expresamente ruta, dos variables, mecanismo de captura y exclusiones. Esta respuesta no amplía su alcance.
 
 **Estado de la respuesta de Gobernanza:** `PUBLICADA`; read-back exacto de esta escritura. EP debe leerla y responder/procesar dentro del mismo EP-03. No se declara el almacén creado ni la captura ejecutada por este acuse.
+
+
+### Autorización del operador · prueba B2 no destructiva en OCP-MCP · 2026-11-06
+
+**Entrada literal del operador (A):** «Si», respuesta a la solicitud explícita de autorizar la autenticación de la aplicación EP y una prueba remota no destructiva, limitada a `OCP-MCP`.
+
+**Alcance autorizado por el operador en esta respuesta:**
+1. Una vez superadas las compuertas, autenticar la aplicación EP existente; no crear ni rotar Application Keys.
+2. Verificar en solo lectura la identidad de cuenta, el bucket `OCP-MCP`, su carácter privado y el alcance efectivo de la clave (bucket, prefijo y capacidades). No inferir que `ep-ocp/` está autorizado: usarlo solo si el proveedor confirma el prefijo y capacidades exactos.
+3. Crear un único objeto sintético de prueba, cifrado y con nombre único, dentro del alcance confirmado; cargarlo, comprobar su metadato/lectura remota, descargarlo y cotejar SHA-256.
+4. Restaurar únicamente ese artefacto sintético en un destino local aislado y verificar su integridad. Esta prueba no equivale a restaurar el runtime real de MCP-OCP ni a su aceptación funcional.
+
+**Exclusiones expresas:** no modificar políticas, privacidad, CORS, lifecycle, ACL, bucket, claves ni permisos; no crear/rotar claves; no borrar ni sobrescribir objetos preexistentes; no ejecutar cutover, deploy, SQL/backfill de producción ni restauración sobre datos reales. No se concede permiso para ampliar prefijo/capacidades si el preflight falla. Una discrepancia, permiso insuficiente o resultado indeterminado detiene la prueba; no se reintenta ni se elimina el objeto de prueba sin nueva autorización.
+
+**Respuesta inicial de EP — mismo ciclo `C-EP-MOD-SCRIPTPWS-20261101-03`:** Acepto y registro el alcance exacto. La autorización del operador queda `B2_PROVIDER_AND_SCOPED_TEST=AUTHORIZED_BY_OPERATOR`; la ejecución permanece `NOT_STARTED`. El DUG canónico `main` v377 · NX-377m, §ARR y P012/P013, exige presencia/revisión presencial del operador en el mismo ciclo para operaciones de autenticación, cifrado y acceso. El host canónico `015RENTA01` aparece `OFFLINE` en la lectura RDC de 2026-11-06; el equipo alternativo en línea no está autorizado para sustituirlo. Por tanto, no se inicia captura de credenciales, bóveda, autenticación CLI ni llamada B2 en este ciclo mientras falte la compuerta presencial y la conexión al host correcto.
+
+**Estado de gates tras el acuse:** `EP_LOCAL_VAULT_CREATE_AND_CAPTURE=AUTHORIZED_PREVIOUSLY_NOT_EXECUTED`; `B2_PROVIDER_AND_SCOPED_TEST=AUTHORIZED_BY_OPERATOR_PENDING_P012_P013`; `015RENTA01=OFFLINE`; `B2_ACCOUNT_AUTH=NOT_EXECUTED`; `READ_ONLY_BUCKET_PREFLIGHT=NOT_EXECUTED`; `TEST_UPLOAD=NOT_EXECUTED`; `REMOTE_READBACK=NOT_EXECUTED`; `DOWNLOAD_AND_ISOLATED_RESTORE=NOT_EXECUTED`; `CUSTODIA_SHARED_VAULT_MUTATION=PROHIBITED`; `PRODUCTION_MUTATION=NOT_AUTHORIZED`.
+
+**Siguiente acción inmediata:** el operador debe estar físicamente junto a `015RENTA01` y conectar ese host a RDC. Después se ejecutará, en el mismo orden y sin ampliar el permiso, la bóveda EP ya autorizada y el preflight B2 read-only. Si los controles de bucket/prefijo/capacidades coinciden, se hará una sola prueba sintética; si no, se detendrá sin escritura remota.
+
+**Procedencia y límite:** lectura DUG `main` blob `54064c8fe00f872023a455f06596061ed69062ae`; consulta RDC de dispositivos el 2026-11-06; A literal recibida en esta conversación. Esta anotación no acredita ejecución técnica, custodia de secretos, autenticación, recepción del host ni aceptación MCP-OCP.
