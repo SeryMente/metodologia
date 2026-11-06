@@ -1515,3 +1515,39 @@ La lectura de solo metadatos del índice Git versión 2 confirmó que la ruta `s
 **Interpretación limitada:** existe una modificación local no confirmada de la bóveda cifrada. No se inspeccionaron los campos/valores de las entradas, no se determinó qué cambió y no se asume que la versión del índice o la remota sea la versión más reciente válida. No restaurar, sobrescribir, limpiar, copiar ni mover ninguna de las versiones hasta aprobación presencial. La eventual materialización fuera de Git deberá preservar primero el archivo exacto del working tree mediante copia byte-exacta, SHA-256 y read-back, conservando el original sin alteración.
 
 **Estado:** delta de integridad `DETECTADO`; procedencia semántica del cambio `NO_VERIFICADA`; sin mutación.
+
+
+## 37. Autorización acotada B2 y compuerta presencial pendiente · 2026-11-06
+
+### Entrada y autoridad
+
+- **A literal:** «Si», en respuesta a la solicitud de autorizar autenticación de la aplicación EP y una prueba remota no destructiva acotada a `OCP-MCP`.
+- **Fuente canónica:** DUG `main` v377 · NX-377m, blob `54064c8fe00f872023a455f06596061ed69062ae`; GOW §ARR (v2.17) consultado; principios P001, P004, P005, P012, P013, P016, P035, P038 y P043 aplicados.
+- **Registro DTC actualizado:** commit `a153926b8a84c372cde2cac4873859656a8693bb`, blob `549b6cbb4933666876ad312dd781e0904482bfa6`, read-back exacto verificado.
+
+### Permiso nuevo y límites
+
+El operador autoriza, una vez superadas las compuertas: autenticar la aplicación EP existente; verificar en solo lectura cuenta, bucket privado `OCP-MCP`, prefijo y capacidades efectivas; crear un único artefacto sintético cifrado con nombre único dentro del alcance que el proveedor confirme; cargarlo; verificar su lectura/metadatos y SHA-256 remoto; descargarlo; cotejar bytes/hash; y restaurar exclusivamente ese artefacto sintético en un destino local aislado.
+
+No autoriza crear/rotar claves, modificar bucket/privacidad/ACL/CORS/lifecycle/políticas/permisos, borrar o sobrescribir objetos preexistentes, hacer cutover/deploy/SQL de producción ni restaurar datos reales MCP-OCP. El prefijo histórico `ep-ocp/` no se presume autorizado. Si bucket/prefijo/capacidades no coinciden o una operación arroja resultado indeterminado, detenerse; no ampliar alcance, reintentar ni borrar el objeto de prueba.
+
+### Estado de compuertas observado
+
+- `B2_PROVIDER_AND_SCOPED_TEST=AUTHORIZED_BY_OPERATOR_PENDING_P012_P013`.
+- `EP_LOCAL_VAULT_CREATE_AND_CAPTURE=AUTHORIZED_PREVIOUSLY_NOT_EXECUTED`.
+- `015RENTA01=OFFLINE` en el inventario RDC de esta fecha; último visto reportado: 116 h antes.
+- `PC10RCIF4EI4=ONLINE`, pero no se autoriza sustituir el host canónico con este equipo.
+- DUG P012/P013 requiere revisión/presencia presencial del operador en el mismo ciclo para operaciones de autenticación, cifrado, shell/acceso y seguridad. No existe en este ciclo una declaración actual de presencia junto a `015RENTA01`; la presencia declarada el 2026-11-01 no se hereda.
+- No se ha creado la bóveda EP, capturado secreto, hidratado variables, autorizado CLI/cuenta ni llamado al proveedor como consecuencia de esta nueva aprobación.
+
+### Estado técnico
+
+`B2_ACCOUNT_AUTH=NOT_EXECUTED` · `READ_ONLY_BUCKET_PREFLIGHT=NOT_EXECUTED` · `TEST_UPLOAD=NOT_EXECUTED` · `REMOTE_READBACK=NOT_EXECUTED` · `DOWNLOAD=NOT_EXECUTED` · `ISOLATED_SYNTHETIC_RESTORE=NOT_EXECUTED` · `MCP_OCP_NATIVE_RESTORE=NOT_ACCEPTED`. La aprobación de la prueba de artefacto sintético no demuestra persistencia operativa ni recuperación funcional de MCP-OCP.
+
+### Siguiente acción
+
+El operador debe revisar presencialmente el tramo junto a `015RENTA01` y poner ese host en línea. Tras verificar la presencia y la conexión correctas, completar la bóveda local EP previamente autorizada; después autenticar la clave existente y ejecutar el preflight read-only. Solo si los permisos efectivos coinciden, ejecutar una vez el flujo de artefacto sintético aprobado. Sin presencia/host o ante divergencia, no despachar operación B2.
+
+**Estado de EP-TASK-002:** `en_curso`. **Ciclo EP:** conserva `C-EP-MOD-SCRIPTPWS-20261101-03`; sigue `OPEN`. **Cierre de ciclo:** pendiente de trabajo ejecutable y verificación de read-back final.
+
+**Tiempo de registro:** 2026-11-06 · 16:14 America/Mexico_City. No se estima un plazo de cierre sin la disponibilidad del host y la compuerta presencial.
