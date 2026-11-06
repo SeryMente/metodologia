@@ -156,8 +156,8 @@
     },
     "chronicle": {
       "path": "frentes/mcp-metodologia/cronica/C-MCP-OCP-DTC-20261106-11.md",
-      "commit": "78a308f70bf6c3fe2f6c77cb17cc53a5e261ac01",
-      "blob": "ae6c8268c717290decc403f10e94ef7d8030ae40",
+      "commit": "c6dd88890dab337b25f12da2efffb60eb9cb7644",
+      "blob": "24b2528244f1a7107051e14517e3b577e51d96c6",
       "readback": "MATCHED"
     }
   },
@@ -181,7 +181,7 @@
     "MCP_OCP_BOOTSTRAP": "PENDING_OPERATOR_CONSENT",
     "MCP_OCP_LOCAL_PROFILE_INSTALLATION": "NOT_PERFORMED",
     "MCP_OCP_REMOTE_BRANCH": "NOT_PUSHED",
-    "MCP_OCP_DTC_CYCLE_11": "OPEN_PENDING_CLOSURE"
+    "MCP_OCP_DTC_CYCLE_11": "CLOSED_VERIFIED_PENDING_COORDINATION_APPEND"
   },
   "controls": {
     "mcp_ocp_generation": 5,
