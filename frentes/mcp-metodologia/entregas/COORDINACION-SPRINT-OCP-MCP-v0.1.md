@@ -1753,3 +1753,13 @@ El núcleo v0.1.18, el objeto de coordinación, control, DUG, OEP/EP DTC, EP-TAS
 **Jules permanece pausado:** no OAuth, no tools/list autenticado ni sesión Jules; no se probó coexistencia E2E con el bridge Khora. Se conservan los gates MCP-OCP-06/11 y no se modifica el control ni código de Khora.
 
 **Estados finales del ciclo:** `DTC_CYCLE_STATUS=CLOSED_VERIFIED` para procesamiento y read-back del ciclo local 11. `MCP_TECHNICAL_STATUS=BUILT_AND_TESTED_LOCAL; NORMAL_PROFILE_BOOTSTRAP_PENDING_OPERATOR_CONSENT; REMOTE_TRANSFER_NOT_DONE`. `MCP_OCP_BUILD_AND_TESTS=PASS_LOCAL`. `MCP_OCP_PROFILE_BOOTSTRAP=NOT_PERFORMED`. `MCP_OCP_EP_INSTALL=NOT_PERFORMED`. `JULES_USE_STATUS=PAUSED_PENDING_OPERATOR_RESUME`. `MCP-NORMATIVO=DESACTIVADO`. `performance=NOT_MEASURED`.
+
+
+### Suplemento de índice y verificación posterior al cierre · ciclo local 11 · 2026-11-06
+
+Se actualizó el README para enlazar la crónica, coordinación y recibo del ciclo 11. La lectura de vuelta confirmó:
+- README MCP-OCP commit `592aa3ce645f26c73c58f72171a33c6cd0429035`, blob `ec62c02e41a47ad0b21cdafab2886495ad964325`, MATCHED.
+- El recibo de build final permanece commit `2569ff6c5ed73c244fe9b8b285651fa6e44dae82`, blob `3d0b14bd36f92069b0a99f41ce4a458238674bd4`, MATCHED.
+- La crónica del ciclo 11 permanece commit `c6dd88890dab337b25f12da2efffb60eb9cb7644`, blob `24b2528244f1a7107051e14517e3b577e51d96c6`, MATCHED.
+
+Este suplemento solo registra la actualización de navegación y su cotejo. No reabre ni renumera el ciclo local 11, no altera la clasificación `DTC_CYCLE_STATUS=CLOSED_VERIFIED` ni amplía autorización B. Los gates de bootstrap del perfil definitivo y consentimiento interactivo siguen pendientes.
