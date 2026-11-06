@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.28. **Sello del frente:** VCU-EP-v29 (Versión de Contexto Universal). **Ancla:** rectificación explícita del operador: `OCP-MCP` es el único bucket B2 de destino; `OCP-MSP` y `metodologia-ep-persistencia` son errores. La rectificación se materializa en §91; conserva la compuerta bilateral de §90 y las tareas/propuesta de adaptación previas.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.29. **Sello del frente:** VCU-EP-v30 (Versión de Contexto Universal). **Ancla:** rectificación explícita del operador: `OCP-MCP` es el único bucket B2 de destino; `OCP-MSP` y `metodologia-ep-persistencia` son errores. La rectificación se materializa en §91; conserva la compuerta bilateral de §90 y las tareas/propuesta de adaptación previas.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -1966,7 +1966,7 @@ Estado EP-TASK-002: `en_curso`; bóveda `AWAITING_LOCAL_INPUT`; B2 CLI ausente; 
 **Captura local EP/Cora:** continúa en ventana local PID `18752`; la verificación más reciente no encuentra archivo final, temporal ni recibo retry2. Estado `AWAITING_OPERATOR_INPUT`.
 
 
-## 96. Reanudación de autenticación B2 y estado de la bóveda EP · v0.3.28 / VCU-EP-v29 · 2026-11-06
+## 96. Reanudación de autenticación B2 y estado de la bóveda EP · v0.3.29 / VCU-EP-v30 · 2026-11-06
 
 ### Fuente y alcance documental
 
@@ -2007,3 +2007,17 @@ Próximo paso permitido sin ampliar alcance: localizar y examinar únicamente re
 - Se conserva el ciclo local `C-EP-MOD-SCRIPTPWS-20261101-03` en estado `OPEN`; no se crea nuevo OCP, tarea, control, sesión o folio. FOL1 no consta ACTIVO.
 
 La actualización es documental y no prueba persistencia remota ni cierra EP-TASK-002.
+
+
+### Recibos locales adicionales de autorización B2 · inspección no secreta · 2026-11-06 · mismo ciclo EP-03
+
+Se localizaron dos recibos en `%TEMP%`, sin consultar valores de credenciales ni contenido de la caché SQLite:
+
+1. `EP-B2-Authorize-20261106.status.json`, actualización observada 2026-11-06 17:03:44 America/Mexico_City: `status=FAILED`, `reason=UNEXPECTED_ERROR_RemoteException`, `auth_started=True`, `shared_vault_touched=False`.
+2. `EP-B2-Authorize-20261106.retry2.status.json`, actualización observada 2026-11-06 17:07:22 America/Mexico_City: `status=FAILED`, `reason=PROVIDER_AUTH_REJECTED`, `auth_started=True`, `authorize_exit_code=1`, `account_get_exit_code` vacío, `shared_vault_touched=False`, `bucket_operations=0`, `file_operations=0`.
+
+La lectura estática del script `EP-B2-Authorize-From-Vault-20261106-retry2.ps1` confirma que ejecuta `b2 account authorize`, captura stdout/stderr en memoria y deriva `PROVIDER_AUTH_REJECTED` si el texto coincide con los patrones `bad_auth_token`, `unauthorized`, `invalid application key`, `application key is invalid` o `bad application key`. Si el patrón refiere capacidades, clasifica por separado `APPLICATION_KEY_CAPABILITY_INSUFFICIENT`. El código solo persiste una clasificación segura y el código de salida; no conserva el texto crudo de stdout/stderr. Así, el recibo acredita que la salida del proceso coincidió con un patrón de rechazo de autenticación, pero no permite distinguir la causa concreta (ID/key discordantes, clave inválida/revocada u otra respuesta equivalente). `account get` no se ejecutó o no llegó a registrarse con código de salida.
+
+**Rectificación de secuencia:** sí existen dos recibos/ejecuciones de autorización anteriores a la presente inspección. Esta conversación no inició una nueva autenticación. La regla vigente para continuar es no repetir `account authorize` sin nueva autorización expresa; no se ejecutarán bucket/objetos. No es correcto resumir el historial completo como si nunca hubiese habido segundo intento.
+
+**Estado derivado:** `B2_AUTH_ATTEMPT_1=FAILED_REMOTE_EXCEPTION`; `B2_AUTH_ATTEMPT_2=FAILED_PROVIDER_AUTH_REJECTED_EXIT_1`; `B2_ACCOUNT_IDENTITY=NOT_VERIFIED`; `BUCKET_AND_FILE_OPERATIONS=0`; `RAW_PROVIDER_ERROR=NOT_RETAINED`; `REMOTE_PERSISTENCE=NOT_PROVEN`. El rechazo hace prioritaria la revisión del estado/vinculación del par de credenciales en el portal B2 por el operador, sin copiar secretos al chat. No se crea ni rota una clave en este ciclo.
