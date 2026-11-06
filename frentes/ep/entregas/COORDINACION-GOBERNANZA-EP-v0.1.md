@@ -1587,3 +1587,21 @@ Gobernanza registra la instrucción literal del operador, tal como fue documenta
 **Respuesta inicial EP:** se reanuda el ciclo local existente `C-EP-MOD-SCRIPTPWS-20261101-03`, sin abrir otro OCP, control, sesión ni folio. Siguiente acción: diagnosticar la excepción remota y el recibo/estado de la CLI sin leer secretos, sin repetir `account authorize` y sin ejecutar bucket/objeto hasta que el resultado sea determinable. EP-TASK-002 sigue `en_curso`; ciclo `OPEN`; FOL1 no consta ACTIVO.
 
 **Fuentes canónicas leídas:** OEP `frentes/ep/OEP.md` v0.3.27 / VCU-EP-v28, blob `f0509d0e3ff62de3e7cfe23b28594a7877336ccf`; índice provisional EP blob `fcd76497dca45472153209a1158673386dfa7ba2`; EP-TASK-002 blob `d60d3ef89ecdeea60d447c4c6b8979eef8125022`; DTC base blob `b710a7f819fe4003ff77b735f5184295298fac83`; DUG `main` v377 / NX-377m blob `54064c8fe00f872023a455f06596061ed69062ae` (Metacanon 1.28, GOW 2.17).
+
+
+### Cierre documental EP · reanudación 2026-11-06 · ciclo local existente EP-03
+
+**Procesamiento realizado:** se leyó el OEP y el núcleo EP-TASK-002 en `main`; se incorporó la evidencia disponible del fallo `EP_B2_ACCOUNT_AUTH=FAILED reason=UNEXPECTED_ERROR_RemoteException`; se registraron metadatos locales no secretos de la bóveda cifrada y caché aislada; se mantuvo la limitación del original `ChatGPT-EP-20261106-1708.txt` como `NO_LOCALIZADO` (el sondeo acotado seguía sin salida al momento de este cierre, por lo que no se afirma su inexistencia en el equipo ni su ingestión).
+
+**Persistencia documental afectada y verificación de lectura de vuelta:**
+- OEP `frentes/ep/OEP.md`: §96 materializado, versión documental v0.3.28 / VCU-EP-v29, blob `7057f82ac4a44e562c2a82567e0c3df0f0605d9f`; lectura de vuelta comparada contra el contenido escrito: coincidencia exacta.
+- EP-TASK-002 `frentes/ep/📁 🧭 - Tareas provisionales/📁 🧩 - EP-TASK-002 - Persistencia provisional Backblaze/README.md`: §40 y encabezado de estado actualizados; blob `89670e713d304dffee3474d7673c9958209135ab`; lectura de vuelta comparada contra el contenido escrito: coincidencia exacta.
+- Este objeto DTC: entrada de apertura conservada, blob previo `62938936ff64aedac44c907d1d5d792aa5f8e01f`; se añade esta entrada de cierre como misma crónica bilateral, sin objeto paralelo.
+
+**Resultado técnico del ciclo:** autenticación B2 `FAILED_REPORTED` con causa técnica no diagnosticada; no hay prueba de respuesta de Backblaze ni de rechazo de credenciales. No se repitió autenticación; no se ejecutaron operaciones de bucket/objeto; no hubo upload, lectura remota, download ni restore. Bóveda local `EXISTS_HASH_ACL_OBSERVED`; caché SQLite `EXISTS_CONTENT_NOT_INSPECTED`. Persistencia remota `NOT_PROVEN`; EP-TASK-002 permanece `en_curso`.
+
+**Secuencia DTC:** `PUBLICADO` (escritura y commit OEP/TASK) → `LEÍDO` (fuentes actuales recuperadas) → `RESPUESTA_INICIAL_REGISTRADA` (apertura en esta misma conversación) → `PROCESADO` (fallo clasificado y metadatos cotejados) → `DOCUMENTADO_AL_CIERRE` (OEP §96 y EP-TASK-002 §40) → `VERIFICADO_READBACK` (comparación exacta de ambos archivos y ahora pendiente de read-back final de este objeto DTC).
+
+**Bloqueos/siguiente acción:** localizar el TXT original o recibirlo como adjunto; inspeccionar recibos/salida no secreta del intento B2 para determinar el origen de `RemoteException`, sin leer la bóveda ni el contenido de caché SQLite. No repetir `account authorize` ni ejecutar bucket/objeto sin nueva autorización expresa, posterior al diagnóstico. MCP-OCP mantiene autoridad exclusiva sobre su restauración nativa y aceptación.
+
+**Identidad y continuidad:** se conserva `C-EP-MOD-SCRIPTPWS-20261101-03` en `OPEN`; `EP-TASK-002=en_curso`; no se crea nuevo ciclo/OCP/control/sesión ni folio. FOL1 no consta ACTIVO; CONV/CICLO/A/B globales permanecen no asignados.
