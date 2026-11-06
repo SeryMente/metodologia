@@ -35,3 +35,10 @@ Identidad vigente: **MCP-OCP** (anteriormente MCP-METODOLOGIA). Se conserva el s
 - **DTC MCP-OCP · ciclo local 09 · 2026-11-06:** apertura y acuse de la rectificación posterior al ciclo 08 en [coordinación](entregas/COORDINACION-SPRINT-OCP-MCP-v0.1.md); ciclo 08 permanece `CLOSED_VERIFIED`, el objetivo técnico `BLOCKED_PENDING_OPERATOR_SECURITY_REVIEW_AND_SECOND_HOST`. El cierre del ciclo 09 queda en el mismo objeto de coordinación.
 
 - **Ciclo DTC MCP-OCP local 10 · 2026-11-06:** decisión de MVP local independiente de EP/B2 y reconfiguración documental de tareas MCP-Jules autorizada de forma puntual. [Coordinación DTC](entregas/COORDINACION-SPRINT-OCP-MCP-v0.1.md) · [lista provisional local](LISTA-TAREAS-PROVISIONAL.md) · [ciclo/crónica](cronica/C-MCP-OCP-DTC-20261106-10.md). `DTC_CYCLE_STATUS=INCOMPLETE` por apertura persistida después del inicio de escrituras; los artefactos cambiados individualmente tienen read-back MATCHED.
+
+
+- **MVP local MCP-OCP · ciclo DTC local 11 · 2026-11-06:** paquete 0.1.0 BUILD_AND_TESTED en RDC PC10RCIF4EI4; .NET 10.0.403; 50/50 unitarias, 30/30 stdio, 200 componentes; ZIP SHA-256 37b85444534e20fcc51eeb10688ed99577bdde020576783273723ebd93cdbe76. El código/fuente está en una rama local no publicada y el paquete permanece en el dispositivo; no se afirma instalación en perfil definitivo, EP, merge ni release.
+- [Guía de operación local MCP-OCP](OPERACION-LOCAL-MCP-OCP.md) — verificación de ZIP, cliente MCP stdio, importación de fuentes, bootstrap y gates de operador.
+- [Ejemplo de configuración genérica stdio](mcp-servers.example.json) — contrato de cliente MCP local; no acredita conexión nativa de ChatGPT Free.
+- [Recibo de build y smoke local](evidencias/C-MCP-OCP-LOCAL-MVP-BUILD-20261106.json) — fuentes/pins, hashes, tests, verificación por RDC y límites.
+- **Estado de bootstrap:** pendiente de extracción en ruta estable, importación de fuentes en la base real y provisión interactiva del operador. El smoke RDC utilizó raíces temporales; operator_provisioned=false, principle_selection_readiness=SOURCE_NOT_IMPORTED. MCP-NORMATIVO permanece DESACTIVADO.
