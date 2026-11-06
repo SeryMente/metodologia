@@ -1636,3 +1636,33 @@ El núcleo v0.1.18, el objeto de coordinación, control, DUG, OEP/EP DTC, EP-TAS
 **Fuente normativa adquirida:** Samantha v377 · NX-377m; Metacanon 1.28; GOW 2.17; DUG blob `54064c8fe00f872023a455f06596061ed69062ae`. §ARR leído como vocabulario de entrada; cascada de principios revisada manualmente. MCP-NORMATIVO permanece `DESACTIVADO`.
 
 **Estado de apertura:** `DTC_CYCLE_STATUS=OPEN`; `MCP_TECHNICAL_STATUS=BLOCKED_PENDING_OPERATOR_SECURITY_REVIEW_AND_SECOND_HOST`. La persistencia original de la conversación y el read-back de todos los artefactos quedan pendientes del procesamiento de este ciclo.
+
+
+### Cierre y read-back final · ciclo local 09 · 2026-11-06, 15:56 America/Mexico_City
+
+**Secuencia comprobada:** `LEÍDO → RESPUESTA_INICIAL_REGISTRADA → PROCESADO → DOCUMENTADO_AL_CIERRE → VERIFICADO_READBACK`.
+
+**Procesamiento:** se registró la instrucción A; se transfirió la titularidad con CAS y lectura de vuelta; se creó la captura parcial identificada con el nombre solicitado; se actualizaron el núcleo y el README; se crearon crónica y evidencia; todos los artefactos fueron releídos de `main` y cotejados. El original exportado `ChatGPT-OCP MCP-20261106-1557.txt` no estuvo adjunto ni fue encontrado: no se declara captura original, export íntegro ni copia binaria. La persistencia documental de la captura parcial sí quedó verificada.
+
+#### Matriz de artefactos y read-back
+
+| Artefacto | Commit | Blob final leído de vuelta | Resultado |
+|---|---|---|---|
+| Control gen. 5 · transferencia | `6280bbb2afabd278ef62f0dfd8a8dc0b27ab40e8` | `1fcf4178d58b39cecc3028c92493932b2ca7ab60` | `VERIFIED/MATCHED` |
+| Captura parcial `ChatGPT-OCP MCP-20261106-1557.txt` | `7071655df3ffb971b6802921dd8f671ce96c440c` | `90059bedac67a45c9e82f39bcfaf4735affd8b84` | `MATCHED` |
+| Núcleo `MCP-OCP-v0.1.19` | `b5a1e5a54f6bad6fbcd822dc5021d5520dddd686` | `3014255187cb468ee99a0d9bdba8b87620a3e35c` | `MATCHED` |
+| README | `caaa48d48d74cc8e78a720777800f7db2dc6b061` | `d49dd5b6e1b2f6ae25ec3316a5e1d3235cbd331e` | `MATCHED` |
+| Crónica `C-MCP-OCP-RETOMA-20261106-01` | `fc98a56c2163b4214d4dce1d39f172751a3f6628` | `1046ffd57982bb708d1d8ed28310ccc84f395fba` | `MATCHED` |
+| Evidencia `C-MCP-OCP-RETOMA-20261106-01` | `8c7ddcefed2ace72768854bd02cc5a4ec4a29e1d` | `fc131f4bc9855a8fb9caf2821b36c53576ef9623` | `MATCHED` |
+| Apertura DTC local 09 | `d5cd9ddb7f28fa1897211d90d94eb1e2600133cb` | `5d1bb7758d79bedd5cd1489ec93e96c821fd890b` | `MATCHED` |
+
+#### Estado de cierre
+
+- `DTC_CYCLE_STATUS=CLOSED_VERIFIED` para el ciclo documental local 09.
+- `MCP_TECHNICAL_STATUS=BLOCKED_PENDING_OPERATOR_SECURITY_REVIEW_AND_SECOND_HOST` para la continuidad técnica longitudinal.
+- `GOVERNANCE_CORRECTION_ACK=ACKNOWLEDGED`; ciclo 08 permanece cerrado y sin renumerar.
+- `GOV-TASK-014=EN_CURSO`; `EP-TASK-002=en_curso`. B2 remoto, backup real y restore cross-host continúan `NOT_VERIFIED`.
+- No se ejecutaron build/tests nuevos, acceso a DB/secretos, operaciones B2, modificaciones de host EP, instalación, PR/merge ni despliegue. La autorización B no se amplió.
+- FOL1 permanece `PREPARADO_PENDIENTE_ACTIVACION_IPZ`; CV/CY/A/B globales y por OCP `PENDIENTE/NO ASIGNADO`; MCP-NORMATIVO `DESACTIVADO`.
+
+**Clasificación MCP-OCP:** `CUMPLE_VERIFICADO_CON_BLOQUEO_EXTERNO` para retoma, actualización documental y read-back. No equivale a aceptación del producto, integración, instalación ni resolución E2E.
