@@ -1570,3 +1570,20 @@ Gobernanza registra la instrucción literal del operador, tal como fue documenta
 **Límites:** se descargó y verificó el binario; no se llamó a `account authorize`, `account get`, `bucket list`, listados, upload, download, restore ni ninguna operación de cuenta/proveedor. No se creó caché `B2_ACCOUNT_INFO`. La CLI queda instalada y disponible para el siguiente gate, no autenticada.
 
 **Captura local EP/Cora:** continúa en ventana local PID `18752`; la verificación más reciente no encuentra archivo final, temporal ni recibo retry2. Estado `AWAITING_OPERATOR_INPUT`.
+
+
+### Apertura EP · reanudación documental y autenticación B2 fallida · 2026-11-06 · 17:07 America/Mexico_City
+
+**A literal:** `ChatGPT-EP-20261106-1708.txt` · «Documenta en persistencia documental del frente de EP. Retoma y reanuda converascionde ep». El archivo no aparece en los adjuntos de esta conversación ni en la búsqueda de título de la Biblioteca. La búsqueda recursiva del perfil del host activo no llegó a producir resultados antes de detenerse; bytes y contenido del TXT: `NO_LOCALIZADOS`. No se declara lectura ni incorporación del original. Esta apertura registra solo evidencia disponible en el chat y fuentes de `main`.
+
+**Resultado reportado por el operador:** desbloqueo local seguido de `EP_B2_ACCOUNT_AUTH=FAILED reason=UNEXPECTED_ERROR_RemoteException`. El mensaje declara que no se imprimieron ni persistieron secretos en texto claro y que no se ejecutaron operaciones de buckets ni archivos. `RemoteException` no aporta diagnóstico del proveedor ni confirma si la petición de autorización llegó a Backblaze; no se clasifica como credenciales inválidas. No se repetirá la autorización hasta diagnosticar la excepción.
+
+**Metadatos locales no secretos observados en `PC10RCIF4EI4`:** bóveda EP existente, 836 bytes, SHA-256 `C4E6B0CC309A6702115790F46E05EF44C7FCF5C8B950112F4B18831BF1994F67`, cero temporales `*.tmp`; ACL no heredada con FullControl para `NT AUTHORITY\\SYSTEM`, `BUILTIN\\Administradores` y `CENTRAL\\MantenimientoRCI`. Caché aislada `Khora\\state\\b2-ep-ocp.sqlite` existente, 24,576 bytes; contenido no leído. Esto no acredita validez de credenciales ni autenticación. El descifrado/read-back mencionado anteriormente no se repitió en este ciclo.
+
+**Estados:** `EP_VAULT=EXISTS_HASH_ACL_OBSERVED`; `VAULT_DECRYPT_READBACK=PREVIOUSLY_REPORTED_NOT_REEXECUTED`; `B2_STATE_CACHE=EXISTS_NOT_INSPECTED`; `B2_ACCOUNT_AUTH=FAILED_REPORTED_REMOTEEXCEPTION`; `B2_PROVIDER_RESPONSE=NOT_AVAILABLE`; `BUCKET_OBJECT_OPERATIONS=NOT_EXECUTED_PER_OPERATOR_OUTPUT`; `REMOTE_PERSISTENCE=NOT_PROVEN`.
+
+**Frontera Cora–OCP–EP:** la bóveda de Cora es la bóveda operativa de EP; Cora conserva producto, datos, código y runtime propios; OCP permanece como marco metodológico independiente; EP mantiene su responsabilidad de persistencia. La bóveda en este alcance contiene solo las dos credenciales B2 autorizadas del namespace EP; no se incorporan credenciales adicionales de Cora ni de Custodia.
+
+**Respuesta inicial EP:** se reanuda el ciclo local existente `C-EP-MOD-SCRIPTPWS-20261101-03`, sin abrir otro OCP, control, sesión ni folio. Siguiente acción: diagnosticar la excepción remota y el recibo/estado de la CLI sin leer secretos, sin repetir `account authorize` y sin ejecutar bucket/objeto hasta que el resultado sea determinable. EP-TASK-002 sigue `en_curso`; ciclo `OPEN`; FOL1 no consta ACTIVO.
+
+**Fuentes canónicas leídas:** OEP `frentes/ep/OEP.md` v0.3.27 / VCU-EP-v28, blob `f0509d0e3ff62de3e7cfe23b28594a7877336ccf`; índice provisional EP blob `fcd76497dca45472153209a1158673386dfa7ba2`; EP-TASK-002 blob `d60d3ef89ecdeea60d447c4c6b8979eef8125022`; DTC base blob `b710a7f819fe4003ff77b735f5184295298fac83`; DUG `main` v377 / NX-377m blob `54064c8fe00f872023a455f06596061ed69062ae` (Metacanon 1.28, GOW 2.17).
