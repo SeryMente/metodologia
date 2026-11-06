@@ -127,6 +127,32 @@
       "commit": "49ec58f2a3968af9465fe96bce5e54b13c85cbfd",
       "blob": "aaac354ae349f6be7f23359cf331671c20a27ca2",
       "readback": "MATCHED"
+    },
+    "core": {
+      "path": "frentes/mcp-metodologia/MCP-METODOLOGIA.md",
+      "version": "0.1.21",
+      "commit": "5017b87733de05645c0ff1fa5f8c5635b489972a",
+      "blob": "72784f9d7122395281a34db70d4713f9b885772a",
+      "readback": "MATCHED"
+    },
+    "task_list": {
+      "path": "frentes/mcp-metodologia/LISTA-TAREAS-PROVISIONAL.md",
+      "version": "0.2",
+      "commit": "5f297be054949fd43430044068f28ffac41bcb9c",
+      "blob": "ad2b85c6e0aa90f3703c16afc7e537b222aa5cfd",
+      "tasks": 12,
+      "readback": "MATCHED"
+    },
+    "readme": {
+      "path": "frentes/mcp-metodologia/README.md",
+      "commit": "53915bf7f1e7fa48fde1ddf4d261fd594c251d3e",
+      "blob": "953b32c3db2704cc4cb657bfdd5510ab23141632",
+      "readback": "MATCHED"
+    },
+    "evidence_self": {
+      "path": "frentes/mcp-metodologia/evidencias/C-MCP-OCP-LOCAL-MVP-BUILD-20261106.json",
+      "prior_blob": "9d8735a76405c1c1360a5c759b9de1efdf5ed55e",
+      "updated_readback": "PENDING"
     }
   },
   "statuses": {
@@ -144,7 +170,8 @@
     "jules_oauth_real": "NOT_VERIFIED",
     "mcp_ocp_and_jules_coexistence_end_to_end": "NOT_VERIFIED",
     "cross_host_restore": "NOT_VERIFIED",
-    "mcp_normativo": "DESACTIVADO"
+    "mcp_normativo": "DESACTIVADO",
+    "MCP_OCP_DOCUMENTATION": "CORE_0.1.21_LIST_0.2_RUNBOOK_READBACK_MATCHED"
   },
   "controls": {
     "mcp_ocp_generation": 5,
