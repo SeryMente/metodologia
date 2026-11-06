@@ -1933,3 +1933,12 @@ Siguiente paso: completar captura local, cotejar SHA/ACL/read-back, instalar la 
 ### Precisión del literal del operador sobre el host actual · 2026-11-06
 
 La entrada literal fue «Chi.», interpretada afirmativamente por el contexto inmediato de confirmación de la computadora actual `PC10RCIF4EI4`. La mención previa «Sí» fue una normalización semántica y no el literal. No cambia el host activo ni el estado pendiente de captura.
+
+
+### Alineación semántica Cora–OCP–EP y captura de frase maestra sin mínimo · 2026-11-06
+
+El operador precisa que la bóveda de Cora es la bóveda de EP y que los límites entre producto y metodología ya fueron separados: Cora es la prótesis/producto; OCP es el marco metodológico de desarrollo independiente; EP es un subámbito de metodología por objetos canónicos de persistencia. Esta sesión tratará Cora, OCP y EP como ámbitos relacionados pero no fusionados: no mezclará código/datos/runtime de la prótesis con el contenido metodológico, ni importará credenciales Cora ajenas al scope EP o credenciales Custodia. La bóveda que el operador identifica como Cora/EP es la bóveda operativa de EP; su uso común no convierte Cora en el marco metodológico ni OCP en el producto.
+
+La restricción de 16 caracteres de la frase maestra era una validación preventiva añadida por el script, no un requisito de AES/PBKDF2. Tras instrucción explícita del operador se elimina el mínimo; se acepta cualquier frase no vacía, se confirma por doble entrada y se advierte que frases cortas son más fáciles de adivinar. El primer intento quedó rechazado por esa comprobación y no produjo archivo de bóveda ni temporal. El script corregido pasó Parser PowerShell 5.1 y abrió una nueva ventana de captura en `PC10RCIF4EI4` (PID `2440`); la captura queda pendiente de entradas locales y read-back. No se ha hecho autenticación ni llamada B2.
+
+Estado EP-TASK-002: `en_curso`; bóveda `AWAITING_LOCAL_INPUT`; B2 CLI ausente; autenticación y prueba remota no ejecutadas.
