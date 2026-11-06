@@ -80,3 +80,12 @@ La pausa de Jules se conserva. Al retomar, el primer paso operativo es preparar 
 - **Uso Jules:** PAUSADO hasta que el operador reanude.
 - **Titularidad:** generación 3 sin cambios.
 - **PR #19:** OPEN / DRAFT / NOT MERGED. La integración a Metodología main requiere revisión/permiso de merge por separado.
+
+
+## 8. Lecturas finales de navegación y corrección de destino
+
+La última actualización de este OCP incorporó los enlaces a crónica y evidencia: commit `4b18b69982ed5bf668f9ded58fb27a95fbe14fce`, blob final `ca944ba79c96433812c72ee49396bd7b991b7bdb`, read-back MATCHED. El README incorporó la entrada de evidencia C016: commit `1b305fd13a645404358b14b04f3cbb3a0f99b9df`, blob final `d4a3d088ab13db002f56cb11cee73073222b61ad`, read-back MATCHED.
+
+**Corrección de destino documental:** la primera llamada de creación de esta crónica omitió indicar la rama y creó temporalmente el mismo contenido en Metodología main. Antes de continuar, se leyó el blob `09b88b77ea56e57d50217a8e72bdbcab47125e01`, se creó el archivo en la rama correcta con contenido idéntico y read-back MATCHED (commit `c469ba05f846df7f2124613d550e95dbd688fb08`, mismo blob), se eliminó la copia de main con compare-and-swap por ese SHA (commit `5995c20922ec4e9d16aa0a88465bf507cea73df4`) y se confirmó NOT_FOUND en main. No quedó una crónica de MCP-Jules en main; la persistencia vigente está solo en la rama del PR #19.
+
+La evidencia estructurada C016 se creó en la rama correcta: commit `58e75160d3ba1c7407a420e5b071c1b20b0c84c9`, blob inicial `ece2a6caa7fd0385e7804d467a2fa76ee0eb4410`, read-back MATCHED. Se actualizará el recibo solo para añadir las últimas revisiones de OCP/README; no se incluirán secretos ni datos de sesión.
