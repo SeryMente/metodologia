@@ -1917,3 +1917,14 @@ El operador respondió «Si» a la solicitud explícita de autorizar la autentic
 **Estado vivo:** `EP-TASK-002=en_curso`; permiso de prueba B2 concedido por el operador pero `PENDING_P012_P013`; host `OFFLINE`; `B2_ACCOUNT_AUTH=NOT_EXECUTED`; `B2_REMOTE_TEST=NOT_EXECUTED`; `MCP_OCP_NATIVE_RESTORE=NOT_ACCEPTED`. Próxima acción: presencia/revisión en `015RENTA01`, conexión RDC, bóveda EP local, autorización con clave existente, preflight read-only y una sola prueba sintética si el alcance efectivo coincide.
 
 Esta actualización documental no certifica persistencia operativa, ni modifica la autoridad del propietario MCP-OCP sobre el backup/restore nativo, ni cierra EP-TASK-002.
+
+
+### Rectificación de host y estado de captura local · 2026-11-06
+
+El operador confirmó `PC10RCIF4EI4` como computadora actual y precisó que `015RENTA01` ya no es su equipo. Este OEP ya no debe tratar el host anterior como requisito de ejecución; la telemetría RDC muestra `PC10RCIF4EI4` online y el operador lo identifica como equipo actual.
+
+En `PC10RCIF4EI4` se observó Windows 11 Pro, PowerShell 5.1 x64, Git disponible, sin B2 CLI, sin directorio local Khora y sin bóveda/estado B2 EP. El helper canónico de KHORA fue leído y el script transitorio de captura compatible pasó el parser de PowerShell 5.1. Se abrió una ventana local visible (PID 18512) para entrada oculta de frase maestra y de las dos variables EP.
+
+**Estado vivo:** `CURRENT_EP_HOST=PC10RCIF4EI4`; `OPERATOR_PRESENCE_DECLARED_FOR_CURRENT_HOST=YES`; `VAULT_CAPTURE=AWAITING_OPERATOR_INPUT`; `VAULT_READBACK=NOT_EXECUTED`; `B2_CLI=NOT_INSTALLED`; `B2_ACCOUNT_AUTH=NOT_EXECUTED`; `B2_REMOTE_TEST=NOT_EXECUTED`. Ningún secreto ha sido leído por el asistente ni se ha hecho llamada al proveedor. La bóveda compartida permanece intacta.
+
+Siguiente paso: completar captura local, cotejar SHA/ACL/read-back, instalar la CLI B2 y continuar con autenticación/preflight de solo lectura y la prueba sintética autorizada. EP-TASK-002 continúa `en_curso`; no se declara persistencia operativa ni aceptación MCP-OCP.
