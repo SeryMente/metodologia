@@ -1567,3 +1567,14 @@ El operador debe revisar presencialmente el tramo junto a `015RENTA01` y poner e
 ### Precisión literal A · confirmación de host actual · 2026-11-06
 
 La entrada literal del operador fue «Chi.». Se interpreta afirmativamente por ser la respuesta contextual a la pregunta de si `PC10RCIF4EI4` era la computadora actual. La crónica anterior normalizó la respuesta como «Sí»; esta nota conserva el literal de A y no altera la conclusión operativa.
+
+
+## 39. Frontera Cora–OCP–EP y corrección de la política de frase maestra · 2026-11-06
+
+- **A literal / decisión del operador:** «la bóveda de Cora es la bóveda de EP»; Cora es la prótesis/producto, OCP es el marco metodológico de desarrollo independiente y EP es un subámbito de esa metodología por objetos canónicos de persistencia. Esta separación debe gobernar toda operación y documentación.
+- **Regla de separación:** Cora conserva su producto, datos, código y runtime; OCP conserva su metodología y materiales de desarrollo independiente; EP gestiona persistencia del entorno y namespaces metodológicos autorizados. La equivalencia operativa de bóveda Cora/EP no fusiona los productos, repositorios, secretos o datos de ambos ámbitos. No incorporar secretos Cora ajenos al alcance ni credenciales Custodia. La bóveda existente previamente señalada como compartida permanece sin mutación en este tramo.
+- **Frase maestra:** el mínimo de 16 caracteres fue una validación local arbitraria, no una exigencia del KDF/cifrado. Por instrucción del operador se acepta cualquier frase no vacía, con confirmación duplicada. PBKDF2-HMAC-SHA256 a 200000 iteraciones y AES-256-CBC + HMAC-SHA256 permanecen; se advierte que una frase corta reduce resistencia a ataques de diccionario/fuerza bruta.
+- **Intento 1:** falló únicamente por `MASTER_PASSPHRASE_TOO_SHORT`. No existe archivo destino ni temporal, y la captura anterior no creó la bóveda. El recibo de fallo original permanece conservado.
+- **Reintento técnico corregido:** script fuera de Git actualizado; regla de longitud retirada, acepta toda frase no vacía; Parser PowerShell 5.1 PASS; se verificó que el archivo final, temporal y el recibo retry1 no existían antes de abrir la ventana. Ventana local abierta en `PC10RCIF4EI4` con PID `2440`; ruta de recibo retry1 independiente para conservar la evidencia del fallo anterior.
+- **Estado:** `MASTER_LENGTH_POLICY=OPERATOR_SELECTED_NO_MINIMUM`; `VAULT_CAPTURE=AWAITING_LOCAL_INPUT`; `VAULT_READBACK=NOT_EXECUTED`; `B2_CLI=NOT_INSTALLED`; `B2_ACCOUNT_AUTH=NOT_EXECUTED`; `B2_REMOTE_TEST=NOT_EXECUTED`.
+- **Siguiente:** completar captura y leer metadatos no secretos + SHA/ACL/read-back; después CLI, auth/preflight read-only y prueba sintética one-shot autorizada.
