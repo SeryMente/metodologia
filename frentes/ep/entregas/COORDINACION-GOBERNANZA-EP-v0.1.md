@@ -1526,3 +1526,8 @@ Gobernanza registra la instrucción literal del operador, tal como fue documenta
 **Estado efectivo:** `CURRENT_EP_HOST=PC10RCIF4EI4`; `OPERATOR_PRESENCE_DECLARED_FOR_CURRENT_HOST=YES`; `VAULT_CAPTURE=AWAITING_OPERATOR_INPUT`; `VAULT_FILE=NOT_YET_VERIFIED`; `B2_CLI=NOT_INSTALLED`; `B2_ACCOUNT_AUTH=NOT_EXECUTED`; `B2_REMOTE_TEST=NOT_EXECUTED`. No se ha capturado ningún valor ni se ha llamado al proveedor. La bóveda compartida KHORA permanece intacta.
 
 **Siguiente paso:** el operador introduce la frase maestra y únicamente las dos variables EP en la ventana visible local. Tras señal de éxito, EP coteja tamaño, SHA-256, ACL y read-back del archivo. Después instala/verifica la CLI oficial y procesa la autenticación/preflight de solo lectura, respetando el alcance ya autorizado.
+
+
+### Precisión literal del acuse de host actual · 2026-11-06
+
+**Corrección de procedencia A/B:** la entrada literal del operador fue «Chi.», no «Sí». Por el contexto inmediato —respuesta a la pregunta binaria de si `PC10RCIF4EI4` era la computadora utilizada en ese momento— se interpreta como afirmativa, sin sustituir el literal original. La identidad del host se sostiene además en la telemetría RDC y en la respuesta contextual del operador. La normalización semántica no debe reemplazar el literal de A en crónicas futuras.
