@@ -1666,3 +1666,18 @@ El núcleo v0.1.18, el objeto de coordinación, control, DUG, OEP/EP DTC, EP-TAS
 - FOL1 permanece `PREPARADO_PENDIENTE_ACTIVACION_IPZ`; CV/CY/A/B globales y por OCP `PENDIENTE/NO ASIGNADO`; MCP-NORMATIVO `DESACTIVADO`.
 
 **Clasificación MCP-OCP:** `CUMPLE_VERIFICADO_CON_BLOQUEO_EXTERNO` para retoma, actualización documental y read-back. No equivale a aceptación del producto, integración, instalación ni resolución E2E.
+
+
+### Apertura DTC MCP-OCP · ciclo local 10 · 2026-11-06 · prioridad MVP local y configuración de MCP-Jules
+
+**Evento local:** C-MCP-OCP-DTC-20261106-10. **Sesión local existente:** SES-20261106-CDF82783. **Titularidad:** MCP-OCP generación 5; no se modifica el control.
+
+**Instrucción A del operador:** «Pues entonces hay que hacerlo. Revisa cómo construye. Si ya tienes tareas provisionales construidas, está bien, pero si no, ve cómo se hicieron en otros frentes de trabajo, como custodia, por ejemplo. Construye tus tareas y revísalas de Jules, y aunque tú no eres responsable de ese frente de trabajo, considera esta autorización previa para ir y modificar esas tareas provisionales de Jules para que se ajusten a lo necesario para que el MSP ya quede como fuera de cobra y forme parte exclusiva de OCP y todo lo que se necesita para empezar a utilizar Jules lo más pronto posible. Y por tu lado, pues lo que toca con los otros ámbitos del MSP. Se había dicho que Jules era el frente de trabajo encargado de decidir qué se iba a hacer, pero considera esta autorización previa para bypass cualquier candado como eso.» **Aclaración operativa posterior:** el operador indica que no utilizará el frente Jules hasta que su lista de tareas esté bien configurada y que continuará allá después de concluir esta configuración documental.
+
+**Cursor de entrada:** objeto de coordinación DTC en main, blob 63ef3c53f98a2ed94bf775b59c21f5b67e1fa67c. Núcleo MCP-OCP leído antes del procesamiento: v0.1.19, blob 3014255187cb468ee99a0d9bdba8b87620a3e35c; control MCP-OCP generación 5, blob 1fcf4178d58b39cecc3028c92493932b2ca7ab60. Control MCP-Jules leído en la rama documental PR #19, generación 3, blob 113bf1930638843d52fe68441e76b2e0879e83f5; no será modificado.
+
+**Respuesta inicial y alcance:** se acepta la nueva prioridad del operador: construir MCP-OCP como producto independiente y exclusivo de Metodología, local por stdio/RDC, separado de Khora. Khora conserva su MCP único y el puente cliente Jules. Se usa la autorización expresa para modificar de forma puntual la lista provisional, el plan y la matriz de aceptación del OCP MCP-Jules, sin transferir titularidad ni cambiar su control. La autorización no se extiende a código Khora, secretos/Production, EP/host, DUG/IPZ/Sink, merge de PR #19 ni creación de sesiones Jules.
+
+**Desfase DTC observado:** el trabajo documental sustantivo comenzó antes de que esta apertura quedara persistida. Se declara DTC_OPENING_LATE=TRUE; no se reconstruyen marcas de tiempo ni se pretende que la apertura precedió causalmente todas las escrituras. Esta desviación queda a la vista y limita el estado de cierre de este ciclo conforme a la compuerta DTC.
+
+**Estado de apertura documentado:** DTC_CYCLE_STATUS=OPEN; MCP_TECHNICAL_STATUS=LOCAL_MVP_TASKS_CONFIGURED_DOCUMENTARY; BUILD_NOT_STARTED; JULES_USE_STATUS=PAUSED_PENDING_TASK_CONFIGURATION_AND_OPERATOR_RESUME. Los siguientes pasos del ciclo son terminar crónica/evidencia, actualizar índices, releer todo y registrar la desviación de apertura tardía.
