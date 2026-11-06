@@ -1,9 +1,9 @@
 # Plan integral del componente MCP Jules v1.0
 
-**Versión del plan:** 1.0  
+**Versión del plan:** 1.1.0  
 **Frente:** MCP Jules  
 **Fase completada:** Fase 1 — planeación integral de diseño; no se implementó código de producto.  
-**Fecha de corte documental:** 2026-10-29  
+**Fecha de corte documental:** 2026-11-06  
 **Revisión de cierre:** R3 · C-MCP-JULES-009; modelo de dos fases ratificado por el operador  
 **OCP:** `frentes/mcp-jules/`  
 **Control de responsabilidad:** `CONTROL-RESPONSABILIDAD.json`, generación 2, folio `SES-20261029-6C2F9A17`.  
@@ -227,7 +227,9 @@ No guardar claves ni bearer tokens. Evitar copiar el historial completo de una s
 11. No se afirma exclusión de concurrencia global: el control de responsabilidad del OCP es cooperativo y gobierna solo este frente.
 12. El producto no promete ejecución perpetua ni acceso entre turnos. Una ejecución persistente necesitaría trabajador externo, checkpoints, idempotencia, recuperación y gobierno propios.
 
-## 11. Compatibilidad real con ChatGPT Free y distribución
+## 11. Compatibilidad real con ChatGPT Free y distribución · ruta plugin supersedida 2026-11-06
+
+> **Nota de vigencia:** las subsecciones 11.1–11.6 preservan el análisis histórico de la ruta plugin MCP público. Esa ruta queda SUPERSEDIDA por la decisión operativa §25: cliente local stdio administrado por RDC, OAuth 2.1/PKCE contra Khora y ChatGPT Free mediante RDC. No preparar ni someter un plugin público como gate de Fase 2.
 
 ### 11.1 Requisito obligatorio
 
@@ -663,3 +665,72 @@ Si OpenAI no ofrece un mecanismo soportado para que ChatGPT Free invoque las her
 Ninguno se declara PASS sin evidencia. La disponibilidad general del directorio no prueba escritura del plugin en Free. Si Free bloquea el plugin o la escritura, el objetivo queda BLOCKED y se requiere nueva decisión arquitectónica; no se sustituye silenciosamente por plan pagado, GPT Actions, Codex o relevo manual.
 
 **Estado de Fase 1:** cerrada como diseño integral y trazable. **Siguiente y única fase restante:** Fase 2 — implementación end-to-end, incluyendo reconciliación, pruebas, publicación, despliegue, aceptación y puesta en servicio. Ninguna de estas etapas se contabiliza como fase adicional.
+
+
+## 25. Decisión operativa vigente · puente local RDC y separación MCP-OCP/Khora · 2026-11-06
+
+**Versión del plan:** 1.1.0. El archivo conserva la ruta histórica de v1.0 por compatibilidad; esta sección define la ruta operativa vigente y prevalece sobre cualquier mención anterior a plugin público, publicación en directorio o MCP privado nativo como condición de uso de ChatGPT Free. Se conservan EXACTAMENTE dos fases de proyecto: Fase 1 de planeación completa y Fase 2 de implementación/validación/puesta en servicio. Las etapas son agrupaciones internas y no crean fases nuevas.
+
+### 25.1 Arquitectura final de responsabilidad
+
+1. **MCP-OCP local (producto separado):** el servidor de Metodología se desarrolla y versiona exclusivamente en SeryMente/metodologia, frente MCP-OCP. Su uso es local, preferentemente stdio, administrado por RDC. No es un módulo de Khora, no comparte su endpoint, no se despliega en Vercel, no abre listener público y no contiene secretos Jules. Su OCP y su backlog pertenecen a MCP-OCP.
+2. **Khora MCP (servidor de capacidades de la prótesis):** conserva su único endpoint /api/mcp y el conjunto de siete herramientas Jules. Las herramientas se integraron a Khora main mediante PR #345, merge 953e69484eabb4e8dc8221d1d8fc188373531bfa.
+3. **Puente local Jules:** el cliente stdio local incluido en Khora se opera mediante RDC y se autentica contra Khora Production con OAuth 2.1 Authorization Code + PKCE. El puente está integrado a Khora main mediante PR #347, merge 4530e03a33c5e1743ab9646eb6c862b3c458c605. No levanta otro servidor MCP ni listener permanente.
+4. **Credenciales:** JULES_API_KEY existe únicamente en Khora Production. El propietario concede consentimiento OAuth explícito en el navegador; no crea, copia ni pega Bearers. Refresh token protegido con DPAPI CurrentUser, access token solo en memoria. Callback OAuth limitado a 127.0.0.1.
+5. **Cliente final:** ChatGPT Free en conversación normal con el conector RDC autorizado para operar el cliente local. No se afirma que ChatGPT Free soporte MCP personalizado con escritura de forma nativa ni que descubra directamente procesos stdio. El mecanismo de invocación real es RDC y deberá ser comprobado.
+6. **Relación entre productos:** MCP-OCP proporciona contexto y capacidades locales de Metodología; Jules proporciona ejecución asíncrona mediante Khora. Son dos clientes locales separados. No duplicar herramientas Jules dentro de MCP-OCP, ni mover el servidor OCP a Khora.
+
+### 25.2 Secuencia de Fase 2 vigente
+
+**Etapa 2.1 — reconciliación y preflight**
+- Alinear OCP, plan y aceptación a los merges reales #345 y #347.
+- Configurar la lista provisional MCP-JULES (enlace desde el OCP) antes de invocar el agente.
+- Preparar bridge en el dispositivo RDC activo: ubicación del clon, Node, dependencias y scripts. No ejecutar OAuth hasta que el operador esté listo.
+
+**Etapa 2.2 — autenticación y smoke de solo lectura**
+- El operador completa consentimiento OAuth explícito en la pantalla de Khora.
+- Verificar tools/list con siete herramientas.
+- Ejecutar lecturas reales de fuentes, sesiones y actividades con paginación.
+- No crear sesiones, enviar mensajes ni aprobar planes en este smoke.
+- Verificar aislamiento, scopes, DPAPI, callback loopback y redacción de secretos.
+
+**Etapa 2.3 — E2E sandbox**
+- Solo después de cerrar el smoke de lectura y con instrucción del operador, preparar una tarea no destructiva contra sandbox OCP.
+- Crear sesión con requirePlanApproval=true.
+- Mostrar el plan y esperar confirmación activa del operador sobre esa revisión concreta.
+- Reconsultar estado y actividad antes de aprobar. La API de Jules no ofrece aprobación condicional atómica por plan digest; T22 conserva una carrera residual y no se declara resuelta.
+- Seguir activities, responder feedback en la misma sesión, verificar outputs/PR y pruebas. No auto-merge ni auto-deploy.
+
+**Etapa 2.4 — integración/operación**
+- El código de #345/#347 ya está integrado en Khora main según los merge commits identificados; no reabrir ni duplicar esos PR.
+- Ejecutar tests frescos contra Khora main vigente y el bridge del perfil RDC actual. Los históricos 568/568 y 572/572 son evidencia de cortes anteriores, no PASS actual.
+- Validar versión, OAuth real, lectura y escritura sandbox; probar interrupciones, reanudación, revocación, cuotas y rollback.
+- No publicar un plugin MCP público: no forma parte del objetivo actual.
+
+**Etapa 2.5 — aceptación/entrega**
+- Completar un ciclo real de desarrollo en sandbox con plan aprobado, respuesta a feedback y PR revisable.
+- Entregar guía RDC/OAuth/uso, estado de permisos, recuperación DPAPI, revocación y límites.
+- Aceptación solo con pruebas actuales, evidencia de lectura de vuelta y autorización del operador.
+
+### 25.3 Gates duros
+
+- **GATE-J01 — tareas configuradas:** la lista provisional MCP-JULES existe, está enlazada al OCP y sus dependencias/estados/gates están alineados con esta decisión. No utilizar Jules antes de terminar esta configuración y hasta recibir instrucción del operador.
+- **GATE-J02 — OAuth real:** requiere consentimiento explícito del propietario. El trabajo documental no lo sustituye.
+- **GATE-J03 — smoke lectura:** tools/list y recursos reales de lectura, sin escrituras.
+- **GATE-J04 — escritura sandbox:** requiere instrucción del operador y aprobación explícita del plan actual.
+- **GATE-J05 — separación:** MCP-OCP local permanece fuera de Khora y el puente Jules sigue siendo cliente a Khora. Ningún secreto ni control se comparte.
+- **GATE-J06 — aceptación:** no se declara MVP utilizable por código integrado o pruebas históricas; requiere E2E verificable desde ChatGPT Free a través de RDC.
+
+### 25.4 Estado verificado a la fecha de actualización
+
+- Código de siete herramientas: integrado en Khora main por #345; merge commit 953e69484eabb4e8dc8221d1d8fc188373531bfa.
+- Bridge local RDC/OAuth/PKCE: integrado en Khora main por #347; merge commit 4530e03a33c5e1743ab9646eb6c862b3c458c605.
+- Tests PC-14: 568/568 y 572/572 son resultados históricos de sus cortes; no son tests actuales del dispositivo RDC activo.
+- Dispositivo RDC visible actualmente: PC10RCIF4EI4 online. La preparación del bridge en ese perfil está pendiente; no se ha realizado consentimiento OAuth real en este ciclo.
+- tools/list autenticado, fuentes Jules, creación de sesión, feedback y E2E: NO VERIFICADOS.
+- No se creó ninguna sesión Jules en este ciclo.
+- La ruta plugin público queda supersedida; no se requiere directorio, escaneo, revisión o publicación externa.
+
+### 25.5 Referencias de tareas y estado
+
+La lista auxiliar autoritativa para el backlog de este frente es [LISTA-TAREAS-PROVISIONAL.md](LISTA-TAREAS-PROVISIONAL.md), versión 0.1 PROVISIONAL. No crea un segundo OCP ni control. La matriz T01–T38 del [plan de aceptación](pruebas/PLAN-ACEPTACION-MVP.md) fija las condiciones falsables. Titularidad MCP-JULES permanece en generación 3; esta actualización no cambia CONTROL-RESPONSABILIDAD.json ni asume el control de Khora.
