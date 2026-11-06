@@ -151,8 +151,14 @@
     },
     "evidence_self": {
       "path": "frentes/mcp-metodologia/evidencias/C-MCP-OCP-LOCAL-MVP-BUILD-20261106.json",
-      "prior_blob": "9d8735a76405c1c1360a5c759b9de1efdf5ed55e",
-      "updated_readback": "PENDING"
+      "prior_blob": "17dce994aa84883ea9c31f16239fccfcfc348abb",
+      "updated_readback": "MATCHED_ON_FINAL_FETCH"
+    },
+    "chronicle": {
+      "path": "frentes/mcp-metodologia/cronica/C-MCP-OCP-DTC-20261106-11.md",
+      "commit": "78a308f70bf6c3fe2f6c77cb17cc53a5e261ac01",
+      "blob": "ae6c8268c717290decc403f10e94ef7d8030ae40",
+      "readback": "MATCHED"
     }
   },
   "statuses": {
@@ -171,7 +177,11 @@
     "mcp_ocp_and_jules_coexistence_end_to_end": "NOT_VERIFIED",
     "cross_host_restore": "NOT_VERIFIED",
     "mcp_normativo": "DESACTIVADO",
-    "MCP_OCP_DOCUMENTATION": "CORE_0.1.21_LIST_0.2_RUNBOOK_READBACK_MATCHED"
+    "MCP_OCP_DOCUMENTATION": "CORE_0.1.21_LIST_0.2_RUNBOOK_CHRONICLE_READBACK_MATCHED",
+    "MCP_OCP_BOOTSTRAP": "PENDING_OPERATOR_CONSENT",
+    "MCP_OCP_LOCAL_PROFILE_INSTALLATION": "NOT_PERFORMED",
+    "MCP_OCP_REMOTE_BRANCH": "NOT_PUSHED",
+    "MCP_OCP_DTC_CYCLE_11": "OPEN_PENDING_CLOSURE"
   },
   "controls": {
     "mcp_ocp_generation": 5,
