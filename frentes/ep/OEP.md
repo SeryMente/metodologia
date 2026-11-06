@@ -1953,3 +1953,14 @@ Estado EP-TASK-002: `en_curso`; bóveda `AWAITING_LOCAL_INPUT`; B2 CLI ausente; 
 **Reintento actual:** script temporal corregido; acepta cualquier frase maestra no vacía, confirma repetición y advierte la menor resistencia de frases cortas. Parser PowerShell 5.1 PASS. Preflight confirmó ausentes archivo final, temporal y recibo retry2. Ventana abierta en `PC10RCIF4EI4`, PID `18752`, recibo `EP-B2-Vault-Capture-20261106.retry2.status.json`. Estado: `AWAITING_OPERATOR_INPUT`; todavía sin bóveda verificada, sin autenticación y sin llamada B2.
 
 **Instrucción a la entrada local:** primer prompt = frase maestra elegida por el operador; segundo prompt = repetir exactamente la misma frase; tercer prompt = `B2_APPLICATION_KEY_ID`; cuarto prompt = `B2_APPLICATION_KEY`. Los cuatro campos son de entrada oculta según el tipo de credencial; no introducir nada en el chat.
+
+
+### CLI B2 oficial instalada y verificada en el host actual · 2026-11-06
+
+**Origen:** release oficial Backblaze/B2_Command_Line_Tool v5.0.2, asset `b2-windows.exe`, publicado 2026-10-23. URL: `https://github.com/Backblaze/B2_Command_Line_Tool/releases/download/v5.0.2/b2-windows.exe`. SHA-256 publicado: `d6e5b1c0918c2755fc8c14eb5b5aa698c36b43d3fdc18fca13ea163d829bbbbb`.
+
+**Instalación local:** `%LOCALAPPDATA%\Programs\BackblazeB2\b2.exe` en `PC10RCIF4EI4`, usuario `MantenimientoRCI`; no requiere instalación global ni elevación. SHA-256 calculado localmente coincide exactamente con el release. Authenticode: `Valid`; firmante `CN="BACKBLAZE, INC.", O="BACKBLAZE, INC."`. `b2 --help`: exit 0; `b2 version`: `b2 command line tool, version 5.0.2 (b2sdk version 2.13.2)`, exit 0.
+
+**Límites:** se descargó y verificó el binario; no se llamó a `account authorize`, `account get`, `bucket list`, listados, upload, download, restore ni ninguna operación de cuenta/proveedor. No se creó caché `B2_ACCOUNT_INFO`. La CLI queda instalada y disponible para el siguiente gate, no autenticada.
+
+**Captura local EP/Cora:** continúa en ventana local PID `18752`; la verificación más reciente no encuentra archivo final, temporal ni recibo retry2. Estado `AWAITING_OPERATOR_INPUT`.
