@@ -1,0 +1,162 @@
+{
+  "schema_version": 1,
+  "event_id": "C-MCP-OCP-DTC-20261106-10",
+  "cycle_local": 10,
+  "date": "2026-11-06",
+  "session_folio_local": "SES-20261106-CDF82783",
+  "owner_alias": "chatgpt-mcp-ocp-01a1b2dc-8980-7046-a912-a6e84316b2c3",
+  "owner_generation": 5,
+  "governance": {
+    "dug": "Samantha v377",
+    "signature": "NX-377m",
+    "metacanon": "1.28",
+    "gow": "2.17",
+    "blob": "54064c8fe00f872023a455f06596061ed69062ae",
+    "normative_mcp": "DISABLED",
+    "arr_consulted": true,
+    "cascade_manual_review": true
+  },
+  "operator_authorization": {
+    "scope": "Modify MCP-OCP provisional tasks and, by explicit exceptional instruction, MCP-Jules provisional tasks, plan and acceptance artifacts to align local MCP-OCP separation from Khora and prepare Jules use.",
+    "limits": [
+      "No transfer of MCP-Jules responsibility",
+      "No mutation of MCP-Jules CONTROL-RESPONSABILIDAD.json",
+      "No Khora code/Production/secret change",
+      "No EP host operation/install",
+      "No DUG/IPZ/Sink/MCP-NORMATIVO change",
+      "No merge of Metodologia PR #19",
+      "No Jules session or write tool invocation"
+    ],
+    "pause_instruction": "Do not use Jules until task configuration is completed; operator resumes later."
+  },
+  "architecture_decision": {
+    "mcp_ocp": "Exclusive local methodology server in SeryMente/metodologia, preferably stdio, RDC managed, no public listener or public deployment.",
+    "khora": "Retains its single MCP endpoint /api/mcp and Jules tool family.",
+    "jules_bridge": "Separate local stdio RDC client using Khora OAuth 2.1/PKCE; JULES_API_KEY stays only in Khora Production.",
+    "ep_dependency": "Package/build can precede EP/B2 completion; install in EP remains EP authority.",
+    "portable_backup": "Separate P2 work, blocked by P012/P013 and authorized destination host."
+  },
+  "mcp_ocp_main": {
+    "task_list": {
+      "path": "frentes/mcp-metodologia/LISTA-TAREAS-PROVISIONAL.md",
+      "version": "0.1",
+      "commit": "66ae67598aea74357595c9a1943277b242b188a4",
+      "blob": "61469068886077eeb2197de416eb11d2e43cda02",
+      "readback": "MATCHED"
+    },
+    "core": {
+      "path": "frentes/mcp-metodologia/MCP-METODOLOGIA.md",
+      "version": "0.1.20",
+      "commit": "9202b970e2a857daa9c06ded6f2b1326c1bfe9a7",
+      "blob": "029d330eeeb9470a114b65fb0d21a4995e050774",
+      "readback": "MATCHED"
+    },
+    "readme": {
+      "path": "frentes/mcp-metodologia/README.md",
+      "commit": "3d27c6af909f08b88a998bb636b30f3bd3eaadfa",
+      "blob": "fdf836e3dc1532b8eea006f7e1dbe2b5f65618c4",
+      "readback": "MATCHED"
+    },
+    "coordination_open": {
+      "path": "frentes/mcp-metodologia/entregas/COORDINACION-SPRINT-OCP-MCP-v0.1.md",
+      "commit": "a7b3cc6e2c13a256dc07a94ce0ee3c413d2ed6fb",
+      "blob": "72d755a2d947a64fa2535524903944336591caa6",
+      "readback": "MATCHED",
+      "opening_late": true
+    },
+    "chronicle": {
+      "path": "frentes/mcp-metodologia/cronica/C-MCP-OCP-DTC-20261106-10.md",
+      "commit": "994fee9065a70d5d3d802d5bf9b4915dc1b050c2",
+      "blob": "e3b13fb557aa5acf701c8cafc42349cb0842fb57",
+      "readback": "MATCHED"
+    }
+  },
+  "mcp_jules_document_branch": {
+    "branch": "feat/metacanon-mcp-jules-20261025-c32f81",
+    "pull_request": 19,
+    "pull_request_state": "OPEN_DRAFT_NOT_MERGED",
+    "task_list": {
+      "path": "frentes/mcp-jules/LISTA-TAREAS-PROVISIONAL.md",
+      "version": "0.1",
+      "commit": "56ba05c39038cb9e208dc248a94e8915c6f91b87",
+      "blob": "2ba091b369e9900f34f835a3b3815792e5d346ca",
+      "readback": "MATCHED"
+    },
+    "acceptance": {
+      "path": "frentes/mcp-jules/pruebas/PLAN-ACEPTACION-MVP.md",
+      "version": "1.9.0",
+      "criteria": "T01-T38",
+      "commit": "51668e89f36174504ffdb5fa236fb59e61a52d2c",
+      "blob": "48686f551634fff942cd49b2af39dfb9fe9650f4",
+      "readback": "MATCHED"
+    },
+    "plan": {
+      "path": "frentes/mcp-jules/PLAN-INTEGRAL-MCP-JULES-v1.0.md",
+      "version": "1.1.0",
+      "commit": "3259223206cc873298350e3319c499a22cb20a91",
+      "blob": "4cfeaecdf5fbe0a64ef575ee39bad39f1cb60fcf5",
+      "readback": "MATCHED"
+    },
+    "ocp": {
+      "path": "frentes/mcp-jules/OBJETO-CANONICO.md",
+      "version": "0.1.13",
+      "commit": "a8dab070ccea14d19fb446b51281227fc0c8a017",
+      "blob": "656888bc333c643bab46114a033fb77aa6ce0e27",
+      "readback": "MATCHED"
+    },
+    "readme": {
+      "path": "frentes/mcp-jules/README.md",
+      "commit": "260a7d71c8c1c1d550cd7f557641d4530342f646",
+      "blob": "aed715c35797cfb564e640f611e7c8682f486bd0",
+      "readback": "MATCHED"
+    },
+    "control": {
+      "generation": 3,
+      "blob": "113bf1930638843d52fe68441e76b2e0879e83f5",
+      "mutation": "NONE"
+    }
+  },
+  "khora_merged_dependencies": {
+    "jules_tools_pr345": {
+      "merge_commit": "953e69484eabb4e8dc8221d1d8fc188373531bfa",
+      "status": "IN_KHORA_MAIN"
+    },
+    "rdc_bridge_pr347": {
+      "merge_commit": "4530e03a33c5e1743ab9646eb6c862b3c458c605",
+      "status": "IN_KHORA_MAIN"
+    }
+  },
+  "not_performed": [
+    "No Jules session created",
+    "No Jules tools invoked",
+    "No OAuth consent",
+    "No tools/list authenticated",
+    "No Jules API read/write",
+    "No fresh build/test/package of MCP-OCP candidate",
+    "No local installation/launch of MCP-OCP",
+    "No EP install or operation",
+    "No B2 operations or secret access",
+    "No Khora code/Production change",
+    "No merge of PR #19",
+    "No deployment"
+  ],
+  "statuses": {
+    "DTC_CYCLE_STATUS": "INCOMPLETE",
+    "DTC_OPENING_LATE": true,
+    "MCP_TECHNICAL_STATUS": "LOCAL_MVP_TASKS_CONFIGURED_DOCUMENTARY; BUILD_NOT_STARTED",
+    "MCP_JULES_TASK_CONFIGURATION": "DOCUMENTS_UPDATED_READBACK_MATCHED",
+    "JULES_USE_STATUS": "PAUSED_PENDING_OPERATOR_RESUME",
+    "MCP_OC P_PRODUCT_BUILD": "NOT_STARTED",
+    "MCP_OCP_LOCAL_OPERATION": "NOT_VERIFIED",
+    "MCP_OCP_EP_INSTALLATION": "NOT_AUTHORIZED_BY_THIS_CYCLE",
+    "MCP_JULES_OAUTH_REAL": "NOT_VERIFIED",
+    "MCP_JULES_E2E": "NOT_VERIFIED",
+    "MCP_NORMATIVO": "DISABLED"
+  },
+  "limitations": [
+    "Historical candidate 0.1.0 build receipt remains pinned to MCP-OCP core v0.1.16 and is not a fresh verification against v0.1.20.",
+    "Historical PC-14 tests 568/568 and 572/572 do not prove current device OAuth or E2E.",
+    "MCP-Jules documentation changes are on PR #19 branch and are not canonical on Metodologia main until separately reviewed/merged.",
+    "The DTC opening record was persisted after substantive writes; the sequence deviation is explicit, so DTC_CYCLE_STATUS remains INCOMPLETE."
+  ]
+}
