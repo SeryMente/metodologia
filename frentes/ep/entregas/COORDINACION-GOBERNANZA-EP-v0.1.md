@@ -1721,3 +1721,17 @@ Se inspeccionó metadata de procesos Chrome y puertos de escucha de `PC10RCIF4EI
 **Estado:** OEP v0.3.37 / VCU-EP-v38 persistido; EP-TASK-002 y EP-TASK-003 en_curso; EP-TASK-001 pendiente; ciclo local C-EP-MOD-SCRIPTPWS-20261101-03 permanece OPEN. FOL1 pendiente/no activo; no se asignan folios globales.
 
 **Siguiente paso para validar con el operador:** confirmar grafía/código de CSEC, significado del segundo tipo de perfil, Desktop efectivo de fila4, señales suficientes para reconocimiento automático de ubicación y si se conserva el default histórico de 15 minutos. Solo después preparar el diseño ejecutable del Guardian actualizado; no activarlo ni borrar nada antes del visto bueno.
+
+### Rectificación expresa · CECEQ, BitLocker ubicuo y excepción de conservación · 2026-11-07
+
+El operador corrige inequívocamente la denominación: es **CECEQ**. Se adopta `LOC-CECEQ`; no se vuelve a solicitar la grafía. Las variantes CSEC/CCEC y LOC-CSEC/LOC-CCEC quedan supersedidas para la operación actual y solo permanecen en el historial como errores de transcripción.
+
+**Regla global:** todo workspace EP debe quedar cifrado con BitLocker en toda ubicación antes de materializar repositorios o datos. El operador introduce la misma contraseña maestra que utiliza para desbloquear la bóveda canónica de variables de entorno para desbloquear el workspace; se conserva el mecanismo de derivación por sesión histórico. No es la Master Application Key de Backblaze ni se almacena la contraseña original en claro.
+
+**Regla de volatilidad:** en CECEQ el Guardian cierra procesos, persiste únicamente datos autorizados, purga secretos efímeros, bloquea BitLocker y desmonta el volumen, pero conserva el contenedor y carpeta cifrados; no borra automáticamente el workspace. En todas las demás ubicaciones volatiliza automáticamente los artefactos del workspace bajo control de EP después del intento de persistencia. Una ubicación no reconocida se trata como LOC-OTHER. La política de cifrado no tiene excepción por ubicación.
+
+**Corrección del Guardian:** Visual Studio Code no pertenece al entorno actual; se elimina el trigger de cierre de VS Code. El Guardian depende de solicitud de cierre, launcher/supervisor/heartbeat, inactividad y reinicio, sujeto al backlog vigente. Se conservan parámetros históricos de sondeo/heartbeat como referencias, pero el valor de 15 minutos no se ratifica como umbral operativo hasta cotejarlo con el backlog.
+
+**Persistencia documental:** OEP actualizado a v0.3.38 / VCU-EP-v39, §105. EP-TASK-003 actualizado con la política CECEQ/BitLocker/Guardian; EP-TASK-002 actualizado con la misma contraseña maestra de vault y la excepción de retención cifrada. Artefactos actuales: INSTRUCCION-BITLOCKER-CECEQ-20261107.txt y PERFIL-CECEQ-POLITICA-20261107.json. No se activó Guardian, no se creó tarea programada ni se modificó BitLocker/volúmenes/archivos del host.
+
+**Estado:** decisión documental vigente; implementación y pruebas end-to-end pendientes del backlog. Se mantiene el bloqueo previo para resolver el Escritorio efectivo de fila4 antes de materializar `Ser y Mente`.
