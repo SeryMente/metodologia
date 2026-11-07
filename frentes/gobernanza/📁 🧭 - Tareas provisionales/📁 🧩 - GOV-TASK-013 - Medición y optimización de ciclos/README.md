@@ -4,7 +4,7 @@
 
 ## Delimitación de responsabilidades
 
-- **Gobernanza 2:** responsable de GOV-TASK-013 y de su diseño de medición, instrumentación, captura, análisis, línea base, KPI y experimentos de optimización. También conserva GOV-TASK-012 dentro de su ámbito propio.
+- **Gobernanza 2:** responsable de GOV-TASK-013 y de su diseño de medición, instrumentación, captura, análisis, línea base y experimentos de optimización. También conserva GOV-TASK-012 dentro de su ámbito propio.
 - **Gobernanza 1:** titular primario y responsable exclusivo de la DTC (Dinámica Trilateral por Ciclo), incluida GOV-TASK-011, el sprint DTC, la coordinación interfrente, sus ciclos, cursores, solicitudes, integración, dependencias y aceptación.
 - **Límite de esta tarea:** GOV-TASK-013 no abre, procesa ni cierra ciclos DTC; no opera cursores o mensajes EP/MCP-OCP; no emite solicitudes interfrente ni modifica GOV-TASK-011, tableros o artefactos de coordinación pertenecientes a Gobernanza 1.
 - Si una medición revela una dependencia interfrente, Gobernanza 2 documenta el hallazgo y lo canaliza a Gobernanza 1. No ejecuta por sustitución el trabajo del titular DTC.
@@ -12,72 +12,78 @@
 
 ## Objetivo
 
-Establecer una línea base reproducible del tiempo de procesamiento de ciclos sustantivos y permitir comparar mejoras, con atención especial a GitHub y RDC. Medir desde el primer ciclo completo cuyo registro temporal pueda comenzar al inicio; no reconstruir marcas históricas.
+Medir de manera reproducible la duración observable del ciclo completo de interacción con ChatGPT en el uso personal del operador y permitir comparar mejoras sin introducir espera en la respuesta. El contrato de eventos será semántico y portable a otras plataformas; la primera integración objetivo es ChatGPT. No se declarará cobertura de una plataforma hasta disponer de un adaptador real y verificable.
 
-## Restricciones de diseño vigentes · instrucción del operador 2026-11-02
+## Restricciones de diseño vigentes · instrucción del operador 2026-11-02 y decisiones aclaratorias 2026-11-07
 
-1. **Una sola magnitud primaria por ahora:** duración observable del ciclo sustantivo completo. No diseñar ni desplegar KPIs derivados, tokenización/costo, primera respuesta, latencia por herramienta, tasas de error, reintentos ni instrumentación adicional sin nueva decisión. La clasificación de ciclo se conserva únicamente para poder contar la frecuencia por categoría; el catálogo de categorías queda pendiente de diseño.
-2. **Checkpoint inicial común:** capturar el evento canónico `cycle.accepted` en el límite de entrada del orquestador/adaptador, después de que el entorno recibe y admite la entrada y antes de cualquier procesamiento específico de proveedor/modelo. No usar la primera acción interna observable del modelo.
-3. **Checkpoint final común:** capturar `cycle.completed` cuando termina el turno/ciclo completo y la salida final visible queda disponible para el consumidor, una vez concluidas las iteraciones de herramientas y orquestación que pertenezcan al mismo ciclo. El evento terminal de una sola respuesta de modelo no equivale automáticamente al cierre del ciclo externo.
-4. **Portabilidad:** los nombres anteriores son eventos semánticos del contrato común, no nombres de API impuestos a proveedores. Cada adaptador mapea señales nativas verificables al contrato. Cuando no exista señal fiable, registrar `NOT_MEASURED` y el motivo; no sustituirla por una acción detectiva distinta ni completar por inferencia.
-5. **Reloj:** conservar fecha UTC y procedencia/precisión del reloj; calcular duración con reloj monotónico cuando el adaptador controle ambos extremos. No depender de restar relojes de pared susceptibles de ajuste.
-6. **Integración conversacional/AT:** vincular la medición al UUIDv7 local de conversación y al ciclo real; relacionar el registro A/B y, cuando aplique, los vectores AT mediante referencias recuperables. La telemetría no duplica el texto conversacional ni crea un registro por herramienta.
-7. **Ámbito físico:** reutilizar el OCP transversal existente `ambitos/gestion-conversacional/` para el contrato común y sus referencias; no crear una copia de telemetría por frente. Cada frente conserva en su propia evidencia únicamente las referencias que le correspondan.
-8. **Captura de contenido:** conservar A/B literal según ART-024, sin razonamiento interno oculto ni secretos. Captura automática y sincronización entre plataformas no se presumen: requieren un adaptador real, permisos y prueba de lectura de vuelta.
-9. **FOL1:** continúa PREPARADO_PENDIENTE_ACTIVACION_IPZ. No asignar folios nuevos ni declarar activación desde esta conversación; el contrato vigente exige preparar la IPZ y comenzar una conversación nueva para el corte.
-10. **Base de datos:** motor/proveedor y política de retención/acceso permanecen pendientes de decisión. Cualquier proyecto existente ajeno a Metodología queda fuera de alcance; no provisionar ni reutilizar infraestructura antes de aprobar el destino.
+1. **Una sola magnitud primaria:** duración observable del ciclo completo. No desplegar KPIs adicionales, latencias por herramienta, conteos operativos, tokens/costo, first-token, tasas de error ni reintentos como métricas de desempeño, salvo nueva decisión expresa.
+2. **Clasificación:** conservar una categoría del ciclo únicamente para poder contar la frecuencia de cada clase. No crear taxonomía por iniciativa propia; el catálogo queda pendiente de definición.
+3. **Checkpoint inicial común:** evento semántico `cycle.accepted` en el límite de entrada del entorno que recibe y admite la interacción, antes de iniciar procesamiento específico del proveedor/modelo. No usar la primera acción interna o detectiva del modelo.
+4. **Checkpoint final común:** evento semántico `cycle.completed` cuando termina el ciclo completo y la salida final queda disponible para el consumidor, después de las iteraciones de herramientas y orquestación que pertenezcan a ese mismo ciclo.
+5. **Portabilidad:** los nombres anteriores pertenecen al contrato común, no son nombres de API impuestos a proveedores. Cada adaptador debe mapear señales nativas verificables. Si falta cualquiera de los dos límites, registrar `NOT_MEASURED` y el motivo; no inferir ni sustituir checkpoints.
+6. **Reloj:** calcular duración con reloj monotónico cuando el adaptador controle ambos extremos. Guardar las marcas UTC, fuente y precisión del reloj para auditoría. No calcular duración restando relojes de pared susceptibles de ajuste.
+7. **Aislamiento de la ruta crítica:** capturar los timestamps y calcular la duración localmente con trabajo mínimo. No efectuar llamadas de red, escrituras remotas ni esperas de persistencia antes de que la respuesta final haya sido entregada. La medición/persistencia no debe retrasar la resolución ni la entrega del ciclo.
+8. **Persistencia desacoplada:** después de entregar la respuesta, enviar el registro compacto a persistencia. La primera versión no utilizará Cloudflare Queues; añadir una cola solo se reconsiderará si pruebas reales demuestran una necesidad de durabilidad/reintentos que no pueda resolverse con el mecanismo mínimo. La estrategia de recuperación ante fallos se debe especificar antes de declarar fiable la captura.
+9. **Integración conversacional/AT:** relacionar el resultado con el UUIDv7 local de conversación, la identidad local del ciclo y las referencias de registro A/B y AT cuando existan. No inventar IDs nativos, folios ni referencias. No duplicar el texto A/B ni crear un registro por herramienta.
+10. **Ámbito físico:** reutilizar el OCP transversal existente `ambitos/gestion-conversacional/` para el contrato común y sus referencias; no crear una copia de telemetría por frente. Cada frente conserva únicamente las referencias que le correspondan.
+11. **Contenido:** conservar A/B literal según ART-024, sin razonamiento interno oculto ni secretos. La captura automática no se presume: requiere adaptador real, permisos y prueba de lectura de vuelta.
+12. **Base de datos:** PostgreSQL administrado sigue siendo la opción candidata para persistencia central de bajo volumen. El proveedor/proyecto, retención y acceso permanecen pendientes de decisión/autorización. No provisionar ni reutilizar proyectos ajenos a Metodología sin autorización expresa.
+13. **FOL1:** continúa PREPARADO_PENDIENTE_ACTIVACION_IPZ. No asignar folios nuevos ni declarar activación desde esta tarea; respetar la compuerta vigente de IPZ y nueva conversación.
 
-### Verificación documental inicial de OpenAI
+## Verificación documental inicial de OpenAI
 
-- Responses API streaming documenta eventos de ciclo de vida `response.created`, `response.completed` y `error`; son señales del ciclo de una respuesta API y solo pueden mapearse al ciclo externo cuando la arquitectura de orquestación confirme esa equivalencia: https://developers.openai.com/api/docs/guides/streaming-responses
+- Responses API streaming documenta eventos de ciclo de vida como `response.created`, `response.completed` y `error`; son señales de una respuesta API y solo pueden mapearse al ciclo externo cuando la arquitectura confirma esa equivalencia: https://developers.openai.com/api/docs/guides/streaming-responses
 - La exportación ordinaria de ChatGPT entrega una copia descargable del historial; no es un hook de captura en vivo por turno: https://help.openai.com/en/articles/7260999-exporting-your-chatgpt-history-and-data
-- La Compliance Platform expone registros/metadatos de conversaciones en espacios Enterprise/Edu elegibles, con permisos administrativos y retención documentada de 30 días en el servicio de logs; no se presume disponible en una cuenta ni sustituye un hook universal: https://help.openai.com/en/articles/9261474-openai-compliance-platform-for-enterprise-and-edu-customers
+- La Compliance Platform se limita a espacios Enterprise/Edu elegibles y permisos administrativos; no se presume disponible en una cuenta personal ni constituye un hook universal: https://help.openai.com/en/articles/9261474-openai-compliance-platform-for-enterprise-and-edu-customers
 
-**Estado de diseño:** checkpoints semánticos propuestos; adaptador nativo de ChatGPT UI no identificado en documentación pública consultada; catálogo de categorías pendiente; base de datos pendiente; activación FOL1 pendiente de su compuerta. No se declara una implementación activa.
+**Bloqueo técnico vigente:** no se ha identificado ni probado un mecanismo autorizado y verificable que exponga a un adaptador los dos checkpoints del ciclo de la interfaz de ChatGPT en el uso personal del operador. Los eventos de Responses API no prueban por sí solos que exista captura de ciclos de ChatGPT UI. No implementar un adaptador basado en suposiciones o señales detectivas distintas.
 
-## Instrumentación por ciclo
+## Registro mínimo por ciclo
 
-Incorporar un único bloque `performance` al recibo/evidencia del ciclo ya existente. No crear una bitácora paralela ni una entrada por cada llamada.
+Incorporar un único bloque `performance` al registro del ciclo existente; no crear una bitácora paralela ni una entrada por cada llamada.
 
-Campos mínimos:
+Campos mínimos del bloque:
 
-- `request_received_at`: instante de recepción, solo si la plataforma lo expone.
-- `processing_started_at`: primera acción efectiva de procesamiento posterior a la instrucción.
-- `processing_finished_at`: última verificación/read-back antes de la salida final.
-- `response_emitted_at`: emisión final, solo si la plataforma expone una marca verificable.
-- `observed_processing_ms`: diferencia inicio-fin observada; no equivale a tiempo activo puro.
-- `end_to_end_ms`: solo cuando recepción y emisión sean ambas observables.
-- `clock_source`, `clock_precision`, `timezone`: fuente y precisión del reloj; marcas en ISO 8601 UTC y zona local de referencia America/Mexico_City.
-- `operations[]`: operaciones externas materialmente relevantes, agrupadas por proveedor/tipo (GitHub, RDC, otros), con hora de inicio/fin y duración de ida y vuelta observada, resultado y reintentos/fallos. Esa duración incluye procesamiento del conector/proveedor; no se presenta como latencia de red pura.
-- `wait_intervals[]`: esperas explícitas por operador, otro frente o dependencia externa, con inicio/fin y motivo cuando ambos sean observables.
-- `operation_counts`: lecturas, escrituras, llamadas, reintentos y fallos, sin conservar payloads o secretos innecesarios.
-- `workload`: clase de trabajo, complejidad observable, OCP y resultado del ciclo.
-- `coverage`: marcas disponibles/no disponibles y campos `NOT_MEASURED`.
+- `measurement_status`: `MEASURED` o `NOT_MEASURED`.
+- `start_event`: `cycle.accepted`, con marca UTC, fuente y precisión.
+- `end_event`: `cycle.completed`, con marca UTC, fuente y precisión.
+- `duration_ms`: duración calculada con reloj monotónico; solo presente cuando ambos extremos sean verificables.
+- `clock_source` y `clock_precision`.
+- `conversation_uuid` y `cycle_id` locales, además de referencias existentes a A/B, OCP y AT cuando estén disponibles.
+- `category`: referencia a una categoría del catálogo aprobado, cuando exista; no inventarla.
+- `coverage_reason`: motivo cuando el estado sea `NOT_MEASURED`.
 
-Si no existe una marca verificable, usar `NOT_MEASURED`; nunca estimar, asignar cero ni completar retrospectivamente. No capturar razonamiento interno. El intervalo de procesamiento incluye análisis y operaciones ejecutadas dentro de él y no debe rotularse «tiempo de pensamiento» o «tiempo activo puro».
+No conservar payloads, secretos ni contenido conversacional duplicado dentro de la telemetría. Las marcas inexistentes se registran como no medidas; nunca se estiman, reemplazan por cero ni completan retrospectivamente.
 
 ## Línea base y comparación
 
-- El ciclo que instala esta regla y los ciclos que empezaron antes de activar la medición quedan excluidos de la línea base si no tienen marcas completas desde el inicio.
-- El primer ciclo sustantivo de Gobernanza que arranque después de esta activación y registre cobertura completa será el primer candidato de línea base.
-- Reunir al menos 10 ciclos completos de carga comparable antes de fijar una referencia inicial estable. Si no se alcanza esa muestra, informar el resultado como preliminar.
-- Reportar tamaño de muestra, mediana, percentil 90 (P90) y rango. Separar duración de procesamiento, operaciones externas y esperas observadas.
-- Comparar clases de trabajo semejantes; registrar diferencias de alcance/herramientas. No atribuir causalidad a un cambio solo por una reducción aislada.
-- Una mejora se acredita cuando se repite en ciclos comparables y no degrada exactitud, seguridad, autorización, trazabilidad, read-back ni aceptación. No fijar metas numéricas antes de observar la línea base.
+- Iniciar la línea base únicamente con ciclos que tengan ambos checkpoints capturados desde el comienzo.
+- Reunir al menos 10 ciclos completos comparables antes de fijar una referencia inicial; con menos datos, informar la línea base como preliminar.
+- Utilizar la mediana de `duration_ms` como resumen inicial de la única magnitud primaria. Informar siempre el tamaño de muestra y la cobertura.
+- Comparar ciclos de la misma categoría cuando el catálogo esté aprobado. No atribuir causalidad a una diferencia aislada.
+- Acreditar una mejora solo cuando se repita en ciclos comparables y no degrade exactitud, seguridad, autorización, trazabilidad ni disponibilidad de la respuesta.
+- No fijar metas numéricas antes de disponer de una línea base observada.
 
 ## Criterio de aceptación
 
-1. El bloque temporal se incorpora a la evidencia del ciclo existente sin duplicar OCP ni bitácora.
-2. Las marcas tienen fuente, precisión, zona y cobertura declaradas.
-3. Las operaciones GitHub/RDC quedan separadas del intervalo completo de procesamiento.
-4. Las esperas conocidas no se imputan a procesamiento; las desconocidas permanecen desconocidas.
-5. La línea base se calcula solo sobre ciclos elegibles y compara muestras de carga semejante.
-6. Se puede identificar con evidencia qué fase/proveedor concentra tiempo y si una optimización produjo mejora repetida.
+1. Existe un adaptador autorizado que captura ambos checkpoints reales de la plataforma objetivo; no se aceptan señales inferidas.
+2. La duración se calcula localmente con reloj monotónico.
+3. La respuesta final se entrega sin esperar llamadas de red ni persistencia de telemetría.
+4. Existe una estrategia probada para conservar/reintentar registros cuando la persistencia no esté disponible.
+5. El bloque mínimo se integra con Gestión conversacional y referencias AT sin duplicar contenido ni bitácoras.
+6. Los registros incompletos quedan explícitamente como `NOT_MEASURED`.
+7. Una prueba demuestra que la instrumentación no introduce espera perceptible ni bloquea la respuesta.
+
+## Bitácora de decisiones y persistencia
+
+- **2026-11-07 · Reconciliación de diseño:** se elimina la instrumentación ampliada por herramienta/operación/espera y se consolida una sola magnitud primaria: duración observable del ciclo completo. Se mantienen categorías solo para frecuencia. Se fija la entrega de respuesta antes de persistencia y se descarta Cloudflare Queues para la primera versión. PostgreSQL administrado permanece como candidato, sin provisionamiento.
+- **2026-11-07 · Estado de captura:** continúa pendiente identificar y verificar un adaptador que observe `cycle.accepted` y `cycle.completed` en la interfaz personal de ChatGPT. No hay implementación activa ni datos de línea base.
+- Cada avance futuro de esta tarea debe actualizar esta bitácora en el mismo cambio documental que registre el resultado. Distinguir siempre decisión, propuesta, implementación, prueba y verificación; no declarar persistencia o aceptación sin read-back.
 
 ## Fuentes y relación
 
 - Norma: [DUG v377 · NX-377m](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html), [Metacanon §52](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#meta-52), [§4](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#meta-4), [§28](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#meta-28), [P020](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#P020) y [P043](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#P043).
-- Análisis y experimentos: [GOV-TASK-012](../📁%20🧩%20-%20GOV-TASK-012%20-%20Fluidez%20y%20desempeño%20del%20marco/README.md).
-- Incorporación al ciclo recurrente: [GOV-TASK-011](../📁%20🧩%20-%20GOV-TASK-011%20-%20Coordinación%20bilateral%20recurrente/README.md), bajo responsabilidad exclusiva de Gobernanza 1 para el DTC.
- 
-**Siguiente acción:** diseñar el esquema de medición y KPI respetando la delimitación anterior; iniciar la captura en el primer ciclo sustantivo elegible y completo desde su primera acción efectiva.
+- Análisis y optimización: [GOV-TASK-012](../📁%20🧩%20-%20GOV-TASK-012%20-%20Fluidez%20y%20desempe%C3%B1o%20del%20marco/README.md).
+- Incorporación al ciclo recurrente: [GOV-TASK-011](../📁%20🧩%20-%20GOV-TASK-011%20-%20Coordinaci%C3%B3n%20bilateral%20recurrente/README.md), bajo responsabilidad exclusiva de Gobernanza 1 para el DTC.
+
+**Siguiente acción:** investigar y verificar exclusivamente la disponibilidad de los checkpoints de ChatGPT UI para el uso personal del operador. Si no existe una señal autorizada y observable, documentar el límite y evaluar una ruta compatible antes de implementar el adaptador.
