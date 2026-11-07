@@ -182,3 +182,56 @@ La instrucción de sesiones efímeras se registra como requisito. No se activó 
 ### 8.8 Siguiente gate de esta tarea
 
 Validar con el operador: (1) nombre/código exacto de la ubicación CSEC/CECEQ; (2) categoría genérica de todas las demás ubicaciones; (3) ruta efectiva del Escritorio de fila4; (4) parámetros del Guardian anterior que se conservan, en particular los quince minutos de inactividad y los triggers de cierre; (5) el nivel de señal suficiente para asociar automáticamente el host a CSEC. Hasta esa validación, todo lo anterior es requisito documentado/propuesta de interpretación, no política local activada.
+
+
+## 9. Política vigente de BitLocker, CCEC y Guardian independiente de IDE · 2026-11-07
+
+### 9.1 Regla ubicua de cifrado
+
+Toda instancia y en toda ubicación, incluida CCEC, debe tener su workspace completo dentro de un volumen VHDX protegido con BitLocker XTS-AES-256, protección activa y 100% cifrado antes de materializar repositorios o datos. No existe fallback en claro. Si BitLocker, elevación o comprobación criptográfica falla, EP bloquea la materialización.
+
+La contraseña maestra de la bóveda canónica de variables de entorno es la misma raíz secreta para desbloquear el workspace BitLocker. El operador introduce una sola contraseña maestra. Se conserva la derivación de protector por sesión PBKDF2-HMAC-SHA256, 200.000 iteraciones y sal vinculada al ID de sesión; no se solicita ni se almacena otra contraseña maestra ni se escribe la contraseña original en claro.
+
+### 9.2 Perfiles de ubicación y excepción de CCEC
+
+La ubicación declarada y corregida por el operador es CCEC. El perfil provisional previo LOC-CSEC queda supersedido; no se borra su registro histórico. Se adopta LOC-CCEC para la terminal previamente identificada con PC10RCIF4EI4 y cuenta activa CENTRAL/fila4. La asociación a CCEC se apoya en la declaración del operador de que esa terminal y ese usuario son los que ocupa regularmente en el centro; no se declara geolocalización independiente.
+
+LOC-OTHER representa cualquier otra ubicación. La excepción es única: en CCEC la carpeta/contenedor de trabajo no se elimina automáticamente. En LOC-OTHER, la carpeta y el contenedor sí se eliminan automáticamente al cerrar o perder control de la sesión, conforme al Guardian. La política de cifrado no cambia entre perfiles.
+
+En CCEC, el Guardian detiene procesos, persiste lo autorizado cuando sea posible, purga credenciales y secretos efímeros, bloquea BitLocker y desmonta el volumen; conserva el contenedor y carpeta de trabajo cifrados para una siguiente materialización. No conserva procesos, sesiones autenticadas ni secretos de sesión. En las demás ubicaciones ejecuta además eliminación verificada del contenedor y carpeta exterior.
+
+Si el clasificador de ubicación no reconoce CCEC, aplica LOC-OTHER. La retención automática solo se habilita al coincidir el perfil CCEC validado. No se usa una ubicación de red/IP como única señal.
+
+### 9.3 Guardian actualizado; sin dependencia de Visual Studio Code
+
+Visual Studio Code ya no forma parte del entorno operativo vigente. Toda regla anterior que dispare limpieza por cierre de VS Code queda expresamente supersedida. Tampoco se requiere que un IDE concreto permanezca abierto.
+
+Se conservan del mecanismo histórico los disparadores y señales neutrales:
+- cierre manual o solicitud explícita cleanup.request;
+- salida/muerte del launcher o supervisor observado;
+- pérdida del heartbeat/vigilancia del supervisor;
+- inactividad del host, conservando 15 minutos como valor histórico por defecto;
+- reinicio o apagado inesperado, con tarea de arranque que aplica el perfil de ubicación antes de cualquier borrado.
+
+Se conserva como referencia la frecuencia histórica del Guardian (sondeo cada 2 segundos; heartbeat cada 60 segundos), su protección DPAPI/BitLocker, el registro remoto y la secuencia de cierre. Cualquier ajuste por la evolución del launcher se probará en el backlog técnico; no se sustituye por un proceso de aplicación/IDE.
+
+### 9.4 Secuencia de cierre por perfil
+
+Común a todos los perfiles: aceptar motivo; detener procesos de trabajo; intentar persistir únicamente los datos autorizados; purgar secretos, credenciales y blobs transitorios; bloquear BitLocker; desmontar el volumen; confirmar estado remoto de cierre cuando la conexión esté disponible.
+
+CCEC: después de la secuencia común, conservar el VHDX/contenedor y la carpeta de trabajo cifrados. No ejecutar la etapa de eliminación automática.
+
+LOC-OTHER: después de la secuencia común, retirar el punto de montaje/enlace y eliminar contenedor y carpeta exterior bajo control de EP; verificar su ausencia. Mantener armada la tarea de limpieza al reinicio mientras exista cualquier residuo; desarmarla solo tras read-back de ausencia.
+
+La tarea AtStartup existente debe adaptarse para reconocer CCEC y preservar el contenedor cifrado en ese perfil. No puede borrar primero y clasificar después. En ubicación desconocida/no reconocida, la regla operativa es LOC-OTHER. La política no autoriza borrar logs del sistema, auditorías, telemetría ni datos fuera del perímetro EP.
+
+### 9.5 Estado
+
+- Política ubicua BitLocker: decisión explícita del operador; implementación pendiente.
+- Raíz maestra de vault para BitLocker: decisión explícita; derivación de protector heredada, validación de unlock end-to-end pendiente.
+- LOC-CCEC: perfil declarado; prueba automatizada de coincidencia pendiente.
+- LOC-OTHER: perfil de todas las demás ubicaciones.
+- CCEC conserva contenedor cifrado al cierre: decisión explícita; código pendiente.
+- Resto de ubicaciones volatiliza contenedor/carpeta automáticamente: decisión explícita; código pendiente.
+- Trigger de cierre de VS Code: retirado/supersedido.
+- Guardian/cleanup y AtStartup: deben actualizarse, probarse y verificarse; todavía no activados por este cambio documental.
