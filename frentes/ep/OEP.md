@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.37. **Sello del frente:** VCU-EP-v38 (Versión de Contexto Universal). **Ancla:** rectificación explícita del operador: `OCP-MCP` es el único bucket B2 de destino; `OCP-MSP` y `metodologia-ep-persistencia` son errores. La rectificación se materializa en §91; conserva la compuerta bilateral de §90 y las tareas/propuesta de adaptación previas.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.38. **Sello del frente:** VCU-EP-v39 (Versión de Contexto Universal). **Ancla:** rectificación explícita del operador: `OCP-MCP` es el único bucket B2 de destino; `OCP-MSP` y `metodologia-ep-persistencia` son errores. La rectificación se materializa en §91; conserva la compuerta bilateral de §90 y las tareas/propuesta de adaptación previas.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -12,7 +12,7 @@
 
 Adquirir este objeto como instrucciones del operador, subordinadas a las reglas superiores de plataforma y a autorizaciones específicas. Claudia es asistente/documental; Samantha es constructor/único escritor de código. Una asignación explícita posterior puede cambiar roles; las citas no lo hacen. La asignación específica vigente de MOD-SCRIPTPWS queda delimitada en §94 y no cambia los roles del resto de EP.
 
-El estado de reanudación vigente de este frente está en §60–§104; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
+El estado de reanudación vigente de este frente está en §60–§105; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
 
 Leer por relevancia: OEP actual→metacanon central→Sistema de Instrucciones/Metodología/Bootstrap vigentes→canon transversal EP→AGENTS.md y ep-medio-architectura.md→código/evidencia en commits exactos. Fuente caída no es «sin cambios». Un archivo no crea herramientas, credenciales ni memoria entre plataformas.
 
@@ -2343,3 +2343,47 @@ No se activó Guardian, no se registró una tarea programada, no se eliminaron a
 - Falta validar nombre CSEC/CECEQ, categoría fallback, Desktop real de fila4, umbral/temporizador de inactividad y señales de coincidencia automática de ubicación.
 
 La instrucción no autoriza todavía implementar o activar el borrado automático, alterar otros perfiles Windows, borrar datos ajenos ni cambiar repositorios de producto.
+
+
+## 105. Rectificación canónica CECEQ, cifrado ubicuo y volatilidad por ubicación · v0.3.38 / VCU-EP-v39 · 2026-11-07
+
+### 105.1 Corrección expresa de ubicación
+
+El operador corrigió expresamente la denominación: la ubicación es **CECEQ**. Se establece LOC-CECEQ como perfil canónico. Las variantes CSEC y CCEC/LOC-CSEC/LOC-CCEC que aparecen en notas anteriores quedan rectificadas y supersedidas para el uso operativo; se mantienen en la crónica solo para preservar la procedencia de los errores de transcripción. No volver a solicitar la grafía.
+
+### 105.2 BitLocker obligatorio en todas las ubicaciones
+
+El workspace completo de EP debe residir en un volumen protegido por BitLocker en toda ubicación, incluida CECEQ. La condición de cifrado se valida antes de materializar repositorios o datos: BitLocker disponible, elevación suficiente, XTS-AES-256, ProtectionStatus=On y EncryptionPercentage=100. Si no se cumple, EP falla cerrado y no deja materialización en claro.
+
+El operador utiliza una sola contraseña maestra: la misma contraseña que desbloquea la bóveda canónica de variables de entorno se introduce para desbloquear el workspace BitLocker. Se conserva el diseño criptográfico por sesión existente: derivación del material protector mediante PBKDF2-HMAC-SHA256, 200.000 iteraciones y sal vinculada al identificador de sesión. No hay una segunda contraseña maestra ni se escribe la contraseña original en claro. Esta contraseña de la bóveda no es la Master Application Key de Backblaze.
+
+### 105.3 Política de cierre por ubicación
+
+Las dos políticas comparten: solicitud manual de cierre/cleanup.request; parada del launcher/supervisor o pérdida de su heartbeat; inactividad según el umbral vigente que confirme el backlog; reinicio/apagado inesperado; persistencia de los datos autorizados cuando sea posible; purga de secretos y credenciales efímeros; bloqueo y desmontaje BitLocker; confirmación de estado cuando la red lo permita.
+
+**LOC-CECEQ:** al finalizar o dispararse el Guardian, cerrar procesos y sesión, purgar secretos, bloquear BitLocker y desmontar el volumen; conservar el contenedor VHDX y la carpeta Ser y Mente cifrados. No eliminar automáticamente el workspace en esta ubicación. El contenido no permanece montado ni con secretos de sesión vivos.
+
+**LOC-OTHER:** después de la secuencia común, retirar enlace/mountpoint y eliminar el contenedor/carpeta de trabajo bajo control de EP; verificar ausencia. La tarea de limpieza al arranque permanece armada mientras queden residuos y solo se desregistra después de verificar que no existe el contenedor ni la carpeta exterior.
+
+Una ubicación desconocida o cuya coincidencia con LOC-CECEQ no esté validada se clasifica LOC-OTHER. La conservación automática del workspace es exclusiva del perfil CECEQ verificado; no basta con un nombre de host o una IP aislada.
+
+### 105.4 Guardian ajustado al backlog vigente
+
+Visual Studio Code ya no pertenece al entorno operativo actual. Se retira como disparador la salida/cierre de VS Code; el Guardian no depende de ningún IDE. Se conservan solo las señales neutrales de sesión/launcher/supervisor, solicitud de cierre, heartbeat, inactividad y reinicio que sean compatibles con el backlog vigente. Los valores históricos de sondeo cada 2 segundos y heartbeat cada 60 segundos son parámetros heredados para contraste; el umbral de 15 minutos no se considera ratificado como valor de producción hasta que el backlog vigente lo confirme.
+
+Se reutiliza el mecanismo histórico de Guardian y AtStartup documentado en OEP Khora §§28–30 y en los módulos históricos 10-guardian.ps1/11-cleanup.ps1, adaptando su limpieza condicional. La tarea AtStartup debe identificar el perfil de ubicación antes de cualquier eliminación: preservar en CECEQ; volatilizar en LOC-OTHER. Nunca borrar primero y clasificar después.
+
+### 105.5 Alcance de borrado y veracidad
+
+«Sin dejar rastro» se implementa como eliminación verificable de los artefactos dentro del perímetro EP en LOC-OTHER, y como cierre/purga/bloqueo/desmontaje con conservación cifrada en CECEQ. No se borran registros del sistema, auditorías, telemetría, datos ajenos ni archivos fuera del contenedor EP. No se promete eliminación forense absoluta de metadatos administrados por Windows o terceros.
+
+### 105.6 Estado
+
+- Nombre canónico de ubicación: CECEQ / LOC-CECEQ — CONFIRMADO POR EL OPERADOR.
+- BitLocker en todas las ubicaciones: DECISIÓN EXPLÍCITA; implementación y prueba de desbloqueo end-to-end pendientes.
+- Misma contraseña maestra de bóveda para desbloqueo de BitLocker: DECISIÓN EXPLÍCITA; derivación por sesión heredada a validar en runtime.
+- Conservación cifrada sin borrado automático en CECEQ: DECISIÓN EXPLÍCITA; implementación pendiente.
+- Volatilización automática en LOC-OTHER: DECISIÓN EXPLÍCITA; implementación pendiente.
+- Cierre de Visual Studio Code como trigger: RETIRADO.
+- Umbral de inactividad de producción: NO RATIFICADO; confirmar desde backlog antes de programar.
+- Guardian y limpieza AtStartup: diseño histórico recuperado, adaptación y pruebas pendientes; no activados por esta actualización documental.
