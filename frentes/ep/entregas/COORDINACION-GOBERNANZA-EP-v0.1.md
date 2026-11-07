@@ -1694,3 +1694,30 @@ Se inspeccionó metadata de procesos Chrome y puertos de escucha de `PC10RCIF4EI
 **Responsabilidad/folios:** la instrucción directa permite continuar la responsabilidad funcional/documental de EP, pero no se localizó un control formal EP ni se ejecutó una mutación CAS; no se declara transferencia ni generación. Se conserva ciclo local `C-EP-MOD-SCRIPTPWS-20261101-03` OPEN y `EP-TASK-002=en_curso`. CONV/CICLO/A/B globales no asignados; FOL1 no consta ACTIVO.
 
 **Secuencia DTC de este ciclo:** apertura y respuesta inicial registradas en este objeto → original adquirido y preservado → OEP §100 y EP-TASK-002 §44 actualizados → read-back/hash local de los documentos y original → pendiente publicación y read-back remoto en `main`. Hasta verificar commit/push y lectura remota, la persistencia canónica queda `PENDIENTE_PUBLICACION`; el ciclo no se declara cerrado documentalmente.
+
+
+### Reanudación EP · materialización Ser y Mente, perfiles de ubicación y rectificación de restauración física · 2026-11-07
+
+**A literal del operador:** se recibe y preserva la instrucción INSTRUCCION-MATERIALIZACION-UBICACIONES-20261107.txt. El operador rectifica expresamente que EP no necesita un segundo equipo ni unidad física para finalizar. La materialización debe usar Escritorio/Ser y Mente, incorporar dinámicamente todos los repositorios actuales de la organización SeryMente y mantener extension/ sincronizada y cargable para los proyectos que sean extensiones Chrome. Distingue GitHub para código y OCP canónicos de Metodología, y Backblaze para datos de usuario derivados del uso de OCP. Solicita perfiles de ubicación, huella de CSEC y reutilización del dead-man histórico, con sesiones efímeras.
+
+**Adquisición y perfil del host:** se hizo preflight de solo lectura en PC10RCIF4EI4. La sesión de consola activa es CENTRAL/fila4, sesión 4; perfil cargado C:/Users/fila4; equipo PC10RCIF4EI4, HP ProDesk 400 G4 DM, Windows 11 Pro build 26200, PowerShell 5.1.26100.9711, Ethernet. La ejecución RDC usa CENTRAL/MantenimientoRCI. User Shell Folders y Shell Folders informan destinos Desktop discrepantes para fila4; por eso la carpeta Ser y Mente no se creó. CSEC se conserva como ubicación declarada/candidata, no como geolocalización probada. El dictado presenta discrepancia CSEC versus deletreo C-E-C-E-Q.
+
+**Reglas históricas localizadas:** Khora OEP §§28–30, módulos Guardian/cleanup y Arquitectura EP Medio. Triggers recuperados: solicitud manual cleanup.request, muerte del launcher/supervisor, cierre de VS Code, inactividad (15 minutos por defecto), vigilancia cada 2 segundos, heartbeat cada 60 segundos y limpieza al reinicio por tarea AtStartup/SYSTEM de privilegio máximo. La tarea permanece armada hasta verificar ausencia de residuos. Secuencia: aceptar cierre, detener procesos, intentar continuidad remota, purgar secretos, bloquear BitLocker, retirar vínculo Desktop, desmontar VHDX, eliminar contenedor/carpeta exterior, retirar tarea tras verificar ausencia y cerrar sesión remota. Confidencialidad prevalece si falla continuidad.
+
+**Procesamiento y cambios persistidos:**
+- Se guardó la instrucción original en frentes/ep/originales/INSTRUCCION-MATERIALIZACION-UBICACIONES-20261107.txt; blob 302196022f157e2fcbcbaa901207a630c74d292f.
+- Se guardó el preflight minimizado en frentes/ep/evidencias/PERFIL-CSEC-PREFLIGHT-20261107.json; blob 1147d775d638c119ca6f67a2a59e807467952768.
+- EP-TASK-002 fue reorientada a persistencia de datos de usuario OCP en B2 y restauración desde workspace limpio en el mismo host; segunda ubicación física ya no es requisito. Blob 0841828529a02537b1847c7e2fd2de429f0013ff.
+- EP-TASK-003 fue reorientada a raíz Ser y Mente, inventario dinámico de repositorios, contrato extension/, perfiles y reutilización del Guardian. Blob 6ad796a6ce65ff2bc17b3918f9c842ca87caed92.
+- El índice provisional refleja el nuevo alcance; EP-TASK-001 permanece pendiente sin cambio. Blob 9595ce08547f5d34e698111310d44ebd9759e28e.
+- OEP actualizado a v0.3.37 / VCU-EP-v38, §104, blob 070c98d3de7f9b2349d09926f259d2b43d845d3e.
+- README EP y revisión v0.3.37 actualizados. La revisión quedó en blob 13628e4f3c5bf84c44e4c980fcc98d2ecc4d3d12.
+- Manifiesto actualizado y leído de vuelta, blob 36284f0752de8f83a1ba0d1896b9c8f8490d8115; 70 entradas.
+
+**Delimitación y no operaciones:** todo lo anterior fue documental/preflight. No se materializó Ser y Mente, no se actualizó ninguna extensión local, no se ejecutó restore de datos reales, no se activó Guardian, no se registró una tarea programada y no se borró archivo alguno. No se tocó otro perfil Windows ni registros del sistema. No se hicieron operaciones B2 de usuario en este ciclo.
+
+**Rectificaciones y validación pendiente:** §103 del OEP queda supersedido únicamente en su compuerta de segundo dispositivo; la prueba de aceptación pasa a ser restauración en workspace limpio del mismo host. Los perfiles propuestos son LOC-CSEC y LOC-OTHER, pero la segunda categoría y la identidad exacta CSEC/CECEQ requieren confirmación. La ruta Desktop de fila4 debe resolverse antes de materializar. El timeout 15 min es valor histórico, no ratificación de la política nueva. La huella del host no autentica por sí sola la ubicación física. “Sin dejar rastro” se limita a los artefactos bajo control de EP; no se promete borrado forense de rastros que administra Windows o infraestructura externa.
+
+**Estado:** OEP v0.3.37 / VCU-EP-v38 persistido; EP-TASK-002 y EP-TASK-003 en_curso; EP-TASK-001 pendiente; ciclo local C-EP-MOD-SCRIPTPWS-20261101-03 permanece OPEN. FOL1 pendiente/no activo; no se asignan folios globales.
+
+**Siguiente paso para validar con el operador:** confirmar grafía/código de CSEC, significado del segundo tipo de perfil, Desktop efectivo de fila4, señales suficientes para reconocimiento automático de ubicación y si se conserva el default histórico de 15 minutos. Solo después preparar el diseño ejecutable del Guardian actualizado; no activarlo ni borrar nada antes del visto bueno.
