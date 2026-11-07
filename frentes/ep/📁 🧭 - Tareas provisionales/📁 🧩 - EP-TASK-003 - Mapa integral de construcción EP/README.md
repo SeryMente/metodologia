@@ -248,3 +248,6 @@ La denominación confirmada por el operador es **CECEQ**. Se fija como perfil ca
 **Guardian sin IDE:** Visual Studio Code y su cierre dejan de ser señales operativas. El mecanismo permanece ligado a solicitud explícita de cierre, salida/muerte del launcher o supervisor, pérdida de heartbeat, inactividad conforme al valor definitivo que valide el backlog y reinicio/apagado inesperado. El sondeo de 2 segundos y heartbeat de 60 segundos se conservan como parámetros del diseño anterior hasta su contraste de implementación. El valor histórico de 15 minutos no queda activado como umbral definitivo por esta corrección.
 
 Estado: regla documental corregida y registrada; activación del Guardian, programación AtStartup y prueba completa de lock/dismount/preserve-vs-delete permanecen pendientes del backlog técnico. No se han borrado archivos ni se han modificado volúmenes Windows durante esta actualización.
+
+
+**Fuente de perfil y política vigentes:** INSTRUCCION-BITLOCKER-CECEQ-20261107.txt y PERFIL-CECEQ-POLITICA-20261107.json. Estos artefactos superseden la grafía errónea LOC-CSEC/LOC-CCEC y formalizan BitLocker en todas las ubicaciones con conservación cifrada exclusiva de CECEQ.
