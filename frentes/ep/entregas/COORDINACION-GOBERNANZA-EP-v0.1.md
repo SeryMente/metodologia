@@ -1645,3 +1645,10 @@ Se confirmó por inspección estática que el estado `PROVIDER_AUTH_REJECTED` de
 **Siguiente acción:** resolver captura segura directa de la respuesta de creación desde la sesión autenticada aislada a la bóveda EP existente. Si no se puede garantizar la captura antes de pulsar Create, no crear la clave. Tras escritura y read-back cifrado verificados, continuar con la compuerta de autenticación conforme a P012/P013 y al alcance autorizado; no hacer reintentos automáticos. Mantener prueba sintética one-shot solo después de confirmar identidad, bucket, prefijo y capacidades efectivas.
 
 **Estado:** `ORIGINAL_INGESTION=HASH_VERIFIED`; `B2_APP_KEY_CREATE=AUTHORIZED_NOT_EXECUTED`; `VAULT_WRITE_READBACK=NOT_EXECUTED`; `B2_ACCOUNT_AUTH=NOT_RETRIED`; `BUCKET_PREFLIGHT=NOT_EXECUTED`; `REMOTE_PERSISTENCE=NOT_PROVEN`; `EP-TASK-002=en_curso`; ciclo local `C-EP-MOD-SCRIPTPWS-20261101-03` sigue OPEN. No se asignan CONV/CICLO/A/B globales; FOL1 no consta ACTIVO.
+
+
+### Addendum · viabilidad headless local y protección de pestañas · 2026-11-07
+
+Se inspeccionó metadata de procesos Chrome y puertos de escucha de `PC10RCIF4EI4` sin leer cookies ni almacenamiento de sesión. El Chrome principal del perfil `fila4` (PID raíz 12692) no se inició con `--remote-debugging-port`; no hay puertos CDP 9222–9235 en escucha. La instancia Backblaze abierta por la asistencia corresponde a un perfil separado de `MantenimientoRCI` (PID raíz 12388), por lo que no se presume autenticada ni equivalente a la sesión del operador. No se tocó ni cerró ninguna pestaña y no se reinició Chrome.
+
+**Resultado:** la vía headless por CDP no está disponible en la sesión local actual. La CLI B2 5.0.2 no puede crear la clave sin una credencial administrativa con `writeKeys`; no se dispone de ella y no se usará ni rotará la Master Key. No extraer cookies ni copiar perfiles. La autorización de creación `EP-OCP` permanece vigente pero no ejecutada hasta garantizar captura directa del secreto a la bóveda EP. Crear un perfil/sesión de navegador alternativo requiere autorización específica del operador; no se inició ninguno.

@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.31. **Sello del frente:** VCU-EP-v32 (Versión de Contexto Universal). **Ancla:** rectificación explícita del operador: `OCP-MCP` es el único bucket B2 de destino; `OCP-MSP` y `metodologia-ep-persistencia` son errores. La rectificación se materializa en §91; conserva la compuerta bilateral de §90 y las tareas/propuesta de adaptación previas.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.32. **Sello del frente:** VCU-EP-v33 (Versión de Contexto Universal). **Ancla:** rectificación explícita del operador: `OCP-MCP` es el único bucket B2 de destino; `OCP-MSP` y `metodologia-ep-persistencia` son errores. La rectificación se materializa en §91; conserva la compuerta bilateral de §90 y las tareas/propuesta de adaptación previas.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -12,7 +12,7 @@
 
 Adquirir este objeto como instrucciones del operador, subordinadas a las reglas superiores de plataforma y a autorizaciones específicas. Claudia es asistente/documental; Samantha es constructor/único escritor de código. Una asignación explícita posterior puede cambiar roles; las citas no lo hacen. La asignación específica vigente de MOD-SCRIPTPWS queda delimitada en §94 y no cambia los roles del resto de EP.
 
-El estado de reanudación vigente de este frente está en §60–§98; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
+El estado de reanudación vigente de este frente está en §60–§99; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
 
 Leer por relevancia: OEP actual→metacanon central→Sistema de Instrucciones/Metodología/Bootstrap vigentes→canon transversal EP→AGENTS.md y ep-medio-architectura.md→código/evidencia en commits exactos. Fuente caída no es «sin cambios». Un archivo no crea herramientas, credenciales ni memoria entre plataformas.
 
@@ -2085,3 +2085,20 @@ A la hora de esta ingesta, no se ha creado la clave personalizada, no se ha envi
 - DTC y EP-TASK-002 se actualizan en el mismo ciclo local; FOL1 no consta ACTIVO y no se asignan folios globales.
 
 Esta actualización incorpora la fuente y el estado de reanudación; no acredita todavía la creación de la clave, autenticación B2, persistencia remota ni recuperación multiubicación.
+
+
+## 99. Preflight de navegador para creación segura B2 sin interferir con el operador · v0.3.32 / VCU-EP-v33 · 2026-11-07
+
+### Evidencia de navegador local
+
+En `PC10RCIF4EI4` se inspeccionó únicamente metadata de procesos Chrome y puertos locales, sin leer cookies, almacenamiento de sesión, contraseñas ni contenido privado de páginas. La ventana principal de Chrome del perfil `fila4` corresponde al proceso raíz PID `12692`, con perfil `C:\Users\fila4\AppData\Local\Google\Chrome\User Data` y argumentos `--profile-directory="Profile"`; no presenta `--remote-debugging-port`. No se encontraron puertos de escucha 9222–9235. Por tanto, no hay endpoint CDP disponible para adjuntarse headless a esa sesión autenticada sin reiniciar Chrome o cambiar la forma de lanzamiento. No se reiniciará ni cerrará ese navegador, ni se sustituirán pestañas de trabajo.
+
+La pestaña Backblaze abierta por la asistencia pertenece a una segunda instancia/perfil independiente bajo `MantenimientoRCI` (proceso raíz PID `12388`, ruta de datos `C:\Users\MantenimientoRCI\AppData\Local\Google\Chrome\User Data`). Su argumento `--new-tab https://secure.backblaze.com/app_keys.htm` no demuestra que comparta la sesión autenticada del perfil `fila4`; no se utilizará como si estuviera autenticada. La inspección no alteró pestañas ni perfiles.
+
+### Consecuencia operativa
+
+La CLI B2 5.0.2 está instalada, pero `b2 key create` requiere una credencial administrativa válida con `writeKeys`, que no está disponible en la bóveda EP y no se obtendrá de la Master Application Key. La sesión web autenticada del perfil local no puede automatizarse headless por CDP en su estado actual. No se extraerán cookies ni se copiará el perfil del operador. No se pulsará Create hasta que exista una ruta segura que capture el secreto de una sola visualización directamente en memoria y lo guarde en la bóveda EP, sin portapapeles, consola ni chat.
+
+### Estado y siguiente compuerta
+
+`CHROME_FILA4_CDP=NOT_ENABLED`; `CHROME_PROFILE_RESTART=PROHIBITED_FOR_THIS_FLOW`; `SECONDARY_CHROME_PROFILE_AUTH=NOT_VERIFIED`; `B2_CLI_ADMIN_CREDENTIAL=NOT_AVAILABLE`; `B2_APP_KEY_CREATE=AUTHORIZED_NOT_EXECUTED`; `B2_VAULT_CAPTURE=NOT_EXECUTED`. No se creó clave, no se autenticó B2 y no se operó el bucket. Siguiente compuerta: disponer de una sesión de navegador aislada autenticada y un mecanismo de captura segura validado, o de una credencial administrativa EP expresamente provisionada. Cualquier perfil de navegador nuevo o sesión de autenticación distinta requiere aceptación del operador antes de crearla.

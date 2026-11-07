@@ -1,7 +1,7 @@
 # 📝 EP-TASK-002 · Persistencia provisional con Backblaze B2 para datos de usuario y continuidad de la sesión canónica
 
 **Naturaleza:** tarea provisional del frente Entorno Persistente; materialización auxiliar del registro de tareas, no un OEP nuevo, no un frente independiente y no una decisión de arquitectura canónica.  
-**Estado:** `en_curso` — original EP del 2026-11-07 adquirido y preservado con SHA-256 verificado; CLI B2 5.0.2 instalada; bóveda cifrada EP presente según metadatos previos; dos intentos de autenticación anteriores fallidos; creación de Application Key `EP-OCP` expresamente autorizada pero aún no ejecutada; captura/lectura de vuelta en bóveda, autenticación, preflight y prueba sintética pendientes. No se utilizará ni rotará la Master Application Key.
+**Estado:** `en_curso` — original EP 2026-11-07 preservado y publicado con SHA verificado; CLI B2 5.0.2 instalada; bóveda EP cifrada presente según metadatos previos; creación de clave `EP-OCP` autorizada pero pendiente de captura segura; Chrome del perfil fila4 sin CDP, por lo que no hay ruta headless local disponible; no usar Master Key, no extraer cookies ni interrumpir pestañas. Autenticación, preflight, prueba sintética y restore siguen pendientes.
 **Responsabilidad:** vinculada a `frentes/ep/`; sin control, sesión, titularidad ni folio global propios.  
 **task_id:** `EP-TASK-002` (identificador local estable; no es folio global).  
 **scope_ref:** `frentes/ep/`  
@@ -1691,3 +1691,12 @@ El operador autorizó crear una sola clave `EP-OCP` con bucket `OCP-MCP`, prefij
 La CLI no crea una clave sin una credencial administrativa válida. La alternativa autorizada es la sesión del portal, pero la creación debe bloquearse antes del clic final si no está garantizada la captura segura inmediata del secreto hacia la bóveda. No extraer cookies, no utilizar la Master Key, no imprimir credenciales, no usar el portapapeles para secretos y no sustituir pestañas del operador. Después del read-back cifrado, cumplir P012/P013 antes de autenticar; ante cualquier error, detener sin reintento automático. La prueba sintética sigue siendo one-shot y condicionada a confirmar el scope efectivo.
 
 **Estado de tarea:** `en_curso`. Se conserva el ciclo local `C-EP-MOD-SCRIPTPWS-20261101-03`; no crear OCP, control, sesión, responsabilidad o folios globales nuevos.
+
+
+## 43. Preflight headless de Chrome y bloqueo de captura segura B2 · 2026-11-07
+
+La inspección local de metadata confirmó que el Chrome autenticado del perfil `fila4` (PID raíz 12692) no tiene `--remote-debugging-port` ni endpoint CDP en los puertos 9222–9235. La segunda instancia de Chrome abierta por la asistencia usa el perfil `MantenimientoRCI` (PID raíz 12388), distinto del perfil autenticado; no se presume sesión compartida. No se leyó cookies ni storage, no se reinició Chrome y no se modificaron pestañas.
+
+La CLI B2 5.0.2 no puede crear una Application Key sin credencial administrativa `writeKeys`, no disponible en la bóveda EP. No se usará la Master Key ni se extraerán cookies. La creación `EP-OCP` continúa autorizada, pero `AUTHORIZED_NOT_EXECUTED` hasta disponer de captura directa segura a la bóveda. Cualquier perfil de navegador alternativo o nuevo inicio de sesión requiere autorización específica antes de crearse.
+
+Estados: `CHROME_FILA4_CDP=NOT_ENABLED`; `SECONDARY_PROFILE_AUTH=NOT_VERIFIED`; `B2_ADMIN_CREDENTIAL=NOT_AVAILABLE`; `B2_APP_KEY_CREATE=AUTHORIZED_NOT_EXECUTED`; `VAULT_CAPTURE=NOT_EXECUTED`; `B2_ACCOUNT_AUTH=NOT_RETRIED`; `EP-TASK-002=en_curso`.
