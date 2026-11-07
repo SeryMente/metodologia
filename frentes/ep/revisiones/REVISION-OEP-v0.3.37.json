@@ -1,0 +1,120 @@
+{
+  "schema": 1,
+  "version": "v0.3.37 / VCU-EP-v38",
+  "date": "2026-11-07",
+  "source_methodology": {
+    "dug": "Samantha v377 / NX-377m",
+    "dug_blob": "54064c8fe00f872023a455f06596061ed69062ae",
+    "metacanon": "1.28",
+    "gow": "2.17",
+    "fresh_readback": "NO REALIZADO EN ESTE CICLO; referencia previa de esta conversación"
+  },
+  "source_instruction": {
+    "path": "frentes/ep/originales/INSTRUCCION-MATERIALIZACION-UBICACIONES-20261107.txt",
+    "blob": "302196022f157e2fcbcbaa901207a630c74d292f",
+    "commit": "029ae630afcb8e218d75f32e6764d47aa232a459",
+    "status": "PERSISTED_AND_READBACK_VERIFIED"
+  },
+  "location_profile_evidence": {
+    "path": "frentes/ep/evidencias/PERFIL-CSEC-PREFLIGHT-20261107.json",
+    "blob": "1147d775d638c119ca6f67a2a59e807467952768",
+    "commit": "8a7d171d93b85328cd19a1a2c086e45bcbae37a6",
+    "status": "PERSISTED_AND_READBACK_VERIFIED",
+    "assessment": "CANDIDATE_ONLY_OPERATOR_ASSERTED_LOCATION",
+    "desktop_resolution": "CONFLICT_REQUIRES_OPERATOR_VALIDATION"
+  },
+  "changes": {
+    "frentes/ep/OEP.md": {
+      "version": "v0.3.37 / VCU-EP-v38",
+      "blob": "070c98d3de7f9b2349d09926f259d2b43d845d3e",
+      "commit": "ee4cc022be30cc7b69e6665520a631d60248f50d"
+    },
+    "frentes/ep/README.md": {
+      "blob": "799a8752dd56ef5433cfcb172ef2cdd8a480fa37",
+      "commit": "eb9953ec722a5a48e5d0785c03b5ade7380ed25e"
+    },
+    "frentes/ep/📁 🧭 - Tareas provisionales/README.md": {
+      "blob": "9595ce08547f5d34e698111310d44ebd9759e28e",
+      "commit": "c266455ef1d5c8074112a0d4fa50d57fbd47ffa4"
+    },
+    "frentes/ep/📁 🧭 - Tareas provisionales/📁 🧩 - EP-TASK-002 - Persistencia provisional Backblaze/README.md": {
+      "blob": "0841828529a02537b1847c7e2fd2de429f0013ff",
+      "commit": "0429520b9dd57ec16af2e8f1d8b965bf9b408d81"
+    },
+    "frentes/ep/📁 🧭 - Tareas provisionales/📁 🧩 - EP-TASK-003 - Mapa integral de construcción EP/README.md": {
+      "blob": "6ad796a6ce65ff2bc17b3918f9c842ca87caed92",
+      "commit": "1c3b22f01a0d868453a8b5a28664cdf8accbac2e"
+    }
+  },
+  "decisions_and_rectifications": {
+    "github": "CODE_AND_CANONICAL_METHODOLOGY_OCP",
+    "backblaze": "USER_DATA_FROM_OCP_USAGE",
+    "local_workspace": "DESKTOP_SER_Y_MENTE_EPHEMERAL_RECONSTRUCTIBLE",
+    "physical_second_device_restore": "NOT_REQUIRED_SUPERSEDED_BY_OPERATOR",
+    "same_host_clean_workspace_restore": "REQUIRED_ACCEPTANCE_PATH"
+  },
+  "recovered_deadman": {
+    "source": "SeryMente/khora historical OEP §§28-30 and EP Medio v1.0.4",
+    "triggers": [
+      "manual cleanup request",
+      "launcher/supervisor exit",
+      "VS Code exit",
+      "15-minute default inactivity",
+      "unexpected reboot/startup cleanup"
+    ],
+    "guardian_poll_interval_seconds": 2,
+    "guardian_heartbeat_seconds": 60,
+    "startup_task": "AtStartup SYSTEM highest privilege; remains armed until absence of residues is verified",
+    "cleanup_sequence": [
+      "accept close",
+      "stop work processes",
+      "attempt remote continuity persistence",
+      "purge secrets",
+      "lock BitLocker",
+      "remove desktop link",
+      "dismount encrypted VHD",
+      "remove EP container/outer folder",
+      "disarm startup cleanup only after verified absence",
+      "close remote session"
+    ],
+    "activation": "NOT_ACTIVATED_PENDING_OPERATOR_VALIDATION"
+  },
+  "checks": {
+    "raw_instruction_saved": "PASS",
+    "host_profile_evidence_saved": "PASS",
+    "EP_TASK_002_updated": "PASS",
+    "EP_TASK_003_updated": "PASS",
+    "provisional_task_index_updated": "PASS",
+    "OEP_updated": "PASS",
+    "OEP_top_version_reconciled": "PASS",
+    "same_host_restore_executed": "NOT_EXECUTED",
+    "workspace_materialized": "NOT_EXECUTED",
+    "deadman_activated": "NOT_EXECUTED",
+    "scheduled_task_created": "NOT_EXECUTED",
+    "files_deleted": "NONE"
+  },
+  "open_validation": {
+    "location_spelling": "CSEC versus phonetic C-E-C-E-Q",
+    "second_profile_type": "LOC-OTHER proposed; requires confirmation",
+    "active_fila4_desktop": "conflicting registry values",
+    "location_match": "operator declaration only; no geolocation proof",
+    "idle_timeout": "15-minute historical default; not ratified for current implementation",
+    "cleanup_scope": "EP-controlled workspace only; no absolute forensic no-trace guarantee"
+  },
+  "continuity": {
+    "EP_TASK_001": "pendiente unchanged",
+    "EP_TASK_002": "en_curso",
+    "EP_TASK_003": "en_curso",
+    "local_cycle": "C-EP-MOD-SCRIPTPWS-20261101-03",
+    "cycle_state": "OPEN",
+    "FOL1": "PENDIENTE / NO ACTIVO",
+    "global_folios": "NO ASIGNADOS"
+  },
+  "limits": [
+    "No real user data copied to B2 during this documentation cycle.",
+    "No B2 bucket configuration/key operation or object deletion.",
+    "No workspace creation or Chrome extension refresh executed.",
+    "No Guardian or scheduled cleanup task activated.",
+    "No other Windows user profile or files were modified."
+  ]
+}
