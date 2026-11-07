@@ -93,13 +93,12 @@ La regla se adopta para tareas provisionales de este contenedor por instrucción
 
 ## Reorientación de tareas por instrucción rectora · 2026-11-07
 
-La entrada INSTRUCCION-MATERIALIZACION-UBICACIONES-20261107.txt actualiza el reparto provisional:
+- EP-TASK-002: persistencia de datos de usuario OCP en Backblaze B2; GitHub queda para código y objetos canónicos. La segunda unidad/equipo físico no es condición de cierre.
+- EP-TASK-003: workspace `Ser y Mente`, repositorios actuales y carpetas `extension/` para extensiones Chrome; además, únicamente dead-man trigger fuera de CECEQ, ligado a la terminación del proceso que mantiene abierta la sesión EP.
+- EP-TASK-001 permanece pendiente y sin cambio.
 
-- EP-TASK-002: persistencia de datos de usuario OCP en Backblaze B2; GitHub queda para código y objetos canónicos. La segunda unidad/equipo físico deja de ser una condición de cierre.
-- EP-TASK-003: raíz workspace Ser y Mente, materialización dinámica de todos los repositorios actuales de SeryMente, sincronización obligatoria de extension/ para extensiones Chrome, perfiles de ubicación y reutilización del Guardian/hombre muerto.
-- EP-TASK-001 permanece pendiente y sin cambio. No se crea otra tarea ni se autoriza implementación local, activación del Guardian, borrado o cambios en los repositorios consumidores por esta actualización documental.
+## Alcance austero vigente · 2026-11-07
 
+BitLocker es obligatorio en toda ubicación y utiliza la misma contraseña maestra de la bóveda canónica de variables de entorno. CECEQ conserva el workspace cifrado al cierre. En ubicaciones distintas de CECEQ, la terminación del proceso de control de la sesión EP dispara el bloqueo BitLocker, desmontaje y eliminación exclusiva del contenedor/carpeta de trabajo EP.
 
-## Rectificación de ubicación y alcance austero · 2026-11-07
-
-El nombre canónico confirmado es CECEQ / LOC-CECEQ. BitLocker es obligatorio en toda ubicación con la misma contraseña maestra de la bóveda canónica. CECEQ conserva el workspace cifrado. Fuera de CECEQ, EP-TASK-003 contempla únicamente el dead-man trigger por terminación del proceso de control de la sesión EP. Guardian, vigilancia anti-exfiltración, heartbeat, polling, inactividad, tareas programadas y monitoreo en segundo plano quedan fuera de esta versión.
+Se revisó el diseño histórico de KHORA OEP §28–§30 y sus módulos asociados; se retiene solo el evento de terminación del proceso de control. Quedan fuera de esta versión Guardian como subsistema, vigilancia anti-exfiltración, heartbeat, polling, inactividad, monitoreo, VS Code/IDE y tareas programadas. La actualización es documental: el disparador aún no está implementado ni activado.
