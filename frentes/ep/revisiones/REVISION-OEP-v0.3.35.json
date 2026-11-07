@@ -1,0 +1,38 @@
+{
+  "schema": 1,
+  "version": "v0.3.35 / VCU-EP-v36",
+  "method_acquired": "DUG v377 / NX-377m; Metacanon 1.28; GOW 2.17; OEP §§100-102",
+  "base_commit": "3eacb0f1ec558520def46f03f894bcd8966cba1e",
+  "event": "EP-C-EP-MOD-SCRIPTPWS-20261101-03: bóveda Master cotejada sin reescritura; autenticación Master B2; preflight OCP-MCP; upload/download/read-back sintético en ep-ocp/.",
+  "checks": {
+    "master_entries_capture_syntax": "PASS",
+    "master_entries_already_present_and_matched": "PASS",
+    "vault_decrypt_readback_four_entries": "PASS",
+    "vault_acl_protected": "PASS",
+    "backup_hash_verified": "PASS",
+    "clipboard_cleared": "PASS",
+    "b2_master_authorize": "PASS",
+    "isolated_master_account_cache_acl": "PASS",
+    "bucket_get_ocp_mcp": "PASS",
+    "synthetic_upload": "PASS",
+    "synthetic_download_readback": "PASS",
+    "sha256_match": "PASS",
+    "file_info_metadata_readback": "PASS",
+    "sse_b2_aes256": "PASS",
+    "local_temp_cleanup": "PASS",
+    "remote_test_object_deleted": false,
+    "second_physical_location_restore": "NOT_EXECUTED",
+    "multi_location_sync": "PENDING",
+    "end_to_end_product_acceptance": "PENDING",
+    "formal_ep_responsibility_transfer": "NOT_VERIFIED"
+  },
+  "continuity": {
+    "local_cycle": "C-EP-MOD-SCRIPTPWS-20261101-03",
+    "cycle_state": "OPEN",
+    "task": "EP-TASK-002",
+    "task_state": "en_curso",
+    "fol1": "PENDIENTE / NO ASIGNADO",
+    "global_folios": "NO ASIGNADOS"
+  },
+  "receipt": "frentes/ep/evidencias/EP-B2-SMOKE-20261107.json"
+}

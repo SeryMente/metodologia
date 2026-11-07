@@ -1,0 +1,86 @@
+{
+  "schema": 1,
+  "type": "EP_B2_SYNTHETIC_PERSISTENCE_RECEIPT",
+  "date": "2026-11-07",
+  "host": "PC10RCIF4EI4",
+  "authorization": {
+    "master_application_key_use": "AUTHORIZED_BY_OPERATOR",
+    "vault": {
+      "path": "%LOCALAPPDATA%\\Khora\\secrets\\b2-ep-env-vault.enc.json",
+      "bytes": 1739,
+      "sha256": "761E0E7DE145D30499171B5B7AC4CCA504A602262E5B9BC09FBF733C3BE2386F",
+      "backup_sha256": "9688B3496FEA1670CEB2BD8C5CDA2D8461D71B18F9A821568423264F04E3BE7C",
+      "master_entries_action": "ALREADY_PRESENT_AND_MATCHED_NO_REWRITE",
+      "decrypt_readback": "PASS",
+      "existing_entries_preserved": "PASS",
+      "acl_readback": "PASS",
+      "clipboard_cleared": "PASS"
+    },
+    "b2_authentication": {
+      "status": "SUCCESS",
+      "credential_source": "Master entries in encrypted vault",
+      "isolated_account_cache": "%LOCALAPPDATA%\\Khora\\state\\b2-ep-master-20261107.sqlite",
+      "account_cache_bytes": 24576,
+      "account_cache_acl": "PASS",
+      "credentials_persisted_in_environment": "NONE",
+      "provider_scope": "GLOBAL_UNRESTRICTED",
+      "allowed_bucket_names": [],
+      "bucket_id_restricted": false,
+      "name_prefix": null
+    }
+  },
+  "bucket": {
+    "name": "OCP-MCP",
+    "bucket_id": "974c6cb88be79f3fa9150c16",
+    "bucket_type": "allPrivate",
+    "default_server_side_encryption": {
+      "mode": "SSE-B2",
+      "algorithm": "AES256"
+    },
+    "cors_rules": 0,
+    "lifecycle_rules": 0,
+    "file_lock_enabled": false,
+    "revision": 2,
+    "preflight": "GET_PASS"
+  },
+  "synthetic_test": {
+    "upload": "PASS",
+    "download": "PASS",
+    "file_info_readback": "PASS",
+    "bucket": "OCP-MCP",
+    "b2_file_name": "ep-ocp/_verification/EP-B2-SMOKE-16acc210867f4518b8dfa5c8479474f2.txt",
+    "file_id": "4_z974c6cb88be79f3fa9150c16_f1001aef8d5a5a156_d20261107_m175902_c005_v0501052_t0053_u01794074342997",
+    "bytes": 126,
+    "sha256_source": "8F792B15BCFB8F0CF9771DFA4F977C951D5FCBC57DC6132A675416031C8C425D",
+    "sha256_download": "8F792B15BCFB8F0CF9771DFA4F977C951D5FCBC57DC6132A675416031C8C425D",
+    "sha256_match": true,
+    "content_sha1": "63279934d35be0c90cce374cd0387b4735feb22f",
+    "encryption": {
+      "mode": "SSE-B2",
+      "algorithm": "AES256"
+    },
+    "local_source_and_restore_removed": "PASS",
+    "remote_test_object": "RETAINED_NO_DELETE"
+  },
+  "operations": [
+    "b2 account authorize using Master vault entry",
+    "b2 account get",
+    "b2 bucket get OCP-MCP",
+    "b2 file upload to explicit OCP-MCP/ep-ocp/ path",
+    "b2 file download to local temporary restore path",
+    "b2 file info by exact B2 URI"
+  ],
+  "non_operations": [
+    "No bucket creation or update",
+    "No key creation, rotation or revocation",
+    "No delete, hide or unhide",
+    "No lifecycle/CORS change",
+    "No access to other buckets or prefixes",
+    "No restore to a second physical location"
+  ],
+  "limitations": [
+    "Master key is globally unrestricted; OCP-MCP/ep-ocp/ is a procedural constraint only",
+    "Only same-host temporary download/read-back was proven",
+    "Physical second-location restore, multi-location synchronization and end-to-end product acceptance remain pending"
+  ]
+}

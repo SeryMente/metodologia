@@ -42,15 +42,15 @@
     },
     {
       "path": "frentes/ep/OEP.md",
-      "bytes": 329759,
-      "sha256": "94AE85037480D2FC778C2CAC47F43B655D6BC5EE7DEE88359590262123B54B0C",
-      "git_blob": "6865d50bc60b305adea365afc96a4266710e371f"
+      "bytes": 333511,
+      "sha256": "A12E17944C784C0330E9CBDA0E92922014355D8B61AE03496D54954F5C456E8C",
+      "git_blob": "a6d1b0cd9f2fcabb0bbccc20a252382f081d0f53"
     },
     {
       "path": "frentes/ep/README.md",
-      "bytes": 2426,
-      "sha256": "DCB862E730EE5017E39D901F29AAAB83F28BD6F966A73398E10B1E66D10657EB",
-      "git_blob": "2648c9accb79e1dec4dab9bf5eb0d723e4eb0fa2"
+      "bytes": 2577,
+      "sha256": "0F818DC2C66FAECF45C390FDAB68E0B477BC45BCD315A484AD3E1067EB8DD890",
+      "git_blob": "a4b50c5327a9fabd0618b69d1c12954f4cc31e2d"
     },
     {
       "path": "frentes/ep/artefactos/EP-H03-integracion-reproducible-parcial-20261011.zip.b64",
@@ -410,6 +410,18 @@
       "bytes": 2166,
       "sha256": "ECEED2D8681FB5B202E32CB970F7AB3F03A4498ABE190A543BADADA69F33C0B5",
       "git_blob": "b22f0670a5ed00780c621185d86ed866254f8276"
+    },
+    {
+      "path": "frentes/ep/evidencias/EP-B2-SMOKE-20261107.json",
+      "bytes": 3186,
+      "sha256": "C5067FFFA9F54924E9DF4B210E40297B9A132946B085B6602958F073C8972DE1",
+      "git_blob": "1f69ccf5fabb208fa12a505ec81fe2cbd992626d"
+    },
+    {
+      "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.35.json",
+      "bytes": 1528,
+      "sha256": "95184C68AC0AAD72BF2539428F1694D66F3160CE25E0517000227AF74E9BA7EB",
+      "git_blob": "6e57d240f6c93bea695f30c6b469e411f590614f"
     }
   ],
   "exclusions": [
@@ -434,10 +446,13 @@
     "No independent verification of the reported vault write/read-back in this cycle.",
     "Clipboard clearing and interactive vault verification remain pending.",
     "No B2 authentication or bucket/object operations in this cycle.",
-    "No formal EP responsibility transfer or generation assignment."
+    "No formal EP responsibility transfer or generation assignment.",
+    "No delete or hide operation performed on B2; synthetic verification object retained.",
+    "Master Application Key remains globally unrestricted by provider; EP use constrained procedurally to OCP-MCP/ep-ocp/.",
+    "No restore to a second physical location, multi-location sync or end-to-end consumer acceptance in this cycle."
   ],
-  "prior_readback_verified": "PASS: GitHub main read-back matched expected Git blob SHA for original, OEP, README and revision; original source SHA-256/byte count recorded.",
-  "latest_review_source_commit": "53fe190e16d641d50dc868228a41bb79b034fed3",
-  "current_event": "EP-C-EP-MOD-SCRIPTPWS-20261101-03: ingesta ChatGPT-EP-20261107-1144.txt; OEP v0.3.34/VCU-EP-v35; estado Master reportado como escrito/read-back, limpieza de portapapeles y verificación interactiva aún pendientes; B2 no autenticado.",
-  "verification_scope": "COMMITTED_AND_READBACK_VERIFIED: original exact bytes stored via Base64; source bytes 25,183 and SHA-256 match host metadata; original/OEP/README/revision blobs match GitHub main. Vault and clipboard were not accessed; no credential rewrite; no B2 auth or bucket/object operations; no formal responsibility transfer."
+  "prior_readback_verified": "PENDING: OEP v0.3.35, README, evidence receipt and REVISION-OEP-v0.3.35 are staged for GitHub main write and read-back.",
+  "latest_review_source_commit": "3eacb0f1ec558520def46f03f894bcd8966cba1e",
+  "current_event": "EP-C-EP-MOD-SCRIPTPWS-20261101-03: Master vault entries matched without rewrite; B2 Master auth success; OCP-MCP preflight success; one 126-byte synthetic upload/download/read-back SHA-256 pass under ep-ocp/; second physical-location restore remains pending.",
+  "verification_scope": "Pending main read-back: vault Master entries matched existing encrypted values (no rewrite), decrypt/ACL/backup and clipboard clear PASS; Master B2 authentication via isolated cache; bucket OCP-MCP GET PASS; one 126-byte synthetic object uploaded only under ep-ocp/_verification, downloaded to same-host temp and SHA-256 matched; SSE-B2/AES256 metadata PASS. Remote object retained; no deletes or bucket/credential configuration changes. Second physical-location restore, multi-location synchronization and end-to-end consumer acceptance remain pending."
 }

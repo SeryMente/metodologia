@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.34. **Sello del frente:** VCU-EP-v35 (Versión de Contexto Universal). **Ancla:** rectificación explícita del operador: `OCP-MCP` es el único bucket B2 de destino; `OCP-MSP` y `metodologia-ep-persistencia` son errores. La rectificación se materializa en §91; conserva la compuerta bilateral de §90 y las tareas/propuesta de adaptación previas.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.35. **Sello del frente:** VCU-EP-v36 (Versión de Contexto Universal). **Ancla:** rectificación explícita del operador: `OCP-MCP` es el único bucket B2 de destino; `OCP-MSP` y `metodologia-ep-persistencia` son errores. La rectificación se materializa en §91; conserva la compuerta bilateral de §90 y las tareas/propuesta de adaptación previas.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -12,7 +12,7 @@
 
 Adquirir este objeto como instrucciones del operador, subordinadas a las reglas superiores de plataforma y a autorizaciones específicas. Claudia es asistente/documental; Samantha es constructor/único escritor de código. Una asignación explícita posterior puede cambiar roles; las citas no lo hacen. La asignación específica vigente de MOD-SCRIPTPWS queda delimitada en §94 y no cambia los roles del resto de EP.
 
-El estado de reanudación vigente de este frente está en §60–§101; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
+El estado de reanudación vigente de este frente está en §60–§102; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
 
 Leer por relevancia: OEP actual→metacanon central→Sistema de Instrucciones/Metodología/Bootstrap vigentes→canon transversal EP→AGENTS.md y ep-medio-architectura.md→código/evidencia en commits exactos. Fuente caída no es «sin cambios». Un archivo no crea herramientas, credenciales ni memoria entre plataformas.
 
@@ -2181,3 +2181,62 @@ El control formal de titularidad/generación EP no aparece en `main/frentes/ep/`
 - OEP actualizado a v0.3.34 / VCU-EP-v35; README e índice documental actualizados.
 - No se inspeccionó el contenido de la bóveda ni se accedió al portapapeles; no se autenticó B2.
 - Metodología adquirida para este ciclo: DUG v377 / NX-377m; OEP v0.3.33 / VCU-EP-v34 como estado previo. SHA del DUG: `54064c8fe00f872023a455f06596061ed69062ae`.
+
+
+## 102. Autenticación Master, preflight OCP-MCP y prueba sintética de persistencia · v0.3.35 / VCU-EP-v36 · 2026-11-07
+
+### 102.1 Bóveda y reconciliación de credenciales
+
+La captura actual de `keyID` y `applicationKey` se comparó en memoria con las entradas Master existentes. Ambas coincidieron, por lo que no se reescribió la bóveda. Resultado: `ALREADY_PRESENT_AND_MATCHED_NO_REWRITE`; descifrado de las cuatro entradas, preservación de las dos entradas previas, ACL protegida y limpieza del portapapeles: `PASS`.
+
+- Bóveda: `%LOCALAPPDATA%\Khora\secrets\b2-ep-env-vault.enc.json`.
+- Tamaño: 1,739 bytes.
+- SHA-256: `761E0E7DE145D30499171B5B7AC4CCA504A602262E5B9BC09FBF733C3BE2386F`.
+- Respaldo base cotejado: SHA-256 `9688B3496FEA1670CEB2BD8C5CDA2D8461D71B18F9A821568423264F04E3BE7C`.
+
+### 102.2 Autenticación Master y caché aislada
+
+`b2 account authorize` y `b2 account get` terminaron con `SUCCESS` usando las entradas Master de la bóveda. La caché nueva está separada de la caché histórica de `EP-OCP`:
+
+`%LOCALAPPDATA%\Khora\state\b2-ep-master-20261107.sqlite`
+
+Tamaño: 24,576 bytes; ACL: `PASS`. Las credenciales no quedaron persistidas en variables de entorno.
+
+**Límite de seguridad importante:** el proveedor devolvió capacidades globales, incluida administración de buckets, claves y borrado; `allowed_bucket_names=[]`, `bucket_id_restricted=false` y `name_prefix=NONE`. La Master Application Key no está restringida técnicamente a un bucket/prefijo. Se conserva la decisión del operador de usarla exclusivamente para EP, imponiendo en cada orden las rutas explícitas `OCP-MCP` y `ep-ocp/`. Esta restricción es procedimental, no una ACL del proveedor.
+
+### 102.3 Preflight de bucket
+
+`b2 bucket get OCP-MCP`: `PASS`, lectura no destructiva. Resultado:
+
+- Bucket ID: `974c6cb88be79f3fa9150c16`.
+- Tipo: `allPrivate`.
+- Cifrado predeterminado: `SSE-B2 / AES256`.
+- CORS: 0 reglas; lifecycle: 0 reglas.
+- File Lock: deshabilitado; revisión del bucket: 2.
+
+No se creó ni actualizó el bucket.
+
+### 102.4 Prueba sintética upload/download/read-back
+
+Se creó un archivo sintético de 126 bytes y se subió exclusivamente al prefijo autorizado:
+
+`ep-ocp/_verification/EP-B2-SMOKE-16acc210867f4518b8dfa5c8479474f2.txt`
+
+Resultado: upload `PASS`; descarga a una ruta temporal local `PASS`; `file info` `PASS`; cifrado del objeto `SSE-B2 / AES256`. SHA-256 del origen y de la descarga:
+
+`8F792B15BCFB8F0CF9771DFA4F977C951D5FCBC57DC6132A675416031C8C425D`
+
+La igualdad fue confirmada. File ID: `4_z974c6cb88be79f3fa9150c16_f1001aef8d5a5a156_d20261107_m175902_c005_v0501052_t0053_u01794074342997`. Las dos copias locales temporales se retiraron después del read-back. El objeto remoto de prueba permanece en el bucket; no se ejecutó borrado.
+
+Recibo saneado: `evidencias/EP-B2-SMOKE-20261107.json`. No contiene identificador ni valor secreto de credenciales.
+
+### 102.5 Alcance probado y trabajo pendiente
+
+Quedó probada la ruta básica de autenticación Master y persistencia B2 en `OCP-MCP/ep-ocp/`, con cifrado y read-back por hash. No equivale todavía a aceptación integral de EP:
+
+- La descarga/read-back se hizo en el mismo host, no en una segunda ubicación física.
+- Restauración multiubicación, sincronización/recuperación y aceptación end-to-end del consumidor siguen pendientes.
+- `EP-TASK-002=en_curso`; el ciclo local `C-EP-MOD-SCRIPTPWS-20261101-03` permanece abierto.
+- No se hicieron operaciones sobre otros buckets/prefijos; no se crearon, rotaron ni revocaron claves; no se borraron objetos ni se alteró configuración de bucket.
+
+La prueba sintética no autoriza ampliar las capacidades de la Master Application Key ni convertir su alcance global en permiso para operaciones ajenas a EP.
