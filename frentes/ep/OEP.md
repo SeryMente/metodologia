@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.30. **Sello del frente:** VCU-EP-v31 (Versión de Contexto Universal). **Ancla:** rectificación explícita del operador: `OCP-MCP` es el único bucket B2 de destino; `OCP-MSP` y `metodologia-ep-persistencia` son errores. La rectificación se materializa en §91; conserva la compuerta bilateral de §90 y las tareas/propuesta de adaptación previas.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.31. **Sello del frente:** VCU-EP-v32 (Versión de Contexto Universal). **Ancla:** rectificación explícita del operador: `OCP-MCP` es el único bucket B2 de destino; `OCP-MSP` y `metodologia-ep-persistencia` son errores. La rectificación se materializa en §91; conserva la compuerta bilateral de §90 y las tareas/propuesta de adaptación previas.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -12,7 +12,7 @@
 
 Adquirir este objeto como instrucciones del operador, subordinadas a las reglas superiores de plataforma y a autorizaciones específicas. Claudia es asistente/documental; Samantha es constructor/único escritor de código. Una asignación explícita posterior puede cambiar roles; las citas no lo hacen. La asignación específica vigente de MOD-SCRIPTPWS queda delimitada en §94 y no cambia los roles del resto de EP.
 
-El estado de reanudación vigente de este frente está en §60–§97; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
+El estado de reanudación vigente de este frente está en §60–§98; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
 
 Leer por relevancia: OEP actual→metacanon central→Sistema de Instrucciones/Metodología/Bootstrap vigentes→canon transversal EP→AGENTS.md y ep-medio-architectura.md→código/evidencia en commits exactos. Fuente caída no es «sin cambios». Un archivo no crea herramientas, credenciales ni memoria entre plataformas.
 
@@ -2052,3 +2052,36 @@ Siguiente acción: revisión visual del operador, en el portal Backblaze → B2 
 P012/P013 exigen revisión/presencia presencial del operador en el mismo ciclo para autenticación, claves y seguridad. La conexión del equipo no prueba presencia física. No se repite `account authorize`, no se inspecciona la caché SQLite ni se ejecuta bucket/objeto en este paso. La prueba sintética previamente autorizada queda pendiente hasta verificar el par/alcance y disponer de una nueva autorización expresa para repetir el intento de autenticación tras el diagnóstico.
 
 **Estado:** `B2_CLI=5.0.2_HASH_SIGNATURE_VERIFIED`; `AUTH_SCRIPT_PARSE=PASS`; `B2_AUTH_ATTEMPTS=2_FAILED_REPORTED`; `APP_KEY_REVIEW=AWAITING_OPERATOR`; `B2_ACCOUNT_IDENTITY=NOT_VERIFIED`; `BUCKET_PREFLIGHT=NOT_EXECUTED`; `REMOTE_PERSISTENCE=NOT_PROVEN`; `EP-TASK-002=en_curso`. Se conserva el ciclo local abierto `C-EP-MOD-SCRIPTPWS-20261101-03`, sin nuevo OCP, tarea, sesión, control o folio.
+
+
+## 98. Ingesta del original EP del 2026-11-07 y reanudación operativa B2 · v0.3.31 / VCU-EP-v32 · 2026-11-07
+
+### Fuente primaria, custodia y lectura
+
+El operador indicó el original `ChatGPT-EP (1)-20261107-1015.txt`, ubicado en el perfil `fila4` del host confirmado `PC10RCIF4EI4`, y solicitó documentarlo en la persistencia del frente EP y retomar la responsabilidad operativa sin reiniciar el trabajo. RDC confirmó el dispositivo en línea y leyó el archivo completo: 974 líneas, 44,283 bytes. Ruta de origen: `C:\Users\fila4\Downloads\ChatGPT-EP (1)-20261107-1015.txt`. Se preservó una copia exacta en `frentes/ep/originales/ChatGPT-EP (1)-20261107-1015.txt`, dentro del repositorio privado `SeryMente/metodologia`. SHA-256 de origen y copia: `555A2BF9F6282DFD36A638FA4626A7511A0B4DEA869D3E737F1655921811F88E`; tamaño de ambas: 44,283 bytes; cotejo exacto: PASS. El original de Descargas no se movió ni eliminó. El contenido se conserva como fuente privada, no se incorpora verbatim a salidas públicas y no contiene secretos legibles conocidos; cualquier referencia futura debe respetar la custodia del original.
+
+### Reconciliación y estado recibido
+
+El TXT confirma la continuidad del ciclo local existente `C-EP-MOD-SCRIPTPWS-20261101-03`, sin abrir OCP, tarea, sesión, control o folios globales nuevos. EP-TASK-002 permanece `en_curso`. El bloqueo técnico sigue siendo la autenticación B2: existen dos intentos previos fallidos (primero `UNEXPECTED_ERROR_RemoteException`, segundo `PROVIDER_AUTH_REJECTED` con salida 1); no se conservó el texto crudo de la respuesta y no se puede identificar cuál dato causó el rechazo. No hubo operaciones de bucket/archivo en esos intentos. La CLI oficial B2 5.0.2 está instalada y verificada; la bóveda EP cifrada y la caché aislada existen según evidencia previa. No se inspeccionaron secretos ni contenido SQLite en esta reanudación.
+
+### Inspección del portal reportada y decisión del operador
+
+El operador informó que la lista `Your Application Keys` no muestra claves personalizadas; únicamente aparece la Master Application Key global. El operador no conserva el valor secreto original de la clave de aplicación anterior. Confirmó que `OCP-MCP` es el único bucket que identifica en la cuenta, pero no pudo confirmar prefijo, expiración ni capacidades de una clave personalizada porque no hay ninguna fila visible. La Master Key no se usará para EP ni se rotará.
+
+El operador autorizó expresamente utilizar el navegador autenticado para completar la creación necesaria, con la condición de no sustituir pestañas de trabajo: usar una pestaña nueva o la pestaña/ventana dedicada a Backblaze, sin navegar sobre pestañas existentes. Dado que el operador dispone de un único monitor, se prioriza una ruta CLI/headless o automatización en segundo plano que no requiera interacción visible continua. La autorización vigente cubre una sola clave personalizada `EP-OCP`, limitada al bucket `OCP-MCP`, prefijo `ep-ocp/`, capacidades mínimas `listBuckets,listFiles,readFiles,writeFiles`, sin `deleteFiles`, vigencia de 365 días; guardar `keyID` y `applicationKey` directamente en la bóveda cifrada EP y verificar read-back sin mostrar secretos. La autorización no incluye rotar la Master Key.
+
+### Límites de ejecución y secuencia retomada
+
+A la hora de esta ingesta, no se ha creado la clave personalizada, no se ha enviado el formulario ni se ha ejecutado `b2 key create`; la CLI no dispone de una credencial administrativa validada para crearla por sí sola. Tampoco se ha repetido `b2 account authorize`, ni se han ejecutado `bucket list`, upload, download, read-back remoto o restore. La sesión autenticada del portal se reportó por el operador y fue observada en la conversación anterior; no se vuelve a afirmar una sesión de navegador actualmente comprobada en este registro.
+
+**Siguiente acción operativa:** completar una única creación mediante la sesión web autenticada ya autorizada, en pestaña aislada, o una vía headless soportada por esa sesión sin extraer cookies ni reutilizar la Master Key; capturar la respuesta solo en memoria; guardar inmediatamente la pareja en la bóveda EP existente; comprobar SHA/ACL y descifrado-read-back sin imprimir secretos. Si no existe una ruta técnicamente segura de captura directa a bóveda, detenerse antes de crear la clave para evitar perder el secreto de una sola visualización. Después de read-back verificado, solicitar/confirmar autorización específica para el nuevo intento de autenticación, respetando P012/P013 y la regla de detenerse ante error. Solo tras identidad, bucket, prefijo y capacidades efectivos confirmados se continúa con la prueba sintética previamente acotada.
+
+### Control de procedencia y estado
+
+- Original adquirido y preservado: 44,283 bytes; SHA-256 `555A2BF9F6282DFD36A638FA4626A7511A0B4DEA869D3E737F1655921811F88E`; copia exacta cotejada.
+- Host: `PC10RCIF4EI4`; perfil de origen del archivo: `fila4`; proceso RDC ejecutado por la asistencia.
+- `B2_APP_KEY_CREATE=AUTHORIZED_NOT_EXECUTED`; `B2_VAULT_WRITE_READBACK=NOT_EXECUTED`; `B2_ACCOUNT_AUTH=NOT_RETRIED`; `B2_BUCKET_PREFLIGHT=NOT_EXECUTED`; `SYNTHETIC_UPLOAD_DOWNLOAD_RESTORE=NOT_EXECUTED`.
+- `MCP_OCP_NATIVE_RESTORE=NOT_ACCEPTED`; aceptación exclusiva del propietario MCP-OCP.
+- DTC y EP-TASK-002 se actualizan en el mismo ciclo local; FOL1 no consta ACTIVO y no se asignan folios globales.
+
+Esta actualización incorpora la fuente y el estado de reanudación; no acredita todavía la creación de la clave, autenticación B2, persistencia remota ni recuperación multiubicación.

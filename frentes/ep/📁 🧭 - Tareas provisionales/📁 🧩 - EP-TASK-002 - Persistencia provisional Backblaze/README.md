@@ -1,7 +1,7 @@
 # 📝 EP-TASK-002 · Persistencia provisional con Backblaze B2 para datos de usuario y continuidad de la sesión canónica
 
 **Naturaleza:** tarea provisional del frente Entorno Persistente; materialización auxiliar del registro de tareas, no un OEP nuevo, no un frente independiente y no una decisión de arquitectura canónica.  
-**Estado:** `en_curso` — OCP MCP 0.1.0 publicado como borrador privado con ZIP y evidencia en GitHub; CLI B2 5.0.2 instalada y verificada en `PC10RCIF4EI4`; bóveda local EP presente con SHA/ACL observados; autenticación B2 fallida con `UNEXPECTED_ERROR_RemoteException`; preflight de bucket, transferencias y restauración multiubicación pendientes. Regla operativa corregida: el proceso RDC MantenimientoRCI puede escribir, bajo autorización expresa y rutas verificadas, en el Escritorio real de fila4; las operaciones dependientes del contexto de usuario siguen requiriendo ejecución/provisión en el contexto adecuado.  
+**Estado:** `en_curso` — original EP del 2026-11-07 adquirido y preservado con SHA-256 verificado; CLI B2 5.0.2 instalada; bóveda cifrada EP presente según metadatos previos; dos intentos de autenticación anteriores fallidos; creación de Application Key `EP-OCP` expresamente autorizada pero aún no ejecutada; captura/lectura de vuelta en bóveda, autenticación, preflight y prueba sintética pendientes. No se utilizará ni rotará la Master Application Key.
 **Responsabilidad:** vinculada a `frentes/ep/`; sin control, sesión, titularidad ni folio global propios.  
 **task_id:** `EP-TASK-002` (identificador local estable; no es folio global).  
 **scope_ref:** `frentes/ep/`  
@@ -1491,7 +1491,7 @@ El siguiente hito depende de la revisión presencial explícita del operador jun
 
 **Presencia declarada:** el operador confirmó expresamente que está físicamente junto a `015RENTA01` en este ciclo. Esto satisface la señal factual de presencia para el host; no equivale por sí solo a aprobación de la arquitectura de credenciales ni a autorización de llamadas al proveedor.
 
-**Bóveda local observada:** el clon `C:\\Users\\PC\\Desktop\\Khora\\khora-jules-main` contiene `secrets/env-vault.enc.json` (3.656 bytes; SHA-256 `6D3648E0E434250794DABA89F0682451CBCB5EEAF1CF1A93A3324B6914CA683F`), con 9 entradas cifradas y ninguna variable `B2_*`/`AWS_*`. La ruta aparece en el índice Git local y existe en la rama remota `feat/khora-mcp-module-jules-20261101` (blob `9d30e8cdab83a1c54d8dc6cb7d46d1c80cab302f`). El `.gitignore` canónico de KHORA no excluye el archivo principal, solo ciertos respaldos. Por ello, esta copia queda preservada y no se le añaden credenciales. No se inspeccionaron valores descifrados.
+**Bóveda local observada:** el clon `C:\Users\\PC\\Desktop\\Khora\\khora-jules-main` contiene `secrets/env-vault.enc.json` (3.656 bytes; SHA-256 `6D3648E0E434250794DABA89F0682451CBCB5EEAF1CF1A93A3324B6914CA683F`), con 9 entradas cifradas y ninguna variable `B2_*`/`AWS_*`. La ruta aparece en el índice Git local y existe en la rama remota `feat/khora-mcp-module-jules-20261101` (blob `9d30e8cdab83a1c54d8dc6cb7d46d1c80cab302f`). El `.gitignore` canónico de KHORA no excluye el archivo principal, solo ciertos respaldos. Por ello, esta copia queda preservada y no se le añaden credenciales. No se inspeccionaron valores descifrados.
 
 **ACL:** SYSTEM, Administradores y usuario local tienen FullControl heredado sobre `secrets` y la bóveda. No se modificaron permisos ni archivos. La ACL es una observación local, no una prueba de protección frente a administradores o compromiso del perfil.
 
@@ -1663,3 +1663,31 @@ Las claves estándar pueden estar restringidas por bucket, prefijo y expiración
 El operador revisa visualmente la Application Key ya existente en Backblaze App Keys, sin crear/eliminar/rotar nada, y confirma únicamente los metadatos: presencia/estado, bucket `OCP-MCP`, prefijo `ep-ocp/` si corresponde, expiración, `listBuckets`, lectura/escritura mínima sin `deleteFiles`, y si conserva el valor original `applicationKey` de manera segura. No compartir valores secretos ni el contenido de la bóveda. Si el valor secreto se perdió, detenerse y solicitar autorización distinta antes de crear una clave de reemplazo.
 
 No repetir `account authorize` hasta recibir nueva autorización expresa posterior al diagnóstico y cumplir la revisión/presencia P012/P013. No se inspeccionó la caché SQLite ni se ejecutaron operaciones de bucket/archivo. `EP-TASK-002` permanece `en_curso`; el siguiente hito es `APP_KEY_REVIEW`, no el upload.
+
+
+## 42. Ingesta del original 2026-11-07 y reanudación de creación de Application Key · 2026-11-07
+
+### Fuente y procedencia
+
+Se adquirió por RDC el archivo `ChatGPT-EP (1)-20261107-1015.txt` desde `C:\Users\fila4\Downloads` en `PC10RCIF4EI4`: 974 líneas, 44,283 bytes. Copia exacta preservada en `frentes/ep/originales/ChatGPT-EP (1)-20261107-1015.txt`; SHA-256 `555A2BF9F6282DFD36A638FA4626A7511A0B4DEA869D3E737F1655921811F88E`, coincidente entre origen y destino. El repositorio privado se actualizó por fast-forward antes de la escritura documental; no había cambios locales previos.
+
+### Estado consolidado
+
+- Host vigente: `PC10RCIF4EI4`; archivo localizado bajo el perfil `fila4`.
+- B2 CLI: v5.0.2, previamente verificada en hash/firma.
+- Application Keys: el operador informa que no hay claves personalizadas visibles; solo aparece Master Application Key global. No se dispone del secreto de la clave personalizada anterior.
+- Bucket objetivo: `OCP-MCP` (único bucket identificado por el operador). Prefijo, expiración y permisos de una clave personalizada: no disponibles porque no existe una fila visible que inspeccionar.
+- No usar ni rotar Master Application Key.
+- Dos intentos de autenticación anteriores permanecen fallidos; no se lanzó un tercero.
+
+### Autorización y alcance de creación
+
+El operador autorizó crear una sola clave `EP-OCP` con bucket `OCP-MCP`, prefijo `ep-ocp/`, capabilities `listBuckets,listFiles,readFiles,writeFiles`, sin `deleteFiles`, duración 365 días. Autorizó capturar el Key ID y el secreto directamente en memoria y guardarlos en la bóveda cifrada EP existente, verificando lectura de vuelta sin mostrar secretos. También autorizó el uso del navegador autenticado y ordenó preservar las pestañas de trabajo; preferencia operativa: CLI/headless o ventana/pestaña aislada por el único monitor disponible.
+
+### Estado de ejecución y gates
+
+`B2_APP_KEY_CREATE=AUTHORIZED_NOT_EXECUTED`; `B2_VAULT_WRITE_READBACK=NOT_EXECUTED`; `B2_ACCOUNT_AUTH=NOT_RETRIED`; `B2_BUCKET_PREFLIGHT=NOT_EXECUTED`; `SYNTHETIC_UPLOAD=NOT_EXECUTED`; `DOWNLOAD=NOT_EXECUTED`; `ISOLATED_RESTORE=NOT_EXECUTED`; `MCP_OCP_NATIVE_RESTORE=NOT_ACCEPTED`.
+
+La CLI no crea una clave sin una credencial administrativa válida. La alternativa autorizada es la sesión del portal, pero la creación debe bloquearse antes del clic final si no está garantizada la captura segura inmediata del secreto hacia la bóveda. No extraer cookies, no utilizar la Master Key, no imprimir credenciales, no usar el portapapeles para secretos y no sustituir pestañas del operador. Después del read-back cifrado, cumplir P012/P013 antes de autenticar; ante cualquier error, detener sin reintento automático. La prueba sintética sigue siendo one-shot y condicionada a confirmar el scope efectivo.
+
+**Estado de tarea:** `en_curso`. Se conserva el ciclo local `C-EP-MOD-SCRIPTPWS-20261101-03`; no crear OCP, control, sesión, responsabilidad o folios globales nuevos.
