@@ -1,0 +1,52 @@
+{
+  "schema": 1,
+  "type": "EP_LOCATION_PROFILE_CANDIDATE",
+  "acquired_on": "2026-11-07",
+  "profile_id": "LOC-CSEC",
+  "operator_declared_location": "CSEC",
+  "spelling_as_provided": "C-E-C-E-Q",
+  "profile_status": "CANDIDATE_PENDING_OPERATOR_VALIDATION",
+  "physical_location": "OPERATOR_ASSERTED_NOT_INDEPENDENTLY_GEOLOCATED",
+  "host_signals": {
+    "remote_device_name": "PC10RCIF4EI4",
+    "remote_device_id": "d0bbb2a3-d7b4-45e1-8870-652c2c3844fc",
+    "machine_name": "PC10RCIF4EI4",
+    "active_console_account": "CENTRAL\\fila4",
+    "active_console_session_id": 4,
+    "loaded_user_profile": "C:\\Users\\fila4",
+    "manufacturer": "HP",
+    "model": "HP ProDesk 400 G4 DM",
+    "operating_system": "Microsoft Windows 11 Pro",
+    "os_version": "10.0.26200",
+    "os_build": "26200",
+    "powershell": "5.1.26100.9711",
+    "network": {
+      "interface": "Ethernet",
+      "category_numeric": 2,
+      "ipv4_connectivity_numeric": 4
+    }
+  },
+  "desktop_resolution": {
+    "active_user_profile": "C:\\Users\\fila4",
+    "user_shell_folders_desktop": "C:\\Users\\MantenimientoRCI\\Desktop",
+    "legacy_shell_folders_desktop": "C:\\Users\\fila4\\Desktop",
+    "rdc_execution_identity": "CENTRAL\\MantenimientoRCI",
+    "rdc_process_desktop": "C:\\Users\\MantenimientoRCI\\Desktop",
+    "status": "CONFLICTING_DESKTOP_MAPPINGS_NOT_VALIDATED"
+  },
+  "excluded_signals": [
+    "MAC address",
+    "BIOS/drive serial",
+    "SSID",
+    "IP address",
+    "GPS"
+  ],
+  "assessment": {
+    "host_identity": "OBSERVED",
+    "active_console_user": "OBSERVED",
+    "location_match": "OPERATOR_DECLARED_ONLY",
+    "desktop_path": "REQUIRES_OPERATOR_VALIDATION",
+    "unique_location_proof": false
+  },
+  "note": "No files or folders were created or deleted. RDC executed the read-only probes under MantenimientoRCI while the active console session belonged to fila4."
+}
