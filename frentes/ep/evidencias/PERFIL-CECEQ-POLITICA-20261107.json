@@ -1,0 +1,63 @@
+{
+  "schema": 1,
+  "type": "EP_LOCATION_PROFILE_POLICY",
+  "acquired_on": "2026-11-07",
+  "profile_id": "LOC-CECEQ",
+  "operator_declared_location": "CECEQ",
+  "spelling_status": "CONFIRMED_BY_OPERATOR",
+  "supersedes": [
+    "LOC-CSEC",
+    "LOC-CCEC"
+  ],
+  "host_identity_reference": {
+    "remote_device_name": "PC10RCIF4EI4",
+    "active_console_account": "CENTRAL\\fila4",
+    "active_console_session_id": 4,
+    "hardware": "HP ProDesk 400 G4 DM",
+    "profile": "C:\\Users\\fila4"
+  },
+  "location_match": {
+    "basis": "OPERATOR_CONFIRMED_SAME_TERMINAL_AND_ACCOUNT_AT_CECEQ",
+    "physical_geolocation": "NOT_OBSERVED",
+    "match_status": "OPERATOR_DECLARED_PROFILE"
+  },
+  "workspace_policy": {
+    "desktop_root_name": "Ser y Mente",
+    "bitlocker_required": true,
+    "scope": "ALL_LOCATIONS",
+    "unlock_input": "SAME_MASTER_PASSPHRASE_AS_CANONICAL_ENVIRONMENT_VARIABLES_VAULT",
+    "one_master_passphrase_for_vault_and_workspace": true,
+    "reuse_canonical_per_session_derivation": true,
+    "derivation": "PBKDF2-HMAC-SHA256, 200000 iterations, session-bound salt as established in the prior EP protected-volume design",
+    "store_master_passphrase_in_plaintext": false,
+    "unsupported_bitlocker_behavior": "FAIL_CLOSED_NO_PLAINTEXT_MATERIALIZATION"
+  },
+  "cleanup_policy": {
+    "all_locations": "AUTOMATIC_DEADMAN_CLEANUP",
+    "CECEQ": "STOP_PROCESSES, PERSIST_AUTHORIZED_DATA, PURGE_EPHEMERAL_SECRETS, LOCK_BITLOCKER, DISMOUNT, PRESERVE_ENCRYPTED_WORKSPACE_CONTAINER_AND_FOLDER",
+    "non_CECEQ": "STOP_PROCESSES, PERSIST_AUTHORIZED_DATA, PURGE_EPHEMERAL_SECRETS, LOCK_BITLOCKER, DISMOUNT, VERIFY_AND_DELETE_EP_CONTROLLED_WORKSPACE_CONTAINER_AND_FOLDER",
+    "unknown_location": "TREAT_AS_NON_CECEQ",
+    "manual_delete_at_CECEQ": "REQUIRES_EXPLICIT_OPERATOR_REQUEST"
+  },
+  "guardian_policy": {
+    "keep_manual_cleanup_request": true,
+    "keep_launcher_or_supervisor_exit": true,
+    "keep_inactivity_trigger": true,
+    "inactivity_minutes_default": 15,
+    "inactivity_default_status": "HISTORICAL_VALUE_PENDING_RUNTIME_BACKLOG_RECONCILIATION",
+    "guardian_poll_seconds": 2,
+    "guardian_heartbeat_seconds": 60,
+    "keep_unexpected_reboot_startup_cleanup": true,
+    "remove_vscode_exit_trigger": true,
+    "no_IDE_process_dependency": true
+  },
+  "notes": [
+    "BitLocker is mandatory for the complete workspace at every location, including CECEQ.",
+    "The operator enters the same master passphrase used for the canonical environment-variable vault; the existing per-session derivation is retained.",
+    "At CECEQ automatic cleanup closes the session, purges ephemeral secrets, locks BitLocker and dismounts the volume, but preserves the encrypted workspace folder/container.",
+    "Outside CECEQ automatic cleanup removes only the EP-controlled workspace container and folder after the persistence attempt; confidentiality takes precedence if persistence fails.",
+    "Visual Studio Code exit is not a current trigger. Guardian supervision is independent of any IDE.",
+    "This policy does not activate Guardian, create scheduled tasks, create the workspace, or change Windows files.",
+    "The fila4 Desktop path remains unresolved due to conflicting registry values; no workspace folder is materialized until resolved."
+  ]
+}
