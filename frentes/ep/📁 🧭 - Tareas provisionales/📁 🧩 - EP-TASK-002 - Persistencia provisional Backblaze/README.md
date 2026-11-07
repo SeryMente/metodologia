@@ -1797,7 +1797,7 @@ No se ejecutó ninguna transferencia de datos reales de usuario ni restauración
 
 ## 47. BitLocker ubicuo y raíz maestra canónica · 2026-11-07
 
-La instrucción del operador, preservada en INSTRUCCION-BITLOCKER-CCEC-20261107.txt, establece que toda materialización local de EP debe residir en un workspace protegido con BitLocker, en cualquier perfil de ubicación, incluido CCEC.
+La instrucción del operador, preservada en INSTRUCCION-BITLOCKER-CECEQ-20261107.txt, establece que toda materialización local de EP debe residir en un workspace protegido con BitLocker, en cualquier perfil de ubicación, incluido CECEQ.
 
 La única contraseña maestra que introduce el operador es la contraseña maestra de la bóveda canónica de variables de entorno. Esa misma contraseña es la raíz de desbloqueo del workspace BitLocker. Para respetar el mecanismo criptográfico ya existente, el protector BitLocker se deriva por sesión mediante PBKDF2-HMAC-SHA256, 200.000 iteraciones, sal ligada al identificador de sesión y resultado de 32 bytes. No se introduce una segunda contraseña maestra ni se persiste la contraseña maestra en claro. La bóveda y el volumen utilizan el mismo secreto de origen; las derivaciones mantienen separación criptográfica por sesión.
 
@@ -1805,6 +1805,15 @@ Esta regla se aplica en todas las ubicaciones. Si BitLocker, la elevación o la 
 
 El cifrado local BitLocker es una condición del workspace. No significa que B2 reciba el volumen VHDX completo ni que los datos remotos tengan cifrado cliente adicional; la sincronización B2 conserva el alcance y los contratos propios de EP-TASK-002.
 
-La excepción de CCEC solo afecta a la eliminación automática: allí el cierre purga secretos de sesión, bloquea BitLocker y desmonta el volumen, pero conserva el contenedor/carpeta de trabajo cifrada. En otras ubicaciones, tras intentar la persistencia autorizada, purgar secretos, bloquear y desmontar, EP elimina automáticamente el contenedor y la carpeta de trabajo. La imposibilidad de persistir no permite conservar datos en claro fuera del perímetro protegido; se mantiene la precedencia de confidencialidad.
+La excepción de CECEQ solo afecta a la eliminación automática: allí el cierre purga secretos de sesión, bloquea BitLocker y desmonta el volumen, pero conserva el contenedor/carpeta de trabajo cifrada. En otras ubicaciones, tras intentar la persistencia autorizada, purgar secretos, bloquear y desmontar, EP elimina automáticamente el contenedor y la carpeta de trabajo. La imposibilidad de persistir no permite conservar datos en claro fuera del perímetro protegido; se mantiene la precedencia de confidencialidad.
 
 No se ejecutó en esta entrada ninguna operación de BitLocker, creación de volumen, sincronización de datos reales ni eliminación local.
+
+
+## 48. Corrección canónica del perfil CECEQ · 2026-11-07
+
+La denominación correcta y confirmada por el operador es CECEQ. Se adopta LOC-CECEQ; cualquier uso anterior de LOC-CSEC o LOC-CCEC en esta conversación o en notas provisionales queda supersedido para el perfil operativo actual. La grafía se considera cerrada y no se solicitará de nuevo.
+
+En CECEQ el workspace sigue cifrado con BitLocker como en cualquier otra ubicación. Al terminar o activarse el Guardian se detienen procesos, se purgan secretos efímeros, se bloquea BitLocker y se desmonta el volumen, pero no se elimina automáticamente el contenedor ni la carpeta Ser y Mente. En cualquier ubicación distinta de CECEQ la volatilización automática del contenedor/carpeta EP continúa vigente. La ubicación desconocida se trata como distinta de CECEQ.
+
+La contraseña que el operador introduce para desbloquear el workspace es la misma contraseña maestra utilizada para la bóveda canónica de variables de entorno; se conserva la derivación por sesión del diseño protegido existente y no se almacena la contraseña original en claro. No confundir esta contraseña maestra de bóveda con la Master Application Key de Backblaze.
