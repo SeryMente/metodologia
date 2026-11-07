@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.35. **Sello del frente:** VCU-EP-v36 (Versión de Contexto Universal). **Ancla:** rectificación explícita del operador: `OCP-MCP` es el único bucket B2 de destino; `OCP-MSP` y `metodologia-ep-persistencia` son errores. La rectificación se materializa en §91; conserva la compuerta bilateral de §90 y las tareas/propuesta de adaptación previas.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.37. **Sello del frente:** VCU-EP-v38 (Versión de Contexto Universal). **Ancla:** rectificación explícita del operador: `OCP-MCP` es el único bucket B2 de destino; `OCP-MSP` y `metodologia-ep-persistencia` son errores. La rectificación se materializa en §91; conserva la compuerta bilateral de §90 y las tareas/propuesta de adaptación previas.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -12,7 +12,7 @@
 
 Adquirir este objeto como instrucciones del operador, subordinadas a las reglas superiores de plataforma y a autorizaciones específicas. Claudia es asistente/documental; Samantha es constructor/único escritor de código. Una asignación explícita posterior puede cambiar roles; las citas no lo hacen. La asignación específica vigente de MOD-SCRIPTPWS queda delimitada en §94 y no cambia los roles del resto de EP.
 
-El estado de reanudación vigente de este frente está en §60–§102; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
+El estado de reanudación vigente de este frente está en §60–§104; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
 
 Leer por relevancia: OEP actual→metacanon central→Sistema de Instrucciones/Metodología/Bootstrap vigentes→canon transversal EP→AGENTS.md y ep-medio-architectura.md→código/evidencia en commits exactos. Fuente caída no es «sin cambios». Un archivo no crea herramientas, credenciales ni memoria entre plataformas.
 
@@ -2285,3 +2285,61 @@ La siguiente ejecución debe usar un segundo equipo físico registrado y autoriz
 - Ciclo local C-EP-MOD-SCRIPTPWS-20261101-03: OPEN.
 
 No se ejecutaron operaciones sobre otros buckets/prefijos, no se crearon ni revocaron claves, no se modificó configuración B2 y no se borró el objeto sintético remoto. La única compuerta externa inmediata para la restauración física es que un segundo equipo autorizado esté disponible y se identifique su ruta destino; no se declara completado EP mientras los hitos anteriores sigan pendientes.
+
+
+## 104. Nueva definición de materialización, perfiles y persistencia de datos de usuario · v0.3.37 / VCU-EP-v38 · 2026-11-07
+
+### 104.1 Fuente y rectificación del criterio anterior
+
+Se incorpora la instrucción original del operador INSTRUCCION-MATERIALIZACION-UBICACIONES-20261107.txt, preservada en originales. La instrucción actualiza las formulaciones históricas de workspace/selección de repositorios y la compuerta de restauración de §103. §103 se conserva como antecedente, pero su requisito de un segundo equipo/unidad física queda supersedido: no es necesario para finalizar EP.
+
+### 104.2 Separación de fuentes de verdad y persistencia
+
+- GitHub / organización SeryMente: código, repositorios e historial de cambios de los proyectos.
+- SeryMente/metodologia: especificación canónica vigente de Metodología/OCP y objetos documentales canónicos.
+- Backblaze B2: persistencia de datos de usuario generados por el uso de la metodología OCP y sus aplicaciones. No sustituye GitHub para el código ni el repositorio de Metodología para los OCP.
+- Materialización local: workspace temporal y reconstruible de la sesión Windows activa, no fuente duradera única.
+
+Los datos personales/runtime del usuario no deben utilizar GitHub como almacén general. El inventario, clasificación, snapshots, sincronización, integridad, recuperación, conflictos y retención de esos datos quedan en EP-TASK-002. No se presume autorización para recopilar todos los perfiles del host ni datos de terceros.
+
+### 104.3 Root de workspace y sincronización de extensiones
+
+La raíz de materialización solicitada es la carpeta Ser y Mente dentro del Escritorio efectivo de la sesión Windows activa. En ella se materializan las carpetas de todos los repositorios que la organización GitHub SeryMente tenga en el momento de cada instancia, descubiertos dinámicamente.
+
+Para cada proyecto que sea una extensión de Chrome, la carpeta del repositorio debe contener extension/, carpeta que el operador carga/refresca en Chrome. Cualquier modificación de esa extensión mediante ChatGPT/GitHub o mediante Jules cuando el puente MCP esté disponible debe actualizar también la carpeta local extension/ y verificar su correspondencia con el commit fuente. No se asume que el servidor MCP/Jules ya esté disponible. El detalle y la secuencia de aceptación quedan en EP-TASK-003.
+
+### 104.4 Perfiles de ubicación y preflight CSEC
+
+La instrucción refiere dos tipos de perfil, pero nombra solo CSEC. Se conserva provisionalmente LOC-CSEC y una categoría de fallback LOC-OTHER (otra ubicación/no reconocida), pendiente de confirmación. La entrada escrita dice CSEC y lo deletrea C-E-C-E-Q; la denominación requiere validación.
+
+El preflight read-only del 2026-11-07 registró como señales candidatas: dispositivo RDC PC10RCIF4EI4; host PC10RCIF4EI4; HP ProDesk 400 G4 DM; sesión de consola activa CENTRAL/fila4, sesión 4; perfil cargado C:/Users/fila4; Windows 11 Pro build 26200; PowerShell 5.1.26100.9711; Ethernet, categoría de red 2 e IPv4 connectivity 4. No se capturaron MAC, número de serie, SSID, IP ni GPS. La asociación a CSEC es declaración del operador, no geolocalización probada. Evidencia: PERFIL-CSEC-PREFLIGHT-20261107.json.
+
+**Bloqueo del Escritorio efectivo:** para el perfil fila4, User Shell Folders informa C:/Users/MantenimientoRCI/Desktop, mientras que Shell Folders informa C:/Users/fila4/Desktop. El proceso RDC corre con CENTRAL/MantenimientoRCI; su Desktop no demuestra el destino efectivo de la sesión interactiva fila4. No crear aún la carpeta Ser y Mente hasta validar el destino de Escritorio de la sesión activa.
+
+### 104.5 Reutilización del Guardian/hombre muerto histórico
+
+Se localizaron en el repositorio histórico SeryMente/khora las reglas existentes; no se rediseñan desde cero:
+- OEP histórico §§28–30: https://github.com/SeryMente/khora/blob/1db42a7fac9f154ac1afbeffc23ff06ea07b1384/OEP.md
+- Guardian: https://github.com/SeryMente/khora/blob/1db42a7fac9f154ac1afbeffc23ff06ea07b1384/scripts/khora/modules/10-guardian.ps1
+- Cleanup: https://github.com/SeryMente/khora/blob/1db42a7fac9f154ac1afbeffc23ff06ea07b1384/scripts/khora/modules/11-cleanup.ps1
+- Arquitectura EP Medio: https://github.com/SeryMente/khora/blob/1db42a7fac9f154ac1afbeffc23ff06ea07b1384/ep-medio-architectura.md
+
+Las señales heredadas comprenden cierre manual/solicitud cleanup.request, muerte de launcher/supervisor, cierre de VS Code, inactividad (15 minutos por defecto), vigilancia periódica y reinicio inesperado. El Guardian consultaba señales cada dos segundos y emitía heartbeat cada sesenta segundos. Una tarea AtStartup bajo SYSTEM y privilegio máximo limpiaba residuos del contenedor tras reinicio; permanecía armada mientras hubiera residuos y se desregistraba solo tras confirmar su ausencia.
+
+La secuencia previa de salida: aceptar la solicitud; detener procesos; intentar persistir el perfil y la continuidad remota; purgar secretos y blobs DPAPI; bloquear BitLocker; retirar el enlace del Escritorio; desmontar el VHDX; eliminar contenedor y carpeta exterior; desarmar la limpieza al reinicio solo después de verificar ausencia; confirmar el cierre remoto. Si falla la continuidad remota, la confidencialidad prevalece.
+
+### 104.6 Efimeridad y límite de eliminación
+
+El requisito del operador es que las sesiones/workspaces sean efímeros y que, en CSEC, la instancia local se elimine al terminar. La garantía implementable se limita a los artefactos bajo control de EP: workspace en perímetro cifrado, purga de secretos, bloqueo/desmontaje y eliminación verificada del contenedor y carpeta propia. No es técnicamente correcto prometer ausencia absoluta de todo rastro en metadatos, registros, paginación, telemetría o infraestructura administrada por Windows/terceros. EP no borrará logs del sistema, auditorías, datos ajenos ni archivos fuera de su contenedor.
+
+No se activó Guardian, no se registró una tarea programada, no se eliminaron archivos y no se creó el workspace. Esta sección actualiza la especificación y las tareas; no equivale a implementación.
+
+### 104.7 Estado y validaciones pendientes
+
+- EP-TASK-002: datos de usuario OCP en B2, recuperación y sincronización automática; en_curso.
+- EP-TASK-003: root Ser y Mente, materialización dinámica de todos los repositorios, contrato extension/, perfiles y Guardian reutilizado; en_curso.
+- EP-TASK-001 permanece pendiente.
+- El smoke test B2 de §102 permanece válido; restauración limpia en el mismo host desde un workspace nuevo, no segunda ubicación física, es la siguiente prueba de recuperación.
+- Falta validar nombre CSEC/CECEQ, categoría fallback, Desktop real de fila4, umbral/temporizador de inactividad y señales de coincidencia automática de ubicación.
+
+La instrucción no autoriza todavía implementar o activar el borrado automático, alterar otros perfiles Windows, borrar datos ajenos ni cambiar repositorios de producto.
