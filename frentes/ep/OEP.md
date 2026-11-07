@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.32. **Sello del frente:** VCU-EP-v33 (Versión de Contexto Universal). **Ancla:** rectificación explícita del operador: `OCP-MCP` es el único bucket B2 de destino; `OCP-MSP` y `metodologia-ep-persistencia` son errores. La rectificación se materializa en §91; conserva la compuerta bilateral de §90 y las tareas/propuesta de adaptación previas.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.33. **Sello del frente:** VCU-EP-v34 (Versión de Contexto Universal). **Ancla:** rectificación explícita del operador: `OCP-MCP` es el único bucket B2 de destino; `OCP-MSP` y `metodologia-ep-persistencia` son errores. La rectificación se materializa en §91; conserva la compuerta bilateral de §90 y las tareas/propuesta de adaptación previas.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -2102,3 +2102,46 @@ La CLI B2 5.0.2 está instalada, pero `b2 key create` requiere una credencial ad
 ### Estado y siguiente compuerta
 
 `CHROME_FILA4_CDP=NOT_ENABLED`; `CHROME_PROFILE_RESTART=PROHIBITED_FOR_THIS_FLOW`; `SECONDARY_CHROME_PROFILE_AUTH=NOT_VERIFIED`; `B2_CLI_ADMIN_CREDENTIAL=NOT_AVAILABLE`; `B2_APP_KEY_CREATE=AUTHORIZED_NOT_EXECUTED`; `B2_VAULT_CAPTURE=NOT_EXECUTED`. No se creó clave, no se autenticó B2 y no se operó el bucket. Siguiente compuerta: disponer de una sesión de navegador aislada autenticada y un mecanismo de captura segura validado, o de una credencial administrativa EP expresamente provisionada. Cualquier perfil de navegador nuevo o sesión de autenticación distinta requiere aceptación del operador antes de crearla.
+
+
+## 100. Ingesta del original 1111 y decisión de uso exclusivo de Master Application Key · v0.3.33 / VCU-EP-v34 · 2026-11-07
+
+### 100.1 Fuente, procedencia y continuidad
+
+**A literal del operador en esta instancia:** `ChatGPT-EP-20261107-1111.txt, esta endownloads, documenta en persistencia documental del frente entorno persistente. Retomando responsabilidad y contexto de manera seamless. Continúa de manera seamless donde nos quedamos. Adquiere contexto, y repite el último ciclo literal y textualmente.`
+
+**Original adquirido:** `C:\Users\fila4\Downloads\ChatGPT-EP-20261107-1111.txt`, perfil fila4, host `PC10RCIF4EI4`. 1.046 líneas, 46.231 bytes. SHA-256 de origen y copia conservada en `frentes/ep/originales/ChatGPT-EP-20261107-1111.txt`: `4297642A8FC88628A38CE2F0057E72F849E708B4EFE4B19882C50DBB01CD51B7`. La copia fue leída de vuelta por tamaño y SHA; coincidencia byte por byte. El archivo de Downloads permanece intacto. El original se preserva por procedencia; no es fuente de secretos ni se incorpora ningún valor de credencial al repositorio.
+
+**Cursor de documentación:** antes de la actualización, `SeryMente/metodologia/main` = `97990e2b56874def3e6afa91aef010f04837c0e1`, clon local limpio y coincidente con remoto. Privacidad del repositorio confirmada. El ciclo local existente `C-EP-MOD-SCRIPTPWS-20261101-03` continúa OPEN; no se crea OCP, control, sesión, conversación o folio global nuevo.
+
+### 100.2 Método adquirido y rectificación de §ARR
+
+Metodología v0.14.14 — *Canon Transversal de Entorno Persistente y Laboratorios*; DUG v377 / NX-377m, Metacanon 1.28 y GOW 2.17. El DUG consultado es el artefacto integrado `gobernanza/METAPROMPT-CANONICO-SAMANTHA.html`, blob conocido `54064c8fe00f872023a455f06596061ed69062ae`. La sección §ARR se verificó en `glossary.sections`: `gow-sec-14`, ancla `#gow-arranque-chatgpt`. Su función es vocabulario inicial de entrada, no autoridad normativa; después se consulta el DUG completo y se aplica la cascada de principios. Se rectifica el diagnóstico anterior `§ARR NO VERIFICADO`: la búsqueda previa no había inspeccionado la representación estructurada del DUG.
+
+Principios aplicados por pertinencia: P001 (precedencia), P004 (no simulación), P005 (solo regula enmiendas al propio DUG, no esta actualización del OEP), P012/P013 (presencia/revisión del operador en el mismo ciclo para seguridad, credenciales, autenticación y cifrado), P037 (control de responsabilidad), P038 (main privado como fuente canónica) y P043 (no prolongar pasos sin aporte material). No se modificó la metodología ni el DUG.
+
+### 100.3 Reconciliación de la estrategia B2
+
+La transcripción registra que la Application Key `EP-OCP` consiguió autenticarse y que `account get` devolvió restricciones al bucket `OCP-MCP` y prefijo `ep-ocp/`, pero también capacidades adicionales, incluida `deleteFiles` y administración de configuración de bucket; vencimiento no confirmado. No se ejecutaron operaciones de objetos: ningún upload, download, borrado, restore o prueba de persistencia remota. Este resultado es reportado y preservado del diálogo previo; no se repitió la autenticación durante este ciclo documental.
+
+**Decisión posterior explícita del operador:** utilizar exclusivamente la Master Application Key para la operación EP; prescindir de otra Application Key; no crear claves adicionales; no rotar ni revocar la Master Application Key. La decisión sustituye la estrategia anterior de reemplazar `EP-OCP` por otra clave limitada. `EP-OCP` queda como credencial histórica/legada no seleccionada para la nueva estrategia; no se modifica ni revoca en este ciclo.
+
+**Aceptación del alcance:** la Master Application Key ofrece acceso de cuenta completo, sin restricción impuesta por proveedor a `OCP-MCP` o `ep-ocp/` y sin vencimiento configurable. El operador aceptó utilizarla exclusivamente para este objetivo. Para reducir el riesgo operativo, toda orden EP deberá fijar explícitamente el bucket `OCP-MCP` y el prefijo `ep-ocp/`; quedan fuera de alcance, salvo autorización específica posterior, borrados, cambios de bucket/lifecycle, administración de claves, configuración global y acceso a otros buckets/prefijos. Esta limitación es procedimental, no una restricción técnica impuesta por la credencial maestra.
+
+### 100.4 Bóveda y estado comprobado de credenciales
+
+La bóveda local `C:\Users\MantenimientoRCI\AppData\Local\Khora\secrets\b2-ep-env-vault.enc.json` fue comprobada solo por metadatos: existe, 876 bytes, SHA-256 `9688B3496FEA1670CEB2BD8C5CDA2D8461D71B18F9A821568423264F04E3BE7C`, ACL protegida y propietario `CENTRAL\MantenimientoRCI`. No se leyó, descifró ni modificó su contenido en este ciclo. El estado conversacional previo identifica las entradas existentes como la pareja `B2_APPLICATION_KEY_ID`/`B2_APPLICATION_KEY` de `EP-OCP`; esa identificación no se presenta como nuevo read-back criptográfico de esta instancia.
+
+La pareja maestra todavía **no** se ha copiado al portapapeles para este ciclo, capturado, cifrado ni incorporado a la bóveda. No se leyó el portapapeles. Estados: `MASTER_KEY_CAPTURE=NOT_STARTED`; `MASTER_KEY_VAULT_WRITE=NOT_STARTED`; `MASTER_KEY_DECRYPT_READBACK=NOT_STARTED`; `MASTER_KEY_B2_AUTH=NOT_STARTED`.
+
+### 100.5 Compuertas y siguiente ejecución
+
+La captura local de Master Key ID + Master Application Key y su persistencia cifrada requieren satisfacer P012/P013 en este mismo ciclo: presencia/revisión presencial del operador en el host y revisión del flujo de seguridad. Una presencia reportada en ciclos anteriores no se hereda. No pedir ni aceptar los secretos por chat; no imprimir, registrar, copiar a archivos temporales ni exponer valores en argumentos/historial/logs. El proceso previsto leerá el bloque desde portapapeles únicamente después de confirmación expresa del operador, parseará ambos campos en memoria, los cifrará en la bóveda existente, verificará descifrado y SHA/ACL/read-back y limpiará el portapapeles al final, informando solo estados no sensibles.
+
+Después de read-back cifrado PASS, ejecutar `b2 account authorize` por CLI con variables de entorno restringidas al proceso hijo y caché aislada nueva para Master; verificar con `account get`. Solo entonces hacer preflight no destructivo de cuenta/bucket y, bajo el alcance operativo anterior, una prueba sintética mínima de upload/read-back/hash. No usar navegador ni CDP, no reiniciar Chrome y no ocupar el único monitor si CLI/headless basta. No iniciar autenticación antes de confirmar el almacenamiento cifrado. La restauración en segunda ubicación, sincronización y aceptación E2E siguen pendientes.
+
+### 100.6 Responsabilidad, estado y límites
+
+La instrucción actual autoriza la continuidad funcional y documental del trabajo EP en este hilo. No se localizó un control de responsabilidad EP en `main/frentes/ep/`; por tanto no se declara transferencia formal, titularidad, generación nueva ni folio. La tarea sigue vinculada a este OEP y a `EP-TASK-002`; `EP-TASK-002=en_curso`. `FOL1` no consta ACTIVO y no se asignan CONV/CICLO/A/B globales. El ciclo local existente permanece OPEN.
+
+**No ejecutado en este ciclo:** lectura del portapapeles; captura/descifrado de Master Key; escritura de credenciales; autenticación con Master; llamadas B2 de bucket/objeto; upload/download/restore; cambio de permisos, claves o buckets; uso de navegador. La persistencia remota EP no está probada.

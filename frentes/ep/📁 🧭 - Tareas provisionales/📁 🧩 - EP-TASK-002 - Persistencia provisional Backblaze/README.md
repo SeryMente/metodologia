@@ -1,7 +1,7 @@
 # 📝 EP-TASK-002 · Persistencia provisional con Backblaze B2 para datos de usuario y continuidad de la sesión canónica
 
 **Naturaleza:** tarea provisional del frente Entorno Persistente; materialización auxiliar del registro de tareas, no un OEP nuevo, no un frente independiente y no una decisión de arquitectura canónica.  
-**Estado:** `en_curso` — original EP 2026-11-07 preservado y publicado con SHA verificado; CLI B2 5.0.2 instalada; bóveda EP cifrada presente según metadatos previos; creación de clave `EP-OCP` autorizada pero pendiente de captura segura; Chrome del perfil fila4 sin CDP, por lo que no hay ruta headless local disponible; no usar Master Key, no extraer cookies ni interrumpir pestañas. Autenticación, preflight, prueba sintética y restore siguen pendientes.
+**Estado:** `en_curso` — original 1111 preservado en originales con SHA verificado; CLI B2 5.0.2 instalada; `EP-OCP` autenticada previamente pero con capacidades excesivas; decisión vigente del operador: uso exclusivo de Master Application Key, sin crear claves adicionales ni rotar/revocar la maestra; Master Key aún no capturada/persistida; gate P012/P013 de presencia/revisión presencial pendiente; sin operaciones B2 de bucket/objeto en este ciclo; CLI/headless preferido.
 **Responsabilidad:** vinculada a `frentes/ep/`; sin control, sesión, titularidad ni folio global propios.  
 **task_id:** `EP-TASK-002` (identificador local estable; no es folio global).  
 **scope_ref:** `frentes/ep/`  
@@ -1700,3 +1700,48 @@ La inspección local de metadata confirmó que el Chrome autenticado del perfil 
 La CLI B2 5.0.2 no puede crear una Application Key sin credencial administrativa `writeKeys`, no disponible en la bóveda EP. No se usará la Master Key ni se extraerán cookies. La creación `EP-OCP` continúa autorizada, pero `AUTHORIZED_NOT_EXECUTED` hasta disponer de captura directa segura a la bóveda. Cualquier perfil de navegador alternativo o nuevo inicio de sesión requiere autorización específica antes de crearse.
 
 Estados: `CHROME_FILA4_CDP=NOT_ENABLED`; `SECONDARY_PROFILE_AUTH=NOT_VERIFIED`; `B2_ADMIN_CREDENTIAL=NOT_AVAILABLE`; `B2_APP_KEY_CREATE=AUTHORIZED_NOT_EXECUTED`; `VAULT_CAPTURE=NOT_EXECUTED`; `B2_ACCOUNT_AUTH=NOT_RETRIED`; `EP-TASK-002=en_curso`.
+
+
+## 44. Ingesta 1111 y estrategia B2 exclusiva con Master Application Key · 2026-11-07
+
+### Fuente y continuidad
+
+Se adquirió `ChatGPT-EP-20261107-1111.txt` desde `C:\Users\fila4\Downloads\` del perfil fila4 en `PC10RCIF4EI4`. Original: 1.046 líneas, 46.231 bytes, SHA-256 `4297642A8FC88628A38CE2F0057E72F849E708B4EFE4B19882C50DBB01CD51B7`. Copia exacta persistida en `frentes/ep/originales/ChatGPT-EP-20261107-1111.txt`; origen intacto. La transcripción no se incorpora como sustituto del estado vivo; este apartado registra su delta.
+
+### Hallazgo de la credencial EP-OCP
+
+La transcripción registra autenticación B2 exitosa con `EP-OCP` y un `account get` satisfactorio. El alcance devuelto contenía `deleteFiles` y facultades de administración/configuración de buckets además de los permisos de lectura/escritura; el vencimiento no quedó confirmado. El bucket `OCP-MCP` y prefijo `ep-ocp/` se reportaron restringidos. No hubo operaciones de archivos: upload=0, download=0, delete=0, restore=0. Estos hechos se conservan como resultado reportado del ciclo anterior, no como nueva prueba ejecutada en esta entrada.
+
+### Decisión vigente del operador
+
+El operador eligió utilizar **únicamente la Master Application Key** y prescindir de cualquier Application Key adicional. Quedó autorizado su uso para persistencia EP, sin crear otra clave y sin rotar ni revocar la propia Master Key. La clave `EP-OCP` no se usará en la nueva estrategia y queda sin modificación/revocación.
+
+La Master Application Key tiene acceso completo a la cuenta B2, sin restricción de bucket/prefijo o vencimiento. Esta aceptación supone abandonar el mínimo privilegio por credencial. Límite operativo obligatorio: las órdenes de esta tarea apuntarán expresamente a bucket `OCP-MCP` y prefijo `ep-ocp/`; no borrar, cambiar lifecycle, modificar buckets, administrar claves ni operar otros destinos sin autorización específica independiente. Esta limitación se aplica en el flujo de comandos, no la impone el proveedor.
+
+### Bóveda y compuerta
+
+Metadatos observados de la bóveda EP: 876 bytes; SHA-256 `9688B3496FEA1670CEB2BD8C5CDA2D8461D71B18F9A821568423264F04E3BE7C`; ACL protegida; propietario `CENTRAL\MantenimientoRCI`. No se leyó ni modificó su contenido. En el estado previo las entradas vigentes eran las de `EP-OCP`; Master Key ID y Master Application Key todavía no están capturados ni persistidos. No se leyó el portapapeles en este ciclo.
+
+La captura local exige presencia/revisión presencial del operador en el mismo ciclo por P012/P013. La presencia en un ciclo anterior no se hereda. No solicitar secretos por chat. Después de confirmación presencial, leer el bloque del portapapeles en memoria, cifrar ambas entradas en la bóveda existente, efectuar decrypt-readback y comprobar integridad/ACL; no iniciar autenticación antes de que todo el read-back sea PASS.
+
+### Secuencia técnica pendiente
+
+1. Captura local Master Key ID + Master Application Key desde el portapapeles, sin texto plano en archivos/logs/argumentos.
+2. Verificación criptográfica de la bóveda y limpieza del portapapeles.
+3. `b2 account authorize` con Master mediante CLI; variables de entorno solo para el proceso hijo y caché aislada.
+4. `account get` y preflight no destructivo, restringiendo operativamente todos los comandos al destino OCP-MCP/ep-ocp/.
+5. Una prueba sintética de upload/read-back/hash; posteriormente diseño y prueba de restore y segunda ubicación.
+
+Preferencia ejecutiva: CLI/headless; no abrir ni reiniciar Chrome, no usar CDP ni ocupar el monitor si no es indispensable.
+
+### Estado del hito
+
+- `MASTER_KEY_CAPTURE` = `NOT_STARTED`
+- `MASTER_KEY_VAULT_READBACK` = `NOT_STARTED`
+- `MASTER_KEY_B2_AUTH` = `NOT_STARTED`
+- `B2_BUCKET_PREFLIGHT` = `NOT_STARTED`
+- `SYNTHETIC_UPLOAD_READBACK` = `NOT_STARTED`
+- `RESTORE_CROSS_HOST` = `NOT_STARTED`
+- `REMOTE_PERSISTENCE` = `NOT_PROVEN`
+
+La tarea permanece `en_curso`. No se creó Application Key adicional, no se rotó/revocó la Master Key, no se modificó la bóveda y no se realizó ninguna operación B2 de bucket u objeto en este ciclo.

@@ -1652,3 +1652,45 @@ Se confirmó por inspección estática que el estado `PROVIDER_AUTH_REJECTED` de
 Se inspeccionó metadata de procesos Chrome y puertos de escucha de `PC10RCIF4EI4` sin leer cookies ni almacenamiento de sesión. El Chrome principal del perfil `fila4` (PID raíz 12692) no se inició con `--remote-debugging-port`; no hay puertos CDP 9222–9235 en escucha. La instancia Backblaze abierta por la asistencia corresponde a un perfil separado de `MantenimientoRCI` (PID raíz 12388), por lo que no se presume autenticada ni equivalente a la sesión del operador. No se tocó ni cerró ninguna pestaña y no se reinició Chrome.
 
 **Resultado:** la vía headless por CDP no está disponible en la sesión local actual. La CLI B2 5.0.2 no puede crear la clave sin una credencial administrativa con `writeKeys`; no se dispone de ella y no se usará ni rotará la Master Key. No extraer cookies ni copiar perfiles. La autorización de creación `EP-OCP` permanece vigente pero no ejecutada hasta garantizar captura directa del secreto a la bóveda EP. Crear un perfil/sesión de navegador alternativo requiere autorización específica del operador; no se inició ninguno.
+
+
+### Apertura EP · reanudación documental con original 1111 y cambio autorizado a Master-only · 2026-11-07
+
+**A literal del operador:** «ChatGPT-EP-20261107-1111.txt, esta endownloads, documenta en persistencia documental del frente entorno persistente. Retomando responsabilidad y contexto de manera seamless. Continúa de manera seamless donde nos quedamos. Adquiere contexto, y repite el último ciclo literal y textualmente».
+
+**Fuente adquirida:** `C:\Users\fila4\Downloads\ChatGPT-EP-20261107-1111.txt`, en `PC10RCIF4EI4`. Lectura completa sanitizada para análisis: 1.046 líneas, 46.231 bytes, SHA-256 `4297642A8FC88628A38CE2F0057E72F849E708B4EFE4B19882C50DBB01CD51B7`. El origen no se modifica. No se encontraron valores de credenciales en el contenido devuelto; cualquier secreto se excluye de la copia documental y no se lee del portapapeles.
+
+**Cursor canónico de entrada:** `SeryMente/metodologia/main`, HEAD `97990e2b56874def3e6afa91aef010f04837c0e1`, working tree limpio. Repositorio privado confirmado mediante consulta al repositorio remoto. No se localizó un control de responsabilidad EP independiente; por tanto se retoma continuidad funcional/documental bajo la instrucción directa, sin declarar TRANSFER_RESPONSIBILITY, titularidad formal ni generación nueva.
+
+**Lectura normativa:** Metodología v0.14.14 — *Canon Transversal de Entorno Persistente y Laboratorios*; último commit que modificó `METODOLOGIA.md`: 2026-10-21T21:23:57-06:00. DUG v377 / NX-377m, Metacanon 1.28, GOW 2.17; blob DUG conocido `54064c8fe00f872023a455f06596061ed69062ae`. Se localizó y leyó §ARR en `glossary.sections`, id `gow-sec-14`, ancla `#gow-arranque-chatgpt`; se corrige el estado previo que lo marcaba NO VERIFICADO por haber buscado solo un ancla HTML literal y no la representación estructurada autoritativa. Principios considerados: P001, P004, P005, P012, P013, P037, P038 y P043. La adquisición no modifica el DUG.
+
+**Respuesta inicial EP:** se procesa la transcripción, se preservan sus bytes exactos en el directorio de originales y se registra en OEP/EP-TASK-002 el delta de estrategia B2. El operador eligió expresamente usar solo Master Application Key, sin crear otra Application Key, sin rotar ni revocar la maestra. Se priorizará CLI/headless, sin navegador ni intervención del único monitor. La captura de credenciales queda condicionada a P012/P013 (presencia/revisión del operador en el mismo ciclo); todavía no se leerá el portapapeles ni se modificará la bóveda. La estrategia elegida implica acceso de cuenta completo, sin restricción impuesta por proveedor a bucket/prefijo; las órdenes de EP se limitarán operacionalmente a `OCP-MCP/ep-ocp/`, sin borrados ni administración de cuenta/bucket.
+
+**Estado inicial:** Master Key `NOT_CAPTURED`; bóveda `NOT_MODIFIED_IN_THIS_CYCLE`; autenticación con Master Key `NOT_EXECUTED`; B2 bucket/object operations `NOT_EXECUTED`; upload/read-back/restore `NOT_PROVEN`; EP-TASK-002 `en_curso`; ciclo local `C-EP-MOD-SCRIPTPWS-20261101-03` permanece OPEN; FOL1 no consta ACTIVO. La autenticación previa de `EP-OCP` fue reportada como exitosa, pero con capacidades superiores a las previstas; esa clave queda fuera de la estrategia activa, sin revocarla ni modificarla.
+
+**Siguiente acción inmediata:** completar la persistencia documental de este ciclo con read-back; después, requerir confirmación de presencia física en PC10RCIF4EI4 antes de captura local del bloque Master Key ID + Master Application Key. No se inicia autenticación hasta verificar almacenamiento cifrado y descifrado de retorno.
+
+
+### Cierre documental EP · original 1111, OEP §100 y decisión Master-only · 2026-11-07
+
+**Procesamiento del ciclo:** se leyó el original completo y se contrastó contra la fuente canónica actual. Se corrigió el estado anterior de §ARR: la sección se encuentra en DUG v377, `glossary.sections` / `gow-sec-14` / `#gow-arranque-chatgpt`. Se verificó Metodología v0.14.14, Metacanon 1.28, GOW 2.17 y los principios pertinentes. No se modificó el DUG ni `METODOLOGIA.md`.
+
+**Original preservado:** `frentes/ep/originales/ChatGPT-EP-20261107-1111.txt`; 46.231 bytes; SHA-256 `4297642A8FC88628A38CE2F0057E72F849E708B4EFE4B19882C50DBB01CD51B7`; Git blob `7b62154f1bf9bbc6b6c6b3de05416f49bb0dcede`. Tamaño y SHA cotejados con el archivo de Downloads: coincidencia byte exacta; el origen no se alteró.
+
+**Documentos operativos escritos:**
+- `frentes/ep/OEP.md` — sección §100; cabecera actualizada a v0.3.33 / VCU-EP-v34; 325.904 bytes; SHA-256 `4909C747FE466AF969C2DB1CD45F9DEE2B4F05E8FB2198773623170E74C42579`; Git blob `181a3e07e1365bb44a825c38f7cb54fbd3ee0b13`.
+- `frentes/ep/📁 🧭 - Tareas provisionales/📁 🧩 - EP-TASK-002 - Persistencia provisional Backblaze/README.md` — sección §44 y estado ejecutivo; 224.211 bytes; SHA-256 `5E24F337ED93941AC03333C8539EE4379F1F94A7891FE9644B5DED609F607BD4`; Git blob `c909a3313e8cbadea7aa21e534bbede6fa3e2277`.
+- `frentes/ep/README.md` — versión del núcleo .33/.34 y enlace al original; 2.252 bytes; SHA-256 `EB325AB3E5F641D395A7ABB695EC0A0F85EA0A4F32454922A35E9A9A1C3DBEE1`; Git blob `8bd9e712a1d3b95d911c54c00a13c35802668ce1`.
+- Este DTC — apertura y cierre en el mismo objeto; previo a su entrada de cierre: 224.052 bytes; SHA-256 `A0B53D420413901EFF7B9C7943B4A2F72D1CCD18854ADD4497DDE03F497B8DEA`; Git blob `016bac576f61d0f8e3321c059036d106139e69d5`; hash final se calcula en el manifiesto tras la entrada actual.
+
+**Decisión y estado operativo:** se conserva la decisión expresa del operador de emplear únicamente la Master Application Key; no crear otra Application Key ni rotar/revocar la maestra. `EP-OCP` queda fuera de uso en la estrategia nueva y sin modificación. La Master Key posee alcance completo de cuenta; las órdenes EP se limitarán operacionalmente a `OCP-MCP/ep-ocp/`, sin operaciones destructivas, administración ni otros destinos. La limitación de bucket/prefijo es procedimental, no un scope impuesto por B2.
+
+**Bóveda:** solo se observaron metadatos: 876 bytes, SHA-256 `9688B3496FEA1670CEB2BD8C5CDA2D8461D71B18F9A821568423264F04E3BE7C`, ACL protegida. No se leyó ni modificó su contenido ni el portapapeles. Master Key ID/secret `NOT_CAPTURED`; read-back criptográfico `NOT_RUN`; autorización B2 con Master `NOT_RUN`.
+
+**No ejecutado:** captura de secretos, escritura de bóveda, autenticación con Master, preflight remoto, operaciones de bucket/objeto, upload, download, delete o restore. No se abrió ni reinició navegador, no se utilizó CDP y no se ocupó el monitor.
+
+**Compuerta pendiente:** P012/P013 requiere presencia y revisión presencial del operador en este mismo ciclo para capturar/almacenar/autenticar credenciales. La presencia de una conversación anterior no se hereda. Siguiente acción: confirmar presencia actual en `PC10RCIF4EI4`; tras esa confirmación, el operador dejará Master Key ID + Master Application Key en el portapapeles y avisará `LISTO`. No pedir valores por chat. Primero capturar, cifrar y verificar read-back; solo después autenticar por CLI.
+
+**Responsabilidad/folios:** la instrucción directa permite continuar la responsabilidad funcional/documental de EP, pero no se localizó un control formal EP ni se ejecutó una mutación CAS; no se declara transferencia ni generación. Se conserva ciclo local `C-EP-MOD-SCRIPTPWS-20261101-03` OPEN y `EP-TASK-002=en_curso`. CONV/CICLO/A/B globales no asignados; FOL1 no consta ACTIVO.
+
+**Secuencia DTC de este ciclo:** apertura y respuesta inicial registradas en este objeto → original adquirido y preservado → OEP §100 y EP-TASK-002 §44 actualizados → read-back/hash local de los documentos y original → pendiente publicación y read-back remoto en `main`. Hasta verificar commit/push y lectura remota, la persistencia canónica queda `PENDIENTE_PUBLICACION`; el ciclo no se declara cerrado documentalmente.

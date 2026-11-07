@@ -1,0 +1,133 @@
+﻿{
+    "schema":  1,
+    "version":  "OEP v0.3.33 / VCU-EP-v34",
+    "event":  "C-EP-MOD-SCRIPTPWS-20261101-03 · original 1111 y decisión Master-only · 2026-11-07",
+    "method":  {
+                   "methodology":  "v0.14.14 · Canon Transversal de Entorno Persistente y Laboratorios",
+                   "dug":  "Samantha v377 / NX-377m",
+                   "dug_blob":  "54064c8fe00f872023a455f06596061ed69062ae",
+                   "metacanon":  "1.28",
+                   "gow":  "2.17",
+                   "arr":  "gow-sec-14 / #gow-arranque-chatgpt · verificado"
+               },
+    "authority":  {
+                      "operator_instruction":  "Reanudar continuidad de EP y documentar ChatGPT-EP-20261107-1111.txt; uso exclusivo de Master Application Key, sin crear otra Application Key ni rotar/revocar Master.",
+                      "functional_continuity":  "Continuidad funcional y documental aceptada para el trabajo EP dentro del OEP y EP-TASK-002 existentes.",
+                      "formal_ep_ownership":  "NOT_VERIFIED; no control EP independiente localizado; no se declara TRANSFER_RESPONSIBILITY ni generación.",
+                      "global_folio":  "NOT_ASSIGNED; FOL1 inactive"
+                  },
+    "source_cursor":  {
+                          "branch":  "main",
+                          "head_before":  "97990e2b56874def3e6afa91aef010f04837c0e1",
+                          "dug_blob":  "54064c8fe00f872023a455f06596061ed69062ae",
+                          "metodologia_version":  "v0.14.14",
+                          "method_last_commit":  "2026-10-21T21:23:57-06:00",
+                          "oep_base_blob":  "d30a824d79088cba3ce021cf814c6126962570ee"
+                      },
+    "source_original":  {
+                            "path":  "C:\\Users\\fila4\\Downloads\\ChatGPT-EP-20261107-1111.txt",
+                            "repository_path":  "frentes/ep/originales/ChatGPT-EP-20261107-1111.txt",
+                            "bytes":  46231,
+                            "lines":  1046,
+                            "sha256":  "4297642A8FC88628A38CE2F0057E72F849E708B4EFE4B19882C50DBB01CD51B7",
+                            "byte_exact_copy":  true,
+                            "source_untouched":  true
+                        },
+    "decision":  {
+                     "credential_strategy":  "MASTER_APPLICATION_KEY_ONLY",
+                     "create_additional_application_key":  false,
+                     "rotate_master":  false,
+                     "revoke_master":  false,
+                     "legacy_key":  "EP-OCP",
+                     "legacy_key_action":  "NOT_MODIFIED_NOT_REVOKED",
+                     "accepted_tradeoff":  "Account-wide authority; no provider-enforced bucket/prefix/expiry restriction",
+                     "operational_scope":  "OCP-MCP / ep-ocp/ only; no delete, bucket administration, lifecycle changes, key administration or other destinations without separate authorization"
+                 },
+    "vault":  {
+                  "path":  "C:\\Users\\MantenimientoRCI\\AppData\\Local\\Khora\\secrets\\b2-ep-env-vault.enc.json",
+                  "bytes":  876,
+                  "sha256":  "9688B3496FEA1670CEB2BD8C5CDA2D8461D71B18F9A821568423264F04E3BE7C",
+                  "acl_protected":  true,
+                  "owner":  "CENTRAL\\MantenimientoRCI",
+                  "content_read":  false,
+                  "modified_this_cycle":  false,
+                  "master_key_captured":  false,
+                  "master_key_readback":  "NOT_RUN",
+                  "clipboard_read":  false
+              },
+    "previous_b2":  {
+                        "ep_ocp_authentication":  "REPORTED_SUCCESS",
+                        "scope":  "OCP-MCP / ep-ocp/",
+                        "excess_capabilities":  [
+                                                    "deleteFiles",
+                                                    "bucket configuration/administration"
+                                                ],
+                        "expiry":  "NOT_CONFIRMED",
+                        "bucket_object_operations":  "NONE_REPORTED",
+                        "fresh_auth_reperformed":  false
+                    },
+    "gates":  {
+                  "P012_P013":  "OPERATOR_PRESENCE_AND_SECURITY_REVIEW_REQUIRED_IN_SAME_CYCLE",
+                  "master_key_capture":  "NOT_STARTED",
+                  "master_key_vault_write":  "NOT_STARTED",
+                  "master_key_decrypt_readback":  "NOT_STARTED",
+                  "master_key_b2_auth":  "NOT_STARTED",
+                  "bucket_preflight":  "NOT_STARTED",
+                  "synthetic_upload_readback":  "NOT_STARTED",
+                  "restore_cross_host":  "NOT_STARTED"
+              },
+    "changed_files":  [
+                          {
+                              "path":  "frentes/ep/OEP.md",
+                              "bytes":  325904,
+                              "sha256":  "4909C747FE466AF969C2DB1CD45F9DEE2B4F05E8FB2198773623170E74C42579",
+                              "git_blob":  "181a3e07e1365bb44a825c38f7cb54fbd3ee0b13",
+                              "readback_exact":  true
+                          },
+                          {
+                              "path":  "frentes/ep/README.md",
+                              "bytes":  2252,
+                              "sha256":  "EB325AB3E5F641D395A7ABB695EC0A0F85EA0A4F32454922A35E9A9A1C3DBEE1",
+                              "git_blob":  "8bd9e712a1d3b95d911c54c00a13c35802668ce1",
+                              "readback_exact":  true
+                          },
+                          {
+                              "path":  "frentes/ep/entregas/COORDINACION-GOBERNANZA-EP-v0.1.md",
+                              "bytes":  228371,
+                              "sha256":  "D1D66113B7493212B90640F8999BB19ED6D70BCE00A1CDC938B1B975E80D06E0",
+                              "git_blob":  "59a3d607fcae2aca229bdb0d362ae24644d51884",
+                              "readback_exact":  true
+                          },
+                          {
+                              "path":  "frentes/ep/originales/ChatGPT-EP-20261107-1111.txt",
+                              "bytes":  46231,
+                              "sha256":  "4297642A8FC88628A38CE2F0057E72F849E708B4EFE4B19882C50DBB01CD51B7",
+                              "git_blob":  "7b62154f1bf9bbc6b6c6b3de05416f49bb0dcede",
+                              "readback_exact":  true
+                          },
+                          {
+                              "path":  "frentes/ep/📁 🧭 - Tareas provisionales/📁 🧩 - EP-TASK-002 - Persistencia provisional Backblaze/README.md",
+                              "bytes":  224211,
+                              "sha256":  "5E24F337ED93941AC03333C8539EE4379F1F94A7891FE9644B5DED609F607BD4",
+                              "git_blob":  "c909a3313e8cbadea7aa21e534bbede6fa3e2277",
+                              "readback_exact":  true
+                          }
+                      ],
+    "limits":  [
+                   "No Master Application Key value was read or persisted.",
+                   "No clipboard value was read.",
+                   "No B2 authentication or bucket/object operation occurred in this cycle.",
+                   "No upload, download, deletion, restore or remote persistence proof.",
+                   "No browser/CDP use; CLI/headless preferred.",
+                   "Formal EP control not located; no title/generation transfer claimed.",
+                   "GitHub publication and remote read-back pending."
+               ],
+    "status":  {
+                   "cycle":  "C-EP-MOD-SCRIPTPWS-20261101-03",
+                   "cycle_state":  "OPEN",
+                   "task":  "EP-TASK-002",
+                   "task_state":  "en_curso",
+                   "remote_persistence":  "NOT_PROVEN",
+                   "FOL1":  "PENDING"
+               }
+}
