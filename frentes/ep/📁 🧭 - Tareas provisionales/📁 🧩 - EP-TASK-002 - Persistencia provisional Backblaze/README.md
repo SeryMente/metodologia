@@ -1,7 +1,7 @@
 # 📝 EP-TASK-002 · Persistencia provisional con Backblaze B2 para datos de usuario y continuidad de la sesión canónica
 
 **Naturaleza:** tarea provisional del frente Entorno Persistente; materialización auxiliar del registro de tareas, no un OEP nuevo, no un frente independiente y no una decisión de arquitectura canónica.  
-**Estado:** `en_curso` — original 1111 preservado en originales con SHA verificado; CLI B2 5.0.2 instalada; `EP-OCP` autenticada previamente pero con capacidades excesivas; decisión vigente del operador: uso exclusivo de Master Application Key, sin crear claves adicionales ni rotar/revocar la maestra; Master Key aún no capturada/persistida; gate P012/P013 de presencia/revisión presencial pendiente; sin operaciones B2 de bucket/objeto en este ciclo; CLI/headless preferido.
+**Estado:** `en_curso` — Master Application Key existente cotejada con las entradas cifradas de la bóveda (sin reescritura); descifrado de cuatro entradas, ACL, respaldo y limpieza de portapapeles PASS; autenticación Master B2 PASS con caché aislada; GET de `OCP-MCP` PASS; prueba sintética de 126 bytes con upload/download/read-back SHA-256 y SSE-B2/AES256 PASS. La compuerta de segundo equipo físico de §45 queda supersedida por la instrucción del operador del 2026-11-07: no es requisito para finalizar EP. La sincronización automatizada de datos de usuario, la recuperación por perfil, idempotencia, interrupción/reanudación y aceptación del consumidor siguen pendientes.
 **Responsabilidad:** vinculada a `frentes/ep/`; sin control, sesión, titularidad ni folio global propios.  
 **task_id:** `EP-TASK-002` (identificador local estable; no es folio global).  
 **scope_ref:** `frentes/ep/`  
@@ -1757,3 +1757,39 @@ Este apartado actualiza y prevalece sobre los estados operativos anteriores de e
 - Sincronización multiubicación, interrupción/reanudación, restauración funcional por consumidor y aceptación E2E permanecen pendientes.
 
 **Estado:** en_curso. Próximo paso: habilitar un segundo equipo físico autorizado y confirmar su ruta destino. Después ejecutar descarga independiente, comparar SHA-256 contra el recibo EP-B2-SMOKE-20261107.json, probar apertura del artefacto por el consumidor y registrar evidencia saneada. No operar otros buckets/prefijos ni borrar el objeto de prueba.
+
+
+## 46. Rectificación de arquitectura de datos y criterio de restauración · 2026-11-07
+
+### Fuente y autoridad
+
+Se incorpora la instrucción original INSTRUCCION-MATERIALIZACION-UBICACIONES-20261107.txt, preservada en originales. Esta entrada modifica la interpretación anterior de continuidad multiubicación y prevalece sobre la exigencia de un segundo equipo/unidad física que aparece en §45. No elimina la crónica histórica ni altera la evidencia de §45.
+
+### Frontera de persistencia
+
+- GitHub / organización SeryMente: repositorios de código, historial de cambios y objetos canónicos vigentes de Metodología/OCP. El repositorio SeryMente/metodologia conserva la especificación canónica y sus objetos OCP.
+- Backblaze B2: destino de los datos de usuario generados por el uso de la metodología OCP y por las aplicaciones/proyectos bajo su sombrilla. No sustituye GitHub como remoto de código ni SeryMente/metodologia como autoridad canónica.
+- Workspace local: materialización temporal bajo Escritorio/Ser y Mente/, con repositorios reconstruibles desde GitHub. No se usa GitHub para guardar los datos personales/runtime del usuario; tampoco se usa B2 como remoto de código ni como copia competidora del OCP.
+
+La definición de qué datos de usuario se admiten, sus snapshots consistentes, cifrado, retención, conflictos, sincronización incremental e idempotencia permanece dentro de esta tarea y debe resolverse con inventario y pruebas. No se infiere permiso para capturar indiscriminadamente perfiles, cookies o datos de terceros.
+
+### Master Application Key y destino B2
+
+Se conserva la estrategia EP ya demostrada: uso de la Master Application Key existente, sin crear Application Keys individuales ni rotar/revocar la maestra. La autenticación y el smoke test de §102 siguen siendo la evidencia técnica disponible. El destino probado continúa siendo OCP-MCP/ep-ocp/; la Master Key tiene alcance global en su cuenta y el bucket/prefijo constituyen límites operativos, no restricciones técnicas impuestas a la clave. No ampliar operaciones fuera del destino autorizado.
+
+### Rectificación del criterio de cierre
+
+La restauración no requiere conectar un segundo equipo ni una unidad física independiente. Para cerrar esta tarea debe demostrarse que, desde una materialización limpia del workspace Ser y Mente en el Escritorio efectivo de la sesión Windows, EP puede recuperar los datos de usuario elegibles desde B2, verificar tamaño/hash y devolver el conjunto a un estado utilizable. Esta prueba puede realizarse en el mismo host, usando un destino local vacío y separado de la instancia fuente, sin presentarlo como prueba de independencia física.
+
+La sincronización multiubicación lógica se demuestra mediante perfiles de ubicación y estado remoto común, no mediante la mera existencia de dos dispositivos. La prueba física entre equipos puede añadirse como robustez, pero no es compuerta obligatoria de cierre.
+
+### Estado conservado
+
+- Autenticación Master, GET de bucket, upload/download sintético, metadata, SSE-B2/AES256 y SHA-256: PASS según §102 y su recibo.
+- Sincronización desatendida de datos reales de usuario: PENDIENTE.
+- Inventario de datos elegibles y exclusiones: PENDIENTE.
+- Snapshot coherente, manifiesto, conflicto, offline queue, idempotencia y recuperación desde B2: PENDIENTES.
+- Prueba de reinstanciación/restauración por perfil en workspace limpio: PENDIENTE.
+- Aceptación end-to-end del consumidor de usuario: PENDIENTE.
+
+No se ejecutó ninguna transferencia de datos reales de usuario ni restauración durante esta actualización documental. El objeto sintético anterior permanece retenido y no se ha borrado.
