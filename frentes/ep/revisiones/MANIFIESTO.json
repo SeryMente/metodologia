@@ -1,4 +1,4 @@
-﻿{
+{
   "schema": 1,
   "repository": "SeryMente/metodologia",
   "branch": "main",
@@ -42,15 +42,15 @@
     },
     {
       "path": "frentes/ep/OEP.md",
-      "bytes": 333511,
-      "sha256": "A12E17944C784C0330E9CBDA0E92922014355D8B61AE03496D54954F5C456E8C",
-      "git_blob": "a6d1b0cd9f2fcabb0bbccc20a252382f081d0f53"
+      "bytes": 344341,
+      "sha256": "959314258A53D83DFE3DA4EABF2EBA36A9CDE7986C18A6336A7E6907984BCA48",
+      "git_blob": "070c98d3de7f9b2349d09926f259d2b43d845d3e"
     },
     {
       "path": "frentes/ep/README.md",
-      "bytes": 2577,
-      "sha256": "0F818DC2C66FAECF45C390FDAB68E0B477BC45BCD315A484AD3E1067EB8DD890",
-      "git_blob": "a4b50c5327a9fabd0618b69d1c12954f4cc31e2d"
+      "bytes": 3025,
+      "sha256": "F1D51D94F634A740AB6978795EF930A8CC0BB983861D721348C2BF6AD1CA0995",
+      "git_blob": "799a8752dd56ef5433cfcb172ef2cdd8a480fa37"
     },
     {
       "path": "frentes/ep/artefactos/EP-H03-integracion-reproducible-parcial-20261011.zip.b64",
@@ -377,15 +377,15 @@
     },
     {
       "path": "frentes/ep/📁 🧭 - Tareas provisionales/README.md",
-      "bytes": 8524,
-      "sha256": "C86CB2483F52D31E62AAEA00B6668BD5773EE3137AC07F62CFE6FFD80C31C311",
-      "git_blob": "fcd76497dca45472153209a1158673386dfa7ba2"
+      "bytes": 9387,
+      "sha256": "B37BADD912177C52D5FFD19E872289D1C7D1DB435A70101BCC0DB4BF83C8007B",
+      "git_blob": "9595ce08547f5d34e698111310d44ebd9759e28e"
     },
     {
       "path": "frentes/ep/📁 🧭 - Tareas provisionales/📁 🧩 - EP-TASK-002 - Persistencia provisional Backblaze/README.md",
-      "bytes": 224211,
-      "sha256": "5E24F337ED93941AC03333C8539EE4379F1F94A7891FE9644B5DED609F607BD4",
-      "git_blob": "c909a3313e8cbadea7aa21e534bbede6fa3e2277"
+      "bytes": 227983,
+      "sha256": "23C6EC9DF23D2C6D209BAB60CCCE3116E827E98F06AD2467D28E91AE3D5C75D4",
+      "git_blob": "0841828529a02537b1847c7e2fd2de429f0013ff"
     },
     {
       "path": "frentes/ep/originales/ChatGPT-EP-20261107-1144.txt",
@@ -422,6 +422,30 @@
       "bytes": 1528,
       "sha256": "95184C68AC0AAD72BF2539428F1694D66F3160CE25E0517000227AF74E9BA7EB",
       "git_blob": "6e57d240f6c93bea695f30c6b469e411f590614f"
+    },
+    {
+      "path": "frentes/ep/📁 🧭 - Tareas provisionales/📁 🧩 - EP-TASK-003 - Mapa integral de construcción EP/README.md",
+      "bytes": 18687,
+      "sha256": "8A02E87A434417D4718AF7DB6BD71F4042C4C924EA071491C74CE31CB2ACFD56",
+      "git_blob": "6ad796a6ce65ff2bc17b3918f9c842ca87caed92"
+    },
+    {
+      "path": "frentes/ep/originales/INSTRUCCION-MATERIALIZACION-UBICACIONES-20261107.txt",
+      "bytes": 4150,
+      "sha256": "68662AC7B5B7DA8A281E8C5B4135ED0BFD2E05C13D9F58496A4E3065324E2ECE",
+      "git_blob": "302196022f157e2fcbcbaa901207a630c74d292f"
+    },
+    {
+      "path": "frentes/ep/evidencias/PERFIL-CSEC-PREFLIGHT-20261107.json",
+      "bytes": 1870,
+      "sha256": "3479285BE2AE568C39E0A38EDBD8E1F8D528AC129FB4A8BEB46936594D583778",
+      "git_blob": "1147d775d638c119ca6f67a2a59e807467952768"
+    },
+    {
+      "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.37.json",
+      "bytes": 4984,
+      "sha256": "1B8FF61ABCA5E001954A62AC109A64C518362C27F4146D1045334F9F32302148",
+      "git_blob": "13628e4f3c5bf84c44e4c980fcc98d2ecc4d3d12"
     }
   ],
   "exclusions": [
@@ -454,5 +478,7 @@
   "prior_readback_verified": "PASS: GitHub main fetch matched expected blobs for OEP, README, B2 smoke evidence receipt, revision and manifest.",
   "latest_review_source_commit": "3eacb0f1ec558520def46f03f894bcd8966cba1e",
   "current_event": "EP-C-EP-MOD-SCRIPTPWS-20261101-03: Master vault entries matched without rewrite; B2 Master auth success; OCP-MCP preflight success; one 126-byte synthetic upload/download/read-back SHA-256 pass under ep-ocp/; second physical-location restore remains pending.",
-  "verification_scope": "COMMITTED_AND_READBACK_VERIFIED: OEP v0.3.35 / VCU-EP-v36, README, evidence receipt and revision match GitHub main blob SHAs. Vault Master values matched existing entries; decrypt/ACL/backup and clipboard clear PASS. Master B2 authentication via isolated cache; OCP-MCP bucket GET PASS; one 126-byte synthetic object upload/download/file-info read-back PASS with SHA-256 match and SSE-B2/AES256. The remote smoke object is retained; no delete or configuration/key changes. Second physical-location restore, multi-location synchronization and end-to-end consumer acceptance remain pending."
+  "verification_scope": "COMMITTED_AND_READBACK_VERIFIED: OEP v0.3.35 / VCU-EP-v36, README, evidence receipt and revision match GitHub main blob SHAs. Vault Master values matched existing entries; decrypt/ACL/backup and clipboard clear PASS. Master B2 authentication via isolated cache; OCP-MCP bucket GET PASS; one 126-byte synthetic object upload/download/file-info read-back PASS with SHA-256 match and SSE-B2/AES256. The remote smoke object is retained; no delete or configuration/key changes. Second physical-location restore, multi-location synchronization and end-to-end consumer acceptance remain pending.",
+  "updated_on": "2026-11-07",
+  "latest_oep_version": "v0.3.37 / VCU-EP-v38"
 }
