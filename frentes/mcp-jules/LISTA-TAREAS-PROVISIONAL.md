@@ -1,111 +1,201 @@
-<!-- LIST_VERSION=0.1; LIST_STATUS=PROVISIONAL; NOT_A_CANONICAL_OBJECT=true -->
-# Lista provisional de tareas · Frente MCP Jules
+<!-- LIST_VERSION=0.2.0; LIST_STATUS=PROVISIONAL; PARENT_PRODUCT=MCP-OCP-1.0; NOT_A_STANDALONE_PRODUCT=true -->
+# Lista provisional de tareas · OCP MCP 1.0 · ámbito de ejecución Jules
 
-> **ESTADO: PROVISIONAL · AUXILIAR DEL ÚNICO OCP MCP-JULES.** No crea un OCP, control, titularidad ni servidor adicional. El estado vivo permanece en OBJETO-CANONICO.md y el único control de responsabilidad permanece sin cambios en CONTROL-RESPONSABILIDAD.json. Se materializa en la rama documental de PR #19 para corregir el desfase de tareas respecto del código ya integrado en Khora main.
+> **ESTADO: PROVISIONAL · BACKLOG HIJO DEL OCP MCP.** Jules es una faceta/capacidad de OCP MCP para ejecución delegada de trabajo de desarrollo. Esta lista no define un tercer sistema, no crea un servidor propio, no sustituye el backlog maestro OCP y no transfiere controles ni titularidad.
 
-- **Frente:** MCP Jules.
-- **Repositorio documental:** SeryMente/metodologia.
-- **Rama:** feat/metacanon-mcp-jules-20261025-c32f81 (PR #19, abierta; documentación aún no integrada en main).
-- **OCP:** OBJETO-CANONICO.md, revisión de partida v0.1.12.
-- **Control:** generación 3, propietario existente; no modificado por esta lista.
-- **Versión de la lista:** 0.1 provisional.
-- **Fecha de actualización:** 2026-11-06.
-- **Gobierno leído:** Samantha v377 · NX-377m; Metacanon 1.28; GOW 2.17; DUG blob 54064c8fe00f872023a455f06596061ed69062ae. §ARR consultado, cascada manual y CNP P001/P004/P005/P038/P043 considerados.
-- **Alcance de autorización:** autorización puntual del operador recibida en esta conversación para revisar y modificar tareas/plan/aceptación provisional de MCP-Jules para alinearlos con MCP-OCP. No transfiere titularidad ni autoriza modificar el control, código Khora, credenciales, Production, PR fusionadas ni despliegue.
+- **Producto padre:** MCP-OCP 1.0.
+- **Ámbito:** ejecución delegada, asincrónica y verificable mediante Jules.
+- **Ubicación documental histórica:** SeryMente/metodologia/frentes/mcp-jules/.
+- **Rama documental:** feat/metacanon-mcp-jules-20261025-c32f81; PR #19 OPEN / DRAFT / NOT MERGED.
+- **Versión de lista:** 0.2.0 provisional.
+- **Actualización:** 2026-11-07.
+- **Gobierno consultado:** Samantha v377 · NX-377m; Metacanon 1.28; GOW 2.17; DUG blob 54064c8fe00f872023a455f06596061ed69062ae.
+- **Backlog maestro:** frentes/mcp-metodologia/LISTA-TAREAS-PROVISIONAL.md v0.3.0, tareas MCP-OCP-01–24.
+- **OCP padre:** MCP-METODOLOGIA.md, MCP-OCP-v0.1.21.
+- **Control documental de esta carpeta:** CONTROL-RESPONSABILIDAD.json, generación 3, blob 113bf1930638843d52fe68441e76b2e0879e83f5. Se conserva sin cambio; no equivale a un control de un tercer producto.
+- **Estado de uso:** PAUSADO por instrucción del operador; no se ha iniciado OAuth real, no se ha creado una sesión Jules en este ciclo y no se han ejecutado herramientas de escritura.
+- **Codex:** excluido por la decisión de proyecto conservada en el plan integral.
 
-## Decisión operativa vigente
+## 1. Interpretación funcional vigente
 
-MCP-Jules no construye ni opera el servidor local de Metodología. Su responsabilidad es proporcionar el flujo seguro de desarrollo asíncrono con Jules a través del servidor MCP existente de Khora y su cliente puente local RDC/stdio.
+El operador ha definido que existen dos sistemas principales: **Khora MCP** y **OCP MCP**. Jules no es un tercer sistema. Es un ámbito/capacidad que OCP MCP utiliza para delegar y ejecutar tareas de desarrollo con continuidad y evidencia.
 
-- Las siete herramientas Jules están integradas en el servidor Khora /api/mcp mediante PR #345 (merge commit 953e69484eabb4e8dc8221d1d8fc188373531bfa).
-- El puente local RDC/stdio OAuth 2.1 + PKCE está integrado mediante PR #347 (merge commit 4530e03a33c5e1743ab9646eb6c862b3c458c605).
-- Esos merges acreditan que el código llegó a Khora main, no que el consentimiento OAuth actual, la autenticación real, tools/list, lectura de recursos o E2E estén verificados en el dispositivo activo.
-- ChatGPT Free se opera por el cliente local controlado mediante RDC. No depende de un plugin MCP público ni de conexión nativa de escritura a un servidor MCP privado desde ChatGPT Free.
-- No se crea otro servidor Jules ni un segundo endpoint. El bridge local es un cliente stdio; su upstream es Khora Production /api/mcp.
-- El propietario confirma consentimiento OAuth en el navegador de Khora. No se solicita copiar/pegar Bearers, extraer cookies, leer secretos ni manipular manualmente credenciales. JULES_API_KEY permanece exclusivamente en Khora Production.
-- El refresh token se cifra con DPAPI CurrentUser; access token solo en memoria. Callback DCR permitido exclusivamente en 127.0.0.1.
-- El primer smoke autenticado es estrictamente de solo lectura. No crea sesiones ni inicia escrituras.
-- MCP-OCP construye su servidor local independiente en SeryMente/metodologia. No se incorpora a Khora ni se duplica aquí.
+El resultado de trabajo de Jules pertenece al objetivo OCP: código, tests, documentación, rama, PR y evidencia del OCP. La sesión/agente Jules es un mecanismo de ejecución, no el propietario del producto ni la autoridad del contrato OCP.
 
-## Orden de ejecución
+Khora MCP se mantiene como sistema distinto. La interfaz de herramientas que permita operar Jules desde el contexto de trabajo se considera una dependencia externa. Esta lista no adjudica a la instancia Jules ni a esta instancia OCP la propiedad del servidor Khora. No se modifican desde el ámbito Jules el repositorio Khora, su servidor, endpoint, código, despliegues, variables, secretos, ACL ni controles. Si la interfaz externa falla, se registra el bloqueo y se remite al responsable de Khora; no se crea un servidor sustituto dentro de OCP.
 
-| Orden | ID | Prioridad | Tarea | Estado | Condición de salida |
+La instancia Jules puede implementar tareas asignadas de OCP en ramas aisladas. No recibe autoridad automática para modificar main, cambiar contratos compartidos, aprobar sus propios planes, auto-mergear PR o ejecutar operaciones sensibles sin consentimiento.
+
+## 2. Responsabilidad y exclusiones
+
+| Participante | Responsabilidad |
+|---|---|
+| Esta instancia ChatGPT-OCP | Define/coordina el backlog maestro, contrato OCP, asignación de paquetes, integración, revisión de PR, seguridad, evidencia y release |
+| Instancia Jules | Ejecuta paquetes acotados de OCP: analiza, implementa, prueba, responde feedback, conserva checkpoint y entrega rama/PR |
+| Operador | Decide alcance, reanuda uso de Jules, concede consentimiento OAuth, aprueba cada plan de ejecución y conserva gates sensibles/aceptación |
+| Khora MCP | Sistema independiente y dependencia externa de la interfaz de acceso, fuera de esta responsabilidad documental y técnica |
+
+**Permitido a Jules:** leer el paquete de tarea, trabajar sobre las rutas OCP autorizadas, crear una rama aislada, editar/añadir tests, ejecutar pruebas permitidas, explicar decisiones, informar bloqueos y abrir PR contra la base indicada.
+
+**No permitido a Jules por esta lista:** modificar Khora MCP; acceder/extraer secretos o tokens; cambiar DUG, Metacanon, GOW, controles o autoridad; escribir directamente en main; ampliar archivos/rutas por conveniencia; autoaprobar planes; auto-mergear o desplegar; cambiar contratos compartidos sin revisión; declarar aceptación en nombre del operador.
+
+La carpeta frentes/mcp-jules/ y su OCP/control histórico siguen existiendo. La presente lista reinterpreta su función como ámbito de ejecución de OCP MCP, pero no muta el control generación 3, no fusiona archivos canónicos ni ejecuta un cambio de jerarquía documental. La reconciliación formal de OBJETO-CANONICO.md, el plan integral, el plan de aceptación, README y PR #19 debe tratarse como trabajo documental posterior con revisión y autorización aplicables.
+
+## 3. Reglas de trabajo paralelo con el carril OCP
+
+1. Esta lista es hija del backlog MCP-OCP-01–24. Cada tarea Jules debe citar al menos un ID padre y entregar el resultado al mismo objetivo MCP-OCP 1.0.
+2. La asignación debe contener: task ID, objetivo, base commit, repo, branch de origen/destino, allowlist de rutas, denylist, contratos congelados, comandos de prueba autorizados, criterios PASS/FAIL y formato de evidencia.
+3. Jules crea una rama por tarea. Nombre sugerido: work/ocp/<task-id>/<slug>. Nunca usa el mismo worktree, rama o archivo simultáneamente que la instancia OCP.
+4. La instancia OCP conserva integración y revisión. Jules no modifica main ni fusiona su PR.
+5. Los contratos MCP, schemas, DB migrations, KeyVault, autorización, audit chain y formatos PPR son rutas/contratos protegidos. Jules los cambia únicamente con un ticket que lo autorice expresamente y una revisión de la instancia OCP.
+6. Si main avanza, el diff se vuelve incompatible, surge un conflicto de archivo o cambian los pins, Jules pausa, actualiza su base mediante instrucción y no resuelve conflictos contra la voluntad del responsable OCP.
+7. La sesión se considera separada de la rama: guardar ID/URL/estado/activities no acredita código integrado; un commit/PR no acredita tests; tests no acreditan merge; merge no acredita aceptación del operador.
+8. No se asume canal de comunicación directo entre las instancias. El paquete de tarea, el commit, la PR y el read-back son la transferencia verificable.
+9. Si el acceso a la interfaz externa no está autenticado o no es utilizable, mantener el estado bloqueado. No probar tokens manualmente, no copiar Bearer ni crear otro endpoint.
+
+## 4. Orden de tareas del ámbito Jules
+
+| Orden | ID | Prioridad | Tarea | Estado al 2026-11-07 | Criterio de salida |
 |---:|---|---|---|---|---|
-| 1 | MCP-JULES-01 | P0 | Reconciliar arquitectura, estado real y frontera MCP-OCP/Khora/Jules | EN CURSO | Plan, OCP, aceptación y lista coinciden; se distinguen dos productos/clients locales y un único MCP Khora. |
-| 2 | MCP-JULES-02 | P0 | Preparar bridge en dispositivo RDC activo | PENDIENTE | Ruta del clon, Node, dependencias, scripts y perfil DPAPI verificados sin iniciar OAuth ni revelar secretos. |
-| 3 | MCP-JULES-03 | P0 | Consentimiento OAuth explícito y autenticación real | BLOQUEADO_HASTA_CONSENTIMIENTO_OPERADOR | Propietario concede scopes; OAuth/PKCE finaliza; tokens quedan protegidos; no se registran valores. |
-| 4 | MCP-JULES-04 | P0 | Smoke autenticado de solo lectura | BLOQUEADO_HASTA_03 | tools/list expone exactamente las siete herramientas; listar fuentes/sesiones/actividades reales con paginación. No crea sesiones. |
-| 5 | MCP-JULES-05 | P0 | Verificar aislamiento, scopes y límites reales | PENDIENTE | Lecturas permitidas y negativas fail-closed; owner/source/branch/capability y separación jules:read/write verificadas. |
-| 6 | MCP-JULES-06 | P0 | Ejecutar ciclo E2E en sandbox OCP | BLOQUEADO_HASTA_04_Y_CONFIRMACION_PLAN | Sesión de sandbox; plan revisado y confirmado; aprobación explícita; feedback; PR verificable y tests. |
-| 7 | MCP-JULES-07 | P1 | Validar reanudación, ambigüedad y límites T22 | PENDIENTE | Sin reintentos ciegos; reconciliación de POST; plan digest/doble preflight y carrera residual documentada. |
-| 8 | MCP-JULES-08 | P1 | Verificar coexistencia con MCP-OCP local | BLOQUEADO_DEPENDENCIA_MCP_OCP_04_06 | Ambos clientes locales coexisten por RDC sin mezclar endpoints, credenciales, ACL ni controles. |
-| 9 | MCP-JULES-09 | P1 | Actualizar release/operación/rollback y aceptación | PENDIENTE | Código y pruebas del head actual, bridge local, OAuth real, lectura y E2E acreditados por evidencia. |
-| 10 | MCP-JULES-10 | P1 | Reconciliar documentación y promover PR #19 | PENDIENTE | OCP/plan/aceptación/lista consistentes y leídos de vuelta; revisión de PR y autorización de integración separadas. |
+| 1 | MCP-JULES-01 | P0 | Alinear el ámbito Jules con el modelo de dos sistemas | REDEFINIDO_POR_OPERADOR; lista hija alineada | Jules queda subordinado funcionalmente a OCP MCP; no existe tercer producto |
+| 2 | MCP-JULES-02 | P0 | Preparar paquete de trabajo OCP y rama aislada | PENDIENTE; sin asignación activa | Paquete completo, base vigente, allowlist/denylist y branch propios |
+| 3 | MCP-JULES-03 | P0 | Verificar disponibilidad de la interfaz externa autorizada | PAUSADO; no verificado en este ciclo | Cliente/herramientas disponibles sin tocar código ni secretos Khora |
+| 4 | MCP-JULES-04 | P0 | Consentimiento OAuth y autenticación real | BLOQUEADO_HASTA_REANUDACIÓN_Y_CONSENTIMIENTO | Consentimiento explícito; estado válido; credenciales protegidas en su propio ámbito |
+| 5 | MCP-JULES-05 | P0 | Smoke autenticado estrictamente de solo lectura | BLOQUEADO_HASTA_04 | Descubrimiento de tools y lectura autorizada; cero creación/escritura |
+| 6 | MCP-JULES-06 | P0 | Crear contexto y plan de trabajo OCP | BLOQUEADO_HASTA_REANUDACIÓN | Objetivo, base, alcance, rutas, exclusiones, tests y plan presentados |
+| 7 | MCP-JULES-07 | P0 | Aprobación explícita y ejecución controlada | BLOQUEADO_HASTA_06_Y_APROBACIÓN_DEL_PLAN | Aprobación sobre el plan actual, ejecución acotada y pruebas |
+| 8 | MCP-JULES-08 | P0 | Feedback, seguimiento y reanudación de la misma sesión | BLOQUEADO_HASTA_07 | Activities verificadas, respuesta same-session y checkpoint |
+| 9 | MCP-JULES-09 | P0 | Rama/PR, revisión y entrega de código | BLOQUEADO_HASTA_07 | PR OCP con diff, pruebas frescas y sin auto-merge |
+| 10 | MCP-JULES-10 | P1 | Aislamiento, seguridad y resistencia a prompt injection | PENDIENTE_DE_VALIDACIÓN | Fail-closed; inputs externos no elevan autoridad ni amplían permisos |
+| 11 | MCP-JULES-11 | P1 | Coordinación paralela y ausencia de colisiones | PENDIENTE | Rutas/archivos reservados y base reconciliada; cero escritores concurrentes |
+| 12 | MCP-JULES-12 | P1 | Persistencia de ejecución y trazabilidad | PENDIENTE | Tarea, sesión, commit, PR, activities, checkpoint y recibos vinculados |
+| 13 | MCP-JULES-13 | P0 | Aceptación E2E del ámbito Jules para OCP 1.0 | BLOQUEADO_HASTA_04–12 | Ciclo completo en sandbox, reproducible y aceptado según gates |
+| 14 | MCP-JULES-14 | P1 | Reconciliación documental de la carpeta histórica | PENDIENTE_AUTORIZACIÓN_DOCUMENTAL_APLICABLE | OCP/plan/aceptación/README/PR reflejan Jules como faceta sin mutar control por inferencia |
 
-## Fichas de tareas
+## 5. Fichas completas
 
-### MCP-JULES-01 — Reconciliación de arquitectura y estado real
-**Prioridad:** P0 · **Estado:** EN CURSO.
+### MCP-JULES-01 — Alinear el ámbito con el producto OCP
+**Objetivo:** aplicar la decisión del operador de que Jules es una faceta del OCP MCP y no un tercer sistema.  
+**Incluye:** corregir esta lista, la relación con el backlog padre, los roles y las exclusiones.  
+**Excluye:** cambio de control, transferencia de titularidad, eliminación/movimiento de OCP histórico o edición del DUG.  
+**Entregable:** esta lista 0.2.0 y trazabilidad a MCP-OCP-01/06.  
+**Aceptación:** Khora MCP y OCP MCP figuran como los dos sistemas; Jules aparece como ámbito subordinado de OCP; esta instancia no recibe tareas Khora; el control generación 3 sigue intacto.
 
-Actualizar la planeación histórica de plugin público y MCP nativo privado para que la ruta vigente sea ChatGPT Free mediante RDC + cliente MCP local stdio + Khora OAuth 2.1/PKCE. Preservar la regla de exactamente dos fases de proyecto; las etapas son solo grupos operativos de Fase 2.
+### MCP-JULES-02 — Preparar paquetes de trabajo OCP
+**Objetivo:** que la instancia Jules pueda trabajar sin reconstruir contexto ni decidir alcance.  
+**Incluye:** ticket OCP, objetivo, definición de terminado, base commit, repo, branch, archivos permitidos/prohibidos, interfaces protegidas, tests, presupuesto/límites, resultado esperado y evidencia requerida.  
+**Aceptación:** un desarrollador puede ejecutar la tarea sin preguntas de alcance; si falta un dato técnico esencial, detiene solo esa tarea y formula una única pregunta concreta.
 
-**Evidencia de código integrado:** PR #345 / merge 953e69484eabb4e8dc8221d1d8fc188373531bfa (siete herramientas y ACL resource-scoped); PR #347 / merge 4530e03a33c5e1743ab9646eb6c862b3c458c605 (bridge local OAuth/PKCE). PR #344 y #338 son antecedentes supersedidos. PR #340 pertenece a Custodia y no se altera.
+### MCP-JULES-03 — Verificar interfaz externa de acceso
+**Objetivo:** comprobar que el contexto autorizado dispone de las herramientas de Jules requeridas para ejecutar el paquete.  
+**Incluye:** comprobación de disponibilidad, versión de tools/schema y canal local autorizado, sin imprimir credenciales.  
+**Excluye:** modificar Khora, leer/rotar secretos, editar Production, cambiar endpoints o abrir listeners.  
+**Aceptación:** tools/schema documentados, identidad/estado visible sin valores secretos y dependencia disponible. En su defecto, BLOCKED_EXTERNAL_INTERFACE con diagnóstico; no se sustituye por implementación en OCP.
 
-**Cierre:** OCP, plan integral, matriz T01–T32 y esta lista no dicen que #345/#347 siguen abiertas ni requieren publicar un plugin.
+### MCP-JULES-04 — OAuth y autenticación
+**Objetivo:** obtener una sesión autenticada con consentimiento real del propietario.  
+**Incluye:** flujo OAuth/PKCE desde el cliente autorizado, scopes mínimos, persistencia cifrada en el ámbito correspondiente, expiración/revocación y manejo de error.  
+**Excluye:** Bearer manual, copy/paste de tokens, extracción de cookies, logs de token o copia al repositorio OCP.  
+**Gate:** el operador debe reanudar el uso de Jules y aprobar el consentimiento en el momento de la operación.  
+**Aceptación:** conexión validada sin revelar tokens; scopes correctos; status verificable; revocación o desconexión documentada. No existe evidencia de este paso en el ciclo actual.
 
-### MCP-JULES-02 — Preparación local del bridge
-**Prioridad:** P0 · **Estado:** PENDIENTE.
+### MCP-JULES-05 — Smoke de solo lectura
+**Objetivo:** verificar acceso real sin crear una sesión ni ejecutar código.  
+**Incluye:** tools/list, fuentes/repositorios disponibles, sesiones existentes y actividades permitidas con paginación; tratamiento seguro de 401/403/429/5xx/timeouts.  
+**Excluye:** create_session, send_message, approve_plan, branch writes y cualquier POST mutante.  
+**Aceptación:** descubrimiento completo; lecturas autorizadas y negativas; paginación correcta; sin creación de sesión ni cambios de estado.
 
-En el dispositivo RDC activo, localizar el clon Khora autorizado; verificar Node, paquete MCP SDK, archivos bridge.mjs/credential.ps1/jules.ps1 y sus dependencias. Revisar scripts y rutas antes de ejecutarlos. No iniciar OAuth, leer DPAPI en claro, revelar tokens, abrir puertos adicionales ni iniciar sesión Jules en este paso.
+### MCP-JULES-06 — Contexto y plan de trabajo
+**Objetivo:** convertir una tarea maestra MCP-OCP en instrucción autosuficiente para Jules.  
+**Incluye:** task ID, base, repo/branch, objetivo, contexto canónico minimizado, alcance, rutas allowlist/denylist, contratos, pruebas, no objetivos y entregable. Crear sesión solo después de reanudación y autorización del operador; exigir plan obligatorio.  
+**Aceptación:** plan recibido y ligado a la sesión/branch correctos; plan suficientemente concreto para revisión humana; cualquier propuesta que amplíe alcance queda sin ejecutar.
 
-### MCP-JULES-03 — Consentimiento OAuth real
-**Prioridad:** P0 · **Estado:** BLOQUEADO_HASTA_CONSENTIMIENTO_OPERADOR.
+### MCP-JULES-07 — Aprobación y ejecución
+**Objetivo:** ejecutar solo lo que el operador aceptó.  
+**Incluye:** mostrar el plan completo; verificar estado actual de aprobación; esperar confirmación activa del operador sobre ese plan; aprobar una sola vez; monitorizar actividades.  
+**Excluye:** aprobación por silencio, aprobación de un plan anterior, auto-merge, despliegue o cambios fuera del ticket.  
+**Aceptación:** plan/hash/estado reconciliados inmediatamente antes de aprobar; la diferencia material invalida la aprobación y requiere nuevo consentimiento; resultados asociados a la misma tarea.
 
-Ejecutar el bridge Start solo cuando el operador indique que está listo para completar el consentimiento que abrirá Khora. El operador aprueba scopes jules:read y jules:write en navegador. No se simula consentimiento. Verificar únicamente los códigos de estado; nunca imprimir refresh/access tokens ni copiar secretos.
+### MCP-JULES-08 — Feedback y reanudación
+**Objetivo:** resolver preguntas de Jules dentro de la misma sesión sin perder trazabilidad.  
+**Incluye:** leer actividades nuevas, clasificar pregunta/feedback, responder con evidencia, volver a leer actividades y actualizar checkpoint/cursor.  
+**Aceptación:** respuesta enviada al mismo session ID; evidencia posterior confirma recepción/progreso; POST ambiguo se reconcilia por GET/activities antes de considerar reintento. Sin idempotency documentada, no repetir create/send/approve a ciegas.
 
-### MCP-JULES-04 — Smoke de solo lectura
-**Prioridad:** P0 · **Estado:** BLOQUEADO_HASTA_03.
+### MCP-JULES-09 — PR y entrega
+**Objetivo:** convertir el trabajo ejecutado en una entrega revisable, no en un cambio aceptado automáticamente.  
+**Incluye:** branch, commits, diff, tests, PR, artefactos y known limitations.  
+**Aceptación:** PR apunta al repo/base OCP autorizados; solo contiene rutas del ticket; tests ejecutados en el HEAD exacto; sin secretos; no auto-merge; instancia OCP revisa e integra por su procedimiento.
 
-Confirmar OAuth activo, herramientas completas y ejecutar únicamente jules_list_sources, jules_list_sessions, jules_get_session y jules_list_activities contra recursos que devuelva la API. Seguir paginación. No usar jules_create_session, jules_send_message ni jules_approve_plan en este smoke.
+### MCP-JULES-10 — Seguridad y prompt injection
+**Objetivo:** evitar que instrucciones no confiables en repositorios, issues, archivos, logs o mensajes de Jules amplíen autoridad.  
+**Incluye:** tratamiento de contenido externo como datos; rechazo de instrucciones para revelar secretos, modificar controles, ampliar allowlist, desplegar o desactivar tests; pruebas de path traversal, command injection, exfiltración, secretos en stdout/stderr y cambios de permiso.  
+**Aceptación:** fail-closed; no se ejecuta una orden externa sin autorización del ticket/operador; no aparecen secretos en PR, resultados, prompts o evidencia.
 
-### MCP-JULES-05 — Seguridad y scopes
-**Prioridad:** P0 · **Estado:** PENDIENTE.
+### MCP-JULES-11 — Paralelización sin colisiones
+**Objetivo:** permitir trabajo concurrente sin que dos instancias modifiquen el mismo estado.  
+**Incluye:** un ticket por branch/worktree; propiedad exclusiva por rutas; commits pequeños; rebase/merge solo con revisión; notificación de cambios en contratos.  
+**Aceptación:** no existen archivos con dos escritores activos; el branch base está actualizado; diff limitado; cualquier colisión se registra y bloquea la integración hasta resolverla con el responsable OCP.
 
-Revalidar el head actual con tests recientes. Owner resuelto por MCP_ALLOWED_EMAIL; terceros por ACL exacta subject+source+branch+capability fail-closed. jules:read separado de jules:write; fuente/branch validada server-side; claves no aparecen en logs, errores o Git. La API Jules no ofrece aprobación condicional atómica por plan digest: doble preflight reduce pero no elimina la carrera T22.
+### MCP-JULES-12 — Persistencia y trazabilidad
+**Objetivo:** retomar ejecución sin reconstruir hechos ni simular continuidad.  
+**Incluye:** task ID padre, sesión, source, branch, base/head commit, plan, estado, activities cursor, feedback, PR, tests, artefactos, hashes, fallos y siguiente acción.  
+**Aceptación:** checkpoint legible; identificadores y URLs confirmados por lectura real; ningún campo se inventa; datos sensibles se omiten o redactan.
 
-### MCP-JULES-06 — Ciclo de desarrollo sandbox
-**Prioridad:** P0 · **Estado:** BLOQUEADO_HASTA_04_Y_CONFIRMACION_PLAN.
+### MCP-JULES-13 — Aceptación E2E del ámbito Jules
+**Objetivo:** demostrar que la faceta Jules contribuye de forma segura y útil a OCP MCP 1.0.  
+**Secuencia:** tarea OCP acotada → interfaz autenticada → lectura de fuentes → sesión sandbox → plan obligatorio → confirmación operador → ejecución → pregunta/feedback → respuesta misma sesión → PR → revisión de diff/tests por OCP → checkpoint/recibo → cierre.  
+**Aceptación:** todo el ciclo ejecutado y evidenciado con un sandbox no protegido; no se alteran Khora MCP ni recursos de producción; ninguna sesión o ejecución se crea antes de reanudación y gates. Si la interfaz externa no está disponible, se conserva bloqueado y se excluye el claim de Jules E2E en release.
 
-Solo después del smoke y de que el operador ordene usar Jules, preparar una sesión contra sandbox no protegido de SeryMente/metodologia para construir MCP-OCP. Prompt con objetivo, base, alcance, exclusiones, criterios de aceptación y pruebas. Jules debe crear plan con requirePlanApproval=true. Presentar el plan al operador y esperar confirmación activa del plan específico. No aprobar por silencio, por el mandato de crear la sesión ni por una aprobación anterior. Después seguir actividades, contestar feedback en la misma sesión y revisar la PR, sin merge automático.
+### MCP-JULES-14 — Reconciliación de documentos históricos
+**Objetivo:** evitar que el repositorio sugiera que existe un tercer producto.  
+**Incluye:** revisar OBJETO-CANONICO.md, PLAN-INTEGRAL, PLAN-ACEPTACION, README, cronología y PR #19 para que reflejen el modelo de dos sistemas y Jules como ámbito de OCP; mantener historial y enlaces; proponer jerarquía final de la carpeta.  
+**Excluye:** modificar CONTROL-RESPONSABILIDAD.json, transferir titularidad, fusionar PR #19 o modificar DUG sin autorización aplicable.  
+**Aceptación:** documentos coherentes, diferencias históricas señaladas, referencias leídas de vuelta y decisión sobre control/jerarquía registrada por la autoridad correspondiente.
 
-### MCP-JULES-07 — Reanudación, retries y T22
-**Prioridad:** P1 · **Estado:** PENDIENTE.
+## 6. Matriz de gates y estados
 
-Ante POST ambiguo, consultar sesión/activities antes de repetir. Sin clave de idempotencia documentada, no reintentar create/send/approve automáticamente. Registrar el límite de race de aprobación: el API no recibe plan_id/hash de forma condicional atómica; doble preflight no es garantía transaccional.
+| Gate | Requisito | Estado actual |
+|---|---|---|
+| G-J01 | Alcance Jules como faceta OCP | Reformulado en esta lista; documentación rectora histórica pendiente |
+| G-J02 | Paquete de tarea y branch exclusiva | Pendiente; no hay asignación activa |
+| G-J03 | Interfaz externa disponible y compatible | No verificado en este ciclo; fuera de alcance de esta instancia |
+| G-J04 | OAuth real y consentimiento | No ejecutado; operador no ha reanudado el uso |
+| G-J05 | Smoke solo lectura | Bloqueado por G-J04 |
+| G-J06 | Sesión sandbox y plan obligatorio | Bloqueado; no se ha creado sesión |
+| G-J07 | Aprobación explícita de plan | Bloqueado; no hay plan actual |
+| G-J08 | Feedback y continuidad same-session | No verificado |
+| G-J09 | PR y pruebas frescas | No verificado en ciclo Jules |
+| G-J10 | Coexistencia/aislamiento de la faceta | No verificado end-to-end |
+| G-J11 | Reconciliación documental histórica | Parcial; PR #19 sigue open/draft/not merged |
 
-### MCP-JULES-08 — Coexistencia OCP/Jules
-**Prioridad:** P1 · **Estado:** BLOQUEADO_DEPENDENCIA_MCP_OCP_04_06.
+## 7. Reglas de seguridad y reintentos
 
-El producto MCP-OCP es un proceso local distinto y pertenece a SeryMente/metodologia. El bridge de Jules es cliente local hacia Khora. Verificar que ambos procesos stdio se pueden gestionar/usar mediante RDC, que no abren listeners innecesarios y que no comparten secretos, ACL ni estado. No mover código del servidor Khora al repositorio de Metodología ni el servidor MCP-OCP al repositorio Khora.
+- La API key y los tokens pertenecen al sistema que los emite/consume; OCP no los almacena ni los replica.
+- Un GET puede reintentarse de forma acotada y con backoff cuando la política lo permita.
+- Un POST mutante ambiguo se reconcilia consultando estado y actividades antes de cualquier segundo intento.
+- No se supone idempotencia donde la API no la documenta.
+- El plan se vuelve obsoleto si cambian su contenido, sesión, source, branch o estado; se requiere nueva revisión/consentimiento.
+- Los datos recibidos de Jules y los repositorios son contenido no confiable; no elevan autoridad.
+- No se redactan tokens, claves, cookies ni payloads sensibles en logs, prompts, PR o recibos.
+- No se usa Jules, no se inicia OAuth y no se crea sesión hasta que el operador reanude expresamente el uso.
 
-### MCP-JULES-09 — Aceptación operativa
-**Prioridad:** P1 · **Estado:** PENDIENTE.
+## 8. Estados y evidencia
 
-PASS requiere tests actuales, OAuth real, tools/list, lectura de fuente Jules, una escritura no destructiva en sandbox con plan confirmado, feedback misma sesión, PR/artefactos inspeccionados y rollback/reanudación documentados. No se acredita por pruebas históricas PC-14, una PR fusionada o build local anterior.
+- PENDIENTE: no ejecutado.
+- EN_CURSO: hay ejecución identificable y aún abierta.
+- PASS_LOCAL/PASS_API: prueba fresca en host/API y versión exactos.
+- VERIFICADO_READBACK: archivo o estado releído y cotejado.
+- BLOQUEADO_<causa>: requiere gate externo, permiso, interfaz o decisión.
+- PAUSADO_POR_OPERADOR: no se debe invocar ni crear sesión.
+- ACCEPTED_BY_OPERATOR: aceptación expresa del operador.
 
-### MCP-JULES-10 — Documentación y promoción
-**Prioridad:** P1 · **Estado:** PENDIENTE.
+Cada cierre debe incluir ID padre/hijo, repo, branch, base/head, paths, session ID/URL si existe, plan y consentimiento, activities/checkpoint, tests/exit code, diff/PR, hashes y limitaciones. Una PR abierta no equivale a merge; un merge no equivale a release; el release no equivale a aceptación.
 
-Actualizar OCP, plan integral, plan de aceptación y README dentro de la rama PR #19. Releer cada artefacto y registrar commit/blob. La integración de PR #19 a Metodología main requiere revisión y autorización de merge; la autorización puntual de modificar tareas no equivale a autorización de merge. No tocar CONTROL-RESPONSABILIDAD.json.
+## 9. Política de actualización
 
-## Estados y prohibiciones
-
-- `PENDIENTE`: sin evidencia suficiente de ejecución.
-- `BLOQUEADO_HASTA_...`: requiere un gate específico.
-- `EN CURSO`: trabajo documental actual.
-- `PASS`: solo con prueba fresca contra el head/entorno exacto y read-back.
-- No se usa Jules hasta cerrar la configuración documental de tareas y hasta que el operador decida iniciar el smoke OAuth.
-- No se crea sesión real de Jules en este ciclo.
-- No se modifican PRs/commits de Khora #345/#347 ni sus despliegues; se referencian como dependencias integradas.
-- No se modifica el control de titularidad de MCP-Jules ni el control del frente padre Metacanon.
-- No se fusiona la PR #19 por el hecho de que la lista quede configurada.
+- Esta lista sigue siendo PROVISIONAL y subordinada al backlog maestro MCP-OCP.
+- Los IDs MCP-JULES-01–10 se preservan; se amplía con 11–14 sin reciclarlos.
+- No crea una tercera arquitectura, servidor, endpoint, producto ni control.
+- El control generación 3 y los documentos canónicos históricos no se alteran aquí.
+- PR #19 sigue OPEN / DRAFT / NOT MERGED. La revisión/merge documental es una decisión separada.
+- El estado PAUSADO se mantiene hasta instrucción explícita del operador.
