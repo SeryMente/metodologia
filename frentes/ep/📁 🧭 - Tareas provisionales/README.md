@@ -20,7 +20,7 @@ El patrón de materialización sigue el registro de tareas provisionales de Gobe
 |---|---|---|---|
 | EP-TASK-001 | pendiente | NCL — Navegador Compartido Local: integración de Playwright y KeePassXC | [núcleo](./📁%20🧩%20-%20EP-TASK-001%20-%20Integración%20NCL/README.md) |
 | EP-TASK-002 | en_curso | Datos de usuario OCP en Backblaze B2; separación GitHub/B2 y recuperación por perfil | [núcleo](./📁%20🧩%20-%20EP-TASK-002%20-%20Persistencia%20provisional%20Backblaze/README.md) |
-| EP-TASK-003 | en_curso | Workspace Ser y Mente con todos los repositorios, extensiones Chrome, perfiles de ubicación y volatilidad | [núcleo](./📁%20🧩%20-%20EP-TASK-003%20-%20Mapa%20integral%20de%20construcción%20EP/README.md) |
+| EP-TASK-003 | en_curso | Materialización del workspace y dead-man trigger exclusivo para ubicaciones distintas de CECEQ | [núcleo](./📁%20🧩%20-%20EP-TASK-003%20-%20Mapa%20integral%20de%20construcción%20EP/README.md) |
 
 ## Estado de continuidad · 2026-10-31
 
@@ -100,6 +100,6 @@ La entrada INSTRUCCION-MATERIALIZACION-UBICACIONES-20261107.txt actualiza el rep
 - EP-TASK-001 permanece pendiente y sin cambio. No se crea otra tarea ni se autoriza implementación local, activación del Guardian, borrado o cambios en los repositorios consumidores por esta actualización documental.
 
 
-## Rectificación de ubicación y cifrado ubicuo · 2026-11-07
+## Rectificación de ubicación y alcance austero · 2026-11-07
 
-El nombre canónico confirmado es CECEQ / LOC-CECEQ. En toda ubicación EP exige BitLocker usando la misma contraseña maestra de la bóveda canónica de variables de entorno. La única excepción de ciclo de vida es que CECEQ conserva el contenedor/carpeta cifrado al cierre; las demás ubicaciones volatilizan automáticamente el workspace. EP-TASK-003 contiene la política vigente; no se activa el Guardian hasta completar la adaptación/pruebas del backlog.
+El nombre canónico confirmado es CECEQ / LOC-CECEQ. BitLocker es obligatorio en toda ubicación con la misma contraseña maestra de la bóveda canónica. CECEQ conserva el workspace cifrado. Fuera de CECEQ, EP-TASK-003 contempla únicamente el dead-man trigger por terminación del proceso de control de la sesión EP. Guardian, vigilancia anti-exfiltración, heartbeat, polling, inactividad, tareas programadas y monitoreo en segundo plano quedan fuera de esta versión.
