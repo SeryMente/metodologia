@@ -19,8 +19,8 @@ El patrón de materialización sigue el registro de tareas provisionales de Gobe
 | ID local | Estado | Tarea | Núcleo |
 |---|---|---|---|
 | EP-TASK-001 | pendiente | NCL — Navegador Compartido Local: integración de Playwright y KeePassXC | [núcleo](./📁%20🧩%20-%20EP-TASK-001%20-%20Integración%20NCL/README.md) |
-| EP-TASK-002 | en_curso | Persistencia multiubicación EP/Metodología y continuidad del servicio MCP-OCP; bucket único OCP-MCP | [núcleo](./📁%20🧩%20-%20EP-TASK-002%20-%20Persistencia%20provisional%20Backblaze/README.md) |
-| EP-TASK-003 | en_curso | Mapa integral de construcción EP y delta de aprovechamiento | [núcleo](./📁%20🧩%20-%20EP-TASK-003%20-%20Mapa%20integral%20de%20construcción%20EP/README.md) |
+| EP-TASK-002 | en_curso | Datos de usuario OCP en Backblaze B2; separación GitHub/B2 y recuperación por perfil | [núcleo](./📁%20🧩%20-%20EP-TASK-002%20-%20Persistencia%20provisional%20Backblaze/README.md) |
+| EP-TASK-003 | en_curso | Workspace Ser y Mente con todos los repositorios, extensiones Chrome, perfiles de ubicación y volatilidad | [núcleo](./📁%20🧩%20-%20EP-TASK-003%20-%20Mapa%20integral%20de%20construcción%20EP/README.md) |
 
 ## Estado de continuidad · 2026-10-31
 
@@ -89,3 +89,12 @@ La regla se adopta para tareas provisionales de este contenedor por instrucción
 **OEP:** [OEP.md](../OEP.md) §90–§93.  
 **Índice provisional:** `frentes/ep/📁 🧭 - Tareas provisionales/README.md`.  
 **No crear:** un OCP alternativo, un tablero/bitácora paralelos, control de responsabilidad independiente, sesión/folio propios ni un segundo objeto de estado.
+
+
+## Reorientación de tareas por instrucción rectora · 2026-11-07
+
+La entrada INSTRUCCION-MATERIALIZACION-UBICACIONES-20261107.txt actualiza el reparto provisional:
+
+- EP-TASK-002: persistencia de datos de usuario OCP en Backblaze B2; GitHub queda para código y objetos canónicos. La segunda unidad/equipo físico deja de ser una condición de cierre.
+- EP-TASK-003: raíz workspace Ser y Mente, materialización dinámica de todos los repositorios actuales de SeryMente, sincronización obligatoria de extension/ para extensiones Chrome, perfiles de ubicación y reutilización del Guardian/hombre muerto.
+- EP-TASK-001 permanece pendiente y sin cambio. No se crea otra tarea ni se autoriza implementación local, activación del Guardian, borrado o cambios en los repositorios consumidores por esta actualización documental.
