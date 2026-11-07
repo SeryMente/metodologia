@@ -1,7 +1,7 @@
-# EP-TASK-003 · Mapa integral de la construcción de Entorno Persistente y delta de aprovechamiento
+# EP-TASK-003 · Materialización del workspace y dead-man trigger fuera de CECEQ
 
 **Naturaleza:** tarea provisional vinculada al frente EP; no crea un frente, OCP, titularidad, sesión ni folio global propio.  
-**Estado:** `en_curso` — inventario documental iniciado; mapa integral y delta aún no completos.  
+**Estado:** `en_curso` — alcance reducido; diseño del disparador delimitado, implementación pendiente.  
 **Identificador:** `EP-TASK-003` (local al registro provisional).  
 **Responsabilidad de seguimiento:** frente EP, bajo su OEP.  
 **Origen:** instrucción directa del operador en esta conversación, 2026-10-31.  
@@ -251,3 +251,18 @@ Estado: regla documental corregida y registrada; activación del Guardian, progr
 
 
 **Fuente de perfil y política vigentes:** INSTRUCCION-BITLOCKER-CECEQ-20261107.txt y PERFIL-CECEQ-POLITICA-20261107.json. Estos artefactos superseden la grafía errónea LOC-CSEC/LOC-CCEC y formalizan BitLocker en todas las ubicaciones con conservación cifrada exclusiva de CECEQ.
+
+
+## 11. Alcance vigente reducido por instrucción expresa · 2026-11-07
+
+Esta sección supersede para el trabajo activo los objetivos de inventario, Guardian y vigilancia de las secciones anteriores. Se conserva lo anterior únicamente como antecedente; no se ejecutarán sus actividades más amplias.
+
+- Workspace: carpeta `Ser y Mente` en el Escritorio efectivo de la sesión Windows, con los repositorios actuales de la organización SeryMente. Los repositorios que sean extensiones Chrome mantienen su carpeta cargable `extension/`, sincronizada con el commit fuente.
+- Cifrado: BitLocker obligatorio en toda ubicación. Se utiliza la misma contraseña maestra de la bóveda canónica de variables de entorno.
+- CECEQ: conservar el workspace cifrado al cierre; no volatilizarlo automáticamente.
+- Ubicaciones distintas de CECEQ: revisar e implementar únicamente un dead-man trigger ligado a la terminación del proceso que mantiene abierta la sesión EP. Al dispararse: bloquear BitLocker, desmontar y eliminar exclusivamente el contenedor/carpeta de trabajo EP.
+- Diseño anterior consultado: KHORA OEP §28 (concepto de pérdida de control autorizado), §§29–30 como contexto de limpieza; `10-guardian.ps1` y `11-cleanup.ps1` como antecedentes. Se reutiliza solo el evento de terminación del proceso de control; no se porta el Guardian completo ni su secuencia histórica extensa.
+
+**Exclusiones explícitas de esta versión:** vigilancia anti-exfiltración; monitoreo de procesos, archivos, red o actividad; heartbeat; polling/sondeo; temporizador de inactividad; cierre de VS Code o de cualquier IDE; tarea AtStartup o tareas programadas; telemetría o vigilancia en segundo plano. No implementar, activar ni dejar estos componentes en el backlog de esta tarea.
+
+**Estado de ejecución:** actualización documental solamente. El dead-man trigger aún no está codificado ni activado. No se modificaron scripts, tareas de Windows, volúmenes ni archivos de trabajo.
