@@ -120,3 +120,65 @@ La evaluación de salvamento, simplificación o descarte de los componentes no u
 **No observado/no verificado:** estado actual de host/local y cualquier clave DPAPI; estado actual de login de B2; buckets y keys en cuenta B2; conexión de HARMONIA en un host vivo; sesiones Vercel actuales; uso/aceptación de producción por cada consumidor; restauración real multiubicación; inventario exhaustivo de Khora, MCP y artefactos históricos.
 
 **Siguiente acción:** ampliar el mapa por árbol de KHORA y Signal Interpreter, completar la reconciliación de EP-TASK-002 con la orden OCP-MCP, crear el prompt común no normativo para los consumidores y calcular el delta provisional frente a los requisitos urgentes. No se descarta ni modifica componente alguno.
+
+
+## 8. Nueva arquitectura de materialización, extensiones y perfiles de ubicación · 2026-11-07
+
+### 8.1 Entrada rectora
+
+Fuente literal preservada: INSTRUCCION-MATERIALIZACION-UBICACIONES-20261107.txt. Evidencia minimizada del host/perfil candidato: PERFIL-CSEC-PREFLIGHT-20261107.json. Esta entrada actualiza los diseños previos de workspace/selección de repositorios del OEP; no modifica código ni activa el bootstrap.
+
+### 8.2 Raíz del workspace y repositorios
+
+La raíz solicitada para la materialización local es:
+
+    <Escritorio efectivo del usuario Windows activo>/Ser y Mente/
+
+En cada instancia, el bootstrap debe consultar los repositorios existentes en la organización GitHub SeryMente y materializar sus carpetas bajo esa raíz. La selección estática o el inventario histórico de EP deja de ser el universo por defecto: la fuente debe ser el catálogo actual de la organización. Cada carpeta debe registrar repositorio, rama, commit/SHA y estado de sincronización para hacer reconstruible la materialización.
+
+La materialización se hace dentro del perímetro local protegido/efímero definido por EP. Antes de crear la raíz, resolver y validar el Escritorio real de la sesión Windows interactiva; no usar el Desktop del proceso RDC si pertenece a otra identidad.
+
+### 8.3 Contrato de extensiones Chrome
+
+Para cada repositorio que corresponda a una extensión Chrome debe existir dentro de la carpeta del repositorio una carpeta cargable denominada extension/. Esa carpeta es la ruta que el operador carga o refresca en Chrome.
+
+Después de cualquier modificación de la extensión, independientemente de su origen —complemento nativo de GitHub en ChatGPT, cambios directos en GitHub o puente con Jules cuando su servidor MCP esté disponible— debe actualizarse también la carpeta extension/ local. La actualización debe cotejar los archivos y el SHA contra el commit fuente; no dar por actualizada la extensión porque cambió el repositorio remoto. No se presume que el MCP/Jules ya esté conectado o disponible.
+
+### 8.4 Perfiles de ubicación
+
+La instrucción declara dos tipos de perfil, pero identifica expresamente uno: CSEC. Se registra de forma provisional:
+
+- LOC-CSEC: ubicación declarada por el operador como centro comunitario habitual; terminal HP ProDesk 400 G4 DM PC10RCIF4EI4, sesión de consola CENTRAL/fila4, perfil cargado C:/Users/fila4.
+- LOC-OTHER: categoría de trabajo fuera de CSEC o ubicación no reconocida. Es una interpretación del segundo tipo implícito, pendiente de confirmación; no se crean por ahora perfiles adicionales.
+
+El dictado escribió CSEC, pero su deletreo fue C-E-C-E-Q; la identidad nominal queda pendiente de validación por el operador.
+
+### 8.5 Huella de ubicación adquirida sin identificadores invasivos
+
+En el host activo se observaron: dispositivo RDC PC10RCIF4EI4; equipo PC10RCIF4EI4; HP ProDesk 400 G4 DM; Windows 11 Pro, build 26200; PowerShell 5.1.26100.9711; consola activa CENTRAL/fila4, sesión 4; perfil C:/Users/fila4; interfaz Ethernet, categoría de red 2 e IPv4 connectivity 4. No se capturaron dirección MAC, número de serie, SSID, dirección IP ni GPS.
+
+La asociación física a CSEC procede de la declaración del operador; estos atributos identifican el host/sesión y ayudan a detectar cambios, pero no constituyen geolocalización ni prueba única de presencia física. La evidencia se conserva como perfil candidato, no como autenticación definitiva de ubicación.
+
+**Conflicto de Escritorio:** en el perfil cargado de fila4, el registro User Shell Folders señala C:/Users/MantenimientoRCI/Desktop, mientras que el valor legado Shell Folders señala C:/Users/fila4/Desktop. El proceso RDC corre bajo CENTRAL/MantenimientoRCI; su GetFolderPath(Desktop) devuelve la primera ruta. La ruta efectiva del Escritorio para la sesión interactiva fila4 no está validada. No crear Ser y Mente hasta resolver esta discrepancia.
+
+### 8.6 Reutilización del hombre muerto histórico
+
+No rediseñar desde cero. Se localizaron y adquirieron como antecedentes:
+- OEP histórico de SeryMente/khora, §§28–30, blob 362f878237045e6a88e905b8e561c9dba4e0c4d9.
+- scripts/khora/modules/10-guardian.ps1, blob df9aba72f53915a75d20edf8888edd3a4b1d1950.
+- scripts/khora/modules/11-cleanup.ps1, blob c01643f665a667d040f8ec3fa16da30c93afb871.
+- ep-medio-architectura.md, blob 382e4a929a984a96926fd6f9080f80bedd109a0b, §§5, 10 y 15.
+
+Las reglas recuperadas contemplan cierre manual/solicitud cleanup.request, muerte del launcher/supervisor, cierre de VS Code, inactividad (15 minutos por defecto), vigilancia periódica y reinicio inesperado. El Guardian anterior sondeaba cada dos segundos y registraba heartbeat cada sesenta segundos. Para reinicio, una tarea AtStartup bajo SYSTEM y privilegio máximo limpia el contenedor exterior; permanece armada si quedan residuos y solo se desregistra cuando confirma su ausencia.
+
+La secuencia histórica de limpieza es: aceptar cierre; detener procesos de trabajo; intentar guardar perfil y continuidad remota; purgar secretos/variables y blobs DPAPI del Guardian; bloquear BitLocker; retirar el enlace del Escritorio; desmontar el VHDX; eliminar el contenedor y carpeta exterior; retirar la tarea solo tras verificar ausencia; cerrar el estado remoto. Si falla la persistencia, prevalece la confidencialidad y no se retiene una sesión sensible para intentar salvar cambios indefinidamente.
+
+### 8.7 Límite de “sin dejar rastro” y alcance seguro
+
+El requisito operativo se formula como: no dejar datos de usuario ni workspace en claro en las carpetas locales ordinarias; cifrar la instancia, eliminar de forma verificable los artefactos bajo control de EP, purgar credenciales y bloquear/desmontar el volumen. No se promete ausencia forense absoluta de todo metadato de Windows, registros del sistema, paginación, telemetría de seguridad o infraestructura externa. EP no alterará registros del sistema, datos ajenos, auditorías del host, archivos fuera de su contenedor ni medios que no controle.
+
+La instrucción de sesiones efímeras se registra como requisito. No se activó el Guardian, no se creó una tarea programada, no se borró ningún archivo ni se materializó el workspace. Las rutinas antiguas se reutilizarán solo después de validar su alcance contra el nuevo root Ser y Mente y obtener la validación del operador.
+
+### 8.8 Siguiente gate de esta tarea
+
+Validar con el operador: (1) nombre/código exacto de la ubicación CSEC/CECEQ; (2) categoría genérica de todas las demás ubicaciones; (3) ruta efectiva del Escritorio de fila4; (4) parámetros del Guardian anterior que se conservan, en particular los quince minutos de inactividad y los triggers de cierre; (5) el nivel de señal suficiente para asociar automáticamente el host a CSEC. Hasta esa validación, todo lo anterior es requisito documentado/propuesta de interpretación, no política local activada.
