@@ -48,9 +48,9 @@
     },
     {
       "path": "frentes/ep/README.md",
-      "bytes": 3354,
-      "sha256": "CC5CA31C73492E2F69B39F57CC170240FA29F143B6F1DC23F2722861C6EC3D61",
-      "git_blob": "8264b7f2ea4e9ff725278d72c4d50137520709f2"
+      "bytes": 3412,
+      "sha256": "6E733163D79838497CA8532AAFD8BE82E870C27DAA768862F40F315789A80B6B",
+      "git_blob": "9223c603b4dd89cca3ef85d67a5237046bfc4213"
     },
     {
       "path": "frentes/ep/artefactos/EP-H03-integracion-reproducible-parcial-20261011.zip.b64",
@@ -461,9 +461,9 @@
     },
     {
       "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.38.json",
-      "bytes": 3283,
-      "sha256": "28A891E620B8BBCB4C4225785CB52789BB0046FE0E80E1E451BC89A2EDF07D35",
-      "git_blob": "c104ecdac5e5fecffc4aaa6a37d69b314e932b57"
+      "bytes": 3406,
+      "sha256": "19A7F6D5BBB42E927E773250C39A812421DB1A27E46E9BDA52927092D69C6BDE",
+      "git_blob": "f90ee58129bdac782cf2eeb4ec8fdbf775d6243a"
     }
   ],
   "exclusions": [
