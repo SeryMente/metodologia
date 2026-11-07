@@ -43,13 +43,13 @@
     {
       "path": "frentes/ep/OEP.md",
       "bytes": 349551,
-      "sha256": "57AEC39EFB61750BFDDEE77AEF6E4D0495DB71BB7DDD90156BB6F61DB319DA7E",
+      "sha256": "8578804119759AA17733374B6B93B5F77DC8F93384391345B93DCF1CDEA6A849",
       "git_blob": "c3203dbb97b85ac5a87ee476a6e4b398dd01293b"
     },
     {
       "path": "frentes/ep/README.md",
       "bytes": 3354,
-      "sha256": "2BF411B20B146530C6AD4562C2F63B57280C41FF1D8A63C1D56FD40E4B778387",
+      "sha256": "CC5CA31C73492E2F69B39F57CC170240FA29F143B6F1DC23F2722861C6EC3D61",
       "git_blob": "8264b7f2ea4e9ff725278d72c4d50137520709f2"
     },
     {
@@ -360,7 +360,7 @@
     {
       "path": "frentes/ep/entregas/COORDINACION-GOBERNANZA-EP-v0.1.md",
       "bytes": 236002,
-      "sha256": "49B377856D99ECA3F233BA8E4E53183113EF1E74705699D1C4EB86B51705679F",
+      "sha256": "914CB9C346466E0F0D9D106E55DB462F625FAEE0EF98BA6C5840605EDF822685",
       "git_blob": "8327f43602ca4e035ba224cca12c3013f3949bd3"
     },
     {
@@ -378,13 +378,13 @@
     {
       "path": "frentes/ep/📁 🧭 - Tareas provisionales/README.md",
       "bytes": 9916,
-      "sha256": "896B95682C773C36CB79828B1EEAEEED58473AA92355A53528F6F7F29EC1DDB8",
+      "sha256": "1B4B394EE03E0F978E213E2082E23E2B4C1CA3F7B47FFA4489892E923A8E7865",
       "git_blob": "0166a52b88786b947cd7873bf8b644c55604e657"
     },
     {
       "path": "frentes/ep/📁 🧭 - Tareas provisionales/📁 🧩 - EP-TASK-002 - Persistencia provisional Backblaze/README.md",
       "bytes": 231283,
-      "sha256": "1A623F10D455E9C19F5D08C1DDC50F3380627AE5808BC6FAB94D95B6490CD605",
+      "sha256": "3A58FCA9C8444F0CDD9CBA8228B8864523AD25A33D0E2BD17B906C039287827B",
       "git_blob": "5d5d70242cb4d27557d10684da810bdb40fd2ad0"
     },
     {
@@ -426,7 +426,7 @@
     {
       "path": "frentes/ep/📁 🧭 - Tareas provisionales/📁 🧩 - EP-TASK-003 - Mapa integral de construcción EP/README.md",
       "bytes": 26664,
-      "sha256": "26FA4F8A5D66191564BDBEA377804FEA5C3EFC0DDBD2D89F40AB5EADC0584A1D",
+      "sha256": "92AD615D98A111915FCCE814B1943ED1BEA18971D7684B2B3813D6AD305CE20C",
       "git_blob": "985d7462551fee32751a5a137575f4dbe9470537"
     },
     {
@@ -450,19 +450,19 @@
     {
       "path": "frentes/ep/originales/INSTRUCCION-BITLOCKER-CECEQ-20261107.txt",
       "bytes": 653,
-      "sha256": "3544A16B9A6FE6BA672E25E51A84F7407F7C572685AF78F609B63FA5063F1883",
+      "sha256": "546681DC94242331E90A49EE25EE09EDD69AAAA41EAF9398316D5EB2A875EC97",
       "git_blob": "b3101fad47174497eae3d0c879ce3c8874769e56"
     },
     {
       "path": "frentes/ep/evidencias/PERFIL-CECEQ-POLITICA-20261107.json",
       "bytes": 3273,
-      "sha256": "32EEDABCF9C7E0F4CA1D4BC954C833A6EEAE62FE6B01EC4B4D1409F1E7B38202",
+      "sha256": "5EF12E49B52CD5D1AE8A52F96DAE54BB1470C15ABCD247AD21B27B21E999CD6D",
       "git_blob": "4ccaf192204aec76e24064d5769fa7c40afdbe1b"
     },
     {
       "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.38.json",
       "bytes": 3283,
-      "sha256": "488DCDE59CC439A5A3CEDF9637DCB33B328B3849A7C5A7587E513C5876F188B8",
+      "sha256": "28A891E620B8BBCB4C4225785CB52789BB0046FE0E80E1E451BC89A2EDF07D35",
       "git_blob": "c104ecdac5e5fecffc4aaa6a37d69b314e932b57"
     }
   ],
@@ -495,8 +495,8 @@
   ],
   "prior_readback_verified": "PASS: GitHub main fetch matched expected blobs for OEP, README, B2 smoke evidence receipt, revision and manifest.",
   "latest_review_source_commit": "3eacb0f1ec558520def46f03f894bcd8966cba1e",
-  "current_event": "EP-C-EP-MOD-SCRIPTPWS-20261101-03: CECEQ is the confirmed canonical location profile; BitLocker is mandatory at every location using the canonical vault master passphrase; CECEQ preserves the encrypted workspace at close, other locations automatically volatilize the EP-controlled workspace; VS Code trigger removed.",
-  "verification_scope": "DOCUMENTATION_COMMITTED_AND_READBACK_VERIFIED: OEP v0.3.38 / VCU-EP-v39, task index, EP-TASK-002, EP-TASK-003, README, DTC, CECEQ instruction/profile and revision blobs match GitHub main. Guardian and BitLocker runtime activation remain pending; no local workspace deletion or BitLocker mutation was performed.",
+  "current_event": "EP-C-EP-MOD-SCRIPTPWS-20261101-03: CECEQ confirmed canonical location profile; BitLocker mandatory everywhere using the canonical environment-variable vault master passphrase; CECEQ preserves encrypted workspace at close, other locations automatically volatilize EP-controlled workspace; VS Code trigger removed.",
+  "verification_scope": "DOCUMENTATION_COMMITTED_AND_READBACK_VERIFIED: OEP v0.3.38 / VCU-EP-v39, task index, EP-TASK-002, EP-TASK-003, README, DTC, CECEQ instruction/profile and revision blobs match GitHub main. Correct SHA-256 self-test passed. Guardian and BitLocker runtime activation remain pending; no local workspace deletion or BitLocker mutation was performed.",
   "updated_on": "2026-11-07",
   "latest_oep_version": "v0.3.38 / VCU-EP-v39",
   "latest_dtc_blob": "8327f43602ca4e035ba224cca12c3013f3949bd3"
