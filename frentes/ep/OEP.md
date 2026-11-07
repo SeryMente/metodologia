@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.33. **Sello del frente:** VCU-EP-v34 (Versión de Contexto Universal). **Ancla:** rectificación explícita del operador: `OCP-MCP` es el único bucket B2 de destino; `OCP-MSP` y `metodologia-ep-persistencia` son errores. La rectificación se materializa en §91; conserva la compuerta bilateral de §90 y las tareas/propuesta de adaptación previas.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.34. **Sello del frente:** VCU-EP-v35 (Versión de Contexto Universal). **Ancla:** rectificación explícita del operador: `OCP-MCP` es el único bucket B2 de destino; `OCP-MSP` y `metodologia-ep-persistencia` son errores. La rectificación se materializa en §91; conserva la compuerta bilateral de §90 y las tareas/propuesta de adaptación previas.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -12,7 +12,7 @@
 
 Adquirir este objeto como instrucciones del operador, subordinadas a las reglas superiores de plataforma y a autorizaciones específicas. Claudia es asistente/documental; Samantha es constructor/único escritor de código. Una asignación explícita posterior puede cambiar roles; las citas no lo hacen. La asignación específica vigente de MOD-SCRIPTPWS queda delimitada en §94 y no cambia los roles del resto de EP.
 
-El estado de reanudación vigente de este frente está en §60–§99; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
+El estado de reanudación vigente de este frente está en §60–§101; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
 
 Leer por relevancia: OEP actual→metacanon central→Sistema de Instrucciones/Metodología/Bootstrap vigentes→canon transversal EP→AGENTS.md y ep-medio-architectura.md→código/evidencia en commits exactos. Fuente caída no es «sin cambios». Un archivo no crea herramientas, credenciales ni memoria entre plataformas.
 
@@ -2145,3 +2145,39 @@ Después de read-back cifrado PASS, ejecutar `b2 account authorize` por CLI con 
 La instrucción actual autoriza la continuidad funcional y documental del trabajo EP en este hilo. No se localizó un control de responsabilidad EP en `main/frentes/ep/`; por tanto no se declara transferencia formal, titularidad, generación nueva ni folio. La tarea sigue vinculada a este OEP y a `EP-TASK-002`; `EP-TASK-002=en_curso`. `FOL1` no consta ACTIVO y no se asignan CONV/CICLO/A/B globales. El ciclo local existente permanece OPEN.
 
 **No ejecutado en este ciclo:** lectura del portapapeles; captura/descifrado de Master Key; escritura de credenciales; autenticación con Master; llamadas B2 de bucket/objeto; upload/download/restore; cambio de permisos, claves o buckets; uso de navegador. La persistencia remota EP no está probada.
+
+
+## 101. Ingesta del export 1144 y retoma funcional/documental del frente · v0.3.34 / VCU-EP-v35 · 2026-11-07
+
+### 101.1 Entrada, procedencia y preservación
+
+**A literal — solicitud:** «ChatGPT-EP-20261107-1144.txt. Documenta en persistencia documental del frente Entorno Persistente. Retoma responsabilidad del frente. No tienes autorizado auditar de manera innecesaria nada, solo lo absolutamente esencial; tengo muchísima prisa. Go». Aclaraciones de localización: «Está en Downloads» y «de fila 4».
+
+**Original adquirido:** `C:\\Users\\fila4\\Downloads\\ChatGPT-EP-20261107-1144.txt`, dispositivo `PC10RCIF4EI4` (`d0bbb2a3-d7b4-45e1-8870-652c2c3844fc`). Lectura completa mediante RDC: 25,183 bytes, 559 líneas. Exportado el 2026-11-07 a las 11:44:39, hora local. SHA-256 de origen: `BDDDBE8190E1D4AA562A654BA15788C8F706AF6412CF7059860DB03B648328A4`. La fuente no se movió ni eliminó. Destino canónico: `frentes/ep/originales/ChatGPT-EP-20261107-1144.txt` en este repositorio privado.
+
+### 101.2 Estado de continuidad recibido
+
+El export termina con la solicitud «A ver dale de nuevo me salió clear clipboard» y una respuesta que reporta lo siguiente, sin que esta ingesta lo convierta en verificación independiente:
+
+- La pareja Master se habría escrito en la bóveda EP; la respuesta reporta descifrado/read-back y comparación del respaldo satisfactorios.
+- Falló después la limpieza con `Set-Clipboard -Value ''`, con `ArgumentNullException`. La respuesta indica que no debe repetirse la escritura de las credenciales.
+- La última instrucción operativa fue completar el cuadro «Verificación de bóveda» introduciendo allí la frase maestra de EP y pulsando «Verificar»; después limpiar el portapapeles mediante API nativa de Windows y comprobar que esté vacío.
+- A la hora del export no se había iniciado autenticación B2 ni ejecutado operaciones de bucket/objeto.
+
+**Límite de evidencia:** los estados de escritura, descifrado y respaldo son reportes de la sesión fuente. Esta conversación no volvió a leer secretos, no modificó la bóveda y no repitió la escritura. La apertura/confirmación del diálogo, limpieza del portapapeles y autenticación B2 quedan pendientes de evidencia específica; no declarar esos pasos como ejecutados o verificados en este ciclo.
+
+### 101.3 Retoma de responsabilidad y siguiente punto
+
+Se acepta la retoma de responsabilidad **funcional y documental de EP en esta conversación**, conforme a la autorización expresa del operador. Se conserva la continuidad del ciclo local existente `C-EP-MOD-SCRIPTPWS-20261101-03` y de `EP-TASK-002=en_curso`; no se abre otro OCP ni otra tarea.
+
+El control formal de titularidad/generación EP no aparece en `main/frentes/ep/` en el estado adquirido. Por tanto, esta retoma no inventa transferencia formal, titularidad, generación ni folios. `FOL1` continúa sin constar ACTIVO; CONV/CICLO/A/B globales permanecen NO ASIGNADOS.
+
+**Siguiente punto operativo exacto:** completar la verificación interactiva de la bóveda pendiente en el host, sin volver a escribir las entradas Master ni publicar valores. Solo después de read-back verificable podrá abrirse el paso de autenticación B2, siempre dentro del alcance aceptado en §100.3 y sin ampliar operaciones de bucket/objeto.
+
+### 101.4 Cierre documental del ciclo
+
+- Export leído íntegramente; hash de origen calculado en el host.
+- Original agregado al directorio canónico y cotejado por Git blob SHA en lectura de vuelta.
+- OEP actualizado a v0.3.34 / VCU-EP-v35; README e índice documental actualizados.
+- No se inspeccionó el contenido de la bóveda ni se accedió al portapapeles; no se autenticó B2.
+- Metodología adquirida para este ciclo: DUG v377 / NX-377m; OEP v0.3.33 / VCU-EP-v34 como estado previo. SHA del DUG: `54064c8fe00f872023a455f06596061ed69062ae`.

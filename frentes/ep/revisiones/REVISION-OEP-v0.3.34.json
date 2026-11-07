@@ -1,0 +1,41 @@
+{
+  "schema": 1,
+  "version": "v0.3.34 / VCU-EP-v35",
+  "method_acquired": "DUG v377 / NX-377m; Metacanon 1.28; OEP §§72-73, 89-91, 100-101",
+  "base_commit": "53fe190e16d641d50dc868228a41bb79b034fed3",
+  "event": "EP-C-EP-MOD-SCRIPTPWS-20261101-03: ingesta de ChatGPT-EP-20261107-1144.txt y retoma funcional/documental; no transferencia formal de titularidad.",
+  "source": {
+    "path": "C:\\Users\\fila4\\Downloads\\ChatGPT-EP-20261107-1144.txt",
+    "device": "PC10RCIF4EI4",
+    "export_timestamp": "2026-11-07T11:44:39-06:00",
+    "bytes": 25183,
+    "lines": 559,
+    "sha256": "BDDDBE8190E1D4AA562A654BA15788C8F706AF6412CF7059860DB03B648328A4",
+    "acquisition": "RDC lectura completa y transferencia de bytes Base64 sin normalización de texto"
+  },
+  "checks": {
+    "source_file_found": true,
+    "source_read_complete": true,
+    "source_sha256_calculated": true,
+    "source_bytes_transferred_base64": true,
+    "source_git_readback_pending": true,
+    "oep_updated": true,
+    "readme_updated": true,
+    "manifest_index_update_included": true,
+    "vault_contents_read": false,
+    "master_credential_rewrite": false,
+    "clipboard_read_or_modified": false,
+    "b2_authentication": false,
+    "b2_bucket_or_object_operations": false,
+    "formal_responsibility_transfer": false
+  },
+  "continuity": {
+    "local_cycle": "C-EP-MOD-SCRIPTPWS-20261101-03",
+    "cycle_state": "OPEN",
+    "task": "EP-TASK-002",
+    "task_state": "en_curso",
+    "next_step": "Completar read-back interactivo de la bóveda y limpieza verificada del portapapeles; no repetir escritura Master. B2 auth permanece después de esa compuerta.",
+    "fol1": "PENDIENTE / NO ASIGNADO",
+    "global_folios": "NO ASIGNADOS"
+  }
+}

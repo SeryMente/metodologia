@@ -1,415 +1,439 @@
 ﻿{
-    "schema":  1,
-    "repository":  "SeryMente/metodologia",
-    "branch":  "main",
-    "front_folder":  "frentes/ep",
-    "files":  [
-                  {
-                      "path":  "METACANON-OBJETOS-CANONICOS.md",
-                      "bytes":  64953,
-                      "sha256":  "1db7a16892310c505ec3002e9439e35c11a13b2e5e36dee2829efeda201e042c",
-                      "git_blob":  "32c7a65ff2e83b3b76752ba2160427bd6e851a8f"
-                  },
-                  {
-                      "path":  "README.md",
-                      "bytes":  13123,
-                      "sha256":  "58039896e2867b29677dede02e32cf0971be3946bdef27174c08d1fb163d1c21",
-                      "git_blob":  "3d8d7d84de3ef39be9c01e423a955ab9ed77dc38"
-                  },
-                  {
-                      "path":  "REVISION-METACANON-1.1.json",
-                      "bytes":  778,
-                      "sha256":  "e53101e84845af06c0409819502a5474227501dc0e29ccc3739d7b8c3ef22e84",
-                      "git_blob":  "6a233854630a1024e950fcef3d64df69585efc8c"
-                  },
-                  {
-                      "path":  "REVISION-METACANON-1.2.json",
-                      "bytes":  640,
-                      "sha256":  "802f4d3d3b6daaa197a9485a6a30963d6720a42f3f1208aaeef4f7696ccb67bf",
-                      "git_blob":  "633dd080f6ee8bc418e7679e20a2d46247c6818f"
-                  },
-                  {
-                      "path":  "REVISION-METACANON-1.3.json",
-                      "bytes":  1040,
-                      "sha256":  "9a8ee22b8fb75627f96ac62029a5b04e567fe560c853726ff6073779646e4be1",
-                      "git_blob":  "fb4aada2f915e0a01f213dae265593349875d446"
-                  },
-                  {
-                      "path":  "REVISION-METACANON-1.5.json",
-                      "bytes":  1463,
-                      "sha256":  "501857e29efcdf843c2f78f550f6ab967afd25ab1d42f7986f01f4484f8a15fe",
-                      "git_blob":  "4e19c05d85e253d747f31b9321a46a7aa5005c39"
-                  },
-                  {
-                      "path":  "frentes/ep/OEP.md",
-                      "bytes":  325904,
-                      "sha256":  "4909C747FE466AF969C2DB1CD45F9DEE2B4F05E8FB2198773623170E74C42579",
-                      "git_blob":  "181a3e07e1365bb44a825c38f7cb54fbd3ee0b13"
-                  },
-                  {
-                      "path":  "frentes/ep/README.md",
-                      "bytes":  2252,
-                      "sha256":  "EB325AB3E5F641D395A7ABB695EC0A0F85EA0A4F32454922A35E9A9A1C3DBEE1",
-                      "git_blob":  "8bd9e712a1d3b95d911c54c00a13c35802668ce1"
-                  },
-                  {
-                      "path":  "frentes/ep/artefactos/EP-H03-integracion-reproducible-parcial-20261011.zip.b64",
-                      "bytes":  494061,
-                      "sha256":  "00c594f6c5f57c9dcb284701a9e627dd624f04a62494540f43dd835211a475ca",
-                      "git_blob":  "98cdb8b488c736913e821445cb2a8fee65ba52d6"
-                  },
-                  {
-                      "path":  "frentes/ep/artefactos/entrega-v0.2.0.zip.b64",
-                      "bytes":  122201,
-                      "sha256":  "372b5a536052ae6443105df0e3b63c09190b3892f6b871f69c4506183e425700",
-                      "git_blob":  "b9c00f85cf6ccd6e910b1b343ff91b01363c8b37"
-                  },
-                  {
-                      "path":  "frentes/ep/artefactos/restaurar-entrega-v0.2.0.cjs",
-                      "bytes":  909,
-                      "sha256":  "7e44547d702f67940169f33064bf199a36e337951dc89c289c8f1af44db4bd63",
-                      "git_blob":  "9f42f631f41a71e0c7fa5cdc46823050f8406375"
-                  },
-                  {
-                      "path":  "frentes/ep/evidencias/EP-H03-recibo-fuentes-post-section11.json",
-                      "bytes":  7088,
-                      "sha256":  "382471bd53676955dc1cb441e7ef883b1a34b7116f8401b33ee55b0734a77b06",
-                      "git_blob":  "30a22c88a9f93aef89e28419ca88a76262f5cbb9"
-                  },
-                  {
-                      "path":  "frentes/ep/evidencias/EP-H03-recibo-reconstruccion.json",
-                      "bytes":  576,
-                      "sha256":  "513fad00839224498144dce062536c2594bd4b49989ec50920893b885172e10f",
-                      "git_blob":  "93362942199b2c14e4c2cc06f07052ee0af3bf40"
-                  },
-                  {
-                      "path":  "frentes/ep/evidencias/INVENTARIO.md",
-                      "bytes":  1270,
-                      "sha256":  "41967dcb24a47ea2759d9e1cf90c3e8741f8750ae0a662010bc77cfefe85c21c",
-                      "git_blob":  "ddfa21cd5f6a1768fc55e1e6cba57cf443bbc2fd"
-                  },
-                  {
-                      "path":  "frentes/ep/evidencias/Revision-conjunta-ABC-local-prepare-only.md",
-                      "bytes":  129947,
-                      "sha256":  "0586e7cfb1cbeef2e5f4d495ba9bc450451b5c5594050485f75e63a74582a68d",
-                      "git_blob":  "b3395e72cb2a0b093916020dc66222b70bfff5f4"
-                  },
-                  {
-                      "path":  "frentes/ep/originales/ChatGPT-OGP - Addiction - 5-20261011-1633.txt",
-                      "bytes":  59349,
-                      "sha256":  "c15eff877888d7b9f1045d1206d3004b6ebf7e52e64a3a8c37980a60e80601f3",
-                      "git_blob":  "a90b812c73502e2ecb11236845be44d1974f9594"
-                  },
-                  {
-                      "path":  "frentes/ep/originales/conversacion-asistente.txt",
-                      "bytes":  79991,
-                      "sha256":  "655ae3f37e16aef6599125b06796d0da4b7c0a414bed30acf8148485c64a1007",
-                      "git_blob":  "5ef6319696aa7327595040c27215e062704552df"
-                  },
-                  {
-                      "path":  "frentes/ep/originales/conversacion-constructor.txt",
-                      "bytes":  61091,
-                      "sha256":  "fadfe197c265779287e2daf690da814c0a04128afa10e435c17cb93af537b44c",
-                      "git_blob":  "b05a99f355585b2e5f57958127e0b62336d32608"
-                  },
-                  {
-                      "path":  "frentes/ep/originales/encargo-documental-actual.txt",
-                      "bytes":  397,
-                      "sha256":  "d2265700ddfeec4687744463194ecdfb083bcc57eedc62e1ef3bbcdc0e9af208",
-                      "git_blob":  "c7b3645c8979e90e375e2ae735de861cd82bd953"
-                  },
-                  {
-                      "path":  "frentes/ep/originales/instruccion-asistencia-util-evento-327.txt",
-                      "bytes":  896,
-                      "sha256":  "d866bb694f289a198f02272dc983ed3e6d601beb0661ae37e918c3954025503e",
-                      "git_blob":  "f6cc498b6566e642617223855166b17137a90989"
-                  },
-                  {
-                      "path":  "frentes/ep/originales/instruccion-carpeta-20261011.txt",
-                      "bytes":  271,
-                      "sha256":  "a672580043a4b62787536abedd14dd7339f3f50d72377e720985c81dd7cbfc7a",
-                      "git_blob":  "fa6b58f23e1d32cfa58a15603fb137fe2de6ab7f"
-                  },
-                  {
-                      "path":  "frentes/ep/originales/instruccion-prioridad-pronostico-evento-388.txt",
-                      "bytes":  1139,
-                      "sha256":  "9b8219e765fa664a81b1f214617eb7b13094a7c2d30763fc48a7133f498f27dd",
-                      "git_blob":  "6542e00fcdd6d626d82c5df487c91e0c58199924"
-                  },
-                  {
-                      "path":  "frentes/ep/originales/instrucciones-gobierno-estructura-rdc-20261011.txt",
-                      "bytes":  665,
-                      "sha256":  "8bfafed36c691fac85ff041d5ac27721dea87d1eb6b16de8d2a31a302e2a3feb",
-                      "git_blob":  "2329e5c61b693cfce8d98fd0c77b8e5694994db3"
-                  },
-                  {
-                      "path":  "frentes/ep/originales/instrucciones-operador-hitos-RDC-provision-20261011.txt",
-                      "bytes":  1425,
-                      "sha256":  "66d2cbda5646f166e842594cdefcae676e36f9e73d762a5163305a8d64916f22",
-                      "git_blob":  "1b3a503c67eacb4174c48b57cf7c5743556668f5"
-                  },
-                  {
-                      "path":  "frentes/ep/originales/salida-asistente-ep-20261011-1452.md",
-                      "bytes":  5378,
-                      "sha256":  "18207cc9fc8ee1dda497ebd58408587d1827580598354693c3ac28de8473282f",
-                      "git_blob":  "44bdffc5f5ef923eb424c6229036474e7d637a50"
-                  },
-                  {
-                      "path":  "frentes/ep/originales/salida-constructor-ABC-local-evento-389.txt",
-                      "bytes":  16319,
-                      "sha256":  "bc59d19c989f89439da5310d06b60c417e15e2fb6af48f70ecdff27e532679f6",
-                      "git_blob":  "b79acf3f09c39b8068c6fa55fd3be57731267a0a"
-                  },
-                  {
-                      "path":  "frentes/ep/prompts/ACTUALIZAR-CLAUDIA-RECEPCION.txt",
-                      "bytes":  7160,
-                      "sha256":  "03568c7bc145443c26816f21a0e3bb66c83ced4af06d94615f02f01598e9469a",
-                      "git_blob":  "c2508d9de1e608f998bc79fed63969e90a3e7de4"
-                  },
-                  {
-                      "path":  "frentes/ep/prompts/CLAUDIA.txt",
-                      "bytes":  26304,
-                      "sha256":  "6c69028c8a1470793193c101bd083453dce6c575a5eb6d65d21b4f4aaf2ac9d4",
-                      "git_blob":  "d4d32af4e1732d6b5b02222e5e8e8f1ae3317b99"
-                  },
-                  {
-                      "path":  "frentes/ep/prompts/SAMANTHA.txt",
-                      "bytes":  27279,
-                      "sha256":  "d1478812ad3d4dc8b9c4739032aacebd89524231c979f04fbe26ca28c74adc5d",
-                      "git_blob":  "8c59db892a17a2fb0130254b9d7a885f43f10d13"
-                  },
-                  {
-                      "path":  "frentes/ep/revisiones/LECTURA-DE-VUELTA-07a1a574.json",
-                      "bytes":  1717,
-                      "sha256":  "1a3b7f07b2b9e2491a8fa59e7143437517554abbc6305ec9f07b0db17b381da4",
-                      "git_blob":  "b2ae32e1c42a5579cca07f936def69c893dd2cc3"
-                  },
-                  {
-                      "path":  "frentes/ep/revisiones/LECTURA-DE-VUELTA-7c9bd39a.json",
-                      "bytes":  2484,
-                      "sha256":  "d5cc9d6f30eefc64f70c5434d31cbe26b5cf4e92023210c02a7ec0bd8cc0b8f0",
-                      "git_blob":  "c27188b5f0395e63fc48a1302138615c2c69c4f1"
-                  },
-                  {
-                      "path":  "frentes/ep/revisiones/REVISION-OEP-v0.3.0.json",
-                      "bytes":  993,
-                      "sha256":  "ceb54af12c22f3b3f796fea9b97e1955b9ddbf1115afc569c9a6715e07fa483f",
-                      "git_blob":  "328458cb4a62f2d52bc95ed8412ed057007d3dcc"
-                  },
-                  {
-                      "path":  "frentes/ep/revisiones/REVISION-OEP-v0.3.1.json",
-                      "bytes":  556,
-                      "sha256":  "8f604fe401aa6351f8517d7b92e764917bdec75546cb6ae3bbd8ce5cdf937ddb",
-                      "git_blob":  "b36349e1ddc4e20ed0257662d9d2d59fa3673b1b"
-                  },
-                  {
-                      "path":  "frentes/ep/revisiones/REVISION-OEP-v0.3.10.json",
-                      "bytes":  830,
-                      "sha256":  "bf8a89b4d5db1365b70da2839fb976bd6dad40c9c2c4d5b6e939426797e6ee64",
-                      "git_blob":  "44eab0439c1eb525f45df9e532ac3409061de6e1"
-                  },
-                  {
-                      "path":  "frentes/ep/revisiones/REVISION-OEP-v0.3.11.json",
-                      "bytes":  791,
-                      "sha256":  "e3f1ae268e2b63f3b9e67de93861161d67c72408dad3ad51aec2eac513406ccd",
-                      "git_blob":  "977440df778e3290a71057bde18de74139727b36"
-                  },
-                  {
-                      "path":  "frentes/ep/revisiones/REVISION-OEP-v0.3.12.json",
-                      "bytes":  909,
-                      "sha256":  "63edb72f6ad0f7c6dfc76df778af8dd701240a332550f41c3c658cd48eea7bd5",
-                      "git_blob":  "3cfe9b73989fb319a4104a6376a3c17fafc3770c"
-                  },
-                  {
-                      "path":  "frentes/ep/revisiones/REVISION-OEP-v0.3.13.json",
-                      "bytes":  654,
-                      "sha256":  "b80c77b37430b01bf30ac5c851f5eee159a2db456845921dc8350b635ecdf7b0",
-                      "git_blob":  "d562ab9451b022869f3b06f99a7d25b7a9e721b0"
-                  },
-                  {
-                      "path":  "frentes/ep/revisiones/REVISION-OEP-v0.3.14.json",
-                      "bytes":  687,
-                      "sha256":  "93016cc1ea6527b36a888a4f418f1f0a5de9c8798cc6f018619462c21b8c4936",
-                      "git_blob":  "4b7975d7f004a00b5d7db49157eea2bac6ba4e28"
-                  },
-                  {
-                      "path":  "frentes/ep/revisiones/REVISION-OEP-v0.3.15.json",
-                      "bytes":  876,
-                      "sha256":  "ab5eea2e2ad7ea7d35140e2fc92d79e35680079172fb2ad9299328d4c17a8dae",
-                      "git_blob":  "3690b3a8663c4a7a8c7dd220761c9be47da32c2a"
-                  },
-                  {
-                      "path":  "frentes/ep/revisiones/REVISION-OEP-v0.3.16.json",
-                      "bytes":  1183,
-                      "sha256":  "1d415ca2566e07c9c4f3adb5e7a3d0ab6b963f6ed376ba9c2f4f0fa7d2b285a4",
-                      "git_blob":  "28d2590b51d0d33d31258baef7805d4c511f5abd"
-                  },
-                  {
-                      "path":  "frentes/ep/revisiones/REVISION-OEP-v0.3.17.json",
-                      "bytes":  1733,
-                      "sha256":  "65b411bbfbff3cdd7f0e56abd5af5b734bb72e45dbdbcd9b753d96823ce0a68b",
-                      "git_blob":  "2190d8e79711f3ef7221e8587d221551bbebcf81"
-                  },
-                  {
-                      "path":  "frentes/ep/revisiones/REVISION-OEP-v0.3.18.json",
-                      "bytes":  1455,
-                      "sha256":  "21d23d21a0dab66d6aead6631f886105dae9bdb2cc33c098528c4007f7bb28c2",
-                      "git_blob":  "1a5ff0939c793ce5013508253ee128b443d96fbd"
-                  },
-                  {
-                      "path":  "frentes/ep/revisiones/REVISION-OEP-v0.3.2.json",
-                      "bytes":  634,
-                      "sha256":  "0aa34bcf154ea7cbbb29eff5c04cff80e33c22dc886ca5a1f5538fc07a6a4a54",
-                      "git_blob":  "7816e393f0dd1c551b8d5903af24866ced095c30"
-                  },
-                  {
-                      "path":  "frentes/ep/revisiones/REVISION-OEP-v0.3.3.json",
-                      "bytes":  4475,
-                      "sha256":  "5f142e1d7409b24ccc60aa93086a788cdfe5d9a4a68839942a9a3df56a1a8f5a",
-                      "git_blob":  "aab846e636f0f0258dafabb22f62df97da6b48b8"
-                  },
-                  {
-                      "path":  "frentes/ep/revisiones/REVISION-OEP-v0.3.4.json",
-                      "bytes":  1085,
-                      "sha256":  "2ac75ba5eed307ae9a4c42cace497e5d5dfc18a9c9f4d4b0975e53f3b1fd886e",
-                      "git_blob":  "aab9fc78347ce8db0b0a455cb2c9eec82bf96bc5"
-                  },
-                  {
-                      "path":  "frentes/ep/revisiones/REVISION-OEP-v0.3.5.json",
-                      "bytes":  4166,
-                      "sha256":  "a7824e5c52d9dcedcbf218668cff597fb62f680e3f5f71886cbf0b2ff0e8aadf",
-                      "git_blob":  "dc3fd93d26395ba2e3d97cd3105fcac9faa7b9ed"
-                  },
-                  {
-                      "path":  "frentes/ep/revisiones/REVISION-OEP-v0.3.6.json",
-                      "bytes":  3196,
-                      "sha256":  "1bbd834201a0fbb4861fd19955b077fb72eaee8b3f93240b3d9a0f2dfc35d0e0",
-                      "git_blob":  "1404241f7c436d3606eab14992408206c65e276b"
-                  },
-                  {
-                      "path":  "frentes/ep/revisiones/REVISION-OEP-v0.3.7.json",
-                      "bytes":  728,
-                      "sha256":  "c176746d6aba1dcd3de92424b08f37bae6c6515bfa44a12caedfd3fca82032ea",
-                      "git_blob":  "ea35b4f942530f6ed36bcd894f0c87f2b2aadc43"
-                  },
-                  {
-                      "path":  "frentes/ep/revisiones/REVISION-OEP-v0.3.8.json",
-                      "bytes":  698,
-                      "sha256":  "5933505f767fc5fc7d39d65e7bf1123448b87fc5d6af89a183522a917275b2c2",
-                      "git_blob":  "73fd63eaa31f71455dcc756d3afbadd3dbed81dc"
-                  },
-                  {
-                      "path":  "frentes/ep/revisiones/REVISION-OEP-v0.3.9.json",
-                      "bytes":  2462,
-                      "sha256":  "c00ed129152a6c7d81641da16675aac6949b73be2d8e67dd0293da09edeead49",
-                      "git_blob":  "4fbeecec4be792a84d55f7f0303405cfd79d528a"
-                  },
-                  {
-                      "path":  "frentes/ep/prompts/PROMPT-ADAPTACION-COMUN-CONSUMIDORES-EP-v0.1.md",
-                      "bytes":  8195,
-                      "sha256":  "e65c425ae8e4e2128b0bf65d71f30e7ff338417fd67f3f21f1ad13a16d172c86",
-                      "git_blob":  "3b6f908e0c3622565cf24134c607b72db6159388"
-                  },
-                  {
-                      "path":  "frentes/ep/revisiones/REVISION-OEP-v0.3.19.json",
-                      "bytes":  2506,
-                      "sha256":  "a757a6390cfe37b9bbdc44b7002f00783a62302ddca5184044cbe88526a1b728",
-                      "git_blob":  "0fa01e7937be3fbe968d4903e61aaa75b7bfedba"
-                  },
-                  {
-                      "path":  "frentes/ep/revisiones/REVISION-OEP-v0.3.20.json",
-                      "bytes":  1834,
-                      "sha256":  "bd1ae3df003ee77ddb53500a934cd963ef977e3fa6432374150c5b94e0828357",
-                      "git_blob":  "4ec03e8a4ac28e0660719da037975f7bb1c363ce"
-                  },
-                  {
-                      "path":  "frentes/ep/revisiones/REVISION-OEP-v0.3.21.json",
-                      "bytes":  3892,
-                      "sha256":  "0130096b5a05fe6c4042ff1d07d8f42e55abdceac68ec66fcaf84c75787d26c8",
-                      "git_blob":  "87419509768c0c77a0e18af83e1f94603bdd4142"
-                  },
-                  {
-                      "path":  "frentes/ep/revisiones/REVISION-OEP-v0.3.22.json",
-                      "bytes":  4941,
-                      "sha256":  "463136c8a9e8ef22b60df85b15326d39c78a5a53e07451938c967f293f4979b4",
-                      "git_blob":  "9ff99df9a8e3dba2d496c3ee4a535234bc066263"
-                  },
-                  {
-                      "path":  "frentes/ep/revisiones/REVISION-OEP-v0.3.23.json",
-                      "bytes":  5486,
-                      "sha256":  "449abf629c3822937384849ccd46adb44d66febb3d6be0c1adf0cedfb851bf65",
-                      "git_blob":  "47ff7f48b376b6eeff560331f84450993e0e6fe1"
-                  },
-                  {
-                      "path":  "frentes/ep/originales/ChatGPT-EP-20261101-1552.md",
-                      "bytes":  184444,
-                      "sha256":  "8F1B3BEA8D4CF6C3291B4D4B908593D8C907763E2ADC2ADAE8D1E37368FF7494",
-                      "git_blob":  "fb07c78383b1beb1f64712f74290468b2dd361dd",
-                      "provenance":  {
-                                         "source_path":  "C:\\Users\\PC 13\\Downloads\\ChatGPT-EP-20261101-1552.md",
-                                         "source_device":  "PC-14",
-                                         "acquisition":  "RDC read of original file; bytes transferred as base64 without text normalization",
-                                         "export_timestamp":  "2026-11-01 15:52:46",
-                                         "status":  "PERSISTIDO_Y_VERIFICADO",
-                                         "commit":  "f075b062c0ea42ade44e9f286b4740401e386ba5",
-                                         "readback_blob_sha":  "fb07c78383b1beb1f64712f74290468b2dd361dd",
-                                         "readback_verified":  true,
-                                         "readback_scope":  "GitHub main path fetch returned the exact expected blob SHA; no textual normalization was used for the stored original."
-                                     }
-                  },
-                  {
-                      "path":  "frentes/ep/entregas/COORDINACION-GOBERNANZA-EP-v0.1.md",
-                      "bytes":  228371,
-                      "sha256":  "D1D66113B7493212B90640F8999BB19ED6D70BCE00A1CDC938B1B975E80D06E0",
-                      "git_blob":  "59a3d607fcae2aca229bdb0d362ae24644d51884"
-                  },
-                  {
-                      "path":  "frentes/ep/originales/ChatGPT-EP-20261107-1111.txt",
-                      "bytes":  46231,
-                      "sha256":  "4297642A8FC88628A38CE2F0057E72F849E708B4EFE4B19882C50DBB01CD51B7",
-                      "git_blob":  "7b62154f1bf9bbc6b6c6b3de05416f49bb0dcede"
-                  },
-                  {
-                      "path":  "frentes/ep/revisiones/REVISION-OEP-v0.3.33.json",
-                      "bytes":  8068,
-                      "sha256":  "5F5A45C1EB081076D17E7354B8CDCD3A71C7A9FA794FE23F6F5A9EFEDC4A7A62",
-                      "git_blob":  "907f68a3af28ebc3a1366fbc8b9038b090ac78ea"
-                  },
-                  {
-                      "path":  "frentes/ep/📁 🧭 - Tareas provisionales/README.md",
-                      "bytes":  8524,
-                      "sha256":  "C86CB2483F52D31E62AAEA00B6668BD5773EE3137AC07F62CFE6FFD80C31C311",
-                      "git_blob":  "fcd76497dca45472153209a1158673386dfa7ba2"
-                  },
-                  {
-                      "path":  "frentes/ep/📁 🧭 - Tareas provisionales/📁 🧩 - EP-TASK-002 - Persistencia provisional Backblaze/README.md",
-                      "bytes":  224211,
-                      "sha256":  "5E24F337ED93941AC03333C8539EE4379F1F94A7891FE9644B5DED609F607BD4",
-                      "git_blob":  "c909a3313e8cbadea7aa21e534bbede6fa3e2277"
-                  }
-              ],
-    "exclusions":  [
-                       "self hash",
-                       "Downloads files not recovered",
-                       "Backblaze bucket/key state not authenticated or verified",
-                       "No physical high-level architecture review",
-                       "No consumer runtime/build/deployment or migration accepted",
-                       "OCP-MCP existence/capabilities not freshly verified in Backblaze",
-                       "metodologia-ep-persistencia deletion authorized but not executed",
-                       "OCP-MSP was not created/used/deleted; existence unknown",
-                       "No B2 upload/read-back or restoration performed",
-                       "mutable DTC coordination object: final blob tracked in the same object\u0027s close entry to avoid self-referential manifest hashing",
-                       "No Backblaze authentication, bucket/key verification, upload/read-back or restoration in this cycle",
-                       "mutable DTC communication object: final blob tracked in its close entry to avoid self-referential manifest hash",
-                       "Prompt Adicional 02 not published/applied by Governance to all fronts; direct receipt by EP only",
-                       "No MCP-OCP receipt/acceptance verified",
-                       "No B2 authentication, upload/read-back or restore occurred",
-                       "No KHORA product code or host execution performed during MOD-SCRIPTPWS inauguration.",
-                       "Formal EP responsibility control not located; no transfer or independent module control created.",
-                       "Manifest self-hash excluded to avoid recursion."
-                   ],
-    "prior_readback_verified":  "Local byte counts, SHA-256 and git blobs recalculated for all changed front artifacts. Canonical GitHub main read-back pending until commit/push.",
-    "latest_review_source_commit":  "97990e2b56874def3e6afa91aef010f04837c0e1",
-    "current_event":  "EP-C-EP-MOD-SCRIPTPWS-20261101-03: ingesta ChatGPT-EP-20261107-1111, OEP Â§100 v0.3.33/VCU-EP-v34, Task2 Â§44, Master Application Key only selected; no capture/auth/object operations in this cycle.",
-    "verification_scope":  "Original ChatGPT-EP-20261107-1111.txt preserved byte-exactly. OEP, EP root README, EP-TASK-002 and existing DTC updated; REVISION-OEP-v0.3.33 added; hashes and git blobs recalculated locally. Master credential was not read or written; B2 Master authorization, bucket operations, upload/read-back and restore not executed. GitHub publication and remote read-back pending."
+  "schema": 1,
+  "repository": "SeryMente/metodologia",
+  "branch": "main",
+  "front_folder": "frentes/ep",
+  "files": [
+    {
+      "path": "METACANON-OBJETOS-CANONICOS.md",
+      "bytes": 64953,
+      "sha256": "1db7a16892310c505ec3002e9439e35c11a13b2e5e36dee2829efeda201e042c",
+      "git_blob": "32c7a65ff2e83b3b76752ba2160427bd6e851a8f"
+    },
+    {
+      "path": "README.md",
+      "bytes": 13123,
+      "sha256": "58039896e2867b29677dede02e32cf0971be3946bdef27174c08d1fb163d1c21",
+      "git_blob": "3d8d7d84de3ef39be9c01e423a955ab9ed77dc38"
+    },
+    {
+      "path": "REVISION-METACANON-1.1.json",
+      "bytes": 778,
+      "sha256": "e53101e84845af06c0409819502a5474227501dc0e29ccc3739d7b8c3ef22e84",
+      "git_blob": "6a233854630a1024e950fcef3d64df69585efc8c"
+    },
+    {
+      "path": "REVISION-METACANON-1.2.json",
+      "bytes": 640,
+      "sha256": "802f4d3d3b6daaa197a9485a6a30963d6720a42f3f1208aaeef4f7696ccb67bf",
+      "git_blob": "633dd080f6ee8bc418e7679e20a2d46247c6818f"
+    },
+    {
+      "path": "REVISION-METACANON-1.3.json",
+      "bytes": 1040,
+      "sha256": "9a8ee22b8fb75627f96ac62029a5b04e567fe560c853726ff6073779646e4be1",
+      "git_blob": "fb4aada2f915e0a01f213dae265593349875d446"
+    },
+    {
+      "path": "REVISION-METACANON-1.5.json",
+      "bytes": 1463,
+      "sha256": "501857e29efcdf843c2f78f550f6ab967afd25ab1d42f7986f01f4484f8a15fe",
+      "git_blob": "4e19c05d85e253d747f31b9321a46a7aa5005c39"
+    },
+    {
+      "path": "frentes/ep/OEP.md",
+      "bytes": 329759,
+      "sha256": "94AE85037480D2FC778C2CAC47F43B655D6BC5EE7DEE88359590262123B54B0C",
+      "git_blob": "6865d50bc60b305adea365afc96a4266710e371f"
+    },
+    {
+      "path": "frentes/ep/README.md",
+      "bytes": 2426,
+      "sha256": "DCB862E730EE5017E39D901F29AAAB83F28BD6F966A73398E10B1E66D10657EB",
+      "git_blob": "2648c9accb79e1dec4dab9bf5eb0d723e4eb0fa2"
+    },
+    {
+      "path": "frentes/ep/artefactos/EP-H03-integracion-reproducible-parcial-20261011.zip.b64",
+      "bytes": 494061,
+      "sha256": "00c594f6c5f57c9dcb284701a9e627dd624f04a62494540f43dd835211a475ca",
+      "git_blob": "98cdb8b488c736913e821445cb2a8fee65ba52d6"
+    },
+    {
+      "path": "frentes/ep/artefactos/entrega-v0.2.0.zip.b64",
+      "bytes": 122201,
+      "sha256": "372b5a536052ae6443105df0e3b63c09190b3892f6b871f69c4506183e425700",
+      "git_blob": "b9c00f85cf6ccd6e910b1b343ff91b01363c8b37"
+    },
+    {
+      "path": "frentes/ep/artefactos/restaurar-entrega-v0.2.0.cjs",
+      "bytes": 909,
+      "sha256": "7e44547d702f67940169f33064bf199a36e337951dc89c289c8f1af44db4bd63",
+      "git_blob": "9f42f631f41a71e0c7fa5cdc46823050f8406375"
+    },
+    {
+      "path": "frentes/ep/evidencias/EP-H03-recibo-fuentes-post-section11.json",
+      "bytes": 7088,
+      "sha256": "382471bd53676955dc1cb441e7ef883b1a34b7116f8401b33ee55b0734a77b06",
+      "git_blob": "30a22c88a9f93aef89e28419ca88a76262f5cbb9"
+    },
+    {
+      "path": "frentes/ep/evidencias/EP-H03-recibo-reconstruccion.json",
+      "bytes": 576,
+      "sha256": "513fad00839224498144dce062536c2594bd4b49989ec50920893b885172e10f",
+      "git_blob": "93362942199b2c14e4c2cc06f07052ee0af3bf40"
+    },
+    {
+      "path": "frentes/ep/evidencias/INVENTARIO.md",
+      "bytes": 1270,
+      "sha256": "41967dcb24a47ea2759d9e1cf90c3e8741f8750ae0a662010bc77cfefe85c21c",
+      "git_blob": "ddfa21cd5f6a1768fc55e1e6cba57cf443bbc2fd"
+    },
+    {
+      "path": "frentes/ep/evidencias/Revision-conjunta-ABC-local-prepare-only.md",
+      "bytes": 129947,
+      "sha256": "0586e7cfb1cbeef2e5f4d495ba9bc450451b5c5594050485f75e63a74582a68d",
+      "git_blob": "b3395e72cb2a0b093916020dc66222b70bfff5f4"
+    },
+    {
+      "path": "frentes/ep/originales/ChatGPT-OGP - Addiction - 5-20261011-1633.txt",
+      "bytes": 59349,
+      "sha256": "c15eff877888d7b9f1045d1206d3004b6ebf7e52e64a3a8c37980a60e80601f3",
+      "git_blob": "a90b812c73502e2ecb11236845be44d1974f9594"
+    },
+    {
+      "path": "frentes/ep/originales/conversacion-asistente.txt",
+      "bytes": 79991,
+      "sha256": "655ae3f37e16aef6599125b06796d0da4b7c0a414bed30acf8148485c64a1007",
+      "git_blob": "5ef6319696aa7327595040c27215e062704552df"
+    },
+    {
+      "path": "frentes/ep/originales/conversacion-constructor.txt",
+      "bytes": 61091,
+      "sha256": "fadfe197c265779287e2daf690da814c0a04128afa10e435c17cb93af537b44c",
+      "git_blob": "b05a99f355585b2e5f57958127e0b62336d32608"
+    },
+    {
+      "path": "frentes/ep/originales/encargo-documental-actual.txt",
+      "bytes": 397,
+      "sha256": "d2265700ddfeec4687744463194ecdfb083bcc57eedc62e1ef3bbcdc0e9af208",
+      "git_blob": "c7b3645c8979e90e375e2ae735de861cd82bd953"
+    },
+    {
+      "path": "frentes/ep/originales/instruccion-asistencia-util-evento-327.txt",
+      "bytes": 896,
+      "sha256": "d866bb694f289a198f02272dc983ed3e6d601beb0661ae37e918c3954025503e",
+      "git_blob": "f6cc498b6566e642617223855166b17137a90989"
+    },
+    {
+      "path": "frentes/ep/originales/instruccion-carpeta-20261011.txt",
+      "bytes": 271,
+      "sha256": "a672580043a4b62787536abedd14dd7339f3f50d72377e720985c81dd7cbfc7a",
+      "git_blob": "fa6b58f23e1d32cfa58a15603fb137fe2de6ab7f"
+    },
+    {
+      "path": "frentes/ep/originales/instruccion-prioridad-pronostico-evento-388.txt",
+      "bytes": 1139,
+      "sha256": "9b8219e765fa664a81b1f214617eb7b13094a7c2d30763fc48a7133f498f27dd",
+      "git_blob": "6542e00fcdd6d626d82c5df487c91e0c58199924"
+    },
+    {
+      "path": "frentes/ep/originales/instrucciones-gobierno-estructura-rdc-20261011.txt",
+      "bytes": 665,
+      "sha256": "8bfafed36c691fac85ff041d5ac27721dea87d1eb6b16de8d2a31a302e2a3feb",
+      "git_blob": "2329e5c61b693cfce8d98fd0c77b8e5694994db3"
+    },
+    {
+      "path": "frentes/ep/originales/instrucciones-operador-hitos-RDC-provision-20261011.txt",
+      "bytes": 1425,
+      "sha256": "66d2cbda5646f166e842594cdefcae676e36f9e73d762a5163305a8d64916f22",
+      "git_blob": "1b3a503c67eacb4174c48b57cf7c5743556668f5"
+    },
+    {
+      "path": "frentes/ep/originales/salida-asistente-ep-20261011-1452.md",
+      "bytes": 5378,
+      "sha256": "18207cc9fc8ee1dda497ebd58408587d1827580598354693c3ac28de8473282f",
+      "git_blob": "44bdffc5f5ef923eb424c6229036474e7d637a50"
+    },
+    {
+      "path": "frentes/ep/originales/salida-constructor-ABC-local-evento-389.txt",
+      "bytes": 16319,
+      "sha256": "bc59d19c989f89439da5310d06b60c417e15e2fb6af48f70ecdff27e532679f6",
+      "git_blob": "b79acf3f09c39b8068c6fa55fd3be57731267a0a"
+    },
+    {
+      "path": "frentes/ep/prompts/ACTUALIZAR-CLAUDIA-RECEPCION.txt",
+      "bytes": 7160,
+      "sha256": "03568c7bc145443c26816f21a0e3bb66c83ced4af06d94615f02f01598e9469a",
+      "git_blob": "c2508d9de1e608f998bc79fed63969e90a3e7de4"
+    },
+    {
+      "path": "frentes/ep/prompts/CLAUDIA.txt",
+      "bytes": 26304,
+      "sha256": "6c69028c8a1470793193c101bd083453dce6c575a5eb6d65d21b4f4aaf2ac9d4",
+      "git_blob": "d4d32af4e1732d6b5b02222e5e8e8f1ae3317b99"
+    },
+    {
+      "path": "frentes/ep/prompts/SAMANTHA.txt",
+      "bytes": 27279,
+      "sha256": "d1478812ad3d4dc8b9c4739032aacebd89524231c979f04fbe26ca28c74adc5d",
+      "git_blob": "8c59db892a17a2fb0130254b9d7a885f43f10d13"
+    },
+    {
+      "path": "frentes/ep/revisiones/LECTURA-DE-VUELTA-07a1a574.json",
+      "bytes": 1717,
+      "sha256": "1a3b7f07b2b9e2491a8fa59e7143437517554abbc6305ec9f07b0db17b381da4",
+      "git_blob": "b2ae32e1c42a5579cca07f936def69c893dd2cc3"
+    },
+    {
+      "path": "frentes/ep/revisiones/LECTURA-DE-VUELTA-7c9bd39a.json",
+      "bytes": 2484,
+      "sha256": "d5cc9d6f30eefc64f70c5434d31cbe26b5cf4e92023210c02a7ec0bd8cc0b8f0",
+      "git_blob": "c27188b5f0395e63fc48a1302138615c2c69c4f1"
+    },
+    {
+      "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.0.json",
+      "bytes": 993,
+      "sha256": "ceb54af12c22f3b3f796fea9b97e1955b9ddbf1115afc569c9a6715e07fa483f",
+      "git_blob": "328458cb4a62f2d52bc95ed8412ed057007d3dcc"
+    },
+    {
+      "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.1.json",
+      "bytes": 556,
+      "sha256": "8f604fe401aa6351f8517d7b92e764917bdec75546cb6ae3bbd8ce5cdf937ddb",
+      "git_blob": "b36349e1ddc4e20ed0257662d9d2d59fa3673b1b"
+    },
+    {
+      "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.10.json",
+      "bytes": 830,
+      "sha256": "bf8a89b4d5db1365b70da2839fb976bd6dad40c9c2c4d5b6e939426797e6ee64",
+      "git_blob": "44eab0439c1eb525f45df9e532ac3409061de6e1"
+    },
+    {
+      "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.11.json",
+      "bytes": 791,
+      "sha256": "e3f1ae268e2b63f3b9e67de93861161d67c72408dad3ad51aec2eac513406ccd",
+      "git_blob": "977440df778e3290a71057bde18de74139727b36"
+    },
+    {
+      "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.12.json",
+      "bytes": 909,
+      "sha256": "63edb72f6ad0f7c6dfc76df778af8dd701240a332550f41c3c658cd48eea7bd5",
+      "git_blob": "3cfe9b73989fb319a4104a6376a3c17fafc3770c"
+    },
+    {
+      "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.13.json",
+      "bytes": 654,
+      "sha256": "b80c77b37430b01bf30ac5c851f5eee159a2db456845921dc8350b635ecdf7b0",
+      "git_blob": "d562ab9451b022869f3b06f99a7d25b7a9e721b0"
+    },
+    {
+      "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.14.json",
+      "bytes": 687,
+      "sha256": "93016cc1ea6527b36a888a4f418f1f0a5de9c8798cc6f018619462c21b8c4936",
+      "git_blob": "4b7975d7f004a00b5d7db49157eea2bac6ba4e28"
+    },
+    {
+      "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.15.json",
+      "bytes": 876,
+      "sha256": "ab5eea2e2ad7ea7d35140e2fc92d79e35680079172fb2ad9299328d4c17a8dae",
+      "git_blob": "3690b3a8663c4a7a8c7dd220761c9be47da32c2a"
+    },
+    {
+      "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.16.json",
+      "bytes": 1183,
+      "sha256": "1d415ca2566e07c9c4f3adb5e7a3d0ab6b963f6ed376ba9c2f4f0fa7d2b285a4",
+      "git_blob": "28d2590b51d0d33d31258baef7805d4c511f5abd"
+    },
+    {
+      "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.17.json",
+      "bytes": 1733,
+      "sha256": "65b411bbfbff3cdd7f0e56abd5af5b734bb72e45dbdbcd9b753d96823ce0a68b",
+      "git_blob": "2190d8e79711f3ef7221e8587d221551bbebcf81"
+    },
+    {
+      "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.18.json",
+      "bytes": 1455,
+      "sha256": "21d23d21a0dab66d6aead6631f886105dae9bdb2cc33c098528c4007f7bb28c2",
+      "git_blob": "1a5ff0939c793ce5013508253ee128b443d96fbd"
+    },
+    {
+      "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.2.json",
+      "bytes": 634,
+      "sha256": "0aa34bcf154ea7cbbb29eff5c04cff80e33c22dc886ca5a1f5538fc07a6a4a54",
+      "git_blob": "7816e393f0dd1c551b8d5903af24866ced095c30"
+    },
+    {
+      "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.3.json",
+      "bytes": 4475,
+      "sha256": "5f142e1d7409b24ccc60aa93086a788cdfe5d9a4a68839942a9a3df56a1a8f5a",
+      "git_blob": "aab846e636f0f0258dafabb22f62df97da6b48b8"
+    },
+    {
+      "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.4.json",
+      "bytes": 1085,
+      "sha256": "2ac75ba5eed307ae9a4c42cace497e5d5dfc18a9c9f4d4b0975e53f3b1fd886e",
+      "git_blob": "aab9fc78347ce8db0b0a455cb2c9eec82bf96bc5"
+    },
+    {
+      "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.5.json",
+      "bytes": 4166,
+      "sha256": "a7824e5c52d9dcedcbf218668cff597fb62f680e3f5f71886cbf0b2ff0e8aadf",
+      "git_blob": "dc3fd93d26395ba2e3d97cd3105fcac9faa7b9ed"
+    },
+    {
+      "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.6.json",
+      "bytes": 3196,
+      "sha256": "1bbd834201a0fbb4861fd19955b077fb72eaee8b3f93240b3d9a0f2dfc35d0e0",
+      "git_blob": "1404241f7c436d3606eab14992408206c65e276b"
+    },
+    {
+      "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.7.json",
+      "bytes": 728,
+      "sha256": "c176746d6aba1dcd3de92424b08f37bae6c6515bfa44a12caedfd3fca82032ea",
+      "git_blob": "ea35b4f942530f6ed36bcd894f0c87f2b2aadc43"
+    },
+    {
+      "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.8.json",
+      "bytes": 698,
+      "sha256": "5933505f767fc5fc7d39d65e7bf1123448b87fc5d6af89a183522a917275b2c2",
+      "git_blob": "73fd63eaa31f71455dcc756d3afbadd3dbed81dc"
+    },
+    {
+      "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.9.json",
+      "bytes": 2462,
+      "sha256": "c00ed129152a6c7d81641da16675aac6949b73be2d8e67dd0293da09edeead49",
+      "git_blob": "4fbeecec4be792a84d55f7f0303405cfd79d528a"
+    },
+    {
+      "path": "frentes/ep/prompts/PROMPT-ADAPTACION-COMUN-CONSUMIDORES-EP-v0.1.md",
+      "bytes": 8195,
+      "sha256": "e65c425ae8e4e2128b0bf65d71f30e7ff338417fd67f3f21f1ad13a16d172c86",
+      "git_blob": "3b6f908e0c3622565cf24134c607b72db6159388"
+    },
+    {
+      "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.19.json",
+      "bytes": 2506,
+      "sha256": "a757a6390cfe37b9bbdc44b7002f00783a62302ddca5184044cbe88526a1b728",
+      "git_blob": "0fa01e7937be3fbe968d4903e61aaa75b7bfedba"
+    },
+    {
+      "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.20.json",
+      "bytes": 1834,
+      "sha256": "bd1ae3df003ee77ddb53500a934cd963ef977e3fa6432374150c5b94e0828357",
+      "git_blob": "4ec03e8a4ac28e0660719da037975f7bb1c363ce"
+    },
+    {
+      "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.21.json",
+      "bytes": 3892,
+      "sha256": "0130096b5a05fe6c4042ff1d07d8f42e55abdceac68ec66fcaf84c75787d26c8",
+      "git_blob": "87419509768c0c77a0e18af83e1f94603bdd4142"
+    },
+    {
+      "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.22.json",
+      "bytes": 4941,
+      "sha256": "463136c8a9e8ef22b60df85b15326d39c78a5a53e07451938c967f293f4979b4",
+      "git_blob": "9ff99df9a8e3dba2d496c3ee4a535234bc066263"
+    },
+    {
+      "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.23.json",
+      "bytes": 5486,
+      "sha256": "449abf629c3822937384849ccd46adb44d66febb3d6be0c1adf0cedfb851bf65",
+      "git_blob": "47ff7f48b376b6eeff560331f84450993e0e6fe1"
+    },
+    {
+      "path": "frentes/ep/originales/ChatGPT-EP-20261101-1552.md",
+      "bytes": 184444,
+      "sha256": "8F1B3BEA8D4CF6C3291B4D4B908593D8C907763E2ADC2ADAE8D1E37368FF7494",
+      "git_blob": "fb07c78383b1beb1f64712f74290468b2dd361dd",
+      "provenance": {
+        "source_path": "C:\\Users\\PC 13\\Downloads\\ChatGPT-EP-20261101-1552.md",
+        "source_device": "PC-14",
+        "acquisition": "RDC read of original file; bytes transferred as base64 without text normalization",
+        "export_timestamp": "2026-11-01 15:52:46",
+        "status": "PERSISTIDO_Y_VERIFICADO",
+        "commit": "f075b062c0ea42ade44e9f286b4740401e386ba5",
+        "readback_blob_sha": "fb07c78383b1beb1f64712f74290468b2dd361dd",
+        "readback_verified": true,
+        "readback_scope": "GitHub main path fetch returned the exact expected blob SHA; no textual normalization was used for the stored original."
+      }
+    },
+    {
+      "path": "frentes/ep/entregas/COORDINACION-GOBERNANZA-EP-v0.1.md",
+      "bytes": 228371,
+      "sha256": "D1D66113B7493212B90640F8999BB19ED6D70BCE00A1CDC938B1B975E80D06E0",
+      "git_blob": "59a3d607fcae2aca229bdb0d362ae24644d51884"
+    },
+    {
+      "path": "frentes/ep/originales/ChatGPT-EP-20261107-1111.txt",
+      "bytes": 46231,
+      "sha256": "4297642A8FC88628A38CE2F0057E72F849E708B4EFE4B19882C50DBB01CD51B7",
+      "git_blob": "7b62154f1bf9bbc6b6c6b3de05416f49bb0dcede"
+    },
+    {
+      "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.33.json",
+      "bytes": 8068,
+      "sha256": "5F5A45C1EB081076D17E7354B8CDCD3A71C7A9FA794FE23F6F5A9EFEDC4A7A62",
+      "git_blob": "907f68a3af28ebc3a1366fbc8b9038b090ac78ea"
+    },
+    {
+      "path": "frentes/ep/📁 🧭 - Tareas provisionales/README.md",
+      "bytes": 8524,
+      "sha256": "C86CB2483F52D31E62AAEA00B6668BD5773EE3137AC07F62CFE6FFD80C31C311",
+      "git_blob": "fcd76497dca45472153209a1158673386dfa7ba2"
+    },
+    {
+      "path": "frentes/ep/📁 🧭 - Tareas provisionales/📁 🧩 - EP-TASK-002 - Persistencia provisional Backblaze/README.md",
+      "bytes": 224211,
+      "sha256": "5E24F337ED93941AC03333C8539EE4379F1F94A7891FE9644B5DED609F607BD4",
+      "git_blob": "c909a3313e8cbadea7aa21e534bbede6fa3e2277"
+    },
+    {
+      "path": "frentes/ep/originales/ChatGPT-EP-20261107-1144.txt",
+      "bytes": 25183,
+      "sha256": "BDDDBE8190E1D4AA562A654BA15788C8F706AF6412CF7059860DB03B648328A4",
+      "git_blob": "a3eb40892bf345cc285688034228dfb41b13d767",
+      "provenance": {
+        "source_path": "C:\\Users\\fila4\\Downloads\\ChatGPT-EP-20261107-1144.txt",
+        "source_device": "PC10RCIF4EI4",
+        "acquisition": "RDC read complete; bytes transferred using Base64 without text normalization",
+        "export_timestamp": "2026-11-07 11:44:39 -06:00",
+        "status": "COMMIT_READBACK_PENDING",
+        "expected_git_blob_sha": "a3eb40892bf345cc285688034228dfb41b13d767"
+      }
+    },
+    {
+      "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.34.json",
+      "bytes": 1719,
+      "sha256": "8333644B53D6E7CFBE1175610813D06C05ACF61B3FD9300DE33BB449A1199419",
+      "git_blob": "108b9f2c6f05170392a94d2aef67c375b6f53576"
+    }
+  ],
+  "exclusions": [
+    "self hash",
+    "Downloads files not recovered",
+    "Backblaze bucket/key state not authenticated or verified",
+    "No physical high-level architecture review",
+    "No consumer runtime/build/deployment or migration accepted",
+    "OCP-MCP existence/capabilities not freshly verified in Backblaze",
+    "metodologia-ep-persistencia deletion authorized but not executed",
+    "OCP-MSP was not created/used/deleted; existence unknown",
+    "No B2 upload/read-back or restoration performed",
+    "mutable DTC coordination object: final blob tracked in the same object's close entry to avoid self-referential manifest hashing",
+    "No Backblaze authentication, bucket/key verification, upload/read-back or restoration in this cycle",
+    "mutable DTC communication object: final blob tracked in its close entry to avoid self-referential manifest hash",
+    "Prompt Adicional 02 not published/applied by Governance to all fronts; direct receipt by EP only",
+    "No MCP-OCP receipt/acceptance verified",
+    "No B2 authentication, upload/read-back or restore occurred",
+    "No KHORA product code or host execution performed during MOD-SCRIPTPWS inauguration.",
+    "Formal EP responsibility control not located; no transfer or independent module control created.",
+    "Manifest self-hash excluded to avoid recursion.",
+    "No independent verification of the reported vault write/read-back in this cycle.",
+    "Clipboard clearing and interactive vault verification remain pending.",
+    "No B2 authentication or bucket/object operations in this cycle.",
+    "No formal EP responsibility transfer or generation assignment."
+  ],
+  "prior_readback_verified": "Source bytes SHA-256 calculated on PC10RCIF4EI4; exact Base64 blob and documentation blobs staged. GitHub main read-back pending.",
+  "latest_review_source_commit": "53fe190e16d641d50dc868228a41bb79b034fed3",
+  "current_event": "EP-C-EP-MOD-SCRIPTPWS-20261101-03: ingesta ChatGPT-EP-20261107-1144.txt; OEP v0.3.34/VCU-EP-v35; estado Master reportado como escrito/read-back, limpieza de portapapeles y verificación interactiva aún pendientes; B2 no autenticado.",
+  "verification_scope": "Original exact bytes preserved by Base64 Git blob; OEP and README updated; manifest indexes original/OEP/README/revision. No vault contents or clipboard read; no credential rewrite; no B2 authentication, bucket/object operation or restore; formal EP responsibility control remains unverified."
 }
