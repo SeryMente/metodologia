@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.38. **Ancla:** rectificación explícita del operador: `OCP-MCP` es el único bucket B2 de destino; `OCP-MSP` y `metodologia-ep-persistencia` son errores. La rectificación se materializa en §91; conserva la compuerta bilateral de §90 y las tareas/propuesta de adaptación previas.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.39. **Ancla:** rectificación explícita del operador: `OCP-MCP` es el único bucket B2 de destino; `OCP-MSP` y `metodologia-ep-persistencia` son errores. La rectificación se materializa en §91; conserva la compuerta bilateral de §90 y las tareas/propuesta de adaptación previas.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -12,7 +12,7 @@
 
 Adquirir este objeto como instrucciones del operador, subordinadas a las reglas superiores de plataforma y a autorizaciones específicas. Claudia es asistente/documental; Samantha es constructor/único escritor de código. Una asignación explícita posterior puede cambiar roles; las citas no lo hacen. La asignación específica vigente de MOD-SCRIPTPWS queda delimitada en §94 y no cambia los roles del resto de EP.
 
-El estado de reanudación vigente de este frente está en §60–§105; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
+El estado de reanudación vigente de este frente está en §60–§106; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
 
 Leer por relevancia: OEP actual→metacanon central→Sistema de Instrucciones/Metodología/Bootstrap vigentes→canon transversal EP→AGENTS.md y ep-medio-architectura.md→código/evidencia en commits exactos. Fuente caída no es «sin cambios». Un archivo no crea herramientas, credenciales ni memoria entre plataformas.
 
@@ -2387,3 +2387,18 @@ Se reutiliza el mecanismo histórico de Guardian y AtStartup documentado en OEP 
 - Cierre de Visual Studio Code como trigger: RETIRADO.
 - Umbral de inactividad de producción: NO RATIFICADO; confirmar desde backlog antes de programar.
 - Guardian y limpieza AtStartup: diseño histórico recuperado, adaptación y pruebas pendientes; no activados por esta actualización documental.
+
+
+## 106. Alcance austero: dead-man trigger únicamente fuera de CECEQ · v0.3.39 · 2026-11-07
+
+Esta sección rectifica y prevalece sobre cualquier descripción más amplia de Guardian, vigilancia o limpieza automática contenida en §§104–105 y en antecedentes de EP.
+
+**Diseño histórico revisado, solo para recuperar el disparador:** KHORA OEP §§28–30; `scripts/khora/modules/10-guardian.ps1` y `11-cleanup.ps1`, en el commit histórico enlazado en §104.5. El diseño fuente contemplaba varias señales. Para la versión actual se retiene exclusivamente la pérdida de control de la sesión EP por terminación del proceso que la mantiene abierta. La terminación se trata como evento de proceso, no como vigilancia periódica del equipo.
+
+**CECEQ:** BitLocker obligatorio como en cualquier ubicación, usando la misma contraseña maestra de la bóveda canónica. Al cerrar, se conserva el workspace cifrado; no se activa el dead-man trigger de volatilización.
+
+**Cualquier ubicación distinta de CECEQ:** la terminación del proceso de control de la sesión EP dispara la volatilización del workspace EP: bloquear BitLocker, desmontar el volumen y eliminar el contenedor/carpeta de trabajo EP. El disparador no se extiende a archivos o datos ajenos al perímetro EP.
+
+**Fuera de alcance, expresamente:** Guardian como subsistema; vigilancia anti-exfiltración; sondeo o polling; heartbeat; temporizador de inactividad; supervisión de procesos, archivos o red; detección por cierre de VS Code/IDE; tareas programadas o limpieza AtStartup; telemetría o monitoreo en segundo plano. No se implementan ni quedan como pendientes de esta versión.
+
+**Estado:** alcance documental actualizado. El disparador aún no está implementado ni activado; no se modificaron scripts, tareas de Windows ni perfiles locales en esta actualización.
