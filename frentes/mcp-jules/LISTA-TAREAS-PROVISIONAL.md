@@ -1,4 +1,4 @@
-<!-- LIST_VERSION=0.3.0; LIST_STATUS=PROVISIONAL; PARENT_PRODUCT=MCP-OCP-1.0; NOT_A_STANDALONE_PRODUCT=true -->
+<!-- LIST_VERSION=0.4.0; LIST_STATUS=PROVISIONAL; PARENT_PRODUCT=MCP-OCP-1.0; NOT_A_STANDALONE_PRODUCT=true -->
 # Lista provisional de tareas · OCP MCP 1.0 · ámbito de ejecución Jules
 
 > **ESTADO: PROVISIONAL · BACKLOG HIJO DEL OCP MCP.** Jules es una faceta/capacidad de OCP MCP para ejecución delegada de trabajo de desarrollo. Esta lista no define un tercer sistema, no crea un servidor propio, no sustituye el backlog maestro OCP y no transfiere controles ni titularidad.
@@ -7,7 +7,7 @@
 - **Ámbito:** ejecución delegada, asincrónica y verificable mediante Jules.
 - **Ubicación documental histórica:** SeryMente/metodologia/frentes/mcp-jules/.
 - **Rama documental:** feat/metacanon-mcp-jules-20261025-c32f81; PR #19 OPEN / DRAFT / NOT MERGED.
-- **Versión de lista:** 0.3.0 provisional.
+- **Versión de lista:** 0.4.0 provisional.
 - **Actualización:** 2026-11-07.
 - **Gobierno consultado:** Samantha v377 · NX-377m; Metacanon 1.28; GOW 2.17; DUG blob 54064c8fe00f872023a455f06596061ed69062ae.
 - **Backlog maestro:** frentes/mcp-metodologia/LISTA-TAREAS-PROVISIONAL.md v0.3.0, tareas MCP-OCP-01–24.
@@ -70,13 +70,13 @@ La carpeta frentes/mcp-jules/ y su OCP/control histórico siguen existiendo. La 
 
 - **Modo inicial:** lectura y análisis; no escribir, no crear PR, no tocar contratos ni controles.
 - **Repositorio:** SeryMente/metodologia.
-- **Base documental conocida:** main 697511b8710c82933cb3461f45efb1e3b9c07077; núcleo OCP 5017b87733de05645c0ff1fa5f8c5635b489972a.
+- **Fuente candidata exacta para la revisión:** rama local `feature/mcp-ocp-v1.0-20261107`, commit `0857315bd605e9d590b82e624b14abcb8f6eaab5`; aún no publicada, por lo que Jules no puede acceder a ella desde GitHub.\n- **Base remota de referencia:** main `697511b8710c82933cb3461f45efb1e3b9c07077`; núcleo OCP `5017b87733de05645c0ff1fa5f8c5635b489972a`. No sustituye la revisión del commit candidato.
 - **Alcance:** revisar rutas OCP de implementación/tests disponibles en esa base para límites de confianza, prompt injection, path traversal, command injection y fuga de secretos por stdout/stderr/logs.
 - **Entrega:** máximo 5 hallazgos, cada uno con severidad, ruta/línea, escenario reproducible, impacto y prueba mínima recomendada; indicar expresamente “sin hallazgos” solo después de revisar el alcance.
 - **Exclusiones:** cualquier ruta Khora; credenciales/tokens; DUG/control; despliegue; cambios de contrato; ejecución de comandos mutantes.
 - **Timebox:** 15 minutos de análisis. Si la base no contiene los archivos de producto necesarios o falta acceso, reportar BLOCKED con evidencia; no ampliar la búsqueda.
 
-**Estado de despacho:** paquete preparado; no se ha enviado ni ejecutado porque esta conexión no expone una herramienta de sesión Jules. No se afirma recepción ni inicio. La reanudación del operador queda registrada para preparar el trabajo, pero no reemplaza OAuth/consentimiento cuando exista una sesión autenticada.
+**Estado de despacho:** PREPARADO_NO_DESPACHADO. No se ha enviado ni ejecutado porque esta conexión no expone herramienta/sesión Jules y la rama exacta del candidato OCP sigue local, sin publicación autorizada. No se afirma recepción, OAuth, sesión, ejecución ni hallazgos. Para arrancar sin deriva, la sesión debe recibir acceso al commit `0857315bd605e9d590b82e624b14abcb8f6eaab5`; la aprobación del plan y el consentimiento OAuth seguirán siendo gates separados.
 
 ## 4. Orden de tareas del ámbito Jules
 
@@ -91,7 +91,7 @@ La carpeta frentes/mcp-jules/ y su OCP/control histórico siguen existiendo. La 
 | 7 | MCP-JULES-07 | P0 | Aprobación explícita y ejecución controlada | BLOQUEADO_HASTA_06_Y_APROBACIÓN_DEL_PLAN | Aprobación sobre el plan actual, ejecución acotada y pruebas | 5 min activos; Mostrar plan/hash y esperar decisión; el silencio no autoriza. |
 | 8 | MCP-JULES-08 | P0 | Feedback, seguimiento y reanudación de la misma sesión | BLOQUEADO_HASTA_07 | Activities verificadas, respuesta same-session y checkpoint | 10 min; Una ronda de feedback; una respuesta y un read-back. |
 | 9 | MCP-JULES-09 | P0 | Rama/PR, revisión y entrega de código | BLOQUEADO_HASTA_07 | PR OCP con diff, pruebas frescas y sin auto-merge | 15 min; Un PR acotado; diff y tests ligados al HEAD; no auto-merge. |
-| 10 | MCP-JULES-10 | P1 | Aislamiento, seguridad y resistencia a prompt injection | PENDIENTE_DE_VALIDACIÓN | Fail-closed; inputs externos no elevan autoridad ni amplían permisos | 15 min; Pase adversarial P0; hallazgo reproducible o cierre con evidencia. |
+| 10 | MCP-JULES-10 | P1 | Aislamiento, seguridad y resistencia a prompt injection | PAQUETE_PREPARADO_NO_DESPACHADO; commit candidato no publicado; sesión Jules no disponible | Fail-closed; inputs externos no elevan autoridad ni amplían permisos | 15 min; Pase adversarial P0; hallazgo reproducible o cierre con evidencia. |
 | 11 | MCP-JULES-11 | P1 | Coordinación paralela y ausencia de colisiones | PENDIENTE | Rutas/archivos reservados y base reconciliada; cero escritores concurrentes | 10 min; Verificar exclusividad de branch/rutas; sin coordinación compleja. |
 | 12 | MCP-JULES-12 | P1 | Persistencia de ejecución y trazabilidad | PENDIENTE | Tarea, sesión, commit, PR, activities, checkpoint y recibos vinculados | 10 min; Checkpoint mínimo con IDs/URLs/hash; no duplicar historiales. |
 | 13 | MCP-JULES-13 | P0 | Aceptación E2E del ámbito Jules para OCP 1.0 | BLOQUEADO_HASTA_04–12 | Ciclo completo en sandbox, reproducible y aceptado según gates | 20 min; Un ciclo E2E en sandbox; al fallar un gate, registrar bloqueo y detener. |
