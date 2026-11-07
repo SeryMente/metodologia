@@ -44,6 +44,10 @@
     "frentes/ep/📁 🧭 - Tareas provisionales/📁 🧩 - EP-TASK-003 - Mapa integral de construcción EP/README.md": {
       "blob": "6ad796a6ce65ff2bc17b3918f9c842ca87caed92",
       "commit": "1c3b22f01a0d868453a8b5a28664cdf8accbac2e"
+    },
+    "frentes/ep/entregas/COORDINACION-GOBERNANZA-EP-v0.1.md": {
+      "blob": "9d8320e604f09d882dfe7be9e2271571a87068f5",
+      "commit": "c795a59d9aca100118dd87f64f497aaf5a0cc721"
     }
   },
   "decisions_and_rectifications": {
@@ -91,7 +95,8 @@
     "workspace_materialized": "NOT_EXECUTED",
     "deadman_activated": "NOT_EXECUTED",
     "scheduled_task_created": "NOT_EXECUTED",
-    "files_deleted": "NONE"
+    "files_deleted": "NONE",
+    "DTC_updated_and_readback": "PASS"
   },
   "open_validation": {
     "location_spelling": "CSEC versus phonetic C-E-C-E-Q",
