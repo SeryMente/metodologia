@@ -98,3 +98,8 @@ La entrada INSTRUCCION-MATERIALIZACION-UBICACIONES-20261107.txt actualiza el rep
 - EP-TASK-002: persistencia de datos de usuario OCP en Backblaze B2; GitHub queda para código y objetos canónicos. La segunda unidad/equipo físico deja de ser una condición de cierre.
 - EP-TASK-003: raíz workspace Ser y Mente, materialización dinámica de todos los repositorios actuales de SeryMente, sincronización obligatoria de extension/ para extensiones Chrome, perfiles de ubicación y reutilización del Guardian/hombre muerto.
 - EP-TASK-001 permanece pendiente y sin cambio. No se crea otra tarea ni se autoriza implementación local, activación del Guardian, borrado o cambios en los repositorios consumidores por esta actualización documental.
+
+
+## Rectificación de ubicación y cifrado ubicuo · 2026-11-07
+
+El nombre canónico confirmado es CECEQ / LOC-CECEQ. En toda ubicación EP exige BitLocker usando la misma contraseña maestra de la bóveda canónica de variables de entorno. La única excepción de ciclo de vida es que CECEQ conserva el contenedor/carpeta cifrado al cierre; las demás ubicaciones volatilizan automáticamente el workspace. EP-TASK-003 contiene la política vigente; no se activa el Guardian hasta completar la adaptación/pruebas del backlog.
