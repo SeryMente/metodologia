@@ -64,6 +64,18 @@ No conservar payloads, secretos ni contenido conversacional duplicado dentro de 
 - Acreditar una mejora solo cuando se repita en ciclos comparables y no degrade exactitud, seguridad, autorización, trazabilidad ni disponibilidad de la respuesta.
 - No fijar metas numéricas antes de disponer de una línea base observada.
 
+## Compatibilidad con el esquema conversacional existente · 2026-11-07
+
+Se inspeccionó en main `ambitos/gestion-conversacional/ESQUEMA-CICLO-CONVERSACIONAL-v1.1.json` (blob `29fa613da5baec41180a12f87f5a6e08edf44599`) y su guía operativa v1.1 (blob `1e917ff6c2a33c9e0fcfc87ddefad665d1385e35`).
+
+- El esquema actual modela cada registro A y B por separado y establece `additionalProperties: false`.
+- No define actualmente un campo `performance`; por tanto, el bloque mínimo propuesto en esta tarea todavía no es válido contra el esquema A/B v1.1.
+- La guía confirma que el OCP es la materialización central de Gestión conversacional, que FOL1 permanece PREPARADO y que no existe captura automática presumida.
+- Para mantener una sola evidencia por ciclo y no crear una bitácora paralela, la opción de menor impacto que se evaluará es alojar el bloque de duración una sola vez en el registro B del ciclo, que representa la salida final. No es una decisión de modificación del OCP ni autoriza una escritura allí.
+- Cualquier ampliación del esquema central requiere la autorización y el procedimiento de cambio correspondientes. Esta tarea no modificó el OCP compartido, su esquema, la guía, el registro maestro ni FOL1.
+
+**Resultado:** contrato de duración definido en GOV-TASK-013; compatibilidad física pendiente de una ampliación versionada y autorizada del esquema central. No crear esquema duplicado dentro de esta tarea.
+
 ## Criterio de aceptación
 
 1. Existe un adaptador autorizado que captura ambos checkpoints reales de la plataforma objetivo; no se aceptan señales inferidas.
