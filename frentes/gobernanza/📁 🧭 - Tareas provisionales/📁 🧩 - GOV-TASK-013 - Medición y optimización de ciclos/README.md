@@ -86,4 +86,28 @@ No conservar payloads, secretos ni contenido conversacional duplicado dentro de 
 - Análisis y optimización: [GOV-TASK-012](../📁%20🧩%20-%20GOV-TASK-012%20-%20Fluidez%20y%20desempe%C3%B1o%20del%20marco/README.md).
 - Incorporación al ciclo recurrente: [GOV-TASK-011](../📁%20🧩%20-%20GOV-TASK-011%20-%20Coordinaci%C3%B3n%20bilateral%20recurrente/README.md), bajo responsabilidad exclusiva de Gobernanza 1 para el DTC.
 
-**Siguiente acción:** investigar y verificar exclusivamente la disponibilidad de los checkpoints de ChatGPT UI para el uso personal del operador. Si no existe una señal autorizada y observable, documentar el límite y evaluar una ruta compatible antes de implementar el adaptador.
+**Siguiente acción:** mantener la compuerta de implementación cerrada hasta contar con una fuente soportada para ambos checkpoints o con una decisión explícita que autorice cambiar el contrato a tiempo de ciclo observado en el cliente.
+
+## Verificación de factibilidad de captura en ChatGPT personal · 2026-11-07
+
+### Evidencia pública revisada
+
+- La documentación de OpenAI para Responses API define eventos de streaming como `response.created` y `response.completed`. Son eventos disponibles para el cliente que consume directamente esa API; su documentación no acredita que la interfaz web personal de ChatGPT los exponga a extensiones ni que correspondan al ciclo externo completo de la interfaz: https://developers.openai.com/api/reference/resources/responses/streaming-events y https://developers.openai.com/api/docs/guides/streaming-responses
+- Chrome `webRequest` permite observar el ciclo de solicitudes de red. `onBeforeRequest` ocurre antes de establecer una conexión TCP y `onCompleted` indica que una solicitud terminó correctamente; no son por sí mismos los eventos semánticos de aceptación y finalización del ciclo. La API tampoco expone los mensajes individuales que circulan por una conexión WebSocket establecida: https://developer.chrome.com/docs/extensions/reference/api/webRequest
+- Chrome permite inyectar content scripts en páginas coincidentes, pero estos se ejecutan por defecto en un mundo aislado. La documentación de extensiones no define la estructura DOM de ChatGPT como una interfaz estable de telemetría: https://developer.chrome.com/docs/extensions/reference/manifest/content-scripts
+- La API de OpenAI y ChatGPT tienen sistemas de facturación separados. Usar directamente Responses API no equivale a utilizar la suscripción personal de ChatGPT y puede generar cargos de API: https://help.openai.com/en/articles/9039756-managing-billing-for-the-chatgpt-and-api-platform
+
+### Resultado y decisión
+
+**Resultado:** con la documentación pública revisada no queda acreditado un hook autorizado y estable que permita a un adaptador personal de ChatGPT UI capturar exactamente `cycle.accepted` y `cycle.completed` según el contrato de esta tarea.
+
+**No se autoriza inferir equivalencia** a partir del clic de envío, mutaciones del DOM, el inicio/cierre de una solicitud HTTP ni endpoints privados no documentados. Una extensión podría experimentar con señales de interfaz para medir tiempo percibido por el usuario, pero eso sería otra definición de medición y no se registrará como cumplimiento del checkpoint `cycle.accepted`.
+
+Se conservan estas rutas posibles, sin implementar ninguna ni cambiar el contrato por inferencia:
+
+1. Mantener el contrato original y esperar/identificar una fuente soportada que exponga ambos checkpoints de ChatGPT UI.
+2. Solicitar una decisión explícita para sustituir la medición estricta por tiempo de ciclo observado en el cliente, con inicio y final claramente renombrados y cobertura/limitaciones documentadas.
+3. Utilizar un cliente propio basado en Responses API, aceptando que es una integración distinta de la interfaz personal y que su facturación es independiente.
+
+**Estado operativo:** adaptador ChatGPT UI NO IMPLEMENTADO; captura exacta NO VERIFICADA; línea base NO INICIADA. No generar mediciones ficticias ni presentar un experimento DOM/red como telemetría canónica.
+
