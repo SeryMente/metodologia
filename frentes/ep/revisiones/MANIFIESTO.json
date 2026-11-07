@@ -397,15 +397,19 @@
         "source_device": "PC10RCIF4EI4",
         "acquisition": "RDC read complete; bytes transferred using Base64 without text normalization",
         "export_timestamp": "2026-11-07 11:44:39 -06:00",
-        "status": "COMMIT_READBACK_PENDING",
-        "expected_git_blob_sha": "a3eb40892bf345cc285688034228dfb41b13d767"
+        "status": "PERSISTIDO_Y_VERIFICADO",
+        "expected_git_blob_sha": "a3eb40892bf345cc285688034228dfb41b13d767",
+        "commit": "0fb781d07595d72c0836f972c6fccf1b4bf3bb5d",
+        "readback_blob_sha": "a3eb40892bf345cc285688034228dfb41b13d767",
+        "readback_verified": true,
+        "readback_scope": "GitHub main fetch returned exact expected blob SHA; source bytes transferred as Base64 without text normalization."
       }
     },
     {
       "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.34.json",
-      "bytes": 1719,
-      "sha256": "8333644B53D6E7CFBE1175610813D06C05ACF61B3FD9300DE33BB449A1199419",
-      "git_blob": "108b9f2c6f05170392a94d2aef67c375b6f53576"
+      "bytes": 2166,
+      "sha256": "ECEED2D8681FB5B202E32CB970F7AB3F03A4498ABE190A543BADADA69F33C0B5",
+      "git_blob": "b22f0670a5ed00780c621185d86ed866254f8276"
     }
   ],
   "exclusions": [
@@ -432,8 +436,8 @@
     "No B2 authentication or bucket/object operations in this cycle.",
     "No formal EP responsibility transfer or generation assignment."
   ],
-  "prior_readback_verified": "Source bytes SHA-256 calculated on PC10RCIF4EI4; exact Base64 blob and documentation blobs staged. GitHub main read-back pending.",
+  "prior_readback_verified": "PASS: GitHub main read-back matched expected Git blob SHA for original, OEP, README and revision; original source SHA-256/byte count recorded.",
   "latest_review_source_commit": "53fe190e16d641d50dc868228a41bb79b034fed3",
   "current_event": "EP-C-EP-MOD-SCRIPTPWS-20261101-03: ingesta ChatGPT-EP-20261107-1144.txt; OEP v0.3.34/VCU-EP-v35; estado Master reportado como escrito/read-back, limpieza de portapapeles y verificación interactiva aún pendientes; B2 no autenticado.",
-  "verification_scope": "Original exact bytes preserved by Base64 Git blob; OEP and README updated; manifest indexes original/OEP/README/revision. No vault contents or clipboard read; no credential rewrite; no B2 authentication, bucket/object operation or restore; formal EP responsibility control remains unverified."
+  "verification_scope": "COMMITTED_AND_READBACK_VERIFIED: original exact bytes stored via Base64; source bytes 25,183 and SHA-256 match host metadata; original/OEP/README/revision blobs match GitHub main. Vault and clipboard were not accessed; no credential rewrite; no B2 auth or bucket/object operations; no formal responsibility transfer."
 }
