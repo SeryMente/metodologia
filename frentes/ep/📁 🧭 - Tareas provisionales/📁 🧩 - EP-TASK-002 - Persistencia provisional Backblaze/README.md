@@ -1745,3 +1745,15 @@ Preferencia ejecutiva: CLI/headless; no abrir ni reiniciar Chrome, no usar CDP n
 - `REMOTE_PERSISTENCE` = `NOT_PROVEN`
 
 La tarea permanece `en_curso`. No se creó Application Key adicional, no se rotó/revocó la Master Key, no se modificó la bóveda y no se realizó ninguna operación B2 de bucket u objeto en este ciclo.
+
+## 45. Reconciliación del estado operativo B2 y restauración entre ubicaciones · 2026-11-07
+
+Este apartado actualiza y prevalece sobre los estados operativos anteriores de esta materialización. El estado vivo y la evidencia detallada permanecen en OEP §102–§103.
+
+- La Master Application Key ya fue autenticada correctamente mediante caché aislada. La bóveda contiene las entradas Master y su coincidencia con los valores capturados fue verificada; no se reescribió.
+- El bucket OCP-MCP fue consultado sin modificaciones. El objeto sintético de 126 bytes se subió bajo ep-ocp/_verification/, se descargó al mismo host, y el SHA-256 de origen y descarga coincidió. SSE-B2/AES256 y metadata read-back: PASS.
+- El objeto sintético remoto permanece en B2. No se ha ejecutado borrado.
+- La restauración física independiente no se ha ejecutado. El inventario RDC muestra PC10RCIF4EI4 Online como único equipo disponible; 015RENTA01, PC-8 y PC-14 aparecen Offline. No se considera una ruta local distinta del mismo equipo como segunda ubicación.
+- Sincronización multiubicación, interrupción/reanudación, restauración funcional por consumidor y aceptación E2E permanecen pendientes.
+
+**Estado:** en_curso. Próximo paso: habilitar un segundo equipo físico autorizado y confirmar su ruta destino. Después ejecutar descarga independiente, comparar SHA-256 contra el recibo EP-B2-SMOKE-20261107.json, probar apertura del artefacto por el consumidor y registrar evidencia saneada. No operar otros buckets/prefijos ni borrar el objeto de prueba.
