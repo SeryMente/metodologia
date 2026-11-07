@@ -359,9 +359,9 @@
     },
     {
       "path": "frentes/ep/entregas/COORDINACION-GOBERNANZA-EP-v0.1.md",
-      "bytes": 228371,
-      "sha256": "D1D66113B7493212B90640F8999BB19ED6D70BCE00A1CDC938B1B975E80D06E0",
-      "git_blob": "59a3d607fcae2aca229bdb0d362ae24644d51884"
+      "bytes": 233549,
+      "sha256": "0A3FA17DDF183573160E0616F5F9714B188988CA6AF72CF90475350A17B1DE50",
+      "git_blob": "9d8320e604f09d882dfe7be9e2271571a87068f5"
     },
     {
       "path": "frentes/ep/originales/ChatGPT-EP-20261107-1111.txt",
@@ -443,9 +443,9 @@
     },
     {
       "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.37.json",
-      "bytes": 4984,
-      "sha256": "1B8FF61ABCA5E001954A62AC109A64C518362C27F4146D1045334F9F32302148",
-      "git_blob": "13628e4f3c5bf84c44e4c980fcc98d2ecc4d3d12"
+      "bytes": 5212,
+      "sha256": "DFF0E1A26DD2DD9A42213483ABE4A6294CA690F1927313029F709E3758679C74",
+      "git_blob": "38a347d2ea3e76362ba394288ed2798c14cd5a7f"
     }
   ],
   "exclusions": [
@@ -480,5 +480,6 @@
   "current_event": "EP-C-EP-MOD-SCRIPTPWS-20261101-03: Master vault entries matched without rewrite; B2 Master auth success; OCP-MCP preflight success; one 126-byte synthetic upload/download/read-back SHA-256 pass under ep-ocp/; second physical-location restore remains pending.",
   "verification_scope": "COMMITTED_AND_READBACK_VERIFIED: OEP v0.3.35 / VCU-EP-v36, README, evidence receipt and revision match GitHub main blob SHAs. Vault Master values matched existing entries; decrypt/ACL/backup and clipboard clear PASS. Master B2 authentication via isolated cache; OCP-MCP bucket GET PASS; one 126-byte synthetic object upload/download/file-info read-back PASS with SHA-256 match and SSE-B2/AES256. The remote smoke object is retained; no delete or configuration/key changes. Second physical-location restore, multi-location synchronization and end-to-end consumer acceptance remain pending.",
   "updated_on": "2026-11-07",
-  "latest_oep_version": "v0.3.37 / VCU-EP-v38"
+  "latest_oep_version": "v0.3.37 / VCU-EP-v38",
+  "latest_dtc_blob": "9d8320e604f09d882dfe7be9e2271571a87068f5"
 }
