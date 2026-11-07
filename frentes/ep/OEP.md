@@ -2240,3 +2240,48 @@ Quedó probada la ruta básica de autenticación Master y persistencia B2 en `OC
 - No se hicieron operaciones sobre otros buckets/prefijos; no se crearon, rotaron ni revocaron claves; no se borraron objetos ni se alteró configuración de bucket.
 
 La prueba sintética no autoriza ampliar las capacidades de la Master Application Key ni convertir su alcance global en permiso para operaciones ajenas a EP.
+
+## 103. Continuidad tras la prueba B2 y compuerta de restauración física independiente · v0.3.36 / VCU-EP-v37 · 2026-11-07
+
+### 103.1 Estado heredado verificado en el OEP
+
+Se conserva §102 como evidencia del primer ciclo funcional B2: bóveda Master reconciliada sin reescritura, autenticación Master satisfactoria, preflight de lectura de OCP-MCP y un objeto sintético de 126 bytes persistido bajo ep-ocp/ con SSE-B2/AES256 y SHA-256 coincidente tras descarga. El objeto sintético remoto permanece retenido; no se autoriza borrarlo por esta actualización.
+
+La evidencia anterior demuestra persistencia y lectura de vuelta desde el mismo host. No demuestra restauración en otra ubicación física, sincronización multiubicación ni aceptación end-to-end de un consumidor real de EP.
+
+### 103.2 Disponibilidad de ubicaciones independientes
+
+Se consultó el inventario de dispositivos RDC para identificar una segunda ubicación física ya registrada, sin ejecutar operaciones de datos ni alterar dispositivos. Resultado observado:
+
+- PC10RCIF4EI4: Online; es el único dispositivo disponible en este momento.
+- 015RENTA01: Offline.
+- PC-8: Offline.
+- PC-14: Offline.
+
+No se puede ejecutar una restauración independiente contra un equipo desconectado. Crear una carpeta distinta, unidad lógica, perfil o directorio en PC10RCIF4EI4 no satisface el criterio de segunda ubicación física. No se simuló ni se declaró una restauración multiubicación.
+
+### 103.3 Plan de cierre técnico
+
+La siguiente ejecución debe usar un segundo equipo físico registrado y autorizado, cuando esté Online:
+
+1. Confirmar identidad del equipo destino, propietario, volumen/ruta destino y espacio disponible; no reutilizar una ruta con datos sin inventario previo.
+2. Descargar exclusivamente el objeto sintético EP retenido desde OCP-MCP/ep-ocp/ hacia el destino independiente, sin modificar ni borrar el origen.
+3. Verificar tamaño, File ID, cifrado del objeto y SHA-256 contra el recibo de §102; registrar SHA de origen y destino y resultado de read-back.
+4. Instanciar en el destino el cliente/consumidor EP autorizado y probar lectura del artefacto restaurado mediante su ruta lógica, sin sustituir ni sobrescribir el estado local existente.
+5. Ejecutar sincronización incremental en ambos sentidos solo después de definir el conjunto de datos elegible, política de conflictos, snapshots consistentes, exclusiones de secretos y reglas de retención. La Master Key permanece restringida procedimentalmente al bucket OCP-MCP y prefijo ep-ocp/; no se amplía su uso a otros destinos.
+6. Ejecutar prueba de interrupción/reanudación e idempotencia; verificar que una segunda ejecución no duplica ni corrompe objetos.
+7. Emitir recibo saneado con hashes, conteos, rutas lógicas, timestamps y resultados, y solicitar aceptación del consumidor/propietario antes de cerrar EP-TASK-002.
+
+### 103.4 Estado de cierre
+
+- B2 Master auth: PASS, según evidencia §102.
+- OCP-MCP bucket GET: PASS, según evidencia §102.
+- Upload + descarga + hash + SSE-B2/AES256 en el mismo host: PASS, según evidencia §102.
+- Restauración en segunda ubicación física: BLOCKED — no hay segundo dispositivo Online.
+- Sincronización multiubicación: PENDIENTE.
+- Prueba de interrupción/reanudación: PENDIENTE.
+- Aceptación end-to-end del consumidor: PENDIENTE.
+- EP-TASK-002: en_curso.
+- Ciclo local C-EP-MOD-SCRIPTPWS-20261101-03: OPEN.
+
+No se ejecutaron operaciones sobre otros buckets/prefijos, no se crearon ni revocaron claves, no se modificó configuración B2 y no se borró el objeto sintético remoto. La única compuerta externa inmediata para la restauración física es que un segundo equipo autorizado esté disponible y se identifique su ruta destino; no se declara completado EP mientras los hitos anteriores sigan pendientes.
