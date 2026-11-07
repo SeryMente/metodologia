@@ -42,15 +42,15 @@
     },
     {
       "path": "frentes/ep/OEP.md",
-      "bytes": 344341,
-      "sha256": "959314258A53D83DFE3DA4EABF2EBA36A9CDE7986C18A6336A7E6907984BCA48",
-      "git_blob": "070c98d3de7f9b2349d09926f259d2b43d845d3e"
+      "bytes": 349551,
+      "sha256": "57AEC39EFB61750BFDDEE77AEF6E4D0495DB71BB7DDD90156BB6F61DB319DA7E",
+      "git_blob": "c3203dbb97b85ac5a87ee476a6e4b398dd01293b"
     },
     {
       "path": "frentes/ep/README.md",
-      "bytes": 3025,
-      "sha256": "F1D51D94F634A740AB6978795EF930A8CC0BB983861D721348C2BF6AD1CA0995",
-      "git_blob": "799a8752dd56ef5433cfcb172ef2cdd8a480fa37"
+      "bytes": 3354,
+      "sha256": "2BF411B20B146530C6AD4562C2F63B57280C41FF1D8A63C1D56FD40E4B778387",
+      "git_blob": "8264b7f2ea4e9ff725278d72c4d50137520709f2"
     },
     {
       "path": "frentes/ep/artefactos/EP-H03-integracion-reproducible-parcial-20261011.zip.b64",
@@ -359,9 +359,9 @@
     },
     {
       "path": "frentes/ep/entregas/COORDINACION-GOBERNANZA-EP-v0.1.md",
-      "bytes": 233549,
-      "sha256": "0A3FA17DDF183573160E0616F5F9714B188988CA6AF72CF90475350A17B1DE50",
-      "git_blob": "9d8320e604f09d882dfe7be9e2271571a87068f5"
+      "bytes": 236002,
+      "sha256": "49B377856D99ECA3F233BA8E4E53183113EF1E74705699D1C4EB86B51705679F",
+      "git_blob": "8327f43602ca4e035ba224cca12c3013f3949bd3"
     },
     {
       "path": "frentes/ep/originales/ChatGPT-EP-20261107-1111.txt",
@@ -377,15 +377,15 @@
     },
     {
       "path": "frentes/ep/📁 🧭 - Tareas provisionales/README.md",
-      "bytes": 9387,
-      "sha256": "B37BADD912177C52D5FFD19E872289D1C7D1DB435A70101BCC0DB4BF83C8007B",
-      "git_blob": "9595ce08547f5d34e698111310d44ebd9759e28e"
+      "bytes": 9916,
+      "sha256": "896B95682C773C36CB79828B1EEAEEED58473AA92355A53528F6F7F29EC1DDB8",
+      "git_blob": "0166a52b88786b947cd7873bf8b644c55604e657"
     },
     {
       "path": "frentes/ep/📁 🧭 - Tareas provisionales/📁 🧩 - EP-TASK-002 - Persistencia provisional Backblaze/README.md",
-      "bytes": 227983,
-      "sha256": "23C6EC9DF23D2C6D209BAB60CCCE3116E827E98F06AD2467D28E91AE3D5C75D4",
-      "git_blob": "0841828529a02537b1847c7e2fd2de429f0013ff"
+      "bytes": 231283,
+      "sha256": "1A623F10D455E9C19F5D08C1DDC50F3380627AE5808BC6FAB94D95B6490CD605",
+      "git_blob": "5d5d70242cb4d27557d10684da810bdb40fd2ad0"
     },
     {
       "path": "frentes/ep/originales/ChatGPT-EP-20261107-1144.txt",
@@ -425,9 +425,9 @@
     },
     {
       "path": "frentes/ep/📁 🧭 - Tareas provisionales/📁 🧩 - EP-TASK-003 - Mapa integral de construcción EP/README.md",
-      "bytes": 18687,
-      "sha256": "8A02E87A434417D4718AF7DB6BD71F4042C4C924EA071491C74CE31CB2ACFD56",
-      "git_blob": "6ad796a6ce65ff2bc17b3918f9c842ca87caed92"
+      "bytes": 26664,
+      "sha256": "26FA4F8A5D66191564BDBEA377804FEA5C3EFC0DDBD2D89F40AB5EADC0584A1D",
+      "git_blob": "985d7462551fee32751a5a137575f4dbe9470537"
     },
     {
       "path": "frentes/ep/originales/INSTRUCCION-MATERIALIZACION-UBICACIONES-20261107.txt",
@@ -446,6 +446,24 @@
       "bytes": 5212,
       "sha256": "DFF0E1A26DD2DD9A42213483ABE4A6294CA690F1927313029F709E3758679C74",
       "git_blob": "38a347d2ea3e76362ba394288ed2798c14cd5a7f"
+    },
+    {
+      "path": "frentes/ep/originales/INSTRUCCION-BITLOCKER-CECEQ-20261107.txt",
+      "bytes": 653,
+      "sha256": "3544A16B9A6FE6BA672E25E51A84F7407F7C572685AF78F609B63FA5063F1883",
+      "git_blob": "b3101fad47174497eae3d0c879ce3c8874769e56"
+    },
+    {
+      "path": "frentes/ep/evidencias/PERFIL-CECEQ-POLITICA-20261107.json",
+      "bytes": 3273,
+      "sha256": "32EEDABCF9C7E0F4CA1D4BC954C833A6EEAE62FE6B01EC4B4D1409F1E7B38202",
+      "git_blob": "4ccaf192204aec76e24064d5769fa7c40afdbe1b"
+    },
+    {
+      "path": "frentes/ep/revisiones/REVISION-OEP-v0.3.38.json",
+      "bytes": 3283,
+      "sha256": "488DCDE59CC439A5A3CEDF9637DCB33B328B3849A7C5A7587E513C5876F188B8",
+      "git_blob": "c104ecdac5e5fecffc4aaa6a37d69b314e932b57"
     }
   ],
   "exclusions": [
@@ -477,9 +495,9 @@
   ],
   "prior_readback_verified": "PASS: GitHub main fetch matched expected blobs for OEP, README, B2 smoke evidence receipt, revision and manifest.",
   "latest_review_source_commit": "3eacb0f1ec558520def46f03f894bcd8966cba1e",
-  "current_event": "EP-C-EP-MOD-SCRIPTPWS-20261101-03: Master vault entries matched without rewrite; B2 Master auth success; OCP-MCP preflight success; one 126-byte synthetic upload/download/read-back SHA-256 pass under ep-ocp/; second physical-location restore remains pending.",
-  "verification_scope": "COMMITTED_AND_READBACK_VERIFIED: OEP v0.3.35 / VCU-EP-v36, README, evidence receipt and revision match GitHub main blob SHAs. Vault Master values matched existing entries; decrypt/ACL/backup and clipboard clear PASS. Master B2 authentication via isolated cache; OCP-MCP bucket GET PASS; one 126-byte synthetic object upload/download/file-info read-back PASS with SHA-256 match and SSE-B2/AES256. The remote smoke object is retained; no delete or configuration/key changes. Second physical-location restore, multi-location synchronization and end-to-end consumer acceptance remain pending.",
+  "current_event": "EP-C-EP-MOD-SCRIPTPWS-20261101-03: CECEQ is the confirmed canonical location profile; BitLocker is mandatory at every location using the canonical vault master passphrase; CECEQ preserves the encrypted workspace at close, other locations automatically volatilize the EP-controlled workspace; VS Code trigger removed.",
+  "verification_scope": "DOCUMENTATION_COMMITTED_AND_READBACK_VERIFIED: OEP v0.3.38 / VCU-EP-v39, task index, EP-TASK-002, EP-TASK-003, README, DTC, CECEQ instruction/profile and revision blobs match GitHub main. Guardian and BitLocker runtime activation remain pending; no local workspace deletion or BitLocker mutation was performed.",
   "updated_on": "2026-11-07",
-  "latest_oep_version": "v0.3.37 / VCU-EP-v38",
-  "latest_dtc_blob": "9d8320e604f09d882dfe7be9e2271571a87068f5"
+  "latest_oep_version": "v0.3.38 / VCU-EP-v39",
+  "latest_dtc_blob": "8327f43602ca4e035ba224cca12c3013f3949bd3"
 }
