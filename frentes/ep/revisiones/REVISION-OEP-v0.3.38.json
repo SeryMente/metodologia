@@ -1,0 +1,75 @@
+{
+  "schema": 1,
+  "version": "v0.3.38 / VCU-EP-v39",
+  "date": "2026-11-07",
+  "source_operator_correction": "CECEQ is the canonical location name; no further spelling confirmation is required.",
+  "decisions": {
+    "canonical_location_profile": "LOC-CECEQ",
+    "bitlocker": "MANDATORY_ALL_LOCATIONS",
+    "bitlocker_master_secret": "SAME_MASTER_PASSPHRASE_AS_CANONICAL_ENVIRONMENT_VARIABLES_VAULT",
+    "per_session_derivation": "PBKDF2-HMAC-SHA256; 200000 iterations; session-bound salt; reuse established protected-volume design",
+    "CECEQ_cleanup": "LOCK_AND_DISMOUNT_BUT_PRESERVE_ENCRYPTED_WORKSPACE; NO_AUTOMATIC_DELETE",
+    "other_location_cleanup": "AUTOMATIC_VOLATILIZATION_OF_EP_CONTROLLED_WORKSPACE",
+    "unknown_location": "LOC-OTHER",
+    "vscode_exit_trigger": "REMOVED",
+    "guardian_idle_timeout": "15-minute value historical only; final threshold pending backlog reconciliation"
+  },
+  "sources": {
+    "instruction": {
+      "path": "frentes/ep/originales/INSTRUCCION-BITLOCKER-CECEQ-20261107.txt",
+      "blob": "b3101fad47174497eae3d0c879ce3c8874769e56"
+    },
+    "profile": {
+      "path": "frentes/ep/evidencias/PERFIL-CECEQ-POLITICA-20261107.json",
+      "blob": "4ccaf192204aec76e24064d5769fa7c40afdbe1b"
+    }
+  },
+  "changes": {
+    "frentes/ep/OEP.md": {
+      "blob": "c3203dbb97b85ac5a87ee476a6e4b398dd01293b"
+    },
+    "frentes/ep/README.md": {
+      "blob": "8264b7f2ea4e9ff725278d72c4d50137520709f2"
+    },
+    "frentes/ep/📁 🧭 - Tareas provisionales/README.md": {
+      "blob": "0166a52b88786b947cd7873bf8b644c55604e657"
+    },
+    "frentes/ep/📁 🧭 - Tareas provisionales/📁 🧩 - EP-TASK-002 - Persistencia provisional Backblaze/README.md": {
+      "blob": "5d5d70242cb4d27557d10684da810bdb40fd2ad0"
+    },
+    "frentes/ep/📁 🧭 - Tareas provisionales/📁 🧩 - EP-TASK-003 - Mapa integral de construcción EP/README.md": {
+      "blob": "985d7462551fee32751a5a137575f4dbe9470537"
+    },
+    "frentes/ep/entregas/COORDINACION-GOBERNANZA-EP-v0.1.md": {
+      "blob": "8327f43602ca4e035ba224cca12c3013f3949bd3"
+    }
+  },
+  "checks": {
+    "location_name_corrected": "PASS",
+    "all_locations_bitlocker_recorded": "PASS",
+    "one_master_passphrase_recorded": "PASS",
+    "CECEQ_preserve_encrypted_workspace_recorded": "PASS",
+    "other_locations_auto_volatilization_recorded": "PASS",
+    "vscode_trigger_removed_from_current_policy": "PASS",
+    "Guardian_not_activated": "NOT_EXECUTED",
+    "BitLocker_volume_operations": "NOT_EXECUTED",
+    "workspace_created": "NOT_EXECUTED",
+    "automatic_cleanup_task_created": "NOT_EXECUTED",
+    "host_files_deleted": "NONE",
+    "same_host_clean_restore": "PENDING"
+  },
+  "limitations": {
+    "desktop_path": "fila4 registry Desktop values conflict; no materialization until resolved",
+    "location_fingerprint": "operator-assigned profile; not independent geolocation",
+    "no_forensic_claim": "only EP-controlled workspace artifacts can be removed; no system log or third-party trace deletion"
+  },
+  "continuity": {
+    "EP_TASK_001": "pendiente",
+    "EP_TASK_002": "en_curso",
+    "EP_TASK_003": "en_curso",
+    "local_cycle": "C-EP-MOD-SCRIPTPWS-20261101-03",
+    "cycle_state": "OPEN",
+    "FOL1": "PENDIENTE / NO ACTIVO",
+    "global_folios": "NO ASIGNADOS"
+  }
+}
