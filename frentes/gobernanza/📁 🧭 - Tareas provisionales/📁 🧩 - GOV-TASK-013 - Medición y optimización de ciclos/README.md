@@ -27,7 +27,7 @@ Medir de manera reproducible la duración observable del ciclo completo de inter
 9. **Integración conversacional/AT:** relacionar el resultado con el UUIDv7 local de conversación, la identidad local del ciclo y las referencias de registro A/B y AT cuando existan. No inventar IDs nativos, folios ni referencias. No duplicar el texto A/B ni crear un registro por herramienta.
 10. **Ámbito físico:** reutilizar el OCP transversal existente `ambitos/gestion-conversacional/` para el contrato común y sus referencias; no crear una copia de telemetría por frente. Cada frente conserva únicamente las referencias que le correspondan.
 11. **Contenido:** conservar A/B literal según ART-024, sin razonamiento interno oculto ni secretos. La captura automática no se presume: requiere adaptador real, permisos y prueba de lectura de vuelta.
-12. **Base de datos:** PostgreSQL administrado sigue siendo la opción candidata para persistencia central de bajo volumen. El proveedor/proyecto, retención y acceso permanecen pendientes de decisión/autorización. No provisionar ni reutilizar proyectos ajenos a Metodología sin autorización expresa.
+12. **Persistencia y destino:** antes de añadir PostgreSQL, evaluar el mecanismo de persistencia central ya disponible a través de la integración Harmonia/MCP y el OCP correspondiente. Neon/PostgreSQL queda como alternativa, no como decisión ni requisito de la primera versión. No crear bases, buckets ni servicios nuevos si el destino MCP/OCP existente puede cumplir persistencia, acceso y lectura de vuelta. Cualquier recurso nuevo requiere decisión y autorización expresa.
 13. **FOL1:** continúa PREPARADO_PENDIENTE_ACTIVACION_IPZ. No asignar folios nuevos ni declarar activación desde esta tarea; respetar la compuerta vigente de IPZ y nueva conversación.
 
 ## Verificación documental inicial de OpenAI
@@ -36,7 +36,38 @@ Medir de manera reproducible la duración observable del ciclo completo de inter
 - La exportación ordinaria de ChatGPT entrega una copia descargable del historial; no es un hook de captura en vivo por turno: https://help.openai.com/en/articles/7260999-exporting-your-chatgpt-history-and-data
 - La Compliance Platform se limita a espacios Enterprise/Edu elegibles y permisos administrativos; no se presume disponible en una cuenta personal ni constituye un hook universal: https://help.openai.com/en/articles/9261474-openai-compliance-platform-for-enterprise-and-edu-customers
 
-**Bloqueo técnico vigente:** no se ha identificado ni probado un mecanismo autorizado y verificable que exponga a un adaptador los dos checkpoints del ciclo de la interfaz de ChatGPT en el uso personal del operador. Los eventos de Responses API no prueban por sí solos que exista captura de ciclos de ChatGPT UI. No implementar un adaptador basado en suposiciones o señales detectivas distintas.
+**Bloqueo técnico vigente:** existe una extensión de observabilidad de ChatGPT dentro de Khora que constituye una ruta candidata de captura, pero el código publicado y la evidencia de uso natural revisados no demuestran todavía los dos checkpoints semánticos de ciclo. Los eventos de Responses API tampoco prueban por sí solos que exista captura de ciclos de ChatGPT UI. No implementar un adaptador basado en suposiciones o señales detectivas distintas.
+
+## Integración transversal mediante Khora/Harmonia · aclaración del operador 2026-11-07
+
+### Límite de propiedad y uso
+
+El operador aclara que Khora no forma parte del OCP MCP; no obstante, la extensión mantenida en el repositorio Khora podrá utilizarse como capa integradora transversal de los sistemas construidos por el operador y como cliente/adaptador para propósitos de MCP.
+
+Esta autorización de uso no convierte al repositorio Khora en parte del OCP MCP, no traslada la propiedad del código, no crea un OCP adicional y no autoriza a esta tarea a modificar el repositorio Khora. El contrato y el destino de persistencia siguen bajo el OCP correspondiente; la extensión actúa como componente externo de integración.
+
+### Componentes identificados en Khora
+
+1. **Sombrilla modular de integraciones:** `SeryMente/khora/khora-web/extension/harmonia/`. Su README actual la presenta como **Aisthesis (Halcon)**, una extensión Chrome MV3 que hospeda módulos enchufables; el contrato de módulos permite agregar `modules/<id>/`, scripts de fondo, content scripts y permisos específicos. Los secretos se mantienen en almacenamiento local de Chrome y los módulos deshabilitados no se cargan. Fuentes inspeccionadas: `README.md` blob `56cfd787f47a0b59f56b5f8e1b97b1e636bfec61`; `MODULE-CONTRACT.md` blob `375b4d61238071b983181e38564baf5a8b266921`; `manifest.json` blob `9bf22c96d7f399a16f67d03dc8da02ea74b87e61`.
+2. **Observador específico de ChatGPT:** `SeryMente/khora/apps/harmonia-observability/extension/`, manifiesto MV3 v0.3.0, limitado a `chatgpt.com` y colector local. Su content script actual emite `ui.surface.scan` con huellas y metadatos estructurales; puede reconocer rasgos como presencia del compositor o del estado de streaming, pero no emite transiciones de inicio/final por ciclo ni captura texto de mensajes. El service worker filtra los eventos entrantes a `ui.surface.scan`; el colector admite `ui.surface.scan`, `ui.surface.reused` y `capture.*`, no `cycle.accepted` ni `cycle.completed`. Fuentes inspeccionadas: `manifest.json` blob `5c2dd6d616c4ba19541d03df8fbc4abc6f0a11b6`; `content.js` blob `600f2bfb742aeb6f481fbb36ac762fd0d6907088`; `service-worker.js` blob `49d65381accdc33ce501eca6c4b5f2dd47a014b2`; `collector/server.js` blob `34b98945da3db4604e62a3c9baa367ce024a0a5c`.
+
+### Evidencia y límites de aceptación
+
+- El OCP Harmonia en main es v0.43. La traza real publicada de observación tiene 627 eventos: 10 `capture.started`, 611 `console.observed` y 6 `capture.stopped`; cero eventos de escaneo estructural y cero eventos de mensajes visibles. La fixture de 11 eventos es sintética y no demuestra captura natural. La extensión no está aceptada funcionalmente en Chrome.
+- La PR #353 de Khora propone persistencia local-first (outbox IndexedDB, colector JSONL append-only/fsync, ledger, reintentos y ACK). Permanece en borrador y sin merge; conserva el content script v0.3.0 y explícitamente no incorpora captura de texto de mensajes. La validación local reportada es 8/8 sintaxis y 10/10 pruebas, pero GitHub Actions falló sin pasos/logs disponibles y la aceptación Chrome/EP sigue pendiente. Esta candidata mejora la capa de persistencia; no resuelve la semántica de inicio/final de cada ciclo.
+- La diferencia de nombres entre la sombrilla ubicada en `khora-web/extension/harmonia/` (README: Aisthesis) y el observador `apps/harmonia-observability/` se conserva como hecho documental; esta tarea no renombra ni reconcilia productos dentro de Khora.
+
+### Arquitectura autorizada como dirección de integración, no como implementación
+
+`ChatGPT UI → observador/adaptador de Harmonia → persistencia local-first → cliente MCP → OCP/registro conversacional central`.
+
+- Harmonia podrá servir de puente de integración con MCP aunque su código permanezca en el repositorio Khora.
+- El módulo de medición debe ser mínimo: observar solo transiciones verificables de entrada/salida, registrar tiempo monotónico local y referencias de correlación. No ejecutar escaneos DOM/CSS extensos en cada transición ni capturar cuerpos de mensajes para medir duración.
+- La entrega de la respuesta no espera a la persistencia ni al ACK remoto. La telemetría se entrega después mediante la outbox/cola local durable que esté aceptada y disponible.
+- La persistencia final debe reutilizar primero el OCP/MCP autorizado y su mecanismo de read-back. No asumir que la outbox local equivale a persistencia central verificada.
+- El adaptador de interfaz solo podrá mapear a `cycle.accepted` y `cycle.completed` tras pruebas naturales que demuestren que las señales observadas representan esos límites. Si solo se puede medir desde el envío visible hasta el fin visible de la generación, deberá registrarse como medida de cliente distinta; no etiquetarla como aceptación del servidor.
+
+**Estado operativo:** Harmonia identificado como capa de integración reutilizable por autorización expresa del operador; el observador específico de ChatGPT existe en Khora, pero no implementa ni demuestra todavía medición canónica de ciclos. No se modificó Khora, no se conectó un destino MCP, no se habilitó transporte remoto y no se desplegó persistencia nueva.
 
 ## Registro mínimo por ciclo
 
@@ -98,7 +129,7 @@ Se inspeccionó en main `ambitos/gestion-conversacional/ESQUEMA-CICLO-CONVERSACI
 - Análisis y optimización: [GOV-TASK-012](../📁%20🧩%20-%20GOV-TASK-012%20-%20Fluidez%20y%20desempe%C3%B1o%20del%20marco/README.md).
 - Incorporación al ciclo recurrente: [GOV-TASK-011](../📁%20🧩%20-%20GOV-TASK-011%20-%20Coordinaci%C3%B3n%20bilateral%20recurrente/README.md), bajo responsabilidad exclusiva de Gobernanza 1 para el DTC.
 
-**Siguiente acción:** mantener la compuerta de implementación cerrada hasta contar con una fuente soportada para ambos checkpoints o con una decisión explícita que autorice cambiar el contrato a tiempo de ciclo observado en el cliente.
+**Siguiente acción:** evaluar el módulo mínimo de observación de ciclo dentro de la extensión Harmonia de Khora y verificarlo mediante uso natural en Chrome. Mantener la compuerta de captura cerrada hasta demostrar los checkpoints; después conectar persistencia al destino MCP/OCP existente, sin desplegar una base nueva por anticipado.
 
 ## Verificación de factibilidad de captura en ChatGPT personal · 2026-11-07
 
