@@ -451,8 +451,8 @@
     "Master Application Key remains globally unrestricted by provider; EP use constrained procedurally to OCP-MCP/ep-ocp/.",
     "No restore to a second physical location, multi-location sync or end-to-end consumer acceptance in this cycle."
   ],
-  "prior_readback_verified": "PENDING: OEP v0.3.35, README, evidence receipt and REVISION-OEP-v0.3.35 are staged for GitHub main write and read-back.",
+  "prior_readback_verified": "PASS: GitHub main fetch matched expected blobs for OEP, README, B2 smoke evidence receipt, revision and manifest.",
   "latest_review_source_commit": "3eacb0f1ec558520def46f03f894bcd8966cba1e",
   "current_event": "EP-C-EP-MOD-SCRIPTPWS-20261101-03: Master vault entries matched without rewrite; B2 Master auth success; OCP-MCP preflight success; one 126-byte synthetic upload/download/read-back SHA-256 pass under ep-ocp/; second physical-location restore remains pending.",
-  "verification_scope": "Pending main read-back: vault Master entries matched existing encrypted values (no rewrite), decrypt/ACL/backup and clipboard clear PASS; Master B2 authentication via isolated cache; bucket OCP-MCP GET PASS; one 126-byte synthetic object uploaded only under ep-ocp/_verification, downloaded to same-host temp and SHA-256 matched; SSE-B2/AES256 metadata PASS. Remote object retained; no deletes or bucket/credential configuration changes. Second physical-location restore, multi-location synchronization and end-to-end consumer acceptance remain pending."
+  "verification_scope": "COMMITTED_AND_READBACK_VERIFIED: OEP v0.3.35 / VCU-EP-v36, README, evidence receipt and revision match GitHub main blob SHAs. Vault Master values matched existing entries; decrypt/ACL/backup and clipboard clear PASS. Master B2 authentication via isolated cache; OCP-MCP bucket GET PASS; one 126-byte synthetic object upload/download/file-info read-back PASS with SHA-256 match and SSE-B2/AES256. The remote smoke object is retained; no delete or configuration/key changes. Second physical-location restore, multi-location synchronization and end-to-end consumer acceptance remain pending."
 }
