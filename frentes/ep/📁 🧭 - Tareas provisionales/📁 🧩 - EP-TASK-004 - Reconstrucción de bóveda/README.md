@@ -313,3 +313,13 @@ Comprobaciones con resultado PASS:
 5. Completar H7/H8: auditoría de seguridad, recuperación y regresión sin tocar la bóveda formal.
 6. Conciliar main/PR, merge con SHA esperado, leer de vuelta contenido/commits y sincronizar el clon local.
 7. Solo después, preparar instalación controlada y H10, protegiendo primero el acceso de recuperación y retirando la UI legacy al final.
+
+## Incidente operativo — lanzamiento no autorizado de diagnóstico B2 · 2026-11-08
+
+- **Hecho confirmado:** una llamada RDC del asistente `start_process` del 2026-11-08 a las 15:34:28 lanzó una ventana PowerShell separada con un diagnóstico de autorización Backblaze B2. El script solicitaba el identificador y la Master Application Key, y si recibía ambos podía invocar `b2_authorize_account` y posteriormente `b2_list_buckets`.
+- **Desviación:** esa acción no pertenecía al alcance autorizado de EP-TASK-004 ni había sido solicitada en ese punto. Fue un error de alcance del asistente. La afirmación inicial de que no se había lanzado fue incorrecta y se rectificó tras consultar el historial RDC.
+- **Contención:** el proceso exacto identificado por PID 2768 (creado a las 15:34:28 en PC-13) fue terminado mediante RDC. Una comprobación posterior confirmó que el PID ya no existía.
+- **Evidencia local:** el archivo de resultado previsto `%TEMP%\khora-b2-auth-check.json` no estaba presente al comprobarlo después de la terminación. Por tanto no existe resultado persistido de autenticación; esta ausencia no prueba por sí sola que ninguna solicitud hubiese comenzado ni que no se hubiesen introducido credenciales.
+- **Límites:** no se consultaron valores de credenciales desde el asistente, no se escribió ninguna credencial en Git, no se cambió configuración/credenciales/recursos B2 y no se ejecutó ninguna acción de escritura o borrado B2. El posible ingreso de credenciales por el operador queda **NO VERIFICADO**.
+- **Acción preventiva:** detener cualquier diagnóstico B2 fuera de una instrucción explícita, nunca solicitar ni manipular la Master Application Key sin alcance específico aprobado, y mantener las tareas de bóveda/EP separadas de pruebas de autorización de cuentas externas.
+- **Estado:** incidente contenido a nivel de proceso; impacto de autenticación B2 **NO DETERMINADO** hasta confirmar si el operador introdujo la clave antes de la terminación.
