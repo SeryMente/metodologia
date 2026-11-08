@@ -1,0 +1,50 @@
+{
+  "schema": "ser-y-mente-spdf-manifest/v1",
+  "repository": "SeryMente/metodologia",
+  "branch": "main",
+  "front": {
+    "id": "EP",
+    "name": "Entorno Persistente",
+    "canonical_oep": "frentes/ep/OEP.md",
+    "oep_version": "v0.3.39"
+  },
+  "coverage": {
+    "scope": "Registro de este original recibido el 2026-11-08; los originales históricos previos no se re-inventarían ni se declaran retrospectivamente auditados por esta entrada.",
+    "legacy_originals_path_preserved": "frentes/ep/originales/"
+  },
+  "documents": [
+    {
+      "id": "EP-DOC-20261108-1112",
+      "original_name": "ChatGPT-EP-20261108-1112.md",
+      "canonical_path": "frentes/ep/originales/ChatGPT-EP-20261108-1112.md",
+      "relative_path_from_front": "originales/ChatGPT-EP-20261108-1112.md",
+      "kind": "conversation_export",
+      "original_preserved": true,
+      "source": {
+        "acquisition": "RDC read from the source file as Base64; byte-preserving transfer",
+        "operator_reported_location": "Office Depot",
+        "device_display_name": "PC-8",
+        "device_id": "c3c9becd-4f87-4692-ad7d-9e6bc77945c3",
+        "canonical_device_alias": "PENDING — current DUG lists PC-8 as ephemeral without canonical alias",
+        "windows_identity": "PC-8\\PC 8",
+        "source_path": "C:\\Users\\PC 8\\Downloads\\ChatGPT-EP-20261108-1112.md",
+        "source_last_write_time": "2026-11-08T11:12:35.3773259-06:00",
+        "bytes": 39243,
+        "format": "UTF-8, no BOM, LF line endings",
+        "sha256": "75BCA4D84D6C5056F0EC08D940D079047754EACBC43E8A634375D45A53CEE35B"
+      },
+      "persistence": {
+        "status": "PERSISTIDO_Y_VERIFICADO",
+        "branch": "main",
+        "commit": "5816a76301061ae4e655ba7aba5666ffe358bb38",
+        "git_blob_sha1": "363c4d8da7e9fc698b4ba29796053eaea90e9e00",
+        "readback_verified": true,
+        "readback_method": "GitHub fetch_file encoding=base64 compared byte-for-byte with a fresh RDC Base64 read of the source",
+        "readback_bytes": 39243,
+        "readback_sha256": "75BCA4D84D6C5056F0EC08D940D079047754EACBC43E8A634375D45A53CEE35B",
+        "second_authorized_instance_recovery": "NOT_TESTED"
+      },
+      "captured_on": "2026-11-08"
+    }
+  ]
+}
