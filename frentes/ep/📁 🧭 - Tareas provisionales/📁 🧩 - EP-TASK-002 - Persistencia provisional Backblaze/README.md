@@ -1856,3 +1856,42 @@ La sesión RDC activa en este host está asociada al proceso `MantenimientoRCI`,
 **Siguiente acción:** el operador debe iniciar RDC desde una terminal de Windows abierta como `fila4`, en el host CECEQ correspondiente, usando `npx @wonderwhy-er/desktop-commander@latest remote --no-persist-session`. Después se verificará la identidad efectiva del proceso RDC y se comprobarán únicamente los metadatos de las rutas conocidas de bóveda/caché. No se pedirá ni mostrará ningún secreto. No autenticar ni sincronizar hasta satisfacer las compuertas P012/P013 y confirmar el estado local de manera válida.
 
 **No ejecutado en este ciclo:** no se interactuó con la sesión bloqueada PID 5216; no se leyó la bóveda ni SQLite; no se accedió al portapapeles; no se descifraron credenciales; no se ejecutó `account authorize`, `account get`, operación de bucket/objeto, upload, download, restore o delete; no se modificó ningún archivo local ni configuración B2.
+
+
+## 50. Preflight de restauración B2 en PC-8 · 2026-11-08
+
+### Host y perfil efectivos
+
+RDC confirmó PC-8 Online (Device ID \`c3c9becd-4f87-4692-ad7d-9e6bc77945c3\`). El proceso de inspección read-only se ejecutó en Windows PowerShell 5.1.22621.6133, host \`PC-8\`, usuario \`PC-8\\PC 8\`, perfil \`C:\\Users\\PC 8\`, LOCALAPPDATA \`C:\\Users\\PC 8\\AppData\\Local\`. No había sesiones terminales RDC activas ni procesos B2.
+
+### Hallazgos read-only
+
+- Bóveda esperada \`%LOCALAPPDATA%\\Khora\\secrets\\b2-ep-env-vault.enc.json\`: no encontrada en el perfil actual.
+- Caché Master \`%LOCALAPPDATA%\\Khora\\state\\b2-ep-master-20261107.sqlite\`: no encontrada en el perfil actual.
+- Caché anterior \`%LOCALAPPDATA%\\Khora\\state\\b2-ep-ocp.sqlite\`: no encontrada en el perfil actual.
+- B2 CLI: no encontrada en las rutas examinadas de LOCALAPPDATA/Program Files.
+- Variables de entorno cuyo nombre comienza por \`B2_\`: ninguna.
+- Directorios de configuración B2 examinados en AppData Roaming/Local, \`.b2\` y \`.config\\backblaze\`: no encontrados.
+
+Estos resultados están acotados al perfil actual y las rutas concretas comprobadas; no demuestran ausencia de bóveda en otros hosts, perfiles o medios.
+
+### Clasificación y bloqueo
+
+PC-8 es una materialización limpia en cuanto a las rutas B2 conocidas. La ubicación física no fue declarada ni validada; queda como LOC-OTHER/no reconocida a efectos de la política de ubicación, sin activar eliminación, dead-man trigger ni limpieza. El preflight no modificó archivos ni configuración.
+
+Sin acceso local verificable a la credencial canónica de EP no es posible autenticar ni restaurar desde B2. No se copiarán secretos entre hosts sin autorización expresa y un procedimiento de transferencia, SHA y read-back; no se pedirán valores por chat.
+
+### Estados y siguiente acción
+
+- \`B2_CLI=NOT_INSTALLED_ON_PC8\`.
+- \`EP_VAULT=NOT_FOUND_IN_CURRENT_PROFILE\`.
+- \`B2_CACHE=NOT_FOUND_IN_CURRENT_PROFILE\`.
+- \`B2_ENV_VARS=NONE\`.
+- \`B2_AUTH=NOT_EXECUTED\`.
+- \`USER_DATA_SYNC=NOT_PROVEN\`.
+- \`CLEAN_RESTORE=NOT_PROVEN\`.
+- \`EP-TASK-002=en_curso\`.
+
+Siguiente acción: habilitar acceso local, seguro y verificable a la bóveda/credencial canónica de EP en el host que se vaya a utilizar. Después instalar la CLI oficial con verificación de hash/firma, comprobar bóveda/read-back protegido y solo entonces abrir la compuerta de autenticación. Limitar las operaciones a \`OCP-MCP/ep-ocp/\`; no borrar objetos ni administrar credenciales.
+
+**No ejecutado:** instalación de CLI, lectura de bóveda/caché/portapapeles, transferencia de credenciales, autenticación, llamadas de cuenta/bucket/objeto, upload, download, restore, delete o cambios de seguridad.
