@@ -171,7 +171,7 @@ try {
         'DeleteNote' {
             if ([string]::IsNullOrWhiteSpace($NoteId)) { throw 'NOTE_ID_REQUIRED' }
             if (-not $ApproveDelete) { throw 'APPROVE_DELETE_SWITCH_REQUIRED' }
-            Remove-EpVaultNote -NoteId $NoteId
+            Remove-EpVaultNote -NoteId $NoteId -Approved
         }
 
         'Run' {
