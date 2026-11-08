@@ -848,9 +848,42 @@ function New-EpVaultNoteFromClipboard {
             payload = [Convert]::ToBase64String($protected)
         }
         $path = Get-EpWorkingNotePath -NoteId $id
-        $temporary = $path + '.tmp'
-        [IO.File]::WriteAllText($temporary, (ConvertTo-Json -InputObject $record -Depth 4), [Text.UTF8Encoding]::new($false))
-        [IO.File]::Move($temporary, $path)
+        $temporary = $path + '.tmp-' + [Guid]::NewGuid().ToString('N')
+        $json = ConvertTo-Json -InputObject $record -Depth 4
+        $bytes = [Text.UTF8Encoding]::new($false).GetBytes($json)
+        $stream = $null
+        try {
+            $stream = [IO.FileStream]::new(
+                $temporary,
+                [IO.FileMode]::CreateNew,
+                [IO.FileAccess]::Write,
+                [IO.FileShare]::None
+            )
+            $stream.Write($bytes,0,$bytes.Length)
+            $stream.Flush($true)
+            $stream.Dispose()
+            $stream = $null
+            [IO.File]::Move($temporary,$path)
+        }
+        finally {
+            if ($stream) { $stream.Dispose() }
+            Clear-EpBytes -Bytes $bytes
+            $json = $null
+            if (Test-Path -LiteralPath $temporary) {
+                Remove-Item -LiteralPath $temporary -Force -ErrorAction SilentlyContinue
+            }
+        }
+
+        $readback = Get-EpVaultNote -NoteId $id -Reveal
+        try {
+            if ([string]$readback.value -cne $value) {
+                throw 'WORKING_NOTE_WRITE_READBACK_MISMATCH'
+            }
+        }
+        finally {
+            $readback = $null
+        }
+
         Write-EpVaultEvent -Event 'WORKING_NOTE_CAPTURED'
         return [pscustomobject]@{
             id = $id
