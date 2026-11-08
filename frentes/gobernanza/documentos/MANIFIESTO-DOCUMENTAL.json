@@ -2,7 +2,7 @@
   "schema": "ser-y-mente-document-manifest/v1",
   "front": "Gobernanza",
   "ocp_path": "frentes/gobernanza/",
-  "event_id": "C-GOBERNANZA-RETOMA-11",
+  "event_id": "C-GOBERNANZA-RETOMA-13",
   "cycle_folio": null,
   "recorded_on": "2026-11-06",
   "status": "PERSISTIDO_Y_VERIFICADO",
@@ -239,7 +239,8 @@
         "method": "Base64 byte-for-byte origen RDC vs GitHub main read-back; Git blob SHA coincide.",
         "readback_blob_sha": "bb78f30a7696bd1a4dd526e5d17283739e95e692",
         "verified_on": "2026-11-08"
-      }
+      },
+      "recorded_in_event_id": "C-GOBERNANZA-RETOMA-13"
     },
     {
       "document_id": "DOC-GOV-CUSTODIA-CONTEXTO-20261108-1121",
@@ -263,7 +264,8 @@
         "readback_blob_sha": "b7e13e3fe9fed70873535640e1124577f5b037e4",
         "verified_on": "2026-11-08"
       },
-      "role": "Contexto interfrentes para continuidad de Khora/B2; no constituye fuente normativa del frente Gobernanza."
+      "role": "Contexto interfrentes para continuidad de Khora/B2; no constituye fuente normativa del frente Gobernanza.",
+      "recorded_in_event_id": "C-GOBERNANZA-RETOMA-13"
     }
   ],
   "originals_commit_sha": "c3c47a7f185d8e9482b55942e00c7da9ff1e802c",
@@ -276,7 +278,7 @@
     "method": "Dos originales transferidos vía RDC; SHA-256 de origen; lectura de vuelta Base64 exacta en main y Git blob SHA coincidente."
   },
   "latest_addition_event": {
-    "event_id": "C-GOBERNANZA-RETOMA-11",
+    "event_id": "C-GOBERNANZA-RETOMA-13",
     "document_id": "DOC-GOV-CHATGPT-GOBERNANZA-1-20261108-1126",
     "commit_sha": "c3c47a7f185d8e9482b55942e00c7da9ff1e802c",
     "git_blob_sha": "bb78f30a7696bd1a4dd526e5d17283739e95e692",
