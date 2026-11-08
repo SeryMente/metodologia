@@ -469,6 +469,8 @@ function Unlock-EpVault {
         [Parameter(Mandatory=$true)][Security.SecureString]$Master,
         [ValidateSet(15,30,60,120,180,300,600,900)][int]$DurationSeconds = 300
     )
+    # A failed re-authentication must never leave an earlier session alive.
+    $null = Lock-EpVault
     $envelope = Read-EpVaultEnvelope
     $salt = [Convert]::FromBase64String([string]$envelope.salt)
     $key = $null
@@ -761,6 +763,12 @@ function Read-EpClipboardAndClear {
 
 function Set-EpVaultVariableFromClipboard {
     param([Parameter(Mandatory=$true)][string]$Name, [switch]$Replace)
+    Assert-EpVaultSession
+    if (-not (Test-EpVariableName -Name $Name)) { throw 'INVALID_ENVIRONMENT_VARIABLE_NAME' }
+    # Do not consume/clear the clipboard when a duplicate will be rejected.
+    if ((Get-EpVaultVariableNames) -contains $Name -and -not $Replace) {
+        throw 'VARIABLE_ALREADY_EXISTS_USE_EXPLICIT_REPLACE'
+    }
     $value = Read-EpClipboardAndClear
     try {
         $value = $value.TrimEnd([char[]]@([char]13,[char]10))
@@ -920,7 +928,11 @@ function Get-EpVaultNote {
 }
 
 function Remove-EpVaultNote {
-    param([Parameter(Mandatory=$true)][string]$NoteId)
+    param(
+        [Parameter(Mandatory=$true)][string]$NoteId,
+        [switch]$Approved
+    )
+    if (-not $Approved) { throw 'NOTE_REMOVAL_REQUIRES_EXPLICIT_APPROVAL' }
     $path = Get-EpWorkingNotePath -NoteId $NoteId
     if (-not (Test-Path -LiteralPath $path -PathType Leaf)) {
         throw 'WORKING_NOTE_NOT_FOUND'
@@ -943,7 +955,7 @@ function Promote-EpVaultNote {
         $null = Set-EpVaultVariable -Name $Name -Value $note.value -Replace:$Replace
         $readback = Get-EpVaultVariableValue -Name $Name -Reveal
         if ($readback -cne $note.value) { throw 'VAULT_PROMOTION_READBACK_MISMATCH' }
-        $null = Remove-EpVaultNote -NoteId $NoteId
+        $null = Remove-EpVaultNote -NoteId $NoteId -Approved
         Write-EpVaultEvent -Event 'WORKING_NOTE_PROMOTED'
         return [pscustomobject]@{ status = 'PROMOTED_READBACK_VERIFIED_NOTE_REMOVED'; name = $Name; noteId = $NoteId }
     }
