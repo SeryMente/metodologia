@@ -277,6 +277,18 @@ function Reset-CleanRoomVaultDoor {
 function Start-CleanRoomOpeningSequence {
     $window = $script:Ui
     $canvas = Get-UiElement -Name 'VaultCanvas'
+    if (-not [System.Windows.SystemParameters]::ClientAreaAnimation) {
+        $canvas.Visibility = [System.Windows.Visibility]::Collapsed
+        $window.ClosedStage.Visibility = [System.Windows.Visibility]::Collapsed
+        $window.OpenStage.Visibility = [System.Windows.Visibility]::Visible
+        $window.HeaderState.Text = 'ABIERTA'
+        $window.FooterStatus.Text = 'LOCAL · SESIÓN AUTENTICADA · MOVIMIENTO REDUCIDO'
+        Refresh-EpVariables
+        Refresh-EpNotes
+        Update-EpSessionDisplay
+        Start-EpSessionTimer
+        return
+    }
     Reset-CleanRoomVaultDoor
     $canvas.Visibility = [System.Windows.Visibility]::Visible
     $window.OpenStage.Visibility = [System.Windows.Visibility]::Collapsed
@@ -306,14 +318,11 @@ function Start-CleanRoomOpeningSequence {
     $doorEase.EasingMode = [System.Windows.Media.Animation.EasingMode]::EaseIn
     $rotateAnimation = [System.Windows.Media.Animation.DoubleAnimation]::new(0,38,[TimeSpan]::FromMilliseconds(1250))
     $translateAnimation = [System.Windows.Media.Animation.DoubleAnimation]::new(0,390,[TimeSpan]::FromMilliseconds(1250))
-    $scaleAnimation = [System.Windows.Media.Animation.DoubleAnimation]::new(1,0.06,[TimeSpan]::FromMilliseconds(1250))
     $fadeAnimation = [System.Windows.Media.Animation.DoubleAnimation]::new(1,0,[TimeSpan]::FromMilliseconds(1200))
     $rotateAnimation.EasingFunction=$doorEase
     $translateAnimation.EasingFunction=$doorEase
-    $scaleAnimation.EasingFunction=$doorEase
     $canvas.RenderTransform.Children[0].BeginAnimation([System.Windows.Media.RotateTransform]::AngleProperty,$rotateAnimation)
     $canvas.RenderTransform.Children[1].BeginAnimation([System.Windows.Media.TranslateTransform]::XProperty,$translateAnimation)
-    $canvas.RenderTransform.Children[2].BeginAnimation([System.Windows.Media.ScaleTransform]::ScaleXProperty,$scaleAnimation)
     $canvas.BeginAnimation([System.Windows.UIElement]::OpacityProperty,$fadeAnimation)
 
     if ($script:OpeningTimer) { $script:OpeningTimer.Stop() }
@@ -419,7 +428,7 @@ function Start-CleanRoomClosingSequence {
     Reset-CleanRoomVaultDoor
     $script:Door.Rotate.Angle = 38
     $script:Door.Translate.X = 390
-    $script:Door.Scale.ScaleX = 0.06
+    $script:Door.Scale.ScaleX = 1
     $script:Door.Scale.ScaleY = 1
     $script:Door.Wheel.Angle = 165
     foreach ($bolt in $script:Door.Bolts) {
@@ -433,12 +442,10 @@ function Start-CleanRoomClosingSequence {
     $duration = [TimeSpan]::FromMilliseconds(900)
     $rotate = [System.Windows.Media.Animation.DoubleAnimation]::new(38,0,$duration)
     $translate = [System.Windows.Media.Animation.DoubleAnimation]::new(390,0,$duration)
-    $scale = [System.Windows.Media.Animation.DoubleAnimation]::new(0.06,1,$duration)
-    $fade = [System.Windows.Media.Animation.DoubleAnimation]::new(0,1,$duration)
-    foreach ($animation in @($rotate,$translate,$scale,$fade)) { $animation.EasingFunction = $ease }
+        $fade = [System.Windows.Media.Animation.DoubleAnimation]::new(0,1,$duration)
+    foreach ($animation in @($rotate,$translate,$fade)) { $animation.EasingFunction = $ease }
     $script:Door.Rotate.BeginAnimation([System.Windows.Media.RotateTransform]::AngleProperty,$rotate)
     $script:Door.Translate.BeginAnimation([System.Windows.Media.TranslateTransform]::XProperty,$translate)
-    $script:Door.Scale.BeginAnimation([System.Windows.Media.ScaleTransform]::ScaleXProperty,$scale)
     $canvas.BeginAnimation([System.Windows.UIElement]::OpacityProperty,$fade)
 
     $wheel = [System.Windows.Media.Animation.DoubleAnimation]::new(165,0,[TimeSpan]::FromMilliseconds(720))
@@ -478,6 +485,24 @@ function Close-EpVaultUi {
 
     # Hide sensitive surfaces and invalidate authorization before any visual movement.
     Clear-EpRevealedValue
+    if (-not [System.Windows.SystemParameters]::ClientAreaAnimation) {
+        if ($script:SessionTimer) { $script:SessionTimer.Stop() }
+        if ($script:RevealTimer) { $script:RevealTimer.Stop() }
+        $script:Ui.VariableList.ItemsSource = $null
+        $script:Ui.NoteList.ItemsSource = $null
+        $script:Ui.MasterPasswordBox.Clear()
+        $script:Ui.ConfirmPasswordBox.Clear()
+        $null = Lock-EpVault
+        $script:Ui.OpenStage.Visibility = [System.Windows.Visibility]::Collapsed
+        $script:Ui.ClosedStage.Visibility = [System.Windows.Visibility]::Visible
+        Reset-CleanRoomVaultDoor
+        (Get-UiElement -Name 'VaultCanvas').Visibility = [System.Windows.Visibility]::Visible
+        $script:Ui.HeaderState.Text = 'SELLADA'
+        $script:Ui.FooterStatus.Text = 'LOCAL · CIFRADO · SELLADA · MOVIMIENTO REDUCIDO · ' + $Reason
+        $script:Ui.UnlockButton.IsEnabled = $true
+        Update-EpGateMode
+        return
+    }
     $script:Ui.VariableList.ItemsSource = $null
     $script:Ui.NoteList.ItemsSource = $null
     $script:Ui.MasterPasswordBox.Clear()
@@ -572,6 +597,14 @@ function Invoke-EpUnlock {
         if ($confirmation) { $confirmation.Dispose() }
     }
 }
+
+$script:Ui.Add_KeyDown({
+    param($sender,$eventArgs)
+    if ($eventArgs.Key -eq [System.Windows.Input.Key]::Escape -and $script:Ui.HeaderState.Text -eq 'ABIERTA') {
+        $eventArgs.Handled = $true
+        Close-EpVaultUi -Reason 'ESC_KEY_LOCK'
+    }
+})
 
 $script:Ui.UnlockButton.Add_Click({
     try {
@@ -762,5 +795,6 @@ $script:Ui.Add_Closing({
 
 Build-CleanRoomVaultDoor
 Update-EpGateMode
+$script:Ui.Add_ContentRendered({ $script:Ui.MasterPasswordBox.Focus() | Out-Null })
 $script:Ui.FooterStatus.Text = 'LOCAL · CIFRADO · SELLADA · SIN CONEXIÓN REMOTA'
 $script:Ui.ShowDialog() | Out-Null
