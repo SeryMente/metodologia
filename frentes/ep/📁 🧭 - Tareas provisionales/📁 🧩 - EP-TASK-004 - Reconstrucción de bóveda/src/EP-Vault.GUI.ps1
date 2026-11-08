@@ -466,6 +466,7 @@ function Start-CleanRoomClosingSequence {
     $script:OpeningTimer.Interval = $duration
     $script:OpeningTimer.Add_Tick({
         $script:OpeningTimer.Stop()
+        $canvas = Get-UiElement -Name 'VaultCanvas'
         Reset-CleanRoomVaultDoor
         $canvas.Visibility = [System.Windows.Visibility]::Visible
         $script:Ui.HeaderState.Text = 'SELLADA'
