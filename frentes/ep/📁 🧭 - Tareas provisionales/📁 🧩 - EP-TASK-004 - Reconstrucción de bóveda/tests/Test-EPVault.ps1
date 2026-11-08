@@ -80,6 +80,9 @@ try {
     $jobResult = Invoke-EpVaultJobSelfTest
     Assert-EpTest -Condition ($jobResult -like 'JOB_RUNNER_SELFTEST_PASS:*') -Failure 'JOB_RUNNER_SELFTEST'
     Write-Output $jobResult
+    $timeoutResult = Invoke-EpVaultJobTimeoutSelfTest
+    Assert-EpTest -Condition ($timeoutResult -like 'JOB_RUNNER_TIMEOUT_PASS:*') -Failure 'JOB_RUNNER_TIMEOUT_SELFTEST'
+    Write-Output $timeoutResult
 
     $secure = ConvertTo-SecureString 'synthetic-master-password-only' -AsPlainText -Force
     $bad = ConvertTo-SecureString 'synthetic-incorrect-password-only' -AsPlainText -Force
@@ -124,12 +127,20 @@ try {
     $value = $null
 
     $runnerExe = Join-Path $PSHOME 'powershell.exe'
-    $runnerCommand = 'if ($env:EP_VAULT_SYNTHETIC -cne ''synthetic-value-only'') { exit 19 }; exit 0'
-    $runnerResult = Invoke-EpVaultCommand -ExecutablePath $runnerExe -ArgumentList @(
-        '-NoLogo','-NoProfile','-NonInteractive','-Command',$runnerCommand
-    ) -Names @('EP_VAULT_SYNTHETIC')
+    $sentinelName = 'EP_VAULT_PARENT_SECRET_SENTINEL'
+    $oldSentinel = [Environment]::GetEnvironmentVariable($sentinelName,'Process')
+    [Environment]::SetEnvironmentVariable($sentinelName,'parent-only-synthetic-sentinel','Process')
+    $runnerCommand = 'if ($env:EP_VAULT_SYNTHETIC -cne ''synthetic-value-only'') { exit 19 }; if (Test-Path Env:EP_VAULT_PARENT_SECRET_SENTINEL) { exit 20 }; exit 0'
+    try {
+        $runnerResult = Invoke-EpVaultCommand -ExecutablePath $runnerExe -ArgumentList @(
+            '-NoLogo','-NoProfile','-NonInteractive','-Command',$runnerCommand
+        ) -Names @('EP_VAULT_SYNTHETIC')
+    }
+    finally {
+        [Environment]::SetEnvironmentVariable($sentinelName,$oldSentinel,'Process')
+    }
     Assert-EpTest -Condition ($runnerResult.exitCode -eq 0 -and $runnerResult.injectedVariableCount -eq 1 -and $runnerResult.childProcessTreeManaged) -Failure 'EXPLICIT_ALLOWLIST_CHILD_PROCESS'
-    Write-Output 'PASS_EXPLICIT_ALLOWLIST_AND_JOB_OBJECT_PROCESS_SCOPE'
+    Write-Output 'PASS_ALLOWLIST_WITHOUT_PARENT_SECRET_INHERITANCE_AND_JOB_OBJECT_PROCESS_SCOPE'
 
     $module = Get-Module EP.Vault.Core
     $noteId = & $module {
