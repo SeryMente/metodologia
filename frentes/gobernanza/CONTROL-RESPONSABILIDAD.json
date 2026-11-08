@@ -35,7 +35,9 @@
     "readback_verified": true,
     "source_control_blob_sha": "ee9065a8bc6bcd632c2f34158fdf45133b86bb5c",
     "verified_on": "2026-11-08",
-    "alias": "chatgpt-C-GOBERNANZA-RETOMA-12-SES-20261108-F2134723"
+    "alias": "chatgpt-C-GOBERNANZA-RETOMA-12-SES-20261108-F2134723",
+    "foliation_status": "LEGACY_PRE_CUTOVER",
+    "last_local_cycle_id": "C-GOBERNANZA-RETOMA-12-CY01"
   },
   "initialization": {
     "event_id": "C-GOBERNANZA-INICIO-01",
@@ -977,7 +979,9 @@
         "id": "C-GOBERNANZA-RETOMA-12-CY01",
         "uuidv7": "01a1bc20-b5ff-7d74-b1f6-5c6dfd19e01d",
         "global_folio": null,
-        "folio_status": "LEGACY_PRE_CUTOVER"
+        "folio_status": "LEGACY_PRE_CUTOVER",
+        "legacy_cycle_folio": "C-20261108-FD19E01D",
+        "cycle_number": 1
       },
       "method": "GitHub Contents API conditional update using immediately observed CONTROL-RESPONSABILIDAD.json blob SHA; canonical read-back required. Cooperative control only; no universal fencing.",
       "mutation_result": "COMMITTED_AND_READBACK_VERIFIED",
