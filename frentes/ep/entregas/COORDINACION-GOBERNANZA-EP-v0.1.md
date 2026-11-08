@@ -1735,3 +1735,21 @@ El operador corrige inequívocamente la denominación: es **CECEQ**. Se adopta `
 **Persistencia documental:** OEP actualizado a v0.3.38, §105. EP-TASK-003 actualizado con la política CECEQ/BitLocker/Guardian; EP-TASK-002 actualizado con la misma contraseña maestra de vault y la excepción de retención cifrada. Artefactos actuales: INSTRUCCION-BITLOCKER-CECEQ-20261107.txt y PERFIL-CECEQ-POLITICA-20261107.json. No se activó Guardian, no se creó tarea programada ni se modificó BitLocker/volúmenes/archivos del host.
 
 **Estado:** decisión documental vigente; implementación y pruebas end-to-end pendientes del backlog. Se mantiene el bloqueo previo para resolver el Escritorio efectivo de fila4 antes de materializar `Ser y Mente`.
+
+### Apertura EP-TASK-002 · continuidad de persistencia B2 · 2026-11-08
+
+**A literal del operador:** `Bien sigamos resolviendo la persistencia backblaze`.
+
+**Cursor de coordinación:** se leyó este objeto en `SeryMente/metodologia/main`, blob `36a38c0752b5c9818a2c01cdfaf6bb6f6d6188f3`, 1.737 líneas. No se identificó un mensaje nuevo de Gobernanza posterior a la última entrada registrada. Se registra `SIN_NOVEDAD` con este cursor; no se abre un objeto de coordinación paralelo.
+
+**Fuentes canónicas adquiridas para esta reanudación:** DUG v379 / NX-379m, blob `9c77ea76b5de1d1b191e9fd07c783784e99715b4`; OEP v0.3.39, blob `bbb88d788e4a898c0780d327b87ba9a126a228d3`; núcleo EP-TASK-002, blob `5d5d70242cb4d27557d10684da810bdb40fd2ad0`. Se conserva Metacanon 1.28 y GOW 2.17.
+
+**Interpretación y viabilidad:** continuar EP-TASK-002 desde el resultado de OEP §102. La autenticación Master, consulta del bucket `OCP-MCP` y prueba sintética upload/download/read-back SHA-256 con SSE-B2/AES256 constan como PASS en la evidencia anterior. No repetir el smoke test. El trabajo sustantivo pendiente es inventariar datos de usuario elegibles y exclusiones, definir snapshots consistentes/manifiesto, conflictos, cola offline e idempotencia, implementar sincronización y demostrar restore desde un workspace limpio del mismo host con aceptación funcional del consumidor. La exigencia histórica de un segundo equipo físico quedó supersedida por OEP §104.
+
+**Alcance conservado:** únicamente bucket `OCP-MCP` y prefijo `ep-ocp/`; la Master Application Key posee alcance global, por lo que el límite es procedimental. No borrar objetos, cambiar buckets/lifecycle, administrar claves ni operar otros destinos. No leer ni mostrar secretos.
+
+**Compuertas:** no repetir `b2 account authorize`, no crear/rotar/revocar credenciales ni iniciar operaciones nuevas de bucket/objeto por esta instrucción genérica. P012/P013 exige presencia/revisión del operador en el mismo ciclo para acciones que involucren credenciales, autenticación, cifrado o seguridad. Antes de esas acciones debe confirmarse el host y la presencia requerida; no se hereda autorización presencial de ciclos anteriores.
+
+**Siguiente acción inmediata:** preflight local estrictamente read-only en el host previamente asociado al smoke test `PC10RCIF4EI4`: disponibilidad/versión de `b2.exe`, existencia y metadatos de la caché aislada y de la bóveda cifrada, y procesos B2 activos. No abrir contenido de bóveda ni SQLite, no leer portapapeles, no descifrar, no autenticar ni transferir datos.
+
+**Estado inicial del ciclo:** `EP-TASK-002=en_curso`; remote persistence de datos reales y restore funcional permanecen NO DEMOSTRADOS. Se conserva el ciclo local `C-EP-MOD-SCRIPTPWS-20261101-03` en OPEN. No se crea nuevo OCP/tarea/control/sesión ni se declara transferencia formal de titularidad. FOL1 no consta ACTIVO; CONV/CICLO/A/B globales no asignados. Sin cambios técnicos ni operaciones B2 ejecutadas en esta apertura.
