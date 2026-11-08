@@ -63,7 +63,8 @@ Assert-EpTest -Condition ($legacyReferences.Count -eq 0) -Failure 'NEW_UI_MUST_N
 Write-Output 'PASS_CLEAN_ROOM_REFERENCE_SCAN'
 
 $oldLocalAppData = $env:LOCALAPPDATA
-$sandbox = Join-Path $env:RUNNER_TEMP ('ep-vault-synthetic-' + [Guid]::NewGuid().ToString('N'))
+$tempRoot = if (-not [string]::IsNullOrWhiteSpace($env:RUNNER_TEMP)) { $env:RUNNER_TEMP } else { [IO.Path]::GetTempPath() }
+$sandbox = Join-Path $tempRoot ('ep-vault-synthetic-' + [Guid]::NewGuid().ToString('N'))
 $secure = $null
 $bad = $null
 $noteId = $null
@@ -82,6 +83,23 @@ try {
 
     $secure = ConvertTo-SecureString 'synthetic-master-password-only' -AsPlainText -Force
     $bad = ConvertTo-SecureString 'synthetic-incorrect-password-only' -AsPlainText -Force
+
+    foreach ($seconds in @(15,30,60,120,180,300,600,900)) {
+        $ttlSalt = New-EpRandomBytes -Count 16
+        $ttlKey = Get-EpMasterKey -Master $secure -Salt $ttlSalt
+        try {
+            Set-EpVaultSession -Key $ttlKey -DurationSeconds $seconds
+            $sessionCheck = Get-EpVaultSession
+            $elapsed = ($sessionCheck.expiresAtUtc - $sessionCheck.startedAtUtc).TotalSeconds
+            Assert-EpTest -Condition ($sessionCheck.durationSeconds -eq $seconds -and [Math]::Abs($elapsed - $seconds) -lt 0.1) -Failure ('TTL_DURATION_OPTION_' + $seconds)
+            $null = Lock-EpVault
+        }
+        finally {
+            Clear-EpBytes -Bytes $ttlKey
+            Clear-EpBytes -Bytes $ttlSalt
+        }
+    }
+    Write-Output 'PASS_ALL_EIGHT_SESSION_DURATION_OPTIONS'
 
     $initialized = Initialize-EpVault -Master $secure -DurationSeconds 300
     Assert-EpTest -Condition ($initialized.status -eq 'INITIALIZED_AND_READBACK_VERIFIED') -Failure 'SYNTHETIC_INITIALIZE'
@@ -152,7 +170,7 @@ try {
     $note = Get-EpVaultNote -NoteId $noteId -Reveal
     Assert-EpTest -Condition ($note.value -ceq 'synthetic-note-value-only') -Failure 'DPAPI_NOTE_REVEAL'
     $note = $null
-    $null = Remove-EpVaultNote -NoteId $noteId
+    $null = Remove-EpVaultNote -NoteId $noteId -Approved
     Assert-EpTest -Condition (@(Get-EpVaultNotes | Where-Object { $_.id -eq $noteId }).Count -eq 0) -Failure 'DPAPI_NOTE_DELETE_READBACK'
     Write-Output 'PASS_DPAPI_NOTE_METADATA_REVEAL_DELETE'
 
@@ -198,7 +216,7 @@ try {
 finally {
     if ($secure) { $secure.Dispose() }
     if ($bad) { $bad.Dispose() }
-    $null = Lock-EpVault
+    if (Get-Command Lock-EpVault -ErrorAction SilentlyContinue) { $null = Lock-EpVault }
     $env:LOCALAPPDATA = $oldLocalAppData
     if (Test-Path -LiteralPath $sandbox) {
         Remove-Item -LiteralPath $sandbox -Recurse -Force
