@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.39. **Ancla:** rectificación explícita del operador: `OCP-MCP` es el único bucket B2 de destino; `OCP-MSP` y `metodologia-ep-persistencia` son errores. La rectificación se materializa en §91; conserva la compuerta bilateral de §90 y las tareas/propuesta de adaptación previas.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.40. **Ancla:** el control formal de responsabilidad EP queda creado en generación 1 mediante asignación inicial autorizada; el antecedente de ausencia de control se conserva como histórico y no se declara transferencia desde un titular no verificable. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -12,7 +12,7 @@
 
 Adquirir este objeto como instrucciones del operador, subordinadas a las reglas superiores de plataforma y a autorizaciones específicas. Claudia es asistente/documental; Samantha es constructor/único escritor de código. Una asignación explícita posterior puede cambiar roles; las citas no lo hacen. La asignación específica vigente de MOD-SCRIPTPWS queda delimitada en §94 y no cambia los roles del resto de EP.
 
-El estado de reanudación vigente de este frente está en §60–§106; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
+El estado de reanudación vigente de este frente está en §60–§107; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
 
 Leer por relevancia: OEP actual→metacanon central→Sistema de Instrucciones/Metodología/Bootstrap vigentes→canon transversal EP→AGENTS.md y ep-medio-architectura.md→código/evidencia en commits exactos. Fuente caída no es «sin cambios». Un archivo no crea herramientas, credenciales ni memoria entre plataformas.
 
@@ -2402,3 +2402,35 @@ Esta sección rectifica y prevalece sobre cualquier descripción más amplia de 
 **Fuera de alcance, expresamente:** Guardian como subsistema; vigilancia anti-exfiltración; sondeo o polling; heartbeat; temporizador de inactividad; supervisión de procesos, archivos o red; detección por cierre de VS Code/IDE; tareas programadas o limpieza AtStartup; telemetría o monitoreo en segundo plano. No se implementan ni quedan como pendientes de esta versión.
 
 **Estado:** alcance documental actualizado. El disparador aún no está implementado ni activado; no se modificaron scripts, tareas de Windows ni perfiles locales en esta actualización.
+
+## 107. Control formal de responsabilidad EP y adjudicación inicial · v0.3.40 · 2026-11-08
+
+### 107.1 Descubrimiento y resolución autorizada
+
+En la reanudación se solicitó `TRANSFER_RESPONSIBILITY` para sustituir al titular anterior. La inspección de `main/frentes/ep/` no encontró `CONTROL-RESPONSABILIDAD.json` ni un registro canónico de titular/generación. OEP §§93, 100.6 y 101.3 ya habían documentado esa brecha en observaciones históricas. La búsqueda de control cubrió los 11 repositorios que la conexión GitHub expuso y 16 controles vigentes; la búsqueda exacta de los identificadores candidatos devolvió cero coincidencias. Esta cobertura no demuestra ausencia global fuera de los repositorios/controles accesibles.
+
+Al faltar un control de origen, no era posible transferir una titularidad ni ejecutar CAS contra una generación anterior. Se preguntó al operador si autorizaba crear el control canónico inicial y registrar esta conversación como titular en generación 1, dejando constancia de que el titular previo no era verificable. El operador respondió literalmente **«Si»**. Esa respuesta autorizó exclusivamente la inicialización del control EP.
+
+### 107.2 Control creado y evidencia
+
+- **Ruta canónica:** [CONTROL-RESPONSABILIDAD.json](CONTROL-RESPONSABILIDAD.json).
+- **Frente/OCP:** `frentes/ep/`; **objeto único de estado:** este OEP.
+- **Evento:** `C-EP-RESPONSABILIDAD-INICIAL-20261108-88E05E17`.
+- **Estado:** `owned`; **generación:** `1`; **responsables activos:** uno.
+- **Alias operativo receptor:** `chatgpt-C-EP-RESPONSABILIDAD-INICIAL-20261108-88E05E17-SES-20261108-0BD44C87`.
+- **Instancia:** `chatgpt-ep-owner-2026-11-08-0BD44C87`.
+- **Folio de sesión:** `SES-20261108-0BD44C87`.
+- **UUIDv7 local:** `01a1bc39-a576-72ec-bb25-e1aa765ef21d`. No es un ID nativo de ChatGPT.
+- **Commit de creación:** `91ebe38c07407c9644030f502a0d1e84c28f5522`.
+- **Blob del control:** `4160dfed6c0833e88e9b9fee7d79e54ab7214006`.
+- **Read-back:** contenido UTF-8 leído desde `main` idéntico byte por byte al escrito; JSON y campos de autorización/generación/titularidad cotejados: **PASS**.
+
+La operación fue creación de un archivo inexistente; no una actualización CAS de titular anterior. La creación quedó condicionada a que la ruta no existiera: la API de creación rechazará una ruta ya existente. No se inventa propietario previo, generación previa ni transferencia histórica. La unicidad del alias y folio se comprobó solo en el ámbito accesible descrito; unicidad global y exclusividad técnica de plataforma permanecen **NO VERIFICADAS**.
+
+### 107.3 Estado operativo y límites
+
+El control pasa a ser el registro autoritativo de responsabilidad para EP. Este OEP sigue siendo el único objeto canónico de estado vivo; el control no crea otro OCP ni duplica el estado técnico. Se conserva el ciclo local heredado `C-EP-MOD-SCRIPTPWS-20261101-03` en OPEN y `EP-TASK-002=en_curso`.
+
+FOL1 no consta ACTIVO. El folio `SES` identifica esta sesión, no sustituye los folios globales CONV/CICLO/A/B, que permanecen PENDIENTES/NO ASIGNADOS. La asignación de responsabilidad no amplía permisos: no se realizaron operaciones de host/RDC, lectura de secretos, autenticación, llamadas B2, upload/download/restore/delete, cambios de credenciales ni modificaciones del código. Se mantienen las compuertas P012/P013 y las restricciones de perfil/ubicación vigentes.
+
+**Resultado:** titularidad operativa EP inicializada y control persistido/verificado; transferencia desde un titular anterior: **NO REALIZADA / NO APLICABLE por inexistencia del control de origen**.
