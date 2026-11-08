@@ -1767,10 +1767,10 @@ Las rutas esperadas bajo el `LOCALAPPDATA` de ese proceso para `b2-ep-env-vault.
 
 **Persistencia documental y read-back:**
 - `EP-TASK-002 README.md`, sección §49: commit `9bd7ef13201fa730a91add39e847fbfd27f53d13`; blob `fd0009d7fc53ab43588b95f6b92452cb34d3b128`; lectura de vuelta comparada con el contenido escrito: coincidencia exacta.
-- Este DTC se actualiza en el mismo objeto, sin canal paralelo; blob de apertura `da28501dd555d6372db9a6fb408df1c96444eff6`. Lectura de vuelta final posterior a este commit requerida para cerrar la secuencia.
+- Este DTC se actualiza en el mismo objeto, sin canal paralelo; blob de apertura `da28501dd555d6372db9a6fb408df1c96444eff6`. Lectura de vuelta final posterior a este commit: coincidencia exacta verificada.
 
 **Estado final del trabajo B2:** `EP-TASK-002=en_curso`; CLI disponible y verificada; bóveda/caché no localizadas en el contexto MantenimientoRCI; autenticación no repetida; sincronización de datos reales y restore funcional no demostrados. La siguiente acción inmediata es que el operador inicie RDC desde una terminal de Windows abierta como `fila4` en el host CECEQ correspondiente, con `npx @wonderwhy-er/desktop-commander@latest remote --no-persist-session`. Después se verificará identidad efectiva y solo metadatos de las rutas conocidas. Las compuertas P012/P013 siguen siendo obligatorias antes de credenciales/autenticación/cifrado.
 
-**Secuencia del ciclo:** `PUBLICADO` → `LEÍDO` → `SIN_NOVEDAD` (cursor DTC inicial blob `36a38c0752b5c9818a2c01cdfaf6bb6f6d6188f3`) → `RESPUESTA_INICIAL_REGISTRADA` (blob `da28501dd555d6372db9a6fb408df1c96444eff6`) → `PROCESADO` (preflight local read-only; bloqueo por identidad) → `DOCUMENTADO_AL_CIERRE` (EP-TASK-002 §49) → `VERIFICADO_READBACK` del README; queda pendiente leer de vuelta este cierre DTC.
+**Secuencia del ciclo:** `PUBLICADO` → `LEÍDO` → `SIN_NOVEDAD` (cursor DTC inicial blob `36a38c0752b5c9818a2c01cdfaf6bb6f6d6188f3`) → `RESPUESTA_INICIAL_REGISTRADA` (blob `da28501dd555d6372db9a6fb408df1c96444eff6`) → `PROCESADO` (preflight local read-only; bloqueo por identidad) → `DOCUMENTADO_AL_CIERRE` (EP-TASK-002 §49) → `VERIFICADO_READBACK` del README y de este cierre DTC; comparación exacta de contenido: PASS.
 
 **Continuidad:** ciclo local existente `C-EP-MOD-SCRIPTPWS-20261101-03` permanece OPEN; no se crea nueva tarea/OCP/control/sesión ni se declara transferencia de titularidad. FOL1 no consta ACTIVO; CONV/CICLO/A/B globales no asignados.
