@@ -103,7 +103,7 @@ try {
                 Clear-EpBytes -Bytes $ttlSalt
             }
         } $secure $seconds
-        $elapsed = ($sessionCheck.expiresAtUtc - $sessionCheck.startedAtUtc).TotalSeconds
+        $elapsed = ([DateTime]::Parse($sessionCheck.expiresAtUtc) - [DateTime]::Parse($sessionCheck.startedAtUtc)).TotalSeconds
         Assert-EpTest -Condition ($sessionCheck.durationSeconds -eq $seconds -and [Math]::Abs($elapsed - $seconds) -lt 0.1) -Failure ('TTL_DURATION_OPTION_' + $seconds)
     }
     Write-Output 'PASS_ALL_EIGHT_SESSION_DURATION_OPTIONS'
