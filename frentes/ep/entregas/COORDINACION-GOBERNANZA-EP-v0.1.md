@@ -1842,3 +1842,25 @@ Las rutas esperadas bajo el `LOCALAPPDATA` de ese proceso para `b2-ep-env-vault.
 **Integración documental:** OEP actualizado a v0.3.40 / §107, README enlaza el control y la versión actual del OEP, y este DTC conserva el evento en el mismo objeto. La entrada se añade después de la creación/read-back del control; se registra esta secuencia real y no se afirma que la apertura documental de esta entrada precediera al procesamiento. El ciclo local heredado `C-EP-MOD-SCRIPTPWS-20261101-03` continúa OPEN; `EP-TASK-002=en_curso`.
 
 **No ejecutado:** no hubo operaciones RDC/host, lectura o transferencia de secretos, autenticación B2, llamadas de cuenta/bucket/objeto, upload/download/restore/delete ni cambio de credenciales. La titularidad EP no amplía las autorizaciones técnicas. FOL1 no consta ACTIVO; CONV/CICLO/A/B globales continúan PENDIENTES/NO ASIGNADOS.
+
+
+
+### Apertura · EP-TASK-004 · materialización local en Fila 4 y PC-14 · 2026-11-08
+
+**A literal del operador:** «vas a construir en fila 4, es decir la computadora asociada a ese usuario, el dispositivo. Y luego ya está habilitada la conexión RDS a PC14 para que aquí también materialices la bóveda para poderla trabajar aquí a manera local de manera simultánea, aunque esta sesión es efímera».
+
+**Respuesta inicial visible:** se confirmó que las variables \`KHORA_B2_KEY_ID\` y \`KHORA_B2_APPLICATION_KEY\` no están disponibles en las ubicaciones examinadas de Fila 4. Se preparará la aplicación local en ambos equipos sin copiar el archivo cifrado ni valores secretos entre perfiles; cada almacén formal será independiente y requerirá inicialización local.
+
+**Cursor DTC:** \`main\` blob 0a16d3a34fa37ae7509d8db8ad838fd4865df300; contenido leído completo (1.845 líneas). Se reutiliza este objeto bilateral, sin crear un canal nuevo.
+
+**Fuentes vigentes adquiridas:** DUG Samantha v383 / NX-383m (\`gobernanza/METAPROMPT-CANONICO-SAMANTHA.html\`, blob \`cad464717c43733aa84b49f8c9c3af0875597fbd\`); se leyó §ARR y se consultaron P001, P004, P005, P012, P013, P038 y P043. EP OEP v0.3.40 (\`frentes/ep/OEP.md\`, blob \`ec568e1a0e64746fd3736dc6ecf17327a5389ca8\`); índice de tareas en main blob \`0aca17c5301590c881116206da9bfad408fdf365\`; EP-TASK-004 main blob \`1d09e8b3d257180b603729114b0597daeea4b429\`; PR #20, rama \`feat/ep-vault-clean-room-20261108\`, head \`9a5f0c686b8533878610d08e52cef427ad3f0933\`, abierta/draft/no fusionada.
+
+**Autorización y alcance:** EP-TASK-004 registra B/C P012 y candado D P013 aprobados por el operador el 2026-11-08 y A despachado para construir dentro de EP-TASK-004. La instrucción actual extiende materialización local del mismo paquete a dos perfiles/equipos; no amplía permisos de credenciales o recursos B2, ni autoriza transferir la bóveda cifrada entre dispositivos. No modificar el DUG, OEP ni controles de responsabilidad.
+
+**Preflight RDC observado:** \`PC10RCIF4EI4\` Online, device \`d0bbb2a3-d7b4-45e1-8870-652c2c3844fc\`; sesión interactiva \`fila4\` (ID 4), pero los procesos \`start_process\` ejecutados por la conexión RDC corren como \`CENTRAL\\MantenimientoRCI\`, no como \`fila4\`. La ruta canónica \`C:\Users\fila4\AppData\Local\Khora\secrets\ep-env-vault.enc.json\` no existe; el paquete sintético de la PR existe solo bajo \`C:\Users\fila4\AppData\Local\Temp\EPVaultPR20-20261108\`. C: está \`FullyEncrypted\` pero \`ProtectionStatus=Off\` y \`XtsAes128\`.
+
+\`PC-14\` Online, device \`b396b293-5d1c-4461-9df6-c500a68d5d7f\`. La identidad efectiva del proceso es \`pc-14\\pc 13\`, perfil \`C:\Users\PC 13\`; sesión interactiva ID 1. C: está \`FullyDecrypted\`, \`ProtectionStatus=Off\`, sin BitLocker. Aún no se ha instalado ni creado almacén en ese perfil.
+
+**Siguiente acción inmediata:** localizar únicamente por metadatos/rutas conocidas cualquier bóveda EP previa en el perfil PC-14; no leer contenido ni valores. Después materializar el mismo código y documentación de PR #20 en rutas locales no privilegiadas de cada perfil solo cuando la identidad efectiva pueda ser la propietaria correspondiente. No inicializar ni desbloquear almacenes hasta asegurar la identidad interactiva y revisar protección de disco. Las variables B2 no se copian ni se prueban.
+
+**Estado inicial de este ciclo:** \`EP_VAULT_CODE=PR20_VALIDATED_SYNTHETIC\`; \`FILA4_INSTALL=NOT_DONE\`; \`PC14_INSTALL=NOT_DONE\`; \`FILA4_FORMAL_VAULT=ABSENT\`; \`PC14_FORMAL_VAULT=NOT_CHECKED\`; \`B2_VARIABLES=NOT_AVAILABLE_IN_FILA4\`. No se han escrito archivos formales en ambos equipos, no hay transferencia, no se autenticó B2 ni se modificó ninguna bóveda histórica.
