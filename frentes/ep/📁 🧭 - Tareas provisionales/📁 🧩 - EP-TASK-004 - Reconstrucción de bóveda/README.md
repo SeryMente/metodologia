@@ -332,3 +332,10 @@ El trabajo local de PC-14 y Fila4 actualiza Core/CLI/GUI/XAML y añade recursos 
 Ambos dispositivos pasan la suite sintética completa después de estas modificaciones. También pasan las aserciones del contrato visual/sonoro, carga WAV, y prueba interproceso GUI/CLI sintética (reutilización de sesión y revocación). Las huellas canónicas se registran en la especificación de pulido.
 
 **Separación de estados:** el código y los recursos ya están localmente en ambos destinos; el uso real de Custodia no está habilitado aún. PC-14 mantiene el archivo formal de 576 bytes de origen no atribuido, intacto; Fila4 sigue sin archivo formal. No se capturaron ni leyeron secretos. BitLocker no fue modificado. H10 y aceptación visual/auditiva humana siguen pendientes.
+
+
+## Regresión permanente GUI–CLI y último pulido · 2026-11-08
+
+Se añadió al test harness una prueba interproceso permanente: el CLI hijo debe reutilizar la sesión sintética del padre sin segundo prompt; después un `Lock` ejecutado por CLI debe invalidar la sesión del padre. Resultado local en PC-14 y Fila4: `PASS_CLI_GUI_SHARED_SESSION_REUSE_AND_REVOCATION` y `EP_VAULT_VALIDATION_PASS`, ambos exit 0.
+
+El acabado industrial final añade pivote lateral, compresión de perspectiva, control de mute y omite audio con movimiento reducido. Se conservan los dos WAV originales generados localmente y referenciados desde GUI.

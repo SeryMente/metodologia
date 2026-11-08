@@ -244,6 +244,29 @@ try {
         Assert-EpTest -Condition (-not $logText.Contains('synthetic-value-only') -and -not $logText.Contains('synthetic-note-value-only')) -Failure 'EVENT_LOG_SECRET_REDACTION'
     }
     Write-Output 'PASS_EVENT_LOG_REDACTION'
+    # Prove that an independent CLI process reuses the current-user shared session without prompting.
+    $null = Unlock-EpVault -Master $secure -DurationSeconds 300
+    $cliStdout = Join-Path $sandbox 'ep-vault-cli-shared-out.txt'
+    $cliStderr = Join-Path $sandbox 'ep-vault-cli-shared-err.txt'
+    $powerShellExe = Join-Path $PSHOME 'powershell.exe'
+    $cliArguments = '-NoLogo -NoProfile -NonInteractive -ExecutionPolicy Bypass -File "' + $cliPath + '" -Action ListVariables -DurationSeconds 300'
+    $cliProcess = Start-Process -FilePath $powerShellExe -ArgumentList $cliArguments -PassThru -Wait -WindowStyle Hidden -RedirectStandardOutput $cliStdout -RedirectStandardError $cliStderr
+    $cliOutput = if (Test-Path -LiteralPath $cliStdout) { [IO.File]::ReadAllText($cliStdout) } else { '' }
+    $cliError = if (Test-Path -LiteralPath $cliStderr) { [IO.File]::ReadAllText($cliStderr) } else { '' }
+    Assert-EpTest -Condition ($cliProcess.ExitCode -eq 0 -and $cliOutput -match 'EP_VAULT_SYNTHETIC' -and $cliOutput -notmatch 'master password|enter locally') -Failure 'CLI_REUSES_SHARED_SESSION_WITHOUT_PASSWORD_PROMPT'
+    $null = Get-EpVaultSession
+
+    $lockArguments = '-NoLogo -NoProfile -NonInteractive -ExecutionPolicy Bypass -File "' + $cliPath + '" -Action Lock'
+    $lockProcess = Start-Process -FilePath $powerShellExe -ArgumentList $lockArguments -PassThru -Wait -WindowStyle Hidden -RedirectStandardOutput $cliStdout -RedirectStandardError $cliStderr
+    Assert-EpTest -Condition ($lockProcess.ExitCode -eq 0) -Failure 'CLI_SHARED_LOCK_EXIT_ZERO'
+    $crossProcessRevoked = $false
+    try { $null = Get-EpVaultSession }
+    catch {
+        $crossProcessRevoked = $_.Exception.Message -match 'VAULT_SESSION_REVOKED_OR_UNAVAILABLE|VAULT_SESSION_NOT_OPEN'
+    }
+    Assert-EpTest -Condition $crossProcessRevoked -Failure 'CLI_LOCK_REVOKES_OTHER_PROCESS_SESSION'
+    $null = Unlock-EpVault -Master $secure -DurationSeconds 300
+    Write-Output 'PASS_CLI_GUI_SHARED_SESSION_REUSE_AND_REVOCATION'
 }
 finally {
     if ($secure) { $secure.Dispose() }

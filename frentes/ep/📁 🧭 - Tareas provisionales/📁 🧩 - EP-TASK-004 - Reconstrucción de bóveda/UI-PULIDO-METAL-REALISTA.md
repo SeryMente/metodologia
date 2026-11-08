@@ -151,3 +151,18 @@ La especificación dejó de ser solo propuesta: el pulido se implementó localme
 ### Límites y aceptación
 
 La validación es sintética y automatizada; no sustituye una revisión visual/auditiva del operador ni una prueba E2E desde la sesión interactiva Fila4. No se inspeccionó ni modificó la bóveda formal PC-14 de 576 bytes, cuya procedencia continúa NO ATRIBUIDA; Fila4 no tiene archivo formal. No se leyeron secretos, no se usó el portapapeles y no se modificó BitLocker. La recolección de credenciales reales sigue sujeta al gate de cifrado del host. La asignación de roles Claudia/Samantha está en el bloque LEER PRIMERO del OEP, no en su sección numerada 13; la cita anterior a «OEP §13» queda rectificada.
+
+
+## Rectificación final — bisagra lateral, mute y prueba interproceso permanente · 2026-11-08
+
+La última iteración de PC-14/Fila4 añadió un pivote de bisagra lateral (centro local x=64), compresión de la hoja de 1.00 a 0.86 mientras abre y un control `SONIDO` visible para silenciar o activar los efectos. El código omite efectos sonoros cuando `ClientAreaAnimation` está desactivado. El sonido se mantiene opcional; los WAV son síntesis procedural original, no grabación física de metal.
+
+**Tiempos finales:**
+- Pasadores: 1.28 s con desfase escalonado de 38 ms.
+- Volante: inicia en 0.92 s y dura 2.35 s.
+- Puerta: inicia en 2.28 s, gira y se desplaza durante 3.15 s; termina aproximadamente a 5.85 s.
+- Cierre: aproximadamente 2.85 s, con volante y cerrojos en fases posteriores.
+
+**Regresión permanente:** `Test-EPVault.ps1` ahora crea bóveda/valor sintéticos, inicia un CLI en proceso independiente, exige que liste el nombre sin solicitar password y comprueba que `Lock` desde el CLI revoca la sesión del proceso padre. Esta prueba forma parte de la suite usada por CI, no solo de un ensayo manual.
+
+**Límite visual:** el resultado es WPF vectorial con cues 2.5D; no es una escena 3D físicamente exacta. La aceptación visual/auditiva del operador y la prueba E2E desde la sesión interactiva Fila4 siguen siendo necesarias antes de H10.
