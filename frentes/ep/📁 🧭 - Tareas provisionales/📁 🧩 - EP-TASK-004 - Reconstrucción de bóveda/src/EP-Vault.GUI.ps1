@@ -21,9 +21,24 @@ if (-not (Test-Path -LiteralPath $xamlPath -PathType Leaf)) { throw 'EP_VAULT_XA
 Import-Module -Name $corePath -Force -ErrorAction Stop
 
 [xml]$xaml = Get-Content -LiteralPath $xamlPath -Raw -Encoding UTF8
-$reader = [Xml.XmlNodeReader]::new($xaml)
-$script:Ui = [Windows.Markup.XamlReader]::Load($reader)
+$reader = [System.Xml.XmlNodeReader]::new($xaml)
+$script:Ui = [System.Windows.Markup.XamlReader]::Load($reader)
 $reader.Close()
+
+# Add named XAML elements as PowerShell note properties for safe event wiring.
+$uiNames = @(
+    'HeaderState','ClosedStage','OpenStage','UnlockButton','LockButton','MasterPasswordBox',
+    'ConfirmPasswordBox','ConfirmLabel','GateTitle','GateDescription','SessionDuration',
+    'GateMessage','FooterStatus','SessionRemaining','SessionExpiresAt','VariableNameBox',
+    'StoreVariableButton','VariableList','RefreshVariablesButton','RevealVariableButton',
+    'RemoveVariableButton','NoteTtl','CaptureNoteButton','NoteList','PromoteNameBox',
+    'PromoteNoteButton','RefreshNotesButton','ReadNoteButton','DeleteNoteButton','RevealedValueBox'
+)
+foreach ($name in $uiNames) {
+    $element = $script:Ui.FindName($name)
+    if ($null -eq $element) { throw ('UI_ELEMENT_NOT_FOUND: ' + $name) }
+    $script:Ui | Add-Member -MemberType NoteProperty -Name $name -Value $element -Force
+}
 
 $script:Door = $null
 $script:SessionTimer = $null
@@ -40,17 +55,17 @@ function Get-UiElement {
 
 function New-UiBrush {
     param([Parameter(Mandatory=$true)][string]$Color)
-    return [Windows.Media.SolidColorBrush]::new([Windows.Media.ColorConverter]::ConvertFromString($Color))
+    return [System.Windows.Media.SolidColorBrush]::new([System.Windows.Media.ColorConverter]::ConvertFromString($Color))
 }
 
 function New-UiMetalBrush {
-    $brush = [Windows.Media.LinearGradientBrush]::new()
-    $brush.StartPoint = [Windows.Point]::new(0,0)
-    $brush.EndPoint = [Windows.Point]::new(1,1)
-    $brush.GradientStops.Add([Windows.Media.GradientStop]::new([Windows.Media.ColorConverter]::ConvertFromString('#667179'),0.0))
-    $brush.GradientStops.Add([Windows.Media.GradientStop]::new([Windows.Media.ColorConverter]::ConvertFromString('#303A40'),0.22))
-    $brush.GradientStops.Add([Windows.Media.GradientStop]::new([Windows.Media.ColorConverter]::ConvertFromString('#11171B'),0.58))
-    $brush.GradientStops.Add([Windows.Media.GradientStop]::new([Windows.Media.ColorConverter]::ConvertFromString('#59636A'),1.0))
+    $brush = [System.Windows.Media.LinearGradientBrush]::new()
+    $brush.StartPoint = [System.Windows.Point]::new(0,0)
+    $brush.EndPoint = [System.Windows.Point]::new(1,1)
+    $brush.GradientStops.Add([System.Windows.Media.GradientStop]::new([System.Windows.Media.ColorConverter]::ConvertFromString('#667179'),0.0))
+    $brush.GradientStops.Add([System.Windows.Media.GradientStop]::new([System.Windows.Media.ColorConverter]::ConvertFromString('#303A40'),0.22))
+    $brush.GradientStops.Add([System.Windows.Media.GradientStop]::new([System.Windows.Media.ColorConverter]::ConvertFromString('#11171B'),0.58))
+    $brush.GradientStops.Add([System.Windows.Media.GradientStop]::new([System.Windows.Media.ColorConverter]::ConvertFromString('#59636A'),1.0))
     return $brush
 }
 
@@ -65,28 +80,28 @@ function Add-DoorEllipse {
         [double]$StrokeWidth = 1,
         [switch]$NoFill
     )
-    $shape = [Windows.Shapes.Ellipse]::new()
+    $shape = [System.Windows.Shapes.Ellipse]::new()
     $shape.Width = $Width
     $shape.Height = $Height
-    if ($NoFill) { $shape.Fill = [Windows.Media.Brushes]::Transparent }
+    if ($NoFill) { $shape.Fill = [System.Windows.Media.Brushes]::Transparent }
     elseif ($Fill -eq 'METAL') { $shape.Fill = New-UiMetalBrush }
     else { $shape.Fill = New-UiBrush -Color $Fill }
     $shape.Stroke = New-UiBrush -Color $Stroke
     $shape.StrokeThickness = $StrokeWidth
-    [Windows.Controls.Canvas]::SetLeft($shape,$Left)
-    [Windows.Controls.Canvas]::SetTop($shape,$Top)
+    [System.Windows.Controls.Canvas]::SetLeft($shape,$Left)
+    [System.Windows.Controls.Canvas]::SetTop($shape,$Top)
     [void](Get-UiElement -Name 'VaultCanvas').Children.Add($shape)
     return $shape
 }
 
 function Add-DoorLine {
     param([double]$X1,[double]$Y1,[double]$X2,[double]$Y2,[string]$Color='#927448',[double]$Width=2)
-    $line = [Windows.Shapes.Line]::new()
+    $line = [System.Windows.Shapes.Line]::new()
     $line.X1=$X1; $line.Y1=$Y1; $line.X2=$X2; $line.Y2=$Y2
     $line.Stroke = New-UiBrush -Color $Color
     $line.StrokeThickness = $Width
-    $line.StrokeStartLineCap = [Windows.Media.PenLineCap]::Round
-    $line.StrokeEndLineCap = [Windows.Media.PenLineCap]::Round
+    $line.StrokeStartLineCap = [System.Windows.Media.PenLineCap]::Round
+    $line.StrokeEndLineCap = [System.Windows.Media.PenLineCap]::Round
     [void](Get-UiElement -Name 'VaultCanvas').Children.Add($line)
     return $line
 }
@@ -96,8 +111,8 @@ function Build-OriginalVaultDoor {
     $canvas.Children.Clear()
 
     $glow = Add-DoorEllipse -Left 8 -Top 8 -Width 624 -Height 624 -Fill '#11191D' -Stroke '#202A2E' -StrokeWidth 2
-    $glow.Effect = [Windows.Media.Effects.DropShadowEffect]::new()
-    $glow.Effect.Color = [Windows.Media.Colors]::Black
+    $glow.Effect = [System.Windows.Media.Effects.DropShadowEffect]::new()
+    $glow.Effect.Color = [System.Windows.Media.Colors]::Black
     $glow.Effect.BlurRadius = 38
     $glow.Effect.ShadowDepth = 0
     $glow.Effect.Opacity = 0.8
@@ -130,19 +145,19 @@ function Build-OriginalVaultDoor {
         $radius = 275.0
         $cx = 320 + [Math]::Cos($angle) * $radius
         $cy = 320 + [Math]::Sin($angle) * $radius
-        $bolt = [Windows.Shapes.Ellipse]::new()
+        $bolt = [System.Windows.Shapes.Ellipse]::new()
         $bolt.Width = 40
         $bolt.Height = 32
         $bolt.Fill = New-UiMetalBrush
         $bolt.Stroke = New-UiBrush -Color '#C0A06A'
         $bolt.StrokeThickness = 2
-        $bolt.Effect = [Windows.Media.Effects.DropShadowEffect]::new()
-        $bolt.Effect.Color = [Windows.Media.Colors]::Black
+        $bolt.Effect = [System.Windows.Media.Effects.DropShadowEffect]::new()
+        $bolt.Effect.Color = [System.Windows.Media.Colors]::Black
         $bolt.Effect.BlurRadius = 8
         $bolt.Effect.ShadowDepth = 3
-        [Windows.Controls.Canvas]::SetLeft($bolt,$cx-20)
-        [Windows.Controls.Canvas]::SetTop($bolt,$cy-16)
-        $transform = [Windows.Media.TranslateTransform]::new(0,0)
+        [System.Windows.Controls.Canvas]::SetLeft($bolt,$cx-20)
+        [System.Windows.Controls.Canvas]::SetTop($bolt,$cy-16)
+        $transform = [System.Windows.Media.TranslateTransform]::new(0,0)
         $bolt.RenderTransform = $transform
         [void]$canvas.Children.Add($bolt)
         $script:Door.Bolts += [pscustomobject]@{
@@ -152,15 +167,15 @@ function Build-OriginalVaultDoor {
         }
     }
 
-    $wheel = [Windows.Controls.Canvas]::new()
+    $wheel = [System.Windows.Controls.Canvas]::new()
     $wheel.Width = 210
     $wheel.Height = 210
-    [Windows.Controls.Canvas]::SetLeft($wheel,215)
-    [Windows.Controls.Canvas]::SetTop($wheel,215)
-    $wheelTransform = [Windows.Media.RotateTransform]::new(0,105,105)
+    [System.Windows.Controls.Canvas]::SetLeft($wheel,215)
+    [System.Windows.Controls.Canvas]::SetTop($wheel,215)
+    $wheelTransform = [System.Windows.Media.RotateTransform]::new(0,105,105)
     $wheel.RenderTransform = $wheelTransform
 
-    $wheelOuter = [Windows.Shapes.Ellipse]::new()
+    $wheelOuter = [System.Windows.Shapes.Ellipse]::new()
     $wheelOuter.Width = 210
     $wheelOuter.Height = 210
     $wheelOuter.Fill = New-UiBrush -Color '#252E33'
@@ -168,10 +183,10 @@ function Build-OriginalVaultDoor {
     $wheelOuter.StrokeThickness = 5
     [void]$wheel.Children.Add($wheelOuter)
 
-    $wheelInner = [Windows.Shapes.Ellipse]::new()
+    $wheelInner = [System.Windows.Shapes.Ellipse]::new()
     $wheelInner.Width = 154
     $wheelInner.Height = 154
-    $wheelInner.Margin = [Windows.Thickness]::new(28)
+    $wheelInner.Margin = [System.Windows.Thickness]::new(28)
     $wheelInner.Fill = New-UiBrush -Color '#11171B'
     $wheelInner.Stroke = New-UiBrush -Color '#6F5A39'
     $wheelInner.StrokeThickness = 2
@@ -179,54 +194,54 @@ function Build-OriginalVaultDoor {
 
     for ($i=0; $i -lt 8; $i++) {
         $angle = ($i * 45.0) * [Math]::PI / 180.0
-        $spoke = [Windows.Shapes.Line]::new()
+        $spoke = [System.Windows.Shapes.Line]::new()
         $spoke.X1 = 105 + [Math]::Cos($angle)*43
         $spoke.Y1 = 105 + [Math]::Sin($angle)*43
         $spoke.X2 = 105 + [Math]::Cos($angle)*88
         $spoke.Y2 = 105 + [Math]::Sin($angle)*88
         $spoke.Stroke = New-UiBrush -Color '#B08D54'
         $spoke.StrokeThickness = 8
-        $spoke.StrokeStartLineCap = [Windows.Media.PenLineCap]::Round
-        $spoke.StrokeEndLineCap = [Windows.Media.PenLineCap]::Round
+        $spoke.StrokeStartLineCap = [System.Windows.Media.PenLineCap]::Round
+        $spoke.StrokeEndLineCap = [System.Windows.Media.PenLineCap]::Round
         [void]$wheel.Children.Add($spoke)
     }
 
-    $hub = [Windows.Shapes.Ellipse]::new()
+    $hub = [System.Windows.Shapes.Ellipse]::new()
     $hub.Width = 68
     $hub.Height = 68
-    [Windows.Controls.Canvas]::SetLeft($hub,71)
-    [Windows.Controls.Canvas]::SetTop($hub,71)
+    [System.Windows.Controls.Canvas]::SetLeft($hub,71)
+    [System.Windows.Controls.Canvas]::SetTop($hub,71)
     $hub.Fill = New-UiMetalBrush
     $hub.Stroke = New-UiBrush -Color '#D0AD70'
     $hub.StrokeThickness = 3
     [void]$wheel.Children.Add($hub)
 
-    $hubCenter = [Windows.Shapes.Ellipse]::new()
+    $hubCenter = [System.Windows.Shapes.Ellipse]::new()
     $hubCenter.Width = 20
     $hubCenter.Height = 20
-    [Windows.Controls.Canvas]::SetLeft($hubCenter,95)
-    [Windows.Controls.Canvas]::SetTop($hubCenter,95)
+    [System.Windows.Controls.Canvas]::SetLeft($hubCenter,95)
+    [System.Windows.Controls.Canvas]::SetTop($hubCenter,95)
     $hubCenter.Fill = New-UiBrush -Color '#0A0E10'
     [void]$wheel.Children.Add($hubCenter)
 
     [void]$canvas.Children.Add($wheel)
     $script:Door.Wheel = $wheelTransform
 
-    $label = [Windows.Controls.TextBlock]::new()
+    $label = [System.Windows.Controls.TextBlock]::new()
     $label.Text = 'EP  /  SEALED CHAMBER'
-    $label.FontFamily = [Windows.Media.FontFamily]::new('Bahnschrift')
+    $label.FontFamily = [System.Windows.Media.FontFamily]::new('Bahnschrift')
     $label.FontSize = 10
     $label.Foreground = New-UiBrush -Color '#C3A36A'
     $label.Width = 240
-    $label.TextAlignment = [Windows.TextAlignment]::Center
-    [Windows.Controls.Canvas]::SetLeft($label,200)
-    [Windows.Controls.Canvas]::SetTop($label,135)
+    $label.TextAlignment = [System.Windows.TextAlignment]::Center
+    [System.Windows.Controls.Canvas]::SetLeft($label,200)
+    [System.Windows.Controls.Canvas]::SetTop($label,135)
     [void]$canvas.Children.Add($label)
 
-    $group = [Windows.Media.TransformGroup]::new()
-    $rotate = [Windows.Media.RotateTransform]::new(0,320,320)
-    $translate = [Windows.Media.TranslateTransform]::new(0,0)
-    $scale = [Windows.Media.ScaleTransform]::new(1,1,320,320)
+    $group = [System.Windows.Media.TransformGroup]::new()
+    $rotate = [System.Windows.Media.RotateTransform]::new(0,320,320)
+    $translate = [System.Windows.Media.TranslateTransform]::new(0,0)
+    $scale = [System.Windows.Media.ScaleTransform]::new(1,1,320,320)
     [void]$group.Children.Add($rotate)
     [void]$group.Children.Add($translate)
     [void]$group.Children.Add($scale)
@@ -254,56 +269,56 @@ function Start-OriginalOpeningSequence {
     $window = $script:Ui
     $canvas = Get-UiElement -Name 'VaultCanvas'
     Reset-OriginalVaultDoor
-    $canvas.Visibility = [Windows.Visibility]::Visible
-    $window.OpenStage.Visibility = [Windows.Visibility]::Collapsed
-    $window.ClosedStage.Visibility = [Windows.Visibility]::Visible
+    $canvas.Visibility = [System.Windows.Visibility]::Visible
+    $window.OpenStage.Visibility = [System.Windows.Visibility]::Collapsed
+    $window.ClosedStage.Visibility = [System.Windows.Visibility]::Visible
     $window.HeaderState.Text = 'DESBLOQUEANDO'
     $window.FooterStatus.Text = 'AUTENTICACIÓN VÁLIDA · MECANISMO EN MOVIMIENTO'
 
     $duration = [TimeSpan]::FromMilliseconds(620)
     foreach ($bolt in $script:Door.Bolts) {
-        $ease = [Windows.Media.Animation.CubicEase]::new()
-        $ease.EasingMode = [Windows.Media.Animation.EasingMode]::EaseInOut
-        $xAnimation = [Windows.Media.Animation.DoubleAnimation]::new($bolt.DeltaX,$duration)
-        $yAnimation = [Windows.Media.Animation.DoubleAnimation]::new($bolt.DeltaY,$duration)
+        $ease = [System.Windows.Media.Animation.CubicEase]::new()
+        $ease.EasingMode = [System.Windows.Media.Animation.EasingMode]::EaseInOut
+        $xAnimation = [System.Windows.Media.Animation.DoubleAnimation]::new($bolt.DeltaX,$duration)
+        $yAnimation = [System.Windows.Media.Animation.DoubleAnimation]::new($bolt.DeltaY,$duration)
         $xAnimation.EasingFunction = $ease
         $yAnimation.EasingFunction = $ease
-        $bolt.Transform.BeginAnimation([Windows.Media.TranslateTransform]::XProperty,$xAnimation)
-        $bolt.Transform.BeginAnimation([Windows.Media.TranslateTransform]::YProperty,$yAnimation)
+        $bolt.Transform.BeginAnimation([System.Windows.Media.TranslateTransform]::XProperty,$xAnimation)
+        $bolt.Transform.BeginAnimation([System.Windows.Media.TranslateTransform]::YProperty,$yAnimation)
     }
 
-    $wheelEase = [Windows.Media.Animation.CubicEase]::new()
-    $wheelEase.EasingMode = [Windows.Media.Animation.EasingMode]::EaseOut
-    $wheelAnimation = [Windows.Media.Animation.DoubleAnimation]::new(0,165,[TimeSpan]::FromMilliseconds(1050))
+    $wheelEase = [System.Windows.Media.Animation.CubicEase]::new()
+    $wheelEase.EasingMode = [System.Windows.Media.Animation.EasingMode]::EaseOut
+    $wheelAnimation = [System.Windows.Media.Animation.DoubleAnimation]::new(0,165,[TimeSpan]::FromMilliseconds(1050))
     $wheelAnimation.EasingFunction = $wheelEase
-    $script:Door.Wheel.BeginAnimation([Windows.Media.RotateTransform]::AngleProperty,$wheelAnimation)
+    $script:Door.Wheel.BeginAnimation([System.Windows.Media.RotateTransform]::AngleProperty,$wheelAnimation)
 
-    $doorEase = [Windows.Media.Animation.CubicEase]::new()
-    $doorEase.EasingMode = [Windows.Media.Animation.EasingMode]::EaseIn
-    $rotateAnimation = [Windows.Media.Animation.DoubleAnimation]::new(0,38,[TimeSpan]::FromMilliseconds(1250))
-    $translateAnimation = [Windows.Media.Animation.DoubleAnimation]::new(0,390,[TimeSpan]::FromMilliseconds(1250))
-    $scaleAnimation = [Windows.Media.Animation.DoubleAnimation]::new(1,0.06,[TimeSpan]::FromMilliseconds(1250))
-    $fadeAnimation = [Windows.Media.Animation.DoubleAnimation]::new(1,0,[TimeSpan]::FromMilliseconds(1200))
+    $doorEase = [System.Windows.Media.Animation.CubicEase]::new()
+    $doorEase.EasingMode = [System.Windows.Media.Animation.EasingMode]::EaseIn
+    $rotateAnimation = [System.Windows.Media.Animation.DoubleAnimation]::new(0,38,[TimeSpan]::FromMilliseconds(1250))
+    $translateAnimation = [System.Windows.Media.Animation.DoubleAnimation]::new(0,390,[TimeSpan]::FromMilliseconds(1250))
+    $scaleAnimation = [System.Windows.Media.Animation.DoubleAnimation]::new(1,0.06,[TimeSpan]::FromMilliseconds(1250))
+    $fadeAnimation = [System.Windows.Media.Animation.DoubleAnimation]::new(1,0,[TimeSpan]::FromMilliseconds(1200))
     $rotateAnimation.EasingFunction=$doorEase
     $translateAnimation.EasingFunction=$doorEase
     $scaleAnimation.EasingFunction=$doorEase
-    $canvas.RenderTransform.Children[0].BeginAnimation([Windows.Media.RotateTransform]::AngleProperty,$rotateAnimation)
-    $canvas.RenderTransform.Children[1].BeginAnimation([Windows.Media.TranslateTransform]::XProperty,$translateAnimation)
-    $canvas.RenderTransform.Children[2].BeginAnimation([Windows.Media.ScaleTransform]::ScaleXProperty,$scaleAnimation)
-    $canvas.BeginAnimation([Windows.UIElement]::OpacityProperty,$fadeAnimation)
+    $canvas.RenderTransform.Children[0].BeginAnimation([System.Windows.Media.RotateTransform]::AngleProperty,$rotateAnimation)
+    $canvas.RenderTransform.Children[1].BeginAnimation([System.Windows.Media.TranslateTransform]::XProperty,$translateAnimation)
+    $canvas.RenderTransform.Children[2].BeginAnimation([System.Windows.Media.ScaleTransform]::ScaleXProperty,$scaleAnimation)
+    $canvas.BeginAnimation([System.Windows.UIElement]::OpacityProperty,$fadeAnimation)
 
     if ($script:OpeningTimer) { $script:OpeningTimer.Stop() }
-    $script:OpeningTimer = [Windows.Threading.DispatcherTimer]::new()
+    $script:OpeningTimer = [System.Windows.Threading.DispatcherTimer]::new()
     $script:OpeningTimer.Interval = [TimeSpan]::FromMilliseconds(1350)
     $script:OpeningTimer.Add_Tick({
         $script:OpeningTimer.Stop()
         try {
             $session = Get-EpVaultSession
             $canvas = Get-UiElement -Name 'VaultCanvas'
-            $canvas.Visibility = [Windows.Visibility]::Collapsed
-            $canvas.BeginAnimation([Windows.UIElement]::OpacityProperty,$null)
-            Get-UiElement -Name 'ClosedStage' | ForEach-Object { $_.Visibility = [Windows.Visibility]::Collapsed }
-            Get-UiElement -Name 'OpenStage' | ForEach-Object { $_.Visibility = [Windows.Visibility]::Visible }
+            $canvas.Visibility = [System.Windows.Visibility]::Collapsed
+            $canvas.BeginAnimation([System.Windows.UIElement]::OpacityProperty,$null)
+            Get-UiElement -Name 'ClosedStage' | ForEach-Object { $_.Visibility = [System.Windows.Visibility]::Collapsed }
+            Get-UiElement -Name 'OpenStage' | ForEach-Object { $_.Visibility = [System.Windows.Visibility]::Visible }
             $script:Ui.HeaderState.Text = 'ABIERTA'
             $script:Ui.FooterStatus.Text = 'LOCAL · SESIÓN AUTENTICADA · TTL ABSOLUTO'
             Refresh-EpVariables
@@ -321,7 +336,7 @@ function Start-OriginalOpeningSequence {
 
 function Start-EpSessionTimer {
     if ($script:SessionTimer) { $script:SessionTimer.Stop() }
-    $script:SessionTimer = [Windows.Threading.DispatcherTimer]::new()
+    $script:SessionTimer = [System.Windows.Threading.DispatcherTimer]::new()
     $script:SessionTimer.Interval = [TimeSpan]::FromSeconds(1)
     $script:SessionTimer.Add_Tick({
         try {
@@ -353,15 +368,15 @@ function Update-EpSessionDisplay {
 function Clear-EpRevealedValue {
     if ($script:RevealTimer) { $script:RevealTimer.Stop() }
     $script:Ui.RevealedValueBox.Clear()
-    $script:Ui.RevealedValueBox.Visibility = [Windows.Visibility]::Collapsed
+    $script:Ui.RevealedValueBox.Visibility = [System.Windows.Visibility]::Collapsed
 }
 
 function Show-EpRevealedValue {
     param([Parameter(Mandatory=$true)][string]$Value)
     Clear-EpRevealedValue
     $script:Ui.RevealedValueBox.Text = $Value
-    $script:Ui.RevealedValueBox.Visibility = [Windows.Visibility]::Visible
-    $script:RevealTimer = [Windows.Threading.DispatcherTimer]::new()
+    $script:Ui.RevealedValueBox.Visibility = [System.Windows.Visibility]::Visible
+    $script:RevealTimer = [System.Windows.Threading.DispatcherTimer]::new()
     $script:RevealTimer.Interval = [TimeSpan]::FromSeconds(15)
     $script:RevealTimer.Add_Tick({
         $script:RevealTimer.Stop()
@@ -396,12 +411,12 @@ function Close-EpVaultUi {
     $script:Ui.MasterPasswordBox.Clear()
     $script:Ui.ConfirmPasswordBox.Clear()
     $null = Lock-EpVault
-    $script:Ui.OpenStage.Visibility = [Windows.Visibility]::Collapsed
-    $script:Ui.ClosedStage.Visibility = [Windows.Visibility]::Visible
+    $script:Ui.OpenStage.Visibility = [System.Windows.Visibility]::Collapsed
+    $script:Ui.ClosedStage.Visibility = [System.Windows.Visibility]::Visible
     $script:Ui.HeaderState.Text = 'SELLADA'
     $script:Ui.FooterStatus.Text = 'LOCAL · CIFRADO · SELLADA · ' + $Reason
     Reset-OriginalVaultDoor
-    (Get-UiElement -Name 'VaultCanvas').Visibility = [Windows.Visibility]::Visible
+    (Get-UiElement -Name 'VaultCanvas').Visibility = [System.Windows.Visibility]::Visible
     Update-EpGateMode
 }
 
@@ -436,15 +451,15 @@ function Update-EpGateMode {
     if ($status.vaultExists) {
         $script:Ui.GateTitle.Text = 'La cámara permanece sellada.'
         $script:Ui.GateDescription.Text = 'La autenticación local precede a cualquier movimiento del mecanismo.'
-        $script:Ui.ConfirmLabel.Visibility = [Windows.Visibility]::Collapsed
-        $script:Ui.ConfirmPasswordBox.Visibility = [Windows.Visibility]::Collapsed
+        $script:Ui.ConfirmLabel.Visibility = [System.Windows.Visibility]::Collapsed
+        $script:Ui.ConfirmPasswordBox.Visibility = [System.Windows.Visibility]::Collapsed
         $script:Ui.UnlockButton.Content = 'DESBLOQUEAR LA CÁMARA'
     }
     else {
         $script:Ui.GateTitle.Text = 'La cámara aún no ha sido inicializada.'
         $script:Ui.GateDescription.Text = 'Crea una clave maestra local para sellar el primer compartimento.'
-        $script:Ui.ConfirmLabel.Visibility = [Windows.Visibility]::Visible
-        $script:Ui.ConfirmPasswordBox.Visibility = [Windows.Visibility]::Visible
+        $script:Ui.ConfirmLabel.Visibility = [System.Windows.Visibility]::Visible
+        $script:Ui.ConfirmPasswordBox.Visibility = [System.Windows.Visibility]::Visible
         $script:Ui.UnlockButton.Content = 'CREAR Y SELLAR LA BÓVEDA'
     }
 }
@@ -486,11 +501,11 @@ $script:Ui.UnlockButton.Add_Click({
         $script:Ui.HeaderState.Text = 'SELLADA'
         $script:Ui.FooterStatus.Text = 'AUTENTICACIÓN RECHAZADA · LA CÁMARA SIGUE CERRADA'
         Set-EpGateMessage -Message $_.Exception.Message
-        [Windows.MessageBox]::Show(
+        [System.Windows.MessageBox]::Show(
             'No se pudo desbloquear la bóveda.' + [Environment]::NewLine + $_.Exception.Message,
             'EP Vault',
-            [Windows.MessageBoxButton]::OK,
-            [Windows.MessageBoxImage]::Warning
+            [System.Windows.MessageBoxButton]::OK,
+            [System.Windows.MessageBoxImage]::Warning
         ) | Out-Null
     }
     finally {
@@ -504,7 +519,7 @@ $script:Ui.LockButton.Add_Click({
 
 $script:Ui.RefreshVariablesButton.Add_Click({
     try { Refresh-EpVariables }
-    catch { [Windows.MessageBox]::Show($_.Exception.Message,'EP Vault') | Out-Null }
+    catch { [System.Windows.MessageBox]::Show($_.Exception.Message,'EP Vault') | Out-Null }
 })
 
 $script:Ui.StoreVariableButton.Add_Click({
@@ -514,13 +529,13 @@ $script:Ui.StoreVariableButton.Add_Click({
         $existing = @(Get-EpVaultVariableNames)
         $replace = $false
         if ($existing -contains $name) {
-            $answer = [Windows.MessageBox]::Show(
+            $answer = [System.Windows.MessageBox]::Show(
                 'La variable ya existe. ¿Confirmas el reemplazo explícito?',
                 'Confirmar reemplazo',
-                [Windows.MessageBoxButton]::YesNo,
-                [Windows.MessageBoxImage]::Warning
+                [System.Windows.MessageBoxButton]::YesNo,
+                [System.Windows.MessageBoxImage]::Warning
             )
-            if ($answer -ne [Windows.MessageBoxResult]::Yes) { return }
+            if ($answer -ne [System.Windows.MessageBoxResult]::Yes) { return }
             $replace = $true
         }
         Set-EpVaultVariableFromClipboard -Name $name -Replace:$replace | Out-Null
@@ -530,7 +545,7 @@ $script:Ui.StoreVariableButton.Add_Click({
         $script:Ui.FooterStatus.Text = 'VARIABLE GUARDADA · LECTURA DE VUELTA VERIFICADA'
     }
     catch {
-        [Windows.MessageBox]::Show($_.Exception.Message,'No se pudo guardar') | Out-Null
+        [System.Windows.MessageBox]::Show($_.Exception.Message,'No se pudo guardar') | Out-Null
     }
 })
 
@@ -543,7 +558,7 @@ $script:Ui.RevealVariableButton.Add_Click({
         $value = $null
     }
     catch {
-        [Windows.MessageBox]::Show($_.Exception.Message,'No se pudo revelar') | Out-Null
+        [System.Windows.MessageBox]::Show($_.Exception.Message,'No se pudo revelar') | Out-Null
     }
 })
 
@@ -551,20 +566,20 @@ $script:Ui.RemoveVariableButton.Add_Click({
     try {
         $selected = [string]$script:Ui.VariableList.SelectedItem
         if ([string]::IsNullOrWhiteSpace($selected)) { throw 'SELECT_A_VARIABLE' }
-        $answer = [Windows.MessageBox]::Show(
+        $answer = [System.Windows.MessageBox]::Show(
             ('¿Retirar permanentemente la variable ' + $selected + ' de la bóveda?'),
             'Confirmar retirada',
-            [Windows.MessageBoxButton]::YesNo,
-            [Windows.MessageBoxImage]::Warning
+            [System.Windows.MessageBoxButton]::YesNo,
+            [System.Windows.MessageBoxImage]::Warning
         )
-        if ($answer -ne [Windows.MessageBoxResult]::Yes) { return }
+        if ($answer -ne [System.Windows.MessageBoxResult]::Yes) { return }
         Remove-EpVaultVariable -Name $selected -Approved | Out-Null
         Clear-EpRevealedValue
         Refresh-EpVariables
         $script:Ui.FooterStatus.Text = 'VARIABLE RETIRADA · AUSENCIA VERIFICADA'
     }
     catch {
-        [Windows.MessageBox]::Show($_.Exception.Message,'No se pudo retirar') | Out-Null
+        [System.Windows.MessageBox]::Show($_.Exception.Message,'No se pudo retirar') | Out-Null
     }
 })
 
@@ -574,16 +589,16 @@ $script:Ui.CaptureNoteButton.Add_Click({
         $note = New-EpVaultNoteFromClipboard -TtlMinutes $ttl
         Refresh-EpNotes
         $script:Ui.FooterStatus.Text = 'NOTA EFÍMERA CAPTURADA · DPAPI CURRENT USER'
-        [Windows.MessageBox]::Show(('Nota capturada: ' + $note.id),'EP Vault') | Out-Null
+        [System.Windows.MessageBox]::Show(('Nota capturada: ' + $note.id),'EP Vault') | Out-Null
     }
     catch {
-        [Windows.MessageBox]::Show($_.Exception.Message,'No se pudo capturar') | Out-Null
+        [System.Windows.MessageBox]::Show($_.Exception.Message,'No se pudo capturar') | Out-Null
     }
 })
 
 $script:Ui.RefreshNotesButton.Add_Click({
     try { Refresh-EpNotes }
-    catch { [Windows.MessageBox]::Show($_.Exception.Message,'EP Vault') | Out-Null }
+    catch { [System.Windows.MessageBox]::Show($_.Exception.Message,'EP Vault') | Out-Null }
 })
 
 $script:Ui.ReadNoteButton.Add_Click({
@@ -595,7 +610,7 @@ $script:Ui.ReadNoteButton.Add_Click({
         $note = $null
     }
     catch {
-        [Windows.MessageBox]::Show($_.Exception.Message,'No se pudo revelar la nota') | Out-Null
+        [System.Windows.MessageBox]::Show($_.Exception.Message,'No se pudo revelar la nota') | Out-Null
     }
 })
 
@@ -607,13 +622,13 @@ $script:Ui.PromoteNoteButton.Add_Click({
         if ([string]::IsNullOrWhiteSpace($name)) { throw 'VARIABLE_NAME_REQUIRED' }
         $replace = $false
         if (@(Get-EpVaultVariableNames) -contains $name) {
-            $answer = [Windows.MessageBox]::Show(
+            $answer = [System.Windows.MessageBox]::Show(
                 'La variable ya existe. ¿Confirmas la rotación/reemplazo?',
                 'Confirmar reemplazo',
-                [Windows.MessageBoxButton]::YesNo,
-                [Windows.MessageBoxImage]::Warning
+                [System.Windows.MessageBoxButton]::YesNo,
+                [System.Windows.MessageBoxImage]::Warning
             )
-            if ($answer -ne [Windows.MessageBoxResult]::Yes) { return }
+            if ($answer -ne [System.Windows.MessageBoxResult]::Yes) { return }
             $replace = $true
         }
         Promote-EpVaultNote -NoteId ([string]$selected.id) -Name $name -Replace:$replace | Out-Null
@@ -624,7 +639,7 @@ $script:Ui.PromoteNoteButton.Add_Click({
         $script:Ui.FooterStatus.Text = 'NOTA PROMOVIDA · LECTURA DE VUELTA VERIFICADA'
     }
     catch {
-        [Windows.MessageBox]::Show($_.Exception.Message,'No se pudo promover') | Out-Null
+        [System.Windows.MessageBox]::Show($_.Exception.Message,'No se pudo promover') | Out-Null
     }
 })
 
@@ -632,20 +647,20 @@ $script:Ui.DeleteNoteButton.Add_Click({
     try {
         $selected = $script:Ui.NoteList.SelectedItem
         if ($null -eq $selected) { throw 'SELECT_A_NOTE' }
-        $answer = [Windows.MessageBox]::Show(
+        $answer = [System.Windows.MessageBox]::Show(
             '¿Eliminar la nota efímera seleccionada?',
             'Confirmar eliminación',
-            [Windows.MessageBoxButton]::YesNo,
-            [Windows.MessageBoxImage]::Warning
+            [System.Windows.MessageBoxButton]::YesNo,
+            [System.Windows.MessageBoxImage]::Warning
         )
-        if ($answer -ne [Windows.MessageBoxResult]::Yes) { return }
+        if ($answer -ne [System.Windows.MessageBoxResult]::Yes) { return }
         Remove-EpVaultNote -NoteId ([string]$selected.id) | Out-Null
         Clear-EpRevealedValue
         Refresh-EpNotes
         $script:Ui.FooterStatus.Text = 'NOTA ELIMINADA · AUSENCIA VERIFICADA'
     }
     catch {
-        [Windows.MessageBox]::Show($_.Exception.Message,'No se pudo eliminar') | Out-Null
+        [System.Windows.MessageBox]::Show($_.Exception.Message,'No se pudo eliminar') | Out-Null
     }
 })
 
