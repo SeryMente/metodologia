@@ -1774,3 +1774,27 @@ Las rutas esperadas bajo el `LOCALAPPDATA` de ese proceso para `b2-ep-env-vault.
 **Secuencia del ciclo:** `PUBLICADO` → `LEÍDO` → `SIN_NOVEDAD` (cursor DTC inicial blob `36a38c0752b5c9818a2c01cdfaf6bb6f6d6188f3`) → `RESPUESTA_INICIAL_REGISTRADA` (blob `da28501dd555d6372db9a6fb408df1c96444eff6`) → `PROCESADO` (preflight local read-only; bloqueo por identidad) → `DOCUMENTADO_AL_CIERRE` (EP-TASK-002 §49) → `VERIFICADO_READBACK` del README y de este cierre DTC; comparación exacta de contenido: PASS.
 
 **Continuidad:** ciclo local existente `C-EP-MOD-SCRIPTPWS-20261101-03` permanece OPEN; no se crea nueva tarea/OCP/control/sesión ni se declara transferencia de titularidad. FOL1 no consta ACTIVO; CONV/CICLO/A/B globales no asignados.
+
+
+### Reanudación EP-TASK-002 en PC-8 · preflight de host limpio · 2026-11-08
+
+**A literal del operador:** «Estoy en PC-8 rdc disponbile resolvamos persistencia backblaze en tiempo recrod».
+
+**Acuse inicial visible:** se indicó que PC-8 se usaría como host, verificando RDC, perfil y CLI sin reutilizar credenciales de otro perfil. El acuse se comunicó antes del preflight, pero esta entrada DTC se persistió después de ejecutar la comprobación; por tanto, no se afirma que la escritura documental de apertura precediera al procesamiento. Esta desviación queda declarada.
+
+**Cursor DTC de entrada:** blob \`43b557057e3388ca961f748388f9462f95d1988a\`, 1.777 líneas; no se abrió un objeto paralelo. Fuente OEP \`bbb88d788e4a898c0780d327b87ba9a126a228d3\`, v0.3.39; EP-TASK-002 previo blob \`fd0009d7fc53ab43588b95f6b92452cb34d3b128\`; DUG v379 / NX-379m, blob \`9c77ea76b5de1d1b191e9fd07c783784e99715b4\`.
+
+**RDC observado:** \`PC-8\` Online, Device ID \`c3c9becd-4f87-4692-ad7d-9e6bc77945c3\`. Windows x64; Desktop Commander 0.3.1; PowerShell predeterminado; no había sesiones terminales RDC activas ni procesos B2. La inspección temporal terminó con exit code 0.
+
+**Identidad efectiva:** host \`PC-8\`; usuario \`PC-8\\PC 8\`; perfil \`C:\\Users\\PC 8\`; LOCALAPPDATA \`C:\\Users\\PC 8\\AppData\\Local\`; Windows PowerShell \`5.1.22621.6133\`.
+
+**Preflight read-only:** no aparecen en el perfil actual la bóveda \`Khora\\secrets\\b2-ep-env-vault.enc.json\`, la caché \`Khora\\state\\b2-ep-master-20261107.sqlite\` ni \`Khora\\state\\b2-ep-ocp.sqlite\`. Tampoco aparece \`b2.exe\` en las rutas de instalación examinadas (\`%LOCALAPPDATA%\\Programs\\BackblazeB2\` y dos rutas comunes de Program Files), ni las rutas de configuración B2 examinadas en AppData Roaming/Local y \`.b2\` / \`.config\\backblaze\`. No existen variables de entorno cuyo nombre empiece por \`B2_\`. No se leyó ningún valor secreto.
+
+**Interpretación:** PC-8 es una sesión local limpia respecto de las rutas B2 conocidas. Esto no prueba que no exista una bóveda en otro host o medio; no se inspeccionaron otros perfiles ni otros equipos. La ubicación física de PC-8 no fue declarada ni verificada; por política OEP §105 se trata como ubicación no reconocida (\`LOC-OTHER\`) hasta que exista evidencia suficiente, sin ejecutar ningún borrado ni dead-man trigger. Esta clasificación no afirma que PC-8 sea CECEQ.
+
+**Viabilidad/siguiente gate:** no es posible autenticar B2 ni restaurar datos hasta disponer localmente de la credencial canónica de EP mediante un canal seguro y verificable. No transferir secretos desde otro host por chat ni copiarlos a disco claro. La CLI aún no está instalada en PC-8; no se instaló durante el preflight. Una vez asegurado el acceso local a la bóveda/credencial, verificarlo por read-back protegido y preparar CLI oficial con hash/firma antes de autenticarse. Mantener la restricción operativa \`OCP-MCP/ep-ocp/\`; no administrar credenciales, no borrar objetos, ni operar otros buckets/prefijos.
+
+**Estado:** \`B2_CLI=NOT_INSTALLED_ON_PC8\`; \`EP_VAULT=NOT_FOUND_IN_CURRENT_PROFILE\`; \`B2_CACHE=NOT_FOUND_IN_CURRENT_PROFILE\`; \`B2_ENV_VARS=NONE\`; \`B2_AUTH=NOT_EXECUTED\`; \`USER_DATA_SYNC=NOT_PROVEN\`; \`CLEAN_RESTORE=NOT_PROVEN\`; \`EP-TASK-002=en_curso\`.
+
+**No ejecutado:** no se instaló CLI; no se buscó en otros perfiles o hosts; no se leyó contenido de bóveda/caché/portapapeles; no se transfirieron credenciales; no se autenticó B2; no se consultó ni modificó bucket/objetos; no hubo upload/download/restore/delete ni cambios de seguridad.
+
