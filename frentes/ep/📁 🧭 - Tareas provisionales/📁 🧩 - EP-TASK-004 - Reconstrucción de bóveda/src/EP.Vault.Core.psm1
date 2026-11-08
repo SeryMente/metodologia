@@ -272,11 +272,25 @@ function Ensure-EpPrivateDirectory {
     if (-not $currentAcl.AreAccessRulesProtected) {
         throw 'VAULT_DIRECTORY_ACL_NOT_PRIVATE'
     }
+    if ($allowed -notcontains ([string]$currentAcl.Owner)) {
+        $ownerSid = $null
+        try { $ownerSid = ([Security.Principal.NTAccount]$currentAcl.Owner).Translate([Security.Principal.SecurityIdentifier]).Value } catch { }
+        if ($allowed -notcontains $ownerSid) { throw 'VAULT_DIRECTORY_OWNER_UNEXPECTED' }
+    }
+    $allowSids = @()
     foreach ($rule in $currentAcl.GetAccessRules($true, $false, [Security.Principal.SecurityIdentifier])) {
-        if ($rule.AccessControlType -eq [Security.AccessControl.AccessControlType]::Allow -and
-            $allowed -notcontains $rule.IdentityReference.Value) {
-            throw 'VAULT_DIRECTORY_HAS_UNEXPECTED_ALLOW_RULE'
+        if ($rule.AccessControlType -eq [Security.AccessControl.AccessControlType]::Allow) {
+            if ($allowed -notcontains $rule.IdentityReference.Value) {
+                throw 'VAULT_DIRECTORY_HAS_UNEXPECTED_ALLOW_RULE'
+            }
+            if (($rule.FileSystemRights -band [Security.AccessControl.FileSystemRights]::FullControl) -ne [Security.AccessControl.FileSystemRights]::FullControl) {
+                throw 'VAULT_DIRECTORY_ALLOW_RULE_NOT_FULL_CONTROL'
+            }
+            $allowSids += [string]$rule.IdentityReference.Value
         }
+    }
+    foreach ($sid in $allowed) {
+        if ($allowSids -notcontains $sid) { throw 'VAULT_DIRECTORY_REQUIRED_ALLOW_RULE_MISSING' }
     }
 }
 
@@ -749,6 +763,7 @@ function Set-EpVaultVariableFromClipboard {
     param([Parameter(Mandatory=$true)][string]$Name, [switch]$Replace)
     $value = Read-EpClipboardAndClear
     try {
+        $value = $value.TrimEnd([char[]]@([char]13,[char]10))
         return Set-EpVaultVariable -Name $Name -Value $value -Replace:$Replace
     }
     finally {
@@ -1294,6 +1309,7 @@ Export-ModuleMember -Function @(
     'Get-EpVaultSession',
     'Get-EpVaultVariableNames',
     'Get-EpVaultVariableValue',
+    'Set-EpVaultVariable',
     'Set-EpVaultVariableFromClipboard',
     'Remove-EpVaultVariable',
     'New-EpVaultNoteFromClipboard',
