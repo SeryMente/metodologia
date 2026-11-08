@@ -1,0 +1,44 @@
+name: Validate EP Vault
+
+on:
+  push:
+    branches:
+      - feat/ep-vault-clean-room-20261108
+    paths:
+      - 'frentes/ep/📁 🧭 - Tareas provisionales/📁 🧩 - EP-TASK-004 - Reconstrucción de bóveda/src/**'
+      - 'frentes/ep/📁 🧭 - Tareas provisionales/📁 🧩 - EP-TASK-004 - Reconstrucción de bóveda/tests/**'
+      - '.github/workflows/validate-ep-vault.yml'
+  pull_request:
+    paths:
+      - 'frentes/ep/📁 🧭 - Tareas provisionales/📁 🧩 - EP-TASK-004 - Reconstrucción de bóveda/src/**'
+      - 'frentes/ep/📁 🧭 - Tareas provisionales/📁 🧩 - EP-TASK-004 - Reconstrucción de bóveda/tests/**'
+      - '.github/workflows/validate-ep-vault.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  windows-powershell-51:
+    runs-on: windows-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        shell: powershell
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run isolated synthetic vault validation
+        run: |
+          $ErrorActionPreference = 'Stop'
+          Set-ExecutionPolicy -Scope Process Bypass -Force
+          $taskRoot = Join-Path $env:GITHUB_WORKSPACE 'frentes/ep/📁 🧭 - Tareas provisionales/📁 🧩 - EP-TASK-004 - Reconstrucción de bóveda'
+          $testPath = Join-Path $taskRoot 'tests/Test-EPVault.ps1'
+          if (-not (Test-Path -LiteralPath $testPath -PathType Leaf)) {
+              throw 'EP_VAULT_TEST_SCRIPT_NOT_FOUND'
+          }
+          & $testPath
+          if ($LASTEXITCODE -ne 0) {
+              throw ('EP_VAULT_TEST_EXIT_CODE: ' + $LASTEXITCODE)
+          }
