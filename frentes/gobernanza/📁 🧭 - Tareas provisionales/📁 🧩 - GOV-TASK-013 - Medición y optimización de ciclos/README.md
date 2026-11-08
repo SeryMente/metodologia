@@ -184,3 +184,81 @@ Se conservan estas rutas posibles, sin implementar ninguna ni cambiar el contrat
 
 **Estado operativo:** adaptador ChatGPT UI NO IMPLEMENTADO; captura exacta NO VERIFICADA; línea base NO INICIADA. No generar mediciones ficticias ni presentar un experimento DOM/red como telemetría canónica.
 
+## Decisión de arquitectura vigente: ampliar la extensión Harmonia existente · 2026-11-08
+
+**Instrucción vigente del operador:** la medición en tiempo real se añadirá a la extensión Harmonia que ya existe en KHORA. No se creará una segunda extensión. La decisión anterior de §98–126 —extensión propia del OCP— queda **SUPERSEDIDA** por esta elección; se conserva como antecedente y no como instrucción de implementación.
+
+### Componente existente y frontera correcta
+
+- Repositorio: `SeryMente/khora`.
+- Componente que se ampliará: `apps/harmonia-observability/extension/`, Manifest V3 v0.3.0 en el último corte inspeccionado.
+- Content script existente: reconoce regiones y roles de mensajes, detecta presencia del compositor y ciertos indicadores de generación, observa mutaciones y calcula huellas estructurales. Mantiene fuera de captura el texto de mensajes, el borrador del compositor, los valores de campos, el HTML bruto y las URLs completas.
+- Service worker existente: administra pestañas `chatgpt.com`, sesiones de captura y envío de eventos al colector local.
+- Colector existente: `apps/harmonia-observability/collector/server.js`, escucha localmente en `127.0.0.1:47321` y conserva eventos JSONL e índice local.
+- No confundir este observador con la sombrilla modular `khora-web/extension/harmonia/` (documentada como Aisthesis/Halcón). No se renombra, sustituye ni amplía esa sombrilla para resolver esta tarea.
+- El barrido estructural actual aplica debounce de 1.6 s y limitación de frecuencia de 4 s. Por diseño no sirve para cronometrar un ciclo. La nueva captura será un observador estrecho, independiente y orientado a transiciones; no se acelerará el barrido global ni se ejecutarán escaneos completos en cada mutación.
+
+### Semántica de medición aprobada
+
+La única magnitud primaria será **duración del ciclo conversacional observado en el cliente**, en milisegundos. No representa latencia del servidor, tiempo interno del modelo ni equivalencia con `cycle.accepted`/`cycle.completed` del contrato de proveedor.
+
+Se emplearán eventos propios, inequívocamente diferenciados:
+
+1. `client.cycle.started`: primer instante en que el observador confirma que una nueva intervención del usuario está representada como un nuevo turno visible dentro de la región principal de conversación.
+2. `client.cycle.completed`: fin observable del turno del asistente asociado, una vez que la interfaz deja de mostrar generación/actividad y la respuesta permanece estable durante la ventana de asentamiento definida y probada.
+
+Reglas de señal:
+
+- Al inicializarse, el observador establece una línea base de los turnos ya renderizados. El historial preexistente, una recarga o una reconstrucción del DOM no deben disparar ciclos retroactivos.
+- El inicio exige la aparición de un nuevo nodo de turno de usuario, identificado únicamente por atributos estructurales/roles ya expuestos por la interfaz y su posición cronológica. No leer su texto, su contenido ni el valor del compositor. Un clic o una tecla de envío por sí solos no confirman un turno y no constituyen el checkpoint.
+- El final exige que exista un turno de asistente posterior al inicio, que no permanezcan señales visibles conocidas de generación/actividad (por ejemplo, estado busy/streaming, control de detener o progreso visible de herramienta/agente) y que el área de respuesta permanezca sin mutaciones relevantes durante una ventana de asentamiento. La ventana inicial candidata es **1,500 ms**, sujeta a validación natural; el constructor deberá mantenerla como constante documentada y justificar cualquier ajuste mediante pruebas, no añadir retardos a la respuesta de ChatGPT.
+- El timestamp final de medición corresponde a la última transición relevante observada que deja la interfaz inactiva y estable; la ventana de asentamiento sirve para confirmar el estado, no se suma artificialmente a `duration_ms`.
+- Si se detecta una nueva intervención antes de concluir el ciclo activo, si se cierra/navega la pestaña, se reinicia el observador o no puede verificarse cualquiera de los límites, el ciclo queda incompleto y se representa como `NOT_MEASURED` con una razón técnica. No estimar ni completar marcas ausentes.
+- La primera versión cubre nuevos turnos de usuario representados como nodos nuevos. Regenerar una respuesta, editar y reenviar un turno existente, reintentos sin nuevo turno visible y modos de voz cuyo patrón no haya sido validado quedan fuera de la cobertura medida; no reinterpretarlos como ciclo nuevo por inferencia.
+
+### Reloj, identidad y correlación
+
+- Tomar ambos tiempos en la misma instancia de documento mediante reloj monotónico del navegador (`performance.now()`). Guardar marcas UTC de auditoría, fuente del reloj y precisión disponible; calcular `duration_ms` solo con la diferencia monotónica. No restar timestamps de pared.
+- Cada ciclo recibe un `cycle_id` UUIDv7 local. Cada contexto conversacional observado recibe un `conversation_id` UUIDv7 local. Los identificadores nativos de ChatGPT, rutas completas, parámetros de URL, IDs de cuenta y contenido no se copian al registro de telemetría.
+- Mantener los `eventId` y `sessionId` históricos de Harmonia con su compatibilidad actual; introducir los UUIDv7 locales solo para las identidades nuevas que los requieren. Probar el generador UUIDv7 y evitar colisiones/reutilización.
+- Un ciclo debe poder correlacionarse por `conversation_id` + `cycle_id` entre inicio y final, incluso si hay varios ciclos en una conversación. No generar folios FOL1 ni IDs nativos.
+
+### Ruta de eventos y persistencia
+
+- El content script detecta transiciones y captura marcas monotónicas/UTC con trabajo mínimo; el service worker valida y enruta los nuevos tipos; el colector aplica allowlist y saneamiento estricto específico para `client.cycle.started` y `client.cycle.completed`.
+- El colector debe conservar únicamente los campos mínimos de telemetría aprobados. Su rama actual de saneamiento para eventos distintos de superficies/captura reduce el payload a un motivo genérico; por tanto, no basta con emitir nombres nuevos: se debe ampliar expresamente el contrato del colector y comprobar que los campos permitidos se escriben y se leen de vuelta.
+- Guardar ambos límites en el almacén local JSONL existente y emparejarlos por `cycle_id`. Una consulta acotada `-Cycles` en el script de consulta puede presentar el registro emparejado y marcar inicios sin final como `NOT_MEASURED`; no crear un dashboard ni rediseñar el popup.
+- La persistencia no interviene en la ruta de respuesta de ChatGPT. Ningún envío remoto, MCP, red, base de datos o ACK debe bloquear el renderizado o la interacción.
+- La PR #353 de KHORA contiene una propuesta local-first con outbox IndexedDB, reintentos y ACK, pero permanece borrador/no fusionada y su rama estaba rezagada respecto de `main` en el último metadato consultado (2026-11-02). El constructor debe inspeccionarla y reconciliarla antes de reutilizar cualquier pieza; no asumir que sigue integrable, no fusionarla ni modificarla por arrastre y, sobre todo, no crear una segunda outbox/cola paralela. Si no puede aprovecharse sin ampliar el alcance, dejar explícito el límite de durabilidad y no inventar otro subsistema.
+- El destino actual de esta tarea es el almacén local de Harmonia. No provisionar Neon/PostgreSQL, Cloudflare Queues, B2, servicios, endpoints ni credenciales. No conectar persistencia remota.
+
+### Privacidad y no regresión
+
+Se conserva y refuerza la política vigente de Harmonia:
+
+- No capturar ni transmitir texto de mensajes del usuario/asistente, borradores, valores de inputs, texto de nodos, `textContent`, `innerText`, `innerHTML`, `outerHTML`, HTML bruto, contenido de atributos que pueda contener texto conversacional, cuerpos de red/WebSocket, cookies, tokens, credenciales, URLs completas o identificadores nativos de conversación.
+- No añadir permiso `debugger`, interceptación de red, endpoints privados, scripts remotos ni permisos de host nuevos. El alcance permanece `https://chatgpt.com/*` y el colector local existente.
+- El observador de ciclo puede usar MutationObserver sobre cambios estructurales, atributos de estado y cambios de nodos de texto **solo para registrar el instante de la mutación**; nunca leer ni conservar el valor del nodo ni el texto anterior. La prueba de privacidad debe verificar expresamente esta separación.
+- No realizar clasificación semántica basada en el contenido. La taxonomía de categorías sigue pendiente; no añadir categoría hasta que exista catálogo aprobado.
+- No añadir métricas de herramienta, first-token, tokens/costo, tasa de error, reintentos, conteos de actividad, latencia de persistencia ni otros KPIs. Los estados y razones de cobertura son metadatos de integridad de la medición, no magnitudes de desempeño adicionales.
+
+### Pruebas y aceptación del constructor
+
+El constructor trabajará solo sobre una rama nueva basada en el `main` vigente, luego de releer los archivos y SHAs actuales. No usará RDC, no instalará ni cargará la extensión en Chrome y no afirmará aceptación natural/E2E.
+
+Pruebas mínimas:
+
+1. Línea base inicial sin falsos ciclos; nuevo turno de usuario produce exactamente un inicio.
+2. Streaming parcial, múltiples mutaciones de respuesta, desaparición/reaparición de señales busy, llamadas de herramientas y progreso de agente no generan final prematuro.
+3. Solo se emite final cuando hay turno de asistente posterior y se cumplen las condiciones de inactividad/estabilidad; la duración usa reloj monotónico y no incluye artificialmente la ventana de asentamiento.
+4. Segundo envío antes del final, regeneración, edición/reenvío, navegación, cierre de pestaña y reinicio del observador no producen emparejamientos falsos; quedan no medidos cuando corresponda.
+5. Duplicados/replay conservan identidad e idempotencia; inicios sin final son detectables como incompletos.
+6. El contrato del colector acepta los dos tipos de evento, rechaza campos extra/no permitidos y conserva mediante read-back las marcas, identidades y duración necesarias.
+7. Pruebas de privacidad demuestran ausencia de contenido, borradores, valores, rutas completas, credenciales y datos de red, incluida la observación de mutaciones characterData sin lectura de su valor.
+8. Regresión de las funciones actuales de Harmonia: mapeo estructural, fingerprint, sesiones por pestaña, colector, consulta, privacidad y almacenamiento.
+9. La prueba automatizada usa fixtures sintéticas y declara esa limitación. La aceptación real requiere después una prueba natural autorizada en Chrome; no se simula ni se declara desde el constructor.
+
+Entregables del constructor: diagnóstico breve de `main` y de PR #353; diseño de señales finalmente seleccionado con evidencia del código; diff limitado a los archivos necesarios; tests y salidas reales; lista de escenarios soportados/no soportados; límites de privacidad; instrucciones para la prueba natural autorizada; SHA de los artefactos y lectura de vuelta del commit de la rama. No modificar el OCP Harmonia, su control de responsabilidad, DUG, el esquema central A/B, FOL1 ni otros frentes.
+
+**Estado:** decisión de reutilizar Harmonia y alcance de diseño aprobados por el operador. Este registro documenta la especificación que deberá convertirse en el prompt del constructor. No se ha implementado ni probado el observador de ciclo; no se ha modificado KHORA ni se ha instalado la extensión.
+
