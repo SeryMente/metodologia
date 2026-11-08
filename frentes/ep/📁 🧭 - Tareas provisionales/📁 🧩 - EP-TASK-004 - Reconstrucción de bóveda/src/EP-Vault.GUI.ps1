@@ -253,16 +253,25 @@ function Build-OriginalVaultDoor {
 
 function Reset-OriginalVaultDoor {
     if ($null -eq $script:Door) { return }
+    $canvas = Get-UiElement -Name 'VaultCanvas'
+    $canvas.BeginAnimation([System.Windows.UIElement]::OpacityProperty,$null)
+    $canvas.RenderTransform.Children[0].BeginAnimation([System.Windows.Media.RotateTransform]::AngleProperty,$null)
+    $canvas.RenderTransform.Children[1].BeginAnimation([System.Windows.Media.TranslateTransform]::XProperty,$null)
+    $canvas.RenderTransform.Children[2].BeginAnimation([System.Windows.Media.ScaleTransform]::ScaleXProperty,$null)
+    $script:Door.Wheel.BeginAnimation([System.Windows.Media.RotateTransform]::AngleProperty,$null)
+    foreach ($bolt in $script:Door.Bolts) {
+        $bolt.Transform.BeginAnimation([System.Windows.Media.TranslateTransform]::XProperty,$null)
+        $bolt.Transform.BeginAnimation([System.Windows.Media.TranslateTransform]::YProperty,$null)
+        $bolt.Transform.X = 0
+        $bolt.Transform.Y = 0
+    }
     $script:Door.Rotate.Angle = 0
     $script:Door.Translate.X = 0
     $script:Door.Translate.Y = 0
     $script:Door.Scale.ScaleX = 1
     $script:Door.Scale.ScaleY = 1
     $script:Door.Wheel.Angle = 0
-    foreach ($bolt in $script:Door.Bolts) {
-        $bolt.Transform.X = 0
-        $bolt.Transform.Y = 0
-    }
+    $canvas.Opacity = 1
 }
 
 function Start-OriginalOpeningSequence {
@@ -400,24 +409,98 @@ function Set-EpGateMessage {
     $script:Ui.GateMessage.Text = $Message
 }
 
+function Start-OriginalClosingSequence {
+    $canvas = Get-UiElement -Name 'VaultCanvas'
+    $script:Ui.OpenStage.Visibility = [System.Windows.Visibility]::Collapsed
+    $script:Ui.ClosedStage.Visibility = [System.Windows.Visibility]::Visible
+    $canvas.Visibility = [System.Windows.Visibility]::Visible
+
+    # Clear completed opening clocks and establish the actual open pose.
+    Reset-OriginalVaultDoor
+    $script:Door.Rotate.Angle = 38
+    $script:Door.Translate.X = 390
+    $script:Door.Scale.ScaleX = 0.06
+    $script:Door.Scale.ScaleY = 0.06
+    $script:Door.Wheel.Angle = 165
+    foreach ($bolt in $script:Door.Bolts) {
+        $bolt.Transform.X = $bolt.DeltaX
+        $bolt.Transform.Y = $bolt.DeltaY
+    }
+    $canvas.Opacity = 0
+
+    $ease = [System.Windows.Media.Animation.CubicEase]::new()
+    $ease.EasingMode = [System.Windows.Media.Animation.EasingMode]::EaseInOut
+    $duration = [TimeSpan]::FromMilliseconds(900)
+    $rotate = [System.Windows.Media.Animation.DoubleAnimation]::new(38,0,$duration)
+    $translate = [System.Windows.Media.Animation.DoubleAnimation]::new(390,0,$duration)
+    $scale = [System.Windows.Media.Animation.DoubleAnimation]::new(0.06,1,$duration)
+    $fade = [System.Windows.Media.Animation.DoubleAnimation]::new(0,1,$duration)
+    foreach ($animation in @($rotate,$translate,$scale,$fade)) { $animation.EasingFunction = $ease }
+    $script:Door.Rotate.BeginAnimation([System.Windows.Media.RotateTransform]::AngleProperty,$rotate)
+    $script:Door.Translate.BeginAnimation([System.Windows.Media.TranslateTransform]::XProperty,$translate)
+    $script:Door.Scale.BeginAnimation([System.Windows.Media.ScaleTransform]::ScaleXProperty,$scale)
+    $canvas.BeginAnimation([System.Windows.UIElement]::OpacityProperty,$fade)
+
+    $wheel = [System.Windows.Media.Animation.DoubleAnimation]::new(165,0,[TimeSpan]::FromMilliseconds(720))
+    $wheel.EasingFunction = $ease
+    $script:Door.Wheel.BeginAnimation([System.Windows.Media.RotateTransform]::AngleProperty,$wheel)
+
+    foreach ($bolt in $script:Door.Bolts) {
+        $x = [System.Windows.Media.Animation.DoubleAnimation]::new($bolt.DeltaX,0,[TimeSpan]::FromMilliseconds(620))
+        $y = [System.Windows.Media.Animation.DoubleAnimation]::new($bolt.DeltaY,0,[TimeSpan]::FromMilliseconds(620))
+        $x.EasingFunction = $ease
+        $y.EasingFunction = $ease
+        $bolt.Transform.BeginAnimation([System.Windows.Media.TranslateTransform]::XProperty,$x)
+        $bolt.Transform.BeginAnimation([System.Windows.Media.TranslateTransform]::YProperty,$y)
+    }
+
+    if ($script:OpeningTimer) { $script:OpeningTimer.Stop() }
+    $script:OpeningTimer = [System.Windows.Threading.DispatcherTimer]::new()
+    $script:OpeningTimer.Interval = $duration
+    $script:OpeningTimer.Add_Tick({
+        $script:OpeningTimer.Stop()
+        Reset-OriginalVaultDoor
+        $canvas.Visibility = [System.Windows.Visibility]::Visible
+        $script:Ui.HeaderState.Text = 'SELLADA'
+        $script:Ui.FooterStatus.Text = 'LOCAL · CIFRADO · SELLADA'
+        $script:Ui.UnlockButton.IsEnabled = $true
+        Update-EpGateMode
+    })
+    $script:OpeningTimer.Start()
+}
+
 function Close-EpVaultUi {
     param([string]$Reason = 'OPERATOR_LOCK')
+    $wasOpen = ($script:Ui.HeaderState.Text -eq 'ABIERTA')
     if ($script:SessionTimer) { $script:SessionTimer.Stop() }
     if ($script:RevealTimer) { $script:RevealTimer.Stop() }
     if ($script:OpeningTimer) { $script:OpeningTimer.Stop() }
+
+    # Hide sensitive surfaces and invalidate authorization before any visual movement.
     Clear-EpRevealedValue
     $script:Ui.VariableList.ItemsSource = $null
     $script:Ui.NoteList.ItemsSource = $null
     $script:Ui.MasterPasswordBox.Clear()
     $script:Ui.ConfirmPasswordBox.Clear()
     $null = Lock-EpVault
-    $script:Ui.OpenStage.Visibility = [System.Windows.Visibility]::Collapsed
-    $script:Ui.ClosedStage.Visibility = [System.Windows.Visibility]::Visible
-    $script:Ui.HeaderState.Text = 'SELLADA'
-    $script:Ui.FooterStatus.Text = 'LOCAL · CIFRADO · SELLADA · ' + $Reason
-    Reset-OriginalVaultDoor
-    (Get-UiElement -Name 'VaultCanvas').Visibility = [System.Windows.Visibility]::Visible
-    Update-EpGateMode
+
+    $script:Ui.HeaderState.Text = 'BLOQUEANDO'
+    $script:Ui.FooterStatus.Text = 'SESIÓN INVALIDADA · CERRANDO CERROJOS · ' + $Reason
+    $script:Ui.UnlockButton.IsEnabled = $false
+
+    if ($wasOpen) {
+        Start-OriginalClosingSequence
+    }
+    else {
+        $script:Ui.OpenStage.Visibility = [System.Windows.Visibility]::Collapsed
+        $script:Ui.ClosedStage.Visibility = [System.Windows.Visibility]::Visible
+        Reset-OriginalVaultDoor
+        (Get-UiElement -Name 'VaultCanvas').Visibility = [System.Windows.Visibility]::Visible
+        $script:Ui.HeaderState.Text = 'SELLADA'
+        $script:Ui.FooterStatus.Text = 'LOCAL · CIFRADO · SELLADA · ' + $Reason
+        $script:Ui.UnlockButton.IsEnabled = $true
+        Update-EpGateMode
+    }
 }
 
 function Test-EpSecureStringsEqual {
@@ -498,6 +581,8 @@ $script:Ui.UnlockButton.Add_Click({
         Invoke-EpUnlock
     }
     catch {
+        $script:Ui.MasterPasswordBox.Clear()
+        $script:Ui.ConfirmPasswordBox.Clear()
         $script:Ui.HeaderState.Text = 'SELLADA'
         $script:Ui.FooterStatus.Text = 'AUTENTICACIÓN RECHAZADA · LA CÁMARA SIGUE CERRADA'
         Set-EpGateMessage -Message $_.Exception.Message
@@ -654,7 +739,7 @@ $script:Ui.DeleteNoteButton.Add_Click({
             [System.Windows.MessageBoxImage]::Warning
         )
         if ($answer -ne [System.Windows.MessageBoxResult]::Yes) { return }
-        Remove-EpVaultNote -NoteId ([string]$selected.id) | Out-Null
+        Remove-EpVaultNote -NoteId ([string]$selected.id) -Approved | Out-Null
         Clear-EpRevealedValue
         Refresh-EpNotes
         $script:Ui.FooterStatus.Text = 'NOTA ELIMINADA · AUSENCIA VERIFICADA'
@@ -669,6 +754,7 @@ $script:Ui.Add_Closing({
         $script:Closing = $true
         if ($script:SessionTimer) { $script:SessionTimer.Stop() }
         if ($script:RevealTimer) { $script:RevealTimer.Stop() }
+        if ($script:OpeningTimer) { $script:OpeningTimer.Stop() }
         Clear-EpRevealedValue
         $null = Lock-EpVault
     }
