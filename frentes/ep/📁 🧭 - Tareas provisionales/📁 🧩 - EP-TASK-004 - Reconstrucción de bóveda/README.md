@@ -271,3 +271,16 @@ Este registro constituye la precondición documental solicitada por el operador.
 - **Límites:** no se consultaron valores de credenciales desde el asistente, no se escribió ninguna credencial en Git, no se cambió configuración/credenciales/recursos B2 y no se ejecutó ninguna acción de escritura o borrado B2. El posible ingreso de credenciales por el operador queda **NO VERIFICADO**.
 - **Acción preventiva:** detener cualquier diagnóstico B2 fuera de una instrucción explícita, nunca solicitar ni manipular la Master Application Key sin alcance específico aprobado, y mantener las tareas de bóveda/EP separadas de pruebas de autorización de cuentas externas.
 - **Estado:** incidente contenido a nivel de proceso; impacto de autenticación B2 **NO DETERMINADO** hasta confirmar si el operador introdujo la clave antes de la terminación.
+
+
+
+## Despliegue local dual · 2026-11-08
+
+Se materializó la distribución de la rama \`feat/ep-vault-clean-room-20261108\` (commit \`9a5f0c686b8533878610d08e52cef427ad3f0933\`) en los perfiles locales de Fila 4 y PC-14. En ambos equipos están presentes Core, CLI, GUI WPF, XAML, pruebas, documentación, lanzador y guía de captura Custodia. Cada equipo tiene \`BUILD-MANIFEST.txt\` con las huellas SHA-256 locales y sin secretos.
+
+- **PC-14** — dispositivo RDC \`b396b293-5d1c-4461-9df6-c500a68d5d7f\`, perfil Windows \`pc-14\\pc 13\`. Ruta: \`%LOCALAPPDATA%\Khora\tools\ep-vault\`. Suite sintética PowerShell 5.1: PASS, exit 0, 23.34 s. El C: está completamente descifrado y sin BitLocker.
+- **Fila 4 / PC10RCIF4EI4** — dispositivo RDC \`d0bbb2a3-d7b4-45e1-8870-652c2c3844fc\`, perfil objetivo \`fila4\`. Ruta: \`%LOCALAPPDATA%\Khora\tools\ep-vault\`. Suite sintética PowerShell 5.1: PASS, exit 0, 24.66 s, ejecutada bajo \`CENTRAL\MantenimientoRCI\`; la ACL heredada concede a \`CENTRAL\fila4\` FullControl, pero falta validar ejecución/DPAPI desde la sesión interactiva fila4. C: está FullyEncrypted al 100%, pero protección apagada y XTS-AES128.
+
+El flujo integrado captura texto Unicode desde el portapapeles, lo vacía tras captura correcta, crea nota temporal DPAPI CurrentUser con TTL, permite listar solo metadatos y promueve la nota al almacén formal con autenticación local y read-back; solo después elimina la nota. La guía local documenta los nombres no secretos \`KHORA_B2_KEY_ID\` y \`KHORA_B2_APPLICATION_KEY\`.
+
+**No está inicializada ninguna bóveda formal y no existen notas de captura.** Los resultados son sintéticos. No se leyeron valores, no se tocó el portapapeles, no se modificó BitLocker ni se ejecutó autenticación B2. No capturar secretos reales en ninguno de los equipos hasta cumplir OEP §105: XTS-AES256, protección activa y 100%. No considerar completados H4/H7/H8/H10; la PR #20 sigue abierta/draft y sin merge.
