@@ -374,7 +374,8 @@ function Update-EpSessionDisplay {
     $minutes = [Math]::Floor($remaining / 60)
     $seconds = $remaining % 60
     $script:Ui.SessionRemaining.Text = ('{0:00}:{1:00}' -f $minutes,$seconds)
-    $script:Ui.SessionExpiresAt.Text = 'UTC ' + ([DateTime]::Parse($session.expiresAtUtc).ToLocalTime().ToString('HH:mm:ss'))
+    $expiresUtc = [DateTimeOffset]::Parse($session.expiresAtUtc).ToUniversalTime()
+    $script:Ui.SessionExpiresAt.Text = 'UTC ' + $expiresUtc.ToString('HH:mm:ss')
     if ($remaining -le 30) {
         $script:Ui.SessionRemaining.Foreground = New-UiBrush -Color '#D28B45'
     }
