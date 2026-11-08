@@ -87,20 +87,24 @@ try {
     $secure = ConvertTo-SecureString 'synthetic-master-password-only' -AsPlainText -Force
     $bad = ConvertTo-SecureString 'synthetic-incorrect-password-only' -AsPlainText -Force
 
+    $module = Get-Module EP.Vault.Core
     foreach ($seconds in @(15,30,60,120,180,300,600,900)) {
-        $ttlSalt = New-EpRandomBytes -Count 16
-        $ttlKey = Get-EpMasterKey -Master $secure -Salt $ttlSalt
-        try {
-            Set-EpVaultSession -Key $ttlKey -DurationSeconds $seconds
-            $sessionCheck = Get-EpVaultSession
-            $elapsed = ($sessionCheck.expiresAtUtc - $sessionCheck.startedAtUtc).TotalSeconds
-            Assert-EpTest -Condition ($sessionCheck.durationSeconds -eq $seconds -and [Math]::Abs($elapsed - $seconds) -lt 0.1) -Failure ('TTL_DURATION_OPTION_' + $seconds)
-            $null = Lock-EpVault
-        }
-        finally {
-            Clear-EpBytes -Bytes $ttlKey
-            Clear-EpBytes -Bytes $ttlSalt
-        }
+        $sessionCheck = & $module {
+            param($masterValue,$durationValue)
+            $ttlSalt = New-EpRandomBytes -Count 16
+            $ttlKey = Get-EpMasterKey -Master $masterValue -Salt $ttlSalt
+            try {
+                Set-EpVaultSession -Key $ttlKey -DurationSeconds $durationValue
+                return (Get-EpVaultSession)
+            }
+            finally {
+                $null = Lock-EpVault
+                Clear-EpBytes -Bytes $ttlKey
+                Clear-EpBytes -Bytes $ttlSalt
+            }
+        } $secure $seconds
+        $elapsed = ($sessionCheck.expiresAtUtc - $sessionCheck.startedAtUtc).TotalSeconds
+        Assert-EpTest -Condition ($sessionCheck.durationSeconds -eq $seconds -and [Math]::Abs($elapsed - $seconds) -lt 0.1) -Failure ('TTL_DURATION_OPTION_' + $seconds)
     }
     Write-Output 'PASS_ALL_EIGHT_SESSION_DURATION_OPTIONS'
 
