@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "event_id": "C-GOBERNANZA-FOLIACION-SECUENCIAL-01",
   "status": "PREPARADO_PENDIENTE_ACTIVACION_IPZ",
-  "generation": 3,
+  "generation": 4,
   "global_scope": {
     "scope_id": "SERYMENTE-METODOLOGIA-GLOBAL",
     "description": "Foliación global y por OCP para los contextos registrados; cobertura basada en inventario conocido, no exhaustividad organizacional.",
@@ -11,7 +11,8 @@
       "DUG v364 ART-015 a ART-024",
       "INVENTARIO-REPOSITORIOS-Y-FRENTES.md",
       "Alta incremental Filo Sangriento: SeryMente/filo-sangriento; inventario blob ed9991b599aaceac27ff096896e70c866583a2e8; 2026-10-30.",
-      "Alta Hugging Face: SeryMente/filo-sangriento/frentes/huggingface; OCP ocp-front-huggingface / HF; 2026-10-30; sin folios asignados."
+      "Alta Hugging Face: SeryMente/filo-sangriento/frentes/huggingface; OCP ocp-front-huggingface / HF; 2026-10-30; sin folios asignados.",
+      "DUG v380 · NX-380m · ART-024 §6/P042; C-GOBERNANZA-FOLIACION-NO-BLOQUEANTE-01"
     ],
     "coverage_completeness": "KNOWN_INVENTORY_ONLY"
   },
@@ -844,7 +845,7 @@
     "prepared_on": "2026-10-30",
     "activated_on": null,
     "cutover_event": null,
-    "activation_gate": "No activar hasta verificar esquemas y maestro y preparar la nueva IPZ. Filo Sangriento y su repositorio quedaron catalogados sin folios ni asignaciones; primer folio posterior al corte: 1; sin asignaciones retroactivas."
+    "activation_gate": "Mantener FOL1 PREPARADO hasta verificar esquemas y maestro y preparar la nueva IPZ; activar mediante corte explícito al iniciar una conversación nueva. El primer registro posterior al corte recibe el primer contador; sin asignaciones retroactivas. Mientras esté PREPARADO, FOL1 no condiciona la apertura/continuidad de conversaciones, el folio operativo SES, la titularidad, análisis ni trabajo autorizado: conservar UUIDv7 + SES y ciclos legados C-/E/S (A/B). Si, ya ACTIVO, falla la asignación, el folio afectado queda PENDING/NO ASIGNADO y continúa el trabajo independiente; no se improvisan ni reutilizan números. La incertidumbre de un OCP bloquea solo su folio local; el global y los OCP verificados se asignan con estado de cobertura parcial. Cobertura actual: KNOWN_INVENTORY_ONLY. No activar hasta verificar esquemas y maestro y preparar la nueva IPZ."
   },
   "legacy_policy": {
     "legacy_cycle_pattern": "C-AAAAMMDD-XXXXXXXX",
