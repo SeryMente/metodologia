@@ -217,23 +217,70 @@
         "readback_blob_sha": "cdb10ac34558b0ca5457e64ab6f61aa1d245084e",
         "verified_on": "2026-11-08"
       }
+    },
+    {
+      "document_id": "DOC-GOV-CHATGPT-GOBERNANZA-1-20261108-1126",
+      "original_name": "ChatGPT-GOBERNANZA 1-20261108-1126.md",
+      "path": "documentos/originales/ChatGPT-GOBERNANZA 1-20261108-1126.md",
+      "class": "original",
+      "source_path": "C:\\Users\\PC 8\\Downloads\\ChatGPT-GOBERNANZA 1-20261108-1126.md",
+      "source_device": "PC-8 (alias físico no asignado)",
+      "source_device_id": "c3c9becd-4f87-4692-ad7d-9e6bc77945c3",
+      "source_front": "Gobernanza",
+      "captured_via": "RDC; bytes originales transportados como Base64; decodificación UTF-8 sin transformación; lectura de vuelta Base64 exacta.",
+      "media_type": "text/markdown",
+      "size_bytes": 67642,
+      "sha256": "EB44223104BE0D581ECA28C9452E71EFD4F661C51CD108AA3F9B53B78746144D",
+      "git_blob_sha": "bb78f30a7696bd1a4dd526e5d17283739e95e692",
+      "status": "PERSISTIDO_Y_VERIFICADO",
+      "verification": {
+        "readback": true,
+        "content_cotejo": true,
+        "method": "Base64 byte-for-byte origen RDC vs GitHub main read-back; Git blob SHA coincide.",
+        "readback_blob_sha": "bb78f30a7696bd1a4dd526e5d17283739e95e692",
+        "verified_on": "2026-11-08"
+      }
+    },
+    {
+      "document_id": "DOC-GOV-CUSTODIA-CONTEXTO-20261108-1121",
+      "original_name": "ChatGPT-CUSTODIA-20261108-1121.md",
+      "path": "documentos/originales/ChatGPT-CUSTODIA-20261108-1121.md",
+      "class": "original",
+      "source_path": "C:\\Users\\PC 8\\Downloads\\ChatGPT-CUSTODIA-20261108-1121.md",
+      "source_device": "PC-8 (alias físico no asignado)",
+      "source_device_id": "c3c9becd-4f87-4692-ad7d-9e6bc77945c3",
+      "source_front": "Custodia",
+      "captured_via": "RDC; bytes originales transportados como Base64; decodificación UTF-8 sin transformación; lectura de vuelta Base64 exacta.",
+      "media_type": "text/markdown",
+      "size_bytes": 39896,
+      "sha256": "CB264E5979AA545F082B5CC9C59DEDA30CE9547100DB29B138A520C3592A866A",
+      "git_blob_sha": "b7e13e3fe9fed70873535640e1124577f5b037e4",
+      "status": "PERSISTIDO_Y_VERIFICADO",
+      "verification": {
+        "readback": true,
+        "content_cotejo": true,
+        "method": "Base64 byte-for-byte origen RDC vs GitHub main read-back; Git blob SHA coincide.",
+        "readback_blob_sha": "b7e13e3fe9fed70873535640e1124577f5b037e4",
+        "verified_on": "2026-11-08"
+      },
+      "role": "Contexto interfrentes para continuidad de Khora/B2; no constituye fuente normativa del frente Gobernanza."
     }
   ],
-  "originals_commit_sha": "bfbfc919bddc1b730f42e509ac369b01e9e9705d",
+  "originals_commit_sha": "c3c47a7f185d8e9482b55942e00c7da9ff1e802c",
   "verification": {
     "readback": true,
     "content_cotejo": true,
-    "document_count": 10,
-    "source_sha256": "53D8E6E9E3EBA4A37DF1C9E04BBCA64246340D59961A6529E4A1F50C15CDDFDA",
-    "git_blob_sha": "cdb10ac34558b0ca5457e64ab6f61aa1d245084e",
-    "method": "Original transferred via RDC; source SHA-256 and byte size checked; exact GitHub read-back and Git blob SHA matched."
+    "document_count": 12,
+    "source_sha256": "EB44223104BE0D581ECA28C9452E71EFD4F661C51CD108AA3F9B53B78746144D",
+    "git_blob_sha": "bb78f30a7696bd1a4dd526e5d17283739e95e692",
+    "method": "Dos originales transferidos vía RDC; SHA-256 de origen; lectura de vuelta Base64 exacta en main y Git blob SHA coincidente."
   },
   "latest_addition_event": {
     "event_id": "C-GOBERNANZA-RETOMA-11",
-    "document_id": "DOC-GOV-CHATGPT-GOBERNANZA-1-20261108-1023",
-    "commit_sha": "bfbfc919bddc1b730f42e509ac369b01e9e9705d",
-    "git_blob_sha": "cdb10ac34558b0ca5457e64ab6f61aa1d245084e",
+    "document_id": "DOC-GOV-CHATGPT-GOBERNANZA-1-20261108-1126",
+    "commit_sha": "c3c47a7f185d8e9482b55942e00c7da9ff1e802c",
+    "git_blob_sha": "bb78f30a7696bd1a4dd526e5d17283739e95e692",
     "readback_verified": true
   },
-  "latest_original_commit_sha": "bfbfc919bddc1b730f42e509ac369b01e9e9705d"
+  "latest_original_commit_sha": "c3c47a7f185d8e9482b55942e00c7da9ff1e802c"
 }
