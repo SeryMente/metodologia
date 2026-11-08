@@ -1864,3 +1864,21 @@ Las rutas esperadas bajo el `LOCALAPPDATA` de ese proceso para `b2-ep-env-vault.
 **Siguiente acción inmediata:** localizar únicamente por metadatos/rutas conocidas cualquier bóveda EP previa en el perfil PC-14; no leer contenido ni valores. Después materializar el mismo código y documentación de PR #20 en rutas locales no privilegiadas de cada perfil solo cuando la identidad efectiva pueda ser la propietaria correspondiente. No inicializar ni desbloquear almacenes hasta asegurar la identidad interactiva y revisar protección de disco. Las variables B2 no se copian ni se prueban.
 
 **Estado inicial de este ciclo:** \`EP_VAULT_CODE=PR20_VALIDATED_SYNTHETIC\`; \`FILA4_INSTALL=NOT_DONE\`; \`PC14_INSTALL=NOT_DONE\`; \`FILA4_FORMAL_VAULT=ABSENT\`; \`PC14_FORMAL_VAULT=NOT_CHECKED\`; \`B2_VARIABLES=NOT_AVAILABLE_IN_FILA4\`. No se han escrito archivos formales en ambos equipos, no hay transferencia, no se autenticó B2 ni se modificó ninguna bóveda histórica.
+
+
+
+### Resultado de materialización dual · EP Vault · 2026-11-08
+
+**Fuente materializada:** rama \`feat/ep-vault-clean-room-20261108\`, commit \`9a5f0c686b8533878610d08e52cef427ad3f0933\`, PR #20 abierta/draft; no fusionada a main. En ambos destinos se escribieron Core, CLI, GUI WPF, XAML, pruebas, README, contrato CLI/headless, lanzador \`ABRIR-EP-VAULT.cmd\`, guía \`CUSTODIA-CAPTURA.md\` y manifiesto local.
+
+**PC-14:** dispositivo RDC \`b396b293-5d1c-4461-9df6-c500a68d5d7f\`; identidad Windows efectiva \`pc-14\\pc 13\`, perfil \`C:\Users\PC 13\`. Distribución en \`%LOCALAPPDATA%\Khora\tools\ep-vault\`. Los siete archivos de código/pruebas/documentación tienen SHA-256 cotejados; la suite sintética PowerShell 5.1 terminó \`EP_VAULT_VALIDATION_PASS\`, exit code 0, 23.34 s. El archivo formal no existe y no fue inicializado. C: \`FullyDecrypted\`, \`ProtectionStatus=Off\`, \`EncryptionMethod=None\`, 0%.
+
+**Fila 4 / PC10RCIF4EI4:** dispositivo RDC \`d0bbb2a3-d7b4-45e1-8870-652c2c3844fc\`; perfil objetivo \`C:\Users\fila4\`. Distribución en \`C:\Users\fila4\AppData\Local\Khora\tools\ep-vault\`. Los mismos siete archivos muestran los mismos SHA-256 que PC-14. ACL heredada del directorio y módulo permite \`CENTRAL\fila4\` FullControl, además de SYSTEM y Administradores. La suite sintética terminó \`EP_VAULT_VALIDATION_PASS\`, exit code 0, 24.66 s, pero el proceso de prueba se ejecutó como \`CENTRAL\MantenimientoRCI\`, no como la sesión interactiva \`fila4\`; el uso DPAPI CurrentUser bajo esa cuenta aún debe validarse en Fila 4. C: \`FullyEncrypted\`, 100%, pero \`ProtectionStatus=Off\`, \`EncryptionMethod=XtsAes128\`.
+
+**Flujo de captura disponible en el código:** captura Unicode del portapapeles; vaciado del portapapeles; nota protegida DPAPI CurrentUser con TTL; listado de metadatos sin contenido; promoción con autenticación local a variable formal; lectura de vuelta y eliminación de la nota solo después del read-back. Los nombres documentados para Custodia son \`KHORA_B2_KEY_ID\` y \`KHORA_B2_APPLICATION_KEY\`. No se leyó ni copió ningún valor. No se creó nota ni almacén formal.
+
+**Bloqueo común de producción:** ninguno de los equipos tiene ahora el cifrado del disco en el estado exigido por OEP §105 (XTS-AES256, protección activa, 100%). No capturar credenciales reales en ninguno hasta corregir y verificar esa condición. No se modificó BitLocker. El portapapeles vacío no elimina las copias que pudieran mantener el historial/sincronización de Windows o gestores externos; la guía local advierte esta limitación.
+
+**Límites y pendientes:** instalación de archivos y pruebas sintéticas verificadas; inicio real de GUI por operador, inicialización local de sendos almacenes con contraseñas creadas por el operador, prueba de captura/promoción desde cada sesión Windows propietaria, auditoría completa H7/H8 y aceptación H10 permanecen pendientes. No se transfirió el archivo cifrado ni DPAPI notes entre dispositivos. No hubo autenticación ni llamadas API B2, ni modificación de variables de entorno del sistema, ni lectura del portapapeles.
+
+**Read-back documental:** se conserva el estado por equipo en el mismo DTC y en EP-TASK-004; las huellas locales están en \`BUILD-MANIFEST.txt\` de cada equipo. FOL1 no consta ACTIVO; no se crean folios globales CONV/CICLO/A/B.
