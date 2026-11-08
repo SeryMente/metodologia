@@ -32,9 +32,9 @@
     },
     "uniqueness_check": "Búsqueda exacta en SeryMente/metodologia de evento, folio SES, UUIDv7, alias y UUIDv7 del ciclo: cero resultados. No acredita unicidad organizacional ni fencing universal.",
     "readback_required": true,
-    "readback_verified": false,
+    "readback_verified": true,
     "source_control_blob_sha": "ee9065a8bc6bcd632c2f34158fdf45133b86bb5c",
-    "verified_on": null,
+    "verified_on": "2026-11-08",
     "alias": "chatgpt-C-GOBERNANZA-RETOMA-12-SES-20261108-F2134723"
   },
   "initialization": {
@@ -980,9 +980,24 @@
         "folio_status": "LEGACY_PRE_CUTOVER"
       },
       "method": "GitHub Contents API conditional update using immediately observed CONTROL-RESPONSABILIDAD.json blob SHA; canonical read-back required. Cooperative control only; no universal fencing.",
-      "mutation_result": "WRITE_ATTEMPTED_READBACK_PENDING",
+      "mutation_result": "COMMITTED_AND_READBACK_VERIFIED",
       "readback_required": true,
-      "readback_verified": false
+      "readback_verified": true,
+      "readback_verification": {
+        "status": "verified",
+        "verified_on": "2026-11-08",
+        "commit_sha": "ef39e16101f3305f812d10eeabffbae04e8d8dee",
+        "control_blob_sha": "5e7b390ba0458d4e8483b6e93fc3d03eb988999c",
+        "checks": {
+          "new_primary_active": true,
+          "prior_primary_superseded": true,
+          "co_responsible_preserved": true,
+          "generation_is_16": true,
+          "active_responsibles_is_2": true,
+          "fol1_remains_prepared": true,
+          "session_folio_is_not_a_fol1_global_folio": true
+        }
+      }
     }
   ],
   "active_responsibles": [
@@ -1008,9 +1023,9 @@
       },
       "uniqueness_check": "Búsqueda exacta en SeryMente/metodologia de evento, folio SES, UUIDv7, alias y UUIDv7 del ciclo: cero resultados. No acredita unicidad organizacional ni fencing universal.",
       "readback_required": true,
-      "readback_verified": false,
+      "readback_verified": true,
       "source_control_blob_sha": "ee9065a8bc6bcd632c2f34158fdf45133b86bb5c",
-      "verified_on": null,
+      "verified_on": "2026-11-08",
       "alias": "chatgpt-C-GOBERNANZA-RETOMA-12-SES-20261108-F2134723"
     },
     {
