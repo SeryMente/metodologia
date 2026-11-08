@@ -196,23 +196,44 @@
         "readback_blob_sha": "e5c70c6ce07e3a73a55ac284b311f3f2b3ad226c",
         "verified_on": "2026-11-06"
       }
+    },
+    {
+      "document_id": "DOC-GOV-CHATGPT-GOBERNANZA-1-20261108-1023",
+      "original_name": "ChatGPT-Gobernanza 1-20261108-1023.md",
+      "path": "documentos/originales/ChatGPT-Gobernanza 1-20261108-1023.md",
+      "class": "original",
+      "source_path": "C:\\Users\\PC\\Downloads\\ChatGPT-Gobernanza 1-20261108-1023.md",
+      "source_device": "015RENTA01",
+      "captured_via": "RDC; original leído desde Downloads, transporte UTF-8 sin transformación; cotejo de SHA-256 de origen, Git blob y lectura de vuelta.",
+      "media_type": "text/markdown",
+      "size_bytes": 123950,
+      "sha256": "53D8E6E9E3EBA4A37DF1C9E04BBCA64246340D59961A6529E4A1F50C15CDDFDA",
+      "git_blob_sha": "cdb10ac34558b0ca5457e64ab6f61aa1d245084e",
+      "status": "PERSISTIDO_Y_VERIFICADO",
+      "verification": {
+        "readback": true,
+        "content_cotejo": true,
+        "method": "RDC source SHA-256 and byte size; GitHub exact content read-back; Git blob SHA matched the source-derived Git blob SHA.",
+        "readback_blob_sha": "cdb10ac34558b0ca5457e64ab6f61aa1d245084e",
+        "verified_on": "2026-11-08"
+      }
     }
   ],
-  "originals_commit_sha": "2953c2e234422c35d4857f58cb8af6df564360c",
+  "originals_commit_sha": "bfbfc919bddc1b730f42e509ac369b01e9e9705d",
   "verification": {
     "readback": true,
     "content_cotejo": true,
-    "document_count": 9,
-    "source_sha256": "925E181C499F4086927259A1F65761516E0CA89C61399F117C95F6C7991E360D",
-    "git_blob_sha": "e5c70c6ce07e3a73a55ac284b311f3f2b3ad226c",
-    "method": "Original byte-preserving from RDC; source/destination SHA-256 equal; local Git blob verified; canonical main fetch_file returned the same Git blob SHA."
+    "document_count": 10,
+    "source_sha256": "53D8E6E9E3EBA4A37DF1C9E04BBCA64246340D59961A6529E4A1F50C15CDDFDA",
+    "git_blob_sha": "cdb10ac34558b0ca5457e64ab6f61aa1d245084e",
+    "method": "Original transferred via RDC; source SHA-256 and byte size checked; exact GitHub read-back and Git blob SHA matched."
   },
   "latest_addition_event": {
     "event_id": "C-GOBERNANZA-RETOMA-11",
-    "document_id": "DOC-GOV-CHATGPT-GOBERNANZA-1-20261106-1640",
-    "commit_sha": "2953c2e234422c35d4857f58cb8af6df564360c",
-    "git_blob_sha": "e5c70c6ce07e3a73a55ac284b311f3f2b3ad226c",
+    "document_id": "DOC-GOV-CHATGPT-GOBERNANZA-1-20261108-1023",
+    "commit_sha": "bfbfc919bddc1b730f42e509ac369b01e9e9705d",
+    "git_blob_sha": "cdb10ac34558b0ca5457e64ab6f61aa1d245084e",
     "readback_verified": true
   },
-  "latest_original_commit_sha": "2953c2e234422c35d4857f58cb8af6df564360c"
+  "latest_original_commit_sha": "bfbfc919bddc1b730f42e509ac369b01e9e9705d"
 }
