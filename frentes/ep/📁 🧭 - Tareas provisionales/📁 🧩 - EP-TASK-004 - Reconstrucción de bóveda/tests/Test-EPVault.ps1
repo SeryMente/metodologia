@@ -36,7 +36,7 @@ foreach ($file in $scriptFiles) {
 }
 Write-Output 'PASS_POWERSHELL_PARSER'
 
-Add-Type -AssemblyName PresentationFramework, PresentationCore, WindowsBase
+Add-Type -AssemblyName PresentationFramework, PresentationCore, WindowsBase, System.Security
 [xml]$xaml = Get-Content -LiteralPath $xamlPath -Raw -Encoding UTF8
 Assert-EpTest -Condition (-not ($xaml.OuterXml -match '<Image\b|BitmapImage|pack://')) -Failure 'XAML_MUST_BE_VECTOR_ONLY_NO_EXTERNAL_IMAGES'
 $reader = [System.Xml.XmlNodeReader]::new($xaml)
