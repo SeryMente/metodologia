@@ -42,15 +42,15 @@
     },
     {
       "path": "frentes/ep/OEP.md",
-      "bytes": 349551,
-      "sha256": "8578804119759AA17733374B6B93B5F77DC8F93384391345B93DCF1CDEA6A849",
-      "git_blob": "c3203dbb97b85ac5a87ee476a6e4b398dd01293b"
+      "bytes": 355028,
+      "sha256": "B8F96284CFA9059769B5904CC02B3BB80B43351EB5A47FAE638B685C865690AC",
+      "git_blob": "ec568e1a0e64746fd3736dc6ecf17327a5389ca8"
     },
     {
       "path": "frentes/ep/README.md",
-      "bytes": 3412,
-      "sha256": "6E733163D79838497CA8532AAFD8BE82E870C27DAA768862F40F315789A80B6B",
-      "git_blob": "9223c603b4dd89cca3ef85d67a5237046bfc4213"
+      "bytes": 3580,
+      "sha256": "0990B114548D114C2AB527276C5D7BA90A7D65EB5A325111089B218314EED442",
+      "git_blob": "45d4e9f7bf296fb6e4101148bbeedbcacb77e929"
     },
     {
       "path": "frentes/ep/artefactos/EP-H03-integracion-reproducible-parcial-20261011.zip.b64",
@@ -359,9 +359,9 @@
     },
     {
       "path": "frentes/ep/entregas/COORDINACION-GOBERNANZA-EP-v0.1.md",
-      "bytes": 236002,
-      "sha256": "914CB9C346466E0F0D9D106E55DB462F625FAEE0EF98BA6C5840605EDF822685",
-      "git_blob": "8327f43602ca4e035ba224cca12c3013f3949bd3"
+      "bytes": 251786,
+      "sha256": "66357C7B292073B8949607EB177CBF31E96CB110827A4DAD60CDEEDDEE86B264",
+      "git_blob": "0a16d3a34fa37ae7509d8db8ad838fd4865df300"
     },
     {
       "path": "frentes/ep/originales/ChatGPT-EP-20261107-1111.txt",
@@ -464,6 +464,24 @@
       "bytes": 3406,
       "sha256": "19A7F6D5BBB42E927E773250C39A812421DB1A27E46E9BDA52927092D69C6BDE",
       "git_blob": "f90ee58129bdac782cf2eeb4ec8fdbf775d6243a"
+    },
+    {
+      "path": "frentes/ep/documentos/MANIFIESTO-DOCUMENTAL.json",
+      "bytes": 2225,
+      "sha256": "BACDF610B46E71E29F01DABCEBC8E0BCFB63ACFB69417FD36C949319D883B981",
+      "git_blob": "ea48217a1a6a77650a0f9118451f0469571373a7"
+    },
+    {
+      "path": "frentes/ep/CONTROL-RESPONSABILIDAD.json",
+      "bytes": 12229,
+      "sha256": "8FD9CA290B620EBBC3AD41EF9C6D34280EC1CB7F9EA43BD1C4A41B514C7E20A9",
+      "git_blob": "4160dfed6c0833e88e9b9fee7d79e54ab7214006"
+    },
+    {
+      "path": "frentes/ep/originales/ChatGPT-EP-20261108-1112.md",
+      "bytes": 39243,
+      "sha256": "75BCA4D84D6C5056F0EC08D940D079047754EACBC43E8A634375D45A53CEE35B",
+      "git_blob": "363c4d8da7e9fc698b4ba29796053eaea90e9e00"
     }
   ],
   "exclusions": [
@@ -483,21 +501,20 @@
     "No MCP-OCP receipt/acceptance verified",
     "No B2 authentication, upload/read-back or restore occurred",
     "No KHORA product code or host execution performed during MOD-SCRIPTPWS inauguration.",
-    "Formal EP responsibility control not located; no transfer or independent module control created.",
     "Manifest self-hash excluded to avoid recursion.",
     "No independent verification of the reported vault write/read-back in this cycle.",
     "Clipboard clearing and interactive vault verification remain pending.",
     "No B2 authentication or bucket/object operations in this cycle.",
-    "No formal EP responsibility transfer or generation assignment.",
     "No delete or hide operation performed on B2; synthetic verification object retained.",
     "Master Application Key remains globally unrestricted by provider; EP use constrained procedurally to OCP-MCP/ep-ocp/.",
-    "No restore to a second physical location, multi-location sync or end-to-end consumer acceptance in this cycle."
+    "No restore to a second physical location, multi-location sync or end-to-end consumer acceptance in this cycle.",
+    "No prior EP owner or generation was verifiable; an initial responsibility assignment at generation 1 was created on 2026-11-08. No transfer from an identified prior owner was performed."
   ],
-  "prior_readback_verified": "PASS: GitHub main fetch matched expected blobs for OEP, README, B2 smoke evidence receipt, revision and manifest.",
-  "latest_review_source_commit": "3eacb0f1ec558520def46f03f894bcd8966cba1e",
-  "current_event": "EP-C-EP-MOD-SCRIPTPWS-20261101-03: CECEQ confirmed canonical location profile; BitLocker mandatory everywhere using the canonical environment-variable vault master passphrase; CECEQ preserves encrypted workspace at close, other locations automatically volatilize EP-controlled workspace; VS Code trigger removed.",
-  "verification_scope": "DOCUMENTATION_COMMITTED_AND_READBACK_VERIFIED: OEP v0.3.38 / VCU-EP-v39, task index, EP-TASK-002, EP-TASK-003, README, DTC, CECEQ instruction/profile and revision blobs match GitHub main. Correct SHA-256 self-test passed. Guardian and BitLocker runtime activation remain pending; no local workspace deletion or BitLocker mutation was performed.",
-  "updated_on": "2026-11-07",
-  "latest_oep_version": "v0.3.38 / VCU-EP-v39",
-  "latest_dtc_blob": "8327f43602ca4e035ba224cca12c3013f3949bd3"
+  "prior_readback_verified": "PASS: canonical GitHub main read-back matched the initial responsibility control, OEP v0.3.40, README, DTC, SPDF document manifest and preserved 2026-11-08 original; hashes and Git blob identifiers recorded.",
+  "latest_review_source_commit": "91ebe38c07407c9644030f502a0d1e84c28f5522",
+  "current_event": "C-EP-RESPONSABILIDAD-INICIAL-20261108-88E05E17: EP initial responsibility control created at generation 1 after explicit operator authorization; no predecessor control/owner was verifiable; no transfer performed.",
+  "verification_scope": "DOCUMENTATION_COMMITTED_AND_READBACK_VERIFIED: initial EP responsibility control, OEP v0.3.40, README, DTC, SPDF manifest and 2026-11-08 original verified against main. Ownership is an initial assignment, not transfer from a verified predecessor. No host/B2/secret operations were performed.",
+  "updated_on": "2026-11-08",
+  "latest_oep_version": "v0.3.40",
+  "latest_dtc_blob": "0a16d3a34fa37ae7509d8db8ad838fd4865df300"
 }
