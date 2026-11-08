@@ -114,13 +114,13 @@
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                     <TextBlock Text="EP" FontFamily="Constantia" FontSize="26" Foreground="#C3A36A" Margin="0,0,12,0"/>
                     <StackPanel VerticalAlignment="Center">
-                        <TextBlock Text="ENVIRONMENT VAULT" FontSize="13" FontWeight="Bold" CharacterSpacing="180"/>
-                        <TextBlock Text="CÁMARA DE CUSTODIA LOCAL" FontSize="10" Foreground="#8D918F" CharacterSpacing="120" Margin="0,3,0,0"/>
+                        <TextBlock Text="ENVIRONMENT VAULT" FontSize="13" FontWeight="Bold"/>
+                        <TextBlock Text="CÁMARA DE CUSTODIA LOCAL" FontSize="10" Foreground="#8D918F" Margin="0,3,0,0"/>
                     </StackPanel>
                 </StackPanel>
                 <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
                     <Ellipse Width="7" Height="7" Fill="#927448" Margin="0,0,8,0"/>
-                    <TextBlock x:Name="HeaderState" Text="SELLADA" FontSize="11" Foreground="#C3A36A" CharacterSpacing="100"/>
+                    <TextBlock x:Name="HeaderState" Text="SELLADA" FontSize="11" Foreground="#C3A36A"/>
                 </StackPanel>
             </Grid>
         </Border>
@@ -149,20 +149,19 @@
                     <DropShadowEffect Color="#000000" BlurRadius="28" ShadowDepth="8" Opacity="0.35"/>
                 </Border.Effect>
                 <StackPanel VerticalAlignment="Center">
-                    <TextBlock Text="UMBRAL DE ACCESO" Foreground="#C3A36A" FontSize="11" CharacterSpacing="160"/>
+                    <TextBlock Text="UMBRAL DE ACCESO" Foreground="#C3A36A" FontSize="11"/>
                     <TextBlock x:Name="GateTitle" Text="La cámara permanece sellada." FontFamily="Constantia"
                                FontSize="27" Foreground="#E3D8C5" TextWrapping="Wrap" Margin="0,12,0,8"/>
                     <TextBlock x:Name="GateDescription" Text="La autenticación local precede a cualquier movimiento del mecanismo."
                                Foreground="#969C9C" FontSize="12" TextWrapping="Wrap" LineHeight="19" Margin="0,0,0,24"/>
 
-                    <TextBlock Text="CLAVE MAESTRA" FontSize="10" Foreground="#B8A98F" CharacterSpacing="120" Margin="0,0,0,8"/>
+                    <TextBlock Text="CLAVE MAESTRA" FontSize="10" Foreground="#B8A98F" Margin="0,0,0,8"/>
                     <PasswordBox x:Name="MasterPasswordBox" Height="42"/>
                     <TextBlock x:Name="ConfirmLabel" Text="CONFIRMAR CLAVE MAESTRA" FontSize="10"
-                               Foreground="#B8A98F" CharacterSpacing="120" Margin="0,18,0,8" Visibility="Collapsed"/>
+                               Foreground="#B8A98F" Margin="0,18,0,8" Visibility="Collapsed"/>
                     <PasswordBox x:Name="ConfirmPasswordBox" Height="42" Visibility="Collapsed"/>
 
-                    <TextBlock Text="VENTANA DE DESBLOQUEO" FontSize="10" Foreground="#B8A98F"
-                               CharacterSpacing="120" Margin="0,22,0,8"/>
+                    <TextBlock Text="VENTANA DE DESBLOQUEO" FontSize="10" Foreground="#B8A98F" Margin="0,22,0,8"/>
                     <ComboBox x:Name="SessionDuration" Height="38" SelectedIndex="5">
                         <ComboBoxItem Content="15 segundos" Tag="15"/>
                         <ComboBoxItem Content="30 segundos" Tag="30"/>
@@ -177,7 +176,7 @@
                     <Button x:Name="UnlockButton" Content="DESBLOQUEAR LA CÁMARA"
                             Height="48" Margin="0,26,0,0" Background="#3A3021" BorderBrush="#B08A50"/>
                     <TextBlock x:Name="GateMessage" Text="ACCESO LOCAL · SIN SERVICIO REMOTO"
-                               Foreground="#778080" FontSize="9" CharacterSpacing="90"
+                               Foreground="#778080" FontSize="9"
                                TextAlignment="Center" Margin="0,18,0,0" TextWrapping="Wrap"/>
                 </StackPanel>
             </Border>
@@ -193,9 +192,9 @@
                 <DockPanel LastChildFill="True">
                     <StackPanel DockPanel.Dock="Top">
                         <TextBlock Text="INTERIOR" FontFamily="Constantia" FontSize="24" Foreground="#C3A36A"/>
-                        <TextBlock Text="CÁMARA ACTIVA" FontSize="9" Foreground="#8D918F" CharacterSpacing="130" Margin="0,4,0,20"/>
+                        <TextBlock Text="CÁMARA ACTIVA" FontSize="9" Foreground="#8D918F" Margin="0,4,0,20"/>
                         <Border Height="1" Background="#49402F" Margin="0,0,0,18"/>
-                        <TextBlock Text="ESTADO DE SESIÓN" FontSize="9" Foreground="#9C907B" CharacterSpacing="100"/>
+                        <TextBlock Text="ESTADO DE SESIÓN" FontSize="9" Foreground="#9C907B"/>
                         <TextBlock x:Name="SessionRemaining" Text="05:00" FontFamily="Consolas"
                                    FontSize="30" Foreground="#D2A05B" Margin="0,6,0,2"/>
                         <TextBlock x:Name="SessionExpiresAt" Text="Vencimiento absoluto"
@@ -210,9 +209,9 @@
                     </StackPanel>
                     <StackPanel>
                         <Border Height="1" Background="#333B3D" Margin="0,0,0,18"/>
-                        <TextBlock Text="SELLO" FontSize="9" Foreground="#8D918F" CharacterSpacing="120"/>
+                        <TextBlock Text="SELLO" FontSize="9" Foreground="#8D918F"/>
                         <TextBlock Text="EP / LOCAL" FontFamily="Consolas" FontSize="12" Foreground="#C3A36A" Margin="0,5,0,18"/>
-                        <TextBlock Text="POLÍTICA" FontSize="9" Foreground="#8D918F" CharacterSpacing="120"/>
+                        <TextBlock Text="POLÍTICA" FontSize="9" Foreground="#8D918F"/>
                         <TextBlock Text="MÍNIMO PRIVILEGIO" FontSize="11" Foreground="#C7C0B2" Margin="0,5,0,0"/>
                     </StackPanel>
                 </DockPanel>
@@ -227,7 +226,7 @@
 
                 <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="2,2,0,14">
                     <StackPanel>
-                        <TextBlock Text="CÁMARA DE CUSTODIA" FontSize="10" Foreground="#C3A36A" CharacterSpacing="150"/>
+                        <TextBlock Text="CÁMARA DE CUSTODIA" FontSize="10" Foreground="#C3A36A"/>
                         <TextBlock Text="Compartimentos y notas efímeras" FontFamily="Constantia"
                                    FontSize="24" Foreground="#E0D5C3" Margin="0,5,0,0"/>
                     </StackPanel>
@@ -328,7 +327,7 @@
                             <ColumnDefinition Width="Auto"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <TextBlock Text="REVELACIÓN TEMPORAL" FontSize="9" Foreground="#C3A36A" CharacterSpacing="100" VerticalAlignment="Center"/>
+                        <TextBlock Text="REVELACIÓN TEMPORAL" FontSize="9" Foreground="#C3A36A" VerticalAlignment="Center"/>
                         <TextBox x:Name="RevealedValueBox" Grid.Column="1" Margin="18,0,0,0" Height="36"
                                  IsReadOnly="True" Visibility="Collapsed" FontFamily="Consolas"/>
                     </Grid>
@@ -343,9 +342,9 @@
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
                 <TextBlock x:Name="FooterStatus" Text="LOCAL · CIFRADO · SELLADA"
-                           FontSize="9" Foreground="#737D7D" CharacterSpacing="90"/>
+                           FontSize="9" Foreground="#737D7D"/>
                 <TextBlock Grid.Column="1" Text="EP / PRIVATE ENVIRONMENT VAULT"
-                           FontSize="9" Foreground="#655B49" CharacterSpacing="80"/>
+                           FontSize="9" Foreground="#655B49"/>
             </Grid>
         </Border>
     </Grid>
