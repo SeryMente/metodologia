@@ -471,6 +471,8 @@ function Unlock-EpVault {
     )
     # A failed re-authentication must never leave an earlier session alive.
     $null = Lock-EpVault
+    $paths = Get-EpVaultPaths
+    Ensure-EpPrivateDirectory -Path $paths.Root
     $envelope = Read-EpVaultEnvelope
     $salt = [Convert]::FromBase64String([string]$envelope.salt)
     $key = $null
