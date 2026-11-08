@@ -95,6 +95,36 @@ No conservar payloads, secretos ni contenido conversacional duplicado dentro de 
 - Acreditar una mejora solo cuando se repita en ciclos comparables y no degrade exactitud, seguridad, autorización, trazabilidad ni disponibilidad de la respuesta.
 - No fijar metas numéricas antes de disponer de una línea base observada.
 
+## Decisión de arquitectura: extensión propia del OCP · 2026-11-08
+
+**Decisión expresada por el operador:** el OCP de Gestión conversacional tendrá su propia extensión de navegador para instrumentar el uso personal de ChatGPT. La extensión será un componente del OCP transversal existente; no se creará un OCP duplicado ni una extensión genérica que altere el comportamiento funcional de ChatGPT.
+
+### Contrato de medición de cliente
+
+La extensión medirá explícitamente **tiempo de ciclo observado en el cliente**, no tiempo interno de procesamiento del servidor.
+
+- **Inicio observable:** señal de interfaz verificable que indique que el mensaje del usuario fue enviado y el ciclo visible comenzó. La señal concreta debe probarse contra la interfaz vigente; no asumir que un clic, por sí solo, confirma envío.
+- **Final observable:** señal de interfaz verificable que indique que la respuesta final terminó y está disponible para el usuario. La señal concreta debe probarse; no confundir tokens parciales, cambios intermedios del DOM o finalización de una solicitud auxiliar con respuesta final.
+- **Duración:** diferencia calculada localmente mediante reloj monotónico del navegador, con ambas señales capturadas por la misma instancia de extensión.
+- **Persistencia:** fuera de la ruta de interacción. La extensión no debe esperar confirmación de red ni de base de datos para permitir que ChatGPT continúe mostrando o recibiendo la interacción.
+- **Identidad y correlación:** utilizar identificadores locales propios y referencias disponibles de conversación/ciclo/OCP/AT. No fabricar IDs nativos ni folios. No duplicar contenido A/B; recolectar solo los metadatos mínimos autorizados.
+- **Cobertura:** ciclos en los que no pueda identificarse inequívocamente uno de los dos límites deben quedar como `NOT_MEASURED`, con motivo. No inferir duración ni rellenar marcas faltantes.
+
+### Alcance y límites de autorización
+
+Esta decisión autoriza diseñar la extensión como parte del OCP y ajustar el contrato de medición de GOV-TASK-013. No autoriza por sí sola instalarla, publicarla, desplegar servicios, provisionar PostgreSQL, cambiar permisos, capturar cuerpos de mensajes ni modificar el OCP compartido o su esquema central. Esas acciones requieren sus controles y autorizaciones correspondientes.
+
+### Pruebas obligatorias antes de declarar implementación
+
+1. Verificar las señales de inicio y final sobre la interfaz real de ChatGPT, incluyendo regeneración, respuestas con herramientas, interrupciones, errores y conversaciones largas.
+2. Demostrar que las señales seleccionadas corresponden al ciclo visible completo y no a actividad interna parcial.
+3. Demostrar que la instrumentación no bloquea ni retrasa la interacción y que la persistencia ocurre después.
+4. Verificar que solo se recolectan metadatos mínimos y que no se capturan cuerpos de mensajes, credenciales, tokens o datos no autorizados.
+5. Verificar manejo de duplicados, eventos incompletos, navegación/cierre de pestaña y fallos de persistencia.
+6. Validar compatibilidad con el esquema central antes de escribir en el OCP compartido; la brecha de `performance` en A/B v1.1 continúa abierta y no se resuelve mediante esta decisión.
+
+**Estado después de la decisión:** arquitectura de extensión aprobada conceptualmente por el operador; diseño técnico detallado, pruebas de señales, implementación, instalación y persistencia todavía pendientes. La magnitud queda definida como tiempo de ciclo observado en el cliente.
+
 ## Compatibilidad con el esquema conversacional existente · 2026-11-07
 
 Se inspeccionó en main `ambitos/gestion-conversacional/ESQUEMA-CICLO-CONVERSACIONAL-v1.1.json` (blob `29fa613da5baec41180a12f87f5a6e08edf44599`) y su guía operativa v1.1 (blob `1e917ff6c2a33c9e0fcfc87ddefad665d1385e35`).
