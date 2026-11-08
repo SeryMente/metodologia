@@ -1,6 +1,6 @@
 # EP-TASK-004 — Reconstrucción integral de la bóveda EP
 
-**Estado provisional:** `pendiente` · **Frente:** Entorno Persistente (EP) · **OCP padre:** `frentes/ep/OEP.md`  
+**Estado provisional:** `en_curso` · **Frente:** Entorno Persistente (EP) · **OCP padre:** `frentes/ep/OEP.md`  
 **Origen:** instrucción directa del operador recibida en conversación el 2026-11-08; hora nativa no expuesta.  
 **Índice padre:** [Registro de tareas provisionales EP](../README.md) · **Gobernanza:** OEP §90–§93; DUG v383 / NX-383m, especialmente P012–P013.  
 **Base de persistencia de esta entrada:** `d732fe5bbcabbfcedbcdc6151a779cccef282086` (main, consultado y cotejado antes de la escritura).
@@ -72,11 +72,11 @@ Los hitos son secuenciales por dependencia. El estado inicial se conserva explí
 |---|---|---|
 | H0 — Captura canónica | Dictado verbatim conservado; tarea enlazada desde el índice EP; límites de secretos y gobernanza explícitos. | COMPLETADO · commit 70ccea7, read-back exacto |
 | H1 — Baseline técnico | Inventario reproducible de backend, CLI, bóveda, notas efímeras, dependencias, pruebas y rutas; sin revelar secretos ni tocar valores reales. | PARCIAL · hallazgos criptográficos, ACL, logs, backups y CLI registrados; revisión integral pendiente |
-| H2 — Revisión B/C presencial | El operador revisa y decide en persona la dirección UX/UI, experiencia de apertura, seguridad y arquitectura de alto nivel. Registrar resultado y evidencia en el mismo núcleo. | BLOQUEA CONSTRUCCIÓN |
-| H3 — Diseño visual clean-room | Concepto visual y prototipo completamente nuevos; ninguna referencia/pieza de la UI antigua; estados cerrado, autenticando, desbloqueando, abierto, bloqueando y error definidos y revisados. | BLOQUEADO POR H2 |
-| H4 — UI funcional | La bóveda abre/cierra realmente; navegación, listado, alta, edición, eliminación, promoción, revelación y estados de error están conectados a operaciones reales y verificables; no hay controles decorativos. | BLOQUEADO POR H2/H3 |
-| H5 — Sesión temporal | Selector con 15 s, 30 s, 1, 2, 3, 5, 10 y 15 min; predeterminado 5 min desde autenticación correcta; expiración bloquea, limpia vistas y descarta material sensible en memoria. Probar cada intervalo sin afectar la bóveda real. | PENDIENTE |
-| H6 — CLI/headless | Documentación de comandos, parámetros, códigos de salida, autenticación, permisos, errores, redacción y contrato para modelos; operaciones esenciales funcionan sin GUI. `-Reveal` es explícito; las salidas sensibles no se registran. | DOC EN MAIN + SMOKE CLI SINTÉTICO PASS; integración/regresión final pendientes |
+| H2 — Revisión B/C presencial | El operador revisó en presencia declarada y aprobó explícitamente la dirección UX/UI, apertura física, seguridad y arquitectura de alto nivel el 2026-11-08; evidencia y alcance registrados en la sección de revisión B/C. | COMPLETADO · aprobación expresa; presencia declarada por el operador, sin verificación técnica independiente |
+| H3 — Diseño visual clean-room | Concepto y prototipo completamente nuevos; ninguna referencia/pieza de la UI antigua; estados cerrado, autenticando, desbloqueando, abierto, bloqueando y error definidos y revisados. | DESPACHADO · aprobado para iniciar; diseño/implementación aún pendientes |
+| H4 — UI funcional | La bóveda abre/cierra realmente; navegación, listado, alta, edición, eliminación, promoción, revelación y estados de error están conectados a operaciones reales y verificables; no hay controles decorativos. | PENDIENTE DE H3 |
+| H5 — Sesión temporal | Selector con 15 s, 30 s, 1, 2, 3, 5, 10 y 15 min; predeterminado 5 min desde autenticación correcta; expiración bloquea, limpia vistas y descarta material sensible en memoria. Probar cada intervalo sin afectar la bóveda real. | PARÁMETROS APROBADOS · implementación y pruebas pendientes |
+| H6 — CLI/headless | Documentación de comandos, parámetros, códigos de salida, autenticación, permisos, errores, redacción y contrato para modelos; operaciones esenciales funcionan sin GUI. `-Reveal` es explícito; las salidas sensibles no se registran. | DOC EN MAIN + SMOKE CLI SINTÉTICO PASS; mínimo privilegio y vencimiento aprobados; implementación/regresión pendientes |
 | H7 — Seguridad e integridad | Pruebas positivas y negativas de contraseña incorrecta, manipulación, integridad MAC, atomicidad, DPAPI/ACL, TTL, aislamiento por usuario, promoción, reemplazo explícito, eliminación y lectura de vuelta. | PENDIENTE |
 | H8 — Matriz de regresión | PowerShell 5.1, parser, CLI E2E sintético, pruebas de backend, ciclo GUI, bloqueo/expiración, restauración y preservación de variables; pruebas visuales y de interacción en tamaños/DPI representativos. | PENDIENTE |
 | H9 — Documentación y release | Manual de usuario, manual de modelos/CLI, inventario de variables por nombre, guía de recuperación/rotación, manifiesto SHA-256, escaneo de secretos y lectura de vuelta del contenido publicado en main. | PENDIENTE |
@@ -162,3 +162,91 @@ Esta sección separa observaciones directas de requisitos aún por resolver. No 
 - Corregir y verificar el preflight de ACL de notas existentes para comparar los principales permitidos, no únicamente el bit de ACL protegida.
 
 **Límite:** estos son hallazgos de auditoría de código y metadatos del host. No se cambiaron el backend, la GUI, el log, los backups, la ACL, las credenciales ni la bóveda formal.
+
+## Revisión B/C, candado D y despacho A — aprobados · 2026-11-08
+
+### Evidencia de revisión y autorización
+
+- **Presencia del operador:** ante la pregunta directa de disponibilidad presencial, el operador respondió «Si» y, tras revisar la propuesta completa en este mismo ciclo, la aprobó expresamente con «Exacto. ... Si la apruebo». La presencia física se registra como **declarada por el operador**; esta conversación no dispone de un sensor ni de verificación técnica independiente de ubicación.
+- **B/C (P012):** **APROBADO** por el operador después de revisar el alcance de UX/UI y seguridad. La aprobación cubre el concepto de bóveda física, la máquina de estados, la sesión temporal, el modelo de acceso headless, la separación entre GUI/CLI y el tratamiento de secretos descritos abajo.
+- **D (P013):** **APROBADO** en cuanto a arquitectura de alto nivel: WPF local independiente, núcleo PowerShell 5.1 compartido por GUI y CLI/headless, operaciones locales sin servicio remoto ni telemetría externa, con prioridad a mínimo privilegio y compatibilidad.
+- **A (P012):** **DESPACHADO** por la instrucción expresa del operador: «Documenta en tarea provisional del frente antes de iniciar, y a partir de ahí resuelve por hitos conforme las instrucciones». El despacho queda condicionado a la persistencia y lectura de vuelta de este registro; su alcance es EP-TASK-004 y sus hitos, no una autorización general para otros frentes.
+- **Resultado de compuertas:** H2 queda completado documentalmente tras el registro y read-back; la construcción de H3/H4 queda habilitada dentro del alcance aprobado. No se declara implementado ningún componente por el solo hecho de aprobarlo.
+
+### Decisiones vinculantes aprobadas
+
+**1. Experiencia visual clean-room**
+
+La aplicación se concibe como una bóveda física que permanece sellada hasta autenticar. El lenguaje visual aprobado es monumental, ominoso, elegante y sobrio: acero oscuro/ennegrecido, latón envejecido, mecanismo radial y luz interior contenida. La puerta circular y sus cerrojos deben tener una secuencia mecánica de apertura y cierre legible.
+
+Estados obligatorios:
+1. CERRADA — puerta y cerrojos sellados; sin datos expuestos.
+2. AUTENTICANDO — contraseña solicitada localmente; el acceso sigue cerrado.
+3. DESBLOQUEANDO — validación superada; secuencia mecánica real de apertura.
+4. ABIERTA — cámara y compartimentos de variables disponibles; valores ocultos por defecto.
+5. BLOQUEANDO — operación de cierre, revocación del acceso temporal y limpieza de vistas.
+6. ERROR — no simular apertura; conservar el estado seguro/cerrado y comunicar un código comprensible sin revelar datos.
+
+La prohibición de reutilización es absoluta para la interfaz anterior: no copiar, abrir como referencia, capturar, calcar, adaptar ni reutilizar píxeles, XAML, controles, layouts, estilos, recursos, imágenes, iconos, tipografías, colores o animaciones. La nueva presentación debe crearse en archivos independientes. La GUI antigua sigue clasificada LEGACY / NO REUTILIZAR; su eliminación física se difiere al corte H10, cuando exista sustituta probada y recuperación verificada.
+
+**2. Arquitectura aprobada**
+
+- GUI local WPF con XAML y recursos propios, independiente de la GUI anterior.
+- Núcleo de dominio/seguridad en PowerShell compatible con Windows PowerShell 5.1.
+- GUI y CLI/headless consumen el mismo contrato y las mismas operaciones del núcleo; no duplicar lógica criptográfica.
+- El modo headless no requiere abrir la GUI, pero sí mantiene autenticación local segura para las operaciones que la requieren.
+- No introducir un servicio remoto, endpoint de red ni telemetría externa.
+- Mantener inicialmente el formato criptográfico formal existente por compatibilidad; endurecer sus controles. Cualquier cambio de formato requiere versión explícita, migración reproducible, respaldo y pruebas sintéticas de recuperación antes de tocar datos reales.
+
+**3. Sesión temporal aprobada**
+
+- Duración por defecto: **5 minutos** desde autenticación correcta.
+- Opciones: **15 segundos, 30 segundos, 1 minuto, 2 minutos, 3 minutos, 5 minutos, 10 minutos y 15 minutos**.
+- Expiración absoluta, no deslizante y no extendida por actividad.
+- Aplicación uniforme en GUI y CLI/headless.
+- Al vencer: cerrar/bloquear la bóveda, ocultar y limpiar vistas de datos, invalidar el contexto de sesión y detener el trabajo temporal administrado.
+- No afirmar que una aplicación puede borrar de forma garantizada todas las copias de secretos ya heredadas por procesos hijos. El diseño debe limitar la herencia desde el inicio, gestionar el árbol de procesos que crea y declarar los límites de revocación de memoria/entorno.
+
+**4. Acceso headless y mínimo privilegio aprobado**
+
+- Reemplazar el Load indiscriminado de todas las variables por selección explícita de nombres autorizados para una operación.
+- Ejecutar consumidores dentro de un contexto/proceso administrado y acotado; no dejar variables cargadas en una shell padre ni permitir procesos hijos desprendidos sin control.
+- El vencimiento debe aplicarse también al flujo CLI/headless.
+- La contraseña maestra nunca se recibe por argumentos, variables de entorno, archivos temporales ni conversación; el prompt seguro se atiende localmente.
+- Reveal continúa siendo una acción explícita, excepcional y no registrable.
+- Las listas y diagnósticos solo exponen nombres/metadatos; ningún valor se escribe en logs, trazas, transcripciones o Git.
+
+**5. Persistencia y datos**
+
+- main contiene fuentes, XAML nuevo, recursos originales, contratos, pruebas, documentación y manifiestos de integridad.
+- main nunca contiene valores de variables, contraseña maestra, Application Keys, tokens, archivo cifrado formal, notas efímeras ni respaldos.
+- Los dos nombres de variables existentes se mantienen como dato de inventario; no se leen, imprimen ni usan como fixtures.
+- Todas las pruebas usan valores sintéticos y almacenes aislados. La bóveda formal no se modifica durante pruebas de diseño/regresión.
+- No borrar respaldos existentes sin política explícita de retención/restauración y prueba de recuperación.
+
+### Restricciones de ejecución que permanecen vigentes
+
+- La asignación de roles del OEP §13 sigue vigente: Claudia = asistencia/documentación; Samantha = constructor y único escritor de código. Esta aprobación no cambia por sí sola esa asignación. El constructor no invoca RDC; RDC es exclusivo del asistente para acciones remotas acotadas.
+- El control formal EP permanece owned, generación 1, con su alcance específico. Este registro no amplía permisos sobre credenciales, recursos/cuentas/objetos B2, cambios de otros frentes, enmiendas DUG/GOW/MCP, ni operaciones destructivas fuera de EP-TASK-004.
+- No modificar DUG, GOW ni controles de responsabilidad por esta tarea.
+- La aprobación del diseño no equivale a prueba, release, aceptación final ni a verificación de las dos variables reales.
+
+### Replanificación de hitos tras la aprobación
+
+| Hito | Estado actualizado |
+|---|---|
+| H0 — Captura canónica | COMPLETADO |
+| H1 — Baseline técnico | PARCIAL · auditoría y remediaciones técnicas pendientes |
+| H2 — Revisión B/C presencial | COMPLETADO · aprobación explícita registrada; presencia declarada |
+| H3 — Diseño visual clean-room | DESPACHADO · construir exclusivamente desde cero |
+| H4 — UI funcional | PENDIENTE · depende del diseño H3 y de integración real |
+| H5 — Sesión temporal | ESPECIFICACIÓN APROBADA · implementación y pruebas GUI/CLI pendientes |
+| H6 — CLI/headless | DOCUMENTACIÓN INICIAL EN MAIN · contrato mínimo privilegio/TTL aprobado; implementación y regresión pendientes |
+| H7 — Seguridad e integridad | PENDIENTE · endurecimiento y auditoría |
+| H8 — Matriz de regresión | PENDIENTE |
+| H9 — Documentación y release | PARCIAL · documento de modelos existente; manual final y manifiestos pendientes |
+| H10 — Corte y aceptación | PENDIENTE · requiere pruebas, recuperación y aceptación humana final |
+
+### Registro de acciones posteriores a esta decisión
+
+Este registro constituye la precondición documental solicitada por el operador. La escritura de este apartado en main y su lectura de vuelta deben completarse antes de iniciar cualquier construcción. Las acciones posteriores deberán añadirse por hito con: objetivo, fuente/base, archivos afectados, SHA-256, pruebas, resultado, incidencias/RCA y read-back. Ningún hito pasará a COMPLETADO por intención o por escritura documental solamente.
