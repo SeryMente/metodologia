@@ -1817,3 +1817,42 @@ La denominación correcta y confirmada por el operador es CECEQ. Se adopta LOC-C
 En CECEQ el workspace sigue cifrado con BitLocker como en cualquier otra ubicación. Al terminar o activarse el Guardian se detienen procesos, se purgan secretos efímeros, se bloquea BitLocker y se desmonta el volumen, pero no se elimina automáticamente el contenedor ni la carpeta Ser y Mente. En cualquier ubicación distinta de CECEQ la volatilización automática del contenedor/carpeta EP continúa vigente. La ubicación desconocida se trata como distinta de CECEQ.
 
 La contraseña que el operador introduce para desbloquear el workspace es la misma contraseña maestra utilizada para la bóveda canónica de variables de entorno; se conserva la derivación por sesión del diseño protegido existente y no se almacena la contraseña original en claro. No confundir esta contraseña maestra de bóveda con la Master Application Key de Backblaze.
+
+
+## 49. Preflight local B2 y bloqueo de contexto de ejecución · 2026-11-08
+
+### Adquisición y alcance
+
+Se consultó el inventario RDC. El dispositivo `PC10RCIF4EI4` respondió Online (Device ID `d0bbb2a3-d7b4-45e1-8870-652c2c3844fc`). La configuración observada corresponde a Windows x64, PowerShell como shell predeterminado y cliente Desktop Commander 1.0.0. La sesión de terminal listada previamente incluye PID 5216, PowerShell, bloqueada y de larga duración; no se interactuó con ella. El listado de procesos no mostró ningún proceso `b2` activo.
+
+### Preflight estrictamente local/read-only
+
+El nuevo proceso de inspección terminó con exit code 0. Su identidad efectiva fue `CENTRAL\MantenimientoRCI`; PowerShell `5.1.26100.9711`.
+
+- CLI: `C:\Users\MantenimientoRCI\AppData\Local\Programs\BackblazeB2\b2.exe`, 18.638.808 bytes.
+- Versión: B2 CLI `5.0.2`, b2sdk `2.13.2`; `b2 version` exit 0.
+- SHA-256: `D6E5B1C0918C2755FC8C14EB5B5AA698C36B43D3FDC18FCA13EA163D829BBBBB`, coincidente con el valor registrado previamente.
+- Authenticode: `Valid`; firmante Backblaze Inc.
+- Ruta esperada de bóveda en el `LOCALAPPDATA` de ese proceso: `C:\Users\MantenimientoRCI\AppData\Local\Khora\secrets\b2-ep-env-vault.enc.json` → `MISSING`.
+- Ruta esperada de caché Master: `C:\Users\MantenimientoRCI\AppData\Local\Khora\state\b2-ep-master-20261107.sqlite` → `MISSING`.
+- Procesos B2: ninguno al finalizar.
+
+### Interpretación y bloqueo
+
+El resultado `MISSING` se limita al contexto de perfil `CENTRAL\MantenimientoRCI` que ejecutó el preflight. No demuestra eliminación, corrupción ni inexistencia de los artefactos en el perfil `fila4` u otra ruta; no se realizó búsqueda de perfiles ni inspección recursiva. Tampoco se leyó contenido de bóveda/SQLite, portapapeles ni secretos.
+
+La sesión RDC activa en este host está asociada al proceso `MantenimientoRCI`, mientras que la regla operativa de CECEQ reserva toda operación de archivos al usuario Windows `fila4`. Por esa razón se bloquea cualquier continuación local desde esta sesión. El resultado del preflight no se usa para autenticar ni para modificar el estado remoto.
+
+### Estados y siguiente acción
+
+- `B2_CLI=INSTALLED_VERSION_5.0.2_HASH_SIGNATURE_VERIFIED`.
+- `VAULT_AT_MANTENIMIENTORCI_LOCALAPPDATA=NOT_FOUND_IN_THIS_CONTEXT`.
+- `MASTER_CACHE_AT_MANTENIMIENTORCI_LOCALAPPDATA=NOT_FOUND_IN_THIS_CONTEXT`.
+- `B2_PROCESS=NONE_AT_CHECK`.
+- `B2_ACCOUNT_AUTH=NOT_RETRIED`; `BUCKET_OBJECT_OPERATIONS=NOT_EXECUTED`.
+- `REAL_USER_DATA_SYNC=NOT_PROVEN`; `CLEAN_WORKSPACE_RESTORE=NOT_PROVEN`.
+- `EP-TASK-002=en_curso`.
+
+**Siguiente acción:** el operador debe iniciar RDC desde una terminal de Windows abierta como `fila4`, en el host CECEQ correspondiente, usando `npx @wonderwhy-er/desktop-commander@latest remote --no-persist-session`. Después se verificará la identidad efectiva del proceso RDC y se comprobarán únicamente los metadatos de las rutas conocidas de bóveda/caché. No se pedirá ni mostrará ningún secreto. No autenticar ni sincronizar hasta satisfacer las compuertas P012/P013 y confirmar el estado local de manera válida.
+
+**No ejecutado en este ciclo:** no se interactuó con la sesión bloqueada PID 5216; no se leyó la bóveda ni SQLite; no se accedió al portapapeles; no se descifraron credenciales; no se ejecutó `account authorize`, `account get`, operación de bucket/objeto, upload, download, restore o delete; no se modificó ningún archivo local ni configuración B2.
