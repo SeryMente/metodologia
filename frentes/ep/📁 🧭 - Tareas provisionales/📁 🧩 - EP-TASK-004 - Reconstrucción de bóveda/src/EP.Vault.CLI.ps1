@@ -189,6 +189,7 @@ try {
         'SelfTest' {
             Invoke-EpVaultSelfTest
             Invoke-EpVaultJobSelfTest
+            Invoke-EpVaultJobTimeoutSelfTest
         }
 
         'Lock' {
