@@ -1,0 +1,245 @@
+{
+  "schema": "responsabilidad/1",
+  "front": "ep",
+  "repository": "SeryMente/metodologia",
+  "front_ocp": "frentes/ep/",
+  "state_object": "frentes/ep/OEP.md",
+  "status": "owned",
+  "owner_thread": "chatgpt-C-EP-RESPONSABILIDAD-INICIAL-20261108-88E05E17-SES-20261108-0BD44C87",
+  "owner_thread_identity_kind": "operational alias; native ChatGPT conversation ID is not exposed by the available tools",
+  "instance": "chatgpt-ep-owner-2026-11-08-0BD44C87",
+  "generation": 1,
+  "authorization_ref": "C-EP-RESPONSABILIDAD-INICIAL-20261108-88E05E17; autorización explícita del operador para crear el control inicial y registrar esta conversación como titular en generación 1; respuesta literal: \"Si\".",
+  "scope": "One active owner for the Entorno Persistente (EP) front only. Maintain the existing OEP, EP-TASK-002 and the local cycle already recorded there, preserve all inherited security and host/profile boundaries, and work only within explicitly authorized EP scope. This ownership assignment does not itself authorize host operations, credential access, Backblaze B2 account/bucket/object operations, destructive changes, or amendments to DUG/GOW/MCP governance; those retain their separate gates.",
+  "expiry": null,
+  "handoff": "Initial assignment after creation of the first canonical EP responsibility control, not a transfer from a previously identified owner. The requested TRANSFER_RESPONSIBILITY could not be executed because no prior EP CONTROL-RESPONSABILIDAD.json or canonical owner/generation record existed. The operator then explicitly authorized creation of this control and initial assignment at generation 1. A previous active owner was not verifiable; no predecessor is invented and no historical transfer is claimed. Registry is cooperative and does not enforce server-side fencing of arbitrary writes.",
+  "previous_owner": null,
+  "initialization": {
+    "event_id": "C-EP-RESPONSABILIDAD-INICIAL-20261108-88E05E17",
+    "cycle_reference": "C-EP-MOD-SCRIPTPWS-20261101-03",
+    "cycle_identity_kind": "existing legacy local EP cycle identifier; not a FOL1 global cycle folio",
+    "recorded_on": "2026-11-08",
+    "status": "initial_assignment",
+    "authorization": {
+      "status": "explicit",
+      "source": "operator response in this conversation to the direct question authorizing creation of the initial EP responsibility control",
+      "question_verbatim": "¿Autorizas crear el control canónico inicial en: SeryMente/metodologia/main/frentes/ep/CONTROL-RESPONSABILIDAD.json Registrando esta conversación como titular mediante asignación inicial (generación 1), dejando constancia de que no se pudo verificar un titular anterior?",
+      "response_verbatim": "Si",
+      "scope": "Create the initial canonical EP responsibility control and register this conversation as the sole active owner at generation 1; no prior owner or generation is asserted."
+    },
+    "requested_resolution": "TRANSFER_RESPONSIBILITY",
+    "actual_resolution": "INITIAL_ASSIGNMENT_NO_PRIOR_CONTROL",
+    "prior_canonical_control": "NOT_FOUND at frentes/ep/CONTROL-RESPONSABILIDAD.json before creation",
+    "prior_owner": "NOT_VERIFIABLE; no canonical EP responsibility control or owner/generation record was found",
+    "previous_owner": null,
+    "discovery": {
+      "accessible_repositories": {
+        "owner": "SeryMente",
+        "count": 11,
+        "coverage": "all repositories exposed by the linked GitHub connection at the time of this check; not proof of the full organization"
+      },
+      "existing_authoritative_controls_read": 16,
+      "candidate_exact_code_searches": [
+        {
+          "term": "C-EP-RESPONSABILIDAD-INICIAL-20261108-88E05E17",
+          "matches_found": 0
+        },
+        {
+          "term": "SES-20261108-0BD44C87",
+          "matches_found": 0
+        },
+        {
+          "term": "chatgpt-C-EP-RESPONSABILIDAD-INICIAL-20261108-88E05E17-SES-20261108-0BD44C87",
+          "matches_found": 0
+        }
+      ],
+      "checked_controls": [
+        {
+          "repository": "SeryMente/khora",
+          "path": "docs/frentes/dictado-voz/CONTROL-RESPONSABILIDAD.json",
+          "blob_sha": "8fa5721013b47b88729b38869c712863bc6a69d7"
+        },
+        {
+          "repository": "SeryMente/khora",
+          "path": "docs/frentes/harmonia/CONTROL-RESPONSABILIDAD.json",
+          "blob_sha": "0e090e1f3537b75891344af812e576e39a5f5e02"
+        },
+        {
+          "repository": "SeryMente/khora",
+          "path": "docs/frentes/observabilidad-mcp/CONTROL-RESPONSABILIDAD.json",
+          "blob_sha": "4fba2187947730abca0cc338429dfacf4810594c"
+        },
+        {
+          "repository": "SeryMente/khora",
+          "path": "frentes/custodia/CONTROL-RESPONSABILIDAD.json",
+          "blob_sha": "0fb1375028922407afdf34420b52fe094384081d"
+        },
+        {
+          "repository": "SeryMente/signal-interpreter",
+          "path": "docs/frentes/signal-interpreter/CONTROL-RESPONSABILIDAD.json",
+          "blob_sha": "309b3ae07d1fb6b2398782d1c9f3c25d858899f4"
+        },
+        {
+          "repository": "SeryMente/metodologia",
+          "path": "ambitos/tareas/CONTROL-RESPONSABILIDAD.json",
+          "blob_sha": "b0c19b0c2ce7db13a74243b03183756519f7cfe0"
+        },
+        {
+          "repository": "SeryMente/metodologia",
+          "path": "frentes/acceso/CONTROL-RESPONSABILIDAD.json",
+          "blob_sha": "d77dbf55ca188d79d5126e168edd202ec63ac811"
+        },
+        {
+          "repository": "SeryMente/metodologia",
+          "path": "frentes/gobernanza/CONTROL-RESPONSABILIDAD.json",
+          "blob_sha": "18c2d7fa57609465dced61884cec6685bf74f68d"
+        },
+        {
+          "repository": "SeryMente/metodologia",
+          "path": "frentes/khora-workstation-bootstrap/CONTROL-RESPONSABILIDAD.json",
+          "blob_sha": "bb0f14c9c0955422c37ce085127d304a8fb2e62b"
+        },
+        {
+          "repository": "SeryMente/metodologia",
+          "path": "frentes/mcp-metodologia/CONTROL-RESPONSABILIDAD.json",
+          "blob_sha": "1fcf4178d58b39cecc3028c92493932b2ca7ab60"
+        },
+        {
+          "repository": "SeryMente/metodologia",
+          "path": "frentes/metacanon/CONTROL-RESPONSABILIDAD.json",
+          "blob_sha": "86f0e4fa59e37976704231290b460cf6dc9252b0"
+        },
+        {
+          "repository": "SeryMente/metodologia",
+          "path": "frentes/radar-profesional/CONTROL-RESPONSABILIDAD.json",
+          "blob_sha": "ebedb865d9d813c731f6ebcf2b63bf37efe3efc1"
+        },
+        {
+          "repository": "SeryMente/personal",
+          "path": "frentes/repertorio-canto-personal/CONTROL-RESPONSABILIDAD.json",
+          "blob_sha": "fa92efd677b3a57520b8d3a1cf4feb0fa792b978"
+        },
+        {
+          "repository": "SeryMente/filo-sangriento",
+          "path": "frentes/filo-sangriento/CONTROL-RESPONSABILIDAD.json",
+          "blob_sha": "74dad207fd8ffac9724ad9842fdf2060839f4cdd"
+        },
+        {
+          "repository": "SeryMente/filo-sangriento",
+          "path": "frentes/huggingface/CONTROL-RESPONSABILIDAD.json",
+          "blob_sha": "cc97939669ba686f6a38eea2a9a909e025df51f5"
+        },
+        {
+          "repository": "SeryMente/Language",
+          "path": "frentes/abdf/CONTROL-RESPONSABILIDAD.json",
+          "blob_sha": "593ebd5e5c24d91fbb054f5419c2121b77725fe9"
+        }
+      ],
+      "global_uniqueness": "NOT_VERIFIED outside the 11 accessible repositories and the 16 controls read"
+    },
+    "source_state_before_creation": {
+      "repository": "SeryMente/metodologia",
+      "branch": "main",
+      "main_head_observed": "d6ae190f22a5de28f45ae68ea6d4ba76955a5e59",
+      "dug_path": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.html",
+      "dug_version": "v383",
+      "dug_signature": "NX-383m",
+      "dug_blob_sha": "cad464717c43733aa84b49f8c9c3af0875597fbd",
+      "dug_commit": "c7495f8321e43a6dd763b2eb855eb8338c9c2294",
+      "metacanon_version": "1.29",
+      "gow_version": "2.18",
+      "oep_path": "frentes/ep/OEP.md",
+      "oep_version": "v0.3.39",
+      "oep_blob_sha": "bbb88d788e4a898c0780d327b87ba9a126a228d3",
+      "readme_blob_sha": "cbb2fe15892b94393cf8b2991b6d27d57a978462"
+    },
+    "ocp_path": "frentes/ep/",
+    "state_object": "frentes/ep/OEP.md",
+    "previous_control_path_state": "NOT_FOUND"
+  },
+  "session_folio": "SES-20261108-0BD44C87",
+  "session_assignment": {
+    "status": "active",
+    "folio": "SES-20261108-0BD44C87",
+    "assigned_on": "2026-11-08",
+    "front_ocp": "frentes/ep/",
+    "owner_alias": "chatgpt-C-EP-RESPONSABILIDAD-INICIAL-20261108-88E05E17-SES-20261108-0BD44C87",
+    "instance": "chatgpt-ep-owner-2026-11-08-0BD44C87",
+    "generation": 1,
+    "uuidv7_local": "01a1bc39-a576-72ec-bb25-e1aa765ef21d",
+    "identity_kind": "operator-authorized operational session alias and UUIDv7 local; not a native ChatGPT conversation ID",
+    "uniqueness_check": {
+      "exact_code_searches": 3,
+      "candidate_occurrences": 0,
+      "checked_controls": [
+        {
+          "path": "SeryMente/khora:docs/frentes/dictado-voz/CONTROL-RESPONSABILIDAD.json",
+          "blob_sha": "8fa5721013b47b88729b38869c712863bc6a69d7"
+        },
+        {
+          "path": "SeryMente/khora:docs/frentes/harmonia/CONTROL-RESPONSABILIDAD.json",
+          "blob_sha": "0e090e1f3537b75891344af812e576e39a5f5e02"
+        },
+        {
+          "path": "SeryMente/khora:docs/frentes/observabilidad-mcp/CONTROL-RESPONSABILIDAD.json",
+          "blob_sha": "4fba2187947730abca0cc338429dfacf4810594c"
+        },
+        {
+          "path": "SeryMente/khora:frentes/custodia/CONTROL-RESPONSABILIDAD.json",
+          "blob_sha": "0fb1375028922407afdf34420b52fe094384081d"
+        },
+        {
+          "path": "SeryMente/signal-interpreter:docs/frentes/signal-interpreter/CONTROL-RESPONSABILIDAD.json",
+          "blob_sha": "309b3ae07d1fb6b2398782d1c9f3c25d858899f4"
+        },
+        {
+          "path": "SeryMente/metodologia:ambitos/tareas/CONTROL-RESPONSABILIDAD.json",
+          "blob_sha": "b0c19b0c2ce7db13a74243b03183756519f7cfe0"
+        },
+        {
+          "path": "SeryMente/metodologia:frentes/acceso/CONTROL-RESPONSABILIDAD.json",
+          "blob_sha": "d77dbf55ca188d79d5126e168edd202ec63ac811"
+        },
+        {
+          "path": "SeryMente/metodologia:frentes/gobernanza/CONTROL-RESPONSABILIDAD.json",
+          "blob_sha": "18c2d7fa57609465dced61884cec6685bf74f68d"
+        },
+        {
+          "path": "SeryMente/metodologia:frentes/khora-workstation-bootstrap/CONTROL-RESPONSABILIDAD.json",
+          "blob_sha": "bb0f14c9c0955422c37ce085127d304a8fb2e62b"
+        },
+        {
+          "path": "SeryMente/metodologia:frentes/mcp-metodologia/CONTROL-RESPONSABILIDAD.json",
+          "blob_sha": "1fcf4178d58b39cecc3028c92493932b2ca7ab60"
+        },
+        {
+          "path": "SeryMente/metodologia:frentes/metacanon/CONTROL-RESPONSABILIDAD.json",
+          "blob_sha": "86f0e4fa59e37976704231290b460cf6dc9252b0"
+        },
+        {
+          "path": "SeryMente/metodologia:frentes/radar-profesional/CONTROL-RESPONSABILIDAD.json",
+          "blob_sha": "ebedb865d9d813c731f6ebcf2b63bf37efe3efc1"
+        },
+        {
+          "path": "SeryMente/personal:frentes/repertorio-canto-personal/CONTROL-RESPONSABILIDAD.json",
+          "blob_sha": "fa92efd677b3a57520b8d3a1cf4feb0fa792b978"
+        },
+        {
+          "path": "SeryMente/filo-sangriento:frentes/filo-sangriento/CONTROL-RESPONSABILIDAD.json",
+          "blob_sha": "74dad207fd8ffac9724ad9842fdf2060839f4cdd"
+        },
+        {
+          "path": "SeryMente/filo-sangriento:frentes/huggingface/CONTROL-RESPONSABILIDAD.json",
+          "blob_sha": "cc97939669ba686f6a38eea2a9a909e025df51f5"
+        },
+        {
+          "path": "SeryMente/Language:frentes/abdf/CONTROL-RESPONSABILIDAD.json",
+          "blob_sha": "593ebd5e5c24d91fbb054f5419c2121b77725fe9"
+        }
+      ],
+      "scope": "Direct inspection of 16 existing CONTROL-RESPONSABILIDAD.json files across 11 repositories exposed by the linked connection, plus three exact GitHub code searches returning zero. Global uniqueness is not established."
+    },
+    "cycle_reference": "C-EP-MOD-SCRIPTPWS-20261101-03",
+    "event_id": "C-EP-RESPONSABILIDAD-INICIAL-20261108-88E05E17"
+  }
+}
