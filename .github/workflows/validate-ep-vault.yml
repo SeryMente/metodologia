@@ -7,11 +7,13 @@ on:
     paths:
       - 'frentes/ep/📁 🧭 - Tareas provisionales/📁 🧩 - EP-TASK-004 - Reconstrucción de bóveda/src/**'
       - 'frentes/ep/📁 🧭 - Tareas provisionales/📁 🧩 - EP-TASK-004 - Reconstrucción de bóveda/tests/**'
+      - 'frentes/ep/📁 🧭 - Tareas provisionales/📁 🧩 - EP-TASK-004 - Reconstrucción de bóveda/assets/**'
       - '.github/workflows/validate-ep-vault.yml'
   pull_request:
     paths:
       - 'frentes/ep/📁 🧭 - Tareas provisionales/📁 🧩 - EP-TASK-004 - Reconstrucción de bóveda/src/**'
       - 'frentes/ep/📁 🧭 - Tareas provisionales/📁 🧩 - EP-TASK-004 - Reconstrucción de bóveda/tests/**'
+      - 'frentes/ep/📁 🧭 - Tareas provisionales/📁 🧩 - EP-TASK-004 - Reconstrucción de bóveda/assets/**'
       - '.github/workflows/validate-ep-vault.yml'
   workflow_dispatch:
 

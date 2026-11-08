@@ -323,3 +323,12 @@ Comprobaciones con resultado PASS:
 - **Límites:** no se consultaron valores de credenciales desde el asistente, no se escribió ninguna credencial en Git, no se cambió configuración/credenciales/recursos B2 y no se ejecutó ninguna acción de escritura o borrado B2. El posible ingreso de credenciales por el operador queda **NO VERIFICADO**.
 - **Acción preventiva:** detener cualquier diagnóstico B2 fuera de una instrucción explícita, nunca solicitar ni manipular la Master Application Key sin alcance específico aprobado, y mantener las tareas de bóveda/EP separadas de pruebas de autorización de cuentas externas.
 - **Estado:** incidente contenido a nivel de proceso; impacto de autenticación B2 **NO DETERMINADO** hasta confirmar si el operador introdujo la clave antes de la terminación.
+
+
+## Continuación de implementación — sesión compartida y pulido industrial · 2026-11-08
+
+El trabajo local de PC-14 y Fila4 actualiza Core/CLI/GUI/XAML y añade recursos de audio. El diseño visual ahora es carbón/acero ennegrecido con abrasión rústica, pivote lateral, compresión 2.5D y toggle de sonido. La apertura dura aproximadamente 5.85 s; el cierre 2.85 s. Los dos WAV son originales/procedurales.
+
+Ambos dispositivos pasan la suite sintética completa después de estas modificaciones. También pasan las aserciones del contrato visual/sonoro, carga WAV, y prueba interproceso GUI/CLI sintética (reutilización de sesión y revocación). Las huellas canónicas se registran en la especificación de pulido.
+
+**Separación de estados:** el código y los recursos ya están localmente en ambos destinos; el uso real de Custodia no está habilitado aún. PC-14 mantiene el archivo formal de 576 bytes de origen no atribuido, intacto; Fila4 sigue sin archivo formal. No se capturaron ni leyeron secretos. BitLocker no fue modificado. H10 y aceptación visual/auditiva humana siguen pendientes.

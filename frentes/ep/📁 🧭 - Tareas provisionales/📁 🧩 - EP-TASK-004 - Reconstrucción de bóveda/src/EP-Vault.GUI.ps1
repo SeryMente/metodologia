@@ -1,4 +1,4 @@
-[CmdletBinding()]
+﻿[CmdletBinding()]
 param()
 
 Set-StrictMode -Version 2.0
@@ -27,7 +27,7 @@ $reader.Close()
 
 # Add named XAML elements as PowerShell note properties for safe event wiring.
 $uiNames = @(
-    'HeaderState','ClosedStage','OpenStage','UnlockButton','LockButton','MasterPasswordBox',
+    'HeaderState','SoundToggle','ClosedStage','OpenStage','UnlockButton','LockButton','MasterPasswordBox',
     'ConfirmPasswordBox','ConfirmLabel','GateTitle','GateDescription','SessionDuration',
     'GateMessage','FooterStatus','SessionRemaining','SessionExpiresAt','VariableNameBox',
     'StoreVariableButton','VariableList','RefreshVariablesButton','RevealVariableButton',
@@ -44,8 +44,34 @@ $script:Door = $null
 $script:SessionTimer = $null
 $script:RevealTimer = $null
 $script:OpeningTimer = $null
+$script:SharedSessionTimer = $null
+$script:OpenSound = $null
+$script:CloseSound = $null
 $script:Closing = $false
 
+if (-not ('EPVaultNativeWindowTheme20261108' -as [type])) {
+    Add-Type -TypeDefinition @"
+using System;
+using System.Runtime.InteropServices;
+public static class EPVaultNativeWindowTheme20261108 {
+    [DllImport("dwmapi.dll", PreserveSig=true)]
+    private static extern int DwmSetWindowAttribute(IntPtr hwnd, int attribute, ref int value, int size);
+    public static int ApplyDark(IntPtr hwnd) {
+        int enabled = 1;
+        int result = DwmSetWindowAttribute(hwnd, 20, ref enabled, sizeof(int));
+        if (result != 0) result = DwmSetWindowAttribute(hwnd, 19, ref enabled, sizeof(int));
+        return result;
+    }
+}
+"@ -Language CSharp -ErrorAction Stop
+}
+function Set-EpVaultNativeDarkTitleBar {
+    try {
+        $helper = [System.Windows.Interop.WindowInteropHelper]::new($script:Ui)
+        [void][EPVaultNativeWindowTheme20261108]::ApplyDark($helper.Handle)
+    }
+    catch { }
+}
 function Get-UiElement {
     param([Parameter(Mandatory=$true)][string]$Name)
     $element = $script:Ui.FindName($Name)
@@ -62,10 +88,10 @@ function New-UiMetalBrush {
     $brush = [System.Windows.Media.LinearGradientBrush]::new()
     $brush.StartPoint = [System.Windows.Point]::new(0,0)
     $brush.EndPoint = [System.Windows.Point]::new(1,1)
-    $brush.GradientStops.Add([System.Windows.Media.GradientStop]::new([System.Windows.Media.ColorConverter]::ConvertFromString('#667179'),0.0))
-    $brush.GradientStops.Add([System.Windows.Media.GradientStop]::new([System.Windows.Media.ColorConverter]::ConvertFromString('#303A40'),0.22))
-    $brush.GradientStops.Add([System.Windows.Media.GradientStop]::new([System.Windows.Media.ColorConverter]::ConvertFromString('#11171B'),0.58))
-    $brush.GradientStops.Add([System.Windows.Media.GradientStop]::new([System.Windows.Media.ColorConverter]::ConvertFromString('#59636A'),1.0))
+    $brush.GradientStops.Add([System.Windows.Media.GradientStop]::new([System.Windows.Media.ColorConverter]::ConvertFromString('#667276'),0.0))
+    $brush.GradientStops.Add([System.Windows.Media.GradientStop]::new([System.Windows.Media.ColorConverter]::ConvertFromString('#283135'),0.22))
+    $brush.GradientStops.Add([System.Windows.Media.GradientStop]::new([System.Windows.Media.ColorConverter]::ConvertFromString('#0B1013'),0.58))
+    $brush.GradientStops.Add([System.Windows.Media.GradientStop]::new([System.Windows.Media.ColorConverter]::ConvertFromString('#465257'),1.0))
     return $brush
 }
 
@@ -95,7 +121,7 @@ function Add-DoorEllipse {
 }
 
 function Add-DoorLine {
-    param([double]$X1,[double]$Y1,[double]$X2,[double]$Y2,[string]$Color='#927448',[double]$Width=2)
+    param([double]$X1,[double]$Y1,[double]$X2,[double]$Y2,[string]$Color='#4D595D',[double]$Width=2)
     $line = [System.Windows.Shapes.Line]::new()
     $line.X1=$X1; $line.Y1=$Y1; $line.X2=$X2; $line.Y2=$Y2
     $line.Stroke = New-UiBrush -Color $Color
@@ -106,6 +132,26 @@ function Add-DoorLine {
     return $line
 }
 
+function Initialize-EpVaultAudio {
+    $audioRoot = Join-Path (Split-Path -Parent $PSScriptRoot) 'assets\audio'
+    $openPath = Join-Path $audioRoot 'Vault-Open-Creak.wav'
+    $closePath = Join-Path $audioRoot 'Vault-Close-Latch.wav'
+    if (Test-Path -LiteralPath $openPath -PathType Leaf) {
+        $script:OpenSound = [System.Media.SoundPlayer]::new($openPath)
+        $script:OpenSound.Load()
+    }
+    if (Test-Path -LiteralPath $closePath -PathType Leaf) {
+        $script:CloseSound = [System.Media.SoundPlayer]::new($closePath)
+        $script:CloseSound.Load()
+    }
+}
+function Invoke-EpVaultAudio {
+    param([Parameter(Mandatory=$true)][ValidateSet('Open','Close')][string]$Action)
+    if ($null -eq $script:Ui -or $script:Ui.SoundToggle.IsChecked -ne $true) { return }
+    if (-not [System.Windows.SystemParameters]::ClientAreaAnimation) { return }
+    $player = if ($Action -eq 'Open') { $script:OpenSound } else { $script:CloseSound }
+    if ($null -ne $player) { try { $player.Stop(); $player.Play() } catch { } }
+}
 function Build-CleanRoomVaultDoor {
     $canvas = Get-UiElement -Name 'VaultCanvas'
     $canvas.Children.Clear()
@@ -117,12 +163,12 @@ function Build-CleanRoomVaultDoor {
     $glow.Effect.ShadowDepth = 0
     $glow.Effect.Opacity = 0.8
 
-    $null = Add-DoorEllipse -Left 25 -Top 25 -Width 590 -Height 590 -Fill 'METAL' -Stroke '#9A8157' -StrokeWidth 8
-    $null = Add-DoorEllipse -Left 47 -Top 47 -Width 546 -Height 546 -Fill '#202A2F' -Stroke '#667179' -StrokeWidth 3
-    $null = Add-DoorEllipse -Left 67 -Top 67 -Width 506 -Height 506 -Fill '#182126' -Stroke '#927448' -StrokeWidth 2
+    $null = Add-DoorEllipse -Left 25 -Top 25 -Width 590 -Height 590 -Fill 'METAL' -Stroke '#505C60' -StrokeWidth 8
+    $null = Add-DoorEllipse -Left 47 -Top 47 -Width 546 -Height 546 -Fill '#202A2F' -Stroke '#667276' -StrokeWidth 3
+    $null = Add-DoorEllipse -Left 67 -Top 67 -Width 506 -Height 506 -Fill '#182126' -Stroke '#4D595D' -StrokeWidth 2
     $null = Add-DoorEllipse -Left 85 -Top 85 -Width 470 -Height 470 -Fill 'METAL' -Stroke '#0A0E10' -StrokeWidth 3
     $null = Add-DoorEllipse -Left 109 -Top 109 -Width 422 -Height 422 -Fill '#171F23' -Stroke '#657078' -StrokeWidth 2
-    $null = Add-DoorEllipse -Left 132 -Top 132 -Width 376 -Height 376 -Fill '#222C31' -Stroke '#927448' -StrokeWidth 2
+    $null = Add-DoorEllipse -Left 132 -Top 132 -Width 376 -Height 376 -Fill '#222C31' -Stroke '#4D595D' -StrokeWidth 2
     $null = Add-DoorEllipse -Left 154 -Top 154 -Width 332 -Height 332 -Fill '#12191D' -Stroke '#4E5A60' -StrokeWidth 2
 
     for ($i=0; $i -lt 60; $i++) {
@@ -133,12 +179,43 @@ function Build-CleanRoomVaultDoor {
         $y1 = 320 + [Math]::Sin($angle) * $radius1
         $x2 = 320 + [Math]::Cos($angle) * $radius2
         $y2 = 320 + [Math]::Sin($angle) * $radius2
-        $color = if (($i % 5) -eq 0) { '#C3A36A' } else { '#586267' }
+        $color = if (($i % 5) -eq 0) { '#7F8D91' } else { '#586267' }
         $width = if (($i % 5) -eq 0) { 2.2 } else { 1.0 }
         $null = Add-DoorLine -X1 $x1 -Y1 $y1 -X2 $x2 -Y2 $y2 -Color $color -Width $width
     }
 
-    $script:Door = [ordered]@{ Bolts = @(); Wheel = $null; Rotate = $null; Translate = $null; Scale = $null }
+        # Patina, abrasion and shallow oxidation: deterministic so visual tests are repeatable.
+    $scuffRandom = [System.Random]::new(4031)
+    for ($i = 0; $i -lt 54; $i++) {
+        $angle = $scuffRandom.NextDouble() * 2.0 * [Math]::PI
+        $radius = 168.0 + $scuffRandom.NextDouble() * 86.0
+        $length = 3.0 + $scuffRandom.NextDouble() * 21.0
+        $x1 = 320 + [Math]::Cos($angle) * $radius
+        $y1 = 320 + [Math]::Sin($angle) * $radius
+        $x2 = 320 + [Math]::Cos($angle) * ($radius + $length)
+        $y2 = 320 + [Math]::Sin($angle) * ($radius + $length)
+        $shade = if (($i % 4) -eq 0) { '#667276' } else { '#303A3E' }
+        $width = if (($i % 5) -eq 0) { 1.7 } else { 0.7 }
+        $null = Add-DoorLine -X1 $x1 -Y1 $y1 -X2 $x2 -Y2 $y2 -Color $shade -Width $width
+    }
+    for ($i = 0; $i -lt 22; $i++) {
+        $angle = $scuffRandom.NextDouble() * 2.0 * [Math]::PI
+        $radius = 188.0 + $scuffRandom.NextDouble() * 65.0
+        $x = 320 + [Math]::Cos($angle) * $radius
+        $y = 320 + [Math]::Sin($angle) * $radius
+        $size = 2.0 + $scuffRandom.NextDouble() * 3.5
+        $pit = [System.Windows.Shapes.Ellipse]::new()
+        $pit.Width = $size
+        $pit.Height = $size
+        $pit.Fill = New-UiBrush -Color '#50382E'
+        $pit.Stroke = New-UiBrush -Color '#342923'
+        $pit.StrokeThickness = 0.5
+        [System.Windows.Controls.Canvas]::SetLeft($pit,$x)
+        [System.Windows.Controls.Canvas]::SetTop($pit,$y)
+        [void]$canvas.Children.Add($pit)
+    }
+
+$script:Door = [ordered]@{ Bolts = @(); Wheel = $null; Rotate = $null; Translate = $null; Scale = $null }
 
     for ($i=0; $i -lt 12; $i++) {
         $angle = ($i * 30.0 - 90.0) * [Math]::PI / 180.0
@@ -149,7 +226,7 @@ function Build-CleanRoomVaultDoor {
         $bolt.Width = 40
         $bolt.Height = 32
         $bolt.Fill = New-UiMetalBrush
-        $bolt.Stroke = New-UiBrush -Color '#C0A06A'
+        $bolt.Stroke = New-UiBrush -Color '#657176'
         $bolt.StrokeThickness = 2
         $bolt.Effect = [System.Windows.Media.Effects.DropShadowEffect]::new()
         $bolt.Effect.Color = [System.Windows.Media.Colors]::Black
@@ -179,7 +256,7 @@ function Build-CleanRoomVaultDoor {
     $wheelOuter.Width = 210
     $wheelOuter.Height = 210
     $wheelOuter.Fill = New-UiBrush -Color '#252E33'
-    $wheelOuter.Stroke = New-UiBrush -Color '#C3A36A'
+    $wheelOuter.Stroke = New-UiBrush -Color '#7F8D91'
     $wheelOuter.StrokeThickness = 5
     [void]$wheel.Children.Add($wheelOuter)
 
@@ -187,8 +264,8 @@ function Build-CleanRoomVaultDoor {
     $wheelInner.Width = 154
     $wheelInner.Height = 154
     $wheelInner.Margin = [System.Windows.Thickness]::new(28)
-    $wheelInner.Fill = New-UiBrush -Color '#11171B'
-    $wheelInner.Stroke = New-UiBrush -Color '#6F5A39'
+    $wheelInner.Fill = New-UiBrush -Color '#0B1013'
+    $wheelInner.Stroke = New-UiBrush -Color '#394449'
     $wheelInner.StrokeThickness = 2
     [void]$wheel.Children.Add($wheelInner)
 
@@ -199,7 +276,7 @@ function Build-CleanRoomVaultDoor {
         $spoke.Y1 = 105 + [Math]::Sin($angle)*43
         $spoke.X2 = 105 + [Math]::Cos($angle)*88
         $spoke.Y2 = 105 + [Math]::Sin($angle)*88
-        $spoke.Stroke = New-UiBrush -Color '#B08D54'
+        $spoke.Stroke = New-UiBrush -Color '#606C70'
         $spoke.StrokeThickness = 8
         $spoke.StrokeStartLineCap = [System.Windows.Media.PenLineCap]::Round
         $spoke.StrokeEndLineCap = [System.Windows.Media.PenLineCap]::Round
@@ -212,7 +289,7 @@ function Build-CleanRoomVaultDoor {
     [System.Windows.Controls.Canvas]::SetLeft($hub,71)
     [System.Windows.Controls.Canvas]::SetTop($hub,71)
     $hub.Fill = New-UiMetalBrush
-    $hub.Stroke = New-UiBrush -Color '#D0AD70'
+    $hub.Stroke = New-UiBrush -Color '#879396'
     $hub.StrokeThickness = 3
     [void]$wheel.Children.Add($hub)
 
@@ -231,7 +308,7 @@ function Build-CleanRoomVaultDoor {
     $label.Text = 'EP  /  SEALED CHAMBER'
     $label.FontFamily = [System.Windows.Media.FontFamily]::new('Bahnschrift')
     $label.FontSize = 10
-    $label.Foreground = New-UiBrush -Color '#C3A36A'
+    $label.Foreground = New-UiBrush -Color '#7F8D91'
     $label.Width = 240
     $label.TextAlignment = [System.Windows.TextAlignment]::Center
     [System.Windows.Controls.Canvas]::SetLeft($label,200)
@@ -239,9 +316,9 @@ function Build-CleanRoomVaultDoor {
     [void]$canvas.Children.Add($label)
 
     $group = [System.Windows.Media.TransformGroup]::new()
-    $rotate = [System.Windows.Media.RotateTransform]::new(0,320,320)
+    $rotate = [System.Windows.Media.RotateTransform]::new(0,64,320)
     $translate = [System.Windows.Media.TranslateTransform]::new(0,0)
-    $scale = [System.Windows.Media.ScaleTransform]::new(1,1,320,320)
+    $scale = [System.Windows.Media.ScaleTransform]::new(1,1,64,320)
     [void]$group.Children.Add($rotate)
     [void]$group.Children.Add($translate)
     [void]$group.Children.Add($scale)
@@ -289,6 +366,7 @@ function Start-CleanRoomOpeningSequence {
         Start-EpSessionTimer
         return
     }
+    Invoke-EpVaultAudio -Action Open
     Reset-CleanRoomVaultDoor
     $canvas.Visibility = [System.Windows.Visibility]::Visible
     $window.OpenStage.Visibility = [System.Windows.Visibility]::Collapsed
@@ -296,38 +374,49 @@ function Start-CleanRoomOpeningSequence {
     $window.HeaderState.Text = 'DESBLOQUEANDO'
     $window.FooterStatus.Text = 'AUTENTICACIÓN VÁLIDA · MECANISMO EN MOVIMIENTO'
 
-    $duration = [TimeSpan]::FromMilliseconds(620)
+    $duration = [TimeSpan]::FromMilliseconds(1280)
+    $boltIndex = 0
     foreach ($bolt in $script:Door.Bolts) {
         $ease = [System.Windows.Media.Animation.CubicEase]::new()
         $ease.EasingMode = [System.Windows.Media.Animation.EasingMode]::EaseInOut
         $xAnimation = [System.Windows.Media.Animation.DoubleAnimation]::new($bolt.DeltaX,$duration)
         $yAnimation = [System.Windows.Media.Animation.DoubleAnimation]::new($bolt.DeltaY,$duration)
+        $xAnimation.BeginTime = [TimeSpan]::FromMilliseconds($boltIndex * 38)
+        $yAnimation.BeginTime = [TimeSpan]::FromMilliseconds($boltIndex * 38)
         $xAnimation.EasingFunction = $ease
         $yAnimation.EasingFunction = $ease
+        $boltIndex++
         $bolt.Transform.BeginAnimation([System.Windows.Media.TranslateTransform]::XProperty,$xAnimation)
         $bolt.Transform.BeginAnimation([System.Windows.Media.TranslateTransform]::YProperty,$yAnimation)
     }
 
     $wheelEase = [System.Windows.Media.Animation.CubicEase]::new()
     $wheelEase.EasingMode = [System.Windows.Media.Animation.EasingMode]::EaseOut
-    $wheelAnimation = [System.Windows.Media.Animation.DoubleAnimation]::new(0,165,[TimeSpan]::FromMilliseconds(1050))
+    $wheelAnimation = [System.Windows.Media.Animation.DoubleAnimation]::new(0,165,[TimeSpan]::FromMilliseconds(2350))
+    $wheelAnimation.BeginTime = [TimeSpan]::FromMilliseconds(920)
     $wheelAnimation.EasingFunction = $wheelEase
     $script:Door.Wheel.BeginAnimation([System.Windows.Media.RotateTransform]::AngleProperty,$wheelAnimation)
 
     $doorEase = [System.Windows.Media.Animation.CubicEase]::new()
     $doorEase.EasingMode = [System.Windows.Media.Animation.EasingMode]::EaseIn
-    $rotateAnimation = [System.Windows.Media.Animation.DoubleAnimation]::new(0,38,[TimeSpan]::FromMilliseconds(1250))
-    $translateAnimation = [System.Windows.Media.Animation.DoubleAnimation]::new(0,390,[TimeSpan]::FromMilliseconds(1250))
-    $fadeAnimation = [System.Windows.Media.Animation.DoubleAnimation]::new(1,0,[TimeSpan]::FromMilliseconds(1200))
+    $rotateAnimation = [System.Windows.Media.Animation.DoubleAnimation]::new(0,54,[TimeSpan]::FromMilliseconds(3150))
+    $translateAnimation = [System.Windows.Media.Animation.DoubleAnimation]::new(0,145,[TimeSpan]::FromMilliseconds(3150))
+    $fadeAnimation = [System.Windows.Media.Animation.DoubleAnimation]::new(1,0,[TimeSpan]::FromMilliseconds(3050))
+    $scaleAnimation = [System.Windows.Media.Animation.DoubleAnimation]::new(1,0.86,[TimeSpan]::FromMilliseconds(3150))
+    $rotateAnimation.BeginTime = [TimeSpan]::FromMilliseconds(2280)
+    $translateAnimation.BeginTime = [TimeSpan]::FromMilliseconds(2280)
+    $fadeAnimation.BeginTime = [TimeSpan]::FromMilliseconds(2280)
+    $scaleAnimation.BeginTime = [TimeSpan]::FromMilliseconds(2280)
     $rotateAnimation.EasingFunction=$doorEase
     $translateAnimation.EasingFunction=$doorEase
     $canvas.RenderTransform.Children[0].BeginAnimation([System.Windows.Media.RotateTransform]::AngleProperty,$rotateAnimation)
     $canvas.RenderTransform.Children[1].BeginAnimation([System.Windows.Media.TranslateTransform]::XProperty,$translateAnimation)
+    $canvas.RenderTransform.Children[2].BeginAnimation([System.Windows.Media.ScaleTransform]::ScaleXProperty,$scaleAnimation)
     $canvas.BeginAnimation([System.Windows.UIElement]::OpacityProperty,$fadeAnimation)
 
     if ($script:OpeningTimer) { $script:OpeningTimer.Stop() }
     $script:OpeningTimer = [System.Windows.Threading.DispatcherTimer]::new()
-    $script:OpeningTimer.Interval = [TimeSpan]::FromMilliseconds(1350)
+    $script:OpeningTimer.Interval = [TimeSpan]::FromMilliseconds(5850)
     $script:OpeningTimer.Add_Tick({
         $script:OpeningTimer.Stop()
         try {
@@ -368,6 +457,34 @@ function Start-EpSessionTimer {
     $script:SessionTimer.Start()
 }
 
+function Start-EpSharedSessionMonitor {
+    if ($script:SharedSessionTimer) { $script:SharedSessionTimer.Stop() }
+    $script:SharedSessionTimer = [System.Windows.Threading.DispatcherTimer]::new()
+    $script:SharedSessionTimer.Interval = [TimeSpan]::FromSeconds(1)
+    $script:SharedSessionTimer.Add_Tick({
+        $active = $false
+        try {
+            $null = Get-EpVaultSession
+            $active = $true
+        }
+        catch {
+            $active = $false
+        }
+        $state = [string]$script:Ui.HeaderState.Text
+        if ($active -and $state -eq 'SELLADA') {
+            Start-CleanRoomOpeningSequence
+        }
+        elseif ($active -and $state -eq 'ABIERTA') {
+            try { Update-EpSessionDisplay }
+            catch { Close-EpVaultUi -Reason 'SHARED_SESSION_INVALID' }
+        }
+        elseif (-not $active -and $state -eq 'ABIERTA') {
+            Close-EpVaultUi -Reason 'SHARED_SESSION_REVOKED'
+        }
+    })
+    $script:SharedSessionTimer.Start()
+}
+
 function Update-EpSessionDisplay {
     $session = Get-EpVaultSession
     $remaining = [int]$session.remainingSeconds
@@ -377,10 +494,10 @@ function Update-EpSessionDisplay {
     $expiresUtc = [DateTimeOffset]::Parse($session.expiresAtUtc).ToUniversalTime()
     $script:Ui.SessionExpiresAt.Text = 'UTC ' + $expiresUtc.ToString('HH:mm:ss')
     if ($remaining -le 30) {
-        $script:Ui.SessionRemaining.Foreground = New-UiBrush -Color '#D28B45'
+        $script:Ui.SessionRemaining.Foreground = New-UiBrush -Color '#B16E49'
     }
     else {
-        $script:Ui.SessionRemaining.Foreground = New-UiBrush -Color '#D2A05B'
+        $script:Ui.SessionRemaining.Foreground = New-UiBrush -Color '#A66D49'
     }
 }
 
@@ -420,6 +537,7 @@ function Set-EpGateMessage {
 }
 
 function Start-CleanRoomClosingSequence {
+    Invoke-EpVaultAudio -Action Close
     $canvas = Get-UiElement -Name 'VaultCanvas'
     $script:Ui.OpenStage.Visibility = [System.Windows.Visibility]::Collapsed
     $script:Ui.ClosedStage.Visibility = [System.Windows.Visibility]::Visible
@@ -427,9 +545,9 @@ function Start-CleanRoomClosingSequence {
 
     # Clear completed opening clocks and establish the actual open pose.
     Reset-CleanRoomVaultDoor
-    $script:Door.Rotate.Angle = 38
-    $script:Door.Translate.X = 390
-    $script:Door.Scale.ScaleX = 1
+    $script:Door.Rotate.Angle = 54
+    $script:Door.Translate.X = 145
+    $script:Door.Scale.ScaleX = 0.86
     $script:Door.Scale.ScaleY = 1
     $script:Door.Wheel.Angle = 165
     foreach ($bolt in $script:Door.Bolts) {
@@ -440,22 +558,27 @@ function Start-CleanRoomClosingSequence {
 
     $ease = [System.Windows.Media.Animation.CubicEase]::new()
     $ease.EasingMode = [System.Windows.Media.Animation.EasingMode]::EaseInOut
-    $duration = [TimeSpan]::FromMilliseconds(900)
-    $rotate = [System.Windows.Media.Animation.DoubleAnimation]::new(38,0,$duration)
-    $translate = [System.Windows.Media.Animation.DoubleAnimation]::new(390,0,$duration)
+    $duration = [TimeSpan]::FromMilliseconds(2850)
+    $rotate = [System.Windows.Media.Animation.DoubleAnimation]::new(54,0,$duration)
+    $translate = [System.Windows.Media.Animation.DoubleAnimation]::new(145,0,$duration)
+    $scale = [System.Windows.Media.Animation.DoubleAnimation]::new(0.86,1,$duration)
         $fade = [System.Windows.Media.Animation.DoubleAnimation]::new(0,1,$duration)
     foreach ($animation in @($rotate,$translate,$fade)) { $animation.EasingFunction = $ease }
     $script:Door.Rotate.BeginAnimation([System.Windows.Media.RotateTransform]::AngleProperty,$rotate)
     $script:Door.Translate.BeginAnimation([System.Windows.Media.TranslateTransform]::XProperty,$translate)
+    $script:Door.Scale.BeginAnimation([System.Windows.Media.ScaleTransform]::ScaleXProperty,$scale)
     $canvas.BeginAnimation([System.Windows.UIElement]::OpacityProperty,$fade)
 
-    $wheel = [System.Windows.Media.Animation.DoubleAnimation]::new(165,0,[TimeSpan]::FromMilliseconds(720))
+    $wheel = [System.Windows.Media.Animation.DoubleAnimation]::new(165,0,[TimeSpan]::FromMilliseconds(1680))
+    $wheel.BeginTime = [TimeSpan]::FromMilliseconds(520)
     $wheel.EasingFunction = $ease
     $script:Door.Wheel.BeginAnimation([System.Windows.Media.RotateTransform]::AngleProperty,$wheel)
 
     foreach ($bolt in $script:Door.Bolts) {
-        $x = [System.Windows.Media.Animation.DoubleAnimation]::new($bolt.DeltaX,0,[TimeSpan]::FromMilliseconds(620))
-        $y = [System.Windows.Media.Animation.DoubleAnimation]::new($bolt.DeltaY,0,[TimeSpan]::FromMilliseconds(620))
+        $x = [System.Windows.Media.Animation.DoubleAnimation]::new($bolt.DeltaX,0,[TimeSpan]::FromMilliseconds(760))
+        $y = [System.Windows.Media.Animation.DoubleAnimation]::new($bolt.DeltaY,0,[TimeSpan]::FromMilliseconds(760))
+        $x.BeginTime = [TimeSpan]::FromMilliseconds(1780)
+        $y.BeginTime = [TimeSpan]::FromMilliseconds(1780)
         $x.EasingFunction = $ease
         $y.EasingFunction = $ease
         $bolt.Transform.BeginAnimation([System.Windows.Media.TranslateTransform]::XProperty,$x)
@@ -784,12 +907,14 @@ $script:Ui.DeleteNoteButton.Add_Click({
     }
 })
 
+$script:Ui.Add_SourceInitialized({ Set-EpVaultNativeDarkTitleBar })
 $script:Ui.Add_Closing({
     if (-not $script:Closing) {
         $script:Closing = $true
         if ($script:SessionTimer) { $script:SessionTimer.Stop() }
         if ($script:RevealTimer) { $script:RevealTimer.Stop() }
         if ($script:OpeningTimer) { $script:OpeningTimer.Stop() }
+        if ($script:SharedSessionTimer) { $script:SharedSessionTimer.Stop() }
         Clear-EpRevealedValue
         $null = Lock-EpVault
     }
@@ -797,6 +922,15 @@ $script:Ui.Add_Closing({
 
 Build-CleanRoomVaultDoor
 Update-EpGateMode
-$script:Ui.Add_ContentRendered({ $script:Ui.MasterPasswordBox.Focus() | Out-Null })
+$script:Ui.Add_ContentRendered({
+    try {
+        $null = Get-EpVaultSession
+        Start-CleanRoomOpeningSequence
+    }
+    catch {
+        $script:Ui.MasterPasswordBox.Focus() | Out-Null
+    }
+})
+Start-EpSharedSessionMonitor
 $script:Ui.FooterStatus.Text = 'LOCAL · CIFRADO · SELLADA · SIN CONEXIÓN REMOTA'
 $script:Ui.ShowDialog() | Out-Null

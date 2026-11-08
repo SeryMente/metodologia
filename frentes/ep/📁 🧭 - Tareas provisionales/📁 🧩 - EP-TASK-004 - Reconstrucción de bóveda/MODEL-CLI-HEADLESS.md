@@ -242,3 +242,18 @@ El workflow .github/workflows/validate-ep-vault.yml ejecuta el conjunto sintéti
 - aislamiento total del almacén de pruebas y eliminación de la carpeta sintética al terminar.
 
 Hasta que un runner Windows ejecute y reporte PASS, estos casos son **criterios de prueba**, no resultados aceptados. La aprobación de arquitectura/UX y el diseño H3 tampoco equivalen a CI, instalación en host real ni cierre H10.
+
+
+## 13. Sesión compartida GUI / CLI
+
+La GUI y el CLI consumen una única sesión lógica del mismo perfil Windows, sin duplicar el contrato criptográfico.
+
+- Al desbloquear correctamente, Core publica `ep-env-vault.session.dpapi.json` junto al almacén formal, protegido mediante DPAPI `CurrentUser` y entropía asociada a la ruta canónica de la bóveda.
+- El registro contiene la clave de sesión protegida, un `sessionId`, inicio, expiración absoluta y duración. No contiene la contraseña maestra en claro.
+- Si existe una sesión válida, el CLI la reutiliza y no solicita otra contraseña. Si no existe, pide la contraseña en un prompt local `SecureString`; nunca se acepta por argumento.
+- La GUI observa la sesión compartida cada segundo. Detecta sesiones abiertas desde el CLI y cierra su vista cuando detecta revocación, sustitución o vencimiento.
+- `Lock` desde cualquiera de los dos front ends elimina el registro compartido y revoca la sesión para los demás procesos.
+- La sesión es compartida únicamente entre procesos del mismo usuario Windows/DPAPI CurrentUser y el mismo perfil de bóveda. No se comparte entre cuentas Windows ni entre PC-14 y Fila4. Cada equipo conserva su almacén local independiente.
+- Los intervalos de TTL continúan siendo absolutos y no deslizantes: 15 s, 30 s, 1, 2, 3, 5, 10 y 15 min.
+
+**Prueba de aceptación interproceso:** el test sintético crea un almacén temporal, inicia un proceso CLI separado, verifica que ListVariables reutiliza la sesión sin prompt y comprueba que Lock desde ese proceso hace fallar Get-EpVaultSession en el proceso padre. Nunca utiliza la bóveda formal ni secretos reales.

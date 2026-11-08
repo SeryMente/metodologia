@@ -1,4 +1,4 @@
-[CmdletBinding()]
+﻿[CmdletBinding()]
 param()
 
 Set-StrictMode -Version 2.0
@@ -51,11 +51,28 @@ $requiredNames = @(
     'MasterPasswordBox','ConfirmPasswordBox','SessionDuration','VariableList',
     'StoreVariableButton','RevealVariableButton','RemoveVariableButton','NoteList',
     'CaptureNoteButton','ReadNoteButton','PromoteNoteButton','DeleteNoteButton',
-    'SessionRemaining','RevealedValueBox'
+    'SessionRemaining','RevealedValueBox','SoundToggle'
 )
 foreach ($name in $requiredNames) {
     Assert-EpTest -Condition ($null -ne $window.FindName($name)) -Failure ('XAML_NAME_MISSING: ' + $name)
 }
+$guiContent = [IO.File]::ReadAllText($guiPath)
+Assert-EpTest -Condition ($guiContent -match 'SoundToggle\.IsChecked') -Failure 'UI_SOUND_MUTE_TOGGLE_WIRING'
+Assert-EpTest -Condition ($guiContent -match 'Set-EpVaultNativeDarkTitleBar') -Failure 'UI_NATIVE_DARK_TITLE_BAR_WIRING'
+Assert-EpTest -Condition ($guiContent -match 'scuffRandom') -Failure 'UI_RUSTIC_SURFACE_TEXTURE'
+Assert-EpTest -Condition ($guiContent -match 'FromMilliseconds\(5850\)') -Failure 'UI_SLOW_OPENING_TIMELINE'
+Assert-EpTest -Condition ($guiContent -match 'FromMilliseconds\(2850\)') -Failure 'UI_SLOW_CLOSING_TIMELINE'
+$audioRoot = Join-Path $taskRoot 'assets\audio'
+foreach ($audioName in @('Vault-Open-Creak.wav','Vault-Close-Latch.wav')) {
+    $audioPath = Join-Path $audioRoot $audioName
+    Assert-EpTest -Condition (Test-Path -LiteralPath $audioPath -PathType Leaf) -Failure ('UI_AUDIO_ASSET_MISSING: ' + $audioName)
+    $audioBytes = [IO.File]::ReadAllBytes($audioPath)
+    $validWave = $audioBytes.Length -gt 44 -and
+        [Text.Encoding]::ASCII.GetString($audioBytes,0,4) -ceq 'RIFF' -and
+        [Text.Encoding]::ASCII.GetString($audioBytes,8,4) -ceq 'WAVE'
+    Assert-EpTest -Condition $validWave -Failure ('UI_AUDIO_WAVE_INVALID: ' + $audioName)
+}
+Write-Output 'PASS_UI_RUSTIC_AUDIO_MUTE_HINGE_AND_TIMELINE_CONTRACT'
 Write-Output 'PASS_WPF_XAML_PARSE_AND_NAME_CONTRACT'
 
 $legacyReferences = @(Select-String -Path @($guiPath,$xamlPath) -Pattern 'EP-EnvVault-GUI|EP-EnvVault\.ps1|legacy.*xaml|legacy.*resource' -SimpleMatch:$false)

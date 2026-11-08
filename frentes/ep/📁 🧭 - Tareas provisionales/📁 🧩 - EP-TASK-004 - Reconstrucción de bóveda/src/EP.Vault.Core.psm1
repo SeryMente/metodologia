@@ -1,5 +1,6 @@
-Set-StrictMode -Version 2.0
+﻿Set-StrictMode -Version 2.0
 $ErrorActionPreference = 'Stop'
+Add-Type -AssemblyName System.Security -ErrorAction Stop
 
 $script:EnvelopeSchema = 'ep-env-vault/1'
 $script:PayloadSchema = 'ep-env-vault-data/1'
@@ -373,6 +374,14 @@ function Read-EpVaultEnvelope {
 function Get-EpVaultStatus {
     $paths = Get-EpVaultPaths
     $exists = Test-Path -LiteralPath $paths.Vault -PathType Leaf
+    $sessionActive = $false
+    try {
+        $null = Get-EpVaultSession
+        $sessionActive = $true
+    }
+    catch {
+        $sessionActive = $false
+    }
     if (-not $exists) {
         return [pscustomobject]@{
             status = 'NOT_INITIALIZED'
@@ -380,10 +389,9 @@ function Get-EpVaultStatus {
             schema = $null
             updatedAtUtc = $null
             bytes = 0
-            sessionActive = $false
+            sessionActive = $sessionActive
         }
     }
-
     $file = Get-Item -LiteralPath $paths.Vault
     $envelope = Read-EpVaultEnvelope
     [pscustomobject]@{
@@ -392,10 +400,160 @@ function Get-EpVaultStatus {
         schema = [string]$envelope.schema
         updatedAtUtc = [string]$envelope.updatedAtUtc
         bytes = [long]$file.Length
-        sessionActive = ($null -ne $script:Session)
+        sessionActive = $sessionActive
     }
 }
 
+function Get-EpSharedSessionPath {
+    $paths = Get-EpVaultPaths
+    return (Join-Path $paths.Root 'ep-env-vault.session.dpapi.json')
+}
+
+function Get-EpSharedSessionEntropy {
+    $paths = Get-EpVaultPaths
+    $identity = [IO.Path]::GetFullPath($paths.Vault).ToUpperInvariant()
+    return [Text.Encoding]::UTF8.GetBytes('EP-VAULT-SHARED-SESSION-V1|' + $identity)
+}
+
+function Read-EpSharedSessionRecord {
+    $paths = Get-EpVaultPaths
+    $path = Get-EpSharedSessionPath
+    if (-not (Test-Path -LiteralPath $paths.Root -PathType Container) -or
+        -not (Test-Path -LiteralPath $path -PathType Leaf)) {
+        throw 'VAULT_SESSION_NOT_OPEN'
+    }
+    Ensure-EpPrivateDirectory -Path $paths.Root
+    $attributes = [IO.File]::GetAttributes($path)
+    if (($attributes -band [IO.FileAttributes]::ReparsePoint) -ne 0) {
+        throw 'VAULT_SHARED_SESSION_REPARSE_POINT_BLOCKED'
+    }
+    $file = Get-Item -LiteralPath $path
+    if ($file.Length -lt 32 -or $file.Length -gt 32768) {
+        throw 'VAULT_SHARED_SESSION_FILE_SIZE_INVALID'
+    }
+    $outer = [IO.File]::ReadAllText($path,[Text.Encoding]::UTF8) | ConvertFrom-Json
+    if ($outer.schema -cne 'ep-env-vault-shared-session/1' -or
+        $outer.protection -cne 'DPAPI-CURRENT-USER' -or
+        [string]::IsNullOrWhiteSpace([string]$outer.payload)) {
+        throw 'VAULT_SHARED_SESSION_ENVELOPE_INVALID'
+    }
+    $protected = [Convert]::FromBase64String([string]$outer.payload)
+    $entropy = Get-EpSharedSessionEntropy
+    $plain = $null
+    try {
+        $plain = [Security.Cryptography.ProtectedData]::Unprotect(
+            $protected,$entropy,[Security.Cryptography.DataProtectionScope]::CurrentUser
+        )
+        $record = [Text.Encoding]::UTF8.GetString($plain) | ConvertFrom-Json
+        if ($record.schema -cne 'ep-env-vault-shared-session-data/1' -or
+            [string]::IsNullOrWhiteSpace([string]$record.sessionId) -or
+            [string]::IsNullOrWhiteSpace([string]$record.key) -or
+            [string]::IsNullOrWhiteSpace([string]$record.expiresAtUtc)) {
+            throw 'VAULT_SHARED_SESSION_PAYLOAD_INVALID'
+        }
+        return $record
+    }
+    finally {
+        Clear-EpBytes -Bytes $protected
+        Clear-EpBytes -Bytes $entropy
+        Clear-EpBytes -Bytes $plain
+    }
+}
+
+function Write-EpSharedSession {
+    param([Parameter(Mandatory=$true)]$Session)
+    if ($null -eq $Session.Key -or $Session.Key.Length -ne 64) {
+        throw 'VAULT_SHARED_SESSION_KEY_INVALID'
+    }
+    $paths = Get-EpVaultPaths
+    Ensure-EpPrivateDirectory -Path $paths.Root
+    $path = Get-EpSharedSessionPath
+    if (Test-Path -LiteralPath $path) {
+        $attributes = [IO.File]::GetAttributes($path)
+        if (($attributes -band [IO.FileAttributes]::ReparsePoint) -ne 0) {
+            throw 'VAULT_SHARED_SESSION_REPARSE_POINT_BLOCKED'
+        }
+    }
+    $entropy = Get-EpSharedSessionEntropy
+    $plain = $null
+    $protected = $null
+    $temporary = $path + '.tmp-' + [Guid]::NewGuid().ToString('N')
+    try {
+        $payload = [ordered]@{
+            schema = 'ep-env-vault-shared-session-data/1'
+            sessionId = [string]$Session.sessionId
+            startedAtUtc = $Session.startedAtUtc.ToString('o')
+            expiresAtUtc = $Session.expiresAtUtc.ToString('o')
+            durationSeconds = [int]$Session.durationSeconds
+            key = [Convert]::ToBase64String([byte[]]$Session.Key)
+        }
+        $plain = [Text.UTF8Encoding]::new($false).GetBytes((ConvertTo-Json -InputObject $payload -Compress -Depth 4))
+        $protected = [Security.Cryptography.ProtectedData]::Protect(
+            $plain,$entropy,[Security.Cryptography.DataProtectionScope]::CurrentUser
+        )
+        $outer = [ordered]@{
+            schema = 'ep-env-vault-shared-session/1'
+            protection = 'DPAPI-CURRENT-USER'
+            payload = [Convert]::ToBase64String($protected)
+        }
+        [IO.File]::WriteAllText(
+            $temporary,
+            (ConvertTo-Json -InputObject $outer -Compress -Depth 4),
+            [Text.UTF8Encoding]::new($false)
+        )
+        if (Test-Path -LiteralPath $path -PathType Leaf) {
+            [IO.File]::Replace($temporary,$path,$null)
+        }
+        else {
+            [IO.File]::Move($temporary,$path)
+        }
+    }
+    finally {
+        Clear-EpBytes -Bytes $entropy
+        Clear-EpBytes -Bytes $plain
+        Clear-EpBytes -Bytes $protected
+        if (Test-Path -LiteralPath $temporary) {
+            Remove-Item -LiteralPath $temporary -Force -ErrorAction SilentlyContinue
+        }
+    }
+}
+
+function Import-EpSharedSession {
+    $record = Read-EpSharedSessionRecord
+    $expires = [DateTime]::Parse(
+        [string]$record.expiresAtUtc,
+        [Globalization.CultureInfo]::InvariantCulture,
+        [Globalization.DateTimeStyles]::RoundtripKind
+    ).ToUniversalTime()
+    if ([DateTime]::UtcNow -ge $expires) {
+        $null = Lock-EpVault
+        throw 'VAULT_SESSION_EXPIRED'
+    }
+    $key = [Convert]::FromBase64String([string]$record.key)
+    try {
+        if ($key.Length -ne 64) { throw 'VAULT_SHARED_SESSION_KEY_INVALID' }
+        $duration = [int]$record.durationSeconds
+        if (@(15,30,60,120,180,300,600,900) -notcontains $duration) {
+            throw 'VAULT_SHARED_SESSION_TTL_INVALID'
+        }
+        $started = [DateTime]::Parse(
+            [string]$record.startedAtUtc,
+            [Globalization.CultureInfo]::InvariantCulture,
+            [Globalization.DateTimeStyles]::RoundtripKind
+        ).ToUniversalTime()
+        $script:Session = [pscustomobject]@{
+            key = $key
+            startedAtUtc = $started
+            expiresAtUtc = $expires
+            durationSeconds = $duration
+            sessionId = [string]$record.sessionId
+        }
+        $key = $null
+    }
+    finally {
+        Clear-EpBytes -Bytes $key
+    }
+}
 function Set-EpVaultSession {
     param(
         [Parameter(Mandatory=$true)][byte[]]$Key,
@@ -411,6 +569,14 @@ function Set-EpVaultSession {
         expiresAtUtc = $now.AddSeconds($DurationSeconds)
         durationSeconds = $DurationSeconds
         sessionId = [Guid]::NewGuid().ToString('N')
+    }
+    try {
+        Write-EpSharedSession -Session $script:Session
+    }
+    catch {
+        Clear-EpBytes -Bytes $script:Session.Key
+        $script:Session = $null
+        throw
     }
 }
 
@@ -496,19 +662,56 @@ function Unlock-EpVault {
 }
 
 function Lock-EpVault {
+    $sharedPath = Get-EpSharedSessionPath
+    $revokeError = $null
+    try {
+        if (Test-Path -LiteralPath $sharedPath -PathType Leaf) {
+            $attributes = [IO.File]::GetAttributes($sharedPath)
+            if (($attributes -band [IO.FileAttributes]::ReparsePoint) -ne 0) {
+                throw 'VAULT_SHARED_SESSION_REPARSE_POINT_BLOCKED'
+            }
+            [IO.File]::Delete($sharedPath)
+        }
+    }
+    catch {
+        $revokeError = $_.Exception.Message
+    }
     if ($script:Session -and $script:Session.Key) {
         Clear-EpBytes -Bytes $script:Session.Key
     }
     $script:Session = $null
     Write-EpVaultEvent -Event 'VAULT_LOCKED'
+    if ($revokeError) { throw ('VAULT_SHARED_SESSION_REVOKE_FAILED: ' + $revokeError) }
     return 'VAULT_SESSION_LOCKED'
 }
 
 function Assert-EpVaultSession {
     if ($null -eq $script:Session -or $null -eq $script:Session.Key) {
-        throw 'VAULT_SESSION_NOT_OPEN'
+        Import-EpSharedSession
     }
-    if ([DateTime]::UtcNow -ge $script:Session.expiresAtUtc) {
+    $record = $null
+    try {
+        $record = Read-EpSharedSessionRecord
+    }
+    catch {
+        if ($script:Session -and $script:Session.Key) {
+            Clear-EpBytes -Bytes $script:Session.Key
+        }
+        $script:Session = $null
+        throw 'VAULT_SESSION_REVOKED_OR_UNAVAILABLE'
+    }
+    if ([string]$record.sessionId -cne [string]$script:Session.sessionId) {
+        Clear-EpBytes -Bytes $script:Session.Key
+        $script:Session = $null
+        throw 'VAULT_SESSION_REPLACED'
+    }
+    $sharedExpires = [DateTime]::Parse(
+        [string]$record.expiresAtUtc,
+        [Globalization.CultureInfo]::InvariantCulture,
+        [Globalization.DateTimeStyles]::RoundtripKind
+    ).ToUniversalTime()
+    if ([DateTime]::UtcNow -ge $script:Session.expiresAtUtc -or
+        [DateTime]::UtcNow -ge $sharedExpires) {
         $null = Lock-EpVault
         throw 'VAULT_SESSION_EXPIRED'
     }

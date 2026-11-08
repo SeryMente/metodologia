@@ -105,3 +105,49 @@ Requisitos:
 - No realizar captura de secretos reales hasta que se satisfagan los requisitos de protección de host del OEP.
 - No introducir telemetría, red, servicios remotos ni reproducción automática.
 - Samantha conserva la escritura del código conforme al OEP §13; Claudia puede documentar, coordinar y revisar.
+
+
+## Ejecución local y estado as-built · 2026-11-08
+
+La especificación dejó de ser solo propuesta: el pulido se implementó localmente en PC-14 y se replicó en el perfil de Fila 4. El siguiente bloque describe lo que existe realmente; no sustituye la aceptación visual presencial.
+
+### Cambios entregados en el código local
+
+- Paleta trasladada a hierro ennegrecido, acero pavonado, carbón y grafito. Los tonos dorados brillantes se sustituyeron por reflejos fríos de acero; el latón queda reducido a acentos residuales. El escaneo de los tokens de oro anteriores devuelve cero coincidencias.
+- La puerta Canvas conserva su diseño clean-room, ahora con abrasiones deterministas, arañazos radiales y pequeñas marcas de oxidación.
+- El marco de ventana solicita el modo oscuro nativo de DWM, con fallback seguro si el sistema no lo admite.
+- Se añadió el control visible **SONIDO** para silenciar o habilitar los efectos. Si Windows tiene movimiento reducido, se omiten la animación de apertura y su audio.
+- El giro se cambió a un pivote lateral (centro local x=64) y se añadió compresión horizontal hasta 0.86 durante la apertura para sugerir profundidad/bisagra. Sigue siendo una escena WPF 2D/2.5D; no es un modelo 3D físico ni una simulación CAD.
+- Se generaron dos WAV originales, locales y sin dependencias externas: `Vault-Open-Creak.wav` (6 s) y `Vault-Close-Latch.wav` (3 s). Son efectos procedurales sintetizados con fricción, armónicos resonantes, golpes y reverberación corta; no son grabaciones de una bóveda real.
+- Core, CLI y GUI mantienen el contrato de sesión compartida: registro DPAPI CurrentUser, TTL absoluto, CLI reuse sin segundo prompt, Lock con revocación interproceso y GUI monitor cada segundo.
+
+### Coreografía realmente implementada
+
+**Apertura (~5.85 s):** pasadores con desfase de 38 ms, viaje de 1.28 s; el volante comienza a 0.92 s y gira durante 2.35 s; el giro/desplazamiento de la hoja comienza a 2.28 s y dura 3.15 s; compresión horizontal 1.00 → 0.86. El panel de cámara aparece al final del temporizador de 5.85 s.
+
+**Cierre (~2.85 s):** la hoja vuelve al marco; volante y cerrojos siguen en etapas posteriores. La sesión se invalida y las vistas se limpian antes del movimiento, como exige el contrato de seguridad.
+
+### Archivos de sonido
+
+| Archivo | SHA-256 |
+|---|---|
+| `assets/audio/Vault-Open-Creak.wav` | `83CD305566EEC7545F676CAD7A65B502151FBB2AAEDA13402C3991C9E5F98D2E` |
+| `assets/audio/Vault-Close-Latch.wav` | `EAC3DBEC8BE5A65E30188E9633810B25AFAE0F3F0B252F94D35CB29909B184D2` |
+
+### Validación local en ambos dispositivos
+
+- `Test-EPVault.ps1`: `EP_VAULT_VALIDATION_PASS`, exit code 0, posterior a la actualización de GUI, XAML y aserciones de sonido.
+- Parser PowerShell 5.1, XAML parse/name contract, clean-room scan, criptografía, rechazo de password/tamper, ocho TTL, allowlist, Job Object, DPAPI notes, CRUD, backups y redacción de logs: PASS.
+- Nuevo bloque de regresión: presencia de SoundToggle, cableado mute, titlebar DWM, textura rústica, tiempos de apertura/cierre y firma RIFF/WAVE de ambos recursos: PASS.
+- `SoundPlayer.Load()` en los dos WAV: PASS.
+- Sesión CLI/GUI compartida probada de forma sintética en ambos equipos: CLI reutiliza sin prompt adicional; Lock desde otro proceso revoca la sesión original.
+- Hash canónico de contenido cotejado entre PC-14 y Fila 4 (UTF-8, LF normalizado, BOM y terminadores finales excluidos):
+  - Core `05622BCDFFA2D5CB8DB775A6FE28E4D7ED1231C422595F7D366AAA1B9061EBBC`
+  - CLI `35140DA1ED9F4BB2CDC29898F67C0102738DB828A4C7D2B523B8BB2B6B1BCAD1`
+  - GUI `4938FE594C9B37B3E192C2645595EDFD5200E52D4E72E9596F8E10C0C5DE8D93`
+  - XAML `A4185C553116AC9665CA9626F2402577A4BB9FFA372BF6C600B69D91FC639A6B`
+  - Tests `88B7CBF29BBEF4ACE2DECD3C96739D17C40D4E2A31A9A152B8E933EB07A3BD24`
+
+### Límites y aceptación
+
+La validación es sintética y automatizada; no sustituye una revisión visual/auditiva del operador ni una prueba E2E desde la sesión interactiva Fila4. No se inspeccionó ni modificó la bóveda formal PC-14 de 576 bytes, cuya procedencia continúa NO ATRIBUIDA; Fila4 no tiene archivo formal. No se leyeron secretos, no se usó el portapapeles y no se modificó BitLocker. La recolección de credenciales reales sigue sujeta al gate de cifrado del host. La asignación de roles Claudia/Samantha está en el bloque LEER PRIMERO del OEP, no en su sección numerada 13; la cita anterior a «OEP §13» queda rectificada.

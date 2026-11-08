@@ -1,4 +1,4 @@
-[CmdletBinding()]
+﻿[CmdletBinding()]
 param(
     [Parameter(Mandatory=$true)]
     [ValidateSet(
@@ -66,6 +66,12 @@ function Test-EpSecureStringsEqual {
 
 function Enter-EpLocalSession {
     param([int]$Seconds)
+    try {
+        return Get-EpVaultSession
+    }
+    catch {
+        # No active shared session: authenticate locally and publish a DPAPI-protected TTL session.
+    }
     $master = Read-EpLocalMaster
     try {
         return Unlock-EpVault -Master $master -DurationSeconds $Seconds
@@ -105,7 +111,7 @@ try {
                 if ($names.Count -eq 0) { 'VAULT_EMPTY' }
                 else { $names }
             }
-            finally { $null = Lock-EpVault }
+            finally { }
         }
 
         'RevealVariable' {
@@ -116,10 +122,7 @@ try {
                 $value = Get-EpVaultVariableValue -Name $Name -Reveal
                 [Console]::Out.WriteLine($value)
             }
-            finally {
-                $value = $null
-                $null = Lock-EpVault
-            }
+            finally { $value = $null }
         }
 
         'SetFromClipboard' {
@@ -128,7 +131,7 @@ try {
             try {
                 Set-EpVaultVariableFromClipboard -Name $Name -Replace:$Replace | ConvertTo-Json -Compress
             }
-            finally { $null = Lock-EpVault }
+            finally { }
         }
 
         'RemoveVariable' {
@@ -138,7 +141,7 @@ try {
             try {
                 Remove-EpVaultVariable -Name $Name -Approved | ConvertTo-Json -Compress
             }
-            finally { $null = Lock-EpVault }
+            finally { }
         }
 
         'CaptureNote' {
@@ -165,7 +168,7 @@ try {
             try {
                 Promote-EpVaultNote -NoteId $NoteId -Name $Name -Replace:$Replace | ConvertTo-Json -Compress
             }
-            finally { $null = Lock-EpVault }
+            finally { }
         }
 
         'DeleteNote' {
@@ -183,7 +186,7 @@ try {
                 $result | ConvertTo-Json -Compress
                 $exitCode = [int]$result.exitCode
             }
-            finally { $null = Lock-EpVault }
+            finally { }
         }
 
         'SelfTest' {
