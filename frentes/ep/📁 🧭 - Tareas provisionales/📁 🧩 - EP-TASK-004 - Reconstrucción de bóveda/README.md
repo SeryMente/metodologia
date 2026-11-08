@@ -284,3 +284,24 @@ Se materializó la distribución de la rama \`feat/ep-vault-clean-room-20261108\
 El flujo integrado captura texto Unicode desde el portapapeles, lo vacía tras captura correcta, crea nota temporal DPAPI CurrentUser con TTL, permite listar solo metadatos y promueve la nota al almacén formal con autenticación local y read-back; solo después elimina la nota. La guía local documenta los nombres no secretos \`KHORA_B2_KEY_ID\` y \`KHORA_B2_APPLICATION_KEY\`.
 
 **No está inicializada ninguna bóveda formal y no existen notas de captura.** Los resultados son sintéticos. No se leyeron valores, no se tocó el portapapeles, no se modificó BitLocker ni se ejecutó autenticación B2. No capturar secretos reales en ninguno de los equipos hasta cumplir OEP §105: XTS-AES256, protección activa y 100%. No considerar completados H4/H7/H8/H10; la PR #20 sigue abierta/draft y sin merge.
+
+
+
+## Revisión de UI en ejecución real · PC-14 · 2026-11-08
+
+**A literal del operador:** «Pule la ui y cuando la tengas lista, abrela en esta maquina. Te doy 20 minutos para que queden listas.»
+
+**Observación de ejecución:** se lanzó \`src/EP-Vault.GUI.ps1\` desde la instalación local de PC-14. Proceso GUI PID 17116, ventana \`EP Vault\`, \`MainWindowHandle\` presente, Responding=True y foreground verificado mediante Win32. Resolución primaria 1920×1080. La ventana permanece abierta y visible para el operador, en su estado actual; no se ejecutó ningún control de bóveda desde la asistencia.
+
+**Hallazgos visuales directos:**
+1. La composición general funciona y materializa la metáfora de bóveda: puerta radial dominante, panel lateral de acceso, cabecera de estado y compartimentos. El layout encaja en la ventana de escritorio probada.
+2. **Defecto bloqueante de codificación:** textos españoles mostrados por la GUI aparecen con mojibake (\`cámara\` renderizado como \`cÃ¡mara\`; footer con acentos corruptos). La fuente de GitHub contiene los literales correctamente acentuados; los archivos locales \`EP-Vault.GUI.ps1\` y \`EP.Vault.Core.psm1\` carecen de UTF-8 BOM. En Windows PowerShell 5.1, un script UTF-8 sin BOM se interpreta como ANSI; causa probable, pendiente de confirmación del constructor con un caso mínimo y render de read-back. La XAML se carga con \`Get-Content -Encoding UTF8\`.
+3. **Título de ventana:** la barra de título nativa aparece clara/blanca y contrasta con la interfaz oscura; conviene resolver el chrome de Windows sin perder accesibilidad, controles estándar ni redimensionamiento.
+4. **Campos al primer render:** en la captura, los dos PasswordBox mostraban caracteres enmascarados y uno tenía foco. No se inspeccionó su contenido y no se puede atribuir el origen (tecleo del operador, gestor externo u otro mecanismo). El constructor debe reproducir en un perfil limpio que los campos estén vacíos, mantener el foco inicial esperado y descartar cualquier texto al bloquear/cerrar.
+5. El aspecto y las pruebas sintéticas no acreditan aún secuencia completa de animación, reduced-motion, DPI/teclado ni E2E de controles en una sesión de aceptación.
+
+**Cambio de estado del almacén detectado sin inspección de contenido:** antes del lanzamiento la ruta formal de PC-14 había sido comprobada ausente. Durante el periodo posterior al lanzamiento apareció \`%LOCALAPPDATA%\\Khora\\secrets\\ep-env-vault.enc.json\`; solo se observaron metadatos: 576 bytes, Created UTC \`2026-11-08T22:34:35.9788947Z\`, Modified UTC \`2026-11-08T22:35:07.3873000Z\`. No se leyó, descifró, modificó ni eliminó el archivo. La asistencia no introdujo contraseña, no pulsó botones, no usó el portapapeles ni inicializó la bóveda; la procedencia de su creación/modificación durante la ventana queda **NO ATRIBUIDA / NO VERIFICADA**. El directorio \`secrets\` tiene ACL protegida con Allow FullControl para \`PC-14\\PC 13\` y \`NT AUTHORITY\\SYSTEM\`; notas efímeras: 0 archivos. No tocar este almacén hasta que el operador confirme su procedencia.
+
+**Gobernanza:** OEP §13 mantiene Claudia como asistencia/documentación y Samantha como constructor/único escritor de código. Esta revisión no modificó código ni XAML ni reasignó roles. Los hallazgos son una revisión para el constructor, no cambios implementados. El diseño no se declara pulido ni aceptado; H3/H4/H8/H10 permanecen abiertos. PR #20 sigue abierta/draft/no fusionada.
+
+**Siguiente trabajo del constructor:** corregir y probar la codificación de los scripts PowerShell 5.1 con UTF-8 BOM o una carga de texto explícita y consistente; aplicar chrome oscuro accesible; reproducir el estado de campos vacíos en perfil limpio; ejercitar apertura/cierre, TTL, reducción de movimiento, DPI y navegación por teclado; entregar captura de render revisada y batería E2E sintética. No leer ni alterar el almacén recién aparecido ni usar credenciales reales.
