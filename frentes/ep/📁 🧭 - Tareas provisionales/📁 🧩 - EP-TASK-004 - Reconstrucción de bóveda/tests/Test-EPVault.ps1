@@ -58,7 +58,7 @@ foreach ($name in $requiredNames) {
 }
 Write-Output 'PASS_WPF_XAML_PARSE_AND_NAME_CONTRACT'
 
-$legacyReferences = Select-String -Path @($guiPath,$xamlPath) -Pattern 'EP-EnvVault-GUI|EP-EnvVault\.ps1|legacy.*xaml|legacy.*resource' -SimpleMatch:$false
+$legacyReferences = @(Select-String -Path @($guiPath,$xamlPath) -Pattern 'EP-EnvVault-GUI|EP-EnvVault\.ps1|legacy.*xaml|legacy.*resource' -SimpleMatch:$false)
 Assert-EpTest -Condition ($legacyReferences.Count -eq 0) -Failure 'NEW_UI_MUST_NOT_REFERENCE_LEGACY_UI'
 Write-Output 'PASS_CLEAN_ROOM_REFERENCE_SCAN'
 
