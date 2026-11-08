@@ -305,3 +305,79 @@ El flujo integrado captura texto Unicode desde el portapapeles, lo vacía tras c
 **Gobernanza:** OEP §13 mantiene Claudia como asistencia/documentación y Samantha como constructor/único escritor de código. Esta revisión no modificó código ni XAML ni reasignó roles. Los hallazgos son una revisión para el constructor, no cambios implementados. El diseño no se declara pulido ni aceptado; H3/H4/H8/H10 permanecen abiertos. PR #20 sigue abierta/draft/no fusionada.
 
 **Siguiente trabajo del constructor:** corregir y probar la codificación de los scripts PowerShell 5.1 con UTF-8 BOM o una carga de texto explícita y consistente; aplicar chrome oscuro accesible; reproducir el estado de campos vacíos en perfil limpio; ejercitar apertura/cierre, TTL, reducción de movimiento, DPI y navegación por teclado; entregar captura de render revisada y batería E2E sintética. No leer ni alterar el almacén recién aparecido ni usar credenciales reales.
+
+
+## Continuación de ejecución — sesión compartida GUI/CLI en PC-14 · 2026-11-08
+
+### A literal y alcance vigente
+
+El operador instruyó: «Sigue documentado en tareas el avance y resolviendo de extremo a extremo conforme a mis caprichios». Se interpreta junto con la instrucción explícita anterior de construir y materializar EP Vault en Fila 4 y PC-14, y la autorización de pulido, como asignación de ejecución **acotada a EP-TASK-004**. No modifica los roles de otros frentes ni la gobernanza general. Corrección de referencia: la asignación Claudia/Samantha aparece en el bloque inicial **LEER PRIMERO** del OEP; las menciones previas a «OEP §13» como ubicación de esa regla son incorrectas (la sección numerada 13 del documento vigente trata otro asunto).
+
+### Preflight y divergencia entre dispositivos
+
+- **PC-14:** dispositivo RDC `b396b293-5d1c-4461-9df6-c500a68d5d7f`, en línea; identidad efectiva `pc-14\\pc 13`; `LOCALAPPDATA=C:\\Users\\PC 13\\AppData\\Local`. PC-13 continúa fuera de línea. El dispositivo activo es PC-14, no PC-13.
+- **Fila 4 / PC10RCIF4EI4:** dispositivo RDC `d0bbb2a3-d7b4-45e1-8870-652c2c3844fc`, en línea. La ejecución remota actual continúa como `CENTRAL\\MantenimientoRCI`, con `LOCALAPPDATA=C:\\Users\\MantenimientoRCI\\AppData\\Local`; no es el token interactivo `CENTRAL\\fila4`. Por eso no se presenta como validada la protección DPAPI CurrentUser bajo Fila 4.
+- El código instalado en Fila 4 no contiene todavía el parche de sesión compartida aplicado en PC-14. Huellas observadas en el destino instalado de Fila 4: Core `A25E3561B2AC2C4AF464257BFFA8116BCCB70B3CF390FAEFF5B4D0926674BC8E`; CLI `6A1F14A48CED071E471092C213B73F9627E9A96A7C29059DD494581021E454B3`; GUI `435C72C4BA090485D67275C09B300289BBE0A4FB98D2ADEB00F50860A9B18523`.
+- BitLocker de Fila 4 sigue `FullyEncrypted`, 100%, `ProtectionStatus=Off`, `XtsAes128`. No se cambió.
+- La bóveda formal de PC-14 continúa como objeto **NO ATRIBUIDO / NO VERIFICADO**: solo metadatos observados (576 bytes; creación UTC `2026-11-08T22:34:35.9788947Z`; modificación UTC `2026-11-08T22:35:07.3873000Z`). No se leyó, descifró, alteró, sustituyó ni eliminó. Su procedencia se mantiene pendiente de confirmación del operador.
+
+### Cambio local realizado en PC-14
+
+Se modificaron únicamente estos tres archivos de código bajo `C:\\Users\\PC 13\\AppData\\Local\\Khora\\tools\\ep-vault\\src`:
+
+| Archivo | SHA-256 posterior |
+|---|---|
+| `EP.Vault.Core.psm1` | `33067C8E4D1F1C7E089C78E9CC36D9CB0EED3522CA945FA1622C82DFB9B24421` |
+| `EP.Vault.CLI.ps1` | `E1FC5ACA22E524EB26BA1B7E065994DEA2A3283123F27119ED9A9EA4B8EA4DE1` |
+| `EP-Vault.GUI.ps1` | `38A134C1E5EF093B122D5D3F3AF3168B2D15F541FFF63448A6903EB21CBCEDEC` |
+
+Antes de modificar cada archivo se conservó un respaldo con sufijo `.20261108-shared-session.bak`. Las tres copias de respaldo existen; el parser PowerShell 5.1 y una comprobación estática de los enlaces Core/CLI/GUI dieron PASS.
+
+**Contrato implementado localmente:**
+
+1. Core publica la clave de sesión de 64 bytes y sus metadatos mediante un registro protegido con DPAPI `CurrentUser`, asociado a la ruta canónica de la bóveda y limitado por un TTL absoluto.
+2. La GUI y el CLI consumen la misma sesión lógica del usuario Windows propietario. La contraseña maestra no se escribe en el registro compartido ni se recibe por argumentos.
+3. El CLI reutiliza una sesión activa sin volver a pedir contraseña; en ausencia de sesión, solicita autenticación local de forma segura y crea una nueva sesión.
+4. El CLI ya no bloquea la bóveda automáticamente al terminar cada operación autenticada. El bloqueo explícito elimina el registro compartido y revoca la sesión para los demás procesos en su siguiente operación/sondeo.
+5. La GUI consulta el estado compartido al iniciar y cada segundo; detecta una sesión iniciada desde CLI, actualiza el estado y cierra la vista si la sesión fue revocada o venció. Al cerrar la GUI se revoca el registro compartido.
+
+### Evidencia de pruebas en PC-14
+
+- `Test-EPVault.ps1`: `EP_VAULT_VALIDATION_PASS`, exit code 0, runtime 20.79 s. Incluye parser, XAML, scan clean-room, PBKDF2/AES/HMAC, contraseña errónea, manipulación, ocho opciones TTL, DPAPI, CLI allowlist, Job Object, notas sintéticas, promoción/eliminación, respaldos y redacción de logs.
+- Prueba cruzada sintética en procesos independientes: `PASS_CLI_REUSES_OTHER_PROCESS_SESSION_WITHOUT_PASSWORD_PROMPT`; el proceso CLI listó una variable sintética sin prompt y el proceso padre mantuvo activa la sesión.
+- Revocación cruzada: `PASS_CLI_LOCK_REVOKES_SHARED_SESSION_IN_OTHER_PROCESS`; el CLI ejecutó `Lock` y el proceso padre recibió `VAULT_SESSION_REVOKED_OR_UNAVAILABLE`.
+- La prueba cruzada usó una bóveda sintética en una ruta temporal aislada bajo el mismo perfil Windows de PC-14. No se usó la bóveda formal, no se leyó ningún secreto real y los artefactos temporales de la prueba fueron retirados.
+- **Activación GUI pendiente:** la ventana existente (PID 14312) corresponde al proceso anterior al parche. Se comprobó por UI Automation que el estado visible era `SELLADA`; no se inspeccionaron los campos PasswordBox ni se reinició la ventana para evitar descartar texto no enviado. La ventana antigua no incorpora el monitor compartido hasta su reinicio. No hay todavía prueba E2E visual de una ventana nueva con sesión creada desde CLI.
+
+### UI — requisitos del operador y estado real
+
+La dirección solicitada sigue siendo: hierro pavonado/ennegrecido, acero oscuro, carbón/grafito, desgaste rústico, arañazos y pátina; reducir drásticamente el dorado y dejar solo latón envejecido puntual. La puerta debe comunicar masa mecánica, bisagras, cerrojos, volante, resistencia y cierre. La apertura debe tener una secuencia pesada y sonido original de fricción/chirrido metálico, pasadores e impacto con reverberación breve.
+
+**Este pulido visual y sonoro todavía NO está implementado.** El cambio de sesión compartida no alteró paleta, XAML, geometría, audio ni composición de la UI. Siguen pendientes: codificación española bajo PowerShell 5.1, chrome oscuro accesible, campos vacíos al inicio en perfil limpio, movimiento reducido, DPI, teclado, animación completa y prueba auditiva. Un anuncio anterior de `UI-PULIDO-METAL-REALISTA.md` en la ruta `frentes/ep/` no pudo verificarse en la rama consultada (GitHub devolvió 404); por tanto no se considera un artefacto persistido.
+
+### Estado de entrega actualizado
+
+| Hito | Estado tras esta ejecución |
+|---|---|
+| H0 — Captura canónica | COMPLETADO |
+| H1 — Baseline técnico | PARCIAL |
+| H2 — Revisión B/C presencial | COMPLETADO según evidencia registrada |
+| H3 — Diseño clean-room | CONTRATO EXISTENTE; pulido rústico/sonoro pendiente |
+| H4 — UI funcional | PARCIAL; GUI antigua en ejecución; reinicio y E2E pendientes |
+| H5 — Sesión temporal | IMPLEMENTACIÓN COMPARTIDA EN PC-14; suite sintética PASS; activación GUI E2E pendiente |
+| H6 — CLI/headless | PARCIAL; reutilización entre procesos probada sintéticamente en PC-14; Fila 4 pendiente |
+| H7 — Seguridad/integridad | PARCIAL; pruebas sintéticas PASS; revisión de carreras, DPAPI y revocación multiusuario pendiente |
+| H8 — Regresión | PARCIAL en PC-14; matriz visual y Fila 4 pendiente |
+| H9 — Documentación/release | PARCIAL; esta entrada persistida en main; código local no sincronizado con PR |
+| H10 — Corte/aceptación | PENDIENTE |
+
+### Límites y próxima secuencia
+
+- No se modificó la bóveda formal de PC-14 ni el almacén histórico de Fila 4.
+- No se leyeron, copiaron ni verificaron valores reales de `KHORA_B2_KEY_ID` o `KHORA_B2_APPLICATION_KEY`.
+- No se capturó ni leyó el portapapeles.
+- No se cambió BitLocker.
+- El parche de PC-14 sigue siendo **local y no persistido en la rama de producto**; la PR #20 continúa abierta/draft/no fusionada, con head observado `7498452f54257484d90831d39170c28f69865751`, 32 commits, 9 archivos, 3.483 adiciones y 15 eliminaciones.
+- Próxima secuencia: (1) completar el pulido visual/sonoro solicitado en el código fuente; (2) integrar y probar la sesión compartida con tests interproceso permanentes; (3) llevar el mismo código a Fila 4 y validar DPAPI desde el token interactivo `CENTRAL\\fila4`; (4) reiniciar controladamente la GUI PC-14 cuando el operador haya descartado entradas no enviadas; (5) cerrar pruebas, actualizar PR y manifiestos; (6) tratar BitLocker y la disponibilidad de variables B2 como compuertas separadas antes de uso real de Custodia.
+
+**Read-back:** este apartado debe considerarse persistido solo después de que el commit de actualización y la lectura posterior de la misma sección sean verificados. Hitos H3/H4/H5/H6/H7/H8/H9/H10 no se marcan COMPLETADOS por esta escritura.
