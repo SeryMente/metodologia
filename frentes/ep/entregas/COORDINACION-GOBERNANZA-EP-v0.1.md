@@ -1820,3 +1820,25 @@ Las rutas esperadas bajo el `LOCALAPPDATA` de ese proceso para `b2-ep-env-vault.
 **No ejecutado:** no se instaló CLI, no se leyó bóveda/caché/portapapeles, no hubo descifrado, transferencia, autenticación, llamadas de cuenta/bucket/objeto, upload, download, restore, delete ni cambios de seguridad.
 
 **Continuidad:** se conserva \`EP-TASK-002=en_curso\` y el ciclo local \`C-EP-MOD-SCRIPTPWS-20261101-03\` en OPEN. No se crea otra tarea/OCP/control/sesión; FOL1 no consta ACTIVO y no se asignan CONV/CICLO/A/B globales.
+
+### Responsabilidad formal EP · control inicial y adjudicación de sesión · 2026-11-08
+
+**A literal del operador:** `TRANSFER_RESPONSIBILITY`; después, `Si` a la pregunta explícita de crear el control canónico inicial y registrar esta conversación como titular en generación 1.
+
+**Fuente normativa y preflight:** DUG v383 / NX-383m; Metacanon 1.29, §42 (resolución de colisiones, autorización, alcance y read-back); GOW 2.18. Se inspeccionaron los 11 repositorios expuestos por la conexión y 16 controles existentes. No se encontró el control EP anterior en `frentes/ep/CONTROL-RESPONSABILIDAD.json`. Los tres identificadores nuevos (evento, SES y alias) devolvieron cero coincidencias en búsquedas exactas. El alcance accesible no demuestra unicidad global.
+
+**Resolución:** la modalidad inicialmente autorizada `TRANSFER_RESPONSIBILITY` no podía materializarse contra un control/generación inexistente. No se inventó titular previo. El operador autorizó expresamente la creación de un control inicial y la adjudicación de esta conversación en generación 1. La operación realizada es **INITIAL_ASSIGNMENT**, no una transferencia retrospectiva.
+
+**Control creado:**
+- Ruta: `frentes/ep/CONTROL-RESPONSABILIDAD.json`.
+- Estado/generación: `owned / 1`; un titular activo.
+- Evento: `C-EP-RESPONSABILIDAD-INICIAL-20261108-88E05E17`.
+- Alias operativo: `chatgpt-C-EP-RESPONSABILIDAD-INICIAL-20261108-88E05E17-SES-20261108-0BD44C87`.
+- Instancia: `chatgpt-ep-owner-2026-11-08-0BD44C87`.
+- Sesión: `SES-20261108-0BD44C87`; UUIDv7 local `01a1bc39-a576-72ec-bb25-e1aa765ef21d`. Ninguno se presenta como ID nativo de ChatGPT ni folio global FOL1.
+- Commit: `91ebe38c07407c9644030f502a0d1e84c28f5522`; blob: `4160dfed6c0833e88e9b9fee7d79e54ab7214006`.
+- Read-back GitHub `main`: contenido byte-exacto y validación JSON/campos críticos: **PASS**.
+
+**Integración documental:** OEP actualizado a v0.3.40 / §107, README enlaza el control y la versión actual del OEP, y este DTC conserva el evento en el mismo objeto. La entrada se añade después de la creación/read-back del control; se registra esta secuencia real y no se afirma que la apertura documental de esta entrada precediera al procesamiento. El ciclo local heredado `C-EP-MOD-SCRIPTPWS-20261101-03` continúa OPEN; `EP-TASK-002=en_curso`.
+
+**No ejecutado:** no hubo operaciones RDC/host, lectura o transferencia de secretos, autenticación B2, llamadas de cuenta/bucket/objeto, upload/download/restore/delete ni cambio de credenciales. La titularidad EP no amplía las autorizaciones técnicas. FOL1 no consta ACTIVO; CONV/CICLO/A/B globales continúan PENDIENTES/NO ASIGNADOS.
