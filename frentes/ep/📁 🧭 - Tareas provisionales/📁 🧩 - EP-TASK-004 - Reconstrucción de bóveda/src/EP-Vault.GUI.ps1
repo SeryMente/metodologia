@@ -106,7 +106,7 @@ function Add-DoorLine {
     return $line
 }
 
-function Build-OriginalVaultDoor {
+function Build-CleanRoomVaultDoor {
     $canvas = Get-UiElement -Name 'VaultCanvas'
     $canvas.Children.Clear()
 
@@ -251,7 +251,7 @@ function Build-OriginalVaultDoor {
     $script:Door.Scale = $scale
 }
 
-function Reset-OriginalVaultDoor {
+function Reset-CleanRoomVaultDoor {
     if ($null -eq $script:Door) { return }
     $canvas = Get-UiElement -Name 'VaultCanvas'
     $canvas.BeginAnimation([System.Windows.UIElement]::OpacityProperty,$null)
@@ -274,10 +274,10 @@ function Reset-OriginalVaultDoor {
     $canvas.Opacity = 1
 }
 
-function Start-OriginalOpeningSequence {
+function Start-CleanRoomOpeningSequence {
     $window = $script:Ui
     $canvas = Get-UiElement -Name 'VaultCanvas'
-    Reset-OriginalVaultDoor
+    Reset-CleanRoomVaultDoor
     $canvas.Visibility = [System.Windows.Visibility]::Visible
     $window.OpenStage.Visibility = [System.Windows.Visibility]::Collapsed
     $window.ClosedStage.Visibility = [System.Windows.Visibility]::Visible
@@ -409,18 +409,18 @@ function Set-EpGateMessage {
     $script:Ui.GateMessage.Text = $Message
 }
 
-function Start-OriginalClosingSequence {
+function Start-CleanRoomClosingSequence {
     $canvas = Get-UiElement -Name 'VaultCanvas'
     $script:Ui.OpenStage.Visibility = [System.Windows.Visibility]::Collapsed
     $script:Ui.ClosedStage.Visibility = [System.Windows.Visibility]::Visible
     $canvas.Visibility = [System.Windows.Visibility]::Visible
 
     # Clear completed opening clocks and establish the actual open pose.
-    Reset-OriginalVaultDoor
+    Reset-CleanRoomVaultDoor
     $script:Door.Rotate.Angle = 38
     $script:Door.Translate.X = 390
     $script:Door.Scale.ScaleX = 0.06
-    $script:Door.Scale.ScaleY = 0.06
+    $script:Door.Scale.ScaleY = 1
     $script:Door.Wheel.Angle = 165
     foreach ($bolt in $script:Door.Bolts) {
         $bolt.Transform.X = $bolt.DeltaX
@@ -459,7 +459,7 @@ function Start-OriginalClosingSequence {
     $script:OpeningTimer.Interval = $duration
     $script:OpeningTimer.Add_Tick({
         $script:OpeningTimer.Stop()
-        Reset-OriginalVaultDoor
+        Reset-CleanRoomVaultDoor
         $canvas.Visibility = [System.Windows.Visibility]::Visible
         $script:Ui.HeaderState.Text = 'SELLADA'
         $script:Ui.FooterStatus.Text = 'LOCAL · CIFRADO · SELLADA'
@@ -489,12 +489,12 @@ function Close-EpVaultUi {
     $script:Ui.UnlockButton.IsEnabled = $false
 
     if ($wasOpen) {
-        Start-OriginalClosingSequence
+        Start-CleanRoomClosingSequence
     }
     else {
         $script:Ui.OpenStage.Visibility = [System.Windows.Visibility]::Collapsed
         $script:Ui.ClosedStage.Visibility = [System.Windows.Visibility]::Visible
-        Reset-OriginalVaultDoor
+        Reset-CleanRoomVaultDoor
         (Get-UiElement -Name 'VaultCanvas').Visibility = [System.Windows.Visibility]::Visible
         $script:Ui.HeaderState.Text = 'SELLADA'
         $script:Ui.FooterStatus.Text = 'LOCAL · CIFRADO · SELLADA · ' + $Reason
@@ -565,7 +565,7 @@ function Invoke-EpUnlock {
         }
         $script:Ui.MasterPasswordBox.Clear()
         $script:Ui.ConfirmPasswordBox.Clear()
-        Start-OriginalOpeningSequence
+        Start-CleanRoomOpeningSequence
     }
     finally {
         if ($master) { $master.Dispose() }
@@ -760,7 +760,7 @@ $script:Ui.Add_Closing({
     }
 })
 
-Build-OriginalVaultDoor
+Build-CleanRoomVaultDoor
 Update-EpGateMode
 $script:Ui.FooterStatus.Text = 'LOCAL · CIFRADO · SELLADA · SIN CONEXIÓN REMOTA'
 $script:Ui.ShowDialog() | Out-Null
