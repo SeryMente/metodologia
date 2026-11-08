@@ -1798,3 +1798,25 @@ Las rutas esperadas bajo el `LOCALAPPDATA` de ese proceso para `b2-ep-env-vault.
 
 **No ejecutado:** no se instaló CLI; no se buscó en otros perfiles o hosts; no se leyó contenido de bóveda/caché/portapapeles; no se transfirieron credenciales; no se autenticó B2; no se consultó ni modificó bucket/objetos; no hubo upload/download/restore/delete ni cambios de seguridad.
 
+
+
+### Cierre EP-TASK-002 · PC-8 no dispone de bóveda ni CLI B2 · 2026-11-08
+
+**Procesamiento completado:** RDC PC-8 se verificó Online. La ejecución read-only confirmó usuario Windows \`PC-8\\PC 8\`, perfil \`C:\\Users\\PC 8\`, PowerShell 5.1.22621.6133. No había sesiones terminales ni procesos B2 activos. La bóveda EP, caché Master, caché anterior, CLI B2 y las rutas de configuración B2 examinadas no están presentes en este perfil; no hay variables de entorno \`B2_*\`. No se inspeccionaron otros perfiles o hosts.
+
+**Conclusión operativa:** PC-8 es candidato a host limpio para recuperación, pero no puede autenticarse ni restaurar en el estado actual. La ubicación física no fue verificada; se clasifica provisionalmente como no reconocida/LOC-OTHER para la política de ubicación, sin activar dead-man trigger ni eliminación. No se transfirieron secretos, no se instaló software y no hubo operación B2.
+
+**Persistencia documental y read-back:**
+- DTC: la apertura PC-8 fue anexada después del preflight; blob de apertura \`d855faceecf2466b40cd53608179af0b0d66cd27\`.
+- EP-TASK-002 §50: commit \`0f309242d3898fd973644c0360fd6bfe95d8ee58\`; blob \`beb8439861f9c17e98c12ebef2ca8c1706ccfd35\`; lectura de vuelta exacta: PASS.
+- El presente cierre se anexa al mismo objeto DTC; sin canal paralelo.
+
+**Secuencia y desviación:** la respuesta inicial se mostró al operador antes de la inspección, pero su persistencia en DTC ocurrió después del preflight. Se conserva esta desviación y no se simula el orden exigido. Por ello el ciclo queda \`CICLO_INCOMPLETO\` respecto de la compuerta documental de apertura, aunque el trabajo read-only y los dos read-back sí están verificados. La documentación final no convierte el preflight en operación B2.
+
+**Estado EP-TASK-002:** \`B2_CLI=NOT_INSTALLED_ON_PC8\`; \`EP_VAULT=NOT_FOUND_IN_CURRENT_PROFILE\`; \`B2_CACHE=NOT_FOUND_IN_CURRENT_PROFILE\`; \`B2_AUTH=NOT_EXECUTED\`; \`USER_DATA_SYNC=NOT_PROVEN\`; \`CLEAN_RESTORE=NOT_PROVEN\`; \`EP-TASK-002=en_curso\`.
+
+**Siguiente compuerta necesaria:** habilitar acceso local, seguro y verificable a la bóveda canónica de EP en el host que se vaya a utilizar. No pegar valores de credencial en el chat ni transferirlos entre equipos sin autorización explícita, control de procedencia, SHA y read-back. Cuando la bóveda esté disponible localmente, preparar CLI oficial verificada, validar read-back protegido y abrir la compuerta P012/P013 antes de autenticación. Mantener todos los comandos limitados a \`OCP-MCP/ep-ocp/\`; no borrar objetos ni administrar claves.
+
+**No ejecutado:** no se instaló CLI, no se leyó bóveda/caché/portapapeles, no hubo descifrado, transferencia, autenticación, llamadas de cuenta/bucket/objeto, upload, download, restore, delete ni cambios de seguridad.
+
+**Continuidad:** se conserva \`EP-TASK-002=en_curso\` y el ciclo local \`C-EP-MOD-SCRIPTPWS-20261101-03\` en OPEN. No se crea otra tarea/OCP/control/sesión; FOL1 no consta ACTIVO y no se asignan CONV/CICLO/A/B globales.
