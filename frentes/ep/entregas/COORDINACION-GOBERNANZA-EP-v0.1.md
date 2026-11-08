@@ -1915,3 +1915,14 @@ Los tres respaldos `.20261108-shared-session.bak` existen. Parser PowerShell 5.1
 **UI solicitada:** metal ennegrecido, acero pavonado, carbón, desgaste y pátina; reducir dorado; audio original de chirrido mecánico y asentamiento. Ningún cambio visual/sonoro se aplicó en esta ejecución. La referencia de archivo `UI-PULIDO-METAL-REALISTA.md` comunicada antes no se pudo resolver en la rama consultada (404); no se da por persistida. DPI, teclado, reduced-motion, animación E2E y aceptación de Custodia siguen pendientes.
 
 **Read-back:** el estado técnico detallado se añade a EP-TASK-004 en `main`. Esta entrada del DTC solo se considera persistida tras la lectura de vuelta del nuevo blob. No se crean folios globales; FOL1 no consta ACTIVO.
+
+
+### Respaldo de continuidad PC-14 → Fila 4 · 2026-11-08
+
+El operador pidió priorizar el respaldo ante la posible expiración de la sesión PC-14. Se creó y verificó, bajo el usuario Windows `CENTRAL\\fila4` (sesión interactiva 4; `LOCALAPPDATA=C:\\Users\\fila4\\AppData\\Local`), un snapshot en `C:\\Users\\fila4\\AppData\\Local\\Khora\\backups\\EP-Vault\\20261108-PC14-pre-session-end`.
+
+ZIP completo: `20261108-PC14-pre-session-end-COMPLETE.zip`, 556,199 bytes, SHA-256 `774933A5CACA822AED3AC2D42B561B48A85275D804FB38125C92B2B418FE3AC2`. La lectura de vuelta del ZIP verificó 30 entradas: 28 archivos de producto/documentación y pruebas, más metadatos y checksums. Raíz propiedad de Fila4 y acceso completo read-back validado. Se conserva adicionalmente un ZIP previo de 23 archivos, sin sobrescritura.
+
+El respaldo incluye código, GUI/XAML, CLI/Core, pruebas, WAV originales, backups de edición, documentación de EP-TASK-004 y la entrada de continuidad DTC. Se excluyen bóvedas formales, valores de secretos, notas DPAPI y sesiones de autenticación.
+
+La conversación solicitada se abrió en Chrome bajo `CENTRAL\\fila4`, sesión 4. La barra de direcciones fue leída de vuelta y coincide con `https://chatgpt.com/c/6af1011d-12d4-83e8-ae6e-c6fcc995f994`.
