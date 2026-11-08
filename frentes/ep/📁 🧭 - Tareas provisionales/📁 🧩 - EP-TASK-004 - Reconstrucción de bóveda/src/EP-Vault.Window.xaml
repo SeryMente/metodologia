@@ -163,12 +163,71 @@
             <Setter Property="Padding" Value="4"/>
         </Style>
 
+        <Style TargetType="{x:Type GridViewColumnHeader}">
+            <Setter Property="Foreground" Value="#D6CEBE"/>
+            <Setter Property="Background" Value="#1B2328"/>
+            <Setter Property="BorderBrush" Value="#49402F"/>
+            <Setter Property="BorderThickness" Value="0,0,1,1"/>
+            <Setter Property="Padding" Value="9,7"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type GridViewColumnHeader}">
+                        <Border x:Name="HeaderFrame" Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                              RecognizesAccessKey="True"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="HeaderFrame" Property="Background" Value="#263238"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="HeaderFrame" Property="Background" Value="#303A40"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
         <Style TargetType="TabItem">
             <Setter Property="Foreground" Value="#B9AD98"/>
             <Setter Property="Background" Value="#10171B"/>
             <Setter Property="Padding" Value="18,10"/>
             <Setter Property="BorderBrush" Value="#3B4141"/>
             <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TabItem">
+                        <Border x:Name="TabFrame" Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0,0,0,2"
+                                Padding="{TemplateBinding Padding}">
+                            <ContentPresenter ContentSource="Header"
+                                              TextElement.Foreground="{TemplateBinding Foreground}"
+                                              HorizontalAlignment="Center" VerticalAlignment="Center"
+                                              RecognizesAccessKey="True"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter TargetName="TabFrame" Property="Background" Value="#242D31"/>
+                                <Setter TargetName="TabFrame" Property="BorderBrush" Value="#C3A36A"/>
+                                <Setter Property="Foreground" Value="#F0DFC2"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="TabFrame" Property="Background" Value="#1B252A"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="TabFrame" Property="Opacity" Value="0.45"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
         </Style>
     </Window.Resources>
 
