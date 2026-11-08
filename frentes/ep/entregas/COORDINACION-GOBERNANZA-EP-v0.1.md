@@ -1882,3 +1882,13 @@ Las rutas esperadas bajo el `LOCALAPPDATA` de ese proceso para `b2-ep-env-vault.
 **Límites y pendientes:** instalación de archivos y pruebas sintéticas verificadas; inicio real de GUI por operador, inicialización local de sendos almacenes con contraseñas creadas por el operador, prueba de captura/promoción desde cada sesión Windows propietaria, auditoría completa H7/H8 y aceptación H10 permanecen pendientes. No se transfirió el archivo cifrado ni DPAPI notes entre dispositivos. No hubo autenticación ni llamadas API B2, ni modificación de variables de entorno del sistema, ni lectura del portapapeles.
 
 **Read-back documental:** se conserva el estado por equipo en el mismo DTC y en EP-TASK-004; las huellas locales están en \`BUILD-MANIFEST.txt\` de cada equipo. FOL1 no consta ACTIVO; no se crean folios globales CONV/CICLO/A/B.
+
+
+
+### Revisión de interfaz en ejecución · PC-14 · 2026-11-08
+
+Se lanzó la GUI WPF instalada en PC-14 y se confirmó por Win32 que la ventana \`EP Vault\` está viva, responde y queda en primer plano (PID 17116). Se observó visualmente la composición clean-room con puerta radial y panel de acceso. El resultado **no está aceptado como UI pulida**: textos con acentos corruptos; barra de título nativa clara no integrada con el tema; y PasswordBox que aparecieron con caracteres enmascarados en la primera captura (contenido no inspeccionado; origen no atribuido). La falta de UTF-8 BOM en los scripts PowerShell instalados es causa probable del mojibake bajo Windows PowerShell 5.1, por confirmar con prueba del constructor. DPI, reduced-motion, navegación por teclado y secuencia E2E completa permanecen pendientes.
+
+Durante el intervalo tras el lanzamiento apareció la bóveda formal PC-14: solo metadatos, 576 bytes; creada \`2026-11-08T22:34:35.9788947Z\`, modificada \`2026-11-08T22:35:07.3873000Z\`. Antes estaba ausente. La asistencia no introdujo clave, no pulsó controles, no tocó el portapapeles ni leyó/descifró/modificó el archivo; su procedencia queda NO ATRIBUIDA / NO VERIFICADA. El almacén se preserva intacto. La ventana queda abierta para el operador, sin que la asistencia continúe interactuando con sus controles.
+
+No hubo cambios de código. OEP §13 reserva la escritura de producto a Samantha; Claudia limita esta intervención a inspección, evidencia y revisión documental. La UI no está lista para aceptación. PR #20 continúa abierta/draft/no fusionada.
