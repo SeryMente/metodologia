@@ -140,3 +140,17 @@ Si se ejecuta `Load` en un proceso de corta vida que termina inmediatamente, las
 7. Cerrar con `Lock` y terminar el proceso headless que tuvo acceso a los valores.
 8. Reportar únicamente nombres, estados, códigos de resultado y evidencia de lectura de vuelta; nunca valores.
 
+
+
+## 11. Límites conocidos del wrapper Hito 0
+
+Los siguientes límites se observaron en el código actual y no deben confundirse con características ya resueltas de la futura versión:
+
+- `Capture` toma la entrada del portapapeles de Windows; no acepta stdin/stream. Puede operar sin abrir la GUI de la bóveda, pero requiere un portapapeles disponible en la sesión del usuario. El historial del portapapeles, sincronización en nube y gestores de terceros están fuera del control de la aplicación.
+- `Load` introduce **todas** las variables formales en el entorno del proceso PowerShell actual y las transmite a sus procesos hijos. No modifica la shell padre ni el entorno de máquina. El wrapper no permite restringir por nombre en esta versión.
+- La sesión `Load` no vence automáticamente. Se mantiene hasta `Lock` o la terminación del proceso. La caducidad configurable solicitada debe cubrir también el flujo headless.
+- Las acciones que desbloquean la bóveda requieren un prompt local interactivo. No existe un modo desatendido con contraseña recibida por argumento, archivo o variable de entorno; no crear uno que debilite esta propiedad.
+- El archivo de eventos actual está fuera de la carpeta de secretos y su ACL observada no está protegida. No añadirle valores ni confiar en una redacción implícita; su rediseño y sus pruebas son pendientes de seguridad.
+- Hay tres respaldos cifrados históricos junto al almacén formal; el wrapper no expone una política de retención/restauración. No borrarlos automáticamente.
+
+La nueva interfaz headless deberá ofrecer mínimo privilegio, vencimiento de sesión, captura segura sin depender necesariamente del portapapeles y telemetría sin secretos, siempre después de la revisión de seguridad exigida por P012/P013.

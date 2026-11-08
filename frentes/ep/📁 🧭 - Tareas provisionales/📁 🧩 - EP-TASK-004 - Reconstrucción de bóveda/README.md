@@ -71,7 +71,7 @@ Los hitos son secuenciales por dependencia. El estado inicial se conserva explí
 | Hito | Resultado exigido | Estado inicial |
 |---|---|---|
 | H0 — Captura canónica | Dictado verbatim conservado; tarea enlazada desde el índice EP; límites de secretos y gobernanza explícitos. | COMPLETADO · commit 70ccea7, read-back exacto |
-| H1 — Baseline técnico | Inventario reproducible de backend, CLI, bóveda, notas efímeras, dependencias, pruebas y rutas; sin revelar secretos ni tocar valores reales. | PARCIAL · inventario estático y pruebas focales PASS; revisión integral pendiente |
+| H1 — Baseline técnico | Inventario reproducible de backend, CLI, bóveda, notas efímeras, dependencias, pruebas y rutas; sin revelar secretos ni tocar valores reales. | PARCIAL · hallazgos criptográficos, ACL, logs, backups y CLI registrados; revisión integral pendiente |
 | H2 — Revisión B/C presencial | El operador revisa y decide en persona la dirección UX/UI, experiencia de apertura, seguridad y arquitectura de alto nivel. Registrar resultado y evidencia en el mismo núcleo. | BLOQUEA CONSTRUCCIÓN |
 | H3 — Diseño visual clean-room | Concepto visual y prototipo completamente nuevos; ninguna referencia/pieza de la UI antigua; estados cerrado, autenticando, desbloqueando, abierto, bloqueando y error definidos y revisados. | BLOQUEADO POR H2 |
 | H4 — UI funcional | La bóveda abre/cierra realmente; navegación, listado, alta, edición, eliminación, promoción, revelación y estados de error están conectados a operaciones reales y verificables; no hay controles decorativos. | BLOQUEADO POR H2/H3 |
@@ -131,3 +131,34 @@ La sesión técnica previa dejó estos resultados, que se conservan como evidenc
 - **Alcance no verificado:** no se realizó autenticación real de la GUI; la GUI legacy no se reabrió ni se reutilizó. El test de captura CLI previo sigue atribuido a la prueba sintética reportada en la sesión anterior.
 - **Estado de construcción:** ninguna UI nueva ni cambio de backend se ha construido ni publicado en main. Los archivos de código siguen en AppData; el commit 70ccea7 solo contiene el registro de la tarea.
 - **Próxima acción:** cerrar auditoría estática de los flujos `Load/Lock`, almacenamiento DPAPI/ACL, TTL y salida del CLI; después esperar la compuerta presencial P012/P013 antes de decisiones de diseño o construcción.
+
+
+## Hallazgos de auditoría técnica y límites abiertos · 2026-11-08
+
+Esta sección separa observaciones directas de requisitos aún por resolver. No constituye aprobación de arquitectura ni autorización para iniciar construcción bloqueada por P012/P013.
+
+### Hechos observados en el código actual
+
+1. **Cryptografía formal:** PBKDF2-HMAC-SHA256 con 200,000 iteraciones deriva 64 bytes; 32 bytes se usan para AES-256-CBC/PKCS7 y 32 para HMAC-SHA256. El MAC se verifica antes del descifrado. El self-test cubre round-trip, contraseña incorrecta y manipulación.
+2. **Escritura formal:** se escribe un temporal, se ejecuta `Flush()` y se usa `File.Replace` cuando el destino ya existe. `File.Replace` crea respaldos `.pre-<guid>.bak`. Se observaron tres respaldos cifrados y un archivo `.lock` de cero bytes. No se borraron ni se alteraron.
+3. **ACL de la bóveda:** directorio formal con ACL protegida y ACE Allow para el usuario Windows actual y LocalSystem; no se observaron otras ACE Allow en la lectura de vuelta de este ciclo.
+4. **ACL de notas:** directorio DPAPI de notas efímeras con ACL protegida y ACE Allow para usuario actual y LocalSystem. La implementación de inicialización de notas verifica que la ACL esté protegida, pero no vuelve a cotejar la lista exacta de identidades cuando el directorio ya existe; la ACL viva actual sí coincide con los dos principales esperados.
+5. **Eventos:** el log `ep-env-vault-events.jsonl` está en `Desktop/EP/KHORA/OCP-MCP-EP-Vault/TRABAJO/DIAGNOSTICO`, fuera del directorio cifrado de variables. Se observaron 19,532 bytes, propietario `BUILTIN\Administradores` y `AreAccessRulesProtected=False`. No se leyó su contenido. El diseño nuevo debe decidir y probar su ubicación, ACL, retención y redacción; no se presume que el log actual sea seguro por el solo hecho de que el código pretende omitir valores.
+6. **SecretString:** hay funciones que ponen la variable SecureString en `$null` pero no llaman explícitamente a `Dispose()` (incluidas rutas de Load/List/SetFromClipboard). La nueva implementación debe auditar el ciclo de vida y liberar explícitamente objetos descartables. Las cadenas .NET inmutables no admiten borrado garantizado; no afirmar zeroization absoluta.
+7. **Carga headless:** `Load` carga todas las variables formales al entorno del proceso PowerShell invocador; los procesos hijos heredan esos valores. No modifica el entorno del sistema ni el de la shell padre. El wrapper actual no ofrece selección por nombre en `Load`.
+8. **Duración CLI:** `Load` permanece abierto hasta `Lock` o terminación del proceso; la CLI no aplica todavía caducidad automática de sesión ni el selector 15 s–15 min solicitado.
+9. **Captura CLI:** `Capture` depende del portapapeles de Windows; el wrapper no ofrece entrada por stdin/stream. Por tanto, la ruta es headless respecto de la GUI de la bóveda, pero no constituye captura totalmente independiente de la sesión de escritorio.
+10. **Notas:** se protegen con DPAPI CurrentUser, TTL 1–240 minutos (default 30) y un identificador validado. La lista expone solo ID/fechas/estado; la lectura exige `-Reveal`. El backend verifica la lectura de vuelta de promoción antes de borrar la nota.
+11. **Estado de host:** C: tenía BitLocker desactivado en la última evidencia operativa; la protección de la bóveda no demuestra cifrado de disco completo.
+
+### Riesgos y decisiones pendientes para la revisión B/C
+
+- Diseñar una política de backups cifrados: retención, restauración probada, límites de acumulación y eliminación autorizada de copias obsoletas.
+- Incorporar el archivo de eventos al perímetro de seguridad correcto, validar ACL exacta, limitar retención y demostrar redacción de secretos mediante pruebas negativas.
+- Revisar el ciclo de vida de SecureString y buffers sensibles; distinguir limpieza best-effort de eliminación garantizada.
+- Definir least privilege para procesos headless: selección explícita de variables por nombre frente a la carga de todas las variables.
+- Aplicar expiración automática de sesión al modo headless, con default 5 minutos y selector 15 s, 30 s, 1, 2, 3, 5, 10 y 15 minutos.
+- Definir una vía de captura apta para operación headless que no dependa obligatoriamente del portapapeles y que no exponga valores en argumentos, historial o archivos temporales.
+- Corregir y verificar el preflight de ACL de notas existentes para comparar los principales permitidos, no únicamente el bit de ACL protegida.
+
+**Límite:** estos son hallazgos de auditoría de código y metadatos del host. No se cambiaron el backend, la GUI, el log, los backups, la ACL, las credenciales ni la bóveda formal.
