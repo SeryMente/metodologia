@@ -6,7 +6,7 @@
     "id": "EP",
     "name": "Entorno Persistente",
     "canonical_oep": "frentes/ep/OEP.md",
-    "oep_version": "v0.3.39"
+    "oep_version": "v0.3.40"
   },
   "coverage": {
     "scope": "Registro de este original recibido el 2026-11-08; los originales históricos previos no se re-inventarían ni se declaran retrospectivamente auditados por esta entrada.",
