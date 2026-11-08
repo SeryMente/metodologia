@@ -65,7 +65,7 @@ function Get-EpMasterKey {
             $script:Iterations,
             [Security.Cryptography.HashAlgorithmName]::SHA256
         )
-        return ,$derive.GetBytes(64)
+        return ,($derive.GetBytes(64))
     }
     finally {
         $plain = $null
@@ -1098,11 +1098,21 @@ namespace EPVault {
             return result.ToString();
         }
 
-        private static string BuildEnvironment(IDictionary extra) {
+        private static char[] BuildEnvironment(IDictionary extra) {
             SortedDictionary<string,string> values =
                 new SortedDictionary<string,string>(StringComparer.OrdinalIgnoreCase);
+            HashSet<string> inherited = new HashSet<string>(StringComparer.OrdinalIgnoreCase) {
+                "SYSTEMROOT","WINDIR","SYSTEMDRIVE","COMSPEC","PATH","PATHEXT",
+                "TEMP","TMP","USERPROFILE","HOMEDRIVE","HOMEPATH","APPDATA","LOCALAPPDATA",
+                "PROGRAMFILES","PROGRAMFILES(X86)","PROGRAMDATA","PUBLIC","ALLUSERSPROFILE",
+                "COMMONPROGRAMFILES","COMMONPROGRAMFILES(X86)","OS","NUMBER_OF_PROCESSORS",
+                "PROCESSOR_ARCHITECTURE","PROCESSOR_IDENTIFIER","PROCESSOR_LEVEL",
+                "PROCESSOR_REVISION","PSMODULEPATH","USERNAME","USERDOMAIN","LOGONSERVER"
+            };
             foreach (DictionaryEntry entry in Environment.GetEnvironmentVariables()) {
-                values[Convert.ToString(entry.Key)] = Convert.ToString(entry.Value);
+                string key = Convert.ToString(entry.Key);
+                if (inherited.Contains(key))
+                    values[key] = Convert.ToString(entry.Value);
             }
             foreach (DictionaryEntry entry in extra) {
                 string key = Convert.ToString(entry.Key);
@@ -1112,12 +1122,28 @@ namespace EPVault {
                     throw new ArgumentException("CHILD_ENVIRONMENT_ENTRY_INVALID");
                 values[key] = value;
             }
-            StringBuilder block = new StringBuilder();
+
+            int length = 2;
+            foreach (KeyValuePair<string,string> item in values)
+                length += item.Key.Length + 1 + item.Value.Length + 1;
+            char[] block = new char[length];
+            int position = 0;
             foreach (KeyValuePair<string,string> item in values) {
-                block.Append(item.Key).Append('=').Append(item.Value).Append('\0');
+                item.Key.CopyTo(0, block, position, item.Key.Length);
+                position += item.Key.Length;
+                block[position++] = '=';
+                item.Value.CopyTo(0, block, position, item.Value.Length);
+                position += item.Value.Length;
+                block[position++] = '\0';
             }
-            block.Append('\0');
-            return block.ToString();
+            block[position] = '\0';
+            return block;
+        }
+
+        private static void ClearNativeEnvironment(IntPtr pointer, int characterCount) {
+            if (pointer == IntPtr.Zero || characterCount <= 0) return;
+            for (int i = 0; i < characterCount; i++)
+                Marshal.WriteInt16(pointer, i * 2, 0);
         }
 
         public static int Run(string executable, string[] arguments, IDictionary extraEnvironment, int timeoutMilliseconds) {
@@ -1134,6 +1160,8 @@ namespace EPVault {
 
             IntPtr infoPointer = IntPtr.Zero;
             IntPtr environmentPointer = IntPtr.Zero;
+            char[] environmentCharacters = null;
+            int environmentCharacterCount = 0;
             PROCESS_INFORMATION process = new PROCESS_INFORMATION();
             bool processCreated = false;
             try {
@@ -1149,7 +1177,13 @@ namespace EPVault {
                 foreach (string argument in arguments) {
                     command.Append(' ').Append(Quote(argument));
                 }
-                environmentPointer = Marshal.StringToHGlobalUni(BuildEnvironment(extraEnvironment));
+                environmentCharacters = BuildEnvironment(extraEnvironment);
+                environmentCharacterCount = environmentCharacters.Length;
+                environmentPointer = Marshal.AllocHGlobal(environmentCharacterCount * 2);
+                for (int i = 0; i < environmentCharacterCount; i++)
+                    Marshal.WriteInt16(environmentPointer, i * 2, (short)environmentCharacters[i]);
+                Array.Clear(environmentCharacters, 0, environmentCharacters.Length);
+                environmentCharacters = null;
                 STARTUPINFO startup = new STARTUPINFO();
                 startup.cb = Marshal.SizeOf(typeof(STARTUPINFO));
                 bool created = CreateProcess(
@@ -1190,7 +1224,12 @@ namespace EPVault {
                     if (process.hThread != IntPtr.Zero) CloseHandle(process.hThread);
                     if (process.hProcess != IntPtr.Zero) CloseHandle(process.hProcess);
                 }
-                if (environmentPointer != IntPtr.Zero) Marshal.FreeHGlobal(environmentPointer);
+                if (environmentCharacters != null)
+                    Array.Clear(environmentCharacters, 0, environmentCharacters.Length);
+                if (environmentPointer != IntPtr.Zero) {
+                    ClearNativeEnvironment(environmentPointer, environmentCharacterCount);
+                    Marshal.FreeHGlobal(environmentPointer);
+                }
                 if (infoPointer != IntPtr.Zero) Marshal.FreeHGlobal(infoPointer);
                 job.Dispose(); // KILL_ON_JOB_CLOSE terminates any remaining descendants.
             }
@@ -1313,6 +1352,25 @@ function Invoke-EpVaultJobSelfTest {
     return 'JOB_RUNNER_SELFTEST_PASS: suspended start, job assignment, bounded process and exit-code readback.'
 }
 
+function Invoke-EpVaultJobTimeoutSelfTest {
+    Ensure-EpManagedJobType
+    $powerShell = Join-Path $PSHOME 'powershell.exe'
+    $timedOut = $false
+    try {
+        [void][EPVault.ManagedJobRunner]::Run(
+            $powerShell,
+            [string[]]@('-NoLogo','-NoProfile','-NonInteractive','-Command','Start-Sleep -Seconds 10'),
+            [System.Collections.IDictionary]@{},
+            1000
+        )
+    }
+    catch [TimeoutException] {
+        $timedOut = $_.Exception.Message -match 'VAULT_SESSION_EXPIRED_CHILD_PROCESS_TREE_TERMINATED'
+    }
+    if (-not $timedOut) { throw 'JOB_RUNNER_TIMEOUT_TERMINATION_FAILED' }
+    return 'JOB_RUNNER_TIMEOUT_PASS: timeout terminates the managed process tree.'
+}
+
 Export-ModuleMember -Function @(
     'Get-EpVaultStatus',
     'Initialize-EpVault',
@@ -1331,5 +1389,6 @@ Export-ModuleMember -Function @(
     'Remove-EpVaultNote',
     'Invoke-EpVaultCommand',
     'Invoke-EpVaultSelfTest',
-    'Invoke-EpVaultJobSelfTest'
+    'Invoke-EpVaultJobSelfTest',
+    'Invoke-EpVaultJobTimeoutSelfTest'
 )
