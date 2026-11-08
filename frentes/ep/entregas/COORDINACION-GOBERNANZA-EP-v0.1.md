@@ -1892,3 +1892,26 @@ Se lanzó la GUI WPF instalada en PC-14 y se confirmó por Win32 que la ventana 
 Durante el intervalo tras el lanzamiento apareció la bóveda formal PC-14: solo metadatos, 576 bytes; creada \`2026-11-08T22:34:35.9788947Z\`, modificada \`2026-11-08T22:35:07.3873000Z\`. Antes estaba ausente. La asistencia no introdujo clave, no pulsó controles, no tocó el portapapeles ni leyó/descifró/modificó el archivo; su procedencia queda NO ATRIBUIDA / NO VERIFICADA. El almacén se preserva intacto. La ventana queda abierta para el operador, sin que la asistencia continúe interactuando con sus controles.
 
 No hubo cambios de código. OEP §13 reserva la escritura de producto a Samantha; Claudia limita esta intervención a inspección, evidencia y revisión documental. La UI no está lista para aceptación. PR #20 continúa abierta/draft/no fusionada.
+
+
+### Continuidad operativa — EP-TASK-004 · sesión GUI/CLI compartida en PC-14 · 2026-11-08
+
+**A literal:** «Sigue documentado en tareas el avance y resolviendo de extremo a extremo conforme a mis caprichios». Se ejecuta dentro de EP-TASK-004, continuando la instrucción del operador de construir y materializar la bóveda en Fila 4 y PC-14. Alcance acotado a esta tarea; no altera responsabilidades fuera de EP.
+
+**Dispositivos verificados:** PC-14 `b396b293-5d1c-4461-9df6-c500a68d5d7f` Online, identidad Windows `pc-14\\pc 13`; PC10RCIF4EI4 (Fila 4) `d0bbb2a3-d7b4-45e1-8870-652c2c3844fc` Online, identidad efectiva RDC `CENTRAL\\MantenimientoRCI`; PC-13 `1227e578-55c8-4231-82bb-4dbf9234855a` Offline. No confundir PC-14 con PC-13. El acceso remoto a PC10 no acredita ejecución con el token interactivo `CENTRAL\\fila4`.
+
+**Acción local en PC-14:** respaldo previo y modificación de Core/CLI/GUI para sesión compartida entre procesos protegida con DPAPI CurrentUser, TTL absoluto, reutilización del contexto por CLI, detección desde GUI y revocación explícita. SHA-256 posteriores:
+- Core: `33067C8E4D1F1C7E089C78E9CC36D9CB0EED3522CA945FA1622C82DFB9B24421`.
+- CLI: `E1FC5ACA22E524EB26BA1B7E065994DEA2A3283123F27119ED9A9EA4B8EA4DE1`.
+- GUI: `38A134C1E5EF093B122D5D3F3AF3168B2D15F541FFF63448A6903EB21CBCEDEC`.
+Los tres respaldos `.20261108-shared-session.bak` existen. Parser PowerShell 5.1 PASS.
+
+**Evidencia:** suite sintética completa `EP_VAULT_VALIDATION_PASS`, exit 0. Prueba interproceso independiente: CLI reutilizó la sesión sintética sin pedir contraseña y `Lock` desde CLI revocó la sesión del proceso padre; ambos asserts PASS. Datos y almacén de prueba sintéticos aislados; limpieza verificada. Ningún secreto real, portapapeles o bóveda formal fue usado.
+
+**Límites:** la ventana EP Vault antigua de PC-14 (PID 14312) estaba `SELLADA`; no se inspeccionaron PasswordBox ni se cerró para evitar perder posible texto aún no enviado. La instancia vieja no carga el monitor nuevo hasta reiniciarse. El cambio de código sigue local a PC-14, aún no sincronizado con la rama/PR de producto. Fila 4 conserva la versión previa y el proceso remoto utiliza MantenimientoRCI; falta validación DPAPI CurrentUser como Fila 4.
+
+**Seguridad y custodia:** Fila 4 C: `FullyEncrypted` 100%, pero `ProtectionStatus=Off` y `XtsAes128`. PC-14 C: sigue sin BitLocker. La bóveda formal PC-14 de 576 bytes continúa NO ATRIBUIDA; solo metadatos, sin lectura ni modificación. Las variables `KHORA_B2_KEY_ID` y `KHORA_B2_APPLICATION_KEY` no fueron leídas/copias/verificadas. Sin cambios BitLocker, sin autenticación B2 y sin captura real.
+
+**UI solicitada:** metal ennegrecido, acero pavonado, carbón, desgaste y pátina; reducir dorado; audio original de chirrido mecánico y asentamiento. Ningún cambio visual/sonoro se aplicó en esta ejecución. La referencia de archivo `UI-PULIDO-METAL-REALISTA.md` comunicada antes no se pudo resolver en la rama consultada (404); no se da por persistida. DPI, teclado, reduced-motion, animación E2E y aceptación de Custodia siguen pendientes.
+
+**Read-back:** el estado técnico detallado se añade a EP-TASK-004 en `main`. Esta entrada del DTC solo se considera persistida tras la lectura de vuelta del nuevo blob. No se crean folios globales; FOL1 no consta ACTIVO.
