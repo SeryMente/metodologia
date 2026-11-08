@@ -381,3 +381,44 @@ La dirección solicitada sigue siendo: hierro pavonado/ennegrecido, acero oscuro
 - Próxima secuencia: (1) completar el pulido visual/sonoro solicitado en el código fuente; (2) integrar y probar la sesión compartida con tests interproceso permanentes; (3) llevar el mismo código a Fila 4 y validar DPAPI desde el token interactivo `CENTRAL\\fila4`; (4) reiniciar controladamente la GUI PC-14 cuando el operador haya descartado entradas no enviadas; (5) cerrar pruebas, actualizar PR y manifiestos; (6) tratar BitLocker y la disponibilidad de variables B2 como compuertas separadas antes de uso real de Custodia.
 
 **Read-back:** este apartado debe considerarse persistido solo después de que el commit de actualización y la lectura posterior de la misma sección sean verificados. Hitos H3/H4/H5/H6/H7/H8/H9/H10 no se marcan COMPLETADOS por esta escritura.
+
+
+## Respaldo de contingencia en Fila 4 antes de expiración PC-14 · 2026-11-08
+
+**Instrucción del operador:** «Esta a punto de perderse la sesión efímera en PC-14, todo debe quedar respaldado en Fila4». Se priorizó preservación verificable del entregable antes de continuar el backlog.
+
+### Ejecución en el usuario de destino
+
+La identidad operativa del agente es `CENTRAL\\MantenimientoRCI`; el usuario propietario/destino y contexto de ejecución final fue `CENTRAL\\fila4`. Se detectó la sesión interactiva `fila4` activa (consola, SessionId 4) y se ejecutó una tarea temporal con principal `fila4 / InteractiveToken`. La tarea informó:
+- `whoami = CENTRAL\\fila4`
+- `LOCALAPPDATA = C:\\Users\\fila4\\AppData\\Local`
+- raíz del snapshot propiedad de `CENTRAL\\fila4`
+- acceso completo de `fila4` read-back verificado.
+
+### Snapshot y ZIP
+
+Ruta del snapshot:
+`C:\\Users\\fila4\\AppData\\Local\\Khora\\backups\\EP-Vault\\20261108-PC14-pre-session-end`
+
+ZIP completo:
+`C:\\Users\\fila4\\AppData\\Local\\Khora\\backups\\EP-Vault\\20261108-PC14-pre-session-end-COMPLETE.zip`
+
+Validaciones ejecutadas bajo `CENTRAL\\fila4`:
+- 28 archivos de producto, pruebas, backups y documentación cotejados con SHA-256 contra el origen PC-14 o el contenido recuperado de GitHub.
+- 1 archivo de metadatos del snapshot.
+- 1 manifiesto `SNAPSHOT-CHECKSUMS.sha256`.
+- 30 entradas del ZIP verificadas; lectura de vuelta del contenido comprimido y SHA-256 de todas las entradas de producto/documentación: PASS.
+- ZIP: 556,199 bytes.
+- SHA-256 ZIP: `774933A5CACA822AED3AC2D42B561B48A85275D804FB38125C92B2B418FE3AC2`.
+- El ZIP de contingencia previo, de 23 archivos y 504,123 bytes, permanece conservado sin sobrescritura.
+
+Se incluyeron fuentes Core/CLI/GUI/XAML, tests, recursos WAV originales, documentación de captura/CLI, especificación visual, README de EP-TASK-004 en main y branch, extracto de continuidad DTC y respaldos incrementales. Se excluyeron intencionalmente bóvedas formales, notas DPAPI, sesiones temporales, valores de variables y cualquier credencial.
+
+### Continuidad de conversación en Fila 4
+
+Se abrió el enlace proporcionado por el operador en la sesión interactiva de Fila 4:
+`https://chatgpt.com/c/6af1011d-12d4-83e8-ae6e-c6fcc995f994`
+
+Read-back de la barra de direcciones en Chrome, SessionId 4: `chatgpt.com/c/6af1011d-12d4-83e8-ae6e-c6fcc995f994`.
+
+**Alcance:** el snapshot conserva código, pruebas, documentación, audios y respaldos de desarrollo; no constituye una copia de credenciales ni inicializa la bóveda formal. El archivo formal de 576 bytes en PC-14 sigue NO ATRIBUIDO y preservado. No se abrió, leyó ni transfirió.
