@@ -10,7 +10,7 @@
 
 ## Componentes
 
-- **Registro conversacional:** [contrato](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-024), [registro maestro de folios](REGISTRO-MAESTRO-FOLIACION.json), [esquema del maestro](ESQUEMA-FOLIACION-MAESTRA-v1.0.json), [índice de conversaciones](REGISTRO-CONVERSACIONES.csv), [esquema A/B v1.1](ESQUEMA-CICLO-CONVERSACIONAL-v1.1.json), [guía FOL1 v1.1](REGISTRO-CONVERSACIONAL-v1.1.md). Los archivos de ciclo v1.0 E/S se conservan como legado.
+- **Registro conversacional:** [contrato](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-024), [registro maestro de folios](REGISTRO-MAESTRO-FOLIACION.json), [esquema del maestro](ESQUEMA-FOLIACION-MAESTRA-v1.0.json), [índice de conversaciones](REGISTRO-CONVERSACIONES.csv), [esquema A/B v1.1](ESQUEMA-CICLO-CONVERSACIONAL-v1.1.json), [guía operativa v1.2](REGISTRO-CONVERSACIONAL-v1.1.md; ruta heredada conservada). Los archivos de ciclo v1.0 E/S se conservan como legado.
 - **Trazabilidad semántica:** [contrato](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-024), [vínculos](REGISTRO-TRAZABILIDAD-SEMANTICA.jsonl), [esquema](ESQUEMA-TRAZABILIDAD-SEMANTICA-v1.0.json), [guía](TRAZABILIDAD-SEMANTICA-v1.0.md).
 - [Fuentes verbatim históricos](FUENTES-VERBATIM-ORIGEN.jsonl): extractos de la transcripción aportada por el operador, con procedencia y clasificación.
 - [Ciclo de referencia](../../frentes/gobernanza/conversaciones/C-GOBERNANZA-GESTION-CONVERSACIONAL-01-dialogo.jsonl): entrada/salida literal del ciclo de materialización.
