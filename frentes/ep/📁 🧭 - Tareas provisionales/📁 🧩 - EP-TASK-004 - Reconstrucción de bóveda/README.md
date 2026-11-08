@@ -250,3 +250,13 @@ La prohibición de reutilización es absoluta para la interfaz anterior: no copi
 ### Registro de acciones posteriores a esta decisión
 
 Este registro constituye la precondición documental solicitada por el operador. La escritura de este apartado en main y su lectura de vuelta deben completarse antes de iniciar cualquier construcción. Las acciones posteriores deberán añadirse por hito con: objetivo, fuente/base, archivos afectados, SHA-256, pruebas, resultado, incidencias/RCA y read-back. Ningún hito pasará a COMPLETADO por intención o por escritura documental solamente.
+
+
+## Avance H3 — especificación clean-room persistida · 2026-11-08
+
+- **Artefacto:** [DESIGN-CLEAN-ROOM.md](./DESIGN-CLEAN-ROOM.md).
+- **Commit:** 27eafd9b392b1225bafbf66017a8c5bad29e4eed.
+- **Blob SHA verificado:** 8375a7bea608242a4aaf92ccea23d6d37a202182.
+- **Read-back:** PASS; se confirmó la huella del blob y los criterios de diseño, máquina de estados, TTL, puerta vectorial y exclusión de recursos legacy.
+- **Resultado de H3 hasta este punto:** contrato visual/UX documentado; la construcción del prototipo WPF original, el chequeo de recursos y las pruebas DPI/accesibilidad siguen pendientes.
+- **Límite de ejecución:** no se abrió ni usó la GUI heredada como referencia. No se han creado aún archivos de UI nueva ni se declara H3 completo.
