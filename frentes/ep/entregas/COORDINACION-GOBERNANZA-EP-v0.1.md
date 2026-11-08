@@ -1753,3 +1753,24 @@ El operador corrige inequívocamente la denominación: es **CECEQ**. Se adopta `
 **Siguiente acción inmediata:** preflight local estrictamente read-only en el host previamente asociado al smoke test `PC10RCIF4EI4`: disponibilidad/versión de `b2.exe`, existencia y metadatos de la caché aislada y de la bóveda cifrada, y procesos B2 activos. No abrir contenido de bóveda ni SQLite, no leer portapapeles, no descifrar, no autenticar ni transferir datos.
 
 **Estado inicial del ciclo:** `EP-TASK-002=en_curso`; remote persistence de datos reales y restore funcional permanecen NO DEMOSTRADOS. Se conserva el ciclo local `C-EP-MOD-SCRIPTPWS-20261101-03` en OPEN. No se crea nuevo OCP/tarea/control/sesión ni se declara transferencia formal de titularidad. FOL1 no consta ACTIVO; CONV/CICLO/A/B globales no asignados. Sin cambios técnicos ni operaciones B2 ejecutadas en esta apertura.
+
+
+### Cierre EP-TASK-002 · preflight B2 bloqueado por identidad de ejecución · 2026-11-08
+
+**Procesamiento:** el inventario RDC confirmó `PC10RCIF4EI4` Online. `get_config` y `list_sessions` identificaron una sesión PowerShell de larga duración PID 5216; no se interactuó con ella. El listado de procesos no mostraba un proceso B2 activo. Se ejecutó un proceso temporal de inspección de solo lectura, que terminó con exit code 0.
+
+**Resultado observado:** el proceso temporal se ejecutó como `CENTRAL\MantenimientoRCI`, PowerShell 5.1.26100.9711. La CLI B2 en `C:\Users\MantenimientoRCI\AppData\Local\Programs\BackblazeB2\b2.exe` existe; versión 5.0.2 / b2sdk 2.13.2, SHA-256 `D6E5B1C0918C2755FC8C14EB5B5AA698C36B43D3FDC18FCA13EA163D829BBBBB`, Authenticode válido y firmante Backblaze Inc. `b2 version` exit 0. No hubo proceso B2 activo al finalizar.
+
+Las rutas esperadas bajo el `LOCALAPPDATA` de ese proceso para `b2-ep-env-vault.enc.json` y `b2-ep-master-20261107.sqlite` devolvieron `MISSING`. El hallazgo queda limitado a ese contexto `MantenimientoRCI`; no demuestra eliminación ni inexistencia en el perfil `fila4` u otra ubicación. No se hizo búsqueda recursiva ni se abrió bóveda/SQLite.
+
+**Gobernanza y bloqueo:** la regla operativa CECEQ exige que la lectura/escritura de archivos se ejecute como `fila4`; no se continúa en el contexto `MantenimientoRCI`. El preflight no leyó secretos ni portapapeles, no descifró la bóveda, no autenticó B2 y no ejecutó llamadas de cuenta, bucket u objeto. No hubo upload, download, restore, delete ni cambios locales/B2. El resultado del smoke test de OEP §102 sigue siendo histórico PASS; no se confunde con una nueva prueba.
+
+**Persistencia documental y read-back:**
+- `EP-TASK-002 README.md`, sección §49: commit `9bd7ef13201fa730a91add39e847fbfd27f53d13`; blob `fd0009d7fc53ab43588b95f6b92452cb34d3b128`; lectura de vuelta comparada con el contenido escrito: coincidencia exacta.
+- Este DTC se actualiza en el mismo objeto, sin canal paralelo; blob de apertura `da28501dd555d6372db9a6fb408df1c96444eff6`. Lectura de vuelta final posterior a este commit requerida para cerrar la secuencia.
+
+**Estado final del trabajo B2:** `EP-TASK-002=en_curso`; CLI disponible y verificada; bóveda/caché no localizadas en el contexto MantenimientoRCI; autenticación no repetida; sincronización de datos reales y restore funcional no demostrados. La siguiente acción inmediata es que el operador inicie RDC desde una terminal de Windows abierta como `fila4` en el host CECEQ correspondiente, con `npx @wonderwhy-er/desktop-commander@latest remote --no-persist-session`. Después se verificará identidad efectiva y solo metadatos de las rutas conocidas. Las compuertas P012/P013 siguen siendo obligatorias antes de credenciales/autenticación/cifrado.
+
+**Secuencia del ciclo:** `PUBLICADO` → `LEÍDO` → `SIN_NOVEDAD` (cursor DTC inicial blob `36a38c0752b5c9818a2c01cdfaf6bb6f6d6188f3`) → `RESPUESTA_INICIAL_REGISTRADA` (blob `da28501dd555d6372db9a6fb408df1c96444eff6`) → `PROCESADO` (preflight local read-only; bloqueo por identidad) → `DOCUMENTADO_AL_CIERRE` (EP-TASK-002 §49) → `VERIFICADO_READBACK` del README; queda pendiente leer de vuelta este cierre DTC.
+
+**Continuidad:** ciclo local existente `C-EP-MOD-SCRIPTPWS-20261101-03` permanece OPEN; no se crea nueva tarea/OCP/control/sesión ni se declara transferencia de titularidad. FOL1 no consta ACTIVO; CONV/CICLO/A/B globales no asignados.
