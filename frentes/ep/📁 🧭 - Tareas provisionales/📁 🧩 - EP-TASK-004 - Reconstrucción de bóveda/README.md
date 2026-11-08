@@ -73,14 +73,14 @@ Los hitos son secuenciales por dependencia. El estado inicial se conserva explí
 | H0 — Captura canónica | Dictado verbatim conservado; tarea enlazada desde el índice EP; límites de secretos y gobernanza explícitos. | COMPLETADO · commit 70ccea7, read-back exacto |
 | H1 — Baseline técnico | Inventario reproducible de backend, CLI, bóveda, notas efímeras, dependencias, pruebas y rutas; sin revelar secretos ni tocar valores reales. | PARCIAL · hallazgos criptográficos, ACL, logs, backups y CLI registrados; revisión integral pendiente |
 | H2 — Revisión B/C presencial | El operador revisó en presencia declarada y aprobó explícitamente la dirección UX/UI, apertura física, seguridad y arquitectura de alto nivel el 2026-11-08; evidencia y alcance registrados en la sección de revisión B/C. | COMPLETADO · aprobación expresa; presencia declarada por el operador, sin verificación técnica independiente |
-| H3 — Diseño visual clean-room | Concepto y prototipo completamente nuevos; ninguna referencia/pieza de la UI antigua; estados cerrado, autenticando, desbloqueando, abierto, bloqueando y error definidos y revisados. | DESPACHADO · aprobado para iniciar; diseño/implementación aún pendientes |
-| H4 — UI funcional | La bóveda abre/cierra realmente; navegación, listado, alta, edición, eliminación, promoción, revelación y estados de error están conectados a operaciones reales y verificables; no hay controles decorativos. | PENDIENTE DE H3 |
-| H5 — Sesión temporal | Selector con 15 s, 30 s, 1, 2, 3, 5, 10 y 15 min; predeterminado 5 min desde autenticación correcta; expiración bloquea, limpia vistas y descarta material sensible en memoria. Probar cada intervalo sin afectar la bóveda real. | PARÁMETROS APROBADOS · implementación y pruebas pendientes |
-| H6 — CLI/headless | Documentación de comandos, parámetros, códigos de salida, autenticación, permisos, errores, redacción y contrato para modelos; operaciones esenciales funcionan sin GUI. `-Reveal` es explícito; las salidas sensibles no se registran. | DOC EN MAIN + SMOKE CLI SINTÉTICO PASS; mínimo privilegio y vencimiento aprobados; implementación/regresión pendientes |
-| H7 — Seguridad e integridad | Pruebas positivas y negativas de contraseña incorrecta, manipulación, integridad MAC, atomicidad, DPAPI/ACL, TTL, aislamiento por usuario, promoción, reemplazo explícito, eliminación y lectura de vuelta. | PENDIENTE |
-| H8 — Matriz de regresión | PowerShell 5.1, parser, CLI E2E sintético, pruebas de backend, ciclo GUI, bloqueo/expiración, restauración y preservación de variables; pruebas visuales y de interacción en tamaños/DPI representativos. | PENDIENTE |
-| H9 — Documentación y release | Manual de usuario, manual de modelos/CLI, inventario de variables por nombre, guía de recuperación/rotación, manifiesto SHA-256, escaneo de secretos y lectura de vuelta del contenido publicado en main. | PENDIENTE |
-| H10 — Corte y aceptación | Nueva UI activa; antigua UI retirada sin perder acceso; dos variables formales preservadas y verificadas sin mostrar valores; árbol limpio; commit y read-back en main; aceptación humana final. | PENDIENTE |
+| H3 — Diseño visual clean-room | XAML/recursos/arte vectorial nuevos; puerta con 12 cerrojos; estados closed/open/error; ciclo de apertura/cierre; contraste, navegación y accesibilidad. | IMPLEMENTADO Y RENDERIZADO EN SANDBOX · scan clean-room PASS; DPI/movimiento reducido y revisión humana final pendientes |
+| H4 — UI funcional | La GUI WPF nueva consume el núcleo; acceso, listado, almacenamiento desde clipboard, reveal, retirada, notas, promoción y bloqueo están cableados a operaciones del núcleo. | PARCIAL · apertura/cierre y lista sintética renderizadas; E2E de cada botón/portapapeles/promoción/reveal y error GUI pendiente |
+| H5 — Sesión temporal | Selector con 15 s, 30 s, 1, 2, 3, 5, 10 y 15 min; predeterminado 5 min; TTL absoluto y validación por núcleo en GUI/CLI. | CORE PASS en los ocho intervalos; countdown GUI visible y timer implementado; vencimiento forzado de la ventana WPF pendiente |
+| H6 — CLI/headless | CLI nuevo, contrato para modelos, autenticación local, `-Reveal` explícito, allowlist nominal y Job Object con TTL. | IMPLEMENTACIÓN + DOC EN RAMA; `Status` y `SelfTest` CLI PASS en sandbox; flujo interactivo autenticado y acción `Run` desde CLI pendientes |
+| H7 — Seguridad e integridad | Contraseña incorrecta/tamper, atomicidad/backups, DPAPI, ACL creada, redacción, TTL, allowlist y terminación de procesos. | PARCIAL · batería sintética PASS; ACL existente real, host BitLocker, recuperación, abuso/memoria y auditoría integral pendientes |
+| H8 — Matriz de regresión | Parser PS 5.1, XAML, escaneo clean-room, pruebas Core, TTL, Job Object y render de ciclo GUI sintético. | PARCIAL · suite local PASS; interacción exhaustiva, DPI/teclado, expiración GUI forzada, recuperación y CI remota pendientes |
+| H9 — Documentación y release | Especificación clean-room y contrato de modelos CLI/headless en repo; hashes calculados localmente para fuente/pruebas. | PARCIAL · doc modelo inicial ampliada en rama; manual usuario, recuperación/rotación, manifiesto y release pendiente |
+| H10 — Corte y aceptación | Merge/read-back en main; instalación controlada; verificación no reveladora de variables formales; retirada legacy tras rollback probado; aceptación humana. | PENDIENTE · no se modificó la bóveda formal, no se instaló la GUI nueva y la PR continúa sin fusionar |
 
 ### Criterios transversales de cierre
 
@@ -252,11 +252,64 @@ La prohibición de reutilización es absoluta para la interfaz anterior: no copi
 Este registro constituye la precondición documental solicitada por el operador. La escritura de este apartado en main y su lectura de vuelta deben completarse antes de iniciar cualquier construcción. Las acciones posteriores deberán añadirse por hito con: objetivo, fuente/base, archivos afectados, SHA-256, pruebas, resultado, incidencias/RCA y read-back. Ningún hito pasará a COMPLETADO por intención o por escritura documental solamente.
 
 
-## Avance H3 — especificación clean-room persistida · 2026-11-08
 
-- **Artefacto:** [DESIGN-CLEAN-ROOM.md](./DESIGN-CLEAN-ROOM.md).
-- **Commit:** 27eafd9b392b1225bafbf66017a8c5bad29e4eed.
-- **Blob SHA verificado:** 8375a7bea608242a4aaf92ccea23d6d37a202182.
-- **Read-back:** PASS; se confirmó la huella del blob y los criterios de diseño, máquina de estados, TTL, puerta vectorial y exclusión de recursos legacy.
-- **Resultado de H3 hasta este punto:** contrato visual/UX documentado; la construcción del prototipo WPF original, el chequeo de recursos y las pruebas DPI/accesibilidad siguen pendientes.
-- **Límite de ejecución:** no se abrió ni usó la GUI heredada como referencia. No se han creado aún archivos de UI nueva ni se declara H3 completo.
+
+## Avance de implementación H3–H8 — revisión 2026-11-08
+
+### Artefactos en rama
+
+Rama de trabajo: `feat/ep-vault-clean-room-20261108`  
+PR de integración: [#20 — bóveda clean-room](https://github.com/SeryMente/metodologia/pull/20) · ABIERTA · DRAFT · NO FUSIONADA.
+
+| Archivo | Git blob SHA (rama) | SHA-256 local (PC-13) |
+|---|---|---|
+| `src/EP.Vault.Core.psm1` | `c3f5e3b389f635550b2bc0332f36b4a5b9b77969` | `A25E3561B2AC2C4AF464257BFFA8116BCCB70B3CF390FAEFF5B4D0926674BC8E` |
+| `src/EP.Vault.CLI.ps1` | `484e4aa045d07788cb9ac091a67d10947877789d` | `6A1F14A48CED071E471092C213B73F9627E9A96A7C29059DD494581021E454B3` |
+| `src/EP-Vault.GUI.ps1` | `d514092bbb306a8c6f6f330d3cec44dc3724633b` | `5B67337122F5AA3E409A824E92CE95BD48131A44A9549BB811AD06BCB06C056F` |
+| `src/EP-Vault.Window.xaml` | `38cb4c9cf5b1fe120ba2485399b54ea28184fb8f` | `0C9161D12A67CF91547392F93C7E7643F13460C6EA1764EA36BDB806E811B634` |
+| `tests/Test-EPVault.ps1` | `7dfc3dabe2331f9b0a1ddd0b984bf76833278c0c` | `3FCD711517FF94E29598C236D5813D96575E81E3B37F7A76FF9F8A6DF477885A` |
+
+Los SHA-256 fueron calculados sobre los archivos exactos copiados a `%LOCALAPPDATA%\Temp\EPVaultValidation` en PC-13. Los Git blob SHA identifican su contenido en la rama. El archivo de preview y los perfiles de prueba son efímeros y no forman parte de la entrega.
+
+### Evidencia de validación local
+
+**Entorno:** PC-13, usuario `PC-13\PC 12`, Windows PowerShell `5.1.26100.9168`, .NET `4.0.30319.42000`. Toda la prueba se ejecutó en directorios temporales aislados y con contraseñas/valores sintéticos.
+
+Resultado final de `tests/Test-EPVault.ps1`: `EP_VAULT_VALIDATION_PASS` · exit code `0`.
+
+Comprobaciones con resultado PASS:
+- Parser PowerShell para Core, CLI y GUI.
+- Parseo WPF/XAML y contrato de nombres de controles.
+- Escaneo de referencias visuales legacy: cero referencias encontradas.
+- PBKDF2-SHA256, AES-256-CBC, HMAC-SHA256, round-trip, password incorrecta y tamper rechazado.
+- Job Object: proceso suspendido → asignación → reanudación → exit code.
+- Job Object: timeout termina el árbol administrado.
+- Los ocho intervalos TTL: 15, 30, 60, 120, 180, 300, 600 y 900 segundos.
+- Ejecución con allowlist: el consumidor recibe la variable solicitada y no hereda la variable arbitraria sintética del proceso padre.
+- DPAPI CurrentUser: metadatos sin valor, Reveal explícito, eliminación y lectura de vuelta.
+- CRUD sintético, integridad MAC, rechazo de alteración, backup atómico y TTL absoluto.
+- Redacción del log: no aparecen los valores sintéticos.
+- CLI wrapper: `Status` → `NOT_INITIALIZED`, exit code 0; `SelfTest` → PASS, exit code 0.
+
+**Prueba visual WPF:** se renderizó la ventana sobre un perfil sintético, se inicializó una bóveda de prueba, se abrió mediante `Start-CleanRoomOpeningSequence`, se mostró el compartimento con `EP_PREVIEW_SYNTHETIC`, y se cerró mediante `Close-EpVaultUi`. La secuencia terminó en `SELLADA`; el callback de cierre se corrigió al detectar que usaba una variable local fuera de alcance. Las capturas no se incorporan al repositorio porque son evidencia temporal con fixture sintético, no assets de producto.
+
+### Incidencias y límites abiertos
+
+- Una ejecución inicial de GitHub Actions falló antes de asignar runner: `runner_id=0`, cero pasos ejecutados. No es un resultado de prueba de código ni un PASS de CI. El workflow remoto sigue sin validación; la evidencia actual es la ejecución local en PC-13.
+- La UI legacy no se abrió ni se usó como referencia. Sigue LEGACY / NO REUTILIZAR y no se elimina hasta H10.
+- No se abrió, autenticó, descifró ni modificó la bóveda formal. Los valores reales de variables no se leyeron, revelaron ni verificaron en este ciclo.
+- No se ejecutó diagnóstico ni operación B2 y no se usaron claves B2.
+- La sesión GUI con TTL forzado no se esperó hasta su vencimiento en el render; el vencimiento del núcleo está probado. Falta una prueba UI automatizada de expiración real.
+- El perfil temporal de preview contiene exclusivamente datos sintéticos; no copiarlo al entorno formal ni a Git.
+- La auditoría de ACL real, recuperación/restauración de backups, BitLocker del host, abuso de memoria, teclado/DPI y matriz de interacción completa siguen pendientes.
+- La PR #20 sigue en draft y la rama está un commit detrás de main. Antes de merge hay que conciliar la divergencia, revisar diff completo, volver a ejecutar la suite sobre el head final y registrar read-back de main.
+
+### Próximo orden de hitos
+
+1. Cerrar H3 con pruebas de DPI, teclado, movimiento reducido y matriz de estados, conservando la regla clean-room.
+2. Cerrar H4 con pruebas de cada acción GUI, incluidos clipboard en fixtures, reveal temporal, promoción y bloqueo ante error.
+3. Cerrar H5 con prueba real de expiración GUI y CLI para cada intervalo o un plan de equivalencia verificable.
+4. Completar H6 con smoke E2E del wrapper CLI en perfil sintético, incluida autenticación local sintética y `Run`.
+5. Completar H7/H8: auditoría de seguridad, recuperación y regresión sin tocar la bóveda formal.
+6. Conciliar main/PR, merge con SHA esperado, leer de vuelta contenido/commits y sincronizar el clon local.
+7. Solo después, preparar instalación controlada y H10, protegiendo primero el acceso de recuperación y retirando la UI legacy al final.
