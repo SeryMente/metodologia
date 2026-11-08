@@ -70,13 +70,13 @@ Los hitos son secuenciales por dependencia. El estado inicial se conserva explí
 
 | Hito | Resultado exigido | Estado inicial |
 |---|---|---|
-| H0 — Captura canónica | Dictado verbatim conservado; tarea enlazada desde el índice EP; límites de secretos y gobernanza explícitos. | EN CURSO en esta escritura |
-| H1 — Baseline técnico | Inventario reproducible de backend, CLI, bóveda, notas efímeras, dependencias, pruebas y rutas; sin revelar secretos ni tocar valores reales. | PENDIENTE |
+| H0 — Captura canónica | Dictado verbatim conservado; tarea enlazada desde el índice EP; límites de secretos y gobernanza explícitos. | COMPLETADO · commit 70ccea7, read-back exacto |
+| H1 — Baseline técnico | Inventario reproducible de backend, CLI, bóveda, notas efímeras, dependencias, pruebas y rutas; sin revelar secretos ni tocar valores reales. | PARCIAL · inventario estático y pruebas focales PASS; revisión integral pendiente |
 | H2 — Revisión B/C presencial | El operador revisa y decide en persona la dirección UX/UI, experiencia de apertura, seguridad y arquitectura de alto nivel. Registrar resultado y evidencia en el mismo núcleo. | BLOQUEA CONSTRUCCIÓN |
 | H3 — Diseño visual clean-room | Concepto visual y prototipo completamente nuevos; ninguna referencia/pieza de la UI antigua; estados cerrado, autenticando, desbloqueando, abierto, bloqueando y error definidos y revisados. | BLOQUEADO POR H2 |
 | H4 — UI funcional | La bóveda abre/cierra realmente; navegación, listado, alta, edición, eliminación, promoción, revelación y estados de error están conectados a operaciones reales y verificables; no hay controles decorativos. | BLOQUEADO POR H2/H3 |
 | H5 — Sesión temporal | Selector con 15 s, 30 s, 1, 2, 3, 5, 10 y 15 min; predeterminado 5 min desde autenticación correcta; expiración bloquea, limpia vistas y descarta material sensible en memoria. Probar cada intervalo sin afectar la bóveda real. | PENDIENTE |
-| H6 — CLI/headless | Documentación de comandos, parámetros, códigos de salida, autenticación, permisos, errores, redacción y contrato para modelos; operaciones esenciales funcionan sin GUI. `-Reveal` es explícito; las salidas sensibles no se registran. | PENDIENTE |
+| H6 — CLI/headless | Documentación de comandos, parámetros, códigos de salida, autenticación, permisos, errores, redacción y contrato para modelos; operaciones esenciales funcionan sin GUI. `-Reveal` es explícito; las salidas sensibles no se registran. | DOCUMENTACIÓN INICIAL COMPLETADA; integración y regresión final pendientes |
 | H7 — Seguridad e integridad | Pruebas positivas y negativas de contraseña incorrecta, manipulación, integridad MAC, atomicidad, DPAPI/ACL, TTL, aislamiento por usuario, promoción, reemplazo explícito, eliminación y lectura de vuelta. | PENDIENTE |
 | H8 — Matriz de regresión | PowerShell 5.1, parser, CLI E2E sintético, pruebas de backend, ciclo GUI, bloqueo/expiración, restauración y preservación de variables; pruebas visuales y de interacción en tamaños/DPI representativos. | PENDIENTE |
 | H9 — Documentación y release | Manual de usuario, manual de modelos/CLI, inventario de variables por nombre, guía de recuperación/rotación, manifiesto SHA-256, escaneo de secretos y lectura de vuelta del contenido publicado en main. | PENDIENTE |
@@ -106,6 +106,10 @@ La sesión técnica previa dejó estos resultados, que se conservan como evidenc
 - No se creó commit de producto de la bóveda en main. El código local de AppData no se considera persistido en el repositorio.
 - La instrucción del operador confirma dos variables formales guardadas; este ciclo no vuelve a leer sus valores ni presenta un read-back criptográfico independiente.
 
+## Documentación de modelos
+
+- [Contrato de acceso headless y CLI](./MODEL-CLI-HEADLESS.md).
+
 ## Registro de ejecución de la tarea
 
 ### Entrada inicial · 2026-11-08
@@ -116,4 +120,11 @@ La sesión técnica previa dejó estos resultados, que se conservan como evidenc
 - **Secretos:** no leídos, no copiados y no incluidos en esta escritura. Solo se registran identificadores de variables.
 - **Fuente base:** main `d732fe5bbcabbfcedbcdc6151a779cccef282086`; DUG v383 / NX-383m; OEP v0.3.40; índice provisional blob `1ef005e6ad965e869334cd65d6deaff121e59cc0`.
 - **Siguiente acción independiente:** auditar el backend/CLI y las pruebas existentes en modo de solo lectura, identificando interfaces, defectos y brechas sin diseñar ni construir la UI ni acceder a valores de secretos.
-- **Cierre:** pendiente de persistencia/read-back de este primer registro en main.
+- **Cierre H0:** persistido en main y verificado por lectura de vuelta exacta.
+- **H1, auditoría parcial (2026-11-08):** backend 32,438 bytes, SHA-256 `649C53E0CDB9F8613C26F6CC58E6CC669714548A72DE100EE844C5C226634951`; CLI wrapper 1,731 bytes, SHA-256 `A1EFEA2B43AC2C223553FF0326986DFD56410C32E015C83BC177AE0D59D2D971`; documentación local previa 3,859 bytes. Backend/CLI pasan parser PowerShell; contrato estático confirma rutas para `RemoveVariable`, `PromoteNote`, `DeleteNote`, `ListNotes` y `ReadNote -Reveal`.
+- **Pruebas de este ciclo:** backend self-test PASS con PBKDF2/AES-256-CBC/HMAC-SHA256, rechazo de contraseña incorrecta y tamper; prueba sintética aislada de promoción, reemplazo explícito y eliminación con lectura de vuelta PASS. La prueba usó una carpeta temporal independiente, eliminada en `finally`.
+- **Bóveda real:** archivo presente, 5,976 bytes según metadatos; no se descifró ni inspeccionó contenido. No había archivos de notas efímeras en la ruta de trabajo consultada. No se modificaron variables reales.
+- **Incidencia de ejecución:** un intento de self-test desde la shell padre falló antes de ejecutar el backend porque la ExecutionPolicy del proceso bloqueaba scripts; además, `ErrorActionPreference=Stop` trató stderr informativo de Git como excepción al intentar sincronizar el clon. RCA: precondiciones del wrapper PowerShell, no defectos criptográficos ni fallo de Git. Mitigación: ejecutar con `Set-ExecutionPolicy -Scope Process Bypass -Force` o `powershell.exe -ExecutionPolicy Bypass`; para procesos nativos, capturar `$LASTEXITCODE` inmediatamente bajo `ErrorActionPreference=Continue`. Self-test y prueba sintética pasaron después de corregir la precondición. Registrar como recurrencia del error de ExecutionPolicy y no volver a invocar `.ps1` desde una shell sin preflight de política.
+- **Alcance no verificado:** no se realizó autenticación real de la GUI; la GUI legacy no se reabrió ni se reutilizó. El test de captura CLI previo sigue atribuido a la prueba sintética reportada en la sesión anterior.
+- **Estado de construcción:** ninguna UI nueva ni cambio de backend se ha construido ni publicado en main. Los archivos de código siguen en AppData; el commit 70ccea7 solo contiene el registro de la tarea.
+- **Próxima acción:** cerrar auditoría estática de los flujos `Load/Lock`, almacenamiento DPAPI/ACL, TTL y salida del CLI; después esperar la compuerta presencial P012/P013 antes de decisiones de diseño o construcción.
