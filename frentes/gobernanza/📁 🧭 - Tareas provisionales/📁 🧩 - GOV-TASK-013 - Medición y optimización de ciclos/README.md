@@ -262,3 +262,32 @@ Entregables del constructor: diagnóstico breve de `main` y de PR #353; diseño 
 
 **Estado:** decisión de reutilizar Harmonia y alcance de diseño aprobados por el operador. Este registro documenta la especificación que deberá convertirse en el prompt del constructor. No se ha implementado ni probado el observador de ciclo; no se ha modificado KHORA ni se ha instalado la extensión.
 
+
+
+## Extensión expresa del alcance · medición de resolución IPZ por RDC · 2026-11-09
+
+**Instrucción expresa del operador:** cuando Sink/IPZ esté implementado mediante el servidor local MCP-OCP invocado a través de Remote Desktop Commander (RDC), medir cuánto tarda una resolución iniciada desde el IPZ.
+
+### Magnitud acotada
+
+- **Identificador:** `ipz.resolve.rdc.duration_ms`.
+- **Qué mide:** duración observable de extremo a extremo de una consulta iniciada por una referencia IPZ —`GOW:ARR`, `DUG` o `SINK:Pxxx`— desde el despacho de la llamada RDC hasta la recepción y validación de la respuesta completa del MCP-OCP local en el cliente ChatGPT.
+- **Incluye:** transporte/orquestación RDC, espera de la llamada y ejecución local necesaria para resolver la referencia. No se presentará como tiempo puro de SQLite, tiempo interno del modelo ni latencia aislada del servidor.
+- **Exclusividad:** solo aplica a las resoluciones IPZ→RDC→MCP-OCP. No habilita latencias genéricas por herramienta, métricas de todas las operaciones MCP, first-token, costes, errores ni reintentos.
+- **Separación:** es una medición operativa secundaria y específica. No sustituye ni altera la magnitud primaria `cycle.duration_ms` de esta tarea, ni amplía la telemetría normativa de ART-027, que permanece limitada a frecuencia de consulta por principio.
+
+### Captura y registro
+
+- Tomar el tiempo con reloj monotónico del adaptador/orquestador que observe ambos límites. Se preferirá el dato de duración del propio adaptador RDC únicamente después de verificar su semántica, reloj y cobertura; no inferir que una duración local del proceso equivale al round-trip RDC.
+- El inicio es inmediatamente antes de despachar la llamada RDC. El final es cuando el resultado íntegro de OCP MCP llega al cliente y supera la validación mínima de respuesta. No incluir persistencia posterior del evento.
+- Campos mínimos: `measurement_status`, `reference_kind`, `principle_id` cuando aplique, `transport=RDC`, `duration_ms` si es verificable, `clock_source`, `clock_precision`, `dug_version`, `source_blob_sha` y un identificador local de evento/resolución. Las identidades locales de conversación/ciclo se vinculan solo cuando existan y estén verificadas.
+- Si falta uno de los límites, el reloj no es monotónico o el adaptador no entrega una duración verificable del round-trip, registrar `NOT_MEASURED` con motivo. No calcular por resta de relojes de pared, no usar cero y no reconstruir retrospectivamente.
+- Persistir el registro en el almacenamiento local ya existente de OCP MCP, reutilizando `telemetry_events` solo tras verificar que su esquema admite estos campos; cualquier migración queda en el OCP MCP y requiere pruebas/read-back. No crear un segundo servicio, base de datos, cola remota ni dependencia de GitHub Actions.
+- La captura no leerá ni almacenará el texto del principio, el prompt, URLs, secretos ni payloads conversacionales. El ID Pxxx y la clase de referencia bastan para identificar el destino medido.
+- La persistencia se realiza fuera de la ruta crítica de entrega: el cronómetro termina antes de escribir el evento. Una falla al persistir no debe bloquear ni retrasar la devolución del principio.
+
+### Verificación y línea base
+
+La medición queda **PENDIENTE DE IMPLEMENTACIÓN** hasta que OCP MCP entregue el resolver individual y EP haya instalado/validado el proceso local con RDC. La aceptación exige prueba positiva de `GOW:ARR`, `DUG` y al menos un `SINK:Pxxx`; caso negativo de referencia inexistente/fuente obsoleta; comprobación del round-trip y lectura de vuelta del registro. No se fijará objetivo temporal antes de obtener muestras reales. La línea base se declarará preliminar hasta contar con al menos diez resoluciones completas y comparables; resumir esta única magnitud con mediana y tamaño de muestra, sin crear KPIs adicionales.
+
+**Responsabilidades:** Gobernanza define esta medición y acepta su evidencia; MCP-OCP implementa el resolver, el evento y el contrato local; EP instala/ejecuta el host y el transporte RDC. Esta ampliación no transfiere titularidad, no cambia controles de EP/MCP-OCP, no autoriza instalación, provisión del operador ni activación de `MCP-NORMATIVO`.
