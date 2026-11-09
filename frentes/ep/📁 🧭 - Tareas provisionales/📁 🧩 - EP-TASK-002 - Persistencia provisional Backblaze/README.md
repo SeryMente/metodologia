@@ -1,7 +1,7 @@
 # 📝 EP-TASK-002 · Persistencia provisional con Backblaze B2 para datos de usuario y continuidad de la sesión canónica
 
 **Naturaleza:** tarea provisional del frente Entorno Persistente; materialización auxiliar del registro de tareas, no un OEP nuevo, no un frente independiente y no una decisión de arquitectura canónica.  
-**Estado:** `en_curso` — Master Application Key existente cotejada con las entradas cifradas de la bóveda (sin reescritura); descifrado de cuatro entradas, ACL, respaldo y limpieza de portapapeles PASS; autenticación Master B2 PASS con caché aislada; GET de `OCP-MCP` PASS; prueba sintética de 126 bytes con upload/download/read-back SHA-256 y SSE-B2/AES256 PASS. La compuerta de segundo equipo físico de §45 queda supersedida por la instrucción del operador del 2026-11-07: no es requisito para finalizar EP. La sincronización automatizada de datos de usuario, la recuperación por perfil, idempotencia, interrupción/reanudación y aceptación del consumidor siguen pendientes.
+**Estado:** `en_curso` — la prueba B2 sintética histórica del 2026-11-07 se conserva como evidencia de aquel momento, pero no demuestra autenticación actual ni identifica por sí sola la cuenta propietaria. Las variables KHORA_B2_MASTER_APPLICATION_KEY_ID y KHORA_B2_MASTER_APPLICATION_KEY del almacén pertenecen a Khora y no se usarán para EP. En este ciclo se almacenaron metadatos EP (cuenta, bucket y prefijo) y se promovió una nota a EP_B2_APPLICATION_KEY_ID con read-back; la clasificación de esa nota por tipo aún no se validó. La segunda nota continúa efímera. No hubo autenticación, escritura, lectura de vuelta ni restauración B2 en este ciclo. La compuerta de segundo equipo físico de §45 queda supersedida por la instrucción del operador del 2026-11-07: no es requisito para finalizar EP. La sincronización automatizada de datos de usuario, la recuperación por perfil, idempotencia, interrupción/reanudación y aceptación del consumidor siguen pendientes.
 **Responsabilidad:** vinculada a `frentes/ep/`; sin control, sesión, titularidad ni folio global propios.  
 **task_id:** `EP-TASK-002` (identificador local estable; no es folio global).  
 **scope_ref:** `frentes/ep/`  
@@ -2091,3 +2091,27 @@ Se preparó un worker efímero con allowlist de las dos variables anteriores, ma
 Siguiente acción: desbloquear EP Vault localmente en el perfil Windows PC-7, sin compartir la contraseña, y mantener la sesión abierta. La ejecución desde esta asistencia sigue condicionada a que la plataforma permita iniciar el proceso hijo; no se eludirá una denegación del control de seguridad. Al habilitarse una ejecución permitida, la secuencia permanece bóveda ciphertext → workspace inventariado → restauración SHA-verificada.
 
 Estado de EP-TASK-002: en_curso. El cliente B2 quedó instalado y las variables fueron identificadas; no existe objeto remoto nuevo ni recibo de persistencia.
+
+## Rectificación de procedencia de credenciales y avance de centralización · 2026-11-09
+
+**Rectificación obligatoria del estado anterior:** cualquier afirmación que atribuya las variables KHORA_B2_MASTER_APPLICATION_KEY_ID o KHORA_B2_MASTER_APPLICATION_KEY a la cuenta B2 de EP queda corregida. Son variables de Khora. EP usa su pareja independiente, asociada por indicación del operador a blacksheepsup@gmail.com; no se intercambiarán, copiarán ni usarán como sustituto.
+
+### Estado del almacén EP Vault
+
+- EP_B2_ACCOUNT_EMAIL, EP_B2_BUCKET_NAME y EP_B2_PREFIX se guardaron desde el portapapeles con VARIABLE_STORED_READBACK_VERIFIED.
+- La nota EP capturada primero se promovió a EP_B2_APPLICATION_KEY_ID con PROMOTED_READBACK_VERIFIED_NOTE_REMOVED. La asignación del tipo se basó en orden de captura; no se reveló el valor al modelo ni se verificó independientemente su formato. Queda pendiente la validación no expositiva.
+- La segunda nota permanece VOLATILE_DPAPI; no se confirmó la promoción a EP_B2_APPLICATION_KEY. No se eliminó esa nota.
+- La pareja KHORA_B2_MASTER_* permanece con sus nombres y valores propios de Khora.
+- También se registraron KHORA_B2_PREFLIGHT y KHORA_OBJECT_STORAGE con read-back. La entrada Preview de KHORA_CHAT_ENABLED aparece con nombre de alcance específico, pero su valor no está confirmado en esta crónica.
+
+### Fuentes e identificación del destino
+
+- El inventario de Vercel devolvió un solo proyecto (khora-web), 50 entradas y 46 nombres únicos. Las entradas homónimas en Production/Preview/rama requieren conservar ámbito.
+- La fuente canónica de destino EP es bucket OCP-MCP y prefijo ep-ocp/ según OEP §91. Esta referencia no autoriza usar credenciales de Khora.
+- Se observó en PC-7 un archivo de caché de la CLI B2 en %USERPROFILE%\.b2_account_info; solo se inspeccionó su existencia y metadatos, no su contenido. Su existencia no acredita cuenta, titular ni autorización actual.
+
+### Límite de ejecución
+
+En este ciclo no se volvió a autenticar contra Backblaze, no se consultó el bucket, no se subió ningún objeto y no se ejecutó read-back remoto. La promoción de la segunda nota fue bloqueada antes de devolver un resultado; no se intentó eludir el control. Por tanto, EP_B2_APPLICATION_KEY y la autenticación actual siguen pendientes.
+
+**Siguiente secuencia obligatoria:** completar la segunda variable EP; validar que ambas entradas forman una pareja B2 sin revelar sus valores; comprobar cuenta/bucket/prefijo; respaldar primero el ciphertext actualizado de EP Vault bajo OCP-MCP/ep-ocp/; descargarlo a un destino aislado y cotejar tamaño/SHA-256; conservar el original local. Solo después abordar snapshots de datos de usuario seleccionados. No cargar .git, código fuente, secretos, perfiles/cookies ni la carpeta completa de trabajo sin clasificación y autorización específica.
