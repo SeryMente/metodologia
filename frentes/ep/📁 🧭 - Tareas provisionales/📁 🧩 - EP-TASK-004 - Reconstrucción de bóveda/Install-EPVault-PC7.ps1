@@ -62,25 +62,29 @@ if (-not $NoDesktopShortcuts) {
     $desktop = [Environment]::GetFolderPath('Desktop')
     $quotedTaskRoot = "'" + $taskRoot.Replace("'","''") + "'"
 
-    $guiPs1Text = @"
-\$ErrorActionPreference = 'Stop'
-\$taskRoot = $quotedTaskRoot
-\$gui = Join-Path \$taskRoot 'src\EP-Vault.GUI.ps1'
-if (-not (Test-Path -LiteralPath \$gui -PathType Leaf)) { [Console]::Error.WriteLine('EP_VAULT_GUI_NOT_FOUND'); exit 2 }
-try { & \$gui; exit 0 } catch { [Console]::Error.WriteLine('EP_VAULT_GUI_LAUNCH_FAILED'); exit 1 }
-"@
-    $cliPs1Text = @"
-param([Parameter(ValueFromRemainingArguments=\$true)][object[]]\$Arguments)
-\$ErrorActionPreference = 'Stop'
-\$taskRoot = $quotedTaskRoot
-\$cli = Join-Path \$taskRoot 'src\EP.Vault.CLI.ps1'
-if (-not (Test-Path -LiteralPath \$cli -PathType Leaf)) { [Console]::Error.WriteLine('EP_VAULT_CLI_NOT_FOUND'); exit 2 }
+    $guiPs1Text = @'
+$ErrorActionPreference = 'Stop'
+$taskRoot = __TASKROOT__
+$gui = Join-Path $taskRoot 'src\EP-Vault.GUI.ps1'
+if (-not (Test-Path -LiteralPath $gui -PathType Leaf)) { [Console]::Error.WriteLine('EP_VAULT_GUI_NOT_FOUND'); exit 2 }
+try { & $gui; exit 0 } catch { [Console]::Error.WriteLine('EP_VAULT_GUI_LAUNCH_FAILED'); exit 1 }
+'@
+    $guiPs1Text = $guiPs1Text.Replace('__TASKROOT__',$quotedTaskRoot)
+
+    $cliPs1Text = @'
+param([Parameter(ValueFromRemainingArguments=$true)][object[]]$Arguments)
+$ErrorActionPreference = 'Stop'
+$taskRoot = __TASKROOT__
+$cli = Join-Path $taskRoot 'src\EP.Vault.CLI.ps1'
+if (-not (Test-Path -LiteralPath $cli -PathType Leaf)) { [Console]::Error.WriteLine('EP_VAULT_CLI_NOT_FOUND'); exit 2 }
 try {
-    & \$cli @Arguments
-    if (\$LASTEXITCODE -is [int]) { exit \$LASTEXITCODE }
+    & $cli @Arguments
+    if ($LASTEXITCODE -is [int]) { exit $LASTEXITCODE }
     exit 0
 } catch { [Console]::Error.WriteLine('EP_VAULT_CLI_LAUNCH_FAILED'); exit 1 }
-"@
+'@
+    $cliPs1Text = $cliPs1Text.Replace('__TASKROOT__',$quotedTaskRoot)
+
     $guiCmdText = @'
 @echo off
 setlocal
