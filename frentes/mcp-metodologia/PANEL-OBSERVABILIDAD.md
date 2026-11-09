@@ -42,7 +42,7 @@ El servidor MCP escribe en el root protegido que EP configure, en un subdirector
 - `state.json`: snapshot actual, sustituido atómicamente.
 - `events.jsonl`: secuencia append-only de eventos operativos minimizados, con rotación/tamaño acotado.
 
-El panel solo tiene lectura. EP aplica ACL y protección del volumen; el servidor no crea ni modifica ACL, BitLocker, Registro, firewall o configuración del host.
+El panel solo tiene lectura. EP aplica ACL y protección del volumen; el servidor no crea ni modifica ACL, BitLocker, Registro, firewall o configuración del host. La señal de protección del volumen pertenece exclusivamente a la atestación EP en `session.json`; el servidor reporta solo disponibilidad/acceso a su data root.
 
 - `session.json`: archivo atómico escrito por el controlador EP; contiene `schemaVersion`, `sessionState`, `sessionStartedAtUtc`, `protectionState` y `protectionCheckedAtUtc`. No contiene SID, credenciales, claves ni identificadores sensibles. EP actualiza `sessionState` al terminar la sesión. Si falta, es inválido o no corresponde a la sesión en curso, el panel muestra **“Sesión no verificada”** y nunca asume ACTIVE.
 - `state.json` y `events.jsonl`: escritos por el servidor MCP-OCP; representan su propio ciclo de vida, protocolo, fuentes y actividad.
@@ -51,15 +51,15 @@ La comprobación de protección del volumen se presenta como **“verificada por
 
 ### 4.1 Snapshot mínimo
 
-El esquema versionado debe exponer, como mínimo:
+El esquema versionado `state.json` debe exponer, como mínimo:
 
 - `schemaVersion`, `updatedAtUtc`.
 - Servidor: lifecycle, PID, hora de inicio del proceso, versión del software y transporte. La sesión EP no se infiere desde este archivo: procede exclusivamente de `session.json`.
 - Protocolo: no iniciado / iniciando / inicializado / desconectado.
 - Fuentes: importadas, integridad, vigencia, versión/firma DUG y resultado de verificación.
 - Operador: provisionado / no provisionado / desconocido.
-- Data root: protegido / no protegido / desconocido.
-- Readiness agregado y un `reasonCode` seguro cuando no esté listo.
+- Acceso al data root desde el servidor: configurado, lectura/escritura disponible o desconocido. No inferir cifrado BitLocker desde el proceso MCP.
+- Readiness del servidor y un `reasonCode` seguro cuando no esté listo. El panel calcula el estado compuesto incorporando la atestación EP de `session.json`.
 - Actividad: herramienta en curso, inicio, último evento y contadores de éxito/error.
 
 El schema se versiona y se valida antes de presentarlo. Campo ausente o formato inválido produce **“Estado no disponible / requiere revisión”**, nunca un falso PASS.
