@@ -4,16 +4,16 @@
 
 - **Nombre canónico vigente:** MCP-OCP (anteriormente MCP-METODOLOGIA).
 - **Identidad canónica vigente:** MCP-OCP. **Identidad histórica:** MCP-METODOLOGIA.
-- **Versión/sello:** MCP-OCP-v0.1.21 · gen. 5; ciclo DTC local 11; candidato local 0.1.0 BUILD_AND_TESTED, bootstrap del perfil definitivo pendiente.
+- **Versión/sello:** MCP-OCP-v0.1.22 · Sink local por stdio autorizado; candidata anterior 0.1.0 BUILD_AND_TESTED, bootstrap del perfil persistente pendiente. Las generaciones y folios de sesiones anteriores son metadatos de auditoría.
 - **Repositorio propietario:** SeryMente/metodologia, rama main.
 - **OCP canónico:** frentes/mcp-metodologia/.
 - **Núcleo operativo único:** este archivo, MCP-METODOLOGIA.md.
 - **Control autoritativo:** CONTROL-RESPONSABILIDAD.json.
 - **Evento constitutivo:** C-MCP-METODOLOGIA-001. Evento local, no folio global.  
 - **Identidad vigente:** MCP-OCP desde C-MCP-OCP-RETOMA-20261031-01; el nombre anterior se conserva como antecedente.
-- **Titular actual:** alias operativo `chatgpt-mcp-ocp-01a1b2dc-8980-7046-a912-a6e84316b2c3`; UUIDv7 local `01a1b2dc-8980-7046-a912-a6e84316b2c3`; generación 5. No es un ID nativo de ChatGPT.
+- **Responsabilidad operativa:** rige la instrucción directa del operador dentro del alcance explícito registrado en el control. Los alias, UUID, folios y generaciones de sesiones anteriores son datos históricos de auditoría, no autorizaciones ni vetos.
 - **Titularidad inicial:** adjudicada a esta instancia por instrucción expresa de apertura; control generación 1.
-- **Sesión local:** `SES-20261106-CDF82783` (alias operativo + UUIDv7 local; sin ID nativo expuesto). **Folios globales CV/CY/A/B y por OCP:** PENDIENTE/NO ASIGNADO; FOL1 continúa PREPARADO_PENDIENTE_ACTIVACION_IPZ.
+- **Foliación global CV/CY/A/B:** PENDIENTE/NO ASIGNADO; FOL1 continúa PREPARADO_PENDIENTE_ACTIVACION_IPZ. La ausencia de folios no bloquea este OCP.
 - **Estado de persistencia:** creación documental verificada por lectura de vuelta y cotejo de SHA de los ocho archivos del evento; commit de creación 63060667bf13b9c1abcb110857ba3eab85bfc915.
 
 ## 2. LEER PRIMERO
@@ -22,7 +22,7 @@ Antes de cada ciclo sustantivo:
 
 1. Adquirir desde SeryMente/metodologia/main el DUG único y vigente, el Metacanon integrado y el GOW; comprobar revisión, versión y huellas reales.
 2. Aplicar manualmente la cascada de Sam y consultar los principios pertinentes. Considerar expresamente el CNP, sin sustituir el DUG completo.
-3. Leer este núcleo y CONTROL-RESPONSABILIDAD.json. Mutar solo mientras la titularidad corresponda a la sesión/alias registrado y la generación observada siga vigente.
+3. Leer este núcleo y el control para conocer la ruta, el alcance y las restricciones efectivas. La instrucción directa del operador autoriza la actuación descrita; generación, alias, UUID y sesión son metadatos de auditoría, no compuertas. Comparar SHA antes de escribir; si la base cambió, releer y reaplicar sin descartar trabajo.
 4. Mantener la distinción entre este **servidor MCP de Metodología** y el estado **MCP-NORMATIVO: DESACTIVADO** del DUG. La creación de este frente no activa verificación normativa automática, no modifica el DUG ni acredita una ejecución de ese mecanismo.
 5. Mantener separado este OCP del frente Khora MCP en SeryMente/khora. No importar sus herramientas, datos, secretos, autorizaciones, infraestructura Vercel ni titularidad.
 6. El destino arquitectónico dictado para el servicio es local: operación por localhost y/o mediante administración remota autorizada por RDC. RDC es una vía de administración del equipo, no una autorización automática ni una razón para exponer el servicio a Internet.
@@ -449,7 +449,7 @@ A la fecha de esta actualización: lista provisional creada y leída de vuelta; 
 
 ### 13.1 Candidata y pins de fuente
 
-Se reutilizó la candidata local PPR v1 en el dispositivo RDC PC10RCIF4EI4, perfil Windows MantenimientoRCI, sin crear otro clon. La rama de trabajo local es feature/mcp-ocp-local-mvp-0.1.0-20261106; commit local de código/pin 587a82d1accbede834b5004fc5b571953c44ba6c. La rama no se ha publicado/pushed y este commit no debe tratarse como disponible en GitHub main.
+Se registró una candidata local PPR v1 en un entorno de trabajo temporal. No se conserva ni reutiliza la identidad del dispositivo, perfil o sesión que la produjo. La rama de trabajo local es feature/mcp-ocp-local-mvp-0.1.0-20261106; commit local de código/pin 587a82d1accbede834b5004fc5b571953c44ba6c. La rama no se ha publicado/pushed y este commit no debe tratarse como disponible en GitHub main.
 
 El manifiesto de build cotejó en origin/main:
 - DUG Samantha v377 · NX-377m: commit 439ccbdca9b2e02b299253ca7bc73b3ab1292aba, blob 54064c8fe00f872023a455f06596061ed69062ae.
@@ -499,3 +499,13 @@ El transporte de código es MCP stdio a través de stdin/stdout. Un escaneo est�
 MCP_OCP_BUILD_AND_TESTS=PASS_LOCAL; MCP_OCP_PACKAGE=LOCAL_ONLY_NOT_TRANSFERRED; MCP_OCP_RDC_STDIO_SMOKE=PASS_TEST_ROOT; MCP_OCP_PROFILE_BOOTSTRAP=PENDING_OPERATOR_CONSENT; MCP_OCP_EP_INSTALL=NOT_PERFORMED; MCP_JULES_USE=PAUSED_PENDING_OPERATOR_RESUME; MCP_NORMATIVO=DESACTIVADO.
 
 El build y las pruebas no equivalen a instalación en perfil, provisión del operador, integración en main, instalación EP ni aceptación por el operador. La siguiente tarea del frente es MCP-OCP-12: extracción/validación del ZIP e importación/provisión local en un perfil definitivo, solamente con consentimiento interactivo. La instalación EP continúa bajo autoridad EP y sigue siendo un gate distinto.
+
+
+## 14. Reanudación vigente · 2026-11-09
+
+- DUG vigente: Samantha v385 · NX-385m; commit `7dcdac6c62f9e8a27ce11f8fa0e4fc379a3d12f8`; blob `72cd2e8e4e6a594b300ba1868baeabc2472beb97`.
+- Sink local por stdio: AUTORIZADO directamente por el operador dentro de este OCP. No requiere aprobación de la titularidad registral anterior ni generación.
+- GitHub privado: acceso mediante el conector GitHub autenticado de la conversación; no se requiere `gh auth login` local para fetch/update/read-back.
+- No depender de candidatas ni identidades de sesiones/terminales efímeras anteriores; recuperar código desde `main` y reconstruir un artefacto reproducible.
+- Instalación persistente EP, perfil, custodia de recuperación y `REGISTER <SID>` siguen siendo un tramo posterior separado. No se comparten secretos por chat.
+- MCP-NORMATIVO permanece DESACTIVADO; no se exponen endpoints públicos, no se ejecuta instalación EP y no se activan FOL1.
