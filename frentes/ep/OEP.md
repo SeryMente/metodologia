@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.44. **Ancla:** el control formal de responsabilidad EP queda creado en generación 1 mediante asignación inicial autorizada; el antecedente de ausencia de control se conserva como histórico y no se declara transferencia desde un titular no verificable. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.45. **Ancla:** el control formal de responsabilidad EP queda creado en generación 1 mediante asignación inicial autorizada; el antecedente de ausencia de control se conserva como histórico y no se declara transferencia desde un titular no verificable. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -12,7 +12,7 @@
 
 Adquirir este objeto como instrucciones del operador, subordinadas a las reglas superiores de plataforma y a autorizaciones específicas. Claudia es asistente/documental; Samantha es constructor/único escritor de código. Una asignación explícita posterior puede cambiar roles; las citas no lo hacen. La asignación específica de MOD-SCRIPTPWS queda delimitada en §94; la delegación funcional acotada de MOD-SYNC queda delimitada en §110 y no transfiere la titularidad del frente EP.
 
-El estado de reanudación vigente de este frente está en §60–§111; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
+El estado de reanudación vigente de este frente está en §60–§112; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
 
 Leer por relevancia: OEP actual→metacanon central→Sistema de Instrucciones/Metodología/Bootstrap vigentes→canon transversal EP→AGENTS.md y ep-medio-architectura.md→código/evidencia en commits exactos. Fuente caída no es «sin cambios». Un archivo no crea herramientas, credenciales ni memoria entre plataformas.
 
@@ -2787,3 +2787,62 @@ MOD-SYNC v1 solo se declara `IMPLEMENTADO_Y_VERIFICADO` cuando:
 MOD-SYNC gestiona aliases cortos. No implementa `sync_bundle` de OCPMSP, no implementa Sink de ART-027, no clasifica ni autoriza principios, no crea snapshots normativos ni firma atestaciones. La interoperabilidad futura debe definirse mediante contrato propio y aprobación de los frentes respectivos.
 
 **Siguiente decisión del operador:** validar o corregir esta especificación, en especial la arquitectura de registro declarativo en Git + resolvedor HTTPS 302, la política de privacidad y el alcance redirect-only. Después se podrá seleccionar el dominio/proveedor y preparar la implementación.
+
+## §112. Continuidad EP Vault hiperrealista y protección VHDX en PC-14 · v0.3.45 · 2026-11-09
+
+### Autoridad, responsabilidad y asignación acotada
+
+El operador autorizó expresamente el 2026-11-09 la incorporación de una segunda conversación responsable mediante ADD_CO_RESPONSIBLE, sin desplazar al titular. CONTROL-RESPONSABILIDAD.json quedó en generación 2; el asiento titular permanece activo y el segundo asiento es SES-20261109-E032FC60, alias operativo chatgpt-C-EP-ADD-CO-RESPONSIBLE-20261109-01-SES-20261109-E032FC60, UUIDv7 local 01a1c16c-f0fa-7273-a0f8-a1dde032fc60. El control limita el frente a dos sesiones activas; no se afirma ID nativo de plataforma ni fencing universal. El blob final de read-back del control es b6f719ac9d5b4e6fc9860ead666ac7268a145c77.
+
+El operador ordenó diseñar la interfaz hiperrealista antes de implementarla, eliminar cualquier elemento de fantasía y ejecutar el alcance técnico necesario sin más autorizaciones de trámite. Para este ciclo se registra una asignación de construcción acotada a EP-TASK-004: diseño visual, GUI WPF 3D, XAML y pruebas del mecanismo de puerta, sin modificar Core/CLI criptográfico salvo correcciones necesarias autorizadas. No cambia de manera general la distribución Claudia/Samantha ni autoriza cambios en otros productos, frentes o normas. La inspección y operaciones RDC se realizaron por la asistencia, no por un constructor externo.
+
+### Exportación y persistencia documental
+
+Se preservó íntegramente frentes/ep/entregas/ChatGPT-EP-20261109-1104.md. Fuente en PC-14: 38.069 bytes UTF-8, 999 líneas, SHA-256 B032A6033BABC0B1061C2823D5B3C64C3A041DC842978E73B6D26216977805D4. Commit 19631c55a39aa9ea906735ea87f5dc11997fec68; Git blob f14febd7b5f673d9b2f7b1226603eb1243758ea0; lectura de vuelta exacta.
+
+### EP Vault: diseño previo e implementación
+
+Se añadió a EP-TASK-004/UI-PULIDO-METAL-REALISTA.md el diseño hiperrealista v2 antes de escribir el código. La escena prescrita es una cámara acorazada industrial pesada: muro/cámara, brida fija, hoja circular gruesa de acero, bisagras laterales, junta elastomérica, bulones independientes, volante central y tornillería/marcas de mecanizado discretas. Se excluyen hologramas, neón, circuitos luminosos, partículas, adornos fantásticos, transiciones de tarjeta y fundido de puerta. Se declaran los límites de WPF: geometría 3D con iluminación especular controlada, no pipeline PBR/CAD ni sombras físicamente exactas.
+
+El diseño se persistió primero en la rama feat/ep-vault-clean-room-20261108: commit 1fe14c0afe729c768ed773bd8c6b1d123dbc40cb, blob 8259f40ddabb9689911c25d6f0f0220c5eacc7ae, read-back exacto. Después se implementó una escena Viewport3D/PerspectiveCamera con mallas de cilindros, toros y cajas; marco y brida fijos; hoja con espesor; junta; tres conjuntos de bisagra; doce bulones radiales independientes y volante de ocho radios con eje de giro propio. La apertura libera bulones, gira el volante, separa axialmente la junta y pivota la puerta sin fundirla. El cierre revoca la sesión y limpia las vistas sensibles antes del movimiento.
+
+PR #20 continúa abierta, draft, sin merge. Head verificado: 4741d4c1687ed228cb4b0e7100bf9eefc0afc1be. Por tanto, la implementación pertenece a la rama de entrega y al paquete local de PC-14, pero todavía no se declara integrada en main. PC-14 instaló la GUI nueva y XAML, con respaldos locales previos; la ventana nueva está abierta en sesión 1, PID 7216, responde, estado UI ABIERTA; CLI PID 20908 continúa vivo. El archivo formal de bóveda no se abrió ni se modificó: 448 bytes, SHA-256 097016819814DEA6D3A72A3F5B155FB46FB57924849F4E58F1ECB05B61DC790A antes y después del reinicio.
+
+Pruebas locales en Windows PowerShell 5.1.26100.9711: EP_VAULT_VALIDATION_PASS, exit code 0, 27,45 s. PASS para parser, carga XAML/contrato de nombres, geometría 3D, cámara/pivote, bulones/volante independientes, ausencia de fundido plano, clean-room scan, PBKDF2-SHA256, AES-256-CBC, HMAC-SHA256, contraseña incorrecta/tamper, ocho TTL, allowlist/Job Object, DPAPI notes sintéticas, CRUD, backup, expiración absoluta, redacción de logs y reutilización/revocación GUI–CLI interproceso. Una vista WPF sintética se probó en perfil temporal y se cerró; el perfil se eliminó. La prueba sintética no sustituye revisión visual/auditiva humana.
+
+### PC-14: estado BitLocker y workspace observado
+
+Identidad observada: PC-14\PC 13, SessionId 1, proceso elevado. C: permanece FullyDecrypted, 0 %, Protection Off; no se modificó.
+
+Workspace Desktop\SeryMente mantiene 11 directorios raíz. La inspección actual encontró 195 archivos y 2.877.377 bytes, todos bajo signal-interpreter; los otros diez directorios están vacíos. No se encontraron nombres de archivo típicos de secretos/credenciales; no se clasificó el contenido por lectura. Este árbol sigue intacto.
+
+Se creó un VHDX expandible de 100 GB en C:\Users\PC 13\AppData\Local\Khora\workspace\containers\SeryMente.vhdx; DiskPart informó GPT, partición NTFS etiquetada SeryMente y montaje temporal W: con código 0. El volumen W: sigue sin cifrar (FullyDecrypted/None/Protection Off), vacío, sin datos del workspace. La consola de manage-bde para añadir el protector de contraseña XTS-AES256 está abierta en la sesión interactiva 1 y espera que el operador introduzca localmente la misma contraseña maestra de 12 letras. No se recibe ni transmite por chat, argumentos, portapapeles o archivos.
+
+La bóveda formal local fue consultada únicamente por las funciones del Core: schema ep-env-vault/1, 448 bytes, sesión activa al momento de la consulta, cero variables y cero notas. La variable EP_WORKSPACE_BITLOCKER_RECOVERY_PASSWORD aún no existe; no se ha generado ni almacenado el protector de recuperación. No se declara `ProtectionStatus=On` ni 100 %.
+
+### Secuencia de seguridad pendiente
+
+1. El operador introduce directamente en la consola nativa de BitLocker la contraseña maestra ya verificada contra EP Vault; sin copiarla al chat.
+2. Se verifica por metadatos W: XtsAes256, ProtectionStatus On, FullyEncrypted y EncryptionPercentage 100.
+3. Se genera el protector RecoveryPassword; se persiste localmente como EP_WORKSPACE_BITLOCKER_RECOVERY_PASSWORD dentro de EP Vault y se valida read-back en memoria, sin mostrar ni registrar el valor.
+4. Solo entonces se copian los 195 archivos/11 directorios al volumen montado en staging; se comparan rutas, tamaños y SHA-256.
+5. Se sustituye Desktop\SeryMente por el punto de montaje del volumen y se ejecuta una segunda comparación SHA-256; solo tras PASS se retira la copia temporal en claro.
+6. Se mantiene el diseño de volatilidad LOC-OTHER pendiente de implementación; no se afirma que exista watchdog, heartbeat, tarea programada ni dead-man funcional.
+
+### Estado de hitos y backlog
+
+| Hito | Estado verificado al 2026-11-09 |
+|---|---|
+| EP-TASK-001 | pendiente; sin ejecución nueva |
+| EP-TASK-002 | en_curso; sin credenciales ni operaciones B2 nuevas en este ciclo |
+| EP-TASK-003 | en_curso; VHDX vacío creado, BitLocker pendiente de contraseña local y recuperación |
+| EP-TASK-004 H3 | Diseño hiperrealista v2 persistido; geometría 3D implementada en branch/PC-14; aceptación visual humana pendiente |
+| EP-TASK-004 H4 | GUI nueva activa en PC-14; pruebas sintéticas PASS; E2E visual/auditivo/DPI/teclado pendientes |
+| EP-TASK-004 H5/H6 | sesión compartida y CLI interproceso sintéticas PASS; matriz E2E real pendiente |
+| EP-TASK-004 H7/H8 | pruebas criptográficas/sesión/regresión sintéticas PASS; auditoría host/ACL/DPAPI/matriz completa pendiente |
+| EP-TASK-004 H9 | documentación en main y código en PR; PR #20 no fusionada |
+| EP-TASK-004 H10 | PENDIENTE |
+
+EP-TASK-002 no autentica Backblaze, no consulta bucket ni hace upload/download/restore. No se recuperaron KHORA_B2_KEY_ID ni KHORA_B2_APPLICATION_KEY. El archivo formal permanece intacto. La bóveda y el workspace siguen siendo compuertas separadas.
+
+**Versión:** OEP v0.3.45. Este bloque registra avances y límites; no cierra el frente EP, no declara aceptación de producción ni altera DUG/GOW.
