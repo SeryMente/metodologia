@@ -119,14 +119,13 @@ No son insumos por ahora: contraseña, token, SID, RecoveryPassword, B2, OAuth J
 
 1. GOW:ARR y DUG se recuperan desde fuentes importadas, con identidad/procedencia/hash verificados.
 2. Los 43 SINK:Pxxx devuelven exactamente su texto desarrollado y hash; sin sustitución por memoria ni MDP.
-3. El panel se abre solo con EP ACTIVE; diferencia proceso, initialize, fuentes, operador, root y readiness; muestra actividad/eventos saneados y se cierra con EP.
 3. Batch conserva orden, resultados y evento de frecuencia individual por recuperación exitosa.
 4. Manifiesto canónico coincide con el contenido exacto y su SHA-256.
 5. Matriz semántica GOV-TASK-001 y suite MCP cubren positivos, negativos, obsolescencia, desconexión y corrupción.
 6. Round-trip real ChatGPT/RDC/stdio probado; latencia solo se acepta con ambos extremos observables.
 7. DB, backups y runtime en almacenamiento protegido; provisión local verificada.
 8. E2E Gobernanza PASS con evidencia y read-back.
-9. El panel abre al entrar EP ACTIVE, informa caída/desconexión, no expone payloads y cierra sin proceso huérfano.
+9. El panel abre al entrar EP ACTIVE, diferencia proceso/protocolo/fuentes/readiness, informa caída/desconexión, no expone payloads y cierra sin proceso huérfano.
 10. IPZ/FOL1 conserva su gate independiente; no bloquea el release MCP-OCP.
 11. MCP-NORMATIVO desactivado; sin endpoints públicos ni secretos en repo/logs/salida.
 
