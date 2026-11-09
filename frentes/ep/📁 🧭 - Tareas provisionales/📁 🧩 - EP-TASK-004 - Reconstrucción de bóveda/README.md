@@ -482,3 +482,44 @@ La exportación [ChatGPT-EP (1)-20261109-1031.md](https://github.com/SeryMente/m
 **Bóveda:** no inicializada ni aceptada. `KHORA_B2_KEY_ID` y `KHORA_B2_APPLICATION_KEY` no están verificadas ni almacenadas en la bóveda canónica. No se recuperaron ni transfirieron secretos. El workspace provisional en claro de PC-14 excluye bóveda, protectores, secretos y notas efímeras de Custodia.
 
 EP-TASK-004 permanece `en_curso`; H10 sigue pendiente. La bóveda aceptada sigue siendo dependencia para almacenar secretos y para el cifrado definitivo VHDX/BitLocker del workspace.
+
+---
+
+## Actualización de diseño e implementación hiperrealista · 2026-11-09
+
+**Instrucción del operador:** diseño hiperrealista antes de implementar; simulación inmersiva de una bóveda industrial real, sin elementos de fantasía ni estética sci-fi. No se solicitaron imágenes generadas. Se autorizó continuar con el trabajo técnico.
+
+### Diseño congelado antes del código
+
+UI-PULIDO-METAL-REALISTA.md en la rama feat/ep-vault-clean-room-20261108 recibió el bloque Diseño visual hiperrealista v2 — congelación previa a implementación. Incluye composición, jerarquía del panel, muro/cámara, brida fija, hoja circular gruesa, junta, tres bisagras laterales, doce bulones radiales, volante de ocho radios, superficies de acero fundido/mecanizado, paleta de carbón/acero, abrasión discreta, iluminación, cámara, apertura/cierre y accesibilidad. La especificación reconoce las limitaciones de WPF: geometría 3D y reflejos controlados, sin afirmar pipeline PBR/CAD ni sombras físicamente exactas.
+
+- Commit del diseño en branch: 1fe14c0afe729c768ed773bd8c6b1d123dbc40cb.
+- Blob: 8259f40ddabb9689911c25d6f0f0220c5eacc7ae.
+- Read-back exacto.
+
+### Implementación as-built en la rama y PC-14
+
+- Viewport3D y PerspectiveCamera reemplazan la puerta Canvas vectorial principal.
+- Mallas geométricas reales mediante cilindros, toros y cajas trianguladas.
+- Marco y brida fijos; hoja de acero con espesor/canto; junta perimetral; barriles y placas de bisagra; tornillería de anclaje; doce bulones con transformaciones individuales; volante de ocho radios con eje y rotación propia.
+- Apertura con liberación de bulones, giro del volante, desplazamiento axial pequeño para liberar la junta y pivote lateral de la hoja; no se desvanece como una tarjeta. Cierre revierte mecanismo con revocación de sesión y limpieza de vistas antes del movimiento.
+- La implementación se conserva en feat/ep-vault-clean-room-20261108 (PR #20, aún draft/no fusionada). Head verificado: 4741d4c1687ed228cb4b0e7100bf9eefc0afc1be.
+- Los archivos GUI/XAML/tests se materializaron en PC-14 con respaldos locales previos. La GUI fue reiniciada de forma controlada en la sesión interactiva 1: PID 7216, ventana EP Vault, Responding=true; el CLI PID 20908 permaneció vivo. UI Automation observó el estado ABIERTA y TTL activo.
+- SHA del archivo de bóveda formal antes y después del reinicio: 097016819814DEA6D3A72A3F5B155FB46FB57924849F4E58F1ECB05B61DC790A, 448 bytes. No fue modificado ni inspeccionado por contenido.
+
+### Pruebas
+
+Windows PowerShell 5.1.26100.9711, paquete instalado PC-14, resultado EP_VAULT_VALIDATION_PASS, exit code 0, 27,45 s. PASS para parser, contrato XAML/nombres, geometría 3D, cámara/pivote, bulones/volante independientes, ausencia de fundido plano, clean-room scan, PBKDF2-SHA256, AES-256-CBC, HMAC-SHA256, contraseña incorrecta/tamper, ocho TTL, allowlist/Job Object, notas DPAPI sintéticas, CRUD, backup, expiración absoluta, redacción de logs y reutilización/revocación GUI–CLI entre procesos.
+
+La prueba WPF sintética se ejecutó con perfil LOCALAPPDATA temporal separado; la ventana respondió y luego fue cerrada. El perfil temporal se eliminó. No se utilizó el almacén formal para los fixtures.
+
+### Límites y aceptación
+
+- La geometría 3D está implementada y la suite pasa; no se ha afirmado aceptación visual humana hiperrealista, ni render E2E revisado por el operador. H3/H4/H10 siguen abiertos hasta la revisión visual/auditiva y pruebas de DPI, teclado y movimiento reducido.
+- PR #20 no está fusionada; no considerar el código integrado en main.
+- La CLI está operativa en PC-14, proceso 20908.
+- La bóveda formal continúa con cero variables y cero notas. No se han restaurado KHORA_B2_KEY_ID ni KHORA_B2_APPLICATION_KEY.
+- La aceptación de Vault y el cifrado VHDX son compuertas separadas.
+- La actualización de esta GUI no tocó el archivo formal ni BitLocker; solo el siguiente flujo de workspace afectará el nuevo VHDX vacío.
+
+**Resultado:** progreso técnico sustantivo verificado; EP-TASK-004 permanece en_curso, H10 PENDIENTE.
