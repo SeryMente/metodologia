@@ -554,3 +554,32 @@ EP Vault es una herramienta local de Metodología, **no una extensión Chrome**.
 - La instalación de código no equivale a inicialización de la bóveda ni a aceptación de H10.
 
 **Estado de este asiento:** destino normativo fijado; instalación PC 7 y validación E2E quedan registradas para ejecución inmediata.
+
+---
+
+## EP Vault — materialización endurecida para PC 7
+
+**Origen de código candidato:** rama `feat/ep-vault-pc7-hardened-20261109`; todavía no fusionada en `main`. La carpeta de tarea es el destino de código y recursos no secretos. El archivo formal permanece fuera del workspace en `%LOCALAPPDATA%\Khora\secrets\ep-env-vault.enc.json`.
+
+### Modelo de seguridad y cambios de este paquete
+
+- Nuevas bóvedas: PBKDF2-HMAC-SHA256 con 600.000 iteraciones; los sobres existentes de 200.000 se autentican con su parámetro almacenado y se migran a 600.000 durante el siguiente desbloqueo correcto, con escritura atómica y read-back.
+- AES-256-CBC con HMAC-SHA256 encrypt-then-MAC. La autenticación HMAC precede al descifrado.
+- ACL privada para el usuario Windows efectivo y LocalSystem; rutas de bóveda, notas y directorios rechazan reparse points.
+- GUI y CLI usan el mismo núcleo y sesión compartida DPAPI CurrentUser; TTL absoluto de 15 a 900 segundos, 300 por defecto. El bloqueo revoca el archivo de sesión compartida.
+- Notas efímeras DPAPI CurrentUser, TTL 1–240 minutos (30 por defecto); lectura, listado, captura y eliminación exigen sesión abierta también en el núcleo. La lectura literal exige `-Reveal`; promoción a variable formal es deliberada.
+- Portapapeles: primero leer → persistir → verificar → intentar borrar únicamente si el texto no cambió. El contenido copiado concurrentemente no se borra.
+- Integración headless para modelos: preferir ejecución con allowlist explícita mediante Job Object; no revelar valores a stdout como método de integración.
+
+### Instalación y acceso
+
+- Ejecutar `Install-EPVault-PC7.ps1` desde PowerShell 5.1 para validar parser, XAML, pruebas sintéticas aisladas y crear/verificar accesos directos GUI/CLI en el Escritorio.
+- `EPVault-GUI.cmd`: abre la GUI en STA.
+- `EPVault-CLI.cmd -Action Status`: consulta estado sin inicializar.
+- `EPVault-CLI.cmd -Action Initialize`: primera creación; pide contraseña maestra dos veces localmente. No introducirla en el chat ni en argumentos.
+- `EPVault-CLI.cmd -Action SelfTest`: autopruebas del núcleo/proceso administrado.
+- `EPVault-CLI.cmd -Action ListNotes` / `CaptureNote -NoteTtlMinutes 30`: sesión local requerida; capturar texto pegándolo previamente al portapapeles.
+- `EPVault-CLI.cmd -Action Run -ExecutablePath <ruta-absoluta> -Names NOMBRE1,NOMBRE2`: entrega solo los secretos expresamente permitidos al proceso hijo.
+- No usar `RevealVariable` o `ReadNote -Reveal` desde un flujo de agente salvo que el valor tenga que entrar literalmente en el contexto del modelo y el operador lo haya autorizado.
+
+**Límite explícito:** el instalador no inicializa ni modifica una bóveda formal. La instalación de software queda lista, pero la primera creación necesita que el operador elija e introduzca localmente la contraseña maestra. La GUI todavía requiere aceptación visual/auditiva presencial (H10); el código no se fusiona por el mero hecho de abrir.
