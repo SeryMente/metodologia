@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "version": "v0.3.54",
+  "date": "2026-11-09",
+  "source_operator_instruction": "Instrucción explícita en la conversación: canonizar el arreglo de persistencia local para EP, a nivel de anexo del DUG y del frente EP.",
+  "source_identity": "El ID nativo de conversación no está expuesto en esta sesión.",
+  "authority": "DUG v386 / NX-386m, ART-030; OEP v0.3.54 §119.",
+  "decisions": {
+    "workspace_root": "SeryMente/",
+    "repository_layout": "Repositorios/<Frente>/<repositorio>/; un checkout local por repositorio remoto; repositorios multi-frente se alojan bajo el frente propietario/principal y se referencian sin duplicar.",
+    "chrome_extension_layout": "Si el repo es extensión, extension/ contiene el paquete y manifest.json está en su raíz; no crear extension/ en proyectos que no son extensiones.",
+    "legacy_signal_interpreter": "Excepción documentada: manifest.json en la raíz del repo, con referencias a recursos extension/; cargar raíz según README vigente hasta migración coordinada y aceptada.",
+    "operational_data": "Datos/<Frente>/<Proyecto>/, fuera de Git, con clasificación, esquema, retención, cifrado, backup/restore definidos por proyecto.",
+    "temporary_data": "Temporal/Sesiones, Staging, Cache y Logs saneados con TTL/limpieza.",
+    "secrets": "Fuera de Repositorios, Datos y Temporal; EP Vault bajo perfil del usuario, ruta verificada contra implementación.",
+    "physical_protection": "Se conservan VHDX/BitLocker/dead-man requirements por LOC-OTHER; el árbol lógico no demuestra conformidad."
+  },
+  "changes": {
+    "gobernanza/METAPROMPT-CANONICO-SAMANTHA.html": "DUG v386 / NX-386m; nuevo ART-030 nivel 2 hijo de ART-015.",
+    "frentes/ep/OEP.md": "v0.3.54 §119; supersede ubicación plana y nombre Extensión de §§108.2–108.3 para la organización lógica.",
+    "frentes/ep/README.md": "Índice del frente actualizado a OEP v0.3.54.",
+    "frentes/ep/📁 🧭 - Tareas provisionales/📁 🧩 - EP-TASK-003 - Mapa integral de construcción EP/README.md": "Actualización de continuidad y regla de materialización por frente en PC 7.",
+    "frentes/ep/📁 🧭 - Tareas provisionales/📁 🧩 - EP-TASK-004 - Reconstrucción de bóveda/README.md": "Destino de código y contrato de instalación de EP Vault en PC 7."
+  },
+  "verification": {
+    "normative_readback": "PENDING_UNTIL_MAIN_COMMIT",
+    "workspace_structure_observed_on_pc7": "PREVIOUSLY_VERIFIED; not reobserved in this revision cycle",
+    "bitlocker_vhdx_deadman": "NOT_VERIFIED",
+    "data_backup_restore": "NOT_VERIFIED",
+    "vault_installation": "PENDING"
+  },
+  "status": "DECISION_DOCUMENTED; canonical only after commit to main and exact read-back."
+}

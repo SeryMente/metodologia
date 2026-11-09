@@ -226,3 +226,43 @@ Estado que prevalece:
 ### Gate actualizado para LOC-OTHER / PC 7
 
 No se inicia una instalación persistente hasta completar y leer de vuelta: (1) vínculo RDC↔PC 7 y usuario/SID efectivos; (2) almacenamiento XTS-AES256, Protection On, FullyEncrypted/100 % y custodia recuperable; (3) migración/verificación del workspace si aplica; (4) dead-man implementado y probado en el perfil real; (5) runtime/DB/respaldos dentro del perímetro cifrado. La designación documental no equivale a preflight, permiso técnico, ejecución ni aceptación.
+
+
+---
+
+## Organización canónica del workspace — PC 7 · 2026-11-09
+
+**Fuente de autoridad:** DUG v386 / NX-386m, ART-030; OEP v0.3.54 §119. Esta decisión sustituye el árbol plano de repositorios directamente bajo `SeryMente/` registrado históricamente en §108.2–§108.3.
+
+### Árbol vigente
+
+```text
+SeryMente/
+├── Repositorios/
+│   ├── Signal Interpreter/
+│   │   └── signal-interpreter/
+│   ├── Gestor de Procesos/
+│   ├── Khora/
+│   └── Metodologia/
+│       └── metodologia/
+├── Datos/
+│   ├── Signal Interpreter/
+│   ├── Gestor de Procesos/
+│   ├── Khora/
+│   └── Metodologia/
+└── Temporal/
+    └── Sesiones/
+```
+
+La ruta local observada ya fue reestructurada con esos directorios. La carpeta Signal Interpreter y la materialización local de metodologia se reubicaron sin borrar sus contenidos. La materialización metodologia sigue siendo parcial y no debe presentarse como clon íntegro ni sincronizado. Los otros frentes tienen carpetas de agrupación; no se afirma que sus repositorios estén clonados.
+
+### Reglas de trabajo
+
+- Un checkout por repositorio remoto, dentro de la carpeta del frente propietario/principal: `Repositorios/<Frente>/<repo>/`.
+- Si el repo es extensión Chrome, el estándar nuevo requiere `extension/manifest.json` como raíz cargable, sin imponer esa carpeta en proyectos no-extension.
+- Signal Interpreter es excepción heredada: su manifiesto sigue en la raíz del repo y sus rutas apuntan a `extension/`; no cambiarlo sin migración completa y pruebas.
+- Código y documentos técnicos dentro de repositorios; datos operativos bajo `Datos/<Frente>/<Proyecto>/`; caché, staging, logs saneados y sesiones bajo `Temporal/`; secretos y almacén formal de Vault fuera del workspace.
+- La persistencia de datos no se habilita por crear el directorio. Cada proyecto requiere política de clasificación, retención, cifrado, respaldo y restauración.
+- PC 7 está clasificado LOC-OTHER. VHDX+BitLocker XTS-AES256/Protection On/100 % y dead-man EP siguen siendo compuertas independientes. La estructura lógica observada no demuestra el perímetro cifrado ni recuperación.
+
+**Estado:** organización lógica MATERIALIZADA; protección física, respaldos y aceptación NO VERIFICADOS.

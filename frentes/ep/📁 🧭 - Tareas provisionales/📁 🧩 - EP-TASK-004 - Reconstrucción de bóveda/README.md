@@ -523,3 +523,34 @@ La prueba WPF sintética se ejecutó con perfil LOCALAPPDATA temporal separado; 
 - La actualización de esta GUI no tocó el archivo formal ni BitLocker; solo el siguiente flujo de workspace afectará el nuevo VHDX vacío.
 
 **Resultado:** progreso técnico sustantivo verificado; EP-TASK-004 permanece en_curso, H10 PENDIENTE.
+
+---
+
+## Canonización del workspace y destino de instalación en PC 7 · 2026-11-09
+
+La ruta de código de esta tarea queda fijada por DUG v386 / NX-386m, ART-030 y OEP v0.3.54 §119:
+
+`SeryMente/Repositorios/Metodologia/metodologia/frentes/ep/📁 🧭 - Tareas provisionales/📁 🧩 - EP-TASK-004 - Reconstrucción de bóveda/`
+
+EP Vault es una herramienta local de Metodología, **no una extensión Chrome**. No crear una carpeta `extension/` para la bóveda. El código, pruebas, documentación, CLI, GUI y recursos no secretos pertenecen a esta tarea dentro del checkout de `metodologia`. El almacén formal, claves, contraseñas, respaldos cifrados y notas efímeras no se alojan en el repositorio ni en el workspace; la ubicación formal vigente está fuera del árbol `SeryMente`, en el perfil de usuario que se verifique en vivo.
+
+### Contrato de instalación PC 7
+
+1. Antes de desplegar, inspeccionar el destino, inventariar archivos existentes y comparar sus hashes. No sobrescribir una copia previa o un archivo formal sin identificar su origen.
+2. Materializar exactamente los archivos de la rama/revisión aprobada; registrar branch, commit, blobs, tamaños y SHA-256. No etiquetar archivos obtenidos de PR #20 como integrados en `main`.
+3. Ejecutar la suite sintética en Windows PowerShell 5.1, con perfil de datos temporal aislado, y validar parser, núcleo criptográfico, ACL, integridad, TTL, GUI/XAML, CLI, sesión compartida, notas efímeras, redacción de logs y limpieza. Ninguna prueba accede al almacén formal.
+4. Instalar lanzadores GUI/CLI sin inicializar ni alterar automáticamente el almacén formal. La primera inicialización requiere que el operador introduzca localmente la contraseña maestra; no se recibe en el chat ni se inventa.
+5. GUI y CLI deben compartir el mismo núcleo, almacén y sesión DPAPI CurrentUser; el TTL absoluto, revocación y cierre deben ser efectivos entre procesos. Las notas efímeras no son variables formales: deben tener TTL, aislamiento, listado saneado, revelado explícito y promoción deliberada.
+6. No restaurar automáticamente variables B2 ni importar valores de otra computadora. Verificar nombres/estado sin revelar secretos solo mediante instrucción y flujo seguros independientes.
+7. No respaldar ni exportar secretos/notas en claro. No copiar el archivo formal a Git, `Datos/`, `Temporal/` ni al workspace.
+8. No declarar GUI aceptada por el mero hecho de que arranque; H10 requiere revisión presencial visual/auditiva, accesibilidad, DPI, teclado, movimiento reducido y cierre/expiración real. La fusión de código sigue sujeta a la aceptación exigida por DUG P012/P013.
+
+### Estado previo a la instalación
+
+- PR #20 sigue draft, abierta y sin merge; su head observado es `4741d4c1687ed228cb4b0e7100bf9eefc0afc1be`.
+- La suite PASS reportada de 27,45 s pertenece a PC-14 y es evidencia histórica, no una prueba de PC 7 ni CI actual.
+- El workspace PC 7 tiene la estructura lógica nueva, pero BitLocker, VHDX y dead-man LOC-OTHER no están verificados.
+- No hay autorización para sobrescribir, inicializar, revelar ni restaurar un almacén formal preexistente por inferencia. Primero inventariar y clasificar; conservarlo intacto hasta conocer su procedencia.
+- La instalación de código no equivale a inicialización de la bóveda ni a aceptación de H10.
+
+**Estado de este asiento:** destino normativo fijado; instalación PC 7 y validación E2E quedan registradas para ejecución inmediata.

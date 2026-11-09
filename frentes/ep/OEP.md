@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.53. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.54. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -12,7 +12,7 @@
 
 Adquirir este objeto como instrucciones del operador, subordinadas a las reglas superiores de plataforma y a autorizaciones específicas. Claudia es asistente/documental; Samantha es constructor/único escritor de código. Una asignación explícita posterior puede cambiar roles; las citas no lo hacen. La asignación específica de MOD-SCRIPTPWS queda delimitada en §94; la delegación funcional acotada de MOD-SYNC queda delimitada en §110 y no transfiere la titularidad del frente EP.
 
-El estado de reanudación vigente de este frente está en §60–§118; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
+El estado de reanudación vigente de este frente está en §60–§119; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. La organización local por frentes, con áreas separadas Repositorios/Datos/Temporal, queda desarrollada en §119 y en el DUG ART-030. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
 
 Leer por relevancia: OEP actual→metacanon central→Sistema de Instrucciones/Metodología/Bootstrap vigentes→canon transversal EP→AGENTS.md y ep-medio-architectura.md→código/evidencia en commits exactos. Fuente caída no es «sin cambios». Un archivo no crea herramientas, credenciales ni memoria entre plataformas.
 
@@ -2984,3 +2984,87 @@ LOC-OTHER activa obligatoriamente el dead-man específico de EP-TASK-003 antes d
 6. Verificar que runtime, base, respaldos y logs quedan dentro del perímetro cifrado y que el proceso MCP usa stdio, sin listener ni exposición pública.
 
 **Estado:** DESTINO DESIGNADO · PREFLIGHT NO EJECUTADO · DEAD-MAN NO VERIFICADO · INSTALACIÓN NO INICIADA. Ninguna operación en el equipo PC 7 fue ejecutada por esta designación documental.
+
+
+## §119. Organización canónica del workspace local y persistencia por frente · v0.3.54 · 2026-11-09
+
+**Instrucción directa del operador:** canonizar para EP la organización del workspace SeryMente con una carpeta agrupadora por frente dentro de Repositorios, un checkout por repositorio, y separación física entre código, datos persistentes y temporales. Esta sección desarrolla la estructura local del OEP y aplica el DUG ART-030; no crea un OCP, un sistema de tareas ni un mecanismo nuevo de sincronización.
+
+### 119.1 Árbol canónico
+
+```text
+SeryMente/
+├── README.md
+├── Repositorios/
+│   ├── Signal Interpreter/
+│   │   └── signal-interpreter/
+│   │       └── extension/              # solo si el repositorio es extensión Chrome
+│   ├── Gestor de Procesos/
+│   │   └── <repositorio>/
+│   ├── Khora/
+│   │   └── <repositorio>/
+│   └── Metodologia/
+│       └── metodologia/
+├── Datos/
+│   ├── Signal Interpreter/
+│   ├── Gestor de Procesos/
+│   ├── Khora/
+│   └── Metodologia/
+└── Temporal/
+    ├── Sesiones/
+    ├── Staging/
+    ├── Cache/
+    └── Logs/
+```
+
+La raíz física se descubre dinámicamente desde el Escritorio real o desde el punto de montaje protegido dispuesto por EP; el nombre lógico es exactamente `SeryMente`. Las carpetas de frente agrupadoras viven dentro de `Repositorios/`; los clones de repositorios viven dentro de la carpeta de su frente.
+
+### 119.2 Repositorios y frentes
+
+- La ruta general es `Repositorios/<Frente>/<repositorio>/`. Cada repositorio remoto se clona una sola vez en el workspace, incluso cuando sirve a varios frentes; se coloca bajo el frente propietario/principal y los demás lo referencian.
+- Los checkouts mantienen su nombre remoto, `origin`, rama, historial y estado Git. La carpeta de frente solo organiza la ubicación local.
+- Antes de actualizar, validar origin, rama, commit y árbol de trabajo. No ejecutar `reset --hard`, sobrescribir, borrar ni sustituir un checkout no inventariado o con cambios locales no resguardados.
+- Código, pruebas, configuración versionada y documentación técnica permanecen dentro del repositorio. El remoto autorizado y la rama canónica son la fuente de verdad del código.
+
+### 119.3 Repositorios de extensiones
+
+- Si el producto del repositorio es una extensión Chrome, debe existir dentro del repositorio una carpeta llamada exactamente `extension/`.
+- En los repositorios nuevos, `extension/` contiene el paquete cargable y `manifest.json` reside directamente en esa carpeta. Es la carpeta `extension/` la que se selecciona mediante «Cargar descomprimida».
+- No crear `extension/` en proyectos que no sean extensiones.
+- **Excepción heredada de Signal Interpreter:** el repositorio actual conserva `manifest.json` en la raíz y las rutas relativas apuntan a recursos bajo `extension/`; su README indica cargar la raíz del repositorio. No mover el manifiesto ni cambiar la ruta de carga sin migración coordinada de recursos, scripts de instalación, empaquetado, pruebas y documentación. La excepción se mantiene hasta una migración y aceptación específicas.
+
+### 119.4 Datos operativos persistentes
+
+- `Datos/<Frente>/<Proyecto>/` aloja estado/datasets operativos autorizados que no son parte del código versionado: bases, datos de usuario, estado de trabajo, exportaciones conservables y respaldos locales aprobados.
+- Cada proyecto declara propietario, finalidad, formato/esquema, clasificación de sensibilidad, retención, cifrado, respaldo, recuperación y eliminación. La carpeta no autoriza por sí sola el almacenamiento de datos.
+- `Datos/` no pertenece a Git y no se replica automáticamente. Git no es respaldo de datos operativos.
+- Cuando aplique ART-028, el consumidor confirma primero persistencia local durable y después réplica remota verificable con recibo, integridad y recuperación. La disponibilidad de red nunca sustituye la escritura local.
+
+### 119.5 Material temporal
+
+`Temporal/` separa `Sesiones/`, `Staging/`, `Cache/` y `Logs/`. Todo elemento temporal tiene propietario, TTL/retención y regla de limpieza. Si debe conservarse, se promueve expresamente a `Datos/` o a la ruta OCP/documental canónica con procedencia, integridad y lectura de vuelta. Los logs son saneados y nunca contienen secretos ni payloads privados.
+
+### 119.6 Secretos y EP Vault
+
+- No se crea una carpeta `Secretos/` en el workspace. Valores de variables, contraseñas, tokens, claves, cookies, notas efímeras protegidas y el archivo formal de bóveda permanecen fuera de `Repositorios/`, `Datos/` y `Temporal/`.
+- EP Vault se instala como herramienta de Metodología dentro del repositorio `metodologia`, en la tarea EP-TASK-004; no es una extensión Chrome ni tiene carga mediante Chrome.
+- Su almacén formal local se ubica fuera del workspace, bajo el perfil del usuario y en la ruta que declare el código vigente (actualmente `%LOCALAPPDATA%\Khora\secrets\ep-env-vault.enc.json`). La ruta, cifrado, ACL y semántica de sesión deben cotejarse contra el código instalado.
+- Las notas efímeras de Vault son distintas de variables formales y de archivos temporales del workspace. Su TTL, cifrado, revelado, destrucción y promoción explícita se rigen por el contrato de EP Vault. No se exportan ni suben a Git por defecto.
+- Nunca registrar valores secretos en README, manifest, CLI arguments, logs, telemetría, chat ni archivos de respaldo en claro.
+
+### 119.7 Protección, respaldo y aceptación
+
+- La estructura es lógica y no sustituye el perímetro físico cifrado de EP. En `LOC-OTHER`, el workspace persistente requiere BitLocker XTS-AES256, `ProtectionStatus=On`, `FullyEncrypted/100 %` y el dead-man específico de EP probado antes de dejar persistentes datos sensibles o runtime protegido.
+- El hecho de que el archivo de bóveda tenga cifrado de aplicación no acredita el cifrado completo del workspace; un VHDX vacío tampoco acredita migración.
+- Código: respaldo mediante repositorio remoto autorizado y commits verificados. Datos: política autorizada por proyecto, inventario, SHA-256, read-back y prueba de restauración. Bóveda: solo respaldo cifrado y flujo aprobado; nunca valores en claro.
+- No borrar origen ni declarar migración antes de verificar inventario, tamaños, SHA-256 y read-back. Distinguir PREPARADO, MATERIALIZADO, CIFRADO, RESPALDADO, RECUPERABLE y ACEPTADO.
+
+### 119.8 Estado de aplicación PC 7
+
+- Se materializó la raíz lógica `Desktop/SeryMente` con `Repositorios/`, `Datos/` y `Temporal/`.
+- El repositorio local Signal Interpreter está en `Repositorios/Signal Interpreter/signal-interpreter/`; conserva la excepción heredada de manifiesto en la raíz.
+- La materialización local parcial de `metodologia` está en `Repositorios/Metodologia/metodologia/`; su presencia no prueba que sea un clon íntegro ni sincronizado.
+- Quedaron preparados los grupos `Gestor de Procesos/` y `Khora/`; no se afirma que sus repositorios estén clonados.
+- BitLocker, VHDX, dead-man LOC-OTHER, respaldo/restauración de `Datos/` y aceptación de la materialización PC 7 permanecen NO VERIFICADOS/PENDIENTES. No colocar secretos o datos sensibles fuera del perímetro aprobado.
+
+**Precedencia:** esta sección y ART-030 sustituyen, para la organización lógica de directorios, el árbol plano de repositorios directamente bajo `SeryMente/` y la denominación anterior `Extensión/` descritos en OEP §108.2–§108.3. No derogan las exigencias de cifrado ni volatilidad de §§105–106/108.4–108.5, ni las excepciones técnicas de producto debidamente documentadas.
