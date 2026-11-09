@@ -3,13 +3,13 @@
 **Estado:** materialización operativa provisional; no constituye el ámbito funcional Tareas ni lo canoniza.  
 **Contenedor:** `frentes/gobernanza/📁 🧭 - Tareas provisionales/`  
 **OCP padre y fuente de responsabilidad:** `frentes/gobernanza/`  
-**Control heredado:** [CONTROL-RESPONSABILIDAD.json](../CONTROL-RESPONSABILIDAD.json), control común generación 13; titular `SES-20261101-GVCD93ADD7` (gen13, Gobernanza 1) y corresponsable asiento 2 `SES-20261101-GV8E89D1FF` (gen12). Máximo dos responsables activos; titularidad transferida y control final leído de vuelta en C-GOBERNANZA-RETOMA-09 (blob `960fefdca26c841c3a2d06ebb57a2e836b6f8d73`).
+**Control heredado:** [CONTROL-RESPONSABILIDAD.json](../CONTROL-RESPONSABILIDAD.json), control común generación 17; titular `SES-20261108-506DCF0C` y corresponsable `SES-20261101-GV8E89D1FF` (gen12). Máximo dos responsables activos; blob verificado `18c2d7fa57609465dced61884cec6685bf74f68d.
 **Evento de creación:** C-GOBERNANZA-MDP-OCP-01 · 2026-10-30.  
-**Fuente normativa vigente:** [DUG Samantha v377 · NX-377m](../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html); Metacanon 1.28, GOW 2.17, 43 principios y 22 anexos (blob leído de vuelta `54064c8fe00f872023a455f06596061ed69062ae`). El snapshot v373 de registros históricos se conserva como antecedente. La arquitectura MDP se originó en v371 y se leyó de vuelta en v373.
+**Fuente normativa vigente:** [DUG Samantha v384 · NX-384m](../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html); Metacanon 1.29, GOW 2.18, 43 principios y 22 anexos; blob `2f320e5e6e4768e9a77bc34d24b0639b47f2128d`. Los snapshots anteriores son antecedentes, no el estado vigente.
 
 ## Naturaleza y límites
 
-Este contenedor agrupa catorce objetos provisionales de persistencia de tarea, cada uno con su directorio y núcleo propio: diez en curso, tres pendientes y uno cancelado. No son frentes independientes ni unidades de una taxonomía ya aprobada. La responsabilidad, sesión y autorización se heredan del OCP padre; no se crean controles, sesiones ni folios independientes para cada tarea.
+Este contenedor agrupa quince objetos provisionales de persistencia de tarea, cada uno con su directorio y núcleo propio: once en curso, tres pendientes y uno cancelado. No son frentes independientes ni unidades de una taxonomía ya aprobada. La responsabilidad, sesión y autorización se heredan del OCP padre; no se crean controles, sesiones ni folios independientes para cada tarea.
 
 El núcleo de cada objeto conserva identificador local, enunciado, referencia recuperable al origen y estado. El patrón se inspira en el diseño mínimo de Tareas v0.2, pero no declara ratificado ese estándar ni adopta como vigente el candidato v1.0. Cada ID `GOV-TASK-###` es estable dentro de este registro; no se afirma unicidad global.
 
@@ -32,10 +32,10 @@ El núcleo de cada objeto conserva identificador local, enunciado, referencia re
 | GOV-TASK-011 | en_curso | DTC — Dinámica Trilateral por Ciclo | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-011%20-%20Coordinación%20bilateral%20recurrente/README.md) |
 | GOV-TASK-012 | en_curso | Revisión integral de fluidez y desempeño del marco de Gobernanza | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-012%20-%20Fluidez%20y%20desempe%C3%B1o%20del%20marco/README.md) |
 | GOV-TASK-013 | en_curso | Medición objetiva y optimización del tiempo de procesamiento de ciclos | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-013%20-%20Medici%C3%B3n%20y%20optimizaci%C3%B3n%20de%20ciclos/README.md) |
-| GOV-TASK-014 | en_curso | Integración y aceptación de persistencia Backblaze para Metodología y OCP | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-014%20-%20Persistencia%20Backblaze%20de%20Metodolog%C3%ADa%20y%20OCP/README.md) |
+| GOV-TASK-014 | en_curso | Integración y aceptación de persistencia Backblaze para Metodología y OCP | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-014%20-%20Persistencia%20Backblaze%20de%20Metodolog%C3%ADa%20y%20OCP/README.md) |\n| GOV-TASK-015 | en_curso | Plan integrado y aceptación del sprint Sink local vía RDC | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-015%20-%20Sprint%20Sink%20local%20v%C3%ADa%20RDC/README.md) |
 
 
-## Checklist ejecutivo del sprint · corte vigente · 2026-11-01, 20:32:23 America/Mexico_City
+## Snapshot histórico supersedido · checklist ejecutivo del sprint · 2026-11-01, 20:32:23 America/Mexico_City
 
 **Estado general:** `EN_CURSO · NO_ACEPTADO`. El criterio rector es entregar la primera versión funcional de Gobernanza integrada con IPZ y OCP MCP, con la persistencia operativa incorporada como dependencia de continuidad. No se calcula porcentaje: no existen ponderaciones aprobadas.
 
@@ -330,3 +330,29 @@ La ruta aprobada para la consulta normativa es local, mediante RDC hacia MCP-OCP
 **Fuera de este corte:** GOV-TASK-002 sigue cancelada (no Cloudflare); GOV-TASK-004/005/006 y GOV-TASK-009/010 no se convierten en dependencias de construcción. GOV-TASK-009 solo valida §ARR cuando el mecanismo esté disponible; GOV-TASK-010 conserva la compuerta de admisión del IPZ. Backblaze/EP-TASK-002, backup portable MCP-OCP-09 y Jules no son requisitos de Sink MVP.
 
 **Gates ajenos:** MCP-OCP debe recibir autorización expresa de su titular para ampliar el control actual a Sink local. EP conserva el control de host/perfil e instalación. La aprobación de Gobernanza no los suplanta ni autoriza instalación, credenciales o cambios en esos frentes. No alterar `MCP-NORMATIVO=DESACTIVADO` ni generar folios globales mientras FOL1 no esté activo.
+
+
+## Sprint vigente · Sink local vía RDC · planificación integrada · 2026-11-09
+
+**Estado:** `PLANIFICADO_CON_BLOQUEOS_DE_AUTORIZACIÓN_Y_HOST`; implementación no iniciada.  
+**Coordinación:** [GOV-TASK-015 · plan integrado](./📁%20🧩%20-%20GOV-TASK-015%20-%20Sprint%20Sink%20local%20vía%20RDC/README.md).  
+**DUG:** Samantha v384 · NX-384m · blob `2f320e5e6e4768e9a77bc34d24b0639b47f2128d`.
+
+### Tareas activas del sprint por frente
+
+- **Gobernanza:** GOV-TASK-015, 008, 001, 009, 010, 007, 003, 013 y 011. Las tareas 007/008/003/009/010 tienen ya contrato armonizado; 003 y 007 siguen pendientes de ejecución/aceptación real.
+- **MCP-OCP:** MCP-OCP-02/05/03/04/10/07/12/08. El subhito Sink local se integra en MCP-OCP-05 tras autorización expresa del titular; no se crea ID separado por anticipado. Reconciliar primero tabla/fichas y pins históricos.
+- **EP:** EP-TASK-003 como gate de workspace/custodia; EP Vault solo para la operación mínima de custodia del RecoveryPassword; handoff/instalación local debe quedar como subhito formal o tarea propia del OEP. El titular EP debe resolverlo en su registro.
+
+### Secuencia y bloqueos
+
+1. Decisión del operador: host/perfil de ejecución confiable; PC-14 permanece clasificado `LOC-OTHER`, y su protector RecoveryPassword está `POTENTIALLY_EXPOSED` según OEP §114.
+2. MCP-OCP: autorización del titular para ampliar el control a Sink local por stdio en su propio directorio; reconciliación MCP-OCP-02.
+3. EP: rotar RecoveryPassword sin exponerlo, almacenarlo y leerlo de vuelta en EP Vault; terminar migración protegida del workspace si el host elegido es EP/PC-14.
+4. MCP-OCP: implementar y probar; emitir build/manifest actuales.
+5. EP: instalar y verificar bootstrap/handoff.
+6. Gobernanza: E2E, IPZ nativa y read-back; FOL1 queda en gate separado.
+
+**Fuera de alcance:** Backblaze, Jules, Cloudflare, MOD-SYNC HTTP, restore cross-host y activación MCP-NORMATIVO.
+
+**Conteo actualizado:** 15 tareas: 11 en curso, 3 pendientes, 1 cancelada. La aceptación global sigue pendiente.
