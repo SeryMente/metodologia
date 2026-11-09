@@ -38,7 +38,7 @@ Write-Output 'PASS_POWERSHELL_PARSER'
 
 Add-Type -AssemblyName PresentationFramework, PresentationCore, WindowsBase, System.Security
 [xml]$xaml = Get-Content -LiteralPath $xamlPath -Raw -Encoding UTF8
-Assert-EpTest -Condition (-not ($xaml.OuterXml -match '<Image\b|BitmapImage|pack://')) -Failure 'XAML_MUST_BE_VECTOR_ONLY_NO_EXTERNAL_IMAGES'
+Assert-EpTest -Condition ($xaml.OuterXml -match '<Viewport3D\b') -Failure 'XAML_REQUIRES_REAL_3D_VIEWPORT'
 $reader = [System.Xml.XmlNodeReader]::new($xaml)
 try {
     $window = [System.Windows.Markup.XamlReader]::Load($reader)
@@ -47,7 +47,7 @@ finally {
     $reader.Close()
 }
 $requiredNames = @(
-    'HeaderState','VaultCanvas','ClosedStage','OpenStage','UnlockButton','LockButton',
+    'HeaderState','VaultCanvas','VaultViewport','ClosedStage','OpenStage','UnlockButton','LockButton',
     'MasterPasswordBox','ConfirmPasswordBox','SessionDuration','VariableList',
     'StoreVariableButton','RevealVariableButton','RemoveVariableButton','NoteList',
     'CaptureNoteButton','ReadNoteButton','PromoteNoteButton','DeleteNoteButton',
@@ -59,9 +59,13 @@ foreach ($name in $requiredNames) {
 $guiContent = [IO.File]::ReadAllText($guiPath)
 Assert-EpTest -Condition ($guiContent -match 'SoundToggle\.IsChecked') -Failure 'UI_SOUND_MUTE_TOGGLE_WIRING'
 Assert-EpTest -Condition ($guiContent -match 'Set-EpVaultNativeDarkTitleBar') -Failure 'UI_NATIVE_DARK_TITLE_BAR_WIRING'
-Assert-EpTest -Condition ($guiContent -match 'scuffRandom') -Failure 'UI_RUSTIC_SURFACE_TEXTURE'
-Assert-EpTest -Condition ($guiContent -match 'FromMilliseconds\(5850\)') -Failure 'UI_SLOW_OPENING_TIMELINE'
-Assert-EpTest -Condition ($guiContent -match 'FromMilliseconds\(2850\)') -Failure 'UI_SLOW_CLOSING_TIMELINE'
+Assert-EpTest -Condition ($guiContent -match 'function New-Ep3DCylinder' -and $guiContent -match 'function New-Ep3DTorus' -and $guiContent -match 'function New-Ep3DBox') -Failure 'UI_REAL_3D_GEOMETRY_PRIMITIVES'
+Assert-EpTest -Condition ($guiContent -match 'PerspectiveCamera' -and $guiContent -match 'AxisAngleRotation3D' -and $guiContent -match 'DoorRotation') -Failure 'UI_3D_PERSPECTIVE_AND_MECHANICAL_HINGE'
+Assert-EpTest -Condition ($guiContent -match 'WheelRotation' -and $guiContent -match 'Bolts=\$bolts') -Failure 'UI_3D_WHEEL_AND_INDEPENDENT_BOLTS'
+Assert-EpTest -Condition ($guiContent -notmatch '\$canvas\.BeginAnimation\(\[System\.Windows\.UIElement\]::OpacityProperty') -Failure 'UI_DOOR_MUST_NOT_FADE_AS_A_FLAT_CARD'
+Assert-EpTest -Condition ($guiContent -match 'OffsetZProperty' -and $guiContent -match 'DoorTranslate') -Failure 'UI_GASKET_RELEASE_BEFORE_HINGE'
+Assert-EpTest -Condition ($guiContent -match 'FromMilliseconds\(6500\)') -Failure 'UI_SLOW_OPENING_TIMELINE'
+Assert-EpTest -Condition ($guiContent -match 'FromMilliseconds\(3900\)') -Failure 'UI_SLOW_CLOSING_TIMELINE'
 $audioRoot = Join-Path $taskRoot 'assets\audio'
 foreach ($audioName in @('Vault-Open-Creak.wav','Vault-Close-Latch.wav')) {
     $audioPath = Join-Path $audioRoot $audioName
@@ -72,7 +76,7 @@ foreach ($audioName in @('Vault-Open-Creak.wav','Vault-Close-Latch.wav')) {
         [Text.Encoding]::ASCII.GetString($audioBytes,8,4) -ceq 'WAVE'
     Assert-EpTest -Condition $validWave -Failure ('UI_AUDIO_WAVE_INVALID: ' + $audioName)
 }
-Write-Output 'PASS_UI_RUSTIC_AUDIO_MUTE_HINGE_AND_TIMELINE_CONTRACT'
+Write-Output 'PASS_UI_HYPERREALISTIC_3D_STEEL_VAULT_MECHANICAL_CONTRACT'
 Write-Output 'PASS_WPF_XAML_PARSE_AND_NAME_CONTRACT'
 
 $legacyReferences = @(Select-String -Path @($guiPath,$xamlPath) -Pattern 'EP-EnvVault-GUI|EP-EnvVault\.ps1|legacy.*xaml|legacy.*resource' -SimpleMatch:$false)
