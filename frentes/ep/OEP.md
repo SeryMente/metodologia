@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.51. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.52. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -2952,3 +2952,8 @@ La designación de operador de este ciclo establece que las terminales y sesione
 ## 116. Aplicación de P037 a los controles EP · 2026-11-09
 
 Los campos de generación y sesión del control EP se conservan como auditoría e historia registral, no como compuertas de admisión ni de ejecución. La instrucción directa del operador determina la actuación dentro del alcance indicado; una limitación solo puede derivarse de una restricción material, de seguridad, del permiso técnico efectivo o del alcance concreto. No se exige conformidad de un titular anterior ni incremento de generación para ejecutar una instrucción vigente.
+
+
+## 117. Plan de instalación y aceptación de MCP-OCP local · 2026-11-09
+
+Se materializó [EP-TASK-005 — Instalación y aceptación de MCP-OCP local por stdio](./📁%20🧭%20-%20Tareas%20provisionales/📁%20🧩%20-%20EP-TASK-005%20-%20Instalación%20y%20aceptación%20de%20MCP-OCP%20local/README.md) como tarea provisional del frente EP, sin control ni titularidad independiente. Desarrolla únicamente el handoff que corresponde a EP: preflight del equipo/perfil designado en vivo, ubicación de runtime/DB/respaldos dentro de almacenamiento protegido, bootstrap local interactivo, verificación del canal MCP stdio/RDC y aceptación. Depende de EP-TASK-003 para workspace cifrado y, si la ubicación es LOC-OTHER, para el dead-man específico. No se ejecutó instalación, no se modificó BitLocker, ACL, Registro ni host, y no se inició provision-operator. La selección del destino y las acciones interactivas del operador permanecen pendientes.
