@@ -1,4 +1,4 @@
-<!-- LIST_VERSION=0.3; LIST_STATUS=PROVISIONAL; NOT_A_CANONICAL_OBJECT=true -->
+<!-- LIST_VERSION=0.4; LIST_STATUS=PROVISIONAL; NOT_A_CANONICAL_OBJECT=true -->
 # Lista provisional de tareas · MCP-OCP
 
 > **ESTADO: PROVISIONAL · NO ES UN OCP NI UN CONTROL ADICIONAL.** Esta lista es una vista auxiliar enlazada desde el único núcleo MCP-OCP. El estado vivo y las decisiones de alcance permanecen en `MCP-METODOLOGIA.md`; la titularidad permanece exclusivamente en `CONTROL-RESPONSABILIDAD.json`. Las tareas y dependencias de otros frentes se enlazan sin apropiarse de sus objetos, controles o permisos.
@@ -6,10 +6,10 @@
 - **Frente:** MCP-OCP.
 - **Repositorio propietario:** `SeryMente/metodologia`.
 - **Ruta OCP:** `frentes/mcp-metodologia/`.
-- **Versión de la lista:** 0.2 (provisional; estados de reconciliación/build/readiness actualizados con evidencia local).
-- **Última actualización:** 2026-11-06.
-- **Gobierno leído:** Samantha v377 · NX-377m; Metacanon 1.28; GOW 2.17; DUG blob `54064c8fe00f872023a455f06596061ed69062ae`. §ARR consultado; cascada revisada manualmente; CNP P001/P004/P005/P038/P043 considerado.
-- **Núcleo enlazado:** [MCP-OCP · objeto canónico](MCP-METODOLOGIA.md), v0.1.19 al inicio de esta materialización.
+- **Versión de la lista:** 0.4 (provisional; reconciliación del sprint Sink local en tres frentes).
+- **Última actualización:** 2026-11-09.
+- **Gobierno leído:** Samantha v385 · NX-385m; Metacanon 1.29; GOW 2.18; DUG commit `7dcdac6c62f9e8a27ce11f8fa0e4fc379a3d12f8`; blob `72cd2e8e4e6a594b300ba1868baeabc2472beb97`. §ARR y P037 revisados; CNP P001/P004/P005/P038/P043 considerado.
+- **Núcleo enlazado:** [MCP-OCP · objeto canónico](MCP-METODOLOGIA.md), v0.1.23; esta lista v0.4 es su backlog auxiliar vigente.
 - **Control:** [CONTROL-RESPONSABILIDAD.json](CONTROL-RESPONSABILIDAD.json). Las generaciones y sesiones son metadatos de auditoría y no bloquean trabajo autorizado.
 - **MCP-NORMATIVO:** DESACTIVADO.
 - **Producto vs. documento:** MCP-OCP-v0.1.19 es versión documental. La candidata ejecutable 0.1.0 y su recibo histórico no constituyen una versión actualizada ni aceptada del producto.
@@ -24,24 +24,25 @@ El servidor MCP de Metodología pertenece exclusivamente al frente MCP-OCP y a s
 - **Jules:** se consume mediante el puente local RDC/stdio implementado en Khora y autenticado por OAuth 2.1/PKCE. La API key de Jules sigue exclusivamente en Khora Production. MCP-OCP no almacena, recibe ni replica `JULES_API_KEY`, refresh tokens ni access tokens.
 - **Relación entre ambos:** ChatGPT/RDC puede operar el cliente MCP-OCP local y, separadamente, el cliente puente de Jules. La coexistencia de ambos clientes y el flujo completo se deben probar; no se presume una conexión nativa de ChatGPT Free a un servidor stdio local.
 - **EP:** el paquete debe poder construirse y entregarse antes de que EP concluya B2. La instalación y operación dentro del host EP pertenecen a EP y requieren su preflight/consentimiento. No se instala en EP desde este frente sin autorización operativa del propietario del host.
-- **MCP-NORMATIVO y Sink:** no activar MCP-NORMATIVO ni inferir los metadatos normativos faltantes. Las lecturas se documentan como inspección/fuente, no como verificación normativa automática.
+- **MCP-NORMATIVO y Sink:** `MCP-NORMATIVO` permanece DESACTIVADO. Sink local por stdio fue autorizado directamente por el operador; las lecturas individuales devuelven texto solicitado y trazable, pero no infieren metadatos faltantes ni emiten evaluación normativa automática.
 
-## Orden de ejecución
+## Orden de ejecución · sprint vigente 2026-11-09
 
-| Orden | ID | Prioridad | Tarea | Estado | Condición principal de salida |
+La tabla sustituye los PASS/estados de recibos históricos para la implementación Sink actual. Un PASS histórico no equivale a PASS con DUG v385 ni demuestra instalación/perfil/E2E actuales.
+
+| Orden | ID | Prioridad | Tarea | Estado vigente | Condición principal de salida |
 |---:|---|---|---|---|---|
-| 1 | MCP-OCP-01 | P0 | Cerrar contrato de producto local y frontera OCP/Khora/Jules | VERIFICADO_EN_NUCLEO_V0.1.20 | Producto local stdio propiedad exclusiva OCP; Khora y puente Jules separados; decisión leída de vuelta. |
-| 2 | MCP-OCP-02 | P0 | Reconciliar candidata 0.1.0 y actualizarla contra main vigente | COMPLETADA_LOCAL_NO_TRANSFERIDA | Rama local feature/mcp-ocp-local-mvp-0.1.0-20261106; pin DUG v377 y core v0.1.20; commit local 587a82d1…; no push. |
-| 3 | MCP-OCP-03 | P0 | Construir candidata local renovada, ejecutar pruebas y emitir recibo | PASS_LOCAL_BUILD_50_30_200 | .NET 10.0.403; 50/50 unitarias; 30/30 integración; 200 componentes; ZIP SHA-256 37b85444…; recibo C-MCP-OCP-LOCAL-MVP-BUILD-20261106. |
-| 4 | MCP-OCP-04 | P0 | Verificar ejecución local, transporte y perímetro | PASS_STDIO_RDC_SMOKE_NO_INSTALL | Ejecutable empaquetado inicializa, lista 10 tools, health READY y EOF exit 0 vía RDC; scan C# no encontró tipos listener; perfil normal no instalado. |
-| 5 | MCP-OCP-05 | P0 | Verificar acceso a fuentes OCP/metodología y herramientas de desarrollo | PASS_TEST_ROOT_REAL_PROFILE_PENDING | Build smoke importó 2 fuentes, listó 43 principios y bloqueó metadatos incompletos; perfil normal del usuario aún no ha importado fuentes. |
-| 6 | MCP-OCP-06 | P0 | Probar coexistencia ChatGPT/RDC: MCP-OCP local + puente Jules independiente | BLOQUEADO_PAUSA_MCP_JULES | No usar Jules hasta que el operador retome el frente; OAuth/listing autenticado/E2E no se han ejecutado. |
-| 7 | MCP-OCP-07 | P1 | Entregar paquete preliminar y guía de uso para operador | PAQUETE_LOCAL_Y_RUNBOOK_VERIFICADOS | ZIP local SHA 37b85444…; runbook OPERACION-LOCAL-MCP-OCP.md y mcp-servers.example.json persistidos; no extracción/instalación en perfil definitivo aún. |
-| 8 | MCP-OCP-08 | P1 | Definir y ejecutar handoff de instalación en EP | BLOQUEADO_DEPENDENCIA_EP | OEP aprueba destino, usuario, instalación, ACL, launcher, servicio/proceso y aceptación. |
-| 9 | MCP-OCP-09 | P2 | Cerrar backup local y recuperación portable/cross-host | FIXTURES_PPR_PASS_CROSSHOST_BLOCKED | PPR incluye pruebas sintéticas dentro de 50/50; restore cross-host real sigue NOT_VERIFIED y bloqueado por P012/P013/host destino. |
-| 10 | MCP-OCP-10 | P1 | Reconciliar recursos de gobernanza y evidencia de aceptación | PINS_Y_EVIDENCIA_VERIFICADOS | DUG/core pin fresh; recibo local de build y runbook con read-back; MCP-NORMATIVO sigue DESACTIVADO y Sink fuera de alcance. |
-| 11 | MCP-OCP-11 | P1 | Ejecutar ciclo de desarrollo de prueba mediante Jules en un repositorio sandbox | BLOQUEADO_PAUSA_Y_OAUTH | Tareas documentales configuradas; el operador mantiene pausado el uso; sesión sandbox y OAuth aún no autorizados/ejecutados. |
-| 12 | MCP-OCP-12 | P1 | Instalar y bootstrap del servidor en el perfil local definitivo | BLOQUEADO_CONSENTIMIENTO_OPERADOR | Extraer en ruta estable, importar fuentes en DB real y provisionar trust root solo tras consentimiento interactivo del operador. Separado de EP. |
+| 1 | MCP-OCP-01 | P0 | Contrato de producto y frontera OCP/Khora/Jules | VERIFICADO_EN_NUCLEO_V0.1.22 | Un solo servidor local MCP-OCP por stdio; Khora/Jules separados; sin endpoints públicos. |
+| 2 | MCP-OCP-02 | P0 | Reconciliar código fuente remoto con main y pins actuales | PENDIENTE_SPRINT | Comparar ramas remotas `integration/ocp-mcp-0.1.0-selective-20261101` y `build/ocp-mcp-mvp-0.1.0` con main; no utilizar ZIP ni pin v377 como fuente vigente. |
+| 3 | MCP-OCP-05 | P0 | Fuentes, GOW:ARR, DUG y herramientas Sink | PENDIENTE_IMPLEMENTACION | Importar fuentes actuales; resolver GOW:ARR, DUG, SINK:P001..P043 y lote ordenado con hash/evento por recuperación. |
+| 4 | MCP-OCP-03 | P0 | Build y suite renovada | PENDIENTE_BUILD_ACTUAL | Build limpio con DUG v385/core actual; pruebas unitarias, contrato, negativos, integración stdio, data-root protegido y hash. No reutilizar 50/30/200 históricos. |
+| 5 | MCP-OCP-04 | P0 | Transporte RDC/stdio y perímetro | HISTORICAL_SMOKE_ONLY · E2E_ACTUAL_PENDIENTE | Mismo recorrido que usará el operador: initialize, tools/list, tools/call, respuesta completa, desconexión y reinicio; sin listener. |
+| 6 | MCP-OCP-10 | P1 | Pins, manifiesto y evidencia | PENDIENTE_EVIDENCIA_ACTUAL | Commits/blobs/SHA-256 DUG/core, SDK/RID, pruebas, paquete y limitaciones con read-back. |
+| 7 | MCP-OCP-07 | P1 | Paquete y runbook actuales | PAQUETE_HISTORICO_NO_RECUPERABLE | ZIP nuevo, verificación de extracción, manifest/hash y runbook actualizado. |
+| 8 | MCP-OCP-12 | P1 | Bootstrap del perfil local | PENDIENTE_HOST_Y_CONSENTIMIENTO_LOCAL | Import-sources en la DB real y `provision-operator` con `REGISTER <SID>` interactivo. |
+| 9 | MCP-OCP-08 | P1 | Handoff/instalación EP | PENDIENTE_EP_TASK_003_005 | EP acepta host/perfil, volumen/data-root protegido, launcher, read-back y rollback. |
+| — | MCP-OCP-06 / 11 | Fuera | Coexistencia/desarrollo por Jules | PAUSADO_POR_OPERADOR | No es dependencia del MVP Sink local. |
+| — | MCP-OCP-09 | Fuera | PPR/restauración portable cross-host | P2_FUERA_DEL_SPRINT | No bloquear código, build ni instalación local de una sola ubicación. |
 
 ## Fichas de tareas
 
@@ -135,3 +136,13 @@ El paquete ya está compilado y probado en un root temporal de test. El bootstra
 ## Alineación vigente · 2026-11-09
 
 DUG vigente: Samantha v385 · NX-385m; commit `7dcdac6c62f9e8a27ce11f8fa0e4fc379a3d12f8`; blob `72cd2e8e4e6a594b300ba1868baeabc2472beb97`. El operador autorizó directamente Sink local por stdio, pruebas, build, paquete, manifiesto y documentación dentro de este OCP. No se necesita aprobación del titular anterior ni generación de control. GitHub privado se consulta mediante el conector autenticado; `gh auth login` local no es requisito. La instalación persistente EP y sus operaciones de custodia permanecen separadas. MCP-NORMATIVO sigue DESACTIVADO.
+
+
+## Reconciliación de ejecución · 2026-11-09 · DUG v385
+
+- **Autorización Sink:** directa del operador y registrada en CONTROL-RESPONSABILIDAD.json; ningún titular anterior, generación ni folio es compuerta.
+- **Fuente candidata:** hay código C# recuperable en ramas remotas de GitHub; no está integrado en main. El código de esas ramas es base histórica para port/revisión, no release.
+- **Estado de implementación:** el código candidato ofrece SourceImporter y PrincipleCatalog para IDs/MDP; Sink de texto individual no está desplegado en main. PrincipleCatalog reconoce 43 IDs/MDP pero deja metadata applicability/activation/dependencies incompleta; no inferirla.
+- **Root de datos:** Program.cs usa `%LOCALAPPDATA%\\SeryMente\\OCP MCP` por defecto. Antes del handoff se debe configurar un root de datos/backup dentro del volumen cifrado o demostrar que el volumen del perfil está protegido.
+- **Autenticación:** el conector GitHub de ChatGPT está autenticado para operaciones de repositorio desde esta conversación. La autenticación GitHub local del perfil Windows no se hereda; se valida por separado si build/import local lo necesita.
+- **Dependencias EP:** EP-TASK-003 para workspace protegido y dead-man si LOC-OTHER; EP-TASK-005 para instalación/aceptación. EP-TASK-004 no bloquea compilar Sink ni el trust root DPAPI del servidor.
