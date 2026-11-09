@@ -5,7 +5,7 @@
 **OCP padre y fuente de responsabilidad:** `frentes/gobernanza/`  
 **Control heredado:** [CONTROL-RESPONSABILIDAD.json](../CONTROL-RESPONSABILIDAD.json). Las generaciones, sesiones y corresponsabilidades se conservan únicamente como metadatos históricos/auditoría; no son permiso, veto ni compuerta de trabajo autorizado. Blob de control observado `18c2d7fa57609465dced61884cec6685bf74f68d`.
 **Evento de creación:** C-GOBERNANZA-MDP-OCP-01 · 2026-10-30.  
-**Fuente normativa vigente:** [DUG Samantha v385 · NX-385m](../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html); Metacanon 1.29, GOW 2.18, 43 principios y 22 anexos; blob `72cd2e8e4e6a594b300ba1868baeabc2472beb97`. Los snapshots anteriores son antecedentes, no el estado vigente.
+**Fuente normativa vigente:** [DUG Samantha v386 · NX-386m](../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html); Metacanon 1.29, GOW 2.18, 43 principios y 22 anexos; blob `22dca684830a36dff019b47811d9b800cc9bea0a`. Los snapshots anteriores son antecedentes, no el estado vigente.
 
 ## Naturaleza y límites
 
@@ -333,27 +333,29 @@ La ruta aprobada para la consulta normativa es local, mediante RDC hacia MCP-OCP
 **Gates ajenos:** MCP-OCP debe recibir autorización expresa de su titular para ampliar el control actual a Sink local. EP conserva el control de host/perfil e instalación. La aprobación de Gobernanza no los suplanta ni autoriza instalación, credenciales o cambios en esos frentes. No alterar `MCP-NORMATIVO=DESACTIVADO` ni generar folios globales mientras FOL1 no esté activo.
 
 
-## Sprint vigente · Sink local vía RDC · planificación integrada · 2026-11-09
+## Sprint vigente · Sink local por RDC · diseño consolidado · 2026-11-09
 
-**Estado:** `PLANIFICADO_CON_BLOQUEOS_DE_AUTORIZACIÓN_Y_HOST`; implementación no iniciada.  
-**Coordinación:** [GOV-TASK-015 · plan integrado](./📁%20🧩%20-%20GOV-TASK-015%20-%20Sprint%20Sink%20local%20vía%20RDC/README.md).  
-**DUG:** Samantha v384 · NX-384m · blob `2f320e5e6e4768e9a77bc34d24b0639b47f2128d`.
+**Estado:** DISEÑO CONSOLIDADO · NO INICIADO. Coordinación: [GOV-TASK-015](./📁%20🧩%20-%20GOV-TASK-015%20-%20Sprint%20Sink%20local%20vía%20RDC/README.md). Fuente actual: Samantha v386/NX-386m, blob `22dca684830a36dff019b47811d9b800cc9bea0a`.
 
-### Tareas activas del sprint por frente
+### Tareas del sprint por frente
 
-- **Gobernanza:** GOV-TASK-015, 008, 001, 009, 010, 007, 003, 013 y 011. Las tareas 007/008/003/009/010 tienen ya contrato armonizado; 003 y 007 siguen pendientes de ejecución/aceptación real.
-- **MCP-OCP:** MCP-OCP-02/05/03/04/10/07/12/08. El subhito Sink local se integra en MCP-OCP-05 tras autorización expresa del titular; no se crea ID separado por anticipado. Reconciliar primero tabla/fichas y pins históricos.
-- **EP:** EP-TASK-003 como gate de workspace/custodia; EP Vault solo para la operación mínima de custodia del RecoveryPassword; handoff/instalación local debe quedar como subhito formal o tarea propia del OEP. El titular EP debe resolverlo en su registro.
+- **Gobernanza:** GOV-TASK-015 coordina; GOV-TASK-008 define aceptación de dos capas/Sink; GOV-TASK-001 valida los 43 MDP (43 positivos + 8 negativos/frontera); GOV-TASK-009 valida §ARR/GOW:ARR; GOV-TASK-010 aplica admisión fail-closed sin bloquear análisis y construcción autorizados; GOV-TASK-003 acepta E2E; GOV-TASK-007 conserva IPZ/FOL1 como gate independiente; GOV-TASK-013 mantiene su titular/alcance propio y aporta la métrica `ipz.resolve.rdc.duration_ms`.
+- **MCP-OCP:** MCP-OCP-02 → 05 → 03 → 04 → 10 → 07 → 12 → 08. No crear IDs nuevos. Sink local por STDIO está autorizado en su control; MCP-NORMATIVO sigue DESACTIVADO.
+- **EP:** EP-TASK-003 (checkout/workspace protegido + dead-man LOC-OTHER) y EP-TASK-005 (instalación/bootstrap/aceptación) son el carril de host. EP-TASK-004 UI bóveda y EP-TASK-002 Backblaze no bloquean el build Sink.
 
-### Secuencia y bloqueos
+### Ubicación obligatoria del producto instalado
 
-1. Decisión del operador: host/perfil de ejecución confiable; PC-14 permanece clasificado `LOC-OTHER`, y su protector RecoveryPassword está `POTENTIALLY_EXPOSED` según OEP §114.
-2. MCP-OCP: autorización del titular para ampliar el control a Sink local por stdio en su propio directorio; reconciliación MCP-OCP-02.
-3. EP: rotar RecoveryPassword sin exponerlo, almacenarlo y leerlo de vuelta en EP Vault; terminar migración protegida del workspace si el host elegido es EP/PC-14.
-4. MCP-OCP: implementar y probar; emitir build/manifest actuales.
-5. EP: instalar y verificar bootstrap/handoff.
-6. Gobernanza: E2E, IPZ nativa y read-back; FOL1 queda en gate separado.
+El ejecutable final debe quedar dentro del checkout local en `SeryMente/Repositorios/Metodologia/metodologia/frentes/mcp-metodologia/instalacion-local/`. El checkout aloja código y ejecutable local; DB, claves, logs operativos y respaldos permanecen fuera del checkout en un root protegido verificado por EP. EP-TASK-005 materializa y lee de vuelta la instalación.
 
-**Fuera de alcance:** Backblaze, Jules, Cloudflare, MOD-SYNC HTTP, restore cross-host y activación MCP-NORMATIVO.
+### Secuencia y compuertas
 
-**Conteo actualizado:** 15 tareas: 11 en curso, 3 pendientes, 1 cancelada. La aceptación global sigue pendiente.
+1. Reconciliar candidatas históricas selectivamente sobre una rama nueva basada en `main`; no fusionar ramas completas ni usar sus pins históricos como vigentes.
+2. Validar un recorrido vertical real por STDIO/RDC: `initialize`, `tools/list`, `GOW:ARR`, `DUG`, `SINK:P004`, hash/pin y cierre.
+3. Generalizar a 43, lote ordenado, frecuencia por éxito, catálogo/manifiesto y pruebas negativas.
+4. Build limpio, suite automatizada, manifiesto y paquete verificado.
+5. Instalar el ejecutable en `frentes/mcp-metodologia/instalacion-local/` solo con preflight EP y root de datos protegido; registrar operador únicamente con consentimiento interactivo.
+6. Aceptación E2E en el host real; latencia según GOV-TASK-013. FOL1 no bloquea desarrollo ni instalación del servidor y permanece PREPARADO hasta su propio gate.
+
+**Bloqueos reales:** ramas candidatas muy divergidas de `main`; PC 7 requiere verificar protección BitLocker efectiva (última lectura observada: cifrado 100 %, `ProtectionStatus=Off`) y dead-man LOC-OTHER; la materialización local de Metodología existe parcialmente, no como checkout Git íntegro, y `git` no estaba disponible en la lectura local. Estos bloqueos afectan integración o instalación dependiente, no el diseño ni el trabajo remoto autorizado por GitHub.
+
+**Fuera de alcance:** Khora, Jules, B2, Cloudflare, MOD-SYNC, endpoints públicos, cambios al DUG/IPZ y activación de MCP-NORMATIVO. La aceptación global sigue pendiente.
