@@ -51,3 +51,14 @@ Pruebas exigidas:
 **Compuertas:** no ejecutar esta prueba completa hasta que MCP-OCP haya autorizado e implementado Sink, el paquete esté actualizado a los pins canónicos vigentes y EP haya realizado la instalación autorizada/read-back del perfil de uso. Esta tarea no autoriza host, instalación ni cambio de control ajeno. FOL1 sigue pendiente; no inventar folios globales mientras no esté activo. `MCP-NORMATIVO` permanece desactivado.
 
 **Estado:** la especificación de aceptación está armonizada; la ejecución E2E permanece `PENDIENTE`.
+
+
+## Contrato de aceptación del sprint · instalación local Metodología · 2026-11-09
+
+La prueba acepta el producto instalado en el recorrido que utilizará el operador, no un root temporal de test. La aplicación local deberá estar en `frentes/mcp-metodologia/instalacion-local/` dentro del checkout de Metodología (`SeryMente/Repositorios/Metodologia/metodologia/`). Su ruta Windows se resuelve desde la raíz real del checkout. La base SQLite, claves, logs operativos y backups quedan fuera del checkout, bajo un root separado protegido y verificado por EP; no aceptar DB, claves ni datos de usuario dentro de Git.
+
+**Secuencia E2E:** comprobar readiness real (separada de proceso activo); MCP `initialize`; `tools/list`; recuperar `GOW:ARR`, identidad/procedencia DUG, catálogo 43 MDP, `SINK:P001..P043` y lote ordenado; cotejar cada texto con pin y SHA-256; confirmar evento de frecuencia por recuperación completa satisfactoria; provocar rechazo por ID inexistente, fuente ausente/obsoleta/alterada, hash distinto, parámetro inválido y ruta no autorizada; cerrar y reiniciar sin dejar proceso/listener.
+
+**Salida:** recibo con host/perfil, ruta de instalación, commit y versión MCP-OCP, pins DUG, casos, hashes, eventos/frecuencias, resultado de pruebas y limitaciones. La latencia `ipz.resolve.rdc.duration_ms` se toma de GOV-TASK-013 y queda `NOT_MEASURED` si no se prueban ambos extremos monotónicos.
+
+**Separaciones:** esta prueba no instala la IPZ nativa ni activa FOL1; no activa `MCP-NORMATIVO`; no usa Sync/HTTP/Cloudflare ni sustituye fuentes con memoria.
