@@ -68,6 +68,12 @@
       "commit": "ee065acba5ebe0f50bea613e6b85e04c6bf4d60b",
       "blob": "2205c21f7749862647b02913ba7baeb80a251757",
       "readback": "PREVIOUSLY_VERIFIED"
+    },
+    {
+      "path": "frentes/gobernanza/📁 🧭 - Tareas provisionales/📁 🧩 - GOV-TASK-011 - Coordinación bilateral recurrente/README.md",
+      "commit": "791c2c22d599cb6d99962aaf8ec9e8f7e086482f",
+      "blob": "65b00870bbcba584d1c067217557f1ebf2c7e566",
+      "readback": "MATCHED"
     }
   ],
   "telemetry": {
@@ -101,7 +107,8 @@
     "new_counterparty_messages_observed": false,
     "new_requests_sent": false,
     "opening_persisted_before_analysis": false,
-    "cycle_status": "INCOMPLETE_DTC_OPENING_LATE"
+    "cycle_status": "INCOMPLETE_DTC_OPENING_LATE",
+    "review_record_added": true
   },
   "overall_status": "GOVERNANCE_DOCUMENTS_ALIGNED_IMPLEMENTATION_NOT_EXECUTED"
 }
