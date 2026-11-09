@@ -162,3 +162,12 @@ EP-TASK-003 sigue `en_curso`; la excepción no sustituye la migración posterior
 
 **Exportación solicitada:** `ChatGPT-EP-20261109-1230.md` no estuvo disponible en archivos de conversación, Biblioteca ni `main`; por tanto, no se registra como leída ni persistida. Su pregunta final sigue pendiente de acceso al documento. No se infiere ni se sustituye su contenido por las exportaciones 1031/1104.
 
+
+
+## Rectificación documental · adquisición posterior de ChatGPT-EP-20261109-1230 · 2026-11-09
+
+La nota previa que indicaba que `ChatGPT-EP-20261109-1230.md` no estaba disponible reflejaba correctamente la búsqueda de las 12:31, pero fue supersedida cuando el operador aclaró que PC-14 es el equipo y `PC 13` el perfil/almacenamiento. El archivo se localizó en `C:\Users\PC 13\Downloads\ChatGPT-EP-20261109-1230.md`, se leyó y se preservó byte por byte en `frentes/ep/entregas/`: 40.832 bytes, 853 líneas, SHA-256 `045FD76745669E2AD08A4A0F517FCB042B5CD2C3B3320AB5AD2E83F0972EF674`, Git blob `1be5a3b2a19dec4dd819648302664606654a4761`, commit `163138cc5a6113279fbc42eccbec036df424f8e4`; read-back Base64 exacto.
+
+La pregunta final del archivo queda respondida: BitLocker funciona; el bloqueo es la migración que aún no se ejecutó. Los 195 archivos/11 directorios siguen fuera de W:. El rótulo de actividad «Migrado el espacio de trabajo» dentro de la exportación contradice la respuesta explícita de cuota RDC 0 % y no prevalece sobre OEP §114, que confirma ausencia de copia, hash de destino y cambio de montaje.
+
+**Estados sin cambio:** EP-TASK-001 `pendiente`; EP-TASK-002, EP-TASK-003 y EP-TASK-004 `en_curso`. En EP-TASK-003 la custodia de recuperación está resuelta; la migración/aceptación permanece pendiente.
