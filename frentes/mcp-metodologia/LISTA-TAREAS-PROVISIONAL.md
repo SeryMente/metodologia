@@ -1,4 +1,4 @@
-<!-- LIST_VERSION=0.6; LIST_STATUS=PROVISIONAL; NOT_A_CANONICAL_OBJECT=true -->
+<!-- LIST_VERSION=0.7; LIST_STATUS=PROVISIONAL; NOT_A_CANONICAL_OBJECT=true -->
 # Lista provisional de tareas · MCP-OCP
 
 > **ESTADO: PROVISIONAL · NO ES UN OCP NI UN CONTROL ADICIONAL.** Esta lista es una vista auxiliar enlazada desde el único núcleo MCP-OCP. El estado vivo y las decisiones de alcance permanecen en `MCP-METODOLOGIA.md`; la titularidad permanece exclusivamente en `CONTROL-RESPONSABILIDAD.json`. Las tareas y dependencias de otros frentes se enlazan sin apropiarse de sus objetos, controles o permisos.
@@ -6,13 +6,13 @@
 - **Frente:** MCP-OCP.
 - **Repositorio propietario:** `SeryMente/metodologia`.
 - **Ruta OCP:** `frentes/mcp-metodologia/`.
-- **Versión de la lista:** 0.6 (provisional; reconciliación del sprint Sink local en tres frentes).
+- **Versión de la lista:** 0.7 (provisional; reconciliación del sprint Sink local en tres frentes).
 - **Última actualización:** 2026-11-09.
 - **Gobierno leído:** Samantha v386 · NX-386m; Metacanon 1.29; GOW 2.18; DUG commit `82843bca9493a522405d840393c229d2af363342`; blob `22dca684830a36dff019b47811d9b800cc9bea0a`. §ARR y P037 revisados; CNP P001/P004/P005/P038/P043 considerado.
 - **Núcleo enlazado:** [MCP-OCP · objeto canónico](MCP-METODOLOGIA.md), v0.1.25; esta lista v0.6 es su backlog auxiliar vigente.
 - **Control:** [CONTROL-RESPONSABILIDAD.json](CONTROL-RESPONSABILIDAD.json). Las generaciones y sesiones son metadatos de auditoría y no bloquean trabajo autorizado.
 - **MCP-NORMATIVO:** DESACTIVADO.
-- **Producto vs. documento:** MCP-OCP-v0.1.25 es la versión documental vigente; la versión de software objetivo es 1.0.0. La candidata ejecutable 0.1.0 y su recibo histórico no constituyen una versión actualizada ni aceptada del producto.
+- **Producto vs. documento:** MCP-OCP-v0.1.26 es la versión documental vigente; la versión de software objetivo es 1.0.0. La candidata ejecutable 0.1.0 y su recibo histórico no constituyen una versión actualizada ni aceptada del producto.
 - **Principio de custodia:** no guardar claves, access/refresh tokens, datos privados de usuario, contenido sensible de repositorios ni secretos en esta lista, artefactos, manifests o logs. Utilizar fixtures sintéticos y evidencia minimizada.
 
 ## Decisión de alcance operativa vigente
@@ -32,17 +32,18 @@ La tabla sustituye los PASS/estados de recibos históricos para la implementaci�
 
 | Orden | ID | Prioridad | Tarea | Estado vigente | Condición principal de salida |
 |---:|---|---|---|---|---|
-| 1 | MCP-OCP-01 | P0 | Contrato de producto y frontera OCP/Khora/Jules | VERIFICADO_EN_NUCLEO_V0.1.25 | Un solo servidor local MCP-OCP por stdio; Khora/Jules separados; sin endpoints públicos. |
-| 2 | MCP-OCP-02 | P0 | Reconciliar código fuente remoto con main y pins actuales | PENDIENTE_SPRINT | Comparar ramas remotas `integration/ocp-mcp-0.1.0-selective-20261101` y `build/ocp-mcp-mvp-0.1.0` con main; no utilizar ZIP ni pin v377 como fuente vigente. |
-| 3 | MCP-OCP-05 | P0 | Fuentes, GOW:ARR, DUG y herramientas Sink | PENDIENTE_IMPLEMENTACION | Importar fuentes actuales; resolver GOW:ARR, DUG, SINK:P001..P043 y lote ordenado con hash/evento por recuperación. |
-| 4 | MCP-OCP-03 | P0 | Build y suite renovada | PENDIENTE_BUILD_ACTUAL | Build limpio con DUG v386/core actual; pruebas unitarias, contrato, negativos, integración stdio, data-root protegido y hash. No reutilizar 50/30/200 históricos. |
-| 5 | MCP-OCP-04 | P0 | Transporte RDC/stdio y perímetro | HISTORICAL_SMOKE_ONLY · E2E_ACTUAL_PENDIENTE | Mismo recorrido que usará el operador: initialize, tools/list, tools/call, respuesta completa, desconexión y reinicio; sin listener. |
-| 6 | MCP-OCP-10 | P1 | Pins, manifiesto y evidencia | PENDIENTE_EVIDENCIA_ACTUAL | Commits/blobs/SHA-256 DUG/core, SDK/RID, pruebas, paquete y limitaciones con read-back. |
-| 7 | MCP-OCP-07 | P1 | Paquete y runbook actuales | PAQUETE_HISTORICO_NO_RECUPERABLE | ZIP nuevo, verificación de extracción, manifest/hash y runbook actualizado; instalar copia local en `frentes/mcp-metodologia/instalacion-local/`. |
-| 8 | MCP-OCP-12 | P1 | Bootstrap del perfil local | PENDIENTE_HOST_Y_CONSENTIMIENTO_LOCAL | Materializar el programa 1.0.0 en `frentes/mcp-metodologia/instalacion-local/`; DB protegida fuera del checkout; import-sources y `provision-operator` con `REGISTER <SID>` interactivo. |
-| 9 | MCP-OCP-08 | P1 | Handoff/instalación EP | PENDIENTE_EP_TASK_003_005 | EP acepta host/perfil, volumen/data-root protegido, launcher, read-back y rollback. |
-| — | MCP-OCP-06 / 11 | Fuera | Coexistencia/desarrollo por Jules | PAUSADO_POR_OPERADOR | No es dependencia del MVP Sink local. |
-| — | MCP-OCP-09 | Fuera | PPR/restauración portable cross-host | P2_FUERA_DEL_SPRINT | No bloquear código, build ni instalación local de una sola ubicación. |
+| 1 | MCP-OCP-01 | P0 | Contrato de producto y frontera OCP/Khora/Jules | VERIFICADO_EN_NUCLEO_V0.1.26 | Un servidor local MCP-OCP por stdio más panel acompañante de solo lectura; Khora/Jules separados; sin endpoints públicos. |
+| 2 | MCP-OCP-02 | P0 | Reconciliar código fuente remoto con main y pins actuales | PENDIENTE_SPRINT | Comparar ramas históricas con main; nueva base desde main; clasificar REUSE/ADAPT/REWRITE/DROP y fijar SDK/RID. |
+| 3 | MCP-OCP-05 | P0 | Fuentes, GOW:ARR, DUG, Sink y proyección de observabilidad | PENDIENTE_IMPLEMENTACION | Implementar ARR/DUG/SINK P001–P043, lotes ordenados y estado/eventos locales saneados para el panel. |
+| 4 | MCP-OCP-13 | P0 | Panel local de observabilidad visual | ESPECIFICADO · IMPLEMENTACIÓN_PENDIENTE | Abrir en sesión EP ACTIVE; mostrar proceso, protocolo, fuentes, operador, root, actividad y errores; cerrar con sesión EP. |
+| 5 | MCP-OCP-03 | P0 | Build y suite renovada de servidor + panel | PENDIENTE_BUILD_ACTUAL | Build limpio; suites MCP y panel PASS; pruebas de readiness, eventos, cierre, integridad, ACL y no exposición. |
+| 6 | MCP-OCP-04 | P0 | Transporte MCP STDIO y recorrido RDC | HISTORICAL_SMOKE_ONLY · E2E_ACTUAL_PENDIENTE | Recorrido real initialize/tools/list/tools/call; panel observa sin interponerse; shutdown y reinicio; sin listener. |
+| 7 | MCP-OCP-10 | P1 | Pins, manifiesto y evidencia | PENDIENTE_EVIDENCIA_ACTUAL | Manifest incluye servidor, panel, schema de observabilidad, fuentes, SDK/RID, pruebas y hashes. |
+| 8 | MCP-OCP-07 | P1 | Paquete y runbook actuales | PAQUETE_HISTORICO_NO_RECUPERABLE | ZIP nuevo con servidor+panel, configuración de ejemplo, extracción/read-back y manifest/SHA. |
+| 9 | MCP-OCP-12 | P1 | Bootstrap del perfil local | PENDIENTE_HOST_Y_CONSENTIMIENTO_LOCAL | Instalar servidor y panel en `instalacion-local/`; root protegido externo; importación y REGISTER interactivo. |
+| 10 | MCP-OCP-08 | P1 | Handoff/instalación EP | PENDIENTE_EP_TASK_003_005 | EP instala y abre el panel solo tras sesión ACTIVE y gates; confirma hash, ruta, ACL, cierre y rollback. |
+| — | MCP-OCP-06 / 11 | Fuera | Coexistencia/desarrollo por Jules | PAUSADO_POR_OPERADOR | No es dependencia del MVP local. |
+| — | MCP-OCP-09 | Fuera | PPR/restauración portable cross-host | P2_FUERA_DEL_SPRINT | No bloquear release local. |
 
 ## Fichas de tareas
 
@@ -65,12 +66,12 @@ La tabla sustituye los PASS/estados de recibos históricos para la implementaci�
 **Trabajo:** verificar ramas/commits; comparar estructura y contratos; clasificar por componente REUSE / ADAPT / REWRITE / DROP; portar selectivamente el código a rama nueva; fijar .NET/SDK/RID compatible y reproducible; revisar dependencias, licencias y secretos.
 
 **Salida de cierre:** rama candidata desde main con base documentada; mapa de portabilidad; diff acotado; build inicial sin secretos; pruebas históricas clasificadas como antecedentes, nunca como PASS de 1.0.0.
-### MCP-OCP-03 — Calidad, pruebas y build de release
+### MCP-OCP-03 — Calidad, pruebas y build de release (servidor + panel)
 **Prioridad:** P0 · **Estado:** PENDIENTE.
 
 **Objetivo:** demostrar el comportamiento del producto nuevo con pruebas repetibles, no solo compilarlo.
 
-**Pruebas mínimas:** build limpio; unitarias y contrato; initialize/tools/list/tools/call; health/readiness; ARR/DUG/catálogo; Sink individual y lote ordenado; hash correcto; entradas inválidas; fuente ausente/obsoleta/alterada; traversal/ACL; logs sin secretos; shutdown/restart; ausencia de listeners no autorizados. Reutilizar harness existente cuando siga válido y ampliar solo lo necesario.
+**Pruebas mínimas:** build limpio; unitarias y contrato; initialize/tools/list/tools/call; health/readiness; ARR/DUG/catálogo; Sink individual y lote ordenado; hash correcto; entradas inválidas; fuente ausente/obsoleta/alterada; traversal/ACL; logs sin secretos; shutdown/restart; ausencia de listeners no autorizados. Reutilizar harness existente cuando siga válido y ampliar solo lo necesario. Añadir pruebas de schema/reader/writer del panel, estados EP ACTIVE sin servidor, readiness parcial, caída del proceso, ACL/JSON inválidos y ciclo de cierre de UI.
 
 **Salida:** recibo ligado al commit de código y al main base, pins DUG/core, SDK/RID, comandos, conteos, PASS/FAIL, limitaciones y hashes. Release solo cuando suite y paquete pasen; no convertir resultados de candidata antigua en evidencia nueva.
 ### MCP-OCP-04 — Transporte MCP STDIO y recorrido RDC
@@ -80,8 +81,8 @@ La tabla sustituye los PASS/estados de recibos históricos para la implementaci�
 
 **Trabajo:** iniciar proceso local mediante cliente MCP/RDC autorizado; comprobar initialize, tools/list, tools/call/respuesta completa, cancelación/cierre, EOF y reinicio. Verificar stdin/stdout reservados al protocolo, logs únicamente saneados en stderr/archivo protegido, permisos mínimos y que no se crea listener HTTP/TCP, túnel o endpoint público.
 
-**Salida:** recibo de smoke real del ejecutable de release y configuración del cliente, con ruta de binario y evidencia del perímetro. El smoke temporal histórico no cuenta como E2E instalada.
-### MCP-OCP-05 — Fuentes canónicas, herramientas de lectura y Sink
+**Salida:** recibo de smoke real del ejecutable de release y configuración del cliente, con ruta de binario y evidencia del perímetro. El smoke temporal histórico no cuenta como E2E instalada. El panel recibe la proyección por archivos locales y no se interpone en stdin/stdout.
+### MCP-OCP-05 — Fuentes canónicas, herramientas de lectura, Sink y estado observable
 **Prioridad:** P0 · **Estado:** PENDIENTE_IMPLEMENTACION.
 
 **Objetivo:** construir el conjunto mínimo de herramientas de lectura necesarias para MCP-OCP 1.0.0.
@@ -101,7 +102,7 @@ La coexistencia debe ser dos clientes/canales locales claramente separados: serv
 
 **Objetivo:** generar un paquete local autosuficiente, reconstruible desde GitHub y fácil de instalar.
 
-**Contenido:** ejecutable y dependencias necesarias, launcher, configuración de ejemplo sin secretos, manifiesto de archivos, SHA-256, instrucciones de extracción/ejecución y runbook. Elegir publish mode/RID después del baseline, no por suposición.
+**Contenido:** ejecutable MCP, panel Windows, recursos/dependencias necesarias, launcher de sesión, configuración de ejemplo sin secretos, schema de observabilidad, manifiesto de archivos, SHA-256, instrucciones de extracción/ejecución y runbook. Elegir publish mode/RID después del baseline, no por suposición.
 
 **Salida:** paquete nuevo disponible desde la ruta de entrega MCP-OCP; tamaño, RID, build commit, source commit, pins DUG/core y SHA-256. Extraer en root de prueba, cotejar archivos y repetir smoke. Esta tarea entrega paquete; no declara instalada la copia en checkout ni en EP.
 ### MCP-OCP-08 — Handoff de paquete a EP y recepción de instalación
@@ -139,9 +140,25 @@ Una vez configuradas y aceptadas las tareas del frente MCP-Jules, se prepara una
 
 **Datos separados:** DB SQLite, claves DPAPI CurrentUser, fuentes sensibles, logs y backups van a root independiente protegido, fuera del checkout y verificado por EP. No usar LocalAppData sin demostrar protección efectiva.
 
-**Secuencia:** paquete verificado → checkout completo/sincronizado → extracción en ruta obligatoria → root de datos protegido → import-sources con pins actuales → health/readiness real → consentimiento local y presencia para provision-operator/REGISTER <SID> → cliente STDIO/RDC → read-back. No sustituye EP-TASK-003/005 ni puede pasar por encima de sus gates.
+**Secuencia:** paquete verificado → checkout completo/sincronizado → extracción en ruta obligatoria → root de datos protegido → import-sources con pins actuales → health/readiness real → consentimiento local y presencia para provision-operator/REGISTER <SID> → cliente STDIO/RDC → read-back. La carpeta instalada incluye el panel en `panel/OcpMcp.Panel.exe`; la apertura durante EP ACTIVE se delega a EP-TASK-005 y solo ocurre después de sus gates. No sustituye EP-TASK-003/005 ni puede pasar por encima de sus gates.
 
 **Salida:** recibo host/perfil, ruta local, versión, commit/blob, SHA instalado, estado importación, readiness y bootstrap. Sin consentimiento, reportar pendiente; no simular registro.
+
+### MCP-OCP-13 — Panel local de observabilidad visual
+**Prioridad:** P0 · **Estado:** ESPECIFICADO · IMPLEMENTACIÓN PENDIENTE · **Autoridad:** MCP-OCP para la app; EP para el ciclo de vida de sesión.
+
+**Objetivo:** entregar una ventana Windows liviana, profesional y muy visual que esté abierta mientras la sesión EP persistente esté en estado `ACTIVE`, permitiendo entender en segundos el estado real de MCP-OCP.
+
+**Contrato detallado:** [PANEL-OBSERVABILIDAD.md](PANEL-OBSERVABILIDAD.md).
+
+**Implementación delimitada:** app WPF/C# separada del proceso MCP, proyecto pequeño en la solución .NET, controles nativos y gráficos vectoriales; fijar target framework con el SDK/RID que resulte del MCP-OCP-02. Lee de forma read-only `monitor/state.json` y `monitor/events.jsonl` en el root protegido. El servidor publica snapshots atómicos y eventos saneados. La UI muestra estado global, etapa EP/proceso/STDIO/fuentes/readiness, tarjetas de salud, operación actual, actividad reciente y un único siguiente paso cuando hay bloqueo.
+
+**Ciclo de vida:** EP-TASK-005 abre el panel como hijo de la sesión al confirmar `ACTIVE`, incluso si el servidor todavía no inició; cierra el panel al finalizar la sesión. Si MCP cae mientras EP sigue activa, el panel permanece abierto mostrando desconexión. EP-TASK-003 y su dead-man no se modifican.
+
+**Exclusiones:** no es un servidor/cliente MCP, no intercepta STDIO, no abre red/HTTP, no tiene herramientas de escritura ni autoriza acciones, no incorpora servicios/tareas programadas/heartbeat general, no registra payloads/secretos/contenido privado y no requiere MCP Studio/Inspector en producción.
+
+**Cierre:** build Windows x64; launch/close real desde EP ACTIVE; estados diferenciados de proceso/protocolo/fuentes/operador/root; actividad con ID, resultado y duración sin contenido; caída del servidor y cierre de EP probados; schema/ACL resistentes; manifest/SHA incluido en el ZIP 1.0.0 y read-back de extracción.
+
 ## Dependencias entre frentes y límite de autonomía
 
 | Dependencia | Fuente de verdad | MCP-OCP puede | MCP-OCP no puede |
