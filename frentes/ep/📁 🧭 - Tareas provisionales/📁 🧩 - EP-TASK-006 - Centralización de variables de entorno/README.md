@@ -308,3 +308,10 @@ El conector Render devolvió el workspace `My Workspace` y dos servicios:
 ## 3.7 Reconciliación de cobertura
 
 El inventario actual ya no se limita a Vercel: cubre variables de código, Vercel, nombres de secretos referenciados en GitHub Actions, configuración versionada de Render, metadatos de los servicios Render, archivos históricos de la Biblioteca y variables del perfil Windows PC-7. Siguen fuera de cobertura los valores internos de GitHub Actions/Render, Shared Environment Variables de Vercel, los demás paneles externos y equipos/perfiles que no están conectados. La tarea permanece `en_curso`; no se declara inventario global completo.
+
+
+## Verificación incremental del almacén y cobertura · 2026-11-09
+
+EP Vault volvió a informar nueve nombres y una nota efímera restante (`N-20261109213342-BCC5707F`, `VOLATILE_DPAPI`). Estado: esquema `ep-env-vault/1`, PBKDF2-HMAC-SHA256/600.000 iteraciones, 1.324 bytes, sesión activa. Ciphertext local `C:\Users\PC 7\AppData\Local\Khora\secrets\ep-env-vault.enc.json`, SHA-256 `41F79D30165F8381AB8D89198139853467B3DFA405A8BAC8AB2FFAC45013752F`. Este valor es una huella, no el ciphertext.
+
+La búsqueda adicional de GitHub Actions identificó 22 nombres distintos referenciados como secretos en siete workflows de `SeryMente/khora`. Render devolvió dos servicios (`khora` y `serymente-wordpress-lab`) y `render.yaml` declara `PYTHON_VERSION=3.11`; los valores reales de Render no se pudieron listar mediante la API disponible. Los secretos de Actions permanecen `PENDIENTE_DE_ACCESO`.
