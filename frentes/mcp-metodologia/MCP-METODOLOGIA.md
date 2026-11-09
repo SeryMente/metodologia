@@ -4,7 +4,7 @@
 
 - **Nombre canónico vigente:** MCP-OCP (anteriormente MCP-METODOLOGIA).
 - **Identidad canónica vigente:** MCP-OCP. **Identidad histórica:** MCP-METODOLOGIA.
-- **Versión/sello:** MCP-OCP-v0.1.24 · Sink local por stdio autorizado; candidata anterior 0.1.0 BUILD_AND_TESTED, bootstrap del perfil persistente pendiente. Las generaciones y folios de sesiones anteriores son metadatos de auditoría.
+- **Versión/sello:** MCP-OCP-v0.1.25 · Sink local por stdio autorizado; candidata anterior 0.1.0 BUILD_AND_TESTED, bootstrap del perfil persistente pendiente. Las generaciones y folios de sesiones anteriores son metadatos de auditoría.
 - **Repositorio propietario:** SeryMente/metodologia, rama main.
 - **OCP canónico:** frentes/mcp-metodologia/.
 - **Núcleo operativo único:** este archivo, MCP-METODOLOGIA.md.
@@ -520,3 +520,35 @@ El build y las pruebas no equivalen a instalación en perfil, provisión del ope
 **Ruta técnica:** revisar las ramas remotas, portarlas sobre main e implementar GOW:ARR/DUG/SINK:P001..P043, lote ordenado, frecuencia por éxito, manifiesto canónico y pruebas negativas. El código candidato usa `%LOCALAPPDATA%\\SeryMente\\OCP MCP` por defecto; antes de instalar se requiere un root de datos/backup configurable y verificado dentro del perímetro cifrado, o prueba de cifrado del volumen del perfil.
 
 **Destino EP designado:** perfil Windows `PC 7`, dispositivo RDC asociado según el operador, ubicación `LOC-OTHER`; el hostname/ID RDC, SID y estado del host quedan pendientes de preflight vivo. **Dependencias:** EP-TASK-003 (workspace protegido y dead-man obligatorio, implementado/probado en LOC-OTHER), EP-TASK-005 (handoff/bootstrap) y GOV-TASK-001/003/007/008/013. EP define destino/instalación; MCP-OCP entrega paquete y configuración. El destino designado no bloquea reconciliación, implementación, pruebas ni build; sí bloquea bootstrap/instalación persistente hasta preflight y dead-man PASS. Jules/B2/PPR cross-host/Khora/MCP-NORMATIVO quedan fuera. `MCP-NORMATIVO` sigue DESACTIVADO.
+
+
+## 16. Instalación local obligatoria y sprint consolidado · 2026-11-09
+
+**Versión documental:** MCP-OCP-v0.1.25. Lista auxiliar objetivo v0.6. **Objetivo de release del sprint:** producto ejecutable MCP-OCP 1.0.0. No confundir versión de núcleo documental, backlog y versión del software.
+
+### 16.1 Destino local del programa
+
+El servidor instalado debe residir dentro del repositorio local de Metodología:
+- Checkout único: `SeryMente/Repositorios/Metodologia/metodologia/`.
+- Ruta relativa obligatoria: `frentes/mcp-metodologia/instalacion-local/`.
+- Ruta Windows: `<checkout>\\frentes\\mcp-metodologia\\instalacion-local\\`.
+
+Aloja ejecutable 1.0.0, runtime/dependencias necesarias, launcher, configuración de ejemplo y manifiesto/hash. Es materialización local excluida de Git; no versionar binarios. Código fuente y pruebas sí se versionan/reconstruyen desde el repositorio.
+
+### 16.2 Datos y secretos fuera del checkout
+
+DB SQLite, claves DPAPI CurrentUser, datos importados sensibles, logs operativos y backups deben estar fuera del checkout, en root independiente, explícito y verificado por EP dentro del perímetro cifrado. No asumir que un volumen cifrado al 100 % está protegido si BitLocker Protection está Off/suspendido. No escribir secretos/tokens/contraseñas/SID/recovery protectors en repo, paquete, configuración de ejemplo o logs.
+
+### 16.3 Contrato mínimo de MCP-OCP 1.0.0
+
+Diagnóstico de readiness real (distinto de proceso activo), recuperación GOW:ARR, identidad/procedencia DUG, catálogo 43 MDP, texto Sink individual/lote ordenado y lectura restringida de documentación/objetos OCP permitidos. Respuestas con pin y SHA. Fallo de fuente/ruta/autorización/integridad detiene la operación afectada. Sink no evalúa ni aplica automáticamente principios.
+
+### 16.4 Ruta de ejecución de tareas existentes
+
+MCP-OCP-02 reconciliación contra main; 05 fuentes/herramientas/Sink; 03 build/tests; 04 STDIO/RDC/perímetro; 10 pins/manifiesto/evidencias; 07 paquete; 12 extracción/bootstrap en la carpeta local y datos protegidos; 08 handoff EP. Primero corte vertical ARR → DUG → SINK:P004; luego generalizar a 43. No fusionar ramas históricas completas ni reutilizar sus PASS como aceptación actual.
+
+### 16.5 Aceptación de release
+
+Build reproducible; initialize/tools/list/tools/call; texto íntegro individual y batch en orden; hashes exactos; matriz positiva/negativa; rechazo de fuentes alteradas/obsoletas/ausentes y rutas inválidas; shutdown limpio; sin listener de red no autorizado. Paquete verificable por manifest/SHA y extracción/read-back, reconstruible desde GitHub. Release 1.0.0 solo tras E2E instalado en la ruta local de Metodología y recibos de aceptación.
+
+EP conserva preflight de host, protección efectiva, dead-man LOC-OTHER, root de datos y consentimiento local. El ejecutable va dentro del checkout; bootstrap/REGISTER no se hace sin presencia y consentimiento. `MCP-NORMATIVO=DESACTIVADO`; Khora/Jules/B2/Cloudflare/endpoints públicos quedan fuera.
