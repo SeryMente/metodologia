@@ -349,8 +349,9 @@
         "scope": "Segunda sesión responsable de EP; conservar al titular vigente; continuidad y actualización documental EP-TASK-001–004; desarrollo/actualización de EP Vault y trabajo local PC-14 dentro de autorizaciones y compuertas ya vigentes. Máximo dos responsables activos. No autoriza acceso o transferencia de secretos fuera de los flujos canónicos ni cambios al DUG."
       },
       "readback_required": true,
-      "readback_verified": false,
-      "source_control_blob_sha": "4160dfed6c0833e88e9b9fee7d79e54ab7214006"
+      "readback_verified": true,
+      "source_control_blob_sha": "4160dfed6c0833e88e9b9fee7d79e54ab7214006",
+      "readback_control_blob_sha": "2ac518cc4f272439e3d060b635e36d3772c7c8ae"
     }
   ],
   "co_responsibility": {
@@ -381,9 +382,11 @@
       "added_local_uuidv7": "01a1c16c-f0fa-7273-a0f8-a1dde032fc60",
       "active_responsibles_after_write": 2,
       "maximum": 2,
-      "status": "PENDING_READBACK",
+      "status": "VERIFIED_READBACK",
       "readback_required": true,
-      "readback_verified": false
+      "readback_verified": true,
+      "readback_sha": "2ac518cc4f272439e3d060b635e36d3772c7c8ae",
+      "readback_verified_on": "2026-11-09"
     }
   ]
 }
