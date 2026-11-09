@@ -266,3 +266,15 @@ La ruta local observada ya fue reestructurada con esos directorios. La carpeta S
 - PC 7 está clasificado LOC-OTHER. VHDX+BitLocker XTS-AES256/Protection On/100 % y dead-man EP siguen siendo compuertas independientes. La estructura lógica observada no demuestra el perímetro cifrado ni recuperación.
 
 **Estado:** organización lógica MATERIALIZADA; protección física, respaldos y aceptación NO VERIFICADOS.
+
+## Sprint MCP-OCP 1.0.0 · checkout íntegro y workspace PC 7 · 2026-11-09
+
+**Entrega de workspace para el sprint:** mantener un único checkout completo de SeryMente/metodologia en `SeryMente/Repositorios/Metodologia/metodologia/`. La carpeta ya observada en PC 7 era una materialización parcial, no un checkout Git íntegro ni sincronizado; `git` no estaba disponible en el preflight conocido. Esta tarea debe resolver Git para el usuario, sincronizar el repo privado desde `main`, verificar branch/origin/HEAD/status y conservar sin sobrescribir cualquier cambio local ajeno.
+
+**Ubicación del programa:** EP-TASK-005 instalará el release MCP-OCP 1.0.0 dentro de ese checkout, en `frentes/mcp-metodologia/instalacion-local/`. EP-TASK-003 entrega el checkout y el perímetro; no extrae ni provisiona el servidor por sustitución de EP-TASK-005.
+
+**Separación de datos:** DB SQLite, claves DPAPI, fuentes sensibles, logs operativos y backups del servidor se mantienen fuera del checkout, en una raíz de datos independiente cuya protección real verifica EP. Los binarios locales se excluyen de Git; no se mezclan con el código fuente.
+
+**Gate LOC-OTHER:** repetir preflight vivo PC 7: dispositivo RDC, usuario/SID efectivos, checkout, permisos, volumen XTS-AES256, BitLocker Protection On y FullyEncrypted 100 %, y root de datos. La evidencia más reciente disponible indicó cifrado 100 % pero `ProtectionStatus=Off`; no declarar protegido hasta obtener Protection On. Implementar y probar el dead-man específico antes de dejar cualquier runtime persistente.
+
+**Criterio de cierre EP-TASK-003 para este sprint:** checkout íntegro y sincronizado con read-back; ruta exacta accesible; controles de protección activos; dead-man LOC-OTHER probado sin borrar fuera de su alcance; evidencia/hash y lectura de vuelta. La falta de Git/checkout puede resolverse en paralelo al desarrollo remoto MCP y no debe bloquear MCP-OCP-02/05/03/04/07.
