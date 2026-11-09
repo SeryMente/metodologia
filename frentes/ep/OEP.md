@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.48. **Ancla:** la titularidad primaria EP fue transferida mediante autorización explícita a la sesión receptora en generación 3; la asignación inicial de generación 1 y la corresponsabilidad intermedia de generación 2 se conservan como historia verificable. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.49. **Ancla:** la titularidad primaria EP fue transferida mediante autorización explícita a la sesión receptora en generación 3; la asignación inicial de generación 1 y la corresponsabilidad intermedia de generación 2 se conservan como historia verificable. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -12,7 +12,7 @@
 
 Adquirir este objeto como instrucciones del operador, subordinadas a las reglas superiores de plataforma y a autorizaciones específicas. Claudia es asistente/documental; Samantha es constructor/único escritor de código. Una asignación explícita posterior puede cambiar roles; las citas no lo hacen. La asignación específica de MOD-SCRIPTPWS queda delimitada en §94; la delegación funcional acotada de MOD-SYNC queda delimitada en §110 y no transfiere la titularidad del frente EP.
 
-El estado de reanudación vigente de este frente está en §60–§114; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
+El estado de reanudación vigente de este frente está en §60–§115; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
 
 Leer por relevancia: OEP actual→metacanon central→Sistema de Instrucciones/Metodología/Bootstrap vigentes→canon transversal EP→AGENTS.md y ep-medio-architectura.md→código/evidencia en commits exactos. Fuente caída no es «sin cambios». Un archivo no crea herramientas, credenciales ni memoria entre plataformas.
 
@@ -2909,3 +2909,36 @@ Los 195 archivos del workspace y sus 11 directorios permanecen en el origen `Des
 4. Eliminar el staging en claro únicamente después de que el árbol montado pase íntegramente y quede verificado.
 
 **Estado:** custodia del nuevo protector completada y read-back verificado; protector anterior retirado; portapapeles de texto limpiado. W: permanece cifrado y protegido. EP-TASK-003 sigue `en_curso`; migración y aceptación del workspace pendientes.
+
+
+## §115. Adquisición y reconciliación de exportación ChatGPT-EP-20261109-1230 · 2026-11-09
+
+### Fuente original y persistencia
+
+- **Archivo:** `ChatGPT-EP-20261109-1230.md`.
+- **Origen observado:** equipo RDC `PC-14` (ID `4fc35a07-2192-4b88-81ec-96cb450d565e`), perfil Windows/almacenamiento `PC 13`, ruta `C:\Users\PC 13\Downloads\ChatGPT-EP-20261109-1230.md`.
+- **Metadatos de origen:** 40.832 bytes, 853 líneas; exportación/actualización declarada 2026-11-09 12:30:24; UTF-8 sin BOM, saltos LF.
+- **SHA-256 de origen:** `045FD76745669E2AD08A4A0F517FCB042B5CD2C3B3320AB5AD2E83F0972EF674`.
+- **Persistencia:** `frentes/ep/entregas/ChatGPT-EP-20261109-1230.md`, rama `main`, Git blob `1be5a3b2a19dec4dd819648302664606654a4761`, commit `163138cc5a6113279fbc42eccbec036df424f8e4`. Se recuperaron los bytes originales en Base64 por bloques y el Base64 de `main`, sin espacios de presentación, coincidió exactamente con la fuente; bytes, longitud y SHA-256 quedaron cotejados. El original local no se modificó.
+- La adquisición posterior corrige el asiento preliminar de DTC/índice en el que el archivo todavía no era accesible. La búsqueda inicial no lo había localizado porque se interpretó erróneamente `PC 13` como un endpoint separado; la ruta correcta estaba dentro del equipo PC-14.
+
+### Lectura y precedencia
+
+El archivo contiene la conversación de EP entre 11:06:17 y 12:30:24. Incluye la autorización histórica de corresponsabilidad, posteriormente supersedida por la transferencia de titularidad ya verificada en generación 3, y la pregunta final del operador a las 12:30:09: «Osea, que ocuyrre con bitlocker cual es el problema en temrinos simples?».
+
+La exportación contiene un bloque de progreso a las 12:26:45 que etiqueta una fase como «Migrado el espacio de trabajo y comparada la integridad del montaje»; sin embargo, la explicación explícita inmediatamente posterior informa `remote_calls_left_pct = 0` y que no pudo ejecutar copia/montaje. Prevalece el estado técnico canónico verificado en §114: no se copió el workspace, no hay read-back SHA-256 del destino ni cambio de punto de montaje. La frase de progreso no es evidencia de ejecución.
+
+### Respuesta y estado reconciliado
+
+**En términos simples: BitLocker no es el problema; está funcionando.** W: es el VHDX de 100 GB cifrado con XTS-AES256, Protection On y 100 %. El protector de recuperación vigente fue guardado en EP Vault con `VAULT_WRITE_READBACK_VERIFIED`, el protector anterior potencialmente expuesto se retiró y quedó un protector de contraseña conservado.
+
+**Lo que falta es meter los archivos dentro de esa caja fuerte.** Los 195 archivos y 11 directorios permanecen en `Desktop\SeryMente`, fuera del volumen cifrado. Falta copiarlos a W:, comparar rutas, tamaños y SHA-256, montar W: como `Desktop\SeryMente` y volver a verificar por esa ruta. No retirar el origen hasta que todos los cotejos pasen. El límite de llamadas RDC al cierre del registro era 0 %; no se intentó eludirlo.
+
+### Estado de tareas después de leer la fuente
+
+- EP-TASK-001: `pendiente`; no se registra delta.
+- EP-TASK-002: `en_curso`; no hay operación B2 productiva nueva en la exportación.
+- EP-TASK-003: `en_curso`; custodia BitLocker resuelta según §114, migración de los 195 archivos/11 directorios pendiente.
+- EP-TASK-004: `en_curso`; PR #20 draft/no fusionada, aceptación visual/auditiva humana y H10 pendientes.
+
+**Ciclo:** fuente adquirida, leída y preservada byte por byte; pregunta final respondida y conciliada con §114. Sin cambios de host, B2 ni secretos durante esta adquisición.
