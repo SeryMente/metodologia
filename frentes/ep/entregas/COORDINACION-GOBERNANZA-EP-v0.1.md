@@ -2100,3 +2100,33 @@ FOL1: NO CONSTA ACTIVO.
 - Control MCP-OCP: permanece separado, sin cambios.
 
 **Secuencia:** esta respuesta inicial se registra después de recuperar el DTC y de iniciar la lectura técnica de OEP/DUG. No se afirma que la apertura precediera a todo el análisis de esta conversación. El cierre deberá documentar la especificación, sus decisiones y los artefactos realmente escritos, con lectura de vuelta.
+
+
+## EP · cierre de especificación MOD-SYNC · 2026-11-09
+
+### Resultado del procesamiento
+
+**Propósito:** validado expresamente por el operador el 2026-11-09. MOD-SYNC permanece módulo funcional subordinado a EP.
+
+**Especificación:** materializada como propuesta técnica en OEP §111, versión documental v0.3.44. Define: registro JSON versionado en `main`; resolvedor HTTPS de solo lectura; rutas `GET /{slug}`, `HEAD /{slug}` y `/healthz`; redirect 302 `no-store`; validación estricta de slugs/destinos; administración únicamente mediante cambios Git; privacidad sin proxy de contenido; build reproducible; pruebas unitarias, contractuales, de seguridad e integración.
+
+**Aliases de primera entrega:** `gow-arr` → DUG `main` con fragmento `#gow-arranque-chatgpt`; `dug` → raíz del mismo documento. El ancla `gow-arranque-chatgpt` se encontró en el DUG Samantha v383 / NX-383m, blob `cad464717c43733aa84b49f8c9c3af0875597fbd`.
+
+**Decisión de arquitectura propuesta:** registro declarativo en Git + servicio runtime de solo lectura; no se propone base de datos ni API pública de administración para la primera versión. El proveedor y el dominio propio siguen sin seleccionarse. La redirección no concede acceso al repositorio privado; el cliente/modelo necesita credencial/conector de GitHub autorizado. No se creó un bypass de privacidad.
+
+### Persistencia y lectura de vuelta
+
+- OEP §110/§111: v0.3.44; sección §111 y anclas `#mod-sync` / `#mod-sync-implementation`; blob final `7f8900d67675788f215fcd875c2527861a54712a`; lectura de vuelta PASS.
+- README EP: enlace a propósito y especificación; versión OEP v0.3.44; blob `9d172b08b2c30a2f9ab65386db1e9afa5ee37b94`; lectura de vuelta PASS.
+- Manifiesto EP: `front.oep_version=v0.3.44`; blob `151de94c2aecd6b454ed39d79c452d209d6cc317`; lectura de vuelta PASS.
+- DTC apertura: commit `e1e5d93aad218d6618dff557006d9004d978cd3f`, blob de read-back `5116b4af91a73752236a95548f9364b6bafb9687`.
+
+### Límites, pendientes y siguiente decisión
+
+- Estado: `PROPÓSITO_VALIDADO · ESPECIFICACIÓN_PROPUESTA_PENDIENTE_DE_VALIDACIÓN_TÉCNICA`.
+- No implementado: código, CI, endpoint, DNS, TLS, dominio, proveedor, logs/telemetría, despliegue ni pruebas de redirección.
+- No modificados: DUG, ART-025, ART-027, Sink, `sync_bundle`, control EP ni control MCP-OCP.
+- No insertados: URLs operativas en IPZ; aún no existen.
+- Próxima acción: operador valida/corrige la especificación §111; después seleccionar dominio/proveedor y autorizar la implementación, comenzando por el registro y el resolvedor de prueba.
+
+**Resultado del ciclo:** ESPECIFICACIÓN DOCUMENTAL PERSISTIDA Y VERIFICADA; IMPLEMENTACIÓN NO EJECUTADA. El objeto de coordinación conserva apertura, procesamiento y cierre en este mismo DTC.
