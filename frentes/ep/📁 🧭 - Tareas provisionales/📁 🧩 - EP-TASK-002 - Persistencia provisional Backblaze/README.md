@@ -2125,3 +2125,8 @@ Se cotejó metadata del correo Backblaze `A Master Key Has Been Generated in You
 ## Estado del ciphertext local previo al primer respaldo · 2026-11-09
 
 EP Vault CLI confirmó nueve nombres en el almacén, una nota DPAPI pendiente, sesión activa, esquema `ep-env-vault/1`, KDF PBKDF2-HMAC-SHA256/600.000 iteraciones y 1.324 bytes. Ciphertext local: `%LOCALAPPDATA%\Khora\secrets\ep-env-vault.enc.json`; SHA-256 observado `41F79D30165F8381AB8D89198139853467B3DFA405A8BAC8AB2FFAC45013752F`. Se conserva el original local. Este ciclo no autenticó, no subió, no descargó y no verificó un objeto remoto; el respaldo B2 permanece PENDIENTE.
+
+
+## Checkpoint del ciphertext actualizado antes del respaldo B2 · 2026-11-09
+
+Tras centralizar las variables no secretas disponibles, EP Vault confirmó 18 nombres, una nota DPAPI pendiente, sesión activa, esquema `ep-env-vault/1`, PBKDF2-HMAC-SHA256/600.000 iteraciones y 2.048 bytes. SHA-256 del ciphertext local: `D7AD1D745CAF460E047EAE521C1C403F36E99864BC9CD0604FFC564E390F2F7D`. Esta huella sustituye a la del checkpoint anterior como versión actual del archivo. El original sigue intacto y aún no existe upload, descarga/read-back ni objeto remoto comprobado.
