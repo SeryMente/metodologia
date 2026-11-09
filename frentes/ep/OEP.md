@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.55. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.56. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -3078,7 +3078,7 @@ La raíz física se descubre dinámicamente desde el Escritorio real o desde el 
 - **Propósito:** custodiar variables de entorno locales y notas de trabajo efímeras mediante cifrado autenticado, permisos Windows restringidos, sesiones cortas y operaciones explícitas; ofrecer superficies GUI y CLI sobre el mismo núcleo; y exponer un modo headless para herramientas/modelos que entregue únicamente las variables incluidas en una allowlist al proceso hijo controlado.
 - **Fuente única del producto:** frentes/ep/modulos/MOD-EPVAULT/v1.0.0/. Este directorio contiene el código, pruebas, instalador, recursos y documentación de la versión.
 - **Tarea de procedencia y validación:** EP-TASK-004 conserva el mandato original, evolución, decisiones y recibos. No es la fuente de mantenimiento del módulo después de v1.0.0.
-- **Estado:** V1.0.0 MATERIALIZADA · SUITE SINTÉTICA PC 7 PASS EN EL EXPEDIENTE · ACEPTACIÓN VISUAL H10 PENDIENTE · MERGE A MAIN PENDIENTE.
+- **Estado:** V1.0.0 MATERIALIZADA LOCALMENTE EN PC 7 · IDENTIDAD/ESTADO CLI, SELF-TEST, PARSER, WPF Y MANIFIESTO DE INTEGRIDAD VERIFICADOS · SUITE SINTÉTICA E2E EXACTA PENDIENTE · H10 PENDIENTE · MERGE A MAIN PENDIENTE.
 
 ### 120.2 Arquitectura funcional
 
@@ -3124,6 +3124,18 @@ La suite sintética en PowerShell 5.1 sobre el perfil PC 7 terminó con exit cod
 **Estado local conocido en el preflight:** la ruta formal del almacén no existía en el perfil PC 7; el instalador consulta solo estado y debe conservar esa ausencia sin crear archivo. BitLocker/contendor VHDX/dead-man de LOC-OTHER no quedaron acreditados por esta instalación y siguen siendo compuertas separadas antes de almacenar secretos reales de alta sensibilidad.
 
 **Aceptación:** H10 requiere revisión presencial de aspecto, interacción, DPI, teclado, accesibilidad, movimiento reducido y ciclo de cierre/expiración. El código puede pasar pruebas automatizadas y abrir una ventana, pero eso no sustituye esa aceptación humana. DUG P012/P013 impide declarar merge final mientras esa compuerta siga pendiente.
+
+### 120.8 Materialización local y verificación inicial PC 7 · 2026-11-09
+
+- Paquete materializado en `Desktop/SeryMente/Repositorios/Metodologia/metodologia/frentes/ep/modulos/MOD-EPVAULT/v1.0.0/`, sin sobrescribir el expediente histórico EP-TASK-004.
+- Los 14 artefactos declarados en MANIFEST.json y tres documentos raíz (README, CHANGELOG y MANIFEST) cotejaron 17/17 Git blob SHA; los dos WAV superaron SHA-256 origen/destino.
+- En PowerShell 5.1: CLI Version y Status finalizaron con exit 0; el core self-test criptográfico, Job Object y timeout pasaron; parser de tres fuentes y carga real WPF/XAML con 22 controles pasaron.
+- GUI visible y dos accesos directos de escritorio (GUI/CLI) verificados por read-back.
+- La suite E2E completa de v1.0.0 no se ejecutó: el canal remoto rechazó el lanzamiento del runner. No se interpreta como fallo ni PASS. El instalador integral tampoco se ejecutó, pues incorpora esa suite; no se utilizó el switch de omisión.
+- Estado del almacén: la primera consulta Status devolvió NOT_INITIALIZED; una consulta posterior devolvió ENCRYPTED_FILE_PRESENT y sesión activa. No se atribuye técnicamente la transición. No se leyó el payload, no se ejecutó Initialize ni se revelaron o copiaron variables; preservar el almacén tal como está.
+- BitLocker C: reportó 100 % de sectores usados cifrados con XTS-AES 128, pero Protection Off y ningún protector. Esto no satisface el perímetro de dispositivo exigido por EP; no introducir secretos de alta sensibilidad hasta activar y verificar protección.
+- El recibo detallado y la salida de estado se conservan en `frentes/ep/📁 🧭 - Tareas provisionales/📁 🧩 - EP-TASK-004 - Reconstrucción de bóveda/EVIDENCIA-PC7-MOD-EPVAULT-v1.0.0-20261109.md`.
+- H10 permanece pendiente de inspección/aceptación humana presencial; el merge a main continúa bloqueado por P012/P013. Esta evidencia no equivale a aceptación ni a publicación canónica.
 
 ### 120.7 Versionado y mantenimiento
 
