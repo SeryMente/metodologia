@@ -12,7 +12,7 @@ Recibir el artefacto MCP-OCP renovado y efectuar su instalación, bootstrap y ac
 
 1. Destino ya designado por el operador: perfil Windows `PC 7`, asociado al equipo RDC correspondiente, ubicación `LOC-OTHER`. Al iniciar la operación, comprobar en vivo que el usuario Windows, SID efectivo, equipo RDC, rutas y permisos coinciden con esa designación. La designación no sustituye el preflight ni autoriza a reutilizar datos de sesiones temporales anteriores.
 2. Confirmar en el destino PC 7 que workspace, runtime, base de datos y respaldos están dentro de un volumen protegido. El estado XTS-AES256/Protection On/FullyEncrypted 100 % y RecoveryPassword custodiado observado en otro perfil/host no se hereda: repetir la lectura de vuelta en el dispositivo RDC asociado a PC 7. EP-TASK-003 debe completar la migración y ambos read-backs SHA-256 antes de mover allí el runtime.
-3. Resolver el root de datos del servidor. El código recuperable de MCP-OCP usa por defecto `%LOCALAPPDATA%\SeryMente\OCP MCP`; debe quedar dentro del perímetro cifrado o debe probarse cifrado completo del volumen que aloja ese perfil. MCP-OCP habilitará una configuración explícita y validada del root de datos/respaldos para apuntar a W: sin heredar rutas de otra sesión.
+3. Resolver el root de datos del servidor. El código recuperable de MCP-OCP usa por defecto `%LOCALAPPDATA%\SeryMente\OCP MCP`; debe quedar dentro del perímetro cifrado o debe probarse cifrado completo del volumen que aloja ese perfil. MCP-OCP habilitará una configuración explícita y validada del root de datos/respaldos. La ruta concreta se elegirá en el preflight del perfil PC 7 y deberá estar dentro del volumen protegido que EP verifique en ese mismo host; no asumir W: ni heredar rutas de otra sesión.
 4. Recibir solo un paquete nuevo, construido y verificado contra DUG Samantha v386/NX-386m y el núcleo MCP-OCP vigente. Verificar SHA-256, manifiesto, RID y resultados de pruebas antes de extraer.
 5. Si se necesita clonar/actualizar el repositorio privado desde ese perfil, comprobar autenticación local. Si falta, el propietario realiza `gh auth login --web` de forma interactiva en ese Windows; el token permanece en el almacén local. La autenticación GitHub del conector de ChatGPT no se transfiere al equipo.
 6. Ejecutar `import-sources` contra un checkout con los commits/blobs vigentes; verificar resultado y 43 IDs/MDP. No importar fuentes con pins antiguos.
@@ -60,6 +60,7 @@ Por instrucción directa del operador, la aceptación EP incluye la apertura aut
 - ZIP y manifiesto verificados por SHA-256; fuentes actuales importadas con pins aprobados.
 - `operator_provisioned=true` después de consentimiento local interactivo; claves DPAPI CurrentUser ligadas al SID real.
 - Prueba MCP stdio/RDC real: initialize, tools/list, tools/call de GOW:ARR, DUG y al menos un SINK:Pxxx, desconexión y reinicio.
+- Panel MCP-OCP-13: apertura en EP ACTIVE, espera de servidor, observación de proceso/protocolo/readiness, caída del servidor, cierre de EP sin proceso huérfano y SHA del ejecutable/manifiesto cotejados.
 - Sin listener, endpoint público, regla de firewall ni secretos en logs/salida/repositorio.
 - Evidencia y read-back actualizados en esta ficha, el índice EP y OEP.
 
