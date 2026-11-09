@@ -36,3 +36,10 @@ Una instrucción explícita que identifica frente y acción puede ejecutarse sin
 ## Alineación con Samantha v385 · NX-385m · 2026-11-09
 
 P037 determina que el operador autoriza la actuación descrita. La titularidad y generación registrales dejan de funcionar como compuerta. No se impone pregunta redundante al operador ni se convierte la organización documental en un trámite adicional.
+
+
+## Aplicación al sprint MCP-OCP · 2026-11-09
+
+La instrucción explícita del operador identifica los tres frentes y autoriza el diseño/actualización documental de sus tareas provisionales. La autorización de implementación Sink local por STDIO está registrada directamente en el control MCP-OCP. No solicitar aprobación del titular anterior ni usar generación/folio como compuerta. La actuación técnica parte de `main` y permanece dentro del OCP MCP.
+
+La admisión fail-closed se aplica a cada operación real: no leer fuera de rutas permitidas, no ejecutar sin autorización local, no aceptar fuentes no verificadas y no continuar con hashes discrepantes. No bloquea diseño, revisión de código, pruebas locales, compilación ni paquete. La instalación en PC 7 se bloquea solo por gates reales de EP (identidad/perfil, protección efectiva, dead-man LOC-OTHER, root de datos y consentimiento interactivo). Ninguna actualización documental instala o registra al operador por sí sola.
