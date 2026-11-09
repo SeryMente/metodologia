@@ -46,3 +46,10 @@ Marcar como completada solo cuando el enunciado haya sido atendido, la evidencia
 Además de la matriz semántica existente, verificar la forma compacta del nombre expuesto al modelo: `Principio DI · [1–3 términos atómicos]`. Debe existir mapeo inequívoco de cada etiqueta a su ID y título canónico del DUG, sin reescribir el título normativo. Validar los 43 MDP con positivos/negativos: el descriptor debe permitir comprender el principio y detectar pertinencia, pero no reemplazar el texto desarrollado ni habilitar aplicación segura sin consultarlo. La matriz actual es un protocolo de prueba, no evidencia de que ya se ejecutó.
 
 Trazabilidad rectora: [C-GOBERNANZA-VECTOR-SEMANTICO-01](../../cronica/C-GOBERNANZA-VECTOR-SEMANTICO-01.md).
+
+
+## Rebaselining para el sprint Sink local · 2026-11-09
+
+**DUG vigente:** Samantha v385 · NX-385m; commit `7dcdac6c62f9e8a27ce11f8fa0e4fc379a3d12f8`; blob `72cd2e8e4e6a594b300ba1868baeabc2472beb97`. Las referencias a DUG v373 de los apartados anteriores son procedencia histórica, no pins vigentes.
+
+La matriz `MATRIZ-PRUEBAS-MDP-v1.md` sigue siendo un protocolo pendiente de ejecución: 43 positivos + 8 controles negativos/frontera. Durante el sprint se ejecutará contra los 43 MDP de v385 y el catálogo Sink local; se registrarán por caso ID/título/resultado y falsos positivos/negativos. La aprobación semántica no autoriza aplicar el principio solo con el MDP: si hay pertinencia, debe consultarse el texto desarrollado mediante `SINK:Pxxx` y validar su identidad/hash. Muestra vertical inicial recomendada: P004; smoke ampliado P001/P004/P005/P038/P043.
