@@ -27,7 +27,7 @@ $reader.Close()
 
 # Add named XAML elements as PowerShell note properties for safe event wiring.
 $uiNames = @(
-    'HeaderState','SoundToggle','ClosedStage','OpenStage','UnlockButton','LockButton','MasterPasswordBox',
+    'HeaderState','SoundToggle','VaultViewport','ClosedStage','OpenStage','UnlockButton','LockButton','MasterPasswordBox',
     'ConfirmPasswordBox','ConfirmLabel','GateTitle','GateDescription','SessionDuration',
     'GateMessage','FooterStatus','SessionRemaining','SessionExpiresAt','VariableNameBox',
     'StoreVariableButton','VariableList','RefreshVariablesButton','RevealVariableButton',
@@ -152,294 +152,431 @@ function Invoke-EpVaultAudio {
     $player = if ($Action -eq 'Open') { $script:OpenSound } else { $script:CloseSound }
     if ($null -ne $player) { try { $player.Stop(); $player.Play() } catch { } }
 }
-function Build-CleanRoomVaultDoor {
-    $canvas = Get-UiElement -Name 'VaultCanvas'
-    $canvas.Children.Clear()
+function New-Ep3DMaterial {
+    param([string]$Color,[string]$Specular='#A7B0B2',[double]$Power=48)
+    $group=[System.Windows.Media.Media3D.MaterialGroup]::new()
+    [void]$group.Children.Add([System.Windows.Media.Media3D.DiffuseMaterial]::new((New-UiBrush -Color $Color)))
+    [void]$group.Children.Add([System.Windows.Media.Media3D.SpecularMaterial]::new((New-UiBrush -Color $Specular),$Power))
+    return $group
+}
 
-    $glow = Add-DoorEllipse -Left 8 -Top 8 -Width 624 -Height 624 -Fill '#11191D' -Stroke '#202A2E' -StrokeWidth 2
-    $glow.Effect = [System.Windows.Media.Effects.DropShadowEffect]::new()
-    $glow.Effect.Color = [System.Windows.Media.Colors]::Black
-    $glow.Effect.BlurRadius = 38
-    $glow.Effect.ShadowDepth = 0
-    $glow.Effect.Opacity = 0.8
-
-    $null = Add-DoorEllipse -Left 25 -Top 25 -Width 590 -Height 590 -Fill 'METAL' -Stroke '#505C60' -StrokeWidth 8
-    $null = Add-DoorEllipse -Left 47 -Top 47 -Width 546 -Height 546 -Fill '#202A2F' -Stroke '#667276' -StrokeWidth 3
-    $null = Add-DoorEllipse -Left 67 -Top 67 -Width 506 -Height 506 -Fill '#182126' -Stroke '#4D595D' -StrokeWidth 2
-    $null = Add-DoorEllipse -Left 85 -Top 85 -Width 470 -Height 470 -Fill 'METAL' -Stroke '#0A0E10' -StrokeWidth 3
-    $null = Add-DoorEllipse -Left 109 -Top 109 -Width 422 -Height 422 -Fill '#171F23' -Stroke '#657078' -StrokeWidth 2
-    $null = Add-DoorEllipse -Left 132 -Top 132 -Width 376 -Height 376 -Fill '#222C31' -Stroke '#4D595D' -StrokeWidth 2
-    $null = Add-DoorEllipse -Left 154 -Top 154 -Width 332 -Height 332 -Fill '#12191D' -Stroke '#4E5A60' -StrokeWidth 2
-
-    for ($i=0; $i -lt 60; $i++) {
-        $angle = ($i * 6.0 - 90.0) * [Math]::PI / 180.0
-        $radius1 = if (($i % 5) -eq 0) { 249.0 } else { 254.0 }
-        $radius2 = 263.0
-        $x1 = 320 + [Math]::Cos($angle) * $radius1
-        $y1 = 320 + [Math]::Sin($angle) * $radius1
-        $x2 = 320 + [Math]::Cos($angle) * $radius2
-        $y2 = 320 + [Math]::Sin($angle) * $radius2
-        $color = if (($i % 5) -eq 0) { '#7F8D91' } else { '#586267' }
-        $width = if (($i % 5) -eq 0) { 2.2 } else { 1.0 }
-        $null = Add-DoorLine -X1 $x1 -Y1 $y1 -X2 $x2 -Y2 $y2 -Color $color -Width $width
+function New-Ep3DCylinder {
+    param([double]$Radius=1,[double]$Depth=0.2,$Material,[int]$Segments=48)
+    $positions=[System.Windows.Media.Media3D.Point3DCollection]::new()
+    $normals=[System.Windows.Media.Media3D.Vector3DCollection]::new()
+    $indices=[System.Windows.Media.Int32Collection]::new()
+    $half=$Depth/2.0
+    for($i=0;$i -lt $Segments;$i++){
+        $a=2.0*[Math]::PI*$i/$Segments
+        $x=[Math]::Cos($a)*$Radius; $y=[Math]::Sin($a)*$Radius
+        $n=[System.Windows.Media.Media3D.Vector3D]::new([Math]::Cos($a),[Math]::Sin($a),0)
+        [void]$positions.Add([System.Windows.Media.Media3D.Point3D]::new($x,$y,-$half))
+        [void]$positions.Add([System.Windows.Media.Media3D.Point3D]::new($x,$y,$half))
+        [void]$normals.Add($n); [void]$normals.Add($n)
     }
-
-        # Patina, abrasion and shallow oxidation: deterministic so visual tests are repeatable.
-    $scuffRandom = [System.Random]::new(4031)
-    for ($i = 0; $i -lt 54; $i++) {
-        $angle = $scuffRandom.NextDouble() * 2.0 * [Math]::PI
-        $radius = 168.0 + $scuffRandom.NextDouble() * 86.0
-        $length = 3.0 + $scuffRandom.NextDouble() * 21.0
-        $x1 = 320 + [Math]::Cos($angle) * $radius
-        $y1 = 320 + [Math]::Sin($angle) * $radius
-        $x2 = 320 + [Math]::Cos($angle) * ($radius + $length)
-        $y2 = 320 + [Math]::Sin($angle) * ($radius + $length)
-        $shade = if (($i % 4) -eq 0) { '#667276' } else { '#303A3E' }
-        $width = if (($i % 5) -eq 0) { 1.7 } else { 0.7 }
-        $null = Add-DoorLine -X1 $x1 -Y1 $y1 -X2 $x2 -Y2 $y2 -Color $shade -Width $width
+    for($i=0;$i -lt $Segments;$i++){
+        $a=2*$i; $b=$a+1; $c=2*(($i+1)%$Segments); $d=$c+1
+        foreach($v in @($a,$c,$b,$b,$c,$d)){[void]$indices.Add($v)}
     }
-    for ($i = 0; $i -lt 22; $i++) {
-        $angle = $scuffRandom.NextDouble() * 2.0 * [Math]::PI
-        $radius = 188.0 + $scuffRandom.NextDouble() * 65.0
-        $x = 320 + [Math]::Cos($angle) * $radius
-        $y = 320 + [Math]::Sin($angle) * $radius
-        $size = 2.0 + $scuffRandom.NextDouble() * 3.5
-        $pit = [System.Windows.Shapes.Ellipse]::new()
-        $pit.Width = $size
-        $pit.Height = $size
-        $pit.Fill = New-UiBrush -Color '#50382E'
-        $pit.Stroke = New-UiBrush -Color '#342923'
-        $pit.StrokeThickness = 0.5
-        [System.Windows.Controls.Canvas]::SetLeft($pit,$x)
-        [System.Windows.Controls.Canvas]::SetTop($pit,$y)
-        [void]$canvas.Children.Add($pit)
-    }
-
-$script:Door = [ordered]@{ Bolts = @(); Wheel = $null; Rotate = $null; Translate = $null; Scale = $null }
-
-    for ($i=0; $i -lt 12; $i++) {
-        $angle = ($i * 30.0 - 90.0) * [Math]::PI / 180.0
-        $radius = 275.0
-        $cx = 320 + [Math]::Cos($angle) * $radius
-        $cy = 320 + [Math]::Sin($angle) * $radius
-        $bolt = [System.Windows.Shapes.Ellipse]::new()
-        $bolt.Width = 40
-        $bolt.Height = 32
-        $bolt.Fill = New-UiMetalBrush
-        $bolt.Stroke = New-UiBrush -Color '#657176'
-        $bolt.StrokeThickness = 2
-        $bolt.Effect = [System.Windows.Media.Effects.DropShadowEffect]::new()
-        $bolt.Effect.Color = [System.Windows.Media.Colors]::Black
-        $bolt.Effect.BlurRadius = 8
-        $bolt.Effect.ShadowDepth = 3
-        [System.Windows.Controls.Canvas]::SetLeft($bolt,$cx-20)
-        [System.Windows.Controls.Canvas]::SetTop($bolt,$cy-16)
-        $transform = [System.Windows.Media.TranslateTransform]::new(0,0)
-        $bolt.RenderTransform = $transform
-        [void]$canvas.Children.Add($bolt)
-        $script:Door.Bolts += [pscustomobject]@{
-            Transform = $transform
-            DeltaX = -[Math]::Cos($angle)*19
-            DeltaY = -[Math]::Sin($angle)*19
+    foreach($front in @($false,$true)){
+        $z=if($front){$half}else{- $half}
+        $normal=if($front){[System.Windows.Media.Media3D.Vector3D]::new(0,0,1)}else{[System.Windows.Media.Media3D.Vector3D]::new(0,0,-1)}
+        $center=$positions.Count
+        [void]$positions.Add([System.Windows.Media.Media3D.Point3D]::new(0,0,$z))
+        [void]$normals.Add($normal)
+        $ring=$positions.Count
+        for($i=0;$i -lt $Segments;$i++){
+            $a=2.0*[Math]::PI*$i/$Segments
+            [void]$positions.Add([System.Windows.Media.Media3D.Point3D]::new([Math]::Cos($a)*$Radius,[Math]::Sin($a)*$Radius,$z))
+            [void]$normals.Add($normal)
+        }
+        for($i=0;$i -lt $Segments;$i++){
+            $next=($i+1)%$Segments
+            if($front){foreach($v in @($center,$ring+$i,$ring+$next)){[void]$indices.Add($v)}}
+            else{foreach($v in @($center,$ring+$next,$ring+$i)){[void]$indices.Add($v)}}
         }
     }
+    $mesh=[System.Windows.Media.Media3D.MeshGeometry3D]::new()
+    $mesh.Positions=$positions; $mesh.Normals=$normals; $mesh.TriangleIndices=$indices
+    $model=[System.Windows.Media.Media3D.GeometryModel3D]::new($mesh,$Material)
+    $model.BackMaterial=$Material
+    return $model
+}
 
-    $wheel = [System.Windows.Controls.Canvas]::new()
-    $wheel.Width = 210
-    $wheel.Height = 210
-    [System.Windows.Controls.Canvas]::SetLeft($wheel,215)
-    [System.Windows.Controls.Canvas]::SetTop($wheel,215)
-    $wheelTransform = [System.Windows.Media.RotateTransform]::new(0,105,105)
-    $wheel.RenderTransform = $wheelTransform
+function New-Ep3DTorus {
+    param([double]$MajorRadius=1,[double]$TubeRadius=0.08,$Material,[int]$MajorSegments=72,[int]$TubeSegments=14)
+    $positions=[System.Windows.Media.Media3D.Point3DCollection]::new()
+    $normals=[System.Windows.Media.Media3D.Vector3DCollection]::new()
+    $indices=[System.Windows.Media.Int32Collection]::new()
+    for($i=0;$i -lt $MajorSegments;$i++){
+        $theta=2.0*[Math]::PI*$i/$MajorSegments
+        for($j=0;$j -lt $TubeSegments;$j++){
+            $phi=2.0*[Math]::PI*$j/$TubeSegments
+            $c=[Math]::Cos($phi); $s=[Math]::Sin($phi); $rad=$MajorRadius+$TubeRadius*$c
+            [void]$positions.Add([System.Windows.Media.Media3D.Point3D]::new($rad*[Math]::Cos($theta),$rad*[Math]::Sin($theta),$TubeRadius*$s))
+            [void]$normals.Add([System.Windows.Media.Media3D.Vector3D]::new($c*[Math]::Cos($theta),$c*[Math]::Sin($theta),$s))
+        }
+    }
+    for($i=0;$i -lt $MajorSegments;$i++){
+        $ni=($i+1)%$MajorSegments
+        for($j=0;$j -lt $TubeSegments;$j++){
+            $nj=($j+1)%$TubeSegments
+            $a=$i*$TubeSegments+$j; $b=$ni*$TubeSegments+$j; $c=$ni*$TubeSegments+$nj; $d=$i*$TubeSegments+$nj
+            foreach($v in @($a,$b,$d,$b,$c,$d)){[void]$indices.Add($v)}
+        }
+    }
+    $mesh=[System.Windows.Media.Media3D.MeshGeometry3D]::new()
+    $mesh.Positions=$positions; $mesh.Normals=$normals; $mesh.TriangleIndices=$indices
+    $model=[System.Windows.Media.Media3D.GeometryModel3D]::new($mesh,$Material)
+    $model.BackMaterial=$Material
+    return $model
+}
 
-    $wheelOuter = [System.Windows.Shapes.Ellipse]::new()
-    $wheelOuter.Width = 210
-    $wheelOuter.Height = 210
-    $wheelOuter.Fill = New-UiBrush -Color '#252E33'
-    $wheelOuter.Stroke = New-UiBrush -Color '#7F8D91'
-    $wheelOuter.StrokeThickness = 5
-    [void]$wheel.Children.Add($wheelOuter)
+function New-Ep3DBox {
+    param([double]$Width=1,[double]$Height=1,[double]$Depth=0.1,$Material)
+    $x=$Width/2.0; $y=$Height/2.0; $z=$Depth/2.0
+    $points=@(
+        [System.Windows.Media.Media3D.Point3D]::new(-$x,-$y,-$z),[System.Windows.Media.Media3D.Point3D]::new($x,-$y,-$z),
+        [System.Windows.Media.Media3D.Point3D]::new($x,$y,-$z),[System.Windows.Media.Media3D.Point3D]::new(-$x,$y,-$z),
+        [System.Windows.Media.Media3D.Point3D]::new(-$x,-$y,$z),[System.Windows.Media.Media3D.Point3D]::new($x,-$y,$z),
+        [System.Windows.Media.Media3D.Point3D]::new($x,$y,$z),[System.Windows.Media.Media3D.Point3D]::new(-$x,$y,$z)
+    )
+    $faces=@(
+        @{N=[System.Windows.Media.Media3D.Vector3D]::new(0,0,1);I=@(4,5,6,7)},
+        @{N=[System.Windows.Media.Media3D.Vector3D]::new(0,0,-1);I=@(1,0,3,2)},
+        @{N=[System.Windows.Media.Media3D.Vector3D]::new(1,0,0);I=@(5,1,2,6)},
+        @{N=[System.Windows.Media.Media3D.Vector3D]::new(-1,0,0);I=@(0,4,7,3)},
+        @{N=[System.Windows.Media.Media3D.Vector3D]::new(0,1,0);I=@(7,6,2,3)},
+        @{N=[System.Windows.Media.Media3D.Vector3D]::new(0,-1,0);I=@(0,1,5,4)}
+    )
+    $positions=[System.Windows.Media.Media3D.Point3DCollection]::new()
+    $normals=[System.Windows.Media.Media3D.Vector3DCollection]::new()
+    $indices=[System.Windows.Media.Int32Collection]::new()
+    foreach($face in $faces){
+        $offset=$positions.Count
+        foreach($idx in $face.I){[void]$positions.Add($points[$idx]);[void]$normals.Add($face.N)}
+        foreach($idx in @(0,1,2,0,2,3)){[void]$indices.Add($offset+$idx)}
+    }
+    $mesh=[System.Windows.Media.Media3D.MeshGeometry3D]::new()
+    $mesh.Positions=$positions; $mesh.Normals=$normals; $mesh.TriangleIndices=$indices
+    $model=[System.Windows.Media.Media3D.GeometryModel3D]::new($mesh,$Material)
+    $model.BackMaterial=$Material
+    return $model
+}
 
-    $wheelInner = [System.Windows.Shapes.Ellipse]::new()
-    $wheelInner.Width = 154
-    $wheelInner.Height = 154
-    $wheelInner.Margin = [System.Windows.Thickness]::new(28)
-    $wheelInner.Fill = New-UiBrush -Color '#0B1013'
-    $wheelInner.Stroke = New-UiBrush -Color '#394449'
-    $wheelInner.StrokeThickness = 2
-    [void]$wheel.Children.Add($wheelInner)
+function Set-Ep3DTranslation {
+    param($Model,[double]$X,[double]$Y,[double]$Z)
+    $Model.Transform=[System.Windows.Media.Media3D.TranslateTransform3D]::new($X,$Y,$Z)
+}
 
-    for ($i=0; $i -lt 8; $i++) {
-        $angle = ($i * 45.0) * [Math]::PI / 180.0
-        $spoke = [System.Windows.Shapes.Line]::new()
-        $spoke.X1 = 105 + [Math]::Cos($angle)*43
-        $spoke.Y1 = 105 + [Math]::Sin($angle)*43
-        $spoke.X2 = 105 + [Math]::Cos($angle)*88
-        $spoke.Y2 = 105 + [Math]::Sin($angle)*88
-        $spoke.Stroke = New-UiBrush -Color '#606C70'
-        $spoke.StrokeThickness = 8
-        $spoke.StrokeStartLineCap = [System.Windows.Media.PenLineCap]::Round
-        $spoke.StrokeEndLineCap = [System.Windows.Media.PenLineCap]::Round
-        [void]$wheel.Children.Add($spoke)
+function Build-CleanRoomVaultDoor {
+    $viewport=Get-UiElement -Name 'VaultViewport'
+    $canvas=Get-UiElement -Name 'VaultCanvas'
+    $viewport.Children.Clear()
+    $canvas.Children.Clear()
+    $canvas.Visibility=[System.Windows.Visibility]::Collapsed
+    $viewport.Visibility=[System.Windows.Visibility]::Visible
+
+    $steel=New-Ep3DMaterial '#20282B' '#A8B0B2' 58
+    $cast=New-Ep3DMaterial '#30383A' '#8D999C' 44
+    $machined=New-Ep3DMaterial '#536065' '#D0D5D5' 78
+    $dark=New-Ep3DMaterial '#0B1012' '#536065' 30
+    $black=New-Ep3DMaterial '#080B0D' '#343B3E' 24
+    $rubber=New-Ep3DMaterial '#111516' '#283033' 12
+    $fastener=New-Ep3DMaterial '#667074' '#D9DEDE' 92
+    $rust=New-Ep3DMaterial '#49372F' '#79665B' 14
+
+    $scene=[System.Windows.Media.Media3D.Model3DGroup]::new()
+    [void]$scene.Children.Add([System.Windows.Media.Media3D.AmbientLight]::new([System.Windows.Media.ColorConverter]::ConvertFromString('#303638')))
+    [void]$scene.Children.Add([System.Windows.Media.Media3D.DirectionalLight]::new([System.Windows.Media.ColorConverter]::ConvertFromString('#D3D7D6'),[System.Windows.Media.Media3D.Vector3D]::new(-0.8,-1.0,-1.8)))
+    [void]$scene.Children.Add([System.Windows.Media.Media3D.DirectionalLight]::new([System.Windows.Media.ColorConverter]::ConvertFromString('#7C8587'),[System.Windows.Media.Media3D.Vector3D]::new(1.1,0.35,-0.8)))
+
+    # Structural chamber and fixed cast frame.
+    $wall=New-Ep3DBox -Width 6.4 -Height 6.4 -Depth 0.42 -Material $black
+    Set-Ep3DTranslation $wall 0 0 -0.72
+    [void]$scene.Children.Add($wall)
+    $recess=New-Ep3DCylinder -Radius 2.52 -Depth 0.24 -Material $dark -Segments 112
+    Set-Ep3DTranslation $recess 0 0 -0.40
+    [void]$scene.Children.Add($recess)
+    $outerFlange=New-Ep3DTorus -MajorRadius 2.39 -TubeRadius 0.205 -Material $cast
+    Set-Ep3DTranslation $outerFlange 0 0 -0.13
+    [void]$scene.Children.Add($outerFlange)
+    $innerMachined=New-Ep3DTorus -MajorRadius 2.20 -TubeRadius 0.070 -Material $machined
+    Set-Ep3DTranslation $innerMachined 0 0 0.005
+    [void]$scene.Children.Add($innerMachined)
+    $sealBed=New-Ep3DTorus -MajorRadius 2.11 -TubeRadius 0.055 -Material $rubber
+    Set-Ep3DTranslation $sealBed 0 0 0.015
+    [void]$scene.Children.Add($sealBed)
+
+    # Three substantial fixed hinge assemblies on the left jamb.
+    for($h=0;$h -lt 3;$h++){
+        $hy=1.42-($h*1.42)
+        $plate=New-Ep3DBox -Width 0.44 -Height 0.82 -Depth 0.16 -Material $steel
+        Set-Ep3DTranslation $plate -2.34 $hy -0.02
+        [void]$scene.Children.Add($plate)
+        $barrel=New-Ep3DCylinder -Radius 0.145 -Depth 0.76 -Material $machined -Segments 40
+        $rot=[System.Windows.Media.Media3D.RotateTransform3D]::new([System.Windows.Media.Media3D.AxisAngleRotation3D]::new([System.Windows.Media.Media3D.Vector3D]::new(1,0,0),90))
+        $tr=[System.Windows.Media.Media3D.TranslateTransform3D]::new(-2.24,$hy,0.16)
+        $tg=[System.Windows.Media.Media3D.Transform3DGroup]::new()
+        [void]$tg.Children.Add($rot); [void]$tg.Children.Add($tr)
+        $barrel.Transform=$tg
+        [void]$scene.Children.Add($barrel)
+        $pin=New-Ep3DCylinder -Radius 0.052 -Depth 0.84 -Material $fastener -Segments 24
+        $pinRot=[System.Windows.Media.Media3D.RotateTransform3D]::new([System.Windows.Media.Media3D.AxisAngleRotation3D]::new([System.Windows.Media.Media3D.Vector3D]::new(1,0,0),90))
+        $pinTr=[System.Windows.Media.Media3D.TranslateTransform3D]::new(-2.24,$hy,0.16)
+        $pinGroup=[System.Windows.Media.Media3D.Transform3DGroup]::new()
+        [void]$pinGroup.Children.Add($pinRot); [void]$pinGroup.Children.Add($pinTr)
+        $pin.Transform=$pinGroup
+        [void]$scene.Children.Add($pin)
     }
 
-    $hub = [System.Windows.Shapes.Ellipse]::new()
-    $hub.Width = 68
-    $hub.Height = 68
-    [System.Windows.Controls.Canvas]::SetLeft($hub,71)
-    [System.Windows.Controls.Canvas]::SetTop($hub,71)
-    $hub.Fill = New-UiMetalBrush
-    $hub.Stroke = New-UiBrush -Color '#879396'
-    $hub.StrokeThickness = 3
-    [void]$wheel.Children.Add($hub)
+    # Fixed perimeter anchor bolts.
+    for($i=0;$i -lt 24;$i++){
+        $a=2.0*[Math]::PI*$i/24.0
+        $rivet=New-Ep3DCylinder -Radius 0.058 -Depth 0.12 -Material $fastener -Segments 20
+        Set-Ep3DTranslation $rivet ([Math]::Cos($a)*2.51) ([Math]::Sin($a)*2.51) 0.005
+        [void]$scene.Children.Add($rivet)
+    }
 
-    $hubCenter = [System.Windows.Shapes.Ellipse]::new()
-    $hubCenter.Width = 20
-    $hubCenter.Height = 20
-    [System.Windows.Controls.Canvas]::SetLeft($hubCenter,95)
-    [System.Windows.Controls.Canvas]::SetTop($hubCenter,95)
-    $hubCenter.Fill = New-UiBrush -Color '#0A0E10'
-    [void]$wheel.Children.Add($hubCenter)
+    # Massive door leaf: separate thick disc, machined edges and independent face plates.
+    $doorGroup=[System.Windows.Media.Media3D.Model3DGroup]::new()
+    $leaf=New-Ep3DCylinder -Radius 2.08 -Depth 0.46 -Material $steel -Segments 144
+    Set-Ep3DTranslation $leaf 0 0 0.16
+    [void]$doorGroup.Children.Add($leaf)
+    $edgeBead=New-Ep3DTorus -MajorRadius 2.015 -TubeRadius 0.115 -Material $machined
+    Set-Ep3DTranslation $edgeBead 0 0 0.385
+    [void]$doorGroup.Children.Add($edgeBead)
+    $outerFace=New-Ep3DCylinder -Radius 1.88 -Depth 0.055 -Material $cast -Segments 128
+    Set-Ep3DTranslation $outerFace 0 0 0.405
+    [void]$doorGroup.Children.Add($outerFace)
+    $faceRim=New-Ep3DTorus -MajorRadius 1.82 -TubeRadius 0.036 -Material $machined
+    Set-Ep3DTranslation $faceRim 0 0 0.445
+    [void]$doorGroup.Children.Add($faceRim)
+    $innerRing=New-Ep3DTorus -MajorRadius 1.48 -TubeRadius 0.046 -Material $dark
+    Set-Ep3DTranslation $innerRing 0 0 0.445
+    [void]$doorGroup.Children.Add($innerRing)
+    $seal=New-Ep3DTorus -MajorRadius 2.085 -TubeRadius 0.035 -Material $rubber
+    Set-Ep3DTranslation $seal 0 0 0.41
+    [void]$doorGroup.Children.Add($seal)
 
-    [void]$canvas.Children.Add($wheel)
-    $script:Door.Wheel = $wheelTransform
+    # Machined face scoring: narrow, subdued grooves at the perimeter.
+    for($i=0;$i -lt 3;$i++){
+        $groove=New-Ep3DTorus -MajorRadius (1.58+$i*0.105) -TubeRadius 0.010 -Material $fastener -MajorSegments 96 -TubeSegments 8
+        Set-Ep3DTranslation $groove 0 0 0.444
+        [void]$doorGroup.Children.Add($groove)
+    }
+    for($i=0;$i -lt 16;$i++){
+        $a=2.0*[Math]::PI*$i/16.0
+        $mark=New-Ep3DCylinder -Radius 0.018 -Depth 0.012 -Material $rust -Segments 12
+        Set-Ep3DTranslation $mark ([Math]::Cos($a)*1.74) ([Math]::Sin($a)*1.74) 0.446
+        [void]$doorGroup.Children.Add($mark)
+    }
 
-    $label = [System.Windows.Controls.TextBlock]::new()
-    $label.Text = 'EP  /  SEALED CHAMBER'
-    $label.FontFamily = [System.Windows.Media.FontFamily]::new('Bahnschrift')
-    $label.FontSize = 10
-    $label.Foreground = New-UiBrush -Color '#7F8D91'
-    $label.Width = 240
-    $label.TextAlignment = [System.Windows.TextAlignment]::Center
-    [System.Windows.Controls.Canvas]::SetLeft($label,200)
-    [System.Windows.Controls.Canvas]::SetTop($label,135)
-    [void]$canvas.Children.Add($label)
+    # Twelve independent radial locking bolts, each with a visible socket.
+    $bolts=@()
+    for($i=0;$i -lt 12;$i++){
+        $a=2.0*[Math]::PI*$i/12.0
+        $r=1.82; $bx=[Math]::Cos($a)*$r; $by=[Math]::Sin($a)*$r
+        $socket=New-Ep3DTorus -MajorRadius 0.115 -TubeRadius 0.022 -Material $dark -MajorSegments 28 -TubeSegments 10
+        Set-Ep3DTranslation $socket $bx $by 0.445
+        [void]$doorGroup.Children.Add($socket)
+        $bolt=New-Ep3DCylinder -Radius 0.092 -Depth 0.15 -Material $fastener -Segments 32
+        $boltTr=[System.Windows.Media.Media3D.TranslateTransform3D]::new($bx,$by,0.49)
+        $bolt.Transform=$boltTr
+        [void]$doorGroup.Children.Add($bolt)
+        $bolts+=@{Transform=$boltTr;StartX=$bx;StartY=$by;RetractedX=$bx*0.86;RetractedY=$by*0.86;Delay=320+($i*44)}
+    }
 
-    $group = [System.Windows.Media.TransformGroup]::new()
-    $rotate = [System.Windows.Media.RotateTransform]::new(0,64,320)
-    $translate = [System.Windows.Media.TranslateTransform]::new(0,0)
-    $scale = [System.Windows.Media.ScaleTransform]::new(1,1,64,320)
-    [void]$group.Children.Add($rotate)
-    [void]$group.Children.Add($translate)
-    [void]$group.Children.Add($scale)
-    $canvas.RenderTransform = $group
-    $script:Door.Rotate = $rotate
-    $script:Door.Translate = $translate
-    $script:Door.Scale = $scale
+    # Realistic central handwheel: ring, eight spokes, boss and shaft cap.
+    $wheelGroup=[System.Windows.Media.Media3D.Model3DGroup]::new()
+    $wheelRing=New-Ep3DTorus -MajorRadius 0.55 -TubeRadius 0.075 -Material $machined
+    Set-Ep3DTranslation $wheelRing 0 0 0.58
+    [void]$wheelGroup.Children.Add($wheelRing)
+    for($i=0;$i -lt 8;$i++){
+        $spoke=New-Ep3DBox -Width 0.068 -Height 1.05 -Depth 0.105 -Material $steel
+        $sg=[System.Windows.Media.Media3D.Transform3DGroup]::new()
+        $sr=[System.Windows.Media.Media3D.RotateTransform3D]::new([System.Windows.Media.Media3D.AxisAngleRotation3D]::new([System.Windows.Media.Media3D.Vector3D]::new(0,0,1),$i*45.0))
+        $st=[System.Windows.Media.Media3D.TranslateTransform3D]::new(0,0,0.58)
+        [void]$sg.Children.Add($sr); [void]$sg.Children.Add($st)
+        $spoke.Transform=$sg
+        [void]$wheelGroup.Children.Add($spoke)
+    }
+    $hub=New-Ep3DCylinder -Radius 0.22 -Depth 0.20 -Material $fastener -Segments 48
+    Set-Ep3DTranslation $hub 0 0 0.60
+    [void]$wheelGroup.Children.Add($hub)
+    $cap=New-Ep3DCylinder -Radius 0.115 -Depth 0.22 -Material $dark -Segments 40
+    Set-Ep3DTranslation $cap 0 0 0.72
+    [void]$wheelGroup.Children.Add($cap)
+    $wheelRotation=[System.Windows.Media.Media3D.AxisAngleRotation3D]::new([System.Windows.Media.Media3D.Vector3D]::new(0,0,1),0)
+    $wheelGroup.Transform=[System.Windows.Media.Media3D.RotateTransform3D]::new($wheelRotation)
+    [void]$doorGroup.Children.Add($wheelGroup)
+
+    # Door leaf pivots independently around the left hinge line; a small axial translation releases the gasket.
+    $doorRotation=[System.Windows.Media.Media3D.AxisAngleRotation3D]::new([System.Windows.Media.Media3D.Vector3D]::new(0,1,0),0)
+    $doorTranslate=[System.Windows.Media.Media3D.TranslateTransform3D]::new(0,0,0)
+    $doorTransform=[System.Windows.Media.Media3D.Transform3DGroup]::new()
+    [void]$doorTransform.Children.Add($doorTranslate)
+    [void]$doorTransform.Children.Add([System.Windows.Media.Media3D.RotateTransform3D]::new($doorRotation,-1.98,0,0.16))
+    $doorGroup.Transform=$doorTransform
+    [void]$scene.Children.Add($doorGroup)
+
+    $camera=[System.Windows.Media.Media3D.PerspectiveCamera]::new()
+    $camera.Position=[System.Windows.Media.Media3D.Point3D]::new(0.18,0.12,7.7)
+    $camera.LookDirection=[System.Windows.Media.Media3D.Vector3D]::new(-0.18,-0.12,-7.7)
+    $camera.UpDirection=[System.Windows.Media.Media3D.Vector3D]::new(0,1,0)
+    $camera.FieldOfView=39
+    $viewport.Camera=$camera
+    $visual=[System.Windows.Media.Media3D.ModelVisual3D]::new()
+    $visual.Content=$scene
+    [void]$viewport.Children.Add($visual)
+
+    $script:Door=[ordered]@{
+        Bolts=$bolts; DoorRotation=$doorRotation; DoorTranslate=$doorTranslate;
+        WheelRotation=$wheelRotation; OpenAngle=-72.0; OpenWheelAngle=315.0
+    }
+    $viewport.Focusable=$false
+    $viewport.IsHitTestVisible=$false
+    $viewport.Visibility=[System.Windows.Visibility]::Visible
 }
 
 function Reset-CleanRoomVaultDoor {
-    if ($null -eq $script:Door) { return }
-    $canvas = Get-UiElement -Name 'VaultCanvas'
-    $canvas.BeginAnimation([System.Windows.UIElement]::OpacityProperty,$null)
-    $canvas.RenderTransform.Children[0].BeginAnimation([System.Windows.Media.RotateTransform]::AngleProperty,$null)
-    $canvas.RenderTransform.Children[1].BeginAnimation([System.Windows.Media.TranslateTransform]::XProperty,$null)
-    $canvas.RenderTransform.Children[2].BeginAnimation([System.Windows.Media.ScaleTransform]::ScaleXProperty,$null)
-    $script:Door.Wheel.BeginAnimation([System.Windows.Media.RotateTransform]::AngleProperty,$null)
-    foreach ($bolt in $script:Door.Bolts) {
-        $bolt.Transform.BeginAnimation([System.Windows.Media.TranslateTransform]::XProperty,$null)
-        $bolt.Transform.BeginAnimation([System.Windows.Media.TranslateTransform]::YProperty,$null)
-        $bolt.Transform.X = 0
-        $bolt.Transform.Y = 0
+    if($null -eq $script:Door){return}
+    $script:Door.DoorRotation.BeginAnimation([System.Windows.Media.Media3D.AxisAngleRotation3D]::AngleProperty,$null)
+    $script:Door.DoorTranslate.BeginAnimation([System.Windows.Media.Media3D.TranslateTransform3D]::OffsetZProperty,$null)
+    $script:Door.WheelRotation.BeginAnimation([System.Windows.Media.Media3D.AxisAngleRotation3D]::AngleProperty,$null)
+    $script:Door.DoorRotation.Angle=0
+    $script:Door.DoorTranslate.OffsetZ=0
+    $script:Door.WheelRotation.Angle=0
+    foreach($bolt in $script:Door.Bolts){
+        $bolt.Transform.BeginAnimation([System.Windows.Media.Media3D.TranslateTransform3D]::OffsetXProperty,$null)
+        $bolt.Transform.BeginAnimation([System.Windows.Media.Media3D.TranslateTransform3D]::OffsetYProperty,$null)
+        $bolt.Transform.OffsetX=$bolt.StartX
+        $bolt.Transform.OffsetY=$bolt.StartY
     }
-    $script:Door.Rotate.Angle = 0
-    $script:Door.Translate.X = 0
-    $script:Door.Translate.Y = 0
-    $script:Door.Scale.ScaleX = 1
-    $script:Door.Scale.ScaleY = 1
-    $script:Door.Wheel.Angle = 0
-    $canvas.Opacity = 1
+    (Get-UiElement -Name 'VaultCanvas').Visibility=[System.Windows.Visibility]::Collapsed
+    (Get-UiElement -Name 'VaultViewport').Visibility=[System.Windows.Visibility]::Visible
 }
 
 function Start-CleanRoomOpeningSequence {
-    $window = $script:Ui
-    $canvas = Get-UiElement -Name 'VaultCanvas'
-    if (-not [System.Windows.SystemParameters]::ClientAreaAnimation) {
-        $canvas.Visibility = [System.Windows.Visibility]::Collapsed
-        $window.ClosedStage.Visibility = [System.Windows.Visibility]::Collapsed
-        $window.OpenStage.Visibility = [System.Windows.Visibility]::Visible
-        $window.HeaderState.Text = 'ABIERTA'
-        $window.FooterStatus.Text = 'LOCAL · SESIÓN AUTENTICADA · MOVIMIENTO REDUCIDO'
-        Refresh-EpVariables
-        Refresh-EpNotes
-        Update-EpSessionDisplay
-        Start-EpSessionTimer
+    $window=$script:Ui
+    $viewport=Get-UiElement -Name 'VaultViewport'
+    if(-not [System.Windows.SystemParameters]::ClientAreaAnimation){
+        $viewport.Visibility=[System.Windows.Visibility]::Collapsed
+        $window.ClosedStage.Visibility=[System.Windows.Visibility]::Collapsed
+        $window.OpenStage.Visibility=[System.Windows.Visibility]::Visible
+        $window.HeaderState.Text='ABIERTA'
+        $window.FooterStatus.Text='LOCAL · SESIÓN AUTENTICADA · MOVIMIENTO REDUCIDO'
+        Refresh-EpVariables; Refresh-EpNotes; Update-EpSessionDisplay; Start-EpSessionTimer
         return
     }
     Invoke-EpVaultAudio -Action Open
     Reset-CleanRoomVaultDoor
-    $canvas.Visibility = [System.Windows.Visibility]::Visible
-    $window.OpenStage.Visibility = [System.Windows.Visibility]::Collapsed
-    $window.ClosedStage.Visibility = [System.Windows.Visibility]::Visible
-    $window.HeaderState.Text = 'DESBLOQUEANDO'
-    $window.FooterStatus.Text = 'AUTENTICACIÓN VÁLIDA · MECANISMO EN MOVIMIENTO'
+    $viewport.Visibility=[System.Windows.Visibility]::Visible
+    $window.OpenStage.Visibility=[System.Windows.Visibility]::Collapsed
+    $window.ClosedStage.Visibility=[System.Windows.Visibility]::Visible
+    $window.HeaderState.Text='DESBLOQUEANDO'
+    $window.FooterStatus.Text='AUTENTICACIÓN VÁLIDA · MECANISMO MECÁNICO EN MOVIMIENTO'
 
-    $duration = [TimeSpan]::FromMilliseconds(1280)
-    $boltIndex = 0
-    foreach ($bolt in $script:Door.Bolts) {
-        $ease = [System.Windows.Media.Animation.CubicEase]::new()
-        $ease.EasingMode = [System.Windows.Media.Animation.EasingMode]::EaseInOut
-        $xAnimation = [System.Windows.Media.Animation.DoubleAnimation]::new($bolt.DeltaX,$duration)
-        $yAnimation = [System.Windows.Media.Animation.DoubleAnimation]::new($bolt.DeltaY,$duration)
-        $xAnimation.BeginTime = [TimeSpan]::FromMilliseconds($boltIndex * 38)
-        $yAnimation.BeginTime = [TimeSpan]::FromMilliseconds($boltIndex * 38)
-        $xAnimation.EasingFunction = $ease
-        $yAnimation.EasingFunction = $ease
-        $boltIndex++
-        $bolt.Transform.BeginAnimation([System.Windows.Media.TranslateTransform]::XProperty,$xAnimation)
-        $bolt.Transform.BeginAnimation([System.Windows.Media.TranslateTransform]::YProperty,$yAnimation)
+    foreach($bolt in $script:Door.Bolts){
+        $x=[System.Windows.Media.Animation.DoubleAnimation]::new($bolt.StartX,$bolt.RetractedX,[TimeSpan]::FromMilliseconds(900))
+        $y=[System.Windows.Media.Animation.DoubleAnimation]::new($bolt.StartY,$bolt.RetractedY,[TimeSpan]::FromMilliseconds(900))
+        $x.BeginTime=[TimeSpan]::FromMilliseconds($bolt.Delay); $y.BeginTime=$x.BeginTime
+        $ease=[System.Windows.Media.Animation.CubicEase]::new(); $ease.EasingMode=[System.Windows.Media.Animation.EasingMode]::EaseInOut
+        $x.EasingFunction=$ease; $y.EasingFunction=$ease
+        $bolt.Transform.BeginAnimation([System.Windows.Media.Media3D.TranslateTransform3D]::OffsetXProperty,$x)
+        $bolt.Transform.BeginAnimation([System.Windows.Media.Media3D.TranslateTransform3D]::OffsetYProperty,$y)
     }
 
-    $wheelEase = [System.Windows.Media.Animation.CubicEase]::new()
-    $wheelEase.EasingMode = [System.Windows.Media.Animation.EasingMode]::EaseOut
-    $wheelAnimation = [System.Windows.Media.Animation.DoubleAnimation]::new(0,165,[TimeSpan]::FromMilliseconds(2350))
-    $wheelAnimation.BeginTime = [TimeSpan]::FromMilliseconds(920)
-    $wheelAnimation.EasingFunction = $wheelEase
-    $script:Door.Wheel.BeginAnimation([System.Windows.Media.RotateTransform]::AngleProperty,$wheelAnimation)
+    $wheel=[System.Windows.Media.Animation.DoubleAnimation]::new(0,$script:Door.OpenWheelAngle,[TimeSpan]::FromMilliseconds(1850))
+    $wheel.BeginTime=[TimeSpan]::FromMilliseconds(900)
+    $wheel.EasingFunction=[System.Windows.Media.Animation.CubicEase]::new()
+    $script:Door.WheelRotation.BeginAnimation([System.Windows.Media.Media3D.AxisAngleRotation3D]::AngleProperty,$wheel)
 
-    $doorEase = [System.Windows.Media.Animation.CubicEase]::new()
-    $doorEase.EasingMode = [System.Windows.Media.Animation.EasingMode]::EaseIn
-    $rotateAnimation = [System.Windows.Media.Animation.DoubleAnimation]::new(0,54,[TimeSpan]::FromMilliseconds(3150))
-    $translateAnimation = [System.Windows.Media.Animation.DoubleAnimation]::new(0,145,[TimeSpan]::FromMilliseconds(3150))
-    $fadeAnimation = [System.Windows.Media.Animation.DoubleAnimation]::new(1,0,[TimeSpan]::FromMilliseconds(3050))
-    $scaleAnimation = [System.Windows.Media.Animation.DoubleAnimation]::new(1,0.86,[TimeSpan]::FromMilliseconds(3150))
-    $rotateAnimation.BeginTime = [TimeSpan]::FromMilliseconds(2280)
-    $translateAnimation.BeginTime = [TimeSpan]::FromMilliseconds(2280)
-    $fadeAnimation.BeginTime = [TimeSpan]::FromMilliseconds(2280)
-    $scaleAnimation.BeginTime = [TimeSpan]::FromMilliseconds(2280)
-    $rotateAnimation.EasingFunction=$doorEase
-    $translateAnimation.EasingFunction=$doorEase
-    $canvas.RenderTransform.Children[0].BeginAnimation([System.Windows.Media.RotateTransform]::AngleProperty,$rotateAnimation)
-    $canvas.RenderTransform.Children[1].BeginAnimation([System.Windows.Media.TranslateTransform]::XProperty,$translateAnimation)
-    $canvas.RenderTransform.Children[2].BeginAnimation([System.Windows.Media.ScaleTransform]::ScaleXProperty,$scaleAnimation)
-    $canvas.BeginAnimation([System.Windows.UIElement]::OpacityProperty,$fadeAnimation)
+    $release=[System.Windows.Media.Animation.DoubleAnimation]::new(0,0.12,[TimeSpan]::FromMilliseconds(380))
+    $release.BeginTime=[TimeSpan]::FromMilliseconds(2550)
+    $release.EasingFunction=[System.Windows.Media.Animation.CubicEase]::new()
+    $script:Door.DoorTranslate.BeginAnimation([System.Windows.Media.Media3D.TranslateTransform3D]::OffsetZProperty,$release)
 
-    if ($script:OpeningTimer) { $script:OpeningTimer.Stop() }
-    $script:OpeningTimer = [System.Windows.Threading.DispatcherTimer]::new()
-    $script:OpeningTimer.Interval = [TimeSpan]::FromMilliseconds(5850)
+    $door=[System.Windows.Media.Animation.DoubleAnimation]::new(0,$script:Door.OpenAngle,[TimeSpan]::FromMilliseconds(3100))
+    $door.BeginTime=[TimeSpan]::FromMilliseconds(2920)
+    $door.EasingFunction=[System.Windows.Media.Animation.CubicEase]::new()
+    $script:Door.DoorRotation.BeginAnimation([System.Windows.Media.Media3D.AxisAngleRotation3D]::AngleProperty,$door)
+
+    if($script:OpeningTimer){$script:OpeningTimer.Stop()}
+    $script:OpeningTimer=[System.Windows.Threading.DispatcherTimer]::new()
+    $script:OpeningTimer.Interval=[TimeSpan]::FromMilliseconds(6500)
     $script:OpeningTimer.Add_Tick({
         $script:OpeningTimer.Stop()
-        try {
-            $session = Get-EpVaultSession
-            $canvas = Get-UiElement -Name 'VaultCanvas'
-            $canvas.Visibility = [System.Windows.Visibility]::Collapsed
-            $canvas.BeginAnimation([System.Windows.UIElement]::OpacityProperty,$null)
-            Get-UiElement -Name 'ClosedStage' | ForEach-Object { $_.Visibility = [System.Windows.Visibility]::Collapsed }
-            Get-UiElement -Name 'OpenStage' | ForEach-Object { $_.Visibility = [System.Windows.Visibility]::Visible }
-            $script:Ui.HeaderState.Text = 'ABIERTA'
-            $script:Ui.FooterStatus.Text = 'LOCAL · SESIÓN AUTENTICADA · TTL ABSOLUTO'
-            Refresh-EpVariables
-            Refresh-EpNotes
-            Update-EpSessionDisplay
-            Start-EpSessionTimer
-        }
-        catch {
+        try{
+            $null=Get-EpVaultSession
+            (Get-UiElement -Name 'VaultViewport').Visibility=[System.Windows.Visibility]::Collapsed
+            (Get-UiElement -Name 'ClosedStage').Visibility=[System.Windows.Visibility]::Collapsed
+            (Get-UiElement -Name 'OpenStage').Visibility=[System.Windows.Visibility]::Visible
+            $script:Ui.HeaderState.Text='ABIERTA'
+            $script:Ui.FooterStatus.Text='LOCAL · SESIÓN AUTENTICADA · TTL ABSOLUTO'
+            Refresh-EpVariables; Refresh-EpNotes; Update-EpSessionDisplay; Start-EpSessionTimer
+        }catch{
             Close-EpVaultUi -Reason 'SESSION_INVALID_AFTER_OPEN'
             Set-EpGateMessage -Message $_.Exception.Message
         }
     })
     $script:OpeningTimer.Start()
 }
+
+function Start-CleanRoomClosingSequence {
+    Invoke-EpVaultAudio -Action Close
+    $viewport=Get-UiElement -Name 'VaultViewport'
+    $script:Ui.OpenStage.Visibility=[System.Windows.Visibility]::Collapsed
+    $script:Ui.ClosedStage.Visibility=[System.Windows.Visibility]::Visible
+    $viewport.Visibility=[System.Windows.Visibility]::Visible
+    Reset-CleanRoomVaultDoor
+    $script:Door.DoorRotation.Angle=$script:Door.OpenAngle
+    $script:Door.DoorTranslate.OffsetZ=0.12
+    $script:Door.WheelRotation.Angle=$script:Door.OpenWheelAngle
+    foreach($bolt in $script:Door.Bolts){
+        $bolt.Transform.OffsetX=$bolt.RetractedX
+        $bolt.Transform.OffsetY=$bolt.RetractedY
+    }
+
+    $ease=[System.Windows.Media.Animation.CubicEase]::new()
+    $ease.EasingMode=[System.Windows.Media.Animation.EasingMode]::EaseInOut
+    $door=[System.Windows.Media.Animation.DoubleAnimation]::new($script:Door.OpenAngle,0,[TimeSpan]::FromMilliseconds(3200))
+    $door.EasingFunction=$ease
+    $script:Door.DoorRotation.BeginAnimation([System.Windows.Media.Media3D.AxisAngleRotation3D]::AngleProperty,$door)
+
+    $release=[System.Windows.Media.Animation.DoubleAnimation]::new(0.12,0,[TimeSpan]::FromMilliseconds(320))
+    $release.BeginTime=[TimeSpan]::FromMilliseconds(2880)
+    $release.EasingFunction=$ease
+    $script:Door.DoorTranslate.BeginAnimation([System.Windows.Media.Media3D.TranslateTransform3D]::OffsetZProperty,$release)
+
+    $wheel=[System.Windows.Media.Animation.DoubleAnimation]::new($script:Door.OpenWheelAngle,0,[TimeSpan]::FromMilliseconds(1750))
+    $wheel.BeginTime=[TimeSpan]::FromMilliseconds(420)
+    $wheel.EasingFunction=$ease
+    $script:Door.WheelRotation.BeginAnimation([System.Windows.Media.Media3D.AxisAngleRotation3D]::AngleProperty,$wheel)
+
+    foreach($bolt in $script:Door.Bolts){
+        $x=[System.Windows.Media.Animation.DoubleAnimation]::new($bolt.RetractedX,$bolt.StartX,[TimeSpan]::FromMilliseconds(820))
+        $y=[System.Windows.Media.Animation.DoubleAnimation]::new($bolt.RetractedY,$bolt.StartY,[TimeSpan]::FromMilliseconds(820))
+        $x.BeginTime=[TimeSpan]::FromMilliseconds(2200); $y.BeginTime=$x.BeginTime
+        $x.EasingFunction=$ease; $y.EasingFunction=$ease
+        $bolt.Transform.BeginAnimation([System.Windows.Media.Media3D.TranslateTransform3D]::OffsetXProperty,$x)
+        $bolt.Transform.BeginAnimation([System.Windows.Media.Media3D.TranslateTransform3D]::OffsetYProperty,$y)
+    }
+
+    if($script:OpeningTimer){$script:OpeningTimer.Stop()}
+    $script:OpeningTimer=[System.Windows.Threading.DispatcherTimer]::new()
+    $script:OpeningTimer.Interval=[TimeSpan]::FromMilliseconds(3900)
+    $script:OpeningTimer.Add_Tick({
+        $script:OpeningTimer.Stop()
+        Reset-CleanRoomVaultDoor
+        $script:Ui.HeaderState.Text='SELLADA'
+        $script:Ui.FooterStatus.Text='LOCAL · CIFRADO · SELLADA'
+        $script:Ui.UnlockButton.IsEnabled=$true
+        Update-EpGateMode
+    })
+    $script:OpeningTimer.Start()
+}
+
 
 function Start-EpSessionTimer {
     if ($script:SessionTimer) { $script:SessionTimer.Stop() }
