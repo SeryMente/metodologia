@@ -251,3 +251,8 @@ EP-TASK-006 se completa solo cuando todas las variables usadas están catalogada
 Fuentes: conector Vercel (equipos, proyectos y variables); repositorios GitHub accesibles; \`khora-web/.env.example\`; búsquedas \`process.env\`/\`os.environ\`; variables User/Machine/Process de PC-7; búsqueda local de \`.env\`; EP Vault CLI Status/ListVariables/ListNotes.
 
 Resultado: inventario parcial; 5 valores/configuraciones escritos con read-back; primera nota EP promovida; segunda nota permanece. No se realizó autenticación B2 actual ni upload/restore en este ciclo. Próxima acción: terminar la pareja EP, después respaldar el ciphertext de Vault en B2 y seguir con la migración Vercel y los demás medios.
+
+
+## Evidencia de procedencia de las notas B2 EP · 2026-11-09
+
+Gmail devolvió un mensaje de Backblaze (no-reply@backblaze.com), asunto `A Master Key Has Been Generated in Your Backblaze B2 Account`, dirigido a `blacksheepsup@gmail.com`, con fecha `2026-11-09T21:33:19Z` (message id `1a1c23af91f37d66`). EP Vault registró la primera nota a `2026-11-09T21:33:35.9136717Z` y la segunda a `2026-11-09T21:33:42.1285843Z`. La proximidad temporal respalda que las notas se capturaron durante esa operación de la cuenta EP. No determina por sí sola qué nota contiene el ID y cuál la aplicación key. La primera se promovió por orden de captura a `EP_B2_APPLICATION_KEY_ID`; esa asignación permanece pendiente de validación local no expositiva. La segunda continúa en DPAPI. No se copiaron valores del correo ni se mostraron al modelo.
