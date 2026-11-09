@@ -5,14 +5,14 @@
   "front_ocp": "frentes/ep/",
   "state_object": "frentes/ep/OEP.md",
   "status": "owned",
-  "owner_thread": "chatgpt-C-EP-RESPONSABILIDAD-INICIAL-20261108-88E05E17-SES-20261108-0BD44C87",
+  "owner_thread": "chatgpt-C-EP-TRANSFER-RESPONSIBILITY-20261109-01-SES-20261109-E032FC60",
   "owner_thread_identity_kind": "operational alias; native ChatGPT conversation ID is not exposed by the available tools",
-  "instance": "chatgpt-ep-owner-2026-11-08-0BD44C87",
-  "generation": 2,
-  "authorization_ref": "C-EP-RESPONSABILIDAD-INICIAL-20261108-88E05E17; autorización explícita del operador para crear el control inicial y registrar esta conversación como titular en generación 1; respuesta literal: \"Si\".",
+  "instance": "chatgpt-ep-owner-2026-11-09-E032FC60",
+  "generation": 3,
+  "authorization_ref": "C-EP-TRANSFER-RESPONSIBILITY-20261109-01; autorización explícita del operador para TRANSFER_RESPONSIBILITY desde generación 2 a 3; se conserva el folio SES y UUIDv7 local de la sesión receptora.",
   "scope": "One active owner for the Entorno Persistente (EP) front only. Maintain the existing OEP, EP-TASK-002 and the local cycle already recorded there, preserve all inherited security and host/profile boundaries, and work only within explicitly authorized EP scope. This ownership assignment does not itself authorize host operations, credential access, Backblaze B2 account/bucket/object operations, destructive changes, or amendments to DUG/GOW/MCP governance; those retain their separate gates.",
   "expiry": null,
-  "handoff": "Initial assignment after creation of the first canonical EP responsibility control, not a transfer from a previously identified owner. The requested TRANSFER_RESPONSIBILITY could not be executed because no prior EP CONTROL-RESPONSABILIDAD.json or canonical owner/generation record existed. The operator then explicitly authorized creation of this control and initial assignment at generation 1. A previous active owner was not verifiable; no predecessor is invented and no historical transfer is claimed. Registry is cooperative and does not enforce server-side fencing of arbitrary writes.",
+  "handoff": "Titularidad primaria transferida el 2026-11-09 desde generación 2 a generación 3 por instrucción expresa del operador. El titular anterior queda relevado; la sesión corresponsable ya activa se promueve a titular. Se conserva el folio SES y UUIDv7 local; FOL1 no se activa ni se asigna.",
   "previous_owner": null,
   "initialization": {
     "event_id": "C-EP-RESPONSABILIDAD-INICIAL-20261108-88E05E17",
@@ -157,9 +157,120 @@
     "state_object": "frentes/ep/OEP.md",
     "previous_control_path_state": "NOT_FOUND"
   },
-  "session_folio": "SES-20261108-0BD44C87",
+  "session_folio": "SES-20261109-E032FC60",
   "session_assignment": {
     "status": "active",
+    "role": "titular",
+    "folio": "SES-20261109-E032FC60",
+    "assigned_on": "2026-11-09",
+    "front_ocp": "frentes/ep/",
+    "owner_alias": "chatgpt-C-EP-TRANSFER-RESPONSIBILITY-20261109-01-SES-20261109-E032FC60",
+    "instance": "chatgpt-ep-owner-2026-11-09-E032FC60",
+    "generation": 3,
+    "identity_kind": "operational alias + local UUIDv7; native ChatGPT conversation ID not exposed",
+    "local_conversation_uuidv7": "01a1c16c-f0fa-7273-a0f8-a1dde032fc60",
+    "cycle_folio": null,
+    "event_id": "C-EP-TRANSFER-RESPONSIBILITY-20261109-01",
+    "authorization": {
+      "status": "explicit",
+      "source": "instrucción directa del operador en esta conversación",
+      "operation": "TRANSFER_RESPONSIBILITY",
+      "verbatim": "Toma repsonsabilida del frente EP antes de continuar, me da la impreison que eos hace falta. pero hazlo super rapido TRANBSFER REPSONSIBLITY, prior autorization.",
+      "prior_authorization_asserted_by_operator": true,
+      "scope": "Transferencia única de titularidad primaria de frentes/ep/ a la sesión receptora ya registrada como corresponsable. Sustituye al titular previo, conserva el alcance de las autorizaciones y restricciones existentes, no activa FOL1 y no autoriza otros frentes ni cambios de DUG/GOW o controles ajenos."
+    },
+    "readback_required": true,
+    "readback_verified": false,
+    "source_control_blob_sha": "4160dfed6c0833e88e9b9fee7d79e54ab7214006",
+    "readback_control_blob_sha": "2ac518cc4f272439e3d060b635e36d3772c7c8ae",
+    "alias": "chatgpt-C-EP-TRANSFER-RESPONSIBILITY-20261109-01-SES-20261109-E032FC60",
+    "promoted_from_role": "corresponsable",
+    "promoted_from_alias": "chatgpt-C-EP-ADD-CO-RESPONSIBLE-20261109-01-SES-20261109-E032FC60"
+  },
+  "active_responsibles": [
+    {
+      "status": "active",
+      "role": "titular",
+      "folio": "SES-20261109-E032FC60",
+      "assigned_on": "2026-11-09",
+      "front_ocp": "frentes/ep/",
+      "owner_alias": "chatgpt-C-EP-TRANSFER-RESPONSIBILITY-20261109-01-SES-20261109-E032FC60",
+      "instance": "chatgpt-ep-owner-2026-11-09-E032FC60",
+      "generation": 3,
+      "identity_kind": "operational alias + local UUIDv7; native ChatGPT conversation ID not exposed",
+      "local_conversation_uuidv7": "01a1c16c-f0fa-7273-a0f8-a1dde032fc60",
+      "cycle_folio": null,
+      "event_id": "C-EP-TRANSFER-RESPONSIBILITY-20261109-01",
+      "authorization": {
+        "status": "explicit",
+        "source": "instrucción directa del operador en esta conversación",
+        "operation": "TRANSFER_RESPONSIBILITY",
+        "verbatim": "Toma repsonsabilida del frente EP antes de continuar, me da la impreison que eos hace falta. pero hazlo super rapido TRANBSFER REPSONSIBLITY, prior autorization.",
+        "prior_authorization_asserted_by_operator": true,
+        "scope": "Transferencia única de titularidad primaria de frentes/ep/ a la sesión receptora ya registrada como corresponsable. Sustituye al titular previo, conserva el alcance de las autorizaciones y restricciones existentes, no activa FOL1 y no autoriza otros frentes ni cambios de DUG/GOW o controles ajenos."
+      },
+      "readback_required": true,
+      "readback_verified": false,
+      "source_control_blob_sha": "4160dfed6c0833e88e9b9fee7d79e54ab7214006",
+      "readback_control_blob_sha": "2ac518cc4f272439e3d060b635e36d3772c7c8ae",
+      "alias": "chatgpt-C-EP-TRANSFER-RESPONSIBILITY-20261109-01-SES-20261109-E032FC60",
+      "promoted_from_role": "corresponsable",
+      "promoted_from_alias": "chatgpt-C-EP-ADD-CO-RESPONSIBLE-20261109-01-SES-20261109-E032FC60"
+    }
+  ],
+  "co_responsibility": {
+    "schema": "co-responsibility/1",
+    "mode": "single_owner_after_transfer",
+    "enabled": false,
+    "default_active_responsibles": 1,
+    "max_active_responsibles": 2,
+    "current_active_responsibles": 1,
+    "primary_owner_alias": "chatgpt-C-EP-TRANSFER-RESPONSIBILITY-20261109-01-SES-20261109-E032FC60",
+    "co_responsible_alias": null,
+    "last_event_id": "C-EP-TRANSFER-RESPONSIBILITY-20261109-01",
+    "authorization_status": "explicit",
+    "control_protocol": "same authoritative control; SHA compare-and-swap; read-back before canonical writes",
+    "constraint": "cooperative registration only; no native ChatGPT identity, universal fencing or protection against non-cooperating writers is claimed."
+  },
+  "co_responsibility_events": [
+    {
+      "event_id": "C-EP-ADD-CO-RESPONSIBLE-20261109-01",
+      "operation": "ADD_CO_RESPONSIBLE",
+      "recorded_on": "2026-11-09",
+      "source_sha": "4160dfed6c0833e88e9b9fee7d79e54ab7214006",
+      "generation_before": 1,
+      "generation_after": 2,
+      "retained_primary": "chatgpt-C-EP-RESPONSABILIDAD-INICIAL-20261108-88E05E17-SES-20261108-0BD44C87",
+      "added_alias": "chatgpt-C-EP-ADD-CO-RESPONSIBLE-20261109-01-SES-20261109-E032FC60",
+      "added_session_folio": "SES-20261109-E032FC60",
+      "added_local_uuidv7": "01a1c16c-f0fa-7273-a0f8-a1dde032fc60",
+      "active_responsibles_after_write": 2,
+      "maximum": 2,
+      "status": "VERIFIED_READBACK",
+      "readback_required": true,
+      "readback_verified": true,
+      "readback_sha": "2ac518cc4f272439e3d060b635e36d3772c7c8ae",
+      "readback_verified_on": "2026-11-09"
+    },
+    {
+      "event_id": "C-EP-TRANSFER-RESPONSIBILITY-20261109-01",
+      "operation": "TRANSFER_RESPONSIBILITY",
+      "recorded_on": "2026-11-09",
+      "source_sha": "b6f719ac9d5b4e6fc9860ead666ac7268a145c77",
+      "generation_before": 2,
+      "generation_after": 3,
+      "replaced_primary": "chatgpt-C-EP-RESPONSABILIDAD-INICIAL-20261108-88E05E17-SES-20261108-0BD44C87",
+      "promoted_corresponsible": "chatgpt-C-EP-ADD-CO-RESPONSIBLE-20261109-01-SES-20261109-E032FC60",
+      "new_primary_alias": "chatgpt-C-EP-TRANSFER-RESPONSIBILITY-20261109-01-SES-20261109-E032FC60",
+      "active_responsibles_after_write": 1,
+      "maximum": 2,
+      "status": "PENDING_READBACK",
+      "readback_required": true,
+      "readback_verified": false
+    }
+  ],
+  "previous_session_assignment": {
+    "status": "transferred",
     "folio": "SES-20261108-0BD44C87",
     "assigned_on": "2026-11-08",
     "front_ocp": "frentes/ep/",
@@ -240,153 +351,60 @@
       "scope": "Direct inspection of 16 existing CONTROL-RESPONSABILIDAD.json files across 11 repositories exposed by the linked connection, plus three exact GitHub code searches returning zero. Global uniqueness is not established."
     },
     "cycle_reference": "C-EP-MOD-SCRIPTPWS-20261101-03",
-    "event_id": "C-EP-RESPONSABILIDAD-INICIAL-20261108-88E05E17"
+    "event_id": "C-EP-RESPONSABILIDAD-INICIAL-20261108-88E05E17",
+    "role": "titular",
+    "ended_on": "2026-11-09",
+    "transferred_to": "chatgpt-C-EP-TRANSFER-RESPONSIBILITY-20261109-01-SES-20261109-E032FC60",
+    "transfer_event_id": "C-EP-TRANSFER-RESPONSIBILITY-20261109-01"
   },
-  "active_responsibles": [
+  "transfers": [
     {
-      "status": "active",
-      "folio": "SES-20261108-0BD44C87",
-      "assigned_on": "2026-11-08",
-      "front_ocp": "frentes/ep/",
-      "owner_alias": "chatgpt-C-EP-RESPONSABILIDAD-INICIAL-20261108-88E05E17-SES-20261108-0BD44C87",
-      "instance": "chatgpt-ep-owner-2026-11-08-0BD44C87",
-      "generation": 1,
-      "uuidv7_local": "01a1bc39-a576-72ec-bb25-e1aa765ef21d",
-      "identity_kind": "operator-authorized operational session alias and UUIDv7 local; not a native ChatGPT conversation ID",
-      "uniqueness_check": {
-        "exact_code_searches": 3,
-        "candidate_occurrences": 0,
-        "checked_controls": [
-          {
-            "path": "SeryMente/khora:docs/frentes/dictado-voz/CONTROL-RESPONSABILIDAD.json",
-            "blob_sha": "8fa5721013b47b88729b38869c712863bc6a69d7"
-          },
-          {
-            "path": "SeryMente/khora:docs/frentes/harmonia/CONTROL-RESPONSABILIDAD.json",
-            "blob_sha": "0e090e1f3537b75891344af812e576e39a5f5e02"
-          },
-          {
-            "path": "SeryMente/khora:docs/frentes/observabilidad-mcp/CONTROL-RESPONSABILIDAD.json",
-            "blob_sha": "4fba2187947730abca0cc338429dfacf4810594c"
-          },
-          {
-            "path": "SeryMente/khora:frentes/custodia/CONTROL-RESPONSABILIDAD.json",
-            "blob_sha": "0fb1375028922407afdf34420b52fe094384081d"
-          },
-          {
-            "path": "SeryMente/signal-interpreter:docs/frentes/signal-interpreter/CONTROL-RESPONSABILIDAD.json",
-            "blob_sha": "309b3ae07d1fb6b2398782d1c9f3c25d858899f4"
-          },
-          {
-            "path": "SeryMente/metodologia:ambitos/tareas/CONTROL-RESPONSABILIDAD.json",
-            "blob_sha": "b0c19b0c2ce7db13a74243b03183756519f7cfe0"
-          },
-          {
-            "path": "SeryMente/metodologia:frentes/acceso/CONTROL-RESPONSABILIDAD.json",
-            "blob_sha": "d77dbf55ca188d79d5126e168edd202ec63ac811"
-          },
-          {
-            "path": "SeryMente/metodologia:frentes/gobernanza/CONTROL-RESPONSABILIDAD.json",
-            "blob_sha": "18c2d7fa57609465dced61884cec6685bf74f68d"
-          },
-          {
-            "path": "SeryMente/metodologia:frentes/khora-workstation-bootstrap/CONTROL-RESPONSABILIDAD.json",
-            "blob_sha": "bb0f14c9c0955422c37ce085127d304a8fb2e62b"
-          },
-          {
-            "path": "SeryMente/metodologia:frentes/mcp-metodologia/CONTROL-RESPONSABILIDAD.json",
-            "blob_sha": "1fcf4178d58b39cecc3028c92493932b2ca7ab60"
-          },
-          {
-            "path": "SeryMente/metodologia:frentes/metacanon/CONTROL-RESPONSABILIDAD.json",
-            "blob_sha": "86f0e4fa59e37976704231290b460cf6dc9252b0"
-          },
-          {
-            "path": "SeryMente/metodologia:frentes/radar-profesional/CONTROL-RESPONSABILIDAD.json",
-            "blob_sha": "ebedb865d9d813c731f6ebcf2b63bf37efe3efc1"
-          },
-          {
-            "path": "SeryMente/personal:frentes/repertorio-canto-personal/CONTROL-RESPONSABILIDAD.json",
-            "blob_sha": "fa92efd677b3a57520b8d3a1cf4feb0fa792b978"
-          },
-          {
-            "path": "SeryMente/filo-sangriento:frentes/filo-sangriento/CONTROL-RESPONSABILIDAD.json",
-            "blob_sha": "74dad207fd8ffac9724ad9842fdf2060839f4cdd"
-          },
-          {
-            "path": "SeryMente/filo-sangriento:frentes/huggingface/CONTROL-RESPONSABILIDAD.json",
-            "blob_sha": "cc97939669ba686f6a38eea2a9a909e025df51f5"
-          },
-          {
-            "path": "SeryMente/Language:frentes/abdf/CONTROL-RESPONSABILIDAD.json",
-            "blob_sha": "593ebd5e5c24d91fbb054f5419c2121b77725fe9"
-          }
-        ],
-        "scope": "Direct inspection of 16 existing CONTROL-RESPONSABILIDAD.json files across 11 repositories exposed by the linked connection, plus three exact GitHub code searches returning zero. Global uniqueness is not established."
-      },
-      "cycle_reference": "C-EP-MOD-SCRIPTPWS-20261101-03",
-      "event_id": "C-EP-RESPONSABILIDAD-INICIAL-20261108-88E05E17",
-      "role": "titular"
-    },
-    {
-      "status": "active",
-      "role": "corresponsable",
-      "folio": "SES-20261109-E032FC60",
-      "assigned_on": "2026-11-09",
-      "front_ocp": "frentes/ep/",
-      "owner_alias": "chatgpt-C-EP-ADD-CO-RESPONSIBLE-20261109-01-SES-20261109-E032FC60",
-      "instance": "chatgpt-ep-co-responsible-2026-11-09-E032FC60",
-      "generation": 2,
-      "identity_kind": "operational alias + local UUIDv7; native ChatGPT conversation ID not exposed",
-      "local_conversation_uuidv7": "01a1c16c-f0fa-7273-a0f8-a1dde032fc60",
-      "cycle_folio": null,
-      "event_id": "C-EP-ADD-CO-RESPONSIBLE-20261109-01",
+      "event_id": "C-EP-TRANSFER-RESPONSIBILITY-20261109-01",
+      "operation": "TRANSFER_RESPONSIBILITY",
+      "recorded_on": "2026-11-09",
+      "authorized_on": "2026-11-09",
       "authorization": {
         "status": "explicit",
         "source": "instrucción directa del operador en esta conversación",
-        "verbatim": "Si autorizo lo que haga falta, no mucha burocracia pro favor. Y resuelve sin elementos de fantasia en la GUI. Realismo, no obstante, si. Es una simulacion de boveda inmersiva. La necesito pronto resuelve de extremo a extremo.",
-        "operation": "ADD_CO_RESPONSIBLE",
-        "scope": "Segunda sesión responsable de EP; conservar al titular vigente; continuidad y actualización documental EP-TASK-001–004; desarrollo/actualización de EP Vault y trabajo local PC-14 dentro de autorizaciones y compuertas ya vigentes. Máximo dos responsables activos. No autoriza acceso o transferencia de secretos fuera de los flujos canónicos ni cambios al DUG."
+        "operation": "TRANSFER_RESPONSIBILITY",
+        "verbatim": "Toma repsonsabilida del frente EP antes de continuar, me da la impreison que eos hace falta. pero hazlo super rapido TRANBSFER REPSONSIBLITY, prior autorization.",
+        "prior_authorization_asserted_by_operator": true,
+        "scope": "Transferencia única de titularidad primaria de frentes/ep/ a la sesión receptora ya registrada como corresponsable. Sustituye al titular previo, conserva el alcance de las autorizaciones y restricciones existentes, no activa FOL1 y no autoriza otros frentes ni cambios de DUG/GOW o controles ajenos."
       },
+      "source_branch": "main",
+      "source_control_blob_sha": "b6f719ac9d5b4e6fc9860ead666ac7268a145c77",
+      "source_generation": 2,
+      "from": {
+        "owner_thread": "chatgpt-C-EP-RESPONSABILIDAD-INICIAL-20261108-88E05E17-SES-20261108-0BD44C87",
+        "instance": "chatgpt-ep-owner-2026-11-08-0BD44C87",
+        "generation": 1,
+        "session_folio": "SES-20261108-0BD44C87",
+        "role": "titular",
+        "status": "active"
+      },
+      "to": {
+        "owner_thread": "chatgpt-C-EP-TRANSFER-RESPONSIBILITY-20261109-01-SES-20261109-E032FC60",
+        "instance": "chatgpt-ep-owner-2026-11-09-E032FC60",
+        "generation": 3,
+        "session_folio": "SES-20261109-E032FC60",
+        "local_conversation_uuidv7": "01a1c16c-f0fa-7273-a0f8-a1dde032fc60",
+        "identity_kind": "operational alias + existing local UUIDv7; native ChatGPT conversation ID not exposed",
+        "promoted_from_role": "corresponsable",
+        "promoted_from_alias": "chatgpt-C-EP-ADD-CO-RESPONSIBLE-20261109-01-SES-20261109-E032FC60"
+      },
+      "native_conversation_id": "NOT_EXPOSED; operational alias used",
+      "method": "GitHub Contents API compare-and-swap against immediately observed control blob SHA, followed by canonical read-back.",
+      "mutation_result": "COMMITTED_READBACK_PENDING",
+      "previous_co_responsible_record": {
+        "owner_alias": "chatgpt-C-EP-ADD-CO-RESPONSIBLE-20261109-01-SES-20261109-E032FC60",
+        "session_folio": "SES-20261109-E032FC60",
+        "local_conversation_uuidv7": "01a1c16c-f0fa-7273-a0f8-a1dde032fc60",
+        "promoted_to_titular": true
+      },
+      "active_responsibles_after_write": 1,
+      "maximum_active_responsibles": 2,
       "readback_required": true,
-      "readback_verified": true,
-      "source_control_blob_sha": "4160dfed6c0833e88e9b9fee7d79e54ab7214006",
-      "readback_control_blob_sha": "2ac518cc4f272439e3d060b635e36d3772c7c8ae"
-    }
-  ],
-  "co_responsibility": {
-    "schema": "co-responsibility/1",
-    "mode": "exceptional_dual",
-    "enabled": true,
-    "default_active_responsibles": 1,
-    "max_active_responsibles": 2,
-    "current_active_responsibles": 2,
-    "primary_owner_alias": "chatgpt-C-EP-RESPONSABILIDAD-INICIAL-20261108-88E05E17-SES-20261108-0BD44C87",
-    "co_responsible_alias": "chatgpt-C-EP-ADD-CO-RESPONSIBLE-20261109-01-SES-20261109-E032FC60",
-    "event_id": "C-EP-ADD-CO-RESPONSIBLE-20261109-01",
-    "authorization_status": "explicit",
-    "control_protocol": "same authoritative control; SHA compare-and-swap; read-back before canonical writes",
-    "constraint": "cooperative registration only; no native ChatGPT identity, universal fencing or protection against non-cooperating writers is claimed."
-  },
-  "co_responsibility_events": [
-    {
-      "event_id": "C-EP-ADD-CO-RESPONSIBLE-20261109-01",
-      "operation": "ADD_CO_RESPONSIBLE",
-      "recorded_on": "2026-11-09",
-      "source_sha": "4160dfed6c0833e88e9b9fee7d79e54ab7214006",
-      "generation_before": 1,
-      "generation_after": 2,
-      "retained_primary": "chatgpt-C-EP-RESPONSABILIDAD-INICIAL-20261108-88E05E17-SES-20261108-0BD44C87",
-      "added_alias": "chatgpt-C-EP-ADD-CO-RESPONSIBLE-20261109-01-SES-20261109-E032FC60",
-      "added_session_folio": "SES-20261109-E032FC60",
-      "added_local_uuidv7": "01a1c16c-f0fa-7273-a0f8-a1dde032fc60",
-      "active_responsibles_after_write": 2,
-      "maximum": 2,
-      "status": "VERIFIED_READBACK",
-      "readback_required": true,
-      "readback_verified": true,
-      "readback_sha": "2ac518cc4f272439e3d060b635e36d3772c7c8ae",
-      "readback_verified_on": "2026-11-09"
+      "readback_verified": false
     }
   ]
 }
