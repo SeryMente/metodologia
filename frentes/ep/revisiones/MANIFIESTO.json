@@ -42,15 +42,15 @@
     },
     {
       "path": "frentes/ep/OEP.md",
-      "bytes": 355028,
-      "sha256": "B8F96284CFA9059769B5904CC02B3BB80B43351EB5A47FAE638B685C865690AC",
-      "git_blob": "ec568e1a0e64746fd3736dc6ecf17327a5389ca8"
+      "bytes": 394313,
+      "sha256": "36F0A25877E7CE7FC8DC3F94C981615F6D185E7BCD9D13704437653DD6F6144E",
+      "git_blob": "b0d621f68b2da6c75eaa519ff204365706739d36"
     },
     {
       "path": "frentes/ep/README.md",
-      "bytes": 3580,
-      "sha256": "0990B114548D114C2AB527276C5D7BA90A7D65EB5A325111089B218314EED442",
-      "git_blob": "45d4e9f7bf296fb6e4101148bbeedbcacb77e929"
+      "bytes": 4252,
+      "sha256": "F810A83D1247BB48EBAA2ED74DFFAED72F32822850A2C835F0CA0B0CDE14768A",
+      "git_blob": "ff7b7af3ac746b36235fbf99f184e9408bd6d7ec"
     },
     {
       "path": "frentes/ep/artefactos/EP-H03-integracion-reproducible-parcial-20261011.zip.b64",
@@ -359,9 +359,9 @@
     },
     {
       "path": "frentes/ep/entregas/COORDINACION-GOBERNANZA-EP-v0.1.md",
-      "bytes": 251786,
-      "sha256": "66357C7B292073B8949607EB177CBF31E96CB110827A4DAD60CDEEDDEE86B264",
-      "git_blob": "0a16d3a34fa37ae7509d8db8ad838fd4865df300"
+      "bytes": 295701,
+      "sha256": "D40EFB00768CED2D45C0110A4372984B491BEACEBE5BC2D1C502AFE405D1EDE2",
+      "git_blob": "9d5b9c457a2cb712ea2e7b4119092674ded266ba"
     },
     {
       "path": "frentes/ep/originales/ChatGPT-EP-20261107-1111.txt",
@@ -377,9 +377,9 @@
     },
     {
       "path": "frentes/ep/📁 🧭 - Tareas provisionales/README.md",
-      "bytes": 9916,
-      "sha256": "1B4B394EE03E0F978E213E2082E23E2B4C1CA3F7B47FFA4489892E923A8E7865",
-      "git_blob": "0166a52b88786b947cd7873bf8b644c55604e657"
+      "bytes": 15862,
+      "sha256": "9F9B2224936BF424FB38C57B6262755DFCD126D0034B1CCAE78E530F5A4816F7",
+      "git_blob": "1851e81942abc400f73187cd1760511dfee54b17"
     },
     {
       "path": "frentes/ep/📁 🧭 - Tareas provisionales/📁 🧩 - EP-TASK-002 - Persistencia provisional Backblaze/README.md",
@@ -425,9 +425,9 @@
     },
     {
       "path": "frentes/ep/📁 🧭 - Tareas provisionales/📁 🧩 - EP-TASK-003 - Mapa integral de construcción EP/README.md",
-      "bytes": 26664,
-      "sha256": "92AD615D98A111915FCCE814B1943ED1BEA18971D7684B2B3813D6AD305CE20C",
-      "git_blob": "985d7462551fee32751a5a137575f4dbe9470537"
+      "bytes": 18044,
+      "sha256": "E5E18019B6FD05D11BD5A4BE28D1413929104759890C2C3329CCB6249115C3F2",
+      "git_blob": "be657e25e12cdaf978ecae81a43960c26b728219"
     },
     {
       "path": "frentes/ep/originales/INSTRUCCION-MATERIALIZACION-UBICACIONES-20261107.txt",
@@ -473,15 +473,27 @@
     },
     {
       "path": "frentes/ep/CONTROL-RESPONSABILIDAD.json",
-      "bytes": 12229,
-      "sha256": "8FD9CA290B620EBBC3AD41EF9C6D34280EC1CB7F9EA43BD1C4A41B514C7E20A9",
-      "git_blob": "4160dfed6c0833e88e9b9fee7d79e54ab7214006"
+      "bytes": 19681,
+      "sha256": "FFBFC40BCA9FA232E0318B68623AF8CFC6CFAA0537714E694DE272C281EC19AB",
+      "git_blob": "b6f719ac9d5b4e6fc9860ead666ac7268a145c77"
     },
     {
       "path": "frentes/ep/originales/ChatGPT-EP-20261108-1112.md",
       "bytes": 39243,
       "sha256": "75BCA4D84D6C5056F0EC08D940D079047754EACBC43E8A634375D45A53CEE35B",
       "git_blob": "363c4d8da7e9fc698b4ba29796053eaea90e9e00"
+    },
+    {
+      "path": "frentes/ep/📁 🧭 - Tareas provisionales/📁 🧩 - EP-TASK-004 - Reconstrucción de bóveda/README.md",
+      "bytes": 63397,
+      "sha256": "92F35B8EB05401428E98BFF2D075EFFF552277142337B72624817BB652535E4D",
+      "git_blob": "535ecc0cfa1f60cd1c03eaf789da6d9be2759a00"
+    },
+    {
+      "path": "frentes/ep/entregas/ChatGPT-EP-20261109-1104.md",
+      "bytes": 38069,
+      "sha256": "B032A6033BABC0B1061C2823D5B3C64C3A041DC842978E73B6D26216977805D4",
+      "git_blob": "f14febd7b5f673d9b2f7b1226603eb1243758ea0"
     }
   ],
   "exclusions": [
@@ -508,13 +520,18 @@
     "No delete or hide operation performed on B2; synthetic verification object retained.",
     "Master Application Key remains globally unrestricted by provider; EP use constrained procedurally to OCP-MCP/ep-ocp/.",
     "No restore to a second physical location, multi-location sync or end-to-end consumer acceptance in this cycle.",
-    "No prior EP owner or generation was verifiable; an initial responsibility assignment at generation 1 was created on 2026-11-08. No transfer from an identified prior owner was performed."
+    "No prior EP owner or generation was verifiable; an initial responsibility assignment at generation 1 was created on 2026-11-08. No transfer from an identified prior owner was performed.",
+    "BitLocker VHDX was created but encryption/protection had not yet been started at this manifest cut; W: was empty and not used for workspace data.",
+    "No recovery protector has yet been generated or stored in EP Vault; local master-password entry in manage-bde is awaiting the operator.",
+    "The 195 existing files under Desktop/SeryMente/signal-interpreter remain on the original workspace and were not moved to the VHDX.",
+    "EP Vault 3D implementation remains in draft PR #20 and is not merged to main; human visual/auditory acceptance and H10 remain pending.",
+    "No B2 credential recovery, B2 authentication, bucket/object operation, or restore occurred in this cycle."
   ],
-  "prior_readback_verified": "PASS: canonical GitHub main read-back matched the initial responsibility control, OEP v0.3.40, README, DTC, SPDF document manifest and preserved 2026-11-08 original; hashes and Git blob identifiers recorded.",
-  "latest_review_source_commit": "91ebe38c07407c9644030f502a0d1e84c28f5522",
-  "current_event": "C-EP-RESPONSABILIDAD-INICIAL-20261108-88E05E17: EP initial responsibility control created at generation 1 after explicit operator authorization; no predecessor control/owner was verifiable; no transfer performed.",
-  "verification_scope": "DOCUMENTATION_COMMITTED_AND_READBACK_VERIFIED: initial EP responsibility control, OEP v0.3.40, README, DTC, SPDF manifest and 2026-11-08 original verified against main. Ownership is an initial assignment, not transfer from a verified predecessor. No host/B2/secret operations were performed.",
-  "updated_on": "2026-11-08",
-  "latest_oep_version": "v0.3.40",
-  "latest_dtc_blob": "0a16d3a34fa37ae7509d8db8ad838fd4865df300"
+  "prior_readback_verified": "PASS: 2026-11-09 main read-back matched the preserved ChatGPT-EP-20261109-1104.md export and the updated EP control, OEP v0.3.45, front README, provisional task index, EP-TASK-003/004 READMEs and DTC. The manifest itself is excluded from its own file list to avoid recursive hashing.",
+  "latest_review_source_commit": "fca288d6c359c2e39f1bc621ed91f8ac32217f38",
+  "current_event": "C-EP-ADD-CO-RESPONSIBLE-20261109-01: explicit ADD_CO_RESPONSIBLE verified at generation 2; 2026-11-09 continuity export persisted; EP Vault 3D design and code/test progress recorded; PC-14 VHDX created but BitLocker remains pending local password entry and recovery protector.",
+  "verification_scope": "DOCUMENTATION_COMMITTED_AND_READBACK_VERIFIED: export, EP control gen2, OEP v0.3.45, README, task index, EP-TASK-003/004 and DTC. PC-14 GUI 3D build/test suite passed locally and new UI launched; formal vault hash remained unchanged. VHDX created empty on W:; no BitLocker encryption/protection yet, no recovery protector stored, no workspace migration. DUG unchanged. PR #20 remains draft/unmerged; no B2 operations.",
+  "updated_on": "2026-11-09",
+  "latest_oep_version": "v0.3.45",
+  "latest_dtc_blob": "9d5b9c457a2cb712ea2e7b4119092674ded266ba"
 }
