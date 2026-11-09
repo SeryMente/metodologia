@@ -49,3 +49,10 @@ Esta tarea no autoriza por sí misma una modificación normativa del DUG/GOW. Cu
 ## Prioridad rectora IPZ · C-GOBERNANZA-VECTOR-SEMANTICO-01 · 2026-10-31
 
 GOW/§ARR es el primer destino del IPZ y debe ofrecer el vocabulario necesario para comprender Metodología, admisión, repositorios/frentes, ciclo/folios y DUG. Debe ir antes del segundo enlace al DUG; este último conserva la autoridad normativa única. Verificar el destino Sync abreviado, resolución, anclas y compatibilidad del glosario humano/estructurado. La divergencia de banner/versiones y el inventario de satélites se resuelven con GOV-TASK-006; esta tarea valida la funcionalidad de la primera referencia, no modifica el canon. Trazabilidad: [C-GOBERNANZA-VECTOR-SEMANTICO-01](../../cronica/C-GOBERNANZA-VECTOR-SEMANTICO-01.md).
+
+
+## Alineación de referencia IPZ · 2026-11-09 · C-GOBERNANZA-IPZ-RDC-SINK-01
+
+La primera referencia operativa del IPZ se denomina `GOW:ARR` y la segunda `DUG`. Se resuelven por RDC/MCP-OCP local; no son URLs Sync ni requieren acortador HTTP. Esta tarea conserva su alcance: verificar que §ARR ofrece el vocabulario de entrada suficiente, breve y coherente con el DUG único, y que la respuesta de `GOW:ARR` corresponde a la revisión canónica importada.
+
+La prueba de resolución depende de MCP-OCP y se ejecutará después de que exista la herramienta local; la validación semántica del vocabulario sigue siendo responsabilidad de Gobernanza. No añadir Sink al vocabulario inicial por mera exhaustividad ni modificar el GOW por inferencia. Estado de esta tarea: `en_curso`, no aceptada.
