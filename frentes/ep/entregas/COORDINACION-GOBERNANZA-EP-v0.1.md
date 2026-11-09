@@ -2076,3 +2076,27 @@ CICLO: INCOMPLETO · OCP: NO ASIGNADO
 A: PENDIENTE · OCP: NO ASIGNADO  
 B: PENDIENTE · OCP: NO ASIGNADO  
 FOL1: NO CONSTA ACTIVO.
+
+
+## EP · apertura de especificación MOD-SYNC · 2026-11-09
+
+### Respuesta inicial registrada
+
+**A literal del operador:** «Valido y apruebo el propósito de MOD-SYNC §110. Continúa con la especificación de implementación.»
+
+**Interpretación:** el operador valida el propósito funcional de MOD-SYNC registrado en OEP §110 y autoriza continuar con la especificación técnica de implementación. El módulo permanece subordinado a EP; no se crea OCP, control, sesión, tarea o folio independiente. La delegación transversal aplica a este encargo de diseño, no transfiere titularidad de EP ni de MCP-OCP.
+
+**Alcance inmediato:** especificar el contrato HTTP de resolución, registro declarativo de alias, modelo de datos versionado, validación de destinos, seguridad, administración por cambios controlados en Git, observabilidad mínima, despliegue, pruebas y aceptación de los dos primeros aliases `gow-arr` y `dug`.
+
+**Límites:** no crear ni publicar un dominio, DNS, endpoint, proveedor, secreto o infraestructura; no modificar DUG/ART-025/ART-027, Sink ni OCPMSP; no insertar aún URLs en IPZ. La resolución pública redirigirá al destino y no concederá acceso al repositorio privado. La elección de dominio y proveedor queda pendiente de decisión específica.
+
+### Fuente y cursor
+
+- DTC canónico: `frentes/ep/entregas/COORDINACION-GOBERNANZA-EP-v0.1.md`.
+- Cursor leído: blob `e5477b0e12c89eca1b8f1d8424c9b07f7ccd1790`; contenido completo, 2.079 líneas.
+- OEP observado: v0.3.43; blob `e456b03490587e9bea44eaa0b30dee718ac09ceb`, §110 contiene el propósito de MOD-SYNC.
+- DUG observado: Samantha v383 / NX-383m; blob `cad464717c43733aa84b49f8c9c3af0875597fbd`; ART-025 mantiene la IPZ como interfaz compacta y el DUG como fuente normativa.
+- Control EP observado: generación 1, titular registrado distinto de esta sesión; el encargo actual autoriza el diseño funcional de MOD-SYNC, no una transferencia del control padre ni cambios de host/credenciales.
+- Control MCP-OCP: permanece separado, sin cambios.
+
+**Secuencia:** esta respuesta inicial se registra después de recuperar el DTC y de iniciar la lectura técnica de OEP/DUG. No se afirma que la apertura precediera a todo el análisis de esta conversación. El cierre deberá documentar la especificación, sus decisiones y los artefactos realmente escritos, con lectura de vuelta.
