@@ -109,6 +109,7 @@ La vista principal debe permitir entender el estado global en unos segundos, sin
 - Icono + etiqueta + color para todos los estados; el color nunca es la única señal.
 - Indicadores de actividad discretos; sin parpadeos, destellos repetitivos, sonido, animación constante ni ventanas modales intrusivas.
 - Respetar configuración de accesibilidad/reducción de movimiento de Windows; navegación por teclado y escalado DPI.
+- La ventana inicia visible al activar EP y permanece como aplicación abierta durante la sesión. Mientras EP siga ACTIVE, `X`/Alt+F4 minimiza a la barra de tareas en lugar de terminar el proceso; el operador puede restaurarla desde allí. El controlador EP es quien termina el panel al cerrar la sesión. No usar always-on-top por defecto.
 - La interfaz no ofrece acciones de escritura ni botones para autorizar operaciones. Su función es observar y explicar, no ejecutar.
 
 ## 6. Matriz de estados
@@ -135,7 +136,7 @@ La vista principal debe permitir entender el estado global en unos segundos, sin
 6. Una llamada fallida aparece como fallo y no incrementa la frecuencia de recuperaciones exitosas.
 7. El servidor termina abruptamente: el panel detecta el proceso exacto y actualiza el estado sin confundir PID reutilizado.
 8. `session.json` ausente/inválido/desfasado, JSON operativo inválido, ACL denegada o archivo inaccesible: estado de sesión/observabilidad no disponible, sin excepción no controlada ni elevación de permisos.
-9. Cierre de la sesión EP: el panel termina limpiamente y no queda proceso huérfano.
+9. Cierre de la ventana por `X`/Alt+F4 durante EP ACTIVE: se minimiza y sigue restaurable; cierre de la sesión EP: el panel termina limpiamente y no queda proceso huérfano.
 10. El tráfico STDIO conserva stdout exclusivamente para MCP; el panel no abre listeners, sockets, HTTP ni túneles.
 11. Build/package incluye el ejecutable, recursos y dependencias necesarias; manifest y SHA-256 coinciden tras extracción/read-back.
 12. Prueba visual en el host Windows objetivo a resolución común y escalado DPI; contraste, teclado y reducción de movimiento verificados.
