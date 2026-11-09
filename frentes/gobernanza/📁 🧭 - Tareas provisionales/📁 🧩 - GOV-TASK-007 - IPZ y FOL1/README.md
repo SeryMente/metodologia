@@ -73,3 +73,8 @@ Los identificadores son referencias operativas locales, no enlaces HTTP ni crede
 La instalación de las Instrucciones Personalizadas nativas y su read-back son una fase aparte. FOL1 solo podrá activarse después de esa verificación; mientras tanto sigue `PREPARADO_PENDIENTE_ACTIVACION_IPZ` y no se asignan folios globales.
 
 **Estado:** contrato de referencias armonizado; texto IPZ final, conteo, instalación nativa, read-back y FOL1 permanecen pendientes.
+
+
+## Separación de la aceptación del servidor MCP-OCP · 2026-11-09
+
+La instalación local del servidor MCP-OCP es entregable de EP-TASK-005 y se ubica en `frentes/mcp-metodologia/instalacion-local/` dentro del checkout local de Metodología. **No depende de instalar o actualizar la IPZ nativa ni de activar FOL1.** GOV-TASK-007 conserva su propio orden: reconciliar v0.7 y salvaguardas, medir menos de 1.500 caracteres, instalar el campo nativo cuando proceda y verificar read-back; solo después se evalúa el gate FOL1. La ausencia de FOL1 no bloquea implementación, build, paquete ni instalación local del servidor. No asignar folios globales antes del corte autorizado.
