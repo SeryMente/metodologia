@@ -6,10 +6,10 @@
 - **Frente:** MCP-OCP.
 - **Repositorio propietario:** `SeryMente/metodologia`.
 - **Ruta OCP:** `frentes/mcp-metodologia/`.
-- **Versión de la lista:** 0.7 (provisional; reconciliación del sprint Sink local en tres frentes).
+- **Versión de la lista:** 0.7 (provisional; consolidación del sprint Sink + panel local en tres frentes).
 - **Última actualización:** 2026-11-09.
 - **Gobierno leído:** Samantha v386 · NX-386m; Metacanon 1.29; GOW 2.18; DUG commit `82843bca9493a522405d840393c229d2af363342`; blob `22dca684830a36dff019b47811d9b800cc9bea0a`. §ARR y P037 revisados; CNP P001/P004/P005/P038/P043 considerado.
-- **Núcleo enlazado:** [MCP-OCP · objeto canónico](MCP-METODOLOGIA.md), v0.1.25; esta lista v0.6 es su backlog auxiliar vigente.
+- **Núcleo enlazado:** [MCP-OCP · objeto canónico](MCP-METODOLOGIA.md), v0.1.26; esta lista v0.7 es su backlog auxiliar vigente.
 - **Control:** [CONTROL-RESPONSABILIDAD.json](CONTROL-RESPONSABILIDAD.json). Las generaciones y sesiones son metadatos de auditoría y no bloquean trabajo autorizado.
 - **MCP-NORMATIVO:** DESACTIVADO.
 - **Producto vs. documento:** MCP-OCP-v0.1.26 es la versión documental vigente; la versión de software objetivo es 1.0.0. La candidata ejecutable 0.1.0 y su recibo histórico no constituyen una versión actualizada ni aceptada del producto.
@@ -48,7 +48,7 @@ La tabla sustituye los PASS/estados de recibos históricos para la implementaci�
 ## Fichas de tareas
 
 ### MCP-OCP-01 — Contrato de producto local y frontera OCP/Khora/Jules
-**Prioridad:** P0 · **Estado:** EN CURSO · **Responsable:** MCP-OCP dentro de su autoridad.
+**Prioridad:** P0 · **Estado:** VERIFICADO_EN_NUCLEO_V0.1.26 · **Responsable:** MCP-OCP dentro de su autoridad.
 
 **Objetivo:** fijar sin ambigüedad que el servidor de Metodología es un producto propio del OCP, ejecutado localmente y separado de Khora. La palabra «MSP» del propósito original se conserva como dictado histórico; la identidad técnica vigente del frente es MCP-OCP.
 
@@ -56,7 +56,7 @@ La tabla sustituye los PASS/estados de recibos históricos para la implementaci�
 
 **Excluye:** capacidades de dictados/audio/MP3/grafo de Khora; servidor Jules duplicado; API key de Jules o secretos de Khora; endpoint público/Vercel; activación de MCP-NORMATIVO; cambios DUG/Sink.
 
-**Cierre:** núcleo, esta lista y README reflejan la misma frontera y la separación se valida por revisión de rutas/dependencias.
+**Cierre:** núcleo v0.1.26, esta lista v0.7 y README reflejan la misma frontera; la especificación del panel identifica su separación como app acompañante read-only, sin segundo MCP ni red. La revisión documental de contrato está verificada; las pruebas de implementación permanecen pendientes.
 
 ### MCP-OCP-02 — Reconciliación de código ejecutable contra main
 **Prioridad:** P0 · **Estado:** PENDIENTE_SPRINT.
