@@ -528,12 +528,12 @@ El build y las pruebas no equivalen a instalación en perfil, provisión del ope
 
 ### 16.1 Destino local del programa
 
-El servidor instalado debe residir dentro del repositorio local de Metodología:
+El servidor y el panel instalados deben residir dentro del repositorio local de Metodología:
 - Checkout único: `SeryMente/Repositorios/Metodologia/metodologia/`.
 - Ruta relativa obligatoria: `frentes/mcp-metodologia/instalacion-local/`.
 - Ruta Windows: `<checkout>\\frentes\\mcp-metodologia\\instalacion-local\\`.
 
-Aloja ejecutable 1.0.0, runtime/dependencias necesarias, launcher, configuración de ejemplo y manifiesto/hash. Es materialización local excluida de Git; no versionar binarios. Código fuente y pruebas sí se versionan/reconstruyen desde el repositorio.
+Aloja ejecutable MCP 1.0.0, runtime/dependencias, launcher, configuración de ejemplo, manifiesto/hash y subcarpeta `panel/OcpMcp.Panel.exe`. Es materialización local excluida de Git; no versionar binarios. Código fuente y pruebas sí se versionan/reconstruyen desde el repositorio.
 
 ### 16.2 Datos y secretos fuera del checkout
 
