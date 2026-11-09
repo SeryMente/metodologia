@@ -195,3 +195,18 @@ Esta actualización supersede los estados anteriores de este README que marcaban
 - El portapapeles se limpió y verificó sin leer su contenido: `CLEARED_TEXT_FORMATS_VERIFIED`.
 
 **Pendiente:** los 195 archivos/11 directorios siguen en `Desktop\SeryMente`. No hay copia a W:, manifiesto SHA-256, montaje en la ruta del Escritorio ni eliminación del origen. RDC informa 0 % de llamadas restantes; por eso la migración no se ejecutó. Mantener el origen intacto y EP-TASK-003 en `en_curso` hasta completar la copia, ambos read-backs SHA-256 y la aceptación.
+
+
+---
+
+## Reconciliación de exportación ChatGPT-EP-20261109-1230 · 2026-11-09
+
+La exportación original se adquirió desde el perfil/almacenamiento Windows `PC 13` dentro del equipo RDC `PC-14`, ruta `C:\Users\PC 13\Downloads\ChatGPT-EP-20261109-1230.md`. Se preservó byte por byte en `frentes/ep/entregas/ChatGPT-EP-20261109-1230.md`: 40.832 bytes, 853 líneas, SHA-256 `045FD76745669E2AD08A4A0F517FCB042B5CD2C3B3320AB5AD2E83F0972EF674`, Git blob `1be5a3b2a19dec4dd819648302664606654a4761`, commit `163138cc5a6113279fbc42eccbec036df424f8e4`. Read-back Base64 sin espacios coincide exactamente con el original.
+
+La exportación repite un rótulo de progreso que dice «Migrado el espacio de trabajo», pero la respuesta explícita que sigue indica que RDC llegó a 0 % y no pudo ejecutar copia ni montaje. OEP §114 y la verificación canónica confirman que no existe copia a W:, manifiesto SHA-256 de destino ni sustitución del punto de montaje. **La frase de progreso no se toma como evidencia de ejecución.**
+
+Estado que prevalece:
+- W: permanece cifrado XTS-AES256, Protection On, FullyEncrypted/100 %.
+- RecoveryPassword nuevo custodiado en EP Vault mediante `VAULT_WRITE_READBACK_VERIFIED`; protector anterior potencialmente expuesto retirado; un Password protector conservado; portapapeles limpiado/verificado.
+- Los 195 archivos y 11 directorios siguen en `Desktop\SeryMente`, fuera de W:.
+- EP-TASK-003 permanece `en_curso`; no borrar ni mover el origen hasta copiar y verificar rutas/tamaños/SHA-256, montar W: como `Desktop\SeryMente` y hacer un segundo read-back íntegro.
