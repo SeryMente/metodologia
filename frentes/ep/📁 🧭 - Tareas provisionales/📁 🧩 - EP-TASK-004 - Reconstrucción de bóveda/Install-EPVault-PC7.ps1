@@ -30,15 +30,28 @@ $testOutput | ForEach-Object { Write-Output ([string]$_) }
 if ($testExit -ne 0) { throw ('EP_VAULT_TEST_EXIT_CODE: ' + $testExit) }
 
 Write-Output 'STEP 3/4: Formal vault status — read-only'
-$statusOutput = @(& $psExe -NoLogo -NoProfile -NonInteractive -ExecutionPolicy Bypass -File (Join-Path $srcRoot 'EP.Vault.CLI.ps1') -Action Status 2>&1)
-$statusExit = $LASTEXITCODE
-if ($statusExit -ne 0) { throw 'EP_VAULT_STATUS_QUERY_FAILED' }
-$statusText = ($statusOutput | ForEach-Object { [string]$_ }) -join [Environment]::NewLine
-$status = $statusText | ConvertFrom-Json
-if ($status.vaultExists -and $status.status -ne 'ENCRYPTED_FILE_PRESENT') { throw 'EP_VAULT_EXISTING_STORE_STATUS_UNEXPECTED' }
-if ($status.status -eq 'NOT_INITIALIZED') { Write-Output 'FORMAL_VAULT_NOT_INITIALIZED — installer did not create it' }
-else { Write-Output ('FORMAL_VAULT_PRESENT_UNTOUCHED_BYTES=' + $status.bytes) }
-
+$statusStdout = Join-Path ([IO.Path]::GetTempPath()) ('ep-vault-status-' + [Guid]::NewGuid().ToString('N') + '.out')
+$statusStderr = $statusStdout + '.err'
+try {
+    $statusProcess = Start-Process -FilePath $psExe -ArgumentList @(
+        '-NoLogo','-NoProfile','-NonInteractive','-ExecutionPolicy','Bypass',
+        '-File',('"' + (Join-Path $srcRoot 'EP.Vault.CLI.ps1') + '"'),
+        '-Action','Status'
+    ) -PassThru -Wait -WindowStyle Hidden -RedirectStandardOutput $statusStdout -RedirectStandardError $statusStderr
+    if ($statusProcess.ExitCode -ne 0) { throw ('EP_VAULT_STATUS_QUERY_FAILED_EXIT_' + $statusProcess.ExitCode) }
+    $statusText = [IO.File]::ReadAllText($statusStdout,[Text.Encoding]::UTF8).Trim()
+    if ([string]::IsNullOrWhiteSpace($statusText)) { throw 'EP_VAULT_STATUS_EMPTY' }
+    try { $status = $statusText | ConvertFrom-Json -ErrorAction Stop }
+    catch { throw 'EP_VAULT_STATUS_OUTPUT_NOT_VALID_JSON' }
+    if ($status.vaultExists -and $status.status -ne 'ENCRYPTED_FILE_PRESENT') { throw 'EP_VAULT_EXISTING_STORE_STATUS_UNEXPECTED' }
+    if ($status.status -eq 'NOT_INITIALIZED') { Write-Output 'FORMAL_VAULT_NOT_INITIALIZED — installer did not create it' }
+    else { Write-Output ('FORMAL_VAULT_PRESENT_UNTOUCHED_BYTES=' + $status.bytes) }
+}
+finally {
+    foreach ($tempFile in @($statusStdout,$statusStderr)) {
+        if (Test-Path -LiteralPath $tempFile) { Remove-Item -LiteralPath $tempFile -Force -ErrorAction SilentlyContinue }
+    }
+}
 Write-Output 'STEP 4/4: GUI/CLI shortcuts'
 foreach ($name in @('EPVault-GUI.cmd','EPVault-CLI.cmd','TEST-EPVault.cmd')) {
     if (-not (Test-Path -LiteralPath (Join-Path $taskRoot $name) -PathType Leaf)) { throw ('EP_VAULT_LAUNCHER_MISSING: ' + $name) }

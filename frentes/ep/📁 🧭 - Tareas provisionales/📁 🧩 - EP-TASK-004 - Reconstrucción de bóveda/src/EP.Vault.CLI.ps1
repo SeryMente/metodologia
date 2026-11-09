@@ -33,7 +33,7 @@ $corePath = Join-Path $PSScriptRoot 'EP.Vault.Core.psm1'
 if (-not (Test-Path -LiteralPath $corePath -PathType Leaf)) {
     throw 'EP_VAULT_CORE_NOT_FOUND'
 }
-Import-Module -Name $corePath -Force -ErrorAction Stop
+Import-Module -Name $corePath -Force -DisableNameChecking -WarningAction SilentlyContinue -ErrorAction Stop
 
 function Read-EpLocalMaster {
     return Read-Host 'EP Vault master password — enter locally; never send it to the model' -AsSecureString
