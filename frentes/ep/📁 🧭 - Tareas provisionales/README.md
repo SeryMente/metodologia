@@ -103,3 +103,25 @@ La regla se adopta para tareas provisionales de este contenedor por instrucción
 BitLocker es obligatorio en toda ubicación y utiliza la misma contraseña maestra de la bóveda canónica de variables de entorno. CECEQ conserva el workspace cifrado al cierre. En ubicaciones distintas de CECEQ, la terminación del proceso de control de la sesión EP dispara el bloqueo BitLocker, desmontaje y eliminación exclusiva del contenedor/carpeta de trabajo EP.
 
 Se revisó el diseño histórico de KHORA OEP §28–§30 y sus módulos asociados; se retiene solo el evento de terminación del proceso de control. Quedan fuera de esta versión Guardian como subsistema, vigilancia anti-exfiltración, heartbeat, polling, inactividad, monitoreo, VS Code/IDE y tareas programadas. La actualización es documental: el disparador aún no está implementado ni activado.
+
+
+## Reconciliación de tareas por instrucción rectora del workspace SeryMente · 2026-11-09
+
+**Fuente:** instrucción directa del operador del 2026-11-09, reconciliada con OEP §108 y los núcleos individuales. La raíz de trabajo se llama exactamente `SeryMente`, sin espacios. La fotografía de repositorios accesibles hoy es de 11, pero la materialización futura volverá a descubrir la organización GitHub dinámicamente. En frentes Chrome MV3, el paquete cargable local se denominará `Extensión`; la recomendación de mantener `Observabilidad` como carpeta hermana y local-first queda pendiente de ratificación expresa y se enlaza a EP-TASK-002/003. La bóveda es un producto/frente de trabajo de `SeryMente/metodologia`, no una extensión Chrome; EP-TASK-004 conserva su seguimiento provisional.
+
+### Estado ejecutivo vigente
+
+| ID | Estado | Evidencia/alcance al 2026-11-09 | Siguiente dependencia material |
+|---|---|---|---|
+| EP-TASK-001 | `pendiente` | NCL continúa sin activación ni nueva ejecución. No cambió por la instrucción del workspace. | Esperar la condición de activación vigente o instrucción expresa del operador. |
+| EP-TASK-002 | `en_curso` | Prueba B2 sintética histórica conserva PASS; no demuestra sincronización automatizada, observabilidad real ni restore actual. Se añadió contrato local-first/cola B2 y separación estricta GitHub (código) / B2 (datos de usuario elegibles). | Inventario de datasets, clasificación y retención; credenciales locales disponibles por bóveda segura; automatizar cola, subida, read-back y restore. |
+| EP-TASK-003 | `en_curso` | Canon de nombre y árbol `SeryMente` documentado; 11 repositorios accesibles inspeccionados; candidatos MV3 diferenciados de manifiestos PWA/documentales. PC-14 volvió Online, pero no se materializó nada ni se modificó BitLocker. | Resolver perfil Windows propietario (`fila4` vs `PC-14\PC 13`), satisfacer P012/P013, terminar bóveda maestra y cifrar VHDX antes de materializar. |
+| EP-TASK-004 | `en_curso` | Core/CLI/GUI y pruebas tienen avances históricos; UI premium rechazada; recurso de acero negro generado localmente en Fila 4 pero todavía no integrado. La bóveda queda en metodología y no es extensión Chrome. | Aceptar la bóveda canónica y su flujo local; después crear/activar VHDX con la misma contraseña y protector de recuperación. Cerrar H3–H10 con evidencia y aceptación. |
+
+**Regla de estado:** no promover tareas a `completada` por documentación, diseño aprobado, pruebas sintéticas parciales o archivos instalados. Los hitos internos sí mantienen sus estados parciales/completados dentro de cada núcleo. El índice resume identidad y estado; el detalle y la crónica permanecen en el README individual.
+
+### Límites de PC-14 en este ciclo
+
+El dispositivo RDC autenticado es `PC-14`, ID `4fc35a07-2192-4b88-81ec-96cb450d565e`; la consola activa es `PC-14\PC 13`, perfil `C:\Users\PC 13`, Desktop `C:\Users\PC 13\Desktop`. C: está sin BitLocker (0 %, Off). No se creó `SeryMente`, no se creó VHDX ni se clonó ningún repositorio. La discrepancia con la directriz operativa anterior de utilizar `fila4` bloquea cualquier escritura en ese host hasta que el propietario del perfil quede expresamente resuelto. El operador declaró la ubicación como cibercafé; clasificación provisional `LOC-OTHER`. No se activa volatilización porque el dead-man trigger todavía no existe.
+
+**Ciclo documental:** DTC de apertura anexado y leído de vuelta; OEP §108, EP-TASK-002, EP-TASK-003 y EP-TASK-004 actualizados en `main` con lectura de vuelta posterior. EP-TASK-001 se conserva sin modificación. La implementación física del workspace y el cierre técnico de EP permanecen pendientes.
