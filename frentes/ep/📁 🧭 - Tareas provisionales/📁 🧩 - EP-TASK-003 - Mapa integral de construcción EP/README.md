@@ -210,3 +210,19 @@ Estado que prevalece:
 - RecoveryPassword nuevo custodiado en EP Vault mediante `VAULT_WRITE_READBACK_VERIFIED`; protector anterior potencialmente expuesto retirado; un Password protector conservado; portapapeles limpiado/verificado.
 - Los 195 archivos y 11 directorios siguen en `Desktop\SeryMente`, fuera de W:.
 - EP-TASK-003 permanece `en_curso`; no borrar ni mover el origen hasta copiar y verificar rutas/tamaños/SHA-256, montar W: como `Desktop\SeryMente` y hacer un segundo read-back íntegro.
+
+
+## Designación del destino del sprint Sink local · 2026-11-09
+
+**Decisión posterior del operador:** destino Windows definitivo = perfil/usuario Windows `PC 7`; dispositivo RDC asociado a ese perfil según declaración del operador; clasificación de ubicación = `LOC-OTHER`.
+
+- `PC 7` identifica el nuevo usuario/perfil Windows. No se interpreta como hostname ni como ID RDC.
+- El nombre/ID técnico del dispositivo RDC, el estado de conexión, SID, usuario efectivo, rutas y permisos se obtendrán por preflight vivo. No se reutilizan identificadores históricos ni se presume continuidad de almacenamiento.
+- La evidencia anterior de W:, BitLocker y workspace se mantiene atribuida al host/perfil donde fue observada. No prueba el estado del destino PC 7 hasta lectura de vuelta en ese destino.
+- Por ser `LOC-OTHER`, el dead-man trigger es **OBLIGATORIO** antes de dejar persistente workspace o runtime MCP-OCP. Estado actual: diseñado/documentado; **NO IMPLEMENTADO / NO PROBADO / NO ACTIVADO**.
+- Se conserva el alcance mínimo aprobado: terminación del proceso de control EP → bloquear BitLocker → desmontar → eliminar exclusivamente el contenedor EP. Sin Guardian genérico, polling, heartbeat, inactividad, tareas programadas ni borrado fuera del perímetro.
+- La migración de los 195 archivos/11 directorios sigue pendiente: primero identificar la fuente vigente, comparar manifiestos SHA-256 y conservar el origen hasta read-back íntegro en el volumen protegido.
+
+### Gate actualizado para LOC-OTHER / PC 7
+
+No se inicia una instalación persistente hasta completar y leer de vuelta: (1) vínculo RDC↔PC 7 y usuario/SID efectivos; (2) almacenamiento XTS-AES256, Protection On, FullyEncrypted/100 % y custodia recuperable; (3) migración/verificación del workspace si aplica; (4) dead-man implementado y probado en el perfil real; (5) runtime/DB/respaldos dentro del perímetro cifrado. La designación documental no equivale a preflight, permiso técnico, ejecución ni aceptación.
