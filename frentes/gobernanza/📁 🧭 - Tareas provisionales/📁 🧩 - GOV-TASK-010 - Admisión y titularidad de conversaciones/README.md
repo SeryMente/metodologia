@@ -43,3 +43,10 @@ Pruebas positivas y negativas demuestran que: (a) una conversación con frente a
 ## Estado vigente · C-GOBERNANZA-VECTOR-SEMANTICO-01 · 2026-10-31
 
 La tarea pasa a `en_curso` por prioridad crítica. La compuerta debe ubicarse en el IPZ después de los dos enlaces Sync iniciales (GOW/§ARR y DUG), exigir frente asignado explícitamente y comprobar control/titularidad/generación/autorización/exclusividad antes de cualquier trabajo sustantivo. Debe rechazar consultas generales ajenas al frente. La plataforma puede permitir abrir el chat; no afirmar bloqueo de la interfaz. La aceptación exige casos positivos/negativos y prueba dentro de 1.500 caracteres con read-back de instalación antes de FOL1. La tarea no crea control ni sesión propios y sigue heredando el control de Gobernanza.
+
+
+## Alineación del recorrido IPZ · 2026-11-09 · C-GOBERNANZA-IPZ-RDC-SINK-01
+
+Las dos referencias iniciales del IPZ quedan fijadas como identificadores operativos locales: primero `GOW:ARR`, después `DUG`, ambos mediante RDC/MCP-OCP. La compuerta fail-closed de esta tarea permanece inmediatamente después de esas dos referencias y conserva su alcance actual: asignación explícita de frente, comprobación de control/titularidad/generación/autorización/exclusividad y abstención de trabajo sustantivo si la admisión falla.
+
+No convertir la resolución local en una barrera ficticia de la interfaz de ChatGPT. Si RDC no está disponible o la fuente no se verifica, declarar metodología no verificada y no continuar con aplicación normativa. La instalación nativa y el read-back siguen siendo requisito previo a FOL1. Esta alineación no cambia el estado `en_curso` ni implica prueba E2E.
