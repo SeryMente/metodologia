@@ -2004,3 +2004,27 @@ Render WPF directo (RenderTargetBitmap) en perfil temporal Fila4, 1440×900, con
 **Ejecución autorizada próxima:** instalar Git y GitHub CLI en PC-14 y actualizar/normalizar las versiones disponibles en Fila 4, realizando las operaciones de usuario bajo la identidad interactiva propietaria de cada equipo. Verificar ejecutables, versión, PATH y `gh auth status`; no iniciar autenticación nueva ni transferir tokens. Los clones quedan supeditados a la protección cifrada del workspace y a la disponibilidad de autenticación GitHub local sin copiar secretos entre perfiles.
 
 **Compuertas aún vigentes:** esta autorización de herramientas no equivale a aceptación visual de la bóveda ni a disponibilidad de su contraseña maestra/clave de recuperación. No materializar repositorios en claro; no crear VHDX ni iniciar BitLocker hasta disponer del secreto local mediante la bóveda canónica y conservar el protector de recuperación en ella. Se mantiene la clasificación de PC-14 como `LOC-OTHER` por declaración del operador de que es cibercafé; el dead-man trigger aún no está implementado.
+
+
+### Resultado y cierre de preparación CLI · PC-14 y Fila 4 · 2026-11-09
+
+**Presencia/autorización procesada:** el operador declaró estar físicamente frente a PC-14 y autorizó usar Fila 4 para instalar CLI/herramientas necesarias en ambos equipos. Se interpretó «CI» como «CLI» en el contexto. El permiso se aplicó a Git for Windows y GitHub CLI; no se amplió a autenticación, transferencia de tokens, bóvedas formales o cambios BitLocker.
+
+**PC-14 — ejecutado y verificado:**
+- Identidad del proceso de instalación: `PC-14\PC 13`, perfil `C:\Users\PC 13`.
+- Git: `C:\Program Files\Git\cmd\git.exe`; versión directa `2.56.0.windows.4`; `winget list` confirma paquete Git 2.56.0.4.
+- GitHub CLI: `C:\Program Files\GitHub CLI\gh.exe`; versión `2.103.3 (2026-10-26)`; `winget list` confirma paquete GitHub.cli 2.103.3.
+- PATH de máquina leído de vuelta: incluye `C:\Program Files\Git\cmd` y `C:\Program Files\GitHub CLI\`. El proceso RDC hereda PATH antiguo y no resuelve los comandos por nombre; las invocaciones por ruta absoluta sí funcionan. La ruta persistente existe y una nueva terminal de usuario debe refrescar el entorno.
+- `gh auth status`: no hay sesión GitHub autenticada. No se ejecutó login ni se creó/capturó token.
+- Git devolvió inicialmente `0x80070020` durante WinGet; el read-back posterior confirmó binario y paquete instalados en la versión objetivo. GitHub CLI finalizó con código 0. Start-Transcript falló en este host y no se afirma que exista una transcripción.
+
+**Fila 4 — estado verificado, actualización pendiente:**
+- Git 2.45.2 y GitHub CLI 2.52.0 estaban instalados en `C:\Program Files` según el preflight.
+- La sesión de consola propietaria es `CENTRAL\fila4`, SessionId 4. El proceso RDC de la conexión opera como `CENTRAL\MantenimientoRCI`; no se realizaron escrituras bajo esa identidad.
+- La preparación de una tarea auxiliar interactiva para ejecutar el upgrade como fila4 fue bloqueada por los controles de herramienta antes de alcanzar el host; no se creó la tarea ni se cambió el perfil. Se conserva como actualización pendiente.
+
+**No ejecutado:** no se hizo `gh auth login`, no se consultó ni se transfirió ningún token, no se cambiaron credenciales Git, no se clonó ningún repo privado, no se creó `Desktop\SeryMente`, VHDX o carpeta de workspace y no se modificó BitLocker.
+
+**Bloqueo de producción preservado:** PC-14 C: FullyDecrypted/0%/Off/None; Fila 4 C: FullyEncrypted/100%/Off/XtsAes128/Protection Off. El VHDX de trabajo no se puede crear/montar para uso de repositorios hasta que la bóveda esté terminada y aceptada, la contraseña maestra y el protector de recuperación puedan introducirse/custodiarse localmente, y el nuevo volumen alcance XTS-AES256, Protection On, 100 %.
+
+**Persistencia documental:** EP-TASK-003 recibe la ejecución y los estados anteriores en su crónica; commit `abab6b7b9303e66ea80dd6306436e758bde50dd0`, blob leído de vuelta `87a010099618b9717d2f61ac897b4db67a7929f3`, verificaciones de binarios, autenticación y límites: PASS. Las tareas continúan EP-TASK-001 `pendiente`; EP-TASK-002/003/004 `en_curso`. Este ciclo cierra solo la preparación documental y de herramientas, no la materialización del workspace.
