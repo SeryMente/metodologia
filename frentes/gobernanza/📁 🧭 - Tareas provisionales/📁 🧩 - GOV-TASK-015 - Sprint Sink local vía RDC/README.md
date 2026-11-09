@@ -4,7 +4,7 @@
 **Tipo:** coordinación y aceptación de un único sprint; no crea un frente nuevo ni controles paralelos.
 **Responsabilidad:** frente Gobernanza. Las tareas técnicas conservan sus OCP y fuentes.
 **Fuente normativa:** Samantha v386 · NX-386m · Metacanon 1.29 · GOW 2.18.
-**DUG:** leído desde `main` HEAD `80fe0fda6d16f47aa7f52496f609cff03c343c6f`; archivo blob `22dca684830a36dff019b47811d9b800cc9bea0a`.
+**DUG:** leído desde `main` HEAD `82843bca9493a522405d840393c229d2af363342`; archivo blob `22dca684830a36dff019b47811d9b800cc9bea0a`.
 **MCP-OCP:** núcleo v0.1.24 · blob `e845322f9947820ed01c04b996414b1ca44cd2dc`; backlog v0.5 · blob `09a05d44aeb3d3ac684b193c77323b6ab8531ae8`.
 **EP:** OEP v0.3.54 · blob `cdd738aa025c9acc09cbbe107bfcadfa218d463f`.
 **Autorización:** el operador autorizó directamente Sink local por stdio en MCP-OCP. No se requiere aprobación de titularidad anterior, generación ni folio; dichos campos son auditoría, no compuertas.
@@ -202,7 +202,7 @@ Identificar por separado funcionalidades implementadas y probadas, pruebas PASS/
 | 3 · Generalización | MCP-OCP-05 + MCP-OCP-03; GOV-TASK-001/008 | Extender a 43 IDs, recuperación individual y batch ordenado; eventos individuales solo por recuperación completa; hash del paquete exacto | 43 casos positivos, lote ordenado, hashes y frecuencia por ID; 8 casos negativos/frontera de MDP como matriz de Gobernanza |
 | 4 · Robustez | MCP-OCP-03/04/10; GOV-TASK-003 | Suite automatizada de protocolo, parámetros, datos faltantes/obsoletos/corruptos, rutas, permisos, logs, cierre y ausencia de red | Evidencia de pruebas nueva ligada al commit. Ningún PASS histórico sustituye esta suite |
 | 5 · Paquete | MCP-OCP-10/07 | Build reproducible y paquete autónomo; manifiesto, hashes, configuración de ejemplo y runbook; extracción/read-back | Artefacto y evidencia cotejados; paquete reconstruible desde GitHub |
-| 6 · Instalación | EP-TASK-003/005 + MCP-OCP-08/12 | Preflight de PC 7/LOC-OTHER, almacenamiento protegido, dead-man probado, root de datos, autenticación local y alta interactiva autorizada | Instalación y read-back solo después de paquete PASS y gates EP. Sin secretos por chat |
+| 6 · Instalación | EP-TASK-003/005 + MCP-OCP-08/12 | Instalar el ejecutable dentro del checkout local de Metodología, en `frentes/mcp-metodologia/instalacion-local/`; proteger el root de datos independiente | Instalación y read-back solo después de paquete PASS y gates EP. Sin secretos por chat |
 | 7 · Aceptación | GOV-TASK-003/007/009; GOV-TASK-013 como medición paralela | E2E con ChatGPT/RDC/stdio; validar ARR, DUG, Sink y fail-closed; medir latencia solo si ambos extremos son observables | Recibo de aceptación con evidencias. GOV-TASK-007/IPZ y eventual FOL1 siguen su gate separado; FOL1 no bloquea desarrollo |
 
 ### Reglas de fluidez y control de alcance
@@ -228,3 +228,17 @@ Identificar por separado funcionalidades implementadas y probadas, pruebas PASS/
 No falta una decisión de producto ni otro host: PC 7/LOC-OTHER ya está designado. Solo se requerirá presencia del operador en el gate de instalación/registro local para confirmar las acciones interactivas. No se solicitan credenciales por chat.
 
 **Estado de salida de esta planificación:** DISEÑO CONSOLIDADO · NO INICIADO. Este plan no acredita implementación, pruebas, build, paquete, instalación ni aceptación.
+
+
+### Ubicación final del ejecutable MCP-OCP
+
+El requisito de instalación local queda fijado así:
+
+- **Checkout propietario:** `SeryMente/Repositorios/Metodologia/metodologia/`.
+- **Carpeta de instalación:** `frentes/mcp-metodologia/instalacion-local/` (Windows, relativa al checkout: `<checkout>\\frentes\\mcp-metodologia\\instalacion-local\\`).
+- **Contenido:** ejecutable MCP-OCP, runtime/dependencias, launcher/configuración de ejemplo y manifiesto/hash de la build instalada.
+- **Git:** materialización local excluida de commits; binarios generados no se mezclan con el código fuente ni con el paquete reproducible versionado.
+- **Fuera del checkout:** DB SQLite, claves DPAPI, datos importados sensibles, logs operativos y backups usan una raíz de datos protegida independiente. Nunca guardar secretos/datos sensibles en `instalacion-local/` ni en Git.
+- **Secuencia:** build y paquete verificado → checkout completo/sincronizado → extracción/instalación local → configurar root de datos protegido → importar fuentes → `provision-operator` solo con presencia/consentimiento local → cliente STDIO/RDC y read-back.
+
+Esta ruta es el destino obligatorio del ejecutable; no sustituirla por `%LOCALAPPDATA%` como ubicación del programa. LocalAppData solo podrá usarse como root de datos si EP demuestra protección efectiva y lo configura expresamente.
