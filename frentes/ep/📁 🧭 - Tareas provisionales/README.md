@@ -23,6 +23,7 @@ El patrón de materialización sigue el registro de tareas provisionales de Gobe
 | EP-TASK-003 | en_curso | Materialización del workspace y dead-man trigger exclusivo para ubicaciones distintas de CECEQ | [núcleo](./📁%20🧩%20-%20EP-TASK-003%20-%20Mapa%20integral%20de%20construcción%20EP/README.md) |
 | EP-TASK-004 | en_curso | Reconstrucción integral de la bóveda EP: UI nueva desde cero, mecanismos, sesión configurable y acceso CLI/headless | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-004%20-%20Reconstrucci%C3%B3n%20de%20b%C3%B3veda/README.md) |
 | EP-TASK-005 | pendiente | Instalación, bootstrap y aceptación de MCP-OCP local por stdio en perfil protegido | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-005%20-%20Instalaci%C3%B3n%20y%20aceptaci%C3%B3n%20de%20MCP-OCP%20local/README.md) |
+| EP-TASK-006 | en_curso | Inventario y centralización de variables de entorno de todos los proyectos mediante EP Vault | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-006%20-%20Centralizaci%C3%B3n%20de%20variables%20de%20entorno/README.md) |
 
 ## Estado de continuidad · 2026-10-31
 
@@ -118,6 +119,7 @@ Se revisó el diseño histórico de KHORA OEP §28–§30 y sus módulos asociad
 | EP-TASK-002 | `en_curso` | Prueba B2 sintética histórica conserva PASS; no demuestra sincronización automatizada, observabilidad real ni restore actual. Se añadió contrato local-first/cola B2 y separación estricta GitHub (código) / B2 (datos de usuario elegibles). | Inventario de datasets, clasificación y retención; credenciales locales disponibles por bóveda segura; automatizar cola, subida, read-back y restore. |
 | EP-TASK-003 | `en_curso` | Root `Desktop\SeryMente` creado en PC-14 por RDC; 11 scaffolds vacíos y `WORKSPACE-STATUS.md` verificado. Excepción provisional en claro autorizada solo para código/documentación no sensible. | Clones reales y clasificación de frentes; autorización de autenticación GitHub local; migración posterior a VHDX + BitLocker XTS-AES256, protección activa/100 %; dead-man LOC-OTHER. |
 | EP-TASK-004 | `en_curso` | Core/CLI/GUI y pruebas tienen avances históricos; UI premium rechazada; recurso de acero negro generado localmente en Fila 4 pero todavía no integrado. La bóveda queda en metodología y no es extensión Chrome. | Aceptar la bóveda canónica y su flujo local; después crear/activar VHDX con la misma contraseña y protector de recuperación. Cerrar H3–H10 con evidencia y aceptación. |
+| EP-TASK-006 | `en_curso` | Vercel: 1 proyecto, 50 registros y 46 nombres únicos; GitHub/local: inventario parcial; EP Vault distingue nombres KHORA/EP y conserva la segunda nota EP como pendiente. | Completar inventario por fuente, migrar valores seguros y construir adaptadores Vault → destinos con read-back. |
 
 **Regla de estado:** no promover tareas a `completada` por documentación, diseño aprobado, pruebas sintéticas parciales o archivos instalados. Los hitos internos sí mantienen sus estados parciales/completados dentro de cada núcleo. El índice resume identidad y estado; el detalle y la crónica permanecen en el README individual.
 
