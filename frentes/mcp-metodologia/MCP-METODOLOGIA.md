@@ -515,7 +515,7 @@ El build y las pruebas no equivalen a instalación en perfil, provisión del ope
 
 **Estado:** PLANIFICADO · NO INICIADO. El operador autorizó directamente el resolver Sink local por stdio; no requiere consentimiento de titularidad anterior, generación ni folio. El backlog v0.6 define MCP-OCP-02/05/03/04/10/07/12/08.
 
-**Pins:** DUG Samantha v385 · NX-385m, commit `7dcdac6c62f9e8a27ce11f8fa0e4fc379a3d12f8`, blob `72cd2e8e4e6a594b300ba1868baeabc2472beb97`. El manifiesto de build deberá fijar el blob resultante de este núcleo v0.1.25.
+**Pins:** DUG Samantha v386 · NX-386m, baseline main `82843bca9493a522405d840393c229d2af363342`, blob `22dca684830a36dff019b47811d9b800cc9bea0a`. El manifiesto de build deberá fijar el blob resultante de este núcleo v0.1.25.
 
 **Ruta técnica:** revisar las ramas remotas, portarlas sobre main e implementar GOW:ARR/DUG/SINK:P001..P043, lote ordenado, frecuencia por éxito, manifiesto canónico y pruebas negativas. El código candidato usa `%LOCALAPPDATA%\\SeryMente\\OCP MCP` por defecto; antes de instalar se requiere un root de datos/backup configurable y verificado dentro del perímetro cifrado, o prueba de cifrado del volumen del perfil.
 
