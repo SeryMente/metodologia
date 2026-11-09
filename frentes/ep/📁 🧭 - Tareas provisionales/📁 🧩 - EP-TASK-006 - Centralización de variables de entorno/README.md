@@ -256,3 +256,55 @@ Resultado: inventario parcial; 5 valores/configuraciones escritos con read-back;
 ## Evidencia de procedencia de las notas B2 EP · 2026-11-09
 
 Gmail devolvió un mensaje de Backblaze (no-reply@backblaze.com), asunto `A Master Key Has Been Generated in Your Backblaze B2 Account`, dirigido a `blacksheepsup@gmail.com`, con fecha `2026-11-09T21:33:19Z` (message id `1a1c23af91f37d66`). EP Vault registró la primera nota a `2026-11-09T21:33:35.9136717Z` y la segunda a `2026-11-09T21:33:42.1285843Z`. La proximidad temporal respalda que las notas se capturaron durante esa operación de la cuenta EP. No determina por sí sola qué nota contiene el ID y cuál la aplicación key. La primera se promovió por orden de captura a `EP_B2_APPLICATION_KEY_ID`; esa asignación permanece pendiente de validación local no expositiva. La segunda continúa en DPAPI. No se copiaron valores del correo ni se mostraron al modelo.
+
+## 3.5 GitHub Actions y secretos de workflows · 2026-11-09
+Se inspeccionaron siete workflows de `SeryMente/khora`. Los nombres de secretos referenciados son:
+
+```text
+VERCEL_ORG_ID
+VERCEL_PROJECT_ID
+VERCEL_TOKEN
+GITHUB_TOKEN
+NOTION_TOKEN
+NOTION_DATABASE_ID
+TODOIST_TOKEN
+KHORA_EPIS_JUDGE_A_BASE_URL
+KHORA_EPIS_JUDGE_A_API_KEY
+KHORA_EPIS_JUDGE_A_MODEL
+KHORA_EPIS_JUDGE_B_BASE_URL
+KHORA_EPIS_JUDGE_B_API_KEY
+KHORA_EPIS_JUDGE_B_MODEL
+KHORA_EPIS_JUDGE_C_BASE_URL
+KHORA_EPIS_JUDGE_C_API_KEY
+KHORA_EPIS_JUDGE_C_MODEL
+KHORA_EPIS_JUDGE_D_BASE_URL
+KHORA_EPIS_JUDGE_D_API_KEY
+KHORA_EPIS_JUDGE_D_MODEL
+OPENAI_API_KEY
+INTERNAL_TRIGGER_SECRET
+KHORA_API_PRODUCTION_URL
+```
+
+Los nombres anteriores provienen de expresiones `${{ secrets.NAME }}` en `.github/workflows/`. Algunos workflows mapean el secreto a otro nombre de entorno (p. ej. `NOTION_TOKEN` → `NOTION_API_KEY`). `INTERNAL_TRIGGER_SECRET` se referencia en más de un workflow. Los valores reales de GitHub Actions secrets no son legibles mediante el conector GitHub disponible; quedan como `PENDIENTE_DE_ACCESO`. Los `vars.*` y configuraciones de repositorio/organización tampoco se han inventariado por API.
+
+Archivos y blobs cotejados:
+- `.github/workflows/deploy-production.yml` · `89a25e99dcc9ef22db3bd64d7cc4d14a370fc63e`
+- `.github/workflows/todoist-notion-sync.yml` · `0cacb77f266c3d050052c1e86252573cced6ca45`
+- `.github/workflows/epistwin-personalqa.yml` · `524d914687912aa75bc7697fde215db01d2852da`
+- `.github/workflows/ichnos-cobertura.yml` · `2393dd20a3622b5dbd6adf64035db4e79cfb7e8c`
+- `.github/workflows/board-orchestrator.yml` · `874c76ec34b8403c2775551a8da64491fc2dadd2`
+- `.github/workflows/jules-autorespond-cron.yml` · `3858295161b05c1b1d395376faddf604f3ec7f50`
+- `.github/workflows/healthcheck-khora-api.yml` · `e8d1cf06de7cb141436dc34a72331719da6ed05c`
+
+## 3.6 Render · servicios y configuración declarada · 2026-11-09
+
+El conector Render devolvió el workspace `My Workspace` y dos servicios:
+
+- `khora` · repo `SeryMente/khora` · branch `fix/chat-epistwin-ent01-main-20261019` · auto-deploy deshabilitado.
+- `serymente-wordpress-lab` · repo `SeryMente/serymente` · branch `main` · runtime Docker.
+
+`SeryMente/khora/render.yaml` declara `PYTHON_VERSION=3.11`. La integración Render disponible permite listar servicios y actualizar variables, pero no expone una operación de lectura/listado de los valores configurados por servicio. Por tanto, `PYTHON_VERSION` queda clasificada como configuración no secreta declarada en Git; las variables reales de ambos servicios quedan `PENDIENTE_DE_ACCESO`. No se efectuó ninguna escritura en Render.
+
+## 3.7 Reconciliación de cobertura
+
+El inventario actual ya no se limita a Vercel: cubre variables de código, Vercel, nombres de secretos referenciados en GitHub Actions, configuración versionada de Render, metadatos de los servicios Render, archivos históricos de la Biblioteca y variables del perfil Windows PC-7. Siguen fuera de cobertura los valores internos de GitHub Actions/Render, Shared Environment Variables de Vercel, los demás paneles externos y equipos/perfiles que no están conectados. La tarea permanece `en_curso`; no se declara inventario global completo.
