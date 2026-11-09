@@ -28,7 +28,7 @@ La documentación oficial del SDK C# confirma que STDIO es una sesión por proce
 
 1. El controlador de sesión EP verifica el estado de la sesión persistente y completa sus gates de seguridad aplicables.
 2. Solo cuando EP emite/declara `ACTIVE`, el controlador abre el panel como proceso hijo de esa sesión interactiva.
-3. El panel abre mostrando **“Sesión activa · esperando servidor MCP”** si el cliente MCP aún no ha lanzado el servidor.
+3. El controlador EP escribe y coteja primero `monitor/session.json`, y después abre el panel pasándole el root de datos como parámetro no secreto. El panel abre mostrando **“Sesión activa · esperando servidor MCP”** si el cliente MCP aún no ha lanzado el servidor. Esto permite mostrar el estado EP sin depender de un proceso MCP inexistente.
 4. Cuando el cliente inicia el proceso MCP por STDIO, el servidor publica su estado y el panel actualiza sus indicadores.
 5. Mientras la sesión EP siga activa, el panel permanece disponible. El operador puede minimizarlo; el cierre de la sesión EP cierra el panel de forma limpia.
 6. Si el proceso MCP se detiene o falla pero EP continúa vigente, el panel permanece abierto y muestra el estado detenido/desconectado; no intenta reiniciar el servidor ni apropiarse de su proceso.
@@ -44,13 +44,17 @@ El servidor MCP escribe en el root protegido que EP configure, en un subdirector
 
 El panel solo tiene lectura. EP aplica ACL y protección del volumen; el servidor no crea ni modifica ACL, BitLocker, Registro, firewall o configuración del host.
 
+- `session.json`: archivo atómico escrito por el controlador EP; contiene `schemaVersion`, `sessionState`, `sessionStartedAtUtc`, `protectionState` y `protectionCheckedAtUtc`. No contiene SID, credenciales, claves ni identificadores sensibles. EP actualiza `sessionState` al terminar la sesión. Si falta, es inválido o no corresponde a la sesión en curso, el panel muestra **“Sesión no verificada”** y nunca asume ACTIVE.
+- `state.json` y `events.jsonl`: escritos por el servidor MCP-OCP; representan su propio ciclo de vida, protocolo, fuentes y actividad.
+
+La comprobación de protección del volumen se presenta como **“verificada por EP a las [hora]”**. No se proclama protección actual a partir de un archivo antiguo ni se sondea BitLocker en segundo plano; la fecha de comprobación queda visible.
+
 ### 4.1 Snapshot mínimo
 
 El esquema versionado debe exponer, como mínimo:
 
 - `schemaVersion`, `updatedAtUtc`.
-- Sesión EP: estado y hora de inicio.
-- Servidor: lifecycle, PID, hora de inicio del proceso, versión del software y transporte.
+- Servidor: lifecycle, PID, hora de inicio del proceso, versión del software y transporte. La sesión EP no se infiere desde este archivo: procede exclusivamente de `session.json`.
 - Protocolo: no iniciado / iniciando / inicializado / desconectado.
 - Fuentes: importadas, integridad, vigencia, versión/firma DUG y resultado de verificación.
 - Operador: provisionado / no provisionado / desconocido.
@@ -76,7 +80,7 @@ Los eventos se mantienen acotados (ventana reciente y tamaño máximo documentad
 
 ### 4.3 Actualización y detección
 
-- El servidor publica el snapshot en cambios de estado y los eventos al comenzar/terminar operaciones.
+- El controlador EP publica `session.json` al activar/cerrar la sesión. El servidor publica `state.json` en cambios de estado y `events.jsonl` al comenzar/terminar operaciones.
 - El panel consume cambios por notificación del sistema de archivos (`FileSystemWatcher`) con lectura defensiva y debounce.
 - Para detectar la terminación abrupta, el panel abre una referencia al proceso identificado por PID y hora de inicio y escucha el evento de salida del proceso. Nunca confía solo en el PID, para evitar confusión por reutilización.
 - No se incorpora heartbeat de fondo, sondeo de EP ni vigilancia general de procesos/archivos/red. La observación ocurre dentro de la ventana abierta y se limita al proceso MCP identificado.
@@ -123,14 +127,14 @@ La vista principal debe permitir entender el estado global en unos segundos, sin
 
 ## 7. Pruebas de aceptación obligatorias
 
-1. EP llega a `ACTIVE` sin servidor iniciado: el panel abre y muestra “esperando servidor”.
+1. EP llega a `ACTIVE` sin servidor iniciado: EP escribe y coteja `session.json`; el panel abre y muestra “esperando servidor”.
 2. Cliente lanza el servidor por STDIO: el panel diferencia proceso activo de protocolo inicializado.
 3. Fuentes ausentes, obsoletas, alteradas o no importadas: el panel muestra el gate fallido y nunca “Listo”.
 4. Operador no provisionado o data root no protegido: readiness sigue degradado/bloqueado.
 5. Una llamada correcta aparece con herramienta, hora, duración y éxito, sin exponer contenido.
 6. Una llamada fallida aparece como fallo y no incrementa la frecuencia de recuperaciones exitosas.
 7. El servidor termina abruptamente: el panel detecta el proceso exacto y actualiza el estado sin confundir PID reutilizado.
-8. JSON inválido, ACL denegada o archivo inaccesible: estado de observabilidad no disponible, sin excepción no controlada ni elevación de permisos.
+8. `session.json` ausente/inválido/desfasado, JSON operativo inválido, ACL denegada o archivo inaccesible: estado de sesión/observabilidad no disponible, sin excepción no controlada ni elevación de permisos.
 9. Cierre de la sesión EP: el panel termina limpiamente y no queda proceso huérfano.
 10. El tráfico STDIO conserva stdout exclusivamente para MCP; el panel no abre listeners, sockets, HTTP ni túneles.
 11. Build/package incluye el ejecutable, recursos y dependencias necesarias; manifest y SHA-256 coinciden tras extracción/read-back.
