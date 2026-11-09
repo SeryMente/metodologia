@@ -56,3 +56,8 @@ GOW/§ARR es el primer destino del IPZ y debe ofrecer el vocabulario necesario p
 La primera referencia operativa del IPZ se denomina `GOW:ARR` y la segunda `DUG`. Se resuelven por RDC/MCP-OCP local; no son URLs Sync ni requieren acortador HTTP. Esta tarea conserva su alcance: verificar que §ARR ofrece el vocabulario de entrada suficiente, breve y coherente con el DUG único, y que la respuesta de `GOW:ARR` corresponde a la revisión canónica importada.
 
 La prueba de resolución depende de MCP-OCP y se ejecutará después de que exista la herramienta local; la validación semántica del vocabulario sigue siendo responsabilidad de Gobernanza. No añadir Sink al vocabulario inicial por mera exhaustividad ni modificar el GOW por inferencia. Estado de esta tarea: `en_curso`, no aceptada.
+
+
+## Cierre de alcance GOW:ARR · sprint Sink local · 2026-11-09
+
+`GOW:ARR` queda definido como operación de lectura de §ARR desde la fuente DUG importada y verificada localmente por MCP-OCP. Gobernanza valida contenido, suficiencia lingüística, anclas y correspondencia humano/estructurada; MCP-OCP implementa la recuperación y entrega los pins. La prueba se ejecuta sobre la instancia local instalada en `frentes/mcp-metodologia/instalacion-local/`, no sobre lectura manual de HTML ni URL HTTP. Baseline: Samantha v386/NX-386m, blob `22dca684830a36dff019b47811d9b800cc9bea0a`. No modificar el GOW por inferencia ni añadir Sink al vocabulario inicial por exhaustividad. La tarea sigue en curso hasta ejecutar validación y leer la evidencia de vuelta.
