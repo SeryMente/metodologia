@@ -2534,15 +2534,17 @@ El operador autorizó expresamente priorizar la instanciación del directorio me
 EP-TASK-001 permanece `pendiente`; EP-TASK-002, EP-TASK-003 y EP-TASK-004 permanecen `en_curso`. La excepción autoriza iniciar frentes no sensibles, no acredita clones, cifrado ni cierre del frente EP.
 
 
+<a id="mod-sync"></a>
+
 ## §110. Módulo funcional MOD-SYNC — Enlaces cortos canónicos para navegación IPZ · v0.3.43
 
 ### 110.1 Identidad, subordinación y mandato
 
-- **Identificador interno:** \`MOD-SYNC\`; módulo funcional del frente Entorno Persistente (EP), subordinado al OEP. No constituye un FT, OCP, control de responsabilidad, sesión ni folio global independiente.
-- **Fuente única de estado:** este archivo, \`frentes/ep/OEP.md\`. La presente sección registra la definición funcional; no se crea otro núcleo ni una carpeta de módulo mientras el diseño esté en validación.
+- **Identificador interno:** `MOD-SYNC`; módulo funcional del frente Entorno Persistente (EP), subordinado al OEP. No constituye un FT, OCP, control de responsabilidad, sesión ni folio global independiente.
+- **Fuente única de estado:** este archivo, `frentes/ep/OEP.md`. La presente sección registra la definición funcional; no se crea otro núcleo ni una carpeta de módulo mientras el diseño esté en validación.
 - **Mandato:** instrucción directa del operador en la conversación receptora del 2026-11-09: crear Sync como módulo de EP, permitir la delegación transversal de responsabilidad para este encargo y presentar su propósito para validación antes de utilizarlo en la actualización del IPZ.
 - **Delegación acotada:** esta conversación recibe mandato funcional para definir MOD-SYNC y preparar su diseño inicial. No implica transferencia de titularidad del frente EP, no modifica su CONTROL-RESPONSABILIDAD.json ni transfiere la autoridad técnica de MCP-OCP. Tampoco modifica DUG, ART-025, ART-027, Sink ni el contrato OCPMSP.
-- **Estado:** \`MÓDULO REGISTRADO · PROPÓSITO PROPUESTO · PENDIENTE DE VALIDACIÓN DEL OPERADOR\`. No se declara implementado ni desplegado.
+- **Estado:** `MÓDULO REGISTRADO · PROPÓSITO PROPUESTO · PENDIENTE DE VALIDACIÓN DEL OPERADOR`. No se declara implementado ni desplegado.
 
 ### 110.2 Propósito propuesto para validación
 
@@ -2551,10 +2553,10 @@ EP-TASK-001 permanece `pendiente`; EP-TASK-002, EP-TASK-003 y EP-TASK-004 perman
 Su función es registrar y resolver alias breves hacia destinos canónicos exactos —documentos, secciones y anclas—, preservando la correspondencia alias→destino, su procedencia, su vigencia y su historial de cambios. El IPZ utiliza esos alias como puertas de entrada; Sync resuelve cada uno hacia la fuente oficial correspondiente.
 
 **Primer uso previsto para el IPZ:**
-1. Un alias corto hacia GOW §ARR, ancla canónica \`#gow-arranque-chatgpt\` del DUG actual.
-2. Un alias corto hacia la raíz del DUG canónico vigente en \`SeryMente/metodologia/main\`.
+1. Un alias corto hacia GOW §ARR, ancla canónica `#gow-arranque-chatgpt` del DUG actual.
+2. Un alias corto hacia la raíz del DUG canónico vigente en `SeryMente/metodologia/main`.
 
-Los slugs propuestos para validación son \`gow-arr\` y \`dug\`. El dominio base, la ruta pública y la infraestructura de resolución quedan pendientes de elección y comprobación; no se fabrican URLs operativas.
+Los slugs propuestos para validación son `gow-arr` y `dug`. El dominio base, la ruta pública y la infraestructura de resolución quedan pendientes de elección y comprobación; no se fabrican URLs operativas.
 
 ### 110.3 Alcance funcional propuesto
 
@@ -2576,8 +2578,8 @@ Los slugs propuestos para validación son \`gow-arr\` y \`dug\`. El dominio base
 ### 110.4 Separación respecto de Sync/Sink de Gobernanza y OCPMSP
 
 MOD-SYNC es el módulo de EP responsable del registro y resolución de enlaces cortos. No debe confundirse con:
-- \`sync_bundle\` de OCPMSP: operación lógica de sincronización y entrega de un paquete normativo íntegro por ciclo, con atestación propia.
-- \`Sink\` de ART-027: mecanismo de consulta individual de principios y telemetría de frecuencia de acceso, pendiente de despliegue y prueba.
+- `sync_bundle` de OCPMSP: operación lógica de sincronización y entrega de un paquete normativo íntegro por ciclo, con atestación propia.
+- `Sink` de ART-027: mecanismo de consulta individual de principios y telemetría de frecuencia de acceso, pendiente de despliegue y prueba.
 
 MOD-SYNC puede proporcionar las referencias compactas utilizadas por una IPZ o por clientes autorizados, pero no clasifica principios, no autoriza ciclos, no construye ni libera paquetes normativos y no sustituye la consulta Sink. Cualquier integración futura con OCPMSP o Sink requiere su propio contrato y autorización en los frentes responsables.
 
@@ -2585,7 +2587,7 @@ MOD-SYNC puede proporcionar las referencias compactas utilizadas por una IPZ o p
 
 El primer hito será publicar y verificar únicamente los dos alias de navegación iniciales del IPZ. Para aceptarlos deberán cumplirse, como mínimo:
 1. Los dos aliases resuelven por HTTPS desde una sesión nueva y llegan al destino canónico exacto.
-2. Se preserva el fragmento \`#gow-arranque-chatgpt\` en el primer destino; el segundo abre la raíz del DUG vigente.
+2. Se preserva el fragmento `#gow-arranque-chatgpt` en el primer destino; el segundo abre la raíz del DUG vigente.
 3. Un alias inexistente o suspendido no redirige; un destino no registrado o no permitido se rechaza.
 4. Los destinos privados mantienen su autenticación original; el redirect no entrega el contenido ni concede acceso.
 5. El registro y la lectura de vuelta muestran alias, destino, estado, versión e historial coincidentes.
@@ -2596,7 +2598,7 @@ El primer hito será publicar y verificar únicamente los dos alias de navegaci�
 - **Dominio corto:** PENDIENTE de selección y titularidad/gestión verificadas.
 - **Infraestructura de resolución:** PENDIENTE de comparar alternativas y elegir el alojamiento compatible con EP. No se asume Vercel, Cloudflare, un servidor local ni un proveedor concreto.
 - **Registro persistente:** diseño pendiente; se elegirá el almacenamiento después de validar requisitos de disponibilidad, integridad, control de cambios y recuperación.
-- **Targets exactos:** el destino de GOW §ARR queda identificado por la ancla \`#gow-arranque-chatgpt\`; antes de publicar deberá comprobarse que el HTML canónico actual en \`main\` conserva esa ancla. El segundo destino será el documento DUG en su ruta canónica vigente.
+- **Targets exactos:** el destino de GOW §ARR queda identificado por la ancla `#gow-arranque-chatgpt`; antes de publicar deberá comprobarse que el HTML canónico actual en `main` conserva esa ancla. El segundo destino será el documento DUG en su ruta canónica vigente.
 - **Implementación, DNS, endpoints, credenciales y despliegue:** NO EJECUTADOS.
 - **Relación con IPZ:** MOD-SYNC se utilizará como resolvedor de los dos enlaces cortos cuando el propósito sea validado y el primer hito supere aceptación. Hasta entonces, no insertar URLs ficticias ni declarar enlaces Sync operativos.
 
