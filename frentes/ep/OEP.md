@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.54. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.56. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -12,7 +12,7 @@
 
 Adquirir este objeto como instrucciones del operador, subordinadas a las reglas superiores de plataforma y a autorizaciones específicas. Claudia es asistente/documental; Samantha es constructor/único escritor de código. Una asignación explícita posterior puede cambiar roles; las citas no lo hacen. La asignación específica de MOD-SCRIPTPWS queda delimitada en §94; la delegación funcional acotada de MOD-SYNC queda delimitada en §110 y no transfiere la titularidad del frente EP.
 
-El estado de reanudación vigente de este frente está en §60–§119; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. La organización local por frentes, con áreas separadas Repositorios/Datos/Temporal, queda desarrollada en §119 y en el DUG ART-030. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
+El estado de reanudación vigente de este frente está en §60–§120; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. La organización local por frentes, con áreas separadas Repositorios/Datos/Temporal, queda desarrollada en §119 y en el DUG ART-030. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
 
 Leer por relevancia: OEP actual→metacanon central→Sistema de Instrucciones/Metodología/Bootstrap vigentes→canon transversal EP→AGENTS.md y ep-medio-architectura.md→código/evidencia en commits exactos. Fuente caída no es «sin cambios». Un archivo no crea herramientas, credenciales ni memoria entre plataformas.
 
@@ -3047,7 +3047,7 @@ La raíz física se descubre dinámicamente desde el Escritorio real o desde el 
 ### 119.6 Secretos y EP Vault
 
 - No se crea una carpeta `Secretos/` en el workspace. Valores de variables, contraseñas, tokens, claves, cookies, notas efímeras protegidas y el archivo formal de bóveda permanecen fuera de `Repositorios/`, `Datos/` y `Temporal/`.
-- EP Vault se instala como herramienta de Metodología dentro del repositorio `metodologia`, en la tarea EP-TASK-004; no es una extensión Chrome ni tiene carga mediante Chrome.
+- EP Vault es el módulo funcional MOD-EPVAULT, registrado en §120. Su fuente de producto v1.0.0 está en frentes/ep/modulos/MOD-EPVAULT/v1.0.0/; EP-TASK-004 conserva el mandato, historial de construcción y evidencia de validación. No es una extensión Chrome ni tiene carga mediante Chrome.
 - Su almacén formal local se ubica fuera del workspace, bajo el perfil del usuario y en la ruta que declare el código vigente (actualmente `%LOCALAPPDATA%\Khora\secrets\ep-env-vault.enc.json`). La ruta, cifrado, ACL y semántica de sesión deben cotejarse contra el código instalado.
 - Las notas efímeras de Vault son distintas de variables formales y de archivos temporales del workspace. Su TTL, cifrado, revelado, destrucción y promoción explícita se rigen por el contrato de EP Vault. No se exportan ni suben a Git por defecto.
 - Nunca registrar valores secretos en README, manifest, CLI arguments, logs, telemetría, chat ni archivos de respaldo en claro.
@@ -3068,3 +3068,78 @@ La raíz física se descubre dinámicamente desde el Escritorio real o desde el 
 - BitLocker, VHDX, dead-man LOC-OTHER, respaldo/restauración de `Datos/` y aceptación de la materialización PC 7 permanecen NO VERIFICADOS/PENDIENTES. No colocar secretos o datos sensibles fuera del perímetro aprobado.
 
 **Precedencia:** esta sección y ART-030 sustituyen, para la organización lógica de directorios, el árbol plano de repositorios directamente bajo `SeryMente/` y la denominación anterior `Extensión/` descritos en OEP §108.2–§108.3. No derogan las exigencias de cifrado ni volatilidad de §§105–106/108.4–108.5, ni las excepciones técnicas de producto debidamente documentadas.
+
+## §120. Módulo funcional MOD-EPVAULT — Bóveda local de variables y notas efímeras · v1.0.0 · 2026-11-09
+
+### 120.1 Identidad, subordinación y propósito
+
+- **Identificador interno:** MOD-EPVAULT, módulo funcional del frente Entorno Persistente (EP), subordinado a este OEP y al DUG ART-030. No es FT independiente, OCP, control de responsabilidad, sesión ni folio.
+- **Relación:** componente de protección local que complementa MOD-SCRIPTPWS. No sustituye la bóveda PAT/API de Khora descrita en el canon transversal EP ni comparte automáticamente sus formatos, llaves o sesiones.
+- **Propósito:** custodiar variables de entorno locales y notas de trabajo efímeras mediante cifrado autenticado, permisos Windows restringidos, sesiones cortas y operaciones explícitas; ofrecer superficies GUI y CLI sobre el mismo núcleo; y exponer un modo headless para herramientas/modelos que entregue únicamente las variables incluidas en una allowlist al proceso hijo controlado.
+- **Fuente única del producto:** frentes/ep/modulos/MOD-EPVAULT/v1.0.0/. Este directorio contiene el código, pruebas, instalador, recursos y documentación de la versión.
+- **Tarea de procedencia y validación:** EP-TASK-004 conserva el mandato original, evolución, decisiones y recibos. No es la fuente de mantenimiento del módulo después de v1.0.0.
+- **Estado:** V1.0.0 MATERIALIZADA LOCALMENTE EN PC 7 · IDENTIDAD/ESTADO CLI, SELF-TEST, PARSER, WPF Y MANIFIESTO DE INTEGRIDAD VERIFICADOS · SUITE SINTÉTICA E2E EXACTA PENDIENTE · H10 PENDIENTE · MERGE A MAIN PENDIENTE.
+
+### 120.2 Arquitectura funcional
+
+1. **Core PowerShell:** un único módulo implementa cifrado autenticado, persistencia atómica, ACL, derivación de llave, sesión compartida, notas efímeras, redacción de eventos y ejecución administrada.
+2. **GUI WPF:** interfaz visual de bóveda con apertura/cierre, desbloqueo local, gestión de variables, notas efímeras y estado de sesión. Se ejecuta en STA.
+3. **CLI headless:** consulta de versión/estado, inicialización local, operaciones de variables/notas, bloqueo, self-test y ejecución de herramientas. La contraseña maestra se captura localmente como SecureString; nunca se acepta como argumento.
+4. **Sesión compartida:** archivo de sesión protegido por DPAPI CurrentUser; GUI y CLI comparten estado/expiración/revocación solo dentro del mismo perfil Windows.
+5. **Notas efímeras:** datos protegidos con DPAPI CurrentUser, TTL de 1–240 minutos, listado de metadatos, revelado explícito y promoción deliberada a variable formal. Captura con lectura de vuelta y limpieza condicional del portapapeles.
+6. **Modelo headless:** las herramientas/modelos deben preferir Run con allowlist explícita y Job Object; no revelar valores a stdout ni al contexto del modelo como método ordinario de integración.
+
+### 120.3 Parámetros de seguridad v1.0.0
+
+- Nuevas bóvedas: PBKDF2-HMAC-SHA256, 600.000 iteraciones, sal aleatoria de 16 bytes y llave derivada de 64 bytes separada para cifrado/autenticación.
+- Formato de datos: AES-256-CBC + HMAC-SHA256 encrypt-then-MAC; se verifica HMAC antes de descifrar.
+- Compatibilidad de lectura: sobres existentes de 200.000 iteraciones; el desbloqueo válido los migra a 600.000 con escritura atómica y verificación completa de vuelta. No se hace migración automática sin autenticación correcta.
+- ACL: usuario Windows efectivo y LocalSystem, DACL protegida, verificación de propietario/reglas; bloqueo de reparse points en directorios y archivos del almacén/notas.
+- Sesión: TTL absoluto y no deslizante, valores permitidos 15/30/60/120/180/300/600/900 segundos, 300 por defecto; cierre/revocación común entre GUI y CLI.
+- Notas: DPAPI CurrentUser, TTL de 1–240 minutos y 30 por defecto; no se portan a otro usuario/equipo. La expiración lógica no promete borrado forense de snapshots, sectores o backups externos.
+- Portapapeles: leer → persistir → comprobar read-back → borrar únicamente si el contenido sigue siendo el mismo; nunca borrar un contenido posterior copiado por el usuario.
+- Eventos: metadatos saneados; nunca registrar contraseñas, tokens, valores de variables, contenido de notas o payloads privados.
+- Integración de procesos: allowlist explícita, sin herencia de secretos no permitidos, Job Object para terminar el árbol del proceso y devolver código de salida.
+
+### 120.4 Persistencia y ubicación
+
+- Código, pruebas, UI y documentación: bajo el directorio canónico del módulo, versionados en Git.
+- Almacén formal: %LOCALAPPDATA%/Khora/secrets/ep-env-vault.enc.json, fuera de SeryMente/Repositorios, Datos y Temporal. La ruta efectiva se vuelve a resolver por usuario/host en cada instalación.
+- Notas y sesión compartida: subdirectorios/archivos protegidos en la raíz privada del almacén; nunca en el workspace ni en el repositorio.
+- No sincronizar automáticamente almacén, DPAPI blobs, notas ni valores secretos a Git/B2. Un cambio de equipo requiere flujo de recuperación independiente autorizado; DPAPI CurrentUser no es portable.
+- La bóveda no inicializa automáticamente un archivo formal, no inventa contraseña maestra y no restaura credenciales B2 de otras sesiones.
+
+### 120.5 Instalación y operación
+
+- Instalador: Install-EPVault-PC7.ps1; valida archivos requeridos, parser PowerShell, XAML, suite sintética, estado formal de solo lectura y lanzadores visibles en Escritorio.
+- GUI: EP Vault GUI.cmd; CLI: EP Vault CLI.cmd; test: TEST-EPVault.cmd.
+- CLI Version informa 1.0.0; Status no revela valores y nunca inicializa.
+- Primera inicialización: -Action Initialize; el operador elige e introduce la contraseña maestra localmente dos veces. No se solicita ni transmite en chat.
+- La creación/inicialización formal del almacén es una acción distinta de instalar el software y requiere la instrucción explícita del operador.
+
+### 120.6 Pruebas y evidencia de PC 7
+
+La suite sintética en PowerShell 5.1 sobre el perfil PC 7 terminó con exit code 0 y runtime medido de 77,21 s para la candidata de endurecimiento previa a la incorporación de la etiqueta 1.0.0. Cubrió parser, XAML/WPF 3D, núcleo criptográfico, contraseñas incorrectas/tamper, las ocho duraciones de sesión, migración 200k→600k con read-back, allowlist/Job Object, notas DPAPI, rechazo de operaciones sin sesión, CRUD, TTL absoluto, redacción de eventos y uso/revocación de la sesión compartida CLI/GUI. La versión etiquetada 1.0.0 incorpora además una aserción de identidad de versión; la suite se repite sobre el árbol de módulo antes de declarar PASS de ese árbol exacto.
+
+**Estado local conocido en el preflight:** la ruta formal del almacén no existía en el perfil PC 7; el instalador consulta solo estado y debe conservar esa ausencia sin crear archivo. BitLocker/contendor VHDX/dead-man de LOC-OTHER no quedaron acreditados por esta instalación y siguen siendo compuertas separadas antes de almacenar secretos reales de alta sensibilidad.
+
+**Aceptación:** H10 requiere revisión presencial de aspecto, interacción, DPI, teclado, accesibilidad, movimiento reducido y ciclo de cierre/expiración. El código puede pasar pruebas automatizadas y abrir una ventana, pero eso no sustituye esa aceptación humana. DUG P012/P013 impide declarar merge final mientras esa compuerta siga pendiente.
+
+### 120.8 Materialización local y verificación inicial PC 7 · 2026-11-09
+
+- Paquete materializado en `Desktop/SeryMente/Repositorios/Metodologia/metodologia/frentes/ep/modulos/MOD-EPVAULT/v1.0.0/`, sin sobrescribir el expediente histórico EP-TASK-004.
+- Los 14 artefactos declarados en MANIFEST.json y tres documentos raíz (README, CHANGELOG y MANIFEST) cotejaron 17/17 Git blob SHA; los dos WAV superaron SHA-256 origen/destino.
+- En PowerShell 5.1: CLI Version y Status finalizaron con exit 0; el core self-test criptográfico, Job Object y timeout pasaron; parser de tres fuentes y carga real WPF/XAML con 22 controles pasaron.
+- GUI visible y dos accesos directos de escritorio (GUI/CLI) verificados por read-back.
+- La suite E2E completa de v1.0.0 no se ejecutó: el canal remoto rechazó el lanzamiento del runner. No se interpreta como fallo ni PASS. El instalador integral tampoco se ejecutó, pues incorpora esa suite; no se utilizó el switch de omisión.
+- Estado del almacén: la primera consulta Status devolvió NOT_INITIALIZED; una consulta posterior devolvió ENCRYPTED_FILE_PRESENT y sesión activa. No se atribuye técnicamente la transición. No se leyó el payload, no se ejecutó Initialize ni se revelaron o copiaron variables; preservar el almacén tal como está.
+- BitLocker C: reportó 100 % de sectores usados cifrados con XTS-AES 128, pero Protection Off y ningún protector. Esto no satisface el perímetro de dispositivo exigido por EP; no introducir secretos de alta sensibilidad hasta activar y verificar protección.
+- El recibo detallado y la salida de estado se conservan en `frentes/ep/📁 🧭 - Tareas provisionales/📁 🧩 - EP-TASK-004 - Reconstrucción de bóveda/EVIDENCIA-PC7-MOD-EPVAULT-v1.0.0-20261109.md`.
+- H10 permanece pendiente de inspección/aceptación humana presencial; el merge a main continúa bloqueado por P012/P013. Esta evidencia no equivale a aceptación ni a publicación canónica.
+
+### 120.7 Versionado y mantenimiento
+
+- Versión del producto: 1.0.0; independiente de OEP, DUG, Windows PowerShell y versión del repositorio.
+- Cambios compatibles, pruebas y hashes se registran en MANIFEST.json del módulo. Cada nueva release crea un directorio de versión inmutable; no sobrescribir v1.0.0.
+- La fuente de mantenimiento desde esta edición es exclusivamente el directorio del módulo. EP-TASK-004 es su expediente de procedencia/validación.
+- Estado de publicación de código: PR draft de EP Vault PC 7; no se ha integrado a main por H10/P012/P013 pendientes.

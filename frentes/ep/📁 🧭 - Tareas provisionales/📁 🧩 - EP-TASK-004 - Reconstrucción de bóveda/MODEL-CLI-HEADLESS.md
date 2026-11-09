@@ -154,3 +154,116 @@ Los siguientes límites se observaron en el código actual y no deben confundirs
 - Hay tres respaldos cifrados históricos junto al almacén formal; el wrapper no expone una política de retención/restauración. No borrarlos automáticamente.
 
 La nueva interfaz headless deberá ofrecer mínimo privilegio, vencimiento de sesión, captura segura sin depender necesariamente del portapapeles y telemetría sin secretos, siempre después de la revisión de seguridad exigida por P012/P013.
+
+
+---
+
+## 12. Contrato de CLI de la reconstrucción clean-room
+
+Este apartado describe la implementación nueva que se prepara en H3–H6. **No describe capacidades verificadas del wrapper Hito 0.** La implementación se conserva en rama hasta superar las pruebas Windows PowerShell 5.1.
+
+### 12.1 Entrada y aislamiento del proceso
+
+La nueva entrada es **src/EP.Vault.CLI.ps1**, respaldada por **src/EP.Vault.Core.psm1**. Debe ejecutarse en un proceso PowerShell 5.1 dedicado, no dot-sourced ni invocado desde la misma consola de trabajo:
+
+~~~powershell
+$cli = 'C:\ruta\EP.Vault.CLI.ps1'
+powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File $cli -Action Status
+~~~
+
+El script termina con un código de salida para el proceso CLI. Por eso no debe dot-sourcearse ni ejecutarse como **& $cli** desde la sesión interactiva que el operador quiera conservar: el comando **exit** finaliza el proceso anfitrión que lo ejecuta. El modelo debe lanzar un proceso separado, capturar su exit code y evitar registrar cualquier stdout de las acciones de revelación.
+
+### 12.2 Acciones y parámetros nuevos
+
+| Acción | Parámetros relevantes | Resultado / seguridad |
+|---|---|---|
+| Status | ninguno | Metadatos del sobre cifrado; no desbloquea ni revela valores. |
+| Initialize | -DurationSeconds | Crea una bóveda vacía solo si no existe; pide dos veces la contraseña maestra en el prompt local. No sobrescribe una bóveda existente. |
+| ListVariables | -DurationSeconds | Solicita autenticación local; devuelve nombres, no valores; bloquea al terminar. |
+| RevealVariable | -Name, -Reveal, -DurationSeconds | Requiere el switch explícito -Reveal; stdout contiene el valor sensible. No capturar en logs/transcripciones. |
+| SetFromClipboard | -Name, opcional -Replace, -DurationSeconds | Desbloquea localmente, valida nombre y duplicados antes de consumir el portapapeles; escribe atómicamente y verifica lectura de vuelta. |
+| RemoveVariable | -Name, -ApproveRemove, -DurationSeconds | Destructivo; switch explícito obligatorio, autenticación local y verificación de ausencia. |
+| CaptureNote | -NoteTtlMinutes | Captura el portapapeles en DPAPI CurrentUser. No necesita desbloquear la bóveda formal, pero sí una sesión Windows con portapapeles; no es stdin. |
+| ListNotes | ninguno | Solo metadatos; no devuelve valores. |
+| ReadNote | -NoteId, -Reveal | La revelación exige switch explícito; stdout es sensible. |
+| PromoteNote | -NoteId, -Name, opcional -Replace, -DurationSeconds | Solicita contraseña local, promueve a la bóveda formal, lee de vuelta y solo entonces elimina la nota. |
+| DeleteNote | -NoteId, -ApproveDelete | Eliminación explícita; el switch es obligatorio y se comprueba la ausencia. |
+| Run | -ExecutablePath, -Names, opcional -ArgumentList, -DurationSeconds | Ejecuta un consumidor con una allowlist explícita de nombres de variables y dentro de un Job Object administrado. Solo devuelve exit code y metadatos; no captura stdout/stderr del consumidor. |
+| SelfTest | ninguno | Usa valores sintéticos; prueba criptografía y el ejecutor de procesos. No necesita revelar ni modificar secretos formales. |
+| Lock | ninguno | Invalida la sesión del proceso actual. |
+
+### 12.3 Duración de sesión
+
+**-DurationSeconds** acepta exactamente:
+
+**15, 30, 60, 120, 180, 300, 600, 900**
+
+El valor por defecto es **300 segundos (5 minutos)**. La sesión se vence por tiempo absoluto desde la autenticación; no se extiende con actividad. El núcleo verifica la expiración en cada operación protegida. Al concluir una acción CLI, el wrapper ejecuta Lock en finally.
+
+### 12.4 Ejecución headless con mínimo privilegio
+
+Ejemplo conceptual desde una segunda instancia PowerShell 5.1, para un consumidor que necesita exclusivamente una variable:
+
+~~~powershell
+$cli = 'C:\ruta\EP.Vault.CLI.ps1'
+$exe = 'C:\Program Files\Vendor\worker.exe'
+$command = "& '$cli' -Action Run -ExecutablePath '$exe' -Names @('VARIABLE_AUTORIZADA') -ArgumentList @('--batch') -DurationSeconds 300"
+$process = Start-Process -FilePath (Join-Path $PSHOME 'powershell.exe') -ArgumentList @('-NoLogo','-NoProfile','-ExecutionPolicy','Bypass','-Command',$command) -Wait -PassThru
+$exitCode = $process.ExitCode
+~~~
+
+El operador debe revisar las rutas y el ejecutable antes de autorizar el consumidor. No se deben incluir valores de secretos en -ArgumentList, en el nombre del ejecutable, ni en texto de comandos. La allowlist solo admite nombres validados; las variables formales no solicitadas no se descifran para el consumidor.
+
+El Job Object se configura con KILL_ON_JOB_CLOSE. El proceso inicial se crea suspendido, se asigna al Job antes de reanudarlo y se espera su finalización dentro del TTL restante. Si vence o se produce timeout, se termina el árbol administrado. Los procesos no pueden desprenderse del Job y continuar tras la sesión.
+
+El entorno del consumidor contiene una lista base explícita de variables de sistema (p. ej. SystemRoot, PATH, TEMP/TMP y perfiles necesarios para Windows) más los nombres de la allowlist. No copia indiscriminadamente las variables arbitrarias del proceso lanzador. El bloque de entorno nativo se limpia antes de liberar su memoria; las cadenas gestionadas por .NET no permiten prometer borrado perfecto, por lo que el código solo minimiza copias y tiempo de vida.
+
+El ejecutor no captura salida del proceso hijo. La aplicación consumidora debe evitar registrar o imprimir secretos. No se debe activar transcripción de PowerShell ni diagnóstico de comandos sobre una operación sensible.
+
+### 12.5 Códigos de resultado y errores
+
+- Exit code 0: acción completada sin error; en Run, se devuelve el código del proceso consumidor.
+- Exit code distinto de cero: error del CLI o código no-cero del consumidor.
+- Prefijo de error no sensible: EP_VAULT_ERROR:.
+- Códigos estables típicos: MASTER_PASSWORD_INVALID_OR_VAULT_TAMPERED, VAULT_SESSION_NOT_OPEN, VAULT_SESSION_EXPIRED, VARIABLE_ALREADY_EXISTS_USE_EXPLICIT_REPLACE, EXPLICIT_VARIABLE_ALLOWLIST_REQUIRED, CHILD_PROCESS_JOB_ASSIGN_FAILED, VAULT_WRITE_READBACK_VALUE_MISMATCH.
+- Nunca devolver valores formales en error, status, listados, metadatos o eventos.
+
+### 12.6 Pruebas de integración previstas
+
+El workflow .github/workflows/validate-ep-vault.yml ejecuta el conjunto sintético en Windows con Windows PowerShell 5.1. Debe cubrir como mínimo:
+- parser PowerShell para módulo, CLI y GUI;
+- parseo XAML y presencia de todos los nombres de controles;
+- escaneo de referencias para impedir dependencia de la GUI anterior;
+- round-trip criptográfico, password incorrecta y tamper;
+- ACL privada, DPAPI CurrentUser, listado sin valores, Reveal explícito y eliminación;
+- persistencia atómica, lectura de vuelta y redacción de logs;
+- aceptación de los ocho intervalos de sesión y vencimiento forzado;
+- inyección de solo variables allowlisted, ausencia de herencia de variables arbitrarias del lanzador y terminación por timeout del Job Object;
+- aislamiento total del almacén de pruebas y eliminación de la carpeta sintética al terminar.
+
+Hasta que un runner Windows ejecute y reporte PASS, estos casos son **criterios de prueba**, no resultados aceptados. La aprobación de arquitectura/UX y el diseño H3 tampoco equivalen a CI, instalación en host real ni cierre H10.
+
+
+## 13. Sesión compartida GUI / CLI
+
+La GUI y el CLI consumen una única sesión lógica del mismo perfil Windows, sin duplicar el contrato criptográfico.
+
+- Al desbloquear correctamente, Core publica `ep-env-vault.session.dpapi.json` junto al almacén formal, protegido mediante DPAPI `CurrentUser` y entropía asociada a la ruta canónica de la bóveda.
+- El registro contiene la clave de sesión protegida, un `sessionId`, inicio, expiración absoluta y duración. No contiene la contraseña maestra en claro.
+- Si existe una sesión válida, el CLI la reutiliza y no solicita otra contraseña. Si no existe, pide la contraseña en un prompt local `SecureString`; nunca se acepta por argumento.
+- La GUI observa la sesión compartida cada segundo. Detecta sesiones abiertas desde el CLI y cierra su vista cuando detecta revocación, sustitución o vencimiento.
+- `Lock` desde cualquiera de los dos front ends elimina el registro compartido y revoca la sesión para los demás procesos.
+- La sesión es compartida únicamente entre procesos del mismo usuario Windows/DPAPI CurrentUser y el mismo perfil de bóveda. No se comparte entre cuentas Windows ni entre PC-14 y Fila4. Cada equipo conserva su almacén local independiente.
+- Los intervalos de TTL continúan siendo absolutos y no deslizantes: 15 s, 30 s, 1, 2, 3, 5, 10 y 15 min.
+
+**Prueba de aceptación interproceso:** el test sintético crea un almacén temporal, inicia un proceso CLI separado, verifica que ListVariables reutiliza la sesión sin prompt y comprueba que Lock desde ese proceso hace fallar Get-EpVaultSession en el proceso padre. Nunca utiliza la bóveda formal ni secretos reales.
+
+
+## Reglas de uso seguro desde modelos
+
+- La sesión se abre dentro del mismo perfil Windows/DPAPI CurrentUser. El modelo nunca recibe ni escribe la contraseña maestra en argumentos, variables de entorno, archivos, logs o chat. El prompt de CLI es local y de tipo SecureString.
+- Para ejecutar una herramienta con secretos, preferir `-Action Run -ExecutablePath <ruta-absoluta> -Names <allowlist>`. La allowlist es obligatoria; el proceso hijo recibe únicamente los nombres autorizados además del entorno Windows mínimo y su árbol queda ligado a un Job Object. El CLI devuelve estado y código de salida, no imprime las variables.
+- `RevealVariable` y `ReadNote -Reveal` muestran el valor literal en stdout. Son operaciones de revelado, no el mecanismo normal de integración con modelos. Usarlas solo con autorización explícita, cuando el destino de salida esté controlado y el valor sea estrictamente necesario.
+- Las funciones de notas exigen sesión válida también en el núcleo: una importación directa del módulo no elude el bloqueo. Los TTL son absolutos, no deslizantes; la captura verifica lectura de vuelta y el listado devuelve solo metadatos.
+- La captura desde portapapeles lee, persiste y verifica primero; después intenta borrar el mismo texto solo si el portapapeles no cambió. Si se copió otro contenido mientras se escribía, ese contenido nuevo no se borra y la respuesta indica `clipboardCleared=false`.
+- Las notas DPAPI CurrentUser pertenecen al perfil Windows actual. No se sincronizan ni se trasladan entre PCs como si fueran portables.

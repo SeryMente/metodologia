@@ -1,0 +1,69 @@
+{
+  "schema": "mod-epvault-manifest/1",
+  "product": "EP Vault",
+  "module": "MOD-EPVAULT",
+  "version": "1.0.0",
+  "created_on": "2026-11-09",
+  "source_branch": "feat/ep-vault-pc7-hardened-20261109",
+  "source_task": "EP-TASK-004",
+  "canonical_oep": "frentes/ep/OEP.md#120",
+  "status": "PC7_SYNTHETIC_E2E_PRIOR_HARDENED_TREE_PASS; EXACT_V1_0_0_RETEST_PENDING; H10_PENDING; MAIN_MERGE_PENDING",
+  "entries": [
+    {
+      "path": "src/EP.Vault.Core.psm1",
+      "git_blob_sha": "c7dc353c4aba5b6b7759b359698c4b94446b31b2"
+    },
+    {
+      "path": "src/EP.Vault.CLI.ps1",
+      "git_blob_sha": "f485bc116df503aaab5d6f96d885d36197439496"
+    },
+    {
+      "path": "src/EP-Vault.GUI.ps1",
+      "git_blob_sha": "a065f1086e01ddc2142f7341ccf28cbea65e7ddf"
+    },
+    {
+      "path": "src/EP-Vault.Window.xaml",
+      "git_blob_sha": "0d692a2b1cb9b0ee53ce6b480a35ff3a9a9799d3"
+    },
+    {
+      "path": "tests/Test-EPVault.ps1",
+      "git_blob_sha": "e324872966131ad0ba0a65b0fe666785dcd6ef1d"
+    },
+    {
+      "path": "Install-EPVault-PC7.ps1",
+      "git_blob_sha": "840a9939fcfa12701f9c1e5ed21f89c7f50f4f99"
+    },
+    {
+      "path": "EPVault-GUI.cmd",
+      "git_blob_sha": "c78d656596891ee4af74ed54878f01e307406de7"
+    },
+    {
+      "path": "EPVault-CLI.cmd",
+      "git_blob_sha": "e48b245a8cf61a59f79dad915326d7cb4c580e95"
+    },
+    {
+      "path": "TEST-EPVault.cmd",
+      "git_blob_sha": "870b9b3773ac38d6af94917cfc1c17db749c0660"
+    },
+    {
+      "path": "MODEL-CLI-HEADLESS.md",
+      "git_blob_sha": "bcebd386d5e1e9a8f5916ae2b5692d341260b0bd"
+    },
+    {
+      "path": "DESIGN-CLEAN-ROOM.md",
+      "git_blob_sha": "8375a7bea608242a4aaf92ccea23d6d37a202182"
+    },
+    {
+      "path": "UI-PULIDO-METAL-REALISTA.md",
+      "git_blob_sha": "8259f40ddabb9689911c25d6f0f0220c5eacc7ae"
+    },
+    {
+      "path": "assets/audio/Vault-Open-Creak.wav",
+      "git_blob_sha": "2046fa3d133c40b83c8a9631f41b4ebfb451da70"
+    },
+    {
+      "path": "assets/audio/Vault-Close-Latch.wav",
+      "git_blob_sha": "f5438ffef0a6cee3f1e3fb13da0b2840e21fc725"
+    }
+  ]
+}
