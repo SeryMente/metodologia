@@ -418,5 +418,7 @@
       },
       "readback_blob_sha": "9e3074cd2b541a71520df1d0cce39a628002aeb7"
     }
-  ]
+  ],
+  "generation_semantics": "AUDIT_METADATA_ONLY_NOT_AUTHORITY_OR_EXECUTION_GATE",
+  "operator_instruction_authority": "Direct operator instructions determine authorized work within the described front and scope. Generation/session fields are provenance and audit metadata only, never an authority, veto or execution gate. Retain actual platform permissions, host security and explicit scope limits."
 }
