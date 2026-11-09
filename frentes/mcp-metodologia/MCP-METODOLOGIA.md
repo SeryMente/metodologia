@@ -513,7 +513,7 @@ El build y las pruebas no equivalen a instalación en perfil, provisión del ope
 
 ## 15. Sprint Sink local por RDC · 2026-11-09
 
-**Estado:** PLANIFICADO · NO INICIADO. El operador autorizó directamente el resolver Sink local por stdio; no requiere consentimiento de titularidad anterior, generación ni folio. El backlog v0.7 define MCP-OCP-02/05/03/04/10/07/12/08.
+**Estado de esta sección:** plan base del sprint, actualizado y complementado por §§16–17. La ampliación del producto para incluir MCP-OCP-13 y su ciclo EP queda definida en §17; el backlog v0.7 contiene la secuencia vigente. El operador autorizó directamente Sink stdio y panel local; no requiere consentimiento de titularidad anterior, generación ni folio.
 
 **Pins:** DUG Samantha v386 · NX-386m, baseline main `82843bca9493a522405d840393c229d2af363342`, blob `22dca684830a36dff019b47811d9b800cc9bea0a`. El manifiesto de build deberá fijar el blob resultante de este núcleo v0.1.26.
 
@@ -524,7 +524,7 @@ El build y las pruebas no equivalen a instalación en perfil, provisión del ope
 
 ## 16. Instalación local obligatoria y sprint consolidado · 2026-11-09
 
-**Versión documental:** MCP-OCP-v0.1.26. Lista auxiliar objetivo v0.6. **Objetivo de release del sprint:** producto ejecutable MCP-OCP 1.0.0. No confundir versión de núcleo documental, backlog y versión del software.
+**Versión documental:** MCP-OCP-v0.1.26. Lista auxiliar vigente v0.7. **Objetivo de release del sprint:** producto ejecutable MCP-OCP 1.0.0. No confundir versión de núcleo documental, backlog y versión del software.
 
 ### 16.1 Destino local del programa
 
