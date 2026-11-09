@@ -1,6 +1,6 @@
-# Operación local · MCP-OCP 0.1.0
+# Operación local · MCP-OCP
 
-**Estado del artefacto:** BUILD_AND_TESTED en dispositivo RDC PC10RCIF4EI4; no instalado en EP, no publicado como release y no aceptado aún como instalación de uso continuo.  
+**Estado vigente:** MCP-OCP v0.1.22. Sink local por stdio está autorizado directamente por el operador, pero su implementación y paquete vigente todavía no están construidos. La candidata 0.1.0 que se describe aquí es evidencia histórica; la identidad/ruta del entorno temporal no se conserva y el paquete no está disponible en este repositorio.  
 **Arquitectura:** proceso MCP stdio local; el cliente inicia y administra el proceso. No hay listener TCP/HTTP ni endpoint público.  
 **Fuente de verdad documental:** [MCP-OCP · núcleo](MCP-METODOLOGIA.md) y [lista provisional de tareas](LISTA-TAREAS-PROVISIONAL.md).  
 **Separación:** este servidor pertenece exclusivamente a MCP-OCP en Metodología. No es Khora MCP ni el bridge de Jules.
@@ -8,15 +8,15 @@
 ## 1. Artefacto local verificado
 
 - ZIP: `ocp-mcp-0.1.0-win-x64.zip`.
-- Ruta de generación comprobada en PC10RCIF4EI4: `Desktop\MCP-OCP-PPR-20261106\frentes\mcp-metodologia\artifacts\packages\ocp-mcp-0.1.0-win-x64.zip`.
+- Ruta de generación: NO CONSERVADA; perteneció a un entorno temporal que no forma parte del estado actual.
 - Tamaño: 39.713.025 bytes.
 - SHA-256: `37b85444534e20fcc51eeb10688ed99577bdde020576783273723ebd93cdbe76`.
 - Entry point: `OcpMcp.exe serve`.
-- Build source commit local: `587a82d1accbede834b5004fc5b571953c44ba6c`, rama local `feature/mcp-ocp-local-mvp-0.1.0-20261106`. Esta rama y commit de pin no se han transferido a GitHub; el commit no debe tratarse como disponible en `main`.
+- Commit y rama local de esa candidata: datos técnicos históricos sin ref remoto verificable para recuperarlos desde `main`; no asumir que el árbol local continúa disponible.
 - SDK: .NET 10.0.403; publish self-contained `win-x64`; target `net10.0`.
 - Manifiesto SHA-256: `ddc9967bf01afd5fc9c1f72cf836f0c5ad064daceaab07e9f99e91f003d348a8`.
 - Manifiesto de fuentes SHA-256: `0980946c1c16d0f5b0cdb4f29dc0fc5d794015165878d3ccd3198616e07ab9ac`.
-- Fuentes: DUG v377 blob `54064c8fe00f872023a455f06596061ed69062ae`; núcleo MCP-OCP v0.1.20 blob `029d330eeeb9470a114b65fb0d21a4995e050774`. Ambos pins se cotejaron con `origin/main` al build.
+- Fuentes históricas: DUG v377 y núcleo MCP-OCP v0.1.20. Esos pins son obsoletos para el trabajo actual.
 
 ## 2. Pruebas observadas
 
@@ -88,7 +88,7 @@ No se automatiza aprobación. No se deben pasar confirmaciones por pipes, variab
 - `MCP-NORMATIVO: DESACTIVADO`.
 - El catálogo expone los 43 identificadores y MDP, pero cuatro grupos de metadatos de aplicabilidad siguen sin fuente canónica completa; la selección normativa permanece fail-closed.
 - El texto normativo completo no se expone por el catálogo sin una selección/liberación gobernada.
-- Sink está fuera de alcance/no desplegado.
+- Sink local está autorizado directamente por el operador, pero aún no está implementado ni desplegado.
 - Un health status READY acredita base/backup operativo, no significa que las fuentes estén importadas, el operador esté provisionado ni que la evaluación normativa esté habilitada. Verificar por separado `operator_provisioned`, `principle_selection_readiness` y `normative_engine`.
 
 ## 7. Relación con Khora y Jules
@@ -102,8 +102,8 @@ No se automatiza aprobación. No se deben pasar confirmaciones por pipes, variab
 
 ## 8. Límites actuales
 
-- **Construido/probado:** sí, en el perfil RDC indicado y con base de test aislada.
-- **Paquete local:** sí, en la ruta local señalada.
+- **Construido/probado históricamente:** sí, en un entorno temporal y con base de prueba aislada.
+- **Paquete anterior:** fue generado según el recibo histórico, pero su ubicación temporal no se conserva y no se puede recuperar de este repositorio.
 - **Instalación en el perfil real del operador:** no ejecutada.
 - **Provisión del operador / importación de fuentes en su base real:** no ejecutadas.
 - **ChatGPT Free como cliente MCP nativo:** no verificado; se comprobó uso local de stdio a través de RDC.
@@ -112,4 +112,9 @@ No se automatiza aprobación. No se deben pasar confirmaciones por pipes, variab
 - **Restore PPR cross-host real:** no verificado; las 50 pruebas unitarias incluyen fixtures sintéticos.
 - **PR/merge/release remoto:** no se ha realizado en este ciclo.
 
-El siguiente gate de operador es decidir cuándo instalar/extraer el paquete en un perfil definitivo y cuándo ejecutar la provisión local interactiva. Ninguna de esas dos operaciones se presume por el build.
+Próxima ejecución: recuperar o reconstruir el código con fuentes y pins actuales; implementar Sink; compilar, probar y empaquetar un artefacto nuevo. La instalación persistente y la provisión interactiva del operador son fases posteriores, no requisitos para el trabajo de código.
+
+
+## 9. Estado actual · 2026-11-09
+
+DUG: Samantha v385/NX-385m. Núcleo: MCP-OCP v0.1.22. Sink local por stdio: AUTORIZADO, no implementado ni desplegado. Acceso GitHub privado: conector autenticado de la conversación; `gh auth login` local no es requisito para operaciones del repositorio mediante conector. No se fijan hostname, Device ID, perfil Windows ni ruta de una sesión efímera. MCP-NORMATIVO permanece DESACTIVADO.
