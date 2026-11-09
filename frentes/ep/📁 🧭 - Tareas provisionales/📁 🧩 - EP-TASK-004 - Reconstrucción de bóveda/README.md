@@ -583,3 +583,20 @@ EP Vault es una herramienta local de Metodología, **no una extensión Chrome**.
 - No usar `RevealVariable` o `ReadNote -Reveal` desde un flujo de agente salvo que el valor tenga que entrar literalmente en el contexto del modelo y el operador lo haya autorizado.
 
 **Límite explícito:** el instalador no inicializa ni modifica una bóveda formal. La instalación de software queda lista, pero la primera creación necesita que el operador elija e introduzca localmente la contraseña maestra. La GUI todavía requiere aceptación visual/auditiva presencial (H10); el código no se fusiona por el mero hecho de abrir.
+
+
+---
+
+## MOD-EPVAULT v1.0.0 — destino de mantenimiento del producto
+
+La fuente canónica de producto a partir de esta versión es:
+
+frentes/ep/modulos/MOD-EPVAULT/v1.0.0/
+
+Este expediente EP-TASK-004 conserva el mandato original, decisiones, evolución y evidencias de construcción/validación. Los archivos del paquete que permanecen en esta tarea son snapshots de construcción para procedencia; no son la fuente de mantenimiento posterior a v1.0.0.
+
+**Propósito:** custodia local, cifrada y controlada de variables de entorno y notas de trabajo efímeras; sesiones de duración limitada; interfaz GUI WPF; CLI headless compartida sobre el mismo núcleo; ejecución de procesos con allowlist explícita y Job Object.
+
+**Validación registrada:** la suite sintética E2E en PC 7 terminó con código 0 en 77,21 s para la candidata de endurecimiento anterior al etiquetado de versión. El árbol etiquetado v1.0.0 incorpora también la aserción de versión 1.0.0 y debe repetirse en esa ruta antes de declarar PASS exacto de release. H10 (aceptación visual/interactiva presencial) permanece pendiente y bloquea el merge final según DUG P012/P013.
+
+**Datos formales:** la ruta del almacén se encuentra fuera del workspace, en LOCALAPPDATA/Khora/secrets/ep-env-vault.enc.json. El instalador consulta el estado en modo de solo lectura; no crea el almacén ni inventa/introduce su contraseña maestra. No se restauran automáticamente variables B2 ni secretos de otros equipos.
