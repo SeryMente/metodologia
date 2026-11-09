@@ -2196,3 +2196,26 @@ La bóveda formal ep-env-vault/1 tiene 448 bytes, sesión activa, cero variables
 El estado de BitLocker de W: continúa XTS-AES256, Protection On y FullyEncrypted/100 %. El protector RecoveryPassword fue creado, pero su cmdlet emitió el valor de recuperación en la respuesta del proceso remoto; por precaución se clasifica como POTENTIALLY_EXPOSED. El intento posterior de persistirlo en EP Vault fue bloqueado antes de ejecutarse: no hay escritura ni read-back acreditados. No copiar el valor a Git ni volver a presentarlo en chat.
 
 Antes de migrar el workspace: rotar RecoveryPassword con salida suprimida y valor solo en memoria; persistir como EP_WORKSPACE_BITLOCKER_RECOVERY_PASSWORD; hacer read-back exacto en memoria; verificar protectores y estado; retirar el anterior potencialmente expuesto; migrar los 195 archivos mediante hash. El VHDX sigue vacío y la copia original permanece intacta.
+
+
+## EP · apertura de reanudación documental y reconciliación de tareas · 2026-11-09 12:31 · America/Mexico_City
+
+### Respuesta inicial registrada
+
+**A literal del operador:** «ChatGPT-EP-20261109-1230.md. Persiste en persistencia documental de frente Entorno Persistente. Lee cuidadosamente, adquiere contexto, y continuemos. Actualiza tareas provisionales. Cuando ya estés al día, responde la pregunta al final.»
+
+**Interpretación y alcance:** adquirir el contexto de la exportación indicada, preservarla en `frentes/ep/entregas/`, reconciliar el estado canónico OEP y actualizar las tareas provisionales afectadas. La exportación `ChatGPT-EP-20261109-1230.md` no se encontró en archivos de la conversación, Biblioteca accesible, ni en el árbol `main` del repositorio al momento de esta apertura. No se afirma lectura, adquisición ni persistencia del archivo; tampoco se reconstruirá ni sustituirá por una exportación distinta. La pregunta final de ese documento queda pendiente de lectura.
+
+### Fuente y cursor
+
+- Repositorio: `SeryMente/metodologia`, rama `main`.
+- DUG leído: v384 · NX-384m; blob `2f320e5e6e4768e9a77bc34d24b0639b47f2128d`. Se leyó §ARR y se consultaron P037, P038 y P043 para responsabilidad, autoridad documental y eficiencia. DUG no se modifica.
+- OEP leído: v0.3.48, §113–§114; blob `77a8b98ced4685221bcf787e71ffffcc618be54d`.
+- Control EP: generación 3, un titular, blob `b76614cb71c7c9f0090e1c7205dc582ae2e79ec6`.
+- DTC leído antes de esta apertura: blob `674947d99862c8d3be8013d04d01cf30d4f000f8`; último asiento visible: «EP · incidencia de custodia de recovery protector · 2026-11-09». No se encontró un mensaje entrante de Gobernanza posterior a ese cierre; cursor de recepción: `SIN_NOVEDAD` respecto de la revisión leída.
+- Índice provisional consultado: blob `c3fb061d584cf877986c99be81df04447043512f`. Selección: EP-TASK-003 afectada por la actualización de custodia/migración; EP-TASK-004 revisada y mantiene hitos abiertos; EP-TASK-001 y EP-TASK-002 sin delta sustentado en este ciclo.
+
+### Estado inicial
+
+La exportación indicada no es accesible, por lo que no se procesa su contenido ni se contesta su pregunta final. En cambio, las fuentes canónicas vigentes permiten corregir el estado documental de la custodia BitLocker: OEP §114 registra el protector nuevo almacenado con `VAULT_WRITE_READBACK_VERIFIED`, el protector anterior retirado y la limpieza del portapapeles verificada. W: permanece protegido XTS-AES256, Protection On y 100 %. La copia de 195 archivos/11 directorios sigue fuera del volumen; RDC reportó cuota 0 %, sin migración ni read-back SHA-256.
+
