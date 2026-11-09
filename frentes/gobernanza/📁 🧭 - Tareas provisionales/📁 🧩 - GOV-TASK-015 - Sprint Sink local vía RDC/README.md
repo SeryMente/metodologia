@@ -3,10 +3,10 @@
 **Estado:** `PLANIFICADO · NO_INICIADO`
 **Tipo:** coordinación y aceptación de un único sprint; no crea un frente nuevo ni controles paralelos.
 **Responsabilidad:** frente Gobernanza. Las tareas técnicas conservan sus OCP y fuentes.
-**Fuente normativa:** Samantha v385 · NX-385m · Metacanon 1.29 · GOW 2.18.
-**DUG:** commit `7dcdac6c62f9e8a27ce11f8fa0e4fc379a3d12f8`; blob `72cd2e8e4e6a594b300ba1868baeabc2472beb97`.
-**MCP-OCP:** núcleo v0.1.24 · commit `b342e28c01445bb107a5719e62c8b0187f1b675b` · blob `e845322f9947820ed01c04b996414b1ca44cd2dc`.
-**EP:** OEP v0.3.53 · commit `fa561294c58579c4bef8230fab833a873d44f8f7` · blob `6f89f4b6e2c2b66feac2b88a9b3579ab57a0f5a1`.
+**Fuente normativa:** Samantha v386 · NX-386m · Metacanon 1.29 · GOW 2.18.
+**DUG:** leído desde `main` HEAD `80fe0fda6d16f47aa7f52496f609cff03c343c6f`; archivo blob `22dca684830a36dff019b47811d9b800cc9bea0a`.
+**MCP-OCP:** núcleo v0.1.24 · blob `e845322f9947820ed01c04b996414b1ca44cd2dc`; backlog v0.5 · blob `09a05d44aeb3d3ac684b193c77323b6ab8531ae8`.
+**EP:** OEP v0.3.54 · blob `cdd738aa025c9acc09cbbe107bfcadfa218d463f`.
 **Autorización:** el operador autorizó directamente Sink local por stdio en MCP-OCP. No se requiere aprobación de titularidad anterior, generación ni folio; dichos campos son auditoría, no compuertas.
 **Destino EP designado:** perfil/usuario Windows `PC 7`; dispositivo RDC asociado según el operador; ubicación `LOC-OTHER`. El hostname/ID del dispositivo, usuario/SID efectivos y estado del host requieren preflight vivo. Por LOC-OTHER, el dead-man de EP-TASK-003 es un gate obligatorio antes de runtime persistente.
 **Alcance:** contrato, implementación Sink local, pruebas, paquete, handoff, bootstrap en el perfil designado y aceptación E2E. Esta ficha es planificación: no acredita código, build, instalación ni prueba ejecutados.
@@ -137,3 +137,94 @@ No son insumos por ahora: contraseña, token, SID, RecoveryPassword, B2, OAuth J
 - **IPZ nativa/FOL1:** pendientes; MCP-NORMATIVO sigue desactivado.
 
 **Siguiente transición:** iniciar MCP-OCP-02 y GOV-TASK-008 en paralelo por GitHub; ejecutar primero el corte vertical P004. En paralelo, preparar EP-TASK-003 para migración y dead-man. La instalación en PC 7 comienza solo con paquete verificado, preflight LOC-OTHER y almacenamiento protegido.
+
+
+## 8. Contrato de producto consolidado · instrucción del operador · 2026-11-09
+
+Esta sección incorpora el encargo de consolidación básica y funcional de MCP-OCP como alcance rector de las tareas técnicas del sprint. No crea un proyecto, OCP, control, servidor ni backlog paralelo.
+
+### Resultado del producto
+
+Entregar MCP-OCP como servidor MCP propio de la Metodología Ser y Mente: sencillo, confiable, seguro, reproducible y mantenible con ingeniería profesional básica. Debe facilitar consultas de DUG, Samantha, GOW/§ARR, documentación y objetos OCP, versiones, procedencia y evidencia; además, apoyar el desarrollo de proyectos gobernados. Permanece completamente separado de Khora-MCP.
+
+### Arquitectura y límites no negociables
+
+- C# / .NET y protocolo MCP oficial; proceso local Windows por STDIO, invocado por cliente MCP compatible y la vía RDC autorizada.
+- Reutilizar el núcleo, almacenamiento y dependencias existentes que superen la revisión. No introducir base, servicio, framework o dependencia adicional sin necesidad demostrada.
+- Fuentes del repositorio privado `SeryMente/metodologia`; almacenamiento local protegido.
+- Sin servicio público, túnel, listener de red innecesario, endpoint Internet ni integración con Khora.
+- MCP-NORMATIVO permanece DESACTIVADO. Sink es recuperación de contenido, no evaluación ni aplicación normativa automática.
+- No modificar DUG, IPZ, credenciales ni secretos de otros proyectos; no ejecutar escritura remota como parte de este MVP. No añadir herramientas MCP de escritura salvo que una necesidad existente y autorizada lo demuestre.
+
+### Capacidades mínimas
+
+1. **Diagnóstico real:** diferenciar proceso vivo de servidor listo; exponer estado MCP, importación de fuentes, vigencia e integridad, configuración local del operador y capacidad operativa.
+2. **GOW:** recuperar §ARR desde la fuente importada y verificada.
+3. **DUG:** devolver versión, firma, commit, Git Blob SHA, SHA-256, adquisición, vigencia/verificación e inventario de principios y metadatos realmente disponibles.
+4. **Sink individual:** resolver SINK:P001–SINK:P043 y devolver ID, título, pin exacto de DUG y SHA-256 del texto.
+5. **Lotes:** aceptar varios IDs, conservar estrictamente el orden solicitado y generar resultado, huella y evento individual solo para cada recuperación íntegra y satisfactoria. No sustituir faltantes con memoria ni MDP.
+6. **Documentos/OCP:** permitir consulta de documentación y objetos OCP únicamente dentro de fuentes y rutas autorizadas, sin convertir el servidor en un lector arbitrario del disco.
+
+### Seguridad y calidad esenciales
+
+- Acceso limitado a fuentes/rutas autorizadas; validar entradas y prevenir traversal o lecturas fuera de raíz.
+- Rechazar fuente ausente, antigua, alterada, no importada o sin procedencia verificable; ante discrepancia, detener esa operación y explicar el motivo.
+- Respetar autorizaciones locales; proteger fuentes y datos; no guardar ni mostrar credenciales, tokens, contraseñas o secretos en repositorio, respuestas o logs.
+- Código modular y legible, responsabilidades claras, nombres descriptivos, funciones pequeñas, configuración separada, errores controlados, logs sanitizados y cierre limpio.
+- Mantener solo patrones, abstracciones y dependencias que resuelvan una necesidad concreta.
+
+### Pruebas de salida obligatorias
+
+- Build limpio; inicialización de cliente MCP; tools/list y tools/call; respuestas correctas.
+- Recuperación íntegra individual y por lotes en orden.
+- Coincidencia de hashes con fuente; rechazo ante fuente ausente/alterada/antigua y ante entradas inválidas.
+- Cierre limpio al desconectar.
+- Ausencia demostrada de exposición de red no autorizada.
+- Automatizar pruebas repetibles; usar MCP Inspector solo cuando añada valor. Build PASS por sí solo no es aceptación.
+
+### Paquete y entrega
+
+Generar ejecutable local independiente de una terminal de desarrollo, con dependencias necesarias, configuración de ejemplo, manifiesto de archivos, SHA-256 e instrucciones simples. Verificar extracción y lectura de vuelta. Debe poder reconstruirse desde el código fuente disponible en GitHub. La instalación persistente, el root de datos definitivo y el alta interactiva del operador pertenecen a EP y conservan sus gates; nunca ejecutar REGISTER <SID> sin consentimiento explícito y presencia del operador.
+
+### Informe de cierre exigido
+
+Identificar por separado funcionalidades implementadas y probadas, pruebas PASS/FAIL, defectos corregidos, archivos cambiados, versiones DUG/OCP usadas, commit, hash y ubicación del paquete, y pendientes de instalación/uso. Cada estado se clasificará como propuesto, implementado, probado, publicado, instalado o aceptado; no se infiere uno del otro.
+
+**Criterio de éxito:** inicia localmente con sencillez, conecta por STDIO, recupera ARR/DUG/principios/documentación permitida, demuestra procedencia e integridad, rechaza entradas o fuentes no verificables, protege la identidad y se reconstruye de forma reproducible.
+
+## 9. Diseño ejecutable del sprint · flujo mínimo
+
+| Secuencia | Frente y tareas existentes | Trabajo acotado | Salida verificable / gate |
+|---|---|---|---|
+| 0 · Baseline | Gobernanza: GOV-TASK-015. MCP: MCP-OCP-02. EP: preflight EP-TASK-003/005, sin instalar | Fijar pins desde main; leer controles; inventariar árbol, ramas, código y pruebas; declarar duplicados y discrepancias | Matriz única de estado y dependencias. No ejecutar sobre ramas históricas directamente |
+| 1 · Reconciliar | MCP-OCP-02 | Crear rama candidata desde main actual; trasladar selectivamente lo reutilizable de las ramas históricas; documentar cada componente conservado/corregido/descartado | Rama limpia basada en main, diff revisable y pruebas de regresión |
+| 2 · Corte vertical | MCP-OCP-05 + MCP-OCP-03 + MCP-OCP-04; GOV-TASK-008 | Validar fuente/importación y hacer funcionar, por el mismo transporte final, initialize → tools/list → GOW:ARR → DUG → SINK:P004 → respuesta con pin/hash → cierre | Primer recorrido real RDC/stdio PASS. Si falla, corregir aquí antes de generalizar |
+| 3 · Generalización | MCP-OCP-05 + MCP-OCP-03; GOV-TASK-001/008 | Extender a 43 IDs, recuperación individual y batch ordenado; eventos individuales solo por recuperación completa; hash del paquete exacto | 43 casos positivos, lote ordenado, hashes y frecuencia por ID; 8 casos negativos/frontera de MDP como matriz de Gobernanza |
+| 4 · Robustez | MCP-OCP-03/04/10; GOV-TASK-003 | Suite automatizada de protocolo, parámetros, datos faltantes/obsoletos/corruptos, rutas, permisos, logs, cierre y ausencia de red | Evidencia de pruebas nueva ligada al commit. Ningún PASS histórico sustituye esta suite |
+| 5 · Paquete | MCP-OCP-10/07 | Build reproducible y paquete autónomo; manifiesto, hashes, configuración de ejemplo y runbook; extracción/read-back | Artefacto y evidencia cotejados; paquete reconstruible desde GitHub |
+| 6 · Instalación | EP-TASK-003/005 + MCP-OCP-08/12 | Preflight de PC 7/LOC-OTHER, almacenamiento protegido, dead-man probado, root de datos, autenticación local y alta interactiva autorizada | Instalación y read-back solo después de paquete PASS y gates EP. Sin secretos por chat |
+| 7 · Aceptación | GOV-TASK-003/007/009; GOV-TASK-013 como medición paralela | E2E con ChatGPT/RDC/stdio; validar ARR, DUG, Sink y fail-closed; medir latencia solo si ambos extremos son observables | Recibo de aceptación con evidencias. GOV-TASK-007/IPZ y eventual FOL1 siguen su gate separado; FOL1 no bloquea desarrollo |
+
+### Reglas de fluidez y control de alcance
+
+- Un solo producto, servidor, almacenamiento y paquete. No crear un servidor Sink independiente ni una arquitectura de despliegue.
+- Un corte vertical funcional antes de extender a 43. Un build final de release; los builds intermedios serán pruebas locales, no paquetes entregables.
+- Aprovechar el almacenamiento y los módulos actuales solo después de verificar seguridad, vigencia y pruebas; no conservarlos por el simple hecho de existir.
+- Mantener separados los tres responsables: Gobernanza define contrato/pruebas/aceptación; MCP-OCP construye y empaqueta; EP prepara entorno e instala. RDC es transporte, no frente.
+- GOV-TASK-013 conserva su responsable y alcance propios; se consume como dependencia de medición, sin apropiarse de su ejecución.
+- Quedan fuera: cambios al DUG/IPZ, MCP-NORMATIVO, Khora, MOD-SYNC, Cloudflare, Jules, B2 y servicios públicos.
+- No cerrar el sprint por documentación, compilación o smoke aislado: se requiere prueba del recorrido real, paquete verificado e instalación/aceptación por etapas.
+
+### Bloqueadores y condiciones ya observados
+
+1. **Código candidato:** las ramas `integration/ocp-mcp-0.1.0-selective-20261101` y `build/ocp-mcp-mvp-0.1.0` están divergidas de main. En la comparación más reciente: integración, 3 commits por delante y 494 por detrás; build, 11 por delante y 813 por detrás. No fusionar ramas completas; portar selectivamente a una rama nueva basada en main.
+2. **Pins obsoletos:** cualquier referencia del plan/backlog a DUG v385, v377 o core v0.1.20 es histórica; usar el baseline vigente del encabezado de esta tarea.
+3. **PC 7 / LOC-OTHER:** C: aparece cifrado XTS-AES256 al 100 %, pero `ProtectionStatus=0 (Off)`; el estado no acredita protección activa del perfil. EP debe verificar volumen protegido efectivo y root de datos antes de instalación.
+4. **Herramientas locales:** el repositorio local de Metodología en el Escritorio de PC 7 no está materializado como checkout Git y `git` no está disponible en el perfil observado. No bloquear desarrollo remoto por GitHub; resolver clone/toolchain solo en la fase que lo requiera.
+5. **Presencia/consentimiento:** autenticación del perfil, SID y REGISTER son operaciones interactivas locales. No trasladar tokens ni pedir secretos por chat.
+
+### Insumos del operador
+
+No falta una decisión de producto ni otro host: PC 7/LOC-OTHER ya está designado. Solo se requerirá presencia del operador en el gate de instalación/registro local para confirmar las acciones interactivas. No se solicitan credenciales por chat.
+
+**Estado de salida de esta planificación:** DISEÑO CONSOLIDADO · NO INICIADO. Este plan no acredita implementación, pruebas, build, paquete, instalación ni aceptación.
