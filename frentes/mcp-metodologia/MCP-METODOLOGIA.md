@@ -4,7 +4,7 @@
 
 - **Nombre canónico vigente:** MCP-OCP (anteriormente MCP-METODOLOGIA).
 - **Identidad canónica vigente:** MCP-OCP. **Identidad histórica:** MCP-METODOLOGIA.
-- **Versión/sello:** MCP-OCP-v0.1.22 · Sink local por stdio autorizado; candidata anterior 0.1.0 BUILD_AND_TESTED, bootstrap del perfil persistente pendiente. Las generaciones y folios de sesiones anteriores son metadatos de auditoría.
+- **Versión/sello:** MCP-OCP-v0.1.23 · Sink local por stdio autorizado; candidata anterior 0.1.0 BUILD_AND_TESTED, bootstrap del perfil persistente pendiente. Las generaciones y folios de sesiones anteriores son metadatos de auditoría.
 - **Repositorio propietario:** SeryMente/metodologia, rama main.
 - **OCP canónico:** frentes/mcp-metodologia/.
 - **Núcleo operativo único:** este archivo, MCP-METODOLOGIA.md.
@@ -212,7 +212,7 @@ Las autorizaciones futuras deberán quedar vinculadas a la operación concreta y
 
 ### 8.1 Registro provisional de tareas OCP
 
-El backlog operativo detallado y versionado se materializa en [LISTA-TAREAS-PROVISIONAL.md](LISTA-TAREAS-PROVISIONAL.md) (0.1, PROVISIONAL), siguiendo el patrón auxiliar documentado en otros frentes. No crea un segundo OCP, núcleo ni control. Este núcleo conserva el estado vivo; el objeto DTC conserva comunicaciones, cursores, respuestas y cierres de ciclo. La lista prioriza el MVP local independiente de EP/B2 y mantiene como dependencias separadas la instalación EP, el backup portable y la coexistencia con el puente Jules.
+El backlog operativo detallado y versionado se materializa en [LISTA-TAREAS-PROVISIONAL.md](LISTA-TAREAS-PROVISIONAL.md) (0.4, PROVISIONAL), siguiendo el patrón auxiliar documentado en otros frentes. No crea un segundo OCP, núcleo ni control. Este núcleo conserva el estado vivo; el objeto DTC conserva comunicaciones, cursores, respuestas y cierres de ciclo. La lista prioriza el MVP local independiente de EP/B2 y mantiene como dependencias separadas la instalación EP, el backup portable y la coexistencia con el puente Jules.
 
 | Tarea / dependencia de origen | Estado observado al ciclo local 08 | Resultado exigido / límite / evidencia |
 |---|---|---|
@@ -509,3 +509,14 @@ El build y las pruebas no equivalen a instalación en perfil, provisión del ope
 - No depender de candidatas ni identidades de sesiones/terminales efímeras anteriores; recuperar código desde `main` y reconstruir un artefacto reproducible.
 - Instalación persistente EP, perfil, custodia de recuperación y `REGISTER <SID>` siguen siendo un tramo posterior separado. No se comparten secretos por chat.
 - MCP-NORMATIVO permanece DESACTIVADO; no se exponen endpoints públicos, no se ejecuta instalación EP y no se activan FOL1.
+
+
+## 15. Sprint Sink local por RDC · 2026-11-09
+
+**Estado:** PLANIFICADO · NO INICIADO. El operador autorizó directamente el resolver Sink local por stdio; no requiere consentimiento de titularidad anterior, generación ni folio. El backlog v0.4 define MCP-OCP-02/05/03/04/10/07/12/08.
+
+**Pins:** DUG Samantha v385 · NX-385m, commit `7dcdac6c62f9e8a27ce11f8fa0e4fc379a3d12f8`, blob `72cd2e8e4e6a594b300ba1868baeabc2472beb97`. El manifiesto de build deberá fijar el blob resultante de este núcleo v0.1.23.
+
+**Ruta técnica:** revisar las ramas remotas, portarlas sobre main e implementar GOW:ARR/DUG/SINK:P001..P043, lote ordenado, frecuencia por éxito, manifiesto canónico y pruebas negativas. El código candidato usa `%LOCALAPPDATA%\\SeryMente\\OCP MCP` por defecto; antes de instalar se requiere un root de datos/backup configurable y verificado dentro del perímetro cifrado, o prueba de cifrado del volumen del perfil.
+
+**Dependencias:** EP-TASK-003 (workspace W: y dead-man si LOC-OTHER), EP-TASK-005 (handoff/bootstrap) y GOV-TASK-001/003/007/008/013. EP define destino/instalación; MCP-OCP entrega paquete y configuración. Jules/B2/PPR cross-host/Khora/MCP-NORMATIVO quedan fuera. `MCP-NORMATIVO` sigue DESACTIVADO.
