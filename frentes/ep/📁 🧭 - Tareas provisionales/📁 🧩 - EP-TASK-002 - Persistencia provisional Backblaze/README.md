@@ -1895,3 +1895,32 @@ Sin acceso local verificable a la credencial canónica de EP no es posible auten
 Siguiente acción: habilitar acceso local, seguro y verificable a la bóveda/credencial canónica de EP en el host que se vaya a utilizar. Después instalar la CLI oficial con verificación de hash/firma, comprobar bóveda/read-back protegido y solo entonces abrir la compuerta de autenticación. Limitar las operaciones a \`OCP-MCP/ep-ocp/\`; no borrar objetos ni administrar credenciales.
 
 **No ejecutado:** instalación de CLI, lectura de bóveda/caché/portapapeles, transferencia de credenciales, autenticación, llamadas de cuenta/bucket/objeto, upload, download, restore, delete o cambios de seguridad.
+
+
+## Integración del requisito de observabilidad local-first en workspace SeryMente · 2026-11-09
+
+**Fuente:** instrucción directa del operador y OEP §108. Esta entrada no cambia el objetivo principal de EP-TASK-002: Backblaze B2 conserva datos de usuario seleccionados; GitHub conserva código, repositorios e historial.
+
+### Separación de conjuntos
+
+1. **Código y fuentes:** los clones `SeryMente/<repo>`, sus ramas y el contenido canónico de los frentes se reconstruyen desde GitHub. No se copian repositorios completos, directorios `.git`, artefactos de build reproducibles ni paquetes `Extensión` a B2 como sustituto de GitHub.
+2. **Datos de usuario:** documentos, preferencias, estados de aplicaciones portables y otros conjuntos explícitamente seleccionados pueden persistir en B2 según el inventario y contrato de recuperación de esta tarea.
+3. **Observabilidad:** el requisito nuevo es capturar primero de manera local y durable; la ruta de captura no debe bloquearse esperando B2 ni depender de conectividad. Los eventos elegibles se registrarán append-first, con manifiesto/checksum y cola desacoplada. Un worker podrá sincronizar a B2 después de validar integridad, autorización, sensibilidad, retención y namespace.
+4. **Secretos:** contraseñas, tokens, cookies, claves privadas, archivos cifrados de bóveda, notas DPAPI y credenciales de autenticación permanecen excluidos del conjunto general B2. No confundir un registro de observabilidad saneado con un secreto ni con una copia de credenciales.
+
+### Disposición local propuesta
+
+La recomendación de OEP §108 es que `Observabilidad` sea una carpeta hermana de `Extensión` dentro del frente propietario, nunca dentro del paquete que Chrome carga. Subdirectorios previstos: `Local/`, `Cola/` y `Exportaciones/`. El operador aún no ha ratificado expresamente esta disposición, por lo que se conserva como propuesta y no como norma aceptada. La ruta exacta no se creará hasta materializar el workspace cifrado de EP-TASK-003.
+
+### Contrato de sincronización pendiente
+
+- La ruta de captura escribe localmente antes de publicar o intentar cualquier envío.
+- Los lotes se sellan con identificador, marca temporal UTC, esquema, propietario, revisión fuente, integridad SHA-256 y clasificación de datos.
+- La cola reintenta de forma idempotente; los conflictos se preservan, no se resuelven sobrescribiendo silenciosamente.
+- El worker de B2 utiliza exclusivamente el namespace autorizado de EP y nunca sube datos no clasificados, secretos, clones Git, archivos temporales o logs de alta frecuencia no aprobados.
+- Un lote no se considera recuperable por estar subido: requiere read-back remoto, descarga y restauración en destino aislado con cotejo de bytes/hash.
+- La captura local no debe depender de red; la sincronización puede ser posterior y asíncrona. No se implementa telemetría remota nueva por este registro.
+
+### Estado real
+
+`EP-TASK-002` permanece **`en_curso`**. La prueba sintética histórica de 126 bytes descrita en OEP §102 conserva su resultado; no se reutiliza como evidencia de sincronización automática, captura observacional real, recuperación actual en PC-14 ni aceptación multiubicación. En el preflight PC-14 de 2026-11-09 no se consultaron CLI, credenciales, cachés, cuenta, bucket ni objetos B2; no hubo upload/download/restore ni cambios. El inventario de datasets y el contrato final de observabilidad, la automatización local-first, la cola, la sincronización selectiva y la restauración continúan pendientes.
