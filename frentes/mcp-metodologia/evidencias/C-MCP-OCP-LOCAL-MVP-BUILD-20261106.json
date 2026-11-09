@@ -20,22 +20,24 @@
     "freshness": "VERIFIED_AGAINST_MAIN"
   },
   "environment": {
-    "device": "PC10RCIF4EI4",
-    "device_id": "d0bbb2a3-d7b4-45e1-8870-652c2c3844fc",
-    "windows_profile": "MantenimientoRCI",
+    "device": null,
+    "device_id": null,
+    "windows_profile": null,
     "os_architecture": "x64",
-    "local_clone": "C:\\Users\\MantenimientoRCI\\Desktop\\MCP-OCP-PPR-20261106",
+    "local_clone": null,
     "local_branch": "feature/mcp-ocp-local-mvp-0.1.0-20261106",
     "source_commit": "587a82d1accbede834b5004fc5b571953c44ba6c",
     "source_template_blob": "b066b73e1d83e95cc0dd7c588256cf991a498f09",
     "branch_transfer": "NOT_PUSHED_LOCAL_ONLY",
     "worktree_after_build": "CLEAN",
     "sdk": "10.0.403",
-    "sdk_source": "C:\\Users\\MantenimientoRCI\\AppData\\Local\\Temp\\mcp-ocp-ppr-dotnet10",
+    "sdk_source": null,
     "sdk_authenticode": "VALID_MICROSOFT_SIGNER",
     "sdk_sha256": "1e881ec1786c31ba712d052258b4ad4202ac155df5965794030037878abb822f",
     "global_path_modified": false,
-    "system_sdk_modified": false
+    "system_sdk_modified": false,
+    "identity_retention": "NOT_RETAINED_BY_OPERATOR; TEMPORARY_ENVIRONMENT_IDENTITY_REMOVED_FROM_CURRENT_FRAMEWORK",
+    "local_paths_retention": "NOT_RETAINED"
   },
   "build": {
     "version": "0.1.0",
@@ -52,7 +54,7 @@
     "status": "BUILT_AND_TESTED",
     "package": {
       "filename": "ocp-mcp-0.1.0-win-x64.zip",
-      "local_path": "C:\\Users\\MantenimientoRCI\\Desktop\\MCP-OCP-PPR-20261106\\frentes\\mcp-metodologia\\artifacts\\packages\\ocp-mcp-0.1.0-win-x64.zip",
+      "local_path": null,
       "size_bytes": 39713025,
       "sha256": "37b85444534e20fcc51eeb10688ed99577bdde020576783273723ebd93cdbe76",
       "component_count": 200,
@@ -163,7 +165,7 @@
   },
   "statuses": {
     "build_and_tests": "PASS",
-    "package_local": "PRESENT_ON_RDC_DEVICE",
+    "package_local": "NOT_RETRIEVABLE_FROM_CANONICAL_REPOSITORY",
     "remote_branch": "NOT_PUSHED",
     "remote_release": "NOT_CREATED",
     "normal_profile_installation": "NOT_PERFORMED",
@@ -192,11 +194,31 @@
     "khora_control_mutated": false
   },
   "limitations": [
-    "The ZIP and source branch remain local to PC10RCIF4EI4; neither was pushed or uploaded to GitHub.",
+    "The ZIP and source branch were not pushed or uploaded to GitHub; the temporary device identity and path are not retained, and the artifact is not retrievable from this repository.",
     "The local branch is an extension of the portable-recovery candidate and retains PPR v1 code; PPR unit fixtures do not prove a live cross-host restore.",
     "RDC interactive smoke used test-mode data root and did not create/modify the normal LocalAppData installation.",
     "get_health READY in the interactive smoke coexisted with operator_provisioned=false and SOURCE_NOT_IMPORTED; health/backup readiness is not equivalent to configured operational readiness.",
     "Operator provisioning requires explicit interactive confirmation and was not performed.",
     "The server remains stdio local; no public endpoint, service, firewall rule, tunnel or EP installation was created."
-  ]
+  ],
+  "status": "HISTORICAL_BUILD_EVIDENCE_NOT_CURRENT_INSTALLATION",
+  "current_relevance": "Historical evidence only. Do not use this build, local branch, environment, or package path as a current source or installation artifact. Rebuild using DUG v385 and current MCP-OCP sources.",
+  "identity_redaction": {
+    "status": "APPLIED",
+    "reason": "Direct operator instruction: the earlier terminal session was ephemeral and must not be represented as a persistent device/profile identity.",
+    "removed_fields": [
+      "environment.device",
+      "environment.device_id",
+      "environment.windows_profile",
+      "environment.local_clone",
+      "environment.sdk_source",
+      "build.package.local_path"
+    ],
+    "retained": [
+      "historical build/test counts",
+      "historical hashes",
+      "historical commits and source pins",
+      "historical status and limitations"
+    ]
+  }
 }
