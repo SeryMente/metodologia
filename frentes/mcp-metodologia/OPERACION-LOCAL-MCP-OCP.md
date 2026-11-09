@@ -109,7 +109,7 @@ Próxima ejecución: recuperar o reconstruir el código con fuentes y pins actua
 
 ## 9. Estado actual · 2026-11-09
 
-DUG: Samantha v386/NX-386m (blob `22dca684830a36dff019b47811d9b800cc9bea0a`). Núcleo documental: MCP-OCP v0.1.25; backlog v0.6; release de software objetivo: 1.0.0. Sink local por stdio: AUTORIZADO, no implementado ni desplegado. Acceso GitHub privado: conector autenticado de la conversación; `gh auth login` local no es requisito para operaciones del repositorio mediante conector. No se fijan hostname, Device ID, perfil Windows ni ruta de una sesión efímera. MCP-NORMATIVO permanece DESACTIVADO.
+DUG: Samantha v386/NX-386m (blob `22dca684830a36dff019b47811d9b800cc9bea0a`). Núcleo documental: MCP-OCP v0.1.26; backlog v0.7; release de software objetivo: 1.0.0 (servidor + panel). Sink local por stdio y panel: AUTORIZADOS, no implementados ni desplegados. Acceso GitHub privado: conector autenticado de la conversación; `gh auth login` local no es requisito para operaciones del repositorio mediante conector. No se fijan hostname, Device ID, perfil Windows ni ruta de una sesión efímera. MCP-NORMATIVO permanece DESACTIVADO.
 
 
 ## 10. Instalación del release 1.0.0 dentro del checkout de Metodología · 2026-11-09
@@ -130,9 +130,9 @@ La entrega del paquete no prueba instalación. Un proceso activo o health READY 
 
 Especificación funcional y visual: [PANEL-OBSERVABILIDAD.md](PANEL-OBSERVABILIDAD.md). Tarea de implementación: MCP-OCP-13.
 
-El panel es una app de escritorio Windows WPF/C#, ligera y de solo lectura; no es otro cliente ni servidor MCP. No interviene en las pipes STDIO, no abre HTTP/TCP/localhost, no incorpora WebView2/Node/DB nueva ni herramientas de escritura. Su contrato de datos es `monitor/state.json` y `monitor/events.jsonl` bajo el root protegido configurado por EP; el servidor publica cambios de estado y eventos saneados sin payloads ni contenidos de fuentes.
+El panel es una app de escritorio Windows WPF/C#, ligera y de solo lectura; no es otro cliente ni servidor MCP. No interviene en las pipes STDIO, no abre HTTP/TCP/localhost, no incorpora WebView2/Node/DB nueva ni herramientas de escritura. Su contrato de datos usa `monitor/session.json` (EP: sesión + atestación de protección con timestamp), `monitor/state.json` y `monitor/events.jsonl` (MCP-OCP: proceso, protocolo, fuentes y actividad), todos bajo el root protegido configurado por EP. El panel los lee; no recibe payloads ni contenidos de fuentes.
 
-EP-TASK-005 abre la ventana como proceso hijo al confirmar que la sesión persistente está `ACTIVE`, y la cierra al finalizar esa sesión. Si el servidor todavía no está iniciado, la ventana permanece visible con “Sesión activa · esperando servidor”. Si el proceso MCP se detiene y EP sigue vigente, muestra “Servidor detenido/desconectado”; no intenta reiniciar ni controlar el proceso. Esta integración no modifica EP-TASK-003 ni añade heartbeat, polling o vigilancia general al dead-man.
+EP-TASK-005 escribe y coteja `session.json`, y abre la ventana como proceso hijo al confirmar que la sesión persistente está `ACTIVE`, y la cierra al finalizar esa sesión. Si el servidor todavía no está iniciado, la ventana permanece visible con “Sesión activa · esperando servidor”. Si el proceso MCP se detiene y EP sigue vigente, muestra “Servidor detenido/desconectado”; no intenta reiniciar ni controlar el proceso. Esta integración no modifica EP-TASK-003 ni añade heartbeat, polling o vigilancia general al dead-man.
 
 **Vista principal:** estado global dominante; recorrido visual sesión → proceso → STDIO → fuentes → readiness; tarjetas de salud de proceso/protocolo/DUG/fuentes/operador/root; actividad actual y eventos recientes; una sola atención prioritaria. La vista debe ser clara en pocos segundos, con icono+texto+color, sin parpadeos, audio ni movimiento constante. No mostrar métricas sin datos reales.
 
