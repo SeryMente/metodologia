@@ -11,7 +11,7 @@ Recibir el artefacto MCP-OCP renovado y efectuar su instalación, bootstrap y ac
 ## Alcance
 
 1. Destino ya designado por el operador: perfil Windows `PC 7`, asociado al equipo RDC correspondiente, ubicación `LOC-OTHER`. Al iniciar la operación, comprobar en vivo que el usuario Windows, SID efectivo, equipo RDC, rutas y permisos coinciden con esa designación. La designación no sustituye el preflight ni autoriza a reutilizar datos de sesiones temporales anteriores.
-2. Confirmar que workspace, runtime, base de datos y respaldos están dentro de un volumen protegido. El W: existente está documentado como XTS-AES256, Protection On y FullyEncrypted 100 %, con RecoveryPassword custodiado y verificado. En la última lectura canónica, los archivos del workspace aún estaban fuera de W:; EP-TASK-003 debe completar la migración y ambos read-backs SHA-256 antes de mover allí el runtime.
+2. Confirmar en el destino PC 7 que workspace, runtime, base de datos y respaldos están dentro de un volumen protegido. El estado XTS-AES256/Protection On/FullyEncrypted 100 % y RecoveryPassword custodiado observado en otro perfil/host no se hereda: repetir la lectura de vuelta en el dispositivo RDC asociado a PC 7. EP-TASK-003 debe completar la migración y ambos read-backs SHA-256 antes de mover allí el runtime.
 3. Resolver el root de datos del servidor. El código recuperable de MCP-OCP usa por defecto `%LOCALAPPDATA%\SeryMente\OCP MCP`; debe quedar dentro del perímetro cifrado o debe probarse cifrado completo del volumen que aloja ese perfil. MCP-OCP habilitará una configuración explícita y validada del root de datos/respaldos para apuntar a W: sin heredar rutas de otra sesión.
 4. Recibir solo un paquete nuevo, construido y verificado contra DUG v385 y el núcleo MCP-OCP vigente. Verificar SHA-256, manifiesto, RID y resultados de pruebas antes de extraer.
 5. Si se necesita clonar/actualizar el repositorio privado desde ese perfil, comprobar autenticación local. Si falta, el propietario realiza `gh auth login --web` de forma interactiva en ese Windows; el token permanece en el almacén local. La autenticación GitHub del conector de ChatGPT no se transfiere al equipo.
@@ -49,3 +49,10 @@ Recibir el artefacto MCP-OCP renovado y efectuar su instalación, bootstrap y ac
 - Evidencia y read-back actualizados en esta ficha, el índice EP y OEP.
 
 **Estado actual:** planificada, no iniciada. Destino designado: PC 7 / equipo RDC asociado / LOC-OTHER. Preflight, migración, dead-man, instalación y pruebas continúan pendientes. La creación de la tarea no modificó ningún equipo.
+
+
+## Designación del destino · 2026-11-09
+
+El operador designó **perfil Windows PC 7**, asociado a su dispositivo RDC, con ubicación **LOC-OTHER**. Esta decisión sustituye la pregunta pendiente sobre destino y clasificación. No se ha adquirido todavía el hostname/ID técnico del dispositivo ni se ha observado la sesión PC 7 en vivo.
+
+**Bloqueo material actualizado:** LOC-OTHER obliga a completar EP-TASK-003 y verificar el dead-man específico antes de runtime persistente. Las evidencias previas de cifrado, W:, custodia y workspace no se trasladan por inferencia al nuevo perfil. La instalación, bootstrap, `provision-operator`, `REGISTER <SID>` y aceptación siguen pendientes; no se ha operado el equipo mediante esta actualización.
