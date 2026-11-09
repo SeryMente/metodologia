@@ -1987,3 +1987,20 @@ Render WPF directo (RenderTargetBitmap) en perfil temporal Fila4, 1440×900, con
 **Secuencia siguiente:** (1) resolver perfil Windows propietario y compuerta presencial P012/P013; (2) terminar y aceptar la bóveda canónica; (3) introducir localmente su contraseña maestra y custodiar la recuperación del volumen; (4) crear/cifrar VHDX con XTS-AES256, Protection On y 100 %; (5) después clonar repositorios y materializar frentes/paquetes `Extensión`; (6) cerrar el contrato local-first de observabilidad y su persistencia B2. Hasta entonces, EP-TASK-003 permanece en curso y no hay workspace instalado.
 
 **Resultado del ciclo:** respuesta inicial registrada; documentación operativa actualizada y leída de vuelta; objetivo de materialización **NO EJECUTADO / BLOQUEADO** por identidad de perfil y compuertas de seguridad. No se simula instalación, cifrado ni aceptación.
+
+
+### Ampliación de autorización y presencia · preparación CLI en PC-14 y Fila 4 · 2026-11-09
+
+**A literal del operador:** «Si esotuy fisicamente frente a pc14 es la que uso ahora, puedes usar fila4, erl dispositivo de ese usuario, para instalar CI o lo que necesiutes en amgbas, siempre y cuando se acelere el desarrollo.»
+
+**Interpretación registrada:** se declara presencia física del operador ante PC-14 y se autoriza utilizar también el dispositivo Fila 4 para instalar CLI y otras herramientas de desarrollo necesarias en ambos equipos. Por el contexto Git/gh y la mención de instalación, «CI» se interpreta como «CLI»; la acción inicial se acota a Git for Windows y GitHub CLI (gh), herramientas necesarias para clonar/actualizar repositorios privados de `SeryMente`. La autorización no implica leer/copiar secretos, modificar bóvedas formales ni configurar BitLocker con una contraseña aún no recuperable por un flujo local.
+
+**Revalidación de dispositivos:**
+- PC-14 Online, dispositivo nuevo ID `4fc35a07-2192-4b88-81ec-96cb450d565e`. Identidad interactiva: `PC-14\PC 13`, perfil `C:\Users\PC 13`; Escritorio `C:\Users\PC 13\Desktop`. El proceso RDC informa token de Administradores.
+- Fila 4 Online, ID `d0bbb2a3-d7b4-45e1-8870-652c2c3844fc`. El proceso RDC informa `CENTRAL\MantenimientoRCI`, pero la sesión de consola efectiva del usuario destino es `fila4`, SessionId 4. La identidad de trabajo de archivos del workspace sigue siendo `CENTRAL\fila4`; no confundir la cuenta del agente con el usuario Windows propietario.
+- Preflight de software: PC-14 no tiene Git ni gh; dispone de winget y el catálogo `winget` ofrece GitHub CLI 2.103.3 y Git for Windows 2.56.0.4 (consulta 2026-11-09). Fila 4 ya tiene Git 2.45.2 y gh 2.52.0 (2024-06-24); actualización recomendada/pendiente.
+- BitLocker continúa sin cumplir OEP §105 en ambos discos de sistema: PC-14 C: FullyDecrypted/0%/Off/None; Fila 4 C: FullyEncrypted/100%/Off/XtsAes128. No se modificó BitLocker.
+
+**Ejecución autorizada próxima:** instalar Git y GitHub CLI en PC-14 y actualizar/normalizar las versiones disponibles en Fila 4, realizando las operaciones de usuario bajo la identidad interactiva propietaria de cada equipo. Verificar ejecutables, versión, PATH y `gh auth status`; no iniciar autenticación nueva ni transferir tokens. Los clones quedan supeditados a la protección cifrada del workspace y a la disponibilidad de autenticación GitHub local sin copiar secretos entre perfiles.
+
+**Compuertas aún vigentes:** esta autorización de herramientas no equivale a aceptación visual de la bóveda ni a disponibilidad de su contraseña maestra/clave de recuperación. No materializar repositorios en claro; no crear VHDX ni iniciar BitLocker hasta disponer del secreto local mediante la bóveda canónica y conservar el protector de recuperación en ella. Se mantiene la clasificación de PC-14 como `LOC-OTHER` por declaración del operador de que es cibercafé; el dead-man trigger aún no está implementado.
