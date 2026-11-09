@@ -422,3 +422,14 @@ Se abrió el enlace proporcionado por el operador en la sesión interactiva de F
 Read-back de la barra de direcciones en Chrome, SessionId 4: `chatgpt.com/c/6af1011d-12d4-83e8-ae6e-c6fcc995f994`.
 
 **Alcance:** el snapshot conserva código, pruebas, documentación, audios y respaldos de desarrollo; no constituye una copia de credenciales ni inicializa la bóveda formal. El archivo formal de 576 bytes en PC-14 sigue NO ATRIBUIDO y preservado. No se abrió, leyó ni transfirió.
+
+
+## Evaluación visual real de la UI y rechazo de aceptación · 2026-11-08
+
+La sesión interactiva Fila4 permitió capturar el árbol WPF con `RenderTargetBitmap` en un perfil temporal vacío, sin inicializar la bóveda formal. La ventana es 1440×900; XAML carga y expone los controles (incluido `SONIDO`) y el estado inicial SELLADA se representa en el árbol visual.
+
+La inspección confirma que la puerta actual sigue siendo una composición vectorial 2D estilizada, con textura superficial añadida y perspectiva 2.5D limitada. Aunque el tono pasó a acero oscuro/grafito y se integraron abrasión, bisagra lateral y WAV procedurales, **no cumple la expectativa de realismo / calidad premium del operador**. Se registra como RECHAZO DE ACEPTACIÓN VISUAL, no como fallo del núcleo criptográfico o del CLI.
+
+No declarar H3/H4/H10 cerrados. El pulido requerido ahora es una sustitución real del héroe visual, con textura/material de acero convincente, conjunto de bisagras/cierres con volumen, rueda giratoria independiente, sombras/reflejos y apertura con pivote mecánico; el chirrido original debe sincronizarse con los pasadores y el recorrido de la hoja. Mantener accesibilidad, control de sonido, reduced-motion, DPI y controles de autenticación nativos. La escena debe probarse con render WPF y aceptación humana en Fila4, no solo parsear XAML.
+
+No se introdujo credencial, no se modificó el almacén formal y no se tocó BitLocker en esta inspección.
