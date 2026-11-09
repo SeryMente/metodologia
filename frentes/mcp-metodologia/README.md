@@ -49,3 +49,8 @@ Identidad vigente: **MCP-OCP** (anteriormente MCP-METODOLOGIA). Se conserva el s
 ## Reanudación del trabajo · 2026-11-09
 
 Sink local por stdio está autorizado directamente por el operador; no se requiere consentimiento de otro titular ni gestión de generación. El acceso al repositorio privado se realiza mediante el conector GitHub autenticado; `gh auth login` en Windows no es requisito para operaciones ejecutadas con ese conector. No depender de identidades, rutas ni artefactos de terminales efímeras. La instalación persistente y el registro local del operador son fases posteriores. MCP-NORMATIVO sigue DESACTIVADO.
+
+
+## Sprint Sink local por RDC · 2026-11-09
+
+Plan y aceptación interfrente: [GOV-TASK-015](../gobernanza/📁%20🧭%20-%20Tareas%20provisionales/📁%20🧩%20-%20GOV-TASK-015%20-%20Sprint%20Sink%20local%20vía%20RDC/README.md). Backlog MCP vigente: [LISTA-TAREAS-PROVISIONAL.md v0.4](LISTA-TAREAS-PROVISIONAL.md). Estado: autorizado y planificado; implementación, build vigente, paquete e instalación no iniciados. DUG vigente: Samantha v385/NX-385m. La instalación EP se mantiene separada y depende de [EP-TASK-005](../ep/📁%20🧭%20-%20Tareas%20provisionales/📁%20🧩%20-%20EP-TASK-005%20-%20Instalación%20y%20aceptación%20de%20MCP-OCP%20local/README.md).
