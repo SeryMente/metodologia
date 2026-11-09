@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.52. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.53. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -12,7 +12,7 @@
 
 Adquirir este objeto como instrucciones del operador, subordinadas a las reglas superiores de plataforma y a autorizaciones específicas. Claudia es asistente/documental; Samantha es constructor/único escritor de código. Una asignación explícita posterior puede cambiar roles; las citas no lo hacen. La asignación específica de MOD-SCRIPTPWS queda delimitada en §94; la delegación funcional acotada de MOD-SYNC queda delimitada en §110 y no transfiere la titularidad del frente EP.
 
-El estado de reanudación vigente de este frente está en §60–§115; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
+El estado de reanudación vigente de este frente está en §60–§118; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
 
 Leer por relevancia: OEP actual→metacanon central→Sistema de Instrucciones/Metodología/Bootstrap vigentes→canon transversal EP→AGENTS.md y ep-medio-architectura.md→código/evidencia en commits exactos. Fuente caída no es «sin cambios». Un archivo no crea herramientas, credenciales ni memoria entre plataformas.
 
@@ -2956,4 +2956,31 @@ Los campos de generación y sesión del control EP se conservan como auditoría 
 
 ## 117. Plan de instalación y aceptación de MCP-OCP local · 2026-11-09
 
-Se materializó [EP-TASK-005 — Instalación y aceptación de MCP-OCP local por stdio](./📁%20🧭%20-%20Tareas%20provisionales/📁%20🧩%20-%20EP-TASK-005%20-%20Instalación%20y%20aceptación%20de%20MCP-OCP%20local/README.md) como tarea provisional del frente EP, sin control ni titularidad independiente. Desarrolla únicamente el handoff que corresponde a EP: preflight del equipo/perfil designado en vivo, ubicación de runtime/DB/respaldos dentro de almacenamiento protegido, bootstrap local interactivo, verificación del canal MCP stdio/RDC y aceptación. Depende de EP-TASK-003 para workspace cifrado y, si la ubicación es LOC-OTHER, para el dead-man específico. No se ejecutó instalación, no se modificó BitLocker, ACL, Registro ni host, y no se inició provision-operator. La selección del destino y las acciones interactivas del operador permanecen pendientes.
+Se materializó [EP-TASK-005 — Instalación y aceptación de MCP-OCP local por stdio](./📁%20🧭%20-%20Tareas%20provisionales/📁%20🧩%20-%20EP-TASK-005%20-%20Instalación%20y%20aceptación%20de%20MCP-OCP%20local/README.md) como tarea provisional del frente EP, sin control ni titularidad independiente. Desarrolla únicamente el handoff que corresponde a EP: preflight del equipo/perfil designado en vivo, ubicación de runtime/DB/respaldos dentro de almacenamiento protegido, bootstrap local interactivo, verificación del canal MCP stdio/RDC y aceptación. Depende de EP-TASK-003 para workspace cifrado y, si la ubicación es LOC-OTHER, para el dead-man específico. No se ejecutó instalación, no se modificó BitLocker, ACL, Registro ni host, y no se inició provision-operator. La designación del destino se recibió posteriormente y quedó registrada en §118; el preflight en vivo y las acciones interactivas permanecen pendientes.
+
+
+## §118. Designación del destino Windows para el sprint Sink local · 2026-11-09
+
+**Instrucción directa del operador recibida:** el destino Windows definitivo del sprint Sink local es la categoría «otro equipo o perfil Windows», clasificada como `LOC-OTHER`. El nuevo usuario/perfil Windows designado es **`PC 7`**. El operador indica que el dispositivo RDC está asociado a ese perfil.
+
+### Alcance exacto de la designación
+
+- `PC 7` se registra como identificador declarado del **usuario/perfil Windows**, no como hostname ni como nombre del dispositivo.
+- El **dispositivo RDC asociado** queda designado por relación declarada por el operador; su nombre técnico, ID RDC, estado Online, usuario efectivo, SID, rutas y sesión todavía requieren descubrimiento y read-back en vivo.
+- No se reutiliza como destino la identidad de sesiones/perfiles antiguos ni se traslada al perfil PC 7 el estado de BitLocker, W:, workspace, ACL, autenticación o credenciales observados en otros perfiles/equipos.
+- La designación resuelve la decisión de destino y ubicación para planificar; **no acredita** conexión RDC actual, identidad efectiva, presencia física, cifrado, migración de workspace, dead-man, instalación ni aceptación.
+
+### Consecuencia de LOC-OTHER
+
+LOC-OTHER activa obligatoriamente el dead-man específico de EP-TASK-003 antes de dejar persistente el workspace o el runtime MCP-OCP. El disparador debe estar implementado y probado en el host/perfil efectivo; al terminar el proceso de control EP debe bloquear BitLocker, desmontar y eliminar únicamente el contenedor/perímetro EP según el contrato vigente. No sustituirlo por Guardian genérico, polling, heartbeat, inactividad o tareas programadas.
+
+### Preflight requerido antes de cualquier operación local
+
+1. Descubrir el dispositivo RDC vinculado a PC 7 y comprobar que está Online y que hay capacidad de llamadas disponible.
+2. Leer usuario Windows efectivo, SID, hostname/ID del dispositivo, `USERPROFILE`, Escritorio real, unidad/perímetro y permisos; cotejar el perfil con la designación `PC 7`.
+3. Verificar en ese host/perfil el VHDX, XTS-AES256, `ProtectionStatus=On`, `FullyEncrypted/100 %`, protectores y read-back de custodia sin exponer secretos.
+4. Resolver si el workspace previo de 195 archivos/11 directorios es accesible desde el nuevo destino; elaborar manifiestos SHA-256 origen/destino y conservar el origen hasta read-back íntegro.
+5. Implementar y probar el dead-man LOC-OTHER; probar también que la limpieza se limita al contenedor EP y que no elimina datos ajenos.
+6. Verificar que runtime, base, respaldos y logs quedan dentro del perímetro cifrado y que el proceso MCP usa stdio, sin listener ni exposición pública.
+
+**Estado:** DESTINO DESIGNADO · PREFLIGHT NO EJECUTADO · DEAD-MAN NO VERIFICADO · INSTALACIÓN NO INICIADA. Ninguna operación en el equipo PC 7 fue ejecutada por esta designación documental.
