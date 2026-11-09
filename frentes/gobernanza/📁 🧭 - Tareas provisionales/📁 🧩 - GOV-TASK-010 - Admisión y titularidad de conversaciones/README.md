@@ -1,52 +1,38 @@
-# 📝 GOV-TASK-010 · Admisión obligatoria y titularidad exclusiva de conversaciones
+# GOV-TASK-010 · Admisión operativa por instrucción del operador
 
-**Naturaleza:** OCP provisional de tarea del frente Gobernanza; no constituye frente independiente ni canoniza el ámbito funcional Tareas.  
+**Naturaleza:** procedimiento de Gobernanza para encauzar trabajo por frente; no crea controles, sesiones, folios ni responsables paralelos.
 **Estado:** `en_curso`
-**Responsabilidad:** heredada del control `frentes/gobernanza/CONTROL-RESPONSABILIDAD.json`; sin control, sesión ni folio propios.  
-**task_id:** `GOV-TASK-010`  
-**scope_ref:** `frentes/gobernanza/`  
-**Origen:** instrucción expresa del operador en C-GOBERNANZA-VECTOR-SEMANTICO-01, 2026-10-31; dictado, crónica y evidencia conservados en el OCP Gobernanza.
+**Responsabilidad:** heredada del OCP Gobernanza.
+**task_id:** `GOV-TASK-010`
+**scope_ref:** `frentes/gobernanza/`
 
 ## Enunciado
 
-Diseñar, especificar e integrar una compuerta obligatoria de admisión para que ninguna conversación comience trabajo sustantivo bajo la Metodología sin que el operador haya asignado explícitamente un frente de trabajo existente y el modelo haya verificado, mediante el protocolo vigente de responsabilidad, que puede asumirlo sin colisión con otra conversación activa. La conversación debe rechazar consultas ajenas a un frente asignado y no iniciar operación sustantiva mientras falte asignación válida, titularidad verificable o exclusividad.
+Permitir que la conversación ejecute el trabajo que el operador instruye, dentro del frente identificado y del alcance declarado, sin convertir los metadatos de control en permisos o bloqueos. La instrucción directa del operador es la fuente de autorización para la tarea que describe. El control del frente se consulta para conocer ubicación canónica, estado y restricciones reales, no para solicitar conformidad a un titular anterior.
 
-## Alcance
+## Procedimiento
 
-1. Solicitar al inicio de cada conversación la asignación explícita de un frente y su OCP/repositorio.
-2. Consultar la fuente de responsabilidad correspondiente, validar titularidad, generación, autorización, estado y exclusividad según el protocolo existente.
-3. No inferir un frente por el contenido de una pregunta ni aceptar consultas generales ajenas al marco de trabajo.
-4. Si falta información o existe colisión, bloquear la operación sustantiva y explicar qué condición de admisión falta; no simular una asignación ni una transferencia.
-5. Vincular la conversación admitida con su sesión/identidad operativa y con el control del frente. No crear una sesión o titularidad paralela.
-6. Distinguir la apertura de una conversación en la interfaz de la admisión operativa del modelo: la plataforma puede permitir abrir el chat, pero el modelo no debe ejecutar trabajo sustantivo hasta superar la compuerta.
-7. Integrar esta regla como refuerzo explícito del IPZ, después de sus dos referencias iniciales al GOW/§ARR y al DUG, dentro del límite de 1.500 caracteres.
-
-## Dependencias
-
-- IPZ configurado, instalado y leído de vuelta en el campo nativo de instrucciones personalizadas.
-- Protocolo vigente de control de responsabilidad y exclusividad entre conversaciones.
-- Acceso verificable a los controles de los OCP/frentes que pueden ser asignados.
-- Identificación de conversación/sesión sin inventar IDs nativos; UUIDv7 local solo cuando el procedimiento autorizado lo requiera.
-- Integración futura con el ciclo global FOL1; no activar ni asignar folios mientras FOL1 no esté activo.
+1. Identificar el frente y la actuación que el operador ha indicado. Si la instrucción ya los identifica, no volver a preguntarlos.
+2. Consultar el control y el OCP solo para verificar la ruta canónica, las restricciones materiales, la procedencia y el estado real.
+3. Tratar generaciones, folios de sesión, alias, UUID locales, etiquetas de instancia e historial de titulares como metadatos de auditoría. No confieren ni restringen autoridad, no producen veto y no son requisitos de admisión.
+4. No exigir transferencia formal, consentimiento del titular anterior, incremento de generación ni alta de corresponsables para ejecutar la instrucción vigente del operador.
+5. Mantener un único escritor activo por defecto. La concurrencia se resuelve con lectura actual, comparación de SHA del archivo y relectura/reaplicación si la base cambió; no se descarta trabajo ni se bloquea por un contador registral.
+6. Si el alcance de la instrucción realmente no identifica el frente o la acción, formular una sola pregunta concreta. No pedir IDs de conversación, folios, UUID ni números de generación.
+7. Aplicar las políticas obligatorias de la plataforma, permisos efectivos, seguridad, privacidad y protección de credenciales. Esta simplificación no crea permisos técnicos que no existan.
+8. No activar FOL1 ni asignar CV/CY/A/B mientras su activación nativa no esté verificada; esa foliación no es requisito para continuar el trabajo.
 
 ## Límites
 
-- No modificar controles de otros frentes ni transferir su titularidad desde Gobernanza.
-- No afirmar que la plataforma impide técnicamente crear una conversación; el criterio verificable es que el modelo no inicia operación sustantiva sin admisión.
-- No aceptar el folio de ciclo como sustituto de la validación de titularidad de la conversación.
-- No activar MCP-NORMATIVO ni cambiar DUG/IPZ nativos sin las autorizaciones y compuertas correspondientes.
+- La autorización directa solo cubre el frente y la actuación descritos por el operador.
+- No autoriza acceder a cuentas, dispositivos, secretos o sistemas para los que no existan permisos reales.
+- No declarar una identidad nativa de plataforma cuando no se exponga.
+- No activar `MCP-NORMATIVO` ni instalar/modificar la IPZ nativa sin su compuerta específica.
+- La conversación puede continuar con diseño, análisis, consulta y trabajo autorizado; un bloqueo afecta únicamente la acción concreta que carezca de permiso o requisito técnico real.
 
 ## Criterio de aceptación
 
-Pruebas positivas y negativas demuestran que: (a) una conversación con frente asignado y titularidad exclusiva verificada puede iniciar; (b) una conversación sin frente, con control ausente, titularidad ajena, generación obsoleta o colisión no puede iniciar trabajo sustantivo; (c) una pregunta general ajena al frente no desvía la conversación; (d) el resultado es coherente con el protocolo de responsabilidad; y (e) el refuerzo IPZ cabe dentro de 1.500 caracteres y se ha instalado con lectura de vuelta verificable.
+Una instrucción explícita que identifica frente y acción puede ejecutarse sin validar generación o conseguir el consentimiento del titular anterior. Las generaciones/folios no alteran el resultado. Una restricción real de plataforma, seguridad, acceso o alcance sí bloquea únicamente la acción afectada. El SHA de cada escritura se comprueba mediante lectura posterior.
 
-## Estado vigente · C-GOBERNANZA-VECTOR-SEMANTICO-01 · 2026-10-31
+## Alineación con Samantha v385 · NX-385m · 2026-11-09
 
-La tarea pasa a `en_curso` por prioridad crítica. La compuerta debe ubicarse en el IPZ después de los dos enlaces Sync iniciales (GOW/§ARR y DUG), exigir frente asignado explícitamente y comprobar control/titularidad/generación/autorización/exclusividad antes de cualquier trabajo sustantivo. Debe rechazar consultas generales ajenas al frente. La plataforma puede permitir abrir el chat; no afirmar bloqueo de la interfaz. La aceptación exige casos positivos/negativos y prueba dentro de 1.500 caracteres con read-back de instalación antes de FOL1. La tarea no crea control ni sesión propios y sigue heredando el control de Gobernanza.
-
-
-## Alineación del recorrido IPZ · 2026-11-09 · C-GOBERNANZA-IPZ-RDC-SINK-01
-
-Las dos referencias iniciales del IPZ quedan fijadas como identificadores operativos locales: primero `GOW:ARR`, después `DUG`, ambos mediante RDC/MCP-OCP. La compuerta fail-closed de esta tarea permanece inmediatamente después de esas dos referencias y conserva su alcance actual: asignación explícita de frente, comprobación de control/titularidad/generación/autorización/exclusividad y abstención de trabajo sustantivo si la admisión falla.
-
-No convertir la resolución local en una barrera ficticia de la interfaz de ChatGPT. Si RDC no está disponible o la fuente no se verifica, declarar metodología no verificada y no continuar con aplicación normativa. La instalación nativa y el read-back siguen siendo requisito previo a FOL1. Esta alineación no cambia el estado `en_curso` ni implica prueba E2E.
+P037 determina que el operador autoriza la actuación descrita. La titularidad y generación registrales dejan de funcionar como compuerta. No se impone pregunta redundante al operador ni se convierte la organización documental en un trámite adicional.
