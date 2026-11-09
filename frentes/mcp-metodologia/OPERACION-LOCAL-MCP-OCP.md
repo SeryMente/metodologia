@@ -51,10 +51,7 @@ La configuración anterior es un ejemplo de contrato stdio genérico, no una con
 
 ## 4. Primera inicialización de datos y fuentes
 
-El servidor usa el directorio de datos del usuario actual:
-
-- Base SQLite: `%LOCALAPPDATA%\SeryMente\OCP MCP\data\ocp-mcp.sqlite`.
-- Respaldos locales: subdirectorio `backups` bajo el root de datos.
+La build 1.0.0 debe aceptar un root de datos explícito configurado por EP y validarlo antes de crear DB, claves, fuentes, logs o backups. La candidata histórica usaba `%LOCALAPPDATA%\SeryMente\OCP MCP`; ese default no se hereda como configuración de release. El root real debe quedar fuera del checkout y dentro de un volumen con protección efectiva verificada por EP. La ubicación y el proveedor concretos se fijan al implementar MCP-OCP-02/05; no se inventa una ruta de host.
 
 La primera inicialización debe hacerse sobre el perfil Windows que será titular local. Para importar las fuentes canónicas del manifiesto, ejecutar desde consola visible:
 
