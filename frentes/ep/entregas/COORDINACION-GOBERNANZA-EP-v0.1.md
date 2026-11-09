@@ -2219,3 +2219,32 @@ Antes de migrar el workspace: rotar RecoveryPassword con salida suprimida y valo
 
 La exportación indicada no es accesible, por lo que no se procesa su contenido ni se contesta su pregunta final. En cambio, las fuentes canónicas vigentes permiten corregir el estado documental de la custodia BitLocker: OEP §114 registra el protector nuevo almacenado con `VAULT_WRITE_READBACK_VERIFIED`, el protector anterior retirado y la limpieza del portapapeles verificada. W: permanece protegido XTS-AES256, Protection On y 100 %. La copia de 195 archivos/11 directorios sigue fuera del volumen; RDC reportó cuota 0 %, sin migración ni read-back SHA-256.
 
+
+
+## EP · cierre documental de reanudación y reconciliación · 2026-11-09 · 12:31 America/Mexico_City
+
+### Resultado del procesamiento
+
+- DUG vigente leído: `v384 · NX-384m`; no se modificó.
+- OEP vigente leído: `v0.3.48`, §§112–114; ya contenía y verifica la custodia del nuevo protector de recuperación. No se necesitó una nueva modificación del OEP.
+- Control EP: generación 3, un único titular; sin cambio.
+- EP-TASK-003: la rectificación de custodia BitLocker consta en su núcleo README y coincide con OEP §114: nuevo protector RecoveryPassword custodiado en EP Vault con read-back exacto, protector antiguo retirado, portapapeles limpiado; W: XTS-AES256/Protection On/100 %. La migración permanece pendiente por RDC 0 % de cuota; no se ejecutó ninguna acción en el host.
+- Índice provisional actualizado y leído de vuelta: commit `747135a711e28321f9d01490c009ad970b13bcf2`, blob `9358b79153c2c5ac30d3efa5d60317f8c6df38be`. Se mantienen EP-TASK-001 `pendiente`, EP-TASK-002/003/004 `en_curso`.
+- EP-TASK-004 se revisó sin cambio: PR #20 draft/no fusionada; H3/H4/H10 y aceptación visual/auditiva humana siguen pendientes.
+- EP-TASK-001 y EP-TASK-002 no recibieron cambios; no hay nueva evidencia para alterar sus estados.
+- No se ejecutaron operaciones B2, de host, de montaje, copia, borrado ni migración.
+
+### Persistencia y lectura de vuelta
+
+La actualización del índice se cotejó con el contenido UTF-8 enviado y su blob SHA de Git. El núcleo EP-TASK-003 conserva como última entrada la corrección de custodia posterior a OEP §114; no se volvió a escribir para evitar duplicar el mismo evento. Los documentos vigentes del frente y el manifiesto de revisión deben reflejar los blobs/hashes finales al concluir esta actualización.
+
+### Incidencia documental y limitación
+
+La exportación exacta `ChatGPT-EP-20261109-1230.md` no estaba accesible en la conversación, Biblioteca ni `main`; no se pudo leer, adquirir ni persistir. Por tanto, su pregunta final no puede responderse con evidencia. La exportación previa `ChatGPT-EP-20261109-1104.md` no se usa como sustituto.
+
+### Estado del ciclo
+
+**RECONCILIACIÓN DOCUMENTAL DE TAREAS: PERSISTIDA EN ÍNDICE Y LEÍDA DE VUELTA.**  
+**ADQUISICIÓN/PERSISTENCIA DE EXPORTACIÓN 1230 Y RESPUESTA A SU PREGUNTA FINAL: PENDIENTES POR FALTA DEL ARCHIVO.**  
+**CICLO GLOBAL: INCOMPLETO.**
+
