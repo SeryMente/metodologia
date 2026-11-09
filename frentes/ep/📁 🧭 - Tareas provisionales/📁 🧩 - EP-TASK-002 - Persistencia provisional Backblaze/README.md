@@ -2120,3 +2120,8 @@ En este ciclo no se volvió a autenticar contra Backblaze, no se consultó el bu
 ### Evidencia de titularidad temporal de la cuenta EP · 2026-11-09
 
 Se cotejó metadata del correo Backblaze `A Master Key Has Been Generated in Your Backblaze B2 Account`, remitente `no-reply@backblaze.com`, destinatario `blacksheepsup@gmail.com`, fecha `2026-11-09T21:33:19Z`. Las dos notas EP se capturaron 16,7 s y 22,9 s después, respectivamente. Esto corrobora temporalmente la procedencia de la captura, pero no valida cuál contenido es el key ID ni cuál es la aplicación key. No se leyó ni copió al chat el cuerpo sensible del mensaje.
+
+
+## Estado del ciphertext local previo al primer respaldo · 2026-11-09
+
+EP Vault CLI confirmó nueve nombres en el almacén, una nota DPAPI pendiente, sesión activa, esquema `ep-env-vault/1`, KDF PBKDF2-HMAC-SHA256/600.000 iteraciones y 1.324 bytes. Ciphertext local: `%LOCALAPPDATA%\Khora\secrets\ep-env-vault.enc.json`; SHA-256 observado `41F79D30165F8381AB8D89198139853467B3DFA405A8BAC8AB2FFAC45013752F`. Se conserva el original local. Este ciclo no autenticó, no subió, no descargó y no verificó un objeto remoto; el respaldo B2 permanece PENDIENTE.
