@@ -15,7 +15,7 @@
   "generation": 5,
   "authorization_ref": "Instrucción directa del operador en esta conversación (2026-11-06): «ChatGPT-OCP MCP-20261106-1557.txt. Documenta enpersistencia documental, del frente d trabajo OCP MCP, y retoma la respnsabiulidad.» Transferencia interpretada como TRANSFER_RESPONSIBILITY; no amplía autorización B.",
   "authorization_event": "C-MCP-OCP-RETOMA-20261106-01",
-  "scope": "Autoriza la construcción del servidor MCP de Metodología dentro de frentes/mcp-metodologia/: implementación de código, pruebas automatizadas, compilación en entorno de build, corrección de defectos, generación del manifiesto verificable y empaquetado del artefacto 0.1.0, además de documentación técnica de implementación y reportes de avance a coordinación central/EP. No autoriza instalación ni operación en el host persistente EP; cambios de configuración local EP, ACL, propietario, registro, firewall, servicios, tareas programadas o procesos del host; uso/modificación del control EP; cambios del DUG, ART-025, ART-027, IPZ, Sink productivo, MCP-NORMATIVO o Khora; despliegue público, exposición de puertos, credenciales externas ni cambios fuera de frentes/mcp-metodologia/.",
+  "scope": "Direct operator authorization covers the local Sink implementation over MCP stdio inside frentes/mcp-metodologia/: source-reader/importer code, GOW:ARR, DUG identity and 43 principle aliases, SINK:P001..P043, ordered batch responses, per-item hashes/frequency event, tests, build, manifest, package, runbook and implementation documentation. No prior-holder consent, generation increment, session folio or alias is required. Generations and session fields remain audit metadata only. Excludes EP host installation/operation or profile configuration, EP Vault/recovery secrets and external credentials, B2, public endpoints/listeners/tunnels/cloud services, changes to DUG/ART-025/ART-027/IPZ from this OCP, Khora, and MCP-NORMATIVO activation.",
   "expiry": null,
   "handoff": "TRANSFER_RESPONSIBILITY autorizada por instrucción directa del operador en esta conversación el 2026-11-06. Titular anterior: chatgpt-mcp-ocp-01a199d8-9209-725c-b764-a0a66ac54882 (UUIDv7 local 01a199d8-9209-725c-b764-a0a66ac54882; generación 4). Nuevo titular: chatgpt-mcp-ocp-01a1b2dc-8980-7046-a912-a6e84316b2c3 (UUIDv7 local 01a1b2dc-8980-7046-a912-a6e84316b2c3; ID nativo de conversación no expuesto; generación 5). Folio local: SES-20261106-CDF82783. Se conserva la identidad canónica MCP-OCP y la ruta frentes/mcp-metodologia/. La autorización B existente no cambia ni se amplía.",
   "session_folio": "SES-20261106-CDF82783",
@@ -90,21 +90,17 @@
   "implementation_authorization": {
     "event_id": "C-MCP-METODOLOGIA-IMPLEMENTATION-AUTH-20261031-01",
     "status": "AUTHORIZED",
-    "authorization": "direct operator instruction on 2026-10-31: end-to-end resolution within the previously agreed MVP scope",
-    "scope": "implement, compile, automate tests, package and publish manifest/artifact within frentes/mcp-metodologia/; report material milestones to EP/central coordination",
+    "authorization": "Direct operator instruction in current conversation (2026-11-09): bypass prior-holder approval and authorize local Sink over stdio within the MCP-OCP repository scope.",
+    "scope": "Implement the local Sink resolver over MCP stdio inside frentes/mcp-metodologia/: source-reader/importer code, GOW:ARR, DUG identity and 43 principle aliases, SINK:P001..P043, ordered batch responses, per-item hashes/frequency event, unit/contract/negative/integration tests, build, manifest, package, runbook and implementation documentation.",
     "exclusions": [
-      "EP host installation/operation",
-      "EP local configuration and ACL/registry/firewall/services/scheduled tasks/processes",
-      "DUG",
-      "ART-025",
-      "ART-027",
-      "IPZ",
-      "Sink production",
-      "MCP-NORMATIVO activation",
+      "EP host installation or persistent operation",
+      "EP local profile, ACL, registry, firewall, Windows services, scheduled tasks or processes",
+      "EP Vault secrets, recovery protectors or external credentials",
+      "Backblaze B2",
+      "public HTTP/listeners/tunnels/Cloudflare/Vercel/DNS",
+      "modifying DUG/ART-025/ART-027/IPZ from MCP-OCP",
       "Khora",
-      "public deployment or network exposure",
-      "external credentials",
-      "paths outside frentes/mcp-metodologia/"
+      "MCP-NORMATIVO activation"
     ]
   },
   "transfer_history": [
@@ -208,5 +204,25 @@
     "canonical_identity": "MCP-OCP",
     "authorization": "Instrucción directa del operador en esta conversación (2026-10-31): REtoma repsonsabilidad del Frente MCP OCP, de hecho se llama OCP MCP, pero renombrfalo, es MCP-OCP adjunta convewrascion en persistencia documental del frente.",
     "scope": "Renombramiento de identidad documental del frente existente. Se preservan el slug, las rutas, el núcleo y la separación de dominio; no se amplía la autorización técnica."
+  },
+  "generation_semantics": "AUDIT_METADATA_ONLY_NOT_AUTHORITY_OR_EXECUTION_GATE",
+  "operator_direct_scope_extension": {
+    "status": "AUTHORIZED_BY_DIRECT_OPERATOR_INSTRUCTION",
+    "recorded_on": "2026-11-09",
+    "source": "Current conversation; operator directly instructed Governance to bypass the prior-holder approval step and proceed with Sink local.",
+    "scope": "Implement the local Sink resolver over MCP stdio inside frentes/mcp-metodologia/: source-reader/importer code, GOW:ARR, DUG identity and 43 principle aliases, SINK:P001..P043, ordered batch responses, per-item hashes/frequency event, unit/contract/negative/integration tests, build, manifest, package, runbook and implementation documentation.",
+    "exclusions": [
+      "EP host installation or persistent operation",
+      "EP local profile, ACL, registry, firewall, Windows services, scheduled tasks or processes",
+      "EP Vault secrets, recovery protectors or external credentials",
+      "Backblaze B2",
+      "public HTTP/listeners/tunnels/Cloudflare/Vercel/DNS",
+      "modifying DUG/ART-025/ART-027/IPZ from MCP-OCP",
+      "Khora",
+      "MCP-NORMATIVO activation"
+    ],
+    "prior_holder_consent_required": false,
+    "generation_required": false,
+    "single_active_writer_default": true
   }
 }
