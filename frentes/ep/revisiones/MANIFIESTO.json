@@ -42,15 +42,15 @@
     },
     {
       "path": "frentes/ep/OEP.md",
-      "bytes": 394313,
-      "sha256": "36F0A25877E7CE7FC8DC3F94C981615F6D185E7BCD9D13704437653DD6F6144E",
-      "git_blob": "b0d621f68b2da6c75eaa519ff204365706739d36"
+      "bytes": 397823,
+      "sha256": "57F320A234822E110AD1AE10938CA50FE890A76AA37782E33E0C5CE8A48A5AF0",
+      "git_blob": "30255fbe3edc60434dc4ea0461bde6fbd6206071"
     },
     {
       "path": "frentes/ep/README.md",
-      "bytes": 4252,
-      "sha256": "F810A83D1247BB48EBAA2ED74DFFAED72F32822850A2C835F0CA0B0CDE14768A",
-      "git_blob": "ff7b7af3ac746b36235fbf99f184e9408bd6d7ec"
+      "bytes": 4288,
+      "sha256": "2AD71B55624F485749EB7D0BEE20BC0F33288131D64E308B5EB34E3F34F883E1",
+      "git_blob": "4b2a849765cbdf2340b1691ec20cfb876c4bb2e6"
     },
     {
       "path": "frentes/ep/artefactos/EP-H03-integracion-reproducible-parcial-20261011.zip.b64",
@@ -359,9 +359,9 @@
     },
     {
       "path": "frentes/ep/entregas/COORDINACION-GOBERNANZA-EP-v0.1.md",
-      "bytes": 295701,
-      "sha256": "D40EFB00768CED2D45C0110A4372984B491BEACEBE5BC2D1C502AFE405D1EDE2",
-      "git_blob": "9d5b9c457a2cb712ea2e7b4119092674ded266ba"
+      "bytes": 297727,
+      "sha256": "2077A81BD64BE37C32AB0AFBFBB59BEAE582F583DB7E4BFA4D945798755A8422",
+      "git_blob": "a9b28334102fa3480d1b00639eff0e3f67d34dfd"
     },
     {
       "path": "frentes/ep/originales/ChatGPT-EP-20261107-1111.txt",
@@ -377,9 +377,9 @@
     },
     {
       "path": "frentes/ep/📁 🧭 - Tareas provisionales/README.md",
-      "bytes": 15862,
-      "sha256": "9F9B2224936BF424FB38C57B6262755DFCD126D0034B1CCAE78E530F5A4816F7",
-      "git_blob": "1851e81942abc400f73187cd1760511dfee54b17"
+      "bytes": 16496,
+      "sha256": "0C28387C57DA7568E2B67BCFFC2E4FF7E8BB2224BF3DFF5EED427076BD639CC0",
+      "git_blob": "c3fb061d584cf877986c99be81df04447043512f"
     },
     {
       "path": "frentes/ep/📁 🧭 - Tareas provisionales/📁 🧩 - EP-TASK-002 - Persistencia provisional Backblaze/README.md",
@@ -473,9 +473,9 @@
     },
     {
       "path": "frentes/ep/CONTROL-RESPONSABILIDAD.json",
-      "bytes": 19681,
-      "sha256": "FFBFC40BCA9FA232E0318B68623AF8CFC6CFAA0537714E694DE272C281EC19AB",
-      "git_blob": "b6f719ac9d5b4e6fc9860ead666ac7268a145c77"
+      "bytes": 21623,
+      "sha256": "BD10A127054463B37C08A920F0D76DCE677E5363E1A43D001BECC841848CBB29",
+      "git_blob": "b76614cb71c7c9f0090e1c7205dc582ae2e79ec6"
     },
     {
       "path": "frentes/ep/originales/ChatGPT-EP-20261108-1112.md",
@@ -525,13 +525,24 @@
     "No recovery protector has yet been generated or stored in EP Vault; local master-password entry in manage-bde is awaiting the operator.",
     "The 195 existing files under Desktop/SeryMente/signal-interpreter remain on the original workspace and were not moved to the VHDX.",
     "EP Vault 3D implementation remains in draft PR #20 and is not merged to main; human visual/auditory acceptance and H10 remain pending.",
-    "No B2 credential recovery, B2 authentication, bucket/object operation, or restore occurred in this cycle."
+    "No B2 credential recovery, B2 authentication, bucket/object operation, or restore occurred in this cycle.",
+    "EP BitLocker recovery protector exists on W: but its secret has not been stored/read back in formal EP Vault; do not claim recovery custody.",
+    "Workspace data under Desktop/SeryMente has not been moved to the encrypted VHDX; existing plaintext copy remains in place.",
+    "EP Vault PR #20 remains draft and unmerged; human visual/auditory acceptance/H10 remain pending."
   ],
-  "prior_readback_verified": "PASS: 2026-11-09 main read-back matched the preserved ChatGPT-EP-20261109-1104.md export and the updated EP control, OEP v0.3.45, front README, provisional task index, EP-TASK-003/004 READMEs and DTC. The manifest itself is excluded from its own file list to avoid recursive hashing.",
+  "prior_readback_verified": "PASS: 2026-11-09 canonical main read-back matched the transfer control generation 3, OEP v0.3.46, EP front README, provisional task index, EP-TASK-003/004 READMEs, DTC and preserved ChatGPT-EP-20261109-1104.md export. All updated file hashes and Git blobs are recorded in the manifest; self-hash excluded.",
   "latest_review_source_commit": "fca288d6c359c2e39f1bc621ed91f8ac32217f38",
-  "current_event": "C-EP-ADD-CO-RESPONSIBLE-20261109-01: explicit ADD_CO_RESPONSIBLE verified at generation 2; 2026-11-09 continuity export persisted; EP Vault 3D design and code/test progress recorded; PC-14 VHDX created but BitLocker remains pending local password entry and recovery protector.",
-  "verification_scope": "DOCUMENTATION_COMMITTED_AND_READBACK_VERIFIED: export, EP control gen2, OEP v0.3.45, README, task index, EP-TASK-003/004 and DTC. PC-14 GUI 3D build/test suite passed locally and new UI launched; formal vault hash remained unchanged. VHDX created empty on W:; no BitLocker encryption/protection yet, no recovery protector stored, no workspace migration. DUG unchanged. PR #20 remains draft/unmerged; no B2 operations.",
+  "current_event": "C-EP-TRANSFER-RESPONSIBILITY-20261109-01: explicit TRANSFER_RESPONSIBILITY verified at generation 3; previous titular released, existing co-responsible promoted as sole primary owner; export, OEP v0.3.46, READMEs and DTC read back verified. PC-14 workspace VHDX XTS-AES256/Protection On/100% is prepared but recovery custody and data migration remain pending; no B2 operations.",
+  "verification_scope": "DOCUMENTATION_COMMITTED_AND_READBACK_VERIFIED: transfer C-EP-TRANSFER-RESPONSIBILITY-20261109-01 at generation 3, previous owner released, one active titular, local alias/UUIDv7/SES retained; OEP v0.3.46 §113, front README, task index, TASK-003/TASK-004, DTC and source export. PC-14 BitLocker W: XTS-AES256/Protection On/FullyEncrypted/100% with password protector; recovery protector was created but secure storage in EP Vault has not been verified. Workspace data not migrated. PR #20 remains draft/unmerged. No B2 operations. DUG unchanged.",
   "updated_on": "2026-11-09",
-  "latest_oep_version": "v0.3.45",
-  "latest_dtc_blob": "9d5b9c457a2cb712ea2e7b4119092674ded266ba"
+  "latest_oep_version": "v0.3.46",
+  "latest_dtc_blob": "a9b28334102fa3480d1b00639eff0e3f67d34dfd",
+  "current_responsible": {
+    "owner_alias": "chatgpt-C-EP-TRANSFER-RESPONSIBILITY-20261109-01-SES-20261109-E032FC60",
+    "instance": "chatgpt-ep-owner-2026-11-09-E032FC60",
+    "generation": 3,
+    "session_folio": "SES-20261109-E032FC60",
+    "local_conversation_uuidv7": "01a1c16c-f0fa-7273-a0f8-a1dde032fc60",
+    "native_conversation_id": "NOT_EXPOSED"
+  }
 }
