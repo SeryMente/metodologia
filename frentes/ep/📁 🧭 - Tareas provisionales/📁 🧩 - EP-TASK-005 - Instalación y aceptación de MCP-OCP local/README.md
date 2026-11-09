@@ -28,13 +28,13 @@ Por instrucción directa del operador, la aceptación EP incluye la apertura aut
 
 - **Responsabilidad MCP-OCP:** entregar `OcpMcp.Panel.exe`, contrato `PANEL-OBSERVABILIDAD.md`, schema de estado/eventos, hashes y pruebas.
 - **Responsabilidad EP:** escribir atómica y leer de vuelta `monitor/session.json` con `sessionState=ACTIVE`, `sessionStartedAtUtc`, `protectionState` y `protectionCheckedAtUtc`; abrir el panel como proceso hijo del controlador de sesión solo después de validar la sesión/manifest y completar los gates de seguridad aplicables, incluido el dead-man LOC-OTHER ya exigido por esta tarea. El archivo no contiene SID ni secretos.
-- La ventana permanece abierta mientras EP continúe ACTIVE. Puede minimizarse por el operador; al finalizar la sesión EP, el controlador la cierra limpiamente y verifica que no quede proceso huérfano.
+- La ventana permanece abierta como aplicación mientras EP continúe ACTIVE. X/Alt+F4 la minimiza a la barra de tareas para evitar cierres accidentales; el operador puede restaurarla. Al finalizar la sesión EP, el controlador la cierra limpiamente y verifica que no quede proceso huérfano.
 - El panel puede abrir antes que el servidor; debe mostrar “Sesión activa · esperando servidor MCP”. Si el servidor se cae pero EP permanece ACTIVE, la ventana sigue abierta y muestra el estado detenido/desconectado.
 - La apertura no se configura como tarea programada, servicio Windows ni arranque genérico de inicio de sesión. No iniciar panel si el perfil/sesión/volumen/gates EP no están verificados.
 - El panel solo lee `monitor/session.json` (escrito por EP), `monitor/state.json` y `monitor/events.jsonl` (escritos por MCP-OCP) del root protegido. EP conserva ACL y protección del almacenamiento; no se copian secretos ni datos de fuente al panel. El estado de protección se muestra con la hora de la verificación EP; no se sondea BitLocker en segundo plano.
 - Esta integración no modifica EP-TASK-003: el dead-man conserva su contrato específico y no se convierte en heartbeat/monitor general.
 
-**Prueba de aceptación EP:** EP escribe/coteja session.json ACTIVE → panel abre; server ausente → “esperando servidor”; server iniciado por cliente STDIO → estados separados de proceso/protocolo/readiness; server terminado → desconectado; fin EP → panel se cierra sin huérfanos. Verificar hashes del binario y del manifest instalado.
+**Prueba de aceptación EP:** EP escribe/coteja session.json ACTIVE → panel abre visible; server ausente → “esperando servidor”; X minimiza/restaura; fin EP → cierre limpio; server iniciado por cliente STDIO → estados separados de proceso/protocolo/readiness; server terminado → desconectado; fin EP → panel se cierra sin huérfanos. Verificar hashes del binario y del manifest instalado.
 
 ## Dependencias y límites
 
