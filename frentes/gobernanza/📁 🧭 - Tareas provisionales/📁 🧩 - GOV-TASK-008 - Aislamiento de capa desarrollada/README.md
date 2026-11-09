@@ -1,4 +1,4 @@
-# 📝 GOV-TASK-008 · Catálogo, selección y recuperación individual mediante OCP MCP/Sync
+# 📝 GOV-TASK-008 · Catálogo, selección y recuperación individual mediante OCP MCP/Sink local vía RDC
 
 **Naturaleza:** OCP provisional de tarea; no es un frente independiente ni una unidad taxonómica canonizada.  
 **Estado:** `en_curso`  
@@ -80,3 +80,27 @@ Brechas frente al vector que deben resolverse en OCP MCP:
 7. El manifiesto inicial observado contiene DUG y núcleo OCP, no §ARR/GOW; la frescura frente a `main` figura `NOT_CHECKED_AGAINST_MAIN`.
 
 El código/resolución del servidor corresponde a OCP MCP dentro de su autorización; instalación/host y lectura de vuelta corresponden a EP. Gobernanza define el contrato y verifica aceptación. No abrir una nueva solicitud OCP mientras siga sin recibirse y analizarse la última respuesta registrada en el protocolo bilateral. No reinstalar Sink/Cloudflare por inercia. Trazabilidad: [C-GOBERNANZA-VECTOR-SEMANTICO-01](../../cronica/C-GOBERNANZA-VECTOR-SEMANTICO-01.md).
+
+
+
+## Decisión de entrega aprobada · Sink local mediante RDC · 2026-11-09 · C-GOBERNANZA-IPZ-RDC-SINK-01
+
+Se elige la opción local autenticada por el perfil Windows, invocada por RDC contra el servidor MCP-OCP local por stdio. Quedan sustituidas como vías de implementación para este desarrollo la exposición individual pública, Worker/Cloudflare Access, URLs Sync por principio y cualquier endpoint/túnel público. GOV-TASK-002 sigue cancelada; no se reactiva.
+
+**Contrato funcional:**
+- Capa 1: catálogo con exactamente 43 IDs, nombre de vista y MDP (11–16 palabras). No exponer los 43 textos desarrollados en el inventario inicial.
+- Capa 2: consulta obligatoria del texto completo mediante `SINK:Pxxx` cuando el MDP indique pertinencia, aun si el modelo recuerda el principio o lo consultó antes.
+- `GOW:ARR` recupera §ARR; `DUG` comprueba y manifiesta la fuente canónica y el pin vigente.
+- MCP-OCP entrega solo el principio solicitado. Cada objeto de respuesta contiene ID, título, texto desarrollado íntegro, versión/firma, commit/blob del DUG y SHA-256 propio.
+- Puede existir una invocación agrupada con IDs ordenados para reducir viajes RDC; cada principio conserva su resultado verificable y un evento independiente de frecuencia tras recuperación completa satisfactoria.
+- El manifiesto/hash cubre el conjunto exacto y ordenado, pin del DUG y huella de cada texto. El hash anterior de IDs seleccionados no basta.
+- La frecuencia mide accesos completos registrados por principio; no mide lectura consciente, comprensión, pertinencia ni aplicación. La latencia total del viaje RDC es otra métrica: `ipz.resolve.rdc.duration_ms`, gobernada por GOV-TASK-013.
+- El almacén local es una proyección cifrada derivada del DUG único. No se convierte en fuente normativa paralela ni se expone el texto en una URL pública.
+- Si la fuente no está importada, no está vigente, falla una huella o RDC no completa la operación, declarar metodología/principio no verificado y no aplicar desde memoria/MDP.
+- Los campos de selección automática ausentes en los 43 registros no se infieren. `MCP-NORMATIVO` permanece `DESACTIVADO`.
+
+**Pins de referencia del diseño:** DUG Samantha v384 / NX-384m, blob actualizado en el evento C-GOBERNANZA-IPZ-RDC-SINK-01; MCP-OCP main v0.1.21 al momento de la revisión. Antes de compilar, el frente MCP-OCP debe revalidar pins y reconciliar la candidata 0.1.0 histórica, que apunta a DUG v377/core v0.1.20.
+
+**Autorización interfrente:** la aprobación del operador en Gobernanza valida el requisito y el modo de entrega; no amplía por sí sola el `CONTROL-RESPONSABILIDAD.json` de MCP-OCP, que actualmente excluye Sink productivo. Su titular debe autorizar expresamente la ampliación en ese OCP antes de implementar. EP conserva autorización de perfil, host e instalación. Gobernanza no modifica esos controles.
+
+**Estado:** decisión de arquitectura resuelta; construcción, importación real, instalación y aceptación E2E siguen pendientes. Las alternativas HTTP/Cloudflare quedan como antecedentes, no como siguiente ejecución.
