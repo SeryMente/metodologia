@@ -4,7 +4,7 @@
 **Contenedor:** `frentes/ep/📁 🧭 - Tareas provisionales/`  
 **OCP padre y fuente de contexto:** `frentes/ep/OEP.md`  
 **Evento de creación:** instrucción directa del operador en esta conversación · 2026-10-31.  
-**Fuente normativa consultada:** DUG v373 · NX-373m · Metacanon 1.26, en `main`.
+**Fuente normativa consultada:** DUG v383 · NX-383m · Metacanon 1.5, en `main`.
 
 ## Naturaleza y límites
 
@@ -133,3 +133,10 @@ El operador autorizó una instancia provisional en claro por RDC para avanzar en
 La exportación íntegra se archivó en [ChatGPT-EP (1)-20261109-1031.md](https://github.com/SeryMente/metodologia/blob/main/frentes/ep/entregas/ChatGPT-EP%20(1)-20261109-1031.md): SHA-256 original `B08DEE8C0317EC2DDC28CD5D98925A975F1C571A1CC6B3C9852319CC945CF001`, commit `7260b1d398904f7dc13a76858d9f6f3c661831a7`, blob `0be706ff04bfe9158c0f33b2f984c3952a6d03e4`, 82,367 bytes / 1,645 líneas y read-back exacto. No se hizo `gh auth login`, no se leyeron/trasladaron tokens ni se almacenaron secretos.
 
 EP-TASK-003 sigue `en_curso`; la excepción no sustituye la migración posterior a VHDX/BitLocker ni el dead-man LOC-OTHER. EP-TASK-001 `pendiente`; EP-TASK-002 y EP-TASK-004 `en_curso`.
+
+## Delta de continuidad y ejecución · 2026-11-09
+
+- Exportación ChatGPT-EP-20261109-1104.md preservada en frentes/ep/entregas/, 999 líneas/38.069 bytes, SHA-256 de origen B032A6033BABC0B1061C2823D5B3C64C3A041DC842978E73B6D26216977805D4, blob f14febd7b5f673d9b2f7b1226603eb1243758ea0, read-back exacto.
+- EP-TASK-003: VHDX expandible de 100 GB creado y montado temporalmente como W:, sin cifrar y vacío; contraseña solicitada localmente; migración y recovery protector pendientes. Workspace actual contiene 195 archivos bajo signal-interpreter y se preserva.
+- EP-TASK-004: diseño hiperrealista v2 congelado antes de la implementación; GUI 3D WPF, pruebas sintéticas completas PASS y PC-14 actualizado. PR #20 sigue draft/no fusionada; H10 y aceptación visual humana pendientes.
+- EP-TASK-001 continúa pendiente; EP-TASK-002/003/004 permanecen en_curso.
