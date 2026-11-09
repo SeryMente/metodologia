@@ -4,15 +4,15 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.42. **Ancla:** el control formal de responsabilidad EP queda creado en generación 1 mediante asignación inicial autorizada; el antecedente de ausencia de control se conserva como histórico y no se declara transferencia desde un titular no verificable. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.43. **Ancla:** el control formal de responsabilidad EP queda creado en generación 1 mediante asignación inicial autorizada; el antecedente de ausencia de control se conserva como histórico y no se declara transferencia desde un titular no verificable. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
 ## LEER PRIMERO
 
-Adquirir este objeto como instrucciones del operador, subordinadas a las reglas superiores de plataforma y a autorizaciones específicas. Claudia es asistente/documental; Samantha es constructor/único escritor de código. Una asignación explícita posterior puede cambiar roles; las citas no lo hacen. La asignación específica vigente de MOD-SCRIPTPWS queda delimitada en §94 y no cambia los roles del resto de EP.
+Adquirir este objeto como instrucciones del operador, subordinadas a las reglas superiores de plataforma y a autorizaciones específicas. Claudia es asistente/documental; Samantha es constructor/único escritor de código. Una asignación explícita posterior puede cambiar roles; las citas no lo hacen. La asignación específica de MOD-SCRIPTPWS queda delimitada en §94; la delegación funcional acotada de MOD-SYNC queda delimitada en §110 y no transfiere la titularidad del frente EP.
 
-El estado de reanudación vigente de este frente está en §60–§107; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
+El estado de reanudación vigente de este frente está en §60–§110; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
 
 Leer por relevancia: OEP actual→metacanon central→Sistema de Instrucciones/Metodología/Bootstrap vigentes→canon transversal EP→AGENTS.md y ep-medio-architectura.md→código/evidencia en commits exactos. Fuente caída no es «sin cambios». Un archivo no crea herramientas, credenciales ni memoria entre plataformas.
 
@@ -2532,3 +2532,72 @@ El operador autorizó expresamente priorizar la instanciación del directorio me
 **Pendientes:** autenticación GitHub en el perfil local solo con autorización expresa; clones reales; clasificación de paquetes MV3; ratificar `Observabilidad` como hermana de `Extensión`; terminar/aceptar la bóveda; migrar después a VHDX + BitLocker XTS-AES256, protector primario de la bóveda y protector de recuperación custodiado en ella, ProtectionStatus On y EncryptionPercentage 100; dead-man trigger LOC-OTHER sigue NO implementado/NO activado.
 
 EP-TASK-001 permanece `pendiente`; EP-TASK-002, EP-TASK-003 y EP-TASK-004 permanecen `en_curso`. La excepción autoriza iniciar frentes no sensibles, no acredita clones, cifrado ni cierre del frente EP.
+
+
+## §110. Módulo funcional MOD-SYNC — Enlaces cortos canónicos para navegación IPZ · v0.3.43
+
+### 110.1 Identidad, subordinación y mandato
+
+- **Identificador interno:** \`MOD-SYNC\`; módulo funcional del frente Entorno Persistente (EP), subordinado al OEP. No constituye un FT, OCP, control de responsabilidad, sesión ni folio global independiente.
+- **Fuente única de estado:** este archivo, \`frentes/ep/OEP.md\`. La presente sección registra la definición funcional; no se crea otro núcleo ni una carpeta de módulo mientras el diseño esté en validación.
+- **Mandato:** instrucción directa del operador en la conversación receptora del 2026-11-09: crear Sync como módulo de EP, permitir la delegación transversal de responsabilidad para este encargo y presentar su propósito para validación antes de utilizarlo en la actualización del IPZ.
+- **Delegación acotada:** esta conversación recibe mandato funcional para definir MOD-SYNC y preparar su diseño inicial. No implica transferencia de titularidad del frente EP, no modifica su CONTROL-RESPONSABILIDAD.json ni transfiere la autoridad técnica de MCP-OCP. Tampoco modifica DUG, ART-025, ART-027, Sink ni el contrato OCPMSP.
+- **Estado:** \`MÓDULO REGISTRADO · PROPÓSITO PROPUESTO · PENDIENTE DE VALIDACIÓN DEL OPERADOR\`. No se declara implementado ni desplegado.
+
+### 110.2 Propósito propuesto para validación
+
+**Sync proporciona una capa persistente de enlaces cortos, estables y verificables para navegar hacia fuentes canónicas de Ser y Mente sin consumir espacio del IPZ con URLs extensas ni duplicar en él contenido normativo.**
+
+Su función es registrar y resolver alias breves hacia destinos canónicos exactos —documentos, secciones y anclas—, preservando la correspondencia alias→destino, su procedencia, su vigencia y su historial de cambios. El IPZ utiliza esos alias como puertas de entrada; Sync resuelve cada uno hacia la fuente oficial correspondiente.
+
+**Primer uso previsto para el IPZ:**
+1. Un alias corto hacia GOW §ARR, ancla canónica \`#gow-arranque-chatgpt\` del DUG actual.
+2. Un alias corto hacia la raíz del DUG canónico vigente en \`SeryMente/metodologia/main\`.
+
+Los slugs propuestos para validación son \`gow-arr\` y \`dug\`. El dominio base, la ruta pública y la infraestructura de resolución quedan pendientes de elección y comprobación; no se fabrican URLs operativas.
+
+### 110.3 Alcance funcional propuesto
+
+**Incluye:**
+- Crear, consultar, resolver, suspender, reactivar y retirar alias registrados.
+- Redirigir únicamente hacia destinos previamente registrados y permitidos; conservar rutas y fragmentos de ancla.
+- Mantener un registro de alias, destino canónico, estado, fecha de alta/cambio, versión de destino y procedencia.
+- Proteger las operaciones de administración y modificación; separar claramente administración autenticada y resolución pública de alias cuando el diseño de exposición lo permita.
+- Conservar trazabilidad suficiente para verificar que cada alias resuelve al destino aprobado y que un cambio no sustituyó silenciosamente la referencia.
+- Proporcionar contadores técnicos mínimos de resolución por alias, si se habilitan; estos miden accesos al enlace, no lectura consciente, comprensión ni aplicación normativa.
+
+**Límites de seguridad:**
+- No aceptar un destino arbitrario suministrado en el parámetro de la petición; no funcionar como open redirect.
+- No incluir secretos, tokens, credenciales ni datos personales en alias, destinos o query strings.
+- No servir ni copiar el contenido de documentos privados: Sync redirige al recurso canónico, pero no concede autorización para leerlo. El repositorio privado sigue requiriendo el conector o credencial de GitHub autorizados.
+- No convertir un enlace corto público en bypass de Cloudflare Access, GitHub, OIDC ni de ningún control de acceso del destino.
+- No cambiar destinos publicados sin autorización, historial y verificación; no reutilizar silenciosamente aliases retirados para otro recurso.
+
+### 110.4 Separación respecto de Sync/Sink de Gobernanza y OCPMSP
+
+MOD-SYNC es el módulo de EP responsable del registro y resolución de enlaces cortos. No debe confundirse con:
+- \`sync_bundle\` de OCPMSP: operación lógica de sincronización y entrega de un paquete normativo íntegro por ciclo, con atestación propia.
+- \`Sink\` de ART-027: mecanismo de consulta individual de principios y telemetría de frecuencia de acceso, pendiente de despliegue y prueba.
+
+MOD-SYNC puede proporcionar las referencias compactas utilizadas por una IPZ o por clientes autorizados, pero no clasifica principios, no autoriza ciclos, no construye ni libera paquetes normativos y no sustituye la consulta Sink. Cualquier integración futura con OCPMSP o Sink requiere su propio contrato y autorización en los frentes responsables.
+
+### 110.5 Primer hito y aceptación propuestos
+
+El primer hito será publicar y verificar únicamente los dos alias de navegación iniciales del IPZ. Para aceptarlos deberán cumplirse, como mínimo:
+1. Los dos aliases resuelven por HTTPS desde una sesión nueva y llegan al destino canónico exacto.
+2. Se preserva el fragmento \`#gow-arranque-chatgpt\` en el primer destino; el segundo abre la raíz del DUG vigente.
+3. Un alias inexistente o suspendido no redirige; un destino no registrado o no permitido se rechaza.
+4. Los destinos privados mantienen su autenticación original; el redirect no entrega el contenido ni concede acceso.
+5. El registro y la lectura de vuelta muestran alias, destino, estado, versión e historial coincidentes.
+6. No hay secretos en URL, logs ni respuestas públicas; los contadores, si se habilitan, no se presentan como prueba de lectura o aplicación.
+
+### 110.6 Dependencias y estado actual
+
+- **Dominio corto:** PENDIENTE de selección y titularidad/gestión verificadas.
+- **Infraestructura de resolución:** PENDIENTE de comparar alternativas y elegir el alojamiento compatible con EP. No se asume Vercel, Cloudflare, un servidor local ni un proveedor concreto.
+- **Registro persistente:** diseño pendiente; se elegirá el almacenamiento después de validar requisitos de disponibilidad, integridad, control de cambios y recuperación.
+- **Targets exactos:** el destino de GOW §ARR queda identificado por la ancla \`#gow-arranque-chatgpt\`; antes de publicar deberá comprobarse que el HTML canónico actual en \`main\` conserva esa ancla. El segundo destino será el documento DUG en su ruta canónica vigente.
+- **Implementación, DNS, endpoints, credenciales y despliegue:** NO EJECUTADOS.
+- **Relación con IPZ:** MOD-SYNC se utilizará como resolvedor de los dos enlaces cortos cuando el propósito sea validado y el primer hito supere aceptación. Hasta entonces, no insertar URLs ficticias ni declarar enlaces Sync operativos.
+
+**Decisión solicitada al operador:** validar, corregir o rechazar el propósito de MOD-SYNC descrito en §110.2 y sus límites funcionales de §§110.3–110.4. La validación del propósito habilitará preparar la especificación de implementación; no se interpreta por sí sola como aceptación de dominio, proveedor, credenciales ni despliegue.
