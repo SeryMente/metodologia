@@ -35,7 +35,7 @@ La tabla sustituye los PASS/estados de recibos históricos para la implementaci�
 | 1 | MCP-OCP-01 | P0 | Contrato de producto y frontera OCP/Khora/Jules | VERIFICADO_EN_NUCLEO_V0.1.22 | Un solo servidor local MCP-OCP por stdio; Khora/Jules separados; sin endpoints públicos. |
 | 2 | MCP-OCP-02 | P0 | Reconciliar código fuente remoto con main y pins actuales | PENDIENTE_SPRINT | Comparar ramas remotas `integration/ocp-mcp-0.1.0-selective-20261101` y `build/ocp-mcp-mvp-0.1.0` con main; no utilizar ZIP ni pin v377 como fuente vigente. |
 | 3 | MCP-OCP-05 | P0 | Fuentes, GOW:ARR, DUG y herramientas Sink | PENDIENTE_IMPLEMENTACION | Importar fuentes actuales; resolver GOW:ARR, DUG, SINK:P001..P043 y lote ordenado con hash/evento por recuperación. |
-| 4 | MCP-OCP-03 | P0 | Build y suite renovada | PENDIENTE_BUILD_ACTUAL | Build limpio con DUG v385/core actual; pruebas unitarias, contrato, negativos, integración stdio, data-root protegido y hash. No reutilizar 50/30/200 históricos. |
+| 4 | MCP-OCP-03 | P0 | Build y suite renovada | PENDIENTE_BUILD_ACTUAL | Build limpio con DUG v386/core actual; pruebas unitarias, contrato, negativos, integración stdio, data-root protegido y hash. No reutilizar 50/30/200 históricos. |
 | 5 | MCP-OCP-04 | P0 | Transporte RDC/stdio y perímetro | HISTORICAL_SMOKE_ONLY · E2E_ACTUAL_PENDIENTE | Mismo recorrido que usará el operador: initialize, tools/list, tools/call, respuesta completa, desconexión y reinicio; sin listener. |
 | 6 | MCP-OCP-10 | P1 | Pins, manifiesto y evidencia | PENDIENTE_EVIDENCIA_ACTUAL | Commits/blobs/SHA-256 DUG/core, SDK/RID, pruebas, paquete y limitaciones con read-back. |
 | 7 | MCP-OCP-07 | P1 | Paquete y runbook actuales | PAQUETE_HISTORICO_NO_RECUPERABLE | ZIP nuevo, verificación de extracción, manifest/hash y runbook actualizado; instalar copia local en `frentes/mcp-metodologia/instalacion-local/`. |
@@ -57,51 +57,72 @@ La tabla sustituye los PASS/estados de recibos históricos para la implementaci�
 
 **Cierre:** núcleo, esta lista y README reflejan la misma frontera y la separación se valida por revisión de rutas/dependencias.
 
-### MCP-OCP-02 — Reconciliación de la candidata ejecutable
+### MCP-OCP-02 — Reconciliación de código ejecutable contra main
+**Prioridad:** P0 · **Estado:** PENDIENTE_SPRINT.
+
+**Objetivo:** obtener una rama de trabajo limpia cuyo padre sea el HEAD vigente de main; conservar solo componentes históricos que pasen revisión contra el núcleo y los contratos actuales. Las ramas candidatas históricas son referencias de lectura, no bases de merge.
+
+**Trabajo:** verificar ramas/commits; comparar estructura y contratos; clasificar por componente REUSE / ADAPT / REWRITE / DROP; portar selectivamente el código a rama nueva; fijar .NET/SDK/RID compatible y reproducible; revisar dependencias, licencias y secretos.
+
+**Salida de cierre:** rama candidata desde main con base documentada; mapa de portabilidad; diff acotado; build inicial sin secretos; pruebas históricas clasificadas como antecedentes, nunca como PASS de 1.0.0.
+### MCP-OCP-03 — Calidad, pruebas y build de release
 **Prioridad:** P0 · **Estado:** PENDIENTE.
 
-La rama histórica `integration/ocp-mcp-0.1.0-selective-20261101` contiene una candidata .NET 10 / `net10.0` / `win-x64`, transporte stdio, con recibo histórico 31/31 unitarias, 29/29 integración y 200 componentes. Ese recibo está anclado al núcleo v0.1.16 y al commit base `419be285373ce5390be2020a954d382f11803674`; no es evidencia contra MCP-OCP v0.1.19. Se debe comparar el código y sus contratos con el núcleo actual, preservar historial y trabajar en una rama candidata; no integrar a `main` por inferencia.
+**Objetivo:** demostrar el comportamiento del producto nuevo con pruebas repetibles, no solo compilarlo.
 
-### MCP-OCP-03 — Build y pruebas renovadas
+**Pruebas mínimas:** build limpio; unitarias y contrato; initialize/tools/list/tools/call; health/readiness; ARR/DUG/catálogo; Sink individual y lote ordenado; hash correcto; entradas inválidas; fuente ausente/obsoleta/alterada; traversal/ACL; logs sin secretos; shutdown/restart; ausencia de listeners no autorizados. Reutilizar harness existente cuando siga válido y ampliar solo lo necesario.
+
+**Salida:** recibo ligado al commit de código y al main base, pins DUG/core, SDK/RID, comandos, conteos, PASS/FAIL, limitaciones y hashes. Release solo cuando suite y paquete pasen; no convertir resultados de candidata antigua en evidencia nueva.
+### MCP-OCP-04 — Transporte MCP STDIO y recorrido RDC
 **Prioridad:** P0 · **Estado:** PENDIENTE.
 
-Actualizar SDK/dependencias fijadas según el proyecto; validar compilación, unitarias, integración stdio, smoke, seguridad, negative tests, redacción de secretos, fail-closed, shutdown y hashes del paquete. El recibo nuevo identifica commit de código, commit de base, DUG/core blob, SDK, RID, tamaño, SHA-256, conteos de pruebas y limitaciones. No reutilizar resultados históricos.
+**Objetivo:** verificar el canal que se utilizará realmente en el perfil final.
 
-### MCP-OCP-04 — Transporte y perímetro local
-**Prioridad:** P0 · **Estado:** PENDIENTE.
+**Trabajo:** iniciar proceso local mediante cliente MCP/RDC autorizado; comprobar initialize, tools/list, tools/call/respuesta completa, cancelación/cierre, EOF y reinicio. Verificar stdin/stdout reservados al protocolo, logs únicamente saneados en stderr/archivo protegido, permisos mínimos y que no se crea listener HTTP/TCP, túnel o endpoint público.
 
-Preferir stdio sin servidor HTTP. Si una dependencia concreta impone HTTP, abrir solo loopback, validar la dirección efectiva con prueba negativa desde LAN, y no instalar túneles/proxies/firewall rules ni publicar URL. RDC administra el equipo; no cambia el perímetro del producto. La ruta de inicio/cierre, cuenta ejecutora, permisos de archivos y logs deben documentarse.
+**Salida:** recibo de smoke real del ejecutable de release y configuración del cliente, con ruta de binario y evidencia del perímetro. El smoke temporal histórico no cuenta como E2E instalada.
+### MCP-OCP-05 — Fuentes canónicas, herramientas de lectura y Sink
+**Prioridad:** P0 · **Estado:** PENDIENTE_IMPLEMENTACION.
 
-### MCP-OCP-05 — Fuentes y herramientas locales
-**Prioridad:** P0 · **Estado:** PENDIENTE.
+**Objetivo:** construir el conjunto mínimo de herramientas de lectura necesarias para MCP-OCP 1.0.0.
 
-Probar lectura de DUG/Metacanon/GOW vigentes, núcleo/control OCP, archivos de repositorio, estado Git y evidencia de pruebas. Separar fuente observada, inferencia y estado no verificado. Cualquier operación de escritura exige scope/permiso específico y confirmación aplicable; nunca convertir lectura de fuentes en autorización ni estado MCP-NORMATIVO.
+**Alcance funcional:** diagnóstico que diferencie proceso activo de readiness; importación/validación de fuentes; recuperación GOW:ARR; identidad y procedencia DUG (versión, firma, commit, blob SHA, SHA-256, adquisición y estado); catálogo 43 MDP; SINK:P001..P043 individual; lote de IDs que respete orden; lectura acotada de documentos/OCP bajo allowlist de repositorio/rutas. No crear herramientas MCP de escritura en 1.0.0 salvo necesidad expresa posterior.
 
+**Integridad:** respuesta individual con ID/título/pin exacto/hash de texto. Evento de frecuencia solo por recuperación íntegra satisfactoria. Hash de lote sobre serialización UTF-8 canónica de IDs ordenados, pins y hashes individuales. Fuente desactualizada, ausente, alterada, no importada, parámetro inválido o ruta fuera de allowlist ⇒ rechazo explícito; nunca fallback a memoria o MDP.
+
+**Salida:** operaciones/schemas implementados, ejemplos de respuesta y pruebas de contrato. Metadatos de aplicabilidad ausentes no se infieren; MCP-NORMATIVO queda DESACTIVADO.
 ### MCP-OCP-06 — Coexistencia con Jules por puente RDC independiente
 **Prioridad:** P0 · **Estado:** PENDIENTE · **Dependencia:** MCP-Jules y Khora-MCP.
 
 La coexistencia debe ser dos clientes/canales locales claramente separados: servidor MCP-OCP por stdio y puente Jules por stdio/RDC hacia Khora `/api/mcp`. El primer test autenticado de Jules es solo lectura (tools/list, fuentes, sesiones/actividades); no crea sesiones. No se supone que un proceso MCP stdio sea automáticamente visible para ChatGPT; se documenta el mecanismo efectivo de invocación a través de RDC.
 
-### MCP-OCP-07 — Paquete preliminar
+### MCP-OCP-07 — Paquete reproducible MCP-OCP 1.0.0
 **Prioridad:** P1 · **Estado:** PENDIENTE.
 
-Generar paquete portable local con manifest, hashes, launcher y guía. La entrega puede preceder al cierre de EP/B2. No presentarlo como instalado en EP ni aceptado por operador hasta el gate correspondiente. No incluir credenciales, tokens ni datos del usuario.
+**Objetivo:** generar un paquete local autosuficiente, reconstruible desde GitHub y fácil de instalar.
 
-### MCP-OCP-08 — Instalación EP
+**Contenido:** ejecutable y dependencias necesarias, launcher, configuración de ejemplo sin secretos, manifiesto de archivos, SHA-256, instrucciones de extracción/ejecución y runbook. Elegir publish mode/RID después del baseline, no por suposición.
+
+**Salida:** paquete nuevo disponible desde la ruta de entrega MCP-OCP; tamaño, RID, build commit, source commit, pins DUG/core y SHA-256. Extraer en root de prueba, cotejar archivos y repetir smoke. Esta tarea entrega paquete; no declara instalada la copia en checkout ni en EP.
+### MCP-OCP-08 — Handoff de paquete a EP y recepción de instalación
 **Prioridad:** P1 · **Estado:** BLOQUEADO_DEPENDENCIA_EP.
 
-EP define host, usuario, rutas, ACL, startup, servicios/procesos y actualización/rollback. MCP-OCP entrega artefactos e instrucciones; no cambia el host EP ni instala/arranca servicios bajo el control de otro frente sin autorización exacta.
+**Objetivo:** entregar paquete/runbook e información suficiente para que EP realice la instalación en el perfil designado. MCP-OCP no opera BitLocker, ACL, Registro, procesos persistentes ni root de datos EP.
 
+**Salida MCP:** SHA del paquete, manifest, versión, pins, guía y pruebas; ruta de entrega y recibo de transferencia/read-back. **Recepción EP:** EP-TASK-005 confirma identidad host, ruta instalada, archivos/hash, configuración STDIO/RDC, importación y aceptación. La instalación final queda en frentes/mcp-metodologia/instalacion-local/ dentro del checkout local de Metodología.
 ### MCP-OCP-09 — Respaldo y recuperación portable
 **Prioridad:** P2 · **Estado:** BLOQUEADO_P012_P013_Y_HOST_DESTINO.
 
 La propuesta portable de §8.2 permanece separada del MVP local. No implementar el re-enveloping/cambio de custodia de claves hasta la revisión de seguridad/arquitectura aplicable y presencia requerida; cross-host exige host/perfil autorizado. No bloquear MCP-OCP-02/03/04/07 por esta dependencia.
 
-### MCP-OCP-10 — Gobernanza y evidencia
-**Prioridad:** P1 · **Estado:** PENDIENTE.
+### MCP-OCP-10 — Pins, manifiesto y evidencia reproducible
+**Prioridad:** P1 · **Estado:** PENDIENTE_EVIDENCIA_ACTUAL.
 
-Mantener pin de DUG/Metacanon/GOW, consulta contextual de principios y evidencias minimizadas. El servidor puede exponer datos/gates de estado; no se anuncia evaluación normativa automática mientras MCP-NORMATIVO esté DESACTIVADO y falten datos/aprobación canónica.
+**Objetivo:** hacer que producto, fuentes, build y paquete se puedan auditar sin reconstrucción manual.
 
+**Contenido:** manifest de fuentes (DUG/Metacanon/GOW y revisión importada), commit/blob/SHA-256, schema/protocolo, SDK/RID, commit código/base, versión producto 1.0.0, herramientas expuestas, pruebas, archivos de paquete y limitaciones. Un evento de telemetría Sink cuenta solo recuperación exitosa; latencia RDC se registra aparte vía GOV-TASK-013.
+
+**Salida:** manifest determinista, SHA-256 de manifest/paquete, recibo estructurado y lectura de vuelta. No incluir secretos, texto privado innecesario ni telemetría de aplicación normativa.
 ### MCP-OCP-11 — Ciclo sandbox mediante Jules
 **Prioridad:** P1 · **Estado:** BLOQUEADO_HASTA_CONFIGURAR_MCP_JULES.
 
@@ -109,11 +130,18 @@ Una vez configuradas y aceptadas las tareas del frente MCP-Jules, se prepara una
 
 
 
-### MCP-OCP-12 — Bootstrap del perfil local definitivo
-**Prioridad:** P1 · **Estado:** BLOQUEADO_CONSENTIMIENTO_OPERADOR.
+### MCP-OCP-12 — Materialización local y bootstrap del producto
+**Prioridad:** P1 · **Estado:** BLOQUEADO_GATES_EP_Y_CONSENTIMIENTO_LOCAL.
 
-El paquete ya está compilado y probado en un root temporal de test. El bootstrap real debe hacerse sobre el perfil Windows que vaya a utilizar el servidor, con una ruta estable de extracción y un clon SeryMente/metodologia con los commits/blobs fijados. Después de verificar el ZIP, ejecutar import-sources para cifrar las fuentes canónicas con DPAPI CurrentUser. La provisión del operador crea claves criptográficas y enlaza el SID Windows, por lo que exige presencia y confirmación explícita en consola (`REGISTER <SID>`). No se ejecuta en esta fase documental ni se presume que el health READY de test equivale a perfil configurado. Esta tarea no instala en EP; el handoff EP continúa en MCP-OCP-08.
+**Objetivo:** instalar la copia local del servidor dentro del checkout de Metodología y preparar la instancia real de usuario.
 
+**Ruta obligatoria del programa:** checkout SeryMente/Repositorios/Metodologia/metodologia/; ejecutable/runtime en frentes/mcp-metodologia/instalacion-local/. No instalar el programa únicamente en LocalAppData. Añadir exclusión Git; binarios/configuración instalada no se versionan.
+
+**Datos separados:** DB SQLite, claves DPAPI CurrentUser, fuentes sensibles, logs y backups van a root independiente protegido, fuera del checkout y verificado por EP. No usar LocalAppData sin demostrar protección efectiva.
+
+**Secuencia:** paquete verificado → checkout completo/sincronizado → extracción en ruta obligatoria → root de datos protegido → import-sources con pins actuales → health/readiness real → consentimiento local y presencia para provision-operator/REGISTER <SID> → cliente STDIO/RDC → read-back. No sustituye EP-TASK-003/005 ni puede pasar por encima de sus gates.
+
+**Salida:** recibo host/perfil, ruta local, versión, commit/blob, SHA instalado, estado importación, readiness y bootstrap. Sin consentimiento, reportar pendiente; no simular registro.
 ## Dependencias entre frentes y límite de autonomía
 
 | Dependencia | Fuente de verdad | MCP-OCP puede | MCP-OCP no puede |
@@ -135,10 +163,10 @@ El paquete ya está compilado y probado en un root temporal de test. El bootstra
 
 ## Alineación vigente · 2026-11-09
 
-DUG vigente: Samantha v385 · NX-385m; commit `7dcdac6c62f9e8a27ce11f8fa0e4fc379a3d12f8`; blob `72cd2e8e4e6a594b300ba1868baeabc2472beb97`. El operador autorizó directamente Sink local por stdio, pruebas, build, paquete, manifiesto y documentación dentro de este OCP. No se necesita aprobación del titular anterior ni generación de control. GitHub privado se consulta mediante el conector autenticado; `gh auth login` local no es requisito. La instalación persistente EP y sus operaciones de custodia permanecen separadas. MCP-NORMATIVO sigue DESACTIVADO.
+DUG vigente: Samantha v386 · NX-386m; main base `82843bca9493a522405d840393c229d2af363342`; blob `22dca684830a36dff019b47811d9b800cc9bea0a`. El operador autorizó directamente Sink local por stdio, pruebas, build, paquete, manifiesto y documentación dentro de este OCP. No se necesita aprobación del titular anterior ni generación de control. GitHub privado se consulta mediante el conector autenticado; `gh auth login` local no es requisito. La instalación persistente EP y sus operaciones de custodia permanecen separadas. MCP-NORMATIVO sigue DESACTIVADO.
 
 
-## Reconciliación de ejecución · 2026-11-09 · DUG v385
+## Reconciliación de ejecución · 2026-11-09 · DUG v386
 
 - **Autorización Sink:** directa del operador y registrada en CONTROL-RESPONSABILIDAD.json; ningún titular anterior, generación ni folio es compuerta.
 - **Fuente candidata:** hay código C# recuperable en ramas remotas de GitHub; no está integrado en main. El código de esas ramas es base histórica para port/revisión, no release.
