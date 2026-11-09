@@ -1926,3 +1926,8 @@ ZIP completo: `20261108-PC14-pre-session-end-COMPLETE.zip`, 556,199 bytes, SHA-2
 El respaldo incluye código, GUI/XAML, CLI/Core, pruebas, WAV originales, backups de edición, documentación de EP-TASK-004 y la entrada de continuidad DTC. Se excluyen bóvedas formales, valores de secretos, notas DPAPI y sesiones de autenticación.
 
 La conversación solicitada se abrió en Chrome bajo `CENTRAL\\fila4`, sesión 4. La barra de direcciones fue leída de vuelta y coincide con `https://chatgpt.com/c/6af1011d-12d4-83e8-ae6e-c6fcc995f994`.
+
+
+### Evaluación visual de aceptación EP Vault · 2026-11-08
+
+Render WPF directo (RenderTargetBitmap) en perfil temporal Fila4, 1440×900, con el estado SELLADA y sin almacén formal. El árbol WPF y el control SONIDO cargaron, pero la puerta se mantiene visualmente vectorial 2D y no satisface el estándar premium/realista pedido por el operador. Estado de pulido: PARCIAL; aceptación visual: RECHAZADA/PENDIENTE. No cerrar H3/H4/H10. Próxima fase: superficie de acero con volumen/material realista, bisagras y cerrojos de volumen, volante animado independiente, apertura mecánica sincronizada con audio, y prueba visual/sonora en Fila4. Sin acceso a secretos ni cambios BitLocker.
