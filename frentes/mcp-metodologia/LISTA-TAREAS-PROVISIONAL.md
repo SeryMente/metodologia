@@ -1,4 +1,4 @@
-<!-- LIST_VERSION=0.4; LIST_STATUS=PROVISIONAL; NOT_A_CANONICAL_OBJECT=true -->
+<!-- LIST_VERSION=0.5; LIST_STATUS=PROVISIONAL; NOT_A_CANONICAL_OBJECT=true -->
 # Lista provisional de tareas · MCP-OCP
 
 > **ESTADO: PROVISIONAL · NO ES UN OCP NI UN CONTROL ADICIONAL.** Esta lista es una vista auxiliar enlazada desde el único núcleo MCP-OCP. El estado vivo y las decisiones de alcance permanecen en `MCP-METODOLOGIA.md`; la titularidad permanece exclusivamente en `CONTROL-RESPONSABILIDAD.json`. Las tareas y dependencias de otros frentes se enlazan sin apropiarse de sus objetos, controles o permisos.
@@ -6,10 +6,10 @@
 - **Frente:** MCP-OCP.
 - **Repositorio propietario:** `SeryMente/metodologia`.
 - **Ruta OCP:** `frentes/mcp-metodologia/`.
-- **Versión de la lista:** 0.4 (provisional; reconciliación del sprint Sink local en tres frentes).
+- **Versión de la lista:** 0.5 (provisional; reconciliación del sprint Sink local en tres frentes).
 - **Última actualización:** 2026-11-09.
 - **Gobierno leído:** Samantha v385 · NX-385m; Metacanon 1.29; GOW 2.18; DUG commit `7dcdac6c62f9e8a27ce11f8fa0e4fc379a3d12f8`; blob `72cd2e8e4e6a594b300ba1868baeabc2472beb97`. §ARR y P037 revisados; CNP P001/P004/P005/P038/P043 considerado.
-- **Núcleo enlazado:** [MCP-OCP · objeto canónico](MCP-METODOLOGIA.md), v0.1.23; esta lista v0.4 es su backlog auxiliar vigente.
+- **Núcleo enlazado:** [MCP-OCP · objeto canónico](MCP-METODOLOGIA.md), v0.1.24; esta lista v0.5 es su backlog auxiliar vigente.
 - **Control:** [CONTROL-RESPONSABILIDAD.json](CONTROL-RESPONSABILIDAD.json). Las generaciones y sesiones son metadatos de auditoría y no bloquean trabajo autorizado.
 - **MCP-NORMATIVO:** DESACTIVADO.
 - **Producto vs. documento:** MCP-OCP-v0.1.19 es versión documental. La candidata ejecutable 0.1.0 y su recibo histórico no constituyen una versión actualizada ni aceptada del producto.
@@ -146,3 +146,10 @@ DUG vigente: Samantha v385 · NX-385m; commit `7dcdac6c62f9e8a27ce11f8fa0e4fc379
 - **Root de datos:** Program.cs usa `%LOCALAPPDATA%\\SeryMente\\OCP MCP` por defecto. Antes del handoff se debe configurar un root de datos/backup dentro del volumen cifrado o demostrar que el volumen del perfil está protegido.
 - **Autenticación:** el conector GitHub de ChatGPT está autenticado para operaciones de repositorio desde esta conversación. La autenticación GitHub local del perfil Windows no se hereda; se valida por separado si build/import local lo necesita.
 - **Dependencias EP:** EP-TASK-003 para workspace protegido y dead-man si LOC-OTHER; EP-TASK-005 para instalación/aceptación. EP-TASK-004 no bloquea compilar Sink ni el trust root DPAPI del servidor.
+
+
+## Destino EP designado · 2026-11-09
+
+El operador designó el perfil/usuario Windows `PC 7`, asociado a un dispositivo RDC, con ubicación `LOC-OTHER`. Esta designación sustituye la selección pendiente del host/perfil. El hostname/ID técnico del dispositivo, sesión, usuario/SID efectivos, rutas, permisos y almacenamiento deberán verificarse en vivo por EP.
+
+Para MCP-OCP, este dato **no bloquea** reconciliar fuentes, implementar Sink, ejecutar pruebas ni generar el paquete. Sí bloquea handoff/bootstrap e instalación persistente hasta que EP complete EP-TASK-003: workspace/DB/runtime/respaldos protegidos y dead-man LOC-OTHER implementado, probado y leído de vuelta en el destino. El estado de cifrado observado previamente en otro perfil no se hereda.
