@@ -273,8 +273,9 @@
                     </Ellipse.Effect>
                 </Ellipse>
                 <Viewbox Stretch="Uniform" MaxWidth="670" MaxHeight="670" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <Canvas x:Name="VaultCanvas" Width="640" Height="640" Background="Transparent"/>
+                    <Viewport3D x:Name="VaultViewport" Width="640" Height="640" ClipToBounds="True"/>
                 </Viewbox>
+                <Canvas x:Name="VaultCanvas" Width="640" Height="640" Background="Transparent" Visibility="Collapsed"/>
             </Grid>
 
             <Border Grid.Column="1" Background="#0D1215" BorderBrush="#3B4549" BorderThickness="1"
