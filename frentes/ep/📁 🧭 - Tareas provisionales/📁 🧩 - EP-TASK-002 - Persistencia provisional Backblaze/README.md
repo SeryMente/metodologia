@@ -2048,3 +2048,46 @@ El preflight read-only más reciente de este ciclo identificó PC-7 como único 
 6. **P2-A/P3-A/P4-A — PENDIENTES:** no se creó outbox, worker, manifiesto operativo, política de retención ni procedimiento de restore; estas acciones no deben adelantarse con un destino/identidad sin resolver.
 
 **Resultado del ciclo:** se actualizaron las tareas y se completaron verificaciones locales de solo lectura. No se persistió ningún objeto nuevo en Backblaze. El respaldo no se simula ni se sustituye por una copia local sin protección. La siguiente acción técnica es restablecer el flujo B2 en el perfil propietario correcto y preparar el perímetro protegido; después ejecutar P0-C antes de automatizar P2-A.
+
+## Avance de cliente B2 y conexión a EP Vault · PC-7 · 2026-11-09
+
+### Infraestructura B2 habilitada
+
+- Binario oficial Windows instalado en %LOCALAPPDATA%\Programs\BackblazeB2\b2.exe.
+- Versión: b2 5.0.1, b2sdk 2.13.2.
+- Authenticode: Valid, firmante BACKBLAZE, INC.
+- SHA-256 instalado: C5865441BCEC988CD42ACB09092578E38DEC453A226283A212E95E14F925AADF; coincide con el hash de la release oficial 5.0.1.
+- CLI version y help de account, bucket, upload, file info y download respondieron. No se ejecutó account get, cuya salida incluye auth token.
+
+### Conexión local con EP Vault
+
+- EP Vault CLI v1.0.0: ENCRYPTED_FILE_PRESENT; schema ep-env-vault/1; PBKDF2-HMAC-SHA256, 600.000 iteraciones.
+- La sesión compartida DPAPI CurrentUser fue activa en el primer preflight. ListVariables devolvió únicamente KHORA_B2_MASTER_APPLICATION_KEY_ID y KHORA_B2_MASTER_APPLICATION_KEY. Ningún valor fue revelado.
+- Estado posterior: sessionActive=false. La sesión expiró; no se intentó capturar la contraseña por chat ni extraer material DPAPI.
+- Bóveda formal actual: 640 bytes; updatedAtUtc=2026-11-09T21:13:09.5685477Z; SHA-256 del ciphertext: F4F9FF4C24E04649706ED2A5C5F2CCB75D30066A840C118A821ED86B16E3D6D4. No se leyó ni descifró el archivo.
+
+### Intento de ejecución y límite efectivo
+
+Se preparó un worker efímero con allowlist de las dos variables anteriores, mapeo en memoria a los nombres de entorno B2, autorización mediante caché SQLite temporal con ACL restringida, consulta exclusiva de OCP-MCP, upload del ciphertext a ep-ocp/vault/, lectura de metadata, descarga y comparación SHA-256. El worker no contenía valores secretos y fue retirado.
+
+- Primera invocación EP Vault Run: parser de parámetros rechazó la invocación antes de ejecutar el proceso hijo.
+- Una invocación corregida fue rechazada por el control de seguridad de la plataforma antes de iniciar el proceso remoto. No se buscó otra ruta para evadir ese control.
+- b2 account authorize: NO EJECUTADO.
+- b2 bucket get OCP-MCP: NO EJECUTADO en vivo.
+- Upload, metadata read-back, download y restore: NO EJECUTADOS.
+- Staging, caché B2, snapshot y restore temporales: eliminados; read-back de ausencia PASS.
+
+### Estado reconciliado
+
+- B2_CLI=INSTALLED_5.0.1_SIGNATURE_AND_SHA256_VERIFIED.
+- EP_VAULT=ENCRYPTED_FILE_PRESENT_640_BYTES.
+- EP_B2_VARIABLE_NAMES=DISCOVERED_WITHOUT_REVEAL.
+- EP_VAULT_SESSION=EXPIRED_LOCAL_UNLOCK_REQUIRED.
+- B2_ACCOUNT_AUTH=NOT_EXECUTED.
+- B2_BUCKET_PREFLIGHT=NOT_EXECUTED.
+- VAULT_REMOTE_BACKUP=NOT_EXECUTED.
+- WORKSPACE_REMOTE_BACKUP=NOT_EXECUTED.
+
+Siguiente acción: desbloquear EP Vault localmente en el perfil Windows PC-7, sin compartir la contraseña, y mantener la sesión abierta. La ejecución desde esta asistencia sigue condicionada a que la plataforma permita iniciar el proceso hijo; no se eludirá una denegación del control de seguridad. Al habilitarse una ejecución permitida, la secuencia permanece bóveda ciphertext → workspace inventariado → restauración SHA-verificada.
+
+Estado de EP-TASK-002: en_curso. El cliente B2 quedó instalado y las variables fueron identificadas; no existe objeto remoto nuevo ni recibo de persistencia.
