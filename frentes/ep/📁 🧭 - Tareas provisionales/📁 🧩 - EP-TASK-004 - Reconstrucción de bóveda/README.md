@@ -433,3 +433,42 @@ La inspección confirma que la puerta actual sigue siendo una composición vecto
 No declarar H3/H4/H10 cerrados. El pulido requerido ahora es una sustitución real del héroe visual, con textura/material de acero convincente, conjunto de bisagras/cierres con volumen, rueda giratoria independiente, sombras/reflejos y apertura con pivote mecánico; el chirrido original debe sincronizarse con los pasadores y el recorrido de la hoja. Mantener accesibilidad, control de sonido, reduced-motion, DPI y controles de autenticación nativos. La escena debe probarse con render WPF y aceptación humana en Fila4, no solo parsear XAML.
 
 No se introdujo credencial, no se modificó el almacén formal y no se tocó BitLocker en esta inspección.
+
+
+## Ubicación de la bóveda en Metodología y dependencia con el workspace · 2026-11-09
+
+**Rectificación directa del operador:** la bóveda canónica de variables de entorno pertenece al repositorio privado `SeryMente/metodologia` y es un producto/frente de trabajo de Metodología. **No es una extensión Chrome**, no tendrá carpeta `Extensión` ni debe cargarse en `chrome://extensions`. Su código, contratos, pruebas y documentación no sensible se mantienen bajo el control del repositorio; los valores y archivos formales de bóveda quedan fuera de Git.
+
+EP-TASK-004 continúa siendo el registro provisional que sigue la reconstrucción de la bóveda dentro del frente EP. No se crea por inferencia un segundo OCP, control de responsabilidad, titular, generación o folio independiente. La forma documental de representar la bóveda como frente formal autónomo, si el operador pretende que sea distinto del producto interno de EP, deberá resolverse expresamente para evitar duplicar estado/titularidad. Mientras tanto, el alcance y evidencia de la bóveda permanecen aquí y en el OEP canónico.
+
+### Relación de secuencia con el workspace
+
+La estructura lógica del directorio `Desktop\SeryMente` y el inventario GitHub pueden documentarse en paralelo. Sin embargo, ningún clon ni dato de trabajo se materializa en claro. El volumen VHDX del workspace solo se cifrará cuando la bóveda canónica permita introducir localmente su contraseña maestra por un flujo verificado. Esa misma contraseña será el protector primario de BitLocker; la clave de recuperación será otro protector y deberá custodiarse en la bóveda canónica después de validar su read-back. Criterios de OEP §108: XTS-AES256, `ProtectionStatus=On`, `EncryptionPercentage=100`. No sustituir esto por cifrado del archivo de bóveda o por el estado de C:.
+
+### Estado de bóveda verificado / límites
+
+- El desarrollo Core/CLI/GUI, contratos y pruebas sintéticas está materializado en Fila 4 y existía históricamente una instalación en PC-14. La evidencia histórica no convierte la interfaz visual en aceptada.
+- La GUI sigue **RECHAZADA / NO ACEPTADA** por realismo insuficiente; el render WPF de 2026-11-08 mostró una puerta principalmente vectorial 2D. No cerrar H3/H4/H10.
+- En Fila 4 se generó localmente `assets/images/VaultDoor-BlackenedSteel.png` (650,100 bytes; SHA-256 `8E81AAC4671463A13BF6DC56C51E4DBE80AF2E0FE8DA9068324DA3C2587700DE`). El recurso todavía no está integrado en la GUI ni incorporado al respaldo/PR; generación local no equivale a interfaz terminada.
+- PR #20 continúa como entrega no fusionada según el último estado documentado. El código no debe considerarse incorporado a `main` hasta comprobar merge y read-back.
+- En la sesión anterior se observó un archivo formal de bóveda PC-14 de 576 bytes, de procedencia no atribuida. Debe permanecer intacto: no abrir, descifrar, copiar, sobrescribir ni eliminar hasta resolver su procedencia/autorización. Este ciclo no accedió a ese archivo ni a secretos.
+- Las variables B2 `KHORA_B2_KEY_ID` y `KHORA_B2_APPLICATION_KEY` no se consultaron ni verificaron en este ciclo.
+- PC-14 fue reautenticado como dispositivo RDC `4fc35a07-2192-4b88-81ec-96cb450d565e`; la consola activa observada es `PC-14\PC 13`, no `CENTRAL\fila4`. C: sigue `FullyDecrypted` / 0 % / protección Off. No se inicializó la bóveda ni se cambió BitLocker.
+
+### Estado de hitos después de esta rectificación
+
+| Hito | Estado correcto |
+|---|---|
+| H0 — Captura canónica | COMPLETADO |
+| H1 — Baseline técnico | PARCIAL |
+| H2 — Revisión B/C | COMPLETADO según aprobación presencial declarada del 2026-11-08 |
+| H3 — Diseño clean-room | CONTRATO/DESIGN persistidos; pulido visual premium incompleto y no aceptado |
+| H4 — UI funcional | PARCIAL; GUI y controles existen, pero experiencia visual y E2E de aceptación pendientes |
+| H5 — Sesión temporal | IMPLEMENTACIÓN PARCIAL; pruebas sintéticas PASS, E2E final pendiente |
+| H6 — CLI/headless | PARCIAL; documentación y prueba interproceso sintética, revisión/contrato completo pendiente |
+| H7 — Seguridad e integridad | PARCIAL; pruebas sintéticas PASS, revisión restante pendiente |
+| H8 — Regresión | PARCIAL; falta matriz integral de host, UI, accesibilidad y aceptación |
+| H9 — Documentación/release | PARCIAL; documentación existe, recurso visual no integrado y PR sin merge |
+| H10 — Corte y aceptación | PENDIENTE |
+
+**Resultado:** EP-TASK-004 sigue `en_curso`. El orden de dependencia es: terminar y aceptar la bóveda canónica; después utilizar su contraseña maestra y su recuperación para cifrar el volumen VHDX del workspace; solo entonces materializar repositorios y datos. No se afirma que el cifrado de workspace ni la aceptación de bóveda estén concluidos.
