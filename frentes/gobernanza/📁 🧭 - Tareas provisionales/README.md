@@ -21,12 +21,12 @@ El núcleo de cada objeto conserva identificador local, enunciado, referencia re
 |---|---|---|---|
 | GOV-TASK-001 | en_curso | Validación de microdescriptores de pertinencia | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-001%20-%20Validaci%C3%B3n%20de%20MDP/README.md) |
 | GOV-TASK-002 | cancelada | Despliegue Sink/Cloudflare (antecedente supersedido) | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-002%20-%20Despliegue%20Sink%20y%20frecuencia/README.md) |
-| GOV-TASK-003 | pendiente | Prueba E2E de OCP MCP/Sync | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-003%20-%20Consulta%20privada%20E2E/README.md) |
+| GOV-TASK-003 | pendiente | Prueba E2E de OCP MCP/Sink local vía RDC | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-003%20-%20Consulta%20privada%20E2E/README.md) |
 | GOV-TASK-004 | pendiente | Concluir la incubación y decidir el ámbito Tareas | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-004%20-%20Incubaci%C3%B3n%20del%20%C3%A1mbito%20Tareas/README.md) |
 | GOV-TASK-005 | pendiente | Resolver referencias incompletas P020/P021/P033/P034 | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-005%20-%20Integridad%20de%20principios/README.md) |
 | GOV-TASK-006 | en_curso | Reconciliar divergencias documentales de Gobernanza | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-006%20-%20Reconciliaci%C3%B3n%20documental/README.md) |
 | GOV-TASK-007 | en_curso | Reconciliar IPZ y cerrar el corte FOL1 | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-007%20-%20IPZ%20y%20FOL1/README.md) |
-| GOV-TASK-008 | en_curso | Catálogo, selección y recuperación individual mediante OCP MCP/Sync | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-008%20-%20Aislamiento%20de%20capa%20desarrollada/README.md) |
+| GOV-TASK-008 | en_curso | Catálogo, selección y recuperación individual mediante OCP MCP/Sink local vía RDC | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-008%20-%20Aislamiento%20de%20capa%20desarrollada/README.md) |
 | GOV-TASK-009 | en_curso | Revisar el GOW y mantener visible su vocabulario inicial esencial | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-009%20-%20Revisi%C3%B3n%20del%20glosario%20operativo/README.md) |
 | GOV-TASK-010 | en_curso | Admisión obligatoria y titularidad exclusiva de conversaciones | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-010%20-%20Admisión%20y%20titularidad%20de%20conversaciones/README.md) |
 | GOV-TASK-011 | en_curso | DTC — Dinámica Trilateral por Ciclo | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-011%20-%20Coordinación%20bilateral%20recurrente/README.md) |
@@ -45,13 +45,13 @@ El núcleo de cada objeto conserva identificador local, enunciado, referencia re
 
 | # | Entregable verificable | Estado | Propietario/fuente | Evidencia que falta para aceptar |
 |---:|---|---|---|---|
-| 1 | IPZ ≤1.500 caracteres; dos referencias Sync en orden §ARR/GOW → DUG; después compuerta fail-closed; preservar las seis distinciones de v0.7 y salvaguardas | `BLOQUEADO` | GOV-TASK-007 | v0.7 tiene 2.467 caracteres; v0.8 tiene 1.488 pero omite salvaguardas; v0.9 1.478 es solo borrador conversacional, no candidato persistido. Falta versión completa ≤1.500, verificación de URLs/anclas y lectura de vuelta en el campo nativo. |
+| 1 | IPZ ≤1.500 caracteres; referencias locales GOW:ARR → DUG vía RDC; después compuerta fail-closed; preservar las seis distinciones de v0.7 y salvaguardas | `BLOQUEADO` | GOV-TASK-007 | v0.7 tiene 2.467 caracteres; v0.8 tiene 1.488 pero omite salvaguardas; v0.9 1.478 es solo borrador conversacional, no candidato persistido. Falta versión completa ≤1.500, verificación de URLs/anclas y lectura de vuelta en el campo nativo. |
 | 2 | FOL1 y foliación global/OCP activados únicamente después de instalación IPZ verificada | `PREPARADO · NO_ACTIVADO` | GOV-TASK-007; registro maestro FOL1 | IPZ nativa no instalada/verificada. Registro maestro blob `b93cbef77f2fa1a6e4290ae8177e957a1616e47b`: `PREPARADO_PENDIENTE_ACTIVACION_IPZ`, cobertura `KNOWN_INVENTORY_ONLY`, contadores en cero y sin asignaciones. |
 | 3 | Admisión fail-closed positiva/negativa y rechazo de consultas fuera del frente | `EN_CURSO · NO_PROBADA_E2E` | GOV-TASK-010 | Casos positivos y negativos con frente explícito, control presente, titularidad, generación, autorización, exclusividad, colisión, control ausente y consulta ajena. No afirmar que la interfaz impide abrir chats; el modelo debe abstenerse de trabajo sustantivo. |
 | 4 | Catálogo de 43 principios y MDP de pertinencia; nombres compactos `Principio DI · [1–3 términos]` | `PARCIAL · SEMÁNTICA NO VALIDADA` | GOV-TASK-001 | Hay comprobación estructural histórica (43 IDs/MDP y 11–16 palabras en v373) y matriz de pruebas (43 positivas + 8 negativas), pero la matriz es protocolo, no evidencia de ejecución. Faltan pruebas semánticas, colisiones, correspondencia etiqueta/ID/título y confirmación de insuficiencia deliberada del MDP. |
-| 5 | Consulta individual del texto desarrollado, ampliación ante insuficiencia y telemetría de frecuencia por acceso individual | `NO_E2E · BLOQUEADO` | GOV-TASK-008; OCP MCP | No está demostrado que un enlace individual entregue exactamente un principio, que cada apertura dispare frecuencia ni que se puedan pedir principios adicionales. La candidata 0.1.0 no sirve como aceptación actual: su recibo 31/31 unitarias, 29/29 integración y 200/200 piezas está pinned a core v0.1.16, no es build fresco de v0.1.18. |
-| 6 | Decisión canónica de ruta `Sync` vs `Sink` | `RECONCILIACIÓN PENDIENTE` | GOV-TASK-006/008/009; DUG ART-027; vector rector | El vector operativo pide Sync; el texto vigente DUG/ART-027 conserva Sink. No tratarlos como equivalentes ni desplegar Sink por inercia. Resolver la precedencia con autorización y actualizar contrato/implementación coherentemente. |
-| 7 | E2E OCP MCP: sesión/folio, inventario, selección, enlaces individuales, frecuencia, reconsulta y hash exacto del paquete de URLs | `PENDIENTE · NO_ACEPTADO` | GOV-TASK-003; OCP MCP | Pruebas positivas/negativas de ciclo y sesión, ID inexistente, URL no resoluble, fuente obsoleta, hash alterado, fallo cerrado, manifiesto vigente frente a main y hash del paquete exacto y ordenado de URLs; instalar y verificar con EP. |
+| 5 | Consulta individual local del texto desarrollado, ampliación ante insuficiencia y frecuencia Sink por principio | `NO_E2E · BLOQUEADO` | GOV-TASK-008; OCP MCP | No está demostrado que Sink local devuelva exactamente un principio por ID, registre frecuencia por recuperación ni permita reconsulta ante insuficiencia. La candidata 0.1.0 no sirve como aceptación actual: su recibo 31/31 unitarias, 29/29 integración y 200/200 piezas está pinned a core v0.1.16, no es build fresco de v0.1.18. |
+| 6 | Decisión de transporte: Sink local vía RDC; MOD-SYNC HTTP permanece separado | `RECONCILIACIÓN PENDIENTE` | GOV-TASK-006/008/009; DUG ART-027; vector rector | La decisión quedó resuelta: Sink es consulta local de principios vía RDC; MOD-SYNC es un módulo EP separado de enlaces HTTP y no participa en este flujo. No reactivar GOV-TASK-002/Cloudflare. |
+| 7 | E2E OCP MCP/RDC: contexto de sesión/ciclo, inventario, selección, consultas SINK:Pxxx, frecuencia por principio, reconsulta, manifiesto/hash exacto del paquete y latencia RDC | `PENDIENTE · NO_ACEPTADO` | GOV-TASK-003; OCP MCP | Pruebas positivas/negativas de sesión/ciclo, ID inexistente, fallo RDC, fuente obsoleta, huella alterada, fail-closed, manifiesto ordenado de textos; medir ipz.resolve.rdc.duration_ms y ejecutar instalación/read-back con EP. |
 | 8 | Persistencia de artefactos/Metodología y continuidad del estado/datasets MCP-OCP: preparación local, backup local, B2 remoto y restore cross-host como resultados separados | `BLOQUEADO · B2/RESTORE NO_VERIFICADOS` | EP-TASK-002; GOV-TASK-014; MCP-OCP | EP tiene autorización para preparar un almacén local independiente, pero la creación/captura aún no está ejecutada. Backup real de host no verificado; B2 remoto no autorizado/no probado; restore cross-host no probado y requiere segundo host autorizado más revisión P012/P013. Integración en main NO, instalación EP NO, aceptación operador NO. |
 | 9 | DTC recurrente: lectura, respuesta, procesamiento, documentación, read-back y retroalimentación por frente cada ciclo | `EN_CURSO_RECURRENT` | GOV-TASK-011; EP DTC; MCP DTC | EP-03 sigue OPEN; última respuesta de Gobernanza commit `efd4cd00f2088004a75b78e551e41adeeca7f99c`, blob `4875e272b25b6f2b4aa32f6f0caf6333a71f6bb2`; EP debe hacer read-back/acuse. MCP ciclo local 08 sigue CLOSED_VERIFIED; acuse post-cierre diferido al siguiente ciclo MCP. Sin monitoreo de fondo. |
 | 10 | Reconciliación de satélites y Gobernanza 1.0; GOW/§ARR sin autoridad normativa paralela | `EN_CURSO` | GOV-TASK-006/009 | GOV-TASK-006 todavía contiene referencias de DUG v373/control gen7, obsoletas respecto de v377/gen13. GOW humano declara 2.12 frente a estructura 2.14/127 términos; 12 nombres no aparecen literalmente en la sección humana. `identidad.md` no localizado en fuentes consultadas (no declarado inexistente). Inventario completo y decisión por satélite pendientes. |
@@ -66,12 +66,12 @@ El núcleo de cada objeto conserva identificador local, enunciado, referencia re
 |---|---|---|
 | GOV-TASK-001 | `en_curso` | Validación semántica de los 43 MDP. |
 | GOV-TASK-002 | `cancelada` | Despliegue Sink/Cloudflare cancelado; se conserva como antecedente. No cancelar el requisito de acceso individual/telemetría. |
-| GOV-TASK-003 | `pendiente` | Prueba E2E de OCP MCP/Sync. |
+| GOV-TASK-003 | `pendiente` | Prueba E2E de OCP MCP/Sink local vía RDC. |
 | GOV-TASK-004 | `pendiente` | Incubación del ámbito Tareas, diferida por titularidad separada. |
 | GOV-TASK-005 | `pendiente` | Recuperación autorizada de referencias incompletas P020/P021/P033/P034. |
 | GOV-TASK-006 | `en_curso` | Reconciliación documental y satélites; contiene referencias históricas obsoletas por corregir. |
 | GOV-TASK-007 | `en_curso` | IPZ, instalación nativa y FOL1. |
-| GOV-TASK-008 | `en_curso` | Capa MDP/selección/enlaces individuales/frecuencia/hash; brechas E2E abiertas. |
+| GOV-TASK-008 | `en_curso` | Capa MDP/selección/consultas Sink locales/frecuencia/manifiesto hash; brechas E2E abiertas. |
 | GOV-TASK-009 | `en_curso` | GOW/§ARR, colisión MDP y revisión de enlaces/versión. |
 | GOV-TASK-010 | `en_curso` | Admisión fail-closed; pruebas positivas y negativas pendientes. |
 | GOV-TASK-011 | `en_curso` | DTC trilateral recurrente, integración y verificación por ciclo. |
@@ -102,7 +102,7 @@ El núcleo de cada objeto conserva identificador local, enunciado, referencia re
 
 ### Prioridades del sprint
 
-1. **P0:** IPZ ≤1.500 e instalación/read-back; admission fail-closed; validación semántica de los 43 MDP; resolver Sync/Sink; completar OCP MCP E2E.
+1. **P0:** IPZ ≤1.500 e instalación/read-back; admission fail-closed; validación semántica de los 43 MDP; implementar Sink local vía RDC; completar OCP MCP E2E.
 2. **P0 continuidad:** persistencia EP/Metodología + estado operativo MCP-OCP con backup real, B2 remoto y restore cross-host verificados por separado; mantener gates y custodia.
 3. **P1:** reconciliar GOW/§ARR, referencias obsoletas, satélites y trazabilidad documental.
 4. **P1:** instrumentar medición temporal y análisis de fluidez; `NOT_MEASURED` hasta disponer de fuente y muestra.
@@ -126,10 +126,10 @@ El núcleo de cada objeto conserva identificador local, enunciado, referencia re
 
 ### Resultado que debe entregar el sprint
 
-- IPZ de máximo 1.500 caracteres: primero enlace GOW/§ARR, después DUG; ambos con navegación abreviada resoluble; después refuerzo de admisión fail-closed. §ARR es la primera lectura lingüística; DUG es la única fuente normativa y se considera completo, no solo los enlaces destacados.
+- IPZ de máximo 1.500 caracteres: primero GOW:ARR, después DUG; ambos como identificadores locales resolubles mediante RDC/MCP-OCP; después refuerzo de admisión fail-closed. §ARR es la primera lectura lingüística; DUG es la única fuente normativa y se considera completo, no solo los enlaces destacados.
 - Admisión: no iniciar trabajo sustantivo hasta que el operador asigne explícitamente un FT y se comprueben control, titularidad, generación, autorización y exclusividad. Preguntas ajenas al FT no desvían la sesión.
 - Principios: considerar el inventario completo de 43 principios; usar MDP de 11–16 palabras para significado/señal de pertinencia, no para aplicar; seleccionar los principios pertinentes y consultar su desarrollo completo cuando proceda.
-- OCP MCP: consulta por ciclo/sesión autorizada, paquete exacto de enlaces individuales a principios desarrollados, telemetría limitada a frecuencia de acceso, reconsulta ante insuficiencia y hash del paquete exacto en la salida.
+- OCP MCP: consulta por ciclo/sesión autorizada, manifiesto exacto y ordenado de principios desarrollados recuperados mediante SINK:Pxxx, telemetría limitada a frecuencia de acceso, reconsulta ante insuficiencia y hash del paquete exacto en la salida.
 - Foliación: FOL1 solo se activa después de instalar y verificar IPZ; antes de eso, folios globales CV/CY/A/B permanecen pendientes/no asignados.
 - Persistencia incorporada al sprint: Backblaze EP para artefactos elegibles y continuidad del estado/datasets del servicio MCP-OCP, con validaciones separadas de backup local, B2 remoto y restore cross-host.
 
@@ -137,7 +137,7 @@ El núcleo de cada objeto conserva identificador local, enunciado, referencia re
 
 | Control de resultado | Estado al corte | Tarea/fuente propietaria | Evidencia que falta para cerrar |
 |---|---|---|---|
-| IPZ ≤1.500 caracteres, dos referencias en orden y read-back nativo | `BLOQUEADO` | GOV-TASK-007 | Cotejar v0.7/v0.8; v0.8 (1.488) omite salvaguardas; completar versión íntegra, instalar y leer de vuelta el campo nativo |
+| IPZ ≤1.500 caracteres, GOW:ARR → DUG por RDC y read-back nativo | `BLOQUEADO` | GOV-TASK-007 | Cotejar v0.7/v0.8; v0.8 (1.488) omite salvaguardas; completar versión íntegra, instalar y leer de vuelta el campo nativo |
 | Admisión fail-closed positiva/negativa | `EN_CURSO · NO_PROBADA_E2E` | GOV-TASK-010 | Pruebas de frente explícito, control, titularidad, generación, autorización, exclusividad y rechazo de consultas ajenas |
 | Inventario y semántica de 43 MDP | `EN_CURSO` | GOV-TASK-001 | Matriz de 43 entradas, correspondencia ID/título/MDP, suficiencia de pertinencia y colisiones semánticas resueltas |
 | Lectura individual del desarrollo, telemetría y hash de paquete | `PARCIAL · NO_E2E` | GOV-TASK-008; OCP MCP | E2E de catálogo→selección→enlaces individuales→lectura→frecuencia→reconsulta→hash; no presumir que los alias están desplegados |
@@ -312,3 +312,21 @@ Se mantiene **GOV-TASK-014 — Integración y aceptación de persistencia Backbl
 - **Autoridad:** EP ejecuta transporte y persistencia del entorno; MCP-OCP determina datasets, consistencia, backup nativo, clave y prueba funcional; Gobernanza integra criterios y aceptación sin modificar OCP/control/código/host ajenos.
 
 La ficha GOV-TASK-014 contiene el alcance ampliado y criterios separados. Ninguna operación B2 ni restauración cross-host se declara ejecutada.
+
+
+## Rectificación vigente del flujo IPZ/Sink · 2026-11-09 · C-GOBERNANZA-IPZ-RDC-SINK-01
+
+La ruta aprobada para la consulta normativa es local, mediante RDC hacia MCP-OCP stdio. Esta decisión sustituye las menciones anteriores a URLs Sync o paquetes de URLs en GOV-TASK-003/007/008; el historial permanece visible como antecedente.
+
+**Secuencia compacta:** `GOW:ARR` → `DUG` → `SINK:Pxxx` cuando el MDP indique pertinencia. Son identificadores de operación, no URLs públicas. El DUG Samantha v384 / NX-384m conserva la fuente normativa única; la copia local es derivada, cifrada y verificable.
+
+**Orden de ejecución autorizado para Gobernanza:**
+1. GOV-TASK-007: terminar texto IPZ menor a 1.500 caracteres, preservar las seis distinciones y salvaguardas de v0.7; después instalar y leer de vuelta el campo nativo. FOL1 continúa inactivo hasta ese read-back.
+2. GOV-TASK-008: cerrar el contrato de dos capas y el manifiesto de resoluciones Sink, manteniendo frecuencia por recuperación exitosa y sin telemetría de aplicación.
+3. GOV-TASK-003: ejecutar E2E solo después de que MCP-OCP entregue la función construida/actualizada y EP complete instalación autorizada y read-back.
+4. GOV-TASK-013: la métrica `ipz.resolve.rdc.duration_ms` ya está especificada; empezar a medir únicamente cuando exista el flujo implementado y se observen ambos extremos con reloj monotónico.
+5. GOV-TASK-001: validar semánticamente los 43 MDP como capa de reconocimiento; no confundir esa revisión con aplicación normativa.
+
+**Fuera de este corte:** GOV-TASK-002 sigue cancelada (no Cloudflare); GOV-TASK-004/005/006 y GOV-TASK-009/010 no se convierten en dependencias de construcción. GOV-TASK-009 solo valida §ARR cuando el mecanismo esté disponible; GOV-TASK-010 conserva la compuerta de admisión del IPZ. Backblaze/EP-TASK-002, backup portable MCP-OCP-09 y Jules no son requisitos de Sink MVP.
+
+**Gates ajenos:** MCP-OCP debe recibir autorización expresa de su titular para ampliar el control actual a Sink local. EP conserva el control de host/perfil e instalación. La aprobación de Gobernanza no los suplanta ni autoriza instalación, credenciales o cambios en esos frentes. No alterar `MCP-NORMATIVO=DESACTIVADO` ni generar folios globales mientras FOL1 no esté activo.
