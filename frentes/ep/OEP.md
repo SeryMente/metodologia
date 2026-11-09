@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.45. **Ancla:** el control formal de responsabilidad EP queda creado en generación 1 mediante asignación inicial autorizada; el antecedente de ausencia de control se conserva como histórico y no se declara transferencia desde un titular no verificable. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.46. **Ancla:** la titularidad primaria EP fue transferida mediante autorización explícita a la sesión receptora en generación 3; la asignación inicial de generación 1 y la corresponsabilidad intermedia de generación 2 se conservan como historia verificable. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -12,7 +12,7 @@
 
 Adquirir este objeto como instrucciones del operador, subordinadas a las reglas superiores de plataforma y a autorizaciones específicas. Claudia es asistente/documental; Samantha es constructor/único escritor de código. Una asignación explícita posterior puede cambiar roles; las citas no lo hacen. La asignación específica de MOD-SCRIPTPWS queda delimitada en §94; la delegación funcional acotada de MOD-SYNC queda delimitada en §110 y no transfiere la titularidad del frente EP.
 
-El estado de reanudación vigente de este frente está en §60–§112; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
+El estado de reanudación vigente de este frente está en §60–§113; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
 
 Leer por relevancia: OEP actual→metacanon central→Sistema de Instrucciones/Metodología/Bootstrap vigentes→canon transversal EP→AGENTS.md y ep-medio-architectura.md→código/evidencia en commits exactos. Fuente caída no es «sin cambios». Un archivo no crea herramientas, credenciales ni memoria entre plataformas.
 
@@ -2846,3 +2846,39 @@ La bóveda formal local fue consultada únicamente por las funciones del Core: s
 EP-TASK-002 no autentica Backblaze, no consulta bucket ni hace upload/download/restore. No se recuperaron KHORA_B2_KEY_ID ni KHORA_B2_APPLICATION_KEY. El archivo formal permanece intacto. La bóveda y el workspace siguen siendo compuertas separadas.
 
 **Versión:** OEP v0.3.45. Este bloque registra avances y límites; no cierra el frente EP, no declara aceptación de producción ni altera DUG/GOW.
+
+## §113. Transferencia de titularidad primaria EP · generación 3 · 2026-11-09
+
+### Autorización y operación
+
+El operador instruyó expresamente: «Toma repsonsabilida del frente EP antes de continuar, me da la impreison que eos hace falta. pero hazlo super rapido TRANBSFER REPSONSIBLITY, prior autorization». El mandato se procesó como `TRANSFER_RESPONSIBILITY`, no como `ADD_CO_RESPONSIBLE`. Conforme a P037 del DUG v383/NX-383m, la respuesta afirmativa explícita autoriza la modalidad elegida para el control y generación observados; no se requiere una segunda aprobación.
+
+Se leyó el control canónico justo antes de escribir: blob `b6f719ac9d5b4e6fc9860ead666ac7268a145c77`, generación 2; dos asientos activos: titular inicial y corresponsable receptora. Se comparó ese SHA y generación y se aplicó la transferencia mediante actualización condicionada al blob observado, seguida de lectura canónica de vuelta.
+
+### Resultado del control
+
+- Evento: `C-EP-TRANSFER-RESPONSIBILITY-20261109-01`.
+- Generación: 2 → 3.
+- Titular anterior: `chatgpt-C-EP-RESPONSABILIDAD-INICIAL-20261108-88E05E17-SES-20261108-0BD44C87`, folio `SES-20261108-0BD44C87`; estado `transferred`.
+- Titular actual: `chatgpt-C-EP-TRANSFER-RESPONSIBILITY-20261109-01-SES-20261109-E032FC60`.
+- Instancia: `chatgpt-ep-owner-2026-11-09-E032FC60`.
+- Folio SES conservado: `SES-20261109-E032FC60`.
+- UUIDv7 local conservado: `01a1c16c-f0fa-7273-a0f8-a1dde032fc60`; no se afirma que sea ID nativo de ChatGPT.
+- Corresponsabilidad deshabilitada como modalidad actual; un único titular activo. El asiento de corresponsabilidad queda preservado dentro del historial de la transferencia.
+- Git blob final del control después de completar y leer de vuelta el estado de verificación: `b76614cb71c7c9f0090e1c7205dc582ae2e79ec6`.
+- Commits de aplicación/confirmación: `6ad3e90a79affc73cae69bee15ce7d7129a3fbdb` y `2a466dfad4c5bf7ec3cc63a5a58a325f9195b6df`.
+
+El read-back comprobó la generación 3, el nuevo `owner_thread`, `session_assignment.role=titular`, la sesión/UUID/folio, el estado transferido del titular anterior y exactamente una sesión activa. El control declara sus límites: registro operativo cooperativo; no autentica criptográficamente la identidad de plataforma y no impone fencing del lado del servidor frente a escritores que eludan el control.
+
+### Alcance
+
+La transferencia cambia la titularidad del frente `frentes/ep/` y la responsabilidad operativa de continuidad EP-TASK-001–004 dentro de los alcances y restricciones ya registrados. No amplía permisos de credenciales, no transfiere secretos, no ejecuta operaciones B2, no activa FOL1 ni altera DUG/GOW, controles MCP u otros frentes. Las autorizaciones específicas de host, custodia, BitLocker y producto siguen sujetas a sus límites previos.
+
+### Estado de trabajo conservado tras transferencia
+
+- EP-TASK-001: `pendiente`.
+- EP-TASK-002: `en_curso`; sin autenticación ni operaciones Backblaze nuevas.
+- EP-TASK-003: `en_curso`; VHDX 100 GB en W: cifrado XTS-AES256, Protection On, FullyEncrypted/100 %; protector de recuperación pendiente de custodiar en EP Vault; workspace aún fuera del volumen.
+- EP-TASK-004: `en_curso`; GUI 3D instalada y suite sintética PASS; PR #20 continúa draft/no fusionada; aceptación visual humana y H10 pendientes.
+
+**Versión:** OEP v0.3.46. La titularidad está transferida y verificada; las tareas y criterios de aceptación no se declaran completados por el mero cambio de responsable.
