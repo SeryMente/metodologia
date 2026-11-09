@@ -104,3 +104,12 @@ Se elige la opción local autenticada por el perfil Windows, invocada por RDC co
 **Autorización interfrente:** la aprobación del operador en Gobernanza valida el requisito y el modo de entrega; no amplía por sí sola el `CONTROL-RESPONSABILIDAD.json` de MCP-OCP, que actualmente excluye Sink productivo. Su titular debe autorizar expresamente la ampliación en ese OCP antes de implementar. EP conserva autorización de perfil, host e instalación. Gobernanza no modifica esos controles.
 
 **Estado:** decisión de arquitectura resuelta; construcción, importación real, instalación y aceptación E2E siguen pendientes. Las alternativas HTTP/Cloudflare quedan como antecedentes, no como siguiente ejecución.
+
+
+## Contrato final de dos capas · Sink local por STDIO · 2026-11-09
+
+El inventario de primera capa expone ID, nombre canónico y MDP; no publica los 43 textos desarrollados. Si un principio resulta pertinente, el cliente solicita su texto desarrollado mediante la referencia local `SINK:Pxxx` a MCP-OCP por STDIO/RDC. No se usan URLs Sync, acortadores HTTP, Cloudflare, túneles ni endpoints públicos.
+
+**Respuesta individual:** ID, título, revisión exacta del DUG (versión/firma/commit/blob), texto desarrollado, SHA-256 y estado de verificación. **Lote:** conserva exactamente el orden solicitado y produce subresultado/huella/evento individual solo por recuperación íntegra satisfactoria; los errores no cuentan como recuperación. El hash de lote cubre serialización canónica UTF-8 de la secuencia ordenada, pins comunes y hashes individuales, no solo la selección de IDs.
+
+La telemetría Sink cuenta recuperaciones satisfactorias por ID; no registra aplicación semántica. La latencia RDC es métrica aparte en GOV-TASK-013. `MCP-NORMATIVO` permanece DESACTIVADO. Gobernanza acepta el contrato; MCP-OCP implementa/prueba/paquetea; EP controla host e instalación. Binarios instalados en `frentes/mcp-metodologia/instalacion-local/`; DB, claves, logs operativos y backups fuera del checkout y protegidos. No modificar DUG/ART-025/ART-027/IPZ desde esta tarea.
