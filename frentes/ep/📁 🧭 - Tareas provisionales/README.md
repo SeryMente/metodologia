@@ -4,7 +4,7 @@
 **Contenedor:** `frentes/ep/📁 🧭 - Tareas provisionales/`  
 **OCP padre y fuente de contexto:** `frentes/ep/OEP.md`  
 **Evento de creación:** instrucción directa del operador en esta conversación · 2026-10-31.  
-**Fuente normativa consultada:** DUG Samantha v385 · NX-385m · Metacanon 1.29 · GOW 2.18, en `main`.
+**Fuente normativa consultada:** DUG Samantha v386 · NX-386m · Metacanon 1.29 · GOW 2.18, en `main`.
 
 ## Naturaleza y límites
 
