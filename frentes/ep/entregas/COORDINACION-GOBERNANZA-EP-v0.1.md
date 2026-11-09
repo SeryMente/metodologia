@@ -2171,3 +2171,20 @@ La bóveda formal ep-env-vault/1 tiene 448 bytes, sesión activa, cero variables
 - EP-TASK-004: en_curso; implementación 3D y suite sintética PASS, aceptación humana visual/auditiva y H10 pendientes.
 
 **Resultado del ciclo:** persistencia documental y rediseño funcional parcialmente ejecutados/verificados; cifrado del workspace y aceptación integral de producción continúan pendientes.
+---
+
+## EP · transferencia de responsabilidad primaria · 2026-11-09
+
+**Autorización directa:** «Toma repsonsabilida del frente EP antes de continuar, me da la impreison que eos hace falta. pero hazlo super rapido TRANBSFER REPSONSIBLITY, prior autorization.» Se aplicó la modalidad `TRANSFER_RESPONSIBILITY` conforme a P037 del DUG v383/NX-383m; la respuesta afirmativa selecciona la sustitución de titular y no exige una segunda aprobación.
+
+**Control leído antes de mutación:** blob `b6f719ac9d5b4e6fc9860ead666ac7268a145c77`, generación 2. Transferencia aplicada con compare-and-swap por SHA, generación 3, y lectura de vuelta canónica.
+
+- Evento: `C-EP-TRANSFER-RESPONSIBILITY-20261109-01`.
+- Titular anterior: `chatgpt-C-EP-RESPONSABILIDAD-INICIAL-20261108-88E05E17-SES-20261108-0BD44C87`, SES `SES-20261108-0BD44C87`; estado `transferred`.
+- Nuevo titular: `chatgpt-C-EP-TRANSFER-RESPONSIBILITY-20261109-01-SES-20261109-E032FC60`; instancia `chatgpt-ep-owner-2026-11-09-E032FC60`; SES conservado `SES-20261109-E032FC60`; UUIDv7 local `01a1c16c-f0fa-7273-a0f8-a1dde032fc60`.
+- Responsables activos tras transferencia: 1; máximo permitido: 2; co-responsabilidad deshabilitada como estado actual.
+- Blob de control final y read-back: `b76614cb71c7c9f0090e1c7205dc582ae2e79ec6`; commits `6ad3e90a79affc73cae69bee15ce7d7129a3fbdb` y `2a466dfad4c5bf7ec3cc63a5a58a325f9195b6df`.
+- OEP actualizado a v0.3.46, §113, commit `d6cdbd64aa1c8d922d5f21501be5d762b9154c47`, blob `30255fbe3edc60434dc4ea0461bde6fbd6206071`, read-back exacto.
+- README EP e índice de tareas actualizados; ambos leídos de vuelta. El control conserva la inicialización gen1, ADD_CO_RESPONSIBLE intermedio gen2 y transferencia gen3.
+
+**Límite:** transferencia del control operativo del frente EP; no autentica identidad nativa de la plataforma ni impone fencing a escritores que eludan el control. No amplía autorizaciones de secretos, Backblaze, DUG/GOW, BitLocker ni otros frentes. EP-TASK-001 pendiente; EP-TASK-002/003/004 en_curso.
