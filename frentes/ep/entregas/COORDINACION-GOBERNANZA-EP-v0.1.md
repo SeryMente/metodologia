@@ -2188,3 +2188,11 @@ La bóveda formal ep-env-vault/1 tiene 448 bytes, sesión activa, cero variables
 - README EP e índice de tareas actualizados; ambos leídos de vuelta. El control conserva la inicialización gen1, ADD_CO_RESPONSIBLE intermedio gen2 y transferencia gen3.
 
 **Límite:** transferencia del control operativo del frente EP; no autentica identidad nativa de la plataforma ni impone fencing a escritores que eludan el control. No amplía autorizaciones de secretos, Backblaze, DUG/GOW, BitLocker ni otros frentes. EP-TASK-001 pendiente; EP-TASK-002/003/004 en_curso.
+
+---
+
+## EP · incidencia de custodia de recovery protector · 2026-11-09
+
+El estado de BitLocker de W: continúa XTS-AES256, Protection On y FullyEncrypted/100 %. El protector RecoveryPassword fue creado, pero su cmdlet emitió el valor de recuperación en la respuesta del proceso remoto; por precaución se clasifica como POTENTIALLY_EXPOSED. El intento posterior de persistirlo en EP Vault fue bloqueado antes de ejecutarse: no hay escritura ni read-back acreditados. No copiar el valor a Git ni volver a presentarlo en chat.
+
+Antes de migrar el workspace: rotar RecoveryPassword con salida suprimida y valor solo en memoria; persistir como EP_WORKSPACE_BITLOCKER_RECOVERY_PASSWORD; hacer read-back exacto en memoria; verificar protectores y estado; retirar el anterior potencialmente expuesto; migrar los 195 archivos mediante hash. El VHDX sigue vacío y la copia original permanece intacta.
