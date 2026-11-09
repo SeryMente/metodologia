@@ -1959,3 +1959,31 @@ Render WPF directo (RenderTargetBitmap) en perfil temporal Fila4, 1440×900, con
 **Bloqueos y decisiones pendientes:** (1) la directriz operativa previa exige ejecutar los archivos del workspace con el usuario Windows `fila4`, mientras que la única sesión de consola actualmente observada en PC-14 es `PC-14\\PC 13`; no se depositarán datos en el perfil incorrecto sin instrucción que resuelva esa discrepancia; (2) no se materializará contenido sin volumen BitLocker del workspace cumpliendo XTS-AES256, Protection On y 100 % conforme a OEP §105; (3) la contraseña maestra de la bóveda aún no puede recuperarse mediante un flujo local verificado para el VHDX, por lo que no se solicita ni se escribe en chat; (4) P012/P013 exige presencia/revisión presencial del operador en el mismo ciclo para acciones de cifrado/seguridad y decisiones arquitectónicas; la autenticación RDC por sí sola no acredita esa presencia; (5) la clasificación final de los manifiestos candidatos y el contrato de retención/sincronización de Observabilidad se detallan antes de materializar.
 
 **Siguiente acción:** resolver la identidad Windows propietaria de PC-14 y la compuerta presencial; después preparar un contenedor VHDX vacío y cifrar su volumen de datos con XTS-AES256 y el password protector de la bóveda, con recuperación independiente depositada en la bóveda canónica. Solo después de comprobar `ProtectionStatus=On` y `EncryptionPercentage=100` se monta el volumen y se clonan los repositorios; B2 recibirá únicamente datos de usuario/observabilidad explícitamente clasificados, nunca los clones Git completos ni secretos.
+
+
+### Cierre documental · workspace SeryMente y EP-TASK-001–004 · 2026-11-09
+
+**Procesamiento ejecutado:** se comparó el criterio nuevo con el OEP v0.3.40, los cuatro núcleos provisionales, los originales verbatim de materialización/BitLocker y el DTC. Se leyó DUG v383 / NX-383m, §ARR, CNP P001/P004/P005/P038/P043 y gates P012/P013. La instrucción del operador corrigió el nombre definitivo a `SeryMente`; se descartaron como nombre actual las variantes históricas. La bóveda se clasificó como producto/frente de trabajo del repositorio metodología, no como extensión Chrome.
+
+**Inventario GitHub:** se consultaron los árboles `main` recursivos de los 11 repositorios expuestos por la conexión, sin truncamiento. Candidatos MV3: GDP, khora-effectif, Signal Interpreter, Harmonia observability y Aisthesis/CoMind bajo khora. Se descartaron como falsos positivos el manifiesto PWA de khora-web y el manifiesto documental de Ética. Falta revisar los contratos canónicos de cada frente y mapear los paquetes de forma definitiva.
+
+**Escrituras y lectura de vuelta en `SeryMente/metodologia/main`:**
+
+| Documento | Commit | Blob SHA leído de vuelta | Estado |
+|---|---|---|---|
+| `frentes/ep/OEP.md` §108, versión v0.3.41 | `4141f3009defb6cce33b244e1d81bc21ba63e4b8` | `601f7a536d3062dd27454a01ab815dff8d2b4a12` | PASS |
+| `frentes/ep/📁 🧭 - Tareas provisionales/README.md` | `26e3ed03d1bc88ae038b9a979b661ab8dc85dbcb` | `afcc2434ab9ab9caf17b9bd54745e3a26c886559` | PASS |
+| `EP-TASK-002/README.md` | `56034f1092366753e66366228e9ba5935c5a2805` | `3f39d40bd715f031c11e6ebb3b5026ab30c90c2b` | PASS |
+| `EP-TASK-003/README.md` | `68bb12ca290ec2022820586c8ceb020289d0b0ea` | `677d8c284f8d4e166ab735e8077f76931c351e6f` | PASS |
+| `EP-TASK-004/README.md` | `8226c8bf27f6681a257b4fc27bf486b850aaa5ce` | `83ed69cf3d9111cb2db13f8963733277487eacea` | PASS |
+| Este DTC — apertura inicial | `73436a2a78d91b7bf42fa9af7cfcf497a00c90a9` | `4664ea3a520b33f3e86cf8b6c993e5b52f6c0706` | PASS |
+
+**Estado de las tareas:** EP-TASK-001 continúa `pendiente`; EP-TASK-002, EP-TASK-003 y EP-TASK-004 continúan `en_curso`. No se marcaron hitos parciales como tareas completadas. EP-TASK-002 distingue la prueba sintética histórica de cualquier sincronización automática o restauración real actual. EP-TASK-003 registra el árbol, los candidatos MV3, cifrado VHDX y volatilidad aún pendientes. EP-TASK-004 mantiene rechazo de aceptación visual y la dependencia de completar la bóveda antes de usar su contraseña maestra para BitLocker.
+
+**Bloqueo de materialización en PC-14:** dispositivo RDC autenticado/Online ID `4fc35a07-2192-4b88-81ec-96cb450d565e`; única sesión de consola observada `PC-14\PC 13`, SessionId 1, perfil `C:\Users\PC 13`. La directriz operativa previa de perfil `fila4` aún no está reconciliada con la sesión actual. C: está FullyDecrypted / 0 % / Protection Off. No se creó `SeryMente`, VHDX, clones ni tareas; no se modificó BitLocker ni se leyeron secretos, archivo de bóveda, cachés B2 o portapapeles. La ubicación de cibercafé es declaración del operador; la clasificación provisional es `LOC-OTHER`. El dead-man trigger no está implementado ni activado.
+
+**Decisiones por ratificar:** ubicación de `Observabilidad` como hermana de `Extensión` (recomendación técnica registrada, no canon aceptado); propietario Windows correcto para PC-14; y si la bóveda será un frente formal autónomo o un producto del frente EP en metodología. No se crean OCP/controles/folios adicionales por inferencia.
+
+**Secuencia siguiente:** (1) resolver perfil Windows propietario y compuerta presencial P012/P013; (2) terminar y aceptar la bóveda canónica; (3) introducir localmente su contraseña maestra y custodiar la recuperación del volumen; (4) crear/cifrar VHDX con XTS-AES256, Protection On y 100 %; (5) después clonar repositorios y materializar frentes/paquetes `Extensión`; (6) cerrar el contrato local-first de observabilidad y su persistencia B2. Hasta entonces, EP-TASK-003 permanece en curso y no hay workspace instalado.
+
+**Resultado del ciclo:** respuesta inicial registrada; documentación operativa actualizada y leída de vuelta; objetivo de materialización **NO EJECUTADO / BLOQUEADO** por identidad de perfil y compuertas de seguridad. No se simula instalación, cifrado ni aceptación.
