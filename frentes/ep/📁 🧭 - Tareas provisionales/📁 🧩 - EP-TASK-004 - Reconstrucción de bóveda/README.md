@@ -472,3 +472,13 @@ La estructura lógica del directorio `Desktop\SeryMente` y el inventario GitHub 
 | H10 — Corte y aceptación | PENDIENTE |
 
 **Resultado:** EP-TASK-004 sigue `en_curso`. El orden de dependencia es: terminar y aceptar la bóveda canónica; después utilizar su contraseña maestra y su recuperación para cifrar el volumen VHDX del workspace; solo entonces materializar repositorios y datos. No se afirma que el cifrado de workspace ni la aceptación de bóveda estén concluidos.
+
+## Continuidad recuperada desde exportación · 2026-11-09
+
+La exportación [ChatGPT-EP (1)-20261109-1031.md](https://github.com/SeryMente/metodologia/blob/main/frentes/ep/entregas/ChatGPT-EP%20(1)-20261109-1031.md) quedó archivada íntegra en `SeryMente/metodologia/main`: 82,367 bytes, 1,645 líneas, SHA-256 `B08DEE8C0317EC2DDC28CD5D98925A975F1C571A1CC6B3C9852319CC945CF001`, commit `7260b1d398904f7dc13a76858d9f6f3c661831a7`, blob `0be706ff04bfe9158c0f33b2f984c3952a6d03e4`; read-back exacto.
+
+**UI:** la sesión compartida GUI–CLI tiene pruebas sintéticas interproceso reportadas PASS, pero falta aceptación E2E final. La experiencia premium sigue NO ACEPTADA: el render seguía vectorial/2D; el generador de recurso raster fotorrealista no llegó a producir un PNG final integrado. Continúan pendientes el realismo material, volumen, iluminación, bisagras, movimiento mecánico, sonido, apertura/cierre y validación DPI, accesibilidad, teclado y movimiento reducido antes de H10.
+
+**Bóveda:** no inicializada ni aceptada. `KHORA_B2_KEY_ID` y `KHORA_B2_APPLICATION_KEY` no están verificadas ni almacenadas en la bóveda canónica. No se recuperaron ni transfirieron secretos. El workspace provisional en claro de PC-14 excluye bóveda, protectores, secretos y notas efímeras de Custodia.
+
+EP-TASK-004 permanece `en_curso`; H10 sigue pendiente. La bóveda aceptada sigue siendo dependencia para almacenar secretos y para el cifrado definitivo VHDX/BitLocker del workspace.
