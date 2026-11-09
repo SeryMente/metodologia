@@ -2248,3 +2248,41 @@ La exportación exacta `ChatGPT-EP-20261109-1230.md` no estaba accesible en la c
 **ADQUISICIÓN/PERSISTENCIA DE EXPORTACIÓN 1230 Y RESPUESTA A SU PREGUNTA FINAL: PENDIENTES POR FALTA DEL ARCHIVO.**  
 **CICLO GLOBAL: INCOMPLETO.**
 
+
+
+## EP · rectificación y cierre documental tras localizar exportación 1230 · 2026-11-09 · 12:37 America/Mexico_City
+
+### Corrección del asiento anterior
+
+La apertura de las 12:31 registró correctamente que el archivo no era accesible con las referencias/ubicaciones examinadas entonces. Tras la aclaración del operador —PC-14 es el equipo y PC 13 el perfil/almacenamiento— se consultó `C:\Users\PC 13\Downloads` dentro del dispositivo RDC PC-14. Se localizó `ChatGPT-EP-20261109-1230.md`; no es el endpoint separado PC-13 que figura Offline en el inventario de dispositivos.
+
+### Adquisición, lectura y persistencia
+
+- Archivo íntegro leído: 853 líneas; 40.832 bytes.
+- SHA-256 en origen: `045FD76745669E2AD08A4A0F517FCB042B5CD2C3B3320AB5AD2E83F0972EF674`.
+- UTF-8 sin BOM, saltos LF.
+- Ruta canónica: `frentes/ep/entregas/ChatGPT-EP-20261109-1230.md`.
+- Git blob: `1be5a3b2a19dec4dd819648302664606654a4761`; commit: `163138cc5a6113279fbc42eccbec036df424f8e4`.
+- Se comparó el Base64 sin espacios de la fuente local con el Base64 de `main`: igualdad exacta; read-back byte por byte PASS. Original local no modificado.
+
+### Respuesta a la pregunta final y reconciliación técnica
+
+La pregunta final del operador (12:30:09) pide explicar en términos simples el problema con BitLocker. Respuesta: **BitLocker funciona y el volumen W: ya está cifrado y protegido; lo que falta es copiar el workspace a ese volumen cifrado.** Los 195 archivos/11 directorios siguen en `Desktop\SeryMente`, fuera de W:. Deben copiarse, verificarse por rutas/tamaños/SHA-256, montarse W: como `Desktop\SeryMente` y verificarse de nuevo antes de retirar el staging.
+
+El export contiene un rótulo de progreso que dice «Migrado el espacio de trabajo», pero la propia respuesta explícita inmediatamente posterior informa cuota RDC 0 % e imposibilidad de ejecutar la copia/montaje. OEP §114 y el núcleo EP-TASK-003 prevalecen: no hay copia/hash de destino ni cambio de montaje acreditados. No se eleva el rótulo de actividad a evidencia.
+
+### Persistencia documental reconciliada
+
+- OEP actualizado a v0.3.49, §115, commit `f545a158be2c8a847635fef64dccbfc83fb77139`, blob `a3ab83e1303df4a8a0a9a29caee681189627b0a2`, read-back exacto.
+- EP-TASK-003 y el índice provisional recibieron entradas append-only de adquisición/rectificación; sus blobs finales se registrarán en MANIFIESTO.json.
+- README del frente enlaza el export 1230 y refiere OEP v0.3.49.
+- La titularidad EP sigue generación 3, un titular; sin cambios de control.
+- Estados: EP-TASK-001 `pendiente`; EP-TASK-002, EP-TASK-003 y EP-TASK-004 `en_curso`. EP-TASK-003 tiene custodia de recuperación resuelta; migración del workspace pendiente. EP-TASK-004 conserva PR #20 draft/no fusionada y aceptación H10 pendiente.
+- No hubo operación B2, montaje, copia, borrado ni modificación del host durante este ciclo documental.
+
+### Estado del ciclo
+
+**EXPORTACIÓN 1230: ADQUIRIDA, LEÍDA, PERSISTIDA Y VERIFICADA BYTE POR BYTE.**  
+**PREGUNTA FINAL: RESPONDIDA EN OEP §115.**  
+**TAREAS: ÍNDICE Y NÚCLEO EP-TASK-003 RECONCILIADOS.**  
+**CICLO DOCUMENTAL: COMPLETADO; MIGRACIÓN TÉCNICA EP-TASK-003 SIGUE PENDIENTE.**
