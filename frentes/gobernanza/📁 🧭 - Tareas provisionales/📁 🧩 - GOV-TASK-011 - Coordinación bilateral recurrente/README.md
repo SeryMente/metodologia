@@ -566,3 +566,21 @@ El archivo de GOV-TASK-006 todavía cita DUG v373/NX-373m y control de Gobernanz
 ### Foliación
 
 Registro maestro FOL1: blob `b93cbef77f2fa1a6e4290ae8177e957a1616e47b`; `PREPARADO_PENDIENTE_ACTIVACION_IPZ`, cobertura `KNOWN_INVENTORY_ONLY`, contadores globales/OCP en cero y sin asignaciones. La IPZ nativa no está instalada/verificada; no se activa FOL1 ni se asigna folio global por este ciclo.
+
+
+## Registro de revisión IPZ/Sink local · 2026-11-09 · C-GOBERNANZA-IPZ-RDC-SINK-01
+
+**Titular vigente de Gobernanza:** generación 17 · sesión `SES-20261108-506DCF0C`. La responsabilidad de este registro es de Gobernanza; no transfiere ni suplanta a EP o MCP-OCP.
+
+**Cursores consultados:**
+- EP: `frentes/ep/entregas/COORDINACION-GOBERNANZA-EP-v0.1.md`, blob `cfa59cdf083905dd4793d5b8b046dc501b09b820`.
+- MCP-OCP: `frentes/mcp-metodologia/entregas/COORDINACION-SPRINT-OCP-MCP-v0.1.md`, blob `2499afb15f11dded54c6d6b3f43f3482831aa262`.
+- No se observó respuesta nueva posterior a esos cursores. No se emitió solicitud ni se modificó el OCP/control de esos frentes.
+
+**Desviación de secuencia:** la respuesta inicial DTC de este ciclo no quedó persistida antes de iniciar el análisis técnico; `DTC_OPENING_LATE=TRUE`. Por tanto, no se declara ciclo trilateral conforme ni aceptación de EP/MCP-OCP. Este registro documenta la desviación en lugar de reconstruir tiempos o simular apertura previa.
+
+**Resultado propio de Gobernanza:** ART-025, GOV-TASK-003/007/008 y la alineación de referencias en GOV-TASK-009/010 se actualizaron con lectura de vuelta. GOV-TASK-013 mantiene especificada la métrica de latencia RDC, todavía sin mediciones. La crónica y evidencia están en [C-GOBERNANZA-IPZ-RDC-SINK-01](../../cronica/C-GOBERNANZA-IPZ-RDC-SINK-01.md) y [evidencia](../../evidencias/C-GOBERNANZA-IPZ-RDC-SINK-01.json).
+
+**Siguiente acción DTC:** registrar solicitud de alcance a MCP-OCP para que su titular evalúe y autorice Sink local en su CONTROL-RESPONSABILIDAD; coordinar con EP la selección de perfil/host y sus gates de seguridad antes de cualquier instalación. Cada frente debe responder y documentar su propio ciclo. No se ejecuta código ni se instala hasta esas autorizaciones.
+
+**Estado:** `GOBERNANZA_DOCUMENTAL_ALINEADA`; DTC trilateral pendiente de respuesta/ejecución de los frentes; Sink no implementado; FOL1 no activo.
