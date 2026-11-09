@@ -4,7 +4,7 @@
 
 - **Nombre canónico vigente:** MCP-OCP (anteriormente MCP-METODOLOGIA).
 - **Identidad canónica vigente:** MCP-OCP. **Identidad histórica:** MCP-METODOLOGIA.
-- **Versión/sello:** MCP-OCP-v0.1.23 · Sink local por stdio autorizado; candidata anterior 0.1.0 BUILD_AND_TESTED, bootstrap del perfil persistente pendiente. Las generaciones y folios de sesiones anteriores son metadatos de auditoría.
+- **Versión/sello:** MCP-OCP-v0.1.24 · Sink local por stdio autorizado; candidata anterior 0.1.0 BUILD_AND_TESTED, bootstrap del perfil persistente pendiente. Las generaciones y folios de sesiones anteriores son metadatos de auditoría.
 - **Repositorio propietario:** SeryMente/metodologia, rama main.
 - **OCP canónico:** frentes/mcp-metodologia/.
 - **Núcleo operativo único:** este archivo, MCP-METODOLOGIA.md.
@@ -519,4 +519,4 @@ El build y las pruebas no equivalen a instalación en perfil, provisión del ope
 
 **Ruta técnica:** revisar las ramas remotas, portarlas sobre main e implementar GOW:ARR/DUG/SINK:P001..P043, lote ordenado, frecuencia por éxito, manifiesto canónico y pruebas negativas. El código candidato usa `%LOCALAPPDATA%\\SeryMente\\OCP MCP` por defecto; antes de instalar se requiere un root de datos/backup configurable y verificado dentro del perímetro cifrado, o prueba de cifrado del volumen del perfil.
 
-**Dependencias:** EP-TASK-003 (workspace W: y dead-man si LOC-OTHER), EP-TASK-005 (handoff/bootstrap) y GOV-TASK-001/003/007/008/013. EP define destino/instalación; MCP-OCP entrega paquete y configuración. Jules/B2/PPR cross-host/Khora/MCP-NORMATIVO quedan fuera. `MCP-NORMATIVO` sigue DESACTIVADO.
+**Destino EP designado:** perfil Windows `PC 7`, dispositivo RDC asociado según el operador, ubicación `LOC-OTHER`; el hostname/ID RDC, SID y estado del host quedan pendientes de preflight vivo. **Dependencias:** EP-TASK-003 (workspace protegido y dead-man obligatorio, implementado/probado en LOC-OTHER), EP-TASK-005 (handoff/bootstrap) y GOV-TASK-001/003/007/008/013. EP define destino/instalación; MCP-OCP entrega paquete y configuración. El destino designado no bloquea reconciliación, implementación, pruebas ni build; sí bloquea bootstrap/instalación persistente hasta preflight y dead-man PASS. Jules/B2/PPR cross-host/Khora/MCP-NORMATIVO quedan fuera. `MCP-NORMATIVO` sigue DESACTIVADO.
