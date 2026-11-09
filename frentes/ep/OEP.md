@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.40. **Ancla:** el control formal de responsabilidad EP queda creado en generación 1 mediante asignación inicial autorizada; el antecedente de ausencia de control se conserva como histórico y no se declara transferencia desde un titular no verificable. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.41. **Ancla:** el control formal de responsabilidad EP queda creado en generación 1 mediante asignación inicial autorizada; el antecedente de ausencia de control se conserva como histórico y no se declara transferencia desde un titular no verificable. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -2434,3 +2434,77 @@ El control pasa a ser el registro autoritativo de responsabilidad para EP. Este 
 FOL1 no consta ACTIVO. El folio `SES` identifica esta sesión, no sustituye los folios globales CONV/CICLO/A/B, que permanecen PENDIENTES/NO ASIGNADOS. La asignación de responsabilidad no amplía permisos: no se realizaron operaciones de host/RDC, lectura de secretos, autenticación, llamadas B2, upload/download/restore/delete, cambios de credenciales ni modificaciones del código. Se mantienen las compuertas P012/P013 y las restricciones de perfil/ubicación vigentes.
 
 **Resultado:** titularidad operativa EP inicializada y control persistido/verificado; transferencia desde un titular anterior: **NO REALIZADA / NO APLICABLE por inexistencia del control de origen**.
+
+
+## 108. Normalización del workspace SeryMente y estado de materialización PC-14 · v0.3.41 · 2026-11-09
+
+### 108.1 Precedencia y rectificación de nombre
+
+La instrucción directa del operador del 2026-11-09 rectifica cualquier nombre de workspace previo: la carpeta raíz se llama exactamente **`SeryMente`**, sin espacios, con mayúsculas internas. Quedan supersedidas para el nombre de la carpeta las variantes históricas `Ser y Mente` y `SERIMENTE`. La organización GitHub continúa llamándose `SeryMente`.
+
+### 108.2 Árbol de materialización
+
+La raíz se monta en el Escritorio efectivo de la sesión Windows propietaria:
+
+```text
+Desktop/
+└── SeryMente/                         # raíz del workspace cifrado
+    ├── khora/                         # un clon por repositorio
+    │   └── frentes/
+    │       └── <frente>/
+    │           ├── Extensión/          # solo si el frente es Chrome MV3
+    │           └── Observabilidad/     # hermana de Extensión; propuesta pendiente de ratificación
+    │               ├── Local/
+    │               ├── Cola/
+    │               └── Exportaciones/
+    ├── metodologia/
+    │   └── frentes/
+    └── <resto de repositorios SeryMente>/
+```
+
+Cada repositorio se clona una vez directamente bajo `SeryMente/`; dentro se conservan los frentes del propio repositorio. La lista de repositorios se descubre dinámicamente en cada instancia desde la organización GitHub `SeryMente`; el inventario de 11 repositorios accesibles el 2026-11-09 es una fotografía, no una lista fija. GitHub es la fuente de código e historial.
+
+### 108.3 Contrato de extensión y observabilidad
+
+Los frentes que realmente sean extensiones Chrome MV3 tendrán una carpeta de entrega local denominada exactamente `Extensión`; esa carpeta contiene el paquete listo para «Cargar descomprimida». Su contenido es un artefacto derivado del commit fuente y debe actualizarse tras cada cambio en GitHub/Jules, con cotejo de commit, manifiesto, rutas relativas y SHA-256. Un archivo `manifest.json` no demuestra por sí solo que sea un manifiesto Chrome: validar `manifest_version`, dependencias, rutas de carga y frente propietario. No crear `Extensión` en frentes que no sean extensiones.
+
+Se recomienda que `Observabilidad` quede fuera de `Extensión`, como hermana en el mismo frente. La captura local debe ser append-first/durable y no esperar a la red; una cola independiente permitirá subir a B2 después de escribir y verificar localmente. Esta disposición y su contrato de retención se mantienen como **propuesta pendiente de ratificación expresa**; los datasets, sensibilidad, retención y política de subida corresponden a EP-TASK-002. Ni los registros ni las colas deben quedar dentro del paquete que Chrome carga.
+
+### 108.4 Cifrado del workspace
+
+El workspace no se materializa como carpeta en claro. El diseño elegido es un contenedor VHDX de datos, almacenado fuera del punto de montaje, con un volumen BitLocker dentro. El punto de montaje será `Desktop\SeryMente`; una ruta de contenedor bajo `%LOCALAPPDATA%\Khora\workspace\` es la ubicación de implementación prevista y debe validarse antes de usarla.
+
+Criterios obligatorios del volumen del workspace: BitLocker disponible; `XtsAes256`; protector de contraseña ligado a la misma contraseña maestra de la bóveda canónica, introducida localmente como SecureString; protector de recuperación independiente y custodiado en la bóveda canónica; `ProtectionStatus=On`; `EncryptionPercentage=100`. No escribir la contraseña en chat, argumentos, historial o archivos en claro. No montar ni materializar repositorios hasta verificar los criterios del volumen. El estado de BitLocker de C: no sustituye la verificación del volumen VHDX.
+
+### 108.5 Política por ubicación y dead-man trigger
+
+Se conservan OEP §§105–106:
+- `LOC-CECEQ`: al cerrar, bloquear y desmontar el VHDX; conservar el contenedor cifrado. No volatilizarlo automáticamente.
+- `LOC-OTHER`: la terminación del proceso de control de la sesión EP debe bloquear BitLocker, desmontar y eliminar exclusivamente el contenedor/perímetro del workspace. No extender la eliminación a archivos de Windows, datos personales ajenos o repositorios remotos.
+- No reincorporar Guardian genérico, polling, heartbeat, inactividad, cierre de IDE, tareas programadas ni AtStartup: están fuera del alcance de §106.
+
+El dead-man trigger todavía no está implementado ni activado. La autenticación de RDC no basta para clasificar CECEQ; toda ubicación no reconocida se trata como `LOC-OTHER`.
+
+### 108.6 Repositorios y frentes con candidatos MV3
+
+La consulta de `SeryMente` del 2026-11-09 expuso 11 repositorios: `khora`, `serymente`, `otrogranprograma`, `GDP`, `khora-effectif`, `signal-interpreter`, `metodologia`, `tercer-ambito`, `personal`, `filo-sangriento` y `Language`. El alcance es el de la conexión GitHub disponible; se volverá a descubrir la lista en cada materialización.
+
+La inspección de los árboles `main` identificó candidatos que requieren clasificación por frente y validación del paquete: `GDP/manifest.json`, `khora-effectif/manifest.json`, `signal-interpreter/manifest.json`, `khora/apps/harmonia-observability/extension/manifest.json` y `khora/khora-web/extension/harmonia/manifest.json`. `khora/khora-web/public/manifest.json` es un manifiesto web app/PWA y `tercer-ambito/etica/manifest.json` es un manifiesto documental, no extensiones Chrome. En Signal Interpreter, su README confirma que Chrome carga la raíz del paquete que contiene `manifest.json`, no la subcarpeta `extension/`; el materializador deberá generar la carpeta local `Extensión` conservando las rutas relativas referidas por el manifiesto. La asignación definitiva de cada paquete a su frente se cotejará con la documentación canónica de ese repo antes de copiarlo.
+
+### 108.7 Estado real PC-14 · 2026-11-09
+
+El dispositivo RDC autenticado es `PC-14`, ID `4fc35a07-2192-4b88-81ec-96cb450d565e`, Online. La única sesión de consola observada es `PC-14\PC 13`, SessionId 1, perfil `C:\Users\PC 13`, Escritorio `C:\Users\PC 13\Desktop`. El token del proceso RDC pertenece a Administradores. C: informa `FullyDecrypted`, `ProtectionStatus=Off`, 0 %, `None`. El Escritorio inspeccionado no tenía `SeryMente`. No se creó directorio, VHDX, clon, tarea ni protector BitLocker y no se cambió ningún volumen.
+
+El operador declaró PC-14 como ubicación de cibercafé, por lo que corresponde provisionalmente a `LOC-OTHER`; no existe verificación de ubicación por sensor independiente. Hay una discrepancia pendiente entre la directriz operativa anterior de utilizar el usuario Windows `fila4` y la única sesión actualmente observada `PC-14\PC 13`. No escribir datos en un perfil distinto hasta resolver qué identidad Windows debe ser propietaria del workspace. La compuerta presencial P012/P013 y la disponibilidad local de la bóveda maestra siguen siendo requisitos antes de cifrar/proteger el contenedor.
+
+### 108.8 Estado de trabajo
+
+- **Decisión de nombre y árbol lógico `SeryMente`:** RECIBIDA Y DOCUMENTADA.
+- **Inventario de repositorios visibles y árboles `main`:** INSPECCIONADO; fotografía de 11 repositorios.
+- **Clasificación de todos los frentes/extensiones y generación de `Extensión`:** PENDIENTE.
+- **Ubicación de `Observabilidad` fuera de `Extensión`:** PROPUESTA TÉCNICA PENDIENTE DE RATIFICACIÓN.
+- **VHDX + BitLocker XTS-AES256 y protector compartido con bóveda:** DISEÑO VIGENTE; IMPLEMENTACIÓN PENDIENTE.
+- **Materialización en PC-14:** BLOQUEADA por discrepancia de identidad/perfil, compuerta P012/P013 y bóveda maestra no disponible para el flujo local.
+- **Dead-man trigger LOC-OTHER:** DISEÑO DOCUMENTADO; NO IMPLEMENTADO / NO ACTIVADO.
+- **EP-TASK-001:** pendiente, sin cambio.
+- **EP-TASK-002, EP-TASK-003 y EP-TASK-004:** en_curso; no marcar como completadas por los avances parciales documentados.
