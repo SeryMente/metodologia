@@ -1,6 +1,6 @@
 ﻿<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="EP Vault"
+        Title="EP Vault · v1.0.0"
         Width="1440" Height="900"
         MinWidth="1080" MinHeight="720"
         WindowStartupLocation="CenterScreen"

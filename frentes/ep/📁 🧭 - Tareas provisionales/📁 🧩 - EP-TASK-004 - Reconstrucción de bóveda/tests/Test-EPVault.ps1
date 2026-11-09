@@ -93,7 +93,10 @@ try {
     [IO.Directory]::CreateDirectory($sandbox) | Out-Null
     $env:LOCALAPPDATA = $sandbox
 
-    Import-Module -Name $corePath -Force -ErrorAction Stop
+    Import-Module -Name $corePath -Force -DisableNameChecking -WarningAction SilentlyContinue -ErrorAction Stop
+    $versionStatus = Get-EpVaultStatus
+    Assert-EpTest -Condition ($versionStatus.product -eq 'EP Vault' -and $versionStatus.version -eq '1.0.0' -and $versionStatus.status -eq 'NOT_INITIALIZED') -Failure 'PRODUCT_VERSION_1_0_0'
+    Write-Output 'PASS_EP_VAULT_VERSION_1_0_0'
     $cryptoResult = Invoke-EpVaultSelfTest
     Assert-EpTest -Condition ($cryptoResult -like 'SELFTEST_PASS:*') -Failure 'CRYPTO_SELFTEST'
     Write-Output $cryptoResult

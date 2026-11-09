@@ -18,7 +18,7 @@ $xamlPath = Join-Path $PSScriptRoot 'EP-Vault.Window.xaml'
 if (-not (Test-Path -LiteralPath $corePath -PathType Leaf)) { throw 'EP_VAULT_CORE_NOT_FOUND' }
 if (-not (Test-Path -LiteralPath $xamlPath -PathType Leaf)) { throw 'EP_VAULT_XAML_NOT_FOUND' }
 
-Import-Module -Name $corePath -Force -ErrorAction Stop
+Import-Module -Name $corePath -Force -DisableNameChecking -WarningAction SilentlyContinue -ErrorAction Stop
 
 [xml]$xaml = Get-Content -LiteralPath $xamlPath -Raw -Encoding UTF8
 $reader = [System.Xml.XmlNodeReader]::new($xaml)

@@ -2,7 +2,7 @@
 param(
     [Parameter(Mandatory=$true)]
     [ValidateSet(
-        'Status','Initialize','ListVariables','RevealVariable','SetFromClipboard',
+        'Version','Status','Initialize','ListVariables','RevealVariable','SetFromClipboard',
         'RemoveVariable','CaptureNote','ListNotes','ReadNote','PromoteNote',
         'DeleteNote','Run','SelfTest','Lock'
     )]
@@ -84,6 +84,10 @@ function Enter-EpLocalSession {
 $exitCode = 0
 try {
     switch ($Action) {
+        'Version' {
+            [pscustomobject]@{ product = 'EP Vault'; version = '1.0.0'; status = 'MODULE_RELEASE' } | ConvertTo-Json -Compress
+        }
+
         'Status' {
             Get-EpVaultStatus | ConvertTo-Json -Depth 4
         }

@@ -2,6 +2,7 @@
 $ErrorActionPreference = 'Stop'
 Add-Type -AssemblyName System.Security -ErrorAction Stop
 
+$script:VaultVersion = '1.0.0'
 $script:EnvelopeSchema = 'ep-env-vault/1'
 $script:PayloadSchema = 'ep-env-vault-data/1'
 $script:KdfName = 'PBKDF2-HMAC-SHA256'
@@ -354,6 +355,8 @@ function Get-EpVaultStatus {
     }
     if (-not $exists) {
         return [pscustomobject]@{
+            product = 'EP Vault'
+            version = $script:VaultVersion
             status = 'NOT_INITIALIZED'
             vaultExists = $false
             schema = $null
@@ -365,6 +368,8 @@ function Get-EpVaultStatus {
     $file = Get-Item -LiteralPath $paths.Vault
     $envelope = Read-EpVaultEnvelope
     [pscustomobject]@{
+        product = 'EP Vault'
+        version = $script:VaultVersion
         status = 'ENCRYPTED_FILE_PRESENT'
         vaultExists = $true
         schema = [string]$envelope.schema
