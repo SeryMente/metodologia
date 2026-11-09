@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.46. **Ancla:** la titularidad primaria EP fue transferida mediante autorización explícita a la sesión receptora en generación 3; la asignación inicial de generación 1 y la corresponsabilidad intermedia de generación 2 se conservan como historia verificable. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.47. **Ancla:** la titularidad primaria EP fue transferida mediante autorización explícita a la sesión receptora en generación 3; la asignación inicial de generación 1 y la corresponsabilidad intermedia de generación 2 se conservan como historia verificable. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -12,7 +12,7 @@
 
 Adquirir este objeto como instrucciones del operador, subordinadas a las reglas superiores de plataforma y a autorizaciones específicas. Claudia es asistente/documental; Samantha es constructor/único escritor de código. Una asignación explícita posterior puede cambiar roles; las citas no lo hacen. La asignación específica de MOD-SCRIPTPWS queda delimitada en §94; la delegación funcional acotada de MOD-SYNC queda delimitada en §110 y no transfiere la titularidad del frente EP.
 
-El estado de reanudación vigente de este frente está en §60–§113; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
+El estado de reanudación vigente de este frente está en §60–§114; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
 
 Leer por relevancia: OEP actual→metacanon central→Sistema de Instrucciones/Metodología/Bootstrap vigentes→canon transversal EP→AGENTS.md y ep-medio-architectura.md→código/evidencia en commits exactos. Fuente caída no es «sin cambios». Un archivo no crea herramientas, credenciales ni memoria entre plataformas.
 
@@ -2882,3 +2882,26 @@ La transferencia cambia la titularidad del frente `frentes/ep/` y la responsabil
 - EP-TASK-004: `en_curso`; GUI 3D instalada y suite sintética PASS; PR #20 continúa draft/no fusionada; aceptación visual humana y H10 pendientes.
 
 **Versión:** OEP v0.3.46. La titularidad está transferida y verificada; las tareas y criterios de aceptación no se declaran completados por el mero cambio de responsable.
+
+## §114. Custodia de protector de recuperación BitLocker · PC-14 · 2026-11-09
+
+### Estado observado
+
+El volumen W: del VHDX SeryMente mantiene XtsAes256, ProtectionStatus On, FullyEncrypted y EncryptionPercentage 100. Tiene protector de contraseña y protector RecoveryPassword. El VHDX está vacío; el workspace original sigue intacto y fuera del volumen.
+
+### Incidencia de salida del comando
+
+Durante la creación del protector RecoveryPassword, el cmdlet de BitLocker emitió el número de recuperación en la salida del proceso remoto. Ese valor no se insertó en Git ni en el chat visible, pero quedó dentro de la respuesta de ejecución remota de esta sesión. Por minimización y custodia, se clasifica el protector recién creado como POTENTIALLY_EXPOSED; no se debe usar como única recuperación de confianza.
+
+Se intentó una escritura/read-back local a EP Vault que fue bloqueada por los controles de la herramienta antes de ejecutarse. No se afirma que EP_WORKSPACE_BITLOCKER_RECOVERY_PASSWORD exista ni que su read-back haya sido validado. No se modificó el archivo formal de EP Vault.
+
+### Tratamiento obligatorio antes de migrar el workspace
+
+1. Mantener el protector de contraseña (maestra) activo y no desmontar ni destruir el VHDX.
+2. Generar un nuevo protector RecoveryPassword mediante un flujo local que suprima la salida del secreto; el valor debe permanecer solo en memoria del proceso.
+3. Guardarlo en EP Vault como EP_WORKSPACE_BITLOCKER_RECOVERY_PASSWORD; cotejar escritura/read-back en memoria sin emitirlo a stdout, logs, Git, chat ni portapapeles.
+4. Verificar por metadatos que el volumen conserva XtsAes256, protección On, cifrado 100 % y al menos un protector Password y otro RecoveryPassword.
+5. Solo después del read-back satisfactorio, retirar el protector potencialmente expuesto y registrar únicamente identificador del protector, tipo, estado y evidencia no secreta.
+6. Copiar los 195 archivos del workspace a W: con manifiestos SHA-256 de origen/destino; montar el VHDX en Desktop\SeryMente y retirar el staging en claro solo después de un segundo read-back íntegro.
+
+**Estado:** protector de recuperación presente pero clasificado POTENTIALLY_EXPOSED; custodia formal no verificada; migración bloqueada. No se ha perdido ni borrado el workspace original.
