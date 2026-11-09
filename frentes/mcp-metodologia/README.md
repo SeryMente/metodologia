@@ -29,7 +29,7 @@ Identidad vigente: **MCP-OCP** (anteriormente MCP-METODOLOGIA). Se conserva el s
 
 **Separación de dominio:** MCP-OCP se orienta a desarrollo/gobernanza y operación local mediante localhost y/o RDC autorizado; Khora conserva las capacidades propias de la prótesis cognitiva y su superficie pública Vercel. No se comparten controles, secretos ni autorizaciones.
 
-**Fuente normativa vigente:** [DUG Samantha v385 · NX-385m · Metacanon 1.29 · GOW 2.18](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html).
+**Fuente normativa vigente:** [DUG Samantha v386 · NX-386m · Metacanon 1.29 · GOW 2.18](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html).
 **Control vigente:** alcance Sink local por stdio autorizado directamente por el operador; generaciones y sesiones son metadatos históricos de auditoría. Núcleo MCP-OCP v0.1.22; implementación Sink y paquete actualizado pendientes. Las candidatas históricas no son código vigente ni paquetes disponibles.
 
 - **DTC MCP-OCP · ciclo local 09 · 2026-11-06:** apertura y acuse de la rectificación posterior al ciclo 08 en [coordinación](entregas/COORDINACION-SPRINT-OCP-MCP-v0.1.md); ciclo 08 permanece `CLOSED_VERIFIED`, el objetivo técnico `BLOCKED_PENDING_OPERATOR_SECURITY_REVIEW_AND_SECOND_HOST`. El cierre del ciclo 09 queda en el mismo objeto de coordinación.
@@ -53,4 +53,9 @@ Sink local por stdio está autorizado directamente por el operador; no se requie
 
 ## Sprint Sink local por RDC · 2026-11-09
 
-Plan y aceptación interfrente: [GOV-TASK-015](../gobernanza/📁%20🧭%20-%20Tareas%20provisionales/📁%20🧩%20-%20GOV-TASK-015%20-%20Sprint%20Sink%20local%20vía%20RDC/README.md). Backlog MCP vigente: [LISTA-TAREAS-PROVISIONAL.md v0.4](LISTA-TAREAS-PROVISIONAL.md). Estado: autorizado y planificado; implementación, build vigente, paquete e instalación no iniciados. DUG vigente: Samantha v385/NX-385m. La instalación EP se mantiene separada y depende de [EP-TASK-005](../ep/📁%20🧭%20-%20Tareas%20provisionales/📁%20🧩%20-%20EP-TASK-005%20-%20Instalación%20y%20aceptación%20de%20MCP-OCP%20local/README.md).
+Plan y aceptación interfrente: [GOV-TASK-015](../gobernanza/📁%20🧭%20-%20Tareas%20provisionales/📁%20🧩%20-%20GOV-TASK-015%20-%20Sprint%20Sink%20local%20vía%20RDC/README.md). Backlog MCP vigente: [LISTA-TAREAS-PROVISIONAL.md v0.6](LISTA-TAREAS-PROVISIONAL.md). Estado: autorizado y planificado; implementación, build vigente, paquete e instalación no iniciados. DUG vigente: Samantha v385/NX-385m. La instalación EP se mantiene separada y depende de [EP-TASK-005](../ep/📁%20🧭%20-%20Tareas%20provisionales/📁%20🧩%20-%20EP-TASK-005%20-%20Instalación%20y%20aceptación%20de%20MCP-OCP%20local/README.md).
+
+
+## Instalación local del servidor MCP-OCP · destino de release 1.0.0
+
+El release de software objetivo es MCP-OCP 1.0.0. El ejecutable debe instalarse en el checkout local de Metodología, en `frentes/mcp-metodologia/instalacion-local/` bajo `SeryMente/Repositorios/Metodologia/metodologia/`. El directorio de binarios/runtime/configuración queda excluido de Git; el código fuente y pruebas siguen versionados. DB SQLite, claves DPAPI, logs y backups permanecen fuera del checkout en root protegido verificado por EP. La instalación solo se declara hecha después de extraer paquete verificado, comprobar archivos/hash y hacer read-back. Estado documental del sprint: preparado; software 1.0.0 no construido ni instalado por esta actualización.
