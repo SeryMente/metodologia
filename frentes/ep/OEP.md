@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.43. **Ancla:** el control formal de responsabilidad EP queda creado en generación 1 mediante asignación inicial autorizada; el antecedente de ausencia de control se conserva como histórico y no se declara transferencia desde un titular no verificable. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.44. **Ancla:** el control formal de responsabilidad EP queda creado en generación 1 mediante asignación inicial autorizada; el antecedente de ausencia de control se conserva como histórico y no se declara transferencia desde un titular no verificable. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -2544,7 +2544,7 @@ EP-TASK-001 permanece `pendiente`; EP-TASK-002, EP-TASK-003 y EP-TASK-004 perman
 - **Fuente única de estado:** este archivo, `frentes/ep/OEP.md`. La presente sección registra la definición funcional; no se crea otro núcleo ni una carpeta de módulo mientras el diseño esté en validación.
 - **Mandato:** instrucción directa del operador en la conversación receptora del 2026-11-09: crear Sync como módulo de EP, permitir la delegación transversal de responsabilidad para este encargo y presentar su propósito para validación antes de utilizarlo en la actualización del IPZ.
 - **Delegación acotada:** esta conversación recibe mandato funcional para definir MOD-SYNC y preparar su diseño inicial. No implica transferencia de titularidad del frente EP, no modifica su CONTROL-RESPONSABILIDAD.json ni transfiere la autoridad técnica de MCP-OCP. Tampoco modifica DUG, ART-025, ART-027, Sink ni el contrato OCPMSP.
-- **Estado:** `MÓDULO REGISTRADO · PROPÓSITO PROPUESTO · PENDIENTE DE VALIDACIÓN DEL OPERADOR`. No se declara implementado ni desplegado.
+- **Estado:** `PROPÓSITO VALIDADO POR EL OPERADOR · ESPECIFICACIÓN TÉCNICA PROPUESTA EN §111 · IMPLEMENTACIÓN PENDIENTE`. No se declara implementado ni desplegado.
 
 ### 110.2 Propósito propuesto para validación
 
@@ -2602,4 +2602,186 @@ El primer hito será publicar y verificar únicamente los dos alias de navegaci�
 - **Implementación, DNS, endpoints, credenciales y despliegue:** NO EJECUTADOS.
 - **Relación con IPZ:** MOD-SYNC se utilizará como resolvedor de los dos enlaces cortos cuando el propósito sea validado y el primer hito supere aceptación. Hasta entonces, no insertar URLs ficticias ni declarar enlaces Sync operativos.
 
-**Decisión solicitada al operador:** validar, corregir o rechazar el propósito de MOD-SYNC descrito en §110.2 y sus límites funcionales de §§110.3–110.4. La validación del propósito habilitará preparar la especificación de implementación; no se interpreta por sí sola como aceptación de dominio, proveedor, credenciales ni despliegue.
+**Validación recibida:** el operador aprobó expresamente el propósito de §110.2 el 2026-11-09 y ordenó preparar la especificación de implementación. La validación no equivale a aprobar el proveedor, dominio, credenciales, infraestructura ni despliegue.
+
+## §111. Especificación técnica propuesta de MOD-SYNC · v0.3.44 · 2026-11-09
+
+### 111.1 Estado y autoridad
+
+- **Estado:** `ESPECIFICACIÓN TÉCNICA PROPUESTA · PENDIENTE DE VALIDACIÓN DEL OPERADOR`; no es implementación ni autorización de despliegue.
+- **Mandato:** aprobación expresa del propósito en §110.2 el 2026-11-09; instrucción posterior: «Continúa con la especificación de implementación».
+- **Responsabilidad:** MOD-SYNC sigue siendo módulo funcional de EP. La delegación transversal de este encargo permite definir y documentar la especificación; no transfiere el control formal EP (generación 1), no crea un control independiente y no altera el control MCP-OCP.
+- **Fuente de estado:** OEP. No crear segundo OCP, control, sesión, folio ni núcleo autónomo.
+- **Límite de fase:** esta especificación no autoriza escribir código, registrar DNS, provisionar servicios/credenciales, publicar el dominio ni insertar enlaces operativos en IPZ. Esas acciones requieren selección de dominio/proveedor y autorización específica.
+
+### 111.2 Decisión arquitectónica propuesta
+
+**Registro declarativo versionado + resolvedor HTTPS de solo lectura.**
+
+1. El registro de alias será un archivo JSON canónico dentro del repositorio privado `SeryMente/metodologia`, rama `main`.
+2. El servicio de resolución recibirá únicamente un slug y consultará una instantánea validada del registro incorporada en el artefacto de despliegue. No consultará GitHub en cada petición.
+3. El servicio devolverá una redirección HTTP 302 al destino registrado. No servirá contenido del DUG ni de otros archivos.
+4. Los cambios de alias se administrarán mediante cambios controlados en Git (preferentemente PR/revisión; alternativamente actualización condicionada al SHA observado y lectura de vuelta). No habrá API pública de escritura ni CRUD de alias en runtime.
+5. No se introduce base de datos para la primera entrega: dos aliases de navegación con cambios infrecuentes no justifican mantener otra fuente mutable. La historia Git proporciona versionado, procedencia y reversión.
+
+Esta arquitectura reduce secretos, superficies de escritura y dependencias de runtime. Si posteriormente se requieren muchas escrituras dinámicas, métricas detalladas o múltiples clientes administradores, se abrirá una revisión de diseño; no se anticipa una base de datos en la primera versión.
+
+### 111.3 Artefactos y rutas previstas
+
+Una vez validada esta especificación, la implementación propuesta se organizará bajo `frentes/ep/modulos/sync/`:
+
+- `registry.json`: mapa declarativo de aliases y destinos aprobados.
+- `registry.schema.json`: esquema de validación del registro.
+- `README.md`: instrucciones de operación del módulo, subordinadas al OEP.
+- `src/`: adaptador HTTP del resolvedor, independiente del proveedor.
+- `tests/`: pruebas unitarias, de contrato, seguridad y aceptación.
+- `build-manifest.json` (generado en CI/deployment, no fuente manual): commit de `main`, SHA del registro y revisión/huella del DUG validado.
+
+El OEP conserva autoridad sobre propósito, decisiones, estado y pendientes. Estos archivos no crean un segundo objeto de estado.
+
+### 111.4 Modelo de registro
+
+El registro utilizará el esquema lógico `sync-registry/v1`. Cada entrada contiene como mínimo:
+
+| Campo | Regla |
+|---|---|
+| `slug` | Identificador único, minúsculas ASCII, patrón `[a-z0-9]+(?:-[a-z0-9]+)*`, longitud 2–32. |
+| `status` | `draft`, `active`, `suspended` o `retired`. Solo `active` redirige. |
+| `target.kind` | `github_blob` en la primera versión. |
+| `target.owner` / `repository` | `SeryMente` / `metodologia` en los dos enlaces iniciales. |
+| `target.ref` | `main`; los dos destinos son referencias vivas al documento canónico actual. |
+| `target.path` | Ruta exacta permitida del DUG. |
+| `target.fragment` | Ancla validada o `null`; no se acepta fragmento arbitrario. |
+| `created_on` / `updated_on` | Fechas ISO 8601 UTC. |
+| `approval_ref` | Referencia al evento/decisión que autoriza la alta o cambio. |
+
+Registro inicial previsto (sin dominio ni URL pública):
+
+```json
+{
+  "schema": "sync-registry/v1",
+  "registry_version": 1,
+  "aliases": [
+    {
+      "slug": "gow-arr",
+      "status": "active",
+      "target": {
+        "kind": "github_blob",
+        "owner": "SeryMente",
+        "repository": "metodologia",
+        "ref": "main",
+        "path": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.html",
+        "fragment": "gow-arranque-chatgpt"
+      },
+      "approval_ref": "MOD-SYNC-INITIAL-IPZ-LINKS"
+    },
+    {
+      "slug": "dug",
+      "status": "active",
+      "target": {
+        "kind": "github_blob",
+        "owner": "SeryMente",
+        "repository": "metodologia",
+        "ref": "main",
+        "path": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.html",
+        "fragment": null
+      },
+      "approval_ref": "MOD-SYNC-INITIAL-IPZ-LINKS"
+    }
+  ]
+}
+```
+
+El identificador `MOD-SYNC-INITIAL-IPZ-LINKS` es una referencia de diseño propuesta, no un folio global. Las altas no podrán incorporar destinos arbitrarios ni cambiar silenciosamente un slug ya retirado.
+
+### 111.5 Contrato HTTP
+
+| Petición | Resultado requerido |
+|---|---|
+| `GET /{slug}` activo | `302 Found` con `Location` exacto al destino canónico. |
+| `HEAD /{slug}` activo | Mismos encabezados de redirección, sin cuerpo. |
+| Alias desconocido, suspendido o retirado | `404 Not Found`; no redirigir. |
+| Método distinto de GET/HEAD | `405 Method Not Allowed` con `Allow: GET, HEAD`. |
+| Query string entrante | Rechazar con `400`; nunca se concatena ni reenvía al destino. |
+| `GET /healthz` | Estado mínimo del servicio; sin revelar registro, secretos ni datos de usuarios. |
+
+El redirect utilizará `Cache-Control: no-store` para evitar que cambios autorizados de destino queden retenidos en cachés del cliente. Incluirá `Referrer-Policy: no-referrer` y `X-Content-Type-Options: nosniff`. HTTPS será obligatorio; HTTP no se utilizará para resolver aliases.
+
+El resolver no acepta parámetros como `url`, `target`, `dest` o equivalentes. No existe endpoint de redirección arbitraria.
+
+### 111.6 Validación de destinos y seguridad
+
+- Solo HTTPS; prohibidos HTTP, esquemas de archivo, `javascript:`, `data:`, hosts locales/privados, credenciales embebidas y puertos no estándar.
+- Primera allowlist: host `github.com`, owner `SeryMente`, repo `metodologia`, rama `main` y ruta exacta `gobernanza/METAPROMPT-CANONICO-SAMANTHA.html`.
+- El fragmento permitido para `gow-arr` será exactamente `gow-arranque-chatgpt`; `dug` no llevará fragmento.
+- No se admiten query strings en el destino inicial. Los nuevos hosts/rutas requieren ampliación expresa de allowlist y prueba.
+- El registro es la única fuente de destinos. Los aliases retirados se conservan como tombstones y no se reasignan a otro recurso.
+- Administración solo mediante Git autenticado y cambios sujetos a revisión/CAS. Ninguna credencial de administración se almacena en el repositorio.
+- La resolución pública no establece cookies, no solicita credenciales de GitHub, no sirve contenido privado y no altera políticas de acceso del destino.
+
+**Privacidad:** la versión inicial deshabilitará analítica de usuario. No conservará IP, `Referer`, cookies, query strings ni identificadores personales. Antes de elegir proveedor se debe verificar y configurar la retención de logs que ese proveedor aplique por defecto.
+
+### 111.7 Semántica de acceso y privacidad del DUG
+
+Los dos links son referencias de navegación, no credenciales. La redirección hacia el repositorio privado no concede lectura del documento. Un modelo/cliente solo podrá recuperar el DUG si dispone de un conector o credencial de GitHub autorizado para `SeryMente/metodologia`.
+
+Un cliente sin autorización debe obtener el comportamiento normal de GitHub (por ejemplo, solicitar autenticación o denegar el acceso). Sync no publicará el HTML, no copiará el texto normativo a una página pública y no actuará como proxy anónimo.
+
+Por tanto, la aceptación de IPZ debe probar dos aspectos separados: (1) que el alias resuelve correctamente; (2) que el modelo/cliente de destino dispone de acceso legítimo al repositorio. Un redirect satisfactorio no prueba que el contenido se haya leído.
+
+Una futura entrega de contenido a modelos sin conector GitHub requeriría un servicio de distribución autenticada, autorización de los frentes propietarios y una revisión de seguridad separada. Queda fuera de MOD-SYNC v1.
+
+### 111.8 Construcción, publicación y actualización
+
+1. Obtener desde `main` el registro y el DUG exactos; validar esquema, unicidad y destinos.
+2. Comprobar que el archivo DUG existe y que el HTML conserva el ancla `gow-arranque-chatgpt`; verificar la ruta del DUG raíz.
+3. Generar artefacto inmutable que registre commit de `main`, blob/SHA del registro, revisión del DUG validada y versión del resolvedor.
+4. Ejecutar pruebas antes de desplegar; una validación fallida bloquea el artefacto, no publica parcialmente.
+5. Desplegar primero en entorno de prueba con hostname temporal del proveedor, sin insertar ese hostname en IPZ.
+6. Verificar GET/HEAD, Location, códigos negativos, TLS, ausencia de query forwarding y acceso autorizado/no autorizado al destino.
+7. Incorporar dominio definitivo solo después de verificar titularidad/control DNS, TLS y retención de logs.
+8. Promover a producción con lectura de vuelta del registro/artefacto y pruebas desde una sesión de navegador nueva.
+9. Cualquier cambio de destino vuelve a pasar la secuencia de validación y genera nueva revisión; nunca reutiliza un slug retirado.
+
+El proveedor debe soportar: HTTPS y dominio propio, resolución HTTP 302/HEAD, despliegue desde repositorio privado o artefacto firmado, configuración segura de logs, health check y reversión. El proveedor concreto no está seleccionado.
+
+### 111.9 Pruebas obligatorias
+
+**Unitarias/registro:** esquema válido; slug inválido; duplicado; colisión de mayúsculas/minúsculas; estado no activo; alias retirado no reutilizable; fragmento desconocido; host/ruta/query no permitidos.
+
+**Contrato HTTP:** GET devuelve 302 y Location exacto; HEAD no entrega cuerpo; query string devuelve 400; método no permitido devuelve 405; slug desconocido/suspendido/retirado devuelve 404; no hay redirecciones encadenadas innecesarias ni cache del 302.
+
+**Integridad:** el build identifica commit y SHA del registro; la ruta del DUG existe en `main`; el ancla `gow-arranque-chatgpt` existe en el HTML exacto validado; el destino publicado coincide con el registro aprobado.
+
+**Seguridad/privacidad:** no open redirect; no URL arbitraria; no secretos ni datos personales; no reenvío de query/Referer; no modificación pública del registro; el destino GitHub conserva autenticación original.
+
+**Aceptación operativa:** resolver ambos enlaces desde sesión nueva en navegador; comprobar TLS y Location; probar acceso al documento con cuenta/conector autorizado y comprobar que un cliente sin autorización no obtiene el contenido. Los resultados se documentan por separado.
+
+### 111.10 Criterios de aceptación de MOD-SYNC v1
+
+MOD-SYNC v1 solo se declara `IMPLEMENTADO_Y_VERIFICADO` cuando:
+
+1. El dominio propio y su control DNS están acreditados y el TLS está activo.
+2. El artefacto publicado corresponde a un commit y registry SHA identificables.
+3. `gow-arr` redirige al DUG `main` conservando `#gow-arranque-chatgpt`.
+4. `dug` redirige a la raíz del mismo documento canónico.
+5. Los casos negativos, query string, métodos y alias suspendidos cumplen el contrato.
+6. No se concede acceso al repositorio privado ni se expone contenido.
+7. La autenticación real del cliente consumidor ha sido probada; la redirección no se confunde con lectura.
+8. OEP, registro, README y artefactos pertinentes están leídos de vuelta; la revisión puede reconstruirse.
+
+### 111.11 Decisiones aún pendientes
+
+- Dominio corto existente, titular y control DNS: `PENDIENTE`.
+- Proveedor/entorno de ejecución: `PENDIENTE`.
+- Método de despliegue y custodia del acceso de build: `PENDIENTE`.
+- Política real de retención de logs del proveedor: `PENDIENTE`.
+- Aprobación de la arquitectura declarativa Git + redirect 302: `PENDIENTE DE VALIDACIÓN DEL OPERADOR`.
+- Implementación de código, pruebas, DNS, TLS, endpoints y publicación: `NO EJECUTADOS`.
+- Enlaces finales para IPZ: `NO DISPONIBLES`; no insertar hasta pasar aceptación.
+
+### 111.12 Separación de mecanismos
+
+MOD-SYNC gestiona aliases cortos. No implementa `sync_bundle` de OCPMSP, no implementa Sink de ART-027, no clasifica ni autoriza principios, no crea snapshots normativos ni firma atestaciones. La interoperabilidad futura debe definirse mediante contrato propio y aprobación de los frentes respectivos.
+
+**Siguiente decisión del operador:** validar o corregir esta especificación, en especial la arquitectura de registro declarativo en Git + resolvedor HTTPS 302, la política de privacidad y el alcance redirect-only. Después se podrá seleccionar el dominio/proveedor y preparar la implementación.
