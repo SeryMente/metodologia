@@ -172,3 +172,12 @@ El operador autorizó priorizar RDC e instanciar el directorio aunque temporalme
 5. Sustituir el directorio ordinario por el punto de montaje Desktop\SeryMente; verificar de nuevo el árbol, conservar temporalmente la fuente hasta el read-back y retirarla solo tras confirmar la migración íntegra.
 
 **Estado:** en_curso. El VHDX existe y está vacío; el workspace actual continúa fuera del volumen. No declarar cifrado, protegido ni migrado hasta que todas las verificaciones anteriores estén completas.
+---
+
+## Incidencia de custodia de BitLocker y bloqueo de migración · 2026-11-09
+
+El volumen W: permanece cifrado XTS-AES256, Protection On, 100 %, con protector Password y RecoveryPassword. El cmdlet de creación del protector RecoveryPassword emitió el número en la salida del proceso remoto. Se clasifica por prudencia ese protector como POTENTIALLY_EXPOSED; no se debe confiar en él como único mecanismo de recuperación.
+
+La escritura automática en EP Vault como EP_WORKSPACE_BITLOCKER_RECOVERY_PASSWORD fue bloqueada por los controles de la herramienta antes de ejecutarse. No existe evidencia de variable guardada ni read-back. La bóveda formal conserva 0 variables según última lectura anterior a la incidencia.
+
+Siguiente secuencia: crear un nuevo protector RecoveryPassword con salida suprimida y valor solo en memoria; guardar/leer de vuelta en EP Vault sin stdout/log/chat/clipboard; verificar Password+RecoveryPassword y estado On/100; retirar el protector potencialmente expuesto; después migrar los 195 archivos por SHA-256. Mientras tanto no mover, borrar ni modificar Desktop\SeryMente.
