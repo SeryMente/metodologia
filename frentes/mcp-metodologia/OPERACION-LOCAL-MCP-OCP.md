@@ -1,6 +1,6 @@
 # Operación local · MCP-OCP
 
-**Estado vigente:** MCP-OCP v0.1.22. Sink local por stdio está autorizado directamente por el operador, pero su implementación y paquete vigente todavía no están construidos. La candidata 0.1.0 que se describe aquí es evidencia histórica; la identidad/ruta del entorno temporal no se conserva y el paquete no está disponible en este repositorio.  
+**Estado vigente:** núcleo documental MCP-OCP v0.1.26; backlog v0.7; DUG Samantha v386/NX-386m; objetivo de software MCP-OCP 1.0.0. Sink local por stdio y panel de observabilidad están autorizados en el alcance del sprint, pero su implementación/build/paquete actuales todavía están pendientes. La candidata 0.1.0 que se describe aquí es evidencia histórica; la identidad/ruta del entorno temporal no se conserva y el paquete no está disponible en este repositorio.  
 **Arquitectura:** proceso MCP stdio local; el cliente inicia y administra el proceso. No hay listener TCP/HTTP ni endpoint público.  
 **Fuente de verdad documental:** [MCP-OCP · núcleo](MCP-METODOLOGIA.md) y [lista provisional de tareas](LISTA-TAREAS-PROVISIONAL.md).  
 **Separación:** este servidor pertenece exclusivamente a MCP-OCP en Metodología. No es Khora MCP ni el bridge de Jules.
@@ -76,12 +76,7 @@ OcpMcp.exe provision-operator
 
 El programa muestra la cuenta/SID actual y solicita escribir exactamente `REGISTER <SID>`. Esto crea la raíz de autorización local, una clave HMAC y una clave Ed25519; las claves privadas se protegen con DPAPI CurrentUser. No se ha realizado esa operación en el ciclo de build.
 
-Las herramientas MCP de escritura separan preparación y ejecución:
-1. `prepare_operation` crea una solicitud pendiente, no ejecuta ni autoriza.
-2. El operador inspecciona el request y, si decide autorizarlo, ejecuta `OcpMcp.exe authorize --request-id <id>` en consola visible. Se presenta el payload y se exige confirmar su hash corto.
-3. `execute_operation` solo funciona con un grant local, válido y no consumido.
-
-No se automatiza aprobación. No se deben pasar confirmaciones por pipes, variables de entorno ni scripts desatendidos.
+El release 1.0.0 no expone herramientas MCP de escritura ni botones de autorización en el panel. La UI es solo de observación. La única provisión local de identidad que pudiera requerir el bootstrap se mantiene interactiva: el operador presente revisa el perfil y confirma explícitamente `REGISTER <SID>` en consola. No automatizar ni inyectar esa confirmación por pipes, variables de entorno o scripts desatendidos.
 
 ## 6. Estado normativo
 
@@ -127,8 +122,23 @@ El ejecutable MCP-OCP 1.0.0 no se instala solo en LocalAppData. Se instala dentr
 - Checkout: `SeryMente/Repositorios/Metodologia/metodologia/`.
 - Carpeta: `frentes/mcp-metodologia/instalacion-local/`.
 
-La carpeta contiene ejecutable, runtime/dependencias, launcher, configuración de ejemplo y manifiesto/hash; queda excluida de Git. DB SQLite, DPAPI, fuentes sensibles, logs operativos y backups quedan fuera del checkout en un root independiente protegido. No asumir protección de LocalAppData ni de un volumen con BitLocker suspendido.
+La carpeta contiene ejecutable MCP, runtime/dependencias, launcher, configuración de ejemplo, manifiesto/hash y subcarpeta `panel/OcpMcp.Panel.exe`; queda excluida de Git. DB SQLite, DPAPI, fuentes sensibles, logs operativos y backups quedan fuera del checkout en un root independiente protegido. No asumir protección de LocalAppData ni de un volumen con BitLocker suspendido.
 
 Flujo: sincronizar checkout → verificar ZIP/manifest/SHA → extraer en esa carpeta → comprobar archivos/hash/read-back → establecer root protegido → importar fuentes DUG v386 y comprobar 43 IDs/MDP → verificar readiness real → solicitar consentimiento presente para `provision-operator` / `REGISTER <SID>` → configurar el cliente MCP STDIO/RDC → ejecutar pruebas de uso y cierre.
 
 La entrega del paquete no prueba instalación. Un proceso activo o health READY de test no prueba fuentes importadas ni operador provisionado. La etiqueta `INSTALLED_AND_READBACK_VERIFIED` requiere ruta, versión, commit/blob, SHA del paquete y extracción cotejada. No abrir listeners/endpoints públicos; `MCP-NORMATIVO` sigue DESACTIVADO.
+
+
+## 11. Panel local de observabilidad · release 1.0.0
+
+Especificación funcional y visual: [PANEL-OBSERVABILIDAD.md](PANEL-OBSERVABILIDAD.md). Tarea de implementación: MCP-OCP-13.
+
+El panel es una app de escritorio Windows WPF/C#, ligera y de solo lectura; no es otro cliente ni servidor MCP. No interviene en las pipes STDIO, no abre HTTP/TCP/localhost, no incorpora WebView2/Node/DB nueva ni herramientas de escritura. Su contrato de datos es `monitor/state.json` y `monitor/events.jsonl` bajo el root protegido configurado por EP; el servidor publica cambios de estado y eventos saneados sin payloads ni contenidos de fuentes.
+
+EP-TASK-005 abre la ventana como proceso hijo al confirmar que la sesión persistente está `ACTIVE`, y la cierra al finalizar esa sesión. Si el servidor todavía no está iniciado, la ventana permanece visible con “Sesión activa · esperando servidor”. Si el proceso MCP se detiene y EP sigue vigente, muestra “Servidor detenido/desconectado”; no intenta reiniciar ni controlar el proceso. Esta integración no modifica EP-TASK-003 ni añade heartbeat, polling o vigilancia general al dead-man.
+
+**Vista principal:** estado global dominante; recorrido visual sesión → proceso → STDIO → fuentes → readiness; tarjetas de salud de proceso/protocolo/DUG/fuentes/operador/root; actividad actual y eventos recientes; una sola atención prioritaria. La vista debe ser clara en pocos segundos, con icono+texto+color, sin parpadeos, audio ni movimiento constante. No mostrar métricas sin datos reales.
+
+**Estados no intercambiables:** proceso vivo, protocolo inicializado, fuentes importadas/íntegras/vigentes, operador provisionado, root protegido y readiness agregado. “Listo” solo cuando los gates requeridos están verificados. Payloads, texto de documentos, argumentos, resultados, tokens, claves y SID quedan fuera de la telemetría.
+
+**Apertura y cierre son responsabilidad EP.** MCP-OCP construye el panel y entrega contrato, binario, schema, hashes y prueba; no instala ni opera procesos persistentes del host.
