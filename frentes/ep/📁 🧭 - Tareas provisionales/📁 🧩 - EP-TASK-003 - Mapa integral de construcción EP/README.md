@@ -181,3 +181,17 @@ El volumen W: permanece cifrado XTS-AES256, Protection On, 100 %, con protector 
 La escritura automática en EP Vault como EP_WORKSPACE_BITLOCKER_RECOVERY_PASSWORD fue bloqueada por los controles de la herramienta antes de ejecutarse. No existe evidencia de variable guardada ni read-back. La bóveda formal conserva 0 variables según última lectura anterior a la incidencia.
 
 Siguiente secuencia: crear un nuevo protector RecoveryPassword con salida suprimida y valor solo en memoria; guardar/leer de vuelta en EP Vault sin stdout/log/chat/clipboard; verificar Password+RecoveryPassword y estado On/100; retirar el protector potencialmente expuesto; después migrar los 195 archivos por SHA-256. Mientras tanto no mover, borrar ni modificar Desktop\SeryMente.
+
+---
+
+## Actualización de custodia BitLocker · 2026-11-09 · posterior a §114 OEP v0.3.48
+
+Esta actualización supersede los estados anteriores de este README que marcaban la custodia del protector como pendiente o no verificada.
+
+- W: mantiene `XtsAes256`, `Protection On`, `FullyEncrypted`, `100 %`.
+- Se creó el protector RecoveryPassword nuevo `{4D46BB4B-932D-4E56-89EB-7A177DBD1C84}`.
+- EP Vault confirmó `VAULT_WRITE_READBACK_VERIFIED` para `EP_WORKSPACE_BITLOCKER_RECOVERY_PASSWORD`; el secreto no se incluyó en la salida.
+- Después de esa verificación se retiró el protector potencialmente expuesto `{3654D7BC-6BB7-492B-A346-6762969E90D1}`. Se confirmó un único protector RecoveryPassword nuevo y un protector Password.
+- El portapapeles se limpió y verificó sin leer su contenido: `CLEARED_TEXT_FORMATS_VERIFIED`.
+
+**Pendiente:** los 195 archivos/11 directorios siguen en `Desktop\SeryMente`. No hay copia a W:, manifiesto SHA-256, montaje en la ruta del Escritorio ni eliminación del origen. RDC informa 0 % de llamadas restantes; por eso la migración no se ejecutó. Mantener el origen intacto y EP-TASK-003 en `en_curso` hasta completar la copia, ambos read-backs SHA-256 y la aceptación.
