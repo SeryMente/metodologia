@@ -5,8 +5,8 @@
 **Responsabilidad:** frente Gobernanza. Las tareas técnicas conservan sus OCP y fuentes.
 **Fuente normativa:** Samantha v385 · NX-385m · Metacanon 1.29 · GOW 2.18.
 **DUG:** commit `7dcdac6c62f9e8a27ce11f8fa0e4fc379a3d12f8`; blob `72cd2e8e4e6a594b300ba1868baeabc2472beb97`.
-**MCP-OCP:** núcleo v0.1.23 · commit `4aa88cf1f9aed015c9940923959dc2c66e8f70d9` · blob `a18e9ab721a07fe8ee4d4a0f1fa0ae1e3aa1f054`.
-**EP:** OEP v0.3.52.
+**MCP-OCP:** núcleo v0.1.24 · commit `b342e28c01445bb107a5719e62c8b0187f1b675b` · blob `e845322f9947820ed01c04b996414b1ca44cd2dc`.
+**EP:** OEP v0.3.53 · commit `fa561294c58579c4bef8230fab833a873d44f8f7` · blob `6f89f4b6e2c2b66feac2b88a9b3579ab57a0f5a1`.
 **Autorización:** el operador autorizó directamente Sink local por stdio en MCP-OCP. No se requiere aprobación de titularidad anterior, generación ni folio; dichos campos son auditoría, no compuertas.
 **Destino EP designado:** perfil/usuario Windows `PC 7`; dispositivo RDC asociado según el operador; ubicación `LOC-OTHER`. El hostname/ID del dispositivo, usuario/SID efectivos y estado del host requieren preflight vivo. Por LOC-OTHER, el dead-man de EP-TASK-003 es un gate obligatorio antes de runtime persistente.
 **Alcance:** contrato, implementación Sink local, pruebas, paquete, handoff, bootstrap en el perfil designado y aceptación E2E. Esta ficha es planificación: no acredita código, build, instalación ni prueba ejecutados.
@@ -91,8 +91,8 @@ Se usará un único harness: primero corte vertical P004; después el mismo harn
 |---|---|---|
 | Código productivo no está en `main` | Hay código C# en ramas remotas; el ZIP 0.1.0 usa pins v377/core v0.1.20 y no está en el repo. | Reconciliar y portar fuente; no recuperar binario ni depender de una terminal histórica. |
 | Sink no implementado | El catálogo actual identifica 43 IDs/MDP; el resolver de texto individual no está desplegado en main. | Implementar Sink explícito; no inferir applicability/dependencies faltantes. |
-| Root de datos fuera del perímetro cifrado | El código candidato usa `%LOCALAPPDATA%\SeryMente\OCP MCP` por defecto; W: es el volumen protegido. | Añadir root configurable y validado hacia W:, o demostrar cifrado completo del volumen del perfil. Sin esto no instalar persistente. |
-| Workspace no migrado | Última evidencia: 195 archivos/11 directorios en staging; W: cifrado pero sin copia, manifest de destino ni segundo read-back. | EP-TASK-003; preservar original hasta read-back íntegro. |
+| Root de datos fuera del perímetro cifrado | El código candidato usa `%LOCALAPPDATA%\\SeryMente\\OCP MCP` por defecto. W: fue reportado cifrado en un entorno anterior; no está verificado para PC 7. | Validar/crear el root protegido en PC 7 o demostrar cifrado completo de su volumen de perfil; no heredar el estado de W: anterior. Sin esto no instalar persistente. |
+| Workspace no migrado | Última evidencia: 195 archivos/11 directorios en staging; no hay manifiesto de destino ni segundo read-back. El cifrado de W: se observó en un entorno anterior y no acredita PC 7. | EP-TASK-003; preflight de origen/destino, preservar el origen hasta read-back íntegro y validar el perímetro del destino. |
 | Capacidad RDC agotada | Última evidencia reportó `remote_calls_left_pct=0`; puede estar desactualizada. | Comprobar disponibilidad una sola vez al comenzar la fase EP; si sigue en 0, pausar solo operaciones remotas y continuar MCP/Gobernanza por GitHub. No repetir sondeos ni eludir cuota. |
 | Destino designado; preflight pendiente | El operador designó perfil Windows `PC 7`, con el equipo RDC asociado, y ubicación `LOC-OTHER`; aún no existe lectura en vivo de identidad/permisos. | No volver a pedir selección. Verificar usuario/SID y host al abrir la fase EP. Por LOC-OTHER, cerrar y probar dead-man antes de persistir runtime. |
 | Transporte real ChatGPT→RDC→stdio | Hubo smoke JSON-RPC manual en root temporal; no demuestra bridge de uso final. | Corte vertical P004 por el mismo camino de uso antes de generalizar. |
@@ -131,7 +131,7 @@ No son insumos por ahora: contraseña, token, SID, RecoveryPassword, B2, OAuth J
 - **Implementación Sink en main:** NO IMPLEMENTADA.
 - **Código fuente candidato:** recuperable desde ramas remotas; requiere reconciliación con main y pins actuales.
 - **Build/paquete vigente:** NO GENERADO.
-- **Workspace protegido:** W: cifrado y recovery custodiado; migración del árbol pendiente.
+- **Workspace/volumen previo:** la última evidencia de W: cifrado y RecoveryPassword custodiado pertenece al entorno donde se observó; no se presume aplicable a PC 7. Migración/validación en destino, manifiestos y segundo read-back pendientes.
 - **Instalación/Bootstrap EP:** NO INICIADOS.
 - **E2E:** NO EJECUTADA.
 - **IPZ nativa/FOL1:** pendientes; MCP-NORMATIVO sigue desactivado.
