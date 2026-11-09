@@ -315,3 +315,25 @@ El inventario actual ya no se limita a Vercel: cubre variables de código, Verce
 EP Vault volvió a informar nueve nombres y una nota efímera restante (`N-20261109213342-BCC5707F`, `VOLATILE_DPAPI`). Estado: esquema `ep-env-vault/1`, PBKDF2-HMAC-SHA256/600.000 iteraciones, 1.324 bytes, sesión activa. Ciphertext local `C:\Users\PC 7\AppData\Local\Khora\secrets\ep-env-vault.enc.json`, SHA-256 `41F79D30165F8381AB8D89198139853467B3DFA405A8BAC8AB2FFAC45013752F`. Este valor es una huella, no el ciphertext.
 
 La búsqueda adicional de GitHub Actions identificó 22 nombres distintos referenciados como secretos en siete workflows de `SeryMente/khora`. Render devolvió dos servicios (`khora` y `serymente-wordpress-lab`) y `render.yaml` declara `PYTHON_VERSION=3.11`; los valores reales de Render no se pudieron listar mediante la API disponible. Los secretos de Actions permanecen `PENDIENTE_DE_ACCESO`.
+
+## Hito incremental · configuración Render almacenada y nueva lectura de Vault · 2026-11-09
+
+Se transfirieron desde los YAML versionados de Render nueve valores no secretos a EP Vault. Cada escritura se realizó con el portapapeles local, acción SetFromClipboard y read-back PASS; el portapapeles se limpió después de cada operación. Alias de Vault y clave original:
+
+| Alias en EP Vault | Variable de origen | Fuente | Resultado |
+|---|---|---|---|
+| KHORA_RENDER_PYTHON_VERSION | PYTHON_VERSION | SeryMente/khora/render.yaml, rama del servicio khora | READBACK_VERIFIED |
+| RENDER_SERYMENTE_WORDPRESS_LAB_MYSQL_DATABASE | MYSQL_DATABASE | SeryMente/serymente/render.yaml | READBACK_VERIFIED |
+| RENDER_SERYMENTE_WORDPRESS_LAB_MYSQL_USER | MYSQL_USER | SeryMente/serymente/render.yaml | READBACK_VERIFIED |
+| RENDER_SERYMENTE_WORDPRESS_LAB_WORDPRESS_DB_NAME | WORDPRESS_DB_NAME | SeryMente/serymente/render.yaml | READBACK_VERIFIED |
+| RENDER_SERYMENTE_WORDPRESS_LAB_WORDPRESS_DB_USER | WORDPRESS_DB_USER | SeryMente/serymente/render.yaml | READBACK_VERIFIED |
+| RENDER_SERYMENTE_WORDPRESS_LAB_WORDPRESS_ADMIN_USER | WORDPRESS_ADMIN_USER | SeryMente/serymente/render.yaml | READBACK_VERIFIED |
+| RENDER_SERYMENTE_WORDPRESS_LAB_WORDPRESS_ADMIN_EMAIL | WORDPRESS_ADMIN_EMAIL | SeryMente/serymente/render.yaml | READBACK_VERIFIED |
+| RENDER_SERYMENTE_WORDPRESS_LAB_SYM_LAB_SOURCE_ROOT | SYM_LAB_SOURCE_ROOT | SeryMente/serymente/render.yaml | READBACK_VERIFIED |
+| RENDER_SERYMENTE_WORDPRESS_LAB_WORDPRESS_DEBUG | WORDPRESS_DEBUG | SeryMente/serymente/render.yaml | READBACK_VERIFIED |
+
+Se dejan pendientes: MYSQL_PASSWORD y MYSQL_ROOT_PASSWORD (generateValue de Render), WORDPRESS_ADMIN_PASSWORD (generateValue), WORDPRESS_DB_PASSWORD (fromService) y WORDPRESS_DB_HOST (fromService). WORDPRESS_CONFIG_EXTRA se deja pendiente de importación/validación por ser una cadena multilinea de configuración. No se intentó leer los secretos generados ni modificar los servicios Render.
+
+**Lectura consolidada posterior:** EP Vault v1.0.0 informa 18 nombres de variable, una nota DPAPI pendiente (`N-20261109213342-BCC5707F`, `VOLATILE_DPAPI`), estado ENCRYPTED_FILE_PRESENT, esquema `ep-env-vault/1`, PBKDF2-HMAC-SHA256/600.000 iteraciones, 2.048 bytes y sesión activa. La lista anterior de nueve nombres de la sección 4 es un snapshot previo; esta lectura de 18 nombres la sustituye como estado más reciente.
+
+**Ciphertext actual en PC-7:** `%LOCALAPPDATA%\Khora\secrets\ep-env-vault.enc.json`; SHA-256 `D7AD1D745CAF460E047EAE521C1C403F36E99864BC9CD0604FFC564E390F2F7D`. Esta huella identifica el archivo local de este corte; no acredita respaldo remoto.
