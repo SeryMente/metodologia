@@ -42,15 +42,15 @@
     },
     {
       "path": "frentes/ep/OEP.md",
-      "bytes": 400136,
-      "sha256": "B2F7ACE4490DF462AD9453D3474B3CAE6D68413BB015BC5F1CF741F585ED021A",
-      "git_blob": "7a67b78211a96af53b1116bec9d8f97f2591cbe0"
+      "bytes": 400805,
+      "sha256": "28D06E7F1E7EDA2A8DB997ACBD4DCF74A82A7549B3D391A67A500092748330DE",
+      "git_blob": "77a8b98ced4685221bcf787e71ffffcc618be54d"
     },
     {
       "path": "frentes/ep/README.md",
       "bytes": 4289,
-      "sha256": "FCA065B7E5F695E2D56A5AD74A3824C8358834974612C90F08E5A6094DB191C7",
-      "git_blob": "a702898c9a603542bce93bf7784bbafcd2b0ae97"
+      "sha256": "7658FECB0DAFB7D39B10AF5EAFC26F561BAEF04E52AC1606D9827F43B5EF7312",
+      "git_blob": "04864c8774c34a5afd89e1f4abd99ae63aea5d29"
     },
     {
       "path": "frentes/ep/artefactos/EP-H03-integracion-reproducible-parcial-20261011.zip.b64",
@@ -425,9 +425,9 @@
     },
     {
       "path": "frentes/ep/📁 🧭 - Tareas provisionales/📁 🧩 - EP-TASK-003 - Mapa integral de construcción EP/README.md",
-      "bytes": 19158,
-      "sha256": "F36FE305500C5823A69C96A628B146529D274B943FCB57559B2B74F6B136D062",
-      "git_blob": "46b6915a09e06e75e60d38c844c425fbaaf0c277"
+      "bytes": 20376,
+      "sha256": "4EA50043E745D95942DAD3A03E705D977C57BB11C3CE6D96C6DD911C5839D60C",
+      "git_blob": "af85167b57dc9ce95279cd96deb5c2e6764a05eb"
     },
     {
       "path": "frentes/ep/originales/INSTRUCCION-MATERIALIZACION-UBICACIONES-20261107.txt",
@@ -514,31 +514,27 @@
     "No B2 authentication, upload/read-back or restore occurred",
     "No KHORA product code or host execution performed during MOD-SCRIPTPWS inauguration.",
     "Manifest self-hash excluded to avoid recursion.",
-    "No independent verification of the reported vault write/read-back in this cycle.",
-    "Clipboard clearing and interactive vault verification remain pending.",
     "No B2 authentication or bucket/object operations in this cycle.",
     "No delete or hide operation performed on B2; synthetic verification object retained.",
     "Master Application Key remains globally unrestricted by provider; EP use constrained procedurally to OCP-MCP/ep-ocp/.",
     "No restore to a second physical location, multi-location sync or end-to-end consumer acceptance in this cycle.",
     "No prior EP owner or generation was verifiable; an initial responsibility assignment at generation 1 was created on 2026-11-08. No transfer from an identified prior owner was performed.",
-    "BitLocker VHDX was created but encryption/protection had not yet been started at this manifest cut; W: was empty and not used for workspace data.",
-    "No recovery protector has yet been generated or stored in EP Vault; local master-password entry in manage-bde is awaiting the operator.",
     "The 195 existing files under Desktop/SeryMente/signal-interpreter remain on the original workspace and were not moved to the VHDX.",
     "EP Vault 3D implementation remains in draft PR #20 and is not merged to main; human visual/auditory acceptance and H10 remain pending.",
     "No B2 credential recovery, B2 authentication, bucket/object operation, or restore occurred in this cycle.",
-    "EP BitLocker recovery protector exists on W: but its secret has not been stored/read back in formal EP Vault; do not claim recovery custody.",
     "Workspace data under Desktop/SeryMente has not been moved to the encrypted VHDX; existing plaintext copy remains in place.",
     "EP Vault PR #20 remains draft and unmerged; human visual/auditory acceptance/H10 remain pending.",
-    "RecoveryPassword protector was output by BitLocker cmdlet to remote execution response; treat as potentially exposed and rotate before data migration.",
-    "Attempt to store recovery secret in EP Vault was blocked before execution; no formal recovery-variable write/readback is verified.",
-    "Workspace data not migrated; original 195-file copy remains outside W:."
+    "Workspace data not migrated; original 195-file copy remains outside W:.",
+    "Historical incident: the first RecoveryPassword protector was potentially exposed by command output; it was superseded by a new protector whose value was stored/read-back verified in EP Vault, and the old protector was removed.",
+    "Workspace migration remains pending: 195 files and 11 directories remain in Desktop/SeryMente; no copy, SHA-256 destination read-back, mount-point switch, or plaintext staging deletion was performed.",
+    "RDC monthly remote call allowance reached 0% before workspace migration; no alternate execution path was used to bypass the device-operation boundary."
   ],
-  "prior_readback_verified": "PASS: 2026-11-09 read-back matched generation 3 transfer control, OEP v0.3.47, front README, provisional task index, EP-TASK-003/004, DTC and original continuity export. SHA-256 helper passed the standard abc vector and the export SHA-256/byte-count matches the original source.",
-  "latest_review_source_commit": "fca288d6c359c2e39f1bc621ed91f8ac32217f38",
-  "current_event": "C-EP-TRANSFER-RESPONSIBILITY-20261109-01 completed at generation 3; sole active titular. OEP v0.3.47 records the BitLocker recovery protector as POTENTIALLY_EXPOSED because the remote command output included its value; EP Vault custody/readback was blocked and not performed. Workspace migration remains blocked pending protector rotation and secure readback.",
-  "verification_scope": "DOCUMENTATION_COMMITTED_AND_READBACK_VERIFIED: generation 3 TRANSFER_RESPONSIBILITY; OEP v0.3.47 §114; front README, index, task 003 and DTC. PC-14 W: XTS-AES256/Protection On/100%; recovery protector output potentially exposed; write/readback in EP Vault blocked before execution; replacement rotation and secure custody required before any workspace migration. VHDX remains empty; original workspace untouched. PR #20 draft/unmerged; no B2 operations.",
+  "prior_readback_verified": "PASS: 2026-11-09 read-back verified generation 3 responsibility transfer, OEP v0.3.48 §114, EP-TASK-003 custody addendum, front README and original continuity export. BitLocker metadata after rotation: XTS-AES256, Protection On, FullyEncrypted/100%; exactly one new RecoveryPassword protector and one Password protector. EP Vault returned VAULT_WRITE_READBACK_VERIFIED for EP_WORKSPACE_BITLOCKER_RECOVERY_PASSWORD; clipboard cleanup returned CLEARED_TEXT_FORMATS_VERIFIED.",
+  "latest_review_source_commit": "4e6da0e9318b8b70e8380beeb22da979b0c75bdb",
+  "current_event": "C-EP-TRANSFER-RESPONSIBILITY-20261109-01 remains verified at generation 3 with one titular. On PC-14, a new BitLocker RecoveryPassword protector {4D46BB4B-932D-4E56-89EB-7A177DBD1C84} was stored in EP Vault as EP_WORKSPACE_BITLOCKER_RECOVERY_PASSWORD with VAULT_WRITE_READBACK_VERIFIED; previous potentially exposed protector {3654D7BC-6BB7-492B-A346-6762969E90D1} removed; clipboard text formats cleared and verified. W: remains XTS-AES256/Protection On/100%. Migration of 195 files/11 directories remains pending because RDC call allowance is 0%; original workspace remains in place.",
+  "verification_scope": "DOCUMENTATION_COMMITTED_AND_READBACK_VERIFIED: generation 3 TRANSFER_RESPONSIBILITY; OEP v0.3.48 §114; EP front README; EP-TASK-003 custody addendum. PC-14 metadata confirms one new RecoveryPassword plus one Password protector and XTS-AES256/Protection On/100%; EP Vault exact value read-back succeeded without revealing secret; old potentially exposed protector removed; clipboard text formats cleared. No workspace copy, SHA-256 destination verification, mount-point switch, or plaintext staging deletion; 195-file/11-directory migration remains blocked pending RDC capacity. PR #20 draft/unmerged; no B2 operations.",
   "updated_on": "2026-11-09",
-  "latest_oep_version": "v0.3.47",
+  "latest_oep_version": "v0.3.48",
   "latest_dtc_blob": "674947d99862c8d3be8013d04d01cf30d4f000f8",
   "current_responsible": {
     "owner_alias": "chatgpt-C-EP-TRANSFER-RESPONSIBILITY-20261109-01-SES-20261109-E032FC60",
