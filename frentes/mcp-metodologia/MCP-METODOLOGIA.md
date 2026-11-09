@@ -4,7 +4,7 @@
 
 - **Nombre canónico vigente:** MCP-OCP (anteriormente MCP-METODOLOGIA).
 - **Identidad canónica vigente:** MCP-OCP. **Identidad histórica:** MCP-METODOLOGIA.
-- **Versión/sello:** MCP-OCP-v0.1.25 · Sink local por stdio autorizado; candidata anterior 0.1.0 BUILD_AND_TESTED, bootstrap del perfil persistente pendiente. Las generaciones y folios de sesiones anteriores son metadatos de auditoría.
+- **Versión/sello:** MCP-OCP-v0.1.26 · Sink local por stdio autorizado; candidata anterior 0.1.0 BUILD_AND_TESTED, bootstrap del perfil persistente pendiente. Las generaciones y folios de sesiones anteriores son metadatos de auditoría.
 - **Repositorio propietario:** SeryMente/metodologia, rama main.
 - **OCP canónico:** frentes/mcp-metodologia/.
 - **Núcleo operativo único:** este archivo, MCP-METODOLOGIA.md.
@@ -513,9 +513,9 @@ El build y las pruebas no equivalen a instalación en perfil, provisión del ope
 
 ## 15. Sprint Sink local por RDC · 2026-11-09
 
-**Estado:** PLANIFICADO · NO INICIADO. El operador autorizó directamente el resolver Sink local por stdio; no requiere consentimiento de titularidad anterior, generación ni folio. El backlog v0.6 define MCP-OCP-02/05/03/04/10/07/12/08.
+**Estado:** PLANIFICADO · NO INICIADO. El operador autorizó directamente el resolver Sink local por stdio; no requiere consentimiento de titularidad anterior, generación ni folio. El backlog v0.7 define MCP-OCP-02/05/03/04/10/07/12/08.
 
-**Pins:** DUG Samantha v386 · NX-386m, baseline main `82843bca9493a522405d840393c229d2af363342`, blob `22dca684830a36dff019b47811d9b800cc9bea0a`. El manifiesto de build deberá fijar el blob resultante de este núcleo v0.1.25.
+**Pins:** DUG Samantha v386 · NX-386m, baseline main `82843bca9493a522405d840393c229d2af363342`, blob `22dca684830a36dff019b47811d9b800cc9bea0a`. El manifiesto de build deberá fijar el blob resultante de este núcleo v0.1.26.
 
 **Ruta técnica:** revisar las ramas remotas, portarlas sobre main e implementar GOW:ARR/DUG/SINK:P001..P043, lote ordenado, frecuencia por éxito, manifiesto canónico y pruebas negativas. El código candidato usa `%LOCALAPPDATA%\\SeryMente\\OCP MCP` por defecto; antes de instalar se requiere un root de datos/backup configurable y verificado dentro del perímetro cifrado, o prueba de cifrado del volumen del perfil.
 
@@ -524,7 +524,7 @@ El build y las pruebas no equivalen a instalación en perfil, provisión del ope
 
 ## 16. Instalación local obligatoria y sprint consolidado · 2026-11-09
 
-**Versión documental:** MCP-OCP-v0.1.25. Lista auxiliar objetivo v0.6. **Objetivo de release del sprint:** producto ejecutable MCP-OCP 1.0.0. No confundir versión de núcleo documental, backlog y versión del software.
+**Versión documental:** MCP-OCP-v0.1.26. Lista auxiliar objetivo v0.6. **Objetivo de release del sprint:** producto ejecutable MCP-OCP 1.0.0. No confundir versión de núcleo documental, backlog y versión del software.
 
 ### 16.1 Destino local del programa
 
@@ -545,10 +545,25 @@ Diagnóstico de readiness real (distinto de proceso activo), recuperación GOW:A
 
 ### 16.4 Ruta de ejecución de tareas existentes
 
-MCP-OCP-02 reconciliación contra main; 05 fuentes/herramientas/Sink; 03 build/tests; 04 STDIO/RDC/perímetro; 10 pins/manifiesto/evidencias; 07 paquete; 12 extracción/bootstrap en la carpeta local y datos protegidos; 08 handoff EP. Primero corte vertical ARR → DUG → SINK:P004; luego generalizar a 43. No fusionar ramas históricas completas ni reutilizar sus PASS como aceptación actual.
+MCP-OCP-02 reconciliación contra main; 05 fuentes/herramientas/Sink y proyección de estado; 13 panel visual en paralelo tras congelar el schema; 03 pruebas/build conjunto; 04 STDIO/RDC/perímetro; 10 pins/manifiestos/evidencias; 07 paquete servidor+panel; 12 extracción/bootstrap; 08 handoff EP. Primero corte vertical ARR → DUG → SINK:P004; luego generalizar a 43. No fusionar ramas históricas completas ni reutilizar sus PASS como aceptación actual.
 
 ### 16.5 Aceptación de release
 
-Build reproducible; initialize/tools/list/tools/call; texto íntegro individual y batch en orden; hashes exactos; matriz positiva/negativa; rechazo de fuentes alteradas/obsoletas/ausentes y rutas inválidas; shutdown limpio; sin listener de red no autorizado. Paquete verificable por manifest/SHA y extracción/read-back, reconstruible desde GitHub. Release 1.0.0 solo tras E2E instalado en la ruta local de Metodología y recibos de aceptación.
+Build reproducible del servidor y panel; initialize/tools/list/tools/call; texto íntegro individual y batch en orden; hashes exactos; matriz positiva/negativa; rechazo de fuentes alteradas/obsoletas/ausentes y rutas inválidas; shutdown limpio; sin listener de red no autorizado. El panel debe abrir al entrar EP en ACTIVE, distinguir proceso/protocolo/fuentes/operador/root, mostrar actividad saneada y cerrarse al terminar la sesión. Paquete verificable por manifest/SHA y extracción/read-back, reconstruible desde GitHub. Release 1.0.0 solo tras E2E instalado, panel validado y recibos de aceptación.
 
 EP conserva preflight de host, protección efectiva, dead-man LOC-OTHER, root de datos y consentimiento local. El ejecutable va dentro del checkout; bootstrap/REGISTER no se hace sin presencia y consentimiento. `MCP-NORMATIVO=DESACTIVADO`; Khora/Jules/B2/Cloudflare/endpoints públicos quedan fuera.
+
+
+## 17. Panel local de observabilidad · producto 1.0.0
+
+**Especificación:** [PANEL-OBSERVABILIDAD.md](PANEL-OBSERVABILIDAD.md). **Tarea:** MCP-OCP-13. **Estado:** alcance y contrato aprobados por instrucción directa del operador; implementación pendiente.
+
+El release 1.0.0 incluye una aplicación de escritorio Windows ligera y visual, de solo lectura. Se propone WPF/C# dentro de la solución .NET existente, con controles nativos y gráficos vectoriales sencillos; confirmar target framework/SDK/RID al reconciliar el código, sin actualizar el stack por la UI. No se introduce navegador embebido, Node, base de datos, HTTP, listener, sockets, named pipes ni un segundo servidor/cliente MCP.
+
+El servidor publica en el root de datos protegido una proyección `monitor/state.json` y eventos `monitor/events.jsonl`, con schema versionado, escritura atómica y contenido minimizado. El panel lee por cambios de archivo y observa la terminación del PID cotejado con la hora de inicio; no añade heartbeat ni vigilancia general al dead-man EP. stdout continúa reservado a JSON-RPC STDIO.
+
+El panel se abre cuando EP confirma una sesión persistente `ACTIVE`, incluso antes de que el cliente inicie el servidor; en ese caso muestra “esperando servidor”. EP-TASK-005 controla apertura/cierre como proceso hijo de la sesión. MCP-OCP entrega binario, contrato, manifest y pruebas; no opera host, ACL, BitLocker ni el disparador de EP-TASK-003.
+
+La vista principal prioriza estado global y ruta `SESIÓN → PROCESO → STDIO → FUENTES → READINESS`, tarjetas de integridad/operador/root, actividad actual y últimos eventos. Solo muestra datos observados, nunca métricas inventadas. Señales con texto+icono+color, sin parpadeos, audio ni animación constante. La UI no autoriza ni ejecuta operaciones.
+
+**Gate de salida:** apertura automática solo en EP ACTIVE; readiness real con proceso/protocolo/fuentes/operador/root separados; actividad visible sin payloads; detección de terminación; cierre con EP; lectura defensiva/ACL; build y smoke visual Windows; manifest/SHA del panel incluidos en el paquete. MCP Inspector es opcional en desarrollo y no se distribuye.
