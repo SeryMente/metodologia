@@ -2,10 +2,10 @@
 
 **Naturaleza:** tarea provisional del frente Gobernanza; no es un frente independiente ni crea control, sesión o folio propio.  
 **Estado de la tarea:** `en_curso` — planificación integrada persistida.  
-**Estado del sprint:** `PLANIFICADO_CON_BLOQUEOS_DE_AUTORIZACIÓN_Y_HOST`; ninguna implementación de Sink ha comenzado en este ciclo.  
-**Responsabilidad:** hereda el control de Gobernanza, generación 17.  
+**Estado del sprint:** `PLANIFICADO_SINK_LOCAL_AUTORIZADO_EP_INSTALLATION_PENDING`; el alcance Sink local está autorizado por el operador. La instalación persistente queda separada y solo depende de un destino confiable verificado en vivo.  
+**Responsabilidad:** hereda el OCP Gobernanza; los datos de generación/sesión son auditoría no bloqueante.  
 **Evento de planificación:** `C-GOBERNANZA-SINK-SPRINT-PLAN-01` (identificador local de evento; no es folio global).  
-**Fuente rectora:** Samantha v384 · NX-384m; `SeryMente/metodologia/main`.
+**Fuente rectora:** Samantha v385 · NX-385m; commit `7dcdac6c62f9e8a27ce11f8fa0e4fc379a3d12f8`, blob `72cd2e8e4e6a594b300ba1868baeabc2472beb97`; `SeryMente/metodologia/main`.
 
 ## 1. Resultado que debe entregar el sprint
 
@@ -60,13 +60,13 @@ La respuesta no debe entregar los 43 textos desarrollados como catálogo inicial
 
 ### B. MCP-OCP — implementación y paquete
 
-Titular observado: generación 5 · sesión `SES-20261106-CDF82783`. Control: `1fcf4178d58b39cecc3028c92493932b2ca7ab60`.
+MCP-OCP conserva su control como registro de procedencia. La instrucción directa del operador autoriza Sink local; la generación y la sesión registrales no son condición de ejecución.
 
 | Tarea provisional existente | Trabajo dentro del sprint | Condición de salida |
 |---|---|---|
 | MCP-OCP-02 | Reconciliar candidata local con main; verificar branch/worktree y resolver discrepancias entre tabla ejecutiva y fichas | Base de código, branch, pin y estado del artefacto identificados sin reutilizar recibos históricos como prueba actual |
 | MCP-OCP-05 | Extender herramientas de fuentes para `GOW:ARR`, `DUG` y `SINK:Pxxx` | Contratos de respuesta e integridad implementados; no se exponen 43 textos en el catálogo |
-| MCP-OCP-03 | Build y suite renovada | Build nuevo contra DUG v384 y core vigente; unitarias, contrato, negativos, integración stdio, seguridad y hashes PASS |
+| MCP-OCP-03 | Build y suite renovada | Build nuevo contra DUG v385 y core vigente; unitarias, contrato, negativos, integración stdio, seguridad y hashes PASS |
 | MCP-OCP-04 | Perímetro y ejecución RDC | `initialize`, `tools/list`, `tools/call`, shutdown y respuesta real por stdio/RDC; sin listener público |
 | MCP-OCP-10 | Pines y recibo | Manifest con commits/blobs/SHA-256, SDK/RID, pruebas, tamaño del paquete y limitaciones; read-back |
 | MCP-OCP-07 | Paquete y runbook | ZIP verificado, instrucciones de arranque/parada, importación, rollback y diagnóstico |
@@ -75,13 +75,13 @@ Titular observado: generación 5 · sesión `SES-20261106-CDF82783`. Control: `1
 
 **Subhito obligatorio de MCP-OCP-05:** implementar recuperación de §ARR, manifest del DUG y texto desarrollado individual. La invocación agrupada debe conservar el orden pedido y producir resultado/huella/evento individual por principio. Para evitar proliferar IDs, se recomienda mantenerlo como subhito de MCP-OCP-05; el titular puede crear un ID nuevo solo si su registro lo exige.
 
-**Gate de autoridad:** el control vigente excluye explícitamente Sink productivo. Antes de modificar código para esta función, el titular MCP-OCP debe registrar una ampliación expresa y acotada del control, limitada a Sink local por stdio dentro de `frentes/mcp-metodologia/`, pruebas, build, paquete y documentación. No incluye DUG/IPZ, host EP, credenciales externas, B2, exposición pública, Khora ni activación normativa.
+**Autorización directa del operador:** Sink local por stdio, recuperación de fuentes autorizadas, implementación, pruebas automatizadas, build, manifiesto, empaquetado y documentación dentro de `frentes/mcp-metodologia/` están autorizados en esta conversación. No se requiere aprobación adicional del titular anterior ni gestionar su generación. Se mantienen fuera del alcance la modificación del DUG/IPZ desde MCP-OCP, el host EP, credenciales externas, B2, exposición pública, Khora y activación normativa.
 
 **Reconciliación obligatoria:** la tabla de LISTA-TAREAS-PROVISIONAL.md declara PASS históricos mientras algunas fichas detalladas siguen PENDIENTE. MCP-OCP-02 debe reconciliar la tabla con las fichas y distinguir `PASS_HISTORICO`, `VERIFICADO_CON_PIN_ACTUAL`, `PENDIENTE` y `BLOQUEADO`. La candidata/paquete histórica fija DUG v377 y core v0.1.20; no acredita v384/core actual.
 
 ### C. Entorno Persistente (EP) — custodia, perfil e instalación
 
-Titular observado: generación 3 · sesión `SES-20261109-E032FC60`. OEP observado: §114 y estado de trabajo v0.3.46.
+EP conserva su control y su OEP como registro propio. La custodia y la instalación persistente se revisarán únicamente en esa fase; no bloquean desarrollo ni build local.
 
 | Tarea provisional | Trabajo del sprint | Condición de salida |
 |---|---|---|
@@ -128,7 +128,7 @@ ID desconocido, fuente no importada/obsoleta, firma/blob/hash discordante, texto
 ## 6. Pruebas de aceptación obligatorias
 
 1. `GOW:ARR` recupera §ARR y su hash coincide con la fuente fijada.
-2. `DUG` identifica exactamente v384/NX-384m y el commit/blob/SHA-256 del artefacto importado; el catálogo contiene los 43 IDs y MDP.
+2. `DUG` identifica exactamente v385/NX-385m y el commit/blob/SHA-256 del artefacto importado; el catálogo contiene los 43 IDs y MDP.
 3. Todos los 43 `SINK:Pxxx` devuelven el texto exacto correspondiente a ese ID (prueba masiva contra el DUG fijado); no hay intercambio ni contaminación entre principios.
 4. Casos de muestra en una sesión real: P001, P004, P005, P038 y P043; cada respuesta coincide con la fuente humana/renderizada y con la proyección estructurada.
 5. Recuperación agrupada: orden preservado, texto separado por ID, SHA individual, un evento de frecuencia por cada item exitoso.
@@ -144,48 +144,44 @@ ID desconocido, fuente no importada/obsoleta, firma/blob/hash discordante, texto
 
 | Riesgo/bloqueo | Evidencia actual | Mitigación / regla de parada |
 |---|---|---|
-| MCP-OCP no autorizado para Sink | Control gen5 excluye Sink productivo | No tocar código Sink hasta que el titular amplíe el control con el scope local acotado |
+| Generaciones registrales | Los controles conservan números de generación e historial | Metadatos de auditoría únicamente; la instrucción directa del operador ya autoriza Sink local y no requiere consentimiento del titular previo |
 | Estado MCP contradictorio | Tabla ejecutiva vs fichas de LISTA-TAREAS-PROVISIONAL.md no concuerdan | Resolver en MCP-OCP-02 antes de dar PASS actuales |
-| Código candidato no transferido | Candidata local 0.1.0 y ZIP están en PC10; branch histórica no se publicó en GitHub | Confirmar branch/worktree/HEAD/dirty state y preservar la fuente; no reconstruir ni reemplazar hasta saber qué existe |
-| Pins antiguos | Recibo histórico usa DUG v377/core v0.1.20; actual DUG v384/core v0.1.21 | Rebuild completo, nuevos tests y recibo con pins actuales |
+| Candidata temporal no recuperable desde el repositorio | El artefacto previo solo consta como salida de un entorno de trabajo transitorio; no forma parte de main | No depender de esa sesión ni de una terminal antigua. Reconstruir desde el código y las especificaciones verificables en main; generar un artefacto nuevo y reproducible |
+| Pins antiguos | Recibo histórico usa DUG v377/core v0.1.20; actual DUG v385/core v0.1.21 | Rebuild completo, nuevos tests y recibo con pins actuales |
 | RecoveryPassword potencialmente expuesto | OEP §114; write/read-back en EP Vault no ejecutado | Rotar con stdout/logs suprimidos, guardar/read-back en memoria y retirar protector viejo después de validar el nuevo |
-| Host PC-14 no confiable para persistencia | PC-14 está clasificado `LOC-OTHER` (cibercafé); dead-man no verificado | Preferir host de confianza/CECEQ. Si PC-14 es obligatorio, dead-man LOC-OTHER debe ser parte del gate previo |
-| GitHub privado sin autenticación local | PC-14 `gh auth status` previamente sin sesión; el perfil destino no ha importado fuentes reales | Login interactivo del propio usuario Windows, sin copiar ni revelar tokens; importar solo tras validar host |
+| Host de instalación persistente | No hay destino persistente actual designado en este plan; las sesiones temporales no heredan identidad | Descubrir y validar en vivo un destino confiable cuando se llegue a la instalación; no fijar hostname, Device ID ni perfil desde observaciones anteriores |
+| Acceso privado a GitHub | La conexión GitHub de esta conversación ya lee el repositorio privado `SeryMente/metodologia` | Usar el conector GitHub autenticado para fetch/lectura/escritura; no exigir `gh auth login` local duplicado. Login local solo si una operación estrictamente local futura lo requiere y en un perfil confiable |
 | Bootstrap del operador | MCP-OCP-12 exige `REGISTER <SID>` local | El operador confirma en consola; nunca automatizar ni enviar por pipe |
 | RDC/stdio no conectado al cliente | El runbook prueba stdio local/RDC, pero la aceptación debe usar el mismo flujo que invocará el IPZ | Spike de protocolo al principio y prueba ChatGPT→RDC; si el cliente no recibe herramientas/resultados, detener y corregir el bridge antes de desplegar 43 aliases |
 | FOL1 prematuro | Sigue PREPARADO_PENDIENTE_ACTIVACION_IPZ | Read-back de IPZ nativa primero; FOL1 en gate separado |
 
 ## 8. Insumos y decisiones del operador
 
-Bloqueantes antes de iniciar la implementación:
-1. **Host de ejecución definitivo:** confirmar un equipo/perfil Windows de confianza y su ubicación `LOC-CECEQ` o `LOC-OTHER`. PC-14 figura como cibercafé/LOC-OTHER; no recomiendo instalar allí el proceso persistente mientras el dead-man siga sin verificar. 015RENTA01 aparece Offline en la última consulta RDC; su disponibilidad no se presume. PC10 está Online, pero no se ha aprobado como host EP.
-2. **Alcance MCP-OCP:** autorizar que el titular de generación 5 amplíe el control a implementar Sink local por stdio dentro de `frentes/mcp-metodologia/`, pruebas/build/package y documentación, sin endpoint público ni modificaciones de host EP/credenciales/B2/DUG/IPZ/MCP-NORMATIVO/Khora.
-3. **Autenticación GitHub en el perfil elegido:** autorizar login local interactivo del usuario Windows propietario para clonar/importar la fuente privada. No compartir token ni contraseña en ChatGPT.
-4. **Presencia local y EP Vault:** confirmar que el operador podrá introducir los secretos directamente en la consola local y ejecutar el registro del recovery protector/consentimiento `REGISTER <SID>`, sin mostrar el valor a RDC stdout/logs/chat.
-5. **IPZ final:** revisar y aceptar el texto final en conversación antes de instalarlo en el campo nativo. El contenido candidato no se guarda como archivo en Git.
+La autorización y el acceso documental ya están resueltos; los pasos siguientes se separan por fase:
+1. **Sink local:** autorizado directamente por el operador dentro de `frentes/mcp-metodologia/`; no se espera aprobación del titular anterior, generación, folio o cambio de responsable.
+2. **GitHub privado:** autenticación resuelta mediante el conector GitHub de esta conversación, que ya accede al repositorio privado. Se usa para consultar `main`, actualizar archivos y verificar read-back. No se necesita iniciar sesión en GitHub CLI en Windows para esas operaciones.
+3. **Autenticación local de Windows:** no es un requisito de este sprint de código. Solo se solicitaría en el futuro si una operación estrictamente local la necesita; se haría interactivamente en un perfil confiable, sin revelar tokens al chat.
+4. **Custodia EP y registro del operador:** solo antes de instalar en un perfil persistente. El operador introduciría el secreto de recuperación directamente en la consola local y confirmaría `REGISTER <SID>`; nunca se envía el secreto al chat, logs ni argumentos. Esta actuación no bloquea el diseño, implementación ni pruebas independientes.
+5. **IPZ nativa:** revisión e instalación/read-back en una fase final separada; no bloquea construir ni probar Sink local.
 
 No se requieren credenciales B2, dominio, DNS, proveedor cloud, cuenta Cloudflare, GitHub Actions ni sesión Jules para este sprint.
 
 ## 9. Criterios de no inicio / suspensión
 
-No iniciar implementación Sink si:
-- el titular MCP-OCP no ha actualizado/autorizado su alcance;
-- no se conoce el host/perfil de ejecución seguro;
-- la fuente/candidata de código local no se puede recuperar con integridad;
-- la prueba de transporte RDC/stdin/stdout no puede ejecutarse sin exposición pública;
-- se necesita compartir credenciales/secreto por chat, logs o portapapeles.
+El desarrollo no queda bloqueado por la ausencia de un host persistente, por generaciones registrales ni por una sesión local de GitHub CLI. Suspender únicamente la acción dependiente si falta acceso real al repositorio, si el transporte stdio/RDC no puede probarse sin exposición pública o si una prueba requiere revelar secretos.
 
-Detener únicamente el tramo dependiente, no la preparación independiente autorizada. No borrar el workspace original ni el VHDX. No declarar aceptación por build, ZIP, health READY o lectura de un archivo sin la prueba E2E.
+La instalación persistente sí requiere, en su momento, un destino confiable identificado en vivo, preflight satisfactorio, custodia EP resuelta y confirmación local `REGISTER <SID>`. La IPZ nativa y FOL1 conservan su fase final separada. No borrar workspace/VHDX ni declarar aceptación por un build, ZIP o health aislado; se exige la prueba E2E.
 
 ## 10. Estado y siguiente transición
 
-**Plan integrado:** preparado y persistido por Gobernanza.  
-**Tareas de Gobernanza:** identificadas; GOV-TASK-015 registra la coordinación y aceptación.  
-**Tareas MCP-OCP:** seleccionadas; implementación Sink bloqueada hasta autorización del titular y reconciliación de tareas.  
-**Tareas EP:** seleccionadas; preparación del host bloqueada por custodia del protector y selección de host/perfil; la tarea dedicada de handoff debe ser materializada por EP.  
-**Código Sink:** NO INICIADO.  
-**Instalación:** NO INICIADA.  
-**Prueba E2E:** NO EJECUTADA.  
+**Plan integrado:** actualizado y persistido por Gobernanza.  
+**Autorización Sink local:** DIRECTA DEL OPERADOR · VIGENTE.  
+**Acceso a GitHub privado:** RESUELTO_MEDIANTE_CONECTOR_AUTENTICADO.  
+**Sesiones/generaciones anteriores:** METADATOS DE AUDITORÍA; NO BLOQUEAN.  
+**Desarrollo Sink:** autorizado; no iniciado todavía en esta tarea de planificación.  
+**Instalación persistente:** pendiente de destino confiable descubierto en vivo y preflight EP.  
+**Prueba E2E:** pendiente de implementación y de canal stdio/RDC real.  
+**Custodia EP:** pendiente para la fase de instalación; ningún secreto se solicita por chat.  
 **FOL1 / MCP-NORMATIVO:** no activados.
 
-La siguiente transición es recibir del operador la elección del host/perfil y autorización de alcance MCP-OCP; luego Gobernanza registra una solicitud DTC única a cada frente en sus objetos existentes y espera respuestas de sus titulares antes de abrir la fase de ejecución.
+Siguiente transición: recuperar la base de código disponible en `main` mediante el conector GitHub autenticado, implementar el corte vertical de un principio, construir y probar. No se espera respuesta DTC ni autorización adicional del titular registral para empezar dentro del scope autorizado.
