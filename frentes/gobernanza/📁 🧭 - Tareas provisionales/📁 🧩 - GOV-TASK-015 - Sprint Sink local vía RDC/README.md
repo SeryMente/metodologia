@@ -6,7 +6,7 @@
 **Responsabilidad:** frente Gobernanza. Las tareas técnicas conservan sus OCP y fuentes.
 **Fuente normativa:** Samantha v386 · NX-386m · Metacanon 1.29 · GOW 2.18.
 **DUG:** leído desde `main` HEAD `82843bca9493a522405d840393c229d2af363342`; archivo blob `22dca684830a36dff019b47811d9b800cc9bea0a`.
-**MCP-OCP:** núcleo v0.1.24 · blob `e845322f9947820ed01c04b996414b1ca44cd2dc`; backlog v0.5 · blob `09a05d44aeb3d3ac684b193c77323b6ab8531ae8`.
+**MCP-OCP:** núcleo v0.1.25 · blob `477de4006d816c5100b2ad301f391c2e3a9e96b9`; backlog v0.6 · blob `93e7396b4d0d2666d9081e0926c646c9a5427045`.
 **EP:** OEP v0.3.54 · blob `cdd738aa025c9acc09cbbe107bfcadfa218d463f`.
 **Autorización:** el operador autorizó directamente Sink local por stdio en MCP-OCP. No se requiere aprobación de titularidad anterior, generación ni folio; dichos campos son auditoría, no compuertas.
 **Destino EP designado:** perfil/usuario Windows `PC 7`; dispositivo RDC asociado según el operador; ubicación `LOC-OTHER`. El hostname/ID del dispositivo, usuario/SID efectivos y estado del host requieren preflight vivo. Por LOC-OTHER, el dead-man de EP-TASK-003 es un gate obligatorio antes de runtime persistente.
@@ -218,7 +218,7 @@ Identificar por separado funcionalidades implementadas y probadas, pruebas PASS/
 
 ### Bloqueadores y condiciones ya observados
 
-1. **Código candidato:** las ramas `integration/ocp-mcp-0.1.0-selective-20261101` y `build/ocp-mcp-mvp-0.1.0` están divergidas de main. En la comparación más reciente: integración, 3 commits por delante y 494 por detrás; build, 11 por delante y 813 por detrás. No fusionar ramas completas; portar selectivamente a una rama nueva basada en main.
+1. **Código candidato:** las ramas `integration/ocp-mcp-0.1.0-selective-20261101` y `build/ocp-mcp-mvp-0.1.0` están divergidas de main. En la comparación más reciente: integración, 3 commits por delante y 515 por detrás; build, 11 por delante y 834 por detrás. No fusionar ramas completas; portar selectivamente a una rama nueva basada en main.
 2. **Pins obsoletos:** cualquier referencia del plan/backlog a DUG v385, v377 o core v0.1.20 es histórica; usar el baseline vigente del encabezado de esta tarea.
 3. **PC 7 / LOC-OTHER:** C: aparece cifrado XTS-AES256 al 100 %, pero `ProtectionStatus=0 (Off)`; el estado no acredita protección activa del perfil. EP debe verificar volumen protegido efectivo y root de datos antes de instalación.
 4. **Herramientas locales:** el repositorio local de Metodología en el Escritorio de PC 7 no está materializado como checkout Git y `git` no está disponible en el perfil observado. No bloquear desarrollo remoto por GitHub; resolver clone/toolchain solo en la fase que lo requiera.
@@ -243,3 +243,14 @@ El requisito de instalación local queda fijado así:
 - **Secuencia:** build y paquete verificado → checkout completo/sincronizado → extracción/instalación local → configurar root de datos protegido → importar fuentes → `provision-operator` solo con presencia/consentimiento local → cliente STDIO/RDC y read-back.
 
 Esta ruta es el destino obligatorio del ejecutable; no sustituirla por `%LOCALAPPDATA%` como ubicación del programa. LocalAppData solo podrá usarse como root de datos si EP demuestra protección efectiva y lo configura expresamente.
+
+
+### Paralelización para terminar 1.0.0 sin tiempos muertos 
+
+**Carril A — producto (MCP-OCP):** iniciar MCP-OCP-02 desde main; en paralelo inspeccionar/portar módulos. El corte vertical se hace una sola vez (ARR → DUG → SINK:P004) usando el transporte final. Después, implementar los 43 y ejecutar suite. MCP-OCP-03/04/10 avanzan junto con 05 durante la estabilización; no se espera a terminar toda la funcionalidad para diseñar pruebas o manifiestos. MCP-OCP-07 empaqueta el candidato final una sola vez tras PASS.
+
+**Carril B — aceptación (Gobernanza):** GOV-TASK-001 prepara/ejecuta matriz MDP; GOV-TASK-008 congela contrato de respuesta/lote/frecuencia; GOV-TASK-009 valida contenido ARR. Estas tres tareas pueden correr mientras MCP desarrolla. GOV-TASK-003 espera solo al ejecutable instalado para la E2E final. GOV-TASK-013 mide después de que ambos extremos sean observables; no se duplica esa función.
+
+**Carril C — destino local (EP):** EP-TASK-003 verifica checkout íntegro, usuario/dispositivo, protección BitLocker efectiva y dead-man LOC-OTHER en paralelo con el desarrollo. No instala un paquete inexistente. EP-TASK-005 prepara el procedimiento y ejecuta extracción/read-back/bootstrap solo cuando MCP-OCP-07 entregue paquete PASS y los gates EP estén en PASS.
+
+**Punto de sincronización único:** paquete verificado + checkout sincronizado + root de datos protegido + dead-man PASS. Entonces MCP-OCP-12 materializa en frentes/mcp-metodologia/instalacion-local/; EP-TASK-005 completa su aceptación local; Gobernanza ejecuta GOV-TASK-003. Ningún frente espera por trabajos que no dependen de él.
