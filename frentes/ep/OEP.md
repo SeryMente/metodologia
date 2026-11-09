@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.47. **Ancla:** la titularidad primaria EP fue transferida mediante autorización explícita a la sesión receptora en generación 3; la asignación inicial de generación 1 y la corresponsabilidad intermedia de generación 2 se conservan como historia verificable. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.48. **Ancla:** la titularidad primaria EP fue transferida mediante autorización explícita a la sesión receptora en generación 3; la asignación inicial de generación 1 y la corresponsabilidad intermedia de generación 2 se conservan como historia verificable. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -2878,30 +2878,34 @@ La transferencia cambia la titularidad del frente `frentes/ep/` y la responsabil
 
 - EP-TASK-001: `pendiente`.
 - EP-TASK-002: `en_curso`; sin autenticación ni operaciones Backblaze nuevas.
-- EP-TASK-003: `en_curso`; VHDX 100 GB en W: cifrado XTS-AES256, Protection On, FullyEncrypted/100 %; protector de recuperación pendiente de custodiar en EP Vault; workspace aún fuera del volumen.
+- EP-TASK-003: `en_curso`; VHDX 100 GB en W: cifrado XTS-AES256, Protection On, FullyEncrypted/100 %; protector RecoveryPassword nuevo custodiado en EP Vault y cotejado por read-back; protector potencialmente expuesto retirado; workspace (195 archivos/11 directorios) aún fuera del volumen, pendiente de copia/hash/montaje.
 - EP-TASK-004: `en_curso`; GUI 3D instalada y suite sintética PASS; PR #20 continúa draft/no fusionada; aceptación visual humana y H10 pendientes.
 
-**Versión:** OEP v0.3.46. La titularidad está transferida y verificada; las tareas y criterios de aceptación no se declaran completados por el mero cambio de responsable.
+**Versión:** OEP v0.3.48. La titularidad está transferida y verificada; EP-TASK-003 continúa en curso: la custodia de recuperación ya se completó, pero la migración de datos y su aceptación siguen pendientes.
 
 ## §114. Custodia de protector de recuperación BitLocker · PC-14 · 2026-11-09
 
-### Estado observado
+### Incidencia histórica y clasificación inicial
 
-El volumen W: del VHDX SeryMente mantiene XtsAes256, ProtectionStatus On, FullyEncrypted y EncryptionPercentage 100. Tiene protector de contraseña y protector RecoveryPassword. El VHDX está vacío; el workspace original sigue intacto y fuera del volumen.
+Durante la primera creación del protector RecoveryPassword, BitLocker emitió el valor en la salida del proceso remoto. Ese protector se clasificó como `POTENTIALLY_EXPOSED` y no se aceptó como mecanismo único de recuperación. La primera escritura a EP Vault fue bloqueada antes de ejecutarse; esa situación quedó superada por el evento de custodia y rotación descrito a continuación.
 
-### Incidencia de salida del comando
+### Custodia y rotación verificadas · PC-14
 
-Durante la creación del protector RecoveryPassword, el cmdlet de BitLocker emitió el número de recuperación en la salida del proceso remoto. Ese valor no se insertó en Git ni en el chat visible, pero quedó dentro de la respuesta de ejecución remota de esta sesión. Por minimización y custodia, se clasifica el protector recién creado como POTENTIALLY_EXPOSED; no se debe usar como única recuperación de confianza.
+- Se generó un protector RecoveryPassword nuevo en W: y se identificó por el ID `{4D46BB4B-932D-4E56-89EB-7A177DBD1C84}`.
+- El valor se transfirió localmente desde el portapapeles a EP Vault mediante la acción nativa `SetFromClipboard`, variable `EP_WORKSPACE_BITLOCKER_RECOVERY_PASSWORD`. El núcleo devolvió `VAULT_WRITE_READBACK_VERIFIED`, que coteja la igualdad exacta dentro del proceso; el secreto no se reprodujo en stdout, chat ni Git.
+- Solo después del read-back se retiró el protector anterior potencialmente expuesto, ID `{3654D7BC-6BB7-492B-A346-6762969E90D1}`.
+- La verificación posterior confirmó exactamente un protector RecoveryPassword (el nuevo), un protector Password y W: en `XtsAes256`, `Protection On`, `FullyEncrypted`, `100 %`.
+- Ante la indicación posterior de que el valor estaba nuevamente en el portapapeles, la limpieza nativa devolvió `CLEARED_TEXT_FORMATS_VERIFIED`; no se leyó ni divulgó el contenido.
 
-Se intentó una escritura/read-back local a EP Vault que fue bloqueada por los controles de la herramienta antes de ejecutarse. No se afirma que EP_WORKSPACE_BITLOCKER_RECOVERY_PASSWORD exista ni que su read-back haya sido validado. No se modificó el archivo formal de EP Vault.
+### Migración del workspace: pendiente
 
-### Tratamiento obligatorio antes de migrar el workspace
+Los 195 archivos del workspace y sus 11 directorios permanecen en el origen `Desktop\SeryMente`. No se ejecutó copia a W:, no se generó ni cotejó un manifiesto SHA-256 de origen/destino, no se montó W: en `Desktop\SeryMente` y no se eliminó el origen. La cuota RDC devolvió `remote_calls_left_pct = 0`; por tanto, la operación remota quedó bloqueada por capacidad de herramienta, no por falta de custodia de recuperación.
 
-1. Mantener el protector de contraseña (maestra) activo y no desmontar ni destruir el VHDX.
-2. Generar un nuevo protector RecoveryPassword mediante un flujo local que suprima la salida del secreto; el valor debe permanecer solo en memoria del proceso.
-3. Guardarlo en EP Vault como EP_WORKSPACE_BITLOCKER_RECOVERY_PASSWORD; cotejar escritura/read-back en memoria sin emitirlo a stdout, logs, Git, chat ni portapapeles.
-4. Verificar por metadatos que el volumen conserva XtsAes256, protección On, cifrado 100 % y al menos un protector Password y otro RecoveryPassword.
-5. Solo después del read-back satisfactorio, retirar el protector potencialmente expuesto y registrar únicamente identificador del protector, tipo, estado y evidencia no secreta.
-6. Copiar los 195 archivos del workspace a W: con manifiestos SHA-256 de origen/destino; montar el VHDX en Desktop\SeryMente y retirar el staging en claro solo después de un segundo read-back íntegro.
+### Compuertas restantes
 
-**Estado:** protector de recuperación presente pero clasificado POTENTIALLY_EXPOSED; custodia formal no verificada; migración bloqueada. No se ha perdido ni borrado el workspace original.
+1. Recuperar capacidad RDC antes de operar PC-14; no intentar otro canal para eludir el límite.
+2. Inventariar el árbol de origen y W:, copiar los 195 archivos y 11 directorios al volumen protegido y verificar conteos, tamaños y SHA-256 por ruta.
+3. Solo tras PASS, conservar el original como staging, asignar el punto de montaje del VHDX a `Desktop\SeryMente` y repetir el read-back SHA-256 a través de esa ruta.
+4. Eliminar el staging en claro únicamente después de que el árbol montado pase íntegramente y quede verificado.
+
+**Estado:** custodia del nuevo protector completada y read-back verificado; protector anterior retirado; portapapeles de texto limpiado. W: permanece cifrado y protegido. EP-TASK-003 sigue `en_curso`; migración y aceptación del workspace pendientes.
