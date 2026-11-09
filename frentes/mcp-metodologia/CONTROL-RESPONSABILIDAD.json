@@ -224,5 +224,27 @@
     "prior_holder_consent_required": false,
     "generation_required": false,
     "single_active_writer_default": true
-  }
+  },
+  "scope_extensions": [
+    {
+      "event_id": "C-MCP-OCP-PANEL-AUTH-20261109-01",
+      "authorized_on": "2026-11-09",
+      "status": "AUTHORIZED_FOR_PRODUCT_SCOPE_AND_IMPLEMENTATION",
+      "source": "Instrucción directa del operador en esta conversación (2026-11-09): incluir en el sprint MCP-OCP 1.0.0 un panel local, visual y ligero que se abra mientras exista una sesión EP persistente vigente en la máquina de trabajo.",
+      "scope": "Diseñar, implementar, probar, empaquetar y documentar un panel de escritorio Windows local y de solo lectura para MCP-OCP; proyectar estado/readiness real del servidor y eventos minimizados; incluirlo en el paquete 1.0.0; integrarlo con el evento de sesión EP activa mediante EP-TASK-005.",
+      "boundaries": [
+        "No crear un segundo servidor MCP ni un cliente MCP.",
+        "No interceptar ni modificar STDIO; stdout permanece reservado al protocolo.",
+        "No abrir HTTP, TCP, sockets, named pipes, túneles ni endpoints de red.",
+        "No añadir herramientas MCP de escritura ni controles de autorización desde la UI.",
+        "No operar host EP, BitLocker, ACL, Registro, Windows services, scheduled tasks ni credenciales; EP conserva esas competencias.",
+        "No modificar EP-TASK-003 ni su contrato de dead-man; el panel se inicia/cierra mediante el ciclo de vida existente de EP-TASK-005.",
+        "No capturar payloads, contenido de fuentes, secretos, tokens, SID ni credenciales.",
+        "No activar MCP-NORMATIVO, modificar DUG/IPZ ni tocar Khora."
+      ],
+      "implementation_authority": "MCP-OCP dentro de frentes/mcp-metodologia/",
+      "host_lifecycle_authority": "EP mediante EP-TASK-005",
+      "folio_or_generation_gate": false
+    }
+  ]
 }
