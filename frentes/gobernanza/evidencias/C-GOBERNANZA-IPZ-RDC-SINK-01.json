@@ -1,0 +1,107 @@
+{
+  "event_id": "C-GOBERNANZA-IPZ-RDC-SINK-01",
+  "date": "2026-11-09",
+  "front": "gobernanza",
+  "generation": 17,
+  "session_folio": "SES-20261108-506DCF0C",
+  "session_uuidv7_local": "01a1bc38-78e0-74e5-92ca-8d28506dcf0c",
+  "global_folio": "PENDIENTE_NO_ASIGNADO",
+  "operator_decision": "Aprobó Sink local por RDC y la armonización de ART-025 y GOV-TASK-003/007/008 con referencias operativas locales.",
+  "architecture": {
+    "entry_refs": [
+      "GOW:ARR",
+      "DUG"
+    ],
+    "principle_ref_pattern": "SINK:P001..SINK:P043",
+    "transport": "RDC -> MCP-OCP local stdio",
+    "public_http": false,
+    "cloudflare": false,
+    "github_actions_per_query": false,
+    "normative_source": "DUG main; local encrypted derivative"
+  },
+  "dug": {
+    "version": "v384",
+    "signature": "NX-384m",
+    "commit": "f952be0f79182dea98b05df74c740dc60cfd8351",
+    "blob": "2f320e5e6e4768e9a77bc34d24b0639b47f2128d",
+    "readback": "PASS"
+  },
+  "governance_artifacts": [
+    {
+      "path": "frentes/gobernanza/📁 🧭 - Tareas provisionales/📁 🧩 - GOV-TASK-003 - Consulta privada E2E/README.md",
+      "commit": "ea03e2d1f97d9fef3bb45156aab22304147baf95",
+      "blob": "72220485cd704df78c2ca5a775993ddf15164e50",
+      "readback": "MATCHED"
+    },
+    {
+      "path": "frentes/gobernanza/📁 🧭 - Tareas provisionales/📁 🧩 - GOV-TASK-007 - IPZ y FOL1/README.md",
+      "commit": "b1de4f7e595ac0cefbfd9a31a0041df8cce4704e",
+      "blob": "edeabb73c57598022eb07d29604d3109800ede1a",
+      "readback": "MATCHED"
+    },
+    {
+      "path": "frentes/gobernanza/📁 🧭 - Tareas provisionales/📁 🧩 - GOV-TASK-008 - Aislamiento de capa desarrollada/README.md",
+      "commit": "986117e9901ebe6986c0b6d46f3fe7c4bc4228d9",
+      "blob": "2cf01d60f18031de3dbcb324b3effbc00c641515",
+      "readback": "MATCHED"
+    },
+    {
+      "path": "frentes/gobernanza/📁 🧭 - Tareas provisionales/📁 🧩 - GOV-TASK-009 - Revisión del glosario operativo/README.md",
+      "commit": "a42305d2f0096368a56353b0146ecbcdd9ced45b",
+      "blob": "ce582a715e0c3b091882bc5d5f4f89247da4f18f",
+      "readback": "MATCHED"
+    },
+    {
+      "path": "frentes/gobernanza/📁 🧭 - Tareas provisionales/📁 🧩 - GOV-TASK-010 - Admisión y titularidad de conversaciones/README.md",
+      "commit": "11a4f9a7ee903208c635b22da3fced20116f8757",
+      "blob": "418e905d2a0728a445b2c6b442cecbb09f55cabe",
+      "readback": "MATCHED"
+    },
+    {
+      "path": "frentes/gobernanza/📁 🧭 - Tareas provisionales/README.md",
+      "commit": "1ea05ed7fb61d93213a8953b3c9a1825505e9260",
+      "blob": "9ee425eb77eb3edd003684b3ac0eb691e534a65f",
+      "readback": "MATCHED"
+    },
+    {
+      "path": "frentes/gobernanza/📁 🧭 - Tareas provisionales/📁 🧩 - GOV-TASK-013 - Medición y optimización de ciclos/README.md",
+      "commit": "ee065acba5ebe0f50bea613e6b85e04c6bf4d60b",
+      "blob": "2205c21f7749862647b02913ba7baeb80a251757",
+      "readback": "PREVIOUSLY_VERIFIED"
+    }
+  ],
+  "telemetry": {
+    "field": "ipz.resolve.rdc.duration_ms",
+    "state": "SPECIFIED_NOT_MEASURED",
+    "clock": "monotonic",
+    "start": "immediately_before_RDC_dispatch",
+    "end": "after_complete_result_received_and_minimally_validated",
+    "missing_boundary": "NOT_MEASURED",
+    "frequency_metric_separate": true
+  },
+  "front_boundaries": {
+    "governance": "contract_and_acceptance_updated",
+    "mcp_ocp": "implementation_requires_scope_addendum_by_its_generation_5_owner",
+    "ep": "secure_profile_host_and_installation_remain_EP_owned",
+    "rdc": "transport_only_not_a_front"
+  },
+  "non_execution": [
+    "Sink code/build/tests",
+    "MCP-OCP real-profile source import/operator provisioning",
+    "EP installation/host changes",
+    "IPZ native installation/readback",
+    "E2E acceptance",
+    "FOL1 activation",
+    "MCP-NORMATIVO activation",
+    "Cloudflare or public HTTP deployment"
+  ],
+  "dtc": {
+    "ep_cursor_blob": "cfa59cdf083905dd4793d5b8b046dc501b09b820",
+    "mcp_cursor_blob": "2499afb15f11dded54c6d6b3f43f3482831aa262",
+    "new_counterparty_messages_observed": false,
+    "new_requests_sent": false,
+    "opening_persisted_before_analysis": false,
+    "cycle_status": "INCOMPLETE_DTC_OPENING_LATE"
+  },
+  "overall_status": "GOVERNANCE_DOCUMENTS_ALIGNED_IMPLEMENTATION_NOT_EXECUTED"
+}
