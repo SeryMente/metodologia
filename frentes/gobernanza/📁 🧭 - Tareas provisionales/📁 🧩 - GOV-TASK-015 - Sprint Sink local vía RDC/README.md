@@ -6,7 +6,7 @@
 **Responsabilidad:** frente Gobernanza. Las tareas técnicas conservan sus OCP y fuentes.
 **Fuente normativa:** Samantha v386 · NX-386m · Metacanon 1.29 · GOW 2.18.
 **DUG:** leído desde `main` HEAD `82843bca9493a522405d840393c229d2af363342`; archivo blob `22dca684830a36dff019b47811d9b800cc9bea0a`.
-**MCP-OCP:** núcleo v0.1.26 · blob `2177b6b81028d8ac5188379e2eb4fa36aea06b41`; backlog v0.7 · blob `d40283f48e2b2531baf2f72467e1d7d28786b1bc`.
+**MCP-OCP:** núcleo v0.1.26 · blob `2177b6b81028d8ac5188379e2eb4fa36aea06b41`; backlog v0.7 · blob `1eed6511c238b55b4e13899efab7e55981addf8d`.
 **EP:** OEP v0.3.54 · blob `cdd738aa025c9acc09cbbe107bfcadfa218d463f`.
 **Autorización:** el operador autorizó directamente Sink local por stdio y amplió el producto para incluir el panel local de observabilidad MCP-OCP-13. No se requiere aprobación de titularidad anterior, generación ni folio; dichos campos son auditoría, no compuertas.
 **Destino EP designado:** perfil/usuario Windows `PC 7`; dispositivo RDC asociado según el operador; ubicación `LOC-OTHER`. El hostname/ID del dispositivo, usuario/SID efectivos y estado del host requieren preflight vivo. Por LOC-OTHER, el dead-man de EP-TASK-003 es un gate obligatorio antes de runtime persistente.
