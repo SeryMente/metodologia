@@ -2028,3 +2028,51 @@ Render WPF directo (RenderTargetBitmap) en perfil temporal Fila4, 1440×900, con
 **Bloqueo de producción preservado:** PC-14 C: FullyDecrypted/0%/Off/None; Fila 4 C: FullyEncrypted/100%/Off/XtsAes128/Protection Off. El VHDX de trabajo no se puede crear/montar para uso de repositorios hasta que la bóveda esté terminada y aceptada, la contraseña maestra y el protector de recuperación puedan introducirse/custodiarse localmente, y el nuevo volumen alcance XTS-AES256, Protection On, 100 %.
 
 **Persistencia documental:** EP-TASK-003 recibe la ejecución y los estados anteriores en su crónica; commit `abab6b7b9303e66ea80dd6306436e758bde50dd0`, blob leído de vuelta `87a010099618b9717d2f61ac897b4db67a7929f3`, verificaciones de binarios, autenticación y límites: PASS. Las tareas continúan EP-TASK-001 `pendiente`; EP-TASK-002/003/004 `en_curso`. Este ciclo cierra solo la preparación documental y de herramientas, no la materialización del workspace.
+
+---
+
+## EP · ciclo de recuperación y materialización provisional · 2026-11-09 10:31 · America/Mexico_City
+
+### Respuesta inicial registrada
+
+**Mensaje recibido:** el operador entrega `ChatGPT-EP (1)-20261109-1031.md` desde Downloads de PC-14, solicita preservarlo en persistencia documental, leerlo cuidadosamente y retomar el frente. Prioridad expresa: usar RDC para instanciar el directorio de trabajo aunque temporalmente no esté cifrado, y comenzar otros frentes.
+
+**Interpretación y decisión:** viable y ejecutado como excepción temporal, acotada a código fuente y documentación técnica no sensible. El requisito permanente de cifrado no se modifica y el almacenamiento de secretos en claro continúa prohibido.
+
+### Procesamiento y evidencia
+
+1. Archivo fuente: `C:\Users\PC 13\Downloads\ChatGPT-EP (1)-20261109-1031.md`; 82,367 bytes, 1,645 líneas; SHA-256 `B08DEE8C0317EC2DDC28CD5D98925A975F1C571A1CC6B3C9852319CC945CF001`.
+2. Lectura completa por bloques y archivo en [SeryMente/metodologia/main](https://github.com/SeryMente/metodologia/blob/main/frentes/ep/entregas/ChatGPT-EP%20(1)-20261109-1031.md); commit `7260b1d398904f7dc13a76858d9f6f3c661831a7`, blob `0be706ff04bfe9158c0f33b2f984c3952a6d03e4`, read-back exacto. La copia temporal para cotejo se eliminó.
+3. Workspace creado por RDC: `C:\Users\PC 13\Desktop\SeryMente`, usuario `PC-14\PC 13`, once scaffolds vacíos y `WORKSPACE-STATUS.md` SHA-256 `3B03FE0507903B7B42BA538B55D2954E9241A7C4A5F3746FB8D4C091117063EF`; directorios y archivo leídos de vuelta.
+4. C: permanece FullyDecrypted/0 %/Protection Off/EncryptionMethod None. No VHDX, no cambio BitLocker, no autenticación GitHub, no clones reales.
+
+### Estado recuperado EP Vault
+
+- EP-TASK-004 `en_curso`.
+- GUI–CLI: pruebas sintéticas interproceso reportadas PASS; E2E pendiente.
+- UI premium NO ACEPTADA; render vectorial/2D; recurso fotorrealista no generado/integrado; validación visual/accesibilidad pendiente.
+- Bóveda formal no inicializada ni aceptada.
+- Variables `KHORA_B2_KEY_ID` y `KHORA_B2_APPLICATION_KEY` no verificadas ni almacenadas.
+- H10 pendiente; no transferir secretos ni colocar notas Custodia en el workspace en claro.
+
+### Clasificación
+
+- **AUTORIZADO:** workspace provisional no cifrado, únicamente contenidos no sensibles.
+- **EJECUTADO:** lectura completa y archivo documental; root y once scaffolds por RDC.
+- **VERIFICADO:** SHA-256 fuente/copia temporal; read-back de GitHub exacto; identidad, árbol local y SHA-256 del estado.
+- **PENDIENTE:** autorización de autenticación GitHub, clones, clasificación de frentes MV3, ratificación de Observabilidad hermana, bóveda, VHDX/BitLocker XTS-AES256/Protection On/100 %, dead-man LOC-OTHER, E2E visual y H10.
+- **NO EJECUTADO:** `gh auth login`, acceso/transferencia de secretos, inicialización de bóveda, creación de VHDX o cambios BitLocker.
+
+**Secuencia DTC:** la respuesta inicial se documenta ahora, después de identificar el objeto DTC canónico durante la recuperación. No se afirma que se escribió antes de las primeras acciones técnicas; la desviación queda explícita.
+
+### Estado de tareas
+
+EP-TASK-001 `pendiente`; EP-TASK-002, EP-TASK-003 y EP-TASK-004 `en_curso`. El ciclo deja continuidad documental y un workspace provisional para frentes no sensibles; no declara EP terminado.
+
+IPZ: v0.7 · edad NO VERIFICADA  
+DUG: Samantha v383 · NX-383m · edad NO VERIFICADA  
+CONV: PENDIENTE · OCP: NO ASIGNADO  
+CICLO: INCOMPLETO · OCP: NO ASIGNADO  
+A: PENDIENTE · OCP: NO ASIGNADO  
+B: PENDIENTE · OCP: NO ASIGNADO  
+FOL1: NO CONSTA ACTIVO.
