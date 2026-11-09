@@ -8,7 +8,8 @@
 **MCP-OCP:** núcleo v0.1.23 · commit `4aa88cf1f9aed015c9940923959dc2c66e8f70d9` · blob `a18e9ab721a07fe8ee4d4a0f1fa0ae1e3aa1f054`.
 **EP:** OEP v0.3.52.
 **Autorización:** el operador autorizó directamente Sink local por stdio en MCP-OCP. No se requiere aprobación de titularidad anterior, generación ni folio; dichos campos son auditoría, no compuertas.
-**Alcance:** contrato, implementación Sink local, pruebas, paquete, handoff, bootstrap en perfil designado y aceptación E2E. Esta ficha es planificación: no acredita código, build, instalación ni prueba ejecutados.
+**Destino EP designado:** perfil/usuario Windows `PC 7`; dispositivo RDC asociado según el operador; ubicación `LOC-OTHER`. El hostname/ID del dispositivo, usuario/SID efectivos y estado del host requieren preflight vivo. Por LOC-OTHER, el dead-man de EP-TASK-003 es un gate obligatorio antes de runtime persistente.
+**Alcance:** contrato, implementación Sink local, pruebas, paquete, handoff, bootstrap en el perfil designado y aceptación E2E. Esta ficha es planificación: no acredita código, build, instalación ni prueba ejecutados.
 
 ## 1. Objetivo y contrato
 
@@ -63,8 +64,8 @@ Fuera del sprint: MCP-OCP-06/11 (Jules, permanece pausado) y MCP-OCP-09 (PPR/res
 
 | Tarea | Estado leído | Trabajo de este sprint | Condición |
 |---|---|---|---|
-| [EP-TASK-003](../../ep/📁%20🧭%20-%20Tareas%20provisionales/📁%20🧩%20-%20EP-TASK-003%20-%20Mapa%20integral%20de%20construcción%20EP/README.md) | En curso | Migrar workspace a W: con manifiesto SHA-256 de 195 archivos/11 directorios, cambio de montaje y segundo read-back. Dead-man solo si el destino final es LOC-OTHER. | Árbol completo en volumen protegido; origen intacto hasta cotejo íntegro; dead-man probado cuando aplique. |
-| [EP-TASK-005](../../ep/📁%20🧭%20-%20Tareas%20provisionales/📁%20🧩%20-%20EP-TASK-005%20-%20Instalación%20y%20aceptación%20de%20MCP-OCP%20local/README.md) | Nueva · Pendiente | Instalar/bootstrap en el perfil Windows designado; root de datos cifrado, autenticación local si se requiere y prueba stdio/RDC. | Paquete/hash, fuentes importadas, `REGISTER <SID>` local, `operator_provisioned=true`, health/tools/call y E2E PASS. |
+| [EP-TASK-003](../../ep/📁%20🧭%20-%20Tareas%20provisionales/📁%20🧩%20-%20EP-TASK-003%20-%20Mapa%20integral%20de%20construcción%20EP/README.md) | En curso | Migrar/verificar workspace y completar dead-man obligatorio para `LOC-OTHER` en el dispositivo RDC asociado al perfil `PC 7`. Confirmar usuario/SID y almacenamiento cifrado en vivo. | Árbol íntegro en volumen protegido; origen intacto hasta SHA-256 cotejado; dead-man probado en el destino real. |
+| [EP-TASK-005](../../ep/📁%20🧭%20-%20Tareas%20provisionales/📁%20🧩%20-%20EP-TASK-005%20-%20Instalación%20y%20aceptación%20de%20MCP-OCP%20local/README.md) | Nueva · Pendiente | Instalar/bootstrap en perfil Windows `PC 7` del dispositivo RDC asociado, solo tras preflight y dead-man LOC-OTHER probado; root de datos cifrado y prueba stdio/RDC. | Paquete/hash, fuentes importadas, `REGISTER <SID>` local, `operator_provisioned=true`, health/tools/call y E2E PASS. |
 | EP-TASK-004 | En curso · independiente | Reconstrucción/aceptación de la GUI de bóveda. | No bloquea build Sink ni bootstrap DPAPI salvo dependencia técnica demostrada. |
 
 EP-TASK-002 (Backblaze), EP-TASK-001 (NCL) y PPR cross-host no forman parte del camino crítico.
