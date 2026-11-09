@@ -1924,3 +1924,103 @@ La recomendación de OEP §108 es que `Observabilidad` sea una carpeta hermana d
 ### Estado real
 
 `EP-TASK-002` permanece **`en_curso`**. La prueba sintética histórica de 126 bytes descrita en OEP §102 conserva su resultado; no se reutiliza como evidencia de sincronización automática, captura observacional real, recuperación actual en PC-14 ni aceptación multiubicación. En el preflight PC-14 de 2026-11-09 no se consultaron CLI, credenciales, cachés, cuenta, bucket ni objetos B2; no hubo upload/download/restore ni cambios. El inventario de datasets y el contrato final de observabilidad, la automatización local-first, la cola, la sincronización selectiva y la restauración continúan pendientes.
+
+
+## Plan de ejecución priorizado: bóveda y workspace primero · 2026-11-09
+
+**Instrucción directa del operador:** acelerar la persistencia real de EP en Backblaze B2, priorizando en este orden: (1) archivo cifrado formal de EP Vault y (2) datos elegibles del directorio de trabajo SeryMente. Después del primer respaldo verificable, completar la automatización y robustecer el mecanismo. Esta prioridad no autoriza subir secretos en claro, clonar repositorios a B2, usar otro bucket/prefijo, omitir cifrado local requerido, ni declarar una copia válida sin read-back.
+
+### 1. Resultado objetivo y orden de ejecución
+
+| Orden | Entrega | Resultado exigido |
+|---|---|---|
+| P0 | **EP Vault cifrada** | Snapshot byte a byte del archivo formal cifrado, SHA-256 local, objeto privado en el namespace EP autorizado, metadata/read-back y descarga de verificación con SHA-256 idéntico. No descifrar ni exportar valores. |
+| P1 | **Workspace SeryMente** | Inventario del árbol, clasificación por conjunto, snapshot coherente y persistencia de los datos de usuario aprobados; manifiesto y cotejo íntegro remoto. No subir indiscriminadamente clones Git, código, secretos o temporales. |
+| P2 | **Continuidad automática** | Captura local durable, outbox persistente, worker B2 desacoplado, idempotencia, reintentos, reconciliación de conflictos y recibos verificables. |
+| P3 | **Recuperación y aceptación** | Restore en destino vacío/aislado, cotejo de rutas, cantidad de archivos, tamaños y SHA-256; prueba de apertura/uso del conjunto restaurado. |
+| P4 | **Operación mantenible** | Política de retención y versionado, observabilidad saneada, alertas, auditoría, recuperación ante interrupción y documentación as-built. |
+
+**Regla de velocidad:** una transferencia manual única y mínima puede preceder a la automatización, pero no a las compuertas de identidad, acceso, cifrado, autorización y verificación. El primer hito no se cierra por un upload/HTTP 2xx: se cierra únicamente después de leer metadata, descargar el objeto y cotejar el SHA-256.
+
+### 2. P0 — respaldo prioritario de EP Vault
+
+**Fuente formal prevista:** `%LOCALAPPDATA%\Khora\secrets\ep-env-vault.enc.json`, conforme a OEP §119.6. La bóveda es un archivo formal fuera de `Repositorios/`, `Datos/` y `Temporal/`; no debe moverse al workspace ni incluirse en un archivo general del directorio.
+
+**Tratamiento de respaldo:**
+1. Verificar identidad Windows efectiva, ruta, ACL, tamaño, versión/formato, estabilidad del archivo y hash SHA-256 sin mostrar ni descifrar su contenido.
+2. Obtener un snapshot consistente byte a byte sin interrumpir una escritura activa. Mantener el original intacto.
+3. Enviar exclusivamente el ciphertext original, no exportación, dump, notas efímeras ni valores de variables. Mantener el archivo remoto privado y en una ruta diferenciada de los datos ordinarios.
+4. Namespace operativo propuesto, subordinado a OEP §91: `OCP-MCP/ep-ocp/vault/`. Nombre de objeto no sobrescribible, basado en fecha UTC e identidad/hash del snapshot; manifiesto lateral sin secretos.
+5. Consultar metadata remota, descargar a un destino de verificación protegido/aislado y comparar bytes y SHA-256. Registrar bucket, prefijo, nombre, tamaño, SHA-256, File ID, cifrado reportado y recibo saneado. No borrar ni sustituir el origen.
+
+**Límite:** la instrucción del operador da prioridad al respaldo de la bóveda cifrada; se interpreta como excepción acotada a este artefacto ciphertext y a su ruta dedicada, no como permiso para subir contenido descifrado, secretos sueltos, credenciales B2, notas efímeras o toda la carpeta `Khora\secrets`. La existencia de la bóveda formal no prueba que las credenciales B2 estén disponibles en ese mismo perfil.
+
+### 3. P1 — respaldo del directorio de trabajo SeryMente
+
+La raíz lógica y organización canónica son las de OEP §119 / DUG ART-030:
+
+- `Repositorios/<Frente>/<repositorio>/`: código e historial reconstruibles desde GitHub. B2 no sustituye al remoto Git.
+- `Datos/<Frente>/<Proyecto>/`: única zona ordinaria candidata a persistencia B2, tras inventario, clasificación, autorización por proyecto, coherencia y política de recuperación.
+- `Temporal/{Sesiones,Staging,Cache,Logs}/`: excluido por defecto. Solo una exportación promovida expresamente y saneada podrá conservarse como dato.
+- EP Vault y demás secretos: fuera del workspace; se manejan mediante P0 y nunca dentro del paquete general.
+
+**No subir el directorio completo como ZIP/7z/VHDX ni replicar `.git`, repositorios completos, builds reproducibles o paquetes `extension/`.** Para no perder trabajo local no publicado, el inventario debe identificar primero ramas, commits, cambios tracked, archivos untracked y documentos no versionados. El código pendiente de preservar se reconcilia por GitHub mediante revisión/commit autorizado; no se disfraza como dataset de usuario B2. Los documentos/datasets de usuario se clasifican y se admiten mediante allowlist.
+
+El snapshot de P1 deberá ser consistente respecto de bases abiertas y aplicaciones activas; incluir manifiesto por archivo (ruta relativa normalizada, tamaño, fecha UTC, clasificación, propietario lógico, SHA-256 y versión del esquema), preservar nombres/rutas y rechazar symlinks/reparse points fuera de raíz, rutas traversal, archivos bloqueados o clases no clasificadas. No se elimina ni altera la fuente tras subir.
+
+### 4. Contrato mínimo del primer respaldo y contrato objetivo
+
+**Primera entrega (manual/verificable):**
+1. Preflight de host/perfil y disponibilidad de la bóveda cifrada.
+2. Inventario reducido y allowlist del conjunto.
+3. Snapshot consistente y hash local.
+4. Upload limitado a bucket/prefijo autorizados.
+5. Metadata/read-back, descarga aislada y SHA-256 idéntico.
+6. Recibo saneado y actualización del estado de tarea.
+
+**Robustecimiento posterior:**
+- Outbox local durable con registro append-first y estado transaccional; ningún envío antecede a la persistencia local.
+- Identidad idempotente por snapshot/objeto; claves de objeto versionadas/con direccionamiento por contenido; nunca sobrescribir silenciosamente una versión.
+- Estados separados: `LOCAL_DURABLE`, `READY`, `UPLOADING`, `REMOTE_PRESENT`, `READBACK_VERIFIED`, `RESTORE_VERIFIED`, `ACCEPTED`, `RETRYABLE_FAILURE`, `CONFLICT`.
+- Reintentos con backoff y jitter, límites, cancelación segura, lock por dataset y reconciliación de resultados ambiguos antes de repetir una escritura.
+- Manifiestos y recibos saneados; logs por allowlist, sin valores secretos ni payload privado.
+- Cola offline que sobrevive reinicios; el worker no bloquea la captura local y nunca sube datos sin clasificación.
+- Restore en zona vacía, segregada de la fuente; comparar inventario, rutas, tamaño y SHA-256 y probar utilidad del resultado.
+- Sin borrado remoto, lifecycle destructivo, compactación, retención automática ni limpieza de origen hasta política y autorización específicas. El bucket actualmente reportado tiene File Lock/lifecycle deshabilitados; no cambiar esa configuración en este alcance.
+
+### 5. Namespace y límites de arquitectura
+
+- Para la persistencia propia de EP en esta tarea prevalece OEP §91: bucket exacto `OCP-MCP`, prefijo `ep-ocp/`; no operar otros buckets/prefijos.
+- DUG ART-028 establece `OCP-MSP` para la réplica de HARMONIA y Signal Interpreter mediante EP Consumer Adapter oficial y prohíbe a esos consumidores administrar B2 directamente. Esta diferencia con OEP §91 permanece como colisión de alcance pendiente de reconciliación documental. No cambiar silenciosamente el destino de EP ni implementar consumidores directos a B2. La presente tarea puede ejecutar el respaldo EP dentro de OCP-MCP/ep-ocp; los consumidores ART-028 quedan bloqueados hasta resolver formalmente el mapeo.
+- La Master Application Key verificada históricamente tiene alcance global y sin restricción técnica de bucket/prefijo. Su utilización limitada a OCP-MCP/ep-ocp es una restricción de procedimiento, no de proveedor. Mantenerla fuera de scripts versionados, env permanentes, logs y argumentos; usar solo el mecanismo local protegido existente y el proceso autorizado. No crear, rotar ni revocar claves como parte de este plan.
+- B2 no sustituye GitHub como fuente de código ni crea un OCP nuevo.
+
+### 6. Preflight y estado ejecutivo registrado · PC-7 · 2026-11-09
+
+El preflight read-only más reciente de este ciclo identificó PC-7 como único dispositivo RDC Online. En el perfil Windows observado:
+- `%LOCALAPPDATA%\Khora\secrets\ep-env-vault.enc.json`: presente, 448 bytes; se consultaron metadatos, no contenido.
+- `%LOCALAPPDATA%\Khora\secrets\b2-ep-env-vault.enc.json`: no encontrado.
+- Cachés `b2-ep-master-20261107.sqlite` y `b2-ep-ocp.sqlite`: no encontradas.
+- B2 CLI en PATH: no encontrada; procesos B2: 0; nombres de variables `B2_*`: ninguno observado.
+- El estado de B2 bucket/objetos no se revalidó en vivo. OCP-MCP/ep-ocp y la prueba sintética de 126 bytes son evidencia histórica de §102, no una verificación de disponibilidad actual ni de datos reales.
+- C: reportó 100 % cifrado XTS-AES128, pero `ProtectionStatus=Off` y sin protectores. Esto no satisface el requisito de workspace `XtsAes256` + protección On + 100 % y no acredita un VHDX protegido/dead-man LOC-OTHER. La carpeta de trabajo no se considera dentro de un perímetro aprobado por ese dato.
+- El inventario visible de `SeryMente/Datos/` solo mostró los cuatro directorios de frente sin archivos hasta la profundidad consultada; esto no demuestra ausencia de datos en almacenes propios de aplicaciones o ubicaciones fuera de ese árbol.
+
+**Resultado de ejecución de este ciclo:** no se autenticó B2 ni se ejecutó upload/download/restore; no se leyó, descifró, copió ni modificó la bóveda; no se creó snapshot ni se alteró el workspace. La escritura remota queda bloqueada porque el perfil actual no expone CLI/credencial B2 utilizable y el perímetro local requerido no está verificado. No se debe sortear mediante valores por chat, copia de secretos entre perfiles, clave sin read-back, instalación/ejecución en identidad distinta o subida de datos sensibles desde un workspace no protegido.
+
+### 7. Tareas accionables y criterios de salida
+
+| ID interno de esta secuencia | Acción | Dependencia | Criterio para marcar PASS |
+|---|---|---|---|
+| P0-A | Resolver el host/perfil propietario y la compuerta local EP Vault; comprobar ruta/ACL/hash sin revelar secretos. | Presencia/identidad P012/P013 y código vigente de Vault. | Metadatos y snapshot ciphertext consistentes; fuente intacta. |
+| P0-B | Recuperar el mecanismo B2 autorizado en el perfil correcto; preflight CLI, credencial local, account y bucket read-only. | P0-A; acceso B2 válido; OCP-MCP/ep-ocp. | Identidad y destino cotejados en vivo, sin imprimir credenciales. |
+| P0-C | Respaldar ciphertext de EP Vault. | P0-A/P0-B y destino operativo. | Upload + file info + descarga + SHA-256 igual + recibo. |
+| P1-A | Inventariar SeryMente y distinguir código, cambios locales, datos y temporales. | Identidad/raíz correcta; workspace protegido. | Manifiesto total; ningún archivo sin clasificación en allowlist. |
+| P1-B | Persistir primero los datos elegibles del workspace. | P1-A y P0-B. | Cada objeto con read-back/restore hash-verificado. |
+| P2-A | Implementar outbox/worker, idempotencia, backoff, reconciliación y métricas saneadas. | Contrato/namespace reconciliados. | Pruebas de caída, reanudación, duplicado, conflicto y sin pérdida. |
+| P3-A | Restauración funcional desde B2. | P0-C y P1-B. | Restore aislado, SHA y uso real comprobados. |
+| P4-A | Retención, observabilidad y aceptación operativa. | P2-A/P3-A. | Política aprobada, recibos, runbook y aceptación de propietario. |
+
+**Prioridad vigente:** P0-A → P0-B → P0-C → P1-A → P1-B → P2-A → P3-A → P4-A. No marcar ningún hito remoto como completado sin recibo y read-back. Los bloqueos materiales se registran como tales y no se sustituyen con una simulación.
+
+**Estado de EP-TASK-002:** `en_curso`. Este plan organiza el trabajo; no declara ejecutado el respaldo prioritario ni modifica el estado histórico de §102.
