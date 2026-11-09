@@ -146,3 +146,19 @@ EP-TASK-003 sigue `en_curso`; la excepción no sustituye la migración posterior
 - Titular activo: alias `chatgpt-C-EP-TRANSFER-RESPONSIBILITY-20261109-01-SES-20261109-E032FC60`, folio `SES-20261109-E032FC60`, UUIDv7 local `01a1c16c-f0fa-7273-a0f8-a1dde032fc60`.
 - Titular previo generación 1: relevado; asiento e historial preservados en el control. La corresponsabilidad temporal de generación 2 se cerró al promover la sesión receptora.
 - Control: blob `b76614cb71c7c9f0090e1c7205dc582ae2e79ec6`; OEP v0.3.46, §113. No se activa FOL1 ni se crea control de tarea separado.
+
+## Reconciliación de tareas por OEP §114 · 2026-11-09 · 12:31 America/Mexico_City
+
+**Fuentes vigentes:** OEP `v0.3.48` §§112–114, DUG `v384 · NX-384m`, control EP generación 3. Esta entrada corrige los resúmenes históricos anteriores sin borrar su cronología.
+
+| Tarea | Estado provisional | Reconciliación sustentada | Siguiente acción |
+|---|---|---|---|
+| EP-TASK-001 | `pendiente` | Sin novedad ni ejecución nueva; se conserva intacta. | Mantener en espera hasta que se cumpla su condición de activación o el operador cambie expresamente el orden. |
+| EP-TASK-002 | `en_curso` | Sin nueva autenticación, operación B2, carga, read-back ni restauración en este ciclo. La prueba sintética histórica no acredita operación productiva. | Reanudar inventario de datasets y políticas y, con la autorización/credenciales locales correspondientes, implementar y probar cola, upload, read-back y restore. |
+| EP-TASK-003 | `en_curso` | W: está protegido con XTS-AES256, `Protection On`, `FullyEncrypted`, 100 %. El nuevo RecoveryPassword está bajo `EP_WORKSPACE_BITLOCKER_RECOVERY_PASSWORD` en EP Vault con `VAULT_WRITE_READBACK_VERIFIED`; el protector anterior potencialmente expuesto fue retirado y el portapapeles se limpió/verificó. Los 195 archivos/11 directorios permanecen en `Desktop\SeryMente`; no existe copia/hash verificado en W: ni cambio del punto de montaje. RDC informó 0 % de cuota disponible. El dead-man `LOC-OTHER` sigue sin implementar/activar. | Cuando RDC permita operaciones, inventariar origen/destino, copiar, cotejar rutas/tamaños/SHA-256, cambiar el montaje solo tras PASS y eliminar staging únicamente tras segundo read-back íntegro. Después abordar el dead-man según OEP. |
+| EP-TASK-004 | `en_curso` | Implementación WPF 3D en rama `feat/ep-vault-clean-room-20261108`; PR #20 sigue draft/abierta/no fusionada. Suite sintética PASS no equivale a aceptación. H3/H4/H10, revisión visual/auditiva humana, DPI, teclado y movimiento reducido siguen pendientes. | Completar revisión E2E/aceptación humana y cerrar hitos solo con evidencia; integrar por el flujo de PR aprobado. |
+
+**Corrección importante:** la custodia del protector de recuperación ya no es un bloqueo. El bloqueo actual de EP-TASK-003 es operativo: RDC agotó la cuota de llamadas antes de ejecutar la migración. No se intentó eludir ese límite por un canal alternativo. La copia original sigue intacta.
+
+**Exportación solicitada:** `ChatGPT-EP-20261109-1230.md` no estuvo disponible en archivos de conversación, Biblioteca ni `main`; por tanto, no se registra como leída ni persistida. Su pregunta final sigue pendiente de acceso al documento. No se infiere ni se sustituye su contenido por las exportaciones 1031/1104.
+
