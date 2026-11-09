@@ -180,9 +180,9 @@
       "scope": "Transferencia única de titularidad primaria de frentes/ep/ a la sesión receptora ya registrada como corresponsable. Sustituye al titular previo, conserva el alcance de las autorizaciones y restricciones existentes, no activa FOL1 y no autoriza otros frentes ni cambios de DUG/GOW o controles ajenos."
     },
     "readback_required": true,
-    "readback_verified": false,
+    "readback_verified": true,
     "source_control_blob_sha": "4160dfed6c0833e88e9b9fee7d79e54ab7214006",
-    "readback_control_blob_sha": "2ac518cc4f272439e3d060b635e36d3772c7c8ae",
+    "readback_control_blob_sha": "9e3074cd2b541a71520df1d0cce39a628002aeb7",
     "alias": "chatgpt-C-EP-TRANSFER-RESPONSIBILITY-20261109-01-SES-20261109-E032FC60",
     "promoted_from_role": "corresponsable",
     "promoted_from_alias": "chatgpt-C-EP-ADD-CO-RESPONSIBLE-20261109-01-SES-20261109-E032FC60"
@@ -210,9 +210,9 @@
         "scope": "Transferencia única de titularidad primaria de frentes/ep/ a la sesión receptora ya registrada como corresponsable. Sustituye al titular previo, conserva el alcance de las autorizaciones y restricciones existentes, no activa FOL1 y no autoriza otros frentes ni cambios de DUG/GOW o controles ajenos."
       },
       "readback_required": true,
-      "readback_verified": false,
+      "readback_verified": true,
       "source_control_blob_sha": "4160dfed6c0833e88e9b9fee7d79e54ab7214006",
-      "readback_control_blob_sha": "2ac518cc4f272439e3d060b635e36d3772c7c8ae",
+      "readback_control_blob_sha": "9e3074cd2b541a71520df1d0cce39a628002aeb7",
       "alias": "chatgpt-C-EP-TRANSFER-RESPONSIBILITY-20261109-01-SES-20261109-E032FC60",
       "promoted_from_role": "corresponsable",
       "promoted_from_alias": "chatgpt-C-EP-ADD-CO-RESPONSIBLE-20261109-01-SES-20261109-E032FC60"
@@ -264,9 +264,10 @@
       "new_primary_alias": "chatgpt-C-EP-TRANSFER-RESPONSIBILITY-20261109-01-SES-20261109-E032FC60",
       "active_responsibles_after_write": 1,
       "maximum": 2,
-      "status": "PENDING_READBACK",
+      "status": "VERIFIED_READBACK",
       "readback_required": true,
-      "readback_verified": false
+      "readback_verified": true,
+      "readback_sha": "9e3074cd2b541a71520df1d0cce39a628002aeb7"
     }
   ],
   "previous_session_assignment": {
@@ -394,7 +395,7 @@
       },
       "native_conversation_id": "NOT_EXPOSED; operational alias used",
       "method": "GitHub Contents API compare-and-swap against immediately observed control blob SHA, followed by canonical read-back.",
-      "mutation_result": "COMMITTED_READBACK_PENDING",
+      "mutation_result": "COMMITTED_AND_READBACK_VERIFIED",
       "previous_co_responsible_record": {
         "owner_alias": "chatgpt-C-EP-ADD-CO-RESPONSIBLE-20261109-01-SES-20261109-E032FC60",
         "session_folio": "SES-20261109-E032FC60",
@@ -404,7 +405,18 @@
       "active_responsibles_after_write": 1,
       "maximum_active_responsibles": 2,
       "readback_required": true,
-      "readback_verified": false
+      "readback_verified": true,
+      "verification": {
+        "status": "read_back_verified",
+        "verified_on": "2026-11-09",
+        "generation": 3,
+        "owner_alias": "chatgpt-C-EP-TRANSFER-RESPONSIBILITY-20261109-01-SES-20261109-E032FC60",
+        "session_folio": "SES-20261109-E032FC60",
+        "local_conversation_uuidv7": "01a1c16c-f0fa-7273-a0f8-a1dde032fc60",
+        "active_responsibles": 1,
+        "scope_limit": "Operational control record and canonical read-back; not cryptographic authentication of platform identity and not server-enforced fencing."
+      },
+      "readback_blob_sha": "9e3074cd2b541a71520df1d0cce39a628002aeb7"
     }
   ]
 }
