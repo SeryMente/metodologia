@@ -117,4 +117,18 @@ Próxima ejecución: recuperar o reconstruir el código con fuentes y pins actua
 
 ## 9. Estado actual · 2026-11-09
 
-DUG: Samantha v385/NX-385m. Núcleo: MCP-OCP v0.1.22. Sink local por stdio: AUTORIZADO, no implementado ni desplegado. Acceso GitHub privado: conector autenticado de la conversación; `gh auth login` local no es requisito para operaciones del repositorio mediante conector. No se fijan hostname, Device ID, perfil Windows ni ruta de una sesión efímera. MCP-NORMATIVO permanece DESACTIVADO.
+DUG: Samantha v386/NX-386m (blob `22dca684830a36dff019b47811d9b800cc9bea0a`). Núcleo documental: MCP-OCP v0.1.25; backlog v0.6; release de software objetivo: 1.0.0. Sink local por stdio: AUTORIZADO, no implementado ni desplegado. Acceso GitHub privado: conector autenticado de la conversación; `gh auth login` local no es requisito para operaciones del repositorio mediante conector. No se fijan hostname, Device ID, perfil Windows ni ruta de una sesión efímera. MCP-NORMATIVO permanece DESACTIVADO.
+
+
+## 10. Instalación del release 1.0.0 dentro del checkout de Metodología · 2026-11-09
+
+El ejecutable MCP-OCP 1.0.0 no se instala solo en LocalAppData. Se instala dentro del checkout local:
+
+- Checkout: `SeryMente/Repositorios/Metodologia/metodologia/`.
+- Carpeta: `frentes/mcp-metodologia/instalacion-local/`.
+
+La carpeta contiene ejecutable, runtime/dependencias, launcher, configuración de ejemplo y manifiesto/hash; queda excluida de Git. DB SQLite, DPAPI, fuentes sensibles, logs operativos y backups quedan fuera del checkout en un root independiente protegido. No asumir protección de LocalAppData ni de un volumen con BitLocker suspendido.
+
+Flujo: sincronizar checkout → verificar ZIP/manifest/SHA → extraer en esa carpeta → comprobar archivos/hash/read-back → establecer root protegido → importar fuentes DUG v386 y comprobar 43 IDs/MDP → verificar readiness real → solicitar consentimiento presente para `provision-operator` / `REGISTER <SID>` → configurar el cliente MCP STDIO/RDC → ejecutar pruebas de uso y cierre.
+
+La entrega del paquete no prueba instalación. Un proceso activo o health READY de test no prueba fuentes importadas ni operador provisionado. La etiqueta `INSTALLED_AND_READBACK_VERIFIED` requiere ruta, versión, commit/blob, SHA del paquete y extracción cotejada. No abrir listeners/endpoints públicos; `MCP-NORMATIVO` sigue DESACTIVADO.
