@@ -1,4 +1,4 @@
-<!-- LIST_VERSION=0.5; LIST_STATUS=PROVISIONAL; NOT_A_CANONICAL_OBJECT=true -->
+<!-- LIST_VERSION=0.6; LIST_STATUS=PROVISIONAL; NOT_A_CANONICAL_OBJECT=true -->
 # Lista provisional de tareas · MCP-OCP
 
 > **ESTADO: PROVISIONAL · NO ES UN OCP NI UN CONTROL ADICIONAL.** Esta lista es una vista auxiliar enlazada desde el único núcleo MCP-OCP. El estado vivo y las decisiones de alcance permanecen en `MCP-METODOLOGIA.md`; la titularidad permanece exclusivamente en `CONTROL-RESPONSABILIDAD.json`. Las tareas y dependencias de otros frentes se enlazan sin apropiarse de sus objetos, controles o permisos.
@@ -6,9 +6,9 @@
 - **Frente:** MCP-OCP.
 - **Repositorio propietario:** `SeryMente/metodologia`.
 - **Ruta OCP:** `frentes/mcp-metodologia/`.
-- **Versión de la lista:** 0.5 (provisional; reconciliación del sprint Sink local en tres frentes).
+- **Versión de la lista:** 0.6 (provisional; reconciliación del sprint Sink local en tres frentes).
 - **Última actualización:** 2026-11-09.
-- **Gobierno leído:** Samantha v385 · NX-385m; Metacanon 1.29; GOW 2.18; DUG commit `7dcdac6c62f9e8a27ce11f8fa0e4fc379a3d12f8`; blob `72cd2e8e4e6a594b300ba1868baeabc2472beb97`. §ARR y P037 revisados; CNP P001/P004/P005/P038/P043 considerado.
+- **Gobierno leído:** Samantha v386 · NX-386m; Metacanon 1.29; GOW 2.18; DUG commit `82843bca9493a522405d840393c229d2af363342`; blob `22dca684830a36dff019b47811d9b800cc9bea0a`. §ARR y P037 revisados; CNP P001/P004/P005/P038/P043 considerado.
 - **Núcleo enlazado:** [MCP-OCP · objeto canónico](MCP-METODOLOGIA.md), v0.1.24; esta lista v0.5 es su backlog auxiliar vigente.
 - **Control:** [CONTROL-RESPONSABILIDAD.json](CONTROL-RESPONSABILIDAD.json). Las generaciones y sesiones son metadatos de auditoría y no bloquean trabajo autorizado.
 - **MCP-NORMATIVO:** DESACTIVADO.
@@ -28,7 +28,7 @@ El servidor MCP de Metodología pertenece exclusivamente al frente MCP-OCP y a s
 
 ## Orden de ejecución · sprint vigente 2026-11-09
 
-La tabla sustituye los PASS/estados de recibos históricos para la implementación Sink actual. Un PASS histórico no equivale a PASS con DUG v385 ni demuestra instalación/perfil/E2E actuales.
+La tabla sustituye los PASS/estados de recibos históricos para la implementación Sink actual. Un PASS histórico no equivale a PASS con DUG v386 ni demuestra instalación/perfil/E2E actuales.
 
 | Orden | ID | Prioridad | Tarea | Estado vigente | Condición principal de salida |
 |---:|---|---|---|---|---|
@@ -38,8 +38,8 @@ La tabla sustituye los PASS/estados de recibos históricos para la implementaci�
 | 4 | MCP-OCP-03 | P0 | Build y suite renovada | PENDIENTE_BUILD_ACTUAL | Build limpio con DUG v385/core actual; pruebas unitarias, contrato, negativos, integración stdio, data-root protegido y hash. No reutilizar 50/30/200 históricos. |
 | 5 | MCP-OCP-04 | P0 | Transporte RDC/stdio y perímetro | HISTORICAL_SMOKE_ONLY · E2E_ACTUAL_PENDIENTE | Mismo recorrido que usará el operador: initialize, tools/list, tools/call, respuesta completa, desconexión y reinicio; sin listener. |
 | 6 | MCP-OCP-10 | P1 | Pins, manifiesto y evidencia | PENDIENTE_EVIDENCIA_ACTUAL | Commits/blobs/SHA-256 DUG/core, SDK/RID, pruebas, paquete y limitaciones con read-back. |
-| 7 | MCP-OCP-07 | P1 | Paquete y runbook actuales | PAQUETE_HISTORICO_NO_RECUPERABLE | ZIP nuevo, verificación de extracción, manifest/hash y runbook actualizado. |
-| 8 | MCP-OCP-12 | P1 | Bootstrap del perfil local | PENDIENTE_HOST_Y_CONSENTIMIENTO_LOCAL | Import-sources en la DB real y `provision-operator` con `REGISTER <SID>` interactivo. |
+| 7 | MCP-OCP-07 | P1 | Paquete y runbook actuales | PAQUETE_HISTORICO_NO_RECUPERABLE | ZIP nuevo, verificación de extracción, manifest/hash y runbook actualizado; instalar copia local en `frentes/mcp-metodologia/instalacion-local/`. |
+| 8 | MCP-OCP-12 | P1 | Bootstrap del perfil local | PENDIENTE_HOST_Y_CONSENTIMIENTO_LOCAL | Materializar el programa 1.0.0 en `frentes/mcp-metodologia/instalacion-local/`; DB protegida fuera del checkout; import-sources y `provision-operator` con `REGISTER <SID>` interactivo. |
 | 9 | MCP-OCP-08 | P1 | Handoff/instalación EP | PENDIENTE_EP_TASK_003_005 | EP acepta host/perfil, volumen/data-root protegido, launcher, read-back y rollback. |
 | — | MCP-OCP-06 / 11 | Fuera | Coexistencia/desarrollo por Jules | PAUSADO_POR_OPERADOR | No es dependencia del MVP Sink local. |
 | — | MCP-OCP-09 | Fuera | PPR/restauración portable cross-host | P2_FUERA_DEL_SPRINT | No bloquear código, build ni instalación local de una sola ubicación. |
@@ -153,3 +153,20 @@ DUG vigente: Samantha v385 · NX-385m; commit `7dcdac6c62f9e8a27ce11f8fa0e4fc379
 El operador designó el perfil/usuario Windows `PC 7`, asociado a un dispositivo RDC, con ubicación `LOC-OTHER`. Esta designación sustituye la selección pendiente del host/perfil. El hostname/ID técnico del dispositivo, sesión, usuario/SID efectivos, rutas, permisos y almacenamiento deberán verificarse en vivo por EP.
 
 Para MCP-OCP, este dato **no bloquea** reconciliar fuentes, implementar Sink, ejecutar pruebas ni generar el paquete. Sí bloquea handoff/bootstrap e instalación persistente hasta que EP complete EP-TASK-003: workspace/DB/runtime/respaldos protegidos y dead-man LOC-OTHER implementado, probado y leído de vuelta en el destino. El estado de cifrado observado previamente en otro perfil no se hereda.
+
+
+## Contrato de release 1.0.0 e instalación local dentro de Metodología · 2026-11-09
+
+**Objetivo de producto:** MCP-OCP 1.0.0 funcional, reconstruible e instalado en checkout local. La versión de este backlog es 0.6; la versión documental del núcleo es 0.1.25; no son el número del producto.
+
+**Instalación obligatoria:** checkout `SeryMente/Repositorios/Metodologia/metodologia/`, carpeta `frentes/mcp-metodologia/instalacion-local/`. Instalar allí binario, runtime, launcher, configuración de ejemplo y manifiesto. La carpeta generada se excluye de Git y no contiene datos sensibles. SQLite, claves DPAPI, fuentes sensibles, logs y backups quedan fuera del checkout en root protegido que EP verifica.
+
+**Criterios de 1.0.0:** diagnóstico real, GOW:ARR, DUG/pins, catálogo 43, Sink individual y batch ordenado, hash individual y global, lectura documental OCP bajo allowlist, rechazos fail-closed, protocolo MCP STDIO, shutdown limpio y no exposición de red. Pruebas automatizadas y E2E en la ruta instalada, recibo de build, paquete y SHA-256, extracción/read-back, runbook y reconstrucción desde GitHub.
+
+**Ejecutable vs. instalación:** MCP-OCP entrega código, build y paquete; MCP-OCP-12 materializa la copia en la ruta local y ejecuta bootstrap solo tras gates; MCP-OCP-08/EP-TASK-005 acepta host e instalación EP. No declarar 1.0.0 aceptado con solo build o smoke de root temporal.
+
+**Secuencia crítica:** 02 → 05 vertical → 03/04 pruebas/STDIO → 05 generalización 43 → 10 manifiesto → 07 paquete → 12 instalación local/bootstrapping → 08 handoff EP → GOV-003 E2E. GOV-001/008/009 definen/ejecutan validación en paralelo. EP-003 resuelve checkout y dead-man en paralelo; EP-005 instala después del paquete verificado.
+
+**Gates bloqueantes únicamente del tramo instalado:** checkout PC 7 íntegro y sincronizado; protección BitLocker realmente activa; dead-man LOC-OTHER probado; root de datos fuera de checkout y protegido; consentimiento del operador para `REGISTER <SID>`. Estos gates no detienen reconciliación, código, pruebas y paquete desde GitHub.
+
+`MCP-NORMATIVO=DESACTIVADO`; no modificar DUG/IPZ, Khora, secretos ni servicios externos. El código no añade herramientas MCP de escritura en este release.
