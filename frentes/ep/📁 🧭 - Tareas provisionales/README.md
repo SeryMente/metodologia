@@ -140,3 +140,9 @@ EP-TASK-003 sigue `en_curso`; la excepción no sustituye la migración posterior
 - EP-TASK-003: VHDX expandible de 100 GB creado y montado temporalmente como W:, sin cifrar y vacío; contraseña solicitada localmente; migración y recovery protector pendientes. Workspace actual contiene 195 archivos bajo signal-interpreter y se preserva.
 - EP-TASK-004: diseño hiperrealista v2 congelado antes de la implementación; GUI 3D WPF, pruebas sintéticas completas PASS y PC-14 actualizado. PR #20 sigue draft/no fusionada; H10 y aceptación visual humana pendientes.
 - EP-TASK-001 continúa pendiente; EP-TASK-002/003/004 permanecen en_curso.
+## Transferencia de titularidad primaria · 2026-11-09
+
+- Operación `TRANSFER_RESPONSIBILITY` registrada y verificada: generación 3.
+- Titular activo: alias `chatgpt-C-EP-TRANSFER-RESPONSIBILITY-20261109-01-SES-20261109-E032FC60`, folio `SES-20261109-E032FC60`, UUIDv7 local `01a1c16c-f0fa-7273-a0f8-a1dde032fc60`.
+- Titular previo generación 1: relevado; asiento e historial preservados en el control. La corresponsabilidad temporal de generación 2 se cerró al promover la sesión receptora.
+- Control: blob `b76614cb71c7c9f0090e1c7205dc582ae2e79ec6`; OEP v0.3.46, §113. No se activa FOL1 ni se crea control de tarea separado.
