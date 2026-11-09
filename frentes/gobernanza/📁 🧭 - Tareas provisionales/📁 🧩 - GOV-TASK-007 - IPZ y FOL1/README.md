@@ -56,3 +56,20 @@ Este alcance precisa y amplía el enunciado anterior. El IPZ debe ser una instru
 La secuencia del campo queda fijada: (1) primer Sync acortado a GOW/§ARR; (2) segundo Sync acortado al DUG único; (3) refuerzo fail-closed de admisión, frente asignado y titularidad/exclusividad verificada; (4) reglas mínimas de sesión/ciclo y salida, dentro del máximo de 1.500 caracteres. Medir la longitud real en unidades exigidas por el campo. Mantener las seis distinciones de estado de v0.7 y el resto de salvaguardas verificadas: no sustituir con v0.8 incompleta.
 
 La instalación y lectura de vuelta del campo nativo son requisito previo a activar FOL1. El ciclo global no se inventa ni se asigna mientras FOL1 siga `PREPARADO_PENDIENTE_ACTIVACION_IPZ`. Trazabilidad: [C-GOBERNANZA-VECTOR-SEMANTICO-01](../../cronica/C-GOBERNANZA-VECTOR-SEMANTICO-01.md).
+
+
+
+## Rectificación de referencias IPZ aprobada · 2026-11-09 · C-GOBERNANZA-IPZ-RDC-SINK-01
+
+Para el modo local aprobado, las dos referencias de entrada dejan de ser URLs cortas Sync. La secuencia ejecutable será:
+
+1. `GOW:ARR` — recuperar §ARR y su vocabulario inicial por RDC/MCP-OCP.
+2. `DUG` — comprobar la fuente canónica completa y su procedencia.
+3. Después, aplicar el refuerzo fail-closed de admisión y las demás salvaguardas de v0.7.
+4. Cuando un MDP indique pertinencia, consultar `SINK:Pxxx` antes de aplicar el principio.
+
+Los identificadores son referencias operativas locales, no enlaces HTTP ni credenciales. No implementar MOD-SYNC, Cloudflare, túneles o resolvedores públicos para satisfacer este requisito. La versión IPZ final sigue sujeta a menos de 1.500 caracteres en el texto exacto (UTF-16 y puntos de código), con todas las salvaguardas de v0.7 y sin copiar la norma desarrollada.
+
+La instalación de las Instrucciones Personalizadas nativas y su read-back son una fase aparte. FOL1 solo podrá activarse después de esa verificación; mientras tanto sigue `PREPARADO_PENDIENTE_ACTIVACION_IPZ` y no se asignan folios globales.
+
+**Estado:** contrato de referencias armonizado; texto IPZ final, conteo, instalación nativa, read-back y FOL1 permanecen pendientes.
