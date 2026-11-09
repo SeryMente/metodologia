@@ -2604,6 +2604,8 @@ El primer hito será publicar y verificar únicamente los dos alias de navegaci�
 
 **Validación recibida:** el operador aprobó expresamente el propósito de §110.2 el 2026-11-09 y ordenó preparar la especificación de implementación. La validación no equivale a aprobar el proveedor, dominio, credenciales, infraestructura ni despliegue.
 
+<a id="mod-sync-implementation"></a>
+
 ## §111. Especificación técnica propuesta de MOD-SYNC · v0.3.44 · 2026-11-09
 
 ### 111.1 Estado y autoridad
