@@ -3,7 +3,7 @@
 **Estado:** materialización operativa provisional; no constituye el ámbito funcional Tareas ni lo canoniza.  
 **Contenedor:** `frentes/gobernanza/📁 🧭 - Tareas provisionales/`  
 **OCP padre y fuente de responsabilidad:** `frentes/gobernanza/`  
-**Control heredado:** [CONTROL-RESPONSABILIDAD.json](../CONTROL-RESPONSABILIDAD.json), control común generación 17; titular `SES-20261108-506DCF0C` y corresponsable `SES-20261101-GV8E89D1FF` (gen12). Máximo dos responsables activos; blob verificado `18c2d7fa57609465dced61884cec6685bf74f68d.
+**Control heredado:** [CONTROL-RESPONSABILIDAD.json](../CONTROL-RESPONSABILIDAD.json), control común generación 17; titular `SES-20261108-506DCF0C` y corresponsable `SES-20261101-GV8E89D1FF` (gen12). Máximo dos responsables activos; blob verificado `18c2d7fa57609465dced61884cec6685bf74f68d`.
 **Evento de creación:** C-GOBERNANZA-MDP-OCP-01 · 2026-10-30.  
 **Fuente normativa vigente:** [DUG Samantha v384 · NX-384m](../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html); Metacanon 1.29, GOW 2.18, 43 principios y 22 anexos; blob `2f320e5e6e4768e9a77bc34d24b0639b47f2128d`. Los snapshots anteriores son antecedentes, no el estado vigente.
 
