@@ -4,7 +4,7 @@
 **Contenedor:** `frentes/ep/📁 🧭 - Tareas provisionales/`  
 **OCP padre y fuente de contexto:** `frentes/ep/OEP.md`  
 **Evento de creación:** instrucción directa del operador en esta conversación · 2026-10-31.  
-**Fuente normativa consultada:** DUG v383 · NX-383m · Metacanon 1.5, en `main`.
+**Fuente normativa consultada:** DUG Samantha v385 · NX-385m · Metacanon 1.29 · GOW 2.18, en `main`.
 
 ## Naturaleza y límites
 
@@ -22,6 +22,7 @@ El patrón de materialización sigue el registro de tareas provisionales de Gobe
 | EP-TASK-002 | en_curso | Datos de usuario OCP en Backblaze B2; separación GitHub/B2 y recuperación por perfil | [núcleo](./📁%20🧩%20-%20EP-TASK-002%20-%20Persistencia%20provisional%20Backblaze/README.md) |
 | EP-TASK-003 | en_curso | Materialización del workspace y dead-man trigger exclusivo para ubicaciones distintas de CECEQ | [núcleo](./📁%20🧩%20-%20EP-TASK-003%20-%20Mapa%20integral%20de%20construcción%20EP/README.md) |
 | EP-TASK-004 | en_curso | Reconstrucción integral de la bóveda EP: UI nueva desde cero, mecanismos, sesión configurable y acceso CLI/headless | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-004%20-%20Reconstrucci%C3%B3n%20de%20b%C3%B3veda/README.md) |
+| EP-TASK-005 | pendiente | Instalación, bootstrap y aceptación de MCP-OCP local por stdio en perfil protegido | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-005%20-%20Instalaci%C3%B3n%20y%20aceptaci%C3%B3n%20de%20MCP-OCP%20local/README.md) |
 
 ## Estado de continuidad · 2026-10-31
 
@@ -171,3 +172,8 @@ La nota previa que indicaba que `ChatGPT-EP-20261109-1230.md` no estaba disponib
 La pregunta final del archivo queda respondida: BitLocker funciona; el bloqueo es la migración que aún no se ejecutó. Los 195 archivos/11 directorios siguen fuera de W:. El rótulo de actividad «Migrado el espacio de trabajo» dentro de la exportación contradice la respuesta explícita de cuota RDC 0 % y no prevalece sobre OEP §114, que confirma ausencia de copia, hash de destino y cambio de montaje.
 
 **Estados sin cambio:** EP-TASK-001 `pendiente`; EP-TASK-002, EP-TASK-003 y EP-TASK-004 `en_curso`. En EP-TASK-003 la custodia de recuperación está resuelta; la migración/aceptación permanece pendiente.
+
+
+## Sprint Sink local · reconciliación de tres frentes · 2026-11-09
+
+EP-TASK-003 y EP-TASK-005 son el carril EP de este sprint. EP-TASK-003 conserva la migración del workspace a W: y el dead-man cuando la ubicación sea LOC-OTHER. EP-TASK-005 controla el handoff, la ruta de datos protegida, el bootstrap DPAPI CurrentUser y la aceptación MCP stdio/RDC. EP-TASK-004 (UI de bóveda) y EP-TASK-002 (Backblaze) no bloquean el build Sink; solo se incorporan si se demuestra una dependencia técnica concreta. La autenticación GitHub del conector de ChatGPT no equivale a autenticación local del perfil Windows.
