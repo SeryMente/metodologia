@@ -166,3 +166,91 @@ La última iteración de PC-14/Fila4 añadió un pivote de bisagra lateral (cent
 **Regresión permanente:** `Test-EPVault.ps1` ahora crea bóveda/valor sintéticos, inicia un CLI en proceso independiente, exige que liste el nombre sin solicitar password y comprueba que `Lock` desde el CLI revoca la sesión del proceso padre. Esta prueba forma parte de la suite usada por CI, no solo de un ensayo manual.
 
 **Límite visual:** el resultado es WPF vectorial con cues 2.5D; no es una escena 3D físicamente exacta. La aceptación visual/auditiva del operador y la prueba E2E desde la sesión interactiva Fila4 siguen siendo necesarias antes de H10.
+
+
+---
+
+## Diseño visual hiperrealista v2 — congelación previa a implementación · 2026-11-09
+
+**Estado:** DISEÑO DEFINIDO PARA IMPLEMENTACIÓN; aceptación visual humana pendiente.  
+**Autorización:** instrucción directa del operador: «sin elementos de fantasía en la GUI. Realismo, no obstante, si. Es una simulacion de boveda inmersiva»; precisión posterior: «hiperrealista sería el término» y orden de diseñar antes de implementar.  
+**Base:** materiales, geometría y coreografía de este mismo documento; no se introduce una dirección de arte alternativa.
+
+### 1. Concepto visual bloqueado
+
+Simulación inmersiva de una cámara acorazada industrial de alta seguridad, construida para resistir décadas de uso. Debe parecer un mecanismo físico de ingeniería pesada, no un videojuego ni una interfaz de ciencia ficción. Referencias materiales: acero al carbono pavonado, acero mecanizado, fundición oscura, juntas elastoméricas, tornillería industrial y huellas moderadas de mantenimiento.
+
+Se prohíben hologramas, HUD flotantes, neón, circuitos luminosos, glows decorativos, partículas, rayos, runas, ornamentos fantásticos, metales dorados brillantes, transiciones de tarjeta, desvanecimiento de la hoja o movimiento de toda la escena como una lámina plana.
+
+### 2. Composición y jerarquía
+
+- **Escena principal (aprox. 65–70 % del área):** puerta circular acorazada a escala visual dominante, observada casi frontal con perspectiva oblicua ligera de tres cuartos. Debe ocupar el foco visual sin tapar los controles.
+- **Marco fijo:** brida circular empotrada en un muro de hormigón/metal oscuro, aro exterior grueso, garganta interior, alojamientos de bisagra y fijaciones de anclaje. Permanece inmóvil durante toda la secuencia.
+- **Hoja móvil:** disco de acero con espesor visible, canto mecanizado, bisel perimetral, contraplaca, reborde de compresión y junta de sellado. Deben distinguirse el plano frontal, el canto y el retroceso respecto al marco.
+- **Mecanismo:** volante central de ocho radios con cubo y eje, doce bulones radiales independientes, tres conjuntos de bisagras laterales con placas y barriles, retenes y alojamientos.
+- **Acceso:** panel de autenticación lateral sobrio e integrado; no se superpone a la puerta ni simula botones físicos de fantasía.
+- **Jerarquía funcional:** estado y TTL legibles; lista de variables/notas y acciones solo después de autenticar. La escena no revela nombres, valores ni metadatos sensibles.
+
+### 3. Materiales y acabado
+
+WPF no ofrece un pipeline PBR completo ni sombras físicas de motor de videojuego. El objetivo es una simulación 3D geométrica convincente con iluminación y respuesta especular controladas; no se describirá como renderizador CAD ni fotográfico real.
+
+| Pieza | Material / acabado |
+|---|---|
+| Muro y cámara | Hormigón grafito mate, cavidad negra sin reflejo |
+| Brida fija | Acero fundido oscuro, gran espesor y aristas suavizadas |
+| Cara de puerta | Acero pavonado, satinado industrial y desgaste direccional |
+| Biseles / caras torneadas | Acero mecanizado con reflejo estrecho y controlado |
+| Bulones y tornillería | Acero endurecido, cabezas hexagonales y chaflanes |
+| Junta | Elastómero negro, compresión visible antes de abrir |
+| Zonas de roce | Pulido localizado en aristas, sin brillo cromado |
+| Oxidación | Pátina marrón-gris localizada en ranuras; nunca salpicaduras decorativas |
+
+**Paleta:** carbón #080B0D; cavidad #0B1012; acero pavonado #20282B; fundición #30383A; acero mecanizado #536065; reflejo frío #A8B0B2; pátina #343B38; óxido oscuro #49372F; texto #C4C9C7. No se utilizará cian/neón como luz decorativa.
+
+La superficie tendrá marcas de torno concéntricas muy finas, arañazos direccionales cortos, pequeñas marcas de herramienta, tornillería avellanada y juntas con variación tonal. No cubrir la pieza de ruido/grano; geometría y luz deben producir la sensación de material.
+
+### 4. Geometría y cámara
+
+La escena utilizará Viewport3D, PerspectiveCamera, mallas trianguladas y GeometryModel3D reales para los elementos principales. Cada componente móvil tendrá grupo y transformaciones locales independientes: marco y brida fijos; hoja y canto con pivote en la línea de bisagras; volante sobre su eje; bulones con recorrido radial; bisagras fijas con barriles y placas; junta que se separa de la brida al liberar la hoja.
+
+Cámara casi frontal, con perspectiva suficiente para leer 0.35–0.45 unidades de espesor en la hoja; campo visual aproximado de 35–42°. La cámara no se mueve para simular una explosión ni para sustituir el movimiento del mecanismo.
+
+**Límite técnico:** iluminación ambiental y direccional más reflejos especulares por material; no afirmar sombras dinámicas físicamente exactas si WPF no las calcula. Cualquier sombra será una aproximación documentada, no un efecto luminoso.
+
+### 5. Coreografía mecánica de apertura
+
+Duración objetivo: 6.2–6.8 s. La autenticación válida debe estar confirmada antes de sonido o movimiento.
+
+| Tiempo aprox. | Operación física |
+|---|---|
+| 0.0–0.35 s | Precarga del tren de bloqueo; golpe amortiguado de embrague |
+| 0.35–1.9 s | Bulones se retraen por grupos con recorrido individual |
+| 0.95–2.9 s | Volante gira con aceleración, resistencia y asentamiento |
+| 2.5–3.3 s | La junta perimetral libera compresión; la hoja se separa apenas del marco |
+| 3.2–6.2 s | La hoja rota sobre eje vertical lateral; el canto y el espesor permanecen visibles |
+| 6.2–6.6 s | Tope mecánico y oscilación residual leve; aparece la cámara interior |
+
+La puerta no se desvanece, no se desliza como tarjeta y no se escala para fingir profundidad. Marco y cámara permanecen fijos. El ángulo final debe permitir ver la cara interior y el canto; no se busca que la hoja desaparezca fuera del viewport.
+
+### 6. Coreografía de cierre
+
+Primero se revoca la sesión y se eliminan vistas/datos sensibles; después empieza el cierre físico. La hoja vuelve con desaceleración controlada, comprime la junta, el volante gira inversamente, los bulones entran por grupos y el pasador principal produce el golpe final. Solo al terminar se confirma SELLADA. TTL y revocación de sesión no dependen del éxito de la animación.
+
+### 7. Sonido y accesibilidad
+
+- Efectos locales originales, sincronizados con el mecanismo y opcionales; ausencia/fallo de WAV nunca bloquea autenticación, cierre o TTL.
+- Sin sonido de apertura al iniciar, autenticar fallidamente o expirar sesión.
+- SONIDO y movimiento reducido conservan su función; movimiento reducido evita interpolaciones y audio mecánico no esencial.
+- Foco inicial, navegación de teclado, DPI y escalado de ventana se prueban sin alterar controles nativos de contraseña.
+- Campos PasswordBox vacíos en perfil limpio; nunca inspeccionar sus contenidos para pruebas.
+
+### 8. Verificación y corte
+
+- Parser PowerShell 5.1, carga XAML y contrato de nombres: obligatorios.
+- Geometría: Viewport3D, cámara perspectiva, mallas de puerta, marco, bisagras, bulones y volante; elementos móviles con transformaciones independientes.
+- Regresión de autenticación, cifrado, notas DPAPI, TTL, allowlist, redacción de logs y revocación interproceso: sin cambios de semántica ni debilitamiento.
+- Prueba de apertura/cierre, error, expiración y reduced-motion en perfil sintético limpio.
+- Render WPF de preview, inspección visual humana y lectura de vuelta de SHA/PR antes de cerrar H3/H4/H10.
+- La aceptación final permanece pendiente mientras no exista render revisado desde el entorno interactivo y confirmación humana.
+
