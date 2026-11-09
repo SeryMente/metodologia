@@ -2024,3 +2024,27 @@ El preflight read-only más reciente de este ciclo identificó PC-7 como único 
 **Prioridad vigente:** P0-A → P0-B → P0-C → P1-A → P1-B → P2-A → P3-A → P4-A. No marcar ningún hito remoto como completado sin recibo y read-back. Los bloqueos materiales se registran como tales y no se sustituyen con una simulación.
 
 **Estado de EP-TASK-002:** `en_curso`. Este plan organiza el trabajo; no declara ejecutado el respaldo prioritario ni modifica el estado histórico de §102.
+
+## Registro de ejecución del plan priorizado · PC-7 · 2026-11-09
+
+### Evidencia local read-only posterior a la actualización
+
+- Dispositivo RDC: PC-7 Online; identidad efectiva `PC-7\\PC 7`; perfil `C:\\Users\\PC 7`.
+- Bóveda formal EP Vault: `%LOCALAPPDATA%\\Khora\\secrets\\ep-env-vault.enc.json`, presente, 448 bytes, SHA-256 `097ADA4DB521F01625797B89C99BAF7910352BCF95341CEC337C1185F5C65E8C`. La huella se calculó sobre el archivo cifrado; no se leyó, descifró, copió ni modificó su contenido.
+- Bóveda específica B2 `b2-ep-env-vault.enc.json`, cachés `b2-ep-master-20261107.sqlite` y `b2-ep-ocp.sqlite`: no encontradas en el LOCALAPPDATA de este perfil.
+- B2 CLI: `Get-Command b2` → `NOT_FOUND`; procesos B2: 0; variables cuyo nombre comienza por `B2_`: ninguna.
+- BitLocker C: `FullyEncrypted`, 100 %, `XtsAes128`, `ProtectionStatus=Off`. No satisface XTS-AES256 + Protection On. No se encontró VHDX en `%LOCALAPPDATA%\\Khora\\workspace`.
+- Workspace `Desktop\\SeryMente`: 226 archivos, 5.010.985 bytes en el inventario recursivo. `Datos/` contiene 0 archivos en el inventario actual. El volumen/árbol de trabajo no se declara protegido por BitLocker.
+- La carpeta de código `signal-interpreter/` aparece en la raíz del workspace, fuera de `Repositorios/Signal Interpreter/`; contiene `extension/manifest.json` y no tiene `.git` en la ruta inspeccionada. `Repositorios/Metodologia/metodologia/` tampoco tiene `.git`. La ruta prevista `Repositorios/Signal Interpreter/signal-interpreter/` no tiene metadatos Git. Por ello, no se afirma que estas materializaciones sean clones íntegros ni que todo su contenido esté respaldado por GitHub.
+- `Temporal/Staging/EP-Vault-pre-hardening-20261109-143932/` contiene fuentes y pruebas del producto EP Vault. Es staging de código, no la bóveda formal cifrada; permanece excluido del conjunto de datos B2 ordinario.
+
+### Decisión de ejecución resultante
+
+1. **P0-A — PARCIAL/BLOQUEADO:** identidad y metadatos de la bóveda formal fueron verificados; faltan el flujo local aprobado para snapshot consistente/read-back y la compuerta de presencia/apertura autorizada. No se inspeccionó contenido.
+2. **P0-B — BLOQUEADO:** no existe CLI B2 ni caché/archivo específico B2 en el perfil activo; no se intentó reutilizar credenciales de otro perfil ni acceder a la Master Key desde una fuente no verificada.
+3. **P0-C — NO EJECUTADO:** no hubo autenticación, upload, file info, download ni recibo B2.
+4. **P1-A — PARCIAL:** se obtuvo inventario agregado y separación inicial; `Datos/` está vacío. Las 226 piezas del workspace incluyen materialización de código y staging, sin metadatos Git en las rutas inspeccionadas. Se requiere inventario de archivos/cambios locales y reconciliación antes de seleccionar cualquier elemento.
+5. **P1-B — BLOQUEADO:** no hay dataset aprobado en `Datos/`; el árbol actual no está bajo el perímetro BitLocker XTS-AES256/On requerido y no está disponible el canal B2.
+6. **P2-A/P3-A/P4-A — PENDIENTES:** no se creó outbox, worker, manifiesto operativo, política de retención ni procedimiento de restore; estas acciones no deben adelantarse con un destino/identidad sin resolver.
+
+**Resultado del ciclo:** se actualizaron las tareas y se completaron verificaciones locales de solo lectura. No se persistió ningún objeto nuevo en Backblaze. El respaldo no se simula ni se sustituye por una copia local sin protección. La siguiente acción técnica es restablecer el flujo B2 en el perfil propietario correcto y preparar el perímetro protegido; después ejecutar P0-C antes de automatizar P2-A.
