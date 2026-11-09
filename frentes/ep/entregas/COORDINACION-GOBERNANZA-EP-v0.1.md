@@ -2130,3 +2130,44 @@ FOL1: NO CONSTA ACTIVO.
 - Próxima acción: operador valida/corrige la especificación §111; después seleccionar dominio/proveedor y autorizar la implementación, comenzando por el registro y el resolvedor de prueba.
 
 **Resultado del ciclo:** ESPECIFICACIÓN DOCUMENTAL PERSISTIDA Y VERIFICADA; IMPLEMENTACIÓN NO EJECUTADA. El objeto de coordinación conserva apertura, procesamiento y cierre en este mismo DTC.
+
+---
+
+## EP · retoma, bóveda hiperrealista y preparación BitLocker · 2026-11-09
+
+### Respuesta inicial y autorización
+
+**A literal:** «ChatGPT-EP-20261109-1104.md. Persiste en persistencia documental del frente. Léelo cuidadosamente. Y actualiza tareas provisionales... 1. Cifra la carpeta de trabajo en entorno local con BitLocker, la misma contraseña que tengo en la bóveda de 12 caracteres alfabéticos... 2. Completa y perfecciona el diseño de la bóveda... 3. Actualiza tareas... 4. Resuelve backlog. Resuelve de extremo a extremo...»
+
+Después el operador amplió autorización expresa: «Si autorizo lo que haga falta, no mucha burocracia... Y resuelve sin elementos de fantasía en la GUI. Realismo... simulación de bóveda inmersiva». Precisó luego «hiperrealista» y ordenó diseñar antes de implementar. Finalmente autorizó continuar sin generación de imágenes.
+
+### Responsabilidad y persistencia
+
+- Control EP actualizado en generación 2 mediante ADD_CO_RESPONSIBLE; titular previo preservado y segundo asiento activo. Evento C-EP-ADD-CO-RESPONSIBLE-20261109-01; sesión SES-20261109-E032FC60; UUIDv7 local 01a1c16c-f0fa-7273-a0f8-a1dde032fc60; blob final de read-back b6f719ac9d5b4e6fc9860ead666ac7268a145c77. No se afirma ID nativo de ChatGPT.
+- Export preservado en frentes/ep/entregas/ChatGPT-EP-20261109-1104.md; 38.069 bytes, 999 líneas, SHA-256 B032A6033BABC0B1061C2823D5B3C64C3A041DC842978E73B6D26216977805D4; commit 19631c55a39aa9ea906735ea87f5dc11997fec68; blob f14febd7b5f673d9b2f7b1226603eb1243758ea0; read-back exacto.
+- EP-TASK-003, EP-TASK-004 y el índice de tareas actualizados en main; blobs verificados: TASK-003 be657e25e12cdaf978ecae81a43960c26b728219; TASK-004 535ecc0cfa1f60cd1c03eaf789da6d9be2759a00; índice 1851e81942abc400f73187cd1760511dfee54b17.
+- OEP v0.3.45, §112 incorporada; commit 2b4df4fb186a0aff940ca3d204b04b025ffcada0; blob b0d621f68b2da6c75eaa519ff204365706739d36; read-back exacto. DUG no modificado.
+- README EP actualizado: commit 99ce7214af237a31765fcb3e24c6f441d9ffeb71; blob ff7b7af3ac746b36235fbf99f184e9408bd6d7ec; read-back exacto.
+
+### EP Vault
+
+El diseño hiperrealista v2 se documentó antes del código en UI-PULIDO-METAL-REALISTA.md de la rama feat/ep-vault-clean-room-20261108. Commit 1fe14c0afe729c768ed773bd8c6b1d123dbc40cb; blob 8259f40ddabb9689911c25d6f0f0220c5eacc7ae. La implementación WPF 3D (Viewport3D/PerspectiveCamera, hoja gruesa, marco, bisagras, bulones y volante independientes) está en la misma rama y materializada en PC-14. La PR #20 continúa draft/no fusionada; head 4741d4c1687ed228cb4b0e7100bf9eefc0afc1be.
+
+Suite local Windows PowerShell 5.1 en PC-14: EP_VAULT_VALIDATION_PASS, exit code 0, runtime 27,45 s. GUI reabierta en sesión 1 como PID 7216, ventana EP Vault Responding=true y UI Automation mostró ABIERTA/TTL activo. CLI PID 20908 vivo. SHA de almacén formal de 448 bytes antes/después del reinicio coincide: 097016819814DEA6D3A72A3F5B155FB46FB57924849F4E58F1ECB05B61DC790A. No se leyó el contenido.
+
+### Workspace / BitLocker
+
+PC-14: Desktop\SeryMente tiene 11 directorios raíz y 195 archivos (2.877.377 bytes) bajo signal-interpreter; no se movieron ni eliminaron. C: permanece FullyDecrypted/0%/Protection Off.
+
+Se creó VHDX expandible de 100 GB en %LOCALAPPDATA%\Khora\workspace\containers\SeryMente.vhdx, NTFS/GPT, montado temporalmente W:. El volumen sigue vacío y sin cifrar. La consola local manage-bde para el protector de contraseña XTS-AES256 está abierta en la sesión interactiva 1 y espera que el operador introduzca su contraseña maestra directamente en Windows. No ha sido transmitida por chat ni argumento.
+
+La bóveda formal ep-env-vault/1 tiene 448 bytes, sesión activa, cero variables/notes; la clave de recuperación aún no se generó ni guardó. No declarar BitLocker habilitado, protección activa, 100% ni migración. La secuencia queda: entrada local → verificar XTS-AES256/On/100 → generar recovery protector → guardar y read-back en EP Vault → copia SHA-256 → montar en Desktop\SeryMente → segundo read-back → retirar staging claro solo tras PASS.
+
+### Estado ejecutivo
+
+- EP-TASK-001: pendiente.
+- EP-TASK-002: en_curso; sin nuevas operaciones B2 ni recuperación de credenciales en este ciclo.
+- EP-TASK-003: en_curso; VHDX creado, BitLocker pendiente de contraseña local y protector de recuperación.
+- EP-TASK-004: en_curso; implementación 3D y suite sintética PASS, aceptación humana visual/auditiva y H10 pendientes.
+
+**Resultado del ciclo:** persistencia documental y rediseño funcional parcialmente ejecutados/verificados; cifrado del workspace y aceptación integral de producción continúan pendientes.
