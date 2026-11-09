@@ -21,6 +21,21 @@ Recibir el artefacto MCP-OCP renovado y efectuar su instalación, bootstrap y ac
 9. El destino está clasificado como `LOC-OTHER`: no instalar ni dejar runtime persistente hasta que EP-TASK-003 tenga implementado y probado el dead-man trigger específico, con cierre/volatilización y recuperación verificados.
 10. Aceptar solo con read-back de paquete, fuentes importadas, `operator_provisioned=true`, root de datos protegido, transporte probado y recibo E2E enlazado a GOV-TASK-003.
 
+
+## Integración del panel visual en el ciclo de sesión EP · release MCP-OCP 1.0.0
+
+Por instrucción directa del operador, la aceptación EP incluye la apertura automática del panel local MCP-OCP cuando la sesión persistente de este perfil esté realmente vigente.
+
+- **Responsabilidad MCP-OCP:** entregar `OcpMcp.Panel.exe`, contrato `PANEL-OBSERVABILIDAD.md`, schema de estado/eventos, hashes y pruebas.
+- **Responsabilidad EP:** abrir el panel como proceso hijo del controlador de sesión únicamente después de validar `EP_SESSION=ACTIVE` y completar los gates de seguridad aplicables, incluido el dead-man LOC-OTHER ya exigido por esta tarea.
+- La ventana permanece abierta mientras EP continúe ACTIVE. Puede minimizarse por el operador; al finalizar la sesión EP, el controlador la cierra limpiamente y verifica que no quede proceso huérfano.
+- El panel puede abrir antes que el servidor; debe mostrar “Sesión activa · esperando servidor MCP”. Si el servidor se cae pero EP permanece ACTIVE, la ventana sigue abierta y muestra el estado detenido/desconectado.
+- La apertura no se configura como tarea programada, servicio Windows ni arranque genérico de inicio de sesión. No iniciar panel si el perfil/sesión/volumen/gates EP no están verificados.
+- El panel solo lee `monitor/state.json` y `monitor/events.jsonl` del root protegido. EP conserva ACL y protección del almacenamiento; no se copian secretos ni datos de fuente al panel.
+- Esta integración no modifica EP-TASK-003: el dead-man conserva su contrato específico y no se convierte en heartbeat/monitor general.
+
+**Prueba de aceptación EP:** sesión ACTIVE → panel abre; server ausente → “esperando servidor”; server iniciado por cliente STDIO → estados separados de proceso/protocolo/readiness; server terminado → desconectado; fin EP → panel se cierra sin huérfanos. Verificar hashes del binario y del manifest instalado.
+
 ## Dependencias y límites
 
 - **MCP-OCP:** MCP-OCP-07 (paquete/runbook), MCP-OCP-12 (bootstrap), MCP-OCP-08 (handoff) y pins actuales.
