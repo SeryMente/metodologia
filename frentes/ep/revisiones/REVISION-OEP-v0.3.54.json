@@ -27,7 +27,17 @@
     "workspace_structure_observed_on_pc7": "PREVIOUSLY_VERIFIED; not reobserved in this revision cycle",
     "bitlocker_vhdx_deadman": "NOT_VERIFIED",
     "data_backup_restore": "NOT_VERIFIED",
-    "vault_installation": "PENDING"
+    "vault_installation": "PENDING",
+    "DUG_ART030": "READBACK_VERIFIED",
+    "OEP_119": "READBACK_VERIFIED",
+    "EP_README": "READBACK_VERIFIED",
+    "task3_continuity": "READBACK_VERIFIED",
+    "task4_PC7_handoff": "READBACK_VERIFIED",
+    "manifest": "UPDATED_WITH_SIZES_SHA256_AND_GIT_BLOBS",
+    "workspace_structure": "LOGICAL_LAYOUT_VERIFIED_IN_PRIOR_LOCAL_MATERIALIZATION",
+    "BitLocker_VHDX_deadman": "NOT_VERIFIED",
+    "EP_Vault_PC7_installation": "PENDING"
   },
-  "status": "DECISION_DOCUMENTED; canonical only after commit to main and exact read-back."
+  "status": "CANONICAL_MAIN_COMMITTED_AND_READBACK_VERIFIED",
+  "canonical_main_commit": "1ff443797d474dbfea1835847f9b2d4607bafcb7"
 }
