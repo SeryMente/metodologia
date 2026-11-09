@@ -10,7 +10,7 @@ Recibir el artefacto MCP-OCP renovado y efectuar su instalación, bootstrap y ac
 
 ## Alcance
 
-1. Descubrir en vivo el equipo y perfil Windows designados por el operador. Comprobar usuario/SID efectivos, rutas reales, ubicación declarada y estado de confianza. No reutilizar identificadores, nombres ni rutas de sesiones temporales anteriores.
+1. Destino ya designado por el operador: perfil Windows `PC 7`, asociado al equipo RDC correspondiente, ubicación `LOC-OTHER`. Al iniciar la operación, comprobar en vivo que el usuario Windows, SID efectivo, equipo RDC, rutas y permisos coinciden con esa designación. La designación no sustituye el preflight ni autoriza a reutilizar datos de sesiones temporales anteriores.
 2. Confirmar que workspace, runtime, base de datos y respaldos están dentro de un volumen protegido. El W: existente está documentado como XTS-AES256, Protection On y FullyEncrypted 100 %, con RecoveryPassword custodiado y verificado. En la última lectura canónica, los archivos del workspace aún estaban fuera de W:; EP-TASK-003 debe completar la migración y ambos read-backs SHA-256 antes de mover allí el runtime.
 3. Resolver el root de datos del servidor. El código recuperable de MCP-OCP usa por defecto `%LOCALAPPDATA%\SeryMente\OCP MCP`; debe quedar dentro del perímetro cifrado o debe probarse cifrado completo del volumen que aloja ese perfil. MCP-OCP habilitará una configuración explícita y validada del root de datos/respaldos para apuntar a W: sin heredar rutas de otra sesión.
 4. Recibir solo un paquete nuevo, construido y verificado contra DUG v385 y el núcleo MCP-OCP vigente. Verificar SHA-256, manifiesto, RID y resultados de pruebas antes de extraer.
@@ -18,7 +18,7 @@ Recibir el artefacto MCP-OCP renovado y efectuar su instalación, bootstrap y ac
 6. Ejecutar `import-sources` contra un checkout con los commits/blobs vigentes; verificar resultado y 43 IDs/MDP. No importar fuentes con pins antiguos.
 7. Ejecutar `OcpMcp.exe provision-operator` de forma interactiva. El operador confirma en esa consola escribiendo exactamente `REGISTER <SID>` con el SID que muestre el proceso. No capturar ni transmitir el SID o claves por chat.
 8. Configurar el cliente para iniciar el proceso MCP stdio desde la ruta protegida. Verificar `initialize`, `tools/list`, `tools/call`, respuesta completa, shutdown y reinicio limpio a través del mismo recorrido RDC que utilizará el operador.
-9. Si el destino está clasificado como `LOC-OTHER`, no dejar runtime persistente hasta que EP-TASK-003 tenga implementado y probado el dead-man trigger específico. En `LOC-CECEQ`, aplicar la política de conservación definida por OEP.
+9. El destino está clasificado como `LOC-OTHER`: no instalar ni dejar runtime persistente hasta que EP-TASK-003 tenga implementado y probado el dead-man trigger específico, con cierre/volatilización y recuperación verificados.
 10. Aceptar solo con read-back de paquete, fuentes importadas, `operator_provisioned=true`, root de datos protegido, transporte probado y recibo E2E enlazado a GOV-TASK-003.
 
 ## Dependencias y límites
@@ -35,7 +35,7 @@ Recibir el artefacto MCP-OCP renovado y efectuar su instalación, bootstrap y ac
 - Los 195 archivos y 11 directorios del workspace seguían en staging; no había copia a W:, manifiesto de destino ni segundo read-back. No borrar el origen hasta el cotejo íntegro.
 - La última evidencia EP reportó `remote_calls_left_pct = 0`. No eludir el límite por otro canal; se requiere capacidad RDC para la operación remota.
 - El código recuperable usa LocalAppData por defecto. La configuración del root de datos cifrado debe resolverse antes de instalar.
-- El perfil/host definitivo y su clasificación CECEQ/LOC-OTHER deben comprobarse en vivo.
+- El perfil/host están designados como PC 7 + equipo RDC asociado / LOC-OTHER; falta comprobar en vivo identidad, acceso y estado de seguridad.
 - La autenticación GitHub del conector de ChatGPT no equivale a autenticación local del perfil Windows.
 
 ## Criterios de cierre
@@ -48,4 +48,4 @@ Recibir el artefacto MCP-OCP renovado y efectuar su instalación, bootstrap y ac
 - Sin listener, endpoint público, regla de firewall ni secretos en logs/salida/repositorio.
 - Evidencia y read-back actualizados en esta ficha, el índice EP y OEP.
 
-**Estado actual:** planificada, no iniciada. La creación de la tarea no modificó ningún equipo.
+**Estado actual:** planificada, no iniciada. Destino designado: PC 7 / equipo RDC asociado / LOC-OTHER. Preflight, migración, dead-man, instalación y pruebas continúan pendientes. La creación de la tarea no modificó ningún equipo.
