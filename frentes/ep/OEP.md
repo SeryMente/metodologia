@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.41. **Ancla:** el control formal de responsabilidad EP queda creado en generación 1 mediante asignación inicial autorizada; el antecedente de ausencia de control se conserva como histórico y no se declara transferencia desde un titular no verificable. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.42. **Ancla:** el control formal de responsabilidad EP queda creado en generación 1 mediante asignación inicial autorizada; el antecedente de ausencia de control se conserva como histórico y no se declara transferencia desde un titular no verificable. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -2508,3 +2508,27 @@ El operador declaró PC-14 como ubicación de cibercafé, por lo que corresponde
 - **Dead-man trigger LOC-OTHER:** DISEÑO DOCUMENTADO; NO IMPLEMENTADO / NO ACTIVADO.
 - **EP-TASK-001:** pendiente, sin cambio.
 - **EP-TASK-002, EP-TASK-003 y EP-TASK-004:** en_curso; no marcar como completadas por los avances parciales documentados.
+
+## §109. Excepción operativa: workspace provisional en claro en PC-14 · 2026-11-09
+
+El operador autorizó expresamente priorizar la instanciación del directorio mediante RDC aunque todavía no esté cifrado, para comenzar otros frentes. Esta excepción es temporal y limitada a código fuente y documentación técnica no sensible; no deroga el requisito arquitectónico permanente de proteger el workspace.
+
+**Host y perfil observados**
+- Dispositivo: PC-14 · RDC ID `4fc35a07-2192-4b88-81ec-96cb450d565e`.
+- Identidad Windows efectiva: `PC-14\PC 13`.
+- Ruta: `C:\Users\PC 13\Desktop\SeryMente`.
+- C: releído como FullyDecrypted, 0 %, ProtectionStatus Off, EncryptionMethod None.
+
+**Materialización ejecutada y verificada**
+- Root `Desktop\SeryMente` creado.
+- Once scaffolds vacíos: `khora`, `serymente`, `otrogranprograma`, `GDP`, `khora-effectif`, `signal-interpreter`, `metodologia`, `tercer-ambito`, `personal`, `filo-sangriento`, `Language`.
+- `WORKSPACE-STATUS.md` (37 líneas) leído de vuelta; SHA-256 `3B03FE0507903B7B42BA538B55D2954E9241A7C4A5F3746FB8D4C091117063EF`.
+- Son scaffolds, NO clones Git. No se ejecutó autenticación GitHub local ni se leyeron/transfirieron tokens.
+
+**Restricción de uso en claro:** solo código y documentación no sensible. Prohibidos: bóveda formal, contraseña maestra, protector de recuperación, tokens, claves B2, variables con secretos, archivos/material DPAPI, notas efímeras de Custodia y datos personales/sensibles.
+
+**Fuente de continuidad:** exportación `ChatGPT-EP (1)-20261109-1031.md` archivada en [SeryMente/metodologia/main](https://github.com/SeryMente/metodologia/blob/main/frentes/ep/entregas/ChatGPT-EP%20(1)-20261109-1031.md). Original de Downloads: 82,367 bytes, 1,645 líneas, SHA-256 `B08DEE8C0317EC2DDC28CD5D98925A975F1C571A1CC6B3C9852319CC945CF001`; commit `7260b1d398904f7dc13a76858d9f6f3c661831a7`; blob `0be706ff04bfe9158c0f33b2f984c3952a6d03e4`. El SHA-256 de la copia temporal reconstruida en PC-14 coincidió con el original y el read-back de GitHub coincidió exactamente con el contenido fuente.
+
+**Pendientes:** autenticación GitHub en el perfil local solo con autorización expresa; clones reales; clasificación de paquetes MV3; ratificar `Observabilidad` como hermana de `Extensión`; terminar/aceptar la bóveda; migrar después a VHDX + BitLocker XTS-AES256, protector primario de la bóveda y protector de recuperación custodiado en ella, ProtectionStatus On y EncryptionPercentage 100; dead-man trigger LOC-OTHER sigue NO implementado/NO activado.
+
+EP-TASK-001 permanece `pendiente`; EP-TASK-002, EP-TASK-003 y EP-TASK-004 permanecen `en_curso`. La excepción autoriza iniciar frentes no sensibles, no acredita clones, cifrado ni cierre del frente EP.
