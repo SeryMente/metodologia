@@ -2115,3 +2115,8 @@ Estado de EP-TASK-002: en_curso. El cliente B2 quedó instalado y las variables 
 En este ciclo no se volvió a autenticar contra Backblaze, no se consultó el bucket, no se subió ningún objeto y no se ejecutó read-back remoto. La promoción de la segunda nota fue bloqueada antes de devolver un resultado; no se intentó eludir el control. Por tanto, EP_B2_APPLICATION_KEY y la autenticación actual siguen pendientes.
 
 **Siguiente secuencia obligatoria:** completar la segunda variable EP; validar que ambas entradas forman una pareja B2 sin revelar sus valores; comprobar cuenta/bucket/prefijo; respaldar primero el ciphertext actualizado de EP Vault bajo OCP-MCP/ep-ocp/; descargarlo a un destino aislado y cotejar tamaño/SHA-256; conservar el original local. Solo después abordar snapshots de datos de usuario seleccionados. No cargar .git, código fuente, secretos, perfiles/cookies ni la carpeta completa de trabajo sin clasificación y autorización específica.
+
+
+### Evidencia de titularidad temporal de la cuenta EP · 2026-11-09
+
+Se cotejó metadata del correo Backblaze `A Master Key Has Been Generated in Your Backblaze B2 Account`, remitente `no-reply@backblaze.com`, destinatario `blacksheepsup@gmail.com`, fecha `2026-11-09T21:33:19Z`. Las dos notas EP se capturaron 16,7 s y 22,9 s después, respectivamente. Esto corrobora temporalmente la procedencia de la captura, pero no valida cuál contenido es el key ID ni cuál es la aplicación key. No se leyó ni copió al chat el cuerpo sensible del mensaje.
