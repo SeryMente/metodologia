@@ -9,12 +9,14 @@
 | Rama | Relación actual con main | Decisión |
 |---|---:|---|
 | integration/ocp-mcp-0.1.0-selective-20261101 | 3 ahead / 592 behind; diverged | Solo lectura; no merge completo |
-| build/ocp-mcp-mvp-0.1.0 | 11 ahead / 911 behind; diverged | Solo lectura; no merge completo |
+| build/ocp-mcp-mvp-0.1.0 | 11 ahead / 911 behind; diverged | Inspección selectiva; no merge completo |
 | feat/mcp-ocp-sink-p004-pilot-20261110 | 0 ahead / 6 behind; sin commits | No reutilizada; rama vacía histórica |
 
 Las cifras corresponden a compare contra main HEAD 73a42bc… al corte. Ninguna rama histórica se utilizó como base.
 
 ## Componentes consultados y clasificación
+
+La rama integration se inspeccionó en csproj, Program, McpServer, PrincipleCatalog, SourceImporter, pruebas, Build.ps1, plantilla de fuentes y .gitignore. La rama build se inspeccionó en csproj, Program, McpServer, PrincipleCatalog, SourceImporter, pruebas, Build.ps1 y plantilla de fuentes. Las clases de seguridad y almacenamiento se clasifican por ruta/propósito y no se portaron; no se afirma auditoría línea por línea de todas ellas.
 
 | Componente histórico | Clasificación | Motivo |
 |---|---|---|
@@ -31,10 +33,10 @@ Las cifras corresponden a compare contra main HEAD 73a42bc… al corte. Ninguna 
 
 ## Implementación actual
 
-- **REUSE:** target framework net10.0 como referencia tecnológica del código histórico.
+- **REUSE:** target framework net10.0 como referencia tecnológica del código histórico; SDK fijado en global.json a 10.0.403, sin afirmar que esté instalado en este entorno.
 - **REWRITE:** servidor STDIO, lector DUG, pins, herramienta SINK:P004 y suite del piloto.
 - **ADAPT:** ninguna pieza funcional se ha copiado literalmente; el contrato se reimplementa contra DUG v387.
 - **DROP:** DB, vault, credenciales, B2, backups, claves, importador persistente, operaciones de escritura, herramientas generales y paquete histórico.
-- **Pendiente:** fijar SDK/RID con runner autorizado y ejecutar build/tests; después escribir el smoke de ejecutable compilado.
+- **RID:** no aplica al piloto framework-dependent; win-x64 se difiere al paquete. **Pendiente:** ejecutar build/tests con SDK 10.0.403 en runner autorizado; después escribir el smoke del ejecutable compilado.
 
 La clasificación de seguridad/crypto/DB se basa en el inventario de rutas y la inspección de nombres/propósitos; no se afirma auditoría exhaustiva de cada implementación histórica. No se portó código de esas rutas.
