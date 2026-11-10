@@ -1,4 +1,4 @@
-<!-- LIST_VERSION=0.11; LIST_STATUS=PROVISIONAL; NOT_A_CANONICAL_OBJECT=true -->
+<!-- LIST_VERSION=0.12; LIST_STATUS=PROVISIONAL; NOT_A_CANONICAL_OBJECT=true -->
 # Lista provisional de tareas · MCP-OCP
 
 > **ESTADO: PROVISIONAL · NO ES UN OCP NI UN CONTROL ADICIONAL.** Esta lista es una vista auxiliar enlazada desde el único núcleo MCP-OCP. El estado vivo y las decisiones de alcance permanecen en `MCP-METODOLOGIA.md`; la titularidad permanece exclusivamente en `CONTROL-RESPONSABILIDAD.json`. Las tareas y dependencias de otros frentes se enlazan sin apropiarse de sus objetos, controles o permisos.
@@ -6,7 +6,7 @@
 - **Frente:** MCP-OCP.
 - **Repositorio propietario:** `SeryMente/metodologia`.
 - **Ruta OCP:** `frentes/mcp-metodologia/`.
-- **Versión de la lista:** 0.11 (provisional; coordinación del Sprint SINK-P004 y producto MCP-OCP 1.0.0).
+- **Versión de la lista:** 0.12 (provisional; coordinación del Sprint SINK-P004 y producto MCP-OCP 1.0.0).
 - **Última actualización:** 2026-11-10.
 - **Gobierno leído:** Samantha v388 · NX-388m; Metacanon 1.29; GOW 2.18; DUG commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`; blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`. ART-027 rebaselined para Sink local STDIO/RDC; §ARR y P037 revisados; CNP P001/P004/P005/P038/P043 considerado.
 - **Núcleo enlazado:** [MCP-OCP · objeto canónico](MCP-METODOLOGIA.md), v0.1.30; esta lista v0.11 es su backlog auxiliar vigente.
@@ -386,3 +386,12 @@ El trabajo de MCP-OCP no está aceptado por tener documentos o rama; cada salida
 La instrucción completa se conserva verbatim en el anexo Gobernanza OCP MCP 1.0. Este backlog implementa su lectura normalizada sin corregir, sustituir ni abreviar el original. En caso de discrepancia, prevalece la instrucción literal del operador junto con controles de seguridad/legales aplicables; cualquier ajuste de alcance vuelve al operador.
 
 **No se declara ejecución:** estas fichas configuran los trabajos; no acreditan que EP haya acusado recibo, que el código esté implementado, que B2 haya sincronizado/restaurado, que GPS/telemetría se hayan capturado o que el guardián esté activo.
+
+
+## Informe individual obligatorio por tarea · LIST v0.12
+
+Cada ficha MCP-OCP-XX debe incorporar su propio informe de resolución/cierre bajo el bloque de esa tarea en esta lista (o en su núcleo individual, cuando exista). Aplicar [la plantilla común obligatoria](../PLANTILLA-REPORTE-CIERRE-TAREA.md). El reporte debe detallar cómo se resolvió, cambios y decisiones, criterios PASS/FAIL/NOT_RUN, build/tests/smoke realmente ejecutados, workflows/runner/logs/artefactos, hashes/read-back, bloqueantes, preocupaciones/riesgos, pendientes, rollback y aceptación. No basta con modificar el estado de la tabla.
+
+Una tarea queda COMPLETADA únicamente con criterios PASS, evidencia de ejecución reproducible y read-back del informe. Si falta runner, logs, artefactos, prueba, fixture real, aceptación o dependencia externa, registrar PARCIAL/BLOQUEADA con el dato exacto; no inferir causa raíz ni éxito. Actualizar el núcleo MCP-OCP y la lista solo después de verificar el informe; al operador se le entrega un enlace por tarea cerrada y un resumen con solución, evidencia, bloqueantes y preocupaciones. No incluir secretos ni contenido privado en los reportes.
+
+Esta regla no cambia la asignación: MCP-OCP conserva código/schema/pruebas; EP conserva host/Vault/B2/instalación; Gobernanza conserva coordinación y aceptación E2E. Las tareas de otro frente no se declaran completadas desde esta lista.
