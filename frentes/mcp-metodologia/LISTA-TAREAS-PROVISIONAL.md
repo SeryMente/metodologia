@@ -219,9 +219,9 @@ Para MCP-OCP, el preflight del destino actual **no bloquea** la reconciliación 
 
 ---
 
-## Rectificación de destino y orden de ejecución · 2026-11-10 · LIST v0.8
+## Antecedente de destino y orden inicial · 2026-11-10 · LIST v0.8 · supersedido por LIST v0.10/§Sprint SINK-P004
 
-**Destino vigente:** Fila 4, por ser la terminal correspondiente a la única sesión RDC disponible indicada por el operador. PC 7 queda supersedido para este sprint y no es fallback. Última identidad técnica documentada: RDC `d0bbb2a3-d7b4-45e1-8870-652c2c3844fc`, sesión `CENTRAL\\fila4`, SessionId 4; preflight vivo pendiente. La ubicación física no se infiere: EP debe resolver CECEQ/otra ubicación y el dead-man que corresponda.
+**Destino funcional:** Fila 4, designado por el operador; PC 7 queda supersedido y no es fallback. Este asiento conserva el antecedente de designación. Conforme a ART-013, no se almacenan Device IDs, cuentas, hostnames ni SessionIds efímeros. El preflight vigente y la ubicación física se consultan en OEP §§122–124 y EP-TASK-003; la clasificación sigue `UNCLASSIFIED`.
 
 **Rutas bajo el perfil interactivo Fila 4:**
 - Checkout: `%USERPROFILE%\\Desktop\\SeryMente\\Repositorios\\Metodologia\\metodologia\\`.
