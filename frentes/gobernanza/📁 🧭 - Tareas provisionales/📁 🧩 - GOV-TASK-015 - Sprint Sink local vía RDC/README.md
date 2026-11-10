@@ -737,3 +737,19 @@ Sprint OCP MCP 1.0 / SINK-P004: recuperar el texto normativo íntegro P004 desde
 **Riesgo:** el ZIP se subió sin cifrado cliente por excepción de urgencia informada/ordenada por el operador; únicamente TLS y SSE-B2/AES256 confirmados. No equivale al diseño permanente de cifrado cliente de OCP MCP 1.0.
 
 **Estado integrado:** `B2_UPLOAD_READBACK=PASS` · `CROSS_HOST_RESTORE=NOT_RUN` · `DEVELOPMENT_H1=PAUSED_UNTIL_TASKS_UPDATED_AND_RESTORE_GATE` · `IPZ_E2E=NOT_ACCEPTED` · `MCP_NORMATIVO=DESACTIVADO`.
+
+
+## Corte semivivo · restore R2 aislado PASS · P004 listo · 2026-11-10 · 17:12
+
+**Hito general:** H3 de 9 (workspace descargable/restaurable por instancia) tiene `SAME_HOST_ISOLATED_RESTORE_PASS`; H2 tiene upload/read-back del ciphertext Vault PASS, pero descifrado aislado pendiente. No se declara restore cross-host completo.
+
+| Frente / gate | Estado | Evidencia |
+|---|---|---|
+| EP-TASK-002 B2 | `UPLOAD_READBACK_PASS_4_OF_4` | ZIP/Vault/manifest/checksum; SHA match 4/4; SSE-B2/AES256. |
+| EP-TASK-002 workspace restore | `SAME_HOST_ISOLATED_RESTORE_PASS` | C:\\R2R; 3.289/3.289; cero fallos/inesperados. |
+| EP Vault decrypt | `NOT_RUN` | Ciphertext íntegro; cross-host y bootstrap pendientes. |
+| EP-TASK-003 | `PARTIAL_FAIL` | Gates físicos VHDX/BitLocker/checkout pendientes. |
+| EP-TASK-005 | `PENDING_BLOCKED` | Requiere EP-TASK-003 PASS y paquete P004/MCP-OCP-03/04. |
+| MCP-OCP H1 | `READY_TO_RESUME` | Ciclo local 13 abierto; PR #27 OPEN/DRAFT/NOT MERGED. |
+
+**Decisión operativa:** tareas EP/Gobernanza y los cursores de retroalimentación interfrentes están actualizados/leídos. Está habilitado reanudar desarrollo sintético P004 dentro del ciclo local 13 existente. Instalación/aceptación en EP sigue bloqueada por sus gates. Riesgo: ZIP sin cifrado cliente por excepción del operador; TLS/SSE-B2/AES256 sí confirmados. `MCP-NORMATIVO=DESACTIVADO`.

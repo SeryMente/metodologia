@@ -18,7 +18,7 @@ El patrón de materialización sigue el registro de tareas provisionales de Gobe
 
 | ID local | Estado | Tarea | Núcleo |
 | EP-TASK-001 | pendiente | NCL — Navegador Compartido Local: integración de Playwright y KeePassXC | [núcleo](./📁%20🧩%20-%20EP-TASK-001%20-%20Integración%20NCL/README.md) |
-| EP-TASK-002 | `en_curso · P0 · B2_UPLOAD_READBACK_PASS · CROSS_HOST_RESTORE_PENDING` | R2: ZIP + ciphertext Vault + manifest + checksum en OCP-MCP; 4/4 descargas SHA-256 MATCH; SSE-B2/AES256; restore aislado pendiente | [núcleo](./📁%20🧩%20-%20EP-TASK-002%20-%20Persistencia%20provisional%20Backblaze/README.md) |
+| EP-TASK-002 | `en_curso · P0 · B2_UPLOAD_READBACK_PASS_4_OF_4 · WORKSPACE_RESTORE_PASS · VAULT_DECRYPT_PENDING` | ZIP 3.289/3.289 restaurado y cotejado en C:\\R2R; ciphertext Vault íntegro/read-back PASS; descifrado aislado y cross-host pendientes | [núcleo](./📁%20🧩%20-%20EP-TASK-002%20-%20Persistencia%20provisional%20Backblaze/README.md) |
 | EP-TASK-003 | `en_curso · P0 · DISEÑO_ACEPTADO · PREFLIGHT_PARTIAL_FAIL` | Diseño VHDX aceptado; 2 enumeraciones 3.127 archivos/660 dirs/179.138.515 B, 0 errores; C: XTS-AES128/Protection Off; W: descifrado; checkout sin .git; Datos/MCP-OCP ausente; espera P0 B2 | [núcleo](./📁%20🧩%20-%20EP-TASK-003%20-%20Mapa%20integral%20de%20construcción%20EP/README.md) |
 | EP-TASK-004 | `en_curso · H7_H8_SYNTHETIC_E2E_V1_0_0_PASS · H10_PENDIENTE` | Suite v1.0.0 exacta PASS en dos corridas independientes (165,41 s y 142,61 s); release manifest actualizado/read-back PASS; checkout Desktop\SeryMente sigue snapshot previo no sustituido; H10 y merge a main pendientes | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-004%20-%20Reconstrucci%C3%B3n%20de%20b%C3%B3veda/README.md) |
 | EP-TASK-005 | pendiente · P0 piloto · BLOQUEADO_EP003+MCP_PACKAGE | EP ejecuta instalación del piloto en Fila 4 solo tras EP-TASK-003 PASS + paquete P004/manifest/SHA + MCP-OCP-03/04 smoke PASS; W: no es destino final. Después release 1.0.0. | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-005%20-%20Instalaci%C3%B3n%20y%20aceptaci%C3%B3n%20de%20MCP-OCP%20local/README.md) |
@@ -383,3 +383,15 @@ Informe individual de EP-TASK-002 actualizado y leído de vuelta: commit 3dd266d
 - **EP-TASK-001:** pendiente.
 
 **Orden EP actualizado por instrucción del operador:** EP-TASK-002 remoto ya transferido; siguiente gate es read-back/restore aislado y después EP-TASK-003. No iniciar desarrollo adicional hasta actualizar las tareas y leer la retroalimentación de Gobernanza y MCP-OCP.
+
+
+## Reconciliación ejecutiva EP · 2026-11-10 · 17:12
+
+- **EP-TASK-002:** cuatro objetos B2 cargados y descargados con SHA-256 idéntico; SSE-B2/AES256 confirmado. Restore aislado del ZIP en C:\\R2R: 3.289/3.289, cero errores/inesperados. Descifrado aislado de Vault y cross-host NOT_RUN.
+- **EP-TASK-003:** `PARTIAL_FAIL`; gates físicos VHDX/BitLocker/checkout/consistencia pendientes.
+- **EP-TASK-004:** suite sintética exacta PASS dos veces; H10 humano y merge pendientes.
+- **EP-TASK-005:** instalación pendiente de EP-TASK-003 PASS y paquete P004/MCP-OCP-03/04 PASS.
+- **EP-TASK-006:** P1 inventario/centralización multi-proveedor pendiente.
+- **EP-TASK-007:** inventario read-only parcial; Guardian/lease/crypto-erasure no implementados. **EP-TASK-001:** pendiente.
+
+**Orden:** Backblaze fue antepuesto y ejecutado. Informes/índice y retroalimentación interfrentes están reconciliados; habilitado reanudar el desarrollo sintético P004 dentro del ciclo MCP-OCP local 13 ya abierto. Instalación/aceptación EP continúa detrás de sus gates. No declarar descifrado Vault ni restore cross-host.

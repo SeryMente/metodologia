@@ -293,3 +293,12 @@ Los cuatro objetos muestran SSE-B2/AES256 y están bajo prefijos privados ep-ocp
 **Excepción de urgencia:** el ZIP fue cargado sin cifrado cliente por instrucción directa del operador; SSE-B2 no sustituye ese control. La aceptación integrada H2/H3 permanece parcial hasta restore aislado, bootstrap de credenciales B2 y delimitación de notas/sesiones DPAPI. No modificar ACL, bucket, lifecycle o retención a consecuencia de este asiento.
 
 **Siguiente gate:** EP valida extracción del ZIP y descifrado de una copia de Vault en entorno aislado; Gobernanza solo acepta restauración cuando manifest/SHA, estructura recuperada y capacidad de apertura quedan demostrados. No declarar continuidad cross-host por el mero upload.
+
+
+## Reconciliación · restore aislado R2 workspace · 2026-11-10 · 17:12
+
+EP-TASK-002 evidencia que el ZIP R2 (idéntico por SHA al objeto descargado de B2) fue extraído en `C:\\R2R`: 3.289/3.289 archivos verificados, 159.547.658 bytes, cero errores e inesperados, exit 0. Se acepta `WORKSPACE_ISOLATED_RESTORE=SAME_HOST_PASS`, no cross-host.
+
+El ciphertext Vault remoto tiene read-back SHA PASS; descifrado aislado y bootstrap B2 independiente están `NOT_RUN`. La sesión DPAPI CurrentUser no es portable. ZIP sin cifrado cliente por excepción de urgencia; SSE-B2/AES256 no reemplaza ese control.
+
+Estado: `B2_UPLOAD_READBACK=PASS_4_OF_4` · `WORKSPACE_ISOLATED_RESTORE=SAME_HOST_PASS` · `VAULT_DECRYPT_RESTORE=NOT_RUN` · `CROSS_HOST_RESTORE=NOT_RUN`. Se puede reanudar desarrollo sintético P004 en el ciclo MCP-OCP existente; no equivale a aceptación integral de persistencia.
