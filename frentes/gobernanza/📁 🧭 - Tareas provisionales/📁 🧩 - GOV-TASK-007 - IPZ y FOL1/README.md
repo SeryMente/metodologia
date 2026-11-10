@@ -36,7 +36,7 @@ Cotejar v0.7 frente a v0.8 y ART-025/ART-027, preparar una versión completa den
 Marcar como completada solo cuando el enunciado haya sido atendido, la evidencia correspondiente sea recuperable y el resultado haya sido leído de vuelta en la fuente canónica aplicable.
 
 
-## Reorientación prioritaria · instrucción del operador · 2026-10-31
+## Antecedente histórico supersedido · reorientación inicial · 2026-10-31
 
 Este alcance precisa y amplía el enunciado anterior. El IPZ debe ser una instrucción de entrada compacta, no un resumen del DUG ni una fuente normativa paralela:
 
@@ -85,9 +85,11 @@ La instalación local del servidor MCP-OCP es entregable de EP-TASK-005 y se ubi
 
 Para habilitar el uso práctico de Sink cuanto antes, esta tarea prepara el candidato IPZ compacto **después de congelar el contrato de respuesta SINK:P004** y coordina su prueba con MCP-OCP-04/GOV-TASK-003.
 
+**Contrato fuente vigente:** DUG Samantha v388/NX-388m, ART-027, define `SINK:Pxxx` como recuperación local por MCP-OCP STDIO/RDC. No es un alias HTTP ni debe confundirse con `MOD-SYNC`, que pertenece a EP.
+
 Secuencia de contenido:
 1. `GOW:ARR` — adquirir §ARR y vocabulario operativo.
-2. `DUG` — verificar Samantha v386/NX-386m y procedencia de la fuente canónica.
+2. `DUG` — verificar Samantha v388/NX-388m y procedencia de la fuente canónica.
 3. Inventario de 43 IDs/MDP; determinar pertinencia sin tratar MDP como texto normativo.
 4. Cuando sea pertinente, consulta obligatoria `SINK:Pxxx`; el primer piloto usa P004.
 5. Preservar admisión fail-closed, asignación de frente, titularidad/exclusividad, distinciones de estado y las demás salvaguardas de v0.7.
