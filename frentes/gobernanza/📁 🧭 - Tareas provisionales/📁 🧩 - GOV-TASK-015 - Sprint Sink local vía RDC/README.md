@@ -6,7 +6,7 @@
 **Responsabilidad:** frente Gobernanza. Las tareas técnicas conservan sus OCP y fuentes.
 **Fuente normativa:** Samantha v386 · NX-386m · Metacanon 1.29 · GOW 2.18.
 **DUG:** leído desde `main` HEAD `82843bca9493a522405d840393c229d2af363342`; archivo blob `22dca684830a36dff019b47811d9b800cc9bea0a`.
-**MCP-OCP:** núcleo v0.1.27 · blob `af2289630fbe5bc261bc8d51825c5b687bf30e38`; backlog v0.8 · blob `5f86a0fbb7952999dddcdb599c2e3606e00ab652`.
+**MCP-OCP:** núcleo v0.1.27 · blob `4b663b72987f6f7f7dea951a727635f0bf7c861c`; backlog v0.8 · blob `cfe2d369cd328ecaf023b0a82d153d5eb9350268`.
 **EP:** OEP v0.3.55 · blob `fa865ceae8bcc6542b013a78c790ae2a0444ba41`.
 **Autorización:** el operador autorizó directamente Sink local por stdio y amplió el producto para incluir el panel local de observabilidad MCP-OCP-13. No se requiere aprobación de titularidad anterior, generación ni folio; dichos campos son auditoría, no compuertas.
 **Destino EP designado:** terminal Fila 4, correspondiente a la única sesión RDC disponible indicada por el operador. Últimos datos técnicos conocidos (no lectura viva): Device ID `d0bbb2a3-d7b4-45e1-8870-652c2c3844fc`, sesión `CENTRAL\\fila4`, SessionId 4. Identidad/usuario/SID/permisos y ubicación física requieren preflight vivo. No inferir CECEQ/LOC-OTHER; el dead-man se determina después de verificar la ubicación.
