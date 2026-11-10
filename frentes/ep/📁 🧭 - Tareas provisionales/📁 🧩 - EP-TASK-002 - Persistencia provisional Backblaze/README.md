@@ -2235,3 +2235,55 @@ B2 es la única fuente remota de workspace completo en esta fase. Si no se puede
 - Se entrega recibo saneado y lectura de vuelta; ningún valor secreto se incorpora a Git ni al chat.
 
 **Estado:** configuración de prioridad documental. B2_REMOTE permanece pendiente de read-back EP reciente; no se declara autenticación, carga o restauración nueva.
+
+
+---
+
+## EP · diagnóstico final GUI→sesión compartida y preparación P0-C solo Vault · 2026-11-10 · Fila 4
+
+### Contrato vigente releído
+
+- OEP: v0.3.59, §91 fija `OCP-MCP` como único bucket destino EP y el prefijo de trabajo `ep-ocp/`; §124 delimita el relevo de ejecución y exige evidencia por gate.
+- EP-TASK-002: P0-A → P0-B → P0-C → P1-A → P1-B → P2-A → P3-A → P4-A. P0-C requiere upload de ciphertext, file info, descarga, SHA-256 idéntico y recibo.
+- DUG: Samantha v388 · NX-388m; blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`. CNP consultado en orden P001/P004/P005/P038/P043; no se modificó gobierno ni el control del frente.
+
+### Diagnóstico causal GUI/CLI
+
+La GUI se localizó bajo el proceso propietario `CENTRAL\fila4`, sesión interactiva 1, lanzado mediante `Launch-Vault-For-Fila4.ps1`. El lanzador asigna `LOCALAPPDATA=C:\Users\fila4\Desktop\SeryMente\EP\local-state`, que coincide con la raíz empleada por el preflight CLI. La inspección del código confirma que GUI y CLI invocan el mismo Core: `Unlock-EpVault` publica la sesión DPAPI CurrentUser en `Khora\secrets\ep-env-vault.session.dpapi.json`; CLI lee ese mismo archivo y entropía derivada de la misma ruta.
+
+**Lectura fresca bajo CENTRAL\fila4, 2026-11-10T21:23:12Z:**
+- `vaultSessionActive=false`, `remainingSeconds=null`, `variableCount=0`; ciphertext presente (2.200 bytes).
+- La sesión compartida no tiene archivo en la ruta esperada.
+
+**Inspección de controles UIA, 2026-11-10T21:23:30Z:**
+- Ventana encontrada: `EP Vault · v1.0.0`.
+- `HeaderState=SELLADA`.
+- `GateTitle=La cámara permanece sellada.`
+- `FooterStatus=LOCAL · CIFRADO · SELLADA`.
+- El botón visible es `DESBLOQUEAR LA CÁMARA`.
+
+Por tanto, la ventana está abierta, pero la bóveda está sellada en la observación viva. No se atribuye a un bug de sincronización GUI/CLI ni a una raíz divergente. No se intentó leer, copiar, inferir ni automatizar la contraseña maestra; tampoco se modificaron ACL, rutas o ciphertext.
+
+### Preparación de transferencia corregida
+
+El worker anterior pretendía subir un ZIP de workspace sin cifrado cliente adicional, además del ciphertext. Ese alcance no se ejecuta: la prioridad de OEP/MVP es persistir primero el ciphertext de EP Vault; el workspace completo debe cifrarse antes de B2 y clasificarse en su hito P1.
+
+Se preparó una ruta nueva e independiente, solo para P0-C:
+- `Upload-EP-Vault-Ciphertext-To-Backblaze-Fila4.ps1`: 11.432 bytes; SHA-256 `358AD11DF38FB85ED4BD52C128378E9BA35A1AE5982B61184699B99CDA1BE410`.
+- `Run-EP-Backblaze-Vault-Ciphertext-Fila4.ps1`: 1.654 bytes; SHA-256 `C6BAF9B3B43C3B5824A132242A3005D87AF231F8CAE9820FC5F327C8AC7B9AC8`.
+- Ambos scripts pasaron `Parser.ParseFile` sin errores.
+- El worker usa únicamente las cinco variables EP de Vault, crea una caché B2 temporal dentro del directorio protegido, usa el bucket exacto `OCP-MCP`, revisa el tipo privado y lifecycle aplicable a `ep-ocp/vault/`, solicita SSE-B2/AES256, carga únicamente `ep-env-vault.enc.json`, descarga mediante B2 URI y compara tamaño/SHA-256. No borra ni modifica objetos o reglas del bucket.
+- La salida saneada deja `workspaceArchiveUploaded=false`; el ZIP no se incorpora.
+- El recibo `ep-backblaze-vault-ciphertext-result.json` no existe; el wrapper se niega a sobrescribir uno previo.
+
+La ayuda local del B2 CLI verificada bajo identidad propietaria confirma: `account authorize` admite `B2_APPLICATION_KEY_ID` y `B2_APPLICATION_KEY` en el entorno; `bucket list --json`; upload con `--destination-server-side-encryption SSE-B2` y algoritmo `AES256`; download por `b2://bucket/object`; y `file info` por B2 URI. Esta lectura de ayuda no autenticó ni contactó a la cuenta.
+
+### Resultado y gate pendiente
+
+- `GUI_PROCESS=RUNNING`; `GUI_VAULT_STATE=SEALED`.
+- `CLI_SHARED_SESSION=INACTIVE`; `SESSION_FILE=ABSENT`.
+- `B2_WORKER_AND_RUNNER=PREPARED_SYNTAX_PASS`.
+- `B2_ACCOUNT_AUTH=NOT_EXECUTED`; `BUCKET_PREFLIGHT=NOT_EXECUTED`; `UPLOAD=NOT_EXECUTED`; `DOWNLOAD_SHA256=NOT_EXECUTED`.
+- `REMOTE_PERSISTENCE=PENDING`.
+
+**Única compuerta local pendiente:** desbloquear la GUI mediante su campo de clave maestra y botón nativo. Tras confirmar sesión compartida activa con las cinco variables, ejecutar inmediatamente el wrapper nuevo bajo `CENTRAL\fila4`, dentro de la ventana seleccionada. No pedir ni recibir contraseña por chat.
