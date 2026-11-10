@@ -1,7 +1,7 @@
 # 📝 EP-TASK-002 · Persistencia provisional con Backblaze B2 para datos de usuario y continuidad de la sesión canónica
 
 **Naturaleza:** tarea provisional del frente Entorno Persistente; materialización auxiliar del registro de tareas, no un OEP nuevo, no un frente independiente y no una decisión de arquitectura canónica.  
-**Estado:** `en_curso · P0 · B2_UPLOAD_READBACK_SHA256_PASS_4_OF_4 · CROSS_HOST_RESTORE_PENDING`. El corte R2 en OCP-MCP contiene workspace ZIP, ciphertext EP Vault, manifiesto y checksum; los cuatro fueron descargados y cotejados por tamaño/SHA-256; SSE-B2/AES256 confirmado. La restauración aislada y el bootstrap de acceso B2 desde otro host siguen pendientes. El ZIP se subió sin cifrado cliente por excepción de urgencia indicada por el operador; no satisface el diseño permanente de cifrado cliente. La sincronización automatizada e idempotente y la aceptación integral continúan pendientes.
+**Estado:** `en_curso · P0 · B2_UPLOAD_READBACK_PASS_4_OF_4 · WORKSPACE_ISOLATED_RESTORE_PASS_SAME_HOST · VAULT_DECRYPT_AND_CROSS_HOST_PENDING`. Cuatro objetos R2 cargados y cotejados por SHA-256; SSE-B2/AES256 confirmado. ZIP extraído en C:\\R2R con 3.289/3.289 archivos verificados. Descifrado de copia Vault y prueba cross-host pendientes. ZIP sin cifrado cliente por excepción de urgencia del operador; sincronización automática/idempotente y aceptación integral siguen pendientes.
 **Responsabilidad:** vinculada a `frentes/ep/`; sin control, sesión, titularidad ni folio global propios.  
 **task_id:** `EP-TASK-002` (identificador local estable; no es folio global).  
 **scope_ref:** `frentes/ep/`  
@@ -2417,3 +2417,16 @@ Recibo local: `EP\local-state\run-logs\ep-backblaze-r2-final-receipt-v1.json`. E
 - EP-TASK-006 sigue en P1 tras resolver el snapshot/restore inicial. EP-TASK-005 mantiene dependencias EP-TASK-003 y paquete MCP-OCP.
 
 **Conclusión:** transferencia de cuatro objetos a Backblaze y read-back SHA-256 verificados. No declarar aún restauración cross-host ni aceptación integral del sistema persistente.
+
+
+## Informe de restore aislado R2 · 2026-11-10 · 17:12
+
+Resultado: `ISOLATED_RESTORE_PASS`. El ZIP local tiene el mismo SHA-256 que el objeto previamente descargado desde B2 (`9D511614FC6B4001DBA5F8CAAF69ED06107F8B5F5111165F186BE7B2C5C06E09`), tamaño 119.076.640 bytes. Se extrajo en `C:\\R2R`, sin modificar Desktop\\SeryMente.
+
+- Manifiesto: 3.289 entradas; restauradas y cotejadas por tamaño/SHA-256: 3.289; fallos 0; inesperados 0; 159.547.658 bytes; exit 0; 31,80 s.
+- Recibo: `EP\\local-state\\run-logs\\ep-r2-restore-validation.json`; read-back PASS.
+- El ciphertext Vault está incluido y su objeto remoto tiene SHA-256 idéntico al local (2.200 bytes); descifrado aislado NOT_RUN. DPAPI CurrentUser/notes no se asumen portables.
+- Es restauración aislada same-host, no cross-host. Para recuperar B2 desde otro host se requiere bootstrap de cuenta/credencial fuera del ciphertext que se quiere descargar.
+- Excepción: ZIP crudo sin cifrado cliente; TLS + SSE-B2/AES256 confirmados. No es el diseño permanente.
+
+Estados: `B2_UPLOAD_READBACK=PASS_4_OF_4`; `WORKSPACE_ISOLATED_RESTORE=SAME_HOST_PASS`; `VAULT_DECRYPT_RESTORE=NOT_RUN`; `CROSS_HOST_RESTORE=NOT_RUN`; `CLIENT_SIDE_ENCRYPTION=EXCEPTION_NOT_APPLIED`.
