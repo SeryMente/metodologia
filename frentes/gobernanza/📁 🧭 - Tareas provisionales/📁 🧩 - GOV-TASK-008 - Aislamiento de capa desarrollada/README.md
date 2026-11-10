@@ -101,7 +101,7 @@ Se elige la opción local autenticada por el perfil Windows, invocada por RDC co
 
 **Pins de referencia del diseño:** DUG Samantha v384 / NX-384m, blob actualizado en el evento C-GOBERNANZA-IPZ-RDC-SINK-01; MCP-OCP main v0.1.21 al momento de la revisión. Antes de compilar, el frente MCP-OCP debe revalidar pins y reconciliar la candidata 0.1.0 histórica, que apunta a DUG v377/core v0.1.20.
 
-**Autorización interfrente:** la aprobación del operador en Gobernanza valida el requisito y el modo de entrega; no amplía por sí sola el `CONTROL-RESPONSABILIDAD.json` de MCP-OCP, que actualmente excluye Sink productivo. Su titular debe autorizar expresamente la ampliación en ese OCP antes de implementar. EP conserva autorización de perfil, host e instalación. Gobernanza no modifica esos controles.
+**Autorización interfrente (registro histórico actualizado):** Gobernanza define y valida el contrato. La autorización vigente para implementar Sink local por STDIO ya está registrada en `frentes/mcp-metodologia/CONTROL-RESPONSABILIDAD.json` (generación 5; `implementation_authorization.status=AUTHORIZED`) y cubre resolver/importador, GOW:ARR, DUG, SINK:P001–P043, lotes, hashes, pruebas, build y paquete. La autorización separada del panel también está registrada como `AUTHORIZED_FOR_PRODUCT_SCOPE_AND_IMPLEMENTATION`. EP conserva la autoridad de host, perfil, almacenamiento e instalación. Gobernanza no modifica esos controles.
 
 **Estado:** decisión de arquitectura resuelta; construcción, importación real, instalación y aceptación E2E siguen pendientes. Las alternativas HTTP/Cloudflare quedan como antecedentes, no como siguiente ejecución.
 
