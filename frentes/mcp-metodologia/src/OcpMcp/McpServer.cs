@@ -33,6 +33,7 @@ public sealed class McpServer(IPrincipleSource source, Action<SinkSuccessEvent>?
                 JsonElement root = request.RootElement;
                 if (root.ValueKind != JsonValueKind.Object ||
                     !root.TryGetProperty("jsonrpc", out JsonElement version) ||
+                    version.ValueKind != JsonValueKind.String ||
                     version.GetString() != "2.0" ||
                     !root.TryGetProperty("method", out JsonElement methodElement) ||
                     methodElement.ValueKind != JsonValueKind.String)
@@ -72,6 +73,7 @@ public sealed class McpServer(IPrincipleSource source, Action<SinkSuccessEvent>?
     private static object Initialize(JsonElement request)
     {
         string requested = request.TryGetProperty("params", out JsonElement p) &&
+            p.ValueKind == JsonValueKind.Object &&
             p.TryGetProperty("protocolVersion", out JsonElement v) &&
             v.ValueKind == JsonValueKind.String ? v.GetString()! : ProtocolVersion;
         string negotiated = requested is "2025-06-18" or "2025-03-26" or "2024-11-05"
@@ -107,6 +109,7 @@ public sealed class McpServer(IPrincipleSource source, Action<SinkSuccessEvent>?
     private object CallTool(JsonElement request)
     {
         if (!request.TryGetProperty("params", out JsonElement p) ||
+            p.ValueKind != JsonValueKind.Object ||
             !p.TryGetProperty("name", out JsonElement nameElement) ||
             nameElement.ValueKind != JsonValueKind.String)
             throw new RpcException(-32602, "Invalid tool call");
