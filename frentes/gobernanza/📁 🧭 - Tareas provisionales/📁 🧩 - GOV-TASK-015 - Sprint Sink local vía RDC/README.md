@@ -779,3 +779,14 @@ A partir del siguiente paquete nuevo, usar:
 `EP-Workspace-Recovery_YYYY-MM-DD_DIA_HH-mm_America-Mexico_City_RN.zip`
 
 Día en español; hora 24h; zona IANA `America/Mexico_City`; instante de creación real del snapshot. Para el corte comunicado por el operador (martes 10-11-2026 17:32, UTC−06:00), ejemplo: `EP-Workspace-Recovery_2026-11-10_Martes_17-32_America-Mexico_City_RN.zip`. No renombrar retroactivamente los objetos remotos existentes ni falsear la hora del snapshot: R2 remoto fue creado 16:40:04; R3 local 17:21:27.
+
+
+## Cierre de persistencia urgente · R4 · 2026-11-10
+
+**B2 PASS:** `ep-ocp/workspace/EP-Workspace-Recovery_2026-11-10_Martes_17-35_America-Mexico_City_R4.zip` (107.081.813 bytes). Upload + download/read-back SHA-256 PASS; SSE-B2/AES256. SHA `DD84AA680CDE49D9940E35203E8D29355FB6904105680E87128DE8C868F883CE`. Read-back acreditado el martes 10-11-2026 a las **17:46:17.620 America/Mexico_City**. R2 anterior preservado.
+
+**Restore R4 aislado PASS:** 3.345 archivos, 145.501.528 bytes; ciphertext Vault presente; workspace original intacto. El ZIP tiene 3.348 entradas. No se declara descifrado de Vault ni restore cross-host; DPAPI CurrentUser no es portable.
+
+**Instrucción inmediata de recuperación:** descargar el ZIP R4 desde el bucket privado `OCP-MCP`, prefijo `ep-ocp/workspace/`; usar Windows **Extraer todo** en un destino vacío. Se recrea `SeryMente`. El script auxiliar incluido tiene un defecto de comodines con rutas `[id]`; no ejecutarlo. El contenido del ZIP está validado y la restauración aislada pasó usando el mismo contenido con el helper corregido en la copia de prueba.
+
+**Límite de seguridad:** no hay cifrado cliente; solo SSE-B2/AES256. Vault viaja como ciphertext; requiere contraseña maestra independiente. H2 persistencia/backup+restore aislado demostrado; descifrado cross-host pendiente. H1 SINK:P004 sigue como siguiente hito de producto, no aceptado.
