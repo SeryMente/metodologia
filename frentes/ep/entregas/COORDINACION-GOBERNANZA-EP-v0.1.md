@@ -1513,24 +1513,24 @@ Gobernanza registra la instrucción literal del operador, tal como fue documenta
 **Procedencia y límite:** lectura DUG `main` blob `54064c8fe00f872023a455f06596061ed69062ae`; consulta RDC de dispositivos el 2026-11-06; A literal recibida en esta conversación. Esta anotación no acredita ejecución técnica, custodia de secretos, autenticación, recepción del host ni aceptación MCP-OCP.
 
 
-### Rectificación de host activo EP · PC10RCIF4EI4 confirmado por el operador · 2026-11-06 · sesión actual · America/Mexico_City
+### Rectificación de host activo EP · Fila 4 confirmado por el operador · 2026-11-06 · sesión actual · America/Mexico_City
 
-**A literal:** el operador confirmó «Sí» a la identificación de `PC10RCIF4EI4` como su computadora actual y precisó que `015RENTA01` ya no es su equipo.
+**A literal:** el operador confirmó «Sí» a la identificación de `Fila 4` como su computadora actual y precisó que `015RENTA01` ya no es su equipo.
 
-**Rectificación de la anotación anterior:** `015RENTA01` permanece como dispositivo histórico/desconectado, pero deja de ser el destino de ejecución actual de EP. El equipo activo para esta continuación es `PC10RCIF4EI4`, observado `ONLINE` por RDC y confirmado por el operador. La nota anterior que lo trataba como sustituto no autorizado queda supersedida en cuanto a identidad del host, no eliminada del historial.
+**Rectificación de la anotación anterior:** `015RENTA01` permanece como dispositivo histórico/desconectado, pero deja de ser el destino de ejecución actual de EP. El equipo activo para esta continuación es `Fila 4`, observado `ONLINE` por RDC y confirmado por el operador. La nota anterior que lo trataba como sustituto no autorizado queda supersedida en cuanto a identidad del host, no eliminada del historial.
 
-**Preflight de solo lectura observado en PC10RCIF4EI4:** Windows 11 Pro; Windows PowerShell 5.1.26100.9711; sistema x64; Git disponible; Backblaze B2 CLI no encontrada; `%LOCALAPPDATA%\Khora`, `secrets`, bóveda EP y estado SQLite B2 ausentes. No se leyeron credenciales ni archivos de perfiles B2.
+**Preflight de solo lectura observado en Fila 4:** Windows 11 Pro; Windows PowerShell 5.1.26100.9711; sistema x64; Git disponible; Backblaze B2 CLI no encontrada; `%LOCALAPPDATA%\Khora`, `secrets`, bóveda EP y estado SQLite B2 ausentes. No se leyeron credenciales ni archivos de perfiles B2.
 
 **Acción local preparada:** se leyó el helper canónico `SeryMente/khora/scripts/khora/env-vault.ps1`, blob `46efce0ff43c400bccdee11f02de5bc2ddd21e4c`. Se preparó en `%TEMP%` un script transitorio de captura EP independiente, compatible con el formato `salt/entries/nonce/cipher/tag`, AES-256-CBC + HMAC-SHA256, PBKDF2-HMAC-SHA256, escritura atómica, ACL restrictiva y descifrado/read-back en memoria. Parser PowerShell 5.1: PASS. Se lanzó una ventana local visible para captura oculta; proceso reportado `18512`.
 
-**Estado efectivo:** `CURRENT_EP_HOST=PC10RCIF4EI4`; `OPERATOR_PRESENCE_DECLARED_FOR_CURRENT_HOST=YES`; `VAULT_CAPTURE=AWAITING_OPERATOR_INPUT`; `VAULT_FILE=NOT_YET_VERIFIED`; `B2_CLI=NOT_INSTALLED`; `B2_ACCOUNT_AUTH=NOT_EXECUTED`; `B2_REMOTE_TEST=NOT_EXECUTED`. No se ha capturado ningún valor ni se ha llamado al proveedor. La bóveda compartida KHORA permanece intacta.
+**Estado efectivo:** `CURRENT_EP_HOST=Fila 4`; `OPERATOR_PRESENCE_DECLARED_FOR_CURRENT_HOST=YES`; `VAULT_CAPTURE=AWAITING_OPERATOR_INPUT`; `VAULT_FILE=NOT_YET_VERIFIED`; `B2_CLI=NOT_INSTALLED`; `B2_ACCOUNT_AUTH=NOT_EXECUTED`; `B2_REMOTE_TEST=NOT_EXECUTED`. No se ha capturado ningún valor ni se ha llamado al proveedor. La bóveda compartida KHORA permanece intacta.
 
 **Siguiente paso:** el operador introduce la frase maestra y únicamente las dos variables EP en la ventana visible local. Tras señal de éxito, EP coteja tamaño, SHA-256, ACL y read-back del archivo. Después instala/verifica la CLI oficial y procesa la autenticación/preflight de solo lectura, respetando el alcance ya autorizado.
 
 
 ### Precisión literal del acuse de host actual · 2026-11-06
 
-**Corrección de procedencia A/B:** la entrada literal del operador fue «Chi.», no «Sí». Por el contexto inmediato —respuesta a la pregunta binaria de si `PC10RCIF4EI4` era la computadora utilizada en ese momento— se interpreta como afirmativa, sin sustituir el literal original. La identidad del host se sostiene además en la telemetría RDC y en la respuesta contextual del operador. La normalización semántica no debe reemplazar el literal de A en crónicas futuras.
+**Corrección de procedencia A/B:** la entrada literal del operador fue «Chi.», no «Sí». Por el contexto inmediato —respuesta a la pregunta binaria de si `Fila 4` era la computadora utilizada en ese momento— se interpreta como afirmativa, sin sustituir el literal original. La identidad del host se sostiene además en la telemetría RDC y en la respuesta contextual del operador. La normalización semántica no debe reemplazar el literal de A en crónicas futuras.
 
 
 ### Rectificación de la frontera Cora–OCP–EP y longitud libre de frase maestra · 2026-11-06
@@ -1556,7 +1556,7 @@ Gobernanza registra la instrucción literal del operador, tal como fue documenta
 
 **Corrección visible y semántica:** el encabezado de la captura ahora dice literalmente que la bóveda de Cora es la bóveda operativa de EP, que Cora conserva su producto/datos/runtime y OCP conserva su metodología independiente. La captura almacena solo las dos variables B2 del namespace EP autorizado. Esto no altera archivos/repositorios de producto ni la bóveda compartida anterior.
 
-**Reintento actual:** script temporal corregido; acepta cualquier frase maestra no vacía, confirma repetición y advierte la menor resistencia de frases cortas. Parser PowerShell 5.1 PASS. Preflight confirmó ausentes archivo final, temporal y recibo retry2. Ventana abierta en `PC10RCIF4EI4`, PID `18752`, recibo `EP-B2-Vault-Capture-20261106.retry2.status.json`. Estado: `AWAITING_OPERATOR_INPUT`; todavía sin bóveda verificada, sin autenticación y sin llamada B2.
+**Reintento actual:** script temporal corregido; acepta cualquier frase maestra no vacía, confirma repetición y advierte la menor resistencia de frases cortas. Parser PowerShell 5.1 PASS. Preflight confirmó ausentes archivo final, temporal y recibo retry2. Ventana abierta en `Fila 4`, PID `18752`, recibo `EP-B2-Vault-Capture-20261106.retry2.status.json`. Estado: `AWAITING_OPERATOR_INPUT`; todavía sin bóveda verificada, sin autenticación y sin llamada B2.
 
 **Instrucción a la entrada local:** primer prompt = frase maestra elegida por el operador; segundo prompt = repetir exactamente la misma frase; tercer prompt = `B2_APPLICATION_KEY_ID`; cuarto prompt = `B2_APPLICATION_KEY`. Los cuatro campos son de entrada oculta según el tipo de credencial; no introducir nada en el chat.
 
@@ -1565,7 +1565,7 @@ Gobernanza registra la instrucción literal del operador, tal como fue documenta
 
 **Origen:** release oficial Backblaze/B2_Command_Line_Tool v5.0.2, asset `b2-windows.exe`, publicado 2026-10-23. URL: `https://github.com/Backblaze/B2_Command_Line_Tool/releases/download/v5.0.2/b2-windows.exe`. SHA-256 publicado: `d6e5b1c0918c2755fc8c14eb5b5aa698c36b43d3fdc18fca13ea163d829bbbbb`.
 
-**Instalación local:** `%LOCALAPPDATA%\Programs\BackblazeB2\b2.exe` en `PC10RCIF4EI4`, usuario `MantenimientoRCI`; no requiere instalación global ni elevación. SHA-256 calculado localmente coincide exactamente con el release. Authenticode: `Valid`; firmante `CN="BACKBLAZE, INC.", O="BACKBLAZE, INC."`. `b2 --help`: exit 0; `b2 version`: `b2 command line tool, version 5.0.2 (b2sdk version 2.13.2)`, exit 0.
+**Instalación local:** `%LOCALAPPDATA%\Programs\BackblazeB2\b2.exe` en `Fila 4`, usuario `MantenimientoRCI`; no requiere instalación global ni elevación. SHA-256 calculado localmente coincide exactamente con el release. Authenticode: `Valid`; firmante `CN="BACKBLAZE, INC.", O="BACKBLAZE, INC."`. `b2 --help`: exit 0; `b2 version`: `b2 command line tool, version 5.0.2 (b2sdk version 2.13.2)`, exit 0.
 
 **Límites:** se descargó y verificó el binario; no se llamó a `account authorize`, `account get`, `bucket list`, listados, upload, download, restore ni ninguna operación de cuenta/proveedor. No se creó caché `B2_ACCOUNT_INFO`. La CLI queda instalada y disponible para el siguiente gate, no autenticada.
 
@@ -1578,7 +1578,7 @@ Gobernanza registra la instrucción literal del operador, tal como fue documenta
 
 **Resultado reportado por el operador:** desbloqueo local seguido de `EP_B2_ACCOUNT_AUTH=FAILED reason=UNEXPECTED_ERROR_RemoteException`. El mensaje declara que no se imprimieron ni persistieron secretos en texto claro y que no se ejecutaron operaciones de buckets ni archivos. `RemoteException` no aporta diagnóstico del proveedor ni confirma si la petición de autorización llegó a Backblaze; no se clasifica como credenciales inválidas. No se repetirá la autorización hasta diagnosticar la excepción.
 
-**Metadatos locales no secretos observados en `PC10RCIF4EI4`:** bóveda EP existente, 836 bytes, SHA-256 `C4E6B0CC309A6702115790F46E05EF44C7FCF5C8B950112F4B18831BF1994F67`, cero temporales `*.tmp`; ACL no heredada con FullControl para `NT AUTHORITY\\SYSTEM`, `BUILTIN\\Administradores` y `CENTRAL\\MantenimientoRCI`. Caché aislada `Khora\\state\\b2-ep-ocp.sqlite` existente, 24,576 bytes; contenido no leído. Esto no acredita validez de credenciales ni autenticación. El descifrado/read-back mencionado anteriormente no se repitió en este ciclo.
+**Metadatos locales no secretos observados en `Fila 4`:** bóveda EP existente, 836 bytes, SHA-256 `C4E6B0CC309A6702115790F46E05EF44C7FCF5C8B950112F4B18831BF1994F67`, cero temporales `*.tmp`; ACL no heredada con FullControl para `NT AUTHORITY\\SYSTEM`, `BUILTIN\\Administradores` y `perfil administrativo separado`. Caché aislada `Khora\\state\\b2-ep-ocp.sqlite` existente, 24,576 bytes; contenido no leído. Esto no acredita validez de credenciales ni autenticación. El descifrado/read-back mencionado anteriormente no se repitió en este ciclo.
 
 **Estados:** `EP_VAULT=EXISTS_HASH_ACL_OBSERVED`; `VAULT_DECRYPT_READBACK=PREVIOUSLY_REPORTED_NOT_REEXECUTED`; `B2_STATE_CACHE=EXISTS_NOT_INSPECTED`; `B2_ACCOUNT_AUTH=FAILED_REPORTED_REMOTEEXCEPTION`; `B2_PROVIDER_RESPONSE=NOT_AVAILABLE`; `BUCKET_OBJECT_OPERATIONS=NOT_EXECUTED_PER_OPERATOR_OUTPUT`; `REMOTE_PERSISTENCE=NOT_PROVEN`.
 
@@ -1609,12 +1609,12 @@ Gobernanza registra la instrucción literal del operador, tal como fue documenta
 
 ### Rectificación de alcance de búsqueda del TXT fuente · 2026-11-06 · mismo ciclo EP-03
 
-El sondeo local acotado de `Desktop`, `Downloads`, `Documents` y `Temp` en `PC10RCIF4EI4` no produjo coincidencias visibles y fue detenido manualmente al comprobar que el proceso seguía activo sin salida. La búsqueda recursiva más amplia también fue detenida sin resultado disponible. Esto permite afirmar únicamente `NO_LOCALIZADO_EN_LAS_SUPERFICIES_REVISADAS`; no prueba que el archivo no exista en otras rutas, perfiles o medios. No se obtuvieron bytes ni SHA y no se incorporó el original. Se corrigen en ese sentido las notas de OEP §96 y EP-TASK-002 §40. El estado técnico B2 no cambia: autenticación fallida reportada, sin reintento y sin operaciones de bucket/objeto.
+El sondeo local acotado de `Desktop`, `Downloads`, `Documents` y `Temp` en `Fila 4` no produjo coincidencias visibles y fue detenido manualmente al comprobar que el proceso seguía activo sin salida. La búsqueda recursiva más amplia también fue detenida sin resultado disponible. Esto permite afirmar únicamente `NO_LOCALIZADO_EN_LAS_SUPERFICIES_REVISADAS`; no prueba que el archivo no exista en otras rutas, perfiles o medios. No se obtuvieron bytes ni SHA y no se incorporó el original. Se corrigen en ese sentido las notas de OEP §96 y EP-TASK-002 §40. El estado técnico B2 no cambia: autenticación fallida reportada, sin reintento y sin operaciones de bucket/objeto.
 
 
 ### Addendum de coordinación · inspección de recibos de autorización B2 · 2026-11-06
 
-Tras el read-back del cierre documental anterior se inspeccionaron únicamente recibos no secretos y el código estático del script de autorización en `PC10RCIF4EI4`. Se encontraron dos ejecuciones anteriores: `EP-B2-Authorize-20261106.status.json` (`UNEXPECTED_ERROR_RemoteException`) y `EP-B2-Authorize-20261106.retry2.status.json` (`PROVIDER_AUTH_REJECTED`, código de salida 1, `account_get_exit_code` vacío, operaciones de bucket=0 y archivo=0). El script de retry2 deriva esa clasificación de patrones de rechazo en stdout/stderr capturados en memoria; no guarda el mensaje crudo. No se puede distinguir la causa exacta ni verificar la cuenta. La redacción previa que decía que no hubo reintento se rectifica: el historial incluye dos intentos; **en esta continuación no se lanzó un tercero**. No se repite autenticación ni se ejecuta bucket/objeto sin autorización expresa posterior. Bóveda compartida intacta; caché SQLite no leída.
+Tras el read-back del cierre documental anterior se inspeccionaron únicamente recibos no secretos y el código estático del script de autorización en `Fila 4`. Se encontraron dos ejecuciones anteriores: `EP-B2-Authorize-20261106.status.json` (`UNEXPECTED_ERROR_RemoteException`) y `EP-B2-Authorize-20261106.retry2.status.json` (`PROVIDER_AUTH_REJECTED`, código de salida 1, `account_get_exit_code` vacío, operaciones de bucket=0 y archivo=0). El script de retry2 deriva esa clasificación de patrones de rechazo en stdout/stderr capturados en memoria; no guarda el mensaje crudo. No se puede distinguir la causa exacta ni verificar la cuenta. La redacción previa que decía que no hubo reintento se rectifica: el historial incluye dos intentos; **en esta continuación no se lanzó un tercero**. No se repite autenticación ni se ejecuta bucket/objeto sin autorización expresa posterior. Bóveda compartida intacta; caché SQLite no leída.
 
 
 ### Addendum EP · diagnóstico CLI estático y gate de revisión de Application Key · 2026-11-06
@@ -1632,7 +1632,7 @@ Se confirmó por inspección estática que el estado `PROVIDER_AUTH_REJECTED` de
 
 **A literal:** el operador identificó `ChatGPT-EP (1)-20261107-1015.txt` en Descargas de `fila4` y solicitó documentarlo en persistencia documental EP mediante RDC, retomando la responsabilidad del frente y la construcción sin discontinuidad. También autorizó el uso del navegador para completar lo necesario y fijó una regla de navegación: no reemplazar pestañas de trabajo; usar pestañas nuevas o la dedicada a Backblaze. Debido al único monitor disponible, solicitó priorizar CLI/headless.
 
-**Adquisición y custodia del original:** RDC confirmó `PC10RCIF4EI4` en línea; la ruta correcta del perfil fue `C:\Users\fila4\Downloads\ChatGPT-EP (1)-20261107-1015.txt` (no el perfil `MantenimientoRCI`). Se leyó el archivo completo: 974 líneas, 44,283 bytes. Se copió sin modificar a `frentes/ep/originales/ChatGPT-EP (1)-20261107-1015.txt` del repositorio privado. SHA-256 origen = copia = `555A2BF9F6282DFD36A638FA4626A7511A0B4DEA869D3E737F1655921811F88E`; bytes origen = copia = 44,283; read-back/hash: PASS. El original en Descargas permanece intacto.
+**Adquisición y custodia del original:** RDC confirmó `Fila 4` en línea; la ruta correcta del perfil fue `%USERPROFILE%\Downloads\ChatGPT-EP (1)-20261107-1015.txt` (no el perfil `MantenimientoRCI`). Se leyó el archivo completo: 974 líneas, 44,283 bytes. Se copió sin modificar a `frentes/ep/originales/ChatGPT-EP (1)-20261107-1015.txt` del repositorio privado. SHA-256 origen = copia = `555A2BF9F6282DFD36A638FA4626A7511A0B4DEA869D3E737F1655921811F88E`; bytes origen = copia = 44,283; read-back/hash: PASS. El original en Descargas permanece intacto.
 
 **Reconciliación documental:** se comprobó el remoto `SeryMente/metodologia` privado y con permiso push del operador; el clon local estaba limpio, pero tres commits por detrás. Se actualizó por fast-forward a `main` antes de editar. HEAD adquirido: `1f893651c6c5bf4199bc4137fdc51b0ad3753793` (2026-11-07 10:13:33 -06:00). Se identificaron los objetos canónicos existentes: OEP `frentes/ep/OEP.md`, EP-TASK-002 README y este DTC; no se creó fuente paralela ni ciclo nuevo.
 
@@ -1649,7 +1649,7 @@ Se confirmó por inspección estática que el estado `PROVIDER_AUTH_REJECTED` de
 
 ### Addendum · viabilidad headless local y protección de pestañas · 2026-11-07
 
-Se inspeccionó metadata de procesos Chrome y puertos de escucha de `PC10RCIF4EI4` sin leer cookies ni almacenamiento de sesión. El Chrome principal del perfil `fila4` (PID raíz 12692) no se inició con `--remote-debugging-port`; no hay puertos CDP 9222–9235 en escucha. La instancia Backblaze abierta por la asistencia corresponde a un perfil separado de `MantenimientoRCI` (PID raíz 12388), por lo que no se presume autenticada ni equivalente a la sesión del operador. No se tocó ni cerró ninguna pestaña y no se reinició Chrome.
+Se inspeccionó metadata de procesos Chrome y puertos de escucha de `Fila 4` sin leer cookies ni almacenamiento de sesión. El Chrome principal del perfil `fila4` (PID raíz 12692) no se inició con `--remote-debugging-port`; no hay puertos CDP 9222–9235 en escucha. La instancia Backblaze abierta por la asistencia corresponde a un perfil separado de `MantenimientoRCI` (PID raíz 12388), por lo que no se presume autenticada ni equivalente a la sesión del operador. No se tocó ni cerró ninguna pestaña y no se reinició Chrome.
 
 **Resultado:** la vía headless por CDP no está disponible en la sesión local actual. La CLI B2 5.0.2 no puede crear la clave sin una credencial administrativa con `writeKeys`; no se dispone de ella y no se usará ni rotará la Master Key. No extraer cookies ni copiar perfiles. La autorización de creación `EP-OCP` permanece vigente pero no ejecutada hasta garantizar captura directa del secreto a la bóveda EP. Crear un perfil/sesión de navegador alternativo requiere autorización específica del operador; no se inició ninguno.
 
@@ -1658,7 +1658,7 @@ Se inspeccionó metadata de procesos Chrome y puertos de escucha de `PC10RCIF4EI
 
 **A literal del operador:** «ChatGPT-EP-20261107-1111.txt, esta endownloads, documenta en persistencia documental del frente entorno persistente. Retomando responsabilidad y contexto de manera seamless. Continúa de manera seamless donde nos quedamos. Adquiere contexto, y repite el último ciclo literal y textualmente».
 
-**Fuente adquirida:** `C:\Users\fila4\Downloads\ChatGPT-EP-20261107-1111.txt`, en `PC10RCIF4EI4`. Lectura completa sanitizada para análisis: 1.046 líneas, 46.231 bytes, SHA-256 `4297642A8FC88628A38CE2F0057E72F849E708B4EFE4B19882C50DBB01CD51B7`. El origen no se modifica. No se encontraron valores de credenciales en el contenido devuelto; cualquier secreto se excluye de la copia documental y no se lee del portapapeles.
+**Fuente adquirida:** `%USERPROFILE%\Downloads\ChatGPT-EP-20261107-1111.txt`, en `Fila 4`. Lectura completa sanitizada para análisis: 1.046 líneas, 46.231 bytes, SHA-256 `4297642A8FC88628A38CE2F0057E72F849E708B4EFE4B19882C50DBB01CD51B7`. El origen no se modifica. No se encontraron valores de credenciales en el contenido devuelto; cualquier secreto se excluye de la copia documental y no se lee del portapapeles.
 
 **Cursor canónico de entrada:** `SeryMente/metodologia/main`, HEAD `97990e2b56874def3e6afa91aef010f04837c0e1`, working tree limpio. Repositorio privado confirmado mediante consulta al repositorio remoto. No se localizó un control de responsabilidad EP independiente; por tanto se retoma continuidad funcional/documental bajo la instrucción directa, sin declarar TRANSFER_RESPONSIBILITY, titularidad formal ni generación nueva.
 
@@ -1668,7 +1668,7 @@ Se inspeccionó metadata de procesos Chrome y puertos de escucha de `PC10RCIF4EI
 
 **Estado inicial:** Master Key `NOT_CAPTURED`; bóveda `NOT_MODIFIED_IN_THIS_CYCLE`; autenticación con Master Key `NOT_EXECUTED`; B2 bucket/object operations `NOT_EXECUTED`; upload/read-back/restore `NOT_PROVEN`; EP-TASK-002 `en_curso`; ciclo local `C-EP-MOD-SCRIPTPWS-20261101-03` permanece OPEN; FOL1 no consta ACTIVO. La autenticación previa de `EP-OCP` fue reportada como exitosa, pero con capacidades superiores a las previstas; esa clave queda fuera de la estrategia activa, sin revocarla ni modificarla.
 
-**Siguiente acción inmediata:** completar la persistencia documental de este ciclo con read-back; después, requerir confirmación de presencia física en PC10RCIF4EI4 antes de captura local del bloque Master Key ID + Master Application Key. No se inicia autenticación hasta verificar almacenamiento cifrado y descifrado de retorno.
+**Siguiente acción inmediata:** completar la persistencia documental de este ciclo con read-back; después, requerir confirmación de presencia física en Fila 4 antes de captura local del bloque Master Key ID + Master Application Key. No se inicia autenticación hasta verificar almacenamiento cifrado y descifrado de retorno.
 
 
 ### Cierre documental EP · original 1111, OEP §100 y decisión Master-only · 2026-11-07
@@ -1689,7 +1689,7 @@ Se inspeccionó metadata de procesos Chrome y puertos de escucha de `PC10RCIF4EI
 
 **No ejecutado:** captura de secretos, escritura de bóveda, autenticación con Master, preflight remoto, operaciones de bucket/objeto, upload, download, delete o restore. No se abrió ni reinició navegador, no se utilizó CDP y no se ocupó el monitor.
 
-**Compuerta pendiente:** P012/P013 requiere presencia y revisión presencial del operador en este mismo ciclo para capturar/almacenar/autenticar credenciales. La presencia de una conversación anterior no se hereda. Siguiente acción: confirmar presencia actual en `PC10RCIF4EI4`; tras esa confirmación, el operador dejará Master Key ID + Master Application Key en el portapapeles y avisará `LISTO`. No pedir valores por chat. Primero capturar, cifrar y verificar read-back; solo después autenticar por CLI.
+**Compuerta pendiente:** P012/P013 requiere presencia y revisión presencial del operador en este mismo ciclo para capturar/almacenar/autenticar credenciales. La presencia de una conversación anterior no se hereda. Siguiente acción: confirmar presencia actual en `Fila 4`; tras esa confirmación, el operador dejará Master Key ID + Master Application Key en el portapapeles y avisará `LISTO`. No pedir valores por chat. Primero capturar, cifrar y verificar read-back; solo después autenticar por CLI.
 
 **Responsabilidad/folios:** la instrucción directa permite continuar la responsabilidad funcional/documental de EP, pero no se localizó un control formal EP ni se ejecutó una mutación CAS; no se declara transferencia ni generación. Se conserva ciclo local `C-EP-MOD-SCRIPTPWS-20261101-03` OPEN y `EP-TASK-002=en_curso`. CONV/CICLO/A/B globales no asignados; FOL1 no consta ACTIVO.
 
@@ -1700,7 +1700,7 @@ Se inspeccionó metadata de procesos Chrome y puertos de escucha de `PC10RCIF4EI
 
 **A literal del operador:** se recibe y preserva la instrucción INSTRUCCION-MATERIALIZACION-UBICACIONES-20261107.txt. El operador rectifica expresamente que EP no necesita un segundo equipo ni unidad física para finalizar. La materialización debe usar Escritorio/Ser y Mente, incorporar dinámicamente todos los repositorios actuales de la organización SeryMente y mantener extension/ sincronizada y cargable para los proyectos que sean extensiones Chrome. Distingue GitHub para código y OCP canónicos de Metodología, y Backblaze para datos de usuario derivados del uso de OCP. Solicita perfiles de ubicación, huella de CSEC y reutilización del dead-man histórico, con sesiones efímeras.
 
-**Adquisición y perfil del host:** se hizo preflight de solo lectura en PC10RCIF4EI4. La sesión de consola activa es CENTRAL/fila4, sesión 4; perfil cargado C:/Users/fila4; equipo PC10RCIF4EI4, HP ProDesk 400 G4 DM, Windows 11 Pro build 26200, PowerShell 5.1.26100.9711, Ethernet. La ejecución RDC usa CENTRAL/MantenimientoRCI. User Shell Folders y Shell Folders informan destinos Desktop discrepantes para fila4; por eso la carpeta Ser y Mente no se creó. CSEC se conserva como ubicación declarada/candidata, no como geolocalización probada. El dictado presenta discrepancia CSEC versus deletreo C-E-C-E-Q.
+**Adquisición y perfil del host:** se hizo preflight de solo lectura en Fila 4. La sesión de consola activa es CENTRAL/fila4, sesión 4; perfil cargado C:/Users/fila4; equipo Fila 4, HP ProDesk 400 G4 DM, Windows 11 Pro build 26200, PowerShell 5.1.26100.9711, Ethernet. La ejecución RDC usa CENTRAL/MantenimientoRCI. User Shell Folders y Shell Folders informan destinos Desktop discrepantes para fila4; por eso la carpeta Ser y Mente no se creó. CSEC se conserva como ubicación declarada/candidata, no como geolocalización probada. El dictado presenta discrepancia CSEC versus deletreo C-E-C-E-Q.
 
 **Reglas históricas localizadas:** Khora OEP §§28–30, módulos Guardian/cleanup y Arquitectura EP Medio. Triggers recuperados: solicitud manual cleanup.request, muerte del launcher/supervisor, cierre de VS Code, inactividad (15 minutos por defecto), vigilancia cada 2 segundos, heartbeat cada 60 segundos y limpieza al reinicio por tarea AtStartup/SYSTEM de privilegio máximo. La tarea permanece armada hasta verificar ausencia de residuos. Secuencia: aceptar cierre, detener procesos, intentar continuidad remota, purgar secretos, bloquear BitLocker, retirar vínculo Desktop, desmontar VHDX, eliminar contenedor/carpeta exterior, retirar tarea tras verificar ausencia y cerrar sesión remota. Confidencialidad prevalece si falla continuidad.
 
@@ -1750,16 +1750,16 @@ El operador corrige inequívocamente la denominación: es **CECEQ**. Se adopta `
 
 **Compuertas:** no repetir `b2 account authorize`, no crear/rotar/revocar credenciales ni iniciar operaciones nuevas de bucket/objeto por esta instrucción genérica. P012/P013 exige presencia/revisión del operador en el mismo ciclo para acciones que involucren credenciales, autenticación, cifrado o seguridad. Antes de esas acciones debe confirmarse el host y la presencia requerida; no se hereda autorización presencial de ciclos anteriores.
 
-**Siguiente acción inmediata:** preflight local estrictamente read-only en el host previamente asociado al smoke test `PC10RCIF4EI4`: disponibilidad/versión de `b2.exe`, existencia y metadatos de la caché aislada y de la bóveda cifrada, y procesos B2 activos. No abrir contenido de bóveda ni SQLite, no leer portapapeles, no descifrar, no autenticar ni transferir datos.
+**Siguiente acción inmediata:** preflight local estrictamente read-only en el host previamente asociado al smoke test `Fila 4`: disponibilidad/versión de `b2.exe`, existencia y metadatos de la caché aislada y de la bóveda cifrada, y procesos B2 activos. No abrir contenido de bóveda ni SQLite, no leer portapapeles, no descifrar, no autenticar ni transferir datos.
 
 **Estado inicial del ciclo:** `EP-TASK-002=en_curso`; remote persistence de datos reales y restore funcional permanecen NO DEMOSTRADOS. Se conserva el ciclo local `C-EP-MOD-SCRIPTPWS-20261101-03` en OPEN. No se crea nuevo OCP/tarea/control/sesión ni se declara transferencia formal de titularidad. FOL1 no consta ACTIVO; CONV/CICLO/A/B globales no asignados. Sin cambios técnicos ni operaciones B2 ejecutadas en esta apertura.
 
 
 ### Cierre EP-TASK-002 · preflight B2 bloqueado por identidad de ejecución · 2026-11-08
 
-**Procesamiento:** el inventario RDC confirmó `PC10RCIF4EI4` Online. `get_config` y `list_sessions` identificaron una sesión PowerShell de larga duración PID 5216; no se interactuó con ella. El listado de procesos no mostraba un proceso B2 activo. Se ejecutó un proceso temporal de inspección de solo lectura, que terminó con exit code 0.
+**Procesamiento:** el inventario RDC confirmó `Fila 4` Online. `get_config` y `list_sessions` identificaron una sesión PowerShell de larga duración PID 5216; no se interactuó con ella. El listado de procesos no mostraba un proceso B2 activo. Se ejecutó un proceso temporal de inspección de solo lectura, que terminó con exit code 0.
 
-**Resultado observado:** el proceso temporal se ejecutó como `CENTRAL\MantenimientoRCI`, PowerShell 5.1.26100.9711. La CLI B2 en `C:\Users\MantenimientoRCI\AppData\Local\Programs\BackblazeB2\b2.exe` existe; versión 5.0.2 / b2sdk 2.13.2, SHA-256 `D6E5B1C0918C2755FC8C14EB5B5AA698C36B43D3FDC18FCA13EA163D829BBBBB`, Authenticode válido y firmante Backblaze Inc. `b2 version` exit 0. No hubo proceso B2 activo al finalizar.
+**Resultado observado:** el proceso temporal se ejecutó como `perfil administrativo separado`, PowerShell 5.1.26100.9711. La CLI B2 en `C:\Users\MantenimientoRCI\AppData\Local\Programs\BackblazeB2\b2.exe` existe; versión 5.0.2 / b2sdk 2.13.2, SHA-256 `D6E5B1C0918C2755FC8C14EB5B5AA698C36B43D3FDC18FCA13EA163D829BBBBB`, Authenticode válido y firmante Backblaze Inc. `b2 version` exit 0. No hubo proceso B2 activo al finalizar.
 
 Las rutas esperadas bajo el `LOCALAPPDATA` de ese proceso para `b2-ep-env-vault.enc.json` y `b2-ep-master-20261107.sqlite` devolvieron `MISSING`. El hallazgo queda limitado a ese contexto `MantenimientoRCI`; no demuestra eliminación ni inexistencia en el perfil `fila4` u otra ubicación. No se hizo búsqueda recursiva ni se abrió bóveda/SQLite.
 
@@ -1857,7 +1857,7 @@ Las rutas esperadas bajo el `LOCALAPPDATA` de ese proceso para `b2-ep-env-vault.
 
 **Autorización y alcance:** EP-TASK-004 registra B/C P012 y candado D P013 aprobados por el operador el 2026-11-08 y A despachado para construir dentro de EP-TASK-004. La instrucción actual extiende materialización local del mismo paquete a dos perfiles/equipos; no amplía permisos de credenciales o recursos B2, ni autoriza transferir la bóveda cifrada entre dispositivos. No modificar el DUG, OEP ni controles de responsabilidad.
 
-**Preflight RDC observado:** \`PC10RCIF4EI4\` Online, device \`d0bbb2a3-d7b4-45e1-8870-652c2c3844fc\`; sesión interactiva \`fila4\` (ID 4), pero los procesos \`start_process\` ejecutados por la conexión RDC corren como \`CENTRAL\\MantenimientoRCI\`, no como \`fila4\`. La ruta canónica \`C:\Users\fila4\AppData\Local\Khora\secrets\ep-env-vault.enc.json\` no existe; el paquete sintético de la PR existe solo bajo \`C:\Users\fila4\AppData\Local\Temp\EPVaultPR20-20261108\`. C: está \`FullyEncrypted\` pero \`ProtectionStatus=Off\` y \`XtsAes128\`.
+**Preflight RDC observado:** \`Fila 4\` Online, device \`[Device ID RDC omitido conforme a ART-013]\`; sesión interactiva \`fila4\` (ID 4), pero los procesos \`start_process\` ejecutados por la conexión RDC corren como \`perfil administrativo separado\`, no como \`fila4\`. La ruta canónica \`%LOCALAPPDATA%\Khora\secrets\ep-env-vault.enc.json\` no existe; el paquete sintético de la PR existe solo bajo \`%LOCALAPPDATA%\Temp\EPVaultPR20-20261108\`. C: está \`FullyEncrypted\` pero \`ProtectionStatus=Off\` y \`XtsAes128\`.
 
 \`PC-14\` Online, device \`b396b293-5d1c-4461-9df6-c500a68d5d7f\`. La identidad efectiva del proceso es \`pc-14\\pc 13\`, perfil \`C:\Users\PC 13\`; sesión interactiva ID 1. C: está \`FullyDecrypted\`, \`ProtectionStatus=Off\`, sin BitLocker. Aún no se ha instalado ni creado almacén en ese perfil.
 
@@ -1873,7 +1873,7 @@ Las rutas esperadas bajo el `LOCALAPPDATA` de ese proceso para `b2-ep-env-vault.
 
 **PC-14:** dispositivo RDC \`b396b293-5d1c-4461-9df6-c500a68d5d7f\`; identidad Windows efectiva \`pc-14\\pc 13\`, perfil \`C:\Users\PC 13\`. Distribución en \`%LOCALAPPDATA%\Khora\tools\ep-vault\`. Los siete archivos de código/pruebas/documentación tienen SHA-256 cotejados; la suite sintética PowerShell 5.1 terminó \`EP_VAULT_VALIDATION_PASS\`, exit code 0, 23.34 s. El archivo formal no existe y no fue inicializado. C: \`FullyDecrypted\`, \`ProtectionStatus=Off\`, \`EncryptionMethod=None\`, 0%.
 
-**Fila 4 / PC10RCIF4EI4:** dispositivo RDC \`d0bbb2a3-d7b4-45e1-8870-652c2c3844fc\`; perfil objetivo \`C:\Users\fila4\`. Distribución en \`C:\Users\fila4\AppData\Local\Khora\tools\ep-vault\`. Los mismos siete archivos muestran los mismos SHA-256 que PC-14. ACL heredada del directorio y módulo permite \`CENTRAL\fila4\` FullControl, además de SYSTEM y Administradores. La suite sintética terminó \`EP_VAULT_VALIDATION_PASS\`, exit code 0, 24.66 s, pero el proceso de prueba se ejecutó como \`CENTRAL\MantenimientoRCI\`, no como la sesión interactiva \`fila4\`; el uso DPAPI CurrentUser bajo esa cuenta aún debe validarse en Fila 4. C: \`FullyEncrypted\`, 100%, pero \`ProtectionStatus=Off\`, \`EncryptionMethod=XtsAes128\`.
+**Fila 4 / Fila 4:** dispositivo RDC \`[Device ID RDC omitido conforme a ART-013]\`; perfil objetivo \`%USERPROFILE%\`. Distribución en \`%LOCALAPPDATA%\Khora\tools\ep-vault\`. Los mismos siete archivos muestran los mismos SHA-256 que PC-14. ACL heredada del directorio y módulo permite \`perfil operativo Fila 4\` FullControl, además de SYSTEM y Administradores. La suite sintética terminó \`EP_VAULT_VALIDATION_PASS\`, exit code 0, 24.66 s, pero el proceso de prueba se ejecutó como \`perfil administrativo separado\`, no como la sesión interactiva \`fila4\`; el uso DPAPI CurrentUser bajo esa cuenta aún debe validarse en Fila 4. C: \`FullyEncrypted\`, 100%, pero \`ProtectionStatus=Off\`, \`EncryptionMethod=XtsAes128\`.
 
 **Flujo de captura disponible en el código:** captura Unicode del portapapeles; vaciado del portapapeles; nota protegida DPAPI CurrentUser con TTL; listado de metadatos sin contenido; promoción con autenticación local a variable formal; lectura de vuelta y eliminación de la nota solo después del read-back. Los nombres documentados para Custodia son \`KHORA_B2_KEY_ID\` y \`KHORA_B2_APPLICATION_KEY\`. No se leyó ni copió ningún valor. No se creó nota ni almacén formal.
 
@@ -1898,7 +1898,7 @@ No hubo cambios de código. OEP §13 reserva la escritura de producto a Samantha
 
 **A literal:** «Sigue documentado en tareas el avance y resolviendo de extremo a extremo conforme a mis caprichios». Se ejecuta dentro de EP-TASK-004, continuando la instrucción del operador de construir y materializar la bóveda en Fila 4 y PC-14. Alcance acotado a esta tarea; no altera responsabilidades fuera de EP.
 
-**Dispositivos verificados:** PC-14 `b396b293-5d1c-4461-9df6-c500a68d5d7f` Online, identidad Windows `pc-14\\pc 13`; PC10RCIF4EI4 (Fila 4) `d0bbb2a3-d7b4-45e1-8870-652c2c3844fc` Online, identidad efectiva RDC `CENTRAL\\MantenimientoRCI`; PC-13 `1227e578-55c8-4231-82bb-4dbf9234855a` Offline. No confundir PC-14 con PC-13. El acceso remoto a PC10 no acredita ejecución con el token interactivo `CENTRAL\\fila4`.
+**Dispositivos verificados:** PC-14 `b396b293-5d1c-4461-9df6-c500a68d5d7f` Online, identidad Windows `pc-14\\pc 13`; Fila 4 (Fila 4) `[Device ID RDC omitido conforme a ART-013]` Online, identidad efectiva RDC `perfil administrativo separado`; PC-13 `1227e578-55c8-4231-82bb-4dbf9234855a` Offline. No confundir PC-14 con PC-13. El acceso remoto a PC10 no acredita ejecución con el token interactivo `perfil operativo Fila 4`.
 
 **Acción local en PC-14:** respaldo previo y modificación de Core/CLI/GUI para sesión compartida entre procesos protegida con DPAPI CurrentUser, TTL absoluto, reutilización del contexto por CLI, detección desde GUI y revocación explícita. SHA-256 posteriores:
 - Core: `33067C8E4D1F1C7E089C78E9CC36D9CB0EED3522CA945FA1622C82DFB9B24421`.
@@ -1919,13 +1919,13 @@ Los tres respaldos `.20261108-shared-session.bak` existen. Parser PowerShell 5.1
 
 ### Respaldo de continuidad PC-14 → Fila 4 · 2026-11-08
 
-El operador pidió priorizar el respaldo ante la posible expiración de la sesión PC-14. Se creó y verificó, bajo el usuario Windows `CENTRAL\\fila4` (sesión interactiva 4; `LOCALAPPDATA=C:\\Users\\fila4\\AppData\\Local`), un snapshot en `C:\\Users\\fila4\\AppData\\Local\\Khora\\backups\\EP-Vault\\20261108-PC14-pre-session-end`.
+El operador pidió priorizar el respaldo ante la posible expiración de la sesión PC-14. Se creó y verificó, bajo el usuario Windows `perfil operativo Fila 4` (sesión interactiva reportada, sin ID conservado; `LOCALAPPDATA=%LOCALAPPDATA%`), un snapshot en `%LOCALAPPDATA%\\Khora\\backups\\EP-Vault\\20261108-PC14-pre-session-end`.
 
 ZIP completo: `20261108-PC14-pre-session-end-COMPLETE.zip`, 556,199 bytes, SHA-256 `774933A5CACA822AED3AC2D42B561B48A85275D804FB38125C92B2B418FE3AC2`. La lectura de vuelta del ZIP verificó 30 entradas: 28 archivos de producto/documentación y pruebas, más metadatos y checksums. Raíz propiedad de Fila4 y acceso completo read-back validado. Se conserva adicionalmente un ZIP previo de 23 archivos, sin sobrescritura.
 
 El respaldo incluye código, GUI/XAML, CLI/Core, pruebas, WAV originales, backups de edición, documentación de EP-TASK-004 y la entrada de continuidad DTC. Se excluyen bóvedas formales, valores de secretos, notas DPAPI y sesiones de autenticación.
 
-La conversación solicitada se abrió en Chrome bajo `CENTRAL\\fila4`, sesión 4. La barra de direcciones fue leída de vuelta y coincide con `https://chatgpt.com/c/6af1011d-12d4-83e8-ae6e-c6fcc995f994`.
+La conversación solicitada se abrió en Chrome bajo `perfil operativo Fila 4`, sesión 4. La barra de direcciones fue leída de vuelta y coincide con `https://chatgpt.com/c/6af1011d-12d4-83e8-ae6e-c6fcc995f994`.
 
 
 ### Evaluación visual de aceptación EP Vault · 2026-11-08
@@ -1997,7 +1997,7 @@ Render WPF directo (RenderTargetBitmap) en perfil temporal Fila4, 1440×900, con
 
 **Revalidación de dispositivos:**
 - PC-14 Online, dispositivo nuevo ID `4fc35a07-2192-4b88-81ec-96cb450d565e`. Identidad interactiva: `PC-14\PC 13`, perfil `C:\Users\PC 13`; Escritorio `C:\Users\PC 13\Desktop`. El proceso RDC informa token de Administradores.
-- Fila 4 Online, ID `d0bbb2a3-d7b4-45e1-8870-652c2c3844fc`. El proceso RDC informa `CENTRAL\MantenimientoRCI`, pero la sesión de consola efectiva del usuario destino es `fila4`, SessionId 4. La identidad de trabajo de archivos del workspace sigue siendo `CENTRAL\fila4`; no confundir la cuenta del agente con el usuario Windows propietario.
+- Fila 4 Online, ID `[Device ID RDC omitido conforme a ART-013]`. El proceso RDC informa `perfil administrativo separado`, pero la sesión de consola efectiva del usuario destino es `fila4`, identificador de sesión efímero omitido. La identidad de trabajo de archivos del workspace sigue siendo `perfil operativo Fila 4`; no confundir la cuenta del agente con el usuario Windows propietario.
 - Preflight de software: PC-14 no tiene Git ni gh; dispone de winget y el catálogo `winget` ofrece GitHub CLI 2.103.3 y Git for Windows 2.56.0.4 (consulta 2026-11-09). Fila 4 ya tiene Git 2.45.2 y gh 2.52.0 (2024-06-24); actualización recomendada/pendiente.
 - BitLocker continúa sin cumplir OEP §105 en ambos discos de sistema: PC-14 C: FullyDecrypted/0%/Off/None; Fila 4 C: FullyEncrypted/100%/Off/XtsAes128. No se modificó BitLocker.
 
@@ -2020,7 +2020,7 @@ Render WPF directo (RenderTargetBitmap) en perfil temporal Fila4, 1440×900, con
 
 **Fila 4 — estado verificado, actualización pendiente:**
 - Git 2.45.2 y GitHub CLI 2.52.0 estaban instalados en `C:\Program Files` según el preflight.
-- La sesión de consola propietaria es `CENTRAL\fila4`, SessionId 4. El proceso RDC de la conexión opera como `CENTRAL\MantenimientoRCI`; no se realizaron escrituras bajo esa identidad.
+- La sesión de consola propietaria es `perfil operativo Fila 4`, identificador de sesión efímero omitido. El proceso RDC de la conexión opera como `perfil administrativo separado`; no se realizaron escrituras bajo esa identidad.
 - La preparación de una tarea auxiliar interactiva para ejecutar el upgrade como fila4 fue bloqueada por los controles de herramienta antes de alcanzar el host; no se creó la tarea ni se cambió el perfil. Se conserva como actualización pendiente.
 
 **No ejecutado:** no se hizo `gh auth login`, no se consultó ni se transfirió ningún token, no se cambiaron credenciales Git, no se clonó ningún repo privado, no se creó `Desktop\SeryMente`, VHDX o carpeta de workspace y no se modificó BitLocker.
@@ -2300,7 +2300,7 @@ El export contiene un rótulo de progreso que dice «Migrado el espacio de traba
 
 ### Resultado observado y rectificación
 
-El read-back de registros saneados del equipo `PC10RCIF4EI4`, bajo `CENTRAL\fila4`, confirma que el 2026-11-10T16:01:06Z se promovieron ambos valores de notas efímeras a `EP_B2_MASTER_APPLICATION_KEY_ID` y `EP_B2_MASTER_APPLICATION_KEY`. Los estados registrados son `PROMOTED_READBACK_VERIFIED_NOTE_REMOVED`; longitudes 12 y 42; cero notas restantes; valores no emitidos. Se retiró `EP_B2_APPLICATION_KEY_ID`; no quedan alias EP B2 deprecados. Se conservaron los valores de destino EP y el espacio `KHORA_B2_*`.
+El read-back de registros saneados del equipo `Fila 4`, bajo `perfil operativo Fila 4`, confirma que el 2026-11-10T16:01:06Z se promovieron ambos valores de notas efímeras a `EP_B2_MASTER_APPLICATION_KEY_ID` y `EP_B2_MASTER_APPLICATION_KEY`. Los estados registrados son `PROMOTED_READBACK_VERIFIED_NOTE_REMOVED`; longitudes 12 y 42; cero notas restantes; valores no emitidos. Se retiró `EP_B2_APPLICATION_KEY_ID`; no quedan alias EP B2 deprecados. Se conservaron los valores de destino EP y el espacio `KHORA_B2_*`.
 
 **Titularidad:** el operador confirmó expresamente que las dos notas pertenecían a la cuenta Backblaze dedicada exclusivamente a EP. Cora tiene su propia cuenta/credenciales; Khora conserva su propio espacio `KHORA_B2_*`. No hubo reutilización cruzada.
 
