@@ -46,7 +46,7 @@ Esta tarea no autoriza por sí misma una modificación normativa del DUG/GOW. Cu
 §ARR es la primera referencia del recorrido IPZ y debe familiarizar al modelo con el vocabulario mínimo necesario para entender la Metodología, la asignación de frentes, los ciclos, los folios, el DUG, los principios y OCP MCP. El DUG es la segunda referencia y conserva la autoridad normativa única. Revisar que los enlaces y términos de §ARR sean resolubles, suficientes y no creen una segunda fuente normativa. La prioridad de esta revisión aumenta porque §ARR es el primer destino de navegación del IPZ.
 
 
-## Prioridad rectora IPZ · C-GOBERNANZA-VECTOR-SEMANTICO-01 · 2026-10-31
+## Antecedente histórico supersedido · prioridad rectora IPZ · C-GOBERNANZA-VECTOR-SEMANTICO-01 · 2026-10-31
 
 GOW/§ARR es el primer destino del IPZ y debe ofrecer el vocabulario necesario para comprender Metodología, admisión, repositorios/frentes, ciclo/folios y DUG. Debe ir antes del segundo enlace al DUG; este último conserva la autoridad normativa única. Verificar el destino Sync abreviado, resolución, anclas y compatibilidad del glosario humano/estructurado. La divergencia de banner/versiones y el inventario de satélites se resuelven con GOV-TASK-006; esta tarea valida la funcionalidad de la primera referencia, no modifica el canon. Trazabilidad: [C-GOBERNANZA-VECTOR-SEMANTICO-01](../../cronica/C-GOBERNANZA-VECTOR-SEMANTICO-01.md).
 
@@ -58,6 +58,6 @@ La primera referencia operativa del IPZ se denomina `GOW:ARR` y la segunda `DUG`
 La prueba de resolución depende de MCP-OCP y se ejecutará después de que exista la herramienta local; la validación semántica del vocabulario sigue siendo responsabilidad de Gobernanza. No añadir Sink al vocabulario inicial por mera exhaustividad ni modificar el GOW por inferencia. Estado de esta tarea: `en_curso`, no aceptada.
 
 
-## Cierre de alcance GOW:ARR · sprint Sink local · 2026-11-09
+## Cierre de alcance GOW:ARR · sprint Sink local · reconciliado con DUG v388 · 2026-11-10
 
-`GOW:ARR` queda definido como operación de lectura de §ARR desde la fuente DUG importada y verificada localmente por MCP-OCP. Gobernanza valida contenido, suficiencia lingüística, anclas y correspondencia humano/estructurada; MCP-OCP implementa la recuperación y entrega los pins. La prueba se ejecuta sobre la instancia local instalada en `frentes/mcp-metodologia/instalacion-local/`, no sobre lectura manual de HTML ni URL HTTP. Baseline: Samantha v386/NX-386m, blob `22dca684830a36dff019b47811d9b800cc9bea0a`. No modificar el GOW por inferencia ni añadir Sink al vocabulario inicial por exhaustividad. La tarea sigue en curso hasta ejecutar validación y leer la evidencia de vuelta.
+`GOW:ARR` queda definido como operación de lectura de §ARR desde la fuente DUG importada y verificada localmente por MCP-OCP. Gobernanza valida contenido, suficiencia lingüística, anclas y correspondencia humano/estructurada; MCP-OCP implementa la recuperación y entrega los pins. La prueba se ejecuta sobre la instancia local instalada en `frentes/mcp-metodologia/instalacion-local/`, no sobre lectura manual de HTML ni URL HTTP. Baseline: Samantha v388/NX-388m, commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`, blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`. No modificar el GOW por inferencia ni añadir Sink al vocabulario inicial por exhaustividad. La tarea sigue en curso hasta ejecutar validación y leer la evidencia de vuelta.
