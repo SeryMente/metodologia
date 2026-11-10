@@ -378,7 +378,7 @@ Después de crear la rama ciclo02, main avanzó cuatro commits EP-only hasta `67
 
 **Telemetría:** evento `SINK_READ_SUCCESS` solo tras lectura completa validada; los errores se registran como `TOOL_FAILED` con código saneado y nunca incrementan éxitos. No se guardan argumentos, contenido, texto de principios, tokens, secretos, SID ni payloads.
 
-**Pruebas escritas:** 18 escenarios P004 + 11 de monitor; 0 ejecutadas. CI ahora restaura/build del servidor, suites P004/monitor, build WPF con `EnableWindowsTargeting` y smoke STDIO. El último run consultable de la revisión previa falló sin pasos/logs/artifacts; esta implementación nueva aún requiere una ejecución observada asociada al HEAD actual.
+**Pruebas escritas:** 18 escenarios P004 + 23 de monitor/readiness; 0 ejecutadas. CI ahora restaura/build del servidor, suites P004/monitor, build WPF con `EnableWindowsTargeting` y smoke STDIO. El último run consultable de la revisión previa falló sin pasos/logs/artifacts; esta implementación nueva aún requiere una ejecución observada asociada al HEAD actual.
 
 **Estado:** implementación candidata escrita/read-back; build, tests, smoke, visual review Windows, paquete, integración EP ACTIVE y aceptación permanecen PENDIENTES. El panel no bloquea el corte P004 pero es obligatorio para 1.0.0.
 
