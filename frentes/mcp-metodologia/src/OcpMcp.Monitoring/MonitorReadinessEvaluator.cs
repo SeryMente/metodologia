@@ -23,11 +23,14 @@ public static class MonitorReadinessEvaluator
         if (!session.ProtectionState.Equals("Protection On", StringComparison.OrdinalIgnoreCase))
             return Blocked("EP_PROTECTION_NOT_ON");
         if (session.SessionStartedAtUtc > now.AddMinutes(1) ||
-            session.ProtectionCheckedAtUtc > now.AddMinutes(1))
+            session.ProtectionCheckedAtUtc > now.AddMinutes(1) ||
+            session.ProtectionCheckedAtUtc < session.SessionStartedAtUtc)
             return Blocked("EP_ATTESTATION_TIME_INVALID");
 
         if (state is null || state.SchemaVersion != 1)
             return Blocked("SERVER_STATE_NOT_VERIFIED");
+        if (state.UpdatedAtUtc > now.AddMinutes(1))
+            return Blocked("SERVER_STATE_TIME_INVALID");
         if (!processIdentityVerified)
             return Blocked("SERVER_PROCESS_NOT_VERIFIED");
         if (!state.Server.Lifecycle.Equals("RUNNING", StringComparison.OrdinalIgnoreCase))
