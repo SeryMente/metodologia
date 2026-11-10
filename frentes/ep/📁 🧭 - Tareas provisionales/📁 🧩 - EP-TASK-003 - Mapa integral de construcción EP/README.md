@@ -288,10 +288,10 @@ La ruta local observada ya fue reestructurada con esos directorios. La carpeta S
 ### Identidad y alcance de la materialización
 
 - Equipo/etiqueta operativa: **Fila 4**.
-- Últimos datos técnicos documentados: RDC Device ID `d0bbb2a3-d7b4-45e1-8870-652c2c3844fc`; sesión interactiva `CENTRAL\\fila4`, SessionId 4. El operador confirma que este corresponde a la única sesión RDC disponible; no se ejecutó una lectura viva en este ciclo.
-- Confirmar en vivo dispositivo, hostname, sesión, usuario/SID efectivo, `$env:USERPROFILE`, privilegios y permisos antes de cualquier escritura local. No ejecutar materialización bajo `CENTRAL\\MantenimientoRCI` como sustituto del perfil propietario.
+- Última referencia operativa: Fila 4 es el alias funcional designado por el operador; el operador reportó que corresponde al único destino RDC disponible. No se conservan Device ID, hostname, cuenta ni identificador de sesión.
+- Antes de cualquier escritura local, confirmar en vivo que la conexión corresponde al alias funcional Fila 4, el perfil efectivo, privilegios y permisos. No ejecutar materialización desde el perfil administrativo de mantenimiento como sustituto del perfil propietario.
 - Ubicación EP física de Fila 4: **PENDIENTE_DE_VERIFICACIÓN**. La identidad de terminal no determina CECEQ/LOC-OTHER. Clasificar la ubicación separadamente en el preflight.
-- Destino de checkout bajo el perfil interactivo: `%USERPROFILE%\\Desktop\\SeryMente\\Repositorios\\Metodologia\\metodologia\\`. No reutilizar como destino el staging de PC-14 ni la materialización parcial histórica de PC 7.
+- Destino de checkout bajo el perfil operativo: `%USERPROFILE%\\Desktop\\SeryMente\\Repositorios\\Metodologia\\metodologia\\`. No reutilizar como destino el staging de PC-14 ni la materialización parcial histórica de PC 7.
 - Destino del programa: `frentes/mcp-metodologia/instalacion-local/` relativo al checkout anterior. Los datos/DB/DPAPI/fuentes sensibles/logs/backups permanecen fuera del checkout, en `%USERPROFILE%\\Desktop\\SeryMente\\Datos\\Metodologia\\MCP-OCP\\` sobre el workspace protegido.
 
 ### Preflight y protección
@@ -317,7 +317,7 @@ EP-TASK-003 prepara Fila 4 en paralelo al desarrollo MCP remoto. El primer uso d
 
 ### Alcance exacto del desbloqueo
 
-1. **Identidad viva:** confirmar que la sesión activa corresponde a Fila 4; cotejar dispositivo RDC `d0bbb2a3-d7b4-45e1-8870-652c2c3844fc`, sesión `CENTRAL\\fila4`/SessionId 4, hostname, usuario/SID, USERPROFILE, privilegios y permisos. Los valores citados son la última identidad documentada, no un preflight actual. No pedir otra selección del destino y no usar PC 7, PC-14 ni `CENTRAL\\MantenimientoRCI` como sustitutos.
+1. **Identidad viva:** confirmar que la conexión activa corresponde al alias funcional Fila 4, verificar perfil efectivo, privilegios y permisos sin conservar IDs, hostname, SID ni SessionId de RDC. No pedir otra selección del destino y no usar PC 7, PC-14 ni el perfil de mantenimiento como sustitutos.
 2. **Ubicación:** observar y registrar la ubicación física real por separado de la etiqueta Fila 4. No inferir CECEQ/LOC-OTHER. En CECEQ, conservar el workspace cifrado al cierre; fuera de CECEQ, dead-man específico obligatorio antes de runtime persistente.
 3. **Volumen protegido:** verificar en vivo volumen de trabajo XTS-AES256, BitLocker `Protection On`, `FullyEncrypted/100 %`, protector recuperable bajo EP Vault y lectura de vuelta. La observación histórica de Fila 4 (`XtsAes128`, `ProtectionStatus=Off`) no cumple el gate.
 4. **Checkout:** materializar/sincronizar íntegramente `SeryMente/metodologia` desde `main` en `%USERPROFILE%\\Desktop\\SeryMente\\Repositorios\\Metodologia\\metodologia\\`; verificar origen, branch, HEAD, status, árbol, permisos y manifiestos SHA-256. No sobrescribir cambios locales ajenos ni heredar staging/volúmenes/DPAPI/RecoveryPassword de otros hosts.
@@ -343,11 +343,11 @@ Esta actualización cambia la prioridad y hace explícitas las dependencias; no 
 
 ### Resultado observado
 
-- Hostname: PC10RCIF4EI4.
-- Usuario/perfil: CENTRAL\fila4 / C:\Users\fila4.
-- Sesión activa: console, ID 1. El Session ID 4 documentado antes es histórico y no coincide con la observación actual.
-- Device ID RDC que corresponde al token CENTRAL\fila4: 99383b36-cc22-4457-952f-8799cccac0a7. La ubicación física sigue sin clasificar; el perfil de red DomainAuthenticated central.gob.mx no permite inferir CECEQ.
-- El usuario Fila 4 no está elevado. Una conexión administrativa separada del mismo host, CENTRAL\MantenimientoRCI, se utilizó únicamente para lectura de BitLocker.
+- Alias operativo: Fila 4. Hostname y Device ID de RDC omitidos conforme a DUG ART-013.
+- Perfil operativo: sesión de trabajo designada para Fila 4; la cuenta y la ruta concreta del perfil no se persisten.
+- Sesión: activa en la observación original; el nombre y el identificador efímero no se persisten.
+- Identidad técnica de RDC: no se persisten Device ID ni correlaciones efímeras; el alias funcional Fila 4 basta para continuidad.
+- Privilegios: el perfil operativo Fila 4 no estaba elevado. Se utilizó un contexto administrativo separado del mismo host únicamente para la lectura de BitLocker; no se materializaron archivos bajo ese perfil.
 - C: aparece 100 % cifrado de espacio usado, pero con XTS-AES 128, Protection Off y sin protectores. **No satisface el gate** XTS-AES256 + Protection On + 100 % + protector recuperable/read-back.
 - Workspace existente: 2,468 archivos, 545 directorios, 127,996,970 bytes. No se modificó ni sobrescribió.
 - Checkout de Metodología existente: solo contiene frentes\ en la raíz; no existe .git. Es materialización parcial, no clon íntegro.
@@ -370,7 +370,7 @@ No se ejecutó configuración de BitLocker, modificación de ACL, VHDX, dead-man
 5. Resolver el dead-man exclusivamente si la ubicación real es distinta de CECEQ.
 6. Mantener EP-TASK-005 pendiente hasta que EP-TASK-003 pase y MCP-OCP entregue paquete P004 con manifest/SHA y pruebas.
 
-**Evidencia:** EP-FILA4-PREFLIGHT-PARCIAL-20261110.json en evidencias/, main commit 84cc9ffc1a2aa27c622c7e5de147d7460f3b5ecd, blob 8ebf0c2b54efc6d3fe597adfe0f9358e65e6acbe, read-back exacto.
+**Evidencia saneada:** EP-FILA4-PREFLIGHT-PARCIAL-20261110.json; commit `2ac3dc5ad2970e71b15a21e33d0740e001c2b183`, blob `9bf9cc7edee2e8a0f483d7191e28b37b1e03e3e5`, read-back exacto. La revisión redacted conforme a DUG v388/ART-013 sustituye el recibo inicial.
 
 **Estado de la tarea:** continúa en_curso; no se marca PASS ni se cierra.
 
