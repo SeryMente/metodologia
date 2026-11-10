@@ -4,7 +4,7 @@
 
 - **Nombre canónico vigente:** MCP-OCP (anteriormente MCP-METODOLOGIA).
 - **Identidad canónica vigente:** MCP-OCP. **Identidad histórica:** MCP-METODOLOGIA.
-- **Versión/sello:** MCP-OCP-v0.1.31 · relectura CI posterior al restablecimiento del estado oficial; Sink local por stdio autorizado; contrato DUG v388/NX-388m; piloto P004 pendiente; bootstrap del perfil persistente pendiente. Las generaciones y folios de sesiones anteriores son metadatos de auditoría.
+- **Versión/sello:** MCP-OCP-v0.1.32 · relectura CI posterior al restablecimiento del estado oficial; Sink local por stdio autorizado; contrato DUG v388/NX-388m; piloto P004 pendiente; bootstrap del perfil persistente pendiente. Las generaciones y folios de sesiones anteriores son metadatos de auditoría.
 - **Repositorio propietario:** SeryMente/metodologia, rama main.
 - **OCP canónico:** frentes/mcp-metodologia/.
 - **Núcleo operativo único:** este archivo, MCP-METODOLOGIA.md.
@@ -739,3 +739,16 @@ La página oficial registra que el incidente de Actions/Pull Requests del 2026-1
 - Como los intentos ocurrieron más de dos horas después de la recuperación declarada, la incidencia previa no demuestra la causa de estos fallos. No se puede afirmar ni fallo de compilación ni PASS del código: los steps no están disponibles y no existe artifact.
 - No hacer reintentos ciegos. Reabrir validación cuando pueda obtenerse diagnóstico real de runner/job o un entorno .NET 10.0.403 que produzca logs/resultados observables.
 - Este asiento corrige cualquier interpretación previa que atribuyera los fallos a la incidencia del estado de GitHub; la causa permanece NO VERIFICADA.
+
+
+## 23. Continuidad conversacional y repetición de ciclo · 2026-11-10
+
+- Se conserva el último intercambio visible y la salida del modelo literalmente en [CONTINUIDAD-2026-11-10-ULTIMO-TRAMO.md](conversaciones/CONTINUIDAD-2026-11-10-ULTIMO-TRAMO.md). Es captura del tramo proporcionado en conversación, no export nativo.
+- Relectura de repositorio: `main=11a3317a10404ed3eaa853f3718ebeecbb161e56`; rama `feat/mcp-ocp-sink-p004-main-a34c1c5b`; HEAD anterior a este asiento `e2ea3fa51cf48d16f4a6c887d25e1f4d56782528`; PR #27 OPEN/DRAFT/NOT MERGED.
+- Compare `main...rama`: 3 commits ahead / 7 behind, merge-base `a34c1c5b43edbcbaf015056f4dc892f5def29eea`. Los siete commits posteriores de main modifican cuatro rutas EP exclusivamente; no hay solapamiento de rutas con el diff MCP-OCP. No se actualizó ni fusionó la rama en este ciclo.
+- El DUG actual leído permanece Samantha v388/NX-388m, commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`, blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`. Control generación 5, blob `826d7bd3f67bddf4f31bafee5013d1ea55003cf4`, sin modificaciones.
+- CI repetida para el HEAD anterior: runs `42893018661`, `42893018727`, `42893018714`; jobs `130098763815`, `130098763244`, `130098763283`. Los tres devolvieron steps vacíos, logs no disponibles (`BlobNotFound`) y cero artefactos. Causa raíz NO VERIFICADA; build/tests/smoke no acreditados.
+- Estado reconciliado: MCP-OCP-02 tiene rama y portabilidad publicadas, con actualización pendiente frente al main posterior; MCP-OCP-05 candidato escrito sin build; MCP-OCP-03 tiene 41 pruebas escritas y cero ejecutadas; MCP-OCP-04 tiene harness/workflow publicado y smoke no verificado. EP-TASK-003 sigue PARTIAL_FAIL y EP-TASK-005 PENDING; E2E IPZ sigue pendiente.
+- La afirmación literal anterior de que aún faltaba crear la rama queda como antecedente, no como estado actual. El bloqueo vigente está en la reconciliación con main, CI no observable, build/pruebas y compuertas EP/E2E.
+- Siguiente acción: alinear la rama con los siete commits EP-only de main sin cambiar el alcance MCP; después obtener build, 41 pruebas y smoke STDIO/EOF con evidencia recuperable. No hacer reintentos ciegos.
+
