@@ -156,9 +156,9 @@ try
     {
         var monitorEvents = new List<MonitorEvent>();
         var server = new McpServer(reader, onMonitorEvent: monitorEvents.Add);
-        string input = Rpc("initialize", 1, new { protocolVersion = "2025-11-25", capabilities = new { }, clientInfo = new { name = "pilot-test", version = "1.0.0" } }) + "\\n" +
-            InitializedNotification() + "\\n" +
-            Rpc("tools/call", 2, new { name = "sink_principle", arguments = new { principle_id = "P004" } }) + "\\n";
+        string input = Rpc("initialize", 1, new { protocolVersion = "2025-11-25", capabilities = new { }, clientInfo = new { name = "pilot-test", version = "1.0.0" } }) + "\n" +
+            InitializedNotification() + "\n" +
+            Rpc("tools/call", 2, new { name = "sink_principle", arguments = new { principle_id = "P004" } }) + "\n";
         using var output = new StringWriter();
         await server.RunAsync(new StringReader(input), output, CancellationToken.None);
         runner.Equal(true, monitorEvents.Any(x => x.EventType == "MCP_INITIALIZED"));
@@ -174,9 +174,9 @@ try
         var missingReader = new DugSourceReader(Path.Combine(root, "missing-monitor"), pin);
         var monitorEvents = new List<MonitorEvent>();
         var server = new McpServer(missingReader, onMonitorEvent: monitorEvents.Add);
-        string input = Rpc("initialize", 1, new { protocolVersion = "2025-11-25", capabilities = new { }, clientInfo = new { name = "pilot-test", version = "1.0.0" } }) + "\\n" +
-            InitializedNotification() + "\\n" +
-            Rpc("tools/call", 2, new { name = "sink_principle", arguments = new { principle_id = "P004" } }) + "\\n";
+        string input = Rpc("initialize", 1, new { protocolVersion = "2025-11-25", capabilities = new { }, clientInfo = new { name = "pilot-test", version = "1.0.0" } }) + "\n" +
+            InitializedNotification() + "\n" +
+            Rpc("tools/call", 2, new { name = "sink_principle", arguments = new { principle_id = "P004" } }) + "\n";
         using var output = new StringWriter();
         await server.RunAsync(new StringReader(input), output, CancellationToken.None);
         runner.Equal(true, monitorEvents.Any(x => x.EventType == "TOOL_FAILED" && x.ReasonCode == "SOURCE_NOT_VERIFIED"));
