@@ -95,13 +95,13 @@ try
     {
         int events = 0;
         var server = new McpServer(reader, _ => events++);
-        string input = Rpc("initialize", 1, new { protocolVersion = "2025-11-25", capabilities = new { }, clientInfo = new { name = "pilot-test", version = "1.0.0" } }) + "\n" +
-            Rpc("tools/list", 2, new { }) + "\n" +
-            Rpc("tools/call", 3, new { name = "sink_principle", arguments = new { principle_id = "P005" } }) + "\n" +
-            ;
+        string input = Rpc("initialize", 1, new { protocolVersion = "2025-11-25", capabilities = new { }, clientInfo = new { name = "pilot-test", version = "1.0.0" } }) + "\\n" +
+            InitializedNotification() + "\\n" +
+            Rpc("tools/list", 2, new { }) + "\\n" +
+            Rpc("tools/call", 3, new { name = "sink_principle", arguments = new { principle_id = "P005" } }) + "\\n";
         using var output = new StringWriter();
         await server.RunAsync(new StringReader(input), output, CancellationToken.None);
-        string[] lines = output.ToString().Split('\n', StringSplitOptions.RemoveEmptyEntries);
+        string[] lines = output.ToString().Split('\\n', StringSplitOptions.RemoveEmptyEntries);
         runner.Equal(3, lines.Length);
         using JsonDocument call = JsonDocument.Parse(lines[2]);
         runner.Equal(true, call.RootElement.GetProperty("result").GetProperty("isError").GetBoolean());
@@ -112,14 +112,14 @@ try
     {
         var events = new List<SinkSuccessEvent>();
         var server = new McpServer(reader, events.Add);
-        string input = Rpc("initialize", 1, new { protocolVersion = "2025-11-25", capabilities = new { }, clientInfo = new { name = "pilot-test", version = "1.0.0" } }) + "\n" +
-            Rpc("tools/list", 2, new { }) + "\n" +
-            Rpc("tools/call", 3, new { name = "sink_principle", arguments = new { principle_id = "P004" } }) + "\n" +
-            ;
+        string input = Rpc("initialize", 1, new { protocolVersion = "2025-11-25", capabilities = new { }, clientInfo = new { name = "pilot-test", version = "1.0.0" } }) + "\\n" +
+            InitializedNotification() + "\\n" +
+            Rpc("tools/list", 2, new { }) + "\\n" +
+            Rpc("tools/call", 3, new { name = "sink_principle", arguments = new { principle_id = "P004" } }) + "\\n";
         using var output = new StringWriter();
         await server.RunAsync(new StringReader(input), output, CancellationToken.None);
-        string[] lines = output.ToString().Split('\n', StringSplitOptions.RemoveEmptyEntries);
-        runner.Equal(4, lines.Length);
+        string[] lines = output.ToString().Split('\\n', StringSplitOptions.RemoveEmptyEntries);
+        runner.Equal(3, lines.Length);
         using JsonDocument init = JsonDocument.Parse(lines[0]);
         runner.Equal("2025-11-25", init.RootElement.GetProperty("result").GetProperty("protocolVersion").GetString());
         using JsonDocument list = JsonDocument.Parse(lines[1]);
@@ -140,10 +140,13 @@ try
         var missingReader = new DugSourceReader(Path.Combine(root, "missing"), pin);
         int events = 0;
         var server = new McpServer(missingReader, _ => events++);
-        string input = Rpc("tools/call", 1, new { name = "sink_principle", arguments = new { principle_id = "P004" } }) + "\n";
+        string input = Rpc("initialize", 1, new { protocolVersion = "2025-11-25", capabilities = new { }, clientInfo = new { name = "pilot-test", version = "1.0.0" } }) + "\\n" +
+            InitializedNotification() + "\\n" +
+            Rpc("tools/call", 2, new { name = "sink_principle", arguments = new { principle_id = "P004" } }) + "\\n";
         using var output = new StringWriter();
         await server.RunAsync(new StringReader(input), output, CancellationToken.None);
-        using JsonDocument response = JsonDocument.Parse(output.ToString());
+        string[] lines = output.ToString().Split('\\n', StringSplitOptions.RemoveEmptyEntries);
+        using JsonDocument response = JsonDocument.Parse(lines[1]);
         runner.Equal(true, response.RootElement.GetProperty("result").GetProperty("isError").GetBoolean());
         runner.Equal(0, events);
     });
@@ -157,6 +160,9 @@ return runner.Finish();
 
 static string Rpc(string method, int id, object parameters) =>
     JsonSerializer.Serialize(new { jsonrpc = "2.0", id, method, @params = parameters });
+
+static string InitializedNotification() =>
+    "{\\"jsonrpc\\":\\"2.0\\",\\"method\\":\\"notifications/initialized\\"}";
 
 static string FixtureHtml(string version = "v387", string? normativeText = null)
 {
