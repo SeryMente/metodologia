@@ -151,21 +151,22 @@ try
         runner.Equal("SINK_READ_SUCCESS", events[0].EventType);
     });
 
-    runner.Test("shutdown request and exit notification close process", async () =>
+    runner.Test("shutdown method is not defined and stdin EOF terminates process", async () =>
     {
         var server = new McpServer(reader);
         string input = Rpc("initialize", 1, new { protocolVersion = "2025-11-25", capabilities = new { }, clientInfo = new { name = "pilot-test", version = "1.0.0" } }) + "\n" +
             InitializedNotification() + "\n" +
             Rpc("shutdown", 2, new { }) + "\n" +
-            "{\"jsonrpc\":\"2.0\",\"method\":\"exit\"}\n" +
             Rpc("ping", 3, new { }) + "\n";
         using var output = new StringWriter();
         await server.RunAsync(new StringReader(input), output, CancellationToken.None);
         string[] lines = output.ToString().Split('\n', StringSplitOptions.RemoveEmptyEntries);
-        runner.Equal(2, lines.Length);
-        using JsonDocument shutdown = JsonDocument.Parse(lines[1]);
-        runner.Equal(2, shutdown.RootElement.GetProperty("id").GetInt32());
-        runner.Equal(true, shutdown.RootElement.TryGetProperty("result", out _));
+        runner.Equal(4, lines.Length);
+        using JsonDocument unsupported = JsonDocument.Parse(lines[2]);
+        runner.Equal(-32601, unsupported.RootElement.GetProperty("error").GetProperty("code").GetInt32());
+        using JsonDocument ping = JsonDocument.Parse(lines[3]);
+        runner.Equal(3, ping.RootElement.GetProperty("id").GetInt32());
+        runner.Equal(true, ping.RootElement.TryGetProperty("result", out _));
     });
 
     runner.Test("source failure emits no success event", async () =>
