@@ -4,7 +4,7 @@
 **Contenedor:** `frentes/ep/📁 🧭 - Tareas provisionales/`  
 **OCP padre y fuente de contexto:** `frentes/ep/OEP.md`  
 **Evento de creación:** instrucción directa del operador en esta conversación · 2026-10-31.  
-**Fuente normativa consultada:** DUG Samantha v386 · NX-386m · Metacanon 1.29 · GOW 2.18, en `main`.
+**Fuente normativa consultada:** DUG Samantha v387 · NX-387m · Metacanon 1.29 · GOW 2.18, en `main`; blob `c8d37d92aed7ff9d4fe94e7a9541e76ba5c88a2c`.
 
 ## Naturaleza y límites
 
@@ -19,11 +19,11 @@ El patrón de materialización sigue el registro de tareas provisionales de Gobe
 | ID local | Estado | Tarea | Núcleo |
 |---|---|---|---|
 | EP-TASK-001 | pendiente | NCL — Navegador Compartido Local: integración de Playwright y KeePassXC | [núcleo](./📁%20🧩%20-%20EP-TASK-001%20-%20Integración%20NCL/README.md) |
-| EP-TASK-002 | en_curso | Datos de usuario OCP en Backblaze B2; separación GitHub/B2 y recuperación por perfil | [núcleo](./📁%20🧩%20-%20EP-TASK-002%20-%20Persistencia%20provisional%20Backblaze/README.md) |
+| EP-TASK-002 | `en_curso` | Persistencia B2 EP: pareja Master dedicada migrada a EP Vault y read-back verificado; autenticación B2 y respaldo remoto actual pendientes | [núcleo](./📁%20🧩%20-%20EP-TASK-002%20-%20Persistencia%20provisional%20Backblaze/README.md) |
 | EP-TASK-003 | en_curso | Workspace protegido y dead-man condicional a la ubicación; destino MCP-OCP Fila 4 | [núcleo](./📁%20🧩%20-%20EP-TASK-003%20-%20Mapa%20integral%20de%20construcción%20EP/README.md) |
-| EP-TASK-004 | en_curso | Reconstrucción integral de la bóveda EP: UI nueva desde cero, mecanismos, sesión configurable y acceso CLI/headless | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-004%20-%20Reconstrucci%C3%B3n%20de%20b%C3%B3veda/README.md) |
+| EP-TASK-004 | `en_curso` | Bóveda EP: pareja Master EP promovida desde notas efímeras y verificada; H10 y aceptación integral pendientes | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-004%20-%20Reconstrucci%C3%B3n%20de%20b%C3%B3veda/README.md) |
 | EP-TASK-005 | pendiente | Piloto SINK:P004/IPZ prioritario y posterior instalación/aceptación MCP-OCP 1.0.0 en Fila 4 | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-005%20-%20Instalaci%C3%B3n%20y%20aceptaci%C3%B3n%20de%20MCP-OCP%20local/README.md) |
-| EP-TASK-006 | en_curso | Inventario y centralización de variables de entorno de todos los proyectos mediante EP Vault | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-006%20-%20Centralizaci%C3%B3n%20de%20variables%20de%20entorno/README.md) |
+| EP-TASK-006 | `en_curso` | Centralización: nombres Master B2 EP normalizados y leídos de vuelta; cobertura mult proveedor sigue incompleta | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-006%20-%20Centralizaci%C3%B3n%20de%20variables%20de%20entorno/README.md) |
 
 ## Estado de continuidad · 2026-10-31
 
@@ -116,10 +116,10 @@ Se revisó el diseño histórico de KHORA OEP §28–§30 y sus módulos asociad
 | ID | Estado | Evidencia/alcance al 2026-11-09 | Siguiente dependencia material |
 |---|---|---|---|
 | EP-TASK-001 | `pendiente` | NCL continúa sin activación ni nueva ejecución. No cambió por la instrucción del workspace. | Esperar la condición de activación vigente o instrucción expresa del operador. |
-| EP-TASK-002 | `en_curso` | Prueba B2 sintética histórica conserva PASS; no demuestra sincronización automatizada, observabilidad real ni restore actual. Se añadió contrato local-first/cola B2 y separación estricta GitHub (código) / B2 (datos de usuario elegibles). | Inventario de datasets, clasificación y retención; credenciales locales disponibles por bóveda segura; automatizar cola, subida, read-back y restore. |
+| EP-TASK-002 | `en_curso` | Persistencia B2 EP: pareja Master dedicada migrada a EP Vault y read-back verificado; autenticación B2 y respaldo remoto actual pendientes | [núcleo](./📁%20🧩%20-%20EP-TASK-002%20-%20Persistencia%20provisional%20Backblaze/README.md) |
 | EP-TASK-003 | `en_curso` | Root `Desktop\SeryMente` creado en PC-14 por RDC; 11 scaffolds vacíos y `WORKSPACE-STATUS.md` verificado. Excepción provisional en claro autorizada solo para código/documentación no sensible. | Clones reales y clasificación de frentes; autorización de autenticación GitHub local; migración posterior a VHDX + BitLocker XTS-AES256, protección activa/100 %; dead-man LOC-OTHER. |
-| EP-TASK-004 | `en_curso` | Core/CLI/GUI y pruebas tienen avances históricos; UI premium rechazada; recurso de acero negro generado localmente en Fila 4 pero todavía no integrado. La bóveda queda en metodología y no es extensión Chrome. | Aceptar la bóveda canónica y su flujo local; después crear/activar VHDX con la misma contraseña y protector de recuperación. Cerrar H3–H10 con evidencia y aceptación. |
-| EP-TASK-006 | `en_curso` | Vercel: 1 proyecto, 50 registros y 46 nombres únicos; GitHub Actions: 22 secretos referenciados en 7 workflows; Render: 2 servicios. EP Vault: 18 nombres, nueve variables Render con read-back, una nota EP todavía DPAPI; ciphertext local SHA registrado en el núcleo. | Completar inventario externo, obtener secretos pendientes, validar pareja B2 EP e implementar adaptadores Vault → destinos con read-back. |
+| EP-TASK-004 | `en_curso` | Bóveda EP: pareja Master EP promovida desde notas efímeras y verificada; H10 y aceptación integral pendientes | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-004%20-%20Reconstrucci%C3%B3n%20de%20b%C3%B3veda/README.md) |
+| EP-TASK-006 | `en_curso` | Centralización: nombres Master B2 EP normalizados y leídos de vuelta; cobertura mult proveedor sigue incompleta | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-006%20-%20Centralizaci%C3%B3n%20de%20variables%20de%20entorno/README.md) |
 
 **Regla de estado:** no promover tareas a `completada` por documentación, diseño aprobado, pruebas sintéticas parciales o archivos instalados. Los hitos internos sí mantienen sus estados parciales/completados dentro de cada núcleo. El índice resume identidad y estado; el detalle y la crónica permanecen en el README individual.
 
@@ -157,9 +157,9 @@ EP-TASK-003 sigue `en_curso`; la excepción no sustituye la migración posterior
 | Tarea | Estado provisional | Reconciliación sustentada | Siguiente acción |
 |---|---|---|---|
 | EP-TASK-001 | `pendiente` | Sin novedad ni ejecución nueva; se conserva intacta. | Mantener en espera hasta que se cumpla su condición de activación o el operador cambie expresamente el orden. |
-| EP-TASK-002 | `en_curso` | Sin nueva autenticación, operación B2, carga, read-back ni restauración en este ciclo. La prueba sintética histórica no acredita operación productiva. | Reanudar inventario de datasets y políticas y, con la autorización/credenciales locales correspondientes, implementar y probar cola, upload, read-back y restore. |
+| EP-TASK-002 | `en_curso` | Persistencia B2 EP: pareja Master dedicada migrada a EP Vault y read-back verificado; autenticación B2 y respaldo remoto actual pendientes | [núcleo](./📁%20🧩%20-%20EP-TASK-002%20-%20Persistencia%20provisional%20Backblaze/README.md) |
 | EP-TASK-003 | `en_curso` | W: está protegido con XTS-AES256, `Protection On`, `FullyEncrypted`, 100 %. El nuevo RecoveryPassword está bajo `EP_WORKSPACE_BITLOCKER_RECOVERY_PASSWORD` en EP Vault con `VAULT_WRITE_READBACK_VERIFIED`; el protector anterior potencialmente expuesto fue retirado y el portapapeles se limpió/verificó. Los 195 archivos/11 directorios permanecen en `Desktop\SeryMente`; no existe copia/hash verificado en W: ni cambio del punto de montaje. RDC informó 0 % de cuota disponible. El dead-man `LOC-OTHER` sigue sin implementar/activar. | Cuando RDC permita operaciones, inventariar origen/destino, copiar, cotejar rutas/tamaños/SHA-256, cambiar el montaje solo tras PASS y eliminar staging únicamente tras segundo read-back íntegro. Después abordar el dead-man según OEP. |
-| EP-TASK-004 | `en_curso` | Implementación WPF 3D en rama `feat/ep-vault-clean-room-20261108`; PR #20 sigue draft/abierta/no fusionada. Suite sintética PASS no equivale a aceptación. H3/H4/H10, revisión visual/auditiva humana, DPI, teclado y movimiento reducido siguen pendientes. | Completar revisión E2E/aceptación humana y cerrar hitos solo con evidencia; integrar por el flujo de PR aprobado. |
+| EP-TASK-004 | `en_curso` | Bóveda EP: pareja Master EP promovida desde notas efímeras y verificada; H10 y aceptación integral pendientes | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-004%20-%20Reconstrucci%C3%B3n%20de%20b%C3%B3veda/README.md) |
 
 **Corrección importante:** la custodia del protector de recuperación ya no es un bloqueo. El bloqueo actual de EP-TASK-003 es operativo: RDC agotó la cuota de llamadas antes de ejecutar la migración. No se intentó eludir ese límite por un canal alternativo. La copia original sigue intacta.
 
@@ -203,3 +203,25 @@ El operador sustituyó PC 7 por **Fila 4**, correspondiente a la única sesión 
 
 No se ejecutó preflight, materialización, login, instalación ni piloto por esta actualización documental.
 
+
+
+---
+
+## Corte documental y reconciliación B2 EP · 2026-11-10 · 10:12 America/Mexico_City
+
+**DUG vigente consultado:** v387 · NX-387m; GOW 2.18; fuente `SeryMente/metodologia/main`.  
+**Instrucción atendida:** actualizar los objetos provisionales afectados por la rectificación explícita de titularidad y por el resultado efectivo de la promoción de las dos notas Master de EP.
+
+| Tarea | Estado | Cambio sustentado | Pendiente material |
+|---|---|---|---|
+| EP-TASK-002 | `en_curso` | Procedencia EP confirmada; pareja Master EP promovida y read-back verificado; alias EP obsoleto retirado; namespaces Cora/Khora no mezclados. | Autenticación B2 posterior a migración; bucket, upload, download y hash remoto. |
+| EP-TASK-004 | `en_curso` | Bóveda actualizada; dos notas retiradas tras read-back; ciphertext 2.156 bytes y SHA-256 asentados. | H10, aceptación integral de bóveda y E2E; no equiparar migración de secretos con aceptación del producto. |
+| EP-TASK-006 | `en_curso` | Pareja Master de EP centralizada en los nombres canónicos; configuración de destino preservada y alias antiguo retirado. | Centralización y adaptadores para el resto de proyectos/proveedores. |
+
+**Control de titularidad:** las dos notas pertenecían, por confirmación expresa del operador, a la cuenta Backblaze dedicada de EP. Cora conserva cuenta/credenciales independientes; las variables `KHORA_B2_*` se preservaron y no se modificaron.
+
+**Evidencia de dispositivo:** `ep-b2-master-key-migration.json` (`MIGRATION_AND_READBACK_VERIFIED`, 2026-11-10T16:01:06Z) y `ep-b2-final-verification.json` (read-back final 2026-11-10T16:12:43Z). Ambos reportan que los valores no se emitieron. Ciphertext: 2.156 bytes; SHA-256 `F41FE765BCD30787C880C9105E3F6B3C4F6D00D67BA7AEAF70E55F3E7A96514C`.
+
+**Límite:** no se ejecutó autenticación B2 posterior a la migración ni upload/download remoto; la persistencia del snapshot actual no queda declarada. El readiness `bucketAuthorized=False` es anterior a la migración y no sustituye una comprobación nueva.
+
+**Lectura/cierre documental:** los núcleos individuales y este índice deben leerse de vuelta después de persistir en `main`; el asiento DTC registra el cierre y los commits/blob SHA de la escritura. No se crea folio global ni tarea nueva. EP-TASK-001, EP-TASK-003 y EP-TASK-005 conservan su estado.
