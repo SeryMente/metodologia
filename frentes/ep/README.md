@@ -6,7 +6,7 @@
 
 - [Persistencia DTC EP/MCP-OCP](OEP.md#95-persistencia-dtc-integrada-epmetodologia-y-continuidad-mcp-ocp--v0325--vcu-ep-v27): continuidad multiubicación EP/Metodología y estado operativo MCP-OCP, con autoridad técnica propia de MCP-OCP.
 
-- [OEP.md](OEP.md): único estado vivo del frente, v0.3.55.
+- [OEP.md](OEP.md): único estado vivo del frente, v0.3.56; §121 fija P0 del sprint Sink P004 y sus dependencias.
 - [Organización canónica del workspace](OEP.md#119-organización-canónica-del-workspace-local-y-persistencia-por-frente--v0354--2026-11-09): repositorios agrupados por frente, datos/temporales separados y secretos fuera del workspace.
 - [Objeto de coordinación DTC](entregas/COORDINACION-GOBERNANZA-EP-v0.1.md): único registro de comunicación Gobernanza ↔ EP; historial reconciliado en `main`.
 - [Control de responsabilidad EP](CONTROL-RESPONSABILIDAD.json): registro autoritativo de titularidad y generación; generación 3; titularidad transferida por TRANSFER_RESPONSIBILITY el 2026-11-09; un titular activo, evento C-EP-TRANSFER-RESPONSIBILITY-20261109-01.
