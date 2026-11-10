@@ -632,3 +632,14 @@ Los metadatos `applicability`, `activation_conditions`, `mandatory` y `dependenc
 ### 19.4 Estado probado y no probado
 
 Este rebaseline no acredita rama nueva, resolver implementado, pruebas PASS nuevas, fuente privada importada, piloto empaquetado/instalado, IPZ nativa escrita, E2E visible, panel ni release 1.0.0. Cada hito requiere artefacto, commit/blob/hash, evidencia y read-back propios. El bloqueo P0 actual es el pin/branch y el corte P004, no FOL1 ni Backblaze.
+
+## 20. Estado del corte vertical SINK:P004 · cycle05 · 2026-11-10
+
+- **Base:** rama `feat/mcp-ocp-p004-pilot-20261110-cycle05`, creada desde main HEAD `0f933b9e3efae20131da37f99f50f4bc4a4eaf74`; la comparación inicial fue idéntica a main.
+- **Fuente:** Samantha v388/NX-388m; DUG commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`; Git blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`. P004, §ARR, MDP y ART-027 cotejados. El contenido íntegro P004 y sus metadatos no variaron.
+- **Implementación candidata:** lector fail-closed GOW:ARR/DUG, herramienta `sink_principle` limitada a P004, MCP JSON-RPC 2.0 clásico por STDIO, EOF como cierre y evento de éxito a stderr. El payload del principio y el evento serializan con `JsonSerializerDefaults.Web` para mantener camelCase.
+- **Pruebas:** 13 escenarios escritos; fixture sintético con 43 IDs únicos P001–P043 y P004 exacto. No hay resultado PASS de build ni test.
+- **Smoke:** script `piloto-sink/ci/Invoke-PilotValidation.ps1` preparado para compilar servidor/harness, ejecutar las 13 pruebas e iniciar el DLL real por STDIO; verifica initialize, tools/list, tools/call P004, pin v388, hashes, evento y EOF. Workflow `.github/workflows/mcp-ocp-p004-pilot.yml` usa runner Ubuntu, SDK 10.0.403 y artefacto diagnóstico aun en fallo.
+- **CI previo:** cycle04 PR #23 run 23 terminó FAILURE. El conector devolvió el job como completed/failure, pero steps, logs y artifacts están vacíos/no disponibles. No se sabe si el runner inició ni se atribuye causa al código. La siguiente ejecución cycle05 debe dar evidencia nueva.
+- **Estado del gate:** MCP-OCP-02 completado en rama; corte MCP-OCP-05 escrito; MCP-OCP-03/04 preparados y pendientes de ejecución verificable; build, pruebas y smoke NO VERIFICADOS. E2E IPZ → RDC → STDIO queda pendiente de piloto instalado y Fila 4 bajo EP.
+- **Exclusiones:** no instalación EP/Fila 4, fuentes privadas, DB/DPAPI/REGISTER, IPZ nativa, FOL1, panel WPF, paquete 1.0.0, MCP-NORMATIVO ni merge a main.
