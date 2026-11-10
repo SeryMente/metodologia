@@ -2287,3 +2287,21 @@ La ayuda local del B2 CLI verificada bajo identidad propietaria confirma: `accou
 - `REMOTE_PERSISTENCE=PENDING`.
 
 **Única compuerta local pendiente:** desbloquear la GUI mediante su campo de clave maestra y botón nativo. Tras confirmar sesión compartida activa con las cinco variables, ejecutar inmediatamente el wrapper nuevo bajo `CENTRAL\fila4`, dentro de la ventana seleccionada. No pedir ni recibir contraseña por chat.
+
+---
+
+## Reanudación EP · preflight B2 repetido tras lectura de tareas · 2026-11-10 · 15:34 America/Mexico_City
+
+La tarea se mantiene en P0 y la prioridad sigue siendo respaldar primero el ciphertext de EP Vault, no el ZIP del workspace sin cifrado cliente.
+
+**Lectura fresca bajo el token propietario Fila 4, 2026-11-10T21:34:04.8042691Z:**
+- `vaultSessionActive=false`, `remainingSeconds=null`, ciphertext presente de 2.200 bytes.
+- `variableCount=0`; 0/5 nombres requeridos expuestos por la sesión CLI.
+- B2 CLI presente.
+- UI Automation, 2026-11-10T21:34:15.6720072Z, confirmó la ventana EP Vault visible pero `SELLADA`; botón DESBLOQUEAR LA CÁMARA visible.
+
+**Estado de P0-C:** worker y wrapper específicos para ciphertext de Vault siguen preparados y con parser PASS (sus SHA se registraron en el asiento anterior). La sintaxis de B2 CLI para autorización por variables de entorno, upload SSE-B2/AES256, download B2 URI y file info quedó comprobada localmente; no hubo autenticación ni contacto remoto a B2.
+
+`B2_ACCOUNT_AUTH=NOT_EXECUTED` · `BUCKET_OCP_MCP=NOT_CHECKED` · `VAULT_CIPHERTEXT_UPLOAD=NOT_EXECUTED` · `DOWNLOAD_SHA256=NOT_EXECUTED` · `RECEIPT=ABSENT` · `REMOTE_PERSISTENCE=PENDING`.
+
+No se invocó el CLI Run mientras la GUI muestra SELLADA; la única compuerta inmediata es que el operador abra la cámara localmente. No pedir, capturar ni incluir la contraseña maestra en el chat. Cora y KHORA siguen separados y no se utilizaron.
