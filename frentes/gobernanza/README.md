@@ -2,6 +2,13 @@
 - **Original y retoma 10 · C-GOBERNANZA-RETOMA-10 (2026-11-06):** [export original](documentos/originales/ChatGPT-GOBERNANZA-1-20261106-1448.txt) · [crónica](cronica/C-GOBERNANZA-RETOMA-10.md) · [evidencia](evidencias/C-GOBERNANZA-RETOMA-10.json) · [diálogo A/B](conversaciones/C-GOBERNANZA-RETOMA-10-dialogo.jsonl) · [manifiesto](documentos/MANIFIESTO-DOCUMENTAL.json). 85.947 bytes; SHA-256 `8D1454ED1DF63F1BE3A68D1EFF953DE74A37787E472F256D4356BA1F2D550EA2`. Titularidad generación 14; corresponsable generación 12 preservada. `PERSISTIDO_Y_VERIFICADO`; commit `a146c307d750868a3fffc4beedba2941020b8e2c`; blob `3383d4da0104a87615cfab3e698d48c1b790861b`.
 # Frente de trabajo · Gobernanza
 
+## Seguimiento operativo vigente
+
+- **Regla de resumen semivivo:** [contrato del OCP Gobernanza](GOBERNANZA.md#contrato-operativo-resumen-semivivo-por-ciclo-2026-11-10).
+- **Coordinación y resumen de corte:** [GOV-TASK-015](./%F0%9F%93%81%20%F0%9F%A7%AD%20-%20Tareas%20provisionales/%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-015%20-%20Sprint%20Sink%20local%20v%C3%ADa%20RDC/README.md).
+- La vista ejecutiva se actualiza por hitos y no sustituye los reportes individuales de EP, MCP-OCP o Gobernanza.
+
+
 - **Original de conversación 2 persistido · C-GOBERNANZA-ASIENTO-02-RETOMA-20261101-01 (2026-11-01):** [original](documentos/originales/ChatGPT-GOBERNANZA-2-20261101-1655.md) · [crónica](cronica/C-GOBERNANZA-ASIENTO-02-RETOMA-20261101-01.md) · [evidencia](evidencias/C-GOBERNANZA-ASIENTO-02-RETOMA-20261101-01.json) · [manifiesto](documentos/MANIFIESTO-DOCUMENTAL.json). 42.949 bytes; SHA-256 `71172E0F62C10B4A34FE5F04D5520F28F9ACA6C82771DB6882F70E266CDA7AB4`; Git blob `6814f4029891f953dabe91b376254b49dcc1ce47`; read-back byte a byte verificado. Asiento 2 relevado y read-back del control verificado: titular generación 11 preservado; nueva corresponsable `SES-20261101-GV8E89D1FF`, generación 12; dos responsables activos, máximo dos.
 
 ## Antecedentes documentales
