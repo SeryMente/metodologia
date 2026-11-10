@@ -4,7 +4,7 @@
 
 - **Nombre canónico vigente:** MCP-OCP (anteriormente MCP-METODOLOGIA).
 - **Identidad canónica vigente:** MCP-OCP. **Identidad histórica:** MCP-METODOLOGIA.
-- **Versión/sello:** MCP-OCP-v0.1.27 · Sink local por stdio autorizado; candidata anterior 0.1.0 BUILD_AND_TESTED, bootstrap del perfil persistente pendiente. Las generaciones y folios de sesiones anteriores son metadatos de auditoría.
+- **Versión/sello:** MCP-OCP-v0.1.28 · Sink local por stdio autorizado; contrato DUG v388/NX-388m; piloto P004 pendiente; bootstrap del perfil persistente pendiente. Las generaciones y folios de sesiones anteriores son metadatos de auditoría.
 - **Repositorio propietario:** SeryMente/metodologia, rama main.
 - **OCP canónico:** frentes/mcp-metodologia/.
 - **Núcleo operativo único:** este archivo, MCP-METODOLOGIA.md.
@@ -589,7 +589,7 @@ La etiqueta Fila 4 identifica la terminal, no su ubicación física. **Ubicació
 ### 18.3 Camino rápido: piloto SINK:P004 usable desde IPZ
 
 1. MCP-OCP-02 crea una rama nueva desde el HEAD actual de `main`; las ramas históricas solo son fuentes selectivas, no bases de merge.
-2. MCP-OCP-05 realiza primero un corte vertical mínimo: `GOW:ARR` → `DUG` → `SINK:P004`. La respuesta lleva texto desarrollado íntegro, ID/título, DUG v386/NX-386m, commit/blob exactos y SHA-256. La primera implementación no espera a P001–P043 ni al panel.
+2. MCP-OCP-05 realiza primero un corte vertical mínimo: `GOW:ARR` → `DUG` → `SINK:P004`. La respuesta lleva texto desarrollado íntegro, ID/título, DUG v388/NX-388m, commit/blob exactos y SHA-256. La primera implementación no espera a P001–P043 ni al panel.
 3. MCP-OCP-03/04 prueban el contrato mínimo y el recorrido real `initialize` → `tools/list` → `tools/call:SINK:P004` → respuesta con pin/hash → cierre limpio por RDC/STDIO.
 4. Cuando Fila 4 supere los gates de checkout/root protegido, EP-TASK-005 extrae el piloto en `instalacion-local/piloto-sink/` y coteja manifiesto/SHA. GOV-TASK-007 prepara el IPZ compacto `GOW:ARR` → `DUG` → MDP → `SINK:Pxxx`, inicialmente con P004. No modificar las Instrucciones Personalizadas nativas desde esta rectificación; su escritura/read-back es una acción separada y no se afirma ejecutada.
 5. GOV-TASK-003/GOV-TASK-007 y MCP-OCP-04 aceptan el piloto solo cuando el modelo puede usarlo por la vía efectiva: IPZ → RDC autorizado → MCP-OCP STDIO → respuesta visible y trazable. Un smoke JSON-RPC de consola es solo prueba de transporte, no E2E IPZ.
@@ -602,3 +602,33 @@ MCP-OCP-02/05 (corte P004)/03/04 son P0 por el piloto. MCP-OCP-13 baja a P1 de s
 
 **Estado de la rectificación:** decisión documental y secuencia actualizadas; rama, código, pruebas, piloto, preflight Fila 4, importación, instalación IPZ nativa, E2E y release no ejecutados.
 
+
+## 19. Rebaseline urgente del sprint Sink local · DUG v388 · 2026-11-10
+
+**Estado operativo:** EN CURSO · rebaseline documental realizado. Rama limpia, implementación P004, pruebas nuevas, importación de fuentes privadas, instalación y E2E siguen pendientes.
+
+### 19.1 Pin canónico obligatorio
+
+ART-027 fue reconciliado por Gobernanza en Samantha v388/NX-388m. Pin de fuente: commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`; Git Blob SHA `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`. Los pins v386 de las secciones y candidatas anteriores quedan como históricos y no son válidos para compilar/aceptar el nuevo piloto. El contrato vigente es operación local `SINK:Pxxx` por MCP STDIO/RDC; no URL, Worker, Sync HTTP ni Cloudflare. `MOD-SYNC` es distinto de EP y no participa.
+
+### 19.2 Bloqueo P0 y orden de salida
+
+1. **MCP-OCP-02 — CRÍTICO/P0, primera acción:** leer el HEAD actual de `main`, crear rama limpia desde ese commit y reconciliar el core v0.1.28 y código con DUG v388/blob indicado. Construir mapa REUSE/ADAPT/REWRITE/DROP y fijar SDK/RID. No usar ramas divergentes como base ni mergear ramas completas.
+2. **MCP-OCP-05 — P0:** implementar corte vertical `GOW:ARR → DUG → SINK:P004`, devolviendo solo P004 íntegro con ID/título/revisión/firma/commit/blob/SHA-256 y fallo cerrado. Desarrollo del resolver y fixtures sintéticos puede comenzar antes de EP PASS.
+3. **MCP-OCP-03 — P0 paralelo:** preparar y ejecutar pruebas de contrato/errores con fixtures sintéticos, ligadas al commit. Repetir contra DUG importado solo tras EP PASS.
+4. **MCP-OCP-04 — P0:** preparar harness/smoke STDIO/RDC. La prueba E2E desde IPZ requiere piloto instalado y respuesta visible al modelo; JSON-RPC de consola solo acredita transporte.
+5. **EP-TASK-003 — P0 para tramo local:** Fila 4, preflight vivo, checkout íntegro, volumen XTS-AES256/Protection On/100 %, protector recuperable/read-back y root protegido; ubicación física verificada y dead-man solo si resulta distinta de CECEQ. Este gate bloquea importación privada/DB/runtime, no la rama ni el desarrollo remoto no sensible.
+6. **EP-TASK-005 + MCP-OCP-12 — P0 para piloto instalado:** solo después de EP PASS, cotejar SHA/manifest, extraer en `instalacion-local/piloto-sink/`, configurar root protegido e importar fuentes v388. `REGISTER <SID>` exige presencia y consentimiento local.
+7. **GOV-TASK-007/003 — aceptación piloto:** candidato IPZ tras congelar la respuesta P004; demostrar el recorrido IPZ → RDC → STDIO → respuesta visible con pin/hash. Escritura/read-back nativo de IPZ es acto separado. FOL1 no bloquea P004.
+8. **Tras PASS P004:** MCP-OCP-05/03 generalizan P001–P043, lotes, eventos/hash y negativos; Gobernanza ejecuta matriz 43+8.
+9. **Release 1.0.0:** MCP-OCP-13 panel obligatorio pero no bloquea P004; MCP-OCP-10/07 manifiesto/build/ZIP; MCP-OCP-12/08 y EP-TASK-005 instalación/handoff final.
+
+### 19.3 Límites y exclusiones
+
+El preflight Fila 4 no debe usarse como excusa para detener rama, lectura de repositorio, diseño, código no sensible o pruebas con fixtures. Tampoco se adelanta importación de fuentes privadas, generación de DB real, provisión de operador ni runtime persistente. EP-TASK-004 GUI de bóveda y EP-TASK-002/Backblaze no bloquean P004 salvo dependencia técnica demostrada. MCP-OCP-06/11 Jules y MCP-OCP-09 PPR/cross-host quedan fuera del sprint.
+
+Los metadatos `applicability`, `activation_conditions`, `mandatory` y `dependencies` no son requisito de Sink: ART-027 v388 define recuperación trazable de contenido, no selección normativa automática. No inferir esos campos ni activar `MCP-NORMATIVO`, que permanece `DESACTIVADO`.
+
+### 19.4 Estado probado y no probado
+
+Este rebaseline no acredita rama nueva, resolver implementado, pruebas PASS nuevas, fuente privada importada, piloto empaquetado/instalado, IPZ nativa escrita, E2E visible, panel ni release 1.0.0. Cada hito requiere artefacto, commit/blob/hash, evidencia y read-back propios. El bloqueo P0 actual es el pin/branch y el corte P004, no FOL1 ni Backblaze.
