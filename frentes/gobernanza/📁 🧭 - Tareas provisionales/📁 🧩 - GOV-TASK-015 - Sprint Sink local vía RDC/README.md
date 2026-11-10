@@ -408,10 +408,10 @@ El reintento fue aceptado por GitHub, pero volvió a terminar en `FAILURE`: job 
 
 `MonitorReadinessEvaluator` exige que la atestación EP contenga `sessionState=ACTIVE` y `protectionState=Protection On`; Protection Off/UNKNOWN/futuro bloquea. Además coteja proceso RUNNING (PID + hora de inicio), protocolo INITIALIZED, fuentes importadas/VERIFIED/vigentes, operador provisionado, root y readiness del servidor. MCP no sondea BitLocker ni sustituye a EP. 23 tests escritos; 0 ejecutados.
 
-### Revisión de CI y bloqueos de panel · 2026-11-10
+### Revisión de CI y bloqueo de panel · 2026-11-10
 
 - CI MCP-OCP run #78 `42871039884`: el job original `130022076348` y su reintento `130058287914` finalizaron FAILURE sin pasos, logs ni artefactos; la descarga devuelve `BlobNotFound`. En el mismo commit, `validate-canonical-bootstrap` (`42871039938`) y `Validate RDC Governance` (`42871039803`) reprodujeron el fallo sin pasos. No hay evidencia de inicio de build/tests/smoke ni base para atribuir fallo al código.
 - La revisión estática del panel halló que el runtime no actualiza los estados Sources/Operator/Readiness después de crearlos UNKNOWN/bloqueados; la ruta real no puede alcanzar READY aunque la sesión EP y el proceso estén activos. El test positivo usa un snapshot sintético.
-- `MainWindow.StartWatching()` no observa el root padre si `monitor/` todavía no existe. Esto contradice el orden aprobado (EP abre el panel en ACTIVE incluso antes de lanzar el servidor) y puede dejar la UI esperando sin recibir eventos.
-- Se registran como bloqueos de implementación para MCP-OCP-13. Requieren contrato explícito de actualización EP↔MCP y prueba del orden de arranque; EP sigue siendo dueño exclusivo de `session.json`. No se altera su contrato ni se afirma integración.
+- La revisión del watcher contra `PANEL-OBSERVABILIDAD.md` descarta el supuesto defecto: EP debe crear `monitor/session.json` antes de abrir el panel, así que `monitor/` existe cuando se llama `StartWatching()`. La secuencia aprobada permite la suscripción y no exige cambio.
+- Se registra como bloqueo de implementación MCP-OCP-13 la actualización de Sources/Operator/Readiness. Requiere contrato explícito y autorizado EP↔MCP para los estados no sensibles; EP sigue siendo dueño exclusivo de `session.json`. No se altera su contrato ni se afirma integración.
 - Estado de validación: 18 pruebas P004 + 23 monitor/readiness escritas / 0 ejecutadas; build, smoke STDIO, WPF, revisión visual e integración EP no verificados. PR #26 continúa draft y sin merge.
