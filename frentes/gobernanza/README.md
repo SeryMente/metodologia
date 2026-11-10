@@ -87,3 +87,17 @@ DUG v377 · NX-377m · Metacanon 1.28 · GOW 2.17, blob `54064c8fe00f872023a455f
 El ciclo de configuración actual no se usa como línea base. La primera muestra elegible será el primer ciclo sustantivo completo medido desde el inicio; se reunirán al menos diez ciclos comparables antes de fijar una referencia estable. El OCP MCP externo debe incorporar/verificar su propio enlace de retorno; Gobernanza no modifica su control ni su núcleo.
 
 **Registro del evento:** [crónica](cronica/C-GOBERNANZA-OCP-MCP-PERFORMANCE-01.md) · [evidencia](evidencias/C-GOBERNANZA-OCP-MCP-PERFORMANCE-01.json).
+
+---
+
+## Sprint SINK-P004 · coordinación y aceptación · 2026-11-10
+
+**Nombre operativo:** SINK-P004. El primer resultado buscado es la respuesta íntegra `SINK:P004` desde el contexto IPZ real por RDC/STDIO. Coordinador único: [GOV-TASK-015](./📁%20🧭%20-%20Tareas%20provisionales/📁%20🧩%20-%20GOV-TASK-015%20-%20Sprint%20Sink%20local%20vía%20RDC/README.md).
+
+- **DUG:** Samantha v388/NX-388m; ART-027 local STDIO/RDC.
+- **MCP-OCP:** core v0.1.29, backlog v0.10; MCP-OCP-02 sigue abierto porque la rama candidata histórica no parte del main vigente. MCP-OCP-05 implementa P004; MCP-OCP-03/04 avanzan en paralelo con fixtures/harness.
+- **EP:** OEP v0.3.59 §124 deja preparado el relevo de ejecución al propio frente EP. EP-TASK-003 sigue PARTIAL_FAIL y EP-TASK-005 pendiente. No se cambió el control EP generación 3 ni se ejecutó host.
+- **Gobernanza:** GOV-TASK-007 prepara candidato IPZ tras congelar contrato; GOV-TASK-003 acepta el E2E real. FOL1 no bloquea P004 ni se declara activo; IPZ nativa no se declara modificada.
+- **Producto final:** panel WPF obligatorio para MCP-OCP 1.0.0, pero no bloquea P004.
+
+Estado: `SINK_P004=NOT_IMPLEMENTED_NOT_ACCEPTED` · `MCP_NORMATIVO=DESACTIVADO`.
