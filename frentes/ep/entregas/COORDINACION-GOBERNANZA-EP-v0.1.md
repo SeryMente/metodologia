@@ -2361,3 +2361,34 @@ Cada blob fue cotejado con lectura exacta posterior a su escritura. Estos son Gi
 ### Próxima acción
 
 Mantener la ruta crítica sin tiempo muerto: MCP-OCP-02 debe partir del main vigente; MCP-OCP-03/04 y la vertical P004 con fixtures avanzan en paralelo. EP espera únicamente la resolución explícita del diseño de almacenamiento para conservar la ruta Desktop/SeryMente y después completa el gate local. No se eleva este ciclo documental a PASS técnico ni a aceptación IPZ.
+
+---
+
+## Rectificación de relevo · EP retoma ejecución propia; coordinación central SINK-P004 · 2026-11-10
+
+### Instrucción y respuesta
+
+**Instrucción del operador:** Entorno Persistente vuelve a estar disponible. Esta sesión deja de hacerse cargo de la ejecución material de tareas EP y mantiene únicamente la función de centralización del sprint. La próxima acción EP debe ser ejecutada por el propio frente a partir de OEP §124 y de los encargos incorporados en EP-TASK-003/005.
+
+**Respuesta:** recibido. La coordinación del sprint corresponde a GOV-TASK-015; EP conserva la ejecución de almacenamiento, preflight, checkout, protección, importación y bootstrap local. MCP-OCP conserva código, pruebas, build y paquete. Gobernanza conserva DUG/IPZ y aceptación E2E.
+
+### Estado de control y autorización
+
+- No se ejecutó `TRANSFER_RESPONSIBILITY`, ni se cambió titularidad, alias, folio o generación de EP.
+- Control EP generación 3 permanece sin cambios; aceptación explícita del relevo por EP: `PENDING`.
+- Control MCP-OCP generación 5 permanece sin cambios; autorización de código/build/paquete local STDIO en su alcance original.
+- Control Gobernanza generación 17 permanece sin cambios; GOV-TASK-015 centraliza.
+
+### Instrucción persistente al frente EP
+
+EP debe iniciar con lectura viva de solo lectura del estado de Fila 4, verificar VHDX/W:/BitLocker/protectores/workspace/checkout y después presentar al operador el diseño de protección que conserva `%USERPROFILE%\Desktop\SeryMente`. La propuesta de VHDX/BitLocker montada en la ruta original sigue `PROPOSED_NOT_ACCEPTED`; ninguna copia, cifrado, movimiento, renombrado, desmontaje o cambio de punto de montaje se ejecuta antes de aceptación expresa. El detalle y la secuencia están en OEP v0.3.59 §124 y EP-TASK-003/005.
+
+### Coordinación SINK-P004
+
+- MCP-OCP-02 debe crear una rama limpia desde el `main` vigente; la referencia histórica `feat/mcp-ocp-sink-p004-pilot-20261110` no es base válida.
+- MCP-OCP-03/04 continúan con fixtures sintéticos y harness en paralelo; MCP-OCP-05 implementa P004 con fixtures.
+- EP-TASK-003 PASS es gate solo para checkout/root protegido, importación privada, DB real, runtime e instalación.
+- EP-TASK-005 espera EP-TASK-003 PASS y el paquete P004/manifest/SHA + pruebas mínimas.
+- GOV-TASK-007 prepara candidato IPZ tras congelar P004; GOV-TASK-003 acepta el recorrido real visible al modelo.
+
+**Estado:** `CENTRAL_COORDINATION=GOV-TASK-015` · `EP_EXECUTION_OWNER=EP_PENDING_ACK` · `EP_CONTROL_GENERATION=3_UNCHANGED` · `EP_TASK_003=PARTIAL_FAIL` · `EP_TASK_005=PENDING` · `STORAGE_DESIGN=PROPOSED_NOT_ACCEPTED`.
