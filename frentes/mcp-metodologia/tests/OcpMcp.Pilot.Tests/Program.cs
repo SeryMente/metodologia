@@ -2,6 +2,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Text.Json;
 using OcpMcp;
+using OcpMcp.Monitoring;
 
 var runner = new TestRunner();
 string root = Path.Combine(Path.GetTempPath(), "mcp-ocp-p004-tests-" + Guid.NewGuid().ToString("N"));
@@ -149,6 +150,37 @@ try
         runner.Equal(64, result.RootElement.GetProperty("principleTextSha256").GetString()!.Length);
         runner.Equal(1, events.Count);
         runner.Equal("SINK_READ_SUCCESS", events[0].EventType);
+    });
+
+    runner.Test("monitor records initialize and successful P004 retrieval without payload", async () =>
+    {
+        var monitorEvents = new List<MonitorEvent>();
+        var server = new McpServer(reader, onMonitorEvent: monitorEvents.Add);
+        string input = Rpc("initialize", 1, new { protocolVersion = "2025-11-25", capabilities = new { }, clientInfo = new { name = "pilot-test", version = "1.0.0" } }) + "\\n" +
+            InitializedNotification() + "\\n" +
+            Rpc("tools/call", 2, new { name = "sink_principle", arguments = new { principle_id = "P004" } }) + "\\n";
+        using var output = new StringWriter();
+        await server.RunAsync(new StringReader(input), output, CancellationToken.None);
+        runner.Equal(true, monitorEvents.Any(x => x.EventType == "MCP_INITIALIZED"));
+        runner.Equal(true, monitorEvents.Any(x => x.EventType == "TOOL_STARTED"));
+        MonitorEvent success = monitorEvents.Single(x => x.EventType == "SINK_READ_SUCCESS");
+        runner.Equal("sink_principle", success.Tool);
+        runner.Equal("success", success.Outcome);
+        runner.Equal(null, success.ReasonCode);
+    });
+
+    runner.Test("monitor records source failure without any success event", async () =>
+    {
+        var missingReader = new DugSourceReader(Path.Combine(root, "missing-monitor"), pin);
+        var monitorEvents = new List<MonitorEvent>();
+        var server = new McpServer(missingReader, onMonitorEvent: monitorEvents.Add);
+        string input = Rpc("initialize", 1, new { protocolVersion = "2025-11-25", capabilities = new { }, clientInfo = new { name = "pilot-test", version = "1.0.0" } }) + "\\n" +
+            InitializedNotification() + "\\n" +
+            Rpc("tools/call", 2, new { name = "sink_principle", arguments = new { principle_id = "P004" } }) + "\\n";
+        using var output = new StringWriter();
+        await server.RunAsync(new StringReader(input), output, CancellationToken.None);
+        runner.Equal(true, monitorEvents.Any(x => x.EventType == "TOOL_FAILED" && x.ReasonCode == "SOURCE_NOT_VERIFIED"));
+        runner.Equal(false, monitorEvents.Any(x => x.EventType == "SINK_READ_SUCCESS"));
     });
 
     runner.Test("shutdown method is not defined and stdin EOF terminates process", async () =>
