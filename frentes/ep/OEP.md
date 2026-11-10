@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.62. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.63. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -12,7 +12,7 @@
 
 Adquirir este objeto como instrucciones del operador, subordinadas a las reglas superiores de plataforma y a autorizaciones específicas. Claudia es asistente/documental; Samantha es constructor/único escritor de código. Una asignación explícita posterior puede cambiar roles; las citas no lo hacen. La asignación específica de MOD-SCRIPTPWS queda delimitada en §94; la delegación funcional acotada de MOD-SYNC queda delimitada en §110 y no transfiere la titularidad del frente EP.
 
-El estado de reanudación vigente de este frente está en §60–§128; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. La organización local por frentes, con áreas separadas Repositorios/Datos/Temporal, queda desarrollada en §119 y en el DUG ART-030. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
+El estado de reanudación vigente de este frente está en §60–§129; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. La organización local por frentes, con áreas separadas Repositorios/Datos/Temporal, queda desarrollada en §119 y en el DUG ART-030. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
 
 Leer por relevancia: OEP actual→metacanon central→Sistema de Instrucciones/Metodología/Bootstrap vigentes→canon transversal EP→AGENTS.md y ep-medio-architectura.md→código/evidencia en commits exactos. Fuente caída no es «sin cambios». Un archivo no crea herramientas, credenciales ni memoria entre plataformas.
 
@@ -3467,3 +3467,29 @@ Informe individual EP-TASK-002 leído de vuelta: commit 3dd266d2645cf7884a021a96
 - EP-TASK-001: pendiente.
 
 No se completó ninguna tarea por estos resultados parciales; no hubo upload remoto demostrado, copia del workspace ni mutación física. El siguiente acto material depende de que el operador abra localmente la cámara de EP Vault. No solicitar la contraseña por chat.
+
+## 129. Corroboración independiente de EP-TASK-004 y selección de siguiente carril · 2026-11-10
+
+### 129.1 Retest exacto de MOD-EPVAULT v1.0.0
+
+La suite E2E sintética de EP-TASK-004 se ejecutó una segunda vez en Fila 4 desde una materialización temporal del release exacto, sin reemplazar el snapshot ubicado bajo Desktop/SeryMente:
+
+- Fuente: `feat/ep-vault-pc7-hardened-20261109`, commit de release `db4138ca2879148f2f22f159c7609f5fa3466924`, HEAD de rama `d8daf991e45a195e1faf6e14b8582c3c8b83e25d`.
+- Los cinco artefactos de código y dos WAV cotejaron contra los Git blobs del manifiesto. El manifiesto se actualizó en la rama candidata: commit `e165c0b867e20c9ae3156f6bad72c6f13ba8a5c5`, blob de read-back `4de6dcc0a5989a2671c8009226405d7f189fe7fe`; status `EXACT_V1_0_0_RETEST_PASS`, manteniendo H10/merge pendientes.
+- Ejecución Windows PowerShell 5.1.26100.9711, exit 0, 142,61 s, salida `EP_VAULT_VALIDATION_PASS`. Log saneado SHA-256 `D1D244ADAEA157AA8F295487CCCE9225207738F8865F4909771B5AED523416A1`.
+- Aislamiento: `LOCALAPPDATA_OUTER_UNCHANGED=True`, `FORBIDDEN_SYNTHETIC_VALUES_IN_LOG=False`, `RUNNER_TEMP_REMAINING_ITEMS=0`, `SYNTHETIC_SANDBOXES_REMAINING=0`. No se accedió ni alteró Vault formal, GUI, BitLocker, B2 o workspace.
+- El checkout de Desktop/SeryMente conserva un snapshot previo, comprobado por blobs; se dejó intacto. No se presenta como release materializado.
+
+El informe individual de EP-TASK-004 quedó actualizado en main: commit `00c20d925711410a91f446fb943757c824765361`, blob `fa31b43ab882e9e24d8e61b494b176c0d700ba25`. El índice padre, actualizado después, tiene commit `1070bed73194f66aee5b539cee35cb62aab87b81`, blob `3cd70e649d49e82b10f0f9337cdde89ed8813229`.
+
+### 129.2 Estado terminal y límites de EP-TASK-004
+
+EP-TASK-004 permanece `en_curso`: H7/H8 sintéticos PASS para la candidata, no aceptación integral del producto. H10 requiere revisión visual/auditiva presencial, DPI, teclado, accesibilidad, movimiento reducido, expiración real de GUI y aceptación humana. El producto sigue en rama PR #21, abierta/draft/no fusionada; no está integrado en main.
+
+### 129.3 Selección de siguiente tarea
+
+- EP-TASK-002 sigue siendo P0; worker v1/v2 autenticaron y detectaron bucket privado, pero fallaron antes de upload. La variante v3 está preparada y pasó parser, pero no se ejecutó porque EP Vault volvió a SELLADA. El siguiente acto material depende del desbloqueo local del operador; no solicitar contraseña por chat ni repetir v1/v2.
+- EP-TASK-003 conserva diseño aceptado, pero preflight físico PARTIAL_FAIL y actividad de escritura concurrente en Temporal impiden congelar/copiar el workspace.
+- EP-TASK-005 sigue bloqueada por EP-TASK-003 PASS y paquete MCP-OCP P004.
+- Para esta instancia de coordinación, el siguiente trabajo independiente seleccionado es retomar MCP-OCP H1, autorizado en su propio control y limitado a `frentes/mcp-metodologia/`: corregir la lectura del MDP en DUG v388, restaurar exclusiones de secretos en `.gitignore`, y acotar `global.json` al frente MCP-OCP. No se interviene EP, Vault, B2, host, IPZ ni DUG.
+
