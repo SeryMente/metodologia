@@ -2130,3 +2130,34 @@ EP Vault CLI confirmó nueve nombres en el almacén, una nota DPAPI pendiente, s
 ## Checkpoint del ciphertext actualizado antes del respaldo B2 · 2026-11-09
 
 Tras centralizar las variables no secretas disponibles, EP Vault confirmó 18 nombres, una nota DPAPI pendiente, sesión activa, esquema `ep-env-vault/1`, PBKDF2-HMAC-SHA256/600.000 iteraciones y 2.048 bytes. SHA-256 del ciphertext local: `D7AD1D745CAF460E047EAE521C1C403F36E99864BC9CD0604FFC564E390F2F7D`. Esta huella sustituye a la del checkpoint anterior como versión actual del archivo. El original sigue intacto y aún no existe upload, descarga/read-back ni objeto remoto comprobado.
+
+
+---
+
+## Reconciliación de titularidad y credencial Master EP · 2026-11-10 · 10:12 America/Mexico_City
+
+**Rectificación de procedencia confirmada por el operador:** las dos notas efímeras utilizadas para esta migración pertenecían a la cuenta Backblaze dedicada exclusivamente a Entorno Persistente (EP). La nota corta correspondía al Master Application Key ID; la nota larga, al secreto Master Application Key. Esta titularidad no se dedujo de sus longitudes: fue confirmada expresamente por el operador. Cora conserva su propia cuenta y sus credenciales independientes. No se reutilizó ni trasladó ninguna credencial de Cora; tampoco se utilizaron credenciales de Khora.
+
+### Migración efectivamente ejecutada
+
+- Ejecución bajo `CENTRAL\fila4`, completada el `2026-11-10T16:01:06Z`.
+- Variables canónicas resultantes: `EP_B2_MASTER_APPLICATION_KEY_ID` (12 caracteres) y `EP_B2_MASTER_APPLICATION_KEY` (42 caracteres).
+- Ambas promociones quedaron como `PROMOTED_READBACK_VERIFIED_NOTE_REMOVED`: escritura y lectura de vuelta verificadas antes de retirar cada nota.
+- Notas efímeras restantes: 0. `valuesEmitted=False`; ningún valor secreto fue emitido al chat ni a los registros.
+- Alias EP obsoleto retirado: `EP_B2_APPLICATION_KEY_ID`. El registro confirma que no quedan alias B2 EP deprecados.
+- Configuración de destino preservada: `EP_B2_ACCOUNT_EMAIL`, `EP_B2_BUCKET_NAME`, `EP_B2_PREFIX`.
+- Espacio `KHORA_B2_*` preservado, incluidos `KHORA_B2_MASTER_APPLICATION_KEY`, `KHORA_B2_MASTER_APPLICATION_KEY_ID` y `KHORA_B2_PREFLIGHT`.
+
+### Evidencia local de solo metadatos
+
+- `EP/local-state/run-logs/ep-b2-master-key-migration.json`: estado `MIGRATION_AND_READBACK_VERIFIED`; bóveda 2.156 bytes; SHA-256 `F41FE765BCD30787C880C9105E3F6B3C4F6D00D67BA7AEAF70E55F3E7A96514C`.
+- `EP/local-state/run-logs/ep-b2-final-verification.json`: comprobación `2026-11-10T16:12:43Z`; ambas variables canónicas presentes; sesión activa en ese instante; GUI no cerrada; valores no emitidos.
+- `ep-b2-readiness.json` conserva un corte anterior a la promoción (`15:53:08Z`, `bucketAuthorized=False)); no acredita el estado posterior y no se reutiliza como diagnóstico vigente.
+
+### Lo que aún no se ha demostrado
+
+No se ejecutó una autenticación B2 posterior a la migración, consulta del bucket, comprobación de permisos, carga de objeto, descarga ni cotejo SHA-256 remoto. Por tanto, la credencial está guardada y verificada en EP Vault, pero el acceso remoto y la persistencia del snapshot actual continúan pendientes.
+
+**Siguiente secuencia:** autenticación B2 de solo lectura con el par Master de EP; verificar cuenta dedicada, bucket OCP-MCP y prefijo `ep-ocp/`; después subir el ciphertext de bóveda y los snapshots de workspace expresamente clasificados, descargarlos y cotejar SHA-256. No subir valores en claro, notas efímeras, perfiles/cookies, `.git` ni conjuntos no clasificados.
+
+**Estado:** `en_curso`. La decisión de usar Master Application Key de la cuenta dedicada EP se mantiene; no crear ni regenerar una Master Key como prueba. La carga y recuperación extremo a extremo siguen abiertas.
