@@ -4,7 +4,7 @@
 
 - **Nombre canónico vigente:** MCP-OCP (anteriormente MCP-METODOLOGIA).
 - **Identidad canónica vigente:** MCP-OCP. **Identidad histórica:** MCP-METODOLOGIA.
-- **Versión/sello:** MCP-OCP-v0.1.26 · Sink local por stdio autorizado; candidata anterior 0.1.0 BUILD_AND_TESTED, bootstrap del perfil persistente pendiente. Las generaciones y folios de sesiones anteriores son metadatos de auditoría.
+- **Versión/sello:** MCP-OCP-v0.1.27 · Sink local por stdio autorizado; candidata anterior 0.1.0 BUILD_AND_TESTED, bootstrap del perfil persistente pendiente. Las generaciones y folios de sesiones anteriores son metadatos de auditoría.
 - **Repositorio propietario:** SeryMente/metodologia, rama main.
 - **OCP canónico:** frentes/mcp-metodologia/.
 - **Núcleo operativo único:** este archivo, MCP-METODOLOGIA.md.
@@ -524,7 +524,7 @@ El build y las pruebas no equivalen a instalación en perfil, provisión del ope
 
 ## 16. Instalación local obligatoria y sprint consolidado · 2026-11-09
 
-**Versión documental:** MCP-OCP-v0.1.26. Lista auxiliar vigente v0.7. **Objetivo de release del sprint:** producto ejecutable MCP-OCP 1.0.0. No confundir versión de núcleo documental, backlog y versión del software.
+**Versión documental:** MCP-OCP-v0.1.27. Lista auxiliar vigente v0.8. **Objetivo de release del sprint:** producto ejecutable MCP-OCP 1.0.0. No confundir versión de núcleo documental, backlog y versión del software.
 
 ### 16.1 Destino local del programa
 
@@ -545,7 +545,7 @@ Diagnóstico de readiness real (distinto de proceso activo), recuperación GOW:A
 
 ### 16.4 Ruta de ejecución de tareas existentes
 
-MCP-OCP-02 reconciliación contra main; 05 fuentes/herramientas/Sink y proyección de estado; 13 panel visual en paralelo tras congelar el schema; 03 pruebas/build conjunto; 04 STDIO/RDC/perímetro; 10 pins/manifiestos/evidencias; 07 paquete servidor+panel; 12 extracción/bootstrap; 08 handoff EP. Primero corte vertical ARR → DUG → SINK:P004; luego generalizar a 43. No fusionar ramas históricas completas ni reutilizar sus PASS como aceptación actual.
+MCP-OCP-02 rama limpia; 05 corte vertical ARR → DUG → SINK:P004; 03/04 pruebas y E2E IPZ/RDC/STDIO del piloto; 05 generalización posterior a P001–P043; 13 panel como parte de 1.0.0 en paralelo, sin bloquear P004; 10/07 manifiesto, build y paquete final; 12 bootstrap y 08 handoff EP. La secuencia detallada vigente está en §18. No fusionar ramas históricas completas ni reutilizar sus PASS como aceptación actual.
 
 ### 16.5 Aceptación de release
 
@@ -567,3 +567,38 @@ El panel se abre cuando EP confirma y coteja `session.json` con sesión persiste
 La vista principal prioriza estado global y ruta `SESIÓN → PROCESO → STDIO → FUENTES → READINESS`, tarjetas de integridad/operador/root, actividad actual y últimos eventos. Solo muestra datos observados, nunca métricas inventadas. Señales con texto+icono+color, sin parpadeos, audio ni animación constante. La UI no autoriza ni ejecuta operaciones.
 
 **Gate de salida:** apertura automática solo en EP ACTIVE; readiness real con proceso/protocolo/fuentes/operador/root separados; actividad visible sin payloads; detección de terminación; cierre con EP; lectura defensiva/ACL; build y smoke visual Windows; manifest/SHA del panel incluidos en el paquete. MCP Inspector es opcional en desarrollo y no se distribuye.
+
+---
+
+## 18. Rectificación de host y prioridad del primer SINK/IPZ · 2026-11-10 · MCP-OCP-v0.1.27
+
+Esta sección supersede, para el sprint MCP-OCP 1.0.0, las designaciones anteriores de PC 7/LOC-OTHER que aparecen en §§15–17 y en resúmenes derivados. **El destino de trabajo e instalación es Fila 4**, porque corresponde a la única sesión RDC disponible indicada por el operador. PC 7 no queda como alternativa ni fallback. La identidad técnica de Fila 4 se debe revalidar en vivo; último dato documentado: dispositivo RDC `d0bbb2a3-d7b4-45e1-8870-652c2c3844fc`, perfil interactivo `CENTRAL\\fila4`, SessionId 4. No se declara lectura actual del host.
+
+### 18.1 Rutas
+
+- Checkout: `%USERPROFILE%\\Desktop\\SeryMente\\Repositorios\\Metodologia\\metodologia\\`, resuelto desde la sesión interactiva Fila 4.
+- Piloto SINK: `<checkout>\\frentes\\mcp-metodologia\\instalacion-local\\piloto-sink\\`.
+- Producto final 1.0.0: `<checkout>\\frentes\\mcp-metodologia\\instalacion-local\\`, incluye servidor y panel WPF, excluidos de Git.
+- Datos/DB/DPAPI/fuentes privadas/logs/backups: `%USERPROFILE%\\Desktop\\SeryMente\\Datos\\Metodologia\\MCP-OCP\\` sobre el workspace protegido, fuera del checkout y de la carpeta de instalación.
+- No hardcodear `C:\\Users\\fila4`; confirmar `USERPROFILE`, sesión, SID y permisos en vivo. No reutilizar staging, W:, VHDX, RecoveryPassword o DPAPI de PC-14 ni material de PC 7.
+
+### 18.2 Ubicación y gates EP
+
+La etiqueta Fila 4 identifica la terminal, no su ubicación física. **Ubicación efectiva: PENDIENTE_DE_VERIFICACIÓN**; no inferir CECEQ ni LOC-OTHER. EP-TASK-003 decide el régimen aplicable: en CECEQ conservar el workspace cifrado al cierre; fuera de CECEQ implementar y probar el dead-man específico antes de dejar runtime persistente. La última lectura histórica de Fila 4 era C: `FullyEncrypted/100 %`, `ProtectionStatus=Off`, `XtsAes128`; requiere preflight vivo y no acredita protección efectiva. El checkout/root protegidos y la lectura de vuelta son requisito antes de importar DUG/fuentes privadas o ejecutar el piloto real. El desarrollo remoto de código no sensible continúa en paralelo.
+
+### 18.3 Camino rápido: piloto SINK:P004 usable desde IPZ
+
+1. MCP-OCP-02 crea una rama nueva desde el HEAD actual de `main`; las ramas históricas solo son fuentes selectivas, no bases de merge.
+2. MCP-OCP-05 realiza primero un corte vertical mínimo: `GOW:ARR` → `DUG` → `SINK:P004`. La respuesta lleva texto desarrollado íntegro, ID/título, DUG v386/NX-386m, commit/blob exactos y SHA-256. La primera implementación no espera a P001–P043 ni al panel.
+3. MCP-OCP-03/04 prueban el contrato mínimo y el recorrido real `initialize` → `tools/list` → `tools/call:SINK:P004` → respuesta con pin/hash → cierre limpio por RDC/STDIO.
+4. Cuando Fila 4 supere los gates de checkout/root protegido, EP-TASK-005 extrae el piloto en `instalacion-local/piloto-sink/` y coteja manifiesto/SHA. GOV-TASK-007 prepara el IPZ compacto `GOW:ARR` → `DUG` → MDP → `SINK:Pxxx`, inicialmente con P004. No modificar las Instrucciones Personalizadas nativas desde esta rectificación; su escritura/read-back es una acción separada y no se afirma ejecutada.
+5. GOV-TASK-003/GOV-TASK-007 y MCP-OCP-04 aceptan el piloto solo cuando el modelo puede usarlo por la vía efectiva: IPZ → RDC autorizado → MCP-OCP STDIO → respuesta visible y trazable. Un smoke JSON-RPC de consola es solo prueba de transporte, no E2E IPZ.
+6. Tras verificar P004, generalizar Sink a P001–P043, lotes ordenados, controles negativos, frecuencia por éxito y manifiestos. MCP-OCP-13 implementa el panel como parte obligatoria de 1.0.0, en paralelo con la generalización después de congelar el schema, pero no bloquea el piloto P004.
+7. MCP-OCP-10/07 cierra pins, manifiesto, build y paquete reproducible servidor+panel. EP-TASK-005 hace bootstrap/instalación final en Fila 4 después de todos los gates; GOV-TASK-003 acepta el E2E completo.
+
+### 18.4 Prioridades y límites
+
+MCP-OCP-02/05 (corte P004)/03/04 son P0 por el piloto. MCP-OCP-13 baja a P1 de secuencia, sin quitarse del alcance 1.0.0. La interfaz visual es requisito del release completo, pero no requisito previo de usar SINK:P004. FOL1 no bloquea el piloto ni el desarrollo; mantiene su gate separado. La IPZ candidata no activa FOL1 por sí misma. MCP-NORMATIVO sigue DESACTIVADO; no se modifica DUG, ART-025/027, IPZ nativa, Khora, ni controles EP desde MCP-OCP.
+
+**Estado de la rectificación:** decisión documental y secuencia actualizadas; rama, código, pruebas, piloto, preflight Fila 4, importación, instalación IPZ nativa, E2E y release no ejecutados.
+
