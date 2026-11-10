@@ -16,6 +16,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     private Process? _serverProcess;
     private DateTimeOffset? _attachedProcessStartedAtUtc;
     private bool _sessionActive;
+    private int _refreshQueued;
 
     public event PropertyChangedEventHandler? PropertyChanged;
     public ObservableCollection<RecentEventRow> RecentEvents { get; } = new();
@@ -74,10 +75,8 @@ public partial class MainWindow : Window, INotifyPropertyChanged
                 Filter = "*",
                 EnableRaisingEvents = true
             };
-            FileSystemEventHandler changed = (_, _) =>
-                Dispatcher.BeginInvoke(RefreshView, DispatcherPriority.Background);
-            RenamedEventHandler renamed = (_, _) =>
-                Dispatcher.BeginInvoke(RefreshView, DispatcherPriority.Background);
+            FileSystemEventHandler changed = (_, _) => QueueRefresh();
+            RenamedEventHandler renamed = (_, _) => QueueRefresh();
             _watcher.Changed += changed;
             _watcher.Created += changed;
             _watcher.Deleted += changed;
@@ -221,6 +220,16 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         NotifyAll();
     }
 
+    private void QueueRefresh()
+    {
+        if (Interlocked.Exchange(ref _refreshQueued, 1) != 0) return;
+        Dispatcher.BeginInvoke(() =>
+        {
+            Interlocked.Exchange(ref _refreshQueued, 0);
+            RefreshView();
+        }, DispatcherPriority.Background);
+    }
+
     private bool AttachProcess(int pid, DateTimeOffset startedAt)
     {
         if (_serverProcess is not null &&
@@ -270,8 +279,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         _attachedProcessStartedAtUtc = null;
     }
 
-    private void OnServerExited(object? sender, EventArgs e) =>
-        Dispatcher.BeginInvoke(RefreshView, DispatcherPriority.Background);
+    private void OnServerExited(object? sender, EventArgs e) => QueueRefresh();
 
     private void OnClosing(object? sender, CancelEventArgs e)
     {
