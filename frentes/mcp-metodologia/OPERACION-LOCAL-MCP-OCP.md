@@ -180,3 +180,13 @@ Tras el piloto P004, generalizar a P001–P043, lotes ordenados, integridad, tel
 - **Ejecución:** `dotnet` no está disponible en el contenedor ni en el dispositivo RDC sondeado (`DOTNET=NOT_FOUND`). En el dispositivo RDC la sesión de proceso es `MantenimientoRCI`, no el perfil de operador Fila 4; no se escribieron archivos allí. No se ejecutó build, prueba ni instalación.
 - **Resultado:** código y pruebas persistidos en rama; build/test/STDIO real pendientes. Sin paquete, sin instalación, sin DB, sin REGISTER, sin IPZ nativa, sin E2E, sin merge a main. MCP-NORMATIVO permanece DESACTIVADO.
 
+
+## 14. Correcciones y validación del candidato · 2026-11-10
+
+- La referencia operativa del piloto se actualizó a Samantha v387/NX-387m; commit DUG 17a4da1d3906e2397ab4682ff46cc9a9f116f34d y blob c8d37d92aed7ff9d4fe94e7a9541e76ba5c88a2c. El pin v386 de la sección anterior queda como histórico.
+- El servidor se alineó a MCP 2025-11-25: no implementa mensajes shutdown/exit; espera cierre de stdin y termina por EOF. El método shutdown no definido produce -32601.
+- El fixture sintético de pruebas genera 43 IDs únicos P001–P043 y conserva P004 con texto, MDP, ancla y preponderancia exactos. Hay 13 escenarios escritos; ninguno se declara ejecutado.
+- Se añadió .github/workflows/mcp-ocp-p004-pilot.yml para Windows y .NET SDK 10.0.403. PR #22 está abierto como borrador y sin merge.
+- Las consultas disponibles de workflow runs y commit checks devolvieron listas vacías. No hay evidencia observable de ejecución CI; build, 13 pruebas y smoke del ejecutable permanecen NO VERIFICADOS.
+- El único equipo RDC conectado ejecuta proceso bajo MantenimientoRCI y no tiene dotnet disponible. No se instalaron herramientas ni se escribieron archivos en ese perfil. Fila 4 sigue siendo el destino designado y no está online en esta sesión.
+- El candidato sigue sin paquete, instalación, DB, REGISTER, importación privada, escritura de IPZ nativa, E2E IPZ, FOL1, activación de MCP-NORMATIVO o merge a main.
