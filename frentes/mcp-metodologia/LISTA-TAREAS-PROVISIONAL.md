@@ -12,7 +12,7 @@
 - **Núcleo enlazado:** [MCP-OCP · objeto canónico](MCP-METODOLOGIA.md), v0.1.28 en la rama candidata; esta lista v0.8 es su backlog auxiliar vigente.
 - **Control:** [CONTROL-RESPONSABILIDAD.json](CONTROL-RESPONSABILIDAD.json). Las generaciones y sesiones son metadatos de auditoría y no bloquean trabajo autorizado.
 - **MCP-NORMATIVO:** DESACTIVADO.
-- **Producto vs. documento:** MCP-OCP-v0.1.27 es la versión documental vigente; la versión de software objetivo es 1.0.0. La candidata ejecutable 0.1.0 y su recibo histórico no constituyen una versión actualizada ni aceptada del producto.
+- **Producto vs. documento:** MCP-OCP-v0.1.28 es la versión documental vigente; la versión de software objetivo es 1.0.0. La candidata ejecutable 0.1.0 y su recibo histórico no constituyen una versión actualizada ni aceptada del producto.
 - **Principio de custodia:** no guardar claves, access/refresh tokens, datos privados de usuario, contenido sensible de repositorios ni secretos en esta lista, artefactos, manifests o logs. Utilizar fixtures sintéticos y evidencia minimizada.
 
 ## Decisión de alcance operativa vigente
@@ -264,8 +264,8 @@ El panel MCP-OCP-13 baja a P1 de secuencia, pero permanece como entregable oblig
 - MCP-OCP-01: contrato y autorización verificados. Control generación 5, blob 826d7bd3f67bddf4f31bafee5013d1ea55003cf4; Sink STDIO autorizado. MCP-NORMATIVO sigue DESACTIVADO.
 - MCP-OCP-02: rama limpia creada desde main HEAD 73a42bc687f1fa3dd60b44af9cd93f797eba3920: feat/mcp-ocp-p004-pilot-20261110-cycle02. Portabilidad selectiva documentada en piloto-sink/PORTABILITY-DECISIONS.md.
 - MCP-OCP-05: código candidato escrito; fuente actual DUG v387/NX-387m, commit 17a4da1d3906e2397ab4682ff46cc9a9f116f34d, blob c8d37d92aed7ff9d4fe94e7a9541e76ba5c88a2c. El pin v386 anterior queda histórico.
-- MCP-OCP-03: ocho escenarios de prueba escritos; NO EJECUTADOS porque no hay .NET SDK en el entorno de ejecución disponible.
-- MCP-OCP-04: contrato STDIO y precondiciones IPZ documentados; E2E NO EJECUTADO ni aceptado.
+- MCP-OCP-03: 11 escenarios de prueba escritos; NO EJECUTADOS porque no hay .NET SDK en el entorno de ejecución disponible.
+- MCP-OCP-04: handshake clásico MCP `2025-11-25`, `notifications/initialized`, `tools/list`, `tools/call` y cierre por EOF documentados/codificados; E2E IPZ NO EJECUTADO ni aceptado.
 - No se crea paquete ni se instala en Fila 4; no se accede a fuentes privadas ni se crea DB/REGISTER. No merge a main.
 - Detalle de archivos, decisiones, pruebas y límites: piloto-sink/README.md y piloto-sink/PORTABILITY-DECISIONS.md.
 
