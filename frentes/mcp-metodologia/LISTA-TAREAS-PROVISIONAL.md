@@ -340,3 +340,11 @@ La suite del lector P004 aumenta a 18 casos. Dos negativos nuevos repinnean el b
 - Revisión estática MCP-OCP-13: el corte vertical P004 deja Sources/Operator/Readiness bloqueados porque aún no incluye importación de fuentes ni aprovisionamiento del operador. El test positivo del evaluator es un estado futuro sintético; la integración de esos flujos queda pendiente para 1.0.0 y no bloquea el piloto P004. No inferir importación/verificación/aprovisionamiento desde una llamada Sink.
 - El supuesto bloqueo del watcher queda descartado contra el contrato aprobado: EP escribe `monitor/session.json` antes de abrir el panel, creando `monitor/` antes de `StartWatching()`. La secuencia permite que el watcher actual se conecte; no se registra como defecto.
 - Estado: 18 pruebas P004 + 23 de monitor/readiness escritas; 0 ejecutadas. Build, tests, smoke STDIO, build WPF y revisión visual Windows siguen NO VERIFICADOS.
+
+
+### Reintento adicional tras recuperación publicada de GitHub · 2026-11-10
+
+- Fuente de contexto: página oficial [GitHub Status](https://kctbh9vrtdwd.statuspage.io/), incidente “Incident with Git Operations and Pull Requests”. GitHub informó “Actions is operating normally” a las 17:28 UTC y declaró resuelto el incidente a las 17:55 UTC; la página consultada posteriormente muestra Actions y Pull Requests operativos.
+- Tras esa recuperación publicada se reintentó una vez más el job del piloto. GitHub aceptó la operación, pero el nuevo job `130063978631` terminó en FAILURE con `steps=[]`, `logs_url=null` y cero artefactos. La descarga de logs devolvió `BlobNotFound`.
+- El reintento posterior a la recuperación no produjo evidencia de inicio del runner, setup-dotnet, build, tests, WPF o smoke. La coincidencia temporal con el incidente anterior no basta para asignarle la causa; causa raíz NO VERIFICADA.
+- Se cierra el ciclo de reintentos ciegos. Siguiente validación requiere un job que exponga pasos/logs/artefactos o ejecución en runner .NET 10.0.403 autorizado. No declarar PASS.
