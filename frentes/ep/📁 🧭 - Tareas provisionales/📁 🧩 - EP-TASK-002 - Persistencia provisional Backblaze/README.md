@@ -2376,3 +2376,44 @@ Al resolver esta tarea, el responsable debe agregar el informe individual en est
 - **Aceptación:** PENDIENTE. Autenticación y localización del bucket no satisfacen la persistencia remota.
 - **Siguiente acción:** operador desbloquea EP Vault localmente; EP confirma sessionActive=true y los cinco nombres, y ejecuta v3 con el límite ciphertext-only. No se pide contraseña por chat.
 - **Conclusión:** BLOQUEADA/PARCIAL. B2 fue autenticado y el bucket privado identificado; los preflights fallaron antes de cualquier upload. Persistencia remota y restauración continúan NO VERIFICADAS.
+
+## Informe de transferencia B2 R2 completada · 2026-11-10 · 17:08 America/Mexico_City
+
+**Estado anterior → resultante:** dos preflights P0-C fallidos antes de upload (v1/v2), más v3 truncada al vencer la sesión durante la carga/read-back del ZIP → `REMOTE_UPLOAD_AND_SHA_READBACK_VERIFIED_FOR_FOUR_OBJECTS`; restauración aislada integral pendiente.
+
+### Resultado ejecutado
+
+- En Fila 4 se generó snapshot local R2 de `Desktop\SeryMente`: 3.289 archivos elegibles, 159.547.658 bytes fuente, ZIP de 119.076.640 bytes. El ZIP contiene 3.289 entradas, todas verificadas por tamaño y SHA-256; manifiesto y checksum fueron generados y sus copias locales cotejadas. Se incluyó el ciphertext formal EP Vault (2.200 bytes).
+- ZIP: `EP-Backup-Provisional-20261110-164004-R2.zip`; SHA-256 `9D511614FC6B4001DBA5F8CAAF69ED06107F8B5F5111165F186BE7B2C5C06E09`.
+- Manifiesto: SHA-256 `D258A5E1F312C80C31A26206F7B0FF0309B86FE962C1EA8D3CF5344D56A0AC37`. Checksum: SHA-256 `E4D436B75F4A5CE3454AF43BE350F376BB165B6B2BC54604A082205C49420210`.
+- Ciphertext EP Vault: 2.200 bytes; SHA-256 `4CC2EE09974C9FBF3CF22C28A5A46C8286EB501F59268DBBB2B7BD6D61E8C590`.
+- Destino: bucket privado `OCP-MCP`, prefijo base `ep-ocp/`. Workspace: `ep-ocp/workspace/2026-11-10/224927899Z-48c3d690/`. Vault: `ep-ocp/vault/2026-11-10/1704-r2-continuity/`.
+- Los cuatro objetos subidos y descargados para read-back: ZIP, ciphertext, manifiesto y checksum. Cada descarga cotejó tamaño y SHA-256 exactos con el origen; `file info` confirmó SSE-B2/AES256. El recibo final terminó exit 0, sin errores, caché temporal limpiada y `secretValuesEmitted=false`.
+
+### Evidencia remota
+
+| Objeto | Bytes | SHA-256 | Read-back | Cifrado remoto |
+|---|---:|---|---|---|
+| Workspace ZIP | 119.076.640 | `9D511614FC6B4001DBA5F8CAAF69ED06107F8B5F5111165F186BE7B2C5C06E09` | MATCH | SSE-B2/AES256 |
+| EP Vault ciphertext | 2.200 | `4CC2EE09974C9FBF3CF22C28A5A46C8286EB501F59268DBBB2B7BD6D61E8C590` | MATCH | SSE-B2/AES256 |
+| Workspace manifest | 1.029.594 | `D258A5E1F312C80C31A26206F7B0FF0309B86FE962C1EA8D3CF5344D56A0AC37` | MATCH | SSE-B2/AES256 |
+| Workspace checksum | 112 | `E4D436B75F4A5CE3454AF43BE350F376BB165B6B2BC54604A082205C49420210` | MATCH | SSE-B2/AES256 |
+
+Recibo local: `EP\local-state\run-logs\ep-backblaze-r2-final-receipt-v1.json`. Estado: `THREE_REMAINING_OBJECTS_UPLOADED_AND_READBACK_VERIFIED`; el recibo consolida también el ZIP ya verificado. La lista remota previa encontró el ZIP con 119.076.640 bytes; `file info` confirmó `serverSideEncryption.mode=SSE-B2`, `algorithm=AES256`; descarga completa y cotejo SHA local/remoto resultaron MATCH.
+
+### Alcance, exclusiones y riesgo aceptado
+
+- Esta es una captura provisional cruda autorizada por la instrucción del operador ante la urgencia de continuidad. El ZIP **no se cifró del lado del cliente**; en tránsito viajó mediante TLS y en B2 se confirmó SSE-B2/AES256. No describir SSE-B2 como sustituto del cifrado cliente.
+- Se excluyeron 11 archivos de seguridad/regenerables conforme al recibo de construcción: cachés/artefactos regenerables, respaldo recursivo, lock/journal efímero, `.env`, `.npmrc`, claves privadas SSH y archivos sueltos PEM/P12/PFX/KEY, así como reparse points. No se subieron valores secretos como variables en logs o argumentos.
+- La bóveda EP usa PBKDF2-HMAC-SHA256 (600.000 iteraciones), sal aleatoria, AES-256-CBC y HMAC-SHA256; el ciphertext es independiente de DPAPI y se puede descifrar en otro equipo con la contraseña maestra. La sesión efímera sí usa DPAPI CurrentUser y no se restaura entre perfiles. Las notas bajo DPAPI CurrentUser requieren evaluación individual; no prometer su portabilidad.
+- Bootstrap de recuperación: para descargar la bóveda desde B2 se necesita una vía de acceso al bucket que no dependa de la propia bóveda (sesión de cuenta B2 o credencial de recuperación protegida por separado). Las credenciales de aplicación EP están dentro del ciphertext y no sirven para descargarse a sí mismas. No guardar la contraseña maestra ni una clave B2 en el mismo ZIP.
+
+### Pendientes y criterio de cierre
+
+- `REMOTE_UPLOAD=PASS`; `REMOTE_READBACK_SHA256=PASS`; `SSE_B2_AES256=PASS`; `LOCAL_SNAPSHOT_INTEGRITY=PASS`.
+- `CROSS_HOST_RESTORE=NOT_RUN`; `CLIENT_SIDE_ENCRYPTION=NOT_APPLIED_BY_OPERATOR_EXCEPTION`; `PORTABLE_SESSION_DPAPI=NOT_PORTABLE`; `OCP_DATASETS=NOT_IN_SCOPE_OF_THIS_R2_CAPTURE`.
+- Falta probar en directorio aislado la extracción íntegra del ZIP remoto y descifrar una copia del ciphertext en un entorno autorizado de recuperación. No hacerlo sobre el workspace original.
+- EP-TASK-003 no puede iniciar la migración física hasta completar sus propios gates de VHDX/BitLocker/checkout/consistencia; el snapshot R2 no convierte `PARTIAL_FAIL` en `PASS`.
+- EP-TASK-006 sigue en P1 tras resolver el snapshot/restore inicial. EP-TASK-005 mantiene dependencias EP-TASK-003 y paquete MCP-OCP.
+
+**Conclusión:** transferencia de cuatro objetos a Backblaze y read-back SHA-256 verificados. No declarar aún restauración cross-host ni aceptación integral del sistema persistente.
