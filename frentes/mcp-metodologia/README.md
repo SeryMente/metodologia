@@ -66,13 +66,13 @@ El release de software objetivo es MCP-OCP 1.0.0. El ejecutable debe instalarse 
 
 ## Destino y primer hito operativo · 2026-11-10
 
-El destino del sprint es **Fila 4**, correspondiente a la única sesión RDC disponible indicada por el operador; PC 7 queda supersedido y no es fallback. Últimos datos técnicos documentados, aún no revalidados en vivo: Device ID `d0bbb2a3-d7b4-45e1-8870-652c2c3844fc`; perfil `CENTRAL\\fila4`, SessionId 4. La ubicación física es un dato separado y EP debe verificarla antes de aplicar la regla de dead-man.
+El destino del sprint es **Fila 4**, alias funcional designado por el operador; PC 7 queda supersedido y no es fallback. Conforme a DUG v388/ART-013 no se conservan Device IDs, hostnames, cuentas, rutas de perfil concretas ni SessionIds efímeros. La presencia del operador frente a Fila 4 fue reportada; CECEQ no fue confirmado y la ubicación permanece `UNCLASSIFIED`. EP revalida ubicación antes de determinar si el dead-man aplica.
 
 **Primer hito:** piloto SINK:P004 consumible desde IPZ por el recorrido real RDC → MCP-OCP STDIO. Prioridad: rama limpia desde main → GOW:ARR/DUG/SINK:P004 → pruebas mínimas → piloto protegido en Fila 4 → E2E IPZ visible al modelo. Solo después se generaliza P001–P043 y se desarrolla el panel WPF en paralelo. El panel continúa obligatorio para 1.0.0, pero no bloquea el piloto.
 
 Rutas de Fila 4: checkout en `%USERPROFILE%\\Desktop\\SeryMente\\Repositorios\\Metodologia\\metodologia\\`; piloto en `frentes/mcp-metodologia/instalacion-local/piloto-sink/`; release final servidor+panel en `frentes/mcp-metodologia/instalacion-local/`; datos y fuentes importadas fuera del checkout bajo `Datos/Metodologia/MCP-OCP/`, dentro del volumen protegido EP.
 
-**Estado:** destino y secuencia documentados; preflight vivo, checkout protegido, piloto, IPZ nativo/read-back, build, instalación y aceptación siguen pendientes. Ver [OEP §120](../ep/OEP.md#120-rectificación-de-host-de-trabajo-e-instalación-mcp-ocp--2026-11-10--oep-v0355) y [backlog v0.8](LISTA-TAREAS-PROVISIONAL.md).
+**Estado:** destino y secuencia documentados; preflight vivo, checkout protegido, piloto, IPZ nativo/read-back, build, instalación y aceptación siguen pendientes. Ver [OEP v0.3.59 §124](../ep/OEP.md) y [backlog v0.10](LISTA-TAREAS-PROVISIONAL.md).
 
 
 ## Sprint SINK-P004 · prioridad y dependencias · 2026-11-10
