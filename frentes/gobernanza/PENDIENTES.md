@@ -344,3 +344,19 @@ El ciclo que configuró la medición no es línea base: la captura no estuvo act
 FOL1 sigue `PREPARADO_PENDIENTE_ACTIVACION_IPZ`; folios globales CV/CY/A/B no asignados. MCP-NORMATIVO `DESACTIVADO`.
 
 [Crónica](cronica/C-GOBERNANZA-OCP-MCP-PERFORMANCE-01.md) · [evidencia](evidencias/C-GOBERNANZA-OCP-MCP-PERFORMANCE-01.json).
+
+---
+
+## Pendientes vigentes · Sprint SINK-P004 · 2026-11-10
+
+La fotografía activa del sprint se centraliza en [GOV-TASK-015 · Sprint SINK-P004](./📁%20🧭%20-%20Tareas%20provisionales/📁%20🧩%20-%20GOV-TASK-015%20-%20Sprint%20Sink%20local%20vía%20RDC/README.md). Las entradas previas que describían Sink/Cloudflare, v386 o PC 7 son antecedentes y no prevalecen sobre el contrato ART-027 v388 y el destino Fila 4.
+
+- **MCP-OCP-02:** rama limpia desde main y clasificación selectiva REUSE/ADAPT/REWRITE/DROP. La rama candidata antigua no satisface el requisito.
+- **MCP-OCP-05:** P004; empieza con fixtures y depende de MCP-OCP-02.
+- **MCP-OCP-03/04:** fixtures de contrato y harness STDIO/RDC en paralelo.
+- **EP-TASK-003:** responsable de ejecución EP; PARTIAL_FAIL. Debe resolver la protección de `Desktop/SeryMente` conservando la ruta, con aceptación expresa del operador antes de cualquier mutación de almacenamiento.
+- **EP-TASK-005:** responsable de ejecución EP; pendiente hasta EP-TASK-003 PASS y paquete P004 verificado.
+- **GOV-TASK-007/003:** candidato IPZ y E2E visible al modelo después del contrato P004 y de la instalación piloto. IPZ nativa no verificada.
+- **Después de P004:** generalización P001–P043, matriz 43+8 y panel WPF para release 1.0.0.
+
+`SINK_P004=NOT_IMPLEMENTED_NOT_ACCEPTED` · `FOL1=PREPARADO_PENDIENTE_ACTIVACION_IPZ` · `MCP-NORMATIVO=DESACTIVADO`.
