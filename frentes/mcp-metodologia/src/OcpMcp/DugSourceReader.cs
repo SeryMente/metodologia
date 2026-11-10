@@ -21,6 +21,7 @@ public sealed record SinkP004Result(
 public sealed class DugSourceReader : IPrincipleSource
 {
     private const string GovDataOpen = "<script id=\"gov-data\" type=\"application/json\">";
+    private const string ExpectedP004NormativeText = "No finjas capacidades, datos, resultados ni certezas, ni declares límites sin verificar con herramientas. Marca tu certeza y nombra los huecos sin rellenarlos. Precedencia absoluta sobre la exhaustividad y el buen trato.";
     private readonly string _repoRoot;
     private readonly SourcePin _pin;
 
@@ -138,6 +139,7 @@ public sealed class DugSourceReader : IPrincipleSource
         string microdescriptor = RequiredString(p004, "microdescriptor");
         int mdpWordCount = microdescriptor.Split((char[]?)null, StringSplitOptions.RemoveEmptyEntries).Length;
         if (title != "Principio de No-Simulación 🔒" || anchor != "#P004" ||
+            normativeText != ExpectedP004NormativeText ||
             contentMarkdown != "> " + normativeText ||
             microdescriptor != "Exigir hechos verificables; activarlo ante afirmaciones sobre capacidades, datos, acciones o certezas." ||
             mdpWordCount is < 11 or > 16)
