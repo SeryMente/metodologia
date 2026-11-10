@@ -4,7 +4,7 @@
 
 - **Nombre canónico vigente:** MCP-OCP (anteriormente MCP-METODOLOGIA).
 - **Identidad canónica vigente:** MCP-OCP. **Identidad histórica:** MCP-METODOLOGIA.
-- **Versión/sello:** MCP-OCP-v0.1.33 · OCP MCP 1.0; H1 SINK:P004, H2 persistencia mínima/bóveda y H3 workspace completo definidos; Sink local por stdio autorizado; contrato DUG v388/NX-388m; piloto P004 pendiente; bootstrap del perfil persistente pendiente. Las generaciones y folios de sesiones anteriores son metadatos de auditoría.
+- **Versión/sello:** MCP-OCP-v0.1.34 · OCP MCP 1.0; H1 SINK:P004, H2 persistencia mínima/bóveda y H3 workspace completo definidos; Sink local por stdio autorizado; contrato DUG v388/NX-388m; piloto P004 pendiente; bootstrap del perfil persistente pendiente. Las generaciones y folios de sesiones anteriores son metadatos de auditoría.
 - **Repositorio propietario:** SeryMente/metodologia, rama main.
 - **OCP canónico:** frentes/mcp-metodologia/.
 - **Núcleo operativo único:** este archivo, MCP-METODOLOGIA.md.
@@ -780,8 +780,16 @@ EP-TASK-007 es independiente del gate físico de Fila 4 en EP-TASK-003. El guard
 
 **Siguiente acción H1:** conseguir un runner .NET 10.0.403 que asigne runner y entregue pasos/logs/artefactos; ejecutar build, las 41 pruebas y smoke STDIO/EOF. Corregir únicamente defectos reproducidos. Mantener EP/Gobernanza en sus compuertas.
 
+
+
+### 22.5 Auditoría del bloque humano P004
+
+- Se releyó el HTML canónico DUG v388 (blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`) y la función de renderizado `card(p)`: la tarjeta humana construye su cuerpo con `render(p.content_markdown, "samantha")`; no existe un segundo texto independiente dentro de `sections[samantha].content`, que contiene el marcador `[[P:P004]]`.
+- El lector exige el marcador exactamente una vez y valida que `content_markdown == "> " + normative_text`, además del texto normativo exacto. La suite ya contiene el negativo `human P004 card markdown must match the exact normative text`, que modifica el Markdown y repinnea el blob; la lectura debe fallar cerrado.
+- **Resultado de revisión estática:** NO SE REPRODUJO LA BRECHA planteada inicialmente. La validación existente cubre el contenido que renderiza la tarjeta. No se añadió código ni una prueba redundante. Esta conclusión es estática; no sustituye build ni ejecución de la suite.
+
 ## 23. Continuidad conversacional · lectura literal preservada · 2026-11-10
 
 El último intercambio y la última salida visible anterior se preservan literalmente en [CONTINUIDAD-2026-11-10-ULTIMO-TRAMO.md](conversaciones/CONTINUIDAD-2026-11-10-ULTIMO-TRAMO.md), blob `1373127651be36afcf49dc1ae4fb623948165daf`. La frase histórica de que aún faltaba crear MCP-OCP-02 queda supersedida por §22: la rama ya fue creada y reconciliada con el main actual. Esta captura parcial no se presenta como export nativo de ChatGPT.
 
-**Estado del núcleo:** MCP-OCP-v0.1.33 en esta rama candidata; el núcleo canónico de main permanece sin cambios hasta la revisión/aceptación de la PR. FOL1 continúa PREPARADO/NO ACTIVO; MCP-NORMATIVO permanece DESACTIVADO.
+**Estado del núcleo:** MCP-OCP-v0.1.34 en esta rama candidata; el núcleo canónico de main permanece sin cambios hasta la revisión/aceptación de la PR. FOL1 continúa PREPARADO/NO ACTIVO; MCP-NORMATIVO permanece DESACTIVADO.
