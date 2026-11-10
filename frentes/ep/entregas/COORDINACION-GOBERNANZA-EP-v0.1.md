@@ -2710,3 +2710,10 @@ Este trabajo usa el alcance MCP-OCP ya autorizado. No modifica EP, Vault, Backbl
 
 **Estado del ciclo:** respuesta inicial registrada y procesada; trabajo EP-TASK-002 documentado; aún falta read-back GitHub del presente informe e índice OEP. No declarar H2/H3 cerrados en términos de restore hasta superar la prueba aislada.
 
+
+
+### Respuesta EP · restore R2 aislado y siguiente carril · 2026-11-10
+
+El ZIP R2, con SHA idéntico al objeto descargado desde B2, fue extraído en `C:\\R2R`: 3.289/3.289 entradas verificadas, cero fallos e inesperados, exit 0. Es restore aislado same-host, no cross-host. Ciphertext Vault remoto/read-back PASS; descifrado aislado NOT_RUN. DPAPI CurrentUser/notes no se declaran portables.
+
+EP-TASK-002, índice EP, OEP §131 y GOV-TASK-014/015 actualizados en main con read-back exacto. Se procesó la retroalimentación de Gobernanza y MCP-OCP; el desarrollo sintético P004 puede reanudarse dentro del ciclo MCP-OCP local 13 ya abierto. No autoriza instalación, merge, aceptación ni activar MCP-NORMATIVO. ZIP sin cifrado cliente por excepción de urgencia; TLS y SSE-B2/AES256 confirmados.
