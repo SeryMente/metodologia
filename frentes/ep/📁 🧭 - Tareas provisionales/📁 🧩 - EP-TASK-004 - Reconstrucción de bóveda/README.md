@@ -588,3 +588,32 @@ Registro de ejecución bajo `CENTRAL\fila4`, completado en `2026-11-10T16:01:06Z
 La migración y lectura de vuelta de los secretos en la bóveda está **VERIFICADA**. No se ejecutó después una autenticación real de Backblaze, una consulta de bucket ni upload/download remoto. La autorización B2 y la persistencia remota del snapshot actual permanecen pendientes; el readiness previo a la migración no se presenta como resultado posterior.
 
 **Estado de EP-TASK-004:** `en_curso`. Esta migración no cierra H10 ni sustituye la aceptación integral E2E/visual de la bóveda. No se modificaron el core, la interfaz, la sesión de Windows ni los permisos del almacén.
+
+
+---
+
+## OCP MCP 1.0 · alcance organizacional y prioridad de persistencia de la bóveda · 2026-11-10
+
+**Prioridad:** P0/H2, antes de usar la bóveda como proveedor de credenciales de RDC. La restauración verificable de la bóveda precede a su consumo automatizado.
+
+### Cobertura requerida
+
+EP Vault debe inventariar la totalidad de variables de entorno y secretos utilizados por KHORA y OCP en la organización Ser y Mente, incluyendo proyectos, repositorios, infraestructura, integraciones y servicios, y separando desarrollo, pruebas/staging y producción. La cobertura se obtiene de fuentes autorizadas y metadatos de configuración; no se presume completa por revisar solo archivos .env o un repositorio.
+
+Cada entrada registra nombre canónico, namespace, proyecto/servicio, entorno, clasificación secret/config, propietario, consumidores autorizados, fuente de verdad, proveedor, referencia externa cuando proceda, estado de disponibilidad, versión y última verificación/rotación. Los valores sensibles se capturan únicamente mediante flujo de custodia autorizado, nunca se imprimen ni se incorporan al expediente.
+
+### Persistencia temprana
+
+1. Inventariar el catálogo de variables y deduplicar referencias sin duplicar secretos innecesariamente.
+2. Cifrar valores del lado del cliente y persistir ciphertext + manifiesto/metadatos no secretos.
+3. Respaldar primero la bóveda cifrada a Backblaze B2 mediante EP-TASK-002.
+4. Descargar y restaurar en entorno aislado; cotejar hash y probar desbloqueo controlado sin emitir valores.
+5. Conservar indefinidamente snapshots cifrados útiles, conforme a la política del operador y obligaciones legales aplicables; verificar el ciclo de vida efectivo de B2 antes de declarar retención efectiva.
+
+### RDC: credenciales just-in-time, hito posterior
+
+El operador confirma que RDC se autentica al inicio de la sesión. Planificar una integración posterior para que la bóveda suministre credenciales a RDC/procesos autorizados en tiempo de ejecución, sin exponerlas en command-line, scripts, variables heredadas, portapapeles, archivos, logs o telemetría. Antes de implementarla, EP auditará qué canal seguro admite la versión RDC instalada y demostrará su protección, alcance de proceso, expiración y limpieza. No implementar esta integración durante H2; queda como hito posterior coordinado con MCP-OCP-16.
+
+**Criterio de aceptación:** catálogo organizacional con cobertura por fuente/servicio/entorno; valores cifrados; snapshot B2 y restore aislado verificado; read-back saneado; cero secretos en Git/chat/logs. Mantener separadas las bóvedas y cuentas de Khora, EP y demás sistemas según su titularidad.
+
+**Estado:** planificación de cobertura ampliada. No se ha leído ni exportado ningún valor secreto nuevo, ni se ha cambiado la bóveda existente.
