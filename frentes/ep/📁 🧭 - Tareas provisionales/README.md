@@ -241,7 +241,7 @@ No se ejecutó preflight, materialización, login, instalación ni piloto por es
 
 - DUG: Samantha v388 / NX-388m.
 - OEP: v0.3.57, §122.
-- PREFLIGHT_FILA4: PARTIAL_FAIL. Host Fila 4; usuario CENTRAL\fila4; perfil C:\Users\fila4; sesión console/ID 1; ubicación física sin clasificar.
+- PREFLIGHT_FILA4: PARTIAL_FAIL. Alias funcional Fila 4; sesión interactiva activa en la observación del preflight; cuenta, ruta concreta del perfil e identificador de sesión efímeros omitidos; ubicación física sin clasificar.
 - C: 100 % cifrado de espacio usado, XTS-AES128, Protection Off, sin protectores: no cumple el gate.
 - Workspace existente preservado: 2,468 archivos / 545 directorios / 127,996,970 bytes.
 - Checkout de Metodología: materialización parcial, solo frentes/, sin .git. Git y gh disponibles; autenticación gh del perfil Fila 4 verificada por keyring.
