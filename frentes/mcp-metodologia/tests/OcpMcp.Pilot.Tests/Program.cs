@@ -138,6 +138,23 @@ static string FixtureHtml(string version = "v387")
             canonical_source = "SeryMente/metodologia/main:gobernanza/METAPROMPT-CANONICO-SAMANTHA.html",
             metacanon_version = "1.29", gow_version = "2.18", principles = 43
         },
+        authority = new
+        {
+            single_normative_document = true,
+            human_content_precedes_machine_representation = true,
+            machine_representation_is_derived = true,
+            independent_machine_authority = false
+        },
+        sections = new[]
+        {
+            new { id = "samantha", content = "Principios universales [[P:P004]]." }
+        },
+        principle_inventory_policy = new
+        {
+            required_full_text_route = "Sink alias per principle",
+            default_consult_before_application = true,
+            deliberately_insufficient_for_full_application = true
+        },
         principles = new[]
         {
             new { id = "P004", title = "Principio de No-Simulación 🔒",
