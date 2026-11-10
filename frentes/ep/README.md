@@ -48,4 +48,5 @@ El destino de trabajo e instalación del sprint MCP-OCP es **Fila 4**, alias fun
 OEP vigente: v0.3.58. PREFLIGHT_FILA4=PARTIAL_FAIL. El VHDX de 30 GiB quedó creado y montado como W: (última observación), GPT/NTFS, vacío y sin BitLocker; no se copió ni sustituyó Desktop/SeryMente. El diseño para conservar la ruta original sigue PROPOSED_NOT_ACCEPTED. Checkout protegido, dead-man si corresponde, instalación y SINK/IPZ E2E permanecen pendientes.
 
 - [OEP §122 · preflight vivo parcial Fila 4](OEP.md#122-preflight-vivo-parcial-de-fila-4--2026-11-10--ejecución-provisional-del-frente-ep)
+- [OEP §123 · VHDX de preparación, discrepancia del punto de montaje y pausa operativa](OEP.md#123-rectificación-del-estado-de-almacenamiento-fila-4-y-continuidad-del-sprint--2026-11-10)
 - [Evidencia saneada del preflight Fila 4](evidencias/EP-FILA4-PREFLIGHT-PARCIAL-20261110.json): PREFLIGHT_FILA4=PARTIAL_FAIL; commit `2ac3dc5ad2970e71b15a21e33d0740e001c2b183`; blob `9bf9cc7edee2e8a0f483d7191e28b37b1e03e3e5` (evidencia saneada con read-back exacto).
