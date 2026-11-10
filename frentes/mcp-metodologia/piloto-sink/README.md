@@ -24,7 +24,7 @@ dotnet build .\tests\OcpMcp.Pilot.Tests\OcpMcp.Pilot.Tests.csproj -c Release
 dotnet run --project .\tests\OcpMcp.Pilot.Tests\OcpMcp.Pilot.Tests.csproj -c Release
 ```
 
-Los comandos no son evidencia hasta que existan logs asociados al commit. El workflow incluye 16 casos P004, 23 casos de monitor/readiness, build WPF y smoke STDIO; todo permanece pendiente de ejecución verificable.
+Los comandos no son evidencia hasta que existan logs asociados al commit. El workflow incluye 18 casos P004, 23 casos de monitor/readiness, build WPF y smoke STDIO; todo permanece pendiente de ejecución verificable.
 
 ## Límites
 Sin DB, importación privada, secretos, operador, listener, instalación ni aceptación IPZ E2E. El panel WPF es una implementación candidata separada, no compilada ni incluida en paquete. Fila 4 depende de EP-TASK-003/005.
