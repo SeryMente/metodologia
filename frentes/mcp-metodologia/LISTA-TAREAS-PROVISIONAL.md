@@ -293,7 +293,7 @@ El panel MCP-OCP-13 baja a P1 de secuencia, pero permanece como entregable oblig
 
 ### Actualización de main posterior a la base de ciclo02 · 2026-11-10
 
-Main avanzó desde `84cc9ffc1a2aa27c622c7e5de147d7460f3b5ecd` hasta `67b48bc041bee372c69389f0aa84ed1a6d19eff5` mediante cuatro commits exclusivos del frente EP (OEP, índice/tareas EP y evidencia de preflight). La comparación `84cc9ffc... → main` confirma que esos cuatro commits no modifican rutas MCP-OCP ni GOV-TASK-015. La rama ciclo02 conserva su base inicial verificada; comparación actual: 98 commits ahead / 4 behind; 30 archivos cambiados en el diff, sin solapamiento de las cuatro rutas EP-only posteriores a la base. No se rebasea ni se importa contenido de EP a este frente.
+Main avanzó desde `84cc9ffc1a2aa27c622c7e5de147d7460f3b5ecd` hasta `67b48bc041bee372c69389f0aa84ed1a6d19eff5` mediante cuatro commits exclusivos del frente EP (OEP, índice/tareas EP y evidencia de preflight). La comparación `84cc9ffc... → main` confirma que esos cuatro commits no modifican rutas MCP-OCP ni GOV-TASK-015. La rama ciclo02 conserva su base inicial verificada; la rama sigue divergente respecto a main; el conteo ahead/behind y de archivos se consulta en la PR #26 para conservar una única lectura vigente. No hay solapamiento con las cuatro rutas EP-only posteriores a la base. No se rebasea ni se importa contenido de EP a este frente.
 
 
 ## Implementación candidata de observabilidad · 2026-11-10 · ciclo02
