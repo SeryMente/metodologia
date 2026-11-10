@@ -1,0 +1,210 @@
+{
+  "schema": "EP-FILA4-READONLY-PREFLIGHT/v1",
+  "capturedAtLocal": "2026-11-10T15:35:11.1092164-06:00",
+  "targetAlias": "Fila4",
+  "classification": "READ_ONLY_SANITIZED",
+  "sources": {
+    "dug": {
+      "version": "Samantha v388",
+      "signature": "NX-388m",
+      "blob": "4db0ebadfd1e48b2bdec9236ba7f344921e4a865"
+    },
+    "oep": {
+      "version": "v0.3.59",
+      "source": "frentes/ep/OEP.md"
+    },
+    "task003": {
+      "blob": "99122dab143550c2ba5d28d3b24056be5d259956"
+    },
+    "task007": {
+      "blob": "892e52d304f2f07131f815c37f261e5cda23143c"
+    }
+  },
+  "observations": [
+    {
+      "atUtc": "2026-11-10T21:30:22.0080788Z",
+      "context": "ADMIN_READ_ONLY_STORAGE_QUERY",
+      "vhdx": {
+        "exists": true,
+        "path": "%USERPROFILE%\\AppData\\Local\\EP\\ProtectedWorkspace\\Fila4-Workspace.vhdx",
+        "bytes": 171966464,
+        "attached": true,
+        "virtualCapacityBytes": 32212254720,
+        "partitionStyle": "GPT"
+      },
+      "volumes": [
+        {
+          "mount": "C:",
+          "filesystem": "NTFS",
+          "sizeBytes": 254992707584,
+          "freeBytes": 55589560320,
+          "bitlocker": {
+            "status": "FullyEncrypted",
+            "percentage": 100,
+            "method": "XtsAes128",
+            "protection": "Off",
+            "protectors": []
+          }
+        },
+        {
+          "mount": "W:",
+          "label": "EP-FILA4",
+          "filesystem": "NTFS",
+          "sizeBytes": 32194424832,
+          "freeBytes": 32122478592,
+          "bitlocker": {
+            "status": "FullyDecrypted",
+            "percentage": 0,
+            "method": "None",
+            "protection": "Off",
+            "protectors": []
+          }
+        }
+      ],
+      "checkout": {
+        "exists": true,
+        "gitWorktree": false
+      },
+      "dataRoot": {
+        "exists": false
+      }
+    },
+    {
+      "atUtc": "2026-11-10T21:33:46.2515973Z",
+      "context": "OWNER_USER_TOKEN_INVENTORY",
+      "profileAlias": "Fila4",
+      "elevated": false,
+      "os": {
+        "caption": "Microsoft Windows 11 Pro",
+        "version": "10.0.26200",
+        "build": "26200",
+        "architecture": "64 bits",
+        "locale": "080a",
+        "timezone": "Central Standard Time (Mexico)"
+      },
+      "hardware": {
+        "manufacturer": "HP",
+        "model": "HP ProDesk 400 G4 DM",
+        "ramBytes": 17015545856,
+        "processor": "Intel Core i7-8700T",
+        "cores": 6,
+        "logicalProcessors": 12,
+        "gpu": "Intel UHD Graphics 630",
+        "gpuStatus": "OK",
+        "disks": [
+          {
+            "model": "Disco virtual de Microsoft",
+            "sizeBytes": 32210196480
+          },
+          {
+            "model": "HS-SSD-WAVE(S) 256G",
+            "sizeBytes": 256052966400
+          }
+        ]
+      },
+      "volumes": [
+        {
+          "mount": "C:",
+          "filesystem": "NTFS",
+          "sizeBytes": 254992707584,
+          "freeBytes": 55675600896
+        },
+        {
+          "mount": "W:",
+          "label": "EP-FILA4",
+          "filesystem": "NTFS",
+          "sizeBytes": 32194424832,
+          "freeBytes": 32122478592
+        }
+      ],
+      "network": {
+        "adapter": "Realtek PCIe GbE Family Controller",
+        "status": "Up",
+        "linkSpeed": "1 Gbps",
+        "localIp": "NOT_COLLECTED",
+        "publicIp": "NOT_QUERIED",
+        "geolocation": "NOT_QUERIED"
+      },
+      "location": "UNCLASSIFIED",
+      "epVaultGui": {
+        "processPresent": true,
+        "responding": true
+      },
+      "b2Cli": {
+        "present": true
+      },
+      "localInventoryArtifact": {
+        "path": "EP/local-state/run-logs/ep-task-007-host-inventory.json",
+        "bytes": 4253,
+        "sha256": "E0B2FF98A70DF35E2B572638E5E3CFE39D629781852C2F5FBE03A4C4B39FD673"
+      }
+    },
+    {
+      "atLocal": "2026-11-10T15:35:11.1092164-06:00",
+      "context": "READ_ONLY_DIRECTORY_INVENTORY",
+      "workspace": {
+        "path": "%USERPROFILE%\\Desktop\\SeryMente",
+        "exists": true,
+        "files": 3103,
+        "directories": 659,
+        "bytes": 159162208,
+        "reparseEntries": 0,
+        "enumerationErrors": 2
+      },
+      "vhdx": {
+        "volumeRootEntries": [
+          {
+            "name": "System Volume Information",
+            "type": "directory"
+          }
+        ],
+        "workspaceFilesObservedOnW": false
+      },
+      "checkout": {
+        "gitWorktree": false
+      },
+      "dataRoot": {
+        "exists": false
+      }
+    },
+    {
+      "atUtc": "2026-11-10T21:34:04.8042691Z",
+      "context": "EP_VAULT_CLI_READINESS",
+      "accountAlias": "Fila4",
+      "vaultStatus": "ENCRYPTED_FILE_PRESENT",
+      "vaultBytes": 2200,
+      "vaultSessionActive": false,
+      "variableCount": 0,
+      "requiredEpB2VariablesAvailable": 0,
+      "b2CliPresent": true
+    },
+    {
+      "atUtc": "2026-11-10T21:34:15.6720072Z",
+      "context": "EP_VAULT_GUI_UI_AUTOMATION_READ_ONLY",
+      "windowFound": true,
+      "windowTitle": "EP Vault · v1.0.0",
+      "headerState": "SELLADA",
+      "gateTitle": "La cámara permanece sellada.",
+      "footerStatus": "LOCAL · CIFRADO · SELLADA"
+    }
+  ],
+  "decisions": {
+    "storageDesign": "PROPOSED_NOT_ACCEPTED",
+    "sourceWorkspaceModified": false,
+    "vhdxModified": false,
+    "bitlockerChanged": false,
+    "checkoutChanged": false,
+    "dataRootCreated": false,
+    "b2Authenticated": false,
+    "b2UploadExecuted": false,
+    "guardianImplemented": false
+  },
+  "constraints": {
+    "physicalLocation": "UNCLASSIFIED",
+    "gpsCollected": false,
+    "ipCollected": false,
+    "storagePauseRemains": true,
+    "noSecretsIncluded": true,
+    "noHostDeviceOrSessionIdentifiersIncluded": true
+  }
+}
