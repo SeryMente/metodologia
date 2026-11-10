@@ -387,3 +387,17 @@ GOV-TASK-015 es el coordinador único del sprint. Primer resultado: recuperació
 - **Release:** el panel MCP-OCP-13 es obligatorio para 1.0.0, pero no bloquea el primer P004; generalización 43+8 es posterior a P004 PASS.
 
 `SINK_P004=NOT_IMPLEMENTED_NOT_ACCEPTED` · `MCP_NORMATIVO=DESACTIVADO` · `FOL1=PREPARED_NOT_ACTIVE`.
+
+---
+
+## Programa coordinado vigente · OCP MCP 1.0 · 2026-11-10
+
+**Programa:** OCP MCP 1.0 · **release:** MCP-OCP 1.0.0 · **primer hito:** SINK:P004.
+
+- GOV-TASK-015: coordinación única, hitos, secuencia y dependencias.
+- GOV-TASK-014: workspace, bóveda y datos de usuario; B2 requiere reconciliación con evidencia EP.
+- GOV-TASK-003: aceptación P004 primero y release completo después.
+- GOV-TASK-007: fast path IPZ para P004.
+- Anexo literal: ../entregas/ChatGPT-GOBERNANZA-20261110-OCP-MCP-1.0-ULTIMO-TRAMO.md.
+
+OCP_MCP_1_0=DOCUMENTALMENTE_REBASELINED · B2_REMOTE=NOT_VERIFIED_PENDING_EP_RECONCILIATION · SINK_P004=NOT_IMPLEMENTED_NOT_ACCEPTED · FOL1=PREPARED_NOT_ACTIVE · MCP_NORMATIVO=DESACTIVADO.
