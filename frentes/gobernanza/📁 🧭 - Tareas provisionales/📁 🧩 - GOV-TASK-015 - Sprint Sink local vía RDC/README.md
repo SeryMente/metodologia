@@ -316,11 +316,11 @@ Gobernanza publicó la rectificación de ART-027 mediante el evento `C-GOBERNANZ
 
 ### Bloqueador P0 actual
 
-**MCP-OCP-02 es la primera acción técnica crítica:** crear rama limpia desde el HEAD actual de `main` y reconciliar código/SDK/RID con el núcleo MCP-OCP v0.1.28 y DUG Samantha v388/NX-388m. El contrato ART-027 ya está actualizado; no compilar ni aceptar el piloto con pins v386 ni portar ramas históricas completas. La rama y el código no sensible no dependen del preflight EP.
+**MCP-OCP-02 ya fue ejecutado en rama nueva:** `feat/mcp-ocp-p004-rebaseline-20261110` creada directamente desde `main` SHA `06467fb32f344e5ff7e4006479a4f614ecd21164`; comparación inicial 0 ahead / 0 behind. La rama histórica cycle05 está divergida y no se usa como base. El siguiente gate P0 es compilar/ejecutar pruebas/smoke P004 con logs observables; no declarar piloto funcional hasta PASS.
 
 ### Camino crítico, precedencias y salida
 
-1. **MCP-OCP-02 (P0):** HEAD actual de main → rama limpia → mapa REUSE/ADAPT/REWRITE/DROP → SDK/RID fijados. Salida: rama/diff revisables y source pins v388.
+1. **MCP-OCP-02 (P0): EJECUTADO / READ-BACK EN RAMA.** Rama nueva desde main, pin v388, mapa de portabilidad y SDK 10.0.403/RID win-x64 fijados. No merge; build y tests pendientes.
 2. **MCP-OCP-05 (P0):** sobre esa rama, corte `GOW:ARR → DUG → SINK:P004`. Desarrollo con fixtures sintéticos en paralelo; respuesta real exige fuente importada y pins cotejados.
 3. **MCP-OCP-03 (P0, paralelo):** contrato, positivos/negativos, integridad y fail-closed con fixtures; repetir contra fuente real después del gate EP.
 4. **MCP-OCP-04 (P0):** harness y smoke STDIO/RDC; la E2E IPZ exige piloto instalado y respuesta visible al modelo. JSON-RPC de consola no cumple E2E.
@@ -336,4 +336,33 @@ EP-TASK-004 GUI de bóveda y EP-TASK-002/Backblaze no bloquean P004 ni el build 
 
 ### Estado de evidencia
 
-**Documentación:** DUG v388, tareas Gobernanza, núcleo/backlog MCP-OCP y OEP/tareas EP rebaselined y leídos de vuelta. **No verificado/pendiente:** rama nueva, código P004, pruebas nuevas, preflight Fila 4, importación, paquete piloto, instalación, IPZ nativa, E2E y panel. No convertir el cierre documental en PASS de producto.
+**Última evidencia:** rama MCP-OCP limpia desde main creada; candidate P004, pruebas y CI están escritos en la rama, pero no hay PASS de compilación/tests/smoke. **Pendiente:** ejecución CI con logs, correcciones si aparecen, gates EP Fila 4, importación, paquete, instalación, IPZ nativa, E2E y panel. No convertir código escrito en PASS de producto.
+
+## Registro de ejecución MCP-OCP · rebaseline cycle · 2026-11-10
+
+**Estado del ciclo:** MCP-OCP-02 ejecutado; read-back de rama/documentos confirmado. MCP-OCP-05 implementado como candidato de código, no compilado. MCP-OCP-03/04 escritos, sin ejecución verificable.
+
+### Base y rama
+- `main` base: `06467fb32f344e5ff7e4006479a4f614ecd21164`.
+- Rama: `feat/mcp-ocp-p004-rebaseline-20261110`.
+- Creada desde el SHA exacto de main; compare inicial 0 ahead / 0 behind. La nueva rama no hereda commits históricos de ramas divergentes.
+- La rama previa `feat/mcp-ocp-p004-pilot-20261110-cycle05` comparó 26 ahead / 11 behind, con merge-base `0f933b9e3efae20131da37f99f50f4bc4a4eaf74`; PR #24 continúa en draft y sus runs consultables fallaron sin job steps/logs/artifacts. No se toma como base ni se declara build/test fallido.
+
+### Pins y código
+- DUG Samantha v388/NX-388m; commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`; blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`.
+- Core MCP-OCP v0.1.28; backlog LIST v0.9; control generación 5, Sink STDIO autorizado; panel WPF autorizado para 1.0.0.
+- Portabilidad: REWRITE del host/protocolo/lector/pin/tests; DROP de SQLite, vault, cifrado, backup, importación persistente y binaries/receipts históricos para Hito A.
+- .NET SDK 10.0.403, target `net10.0`, 0 dependencias NuGet externas; piloto framework-dependent sin RID; publicación final fijada `win-x64` self-contained.
+
+### Estado por tarea
+| Tarea | Estado actual | Evidencia / siguiente gate |
+|---|---|---|
+| MCP-OCP-02 | EJECUTADO; read-back de rama y clasificación | Rama/diff limpios desde base main; falta cerrar recibo de ejecución/build del resto del sprint |
+| MCP-OCP-05 | CANDIDATO ESCRITO | Resolver P004 y respuesta con pin/blob/SHA-256; requiere build, pruebas y smoke |
+| MCP-OCP-03 | 13 ESCENARIOS ESCRITOS / 0 EJECUTADOS | Ejecutar suite en .NET SDK 10.0.403 y registrar logs |
+| MCP-OCP-04 | HARNESS/CI ESCRITOS / SMOKE PENDIENTE | Crear PR draft para lanzar CI; el E2E IPZ espera instalación/gates EP |
+| MCP-OCP-13 | ESPECIFICADO / NO IMPLEMENTADO | WPF read-only requerido en release 1.0.0; no bloquea P004 |
+| EP-TASK-003 | EN_CURSO | Preflight Fila 4 no verificado en vivo; XTS-AES256/Protection On/100 % + protector/read-back + root; dead-man solo fuera de CECEQ |
+| EP-TASK-005 | PENDIENTE | Instalación/importación solo después de EP-TASK-003 PASS y paquete piloto verificado |
+
+**Siguiente acción crítica:** abrir PR draft de la rama nueva para disparar CI; recuperar job steps/logs/artifacts; corregir y repetir hasta build/tests/smoke PASS. No instalar ni importar fuentes privadas. No merge a main.
