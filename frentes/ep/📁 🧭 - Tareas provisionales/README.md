@@ -4,7 +4,7 @@
 **Contenedor:** `frentes/ep/📁 🧭 - Tareas provisionales/`  
 **OCP padre y fuente de contexto:** `frentes/ep/OEP.md`  
 **Evento de creación:** instrucción directa del operador en esta conversación · 2026-10-31.  
-**Fuente normativa consultada:** DUG Samantha v387 · NX-387m · Metacanon 1.29 · GOW 2.18, en `main`; blob `c8d37d92aed7ff9d4fe94e7a9541e76ba5c88a2c`.
+**Fuente normativa consultada:** DUG Samantha v388 · NX-388m · Metacanon 1.29 · GOW 2.18, en `main`; commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`; blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`.
 
 ## Naturaleza y límites
 
@@ -20,9 +20,9 @@ El patrón de materialización sigue el registro de tareas provisionales de Gobe
 |---|---|---|---|
 | EP-TASK-001 | pendiente | NCL — Navegador Compartido Local: integración de Playwright y KeePassXC | [núcleo](./📁%20🧩%20-%20EP-TASK-001%20-%20Integración%20NCL/README.md) |
 | EP-TASK-002 | `en_curso` | Persistencia B2 EP: pareja Master dedicada migrada a EP Vault y read-back verificado; autenticación B2 y respaldo remoto actual pendientes | [núcleo](./📁%20🧩%20-%20EP-TASK-002%20-%20Persistencia%20provisional%20Backblaze/README.md) |
-| EP-TASK-003 | en_curso | Workspace protegido y dead-man condicional a la ubicación; destino MCP-OCP Fila 4 | [núcleo](./📁%20🧩%20-%20EP-TASK-003%20-%20Mapa%20integral%20de%20construcción%20EP/README.md) |
+| EP-TASK-003 | en_curso · P0 sprint | Preflight Fila 4, checkout/root protegidos y dead-man condicional a ubicación real; gate para importación privada y piloto local | [núcleo](./📁%20🧩%20-%20EP-TASK-003%20-%20Mapa%20integral%20de%20construcción%20EP/README.md) |
 | EP-TASK-004 | `en_curso` | Bóveda EP: pareja Master EP promovida desde notas efímeras y verificada; H10 y aceptación integral pendientes | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-004%20-%20Reconstrucci%C3%B3n%20de%20b%C3%B3veda/README.md) |
-| EP-TASK-005 | pendiente | Piloto SINK:P004/IPZ prioritario y posterior instalación/aceptación MCP-OCP 1.0.0 en Fila 4 | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-005%20-%20Instalaci%C3%B3n%20y%20aceptaci%C3%B3n%20de%20MCP-OCP%20local/README.md) |
+| EP-TASK-005 | pendiente · P0 piloto | Instalar/aceptar primero SINK:P004 tras EP-TASK-003 PASS; después release MCP-OCP 1.0.0 en Fila 4 | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-005%20-%20Instalaci%C3%B3n%20y%20aceptaci%C3%B3n%20de%20MCP-OCP%20local/README.md) |
 | EP-TASK-006 | `en_curso` | Centralización: nombres Master B2 EP normalizados y leídos de vuelta; cobertura mult proveedor sigue incompleta | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-006%20-%20Centralizaci%C3%B3n%20de%20variables%20de%20entorno/README.md) |
 
 ## Estado de continuidad · 2026-10-31
@@ -225,3 +225,14 @@ No se ejecutó preflight, materialización, login, instalación ni piloto por es
 **Límite:** no se ejecutó autenticación B2 posterior a la migración ni upload/download remoto; la persistencia del snapshot actual no queda declarada. El readiness `bucketAuthorized=False` es anterior a la migración y no sustituye una comprobación nueva.
 
 **Lectura/cierre documental:** los núcleos individuales y este índice deben leerse de vuelta después de persistir en `main`; el asiento DTC registra el cierre y los commits/blob SHA de la escritura. No se crea folio global ni tarea nueva. EP-TASK-001, EP-TASK-003 y EP-TASK-005 conservan su estado.
+
+
+## Urgencia del sprint MCP-OCP · gate EP local · 2026-11-10
+
+**P0 de EP:** EP-TASK-003 es la dependencia operativa para importar fuentes privadas, crear DB y ejecutar el piloto local en Fila 4. Debe completar preflight vivo de identidad/sesión/perfil, ubicación física, checkout íntegro, volumen XTS-AES256/Protection On/100 %, protector recuperable/read-back SHA-256 y root de datos protegido. El dead-man es condicional: solo si la ubicación efectiva resulta distinta de CECEQ. Fila 4 ya está designada; no volver a pedir selección.
+
+**EP-TASK-005 · P0 piloto:** depende de EP-TASK-003 PASS y de MCP-OCP-05/03/04 (artefacto P004, contrato, pruebas y smoke STDIO/RDC). Verificar manifest/SHA y pin DUG v388 antes de extraer `instalacion-local/piloto-sink/`; importar fuentes actuales solo con checkout/root protegidos. `REGISTER <SID>` exige presencia y consentimiento local. La E2E IPZ se acepta solo con respuesta visible al modelo.
+
+**Qué no debe detenerse:** EP no necesita terminar Backblaze ni la GUI de bóveda para este piloto. MCP-OCP puede avanzar en rama/código no sensible y tests con fixtures mientras EP completa el gate; no importar fuentes privadas ni ejecutar runtime persistente antes de EP PASS. El panel y el release 1.0.0 son una fase posterior; el panel sí es obligatorio para 1.0.0, no para P004.
+
+**Pin de referencia:** DUG Samantha v388/NX-388m; commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`; blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`. No se declara preflight, migración, instalación, importación ni E2E ejecutados por este asiento.
