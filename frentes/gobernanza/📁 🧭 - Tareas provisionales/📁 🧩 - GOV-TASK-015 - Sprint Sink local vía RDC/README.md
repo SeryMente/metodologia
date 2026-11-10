@@ -339,7 +339,7 @@ EP-TASK-004 GUI de bóveda y EP-TASK-002/Backblaze no bloquean P004 ni el build 
 **Última evidencia:** rama MCP-OCP ciclo02 creada desde el main vigente; candidato P004, pruebas y CI están escritos, pero no hay PASS de compilación/tests/smoke. EP publicó un preflight parcial de Fila 4 con resultado FAIL; no hay instalación/importación. Pendiente: CI observable, correcciones, gates EP, paquete, instalación, IPZ nativa, E2E y panel. No convertir código escrito en PASS.
 ## Registro de ejecución MCP-OCP · ciclo02 · 2026-11-10
 
-**Estado de sprint:** MCP-OCP-02 ejecutado y read-back verificado. MCP-OCP-05 tiene implementación candidata P004 escrita, no compilada. MCP-OCP-03 tiene 15 escenarios P004 escritos/0 ejecutados; MCP-OCP-13 añade 11 pruebas de monitor escritas/0 ejecutadas. MCP-OCP-04 tiene harness/CI actualizados con build WPF, pero no hay smoke ni PASS observable; E2E IPZ pendiente.
+**Estado de sprint:** MCP-OCP-02 ejecutado y read-back verificado. MCP-OCP-05 tiene implementación candidata P004 escrita, no compilada. MCP-OCP-03 tiene 16 escenarios P004 escritos/0 ejecutados; MCP-OCP-13 añade 11 pruebas de monitor escritas/0 ejecutadas. MCP-OCP-04 tiene harness/CI actualizados con build WPF, pero no hay smoke ni PASS observable; E2E IPZ pendiente.
 
 ### Base de trabajo
 - Main actual al crear la rama: `84cc9ffc1a2aa27c622c7e5de147d7460f3b5ecd`.
@@ -378,7 +378,7 @@ Después de crear la rama ciclo02, main avanzó cuatro commits EP-only hasta `67
 
 **Telemetría:** evento `SINK_READ_SUCCESS` solo tras lectura completa validada; los errores se registran como `TOOL_FAILED` con código saneado y nunca incrementan éxitos. No se guardan argumentos, contenido, texto de principios, tokens, secretos, SID ni payloads.
 
-**Pruebas escritas:** 15 escenarios P004 + 11 de monitor; 0 ejecutadas. CI ahora restaura/build del servidor, suites P004/monitor, build WPF con `EnableWindowsTargeting` y smoke STDIO. El último run consultable de la revisión previa falló sin pasos/logs/artifacts; esta implementación nueva aún requiere una ejecución observada asociada al HEAD actual.
+**Pruebas escritas:** 16 escenarios P004 + 11 de monitor; 0 ejecutadas. CI ahora restaura/build del servidor, suites P004/monitor, build WPF con `EnableWindowsTargeting` y smoke STDIO. El último run consultable de la revisión previa falló sin pasos/logs/artifacts; esta implementación nueva aún requiere una ejecución observada asociada al HEAD actual.
 
 **Estado:** implementación candidata escrita/read-back; build, tests, smoke, visual review Windows, paquete, integración EP ACTIVE y aceptación permanecen PENDIENTES. El panel no bloquea el corte P004 pero es obligatorio para 1.0.0.
 
@@ -392,3 +392,8 @@ Después de crear la rama ciclo02, main avanzó cuatro commits EP-only hasta `67
 - Suite P004: 16 casos escritos / 0 ejecutados. Suite monitor: 11 escritos / 0 ejecutados. Build WPF y smoke: no verificados. El contenedor local no contiene `dotnet`.
 
 **Estado de verificación:** la implementación candidata está publicada; build, pruebas, smoke y revisión visual continúan NO VERIFICADOS. No se declara fallo de código ni aceptación.
+
+
+### Reintento de CI run 56 · última lectura
+
+GitHub aceptó un `rerun_workflow_job` del job `130014524745`; la última lectura del run `42868894554` lo mostró en `queued`, sin pasos ni nuevo resultado observable. No se atribuye PASS ni se da por iniciada la compilación.
