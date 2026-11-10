@@ -1,0 +1,46 @@
+name: MCP-OCP P004 pilot CI
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "frentes/mcp-metodologia/**"
+      - ".github/workflows/mcp-ocp-p004-pilot.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-test:
+    name: Build and run P004 pilot tests
+    runs-on: windows-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        shell: pwsh
+        working-directory: frentes/mcp-metodologia
+
+    steps:
+      - name: Checkout candidate branch
+        uses: actions/checkout@v4
+
+      - name: Install pinned .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.403
+
+      - name: Verify SDK selection
+        run: dotnet --info
+
+      - name: Restore pilot test graph
+        run: dotnet restore tests/OcpMcp.Pilot.Tests/OcpMcp.Pilot.Tests.csproj
+
+      - name: Build MCP server
+        run: dotnet build src/OcpMcp/OcpMcp.csproj --configuration Release --no-restore
+
+      - name: Build pilot test harness
+        run: dotnet build tests/OcpMcp.Pilot.Tests/OcpMcp.Pilot.Tests.csproj --configuration Release --no-restore
+
+      - name: Execute pilot tests
+        run: dotnet run --project tests/OcpMcp.Pilot.Tests/OcpMcp.Pilot.Tests.csproj --configuration Release --no-build
