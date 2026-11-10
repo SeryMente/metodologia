@@ -181,12 +181,12 @@ La pregunta final del archivo queda respondida: BitLocker funciona; el bloqueo e
 EP-TASK-003 y EP-TASK-005 son el carril EP de este sprint. EP-TASK-003 conserva la migración del workspace a W: y el dead-man cuando la ubicación sea LOC-OTHER. EP-TASK-005 controla el handoff, la ruta de datos protegida, el bootstrap DPAPI CurrentUser y la aceptación MCP stdio/RDC. EP-TASK-004 (UI de bóveda) y EP-TASK-002 (Backblaze) no bloquean el build Sink; solo se incorporan si se demuestra una dependencia técnica concreta. La autenticación GitHub del conector de ChatGPT no equivale a autenticación local del perfil Windows.
 
 
-## Sprint Sink local · instalación del release 1.0.0 dentro de Metodología · 2026-11-09
+## Plan original de instalación Sink · 2026-11-09 · PC 7 SUPERSEDIDO POR FILA 4
 
-- **EP-TASK-003:** entrega el checkout completo y sincronizado de `SeryMente/metodologia` en `SeryMente/Repositorios/Metodologia/metodologia/`; verifica integridad, permisos, BitLocker realmente activo y dead-man LOC-OTHER en PC 7. La materialización previa fue parcial y no era checkout Git; no está lista aún.
+- **EP-TASK-003:** entrega el checkout completo y sincronizado de `SeryMente/metodologia` en `SeryMente/Repositorios/Metodologia/metodologia/`; verifica integridad, permisos, BitLocker realmente activo y dead-man según ubicación física verificada en Fila 4. La materialización previa fue parcial y no era checkout Git; no está lista aún.
 - **EP-TASK-005:** instala el release de software MCP-OCP 1.0.0 en `frentes/mcp-metodologia/instalacion-local/` dentro de ese checkout, compara SHA, extrae, lee de vuelta, configura el root de datos protegido fuera del checkout, importa fuentes y ejecuta pruebas STDIO/RDC. Registro local exige consentimiento presencial.
 - **Ubicación de datos:** DB, claves DPAPI, fuentes sensibles, logs operativos y backups fuera de checkout; binarios locales en `instalacion-local/` excluidos de Git.
-- **Gate actual:** PC 7 + RDC + LOC-OTHER designado. La última evidencia mostró C: cifrado 100 % con `ProtectionStatus=Off`; no ejecutar instalación persistente hasta Protection On, root protegido y dead-man PASS. Eso no detiene la implementación/build remotos de MCP-OCP.
+- **Gate del plan original PC 7:** supersedido por la rectificación vigente Fila 4. En Fila 4, preflight y protección efectiva pendientes; dead-man solo se exige si la ubicación confirmada es distinta de CECEQ. Esto no detiene el desarrollo remoto no sensible.
 - **Fuera de sprint:** EP-TASK-002/B2 y EP-TASK-004/UI de bóveda, salvo dependencia concreta demostrada.
 
 Estado documental: carril EP y destino exacto completados en diseño; preflight, checkout íntegro, dead-man, instalación y aceptación siguen pendientes.
