@@ -45,7 +45,7 @@ try {
     $processInfo.ArgumentList.Add($assemblyPath)
     $processInfo.ArgumentList.Add('serve')
     $processInfo.ArgumentList.Add('--repo-root')
-    $repositoryRoot = (Resolve-Path (Join-Path (Get-Location).Path '..\..')).Path
+    $repositoryRoot = Split-Path -Parent (Split-Path -Parent (Get-Location).Path)
     $processInfo.ArgumentList.Add($repositoryRoot)
 
     $process = [System.Diagnostics.Process]::new()
