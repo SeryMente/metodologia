@@ -1791,3 +1791,38 @@ Este suplemento solo registra la actualización de navegación y su cotejo. No r
 **Rebase/sync preflight:** main HEAD observado `b8acb9aa56b226733022f9e4c7906371fcc8ce49`; PR HEAD `b3aaf38ab913aba62e5d80d2aeacf36e62e81c3d`. Comparación: PR 37 ahead / 5 behind; merge-base `ff9c75926a2907c630f506c4e08c267b15bca7cf`. Los cambios nuevos de main afectan exclusivamente `frentes/gobernanza/GOBERNANZA.md`, `frentes/gobernanza/README.md`, el núcleo GOV-TASK-015 y este mismo DTC MCP. Ninguna ruta se solapa con las 28 rutas modificadas por PR #27. Se autoriza la reconciliación normal de dos padres; no se autoriza fusionar PR #27 a main ni quitar el estado DRAFT.
 
 **Estado:** `DTC_CYCLE_STATUS=OPEN`; `MCP_OCP_H1=LOCAL_VALIDATION_REPORTED_CI_RUNNER_BLOCKED`; `PR_27=OPEN_DRAFT_NOT_MERGED`; `MAIN_SYNC=AUTHORIZED_PENDING_EXECUTION`; `IPZ_E2E=NOT_ACCEPTED`; `MCP_NORMATIVO=DESACTIVADO`; `FOL1=PREPARADO_NO_ACTIVO`.
+
+### Respuesta MCP-OCP y resultado comunicado al frente centralizador · ciclo local 12 · 2026-11-10, 16:38 America/Mexico_City
+
+**Desviación de apertura:** la revisión/ejecución técnica de este ciclo comenzó antes de releer GOV-TASK-015, GOV-TASK-011 y la plantilla de cierre. Se registra `DTC_OPENING_LATE=TRUE`; no se reconstruye ni simula una apertura previa. El ciclo local 11 permanece cerrado y sin renumerar.
+
+**Cursor y autoridad revalidados:** main `98d5930701d04ffdf74f1e12906f54c06389637d`; DUG Samantha v388/NX-388m, commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`, blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`; control MCP-OCP generation 5, blob `826d7bd3f67bddf4f31bafee5013d1ea55003cf4`, sin modificación. PR #27 continúa OPEN/DRAFT/NOT MERGED, HEAD `b6ce37af1dc32b2e3bb8af3ded2a77c7ba6d7648`, base `98d5930701d04ffdf74f1e12906f54c06389637d`, 38 ahead / 0 behind.
+
+**Respuesta inicial al frente centralizador:** `ACKNOWLEDGED`. Se acusa recibo del mandato de GOV-TASK-015 y GOV-TASK-011: informar hitos con el formato ejecutivo 🎯 Hito · 🚦 Estado · ✅ Confirmado · ⛔ Bloqueantes · ⚠️ Preocupaciones · ➡️ Siguiente acción · 🔎 Fuente/corte; emitir actualización tras hitos materiales y síntesis de cierre con read-back. El informe individual de cada tarea debe vivir en su ficha/núcleo propietario; el resumen interfrentes no lo sustituye. Después del read-back del informe se actualiza el índice padre y se comunica al operador el enlace y la síntesis.
+
+**Resultado técnico comunicado:** la candidata H1 fue reconciliada con main mediante merge explícito de dos padres `e5bd7d992f3fda83035cc43329353b846a25e9a8` (main padre `ff9c75926a2907c630f506c4e08c267b15bca7cf`), y la rama ahora está 38 ahead / 0 behind del main actual. El lector fue corregido para exigir `document.principle_inventory_policy`, y el fixture reproduce DUG v388. Se restauró `.gitignore` seguro desde main y se trasladó `global.json` a `frentes/mcp-metodologia/global.json`.
+
+**Validación ejecutada localmente:** Windows 10.0.26200 x64, .NET SDK 10.0.403, PowerShell 7.4.22. Restore PASS; build de servidor y dos suites PASS con 0 warnings/0 errors; P004 18/18 PASS; monitor/readiness 23/23 PASS; smoke MCP STDIO/EOF PASS, tres respuestas JSON-RPC en STDOUT, evento `SINK_READ_SUCCESS` en STDERR, exit code 0 y `PILOT_CI_RESULT=PASS`. El checkout temporal quedó limpio. SHA-256 P004 log `D6F21749D8898B6624988BF056DA2BCC66DA3A5DF1CAE8FFA1FA2DB36DEB338B`; monitor `B9B3F2B5A42285CC3D81AE5EEFBDC678104E5E408A861BB5D1045885CBC29989`; smoke summary `2D5C90D467B5508A9FAD22F0C00902035D9F3FE7F703B052AAB13365BE2C0B31`; STDOUT `7818B9894239D7760EAD89D18BA78244096041FE2738C639F840A5FCD9918938`; STDERR `8614035B5585D84175B53B1DE4A126ED6B3A84BDED7E6BE51153A2FB8AF2D61B`.
+
+**Bloqueantes y límites:** los jobs previos de GitHub Actions no asignaron runner y no entregaron steps/logs/artifacts; la causa raíz sigue `NO_VERIFICADA`. La validación local Windows no es CI hospedado Ubuntu. No hay instalación EP/Fila 4, importación de fuentes privadas, respuesta visible desde contexto IPZ ni aceptación GOV-TASK-003/007. MCP-OCP-14 sigue propuesto, sin runtime/IO. No se tocó EP/Vault/B2/IPZ/Khora ni el control; MCP-NORMATIVO permanece DESACTIVADO y FOL1 inactivo.
+
+**Siguiente acción elegida:** preparar el artefacto mínimo de piloto P004 con manifest, pin DUG v388, commit/base de código, SDK/RID, SHA-256 y runbook de handoff para EP. La extracción/instalación y el E2E quedan suspendidos hasta que EP-TASK-003 entregue `PASS` y EP-TASK-005 reciba el paquete; Gobernanza conserva la aceptación IPZ E2E.
+
+**Estado del ciclo:** `DTC_CYCLE_STATUS=INCOMPLETE` por apertura tardía; `MCP_OCP_H1=LOCAL_BUILD_TESTS_STDIO_PASS`; `HOSTED_CI=NOT_VERIFIED_RUNNER_UNASSIGNED`; `PR_27=OPEN_DRAFT_NOT_MERGED`; `IPZ_E2E=NOT_ACCEPTED`; `MCP_NORMATIVO=DESACTIVADO`; `FOL1=PREPARADO_NO_ACTIVO`.
+
+
+### Apertura MCP-OCP · artefacto mínimo SINK:P004 · ciclo local 13 · 2026-11-10
+
+**Cursor DTC leído:** `main`, blob `e2dbe8f222b501a91ff60c7365b76baa7c3ee539`; el último asiento es el resultado comunicado del ciclo local 12, cuyo estado `INCOMPLETE` por apertura tardía se conserva sin reconstrucción retroactiva. Este asiento abre trabajo nuevo; no renumera ni reescribe ese ciclo.
+
+**Asignación recibida del frente centralizador:** preparar el artefacto mínimo de piloto P004 con manifiesto, pin DUG v388, commit/base de código, SDK/RID, SHA-256 y runbook de handoff para EP. El paquete es un entregable técnico de MCP-OCP; la extracción/instalación y el E2E no forman parte de este acto.
+
+**Autoridad y límites releídos:** MCP-OCP `owned`, generación 5, control blob `826d7bd3f67bddf4f31bafee5013d1ea55003cf4`. La autorización permite código, pruebas, manifiesto, paquete, runbook y documentación dentro de `frentes/mcp-metodologia/`; no permite instalar/configurar el host EP, operar Vault/B2/credenciales, publicar listeners/red, modificar DUG/IPZ/Khora ni activar MCP-NORMATIVO. No se modifica el control.
+
+**Respuesta inicial:** `ACKNOWLEDGED`. Fuente de código: rama `feat/mcp-ocp-sink-p004-main-a34c1c5b`, HEAD validado `b6ce37af1dc32b2e3bb8af3ded2a77c7ba6d7648`, sincronizada con main `98d5930701d04ffdf74f1e12906f54c06389637d` por merge de dos padres. La lectura inmediata muestra que main avanzó después con un commit documental del DTC (`36cfd1f2a0174bcffb8259cd22f6c2e063b95fa8)); ese cambio se integrará como sincronización de dos padres antes de emitir el paquete. PR #27 permanece OPEN/DRAFT/NOT MERGED.
+
+**Precondiciones observadas:** validación local del HEAD `b6ce37a`: restore y tres builds PASS (0 warnings/0 errors); P004 18/18; monitor/readiness 23/23; STDIO initialize/tools/list/tools/call/EOF PASS; harness exit 0. El checkout local quedó limpio y el DUG blob/SHA cotejaron. GitHub-hosted CI del HEAD sigue sin runner (`runner_id=0`, `steps=[]`, logs `BlobNotFound`, 0 artifacts; causa raíz NO VERIFICADA).
+
+**Separación de aceptación:** EP-TASK-003 no está en PASS y EP-TASK-005 sigue siendo responsable de la recepción/instalación. Se construirá y verificará un artefacto portable de revisión/handoff, no se extraerá, instalará ni transferirá a Fila 4. Gobernanza conserva aceptación IPZ E2E.
+
+**Estado de apertura:** `DTC_CYCLE_STATUS=OPEN`; `MCP_OCP_H1=LOCAL_BUILD_TESTS_STDIO_PASS`; `MCP_OCP_PILOT_ARTIFACT=IN_PROGRESS`; `PR_27=OPEN_DRAFT_NOT_MERGED`; `HOSTED_CI=RUNNER_UNASSIGNED`; `EP_INSTALL=BLOCKED_EP_TASK_003_005`; `IPZ_E2E=NOT_ACCEPTED`; `MCP_NORMATIVO=DESACTIVADO`; `FOL1=PREPARADO_NO_ACTIVO`.
