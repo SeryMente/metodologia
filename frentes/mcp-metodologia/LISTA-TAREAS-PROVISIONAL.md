@@ -9,10 +9,10 @@
 - **Versión de la lista:** 0.11 (provisional; coordinación del Sprint SINK-P004 y producto MCP-OCP 1.0.0).
 - **Última actualización:** 2026-11-10.
 - **Gobierno leído:** Samantha v388 · NX-388m; Metacanon 1.29; GOW 2.18; DUG commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`; blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`. ART-027 rebaselined para Sink local STDIO/RDC; §ARR y P037 revisados; CNP P001/P004/P005/P038/P043 considerado.
-- **Núcleo enlazado:** [MCP-OCP · objeto canónico](MCP-METODOLOGIA.md), v0.1.29; esta lista v0.11 es su backlog auxiliar vigente.
+- **Núcleo enlazado:** [MCP-OCP · objeto canónico](MCP-METODOLOGIA.md), v0.1.30; esta lista v0.11 es su backlog auxiliar vigente.
 - **Control:** [CONTROL-RESPONSABILIDAD.json](CONTROL-RESPONSABILIDAD.json). Las generaciones y sesiones son metadatos de auditoría y no bloquean trabajo autorizado.
 - **MCP-NORMATIVO:** DESACTIVADO.
-- **Producto vs. documento:** MCP-OCP-v0.1.29 es la versión documental vigente; la versión de software objetivo es 1.0.0. La candidata ejecutable 0.1.0 y su recibo histórico no constituyen una versión actualizada ni aceptada del producto.
+- **Producto vs. documento:** MCP-OCP-v0.1.30 es la versión documental vigente; la versión de software objetivo es 1.0.0. La candidata ejecutable 0.1.0 y su recibo histórico no constituyen una versión actualizada ni aceptada del producto.
 - **Principio de custodia:** no guardar claves, access/refresh tokens, datos privados de usuario, contenido sensible de repositorios ni secretos en esta lista, artefactos, manifests o logs. Utilizar fixtures sintéticos y evidencia minimizada.
 
 ## Decisión de alcance operativa vigente
@@ -340,7 +340,7 @@ El panel MCP-OCP-13 baja a P1 de secuencia, pero permanece como entregable oblig
 ### Estado rebaselined
 
 - DUG vigente: Samantha v388/NX-388m; ART-027 local STDIO/RDC; commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`; blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`.
-- Core vigente: v0.1.29; este backlog: v0.10.
+- Baseline de esta sección: v0.1.29 / v0.10; supersedido por el núcleo v0.1.30 y backlog v0.11.
 - La rama `feat/mcp-ocp-sink-p004-pilot-20261110` permanece anclada al commit histórico `1676901cc09af6fcec4d052800b031e4c2f1ab40`; no cumple el requisito de nueva rama desde el main vigente. No fusionar la rama completa ni contar su existencia como MCP-OCP-02 PASS.
 - Control MCP-OCP generación 5: autorización directa para código local STDIO, pruebas, build, manifest, paquete y documentación dentro de este OCP; control sin cambios. Exclusiones host EP/Vault/recuperación/credenciales externas y cambios DUG/IPZ.
 - EP no es una dependencia para desarrollar código no sensible ni probar con fixtures. EP sí es gate para importación privada, DB real, runtime persistente e instalación local.
