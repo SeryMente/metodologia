@@ -310,3 +310,27 @@ EP-TASK-003 prepara Fila 4 en paralelo al desarrollo MCP remoto. El primer uso d
 
 **Estado tras la rectificación:** Fila 4 designada; preflight vivo, workspace íntegro/protegido, autenticación local cuando aplique y clasificación de ubicación pendientes. No se materializó ni instaló software en esta actualización.
 
+
+## Urgencia P0 · desbloqueo del piloto MCP-OCP SINK:P004 · 2026-11-10
+
+**Prioridad de ejecución EP: P0 / INMEDIATA para el tramo local del piloto.** Esta tarea es la dependencia de host que impide importar fuentes privadas, crear la base real y ejecutar el piloto instalado en Fila 4. No bloquea el desarrollo remoto de MCP-OCP, la rama limpia, código no sensible ni pruebas con fixtures sintéticos.
+
+### Alcance exacto del desbloqueo
+
+1. **Identidad viva:** confirmar que la sesión activa corresponde a Fila 4; cotejar dispositivo RDC `d0bbb2a3-d7b4-45e1-8870-652c2c3844fc`, sesión `CENTRAL\\fila4`/SessionId 4, hostname, usuario/SID, USERPROFILE, privilegios y permisos. Los valores citados son la última identidad documentada, no un preflight actual. No pedir otra selección del destino y no usar PC 7, PC-14 ni `CENTRAL\\MantenimientoRCI` como sustitutos.
+2. **Ubicación:** observar y registrar la ubicación física real por separado de la etiqueta Fila 4. No inferir CECEQ/LOC-OTHER. En CECEQ, conservar el workspace cifrado al cierre; fuera de CECEQ, dead-man específico obligatorio antes de runtime persistente.
+3. **Volumen protegido:** verificar en vivo volumen de trabajo XTS-AES256, BitLocker `Protection On`, `FullyEncrypted/100 %`, protector recuperable bajo EP Vault y lectura de vuelta. La observación histórica de Fila 4 (`XtsAes128`, `ProtectionStatus=Off`) no cumple el gate.
+4. **Checkout:** materializar/sincronizar íntegramente `SeryMente/metodologia` desde `main` en `%USERPROFILE%\\Desktop\\SeryMente\\Repositorios\\Metodologia\\metodologia\\`; verificar origen, branch, HEAD, status, árbol, permisos y manifiestos SHA-256. No sobrescribir cambios locales ajenos ni heredar staging/volúmenes/DPAPI/RecoveryPassword de otros hosts.
+5. **Root de datos:** validar `%USERPROFILE%\\Desktop\\SeryMente\\Datos\\Metodologia\\MCP-OCP\\` fuera del checkout y dentro del volumen protegido; registrar ruta efectiva, ACL y read-back sin exponer secretos.
+6. **Dead-man condicional:** si la ubicación confirmada es distinta de CECEQ, implementar y probar solo el contrato aprobado: terminación del proceso controlador EP → bloquear BitLocker → desmontar → eliminar exclusivamente el contenedor EP. No introducir heartbeat, polling, Guardian genérico, tareas programadas ni borrado fuera del perímetro.
+
+### Dependencias hacia el sprint
+
+- **Bloquea:** EP-TASK-005 para extraer el piloto, importar DUG/fuentes privadas, crear DB real, provisionar operador y dejar runtime persistente; MCP-OCP-12 para bootstrap local; ejecución IPZ E2E de GOV-TASK-003.
+- **No bloquea:** MCP-OCP-02 (rama nueva), análisis/port selectivo, implementación de código no sensible, MCP-OCP-03 con fixtures sintéticos ni preparación de harness MCP-OCP-04. Esas líneas deben avanzar en paralelo y no esperar a RDC/EP.
+- **Orden siguiente:** con este preflight en PASS, EP-TASK-005 recibe el artefacto piloto construido contra DUG Samantha v388/NX-388m, coteja manifest/SHA, lo extrae en `frentes/mcp-metodologia/instalacion-local/piloto-sink/`, configura el root protegido e importa únicamente fuentes con pins vigentes. El `REGISTER <SID>` requiere consentimiento/presencia local explícitos.
+- **FOL1:** no bloquea P004, preflight EP, build ni instalación piloto. IPZ nativa/read-back conserva su gate independiente.
+
+### Estado de evidencia
+
+Esta actualización cambia la prioridad y hace explícitas las dependencias; no ejecuta lectura viva de Fila 4, cifrado, checkout, migración, dead-man, instalación ni importación. Todos siguen `PENDIENTE/NO_VERIFICADO` hasta evidencia local y read-back. EP-TASK-003 permanece `en_curso`.
