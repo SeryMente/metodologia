@@ -2617,3 +2617,53 @@ DTC releído desde `main`, blob `bcad48724aca6ffd34f09ee8d90944ef57d192fd`, 2.60
 4. EP-TASK-005/006/007/001 conservan dependencias y prioridad ya registradas; no se anticipan.
 
 **Siguiente acción inmediata:** verificar el script exacto de suite y su procedencia/versionado; ejecutarlo aislado sobre la ruta local v1.0.0 si el código coincide con el objeto esperado. Registrar resultados y SHA/read-back en EP-TASK-004, índice, OEP y este DTC. No tocar el almacén formal, la GUI, BitLocker ni el workspace compartido.
+
+
+---
+
+## EP · cierre de ciclo: suite sintética v1.0.0 y diagnóstico P0-C · 2026-11-10 · 16:10 America/Mexico_City
+
+### Procesamiento y resultado
+
+**Cursor bilateral:** DTC leído en main al abrir el ciclo, blob `564a1686230a4d7f87066eb95ed7b438cb7328df`. No se recibió comunicación nueva posterior al cursor; `SIN_NOVEDAD`.
+
+**Instrucción del operador:** releer la cola, seleccionar la siguiente tarea según prioridades/dependencias y resolver lo habilitado. Se releyeron OEP, índice y tareas EP-TASK-001–007. La decisión operativa fue ejecutar la revalidación sintética exacta de EP-TASK-004 mientras TASK-002 permanecía SELLADA; al aparecer sesión activa en Vault, se volvió a priorizar P0-C de TASK-002.
+
+### EP-TASK-004 — E2E sintética exacta v1.0.0
+
+- Compare de producto: `feat/ep-vault-pc7-hardened-20261109` versus main, DIVERGED (10 ahead/272 behind).
+- Los cinco artefactos locales coinciden con los Git blobs de MANIFEST v1.0.0.
+- Suite terminada: `EP_VAULT_VALIDATION_PASS`, exit code 0, 165,41 s, sandbox fuera de AppData/workspace limpiado y ausencia verificada.
+- Crypto, KDF legacy/read-back, ocho TTL, Job Object/timeout, allowlist, notas DPAPI, fail-closed, CRUD/tamper/backup, redacción y revocación cruzada CLI↔GUI pasan sintéticamente.
+- H7/H8 sintéticos para la candidata exacta: PASS. H10 de inspección/aceptación visual humana y merge a main siguen pendientes.
+- Informe individual leído de vuelta: commit `df54e3521b0fb18dfef63d6c98c391549223ce70`, blob `0f9acb4f105e3aa7ff4152a5b392bf365de24e41`.
+- Índice leído de vuelta tras su actualización: commit `c454db12da427342d971fe1628d17a6d2a7c0cf9`, blob `97dd5910e5152f4a9162092221cf542afba05c52`.
+
+### EP-TASK-002 — diagnóstico y dos preflights B2 fallidos
+
+- Sesión temporal activa bajo CENTRAL\fila4 a 16:01:13; cinco nombres de variables EP presentes, sin revelar valores.
+- Worker original P0-C: account authorize PASS, key ID emparejado, bucket OCP-MCP allPrivate; falla `UNEXPECTED_WORKER_FAILURE` antes de upload. Recibo 989 B, SHA `7CBAED2A5AB668F0D9771D86F1495AEBF3EC083A474399FF65D586C86735C6D0`.
+- Worker v2: copia independiente, parser PASS, guard de lifecycle opcional y tipo de excepción saneado; vuelve a autenticar y reconocer bucket privado; falla `WORKER_EXCEPTION_PropertyNotFoundException` antes del upload. Recibo 1.006 B, SHA `10CBA96DDADDB176BDCD846BA90F0A5DAF40AC2E239633717BFD596D063AD8B5`.
+- Ambos recibos reportan remoteObject/fileId ausentes, sin download/SHA remoto, SSE no confirmado, caché temporal limpiada, sin emisión de secretos ni upload del workspace.
+- Worker/wrapper v3 preparados con captura saneada de línea, parser PASS; worker SHA `45D9E91A16078ABE649A93DCEB56696D9B1F0C493368E2FC09A4F53FD5F92BD6`, wrapper SHA `7F5C76D31BC6E660F1F6D3DA2DAEF3220A173136F38D8B0298C92ABA9236DFA9`. V3 no ejecutada porque la sesión volvió a SELLADA a 16:09:18.541 local. Recibo v3 ausente.
+- Informe individual actualizado y leído de vuelta: commit `3dd266d2645cf7884a021a96573692b9c4b39f65`, blob `de810f529a59f4fea9768393430a07a5c1f8e86e`.
+- Índice leído de vuelta después: commit `101ed655774d580fef128fff66d65172c7ac69f1`, blob `5de2397a43906bde701fe83f7decf737b5e401f6`.
+
+### Revalidación de tareas relacionadas
+
+- EP-TASK-003 conserva diseño aceptado, pero preflight físico PARTIAL_FAIL; workspace cambia durante actividad concurrente en Temporal; no generar manifest ni copiar.
+- EP-TASK-006 permanece P1 tras snapshot/restore B2.
+- EP-TASK-007 no implementa Guardian/lease/crypto-erasure.
+- EP-TASK-005 sigue bloqueada por TASK-003 PASS y paquete P004 probado.
+- EP-TASK-001 permanece pendiente.
+- OEP actualizado a v0.3.62 / §128; commit `4547b1a1e0044b39189e7099d70451431e5d416d`, blob `e189a10832f9523eed74b348744f35824ca73e46`; lectura de vuelta exacta.
+
+### Estado del ciclo, riesgos y siguiente acción
+
+**P0 B2 no está resuelto.** Se autenticó la cuenta y se encontró bucket privado, pero ambos workers fallaron durante preflight antes de subir; no existe snapshot remoto demostrado. No afirmar backup/restore, y no avanzar a migración física. Los dos recibos de fallo siguen preservados; v3 no se ejecutará hasta nuevo desbloqueo local del Vault. El operador no debe compartir su contraseña por chat.
+
+Siguiente acción concreta: el operador desbloquea EP Vault localmente; EP comprueba Status=true y los cinco nombres sin revelar valores; ejecuta únicamente el worker v3 dentro del TTL para obtener el número de línea saneado. Con la línea confirmada, corrige el fallo en una variante nueva con recibo propio y ejecuta un único intento final P0-C. Solo un recibo con upload, download/SHA-256 idéntico, SSE-B2 y restore verificados permite desbloquear las tareas dependientes.
+
+No se efectuó copia, cifrado ni montaje del workspace; no se alteró el ciphertext formal; no se modificó main de producto, no se fusionó rama ni se aceptó H10.
+
+**Estado del ciclo:** `PUBLICADO → LEÍDO → RESPUESTA_INICIAL_REGISTRADA → PROCESADO → DOCUMENTADO_AL_CIERRE → VERIFICADO_READBACK`.
