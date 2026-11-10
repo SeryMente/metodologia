@@ -30,17 +30,14 @@ jobs:
         with:
           dotnet-version: 10.0.403
 
-      - name: Verify SDK selection
-        run: dotnet --info
+      - name: Execute build, 13 contract tests and real STDIO smoke
+        run: .\piloto-sink\ci\Invoke-PilotValidation.ps1
 
-      - name: Restore pilot test graph
-        run: dotnet restore tests/OcpMcp.Pilot.Tests/OcpMcp.Pilot.Tests.csproj
-
-      - name: Build MCP server
-        run: dotnet build src/OcpMcp/OcpMcp.csproj --configuration Release --no-restore
-
-      - name: Build pilot test harness
-        run: dotnet build tests/OcpMcp.Pilot.Tests/OcpMcp.Pilot.Tests.csproj --configuration Release --no-restore
-
-      - name: Execute pilot tests
-        run: dotnet run --project tests/OcpMcp.Pilot.Tests/OcpMcp.Pilot.Tests.csproj --configuration Release --no-build
+      - name: Upload validation diagnostics even on failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mcp-ocp-p004-diagnostics
+          path: ${{ runner.temp }}\mcp-ocp-p004-pilot-diagnostics\
+          if-no-files-found: warn
+          retention-days: 7
