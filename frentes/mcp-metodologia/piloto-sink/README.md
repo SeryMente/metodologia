@@ -69,3 +69,10 @@ La propuesta MCP-OCP-14 v0.1 y sus cuatro schemas se encuentran bajo `persistenc
 Main sincronizado: `8f999198f1d8cde71361c884c9a13b745f442b49`; merge `ea32a78e87bd659307fc81ff3f80b3743bae9d0a`. HEAD actual de la rama antes de esta nota: `4c3d63a5a20d770c1da31366ec3563320ee1c2f6`; 19 ahead / 0 behind; PR #27 OPEN/DRAFT/NOT MERGED.
 
 H2 aporta una propuesta MCP-OCP-14 v0.1 y cuatro JSON Schemas parseables. No hay código de persistencia, DB, IO, B2, Vault ni restore; dichos actos mantienen responsables y gates EP. Build/tests/smoke H1 no cuentan con evidencia de ejecución por jobs sin runner asignado.
+
+
+## Último estado de revisión · 2026-11-10
+
+Rama HEAD observado `d50ae21ee96de04d2d99b4eaf8038f2620c249f8`; main `8f999198f1d8cde71361c884c9a13b745f442b49`; 22 ahead / 0 behind; 29 rutas; PR #27 abierta en borrador y sin merge. Core candidato v0.1.37, backlog LIST v0.18.
+
+H1: 41 tests escritos/0 ejecutados con evidencia; build y smoke pendientes. El job piloto más reciente concluyó sin runner asignado, pasos, logs ni artefactos; causa raíz no verificada. H2: contrato MCP-OCP-14 propuesto, sin runtime ni escritura.
