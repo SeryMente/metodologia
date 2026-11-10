@@ -104,3 +104,28 @@ EP-Workspace-Recovery_2026-11-10_Martes_17-32_America-Mexico_City_RN.zip
 La marca horaria representa el momento real de creación/cierre del snapshot, no el momento posterior en que se renombra o se copia. Incluir el mismo prefijo base en manifiesto, recibo y sidecars; conservar el timestamp ISO 8601 con offset dentro de los metadatos.
 
 **No reescribir el historial:** el objeto remoto ya confirmado conserva su nombre original `EP-Backup-Provisional-20261110-164004-R2.zip`; corresponde al snapshot de las 16:40:04 local y no se renombra retroactivamente. El R3 local corresponde a las 17:21:27 local y tampoco debe recibir una marca 17:32. El próximo snapshot generado sí adoptará esta convención. R3 permanece solo local hasta que su carga B2 sea demostrada.
+
+
+## 9. R4 remoto confirmado y restauración E2E aislada · 2026-11-10
+
+**Archivo remoto actual (canónico y descargable):**
+
+`OCP-MCP/ep-ocp/workspace/EP-Workspace-Recovery_2026-11-10_Martes_17-35_America-Mexico_City_R4.zip`
+
+- Snapshot creado: `2026-11-10T23:35:36.7846057Z` = martes 17:35:36.784 (-06:00).
+- ZIP: 107.081.813 bytes; SHA-256 `DD84AA680CDE49D9940E35203E8D29355FB6904105680E87128DE8C868F883CE`.
+- Upload y read-back B2: `R4_UPLOAD_AND_REMOTE_READBACK_PASS`; 107.081.813 bytes descargados; SHA-256 de read-back idéntico.
+- Cifrado del proveedor confirmado: SSE-B2/AES256. No hay cifrado del lado cliente por excepción urgente del operador.
+- File ID fuente: `4_z974c6cb88be79f3fa9150c16_f20062b1a07ef15c5_d20261110_m233752_c005_v0501052_t0012_u01794353872691`.
+- Hora local en que el read-back quedó verificado y el archivo fue acreditado como recuperable: **martes 10-11-2026, 17:46:17.620 (-06:00)**.
+- Caché temporal de autorización limpiada; ningún valor secreto emitido.
+
+**Restauración aislada: PASS.** El ZIP abrió y extrajo sus 3.348 entradas. La validación completa del manifiesto reportó 3.345 archivos; se restauraron 145.501.528 bytes en `C:\R4-RestoreValidation`, con ciphertext primario de Vault presente. La carpeta de trabajo original no fue modificada. La prueba usó el mismo contenido que descargó B2 y cuyo SHA coincidió byte por byte.
+
+**Defecto encontrado en el script auxiliar incluido:** `Restore-Workspace.ps1` usa `Test-Path`/`Get-Item`/`Get-FileHash` con comodines y puede rechazar falsamente rutas reales que contienen `[id]`. En la prueba aislada se corrigió la copia extraída con parámetros `-LiteralPath`; después `PACKAGE_VALIDATED` y `RESTORE_PASS`. El ZIP remoto no fue modificado para sustituir ese helper. Para la recuperación inmediata, descargar el ZIP y usar **Extraer todo** de Windows en un destino vacío; no ejecutar el helper incluido. El archivo de datos y sus entradas están íntegros.
+
+**Bóveda:** el paquete incluye los dos ciphertexts (`EP/local-state/Khora/secrets/ep-env-vault.enc.json`, 2.200 bytes; `EP-Vault/ep-env-vault.enc.json`, 2.048 bytes). El descifrado de Vault en otro perfil/equipo y la portabilidad DPAPI siguen pendientes; la contraseña maestra no está dentro del ZIP. Abrir Vault localmente con esa contraseña después de extraer.
+
+**Marca temporal:** el nombre remoto R4 refleja el instante de captura del snapshot (17:35). El instante en que se confirmó su recuperación desde B2 fue 17:46:17.620. Un intento posterior de crear un alias B2 `17-46` falló sin cambiar ni eliminar el objeto remoto válido. Para próximos paquetes, el nombre publicado como recuperable deberá usar la hora del primer read-back remoto PASS; el manifiesto interno conservará por separado la hora de captura.
+
+R2 sigue existiendo como respaldo remoto anterior; no se modificó ni eliminó.
