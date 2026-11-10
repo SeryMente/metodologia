@@ -200,3 +200,7 @@ La pausa de almacenamiento detiene únicamente operaciones locales de host; MCP-
 Panel MCP-OCP-13, generalización P001–P043, release final 1.0.0, FOL1 y EP-TASK-004 no bloquean la instalación del piloto P004 salvo dependencia técnica demostrada. El panel sí es obligatorio para el paquete 1.0.0.
 
 `EP_TASK_005=WAIT_EP_TASK_003_PASS_AND_MCP_P004_PACKAGE` · `EP_EXECUTION_OWNER=EP` · `CENTRAL_COORDINATION=GOV-TASK-015` · `EP_ACKNOWLEDGEMENT=PENDING`.
+
+
+## Reporte individual obligatorio por tarea
+Al resolver esta tarea, el responsable debe agregar el informe individual en este mismo núcleo siguiendo [la plantilla común](../../../PLANTILLA-REPORTE-CIERRE-TAREA.md), completar todos sus campos y actualizar el índice padre solo después del read-back. No marcar como completada sin criterios PASS, evidencia ejecutada, integridad verificada y aceptación exigible. Si termina parcial/bloqueada, dejar igualmente el informe con bloqueantes, preocupaciones, riesgos y condición objetiva de desbloqueo. Informar al operador con enlace al informe. Esta instrucción no altera titularidad, generación, permisos ni controles.
