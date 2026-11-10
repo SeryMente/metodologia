@@ -126,3 +126,8 @@ Anexo literal: entregas/ChatGPT-GOBERNANZA-20261110-OCP-MCP-1.0-ULTIMO-TRAMO.md.
 - Conversación fuente: `Downloads/ChatGPT-GOBERNANZA (1)-20261110-1722.txt`; registro operativo resumido y procedimiento de recuperación en [ChatGPT-GOBERNANZA-20261110-1722-CONTINUIDAD-B2.md](entregas/ChatGPT-GOBERNANZA-20261110-1722-CONTINUIDAD-B2.md).
 - [GOV-TASK-015](📁 🧭 - Tareas provisionales/📁 🧩 - GOV-TASK-015 - Sprint Sink local vía RDC/README.md) refleja la evidencia B2/restore y habilita reanudar el desarrollo sintético H1 SINK:P004.
 - Hito en curso: **H2 persistencia y bóveda, evidencia de respaldo y restore aislado PASS; cierre integral pendiente**. H1 SINK:P004 sigue como siguiente hito de producto y no está aceptado.
+
+
+### Convención de nombres de persistencia
+
+Todo nuevo snapshot provisional debe incorporar fecha, día de semana, hora local de 24 horas y zona `America/Mexico_City`: `EP-Workspace-Recovery_YYYY-MM-DD_DIA_HH-mm_America-Mexico_City_RN.zip`. El nombre debe usar el instante de creación real. Los nombres históricos R2/R3 no se falsean ni se renombra el objeto remoto ya confirmado.
