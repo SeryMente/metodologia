@@ -76,6 +76,16 @@ try
         runner.Throws<CryptographicException>(() => new DugSourceReader(root, wrongPin).ReadP004());
     });
 
+    runner.Test("principle inventory rejects an unknown or missing ID even with a matching repin", () =>
+    {
+        string invalidRoot = Path.Combine(root, "invalid-inventory");
+        Directory.CreateDirectory(Path.Combine(invalidRoot, "gobernanza"));
+        byte[] altered = Encoding.UTF8.GetBytes(FixtureHtml(lastPrincipleId: "P044"));
+        File.WriteAllBytes(Path.Combine(invalidRoot, "gobernanza", "METAPROMPT-CANONICO-SAMANTHA.html"), altered);
+        var repinned = pin with { GitBlobSha = DugSourceReader.ComputeGitBlobSha(altered) };
+        runner.Throws<InvalidDataException>(() => new DugSourceReader(invalidRoot, repinned).ReadP004());
+    });
+
     runner.Test("invalid DUG metadata fails closed", () =>
     {
         string badRoot = Path.Combine(root, "bad");
@@ -245,7 +255,7 @@ static string Rpc(string method, int id, object parameters) =>
 static string InitializedNotification() =>
     "{\"jsonrpc\":\"2.0\",\"method\":\"notifications/initialized\"}";
 
-static string FixtureHtml(string version = "v388", string? normativeText = null)
+static string FixtureHtml(string version = "v388", string? normativeText = null, string? lastPrincipleId = null)
 {
     normativeText ??= "No finjas capacidades, datos, resultados ni certezas, ni declares límites sin verificar con herramientas. Marca tu certeza y nombra los huecos sin rellenarlos. Precedencia absoluta sobre la exhaustividad y el buen trato.";
     string json = JsonSerializer.Serialize(new
@@ -276,7 +286,7 @@ static string FixtureHtml(string version = "v388", string? normativeText = null)
         principles = Enumerable.Range(1, 43)
             .Select(i =>
             {
-                string id = $"P{i:000}";
+                string id = i == 43 && lastPrincipleId is not null ? lastPrincipleId : $"P{i:000}";
                 bool isP004 = i == 4;
                 string text = isP004 ? normativeText : $"Fixture normative text {id}.";
                 return new
