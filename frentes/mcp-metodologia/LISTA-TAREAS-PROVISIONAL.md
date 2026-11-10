@@ -1,4 +1,4 @@
-<!-- LIST_VERSION=0.11; LIST_STATUS=PROVISIONAL; NOT_A_CANONICAL_OBJECT=true -->
+<!-- LIST_VERSION=0.12; LIST_STATUS=PROVISIONAL; NOT_A_CANONICAL_OBJECT=true -->
 # Lista provisional de tareas · MCP-OCP
 
 > **ESTADO: PROVISIONAL · NO ES UN OCP NI UN CONTROL ADICIONAL.** Esta lista es una vista auxiliar enlazada desde el único núcleo MCP-OCP. El estado vivo y las decisiones de alcance permanecen en `MCP-METODOLOGIA.md`; la titularidad permanece exclusivamente en `CONTROL-RESPONSABILIDAD.json`. Las tareas y dependencias de otros frentes se enlazan sin apropiarse de sus objetos, controles o permisos.
@@ -6,13 +6,13 @@
 - **Frente:** MCP-OCP.
 - **Repositorio propietario:** `SeryMente/metodologia`.
 - **Ruta OCP:** `frentes/mcp-metodologia/`.
-- **Versión de la lista:** 0.11 (provisional; seguimiento de ejecución del Sprint SINK-P004 y producto MCP-OCP 1.0.0).
+- **Versión de la lista:** 0.12 (provisional; seguimiento de ejecución del Sprint SINK-P004 y producto MCP-OCP 1.0.0).
 - **Última actualización:** 2026-11-10.
 - **Gobierno leído:** Samantha v388 · NX-388m; Metacanon 1.29; GOW 2.18; DUG commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`; blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`. ART-027 rebaselined para Sink local STDIO/RDC; §ARR y P037 revisados; CNP P001/P004/P005/P038/P043 considerado.
-- **Núcleo enlazado:** [MCP-OCP · objeto canónico](MCP-METODOLOGIA.md), v0.1.30; esta lista v0.11 es su backlog auxiliar vigente.
+- **Núcleo enlazado:** [MCP-OCP · objeto canónico](MCP-METODOLOGIA.md), v0.1.31; esta lista v0.12 es su backlog auxiliar vigente.
 - **Control:** [CONTROL-RESPONSABILIDAD.json](CONTROL-RESPONSABILIDAD.json). Las generaciones y sesiones son metadatos de auditoría y no bloquean trabajo autorizado.
 - **MCP-NORMATIVO:** DESACTIVADO.
-- **Producto vs. documento:** MCP-OCP-v0.1.30 es la versión documental vigente en esta rama de trabajo; la versión de software objetivo es 1.0.0. La candidata ejecutable 0.1.0 y su recibo histórico no constituyen una versión actualizada ni aceptada del producto.
+- **Producto vs. documento:** MCP-OCP-v0.1.31 es la versión documental vigente en esta rama de trabajo; la versión de software objetivo es 1.0.0. La candidata ejecutable 0.1.0 y su recibo histórico no constituyen una versión actualizada ni aceptada del producto.
 - **Principio de custodia:** no guardar claves, access/refresh tokens, datos privados de usuario, contenido sensible de repositorios ni secretos en esta lista, artefactos, manifests o logs. Utilizar fixtures sintéticos y evidencia minimizada.
 
 ## Decisión de alcance operativa vigente
@@ -32,7 +32,7 @@ La tabla sustituye los PASS/estados de recibos históricos para la implementaci�
 
 | Orden | ID | Prioridad | Tarea | Estado vigente | Condición principal de salida |
 |---:|---|---|---|---|---|
-| 1 | MCP-OCP-01 | P0 | Contrato de producto y frontera OCP/Khora/Jules | VERIFICADO_EN_NUCLEO_V0.1.30 | Un servidor local STDIO; panel acompañante read-only en el producto final; dominios separados. |
+| 1 | MCP-OCP-01 | P0 | Contrato de producto y frontera OCP/Khora/Jules | VERIFICADO_EN_NUCLEO_V0.1.31 | Un servidor local STDIO; panel acompañante read-only en el producto final; dominios separados. |
 | 2 | MCP-OCP-02 | P0 · CRÍTICO AHORA | Rama limpia y reconciliación selectiva desde main | EN CURSO · RAMA LIMPIA PUBLICADA; BUILD NO VERIFICADO | Nueva rama desde HEAD de main; pin DUG v388 cotejado; inventario REUSE/ADAPT/REWRITE/DROP y SDK/RID. |
 | 3 | MCP-OCP-05 | P0 · SIGUIENTE | Corte vertical GOW:ARR → DUG → SINK:P004 | CANDIDATA P004 ESCRITA · SIN BUILD NI PASS | Respuesta individual completa, pin v388/commit/blob/SHA-256 y fail-closed. Fixtures antes de EP; importación privada tras EP PASS. |
 | 4 | MCP-OCP-03 | P0 | Suite mínima de contrato del piloto P004 | 18 CASOS ESCRITOS · 0 EJECUTADOS | Preparar contrato y casos ID/fuente/pin/hash/fallo cerrado/cierre ahora; repetir con fuente real tras EP PASS. |
@@ -49,7 +49,7 @@ La tabla sustituye los PASS/estados de recibos históricos para la implementaci�
 ## Fichas de tareas
 
 ### MCP-OCP-01 — Contrato de producto local y frontera OCP/Khora/Jules
-**Prioridad:** P0 · **Estado:** VERIFICADO_EN_NUCLEO_V0.1.30 · **Responsable:** MCP-OCP dentro de su autoridad.
+**Prioridad:** P0 · **Estado:** VERIFICADO_EN_NUCLEO_V0.1.31 · **Responsable:** MCP-OCP dentro de su autoridad.
 
 **Objetivo:** fijar sin ambigüedad que el servidor de Metodología es un producto propio del OCP, ejecutado localmente y separado de Khora. La palabra «MSP» del propósito original se conserva como dictado histórico; la identidad técnica vigente del frente es MCP-OCP.
 
@@ -57,7 +57,7 @@ La tabla sustituye los PASS/estados de recibos históricos para la implementaci�
 
 **Excluye:** capacidades de dictados/audio/MP3/grafo de Khora; servidor Jules duplicado; API key de Jules o secretos de Khora; endpoint público/Vercel; activación de MCP-NORMATIVO; cambios DUG/Sink.
 
-**Cierre vigente:** núcleo v0.1.30, esta lista v0.11 y README reflejan la misma frontera; la especificación del panel identifica su separación como app acompañante read-only, sin segundo MCP ni red. La revisión documental de contrato está verificada; las pruebas de implementación permanecen pendientes.
+**Cierre vigente:** núcleo v0.1.31, esta lista v0.12 y README reflejan la misma frontera; la especificación del panel identifica su separación como app acompañante read-only, sin segundo MCP ni red. La revisión documental de contrato está verificada; las pruebas de implementación permanecen pendientes.
 
 ### MCP-OCP-02 — Reconciliación de código ejecutable contra main
 **Prioridad:** P0 · **Estado:** RAMA_LIMPIA_Y_PORTABILIDAD_PUBLICADAS · BUILD_PENDIENTE.
@@ -279,14 +279,14 @@ El panel MCP-OCP-13 baja a P1 de secuencia, pero permanece como entregable oblig
 
 ---
 
-## Sprint SINK-P004 · estado y responsabilidades · 2026-11-10 · LIST v0.11
+## Sprint SINK-P004 · estado y responsabilidades · 2026-11-10 · LIST v0.12
 
 **Nombre operativo:** `SINK-P004`. Objetivo de esta fase: primera respuesta P004 íntegra desde el contexto IPZ real por RDC/STDIO. El objetivo de producto final sigue MCP-OCP 1.0.0 (servidor + panel).
 
 ### Estado rebaselined
 
 - DUG vigente: Samantha v388/NX-388m; ART-027 local STDIO/RDC; commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`; blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`.
-- Core vigente en esta rama: v0.1.30; este backlog: v0.11.
+- Core vigente en esta rama: v0.1.31; este backlog: v0.12.
 - Las ramas históricas fueron auditadas contra main `a34c1c5b43edbcbaf015056f4dc892f5def29eea`; ninguna se fusionó. La rama actual es `feat/mcp-ocp-sink-p004-main-a34c1c5b`, con base directa en ese SHA, commit `92568433b5f3b6056fc9cb9a811fa5d8918cea3b` y PR #27 DRAFT. El rebaseline y la portabilidad están publicados; build sigue pendiente.
 - Control MCP-OCP generación 5: autorización directa para código local STDIO, pruebas, build, manifest, paquete y documentación dentro de este OCP; control sin cambios. Exclusiones host EP/Vault/recuperación/credenciales externas y cambios DUG/IPZ.
 - EP no es una dependencia para desarrollar código no sensible ni probar con fixtures. EP sí es gate para importación privada, DB real, runtime persistente e instalación local.
@@ -321,3 +321,7 @@ El trabajo de MCP-OCP no está aceptado por tener documentos o rama; cada salida
 - Fuentes privadas, host/instalación Fila 4, IPZ nativa, E2E visible y panel WPF no se ejecutaron. EP y Gobernanza mantienen sus gates.
 
 No convertir el resultado CI no observable en PASS ni en FAIL de código. No hacer reintentos ciegos.
+
+### Relectura CI posterior a recuperación oficial
+
+GitHub Status registra resolución del incidente Actions/Pull Requests a las 17:55 UTC; la consulta actual muestra All Systems Operational. Sin embargo, los runs P004 #`42892084966` (20:07:16 UTC) y #`42892649479` (20:10:33 UTC) posteriores a esa recuperación terminaron con `steps=null`, `logs_url=null`, sin artefactos y `BlobNotFound`. Los validadores compartidos posteriores repiten el mismo patrón. La incidencia del estado es contexto histórico, no causa demostrada. **Causa raíz NO VERIFICADA; build/tests/smoke no ejecutados con evidencia.** No reintentar a ciegas.

@@ -4,7 +4,7 @@
 
 - **Nombre canónico vigente:** MCP-OCP (anteriormente MCP-METODOLOGIA).
 - **Identidad canónica vigente:** MCP-OCP. **Identidad histórica:** MCP-METODOLOGIA.
-- **Versión/sello:** MCP-OCP-v0.1.30 · ejecución del Sprint SINK-P004 (candidata documental de rama); Sink local por stdio autorizado; contrato DUG v388/NX-388m; piloto P004 pendiente; bootstrap del perfil persistente pendiente. Las generaciones y folios de sesiones anteriores son metadatos de auditoría.
+- **Versión/sello:** MCP-OCP-v0.1.31 · relectura CI posterior al restablecimiento del estado oficial; Sink local por stdio autorizado; contrato DUG v388/NX-388m; piloto P004 pendiente; bootstrap del perfil persistente pendiente. Las generaciones y folios de sesiones anteriores son metadatos de auditoría.
 - **Repositorio propietario:** SeryMente/metodologia, rama main.
 - **OCP canónico:** frentes/mcp-metodologia/.
 - **Núcleo operativo único:** este archivo, MCP-METODOLOGIA.md.
@@ -711,7 +711,7 @@ Lectura independiente de `main`: DUG v388/NX-388m, commit `3ba8e7373324c3dfbdf6d
 
 El workflow de PR #27: run `42892084966`, job `130095551624`, terminó FAILURE con `steps=null`, `logs_url=null`, sin artefactos; la descarga devuelve `BlobNotFound`. En el mismo commit, `Validate RDC Governance` (run `42892084848`, job `130095552614`) y `validate-canonical-bootstrap` (run `42891978504`, job `130095179377`) presentaron el mismo patrón.
 
-La página oficial de estado reportó degradación de Actions y Pull Requests durante la ventana: https://kctbh9vrtdwd.statuspage.io/ . Es compatible con una incidencia compartida, pero la raíz específica del job sigue NO VERIFICADA. No hay evidencia de que empezaran setup-dotnet, restore, build, pruebas o smoke.
+La página oficial registra que el incidente de Actions/Pull Requests del 2026-11-10 quedó resuelto a las 17:55 UTC. Los runs del piloto se iniciaron a las 20:07:16 UTC y 20:10:33 UTC, más de dos horas después de esa resolución; la consulta actual muestra Actions y Pull Requests operativos: https://kctbh9vrtdwd.statuspage.io/ . Por tanto, no se atribuye el fallo a aquella incidencia. La causa raíz específica del patrón `steps=null` / `BlobNotFound` sigue NO VERIFICADA. No hay evidencia de que empezaran setup-dotnet, restore, build, pruebas o smoke.
 
 **Conclusión:** CI no acredita PASS ni FAIL del código. No se ejecuta un reintento ciego; se requiere runner observable, pasos, logs y artefactos.
 
@@ -728,3 +728,14 @@ La página oficial de estado reportó degradación de Actions y Pull Requests du
 - DUG, ART-025/027, IPZ, CONTROL-RESPONSABILIDAD y recursos EP no se modificaron. FOL1 PREPARADO/NO ACTIVO; MCP-NORMATIVO DESACTIVADO.
 
 **Siguiente transición:** ejecutar build, 41 pruebas y smoke STDIO/EOF cuando haya runner observable; corregir solo errores demostrados. Luego continuar fuentes protegidas e IPZ E2E bajo los gates correspondientes.
+
+## 22. CI · relectura posterior a la recuperación oficial · 2026-11-10
+
+- GitHub Status registra resolución del incidente Actions/Pull Requests a las `17:55 UTC`; la consulta actual muestra All Systems Operational.
+- Primera ejecución P004 en PR #27: run `42892084966` (creado `20:07:16 UTC`), job `130095551624`.
+- Segunda ejecución tras actualizar HEAD documental de PR #27: run `42892649479` (creado `20:10:33 UTC`), job `130097478567`.
+- En ambas ejecuciones, el job terminó FAILURE con `steps=null`, `logs_url=null`, sin artifacts, y la descarga de logs devuelve `BlobNotFound`.
+- En la segunda ejecución, `validate-canonical-bootstrap` (run `42892649448`, job `130097478103`) y `Validate RDC Governance` (run `42892649520`, job `130097478971`) muestran el mismo patrón. El evento push de `validate-canonical-bootstrap` (run `42892639018`, job `130097444473`) también.
+- Como los intentos ocurrieron más de dos horas después de la recuperación declarada, la incidencia previa no demuestra la causa de estos fallos. No se puede afirmar ni fallo de compilación ni PASS del código: los steps no están disponibles y no existe artifact.
+- No hacer reintentos ciegos. Reabrir validación cuando pueda obtenerse diagnóstico real de runner/job o un entorno .NET 10.0.403 que produzca logs/resultados observables.
+- Este asiento corrige cualquier interpretación previa que atribuyera los fallos a la incidencia del estado de GitHub; la causa permanece NO VERIFICADA.
