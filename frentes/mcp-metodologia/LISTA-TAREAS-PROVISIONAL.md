@@ -255,7 +255,7 @@ El panel MCP-OCP-13 baja a P1 de secuencia, pero permanece como entregable oblig
 - No reutilizar W:, VHDX, RecoveryPassword, DPAPI ni staging de PC-14/PC 7.
 - MCP-NORMATIVO permanece DESACTIVADO. MCP Studio no se incorpora. MCP Inspector queda opcional para diagnóstico, fuera del paquete final.
 
-**Estado actual en rama ciclo02:** MCP-OCP-02 ejecutado y verificado por comparación/read-back; candidato P004 y 13 pruebas escritas sin ejecución; CI sin PASS observable; preflight EP de Fila 4 tiene evidencia parcial con resultado FAIL. Importación, instalación, IPZ nativa y E2E siguen pendientes.
+**Estado actual en rama ciclo02:** MCP-OCP-02 ejecutado y verificado por comparación/read-back; candidato P004 y 16 pruebas escritas sin ejecución; CI sin PASS observable; preflight EP de Fila 4 tiene evidencia parcial con resultado FAIL. Importación, instalación, IPZ nativa y E2E siguen pendientes.
 
 
 ## Rebaseline urgente del sprint · 2026-11-10 · DUG v388
@@ -284,7 +284,7 @@ El panel MCP-OCP-13 baja a P1 de secuencia, pero permanece como entregable oblig
 - **DUG v388:** commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`; blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`. La lectura de ese commit y de main actual devuelve el mismo blob.
 - **MCP-OCP-02:** rama limpia, inventario REUSE/ADAPT/REWRITE/DROP y pins SDK/RID documentados.
 - **MCP-OCP-05:** implementación candidata P004 escrita; no compilada.
-- **MCP-OCP-03:** 13 escenarios escritos; 0 ejecutados.
+- **MCP-OCP-03:** 16 escenarios escritos; 0 ejecutados.
 - **MCP-OCP-04:** harness y workflow CI escritos; smoke y E2E pendientes.
 - **Preflight EP publicado en main:** evidencia `EP-FILA4-PREFLIGHT-PARCIAL-20261110.json`, commit `84cc9ffc1a2aa27c622c7e5de147d7460f3b5ecd`, blob `8ebf0c2b54efc6d3fe597adfe0f9358e65e6acbe`; resultado `PREFLIGHT_PARTIAL_FAIL`. C: XTS-AES128/Protection Off/sin protectores; ubicación física UNCLASSIFIED; checkout Metodología parcial y sin `.git`. **EP-TASK-003 sigue en curso; MCP-OCP no modifica esa tarea ni el host.**
 - **EP-TASK-005:** pendiente; no importación, instalación, DB, DPAPI ni REGISTER.
@@ -312,3 +312,8 @@ Main avanzó desde `84cc9ffc1a2aa27c622c7e5de147d7460f3b5ecd` hasta `67b48bc041b
 ### Corrección de inventario DUG · 2026-11-10
 
 El lector ahora exige que el inventario sea exactamente `P001…P043` (43 IDs únicos), no solo 43 IDs únicos que incluyan P004. Se añadió un negativo con `P044` sustituyendo `P043`, blob repinneado y rechazo esperado. MCP-OCP-03 queda en 16 escenarios escritos / 0 ejecutados; build y CI siguen sin PASS.
+
+
+### CI run 56 · 2026-11-10
+
+HEAD con negativo de inventario: `9f66b1ae8e1969cf82c3f753ab30e31c2bd1a8c1`. Run `42868894554`, job `130014524745`: FAILURE, steps/logs/artifacts ausentes. No acredita ejecución. No hay build/test/smoke PASS. El entorno local disponible no tiene `dotnet`.
