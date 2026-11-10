@@ -1,4 +1,4 @@
-<!-- LIST_VERSION=0.7; LIST_STATUS=PROVISIONAL; NOT_A_CANONICAL_OBJECT=true -->
+<!-- LIST_VERSION=0.8; LIST_STATUS=PROVISIONAL; NOT_A_CANONICAL_OBJECT=true -->
 # Lista provisional de tareas · MCP-OCP
 
 > **ESTADO: PROVISIONAL · NO ES UN OCP NI UN CONTROL ADICIONAL.** Esta lista es una vista auxiliar enlazada desde el único núcleo MCP-OCP. El estado vivo y las decisiones de alcance permanecen en `MCP-METODOLOGIA.md`; la titularidad permanece exclusivamente en `CONTROL-RESPONSABILIDAD.json`. Las tareas y dependencias de otros frentes se enlazan sin apropiarse de sus objetos, controles o permisos.
@@ -6,13 +6,13 @@
 - **Frente:** MCP-OCP.
 - **Repositorio propietario:** `SeryMente/metodologia`.
 - **Ruta OCP:** `frentes/mcp-metodologia/`.
-- **Versión de la lista:** 0.7 (provisional; consolidación del sprint Sink + panel local en tres frentes).
+- **Versión de la lista:** 0.8 (provisional; consolidación del sprint Sink + panel local en tres frentes).
 - **Última actualización:** 2026-11-09.
 - **Gobierno leído:** Samantha v386 · NX-386m; Metacanon 1.29; GOW 2.18; DUG commit `82843bca9493a522405d840393c229d2af363342`; blob `22dca684830a36dff019b47811d9b800cc9bea0a`. §ARR y P037 revisados; CNP P001/P004/P005/P038/P043 considerado.
-- **Núcleo enlazado:** [MCP-OCP · objeto canónico](MCP-METODOLOGIA.md), v0.1.26; esta lista v0.7 es su backlog auxiliar vigente.
+- **Núcleo enlazado:** [MCP-OCP · objeto canónico](MCP-METODOLOGIA.md), v0.1.27; esta lista v0.8 es su backlog auxiliar vigente.
 - **Control:** [CONTROL-RESPONSABILIDAD.json](CONTROL-RESPONSABILIDAD.json). Las generaciones y sesiones son metadatos de auditoría y no bloquean trabajo autorizado.
 - **MCP-NORMATIVO:** DESACTIVADO.
-- **Producto vs. documento:** MCP-OCP-v0.1.26 es la versión documental vigente; la versión de software objetivo es 1.0.0. La candidata ejecutable 0.1.0 y su recibo histórico no constituyen una versión actualizada ni aceptada del producto.
+- **Producto vs. documento:** MCP-OCP-v0.1.27 es la versión documental vigente; la versión de software objetivo es 1.0.0. La candidata ejecutable 0.1.0 y su recibo histórico no constituyen una versión actualizada ni aceptada del producto.
 - **Principio de custodia:** no guardar claves, access/refresh tokens, datos privados de usuario, contenido sensible de repositorios ni secretos en esta lista, artefactos, manifests o logs. Utilizar fixtures sintéticos y evidencia minimizada.
 
 ## Decisión de alcance operativa vigente
@@ -32,16 +32,17 @@ La tabla sustituye los PASS/estados de recibos históricos para la implementaci�
 
 | Orden | ID | Prioridad | Tarea | Estado vigente | Condición principal de salida |
 |---:|---|---|---|---|---|
-| 1 | MCP-OCP-01 | P0 | Contrato de producto y frontera OCP/Khora/Jules | VERIFICADO_EN_NUCLEO_V0.1.26 | Un servidor local MCP-OCP por stdio más panel acompañante de solo lectura; Khora/Jules separados; sin endpoints públicos. |
-| 2 | MCP-OCP-02 | P0 | Reconciliar código fuente remoto con main y pins actuales | PENDIENTE_SPRINT | Comparar ramas históricas con main; nueva base desde main; clasificar REUSE/ADAPT/REWRITE/DROP y fijar SDK/RID. |
-| 3 | MCP-OCP-05 | P0 | Fuentes, GOW:ARR, DUG, Sink y proyección de observabilidad | PENDIENTE_IMPLEMENTACION | Implementar ARR/DUG/SINK P001–P043, lotes ordenados y estado/eventos locales saneados para el panel. |
-| 4 | MCP-OCP-13 | P0 | Panel local de observabilidad visual | ESPECIFICADO · IMPLEMENTACIÓN_PENDIENTE | Abrir en sesión EP ACTIVE; mostrar proceso, protocolo, fuentes, operador, root, actividad y errores; cerrar con sesión EP. |
-| 5 | MCP-OCP-03 | P0 | Build y suite renovada de servidor + panel | PENDIENTE_BUILD_ACTUAL | Build limpio; suites MCP y panel PASS; pruebas de readiness, eventos, cierre, integridad, ACL y no exposición. |
-| 6 | MCP-OCP-04 | P0 | Transporte MCP STDIO y recorrido RDC | HISTORICAL_SMOKE_ONLY · E2E_ACTUAL_PENDIENTE | Recorrido real initialize/tools/list/tools/call; panel observa sin interponerse; shutdown y reinicio; sin listener. |
-| 7 | MCP-OCP-10 | P1 | Pins, manifiesto y evidencia | PENDIENTE_EVIDENCIA_ACTUAL | Manifest incluye servidor, panel, schema de observabilidad, fuentes, SDK/RID, pruebas y hashes. |
-| 8 | MCP-OCP-07 | P1 | Paquete y runbook actuales | PAQUETE_HISTORICO_NO_RECUPERABLE | ZIP nuevo con servidor+panel, configuración de ejemplo, extracción/read-back y manifest/SHA. |
-| 9 | MCP-OCP-12 | P1 | Bootstrap del perfil local | PENDIENTE_HOST_Y_CONSENTIMIENTO_LOCAL | Instalar servidor y panel en `instalacion-local/`; root protegido externo; importación y REGISTER interactivo. |
-| 10 | MCP-OCP-08 | P1 | Handoff/instalación EP | PENDIENTE_EP_TASK_003_005 | EP instala y abre el panel solo tras sesión ACTIVE y gates; confirma hash, ruta, ACL, cierre y rollback. |
+| 1 | MCP-OCP-01 | P0 | Contrato de producto y frontera OCP/Khora/Jules | VERIFICADO_EN_NUCLEO_V0.1.27 | Un servidor local STDIO; panel acompañante read-only en el producto final; dominios separados. |
+| 2 | MCP-OCP-02 | P0 | Rama limpia y reconciliación selectiva desde main | PENDIENTE_SPRINT | Nueva rama desde HEAD de main; inventario REUSE/ADAPT/REWRITE/DROP y SDK/RID. |
+| 3 | MCP-OCP-05 | P0 | Corte vertical GOW:ARR → DUG → SINK:P004 | PENDIENTE_PILOTO | Respuesta individual completa, pin/commit/blob/SHA-256 y fail-closed. Generalización a 43 después del piloto. |
+| 4 | MCP-OCP-03 | P0 | Suite mínima de contrato del piloto P004 | PENDIENTE_PILOTO | Casos positivos/negativos de fuente, ID, pin/hash, error y cierre; luego ampliar suite 1.0.0. |
+| 5 | MCP-OCP-04 | P0 | Transporte y E2E IPZ → RDC → STDIO para P004 | PENDIENTE_E2E_IPZ | initialize/tools/list/tools/call/cierre y respuesta visible desde el contexto IPZ; consola sola no basta. |
+| 6 | MCP-OCP-13 | P1 | Panel local de observabilidad visual | ESPECIFICADO · IMPLEMENTACIÓN_PENDIENTE | Obligatorio en 1.0.0; se implementa tras congelar schema y no bloquea el piloto SINK:P004. |
+| 7 | MCP-OCP-05/03 | P0 | Generalización Sink P001–P043 y lotes | PENDIENTE_POST_PILOTO | 43 respuestas, orden, hashes/eventos y controles negativos PASS. |
+| 8 | MCP-OCP-10 | P1 | Pins, manifiesto y evidencia final | PENDIENTE_EVIDENCIA_ACTUAL | Pins v386/core vigente, SDK/RID, servidor+panel, tests y hashes. |
+| 9 | MCP-OCP-07 | P1 | Paquete reproducible 1.0.0 | PENDIENTE_PAQUETE_ACTUAL | ZIP final servidor+panel, configuración, manifest/SHA y read-back. |
+| 10 | MCP-OCP-12 | P1 | Bootstrap local en Fila 4 | BLOQUEADO_GATES_EP | Piloto/instalación dentro de checkout; datos externos protegidos; REGISTER interactivo. |
+| 11 | MCP-OCP-08 | P1 | Handoff y aceptación EP | PENDIENTE_EP_TASK_003_005 | Verificación de ruta, root, panel EP ACTIVE, hashes, cierre y rollback. |
 | — | MCP-OCP-06 / 11 | Fuera | Coexistencia/desarrollo por Jules | PAUSADO_POR_OPERADOR | No es dependencia del MVP local. |
 | — | MCP-OCP-09 | Fuera | PPR/restauración portable cross-host | P2_FUERA_DEL_SPRINT | No bloquear release local. |
 
@@ -56,7 +57,7 @@ La tabla sustituye los PASS/estados de recibos históricos para la implementaci�
 
 **Excluye:** capacidades de dictados/audio/MP3/grafo de Khora; servidor Jules duplicado; API key de Jules o secretos de Khora; endpoint público/Vercel; activación de MCP-NORMATIVO; cambios DUG/Sink.
 
-**Cierre:** núcleo v0.1.26, esta lista v0.7 y README reflejan la misma frontera; la especificación del panel identifica su separación como app acompañante read-only, sin segundo MCP ni red. La revisión documental de contrato está verificada; las pruebas de implementación permanecen pendientes.
+**Cierre:** núcleo v0.1.27, esta lista v0.8 y README reflejan la misma frontera; la especificación del panel identifica su separación como app acompañante read-only, sin segundo MCP ni red. La revisión documental de contrato está verificada; las pruebas de implementación permanecen pendientes.
 
 ### MCP-OCP-02 — Reconciliación de código ejecutable contra main
 **Prioridad:** P0 · **Estado:** PENDIENTE_SPRINT.
@@ -145,7 +146,7 @@ Una vez configuradas y aceptadas las tareas del frente MCP-Jules, se prepara una
 **Salida:** recibo host/perfil, ruta local, versión, commit/blob, SHA instalado, estado importación, readiness y bootstrap. Sin consentimiento, reportar pendiente; no simular registro.
 
 ### MCP-OCP-13 — Panel local de observabilidad visual
-**Prioridad:** P0 · **Estado:** ESPECIFICADO · IMPLEMENTACIÓN PENDIENTE · **Autoridad:** MCP-OCP para la app; EP para el ciclo de vida de sesión.
+**Prioridad:** P1 de secuencia · **Estado:** ESPECIFICADO · IMPLEMENTACIÓN PENDIENTE · **Autoridad:** MCP-OCP para la app; EP para el ciclo de vida de sesión.
 
 **Objetivo:** entregar una ventana Windows liviana, profesional y muy visual que esté abierta mientras la sesión EP persistente esté en estado `ACTIVE`, permitiendo entender en segundos el estado real de MCP-OCP.
 
@@ -215,3 +216,44 @@ Para MCP-OCP, este dato **no bloquea** reconciliar fuentes, implementar Sink, ej
 **Gates bloqueantes únicamente del tramo instalado:** checkout PC 7 íntegro y sincronizado; protección BitLocker realmente activa; dead-man LOC-OTHER probado; root de datos fuera de checkout y protegido; consentimiento del operador para `REGISTER <SID>`. Estos gates no detienen reconciliación, código, pruebas y paquete desde GitHub.
 
 `MCP-NORMATIVO=DESACTIVADO`; no modificar DUG/IPZ, Khora, secretos ni servicios externos. El código no añade herramientas MCP de escritura en este release.
+
+---
+
+## Rectificación de destino y orden de ejecución · 2026-11-10 · LIST v0.8
+
+**Destino vigente:** Fila 4, por ser la terminal correspondiente a la única sesión RDC disponible indicada por el operador. PC 7 queda supersedido para este sprint y no es fallback. Última identidad técnica documentada: RDC `d0bbb2a3-d7b4-45e1-8870-652c2c3844fc`, sesión `CENTRAL\\fila4`, SessionId 4; preflight vivo pendiente. La ubicación física no se infiere: EP debe resolver CECEQ/otra ubicación y el dead-man que corresponda.
+
+**Rutas bajo el perfil interactivo Fila 4:**
+- Checkout: `%USERPROFILE%\\Desktop\\SeryMente\\Repositorios\\Metodologia\\metodologia\\`.
+- Piloto temprano: `<checkout>\\frentes\\mcp-metodologia\\instalacion-local\\piloto-sink\\`.
+- Instalación final servidor+panel 1.0.0: `<checkout>\\frentes\\mcp-metodologia\\instalacion-local\\`.
+- Datos/DB/DPAPI/fuentes/logs/backups: `%USERPROFILE%\\Desktop\\SeryMente\\Datos\\Metodologia\\MCP-OCP\\`, fuera del checkout y de la instalación, dentro del volumen protegido verificado por EP.
+
+### Camino crítico para empezar a usar SINK con IPZ
+
+| Orden | Tarea | Alcance acotado | Gate de salida |
+|---:|---|---|---|
+| 1 | MCP-OCP-02 | Rama limpia desde main; inventario y port selectivo REUSE/ADAPT/REWRITE/DROP. | Rama y diff revisables; SDK/RID fijados. |
+| 2 | MCP-OCP-05 · corte P004 | GOW:ARR + identidad DUG + texto desarrollado SINK:P004 con pin/commit/blob/SHA-256. | Respuesta exacta y fail-closed ante fuente/ID inválidos. |
+| 3 | MCP-OCP-03/04 · piloto | Pruebas mínimas de contrato y transporte; initialize/tools/list/tools/call:P004/cierre por RDC/STDIO. | Smoke técnico PASS; luego E2E desde contexto IPZ por la vía real. |
+| 4 | GOV-TASK-007 + EP-TASK-005 | Preparar IPZ candidato; preflight Fila 4, checkout/root protegido; materializar piloto separado. | IPZ dentro de 1.500 caracteres; host/root PASS; read-back de paquete. |
+| 5 | GOV-TASK-003/007 + MCP-OCP-04 | Validar invocación real IPZ → RDC → STDIO → respuesta visible con pin/hash. | PILOTO_SINK_P004_IPZ=VERIFICADO. El smoke de consola no basta. |
+| 6 | MCP-OCP-05/03 | Extender a P001–P043, lote ordenado, hashes/eventos y negativos. | 43 casos y lote íntegro; controles fail-closed PASS. |
+| 7 | MCP-OCP-13 | Construir panel WPF liviano sobre schema congelado, en paralelo con la generalización. | Panel integrado y ciclo EP ACTIVE probado. Obligatorio para 1.0.0, no bloquea P004. |
+| 8 | MCP-OCP-10/07 | Manifiesto, build reproducible y ZIP final servidor+panel. | SHA, extracción/read-back y smoke del paquete PASS. |
+| 9 | MCP-OCP-12/08 + EP-TASK-003/005 | Bootstrap/instalación final dentro del checkout Fila 4 y datos en root protegido. | Preflight, ubicación/dead-man aplicable, consentimiento REGISTER, E2E y rollback PASS. |
+| 10 | GOV-TASK-003 | Aceptación integral del producto 1.0.0. | Evidencia E2E y recibos por frente. |
+
+El panel MCP-OCP-13 baja a P1 de secuencia, pero permanece como entregable obligatorio de la versión final 1.0.0. No se espera al panel, a los 43 principios ni a FOL1 para demostrar el primer piloto P004. FOL1 conserva su gate independiente.
+
+### Reglas de ejecución actualizadas
+
+- Desarrollo remoto de código no sensible puede avanzar mientras EP prepara Fila 4.
+- No importar DUG/MDP privados, crear DB con fuentes, provisionar operador ni dejar runtime persistente hasta checkout y root de datos protegidos y verificados.
+- La última evidencia histórica de Fila 4 informó C: FullyEncrypted/100 %, ProtectionStatus=Off, XtsAes128; debe repetirse en vivo. Git/gh instalados históricamente no prueban autenticación local.
+- Si Fila 4 está en CECEQ, aplicar conservación cifrada; si está fuera, EP-TASK-003 implementa y prueba el dead-man antes de runtime persistente. No inferir la ubicación.
+- No reutilizar W:, VHDX, RecoveryPassword, DPAPI ni staging de PC-14/PC 7.
+- MCP-NORMATIVO permanece DESACTIVADO. MCP Studio no se incorpora. MCP Inspector queda opcional para diagnóstico, fuera del paquete final.
+
+**Estado de esta rectificación:** tareas y orden documental alineados; rama, build, pruebas, piloto, IPZ nativa, preflight Fila 4, instalación y aceptación siguen pendientes.
+
