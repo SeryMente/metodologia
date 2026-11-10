@@ -367,7 +367,7 @@ El respaldo del servidor debe tratarse como un conjunto recuperable y verificabl
 
 ### 17.4. Análisis del informe de inspección local recibido
 
-El reporte aportado por el operador indica que se consultó el equipo visible `PC10RCIF4EI4` y que la identidad Windows efectiva era `CENTRAL\\MantenimientoRCI`. El control vigente de Harmonia generación 11 vincula ese nombre de dispositivo al UUID exacto `d0bbb2a3-d7b4-45e1-8870-652c2c3844fc` y registra el perfil asociado a la identidad `MantenimientoRCI`. El OCP Harmonia §7 prohíbe consultar, leer, escribir, mover, copiar o borrar archivos bajo la raíz de ese perfil; §44.2 conserva la restricción de pérdida asumida y no reutilización del entorno anterior.
+El reporte aportado por el operador indica que se consultó el equipo visible `PC10RCIF4EI4` y que la identidad Windows efectiva era `CENTRAL\MantenimientoRCI`. El control vigente de Harmonia generación 11 vincula ese nombre de dispositivo al UUID exacto `d0bbb2a3-d7b4-45e1-8870-652c2c3844fc` y registra el perfil asociado a la identidad `MantenimientoRCI`. El OCP Harmonia §7 prohíbe consultar, leer, escribir, mover, copiar o borrar archivos bajo la raíz de ese perfil; §44.2 conserva la restricción de pérdida asumida y no reutilización del entorno anterior.
 
 Por consiguiente:
 
@@ -2177,7 +2177,7 @@ Se incorpora el último tramo de conversación suministrado por el operador, sin
 
 ### Repetición del ciclo y corrección de estado
 
-Dos comprobaciones frescas bajo CENTRAL\\fila4 (20:19:46Z y 20:20:16Z) reportaron ENCRYPTED_FILE_PRESENT, ciphertext de 2.200 bytes, vaultSessionActive=false, variableCount=0 y las cinco variables EP B2 ausentes de la sesión CLI. No hay expiresAtUtc ni tiempo restante. El dato conversacional previo de 775 segundos se conserva como salida literal histórica, pero queda contradicho por estas dos observaciones posteriores y no se usa como estado vigente.
+Dos comprobaciones frescas bajo CENTRAL\fila4 (20:19:46Z y 20:20:16Z) reportaron ENCRYPTED_FILE_PRESENT, ciphertext de 2.200 bytes, vaultSessionActive=false, variableCount=0 y las cinco variables EP B2 ausentes de la sesión CLI. No hay expiresAtUtc ni tiempo restante. El dato conversacional previo de 775 segundos se conserva como salida literal histórica, pero queda contradicho por estas dos observaciones posteriores y no se usa como estado vigente.
 
 Los scripts Upload-EP-Raw-To-Backblaze-Fila4.ps1 y Run-EP-Backblaze-Persistence-Fila4.ps1 existen y pasaron Parser.ParseFile sin errores (7.013 y 1.205 bytes). El recibo ep-backblaze-persistence-result.json no existe. Para evitar que EP Vault CLI caiga en Read-Host, no se lanzó la operación Run mientras la sesión figura cerrada.
 
