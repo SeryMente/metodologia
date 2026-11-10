@@ -344,7 +344,7 @@ EP-TASK-004 GUI de bóveda y EP-TASK-002/Backblaze no bloquean P004 ni el build 
 
 ### Hallazgo MCP-OCP
 
-La consulta de referencias de GitHub encontró la rama `feat/mcp-ocp-sink-p004-pilot-20261110`. Su punta es `1676901cc09af6fcec4d052800b031e4c2f1ab40`, no el `main` vigente. En el cotejo refrescado inmediatamente antes de este asiento (2026-11-10), `main` observado en `ec22784d82cad2c536f1d5ab996ddbfd3b7717cd` estaba 64 commits por delante de esa referencia y la rama no tenía commits exclusivos por delante de `main` (`ahead_by=64`, `behind_by=0`, al comparar rama → main). Además, los archivos del frente leídos en esa rama conservaban referencias a DUG v386 y core v0.1.27, no el baseline v388/v0.1.28 requerido.
+La consulta de referencias de GitHub encontró la rama `feat/mcp-ocp-sink-p004-pilot-20261110`. Su punta es `1676901cc09af6fcec4d052800b031e4c2f1ab40`, anterior al main de coordinación. Los cotejos históricos del 2026-11-10 mostraron que main avanzaba respecto de esa referencia y que esta no tenía commits exclusivos que pudieran portarse como una base nueva. Los documentos de esa rama conservaban pins DUG v386/core v0.1.27, incompatibles con el baseline v388/v0.1.29 actual. No usar esa referencia como base ni fusionarla completa; MCP-OCP-02 debe crear una rama limpia desde el HEAD vigente.
 
 **Conclusión:** la rama existe como referencia, pero no satisface MCP-OCP-02. No se declara una rama limpia rebaselined ni código P004 implementado. La salida de MCP-OCP-02 sigue siendo una rama nueva/limpia desde el HEAD de `main` vigente, con mapa REUSE/ADAPT/REWRITE/DROP, SDK/RID fijados y lectura de vuelta del pin DUG v388. No fusionar la referencia histórica completa.
 
@@ -381,7 +381,7 @@ Esta reconciliación es documental y de referencias. No modifica el repositorio 
 - DUG: Samantha v388/NX-388m · ART-027 · commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c` · blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`.
 - Núcleo MCP-OCP v0.1.29 · blob `40fec13868e6f34db9aae6fb078cb9085d5fe317`; backlog v0.10 · blob `c2d95400a2a5211362dbcb358d359d3d59e0658c`.
 - OEP v0.3.59 · blob `b29e806d2d9473f3828972a0c67d09bf7dcafc4e`; EP-TASK-003 `PARTIAL_FAIL`; EP-TASK-005 `PENDING`. OEP §124 deja preparado el relevo operativo al frente EP, sin modificar su control generación 3. La aceptación del handoff por EP queda pendiente.
-- Main antes de este asiento: `b42951bc34fb5e480719fddbab6ffccae1703ef5` (2026-11-10). La rama `feat/mcp-ocp-sink-p004-pilot-20261110` permanece anclada al commit `1676901cc09af6fcec4d052800b031e4c2f1ab40`; en ese cotejo main estaba 75 commits por delante y la rama no tenía commits exclusivos. Esa referencia sigue sin cumplir MCP-OCP-02.
+- **Punta histórica de rama:** `1676901cc09af6fcec4d052800b031e4c2f1ab40`. El recuento exacto de distancia respecto de main se conserva solo en recibos de comparación de la fecha en que fue calculado; no se presenta como métrica viva. La conclusión estable es que la referencia no parte del main vigente y no cumple MCP-OCP-02.
 - Control MCP-OCP generación 5, autorización y exclusiones sin cambios. Control EP generación 3 sin cambios. Control Gobernanza generación 17 sin cambios. Este coordinador no transfiere titularidad ni permisos entre frentes.
 
 ### Responsables por frente
