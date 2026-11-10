@@ -89,3 +89,46 @@ El entregable de este sprint no es solo el ZIP: MCP-OCP 1.0.0 debe quedar instal
 **Gate de seguridad PC 7 / LOC-OTHER:** no realizar instalación persistente hasta identidad de dispositivo/sesión/perfil verificada, BitLocker Protection On + FullyEncrypted 100 %, root de datos protegido, dead-man implementado/probado y rollback/read-back disponibles. La lectura previa `ProtectionStatus=Off` mantiene este gate abierto. Esta tarea no desbloquea dichos requisitos por sí misma.
 
 **Criterio de cierre:** producto instalado en la ruta local indicada; SHA/manifest coinciden; fuentes importadas vigentes; readiness real; operador provisionado solo con consentimiento; stdio/RDC funciona; sin listener ni secretos; evidencia y read-back en EP-TASK-005, índice EP y OEP. El build o un smoke temporal no equivalen a instalación/aceptación.
+
+---
+
+## Rectificación del destino y fast-path SINK/IPZ · 2026-11-10
+
+Esta entrada supersede, para el sprint MCP-OCP, las designaciones anteriores de PC 7/LOC-OTHER registradas arriba. El destino seleccionado por el operador es **Fila 4**, el dispositivo correspondiente a la única sesión RDC disponible. PC 7 no queda como destino alternativo ni fallback.
+
+### Destino confirmado por instrucción; identidad técnica por revalidar
+
+- Etiqueta del equipo: Fila 4.
+- Última identidad documentada: RDC Device ID `d0bbb2a3-d7b4-45e1-8870-652c2c3844fc`, sesión interactiva `CENTRAL\\fila4`, SessionId 4. Es la última observación de EP-TASK-003, no preflight en vivo de este ciclo.
+- Revalidar en vivo hostname/Device ID, conexión, sesión, usuario/SID, `%USERPROFILE%`, permisos y privilegios antes de materializar o instalar.
+- Perfil físico de ubicación: PENDIENTE_DE_VERIFICACIÓN. No inferir CECEQ o LOC-OTHER por la etiqueta Fila 4. El dead-man se exige solo si la ubicación efectiva es distinta de CECEQ; en CECEQ rige la conservación cifrada prevista.
+- Checkout: `%USERPROFILE%\\Desktop\\SeryMente\\Repositorios\\Metodologia\\metodologia\\`.
+- Programa piloto: `<checkout>\\frentes\\mcp-metodologia\\instalacion-local\\piloto-sink\\`.
+- Release final 1.0.0: `<checkout>\\frentes\\mcp-metodologia\\instalacion-local\\`.
+- Datos/DB/DPAPI/fuentes/logs/backups: `%USERPROFILE%\\Desktop\\SeryMente\\Datos\\Metodologia\\MCP-OCP\\`, fuera del checkout, dentro del volumen efectivamente protegido.
+
+### Gates previos
+
+La última observación disponible de Fila 4 registró C: `FullyEncrypted/100 %`, `ProtectionStatus=Off`, `XtsAes128`; no acredita protección activa y debe repetirse en vivo. Git y GitHub CLI se observaron instalados (2.45.2/2.52.0), pero la autenticación del perfil `CENTRAL\\fila4` no estaba verificada. No heredar credenciales, VHDX, W:, recuperación, DPAPI ni workspace de PC-14 u otro host.
+
+Antes de importar DUG o fuentes privadas, crear DB, ejecutar `provision-operator` o dejar un runtime persistente, EP-TASK-003 debe entregar checkout completo/sincronizado y volumen de trabajo XTS-AES256/Protection On/FullyEncrypted 100 %, protector recuperable en EP Vault, read-back SHA-256 y dead-man probado cuando la ubicación lo requiera. Confirmar permiso local y presencia del operador para `REGISTER <SID>`; no automatizarlo.
+
+### Secuencia en dos hitos para reducir la espera de IPZ
+
+**Hito A · piloto utilizable SINK:P004 (antes del panel y de 1.0.0):**
+
+1. MCP-OCP construye el primer corte vertical mínimo con `GOW:ARR`, `DUG` y `SINK:P004`, con texto íntegro, pin/version/firma/commit/blob y SHA-256.
+2. Suite mínima de contrato/errores y smoke de `initialize`, `tools/list`, `tools/call`, EOF/cierre.
+3. Una vez que los gates de workspace/root de Fila 4 estén PASS, extraer el piloto en `instalacion-local/piloto-sink/`, cotejar paquete/manifest/SHA y configurar el root de datos protegido.
+4. GOV-TASK-007 prepara el IPZ compacto que indique `GOW:ARR` → `DUG` → MDP → `SINK:Pxxx`; el primer test de recuperación será `SINK:P004`. La instalación del texto nativo IPZ y su read-back se documentan separadamente; no se afirma cambio del campo nativo por esta tarea.
+5. Probar el camino que realmente usará el modelo: IPZ → invocación RDC autorizada → MCP-OCP STDIO → respuesta visible con pin/hash. Un envío JSON-RPC desde consola, sin retorno al contexto IPZ, solo cuenta como smoke de transporte.
+6. Solo tras ese E2E P004, declarar **PILOTO_SINK_IPZ=VERIFICADO**; antes, estados separados (compilado, instalado, smoke, IPZ E2E) permanecen individualmente pendientes.
+
+**Hito B · release MCP-OCP 1.0.0:**
+
+Generalizar a los 43 principios, lotes ordenados, controles negativos, manifiesto final, panel WPF, pruebas combinadas, ZIP reproducible, extracción/read-back, bootstrap, instalación final en `instalacion-local/` y aceptación completa. El panel MCP-OCP-13 no bloquea el Hito A; sí es parte del producto final 1.0.0.
+
+FOL1 conserva su compuerta independiente y no bloquea el piloto P004. No se activa MCP-NORMATIVO ni se modifica DUG/ART-025/ART-027/Khora.
+
+**Estado de esta rectificación:** destino documental Fila 4 actualizado; preflight del host, checkout protegido, piloto, instalación, IPZ nativo/read-back y aceptación no ejecutados.
+
