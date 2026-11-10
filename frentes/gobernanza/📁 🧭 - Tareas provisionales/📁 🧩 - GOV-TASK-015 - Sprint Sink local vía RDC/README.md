@@ -134,7 +134,7 @@ No son insumos por ahora: contraseña, token, SID, RecoveryPassword, B2, OAuth J
 
 - **Autorización Sink:** directa del operador y vigente.
 - **Implementación Sink en main:** NO IMPLEMENTADA.
-- **Panel MCP-OCP-13:** especificado y autorizado; NO IMPLEMENTADO.
+- **Panel MCP-OCP-13:** WPF candidato escrito; biblioteca de monitorización, reader/writer/evaluator, dashboard y 23 pruebas sintéticas añadidas; build, tests, revisión visual Windows e integración EP todavía NO VERIFICADOS.
 - **Código fuente candidato:** recuperable desde ramas remotas; requiere reconciliación con main y pins actuales.
 - **Build/paquete vigente:** NO GENERADO.
 - **Workspace/volumen:** el estado histórico de W:/PC-14/PC 7 no acredita Fila 4. Checkout protegido, manifest y segundo read-back en Fila 4 pendientes.
@@ -271,7 +271,7 @@ Por instrucción directa del operador se incorpora MCP-OCP-13 como tarea P0 del 
 
 **Pruebas:** panel waiting-server, initialize, readiness parcial, fuente alterada/ausente, operador/root no configurado, tool success/failure, crash del proceso, sesión EP finalizada, ACL/JSON inválidos, stdout STDIO intacto, ausencia de red y manifest/SHA. MCP Inspector es opcional para diagnóstico de desarrollo; ni Inspector ni MCP Studio se distribuyen en producción.
 
-**Estado:** alcance/documentación actualizados; panel no implementado, no compilado, no incluido en paquete ni instalado.
+**Estado:** panel WPF candidato escrito; 23 pruebas monitor/readiness escritas/0 ejecutadas; build, validación visual, integración EP, paquete e instalación pendientes.
 
 ---
 
@@ -316,11 +316,11 @@ Gobernanza publicó la rectificación de ART-027 mediante el evento `C-GOBERNANZ
 
 ### Bloqueador P0 actual
 
-**MCP-OCP-02 es la primera acción técnica crítica:** crear rama limpia desde el HEAD actual de `main` y reconciliar código/SDK/RID con el núcleo MCP-OCP v0.1.28 y DUG Samantha v388/NX-388m. El contrato ART-027 ya está actualizado; no compilar ni aceptar el piloto con pins v386 ni portar ramas históricas completas. La rama y el código no sensible no dependen del preflight EP.
+**MCP-OCP-02 ya fue ejecutado sobre el HEAD actual:** rama `feat/mcp-ocp-p004-rebaseline-20261110-cycle02`, creada desde `84cc9ffc1a2aa27c622c7e5de147d7460f3b5ecd`. La siguiente prioridad técnica es build, 18 pruebas y smoke P004 con logs observables; no declarar piloto funcional hasta PASS.
 
 ### Camino crítico, precedencias y salida
 
-1. **MCP-OCP-02 (P0):** HEAD actual de main → rama limpia → mapa REUSE/ADAPT/REWRITE/DROP → SDK/RID fijados. Salida: rama/diff revisables y source pins v388.
+1. **MCP-OCP-02 (P0): EJECUTADO / READ-BACK EN RAMA CICLO02.** Rama creada desde main SHA `84cc9ffc...`, pin v388, mapa de portabilidad y SDK/RID fijados. No merge; build y tests pendientes.
 2. **MCP-OCP-05 (P0):** sobre esa rama, corte `GOW:ARR → DUG → SINK:P004`. Desarrollo con fixtures sintéticos en paralelo; respuesta real exige fuente importada y pins cotejados.
 3. **MCP-OCP-03 (P0, paralelo):** contrato, positivos/negativos, integridad y fail-closed con fixtures; repetir contra fuente real después del gate EP.
 4. **MCP-OCP-04 (P0):** harness y smoke STDIO/RDC; la E2E IPZ exige piloto instalado y respuesta visible al modelo. JSON-RPC de consola no cumple E2E.
@@ -336,4 +336,90 @@ EP-TASK-004 GUI de bóveda y EP-TASK-002/Backblaze no bloquean P004 ni el build 
 
 ### Estado de evidencia
 
-**Documentación:** DUG v388, tareas Gobernanza, núcleo/backlog MCP-OCP y OEP/tareas EP rebaselined y leídos de vuelta. **No verificado/pendiente:** rama nueva, código P004, pruebas nuevas, preflight Fila 4, importación, paquete piloto, instalación, IPZ nativa, E2E y panel. No convertir el cierre documental en PASS de producto.
+**Última evidencia:** rama MCP-OCP ciclo02 creada desde el main vigente; candidato P004, pruebas y CI están escritos, pero no hay PASS de compilación/tests/smoke. EP publicó un preflight parcial de Fila 4 con resultado FAIL; no hay instalación/importación. Pendiente: CI observable, correcciones, gates EP, paquete, instalación, IPZ nativa, E2E y panel. No convertir código escrito en PASS.
+## Registro de ejecución MCP-OCP · ciclo02 · 2026-11-10
+
+**Estado de sprint:** MCP-OCP-02 ejecutado y read-back verificado. MCP-OCP-05 tiene implementación candidata P004 escrita, no compilada. MCP-OCP-03 tiene 18 escenarios P004 escritos/0 ejecutados; MCP-OCP-13 añade 23 pruebas de monitor/readiness escritas/0 ejecutadas. MCP-OCP-04 tiene harness/CI actualizados con build WPF, pero no hay smoke ni PASS observable; E2E IPZ pendiente.
+
+### Base de trabajo
+- Main actual al crear la rama: `84cc9ffc1a2aa27c622c7e5de147d7460f3b5ecd`.
+- Rama: `feat/mcp-ocp-p004-rebaseline-20261110-cycle02`.
+- Rama creada directamente desde ese SHA; rebaseline limpio.
+- DUG Samantha v388/NX-388m: commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`, blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`; blob cotejado en commit pinneado y main actual.
+- MCP core v0.1.28, backlog LIST v0.9, control generación 5. Sink STDIO y panel WPF dentro del alcance AUTHORIZED.
+
+### Implementación y validación
+- REWRITE: servidor/protocolo/lector/pins y pruebas del corte actual.
+- DROP para Hito A: SQLite, vault, crypto, backup, importador persistente, operaciones y artefactos históricos.
+- SDK 10.0.403, `net10.0`, 0 dependencias NuGet externas; piloto framework-dependent sin RID; publicación final `win-x64` self-contained.
+- Build/tests/smoke aún sin ejecución verificable. PR #25 corresponde a la rama anterior basada en main SHA `06467fb...` y quedó supersedido porque main avanzó con evidencia EP.
+
+### EP — dependencia externa observada (sin cambiar su objeto)
+- Main añadió `EP-FILA4-PREFLIGHT-PARCIAL-20261110.json`, commit `84cc9ffc1a2aa27c622c7e5de147d7460f3b5ecd`, blob `8ebf0c2b54efc6d3fe597adfe0f9358e65e6acbe`.
+- Resultado: `PREFLIGHT_PARTIAL_FAIL`. C: FullyEncrypted/100 %, pero XTS-AES128, Protection Off y sin protectores; ubicación física UNCLASSIFIED; checkout de Metodología parcial, sin `.git`. El equipo/perfil no está listo para instalación ni importación.
+- EP-TASK-003 conserva estado `en_curso`; EP-TASK-005 conserva `pendiente`. MCP-OCP no actualiza sus objetos ni intenta resolver su gate.
+- No se tocó Fila 4 desde MCP-OCP; sin DB, DPAPI, fuente privada, REGISTER ni runtime persistente.
+
+### Siguiente acción de MCP-OCP
+Abrir PR draft ciclo02; recuperar ejecución CI con steps/logs/artifacts; corregir hasta build/tests/smoke PASS. Después congelar respuesta P004. La E2E real exige gates EP y respuesta visible al modelo desde el contexto IPZ. No mergear main.
+
+### Main posterior a la base de ciclo02
+
+Después de crear la rama ciclo02, main avanzó cuatro commits EP-only hasta `67b48bc041bee372c69389f0aa84ed1a6d19eff5`. La comparación desde la base `84cc9ffc1a2aa27c622c7e5de147d7460f3b5ecd` confirma que las cuatro rutas modificadas pertenecen a EP y no se solapan con las 30 archivos modificados en el diff MCP/GOV de la rama. Se conserva la rama desde su base limpia verificada; la rama sigue divergente respecto a main; el conteo ahead/behind y de archivos se consulta en la PR #26 para conservar una única lectura vigente. No se toma control ni se modifica el estado EP.
+
+
+## Implementación candidata WPF/monitor · ciclo02 · 2026-11-10
+
+**Alcance implementado como código candidato (sin build):**
+- `src/OcpMcp.Monitoring/`: modelos de sesión/servidor/estado/evento, writer best-effort y reader read-only fail-closed.
+- `src/OcpMcp.Panel/`: proyecto WPF `net10.0-windows`, dashboard de una pantalla, FileSystemWatcher coalescido sin polling, control de cierre X/Alt+F4 como minimizar mientras EP sigue ACTIVE y verificación del proceso por PID + hora de inicio.
+- `src/OcpMcp/`: `--monitor-root` opt-in; sin argumento no hay persistencia de observabilidad. Al recibir root explícito, el servidor escribe snapshot inicial bloqueado/no listo, cambia protocolo y actividad por eventos sanitizados, y registra parada al EOF.
+- EP conserva propiedad y escritura de `session.json`, ACL, cifrado, ciclo de vida y apertura/cierre de la ventana. MCP-OCP no configura ni crea el root de datos de EP, no modifica BitLocker/ACL ni arranca el panel.
+
+**Telemetría:** evento `SINK_READ_SUCCESS` solo tras lectura completa validada; los errores se registran como `TOOL_FAILED` con código saneado y nunca incrementan éxitos. No se guardan argumentos, contenido, texto de principios, tokens, secretos, SID ni payloads.
+
+**Pruebas escritas:** 18 escenarios P004 + 23 de monitor/readiness; 0 ejecutadas. CI ahora restaura/build del servidor, suites P004/monitor, build WPF con `EnableWindowsTargeting` y smoke STDIO. El último run consultable de la revisión previa falló sin pasos/logs/artifacts; esta implementación nueva aún requiere una ejecución observada asociada al HEAD actual.
+
+**Estado:** implementación candidata escrita/read-back; build, tests, smoke, visual review Windows, paquete, integración EP ACTIVE y aceptación permanecen PENDIENTES. El panel no bloquea el corte P004 pero es obligatorio para 1.0.0.
+
+
+### Estado de CI actualizado · 2026-11-10 · revisión actual
+
+- HEAD de código consultado: `9f66b1ae8e1969cf82c3f753ab30e31c2bd1a8c1` (incluye el negativo del inventario exacto P001–P043).
+- MCP-OCP workflow run 56: `42868894554`, job `130014524745`, FAILURE; `steps=null`, `logs_url=null`, sin artefactos. La descarga no aporta logs; el job no acredita que se ejecutaran setup-dotnet, build, tests, WPF o smoke.
+- Run 55: `42867891954`, FAILURE sin pasos/logs/artefactos. Se reintentó una vez. En run 56 se aceptó un nuevo reintento; job `130015275379` volvió a terminar FAILURE con `steps=[]`, `logs_url=null`, sin artefactos y descarga de logs `BlobNotFound`. No se ejecutan reintentos ciegos adicionales.
+- En ambos commits fallaron también otros workflows del repositorio con el mismo patrón sin pasos recuperables. GitHub Status registró el 10-nov retrasos en workflows disparados por PR desde 16:31 UTC, Actions degradado hasta 17:28 UTC y Pull Requests aún degradadas; esto hace plausible un factor externo, pero **no demuestra la causa específica** del run 56.
+- Suite P004: 18 casos escritos / 0 ejecutados. Suite monitor/readiness: 23 escritos / 0 ejecutados. Build WPF y smoke: no verificados. El contenedor local no contiene `dotnet`.
+
+**Estado de verificación:** la implementación candidata está publicada; build, pruebas, smoke y revisión visual continúan NO VERIFICADOS. No se declara fallo de código ni aceptación.
+
+
+### Reintento de CI run 56 · última lectura
+
+GitHub aceptó un `rerun_workflow_job` del job `130014524745`; la última lectura del run `42868894554` lo mostró en `queued`, sin pasos ni nuevo resultado observable. No se atribuye PASS ni se da por iniciada la compilación.
+
+
+### Resultado del reintento del CI · run 56
+
+El reintento fue aceptado por GitHub, pero volvió a terminar en `FAILURE`: job `130015275379`, `steps=[]`, `logs_url=null`, cero artefactos; la consulta de logs devolvió `BlobNotFound`. No hay evidencia de ejecución de build, suites, WPF o smoke. Se cierra el reintento controlado sin más reintentos ciegos; esperar recuperación verificable de Actions/PR o un runner autorizado alternativo.
+
+
+### Readiness EP — rectificación fail-closed
+
+`MonitorReadinessEvaluator` exige que la atestación EP contenga `sessionState=ACTIVE` y `protectionState=Protection On`; Protection Off/UNKNOWN/futuro bloquea. Además coteja proceso RUNNING (PID + hora de inicio), protocolo INITIALIZED, fuentes importadas/VERIFIED/vigentes, operador provisionado, root y readiness del servidor. MCP no sondea BitLocker ni sustituye a EP. 23 tests escritos; 0 ejecutados.
+
+### Revisión de CI y bloqueo de panel · 2026-11-10
+
+- CI MCP-OCP run #78 `42871039884`: el job original `130022076348` y su reintento `130058287914` finalizaron FAILURE sin pasos, logs ni artefactos; la descarga devuelve `BlobNotFound`. En el mismo commit, `validate-canonical-bootstrap` (`42871039938`) y `Validate RDC Governance` (`42871039803`) reprodujeron el fallo sin pasos. No hay evidencia de inicio de build/tests/smoke ni base para atribuir fallo al código.
+- La revisión estática del panel confirma que el corte vertical P004 deja Sources/Operator/Readiness bloqueados porque aún no implementa importación de fuentes ni aprovisionamiento del operador. El test positivo de readiness usa un snapshot sintético que representa un estado futuro de 1.0.0, no el corte actual. Deben integrarse esos flujos antes de aceptar readiness del producto final; esto no bloquea el piloto P004 ni autoriza inferir esos estados desde una lectura Sink.
+- La revisión del watcher contra `PANEL-OBSERVABILIDAD.md` descarta el supuesto defecto: EP debe crear `monitor/session.json` antes de abrir el panel, así que `monitor/` existe cuando se llama `StartWatching()`. La secuencia aprobada permite la suscripción y no exige cambio.
+- Se registra como bloqueo de implementación MCP-OCP-13 la actualización de Sources/Operator/Readiness. Requiere contrato explícito y autorizado EP↔MCP para los estados no sensibles; EP sigue siendo dueño exclusivo de `session.json`. No se altera su contrato ni se afirma integración.
+- Estado de validación: 18 pruebas P004 + 23 monitor/readiness escritas / 0 ejecutadas; build, smoke STDIO, WPF, revisión visual e integración EP no verificados. PR #26 continúa draft y sin merge.
+
+
+### Reintento adicional tras recuperación publicada de GitHub · 2026-11-10
+
+- Fuente de contexto: página oficial [GitHub Status](https://kctbh9vrtdwd.statuspage.io/), incidente “Incident with Git Operations and Pull Requests”. GitHub informó “Actions is operating normally” a las 17:28 UTC y declaró resuelto el incidente a las 17:55 UTC; la página consultada posteriormente muestra Actions y Pull Requests operativos.
+- Tras esa recuperación publicada se reintentó una vez más el job del piloto. GitHub aceptó la operación, pero el nuevo job `130063978631` terminó en FAILURE con `steps=[]`, `logs_url=null` y cero artefactos. La descarga de logs devolvió `BlobNotFound`.
+- El reintento posterior a la recuperación no produjo evidencia de inicio del runner, setup-dotnet, build, tests, WPF o smoke. La coincidencia temporal con el incidente anterior no basta para asignarle la causa; causa raíz NO VERIFICADA.
+- Se cierra el ciclo de reintentos ciegos. Siguiente validación requiere un job que exponga pasos/logs/artefactos o ejecución en runner .NET 10.0.403 autorizado. No declarar PASS.

@@ -9,10 +9,10 @@
 - **Versión de la lista:** 0.9 (provisional; consolidación del sprint Sink + panel local en tres frentes).
 - **Última actualización:** 2026-11-10.
 - **Gobierno leído:** Samantha v388 · NX-388m; Metacanon 1.29; GOW 2.18; DUG commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`; blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`. ART-027 rebaselined para Sink local STDIO/RDC; §ARR y P037 revisados; CNP P001/P004/P005/P038/P043 considerado.
-- **Núcleo enlazado:** [MCP-OCP · objeto canónico](MCP-METODOLOGIA.md), v0.1.27; esta lista v0.8 es su backlog auxiliar vigente.
+- **Núcleo enlazado:** [MCP-OCP · objeto canónico](MCP-METODOLOGIA.md), v0.1.28; esta lista v0.9 es su backlog auxiliar vigente.
 - **Control:** [CONTROL-RESPONSABILIDAD.json](CONTROL-RESPONSABILIDAD.json). Las generaciones y sesiones son metadatos de auditoría y no bloquean trabajo autorizado.
 - **MCP-NORMATIVO:** DESACTIVADO.
-- **Producto vs. documento:** MCP-OCP-v0.1.27 es la versión documental vigente; la versión de software objetivo es 1.0.0. La candidata ejecutable 0.1.0 y su recibo histórico no constituyen una versión actualizada ni aceptada del producto.
+- **Producto vs. documento:** MCP-OCP-v0.1.28 es la versión documental vigente; la versión de software objetivo es 1.0.0. La candidata ejecutable 0.1.0 y su recibo histórico no constituyen una versión actualizada ni aceptada del producto.
 - **Principio de custodia:** no guardar claves, access/refresh tokens, datos privados de usuario, contenido sensible de repositorios ni secretos en esta lista, artefactos, manifests o logs. Utilizar fixtures sintéticos y evidencia minimizada.
 
 ## Decisión de alcance operativa vigente
@@ -33,13 +33,13 @@ La tabla sustituye los PASS/estados de recibos históricos para la implementaci�
 | Orden | ID | Prioridad | Tarea | Estado vigente | Condición principal de salida |
 |---:|---|---|---|---|---|
 | 1 | MCP-OCP-01 | P0 | Contrato de producto y frontera OCP/Khora/Jules | VERIFICADO_EN_NUCLEO_V0.1.27 | Un servidor local STDIO; panel acompañante read-only en el producto final; dominios separados. |
-| 2 | MCP-OCP-02 | P0 · CRÍTICO AHORA | Rama limpia y reconciliación selectiva desde main | PENDIENTE · BLOQUEADOR ACTUAL | Nueva rama desde HEAD de main; pin DUG v388 cotejado; inventario REUSE/ADAPT/REWRITE/DROP y SDK/RID. |
-| 3 | MCP-OCP-05 | P0 · SIGUIENTE | Corte vertical GOW:ARR → DUG → SINK:P004 | PENDIENTE · DEPENDE_MCP_OCP_02 | Respuesta individual completa, pin v388/commit/blob/SHA-256 y fail-closed. Fixtures antes de EP; importación privada tras EP PASS. |
-| 4 | MCP-OCP-03 | P0 | Suite mínima de contrato del piloto P004 | EN PARALELO · FIXTURES SINTÉTICOS | Preparar contrato y casos ID/fuente/pin/hash/fallo cerrado/cierre ahora; repetir con fuente real tras EP PASS. |
-| 5 | MCP-OCP-04 | P0 | Transporte y E2E IPZ → RDC → STDIO para P004 | SMOKE PREPARABLE · E2E ESPERA PILOTO INSTALADO | Preparar harness/smoke; E2E exige P004 instalado y respuesta visible desde contexto IPZ. Consola sola no basta. |
+| 2 | MCP-OCP-02 | P0 · CRÍTICO | Rama limpia y reconciliación selectiva desde main | EJECUTADO · VERIFICADO POR READ-BACK | `feat/mcp-ocp-p004-rebaseline-20261110-cycle02`, base `84cc9ffc1a2aa27c622c7e5de147d7460f3b5ecd`; pin v388, inventario REUSE/ADAPT/REWRITE/DROP, SDK 10.0.403 y RID final win-x64 registrados. Build/pruebas aún pendientes. |
+| 3 | MCP-OCP-05 | P0 · SIGUIENTE | Corte vertical GOW:ARR → DUG → SINK:P004 | IMPLEMENTACIÓN CANDIDATA · NO COMPILADA | Servidor/lector/pin P004 escritos; respuesta, blob y SHA-256 implementados en código; requiere build, pruebas y smoke con evidencia CI. |
+| 4 | MCP-OCP-03 | P0 | Suite mínima de contrato del piloto P004 | ESCRITAS · 18 ESCENARIOS / 0 EJECUTADOS | Fixtures sintéticos positivos/negativos, negociación, P004, pins, hashes, errores, telemetría y EOF; ejecución pendiente de runner .NET con logs. |
+| 5 | MCP-OCP-04 | P0 | Transporte y E2E IPZ → RDC → STDIO para P004 | HARNESS/CI ACTUALIZADOS · SIN SMOKE VERIFICADO | CI incluye build servidor, 18 tests P004, 23 tests de monitor/readiness, build WPF y smoke STDIO; run CI falla sin steps/logs/artifacts, por lo que ninguna etapa está acreditada. E2E IPZ espera gates EP. |
 | 6 | MCP-OCP-05 (fase posterior) / 03 | P0 | Generalización Sink P001–P043 y lotes | PENDIENTE_POST_PILOTO | 43 respuestas, orden, hashes/eventos y controles negativos PASS. |
-| 7 | MCP-OCP-13 | P1 | Panel local de observabilidad visual | ESPECIFICADO · IMPLEMENTACIÓN_PENDIENTE | Obligatorio en 1.0.0; se implementa tras congelar schema, en paralelo con la generalización, y no bloquea el piloto SINK:P004. |
-| 8 | MCP-OCP-10 | P1 | Pins, manifiesto y evidencia final | PENDIENTE_EVIDENCIA_ACTUAL | Pins DUG v388/core vigente, SDK/RID, servidor+panel, tests y hashes. |
+| 7 | MCP-OCP-13 | P1 | Panel local de observabilidad visual | IMPLEMENTACIÓN CANDIDATA · 23 TESTS ESCRITOS / 0 EJECUTADOS | WPF + reader/writer/evaluator de monitorización y 23 pruebas sintéticas publicados; `READY` exige atestación EP `Protection On` además de proceso/protocolo/fuentes/operador/root. Build, pruebas, revisión visual Windows e integración de ciclo EP pendientes. Obligatorio para 1.0.0; no bloquea P004. |
+| 8 | MCP-OCP-10 | P1 | Pins, manifiesto y evidencia final | PIN/METADATOS DE BUILD FIJADOS · RECIBO PENDIENTE | DUG v388/NX-388m, commit/blob, SDK 10.0.403, dependencias externas 0, piloto sin RID y release win-x64 self-contained; faltan hashes finales y recibo. |
 | 9 | MCP-OCP-07 | P1 | Paquete reproducible 1.0.0 | PENDIENTE_PAQUETE_ACTUAL | ZIP final servidor+panel, configuración, manifest/SHA y read-back. |
 | 10 | MCP-OCP-12 | P1 | Bootstrap local en Fila 4 | BLOQUEADO_GATES_EP | Piloto/instalación dentro de checkout; datos externos protegidos; REGISTER interactivo. |
 | 11 | MCP-OCP-08 | P1 | Handoff y aceptación EP | PENDIENTE_EP_TASK_003_005 | Verificación de ruta, root, panel EP ACTIVE, hashes, cierre y rollback. |
@@ -255,7 +255,7 @@ El panel MCP-OCP-13 baja a P1 de secuencia, pero permanece como entregable oblig
 - No reutilizar W:, VHDX, RecoveryPassword, DPAPI ni staging de PC-14/PC 7.
 - MCP-NORMATIVO permanece DESACTIVADO. MCP Studio no se incorpora. MCP Inspector queda opcional para diagnóstico, fuera del paquete final.
 
-**Estado de esta rectificación:** tareas y orden documental alineados; rama, build, pruebas, piloto, IPZ nativa, preflight Fila 4, instalación y aceptación siguen pendientes.
+**Estado actual en rama ciclo02:** MCP-OCP-02 ejecutado y verificado por comparación/read-back; candidato P004 y 18 pruebas escritas sin ejecución; CI sin PASS observable; preflight EP de Fila 4 tiene evidencia parcial con resultado FAIL. Importación, instalación, IPZ nativa y E2E siguen pendientes.
 
 
 ## Rebaseline urgente del sprint · 2026-11-10 · DUG v388
@@ -276,3 +276,75 @@ El panel MCP-OCP-13 baja a P1 de secuencia, pero permanece como entregable oblig
 **No bloquean P004:** EP-TASK-004 GUI de bóveda; EP-TASK-002/Backblaze; MCP-OCP-06/11 Jules; MCP-OCP-09 PPR/cross-host, salvo dependencia técnica nueva demostrada. No convertir los campos `applicability`, `activation_conditions`, `mandatory` y `dependencies` en requisito de Sink: ART-027 v388 define recuperación de texto, no selección normativa automática. `MCP-NORMATIVO` permanece `DESACTIVADO`.
 
 **Estado observado:** el rebaseline documental no acredita rama nueva, código Sink, pruebas PASS, importación privada, paquete piloto, instalación Fila 4, IPZ nativa, E2E ni panel. Cada hito conserva su propia evidencia.
+
+## Registro de ejecución y dependencia EP · 2026-11-10 · ciclo02
+
+- **Main base actual:** `84cc9ffc1a2aa27c622c7e5de147d7460f3b5ecd`; corresponde al commit EP de preflight parcial de Fila 4.
+- **Rama MCP-OCP:** `feat/mcp-ocp-p004-rebaseline-20261110-cycle02`, creada directamente desde ese HEAD.
+- **DUG v388:** commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`; blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`. La lectura de ese commit y de main actual devuelve el mismo blob.
+- **MCP-OCP-02:** rama limpia, inventario REUSE/ADAPT/REWRITE/DROP y pins SDK/RID documentados.
+- **MCP-OCP-05:** implementación candidata P004 escrita; no compilada.
+- **MCP-OCP-03:** 18 escenarios escritos; 0 ejecutados.
+- **MCP-OCP-04:** harness y workflow CI escritos; smoke y E2E pendientes.
+- **Preflight EP publicado en main:** evidencia `EP-FILA4-PREFLIGHT-PARCIAL-20261110.json`, commit `84cc9ffc1a2aa27c622c7e5de147d7460f3b5ecd`, blob `8ebf0c2b54efc6d3fe597adfe0f9358e65e6acbe`; resultado `PREFLIGHT_PARTIAL_FAIL`. C: XTS-AES128/Protection Off/sin protectores; ubicación física UNCLASSIFIED; checkout Metodología parcial y sin `.git`. **EP-TASK-003 sigue en curso; MCP-OCP no modifica esa tarea ni el host.**
+- **EP-TASK-005:** pendiente; no importación, instalación, DB, DPAPI ni REGISTER.
+- **MCP-NORMATIVO:** DESACTIVADO. **FOL1:** no activado.
+
+
+### Actualización de main posterior a la base de ciclo02 · 2026-11-10
+
+Main avanzó desde `84cc9ffc1a2aa27c622c7e5de147d7460f3b5ecd` hasta `67b48bc041bee372c69389f0aa84ed1a6d19eff5` mediante cuatro commits exclusivos del frente EP (OEP, índice/tareas EP y evidencia de preflight). La comparación `84cc9ffc... → main` confirma que esos cuatro commits no modifican rutas MCP-OCP ni GOV-TASK-015. La rama ciclo02 conserva su base inicial verificada; la rama sigue divergente respecto a main; el conteo ahead/behind y de archivos se consulta en la PR #26 para conservar una única lectura vigente. No hay solapamiento con las cuatro rutas EP-only posteriores a la base. No se rebasea ni se importa contenido de EP a este frente.
+
+
+## Implementación candidata de observabilidad · 2026-11-10 · ciclo02
+
+**MCP-OCP-13:** se añadieron `src/OcpMcp.Monitoring/` (modelos, lector read-only, escritor best-effort y evaluador compuesto) y `src/OcpMcp.Panel/` (WPF nativo, dashboard de una pantalla, FileSystemWatcher y referencia de proceso PID+hora de inicio). El panel no contiene acciones, no controla el servidor y no accede a STDIO.
+
+**Contrato de datos:** EP escribe `monitor/session.json`; MCP-OCP solo lo lee. El servidor escribe `monitor/state.json` y `monitor/events.jsonl` exclusivamente cuando recibe `--monitor-root <ruta-EP>`; no existe default, no elige/crea el root y no modifica ACL, BitLocker, Registro ni servicios. Los eventos no incluyen argumentos, contenido, texto de principios, hashes de payload, secretos, tokens ni SID. El primer estado es no listo: fuentes no importadas, integridad UNKNOWN, operador UNKNOWN y readiness `SOURCES_NOT_IMPORTED`.
+
+**MCP-OCP-03:** 18 casos P004 escritos; 0 ejecutados. **MCP-OCP-13:** 23 casos de monitor/readiness escritos; 0 ejecutados. Se agregó evaluador fail-closed: READY exige `sessionState=ACTIVE` y `protectionState=Protection On` exacto, sin timestamps futuros, además del proceso RUNNING identificado por PID+inicio, protocolo INITIALIZED, fuentes importadas/VERIFIED/vigentes, operador provisionado y root disponible. El script CI se amplió para restore/build/run de ambas suites y build WPF Windows x64 con cross-targeting; conserva smoke real del ejecutable STDIO.
+
+**Validación:** no compilado ni probado. El último run CI conocido de la revisión anterior terminó FAILURE sin job steps/logs/artifacts; no prueba fallo del código. El runner de contenedor disponible carece de `dotnet`. El PR ciclo02 sigue draft; los commits recientes requieren una nueva lectura de checks asociada a su HEAD.
+
+**Límites:** no se ha empaquetado el panel, hecho smoke visual Windows, integrado apertura/cierre con EP-TASK-005, instalado ni materializado en Fila 4. El gate EP sigue `PREFLIGHT_PARTIAL_FAIL`; no se suministra monitor-root, fuente privada ni runtime persistente en el host.
+
+
+### Corrección de inventario DUG · 2026-11-10
+
+El lector ahora exige que el inventario sea exactamente `P001…P043` (43 IDs únicos), no solo 43 IDs únicos que incluyan P004. Se añadió un negativo con `P044` sustituyendo `P043`, blob repinneado y rechazo esperado. MCP-OCP-03 queda en 18 escenarios escritos / 0 ejecutados; build y CI siguen sin PASS.
+
+
+### CI run 56 · 2026-11-10
+
+HEAD con negativo de inventario: `9f66b1ae8e1969cf82c3f753ab30e31c2bd1a8c1`. Run `42868894554`, job `130014524745`: FAILURE, steps/logs/artifacts ausentes. No acredita ejecución. No hay build/test/smoke PASS. El entorno local disponible no tiene `dotnet`.
+
+
+### Corrección de seguridad del estado compuesto · 2026-11-10
+
+El evaluator `MonitorReadinessEvaluator` ahora impide READY si EP no declara exactamente `Protection On`; `Protection Off`, `UNKNOWN`, sesión no activa, timestamp futuro, proceso no identificado/detenido, protocolo pendiente, fuentes no íntegras/vigentes, operador no provisionado o root no disponible producen códigos de bloqueo. El panel consume ese resultado en vez de confiar solo en `state.json`.
+
+Pruebas añadidas para las condiciones anteriores: 23 escenarios monitor escritos / 0 ejecutados. No se ha inventado una comprobación de BitLocker desde MCP; el estado sigue siendo atestación propiedad de EP.
+
+
+La validación de tiempo también rechaza atestación de protección anterior al inicio de la sesión y snapshot de servidor con fecha futura. Suite monitor/readiness: 23 casos escritos / 0 ejecutados.
+
+
+### Cobertura adicional del vínculo humano P004 · 2026-11-10
+
+La suite del lector P004 aumenta a 18 casos. Dos negativos nuevos repinnean el blob para demostrar que falla si `[[P:P004]]` falta/se duplica o si el `content_markdown` de la tarjeta humana difiere del texto normativo. Ningún PASS se declara hasta ejecución real.
+
+### Revisión estática y CI run 78 · 2026-11-10
+
+- MCP-OCP CI run `42871039884` (#78), job original `130022076348`: FAILURE, sin pasos, logs ni artefactos. Se aceptó reintento; el nuevo job `130058287914` volvió a FAILURE con `steps=[]`, `logs_url=null` y cero artefactos. Descarga de logs: `BlobNotFound`.
+- En el mismo commit, `validate-canonical-bootstrap` run `42871039938` y `Validate RDC Governance` run `42871039803` también finalizaron FAILURE sin pasos ni artefactos. No hay evidencia de que setup-dotnet, build, tests, WPF o smoke hayan comenzado; no atribuir el resultado al código.
+- Revisión estática MCP-OCP-13: el corte vertical P004 deja Sources/Operator/Readiness bloqueados porque aún no incluye importación de fuentes ni aprovisionamiento del operador. El test positivo del evaluator es un estado futuro sintético; la integración de esos flujos queda pendiente para 1.0.0 y no bloquea el piloto P004. No inferir importación/verificación/aprovisionamiento desde una llamada Sink.
+- El supuesto bloqueo del watcher queda descartado contra el contrato aprobado: EP escribe `monitor/session.json` antes de abrir el panel, creando `monitor/` antes de `StartWatching()`. La secuencia permite que el watcher actual se conecte; no se registra como defecto.
+- Estado: 18 pruebas P004 + 23 de monitor/readiness escritas; 0 ejecutadas. Build, tests, smoke STDIO, build WPF y revisión visual Windows siguen NO VERIFICADOS.
+
+
+### Reintento adicional tras recuperación publicada de GitHub · 2026-11-10
+
+- Fuente de contexto: página oficial [GitHub Status](https://kctbh9vrtdwd.statuspage.io/), incidente “Incident with Git Operations and Pull Requests”. GitHub informó “Actions is operating normally” a las 17:28 UTC y declaró resuelto el incidente a las 17:55 UTC; la página consultada posteriormente muestra Actions y Pull Requests operativos.
+- Tras esa recuperación publicada se reintentó una vez más el job del piloto. GitHub aceptó la operación, pero el nuevo job `130063978631` terminó en FAILURE con `steps=[]`, `logs_url=null` y cero artefactos. La descarga de logs devolvió `BlobNotFound`.
+- El reintento posterior a la recuperación no produjo evidencia de inicio del runner, setup-dotnet, build, tests, WPF o smoke. La coincidencia temporal con el incidente anterior no basta para asignarle la causa; causa raíz NO VERIFICADA.
+- Se cierra el ciclo de reintentos ciegos. Siguiente validación requiere un job que exponga pasos/logs/artefactos o ejecución en runner .NET 10.0.403 autorizado. No declarar PASS.
