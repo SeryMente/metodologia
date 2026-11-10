@@ -1849,3 +1849,23 @@ Este suplemento solo registra la actualización de navegación y su cotejo. No r
 **Siguiente acción:** MCP-OCP entrega referencia de paquete/manifest/runbook a EP-TASK-005; EP solo recibe/instala cuando EP-TASK-003 haya pasado y el runtime requerido esté presente. Gobernanza realiza E2E IPZ cuando corresponda. MCP-OCP mantiene PR #27 abierta/draft.
 
 **Estado de ciclo:** `DTC_CYCLE_STATUS=OPEN_WORK_COMPLETE_FOR_PACKAGE_PREPARATION`; `MCP_OCP_H1=LOCAL_BUILD_TESTS_STDIO_PASS`; `MCP_OCP_PILOT_ARTIFACT=CANDIDATE_PUBLISHED_ON_PR_BRANCH`; `EP_HANDOFF=NOT_TRANSFERRED`; `EP_INSTALL=BLOCKED_EP_TASK_003_005`; `HOSTED_CI=RUNNER_UNASSIGNED`; `IPZ_E2E=NOT_ACCEPTED`; `MCP_NORMATIVO=DESACTIVADO`; `FOL1=PREPARADO_NO_ACTIVO`.
+
+### Avance independiente MCP-OCP-14 durante pausa de H1 · 2026-11-10
+
+**Lectura de prioridad interfrentes:** main d50560e01b6a1cf2b2f6aecaa3b4766cb1a2266a; GOV-TASK-015 blob 843b194a203c5c7e1cc7569f2c6046c4c76e7cd2; OEP v0.3.64 blob 9d76af8ec5e639567040027c9156211a14ec9fa9, §130. EP informa B2 upload/read-back SHA PASS para ZIP, ciphertext Vault, manifest y checksum (cuatro objetos), SSE-B2/AES256; restore aislado permanece NOT_RUN. EP-TASK-003=PARTIAL_FAIL y EP-TASK-005 sigue bloqueada por 003/P004. GOV-TASK-015 ordena mantener H1/instalación en pausa hasta actualizar informes/índice y cerrar el gate de restore. No se retoma instalación, handoff a host ni IPZ E2E en este corte.
+
+**Selección de trabajo MCP:** se realiza solamente validación no operativa del contrato MCP-OCP-14, dentro del alcance de pruebas/documentación autorizado en generación 5. No es continuación de H1 ni desplaza la prioridad EP/B2.
+
+**Resultado:** cuatro schemas JSON Schema Draft 2020-12 validados con PowerShell Test-Json 7.4.22; 20 fixtures positivos/negativos ejecutados, 20 PASS / 0 FAIL. Los schemas se probaron contra sus Git blobs exactos: envelope 36dfa8bc760114ca3a53077450bdb998f7429bee; snapshot 132e054c27c35dcefc46fe26a02fcd4eaecb5737; journal 51b4852ee56068460a323af72b72d137477f5ed6; checkpoint 5529f5303c698f8c5f712aed705c8a08c8fdff46.
+
+**Artefactos del resultado en la rama PR #27:**
+- Suite: frentes/mcp-metodologia/persistencia/tests/Validate-MCP-OCP-14-Schemas.ps1, Git blob dcdb2074bad9815194bbb5c60e8711faff50f968.
+- Evidencia: frentes/mcp-metodologia/persistencia/evidence/MCP-OCP-14-schema-validation-20261110.json, Git blob 9d68878b817fae996b519da3eb4780e42ace021e.
+- Núcleo: MCP-METODOLOGIA.md §31, v0.1.42, informe individual PARCIAL.
+- Backlog: LIST_VERSION=0.23, tarea 14 actualizada después del read-back del informe.
+
+**Límite de verificación:** los casos cubren tipos, obligatorios, patrones UUIDv7/SHA-256, additionalProperties, FULL/INCREMENTAL, path traversal, uniqueItems, estados de emergency y relación de estado remoto/Backblaze, y budget 30 s. No certifican format-assertion date-time, orden temporal, consistencia de conteos cross-array, canonicalización/idempotencia JSON, recomputación de cadena SHA, criptografía, runtime, DB, Vault, B2, upload/download/restore ni aplicación a datos reales.
+
+**Estado:** MCP-OCP-14 permanece PROPOSED / NOT ACCEPTED; solo P14-01_SCHEMA_FIXTURES_PASS_20_20. No hay runtime/IO ni ampliación de permisos. H1 permanece PAUSED_PENDING_EP_RESTORE_GATE; PR #27 continúa OPEN/DRAFT/NOT MERGED. MCP-NORMATIVO DESACTIVADO; FOL1 no activo. No se crea un nuevo folio ni ciclo DTC por esta nota incremental.
+
+**Siguiente acción:** respetar la pausa H1/EP. Mantener H2 en diseño/fixtures; la siguiente actividad útil será cerrar canonicalización e idempotencia con datos sintéticos, y revisar consistencia entre datasets/objects y semántica temporal antes de proponer ratificación de MCP-OCP-14.
