@@ -55,3 +55,17 @@ Todos los cotejos se hicieron contra el mismo HEAD de main `a34c1c5b43edbcbaf015
 - Build, smoke, paquete y aceptación no están acreditados.
 - EP-TASK-003 PASS es requisito para fuentes privadas, DB real, runtime persistente e instalación; no bloquea código remoto no sensible ni fixtures sintéticos.
 - DUG, ART-025/027, IPZ nativa, control de responsabilidad, Fila 4 y recursos EP no se modifican.
+
+
+## Reconciliación posterior al avance de main · 2026-11-10
+
+La base de creación anterior se conserva como hecho histórico. Después de que main avanzara, la rama se reconcilió selectivamente con el main vigente:
+
+- Main/segundo padre: `646608896a499f78640d6f17ec1e87876089e16f`.
+- Commit de reconciliación: `dfae6b0fe60438753fa7abe0b9febd6f9088783c`; padres: HEAD previo de la rama `ebc80ae464a24ea99d634eb2d928fcc50a43acfc` y main `646608896a499f78640d6f17ec1e87876089e16f`.
+- Se usó el árbol de main y se sobrepusieron únicamente 22 archivos propiedad del candidato. Se dejaron los documentos núcleo/lista tal como estaban en main en ese commit; sus actualizaciones MCP-OCP posteriores se hicieron sobre estas versiones frescas. No se copiaron las modificaciones EP/Gobernanza al alcance funcional MCP.
+- Compare posterior a la reconciliación: 7 ahead / 0 behind; merge-base = main actual. Tras actualizar núcleo y backlog, la PR compara 9 ahead / 0 behind y 24 rutas.
+- PR #27 sigue OPEN / DRAFT / NOT MERGED.
+- CI tras reconciliar: run `42903756431`, job `130136260875`; job sin runner asignado (`runner_id=0`), sin pasos, logs ni artefactos. Causa raíz no verificada; build/pruebas/smoke no acreditados.
+
+Esta subsección no sustituye el registro original de la comparación inicial 0/0 ni declara PASS técnico.
