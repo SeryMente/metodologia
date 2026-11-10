@@ -271,7 +271,7 @@ Por instrucción directa del operador se incorpora MCP-OCP-13 como tarea P0 del 
 
 **Pruebas:** panel waiting-server, initialize, readiness parcial, fuente alterada/ausente, operador/root no configurado, tool success/failure, crash del proceso, sesión EP finalizada, ACL/JSON inválidos, stdout STDIO intacto, ausencia de red y manifest/SHA. MCP Inspector es opcional para diagnóstico de desarrollo; ni Inspector ni MCP Studio se distribuyen en producción.
 
-**Estado:** alcance/documentación actualizados; panel no implementado, no compilado, no incluido en paquete ni instalado.
+**Estado:** panel WPF candidato escrito; 23 pruebas monitor/readiness escritas/0 ejecutadas; build, validación visual, integración EP, paquete e instalación pendientes.
 
 ---
 
@@ -389,7 +389,7 @@ Después de crear la rama ciclo02, main avanzó cuatro commits EP-only hasta `67
 - MCP-OCP workflow run 56: `42868894554`, job `130014524745`, FAILURE; `steps=null`, `logs_url=null`, sin artefactos. La descarga no aporta logs; el job no acredita que se ejecutaran setup-dotnet, build, tests, WPF o smoke.
 - Run 55: `42867891954`, FAILURE sin pasos/logs/artefactos. Se reintentó una vez. En run 56 se aceptó un nuevo reintento; job `130015275379` volvió a terminar FAILURE con `steps=[]`, `logs_url=null`, sin artefactos y descarga de logs `BlobNotFound`. No se ejecutan reintentos ciegos adicionales.
 - En ambos commits fallaron también otros workflows del repositorio con el mismo patrón sin pasos recuperables. GitHub Status registró el 10-nov retrasos en workflows disparados por PR desde 16:31 UTC, Actions degradado hasta 17:28 UTC y Pull Requests aún degradadas; esto hace plausible un factor externo, pero **no demuestra la causa específica** del run 56.
-- Suite P004: 16 casos escritos / 0 ejecutados. Suite monitor: 11 escritos / 0 ejecutados. Build WPF y smoke: no verificados. El contenedor local no contiene `dotnet`.
+- Suite P004: 18 casos escritos / 0 ejecutados. Suite monitor/readiness: 23 escritos / 0 ejecutados. Build WPF y smoke: no verificados. El contenedor local no contiene `dotnet`.
 
 **Estado de verificación:** la implementación candidata está publicada; build, pruebas, smoke y revisión visual continúan NO VERIFICADOS. No se declara fallo de código ni aceptación.
 
