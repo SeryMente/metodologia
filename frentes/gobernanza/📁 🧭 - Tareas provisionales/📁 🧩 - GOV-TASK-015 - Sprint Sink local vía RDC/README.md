@@ -421,3 +421,52 @@ Esta reconciliación es documental y de referencias. No modifica el repositorio 
 `SINK_P004=NOT_IMPLEMENTED_NOT_ACCEPTED` · `MCP_OCP_02=OPEN_STALE_BRANCH_FOUND` · `MCP_OCP_03=PARALLEL_FIXTURES` · `MCP_OCP_04=PARALLEL_HARNESS` · `EP_TASK_003=PARTIAL_FAIL` · `EP_TASK_005=PENDING` · `GOV_E2E=PENDING` · `IPZ_NATIVE=NOT_VERIFIED` · `FOL1=PREPARED_NOT_ACTIVE` · `MCP_NORMATIVO=DESACTIVADO`.
 
 **Criterio de cierre del sprint:** el primer resultado útil es SINK:P004 operativo desde IPZ; el release 1.0.0 no se declara completo hasta panel, generalización, manifest/ZIP, instalación final y aceptación correspondiente. Las tres fuentes de frente conservan sus propios estados y evidencia.
+
+---
+
+## Rebaseline vigente · OCP MCP 1.0 · 2026-11-10
+
+**Nombre canónico del programa:** OCP MCP 1.0. **Versión del producto:** MCP-OCP 1.0.0. **Primer hito funcional:** SINK:P004. El nombre anterior SINK-P004 queda como denominación histórica del primer corte, no del programa completo.
+
+### Objetivo integral
+
+Entregar un entorno OCP MCP que permita consultar SINK desde IPZ por RDC → MCP STDIO; trabajar desde equipos temporales/no confiables con workspace cifrado de sesión y caducidad; persistir y restaurar la carpeta de trabajo, la bóveda de variables de entorno y los datos de usuario/OCP; y observar el estado operativo desde el panel WPF.
+
+### Hitos y secuencia
+
+1. **H1 · SINK:P004 desde IPZ:** respuesta íntegra visible al modelo con ID/título, DUG, commit/blob y SHA-256.
+2. **H2 · Workspace cifrado verificado:** comprobar la protección que el operador reporta existente; apertura, bloqueo, cierre y desmontaje; no asumir que la existencia de un contenedor demuestra protección efectiva.
+3. **H3 · Restore B2 verificado:** respaldar workspace, ciphertext de bóveda y datos elegibles; verificar upload, descarga, hashes y restauración aislada.
+4. **H4 · Sesión efímera con vencimiento:** lease renovable; al expirar, cerrar procesos OCP, bloquear y desmontar workspace, destruir solo la clave efímera local y limpiar residuos OCP.
+5. **H5 · Limpieza adaptativa:** detectar HDD/SSD/UNKNOWN al inicio mediante lectura no destructiva; usar ese dato solo para saneamiento complementario. En SSD/desconocido, no confiar en sobrescritura convencional.
+6. **H6 · Panel WPF:** estado de sesión, proceso, STDIO, fuentes/readiness, cifrado, B2, último restore y limpieza.
+7. **H7 · MCP-OCP 1.0.0:** generalización P001–P043, batería 43+8, panel, manifest/ZIP reproducible, instalación y aceptación.
+
+### Principios del dead-man de sesión efímera
+
+- Tratar las computadoras de cibercafé como persistentes/no confiables.
+- Cifrar la copia local efímera. Inspección inicial del host: tipo de medio, modelo/bus, sistema de archivos, permisos, cifrado anfitrión y condiciones observables de suspensión/hibernación. Resultado desconocido se trata conservadoramente.
+- Separar la clave efímera de cada sesión de la clave persistente/de recuperación. La expiración no destruye la capacidad de restaurar B2.
+- Al vencimiento: detener procesos OCP, bloquear, cerrar/desmontar contenedor, destruir la clave efímera local y limpiar residuos creados por OCP. No borrar disco anfitrión, perfiles ajenos ni objetos/versiones B2.
+- En SSD/UNKNOWN no confiar en sobrescritura convencional; saneamiento específico del medio solo si capacidad y permiso se verifican.
+- Este dead-man no es el gate físico de EP-TASK-003 para Fila 4.
+- Si el host está comprometido mientras el workspace está abierto puede copiar datos; el borrado posterior no revierte la exfiltración previa.
+
+### Responsables y paralelismo
+
+- **MCP-OCP:** MCP-OCP-02 → MCP-OCP-05; MCP-OCP-03/04 en paralelo; define datasets, consistencia, cifrado y mecanismo nativo de backup; implementa panel y release.
+- **EP:** EP-TASK-002 reconcilia/ejecuta B2; EP-TASK-003 protege workspace y gates de host; EP-TASK-005 instala cuando proceda. La ejecución permanece en el frente EP.
+- **Gobernanza:** GOV-TASK-015 coordina; GOV-TASK-014 integra criterios de persistencia; GOV-TASK-007 prepara IPZ; GOV-TASK-003 acepta E2E; GOV-TASK-001/008 cubren 43+8 y contrato.
+- P004 y su desarrollo no esperan al panel ni a la matriz 43+8. B2 no bloquea fixtures, harness o código no sensible. Instalación y datos privados sí esperan gates EP.
+
+### Estado B2 reconciliado
+
+El operador reporta persistencia Backblaze terminada; el último read-back EP-TASK-002 disponible en main registra sesión CLI inactiva (0/5 variables), ciphertext local presente, workers/wrapper sintácticamente válidos, pero sin recibo, autenticación, upload, descarga ni SHA remoto. Estado integrado: B2_REMOTE=NOT_VERIFIED_PENDING_EP_RECONCILIATION. Mantener discrepancia abierta hasta evidencia fresca de EP.
+
+### Decisiones pendientes
+
+Nivel final de seguridad; duración/renovación del lease; triggers y acciones exactas; workspace completo local o copia selectiva/remote-first; clasificación de rutas; retención/versionado B2. El ejemplo de 30 minutos no es parámetro aprobado.
+
+**Estado común:** OCP_MCP_1_0=DOCUMENTALMENTE_REBASELINED · SINK_P004=NOT_IMPLEMENTED_NOT_ACCEPTED · MCP_OCP_02=OPEN · EP_TASK_002=B2_REMOTE_NOT_VERIFIED_PENDING_RECONCILIATION · EP_TASK_003=PARTIAL_FAIL · EP_TASK_005=PENDING · GOV_E2E=PENDING · IPZ_NATIVE=NOT_VERIFIED · FOL1=PREPARED_NOT_ACTIVE · MCP_NORMATIVO=DESACTIVADO.
+
+Detalle y salida literal: anexo ChatGPT-GOBERNANZA-20261110-OCP-MCP-1.0-ULTIMO-TRAMO.md. Actualización documental únicamente; no hubo código, pruebas, build, B2, restore, host, dead-man, instalación ni escritura IPZ nativa.
