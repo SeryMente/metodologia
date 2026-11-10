@@ -10,7 +10,7 @@ Recibir el artefacto MCP-OCP renovado y efectuar su instalación, bootstrap y ac
 
 ## Alcance
 
-1. Destino vigente designado por el operador: terminal **Fila 4**, correspondiente a la única sesión RDC disponible. Última identidad técnica conocida (no lectura viva): Device ID `[Device ID RDC omitido conforme a ART-013]`, perfil `CENTRAL\\fila4`, identificador de sesión efímero no conservado. Verificar hostname, Device ID, sesión, usuario/SID, USERPROFILE, rutas y permisos en vivo. La ubicación física se verifica por separado; no inferir CECEQ ni LOC-OTHER. PC 7 queda supersedido y no es fallback.
+1. Destino vigente designado por el operador: terminal **Fila 4**, correspondiente a la única sesión RDC disponible. La identidad técnica efímera no se conserva. Antes de una operación local, revalidar que la conexión corresponde al alias Fila 4, el perfil efectivo, privilegios, rutas y permisos; no persistir hostname, Device ID, sesión ni cuenta/SID. La ubicación física se verifica por separado; no inferir CECEQ ni LOC-OTHER. PC 7 queda supersedido y no es fallback.
 2. Confirmar en Fila 4 que workspace, runtime, DB y respaldos están en un volumen de trabajo protegido. La última observación histórica de Fila 4 indicó FullyEncrypted/100 %, ProtectionStatus=Off y XtsAes128; no acredita protección efectiva. Repetir en vivo y obtener XTS-AES256, Protection On, FullyEncrypted/100 %, protector recuperable custodiado por EP Vault y read-back SHA-256. No heredar W:, VHDX, RecoveryPassword ni DPAPI de PC-14/PC 7.
 3. Resolver el root de datos del servidor desde el perfil interactivo Fila 4: `%USERPROFILE%\\Desktop\\SeryMente\\Datos\\Metodologia\\MCP-OCP\\`, fuera del checkout y dentro del volumen protegido. Confirmar la ruta en preflight; no asumir W: ni heredar rutas de otra sesión.
 4. Recibir solo un paquete nuevo, construido y verificado contra DUG Samantha v388/NX-388m y el núcleo MCP-OCP vigente; rechazar paquetes/manifiestos fijados a v386 o anteriores. Verificar SHA-256, manifiesto, RID y resultados de pruebas antes de extraer.
@@ -99,7 +99,7 @@ Esta entrada supersede, para el sprint MCP-OCP, las designaciones anteriores de 
 ### Destino confirmado por instrucción; identidad técnica por revalidar
 
 - Etiqueta del equipo: Fila 4.
-- Última identidad documentada: RDC Device ID `[Device ID RDC omitido conforme a ART-013]`, sesión interactiva `CENTRAL\\fila4`, identificador de sesión efímero no conservado. Es la última observación de EP-TASK-003, no preflight en vivo de este ciclo.
+- Última referencia: alias funcional Fila 4; los datos efímeros de RDC y de la cuenta/sesión no se conservan. Es antecedente del preflight de EP-TASK-003, no lectura viva nueva.
 - Revalidar en vivo hostname/Device ID, conexión, sesión, usuario/SID, `%USERPROFILE%`, permisos y privilegios antes de materializar o instalar.
 - Perfil físico de ubicación: PENDIENTE_DE_VERIFICACIÓN. No inferir CECEQ o LOC-OTHER por la etiqueta Fila 4. El dead-man se exige solo si la ubicación efectiva es distinta de CECEQ; en CECEQ rige la conservación cifrada prevista.
 - Checkout: `%USERPROFILE%\\Desktop\\SeryMente\\Repositorios\\Metodologia\\metodologia\\`.
@@ -109,7 +109,7 @@ Esta entrada supersede, para el sprint MCP-OCP, las designaciones anteriores de 
 
 ### Gates previos
 
-La última observación disponible de Fila 4 registró C: `FullyEncrypted/100 %`, `ProtectionStatus=Off`, `XtsAes128`; no acredita protección activa y debe repetirse en vivo. Git y GitHub CLI se observaron instalados (2.45.2/2.52.0), pero la autenticación del perfil `CENTRAL\\fila4` no estaba verificada. No heredar credenciales, VHDX, W:, recuperación, DPAPI ni workspace de PC-14 u otro host.
+La última observación disponible de Fila 4 registró C: `FullyEncrypted/100 %`, `ProtectionStatus=Off`, `XtsAes128`; no acredita protección activa y debe repetirse en vivo. Git y GitHub CLI se observaron instalados (2.45.2/2.52.0), pero la autenticación local en el perfil operativo de Fila 4 no estaba verificada. No heredar credenciales, VHDX, W:, recuperación, DPAPI ni workspace de PC-14 u otro host.
 
 Antes de importar DUG o fuentes privadas, crear DB, ejecutar `provision-operator` o dejar un runtime persistente, EP-TASK-003 debe entregar checkout completo/sincronizado y volumen de trabajo XTS-AES256/Protection On/FullyEncrypted 100 %, protector recuperable en EP Vault, read-back SHA-256 y dead-man probado cuando la ubicación lo requiera. Confirmar permiso local y presencia del operador para `REGISTER <SID>`; no automatizarlo.
 
