@@ -539,3 +539,59 @@ H9: after H8; evaluate alternative persistence medium only.
 Gobernanza: coordinación y criterios configurados. MCP-OCP: las tareas 14–17 están definidas en LIST v0.11; implementación pendiente. EP: EP-TASK-007 creada, acuse EP y ejecución pendientes. EP-TASK-002/004/006 actualizadas como asignaciones documentales, sin declarar operación. Controles EP generación 3, MCP-OCP generación 5 y Gobernanza generación 17 permanecen sin cambios. FOL1 PREPARADO_NO_ACTIVO; MCP-NORMATIVO DESACTIVADO.
 
 **Fuente de verdad:** instrucciones verbatim y respuestas del operador en [anexo OCP MCP 1.0](../../entregas/ChatGPT-GOBERNANZA-20261110-OCP-MCP-1.0-ULTIMO-TRAMO.md).
+
+
+---
+
+## Revisión de flujo interfrentes · 2026-11-10 · corte main `cca31e6a`
+
+### Instrucción literal del operador
+
+~~~text
+Los frentes ya estan avanzando, vuelve a revisar las tareas, asegurandote que todo este bien y fluya
+~~~
+
+### Diagnóstico consolidado
+
+**Resultado:** la arquitectura de dependencias es coherente y permite avanzar en paralelo. No se debe convertir H2–H9 en condiciones previas para el corte P004. La revisión detecta sincronización, validación ejecutable y gates EP pendientes; no declara el producto aceptado.
+
+**Baseline de esta revisión:**
+- Repositorio: `SeryMente/metodologia`, `main`.
+- HEAD observado: `cca31e6aab91b68041121a227770e73d24d5cc9a`.
+- Los tres commits posteriores al último corte de Gobernanza son EP-only: `d7ecaf2d26576e58d0d4d7174623cc7cdc09a0b4`, `dfac0fdbc864c9023b19548538d72e8b980bbb47` y `cca31e6aab91b68041121a227770e73d24d5cc9a`. Se leyeron sus cambios; no alteran controles ni rutas MCP/Gobernanza.
+
+### H1 · SINK:P004 — una sola línea activa
+
+- **PR #27** (`feat/mcp-ocp-sink-p004-main-a34c1c5b`) queda como única candidata activa del corte P004. Contiene el lector/servidor STDIO, pin DUG v388, respuesta P004 fail-closed, harness y 41 pruebas escritas.
+- La rama aparece **13 ahead / 3 behind** respecto a `main`; GitHub informa `mergeable=false`. Los tres commits nuevos de main afectan únicamente archivos EP, sin solapamiento con las rutas modificadas por la PR; aun así, MCP-OCP debe sincronizar la rama con el HEAD actual antes de solicitar revisión/merge.
+- Su backlog candidato tiene referencias superiores desactualizadas en el encabezado: declara núcleo v0.1.30/LIST v0.11, mientras la misma rama contiene núcleo v0.1.34/LIST_VERSION 0.15. Corregir el pin documental antes de cerrar MCP-OCP-02.
+- **Validación:** 41 pruebas están escritas; 0 ejecutadas con evidencia. El último run consultado (`42904265411`, job `130138018804`) concluyó FAILURE con `runner_id=0`, `steps=[]`, sin logs ni artefactos. Esto no demuestra fallo del código ni PASS. La salida requerida es runner observable, build, 41 pruebas y smoke STDIO/EOF con logs/artefactos verificables. No repetir reintentos ciegos.
+- **PR #26** queda como fuente histórica/selectiva de componentes WPF para H8, después de congelar schema; no competir ni fusionar su rama completa en H1.
+- **PR #24** queda como iteración anterior supersedida; conservar para auditoría/port selectivo, sin merge completo.
+
+### H2/H3 · EP persistencia, bóveda y Fila 4
+
+- EP publicó la actualización de EP-TASK-002 y su índice en main. El diagnóstico más reciente observó GUI EP Vault abierta pero **SELLADA**, sesión compartida CLI inactiva, cero variables disponibles y ciphertext local de 2.200 bytes.
+- El worker P0-C para subir **solo ciphertext de Vault** está preparado y pasa análisis sintáctico. No hubo autenticación B2, bucket preflight, upload, descarga, SHA remoto ni recibo. `B2_REMOTE=NOT_VERIFIED` sigue siendo el estado correcto.
+- Próxima acción EP: el operador desbloquea la GUI Vault localmente; EP confirma sesión compartida y disponibilidad de las cinco variables sin imprimir valores y ejecuta P0-C dentro del TTL. El recibo debe demostrar objeto privado, descarga y SHA-256 idéntico.
+- No subir el ZIP de workspace sin cifrado cliente. El workspace completo se incorpora después, cifrado antes de B2 y con manifest/hash/restore.
+- EP-TASK-003 sigue `PARTIAL_FAIL` y EP-TASK-005 sigue `PENDING`. OEP §123–124 conserva la pausa de mutaciones: el diseño VHDX/montaje sobre `Desktop\\SeryMente` sigue `PROPOSED_NOT_ACCEPTED`; no copiar, cifrar, renombrar, desmontar ni cambiar puntos de montaje hasta que el operador acepte la propuesta. La última observación histórica no sustituye una relectura en vivo de Fila 4.
+- La PR #21 de EP Vault se basa en **PC 7**, destino supersedido. Se conserva como fuente selectiva de código genérico; no instalar/aceptar en PC 7 ni transportar sesiones/objetos DPAPI CurrentUser entre equipos. Fila 4 y EP-TASK-003/005 mandan.
+- EP-TASK-006 conserva cobertura organizacional incompleta; la pareja Master B2 EP en Vault no equivale a inventario completo KHORA/OCP/Ser y Mente.
+- EP-TASK-007 está configurada, pero el índice aún marca acuse EP pendiente. No declarar guardián, GPS/IP, lease ni crypto-erasure implementados hasta pruebas/evidencia del propio frente.
+
+### Flujo autorizado sin esperas artificiales
+
+1. **En paralelo inmediato:** MCP-OCP sincroniza PR #27 con main, corrige pins y obtiene runner observable; EP desbloquea Vault localmente y ejecuta P0-C; EP realiza read-only preflight actualizado de Fila 4 y prepara una única propuesta de almacenamiento sin mutar.
+2. **Corte local P004:** solo tras MCP-OCP build + 41 tests + STDIO smoke verificables y EP-TASK-003 PASS, EP puede instalar/aceptar en `instalacion-local/piloto-sink/` bajo EP-TASK-005. No esperar H4/H5/H6, panel WPF, generalización 43+8 ni backend alternativo.
+3. **Aceptación H1:** Gobernanza ejecuta GOV-TASK-007/003 con el recorrido real IPZ → RDC → STDIO y respuesta P004 íntegra visible para el modelo, pin/hash incluidos. JSON-RPC de consola no basta; escritura IPZ nativa sigue siendo operación separada.
+4. **Después del primer P004 aceptado:** H2/H3 completan Vault/workspace completo B2 y restore; H4 telemetría; H5 lease/guardian; H6 crypto-erasure; H7 Vault→RDC JIT tras auditoría de canal; H8 producto 1.0.0/panel/WPF/43+8; H9 alternativa de persistencia post-release.
+
+### Criterio de coordinación y no regresión
+
+- Ningún hito posterior bloquea el desarrollo remoto P004 con fixtures sintéticos.
+- EP es dueño de host, Vault, B2, guardián y la instalación local; MCP-OCP es dueño del código/schema/pruebas; Gobernanza conserva IPZ y aceptación E2E.
+- Una tarea externa solo bloquea el subpaso que realmente necesita su salida. No usar un gate de host para detener diseño/build remoto, ni usar un PASS sintético para autorizar importación privada/instalación.
+- No se modificaron controles EP generación 3, MCP-OCP generación 5 ni Gobernanza generación 17. No se ejecutó B2, modificación de host, instalación, escritura IPZ ni pruebas de código en esta revisión.
+
+**Estado del corte:** coordinación actualizada documentalmente; PR #27 es la línea activa; validación MCP pendiente de runner; Vault B2 pendiente de desbloqueo local y recibo remoto; Fila 4 pendiente de relectura y aceptación de diseño; SINK:P004 todavía no aceptado desde IPZ real.
