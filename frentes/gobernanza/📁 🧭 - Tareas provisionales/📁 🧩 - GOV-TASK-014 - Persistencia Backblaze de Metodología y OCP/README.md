@@ -208,3 +208,33 @@ La comparación literal con el blob previo `dc041dfa626ff649d76a12e067dad5357484
 
 **Clasificación integrada:** ciclo local 08 cerrado documentalmente; E2E técnico sigue bloqueado; rectificación posterior de Gobernanza pendiente de acuse en el siguiente ciclo MCP-OCP. No reabrir ni renumerar el ciclo 08.
 
+
+
+---
+
+## OCP MCP 1.0 · extensión de persistencia y recuperación · 2026-11-10
+
+El alcance integrador contempla workspace completo clasificado, bóveda de variables de entorno y datos de usuario/operación de OCP. No sustituye EP-TASK-002 ni transfiere a Gobernanza la ejecución B2.
+
+### Conjuntos a inventariar
+
+1. Workspace: documentos, proyectos, repositorios y cambios del usuario que deban sobrevivir al cambio de equipo.
+2. Bóveda: ciphertext y metadatos autorizados; nunca valores secretos en claro ni claves maestras junto al ciphertext.
+3. Datos OCP: bases, snapshots coherentes, índices, configuración no secreta, estado operativo y artefactos de continuidad.
+4. Código/documentos versionados: GitHub sigue siendo la fuente canónica; B2 es copia complementaria.
+5. Excluir perfiles/cookies autenticados de terceros, secretos en claro, temporales ajenos, cachés regenerables y datos de otros usuarios. La inclusión de .git y cambios no publicados exige clasificación explícita.
+
+### Criterios añadidos
+
+- Cifrado del lado del cliente antes de B2.
+- Claves efímeras de sesión distintas de las claves de persistencia/recuperación.
+- Manifiesto sin secretos, con rutas lógicas, tamaño, identificación de cifrado y SHA-256.
+- Upload, descarga, cotejo SHA y restore aislado: carga aceptada no equivale a recuperación.
+- Retención/versionado B2 separados de la limpieza local de la sesión efímera.
+- La expiración local no destruye las claves ni versiones que permiten restaurar el workspace persistente.
+
+### Discrepancia de evidencia
+
+El operador informa que la persistencia reciente terminó. No obstante, el último read-back EP-TASK-002 consultado en main registró vaultSessionActive=false, variableCount=0, cinco variables B2 ausentes, ciphertext de 2.200 bytes, workers/wrapper con análisis sintáctico PASS, recibo remoto ausente y sin autenticación/upload/descarga/SHA/restore acreditados en ese ciclo.
+
+Estado integrado: B2_REMOTE=NOT_VERIFIED_PENDING_EP_RECONCILIATION. EP debe aportar recibo y lectura de vuelta recientes. No se declara éxito ni fallo absoluto por inferencia. No se autoriza desde Gobernanza cambiar bucket, ACL, lifecycle, retención o borrar versiones remotas.
