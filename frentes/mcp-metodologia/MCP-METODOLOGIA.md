@@ -618,3 +618,5 @@ MCP-OCP-02/05 (corte P004)/03/04 son P0 por el piloto. MCP-OCP-13 baja a P1 de s
 - **Runner observado:** contenedor sin `dotnet`; sondeo RDC en Windows devolvió `DOTNET=NOT_FOUND`, Git 2.45.2 y perfil de proceso `MantenimientoRCI`. GOW P036 impide usar ese perfil como destino de archivos del operador; no se escribió allí. **Siguiente gate:** runner autorizado con .NET SDK 10; compilar, ejecutar las 11 pruebas y smoke del binario, registrar salidas y hashes. E2E IPZ → RDC → STDIO requiere contexto IPZ real y aceptación separada.
 - **Límites:** no paquete, no carpeta instalacion-local, no Fila 4, no DB/fuentes privadas, no REGISTER, no IPZ nativa, no FOL1, no MCP-NORMATIVO, no merge a main.
 
+
+- **SDK/RID del piloto:** .NET SDK 10.0.403 fijado en frentes/mcp-metodologia/global.json; su disponibilidad/ejecución no está verificada en el entorno. RID no aplica al piloto framework-dependent; win-x64 queda para el paquete de release.
