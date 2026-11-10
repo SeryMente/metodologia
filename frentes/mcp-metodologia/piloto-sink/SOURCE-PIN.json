@@ -1,0 +1,28 @@
+{
+  "schema": "mcp-ocp-sink-source-pin/v1",
+  "repository": "SeryMente/metodologia",
+  "ref": "main",
+  "commit": "17a4da1d3906e2397ab4682ff46cc9a9f116f34d",
+  "path": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.html",
+  "git_blob_sha": "c8d37d92aed7ff9d4fe94e7a9541e76ba5c88a2c",
+  "dug": {
+    "version": "v387",
+    "signature": "NX-387m",
+    "event": "C-GOBERNANZA-IPZ-DIRECTORIO-CNP-20261110-01",
+    "principles": 43,
+    "metacanon": "1.29",
+    "gow": "2.18"
+  },
+  "gow_arr": {
+    "section_id": "gow-sec-14",
+    "anchor": "#gow-arranque-chatgpt"
+  },
+  "sink": {
+    "principle_id": "P004",
+    "title": "Principio de No-Simulación",
+    "human_anchor": "#P004",
+    "microdescriptor": "Exigir hechos verificables; activarlo ante afirmaciones sobre capacidades, datos, acciones o certezas.",
+    "normative_text": "No finjas capacidades, datos, resultados ni certezas, ni declares límites sin verificar con herramientas. Marca tu certeza y nombra los huecos sin rellenarlos. Precedencia absoluta sobre la exhaustividad y el buen trato."
+  },
+  "verification": "SOURCE_READ_AND_METADATA_VERIFIED; runtime hash verification implemented but not executed in this cycle"
+}
