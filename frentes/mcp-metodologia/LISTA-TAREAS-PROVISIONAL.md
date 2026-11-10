@@ -1,4 +1,4 @@
-<!-- LIST_VERSION=0.9; LIST_STATUS=PROVISIONAL; NOT_A_CANONICAL_OBJECT=true -->
+<!-- LIST_VERSION=0.10; LIST_STATUS=PROVISIONAL; NOT_A_CANONICAL_OBJECT=true -->
 # Lista provisional de tareas · MCP-OCP
 
 > **ESTADO: PROVISIONAL · NO ES UN OCP NI UN CONTROL ADICIONAL.** Esta lista es una vista auxiliar enlazada desde el único núcleo MCP-OCP. El estado vivo y las decisiones de alcance permanecen en `MCP-METODOLOGIA.md`; la titularidad permanece exclusivamente en `CONTROL-RESPONSABILIDAD.json`. Las tareas y dependencias de otros frentes se enlazan sin apropiarse de sus objetos, controles o permisos.
@@ -6,13 +6,13 @@
 - **Frente:** MCP-OCP.
 - **Repositorio propietario:** `SeryMente/metodologia`.
 - **Ruta OCP:** `frentes/mcp-metodologia/`.
-- **Versión de la lista:** 0.9 (provisional; consolidación del sprint Sink + panel local en tres frentes).
+- **Versión de la lista:** 0.10 (provisional; coordinación del Sprint SINK-P004 y producto MCP-OCP 1.0.0).
 - **Última actualización:** 2026-11-10.
 - **Gobierno leído:** Samantha v388 · NX-388m; Metacanon 1.29; GOW 2.18; DUG commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`; blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`. ART-027 rebaselined para Sink local STDIO/RDC; §ARR y P037 revisados; CNP P001/P004/P005/P038/P043 considerado.
-- **Núcleo enlazado:** [MCP-OCP · objeto canónico](MCP-METODOLOGIA.md), v0.1.27; esta lista v0.8 es su backlog auxiliar vigente.
+- **Núcleo enlazado:** [MCP-OCP · objeto canónico](MCP-METODOLOGIA.md), v0.1.29; esta lista v0.10 es su backlog auxiliar vigente.
 - **Control:** [CONTROL-RESPONSABILIDAD.json](CONTROL-RESPONSABILIDAD.json). Las generaciones y sesiones son metadatos de auditoría y no bloquean trabajo autorizado.
 - **MCP-NORMATIVO:** DESACTIVADO.
-- **Producto vs. documento:** MCP-OCP-v0.1.27 es la versión documental vigente; la versión de software objetivo es 1.0.0. La candidata ejecutable 0.1.0 y su recibo histórico no constituyen una versión actualizada ni aceptada del producto.
+- **Producto vs. documento:** MCP-OCP-v0.1.29 es la versión documental vigente; la versión de software objetivo es 1.0.0. La candidata ejecutable 0.1.0 y su recibo histórico no constituyen una versión actualizada ni aceptada del producto.
 - **Principio de custodia:** no guardar claves, access/refresh tokens, datos privados de usuario, contenido sensible de repositorios ni secretos en esta lista, artefactos, manifests o logs. Utilizar fixtures sintéticos y evidencia minimizada.
 
 ## Decisión de alcance operativa vigente
@@ -32,8 +32,8 @@ La tabla sustituye los PASS/estados de recibos históricos para la implementaci�
 
 | Orden | ID | Prioridad | Tarea | Estado vigente | Condición principal de salida |
 |---:|---|---|---|---|---|
-| 1 | MCP-OCP-01 | P0 | Contrato de producto y frontera OCP/Khora/Jules | VERIFICADO_EN_NUCLEO_V0.1.27 | Un servidor local STDIO; panel acompañante read-only en el producto final; dominios separados. |
-| 2 | MCP-OCP-02 | P0 · CRÍTICO AHORA | Rama limpia y reconciliación selectiva desde main | PENDIENTE · BLOQUEADOR ACTUAL | Nueva rama desde HEAD de main; pin DUG v388 cotejado; inventario REUSE/ADAPT/REWRITE/DROP y SDK/RID. |
+| 1 | MCP-OCP-01 | P0 | Contrato de producto y frontera OCP/Khora/Jules | VERIFICADO_EN_NUCLEO_V0.1.29 | Un servidor local STDIO; panel acompañante read-only en el producto final; dominios separados. |
+| 2 | MCP-OCP-02 | P0 · CRÍTICO AHORA | Rama limpia y reconciliación selectiva desde main | ABIERTO · RAMA CANDIDATA HISTÓRICA NO APTA | Nueva rama desde HEAD de main; pin DUG v388 cotejado; inventario REUSE/ADAPT/REWRITE/DROP y SDK/RID. |
 | 3 | MCP-OCP-05 | P0 · SIGUIENTE | Corte vertical GOW:ARR → DUG → SINK:P004 | PENDIENTE · DEPENDE_MCP_OCP_02 | Respuesta individual completa, pin v388/commit/blob/SHA-256 y fail-closed. Fixtures antes de EP; importación privada tras EP PASS. |
 | 4 | MCP-OCP-03 | P0 | Suite mínima de contrato del piloto P004 | EN PARALELO · FIXTURES SINTÉTICOS | Preparar contrato y casos ID/fuente/pin/hash/fallo cerrado/cierre ahora; repetir con fuente real tras EP PASS. |
 | 5 | MCP-OCP-04 | P0 | Transporte y E2E IPZ → RDC → STDIO para P004 | SMOKE PREPARABLE · E2E ESPERA PILOTO INSTALADO | Preparar harness/smoke; E2E exige P004 instalado y respuesta visible desde contexto IPZ. Consola sola no basta. |
@@ -276,3 +276,38 @@ El panel MCP-OCP-13 baja a P1 de secuencia, pero permanece como entregable oblig
 **No bloquean P004:** EP-TASK-004 GUI de bóveda; EP-TASK-002/Backblaze; MCP-OCP-06/11 Jules; MCP-OCP-09 PPR/cross-host, salvo dependencia técnica nueva demostrada. No convertir los campos `applicability`, `activation_conditions`, `mandatory` y `dependencies` en requisito de Sink: ART-027 v388 define recuperación de texto, no selección normativa automática. `MCP-NORMATIVO` permanece `DESACTIVADO`.
 
 **Estado observado:** el rebaseline documental no acredita rama nueva, código Sink, pruebas PASS, importación privada, paquete piloto, instalación Fila 4, IPZ nativa, E2E ni panel. Cada hito conserva su propia evidencia.
+
+---
+
+## Sprint SINK-P004 · estado y responsabilidades · 2026-11-10 · LIST v0.10
+
+**Nombre operativo:** `SINK-P004`. Objetivo de esta fase: primera respuesta P004 íntegra desde el contexto IPZ real por RDC/STDIO. El objetivo de producto final sigue MCP-OCP 1.0.0 (servidor + panel).
+
+### Estado rebaselined
+
+- DUG vigente: Samantha v388/NX-388m; ART-027 local STDIO/RDC; commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`; blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`.
+- Core vigente: v0.1.29; este backlog: v0.10.
+- La rama `feat/mcp-ocp-sink-p004-pilot-20261110` permanece anclada al commit histórico `1676901cc09af6fcec4d052800b031e4c2f1ab40`; no cumple el requisito de nueva rama desde el main vigente. No fusionar la rama completa ni contar su existencia como MCP-OCP-02 PASS.
+- Control MCP-OCP generación 5: autorización directa para código local STDIO, pruebas, build, manifest, paquete y documentación dentro de este OCP; control sin cambios. Exclusiones host EP/Vault/recuperación/credenciales externas y cambios DUG/IPZ.
+- EP no es una dependencia para desarrollar código no sensible ni probar con fixtures. EP sí es gate para importación privada, DB real, runtime persistente e instalación local.
+- El frente EP reanuda sus propias tareas bajo OEP §124; no se modificó el control EP generación 3 ni se declara que EP haya aceptado el relevo.
+- Gobernanza mantiene DUG/IPZ y aceptación E2E; no se atribuyen esas tareas a MCP-OCP.
+
+### Secuencia operativa obligatoria
+
+1. **MCP-OCP-02 (P0):** nueva rama desde HEAD actual de main; auditar código/ramas, mapa REUSE/ADAPT/REWRITE/DROP, SDK/TFM/RID y dependencias.
+2. **MCP-OCP-05 (P0):** corte `GOW:ARR → DUG v388 → SINK:P004` con fixtures sintéticos primero. Respuesta íntegra y trazable con ID, título, pin, commit/blob y SHA-256; fail-closed.
+3. **MCP-OCP-03 (P0 paralelo):** pruebas positivas/negativas de contrato sobre fixtures; repetir con fuente privada tras EP PASS.
+4. **MCP-OCP-04 (P0 paralelo):** harness y smoke STDIO/RDC; initialize, tools/list, tools/call:P004, respuesta, cierre. Consola no equivale a E2E IPZ.
+5. **EP-TASK-003 (P0 host, responsable EP):** revalidación de Fila 4, diseño de almacenamiento que conserve la ruta `%USERPROFILE%\Desktop\SeryMente`, aceptación expresa del operador antes de mutar, protección/recovery, copia+SHA, checkout íntegro, root protegido y dead-man condicional.
+6. **GOV-TASK-007 (paralelo):** candidato IPZ compacto tras congelar el contrato de respuesta P004; no modificar IPZ nativa sin acto/autoridad separados.
+7. **EP-TASK-005 + MCP-OCP-12 (P0 local, responsable EP):** solo con EP-TASK-003 PASS y paquete P004/manifest/SHA + pruebas MCP-OCP-03/04 PASS; instalar en `instalacion-local/piloto-sink/`, importar DUG v388 y comprobar readiness.
+8. **GOV-TASK-003 + GOV-TASK-007 + MCP-OCP-04:** E2E real IPZ → RDC → STDIO → respuesta visible al modelo. Aceptación solo con texto íntegro, pin/hash y evidencia.
+9. **Después de P004 PASS:** generalizar P001–P043/lotes; GOV-TASK-001 ejecuta matriz 43+8.
+10. **Release 1.0.0:** MCP-OCP-13 panel WPF obligatorio (no bloquea P004), MCP-OCP-10/07 manifest/build/ZIP; MCP-OCP-12/08 y EP-TASK-005 instalación/handoff final.
+
+### Estado
+
+`MCP_OCP_02=OPEN` · `MCP_OCP_05=PENDING_DEPENDS_02` · `MCP_OCP_03=PARALLEL_FIXTURES` · `MCP_OCP_04=PARALLEL_HARNESS` · `EP_TASK_003=PARTIAL_FAIL` · `EP_TASK_005=PENDING` · `GOV_E2E=PENDING` · `PANEL_1_0_0=REQUIRED_POST_SCHEMA` · `FOL1=PREPARED_NOT_ACTIVE` · `MCP_NORMATIVO=DESACTIVADO`.
+
+El trabajo de MCP-OCP no está aceptado por tener documentos o rama; cada salida requiere código, prueba, evidencia y read-back propios.
