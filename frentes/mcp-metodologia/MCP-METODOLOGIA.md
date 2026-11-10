@@ -4,7 +4,7 @@
 
 - **Nombre canónico vigente:** MCP-OCP (anteriormente MCP-METODOLOGIA).
 - **Identidad canónica vigente:** MCP-OCP. **Identidad histórica:** MCP-METODOLOGIA.
-- **Versión/sello:** MCP-OCP-v0.1.29 · coordinación del Sprint SINK-P004; Sink local por stdio autorizado; contrato DUG v388/NX-388m; piloto P004 pendiente; bootstrap del perfil persistente pendiente. Las generaciones y folios de sesiones anteriores son metadatos de auditoría.
+- **Versión/sello:** MCP-OCP-v0.1.30 · ejecución del Sprint SINK-P004 (candidata documental de rama); Sink local por stdio autorizado; contrato DUG v388/NX-388m; piloto P004 pendiente; bootstrap del perfil persistente pendiente. Las generaciones y folios de sesiones anteriores son metadatos de auditoría.
 - **Repositorio propietario:** SeryMente/metodologia, rama main.
 - **OCP canónico:** frentes/mcp-metodologia/.
 - **Núcleo operativo único:** este archivo, MCP-METODOLOGIA.md.
@@ -677,3 +677,54 @@ Este rebaseline no acredita rama nueva, resolver implementado, pruebas PASS nuev
 - Ningún frente cambia el control de otro, ni sustituye evidencia por documentación. FOL1 no bloquea P004; el panel sí sigue siendo obligatorio en 1.0.0; `MCP-NORMATIVO` permanece DESACTIVADO.
 
 **Estado de sección:** plan interfrente rebaselined; no acredita rama nueva, código P004, pruebas PASS, build, paquete, host PASS, instalación, IPZ nativa ni E2E.
+
+## 21. Ejecución MCP-OCP · SINK-P004 · corte de trabajo 2026-11-10
+
+### 21.1 Baseline y persistencia
+
+- `main` al abrir este corte: `a34c1c5b43edbcbaf015056f4dc892f5def29eea`; tree raíz `69b0b8a29fe9bfb981e9afce03aa6913ab036539`.
+- Rama nueva `feat/mcp-ocp-sink-p004-main-a34c1c5b`, creada directamente desde ese HEAD. Comparación inicial: 0 ahead / 0 behind.
+- Commit de implementación: `92568433b5f3b6056fc9cb9a811fa5d8918cea3b`; comparación: 1 ahead / 0 behind; 21 rutas añadidas/modificadas.
+- PR #27: https://github.com/SeryMente/metodologia/pull/27 · OPEN / DRAFT / NOT MERGED. No merge autorizado ni intentado.
+- Los blobs de las 21 rutas fueron leídos de vuelta y cotejados. La matriz de portabilidad y auditoría de ramas está en `piloto-sink/PORTABILITY-DECISIONS.md`.
+
+### 21.2 Reconciliación e implementación
+
+No se fusionó ninguna rama histórica completa. El código de ciclo02 se portó selectivamente por archivo; PPR, SQLite, Vault, custodia, backup/restore y portable recovery quedaron fuera.
+
+- SDK .NET 10.0.403; servidor y pruebas `net10.0`; piloto framework-dependent, sin RID.
+- `DugSourceReader` valida Git blob, UTF-8 estricto, GOW:ARR, versiones/autoridad, 43 IDs únicos, marcador humano P004, texto/título/ancla/MDP/preponderancia y hashes.
+- `McpServer` implementa JSON-RPC STDIO, initialize/initialized, tools/list/call y una herramienta `sink_principle` limitada a P004; EOF cierra el proceso; sin listener de red.
+- Biblioteca de monitorización independiente; solo se activa con `--monitor-root` entregado explícitamente por EP. EP conserva `session.json`, protección, root y lifecycle.
+- No se portó el panel WPF en este corte. Es obligatorio para 1.0.0 después de congelar schema.
+
+### 21.3 Fuente y suites
+
+Lectura independiente de `main`: DUG v388/NX-388m, commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`, blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`, Metacanon 1.29, GOW 2.18. La fuente real contiene una §ARR `gow-sec-14`, MCP-NORMATIVO DESACTIVADO y un único P004 con el texto, marcador humano, MDP y preponderancia A/0.8 esperados.
+
+- P004: 18 pruebas escritas.
+- Monitor/readiness: 23 pruebas escritas.
+- Total: 41 escritas, 0 ejecutadas con evidencia en esta rama.
+- La lectura de fixture y el test que coteja el pin real no equivalen a importación privada ni a instalación.
+
+### 21.4 CI y validación
+
+El workflow de PR #27: run `42892084966`, job `130095551624`, terminó FAILURE con `steps=null`, `logs_url=null`, sin artefactos; la descarga devuelve `BlobNotFound`. En el mismo commit, `Validate RDC Governance` (run `42892084848`, job `130095552614`) y `validate-canonical-bootstrap` (run `42891978504`, job `130095179377`) presentaron el mismo patrón.
+
+La página oficial de estado reportó degradación de Actions y Pull Requests durante la ventana: https://kctbh9vrtdwd.statuspage.io/ . Es compatible con una incidencia compartida, pero la raíz específica del job sigue NO VERIFICADA. No hay evidencia de que empezaran setup-dotnet, restore, build, pruebas o smoke.
+
+**Conclusión:** CI no acredita PASS ni FAIL del código. No se ejecuta un reintento ciego; se requiere runner observable, pasos, logs y artefactos.
+
+### 21.5 Estado y límites
+
+- `MCP-OCP-02=RAMA_LIMPIA_Y_PORTABILIDAD_PUBLICADAS; BUILD_PENDIENTE`.
+- `MCP-OCP-05=P004_CANDIDATO_ESCRITO; BUILD_Y_RESPUESTA_EJECUTADA_PENDIENTES`.
+- `MCP-OCP-03=18_P004+23_MONITOR_ESCRITAS; 0_EJECUTADAS`.
+- `MCP-OCP-04=HARNESS_Y_WORKFLOW_PUBLICADOS; SMOKE_NO_VERIFICADO`.
+- `MCP-OCP-10/07/12/08=PENDIENTES`; MCP-OCP-13 sigue obligatorio para 1.0.0.
+- Importación de fuentes y provisioning del operador no están implementados en este corte; `READY` no es alcanzable. El test positivo del evaluator es sintético, no readiness real.
+- EP-TASK-003/005 siguen siendo responsabilidad EP. No se operó Fila 4, no hubo importación privada, instalación ni provisión.
+- No se escribió IPZ nativa ni se ejecutó E2E visible; Gobernanza conserva ese gate.
+- DUG, ART-025/027, IPZ, CONTROL-RESPONSABILIDAD y recursos EP no se modificaron. FOL1 PREPARADO/NO ACTIVO; MCP-NORMATIVO DESACTIVADO.
+
+**Siguiente transición:** ejecutar build, 41 pruebas y smoke STDIO/EOF cuando haya runner observable; corregir solo errores demostrados. Luego continuar fuentes protegidas e IPZ E2E bajo los gates correspondientes.
