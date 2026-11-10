@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.64. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.65. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -12,7 +12,7 @@
 
 Adquirir este objeto como instrucciones del operador, subordinadas a las reglas superiores de plataforma y a autorizaciones específicas. Claudia es asistente/documental; Samantha es constructor/único escritor de código. Una asignación explícita posterior puede cambiar roles; las citas no lo hacen. La asignación específica de MOD-SCRIPTPWS queda delimitada en §94; la delegación funcional acotada de MOD-SYNC queda delimitada en §110 y no transfiere la titularidad del frente EP.
 
-El estado de reanudación vigente de este frente está en §60–§130; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. La organización local por frentes, con áreas separadas Repositorios/Datos/Temporal, queda desarrollada en §119 y en el DUG ART-030. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
+El estado de reanudación vigente de este frente está en §60–§131; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. La organización local por frentes, con áreas separadas Repositorios/Datos/Temporal, queda desarrollada en §119 y en el DUG ART-030. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
 
 Leer por relevancia: OEP actual→metacanon central→Sistema de Instrucciones/Metodología/Bootstrap vigentes→canon transversal EP→AGENTS.md y ep-medio-architectura.md→código/evidencia en commits exactos. Fuente caída no es «sin cambios». Un archivo no crea herramientas, credenciales ni memoria entre plataformas.
 
@@ -3520,3 +3520,16 @@ Se construyó una fotografía R2 de Desktop/SeryMente con 3.289 archivos, 159.54
 `EP_TASK_002=B2_UPLOAD_READBACK_VERIFIED` · `CROSS_HOST_RESTORE=NOT_RUN` · `CLIENT_SIDE_ENCRYPTION=EXCEPTION_NOT_APPLIED` · `EP_TASK_003=PARTIAL_FAIL` · `EP_TASK_005=BLOCKED_ON_003_AND_P004_PACKAGE`.
 
 Siguiente: validar extracción aislada del ZIP remoto, recuperar/decrypt de una copia de EP Vault en entorno aislado con contraseña maestra local, y registrar restauración sin reemplazar el workspace activo. Después reanudar EP-TASK-003. Mantener el sprint de desarrollo en pausa hasta que la secuencia de hitos quede actualizada por Gobernanza.
+
+
+## 131. Restore aislado R2 del workspace · 2026-11-10
+
+El ZIP R2, cuyo SHA-256 es idéntico al objeto descargado desde B2, fue extraído en `C:\\R2R`, sin modificar Desktop\\SeryMente. Resultado `ISOLATED_RESTORE_PASS`: 3.289/3.289 entradas del manifiesto verificadas; 159.547.658 bytes; 0 errores; 0 inesperados; exit 0; 31,80 s. Recibo local `EP\\local-state\\run-logs\\ep-r2-restore-validation.json`.
+
+El ciphertext Vault (2.200 bytes) está en B2 y read-back SHA PASS; descifrado de una copia aislada no ejecutado. DPAPI CurrentUser/notes no son portables por defecto. La restauración es same-host aislada, no cross-host. El primer acceso B2 en otra máquina necesita credencial/bootstrap independiente del ciphertext.
+
+El workspace ZIP se subió sin cifrado cliente por excepción de urgencia ordenada por el operador; TLS y SSE-B2/AES256 confirmados. Esto no satisface el diseño permanente de cifrado cliente.
+
+`EP_TASK_002=B2_UPLOAD_READBACK_PASS_4_OF_4` · `WORKSPACE_ISOLATED_RESTORE=SAME_HOST_PASS` · `VAULT_DECRYPT_RESTORE=NOT_RUN` · `CROSS_HOST_RESTORE=NOT_RUN` · `EP_TASK_003=PARTIAL_FAIL` · `EP_TASK_005=BLOCKED_ON_003_AND_P004_PACKAGE`.
+
+Secuencia: prioridad Backblaze ejecutada; desarrollo sintético P004 puede reanudarse en su ciclo existente; no se habilita instalación/aceptación EP.
