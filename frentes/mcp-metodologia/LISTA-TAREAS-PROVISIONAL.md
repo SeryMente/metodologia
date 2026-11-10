@@ -26,9 +26,9 @@ El servidor MCP de Metodología pertenece exclusivamente al frente MCP-OCP y a s
 - **EP:** el paquete debe poder construirse y entregarse antes de que EP concluya B2. La instalación y operación dentro del host EP pertenecen a EP y requieren su preflight/consentimiento. No se instala en EP desde este frente sin autorización operativa del propietario del host.
 - **MCP-NORMATIVO y Sink:** `MCP-NORMATIVO` permanece DESACTIVADO. Sink local por stdio fue autorizado directamente por el operador; las lecturas individuales devuelven texto solicitado y trazable, pero no infieren metadatos faltantes ni emiten evaluación normativa automática.
 
-## Orden de ejecución · sprint vigente 2026-11-09
+## Orden de ejecución · sprint vigente 2026-11-10
 
-La tabla sustituye los PASS/estados de recibos históricos para la implementación Sink actual. Un PASS histórico no equivale a PASS con DUG v386 ni demuestra instalación/perfil/E2E actuales.
+La tabla sustituye los PASS/estados de recibos históricos para la implementación Sink actual. Un PASS histórico no equivale a PASS con DUG v387 ni demuestra instalación/perfil/E2E actuales.
 
 | Orden | ID | Prioridad | Tarea | Estado vigente | Condición principal de salida |
 |---:|---|---|---|---|---|
@@ -49,7 +49,7 @@ La tabla sustituye los PASS/estados de recibos históricos para la implementaci�
 ## Fichas de tareas
 
 ### MCP-OCP-01 — Contrato de producto local y frontera OCP/Khora/Jules
-**Prioridad:** P0 · **Estado:** VERIFICADO_EN_NUCLEO_V0.1.26 · **Responsable:** MCP-OCP dentro de su autoridad.
+**Prioridad:** P0 · **Estado:** VERIFICADO_EN_NUCLEO_V0.1.28 · **Responsable:** MCP-OCP dentro de su autoridad.
 
 **Objetivo:** fijar sin ambigüedad que el servidor de Metodología es un producto propio del OCP, ejecutado localmente y separado de Khora. La palabra «MSP» del propósito original se conserva como dictado histórico; la identidad técnica vigente del frente es MCP-OCP.
 
@@ -57,32 +57,38 @@ La tabla sustituye los PASS/estados de recibos históricos para la implementaci�
 
 **Excluye:** capacidades de dictados/audio/MP3/grafo de Khora; servidor Jules duplicado; API key de Jules o secretos de Khora; endpoint público/Vercel; activación de MCP-NORMATIVO; cambios DUG/Sink.
 
-**Cierre:** núcleo v0.1.27, esta lista v0.8 y README reflejan la misma frontera; la especificación del panel identifica su separación como app acompañante read-only, sin segundo MCP ni red. La revisión documental de contrato está verificada; las pruebas de implementación permanecen pendientes.
+**Cierre:** núcleo v0.1.28, esta lista v0.8 y README reflejan la misma frontera; la especificación del panel identifica su separación como app acompañante read-only, sin segundo MCP ni red. La revisión documental de contrato está verificada; las pruebas de implementación permanecen pendientes.
 
 ### MCP-OCP-02 — Reconciliación de código ejecutable contra main
-**Prioridad:** P0 · **Estado:** PENDIENTE_SPRINT.
+**Prioridad:** P0 · **Estado:** RAMA_LIMPIA_CREADA · PORTABILIDAD_DOCUMENTADA · SDK_10.0.403_FIJADO · RID_NA_PILOTO.
 
 **Objetivo:** obtener una rama de trabajo limpia cuyo padre sea el HEAD vigente de main; conservar solo componentes históricos que pasen revisión contra el núcleo y los contratos actuales. Las ramas candidatas históricas son referencias de lectura, no bases de merge.
 
 **Trabajo:** verificar ramas/commits; comparar estructura y contratos; clasificar por componente REUSE / ADAPT / REWRITE / DROP; portar selectivamente el código a rama nueva; fijar .NET/SDK/RID compatible y reproducible; revisar dependencias, licencias y secretos.
 
 **Salida de cierre:** rama candidata desde main con base documentada; mapa de portabilidad; diff acotado; build inicial sin secretos; pruebas históricas clasificadas como antecedentes, nunca como PASS de 1.0.0.
+
+**Evidencia 2026-11-10:** rama creada desde main 73a42bc687f1fa3dd60b44af9cd93f797eba3920; comparación actual sin commits por detrás; clasificaciones de portabilidad registradas. La reconciliación de código queda limitada al piloto y no incorpora merges de ramas históricas.
 ### MCP-OCP-03 — Calidad, pruebas y build de release (servidor + panel)
-**Prioridad:** P0 · **Estado:** PENDIENTE.
+**Prioridad:** P0 · **Estado:** 13_ESCENARIOS_ESCRITOS · BUILD_Y_TEST_RUN_NO_VERIFICADOS.
 
 **Objetivo:** demostrar el comportamiento del producto nuevo con pruebas repetibles, no solo compilarlo.
 
 **Pruebas mínimas:** build limpio; unitarias y contrato; initialize/tools/list/tools/call; health/readiness; ARR/DUG/catálogo; Sink individual y lote ordenado; hash correcto; entradas inválidas; fuente ausente/obsoleta/alterada; traversal/ACL; logs sin secretos; shutdown/restart; ausencia de listeners no autorizados. Reutilizar harness existente cuando siga válido y ampliar solo lo necesario. Añadir pruebas de schema/reader/writer del panel, estados EP ACTIVE sin servidor, readiness parcial, caída del proceso, ACL/JSON inválidos y ciclo de cierre de UI.
 
 **Salida:** recibo ligado al commit de código y al main base, pins DUG/core, SDK/RID, comandos, conteos, PASS/FAIL, limitaciones y hashes. Release solo cuando suite y paquete pasen; no convertir resultados de candidata antigua en evidencia nueva.
+
+**Evidencia 2026-11-10:** 13 escenarios en el harness; fixture alineado al inventario de 43 principios; workflow Windows/.NET 10.0.403 añadido; PR #22 draft. No hay todavía resultado de CI consultable ni salida de build/test; no marcar PASS.
 ### MCP-OCP-04 — Transporte MCP STDIO y recorrido RDC
-**Prioridad:** P0 · **Estado:** PENDIENTE.
+**Prioridad:** P0 · **Estado:** E2E_IPZ_PENDIENTE · SMOKE_BINARIO_NO_EJECUTADO.
 
 **Objetivo:** verificar el canal que se utilizará realmente en el perfil final.
 
 **Trabajo:** iniciar proceso local mediante cliente MCP/RDC autorizado; comprobar initialize, tools/list, tools/call/respuesta completa, cancelación/cierre, EOF y reinicio. Verificar stdin/stdout reservados al protocolo, logs únicamente saneados en stderr/archivo protegido, permisos mínimos y que no se crea listener HTTP/TCP, túnel o endpoint público.
 
 **Salida:** recibo de smoke real del ejecutable de release y configuración del cliente, con ruta de binario y evidencia del perímetro. El smoke temporal histórico no cuenta como E2E instalada. El panel recibe la proyección por archivos locales y no se interpone en stdin/stdout.
+
+**Evidencia 2026-11-10:** el servidor ya implementa initialize/initialized, tools/list y tools/call; cierre por EOF según MCP 2025-11-25. El smoke del ejecutable no se ejecutó. El dispositivo RDC disponible pertenece al contexto MantenimientoRCI y no se usa para compilar ni escribir; la aceptación IPZ requiere runner/contexto autorizados.
 ### MCP-OCP-05 — Fuentes canónicas, herramientas de lectura, Sink y estado observable
 **Prioridad:** P0 · **Estado:** PENDIENTE_IMPLEMENTACION.
 
@@ -272,3 +278,10 @@ El panel MCP-OCP-13 baja a P1 de secuencia, pero permanece como entregable oblig
 
 
 - **SDK/RID del piloto:** .NET SDK 10.0.403 fijado en global.json; ejecución no verificada. RID no aplica al piloto framework-dependent; win-x64 queda para el paquete.
+
+
+## Estado de trabajo verificable · 2026-11-10
+
+- Rama: feat/mcp-ocp-p004-pilot-20261110-cycle02; base main 73a42bc687f1fa3dd60b44af9cd93f797eba3920; 0 commits behind at last comparison.
+- PR #22 is draft and unmerged. The Windows CI workflow is present, but no workflow run or commit status was returned by the available queries; build/test remain unverified.
+- The local Windows probe found .NET SDK absent and the process account was MantenimientoRCI. No files were written to that profile. The current sprint does not authorize substituting that profile for Fila 4.
