@@ -9,7 +9,7 @@
 **MCP-OCP:** núcleo v0.1.26 · blob `2177b6b81028d8ac5188379e2eb4fa36aea06b41`; backlog v0.7 · blob `1eed6511c238b55b4e13899efab7e55981addf8d`.
 **EP:** OEP v0.3.54 · blob `cdd738aa025c9acc09cbbe107bfcadfa218d463f`.
 **Autorización:** el operador autorizó directamente Sink local por stdio y amplió el producto para incluir el panel local de observabilidad MCP-OCP-13. No se requiere aprobación de titularidad anterior, generación ni folio; dichos campos son auditoría, no compuertas.
-**Destino EP designado:** perfil/usuario Windows `PC 7`; dispositivo RDC asociado según el operador; ubicación `LOC-OTHER`. El hostname/ID del dispositivo, usuario/SID efectivos y estado del host requieren preflight vivo. Por LOC-OTHER, el dead-man de EP-TASK-003 es un gate obligatorio antes de runtime persistente.
+**Destino EP designado:** terminal Fila 4, correspondiente a la única sesión RDC disponible indicada por el operador. Últimos datos técnicos conocidos (no lectura viva): Device ID `d0bbb2a3-d7b4-45e1-8870-652c2c3844fc`, sesión `CENTRAL\\fila4`, SessionId 4. Identidad/usuario/SID/permisos y ubicación física requieren preflight vivo. No inferir CECEQ/LOC-OTHER; el dead-man se determina después de verificar la ubicación.
 **Alcance:** contrato, implementación Sink local, panel de observabilidad, pruebas, paquete, handoff, bootstrap en el perfil designado y aceptación E2E. Esta ficha es planificación: no acredita código, build, instalación ni prueba ejecutados.
 
 ## 1. Objetivo y contrato
@@ -50,15 +50,15 @@ GOV-TASK-010 ya contiene la corrección de admisión por instrucción directa y 
 
 | Tarea | Orden | Trabajo ejecutable | Criterio de salida |
 |---|---:|---|---|
-| MCP-OCP-02 | 1 | Reconciliar código fuente remoto con `main` y pins actuales; comparar ramas `integration/ocp-mcp-0.1.0-selective-20261101` y `build/ocp-mcp-mvp-0.1.0`. | Base y diff identificados; código portado sobre `main`; manifiesto actual. |
-| MCP-OCP-05 | 2 | Implementar/importar `GOW:ARR`, `DUG` y Sink P001–P043; congelar proyección local de estado/eventos saneados. | Contrato exacto, lote ordenado, hashes y readiness/telemetría sin payloads. |
-| MCP-OCP-13 | 3 · paralelo | Construir panel WPF Windows de solo lectura conforme a `PANEL-OBSERVABILIDAD.md`; trabajar contra fixtures y el schema de MCP-OCP-05. | Panel abre en EP ACTIVE, muestra estados separados/actividad y cierra con EP; sin cliente/servidor MCP ni red. |
-| MCP-OCP-03 | 4 | Build fresco; pruebas unitarias, contrato, negativas, integración STDIO, writer/reader del panel, secretos, shutdown, hash y root protegido. | Build reproducible con DUG v386/core v0.1.26; suites actuales PASS. No reutilizar 50/30/200 históricos. |
-| MCP-OCP-04 | 5 | Probar `initialize`, `tools/list`, `tools/call`, respuesta completa, desconexión y reinicio por el mismo canal RDC de uso; comprobar que el panel observa sin interponerse. | Smoke real RDC/stdio; STDOUT solo MCP; sin listener, URL pública, túnel ni regla de firewall. |
-| MCP-OCP-10 | 6 | Congelar fuentes, commits, Git blob SHA, SHA-256, SDK/RID, schema/eventos del panel, tests, manifiestos y limitaciones. | Recibo/manifiesto incluye servidor+panel y read-back. |
-| MCP-OCP-07 | 7 | Empaquetar ZIP nuevo con servidor+panel; verificar extracción, hashes, launcher y runbook. | Paquete 1.0.0 vigente recuperable y verificado. |
-| MCP-OCP-12 | 8 | Bootstrap local: extracción, import-sources desde checkout fijado y provisión interactiva del operador. | `operator_provisioned=true`, fuentes importadas y panel presente; consentimiento local interactivo. |
-| MCP-OCP-08 | 9 | Handoff al frente EP para instalación/aceptación en almacenamiento protegido y apertura por sesión ACTIVE. | EP acepta paquete/hash, ruta, perfil, root de datos, launcher, panel, cierre y rollback. |
+| MCP-OCP-02 | 1 | Crear rama limpia desde HEAD de `main`; usar ramas históricas solo como fuentes de port selectivo. | Rama y diff revisables; matriz REUSE/ADAPT/REWRITE/DROP; SDK/RID fijados. |
+| MCP-OCP-05 | 2 | Corte mínimo GOW:ARR → DUG → SINK:P004; congelar el contrato de respuesta y estado mínimo requerido. | Texto íntegro P004 con DUG v386/pin/commit/blob/SHA-256 y rechazo fail-closed. Generalización posterior. |
+| MCP-OCP-13 | 7 · paralelo · P1 secuencia | Construir panel WPF de solo lectura después de congelar schema; trabajar con fixtures mientras se generaliza Sink. | Panel abre en EP ACTIVE y distingue readiness; obligatorio en el ZIP 1.0.0, pero no bloquea el piloto P004. |
+| MCP-OCP-03 | 3 | Suite mínima P004: contrato, respuesta exacta, pin/hash, entradas/fuentes inválidas y cierre; luego ampliar a servidor+panel 1.0.0. | Recibo ligado a commit con pruebas del piloto y suite completa posterior; no reutilizar PASS históricos. |
+| MCP-OCP-04 | 4 | Ejecutar initialize/tools/list/tools/call:SINK:P004 por el recorrido RDC/STDIO que se usará desde IPZ; verificar respuesta visible y cierre. | Smoke técnico y E2E IPZ diferenciados; JSON-RPC de consola no cuenta como aceptación IPZ. |
+| MCP-OCP-10 | 8 | Congelar fuentes/pins v386, commit/base, SDK/RID, schema panel, pruebas, manifiestos y limitaciones. | Recibo y hashes del servidor+panel, read-back. |
+| MCP-OCP-07 | 9 | Empaquetar el producto final servidor+panel una vez que pruebas y manifiesto pasen. | ZIP 1.0.0, SHA/manifest y extracción/read-back PASS. |
+| MCP-OCP-12 | 10 | Bootstrap del piloto y después instalación final en checkout Fila 4; datos fuera del checkout en root protegido. | Piloto/P004 y final 1.0.0 identificados separadamente; REGISTER interactivo solo con consentimiento. |
+| MCP-OCP-08 | 11 | Handoff a EP para recepción, instalación y aceptación del paquete final. | EP verifica Fila 4, root, panel ACTIVE, hash, cierre y rollback. |
 
 Fuera del sprint: MCP-OCP-06/11 (Jules, permanece pausado) y MCP-OCP-09 (PPR/restauración cross-host, P2). Tampoco entran B2, Khora, HTTP público ni activación de MCP-NORMATIVO.
 
@@ -66,8 +66,8 @@ Fuera del sprint: MCP-OCP-06/11 (Jules, permanece pausado) y MCP-OCP-09 (PPR/res
 
 | Tarea | Estado leído | Trabajo de este sprint | Condición |
 |---|---|---|---|
-| [EP-TASK-003](../../../ep/📁%20🧭%20-%20Tareas%20provisionales/📁%20🧩%20-%20EP-TASK-003%20-%20Mapa%20integral%20de%20construcción%20EP/README.md) | En curso | Migrar/verificar workspace y completar dead-man obligatorio para `LOC-OTHER` en el dispositivo RDC asociado al perfil `PC 7`. Confirmar usuario/SID y almacenamiento cifrado en vivo. | Árbol íntegro en volumen protegido; origen intacto hasta SHA-256 cotejado; dead-man probado en el destino real. |
-| [EP-TASK-005](../../../ep/📁%20🧭%20-%20Tareas%20provisionales/📁%20🧩%20-%20EP-TASK-005%20-%20Instalación%20y%20aceptación%20de%20MCP-OCP%20local/README.md) | Nueva · Pendiente | Instalar/bootstrap en perfil Windows `PC 7` tras preflight y dead-man LOC-OTHER; root cifrado, prueba stdio/RDC y apertura/cierre del panel al cambiar la sesión EP ACTIVE. | Paquete/hash, fuentes importadas, `REGISTER <SID>` local, panel visible, shutdown EP y E2E PASS. |
+| [EP-TASK-003](../../../ep/📁%20🧭%20-%20Tareas%20provisionales/📁%20🧩%20-%20EP-TASK-003%20-%20Mapa%20integral%20de%20construcción%20EP/README.md) | En curso | Preparar workspace/check-out íntegro y protegido en Fila 4; verificar usuario/SID y ubicación real. Dead-man solo si ubicación distinta de CECEQ. | Árbol íntegro en volumen protegido; origen intacto hasta SHA-256 cotejado; dead-man probado en el destino real. |
+| [EP-TASK-005](../../../ep/📁%20🧭%20-%20Tareas%20provisionales/📁%20🧩%20-%20EP-TASK-005%20-%20Instalación%20y%20aceptación%20de%20MCP-OCP%20local/README.md) | Nueva · Pendiente | Instalar/bootstrap en terminal Fila 4 tras preflight y dead-man LOC-OTHER; root cifrado, prueba stdio/RDC y apertura/cierre del panel al cambiar la sesión EP ACTIVE. | Paquete/hash, fuentes importadas, `REGISTER <SID>` local, panel visible, shutdown EP y E2E PASS. |
 | EP-TASK-004 | En curso · independiente | Reconstrucción/aceptación de la GUI de bóveda. | No bloquea build Sink ni bootstrap DPAPI salvo dependencia técnica demostrada. |
 
 EP-TASK-002 (Backblaze), EP-TASK-001 (NCL) y PPR cross-host no forman parte del camino crítico.
@@ -76,15 +76,16 @@ EP-TASK-002 (Backblaze), EP-TASK-001 (NCL) y PPR cross-host no forman parte del 
 
 | Fase | Actividad | Puede avanzar sin host | Gate para pasar |
 |---|---|---|---|
-| 0 · Baseline | Releer pins v386, control, backlog, especificación del panel y código remoto. | Sí. | Contratos y dependencias congelados; sin estados heredados como PASS. |
-| 1 · Reconciliar | MCP-OCP-02: nueva rama desde main y port selectivo. | Sí. | Diff revisado, base reproducible, SDK/RID fijados. |
-| 2 · Corte vertical | MCP-OCP-05: ARR → DUG → SINK:P004 y primera proyección de estado/eventos. | Sí para código/tests; transporte real cuando RDC esté disponible. | Respuesta exacta con pin/hash; schema de observabilidad sin payloads. |
-| 3 · Generalizar + panel | MCP-OCP-05 generaliza P001–P043; MCP-OCP-13 construye panel WPF en paralelo con fixtures/schema congelado. | Sí. | 43 IDs/lotes PASS; panel visual contra datos de prueba y estados fail-closed. |
-| 4 · Verificación | MCP-OCP-03/04: suite combinada, STDIO real, panel/readiness, caída, shutdown y perímetro. | Sí para suite; E2E final requiere RDC. | Pruebas nuevas ligadas al commit; stdout solo JSON-RPC; sin red. |
-| 5 · Paquete | MCP-OCP-10/07: un build/ZIP reproducible con servidor+panel. | Sí. | Manifest/SHA y extracción/read-back PASS; runbook actualizado. |
-| 6 · Preparar EP | EP-TASK-003 valida checkout, cifrado y dead-man LOC-OTHER en paralelo al desarrollo. | Parcial, según RDC. | Perfil/host/storage/dead-man verificados en vivo; ningún runtime persistente antes del gate. |
-| 7 · Bootstrap | MCP-OCP-12 entrega paquete; EP-TASK-005 instala, registra con consentimiento y abre panel en sesión ACTIVE. | No. | Fuentes, operador, root de datos, panel y STDIO verificados por read-back. |
-| 8 · E2E/cierre | GOV-TASK-003 valida servidor+panel; GOV-TASK-013 mide solo con ambos extremos observables. | No. | E2E PASS y aceptación por frente. IPZ/FOL1 mantiene gate independiente y no bloquea release. |
+| 0 · Baseline | Pins v386/core 0.1.27, control, Fila 4 designado, ramas y fuente de código. | Sí. | Contrato y fuentes verificadas; ubicación/host queda preflight EP. |
+| 1 · Reconciliar | MCP-OCP-02: rama nueva desde main y port selectivo. | Sí. | Diff revisable, base, SDK/RID fijados. |
+| 2 · Piloto Sink | MCP-OCP-05: GOW:ARR → DUG → SINK:P004 y respuesta con pin/hash. | Sí para código; fuente privada en host protegido. | Contrato P004 y respuesta exacta; fail-closed. |
+| 3 · Prueba IPZ | MCP-OCP-03/04 + GOV-TASK-007: initialize/tools/list/tools/call P004 y camino real IPZ/RDC/STDIO. | Parcial; E2E requiere Fila 4 y contexto IPZ. | Respuesta visible al modelo con pin/hash; consola sola no basta. |
+| 4 · Generalizar | MCP-OCP-05/03 + GOV-TASK-001/008: P001–P043, lote ordenado y negativos. | Sí tras contrato P004. | 43 casos, lote/hash/frecuencia PASS. |
+| 5 · Panel | MCP-OCP-13 tras congelar schema, en paralelo con generalización. | Sí con fixtures. | Panel visual y ciclo EP ACTIVE/caída/cierre probado; requerido en 1.0.0. |
+| 6 · Paquete | MCP-OCP-10/07: un ZIP reproducible servidor+panel. | Sí. | Manifest/SHA, extracción y read-back PASS. |
+| 7 · Preparar Fila 4 | EP-TASK-003: preflight, checkout protegido, root y dead-man según ubicación. | Parcial según RDC. | Identidad/USERPROFILE, XTS-AES256/Protection On/100 %, root y read-back; dead-man PASS si no CECEQ. |
+| 8 · Piloto/bootstrap y release | EP-TASK-005 + MCP-OCP-12: piloto P004 y después instalación final en checkout Fila 4. | No. | Gates EP, consentimiento REGISTER, fuente/importación, STDIO, panel y SHA instalados. |
+| 9 · Aceptación | GOV-TASK-003 y GOV-TASK-013. | No. | E2E completo servidor+panel y evidencia por frente; FOL1 separado. |
 
 Se usará un único harness del servidor y fixtures del panel: primero corte vertical P004, después 43 IDs/negativos. El panel avanza en paralelo una vez congelado el schema. Dos niveles de pruebas, un build final, un ZIP servidor+panel, un manifest y recibos por frente. Preparación EP corre en paralelo; instalación/autoapertura solo después del gate LOC-OTHER. Frecuencia Sink y latencia RDC no se mezclan.
 
@@ -141,7 +142,7 @@ No son insumos por ahora: contraseña, token, SID, RecoveryPassword, B2, OAuth J
 - **E2E:** NO EJECUTADA.
 - **IPZ nativa/FOL1:** pendientes; MCP-NORMATIVO sigue desactivado.
 
-**Siguiente transición:** iniciar MCP-OCP-02 y GOV-TASK-008; ejecutar primero el corte vertical P004 y congelar el schema de observabilidad. Después avanzar MCP-OCP-13 en paralelo con la generalización a 43 principios. En paralelo, preparar EP-TASK-003 para migración y dead-man. La instalación en PC 7 comienza solo con paquete verificado, preflight LOC-OTHER y almacenamiento protegido.
+**Siguiente transición:** MCP-OCP-02 → corte GOW:ARR/DUG/SINK:P004 → pruebas mínimas → preparación de IPZ por GOV-TASK-007 → E2E P004 desde contexto IPZ por RDC/STDIO. EP prepara Fila 4 y su root protegido en paralelo. Tras P004, generalizar 43, desarrollar el panel y cerrar el paquete final 1.0.0.
 
 
 ## 8. Contrato de producto consolidado · instrucción del operador · 2026-11-09
@@ -230,7 +231,7 @@ Identificar por separado funcionalidades implementadas y probadas, pruebas PASS/
 
 ### Insumos del operador
 
-No falta una decisión de producto ni otro host: PC 7/LOC-OTHER ya está designado. Solo se requerirá presencia del operador en el gate de instalación/registro local para confirmar las acciones interactivas. No se solicitan credenciales por chat.
+No falta selección de host: Fila 4 ya fue designada. Falta preflight vivo de identidad, permisos, protección y ubicación física. Solo se requerirá presencia del operador en el gate de instalación/registro local para confirmar las acciones interactivas. No se solicitan credenciales por chat.
 
 **Estado de salida de esta planificación:** DISEÑO CONSOLIDADO · NO INICIADO. Este plan no acredita implementación, pruebas, build, paquete, instalación ni aceptación.
 
@@ -271,3 +272,33 @@ Por instrucción directa del operador se incorpora MCP-OCP-13 como tarea P0 del 
 **Pruebas:** panel waiting-server, initialize, readiness parcial, fuente alterada/ausente, operador/root no configurado, tool success/failure, crash del proceso, sesión EP finalizada, ACL/JSON inválidos, stdout STDIO intacto, ausencia de red y manifest/SHA. MCP Inspector es opcional para diagnóstico de desarrollo; ni Inspector ni MCP Studio se distribuyen en producción.
 
 **Estado:** alcance/documentación actualizados; panel no implementado, no compilado, no incluido en paquete ni instalado.
+
+---
+
+## Rectificación del destino y fast path IPZ/SINK · 2026-11-10
+
+Esta sección sustituye como estado vigente del sprint las menciones anteriores a PC 7/LOC-OTHER en esta coordinación. El operador designó **Fila 4** como destino de trabajo e instalación porque corresponde a la única sesión RDC disponible indicada. PC 7 no queda como alternativa ni fallback.
+
+- **Últimos datos técnicos conocidos, no lectura viva:** RDC Device ID `d0bbb2a3-d7b4-45e1-8870-652c2c3844fc`; sesión interactiva `CENTRAL\\fila4`, SessionId 4. EP debe revalidar dispositivo, hostname, sesión, usuario/SID, `USERPROFILE`, permisos y acceso antes de escribir.
+- **Ubicación física:** PENDIENTE_DE_VERIFICACIÓN. La terminal Fila 4 y la ubicación son dimensiones distintas. No clasificar automáticamente como CECEQ ni LOC-OTHER; EP aplicará conservación o dead-man después de comprobar el lugar.
+- **Checkout:** `%USERPROFILE%\\Desktop\\SeryMente\\Repositorios\\Metodologia\\metodologia\\`.
+- **Piloto:** `<checkout>\\frentes\\mcp-metodologia\\instalacion-local\\piloto-sink\\`.
+- **Producto final:** servidor+panel 1.0.0 en `<checkout>\\frentes\\mcp-metodologia\\instalacion-local\\`.
+- **Datos:** DB/DPAPI/fuentes/logs/backups en `%USERPROFILE%\\Desktop\\SeryMente\\Datos\\Metodologia\\MCP-OCP\\`, fuera del checkout y dentro del volumen protegido por EP.
+- Última lectura histórica de Fila 4: C: `FullyEncrypted/100 %`, `ProtectionStatus=Off`, `XtsAes128`; no acredita protección efectiva. El preflight debe repetirlo en vivo y verificar workspace XTS-AES256, Protection On, 100 %, protector recuperable y SHA/read-back. No reutilizar W:/VHDX/DPAPI/recovery/workspace de PC-14 ni de PC 7.
+
+### Nuevo orden de ejecución
+
+1. **MCP-OCP-02:** rama nueva desde HEAD de main; comparar las ramas históricas solo como fuentes y portar por componente.
+2. **MCP-OCP-05 — piloto P004:** implementar `GOW:ARR`, identidad DUG v386 y `SINK:P004` con texto íntegro, pin/commit/blob y SHA-256.
+3. **MCP-OCP-03/04 — prueba piloto:** contrato mínimo, errores/fuentes inválidas, initialize/tools/list/tools/call, STDIO/RDC y cierre limpio.
+4. **EP-TASK-003/005 + GOV-TASK-007:** preparar checkout/root protegido en Fila 4; elaborar IPZ candidato bajo 1.500 caracteres con `GOW:ARR → DUG → MDP → SINK:Pxxx`; primer caso P004. La escritura de IPZ nativo y su read-back son un acto separado, no se presumen.
+5. **GOV-TASK-003/007 + MCP-OCP-04:** demostrar uso real desde contexto IPZ por RDC → MCP-OCP STDIO y respuesta visible al modelo con pin/hash. Una llamada JSON-RPC desde consola solo valida transporte y no acredita E2E IPZ.
+6. Tras aceptar el piloto, **MCP-OCP-05/03** generalizan a 43, lotes ordenados, hashes, eventos y negativos.
+7. **MCP-OCP-13** implementa el panel WPF cuando el schema esté congelado y en paralelo con la generalización. Baja a P1 de secuencia, pero sigue obligatorio dentro de 1.0.0; no bloquea P004.
+8. **MCP-OCP-10/07** cierran manifest/build/ZIP reproducible servidor+panel. **MCP-OCP-12/08 + EP-TASK-003/005** efectúan bootstrap/instalación y read-back en Fila 4 después de los gates. **GOV-TASK-003** acepta el producto integral.
+
+FOL1 no bloquea el piloto P004 ni la construcción del servidor; su activación conserva el gate propio posterior al IPZ nativo verificado. MCP-NORMATIVO continúa DESACTIVADO. No se modifica DUG, ART-025/027, IPZ nativa ni controles desde esta rectificación.
+
+**Estado:** destino y secuencia documental corregidos; no hay preflight Fila 4, branch, código, piloto, IPZ nativo, build, paquete, instalación ni E2E ejecutados por esta actualización.
+
