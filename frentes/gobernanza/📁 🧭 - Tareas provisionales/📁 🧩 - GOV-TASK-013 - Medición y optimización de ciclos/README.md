@@ -348,3 +348,7 @@ La referencia legal de implementación para México es la LFPDPPP publicada el 2
 7. GOV-TASK-013 cycle.duration_ms e ipz.resolve.rdc.duration_ms conservan su semántica y medición monotónica, sin espera de red/persistencia antes de la respuesta.
 
 **Responsabilidad:** MCP-OCP-15 implementa schema/store; EP-TASK-007 captura inventario/ubicación/lease; Gobernanza 2 mantiene GOV-TASK-013 y correlación de medición. Gobernanza 1 conserva la coordinación y aceptación interfrente según control vigente.
+
+
+## Reporte individual obligatorio de resolución/cierre
+Al resolver, completar, bloquear o cancelar esta tarea, registrar su propio informe en este README usando [la plantilla común](../../../PLANTILLA-REPORTE-CIERRE-TAREA.md). Explicar objetivo y resultado, cómo se solucionó, decisiones verificables, cambios/rutas/commits/blobs/SHA, criterios y pruebas ejecutadas con logs/artefactos, read-back, bloqueantes/dependencias, preocupaciones/riesgos, pendientes, rollback y aceptación. Declarar NINGUNO_VERIFICADO o NO_VERIFICADO donde corresponda; nunca ocultar campos. No marcar completada sin criterios PASS, evidencia y read-back. Actualizar el índice padre después de verificar este informe y entregar al operador el enlace individual y síntesis de solución, evidencia, bloqueantes y preocupaciones. No incluir secretos ni datos sensibles.
