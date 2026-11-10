@@ -82,6 +82,8 @@ public sealed class MonitorProjectionWriter
 
     private static void RotateRecentEvents(string target)
     {
+        if (new FileInfo(target).Length > MaxEventsBytes * 4)
+            throw new InvalidDataException("EVENTS_PROJECTION_TOO_LARGE");
         string[] lines = File.ReadAllLines(target, Encoding.UTF8);
         string[] tail = lines.TakeLast(MaxEventsLines / 2).ToArray();
         string temp = target + "." + Guid.NewGuid().ToString("N") + ".tmp";
