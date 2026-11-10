@@ -2460,3 +2460,48 @@ Gate local requerido para continuar sin exponer secretos: el operador desbloquea
 ### Persistencia documental
 
 EP-TASK-002 recibió el detalle y se leyó de vuelta; índice provisional actualizado. Esta entrada documenta bloqueo/preparación, no un éxito remoto.
+
+
+---
+
+## EP · reanudación según cola programada, preflight Fila 4 y avance H7 · 2026-11-10 · 15:36 America/Mexico_City
+
+### Solicitud y gobierno adquirido
+
+El operador instruyó revisar las tareas del frente y resolver conforme al orden programado. Se releyeron desde main OEP §§91/123/124, el índice de tareas, EP-TASK-002/003/004/005/006/007 y DUG Samantha v388 · NX-388m. Control EP generación 3 sin cambios; no se crea sesión, folio ni transferencia de titularidad.
+
+### Ejecución observada del ciclo
+
+1. **EP-TASK-003 — preflight host read-only:** se revalidaron volúmenes, VHDX, checkout, root y árbol fuente. El workspace tiene 3.103 archivos, 659 directorios y 159.162.208 bytes; la enumeración detectó 2 errores. VHDX GPT de 30 GiB adjunto; W: NTFS descifrado y sin protector; C: 100 % XTS-AES128, Protection Off y sin protectores. W: solo presenta System Volume Information. Checkout Metodología sin .git y root Datos/Metodologia/MCP-OCP ausente. No se copió ni alteró el origen. La ubicación física sigue UNCLASSIFIED.
+2. **EP-TASK-002 — B2:** la lectura propietaria de 21:34:04Z confirma Vault SELLADA, sesión CLI inactiva, 0/5 variables disponibles. El worker P0-C ciphertext-only sigue preparado. No hubo B2 authorize, bucket list, upload, download ni receipt.
+3. **EP-TASK-004 — H7/H8:** `SelfTest` terminó exit code 0 en 17,15 s: crypto round-trip/tamper/wrong-password PASS; job runner PASS; timeout/tree termination PASS. Core/CLI/GUI Parser PASS y XAML XML PASS. No es H7/H8 integral. H10/aceptación visual sigue pendiente.
+4. **EP-TASK-007:** inventario read-only de host bajo token propietario ejecutado y leído de vuelta; no se recogieron IP/GPS. Ubicación física no clasificada. No se instaló Guardian, lease, heartbeat ni crypto-erasure.
+5. **EP-TASK-005:** sigue bloqueada por EP-TASK-003 PASS y por el paquete P004/manifest/SHA/MCP-OCP-03/04.
+6. **EP-TASK-006:** su P0 de snapshot depende de EP-TASK-002; la fase P1 de inventario Vercel y proveedores no se anticipa al P0 remoto.
+7. **EP-TASK-001:** permanece pendiente sin cambio.
+
+### Decisión técnica pendiente del operador
+
+La propuesta recomendada es un VHDX nuevo fuera de AppData y fuera del workspace, con volumen BitLocker XTS-AES256/Protection On/100 %, montado como punto de montaje de directorio NTFS en `%USERPROFILE%\Desktop\SeryMente`. Permite preservar la ruta de consumo de los proyectos. La secuencia contempla snapshot B2 de Vault, protector de recuperación en Vault/read-back y segundo snapshot B2; inventario y copia con SHA-256; staging/rollback; cambio de punto de montaje solo tras igualdad; segundo read-back y aceptación. El VHDX actual bajo AppData y W: se dejan intactos.
+
+`STORAGE_DESIGN=PROPOSED_NOT_ACCEPTED`. No se ejecutó ninguna operación de almacenamiento. La aceptación expresa del operador continúa siendo requisito para crear el nuevo volumen/cifrar/copiar/cambiar el punto de montaje. La sesión de EP Vault GUI se leyó como SELLADA; P0-C requiere desbloqueo local, no una extracción de contraseña al chat.
+
+### Escrituras y lectura de vuelta en main
+
+| Objeto | Commit | Blob SHA (read-back) |
+|---|---|---|
+| OEP §125 / v0.3.60 | `489a61da44f72674945924e13401ec1177d2d3f9` | `6d96ba0ed91f7492eeb3ee51dea99b04fb1ef7ea` |
+| EP-TASK-002 | `259116bee842b409fb7238a32d5308c58015a78c` | `e070ec0229ca26a8cbd6c1ec22c0597776e7393f` |
+| EP-TASK-003 | `8803420e47d043f8f23e469f13056ee4da72a3b1` | `72f0194af5b22623a326617dc67d6debfc19ef5a` |
+| EP-TASK-004 | `5a6022093a78bf6dee10decd5c12870de135f2f2` | `285f2fe28655ae28ef782cb47d5cdaf752963cfa` |
+| EP-TASK-007 | `9af59342fb8dc98221f768c5be82df9329b54c25` | `06f3a694871c31ea72ee373286aa8b935b7e0e27` |
+| Índice provisional EP | `701ad75d63f53b71028a6fb76f688536118bd05e` | `a24883591fdcc7e2ba881babd86ee9c2592c9e45` |
+| Evidencia read-only Fila 4 | `4afb9b368b7e8be74aba239796993e71e1d41f43` | `88dd663df4345df343a51ad2800f0ad79953c60d` |
+
+Las siete lecturas de vuelta verificaron contenido/estado esperado y SHA de blob. El archivo local de inventario de Task007 también se leyó de vuelta: 4.253 bytes, SHA-256 `E0B2FF98A70DF35E2B572638E5E3CFE39D629781852C2F5FBE03A4C4B39FD673`.
+
+### Estado al cierre
+
+`EP_TASK_002=P0_BLOCKED_VAULT_SEALED` · `EP_TASK_003=PREFLIGHT_PARTIAL_FAIL_STORAGE_DESIGN_PENDING_ACCEPTANCE` · `EP_TASK_004=SYNTHETIC_TESTS_PARTIAL_PASS_H10_PENDING` · `EP_TASK_005=BLOCKED_ON_003_AND_MCP_PACKAGE` · `EP_TASK_006=P1_AFTER_B2_P0` · `EP_TASK_007=HOST_INVENTORY_PARTIAL_GUARDIAN_PENDING` · `EP_TASK_001=PENDING`.
+
+No se ejecutó persistencia remota ni mutación del host. El DTC cierra con gates y dependencias separados; no se declara completada ninguna tarea por documentación o pruebas parciales.
