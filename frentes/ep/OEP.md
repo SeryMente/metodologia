@@ -3493,3 +3493,30 @@ EP-TASK-004 permanece `en_curso`: H7/H8 sintéticos PASS para la candidata, no a
 - EP-TASK-005 sigue bloqueada por EP-TASK-003 PASS y paquete MCP-OCP P004.
 - Para esta instancia de coordinación, el siguiente trabajo independiente seleccionado es retomar MCP-OCP H1, autorizado en su propio control y limitado a `frentes/mcp-metodologia/`: corregir la lectura del MDP en DUG v388, restaurar exclusiones de secretos en `.gitignore`, y acotar `global.json` al frente MCP-OCP. No se interviene EP, Vault, B2, host, IPZ ni DUG.
 
+## 130. Persistencia R2 completada en Backblaze · 2026-11-10
+
+### 130.1 Captura local
+
+Se construyó una fotografía R2 de Desktop/SeryMente con 3.289 archivos, 159.547.658 bytes fuente y ZIP de 119.076.640 bytes. Las 3.289 entradas del ZIP se verificaron por tamaño/SHA-256; el manifiesto y checksum se generaron y se leyeron de vuelta. El snapshot contiene el ciphertext formal de EP Vault (2.200 bytes). ZIP SHA-256: `9D511614FC6B4001DBA5F8CAAF69ED06107F8B5F5111165F186BE7B2C5C06E09`.
+
+### 130.2 Backblaze remoto
+
+- Bucket privado: OCP-MCP; prefijo de workspace `ep-ocp/workspace/2026-11-10/224927899Z-48c3d690/`; prefijo Vault `ep-ocp/vault/2026-11-10/1704-r2-continuity/`.
+- Se cargaron y descargaron cuatro objetos. Los cuatro cotejan tamaño y SHA-256 exactos; SSE-B2/AES256 quedó confirmado mediante file info. El recibo final terminó exit 0, sin errores, caché temporal limpiada y sin exponer secretos.
+- ZIP: 119.076.640 B, SHA `9D511614FC6B4001DBA5F8CAAF69ED06107F8B5F5111165F186BE7B2C5C06E09`.
+- Ciphertext Vault: 2.200 B, SHA `4CC2EE09974C9FBF3CF22C28A5A46C8286EB501F59268DBBB2B7BD6D61E8C590`.
+- Manifiesto: 1.029.594 B, SHA `D258A5E1F312C80C31A26206F7B0FF0309B86FE962C1EA8D3CF5344D56A0AC37`. Checksum: 112 B, SHA `E4D436B75F4A5CE3454AF43BE350F376BB165B6B2BC54604A082205C49420210`.
+- Recibo local en Fila 4: `EP/local-state/run-logs/ep-backblaze-r2-final-receipt-v1.json`.
+
+### 130.3 Riesgos y límites
+
+- Excepción de continuidad autorizada por el operador: el ZIP fue cargado sin cifrado del lado del cliente. Se transmitió por TLS y B2 confirma SSE-B2/AES256. Esto no satisface el criterio permanente de cifrado cliente establecido para OCP MCP 1.0; no describirlo como tal.
+- EP Vault cifra sus variables con PBKDF2-HMAC-SHA256/600.000, AES-256-CBC y HMAC-SHA256; el ciphertext puede abrirse en otro host con la contraseña maestra. La sesión temporal usa DPAPI CurrentUser y no es portable. Las notas DPAPI requieren verificación individual.
+- Para descargar inicialmente el ciphertext desde B2 en otro host se necesita acceso independiente a la cuenta B2 o credencial de recuperación almacenada fuera de la bóveda respaldada. La clave de aplicación EP reside dentro del ciphertext y no puede recuperarse desde sí misma.
+- No se incluyó/restauró como dato externo una base OCP/MCP ni datasets fuera del árbol SeryMente observado. Las exclusiones están en el manifiesto; no inferir totalidad de perfiles externos, cookies o credenciales sueltas.
+
+### 130.4 Estado y siguiente gate
+
+`EP_TASK_002=B2_UPLOAD_READBACK_VERIFIED` · `CROSS_HOST_RESTORE=NOT_RUN` · `CLIENT_SIDE_ENCRYPTION=EXCEPTION_NOT_APPLIED` · `EP_TASK_003=PARTIAL_FAIL` · `EP_TASK_005=BLOCKED_ON_003_AND_P004_PACKAGE`.
+
+Siguiente: validar extracción aislada del ZIP remoto, recuperar/decrypt de una copia de EP Vault en entorno aislado con contraseña maestra local, y registrar restauración sin reemplazar el workspace activo. Después reanudar EP-TASK-003. Mantener el sprint de desarrollo en pausa hasta que la secuencia de hitos quede actualizada por Gobernanza.
