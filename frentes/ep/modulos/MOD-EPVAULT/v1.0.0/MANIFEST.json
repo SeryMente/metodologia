@@ -7,7 +7,7 @@
   "source_branch": "feat/ep-vault-pc7-hardened-20261109",
   "source_task": "EP-TASK-004",
   "canonical_oep": "frentes/ep/OEP.md#120",
-  "status": "PC7_SYNTHETIC_E2E_PRIOR_HARDENED_TREE_PASS; EXACT_V1_0_0_RETEST_PENDING; H10_PENDING; MAIN_MERGE_PENDING",
+  "status": "PC7_SYNTHETIC_E2E_PRIOR_HARDENED_TREE_PASS; EXACT_V1_0_0_RETEST_PASS; H10_PENDING; MAIN_MERGE_PENDING",
   "entries": [
     {
       "path": "src/EP.Vault.Core.psm1",
