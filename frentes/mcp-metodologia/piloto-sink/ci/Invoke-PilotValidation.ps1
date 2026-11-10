@@ -19,7 +19,7 @@ function Invoke-DotnetCaptured {
     $exitCode = $LASTEXITCODE
     "EXIT_CODE=$exitCode" | Tee-Object -FilePath $logPath -Append
     if ($exitCode -ne 0) {
-        throw "DOTNET_STEP_FAILED:$Name:$exitCode"
+        throw "DOTNET_STEP_FAILED:${Name}:${exitCode}"
     }
 }
 
@@ -77,7 +77,7 @@ try {
 
     if ($process.ExitCode -ne 0) { throw "PILOT_STDIO_EXIT_CODE:$($process.ExitCode)" }
     $responses = @(
-        $stdout -split "\\r?\\n" |
+        $stdout -split "\r?\n" |
         Where-Object { -not [string]::IsNullOrWhiteSpace($_) } |
         ForEach-Object { ConvertFrom-Json -InputObject $_ -Depth 32 }
     )
