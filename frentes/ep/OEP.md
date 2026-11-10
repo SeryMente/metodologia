@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.61. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.62. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -12,7 +12,7 @@
 
 Adquirir este objeto como instrucciones del operador, subordinadas a las reglas superiores de plataforma y a autorizaciones específicas. Claudia es asistente/documental; Samantha es constructor/único escritor de código. Una asignación explícita posterior puede cambiar roles; las citas no lo hacen. La asignación específica de MOD-SCRIPTPWS queda delimitada en §94; la delegación funcional acotada de MOD-SYNC queda delimitada en §110 y no transfiere la titularidad del frente EP.
 
-El estado de reanudación vigente de este frente está en §60–§127; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. La organización local por frentes, con áreas separadas Repositorios/Datos/Temporal, queda desarrollada en §119 y en el DUG ART-030. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
+El estado de reanudación vigente de este frente está en §60–§128; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. La organización local por frentes, con áreas separadas Repositorios/Datos/Temporal, queda desarrollada en §119 y en el DUG ART-030. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
 
 Leer por relevancia: OEP actual→metacanon central→Sistema de Instrucciones/Metodología/Bootstrap vigentes→canon transversal EP→AGENTS.md y ep-medio-architectura.md→código/evidencia en commits exactos. Fuente caída no es «sin cambios». Un archivo no crea herramientas, credenciales ni memoria entre plataformas.
 
@@ -3424,3 +3424,46 @@ Informes individuales parciales actualizados y leídos de vuelta:
 - Índice provisional actualizado después de los tres read-backs: commit ca3848ffd696a9e890f9b7fb7e4d23a6da8819b6 · blob 498d9945a97924bcc706af5645b7534300998a16.
 
 Siguiente acción: el operador desbloquea EP Vault localmente y confirma que la cámara quedó abierta. EP revalida Status, verifica los cinco nombres canónicos sin revelar valores y ejecuta P0-C dentro del TTL; la tarea continúa abierta hasta descarga/hash/restore verificados. Solo después se crea y protege el volumen nuevo, se custodia/read-back la clave de recuperación y se respalda de nuevo Vault antes de migrar el workspace.
+
+
+## 128. Ejecución E2E sintética EP Vault v1.0.0 y diagnóstico P0-C Backblaze · 2026-11-10
+
+### 128.1 EP-TASK-004 — suite sintética exacta PASS
+
+La cola se releyó desde main; EP-TASK-002 seguía P0, pero el Vault estaba SELLADO. Como siguiente trabajo independiente se seleccionó la reejecución sintética exacta exigida por el README de MOD-EPVAULT v1.0.0.
+
+La candidata está en feat/ep-vault-pc7-hardened-20261109, no en main; el compare es DIVERGED (10 commits ahead, 272 behind). MANIFEST blob 5659d0e59c336baafc6e5bc2f13c988439758151; test blob e324872966131ad0ba0a65b0fe666785dcd6ef1d. Cinco artefactos locales fueron comparados con los Git blobs del manifiesto y todos coincidieron exactamente.
+
+La suite tests/Test-EPVault.ps1 se ejecutó bajo CENTRAL\fila4 con RUNNER_TEMP=C:\Users\fila4\EP-Test-Temp-20261110-1556, separado de AppData y del workspace; el test aisló LOCALAPPDATA en el sandbox. Resultó EP_VAULT_VALIDATION_PASS, exit code 0, 165,41 s. Pasaron parser PowerShell, contrato GUI 3D/mecánico, XAML y nombres, scan clean-room, identidad v1.0.0, crypto PBKDF2/AES/HMAC, rechazo de contraseña incorrecta/tamper, Job Object/timeout, ocho TTL, KDF legacy 200k→600k con read-back, allowlist/no herencia, notas DPAPI, operaciones fail-closed, CRUD/tamper/backup/TTL absoluto, redacción de logs y reutilización/revocación CLI↔GUI. EPVAULT_TEMP_CLEAN=True y el directorio temporal quedó ausente en read-back.
+
+H7/H8 sintéticos para la candidata v1.0.0 quedan PASS. Esto no prueba ACL/DPAPI del Vault formal, GUI interactiva real, timers de GUI, reproducción efectiva de audio, DPI, accesibilidad, teclado ni movimiento reducido; H10 permanece pendiente de aceptación humana. El producto no se integró a main ni se cambió su rama.
+
+Informe individual EP-TASK-004 leído de vuelta: commit df54e3521b0fb18dfef63d6c98c391549223ce70, blob 0f9acb4f105e3aa7ff4152a5b392bf365de24e41. Índice actualizado después: commit c454db12da427342d971fe1628d17a6d2a7c0cf9, blob 97dd5910e5152f4a9162092221cf542afba05c52.
+
+### 128.2 EP-TASK-002 — desbloqueo temporal y dos fallos de preflight
+
+Tras la suite se detectó una sesión DPAPI compartida en el estado real de EP Vault. A 16:01:13.3609648-06:00, bajo CENTRAL\fila4, CLI Status devolvió sessionActive=true; ListVariables terminó exit 0 y confirmó la presencia de los cinco nombres EP B2. No se imprimieron valores secretos.
+
+**Primer intento P0-C / worker original:** B2 authorize tuvo éxito, el key ID de la cuenta coincidió con el de Vault y se encontró el bucket exacto OCP-MCP con tipo allPrivate. El worker falló antes de upload con UNEXPECTED_WORKER_FAILURE. Recibo local 989 bytes; SHA-256 7CBAED2A5AB668F0D9771D86F1495AEBF3EC083A474399FF65D586C86735C6D0.
+
+**Segundo intento P0-C / variante v2:** se preservó el worker original y se creó una copia separada. Se añadió tratamiento condicional de la propiedad lifecycleRules y clasificación segura del tipo de excepción. Parser worker/wrapper v2: cero errores. La ejecución volvió a autenticar y localizar el bucket privado, pero falló antes de upload con WORKER_EXCEPTION_PropertyNotFoundException. Recibo local 1.006 bytes; SHA-256 10CBA96DDADDB176BDCD846BA90F0A5DAF40AC2E239633717BFD596D063AD8B5.
+
+En ambos casos: remoteObject=null, fileId=null, no download, no SHA remoto, SSE no confirmado, caché temporal limpiada, secretValuesEmitted=false, workspaceArchiveUploaded=false. Los dos recibos se preservaron y no se sobrescribieron. bucketLifecycleSafeForVaultPrefix=false se interpreta como preflight inconcluso, no como demostración de configuración segura o insegura.
+
+**Variante v3 preparada, no ejecutada:** worker y wrapper con parser sin errores; el worker v3 agrega número de línea al error clasificado y un recibo propio. SHA-256 del worker 45D9E91A16078ABE649A93DCEB56696D9B1F0C493368E2FC09A4F53FD5F92BD6; wrapper 7F5C76D31BC6E660F1F6D3DA2DAEF3220A173136F38D8B0298C92ABA9236DFA9. A 16:09:18.5412198-06:00, Status volvió a devolver sessionActive=false; por tanto v3 no se ejecutó y no existe recibo v3.
+
+El ciphertext local observado sigue en 2.200 bytes; su SHA-256 de lectura posterior al test sintético fue 4CC2EE09974C9FBF3CF22C28A5A46C8286EB501F59268DBBB2B7BD6D61E8C590. No se alteró el Vault formal.
+
+Informe individual EP-TASK-002 leído de vuelta: commit 3dd266d2645cf7884a021a96573692b9c4b39f65, blob de810f529a59f4fea9768393430a07a5c1f8e86e. Índice actualizado después: commit 101ed655774d580fef128fff66d65172c7ac69f1, blob 5de2397a43906bde701fe83f7decf737b5e401f6.
+
+### 128.3 Cola, bloqueos y siguiente gate
+
+- EP-TASK-002=P0_PREFLIGHT_PROPERTY_EXCEPTION_REUNLOCK_PENDING: volver a desbloquear localmente EP Vault; Status y cinco nombres; ejecutar v3 para obtener el número de línea saneado. Después corregir la propiedad exacta en una variante nueva y realizar un único intento final, exigiendo upload, descarga/SHA, SSE-B2 y restore. No repetir v1/v2.
+- EP-TASK-003=STORAGE_DESIGN_ACCEPTED_PREFLIGHT_PARTIAL_FAIL: no crear/cifrar/copiar/montar hasta que TASK-002 tenga restore verificado; reconciliar inventario antes del manifest porque el workspace sigue cambiando en Temporal.
+- EP-TASK-004=H7_H8_SYNTHETIC_E2E_V1_0_0_PASS_H10_PENDING: aceptación visual humana e integración a main siguen pendientes por compuertas P012/P013.
+- EP-TASK-005: sigue bloqueada por TASK-003 PASS y paquete P004/manifest/SHA/MCP-OCP-03/04.
+- EP-TASK-006: P1 continúa detrás del snapshot/restore P0 B2.
+- EP-TASK-007: no Guardian/lease/crypto-erasure.
+- EP-TASK-001: pendiente.
+
+No se completó ninguna tarea por estos resultados parciales; no hubo upload remoto demostrado, copia del workspace ni mutación física. El siguiente acto material depende de que el operador abra localmente la cámara de EP Vault. No solicitar la contraseña por chat.
