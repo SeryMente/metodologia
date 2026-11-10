@@ -8,7 +8,7 @@
 
 **Secuencia prioritaria:** MCP-OCP-02 (rama limpia desde main) → MCP-OCP-05 (corte P004) → MCP-OCP-03 (pruebas) → MCP-OCP-04 (STDIO/RDC). Gobernanza mantiene GOV-TASK-008 (contrato), GOV-TASK-001 (43+8 MDP), GOV-TASK-007 (IPZ/FOL1), GOV-TASK-003 (E2E) y GOV-TASK-015 (coordinación). La generalización P001–P043 y los lotes siguen al PASS P004.
 
-**Fronteras:** MCP-OCP generación 5 tiene autorización vigente para implementar Sink en su propio OCP; sus documentos técnicos consultados aún mostraban pins DUG v386 y deben ser reconciliados por su titular antes del build. EP conserva host, perfil, storage e instalación. El destino es Fila 4, no PC 7; preflight vivo y root protegido siguen pendientes.
+**Fronteras:** MCP-OCP generación 5 tiene autorización vigente; su núcleo v0.1.28 y backlog v0.9 ya están fijados a DUG v388. Su rama limpia MCP-OCP-02 y código P004 siguen pendientes. EP conserva host, perfil, almacenamiento e instalación; OEP v0.3.56 y EP-TASK-003/005 registran como P0 el preflight Fila 4 y el piloto local. Destino Fila 4, nunca PC 7; preflight vivo/root protegido siguen pendientes.
 
 **Estado observado en esta reconciliación:** artefactos documentales de Gobernanza actualizados y leídos de vuelta. No se acredita resolver P004 implementado, fuente privada importada, build, instalación, runtime, telemetría real ni aceptación E2E. IPZ nativa `NO_VERIFICADA`; FOL1 `PREPARADO_PENDIENTE_ACTIVACION_IPZ`; CV/CY/A/B globales y por OCP `PENDIENTE / NO ASIGNADO`.
 
