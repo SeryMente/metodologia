@@ -6,7 +6,7 @@
 
 - [Persistencia DTC EP/MCP-OCP](OEP.md#95-persistencia-dtc-integrada-epmetodologia-y-continuidad-mcp-ocp--v0325--vcu-ep-v27): continuidad multiubicación EP/Metodología y estado operativo MCP-OCP, con autoridad técnica propia de MCP-OCP.
 
-- [OEP.md](OEP.md): único estado vivo del frente, v0.3.54.
+- [OEP.md](OEP.md): único estado vivo del frente, v0.3.55.
 - [Organización canónica del workspace](OEP.md#119-organización-canónica-del-workspace-local-y-persistencia-por-frente--v0354--2026-11-09): repositorios agrupados por frente, datos/temporales separados y secretos fuera del workspace.
 - [Objeto de coordinación DTC](entregas/COORDINACION-GOBERNANZA-EP-v0.1.md): único registro de comunicación Gobernanza ↔ EP; historial reconciliado en `main`.
 - [Control de responsabilidad EP](CONTROL-RESPONSABILIDAD.json): registro autoritativo de titularidad y generación; generación 3; titularidad transferida por TRANSFER_RESPONSIBILITY el 2026-11-09; un titular activo, evento C-EP-TRANSFER-RESPONSIBILITY-20261109-01.
@@ -36,3 +36,14 @@
 
 - [EP Vault · estado actual y custodia de recuperación](OEP.md#114-custodia-de-protector-de-recuperación-bitlocker--pc-14--2026-11-09): estado de GUI 3D y protección VHDX PC-14.
 - [ChatGPT-EP-20261109-1230.md](entregas/ChatGPT-EP-20261109-1230.md): exportación recibida desde PC-14 / perfil PC 13; 40.832 bytes / 853 líneas; SHA-256 `045FD76745669E2AD08A4A0F517FCB042B5CD2C3B3320AB5AD2E83F0972EF674`; Git blob `1be5a3b2a19dec4dd819648302664606654a4761`; read-back Base64 byte-exacto; análisis en OEP §115.
+
+## Destino vigente sprint MCP-OCP · 2026-11-10
+
+El host de trabajo e instalación del sprint MCP-OCP es **Fila 4**, por instrucción directa del operador y por corresponder a la única sesión RDC disponible indicada. Referencia técnica de la última observación: Device ID `d0bbb2a3-d7b4-45e1-8870-652c2c3844fc`; perfil `CENTRAL\\fila4`, SessionId 4. La lectura de identidad/estado debe repetirse en vivo antes de escribir. La ubicación física no se infiere de la etiqueta Fila 4: preflight decide CECEQ u otra ubicación y, con ello, la aplicación del dead-man.
+
+- [OEP §120 · rectificación del host y fast path IPZ/SINK](OEP.md#120-rectificación-de-host-de-trabajo-e-instalación-mcp-ocp--2026-11-10--oep-v0355)
+- [EP-TASK-003 · workspace Fila 4](./📁%20🧭%20-%20Tareas%20provisionales/📁%20🧩%20-%20EP-TASK-003%20-%20Mapa%20integral%20de%20construcción%20EP/README.md)
+- [EP-TASK-005 · piloto SINK:P004 y aceptación MCP-OCP 1.0.0](./📁%20🧭%20-%20Tareas%20provisionales/📁%20🧩%20-%20EP-TASK-005%20-%20Instalación%20y%20aceptación%20de%20MCP-OCP%20local/README.md)
+
+OEP vigente: v0.3.55. No hay preflight vivo, checkout protegido, instalación ni SINK/IPZ E2E demostrados por esta actualización documental.
+
