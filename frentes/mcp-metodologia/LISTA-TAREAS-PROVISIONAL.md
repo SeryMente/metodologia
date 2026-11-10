@@ -57,7 +57,15 @@ La tabla sustituye los PASS/estados de recibos históricos para la implementaci�
 
 **Excluye:** capacidades de dictados/audio/MP3/grafo de Khora; servidor Jules duplicado; API key de Jules o secretos de Khora; endpoint público/Vercel; activación de MCP-NORMATIVO; cambios DUG/Sink.
 
-**Cierre:** núcleo v0.1.27, esta lista v0.8 y README reflejan la misma frontera; la especificación del panel identifica su separación como app acompañante read-only, sin segundo MCP ni red. La revisión documental de contrato está verificada; las pruebas de implementación permanecen pendientes.
+**Cierre:** núcleo v0.1.28 y esta lista v0.9 reflejan la frontera OCP/Khora/Jules; README del piloto mantiene servidor STDIO local, sin segundo MCP ni red. La revisión documental de contrato está verificada; las pruebas de implementación permanecen pendientes.
+
+
+
+### Estado actual del corte P004 · cycle05
+
+- Rama limpia creada desde main HEAD 0f933b9e3efae20131da37f99f50f4bc4a4eaf74; DUG v388 pinneado; 13 pruebas escritas y smoke real del DLL automatizado. Build/tests/smoke todavía sin ejecución PASS verificable.
+- main avanzó después 11 commits, todos en las rutas EP/Gobernanza enumeradas en el diff; no coinciden con los 16 paths modificados en esta rama. El PR se usa para comprobar el merge ref; no se declara fast-forward ni se fusiona sin gates.
+- EP-TASK-003/005 permanecen responsables del host Fila 4, checkout/root protegido, importación y materialización. MCP-OCP no instala en el host.
 
 ### MCP-OCP-02 — Reconciliación de código ejecutable contra main
 **Prioridad:** P0 · **Estado:** RAMA_CYCLE05_CREADA_DESDE_MAIN · PORTABILIDAD_DOCUMENTADA.
