@@ -1,4 +1,4 @@
-<!-- LIST_VERSION=0.21; LIST_STATUS=PROVISIONAL; NOT_A_CANONICAL_OBJECT=true -->
+<!-- LIST_VERSION=0.22; LIST_STATUS=PROVISIONAL; NOT_A_CANONICAL_OBJECT=true -->
 # Lista provisional de tareas · MCP-OCP
 
 > **ESTADO: PROVISIONAL · NO ES UN OCP NI UN CONTROL ADICIONAL.** Esta lista es una vista auxiliar enlazada desde el único núcleo MCP-OCP. El estado vivo y las decisiones de alcance permanecen en `MCP-METODOLOGIA.md`; la titularidad permanece exclusivamente en `CONTROL-RESPONSABILIDAD.json`. Las tareas y dependencias de otros frentes se enlazan sin apropiarse de sus objetos, controles o permisos.
@@ -6,13 +6,13 @@
 - **Frente:** MCP-OCP.
 - **Repositorio propietario:** `SeryMente/metodologia`.
 - **Ruta OCP:** `frentes/mcp-metodologia/`.
-- **Versión de la lista:** 0.21 (provisional; coordinación del Sprint SINK-P004 y producto MCP-OCP 1.0.0).
+- **Versión de la lista:** 0.22 (provisional; coordinación del Sprint SINK-P004 y producto MCP-OCP 1.0.0).
 - **Última actualización:** 2026-11-10.
 - **Gobierno leído:** Samantha v388 · NX-388m; Metacanon 1.29; GOW 2.18; DUG commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`; blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`. ART-027 rebaselined para Sink local STDIO/RDC; §ARR y P037 revisados; CNP P001/P004/P005/P038/P043 considerado.
-- **Núcleo enlazado:** [MCP-OCP · objeto canónico](MCP-METODOLOGIA.md), v0.1.40; esta lista v0.20 es su backlog auxiliar vigente.
+- **Núcleo enlazado:** [MCP-OCP · objeto canónico](MCP-METODOLOGIA.md), v0.1.40; esta lista v0.22 es su backlog auxiliar vigente.
 - **Control:** [CONTROL-RESPONSABILIDAD.json](CONTROL-RESPONSABILIDAD.json). Las generaciones y sesiones son metadatos de auditoría y no bloquean trabajo autorizado.
 - **MCP-NORMATIVO:** DESACTIVADO.
-- **Producto vs. documento:** MCP-OCP-v0.1.40 es la versión documental vigente; la versión de software objetivo es 1.0.0. La candidata ejecutable 0.1.0 y su recibo histórico no constituyen una versión actualizada ni aceptada del producto.
+- **Producto vs. documento:** MCP-OCP-v0.1.41 es la versión documental vigente; la versión de software objetivo es 1.0.0. La candidata ejecutable 0.1.0 y su recibo histórico no constituyen una versión actualizada ni aceptada del producto.
 - **Principio de custodia:** no guardar claves, access/refresh tokens, datos privados de usuario, contenido sensible de repositorios ni secretos en esta lista, artefactos, manifests o logs. Utilizar fixtures sintéticos y evidencia minimizada.
 
 ## Decisión de alcance operativa vigente
@@ -33,10 +33,10 @@ La tabla sustituye los PASS/estados de recibos históricos para la implementaci�
 | Orden | ID | Prioridad | Tarea | Estado vigente | Condición principal de salida |
 |---:|---|---|---|---|---|
 | 1 | MCP-OCP-01 | P0 | Contrato de producto y frontera OCP/Khora/Jules | VERIFICADO_EN_NUCLEO_V0.1.29 | Un servidor local STDIO; panel acompañante read-only en el producto final; dominios separados. |
-| 2 | MCP-OCP-02 | P0 | Rama limpia y reconciliación selectiva desde main | RECONCILIADA_CON_MAIN · 33_AHEAD/0_BEHIND · BUILD_VALIDADO_LOCAL | Merge `e5bd7d992f3fda83035cc43329353b846a25e9a8`; main `ff9c75926a2907c630f506c4e08c267b15bca7cf`; `.gitignore` seguro restaurado y SDK acotado al frente. |
-| 3 | MCP-OCP-05 | P0 | Corte vertical GOW:ARR → DUG → SINK:P004 | DUG_MDP_PATH_FIXED · BUILD_PASS · SINK_P004_STDIO_PASS_LOCAL · IPZ_E2E_PENDIENTE | Lector alineado a `document.principle_inventory_policy`; DUG v388 real y fixture canónico pasan. |
-| 4 | MCP-OCP-03 | P0 | Suite mínima de contrato del piloto P004 | 41_TESTS_EJECUTADOS · 18/18_P004 + 23/23_MONITOR_PASS | Ejecución local real en Windows/.NET 10.0.403; 0 warnings/errors en builds; no confundir con runner GitHub Ubuntu. |
-| 5 | MCP-OCP-04 | P0 | Transporte MCP STDIO y smoke P004 | HARNESS_PASS · STDIO_EOF_SMOKE_PASS_LOCAL · IPZ_E2E_PENDIENTE | Tres respuestas JSON-RPC en STDOUT; evento SINK_READ_SUCCESS en STDERR; aceptación IPZ sigue separada. |
+| 2 | MCP-OCP-02 | P0 | Rama limpia y reconciliación selectiva desde main | RECONCILIADA_CON_MAIN · 41_AHEAD/0_BEHIND · PR_ABIERTA_DRAFT | Merge actual `cc50e32924226e97afd56c5f0a611753d2c8b4dd`; main `e1fa64a37048651706fc449d145cf62fffce6901`; .gitignore seguro, global.json acotado al frente. |
+| 3 | MCP-OCP-05 | P0 | Corte vertical GOW:ARR → DUG → SINK:P004 | P004_LOCAL_PASS · PAQUETE_CANDIDATO_EN_PR_27 · SIN_HANDOFF_EP | ZIP/manifest/runbook/source-pin publicados en rama; 9/9 archivos y smoke del paquete PASS; runtime Fila 4 y gates EP pendientes. |
+| 4 | MCP-OCP-03 | P0 | Suite mínima de contrato del piloto P004 | 41/41_PASS_LOCAL · 18_P004 + 23_MONITOR | Windows/.NET 10.0.403; builds con 0 warnings/0 errors. GitHub-hosted CI sin runner, causa NO_VERIFICADA. |
+| 5 | MCP-OCP-04 | P0 | Transporte MCP STDIO y smoke P004 | STDIO_EOF_PASS_LOCAL · PACKAGE_SMOKE_PASS · IPZ_E2E_PENDIENTE | Initialize/tools/list/tools/call(P004)/EOF; tres respuestas JSON-RPC, SINK_READ_SUCCESS en STDERR. E2E IPZ sigue separado. |
 | 6 | MCP-OCP-05 (fase posterior) / 03 | P0 | Generalización Sink P001–P043 y lotes | PENDIENTE_POST_PILOTO | 43 respuestas, orden, hashes/eventos y controles negativos PASS. |
 | 7 | MCP-OCP-13 | P1 | Panel local de observabilidad visual | ESPECIFICADO · IMPLEMENTACIÓN_PENDIENTE | Obligatorio en 1.0.0; se implementa tras congelar schema, en paralelo con la generalización, y no bloquea el piloto SINK:P004. |
 | 8 | MCP-OCP-10 | P1 | Pins, manifiesto y evidencia final | PENDIENTE_EVIDENCIA_ACTUAL | Pins DUG v388/core vigente, SDK/RID, servidor+panel, tests y hashes. |
@@ -468,3 +468,13 @@ Se publicaron el contrato v0.1 y cuatro schemas sintéticos para envelope, manif
 - **Límite:** ejecución local Windows, no runner Ubuntu hospedado. Jobs GitHub anteriores sin runner asignado; causa raíz NO VERIFICADA. No se declara PASS de GitHub Actions.
 - **Siguiente gate:** revisión/aceptación de PR #27; instalación y respuesta visible desde contexto IPZ bajo EP/Gobernanza. No activar MCP-NORMATIVO ni escribir IPZ desde este OCP.
 
+---
+
+## Informe individual parcial · sprint H1 SINK:P004 · 2026-11-10
+
+- MCP-OCP-02: rama única reconciliada con main; compare 41 ahead / 0 behind en este corte, PR #27 OPEN/DRAFT.
+- MCP-OCP-03: build local PASS, 18/18 P004 + 23/23 monitor/readiness PASS; 0 warnings/0 errors.
+- MCP-OCP-04: STDIO/EOF smoke del harness y del paquete extraído PASS. Hosted GitHub runner sigue sin asignación observable.
+- MCP-OCP-05: paquete candidato persistido en entregas/piloto-sink-p004/ del branch PR #27. ZIP SHA-256 DE556FD547ACF2AB3946DF5AC2395A3993CB459B5E48F8E745A661A113A90783; manifest SHA-256 85F70366144FD2109D9688F2DDB6E7819FF955B8F05697C2FC6966E04F0044B1. Requiere Microsoft.NETCore.App 10.0.x x64. No se transfirió/instaló en EP.
+- Próximo gate: EP-TASK-003 PASS → EP-TASK-005 recibe y decide instalación; GOV-TASK-003 realiza aceptación IPZ E2E. No declarar el producto aceptado.
+- Fuente de detalle: MCP-METODOLOGIA.md §30.2–§30.5. Informes y blobs de cada artefacto se verificaron por read-back; el ZIP remoto se identifica por Git blob, pero la lectura de vuelta binaria quedó NO_VERIFICADA.
