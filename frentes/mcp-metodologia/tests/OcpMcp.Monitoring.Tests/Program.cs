@@ -118,6 +118,93 @@ try
         runner.Equal(1, File.ReadLines(Path.Combine(testRoot, "monitor", "events.jsonl")).Count());
     });
 
+    runner.Test("Protection Off blocks composite READY", () =>
+    {
+        MonitorReadinessResult result = MonitorReadinessEvaluator.Evaluate(Attestation("Protection Off"), ReadySnapshot(), true);
+        runner.Equal(false, result.Ready);
+        runner.Equal("EP_PROTECTION_NOT_ON", result.ReasonCode);
+    });
+
+    runner.Test("unknown EP protection state blocks composite READY", () =>
+    {
+        MonitorReadinessResult result = MonitorReadinessEvaluator.Evaluate(Attestation("UNKNOWN"), ReadySnapshot(), true);
+        runner.Equal(false, result.Ready);
+        runner.Equal("EP_PROTECTION_NOT_ON", result.ReasonCode);
+    });
+
+    runner.Test("Protection On plus every verified gate is the only READY path", () =>
+    {
+        MonitorReadinessResult result = MonitorReadinessEvaluator.Evaluate(
+            Attestation("Protection On"), ReadySnapshot(), true);
+        runner.Equal(true, result.Ready);
+        runner.Equal("READY", result.ReasonCode);
+    });
+
+    runner.Test("unverified process identity blocks composite READY", () =>
+    {
+        MonitorReadinessResult result = MonitorReadinessEvaluator.Evaluate(
+            Attestation("Protection On"), ReadySnapshot(), false);
+        runner.Equal(false, result.Ready);
+        runner.Equal("SERVER_PROCESS_NOT_VERIFIED", result.ReasonCode);
+    });
+
+    runner.Test("stopped process blocks composite READY", () =>
+    {
+        MonitorServerSnapshot state = ReadySnapshot() with
+        {
+            Server = ReadySnapshot().Server with { Lifecycle = "STOPPED" }
+        };
+        MonitorReadinessResult result = MonitorReadinessEvaluator.Evaluate(Attestation("Protection On"), state, true);
+        runner.Equal(false, result.Ready);
+        runner.Equal("SERVER_NOT_RUNNING", result.ReasonCode);
+    });
+
+    runner.Test("uninitialized protocol blocks composite READY", () =>
+    {
+        MonitorServerSnapshot state = ReadySnapshot() with { Protocol = new ProtocolState("NOT_INITIALIZED") };
+        MonitorReadinessResult result = MonitorReadinessEvaluator.Evaluate(Attestation("Protection On"), state, true);
+        runner.Equal(false, result.Ready);
+        runner.Equal("PROTOCOL_NOT_INITIALIZED", result.ReasonCode);
+    });
+
+    runner.Test("non-verified sources block composite READY", () =>
+    {
+        MonitorServerSnapshot state = ReadySnapshot() with
+        {
+            Sources = new SourceReadiness(true, "UNKNOWN", true, "v388", "NX-388m", "PENDING")
+        };
+        MonitorReadinessResult result = MonitorReadinessEvaluator.Evaluate(Attestation("Protection On"), state, true);
+        runner.Equal(false, result.Ready);
+        runner.Equal("SOURCES_INTEGRITY_NOT_VERIFIED", result.ReasonCode);
+    });
+
+    runner.Test("unprovisioned operator blocks composite READY", () =>
+    {
+        MonitorServerSnapshot state = ReadySnapshot() with { Operator = new OperatorReadiness(false, "UNKNOWN") };
+        MonitorReadinessResult result = MonitorReadinessEvaluator.Evaluate(Attestation("Protection On"), state, true);
+        runner.Equal(false, result.Ready);
+        runner.Equal("OPERATOR_NOT_PROVISIONED", result.ReasonCode);
+    });
+
+    runner.Test("unavailable protected data root blocks composite READY", () =>
+    {
+        MonitorServerSnapshot state = ReadySnapshot() with { DataRoot = new DataRootReadiness(true, false) };
+        MonitorReadinessResult result = MonitorReadinessEvaluator.Evaluate(Attestation("Protection On"), state, true);
+        runner.Equal(false, result.Ready);
+        runner.Equal("DATA_ROOT_NOT_AVAILABLE", result.ReasonCode);
+    });
+
+    runner.Test("future EP protection timestamp blocks composite READY", () =>
+    {
+        SessionAttestation session = Attestation("Protection On") with
+        {
+            ProtectionCheckedAtUtc = DateTimeOffset.UtcNow.AddHours(1)
+        };
+        MonitorReadinessResult result = MonitorReadinessEvaluator.Evaluate(session, ReadySnapshot(), true);
+        runner.Equal(false, result.Ready);
+        runner.Equal("EP_ATTESTATION_TIME_INVALID", result.ReasonCode);
+    });
+
     runner.Test("invalid data root returns unavailable rather than throwing", () =>
     {
         MonitorView view = new MonitorReader().Read(Path.Combine(root, "not-created"));
@@ -138,11 +225,28 @@ static string MonitorDir(string root, string? child = null)
     return dir;
 }
 
-static void WriteSession(string dir, int schemaVersion = 1, string state = "ACTIVE")
+static void WriteSession(string dir, int schemaVersion = 1, string state = "ACTIVE", string protectionState = "UNKNOWN")
 {
     var session = new SessionAttestation(schemaVersion, state, DateTimeOffset.UtcNow.AddMinutes(-2),
-        "UNKNOWN", DateTimeOffset.UtcNow.AddMinutes(-1));
+        protectionState, DateTimeOffset.UtcNow.AddMinutes(-1));
     File.WriteAllText(Path.Combine(dir, "session.json"), JsonSerializer.Serialize(session, JsonOptions()));
+}
+
+static SessionAttestation Attestation(string protectionState) => new(
+    1, "ACTIVE", DateTimeOffset.UtcNow.AddMinutes(-2), protectionState, DateTimeOffset.UtcNow.AddMinutes(-1));
+
+static MonitorServerSnapshot ReadySnapshot()
+{
+    DateTimeOffset now = DateTimeOffset.UtcNow;
+    return new MonitorServerSnapshot(
+        1, now,
+        new ServerProcessState("RUNNING", Environment.ProcessId, now.AddMinutes(-1), "1.0.0", "stdio"),
+        new ProtocolState("INITIALIZED"),
+        new SourceReadiness(true, "VERIFIED", true, "v388", "NX-388m", "VERIFIED"),
+        new OperatorReadiness(true, "PROVISIONED"),
+        new DataRootReadiness(true, true),
+        new ServerReadiness(true, "READY"),
+        new ServerActivity(null, null, now, 1, 0));
 }
 
 static MonitorServerSnapshot Snapshot() => new(
