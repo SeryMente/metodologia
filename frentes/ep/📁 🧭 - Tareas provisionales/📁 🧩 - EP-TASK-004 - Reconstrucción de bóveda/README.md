@@ -704,3 +704,16 @@ Al resolver esta tarea, el responsable debe agregar el informe individual en est
 - **Aceptación:** aceptación sintética H7/H8 para la candidata v1.0.0: PASS. Aceptación humana H10 e integración a main: PENDIENTES.
 - **Siguiente acción:** volver a EP-TASK-002 P0. Esperar desbloqueo local de EP Vault, verificar los cinco nombres y ejecutar P0-C únicamente dentro del TTL; hasta entonces no iniciar migración física.
 - **Conclusión:** PARCIAL. La suite sintética exacta v1.0.0 queda verificada en este host y bajo contexto propietario; H10, aceptación global y persistencia remota no se consideran cubiertas.
+
+### Adenda de corroboración y reconciliación de materialización local · 2026-11-10
+
+La suite del release exacto se reprodujo de forma independiente en Fila 4 con una copia temporal de los artefactos v1.0.0, sin sustituir la ruta de trabajo ni abrir la GUI:
+
+- **Fuente:** rama `feat/ep-vault-pc7-hardened-20261109`, corte de release `db4138ca2879148f2f22f159c7609f5fa3466924`; el HEAD de la rama `d8daf991e45a195e1faf6e14b8582c3c8b83e25d` conserva los mismos cinco blobs de producto.
+- **Manifiesto:** blob de entrada `5659d0e59c336baafc6e5bc2f13c988439758151`; tras verificar el retest se actualizó solo el campo `status` a `EXACT_V1_0_0_RETEST_PASS`, conservando `H10_PENDING` y `MAIN_MERGE_PENDING`. Commit de la actualización: `e165c0b867e20c9ae3156f6bad72c6f13ba8a5c5`; blob de read-back: `4de6dcc0a5989a2671c8009226405d7f189fe7fe`. Las 14 entradas del manifiesto permanecen intactas.
+- **Materialización temporal:** `C:\Users\fila4\EP-SYNTHETIC-V1.0.0-DB4138`, fuera de AppData y de `Desktop\SeryMente`. Los cinco blobs del test/Core/CLI/GUI/XAML coincidieron con el manifiesto; los dos WAV también coincidieron con sus blobs.
+- **Ejecución:** Windows PowerShell `5.1.26100.9711`; `tests/Test-EPVault.ps1`; exit code `0`; duración medida `142,61 s`; salida final `EP_VAULT_VALIDATION_PASS`. SHA-256 del log saneado: `D1D244ADAEA157AA8F295487CCCE9225207738F8865F4909771B5AED523416A1`.
+- **Read-back del aislamiento:** `LOCALAPPDATA_OUTER_UNCHANGED=True`; `FORBIDDEN_SYNTHETIC_VALUES_IN_LOG=False`; `RUNNER_TEMP_REMAINING_ITEMS=0`; `SYNTHETIC_SANDBOXES_REMAINING=0`; `FINAL_PASS=True`. No se emitieron valores sintéticos ni se accedió a la bóveda formal.
+- **Límite de procedencia local:** la carpeta `Desktop\SeryMente\Repositorios\Metodologia\metodologia\frentes\ep\...\EP-TASK-004` inspeccionada en esta sesión conserva un snapshot anterior (test `9230985801885c7cdd9202c2cfd041a6265ee80e`, Core `8a49d740e3c7b4c3b3be8e1aaf728b63a0d073e1`, CLI `cf1fe2d30c8f2f4c9913448260c3212a3bb7d9ce`, GUI `50a5ebd4e255400aee5a22ea106fd4fde9679c22`, XAML `6e56b9ddbdf5aa79dd9202c2cfd041a6265ee80e`). No se alteró. La ruta absoluta usada por la corrida previa de 165,41 s no quedó especificada en su informe; no se atribuye esa corrida a este checkout.
+- **Estado:** la candidata v1.0.0 obtiene una segunda verificación sintética PASS. La copia canónica de código bajo Desktop/SeryMente no se declara actualizada; la integración de PR #21 y la materialización del release en la ruta definitiva requieren su propio read-back. H10 y aceptación final permanecen PENDIENTES.
+
