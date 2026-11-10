@@ -39,7 +39,7 @@
 
 ## Destino vigente sprint MCP-OCP · 2026-11-10
 
-El host de trabajo e instalación del sprint MCP-OCP sigue siendo **Fila 4**. Preflight vivo del 2026-11-10: hostname **PC10RCIF4EI4**, perfil **CENTRAL\\fila4** / **C:\\Users\\fila4**, sesión **console / ID 1**, RDC Device ID **99383b36-cc22-4457-952f-8799cccac0a7**. El Device ID anterior **d0bbb2a3-d7b4-45e1-8870-652c2c3844fc** y SessionId 4 son referencias históricas no confirmadas en esta lectura. La ubicación física permanece sin clasificar: **central.gob.mx / DomainAuthenticated** no demuestra CECEQ ni LOC-OTHER. Resultado: **PREFLIGHT_FILA4=PARTIAL_FAIL**; C: XTS-AES128, Protection Off y sin protectores; checkout Metodología parcial sin .git. Workspace preservado.
+El destino de trabajo e instalación del sprint MCP-OCP es **Fila 4**, alias funcional designado por el operador; PC 7 queda supersedido. El preflight del 2026-11-10 observó una sesión de trabajo activa, pero los identificadores técnicos efímeros de host/sesión y los datos concretos de cuenta/perfil no se conservan conforme a DUG v388, ART-013. La ubicación física permanece **NO CLASIFICADA**; la presencia del operador frente a Fila 4 fue reportada, pero CECEQ no está confirmado. Resultado: **PREFLIGHT_FILA4=PARTIAL_FAIL**; C: XTS-AES128, Protection Off y sin protectores; checkout Metodología parcial sin `.git`; workspace original preservado.
 
 - [OEP §120 · rectificación del host y fast path IPZ/SINK](OEP.md#120-rectificación-de-host-de-trabajo-e-instalación-mcp-ocp--2026-11-10--oep-v0355)
 - [EP-TASK-003 · workspace Fila 4](./📁%20🧭%20-%20Tareas%20provisionales/📁%20🧩%20-%20EP-TASK-003%20-%20Mapa%20integral%20de%20construcción%20EP/README.md)
@@ -48,4 +48,4 @@ El host de trabajo e instalación del sprint MCP-OCP sigue siendo **Fila 4**. Pr
 OEP vigente: v0.3.58. PREFLIGHT_FILA4=PARTIAL_FAIL. El VHDX de 30 GiB quedó creado y montado como W: (última observación), GPT/NTFS, vacío y sin BitLocker; no se copió ni sustituyó Desktop/SeryMente. El diseño para conservar la ruta original sigue PROPOSED_NOT_ACCEPTED. Checkout protegido, dead-man si corresponde, instalación y SINK/IPZ E2E permanecen pendientes.
 
 - [OEP §122 · preflight vivo parcial Fila 4](OEP.md#122-preflight-vivo-parcial-de-fila-4--2026-11-10--ejecución-provisional-del-frente-ep)
-- [Evidencia saneada del preflight Fila 4](evidencias/EP-FILA4-PREFLIGHT-PARCIAL-20261110.json): PREFLIGHT_FILA4=PARTIAL_FAIL; commit 84cc9ffc1a2aa27c622c7e5de147d7460f3b5ecd; blob 8ebf0c2b54efc6d3fe597adfe0f9358e65e6acbe.
+- [Evidencia saneada del preflight Fila 4](evidencias/EP-FILA4-PREFLIGHT-PARCIAL-20261110.json): PREFLIGHT_FILA4=PARTIAL_FAIL; commit `2ac3dc5ad2970e71b15a21e33d0740e001c2b183`; blob `9bf9cc7edee2e8a0f483d7191e28b37b1e03e3e5` (evidencia saneada con read-back exacto).
