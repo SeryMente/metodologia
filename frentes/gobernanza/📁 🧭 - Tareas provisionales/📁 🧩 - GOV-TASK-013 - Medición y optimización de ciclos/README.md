@@ -291,3 +291,60 @@ Entregables del constructor: diagnóstico breve de `main` y de PR #353; diseño 
 La medición queda **PENDIENTE DE IMPLEMENTACIÓN** hasta que OCP MCP entregue el resolver individual y EP haya instalado/validado el proceso local con RDC. La aceptación exige prueba positiva de `GOW:ARR`, `DUG` y al menos un `SINK:Pxxx`; caso negativo de referencia inexistente/fuente obsoleta; comprobación del round-trip y lectura de vuelta del registro. No se fijará objetivo temporal antes de obtener muestras reales. La línea base se declarará preliminar hasta contar con al menos diez resoluciones completas y comparables; resumir esta única magnitud con mediana y tamaño de muestra, sin crear KPIs adicionales.
 
 **Responsabilidades:** Gobernanza define esta medición y acepta su evidencia; MCP-OCP implementa el resolver, el evento y el contrato local; EP instala/ejecuta el host y el transporte RDC. Esta ampliación no transfiere titularidad, no cambia controles de EP/MCP-OCP, no autoriza instalación, provisión del operador ni activación de `MCP-NORMATIVO`.
+
+
+---
+
+## OCP MCP 1.0 · correlación de sesión, dispositivo, ubicación y telemetría · 2026-11-10
+
+**Alcance aprobado por el operador:** incorporar metadatos de sesión y contexto del host al sprint OCP MCP 1.0. Esta extensión no redefine las magnitudes de medición ya fijadas aquí.
+
+### Identidad y nomenclatura
+
+Usar UUIDv7 como identidad técnica canónica y etiquetas secuenciales legibles por entidad, generadas atómicamente y reconciliables tras sesiones offline:
+
+- ORG-000001 · organización
+- WSP-000001 · workspace persistente
+- SES-YYYYMMDD-000001 · sesión
+- LOC-000001 · ubicación/alias
+- DEV-000001 · dispositivo observado
+- NET-000001 · snapshot de red
+- CONV-000001 · contexto de conversación local
+- CYC-000001 · ciclo
+- EVT-000001 · evento
+
+No incrustar IP, nombre, dirección, hostname, MAC o serial en identificadores. La etiqueta humana nunca reemplaza UUIDv7; no reutilizar folios FOL1 ni IDs nativos de plataforma.
+
+### Metadatos de sesión
+
+Registrar ID de sesión/workspace/ubicación/dispositivo/red, inicio y final UTC, zona IANA/offset, duración monotónica, fuente/precisión de reloj, renovación/heartbeat, finalización, motivo y estado de cierre. Contexto de ubicación: alias LOC, GPS cuando API del SO lo permita sin ralentizar, IP pública/local, IPv4/IPv6, operador/ASN y geolocalización IP aproximada con fuente/precisión. Los datos no disponibles quedan explícitamente marcados, nunca estimados.
+
+### Inventario robusto del dispositivo
+
+Integrar los resultados EP de SO/build/arquitectura, CPU/GPU familia, RAM, fabricante/modelo, almacenamiento HDD/SSD/UNKNOWN, modelo/bus/capacidad/volúmenes/sistema de archivos/espacio libre, cifrado observable, suspensión/hibernación, permisos/elevación, red/conectividad y versiones de OCP/EP/RDC. Inventario al inicio y al cambiar contexto relevante, no polling costoso. Identificadores de hardware destinados a correlación persistente se seudonimizan con HMAC/rotación; evitar almacenar seriales en claro cuando no sean necesarios. IP/GPS y metadatos identificables se cifran en reposo y al respaldar.
+
+La captura GPS se intenta por interfaces soportadas; si no hay permiso o dispositivo, registrar DENIED/UNAVAILABLE/ERROR con fuente y motivo. No evadir controles del sistema operativo. El operador declara autorización para inspeccionar los equipos donde opera y México como única jurisdicción de operación; esta declaración no elimina avisos/consentimientos u obligaciones legales que resulten aplicables.
+
+### Eventos y correlación
+
+El esquema de evento debe llevar event_id, schema_version, event_type, occurred_at_utc, session_id, workspace_id y referencias opcionales location_id, device_id, network_snapshot_id, conversation_id, cycle_id. Familias iniciales: session.started, session.heartbeat, session.lease.renewed, session.idle.warning, session.locked, session.ended, session.deadman.triggered, session.persistence.checkpoint, session.workspace.restored, session.cleanup.completed, session.device.inventory.completed, session.network.observed, conversation.linked, cycle.started, cycle.completed y cycle.not_measured.
+
+Correlacionar GOV-TASK-013 (cycle.duration_ms) y la métrica ya delimitada ipz.resolve.rdc.duration_ms sin redefinir límites, añadir KPIs de desempeño no aprobados o retrasar la entrega. La escritura del evento es posterior a la medición y fuera de la ruta crítica.
+
+### Conversaciones y retención
+
+Todo el contenido de conversaciones y adjuntos queda dentro del workspace cifrado y se incluye en snapshots cifrados. Los eventos y registros de telemetría contienen IDs/metadatos, no copias en texto claro del diálogo. Metadatos sensibles se cifran también. Retención solicitada: indefinida para información útil cifrada, sin expiración automática introducida por este sprint, sujeta a deberes legales y derechos de titulares.
+
+La referencia legal de implementación para México es la LFPDPPP publicada el 20-03-2025, texto vigente con última reforma DOF 14-11-2025. El tratamiento debe documentar finalidad, proporcionalidad, aviso, consentimiento cuando corresponda, seguridad, confidencialidad y mecanismo de atención de derechos; no interpretar la autorización de inspección del equipo como exención general de protección de datos. Fuente oficial: https://www.diputados.gob.mx/LeyesBiblio/pdf/LFPDPPP.pdf.
+
+### Criterios de aceptación
+
+1. Inicio/fin de sesión con UUIDv7 + etiqueta secuencial, UTC y duración monotónica.
+2. Ubicación/dispositivo/red vinculados con fuente, precisión y estados de disponibilidad; GPS y IP no bloquean apertura.
+3. Lease/heartbeat/trigger y eventos de persistencia/restore/cleanup correlacionados.
+4. Dos sesiones excepcionales no comparten claves, IDs de sesión, workspace montado ni lease.
+5. Contenido conversacional permanece cifrado; tests demuestran que no se filtra en JSONL, logs, manifests ni eventos.
+6. Telemetría cifrada y retenida según política; read-back íntegro.
+7. GOV-TASK-013 cycle.duration_ms e ipz.resolve.rdc.duration_ms conservan su semántica y medición monotónica, sin espera de red/persistencia antes de la respuesta.
+
+**Responsabilidad:** MCP-OCP-15 implementa schema/store; EP-TASK-007 captura inventario/ubicación/lease; Gobernanza 2 mantiene GOV-TASK-013 y correlación de medición. Gobernanza 1 conserva la coordinación y aceptación interfrente según control vigente.
