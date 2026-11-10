@@ -1,0 +1,109 @@
+{
+  "schema": "ep-preflight-evidence/1",
+  "title": "Preflight parcial en vivo de Fila 4",
+  "observed_at": "2026-11-10T11:29:04.1967065-06:00",
+  "timezone": "America/Mexico_City",
+  "canonical_source": {
+    "repository": "SeryMente/metodologia",
+    "branch": "main",
+    "head": "06467fb32f344e5ff7e4006479a4f614ecd21164",
+    "ep_control_blob": "bc9e1b33a607d82e31ca05170831bfaeec8a3598",
+    "ep_control_generation": 3,
+    "ep_oep_blob": "89267f2d263f8367024fa992d10de3b0a3509840",
+    "dug_version": "v388",
+    "dug_signature": "NX-388m",
+    "dug_commit": "3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c",
+    "dug_blob": "4db0ebadfd1e48b2bdec9236ba7f344921e4a865"
+  },
+  "provisional_execution": {
+    "authorized_by_direct_operator_instruction": true,
+    "temporary_only": true,
+    "control_generation_changed": false,
+    "ownership_transfer_performed": false
+  },
+  "device": {
+    "operational_label": "Fila 4",
+    "hostname": "PC10RCIF4EI4",
+    "current_remote_commander_device_id": "99383b36-cc22-4457-952f-8799cccac0a7",
+    "windows_identity": "CENTRAL\\fila4",
+    "profile": "C:\\Users\\fila4",
+    "interactive_session": {
+      "name": "console",
+      "id": 1,
+      "state": "Active"
+    },
+    "historical_session_id": 4,
+    "historical_session_id_current": false,
+    "network_profile": {
+      "name": "central.gob.mx",
+      "category": "DomainAuthenticated"
+    },
+    "physical_location": "UNCLASSIFIED",
+    "location_inference": "Network profile does not establish physical location"
+  },
+  "privileges": {
+    "fila4_identity_is_administrator": false,
+    "maintenance_identity": "CENTRAL\\MantenimientoRCI",
+    "maintenance_identity_is_administrator": true,
+    "maintenance_device_id": "b573344f-c68f-47c9-9c2e-ae67f2e63bdb",
+    "maintenance_session_used_for_read_only_bitlocker_probe": true
+  },
+  "bitlocker": {
+    "volume": "C:",
+    "size_gib": 237.48,
+    "conversion_status": "Fully encrypted (used-space only)",
+    "encryption_percentage": 100,
+    "encryption_method": "XTS-AES 128",
+    "protection_status": "Protection Off",
+    "lock_status": "Unlocked",
+    "key_protectors": [],
+    "gate": "FAIL"
+  },
+  "workspace": {
+    "root": "C:\\Users\\fila4\\Desktop\\SeryMente",
+    "exists": true,
+    "file_count": 2468,
+    "directory_count": 545,
+    "total_bytes": 127996970,
+    "total_mib": 122.07,
+    "existing_content_modified": false
+  },
+  "methodology_checkout": {
+    "path": "C:\\Users\\fila4\\Desktop\\SeryMente\\Repositorios\\Metodologia\\metodologia",
+    "exists": true,
+    "git_metadata_exists": false,
+    "observed_top_level_entries": [
+      "frentes"
+    ],
+    "classification": "partial materialization; not a Git checkout; must not be overwritten before preservation/reconciliation"
+  },
+  "local_tools": {
+    "git_available": true,
+    "gh_available": true,
+    "gh_auth_status": "authenticated in Windows user keyring; scopes include repo and read:org; token not exposed",
+    "hyperv_module_available": false,
+    "new_vhd_cmdlet_available": false,
+    "mount_vhd_cmdlet_available": false
+  },
+  "actions_not_performed": [
+    "No BitLocker configuration change",
+    "No VHDX creation or mount",
+    "No clone or overwrite of the partial Metodologia materialization",
+    "No secret or vault-value read",
+    "No dead-man installation",
+    "No source import or MCP installation"
+  ],
+  "result": "PREFLIGHT_PARTIAL_FAIL",
+  "blocking_conditions": [
+    "C: is XTS-AES128, Protection Off, and has no key protectors",
+    "No verified XTS-AES256 protected workspace volume/root",
+    "Physical location CECEQ vs other remains unverified",
+    "Methodology checkout is partial and lacks .git"
+  ],
+  "next_actions": [
+    "Operator confirms physical location and is present for security-sensitive change",
+    "Create/attach an XTS-AES256 BitLocker-protected workspace using an approved available method, with recovery protector escrow/read-back",
+    "Preserve and reconcile the existing partial frentes materialization",
+    "Clone full SeryMente/metodologia main into the protected target and verify branch/origin/HEAD/status plus SHA-256 manifest"
+  ]
+}
