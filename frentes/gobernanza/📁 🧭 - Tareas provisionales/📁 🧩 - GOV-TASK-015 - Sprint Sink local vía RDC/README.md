@@ -344,7 +344,7 @@ EP-TASK-004 GUI de bóveda y EP-TASK-002/Backblaze no bloquean P004 ni el build 
 
 ### Hallazgo MCP-OCP
 
-La consulta de referencias de GitHub encontró la rama `feat/mcp-ocp-sink-p004-pilot-20261110`. Su punta es `1676901cc09af6fcec4d052800b031e4c2f1ab40`, no el `main` vigente. En la comparación refrescada del 2026-11-10, `main` observado en `9eb2c9b0deb4ff63e1b27a1dfc620f2d2544a3c3` estaba 52 commits por delante de esa referencia y la rama no tenía commits exclusivos por delante de `main` (`ahead_by=52`, `behind_by=0`, al comparar rama → main). Además, los archivos del frente leídos en esa rama conservaban referencias a DUG v386 y core v0.1.27, no el baseline v388/v0.1.28 requerido.
+La consulta de referencias de GitHub encontró la rama `feat/mcp-ocp-sink-p004-pilot-20261110`. Su punta es `1676901cc09af6fcec4d052800b031e4c2f1ab40`, no el `main` vigente. En el cotejo refrescado inmediatamente antes de este asiento (2026-11-10), `main` observado en `ec22784d82cad2c536f1d5ab996ddbfd3b7717cd` estaba 64 commits por delante de esa referencia y la rama no tenía commits exclusivos por delante de `main` (`ahead_by=64`, `behind_by=0`, al comparar rama → main). Además, los archivos del frente leídos en esa rama conservaban referencias a DUG v386 y core v0.1.27, no el baseline v388/v0.1.28 requerido.
 
 **Conclusión:** la rama existe como referencia, pero no satisface MCP-OCP-02. No se declara una rama limpia rebaselined ni código P004 implementado. La salida de MCP-OCP-02 sigue siendo una rama nueva/limpia desde el HEAD de `main` vigente, con mapa REUSE/ADAPT/REWRITE/DROP, SDK/RID fijados y lectura de vuelta del pin DUG v388. No fusionar la referencia histórica completa.
 
