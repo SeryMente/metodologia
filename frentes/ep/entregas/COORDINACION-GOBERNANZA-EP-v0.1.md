@@ -2667,3 +2667,34 @@ Siguiente acción concreta: el operador desbloquea EP Vault localmente; EP compr
 No se efectuó copia, cifrado ni montaje del workspace; no se alteró el ciphertext formal; no se modificó main de producto, no se fusionó rama ni se aceptó H10.
 
 **Estado del ciclo:** `PUBLICADO → LEÍDO → RESPUESTA_INICIAL_REGISTRADA → PROCESADO → DOCUMENTADO_AL_CIERRE → VERIFICADO_READBACK`.
+
+---
+
+## EP/MCP · cierre de retest EP Vault y transferencia del carril independiente · 2026-11-10
+
+### EP-TASK-004 · corroboración sintética
+
+- Se reprodujo la suite exacta MOD-EPVAULT/v1.0.0 en Fila 4 desde una materialización temporal del release `db4138ca2879148f2f22f159c7609f5fa3466924`, con cinco blobs de código y dos recursos WAV cotejados contra el manifiesto.
+- Resultado: `EP_VAULT_VALIDATION_PASS`, exit 0, 142,61 s; PowerShell 5.1.26100.9711; log saneado SHA-256 `D1D244ADAEA157AA8F295487CCCE9225207738F8865F4909771B5AED523416A1`.
+- El sandbox se eliminó; `LOCALAPPDATA_OUTER_UNCHANGED=True`, `FORBIDDEN_SYNTHETIC_VALUES_IN_LOG=False`, `RUNNER_TEMP_REMAINING_ITEMS=0`.
+- Manifiesto de la rama candidata actualizado/read-back: commit `e165c0b867e20c9ae3156f6bad72c6f13ba8a5c5`, blob `4de6dcc0a5989a2671c8009226405d7f189fe7fe`. Informe individual main: commit `00c20d925711410a91f446fb943757c824765361`, blob `fa31b43ab882e9e24d8e61b494b176c0d700ba25`. Índice EP: commit `1070bed73194f66aee5b539cee35cb62aab87b81`, blob `3cd70e649d49e82b10f0f9337cdde89ed8813229`. OEP v0.3.63 / §129: commit `9b999644abc39235ac20c9bf3a6279d896db6d81`, blob `5998709ef6c7cf4667ac5c6aa7c4403765c8dd97`.
+- EP-TASK-004 permanece `en_curso`; H10 y merge a main siguen pendientes. La carpeta Desktop/SeryMente se comprobó como snapshot anterior y no se sustituyó.
+
+### Cola EP
+
+- EP-TASK-002: dos variantes P0-C autenticaron y encontraron bucket privado, pero fallaron antes de upload; v3 parser PASS quedó preparada y no se ejecutó porque la sesión formal se selló. Requiere desbloqueo local, no credenciales por chat.
+- EP-TASK-003: diseño aceptado; preflight PARTIAL_FAIL y actividad concurrente en Temporal. No congelar ni copiar workspace.
+- EP-TASK-005: bloqueada por EP-TASK-003 PASS y paquete P004 probado.
+- EP-TASK-006/007/001: dependencias y estado sin cambio material.
+
+### Siguiente trabajo seleccionado · MCP-OCP H1
+
+El carril EP no tiene una ejecución material segura sin intervención local del operador para reabrir Vault; por tanto se selecciona el trabajo remoto independiente autorizado en MCP-OCP, dentro de `frentes/mcp-metodologia/`:
+
+1. corregir el lector DUG que busca `principle_inventory_policy` en la raíz, cuando DUG v388 lo ubica en `document.principle_inventory_policy`;
+2. corregir el fixture sintético para reproducir la estructura canónica y evitar falsos positivos;
+3. restaurar exclusiones de secretos/DB/logs en el `.gitignore` de la candidata y reducir el alcance del `global.json` al frente MCP-OCP;
+4. sincronizar la PR #27 con main vigente y volver a ejecutar restore/build, 41 pruebas y STDIO smoke con evidencia local.
+
+Este trabajo usa el alcance MCP-OCP ya autorizado. No modifica EP, Vault, Backblaze, host, DUG, IPZ, Khora ni activa MCP-NORMATIVO. La integración/aceptación H1 permanece pendiente hasta resultados y read-back.
+
