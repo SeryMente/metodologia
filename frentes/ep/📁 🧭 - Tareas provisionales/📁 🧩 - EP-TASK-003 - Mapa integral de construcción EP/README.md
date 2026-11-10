@@ -334,3 +334,42 @@ EP-TASK-003 prepara Fila 4 en paralelo al desarrollo MCP remoto. El primer uso d
 ### Estado de evidencia
 
 Esta actualización cambia la prioridad y hace explícitas las dependencias; no ejecuta lectura viva de Fila 4, cifrado, checkout, migración, dead-man, instalación ni importación. Todos siguen `PENDIENTE/NO_VERIFICADO` hasta evidencia local y read-back. EP-TASK-003 permanece `en_curso`.
+
+---
+
+## Ciclo provisional EP · preflight vivo Fila 4 · 2026-11-10
+
+**Ejecución:** esta sesión atiende provisionalmente EP por instrucción directa del operador mientras EPO trabaja en otra actividad. No se transfiere titularidad ni se modifica el control de responsabilidad generación 3.
+
+### Resultado observado
+
+- Hostname: PC10RCIF4EI4.
+- Usuario/perfil: CENTRAL\fila4 / C:\Users\fila4.
+- Sesión activa: console, ID 1. El Session ID 4 documentado antes es histórico y no coincide con la observación actual.
+- Device ID RDC que corresponde al token CENTRAL\fila4: 99383b36-cc22-4457-952f-8799cccac0a7. La ubicación física sigue sin clasificar; el perfil de red DomainAuthenticated central.gob.mx no permite inferir CECEQ.
+- El usuario Fila 4 no está elevado. Una conexión administrativa separada del mismo host, CENTRAL\MantenimientoRCI, se utilizó únicamente para lectura de BitLocker.
+- C: aparece 100 % cifrado de espacio usado, pero con XTS-AES 128, Protection Off y sin protectores. **No satisface el gate** XTS-AES256 + Protection On + 100 % + protector recuperable/read-back.
+- Workspace existente: 2,468 archivos, 545 directorios, 127,996,970 bytes. No se modificó ni sobrescribió.
+- Checkout de Metodología existente: solo contiene frentes\ en la raíz; no existe .git. Es materialización parcial, no clon íntegro.
+- Git y gh disponibles. gh auth status en el perfil Fila 4 confirmó cuenta autenticada por keyring con scopes repo/read:org; ningún token se leyó ni se divulgó.
+- Hyper-V/New-VHD no disponible en la sesión administrativa inspeccionada. No se creó ni montó VHDX.
+
+### Estado del gate
+
+**PREFLIGHT_FILA4=PARTIAL_FAIL**  
+**IDENTITY=OBSERVED · LOCATION=UNCLASSIFIED · BITLOCKER_GATE=FAIL · CHECKOUT=PARTIAL_NO_GIT · EXISTING_CONTENT=PRESERVED**
+
+No se ejecutó configuración de BitLocker, modificación de ACL, VHDX, dead-man, clonación ni importación. Tampoco se ejecutó instalación MCP, DB, provisión de operador o runtime persistente.
+
+### Siguiente acción material
+
+1. Obtener confirmación de la ubicación física y presencia del operador para revisar el cambio de almacenamiento/cifrado.
+2. Preparar un volumen de trabajo protegido verificable con XTS-AES256, Protection On, porcentaje completo y protector recuperable con read-back; no reutilizar el C: actual como si ya cumpliera.
+3. Preservar y reconciliar primero la materialización parcial existente; luego clonar el repositorio privado desde main en el volumen protegido y generar manifiestos SHA-256.
+4. Configurar el root MCP-OCP fuera del checkout y dentro del volumen protegido.
+5. Resolver el dead-man exclusivamente si la ubicación real es distinta de CECEQ.
+6. Mantener EP-TASK-005 pendiente hasta que EP-TASK-003 pase y MCP-OCP entregue paquete P004 con manifest/SHA y pruebas.
+
+**Evidencia:** EP-FILA4-PREFLIGHT-PARCIAL-20261110.json en evidencias/, main commit 84cc9ffc1a2aa27c622c7e5de147d7460f3b5ecd, blob 8ebf0c2b54efc6d3fe597adfe0f9358e65e6acbe, read-back exacto.
+
+**Estado de la tarea:** continúa en_curso; no se marca PASS ni se cierra.
