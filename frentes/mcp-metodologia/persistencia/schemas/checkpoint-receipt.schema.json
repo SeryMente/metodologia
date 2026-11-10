@@ -1,0 +1,135 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MCP-OCP checkpoint receipt · draft 0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "receipt_id",
+    "workspace_id",
+    "session_id",
+    "snapshot_id",
+    "started_at_utc",
+    "finished_at_utc",
+    "budget_ms",
+    "result",
+    "highest_confirmed_state",
+    "remote_backend"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "mcp-ocp.checkpoint-receipt/0.1-draft"
+    },
+    "receipt_id": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "workspace_id": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "session_id": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "snapshot_id": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "started_at_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "finished_at_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "budget_ms": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 30000
+    },
+    "result": {
+      "enum": [
+        "CONFIRMED",
+        "NOT_CONFIRMED",
+        "SKIPPED_EMERGENCY"
+      ]
+    },
+    "highest_confirmed_state": {
+      "enum": [
+        "NONE",
+        "LOCAL_DURABLE",
+        "REMOTE_UPLOADED",
+        "REMOTE_VERIFIED",
+        "RESTORE_VERIFIED"
+      ]
+    },
+    "remote_backend": {
+      "enum": [
+        "BACKBLAZE",
+        "NOT_APPLICABLE"
+      ]
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+      },
+      "uniqueItems": true
+    },
+    "reason_code": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 96
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "result": {
+            "const": "SKIPPED_EMERGENCY"
+          }
+        },
+        "required": [
+          "result"
+        ]
+      },
+      "then": {
+        "properties": {
+          "highest_confirmed_state": {
+            "const": "NONE"
+          },
+          "remote_backend": {
+            "const": "NOT_APPLICABLE"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "highest_confirmed_state": {
+            "enum": [
+              "REMOTE_UPLOADED",
+              "REMOTE_VERIFIED",
+              "RESTORE_VERIFIED"
+            ]
+          }
+        },
+        "required": [
+          "highest_confirmed_state"
+        ]
+      },
+      "then": {
+        "properties": {
+          "remote_backend": {
+            "const": "BACKBLAZE"
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MCP-OCP journal event · draft 0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "event_id",
+    "workspace_id",
+    "session_id",
+    "sequence",
+    "occurred_at_utc",
+    "event_type",
+    "previous_event_sha256",
+    "event_sha256",
+    "object_refs"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "mcp-ocp.journal-event/0.1-draft"
+    },
+    "event_id": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "workspace_id": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "session_id": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "sequence": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "occurred_at_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "event_type": {
+      "enum": [
+        "checkpoint.started",
+        "checkpoint.local_durable",
+        "checkpoint.remote_uploaded",
+        "checkpoint.remote_verified",
+        "restore.started",
+        "restore.verified",
+        "persistence.failed"
+      ]
+    },
+    "monotonic_elapsed_ms": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "previous_event_sha256": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "event_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "object_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+      },
+      "uniqueItems": true
+    },
+    "reason_code": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 96
+    }
+  }
+}

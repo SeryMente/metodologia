@@ -1,0 +1,215 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MCP-OCP snapshot manifest · draft 0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "snapshot_id",
+    "workspace_id",
+    "source_session_id",
+    "captured_at_utc",
+    "snapshot_kind",
+    "parent_snapshot_id",
+    "sequence_high_watermark",
+    "retention_policy",
+    "datasets",
+    "objects"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "mcp-ocp.snapshot-manifest/0.1-draft"
+    },
+    "snapshot_id": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "workspace_id": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "source_session_id": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "captured_at_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "snapshot_kind": {
+      "enum": [
+        "FULL",
+        "INCREMENTAL"
+      ]
+    },
+    "parent_snapshot_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "sequence_high_watermark": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "retention_policy": {
+      "const": "INDEFINITE_CIPHERTEXT_SUBJECT_TO_LAW_AND_VALID_REQUESTS"
+    },
+    "datasets": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "dataset_kind",
+          "object_count",
+          "plaintext_bytes",
+          "ciphertext_bytes",
+          "encryption_profile_ref"
+        ],
+        "properties": {
+          "dataset_kind": {
+            "enum": [
+              "workspace_files",
+              "repositories",
+              "conversations",
+              "attachments",
+              "vault_ciphertext",
+              "ocp_metadata"
+            ]
+          },
+          "object_count": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "plaintext_bytes": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "ciphertext_bytes": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "encryption_profile_ref": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160
+          }
+        }
+      }
+    },
+    "objects": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "object_id",
+          "dataset_kind",
+          "logical_path",
+          "plaintext_bytes",
+          "plaintext_sha256",
+          "ciphertext_object_id",
+          "ciphertext_bytes",
+          "ciphertext_sha256",
+          "encryption_profile_ref"
+        ],
+        "properties": {
+          "object_id": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+          },
+          "dataset_kind": {
+            "enum": [
+              "workspace_files",
+              "repositories",
+              "conversations",
+              "attachments",
+              "vault_ciphertext",
+              "ocp_metadata"
+            ]
+          },
+          "logical_path": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2048,
+            "pattern": "^(?!/)(?![A-Za-z]:)(?!.*(?:^|/)\\.\\.(?:/|$)).+"
+          },
+          "plaintext_bytes": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "plaintext_sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "ciphertext_object_id": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+          },
+          "ciphertext_bytes": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "ciphertext_sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "encryption_profile_ref": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160
+          }
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "snapshot_kind": {
+            "const": "FULL"
+          }
+        },
+        "required": [
+          "snapshot_kind"
+        ]
+      },
+      "then": {
+        "properties": {
+          "parent_snapshot_id": {
+            "type": "null"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "snapshot_kind": {
+            "const": "INCREMENTAL"
+          }
+        },
+        "required": [
+          "snapshot_kind"
+        ]
+      },
+      "then": {
+        "properties": {
+          "parent_snapshot_id": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+          }
+        }
+      }
+    }
+  ]
+}

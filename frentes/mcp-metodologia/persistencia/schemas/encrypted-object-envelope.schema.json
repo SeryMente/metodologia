@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MCP-OCP encrypted object envelope · draft 0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "object_id",
+    "object_type",
+    "ciphertext_sha256",
+    "ciphertext_bytes",
+    "encryption_profile_ref",
+    "key_reference",
+    "envelope_format"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "mcp-ocp.encrypted-object/0.1-draft"
+    },
+    "object_id": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "object_type": {
+      "enum": [
+        "snapshot_manifest",
+        "dataset_object",
+        "journal_segment"
+      ]
+    },
+    "ciphertext_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "ciphertext_bytes": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "encryption_profile_ref": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 160
+    },
+    "key_reference": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 160,
+      "description": "Opaque identifier only; never key material."
+    },
+    "envelope_format": {
+      "const": "mcp-ocp-ciphertext-object/0.1"
+    },
+    "opaque_parameters": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Non-secret profile metadata; shape belongs to the EP-approved crypto profile."
+    }
+  }
+}

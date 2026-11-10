@@ -4,7 +4,7 @@
 
 - **Nombre canónico vigente:** MCP-OCP (anteriormente MCP-METODOLOGIA).
 - **Identidad canónica vigente:** MCP-OCP. **Identidad histórica:** MCP-METODOLOGIA.
-- **Versión/sello:** MCP-OCP-v0.1.34 · OCP MCP 1.0; H1 SINK:P004, H2 persistencia mínima/bóveda y H3 workspace completo definidos; Sink local por stdio autorizado; contrato DUG v388/NX-388m; piloto P004 pendiente; bootstrap del perfil persistente pendiente. Las generaciones y folios de sesiones anteriores son metadatos de auditoría.
+- **Versión/sello:** MCP-OCP-v0.1.35 · OCP MCP 1.0; H1 SINK:P004, H2 persistencia mínima/bóveda y H3 workspace completo definidos; Sink local por stdio autorizado; contrato DUG v388/NX-388m; piloto P004 pendiente; bootstrap del perfil persistente pendiente. Las generaciones y folios de sesiones anteriores son metadatos de auditoría.
 - **Repositorio propietario:** SeryMente/metodologia, rama main.
 - **OCP canónico:** frentes/mcp-metodologia/.
 - **Núcleo operativo único:** este archivo, MCP-METODOLOGIA.md.
@@ -793,3 +793,12 @@ EP-TASK-007 es independiente del gate físico de Fila 4 en EP-TASK-003. El guard
 El último intercambio y la última salida visible anterior se preservan literalmente en [CONTINUIDAD-2026-11-10-ULTIMO-TRAMO.md](conversaciones/CONTINUIDAD-2026-11-10-ULTIMO-TRAMO.md), blob `1373127651be36afcf49dc1ae4fb623948165daf`. La frase histórica de que aún faltaba crear MCP-OCP-02 queda supersedida por §22: la rama ya fue creada y reconciliada con el main actual. Esta captura parcial no se presenta como export nativo de ChatGPT.
 
 **Estado del núcleo:** MCP-OCP-v0.1.34 en esta rama candidata; el núcleo canónico de main permanece sin cambios hasta la revisión/aceptación de la PR. FOL1 continúa PREPARADO/NO ACTIVO; MCP-NORMATIVO permanece DESACTIVADO.
+
+
+## 24. MCP-OCP-14 · contrato base propuesto · H2/H3 · 2026-11-10
+
+- Se añadió [MCP-OCP-14-CONTRATO.md](persistencia/MCP-OCP-14-CONTRATO.md) y cuatro JSON Schemas sintéticos: envelope cifrado, snapshot manifest, journal event y checkpoint receipt.
+- El contrato fija snapshot FULL por instancia, journal append-only, hashes, estados separados `LOCAL_DURABLE` / `REMOTE_UPLOADED` / `REMOTE_VERIFIED` / `RESTORE_VERIFIED`, y checkpoint normal de máximo 30 s con `NOT_CONFIRMED` o `SKIPPED_EMERGENCY` sin prolongar cierre/lease.
+- El manifest lógico se cifra también; los schemas no definen algoritmo/KDF ni contienen valores de clave. `encryption_profile_ref` y `key_reference` son referencias opacas, pendientes del perfil aprobado por EP.
+- Backblaze permanece único backend inicial. EP posee root/ACL, perfil criptográfico, custodia de claves, B2 y restore; Gobernanza/GOV-TASK-014 acepta integridad, privacidad y restauración.
+- **Estado:** contrato y schemas PROPOSED / NO ACCEPTED. No hay runtime, DB, escritura, B2, restore ni pruebas ejecutadas. La entrega no amplía acceso a Vault, credenciales ni host.
