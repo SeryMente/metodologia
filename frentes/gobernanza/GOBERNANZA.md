@@ -562,3 +562,21 @@ Este cierre DTC no completa EP-TASK-002. Autenticación B2, cuenta/región, buck
 **Límites preservados:** FOL1 `PREPARADO_PENDIENTE_ACTIVACION_IPZ`; folios globales CV/CY/A/B PENDIENTE / NO ASIGNADO; MCP-NORMATIVO DESACTIVADO; control/host EP y control/código MCP-OCP sin cambios.
 
 **Crónica y evidencia:** [C-GOBERNANZA-OCP-MCP-PERFORMANCE-01](cronica/C-GOBERNANZA-OCP-MCP-PERFORMANCE-01.md) · [recibo JSON](evidencias/C-GOBERNANZA-OCP-MCP-PERFORMANCE-01.json).
+
+---
+
+## Sprint SINK-P004 · estado y dependencias interfrente · 2026-11-10
+
+**Nombre operativo:** SINK-P004. **Coordinador:** GOV-TASK-015. Objetivo de primera fase: obtener `SINK:P004` íntegro desde el contexto IPZ real por RDC → MCP-OCP STDIO → respuesta visible al modelo, con pin/hash.
+
+**Fuente normativa:** Samantha v388/NX-388m; ART-027 commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`, blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`. No se modifica el DUG en este asiento.
+
+**Dependencias:**
+1. MCP-OCP-02: nueva rama limpia desde main; la candidata histórica no es base válida.
+2. MCP-OCP-05: corte vertical P004; MCP-OCP-03 y 04 ejecutan fixtures y harness en paralelo.
+3. EP-TASK-003: preflight Fila 4 y protección del workspace conservando la ruta habitual. Último estado `PARTIAL_FAIL`; el diseño VHDX/BitLocker montado sobre la ruta original no está aceptado. EP reanuda la tarea según OEP §124; no se ejecutó host desde Gobernanza.
+4. EP-TASK-005: instalación del piloto solo tras EP-TASK-003 PASS y paquete P004 manifestado/probado.
+5. GOV-TASK-007/003: candidato IPZ y aceptación de recorrido real; no confundir consola con E2E IPZ.
+6. Tras P004 PASS, generalización 43+8; panel WPF obligatorio para release 1.0.0, no para P004.
+
+**Estado:** `MCP_OCP_02=OPEN` · `MCP_OCP_05=PENDING` · `EP_TASK_003=PARTIAL_FAIL` · `EP_TASK_005=PENDING` · `GOV_E2E=PENDING` · `IPZ_NATIVE=NOT_VERIFIED` · `FOL1=PREPARED_NOT_ACTIVE` · `MCP_NORMATIVO=DESACTIVADO`. Este asiento no declara código, pruebas, instalación ni E2E completados.
