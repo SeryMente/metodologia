@@ -770,3 +770,12 @@ Sprint OCP MCP 1.0 / SINK-P004: recuperar el texto normativo íntegro P004 desde
 ### Paquete de recuperación R3 · distinción local/remoto
 
 R3 `EP-Workspace-Recovery-R3-20261110.zip` (creado 17:21:27 local; 107.014.352 bytes; 3.342 entradas) incluye dos ciphertexts de Vault y un `Restore-Workspace.ps1` con instrucciones de un paso. **R3 está solo local; presencia/carga en B2 NO_VERIFICADA.** No reemplaza al R2 remoto acreditado. R2 sigue siendo el objeto remoto utilizable para descarga/extracción sencilla. No se repite transferencia R2. R3 queda como candidato para siguiente carga cuando Vault esté desbloqueada y se pueda autenticar B2.
+
+
+### Nomenclatura de snapshots · hora local obligatoria
+
+A partir del siguiente paquete nuevo, usar:
+
+`EP-Workspace-Recovery_YYYY-MM-DD_DIA_HH-mm_America-Mexico_City_RN.zip`
+
+Día en español; hora 24h; zona IANA `America/Mexico_City`; instante de creación real del snapshot. Para el corte comunicado por el operador (martes 10-11-2026 17:32, UTC−06:00), ejemplo: `EP-Workspace-Recovery_2026-11-10_Martes_17-32_America-Mexico_City_RN.zip`. No renombrar retroactivamente los objetos remotos existentes ni falsear la hora del snapshot: R2 remoto fue creado 16:40:04; R3 local 17:21:27.
