@@ -87,3 +87,11 @@ Esta subsección no sustituye el registro original de la comparación inicial 0/
 - Core candidato v0.1.36; backlog provisional LIST_VERSION 0.17.
 - MCP-OCP-14: contrato propuesto v0.1 y cuatro JSON Schemas parseables. Son documentación/esquemas, no motor ni escritura; perfil criptográfico, root, keys, B2 y restore siguen bajo EP. No hubo validación formal con suite ni aceptación GOV-TASK-014.
 - H1: 41 pruebas escritas / 0 ejecutadas con evidencia; build/smoke sin verificar. CI jobs recientes no asignan runner (`runner_id=0`), no tienen pasos, logs `BlobNotFound` ni artefactos; causa raíz no verificada.
+
+
+## Estado más reciente después del registro H2 · 2026-11-10
+
+- HEAD de rama observado: `d50ae21ee96de04d2d99b4eaf8038f2620c249f8`; main `8f999198f1d8cde71361c884c9a13b745f442b49`; 22 ahead / 0 behind; 29 rutas; PR #27 OPEN/DRAFT/NOT MERGED.
+- Core MCP-OCP v0.1.37; backlog LIST v0.18.
+- H2: contrato MCP-OCP-14 propuesto + 4 schemas JSON parseables. No se implementó motor/DB/IO/cifrado/B2/restore.
+- H1 CI: job más reciente piloto `130142324655`, `runner_id=0`, `steps=[]`, logs `BlobNotFound`, sin artifacts. No ejecución acreditada.
