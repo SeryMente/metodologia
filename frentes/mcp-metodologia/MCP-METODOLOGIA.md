@@ -4,7 +4,7 @@
 
 - **Nombre canónico vigente:** MCP-OCP (anteriormente MCP-METODOLOGIA).
 - **Identidad canónica vigente:** MCP-OCP. **Identidad histórica:** MCP-METODOLOGIA.
-- **Versión/sello:** MCP-OCP-v0.1.39 · OCP MCP 1.0; H1 SINK:P004, H2 persistencia mínima/bóveda y H3 workspace completo definidos; Sink local por stdio autorizado; contrato DUG v388/NX-388m; piloto P004 pendiente; bootstrap del perfil persistente pendiente. Las generaciones y folios de sesiones anteriores son metadatos de auditoría.
+- **Versión/sello:** MCP-OCP-v0.1.40 · OCP MCP 1.0; H1 SINK:P004, H2 persistencia mínima/bóveda y H3 workspace completo definidos; Sink local por stdio autorizado; contrato DUG v388/NX-388m; piloto P004 pendiente; bootstrap del perfil persistente pendiente. Las generaciones y folios de sesiones anteriores son metadatos de auditoría.
 - **Repositorio propietario:** SeryMente/metodologia, rama main.
 - **OCP canónico:** frentes/mcp-metodologia/.
 - **Núcleo operativo único:** este archivo, MCP-METODOLOGIA.md.
@@ -858,3 +858,31 @@ El último intercambio y la última salida visible anterior se preservan literal
 - Control MCP-OCP generación 5 intacto. FOL1 NO ACTIVO; MCP-NORMATIVO DESACTIVADO.
 
 **Siguiente paso:** obtener un runner observable; luego ejecutar build, 41 pruebas y smoke STDIO/EOF. No reintentar a ciegas.
+
+## 29. Validación local ejecutable H1, corrección de pin DUG y alcance seguro · 2026-11-10
+
+### 29.1 Reconciliación y corrección
+
+- Main incorporado como segundo padre: `ff9c75926a2907c630f506c4e08c267b15bca7cf`; merge de reconciliación: `e5bd7d992f3fda83035cc43329353b846a25e9a8`; HEAD local y remoto cotejado. Compare: 33 ahead / 0 behind; merge-base = main.
+- La suite real había fallado en `DugSourceReader.ReadP004()`: el código buscaba `root.principle_inventory_policy`; el DUG v388 la define en `document.principle_inventory_policy`. El lector ahora exige la propiedad dentro de `document` y falla con `SINK_MDP_POLICY_CONTRACT_MISMATCH` si falta o no es objeto.
+- `FixtureHtml` reproduce la estructura real anidando el MDP bajo `document`; ya no oculta el defecto con un fixture sintético incorrecto.
+- Se recuperó el `.gitignore` de main, blob `845b93c0bf8f268d175969f61878f27e61a94ebd`, con exclusiones `.env/.env.*`, claves/certificados, bases de datos y logs. El `global.json` raíz fue retirado y el pin 10.0.403 quedó en `frentes/mcp-metodologia/global.json`; el workflow observa esa ruta.
+
+### 29.2 Evidencia de validación local
+
+Entorno: Windows 10.0.26200 x64; .NET SDK 10.0.403; PowerShell 7.4.22; checkout temporal limpio bajo `%TEMP%\mcp-ocp-ci-local`. Se ejecutó el harness versionado `piloto-sink/ci/Invoke-PilotValidation.ps1` desde `frentes/mcp-metodologia/`.
+
+- Restore de ambas suites: PASS.
+- Build de `OcpMcp`, `OcpMcp.Pilot.Tests` y `OcpMcp.Monitoring.Tests`: PASS; 0 advertencias y 0 errores en los tres builds.
+- Pruebas P004: `PILOT_TEST_SUMMARY PASS=18 FAIL=0`.
+- Pruebas de monitor/readiness: `MONITOR_TEST_SUMMARY PASS=23 FAIL=0`.
+- Smoke real MCP por STDIO/EOF: initialize, tools/list y tools/call; tres respuestas JSON-RPC en STDOUT, un evento `SINK_READ_SUCCESS` en STDERR; P004, DUG v388, commit/blob y hashes cotejados. `PILOT_CI_RESULT=PASS`, exit code 0.
+- Resumen de smoke SHA-256: `2D5C90D467B5508A9FAD22F0C00902035D9F3FE7F703B052AAB13365BE2C0B31`; log de pruebas P004 SHA-256 `D6F21749D8898B6624988BF056DA2BCC66DA3A5DF1CAE8FFA1FA2DB36DEB338B`; log de monitor SHA-256 `B9B3F2B5A42285CC3D81AE5EEFBDC678104E5E408A861BB5D1045885CBC29989`; stdout STDIO SHA-256 `7818B9894239D7760EAD89D18BA78244096041FE2738C639F840A5FCD9918938`; stderr STDIO SHA-256 `8614035B5585D84175B53B1DE4A126ED6B3A84BDED7E6BE51153A2FB8AF2D61B`.
+- `git diff --check` sin salida; árbol de trabajo limpio después del harness.
+
+### 29.3 Alcance y estado restante
+
+La ejecución es evidencia local real sobre Windows, no una ejecución del runner hospedado Ubuntu de GitHub. Los jobs previos siguen sin asignación de runner; su causa raíz permanece NO VERIFICADA y no se atribuye a código. El workflow se conserva para ejecución GitHub cuando el runner sea observable; no se hacen reintentos ciegos.
+
+H1 queda **BUILD + TESTS + STDIO SMOKE PASS LOCAL** para la candidata en este HEAD. No equivale a instalación en Fila 4, respuesta visible desde el contexto IPZ, aceptación GOV-TASK-003/007, producto 1.0.0, paquete WPF ni merge de PR #27. EP conserva host/Vault/B2/root; Gobernanza conserva IPZ y aceptación. H2 MCP-OCP-14 permanece PROPOSED / NOT ACCEPTED, sin runtime/IO. Control MCP-OCP generación 5 permanece intacto; DUG, ART-025/027 e IPZ no se modificaron.
+
