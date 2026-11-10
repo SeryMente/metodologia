@@ -95,3 +95,11 @@ Esta subsección no sustituye el registro original de la comparación inicial 0/
 - Core MCP-OCP v0.1.37; backlog LIST v0.18.
 - H2: contrato MCP-OCP-14 propuesto + 4 schemas JSON parseables. No se implementó motor/DB/IO/cifrado/B2/restore.
 - H1 CI: job más reciente piloto `130142324655`, `runner_id=0`, `steps=[]`, logs `BlobNotFound`, sin artifacts. No ejecución acreditada.
+
+
+## Cierre vivo de candidata · HEAD 4ac337f · 2026-11-10
+
+- Main `8f999198f1d8cde71361c884c9a13b745f442b49`; rama `feat/mcp-ocp-sink-p004-main-a34c1c5b`, HEAD `4ac337f0b1e507497b8ab6c6c64d71d2e8001e13`, 26 ahead / 0 behind; 29 rutas. PR #27 OPEN/DRAFT/NOT MERGED.
+- Core candidato v0.1.38; backlog LIST v0.19.
+- H1: 41 tests escritos/0 ejecutados con evidencia; build y smoke pendientes. CI jobs actuales sin runner asignado, steps, logs ni artifacts; causa raíz no verificada.
+- H2: contrato MCP-OCP-14 v0.1 propuesto y cuatro schemas parseables; no ratificado y sin IO/runtime.
