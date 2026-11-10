@@ -10,15 +10,15 @@ Recibir el artefacto MCP-OCP renovado y efectuar su instalación, bootstrap y ac
 
 ## Alcance
 
-1. Destino ya designado por el operador: perfil Windows `PC 7`, asociado al equipo RDC correspondiente, ubicación `LOC-OTHER`. Al iniciar la operación, comprobar en vivo que el usuario Windows, SID efectivo, equipo RDC, rutas y permisos coinciden con esa designación. La designación no sustituye el preflight ni autoriza a reutilizar datos de sesiones temporales anteriores.
-2. Confirmar en el destino PC 7 que workspace, runtime, base de datos y respaldos están dentro de un volumen protegido. El estado XTS-AES256/Protection On/FullyEncrypted 100 % y RecoveryPassword custodiado observado en otro perfil/host no se hereda: repetir la lectura de vuelta en el dispositivo RDC asociado a PC 7. EP-TASK-003 debe completar la migración y ambos read-backs SHA-256 antes de mover allí el runtime.
-3. Resolver el root de datos del servidor. El código recuperable de MCP-OCP usa por defecto `%LOCALAPPDATA%\SeryMente\OCP MCP`; debe quedar dentro del perímetro cifrado o debe probarse cifrado completo del volumen que aloja ese perfil. MCP-OCP habilitará una configuración explícita y validada del root de datos/respaldos. La ruta concreta se elegirá en el preflight del perfil PC 7 y deberá estar dentro del volumen protegido que EP verifique en ese mismo host; no asumir W: ni heredar rutas de otra sesión.
+1. Destino vigente designado por el operador: terminal **Fila 4**, correspondiente a la única sesión RDC disponible. Última identidad técnica conocida (no lectura viva): Device ID `d0bbb2a3-d7b4-45e1-8870-652c2c3844fc`, perfil `CENTRAL\\fila4`, SessionId 4. Verificar hostname, Device ID, sesión, usuario/SID, USERPROFILE, rutas y permisos en vivo. La ubicación física se verifica por separado; no inferir CECEQ ni LOC-OTHER. PC 7 queda supersedido y no es fallback.
+2. Confirmar en Fila 4 que workspace, runtime, DB y respaldos están en un volumen de trabajo protegido. La última observación histórica de Fila 4 indicó FullyEncrypted/100 %, ProtectionStatus=Off y XtsAes128; no acredita protección efectiva. Repetir en vivo y obtener XTS-AES256, Protection On, FullyEncrypted/100 %, protector recuperable custodiado por EP Vault y read-back SHA-256. No heredar W:, VHDX, RecoveryPassword ni DPAPI de PC-14/PC 7.
+3. Resolver el root de datos del servidor desde el perfil interactivo Fila 4: `%USERPROFILE%\\Desktop\\SeryMente\\Datos\\Metodologia\\MCP-OCP\\`, fuera del checkout y dentro del volumen protegido. Confirmar la ruta en preflight; no asumir W: ni heredar rutas de otra sesión.
 4. Recibir solo un paquete nuevo, construido y verificado contra DUG Samantha v386/NX-386m y el núcleo MCP-OCP vigente. Verificar SHA-256, manifiesto, RID y resultados de pruebas antes de extraer.
 5. Si se necesita clonar/actualizar el repositorio privado desde ese perfil, comprobar autenticación local. Si falta, el propietario realiza `gh auth login --web` de forma interactiva en ese Windows; el token permanece en el almacén local. La autenticación GitHub del conector de ChatGPT no se transfiere al equipo.
 6. Ejecutar `import-sources` contra un checkout con los commits/blobs vigentes; verificar resultado y 43 IDs/MDP. No importar fuentes con pins antiguos.
 7. Ejecutar `OcpMcp.exe provision-operator` de forma interactiva. El operador confirma en esa consola escribiendo exactamente `REGISTER <SID>` con el SID que muestre el proceso. No capturar ni transmitir el SID o claves por chat.
 8. Configurar el cliente para iniciar el proceso MCP stdio desde la ruta protegida. Verificar `initialize`, `tools/list`, `tools/call`, respuesta completa, shutdown y reinicio limpio a través del mismo recorrido RDC que utilizará el operador.
-9. El destino está clasificado como `LOC-OTHER`: no instalar ni dejar runtime persistente hasta que EP-TASK-003 tenga implementado y probado el dead-man trigger específico, con cierre/volatilización y recuperación verificados.
+9. La ubicación física de Fila 4 está PENDIENTE_DE_VERIFICACIÓN. Si el preflight confirma CECEQ, conservar el workspace cifrado al cierre. Si confirma una ubicación distinta de CECEQ, no dejar runtime persistente hasta que EP-TASK-003 implemente y pruebe el dead-man específico, con bloqueo, desmontaje, eliminación limitada al contenedor EP y recuperación verificados.
 10. Aceptar solo con read-back de paquete, fuentes importadas, `operator_provisioned=true`, root de datos protegido, transporte probado y recibo E2E enlazado a GOV-TASK-003.
 
 
@@ -27,7 +27,7 @@ Recibir el artefacto MCP-OCP renovado y efectuar su instalación, bootstrap y ac
 Por instrucción directa del operador, la aceptación EP incluye la apertura automática del panel local MCP-OCP cuando la sesión persistente de este perfil esté realmente vigente.
 
 - **Responsabilidad MCP-OCP:** entregar `OcpMcp.Panel.exe`, contrato `PANEL-OBSERVABILIDAD.md`, schema de estado/eventos, hashes y pruebas.
-- **Responsabilidad EP:** escribir atómica y leer de vuelta `monitor/session.json` con `sessionState=ACTIVE`, `sessionStartedAtUtc`, `protectionState` y `protectionCheckedAtUtc`; abrir el panel como proceso hijo del controlador de sesión solo después de validar la sesión/manifest y completar los gates de seguridad aplicables, incluido el dead-man LOC-OTHER ya exigido por esta tarea. El archivo no contiene SID ni secretos.
+- **Responsabilidad EP:** escribir atómica y leer de vuelta `monitor/session.json` con `sessionState=ACTIVE`, `sessionStartedAtUtc`, `protectionState` y `protectionCheckedAtUtc`; abrir el panel como proceso hijo del controlador de sesión solo después de validar la sesión/manifest y completar los gates de seguridad aplicables, incluido el dead-man cuando la ubicación física confirmada sea distinta de CECEQ. El archivo no contiene SID ni secretos.
 - La ventana permanece abierta como aplicación mientras EP continúe ACTIVE. X/Alt+F4 la minimiza a la barra de tareas para evitar cierres accidentales; el operador puede restaurarla. Al finalizar la sesión EP, el controlador la cierra limpiamente y verifica que no quede proceso huérfano.
 - El panel puede abrir antes que el servidor; debe mostrar “Sesión activa · esperando servidor MCP”. Si el servidor se cae pero EP permanece ACTIVE, la ventana sigue abierta y muestra el estado detenido/desconectado.
 - La apertura no se configura como tarea programada, servicio Windows ni arranque genérico de inicio de sesión. No iniciar panel si el perfil/sesión/volumen/gates EP no están verificados.
@@ -40,7 +40,7 @@ Por instrucción directa del operador, la aceptación EP incluye la apertura aut
 
 - **MCP-OCP:** MCP-OCP-07 (paquete/runbook), MCP-OCP-12 (bootstrap), MCP-OCP-08 (handoff) y pins actuales.
 - **Gobernanza:** GOV-TASK-003 (aceptación E2E), GOV-TASK-007 (IPZ/read-back/FOL1 separado), GOV-TASK-008 (contrato Sink) y GOV-TASK-013 (medición RDC).
-- **EP:** EP-TASK-003 (workspace protegido, migración y dead-man según ubicación).
+- **EP:** EP-TASK-003 (workspace protegido en Fila 4 y dead-man según ubicación verificada).
 - EP-TASK-004 (reconstrucción visual de la bóveda) no bloquea el build Sink ni el bootstrap DPAPI del servidor. Solo se incorpora si una operación concreta del handoff requiere esa GUI.
 - EP-TASK-002 / Backblaze, NCL, Jules, PPR cross-host y Khora quedan fuera de este handoff.
 - Esta tarea no autoriza por sí sola operaciones remotas ni cambios de BitLocker/ACL/Registro. La instrucción del operador autoriza el trabajo descrito, pero no sustituye permisos técnicos ni el consentimiento local interactivo.
@@ -50,7 +50,7 @@ Por instrucción directa del operador, la aceptación EP incluye la apertura aut
 - Los 195 archivos y 11 directorios del workspace seguían en staging; no había copia a W:, manifiesto de destino ni segundo read-back. No borrar el origen hasta el cotejo íntegro.
 - La última evidencia EP reportó `remote_calls_left_pct = 0`. No eludir el límite por otro canal; se requiere capacidad RDC para la operación remota.
 - El código recuperable usa LocalAppData por defecto. La configuración del root de datos cifrado debe resolverse antes de instalar.
-- El perfil/host están designados como PC 7 + equipo RDC asociado / LOC-OTHER; falta comprobar en vivo identidad, acceso y estado de seguridad.
+- Destino vigente Fila 4; identidad técnica y ubicación física pendientes de preflight vivo. La designación anterior PC 7/LOC-OTHER quedó supersedida.
 - La autenticación GitHub del conector de ChatGPT no equivale a autenticación local del perfil Windows.
 
 ## Criterios de cierre
@@ -64,19 +64,19 @@ Por instrucción directa del operador, la aceptación EP incluye la apertura aut
 - Sin listener, endpoint público, regla de firewall ni secretos en logs/salida/repositorio.
 - Evidencia y read-back actualizados en esta ficha, el índice EP y OEP.
 
-**Estado actual:** planificada, no iniciada. Destino designado: PC 7 / equipo RDC asociado / LOC-OTHER. Preflight, migración, dead-man, instalación y pruebas continúan pendientes. La creación de la tarea no modificó ningún equipo.
+**Estado actual:** Fila 4 designada por el operador; preflight vivo, ubicación física, checkout/root protegidos, dead-man si corresponde, piloto, instalación y aceptación siguen pendientes.
 
 
-## Designación del destino · 2026-11-09
+## Designación inicial del destino · 2026-11-09 · HISTÓRICA, SUPERSEDIDA POR FILA 4
 
 El operador designó **perfil Windows PC 7**, asociado a su dispositivo RDC, con ubicación **LOC-OTHER**. Esta decisión sustituye la pregunta pendiente sobre destino y clasificación. No se ha adquirido todavía el hostname/ID técnico del dispositivo ni se ha observado la sesión PC 7 en vivo.
 
 **Bloqueo material actualizado:** LOC-OTHER obliga a completar EP-TASK-003 y verificar el dead-man específico antes de runtime persistente. Las evidencias previas de cifrado, W:, custodia y workspace no se trasladan por inferencia al nuevo perfil. La instalación, bootstrap, `provision-operator`, `REGISTER <SID>` y aceptación siguen pendientes; no se ha operado el equipo mediante esta actualización.
 
 
-## Instalación obligatoria del release 1.0.0 en Metodología · 2026-11-09
+## Plan inicial de instalación del release 1.0.0 · 2026-11-09 · PC 7 SUPERSEDIDO
 
-El entregable de este sprint no es solo el ZIP: MCP-OCP 1.0.0 debe quedar instalado localmente en el checkout Metodología de PC 7.
+El entregable del sprint debe quedar instalado localmente dentro del checkout Metodología de Fila 4, después de superar los gates EP descritos en la rectificación vigente al final.
 
 - **Checkout único:** `SeryMente/Repositorios/Metodologia/metodologia/`.
 - **Carpeta local obligatoria del programa:** `frentes/mcp-metodologia/instalacion-local/`.
@@ -86,7 +86,7 @@ El entregable de este sprint no es solo el ZIP: MCP-OCP 1.0.0 debe quedar instal
 
 **Secuencia de instalación:** EP-TASK-003 entrega checkout íntegro; MCP-OCP-07 entrega paquete con manifest/SHA; comparar SHA antes de extraer; extraer dentro de la ruta obligatoria; leer de vuelta y comprobar ejecutable/dependencias; configurar root de datos externo protegido; importar fuentes v386 y verificar pins/43 MDP; comprobar health de readiness (proceso, protocolo, fuentes, hashes y operador por separado); solicitar consentimiento y presencia local para `provision-operator`/ `REGISTER <SID>`; conectar cliente MCP STDIO/RDC; ejecutar la prueba funcional instalada y cierre/reinicio.
 
-**Gate de seguridad PC 7 / LOC-OTHER:** no realizar instalación persistente hasta identidad de dispositivo/sesión/perfil verificada, BitLocker Protection On + FullyEncrypted 100 %, root de datos protegido, dead-man implementado/probado y rollback/read-back disponibles. La lectura previa `ProtectionStatus=Off` mantiene este gate abierto. Esta tarea no desbloquea dichos requisitos por sí misma.
+**Gate histórico del destino PC 7:** supersedido por Fila 4 y por la compuerta dinámica de ubicación física, protección del volumen y dead-man aplicable descrita en la rectificación vigente al final.
 
 **Criterio de cierre:** producto instalado en la ruta local indicada; SHA/manifest coinciden; fuentes importadas vigentes; readiness real; operador provisionado solo con consentimiento; stdio/RDC funciona; sin listener ni secretos; evidencia y read-back en EP-TASK-005, índice EP y OEP. El build o un smoke temporal no equivalen a instalación/aceptación.
 
