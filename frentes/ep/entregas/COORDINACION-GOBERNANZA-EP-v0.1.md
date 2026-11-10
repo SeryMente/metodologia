@@ -2404,7 +2404,7 @@ El operador pidió preservar el último tramo de la conversación de EP, dar for
 - Anexo: frentes/ep/entregas/ChatGPT-EP-20261110-1417-B2-ULTIMO-TRAMO.md
 - Commit del anexo: 813b53d6d25a989aaec3ba328fb767578488c9e9
 - Blob del anexo leído de vuelta: 118f8114fffd6390f92aedd673f17eeecb7f31b0
-- EP-TASK-002 actualizado: commit 54c8f38294172e5df637a18ae0858ce9cf683328; blob final dc1b822f199af16407545d59ae1caa923c102781.
+- EP-TASK-002 actualizado y normalizado: commit ca241e586dd73142e215335837cbc9b5e1ae7193; blob final 7255ddb613b712d70b347248f252b354da860c39.
 - Índice provisional actualizado: commit 48132ad52f95d5a644022cf7da20857efe07206d; blob c8139077beb371841d0cfe8903ef8634a88dadd2.
 
 ### Repetición técnica y discrepancia GUI/CLI
