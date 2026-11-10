@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.59. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.60. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -12,7 +12,7 @@
 
 Adquirir este objeto como instrucciones del operador, subordinadas a las reglas superiores de plataforma y a autorizaciones específicas. Claudia es asistente/documental; Samantha es constructor/único escritor de código. Una asignación explícita posterior puede cambiar roles; las citas no lo hacen. La asignación específica de MOD-SCRIPTPWS queda delimitada en §94; la delegación funcional acotada de MOD-SYNC queda delimitada en §110 y no transfiere la titularidad del frente EP.
 
-El estado de reanudación vigente de este frente está en §60–§124; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. La organización local por frentes, con áreas separadas Repositorios/Datos/Temporal, queda desarrollada en §119 y en el DUG ART-030. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
+El estado de reanudación vigente de este frente está en §60–§125; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. La organización local por frentes, con áreas separadas Repositorios/Datos/Temporal, queda desarrollada en §119 y en el DUG ART-030. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
 
 Leer por relevancia: OEP actual→metacanon central→Sistema de Instrucciones/Metodología/Bootstrap vigentes→canon transversal EP→AGENTS.md y ep-medio-architectura.md→código/evidencia en commits exactos. Fuente caída no es «sin cambios». Un archivo no crea herramientas, credenciales ni memoria entre plataformas.
 
@@ -3309,3 +3309,59 @@ EP debe asumir este orden, conservando el objetivo de que el usuario y los proye
 - EP debe reportar cada gate como PROPUESTO / AUTORIZADO / INTENTADO / EJECUTADO / VERIFICADO / ACEPTADO y aportar evidencia con SHA/read-back. Un cambio documental no equivale a PASS del host.
 
 **Estado de relevo:** `EP_EXECUTION=READY_FOR_EP_RETAKE` · `EP_ACKNOWLEDGEMENT=PENDING` · `EP_CONTROL_GENERATION=3_UNCHANGED` · `EP_TASK_003=PARTIAL_FAIL` · `EP_TASK_005=PENDING` · `STORAGE_DESIGN=PROPOSED_NOT_ACCEPTED`. No se ejecutó ninguna operación en el host en esta sección.
+
+
+## 125. Reanudación de tareas EP y preflight read-only Fila 4 · 2026-11-10
+
+**Autoridad:** instrucción directa del operador: revisar las tareas del frente y resolverlas conforme a su secuencia programada. La ejecución continúa dentro del control EP generación 3, sin transferencia de titularidad ni modificación de control. Fuente metodológica consultada: DUG Samantha v388 · NX-388m, blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`; Metacanon 1.29; GOW 2.18. No se alteró DUG ni el GOW.
+
+### 125.1 Reconciliación de cola EP
+
+- **EP-TASK-002 (P0):** persistir primero el ciphertext actualizado de EP Vault en Backblaze B2, bucket OCP-MCP y namespace ep-ocp/. La pareja Master EP está migrada y verificada en Vault; la CLI vuelve a reportar sesión cerrada y no hay autenticación B2 ni objeto remoto.
+- **EP-TASK-003 (P0):** readquirir host en solo lectura y resolver explícitamente el diseño que conserva Desktop/SeryMente antes de cualquier mutación. Gate continúa PARTIAL_FAIL.
+- **EP-TASK-004:** H7/H8 avanzan con pruebas sintéticas; H10 requiere aceptación humana final. No se considera aceptada la GUI por pasar pruebas de backend.
+- **EP-TASK-005:** permanece pendiente; depende de EP-TASK-003 PASS y del paquete P004 verificado de MCP-OCP-03/04/05.
+- **EP-TASK-006:** mantiene P1 para inventario Vercel y restantes proveedores después del P0 de respaldo B2. No se inicia distribución/adaptadores sin catálogo y read-back.
+- **EP-TASK-007:** se inicia el inventario read-only del host; el Guardián/lease y crypto-erasure no se implementan antes de sus dependencias EP-TASK-002/003/004/006 y contratos MCP-OCP-14/15/16.
+- **EP-TASK-001:** sigue pendiente conforme a su condición de activación.
+
+### 125.2 Preflight vivo Fila 4 — solo lectura
+
+Evidencia consolidada y saneada: [EP-FILA4-READONLY-PREFLIGHT-20261110-1530.json](https://github.com/SeryMente/metodologia/blob/main/frentes/ep/entregas/EP-FILA4-READONLY-PREFLIGHT-20261110-1530.json); commit `4afb9b368b7e8be74aba239796993e71e1d41f43`, blob `88dd663df4345df343a51ad2800f0ad79953c60d`.
+
+**Workspace original**
+- `%USERPROFILE%\Desktop\SeryMente` existe.
+- Inventario recursivo sin seguir reparse points: 3.103 archivos, 659 directorios, 159.162.208 bytes; 0 reparse points y 2 errores de enumeración. No es aún un manifiesto completo: los dos errores deben resolverse antes de copiar/cotejar.
+- No se copió, movió, cifró, renombró ni sustituyó el origen.
+
+**VHDX y volúmenes**
+- VHDX de preparación existe en `%USERPROFILE%\AppData\Local\EP\ProtectedWorkspace\Fila4-Workspace.vhdx`, tamaño 171.966.464 bytes, adjunto, GPT, capacidad 30 GiB.
+- `W:` / etiqueta EP-FILA4: NTFS, volumen de 32.194.424.832 bytes; raíz solo muestra `System Volume Information`. BitLocker: FullyDecrypted, 0 %, método None, Protection Off, sin protectores. No hay archivos de workspace observados en W:.
+- `C:`: NTFS, FullyEncrypted 100 %, XTS-AES128, Protection Off, sin protectores. No satisface XTS-AES256/Protection On.
+- La ruta de checkout Metodología existe, pero no es Git worktree (`.git` ausente). El root `Datos\Metodologia\MCP-OCP` no existe.
+- El token propietario no es elevado; el estado BitLocker procede de una lectura administrativa separada read-only. La ubicación física permanece UNCLASSIFIED; no se consultaron GPS ni IP.
+
+**EP Vault / B2**
+- A las 2026-11-10T21:34:04.8042691Z, bajo el perfil Fila 4, `vaultSessionActive=false`, ciphertext 2.200 bytes y 0/5 variables EP B2 disponibles.
+- UI Automation a las 2026-11-10T21:34:15.6720072Z muestra `HeaderState=SELLADA`, `GateTitle=La cámara permanece sellada.` y `FooterStatus=LOCAL · CIFRADO · SELLADA`.
+- No se autenticó B2, no se consultó bucket, no hubo upload, descarga ni read-back remoto.
+
+### 125.3 Diseño recomendado para aceptación — no ejecutado
+
+**Recomendación única:** mantener exactamente la ruta funcional `%USERPROFILE%\Desktop\SeryMente` mediante un VHDX con volumen BitLocker montado como punto de montaje de directorio NTFS en esa misma ruta. El archivo VHDX residiría fuera de AppData y fuera del propio punto de montaje, como propuesta en `%USERPROFILE%\EP\ProtectedWorkspace\Fila4-Workspace.vhdx`. El VHDX de preparación actual en AppData se deja intacto; no se reutiliza ni elimina por inferencia.
+
+Secuencia después de aceptación expresa:
+1. Resolver primero EP-TASK-002: snapshot B2 de la bóveda cifrada y descarga/hash idénticos. Crear después el protector de recuperación del nuevo volumen, custodiarlo en EP Vault con read-back y subir/validar el ciphertext actualizado de la bóveda antes de migrar el workspace.
+2. Crear el nuevo VHDX y volumen GPT/NTFS, XTS-AES256, BitLocker Protection On y 100 %. La clave de recuperación debe poder restaurarse desde EP Vault/B2.
+3. Montar temporalmente el volumen, copiar el origen preservando rutas/metadatos, resolver los dos errores de enumeración y cotejar un manifiesto SHA-256 integral de origen/destino.
+4. Mantener el original como staging/rollback. Solo después del cotejo íntegro, cerrar procesos dependientes, renombrar el original a staging, crear el directorio vacío en el path original y montar el volumen como punto de montaje de directorio. Así los proyectos continúan usando el mismo path y no una unidad W: visible.
+5. Ejecutar segundo read-back, comprobar rutas/ACL/apertura de aplicaciones y conservar staging hasta aceptación. Solo entonces evaluar retirada del VHDX de preparación antiguo.
+6. Confirmar la ubicación física por separado. Implementar el dead-man de EP-TASK-003 únicamente si se confirma LOC-OTHER; no inferir la ubicación por red.
+
+**Estado de decisión:** `STORAGE_DESIGN=PROPOSED_NOT_ACCEPTED`. Esta recomendación no autoriza copia, cifrado, movimiento, desmontaje, cambio de punto de montaje, creación del nuevo VHDX ni borrado del actual. La pausa de almacenamiento sigue vigente.
+
+### 125.4 Resultado del ciclo y gates
+
+`EP_TASK_002=BLOCKED_VAULT_SEALED` · `EP_TASK_003=PREFLIGHT_PARTIAL_FAIL` · `EP_TASK_004=SYNTHETIC_TESTS_PARTIAL_PASS_H10_PENDING` · `EP_TASK_005=BLOCKED_003_AND_MCP_PACKAGE` · `EP_TASK_006=P1_WAITING_P0_B2` · `EP_TASK_007=HOST_INVENTORY_PARTIAL_GUARDIAN_NOT_IMPLEMENTED`.
+
+No se modificó el workspace, VHDX, BitLocker, checkout, root de datos ni bóveda formal. No se implementó Guardian, lease, dead-man ni crypto-erasure. La única escritura local de evidencia fue el JSON read-only de EP-TASK-007 en run-logs; su read-back se verificó. Las demás escrituras de este ciclo son documentales en main.
