@@ -25,6 +25,7 @@ try
         runner.Equal("Exigir hechos verificables; activarlo ante afirmaciones sobre capacidades, datos, acciones o certezas.", r.Microdescriptor);
         runner.Equal("gow-sec-14", r.GowArrId);
         runner.Equal("NX-387m", r.DugSignature);
+        runner.Equal("DESACTIVADO", r.McpNormativeStatus);
         runner.Equal(pin.GitBlobSha, r.GitBlobSha);
         runner.Equal(Convert.ToHexStringLower(SHA256.HashData(Encoding.UTF8.GetBytes(r.NormativeText))), r.PrincipleTextSha256);
     });
@@ -152,6 +153,10 @@ static string FixtureHtml(string version = "v387")
             {
                 new { id = "gow-sec-14", title = "§ARR · Vocabulario de entrada para ChatGPT",
                     content_markdown = "<a id=\"gow-arranque-chatgpt\"></a>\n### Función de entrada\nLee §ARR." }
+            },
+            terms = new[]
+            {
+                new { id = "gow-mcp-normativo", definition = "Mecanismo de verificación normativa automática del DUG. Su estado vigente está DESACTIVADO; no debe afirmarse ni simularse su ejecución." }
             }
         }
     });
