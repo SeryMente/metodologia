@@ -96,3 +96,27 @@ La caída de energía no puede ejecutar código de limpieza en el instante del c
 No efectuar cambios sobre Fila 4, BitLocker/VHDX, perfiles, almacenamiento o montaje hasta superar los gates vigentes de EP-TASK-003 y su aceptación. No extraer credenciales del chat, no exponer valores de EP Vault en logs ni crear una segunda bóveda. No alterar los controles EP generación 3, MCP-OCP generación 5 o Gobernanza generación 17.
 
 **Resultado del presente asiento:** tarea configurada documentalmente. Acuse y ejecución pertenecen a EP; no se declara guardian, inventario, lease, borrado ni pruebas ejecutados.
+
+
+---
+
+## Acuse de ejecución EP · inventario read-only Fila 4 · 2026-11-10 · 15:33 America/Mexico_City
+
+El operador instruyó al frente EP a revisar y resolver sus tareas según la secuencia programada. Se inició el hito de inventario, sin implementar todavía el Guardián.
+
+### Evidencia
+
+- Inventario ejecutado bajo token propietario Fila 4, no elevado, a las 2026-11-10T21:33:46.2515973Z.
+- OS: Windows 11 Pro, versión/build 10.0.26200, 64 bits; zona Central Standard Time (Mexico).
+- Equipo observado: HP ProDesk 400 G4 DM; RAM 17.015.545.856 bytes; CPU Intel Core i7-8700T, 6 cores/12 logical processors; GPU Intel UHD Graphics 630.
+- Discos detectados: disco virtual Microsoft 30 GiB y HS-SSD-WAVE(S) 256 GB. No se retuvieron seriales, hostname, MAC, IP ni IDs de sesión.
+- Adaptador Realtek PCIe GbE, Up, 1 Gbps. IP pública, IP local y geolocalización no consultadas. GPS no disponible/no solicitado; ubicación física sigue UNCLASSIFIED.
+- GUI EP Vault presente/responsiva; el estado de bóveda se comprobó por separado y permanece SELLADA. B2 CLI presente.
+- Archivo de evidencia local: `EP/local-state/run-logs/ep-task-007-host-inventory.json`, 4.253 bytes, SHA-256 `E0B2FF98A70DF35E2B572638E5E3CFE39D629781852C2F5FBE03A4C4B39FD673`; lectura de vuelta realizada.
+- Copia documental saneada y cotejada en [EP-FILA4-READONLY-PREFLIGHT-20261110-1530.json](https://github.com/SeryMente/metodologia/blob/main/frentes/ep/entregas/EP-FILA4-READONLY-PREFLIGHT-20261110-1530.json), blob `88dd663df4345df343a51ad2800f0ad79953c60d`.
+
+### Estado del hito
+
+`HOST_INVENTORY=PARTIAL_READ_ONLY_VERIFIED` · `GPS=NOT_REQUESTED` · `IP=NOT_COLLECTED` · `LOCATION=UNCLASSIFIED`.
+
+No se instaló ni inició Guardian, no se creó lease/heartbeat/tarea programada de guardia, no se registraron triggers, no se montó/desmontó volumen y no se ejecutó crypto-erasure. Los contratos MCP-OCP-14/15/16 y las dependencias EP-TASK-002/003/004/006 siguen abiertos. El inventario no equivale a aceptación de seguridad ni a autorización de runtime.
