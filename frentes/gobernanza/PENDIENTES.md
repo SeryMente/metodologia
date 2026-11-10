@@ -1,4 +1,17 @@
-## Continuidad vigente · C-GOBERNANZA-RETOMA-11 · 2026-11-06
+## Estado vigente del frente · sprint Sink local · 2026-11-10
+
+- **Responsabilidad:** control activo generación 17, blob `16a4265c8a5f1c3d5db7a96ca83100bcd973a42e`; titular `SES-20261108-506DCF0C`, alias `chatgpt-C-GOBERNANZA-RETOMA-13-SES-20261108-506DCF0C`, UUIDv7 local `01a1bc38-78e0-74e5-92ca-8d28506dcf0c`; corresponsable `chatgpt-C-GOBERNANZA-ASIENTO-02-RETOMA-20261101-01-SES-20261101-GV8E89D1FF`. Dos responsables activos; máximo dos. No se expone ni se inventa ID nativo de ChatGPT.
+- **DUG canónico:** Samantha v388 · NX-388m · 43 principios · 24 anexos; commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`; blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`. Evento `C-GOBERNANZA-ART027-SINK-LOCAL-RECONCILIACION-20261110-01`. ART-027 quedó alineado con Sink local; ART-025 y ART-031 no se modificaron en esta reconciliación.
+- **Contrato vigente:** `GOW:ARR → DUG → MDP → SINK:Pxxx` cuando el MDP indique pertinencia. Sink es una operación local del servidor MCP-OCP por STDIO/RDC, no URL/alias HTTP. `MOD-SYNC` pertenece a EP y es distinto; no interviene en la recuperación de principios. Solo se cuenta frecuencia de recuperaciones satisfactorias. `MCP-NORMATIVO` continúa `DESACTIVADO`.
+- **Orden del sprint:** MCP-OCP-02 rama limpia; MCP-OCP-05 corte vertical P004; MCP-OCP-03 pruebas mínimas; MCP-OCP-04 transporte STDIO/RDC; GOV-TASK-007 prepara IPZ cuando el contrato/respuesta P004 estén congelados; GOV-TASK-003 acepta E2E real; P001–P043 y lotes después del piloto.
+- **Gobernanza:** GOV-TASK-008, GOV-TASK-003, GOV-TASK-001, GOV-TASK-007, GOV-TASK-009 y GOV-TASK-015 fueron reconciliadas con DUG v388 y leídas de vuelta. La matriz 43+8 sigue siendo protocolo, no resultado ejecutado.
+- **MCP-OCP:** la autorización local STDIO está vigente en control generación 5. Sus documentos técnicos consultados todavía mostraban pins DUG v386; MCP-OCP debe actualizarlos en sus propios objetos antes del build. No se modificaron desde Gobernanza.
+- **EP/destino:** Fila 4 es el destino designado, asociado a la única sesión RDC disponible; PC 7 no es destino. Preflight vivo, checkout íntegro, root protegido, ubicación y gates de instalación siguen pendientes; no se afirma operación local.
+- **No ejecutado:** no se acredita implementación del resolver P004, importación privada, build, instalación, telemetría runtime ni E2E. IPZ nativa no modificada/verificada. FOL1 `PREPARADO_PENDIENTE_ACTIVACION_IPZ`; CV/CY/A/B globales y por OCP `PENDIENTE / NO ASIGNADO`.
+
+---
+
+## Continuidad histórica · C-GOBERNANZA-RETOMA-11 · 2026-11-06
 
 - Titularidad primaria transferida a esta sesión, generación 14 → 15; titular previo supersedido. Corresponsable `SES-20261101-GV8E89D1FF`, generación 12, preservada; roster 2/2. [Control](CONTROL-RESPONSABILIDAD.json) · [crónica](cronica/C-GOBERNANZA-RETOMA-11.md) · [evidencia](evidencias/C-GOBERNANZA-RETOMA-11.json).
 - El export `ChatGPT-GOBERNANZA-1-20261106-1640.txt` se conservó como original independiente: 85.947 bytes; SHA-256 `925E181C499F4086927259A1F65761516E0CA89C61399F117C95F6C7991E360D`; Git blob `e5c70c6ce07e3a73a55ac284b311f3f2b3ad226c`; commit `2953c2e234422c35d4857f58cb8af6df564360c9`; read-back PASS. El export 14:48 permanece intacto.
