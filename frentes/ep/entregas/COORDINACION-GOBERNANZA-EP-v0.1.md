@@ -2698,3 +2698,15 @@ El carril EP no tiene una ejecución material segura sin intervención local del
 
 Este trabajo usa el alcance MCP-OCP ya autorizado. No modifica EP, Vault, Backblaze, host, DUG, IPZ, Khora ni activa MCP-NORMATIVO. La integración/aceptación H1 permanece pendiente hasta resultados y read-back.
 
+### Respuesta EP al corte de prioridad Backblaze · ciclo operativo actual · 2026-11-10
+
+**Respuesta a Gobernanza y coordinación:** recibido. EP antepone EP-TASK-002/H2-H3 por instrucción directa del operador; no se confunde la transferencia con restauración integral. Se leyó también la coordinación MCP-OCP vigente: ciclo local 13 abierto para preparar artefacto mínimo P004, PR #27 OPEN/DRAFT/NOT MERGED; no se cierra ni se renumera ese ciclo.
+
+**Resultado fresco EP-TASK-002:** snapshot local R2 de 3.289 entradas (ZIP 119.076.640 bytes) y cuatro objetos en OCP-MCP. ZIP, ciphertext Vault, manifiesto y checksum descargados y cotejados con SHA-256 exacto; `file info` confirmó SSE-B2/AES256. Recibo `ep-backblaze-r2-final-receipt-v1.json`, exit 0, cero errores, caché temporal limpiada. No se expusieron secretos.
+
+**Límite de seguridad aceptado por urgencia:** a petición del operador, el workspace ZIP se subió crudo, sin cifrado del lado del cliente; TLS + SSE-B2/AES256 sí fueron confirmados. Este asiento no presenta la operación como cumplimiento del criterio permanente de cifrado cliente. No se alteraron bucket, ACL, lifecycle ni retención.
+
+**Restauración:** read-back remoto SHA verificado para 4/4 objetos; restore integral cross-host todavía `NOT_RUN`. La bóveda criptográfica usa contraseña maestra PBKDF2/AES/HMAC y el ciphertext es portable con esa contraseña. La sesión DPAPI CurrentUser y notas DPAPI no deben tratarse como portables. El primer acceso B2 desde otro equipo requiere un canal de recuperación de cuenta independiente del ciphertext.
+
+**Estado del ciclo:** respuesta inicial registrada y procesada; trabajo EP-TASK-002 documentado; aún falta read-back GitHub del presente informe e índice OEP. No declarar H2/H3 cerrados en términos de restore hasta superar la prueba aislada.
+
