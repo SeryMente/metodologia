@@ -337,3 +337,35 @@ EP-TASK-004 GUI de bóveda y EP-TASK-002/Backblaze no bloquean P004 ni el build 
 ### Estado de evidencia
 
 **Documentación:** DUG v388, tareas Gobernanza, núcleo/backlog MCP-OCP y OEP/tareas EP rebaselined y leídos de vuelta. **No verificado/pendiente:** rama nueva, código P004, pruebas nuevas, preflight Fila 4, importación, paquete piloto, instalación, IPZ nativa, E2E y panel. No convertir el cierre documental en PASS de producto.
+
+---
+
+## Reconciliación de la rama candidata y estado real del gate EP · 2026-11-10
+
+### Hallazgo MCP-OCP
+
+La consulta de referencias de GitHub encontró la rama `feat/mcp-ocp-sink-p004-pilot-20261110`. Su punta es `1676901cc09af6fcec4d052800b031e4c2f1ab40`, no el `main` vigente. En la comparación del 2026-11-10, `main` observado en `564070216482f26993044b54d94db3e2d4adc802` estaba 45 commits por delante de esa referencia y la rama no tenía commits exclusivos por delante de `main` (`ahead_by=45`, `behind_by=0`, al comparar rama → main). Además, los archivos del frente leídos en esa rama conservaban referencias a DUG v386 y core v0.1.27, no el baseline v388/v0.1.28 requerido.
+
+**Conclusión:** la rama existe como referencia, pero no satisface MCP-OCP-02. No se declara una rama limpia rebaselined ni código P004 implementado. La salida de MCP-OCP-02 sigue siendo una rama nueva/limpia desde el HEAD de `main` vigente, con mapa REUSE/ADAPT/REWRITE/DROP, SDK/RID fijados y lectura de vuelta del pin DUG v388. No fusionar la referencia histórica completa.
+
+### Estado EP que afecta al camino local
+
+OEP v0.3.58 §123 y EP-TASK-003 registran que el VHDX de 30 GiB fue creado, GPT/NTFS, vacío, con `W:` como último punto de acceso observado y sin BitLocker. El origen `Desktop/SeryMente` permanece preservado y no hay copia ni manifiesto SHA-256. La propuesta de montar el volumen cifrado bajo la ruta original no está aceptada; se mantiene la pausa sobre nuevas operaciones de almacenamiento. La ubicación física de Fila 4 permanece `UNCLASSIFIED`; el operador ya había reportado presencia física ante el dispositivo, pero no confirmó CECEQ.
+
+EP-TASK-003: `en_curso / PARTIAL_FAIL`. EP-TASK-005: `pendiente`. No se ejecutan checkout protegido, importación privada, DB, provisión de operador, runtime ni instalación piloto hasta que EP-TASK-003 llegue a PASS y MCP entregue paquete P004 verificable.
+
+### Camino crítico que prevalece
+
+1. **MCP-OCP-02:** crear/reconciliar rama desde el `main` vigente (no desde la referencia candidata antigua).
+2. **MCP-OCP-05:** corte vertical `GOW:ARR → DUG v388 → SINK:P004`; usar fixtures para la vertical inicial mientras las fuentes privadas sigan bloqueadas por EP.
+3. **MCP-OCP-03/04:** avanzar en paralelo con pruebas contractuales sintéticas y harness/smoke STDIO/RDC. No confundir smoke de consola con E2E IPZ.
+4. **EP-TASK-003:** resolver el diseño para proteger el workspace conservando la ruta `Desktop/SeryMente`, completar volumen XTS-AES256/Protection On/100 %, protector custodiado/read-back, checkout íntegro y root protegido. El dead-man se implementa y prueba solo si la ubicación física confirmada es distinta de CECEQ.
+5. **EP-TASK-005 + MCP-OCP-12:** solo con EP-TASK-003 PASS y paquete P004/manifest/SHA/pruebas, instalar en `instalacion-local/piloto-sink/`, configurar el root protegido e importar fuentes fijadas a DUG v388.
+6. **GOV-TASK-007/003:** preparar candidato IPZ y aceptar únicamente el recorrido real IPZ → RDC → STDIO → respuesta P004 visible al modelo; la escritura/read-back nativos de IPZ es acto separado.
+7. Tras P004 PASS, generalizar P001–P043 y la matriz 43+8. El panel MCP-OCP-13 sigue obligatorio para release 1.0.0, pero no bloquea el piloto P004.
+
+### Estado común
+
+`SINK_P004_IPZ=NO_IMPLEMENTADO_NO_ACEPTADO` · `MCP_OCP_02=OPEN_STALE_BRANCH_FOUND` · `EP_TASK_003=PARTIAL_FAIL` · `EP_TASK_005=PENDING` · `IPZ_NATIVE=NOT_VERIFIED` · `FOL1=PREPARED_NOT_ACTIVE` · `MCP_NORMATIVO=DESACTIVADO`.
+
+Esta reconciliación es documental y de referencias. No modifica el repositorio MCP-OCP, sus archivos de titularidad, DUG ni controles. Tampoco realiza nuevas operaciones en Fila 4.
