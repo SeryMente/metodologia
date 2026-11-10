@@ -109,7 +109,7 @@ Próxima ejecución: recuperar o reconstruir el código con fuentes y pins actua
 
 ## 9. Estado actual · 2026-11-09
 
-DUG: Samantha v386/NX-386m (blob `22dca684830a36dff019b47811d9b800cc9bea0a`). Núcleo documental: MCP-OCP v0.1.26; backlog v0.7; release de software objetivo: 1.0.0 (servidor + panel). Sink local por stdio y panel: AUTORIZADOS, no implementados ni desplegados. Acceso GitHub privado: conector autenticado de la conversación; `gh auth login` local no es requisito para operaciones del repositorio mediante conector. No se fijan hostname, Device ID, perfil Windows ni ruta de una sesión efímera. MCP-NORMATIVO permanece DESACTIVADO.
+DUG: Samantha v386/NX-386m (blob `22dca684830a36dff019b47811d9b800cc9bea0a`). Núcleo documental: MCP-OCP v0.1.27; backlog v0.8; release de software objetivo: 1.0.0 (servidor + panel). Sink local por stdio y panel: AUTORIZADOS, no implementados ni desplegados. Acceso GitHub privado: conector autenticado de la conversación; `gh auth login` local no es requisito para operaciones del repositorio mediante conector. Destino de trabajo e instalación: terminal Fila 4, última referencia técnica Device ID `d0bbb2a3-d7b4-45e1-8870-652c2c3844fc`, perfil `CENTRAL\\fila4`/SessionId 4; no revalidado en vivo. La ubicación física y las rutas efectivas se resuelven en preflight. MCP-NORMATIVO permanece DESACTIVADO.
 
 
 ## 10. Instalación del release 1.0.0 dentro del checkout de Metodología · 2026-11-09
