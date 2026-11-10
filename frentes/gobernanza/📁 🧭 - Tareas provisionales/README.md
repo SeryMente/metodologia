@@ -401,3 +401,26 @@ GOV-TASK-015 es el coordinador único del sprint. Primer resultado: recuperació
 - Anexo literal: ../entregas/ChatGPT-GOBERNANZA-20261110-OCP-MCP-1.0-ULTIMO-TRAMO.md.
 
 OCP_MCP_1_0=DOCUMENTALMENTE_REBASELINED · B2_REMOTE=NOT_VERIFIED_PENDING_EP_RECONCILIATION · SINK_P004=NOT_IMPLEMENTED_NOT_ACCEPTED · FOL1=PREPARED_NOT_ACTIVE · MCP_NORMATIVO=DESACTIVADO.
+
+
+## Configuración por hitos · OCP MCP 1.0 · 2026-11-10 · decisiones del operador aprobadas
+
+El anexo de último tramo contiene las instrucciones verbatim y es el criterio de verdad: [anexo literal actualizado](../entregas/ChatGPT-GOBERNANZA-20261110-OCP-MCP-1.0-ULTIMO-TRAMO.md).
+
+| Hito | Coordinación Gobernanza | Trabajo de frente | Estado de configuración |
+|---|---|---|---|
+| H1 · SINK:P004 | GOV-TASK-015, GOV-TASK-007 y GOV-TASK-003 | MCP-OCP-02/03/04/05 | Continúa P0 paralelo; implementación/aceptación pendientes. |
+| H2 · Persistencia mínima + bóveda | GOV-TASK-014 | EP-TASK-002/004/006; MCP-OCP-14 | Tareas configuradas; persistencia B2/restore aún no acreditados por recibo reciente. |
+| H3 · Workspace completo por instancia | GOV-TASK-014 | EP-TASK-002/003/007; MCP-OCP-14 | Especificación configurada; gates EP y restore requeridos. |
+| H4 · Identidad y telemetría | GOV-TASK-013 | EP-TASK-007; MCP-OCP-15 | Esquema y correlación definidos; captura real pendiente. |
+| H5 · Lease y dead-man | GOV-TASK-015 | EP-TASK-007; MCP-OCP-15 | Parámetros aprobados; implementación y pruebas pendientes. |
+| H6 · Limpieza adaptativa | GOV-TASK-015 | EP-TASK-007 | Crypto-erasure prioritaria, cleanup limitado a artefactos OCP; pendiente ejecutar/pruebas. |
+| H7 · Credenciales RDC | GOV-TASK-015 | EP-TASK-004/006; MCP-OCP-16 | Diferido; auditar canal seguro antes de implementar. |
+| H8 · Release 1.0.0 | GOV-TASK-003/015 | MCP-OCP-07/10/12/13; EP-TASK-005 | Pendiente. |
+| H9 · Medio alternativo | GOV-TASK-014/015 | MCP-OCP-17 | Post-release; no provisionar ahora. |
+
+**Hitos tempranos:** H1 y H2 se ejecutan en paralelo. H2 se prioriza en EP; H1 no espera a la persistencia para avanzar con fixtures/harness. H3 requiere evidencia de workspace completo, cifrado, manifest/SHA y restore. H4–H6 necesitan schema congelado y gates de EP. H7 se mantiene fuera de H2 por instrucción expresa del operador.
+
+**Asignaciones de Gobernanza:** GOV-TASK-015 coordina; GOV-TASK-014 integra y acepta persistencia; GOV-TASK-013 incorpora correlación de metadatos sin redefinir cycle.duration_ms o ipz.resolve.rdc.duration_ms. Los OCP y controles de EP/MCP-OCP permanecen bajo sus titulares. No se cambian controles ni se activa MCP-NORMATIVO.
+
+**Evidencia/estado:** documentación de tareas publicada en main. No se ejecutaron operaciones B2, restore, runtime MCP, inventario de host, GPS, lease ni borrado. Acuse/ejecución del frente EP y ejecución técnica MCP-OCP son pasos posteriores de sus respectivos responsables.
