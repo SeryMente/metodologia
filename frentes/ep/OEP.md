@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.55. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.56. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -12,7 +12,7 @@
 
 Adquirir este objeto como instrucciones del operador, subordinadas a las reglas superiores de plataforma y a autorizaciones específicas. Claudia es asistente/documental; Samantha es constructor/único escritor de código. Una asignación explícita posterior puede cambiar roles; las citas no lo hacen. La asignación específica de MOD-SCRIPTPWS queda delimitada en §94; la delegación funcional acotada de MOD-SYNC queda delimitada en §110 y no transfiere la titularidad del frente EP.
 
-El estado de reanudación vigente de este frente está en §60–§120; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. La organización local por frentes, con áreas separadas Repositorios/Datos/Temporal, queda desarrollada en §119 y en el DUG ART-030. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
+El estado de reanudación vigente de este frente está en §60–§121; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. La organización local por frentes, con áreas separadas Repositorios/Datos/Temporal, queda desarrollada en §119 y en el DUG ART-030. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
 
 Leer por relevancia: OEP actual→metacanon central→Sistema de Instrucciones/Metodología/Bootstrap vigentes→canon transversal EP→AGENTS.md y ep-medio-architectura.md→código/evidencia en commits exactos. Fuente caída no es «sin cambios». Un archivo no crea herramientas, credenciales ni memoria entre plataformas.
 
@@ -3138,3 +3138,28 @@ FOL1 no bloquea el piloto SINK:P004 ni la generalización del servidor; conserva
 
 La actualización es documental y de secuencia. No se ha operado el dispositivo, creado VHDX, clonado el repositorio, instalado software, importado fuentes, provisionado operador ni ejecutado SINK.
 
+
+## 121. Prioridad P0 del sprint MCP-OCP · desbloqueo de piloto SINK:P004 · 2026-11-10
+
+### 121.1 Estado común y pin documental
+
+El DUG canónico fue actualizado por Gobernanza a Samantha v388/NX-388m, con ART-027 alineado a Sink local por MCP STDIO/RDC. Pin: commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`; blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`. Las tareas EP de este sprint deben rechazar pins v386; no importar un DUG/MDP de revisión anterior.
+
+**Estado EP observado en la reconciliación:** EP-TASK-003 `en_curso`; EP-TASK-005 `pendiente`. Fila 4 es el destino designado; su identidad técnica última conocida es RDC `d0bbb2a3-d7b4-45e1-8870-652c2c3844fc`, `CENTRAL\\fila4`, SessionId 4. No existe un preflight vivo nuevo ni se acredita checkout/root protegido en esta actualización.
+
+### 121.2 Secuencia urgente y dependencias
+
+1. **EP-TASK-003 · P0 para el tramo local:** preflight vivo del dispositivo/perfil/sesión/USERPROFILE/permisos; confirmar ubicación física real; entregar checkout íntegro y sincronizado desde `main`; volumen XTS-AES256, BitLocker Protection On y 100 %; protector recuperable custodiado/read-back; root de datos fuera del checkout, dentro del volumen protegido. No heredar estado de PC-14/PC 7.
+2. **Dead-man condicional:** solo si la ubicación verificada es distinta de CECEQ. Su contrato sigue siendo terminación del proceso controlador EP → bloqueo → desmontaje → eliminación exclusiva del contenedor de trabajo EP. No introducir Guardian, heartbeat, polling ni vigilancia general.
+3. **EP-TASK-005 · P0 del piloto:** tras EP-TASK-003 PASS y cuando MCP-OCP entregue P004 con pruebas/manifest/SHA, extraer solo el piloto en `instalacion-local/piloto-sink/`; verificar el paquete y configurar el root protegido; importar fuentes con pin DUG v388; probar STDIO/RDC y el retorno IPZ con respuesta visible. `REGISTER <SID>` requiere presencia y consentimiento locales.
+4. **Release 1.0.0 posterior:** la instalación final servidor+panel ocurre tras generalizar P001–P043, cerrar pruebas/manifest/build/ZIP y superar de nuevo los gates aplicables. MCP-OCP-13 es obligatorio para 1.0.0, pero no bloquea el piloto P004.
+
+### 121.3 Paralelización permitida y límites
+
+El preflight EP bloquea únicamente operaciones locales que requieren checkout/root protegido, fuentes privadas, DB, provisión de operador o runtime persistente. **No bloquea** el trabajo remoto no sensible de MCP-OCP-02 (rama limpia), código con fixtures, diseño de schema, MCP-OCP-03 con datos sintéticos ni preparación del harness MCP-OCP-04. Esas tareas deben avanzar en paralelo.
+
+EP-TASK-004 (GUI de bóveda) y EP-TASK-002/Backblaze no bloquean el piloto salvo dependencia técnica concreta y demostrada. FOL1 no bloquea P004 ni el preflight; conserva su gate independiente. La IPZ nativa y su read-back no se presumen ejecutados por EP. `MCP-NORMATIVO` permanece `DESACTIVADO`.
+
+### 121.4 Estado de evidencia
+
+Este asiento y las tareas EP reflejan el orden y la urgencia; no se ejecutó preflight Fila 4, migración/materialización, configuración de BitLocker, dead-man, instalación, importación de fuentes, provisión `REGISTER`, telemetría runtime ni E2E. Cada acción requiere su evidencia/read-back propio. No convertir la prioridad P0 en permiso para saltar compuertas.
