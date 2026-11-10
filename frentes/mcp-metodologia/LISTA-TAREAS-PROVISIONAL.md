@@ -78,7 +78,7 @@ La tabla sustituye los PASS/estados de recibos históricos para la implementaci�
 
 **Salida:** recibo ligado al commit de código y al main base, pins DUG/core, SDK/RID, comandos, conteos, PASS/FAIL, limitaciones y hashes. Release solo cuando suite y paquete pasen; no convertir resultados de candidata antigua en evidencia nueva.
 
-**Evidencia 2026-11-10:** 13 escenarios en el harness; fixture alineado al inventario de 43 principios; workflow Windows/.NET 10.0.403 añadido; PR #22/cycle02 produjo run 14 FAILURE sin logs disponibles; causa raíz NO VERIFICADA. cycle04 reemplaza la base obsoleta, sin declarar PASS de build/test.
+**Evidencia 2026-11-10:** 13 escenarios en el harness; fixture alineado al inventario de 43 principios; workflow Windows/.NET 10.0.403 añadido; PR #22/cycle02 produjo run 14 FAILURE sin logs disponibles; causa raíz NO VERIFICADA. cycle04 reemplaza la base obsoleta; su ejecución CI nueva está pendiente, build/test no son PASS.
 ### MCP-OCP-04 — Transporte MCP STDIO y recorrido RDC
 **Prioridad:** P0 · **Estado:** E2E_IPZ_PENDIENTE · SMOKE_BINARIO_NO_EJECUTADO.
 
@@ -268,7 +268,7 @@ El panel MCP-OCP-13 baja a P1 de secuencia, pero permanece como entregable oblig
 ## Corte de ejecución · Hito A SINK:P004 · 2026-11-10
 
 - MCP-OCP-01: contrato y autorización verificados. Control generación 5, blob 826d7bd3f67bddf4f31bafee5013d1ea55003cf4; Sink STDIO autorizado. MCP-NORMATIVO sigue DESACTIVADO.
-- MCP-OCP-02: rama limpia creada desde main HEAD 3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c: feat/mcp-ocp-p004-pilot-20261110-cycle04. Portabilidad selectiva documentada en piloto-sink/PORTABILITY-DECISIONS.md.
+- MCP-OCP-02: rama limpia creada desde main HEAD 2e98cb2729741174ccc822f52a87259c4331b066: feat/mcp-ocp-p004-pilot-20261110-cycle04. Portabilidad selectiva documentada en piloto-sink/PORTABILITY-DECISIONS.md.
 - MCP-OCP-05: código candidato escrito; fuente actual DUG v388/NX-388m, commit 3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c, blob 4db0ebadfd1e48b2bdec9236ba7f344921e4a865. El pin v386 anterior queda histórico.
 - MCP-OCP-03: 13 escenarios de prueba escritos; NO EJECUTADOS porque no hay .NET SDK en el entorno de ejecución disponible.
 - MCP-OCP-04: handshake clásico MCP `2025-11-25`, `notifications/initialized`, `tools/list`, `tools/call` y cierre por EOF documentados/codificados; E2E IPZ NO EJECUTADO ni aceptado.
@@ -282,9 +282,9 @@ El panel MCP-OCP-13 baja a P1 de secuencia, pero permanece como entregable oblig
 
 ## Estado de trabajo verificable · 2026-11-10
 
-- Rama: feat/mcp-ocp-p004-pilot-20261110-cycle04; creada desde main 3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c; comparación inicial idéntica a main.
+- Rama: feat/mcp-ocp-p004-pilot-20261110-cycle04; creada desde main 2e98cb2729741174ccc822f52a87259c4331b066; al corte actual está 15 ahead/4 behind por cuatro commits posteriores exclusivos de documentos de Gobernanza; sin solapamiento con los 15 paths MCP-OCP.
 - DUG actual: Samantha v388/NX-388m; commit 3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c; blob 4db0ebadfd1e48b2bdec9236ba7f344921e4a865; P004, §ARR y ART-027 leídos.
-- PR #22/cycle02 quedó obsoleto cuando main avanzó; su workflow run 14 terminó FAILURE. El conector no devolvió steps ni logs (404); causa raíz NO VERIFICADA. cycle04 se creó desde el HEAD actual de main y renueva el pin operativo v388.
+- PR #22/cycle02 quedó obsoleto cuando main avanzó; su workflow run 14 terminó FAILURE. El conector no devolvió steps ni logs (404); causa raíz NO VERIFICADA. cycle04 se creó desde main HEAD 2e98cb2729741174ccc822f52a87259c4331b066; main avanzó después cuatro commits solo en objetos de Gobernanza, sin solapamiento con MCP-OCP.
 - Build, 13 pruebas y smoke STDIO siguen sin PASS. El runner RDC disponible no tiene .NET SDK y opera bajo MantenimientoRCI; no se escriben archivos ni se instalan herramientas en ese perfil. Fila 4 no está online.
 - No instalar EP/Fila 4, no importar fuentes privadas, no crear DB/REGISTER, no escribir IPZ nativa, no activar FOL1/MCP-NORMATIVO ni fusionar a main.
 
