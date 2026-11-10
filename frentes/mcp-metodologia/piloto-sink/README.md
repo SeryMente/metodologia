@@ -42,7 +42,7 @@ dotnet run --project tests/OcpMcp.Monitoring.Tests/OcpMcp.Monitoring.Tests.cspro
 
 - 18 casos de contrato P004.
 - 23 casos de monitor/readiness.
-- En esta rama: 0 ejecutados; build y smoke pendientes.
+- Validación del HEAD `e5bd7d992f3fda83035cc43329353b846a25e9a8`: 18/18 P004 + 23/23 monitor PASS; builds y smoke STDIO/EOF PASS en Windows/.NET 10.0.403. El runner hospedado `ubuntu-latest` continúa sin ejecución observable.
 - CI captura logs, stdout/stderr y diagnóstico del runner incluso ante fallo.
 
 ## Límites
@@ -83,3 +83,15 @@ H1: 41 tests escritos/0 ejecutados con evidencia; build y smoke pendientes. El j
 Main `8f999198f1d8cde71361c884c9a13b745f442b49`; rama HEAD `4ac337f0b1e507497b8ab6c6c64d71d2e8001e13`; 26 ahead / 0 behind; 29 rutas. PR #27 OPEN/DRAFT/NOT MERGED. Core v0.1.38; backlog LIST v0.19.
 
 41 pruebas escritas, 0 ejecutadas con evidencia; build y smoke no verificados. CI reciente no asigna runner y no entrega pasos/logs/artefactos. H2 MCP-OCP-14 es propuesta documental; no hay runtime ni IO.
+
+
+## Revalidación ejecutable local · 2026-11-10
+
+- HEAD validado: `e5bd7d992f3fda83035cc43329353b846a25e9a8`; main base `ff9c75926a2907c630f506c4e08c267b15bca7cf`; comparación 33 ahead / 0 behind.
+- Lector DUG corregido para leer `document.principle_inventory_policy`; fixture ahora reproduce la estructura canónica v388.
+- `.gitignore` seguro restaurado desde main. El pin .NET 10.0.403 queda en `frentes/mcp-metodologia/global.json`, no en la raíz.
+- Entorno de validación: Windows 10.0.26200 x64, SDK 10.0.403, PowerShell 7.4.22.
+- Restore de ambos proyectos PASS; build de servidor y suites PASS con 0 warnings/0 errors; pruebas P004 18/18 y monitor/readiness 23/23 PASS.
+- Smoke: initialize, tools/list, tools/call y EOF; tres respuestas JSON-RPC en STDOUT, evento `SINK_READ_SUCCESS` en STDERR; exit code 0 y `PILOT_CI_RESULT=PASS`.
+- SHA-256: P004 log `D6F21749D8898B6624988BF056DA2BCC66DA3A5DF1CAE8FFA1FA2DB36DEB338B`; monitor log `B9B3F2B5A42285CC3D81AE5EEFBDC678104E5E408A861BB5D1045885CBC29989`; smoke summary `2D5C90D467B5508A9FAD22F0C00902035D9F3FE7F703B052AAB13365BE2C0B31`.
+- Esta evidencia corresponde a Windows local, no al runner hospedado Ubuntu ni a la aceptación IPZ. La instalación EP y el E2E IPZ siguen pendientes de sus responsables/gates.
