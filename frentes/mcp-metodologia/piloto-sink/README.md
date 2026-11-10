@@ -28,7 +28,7 @@
 - OcpMcp.exe serve [--repo-root path] inicia únicamente el proceso STDIO.
 - Handshake clásico MCP STDIO `2025-11-25`: el cliente envía `initialize` con `protocolVersion`, `capabilities` y `clientInfo`; el servidor negocia la versión y devuelve la capability `tools`. Después el cliente envía `notifications/initialized` y puede usar `tools/list` y `tools/call`.
 - Se aceptan también las versiones de handshake `2025-06-18`, `2025-03-26` y `2024-11-05`. El protocolo stateless `2026-07-28` no está implementado en este piloto porque el contrato del hito exige `initialize`.
-- El ciclo de cierre MCP responde a `shutdown` y termina con la notificación `exit`; EOF también termina limpiamente el proceso.
+- MCP `2025-11-25` no define mensajes `shutdown` ni `exit`. En STDIO el cliente cierra `stdin`; el servidor termina limpiamente al recibir EOF.
 - tools/list expone sink_principle(principle_id) y limita el argumento a P004.
 - La lectura valida Git blob SHA-1, UTF-8 estricto, versión/firma/evento, identidad de fuente, versiones Metacanon/GOW, inventario de 43 principios, P004 único y §ARR único.
 - Respuesta incluye texto íntegro, ID, título, MDP, ancla, pin de commit/blob, SHA-256 de fuente y texto, y procedencia de §ARR.
@@ -53,7 +53,7 @@ stdout queda reservado a JSON-RPC. Los eventos de lectura satisfactoria se emite
 - [x] Contrato de P004 y §ARR inspeccionados en el DUG de main.
 - [x] Autorización de Sink local STDIO vigente, verificada en control generación 5.
 - [x] Rama de trabajo limpia desde el HEAD de main comprobada por compare.
-- [x] 13 pruebas automatizadas escritas, incluyendo negociación, notificación `initialized`, rechazo pre-inicialización, P004 exacto desde fixture y DUG real pinneado, pins/alteración, eventos condicionados al éxito, shutdown/exit y EOF.
+- [x] 13 pruebas automatizadas escritas, incluyendo negociación, notificación `initialized`, rechazo pre-inicialización, P004 exacto desde fixture y DUG real pinneado, pins/alteración, eventos condicionados al éxito, rechazo de `shutdown` no definido y cierre por EOF.
 - [ ] Build ejecutado.
 - [ ] Las 13 pruebas automatizadas ejecutadas.
 - [ ] Protocolo STDIO probado con el ejecutable compilado.
