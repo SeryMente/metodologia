@@ -397,3 +397,8 @@ Después de crear la rama ciclo02, main avanzó cuatro commits EP-only hasta `67
 ### Reintento de CI run 56 · última lectura
 
 GitHub aceptó un `rerun_workflow_job` del job `130014524745`; la última lectura del run `42868894554` lo mostró en `queued`, sin pasos ni nuevo resultado observable. No se atribuye PASS ni se da por iniciada la compilación.
+
+
+### Resultado del reintento del CI · run 56
+
+El reintento fue aceptado por GitHub, pero volvió a terminar en `FAILURE`: job `130015275379`, `steps=[]`, `logs_url=null`, cero artefactos; la consulta de logs devolvió `BlobNotFound`. No hay evidencia de ejecución de build, suites, WPF o smoke. Se cierra el reintento controlado sin más reintentos ciegos; esperar recuperación verificable de Actions/PR o un runner autorizado alternativo.
