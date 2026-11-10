@@ -513,13 +513,13 @@ El build y las pruebas no equivalen a instalación en perfil, provisión del ope
 
 ## 15. Sprint Sink local por RDC · 2026-11-09
 
-**Estado de esta sección:** plan base del sprint, actualizado y complementado por §§16–17. La ampliación del producto para incluir MCP-OCP-13 y su ciclo EP queda definida en §17; el backlog v0.7 contiene la secuencia vigente. El operador autorizó directamente Sink stdio y panel local; no requiere consentimiento de titularidad anterior, generación ni folio.
+**Estado de esta sección:** antecedente de planificación del 2026-11-09; su destino PC 7/LOC-OTHER y su orden inicial fueron supersedidos por §18 el 2026-11-10. La línea vigente y secuencia de ejecución están en §18 y el backlog v0.8. El operador autorizó directamente Sink stdio y panel local; no requiere consentimiento de titularidad anterior, generación ni folio.
 
-**Pins:** DUG Samantha v386 · NX-386m, baseline main `82843bca9493a522405d840393c229d2af363342`, blob `22dca684830a36dff019b47811d9b800cc9bea0a`. El manifiesto de build deberá fijar el blob resultante de este núcleo v0.1.26.
+**Pins:** DUG Samantha v386 · NX-386m, baseline main `82843bca9493a522405d840393c229d2af363342`, blob `22dca684830a36dff019b47811d9b800cc9bea0a`. El manifiesto de build deberá fijar el blob resultante del núcleo vigente v0.1.27.
 
 **Ruta técnica:** revisar las ramas remotas, portarlas sobre main e implementar GOW:ARR/DUG/SINK:P001..P043, lote ordenado, frecuencia por éxito, manifiesto canónico y pruebas negativas. El código candidato usa `%LOCALAPPDATA%\\SeryMente\\OCP MCP` por defecto; antes de instalar se requiere un root de datos/backup configurable y verificado dentro del perímetro cifrado, o prueba de cifrado del volumen del perfil.
 
-**Destino EP designado:** perfil Windows `PC 7`, dispositivo RDC asociado según el operador, ubicación `LOC-OTHER`; el hostname/ID RDC, SID y estado del host quedan pendientes de preflight vivo. **Dependencias:** EP-TASK-003 (workspace protegido y dead-man obligatorio, implementado/probado en LOC-OTHER), EP-TASK-005 (handoff/bootstrap) y GOV-TASK-001/003/007/008/013. EP define destino/instalación; MCP-OCP entrega paquete y configuración. El destino designado no bloquea reconciliación, implementación, pruebas ni build; sí bloquea bootstrap/instalación persistente hasta preflight y dead-man PASS. Jules/B2/PPR cross-host/Khora/MCP-NORMATIVO quedan fuera. `MCP-NORMATIVO` sigue DESACTIVADO.
+**Destino EP en el plan original (2026-11-09):** PC 7/LOC-OTHER; antecedente supersedido por la rectificación vigente de §18. Para el sprint actual: Fila 4, ubicación física pendiente, y preflight/almacenamiento/dead-man aplicable bajo EP-TASK-003/005. Desarrollo remoto no sensible continúa en paralelo.
 
 
 ## 16. Instalación local obligatoria y sprint consolidado · 2026-11-09
@@ -551,7 +551,7 @@ MCP-OCP-02 rama limpia; 05 corte vertical ARR → DUG → SINK:P004; 03/04 prueb
 
 Build reproducible del servidor y panel; initialize/tools/list/tools/call; texto íntegro individual y batch en orden; hashes exactos; matriz positiva/negativa; rechazo de fuentes alteradas/obsoletas/ausentes y rutas inválidas; shutdown limpio; sin listener de red no autorizado. El panel debe abrir al entrar EP en ACTIVE, distinguir proceso/protocolo/fuentes/operador/root, mostrar actividad saneada y cerrarse al terminar la sesión. Paquete verificable por manifest/SHA y extracción/read-back, reconstruible desde GitHub. Release 1.0.0 solo tras E2E instalado, panel validado y recibos de aceptación.
 
-EP conserva preflight de host, protección efectiva, dead-man LOC-OTHER, root de datos y consentimiento local. El ejecutable va dentro del checkout; bootstrap/REGISTER no se hace sin presencia y consentimiento. `MCP-NORMATIVO=DESACTIVADO`; Khora/Jules/B2/Cloudflare/endpoints públicos quedan fuera.
+EP conserva preflight de Fila 4, protección efectiva, ubicación física y dead-man condicional al lugar verificado, root de datos y consentimiento local. El ejecutable va dentro del checkout; bootstrap/REGISTER no se hace sin presencia y consentimiento. `MCP-NORMATIVO=DESACTIVADO`; Khora/Jules/B2/Cloudflare/endpoints públicos quedan fuera.
 
 
 ## 17. Panel local de observabilidad · producto 1.0.0
