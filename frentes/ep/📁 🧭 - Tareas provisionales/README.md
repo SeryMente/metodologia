@@ -195,7 +195,7 @@ Estado documental: carril EP y destino exacto completados en diseño; preflight,
 
 ## Reorientación del sprint MCP-OCP · Fila 4 · 2026-11-10
 
-El operador sustituyó PC 7 por **Fila 4**, correspondiente a la única sesión RDC disponible que indica. Última identidad técnica documentada: RDC `d0bbb2a3-d7b4-45e1-8870-652c2c3844fc`, perfil interactivo `CENTRAL\\fila4`, SessionId 4; preflight vivo pendiente. La ubicación física queda sin clasificar hasta observación, por lo que el dead-man se determina según CECEQ/ubicación distinta y no por el nombre del equipo.
+El operador sustituyó PC 7 por **Fila 4**, correspondiente a la única sesión RDC disponible que indica. La identidad técnica efímera de RDC no se conserva; el alias funcional Fila 4 es el único identificador persistente. El preflight parcial vigente está registrado en OEP §§122–123. La ubicación física queda sin clasificar hasta observación, por lo que el dead-man se determina según CECEQ/ubicación distinta y no por el nombre del equipo.
 
 - **EP-TASK-003:** preparar en Fila 4 el checkout completo bajo `%USERPROFILE%\\Desktop\\SeryMente\\Repositorios\\Metodologia\\metodologia\\`, workspace VHDX protegido y read-back SHA-256. La última observación Fila 4 (histórica) informó C: 100 % cifrado, XTS-AES128, Protection Off; no acredita protección efectiva. No reutilizar staging/volúmenes de PC-14.
 - **EP-TASK-005:** el programa se instala bajo `<checkout>\\frentes\\mcp-metodologia\\instalacion-local\\`; datos/DB/fuentes/DPAPI/logs/backups quedan en `Datos/Metodologia/MCP-OCP/` sobre el volumen protegido. El primer piloto `SINK:P004` puede aceptarse antes del panel y del release final, tras superar gates de workspace/root y probar la ruta IPZ→RDC→STDIO. El panel permanece obligatorio para 1.0.0.
