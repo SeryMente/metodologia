@@ -68,3 +68,17 @@ No repetir inventarios, hashes ni pruebas ya confirmadas cuando no cambien la de
 Con la copia R2/B2 y la extracción aislada documentadas, Gobernanza puede habilitar la reanudación de desarrollo sintético H1 SINK:P004 en el ciclo MCP-OCP existente. No declarar H1 aceptado hasta demostrar el recorrido real IPZ → RDC/STDIO → SINK:P004 → salida visible y trazable al modelo.
 
 **Estado:** registro provisional creado desde el TXT de origen; procedimiento de descarga/extracción documentado; descifrado cross-host de Vault NO_VERIFICADO.
+
+
+## 7. Paquete R3 posterior · corte 17:21 local
+
+Se encontró un segundo paquete más reciente, **solo local** en el corte de esta nota:
+
+- Archivo: `Downloads/EP-Workspace-Recovery-R3-20261110.zip`.
+- Creación: `2026-11-10T23:21:27Z` = `17:21:27 -06:00`.
+- Tamaño: 107.014.352 bytes; 3.342 entradas ZIP; 3.339 archivos del workspace según su manifiesto.
+- Incluye dos ciphertexts: `EP/local-state/Khora/secrets/ep-env-vault.enc.json` (2.200 bytes) y `EP-Vault/ep-env-vault.enc.json` (2.048 bytes).
+- Añade `__EP_RECOVERY__/RESTORE-INSTRUCTIONS.txt` y `Restore-Workspace.ps1`. La guía indica extracción a `C:\R3R` y restauración a un destino vacío como `C:\SeryMente`; el script rechaza sobrescribir un destino existente.
+- Excluye expresamente secretos en claro, claves privadas sueltas, reparse points y directorios regenerables. Mantiene la excepción de no tener cifrado cliente.
+
+**Estado remoto de R3: NO_VERIFICADO / no usar como fuente remota confirmada.** En B2, la fuente remota con read-back demostrado sigue siendo R2. Para salir hoy, R2 es el archivo remoto de recuperación; R3 es una mejora local pendiente de carga y read-back cuando Vault/credenciales estén disponibles. No duplicar ni borrar R2.
