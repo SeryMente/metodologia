@@ -362,3 +362,7 @@ EP-TASK-004 GUI de bóveda y EP-TASK-002/Backblaze no bloquean P004 ni el build 
 
 ### Siguiente acción de MCP-OCP
 Abrir PR draft ciclo02; recuperar ejecución CI con steps/logs/artifacts; corregir hasta build/tests/smoke PASS. Después congelar respuesta P004. La E2E real exige gates EP y respuesta visible al modelo desde el contexto IPZ. No mergear main.
+
+### Main posterior a la base de ciclo02
+
+Después de crear la rama ciclo02, main avanzó cuatro commits EP-only hasta `67b48bc041bee372c69389f0aa84ed1a6d19eff5`. La comparación desde la base `84cc9ffc1a2aa27c622c7e5de147d7460f3b5ecd` confirma que las cuatro rutas modificadas pertenecen a EP y no se solapan con las 16 rutas MCP/GOV de la rama. Se conserva la rama desde su base limpia verificada; relación actual 16 ahead / 4 behind. No se toma control ni se modifica el estado EP.
