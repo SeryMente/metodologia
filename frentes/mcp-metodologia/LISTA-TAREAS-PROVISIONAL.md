@@ -37,8 +37,8 @@ La tabla sustituye los PASS/estados de recibos históricos para la implementaci�
 | 3 | MCP-OCP-05 | P0 | Corte vertical GOW:ARR → DUG → SINK:P004 | PENDIENTE_PILOTO | Respuesta individual completa, pin/commit/blob/SHA-256 y fail-closed. Generalización a 43 después del piloto. |
 | 4 | MCP-OCP-03 | P0 | Suite mínima de contrato del piloto P004 | PENDIENTE_PILOTO | Casos positivos/negativos de fuente, ID, pin/hash, error y cierre; luego ampliar suite 1.0.0. |
 | 5 | MCP-OCP-04 | P0 | Transporte y E2E IPZ → RDC → STDIO para P004 | PENDIENTE_E2E_IPZ | initialize/tools/list/tools/call/cierre y respuesta visible desde el contexto IPZ; consola sola no basta. |
-| 6 | MCP-OCP-13 | P1 | Panel local de observabilidad visual | ESPECIFICADO · IMPLEMENTACIÓN_PENDIENTE | Obligatorio en 1.0.0; se implementa tras congelar schema y no bloquea el piloto SINK:P004. |
-| 7 | MCP-OCP-05 (fase posterior) / 03 | P0 | Generalización Sink P001–P043 y lotes | PENDIENTE_POST_PILOTO | 43 respuestas, orden, hashes/eventos y controles negativos PASS. |
+| 6 | MCP-OCP-05 (fase posterior) / 03 | P0 | Generalización Sink P001–P043 y lotes | PENDIENTE_POST_PILOTO | 43 respuestas, orden, hashes/eventos y controles negativos PASS. |
+| 7 | MCP-OCP-13 | P1 | Panel local de observabilidad visual | ESPECIFICADO · IMPLEMENTACIÓN_PENDIENTE | Obligatorio en 1.0.0; se implementa tras congelar schema, en paralelo con la generalización, y no bloquea el piloto SINK:P004. |
 | 8 | MCP-OCP-10 | P1 | Pins, manifiesto y evidencia final | PENDIENTE_EVIDENCIA_ACTUAL | Pins v386/core vigente, SDK/RID, servidor+panel, tests y hashes. |
 | 9 | MCP-OCP-07 | P1 | Paquete reproducible 1.0.0 | PENDIENTE_PAQUETE_ACTUAL | ZIP final servidor+panel, configuración, manifest/SHA y read-back. |
 | 10 | MCP-OCP-12 | P1 | Bootstrap local en Fila 4 | BLOQUEADO_GATES_EP | Piloto/instalación dentro de checkout; datos externos protegidos; REGISTER interactivo. |
