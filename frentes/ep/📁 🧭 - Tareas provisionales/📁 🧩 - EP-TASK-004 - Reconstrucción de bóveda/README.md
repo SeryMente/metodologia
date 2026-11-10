@@ -554,3 +554,37 @@ EP Vault es una herramienta local de Metodología, **no una extensión Chrome**.
 - La instalación de código no equivale a inicialización de la bóveda ni a aceptación de H10.
 
 **Estado de este asiento:** destino normativo fijado; instalación PC 7 y validación E2E quedan registradas para ejecución inmediata.
+
+---
+
+## Rectificación de titularidad y migración B2 Master de EP verificada · 2026-11-10 · 10:12 America/Mexico_City
+
+### Procedencia corregida
+
+El operador confirmó expresamente que **ambas notas efímeras pertenecían a la cuenta Backblaze dedicada a Entorno Persistente (EP)**. La nota corta era el Master Application Key ID y la nota larga el Master Application Key secreto. La clasificación no se basó únicamente en longitud. La pregunta anterior que volvió a cuestionar si pertenecían a Cora queda rectificada: Cora utiliza su propia cuenta y credenciales independientes. No se transfirió ni reutilizó ninguna credencial de Cora ni de Khora.
+
+### Resultado de la migración en EP Vault
+
+Registro de ejecución bajo `CENTRAL\fila4`, completado en `2026-11-10T16:01:06Z`:
+
+| Control | Resultado |
+|---|---|
+| `EP_B2_MASTER_APPLICATION_KEY_ID` | Presente; 12 caracteres; promoción y read-back verificados |
+| `EP_B2_MASTER_APPLICATION_KEY` | Presente; 42 caracteres; promoción y read-back verificados |
+| Notas efímeras de origen | 0 restantes; cada nota se retiró tras su promoción verificada |
+| Alias obsoleto `EP_B2_APPLICATION_KEY_ID` | Retirado; no quedan alias B2 EP deprecados |
+| Configuración EP de destino | `EP_B2_ACCOUNT_EMAIL`, `EP_B2_BUCKET_NAME` y `EP_B2_PREFIX` preservados |
+| Variables `KHORA_B2_*` | Preservadas; no modificadas |
+| Emisión de valores secretos | `valuesEmitted=False` |
+
+**Read-back final:** `2026-11-10T16:12:43Z`; las dos variables canónicas estaban presentes, la sesión estaba activa en ese instante y el registro confirma que la GUI no fue cerrada. Estos datos de sesión son efímeros y no implican desbloqueo permanente.
+
+**Ciphertext tras migración:** 2.156 bytes; SHA-256 `F41FE765BCD30787C880C9105E3F6B3C4F6D00D67BA7AEAF70E55F3E7A96514C`.
+
+**Archivos de evidencia saneada:** `SeryMente/EP/local-state/run-logs/ep-b2-master-key-migration.json` y `ep-b2-final-verification.json`. No se incorporan valores, archivos DPAPI ni secretos a Git.
+
+### Separación de hitos
+
+La migración y lectura de vuelta de los secretos en la bóveda está **VERIFICADA**. No se ejecutó después una autenticación real de Backblaze, una consulta de bucket ni upload/download remoto. La autorización B2 y la persistencia remota del snapshot actual permanecen pendientes; el readiness previo a la migración no se presenta como resultado posterior.
+
+**Estado de EP-TASK-004:** `en_curso`. Esta migración no cierra H10 ni sustituye la aceptación integral E2E/visual de la bóveda. No se modificaron el core, la interfaz, la sesión de Windows ni los permisos del almacén.
