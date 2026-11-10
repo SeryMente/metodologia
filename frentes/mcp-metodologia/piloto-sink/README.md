@@ -62,3 +62,10 @@ La rama se reconcilió con main `646608896a499f78640d6f17ec1e87876089e16f` media
 La rama fue sincronizada también con main `8f999198f1d8cde71361c884c9a13b745f442b49` mediante merge `ea32a78e87bd659307fc81ff3f80b3743bae9d0a`, conservando las rutas del candidato y el asiento GOV-TASK-015. Compare posterior: 18 ahead / 0 behind. PR #27 sigue OPEN/DRAFT/NOT MERGED.
 
 La propuesta MCP-OCP-14 v0.1 y sus cuatro schemas se encuentran bajo `persistencia/`; son diseño documental, no runtime. El último CI P004 sigue sin runner asignado, sin pasos/logs/artefactos; build, tests y smoke no están acreditados.
+
+
+## Estado candidato vigente · H1/H2
+
+Main sincronizado: `8f999198f1d8cde71361c884c9a13b745f442b49`; merge `ea32a78e87bd659307fc81ff3f80b3743bae9d0a`. HEAD actual de la rama antes de esta nota: `4c3d63a5a20d770c1da31366ec3563320ee1c2f6`; 19 ahead / 0 behind; PR #27 OPEN/DRAFT/NOT MERGED.
+
+H2 aporta una propuesta MCP-OCP-14 v0.1 y cuatro JSON Schemas parseables. No hay código de persistencia, DB, IO, B2, Vault ni restore; dichos actos mantienen responsables y gates EP. Build/tests/smoke H1 no cuentan con evidencia de ejecución por jobs sin runner asignado.
