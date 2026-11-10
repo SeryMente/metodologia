@@ -1,4 +1,22 @@
-## Evento vigente · C-GOBERNANZA-RETOMA-11 · 2026-11-06
+## Estado operativo vigente · sprint Sink local · 2026-11-10
+
+**Responsabilidad:** control único activo de Gobernanza, generación 17, blob `16a4265c8a5f1c3d5db7a96ca83100bcd973a42e`. Titular `SES-20261108-506DCF0C`, alias `chatgpt-C-GOBERNANZA-RETOMA-13-SES-20261108-506DCF0C`, UUIDv7 local `01a1bc38-78e0-74e5-92ca-8d28506dcf0c`; corresponsable `chatgpt-C-GOBERNANZA-ASIENTO-02-RETOMA-20261101-01-SES-20261101-GV8E89D1FF`. Dos responsables activos; máximo dos. El ID nativo de la conversación no está expuesto.
+
+**DUG canónico:** Samantha v388 · NX-388m · 43 principios · 24 anexos. El evento `C-GOBERNANZA-ART027-SINK-LOCAL-RECONCILIACION-20261110-01` actualizó ART-027 para definir Sink local por MCP-OCP STDIO/RDC. DUG commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`; blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`. ART-025 y ART-031 se preservaron.
+
+**Contrato de dos capas:** primera capa con 43 MDP deliberadamente insuficientes para aplicar la norma; segunda capa mediante la operación local `SINK:Pxxx` para recuperar el texto desarrollado íntegro del principio pertinente. La respuesta exige ID, título, texto, versión/firma, commit/blob y SHA-256. Solo se registra frecuencia de recuperaciones satisfactorias. No hay Worker, redirect, URL ni alias HTTP operativo. `MOD-SYNC` es distinto y pertenece a EP; no forma parte de Sink. `MCP-NORMATIVO` permanece `DESACTIVADO`.
+
+**Secuencia prioritaria:** MCP-OCP-02 (rama limpia desde main) → MCP-OCP-05 (corte P004) → MCP-OCP-03 (pruebas) → MCP-OCP-04 (STDIO/RDC). Gobernanza mantiene GOV-TASK-008 (contrato), GOV-TASK-001 (43+8 MDP), GOV-TASK-007 (IPZ/FOL1), GOV-TASK-003 (E2E) y GOV-TASK-015 (coordinación). La generalización P001–P043 y los lotes siguen al PASS P004.
+
+**Fronteras:** MCP-OCP generación 5 tiene autorización vigente para implementar Sink en su propio OCP; sus documentos técnicos consultados aún mostraban pins DUG v386 y deben ser reconciliados por su titular antes del build. EP conserva host, perfil, storage e instalación. El destino es Fila 4, no PC 7; preflight vivo y root protegido siguen pendientes.
+
+**Estado observado en esta reconciliación:** artefactos documentales de Gobernanza actualizados y leídos de vuelta. No se acredita resolver P004 implementado, fuente privada importada, build, instalación, runtime, telemetría real ni aceptación E2E. IPZ nativa `NO_VERIFICADA`; FOL1 `PREPARADO_PENDIENTE_ACTIVACION_IPZ`; CV/CY/A/B globales y por OCP `PENDIENTE / NO ASIGNADO`.
+
+[Referencia DUG ART-027](../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-027) · [Coordinación GOV-TASK-015](📁%20🧭%20-%20Tareas%20provisionales/📁%20🧩%20-%20GOV-TASK-015%20-%20Sprint%20Sink%20local%20vía%20RDC/README.md) · [PENDIENTES](PENDIENTES.md).
+
+---
+
+## Evento histórico supersedido · C-GOBERNANZA-RETOMA-11 · 2026-11-06
 
 **Responsabilidad:** titularidad primaria transferida de generación 14 a 15. Titular anterior `SES-20261106-GV8910D0C2` supersedido. Nuevo titular `SES-20261106-A42BB5B3`; alias `chatgpt-C-GOBERNANZA-RETOMA-11-SES-20261106-A42BB5B3`; instancia `chatgpt-gobernanza-1-2026-11-06-A42BB5B3`; UUIDv7 local `01a1b308-1b6a-739e-bc0a-b38da42bb5b3` (no es ID nativo de ChatGPT). Corresponsable `SES-20261101-GV8E89D1FF`, generación 12, preservada. Dos responsables activos; máximo dos. Control final blob `ee9065a8bc6bcd632c2f34158fdf45133b86bb5c`; transferencia/read-back commits `35ce56045e9378c83cf14eb5d9181c1d472a8417` / `015f27c6d936a96a737758f4dbfaa97b7ad2564a`.
 
