@@ -76,3 +76,16 @@ La prueba acepta el producto instalado en el recorrido que utilizará el operado
 - **Aceptación final:** requiere uso desde contexto IPZ real → RDC → MCP-OCP STDIO y respuesta íntegra P004 visible al modelo con pin/hash. El smoke de consola no basta.
 
 `GOV-TASK-003=SPECIFIED_PENDING_E2E` · `IPZ_NATIVE=NOT_VERIFIED` · `FOL1=PREPARADO_PENDIENTE_ACTIVACION_IPZ` · `MCP-NORMATIVO=DESACTIVADO`.
+
+
+---
+
+## Reanudación del Sprint SINK-P004 · criterio E2E vigente · 2026-11-10
+
+GOV-TASK-003 es la tarea de aceptación del piloto; no implementa ni instala el servidor. Su criterio de cierre para la primera fase es una demostración observable de `GOW:ARR → DUG v388 → SINK:P004` invocada desde el contexto IPZ real por RDC/STDIO y con respuesta íntegra visible al modelo. La evidencia debe incluir ID/título, versión/firma, commit/blob de fuente y SHA-256 del texto. Un smoke JSON-RPC de consola, una prueba de unidad o la presencia de un ejecutable no son E2E.
+
+**Precedencias:** MCP-OCP-02 debe producir rama limpia desde main; MCP-OCP-05 implementa P004; MCP-OCP-03 y 04 ejecutan contrato/harness; EP-TASK-003 debe pasar y EP-TASK-005 debe instalar el paquete P004 verificado. GOV-TASK-007 prepara el candidato IPZ compacto en paralelo, pero su congelación depende del contrato de respuesta P004. La escritura/read-back nativa de IPZ es acto separado y no se afirma realizada.
+
+**Estado de ejecución:** `GOV-TASK-003=PENDING_E2E`; `MCP_OCP_02=OPEN`; `MCP_OCP_05=PENDING`; `EP_TASK_003=PARTIAL_FAIL`; `EP_TASK_005=PENDING`; `IPZ_NATIVE=NOT_VERIFIED`. FOL1 no bloquea este piloto y sigue `PREPARADO_PENDIENTE_ACTIVACION_IPZ`. `MCP-NORMATIVO=DESACTIVADO`.
+
+**Responsabilidad:** Gobernanza ejecuta y acepta la prueba; MCP-OCP entrega el servidor y las pruebas; EP ejecuta el preflight/instalación local. GOV-TASK-015 es el coordinador interfrente único.
