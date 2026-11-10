@@ -2597,3 +2597,23 @@ Los cinco objetos fueron leídos de vuelta y cotejados con el blob esperado. La 
 - No se ejecutaron operaciones destructivas ni de almacenamiento en este ciclo; no hay rollback que aplicar.
 
 **Estado del ciclo:** `PUBLICADO → LEÍDO → RESPUESTA_INICIAL_REGISTRADA → PROCESADO → DOCUMENTADO_AL_CIERRE`. La escritura del presente cierre y su read-back completan `VERIFICADO_READBACK` si el cotejo final es exacto.
+
+
+---
+
+## EP · apertura de ciclo con relectura de tareas y selección de siguiente trabajo · 2026-11-10 · 15:53 America/Mexico_City
+
+### Respuesta inicial y cursor
+
+DTC releído desde `main`, blob `bcad48724aca6ffd34f09ee8d90944ef57d192fd`, 2.600 líneas. El último asiento es el cierre EP de 15:50 del mismo día. No hay mensaje nuevo de Gobernanza posterior a ese cursor: `SIN_NOVEDAD`. Se releyeron en main OEP v0.3.61, índice provisional y los núcleos EP-TASK-001 a EP-TASK-007. La relectura confirma los estados y el orden registrados; no se promovió ninguna tarea a completada por el paso del tiempo.
+
+**Acuse de la instrucción directa del operador:** volver a leer las tareas, escoger la siguiente conforme a dependencias y resolver el trabajo habilitado; mantener actualizados los objetos de tarea en cada ciclo.
+
+### Selección operativa
+
+1. EP-TASK-002 sigue siendo P0 y precede a la migración física, pero una lectura CLI propietaria a las 15:53:23.4679423-06:00 devolvió `sessionActive=false`, ciphertext presente de 2.200 bytes y recibo B2 ausente. No se ejecutará transferencia B2 sin la sesión desbloqueada.
+2. EP-TASK-003 tiene diseño aceptado por el operador, pero su manifiesto de migración no puede congelarse mientras la carpeta Temporal compartida sigue teniendo actividad de escritura. Se observa actividad Git reciente en `Temporal/SI-Reconcile-20261110-G14`, incluidos archivos `.git` modificados a las 15:52; se preserva la serialidad y no se copia ni modifica esa carpeta.
+3. La siguiente tarea independiente apta para ejecución sintética es EP-TASK-004. Su README exige repetir la suite E2E sintética sobre la ruta exacta v1.0.0. El test `tests/Test-EPVault.ps1` usa una bóveda temporal sintética, prueba opciones TTL, inicialización/upgrade, notas DPAPI, allowlist, logs y sesión GUI/CLI compartida; el sandbox puede dirigirse a una carpeta temporal nueva fuera de AppData y del workspace y limpiarse al finalizar. Esta corrida no desbloquea ni accede a la bóveda formal y no sustituye H10.
+4. EP-TASK-005/006/007/001 conservan dependencias y prioridad ya registradas; no se anticipan.
+
+**Siguiente acción inmediata:** verificar el script exacto de suite y su procedencia/versionado; ejecutarlo aislado sobre la ruta local v1.0.0 si el código coincide con el objeto esperado. Registrar resultados y SHA/read-back en EP-TASK-004, índice, OEP y este DTC. No tocar el almacén formal, la GUI, BitLocker ni el workspace compartido.
