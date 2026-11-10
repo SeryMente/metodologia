@@ -4,6 +4,8 @@ namespace OcpMcp;
 
 internal static class Program
 {
+    private static readonly JsonSerializerOptions JsonOptions = new(JsonSerializerDefaults.Web);
+
     public static async Task<int> Main(string[] args)
     {
         try
@@ -19,7 +21,7 @@ internal static class Program
             if (repoRoot is null) throw new DirectoryNotFoundException("METODOLOGIA_REPOSITORY_ROOT_NOT_FOUND");
 
             var reader = new DugSourceReader(repoRoot);
-            var server = new McpServer(reader, evt => Console.Error.WriteLine(JsonSerializer.Serialize(evt)));
+            var server = new McpServer(reader, evt => Console.Error.WriteLine(JsonSerializer.Serialize(evt, JsonOptions)));
             using var cts = new CancellationTokenSource();
             Console.CancelKeyPress += (_, e) => { e.Cancel = true; cts.Cancel(); };
             await server.RunAsync(Console.In, Console.Out, cts.Token);
