@@ -125,6 +125,11 @@ public sealed class DugSourceReader : IPrincipleSource
             if (!principleIds.Add(principleId))
                 throw new InvalidDataException("DUG_PRINCIPLE_ID_DUPLICATE");
         }
+        var expectedPrincipleIds = Enumerable.Range(1, 43)
+            .Select(number => $"P{number:000}")
+            .ToHashSet(StringComparer.Ordinal);
+        if (!principleIds.SetEquals(expectedPrincipleIds))
+            throw new InvalidDataException("DUG_PRINCIPLE_INVENTORY_MISMATCH");
 
         JsonElement[] matches = principlesElement.EnumerateArray()
             .Where(p => p.TryGetProperty("id", out JsonElement id) && id.GetString() == "P004")
