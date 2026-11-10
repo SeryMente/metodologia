@@ -2286,3 +2286,28 @@ El export contiene un rótulo de progreso que dice «Migrado el espacio de traba
 **PREGUNTA FINAL: RESPONDIDA EN OEP §115.**  
 **TAREAS: ÍNDICE Y NÚCLEO EP-TASK-003 RECONCILIADOS.**  
 **CICLO DOCUMENTAL: COMPLETADO; MIGRACIÓN TÉCNICA EP-TASK-003 SIGUE PENDIENTE.**
+
+
+---
+
+## EP · rectificación de procedencia y reconciliación de tareas B2 · 2026-11-10 · 10:12 America/Mexico_City
+
+### Apertura del ciclo
+
+**Instrucción literal:** actualizar los expedientes provisionales EP de acuerdo con el último tramo de la conversación, preservando la separación de titularidad de las cuentas Backblaze y reflejando el resultado real de la migración.
+
+**Fuente normativa y de continuidad adquirida:** DUG v387 · NX-387m, blob `c8d37d92aed7ff9d4fe94e7a9541e76ba5c88a2c`; GOW 2.18; OEP v0.3.55, blob `fa865ceae8bcc6542b013a78c790ae2a0444ba41`; índice provisional leído antes de la actualización, blob `75ef11b55eddd97e2aadfd0a8ee62997161f227e`. La carpeta local de `metodologia` no contiene metadatos Git; `main` es la fuente canónica y el escritorio es espejo operativo.
+
+### Resultado observado y rectificación
+
+El read-back de registros saneados del equipo `PC10RCIF4EI4`, bajo `CENTRAL\fila4`, confirma que el 2026-11-10T16:01:06Z se promovieron ambos valores de notas efímeras a `EP_B2_MASTER_APPLICATION_KEY_ID` y `EP_B2_MASTER_APPLICATION_KEY`. Los estados registrados son `PROMOTED_READBACK_VERIFIED_NOTE_REMOVED`; longitudes 12 y 42; cero notas restantes; valores no emitidos. Se retiró `EP_B2_APPLICATION_KEY_ID`; no quedan alias EP B2 deprecados. Se conservaron los valores de destino EP y el espacio `KHORA_B2_*`.
+
+**Titularidad:** el operador confirmó expresamente que las dos notas pertenecían a la cuenta Backblaze dedicada exclusivamente a EP. Cora tiene su propia cuenta/credenciales; Khora conserva su propio espacio `KHORA_B2_*`. No hubo reutilización cruzada.
+
+**Estado separado:** migración/read-back local completados; autenticación B2 posterior, consulta de bucket, carga y descarga remota no ejecutadas. El readiness previo a la migración no se considera evidencia posterior.
+
+### Cierre del ciclo documental
+
+Se actualizan los núcleos EP-TASK-002, EP-TASK-004 y EP-TASK-006, más el índice provisional. Los estados continúan `en_curso`; no se crean tareas, OCP, folios ni titulares nuevos. El ciphertext actualizado mide 2.156 bytes y su SHA-256 es `F41FE765BCD30787C880C9105E3F6B3C4F6D00D67BA7AEAF70E55F3E7A96514C`. La evidencia detallada y la lectura de vuelta de los documentos quedan referidas en los asientos de cada tarea.
+
+**Pendiente técnico principal:** autenticar contra la cuenta EP después de la migración y verificar objeto remoto de respaldo mediante descarga y SHA-256; no declarar persistencia hasta ese read-back.
