@@ -319,3 +319,82 @@ Estas preguntas deben resolverse antes de convertir la propuesta en instruccione
 10. **Arranque y persistencia:** si B2 no está disponible al instanciar, ¿se permite abrir desde el último snapshot local verificado y dejar la subida en cola cifrada, o la sesión debe esperar a confirmar B2 remoto? La rapidez favorece el primer enfoque, pero debe definirse la tolerancia a pérdida.
 
 **Estado:** instrucciones y decisiones anteriores registradas; workspace completo local confirmado; duración renovable confirmada sin parámetros; alcance de bóveda organizacional confirmado como objetivo. La propuesta de esquema, niveles de inventario, persistencia y secuencia es diseño preliminar. No se han configurado ni despachado tareas nuevas a EP/MCP-OCP; no se han modificado sus controles, ni se ha activado telemetría, inspección, lease, borrado, B2 o integración de credenciales.
+
+
+---
+
+## 4. Respuestas y órdenes finales del operador · 2026-11-10 · criterio de verdad
+
+### 4.1 Respuesta literal sobre parámetros, jurisdicción, telemetría, borrado y persistencia
+
+~~~text
+1\. Jurisdicción y equipos: ¿OCP operará solamente en México o también en otros países? ¿La recolección se limitará a equipos que tienes autorización para inspeccionar, incluidos los equipos de cibercafés?
+
+Operaa solamente en mexico, y asume que tengo autorizacion para inspeccionar cualquier mauqina donde opere. &#x20;
+
+
+
+2. No,  GPS y todo, siempre y cuando no me haga muy lento, o me cause problemas.&#x20;
+
+
+
+3.Nivel robusto por default.
+
+
+
+4. &#x20;Las que sean armonicas con  las necesidades de mi proyecto.  Sin quedarme corto. Conservare los datos pro tiempo indenfinido .&#x20;
+
+
+
+5. Aprobado.&#x20;
+
+
+
+
+
+6. Se trata de intentar mantener la recuerabilidad del trabajo o progreso.  Pero borrar todo nuclearmente alcanzado cierto evento. Tratand antes de respaldar, pero dandole prioridad al borrado. &#x20;
+7. Todo se cifra,  incluidas las converasciones. &#x20;
+8. No lo se,  ya te di las especificaciones, westas preguntas no me interesan.&#x20;
+9. Si, pero ponlo en la secuencia,  no lo hagas ahora. Ya te habia dicho, par aque quiers que confirme.  RDC se autentica al inicio de sesion, y se maneja una sola sesion activa, posiblemente dos. Por razones especiales, pero no se si esto esimportante  ahra? O tu dime.&#x20;
+10. Pendietnbe en la secuencia medio de persistencia alternativo como respaldo. Por ahora solo backblaze asumiendo que no fallara.&#x20;
+~~~
+
+### 4.2 Órdenes literales de configuración y organización
+
+~~~text
+Si ya tienes l oque necesitas configura las tareas rapidamente para empezar a trabajar
+~~~
+
+~~~text
+Siu, recuerda organizar por hitos, documenta toda mi insutrccionverbatim, par que sirvand ecriteriod e verdad para las a tareas
+~~~
+
+~~~text
+Sí, recuerda organizar por hitos, documenta toda mi insutrccionverbatim, par que sirvand ecriteriod e verdad para las a tareas
+~~~
+
+### 4.3 Decisiones vinculantes para las tareas del sprint
+
+1. **Jurisdicción y operación:** México. Para la planificación se toma como declaración del operador que cuenta con autorización para inspeccionar cualquier máquina donde opere. Las implementaciones deben respetar permisos del sistema operativo, avisos/consentimientos legalmente exigibles y límites técnicos; la autorización declarada no implica eludir controles del host.
+2. **Inventario:** perfil robusto por defecto. Intentar recoger información de ubicación GPS, IP y contexto de red, además de inventario técnico completo, siempre que el dato sea accesible por interfaces soportadas, su captura no perjudique la velocidad/estabilidad y el tratamiento sea lícito. Guardar origen, timestamp, precisión y estado AVAILABLE/UNAVAILABLE/DENIED/ERROR; no fingir datos ausentes. No elevar privilegios ni evadir permisos de ubicación.
+3. **Retención:** conservar indefinidamente los datos cifrados que resulten armónicos con las finalidades operativas del proyecto, salvo obligación legal aplicable, revocación válida o decisión posterior del operador. Mantener inventario de categorías, finalidad, fuente y fecha de captura.
+4. **Lease aprobado:** renovación de 60 s mientras la sesión esté activa; ventana de lease de 30 min; aviso previo; cierre por 10 min de inactividad; duración absoluta máxima de 8 h. Cada sesión tendrá lease/estado independiente. Una segunda sesión requiere modo excepcional explícito, máximo dos activas y separación de IDs, claves, eventos y workspace montado.
+5. **Cierre prioritario:** ante el trigger terminal, intentar un checkpoint/respaldo primero, pero con presupuesto de tiempo acotado y sin permitir que la persistencia posponga el borrado local. Al agotarse el presupuesto, bloquear/desmontar y destruir criptográficamente la clave efímera local; limpiar residuos OCP. El trigger de emergencia o sospecha de compromiso prioriza cierre/crypto-erasure inmediato y no espera a B2. Jamás destruir la clave de recuperación persistente ni borrar discos/perfiles/datos ajenos.
+6. **Cifrado integral:** cifrar todo el workspace, incluyendo contenido de conversaciones, adjuntos y datos persistidos; cifrar también snapshots B2, bóveda y telemetría identificable. La telemetría no replicará contenido en claro. El cifrado no elimina las obligaciones de tratamiento de datos.
+7. **Workspace:** descargar el workspace completo en cada instancia y trabajar localmente sobre su copia cifrada. Backblaze es el único destino remoto inicial, bajo EP-TASK-002. El medio alternativo de persistencia queda anotado para una etapa posterior; no provisionarlo ahora.
+8. **RDC:** autenticación al inicio de sesión. Una sesión RDC activa por defecto; permitir una segunda solo por excepción explícita. La bóveda deberá entregar credenciales de forma just-in-time a un mecanismo seguro verificado, nunca por command-line, logs, portapapeles o archivos en claro. La integración se planifica y verifica en su hito; no se implementa en esta fase documental.
+9. **Nomenclatura:** no bloquear el trabajo por preferencia de consecutivo. Adoptar UUIDv7 como identidad técnica y etiquetas secuenciales legibles por entidad, asignadas de modo atómico; si se inicia sin conexión, el UUIDv7 permite registrar eventos localmente y el consecutivo se reconcilia al persistir. No reutilizar folios FOL1 ni identificadores nativos.
+10. **Hitos:** conservar SINK:P004 y ordenar persistencia mínima/bóveda tempranas, workspace completo recuperable, telemetría, lease/dead-man, limpieza y release. La configuración y las asignaciones se estructuran por hitos; cada frente conserva propiedad y evidencia propias.
+
+### 4.4 Especificación de trigger y límite de borrado
+
+- La GUI del Entorno Persistente inicia automáticamente un guardián independiente al crear la instancia; la terminación de GUI/proceso principal, pérdida de heartbeat, lease vencido, inactividad configurada o acción explícita del operador activan el cierre según su clase.
+- La política de cierre ordinario intenta una única persistencia/checkpoint bajo un presupuesto inicial configurable de 30 s; si falla, vence el presupuesto o no se confirma el checkpoint, se ejecuta el cierre criptográfico local y se deja el estado de recuperación como no confirmado. El presupuesto se medirá y ajustará en pruebas; no es permiso para extender la exposición.
+- El trigger de emergencia/sospecha de compromiso omite la espera de respaldo, bloquea y destruye la capacidad local de descifrado cuanto antes.
+- El guardián debe poder completar el cierre si la GUI principal falla. La caída del equipo/corte eléctrico no puede ejecutar limpieza en ese instante: las claves de sesión no deben quedar persistidas en claro, de modo que la pérdida de memoria volátil deje la copia local cifrada e inaccesible.
+- La limpieza cubre el contenedor/workspace OCP, procesos/artefactos creados por OCP y residuos temporales identificados. No recorre ni borra indiscriminadamente el perfil ni el disco anfitrión. En SSD/UNKNOWN se prioriza saneamiento criptográfico; no confiar en sobrescritura tradicional.
+- El cierre debe emitir recibo local saneado: trigger, tiempos, checkpoint intentado/confirmado, cierre/desmontaje, clave de sesión invalidada, limpieza ejecutada, residuos no eliminables y estado final. No incluir secretos.
+
+### 4.5 Estado de configuración
+
+Decisiones suficientes para configurar las tareas provisionales de Gobernanza, MCP-OCP y EP. La implementación real sigue sometida a los controles y responsables propietarios de cada frente. Esta instrucción autoriza configuración documental de tareas y handoff; no autoriza eludir compuertas host, modificar controles, revelar credenciales, ejecutar operaciones B2, ni borrar o alterar almacenamiento.
