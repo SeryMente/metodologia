@@ -18,7 +18,7 @@ Construir una recuperación trazable de `SINK:P004` mediante un servidor MCP loc
 - DUG v388/NX-388m; Metacanon 1.29; GOW 2.18.
 - GOW:ARR = `gow-sec-14`; principio = `P004`.
 
-El lector valida el hash Git del archivo, UTF-8, versiones y fuente canónica, GOW:ARR, autoridad, catálogo único de 43 IDs, marcador humano `[[P:P004]]), título, ancla, texto normativo exacto, MDP y preponderancia. Nunca sustituye una fuente inválida con memoria ni con el MDP.
+El lector valida el hash Git del archivo, UTF-8, versiones y fuente canónica, GOW:ARR, autoridad, catálogo único de 43 IDs, marcador humano `[[P:P004]]`, título, ancla, texto normativo exacto, MDP y preponderancia. Nunca sustituye una fuente inválida con memoria ni con el MDP.
 
 ## Transporte
 
@@ -48,3 +48,10 @@ dotnet run --project tests/OcpMcp.Monitoring.Tests/OcpMcp.Monitoring.Tests.cspro
 ## Límites
 
 No importa fuentes privadas, crea DB real, provisiona operador, instala en Fila 4, escribe IPZ nativa ni acredita el E2E desde contexto IPZ. EP conserva sus gates y ciclo de vida. La generalización a P001–P043 y el panel WPF son fases posteriores. FOL1 permanece preparado/inactivo y MCP-NORMATIVO DESACTIVADO.
+
+
+## Revisión de tarjeta humana y rebaseline actual
+
+El DUG renderiza la tarjeta `P004` con `card(p) → render(p.content_markdown)`. El lector valida que ese campo coincida exactamente con `> normative_text`; la suite incluye un negativo que altera ese Markdown incluso tras repinnear el blob. La comprobación estática no reproduce una divergencia entre tarjeta humana y respuesta Sink.
+
+La rama se reconcilió con main `646608896a499f78640d6f17ec1e87876089e16f` mediante el commit `dfae6b0fe60438753fa7abe0b9febd6f9088783c`. Estado actual de la rama: 9 ahead / 0 behind; PR #27 DRAFT / NOT MERGED. El build, los 41 tests y el smoke aún no están ejecutados con evidencia: el job CI terminó sin runner asignado, pasos, logs ni artefactos.
