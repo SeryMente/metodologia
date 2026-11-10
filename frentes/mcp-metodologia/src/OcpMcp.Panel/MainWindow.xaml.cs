@@ -215,11 +215,11 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     private void QueueRefresh()
     {
         if (Interlocked.Exchange(ref _refreshQueued, 1) != 0) return;
-        Dispatcher.BeginInvoke(() =>
+        Dispatcher.BeginInvoke(new Action(() =>
         {
             Interlocked.Exchange(ref _refreshQueued, 0);
             RefreshView();
-        }, DispatcherPriority.Background);
+        }), DispatcherPriority.Background);
     }
 
     private bool AttachProcess(int pid, DateTimeOffset startedAt)
