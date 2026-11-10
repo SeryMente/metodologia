@@ -24,6 +24,7 @@ El patrón de materialización sigue el registro de tareas provisionales de Gobe
 | EP-TASK-004 | `en_curso` | Bóveda EP: pareja Master EP promovida desde notas efímeras y verificada; H10 y aceptación integral pendientes | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-004%20-%20Reconstrucci%C3%B3n%20de%20b%C3%B3veda/README.md) |
 | EP-TASK-005 | pendiente · P0 piloto · BLOQUEADO_EP003+MCP_PACKAGE | EP ejecuta instalación del piloto en Fila 4 solo tras EP-TASK-003 PASS + paquete P004/manifest/SHA + MCP-OCP-03/04 smoke PASS; W: no es destino final. Después release 1.0.0. | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-005%20-%20Instalaci%C3%B3n%20y%20aceptaci%C3%B3n%20de%20MCP-OCP%20local/README.md) |
 | EP-TASK-006 | `en_curso` | Centralización: nombres Master B2 EP normalizados y leídos de vuelta; cobertura mult proveedor sigue incompleta | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-006%20-%20Centralizaci%C3%B3n%20de%20variables%20de%20entorno/README.md) |
+| EP-TASK-007 | `CONFIGURADA · PENDIENTE_ACUSE_EP` | Guardián de sesión efímera, inventario read-only del host, GPS/IP disponibles, lease renovable y crypto-erasure con prioridad sobre persistencia tardía | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-007%20-%20Guardi%C3%A1n%20de%20sesi%C3%B3n%20ef%C3%ADmera%20e%20inventario%20del%20host/README.md) |
 
 ## Estado de continuidad · 2026-10-31
 
@@ -274,3 +275,17 @@ El operador instruyó que EP retome sus tareas; esta sesión deja de actuar como
 ## Bitácora B2 EP · 2026-11-10 · 14:20 America/Mexico_City
 
 EP-TASK-002 conserva el estado en_curso. Se guardó la transcripción literal del último tramo y la salida literal del modelo, además de dos comprobaciones de preflight repetidas que observaron la sesión CLI cerrada (0/5 variables) y el recibo de transferencia ausente. Los workers/wrappers PowerShell pasan análisis sintáctico; no se ejecutó autenticación ni transferencia remota. Evidencia y detalle: [ChatGPT-EP-20261110-1417-B2-ULTIMO-TRAMO.md](https://github.com/SeryMente/metodologia/blob/main/frentes/ep/entregas/ChatGPT-EP-20261110-1417-B2-ULTIMO-TRAMO.md). El dato anterior de 775 segundos se conserva como antecedente literal, no como lectura vigente.
+
+
+## OCP MCP 1.0 · asignaciones por hitos · 2026-11-10
+
+| Hito | Tarea EP | Prioridad | Salida exigida | Dependencias |
+|---|---|---|---|---|
+| H2 | EP-TASK-004 + EP-TASK-006 | P0 | Inventario organizacional completo de variables KHORA/OCP/Ser y Mente; bóveda cifrada; primera persistencia B2 y restore aislado. | EP Vault y EP-TASK-002 |
+| H2/H3 | EP-TASK-002 | P0 | Journal y checkpoint mínimo; B2 como backend único inicial; workspace completo cifrado, manifest/SHA, download y restore. | Credenciales B2 vía Vault; recibos/read-back |
+| H3/H5 | EP-TASK-007 | P0/P1 | Host inventory, ubicación/IP/GPS disponibles, guardián GUI-autostart, lease, disparadores, crypto-erasure y recibo. | EP-TASK-002, EP-TASK-003, EP-TASK-004/006 y contratos MCP-OCP-14/15 |
+| H3/P004 | EP-TASK-005 | P0 local | Instalar/aceptar solo tras gates de EP-TASK-003 y paquete P004 probado. | EP-TASK-003 PASS + paquete MCP-OCP |
+
+**Orden operativo:** EP prioriza bóveda y primer checkpoint cifrado; después workspace completo por instancia. SINK:P004 continúa en paralelo con fixtures/harness sin datos privados. El guardián y la inspección extendida se implementan después de congelar contratos y verificar la restauración inicial. El suministro de credenciales Vault→RDC se difiere al hito MCP-OCP-16 y no se ejecuta ahora.
+
+**Control de ejecución:** este índice configura el encargo documental. EP debe acusar recibo, revalidar el estado vivo y ejecutar bajo su OEP/control generación 3. No se afirma operación de host, GPS, lease, B2, bóveda ni borrado.
