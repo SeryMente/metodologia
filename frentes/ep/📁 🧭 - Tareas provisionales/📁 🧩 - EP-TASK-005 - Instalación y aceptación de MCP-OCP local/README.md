@@ -10,7 +10,7 @@ Recibir el artefacto MCP-OCP renovado y efectuar su instalación, bootstrap y ac
 
 ## Alcance
 
-1. Destino vigente designado por el operador: terminal **Fila 4**, correspondiente a la única sesión RDC disponible. Última identidad técnica conocida (no lectura viva): Device ID `d0bbb2a3-d7b4-45e1-8870-652c2c3844fc`, perfil `CENTRAL\\fila4`, SessionId 4. Verificar hostname, Device ID, sesión, usuario/SID, USERPROFILE, rutas y permisos en vivo. La ubicación física se verifica por separado; no inferir CECEQ ni LOC-OTHER. PC 7 queda supersedido y no es fallback.
+1. Destino vigente designado por el operador: terminal **Fila 4**, correspondiente a la única sesión RDC disponible. Última identidad técnica conocida (no lectura viva): Device ID `[Device ID RDC omitido conforme a ART-013]`, perfil `CENTRAL\\fila4`, identificador de sesión efímero no conservado. Verificar hostname, Device ID, sesión, usuario/SID, USERPROFILE, rutas y permisos en vivo. La ubicación física se verifica por separado; no inferir CECEQ ni LOC-OTHER. PC 7 queda supersedido y no es fallback.
 2. Confirmar en Fila 4 que workspace, runtime, DB y respaldos están en un volumen de trabajo protegido. La última observación histórica de Fila 4 indicó FullyEncrypted/100 %, ProtectionStatus=Off y XtsAes128; no acredita protección efectiva. Repetir en vivo y obtener XTS-AES256, Protection On, FullyEncrypted/100 %, protector recuperable custodiado por EP Vault y read-back SHA-256. No heredar W:, VHDX, RecoveryPassword ni DPAPI de PC-14/PC 7.
 3. Resolver el root de datos del servidor desde el perfil interactivo Fila 4: `%USERPROFILE%\\Desktop\\SeryMente\\Datos\\Metodologia\\MCP-OCP\\`, fuera del checkout y dentro del volumen protegido. Confirmar la ruta en preflight; no asumir W: ni heredar rutas de otra sesión.
 4. Recibir solo un paquete nuevo, construido y verificado contra DUG Samantha v388/NX-388m y el núcleo MCP-OCP vigente; rechazar paquetes/manifiestos fijados a v386 o anteriores. Verificar SHA-256, manifiesto, RID y resultados de pruebas antes de extraer.
@@ -99,7 +99,7 @@ Esta entrada supersede, para el sprint MCP-OCP, las designaciones anteriores de 
 ### Destino confirmado por instrucción; identidad técnica por revalidar
 
 - Etiqueta del equipo: Fila 4.
-- Última identidad documentada: RDC Device ID `d0bbb2a3-d7b4-45e1-8870-652c2c3844fc`, sesión interactiva `CENTRAL\\fila4`, SessionId 4. Es la última observación de EP-TASK-003, no preflight en vivo de este ciclo.
+- Última identidad documentada: RDC Device ID `[Device ID RDC omitido conforme a ART-013]`, sesión interactiva `CENTRAL\\fila4`, identificador de sesión efímero no conservado. Es la última observación de EP-TASK-003, no preflight en vivo de este ciclo.
 - Revalidar en vivo hostname/Device ID, conexión, sesión, usuario/SID, `%USERPROFILE%`, permisos y privilegios antes de materializar o instalar.
 - Perfil físico de ubicación: PENDIENTE_DE_VERIFICACIÓN. No inferir CECEQ o LOC-OTHER por la etiqueta Fila 4. El dead-man se exige solo si la ubicación efectiva es distinta de CECEQ; en CECEQ rige la conservación cifrada prevista.
 - Checkout: `%USERPROFILE%\\Desktop\\SeryMente\\Repositorios\\Metodologia\\metodologia\\`.
