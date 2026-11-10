@@ -694,3 +694,12 @@ Sprint OCP MCP 1.0 / SINK-P004: recuperar el texto normativo íntegro P004 desde
 **Preocupaciones vigentes:** la causa raíz exacta del worker P0-C y la ejecución de CI MCP aún no están verificadas; EP-TASK-003 no permite migración física; H10 visual sigue pendiente; FOL1 está preparado pero inactivo; IPZ nativa NO VERIFICADA; MCP-NORMATIVO DESACTIVADO.
 
 **Criterio de salida del hito:** P0-C solo pasa con objeto remoto, descarga íntegra, tamaño/SHA idénticos, SSE-B2 confirmado y restore aislado; H1 solo pasa con build/pruebas/smoke observables; SINK:P004 solo se acepta con respuesta normativa íntegra desde IPZ real y pin/hash validado.
+
+
+### Revalidación incremental · MCP-OCP CI y estado efímero Vault · 2026-11-10 · 16:27 America/Mexico_City
+
+- PR #27 HEAD `b3aaf38ab913aba62e5d80d2aeacf36e62e81c3d`; OPEN/DRAFT/NOT MERGED; mergeable=true, pero branch comparison `diverged` (37 ahead / 2 behind). Se requiere sincronización con main tras estas escrituras de Gobernanza.
+- Runs del HEAD: P004 `42914167259`, bootstrap `42914167018`, RDC Governance `42914167119`; los tres FAILURE. En P004, job `130172154766` devuelve `steps=null`, `logs_url=null`; fetch de logs responde `BlobNotFound`. No hay evidencia de runner, build, pruebas o smoke iniciados; causa de la falta de ejecución NO VERIFICADA. No clasificar como fallo de código ni PASS.
+- Revalidación local de EP Vault a las 16:27:35.0084186-06:00 bajo CENTRAL\fila4: `ENCRYPTED_FILE_PRESENT`, ciphertext 2.200 B, `sessionActive=false`. La sesión/TTL observada previamente no se presume vigente; no se inició v3 ni nueva transferencia.
+- La comprobación B2 read-only anterior sí logró autorizar la cuenta, emparejar key ID y leer bucket OCP-MCP privado con SSE-B2/AES256 predeterminado y cero reglas de lifecycle. No escribió bucket/objeto. Esto no corrige la excepción del worker ni acredita upload/restore.
+- Siguiente gate EP: nueva apertura local de Vault por el operador; EP revalida Status y los cinco nombres y solo entonces ejecuta v3 para registrar la línea exacta de `PropertyNotFoundException`. No repetir v1/v2. Se conserva el ciphertext local; sin objeto remoto demostrado.
