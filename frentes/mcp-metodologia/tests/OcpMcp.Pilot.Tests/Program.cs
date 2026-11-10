@@ -69,39 +69,59 @@ try
         runner.Throws<InvalidDataException>(() => new DugSourceReader(badRoot, badPin).ReadP004());
     });
 
+    runner.Test("unsupported modern request negotiates latest implemented handshake", async () =>
+    {
+        var server = new McpServer(reader);
+        string input = Rpc("initialize", 1, new { protocolVersion = "2026-07-28", capabilities = new { }, clientInfo = new { name = "pilot-test", version = "1.0.0" } }) + "\n";
+        using var output = new StringWriter();
+        await server.RunAsync(new StringReader(input), output, CancellationToken.None);
+        using JsonDocument response = JsonDocument.Parse(output.ToString());
+        runner.Equal("2025-11-25", response.RootElement.GetProperty("result").GetProperty("protocolVersion").GetString());
+    });
+
+    runner.Test("tool discovery is rejected before initialized notification", async () =>
+    {
+        var server = new McpServer(reader);
+        string input = Rpc("initialize", 1, new { protocolVersion = "2025-11-25", capabilities = new { }, clientInfo = new { name = "pilot-test", version = "1.0.0" } }) + "\n" +
+            Rpc("tools/list", 2, new { }) + "\n";
+        using var output = new StringWriter();
+        await server.RunAsync(new StringReader(input), output, CancellationToken.None);
+        string[] lines = output.ToString().Split('\n', StringSplitOptions.RemoveEmptyEntries);
+        using JsonDocument blocked = JsonDocument.Parse(lines[1]);
+        runner.Equal(-32002, blocked.RootElement.GetProperty("error").GetProperty("code").GetInt32());
+    });
+
     runner.Test("invalid identifier does not emit success event", async () =>
     {
         int events = 0;
         var server = new McpServer(reader, _ => events++);
-        string input = Rpc("initialize", 1, new { protocolVersion = "2025-06-18" }) + "\n" +
+        string input = Rpc("initialize", 1, new { protocolVersion = "2025-11-25", capabilities = new { }, clientInfo = new { name = "pilot-test", version = "1.0.0" } }) + "\n" +
             Rpc("tools/list", 2, new { }) + "\n" +
             Rpc("tools/call", 3, new { name = "sink_principle", arguments = new { principle_id = "P005" } }) + "\n" +
-            Rpc("shutdown", 4, new { }) + "\n" +
-            "{\"jsonrpc\":\"2.0\",\"method\":\"exit\"}\n";
+            ;
         using var output = new StringWriter();
         await server.RunAsync(new StringReader(input), output, CancellationToken.None);
         string[] lines = output.ToString().Split('\n', StringSplitOptions.RemoveEmptyEntries);
-        runner.Equal(4, lines.Length);
+        runner.Equal(3, lines.Length);
         using JsonDocument call = JsonDocument.Parse(lines[2]);
         runner.Equal(true, call.RootElement.GetProperty("result").GetProperty("isError").GetBoolean());
         runner.Equal(0, events);
     });
 
-    runner.Test("initialize, discovery, P004, hashes, event and clean shutdown", async () =>
+    runner.Test("initialize, discovery, P004, hashes, event and clean shutdown by EOF", async () =>
     {
         var events = new List<SinkSuccessEvent>();
         var server = new McpServer(reader, events.Add);
-        string input = Rpc("initialize", 1, new { protocolVersion = "2025-06-18" }) + "\n" +
+        string input = Rpc("initialize", 1, new { protocolVersion = "2025-11-25", capabilities = new { }, clientInfo = new { name = "pilot-test", version = "1.0.0" } }) + "\n" +
             Rpc("tools/list", 2, new { }) + "\n" +
             Rpc("tools/call", 3, new { name = "sink_principle", arguments = new { principle_id = "P004" } }) + "\n" +
-            Rpc("shutdown", 4, new { }) + "\n" +
-            "{\"jsonrpc\":\"2.0\",\"method\":\"exit\"}\n";
+            ;
         using var output = new StringWriter();
         await server.RunAsync(new StringReader(input), output, CancellationToken.None);
         string[] lines = output.ToString().Split('\n', StringSplitOptions.RemoveEmptyEntries);
         runner.Equal(4, lines.Length);
         using JsonDocument init = JsonDocument.Parse(lines[0]);
-        runner.Equal("2025-06-18", init.RootElement.GetProperty("result").GetProperty("protocolVersion").GetString());
+        runner.Equal("2025-11-25", init.RootElement.GetProperty("result").GetProperty("protocolVersion").GetString());
         using JsonDocument list = JsonDocument.Parse(lines[1]);
         runner.Equal("sink_principle", list.RootElement.GetProperty("result").GetProperty("tools")[0].GetProperty("name").GetString());
         using JsonDocument call = JsonDocument.Parse(lines[2]);
