@@ -367,7 +367,7 @@ El respaldo del servidor debe tratarse como un conjunto recuperable y verificabl
 
 ### 17.4. Análisis del informe de inspección local recibido
 
-El reporte aportado por el operador indica que se consultó el equipo visible `PC10RCIF4EI4` y que la identidad Windows efectiva era `CENTRAL\\MantenimientoRCI`. El control vigente de Harmonia generación 11 vincula ese nombre de dispositivo al UUID exacto `d0bbb2a3-d7b4-45e1-8870-652c2c3844fc` y registra el perfil asociado a la identidad `MantenimientoRCI`. El OCP Harmonia §7 prohíbe consultar, leer, escribir, mover, copiar o borrar archivos bajo la raíz de ese perfil; §44.2 conserva la restricción de pérdida asumida y no reutilización del entorno anterior.
+El reporte aportado por el operador indica que se consultó el equipo visible `PC10RCIF4EI4` y que la identidad Windows efectiva era `CENTRAL\MantenimientoRCI`. El control vigente de Harmonia generación 11 vincula ese nombre de dispositivo al UUID exacto `d0bbb2a3-d7b4-45e1-8870-652c2c3844fc` y registra el perfil asociado a la identidad `MantenimientoRCI`. El OCP Harmonia §7 prohíbe consultar, leer, escribir, mover, copiar o borrar archivos bajo la raíz de ese perfil; §44.2 conserva la restricción de pérdida asumida y no reutilización del entorno anterior.
 
 Por consiguiente:
 
@@ -2161,3 +2161,77 @@ No se ejecutó una autenticación B2 posterior a la migración, consulta del buc
 **Siguiente secuencia:** autenticación B2 de solo lectura con el par Master de EP; verificar cuenta dedicada, bucket OCP-MCP y prefijo `ep-ocp/`; después subir el ciphertext de bóveda y los snapshots de workspace expresamente clasificados, descargarlos y cotejar SHA-256. No subir valores en claro, notas efímeras, perfiles/cookies, `.git` ni conjuntos no clasificados.
 
 **Estado:** `en_curso`. La decisión de usar Master Application Key de la cuenta dedicada EP se mantiene; no crear ni regenerar una Master Key como prueba. La carga y recuperación extremo a extremo siguen abiertas.
+
+
+---
+
+## EP · persistencia del último tramo conversacional y repetición de preflight B2 · 2026-11-10 · 14:20 America/Mexico_City
+
+### Fuente y preservación literal
+
+Se incorpora el último tramo de conversación suministrado por el operador, sin corregir sus errores de dictado, junto con la última salida del modelo reproducida literalmente y la repetición instrumentada del ciclo de preflight. Anexo: [ChatGPT-EP-20261110-1417-B2-ULTIMO-TRAMO.md](https://github.com/SeryMente/metodologia/blob/main/frentes/ep/entregas/ChatGPT-EP-20261110-1417-B2-ULTIMO-TRAMO.md).
+
+- Commit del anexo: 813b53d6d25a989aaec3ba328fb767578488c9e9.
+- Blob SHA del anexo (read-back): 118f8114fffd6390f92aedd673f17eeecb7f31b0.
+- DUG leído en main: Samantha v388 · NX-388m; blob 4db0ebadfd1e48b2bdec9236ba7f344921e4a865.
+
+### Repetición del ciclo y corrección de estado
+
+Dos comprobaciones frescas bajo CENTRAL\fila4 (20:19:46Z y 20:20:16Z) reportaron ENCRYPTED_FILE_PRESENT, ciphertext de 2.200 bytes, vaultSessionActive=false, variableCount=0 y las cinco variables EP B2 ausentes de la sesión CLI. No hay expiresAtUtc ni tiempo restante. El dato conversacional previo de 775 segundos se conserva como salida literal histórica, pero queda contradicho por estas dos observaciones posteriores y no se usa como estado vigente.
+
+Los scripts Upload-EP-Raw-To-Backblaze-Fila4.ps1 y Run-EP-Backblaze-Persistence-Fila4.ps1 existen y pasaron Parser.ParseFile sin errores (7.013 y 1.205 bytes). El recibo ep-backblaze-persistence-result.json no existe. Para evitar que EP Vault CLI caiga en Read-Host, no se lanzó la operación Run mientras la sesión figura cerrada.
+
+### Estado al cierre de este ciclo
+
+- Worker/wrapper: sintaxis PASS.
+- B2 CLI: presente; su versión no se revalidó en este ciclo.
+- Sesión CLI compartida: NO ACTIVA (dos lecturas).
+- Autenticación B2, validación de OCP-MCP, upload, descarga y SHA-256 remoto: NO EJECUTADOS.
+- Persistencia remota EP: PENDIENTE; no existe recibo remoto.
+- Cora y KHORA: sus cuentas/credenciales permanecen separadas; no se utilizaron.
+
+**Siguiente acción:** diagnosticar la discrepancia entre el estado que muestra la GUI y el estado compartido que consume la CLI, sin cambiar ACL ni rutas de la bóveda y sin pedir la contraseña al chat. Reanudar autenticación y transferencia solo cuando la CLI vea la sesión y las cinco variables.
+
+
+---
+
+## OCP MCP 1.0 · prioridad temprana de persistencia y política de checkpoint antes del dead-man · 2026-11-10
+
+**Prioridad:** P0/H2 en paralelo con el desarrollo no sensible de SINK:P004. La persistencia remota B2 sigue abierta hasta evidencia autenticada, upload, descarga, hash y restore. Esta sección es una instrucción de secuencia; no cambia ni expone credenciales y no declara operaciones remotas ejecutadas.
+
+### Alcance priorizado
+
+1. Persistir primero EP Vault cifrada, con manifiesto saneado y read-back.
+2. Incorporar después el workspace completo clasificado de Ser y Mente, incluyendo proyectos, repositorios, cambios de trabajo y conversaciones/adjuntos, todos cifrados antes de B2.
+3. Incluir datasets operativos y estado recuperable de OCP MCP que MCP-OCP identifique, con snapshots coherentes, manifiesto versionado y hashes.
+4. Cada instancia debe descargar el workspace completo desde el snapshot confirmado de B2, comprobar manifiesto/integridad/SHA y abrir únicamente la copia local cifrada. La caché cifrada puede acelerar la transferencia, pero no sustituye la comprobación de snapshot ni el requisito de workspace completo.
+5. Mantener B2 como único backend remoto de este sprint. El almacenamiento alternativo se registra como hito futuro y no se aprovisiona ahora.
+6. Retención prevista indefinida para los datos cifrados útiles del proyecto; no establecer expiración automática de snapshots como parte de este trabajo. Verificar la política efectiva de bucket/versionado antes de afirmar retención indefinida. No cambiar lifecycle, bucket, ACL ni borrar versiones sin autorización y evidencia propias.
+
+### Contrato de persistencia y velocidad
+
+- Primera entrega deliberadamente mínima: journal/checkpoint de sesión, snapshot cifrado de bóveda y workspace, manifiesto, carga/descarga y read-back.
+- Evolución sin ruptura: identificador/schema versionado, snapshots completos como base, incrementales/deduplicación/compresión como optimización posterior, manteniendo restaurabilidad desde el manifiesto.
+- Distinguir estados LOCAL_DURABLE, REMOTE_UPLOADED, REMOTE_VERIFIED y RESTORE_VERIFIED. Un upload no equivale a restore.
+- La transferencia normal ocurre fuera de la ruta crítica de interacción. Los checkpoints serán atómicos y los eventos de persistencia idempotentes.
+- No introducir otro proveedor, servicio, base de datos o cola remota durante el MVP si el almacenamiento existente puede cumplirlo.
+
+### Checkpoint al dead-man: persistir primero, borrar sin demora
+
+Cuando EP-TASK-007 reciba un trigger normal, intentar una única subida de checkpoint con presupuesto inicial máximo de 30 s. Si el checkpoint se completa, cotejar recibo/hash si el presupuesto lo permite; si falla, no existe conectividad o vence el presupuesto, devolver estado de respaldo no confirmado y ejecutar el cierre criptográfico local sin ampliar la ventana. Trigger de emergencia/sospecha de compromiso omite la espera y prioriza crypto-erasure inmediato.
+
+La clave efímera local se destruye al cerrar, pero nunca la clave persistente/de recuperación que permite restaurar B2. No depender de sobrescritura SSD. No borrar discos, perfiles ni datos ajenos.
+
+### Compuerta de inicio
+
+B2 es la única fuente remota de workspace completo en esta fase. Si no se puede autenticar, descargar y verificar el snapshot esperado, no declarar la instancia preparada ni recurrir a un backend alternativo; registrar bloqueo y mantener los datos persistentes intactos. No reutilizar silenciosamente un snapshot local obsoleto.
+
+### Criterios de salida H2/H3
+
+- Vault cifrada cargada y descargada, manifiesto/hash cotejados, restore aislado verificado.
+- Workspace completo cifrado cargado, descargado en una segunda instancia autorizada y restaurado con SHA/manifiesto coincidentes.
+- Conversaciones/adjuntos se incluyen cifrados como contenido del workspace; no se emiten a logs ni metadatos de telemetría en claro.
+- Se demuestra checkpoint normal con presupuesto de 30 s y trigger de emergencia sin espera.
+- Se entrega recibo saneado y lectura de vuelta; ningún valor secreto se incorpora a Git ni al chat.
+
+**Estado:** configuración de prioridad documental. B2_REMOTE permanece pendiente de read-back EP reciente; no se declara autenticación, carga o restauración nueva.

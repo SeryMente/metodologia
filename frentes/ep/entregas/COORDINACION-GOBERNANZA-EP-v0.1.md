@@ -2392,3 +2392,39 @@ EP debe iniciar con lectura viva de solo lectura del estado de Fila 4, verificar
 - GOV-TASK-007 prepara candidato IPZ tras congelar P004; GOV-TASK-003 acepta el recorrido real visible al modelo.
 
 **Estado:** `CENTRAL_COORDINATION=GOV-TASK-015` · `EP_EXECUTION_OWNER=EP_PENDING_ACK` · `EP_CONTROL_GENERATION=3_UNCHANGED` · `EP_TASK_003=PARTIAL_FAIL` · `EP_TASK_005=PENDING` · `STORAGE_DESIGN=PROPOSED_NOT_ACCEPTED`.
+
+---
+
+## EP · preservación del último tramo conversacional y repetición de preflight B2 · 2026-11-10 · 14:20 America/Mexico_City
+
+### Solicitud y fuente
+
+El operador pidió preservar el último tramo de la conversación de EP, dar formato al registro, repetir el último ciclo y conservar literalmente la salida previa del modelo. Se creó un anexo de continuidad dentro de las entregas de EP, sin alterar OEP, el control de titularidad ni las credenciales.
+
+- Anexo: frentes/ep/entregas/ChatGPT-EP-20261110-1417-B2-ULTIMO-TRAMO.md
+- Commit del anexo: 813b53d6d25a989aaec3ba328fb767578488c9e9
+- Blob del anexo leído de vuelta: 118f8114fffd6390f92aedd673f17eeecb7f31b0
+- EP-TASK-002 actualizado y normalizado: commit ca241e586dd73142e215335837cbc9b5e1ae7193; blob final 7255ddb613b712d70b347248f252b354da860c39.
+- Índice provisional actualizado: commit 48132ad52f95d5a644022cf7da20857efe07206d; blob c8139077beb371841d0cfe8903ef8634a88dadd2.
+
+### Repetición técnica y discrepancia GUI/CLI
+
+Dos comprobaciones ejecutadas bajo CENTRAL\fila4 reportaron a las 20:19:46Z y 20:20:16Z: vaultSessionActive=false, variableCount=0, las cinco variables EP B2 ausentes del entorno de la CLI y ciphertext presente de 2.200 bytes. El output anterior del modelo que afirmaba 775 segundos restantes se conservó verbatim, pero la repetición no lo corroboró y el estado vigente se corrige a sesión CLI no activa.
+
+La inspección no destructiva de 20:20:29Z, bajo CENTRAL\MantenimientoRCI, encontró ambos scripts de transferencia y wrapper, y ambos pasaron análisis sintáctico PowerShell. El recibo ep-backblaze-persistence-result.json no estaba presente.
+
+No se invocó EP Vault CLI Run mientras la sesión aparecía cerrada, para evitar un bloqueo interactivo Read-Host. No se ejecutó b2 account authorize, no se consultó el bucket OCP-MCP, no hubo upload ni descarga ni hash remoto. La persistencia Backblaze continúa pendiente; no se declara éxito parcial de transferencia.
+
+### Estado del frente
+
+- EP-TASK-002: en_curso.
+- Evidencia conversacional: preservada y enlazada desde el núcleo y el índice.
+- Preflight: repetido; sesión CLI inactiva en ambas lecturas.
+- Worker/wrapper: sintaxis PASS.
+- Backblaze: autenticación, bucket, subida y read-back pendientes.
+- Cora y KHORA: cuentas y namespaces separados, sin uso cruzado.
+- Control EP y titularidad: sin modificación.
+
+### Persistencia documental y lectura de vuelta
+
+Los commits y blob SHA anteriores identifican cada escritura. Se debe mantener el estado técnico de B2 como pendiente hasta que exista evidencia remota de autenticación, objeto, descarga y SHA-256 idéntico.

@@ -4,7 +4,7 @@
 
 - **Nombre canónico vigente:** MCP-OCP (anteriormente MCP-METODOLOGIA).
 - **Identidad canónica vigente:** MCP-OCP. **Identidad histórica:** MCP-METODOLOGIA.
-- **Versión/sello:** MCP-OCP-v0.1.32 · relectura CI posterior al restablecimiento del estado oficial; Sink local por stdio autorizado; contrato DUG v388/NX-388m; piloto P004 pendiente; bootstrap del perfil persistente pendiente. Las generaciones y folios de sesiones anteriores son metadatos de auditoría.
+- **Versión/sello:** MCP-OCP-v0.1.30 · OCP MCP 1.0; H1 SINK:P004, H2 persistencia mínima/bóveda y H3 workspace completo definidos; Sink local por stdio autorizado; contrato DUG v388/NX-388m; piloto P004 pendiente; bootstrap del perfil persistente pendiente. Las generaciones y folios de sesiones anteriores son metadatos de auditoría.
 - **Repositorio propietario:** SeryMente/metodologia, rama main.
 - **OCP canónico:** frentes/mcp-metodologia/.
 - **Núcleo operativo único:** este archivo, MCP-METODOLOGIA.md.
@@ -640,7 +640,7 @@ Este rebaseline no acredita rama nueva, resolver implementado, pruebas PASS nuev
 ### 20.1 Baseline y estado
 
 - DUG fuente: Samantha v388/NX-388m · commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c` · blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`.
-- Core de este OCP: v0.1.29 (esta revisión); backlog auxiliar v0.10 (esta revisión).
+- Core de este OCP: v0.1.30 (esta revisión); backlog auxiliar v0.11 (esta revisión).
 - **Cotejo histórico de apertura:** `main` observado entonces `3fe1a70f59e9dbd53310814813633aa7ef9efd35`; la rama `feat/mcp-ocp-sink-pilot` sigue anclada al commit histórico `1676901cc09af6fcec4d052800b031e4c2f1ab40`. La distancia exacta registrada en ese momento no es estado vivo; la referencia no cumple MCP-OCP-02. El estado de coordinación y los pins actuales se mantienen en §20.
 - Control MCP-OCP: generación 5; autorización directa para código, pruebas, build, manifiesto, paquete y documentación dentro de este OCP. Se conserva sin cambios. La autorización excluye host EP, EP Vault y operaciones locales de instalación.
 - `MCP_OCP_02=OPEN` · `MCP_OCP_05=PENDING` · `MCP_OCP_03=PARALLEL_SYNTHETIC_FIXTURES` · `MCP_OCP_04=PARALLEL_HARNESS_PREP`.
@@ -678,77 +678,62 @@ Este rebaseline no acredita rama nueva, resolver implementado, pruebas PASS nuev
 
 **Estado de sección:** plan interfrente rebaselined; no acredita rama nueva, código P004, pruebas PASS, build, paquete, host PASS, instalación, IPZ nativa ni E2E.
 
-## 21. Ejecución MCP-OCP · SINK-P004 · corte de trabajo 2026-11-10
 
-### 21.1 Baseline y persistencia
+## 21. OCP MCP 1.0 · hitos, persistencia, telemetría y sesión efímera · 2026-11-10
 
-- `main` al abrir este corte: `a34c1c5b43edbcbaf015056f4dc892f5def29eea`; tree raíz `69b0b8a29fe9bfb981e9afce03aa6913ab036539`.
-- Rama nueva `feat/mcp-ocp-sink-p004-main-a34c1c5b`, creada directamente desde ese HEAD. Comparación inicial: 0 ahead / 0 behind.
-- Commit de implementación: `92568433b5f3b6056fc9cb9a811fa5d8918cea3b`; comparación: 1 ahead / 0 behind; 21 rutas añadidas/modificadas.
-- PR #27: https://github.com/SeryMente/metodologia/pull/27 · OPEN / DRAFT / NOT MERGED. No merge autorizado ni intentado.
-- Los blobs de las 21 rutas fueron leídos de vuelta y cotejados. La matriz de portabilidad y auditoría de ramas está en `piloto-sink/PORTABILITY-DECISIONS.md`.
+**Versión del núcleo:** MCP-OCP-v0.1.30. **Programa:** OCP MCP 1.0. **Release:** MCP-OCP 1.0.0. **Backlog auxiliar:** LISTA-TAREAS-PROVISIONAL.md v0.11. **Primer hito:** SINK:P004.
 
-### 21.2 Reconciliación e implementación
+### 21.1 Decisiones del operador registradas
 
-No se fusionó ninguna rama histórica completa. El código de ciclo02 se portó selectivamente por archivo; PPR, SQLite, Vault, custodia, backup/restore y portable recovery quedaron fuera.
+La instrucción literal y las respuestas completas del operador, sin corrección de dictado, están conservadas en [anexo de Gobernanza · OCP MCP 1.0](../gobernanza/entregas/ChatGPT-GOBERNANZA-20261110-OCP-MCP-1.0-ULTIMO-TRAMO.md). Es el criterio de verdad de este diseño; la interpretación operativa no lo sustituye.
 
-- SDK .NET 10.0.403; servidor y pruebas `net10.0`; piloto framework-dependent, sin RID.
-- `DugSourceReader` valida Git blob, UTF-8 estricto, GOW:ARR, versiones/autoridad, 43 IDs únicos, marcador humano P004, texto/título/ancla/MDP/preponderancia y hashes.
-- `McpServer` implementa JSON-RPC STDIO, initialize/initialized, tools/list/call y una herramienta `sink_principle` limitada a P004; EOF cierra el proceso; sin listener de red.
-- Biblioteca de monitorización independiente; solo se activa con `--monitor-root` entregado explícitamente por EP. EP conserva `session.json`, protección, root y lifecycle.
-- No se portó el panel WPF en este corte. Es obligatorio para 1.0.0 después de congelar schema.
+- Operación declarada en México; el operador declara autorización para inspeccionar cualquier máquina donde opere. Se mantienen permisos del SO, límites técnicos y obligaciones legales.
+- Inventario robusto por defecto: contexto del SO/hardware/almacenamiento/cifrado/permisos/red; GPS/IP cuando sea accesible, rápido y permitido. Datos ausentes se marcan con estado/fuente; no se inventan ni se fuerzan permisos.
+- Retención prevista indefinida para datos útiles cifrados, sujeta a obligaciones legales y solicitudes válidas.
+- Workspace completo descargado en cada instancia; conversaciones y adjuntos forman parte del workspace cifrado.
+- Lease: renovación 60 s; ventana 30 min; aviso; cierre por 10 min de inactividad; máximo absoluto 8 h.
+- RDC autentica al inicio. Una sesión activa es lo normal; una segunda requiere excepción explícita; máximo dos, aisladas.
+- Backblaze es el único backend remoto inicial. El medio alternativo se difiere a H9/post-release; no provisionar ahora.
+- El cierre normal intenta checkpoint primero, con presupuesto inicial configurable de 30 s; después el crypto-erasure local tiene prioridad. Emergencia/sospecha de compromiso omite la espera.
+- UUIDv7 es la identidad técnica; etiquetas legibles secuenciales no contienen datos personales. Los consecutivos se asignan de forma atómica y se reconcilian tras sesiones offline.
 
-### 21.3 Fuente y suites
+### 21.2 Secuencia canónica del programa
 
-Lectura independiente de `main`: DUG v388/NX-388m, commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`, blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`, Metacanon 1.29, GOW 2.18. La fuente real contiene una §ARR `gow-sec-14`, MCP-NORMATIVO DESACTIVADO y un único P004 con el texto, marcador humano, MDP y preponderancia A/0.8 esperados.
+| Hito | Objetivo | Trabajo MCP-OCP | Trabajo EP / Gobernanza |
+|---|---|---|---|
+| H1 | SINK:P004 visible desde IPZ | MCP-OCP-02/03/04/05 | GOV-TASK-007/003; EP gates para instalación |
+| H2 | Persistencia mínima + bóveda organizacional cifrada | MCP-OCP-14 fija journal/datasets/checkpoint | EP-TASK-002/004/006; GOV-TASK-014 acepta |
+| H3 | Workspace completo por instancia, recuperable | MCP-OCP-14; manifest, snapshot, integridad | EP-TASK-002/003/007; GOV-TASK-014 |
+| H4 | Identidad y telemetría de sesión/host/ubicación/red/ciclo | MCP-OCP-15 schema/store | EP-TASK-007 captura; GOV-TASK-013 correlaciona |
+| H5 | Lease renovable y dead-man iniciado por GUI | Contrato/eventos en MCP-OCP-15 | EP-TASK-007 implementa guardián y triggers |
+| H6 | Limpieza adaptativa/crypto-erasure | Integración del resultado y recibo | EP-TASK-007 ejecuta/verifica |
+| H7 | Vault → RDC credenciales just-in-time | MCP-OCP-16, diferido hasta auditar interfaz | EP-TASK-004/006 verifica canal y custodia |
+| H8 | Release MCP-OCP 1.0.0 | Panel, generalización, pruebas, paquete | EP-TASK-005 instalación; GOV-TASK-003 acepta |
+| H9 | Medio alternativo de persistencia | MCP-OCP-17 evaluación post-release | EP evalúa después; no provisionar antes |
 
-- P004: 18 pruebas escritas.
-- Monitor/readiness: 23 pruebas escritas.
-- Total: 41 escritas, 0 ejecutadas con evidencia en esta rama.
-- La lectura de fixture y el test que coteja el pin real no equivalen a importación privada ni a instalación.
+H1 y H2 avanzan en paralelo. El piloto SINK con fixtures/harness no espera al host EP. La importación privada, workspace real, restore, lease y dead-man esperan sus gates correspondientes. H2 es la prioridad operativa inmediata de EP. Panel y generalización P001–P043 no bloquean H1 pero son obligatorios para H8.
 
-### 21.4 CI y validación
+### 21.3 Contratos nuevos
 
-El workflow de PR #27: run `42892084966`, job `130095551624`, terminó FAILURE con `steps=null`, `logs_url=null`, sin artefactos; la descarga devuelve `BlobNotFound`. En el mismo commit, `Validate RDC Governance` (run `42892084848`, job `130095552614`) y `validate-canonical-bootstrap` (run `42891978504`, job `130095179377`) presentaron el mismo patrón.
+**Persistencia (MCP-OCP-14):** journal mínimo; snapshots y manifiestos versionados; ciphertext de bóveda/workspace/conversaciones/adjuntos; workspace completo en cada instancia; estados LOCAL_DURABLE, REMOTE_UPLOADED, REMOTE_VERIFIED y RESTORE_VERIFIED. B2 permanece único backend remoto inicial; optimizaciones incrementales después de la primera restauración completa. Si no se puede verificar el snapshot B2 esperado, no declarar lista la instancia ni usar un proveedor alternativo no aprobado.
 
-La página oficial registra que el incidente de Actions/Pull Requests del 2026-11-10 quedó resuelto a las 17:55 UTC. Los runs del piloto se iniciaron a las 20:07:16 UTC y 20:10:33 UTC, más de dos horas después de esa resolución; la consulta actual muestra Actions y Pull Requests operativos: https://kctbh9vrtdwd.statuspage.io/ . Por tanto, no se atribuye el fallo a aquella incidencia. La causa raíz específica del patrón `steps=null` / `BlobNotFound` sigue NO VERIFICADA. No hay evidencia de que empezaran setup-dotnet, restore, build, pruebas o smoke.
+**Telemetría (MCP-OCP-15):** UUIDv7 y secuencias legibles para ORG/WSP/SES/LOC/DEV/NET/CONV/CYC/EVT; IDs correlacionados, inicio/fin UTC, zona/offset, duración monotónica, ubicación GPS/IP/red con fuente/precisión/estado, inventario de equipo y eventos de lease/persistencia/cleanup. Los datos identificables se cifran; el contenido conversacional no se copia en eventos/logs, sino que permanece cifrado en el workspace. Se conservan intactas las definiciones GOV-TASK-013 para cycle.duration_ms e ipz.resolve.rdc.duration_ms.
 
-**Conclusión:** CI no acredita PASS ni FAIL del código. No se ejecuta un reintento ciego; se requiere runner observable, pasos, logs y artefactos.
+**RDC/Vault (MCP-OCP-16):** RDC autentica al comienzo; una sesión por defecto y segunda excepcional aislada. Auditar y demostrar canal de credenciales just-in-time soportado antes de implementarlo. No exponer secretos en argumentos, procesos, archivos, portapapeles, logs o telemetría. No ejecutar este hito en H2.
 
-### 21.5 Estado y límites
+**Persistencia alternativa (MCP-OCP-17):** evaluar después de H8. No crear cuenta, proveedor, bucket o servicio alternativo en este sprint.
 
-- `MCP-OCP-02=RAMA_LIMPIA_Y_PORTABILIDAD_PUBLICADAS; BUILD_PENDIENTE`.
-- `MCP-OCP-05=P004_CANDIDATO_ESCRITO; BUILD_Y_RESPUESTA_EJECUTADA_PENDIENTES`.
-- `MCP-OCP-03=18_P004+23_MONITOR_ESCRITAS; 0_EJECUTADAS`.
-- `MCP-OCP-04=HARNESS_Y_WORKFLOW_PUBLICADOS; SMOKE_NO_VERIFICADO`.
-- `MCP-OCP-10/07/12/08=PENDIENTES`; MCP-OCP-13 sigue obligatorio para 1.0.0.
-- Importación de fuentes y provisioning del operador no están implementados en este corte; `READY` no es alcanzable. El test positivo del evaluator es sintético, no readiness real.
-- EP-TASK-003/005 siguen siendo responsabilidad EP. No se operó Fila 4, no hubo importación privada, instalación ni provisión.
-- No se escribió IPZ nativa ni se ejecutó E2E visible; Gobernanza conserva ese gate.
-- DUG, ART-025/027, IPZ, CONTROL-RESPONSABILIDAD y recursos EP no se modificaron. FOL1 PREPARADO/NO ACTIVO; MCP-NORMATIVO DESACTIVADO.
+### 21.4 Lease y dead-man — contrato para EP
 
-**Siguiente transición:** ejecutar build, 41 pruebas y smoke STDIO/EOF cuando haya runner observable; corregir solo errores demostrados. Luego continuar fuentes protegidas e IPZ E2E bajo los gates correspondientes.
+EP-TASK-007 inicia un guardián independiente desde la GUI EP al instanciar la sesión efímera. Renovación 60 s; lease 30 min; inactividad 10 min; máximo 8 h; una sesión RDC activa, segunda solo por excepción. Cierre normal intenta un único checkpoint por un máximo inicial configurable de 30 s; luego desmonta/bloquea, destruye la clave efímera local y limpia solo artefactos OCP. Emergencia omite la espera. Nunca destruir claves persistentes de recuperación ni borrar discos, perfiles o datos de terceros. En SSD/UNKNOWN, priorizar crypto-erasure; no confiar en sobrescritura tradicional.
 
-## 22. CI · relectura posterior a la recuperación oficial · 2026-11-10
+EP-TASK-007 es independiente del gate físico de Fila 4 en EP-TASK-003. El guardián rige todas las instancias OCP declaradas efímeras, cualquiera que sea la ubicación; no volatiliza el root persistente EP ni modifica el gate de almacenamiento.
 
-- GitHub Status registra resolución del incidente Actions/Pull Requests a las `17:55 UTC`; la consulta actual muestra All Systems Operational.
-- Primera ejecución P004 en PR #27: run `42892084966` (creado `20:07:16 UTC`), job `130095551624`.
-- Segunda ejecución tras actualizar HEAD documental de PR #27: run `42892649479` (creado `20:10:33 UTC`), job `130097478567`.
-- En ambas ejecuciones, el job terminó FAILURE con `steps=null`, `logs_url=null`, sin artifacts, y la descarga de logs devuelve `BlobNotFound`.
-- En la segunda ejecución, `validate-canonical-bootstrap` (run `42892649448`, job `130097478103`) y `Validate RDC Governance` (run `42892649520`, job `130097478971`) muestran el mismo patrón. El evento push de `validate-canonical-bootstrap` (run `42892639018`, job `130097444473`) también.
-- Como los intentos ocurrieron más de dos horas después de la recuperación declarada, la incidencia previa no demuestra la causa de estos fallos. No se puede afirmar ni fallo de compilación ni PASS del código: los steps no están disponibles y no existe artifact.
-- No hacer reintentos ciegos. Reabrir validación cuando pueda obtenerse diagnóstico real de runner/job o un entorno .NET 10.0.403 que produzca logs/resultados observables.
-- Este asiento corrige cualquier interpretación previa que atribuyera los fallos a la incidencia del estado de GitHub; la causa permanece NO VERIFICADA.
+### 21.5 Responsabilidades y límites
 
+- MCP-OCP implementa código/schema/pruebas locales y sus tareas MCP-OCP-14 a 17; no opera host EP, Vault ni credenciales.
+- EP es titular de EP-TASK-002/003/004/005/006/007 y ejecuta host, B2, bóveda, inventario, guardián e instalación bajo OEP/control EP generation 3.
+- Gobernanza coordina en GOV-TASK-015, acepta persistencia en GOV-TASK-014, integra medición en GOV-TASK-013 y acepta E2E en GOV-TASK-003.
+- Controles EP gen3, MCP-OCP gen5 y Gobernanza gen17 permanecen sin cambios. FOL1 permanece PREPARADO_NO_ACTIVO; MCP-NORMATIVO DESACTIVADO.
 
-## 23. Continuidad conversacional y repetición de ciclo · 2026-11-10
-
-- Se conserva el último intercambio visible y la salida del modelo literalmente en [CONTINUIDAD-2026-11-10-ULTIMO-TRAMO.md](conversaciones/CONTINUIDAD-2026-11-10-ULTIMO-TRAMO.md). Es captura del tramo proporcionado en conversación, no export nativo.
-- Relectura de repositorio: `main=11a3317a10404ed3eaa853f3718ebeecbb161e56`; rama `feat/mcp-ocp-sink-p004-main-a34c1c5b`; HEAD anterior a este asiento `e2ea3fa51cf48d16f4a6c887d25e1f4d56782528`; PR #27 OPEN/DRAFT/NOT MERGED.
-- Compare `main...rama`: 3 commits ahead / 7 behind, merge-base `a34c1c5b43edbcbaf015056f4dc892f5def29eea`. Los siete commits posteriores de main modifican cuatro rutas EP exclusivamente; no hay solapamiento de rutas con el diff MCP-OCP. No se actualizó ni fusionó la rama en este ciclo.
-- El DUG actual leído permanece Samantha v388/NX-388m, commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`, blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`. Control generación 5, blob `826d7bd3f67bddf4f31bafee5013d1ea55003cf4`, sin modificaciones.
-- CI repetida para el HEAD anterior: runs `42893018661`, `42893018727`, `42893018714`; jobs `130098763815`, `130098763244`, `130098763283`. Los tres devolvieron steps vacíos, logs no disponibles (`BlobNotFound`) y cero artefactos. Causa raíz NO VERIFICADA; build/tests/smoke no acreditados.
-- Estado reconciliado: MCP-OCP-02 tiene rama y portabilidad publicadas, con actualización pendiente frente al main posterior; MCP-OCP-05 candidato escrito sin build; MCP-OCP-03 tiene 41 pruebas escritas y cero ejecutadas; MCP-OCP-04 tiene harness/workflow publicado y smoke no verificado. EP-TASK-003 sigue PARTIAL_FAIL y EP-TASK-005 PENDING; E2E IPZ sigue pendiente.
-- La afirmación literal anterior de que aún faltaba crear la rama queda como antecedente, no como estado actual. El bloqueo vigente está en la reconciliación con main, CI no observable, build/pruebas y compuertas EP/E2E.
-- Siguiente acción: alinear la rama con los siete commits EP-only de main sin cambiar el alcance MCP; después obtener build, 41 pruebas y smoke STDIO/EOF con evidencia recuperable. No hacer reintentos ciegos.
-
+**Estado de documentación:** núcleo v0.1.30 y backlog v0.11 leídos y configurados. No se declara implementado código MCP-OCP-14/15/16/17, B2 upload/restore, captura GPS/IP, guardián, crypto-erasure, instalación, E2E ni aceptación 1.0.0.

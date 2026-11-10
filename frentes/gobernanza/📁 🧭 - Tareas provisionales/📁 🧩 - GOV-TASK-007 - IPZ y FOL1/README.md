@@ -131,3 +131,10 @@ El orden continúa siendo: (1) congelar el contrato de respuesta de MCP-OCP para
 **Estado de gates:** MCP-OCP-02 abierto; P004 pendiente; EP-TASK-003 PARTIAL_FAIL; EP-TASK-005 pendiente; candidato exacto y conteo final pendientes; IPZ nativa NO VERIFICADA. FOL1 continúa `PREPARADO_PENDIENTE_ACTIVACION_IPZ` y no bloquea P004. `MCP-NORMATIVO=DESACTIVADO`.
 
 **Responsabilidad:** Gobernanza prepara IPZ y acepta el E2E; MCP-OCP define la herramienta y entrega el paquete; EP opera el host y la instalación. GOV-TASK-015 centraliza el orden.
+
+
+---
+
+## OCP MCP 1.0 · primer hito IPZ · 2026-11-10
+
+El programa completo es OCP MCP 1.0; SINK:P004 es el primer hito. Priorizar GOW:ARR → DUG → MDP → SINK:P004 una vez congelado el contrato real de respuesta. No esperar al panel ni a P001–P043. Preservar las salvaguardas IPZ v0.7 y el límite menor a 1.500 caracteres. No escribir IPZ nativa ni activar FOL1 sin autorización/instalación y read-back específicos. MCP-NORMATIVO sigue DESACTIVADO.

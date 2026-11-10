@@ -356,3 +356,18 @@ La pareja Master de la **cuenta Backblaze dedicada a EP**, y solo de esa cuenta,
 **Read-back y huella:** migración `MIGRATION_AND_READBACK_VERIFIED`, completada `2026-11-10T16:01:06Z`; verificación final `16:12:43Z`; ciphertext 2.156 bytes, SHA-256 `F41FE765BCD30787C880C9105E3F6B3C4F6D00D67BA7AEAF70E55F3E7A96514C`.
 
 Esto completa la normalización de la pareja maestra B2 de EP en la bóveda; **no** completa la centralización global de variables de todos los proveedores/proyectos ni demuestra autenticación B2, lectura del bucket, upload o restore. EP-TASK-006 permanece `en_curso`.
+
+
+---
+
+## OCP MCP 1.0 · cierre de cobertura organizacional y consumidores RDC · 2026-11-10
+
+**Prioridad:** H2 para completar catálogo, persistencia de la bóveda y recuperación; el suministro seguro de credenciales a RDC queda diferido al hito posterior correspondiente.
+
+La definición de alcance deja de limitarse a los repositorios/proveedores ya inspeccionados: completar el universo de variables usadas por KHORA, OCP y la organización Ser y Mente, incluyendo servicios gestionados, CI/CD, runtime, infraestructura, dominios, integraciones y componentes locales, con namespaces separados por producto, proveedor y entorno (DEV/TEST-STAGING/PROD). La lista de fuentes debe ser explícita y cada fuente tener cobertura/status, fecha de inspección y vacíos pendientes.
+
+Registrar metadatos y referencias sin extraer secretos de proveedores por métodos no autorizados. Para secretos, comprobar existencia y procedencia mediante UI/API/custodia autorizada y conservar los valores solo cifrados dentro de EP Vault. No copiar secretos a este documento, Git, scripts, logs, mensajes ni portapapeles.
+
+RDC se autentica al inicio de la sesión. Hacer inventario de mecanismos de autenticación y dependencias de RDC, pero no implementar ahora el broker de secretos. El hito posterior MCP-OCP-16/EP-TASK-007 debe comprobar un canal just-in-time soportado, mínimo privilegio, alcance de proceso, expiración y ausencia del valor en argumentos/logs.
+
+**Estado:** EP-TASK-006 sigue en_curso; la pareja B2 de EP tiene read-back local reportado, pero eso no completa la cobertura organizacional ni demuestra backup/restauración B2.
