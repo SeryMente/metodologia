@@ -61,7 +61,7 @@ La tabla sustituye los PASS/estados de recibos históricos para la implementaci�
 
 **Excluye:** capacidades de dictados/audio/MP3/grafo de Khora; servidor Jules duplicado; API key de Jules o secretos de Khora; endpoint público/Vercel; activación de MCP-NORMATIVO; cambios DUG/Sink.
 
-**Cierre vigente:** núcleo v0.1.29, esta lista v0.10 y README reflejan la misma frontera; la especificación del panel identifica su separación como app acompañante read-only, sin segundo MCP ni red. La revisión documental de contrato está verificada; las pruebas de implementación permanecen pendientes.
+**Cierre del baseline histórico v0.1.29/v0.10:** núcleo y lista de aquel corte reflejaban la frontera de app acompañante read-only, sin segundo MCP ni red. Este estado fue supersedido por MCP-OCP-v0.1.30 y LIST v0.11; las pruebas de implementación siguen pendientes.
 
 ### MCP-OCP-02 — Reconciliación de código ejecutable contra main
 **Prioridad:** P0 · **Estado:** PENDIENTE_SPRINT.
