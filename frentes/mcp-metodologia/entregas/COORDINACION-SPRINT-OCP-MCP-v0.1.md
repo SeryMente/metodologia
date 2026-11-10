@@ -1778,3 +1778,16 @@ Este suplemento solo registra la actualización de navegación y su cotejo. No r
 **Siguiente acción inmediata:** revisar el diff y fuentes de la PR contra el DUG v388 y los criterios MCP-OCP-02/03/04/05; identificar el bloqueo real de CI a partir de datos disponibles. Después ejecutar solo acciones dentro del OCP, actualizar informes individuales y registrar cierre con read-back. No instalar ni ejecutar en Fila 4, no tocar EP/Vault/B2 ni IPZ.
 
 **Estado de apertura:** `DTC_CYCLE_STATUS=OPEN`; `MCP_OCP_H1=IN_PROGRESS`; `PR_27=OPEN_DRAFT_NOT_MERGED`; `HOSTED_CI=FAILURE_WITHOUT_STEP_OR_LOG_EVIDENCE`; `LOCAL_TESTS=REPORTED_IN_PR_BODY_NOT_REEXECUTED_IN_THIS_CYCLE`; `IPZ_E2E=NOT_ACCEPTED`; `MCP_NORMATIVO=DESACTIVADO`; `FOL1=PREPARADO_NO_ACTIVO`.
+
+
+### Corrección de cursor CI y sincronización H1 · 2026-11-10
+
+**Rectificación de la apertura:** el asiento inmediatamente anterior asoció inicialmente los runs `42913257386`, `42913257631` y `42913257452` al HEAD actual `29f1a55`. Precisión: esos tres runs se ejecutaron sobre el snapshot de código `e5bd7d992f3fda83035cc43329353b846a25e9a8`; los dos commits siguientes hasta `29f1a55` modificaron solo núcleo/lista documental. La lectura de `29f1a55` a `b3aaf38` confirma dos commits más, solo README/decisiones de portabilidad. El código funcional y proyectos de prueba no cambiaron respecto al snapshot de validación local registrado en §29.2.
+
+**CI más reciente sobre el HEAD actual de la candidata:** PR #27, rama `feat/mcp-ocp-sink-p004-main-a34c1c5b`, HEAD `b3aaf38ab913aba62e5d80d2aeacf36e62e81c3d`; P004 run `42914167259` / job `130172154766`, bootstrap run `42914167018` / job `130172154471`, RDC Governance run `42914167119` / job `130172154595`. Los tres jobs tienen `runner_id=0`, `runner_name=""`, `steps=[]`, etiqueta `ubuntu-latest`, y terminaron en 1–3 segundos; cero artifacts y descarga de logs `BlobNotFound`. No comenzó restore/build/tests/smoke. Causa raíz de la falta de runner: NO VERIFICADA; no reintentar ciegamente.
+
+**Relectura del centralizador:** GOV-TASK-015 actualizado en main, blob `56ed5e55858144b08fcd7dd4a86bbcb17e671d61`, conserva H1 como trabajo MCP en paralelo. Orden vigente: sincronizar PR #27 con main, mantener las correcciones MDP/fixture, obtener runner observable y ejecutar build + 41 pruebas + smoke STDIO/EOF. El corte H1 sigue sin aceptación E2E; EP mantiene Vault SELLADA y sin upload/restore B2, y Fila 4 permanece PARTIAL_FAIL. No tocar host/Vault/B2/IPZ.
+
+**Rebase/sync preflight:** main HEAD observado `b8acb9aa56b226733022f9e4c7906371fcc8ce49`; PR HEAD `b3aaf38ab913aba62e5d80d2aeacf36e62e81c3d`. Comparación: PR 37 ahead / 5 behind; merge-base `ff9c75926a2907c630f506c4e08c267b15bca7cf`. Los cambios nuevos de main afectan exclusivamente `frentes/gobernanza/GOBERNANZA.md`, `frentes/gobernanza/README.md`, el núcleo GOV-TASK-015 y este mismo DTC MCP. Ninguna ruta se solapa con las 28 rutas modificadas por PR #27. Se autoriza la reconciliación normal de dos padres; no se autoriza fusionar PR #27 a main ni quitar el estado DRAFT.
+
+**Estado:** `DTC_CYCLE_STATUS=OPEN`; `MCP_OCP_H1=LOCAL_VALIDATION_REPORTED_CI_RUNNER_BLOCKED`; `PR_27=OPEN_DRAFT_NOT_MERGED`; `MAIN_SYNC=AUTHORIZED_PENDING_EXECUTION`; `IPZ_E2E=NOT_ACCEPTED`; `MCP_NORMATIVO=DESACTIVADO`; `FOL1=PREPARADO_NO_ACTIVO`.
