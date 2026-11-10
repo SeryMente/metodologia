@@ -1,4 +1,4 @@
-<!-- LIST_VERSION=0.19; LIST_STATUS=PROVISIONAL; NOT_A_CANONICAL_OBJECT=true -->
+<!-- LIST_VERSION=0.20; LIST_STATUS=PROVISIONAL; NOT_A_CANONICAL_OBJECT=true -->
 # Lista provisional de tareas · MCP-OCP
 
 > **ESTADO: PROVISIONAL · NO ES UN OCP NI UN CONTROL ADICIONAL.** Esta lista es una vista auxiliar enlazada desde el único núcleo MCP-OCP. El estado vivo y las decisiones de alcance permanecen en `MCP-METODOLOGIA.md`; la titularidad permanece exclusivamente en `CONTROL-RESPONSABILIDAD.json`. Las tareas y dependencias de otros frentes se enlazan sin apropiarse de sus objetos, controles o permisos.
@@ -6,10 +6,10 @@
 - **Frente:** MCP-OCP.
 - **Repositorio propietario:** `SeryMente/metodologia`.
 - **Ruta OCP:** `frentes/mcp-metodologia/`.
-- **Versión de la lista:** 0.19 (provisional; coordinación del Sprint SINK-P004 y producto MCP-OCP 1.0.0).
+- **Versión de la lista:** 0.20 (provisional; coordinación del Sprint SINK-P004 y producto MCP-OCP 1.0.0).
 - **Última actualización:** 2026-11-10.
 - **Gobierno leído:** Samantha v388 · NX-388m; Metacanon 1.29; GOW 2.18; DUG commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`; blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`. ART-027 rebaselined para Sink local STDIO/RDC; §ARR y P037 revisados; CNP P001/P004/P005/P038/P043 considerado.
-- **Núcleo enlazado:** [MCP-OCP · objeto canónico](MCP-METODOLOGIA.md), v0.1.38; esta lista v0.19 es su backlog auxiliar vigente.
+- **Núcleo enlazado:** [MCP-OCP · objeto canónico](MCP-METODOLOGIA.md), v0.1.39; esta lista v0.20 es su backlog auxiliar vigente.
 - **Control:** [CONTROL-RESPONSABILIDAD.json](CONTROL-RESPONSABILIDAD.json). Las generaciones y sesiones son metadatos de auditoría y no bloquean trabajo autorizado.
 - **MCP-NORMATIVO:** DESACTIVADO.
 - **Producto vs. documento:** MCP-OCP-v0.1.35 es la versión documental vigente; la versión de software objetivo es 1.0.0. La candidata ejecutable 0.1.0 y su recibo histórico no constituyen una versión actualizada ni aceptada del producto.
@@ -447,3 +447,13 @@ Se publicaron el contrato v0.1 y cuatro schemas sintéticos para envelope, manif
 - CI piloto run `42905655022` job `130142842660`; bootstrap run `42905655010` job `130142843328`; Governance run `42905654984` job `130142842158`: todos FAILURE, `runner_id=0`, `steps=[]`, logs `BlobNotFound`, 0 artifacts. Causa raíz no verificada; build/test no acreditados.
 - EP según GOV-TASK-015: Vault SELLADA, CLI 0/5 variables, B2 no ejecutado; EP-TASK-003 PARTIAL_FAIL, EP-TASK-005 PENDING.
 - FOL1 NO ACTIVO; MCP-NORMATIVO DESACTIVADO. No hubo cambios de main, DUG, IPZ nativa, control gen5 ni recursos EP.
+
+
+### Último estado CI y refs · 2026-11-10
+
+- Main `8f999198f1d8cde71361c884c9a13b745f442b49`; rama HEAD previo a este asiento `cbb5cbcd4e5389fc859113a386072f0b19cc64ae`; comparación 30 ahead / 0 behind; 29 rutas; PR #27 OPEN/DRAFT/NOT MERGED.
+- Push actual canonical-bootstrap: run `42905989338` job `130143984551`.
+- Checks PR del commit previo: piloto `42905982247` job `130143958894`; Governance `42905982275` job `130143958017`; bootstrap `42905982244` job `130143958321`.
+- Jobs sin runner (`runner_id=0`), sin pasos, logs `BlobNotFound`, cero artifacts. Causa raíz no verificada; build/tests/smoke no acreditados.
+- H1: 41 pruebas escritas / 0 ejecutadas con evidencia. H2: contrato MCP-OCP-14 propuesto + 4 schemas parseables; sin validación formal ni runtime/IO.
+- EP: Vault sellada, B2 no ejecutado; EP-TASK-003 PARTIAL_FAIL; EP-TASK-005 PENDING. No hubo operación MCP-OCP sobre EP.
