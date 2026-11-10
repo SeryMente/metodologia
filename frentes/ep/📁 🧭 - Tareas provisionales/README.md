@@ -20,9 +20,9 @@ El patrón de materialización sigue el registro de tareas provisionales de Gobe
 |---|---|---|---|
 | EP-TASK-001 | pendiente | NCL — Navegador Compartido Local: integración de Playwright y KeePassXC | [núcleo](./📁%20🧩%20-%20EP-TASK-001%20-%20Integración%20NCL/README.md) |
 | EP-TASK-002 | en_curso | Datos de usuario OCP en Backblaze B2; separación GitHub/B2 y recuperación por perfil | [núcleo](./📁%20🧩%20-%20EP-TASK-002%20-%20Persistencia%20provisional%20Backblaze/README.md) |
-| EP-TASK-003 | en_curso | Materialización del workspace y dead-man trigger exclusivo para ubicaciones distintas de CECEQ | [núcleo](./📁%20🧩%20-%20EP-TASK-003%20-%20Mapa%20integral%20de%20construcción%20EP/README.md) |
+| EP-TASK-003 | en_curso | Workspace protegido y dead-man condicional a la ubicación; destino MCP-OCP Fila 4 | [núcleo](./📁%20🧩%20-%20EP-TASK-003%20-%20Mapa%20integral%20de%20construcción%20EP/README.md) |
 | EP-TASK-004 | en_curso | Reconstrucción integral de la bóveda EP: UI nueva desde cero, mecanismos, sesión configurable y acceso CLI/headless | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-004%20-%20Reconstrucci%C3%B3n%20de%20b%C3%B3veda/README.md) |
-| EP-TASK-005 | pendiente | Instalación, bootstrap y aceptación de MCP-OCP local por stdio en perfil protegido | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-005%20-%20Instalaci%C3%B3n%20y%20aceptaci%C3%B3n%20de%20MCP-OCP%20local/README.md) |
+| EP-TASK-005 | pendiente | Piloto SINK:P004/IPZ prioritario y posterior instalación/aceptación MCP-OCP 1.0.0 en Fila 4 | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-005%20-%20Instalaci%C3%B3n%20y%20aceptaci%C3%B3n%20de%20MCP-OCP%20local/README.md) |
 | EP-TASK-006 | en_curso | Inventario y centralización de variables de entorno de todos los proyectos mediante EP Vault | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-006%20-%20Centralizaci%C3%B3n%20de%20variables%20de%20entorno/README.md) |
 
 ## Estado de continuidad · 2026-10-31
@@ -190,3 +190,16 @@ EP-TASK-003 y EP-TASK-005 son el carril EP de este sprint. EP-TASK-003 conserva 
 - **Fuera de sprint:** EP-TASK-002/B2 y EP-TASK-004/UI de bóveda, salvo dependencia concreta demostrada.
 
 Estado documental: carril EP y destino exacto completados en diseño; preflight, checkout íntegro, dead-man, instalación y aceptación siguen pendientes.
+
+---
+
+## Reorientación del sprint MCP-OCP · Fila 4 · 2026-11-10
+
+El operador sustituyó PC 7 por **Fila 4**, correspondiente a la única sesión RDC disponible que indica. Última identidad técnica documentada: RDC `d0bbb2a3-d7b4-45e1-8870-652c2c3844fc`, perfil interactivo `CENTRAL\\fila4`, SessionId 4; preflight vivo pendiente. La ubicación física queda sin clasificar hasta observación, por lo que el dead-man se determina según CECEQ/ubicación distinta y no por el nombre del equipo.
+
+- **EP-TASK-003:** preparar en Fila 4 el checkout completo bajo `%USERPROFILE%\\Desktop\\SeryMente\\Repositorios\\Metodologia\\metodologia\\`, workspace VHDX protegido y read-back SHA-256. La última observación Fila 4 (histórica) informó C: 100 % cifrado, XTS-AES128, Protection Off; no acredita protección efectiva. No reutilizar staging/volúmenes de PC-14.
+- **EP-TASK-005:** el programa se instala bajo `<checkout>\\frentes\\mcp-metodologia\\instalacion-local\\`; datos/DB/fuentes/DPAPI/logs/backups quedan en `Datos/Metodologia/MCP-OCP/` sobre el volumen protegido. El primer piloto `SINK:P004` puede aceptarse antes del panel y del release final, tras superar gates de workspace/root y probar la ruta IPZ→RDC→STDIO. El panel permanece obligatorio para 1.0.0.
+- **Orden de dependencias:** código no sensible y suite piloto se desarrollan en paralelo con EP; importación de fuentes privadas y ejecución del piloto real esperan al checkout/root protegido. Dead-man solo es bloqueante si la ubicación efectiva es distinta de CECEQ.
+
+No se ejecutó preflight, materialización, login, instalación ni piloto por esta actualización documental.
+
