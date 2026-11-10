@@ -49,11 +49,6 @@
     },
     "envelope_format": {
       "const": "mcp-ocp-ciphertext-object/0.1"
-    },
-    "opaque_parameters": {
-      "type": "object",
-      "additionalProperties": true,
-      "description": "Non-secret profile metadata; shape belongs to the EP-approved crypto profile."
     }
   }
 }

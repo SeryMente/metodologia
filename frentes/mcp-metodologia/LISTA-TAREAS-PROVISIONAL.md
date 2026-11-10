@@ -1,4 +1,4 @@
-<!-- LIST_VERSION=0.16; LIST_STATUS=PROVISIONAL; NOT_A_CANONICAL_OBJECT=true -->
+<!-- LIST_VERSION=0.17; LIST_STATUS=PROVISIONAL; NOT_A_CANONICAL_OBJECT=true -->
 # Lista provisional de tareas · MCP-OCP
 
 > **ESTADO: PROVISIONAL · NO ES UN OCP NI UN CONTROL ADICIONAL.** Esta lista es una vista auxiliar enlazada desde el único núcleo MCP-OCP. El estado vivo y las decisiones de alcance permanecen en `MCP-METODOLOGIA.md`; la titularidad permanece exclusivamente en `CONTROL-RESPONSABILIDAD.json`. Las tareas y dependencias de otros frentes se enlazan sin apropiarse de sus objetos, controles o permisos.
@@ -6,10 +6,10 @@
 - **Frente:** MCP-OCP.
 - **Repositorio propietario:** `SeryMente/metodologia`.
 - **Ruta OCP:** `frentes/mcp-metodologia/`.
-- **Versión de la lista:** 0.16 (provisional; coordinación del Sprint SINK-P004 y producto MCP-OCP 1.0.0).
+- **Versión de la lista:** 0.17 (provisional; coordinación del Sprint SINK-P004 y producto MCP-OCP 1.0.0).
 - **Última actualización:** 2026-11-10.
 - **Gobierno leído:** Samantha v388 · NX-388m; Metacanon 1.29; GOW 2.18; DUG commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`; blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`. ART-027 rebaselined para Sink local STDIO/RDC; §ARR y P037 revisados; CNP P001/P004/P005/P038/P043 considerado.
-- **Núcleo enlazado:** [MCP-OCP · objeto canónico](MCP-METODOLOGIA.md), v0.1.35; esta lista v0.16 es su backlog auxiliar vigente.
+- **Núcleo enlazado:** [MCP-OCP · objeto canónico](MCP-METODOLOGIA.md), v0.1.36; esta lista v0.17 es su backlog auxiliar vigente.
 - **Control:** [CONTROL-RESPONSABILIDAD.json](CONTROL-RESPONSABILIDAD.json). Las generaciones y sesiones son metadatos de auditoría y no bloquean trabajo autorizado.
 - **MCP-NORMATIVO:** DESACTIVADO.
 - **Producto vs. documento:** MCP-OCP-v0.1.35 es la versión documental vigente; la versión de software objetivo es 1.0.0. La candidata ejecutable 0.1.0 y su recibo histórico no constituyen una versión actualizada ni aceptada del producto.
@@ -415,3 +415,12 @@ El HTML DUG v388 renderiza la tarjeta humana mediante `card(p) → render(p.cont
 ### Avance H2 · MCP-OCP-14 · contrato propuesto
 
 Se publicaron el contrato v0.1 y cuatro schemas sintéticos para envelope, manifest, journal y recibo de checkpoint. Estado: **propuesta no aceptada; sin runtime, DB, escritura, B2 o restore**. EP mantiene perfil criptográfico, claves, root, ACL, B2 y restore; Gobernanza acepta los criterios. El siguiente paso MCP-OCP es validación sintética de schemas y serialización; la ejecución de almacenamiento espera interfaz/root de EP y revisión del contrato.
+
+
+### Revisión interfrentes vigente · main 8f999198 · 2026-11-10
+
+- PR #27 sigue como única candidata H1: `OPEN/DRAFT/NOT MERGED`. Rama sincronizada con main `8f999198f1d8cde71361c884c9a13b745f442b49`; merge `ea32a78e87bd659307fc81ff3f80b3743bae9d0a`; comparación pre-documentación 18 ahead / 0 behind y 29 rutas.
+- H1: build pendiente; 41 pruebas escritas / 0 ejecutadas con evidencia; smoke STDIO y E2E IPZ pendientes. CI reciente: run `42904945521` job `130140381801` y run `42905043818` job `130140724213`; ambos `runner_id=0`, pasos vacíos, logs `BlobNotFound`, cero artifacts. Causa raíz no verificada.
+- H2/H3: contrato MCP-OCP-14 v0.1 y cuatro JSON Schemas parseables publicados; propuesta no ratificada, sin validación formal, runtime ni IO.
+- Según el asiento interfrentes de GOV-TASK-015 en main: EP Vault SELLADA, CLI compartida inactiva/0 de 5 variables, ciphertext local 2.200 bytes, worker P0-C preparado/sintaxis PASS; B2 auth/upload/download/remote SHA/recibo no ejecutados. EP-TASK-003 PARTIAL_FAIL; EP-TASK-005 PENDING. MCP-OCP no actuó sobre EP.
+- Main, DUG, ART-025/027, IPZ nativa, control de responsabilidad y recursos EP no fueron modificados por MCP-OCP. FOL1 NO ACTIVO; MCP-NORMATIVO DESACTIVADO.

@@ -69,3 +69,12 @@ La base de creación anterior se conserva como hecho histórico. Después de que
 - CI tras reconciliar: run `42903756431`, job `130136260875`; job sin runner asignado (`runner_id=0`), sin pasos, logs ni artefactos. Causa raíz no verificada; build/pruebas/smoke no acreditados.
 
 Esta subsección no sustituye el registro original de la comparación inicial 0/0 ni declara PASS técnico.
+
+
+## Segunda sincronización selectiva con main · 2026-11-10
+
+- Main: `8f999198f1d8cde71361c884c9a13b745f442b49`; commit nuevo de Gobernanza: revisión interfrentes GOV-TASK-015. El diff desde el corte previo cambia únicamente ese README de Gobernanza.
+- Reconciliación: `ea32a78e87bd659307fc81ff3f80b3743bae9d0a`, padres `6d56b8b85ef75ea520165c94eb2f7a8b65ac27ad` y `8f999198f1d8cde71361c884c9a13b745f442b49`.
+- Se conserva el contenido de las 29 rutas propiedad del candidato, incluidas 5 del contrato MCP-OCP-14; el asiento GOV-TASK-015 permanece incorporado desde el árbol de main y no se modificó.
+- Compare posterior: 18 ahead / 0 behind; merge-base igual a main. La actualización documental posterior incrementará el conteo ahead, no las rutas funcionales.
+- PR #27 OPEN / DRAFT / NOT MERGED. CI sigue sin runner observable (jobs recientes `runner_id=0`, pasos vacíos, logs `BlobNotFound`, cero artifacts).

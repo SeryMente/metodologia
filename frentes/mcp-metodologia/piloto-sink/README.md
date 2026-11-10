@@ -55,3 +55,10 @@ No importa fuentes privadas, crea DB real, provisiona operador, instala en Fila 
 El DUG renderiza la tarjeta `P004` con `card(p) → render(p.content_markdown)`. El lector valida que ese campo coincida exactamente con `> normative_text`; la suite incluye un negativo que altera ese Markdown incluso tras repinnear el blob. La comprobación estática no reproduce una divergencia entre tarjeta humana y respuesta Sink.
 
 La rama se reconcilió con main `646608896a499f78640d6f17ec1e87876089e16f` mediante el commit `dfae6b0fe60438753fa7abe0b9febd6f9088783c`. Estado actual de la rama: 9 ahead / 0 behind; PR #27 DRAFT / NOT MERGED. El build, los 41 tests y el smoke aún no están ejecutados con evidencia: el job CI terminó sin runner asignado, pasos, logs ni artefactos.
+
+
+## Segunda sincronización con main vigente
+
+La rama fue sincronizada también con main `8f999198f1d8cde71361c884c9a13b745f442b49` mediante merge `ea32a78e87bd659307fc81ff3f80b3743bae9d0a`, conservando las rutas del candidato y el asiento GOV-TASK-015. Compare posterior: 18 ahead / 0 behind. PR #27 sigue OPEN/DRAFT/NOT MERGED.
+
+La propuesta MCP-OCP-14 v0.1 y sus cuatro schemas se encuentran bajo `persistencia/`; son diseño documental, no runtime. El último CI P004 sigue sin runner asignado, sin pasos/logs/artefactos; build, tests y smoke no están acreditados.

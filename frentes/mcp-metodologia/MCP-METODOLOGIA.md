@@ -4,7 +4,7 @@
 
 - **Nombre canónico vigente:** MCP-OCP (anteriormente MCP-METODOLOGIA).
 - **Identidad canónica vigente:** MCP-OCP. **Identidad histórica:** MCP-METODOLOGIA.
-- **Versión/sello:** MCP-OCP-v0.1.35 · OCP MCP 1.0; H1 SINK:P004, H2 persistencia mínima/bóveda y H3 workspace completo definidos; Sink local por stdio autorizado; contrato DUG v388/NX-388m; piloto P004 pendiente; bootstrap del perfil persistente pendiente. Las generaciones y folios de sesiones anteriores son metadatos de auditoría.
+- **Versión/sello:** MCP-OCP-v0.1.36 · OCP MCP 1.0; H1 SINK:P004, H2 persistencia mínima/bóveda y H3 workspace completo definidos; Sink local por stdio autorizado; contrato DUG v388/NX-388m; piloto P004 pendiente; bootstrap del perfil persistente pendiente. Las generaciones y folios de sesiones anteriores son metadatos de auditoría.
 - **Repositorio propietario:** SeryMente/metodologia, rama main.
 - **OCP canónico:** frentes/mcp-metodologia/.
 - **Núcleo operativo único:** este archivo, MCP-METODOLOGIA.md.
@@ -792,7 +792,7 @@ EP-TASK-007 es independiente del gate físico de Fila 4 en EP-TASK-003. El guard
 
 El último intercambio y la última salida visible anterior se preservan literalmente en [CONTINUIDAD-2026-11-10-ULTIMO-TRAMO.md](conversaciones/CONTINUIDAD-2026-11-10-ULTIMO-TRAMO.md), blob `1373127651be36afcf49dc1ae4fb623948165daf`. La frase histórica de que aún faltaba crear MCP-OCP-02 queda supersedida por §22: la rama ya fue creada y reconciliada con el main actual. Esta captura parcial no se presenta como export nativo de ChatGPT.
 
-**Estado del núcleo:** MCP-OCP-v0.1.35 en esta rama candidata; el núcleo canónico de main permanece sin cambios hasta la revisión/aceptación de la PR. FOL1 continúa PREPARADO/NO ACTIVO; MCP-NORMATIVO permanece DESACTIVADO.
+**Estado del núcleo:** MCP-OCP-v0.1.36 en esta rama candidata; el núcleo canónico de main permanece sin cambios hasta la revisión/aceptación de la PR. FOL1 continúa PREPARADO/NO ACTIVO; MCP-NORMATIVO permanece DESACTIVADO.
 
 
 ## 24. MCP-OCP-14 · contrato base propuesto · H2/H3 · 2026-11-10
@@ -802,3 +802,18 @@ El último intercambio y la última salida visible anterior se preservan literal
 - El manifest lógico se cifra también; los schemas no definen algoritmo/KDF ni contienen valores de clave. `encryption_profile_ref` y `key_reference` son referencias opacas, pendientes del perfil aprobado por EP.
 - Backblaze permanece único backend inicial. EP posee root/ACL, perfil criptográfico, custodia de claves, B2 y restore; Gobernanza/GOV-TASK-014 acepta integridad, privacidad y restauración.
 - **Estado:** contrato y schemas PROPOSED / NO ACCEPTED. No hay runtime, DB, escritura, B2, restore ni pruebas ejecutadas. La entrega no amplía acceso a Vault, credenciales ni host.
+
+
+## 25. Revisión interfrentes y sincronización · 2026-11-10
+
+- **Main actual:** `8f999198f1d8cde71361c884c9a13b745f442b49`. Su último commit actualiza GOV-TASK-015; se integró como segundo padre sin modificar el archivo de Gobernanza.
+- **Rama:** `feat/mcp-ocp-sink-p004-main-a34c1c5b`; reconciliación más reciente `ea32a78e87bd659307fc81ff3f80b3743bae9d0a`, padres `6d56b8b85ef75ea520165c94eb2f7a8b65ac27ad` y main `8f999198f1d8cde71361c884c9a13b745f442b49`. Compare antes de esta actualización documental: 18 ahead / 0 behind, merge-base main y 29 rutas.
+- **PR #27:** OPEN / DRAFT / NOT MERGED; única candidata activa del corte H1 según GOV-TASK-015.
+- **H1:** MCP-OCP-02 sincronizada; MCP-OCP-05 sigue como candidata sin build; MCP-OCP-03 tiene 41 pruebas escritas / 0 ejecutadas con evidencia; MCP-OCP-04 mantiene harness, smoke no verificado y E2E IPZ pendiente.
+- **CI más reciente observado:** piloto run `42904945521`, job `130140381801`; validación canónica run `42905043818`, job `130140724213`. Jobs con `runner_id=0`, `steps=[]`; logs `BlobNotFound` y cero artefactos. No se observó asignación de runner ni ejecución de dotnet/build/tests/smoke. Causa raíz NO VERIFICADA; no declarar fallo del código ni PASS.
+- **H2:** se entrega propuesta MCP-OCP-14 v0.1 y cuatro schemas JSON parseables; no están ratificados ni validados mediante suite, y no existe runtime, DB, escritura, upload o restore.
+- **Estado EP reportado por la revisión GOV-TASK-015 incorporada en main:** Vault GUI observada SELLADA, CLI compartida inactiva/0 de 5 variables; ciphertext local 2.200 bytes; worker P0-C preparado con análisis sintáctico PASS; B2 auth, bucket preflight, upload, descarga, hash remoto y recibo siguen NO EJECUTADOS. Es una referencia del asiento EP/Gobernanza; MCP-OCP no operó esos recursos.
+- EP-TASK-003 continúa PARTIAL_FAIL y EP-TASK-005 PENDING. Host, Vault, B2 y Fila 4 permanecen bajo EP. Gobernanza conserva IPZ y E2E.
+- Control MCP-OCP generación 5, blob `826d7bd3f67bddf4f31bafee5013d1ea55003cf4`, sin cambios. No se amplía a credenciales, host, Vault, B2 ni almacenamiento operativo. FOL1 NO ACTIVO; MCP-NORMATIVO DESACTIVADO.
+
+**Siguiente acción:** obtener runner observable para H1; en paralelo validar los schemas MCP-OCP-14 con fixtures sintéticos y concretar la interfaz EP de almacenamiento sin tocar root/keys/B2.
