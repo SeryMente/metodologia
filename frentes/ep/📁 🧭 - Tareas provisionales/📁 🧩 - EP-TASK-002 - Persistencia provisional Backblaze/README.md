@@ -2191,3 +2191,47 @@ Los scripts Upload-EP-Raw-To-Backblaze-Fila4.ps1 y Run-EP-Backblaze-Persistence-
 - Cora y KHORA: sus cuentas/credenciales permanecen separadas; no se utilizaron.
 
 **Siguiente acción:** diagnosticar la discrepancia entre el estado que muestra la GUI y el estado compartido que consume la CLI, sin cambiar ACL ni rutas de la bóveda y sin pedir la contraseña al chat. Reanudar autenticación y transferencia solo cuando la CLI vea la sesión y las cinco variables.
+
+
+---
+
+## OCP MCP 1.0 · prioridad temprana de persistencia y política de checkpoint antes del dead-man · 2026-11-10
+
+**Prioridad:** P0/H2 en paralelo con el desarrollo no sensible de SINK:P004. La persistencia remota B2 sigue abierta hasta evidencia autenticada, upload, descarga, hash y restore. Esta sección es una instrucción de secuencia; no cambia ni expone credenciales y no declara operaciones remotas ejecutadas.
+
+### Alcance priorizado
+
+1. Persistir primero EP Vault cifrada, con manifiesto saneado y read-back.
+2. Incorporar después el workspace completo clasificado de Ser y Mente, incluyendo proyectos, repositorios, cambios de trabajo y conversaciones/adjuntos, todos cifrados antes de B2.
+3. Incluir datasets operativos y estado recuperable de OCP MCP que MCP-OCP identifique, con snapshots coherentes, manifiesto versionado y hashes.
+4. Cada instancia debe descargar el workspace completo desde el snapshot confirmado de B2, comprobar manifiesto/integridad/SHA y abrir únicamente la copia local cifrada. La caché cifrada puede acelerar la transferencia, pero no sustituye la comprobación de snapshot ni el requisito de workspace completo.
+5. Mantener B2 como único backend remoto de este sprint. El almacenamiento alternativo se registra como hito futuro y no se aprovisiona ahora.
+6. Retención prevista indefinida para los datos cifrados útiles del proyecto; no establecer expiración automática de snapshots como parte de este trabajo. Verificar la política efectiva de bucket/versionado antes de afirmar retención indefinida. No cambiar lifecycle, bucket, ACL ni borrar versiones sin autorización y evidencia propias.
+
+### Contrato de persistencia y velocidad
+
+- Primera entrega deliberadamente mínima: journal/checkpoint de sesión, snapshot cifrado de bóveda y workspace, manifiesto, carga/descarga y read-back.
+- Evolución sin ruptura: identificador/schema versionado, snapshots completos como base, incrementales/deduplicación/compresión como optimización posterior, manteniendo restaurabilidad desde el manifiesto.
+- Distinguir estados LOCAL_DURABLE, REMOTE_UPLOADED, REMOTE_VERIFIED y RESTORE_VERIFIED. Un upload no equivale a restore.
+- La transferencia normal ocurre fuera de la ruta crítica de interacción. Los checkpoints serán atómicos y los eventos de persistencia idempotentes.
+- No introducir otro proveedor, servicio, base de datos o cola remota durante el MVP si el almacenamiento existente puede cumplirlo.
+
+### Checkpoint al dead-man: persistir primero, borrar sin demora
+
+Cuando EP-TASK-007 reciba un trigger normal, intentar una única subida de checkpoint con presupuesto inicial máximo de 30 s. Si el checkpoint se completa, cotejar recibo/hash si el presupuesto lo permite; si falla, no existe conectividad o vence el presupuesto, devolver estado de respaldo no confirmado y ejecutar el cierre criptográfico local sin ampliar la ventana. Trigger de emergencia/sospecha de compromiso omite la espera y prioriza crypto-erasure inmediato.
+
+La clave efímera local se destruye al cerrar, pero nunca la clave persistente/de recuperación que permite restaurar B2. No depender de sobrescritura SSD. No borrar discos, perfiles ni datos ajenos.
+
+### Compuerta de inicio
+
+B2 es la única fuente remota de workspace completo en esta fase. Si no se puede autenticar, descargar y verificar el snapshot esperado, no declarar la instancia preparada ni recurrir a un backend alternativo; registrar bloqueo y mantener los datos persistentes intactos. No reutilizar silenciosamente un snapshot local obsoleto.
+
+### Criterios de salida H2/H3
+
+- Vault cifrada cargada y descargada, manifiesto/hash cotejados, restore aislado verificado.
+- Workspace completo cifrado cargado, descargado en una segunda instancia autorizada y restaurado con SHA/manifiesto coincidentes.
+- Conversaciones/adjuntos se incluyen cifrados como contenido del workspace; no se emiten a logs ni metadatos de telemetría en claro.
+- Se demuestra checkpoint normal con presupuesto de 30 s y trigger de emergencia sin espera.
+- Se entrega recibo saneado y lectura de vuelta; ningún valor secreto se incorpora a Git ni al chat.
+
+**Estado:** configuración de prioridad documental. B2_REMOTE permanece pendiente de read-back EP reciente; no se declara autenticación, carga o restauración nueva.
