@@ -58,36 +58,6 @@ public sealed class DugSourceReader : IPrincipleSource
 
         using JsonDocument dug = JsonDocument.Parse(html[jsonStart..close]);
         JsonElement root = dug.RootElement;
-        JsonElement document = root.GetProperty("document");
-        Require(document.GetProperty("version").GetString(), _pin.DugVersion, "DUG_VERSION_MISMATCH");
-        Require(document.GetProperty("signature").GetString(), _pin.DugSignature, "DUG_SIGNATURE_MISMATCH");
-        Require(document.GetProperty("event").GetString(), _pin.DugEvent, "DUG_EVENT_MISMATCH");
-        Require(document.GetProperty("canonical_source").GetString(),
-            $"{_pin.Repository}/{_pin.RefName}:{_pin.CanonicalPath}", "DUG_CANONICAL_SOURCE_MISMATCH");
-        Require(document.GetProperty("metacanon_version").GetString(), _pin.MetacanonVersion, "METACANON_VERSION_MISMATCH");
-        Require(document.GetProperty("gow_version").GetString(), _pin.GowVersion, "GOW_VERSION_MISMATCH");
-        if (document.GetProperty("principles").GetInt32() != 43)
-            throw new InvalidDataException("DUG_PRINCIPLE_COUNT_MISMATCH");
-
-        JsonElement[] matches = root.GetProperty("principles").EnumerateArray()
-            .Where(p => p.TryGetProperty("id", out JsonElement id) && id.GetString() == "P004")
-            .ToArray();
-        if (matches.Length != 1) throw new InvalidDataException("P004_MISSING_OR_AMBIGUOUS");
-        JsonElement p004 = matches[0];
-
-        string title = RequiredString(p004, "title");
-        string normativeText = RequiredString(p004, "normative_text");
-        string contentMarkdown = RequiredString(p004, "content_markdown");
-        string anchor = RequiredString(p004, "human_anchor");
-        string microdescriptor = RequiredString(p004, "microdescriptor");
-        if (title != "Principio de No-Simulación 🔒" || anchor != "#P004" ||
-            contentMarkdown != "> " + normativeText)
-            throw new InvalidDataException("P004_CONTRACT_MISMATCH");
-
-        JsonElement preponderance = p004.GetProperty("preponderance");
-        string category = RequiredString(preponderance, "category");
-        double decimalValue = preponderance.GetProperty("decimal").GetDouble();
-
         JsonElement[] arrMatches = root.GetProperty("glossary").GetProperty("sections")
             .EnumerateArray()
             .Where(x => x.TryGetProperty("id", out JsonElement id) && id.GetString() == "gow-sec-14")
@@ -100,6 +70,50 @@ public sealed class DugSourceReader : IPrincipleSource
             !arrContent.Contains("<a id=\"gow-arranque-chatgpt\"></a>", StringComparison.Ordinal) ||
             !arrContent.Contains("### Función de entrada", StringComparison.Ordinal))
             throw new InvalidDataException("GOW_ARR_CONTRACT_MISMATCH");
+
+        JsonElement document = root.GetProperty("document");
+        Require(document.GetProperty("version").GetString(), _pin.DugVersion, "DUG_VERSION_MISMATCH");
+        Require(document.GetProperty("signature").GetString(), _pin.DugSignature, "DUG_SIGNATURE_MISMATCH");
+        Require(document.GetProperty("event").GetString(), _pin.DugEvent, "DUG_EVENT_MISMATCH");
+        Require(document.GetProperty("canonical_source").GetString(),
+            $"{_pin.Repository}/{_pin.RefName}:{_pin.CanonicalPath}", "DUG_CANONICAL_SOURCE_MISMATCH");
+        Require(document.GetProperty("metacanon_version").GetString(), _pin.MetacanonVersion, "METACANON_VERSION_MISMATCH");
+        Require(document.GetProperty("gow_version").GetString(), _pin.GowVersion, "GOW_VERSION_MISMATCH");
+        JsonElement principlesElement = root.GetProperty("principles");
+        if (document.GetProperty("principles").GetInt32() != 43 ||
+            principlesElement.ValueKind != JsonValueKind.Array || principlesElement.GetArrayLength() != 43)
+            throw new InvalidDataException("DUG_PRINCIPLE_COUNT_MISMATCH");
+        var principleIds = new HashSet<string>(StringComparer.Ordinal);
+        foreach (JsonElement principle in principlesElement.EnumerateArray())
+        {
+            string principleId = RequiredString(principle, "id");
+            if (!principleIds.Add(principleId))
+                throw new InvalidDataException("DUG_PRINCIPLE_ID_DUPLICATE");
+        }
+
+        JsonElement[] matches = principlesElement.EnumerateArray()
+            .Where(p => p.TryGetProperty("id", out JsonElement id) && id.GetString() == "P004")
+            .ToArray();
+        if (matches.Length != 1) throw new InvalidDataException("P004_MISSING_OR_AMBIGUOUS");
+        JsonElement p004 = matches[0];
+
+        string title = RequiredString(p004, "title");
+        string normativeText = RequiredString(p004, "normative_text");
+        string contentMarkdown = RequiredString(p004, "content_markdown");
+        string anchor = RequiredString(p004, "human_anchor");
+        string microdescriptor = RequiredString(p004, "microdescriptor");
+        int mdpWordCount = microdescriptor.Split((char[]?)null, StringSplitOptions.RemoveEmptyEntries).Length;
+        if (title != "Principio de No-Simulación 🔒" || anchor != "#P004" ||
+            contentMarkdown != "> " + normativeText ||
+            microdescriptor != "Exigir hechos verificables; activarlo ante afirmaciones sobre capacidades, datos, acciones o certezas." ||
+            mdpWordCount is < 11 or > 16)
+            throw new InvalidDataException("P004_CONTRACT_MISMATCH");
+
+        JsonElement preponderance = p004.GetProperty("preponderance");
+        string category = RequiredString(preponderance, "category");
+        double decimalValue = preponderance.GetProperty("decimal").GetDouble();
+
+
 
         return new SinkP004Result(
             "P004", title, normativeText, contentMarkdown, anchor, microdescriptor,
