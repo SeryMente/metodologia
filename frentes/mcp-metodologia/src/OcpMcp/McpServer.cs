@@ -19,6 +19,7 @@ public sealed class McpServer(IPrincipleSource source, Action<SinkSuccessEvent>?
     {
         bool initializeResponded = false;
         bool initialized = false;
+        bool shutdownRequested = false;
         while (!cancellationToken.IsCancellationRequested)
         {
             string? line = await input.ReadLineAsync(cancellationToken);
@@ -55,6 +56,15 @@ public sealed class McpServer(IPrincipleSource source, Action<SinkSuccessEvent>?
 
                 string method = methodElement.GetString()!;
                 bool hasId = root.TryGetProperty("id", out JsonElement id);
+                if (method == "exit")
+                {
+                    if (hasId)
+                    {
+                        await WriteErrorAsync(output, id, -32600, "exit must be a notification", cancellationToken);
+                        continue;
+                    }
+                    return;
+                }
                 if (method == "notifications/initialized")
                 {
                     if (initializeResponded) initialized = true;
@@ -62,6 +72,12 @@ public sealed class McpServer(IPrincipleSource source, Action<SinkSuccessEvent>?
                 }
                 if (method == "notifications/cancelled") continue;
                 if (!hasId) continue;
+
+                if (shutdownRequested)
+                {
+                    await WriteErrorAsync(output, id, -32000, "Server is shutting down", cancellationToken);
+                    continue;
+                }
 
                 if (!initialized && method is not ("initialize" or "ping"))
                 {
@@ -77,10 +93,12 @@ public sealed class McpServer(IPrincipleSource source, Action<SinkSuccessEvent>?
                         "ping" => new { },
                         "tools/list" => ListTools(),
                         "tools/call" => CallTool(root),
+                        "shutdown" => new { },
                         _ => throw new RpcException(-32601, "Method not found")
                     };
                     await WriteResultAsync(output, id, result, cancellationToken);
                     if (method == "initialize") initializeResponded = true;
+                    if (method == "shutdown") shutdownRequested = true;
                 }
                 catch (RpcException ex)
                 {
