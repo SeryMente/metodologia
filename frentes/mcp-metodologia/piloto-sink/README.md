@@ -35,14 +35,14 @@
 
 ## Construcción y pruebas
 
-Requiere .NET SDK 10.0.100 o superior. Desde la raíz del repositorio:
+Requiere .NET SDK 10.0.403, fijado en ../global.json. RID: no aplica al piloto framework-dependent; win-x64 se fijará al preparar el paquete de release. Ejecuta desde frentes/mcp-metodologia:
 
-    dotnet build frentes/mcp-metodologia/src/OcpMcp/OcpMcp.csproj -c Release
-    dotnet run --project frentes/mcp-metodologia/tests/OcpMcp.Pilot.Tests/OcpMcp.Pilot.Tests.csproj -c Release
+    dotnet build src/OcpMcp/OcpMcp.csproj -c Release
+    dotnet run --project tests/OcpMcp.Pilot.Tests/OcpMcp.Pilot.Tests.csproj -c Release
 
 Para arrancar contra un clon que contenga el pin DUG fijado:
 
-    dotnet run --project frentes/mcp-metodologia/src/OcpMcp/OcpMcp.csproj -c Release -- serve --repo-root .
+    dotnet run --project src/OcpMcp/OcpMcp.csproj -c Release -- serve --repo-root ../..
 
 stdout queda reservado a JSON-RPC. Los eventos de lectura satisfactoria se emiten a stderr; no se persisten.
 
