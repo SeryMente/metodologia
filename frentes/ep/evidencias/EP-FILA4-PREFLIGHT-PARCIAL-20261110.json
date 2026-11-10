@@ -23,30 +23,15 @@
   },
   "device": {
     "operational_label": "Fila 4",
-    "hostname": "PC10RCIF4EI4",
-    "current_remote_commander_device_id": "99383b36-cc22-4457-952f-8799cccac0a7",
-    "windows_identity": "CENTRAL\\fila4",
-    "profile": "C:\\Users\\fila4",
-    "interactive_session": {
-      "name": "console",
-      "id": 1,
-      "state": "Active"
-    },
-    "historical_session_id": 4,
-    "historical_session_id_current": false,
-    "network_profile": {
-      "name": "central.gob.mx",
-      "category": "DomainAuthenticated"
-    },
     "physical_location": "UNCLASSIFIED",
-    "location_inference": "Network profile does not establish physical location"
+    "location_inference": "No stored network/device identifiers are retained; no physical location inference is supported.",
+    "interactive_session_presence": "ACTIVE_AT_OBSERVATION"
   },
   "privileges": {
     "fila4_identity_is_administrator": false,
-    "maintenance_identity": "CENTRAL\\MantenimientoRCI",
     "maintenance_identity_is_administrator": true,
-    "maintenance_device_id": "b573344f-c68f-47c9-9c2e-ae67f2e63bdb",
-    "maintenance_session_used_for_read_only_bitlocker_probe": true
+    "maintenance_session_used_for_read_only_bitlocker_probe": true,
+    "administration_context": "Separate maintenance profile was used only for the administrative BitLocker read."
   },
   "bitlocker": {
     "volume": "C:",
@@ -60,7 +45,7 @@
     "gate": "FAIL"
   },
   "workspace": {
-    "root": "C:\\Users\\fila4\\Desktop\\SeryMente",
+    "root": "%USERPROFILE%\\Desktop\\SeryMente",
     "exists": true,
     "file_count": 2468,
     "directory_count": 545,
@@ -69,7 +54,7 @@
     "existing_content_modified": false
   },
   "methodology_checkout": {
-    "path": "C:\\Users\\fila4\\Desktop\\SeryMente\\Repositorios\\Metodologia\\metodologia",
+    "path": "%USERPROFILE%\\Desktop\\SeryMente\\Repositorios\\Metodologia\\metodologia",
     "exists": true,
     "git_metadata_exists": false,
     "observed_top_level_entries": [
@@ -105,5 +90,23 @@
     "Create/attach an XTS-AES256 BitLocker-protected workspace using an approved available method, with recovery protector escrow/read-back",
     "Preserve and reconcile the existing partial frentes materialization",
     "Clone full SeryMente/metodologia main into the protected target and verify branch/origin/HEAD/status plus SHA-256 manifest"
-  ]
+  ],
+  "redaction": {
+    "applied_under": "DUG v388 · ART-013",
+    "removed": [
+      "transient RDC device ID",
+      "hostname",
+      "session identifiers",
+      "Windows account name",
+      "concrete profile path",
+      "network profile identifier",
+      "maintenance account/device identifiers"
+    ],
+    "retained": [
+      "functional destination alias Fila 4",
+      "profile-relative workspace paths",
+      "preflight result and BitLocker facts"
+    ],
+    "reason": "Avoid persisting temporary device/session identity; use the operator-designated functional alias."
+  }
 }
