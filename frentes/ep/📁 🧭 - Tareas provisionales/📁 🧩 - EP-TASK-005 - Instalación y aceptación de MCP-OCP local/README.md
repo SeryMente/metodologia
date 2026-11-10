@@ -157,3 +157,17 @@ FOL1 conserva su compuerta independiente y no bloquea el piloto P004. No se acti
 ### Estado de evidencia
 
 El único cambio ejecutado en este asiento es documental: pin v388, orden, prioridad y dependencias explicitados. No se hizo preflight Fila 4, extracción, importación, bootstrap, `REGISTER`, instalación, telemetría runtime ni E2E. EP-TASK-005 permanece `pendiente`.
+---
+
+## Rectificación de compuertas locales y ruta de almacenamiento · 2026-11-10
+
+EP-TASK-005 permanece `pendiente`. La instalación del piloto está bloqueada por el estado real de EP-TASK-003 y por la entrega de un paquete P004 verificable; la pausa operativa sobre almacenamiento prevalece sobre cualquier plan anterior de extraer en una unidad visible.
+
+- **Destino de programa:** se conserva la ruta ya acordada dentro del checkout Fila 4: `frentes/mcp-metodologia/instalacion-local/piloto-sink/`. El producto final 1.0.0 servidor + panel permanece en `frentes/mcp-metodologia/instalacion-local/`.
+- **Destino de datos:** `%USERPROFILE%\Desktop\SeryMente\Datos\Metodologia\MCP-OCP\`, fuera del checkout y dentro del almacenamiento que EP verifique como protegido.
+- **Estado local:** EP-TASK-003=PARTIAL_FAIL. El VHDX de preparación está vacío, GPT/NTFS y `W:` fue su último punto de acceso observado; BitLocker no está activado. No debe usarse `W:` como ubicación final ni instalar allí.
+- **Ruta del workspace:** la intención es conservar `%USERPROFILE%\Desktop\SeryMente\` como ruta de trabajo. El montaje del volumen protegido en esa misma ruta es solo una propuesta técnica no aceptada; falta resolverla antes de copiar, cifrar o cambiar el punto de montaje.
+- **Dependencias del piloto:** EP-TASK-003 PASS + paquete P004 de MCP-OCP-05 con manifest/SHA y pin DUG v388 + pruebas contractuales mínimas MCP-OCP-03 + smoke STDIO/RDC MCP-OCP-04. No ejecutar extracción, importación, DB, `REGISTER <SID>` ni runtime persistente antes de esos PASS.
+- **No bloquean el piloto:** panel MCP-OCP-13, generalización P001–P043, release 1.0.0, EP-TASK-004 GUI de Vault y EP-TASK-002/Backblaze, salvo dependencia material demostrada.
+
+La pausa de almacenamiento detiene únicamente operaciones locales de host; MCP-OCP puede seguir con código remoto no sensible y fixtures sintéticos. No se realizó instalación, extracción, bootstrap, importación, provisión ni E2E en este ciclo documental.
