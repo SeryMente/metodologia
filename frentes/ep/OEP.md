@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.54. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.55. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -12,7 +12,7 @@
 
 Adquirir este objeto como instrucciones del operador, subordinadas a las reglas superiores de plataforma y a autorizaciones específicas. Claudia es asistente/documental; Samantha es constructor/único escritor de código. Una asignación explícita posterior puede cambiar roles; las citas no lo hacen. La asignación específica de MOD-SCRIPTPWS queda delimitada en §94; la delegación funcional acotada de MOD-SYNC queda delimitada en §110 y no transfiere la titularidad del frente EP.
 
-El estado de reanudación vigente de este frente está en §60–§119; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. La organización local por frentes, con áreas separadas Repositorios/Datos/Temporal, queda desarrollada en §119 y en el DUG ART-030. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
+El estado de reanudación vigente de este frente está en §60–§120; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. La organización local por frentes, con áreas separadas Repositorios/Datos/Temporal, queda desarrollada en §119 y en el DUG ART-030. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
 
 Leer por relevancia: OEP actual→metacanon central→Sistema de Instrucciones/Metodología/Bootstrap vigentes→canon transversal EP→AGENTS.md y ep-medio-architectura.md→código/evidencia en commits exactos. Fuente caída no es «sin cambios». Un archivo no crea herramientas, credenciales ni memoria entre plataformas.
 
@@ -3068,3 +3068,73 @@ La raíz física se descubre dinámicamente desde el Escritorio real o desde el 
 - BitLocker, VHDX, dead-man LOC-OTHER, respaldo/restauración de `Datos/` y aceptación de la materialización PC 7 permanecen NO VERIFICADOS/PENDIENTES. No colocar secretos o datos sensibles fuera del perímetro aprobado.
 
 **Precedencia:** esta sección y ART-030 sustituyen, para la organización lógica de directorios, el árbol plano de repositorios directamente bajo `SeryMente/` y la denominación anterior `Extensión/` descritos en OEP §108.2–§108.3. No derogan las exigencias de cifrado ni volatilidad de §§105–106/108.4–108.5, ni las excepciones técnicas de producto debidamente documentadas.
+
+---
+
+## §120. Rectificación de host de trabajo e instalación MCP-OCP · 2026-11-10 · OEP v0.3.55
+
+**Decisión vigente del operador:** el destino de trabajo e instalación del sprint MCP-OCP deja de ser PC 7 y pasa a ser **Fila 4**, porque es el dispositivo que corresponde a la única sesión RDC disponible indicada por el operador. Esta sección supersede, únicamente para el sprint MCP-OCP, la designación anterior de PC 7/LOC-OTHER en §118 y los resúmenes derivados. PC 7 no queda como destino alternativo ni como fallback.
+
+### 120.1 Identidad de equipo, perfil y ubicación
+
+- **Etiqueta operativa del equipo:** Fila 4. La etiqueta identifica la terminal; no determina por sí sola la ubicación física.
+- **Última identidad técnica documentada:** dispositivo RDC `d0bbb2a3-d7b4-45e1-8870-652c2c3844fc`; perfil interactivo `CENTRAL\\fila4`; SessionId 4. Son datos de la última observación registrada en EP-TASK-003, no una lectura nueva del host en este ciclo.
+- **Designación del destino:** reportada expresamente por el operador el 2026-11-10; la sesión RDC actual, hostname, usuario/SID efectivo, token, `USERPROFILE`, permisos y disponibilidad deben confirmarse en vivo antes de la primera escritura local.
+- **Ubicación física/perfil EP:** PENDIENTE_DE_VERIFICACIÓN. No inferir CECEQ ni LOC-OTHER a partir de la etiqueta Fila 4, del dominio CENTRAL o del identificador RDC. Mantener la identidad de la terminal separada del perfil físico de ubicación.
+- La antigua selección PC 7 queda como antecedente histórico. No volver a solicitar al operador la selección del host; validar técnicamente la sesión Fila 4 ya designada.
+
+### 120.2 Workspace y destino del programa
+
+El checkout de Metodología se materializa bajo el workspace canónico del usuario interactivo Fila 4:
+
+`%USERPROFILE%\\Desktop\\SeryMente\\Repositorios\\Metodologia\\metodologia\\`
+
+El release MCP-OCP y su piloto se ubican dentro de ese checkout:
+
+`%USERPROFILE%\\Desktop\\SeryMente\\Repositorios\\Metodologia\\metodologia\\frentes\\mcp-metodologia\\instalacion-local\\`
+
+- `instalacion-local\\piloto-sink\\`: ejecutable temporal del piloto SINK:P004, su configuración no secreta y manifiesto/hash propios. No es release 1.0.0.
+- `instalacion-local\\`: destino del producto final servidor + panel MCP-OCP 1.0.0, excluido de Git.
+- Datos/DB, claves DPAPI CurrentUser, fuentes importadas sensibles, logs operativos y backups no se guardan dentro del checkout ni de la carpeta de instalación. Se ubican en el área `Datos/Metodologia/MCP-OCP/` del workspace protegido, con root real resuelto y verificado por EP antes de importarlos.
+- Resolver `%USERPROFILE%` desde la sesión interactiva Fila 4; no codificar una ruta bajo `C:\\Users\\fila4` ni ejecutar bajo `CENTRAL\\MantenimientoRCI` como sustituto de la identidad propietaria.
+
+### 120.3 Protección y dead-man aplicables a Fila 4
+
+La última observación conservada para Fila 4 en EP-TASK-003 registró C: `FullyEncrypted/100 %`, `ProtectionStatus=Off` y `XtsAes128`. Esta evidencia es histórica, no una lectura viva, y no acredita un workspace efectivamente protegido. Git y GitHub CLI aparecían instalados (2.45.2 y 2.52.0); no se había verificado autenticación GitHub en el perfil `fila4`.
+
+Antes de clonar el repositorio privado con fuentes canónicas, importar DUG/MDP, crear DB o dejar un runtime persistente:
+
+1. Confirmar la sesión RDC/Fila 4 y el perfil interactivo efectivo.
+2. Materializar el VHDX/workspace de acuerdo con EP-TASK-003 y verificar el volumen de trabajo en vivo: BitLocker XTS-AES256, `ProtectionStatus=On`, `FullyEncrypted/100 %`, protector recuperable custodiado por EP Vault y lectura de vuelta.
+3. Verificar el checkout completo y sincronizado con `main`, preservando cualquier cambio local y cotejando manifiestos/SHA-256.
+4. Confirmar la ubicación física real. Si corresponde a CECEQ, aplicar la conservación cifrada prevista para esa ubicación; si corresponde a cualquier ubicación distinta de CECEQ, implementar y probar antes del runtime el dead-man específico: terminación del proceso controlador EP → bloquear BitLocker → desmontar → eliminar exclusivamente el contenedor de trabajo EP. No crear Guardian, polling, heartbeat, inactividad ni vigilancia general.
+5. No reutilizar el VHDX, W:, RecoveryPassword, DPAPI ni el workspace observados en PC-14 u otro equipo. La protección y custodia se verifican en Fila 4.
+
+El desarrollo remoto no sensible del código puede continuar mientras se prepara el host. El uso de fuentes canónicas y el piloto real SINK requieren el checkout/root protegidos y la sesión autorizada.
+
+### 120.4 Camino rápido IPZ → SINK
+
+El camino crítico se reordena para habilitar una primera recuperación útil sin esperar al panel ni al release completo:
+
+1. MCP-OCP-02: rama de trabajo nueva desde el HEAD vigente de `main`; portar selectivamente los componentes reutilizables.
+2. MCP-OCP-05: corte vertical mínimo con `GOW:ARR`, `DUG` y `SINK:P004`; una sola respuesta con texto íntegro, revisión DUG, commit/blob y SHA-256.
+3. MCP-OCP-03/04: pruebas de contrato y recorrido real por RDC/STDIO: `initialize` → `tools/list` → `tools/call:SINK:P004` → respuesta validada → cierre limpio.
+4. GOV-TASK-007 prepara el IPZ compacto con la secuencia `GOW:ARR` → `DUG` → selección mediante MDP → consulta obligatoria `SINK:Pxxx`; la primera prueba operativa usa P004. Verificar límite de 1.500 caracteres y preservación de las salvaguardas existentes.
+5. Probar el uso desde el contexto IPZ por el recorrido real RDC/STDIO disponible. Una consola JSON-RPC aislada es smoke de transporte, no aceptación IPZ end-to-end. El mecanismo de invocación y la respuesta visible para el modelo deben quedar demostrados.
+6. Solo después del primer piloto, generalizar a P001–P043, lotes ordenados y matriz negativa. MCP-OCP-13 (panel WPF) avanza después de congelar el schema de estado/eventos y en paralelo con esa generalización; no es dependencia del piloto SINK:P004.
+7. Completar manifiesto, build/paquete y aceptación final MCP-OCP 1.0.0 con servidor + panel.
+
+FOL1 no bloquea el piloto SINK:P004 ni la generalización del servidor; conserva su compuerta independiente y no se activa antes de instalar/verificar el IPZ nativo conforme a GOV-TASK-007. Este ajuste no modifica el DUG, ART-025/027, IPZ nativa, controles, ni activa MCP-NORMATIVO.
+
+### 120.5 Estado de esta rectificación
+
+- **Destino seleccionado:** Fila 4, por instrucción del operador.
+- **Dispositivo/perfil:** últimos datos conocidos identificados arriba; preflight vivo pendiente.
+- **Ubicación física:** no clasificada; por verificar.
+- **Workspace protegido/checkout íntegro:** no verificado en Fila 4.
+- **Dead-man:** condicional a la ubicación real; implementación/prueba pendiente cuando aplique.
+- **Piloto SINK:P004 por IPZ/RDC/STDIO:** no implementado ni probado.
+- **Release 1.0.0, panel e instalación final:** pendientes.
+
+La actualización es documental y de secuencia. No se ha operado el dispositivo, creado VHDX, clonado el repositorio, instalado software, importado fuentes, provisionado operador ni ejecutado SINK.
+
