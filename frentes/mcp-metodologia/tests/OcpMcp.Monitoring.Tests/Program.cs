@@ -72,10 +72,10 @@ try
         string dir = MonitorDir(testRoot);
         WriteSession(dir, state: "ACTIVE");
         var snapshot = Snapshot();
-        File.WriteAllText(Path.Combine(dir, "state.json"), JsonSerializer.Serialize(snapshot, JsonOptions));
+        File.WriteAllText(Path.Combine(dir, "state.json"), JsonSerializer.Serialize(snapshot, JsonOptions()));
         var evt = new MonitorEvent(1, "e1", DateTimeOffset.UtcNow, "SINK_READ_SUCCESS",
             "sink_principle", "success", 12, null);
-        File.WriteAllText(Path.Combine(dir, "events.jsonl"), JsonSerializer.Serialize(evt, JsonOptions) + Environment.NewLine);
+        File.WriteAllText(Path.Combine(dir, "events.jsonl"), JsonSerializer.Serialize(evt, JsonOptions()) + Environment.NewLine);
         MonitorView view = new MonitorReader().Read(testRoot);
         runner.Equal(true, view.StateAvailable);
         runner.Equal("v388", view.State!.Sources.DugVersion);
@@ -120,7 +120,7 @@ static void WriteSession(string dir, int schemaVersion = 1, string state = "ACTI
 {
     var session = new SessionAttestation(schemaVersion, state, DateTimeOffset.UtcNow.AddMinutes(-2),
         "UNKNOWN", DateTimeOffset.UtcNow.AddMinutes(-1));
-    File.WriteAllText(Path.Combine(dir, "session.json"), JsonSerializer.Serialize(session, JsonOptions));
+    File.WriteAllText(Path.Combine(dir, "session.json"), JsonSerializer.Serialize(session, JsonOptions()));
 }
 
 static MonitorServerSnapshot Snapshot() => new(
@@ -133,7 +133,7 @@ static MonitorServerSnapshot Snapshot() => new(
     new ServerReadiness(false, "SOURCES_NOT_IMPORTED"),
     new ServerActivity(null, null, DateTimeOffset.UtcNow, 0, 0));
 
-static readonly JsonSerializerOptions JsonOptions = new(JsonSerializerDefaults.Web);
+static JsonSerializerOptions JsonOptions() => new(JsonSerializerDefaults.Web);
 
 sealed class TestRunner
 {
