@@ -260,7 +260,6 @@ static string FixtureHtml(string version = "v387", string? normativeText = null)
                     preponderance = new { category = isP004 ? "A" : "B", @decimal = isP004 ? 0.8 : 0.1 }
                 };
             }).ToArray(),
-        },
         glossary = new
         {
             sections = new[]
