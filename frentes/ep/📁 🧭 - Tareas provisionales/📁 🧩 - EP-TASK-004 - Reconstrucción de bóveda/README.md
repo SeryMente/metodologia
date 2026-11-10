@@ -651,3 +651,7 @@ La validación se ejecutó en el contexto de mantenimiento con la raíz de estad
 Esto completa únicamente las pruebas sintéticas indicadas, no H7/H8 integrales. No prueba DPAPI real de Fila 4, ACL del almacén formal, aislamiento entre usuarios, GUI funcional de punta a punta, temporizadores de todos los intervalos, expiración en GUI, audio, DPI, accesibilidad, reducción de movimiento, backup/restore ni aceptación visual. H10 permanece pendiente de revisión humana; la GUI observada por separado sigue SELLADA.
 
 **Estado:** `SYNTHETIC_CRYPTO_SELFTEST=PASS` · `MANAGED_JOB_SELFTEST=PASS` · `JOB_TIMEOUT_SELFTEST=PASS` · `PARSER=PASS` · `XAML_XML=PASS` · `H7_H8=PARTIAL` · `H10=HUMAN_ACCEPTANCE_PENDING`.
+
+
+## Reporte individual obligatorio por tarea
+Al resolver esta tarea, el responsable debe agregar el informe individual en este mismo núcleo siguiendo [la plantilla común](../../../PLANTILLA-REPORTE-CIERRE-TAREA.md), completar todos sus campos y actualizar el índice padre solo después del read-back. No marcar como completada sin criterios PASS, evidencia ejecutada, integridad verificada y aceptación exigible. Si termina parcial/bloqueada, dejar igualmente el informe con bloqueantes, preocupaciones, riesgos y condición objetiva de desbloqueo. Informar al operador con enlace al informe. Esta instrucción no altera titularidad, generación, permisos ni controles.
