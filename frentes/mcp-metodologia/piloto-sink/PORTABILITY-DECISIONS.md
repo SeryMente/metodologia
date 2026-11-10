@@ -26,7 +26,7 @@ La rama se creó directamente desde el HEAD de main indicado arriba. No se reuti
 | SQLite, CryptoBox, KeyVault, EventChain, ReceiptSigner, BackupService, OperationService | DROP | Persistencia, custodia y operaciones fuera del piloto. |
 | Pruebas históricas | REWRITE | No cubren el contrato Sink actual. |
 | Scripts/builds/binaries/manifests históricos | DROP como artefactos | No se heredan PASS, binarios ni recibos antiguos. |
-| Panel WPF | PENDIENTE | Especificado y autorizado para release 1.0.0; no bloquea P004. |
+| Panel WPF / monitor | REWRITE · CANDIDATO ESCRITO | Proyecto WPF read-only + writer/reader y 11 pruebas sintéticas; build, tests, smoke visual e integración EP pendientes. Obligatorio en 1.0.0; no bloquea P004. |
 
 ## Stack y publicación fijados
 - .NET SDK **10.0.403**, fijado en `global.json`.
@@ -39,3 +39,10 @@ La rama se creó directamente desde el HEAD de main indicado arriba. No se reuti
 El código del piloto se portó por archivo desde la rama de ciclo anterior, no mediante merge. El DUG se leyó tanto en el commit pinneado como en main actualizado; ambas lecturas devuelven blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`. La representación humana del DUG renderiza `content_markdown` desde el mismo objeto P004 del bloque gov-data; el lector valida marcador/ancla y el registro P004 exacto.
 
 **Estado:** rama y pins publicados; código/tests escritos; build, suite y smoke sin ejecución verificada.
+
+
+## Implementación candidata de observabilidad · ciclo02
+
+El proyecto `OcpMcp.Monitoring` define modelos schemaVersion 1, writer best-effort de `state.json` / `events.jsonl` y reader fail-closed de `session.json` / snapshot / eventos. `OcpMcp.Panel` es una ventana WPF read-only; el servidor solo activa la proyección mediante el parámetro explícito `--monitor-root` suministrado por EP. No se infiere protección del volumen a partir de MCP y no hay default de root.
+
+Tests escritos: 15 piloto P004 + 11 monitor; 0 ejecutados. CI configurado para build del servidor, ambas suites, WPF cross-target y smoke STDIO; no hay build/test PASS observado ni paquete.
