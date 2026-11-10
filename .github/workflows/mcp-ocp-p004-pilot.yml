@@ -1,0 +1,58 @@
+name: MCP-OCP P004 pilot CI
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "frentes/mcp-metodologia/**"
+      - ".github/workflows/mcp-ocp-p004-pilot.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-test:
+    name: Build and run P004 pilot tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        shell: pwsh
+        working-directory: frentes/mcp-metodologia
+
+    steps:
+      - name: Initialize diagnostic workspace
+        shell: pwsh
+        run: |
+          $diagnosticDir = Join-Path $env:RUNNER_TEMP 'mcp-ocp-p004-pilot-diagnostics'
+          New-Item -ItemType Directory -Force -Path $diagnosticDir | Out-Null
+          @(
+            "RUNNER_OS=$env:RUNNER_OS"
+            "RUNNER_ARCH=$env:RUNNER_ARCH"
+            "IMAGE_OS=$env:ImageOS"
+            "IMAGE_VERSION=$env:ImageVersion"
+            "WORKSPACE=$env:GITHUB_WORKSPACE"
+            "RUN_ID=$env:GITHUB_RUN_ID"
+            "RUN_ATTEMPT=$env:GITHUB_RUN_ATTEMPT"
+          ) | Set-Content -Path (Join-Path $diagnosticDir 'runner-preflight.txt')
+
+      - name: Checkout candidate branch
+        uses: actions/checkout@v4
+
+      - name: Install pinned .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.403
+
+      - name: Execute build, 13 contract tests and real STDIO smoke
+        run: ./piloto-sink/ci/Invoke-PilotValidation.ps1
+
+      - name: Upload validation diagnostics even on failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mcp-ocp-p004-diagnostics
+          path: ${{ runner.temp }}/mcp-ocp-p004-pilot-diagnostics/
+          if-no-files-found: warn
+          retention-days: 7
