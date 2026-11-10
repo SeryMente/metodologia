@@ -570,9 +570,9 @@ La vista principal prioriza estado global y ruta `SESIÓN → PROCESO → STDIO 
 
 ---
 
-## 18. Rectificación de host y prioridad del primer SINK/IPZ · 2026-11-10 · MCP-OCP-v0.1.27
+## 18. Antecedente de destino y prioridad del primer SINK/IPZ · 2026-11-10 · snapshot MCP-OCP-v0.1.27 · supersedido por §20
 
-Esta sección supersede, para el sprint MCP-OCP 1.0.0, las designaciones anteriores de PC 7/LOC-OTHER que aparecen en §§15–17 y en resúmenes derivados. **El destino de trabajo e instalación es Fila 4**, porque corresponde a la única sesión RDC disponible indicada por el operador. PC 7 no queda como alternativa ni fallback. La identidad técnica de Fila 4 se debe revalidar en vivo; último dato documentado: dispositivo RDC `d0bbb2a3-d7b4-45e1-8870-652c2c3844fc`, perfil interactivo `CENTRAL\\fila4`, SessionId 4. No se declara lectura actual del host.
+Esta sección conserva el antecedente de reorientación de destino a Fila 4. Su orden y pins quedaron supersedidos por el rebaseline posterior y por §20 (Sprint SINK-P004). **Destino funcional vigente: Fila 4**; PC 7 no es alternativa ni fallback. Conforme a DUG v388/ART-013, este OCP no retiene Device IDs, hostnames, cuentas de Windows ni SessionIds efímeros. EP debe revalidar en vivo el perfil efectivo y permisos antes de operar; la ubicación física se clasifica aparte.
 
 ### 18.1 Rutas
 
@@ -580,7 +580,7 @@ Esta sección supersede, para el sprint MCP-OCP 1.0.0, las designaciones anterio
 - Piloto SINK: `<checkout>\\frentes\\mcp-metodologia\\instalacion-local\\piloto-sink\\`.
 - Producto final 1.0.0: `<checkout>\\frentes\\mcp-metodologia\\instalacion-local\\`, incluye servidor y panel WPF, excluidos de Git.
 - Datos/DB/DPAPI/fuentes privadas/logs/backups: `%USERPROFILE%\\Desktop\\SeryMente\\Datos\\Metodologia\\MCP-OCP\\` sobre el workspace protegido, fuera del checkout y de la carpeta de instalación.
-- No hardcodear `C:\\Users\\fila4`; confirmar `USERPROFILE`, sesión, SID y permisos en vivo. No reutilizar staging, W:, VHDX, RecoveryPassword o DPAPI de PC-14 ni material de PC 7.
+- Resolver rutas mediante `%USERPROFILE%` dentro del perfil designado por EP; no persistir cuentas, SID ni SessionIds. No reutilizar staging, volúmenes, RecoveryPassword o DPAPI de otro host.
 
 ### 18.2 Ubicación y gates EP
 
