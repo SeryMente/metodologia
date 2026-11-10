@@ -1,6 +1,6 @@
-# Operación local · MCP-OCP
+**Estado vigente al corte 2026-11-10:** núcleo documental MCP-OCP v0.1.28 en rama feat/mcp-ocp-p004-pilot-20261110-cycle04; backlog v0.8; DUG actual de main Samantha v388/NX-388m, commit 3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c, blob 4db0ebadfd1e48b2bdec9236ba7f344921e4a865; objetivo de software MCP-OCP 1.0.0. El candidato SINK:P004 y 13 pruebas están escritos; build, ejecución de pruebas, smoke y paquete no están aceptados. El panel de observabilidad está autorizado y especificado, aún no implementado. PR #22/cycle02 queda obsoleto; se reconstruyó sobre el main actual sin incluir la rama parcial cycle03.
 
-**Estado vigente:** núcleo documental MCP-OCP v0.1.27; backlog v0.8; DUG Samantha v386/NX-386m; objetivo de software MCP-OCP 1.0.0. Sink local por stdio y panel de observabilidad están autorizados en el alcance del sprint, pero su implementación/build/paquete actuales todavía están pendientes. La candidata 0.1.0 que se describe aquí es evidencia histórica; la identidad/ruta del entorno temporal no se conserva y el paquete no está disponible en este repositorio.  
+**Estado vigente al corte 2026-11-10:** núcleo documental MCP-OCP v0.1.28 en rama candidata; backlog v0.8; DUG actual de main Samantha v387/NX-387m (blob c8d37d92aed7ff9d4fe94e7a9541e76ba5c88a2c); objetivo de software MCP-OCP 1.0.0. El candidato Sink P004 por STDIO ya está escrito en la rama; build, ejecución de pruebas y paquete siguen pendientes. El panel de observabilidad permanece especificado pero no implementado. La candidata 0.1.0 que se describe aquí es evidencia histórica; la identidad/ruta del entorno temporal no se conserva y el paquete no está disponible en este repositorio.  
 **Arquitectura:** proceso MCP stdio local; el cliente inicia y administra el proceso. No hay listener TCP/HTTP ni endpoint público.  
 **Fuente de verdad documental:** [MCP-OCP · núcleo](MCP-METODOLOGIA.md) y [lista provisional de tareas](LISTA-TAREAS-PROVISIONAL.md).  
 **Separación:** este servidor pertenece exclusivamente a MCP-OCP en Metodología. No es Khora MCP ni el bridge de Jules.
@@ -167,3 +167,38 @@ Tras el piloto P004, generalizar a P001–P043, lotes ordenados, integridad, tel
 
 **Estado:** ajuste documental verificado; no se ejecutó preflight, clon, instalación, importación, REGISTER, piloto ni E2E IPZ.
 
+
+
+## 13. Ejecución del Hito A · candidato SINK:P004 · 2026-11-10
+
+- **Main base de la rama candidata:** 73a42bc687f1fa3dd60b44af9cd93f797eba3920; compare main...branch confirmó ahead-only, sin commits detrás al corte.
+- **Rama:** feat/mcp-ocp-p004-pilot-20261110-cycle02.
+- **DUG:** Samantha v387/NX-387m; archivo fijado en commit 17a4da1d3906e2397ab4682ff46cc9a9f116f34d, blob c8d37d92aed7ff9d4fe94e7a9541e76ba5c88a2c. La referencia v386 en la sección 12 es antecedente y no se presenta como vigente.
+- **Código candidato:** src/OcpMcp/OcpMcp.csproj, Program.cs, SourcePin.cs, DugSourceReader.cs y McpServer.cs. Implementa handshake clásico MCP `2025-11-25`, `notifications/initialized`, `tools/list`, `tools/call` y cierre MCP shutdown/exit más EOF; no implementa el protocolo stateless `2026-07-28`.
+- **Pruebas:** tests/OcpMcp.Pilot.Tests; 13 escenarios escritos, aún no ejecutados.
+- **Portabilidad:** las ramas integration/ocp-mcp-0.1.0-selective-20261101 y build/ocp-mcp-mvp-0.1.0 se inspeccionaron solo en lectura. Están divergentes respecto de main (592/911 commits detrás respectivamente al corte); no se fusionaron. Clasificación REUSE/ADAPT/REWRITE/DROP en piloto-sink/PORTABILITY-DECISIONS.md.
+- **Ejecución:** `dotnet` no está disponible en el contenedor ni en el dispositivo RDC sondeado (`DOTNET=NOT_FOUND`). En el dispositivo RDC la sesión de proceso es `MantenimientoRCI`, no el perfil de operador Fila 4; no se escribieron archivos allí. No se ejecutó build, prueba ni instalación.
+- **Resultado:** código y pruebas persistidos en rama; build/test/STDIO real pendientes. Sin paquete, sin instalación, sin DB, sin REGISTER, sin IPZ nativa, sin E2E, sin merge a main. MCP-NORMATIVO permanece DESACTIVADO.
+
+
+## 14. Correcciones y validación del candidato · 2026-11-10
+
+- La referencia operativa del piloto se actualizó a Samantha v387/NX-387m; commit DUG 17a4da1d3906e2397ab4682ff46cc9a9f116f34d y blob c8d37d92aed7ff9d4fe94e7a9541e76ba5c88a2c. El pin v386 de la sección anterior queda como histórico.
+- El servidor se alineó a MCP 2025-11-25: no implementa mensajes shutdown/exit; espera cierre de stdin y termina por EOF. El método shutdown no definido produce -32601.
+- El fixture sintético de pruebas genera 43 IDs únicos P001–P043 y conserva P004 con texto, MDP, ancla y preponderancia exactos. Hay 13 escenarios escritos; ninguno se declara ejecutado.
+- Se añadió .github/workflows/mcp-ocp-p004-pilot.yml para Windows y .NET SDK 10.0.403. PR #22 está abierto como borrador y sin merge.
+- Las consultas disponibles de workflow runs y commit checks devolvieron listas vacías. No hay evidencia observable de ejecución CI; build, 13 pruebas y smoke del ejecutable permanecen NO VERIFICADOS.
+- El único equipo RDC conectado ejecuta proceso bajo MantenimientoRCI y no tiene dotnet disponible. No se instalaron herramientas ni se escribieron archivos en ese perfil. Fila 4 sigue siendo el destino designado y no está online en esta sesión.
+- El candidato sigue sin paquete, instalación, DB, REGISTER, importación privada, escritura de IPZ nativa, E2E IPZ, FOL1, activación de MCP-NORMATIVO o merge a main.
+
+
+## 15. Reconciliación final de base · cycle04 · 2026-11-10
+
+- **Rama:** feat/mcp-ocp-p004-pilot-20261110-cycle04; creada directamente desde main HEAD 2e98cb2729741174ccc822f52a87259c4331b066. La comparación inicial con main devolvió idéntico: 0 ahead/0 behind.
+- **DUG:** Samantha v388/NX-388m; commit 3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c; Git blob 4db0ebadfd1e48b2bdec9236ba7f344921e4a865; evento C-GOBERNANZA-ART027-SINK-LOCAL-RECONCILIACION-20261110-01; Metacanon 1.29; GOW 2.18.
+- **Contrato:** §ARR, P004, MDP P004 y ART-027 leídos en main. P004 conserva texto desarrollado, título, ancla, microdescriptor y preponderancia A/0.8 del pin v387; MCP-NORMATIVO sigue DESACTIVADO.
+- **Protocolo:** MCP 2025-11-25, initialize/notifications/initialized/tools/list/tools/call; el proceso termina por EOF, sin métodos propios shutdown/exit.
+- **CI anterior:** PR #22/cycle02 run 14 FAILURE; el conector no devolvió pasos y la descarga de logs respondió 404. La causa raíz permanece NO VERIFICADA; se requiere un nuevo run del candidato con el pin v388.
+- **Runner local:** contenedor/RDC sin .NET SDK; el dispositivo conectado ejecuta bajo MantenimientoRCI. No instalar herramientas ni escribir en ese perfil. Fila 4 permanece offline.
+- **Próximo gate:** PR draft nuevo sobre cycle04; CI build/test observable; smoke del ejecutable STDIO; después, preflight EP/Fila 4 y E2E IPZ/RDC bajo autorización separada.
+- **Exclusiones:** sin instalación EP/Fila 4, DB/DPAPI/REGISTER, fuentes privadas, escritura nativa IPZ, paquete, E2E, FOL1 o activación MCP-NORMATIVO; no merge a main.
