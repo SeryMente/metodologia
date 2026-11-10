@@ -13,7 +13,7 @@ Recibir el artefacto MCP-OCP renovado y efectuar su instalación, bootstrap y ac
 1. Destino vigente designado por el operador: terminal **Fila 4**, correspondiente a la única sesión RDC disponible. Última identidad técnica conocida (no lectura viva): Device ID `d0bbb2a3-d7b4-45e1-8870-652c2c3844fc`, perfil `CENTRAL\\fila4`, SessionId 4. Verificar hostname, Device ID, sesión, usuario/SID, USERPROFILE, rutas y permisos en vivo. La ubicación física se verifica por separado; no inferir CECEQ ni LOC-OTHER. PC 7 queda supersedido y no es fallback.
 2. Confirmar en Fila 4 que workspace, runtime, DB y respaldos están en un volumen de trabajo protegido. La última observación histórica de Fila 4 indicó FullyEncrypted/100 %, ProtectionStatus=Off y XtsAes128; no acredita protección efectiva. Repetir en vivo y obtener XTS-AES256, Protection On, FullyEncrypted/100 %, protector recuperable custodiado por EP Vault y read-back SHA-256. No heredar W:, VHDX, RecoveryPassword ni DPAPI de PC-14/PC 7.
 3. Resolver el root de datos del servidor desde el perfil interactivo Fila 4: `%USERPROFILE%\\Desktop\\SeryMente\\Datos\\Metodologia\\MCP-OCP\\`, fuera del checkout y dentro del volumen protegido. Confirmar la ruta en preflight; no asumir W: ni heredar rutas de otra sesión.
-4. Recibir solo un paquete nuevo, construido y verificado contra DUG Samantha v386/NX-386m y el núcleo MCP-OCP vigente. Verificar SHA-256, manifiesto, RID y resultados de pruebas antes de extraer.
+4. Recibir solo un paquete nuevo, construido y verificado contra DUG Samantha v388/NX-388m y el núcleo MCP-OCP vigente; rechazar paquetes/manifiestos fijados a v386 o anteriores. Verificar SHA-256, manifiesto, RID y resultados de pruebas antes de extraer.
 5. Si se necesita clonar/actualizar el repositorio privado desde ese perfil, comprobar autenticación local. Si falta, el propietario realiza `gh auth login --web` de forma interactiva en ese Windows; el token permanece en el almacén local. La autenticación GitHub del conector de ChatGPT no se transfiere al equipo.
 6. Ejecutar `import-sources` contra un checkout con los commits/blobs vigentes; verificar resultado y 43 IDs/MDP. No importar fuentes con pins antiguos.
 7. Ejecutar `OcpMcp.exe provision-operator` de forma interactiva. El operador confirma en esa consola escribiendo exactamente `REGISTER <SID>` con el SID que muestre el proceso. No capturar ni transmitir el SID o claves por chat.
@@ -84,7 +84,7 @@ El entregable del sprint debe quedar instalado localmente dentro del checkout Me
 - **Exclusión Git:** la carpeta de ejecutables instalados/binarios generados queda ignorada por Git; se conserva código fuente y pruebas en el flujo versionado.
 - **Root de datos:** SQLite, claves DPAPI CurrentUser, fuentes sensibles importadas, logs operativos y backups quedan fuera del checkout, en una raíz independiente dentro del volumen efectivamente protegido y verificado por EP. No usar LocalAppData por defecto sin verificar cifrado y Protection On.
 
-**Secuencia de instalación:** EP-TASK-003 entrega checkout íntegro; MCP-OCP-07 entrega paquete con manifest/SHA; comparar SHA antes de extraer; extraer dentro de la ruta obligatoria; leer de vuelta y comprobar ejecutable/dependencias; configurar root de datos externo protegido; importar fuentes v386 y verificar pins/43 MDP; comprobar health de readiness (proceso, protocolo, fuentes, hashes y operador por separado); solicitar consentimiento y presencia local para `provision-operator`/ `REGISTER <SID>`; conectar cliente MCP STDIO/RDC; ejecutar la prueba funcional instalada y cierre/reinicio.
+**Secuencia de instalación:** EP-TASK-003 entrega checkout íntegro; MCP-OCP-07 entrega paquete con manifest/SHA; comparar SHA antes de extraer; extraer dentro de la ruta obligatoria; leer de vuelta y comprobar ejecutable/dependencias; configurar root de datos externo protegido; importar fuentes v388 y verificar commit/blob/SHA, pins y 43 MDP; comprobar health de readiness (proceso, protocolo, fuentes, hashes y operador por separado); solicitar consentimiento y presencia local para `provision-operator`/ `REGISTER <SID>`; conectar cliente MCP STDIO/RDC; ejecutar la prueba funcional instalada y cierre/reinicio.
 
 **Gate histórico del destino PC 7:** supersedido por Fila 4 y por la compuerta dinámica de ubicación física, protección del volumen y dead-man aplicable descrita en la rectificación vigente al final.
 
@@ -132,3 +132,28 @@ FOL1 conserva su compuerta independiente y no bloquea el piloto P004. No se acti
 
 **Estado de esta rectificación:** destino documental Fila 4 actualizado; preflight del host, checkout protegido, piloto, instalación, IPZ nativo/read-back y aceptación no ejecutados.
 
+
+## Prioridad P0 · piloto SINK:P004 · rebaseline DUG v388 · 2026-11-10
+
+**Prioridad:** P0 para el tramo EP local del primer piloto; el estado técnico permanece `pendiente` hasta ejecutar gates y obtener read-back. Esta tarea no debe esperar al panel ni al release 1.0.0 para el piloto P004.
+
+### Secuencia inmediata
+
+1. Esperar a que EP-TASK-003 declare `PREFLIGHT_FILA4=PASS` con evidencia de identidad/sesión/perfil, ubicación física, checkout completo/sincronizado, volumen XTS-AES256/Protection On/FullyEncrypted 100 %, protector recuperable/read-back SHA-256 y root de datos protegido. El dead-man es compuerta solo si la ubicación comprobada es distinta de CECEQ.
+2. Recibir del frente MCP-OCP el paquete piloto P004 y verificar SHA-256, manifiesto, fuente/commit de código, SDK/RID y pin del DUG v388/NX-388m. DUG fuente: commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`; blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`. Rechazar pin v386.
+3. Extraer únicamente el piloto en `frentes/mcp-metodologia/instalacion-local/piloto-sink/` dentro del checkout validado; confirmar rutas, archivos y hash/read-back. No instalar el producto final 1.0.0 en esta fase.
+4. Configurar el root `%USERPROFILE%\\Desktop\\SeryMente\\Datos\\Metodologia\\MCP-OCP\\` fuera del checkout y sobre el volumen protegido; verificar permisos y persistencia. Solo entonces importar las fuentes canónicas fijadas a v388 y comprobar procedencia/43 IDs/MDP.
+5. Ejecutar el smoke funcional instalado y el transporte real STDIO/RDC; separar proceso iniciado, protocolo conectado, fuentes verificadas y readiness. El recorrido E2E de IPZ solo se acepta cuando la invocación desde el contexto IPZ devuelve al modelo el resultado P004 con pin/hash.
+6. La provisión `provision-operator`/`REGISTER <SID>` es un acto separado, interactivo, con presencia y consentimiento del operador. No transmitir SID ni claves por chat.
+
+### Dependencias exactas y límites
+
+- **Bloqueadores de esta tarea:** EP-TASK-003 preflight/checkout/root protegido; paquete piloto P004 de MCP-OCP-05; pruebas de contrato mínimas MCP-OCP-03; smoke STDIO/RDC MCP-OCP-04. La instalación del piloto no se inicia si cualquiera de esos gates está ausente.
+- **En paralelo:** MCP-OCP puede avanzar con rama/código no sensible y fixtures; esta tarea no exige detener ese trabajo hasta que el paquete esté disponible.
+- **No son bloqueadores del piloto:** panel MCP-OCP-13, generalización P001–P043, lotes, release final 1.0.0, EP-TASK-004 GUI de bóveda, EP-TASK-002/Backblaze, Jules y PPR cross-host. El panel sí es obligatorio para el release completo 1.0.0.
+- **Gobernanza:** GOV-TASK-007 prepara el candidato IPZ después de congelar respuesta P004; GOV-TASK-003 acepta la E2E real. La escritura/read-back de IPZ nativa no se presume ni se ejecuta por esta tarea. FOL1 no bloquea P004 y conserva su gate separado.
+- **MCP-NORMATIVO:** permanece `DESACTIVADO`; Sink recupera texto íntegro, no realiza selección normativa automática.
+
+### Estado de evidencia
+
+El único cambio ejecutado en este asiento es documental: pin v388, orden, prioridad y dependencias explicitados. No se hizo preflight Fila 4, extracción, importación, bootstrap, `REGISTER`, instalación, telemetría runtime ni E2E. EP-TASK-005 permanece `pendiente`.
