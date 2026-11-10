@@ -76,3 +76,12 @@ Verificación de runner RDC disponible: Windows PowerShell y Git 2.45.2 presente
 - 13 pruebas están escritas; no hay PASS de build/test. PR #23/cycle04 run 23 falla sin steps/logs/artifacts disponibles; causa no determinada.
 - CI actual incluye preflight, diagnóstico/artifact y smoke del ejecutable STDIO, en Ubuntu + SDK .NET 10.0.403. PR #23/cycle04 run 23 terminó FAILURE sin steps/logs/artifacts; esta ejecución no acredita el nuevo workflow/script cycle05.
 - Smoke real IPZ → RDC → STDIO no realizado; Fila 4/EP permanece bajo su propio gate.
+
+
+## Resultado de CI cycle05 · 2026-11-10
+
+- PR #24: borrador, mergeable=true, no merge. PR #23/cycle04 cerrado como supersedido.
+- MCP-OCP run24 y su reintento: FAILURE sin steps/logs/artifacts. Run25: FAILURE con el mismo patrón.
+- En run25 fallaron también los workflows existentes Validate RDC Governance y validate-canonical-bootstrap con steps/logs ausentes. No se demuestra que el runner llegara a ejecutar setup-dotnet, build, tests o smoke. Causa raíz común probable, pero NO VERIFICADA.
+- Build, 13 pruebas, smoke ejecutable, paquete e2e IPZ siguen pendientes. No marcar los checkboxes como aceptados.
+- La ruta de CI se acotó a global.json, src, tests, script de validación y workflow; los cambios documentales no deben generar runs redundantes.
