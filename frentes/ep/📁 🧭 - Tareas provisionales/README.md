@@ -20,9 +20,9 @@ El patrón de materialización sigue el registro de tareas provisionales de Gobe
 |---|---|---|---|
 | EP-TASK-001 | pendiente | NCL — Navegador Compartido Local: integración de Playwright y KeePassXC | [núcleo](./📁%20🧩%20-%20EP-TASK-001%20-%20Integración%20NCL/README.md) |
 | EP-TASK-002 | `en_curso` | Persistencia B2 EP: pareja Master dedicada migrada a EP Vault y read-back verificado; autenticación B2 y respaldo remoto actual pendientes | [núcleo](./📁%20🧩%20-%20EP-TASK-002%20-%20Persistencia%20provisional%20Backblaze/README.md) |
-| EP-TASK-003 | en_curso · P0 sprint · PREFLIGHT_FILA4=PARTIAL_FAIL | Identidad observada; volumen C: XTS-AES128/Protection Off/sin protectores; ubicación física sin clasificar; checkout parcial sin .git. Workspace preservado. | [núcleo](./📁%20🧩%20-%20EP-TASK-003%20-%20Mapa%20integral%20de%20construcción%20EP/README.md) |
+| EP-TASK-003 | en_curso · P0 sprint · PREFLIGHT_FILA4=PARTIAL_FAIL | Fila 4: C: XTS-AES128/Protection Off/sin protectores; VHDX 30 GiB GPT/NTFS vacío, último acceso W:, sin BitLocker; diseño de montaje en Desktop\\SeryMente no aceptado; origen preservado, ubicación física sin clasificar y checkout parcial sin .git. | [núcleo](./📁%20🧩%20-%20EP-TASK-003%20-%20Mapa%20integral%20de%20construcción%20EP/README.md) |
 | EP-TASK-004 | `en_curso` | Bóveda EP: pareja Master EP promovida desde notas efímeras y verificada; H10 y aceptación integral pendientes | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-004%20-%20Reconstrucci%C3%B3n%20de%20b%C3%B3veda/README.md) |
-| EP-TASK-005 | pendiente · P0 piloto | Instalar/aceptar primero SINK:P004 tras EP-TASK-003 PASS; después release MCP-OCP 1.0.0 en Fila 4 | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-005%20-%20Instalaci%C3%B3n%20y%20aceptaci%C3%B3n%20de%20MCP-OCP%20local/README.md) |
+| EP-TASK-005 | pendiente · P0 piloto · BLOQUEADO_GATES_EP+PAQUETE | Instalar SINK:P004 solo tras EP-TASK-003 PASS, paquete MCP-OCP P004 verificado y smoke STDIO/RDC; W: no es destino final. Después release MCP-OCP 1.0.0 en Fila 4. | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-005%20-%20Instalaci%C3%B3n%20y%20aceptaci%C3%B3n%20de%20MCP-OCP%20local/README.md) |
 | EP-TASK-006 | `en_curso` | Centralización: nombres Master B2 EP normalizados y leídos de vuelta; cobertura mult proveedor sigue incompleta | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-006%20-%20Centralizaci%C3%B3n%20de%20variables%20de%20entorno/README.md) |
 
 ## Estado de continuidad · 2026-10-31
@@ -247,3 +247,10 @@ No se ejecutó preflight, materialización, login, instalación ni piloto por es
 - Checkout de Metodología: materialización parcial, solo frentes/, sin .git. Git y gh disponibles; autenticación gh del perfil Fila 4 verificada por keyring.
 - EP-TASK-003 sigue en_curso. EP-TASK-005 sigue pendiente.
 - Evidencia: EP-FILA4-PREFLIGHT-PARCIAL-20261110.json; commit 84cc9ffc1a2aa27c622c7e5de147d7460f3b5ecd; blob 8ebf0c2b54efc6d3fe597adfe0f9358e65e6acbe.
+
+
+## Continuidad de almacenamiento Fila 4 y piloto SINK:P004 · 2026-11-10
+
+El último estado observado después del preflight §122 es: VHDX de 30 GiB creado, GPT/NTFS, vacío, último acceso W:, BitLocker no activado y sin protectores. El directorio Desktop/SeryMente original permanece preservado y no se ha copiado ni cambiado de ruta. El montaje del volumen cifrado sobre la ruta original se considera una propuesta no aceptada; se mantiene la pausa operativa de almacenamiento. La presencia física del operador frente a Fila 4 fue reportada; CECEQ no fue confirmado y la ubicación sigue sin clasificar. EP-TASK-003 permanece en_curso/PARTIAL_FAIL; EP-TASK-005 permanece pendiente.
+
+El bloqueo EP no detiene MCP-OCP-02/03/04 en remoto con código no sensible y fixtures sintéticos. Sí impide checkout protegido, importación privada, DB real, runtime e instalación piloto. La coordinación vigente se conserva en GOV-TASK-015.
