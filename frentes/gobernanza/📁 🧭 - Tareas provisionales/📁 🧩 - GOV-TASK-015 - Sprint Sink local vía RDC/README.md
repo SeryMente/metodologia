@@ -4,8 +4,8 @@
 **Objetivo de release:** entregar MCP-OCP software **1.0.0**, instalado en la carpeta local de Metodología descrita al final de este plan. Las versiones `MCP-OCP-v0.1.27` y backlog `0.8` son versiones documentales, no la versión del producto.
 **Tipo:** coordinación y aceptación de un único sprint; no crea un frente nuevo ni controles paralelos.
 **Responsabilidad:** frente Gobernanza. Las tareas técnicas conservan sus OCP y fuentes.
-**Fuente normativa:** Samantha v386 · NX-386m · Metacanon 1.29 · GOW 2.18.
-**DUG:** leído desde `main` HEAD `82843bca9493a522405d840393c229d2af363342`; archivo blob `22dca684830a36dff019b47811d9b800cc9bea0a`.
+**Fuente normativa:** Samantha v388 · NX-388m · Metacanon 1.29 · GOW 2.18.
+**DUG:** Samantha v388/NX-388m; commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`; archivo blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`.
 **MCP-OCP:** núcleo v0.1.27 · blob `4b663b72987f6f7f7dea951a727635f0bf7c861c`; backlog v0.8 · blob `cfe2d369cd328ecaf023b0a82d153d5eb9350268`.
 **EP:** OEP v0.3.55 · blob `fa865ceae8bcc6542b013a78c790ae2a0444ba41`.
 **Autorización:** el operador autorizó directamente Sink local por stdio y amplió el producto para incluir el panel local de observabilidad MCP-OCP-13. No se requiere aprobación de titularidad anterior, generación ni folio; dichos campos son auditoría, no compuertas.
@@ -51,11 +51,11 @@ GOV-TASK-010 ya contiene la corrección de admisión por instrucción directa y 
 | Tarea | Orden | Trabajo ejecutable | Criterio de salida |
 |---|---:|---|---|
 | MCP-OCP-02 | 1 | Crear rama limpia desde HEAD de `main`; usar ramas históricas solo como fuentes de port selectivo. | Rama y diff revisables; matriz REUSE/ADAPT/REWRITE/DROP; SDK/RID fijados. |
-| MCP-OCP-05 | 2 | Corte mínimo GOW:ARR → DUG → SINK:P004; congelar el contrato de respuesta y estado mínimo requerido. | Texto íntegro P004 con DUG v386/pin/commit/blob/SHA-256 y rechazo fail-closed. Generalización posterior. |
+| MCP-OCP-05 | 2 | Corte mínimo GOW:ARR → DUG → SINK:P004; congelar el contrato de respuesta y estado mínimo requerido. | Texto íntegro P004 con DUG v388/pin/commit/blob/SHA-256 y rechazo fail-closed. Generalización posterior. |
 | MCP-OCP-13 | 7 · paralelo · P1 secuencia | Construir panel WPF de solo lectura después de congelar schema; trabajar con fixtures mientras se generaliza Sink. | Panel abre en EP ACTIVE y distingue readiness; obligatorio en el ZIP 1.0.0, pero no bloquea el piloto P004. |
 | MCP-OCP-03 | 3 | Suite mínima P004: contrato, respuesta exacta, pin/hash, entradas/fuentes inválidas y cierre; luego ampliar a servidor+panel 1.0.0. | Recibo ligado a commit con pruebas del piloto y suite completa posterior; no reutilizar PASS históricos. |
 | MCP-OCP-04 | 4 | Ejecutar initialize/tools/list/tools/call:SINK:P004 por el recorrido RDC/STDIO que se usará desde IPZ; verificar respuesta visible y cierre. | Smoke técnico y E2E IPZ diferenciados; JSON-RPC de consola no cuenta como aceptación IPZ. |
-| MCP-OCP-10 | 8 | Congelar fuentes/pins v386, commit/base, SDK/RID, schema panel, pruebas, manifiestos y limitaciones. | Recibo y hashes del servidor+panel, read-back. |
+| MCP-OCP-10 | 8 | Congelar fuentes/pins DUG v388, commit/base, SDK/RID, schema panel, pruebas, manifiestos y limitaciones. | Recibo y hashes del servidor+panel, read-back. |
 | MCP-OCP-07 | 9 | Empaquetar el producto final servidor+panel una vez que pruebas y manifiesto pasen. | ZIP 1.0.0, SHA/manifest y extracción/read-back PASS. |
 | MCP-OCP-12 | 10 | Bootstrap del piloto y después instalación final en checkout Fila 4; datos fuera del checkout en root protegido. | Piloto/P004 y final 1.0.0 identificados separadamente; REGISTER interactivo solo con consentimiento. |
 | MCP-OCP-08 | 11 | Handoff a EP para recepción, instalación y aceptación del paquete final. | EP verifica Fila 4, root, panel ACTIVE, hash, cierre y rollback. |
@@ -76,7 +76,7 @@ EP-TASK-002 (Backblaze), EP-TASK-001 (NCL) y PPR cross-host no forman parte del 
 
 | Fase | Actividad | Puede avanzar sin host | Gate para pasar |
 |---|---|---|---|
-| 0 · Baseline | Pins v386/core 0.1.27, control, Fila 4 designado, ramas y fuente de código. | Sí. | Contrato y fuentes verificadas; ubicación/host queda preflight EP. |
+| 0 · Baseline | Pins DUG v388/core 0.1.27, control, Fila 4 designado, ramas y fuente de código. | Sí. | Contrato y fuentes verificadas; ubicación/host queda preflight EP. |
 | 1 · Reconciliar | MCP-OCP-02: rama nueva desde main y port selectivo. | Sí. | Diff revisable, base, SDK/RID fijados. |
 | 2 · Piloto Sink | MCP-OCP-05: GOW:ARR → DUG → SINK:P004 y respuesta con pin/hash. | Sí para código; fuente privada en host protegido. | Contrato P004 y respuesta exacta; fail-closed. |
 | 3 · Prueba IPZ | MCP-OCP-03/04 + GOV-TASK-007: initialize/tools/list/tools/call P004 y camino real IPZ/RDC/STDIO. | Parcial; E2E requiere Fila 4 y contexto IPZ. | Respuesta visible al modelo con pin/hash; consola sola no basta. |
@@ -290,7 +290,7 @@ Esta sección sustituye como estado vigente del sprint las menciones anteriores 
 ### Nuevo orden de ejecución
 
 1. **MCP-OCP-02:** rama nueva desde HEAD de main; comparar las ramas históricas solo como fuentes y portar por componente.
-2. **MCP-OCP-05 — piloto P004:** implementar `GOW:ARR`, identidad DUG v386 y `SINK:P004` con texto íntegro, pin/commit/blob y SHA-256.
+2. **MCP-OCP-05 — piloto P004:** implementar `GOW:ARR`, identidad DUG v388 y `SINK:P004` con texto íntegro, pin/commit/blob y SHA-256.
 3. **MCP-OCP-03/04 — prueba piloto:** contrato mínimo, errores/fuentes inválidas, initialize/tools/list/tools/call, STDIO/RDC y cierre limpio.
 4. **EP-TASK-003/005 + GOV-TASK-007:** preparar checkout/root protegido en Fila 4; elaborar IPZ candidato bajo 1.500 caracteres con `GOW:ARR → DUG → MDP → SINK:Pxxx`; primer caso P004. La escritura de IPZ nativo y su read-back son un acto separado, no se presumen.
 5. **GOV-TASK-003/007 + MCP-OCP-04:** demostrar uso real desde contexto IPZ por RDC → MCP-OCP STDIO y respuesta visible al modelo con pin/hash. Una llamada JSON-RPC desde consola solo valida transporte y no acredita E2E IPZ.
@@ -302,3 +302,12 @@ FOL1 no bloquea el piloto P004 ni la construcción del servidor; su activación 
 
 **Estado:** destino y secuencia documental corregidos; no hay preflight Fila 4, branch, código, piloto, IPZ nativo, build, paquete, instalación ni E2E ejecutados por esta actualización.
 
+
+
+## Reconciliación del contrato Sink · DUG v388 · 2026-11-10
+
+Gobernanza publicó la rectificación de ART-027 mediante el evento `C-GOBERNANZA-ART027-SINK-LOCAL-RECONCILIACION-20261110-01`. El contrato operativo vigente es `SINK:Pxxx` como operación local del servidor MCP-OCP por STDIO, invocada vía RDC. La respuesta debe contener un único principio íntegro y su procedencia/pin/hash; la frecuencia registra solo recuperaciones satisfactorias. Los diseños de Worker, Cloudflare, D1/KV, Analytics Engine, URLs cortas y aliases HTTP quedan supersedidos. `MOD-SYNC` de EP es distinto y no participa en este flujo.
+
+**Pin DUG vigente:** Samantha v388/NX-388m; commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`; blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`. Los documentos propios de MCP-OCP aún mostraban v386 en sus pins al último read; corresponde al frente MCP-OCP reconciliarlos en sus fuentes antes del build. Gobernanza no modifica el núcleo ni la guía operativa de ese OCP.
+
+**Estado:** contrato documental corregido; implementación, importación de fuente en Fila 4, pruebas, escritura/read-back nativos de IPZ y aceptación E2E siguen pendientes. La ficha conserva su estado de planificación; no se declara iniciado el trabajo de producto por esta actualización documental.
