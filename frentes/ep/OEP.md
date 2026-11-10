@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.56. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.57. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -3163,3 +3163,54 @@ EP-TASK-004 (GUI de bóveda) y EP-TASK-002/Backblaze no bloquean el piloto salvo
 ### 121.4 Estado de evidencia
 
 Este asiento y las tareas EP reflejan el orden y la urgencia; no se ejecutó preflight Fila 4, migración/materialización, configuración de BitLocker, dead-man, instalación, importación de fuentes, provisión `REGISTER`, telemetría runtime ni E2E. Cada acción requiere su evidencia/read-back propio. No convertir la prioridad P0 en permiso para saltar compuertas.
+
+## 122. Preflight vivo parcial de Fila 4 · 2026-11-10 · ejecución provisional del frente EP
+
+**Autoridad de esta intervención:** instrucción directa del operador en esta conversación para que esta sesión ejecute provisionalmente trabajo EP mientras la instancia EPO atiende otra tarea. La instrucción no transfiere titularidad, no incrementa generación, no cambia el control EP generación 3 y no crea folio nuevo. Se conserva el alcance y las restricciones vigentes del frente.
+
+### 122.1 Identidad y sesión observadas
+
+Lectura RDC en vivo, 2026-11-10, zona America/Mexico_City:
+
+- Etiqueta operativa: Fila 4.
+- Hostname observado: PC10RCIF4EI4.
+- Sesión de trabajo: CENTRAL\fila4, perfil C:\Users\fila4.
+- Sesión interactiva: console, Session ID 1, estado Active. El Session ID histórico 4 no coincide con la lectura actual y deja de utilizarse como dato vivo.
+- Dispositivo RDC actual vinculado al token CENTRAL\fila4: 99383b36-cc22-4457-952f-8799cccac0a7. La identidad histórica d0bbb2a3-d7b4-45e1-8870-652c2c3844fc no fue confirmada como ID actual.
+- Perfil de red: central.gob.mx, categoría DomainAuthenticated. Este dato no demuestra ubicación física.
+- Ubicación física CECEQ/LOC-OTHER: **NO CLASIFICADA**.
+- El token de Fila 4 no está elevado. Se utilizó una segunda conexión del mismo host, bajo CENTRAL\MantenimientoRCI, únicamente para lectura administrativa del estado de BitLocker; no se materializaron archivos bajo ese perfil.
+
+### 122.2 Estado del volumen y del workspace
+
+La lectura administrativa de manage-bde -status C: observada a las 2026-11-10T11:29:04.1967065-06:00 informa:
+
+| Propiedad | Resultado observado |
+|---|---|
+| Volumen | C: · 237.48 GB |
+| Porcentaje cifrado | 100 % (cifrado solo de espacio usado) |
+| Método | XTS-AES 128 |
+| Protección | Protection Off |
+| Protectores | Ninguno |
+| Estado | Desbloqueado |
+
+**Gate de protección: FAIL.** El porcentaje 100 % no equivale a protección activa; XTS-AES128/Protection Off/sin protectores no cumple el requisito XTS-AES256/Protection On/100 % con protector recuperable y read-back.
+
+El root C:\Users\fila4\Desktop\SeryMente existe y contiene 2,468 archivos, 545 directorios y 127,996,970 bytes (aprox. 122.07 MiB). La lectura del checkout objetivo Repositorios\Metodologia\metodologia encontró solo frentes\ en la raíz y ningún .git: se clasifica como **materialización parcial, no clon Git íntegro**. No se sobrescribió ni modificó su contenido.
+
+Git y GitHub CLI están disponibles en Fila 4. gh auth status confirmó sesión autenticada en github.com mediante keyring, con alcance repo y read:org; no se expuso token alguno. Hyper-V/New-VHD no está disponible en la sesión administrativa inspeccionada. No se creó volumen VHDX ni se alteró BitLocker.
+
+### 122.3 Resultado y siguientes acciones
+
+- PREFLIGHT_FILA4=PARTIAL_FAIL.
+- IDENTITY=OBSERVED, con rectificación de hostname, RDC Device ID y Session ID respecto a datos históricos.
+- LOCATION=UNCLASSIFIED.
+- BITLOCKER_GATE=FAIL.
+- WORKSPACE_EXISTING_CONTENT=PRESERVED.
+- METHODOLOGY_CHECKOUT=PARTIAL_NO_GIT.
+- GITHUB_AUTH=AVAILABLE_IN_FILA4_PROFILE.
+- No se ejecutó configuración de BitLocker, creación/montaje VHDX, dead-man, clonación, instalación, importación de fuentes privadas, creación de DB, provisión de operador ni runtime persistente.
+
+Siguiente trabajo EP: (1) confirmar ubicación física y presencia del operador para revisar el cambio de almacenamiento/cifrado; (2) seleccionar un método disponible y verificable para crear un workspace XTS-AES256 protegido y custodiar/read-back el protector; (3) preservar y reconciliar la materialización parcial frentes antes de crear el checkout Git íntegro desde main; (4) calcular manifiestos SHA-256 de origen/destino y ubicar el root MCP-OCP fuera del checkout, dentro del volumen protegido; (5) implementar dead-man solo si la ubicación real resulta distinta de CECEQ. EP-TASK-005 sigue pendiente hasta que EP-TASK-003 alcance PASS y MCP-OCP entregue el paquete P004 verificable.
+
+**Evidencia saneada:** EP-FILA4-PREFLIGHT-PARCIAL-20261110.json, commit inicial 84cc9ffc1a2aa27c622c7e5de147d7460f3b5ecd, blob 8ebf0c2b54efc6d3fe597adfe0f9358e65e6acbe, read-back exacto. No contiene secretos ni valores de EP Vault.
