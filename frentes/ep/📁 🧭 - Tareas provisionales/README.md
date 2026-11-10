@@ -20,7 +20,7 @@ El patrón de materialización sigue el registro de tareas provisionales de Gobe
 |---|---|---|---|
 | EP-TASK-001 | pendiente | NCL — Navegador Compartido Local: integración de Playwright y KeePassXC | [núcleo](./📁%20🧩%20-%20EP-TASK-001%20-%20Integración%20NCL/README.md) |
 | EP-TASK-002 | `en_curso` | Persistencia B2 EP: pareja Master dedicada migrada a EP Vault y read-back verificado; autenticación B2 y respaldo remoto actual pendientes | [núcleo](./📁%20🧩%20-%20EP-TASK-002%20-%20Persistencia%20provisional%20Backblaze/README.md) |
-| EP-TASK-003 | en_curso · P0 sprint | Preflight Fila 4, checkout/root protegidos y dead-man condicional a ubicación real; gate para importación privada y piloto local | [núcleo](./📁%20🧩%20-%20EP-TASK-003%20-%20Mapa%20integral%20de%20construcción%20EP/README.md) |
+| EP-TASK-003 | en_curso · P0 sprint · PREFLIGHT_FILA4=PARTIAL_FAIL | Identidad observada; volumen C: XTS-AES128/Protection Off/sin protectores; ubicación física sin clasificar; checkout parcial sin .git. Workspace preservado. | [núcleo](./📁%20🧩%20-%20EP-TASK-003%20-%20Mapa%20integral%20de%20construcción%20EP/README.md) |
 | EP-TASK-004 | `en_curso` | Bóveda EP: pareja Master EP promovida desde notas efímeras y verificada; H10 y aceptación integral pendientes | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-004%20-%20Reconstrucci%C3%B3n%20de%20b%C3%B3veda/README.md) |
 | EP-TASK-005 | pendiente · P0 piloto | Instalar/aceptar primero SINK:P004 tras EP-TASK-003 PASS; después release MCP-OCP 1.0.0 en Fila 4 | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-005%20-%20Instalaci%C3%B3n%20y%20aceptaci%C3%B3n%20de%20MCP-OCP%20local/README.md) |
 | EP-TASK-006 | `en_curso` | Centralización: nombres Master B2 EP normalizados y leídos de vuelta; cobertura mult proveedor sigue incompleta | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-006%20-%20Centralizaci%C3%B3n%20de%20variables%20de%20entorno/README.md) |
@@ -236,3 +236,14 @@ No se ejecutó preflight, materialización, login, instalación ni piloto por es
 **Qué no debe detenerse:** EP no necesita terminar Backblaze ni la GUI de bóveda para este piloto. MCP-OCP puede avanzar en rama/código no sensible y tests con fixtures mientras EP completa el gate; no importar fuentes privadas ni ejecutar runtime persistente antes de EP PASS. El panel y el release 1.0.0 son una fase posterior; el panel sí es obligatorio para 1.0.0, no para P004.
 
 **Pin de referencia:** DUG Samantha v388/NX-388m; commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`; blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`. No se declara preflight, migración, instalación, importación ni E2E ejecutados por este asiento.
+
+## Preflight vivo Fila 4 · 2026-11-10
+
+- DUG: Samantha v388 / NX-388m.
+- OEP: v0.3.57, §122.
+- PREFLIGHT_FILA4: PARTIAL_FAIL. Host PC10RCIF4EI4; usuario CENTRAL\fila4; perfil C:\Users\fila4; sesión console/ID 1; ubicación física sin clasificar.
+- C: 100 % cifrado de espacio usado, XTS-AES128, Protection Off, sin protectores: no cumple el gate.
+- Workspace existente preservado: 2,468 archivos / 545 directorios / 127,996,970 bytes.
+- Checkout de Metodología: materialización parcial, solo frentes/, sin .git. Git y gh disponibles; autenticación gh del perfil Fila 4 verificada por keyring.
+- EP-TASK-003 sigue en_curso. EP-TASK-005 sigue pendiente.
+- Evidencia: EP-FILA4-PREFLIGHT-PARCIAL-20261110.json; commit 84cc9ffc1a2aa27c622c7e5de147d7460f3b5ecd; blob 8ebf0c2b54efc6d3fe597adfe0f9358e65e6acbe.
