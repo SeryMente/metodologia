@@ -89,3 +89,12 @@ GOV-TASK-003 es la tarea de aceptación del piloto; no implementa ni instala el 
 **Estado de ejecución:** `GOV-TASK-003=PENDING_E2E`; `MCP_OCP_02=OPEN`; `MCP_OCP_05=PENDING`; `EP_TASK_003=PARTIAL_FAIL`; `EP_TASK_005=PENDING`; `IPZ_NATIVE=NOT_VERIFIED`. FOL1 no bloquea este piloto y sigue `PREPARADO_PENDIENTE_ACTIVACION_IPZ`. `MCP-NORMATIVO=DESACTIVADO`.
 
 **Responsabilidad:** Gobernanza ejecuta y acepta la prueba; MCP-OCP entrega el servidor y las pruebas; EP ejecuta el preflight/instalación local. GOV-TASK-015 es el coordinador interfrente único.
+
+
+---
+
+## OCP MCP 1.0 · aceptación por hitos · 2026-11-10
+
+- **Primer hito SINK:P004:** PASS solo si la llamada nace en IPZ real, atraviesa RDC → MCP-OCP STDIO y entrega el texto íntegro al modelo, con ID/título, pin DUG, commit/blob y SHA-256. Smoke de consola no es E2E. No espera al panel ni a la batería 43+8.
+- **Aceptación MCP-OCP 1.0.0:** exige además generalización P001–P043, 43 positivos + 8 negativos/frontera, panel WPF, persistencia/restauración del workspace y bóveda cifrados, datos de usuario/OCP recuperables, lease/dead-man probado, manifest/paquete reproducible, instalación y read-back.
+- Cada plano se marca por separado: documentación, backup local, B2 remoto, restore cross-host e E2E no se sustituyen entre sí.
