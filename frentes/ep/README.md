@@ -6,7 +6,7 @@
 
 - [Persistencia DTC EP/MCP-OCP](OEP.md#95-persistencia-dtc-integrada-epmetodologia-y-continuidad-mcp-ocp--v0325--vcu-ep-v27): continuidad multiubicación EP/Metodología y estado operativo MCP-OCP, con autoridad técnica propia de MCP-OCP.
 
-- [OEP.md](OEP.md): único estado vivo del frente, v0.3.56; §121 fija P0 del sprint Sink P004 y sus dependencias.
+- [OEP.md](OEP.md): único estado vivo del frente, v0.3.57; §122 registra el preflight vivo parcial de Fila 4. §121 fija P0 del sprint Sink P004 y sus dependencias.
 - [Organización canónica del workspace](OEP.md#119-organización-canónica-del-workspace-local-y-persistencia-por-frente--v0354--2026-11-09): repositorios agrupados por frente, datos/temporales separados y secretos fuera del workspace.
 - [Objeto de coordinación DTC](entregas/COORDINACION-GOBERNANZA-EP-v0.1.md): único registro de comunicación Gobernanza ↔ EP; historial reconciliado en `main`.
 - [Control de responsabilidad EP](CONTROL-RESPONSABILIDAD.json): registro autoritativo de titularidad y generación; generación 3; titularidad transferida por TRANSFER_RESPONSIBILITY el 2026-11-09; un titular activo, evento C-EP-TRANSFER-RESPONSIBILITY-20261109-01.
@@ -39,7 +39,7 @@
 
 ## Destino vigente sprint MCP-OCP · 2026-11-10
 
-El host de trabajo e instalación del sprint MCP-OCP es **Fila 4**, por instrucción directa del operador y por corresponder a la única sesión RDC disponible indicada. Referencia técnica de la última observación: Device ID `d0bbb2a3-d7b4-45e1-8870-652c2c3844fc`; perfil `CENTRAL\\fila4`, SessionId 4. La lectura de identidad/estado debe repetirse en vivo antes de escribir. La ubicación física no se infiere de la etiqueta Fila 4: preflight decide CECEQ u otra ubicación y, con ello, la aplicación del dead-man.
+El host de trabajo e instalación del sprint MCP-OCP sigue siendo **Fila 4**. Preflight vivo del 2026-11-10: hostname **PC10RCIF4EI4**, perfil **CENTRAL\\fila4** / **C:\\Users\\fila4**, sesión **console / ID 1**, RDC Device ID **99383b36-cc22-4457-952f-8799cccac0a7**. El Device ID anterior **d0bbb2a3-d7b4-45e1-8870-652c2c3844fc** y SessionId 4 son referencias históricas no confirmadas en esta lectura. La ubicación física permanece sin clasificar: **central.gob.mx / DomainAuthenticated** no demuestra CECEQ ni LOC-OTHER. Resultado: **PREFLIGHT_FILA4=PARTIAL_FAIL**; C: XTS-AES128, Protection Off y sin protectores; checkout Metodología parcial sin .git. Workspace preservado.
 
 - [OEP §120 · rectificación del host y fast path IPZ/SINK](OEP.md#120-rectificación-de-host-de-trabajo-e-instalación-mcp-ocp--2026-11-10--oep-v0355)
 - [EP-TASK-003 · workspace Fila 4](./📁%20🧭%20-%20Tareas%20provisionales/📁%20🧩%20-%20EP-TASK-003%20-%20Mapa%20integral%20de%20construcción%20EP/README.md)
@@ -47,3 +47,5 @@ El host de trabajo e instalación del sprint MCP-OCP es **Fila 4**, por instrucc
 
 OEP vigente: v0.3.55. No hay preflight vivo, checkout protegido, instalación ni SINK/IPZ E2E demostrados por esta actualización documental.
 
+- [OEP §122 · preflight vivo parcial Fila 4](OEP.md#122-preflight-vivo-parcial-de-fila-4--2026-11-10--ejecución-provisional-del-frente-ep)
+- [Evidencia saneada del preflight Fila 4](evidencias/EP-FILA4-PREFLIGHT-PARCIAL-20261110.json): PREFLIGHT_FILA4=PARTIAL_FAIL; commit 84cc9ffc1a2aa27c622c7e5de147d7460f3b5ecd; blob 8ebf0c2b54efc6d3fe597adfe0f9358e65e6acbe.
