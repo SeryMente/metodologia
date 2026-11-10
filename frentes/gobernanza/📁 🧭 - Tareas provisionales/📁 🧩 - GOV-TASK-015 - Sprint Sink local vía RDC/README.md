@@ -765,3 +765,8 @@ Sprint OCP MCP 1.0 / SINK-P004: recuperar el texto normativo íntegro P004 desde
 - **Límite explícito:** Vault se restauró como ciphertext; descifrado y restore cross-host permanecen NO_VERIFICADOS. El ZIP carece de cifrado cliente; SSE-B2 es cifrado del proveedor. No declarar recuperación infalible.
 - **Secuencia:** prioridad inmediata Backblaze atendida; habilitar reanudación de desarrollo sintético H1 SINK:P004 en el ciclo MCP-OCP existente. H1 continúa sin aceptación E2E IPZ.
 
+
+
+### Paquete de recuperación R3 · distinción local/remoto
+
+R3 `EP-Workspace-Recovery-R3-20261110.zip` (creado 17:21:27 local; 107.014.352 bytes; 3.342 entradas) incluye dos ciphertexts de Vault y un `Restore-Workspace.ps1` con instrucciones de un paso. **R3 está solo local; presencia/carga en B2 NO_VERIFICADA.** No reemplaza al R2 remoto acreditado. R2 sigue siendo el objeto remoto utilizable para descarga/extracción sencilla. No se repite transferencia R2. R3 queda como candidato para siguiente carga cuando Vault esté desbloqueada y se pueda autenticar B2.
