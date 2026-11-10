@@ -316,7 +316,7 @@ Gobernanza publicó la rectificación de ART-027 mediante el evento `C-GOBERNANZ
 
 ### Bloqueador P0 actual
 
-**MCP-OCP-02 ya fue ejecutado sobre el HEAD actual:** rama `feat/mcp-ocp-p004-rebaseline-20261110-cycle02`, creada desde `84cc9ffc1a2aa27c622c7e5de147d7460f3b5ecd`. La siguiente prioridad técnica es build, 16 pruebas y smoke P004 con logs observables; no declarar piloto funcional hasta PASS.
+**MCP-OCP-02 ya fue ejecutado sobre el HEAD actual:** rama `feat/mcp-ocp-p004-rebaseline-20261110-cycle02`, creada desde `84cc9ffc1a2aa27c622c7e5de147d7460f3b5ecd`. La siguiente prioridad técnica es build, 18 pruebas y smoke P004 con logs observables; no declarar piloto funcional hasta PASS.
 
 ### Camino crítico, precedencias y salida
 
