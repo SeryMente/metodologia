@@ -335,7 +335,7 @@ La ruta aprobada para la consulta normativa es local, mediante RDC hacia MCP-OCP
 
 ## Sprint vigente · Sink local por RDC · diseño consolidado · 2026-11-09
 
-**Estado:** DISEÑO CONSOLIDADO · NO INICIADO. Coordinación: [GOV-TASK-015](./📁%20🧩%20-%20GOV-TASK-015%20-%20Sprint%20Sink%20local%20vía%20RDC/README.md). Fuente actual: Samantha v388/NX-388m, commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`, blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`.
+**Estado:** EN CURSO · fase documental de Gobernanza ejecutada; implementación MCP-OCP y preparación/instalación EP se reportan por sus fuentes titulares. Coordinación: [GOV-TASK-015](./📁%20🧩%20-%20GOV-TASK-015%20-%20Sprint%20Sink%20local%20vía%20RDC/README.md). Fuente actual: Samantha v388/NX-388m, commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`, blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`.
 
 ### Tareas del sprint por frente
 
