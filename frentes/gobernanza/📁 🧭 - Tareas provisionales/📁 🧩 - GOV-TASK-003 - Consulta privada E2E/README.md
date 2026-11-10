@@ -62,3 +62,17 @@ La prueba acepta el producto instalado en el recorrido que utilizará el operado
 **Salida:** recibo con host/perfil, ruta de instalación, commit y versión MCP-OCP, pins DUG, casos, hashes, eventos/frecuencias, resultado de pruebas y limitaciones. La latencia `ipz.resolve.rdc.duration_ms` se toma de GOV-TASK-013 y queda `NOT_MEASURED` si no se prueban ambos extremos monotónicos.
 
 **Separaciones:** esta prueba no instala la IPZ nativa ni activa FOL1; no activa `MCP-NORMATIVO`; no usa Sync/HTTP/Cloudflare ni sustituye fuentes con memoria.
+
+
+---
+
+## Estado vigente de dependencias para SINK:P004 · 2026-11-10
+
+- **P004:** implementación y aceptación E2E continúan pendientes. No se confunde la rama candidata existente con una rama limpia aceptable.
+- **MCP-OCP-02:** la referencia `feat/mcp-ocp-sink-p004-pilot-20261110` apunta al commit antiguo `1676901cc09af6fcec4d052800b031e4c2f1ab40`; el `main` observado el 2026-11-10 (`e17767a7d5c4f958d2745ccce20b9b8ce9fab895`) está 53 commits por delante y la rama no tiene commits exclusivos. MCP-OCP-02 sigue abierto; se requiere rama desde main vigente y reconciliación v0.1.28/DUG v388.
+- **EP:** destino Fila 4; EP-TASK-003 sigue `PARTIAL_FAIL`. El VHDX de preparación está vacío, sin BitLocker, y el diseño para conservar `%USERPROFILE%\Desktop\SeryMente` no está aceptado. El checkout local sigue parcial/sin `.git`. EP-TASK-005 permanece pendiente.
+- **Paralelismo habilitado:** MCP-OCP-03 puede ejecutar pruebas con fixtures sintéticos; MCP-OCP-04 puede preparar harness/smoke; MCP-OCP-05 puede construir la vertical no sensible con fixtures. El gate EP no bloquea esas tareas remotas.
+- **Comprobación local bloqueada:** no importar DUG/fuentes privadas, crear DB real, instalar, aprovisionar operador ni dejar runtime persistente hasta EP-TASK-003 PASS y paquete P004 verificable.
+- **Aceptación final:** requiere uso desde contexto IPZ real → RDC → MCP-OCP STDIO y respuesta íntegra P004 visible al modelo con pin/hash. El smoke de consola no basta.
+
+`GOV-TASK-003=SPECIFIED_PENDING_E2E` · `IPZ_NATIVE=NOT_VERIFIED` · `FOL1=PREPARADO_PENDIENTE_ACTIVACION_IPZ` · `MCP-NORMATIVO=DESACTIVADO`.
