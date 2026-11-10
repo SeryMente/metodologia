@@ -632,3 +632,8 @@ Los frentes ya estan avanzando, vuelve a revisar las tareas, asegurandote que to
 **Flujo recomendado:** mantener MCP-OCP en código/fixtures/pruebas sin datos privados y corregir PR #27; EP atiende primero el desbloqueo local de Vault/P0-C y propone solución de almacenamiento sin mutar hasta aceptación expresa; Gobernanza continúa preparando aceptación IPZ/E2E. Cada frente conserva sus permisos y registra evidencia fresca.
 
 **Límites de esta revisión:** no se modificó host, Vault, B2, IPZ, controles ni ramas MCP; únicamente se consolidó evidencia ya publicada y se actualizaron observaciones de revisión en las PR. No se declara aceptación de producto ni activación de FOL1/MCP-NORMATIVO.
+
+
+## Mandato de reporte individual por tarea
+
+Como coordinador interfrentes, exigir que cada responsable documente el cierre en su propia ficha/núcleo usando [la plantilla común](../../../PLANTILLA-REPORTE-CIERRE-TAREA.md). GOV-TASK-015 no reemplaza los informes de EP, MCP-OCP ni las demás tareas de Gobernanza. Antes de reflejar una tarea como completada en la coordinación, comprobar el enlace, el informe, los criterios terminales, la evidencia ejecutada y el read-back. Por cada tarea cerrada, entregar al operador un enlace y síntesis de solución, verificación, bloqueantes y preocupaciones. Si falta un informe o evidencia, el estado correcto es parcial/no verificado, no completado.
