@@ -26,7 +26,7 @@ La rama se creó directamente desde el HEAD de main indicado arriba. No se reuti
 | SQLite, CryptoBox, KeyVault, EventChain, ReceiptSigner, BackupService, OperationService | DROP | Persistencia, custodia y operaciones fuera del piloto. |
 | Pruebas históricas | REWRITE | No cubren el contrato Sink actual. |
 | Scripts/builds/binaries/manifests históricos | DROP como artefactos | No se heredan PASS, binarios ni recibos antiguos. |
-| Panel WPF / monitor | REWRITE · CANDIDATO ESCRITO | Proyecto WPF read-only + writer/reader/evaluator y 21 pruebas sintéticas; build, tests, smoke visual e integración EP pendientes. Obligatorio en 1.0.0; no bloquea P004. |
+| Panel WPF / monitor | REWRITE · CANDIDATO ESCRITO | Proyecto WPF read-only + writer/reader/evaluator y 23 pruebas sintéticas; build, tests, smoke visual e integración EP pendientes. Obligatorio en 1.0.0; no bloquea P004. |
 
 ## Stack y publicación fijados
 - .NET SDK **10.0.403**, fijado en `global.json`.
@@ -50,4 +50,4 @@ Tests escritos: 15 piloto P004 + 11 monitor; 0 ejecutados. CI configurado para b
 
 ### Gate compuesto de readiness
 
-El proyecto incorpora `MonitorReadinessEvaluator`: además de los gates del servidor, requiere la atestación EP `sessionState=ACTIVE` y `protectionState=Protection On`, timestamps no futuros, proceso identificado por PID+hora de inicio y RUNNING, protocolo INITIALIZED, fuentes íntegras/vigentes, operador y root disponibles. La comprobación BitLocker sigue siendo propiedad de EP, no del servidor ni del panel. 21 pruebas están escritas; 0 se han ejecutado.
+El proyecto incorpora `MonitorReadinessEvaluator`: además de los gates del servidor, requiere la atestación EP `sessionState=ACTIVE` y `protectionState=Protection On`, timestamps no futuros y verificación de protección no anterior al inicio de la sesión, proceso identificado por PID+hora de inicio y RUNNING, protocolo INITIALIZED, fuentes íntegras/vigentes, operador y root disponibles. La comprobación BitLocker sigue siendo propiedad de EP, no del servidor ni del panel. 23 pruebas están escritas; 0 se han ejecutado.
