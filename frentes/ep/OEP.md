@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.63. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.64. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -12,7 +12,7 @@
 
 Adquirir este objeto como instrucciones del operador, subordinadas a las reglas superiores de plataforma y a autorizaciones específicas. Claudia es asistente/documental; Samantha es constructor/único escritor de código. Una asignación explícita posterior puede cambiar roles; las citas no lo hacen. La asignación específica de MOD-SCRIPTPWS queda delimitada en §94; la delegación funcional acotada de MOD-SYNC queda delimitada en §110 y no transfiere la titularidad del frente EP.
 
-El estado de reanudación vigente de este frente está en §60–§129; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. La organización local por frentes, con áreas separadas Repositorios/Datos/Temporal, queda desarrollada en §119 y en el DUG ART-030. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
+El estado de reanudación vigente de este frente está en §60–§130; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. La organización local por frentes, con áreas separadas Repositorios/Datos/Temporal, queda desarrollada en §119 y en el DUG ART-030. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
 
 Leer por relevancia: OEP actual→metacanon central→Sistema de Instrucciones/Metodología/Bootstrap vigentes→canon transversal EP→AGENTS.md y ep-medio-architectura.md→código/evidencia en commits exactos. Fuente caída no es «sin cambios». Un archivo no crea herramientas, credenciales ni memoria entre plataformas.
 
@@ -3493,3 +3493,30 @@ EP-TASK-004 permanece `en_curso`: H7/H8 sintéticos PASS para la candidata, no a
 - EP-TASK-005 sigue bloqueada por EP-TASK-003 PASS y paquete MCP-OCP P004.
 - Para esta instancia de coordinación, el siguiente trabajo independiente seleccionado es retomar MCP-OCP H1, autorizado en su propio control y limitado a `frentes/mcp-metodologia/`: corregir la lectura del MDP en DUG v388, restaurar exclusiones de secretos en `.gitignore`, y acotar `global.json` al frente MCP-OCP. No se interviene EP, Vault, B2, host, IPZ ni DUG.
 
+## 130. Persistencia R2 completada en Backblaze · 2026-11-10
+
+### 130.1 Captura local
+
+Se construyó una fotografía R2 de Desktop/SeryMente con 3.289 archivos, 159.547.658 bytes fuente y ZIP de 119.076.640 bytes. Las 3.289 entradas del ZIP se verificaron por tamaño/SHA-256; el manifiesto y checksum se generaron y se leyeron de vuelta. El snapshot contiene el ciphertext formal de EP Vault (2.200 bytes). ZIP SHA-256: `9D511614FC6B4001DBA5F8CAAF69ED06107F8B5F5111165F186BE7B2C5C06E09`.
+
+### 130.2 Backblaze remoto
+
+- Bucket privado: OCP-MCP; prefijo de workspace `ep-ocp/workspace/2026-11-10/224927899Z-48c3d690/`; prefijo Vault `ep-ocp/vault/2026-11-10/1704-r2-continuity/`.
+- Se cargaron y descargaron cuatro objetos. Los cuatro cotejan tamaño y SHA-256 exactos; SSE-B2/AES256 quedó confirmado mediante file info. El recibo final terminó exit 0, sin errores, caché temporal limpiada y sin exponer secretos.
+- ZIP: 119.076.640 B, SHA `9D511614FC6B4001DBA5F8CAAF69ED06107F8B5F5111165F186BE7B2C5C06E09`.
+- Ciphertext Vault: 2.200 B, SHA `4CC2EE09974C9FBF3CF22C28A5A46C8286EB501F59268DBBB2B7BD6D61E8C590`.
+- Manifiesto: 1.029.594 B, SHA `D258A5E1F312C80C31A26206F7B0FF0309B86FE962C1EA8D3CF5344D56A0AC37`. Checksum: 112 B, SHA `E4D436B75F4A5CE3454AF43BE350F376BB165B6B2BC54604A082205C49420210`.
+- Recibo local en Fila 4: `EP/local-state/run-logs/ep-backblaze-r2-final-receipt-v1.json`.
+
+### 130.3 Riesgos y límites
+
+- Excepción de continuidad autorizada por el operador: el ZIP fue cargado sin cifrado del lado del cliente. Se transmitió por TLS y B2 confirma SSE-B2/AES256. Esto no satisface el criterio permanente de cifrado cliente establecido para OCP MCP 1.0; no describirlo como tal.
+- EP Vault cifra sus variables con PBKDF2-HMAC-SHA256/600.000, AES-256-CBC y HMAC-SHA256; el ciphertext puede abrirse en otro host con la contraseña maestra. La sesión temporal usa DPAPI CurrentUser y no es portable. Las notas DPAPI requieren verificación individual.
+- Para descargar inicialmente el ciphertext desde B2 en otro host se necesita acceso independiente a la cuenta B2 o credencial de recuperación almacenada fuera de la bóveda respaldada. La clave de aplicación EP reside dentro del ciphertext y no puede recuperarse desde sí misma.
+- No se incluyó/restauró como dato externo una base OCP/MCP ni datasets fuera del árbol SeryMente observado. Las exclusiones están en el manifiesto; no inferir totalidad de perfiles externos, cookies o credenciales sueltas.
+
+### 130.4 Estado y siguiente gate
+
+`EP_TASK_002=B2_UPLOAD_READBACK_VERIFIED` · `CROSS_HOST_RESTORE=NOT_RUN` · `CLIENT_SIDE_ENCRYPTION=EXCEPTION_NOT_APPLIED` · `EP_TASK_003=PARTIAL_FAIL` · `EP_TASK_005=BLOCKED_ON_003_AND_P004_PACKAGE`.
+
+Siguiente: validar extracción aislada del ZIP remoto, recuperar/decrypt de una copia de EP Vault en entorno aislado con contraseña maestra local, y registrar restauración sin reemplazar el workspace activo. Después reanudar EP-TASK-003. Mantener el sprint de desarrollo en pausa hasta que la secuencia de hitos quede actualizada por Gobernanza.

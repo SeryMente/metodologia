@@ -276,3 +276,20 @@ Aceptar por estados separados: local durable; remoto cargado; remoto verificado 
 
 ## Reporte individual obligatorio de resolución/cierre
 Al resolver, completar, bloquear o cancelar esta tarea, registrar su propio informe en este README usando [la plantilla común](../../../PLANTILLA-REPORTE-CIERRE-TAREA.md). Explicar objetivo y resultado, cómo se solucionó, decisiones verificables, cambios/rutas/commits/blobs/SHA, criterios y pruebas ejecutadas con logs/artefactos, read-back, bloqueantes/dependencias, preocupaciones/riesgos, pendientes, rollback y aceptación. Declarar NINGUNO_VERIFICADO o NO_VERIFICADO donde corresponda; nunca ocultar campos. No marcar completada sin criterios PASS, evidencia y read-back. Actualizar el índice padre después de verificar este informe y entregar al operador el enlace individual y síntesis de solución, evidencia, bloqueantes y preocupaciones. No incluir secretos ni datos sensibles.
+
+## Reconciliación con evidencia EP · Backblaze R2 · 2026-11-10 · 17:08 America/Mexico_City
+
+**Estado actualizado:** EP-TASK-002 reporta transferencia remota y read-back SHA-256 PASS de cuatro objetos en OCP-MCP. Gobernanza acepta únicamente el estado «remoto cargado y verificado por descarga/hash»; restore cross-host y persistencia completa siguen pendientes.
+
+| Dataset | Resultado | Evidencia |
+|---|---|---|
+| Workspace provisional R2 | `UPLOAD_READBACK_PASS` | ZIP 119.076.640 B; SHA-256 `9D511614FC6B4001DBA5F8CAAF69ED06107F8B5F5111165F186BE7B2C5C06E09`; descarga cotejada. |
+| Ciphertext EP Vault | `UPLOAD_READBACK_PASS` | 2.200 B; SHA-256 `4CC2EE09974C9FBF3CF22C28A5A46C8286EB501F59268DBBB2B7BD6D61E8C590`; descarga cotejada. |
+| Manifest | `UPLOAD_READBACK_PASS` | 1.029.594 B; SHA-256 `D258A5E1F312C80C31A26206F7B0FF0309B86FE962C1EA8D3CF5344D56A0AC37`. |
+| Checksum | `UPLOAD_READBACK_PASS` | 112 B; SHA-256 `E4D436B75F4A5CE3454AF43BE350F376BB165B6B2BC54604A082205C49420210`. |
+
+Los cuatro objetos muestran SSE-B2/AES256 y están bajo prefijos privados ep-ocp/workspace y ep-ocp/vault. El recibo EP terminó exit 0, sin errores, y limpió la caché temporal.
+
+**Excepción de urgencia:** el ZIP fue cargado sin cifrado cliente por instrucción directa del operador; SSE-B2 no sustituye ese control. La aceptación integrada H2/H3 permanece parcial hasta restore aislado, bootstrap de credenciales B2 y delimitación de notas/sesiones DPAPI. No modificar ACL, bucket, lifecycle o retención a consecuencia de este asiento.
+
+**Siguiente gate:** EP valida extracción del ZIP y descifrado de una copia de Vault en entorno aislado; Gobernanza solo acepta restauración cuando manifest/SHA, estructura recuperada y capacidad de apertura quedan demostrados. No declarar continuidad cross-host por el mero upload.
