@@ -116,6 +116,13 @@ Estado: `SINK_P004=NOT_IMPLEMENTED_NOT_ACCEPTED` · `MCP_NORMATIVO=DESACTIVADO`.
 
 OCP MCP 1.0 es el programa completo; MCP-OCP 1.0.0 es el release de software y SINK:P004 es el primer hito operativo. Coordinación en GOV-TASK-015; persistencia en GOV-TASK-014; aceptación en GOV-TASK-003; fast path IPZ en GOV-TASK-007.
 
-El diseño incorpora workspace cifrado de sesión, persistencia B2 del workspace/bóveda/datos de usuario, claves efímeras separadas de las claves de recuperación, expiración automática, inspección HDD/SSD/UNKNOWN y observabilidad WPF. El nivel de seguridad y parámetros dead-man siguen pendientes de aprobación. El último read-back EP no acredita B2 remoto; requiere reconciliación.
+El diseño incorpora workspace cifrado de sesión, persistencia B2 del workspace/bóveda/datos de usuario, claves efímeras separadas de las claves de recuperación, expiración automática, inspección HDD/SSD/UNKNOWN y observabilidad WPF. El nivel de seguridad y parámetros dead-man siguen pendientes de aprobación. EP-TASK-002 acredita upload y read-back B2 de 4/4 objetos; el ZIP R2 contiene el ciphertext de Vault y la restauración aislada del workspace pasó 3.289/3.289. Descifrado de Vault y restore cross-host permanecen pendientes.
 
 Anexo literal: entregas/ChatGPT-GOBERNANZA-20261110-OCP-MCP-1.0-ULTIMO-TRAMO.md.
+
+
+## Corte de continuidad · 2026-11-10 17:22
+
+- Conversación fuente: `Downloads/ChatGPT-GOBERNANZA (1)-20261110-1722.txt`; registro operativo resumido y procedimiento de recuperación en [ChatGPT-GOBERNANZA-20261110-1722-CONTINUIDAD-B2.md](entregas/ChatGPT-GOBERNANZA-20261110-1722-CONTINUIDAD-B2.md).
+- [GOV-TASK-015](📁 🧭 - Tareas provisionales/📁 🧩 - GOV-TASK-015 - Sprint Sink local vía RDC/README.md) refleja la evidencia B2/restore y habilita reanudar el desarrollo sintético H1 SINK:P004.
+- Hito en curso: **H2 persistencia y bóveda, evidencia de respaldo y restore aislado PASS; cierre integral pendiente**. H1 SINK:P004 sigue como siguiente hito de producto y no está aceptado.
