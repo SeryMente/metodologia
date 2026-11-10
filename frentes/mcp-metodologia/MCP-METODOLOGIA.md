@@ -651,3 +651,5 @@ MCP-OCP-02/05 (corte P004)/03/04 son P0 por el piloto. MCP-OCP-13 baja a P1 de s
 - **Implementación portada:** servidor STDIO, lector fail-closed, pin v388, 13 escenarios, workflow Windows/.NET 10.0.403 y runbook. Cada archivo se coteja con lectura de vuelta.
 - **CI heredada:** run 14 de PR #22/cycle02 = FAILURE; steps no disponibles y logs 404. Causa raíz desconocida. No se marca PASS ni se atribuye el fallo al pin sin una nueva ejecución legible.
 - **Estado actual:** build, 13 pruebas y smoke real NO VERIFICADOS; PR nuevo pendiente de apertura; instalación/paquete/E2E permanecen bajo sus responsables y gates.
+
+- **Avance posterior de main:** HEAD actual observado ff55fa1e6377475ae54de01ad56d811e7de5bd72, cuatro commits después de la base cycle04. El diff se limita a frentes/gobernanza/GOBERNANZA.md, frentes/gobernanza/PENDIENTES.md y dos objetos GOV-TASK; ninguno toca los 15 archivos de este candidato ni el HTML DUG. La rama queda 15 ahead/4 behind al comparar con main; no se declara fast-forward ni merge.
