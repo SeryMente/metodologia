@@ -83,6 +83,28 @@ try
         runner.Equal("SINK_READ_SUCCESS", view.Events[0].EventType);
     });
 
+    runner.Test("malformed events while waiting for server fail closed without throwing", () =>
+    {
+        string testRoot = Path.Combine(root, "bad-waiting-events");
+        string dir = MonitorDir(testRoot);
+        WriteSession(dir, state: "ACTIVE");
+        File.WriteAllText(Path.Combine(dir, "events.jsonl"), "{ bad-event");
+        MonitorView view = new MonitorReader().Read(testRoot);
+        runner.Equal(false, view.StateAvailable);
+        runner.Equal("EVENTS_JSON_INVALID", view.ErrorCode);
+    });
+
+    runner.Test("oversized event projection is rejected before parsing", () =>
+    {
+        string testRoot = Path.Combine(root, "large-events");
+        string dir = MonitorDir(testRoot);
+        WriteSession(dir, state: "ACTIVE");
+        File.WriteAllText(Path.Combine(dir, "events.jsonl"), new string('x', 256 * 1024 + 1));
+        MonitorView view = new MonitorReader().Read(testRoot);
+        runner.Equal(false, view.StateAvailable);
+        runner.Equal("EVENTS_JSON_INVALID", view.ErrorCode);
+    });
+
     runner.Test("writer creates monitor projection under explicitly supplied existing root", () =>
     {
         string testRoot = Path.Combine(root, "writer");
