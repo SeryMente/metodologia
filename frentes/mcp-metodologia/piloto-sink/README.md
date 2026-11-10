@@ -53,13 +53,13 @@ stdout queda reservado a JSON-RPC. Los eventos de lectura satisfactoria se emite
 - [x] Contrato de P004 y §ARR inspeccionados en el DUG de main.
 - [x] Autorización de Sink local STDIO vigente, verificada en control generación 5.
 - [x] Rama de trabajo limpia desde el HEAD de main comprobada por compare.
-- [x] 12 pruebas automatizadas escritas, incluyendo negociación, notificación `initialized`, rechazo pre-inicialización, P004 exacto, pins/alteración, eventos condicionados al éxito y EOF.
+- [x] 13 pruebas automatizadas escritas, incluyendo negociación, notificación `initialized`, rechazo pre-inicialización, P004 exacto desde fixture y DUG real pinneado, pins/alteración, eventos condicionados al éxito, shutdown/exit y EOF.
 - [ ] Build ejecutado.
-- [ ] Las 12 pruebas automatizadas ejecutadas.
+- [ ] Las 13 pruebas automatizadas ejecutadas.
 - [ ] Protocolo STDIO probado con el ejecutable compilado.
 - [ ] Candidato reproducible con hashes de artefactos.
 - [ ] Aceptación E2E IPZ → RDC → STDIO: requiere contexto IPZ real y no se infiere de pruebas locales.
 
 ## Limitaciones explícitas
 
-Verificación de runner RDC disponible: Windows PowerShell y Git 2.45.2 presentes; `dotnet` no se encuentra en PATH (`DOTNET=NOT_FOUND`). El contenedor de trabajo tampoco tiene `dotnet`. No se ejecutó build ni ninguna de las 12 pruebas. El equipo remoto está en el contexto de proceso `MantenimientoRCI`, no es Fila 4; no se escribieron archivos allí. El candidato no está instalado.
+Verificación de runner RDC disponible: Windows PowerShell y Git 2.45.2 presentes; `dotnet` no se encuentra en PATH (`DOTNET=NOT_FOUND`). El contenedor de trabajo tampoco tiene `dotnet`. No se ejecutó build ni ninguna de las 13 pruebas. El equipo remoto está en el contexto de proceso `MantenimientoRCI`, no es Fila 4; no se escribieron archivos allí. El candidato no está instalado.
