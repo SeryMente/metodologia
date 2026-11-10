@@ -21,7 +21,7 @@ try
         SinkP004Result r = reader.ReadP004();
         runner.Equal("P004", r.PrincipleId);
         runner.Equal("Principio de No-Simulación 🔒", r.Title);
-        runner.Equal("No finjas capacidades, datos, resultados ni certezas.", r.NormativeText);
+        runner.Equal("No finjas capacidades, datos, resultados ni certezas, ni declares límites sin verificar con herramientas. Marca tu certeza y nombra los huecos sin rellenarlos. Precedencia absoluta sobre la exhaustividad y el buen trato.", r.NormativeText);
         runner.Equal("Exigir hechos verificables; activarlo ante afirmaciones sobre capacidades, datos, acciones o certezas.", r.Microdescriptor);
         runner.Equal("gow-sec-14", r.GowArrId);
         runner.Equal("NX-387m", r.DugSignature);
@@ -41,6 +41,16 @@ try
     {
         var missingReader = new DugSourceReader(Path.Combine(root, "missing"), pin);
         runner.Throws<FileNotFoundException>(() => missingReader.ReadP004());
+    });
+
+    runner.Test("altered P004 content fails even when blob hash is repinned", () =>
+    {
+        string alteredRoot = Path.Combine(root, "altered");
+        Directory.CreateDirectory(Path.Combine(alteredRoot, "gobernanza"));
+        byte[] altered = Encoding.UTF8.GetBytes(FixtureHtml(normativeText: "Texto normativo alterado."));
+        File.WriteAllBytes(Path.Combine(alteredRoot, "gobernanza", "METAPROMPT-CANONICO-SAMANTHA.html"), altered);
+        var repinned = pin with { GitBlobSha = DugSourceReader.ComputeGitBlobSha(altered) };
+        runner.Throws<InvalidDataException>(() => new DugSourceReader(alteredRoot, repinned).ReadP004());
     });
 
     runner.Test("unauthorized source pin fails closed", () =>
@@ -128,8 +138,9 @@ return runner.Finish();
 static string Rpc(string method, int id, object parameters) =>
     JsonSerializer.Serialize(new { jsonrpc = "2.0", id, method, @params = parameters });
 
-static string FixtureHtml(string version = "v387")
+static string FixtureHtml(string version = "v387", string? normativeText = null)
 {
+    normativeText ??= "No finjas capacidades, datos, resultados ni certezas, ni declares límites sin verificar con herramientas. Marca tu certeza y nombra los huecos sin rellenarlos. Precedencia absoluta sobre la exhaustividad y el buen trato.";
     string json = JsonSerializer.Serialize(new
     {
         document = new
@@ -158,8 +169,8 @@ static string FixtureHtml(string version = "v387")
         principles = new[]
         {
             new { id = "P004", title = "Principio de No-Simulación 🔒",
-                normative_text = "No finjas capacidades, datos, resultados ni certezas.",
-                content_markdown = "> No finjas capacidades, datos, resultados ni certezas.",
+                normative_text = normativeText,
+                content_markdown = "> " + normativeText,
                 human_anchor = "#P004",
                 microdescriptor = "Exigir hechos verificables; activarlo ante afirmaciones sobre capacidades, datos, acciones o certezas.",
                 preponderance = new { category = "A", @decimal = 0.8 } }
