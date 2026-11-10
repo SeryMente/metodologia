@@ -8,23 +8,23 @@
 
 ## Enunciado
 
-Definir y aceptar la semántica de dos capas del flujo OCP MCP: inventario inicial de los 43 principios con ID, nombre de vista `Principio DI · [1–3 términos]` y MDP acotado; selección de los pertinentes por ciclo; enlace Sync individual al texto desarrollado; telemetría de frecuencia por enlace; evaluación de suficiencia y reconsulta de principios adicionales; y hash del paquete exacto de URLs. Mantener el DUG como fuente normativa única y no exponer los 43 textos desarrollados en el inventario inicial.
+Definir y aceptar la semántica de dos capas del flujo OCP MCP: inventario inicial de los 43 principios con ID, nombre canónico y MDP acotado; reconocimiento de pertinencia; recuperación obligatoria del texto desarrollado mediante la operación local `SINK:Pxxx` por MCP STDIO/RDC; telemetría limitada a recuperaciones satisfactorias por principio; y huellas individuales más manifiesto del lote ordenado. Mantener el DUG como fuente normativa única; no tratar MDP como norma ni exponer los textos desarrollados en el catálogo inicial.
 
 ## Referencia de origen
 
-DUG v373 · ART-027 · secciones 1, 3, 4 y 7; estrategia originada en C-GOBERNANZA-MDP-OCP-01.
+DUG Samantha v388 · NX-388m · ART-027, secciones 1–8; estrategia originada en C-GOBERNANZA-MDP-OCP-01 y reconciliada mediante C-GOBERNANZA-ART027-SINK-LOCAL-RECONCILIACION-20261110-01.
 
 ## Dependencias y límite observado
 
-El DUG actual conserva los textos desarrollados dentro del mismo HTML y de su proyección `gov-data`. El alias Sink previsto redirige a ese mismo archivo con el fragmento Pxxx; la obligación de consulta Sink es normativa/procedimental, pero no constituye por sí sola una barrera técnica que impida abrir el archivo completo por otra vía.
+El DUG conserva los textos desarrollados dentro del mismo HTML y de su proyección `gov-data`. Sink invocado como `SINK:Pxxx` por STDIO/RDC devuelve únicamente el principio solicitado en la respuesta de la operación. Esta minimización es a nivel de aplicación: no es una barrera criptográfica frente a un actor que ya tenga acceso al archivo DUG completo. El repositorio permanece privado. `MOD-SYNC` es un módulo distinto de EP y no interviene en la recuperación Sink.
 
 No publicar `SeryMente/metodologia`, no duplicar silenciosamente los textos y no alterar la autoridad canónica sin una decisión de arquitectura y las autorizaciones aplicables.
 
 ## Siguiente actuación
 
-Cotejar el código y release 0.1.0 con cada etapa del vector rector; especificar exclusivamente las brechas restantes para OCP MCP. Separar los requisitos de aceptación de Gobernanza de la implementación del servidor y de la instalación/host que corresponde a EP. No desplegar Sink por inercia.
+Aceptar el contrato ART-027 v388 y validar primero el corte `SINK:P004`: texto íntegro, ID/título, versión/firma, commit/blob DUG, SHA-256 y fallo cerrado. Separar aceptación de Gobernanza, implementación/pruebas del servidor MCP-OCP y preflight/instalación de EP. No desplegar aliases HTTP ni infraestructura externa.
 
-## Evaluación técnica preliminar
+## Antecedente técnico histórico supersedido · evaluación preliminar
 
 ### Requisito de aislamiento
 
@@ -57,16 +57,16 @@ Implementar la opción aprobada, después de contar con acceso Cloudflare o con 
 La capa de inicio expone únicamente ID/nombre/MDP; la apertura del alias recupera solo el texto desarrollado del principio correspondiente; el DUG sigue siendo la fuente canónica; GitHub permanece privado; y la lectura de vuelta verifica ID, versión y contenido.
 
 
-## Revisión de alcance · instrucción del operador · 2026-10-31
+## Antecedente histórico supersedido · revisión de alcance · 2026-10-31
 
 El requisito de aislamiento se mantiene, pero el diseño de entrega debe coordinarse con OCP MCP y no presuponer Sink/Cloudflare. El modelo recibe el inventario acotado de 43 principios, comunica cuáles aplican al ciclo y obtiene mediante OCP MCP enlaces Sync individuales a las versiones desarrolladas. Cada enlace debe resolver un único principio y conservar versión/firma/SHA de la fuente; no debe exponer los 43 textos desarrollados en la respuesta inicial.
 
 El MDP debe permitir comprender el significado y reconocer pertinencia, pero no sustituir la lectura del principio completo. La fuente normativa sigue siendo el DUG único; cualquier proyección o extracción es derivada, verificable y no adquiere autoridad independiente. La telemetría de esta tarea se limita a frecuencia de acceso.
 
 
-## Brecha del producto OCP MCP 0.1.0 · verificación documental · 2026-10-31
+## Antecedente histórico supersedido · brecha del producto OCP MCP 0.1.0 · 2026-10-31
 
-Las propuestas Worker/Sink/Cloudflare descritas en las secciones precedentes son antecedentes de diseño. Quedan supersedidas como camino de implementación del MVP actual por el requisito Sync servido por OCP MCP; no constituyen autorización de despliegue ni decisión de reactivar Sink.
+Las propuestas Worker/Sink/Cloudflare descritas en las secciones precedentes son antecedentes de diseño. Quedaron supersedidas por la decisión aprobada de Sink local mediante MCP STDIO/RDC del 2026-11-09. No existe un requisito operativo llamado Sync para recuperar principios ni se reactivan aliases web.
 
 La rama `build/ocp-mcp-mvp-0.1.0` acredita código persistido, 31 pruebas unitarias y 29 de integración aprobadas; el recibo declara `BUILT_AND_TESTED_NOT_INSTALLED`. Por ello no afirmar instalación ni aceptación E2E. El producto contiene cifrado de fuentes/snapshots AES-256-GCM con DPAPI CurrentUser, importación con commit/blob/SHA-256 y snapshot transaccional BLOB/SQLite con eventos/recibos.
 
@@ -99,16 +99,16 @@ Se elige la opción local autenticada por el perfil Windows, invocada por RDC co
 - Si la fuente no está importada, no está vigente, falla una huella o RDC no completa la operación, declarar metodología/principio no verificado y no aplicar desde memoria/MDP.
 - Los campos de selección automática ausentes en los 43 registros no se infieren. `MCP-NORMATIVO` permanece `DESACTIVADO`.
 
-**Pins de referencia del diseño:** DUG Samantha v384 / NX-384m, blob actualizado en el evento C-GOBERNANZA-IPZ-RDC-SINK-01; MCP-OCP main v0.1.21 al momento de la revisión. Antes de compilar, el frente MCP-OCP debe revalidar pins y reconciliar la candidata 0.1.0 histórica, que apunta a DUG v377/core v0.1.20.
+**Pins históricos del diseño del 2026-11-09:** DUG Samantha v384/NX-384m y MCP-OCP v0.1.21. Quedaron supersedidos por el pin vigente v388/NX-388m indicado en la sección de prioridad P004. Antes del build, el frente MCP-OCP debe revalidar sus propios pins y reconciliar la candidata histórica; este documento de Gobernanza no modifica el OCP técnico.
 
 **Autorización interfrente (registro histórico actualizado):** Gobernanza define y valida el contrato. La autorización vigente para implementar Sink local por STDIO ya está registrada en `frentes/mcp-metodologia/CONTROL-RESPONSABILIDAD.json` (generación 5; `implementation_authorization.status=AUTHORIZED`) y cubre resolver/importador, GOW:ARR, DUG, SINK:P001–P043, lotes, hashes, pruebas, build y paquete. La autorización separada del panel también está registrada como `AUTHORIZED_FOR_PRODUCT_SCOPE_AND_IMPLEMENTATION`. EP conserva la autoridad de host, perfil, almacenamiento e instalación. Gobernanza no modifica esos controles.
 
 **Estado:** decisión de arquitectura resuelta; construcción, importación real, instalación y aceptación E2E siguen pendientes. Las alternativas HTTP/Cloudflare quedan como antecedentes, no como siguiente ejecución.
 
 
-## Contrato final de dos capas · Sink local por STDIO · 2026-11-09
+## Contrato final de dos capas · Sink local por STDIO · 2026-11-09 · reconciliado con ART-027 v388
 
-El inventario de primera capa expone ID, nombre canónico y MDP; no publica los 43 textos desarrollados. Si un principio resulta pertinente, el cliente solicita su texto desarrollado mediante la referencia local `SINK:Pxxx` a MCP-OCP por STDIO/RDC. No se usan URLs Sync, acortadores HTTP, Cloudflare, túneles ni endpoints públicos.
+El inventario de primera capa expone ID, nombre canónico y MDP; no publica los 43 textos desarrollados. Si un principio resulta pertinente, el cliente invoca `SINK:Pxxx` como operación local de MCP-OCP por STDIO/RDC. No se usan URLs Sync, aliases HTTP, acortadores, Cloudflare, túneles ni endpoints públicos. `MOD-SYNC` pertenece a EP y no interviene.
 
 **Respuesta individual:** ID, título, revisión exacta del DUG (versión/firma/commit/blob), texto desarrollado, SHA-256 y estado de verificación. **Lote:** conserva exactamente el orden solicitado y produce subresultado/huella/evento individual solo por recuperación íntegra satisfactoria; los errores no cuentan como recuperación. El hash de lote cubre serialización canónica UTF-8 de la secuencia ordenada, pins comunes y hashes individuales, no solo la selección de IDs.
 
@@ -118,11 +118,11 @@ La telemetría Sink cuenta recuperaciones satisfactorias por ID; no registra apl
 
 ## Prioridad del primer piloto local · SINK:P004 · 2026-11-10
 
-El primer caso de aceptación del contrato de dos capas será `GOW:ARR → DUG → SINK:P004`, con respuesta individual que contenga ID, título, texto desarrollado íntegro, DUG Samantha v386/NX-386m, commit/blob de la fuente y SHA-256 del texto. El lote y P001–P043 se generalizan después del piloto; no se reducen los criterios de integridad del contrato.
+El primer caso de aceptación del contrato de dos capas será `GOW:ARR → DUG → SINK:P004`, con respuesta individual que contenga ID, título, texto desarrollado íntegro, DUG Samantha v388/NX-388m, commit/blob de la fuente y SHA-256 del texto. El lote y P001–P043 se generalizan después del piloto; no se reducen los criterios de integridad del contrato.
 
 La primera E2E debe probar el recorrido que usará el modelo: IPZ → RDC autorizado → MCP-OCP por STDIO → respuesta visible con pin/hash. Un smoke JSON-RPC de consola no demuestra que IPZ pueda invocar Sink.
 
-**Pins vigentes para implementación/aceptación:** DUG Samantha v386/NX-386m, blob `22dca684830a36dff019b47811d9b800cc9bea0a`; núcleo MCP-OCP v0.1.27 y backlog v0.8. Las referencias históricas v384/v0.1.21 y v377/v0.1.20 no son pins de aceptación actuales.
+**Pin DUG vigente para implementación/aceptación:** Samantha v388/NX-388m; commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`; blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`. El núcleo MCP-OCP v0.1.27 y backlog v0.8 conservan sus versiones documentales, pero sus documentos aún mostraban pins v386 en la última lectura de esta revisión; corresponde a MCP-OCP reconciliar esos pins en sus propias fuentes antes del build. No se declara esa reconciliación ejecutada.
 
 **Destino del sprint:** Fila 4, última identidad documentada RDC `d0bbb2a3-d7b4-45e1-8870-652c2c3844fc`, sesión `CENTRAL\\fila4`/SessionId 4, aún pendiente de preflight vivo. Ubicación física no inferida; EP decide dead-man según el perfil real. La importación privada y el piloto esperan checkout/root protegidos.
 
