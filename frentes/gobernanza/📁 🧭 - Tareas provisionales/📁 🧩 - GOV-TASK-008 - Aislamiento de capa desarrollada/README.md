@@ -113,3 +113,18 @@ El inventario de primera capa expone ID, nombre canónico y MDP; no publica los 
 **Respuesta individual:** ID, título, revisión exacta del DUG (versión/firma/commit/blob), texto desarrollado, SHA-256 y estado de verificación. **Lote:** conserva exactamente el orden solicitado y produce subresultado/huella/evento individual solo por recuperación íntegra satisfactoria; los errores no cuentan como recuperación. El hash de lote cubre serialización canónica UTF-8 de la secuencia ordenada, pins comunes y hashes individuales, no solo la selección de IDs.
 
 La telemetría Sink cuenta recuperaciones satisfactorias por ID; no registra aplicación semántica. La latencia RDC es métrica aparte en GOV-TASK-013. `MCP-NORMATIVO` permanece DESACTIVADO. Gobernanza acepta el contrato; MCP-OCP implementa/prueba/paquetea; EP controla host e instalación. Binarios instalados en `frentes/mcp-metodologia/instalacion-local/`; DB, claves, logs operativos y backups fuera del checkout y protegidos. No modificar DUG/ART-025/ART-027/IPZ desde esta tarea.
+
+---
+
+## Prioridad del primer piloto local · SINK:P004 · 2026-11-10
+
+El primer caso de aceptación del contrato de dos capas será `GOW:ARR → DUG → SINK:P004`, con respuesta individual que contenga ID, título, texto desarrollado íntegro, DUG Samantha v386/NX-386m, commit/blob de la fuente y SHA-256 del texto. El lote y P001–P043 se generalizan después del piloto; no se reducen los criterios de integridad del contrato.
+
+La primera E2E debe probar el recorrido que usará el modelo: IPZ → RDC autorizado → MCP-OCP por STDIO → respuesta visible con pin/hash. Un smoke JSON-RPC de consola no demuestra que IPZ pueda invocar Sink.
+
+**Pins vigentes para implementación/aceptación:** DUG Samantha v386/NX-386m, blob `22dca684830a36dff019b47811d9b800cc9bea0a`; núcleo MCP-OCP v0.1.27 y backlog v0.8. Las referencias históricas v384/v0.1.21 y v377/v0.1.20 no son pins de aceptación actuales.
+
+**Destino del sprint:** Fila 4, última identidad documentada RDC `d0bbb2a3-d7b4-45e1-8870-652c2c3844fc`, sesión `CENTRAL\\fila4`/SessionId 4, aún pendiente de preflight vivo. Ubicación física no inferida; EP decide dead-man según el perfil real. La importación privada y el piloto esperan checkout/root protegidos.
+
+**Estado:** contrato de piloto documentado; implementación, importación, respuesta real, hashes cotejados en runtime y E2E siguen pendientes. MCP-NORMATIVO permanece DESACTIVADO.
+
