@@ -244,3 +244,7 @@ Por instrucción directa del operador, NCL adopta la regla común del registro d
 La crónica es acumulativa: no se sustituye la historia anterior. Un NO-OP requiere cotejo y debe declararse como tal. No se crea un segundo OCP, bitácora paralela ni folio global. Las pruebas no realizadas no se describen como éxito. Esta regla no modifica el alcance técnico, el orden de activación, las autorizaciones de NCL ni convierte la tarea pendiente en tarea ejecutada.
 
 **Registro de incorporación · 2026-10-31:** se añadió el requisito documental solicitado por el operador. No se revalidó Chrome, KeePassXC, Native Messaging, Playwright, perfil OCP ni Cora en este ciclo; el estado técnico previo permanece como antecedente reportado y pendiente de revalidación.
+
+
+## Reporte individual obligatorio por tarea
+Al resolver esta tarea, el responsable debe agregar el informe individual en este mismo núcleo siguiendo [la plantilla común](../../../PLANTILLA-REPORTE-CIERRE-TAREA.md), completar todos sus campos y actualizar el índice padre solo después del read-back. No marcar como completada sin criterios PASS, evidencia ejecutada, integridad verificada y aceptación exigible. Si termina parcial/bloqueada, dejar igualmente el informe con bloqueantes, preocupaciones, riesgos y condición objetiva de desbloqueo. Informar al operador con enlace al informe. Esta instrucción no altera titularidad, generación, permisos ni controles.
