@@ -161,10 +161,10 @@ try
         using var output = new StringWriter();
         await server.RunAsync(new StringReader(input), output, CancellationToken.None);
         string[] lines = output.ToString().Split('\n', StringSplitOptions.RemoveEmptyEntries);
-        runner.Equal(4, lines.Length);
-        using JsonDocument unsupported = JsonDocument.Parse(lines[2]);
+        runner.Equal(3, lines.Length);
+        using JsonDocument unsupported = JsonDocument.Parse(lines[1]);
         runner.Equal(-32601, unsupported.RootElement.GetProperty("error").GetProperty("code").GetInt32());
-        using JsonDocument ping = JsonDocument.Parse(lines[3]);
+        using JsonDocument ping = JsonDocument.Parse(lines[2]);
         runner.Equal(3, ping.RootElement.GetProperty("id").GetInt32());
         runner.Equal(true, ping.RootElement.TryGetProperty("result", out _));
     });
