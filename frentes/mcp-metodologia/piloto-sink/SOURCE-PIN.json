@@ -11,7 +11,8 @@
     "event": "C-GOBERNANZA-IPZ-DIRECTORIO-CNP-20261110-01",
     "principles": 43,
     "metacanon": "1.29",
-    "gow": "2.18"
+    "gow": "2.18",
+    "commit": "17a4da1d3906e2397ab4682ff46cc9a9f116f34d"
   },
   "gow_arr": {
     "section_id": "gow-sec-14",
@@ -24,5 +25,7 @@
     "microdescriptor": "Exigir hechos verificables; activarlo ante afirmaciones sobre capacidades, datos, acciones o certezas.",
     "normative_text": "No finjas capacidades, datos, resultados ni certezas, ni declares límites sin verificar con herramientas. Marca tu certeza y nombra los huecos sin rellenarlos. Precedencia absoluta sobre la exhaustividad y el buen trato."
   },
-  "verification": "SOURCE_READ_AND_METADATA_VERIFIED; runtime hash verification implemented but not executed in this cycle"
+  "verification": "SOURCE_READ_AND_METADATA_VERIFIED; runtime hash verification implemented but not executed in this cycle",
+  "branch_base_sha": "73a42bc687f1fa3dd60b44af9cd93f797eba3920",
+  "branch": "feat/mcp-ocp-p004-pilot-20261110-cycle02"
 }
