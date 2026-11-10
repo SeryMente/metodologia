@@ -7,7 +7,10 @@ on:
     paths:
       - "frentes/mcp-metodologia/global.json"
       - "frentes/mcp-metodologia/src/OcpMcp/**"
+      - "frentes/mcp-metodologia/src/OcpMcp.Monitoring/**"
+      - "frentes/mcp-metodologia/src/OcpMcp.Panel/**"
       - "frentes/mcp-metodologia/tests/**"
+      - "frentes/mcp-metodologia/piloto-sink/**"
       - "frentes/mcp-metodologia/piloto-sink/ci/**"
       - ".github/workflows/mcp-ocp-p004-pilot.yml"
 
@@ -48,7 +51,7 @@ jobs:
         with:
           dotnet-version: 10.0.403
 
-      - name: Execute build, 13 contract tests and real STDIO smoke
+      - name: Build server and WPF; run P004 and monitor suites; execute STDIO smoke
         run: ./piloto-sink/ci/Invoke-PilotValidation.ps1
 
       - name: Upload validation diagnostics even on failure
