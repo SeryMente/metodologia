@@ -584,3 +584,7 @@ Registro maestro FOL1: blob `b93cbef77f2fa1a6e4290ae8177e957a1616e47b`; `PREPARA
 **Siguiente acción DTC:** registrar solicitud de alcance a MCP-OCP para que su titular evalúe y autorice Sink local en su CONTROL-RESPONSABILIDAD; coordinar con EP la selección de perfil/host y sus gates de seguridad antes de cualquier instalación. Cada frente debe responder y documentar su propio ciclo. No se ejecuta código ni se instala hasta esas autorizaciones.
 
 **Estado:** `GOBERNANZA_DOCUMENTAL_ALINEADA`; DTC trilateral pendiente de respuesta/ejecución de los frentes; Sink no implementado; FOL1 no activo.
+
+
+## Reporte individual obligatorio de resolución/cierre
+Al resolver, completar, bloquear o cancelar esta tarea, registrar su propio informe en este README usando [la plantilla común](../../../PLANTILLA-REPORTE-CIERRE-TAREA.md). Explicar objetivo y resultado, cómo se solucionó, decisiones verificables, cambios/rutas/commits/blobs/SHA, criterios y pruebas ejecutadas con logs/artefactos, read-back, bloqueantes/dependencias, preocupaciones/riesgos, pendientes, rollback y aceptación. Declarar NINGUNO_VERIFICADO o NO_VERIFICADO donde corresponda; nunca ocultar campos. No marcar completada sin criterios PASS, evidencia y read-back. Actualizar el índice padre después de verificar este informe y entregar al operador el enlace individual y síntesis de solución, evidencia, bloqueantes y preocupaciones. No incluir secretos ni datos sensibles.
