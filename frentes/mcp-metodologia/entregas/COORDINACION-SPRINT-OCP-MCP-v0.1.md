@@ -1826,3 +1826,26 @@ Este suplemento solo registra la actualización de navegación y su cotejo. No r
 **Separación de aceptación:** EP-TASK-003 no está en PASS y EP-TASK-005 sigue siendo responsable de la recepción/instalación. Se construirá y verificará un artefacto portable de revisión/handoff, no se extraerá, instalará ni transferirá a Fila 4. Gobernanza conserva aceptación IPZ E2E.
 
 **Estado de apertura:** `DTC_CYCLE_STATUS=OPEN`; `MCP_OCP_H1=LOCAL_BUILD_TESTS_STDIO_PASS`; `MCP_OCP_PILOT_ARTIFACT=IN_PROGRESS`; `PR_27=OPEN_DRAFT_NOT_MERGED`; `HOSTED_CI=RUNNER_UNASSIGNED`; `EP_INSTALL=BLOCKED_EP_TASK_003_005`; `IPZ_E2E=NOT_ACCEPTED`; `MCP_NORMATIVO=DESACTIVADO`; `FOL1=PREPARADO_NO_ACTIVO`.
+
+### Resultado y cierre de preparación del artefacto SINK:P004 · ciclo local 13 · 2026-11-10
+
+**Resultado ejecutado:** se publicó en la rama de PR #27 un paquete candidato reproducible del piloto P004, creado a partir del commit exacto de build `b6ce37af1dc32b2e3bb8af3ded2a77c7ba6d7648`. El HEAD posterior de la rama (`f54ce14a...`) solo cambió el objeto bilateral DTC respecto del commit de build; no cambió fuentes, proyecto ni pruebas. El commit de publicación es `5f7824464fcf1639342df1b4258e699f8976539f`; la rama quedó 40 ahead / 0 behind frente a main `4b2881a778a683b12394e21678143c59e57e8bdc`; PR #27 OPEN/DRAFT/NOT MERGED.
+
+**Artefactos persistidos dentro de la rama (no en main):**
+- ZIP: `frentes/mcp-metodologia/entregas/piloto-sink-p004/MCP-OCP-SINK-P004-b6ce37af-v3.zip`; Git blob `7fdb248ddbdb24cea653c72098331030da83e99e`; 137.474 bytes; SHA-256 `DE556FD547ACF2AB3946DF5AC2395A3993CB459B5E48F8E745A661A113A90783`.
+- Manifiesto: `manifest.json`; blob `b2090143d9bb2f3ee81fb41dac2f93bf65ef6a7c`; SHA-256 `85F70366144FD2109D9688F2DDB6E7819FF955B8F05697C2FC6966E04F0044B1`.
+- Runbook: blob `f6af2599a4b9a83b8af634d8a8aa0936e745f25c`.
+- Source pin: blob `13ebe586b4c75b463ec74aecd13bb4ce313c4baf`.
+- Checksums: blob `011bcb8883aa38a557f7e1a5c249fede4b7e1f15`.
+
+**Verificación del paquete exacto:** extracción del ZIP final a un root nuevo; nueve archivos cotejados por tamaño y SHA-256 contra manifest; smoke ejecutado sobre el binario ya extraído: initialize, tools/list, tools/call(P004), EOF, tres respuestas JSON-RPC, resultado `P004`, DUG `v388/NX-388m`, evento `SINK_READ_SUCCESS` en STDERR; exit 0. `PACKAGE_SMOKE=PASS`.
+
+**Condición de ejecución:** paquete framework-dependent `net10.0`, sin RID; requiere `Microsoft.NETCore.App 10.0.x x64` en destino. La disponibilidad de ese runtime en Fila 4 está `NO_VERIFICADA`; SDK 10.0.403 se usó para build local. No incluye panel WPF ni constituye release 1.0.0.
+
+**Read-back:** manifest/runbook/source-pin/checksums se leyeron desde la rama y sus Git blobs coinciden con los blobs de creación. El blob binario fue creado desde Base64 de la copia ZIP local y el SHA-256 local quedó en sidecar; el endpoint GitHub para leer blob binario no se pudo recuperar por la limitación de respuestas UTF-8, por lo que el cotejo binario remoto por lectura de vuelta queda `NO_VERIFICADO` (la persistencia del objeto Git sí está acreditada por el SHA devuelto al crear el blob y su inclusión en el commit).
+
+**Bloqueantes / límites:** no se transfirió ni instaló el ZIP en Fila 4; EP-TASK-003 no está en PASS y EP-TASK-005 conserva recepción/instalación. No se importaron fuentes privadas, no se provisionó operador ni se ejecutó `REGISTER <SID>`. No hubo recorrido IPZ → RDC → STDIO desde el contexto real; GOV-TASK-003/007 retienen aceptación. Hosted CI sigue sin runner observable; causa raíz `NO_VERIFICADA`. MCP-NORMATIVO DESACTIVADO; FOL1 no activo.
+
+**Siguiente acción:** MCP-OCP entrega referencia de paquete/manifest/runbook a EP-TASK-005; EP solo recibe/instala cuando EP-TASK-003 haya pasado y el runtime requerido esté presente. Gobernanza realiza E2E IPZ cuando corresponda. MCP-OCP mantiene PR #27 abierta/draft.
+
+**Estado de ciclo:** `DTC_CYCLE_STATUS=OPEN_WORK_COMPLETE_FOR_PACKAGE_PREPARATION`; `MCP_OCP_H1=LOCAL_BUILD_TESTS_STDIO_PASS`; `MCP_OCP_PILOT_ARTIFACT=CANDIDATE_PUBLISHED_ON_PR_BRANCH`; `EP_HANDOFF=NOT_TRANSFERRED`; `EP_INSTALL=BLOCKED_EP_TASK_003_005`; `HOSTED_CI=RUNNER_UNASSIGNED`; `IPZ_E2E=NOT_ACCEPTED`; `MCP_NORMATIVO=DESACTIVADO`; `FOL1=PREPARADO_NO_ACTIVO`.
