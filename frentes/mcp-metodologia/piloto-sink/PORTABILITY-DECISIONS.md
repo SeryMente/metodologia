@@ -103,3 +103,17 @@ Esta subsección no sustituye el registro original de la comparación inicial 0/
 - Core candidato v0.1.38; backlog LIST v0.19.
 - H1: 41 tests escritos/0 ejecutados con evidencia; build y smoke pendientes. CI jobs actuales sin runner asignado, steps, logs ni artifacts; causa raíz no verificada.
 - H2: contrato MCP-OCP-14 v0.1 propuesto y cuatro schemas parseables; no ratificado y sin IO/runtime.
+
+
+## Revalidación local H1 · 2026-11-10
+
+La preparación inicial que fijó `global.json` en la raíz queda supersedida por el ajuste de alcance: el pin `10.0.403` reside ahora en `frentes/mcp-metodologia/global.json`, y el workflow observa esa ruta. El `.gitignore` fue restaurado desde main para excluir `.env/.env.*`, claves/certificados, bases de datos y logs.
+
+- Main incorporado como segundo padre: `ff9c75926a2907c630f506c4e08c267b15bca7cf`; merge commit `e5bd7d992f3fda83035cc43329353b846a25e9a8`.
+- Se corrigió la lectura del MDP: el DUG v388 lo publica bajo `document.principle_inventory_policy`; el fixture sintético ahora reproduce esa forma.
+- SDK .NET 10.0.403 instalado solo bajo `%TEMP%` del perfil MantenimientoRCI; no hubo instalación global ni PATH persistente.
+- Windows 10.0.26200 x64, PowerShell 7.4.22. Restore de ambas suites PASS; build servidor y dos proyectos de tests PASS, 0 warnings/0 errors.
+- P004 18/18 PASS; monitor/readiness 23/23 PASS; MCP STDIO initialize/tools/list/tools/call/EOF smoke PASS; harness exit 0.
+- SHA-256: P004 `D6F21749D8898B6624988BF056DA2BCC66DA3A5DF1CAE8FFA1FA2DB36DEB338B`; monitor `B9B3F2B5A42285CC3D81AE5EEFBDC678104E5E408A861BB5D1045885CBC29989`; smoke summary `2D5C90D467B5508A9FAD22F0C00902035D9F3FE7F703B052AAB13365BE2C0B31`; STDOUT `7818B9894239D7760EAD89D18BA78244096041FE2738C639F840A5FCD9918938`; STDERR `8614035B5585D84175B53B1DE4A126ED6B3A84BDED7E6BE51153A2FB8AF2D61B`.
+- Git checkout quedó limpio tras las pruebas (`git diff --check` y cero tracked changes).
+- Límite: validación local Windows; no acredita runner GitHub `ubuntu-latest`, instalación EP, E2E IPZ, paquete con panel WPF ni aceptación del producto 1.0.0.
