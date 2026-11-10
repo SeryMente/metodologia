@@ -637,3 +637,60 @@ Los frentes ya estan avanzando, vuelve a revisar las tareas, asegurandote que to
 ## Mandato de reporte individual por tarea
 
 Como coordinador interfrentes, exigir que cada responsable documente el cierre en su propia ficha/núcleo usando [la plantilla común](../../../PLANTILLA-REPORTE-CIERRE-TAREA.md). GOV-TASK-015 no reemplaza los informes de EP, MCP-OCP ni las demás tareas de Gobernanza. Antes de reflejar una tarea como completada en la coordinación, comprobar el enlace, el informe, los criterios terminales, la evidencia ejecutada y el read-back. Por cada tarea cerrada, entregar al operador un enlace y síntesis de solución, verificación, bloqueantes y preocupaciones. Si falta un informe o evidencia, el estado correcto es parcial/no verificado, no completado.
+
+
+---
+
+## Regla operativa · resumen semivivo y cierre por ciclo · 2026-11-10
+
+Esta coordinación adopta el contrato operativo incorporado en [el núcleo OCP Gobernanza](../../GOBERNANZA.md#contrato-operativo-resumen-semivivo-por-ciclo-2026-11-10).
+
+**Cadencia obligatoria:** resumen de apertura; actualización tras cada hito material; síntesis de cierre con read-back. «Semivivo» es seguimiento por hitos y consultas puntuales mientras se trabaja, no vigilancia permanente ni promesa de trabajo en segundo plano.
+
+**Formato de cada entrega al operador:**  
+🎯 Hito · 🚦 Estado · ✅ Confirmado · ⛔ Bloqueantes · ⚠️ Preocupaciones · ➡️ Siguiente acción · 🔎 Fuente/corte.  
+Mantener cada campo en una o dos líneas cuando sea posible; ampliar solo el dato que cambie una decisión o un riesgo. Usar verbos y estados inequívocos. No ocultar fallos con porcentajes ni llenar vacíos con estimaciones.
+
+**Criterios de rigor:**
+- Separar `PROPUESTO`, `AUTORIZADO`, `INTENTADO`, `EJECUTADO`, `VERIFICADO` y `ACEPTADO`.
+- Separar `PASS`, `FAIL`, `NOT_RUN`, `BLOQUEADO` y `NO_VERIFICADO`.
+- Identificar evidencia, commit/blob/SHA, hora/zona y responsable cuando existan. Declarar explícitamente la ausencia de evidencia.
+- Revalidar estados efímeros (Vault/TTL), CI, ramas y objetos remotos antes de depender de ellos.
+- No repetir operaciones con efectos laterales si existe un proceso en ejecución o no se comprobó el resultado del intento anterior.
+- No exponer secretos o valores de variables en resúmenes, recibos, logs o repositorios.
+
+**Cierre por tarea:** el resumen ejecutivo interfrentes no sustituye el informe individual. EP, MCP-OCP y Gobernanza conservan la obligación de reportar dentro del núcleo de su propia tarea. GOV-TASK-015 consolida, verifica read-back y enlaza; no reasigna autoría ni permisos. Ninguna tarea se presenta completada sin criterios terminales y aceptación exigible verificados.
+
+## Primer resumen ejecutivo bajo esta regla · 2026-11-10 · corte 16:27 America/Mexico_City
+
+### 🎯 Hito
+Sprint OCP MCP 1.0 / SINK-P004: recuperar el texto normativo íntegro P004 desde IPZ real vía RDC/STDIO y cerrar los gates EP que habilitan el piloto. El primer Sink operativo todavía no está aceptado.
+
+### 🚦 Estado por frente
+
+| Frente / gate | Estado al corte | Evidencia y límite |
+|---|---|---|
+| EP-TASK-004 · suite Vault sintética | `PASS_SINTÉTICO` | Dos corridas E2E exactas MOD-EPVAULT/v1.0.0: exit 0 (165,41 s y 142,61 s). H10 humano e integración a main pendientes. |
+| EP-TASK-002 · B2 P0-C | `FAIL_ANTES_DE_UPLOAD` | v1 `UNEXPECTED_WORKER_FAILURE`; v2 `PropertyNotFoundException`; ambos sin objeto remoto, descarga ni SHA remoto. v3 parser PASS, no ejecutada. |
+| Vault · sesión local | `SELLADA` | Read-back 16:27:35 local: ciphertext presente 2.200 B, `sessionActive=false`. La apertura anterior habilitó consultas temporales; el TTL no se presume vigente. |
+| B2 · preflight read-only | `PASS_PARCIAL` | Consulta independiente confirmó cuenta autorizada, key ID coincidente, capacidades requeridas, bucket OCP-MCP `allPrivate`, SSE-B2/AES256 por defecto y 0 reglas de lifecycle. No hubo upload ni cambio de bucket. La causa exacta/línea del fallo del worker sigue NO VERIFICADA. |
+| EP-TASK-003 · workspace Fila 4 | `PARTIAL_FAIL` | Diseño aceptado por el operador; inventario/preflight físico no habilita aún crear/proteger/montar ni copiar. Actividad concurrente en Temporal impide congelar el manifiesto. |
+| MCP-OCP H1 · PR #27 | `OPEN · DRAFT · NOT MERGED` | 37 commits ahead / 2 behind; comparación con main `diverged`, mergeable=true. 41 pruebas están escritas; ejecución observable/build/smoke siguen sin acreditarse. |
+| Gobernanza · SINK:P004 E2E | `PENDIENTE` | No hay respuesta íntegra aceptada desde IPZ real. Consola/fixture no equivalen al E2E solicitado. |
+
+### ✅ Cambios/confirmaciones de este corte
+
+- El contrato de resumen semivivo ya está en el núcleo de Gobernanza.
+- Se verificó por vía read-only el acceso B2 y su bucket; no se alteró configuración remota.
+- El PR #27 ya no muestra `.gitignore` entre las rutas modificadas y el pin `global.json` está acotado a `frentes/mcp-metodologia/`; esto elimina del diff actual las dos observaciones de alcance señaladas antes. No significa aceptación ni merge.
+- No se subió ciphertext ni workspace; no existe backup remoto verificado. No se alteraron controles, BitLocker, VHDX, workspace ni IPZ.
+
+### ⛔ Bloqueantes y siguiente movimiento
+
+1. **EP:** el operador vuelve a abrir la cámara de Vault localmente. EP revalida Status y los cinco nombres sin revelar valores; entonces ejecuta únicamente la v3 ya preparada para capturar la línea exacta de `PropertyNotFoundException`. No repetir v1/v2. Después corregir en variante nueva y hacer un único P0-C final, con recibo propio y gates de upload/download/SHA/SSE/restore.
+2. **MCP-OCP:** sincronizar los dos commits de main que faltan; corregir el lector/fixture DUG v388; obtener runner/logs y ejecutar build, 41 pruebas y smoke STDIO/EOF.
+3. **Gobernanza:** mantener GOV-TASK-003 como aceptación E2E real y GOV-TASK-007 como fast path IPZ; no declarar Sink aceptado hasta el recorrido completo.
+
+**Preocupaciones vigentes:** la causa raíz exacta del worker P0-C y la ejecución de CI MCP aún no están verificadas; EP-TASK-003 no permite migración física; H10 visual sigue pendiente; FOL1 está preparado pero inactivo; IPZ nativa NO VERIFICADA; MCP-NORMATIVO DESACTIVADO.
+
+**Criterio de salida del hito:** P0-C solo pasa con objeto remoto, descarga íntegra, tamaño/SHA idénticos, SSE-B2 confirmado y restore aislado; H1 solo pasa con build/pruebas/smoke observables; SINK:P004 solo se acepta con respuesta normativa íntegra desde IPZ real y pin/hash validado.
