@@ -34,9 +34,12 @@ internal static class Program
             }
 
             var reader = new DugSourceReader(repoRoot);
+            Action<MonitorEvent>? monitorCallback = monitor is null
+                ? null
+                : new Action<MonitorEvent>(monitor.OnEvent);
             var server = new McpServer(reader,
                 evt => Console.Error.WriteLine(JsonSerializer.Serialize(evt, JsonOptions)),
-                monitor is null ? null : monitor.OnEvent);
+                monitorCallback);
             using var cts = new CancellationTokenSource();
             Console.CancelKeyPress += (_, e) => { e.Cancel = true; cts.Cancel(); };
             await server.RunAsync(Console.In, Console.Out, cts.Token);
