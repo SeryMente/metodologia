@@ -311,3 +311,10 @@ Se preparó un worker/wrapper PowerShell nuevo para P0-C que subirá únicamente
 - **EP-TASK-001:** pendiente sin cambio.
 
 Evidencia read-only: [EP-FILA4-READONLY-PREFLIGHT-20261110-1530.json](../entregas/EP-FILA4-READONLY-PREFLIGHT-20261110-1530.json), blob \`88dd663df4345df343a51ad2800f0ad79953c60d\`. No se cambió workspace, VHDX, BitLocker, checkout, root de datos, bóveda formal ni credenciales. No se declara PASS de host ni persistencia remota.
+
+
+## Informe individual obligatorio por tarea
+
+Regla para EP-TASK-001–007 y tareas futuras: cada resultado se documenta dentro del README de su tarea con [la plantilla común](../../PLANTILLA-REPORTE-CIERRE-TAREA.md). El informe debe explicar cómo se resolvió, resultado frente al objetivo, cambios, evidencia y pruebas ejecutadas, read-back/SHA, bloqueantes, preocupaciones/riesgos, pendientes, rollback y aceptación. Los campos sin incidencias deben decir NINGUNO_VERIFICADO; lo no examinado, NO_VERIFICADO.
+
+El núcleo individual es el registro de cierre. El índice solo refleja estado y enlace, y se actualiza después de verificar el informe. No se cierran varias tareas con una única explicación conjunta. No declarar completada una tarea parcial, bloqueada o con aceptación pendiente. Tras cada cierre, enviar al operador el enlace individual y un resumen de solución, evidencia y asuntos pendientes.
