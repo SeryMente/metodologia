@@ -2505,3 +2505,10 @@ Las siete lecturas de vuelta verificaron contenido/estado esperado y SHA de blob
 `EP_TASK_002=P0_BLOCKED_VAULT_SEALED` · `EP_TASK_003=PREFLIGHT_PARTIAL_FAIL_STORAGE_DESIGN_PENDING_ACCEPTANCE` · `EP_TASK_004=SYNTHETIC_TESTS_PARTIAL_PASS_H10_PENDING` · `EP_TASK_005=BLOCKED_ON_003_AND_MCP_PACKAGE` · `EP_TASK_006=P1_AFTER_B2_P0` · `EP_TASK_007=HOST_INVENTORY_PARTIAL_GUARDIAN_PENDING` · `EP_TASK_001=PENDING`.
 
 No se ejecutó persistencia remota ni mutación del host. El DTC cierra con gates y dependencias separados; no se declara completada ninguna tarea por documentación o pruebas parciales.
+
+
+### Adquisición de §ARR y delta de presentación del GOW
+
+Se leyó íntegramente `§ARR · Vocabulario de entrada para ChatGPT` del objeto estructurado `glossary.sections` en DUG Samantha v388 / GOW 2.18. Cubre, entre otros, FT/OCP, núcleo operativo, control de responsabilidad, gestión/registro conversacional, trazabilidad semántica, ciclo/conversación, binomio A/B, UUIDv7 local, foliación, MCP-NORMATIVO desactivado, MCP-OCP, CNP y PAI. Se adquirieron además los textos completos de P001/P004/P005/P012/P013/P016/P035/P037/P038/P041/P042/P043 en el bloque de gobernanza. No se modificó el DUG.
+
+**Delta de fuente registrado:** el metadato/glosario estructurado declara `GOW=2.18` e incluye `gow-sec-14 / §ARR`; la sección GOW renderizada en `D.sections` conserva una ficha visible `v2.17` y no incluye §ARR como subsección renderizada. Se trata como desalineación de representación que requiere reconciliación del propietario de Gobernanza; el vocabulario adquirido no crea reglas ni autoridad independiente. No se editaron el HTML ni su JSON.
