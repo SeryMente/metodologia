@@ -28,3 +28,8 @@ Los comandos no son evidencia hasta que existan logs asociados al commit. El wor
 
 ## Límites
 Sin DB, importación privada, secretos, operador, listener, instalación ni aceptación IPZ E2E. El panel WPF es una implementación candidata separada, no compilada ni incluida en paquete. Fila 4 depende de EP-TASK-003/005.
+
+
+## Panel/monitor candidatos
+
+Los proyectos WPF y Monitoring existen como código candidato; el panel sigue fuera del alcance del piloto P004 y es obligatorio para 1.0.0. Hay 21 pruebas sintéticas de monitor/readiness escritas, 0 ejecutadas. El panel no indicará `LISTO` sin atestación EP `Protection On`, proceso/protocolo verificados, fuentes íntegras/vigentes, operador provisionado y root disponible. No se ha probado build, UI Windows ni integración EP.
