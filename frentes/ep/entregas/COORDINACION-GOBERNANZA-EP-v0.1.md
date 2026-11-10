@@ -2539,3 +2539,61 @@ Se leyó íntegramente `§ARR · Vocabulario de entrada para ChatGPT` del objeto
 Se ejecutará ahora una comprobación propietaria read-only del estado real de EP Vault y de los artefactos de transferencia. Si la cámara está desbloqueada y las cinco variables están disponibles, se ejecutará solo P0-C ciphertext-only dentro del TTL y se verificará por descarga y SHA. Si continúa sellada, el siguiente paso necesario será el desbloqueo local por el operador; no se solicitará ni automatizará la contraseña. Ninguna copia, cifrado, montaje, renombrado o cambio sobre el workspace original se ha realizado.
 
 **Estado de comunicación al abrir:** `DTC_READ=VERIFIED` · `GOV_CURSOR=SIN_NOVEDAD` · `OPERATOR_STORAGE_DESIGN=ACCEPTED` · `EP_EXECUTION=IN_PROGRESS` · `CYCLE_CLOSE=PENDING`.
+
+
+---
+
+## EP · cierre de ciclo tras aceptación del diseño y revalidación de gates · 2026-11-10 · 15:50 America/Mexico_City
+
+### Procesamiento y resultado
+
+**Cursor bilateral:** se leyó DTC en `main`, blob de apertura `6ccddd9704fccb598c7908ba3b2d3eea04d313b2`. No había comunicación nueva de Gobernanza después del último asiento procesado; se registró `SIN_NOVEDAD`. La respuesta inicial al operador y su aprobación expresa del diseño se persistieron al abrir el ciclo.
+
+**Instrucción del operador:** revisar la cola conforme al orden programado y actualizar las tareas en cada ciclo; aprobación expresa del diseño VHDX/BitLocker para preservar la ruta original.
+
+**EP-TASK-002 — P0 Backblaze**
+- Revalidación de EP Vault CLI bajo contexto propietario a las 15:48:48.9106824-06:00: ciphertext de 2.200 bytes, `sessionActive=false`, schema ep-env-vault/1, KDF PBKDF2-HMAC-SHA256/600.000.
+- Worker y wrapper P0-C ciphertext-only cotejados por tamaño/SHA-256; recibo ausente.
+- No se invocó ListVariables, Run, B2 authorize, bucket list, upload, download ni restore mientras la cámara permanezca sellada.
+- Informe individual parcial actualizado y leído de vuelta: commit `d36a8331b801a906108b5fc273fa5b246be21085`, blob `970d55f67f1e84959fdf96e6315bff1b4b4d5297`.
+- Estado: `P0_BLOCKED_VAULT_SEALED`.
+
+**EP-TASK-003 — protección del workspace**
+- Diseño VHDX fuera de AppData, BitLocker XTS-AES256/Protection On/100 % y montaje en la ruta original aceptado expresamente por el operador.
+- Dos enumeraciones recursivas independientes coincidieron: 3.127 archivos, 660 directorios, 179.138.515 bytes, cero errores y cero reparse points. El conteo anterior (3.103/659/159.162.208, dos errores) aún difiere y no se atribuyó una causa sin evidencia.
+- Revalidación administrativa read-only: C: XtsAes128, FullyEncrypted 100 %, Protection Off, cero protectores; W: FullyDecrypted 0 %, método None, Protection Off, cero protectores. VHDX antiguo bajo AppData sigue adjunto, 30 GiB, sin modificación.
+- Checkout de Metodología carece de .git; root Datos/Metodologia/MCP-OCP ausente; ubicación física UNCLASSIFIED.
+- Informe individual parcial actualizado y leído de vuelta: commit `345dedf70f7d036823c6d809f149b2c07a267a4c`, blob `b494c3593e6785178c2902d6ed1679b2b0a7a579`.
+- Estado: `STORAGE_DESIGN=ACCEPTED_BY_OPERATOR`; `PREFLIGHT_FILA4=PARTIAL_FAIL`; no se creó/cifró/copiò/montó/renombró nada.
+
+**EP-TASK-007 — inventario y sesión**
+- Informe de revalidación read-only agregado y leído de vuelta: commit `ac1ea30fc0877ebe0b9feb5c2436aebbef71cec2`, blob `07b8dde6554fe44f810245b69df12e5223c21686`.
+- Ubicación/IP/GPS no verificados; Guardian, lease, heartbeat, trigger y crypto-erasure no implementados.
+
+**Tareas sin delta de ejecución**
+- EP-TASK-004: self-tests sintéticos parciales siguen siendo la última evidencia; H7/H8 integrales y H10 pendientes.
+- EP-TASK-005: bloqueada por EP-TASK-003 PASS y paquete P004/manifest/SHA/MCP-OCP-03/04.
+- EP-TASK-006: P1 después del P0 B2 y restore.
+- EP-TASK-001: pendiente, sin cambio.
+
+### Cambios documentales y lectura de vuelta
+
+| Objeto | Commit | Blob SHA leído de vuelta |
+|---|---|---|
+| EP-TASK-002 | `d36a8331b801a906108b5fc273fa5b246be21085` | `970d55f67f1e84959fdf96e6315bff1b4b4d5297` |
+| EP-TASK-003 | `345dedf70f7d036823c6d809f149b2c07a267a4c` | `b494c3593e6785178c2902d6ed1679b2b0a7a579` |
+| EP-TASK-007 | `ac1ea30fc0877ebe0b9feb5c2436aebbef71cec2` | `07b8dde6554fe44f810245b69df12e5223c21686` |
+| Índice provisional | `ca3848ffd696a9e890f9b7fb7e4d23a6da8819b6` | `498d9945a97924bcc706af5645b7534300998a16` |
+| OEP v0.3.61 / §127 | `74bd0d3356ff9b6535679b14eb8b42eacac976c0` | `959d54fcfd8d4597ad3cb470bde898cca6958f57` |
+
+Los cinco objetos fueron leídos de vuelta y cotejados con el blob esperado. La escritura de documentos no se interpreta como aceptación de tareas ni como persistencia B2.
+
+### Bloqueos, riesgos y siguiente acción
+
+- **Bloqueo inmediato:** EP Vault sigue sellada. El operador debe desbloquearla localmente y confirmar que la cámara está abierta. No se solicita la contraseña por chat.
+- **Siguiente ejecución autorizada:** revalidar Status y cinco nombres; ejecutar únicamente P0-C en el TTL activo; autenticar el bucket EP, subir ciphertext, descargar, cotejar SHA/tamaño, validar SSE-B2 y demostrar restore.
+- **Después de P0-C:** almacenar/read-back el RecoveryPassword del VHDX nuevo en Vault, subir/validar el ciphertext actualizado y solo entonces crear/proteger/copy/mount el workspace.
+- **Riesgos pendientes:** la raíz fuente aún no tiene manifest SHA íntegro; el delta de conteo sigue sin reconciliar; el workspace continúa en el estado físico observado; BitLocker C: Protection Off y W: descifrado. Se preservó el original.
+- No se ejecutaron operaciones destructivas ni de almacenamiento en este ciclo; no hay rollback que aplicar.
+
+**Estado del ciclo:** `PUBLICADO → LEÍDO → RESPUESTA_INICIAL_REGISTRADA → PROCESADO → DOCUMENTADO_AL_CIERRE`. La escritura del presente cierre y su read-back completan `VERIFICADO_READBACK` si el cotejo final es exacto.
