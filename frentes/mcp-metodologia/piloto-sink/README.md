@@ -19,7 +19,7 @@
 | Metacanon / GOW | 1.29 / 2.18 |
 | GOW §ARR | glossary.sections[id=gow-sec-14], ancla #gow-arranque-chatgpt |
 | MDP P004 | Exigir hechos verificables; activarlo ante afirmaciones sobre capacidades, datos, acciones o certezas. |
-| P004 | Principio de No-Simulación, ancla #P004 |
+| P004 | Principio de No-Simulación 🔒, ancla #P004 |
 
 **Actualización del pin:** main se encuentra en 0f933b9e3efae20131da37f99f50f4bc4a4eaf74; la fuente DUG vigente es Samantha v388/NX-388m, commit 3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c, blob 4db0ebadfd1e48b2bdec9236ba7f344921e4a865. P004, §ARR y ART-027 fueron releídos desde main; el contrato P004 y su MDP permanecen iguales al pin v387.
 
@@ -37,12 +37,16 @@
 
 ## Construcción y pruebas
 
-Requiere .NET SDK 10.0.403, fijado en ../global.json. RID: no aplica al piloto framework-dependent; win-x64 se fijará al preparar el paquete de release. Ejecuta desde frentes/mcp-metodologia:
+Requiere .NET SDK 10.0.403, fijado en ../global.json. RID: no aplica al piloto framework-dependent; win-x64 se fijará al preparar el paquete de release. El workflow CI usa Ubuntu + PowerShell Core y ejecuta la misma validación portable; Windows/Fila 4 conserva su prueba de host separada. Ejecuta manualmente desde frentes/mcp-metodologia:
 
     dotnet build src/OcpMcp/OcpMcp.csproj -c Release
     dotnet run --project tests/OcpMcp.Pilot.Tests/OcpMcp.Pilot.Tests.csproj -c Release
 
-Para arrancar contra un clon que contenga el pin DUG fijado:
+Para ejecutar la validación integral disponible en CI (restore, build servidor, build harness, 13 pruebas y smoke del DLL real por STDIO con initialize/list/call P004, pin/hash, evento y EOF):
+
+    ./piloto-sink/ci/Invoke-PilotValidation.ps1
+
+Para arrancar manualmente contra un clon que contenga el pin DUG fijado:
 
     dotnet run --project src/OcpMcp/OcpMcp.csproj -c Release -- serve --repo-root ../..
 
@@ -70,5 +74,5 @@ Verificación de runner RDC disponible: Windows PowerShell y Git 2.45.2 presente
 - Rama cycle05 creada desde main HEAD 0f933b9e3efae20131da37f99f50f4bc4a4eaf74; comparación inicial idéntica.
 - Núcleo documental v0.1.28 y backlog v0.9 heredados del main actual. DUG Samantha v388/NX-388m, commit 3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c, blob 4db0ebadfd1e48b2bdec9236ba7f344921e4a865.
 - 13 pruebas están escritas; no hay PASS de build/test. PR #23/cycle04 run 23 falla sin steps/logs/artifacts disponibles; causa no determinada.
-- CI actual incluye diagnóstico/artifact y smoke del ejecutable STDIO, en Ubuntu + SDK .NET 10.0.403. Run #23 antecedente no valida este último cambio; se requiere la siguiente ejecución.
+- CI actual incluye preflight, diagnóstico/artifact y smoke del ejecutable STDIO, en Ubuntu + SDK .NET 10.0.403. PR #23/cycle04 run 23 terminó FAILURE sin steps/logs/artifacts; esta ejecución no acredita el nuevo workflow/script cycle05.
 - Smoke real IPZ → RDC → STDIO no realizado; Fila 4/EP permanece bajo su propio gate.
