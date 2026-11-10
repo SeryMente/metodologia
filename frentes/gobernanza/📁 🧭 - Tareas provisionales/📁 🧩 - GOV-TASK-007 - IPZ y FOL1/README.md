@@ -113,3 +113,21 @@ El orden continúa siendo: (1) congelar el contrato de respuesta de MCP-OCP para
 **Aceptación:** GOV-TASK-003 solo cierra cuando la llamada real se origina en el contexto IPZ y la respuesta P004 aparece visible al modelo por RDC/STDIO con texto íntegro, pin y SHA-256. Una prueba manual de consola no es sustituto. FOL1 es independiente y no bloquea el piloto.
 
 `GOV-TASK-007=IPZ_CANDIDATE_PREP_PENDING_P004_CONTRACT` · `IPZ_NATIVE=NOT_VERIFIED` · `FOL1=PREPARADO_PENDIENTE_ACTIVACION_IPZ` · `MCP-NORMATIVO=DESACTIVADO`.
+
+
+---
+
+## Reanudación del Sprint SINK-P004 · fast path IPZ vigente · 2026-11-10
+
+**Objetivo de esta fase:** preparar el acceso compacto a `SINK:P004` desde IPZ para el primer piloto. Mantener el contenido completo en DUG Samantha v388/NX-388m y no convertir la IPZ en una fuente normativa paralela.
+
+**Orden:**
+1. MCP-OCP-02 obtiene rama limpia desde main y MCP-OCP-05 congela el contrato de respuesta P004.
+2. En paralelo, preparar candidato con `GOW:ARR → DUG → MDP → SINK:P004`, preservando las salvaguardas de IPZ v0.7. Medir por debajo de 1.500 caracteres en las unidades indicadas; cotejar literal y semántica.
+3. Cuando el contrato de respuesta esté congelado, validar el candidato contra el esquema real de herramienta/herramienta MCP y congelar versión conversacional.
+4. Coordinar con EP la instalación local solo después de EP-TASK-003 PASS y EP-TASK-005 instalado. La escritura del campo nativo y su read-back son un acto separado, no se presume ni se realiza en esta actualización.
+5. GOV-TASK-003 acepta solo cuando el uso real desde contexto IPZ devuelve P004 íntegro al modelo por RDC/STDIO con pin/hash.
+
+**Estado de gates:** MCP-OCP-02 abierto; P004 pendiente; EP-TASK-003 PARTIAL_FAIL; EP-TASK-005 pendiente; candidato exacto y conteo final pendientes; IPZ nativa NO VERIFICADA. FOL1 continúa `PREPARADO_PENDIENTE_ACTIVACION_IPZ` y no bloquea P004. `MCP-NORMATIVO=DESACTIVADO`.
+
+**Responsabilidad:** Gobernanza prepara IPZ y acepta el E2E; MCP-OCP define la herramienta y entrega el paquete; EP opera el host y la instalación. GOV-TASK-015 centraliza el orden.
