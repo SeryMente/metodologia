@@ -87,3 +87,11 @@ El piloto suma dos negativos de asociación humano/máquina: marcador P004 ausen
 **Comprobación del watcher:** el supuesto bloqueo por creación tardía de `monitor/` queda descartado bajo el ciclo aprobado. `PANEL-OBSERVABILIDAD.md` exige que EP escriba `monitor/session.json` antes de abrir el panel, por lo que el subdirectorio ya existe cuando se ejecuta `MainWindow.StartWatching()`; el watcher actual puede conectarse en ese orden. No se requiere modificar esa secuencia.
 
 Este hallazgo de readiness procede de revisión estática, no de build/ejecución. No se modifica el contrato EP ni se permite que MCP escriba `session.json`. No se declara build, prueba ni aceptación.
+
+
+### Reintento adicional tras recuperación publicada de GitHub · 2026-11-10
+
+- Fuente de contexto: página oficial [GitHub Status](https://kctbh9vrtdwd.statuspage.io/), incidente “Incident with Git Operations and Pull Requests”. GitHub informó “Actions is operating normally” a las 17:28 UTC y declaró resuelto el incidente a las 17:55 UTC; la página consultada posteriormente muestra Actions y Pull Requests operativos.
+- Tras esa recuperación publicada se reintentó una vez más el job del piloto. GitHub aceptó la operación, pero el nuevo job `130063978631` terminó en FAILURE con `steps=[]`, `logs_url=null` y cero artefactos. La descarga de logs devolvió `BlobNotFound`.
+- El reintento posterior a la recuperación no produjo evidencia de inicio del runner, setup-dotnet, build, tests, WPF o smoke. La coincidencia temporal con el incidente anterior no basta para asignarle la causa; causa raíz NO VERIFICADA.
+- Se cierra el ciclo de reintentos ciegos. Siguiente validación requiere un job que exponga pasos/logs/artefactos o ejecución en runner .NET 10.0.403 autorizado. No declarar PASS.
