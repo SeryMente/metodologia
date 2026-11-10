@@ -6,7 +6,7 @@
 
 - `src/OcpMcp.Monitoring/`: modelos versionados, lector defensivo read-only y escritor best-effort.
 - `src/OcpMcp.Panel/`: aplicación Windows WPF/C# de una sola pantalla.
-- `tests/OcpMcp.Monitoring.Tests/`: 21 escenarios sintéticos de reader/writer/evaluator.
+- `tests/OcpMcp.Monitoring.Tests/`: 23 escenarios sintéticos de reader/writer/evaluator.
 - `src/OcpMcp/`: integración opcional del writer con eventos de proceso, protocolo y herramientas.
 - `tests/OcpMcp.Pilot.Tests/`: 16 escenarios del piloto P004, incluyendo telemetría de éxito/fallo.
 
@@ -61,7 +61,7 @@ El script CI ejecuta además smoke real STDIO y guarda diagnóstico. Un job de G
 
 El panel no calcula readiness solo con `state.json`. `MonitorReadinessEvaluator` combina `session.json` (EP) y el snapshot del servidor, más la verificación independiente del proceso:
 
-1. Sesión `ACTIVE`, schema 1 y atestación con timestamps no futuros.
+1. Sesión `ACTIVE`, schema 1 y atestación con timestamps no futuros y `protectionCheckedAtUtc ≥ sessionStartedAtUtc`; snapshot del servidor sin fecha futura.
 2. `protectionState` exactamente `Protection On` (comparación case-insensitive); `Protection Off`, `UNKNOWN` o cualquier valor ausente/no permitido bloquean.
 3. Proceso MCP `RUNNING`, con PID y hora de inicio cotejados contra el proceso real.
 4. Protocolo `INITIALIZED`.
@@ -72,4 +72,7 @@ El panel no calcula readiness solo con `state.json`. `MonitorReadinessEvaluator`
 
 El evaluador no consulta BitLocker, ACL ni el host. Solo interpreta la atestación que EP publica y coteja. Si EP no puede probar `Protection On`, el panel permanece `BLOQUEADO`; no convierte ausencia de datos en PASS.
 
-**Suite:** 21 escenarios sintéticos escritos / 0 ejecutados. Incluye sesión/proyección inválida, eventos corruptos/oversized, escritura del snapshot y pruebas del gate compuesto (Protection Off/UNKNOWN, Protection On, proceso, protocolo, fuentes, operador, root y timestamp futuro).
+**Suite:** 23 escenarios sintéticos escritos / 0 ejecutados. Incluye sesión/proyección inválida, eventos corruptos/oversized, escritura del snapshot y pruebas del gate compuesto (Protection Off/UNKNOWN, Protection On, proceso, protocolo, fuentes, operador, root y timestamp futuro).
+
+
+La suite incluye dos negativos temporales adicionales: verificación Protection On heredada de una sesión previa y snapshot del servidor futuro. Total monitor/readiness: 23 pruebas sintéticas escritas / 0 ejecutadas.
