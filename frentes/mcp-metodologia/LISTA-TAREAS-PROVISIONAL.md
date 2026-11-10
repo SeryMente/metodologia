@@ -1,4 +1,4 @@
-<!-- LIST_VERSION=0.22; LIST_STATUS=PROVISIONAL; NOT_A_CANONICAL_OBJECT=true -->
+<!-- LIST_VERSION=0.23; LIST_STATUS=PROVISIONAL; NOT_A_CANONICAL_OBJECT=true -->
 # Lista provisional de tareas · MCP-OCP
 
 > **ESTADO: PROVISIONAL · NO ES UN OCP NI UN CONTROL ADICIONAL.** Esta lista es una vista auxiliar enlazada desde el único núcleo MCP-OCP. El estado vivo y las decisiones de alcance permanecen en `MCP-METODOLOGIA.md`; la titularidad permanece exclusivamente en `CONTROL-RESPONSABILIDAD.json`. Las tareas y dependencias de otros frentes se enlazan sin apropiarse de sus objetos, controles o permisos.
@@ -6,13 +6,13 @@
 - **Frente:** MCP-OCP.
 - **Repositorio propietario:** `SeryMente/metodologia`.
 - **Ruta OCP:** `frentes/mcp-metodologia/`.
-- **Versión de la lista:** 0.22 (provisional; coordinación del Sprint SINK-P004 y producto MCP-OCP 1.0.0).
+- **Versión de la lista:** 0.23 (provisional; coordinación del Sprint SINK-P004 y producto MCP-OCP 1.0.0).
 - **Última actualización:** 2026-11-10.
 - **Gobierno leído:** Samantha v388 · NX-388m; Metacanon 1.29; GOW 2.18; DUG commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`; blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`. ART-027 rebaselined para Sink local STDIO/RDC; §ARR y P037 revisados; CNP P001/P004/P005/P038/P043 considerado.
-- **Núcleo enlazado:** [MCP-OCP · objeto canónico](MCP-METODOLOGIA.md), v0.1.40; esta lista v0.22 es su backlog auxiliar vigente.
+- **Núcleo enlazado:** [MCP-OCP · objeto canónico](MCP-METODOLOGIA.md), v0.1.42; esta lista v0.23 es su backlog auxiliar vigente.
 - **Control:** [CONTROL-RESPONSABILIDAD.json](CONTROL-RESPONSABILIDAD.json). Las generaciones y sesiones son metadatos de auditoría y no bloquean trabajo autorizado.
 - **MCP-NORMATIVO:** DESACTIVADO.
-- **Producto vs. documento:** MCP-OCP-v0.1.41 es la versión documental vigente; la versión de software objetivo es 1.0.0. La candidata ejecutable 0.1.0 y su recibo histórico no constituyen una versión actualizada ni aceptada del producto.
+- **Producto vs. documento:** MCP-OCP-v0.1.42 es la versión documental vigente; la versión de software objetivo es 1.0.0. La candidata ejecutable 0.1.0 y su recibo histórico no constituyen una versión actualizada ni aceptada del producto.
 - **Principio de custodia:** no guardar claves, access/refresh tokens, datos privados de usuario, contenido sensible de repositorios ni secretos en esta lista, artefactos, manifests o logs. Utilizar fixtures sintéticos y evidencia minimizada.
 
 ## Decisión de alcance operativa vigente
@@ -43,7 +43,7 @@ La tabla sustituye los PASS/estados de recibos históricos para la implementaci�
 | 9 | MCP-OCP-07 | P1 | Paquete reproducible 1.0.0 | PENDIENTE_PAQUETE_ACTUAL | ZIP final servidor+panel, configuración, manifest/SHA y read-back. |
 | 10 | MCP-OCP-12 | P1 | Bootstrap local en Fila 4 | BLOQUEADO_GATES_EP | Piloto/instalación dentro de checkout; datos externos protegidos; REGISTER interactivo. |
 | 11 | MCP-OCP-08 | P1 | Handoff y aceptación EP | PENDIENTE_EP_TASK_003_005 | Verificación de ruta, root, panel EP ACTIVE, hashes, cierre y rollback. |
-| 12 | MCP-OCP-14 | P0 · H2/H3 | Contrato de persistencia rápida: journal, snapshots cifrados y workspace completo | CONTRATO BASE PROPUESTO · SIN RUNTIME/IO | Persistencia mínima desde el inicio; B2 único backend inicial; manifest/SHA, checkpoint acotado, download y restore del workspace completo. |
+| 12 | MCP-OCP-14 | P0 · H2/H3 | Contrato de persistencia rápida: journal, snapshots cifrados y workspace completo | PROPUESTO · P14-01_SCHEMA_FIXTURES_PASS_20_20 · SIN_RUNTIME/IO | Cuatro schemas Draft 2020-12, 20/20 fixtures sintéticos PASS; canonicalización, runtime/IO, restore y ratificación pendientes. |
 | 13 | MCP-OCP-15 | P1 · H4 | Identidad y telemetría integral de sesión/dispositivo/ubicación/ciclo | CONFIGURADA · SCHEMA/IMPLEMENTACIÓN PENDIENTES | UUIDv7 + etiquetas secuenciales, eventos correlacionados, IP/GPS disponibles, tiempos monotónicos, contenido conversacional cifrado y retención prevista indefinida. |
 | 14 | MCP-OCP-16 | P1 · H7 | Integración de bóveda con autenticación RDC y credenciales just-in-time | DIFERIDA · NO IMPLEMENTAR AHORA | RDC autentica al iniciar; una sesión activa por defecto y segunda excepcional; canal seguro auditado antes de implementar. |
 | 15 | MCP-OCP-17 | P2 · POST-1.0.0 | Evaluación de medio/proveedor alternativo de persistencia | DIFERIDA · NO PROVISIONAR AHORA | Diseñar fallback adicional sin sustituir B2 ni bloquear release; solo evaluación después de estabilidad B2. |
@@ -165,7 +165,7 @@ Una vez configuradas y aceptadas las tareas del frente MCP-Jules, se prepara una
 **Cierre:** build Windows x64; launch/close real desde EP ACTIVE; estados diferenciados de proceso/protocolo/fuentes/operador/root; actividad con ID, resultado y duración sin contenido; caída del servidor y cierre de EP probados; schema/ACL resistentes; manifest/SHA incluido en el ZIP 1.0.0 y read-back de extracción.
 
 ### MCP-OCP-14 — Persistencia mínima, snapshots cifrados y workspace completo por instancia
-**Estado:** CONTRATO_BASE_0.1_PROPUESTO · NO_RATIFICADO · SCHEMAS_JSON_PARSEABLE · SIN_RUNTIME/IO.
+**Estado:** CONTRATO_BASE_0.1_PROPUESTO · NO_RATIFICADO · P14-01_SCHEMA_FIXTURES_PASS_20_20 · SIN_RUNTIME/IO.
 **Artefacto:** [MCP-OCP-14-CONTRATO.md](persistencia/MCP-OCP-14-CONTRATO.md).
 
 **Prioridad:** P0/H2–H3 · **Responsable:** MCP-OCP; ejecución B2 y host bajo EP-TASK-002/003/007.
@@ -478,3 +478,15 @@ Se publicaron el contrato v0.1 y cuatro schemas sintéticos para envelope, manif
 - MCP-OCP-05: paquete candidato persistido en entregas/piloto-sink-p004/ del branch PR #27. ZIP SHA-256 DE556FD547ACF2AB3946DF5AC2395A3993CB459B5E48F8E745A661A113A90783; manifest SHA-256 85F70366144FD2109D9688F2DDB6E7819FF955B8F05697C2FC6966E04F0044B1. Requiere Microsoft.NETCore.App 10.0.x x64. No se transfirió/instaló en EP.
 - Próximo gate: EP-TASK-003 PASS → EP-TASK-005 recibe y decide instalación; GOV-TASK-003 realiza aceptación IPZ E2E. No declarar el producto aceptado.
 - Fuente de detalle: MCP-METODOLOGIA.md §30.2–§30.5. Informes y blobs de cada artefacto se verificaron por read-back; el ZIP remoto se identifica por Git blob, pero la lectura de vuelta binaria quedó NO_VERIFICADA.
+
+---
+
+## Resultado parcial MCP-OCP-14 · validación de schemas · 2026-11-10
+
+- P14-01: 20/20 fixtures sintéticos PASS con PowerShell Test-Json 7.4.22, schemas Draft 2020-12.
+- Cobertura: envelope, snapshot FULL/INCREMENTAL, reglas de parent, path traversal, journal/event hash/unique refs, receipt emergency/backend/budget.
+- Script versionado: persistencia/tests/Validate-MCP-OCP-14-Schemas.ps1, blob dcdb2074bad9815194bbb5c60e8711faff50f968.
+- Evidencia: persistencia/evidence/MCP-OCP-14-schema-validation-20261110.json, blob 9d68878b817fae996b519da3eb4780e42ace021e.
+- Estado global sigue PROPOSED / NOT ACCEPTED. No runtime, DB, cifrado, claves, B2, upload/download ni restore.
+- EP informa B2 upload/read-back SHA PASS de cuatro objetos, restore aislado NOT_RUN; GOV-TASK-015 mantiene H1/instalación en pausa hasta cerrar restore. MCP-OCP-14 continúa únicamente en fixtures/diseño no operativo.
+- Informe individual completo: MCP-METODOLOGIA.md §31.
