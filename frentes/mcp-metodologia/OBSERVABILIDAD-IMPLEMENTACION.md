@@ -8,7 +8,7 @@
 - `src/OcpMcp.Panel/`: aplicación Windows WPF/C# de una sola pantalla.
 - `tests/OcpMcp.Monitoring.Tests/`: 23 escenarios sintéticos de reader/writer/evaluator.
 - `src/OcpMcp/`: integración opcional del writer con eventos de proceso, protocolo y herramientas.
-- `tests/OcpMcp.Pilot.Tests/`: 16 escenarios del piloto P004, incluyendo telemetría de éxito/fallo.
+- `tests/OcpMcp.Pilot.Tests/`: 18 escenarios del piloto P004, incluyendo telemetría de éxito/fallo.
 
 ## Propiedad de los datos y límites
 
@@ -32,8 +32,8 @@ El panel coalesce eventos del FileSystemWatcher mediante Dispatcher; no ejecuta 
 
 ## Pruebas y build
 
-- P004: 16 casos escritos / 0 ejecutados.
-- Monitor: 11 casos escritos / 0 ejecutados.
+- P004: 18 casos escritos / 0 ejecutados.
+- Monitor/readiness: 23 casos escritos / 0 ejecutados.
 - WPF: build configurado con .NET SDK 10.0.403 y `EnableWindowsTargeting`; sin build observado.
 - Smoke STDIO: script actualizado para validar el ejecutable P004 después de build/tests; no ejecutado de manera verificable.
 - Publicación WPF prevista: `win-x64`, self-contained, perfil `src/OcpMcp.Panel/Properties/PublishProfiles/win-x64.pubxml`.
