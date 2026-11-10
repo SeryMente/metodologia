@@ -1,13 +1,13 @@
 # GOV-TASK-015 · Sprint integrado Sink local vía RDC · Gobernanza / MCP-OCP / EP
 
 **Estado:** `PLANIFICADO · NO_INICIADO`
-**Objetivo de release:** entregar MCP-OCP software **1.0.0**, instalado en la carpeta local de Metodología descrita al final de este plan. Las versiones `MCP-OCP-v0.1.26` y backlog `0.7` son versiones documentales, no la versión del producto.
+**Objetivo de release:** entregar MCP-OCP software **1.0.0**, instalado en la carpeta local de Metodología descrita al final de este plan. Las versiones `MCP-OCP-v0.1.27` y backlog `0.8` son versiones documentales, no la versión del producto.
 **Tipo:** coordinación y aceptación de un único sprint; no crea un frente nuevo ni controles paralelos.
 **Responsabilidad:** frente Gobernanza. Las tareas técnicas conservan sus OCP y fuentes.
 **Fuente normativa:** Samantha v386 · NX-386m · Metacanon 1.29 · GOW 2.18.
 **DUG:** leído desde `main` HEAD `82843bca9493a522405d840393c229d2af363342`; archivo blob `22dca684830a36dff019b47811d9b800cc9bea0a`.
-**MCP-OCP:** núcleo v0.1.26 · blob `2177b6b81028d8ac5188379e2eb4fa36aea06b41`; backlog v0.7 · blob `1eed6511c238b55b4e13899efab7e55981addf8d`.
-**EP:** OEP v0.3.54 · blob `cdd738aa025c9acc09cbbe107bfcadfa218d463f`.
+**MCP-OCP:** núcleo v0.1.27 · blob `af2289630fbe5bc261bc8d51825c5b687bf30e38`; backlog v0.8 · blob `5f86a0fbb7952999dddcdb599c2e3606e00ab652`.
+**EP:** OEP v0.3.55 · blob `fa865ceae8bcc6542b013a78c790ae2a0444ba41`.
 **Autorización:** el operador autorizó directamente Sink local por stdio y amplió el producto para incluir el panel local de observabilidad MCP-OCP-13. No se requiere aprobación de titularidad anterior, generación ni folio; dichos campos son auditoría, no compuertas.
 **Destino EP designado:** terminal Fila 4, correspondiente a la única sesión RDC disponible indicada por el operador. Últimos datos técnicos conocidos (no lectura viva): Device ID `d0bbb2a3-d7b4-45e1-8870-652c2c3844fc`, sesión `CENTRAL\\fila4`, SessionId 4. Identidad/usuario/SID/permisos y ubicación física requieren preflight vivo. No inferir CECEQ/LOC-OTHER; el dead-man se determina después de verificar la ubicación.
 **Alcance:** contrato, implementación Sink local, panel de observabilidad, pruebas, paquete, handoff, bootstrap en el perfil designado y aceptación E2E. Esta ficha es planificación: no acredita código, build, instalación ni prueba ejecutados.
@@ -87,7 +87,7 @@ EP-TASK-002 (Backblaze), EP-TASK-001 (NCL) y PPR cross-host no forman parte del 
 | 8 · Piloto/bootstrap y release | EP-TASK-005 + MCP-OCP-12: piloto P004 y después instalación final en checkout Fila 4. | No. | Gates EP, consentimiento REGISTER, fuente/importación, STDIO, panel y SHA instalados. |
 | 9 · Aceptación | GOV-TASK-003 y GOV-TASK-013. | No. | E2E completo servidor+panel y evidencia por frente; FOL1 separado. |
 
-Se usará un único harness del servidor y fixtures del panel: primero corte vertical P004, después 43 IDs/negativos. El panel avanza en paralelo una vez congelado el schema. Dos niveles de pruebas, un build final, un ZIP servidor+panel, un manifest y recibos por frente. Preparación EP corre en paralelo; instalación/autoapertura solo después del gate LOC-OTHER. Frecuencia Sink y latencia RDC no se mezclan.
+Se usará un único harness del servidor y fixtures del panel: primero corte vertical P004, después 43 IDs/negativos. El panel avanza en paralelo una vez congelado el schema. Dos niveles de pruebas, un build final, un ZIP servidor+panel, un manifest y recibos por frente. Preparación EP corre en paralelo; instalación/autoapertura solo después de los gates EP aplicables a la ubicación verificada. Frecuencia Sink y latencia RDC no se mezclan.
 
 ## 4. Bloqueos y mitigación
 
@@ -95,10 +95,10 @@ Se usará un único harness del servidor y fixtures del panel: primero corte ver
 |---|---|---|
 | Código productivo no está en `main` | Hay código C# en ramas remotas; el ZIP 0.1.0 usa pins v377/core v0.1.20 y no está en el repo. | Reconciliar y portar fuente; no recuperar binario ni depender de una terminal histórica. |
 | Sink no implementado | El catálogo actual identifica 43 IDs/MDP; el resolver de texto individual no está desplegado en main. | Implementar Sink explícito; no inferir applicability/dependencies faltantes. |
-| Root de datos fuera del perímetro cifrado | El código candidato usa `%LOCALAPPDATA%\\SeryMente\\OCP MCP` por defecto. W: fue reportado cifrado en un entorno anterior; no está verificado para PC 7. | Validar/crear el root protegido en PC 7 o demostrar cifrado completo de su volumen de perfil; no heredar el estado de W: anterior. Sin esto no instalar persistente. |
-| Workspace no migrado | Última evidencia: 195 archivos/11 directorios en staging; no hay manifiesto de destino ni segundo read-back. El cifrado de W: se observó en un entorno anterior y no acredita PC 7. | EP-TASK-003; preflight de origen/destino, preservar el origen hasta read-back íntegro y validar el perímetro del destino. |
+| Root de datos fuera del perímetro cifrado | El código candidato usa `%LOCALAPPDATA%\\SeryMente\\OCP MCP` por defecto. W: y los volúmenes de PC-14/PC 7 son historia de otros perfiles; no prueban Fila 4. | Validar/crear root protegido en Fila 4 mediante preflight vivo; no heredar estado de otro host. Sin esto no importar fuentes ni instalar runtime. |
+| Workspace no migrado | Última evidencia: 195 archivos/11 directorios en staging; no hay manifiesto de destino ni segundo read-back. Los estados de W:/PC-14/PC 7 no acreditan la protección de Fila 4. | EP-TASK-003; preflight de origen/destino, preservar el origen hasta read-back íntegro y validar el perímetro del destino. |
 | Capacidad RDC agotada | Última evidencia reportó `remote_calls_left_pct=0`; puede estar desactualizada. | Comprobar disponibilidad una sola vez al comenzar la fase EP; si sigue en 0, pausar solo operaciones remotas y continuar MCP/Gobernanza por GitHub. No repetir sondeos ni eludir cuota. |
-| Destino designado; preflight pendiente | El operador designó perfil Windows `PC 7`, con el equipo RDC asociado, y ubicación `LOC-OTHER`; aún no existe lectura en vivo de identidad/permisos. | No volver a pedir selección. Verificar usuario/SID y host al abrir la fase EP. Por LOC-OTHER, cerrar y probar dead-man antes de persistir runtime. |
+| Destino designado; preflight pendiente | El operador designó Fila 4; la identidad técnica y la ubicación física siguen pendientes de lectura en vivo. | No volver a pedir selección. Verificar usuario/SID y host al abrir la fase EP. Aplicar el dead-man solo si la ubicación confirmada está fuera de CECEQ; probarlo antes del runtime persistente. |
 | Transporte real ChatGPT→RDC→stdio | Hubo smoke JSON-RPC manual en root temporal; no demuestra bridge de uso final. | Corte vertical P004 por el mismo camino de uso antes de generalizar. |
 | Autenticación GitHub local | Conector GitHub de ChatGPT está autenticado; el token no se transfiere al perfil Windows. | Verificar `gh auth status` en el perfil final; si falta, login web interactivo local. |
 | Provisión del operador | El build histórico no creó trust root en perfil real. | `provision-operator` + `REGISTER <SID>` local, con operador presente; no automatizar ni registrar SID en Git. |
@@ -106,7 +106,7 @@ Se usará un único harness del servidor y fixtures del panel: primero corte ver
 
 ## 5. Insumos del operador
 
-**Destino designado por el operador:** perfil Windows `PC 7`, asociado al equipo RDC correspondiente; ubicación `LOC-OTHER`. Esta designación resuelve la selección, pero no sustituye el preflight técnico: al iniciar EP se verifican en vivo identidad de usuario/SID, equipo, rutas, permisos, cifrado y capacidad RDC. No pedir de nuevo la selección.
+**Destino designado por el operador:** terminal Fila 4, correspondiente a la única sesión RDC disponible indicada. La última referencia técnica es el Device ID `d0bbb2a3-d7b4-45e1-8870-652c2c3844fc`, perfil `CENTRAL\\fila4`, SessionId 4; no es lectura viva. La ubicación física queda pendiente de verificación. No volver a pedir selección; confirmar identidad/permisos/USERPROFILE y ubicación en el preflight.
 
 Acciones locales futuras, sin enviar secretos por chat:
 
@@ -137,7 +137,7 @@ No son insumos por ahora: contraseña, token, SID, RecoveryPassword, B2, OAuth J
 - **Panel MCP-OCP-13:** especificado y autorizado; NO IMPLEMENTADO.
 - **Código fuente candidato:** recuperable desde ramas remotas; requiere reconciliación con main y pins actuales.
 - **Build/paquete vigente:** NO GENERADO.
-- **Workspace/volumen previo:** la última evidencia de W: cifrado y RecoveryPassword custodiado pertenece al entorno donde se observó; no se presume aplicable a PC 7. Migración/validación en destino, manifiestos y segundo read-back pendientes.
+- **Workspace/volumen:** el estado histórico de W:/PC-14/PC 7 no acredita Fila 4. Checkout protegido, manifest y segundo read-back en Fila 4 pendientes.
 - **Instalación/Bootstrap EP:** NO INICIADOS.
 - **E2E:** NO EJECUTADA.
 - **IPZ nativa/FOL1:** pendientes; MCP-NORMATIVO sigue desactivado.
@@ -225,8 +225,8 @@ Identificar por separado funcionalidades implementadas y probadas, pruebas PASS/
 
 1. **Código candidato:** las ramas `integration/ocp-mcp-0.1.0-selective-20261101` y `build/ocp-mcp-mvp-0.1.0` están divergidas de main. En la comparación más reciente: integración, 3 commits por delante y 518 por detrás; build, 11 por delante y 837 por detrás. No fusionar ramas completas; portar selectivamente a una rama nueva basada en main.
 2. **Pins obsoletos:** cualquier referencia del plan/backlog a DUG v385, v377 o core v0.1.20 es histórica; usar el baseline vigente del encabezado de esta tarea.
-3. **PC 7 / LOC-OTHER:** C: aparece cifrado XTS-AES256 al 100 %, pero `ProtectionStatus=0 (Off)`; el estado no acredita protección activa del perfil. EP debe verificar volumen protegido efectivo y root de datos antes de instalación.
-4. **Herramientas locales:** el repositorio local de Metodología en el Escritorio de PC 7 no está materializado como checkout Git y `git` no está disponible en el perfil observado. No bloquear desarrollo remoto por GitHub; resolver clone/toolchain solo en la fase que lo requiera.
+3. **Fila 4:** la última observación histórica registró C: FullyEncrypted/100 %, `ProtectionStatus=Off`, `XtsAes128`; no acredita protección efectiva. EP debe revalidar en vivo y preparar el volumen de trabajo XTS-AES256/Protection On/100 % y root protegido.
+4. **Herramientas locales Fila 4:** Git y GitHub CLI se observaron instalados históricamente (2.45.2/2.52.0), pero autenticación y checkout completo no están verificados en la sesión actual. Resolver en el preflight; no bloquear desarrollo remoto por GitHub.
 5. **Presencia/consentimiento:** autenticación del perfil, SID y REGISTER son operaciones interactivas locales. No trasladar tokens ni pedir secretos por chat.
 
 ### Insumos del operador
