@@ -289,3 +289,8 @@ El panel MCP-OCP-13 baja a P1 de secuencia, pero permanece como entregable oblig
 - **Preflight EP publicado en main:** evidencia `EP-FILA4-PREFLIGHT-PARCIAL-20261110.json`, commit `84cc9ffc1a2aa27c622c7e5de147d7460f3b5ecd`, blob `8ebf0c2b54efc6d3fe597adfe0f9358e65e6acbe`; resultado `PREFLIGHT_PARTIAL_FAIL`. C: XTS-AES128/Protection Off/sin protectores; ubicación física UNCLASSIFIED; checkout Metodología parcial y sin `.git`. **EP-TASK-003 sigue en curso; MCP-OCP no modifica esa tarea ni el host.**
 - **EP-TASK-005:** pendiente; no importación, instalación, DB, DPAPI ni REGISTER.
 - **MCP-NORMATIVO:** DESACTIVADO. **FOL1:** no activado.
+
+
+### Actualización de main posterior a la base de ciclo02 · 2026-11-10
+
+Main avanzó desde `84cc9ffc1a2aa27c622c7e5de147d7460f3b5ecd` hasta `67b48bc041bee372c69389f0aa84ed1a6d19eff5` mediante cuatro commits exclusivos del frente EP (OEP, índice/tareas EP y evidencia de preflight). La comparación `84cc9ffc... → main` confirma que esos cuatro commits no modifican rutas MCP-OCP ni GOV-TASK-015. La rama ciclo02 conserva su base inicial verificada; comparación actual: 16 commits ahead / 4 behind, sin solapamiento de rutas. No se rebasea ni se importa contenido de EP a este frente.
