@@ -69,10 +69,10 @@ try
         runner.Throws<InvalidDataException>(() => new DugSourceReader(badRoot, badPin).ReadP004());
     });
 
-    runner.Test("unsupported modern request negotiates latest implemented handshake", async () =>
+    runner.Test("unsupported initialize version negotiates latest supported handshake", async () =>
     {
         var server = new McpServer(reader);
-        string input = Rpc("initialize", 1, new { protocolVersion = "2026-07-28", capabilities = new { }, clientInfo = new { name = "pilot-test", version = "1.0.0" } }) + "\n";
+        string input = Rpc("initialize", 1, new { protocolVersion = "2099-01-01", capabilities = new { }, clientInfo = new { name = "pilot-test", version = "1.0.0" } }) + "\n";
         using var output = new StringWriter();
         await server.RunAsync(new StringReader(input), output, CancellationToken.None);
         using JsonDocument response = JsonDocument.Parse(output.ToString());
