@@ -76,3 +76,6 @@ El evaluador no consulta BitLocker, ACL ni el host. Solo interpreta la atestaci�
 
 
 La suite incluye dos negativos temporales adicionales: verificación Protection On heredada de una sesión previa y snapshot del servidor futuro. Total monitor/readiness: 23 pruebas sintéticas escritas / 0 ejecutadas.
+
+
+El piloto suma dos negativos de asociación humano/máquina: marcador P004 ausente o duplicado y divergencia entre `content_markdown` y el texto normativo, aun repinneando el blob. Total: 18 tests P004 + 23 tests monitor, todos escritos y no ejecutados.
