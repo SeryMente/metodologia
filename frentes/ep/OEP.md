@@ -3365,3 +3365,16 @@ Secuencia después de aceptación expresa:
 `EP_TASK_002=BLOCKED_VAULT_SEALED` · `EP_TASK_003=PREFLIGHT_PARTIAL_FAIL` · `EP_TASK_004=SYNTHETIC_TESTS_PARTIAL_PASS_H10_PENDING` · `EP_TASK_005=BLOCKED_003_AND_MCP_PACKAGE` · `EP_TASK_006=P1_WAITING_P0_B2` · `EP_TASK_007=HOST_INVENTORY_PARTIAL_GUARDIAN_NOT_IMPLEMENTED`.
 
 No se modificó el workspace, VHDX, BitLocker, checkout, root de datos ni bóveda formal. No se implementó Guardian, lease, dead-man ni crypto-erasure. La única escritura local de evidencia fue el JSON read-only de EP-TASK-007 en run-logs; su read-back se verificó. Las demás escrituras de este ciclo son documentales en main.
+
+
+## 126. Informe individual obligatorio de resolución por tarea · 2026-11-10
+
+**Instrucción expresa del operador:** cada tarea EP, al quedar resuelta, debe dejar un informe individual, completo y verificable en su propio núcleo README. No sustituirlo por un estado resumido del OEP ni por un reporte conjunto de tareas.
+
+- Usar [la plantilla común obligatoria](../PLANTILLA-REPORTE-CIERRE-TAREA.md), con solución y secuencia ejecutada, cambios, criterios y pruebas con evidencia, read-back/SHA, bloqueantes, preocupaciones/riesgos, pendientes, rollback y aceptación.
+- Registrar también informes PARCIALES/BLOQUEADOS cuando exista un relevo material; no promover el estado a completada mientras falten criterios, pruebas ejecutadas, aceptación o read-back.
+- Una tarea por informe. Las dependencias entre tareas se enlazan, pero cada una conserva su resultado, bloqueantes y riesgos propios.
+- Después de verificar el README individual, actualizar el índice de tareas con el estado real y enlace al informe; actualizar el OEP/DTC si cambió el flujo interfrentes.
+- Comunicar al operador el cierre de cada tarea con enlace directo y síntesis de cómo se resolvió, qué evidencia lo acredita, qué bloqueantes/preocupaciones subsisten y qué queda diferido. No incluir secretos o datos sensibles.
+
+La regla aplica a EP-TASK-001–007 y a toda tarea que se incorpore posteriormente. No modifica titularidad, generación, permisos ni controles del frente.
