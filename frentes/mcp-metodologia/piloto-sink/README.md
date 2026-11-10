@@ -24,7 +24,7 @@ dotnet build .\tests\OcpMcp.Pilot.Tests\OcpMcp.Pilot.Tests.csproj -c Release
 dotnet run --project .\tests\OcpMcp.Pilot.Tests\OcpMcp.Pilot.Tests.csproj -c Release
 ```
 
-Los comandos no son evidencia hasta que existan logs asociados al commit. El workflow incluye 16 casos P004, 11 casos de monitor, build WPF y smoke STDIO; todo permanece pendiente de ejecución verificable.
+Los comandos no son evidencia hasta que existan logs asociados al commit. El workflow incluye 16 casos P004, 21 casos de monitor/readiness, build WPF y smoke STDIO; todo permanece pendiente de ejecución verificable.
 
 ## Límites
 Sin DB, importación privada, secretos, operador, listener, instalación ni aceptación IPZ E2E. El panel WPF es una implementación candidata separada, no compilada ni incluida en paquete. Fila 4 depende de EP-TASK-003/005.
@@ -32,4 +32,4 @@ Sin DB, importación privada, secretos, operador, listener, instalación ni acep
 
 ## Panel/monitor candidatos
 
-Los proyectos WPF y Monitoring existen como código candidato; el panel sigue fuera del alcance del piloto P004 y es obligatorio para 1.0.0. Hay 21 pruebas sintéticas de monitor/readiness escritas, 0 ejecutadas. El panel no indicará `LISTO` sin atestación EP `Protection On`, proceso/protocolo verificados, fuentes íntegras/vigentes, operador provisionado y root disponible. No se ha probado build, UI Windows ni integración EP.
+Los proyectos WPF y Monitoring existen como código candidato; el panel sigue fuera del alcance del piloto P004 y es obligatorio para 1.0.0. Hay 21 pruebas sintéticas de monitor/readiness escritas, 0 ejecutadas. El evaluator exige `sessionState=ACTIVE` y `protectionState=Protection On`; `Protection Off` y `UNKNOWN` no pueden producir `LISTO`. El panel no indicará `LISTO` sin atestación EP `Protection On`, proceso/protocolo verificados, fuentes íntegras/vigentes, operador provisionado y root disponible. No se ha probado build, UI Windows ni integración EP.
