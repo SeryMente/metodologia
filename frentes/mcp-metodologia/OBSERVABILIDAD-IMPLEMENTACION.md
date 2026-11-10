@@ -32,7 +32,7 @@ El panel coalesce eventos del FileSystemWatcher mediante Dispatcher; no ejecuta 
 
 ## Pruebas y build
 
-- P004: 15 casos escritos / 0 ejecutados.
+- P004: 16 casos escritos / 0 ejecutados.
 - Monitor: 11 casos escritos / 0 ejecutados.
 - WPF: build configurado con .NET SDK 10.0.403 y `EnableWindowsTargeting`; sin build observado.
 - Smoke STDIO: script actualizado para validar el ejecutable P004 después de build/tests; no ejecutado de manera verificable.
