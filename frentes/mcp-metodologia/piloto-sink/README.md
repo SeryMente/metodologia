@@ -76,3 +76,10 @@ H2 aporta una propuesta MCP-OCP-14 v0.1 y cuatro JSON Schemas parseables. No hay
 Rama HEAD observado `d50ae21ee96de04d2d99b4eaf8038f2620c249f8`; main `8f999198f1d8cde71361c884c9a13b745f442b49`; 22 ahead / 0 behind; 29 rutas; PR #27 abierta en borrador y sin merge. Core candidato v0.1.37, backlog LIST v0.18.
 
 H1: 41 tests escritos/0 ejecutados con evidencia; build y smoke pendientes. El job piloto más reciente concluyó sin runner asignado, pasos, logs ni artefactos; causa raíz no verificada. H2: contrato MCP-OCP-14 propuesto, sin runtime ni escritura.
+
+
+## Estado vivo · 2026-11-10
+
+Main `8f999198f1d8cde71361c884c9a13b745f442b49`; rama HEAD `4ac337f0b1e507497b8ab6c6c64d71d2e8001e13`; 26 ahead / 0 behind; 29 rutas. PR #27 OPEN/DRAFT/NOT MERGED. Core v0.1.38; backlog LIST v0.19.
+
+41 pruebas escritas, 0 ejecutadas con evidencia; build y smoke no verificados. CI reciente no asigna runner y no entrega pasos/logs/artefactos. H2 MCP-OCP-14 es propuesta documental; no hay runtime ni IO.
