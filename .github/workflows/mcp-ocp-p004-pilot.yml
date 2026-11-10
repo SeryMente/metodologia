@@ -8,6 +8,13 @@ on:
       - "frentes/mcp-metodologia/**"
       - ".github/workflows/mcp-ocp-p004-pilot.yml"
 
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "frentes/mcp-metodologia/**"
+      - ".github/workflows/mcp-ocp-p004-pilot.yml"
+
 permissions:
   contents: read
 
