@@ -4,7 +4,7 @@
 
 - **Nombre canónico vigente:** MCP-OCP (anteriormente MCP-METODOLOGIA).
 - **Identidad canónica vigente:** MCP-OCP. **Identidad histórica:** MCP-METODOLOGIA.
-- **Versión/sello:** MCP-OCP-v0.1.30 · OCP MCP 1.0; H1 SINK:P004, H2 persistencia mínima/bóveda y H3 workspace completo definidos; Sink local por stdio autorizado; contrato DUG v388/NX-388m; piloto P004 pendiente; bootstrap del perfil persistente pendiente. Las generaciones y folios de sesiones anteriores son metadatos de auditoría.
+- **Versión/sello:** MCP-OCP-v0.1.33 · OCP MCP 1.0; H1 SINK:P004, H2 persistencia mínima/bóveda y H3 workspace completo definidos; Sink local por stdio autorizado; contrato DUG v388/NX-388m; piloto P004 pendiente; bootstrap del perfil persistente pendiente. Las generaciones y folios de sesiones anteriores son metadatos de auditoría.
 - **Repositorio propietario:** SeryMente/metodologia, rama main.
 - **OCP canónico:** frentes/mcp-metodologia/.
 - **Núcleo operativo único:** este archivo, MCP-METODOLOGIA.md.
@@ -737,3 +737,51 @@ EP-TASK-007 es independiente del gate físico de Fila 4 en EP-TASK-003. El guard
 - Controles EP gen3, MCP-OCP gen5 y Gobernanza gen17 permanecen sin cambios. FOL1 permanece PREPARADO_NO_ACTIVO; MCP-NORMATIVO DESACTIVADO.
 
 **Estado de documentación:** núcleo v0.1.30 y backlog v0.11 leídos y configurados. No se declara implementado código MCP-OCP-14/15/16/17, B2 upload/restore, captura GPS/IP, guardián, crypto-erasure, instalación, E2E ni aceptación 1.0.0.
+
+
+
+## 22. Ejecución H1 · SINK-P004 · rebaseline y evidencia · 2026-11-10
+
+### 22.1 Base y rama reconciliadas
+
+- DUG canónico: Samantha v388/NX-388m; commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`; blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`.
+- `main` actual al reconciliar: `646608896a499f78640d6f17ec1e87876089e16f`.
+- Rama: `feat/mcp-ocp-sink-p004-main-a34c1c5b`. Base histórica de creación: `a34c1c5b43edbcbaf015056f4dc892f5def29eea`.
+- Reconciliación Git: commit `dfae6b0fe60438753fa7abe0b9febd6f9088783c`; padres `ebc80ae464a24ea99d634eb2d928fcc50a43acfc` (rama candidata) y `646608896a499f78640d6f17ec1e87876089e16f` (main). Árbol `427e72dd30c9c688c78292a2c60d038c07cad0b1`.
+- Comparación después de reconciliar: 7 commits ahead / 0 behind; merge-base coincide con el main actual. Diff de 22 rutas: workflow, configuración, lector/servidor, biblioteca de monitorización, 41 pruebas, manifiesto/pin, harness y transcripción. Los cambios ajenos de EP/Gobernanza de main permanecen como segundo padre y no se reescribieron.
+- PR #27: OPEN / DRAFT / NOT MERGED. No se efectuó merge a main.
+
+### 22.2 Implementación candidata y límites
+
+- SDK fijado: .NET 10.0.403; TFM `net10.0`; piloto framework-dependent, RID no fijado en este corte; sin paquetes NuGet externos declarados.
+- Servidor MCP STDIO JSON-RPC; herramienta `sink_principle` limitada a P004; lector fail-closed contra el pin DUG v388, GOW:ARR, autoridad, catálogo 43, ancla humana y contenido exacto. No hay listener HTTP/TCP ni red.
+- Suite incluida: 18 pruebas P004 + 23 de monitorización/readiness = 41 escritas. No se ejecutó ninguna con evidencia de este candidato.
+- No se incluye panel WPF en el corte H1. Sigue siendo obligatorio para release 1.0.0/H8.
+- Importación de fuentes privadas, persistencia B2, DB operativa, provisión de operador, READY real, instalación Fila 4, IPZ nativa y aceptación E2E siguen fuera de la evidencia de esta rama.
+
+### 22.3 Diagnóstico CI más reciente
+
+- Piloto: run `42903756431`, job `130136260875`, HEAD `dfae6b0fe60438753fa7abe0b9febd6f9088783c`.
+- Validador canónico push: run `42903746528`, job `130136227157`.
+- Ambos jobs terminaron FAILURE en aproximadamente 1–2 segundos; API informa `runner_id=0`, `runner_name=""`, `steps=[]`. Descarga de logs: `BlobNotFound`; artifacts: cero.
+- No hay evidencia de asignación de runner ni de inicio de `setup-dotnet`, restore, build, pruebas o smoke. El contenedor local consultado tampoco dispone de `dotnet`.
+- **Causa raíz del fallo de asignación/ejecución del runner: NO VERIFICADA.** No se clasifica como defecto de código ni como PASS. No se realiza reintento ciego.
+
+### 22.4 Estado de tareas H1 y gates externos
+
+- `MCP-OCP-02=BRANCH_RECONCILED_TO_CURRENT_MAIN; PORTABILITY_PUBLISHED; BUILD_PENDING`.
+- `MCP-OCP-05=P004_CANDIDATE_WRITTEN; BUILD_AND_RUNTIME_RESPONSE_PENDING`.
+- `MCP-OCP-03=41_TESTS_WRITTEN; 0_EXECUTED_WITH_EVIDENCE`.
+- `MCP-OCP-04=HARNESS_AND_WORKFLOW_PUBLISHED; SMOKE_NOT_VERIFIED; IPZ_E2E_PENDING`.
+- `EP-TASK-003=PARTIAL_FAIL`; `EP-TASK-005=PENDING`, según la lista vigente de EP en main. EP conserva preflight, host, root protegido, importación e instalación.
+- Gobernanza conserva la candidata IPZ y la aceptación GOV-TASK-003/007. Una llamada JSON-RPC de consola no acredita E2E IPZ.
+- H2–H9 de OCP MCP 1.0 permanecen según §21 y GOV-TASK-015. MCP-OCP-14/15 están configuradas; no se declara implementación. MCP-OCP-16 sigue diferida y MCP-OCP-17 post-release.
+- Control MCP-OCP generación 5 no fue modificado. No se amplió su alcance a Vault, host EP, credenciales, B2 o almacenamiento operativo.
+
+**Siguiente acción H1:** conseguir un runner .NET 10.0.403 que asigne runner y entregue pasos/logs/artefactos; ejecutar build, las 41 pruebas y smoke STDIO/EOF. Corregir únicamente defectos reproducidos. Mantener EP/Gobernanza en sus compuertas.
+
+## 23. Continuidad conversacional · lectura literal preservada · 2026-11-10
+
+El último intercambio y la última salida visible anterior se preservan literalmente en [CONTINUIDAD-2026-11-10-ULTIMO-TRAMO.md](conversaciones/CONTINUIDAD-2026-11-10-ULTIMO-TRAMO.md), blob `1373127651be36afcf49dc1ae4fb623948165daf`. La frase histórica de que aún faltaba crear MCP-OCP-02 queda supersedida por §22: la rama ya fue creada y reconciliada con el main actual. Esta captura parcial no se presenta como export nativo de ChatGPT.
+
+**Estado del núcleo:** MCP-OCP-v0.1.33 en esta rama candidata; el núcleo canónico de main permanece sin cambios hasta la revisión/aceptación de la PR. FOL1 continúa PREPARADO/NO ACTIVO; MCP-NORMATIVO permanece DESACTIVADO.
