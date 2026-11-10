@@ -407,3 +407,33 @@ El operador ya había reportado presencia física frente a Fila 4; CECEQ no fue 
 EP-TASK-003 continúa `en_curso` y sigue siendo P0 para el tramo local. La pausa de almacenamiento no bloquea MCP-OCP-02 en remoto, MCP-OCP-03 con fixtures sintéticos, ni la preparación del harness MCP-OCP-04. Sí bloquea el checkout local protegido, importación del DUG/fuentes privadas, DB real, runtime persistente e instalación P004. EP-TASK-005 permanece `pendiente` hasta EP-TASK-003 PASS y recepción de un paquete P004 verificable.
 
 La solución de almacenamiento se trata como decisión abierta, no como permiso adicional. No se modificaron el DUG, IPZ, los controles ni el volumen C:.
+
+
+---
+
+## Relevo de ejecución EP · Sprint SINK-P004 · 2026-11-10
+
+**Cambio de modo:** por instrucción directa del operador, la ejecución de esta tarea retorna al frente EP. La sesión centralizadora no realiza operaciones de host; conserva solo la coordinación de dependencias en GOV-TASK-015. El control de responsabilidad EP generación 3 no se modifica ni se presume una transferencia registral. EP debe acusar recibo al abrir su siguiente ciclo.
+
+### Estado heredado que debe readquirirse
+
+- `PREFLIGHT_FILA4=PARTIAL_FAIL`; ubicación física `UNCLASSIFIED`; el operador reportó presencia frente a Fila 4, pero CECEQ no quedó confirmado.
+- `C:` sigue con la última evidencia conocida de XTS-AES128, Protection Off y sin protectores; no satisface el gate del workspace.
+- VHDX de 30 GiB, GPT/NTFS, vacío, último acceso observado `W:`, BitLocker desactivado y sin protector. No hay copia ni manifiesto SHA-256 del workspace original.
+- `%USERPROFILE%\Desktop\SeryMente` se preservó; checkout Metodología sigue parcial y sin `.git`. No sobreescribirlo.
+- La propuesta de montar un volumen cifrado en el mismo path de trabajo continúa `PROPOSED_NOT_ACCEPTED`. La pausa sobre copiar/cifrar/mover/renombrar/desmontar/cambiar mountpoint sigue vigente.
+
+### Encargo EP — orden de ejecución
+
+1. Revalidar en solo lectura el estado vivo del VHDX, volúmenes, protectores, root original y checkout; no presuponer que el último `W:` sigue montado.
+2. Preparar y presentar al operador una recomendación concreta que preserve la ruta `%USERPROFILE%\Desktop\SeryMente`. Explicar que BitLocker cifra volúmenes, no carpetas; distinguir el VHDX montado como directorio y otras opciones. Esperar aceptación expresa antes de cambiar el almacenamiento.
+3. Tras aceptación: crear/confirmar volumen XTS-AES256, Protection On y 100 %; custodiar recovery en EP Vault con write/read-back; inventariar origen/destino, copiar preservando rutas, cotejar SHA-256 íntegro y retener staging/rollback hasta segundo read-back y aceptación. No tocar `C:` ni reutilizar protectores de otro host.
+4. Verificar la ubicación física. Implementar y probar dead-man solo si se confirma fuera de CECEQ, con el contrato limitado ya aprobado.
+5. Reconciliar la materialización parcial, obtener checkout íntegro de `SeryMente/metodologia/main` sin sobrescritura, verificar origin/branch/HEAD/status/árbol/ACL y manifiesto; crear el root de datos MCP-OCP fuera del checkout y dentro del almacenamiento protegido.
+6. Emitir `EP-TASK-003=PASS` solo con evidencia recuperable y read-back de todos los requisitos anteriores. No convertir el cierre documental en PASS de host.
+
+### Dependencias del Sprint SINK-P004
+
+EP-TASK-003 bloquea únicamente checkout/root protegido, importación de DUG/fuentes privadas, DB real, runtime persistente e instalación local. No bloquea MCP-OCP-02/05 con fixtures, MCP-OCP-03 con fixtures ni MCP-OCP-04 en preparación remota. EP-TASK-005 espera EP-TASK-003 PASS y el paquete P004 probado de MCP-OCP.
+
+`EP_EXECUTION_OWNER=EP` · `CENTRAL_COORDINATION=GOV-TASK-015` · `EP_ACKNOWLEDGEMENT=PENDING` · `PREFLIGHT_FILA4=PARTIAL_FAIL` · `STORAGE_DESIGN=PROPOSED_NOT_ACCEPTED`.
