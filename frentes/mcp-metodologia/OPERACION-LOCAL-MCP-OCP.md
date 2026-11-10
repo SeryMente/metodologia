@@ -1,6 +1,6 @@
 # Operación local · MCP-OCP
 
-**Estado vigente:** núcleo documental MCP-OCP v0.1.27; backlog v0.8; DUG Samantha v386/NX-386m; objetivo de software MCP-OCP 1.0.0. Sink local por stdio y panel de observabilidad están autorizados en el alcance del sprint, pero su implementación/build/paquete actuales todavía están pendientes. La candidata 0.1.0 que se describe aquí es evidencia histórica; la identidad/ruta del entorno temporal no se conserva y el paquete no está disponible en este repositorio.  
+**Estado vigente al corte 2026-11-10:** núcleo MCP-OCP v0.1.28; backlog LIST v0.9; DUG Samantha v388/NX-388m, commit 3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c, blob 4db0ebadfd1e48b2bdec9236ba7f344921e4a865. Piloto candidato P004 escrito en rama feat/mcp-ocp-p004-pilot-20261110-cycle05 creada desde main 0f933b9e3efae20131da37f99f50f4bc4a4eaf74. 13 escenarios escritos; build/test/smoke no tienen PASS verificable. El panel MCP-OCP-13 está especificado y pendiente; instalación/ciclo de vida EP no pertenece a este frente.
 **Arquitectura:** proceso MCP stdio local; el cliente inicia y administra el proceso. No hay listener TCP/HTTP ni endpoint público.  
 **Fuente de verdad documental:** [MCP-OCP · núcleo](MCP-METODOLOGIA.md) y [lista provisional de tareas](LISTA-TAREAS-PROVISIONAL.md).  
 **Separación:** este servidor pertenece exclusivamente a MCP-OCP en Metodología. No es Khora MCP ni el bridge de Jules.
@@ -167,3 +167,14 @@ Tras el piloto P004, generalizar a P001–P043, lotes ordenados, integridad, tel
 
 **Estado:** ajuste documental verificado; no se ejecutó preflight, clon, instalación, importación, REGISTER, piloto ni E2E IPZ.
 
+
+
+## 16. Estado ejecutable del piloto P004 · cycle05 · 2026-11-10
+
+- **Rama:** feat/mcp-ocp-p004-pilot-20261110-cycle05; base main HEAD 0f933b9e3efae20131da37f99f50f4bc4a4eaf74; comparación inicial 0 ahead/0 behind.
+- **Pin:** Samantha v388/NX-388m; DUG commit 3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c, blob 4db0ebadfd1e48b2bdec9236ba7f344921e4a865. Manifiesto de ciclo actualizado y cotejado.
+- **Servidor:** MCP STDIO clásico 2025-11-25; initialize/notifications/initialized/tools/list/tools/call; salida por EOF. Sin listeners ni métodos custom shutdown/exit. Sink individual P004; respuesta y evento camelCase.
+- **Calidad:** 13 pruebas escritas, 0 ejecución aceptada. Workflow Ubuntu + .NET SDK 10.0.403; script de build/test/smoke y artifact diagnóstico incorporados. CI cycle04 run 23 FAILURE sin steps/logs/artifacts; causa raíz NO VERIFICADA.
+- **Entorno:** el contenedor no resuelve DNS para descargar el SDK. El único RDC conectado ejecuta como MantenimientoRCI y no tiene dotnet; no se instalaron herramientas ni se escribieron archivos en ese perfil. Fila 4 sigue sin preflight vivo.
+- **Siguiente gate MCP-OCP:** obtener una ejecución CI legible o runner .NET autorizado; registrar build, suite de 13 y smoke del DLL. Después, entregar candidato/manifest al frente EP para sus gates y al frente Gobernanza para E2E IPZ visible.
+- **Límites:** no instalar en EP/Fila 4, no importar fuentes privadas, no crear DB/DPAPI/REGISTER, no escribir IPZ nativa, no activar FOL1/MCP-NORMATIVO, no crear panel ni paquete final antes de los gates; no merge a main.
