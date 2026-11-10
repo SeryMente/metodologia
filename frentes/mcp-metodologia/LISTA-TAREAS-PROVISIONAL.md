@@ -38,7 +38,7 @@ La tabla sustituye los PASS/estados de recibos históricos para la implementaci�
 | 4 | MCP-OCP-03 | P0 | Suite mínima de contrato del piloto P004 | ESCRITAS · 16 ESCENARIOS / 0 EJECUTADOS | Fixtures sintéticos positivos/negativos, negociación, P004, pins, hashes, errores, telemetría y EOF; ejecución pendiente de runner .NET con logs. |
 | 5 | MCP-OCP-04 | P0 | Transporte y E2E IPZ → RDC → STDIO para P004 | HARNESS/CI ACTUALIZADOS · SIN SMOKE VERIFICADO | CI incluye build servidor, 18 tests P004, 11 tests de monitor, build WPF y smoke STDIO; run CI falla sin steps/logs/artifacts, por lo que ninguna etapa está acreditada. E2E IPZ espera gates EP. |
 | 6 | MCP-OCP-05 (fase posterior) / 03 | P0 | Generalización Sink P001–P043 y lotes | PENDIENTE_POST_PILOTO | 43 respuestas, orden, hashes/eventos y controles negativos PASS. |
-| 7 | MCP-OCP-13 | P1 | Panel local de observabilidad visual | IMPLEMENTACIÓN CANDIDATA · 21 TESTS ESCRITOS / 0 EJECUTADOS | WPF + reader/writer/evaluator de monitorización y 23 pruebas sintéticas publicados; `READY` exige atestación EP `Protection On` además de proceso/protocolo/fuentes/operador/root. Build, pruebas, revisión visual Windows e integración de ciclo EP pendientes. Obligatorio para 1.0.0; no bloquea P004. |
+| 7 | MCP-OCP-13 | P1 | Panel local de observabilidad visual | IMPLEMENTACIÓN CANDIDATA · 23 TESTS ESCRITOS / 0 EJECUTADOS | WPF + reader/writer/evaluator de monitorización y 23 pruebas sintéticas publicados; `READY` exige atestación EP `Protection On` además de proceso/protocolo/fuentes/operador/root. Build, pruebas, revisión visual Windows e integración de ciclo EP pendientes. Obligatorio para 1.0.0; no bloquea P004. |
 | 8 | MCP-OCP-10 | P1 | Pins, manifiesto y evidencia final | PIN/METADATOS DE BUILD FIJADOS · RECIBO PENDIENTE | DUG v388/NX-388m, commit/blob, SDK 10.0.403, dependencias externas 0, piloto sin RID y release win-x64 self-contained; faltan hashes finales y recibo. |
 | 9 | MCP-OCP-07 | P1 | Paquete reproducible 1.0.0 | PENDIENTE_PAQUETE_ACTUAL | ZIP final servidor+panel, configuración, manifest/SHA y read-back. |
 | 10 | MCP-OCP-12 | P1 | Bootstrap local en Fila 4 | BLOQUEADO_GATES_EP | Piloto/instalación dentro de checkout; datos externos protegidos; REGISTER interactivo. |
@@ -255,7 +255,7 @@ El panel MCP-OCP-13 baja a P1 de secuencia, pero permanece como entregable oblig
 - No reutilizar W:, VHDX, RecoveryPassword, DPAPI ni staging de PC-14/PC 7.
 - MCP-NORMATIVO permanece DESACTIVADO. MCP Studio no se incorpora. MCP Inspector queda opcional para diagnóstico, fuera del paquete final.
 
-**Estado actual en rama ciclo02:** MCP-OCP-02 ejecutado y verificado por comparación/read-back; candidato P004 y 16 pruebas escritas sin ejecución; CI sin PASS observable; preflight EP de Fila 4 tiene evidencia parcial con resultado FAIL. Importación, instalación, IPZ nativa y E2E siguen pendientes.
+**Estado actual en rama ciclo02:** MCP-OCP-02 ejecutado y verificado por comparación/read-back; candidato P004 y 18 pruebas escritas sin ejecución; CI sin PASS observable; preflight EP de Fila 4 tiene evidencia parcial con resultado FAIL. Importación, instalación, IPZ nativa y E2E siguen pendientes.
 
 
 ## Rebaseline urgente del sprint · 2026-11-10 · DUG v388
@@ -284,7 +284,7 @@ El panel MCP-OCP-13 baja a P1 de secuencia, pero permanece como entregable oblig
 - **DUG v388:** commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`; blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`. La lectura de ese commit y de main actual devuelve el mismo blob.
 - **MCP-OCP-02:** rama limpia, inventario REUSE/ADAPT/REWRITE/DROP y pins SDK/RID documentados.
 - **MCP-OCP-05:** implementación candidata P004 escrita; no compilada.
-- **MCP-OCP-03:** 16 escenarios escritos; 0 ejecutados.
+- **MCP-OCP-03:** 18 escenarios escritos; 0 ejecutados.
 - **MCP-OCP-04:** harness y workflow CI escritos; smoke y E2E pendientes.
 - **Preflight EP publicado en main:** evidencia `EP-FILA4-PREFLIGHT-PARCIAL-20261110.json`, commit `84cc9ffc1a2aa27c622c7e5de147d7460f3b5ecd`, blob `8ebf0c2b54efc6d3fe597adfe0f9358e65e6acbe`; resultado `PREFLIGHT_PARTIAL_FAIL`. C: XTS-AES128/Protection Off/sin protectores; ubicación física UNCLASSIFIED; checkout Metodología parcial y sin `.git`. **EP-TASK-003 sigue en curso; MCP-OCP no modifica esa tarea ni el host.**
 - **EP-TASK-005:** pendiente; no importación, instalación, DB, DPAPI ni REGISTER.
@@ -311,7 +311,7 @@ Main avanzó desde `84cc9ffc1a2aa27c622c7e5de147d7460f3b5ecd` hasta `67b48bc041b
 
 ### Corrección de inventario DUG · 2026-11-10
 
-El lector ahora exige que el inventario sea exactamente `P001…P043` (43 IDs únicos), no solo 43 IDs únicos que incluyan P004. Se añadió un negativo con `P044` sustituyendo `P043`, blob repinneado y rechazo esperado. MCP-OCP-03 queda en 16 escenarios escritos / 0 ejecutados; build y CI siguen sin PASS.
+El lector ahora exige que el inventario sea exactamente `P001…P043` (43 IDs únicos), no solo 43 IDs únicos que incluyan P004. Se añadió un negativo con `P044` sustituyendo `P043`, blob repinneado y rechazo esperado. MCP-OCP-03 queda en 18 escenarios escritos / 0 ejecutados; build y CI siguen sin PASS.
 
 
 ### CI run 56 · 2026-11-10
