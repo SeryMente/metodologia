@@ -4,7 +4,7 @@
 
 - **Nombre canónico vigente:** MCP-OCP (anteriormente MCP-METODOLOGIA).
 - **Identidad canónica vigente:** MCP-OCP. **Identidad histórica:** MCP-METODOLOGIA.
-- **Versión/sello:** MCP-OCP-v0.1.37 · OCP MCP 1.0; H1 SINK:P004, H2 persistencia mínima/bóveda y H3 workspace completo definidos; Sink local por stdio autorizado; contrato DUG v388/NX-388m; piloto P004 pendiente; bootstrap del perfil persistente pendiente. Las generaciones y folios de sesiones anteriores son metadatos de auditoría.
+- **Versión/sello:** MCP-OCP-v0.1.38 · OCP MCP 1.0; H1 SINK:P004, H2 persistencia mínima/bóveda y H3 workspace completo definidos; Sink local por stdio autorizado; contrato DUG v388/NX-388m; piloto P004 pendiente; bootstrap del perfil persistente pendiente. Las generaciones y folios de sesiones anteriores son metadatos de auditoría.
 - **Repositorio propietario:** SeryMente/metodologia, rama main.
 - **OCP canónico:** frentes/mcp-metodologia/.
 - **Núcleo operativo único:** este archivo, MCP-METODOLOGIA.md.
@@ -792,7 +792,7 @@ EP-TASK-007 es independiente del gate físico de Fila 4 en EP-TASK-003. El guard
 
 El último intercambio y la última salida visible anterior se preservan literalmente en [CONTINUIDAD-2026-11-10-ULTIMO-TRAMO.md](conversaciones/CONTINUIDAD-2026-11-10-ULTIMO-TRAMO.md), blob `1373127651be36afcf49dc1ae4fb623948165daf`. La frase histórica de que aún faltaba crear MCP-OCP-02 queda supersedida por §22: la rama ya fue creada y reconciliada con el main actual. Esta captura parcial no se presenta como export nativo de ChatGPT.
 
-**Estado del núcleo:** MCP-OCP-v0.1.37 en esta rama candidata; el núcleo canónico de main permanece sin cambios hasta la revisión/aceptación de la PR. FOL1 continúa PREPARADO/NO ACTIVO; MCP-NORMATIVO permanece DESACTIVADO.
+**Estado del núcleo:** MCP-OCP-v0.1.38 en esta rama candidata; el núcleo canónico de main permanece sin cambios hasta la revisión/aceptación de la PR. FOL1 continúa PREPARADO/NO ACTIVO; MCP-NORMATIVO permanece DESACTIVADO.
 
 
 ## 24. MCP-OCP-14 · contrato base propuesto · H2/H3 · 2026-11-10
@@ -829,3 +829,19 @@ El último intercambio y la última salida visible anterior se preservan literal
 - Control gen5 permanece blob `826d7bd3f67bddf4f31bafee5013d1ea55003cf4`, sin cambios. FOL1 NO ACTIVO; MCP-NORMATIVO DESACTIVADO.
 
 **Siguiente acción técnica:** recuperar un runner observable para build/test/smoke H1; en paralelo preparar pruebas sintéticas de los schemas H2. La ejecución B2/Vault/root/host permanece bajo EP.
+
+
+## 27. Cierre del ciclo y estado vivo · 2026-11-10
+
+- **Main:** `8f999198f1d8cde71361c884c9a13b745f442b49`. **Rama:** `feat/mcp-ocp-sink-p004-main-a34c1c5b`. **HEAD verificado:** `4ac337f0b1e507497b8ab6c6c64d71d2e8001e13`. Comparación: **26 ahead / 0 behind**, merge-base igual a main, **29 rutas**. PR #27 OPEN / DRAFT / NOT MERGED.
+- **Core candidato:** v0.1.38; blob previo a este asiento `b4233a77130eb711647df10d020eb88806afae4e`. **Backlog:** LIST_VERSION 0.19 después de este asiento. Control generación 5 sin modificación (blob `826d7bd3f67bddf4f31bafee5013d1ea55003cf4`).
+- **MCP-OCP-02:** rama limpia creada desde main y reconciliada hasta el HEAD vigente; inventario/portabilidad publicados.
+- **MCP-OCP-05:** código P004 candidato publicado; build y respuesta runtime no verificados.
+- **MCP-OCP-03:** 18 pruebas P004 + 23 de monitor/readiness = 41 escritas; 0 ejecutadas con evidencia.
+- **MCP-OCP-04:** harness/workflow publicados; smoke STDIO/EOF no verificado; E2E IPZ real pendiente de instalación/aceptación por EP/Gobernanza.
+- **CI del HEAD actual:** piloto run `42905655022`, job `130142842660`; canonical-bootstrap run `42905655010`, job `130142843328`; Validate RDC Governance run `42905654984`, job `130142842158`. Los tres jobs FAILURE en ~2 s, `runner_id=0`, `steps=[]`; logs `BlobNotFound`, cero artefactos. No se observó asignación de runner ni inicio de .NET/restore/build/tests/smoke. **Causa raíz NO VERIFICADA**; no es evidencia de fallo del código ni de PASS.
+- **MCP-OCP-14 / H2:** contrato 0.1 PROPOSED / NOT ACCEPTED; cuatro schemas JSON parseables. No hay runtime, DB, escritura, B2, descarga, restore ni pruebas formales ejecutadas. Perfil criptográfico, claves, root, ACL y operación Backblaze permanecen bajo EP; GOV-TASK-014 acepta.
+- **EP según GOV-TASK-015 en main:** Vault GUI SELLADA; CLI compartida inactiva/0 de 5 variables; ciphertext local 2.200 bytes; worker P0-C preparado/sintaxis PASS; B2 auth/upload/download/remote SHA/recibo no ejecutados. EP-TASK-003 PARTIAL_FAIL; EP-TASK-005 PENDING. MCP-OCP no operó esos recursos.
+- No se modificó `main`, DUG, ART-025/027, IPZ nativa, control de responsabilidad ni recursos EP. FOL1 NO ACTIVO; MCP-NORMATIVO DESACTIVADO.
+
+**Siguiente paso propio:** conseguir diagnóstico/runner observable para ejecutar build, 41 pruebas y smoke. En paralelo, preparar validación sintética formal de MCP-OCP-14; no iniciar IO/DB/B2/Vault/host sin interfaz y compuertas EP.
