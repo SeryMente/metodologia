@@ -1,6 +1,6 @@
 # Operación local · MCP-OCP
 
-**Estado vigente al corte 2026-11-10:** núcleo documental MCP-OCP v0.1.28 en rama candidata; backlog v0.8; DUG actual de main Samantha v387/NX-387m (blob c8d37d92aed7ff9d4fe94e7a9541e76ba5c88a2c); objetivo de software MCP-OCP 1.0.0. Sink local por stdio y panel de observabilidad están autorizados en el alcance del sprint, pero su implementación/build/paquete actuales todavía están pendientes. La candidata 0.1.0 que se describe aquí es evidencia histórica; la identidad/ruta del entorno temporal no se conserva y el paquete no está disponible en este repositorio.  
+**Estado vigente al corte 2026-11-10:** núcleo documental MCP-OCP v0.1.28 en rama candidata; backlog v0.8; DUG actual de main Samantha v387/NX-387m (blob c8d37d92aed7ff9d4fe94e7a9541e76ba5c88a2c); objetivo de software MCP-OCP 1.0.0. El candidato Sink P004 por STDIO ya está escrito en la rama; build, ejecución de pruebas y paquete siguen pendientes. El panel de observabilidad permanece especificado pero no implementado. La candidata 0.1.0 que se describe aquí es evidencia histórica; la identidad/ruta del entorno temporal no se conserva y el paquete no está disponible en este repositorio.  
 **Arquitectura:** proceso MCP stdio local; el cliente inicia y administra el proceso. No hay listener TCP/HTTP ni endpoint público.  
 **Fuente de verdad documental:** [MCP-OCP · núcleo](MCP-METODOLOGIA.md) y [lista provisional de tareas](LISTA-TAREAS-PROVISIONAL.md).  
 **Separación:** este servidor pertenece exclusivamente a MCP-OCP en Metodología. No es Khora MCP ni el bridge de Jules.
@@ -174,9 +174,9 @@ Tras el piloto P004, generalizar a P001–P043, lotes ordenados, integridad, tel
 - **Main base de la rama candidata:** 73a42bc687f1fa3dd60b44af9cd93f797eba3920; compare main...branch confirmó ahead-only, sin commits detrás al corte.
 - **Rama:** feat/mcp-ocp-p004-pilot-20261110-cycle02.
 - **DUG:** Samantha v387/NX-387m; archivo fijado en commit 17a4da1d3906e2397ab4682ff46cc9a9f116f34d, blob c8d37d92aed7ff9d4fe94e7a9541e76ba5c88a2c. La referencia v386 en la sección 12 es antecedente y no se presenta como vigente.
-- **Código candidato:** src/OcpMcp/OcpMcp.csproj, Program.cs, SourcePin.cs, DugSourceReader.cs y McpServer.cs.
-- **Pruebas:** tests/OcpMcp.Pilot.Tests; ocho escenarios escritos, aún no ejecutados.
+- **Código candidato:** src/OcpMcp/OcpMcp.csproj, Program.cs, SourcePin.cs, DugSourceReader.cs y McpServer.cs. Implementa handshake clásico MCP `2025-11-25`, `notifications/initialized`, `tools/list`, `tools/call` y cierre por EOF; no implementa el protocolo stateless `2026-07-28`.
+- **Pruebas:** tests/OcpMcp.Pilot.Tests; 11 escenarios escritos, aún no ejecutados.
 - **Portabilidad:** las ramas integration/ocp-mcp-0.1.0-selective-20261101 y build/ocp-mcp-mvp-0.1.0 se inspeccionaron solo en lectura. Están divergentes respecto de main (592/911 commits detrás respectivamente al corte); no se fusionaron. Clasificación REUSE/ADAPT/REWRITE/DROP en piloto-sink/PORTABILITY-DECISIONS.md.
-- **Ejecución:** el contenedor no dispone de dotnet, csc, mcs ni pwsh. El único dispositivo RDC online no se identificó como Fila 4, por lo que no se ejecutó allí ni se instaló nada.
+- **Ejecución:** `dotnet` no está disponible en el contenedor ni en el dispositivo RDC sondeado (`DOTNET=NOT_FOUND`). En el dispositivo RDC la sesión de proceso es `MantenimientoRCI`, no el perfil de operador Fila 4; no se escribieron archivos allí. No se ejecutó build, prueba ni instalación.
 - **Resultado:** código y pruebas persistidos en rama; build/test/STDIO real pendientes. Sin paquete, sin instalación, sin DB, sin REGISTER, sin IPZ nativa, sin E2E, sin merge a main. MCP-NORMATIVO permanece DESACTIVADO.
 
