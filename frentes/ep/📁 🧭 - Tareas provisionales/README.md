@@ -20,9 +20,9 @@ El patrón de materialización sigue el registro de tareas provisionales de Gobe
 |---|---|---|---|
 | EP-TASK-001 | pendiente | NCL — Navegador Compartido Local: integración de Playwright y KeePassXC | [núcleo](./📁%20🧩%20-%20EP-TASK-001%20-%20Integración%20NCL/README.md) |
 | EP-TASK-002 | `en_curso` | Persistencia B2 EP: pareja Master dedicada migrada a EP Vault y read-back verificado; autenticación B2 y respaldo remoto actual pendientes | [núcleo](./📁%20🧩%20-%20EP-TASK-002%20-%20Persistencia%20provisional%20Backblaze/README.md) |
-| EP-TASK-003 | en_curso · P0 sprint · PREFLIGHT_FILA4=PARTIAL_FAIL | Fila 4: C: XTS-AES128/Protection Off/sin protectores; VHDX 30 GiB GPT/NTFS vacío, último acceso W:, sin BitLocker; diseño de montaje en Desktop\\SeryMente no aceptado; origen preservado, ubicación física sin clasificar y checkout parcial sin .git. | [núcleo](./📁%20🧩%20-%20EP-TASK-003%20-%20Mapa%20integral%20de%20construcción%20EP/README.md) |
+| EP-TASK-003 | en_curso · P0 · PREFLIGHT_FILA4=PARTIAL_FAIL · EP_READY_FOR_RETAKE | Fila 4: C: XTS-AES128/Protection Off/sin protectores; VHDX 30 GiB GPT/NTFS vacío, W: último acceso observado, BitLocker Off; ruta Desktop\\SeryMente preservada; diseño de protección/montaje no aceptado; ubicación sin clasificar y checkout parcial sin .git. EP debe readquirir host, resolver diseño con el operador y completar gate. | [núcleo](./📁%20🧩%20-%20EP-TASK-003%20-%20Mapa%20integral%20de%20construcción%20EP/README.md) |
 | EP-TASK-004 | `en_curso` | Bóveda EP: pareja Master EP promovida desde notas efímeras y verificada; H10 y aceptación integral pendientes | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-004%20-%20Reconstrucci%C3%B3n%20de%20b%C3%B3veda/README.md) |
-| EP-TASK-005 | pendiente · P0 piloto · BLOQUEADO_GATES_EP+PAQUETE | Instalar SINK:P004 solo tras EP-TASK-003 PASS, paquete MCP-OCP P004 verificado y smoke STDIO/RDC; W: no es destino final. Después release MCP-OCP 1.0.0 en Fila 4. | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-005%20-%20Instalaci%C3%B3n%20y%20aceptaci%C3%B3n%20de%20MCP-OCP%20local/README.md) |
+| EP-TASK-005 | pendiente · P0 piloto · BLOQUEADO_EP003+MCP_PACKAGE | EP ejecuta instalación del piloto en Fila 4 solo tras EP-TASK-003 PASS + paquete P004/manifest/SHA + MCP-OCP-03/04 smoke PASS; W: no es destino final. Después release 1.0.0. | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-005%20-%20Instalaci%C3%B3n%20y%20aceptaci%C3%B3n%20de%20MCP-OCP%20local/README.md) |
 | EP-TASK-006 | `en_curso` | Centralización: nombres Master B2 EP normalizados y leídos de vuelta; cobertura mult proveedor sigue incompleta | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-006%20-%20Centralizaci%C3%B3n%20de%20variables%20de%20entorno/README.md) |
 
 ## Estado de continuidad · 2026-10-31
@@ -258,3 +258,12 @@ No se ejecutó preflight, materialización, login, instalación ni piloto por es
 El último estado observado después del preflight §122 es: VHDX de 30 GiB creado, GPT/NTFS, vacío, último acceso W:, BitLocker no activado y sin protectores. El directorio Desktop/SeryMente original permanece preservado y no se ha copiado ni cambiado de ruta. El montaje del volumen cifrado sobre la ruta original se considera una propuesta no aceptada; se mantiene la pausa operativa de almacenamiento. La presencia física del operador frente a Fila 4 fue reportada; CECEQ no fue confirmado y la ubicación sigue sin clasificar. EP-TASK-003 permanece en_curso/PARTIAL_FAIL; EP-TASK-005 permanece pendiente.
 
 El bloqueo EP no detiene MCP-OCP-02/03/04 en remoto con código no sensible y fixtures sintéticos. Sí impide checkout protegido, importación privada, DB real, runtime e instalación piloto. La coordinación vigente se conserva en GOV-TASK-015.
+
+
+## Relevo de ejecución para Sprint SINK-P004 · 2026-11-10
+
+El operador instruyó que EP retome sus tareas; esta sesión deja de actuar como ejecutora del frente y conserva únicamente la coordinación interfrente. OEP v0.3.59 §124 contiene el encargo. No se cambia el control EP generación 3 y la aceptación del relevo por EP queda pendiente.
+
+- **EP-TASK-003:** EP debe readquirir el estado vivo del VHDX y workspace; presentar al operador el método recomendado para proteger la ruta `Desktop/SeryMente`; no mutar almacenamiento hasta aceptación expresa; después completar cifrado, custodio/read-back, copia/manifest SHA, checkout íntegro, root protegido y dead-man únicamente si la ubicación confirmada es distinta de CECEQ.
+- **EP-TASK-005:** EP espera EP-TASK-003 PASS y el paquete SINK:P004 probado por MCP-OCP-05/03/04; instala el piloto y acepta la ejecución local. El panel y 1.0.0 vienen después, no bloquean P004.
+- **Estado al abrir el relevo:** EP-TASK-003=`PARTIAL_FAIL`; EP-TASK-005=`PENDING`; `EP_ACKNOWLEDGEMENT=PENDING`; no hay operación host nueva.
