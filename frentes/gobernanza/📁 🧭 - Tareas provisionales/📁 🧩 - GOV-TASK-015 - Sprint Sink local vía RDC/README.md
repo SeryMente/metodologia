@@ -365,7 +365,7 @@ Abrir PR draft ciclo02; recuperar ejecución CI con steps/logs/artifacts; correg
 
 ### Main posterior a la base de ciclo02
 
-Después de crear la rama ciclo02, main avanzó cuatro commits EP-only hasta `67b48bc041bee372c69389f0aa84ed1a6d19eff5`. La comparación desde la base `84cc9ffc1a2aa27c622c7e5de147d7460f3b5ecd` confirma que las cuatro rutas modificadas pertenecen a EP y no se solapan con las 16 rutas MCP/GOV de la rama. Se conserva la rama desde su base limpia verificada; relación actual 16 ahead / 4 behind. No se toma control ni se modifica el estado EP.
+Después de crear la rama ciclo02, main avanzó cuatro commits EP-only hasta `67b48bc041bee372c69389f0aa84ed1a6d19eff5`. La comparación desde la base `84cc9ffc1a2aa27c622c7e5de147d7460f3b5ecd` confirma que las cuatro rutas modificadas pertenecen a EP y no se solapan con las 30 archivos modificados en el diff MCP/GOV de la rama. Se conserva la rama desde su base limpia verificada; relación actual 98 ahead / 4 behind; 30 archivos cambiados en el diff. No se toma control ni se modifica el estado EP.
 
 
 ## Implementación candidata WPF/monitor · ciclo02 · 2026-11-10
@@ -407,3 +407,11 @@ El reintento fue aceptado por GitHub, pero volvió a terminar en `FAILURE`: job 
 ### Readiness EP — rectificación fail-closed
 
 `MonitorReadinessEvaluator` exige que la atestación EP contenga `sessionState=ACTIVE` y `protectionState=Protection On`; Protection Off/UNKNOWN/futuro bloquea. Además coteja proceso RUNNING (PID + hora de inicio), protocolo INITIALIZED, fuentes importadas/VERIFIED/vigentes, operador provisionado, root y readiness del servidor. MCP no sondea BitLocker ni sustituye a EP. 23 tests escritos; 0 ejecutados.
+
+### Revisión de CI y bloqueos de panel · 2026-11-10
+
+- CI MCP-OCP run #78 `42871039884`: el job original `130022076348` y su reintento `130058287914` finalizaron FAILURE sin pasos, logs ni artefactos; la descarga devuelve `BlobNotFound`. En el mismo commit, `validate-canonical-bootstrap` (`42871039938`) y `Validate RDC Governance` (`42871039803`) reprodujeron el fallo sin pasos. No hay evidencia de inicio de build/tests/smoke ni base para atribuir fallo al código.
+- La revisión estática del panel halló que el runtime no actualiza los estados Sources/Operator/Readiness después de crearlos UNKNOWN/bloqueados; la ruta real no puede alcanzar READY aunque la sesión EP y el proceso estén activos. El test positivo usa un snapshot sintético.
+- `MainWindow.StartWatching()` no observa el root padre si `monitor/` todavía no existe. Esto contradice el orden aprobado (EP abre el panel en ACTIVE incluso antes de lanzar el servidor) y puede dejar la UI esperando sin recibir eventos.
+- Se registran como bloqueos de implementación para MCP-OCP-13. Requieren contrato explícito de actualización EP↔MCP y prueba del orden de arranque; EP sigue siendo dueño exclusivo de `session.json`. No se altera su contrato ni se afirma integración.
+- Estado de validación: 18 pruebas P004 + 23 monitor/readiness escritas / 0 ejecutadas; build, smoke STDIO, WPF, revisión visual e integración EP no verificados. PR #26 continúa draft y sin merge.
