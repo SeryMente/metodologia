@@ -643,3 +643,14 @@ Este rebaseline no acredita rama nueva, resolver implementado, pruebas PASS nuev
 - **CI previo:** cycle04 PR #23 run 23 terminó FAILURE. El conector devolvió el job como completed/failure, pero steps, logs y artifacts están vacíos/no disponibles. No se sabe si el runner inició ni se atribuye causa al código. La siguiente ejecución cycle05 debe dar evidencia nueva.
 - **Estado del gate:** MCP-OCP-02 completado en rama; corte MCP-OCP-05 escrito; MCP-OCP-03/04 preparados y pendientes de ejecución verificable; build, pruebas y smoke NO VERIFICADOS. E2E IPZ → RDC → STDIO queda pendiente de piloto instalado y Fila 4 bajo EP.
 - **Exclusiones:** no instalación EP/Fila 4, fuentes privadas, DB/DPAPI/REGISTER, IPZ nativa, FOL1, panel WPF, paquete 1.0.0, MCP-NORMATIVO ni merge a main.
+
+
+## Estado CI / PR cycle05 · 2026-11-10
+
+- PR #24: https://github.com/SeryMente/metodologia/pull/24 · abierto en borrador, no fusionado; GitHub lo marca mergeable=true. Rama cycle05 base 0f933b9e3efae20131da37f99f50f4bc4a4eaf74; HEAD base observado 06467fb32f344e5ff7e4006479a4f614ecd21164; comparación 21 ahead / 11 behind, merge-base 0f933b9e3efae20131da37f99f50f4bc4a4eaf74. Los 11 commits posteriores en main afectan exclusivamente nueve rutas EP/Gobernanza; no hay solapamiento con los 16 paths del candidato.
+- PR #23/cycle04 fue cerrado como supersedido, sin merge.
+- Workflow MCP-OCP P004 run 24 (42863359295) terminó FAILURE; job steps=null, logs_url=null, artifacts=[]. Reintento autorizado del run también terminó FAILURE.
+- Workflow MCP-OCP P004 run 25 (42863666205) terminó FAILURE; job steps=null, logs_url=null, artifacts=[]. En el mismo commit, Validate RDC Governance run 2326 y validate-canonical-bootstrap run 2695 fallaron con idéntico patrón (steps=null, logs_url=null), lo que apunta a una falla común de ejecución/runner de Actions; causa raíz exacta NO VERIFICADA.
+- No se ha demostrado que setup-dotnet, build, pruebas ni smoke llegaran a iniciar. No declarar PASS ni atribuir un fallo a compilación. Build, 13 tests y STDIO smoke siguen NO VERIFICADOS.
+- Entorno local: no hay dotnet en el contenedor y DNS impide descargar SDK; RDC conectado está bajo MantenimientoRCI, por lo que no se instala ni escribe allí. Fila 4 sigue bajo EP-TASK-003/005.
+- Pin DUG sin cambio: Samantha v388/NX-388m; commit 3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c; blob 4db0ebadfd1e48b2bdec9236ba7f344921e4a865. MCP-NORMATIVO DESACTIVADO. Sin instalación, paquete, IPZ nativa, E2E, FOL1 ni merge a main.
