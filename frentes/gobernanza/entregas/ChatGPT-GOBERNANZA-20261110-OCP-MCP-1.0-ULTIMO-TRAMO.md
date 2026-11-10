@@ -398,3 +398,44 @@ Sí, recuerda organizar por hitos, documenta toda mi insutrccionverbatim, par qu
 ### 4.5 Estado de configuración
 
 Decisiones suficientes para configurar las tareas provisionales de Gobernanza, MCP-OCP y EP. La implementación real sigue sometida a los controles y responsables propietarios de cada frente. Esta instrucción autoriza configuración documental de tareas y handoff; no autoriza eludir compuertas host, modificar controles, revelar credenciales, ejecutar operaciones B2, ni borrar o alterar almacenamiento.
+
+
+---
+
+## 4.6 Última salida visible del modelo · reproducción literal
+
+La siguiente es la salida visible inmediatamente posterior a las respuestas finales del operador. Se conserva literalmente, sin corregir ni normalizar su redacción.
+
+~~~text
+Quedan fijadas estas decisiones para OCP MCP 1.0:
+
+Jurisdicción: México. Se parte de que tienes autorización para inspeccionar los equipos donde operes.
+
+Inventario: robusto por defecto, incluyendo ubicación GPS y datos de red cuando sean técnicamente accesibles y no perjudiquen el rendimiento o la sesión.
+
+Retención: indefinida como política inicial para los datos útiles del proyecto, con cifrado y controles de acceso.
+
+Lease: aprobado con renovación cada 60 segundos, vencimiento a los 30 minutos, aviso previo, cierre por 10 minutos de inactividad y máximo de 8 horas.
+
+Workspace: descarga completa en cada instancia.
+
+Confidencialidad: todo cifrado, incluidas las conversaciones y sus respaldos.
+
+Persistencia: Backblaze como único medio inicial; mecanismo alternativo para una etapa posterior.
+
+RDC: autenticación al inicio; una sesión activa normalmente y posibilidad controlada de dos sesiones excepcionales.
+
+La política de cierre seguirá este orden: intentar respaldar, imponer un límite al intento y ejecutar el borrado criptográfico local al activarse el dead-man. La recuperación del progreso no tendrá prioridad sobre mantener abierta una sesión que ya debe cerrarse.
+~~~
+
+### 4.7 Read-back de configuración interfrentes · 2026-11-10
+
+El read-back de main confirma que las decisiones de la sección 4.3–4.4 están reflejadas en las tareas siguientes; esta anotación no declara ejecución técnica:
+
+- **Gobernanza:** GOV-TASK-015 conserva hitos H1–H9, dependencias, límites y criterios de aceptación; GOV-TASK-013 mantiene la semántica de medición de ciclos; GOV-TASK-014 acepta persistencia/restore.
+- **Entorno Persistente:** EP-TASK-002 (Backblaze y persistencia), EP-TASK-004/006 (bóveda e inventario organizacional de variables) y EP-TASK-007 (inventario, GPS/IP best-effort, lease, guardián y cierre criptográfico) contienen las decisiones confirmadas.
+- **MCP-OCP:** núcleo v0.1.30 y backlog v0.11 definen MCP-OCP-14 (journal/workspace/persistencia), MCP-OCP-15 (identidad/telemetría), MCP-OCP-16 (Vault→RDC diferida al hito seguro) y MCP-OCP-17 (alternativa de persistencia post-release).
+
+**Secuencia:** H1 SINK:P004 y H2 persistencia mínima/bóveda avanzan en paralelo; H3 workspace completo; H4 telemetría; H5 lease/dead-man; H6 limpieza; H7 RDC/Vault JIT; H8 release 1.0.0; H9 alternativa post-release. Los frentes conservan la ejecución y evidencia bajo sus controles propietarios.
+
+**Límites:** documentos/tareas configurados; no se afirma que B2 haya autenticado o restaurado, que se haya capturado GPS/IP, que el guardián esté activo, que RDC consuma secretos de Vault, que haya ocurrido crypto-erasure ni que SINK:P004 esté implementado/aceptado. Controles EP generación 3, MCP-OCP generación 5 y Gobernanza generación 17 sin cambios; FOL1 PREPARADO/NO ACTIVO; MCP-NORMATIVO DESACTIVADO.
