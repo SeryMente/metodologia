@@ -9,7 +9,7 @@
 **MCP-OCP:** núcleo v0.1.28 · commit `01e960b43f0750cd1824aac6a81a89f6a9362c26` · blob `8e763231b28dce62cd60f326b04c9a3cc15d5e32`; backlog v0.9 · commit `64a5a041c9cdf21d4703cea12b877b1129a853f1` · blob `c903c9c1aa5d2461697e8c91182a331c3d19918b`.
 **EP:** OEP v0.3.56 · commit `3b997f08e6fba520859a960be304c701c89243f7` · blob `89267f2d263f8367024fa992d10de3b0a3509840`.
 **Autorización:** el operador autorizó directamente Sink local por stdio y amplió el producto para incluir el panel local de observabilidad MCP-OCP-13. No se requiere aprobación de titularidad anterior, generación ni folio; dichos campos son auditoría, no compuertas.
-**Destino EP designado:** terminal Fila 4, correspondiente a la única sesión RDC disponible indicada por el operador. Últimos datos técnicos conocidos (no lectura viva): Device ID `d0bbb2a3-d7b4-45e1-8870-652c2c3844fc`, sesión `CENTRAL\\fila4`, SessionId 4. Identidad/usuario/SID/permisos y ubicación física requieren preflight vivo. No inferir CECEQ/LOC-OTHER; el dead-man se determina después de verificar la ubicación.
+**Destino EP designado:** alias funcional **Fila 4**, único destino RDC designado por el operador; PC 7 queda supersedido. No se conservan Device IDs, hostnames, cuentas de Windows, rutas concretas de perfil ni identificadores de sesión efímeros conforme a DUG v388/ART-013. El operador reportó estar físicamente frente a Fila 4; CECEQ no fue confirmado y la ubicación física continúa `UNCLASSIFIED`. No inferir CECEQ/LOC-OTHER; el dead-man solo aplica si se confirma ubicación distinta de CECEQ.
 **Alcance:** contrato, implementación Sink local, panel de observabilidad, pruebas, paquete, handoff, bootstrap en el perfil designado y aceptación E2E. Esta ficha es planificación: no acredita código, build, instalación ni prueba ejecutados.
 
 ## 1. Objetivo y contrato
@@ -106,7 +106,7 @@ Se usará un único harness del servidor y fixtures del panel: primero corte ver
 
 ## 5. Insumos del operador
 
-**Destino designado por el operador:** terminal Fila 4, correspondiente a la única sesión RDC disponible indicada. La última referencia técnica es el Device ID `d0bbb2a3-d7b4-45e1-8870-652c2c3844fc`, perfil `CENTRAL\\fila4`, SessionId 4; no es lectura viva. La ubicación física queda pendiente de verificación. No volver a pedir selección; confirmar identidad/permisos/USERPROFILE y ubicación en el preflight.
+**Destino designado por el operador:** alias funcional Fila 4. No volver a pedir selección. Antes de operaciones locales, revalidar el perfil efectivo y los permisos, sin persistir identificadores temporales de RDC. La ubicación física sigue `UNCLASSIFIED`; CECEQ no fue confirmado. El preflight parcial y su estado vigente están en EP-TASK-003/OEP §§122–123.
 
 Acciones locales futuras, sin enviar secretos por chat:
 
@@ -279,7 +279,7 @@ Por instrucción directa del operador se incorpora MCP-OCP-13 como tarea P0 del 
 
 Esta sección sustituye como estado vigente del sprint las menciones anteriores a PC 7/LOC-OTHER en esta coordinación. El operador designó **Fila 4** como destino de trabajo e instalación porque corresponde a la única sesión RDC disponible indicada. PC 7 no queda como alternativa ni fallback.
 
-- **Últimos datos técnicos conocidos, no lectura viva:** RDC Device ID `d0bbb2a3-d7b4-45e1-8870-652c2c3844fc`; sesión interactiva `CENTRAL\\fila4`, SessionId 4. EP debe revalidar dispositivo, hostname, sesión, usuario/SID, `USERPROFILE`, permisos y acceso antes de escribir.
+- **Último destino designado:** alias funcional Fila 4. No se retienen Device ID, hostname, usuario/SID ni SessionId; EP debe revalidar perfil efectivo, privilegios, permisos y acceso antes de escribir.
 - **Ubicación física:** PENDIENTE_DE_VERIFICACIÓN. La terminal Fila 4 y la ubicación son dimensiones distintas. No clasificar automáticamente como CECEQ ni LOC-OTHER; EP aplicará conservación o dead-man después de comprobar el lugar.
 - **Checkout:** `%USERPROFILE%\\Desktop\\SeryMente\\Repositorios\\Metodologia\\metodologia\\`.
 - **Piloto:** `<checkout>\\frentes\\mcp-metodologia\\instalacion-local\\piloto-sink\\`.
@@ -308,9 +308,9 @@ FOL1 no bloquea el piloto P004 ni la construcción del servidor; su activación 
 
 Gobernanza publicó la rectificación de ART-027 mediante el evento `C-GOBERNANZA-ART027-SINK-LOCAL-RECONCILIACION-20261110-01`. El contrato operativo vigente es `SINK:Pxxx` como operación local del servidor MCP-OCP por STDIO, invocada vía RDC. La respuesta debe contener un único principio íntegro y su procedencia/pin/hash; la frecuencia registra solo recuperaciones satisfactorias. Los diseños de Worker, Cloudflare, D1/KV, Analytics Engine, URLs cortas y aliases HTTP quedan supersedidos. `MOD-SYNC` de EP es distinto y no participa en este flujo.
 
-**Pin DUG vigente:** Samantha v388/NX-388m; commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`; blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`. En respuesta al bloqueo, el titular MCP-OCP rebaselinó su núcleo a v0.1.28 y su backlog a v0.9, ambos con DUG v388/NX-388m. EP actualizó OEP a v0.3.56 y las tareas EP-TASK-003/005 para marcar el gate local P0. Los nuevos pins y referencias están asentados en esta ficha; no implican que exista rama/código nuevo ni preflight host.
+**Pin DUG vigente:** Samantha v388/NX-388m; commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`; blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`. En respuesta al bloqueo, el titular MCP-OCP rebaselinó su núcleo a v0.1.28 y su backlog a v0.9, ambos con DUG v388/NX-388m. EP actualizó OEP a v0.3.58 y las tareas EP-TASK-003/005 para registrar el preflight parcial, el VHDX de preparación vacío/sin cifrar y la pausa sobre el punto de montaje. Los nuevos pins y referencias están asentados en esta ficha; no implican que exista rama/código nuevo ni preflight host.
 
-**Estado:** contrato documental corregido y fase de Gobernanza iniciada. Implementación del resolver, importación de fuente en Fila 4, pruebas, escritura/read-back nativos de IPZ y aceptación E2E siguen sin evidencia en esta ficha. El estado EN_CURSO no declara código construido ni instalación ejecutada.
+**Estado:** contrato documental corregido; implementación P004, pruebas nuevas, importación de fuente, instalación local, escritura/read-back nativos de IPZ y aceptación E2E siguen pendientes de evidencia. El estado EN_CURSO no declara código construido ni instalación ejecutada.
 
 ## Matriz única de dependencias y bloqueo urgente · 2026-11-10
 
@@ -336,7 +336,7 @@ EP-TASK-004 GUI de bóveda y EP-TASK-002/Backblaze no bloquean P004 ni el build 
 
 ### Estado de evidencia
 
-**Documentación:** DUG v388, tareas Gobernanza, núcleo/backlog MCP-OCP y OEP/tareas EP rebaselined y leídos de vuelta. **No verificado/pendiente:** rama nueva, código P004, pruebas nuevas, preflight Fila 4, importación, paquete piloto, instalación, IPZ nativa, E2E y panel. No convertir el cierre documental en PASS de producto.
+**Documentación:** DUG v388, tareas Gobernanza, núcleo/backlog MCP-OCP y OEP/tareas EP rebaselined y leídos de vuelta. **Estado vigente de host:** preflight Fila 4 observado `PARTIAL_FAIL`; VHDX vacío y sin BitLocker, diseño de montaje sobre Desktop\\SeryMente no aceptado, checkout parcial. **No verificado/pendiente:** rama MCP-OCP-02 válida desde main, código P004, pruebas nuevas, manifest/paquete piloto, importación, instalación, IPZ nativa, E2E y panel. No convertir el cierre documental en PASS de producto.
 
 ---
 
@@ -344,7 +344,7 @@ EP-TASK-004 GUI de bóveda y EP-TASK-002/Backblaze no bloquean P004 ni el build 
 
 ### Hallazgo MCP-OCP
 
-La consulta de referencias de GitHub encontró la rama `feat/mcp-ocp-sink-p004-pilot-20261110`. Su punta es `1676901cc09af6fcec4d052800b031e4c2f1ab40`, no el `main` vigente. En la comparación del 2026-11-10, `main` observado en `564070216482f26993044b54d94db3e2d4adc802` estaba 45 commits por delante de esa referencia y la rama no tenía commits exclusivos por delante de `main` (`ahead_by=45`, `behind_by=0`, al comparar rama → main). Además, los archivos del frente leídos en esa rama conservaban referencias a DUG v386 y core v0.1.27, no el baseline v388/v0.1.28 requerido.
+La consulta de referencias de GitHub encontró la rama `feat/mcp-ocp-sink-p004-pilot-20261110`. Su punta es `1676901cc09af6fcec4d052800b031e4c2f1ab40`, no el `main` vigente. En la comparación refrescada del 2026-11-10, `main` observado en `9eb2c9b0deb4ff63e1b27a1dfc620f2d2544a3c3` estaba 52 commits por delante de esa referencia y la rama no tenía commits exclusivos por delante de `main` (`ahead_by=52`, `behind_by=0`, al comparar rama → main). Además, los archivos del frente leídos en esa rama conservaban referencias a DUG v386 y core v0.1.27, no el baseline v388/v0.1.28 requerido.
 
 **Conclusión:** la rama existe como referencia, pero no satisface MCP-OCP-02. No se declara una rama limpia rebaselined ni código P004 implementado. La salida de MCP-OCP-02 sigue siendo una rama nueva/limpia desde el HEAD de `main` vigente, con mapa REUSE/ADAPT/REWRITE/DROP, SDK/RID fijados y lectura de vuelta del pin DUG v388. No fusionar la referencia histórica completa.
 
