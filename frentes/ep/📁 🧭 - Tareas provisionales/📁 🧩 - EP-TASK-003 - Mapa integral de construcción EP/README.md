@@ -214,7 +214,7 @@ Estado que prevalece:
 
 ## Designación del destino del sprint Sink local · 2026-11-09
 
-**Decisión posterior del operador:** destino Windows definitivo = perfil/usuario Windows `PC 7`; dispositivo RDC asociado a ese perfil según declaración del operador; clasificación de ubicación = `LOC-OTHER`.
+**Designación inicial del operador · 2026-11-09 (HISTÓRICA, SUPERSEDIDA):** destino Windows = perfil/usuario `PC 7`, con clasificación reportada `LOC-OTHER`. La rectificación del 2026-11-10 designó Fila 4 y dejó su ubicación física pendiente; consultar la sección vigente al final de este archivo.
 
 - `PC 7` identifica el nuevo usuario/perfil Windows. No se interpreta como hostname ni como ID RDC.
 - El nombre/ID técnico del dispositivo RDC, el estado de conexión, SID, usuario efectivo, rutas y permisos se obtendrán por preflight vivo. No se reutilizan identificadores históricos ni se presume continuidad de almacenamiento.
@@ -223,9 +223,9 @@ Estado que prevalece:
 - Se conserva el alcance mínimo aprobado: terminación del proceso de control EP → bloquear BitLocker → desmontar → eliminar exclusivamente el contenedor EP. Sin Guardian genérico, polling, heartbeat, inactividad, tareas programadas ni borrado fuera del perímetro.
 - La migración de los 195 archivos/11 directorios sigue pendiente: primero identificar la fuente vigente, comparar manifiestos SHA-256 y conservar el origen hasta read-back íntegro en el volumen protegido.
 
-### Gate actualizado para LOC-OTHER / PC 7
+### Gate histórico para LOC-OTHER / PC 7 · SUPERSEDIDO POR FILA 4
 
-No se inicia una instalación persistente hasta completar y leer de vuelta: (1) vínculo RDC↔PC 7 y usuario/SID efectivos; (2) almacenamiento XTS-AES256, Protection On, FullyEncrypted/100 % y custodia recuperable; (3) migración/verificación del workspace si aplica; (4) dead-man implementado y probado en el perfil real; (5) runtime/DB/respaldos dentro del perímetro cifrado. La designación documental no equivale a preflight, permiso técnico, ejecución ni aceptación.
+La compuerta anterior aplicaba al destino PC 7 y queda supersedida. Para el destino actual Fila 4, aplicar la sección de rectificación vigente al final: confirmar sesión/perfil, volumen XTS-AES256/Protection On/100 %, root protegido y dead-man solo si la ubicación física resulta distinta de CECEQ.
 
 
 ---
@@ -267,7 +267,7 @@ La ruta local observada ya fue reestructurada con esos directorios. La carpeta S
 
 **Estado:** organización lógica MATERIALIZADA; protección física, respaldos y aceptación NO VERIFICADOS.
 
-## Sprint MCP-OCP 1.0.0 · checkout íntegro y workspace PC 7 · 2026-11-09
+## Plan original MCP-OCP 1.0.0 · checkout PC 7 · 2026-11-09 · HISTÓRICO, SUPERSEDIDO
 
 **Entrega de workspace para el sprint:** mantener un único checkout completo de SeryMente/metodologia en `SeryMente/Repositorios/Metodologia/metodologia/`. La carpeta ya observada en PC 7 era una materialización parcial, no un checkout Git íntegro ni sincronizado; `git` no estaba disponible en el preflight conocido. Esta tarea debe resolver Git para el usuario, sincronizar el repo privado desde `main`, verificar branch/origin/HEAD/status y conservar sin sobrescribir cualquier cambio local ajeno.
 
@@ -275,9 +275,9 @@ La ruta local observada ya fue reestructurada con esos directorios. La carpeta S
 
 **Separación de datos:** DB SQLite, claves DPAPI, fuentes sensibles, logs operativos y backups del servidor se mantienen fuera del checkout, en una raíz de datos independiente cuya protección real verifica EP. Los binarios locales se excluyen de Git; no se mezclan con el código fuente.
 
-**Gate LOC-OTHER:** repetir preflight vivo PC 7: dispositivo RDC, usuario/SID efectivos, checkout, permisos, volumen XTS-AES256, BitLocker Protection On y FullyEncrypted 100 %, y root de datos. La evidencia más reciente disponible indicó cifrado 100 % pero `ProtectionStatus=Off`; no declarar protegido hasta obtener Protection On. Implementar y probar el dead-man específico antes de dejar cualquier runtime persistente.
+**Gate del plan original PC 7:** reemplazado el 2026-11-10 por la sección vigente de Fila 4 al final de este archivo. No aplicar PC 7 ni LOC-OTHER como destino/ubicación actual.
 
-**Criterio de cierre EP-TASK-003 para este sprint:** checkout íntegro y sincronizado con read-back; ruta exacta accesible; controles de protección activos; dead-man LOC-OTHER probado sin borrar fuera de su alcance; evidencia/hash y lectura de vuelta. La falta de Git/checkout puede resolverse en paralelo al desarrollo remoto MCP y no debe bloquear MCP-OCP-02/05/03/04/07.
+**Criterio de cierre del plan original PC 7:** supersedido por la rectificación Fila 4. Los requisitos de checkout íntegro, protección, read-back y dead-man condicional se conservan; identidad, ruta y ubicación se determinan en el preflight vigente de Fila 4.
 
 ---
 
