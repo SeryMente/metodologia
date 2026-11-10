@@ -238,3 +238,37 @@ El alcance integrador contempla workspace completo clasificado, bóveda de varia
 El operador informa que la persistencia reciente terminó. No obstante, el último read-back EP-TASK-002 consultado en main registró vaultSessionActive=false, variableCount=0, cinco variables B2 ausentes, ciphertext de 2.200 bytes, workers/wrapper con análisis sintáctico PASS, recibo remoto ausente y sin autenticación/upload/descarga/SHA/restore acreditados en ese ciclo.
 
 Estado integrado: B2_REMOTE=NOT_VERIFIED_PENDING_EP_RECONCILIATION. EP debe aportar recibo y lectura de vuelta recientes. No se declara éxito ni fallo absoluto por inferencia. No se autoriza desde Gobernanza cambiar bucket, ACL, lifecycle, retención o borrar versiones remotas.
+
+
+---
+
+## OCP MCP 1.0 · criterios aprobados de persistencia y cierre con prioridad de borrado · 2026-11-10
+
+**Prioridad coordinada:** H2 P0 (persistencia mínima + bóveda) y H3 (workspace completo recuperable). EP sigue siendo ejecutor de B2; MCP-OCP define datasets/contrato; Gobernanza integra y acepta.
+
+### Dataset obligatorio
+
+- Workspace completo de Ser y Mente que haya sido clasificado para continuidad, descargado en cada instancia.
+- Conversaciones, adjuntos y artefactos conversacionales, siempre cifrados como parte del workspace; nunca texto en claro dentro de logs/eventos de telemetría.
+- EP Vault completa: variables de KHORA, OCP, infraestructura, integraciones y proveedores, separadas por producto y entorno, con los valores sensibles cifrados.
+- Datos de usuario/OCP y snapshots coherentes requeridos para reinstanciar/resolver sesiones.
+- Código/documentación versionados siguen teniendo GitHub como fuente canónica; B2 es persistencia complementaria, no reemplaza Git.
+
+### Secuencia
+
+1. H2: journal/checkpoint de sesión mínimo, catálogo de bóveda y snapshot cifrado de Vault; upload, download, hash y restore aislado.
+2. H3: snapshot del workspace completo y datasets OCP; cada sesión descarga la totalidad, valida manifest/SHA y abre copia cifrada local.
+3. Optimización progresiva sin cambiar el contrato: checkpoints incrementales, deduplicación/chunks, compresión y cache cifrada solo después de la primera restauración completa.
+4. H9 posterior: evaluar segundo medio/proveedor. No provisionar ahora; B2 es el único backend remoto inicial.
+
+### Política de cierre
+
+Ante trigger normal, intentar un único checkpoint con presupuesto máximo inicial de 30 s. Si se confirma la persistencia, registrar su recibo; si falla o expira el presupuesto, no alargar la exposición: cerrar/desmontar y destruir criptográficamente la clave efímera local. Ante emergencia/sospecha de compromiso, omitir el intento y ejecutar crypto-erasure inmediato. La clave persistente de recuperación y los snapshots B2 no se destruyen en el cierre de sesión.
+
+### Retención y criterios
+
+Retención prevista indefinida de datasets cifrados útiles, de acuerdo con la instrucción del operador y las obligaciones legales aplicables. Verificar versionado/lifecycle efectivo antes de afirmar retención remota indefinida; no cambiar ACL/bucket/lifecycle ni purgar versiones en esta tarea.
+
+Aceptar por estados separados: local durable; remoto cargado; remoto verificado por read-back/hash; restore verificado en entorno aislado. La instancia solo se declara completa cuando se ha descargado y validado el workspace completo esperado. Si B2 no se encuentra disponible, registrar bloqueo y no inventar fallback: el medio alternativo está pendiente para H9.
+
+**Estado:** criterios de Gobernanza configurados. La autenticación/transferencia/restore B2 actual continúan pendientes de recibo EP reciente; no se declara persistencia remota PASS por este documento.
