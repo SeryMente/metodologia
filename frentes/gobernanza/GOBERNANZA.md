@@ -14,6 +14,61 @@
 
 [Referencia DUG ART-027](../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-027) · [Coordinación GOV-TASK-015](📁%20🧭%20-%20Tareas%20provisionales/📁%20🧩%20-%20GOV-TASK-015%20-%20Sprint%20Sink%20local%20vía%20RDC/README.md) · [PENDIENTES](PENDIENTES.md).
 
+
+## Contrato operativo · resumen semivivo por ciclo · 2026-11-10
+
+**Mandato del operador:** al abrir y durante cada ciclo sustantivo, Gobernanza mostrará al operador una síntesis ejecutiva que permita saber qué ocurre, qué cambió, qué está detenido y cuál es el siguiente movimiento. El lenguaje será directo, técnico cuando aporte precisión y sencillo de leer; sin bloques extensos ni omisión de información decisiva.
+
+### Cadencia y significado de «semivivo»
+
+1. **Apertura:** antes de actuar, releer el control vigente, el estado canónico de `main`, la coordinación interfrentes y los objetos de tarea relevantes. Mostrar objetivo, hito actual, último estado confirmado y siguiente acción.
+2. **Durante el ciclo:** emitir actualización después de cada cambio material: ejecución iniciada/terminada, prueba, bloqueo, cambio de prioridad, aceptación, fallo o read-back. En trabajo prolongado, no dejar al operador sin una actualización útil durante la ejecución.
+3. **Cierre:** mostrar qué se ejecutó, qué quedó verificado, qué falló o no se ejecutó, bloqueantes, preocupaciones, trabajo diferido y próximo paso.
+4. **Límite:** «semivivo» significa actualizaciones por hitos y relecturas puntuales durante el ciclo; no implica vigilancia continua, polling indefinido ni ejecución en segundo plano. No anunciar automatización o monitorización que no exista.
+
+### Formato ejecutivo obligatorio
+
+Cada resumen usa, en este orden, los campos aplicables:
+
+- **🎯 Objetivo / hito:** qué se está intentando conseguir y en qué etapa.
+- **🚦 Estado:** `PASS`, `FAIL`, `EN_CURSO`, `BLOQUEADO`, `NOT_RUN` o `NO_VERIFICADO`; nunca mezclar estados.
+- **✅ Avance confirmado:** resultado concreto y evidencia de lo que sí ocurrió.
+- **⛔ Bloqueantes:** impedimento exacto, responsable y condición observable para desbloquearlo.
+- **⚠️ Preocupaciones:** riesgos, incertidumbres y límites que podrían afectar la decisión.
+- **➡️ Siguiente acción:** una acción inmediata, su responsable y por qué es la siguiente.
+- **🔎 Corte / evidencia:** fuente, rama o ruta, hora y zona cuando estén disponibles; enlace a la ficha o recibo.
+
+Priorizar líneas breves, etiquetas visibles y cifras relevantes. No repetir metadatos comunes a todos los puntos. Ampliar únicamente donde el riesgo, la decisión o la trazabilidad lo requieran.
+
+### Disciplina de evidencia y lenguaje
+
+- Distinguir siempre: `PROPUESTO` → `AUTORIZADO` → `INTENTADO` → `EJECUTADO` → `VERIFICADO` → `ACEPTADO`. Una etapa no implica la siguiente.
+- `PASS` exige evidencia observada; `FAIL` informa el fallo concreto; `NOT_RUN` significa que no se ejecutó; `NO_VERIFICADO` significa que no existe evidencia suficiente. «No observado» no equivale a «no existe».
+- No inferir porcentajes de avance, ETA, causas raíz, aceptación, persistencia, backup, restore, instalación ni éxito. Si no hay medición/fuente, decirlo expresamente.
+- Cada cifra o estado dependiente de datos externos debe asociarse a su corte temporal y fuente. Si la evidencia puede haber caducado —por ejemplo, sesión Vault/TTL, runner CI, rama o estado remoto—, revalidarla antes de una acción dependiente.
+- Una operación con efectos laterales en curso no se relanza por falta de salida inmediata. Primero comprobar proceso/recibo/estado para evitar duplicar transferencias o escrituras.
+- Nunca exponer contraseñas, secretos, tokens, valores de variables, claves de recuperación ni información privada en resúmenes, Git, recibos o logs.
+
+### Responsabilidades y cierre
+
+- El resumen de Gobernanza es la **vista ejecutiva interfrentes**; no sustituye el reporte individual de cada tarea ni el control titular de EP o MCP-OCP.
+- El responsable de cada tarea documenta solución, cambios, pruebas, evidencia, bloqueantes, preocupaciones, rollback y aceptación en su propio núcleo conforme a la plantilla común. Gobernanza resume y enlaza; no atribuye como propio lo ejecutado por otro frente.
+- No declarar una tarea cerrada hasta leer de vuelta su reporte, contrastar sus criterios y registrar la aceptación exigible. La coordinación se actualiza después del read-back.
+- Preservar controles, titularidad, permisos, DUG, FOL1 e IPZ conforme a su autoridad vigente. Este contrato es una regla operativa del OCP Gobernanza; no modifica el DUG ni habilita cambios en otros frentes.
+
+**Plantilla de salida visible al operador:**
+
+```text
+🎯 Hito: [objetivo y etapa]
+🚦 Estado: [estado real]
+✅ Confirmado: [resultado + evidencia]
+⛔ Bloquea: [impedimento + condición de salida]
+⚠️ Atención: [riesgo / no verificado]
+➡️ Siguiente: [acción + responsable]
+🔎 Corte: [fuente + fecha/hora/zona]
+```
+
+
 ---
 
 ## Evento histórico supersedido · C-GOBERNANZA-RETOMA-11 · 2026-11-06
