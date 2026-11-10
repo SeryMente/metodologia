@@ -9,10 +9,16 @@ public sealed record SinkSuccessEvent(
 
 public sealed class McpServer(IPrincipleSource source, Action<SinkSuccessEvent>? onSuccess = null)
 {
-    private const string ProtocolVersion = "2025-06-18";
+    private const string ProtocolVersion = "2025-11-25";
+    private static readonly HashSet<string> SupportedProtocolVersions = new(StringComparer.Ordinal)
+    {
+        "2025-11-25", "2025-06-18", "2025-03-26", "2024-11-05"
+    };
 
     public async Task RunAsync(TextReader input, TextWriter output, CancellationToken cancellationToken)
     {
+        bool initializeResponded = false;
+        bool initialized = false;
         while (!cancellationToken.IsCancellationRequested)
         {
             string? line = await input.ReadLineAsync(cancellationToken);
@@ -31,8 +37,12 @@ public sealed class McpServer(IPrincipleSource source, Action<SinkSuccessEvent>?
             using (request)
             {
                 JsonElement root = request.RootElement;
-                if (root.ValueKind != JsonValueKind.Object ||
-                    !root.TryGetProperty("jsonrpc", out JsonElement version) ||
+                if (root.ValueKind != JsonValueKind.Object)
+                {
+                    await WriteErrorAsync(output, default, -32600, "Invalid Request", cancellationToken);
+                    continue;
+                }
+                if (!root.TryGetProperty("jsonrpc", out JsonElement version) ||
                     version.ValueKind != JsonValueKind.String ||
                     version.GetString() != "2.0" ||
                     !root.TryGetProperty("method", out JsonElement methodElement) ||
@@ -45,9 +55,19 @@ public sealed class McpServer(IPrincipleSource source, Action<SinkSuccessEvent>?
 
                 string method = methodElement.GetString()!;
                 bool hasId = root.TryGetProperty("id", out JsonElement id);
-                if (method == "exit") return;
-                if (method is "notifications/initialized" or "notifications/cancelled") continue;
+                if (method == "notifications/initialized")
+                {
+                    if (initializeResponded) initialized = true;
+                    continue;
+                }
+                if (method == "notifications/cancelled") continue;
                 if (!hasId) continue;
+
+                if (!initialized && method is not ("initialize" or "ping"))
+                {
+                    await WriteErrorAsync(output, id, -32002, "Server not initialized", cancellationToken);
+                    continue;
+                }
 
                 try
                 {
@@ -57,10 +77,10 @@ public sealed class McpServer(IPrincipleSource source, Action<SinkSuccessEvent>?
                         "ping" => new { },
                         "tools/list" => ListTools(),
                         "tools/call" => CallTool(root),
-                        "shutdown" => new { },
                         _ => throw new RpcException(-32601, "Method not found")
                     };
                     await WriteResultAsync(output, id, result, cancellationToken);
+                    if (method == "initialize") initializeResponded = true;
                 }
                 catch (RpcException ex)
                 {
@@ -72,12 +92,22 @@ public sealed class McpServer(IPrincipleSource source, Action<SinkSuccessEvent>?
 
     private static object Initialize(JsonElement request)
     {
-        string requested = request.TryGetProperty("params", out JsonElement p) &&
-            p.ValueKind == JsonValueKind.Object &&
-            p.TryGetProperty("protocolVersion", out JsonElement v) &&
-            v.ValueKind == JsonValueKind.String ? v.GetString()! : ProtocolVersion;
-        string negotiated = requested is "2025-06-18" or "2025-03-26" or "2024-11-05"
-            ? requested : ProtocolVersion;
+        if (!request.TryGetProperty("params", out JsonElement p) ||
+            p.ValueKind != JsonValueKind.Object ||
+            !p.TryGetProperty("protocolVersion", out JsonElement v) ||
+            v.ValueKind != JsonValueKind.String ||
+            !p.TryGetProperty("capabilities", out JsonElement capabilities) ||
+            capabilities.ValueKind != JsonValueKind.Object ||
+            !p.TryGetProperty("clientInfo", out JsonElement clientInfo) ||
+            clientInfo.ValueKind != JsonValueKind.Object ||
+            !clientInfo.TryGetProperty("name", out JsonElement clientName) ||
+            clientName.ValueKind != JsonValueKind.String ||
+            !clientInfo.TryGetProperty("version", out JsonElement clientVersion) ||
+            clientVersion.ValueKind != JsonValueKind.String)
+            throw new RpcException(-32602, "Invalid initialize params");
+
+        string requested = v.GetString()!;
+        string negotiated = SupportedProtocolVersions.Contains(requested) ? requested : ProtocolVersion;
         return new
         {
             protocolVersion = negotiated,
