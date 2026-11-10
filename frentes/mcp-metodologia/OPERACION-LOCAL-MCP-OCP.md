@@ -174,7 +174,7 @@ Tras el piloto P004, generalizar a P001–P043, lotes ordenados, integridad, tel
 - **Main base de la rama candidata:** 73a42bc687f1fa3dd60b44af9cd93f797eba3920; compare main...branch confirmó ahead-only, sin commits detrás al corte.
 - **Rama:** feat/mcp-ocp-p004-pilot-20261110-cycle02.
 - **DUG:** Samantha v387/NX-387m; archivo fijado en commit 17a4da1d3906e2397ab4682ff46cc9a9f116f34d, blob c8d37d92aed7ff9d4fe94e7a9541e76ba5c88a2c. La referencia v386 en la sección 12 es antecedente y no se presenta como vigente.
-- **Código candidato:** src/OcpMcp/OcpMcp.csproj, Program.cs, SourcePin.cs, DugSourceReader.cs y McpServer.cs. Implementa handshake clásico MCP `2025-11-25`, `notifications/initialized`, `tools/list`, `tools/call` y cierre MCP shutdown/exit más EOF; no implementa el protocolo stateless `2026-07-28`.
+- **Código candidato:** src/OcpMcp/OcpMcp.csproj, Program.cs, SourcePin.cs, DugSourceReader.cs y McpServer.cs. Implementa handshake clásico MCP `2025-11-25`, `notifications/initialized`, `tools/list`, `tools/call` y cierre STDIO por EOF; no implementa mensajes propios `shutdown`/`exit` ni el protocolo stateless `2026-07-28`.
 - **Pruebas:** tests/OcpMcp.Pilot.Tests; 13 escenarios escritos, aún no ejecutados.
 - **Portabilidad:** las ramas integration/ocp-mcp-0.1.0-selective-20261101 y build/ocp-mcp-mvp-0.1.0 se inspeccionaron solo en lectura. Están divergentes respecto de main (592/911 commits detrás respectivamente al corte); no se fusionaron. Clasificación REUSE/ADAPT/REWRITE/DROP en piloto-sink/PORTABILITY-DECISIONS.md.
 - **Ejecución:** `dotnet` no está disponible en el contenedor ni en el dispositivo RDC sondeado (`DOTNET=NOT_FOUND`). En el dispositivo RDC la sesión de proceso es `MantenimientoRCI`, no el perfil de operador Fila 4; no se escribieron archivos allí. No se ejecutó build, prueba ni instalación.
@@ -202,3 +202,6 @@ Tras el piloto P004, generalizar a P001–P043, lotes ordenados, integridad, tel
 - **Runner local:** contenedor/RDC sin .NET SDK; el dispositivo conectado ejecuta bajo MantenimientoRCI. No instalar herramientas ni escribir en ese perfil. Fila 4 permanece offline.
 - **Próximo gate:** PR draft nuevo sobre cycle04; CI build/test observable; smoke del ejecutable STDIO; después, preflight EP/Fila 4 y E2E IPZ/RDC bajo autorización separada.
 - **Exclusiones:** sin instalación EP/Fila 4, DB/DPAPI/REGISTER, fuentes privadas, escritura nativa IPZ, paquete, E2E, FOL1 o activación MCP-NORMATIVO; no merge a main.
+
+
+**Avance de main posterior a la base:** HEAD observado ff55fa1e6377475ae54de01ad56d811e7de5bd72 (4 commits sobre 2e98cb2729741174ccc822f52a87259c4331b066). Los archivos tocados son documentación y objetos de Gobernanza; no cambian DUG v388 ni los 15 paths MCP-OCP. Compare actual: 15 ahead/4 behind; PR/CI evaluará el merge ref. No se declara actualización fast-forward.
