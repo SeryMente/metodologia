@@ -617,3 +617,37 @@ El operador confirma que RDC se autentica al inicio de la sesión. Planificar un
 **Criterio de aceptación:** catálogo organizacional con cobertura por fuente/servicio/entorno; valores cifrados; snapshot B2 y restore aislado verificado; read-back saneado; cero secretos en Git/chat/logs. Mantener separadas las bóvedas y cuentas de Khora, EP y demás sistemas según su titularidad.
 
 **Estado:** planificación de cobertura ampliada. No se ha leído ni exportado ningún valor secreto nuevo, ni se ha cambiado la bóveda existente.
+
+
+---
+
+## Continuidad H7/H8 · pruebas sintéticas de núcleo y verificación estructural local · 2026-11-10 · 15:36 America/Mexico_City
+
+### Alcance de la corrida
+
+Se ejecutó `EP.Vault.CLI.ps1 -Action SelfTest` contra el código local v1.0.0 con `LOCALAPPDATA` dirigido a `EP/local-state`. La acción SelfTest usa datos sintéticos y no requiere desbloqueo ni accede a valores del almacén formal. La prueba terminó con exit code 0 en 17,15 s.
+
+### Resultados observados
+
+- `SELFTEST_PASS`: PBKDF2-HMAC-SHA256, AES-256-CBC, HMAC-SHA256, round-trip, rechazo de contraseña incorrecta y rechazo de manipulación.
+- `JOB_RUNNER_SELFTEST_PASS`: creación suspendida, asignación al Job Object, proceso acotado y lectura de exit code.
+- `JOB_RUNNER_TIMEOUT_PASS`: timeout termina el árbol de procesos administrado.
+- Parser PowerShell: Core, CLI y GUI sin errores.
+- XML XAML: documento bien formado.
+
+### Artefactos locales cotejados
+
+| Archivo | Bytes | SHA-256 |
+|---|---:|---|
+| EP.Vault.Core.psm1 | 64.841 | `E219285AC286F1EE9D6FC43C3BEA79B1BC3FD1D6914102858A1C87A7666FF940` |
+| EP.Vault.CLI.ps1 | 7.606 | `A61AA573294E6C854CC22F8DFE0222040526D724203A9C20281FCAFF586AA2DD` |
+| EP-Vault.GUI.ps1 | 47.444 | `5C36DC7221FD1CC3B7F9F5EF4E2E907915A949C73127CDB5B585B92B5F018683` |
+| EP-Vault.Window.xaml | 29.869 | `B190E8A945BDCDBF2149B5D563F12BDF02049430703BD0595CDD03F2F090AC1A` |
+
+La validación se ejecutó en el contexto de mantenimiento con la raíz de estado EP seleccionada explícitamente; las pruebas fueron sintéticas y no modificaron la bóveda formal ni su ciphertext.
+
+### Límites y estado de hitos
+
+Esto completa únicamente las pruebas sintéticas indicadas, no H7/H8 integrales. No prueba DPAPI real de Fila 4, ACL del almacén formal, aislamiento entre usuarios, GUI funcional de punta a punta, temporizadores de todos los intervalos, expiración en GUI, audio, DPI, accesibilidad, reducción de movimiento, backup/restore ni aceptación visual. H10 permanece pendiente de revisión humana; la GUI observada por separado sigue SELLADA.
+
+**Estado:** `SYNTHETIC_CRYPTO_SELFTEST=PASS` · `MANAGED_JOB_SELFTEST=PASS` · `JOB_TIMEOUT_SELFTEST=PASS` · `PARSER=PASS` · `XAML_XML=PASS` · `H7_H8=PARTIAL` · `H10=HUMAN_ACCEPTANCE_PENDING`.
