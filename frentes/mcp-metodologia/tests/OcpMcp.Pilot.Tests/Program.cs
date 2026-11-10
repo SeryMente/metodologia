@@ -108,7 +108,7 @@ try
         runner.Equal(0, events);
     });
 
-    runner.Test("initialize, discovery, P004, hashes, event and clean shutdown by EOF", async () =>
+    runner.Test("initialize, discovery, P004, hashes, event and EOF termination", async () =>
     {
         var events = new List<SinkSuccessEvent>();
         var server = new McpServer(reader, events.Add);
@@ -133,6 +133,23 @@ try
         runner.Equal(64, result.RootElement.GetProperty("principleTextSha256").GetString()!.Length);
         runner.Equal(1, events.Count);
         runner.Equal("SINK_READ_SUCCESS", events[0].EventType);
+    });
+
+    runner.Test("shutdown request and exit notification close process", async () =>
+    {
+        var server = new McpServer(reader);
+        string input = Rpc("initialize", 1, new { protocolVersion = "2025-11-25", capabilities = new { }, clientInfo = new { name = "pilot-test", version = "1.0.0" } }) + "\\n" +
+            InitializedNotification() + "\\n" +
+            Rpc("shutdown", 2, new { }) + "\\n" +
+            "{\\"jsonrpc\\":\\"2.0\\",\\"method\\":\\"exit\\"}\\n" +
+            Rpc("ping", 3, new { }) + "\\n";
+        using var output = new StringWriter();
+        await server.RunAsync(new StringReader(input), output, CancellationToken.None);
+        string[] lines = output.ToString().Split('\\n', StringSplitOptions.RemoveEmptyEntries);
+        runner.Equal(2, lines.Length);
+        using JsonDocument shutdown = JsonDocument.Parse(lines[1]);
+        runner.Equal(2, shutdown.RootElement.GetProperty("id").GetInt32());
+        runner.Equal(true, shutdown.RootElement.TryGetProperty("result", out _));
     });
 
     runner.Test("source failure emits no success event", async () =>
