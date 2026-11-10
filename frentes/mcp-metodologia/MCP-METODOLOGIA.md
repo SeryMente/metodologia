@@ -4,7 +4,7 @@
 
 - **Nombre canónico vigente:** MCP-OCP (anteriormente MCP-METODOLOGIA).
 - **Identidad canónica vigente:** MCP-OCP. **Identidad histórica:** MCP-METODOLOGIA.
-- **Versión/sello:** MCP-OCP-v0.1.29 · coordinación del Sprint SINK-P004; Sink local por stdio autorizado; contrato DUG v388/NX-388m; piloto P004 pendiente; bootstrap del perfil persistente pendiente. Las generaciones y folios de sesiones anteriores son metadatos de auditoría.
+- **Versión/sello:** MCP-OCP-v0.1.30 · OCP MCP 1.0; H1 SINK:P004, H2 persistencia mínima/bóveda y H3 workspace completo definidos; Sink local por stdio autorizado; contrato DUG v388/NX-388m; piloto P004 pendiente; bootstrap del perfil persistente pendiente. Las generaciones y folios de sesiones anteriores son metadatos de auditoría.
 - **Repositorio propietario:** SeryMente/metodologia, rama main.
 - **OCP canónico:** frentes/mcp-metodologia/.
 - **Núcleo operativo único:** este archivo, MCP-METODOLOGIA.md.
@@ -640,7 +640,7 @@ Este rebaseline no acredita rama nueva, resolver implementado, pruebas PASS nuev
 ### 20.1 Baseline y estado
 
 - DUG fuente: Samantha v388/NX-388m · commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c` · blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`.
-- Core de este OCP: v0.1.29 (esta revisión); backlog auxiliar v0.10 (esta revisión).
+- Core de este OCP: v0.1.30 (esta revisión); backlog auxiliar v0.11 (esta revisión).
 - **Cotejo histórico de apertura:** `main` observado entonces `3fe1a70f59e9dbd53310814813633aa7ef9efd35`; la rama `feat/mcp-ocp-sink-pilot` sigue anclada al commit histórico `1676901cc09af6fcec4d052800b031e4c2f1ab40`. La distancia exacta registrada en ese momento no es estado vivo; la referencia no cumple MCP-OCP-02. El estado de coordinación y los pins actuales se mantienen en §20.
 - Control MCP-OCP: generación 5; autorización directa para código, pruebas, build, manifiesto, paquete y documentación dentro de este OCP. Se conserva sin cambios. La autorización excluye host EP, EP Vault y operaciones locales de instalación.
 - `MCP_OCP_02=OPEN` · `MCP_OCP_05=PENDING` · `MCP_OCP_03=PARALLEL_SYNTHETIC_FIXTURES` · `MCP_OCP_04=PARALLEL_HARNESS_PREP`.
@@ -677,3 +677,63 @@ Este rebaseline no acredita rama nueva, resolver implementado, pruebas PASS nuev
 - Ningún frente cambia el control de otro, ni sustituye evidencia por documentación. FOL1 no bloquea P004; el panel sí sigue siendo obligatorio en 1.0.0; `MCP-NORMATIVO` permanece DESACTIVADO.
 
 **Estado de sección:** plan interfrente rebaselined; no acredita rama nueva, código P004, pruebas PASS, build, paquete, host PASS, instalación, IPZ nativa ni E2E.
+
+
+## 21. OCP MCP 1.0 · hitos, persistencia, telemetría y sesión efímera · 2026-11-10
+
+**Versión del núcleo:** MCP-OCP-v0.1.30. **Programa:** OCP MCP 1.0. **Release:** MCP-OCP 1.0.0. **Backlog auxiliar:** LISTA-TAREAS-PROVISIONAL.md v0.11. **Primer hito:** SINK:P004.
+
+### 21.1 Decisiones del operador registradas
+
+La instrucción literal y las respuestas completas del operador, sin corrección de dictado, están conservadas en [anexo de Gobernanza · OCP MCP 1.0](../gobernanza/entregas/ChatGPT-GOBERNANZA-20261110-OCP-MCP-1.0-ULTIMO-TRAMO.md). Es el criterio de verdad de este diseño; la interpretación operativa no lo sustituye.
+
+- Operación declarada en México; el operador declara autorización para inspeccionar cualquier máquina donde opere. Se mantienen permisos del SO, límites técnicos y obligaciones legales.
+- Inventario robusto por defecto: contexto del SO/hardware/almacenamiento/cifrado/permisos/red; GPS/IP cuando sea accesible, rápido y permitido. Datos ausentes se marcan con estado/fuente; no se inventan ni se fuerzan permisos.
+- Retención prevista indefinida para datos útiles cifrados, sujeta a obligaciones legales y solicitudes válidas.
+- Workspace completo descargado en cada instancia; conversaciones y adjuntos forman parte del workspace cifrado.
+- Lease: renovación 60 s; ventana 30 min; aviso; cierre por 10 min de inactividad; máximo absoluto 8 h.
+- RDC autentica al inicio. Una sesión activa es lo normal; una segunda requiere excepción explícita; máximo dos, aisladas.
+- Backblaze es el único backend remoto inicial. El medio alternativo se difiere a H9/post-release; no provisionar ahora.
+- El cierre normal intenta checkpoint primero, con presupuesto inicial configurable de 30 s; después el crypto-erasure local tiene prioridad. Emergencia/sospecha de compromiso omite la espera.
+- UUIDv7 es la identidad técnica; etiquetas legibles secuenciales no contienen datos personales. Los consecutivos se asignan de forma atómica y se reconcilian tras sesiones offline.
+
+### 21.2 Secuencia canónica del programa
+
+| Hito | Objetivo | Trabajo MCP-OCP | Trabajo EP / Gobernanza |
+|---|---|---|---|
+| H1 | SINK:P004 visible desde IPZ | MCP-OCP-02/03/04/05 | GOV-TASK-007/003; EP gates para instalación |
+| H2 | Persistencia mínima + bóveda organizacional cifrada | MCP-OCP-14 fija journal/datasets/checkpoint | EP-TASK-002/004/006; GOV-TASK-014 acepta |
+| H3 | Workspace completo por instancia, recuperable | MCP-OCP-14; manifest, snapshot, integridad | EP-TASK-002/003/007; GOV-TASK-014 |
+| H4 | Identidad y telemetría de sesión/host/ubicación/red/ciclo | MCP-OCP-15 schema/store | EP-TASK-007 captura; GOV-TASK-013 correlaciona |
+| H5 | Lease renovable y dead-man iniciado por GUI | Contrato/eventos en MCP-OCP-15 | EP-TASK-007 implementa guardián y triggers |
+| H6 | Limpieza adaptativa/crypto-erasure | Integración del resultado y recibo | EP-TASK-007 ejecuta/verifica |
+| H7 | Vault → RDC credenciales just-in-time | MCP-OCP-16, diferido hasta auditar interfaz | EP-TASK-004/006 verifica canal y custodia |
+| H8 | Release MCP-OCP 1.0.0 | Panel, generalización, pruebas, paquete | EP-TASK-005 instalación; GOV-TASK-003 acepta |
+| H9 | Medio alternativo de persistencia | MCP-OCP-17 evaluación post-release | EP evalúa después; no provisionar antes |
+
+H1 y H2 avanzan en paralelo. El piloto SINK con fixtures/harness no espera al host EP. La importación privada, workspace real, restore, lease y dead-man esperan sus gates correspondientes. H2 es la prioridad operativa inmediata de EP. Panel y generalización P001–P043 no bloquean H1 pero son obligatorios para H8.
+
+### 21.3 Contratos nuevos
+
+**Persistencia (MCP-OCP-14):** journal mínimo; snapshots y manifiestos versionados; ciphertext de bóveda/workspace/conversaciones/adjuntos; workspace completo en cada instancia; estados LOCAL_DURABLE, REMOTE_UPLOADED, REMOTE_VERIFIED y RESTORE_VERIFIED. B2 permanece único backend remoto inicial; optimizaciones incrementales después de la primera restauración completa. Si no se puede verificar el snapshot B2 esperado, no declarar lista la instancia ni usar un proveedor alternativo no aprobado.
+
+**Telemetría (MCP-OCP-15):** UUIDv7 y secuencias legibles para ORG/WSP/SES/LOC/DEV/NET/CONV/CYC/EVT; IDs correlacionados, inicio/fin UTC, zona/offset, duración monotónica, ubicación GPS/IP/red con fuente/precisión/estado, inventario de equipo y eventos de lease/persistencia/cleanup. Los datos identificables se cifran; el contenido conversacional no se copia en eventos/logs, sino que permanece cifrado en el workspace. Se conservan intactas las definiciones GOV-TASK-013 para cycle.duration_ms e ipz.resolve.rdc.duration_ms.
+
+**RDC/Vault (MCP-OCP-16):** RDC autentica al comienzo; una sesión por defecto y segunda excepcional aislada. Auditar y demostrar canal de credenciales just-in-time soportado antes de implementarlo. No exponer secretos en argumentos, procesos, archivos, portapapeles, logs o telemetría. No ejecutar este hito en H2.
+
+**Persistencia alternativa (MCP-OCP-17):** evaluar después de H8. No crear cuenta, proveedor, bucket o servicio alternativo en este sprint.
+
+### 21.4 Lease y dead-man — contrato para EP
+
+EP-TASK-007 inicia un guardián independiente desde la GUI EP al instanciar la sesión efímera. Renovación 60 s; lease 30 min; inactividad 10 min; máximo 8 h; una sesión RDC activa, segunda solo por excepción. Cierre normal intenta un único checkpoint por un máximo inicial configurable de 30 s; luego desmonta/bloquea, destruye la clave efímera local y limpia solo artefactos OCP. Emergencia omite la espera. Nunca destruir claves persistentes de recuperación ni borrar discos, perfiles o datos de terceros. En SSD/UNKNOWN, priorizar crypto-erasure; no confiar en sobrescritura tradicional.
+
+EP-TASK-007 es independiente del gate físico de Fila 4 en EP-TASK-003. El guardián rige todas las instancias OCP declaradas efímeras, cualquiera que sea la ubicación; no volatiliza el root persistente EP ni modifica el gate de almacenamiento.
+
+### 21.5 Responsabilidades y límites
+
+- MCP-OCP implementa código/schema/pruebas locales y sus tareas MCP-OCP-14 a 17; no opera host EP, Vault ni credenciales.
+- EP es titular de EP-TASK-002/003/004/005/006/007 y ejecuta host, B2, bóveda, inventario, guardián e instalación bajo OEP/control EP generation 3.
+- Gobernanza coordina en GOV-TASK-015, acepta persistencia en GOV-TASK-014, integra medición en GOV-TASK-013 y acepta E2E en GOV-TASK-003.
+- Controles EP gen3, MCP-OCP gen5 y Gobernanza gen17 permanecen sin cambios. FOL1 permanece PREPARADO_NO_ACTIVO; MCP-NORMATIVO DESACTIVADO.
+
+**Estado de documentación:** núcleo v0.1.30 y backlog v0.11 leídos y configurados. No se declara implementado código MCP-OCP-14/15/16/17, B2 upload/restore, captura GPS/IP, guardián, crypto-erasure, instalación, E2E ni aceptación 1.0.0.
