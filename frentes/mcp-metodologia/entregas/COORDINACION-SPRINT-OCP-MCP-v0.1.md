@@ -1763,3 +1763,18 @@ Se actualizó el README para enlazar la crónica, coordinación y recibo del cic
 - La crónica del ciclo 11 permanece commit `c6dd88890dab337b25f12da2efffb60eb9cb7644`, blob `24b2528244f1a7107051e14517e3b577e51d96c6`, MATCHED.
 
 Este suplemento solo registra la actualización de navegación y su cotejo. No reabre ni renumera el ciclo local 11, no altera la clasificación `DTC_CYCLE_STATUS=CLOSED_VERIFIED` ni amplía autorización B. Los gates de bootstrap del perfil definitivo y consentimiento interactivo siguen pendientes.
+
+
+### Apertura MCP-OCP · reanudación H1 SINK:P004 · 2026-11-10 · lectura de main
+
+**Cursor del objeto bilateral MCP-OCP:** `main`, blob leído `47e15eee874a7de091cff9d9821cdb0f8658a794`. El último asiento existente es el cierre del ciclo local 11 (2026-11-06). No hay asiento posterior en este objeto; no se duplica ni se renumera el ciclo 11.
+
+**Delta del frente centralizador leído:** OEP v0.3.63, §129.3, en `main` (commit `9b999644abc39235ac20c9bf3a6279d896db6d81`, blob `5998709ef6c7cf4667ac5c6aa7c4403765c8dd97`); GOV-TASK-015, revisión del flujo H1, registro vigente en `main` (blob `cb52f790440e3c2b8b2ba2aa16301a13246045c0`); último commit general observado `ff9c75926a2907c630f506c4e08c267b15bca7cf`. La asignación selecciona MCP-OCP H1: corregir/confirmar MDP anidado en DUG v388, fixture homólogo, exclusiones de seguridad .gitignore, alcance de global.json, sincronizar PR #27 y obtener build, 41 pruebas y smoke STDIO verificables. EP Vault permanece bloqueante únicamente para el tramo de instalación y E2E local; no para desarrollo sintético remoto.
+
+**Control MCP-OCP leído:** `owned`, generación 5, blob `826d7bd3f67bddf4f31bafee5013d1ea55003cf4`. La autorización vigente cubre código, pruebas, build y documentación local dentro de `frentes/mcp-metodologia/`; excluye host EP, Vault/B2, credenciales externas, red pública, cambios a DUG/IPZ/Khora y activación de MCP-NORMATIVO. No se modifica el control ni se amplía alcance.
+
+**Respuesta inicial MCP-OCP:** `ACKNOWLEDGED`. Se continuará sobre la única candidata H1 existente, PR #27, sin abrir otra rama/tarea paralela. Preflight read-only actual: PR OPEN/DRAFT/NOT MERGED, `mergeable=true`; base main `ff9c75926a2907c630f506c4e08c267b15bca7cf`; head real `29f1a55a7d684740ae1e1939b6dea4783d306c85`, 35 commits ahead / 0 behind. El texto de la descripción de PR todavía cita un HEAD anterior (`e5bd7d992f3fda83035cc43329353b846a25e9a8`) y requiere reconciliación documental. Los tres workflows observados en el HEAD actual terminaron FAILURE; sus jobs muestran `steps=[]`, sin logs disponibles (`BlobNotFound`). No se infiere fallo de código ni causa raíz; no se reintenta a ciegas.
+
+**Siguiente acción inmediata:** revisar el diff y fuentes de la PR contra el DUG v388 y los criterios MCP-OCP-02/03/04/05; identificar el bloqueo real de CI a partir de datos disponibles. Después ejecutar solo acciones dentro del OCP, actualizar informes individuales y registrar cierre con read-back. No instalar ni ejecutar en Fila 4, no tocar EP/Vault/B2 ni IPZ.
+
+**Estado de apertura:** `DTC_CYCLE_STATUS=OPEN`; `MCP_OCP_H1=IN_PROGRESS`; `PR_27=OPEN_DRAFT_NOT_MERGED`; `HOSTED_CI=FAILURE_WITHOUT_STEP_OR_LOG_EVIDENCE`; `LOCAL_TESTS=REPORTED_IN_PR_BODY_NOT_REEXECUTED_IN_THIS_CYCLE`; `IPZ_E2E=NOT_ACCEPTED`; `MCP_NORMATIVO=DESACTIVADO`; `FOL1=PREPARADO_NO_ACTIVO`.
