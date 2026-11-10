@@ -1,14 +1,14 @@
-# GOV-TASK-015 · Sprint integrado Sink local vía RDC · Gobernanza / MCP-OCP / EP
+# GOV-TASK-015 · Sprint SINK-P004 · Gobernanza / MCP-OCP / EP
 
-**Estado:** `EN_CURSO · fase documental de Gobernanza ejecutada; implementación MCP-OCP y preparación/instalación EP sujetas a evidencia de sus frentes`
+**Estado:** `EN_CURSO · coordinación centralizada · listo para handoff de ejecución a EP; implementación MCP-OCP y gates EP siguen pendientes de evidencia`
 **Objetivo de release:** entregar MCP-OCP software **1.0.0**, instalado en la carpeta local de Metodología descrita al final de este plan. Las versiones documentales del núcleo MCP-OCP-v0.1.28 y backlog 0.9 son versiones de artefactos auxiliares, no la versión del producto.
 **Tipo:** coordinación y aceptación de un único sprint; no crea un frente nuevo ni controles paralelos.
 **Responsabilidad:** frente Gobernanza. Las tareas técnicas conservan sus OCP y fuentes.
 **Fuente normativa:** Samantha v388 · NX-388m · Metacanon 1.29 · GOW 2.18.
 **DUG:** Samantha v388/NX-388m; commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`; archivo blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`.
-**MCP-OCP:** núcleo v0.1.28 · commit `01e960b43f0750cd1824aac6a81a89f6a9362c26` · blob `8e763231b28dce62cd60f326b04c9a3cc15d5e32`; backlog v0.9 · commit `64a5a041c9cdf21d4703cea12b877b1129a853f1` · blob `c903c9c1aa5d2461697e8c91182a331c3d19918b`.
-**EP:** OEP v0.3.56 · commit `3b997f08e6fba520859a960be304c701c89243f7` · blob `89267f2d263f8367024fa992d10de3b0a3509840`.
-**Autorización:** el operador autorizó directamente Sink local por stdio y amplió el producto para incluir el panel local de observabilidad MCP-OCP-13. No se requiere aprobación de titularidad anterior, generación ni folio; dichos campos son auditoría, no compuertas.
+**MCP-OCP:** núcleo v0.1.29 · commit `dc82fa2de9a8ba9fde80488059071cf63198110b` · blob `40fec13868e6f34db9aae6fb078cb9085d5fe317`; backlog v0.10 · commit `94e61f897d0e901c0f0f9103ed669b05bfd1acc0` · blob `c2d95400a2a5211362dbcb358d359d3d59e0658c`.
+**EP:** OEP v0.3.59 · commit `a8882deba14fb38b2dcdb59cbc313b388d971dd9` · blob `b29e806d2d9473f3828972a0c67d09bf7dcafc4e`. EP-TASK-003=`PARTIAL_FAIL`; EP-TASK-005=`PENDING`; OEP §124 prepara reanudación por EP, sin alterar control generación 3.
+**Autorización:** la implementación Sink local por STDIO, pruebas, build/paquete y panel siguen dentro del control MCP-OCP generación 5. La coordinación no amplía permisos de host EP ni altera los controles MCP-OCP/EP/Gobernanza.
 **Destino EP designado:** alias funcional **Fila 4**, único destino RDC designado por el operador; PC 7 queda supersedido. No se conservan Device IDs, hostnames, cuentas de Windows, rutas concretas de perfil ni identificadores de sesión efímeros conforme a DUG v388/ART-013. El operador reportó estar físicamente frente a Fila 4; CECEQ no fue confirmado y la ubicación física continúa `UNCLASSIFIED`. No inferir CECEQ/LOC-OTHER; el dead-man solo aplica si se confirma ubicación distinta de CECEQ.
 **Alcance:** contrato, implementación Sink local, panel de observabilidad, pruebas, paquete, handoff, bootstrap en el perfil designado y aceptación E2E. Esta ficha es planificación: no acredita código, build, instalación ni prueba ejecutados.
 
@@ -369,3 +369,55 @@ EP-TASK-003: `en_curso / PARTIAL_FAIL`. EP-TASK-005: `pendiente`. No se ejecutan
 `SINK_P004_IPZ=NO_IMPLEMENTADO_NO_ACEPTADO` · `MCP_OCP_02=OPEN_STALE_BRANCH_FOUND` · `EP_TASK_003=PARTIAL_FAIL` · `EP_TASK_005=PENDING` · `IPZ_NATIVE=NOT_VERIFIED` · `FOL1=PREPARED_NOT_ACTIVE` · `MCP_NORMATIVO=DESACTIVADO`.
 
 Esta reconciliación es documental y de referencias. No modifica el repositorio MCP-OCP, sus archivos de titularidad, DUG ni controles. Tampoco realiza nuevas operaciones en Fila 4.
+
+---
+
+## Sprint SINK-P004 · plan central vigente y handoff EP · 2026-11-10
+
+**Nombre operativo oficial:** `SINK-P004`. **Propósito:** habilitar cuanto antes la primera recuperación SINK:P004 consumible desde el contexto IPZ real por RDC → MCP-OCP STDIO → respuesta íntegra visible al modelo. El producto completo sigue siendo MCP-OCP 1.0.0 (servidor + panel WPF). GOV-TASK-015 es el coordinador único del sprint; no crea otro frente ni cambia controles.
+
+### Baseline canónico y situación actual
+
+- DUG: Samantha v388/NX-388m · ART-027 · commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c` · blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`.
+- Núcleo MCP-OCP v0.1.29 · blob `40fec13868e6f34db9aae6fb078cb9085d5fe317`; backlog v0.10 · blob `c2d95400a2a5211362dbcb358d359d3d59e0658c`.
+- OEP v0.3.59 · blob `b29e806d2d9473f3828972a0c67d09bf7dcafc4e`; EP-TASK-003 `PARTIAL_FAIL`; EP-TASK-005 `PENDING`. OEP §124 deja preparado el relevo operativo al frente EP, sin modificar su control generación 3. La aceptación del handoff por EP queda pendiente.
+- Main antes de este asiento: `b42951bc34fb5e480719fddbab6ffccae1703ef5` (2026-11-10). La rama `feat/mcp-ocp-sink-p004-pilot-20261110` permanece anclada al commit `1676901cc09af6fcec4d052800b031e4c2f1ab40`; en ese cotejo main estaba 75 commits por delante y la rama no tenía commits exclusivos. Esa referencia sigue sin cumplir MCP-OCP-02.
+- Control MCP-OCP generación 5, autorización y exclusiones sin cambios. Control EP generación 3 sin cambios. Control Gobernanza generación 17 sin cambios. Este coordinador no transfiere titularidad ni permisos entre frentes.
+
+### Responsables por frente
+
+- **MCP-OCP:** crear la rama limpia, portar código selectivo, construir P004, probar contrato/STDIO, fijar SDK/RID y generar paquete verificable. No opera el host EP.
+- **Entorno Persistente:** retomar EP-TASK-003 y EP-TASK-005; resolver el diseño de almacenamiento conservando la ruta `Desktop/SeryMente`, completar el gate de Fila 4, proteger el root, importar fuentes e instalar el piloto después de recibir paquete probado. La pausa de almacenamiento no está levantada: el diseño VHDX/BitLocker sobre la ruta original sigue no aceptado.
+- **Gobernanza:** mantener ART-027 v388 y GOW/IPZ, preparar el candidato compacto después de congelar contrato P004, validar MDP/semántica y ejecutar GOV-TASK-003 E2E. No declarar IPZ nativa modificada ni FOL1 activado.
+- **Coordinación:** esta ficha consolida orden y dependencias, y revisa recibos de cada frente; no ejecuta host EP ni escribe código MCP-OCP.
+
+### Camino crítico y paralelismo
+
+1. **MCP-OCP-02 · P0:** rama nueva desde el HEAD vigente de main; mapa REUSE/ADAPT/REWRITE/DROP; SDK, target framework y RID fijados. No usar la rama candidata antigua como base.
+2. **MCP-OCP-05 · P0:** corte vertical `GOW:ARR → DUG v388 → SINK:P004`, primero con fixtures sintéticos. Respuesta P004 íntegra, ID/título, pin, commit/blob, SHA-256 y fail-closed.
+3. **MCP-OCP-03 · P0 paralelo:** pruebas de contrato con fixtures sintéticos desde ahora; repetir con fuente real tras EP PASS.
+4. **MCP-OCP-04 · P0 paralelo:** preparar harness/smoke STDIO/RDC; ejecutar initialize/tools/list/tools/call:P004/cierre cuando exista build. Consola manual no equivale a E2E IPZ.
+5. **EP-TASK-003 · P0 local (EP):** readquirir el estado vivo de Fila 4; presentar al operador el diseño recomendado para proteger `Desktop/SeryMente` conservando su ruta; no copiar/cifrar/mover/renombrar/desmontar/cambiar mountpoint antes de aceptación expresa; tras aceptar, completar XTS-AES256/Protection On/100 %, recovery Vault read-back, copia y SHA, checkout completo, root protegido y dead-man solo si ubicación confirmada fuera de CECEQ.
+6. **GOV-TASK-007 · paralelo:** elaborar candidato IPZ compacto con `GOW:ARR → DUG → MDP → SINK:P004` cuando el contrato P004 quede congelado. Medir salvaguardas y límite nativo; escritura/read-back nativos es acto separado.
+7. **EP-TASK-005 + MCP-OCP-12 · P0 local (EP):** solo tras EP-TASK-003 PASS y paquete P004 verificado + MCP-OCP-03/04 smoke PASS; instalar en `instalacion-local/piloto-sink/`, configurar root protegido, importar DUG v388, validar readiness. `REGISTER <SID>` requiere operador presente y consentimiento explícito.
+8. **GOV-TASK-003 + GOV-TASK-007 + MCP-OCP-04:** aceptar piloto solo si la llamada real nace desde IPZ y la respuesta P004 aparece visible al modelo con texto íntegro y pin/hash.
+9. **Después de P004 PASS:** generalizar P001–P043/lotes; GOV-TASK-001 ejecuta 43 positivos + 8 controles negativos/frontera; GOV-TASK-008 verifica integridad/frecuencia por recuperación satisfactoria.
+10. **Release MCP-OCP 1.0.0:** MCP-OCP-13 panel WPF obligatorio tras congelar schema (en paralelo con generalización, no bloquea P004); MCP-OCP-10/07 manifiesto/build/ZIP; MCP-OCP-12/08 + EP-TASK-005 instalación/handoff final.
+
+### Grafo de dependencias
+
+`MCP-OCP-02 → MCP-OCP-05`
+
+`MCP-OCP-03 (fixtures) ∥ MCP-OCP-04 (harness) ∥ GOV-TASK-007 (candidato IPZ) ∥ EP-TASK-003 (preflight/almacenamiento)`
+
+`MCP-OCP-05 + MCP-OCP-03 + MCP-OCP-04 + EP-TASK-003 PASS → EP-TASK-005/MCP-OCP-12`
+
+`EP-TASK-005 + respuesta P004 congelada + IPZ disponible → GOV-TASK-003 E2E`
+
+`P004 PASS → generalización 43 + matriz 43+8 → panel/schema + manifest/build/ZIP → instalación final 1.0.0`
+
+### Estado común que no debe sobreescribirse por inferencia
+
+`SINK_P004=NOT_IMPLEMENTED_NOT_ACCEPTED` · `MCP_OCP_02=OPEN_STALE_BRANCH_FOUND` · `MCP_OCP_03=PARALLEL_FIXTURES` · `MCP_OCP_04=PARALLEL_HARNESS` · `EP_TASK_003=PARTIAL_FAIL` · `EP_TASK_005=PENDING` · `GOV_E2E=PENDING` · `IPZ_NATIVE=NOT_VERIFIED` · `FOL1=PREPARED_NOT_ACTIVE` · `MCP_NORMATIVO=DESACTIVADO`.
+
+**Criterio de cierre del sprint:** el primer resultado útil es SINK:P004 operativo desde IPZ; el release 1.0.0 no se declara completo hasta panel, generalización, manifest/ZIP, instalación final y aceptación correspondiente. Las tres fuentes de frente conservan sus propios estados y evidencia.
