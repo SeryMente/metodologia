@@ -387,7 +387,7 @@ Después de crear la rama ciclo02, main avanzó cuatro commits EP-only hasta `67
 
 - HEAD de código consultado: `9f66b1ae8e1969cf82c3f753ab30e31c2bd1a8c1` (incluye el negativo del inventario exacto P001–P043).
 - MCP-OCP workflow run 56: `42868894554`, job `130014524745`, FAILURE; `steps=null`, `logs_url=null`, sin artefactos. La descarga no aporta logs; el job no acredita que se ejecutaran setup-dotnet, build, tests, WPF o smoke.
-- Run 55: `42867891954`, también FAILURE sin pasos/logs/artefactos; se intentó un retry, que dejó el run en cola y luego no produjo un resultado útil. El último run 56 se disparó por el commit posterior.
+- Run 55: `42867891954`, FAILURE sin pasos/logs/artefactos. Se reintentó una vez. En run 56 se aceptó un nuevo reintento; job `130015275379` volvió a terminar FAILURE con `steps=[]`, `logs_url=null`, sin artefactos y descarga de logs `BlobNotFound`. No se ejecutan reintentos ciegos adicionales.
 - En ambos commits fallaron también otros workflows del repositorio con el mismo patrón sin pasos recuperables. GitHub Status registró el 10-nov retrasos en workflows disparados por PR desde 16:31 UTC, Actions degradado hasta 17:28 UTC y Pull Requests aún degradadas; esto hace plausible un factor externo, pero **no demuestra la causa específica** del run 56.
 - Suite P004: 16 casos escritos / 0 ejecutados. Suite monitor: 11 escritos / 0 ejecutados. Build WPF y smoke: no verificados. El contenedor local no contiene `dotnet`.
 
