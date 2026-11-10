@@ -49,7 +49,7 @@ La tabla sustituye los PASS/estados de recibos históricos para la implementaci�
 ## Fichas de tareas
 
 ### MCP-OCP-01 — Contrato de producto local y frontera OCP/Khora/Jules
-**Prioridad:** P0 · **Estado:** VERIFICADO_EN_NUCLEO_V0.1.26 · **Responsable:** MCP-OCP dentro de su autoridad.
+**Prioridad:** P0 · **Estado:** VERIFICADO_EN_NUCLEO_V0.1.29 · **Responsable:** MCP-OCP dentro de su autoridad.
 
 **Objetivo:** fijar sin ambigüedad que el servidor de Metodología es un producto propio del OCP, ejecutado localmente y separado de Khora. La palabra «MSP» del propósito original se conserva como dictado histórico; la identidad técnica vigente del frente es MCP-OCP.
 
@@ -57,7 +57,7 @@ La tabla sustituye los PASS/estados de recibos históricos para la implementaci�
 
 **Excluye:** capacidades de dictados/audio/MP3/grafo de Khora; servidor Jules duplicado; API key de Jules o secretos de Khora; endpoint público/Vercel; activación de MCP-NORMATIVO; cambios DUG/Sink.
 
-**Cierre:** núcleo v0.1.27, esta lista v0.8 y README reflejan la misma frontera; la especificación del panel identifica su separación como app acompañante read-only, sin segundo MCP ni red. La revisión documental de contrato está verificada; las pruebas de implementación permanecen pendientes.
+**Cierre vigente:** núcleo v0.1.29, esta lista v0.10 y README reflejan la misma frontera; la especificación del panel identifica su separación como app acompañante read-only, sin segundo MCP ni red. La revisión documental de contrato está verificada; las pruebas de implementación permanecen pendientes.
 
 ### MCP-OCP-02 — Reconciliación de código ejecutable contra main
 **Prioridad:** P0 · **Estado:** PENDIENTE_SPRINT.
