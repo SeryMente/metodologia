@@ -1,4 +1,4 @@
-# GOV-TASK-015 · Sprint SINK-P004 · Gobernanza / MCP-OCP / EP
+# GOV-TASK-015 · OCP MCP 1.0 · Coordinación Gobernanza / MCP-OCP / EP
 
 **Estado:** `EN_CURSO · coordinación centralizada · listo para handoff de ejecución a EP; implementación MCP-OCP y gates EP siguen pendientes de evidencia`
 **Objetivo de release:** entregar MCP-OCP software **1.0.0**, instalado en la carpeta local de Metodología descrita al final de este plan. Las versiones documentales del núcleo MCP-OCP-v0.1.28 y backlog 0.9 son versiones de artefactos auxiliares, no la versión del producto.
