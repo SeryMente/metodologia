@@ -191,16 +191,16 @@ GOV-TASK-001, GOV-TASK-006, GOV-TASK-007 y GOV-TASK-008 se encuentran `en_curso`
 
 ## Referencias
 
-- [DUG v373 · ART-027](../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-027)
+- [DUG Samantha v388 · NX-388m · ART-027](../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-027)
 - [Núcleo Gobernanza](../GOBERNANZA.md)
 - [Pendientes Gobernanza](../PENDIENTES.md)
 - [Crónica de creación](../cronica/C-GOBERNANZA-MDP-OCP-01.md)
 - [Evidencia](../evidencias/C-GOBERNANZA-MDP-OCP-01.json)
 
 
-## Reorientación del objetivo · 2026-10-31
+## Antecedente histórico supersedido · reorientación del objetivo · 2026-10-31
 
-Objetivo rector: primera versión funcional de Gobernanza integrada con IPZ y OCP MCP. El IPZ tendrá un máximo de 1.500 caracteres y dos referencias Sync acortadas, en este orden: GOW/§ARR y DUG. Después reforzará la admisión obligatoria: no iniciar trabajo sustantivo sin frente explícitamente asignado y titularidad/exclusividad verificadas por el protocolo vigente.
+**Estado histórico:** esta formulación antecede a la decisión de Sink local por RDC del 2026-11-09 y a la reconciliación ART-027 en DUG Samantha v388/NX-388m del 2026-11-10. Las referencias Sync acortadas y URLs que siguen son antecedentes, no requisitos ejecutables vigentes. El objetivo actual y el orden P0 se encuentran en la sección «Sprint vigente · Sink local por RDC» más abajo y en GOV-TASK-015.
 
 Cada ciclo —no cada conversación— se identifica con su folio global. El modelo consulta en OCP MCP el inventario de 43 principios, considera todos, selecciona los pertinentes y comunica la selección. Los principios se nombran con el patrón «Principio DI · [denominación atómica de 1–3 términos]». El MDP permite reconocer significado y pertinencia, pero no aplicar la norma completa. OCP MCP entrega enlaces Sync individuales a las versiones desarrolladas; cada acceso alimenta telemetría de frecuencia. El modelo verifica suficiencia y solicita principios adicionales cuando sea necesario. OCP MCP genera el hash del paquete de enlaces y el modelo lo incluye en la salida del ciclo.
 
