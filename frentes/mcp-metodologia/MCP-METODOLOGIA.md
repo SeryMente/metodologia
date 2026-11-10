@@ -4,7 +4,7 @@
 
 - **Nombre canónico vigente:** MCP-OCP (anteriormente MCP-METODOLOGIA).
 - **Identidad canónica vigente:** MCP-OCP. **Identidad histórica:** MCP-METODOLOGIA.
-- **Versión/sello:** MCP-OCP-v0.1.27 · Sink local por stdio autorizado; candidata anterior 0.1.0 BUILD_AND_TESTED, bootstrap del perfil persistente pendiente. Las generaciones y folios de sesiones anteriores son metadatos de auditoría.
+- **Versión/sello:** MCP-OCP-v0.1.28 · Hito A: candidato SINK:P004 por STDIO implementado en rama, build y pruebas pendientes; no instalado ni aceptado E2E. La candidata anterior 0.1.0 BUILD_AND_TESTED sigue siendo evidencia histórica, no aceptación del piloto actual. Las generaciones y folios de sesiones anteriores son metadatos de auditoría.
 - **Repositorio propietario:** SeryMente/metodologia, rama main.
 - **OCP canónico:** frentes/mcp-metodologia/.
 - **Núcleo operativo único:** este archivo, MCP-METODOLOGIA.md.
@@ -601,4 +601,20 @@ La etiqueta Fila 4 identifica la terminal, no su ubicación física. **Ubicació
 MCP-OCP-02/05 (corte P004)/03/04 son P0 por el piloto. MCP-OCP-13 baja a P1 de secuencia, sin quitarse del alcance 1.0.0. La interfaz visual es requisito del release completo, pero no requisito previo de usar SINK:P004. FOL1 no bloquea el piloto ni el desarrollo; mantiene su gate separado. La IPZ candidata no activa FOL1 por sí misma. MCP-NORMATIVO sigue DESACTIVADO; no se modifica DUG, ART-025/027, IPZ nativa, Khora, ni controles EP desde MCP-OCP.
 
 **Estado de la rectificación:** decisión documental y secuencia actualizadas; rama, código, pruebas, piloto, preflight Fila 4, importación, instalación IPZ nativa, E2E y release no ejecutados.
+
+
+
+## 19. Hito A · candidato SINK:P004 por STDIO · ciclo 2026-11-10
+
+**Estado:** código y pruebas escritos en rama de trabajo; build, ejecución de pruebas y smoke del binario NO VERIFICADOS. No se declara piloto instalado ni aceptación IPZ.
+
+- **Contrato y autorización:** MCP-OCP-01 verificado contra este núcleo v0.1.27 al inicio, backlog LIST_VERSION 0.8, OPERACION-LOCAL y CONTROL-RESPONSABILIDAD.json blob 826d7bd3f67bddf4f31bafee5013d1ea55003cf4, generación 5, estado owned y implementation_authorization AUTHORIZED. El alcance vigente cubre Sink local STDIO, lector de fuentes, GOW:ARR, DUG, MDP, hashes, eventos de éxito, pruebas y documentación. No habilita EP, red pública, credenciales, B2, Khora ni MCP-NORMATIVO.
+- **Fuente actual de main:** HEAD de rama al crear 73a42bc687f1fa3dd60b44af9cd93f797eba3920. El archivo DUG fue fijado por última vez en commit 17a4da1d3906e2397ab4682ff46cc9a9f116f34d, blob c8d37d92aed7ff9d4fe94e7a9541e76ba5c88a2c; Samantha v387 · NX-387m, Metacanon 1.29, GOW 2.18. El pin histórico v386/blob 22dca684… queda supersedido para este ciclo. No se modifica el DUG.
+- **GOW:** sección glossary.sections[id=gow-sec-14], ancla #gow-arranque-chatgpt; se verifica antes de resolver P004. El término gow-mcp-normativo debe confirmar DESACTIVADO.
+- **MDP/SINK:** P004 único, título y ancla #P004, MDP íntegro y texto desarrollado. La respuesta incluye procedencia DUG, commit/blob, SHA-256 de fuente y SHA-256 del texto normativo.
+- **Implementación:** proyecto .NET 10 sin paquetes externos; MCP JSON-RPC 2.0 sobre STDIO; herramienta sink_principle restringida a P004; sin listeners, almacenamiento, logs persistentes ni escrituras. El evento SINK_READ_SUCCESS se emite a stderr solo después de lectura íntegra verificada.
+- **Pruebas escritas:** exactitud P004/metadata, pin alterado, fuente ausente, pin no autorizado, metadata DUG inválida, ID inválido sin evento, initialize/tools/list/tools/call/hashes/evento/shutdown y fallo de fuente sin evento. No se han ejecutado.
+- **Rama:** feat/mcp-ocp-p004-pilot-20261110-cycle02, creada desde main HEAD 73a42bc687f1fa3dd60b44af9cd93f797eba3920; no contiene merge de las ramas históricas.
+- **Siguiente gate:** obtener runner autorizado con .NET SDK 10; compilar y ejecutar pruebas; corregir fallos; repetir lectura de vuelta y registrar hashes de blobs. Después preparar smoke STDIO. E2E IPZ → RDC → STDIO requiere contexto IPZ real y aceptación separada.
+- **Límites:** no paquete, no carpeta instalacion-local, no Fila 4, no DB/fuentes privadas, no REGISTER, no IPZ nativa, no FOL1, no MCP-NORMATIVO, no merge a main.
 
