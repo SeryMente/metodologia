@@ -83,6 +83,28 @@ public sealed class DugSourceReader : IPrincipleSource
             throw new InvalidDataException("MCP_NORMATIVE_NOT_CONFIRMED_DISABLED");
         const string normativeStatus = "DESACTIVADO";
 
+        JsonElement authority = root.GetProperty("authority");
+        if (!authority.GetProperty("single_normative_document").GetBoolean() ||
+            !authority.GetProperty("human_content_precedes_machine_representation").GetBoolean() ||
+            !authority.GetProperty("machine_representation_is_derived").GetBoolean() ||
+            authority.GetProperty("independent_machine_authority").GetBoolean())
+            throw new InvalidDataException("DUG_AUTHORITY_CONTRACT_MISMATCH");
+
+        JsonElement[] humanSections = root.GetProperty("sections").EnumerateArray()
+            .Where(x => x.TryGetProperty("id", out JsonElement id) && id.GetString() == "samantha")
+            .ToArray();
+        if (humanSections.Length != 1)
+            throw new InvalidDataException("DUG_HUMAN_PRINCIPLES_SECTION_MISSING_OR_AMBIGUOUS");
+        string humanPrinciples = RequiredString(humanSections[0], "content");
+        if (humanPrinciples.Split("[[P:P004]]", StringSplitOptions.None).Length - 1 != 1)
+            throw new InvalidDataException("P004_HUMAN_ANCHOR_MISSING_OR_AMBIGUOUS");
+
+        JsonElement inventoryPolicy = root.GetProperty("principle_inventory_policy");
+        if (RequiredString(inventoryPolicy, "required_full_text_route") != "Sink alias per principle" ||
+            !inventoryPolicy.GetProperty("default_consult_before_application").GetBoolean() ||
+            !inventoryPolicy.GetProperty("deliberately_insufficient_for_full_application").GetBoolean())
+            throw new InvalidDataException("SINK_MDP_POLICY_CONTRACT_MISMATCH");
+
         JsonElement document = root.GetProperty("document");
         Require(document.GetProperty("version").GetString(), _pin.DugVersion, "DUG_VERSION_MISMATCH");
         Require(document.GetProperty("signature").GetString(), _pin.DugSignature, "DUG_SIGNATURE_MISMATCH");
@@ -124,6 +146,8 @@ public sealed class DugSourceReader : IPrincipleSource
         JsonElement preponderance = p004.GetProperty("preponderance");
         string category = RequiredString(preponderance, "category");
         double decimalValue = preponderance.GetProperty("decimal").GetDouble();
+        if (category != "A" || decimalValue != 0.8)
+            throw new InvalidDataException("P004_PREPONDERANCE_MISMATCH");
 
 
 
