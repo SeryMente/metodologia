@@ -2512,3 +2512,30 @@ No se ejecutó persistencia remota ni mutación del host. El DTC cierra con gate
 Se leyó íntegramente `§ARR · Vocabulario de entrada para ChatGPT` del objeto estructurado `glossary.sections` en DUG Samantha v388 / GOW 2.18. Cubre, entre otros, FT/OCP, núcleo operativo, control de responsabilidad, gestión/registro conversacional, trazabilidad semántica, ciclo/conversación, binomio A/B, UUIDv7 local, foliación, MCP-NORMATIVO desactivado, MCP-OCP, CNP y PAI. Se adquirieron además los textos completos de P001/P004/P005/P012/P013/P016/P035/P037/P038/P041/P042/P043 en el bloque de gobernanza. No se modificó el DUG.
 
 **Delta de fuente registrado:** el metadato/glosario estructurado declara `GOW=2.18` e incluye `gow-sec-14 / §ARR`; la sección GOW renderizada en `D.sections` conserva una ficha visible `v2.17` y no incluye §ARR como subsección renderizada. Se trata como desalineación de representación que requiere reconciliación del propietario de Gobernanza; el vocabulario adquirido no crea reglas ni autoridad independiente. No se editaron el HTML ni su JSON.
+
+
+---
+
+## EP · apertura de ciclo y aceptación del diseño de almacenamiento · 2026-11-10 · 15:45 America/Mexico_City
+
+### Respuesta inicial y cursor de coordinación
+
+**DTC leído:** `main`, blob `f386bbb7e15cd0a677f6ff084830d59fbb13df26`, 2.515 líneas. El último asiento procesado corresponde al ciclo EP del 2026-11-10 · 15:36. No aparece una comunicación posterior de Gobernanza sin procesar en este objeto: `SIN_NOVEDAD` respecto del cursor leído. No se interpreta la ausencia de delta como aceptación de mensajes anteriores ni como ampliación de autoridad.
+
+**Instrucción directa del operador recibida:** revisar la cola del frente, resolver de acuerdo con la secuencia programada y actualizar los objetos de tarea en cada ciclo. El operador confirma expresamente: «sí autorizo» el diseño VHDX/BitLocker propuesto para conservar la ruta original `Desktop\SeryMente`.
+
+**Respuesta inicial:** acuso la instrucción y la aprobación. La decisión cambia únicamente `STORAGE_DESIGN=ACCEPTED_BY_OPERATOR`; no equivale a autorización para omitir controles de seguridad, verificación de respaldo, lectura de vuelta, manejo de la clave de recuperación, cotejo íntegro del origen, staging/rollback ni aceptación final. No se modifica control EP generación 3, titularidad, responsabilidad ni permisos MCP-OCP.
+
+### Estado, viabilidad, bloqueos y orden inmediato
+
+- **EP-TASK-002 / P0 B2:** sigue siendo el primer gate. Última evidencia propietaria fiable (2026-11-10T21:34:04Z) indica Vault SELLADA, sesión CLI inactiva y 0/5 variables EP B2 disponibles; no hay evidencia de autenticación, objeto B2, descarga ni SHA remoto. El respaldo ciphertext-only no se ejecuta mientras la sesión permanezca sellada.
+- **EP-TASK-003 / protección física:** el diseño ya está aceptado por el operador. La materialización queda subordinada a completar y verificar primero el respaldo/restore de Vault, disponer de la clave de recuperación resguardada en Vault y respaldar el Vault actualizado antes de copiar o montar el workspace. Los dos errores de enumeración del origen aún deben resolverse.
+- **EP-TASK-004:** las pruebas sintéticas parciales permanecen como evidencia parcial; no sustituyen H7/H8 integrales ni H10/aceptación visual.
+- **EP-TASK-005:** continúa bloqueada por EP-TASK-003 PASS y el paquete/manifest/SHA y pruebas MCP-OCP-03/04.
+- **EP-TASK-006:** P1 permanece después de P0 B2 y su restore.
+- **EP-TASK-007:** inventario read-only parcial; no implementar Guardian/lease/crypto-erasure antes de satisfacer dependencias.
+- **EP-TASK-001:** permanece pendiente.
+
+Se ejecutará ahora una comprobación propietaria read-only del estado real de EP Vault y de los artefactos de transferencia. Si la cámara está desbloqueada y las cinco variables están disponibles, se ejecutará solo P0-C ciphertext-only dentro del TTL y se verificará por descarga y SHA. Si continúa sellada, el siguiente paso necesario será el desbloqueo local por el operador; no se solicitará ni automatizará la contraseña. Ninguna copia, cifrado, montaje, renombrado o cambio sobre el workspace original se ha realizado.
+
+**Estado de comunicación al abrir:** `DTC_READ=VERIFIED` · `GOV_CURSOR=SIN_NOVEDAD` · `OPERATOR_STORAGE_DESIGN=ACCEPTED` · `EP_EXECUTION=IN_PROGRESS` · `CYCLE_CLOSE=PENDING`.
