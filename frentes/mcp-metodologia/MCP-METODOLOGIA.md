@@ -4,7 +4,7 @@
 
 - **Nombre canónico vigente:** MCP-OCP (anteriormente MCP-METODOLOGIA).
 - **Identidad canónica vigente:** MCP-OCP. **Identidad histórica:** MCP-METODOLOGIA.
-- **Versión/sello:** MCP-OCP-v0.1.41 · OCP MCP 1.0; H1 SINK:P004, H2 persistencia mínima/bóveda y H3 workspace completo definidos; Sink local por stdio autorizado; contrato DUG v388/NX-388m; piloto P004 pendiente; bootstrap del perfil persistente pendiente. Las generaciones y folios de sesiones anteriores son metadatos de auditoría.
+- **Versión/sello:** MCP-OCP-v0.1.42 · OCP MCP 1.0; H1 SINK:P004, H2 persistencia mínima/bóveda y H3 workspace completo definidos; Sink local por stdio autorizado; contrato DUG v388/NX-388m; piloto P004 pendiente; bootstrap del perfil persistente pendiente. Las generaciones y folios de sesiones anteriores son metadatos de auditoría.
 - **Repositorio propietario:** SeryMente/metodologia, rama main.
 - **OCP canónico:** frentes/mcp-metodologia/.
 - **Núcleo operativo único:** este archivo, MCP-METODOLOGIA.md.
@@ -962,3 +962,32 @@ Estos informes se añaden al historial del núcleo propietario. No declaran acep
 - Aceptación: candidato publicado, NO ACEPTADO ni transferido.
 - Siguiente acción: comunicar ruta/hash a EP-TASK-005 y esperar EP-TASK-003 PASS antes de cualquier extracción/instalación.
 - Conclusión: PARCIAL; artefacto candidato construido y package smoke PASS; entrega/instalación/aceptación pendientes.
+
+## 31. Informe individual parcial · MCP-OCP-14 · validación sintética de schemas · 2026-11-10
+
+- **Frente / responsable:** MCP-OCP; contrato MCP-OCP-14. EP conserva host, cifrado operativo, claves, B2 y restore; Gobernanza conserva aceptación.
+- **Estado anterior → resultante:** CONTRATO_BASE_0.1_PROPUESTO · NO_RATIFICADO · SCHEMAS_JSON_PARSEABLE · SIN_RUNTIME/IO → P14-01_SCHEMA_FIXTURES_PASS_20_20 · CONTRATO_NO_RATIFICADO · SIN_RUNTIME/IO.
+- **Corte de fuente:** rama feat/mcp-ocp-sink-p004-main-a34c1c5b, sincronizada con main d50560e01b6a1cf2b2f6aecaa3b4766cb1a2266a por merge ed7a097e6810c606c5bb146788e047475166fa48. Main OEP v0.3.64 §130, EP-TASK-002 y GOV-TASK-015 releídos: B2 upload/read-back SHA PASS para cuatro objetos; restore aislado NOT_RUN; EP-TASK-003 PARTIAL_FAIL; H1 instalación/paquete pausados hasta cerrar la secuencia de restore.
+- **Objetivo y resultado:** validar los cuatro JSON Schemas Draft 2020-12 del contrato MCP-OCP-14 con fixtures sintéticos positivos y negativos. Resultado: 20/20 casos PASS; los cuatro schemas se usaron con Git blobs exactos.
+- **Cómo se solucionó:** se utilizó Test-Json -SchemaFile integrado en PowerShell 7.4.22; no se instalaron paquetes externos. Fixtures con UUIDv7 sintéticos, hashes ficticios y referencias opacas de prueba. Los schemas locales se cotejaron con Git blob antes de repetir la suite.
+- **Cambios:** añadido persistencia/tests/Validate-MCP-OCP-14-Schemas.ps1 y evidencia persistencia/evidence/MCP-OCP-14-schema-validation-20261110.json. No se modificaron los cuatro schemas ni el contrato base.
+- **Validación:**
+
+  | Bloque | Casos | Resultado |
+  |---|---:|---|
+  | Envelope | 3 | 3 PASS |
+  | Snapshot manifest FULL/INCREMENTAL | 6 | 6 PASS |
+  | Journal event | 4 | 4 PASS |
+  | Checkpoint receipt / estados | 7 | 7 PASS |
+  | **Total** | **20** | **20 PASS / 0 FAIL** |
+
+  Entorno: Windows 10.0.26200 x64; PowerShell 7.4.22. La suite versionada ejecutó sobre las cuatro copias byte-equivalentes a los blobs remotos.
+- **Blobs fuente cotejados:** envelope 36dfa8bc760114ca3a53077450bdb998f7429bee; snapshot manifest 132e054c27c35dcefc46fe26a02fcd4eaecb5737; journal event 51b4852ee56068460a323af72b72d137477f5ed6; checkpoint receipt 5529f5303c698f8c5f712aed705c8a08c8fdff46.
+- **Artefactos / read-back:** script Git blob dcdb2074bad9815194bbb5c60e8711faff50f968; evidencia JSON Git blob 9d68878b817fae996b519da3eb4780e42ace021e. Ambos se leyeron de vuelta; los cuatro blobs de schemas permanecen sin cambios.
+- **Bloqueantes/dependencias:** contrato MCP-OCP-14 sigue PROPOSED / NOT ACCEPTED; falta congelar canonicalización/idempotencia y recibir aceptación de GOV-TASK-014. No se inicia runtime/IO hasta que los responsables y gates correspondientes lo autoricen. EP restore aislado sigue NOT_RUN y tiene prioridad operativa.
+- **Preocupaciones/riesgos:** format: date-time es una anotación en Draft 2020-12 salvo que se habilite format-assertion; esta batería no certifica semántica de calendario ni orden temporal entre started_at_utc y finished_at_utc. Tampoco valida canonicalización JSON, recomputación de cadena SHA, cifrado, claves, DB, B2, descarga, restore o totalidad real de datasets. No se infiere su cumplimiento por los PASS de schemas.
+- **Pendientes/diferidos:** P14-01 queda PASS para esta matriz sintética; definir fixtures adicionales solo si cambia el contrato; congelar JSON canónico e idempotencia; integrar con EP únicamente tras interfaz/root/gates; aceptación GOV-TASK-014 pendiente.
+- **Rollback/recuperación:** solo se añadió un test y evidencia sintética a una PR no fusionada. Retirar los dos artefactos mediante commit si se rechazan; rollback no ejecutado ni probado.
+- **Aceptación:** verificación técnica sintética PASS; contrato y tarea global MCP-OCP-14 continúan PROPUESTO / NO ACEPTADO.
+- **Siguiente acción:** mantener H1/instalación en pausa hasta EP restore; para MCP-OCP-14, preparar canonicalización/serialización determinista con fixtures sintéticos, sin persistencia ni runtime.
+- **Conclusión:** PARCIAL; P14-01 validado con 20/20 casos y evidencia versionada; contrato global no ratificado.
