@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.58. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.59. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -12,7 +12,7 @@
 
 Adquirir este objeto como instrucciones del operador, subordinadas a las reglas superiores de plataforma y a autorizaciones específicas. Claudia es asistente/documental; Samantha es constructor/único escritor de código. Una asignación explícita posterior puede cambiar roles; las citas no lo hacen. La asignación específica de MOD-SCRIPTPWS queda delimitada en §94; la delegación funcional acotada de MOD-SYNC queda delimitada en §110 y no transfiere la titularidad del frente EP.
 
-El estado de reanudación vigente de este frente está en §60–§123; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. La organización local por frentes, con áreas separadas Repositorios/Datos/Temporal, queda desarrollada en §119 y en el DUG ART-030. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
+El estado de reanudación vigente de este frente está en §60–§124; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. La organización local por frentes, con áreas separadas Repositorios/Datos/Temporal, queda desarrollada en §119 y en el DUG ART-030. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
 
 Leer por relevancia: OEP actual→metacanon central→Sistema de Instrucciones/Metodología/Bootstrap vigentes→canon transversal EP→AGENTS.md y ep-medio-architectura.md→código/evidencia en commits exactos. Fuente caída no es «sin cambios». Un archivo no crea herramientas, credenciales ni memoria entre plataformas.
 
@@ -3277,3 +3277,35 @@ Estados resultantes:
 La pausa afecta solo las operaciones locales dependientes del workspace protegido. **No bloquea** la rama remota, el desarrollo MCP-OCP no sensible ni las pruebas de contrato con fixtures sintéticos. La instalación/importación de fuentes privadas permanece subordinada a EP-TASK-003 PASS y a la entrega verificable del paquete P004 por MCP-OCP.
 
 **Continuidad:** §122 conserva fielmente el estado observado en su momento (antes de crear el VHDX); esta sección registra el delta posterior y gobierna el estado vigente. No se modifica DUG, ART-025/027, IPZ nativa ni controles de responsabilidad.
+
+
+## 124. Relevo de ejecución EP y coordinación del sprint SINK-P004 · 2026-11-10
+
+**Instrucción vigente del operador:** Entorno Persistente ya está disponible para retomar la ejecución de sus propias tareas. Esta sesión deja de ejecutar tareas del frente EP y queda limitada a centralizar el sprint interfrente mediante GOV-TASK-015. El objetivo común recibe el nombre operativo **Sprint SINK-P004**.
+
+### 124.1 Límite de responsabilidades
+
+- **Ejecución EP:** corresponde al propio frente Entorno Persistente, que debe retomar EP-TASK-003 y EP-TASK-005 bajo su OEP y su control vigente.
+- **Coordinación:** GOV-TASK-015 centraliza secuencia, dependencias, contratos de salida y aceptación entre Gobernanza, MCP-OCP y EP.
+- **Control:** el control EP generación 3 se conserva sin cambios. Este relevo de actividad no constituye TRANSFER_RESPONSIBILITY, no crea sesión/folio/UUID y no declara un nuevo titular ni una aceptación del relevo por EP.
+- **Estado del host:** no se realizó ninguna lectura ni escritura local nueva en este relevo. El último estado de almacenamiento sigue siendo el descrito en §123. La pausa sobre copiar, cifrar, mover, renombrar, desmontar o cambiar el punto de montaje continúa vigente hasta que el operador resuelva expresamente la discrepancia.
+
+### 124.2 Encargo de reanudación para EP
+
+EP debe asumir este orden, conservando el objetivo de que el usuario y los proyectos sigan trabajando sobre la ruta habitual `%USERPROFILE%\Desktop\SeryMente`:
+
+1. **Readquirir el estado vivo de Fila 4 en solo lectura:** verificar el estado actual del VHDX preparado, volumen montado, BitLocker, protectores, root original e inventario del workspace. No presuponer que `W:` continúa montado ni que el estado de §123 sigue intacto.
+2. **Resolver la discrepancia antes de mutar:** presentar al operador un diseño único recomendado que proteja el contenido manteniendo la ruta habitual. Explicar que BitLocker cifra volúmenes, no carpetas; distinguir el montaje de volumen como directorio de otras alternativas y los riesgos de cada una. La propuesta VHDX/BitLocker montada sobre `Desktop\SeryMente` sigue `PROPOSED_NOT_ACCEPTED`. No copiar, cifrar, renombrar, desmontar ni reemplazar hasta aceptación expresa del operador.
+3. **Después de aceptación expresa:** preservar el origen/staging; proteger el volumen con XTS-AES256, BitLocker Protection On y cifrado 100 %; custodiar el recovery protector en EP Vault con verificación de escritura/lectura; copiar preservando rutas/metadatos; producir y comparar manifiestos SHA-256 de origen y destino; ejecutar el cambio de punto de montaje solo después de igualdad y conservar rollback hasta segundo read-back.
+4. **Dead-man condicional:** clasificar la ubicación física real de Fila 4 por separado. Solo si se confirma una ubicación distinta de CECEQ, implementar y probar el dead-man específico aprobado antes de runtime persistente. No inferir CECEQ/LOC-OTHER del dominio de red.
+5. **Checkout y root:** preservar la materialización parcial existente; reconciliar sus archivos antes de clonar/sincronizar `SeryMente/metodologia/main`; verificar branch/origin/HEAD/status, ACL e integridad. El root `%USERPROFILE%\Desktop\SeryMente\Datos\Metodologia\MCP-OCP\` debe quedar fuera del checkout y dentro del almacenamiento protegido.
+6. **Habilitación EP-TASK-005:** no instalar hasta que EP-TASK-003 sea PASS y MCP-OCP entregue el paquete P004 con manifest/SHA y pruebas mínimas. Instalar solo en `frentes/mcp-metodologia/instalacion-local/piloto-sink/`; importar únicamente fuentes fijadas a DUG v388. `REGISTER <SID>` exige presencia y consentimiento local explícitos.
+
+### 124.3 Dependencias y salida de EP
+
+- **EP-TASK-003 PASS** habilita checkout/root protegido, importación privada, DB real y runtime local.
+- **MCP-OCP-05 P004 + MCP-OCP-03 pruebas mínimas + MCP-OCP-04 smoke STDIO/RDC** son insumos para EP-TASK-005.
+- El panel MCP-OCP-13, la generalización P001–P043, FOL1 y la GUI EP Vault no bloquean el piloto P004, salvo dependencia material nueva demostrada.
+- EP debe reportar cada gate como PROPUESTO / AUTORIZADO / INTENTADO / EJECUTADO / VERIFICADO / ACEPTADO y aportar evidencia con SHA/read-back. Un cambio documental no equivale a PASS del host.
+
+**Estado de relevo:** `EP_EXECUTION=READY_FOR_EP_RETAKE` · `EP_ACKNOWLEDGEMENT=PENDING` · `EP_CONTROL_GENERATION=3_UNCHANGED` · `EP_TASK_003=PARTIAL_FAIL` · `EP_TASK_005=PENDING` · `STORAGE_DESIGN=PROPOSED_NOT_ACCEPTED`. No se ejecutó ninguna operación en el host en esta sección.
