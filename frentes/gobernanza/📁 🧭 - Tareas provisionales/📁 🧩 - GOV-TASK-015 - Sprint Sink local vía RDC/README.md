@@ -134,7 +134,7 @@ No son insumos por ahora: contraseña, token, SID, RecoveryPassword, B2, OAuth J
 
 - **Autorización Sink:** directa del operador y vigente.
 - **Implementación Sink en main:** NO IMPLEMENTADA.
-- **Panel MCP-OCP-13:** especificado y autorizado; NO IMPLEMENTADO.
+- **Panel MCP-OCP-13:** WPF candidato escrito; biblioteca de monitorización, reader/writer, dashboard y 11 pruebas sintéticas añadidas; build, tests, revisión visual Windows e integración EP todavía NO VERIFICADOS.
 - **Código fuente candidato:** recuperable desde ramas remotas; requiere reconciliación con main y pins actuales.
 - **Build/paquete vigente:** NO GENERADO.
 - **Workspace/volumen:** el estado histórico de W:/PC-14/PC 7 no acredita Fila 4. Checkout protegido, manifest y segundo read-back en Fila 4 pendientes.
@@ -339,7 +339,7 @@ EP-TASK-004 GUI de bóveda y EP-TASK-002/Backblaze no bloquean P004 ni el build 
 **Última evidencia:** rama MCP-OCP ciclo02 creada desde el main vigente; candidato P004, pruebas y CI están escritos, pero no hay PASS de compilación/tests/smoke. EP publicó un preflight parcial de Fila 4 con resultado FAIL; no hay instalación/importación. Pendiente: CI observable, correcciones, gates EP, paquete, instalación, IPZ nativa, E2E y panel. No convertir código escrito en PASS.
 ## Registro de ejecución MCP-OCP · ciclo02 · 2026-11-10
 
-**Estado de sprint:** MCP-OCP-02 ejecutado y read-back verificado. MCP-OCP-05 tiene implementación candidata P004 escrita, no compilada. MCP-OCP-03 tiene 13 escenarios escritos/0 ejecutados. MCP-OCP-04 tiene harness/CI escritos, smoke pendiente y E2E IPZ pendiente.
+**Estado de sprint:** MCP-OCP-02 ejecutado y read-back verificado. MCP-OCP-05 tiene implementación candidata P004 escrita, no compilada. MCP-OCP-03 tiene 15 escenarios P004 escritos/0 ejecutados; MCP-OCP-13 añade 11 pruebas de monitor escritas/0 ejecutadas. MCP-OCP-04 tiene harness/CI actualizados con build WPF, pero no hay smoke ni PASS observable; E2E IPZ pendiente.
 
 ### Base de trabajo
 - Main actual al crear la rama: `84cc9ffc1a2aa27c622c7e5de147d7460f3b5ecd`.
@@ -366,3 +366,18 @@ Abrir PR draft ciclo02; recuperar ejecución CI con steps/logs/artifacts; correg
 ### Main posterior a la base de ciclo02
 
 Después de crear la rama ciclo02, main avanzó cuatro commits EP-only hasta `67b48bc041bee372c69389f0aa84ed1a6d19eff5`. La comparación desde la base `84cc9ffc1a2aa27c622c7e5de147d7460f3b5ecd` confirma que las cuatro rutas modificadas pertenecen a EP y no se solapan con las 16 rutas MCP/GOV de la rama. Se conserva la rama desde su base limpia verificada; relación actual 16 ahead / 4 behind. No se toma control ni se modifica el estado EP.
+
+
+## Implementación candidata WPF/monitor · ciclo02 · 2026-11-10
+
+**Alcance implementado como código candidato (sin build):**
+- `src/OcpMcp.Monitoring/`: modelos de sesión/servidor/estado/evento, writer best-effort y reader read-only fail-closed.
+- `src/OcpMcp.Panel/`: proyecto WPF `net10.0-windows`, dashboard de una pantalla, FileSystemWatcher coalescido sin polling, control de cierre X/Alt+F4 como minimizar mientras EP sigue ACTIVE y verificación del proceso por PID + hora de inicio.
+- `src/OcpMcp/`: `--monitor-root` opt-in; sin argumento no hay persistencia de observabilidad. Al recibir root explícito, el servidor escribe snapshot inicial bloqueado/no listo, cambia protocolo y actividad por eventos sanitizados, y registra parada al EOF.
+- EP conserva propiedad y escritura de `session.json`, ACL, cifrado, ciclo de vida y apertura/cierre de la ventana. MCP-OCP no configura ni crea el root de datos de EP, no modifica BitLocker/ACL ni arranca el panel.
+
+**Telemetría:** evento `SINK_READ_SUCCESS` solo tras lectura completa validada; los errores se registran como `TOOL_FAILED` con código saneado y nunca incrementan éxitos. No se guardan argumentos, contenido, texto de principios, tokens, secretos, SID ni payloads.
+
+**Pruebas escritas:** 15 escenarios P004 + 11 de monitor; 0 ejecutadas. CI ahora restaura/build del servidor, suites P004/monitor, build WPF con `EnableWindowsTargeting` y smoke STDIO. El último run consultable de la revisión previa falló sin pasos/logs/artifacts; esta implementación nueva aún requiere una ejecución observada asociada al HEAD actual.
+
+**Estado:** implementación candidata escrita/read-back; build, tests, smoke, visual review Windows, paquete, integración EP ACTIVE y aceptación permanecen PENDIENTES. El panel no bloquea el corte P004 pero es obligatorio para 1.0.0.
