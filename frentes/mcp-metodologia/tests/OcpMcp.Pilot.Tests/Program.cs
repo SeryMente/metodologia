@@ -86,6 +86,29 @@ try
         runner.Throws<InvalidDataException>(() => new DugSourceReader(invalidRoot, repinned).ReadP004());
     });
 
+    runner.Test("human P004 marker must occur exactly once even with a matching repin", () =>
+    {
+        foreach (string humanContent in new[] { "Principios universales sin P004.", "Principios universales [[P:P004]] y otra vez [[P:P004]]." })
+        {
+            string invalidRoot = Path.Combine(root, "human-marker-" + Guid.NewGuid().ToString("N"));
+            Directory.CreateDirectory(Path.Combine(invalidRoot, "gobernanza"));
+            byte[] altered = Encoding.UTF8.GetBytes(FixtureHtml(humanSectionContent: humanContent));
+            File.WriteAllBytes(Path.Combine(invalidRoot, "gobernanza", "METAPROMPT-CANONICO-SAMANTHA.html"), altered);
+            var repinned = pin with { GitBlobSha = DugSourceReader.ComputeGitBlobSha(altered) };
+            runner.Throws<InvalidDataException>(() => new DugSourceReader(invalidRoot, repinned).ReadP004());
+        }
+    });
+
+    runner.Test("human P004 card markdown must match the exact normative text", () =>
+    {
+        string invalidRoot = Path.Combine(root, "human-card-markdown");
+        Directory.CreateDirectory(Path.Combine(invalidRoot, "gobernanza"));
+        byte[] altered = Encoding.UTF8.GetBytes(FixtureHtml(p004ContentMarkdown: "> Texto de tarjeta distinto."));
+        File.WriteAllBytes(Path.Combine(invalidRoot, "gobernanza", "METAPROMPT-CANONICO-SAMANTHA.html"), altered);
+        var repinned = pin with { GitBlobSha = DugSourceReader.ComputeGitBlobSha(altered) };
+        runner.Throws<InvalidDataException>(() => new DugSourceReader(invalidRoot, repinned).ReadP004());
+    });
+
     runner.Test("invalid DUG metadata fails closed", () =>
     {
         string badRoot = Path.Combine(root, "bad");
@@ -255,7 +278,7 @@ static string Rpc(string method, int id, object parameters) =>
 static string InitializedNotification() =>
     "{\"jsonrpc\":\"2.0\",\"method\":\"notifications/initialized\"}";
 
-static string FixtureHtml(string version = "v388", string? normativeText = null, string? lastPrincipleId = null)
+static string FixtureHtml(string version = "v388", string? normativeText = null, string? lastPrincipleId = null, string? humanSectionContent = null, string? p004ContentMarkdown = null)
 {
     normativeText ??= "No finjas capacidades, datos, resultados ni certezas, ni declares límites sin verificar con herramientas. Marca tu certeza y nombra los huecos sin rellenarlos. Precedencia absoluta sobre la exhaustividad y el buen trato.";
     string json = JsonSerializer.Serialize(new
@@ -275,7 +298,7 @@ static string FixtureHtml(string version = "v388", string? normativeText = null,
         },
         sections = new[]
         {
-            new { id = "samantha", content = "Principios universales [[P:P004]]." }
+            new { id = "samantha", content = humanSectionContent ?? "Principios universales [[P:P004]]." }
         },
         principle_inventory_policy = new
         {
@@ -294,7 +317,7 @@ static string FixtureHtml(string version = "v388", string? normativeText = null,
                     id,
                     title = isP004 ? "Principio de No-Simulación 🔒" : $"Fixture principle {id}",
                     normative_text = text,
-                    content_markdown = "> " + text,
+                    content_markdown = isP004 ? (p004ContentMarkdown ?? "> " + text) : "> " + text,
                     human_anchor = "#" + id,
                     microdescriptor = isP004
                         ? "Exigir hechos verificables; activarlo ante afirmaciones sobre capacidades, datos, acciones o certezas."
