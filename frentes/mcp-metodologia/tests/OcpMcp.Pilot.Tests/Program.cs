@@ -16,6 +16,22 @@ try
         DugSourceReader.ComputeGitBlobSha(bytes), "v387", "NX-387m", "TEST-EVENT", "1.29", "2.18");
     var reader = new DugSourceReader(root, pin);
 
+    runner.Test("actual pinned main DUG resolves exact P004", () =>
+    {
+        string? actualRoot = FindRepositoryRoot();
+        if (actualRoot is null) throw new DirectoryNotFoundException("TEST_REPOSITORY_ROOT_NOT_FOUND");
+        SinkP004Result actual = new DugSourceReader(actualRoot).ReadP004();
+        runner.Equal("v387", actual.DugVersion);
+        runner.Equal("NX-387m", actual.DugSignature);
+        runner.Equal("17a4da1d3906e2397ab4682ff46cc9a9f116f34d", actual.CommitId);
+        runner.Equal("c8d37d92aed7ff9d4fe94e7a9541e76ba5c88a2c", actual.GitBlobSha);
+        runner.Equal("P004", actual.PrincipleId);
+        runner.Equal("Principio de No-Simulación 🔒", actual.Title);
+        runner.Equal("No finjas capacidades, datos, resultados ni certezas, ni declares límites sin verificar con herramientas. Marca tu certeza y nombra los huecos sin rellenarlos. Precedencia absoluta sobre la exhaustividad y el buen trato.", actual.NormativeText);
+        runner.Equal("DESACTIVADO", actual.McpNormativeStatus);
+        runner.Equal(true, actual.GowArrContentMarkdown.Contains("### Función de entrada", StringComparison.Ordinal));
+    });
+
     runner.Test("P004 exact text and metadata", () =>
     {
         SinkP004Result r = reader.ReadP004();
@@ -174,6 +190,21 @@ finally
 }
 
 return runner.Finish();
+
+static string? FindRepositoryRoot()
+{
+    foreach (string start in new[] { Environment.CurrentDirectory, AppContext.BaseDirectory })
+    {
+        DirectoryInfo? current = new(Path.GetFullPath(start));
+        while (current is not null)
+        {
+            if (File.Exists(Path.Combine(current.FullName, "gobernanza", "METAPROMPT-CANONICO-SAMANTHA.html")))
+                return current.FullName;
+            current = current.Parent;
+        }
+    }
+    return null;
+}
 
 static string Rpc(string method, int id, object parameters) =>
     JsonSerializer.Serialize(new { jsonrpc = "2.0", id, method, @params = parameters });
