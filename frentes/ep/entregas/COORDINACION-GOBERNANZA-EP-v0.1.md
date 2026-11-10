@@ -2409,9 +2409,9 @@ El operador pidió preservar el último tramo de la conversación de EP, dar for
 
 ### Repetición técnica y discrepancia GUI/CLI
 
-Dos comprobaciones ejecutadas bajo CENTRAL\\fila4 reportaron a las 20:19:46Z y 20:20:16Z: vaultSessionActive=false, variableCount=0, las cinco variables EP B2 ausentes del entorno de la CLI y ciphertext presente de 2.200 bytes. El output anterior del modelo que afirmaba 775 segundos restantes se conservó verbatim, pero la repetición no lo corroboró y el estado vigente se corrige a sesión CLI no activa.
+Dos comprobaciones ejecutadas bajo CENTRAL\fila4 reportaron a las 20:19:46Z y 20:20:16Z: vaultSessionActive=false, variableCount=0, las cinco variables EP B2 ausentes del entorno de la CLI y ciphertext presente de 2.200 bytes. El output anterior del modelo que afirmaba 775 segundos restantes se conservó verbatim, pero la repetición no lo corroboró y el estado vigente se corrige a sesión CLI no activa.
 
-La inspección no destructiva de 20:20:29Z, bajo CENTRAL\\MantenimientoRCI, encontró ambos scripts de transferencia y wrapper, y ambos pasaron análisis sintáctico PowerShell. El recibo ep-backblaze-persistence-result.json no estaba presente.
+La inspección no destructiva de 20:20:29Z, bajo CENTRAL\MantenimientoRCI, encontró ambos scripts de transferencia y wrapper, y ambos pasaron análisis sintáctico PowerShell. El recibo ep-backblaze-persistence-result.json no estaba presente.
 
 No se invocó EP Vault CLI Run mientras la sesión aparecía cerrada, para evitar un bloqueo interactivo Read-Host. No se ejecutó b2 account authorize, no se consultó el bucket OCP-MCP, no hubo upload ni descarga ni hash remoto. La persistencia Backblaze continúa pendiente; no se declara éxito parcial de transferencia.
 
