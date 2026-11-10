@@ -470,3 +470,72 @@ Nivel final de seguridad; duración/renovación del lease; triggers y acciones e
 **Estado común:** OCP_MCP_1_0=DOCUMENTALMENTE_REBASELINED · SINK_P004=NOT_IMPLEMENTED_NOT_ACCEPTED · MCP_OCP_02=OPEN · EP_TASK_002=B2_REMOTE_NOT_VERIFIED_PENDING_RECONCILIATION · EP_TASK_003=PARTIAL_FAIL · EP_TASK_005=PENDING · GOV_E2E=PENDING · IPZ_NATIVE=NOT_VERIFIED · FOL1=PREPARED_NOT_ACTIVE · MCP_NORMATIVO=DESACTIVADO.
 
 Detalle y salida literal: anexo ChatGPT-GOBERNANZA-20261110-OCP-MCP-1.0-ULTIMO-TRAMO.md. Actualización documental únicamente; no hubo código, pruebas, build, B2, restore, host, dead-man, instalación ni escritura IPZ nativa.
+
+
+---
+
+## Rebaseline aprobado por el operador · OCP MCP 1.0 · 2026-11-10
+
+Esta sección sustituye las decisiones de diseño que antes figuraban pendientes. Las instrucciones originales y las respuestas del operador se conservan verbatim en el anexo vinculado al final; ese anexo es el criterio de verdad ante discrepancias. Se configuran tareas y handoffs; no se declara ejecución técnica ni se alteran controles.
+
+### Decisiones cerradas
+
+- Jurisdicción operativa declarada: México. El operador declara autorización para inspeccionar las máquinas donde opere; EP debe respetar permisos, controles del SO y obligaciones legales, sin bypass.
+- Inventario robusto por defecto, incluyendo ubicación GPS, IP y contexto de red cuando sean accesibles por interfaces soportadas y sin degradar la sesión. Capturar fuente, timestamp, precisión y estado; no fingir campos no disponibles.
+- Retención prevista indefinida para datos útiles cifrados, con obligaciones legales y solicitudes válidas como límites.
+- Workspace completo descargado en cada instancia. Todo cifrado, conversaciones/adjuntos incluidos.
+- Lease aprobado: heartbeat/renovación 60 s; lease 30 min; aviso previo; cierre por 10 min de inactividad; máximo absoluto 8 h.
+- RDC autentica al iniciar la sesión; una sesión activa por defecto, segunda solo por excepción explícita, máximo dos y aislamiento total de identidad/lease/claves/workspace.
+- Backblaze es el único backend remoto inicial. Medio alternativo pasa a H9/post-release y no se aprovisiona ahora.
+- Cierre: checkpoint primero con presupuesto inicial de 30 s; borrado local tiene prioridad. Emergencia/sospecha de compromiso omite espera y ejecuta crypto-erasure inmediata. Jamás se destruyen claves persistentes de recuperación ni se borran discos/perfiles/artefactos ajenos.
+- Nomenclatura: UUIDv7 técnico y etiquetas secuenciales legibles, sin datos personales incrustados; secuencias atómicas y reconciliables si la sesión inicia offline.
+
+### Secuencia por hitos y responsables
+
+| Hito | Resultado celebrable | Gobernanza | MCP-OCP | EP |
+|---|---|---|---|---|
+| H1 | SINK:P004 visible desde IPZ con texto íntegro y pin/hash | GOV-015/007/003 | MCP-OCP-02/03/04/05 | gates e instalación cuando proceda |
+| H2 | Persistencia mínima + bóveda organizacional cifrada en B2 | GOV-014 integra aceptación | MCP-OCP-14 define schema/datasets/checkpoint | EP-TASK-002/004/006 implementan y verifican |
+| H3 | Workspace completo cifrado descargable y restaurable por instancia | GOV-014 acepta manifiesto/hash/restore | MCP-OCP-14 y pruebas | EP-TASK-002/003 ejecuta; EP-TASK-007 integra ciclo |
+| H4 | Identidad y telemetría útil de sesión/host/ubicación/red/ciclo | GOV-013 conserva semántica y acepta integridad | MCP-OCP-15 schema/store | EP-TASK-007 captura inventario |
+| H5 | Lease renovable y dead-man iniciado por GUI | GOV-015 coordina | MCP-OCP-15 eventos/contrato | EP-TASK-007 guardián y trigger |
+| H6 | Limpieza adaptativa y crypto-erasure | criterios de aceptación | integración con proceso local | EP-TASK-007 implementa/verifica |
+| H7 | Integración Vault→RDC just-in-time | aceptar evidencia | MCP-OCP-16 diferida | EP audita canal seguro y Vault |
+| H8 | Release MCP-OCP 1.0.0 | GOV-003 aceptación E2E | panel, pruebas, manifest, paquete | EP-TASK-005 instalación/aceptación |
+| H9 | Medio alternativo de persistencia | revisar propuesta | MCP-OCP-17 evalúa | EP evalúa sin provisionar antes de autorización |
+
+### Paralelismo y gates
+
+- H1 continúa como corte rápido; desarrollo P004 con fixtures/harness no espera a la bóveda, panel, telemetry ni gates host.
+- H2 es prioridad P0 inmediata. EP-TASK-004/006 inventarían y preparan bóveda; EP-TASK-002 ejecuta B2 tras sus gates. MCP-OCP-14 define contrato de journal, snapshot y restauración.
+- H3 espera evidencia de cifrado, manifiesto, download y restore. La descarga completa se exige por sesión.
+- H4 puede diseñarse con fixtures en paralelo; captura real de datos del host pertenece a EP.
+- H5/H6 no se activan en host hasta la compuerta EP correspondiente. EP-TASK-007 es distinto de EP-TASK-003: uno construye la política de sesiones del producto; el otro conserva el gate de almacenamiento/Fila 4.
+- H7 se documenta ahora, pero no se implementa hasta auditar canal RDC y superar H2/restore de bóveda.
+- H9 no bloquea MCP-OCP 1.0.0 y no se aprovisiona en este sprint.
+
+### Grafo de dependencias actualizado
+
+MCP-OCP-02 → MCP-OCP-05; MCP-OCP-03 ∥ MCP-OCP-04.
+H2: EP-TASK-004/006 → EP-TASK-002 + MCP-OCP-14.
+H3: H2 PASS + EP-TASK-003 gates → workspace full download/restore → EP-TASK-007.
+H4: MCP-OCP-15 schema ∥ EP-TASK-007 inventory ∥ GOV-TASK-013 correlation.
+H5/H6: H3 + H4 schema frozen + EP-TASK-007 tests → local guard/cleanup acceptance.
+H7: H2 vault restore PASS + RDC channel audit → MCP-OCP-16.
+H8: P004 E2E + panel + generalization + manifest/build/package + EP-TASK-005 → GOV-TASK-003 acceptance.
+H9: after H8; evaluate alternative persistence medium only.
+
+### Criterios comunes no negociables
+
+- Toda conversación y adjunto se incluye en el workspace cifrado; no aparece en claro en telemetría o logs.
+- GPS/IP/inventario robusto son best-effort y no bloquean apertura: registrar AVAILABLE/UNAVAILABLE/DENIED/ERROR con fuente y precisión. No evadir permisos o degradar la sesión.
+- B2 único inicialmente; si no se puede verificar el snapshot remoto esperado, no declarar la instancia completa ni usar backend alternativo no aprobado.
+- Cierre normal: un único checkpoint ≤30 s, después crypto-erasure local aunque el checkpoint no se confirme. Emergencia: crypto-erasure inmediato.
+- El saneamiento se limita al workspace y artefactos propios OCP; nunca disco/perfil de terceros. SSD/UNKNOWN: crypto-erasure, no sobrescritura tradicional.
+- Todas las escrituras/documentos deben incluir criterios falsables, evidencia de ejecución y read-back. Diseño y tarea configurada no equivalen a implementación.
+
+### Estado de frente
+
+Gobernanza: coordinación y criterios configurados. MCP-OCP: las tareas 14–17 están definidas en LIST v0.11; implementación pendiente. EP: EP-TASK-007 creada, acuse EP y ejecución pendientes. EP-TASK-002/004/006 actualizadas como asignaciones documentales, sin declarar operación. Controles EP generación 3, MCP-OCP generación 5 y Gobernanza generación 17 permanecen sin cambios. FOL1 PREPARADO_NO_ACTIVO; MCP-NORMATIVO DESACTIVADO.
+
+**Fuente de verdad:** instrucciones verbatim y respuestas del operador en [anexo OCP MCP 1.0](../../entregas/ChatGPT-GOBERNANZA-20261110-OCP-MCP-1.0-ULTIMO-TRAMO.md).
