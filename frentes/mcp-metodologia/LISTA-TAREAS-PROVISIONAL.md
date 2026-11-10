@@ -35,7 +35,7 @@ La tabla sustituye los PASS/estados de recibos históricos para la implementaci�
 | 1 | MCP-OCP-01 | P0 | Contrato de producto y frontera OCP/Khora/Jules | VERIFICADO_EN_NUCLEO_V0.1.27 | Un servidor local STDIO; panel acompañante read-only en el producto final; dominios separados. |
 | 2 | MCP-OCP-02 | P0 · CRÍTICO | Rama limpia y reconciliación selectiva desde main | EJECUTADO · VERIFICADO POR READ-BACK | `feat/mcp-ocp-p004-rebaseline-20261110-cycle02`, base `84cc9ffc1a2aa27c622c7e5de147d7460f3b5ecd`; pin v388, inventario REUSE/ADAPT/REWRITE/DROP, SDK 10.0.403 y RID final win-x64 registrados. Build/pruebas aún pendientes. |
 | 3 | MCP-OCP-05 | P0 · SIGUIENTE | Corte vertical GOW:ARR → DUG → SINK:P004 | IMPLEMENTACIÓN CANDIDATA · NO COMPILADA | Servidor/lector/pin P004 escritos; respuesta, blob y SHA-256 implementados en código; requiere build, pruebas y smoke con evidencia CI. |
-| 4 | MCP-OCP-03 | P0 | Suite mínima de contrato del piloto P004 | ESCRITAS · 16 ESCENARIOS / 0 EJECUTADOS | Fixtures sintéticos positivos/negativos, negociación, P004, pins, hashes, errores, telemetría y EOF; ejecución pendiente de runner .NET con logs. |
+| 4 | MCP-OCP-03 | P0 | Suite mínima de contrato del piloto P004 | ESCRITAS · 18 ESCENARIOS / 0 EJECUTADOS | Fixtures sintéticos positivos/negativos, negociación, P004, pins, hashes, errores, telemetría y EOF; ejecución pendiente de runner .NET con logs. |
 | 5 | MCP-OCP-04 | P0 | Transporte y E2E IPZ → RDC → STDIO para P004 | HARNESS/CI ACTUALIZADOS · SIN SMOKE VERIFICADO | CI incluye build servidor, 18 tests P004, 23 tests de monitor/readiness, build WPF y smoke STDIO; run CI falla sin steps/logs/artifacts, por lo que ninguna etapa está acreditada. E2E IPZ espera gates EP. |
 | 6 | MCP-OCP-05 (fase posterior) / 03 | P0 | Generalización Sink P001–P043 y lotes | PENDIENTE_POST_PILOTO | 43 respuestas, orden, hashes/eventos y controles negativos PASS. |
 | 7 | MCP-OCP-13 | P1 | Panel local de observabilidad visual | IMPLEMENTACIÓN CANDIDATA · 23 TESTS ESCRITOS / 0 EJECUTADOS | WPF + reader/writer/evaluator de monitorización y 23 pruebas sintéticas publicados; `READY` exige atestación EP `Protection On` además de proceso/protocolo/fuentes/operador/root. Build, pruebas, revisión visual Windows e integración de ciclo EP pendientes. Obligatorio para 1.0.0; no bloquea P004. |
@@ -293,7 +293,7 @@ El panel MCP-OCP-13 baja a P1 de secuencia, pero permanece como entregable oblig
 
 ### Actualización de main posterior a la base de ciclo02 · 2026-11-10
 
-Main avanzó desde `84cc9ffc1a2aa27c622c7e5de147d7460f3b5ecd` hasta `67b48bc041bee372c69389f0aa84ed1a6d19eff5` mediante cuatro commits exclusivos del frente EP (OEP, índice/tareas EP y evidencia de preflight). La comparación `84cc9ffc... → main` confirma que esos cuatro commits no modifican rutas MCP-OCP ni GOV-TASK-015. La rama ciclo02 conserva su base inicial verificada; comparación actual: 16 commits ahead / 4 behind, sin solapamiento de rutas. No se rebasea ni se importa contenido de EP a este frente.
+Main avanzó desde `84cc9ffc1a2aa27c622c7e5de147d7460f3b5ecd` hasta `67b48bc041bee372c69389f0aa84ed1a6d19eff5` mediante cuatro commits exclusivos del frente EP (OEP, índice/tareas EP y evidencia de preflight). La comparación `84cc9ffc... → main` confirma que esos cuatro commits no modifican rutas MCP-OCP ni GOV-TASK-015. La rama ciclo02 conserva su base inicial verificada; comparación actual: 98 commits ahead / 4 behind; 30 archivos cambiados en el diff, sin solapamiento de las cuatro rutas EP-only posteriores a la base. No se rebasea ni se importa contenido de EP a este frente.
 
 
 ## Implementación candidata de observabilidad · 2026-11-10 · ciclo02
@@ -332,3 +332,10 @@ La validación de tiempo también rechaza atestación de protección anterior al
 ### Cobertura adicional del vínculo humano P004 · 2026-11-10
 
 La suite del lector P004 aumenta a 18 casos. Dos negativos nuevos repinnean el blob para demostrar que falla si `[[P:P004]]` falta/se duplica o si el `content_markdown` de la tarjeta humana difiere del texto normativo. Ningún PASS se declara hasta ejecución real.
+
+### Revisión estática y CI run 78 · 2026-11-10
+
+- MCP-OCP CI run `42871039884` (#78), job original `130022076348`: FAILURE, sin pasos, logs ni artefactos. Se aceptó reintento; el nuevo job `130058287914` volvió a FAILURE con `steps=[]`, `logs_url=null` y cero artefactos. Descarga de logs: `BlobNotFound`.
+- En el mismo commit, `validate-canonical-bootstrap` run `42871039938` y `Validate RDC Governance` run `42871039803` también finalizaron FAILURE sin pasos ni artefactos. No hay evidencia de que setup-dotnet, build, tests, WPF o smoke hayan comenzado; no atribuir el resultado al código.
+- Revisión estática MCP-OCP-13: el runtime inicializa Sources/Operator/Readiness en estados bloqueados y no ofrece una ruta para actualizarlos; por tanto, el test positivo del evaluator no acredita que el proceso real pueda emitir READY. Además, el watcher del panel no observa la creación tardía de `monitor/`, aunque el contrato requiere que EP pueda abrir el panel antes de iniciar el servidor. Ambos bloqueos requieren cierre y pruebas; no se modifica `session.json` ni el contrato EP.
+- Estado: 18 pruebas P004 + 23 de monitor/readiness escritas; 0 ejecutadas. Build, tests, smoke STDIO, build WPF y revisión visual Windows siguen NO VERIFICADOS.
