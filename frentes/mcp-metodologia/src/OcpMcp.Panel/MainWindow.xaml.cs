@@ -2,7 +2,6 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
-using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Threading;
 using OcpMcp.Monitoring;
@@ -15,8 +14,8 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     private readonly string? _dataRoot;
     private FileSystemWatcher? _watcher;
     private Process? _serverProcess;
+    private DateTimeOffset? _attachedProcessStartedAtUtc;
     private bool _sessionActive;
-    private MonitorServerSnapshot? _lastState;
 
     public event PropertyChangedEventHandler? PropertyChanged;
     public ObservableCollection<RecentEventRow> RecentEvents { get; } = new();
@@ -75,8 +74,10 @@ public partial class MainWindow : Window, INotifyPropertyChanged
                 Filter = "*",
                 EnableRaisingEvents = true
             };
-            FileSystemEventHandler changed = (_, _) => Dispatcher.BeginInvoke(RefreshView, DispatcherPriority.Background);
-            RenamedEventHandler renamed = (_, _) => Dispatcher.BeginInvoke(RefreshView, DispatcherPriority.Background);
+            FileSystemEventHandler changed = (_, _) =>
+                Dispatcher.BeginInvoke(RefreshView, DispatcherPriority.Background);
+            RenamedEventHandler renamed = (_, _) =>
+                Dispatcher.BeginInvoke(RefreshView, DispatcherPriority.Background);
             _watcher.Changed += changed;
             _watcher.Created += changed;
             _watcher.Deleted += changed;
@@ -84,8 +85,11 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         }
         catch
         {
-            Set(nameof(OverallStatus), "OBSERVABILIDAD NO DISPONIBLE", v => OverallStatus = v);
-            Set(nameof(OverallDetail), "No se pudo observar el root de monitor.", v => OverallDetail = v);
+            OverallStatus = "OBSERVABILIDAD NO DISPONIBLE";
+            OverallDetail = "No se pudo observar el root de monitor.";
+            AttentionTitle = "Proyección inaccesible";
+            AttentionDetail = "Revisar el acceso al root protegido; el panel no elevará permisos.";
+            NotifyAll();
         }
     }
 
@@ -98,8 +102,11 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
         if (view.Session is not null)
         {
-            ProtectionSummary = $"{view.Session.ProtectionState} · EP: {view.Session.ProtectionCheckedAtUtc.ToLocalTime():g}";
-            SessionDuration = $"Desde {view.Session.SessionStartedAtUtc.ToLocalTime():g}";
+            ProtectionSummary = $"EP: {view.Session.ProtectionState} · verificada {view.Session.ProtectionCheckedAtUtc.ToLocalTime():g}";
+            TimeSpan duration = DateTimeOffset.UtcNow - view.Session.SessionStartedAtUtc;
+            SessionDuration = duration >= TimeSpan.Zero
+                ? $"Duración {FormatDuration(duration)}"
+                : "Fecha de inicio no válida";
         }
         else
         {
@@ -125,6 +132,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             StatusGlyph = "×";
             AttentionTitle = "Sesión cerrada";
             AttentionDetail = "EP controla el cierre de este panel.";
+            DetachProcess();
             SetStageDefaults();
             return;
         }
@@ -136,25 +144,27 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             StatusGlyph = "…";
             AttentionTitle = "Esperando servidor MCP";
             AttentionDetail = "El panel no inicia ni reinicia el proceso.";
+            DetachProcess();
             ProcessStage = "No iniciado";
+            ProcessDetail = "Sin proceso identificado";
             ProtocolStage = "Pendiente";
             SourcesStage = "Pendientes";
             ReadinessStage = "No disponible";
             ProcessHealth = "Esperando";
             ProcessHealthDetail = "Sin state.json";
+            NotifyAll();
             return;
         }
 
         MonitorServerSnapshot state = view.State;
-        _lastState = state;
         SoftwareVersion = state.Server.SoftwareVersion;
         ProtocolStage = state.Protocol.State;
         ProtocolDetail = state.Server.Transport.ToUpperInvariant();
         ProcessStage = state.Server.Lifecycle;
         ProcessDetail = $"PID {state.Server.ProcessId}";
-        ProcessHealth = state.Server.Lifecycle;
-        ProcessHealthDetail = $"PID {state.Server.ProcessId} · {state.Server.ProcessStartedAtUtc.ToLocalTime():g}";
-        SourcesStage = state.Sources.Imported && state.Sources.Integrity.Equals("VERIFIED", StringComparison.OrdinalIgnoreCase) && state.Sources.Current ? "Verificadas" : "No listas";
+        SourcesStage = state.Sources.Imported &&
+            state.Sources.Integrity.Equals("VERIFIED", StringComparison.OrdinalIgnoreCase) &&
+            state.Sources.Current ? "Verificadas" : "No listas";
         SourcesDetail = $"{state.Sources.DugVersion} · {state.Sources.DugSignature} · {state.Sources.Integrity}";
         SourcesHealth = SourcesStage;
         DugPin = $"{state.Sources.DugVersion} / {state.Sources.DugSignature}";
@@ -164,23 +174,31 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         ReadinessStage = state.Readiness.Ready ? "READY" : "Bloqueado";
         ReadinessDetail = state.Readiness.ReasonCode;
 
-        CurrentActivity = string.IsNullOrWhiteSpace(state.Activity.CurrentTool) ? "Sin operaciones en curso" : state.Activity.CurrentTool!;
+        CurrentActivity = string.IsNullOrWhiteSpace(state.Activity.CurrentTool)
+            ? "Sin operaciones en curso" : state.Activity.CurrentTool!;
         ActivityDetail = state.Activity.CurrentStartedAtUtc is DateTimeOffset start
             ? $"Inicio {start.ToLocalTime():g}" : "No hay herramienta activa";
         ActivityCounts = $"Éxitos {state.Activity.SuccessCount} · Errores {state.Activity.ErrorCount}";
 
         RecentEvents.Clear();
         foreach (MonitorEvent evt in view.Events.Take(10))
-            RecentEvents.Add(new RecentEventRow(evt.TimestampUtc.ToLocalTime().ToString("HH:mm:ss"), evt.Tool ?? evt.EventType, evt.Outcome ?? "—"));
+            RecentEvents.Add(new RecentEventRow(
+                evt.TimestampUtc.ToLocalTime().ToString("HH:mm:ss"),
+                evt.Tool ?? evt.EventType,
+                evt.Outcome ?? "—"));
         RecentEventsEmpty = RecentEvents.Count == 0 ? "Sin actividad registrada" : string.Empty;
 
-        bool ready = state.Readiness.Ready &&
+        bool processVerified = AttachProcess(state.Server.ProcessId, state.Server.ProcessStartedAtUtc);
+        bool ready = processVerified &&
+            string.Equals(state.Protocol.State, "INITIALIZED", StringComparison.OrdinalIgnoreCase) &&
+            state.Readiness.Ready &&
             state.Sources.Imported &&
             state.Sources.Current &&
             state.Sources.Integrity.Equals("VERIFIED", StringComparison.OrdinalIgnoreCase) &&
             state.Operator.Provisioned &&
             state.DataRoot.Configured &&
             state.DataRoot.ReadWriteAvailable;
+
         if (ready)
         {
             OverallStatus = "LISTO";
@@ -191,41 +209,56 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         }
         else
         {
-            OverallStatus = state.Readiness.Ready ? "ATENCIÓN" : "BLOQUEADO";
-            OverallDetail = $"Servidor {state.Server.Lifecycle}; protocolo {state.Protocol.State}; readiness {state.Readiness.ReasonCode}.";
+            OverallStatus = processVerified ? (state.Readiness.Ready ? "ATENCIÓN" : "BLOQUEADO") : "DETENIDO";
+            OverallDetail = processVerified
+                ? $"Servidor {state.Server.Lifecycle}; protocolo {state.Protocol.State}; readiness {state.Readiness.ReasonCode}."
+                : "El PID/fecha de inicio ya no identifica el proceso MCP esperado.";
             StatusGlyph = "!";
-            AttentionTitle = "Gate pendiente";
-            AttentionDetail = state.Readiness.ReasonCode;
+            AttentionTitle = processVerified ? "Gate pendiente" : "Proceso no verificado";
+            AttentionDetail = processVerified ? state.Readiness.ReasonCode : "Verificar proceso y proyección de estado.";
         }
 
-        AttachProcess(state.Server.ProcessId, state.Server.ProcessStartedAtUtc);
         NotifyAll();
     }
 
-    private void AttachProcess(int pid, DateTimeOffset startedAt)
+    private bool AttachProcess(int pid, DateTimeOffset startedAt)
     {
-        if (_serverProcess is not null && _serverProcess.Id == pid) return;
+        if (_serverProcess is not null &&
+            _attachedProcessStartedAtUtc == startedAt &&
+            SafeHasNotExited(_serverProcess))
+            return true;
+
         DetachProcess();
         try
         {
-            Process p = Process.GetProcessById(pid);
-            DateTimeOffset actualStart = p.StartTime.ToUniversalTime();
-            if (Math.Abs((actualStart - startedAt).TotalSeconds) > 2)
+            Process process = Process.GetProcessById(pid);
+            DateTimeOffset actualStart = process.StartTime.ToUniversalTime();
+            if (process.HasExited || Math.Abs((actualStart - startedAt).TotalSeconds) > 2)
             {
-                p.Dispose();
+                process.Dispose();
                 ProcessStage = "Proceso distinto";
                 ProcessHealth = "No verificado";
-                return;
+                return false;
             }
-            p.EnableRaisingEvents = true;
-            p.Exited += (_, _) => Dispatcher.BeginInvoke(RefreshView, DispatcherPriority.Background);
-            _serverProcess = p;
+
+            process.EnableRaisingEvents = true;
+            process.Exited += OnServerExited;
+            _serverProcess = process;
+            _attachedProcessStartedAtUtc = startedAt;
+            return true;
         }
         catch
         {
             ProcessStage = "Desconectado";
             ProcessHealth = "No accesible";
+            return false;
         }
+    }
+
+    private static bool SafeHasNotExited(Process process)
+    {
+        try { return !process.HasExited; }
+        catch { return false; }
     }
 
     private void DetachProcess()
@@ -234,9 +267,11 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         try { _serverProcess.Exited -= OnServerExited; } catch { }
         _serverProcess.Dispose();
         _serverProcess = null;
+        _attachedProcessStartedAtUtc = null;
     }
 
-    private void OnServerExited(object? sender, EventArgs e) => Dispatcher.BeginInvoke(RefreshView, DispatcherPriority.Background);
+    private void OnServerExited(object? sender, EventArgs e) =>
+        Dispatcher.BeginInvoke(RefreshView, DispatcherPriority.Background);
 
     private void OnClosing(object? sender, CancelEventArgs e)
     {
@@ -275,6 +310,16 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         RecentEvents.Clear();
         RecentEventsEmpty = "Sin actividad registrada";
         NotifyAll();
+    }
+
+    private static string FormatDuration(TimeSpan duration)
+    {
+        int days = (int)duration.TotalDays;
+        return days > 0
+            ? $"{days} d {duration.Hours} h"
+            : duration.TotalHours >= 1
+                ? $"{(int)duration.TotalHours} h {duration.Minutes} min"
+                : $"{duration.Minutes} min";
     }
 
     private static string? GetOption(string[] args, string name)
