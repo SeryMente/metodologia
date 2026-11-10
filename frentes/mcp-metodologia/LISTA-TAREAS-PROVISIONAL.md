@@ -33,7 +33,7 @@ La tabla sustituye los PASS/estados de recibos históricos para la implementaci�
 | Orden | ID | Prioridad | Tarea | Estado vigente | Condición principal de salida |
 |---:|---|---|---|---|---|
 | 1 | MCP-OCP-01 | P0 | Contrato de producto y frontera OCP/Khora/Jules | VERIFICADO_EN_NUCLEO_V0.1.28 | Un servidor local STDIO; panel acompañante read-only en el producto final; dominios separados. |
-| 2 | MCP-OCP-02 | P0 | Rama limpia y reconciliación selectiva desde main | RAMA_LIMPIA_CREADA · PORTABILIDAD_DOCUMENTADA · SDK/RID_PENDIENTE | Nueva rama desde HEAD de main; inventario REUSE/ADAPT/REWRITE/DROP y SDK/RID. |
+| 2 | MCP-OCP-02 | P0 | Rama limpia y reconciliación selectiva desde main | RAMA_LIMPIA_CREADA · PORTABILIDAD_DOCUMENTADA · SDK_10.0.403_FIJADO · RID_NA_PILOTO | Nueva rama desde HEAD de main; inventario REUSE/ADAPT/REWRITE/DROP y SDK/RID. |
 | 3 | MCP-OCP-05 | P0 | Corte vertical GOW:ARR → DUG → SINK:P004 | CANDIDATO_IMPLEMENTADO · BUILD_PENDIENTE | Respuesta individual completa, pin/commit/blob/SHA-256 y fail-closed. Generalización a 43 después del piloto. |
 | 4 | MCP-OCP-03 | P0 | Suite mínima de contrato del piloto P004 | PRUEBAS_ESCRITAS · NO_EJECUTADAS | Casos positivos/negativos de fuente, ID, pin/hash, error y cierre; luego ampliar suite 1.0.0. |
 | 5 | MCP-OCP-04 | P0 | Transporte y E2E IPZ → RDC → STDIO para P004 | PRECONDICIONES_DOCUMENTADAS · E2E_PENDIENTE | initialize/tools/list/tools/call/cierre y respuesta visible desde el contexto IPZ; consola sola no basta. |
@@ -269,3 +269,6 @@ El panel MCP-OCP-13 baja a P1 de secuencia, pero permanece como entregable oblig
 - No se crea paquete ni se instala en Fila 4; no se accede a fuentes privadas ni se crea DB/REGISTER. No merge a main.
 - Detalle de archivos, decisiones, pruebas y límites: piloto-sink/README.md y piloto-sink/PORTABILITY-DECISIONS.md.
 
+
+
+- **SDK/RID del piloto:** .NET SDK 10.0.403 fijado en global.json; ejecución no verificada. RID no aplica al piloto framework-dependent; win-x64 queda para el paquete.
