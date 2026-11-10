@@ -2428,3 +2428,35 @@ No se invocó EP Vault CLI Run mientras la sesión aparecía cerrada, para evita
 ### Persistencia documental y lectura de vuelta
 
 Los commits y blob SHA anteriores identifican cada escritura. Se debe mantener el estado técnico de B2 como pendiente hasta que exista evidencia remota de autenticación, objeto, descarga y SHA-256 idéntico.
+
+
+---
+
+## EP · resolución de discrepancia GUI/CLI y preparación de P0-C B2 · 2026-11-10
+
+### Relectura de fuente y diagnóstico
+
+OEP v0.3.59, §§91 y 124, y EP-TASK-002 fueron adquiridos desde main. §91 confirma el destino único OCP-MCP y ep-ocp/; §124 delimita la continuidad de ejecución de EP y exige evidencia por gate. El operador instruyó continuar resolviendo la persistencia.
+
+La comprobación propietaria de 2026-11-10T21:23:12Z reportó vaultSessionActive=false, cero variables y ciphertext presente de 2.200 bytes. UI Automation, 2026-11-10T21:23:30Z, leyó en la ventana EP Vault: HeaderState=SELLADA, GateTitle=La cámara permanece sellada. y FooterStatus=LOCAL · CIFRADO · SELLADA. La interfaz está abierta, pero la cámara está sellada en la evidencia observada. El proceso corresponde al usuario propietario y al lanzador que define la raíz EP esperada; el archivo de sesión compartida no está presente. No se tocó la contraseña, ACL, ruta ni ciphertext.
+
+### Worker P0-C corregido
+
+Se preparó un worker y wrapper distintos para persistir solo el ciphertext de EP Vault. Se excluyó el ZIP de workspace sin cifrado cliente; la política OEP exige cifrar el workspace antes de B2. Los nuevos scripts pasan análisis sintáctico y se encuentran en el estado local de trabajo EP, con sus SHA asentados en EP-TASK-002. El flujo prevé comprobación de cuenta/key ID, bucket privado OCP-MCP, inspección lifecycle, upload SSE-B2/AES256, descarga por B2 URI y cotejo de tamaño/SHA-256; no cambia reglas ni elimina objetos.
+
+La ayuda del CLI bajo identidad propietaria confirmó sintaxis para autorización por variables de entorno, listado JSON de buckets, upload SSE-B2/AES256, download por URI y file info. No hubo llamada autenticada a Backblaze.
+
+### Estado observado
+
+- GUI: proceso activo, bóveda SELLADA.
+- CLI: sesión compartida inactiva, cinco variables no disponibles.
+- Worker/wrapper: preparados, sintaxis PASS.
+- Recibo P0-C: AUSENTE.
+- b2 account authorize, consulta de bucket, upload y descarga: NO EJECUTADOS.
+- Backblaze EP: PENDIENTE.
+
+Gate local requerido para continuar sin exponer secretos: el operador desbloquea la GUI usando el control local. En cuanto la CLI confirme sesión compartida y las cinco variables, ejecutar el wrapper P0-C dentro del TTL y cerrar solo con read-back remoto y SHA-256 idéntico.
+
+### Persistencia documental
+
+EP-TASK-002 recibió el detalle y se leyó de vuelta; índice provisional actualizado. Esta entrada documenta bloqueo/preparación, no un éxito remoto.

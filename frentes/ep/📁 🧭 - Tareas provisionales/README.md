@@ -289,3 +289,12 @@ EP-TASK-002 conserva el estado en_curso. Se guardó la transcripción literal de
 **Orden operativo:** EP prioriza bóveda y primer checkpoint cifrado; después workspace completo por instancia. SINK:P004 continúa en paralelo con fixtures/harness sin datos privados. El guardián y la inspección extendida se implementan después de congelar contratos y verificar la restauración inicial. El suministro de credenciales Vault→RDC se difiere al hito MCP-OCP-16 y no se ejecuta ahora.
 
 **Control de ejecución:** este índice configura el encargo documental. EP debe acusar recibo, revalidar el estado vivo y ejecutar bajo su OEP/control generación 3. No se afirma operación de host, GPS, lease, B2, bóveda ni borrado.
+
+
+---
+
+## EP-TASK-002 · diagnóstico GUI/CLI y preparación P0-C · 2026-11-10
+
+OEP §91 y EP-TASK-002 fueron releídos. La inspección viva de EP Vault mostró la ventana GUI abierta pero en estado SELLADA; la sesión DPAPI compartida no está presente bajo la misma identidad propietaria y raíz EP que usa la CLI. No se encontró un fallo de ruta: GUI y CLI comparten el mismo Core y archivo de sesión.
+
+Se preparó un worker/wrapper PowerShell nuevo para P0-C que subirá únicamente el ciphertext de EP Vault a OCP-MCP/ep-ocp/vault/, con bucket privado, revisión lifecycle, SSE-B2/AES256, descarga y SHA-256. Los scripts pasan parser y sus SHA quedan registrados en EP-TASK-002. No se ejecutó autenticación, upload ni descarga; el recibo sigue ausente. El workspace ZIP no se carga porque el hito vigente exige cifrado antes de enviarlo a B2. Detalle en el núcleo EP-TASK-002 y en el anexo conversacional.
