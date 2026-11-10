@@ -20,7 +20,7 @@ El patrón de materialización sigue el registro de tareas provisionales de Gobe
 | EP-TASK-001 | pendiente | NCL — Navegador Compartido Local: integración de Playwright y KeePassXC | [núcleo](./📁%20🧩%20-%20EP-TASK-001%20-%20Integración%20NCL/README.md) |
 | EP-TASK-002 | `en_curso · P0 · B2_AUTH_OK_BUCKET_PRIVATE · PREFLIGHT_PROPERTY_EXCEPTION · REUNLOCK_PENDING` | v1/v2 autenticaron y hallaron OCP-MCP privado; ambos fallaron antes de upload (recibos independientes preservados); v3 parser PASS, no ejecutada porque Vault volvió a sellarse; no objeto remoto ni ZIP | [núcleo](./📁%20🧩%20-%20EP-TASK-002%20-%20Persistencia%20provisional%20Backblaze/README.md) |
 | EP-TASK-003 | `en_curso · P0 · DISEÑO_ACEPTADO · PREFLIGHT_PARTIAL_FAIL` | Diseño VHDX aceptado; 2 enumeraciones 3.127 archivos/660 dirs/179.138.515 B, 0 errores; C: XTS-AES128/Protection Off; W: descifrado; checkout sin .git; Datos/MCP-OCP ausente; espera P0 B2 | [núcleo](./📁%20🧩%20-%20EP-TASK-003%20-%20Mapa%20integral%20de%20construcción%20EP/README.md) |
-| EP-TASK-004 | `en_curso · H7_H8_SYNTHETIC_E2E_V1_0_0_PASS · H10_PENDIENTE` | Suite sintética exacta v1.0.0 en Fila 4: exit 0/165,41 s; 5 artefactos coinciden con manifest de feat/ep-vault-pc7-hardened-20261109; DPAPI/TTL/allowlist/CRUD/tamper/CLI↔GUI PASS; H10 y merge a main pendientes | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-004%20-%20Reconstrucci%C3%B3n%20de%20b%C3%B3veda/README.md) |
+| EP-TASK-004 | `en_curso · H7_H8_SYNTHETIC_E2E_V1_0_0_PASS · H10_PENDIENTE` | Suite v1.0.0 exacta PASS en dos corridas independientes (165,41 s y 142,61 s); release manifest actualizado/read-back PASS; checkout Desktop\SeryMente sigue snapshot previo no sustituido; H10 y merge a main pendientes | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-004%20-%20Reconstrucci%C3%B3n%20de%20b%C3%B3veda/README.md) |
 | EP-TASK-005 | pendiente · P0 piloto · BLOQUEADO_EP003+MCP_PACKAGE | EP ejecuta instalación del piloto en Fila 4 solo tras EP-TASK-003 PASS + paquete P004/manifest/SHA + MCP-OCP-03/04 smoke PASS; W: no es destino final. Después release 1.0.0. | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-005%20-%20Instalaci%C3%B3n%20y%20aceptaci%C3%B3n%20de%20MCP-OCP%20local/README.md) |
 | EP-TASK-006 | `en_curso · P1_WAITING_P0_B2` | Centralización: nombres Master B2 EP normalizados y leídos de vuelta; inventario mult proveedor incompleto; P1 sigue después del snapshot/restauración P0 | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-006%20-%20Centralizaci%C3%B3n%20de%20variables%20de%20entorno/README.md) |
 | EP-TASK-007 | `en_curso · HOST_INVENTORY_PARTIAL_READ_ONLY` | Revalidación read-only: workspace 3.127 archivos/660 dirs/179.138.515 B; C: 100 % XTS-AES128/Protection Off/sin protectores; W: 0 %/sin protectores; ubicación UNCLASSIFIED; Guardian no implementado | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-007%20-%20Guardi%C3%A1n%20de%20sesi%C3%B3n%20ef%C3%ADmera%20e%20inventario%20del%20host/README.md) |
@@ -359,3 +359,16 @@ Informe individual EP-TASK-004 publicado y leído de vuelta antes de este índic
 - **EP-TASK-005/006/001:** dependencias y orden sin cambio.
 
 Informe individual de EP-TASK-002 actualizado y leído de vuelta: commit 3dd266d2645cf7884a021a96573692b9c4b39f65, blob de810f529a59f4fea9768393430a07a5c1f8e86e. No se promueve la tarea a completada.
+
+---
+
+## Reconciliación ejecutiva EP · 2026-11-10 · retest independiente EP-TASK-004
+
+- **EP-TASK-004:** además del PASS de 165,41 s informado previamente, se ejecutó una segunda corrida independiente de `MOD-EPVAULT/v1.0.0` en Fila 4 desde una copia temporal exacta del release commit `db4138ca2879148f2f22f159c7609f5fa3466924`. Exit 0, 142,61 s; log SHA-256 `D1D244ADAEA157AA8F295487CCCE9225207738F8865F4909771B5AED523416A1`. Cinco blobs de código y dos recursos WAV cotejados; sandbox eliminado; no se tocó Vault formal, GUI, BitLocker, B2 ni workspace.
+- **Manifiesto de producto:** rama `feat/ep-vault-pc7-hardened-20261109`, commit de actualización `e165c0b867e20c9ae3156f6bad72c6f13ba8a5c5`, blob de read-back `4de6dcc0a5989a2671c8009226405d7f189fe7fe`; estado `EXACT_V1_0_0_RETEST_PASS`, manteniendo H10 y merge pendientes.
+- **Núcleo individual actualizado:** commit `00c20d925711410a91f446fb943757c824765361`, blob final `fa31b43ab882e9e24d8e61b494b176c0d700ba25`. La adenda explicita el límite de procedencia: el checkout local bajo Desktop\SeryMente conserva blobs anteriores y no fue sobrescrito ni etiquetado como release.
+- **EP-TASK-002:** mantener el estado más reciente del ciclo §128: dos preflights B2 fallidos antes de upload; v3 preparada, no ejecutada porque la Vault volvió a SELLADA. Requiere desbloqueo local; no existe objeto remoto.
+- **EP-TASK-003:** diseño aceptado, preflight PARTIAL_FAIL; no copiar/congelar mientras haya escritura concurrente en Temporal y no exista restore B2 verificado.
+- **EP-TASK-005:** continúa bloqueada por EP-TASK-003 PASS y el paquete P004/MCP-OCP.
+- **Conclusión:** EP-TASK-004 permanece `en_curso`; H7/H8 sintéticos PASS para la candidata, H10 humano e integración del release en main pendientes.
+
