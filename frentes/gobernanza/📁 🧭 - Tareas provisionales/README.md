@@ -5,7 +5,7 @@
 **OCP padre y fuente de responsabilidad:** `frentes/gobernanza/`  
 **Control heredado:** [CONTROL-RESPONSABILIDAD.json](../CONTROL-RESPONSABILIDAD.json). Las generaciones, sesiones y corresponsabilidades se conservan únicamente como metadatos históricos/auditoría; no son permiso, veto ni compuerta de trabajo autorizado. Blob de control observado `18c2d7fa57609465dced61884cec6685bf74f68d`.
 **Evento de creación:** C-GOBERNANZA-MDP-OCP-01 · 2026-10-30.  
-**Fuente normativa vigente:** [DUG Samantha v386 · NX-386m](../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html); Metacanon 1.29, GOW 2.18, 43 principios y 22 anexos; blob `22dca684830a36dff019b47811d9b800cc9bea0a`. Los snapshots anteriores son antecedentes, no el estado vigente.
+**Fuente normativa vigente:** [DUG Samantha v388 · NX-388m](../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html); Metacanon 1.29, GOW 2.18, 43 principios y 24 anexos; commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`; blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`. Los snapshots anteriores son antecedentes, no el estado vigente.
 
 ## Naturaleza y límites
 
@@ -319,7 +319,7 @@ La ficha GOV-TASK-014 contiene el alcance ampliado y criterios separados. Ningun
 
 La ruta aprobada para la consulta normativa es local, mediante RDC hacia MCP-OCP stdio. Esta decisión sustituye las menciones anteriores a URLs Sync o paquetes de URLs en GOV-TASK-003/007/008; el historial permanece visible como antecedente.
 
-**Secuencia compacta:** `GOW:ARR` → `DUG` → `SINK:Pxxx` cuando el MDP indique pertinencia. Son identificadores de operación, no URLs públicas. El DUG Samantha v384 / NX-384m conserva la fuente normativa única; la copia local es derivada, cifrada y verificable.
+**Secuencia compacta:** `GOW:ARR` → `DUG` → `SINK:Pxxx` cuando el MDP indique pertinencia. Son identificadores de operación, no URLs públicas. El DUG Samantha v388 / NX-388m conserva la fuente normativa única; la copia local es derivada, cifrada y verificable.
 
 **Orden de ejecución autorizado para Gobernanza:**
 1. GOV-TASK-007: terminar texto IPZ menor a 1.500 caracteres, preservar las seis distinciones y salvaguardas de v0.7; después instalar y leer de vuelta el campo nativo. FOL1 continúa inactivo hasta ese read-back.
@@ -330,12 +330,12 @@ La ruta aprobada para la consulta normativa es local, mediante RDC hacia MCP-OCP
 
 **Fuera de este corte:** GOV-TASK-002 sigue cancelada (no Cloudflare); GOV-TASK-004/005/006 y GOV-TASK-009/010 no se convierten en dependencias de construcción. GOV-TASK-009 solo valida §ARR cuando el mecanismo esté disponible; GOV-TASK-010 conserva la compuerta de admisión del IPZ. Backblaze/EP-TASK-002, backup portable MCP-OCP-09 y Jules no son requisitos de Sink MVP.
 
-**Gates ajenos:** MCP-OCP debe recibir autorización expresa de su titular para ampliar el control actual a Sink local. EP conserva el control de host/perfil e instalación. La aprobación de Gobernanza no los suplanta ni autoriza instalación, credenciales o cambios en esos frentes. No alterar `MCP-NORMATIVO=DESACTIVADO` ni generar folios globales mientras FOL1 no esté activo.
+**Autorización y límites interfrente:** el control MCP-OCP generación 5 ya registra autorización directa del operador para implementar Sink local por STDIO dentro de ese OCP; no se requiere aprobación del titular anterior ni incremento de generación. MCP-OCP conserva su responsabilidad de código, pruebas y build. EP conserva el control de host/perfil, almacenamiento e instalación; Gobernanza no suplanta esos gates ni autoriza credenciales o escritura en el host. No alterar `MCP-NORMATIVO=DESACTIVADO` ni generar folios globales mientras FOL1 no esté activo.
 
 
 ## Sprint vigente · Sink local por RDC · diseño consolidado · 2026-11-09
 
-**Estado:** DISEÑO CONSOLIDADO · NO INICIADO. Coordinación: [GOV-TASK-015](./📁%20🧩%20-%20GOV-TASK-015%20-%20Sprint%20Sink%20local%20vía%20RDC/README.md). Fuente actual: Samantha v386/NX-386m, blob `22dca684830a36dff019b47811d9b800cc9bea0a`.
+**Estado:** DISEÑO CONSOLIDADO · NO INICIADO. Coordinación: [GOV-TASK-015](./📁%20🧩%20-%20GOV-TASK-015%20-%20Sprint%20Sink%20local%20vía%20RDC/README.md). Fuente actual: Samantha v388/NX-388m, commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`, blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`.
 
 ### Tareas del sprint por frente
 
@@ -356,6 +356,13 @@ El ejecutable final debe quedar dentro del checkout local en `SeryMente/Reposito
 5. Instalar el ejecutable en `frentes/mcp-metodologia/instalacion-local/` solo con preflight EP y root de datos protegido; registrar operador únicamente con consentimiento interactivo.
 6. Aceptación E2E en el host real; latencia según GOV-TASK-013. FOL1 no bloquea desarrollo ni instalación del servidor y permanece PREPARADO hasta su propio gate.
 
-**Bloqueos reales:** ramas candidatas muy divergidas de `main`; PC 7 requiere verificar protección BitLocker efectiva (última lectura observada: cifrado 100 %, `ProtectionStatus=Off`) y dead-man LOC-OTHER; la materialización local de Metodología existe parcialmente, no como checkout Git íntegro, y `git` no estaba disponible en la lectura local. Estos bloqueos afectan integración o instalación dependiente, no el diseño ni el trabajo remoto autorizado por GitHub.
+**Bloqueos reales:** ramas candidatas muy divergidas de `main`; preflight vivo de Fila 4 todavía pendiente; verificar checkout íntegro, root protegido, estado de protección y ubicación física real para decidir si aplica dead-man. La última observación histórica de protección de Fila 4 no acreditaba protección activa. Estos gates afectan la importación de fuentes privadas y la instalación local, no el diseño ni el desarrollo remoto de código no sensible autorizado por GitHub.
 
-**Fuera de alcance:** Khora, Jules, B2, Cloudflare, MOD-SYNC, endpoints públicos, cambios al DUG/IPZ y activación de MCP-NORMATIVO. La aceptación global sigue pendiente.
+**Fuera del alcance de implementación MCP-OCP/EP:** Khora, Jules, B2, Cloudflare, MOD-SYNC, endpoints públicos y activación de MCP-NORMATIVO. Gobernanza sí actualizó ART-027 para resolver el contrato Sink en DUG v388; esto no autoriza modificar ART-025 ni escribir las Instrucciones Personalizadas nativas. La aceptación global sigue pendiente.
+
+
+## Reconciliación de ART-027 con Sink local · 2026-11-10
+
+DUG v388/NX-388m sustituye el antiguo diseño de Worker/Cloudflare, D1/KV, Analytics Engine y aliases HTTP por el contrato local `SINK:Pxxx` mediante MCP-OCP STDIO/RDC. La arquitectura de dos capas y los 43 MDP se conservan; la segunda capa devuelve un único principio, con ID, título, texto íntegro, pin DUG y SHA-256. La frecuencia cuenta solo recuperaciones satisfactorias. `MOD-SYNC` de EP es distinto y no participa. Fuente: ART-027; commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`; blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`.
+
+El control MCP-OCP generación 5 autoriza directamente la implementación local Sink dentro de su OCP; la implementación sigue siendo responsabilidad de ese frente. Los documentos MCP-OCP consultados todavía mostraban pins DUG v386, por lo que el titular MCP-OCP debe reconciliarlos en sus propias fuentes antes del build. No se modificaron aquí los documentos de MCP-OCP ni EP. No se afirma que el resolver, la importación, la instalación en Fila 4 o el E2E estén ejecutados.
