@@ -4,7 +4,7 @@
 
 - **Nombre canónico vigente:** MCP-OCP (anteriormente MCP-METODOLOGIA).
 - **Identidad canónica vigente:** MCP-OCP. **Identidad histórica:** MCP-METODOLOGIA.
-- **Versión/sello:** MCP-OCP-v0.1.40 · OCP MCP 1.0; H1 SINK:P004, H2 persistencia mínima/bóveda y H3 workspace completo definidos; Sink local por stdio autorizado; contrato DUG v388/NX-388m; piloto P004 pendiente; bootstrap del perfil persistente pendiente. Las generaciones y folios de sesiones anteriores son metadatos de auditoría.
+- **Versión/sello:** MCP-OCP-v0.1.41 · OCP MCP 1.0; H1 SINK:P004, H2 persistencia mínima/bóveda y H3 workspace completo definidos; Sink local por stdio autorizado; contrato DUG v388/NX-388m; piloto P004 pendiente; bootstrap del perfil persistente pendiente. Las generaciones y folios de sesiones anteriores son metadatos de auditoría.
 - **Repositorio propietario:** SeryMente/metodologia, rama main.
 - **OCP canónico:** frentes/mcp-metodologia/.
 - **Núcleo operativo único:** este archivo, MCP-METODOLOGIA.md.
@@ -886,3 +886,79 @@ La ejecución es evidencia local real sobre Windows, no una ejecución del runne
 
 H1 queda **BUILD + TESTS + STDIO SMOKE PASS LOCAL** para la candidata en este HEAD. No equivale a instalación en Fila 4, respuesta visible desde el contexto IPZ, aceptación GOV-TASK-003/007, producto 1.0.0, paquete WPF ni merge de PR #27. EP conserva host/Vault/B2/root; Gobernanza conserva IPZ y aceptación. H2 MCP-OCP-14 permanece PROPOSED / NOT ACCEPTED, sin runtime/IO. Control MCP-OCP generación 5 permanece intacto; DUG, ART-025/027 e IPZ no se modificaron.
 
+## 30. Informes individuales de resolución parcial H1 · MCP-OCP-02/03/04/05 · 2026-11-10
+
+Estos informes se añaden al historial del núcleo propietario. No declaran aceptación final ni sustituyen los gates de EP/Gobernanza.
+
+### Informe individual · MCP-OCP-02 · reconciliación selectiva y rama candidata
+
+- Frente/responsable: MCP-OCP.
+- Estado anterior → resultante: rama candidata sincronizada hasta e1fa64a; diff revisable y sin estar detrás de main. PR #27 permanece OPEN/DRAFT/NOT MERGED.
+- Corte: main e1fa64a37048651706fc449d145cf62fffce6901; rama actual cc50e32924226e97afd56c5f0a611753d2c8b4dd; PR #27.
+- Objetivo/resultado: mantener una única candidata H1, incorporar las actualizaciones de main como segundo padre y conservar el diff funcional.
+- Cómo se solucionó: merge explícito de reconciliación; se mantuvo el cambio de DTC del centralizador y se restauró el .gitignore seguro de main. El global.json quedó limitado a frentes/mcp-metodologia/global.json.
+- Cambios: merge de sincronización cc50e32924226e97afd56c5f0a611753d2c8b4dd; rama feat/mcp-ocp-sink-p004-main-a34c1c5b; SDK pin local 10.0.403.
+- Validación: comparación GitHub posterior al merge = 41 ahead / 0 behind, merge-base main; worktree temporal limpio; git diff --check sin salida. Build local del servidor PASS.
+- Read-back/integridad: ref y commit de rama verificados; los documentos de tarea se leyeron de main/branch según corresponde.
+- Bloqueantes/dependencias: ejecución hospedada GitHub Actions sigue sin runner observable; revisión/merge de PR no ejecutados.
+- Riesgos: cambios funcionales permanecen en PR borrador; no hay despliegue/instalación. Ninguno adicional verificado.
+- Pendientes: revisión técnica y decisión del propietario/centralizador sobre PR #27.
+- Rollback: la candidata conserva commits previos y PR no fusionada; reversión no ejecutada ni probada.
+- Aceptación: PENDIENTE; no se declara merge ni aceptación de producto.
+- Siguiente acción: mantener la única rama y resolver revisión/CI hosted cuando exista runner observable.
+- Conclusión: PARCIAL; reconciliación de rama ejecutada y verificada, integración final pendiente.
+
+### Informe individual · MCP-OCP-03 · build y suite de contrato
+
+- Frente/responsable: MCP-OCP.
+- Estado anterior → resultante: 41 pruebas escritas / 0 ejecutadas → 41/41 PASS en entorno local.
+- Corte: código de build b6ce37af1dc32b2e3bb8af3ded2a77c7ba6d7648; rama sincronizada con main vigente por commits de merge posteriores.
+- Objetivo/resultado: validar el servidor y las dos suites de contrato P004 y monitor/readiness.
+- Cómo se solucionó: el lector de MDP se corrigió de root.principle_inventory_policy a document.principle_inventory_policy; el fixture ahora replica la estructura de DUG v388.
+- Cambios: DugSourceReader.cs y fixture de tests dentro de frentes/mcp-metodologia/.
+- Validación: Windows 10.0.26200 x64; .NET SDK 10.0.403; PowerShell 7.4.22. Restore PASS; build servidor/tests PASS con 0 warnings/0 errors; P004 PASS=18 FAIL=0; monitor PASS=23 FAIL=0.
+- Evidencia: P004 log SHA-256 D6F21749D8898B6624988BF056DA2BCC66DA3A5DF1CAE8FFA1FA2DB36DEB338B; monitor log SHA-256 B9B3F2B5A42285CC3D81AE5EEFBDC678104E5E408A861BB5D1045885CBC29989.
+- Read-back/integridad: el harness concluyó exit code 0 y el checkout temporal quedó limpio.
+- Bloqueantes/dependencias: GitHub-hosted CI no comenzó por runner no asignado; la causa es NO_VERIFICADA.
+- Riesgos: prueba local Windows no demuestra compatibilidad con runner Ubuntu ni aceptación EP/IPZ. Ninguno adicional verificado.
+- Pendientes: hosted CI observable y aceptación de P004 tras instalación.
+- Rollback: cambios aislados en una PR no fusionada; rollback no ejecutado.
+- Aceptación: técnica local PASS; aceptación del producto PENDIENTE.
+- Siguiente acción: conservar recibos y solicitar revisión de la PR; no repetir el test local sin delta.
+- Conclusión: PARCIAL; suite local completa PASS, validación hosted/instalación/aceptación pendientes.
+
+### Informe individual · MCP-OCP-04 · transporte MCP STDIO y smoke
+
+- Frente/responsable: MCP-OCP.
+- Estado anterior → resultante: harness escrito / smoke no verificado → smoke local y smoke del paquete PASS.
+- Corte: servidor compilado desde b6ce37af1dc32b2e3bb8af3ded2a77c7ba6d7648; paquete en commit 5f7824464fcf1639342df1b4258e699f8976539f.
+- Objetivo/resultado: verificar initialize, tools/list, tools/call(P004), separación STDOUT/STDERR y EOF.
+- Cómo se solucionó: se ejecutó el harness versionado y se repitió el recorrido contra el binario extraído del ZIP candidato final.
+- Cambios: harness piloto-Sink de la candidata; smoke del paquete exacto.
+- Validación: tres respuestas JSON-RPC válidas en STDOUT; P004 con DUG v388/NX-388m; SINK_READ_SUCCESS en STDERR; proceso cerrado con EOF; exit code 0. Smoke summary SHA-256 2D5C90D467B5508A9FAD22F0C00902035D9F3FE7F703B052AAB13365BE2C0B31.
+- Read-back/integridad: STDOUT SHA-256 7818B9894239D7760EAD89D18BA78244096041FE2738C639F840A5FCD9918938; STDERR SHA-256 8614035B5585D84175B53B1DE4A126ED6B3A84BDED7E6BE51153A2FB8AF2D61B.
+- Bloqueantes/dependencias: no se probó el retorno al contexto IPZ real; requiere instalación bajo EP y GOV-TASK-003.
+- Riesgos: el smoke es STDIO local, no E2E RDC/IPZ. Ninguno adicional verificado.
+- Pendientes: configuración/instalación real y recorrido IPZ → RDC → STDIO.
+- Rollback: proceso temporal termina por EOF; no se dejó servicio. Recuperación de una instalación no aplica aún.
+- Aceptación: transporte local verificado; aceptación IPZ PENDIENTE.
+- Siguiente acción: EP instala tras sus gates; Gobernanza prueba recorrido real.
+- Conclusión: PARCIAL; smoke técnico PASS, E2E de producto no aceptado.
+
+### Informe individual · MCP-OCP-05 · corte vertical SINK:P004 y paquete candidato
+
+- Frente/responsable: MCP-OCP.
+- Estado anterior → resultante: P004 candidato sin build/package → corte vertical probado y paquete candidato persistido en la rama PR #27.
+- Corte de fuente: código de build b6ce37af1dc32b2e3bb8af3ded2a77c7ba6d7648; DUG v388/NX-388m commit 3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c, blob 4db0ebadfd1e48b2bdec9236ba7f344921e4a865; publicación de paquete commit 5f7824464fcf1639342df1b4258e699f8976539f.
+- Objetivo/resultado: entregar el mínimo ejecutable P004 con manifest, source pin, runbook y SHA-256; alcanzado como candidato revisable, no aceptado.
+- Cómo se solucionó: publish framework-dependent net10.0; manifiesto de nueve archivos; extracción en sandbox temporal, cotejo de tamaño/SHA por archivo y smoke del ejecutable extraído.
+- Cambios/rutas: entregas/piloto-sink-p004/MCP-OCP-SINK-P004-b6ce37af-v3.zip; manifest.json; RUNBOOK.md; SOURCE-PIN.json; SHA256SUMS.txt.
+- Evidencia: ZIP 137.474 bytes; SHA-256 DE556FD547ACF2AB3946DF5AC2395A3993CB459B5E48F8E745A661A113A90783; manifest SHA-256 85F70366144FD2109D9688F2DDB6E7819FF955B8F05697C2FC6966E04F0044B1; 9/9 archivos extraídos y verificados; paquete smoke PASS, tres respuestas JSON-RPC y P004 v388.
+- Read-back/integridad: manifest blob b2090143d9bb2f3ee81fb41dac2f93bf65ef6a7c; runbook blob f6af2599a4b9a83b8af634d8a8aa0936e745f25c; source-pin blob 13ebe586b4c75b463ec74aecd13bb4ce313c4baf; checksums blob 011bcb8883aa38a557f7e1a5c249fede4b7e1f15. ZIP blob 7fdb248ddbdb24cea653c72098331030da83e99e en el commit. El endpoint de lectura binaria no devolvió UTF-8 y no permitió comparar bytes tras publicación; lectura de vuelta binaria REMOTA=NO_VERIFICADA. El SHA local y el Git blob de creación sí están registrados.
+- Bloqueantes/dependencias: no transferido ni instalado; EP-TASK-003 PASS y EP-TASK-005 recepción/instalación pendientes. Requiere Microsoft.NETCore.App 10.0.x x64; runtime de Fila 4 NO_VERIFICADO. GitHub-hosted CI runner sigue no asignado.
+- Riesgos: paquete framework-dependent; exige runtime .NET 10 x64 y checkout con fuente DUG fijada. No incluye panel WPF ni producto 1.0.0. La aceptación humana/IPZ no existe.
+- Pendientes: recepción formal por EP cuando sus gates sean PASS; comprobar runtime destino; instalación/rollback por EP; E2E por Gobernanza.
+- Rollback: PR no fusionada; retirar los cinco artefactos del branch mediante commit si el paquete se rechaza; rollback no ejecutado ni probado.
+- Aceptación: candidato publicado, NO ACEPTADO ni transferido.
+- Siguiente acción: comunicar ruta/hash a EP-TASK-005 y esperar EP-TASK-003 PASS antes de cualquier extracción/instalación.
+- Conclusión: PARCIAL; artefacto candidato construido y package smoke PASS; entrega/instalación/aceptación pendientes.
