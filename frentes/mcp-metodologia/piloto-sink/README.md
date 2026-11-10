@@ -26,7 +26,9 @@
 ## Diseño
 
 - OcpMcp.exe serve [--repo-root path] inicia únicamente el proceso STDIO.
-- initialize, ping, tools/list, tools/call, shutdown y exit se procesan mediante JSON-RPC 2.0 newline-delimited.
+- Handshake clásico MCP STDIO `2025-11-25`: el cliente envía `initialize` con `protocolVersion`, `capabilities` y `clientInfo`; el servidor negocia la versión y devuelve la capability `tools`. Después el cliente envía `notifications/initialized` y puede usar `tools/list` y `tools/call`.
+- Se aceptan también las versiones de handshake `2025-06-18`, `2025-03-26` y `2024-11-05`. El protocolo stateless `2026-07-28` no está implementado en este piloto porque el contrato del hito exige `initialize`.
+- El cierre limpio STDIO ocurre cuando el cliente cierra stdin y el servidor alcanza EOF; no se definen métodos privados `shutdown` ni `exit`.
 - tools/list expone sink_principle(principle_id) y limita el argumento a P004.
 - La lectura valida Git blob SHA-1, UTF-8 estricto, versión/firma/evento, identidad de fuente, versiones Metacanon/GOW, inventario de 43 principios, P004 único y §ARR único.
 - Respuesta incluye texto íntegro, ID, título, MDP, ancla, pin de commit/blob, SHA-256 de fuente y texto, y procedencia de §ARR.
