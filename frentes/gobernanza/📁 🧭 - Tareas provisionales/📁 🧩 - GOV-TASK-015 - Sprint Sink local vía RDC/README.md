@@ -134,7 +134,7 @@ No son insumos por ahora: contraseña, token, SID, RecoveryPassword, B2, OAuth J
 
 - **Autorización Sink:** directa del operador y vigente.
 - **Implementación Sink en main:** NO IMPLEMENTADA.
-- **Panel MCP-OCP-13:** WPF candidato escrito; biblioteca de monitorización, reader/writer/evaluator, dashboard y 21 pruebas sintéticas añadidas; build, tests, revisión visual Windows e integración EP todavía NO VERIFICADOS.
+- **Panel MCP-OCP-13:** WPF candidato escrito; biblioteca de monitorización, reader/writer/evaluator, dashboard y 23 pruebas sintéticas añadidas; build, tests, revisión visual Windows e integración EP todavía NO VERIFICADOS.
 - **Código fuente candidato:** recuperable desde ramas remotas; requiere reconciliación con main y pins actuales.
 - **Build/paquete vigente:** NO GENERADO.
 - **Workspace/volumen:** el estado histórico de W:/PC-14/PC 7 no acredita Fila 4. Checkout protegido, manifest y segundo read-back en Fila 4 pendientes.
@@ -339,7 +339,7 @@ EP-TASK-004 GUI de bóveda y EP-TASK-002/Backblaze no bloquean P004 ni el build 
 **Última evidencia:** rama MCP-OCP ciclo02 creada desde el main vigente; candidato P004, pruebas y CI están escritos, pero no hay PASS de compilación/tests/smoke. EP publicó un preflight parcial de Fila 4 con resultado FAIL; no hay instalación/importación. Pendiente: CI observable, correcciones, gates EP, paquete, instalación, IPZ nativa, E2E y panel. No convertir código escrito en PASS.
 ## Registro de ejecución MCP-OCP · ciclo02 · 2026-11-10
 
-**Estado de sprint:** MCP-OCP-02 ejecutado y read-back verificado. MCP-OCP-05 tiene implementación candidata P004 escrita, no compilada. MCP-OCP-03 tiene 16 escenarios P004 escritos/0 ejecutados; MCP-OCP-13 añade 21 pruebas de monitor/readiness escritas/0 ejecutadas. MCP-OCP-04 tiene harness/CI actualizados con build WPF, pero no hay smoke ni PASS observable; E2E IPZ pendiente.
+**Estado de sprint:** MCP-OCP-02 ejecutado y read-back verificado. MCP-OCP-05 tiene implementación candidata P004 escrita, no compilada. MCP-OCP-03 tiene 16 escenarios P004 escritos/0 ejecutados; MCP-OCP-13 añade 23 pruebas de monitor/readiness escritas/0 ejecutadas. MCP-OCP-04 tiene harness/CI actualizados con build WPF, pero no hay smoke ni PASS observable; E2E IPZ pendiente.
 
 ### Base de trabajo
 - Main actual al crear la rama: `84cc9ffc1a2aa27c622c7e5de147d7460f3b5ecd`.
@@ -406,4 +406,4 @@ El reintento fue aceptado por GitHub, pero volvió a terminar en `FAILURE`: job 
 
 ### Readiness EP — rectificación fail-closed
 
-`MonitorReadinessEvaluator` exige que la atestación EP contenga `sessionState=ACTIVE` y `protectionState=Protection On`; Protection Off/UNKNOWN/futuro bloquea. Además coteja proceso RUNNING (PID + hora de inicio), protocolo INITIALIZED, fuentes importadas/VERIFIED/vigentes, operador provisionado, root y readiness del servidor. MCP no sondea BitLocker ni sustituye a EP. 21 tests escritos; 0 ejecutados.
+`MonitorReadinessEvaluator` exige que la atestación EP contenga `sessionState=ACTIVE` y `protectionState=Protection On`; Protection Off/UNKNOWN/futuro bloquea. Además coteja proceso RUNNING (PID + hora de inicio), protocolo INITIALIZED, fuentes importadas/VERIFIED/vigentes, operador provisionado, root y readiness del servidor. MCP no sondea BitLocker ni sustituye a EP. 23 tests escritos; 0 ejecutados.
