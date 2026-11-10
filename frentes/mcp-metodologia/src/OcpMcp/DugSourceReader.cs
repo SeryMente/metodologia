@@ -16,7 +16,7 @@ public sealed record SinkP004Result(
     string CanonicalPath, string GitBlobSha, string SourceSha256,
     string PrincipleTextSha256, string DugVersion, string DugSignature,
     string DugEvent, string MetacanonVersion, string GowVersion,
-    string GowArrId, string GowArrTitle, string GowArrContentMarkdown);
+    string GowArrId, string GowArrTitle, string GowArrContentMarkdown, string McpNormativeStatus);
 
 public sealed class DugSourceReader : IPrincipleSource
 {
@@ -71,6 +71,18 @@ public sealed class DugSourceReader : IPrincipleSource
             !arrContent.Contains("### Función de entrada", StringComparison.Ordinal))
             throw new InvalidDataException("GOW_ARR_CONTRACT_MISMATCH");
 
+        JsonElement[] normativeTerms = root.GetProperty("glossary").GetProperty("terms")
+            .EnumerateArray()
+            .Where(x => x.TryGetProperty("id", out JsonElement id) && id.GetString() == "gow-mcp-normativo")
+            .ToArray();
+        if (normativeTerms.Length != 1)
+            throw new InvalidDataException("MCP_NORMATIVE_STATUS_TERM_MISSING_OR_AMBIGUOUS");
+        string normativeDefinition = RequiredString(normativeTerms[0], "definition");
+        if (!normativeDefinition.Contains("DESACTIVADO", StringComparison.Ordinal) ||
+            !normativeDefinition.Contains("no debe afirmarse ni simularse su ejecución", StringComparison.Ordinal))
+            throw new InvalidDataException("MCP_NORMATIVE_NOT_CONFIRMED_DISABLED");
+        const string normativeStatus = "DESACTIVADO";
+
         JsonElement document = root.GetProperty("document");
         Require(document.GetProperty("version").GetString(), _pin.DugVersion, "DUG_VERSION_MISMATCH");
         Require(document.GetProperty("signature").GetString(), _pin.DugSignature, "DUG_SIGNATURE_MISMATCH");
@@ -122,7 +134,7 @@ public sealed class DugSourceReader : IPrincipleSource
             Convert.ToHexStringLower(SHA256.HashData(bytes)),
             Convert.ToHexStringLower(SHA256.HashData(Encoding.UTF8.GetBytes(normativeText))),
             _pin.DugVersion, _pin.DugSignature, _pin.DugEvent,
-            _pin.MetacanonVersion, _pin.GowVersion, "gow-sec-14", arrTitle, arrContent);
+            _pin.MetacanonVersion, _pin.GowVersion, "gow-sec-14", arrTitle, arrContent, normativeStatus);
     }
 
     public static string ComputeGitBlobSha(byte[] content)
