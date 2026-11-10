@@ -1,0 +1,39 @@
+{
+  "schema": "mcp-ocp-sink-source-pin/v1",
+  "repository": "SeryMente/metodologia",
+  "ref": "main",
+  "commit": "3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c",
+  "path": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.html",
+  "git_blob_sha": "4db0ebadfd1e48b2bdec9236ba7f344921e4a865",
+  "dug": {
+    "version": "v388",
+    "signature": "NX-388m",
+    "event": "C-GOBERNANZA-ART027-SINK-LOCAL-RECONCILIACION-20261110-01",
+    "principles": 43,
+    "metacanon": "1.29",
+    "gow": "2.18",
+    "commit": "3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c"
+  },
+  "gow_arr": {
+    "section_id": "gow-sec-14",
+    "anchor": "#gow-arranque-chatgpt"
+  },
+  "sink": {
+    "principle_id": "P004",
+    "title": "Principio de No-Simulación 🔒",
+    "human_anchor": "#P004",
+    "microdescriptor": "Exigir hechos verificables; activarlo ante afirmaciones sobre capacidades, datos, acciones o certezas.",
+    "normative_text": "No finjas capacidades, datos, resultados ni certezas, ni declares límites sin verificar con herramientas. Marca tu certeza y nombra los huecos sin rellenarlos. Precedencia absoluta sobre la exhaustividad y el buen trato."
+  },
+  "build": {
+    "sdk": "10.0.403",
+    "external_package_dependencies": [],
+    "pilot_runtime_identifier": null,
+    "pilot_mode": "framework-dependent",
+    "release_runtime_identifier": "win-x64",
+    "release_self_contained": true
+  },
+  "verification": "DUG v388 was read at its pinned commit and at current main; both resolve to the same Git blob; runtime build/tests remain pending",
+  "branch_base_sha": "84cc9ffc1a2aa27c622c7e5de147d7460f3b5ecd",
+  "branch": "feat/mcp-ocp-p004-rebaseline-20261110-cycle02"
+}
