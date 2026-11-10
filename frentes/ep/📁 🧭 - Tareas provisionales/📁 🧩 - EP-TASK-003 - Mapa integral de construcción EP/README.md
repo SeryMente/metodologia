@@ -373,3 +373,37 @@ No se ejecutó configuración de BitLocker, modificación de ACL, VHDX, dead-man
 **Evidencia:** EP-FILA4-PREFLIGHT-PARCIAL-20261110.json en evidencias/, main commit 84cc9ffc1a2aa27c622c7e5de147d7460f3b5ecd, blob 8ebf0c2b54efc6d3fe597adfe0f9358e65e6acbe, read-back exacto.
 
 **Estado de la tarea:** continúa en_curso; no se marca PASS ni se cierra.
+
+---
+
+## Rectificación inmediata · VHDX de preparación y discrepancia del punto de montaje · 2026-11-10
+
+**Autoridad:** esta sesión ejecuta provisionalmente la continuidad documental de EP por instrucción directa del operador; no modifica la titularidad ni el control EP generación 3. Esta entrada actualiza el estado posterior al preflight §122 y conserva la pausa expresa del operador.
+
+### Delta operativo observado
+
+- Se creó el contenedor `C:\Users\fila4\AppData\Local\EP\ProtectedWorkspace\Fila4-Workspace.vhdx`, con capacidad máxima de 30 GiB y diseño dinámico/expandible.
+- El volumen se inicializó GPT, se formateó NTFS con etiqueta `EP-FILA4` y se montó como `W:`.
+- **Último estado observado:** `W:` estaba montado, vacío y sin BitLocker. No tenía protectores ni clave de recuperación configurados. No se hizo una nueva lectura viva tras la pausa.
+- El workspace original `C:\Users\fila4\Desktop\SeryMente` no se copió, movió, renombró ni sustituyó. El inventario de §122 (2.468 archivos, 545 directorios, 127.996.970 bytes) es el último baseline disponible, no un recuento nuevo.
+- El volumen del sistema `C:` no se modificó. El checkout Metodología sigue parcial y sin `.git`.
+
+### Discrepancia que gobierna el siguiente paso
+
+El objetivo del operador es proteger el directorio de trabajo existente en `Desktop\SeryMente` y conservar esa ruta. No se acordó utilizar una unidad `W:` visible como ubicación funcional independiente.
+
+BitLocker cifra volúmenes, no carpetas. Se discutió como propuesta un VHDX con BitLocker montado como punto de montaje de directorio en la ruta original, después de copiar y cotejar el contenido completo mediante inventario y SHA-256 y de conservar el directorio original como staging recuperable. **La propuesta no está aceptada** y la transición no se ha ejecutado. No convertir W: en destino final por inferencia.
+
+### Estado y compuertas
+
+`PREFLIGHT_FILA4=PARTIAL_FAIL` · `BITLOCKER_GATE=FAIL` · `VHDX=PREPARED_EMPTY_UNENCRYPTED_LAST_OBSERVED` · `STORAGE_DESIGN=PROPOSED_NOT_ACCEPTED` · `SOURCE=PRESERVED` · `COPY=NOT_DONE` · `SHA256_MANIFEST=NOT_CREATED` · `MOUNTPOINT_SWITCH=NOT_DONE` · `DEAD_MAN=CONDITIONAL_PENDING_LOCATION`.
+
+El operador ya había reportado presencia física frente a Fila 4; CECEQ no fue confirmado. La ubicación sigue `UNCLASSIFIED`, por lo que no se presume si el dead-man aplica.
+
+**Pausa operativa vigente:** no copiar, cifrar, mover, renombrar, montar sobre el directorio, desmontar ni eliminar el origen o el VHDX hasta resolver y aceptar el diseño que preserve la ruta de trabajo. No se instala ni importa información privada.
+
+### Efecto sobre el sprint
+
+EP-TASK-003 continúa `en_curso` y sigue siendo P0 para el tramo local. La pausa de almacenamiento no bloquea MCP-OCP-02 en remoto, MCP-OCP-03 con fixtures sintéticos, ni la preparación del harness MCP-OCP-04. Sí bloquea el checkout local protegido, importación del DUG/fuentes privadas, DB real, runtime persistente e instalación P004. EP-TASK-005 permanece `pendiente` hasta EP-TASK-003 PASS y recepción de un paquete P004 verificable.
+
+La solución de almacenamiento se trata como decisión abierta, no como permiso adicional. No se modificaron el DUG, IPZ, los controles ni el volumen C:.
