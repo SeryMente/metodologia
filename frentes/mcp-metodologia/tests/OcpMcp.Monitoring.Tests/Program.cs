@@ -194,6 +194,26 @@ try
         runner.Equal("DATA_ROOT_NOT_AVAILABLE", result.ReasonCode);
     });
 
+    runner.Test("EP protection check from a previous session blocks composite READY", () =>
+    {
+        SessionAttestation session = Attestation("Protection On") with
+        {
+            ProtectionCheckedAtUtc = DateTimeOffset.UtcNow.AddMinutes(-10),
+            SessionStartedAtUtc = DateTimeOffset.UtcNow.AddMinutes(-2)
+        };
+        MonitorReadinessResult result = MonitorReadinessEvaluator.Evaluate(session, ReadySnapshot(), true);
+        runner.Equal(false, result.Ready);
+        runner.Equal("EP_ATTESTATION_TIME_INVALID", result.ReasonCode);
+    });
+
+    runner.Test("future server snapshot blocks composite READY", () =>
+    {
+        MonitorServerSnapshot state = ReadySnapshot() with { UpdatedAtUtc = DateTimeOffset.UtcNow.AddHours(1) };
+        MonitorReadinessResult result = MonitorReadinessEvaluator.Evaluate(Attestation("Protection On"), state, true);
+        runner.Equal(false, result.Ready);
+        runner.Equal("SERVER_STATE_TIME_INVALID", result.ReasonCode);
+    });
+
     runner.Test("future EP protection timestamp blocks composite READY", () =>
     {
         SessionAttestation session = Attestation("Protection On") with
