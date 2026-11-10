@@ -2309,3 +2309,34 @@ No se invocó el CLI Run mientras la GUI muestra SELLADA; la única compuerta in
 
 ## Reporte individual obligatorio por tarea
 Al resolver esta tarea, el responsable debe agregar el informe individual en este mismo núcleo siguiendo [la plantilla común](../../../PLANTILLA-REPORTE-CIERRE-TAREA.md), completar todos sus campos y actualizar el índice padre solo después del read-back. No marcar como completada sin criterios PASS, evidencia ejecutada, integridad verificada y aceptación exigible. Si termina parcial/bloqueada, dejar igualmente el informe con bloqueantes, preocupaciones, riesgos y condición objetiva de desbloqueo. Informar al operador con enlace al informe. Esta instrucción no altera titularidad, generación, permisos ni controles.
+
+
+---
+
+### Informe de estado bloqueado · EP-TASK-002 · 2026-11-10 · 15:49 America/Mexico_City
+
+- **Frente / responsable:** Entorno Persistente (EP).
+- **Estado anterior → resultante:** P0_BLOCKED_VAULT_SEALED → P0_BLOCKED_VAULT_SEALED. La aceptación del diseño físico pertenece a EP-TASK-003 y no desbloquea la sesión criptográfica ni la cuenta B2.
+- **Corte de fuente:** SeryMente/metodologia/main; DUG Samantha v388 · NX-388m; núcleo EP-TASK-002 releído en el ciclo. Se conservan los contratos P0-C ciphertext-only y destino OCP-MCP/ep-ocp/vault/.
+- **Objetivo y resultado:** respaldar exclusivamente el ciphertext de EP Vault en B2 y verificar la restauración mediante descarga, tamaño/SHA-256 idénticos y recibo. Resultado de este ciclo: NO EJECUTADO; no hubo llamada autenticada a B2.
+- **Cómo se diagnosticó:** a las 15:48:48.9106824-06:00 se ejecutó la acción no interactiva Status de EP Vault v1.0.0 bajo el contexto propietario, con LOCALAPPDATA apuntando al estado EP y PowerShell -NoProfile -NonInteractive -ExecutionPolicy Bypass. La respuesta fue ENCRYPTED_FILE_PRESENT, vaultExists=true, esquema ep-env-vault/1, PBKDF2-HMAC-SHA256/600.000 iteraciones, ciphertext 2.200 bytes y sessionActive=false; updatedAtUtc=2026-11-10T17:54:56.5248087Z. La política de ejecución del sistema no se modificó.
+- **Cambios realizados:** ningún secreto, ciphertext, variable, script ni objeto B2 fue modificado. Se releyeron los scripts y se cotejaron los hashes actuales: worker Upload-EP-Vault-Ciphertext-To-Backblaze-Fila4.ps1, 11.432 bytes, SHA-256 358AD11DF38FB85ED4BD52C128378E9BA35A1AE5982B61184699B99CDA1BE410; wrapper Run-EP-Backblaze-Vault-Ciphertext-Fila4.ps1, 1.654 bytes, SHA-256 C6BAF9B3B43C3B5824A132242A3005D87AF231F8CAE9820FC5F327C8AC7B9AC8. Ambos existen. El recibo ep-backblaze-vault-ciphertext-result.json sigue AUSENTE.
+- **Validación y evidencia:**
+  | Criterio | Estado | Evidencia |
+  |---|---|---|
+  | Ciphertext local presente | PASS | Status: 2.200 bytes |
+  | Sesión compartida activa | FAIL / BLOQUEANTE | sessionActive=false |
+  | 5 variables disponibles | NOT_RUN en esta lectura | No se ejecutó ListVariables sin sesión activa; la última lectura previa reportó 0/5 |
+  | Worker/wrapper existentes e íntegros | PASS | Tamaño y SHA-256 cotejados en lectura actual |
+  | Recibo de transferencia | NOT_RUN | Archivo AUSENTE |
+  | B2 authorize / bucket / upload | NOT_RUN | No se autenticó ni consultó la cuenta |
+  | Download / SHA remoto / SSE-B2 | NOT_RUN | No existe objeto remoto demostrado |
+  | Restore remoto | NOT_RUN | Sin respaldo remoto para restaurar |
+- **Read-back e integridad:** Status leído; worker y wrapper leídos y sus hashes recalculados. No hubo write remoto ni read-back B2.
+- **Bloqueantes/dependencias:** la cámara de EP Vault debe ser desbloqueada localmente por el operador; después se debe comprobar sesión activa y las cinco variables canónicas. La única condición objetiva para iniciar P0-C es sessionActive=true más disponibilidad de las cinco variables dentro del TTL.
+- **Preocupaciones/riesgos y mitigaciones:** el wrapper Run llama a Enter-EpLocalSession; si la bóveda sigue sellada puede activar un Read-Host interactivo. Por eso no se ejecutó. No pedir, capturar ni transportar la contraseña maestra por chat. El worker sigue limitado a ciphertext y no sube el ZIP del workspace.
+- **Pendientes/diferidos:** autenticar la cuenta B2 dedicada a EP; confirmar bucket privado OCP-MCP, lifecycle y scope de la key; subir con SSE-B2/AES256; descargar por B2 URI; verificar tamaño/SHA-256 y recibo; confirmar restauración aislada. Cuentas KHORA/Cora permanecen separadas.
+- **Rollback/recuperación:** no se creó objeto B2 ni se cambió el ciphertext; no se requiere rollback para este ciclo. La recuperación remota sigue NO_VERIFICADA.
+- **Aceptación:** PENDIENTE; los criterios P0 no se cumplen y no se declara tarea completada.
+- **Siguiente acción:** el operador desbloquea la GUI localmente; EP revalida Status, consulta los nombres sin revelar valores y ejecuta el wrapper P0-C únicamente dentro de la sesión activa.
+- **Conclusión:** BLOQUEADA. La persistencia Backblaze no se ha ejecutado ni demostrado.
