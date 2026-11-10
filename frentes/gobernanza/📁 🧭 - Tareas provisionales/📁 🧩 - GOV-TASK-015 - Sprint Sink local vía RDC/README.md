@@ -1,6 +1,6 @@
 # GOV-TASK-015 · Sprint integrado Sink local vía RDC · Gobernanza / MCP-OCP / EP
 
-**Estado:** `PLANIFICADO · NO_INICIADO`
+**Estado:** `EN_CURSO · fase documental de Gobernanza ejecutada; implementación MCP-OCP y preparación/instalación EP sujetas a evidencia de sus frentes`
 **Objetivo de release:** entregar MCP-OCP software **1.0.0**, instalado en la carpeta local de Metodología descrita al final de este plan. Las versiones `MCP-OCP-v0.1.27` y backlog `0.8` son versiones documentales, no la versión del producto.
 **Tipo:** coordinación y aceptación de un único sprint; no crea un frente nuevo ni controles paralelos.
 **Responsabilidad:** frente Gobernanza. Las tareas técnicas conservan sus OCP y fuentes.
@@ -310,4 +310,4 @@ Gobernanza publicó la rectificación de ART-027 mediante el evento `C-GOBERNANZ
 
 **Pin DUG vigente:** Samantha v388/NX-388m; commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`; blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`. Los documentos propios de MCP-OCP aún mostraban v386 en sus pins al último read; corresponde al frente MCP-OCP reconciliarlos en sus fuentes antes del build. Gobernanza no modifica el núcleo ni la guía operativa de ese OCP.
 
-**Estado:** contrato documental corregido; implementación, importación de fuente en Fila 4, pruebas, escritura/read-back nativos de IPZ y aceptación E2E siguen pendientes. La ficha conserva su estado de planificación; no se declara iniciado el trabajo de producto por esta actualización documental.
+**Estado:** contrato documental corregido y fase de Gobernanza iniciada. Implementación del resolver, importación de fuente en Fila 4, pruebas, escritura/read-back nativos de IPZ y aceptación E2E siguen sin evidencia en esta ficha. El estado EN_CURSO no declara código construido ni instalación ejecutada.
