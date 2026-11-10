@@ -404,7 +404,7 @@ La instrucción completa se conserva verbatim en el anexo Gobernanza OCP MCP 1.0
 - **Gobernanza:** GOV-TASK-015 H1–H9 sigue siendo el plan interfrente. H2 y tareas MCP-OCP-14/15 están configuradas; no se declara implementación. MCP-OCP-16 está diferida; MCP-OCP-17 es post-release.
 - No se modificó main, DUG, ART-025/027, IPZ nativa ni control de responsabilidad. FOL1 NO ACTIVO; MCP-NORMATIVO DESACTIVADO.
 
-**Siguiente paso propio:** conseguir runner observable para ejecutar build, 41 pruebas y smoke STDIO/EOF. No reintentar a ciegas ni ampliar el alcance a H2 persistencia/DB/Vault mientras el control MCP-OCP gen5 no lo autorice expresamente.
+**Siguiente paso propio:** conseguir runner observable para ejecutar build, 41 pruebas y smoke STDIO/EOF. No reintentar a ciegas. El contrato MCP-OCP-14 y sus schemas se mantienen como propuesta documental; no iniciar runtime, DB, escritura local/remota, B2, Vault ni host sin compuertas EP y autorización/scope expreso.
 
 
 ### Auditoría estática del bloque P004 · 2026-11-10
