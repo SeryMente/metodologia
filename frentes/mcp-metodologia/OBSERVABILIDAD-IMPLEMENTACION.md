@@ -6,7 +6,7 @@
 
 - `src/OcpMcp.Monitoring/`: modelos versionados, lector defensivo read-only y escritor best-effort.
 - `src/OcpMcp.Panel/`: aplicación Windows WPF/C# de una sola pantalla.
-- `tests/OcpMcp.Monitoring.Tests/`: 11 escenarios sintéticos de lector/escritor.
+- `tests/OcpMcp.Monitoring.Tests/`: 21 escenarios sintéticos de reader/writer/evaluator.
 - `src/OcpMcp/`: integración opcional del writer con eventos de proceso, protocolo y herramientas.
 - `tests/OcpMcp.Pilot.Tests/`: 16 escenarios del piloto P004, incluyendo telemetría de éxito/fallo.
 
@@ -55,3 +55,21 @@ El script CI ejecuta además smoke real STDIO y guarda diagnóstico. Un job de G
 - EP-TASK-005 sigue siendo dueño de la apertura/cierre del panel y la instalación/handoff local.
 - No se ha integrado el ciclo de sesión EP, no se ha creado ni importado una DB, no se ha instalado en Fila 4 y no se ha ejecutado `REGISTER <SID>`.
 - No hay paquete 1.0.0, manifest final de artefacto, revisión visual Windows ni E2E IPZ.
+
+
+## Gate de readiness derivado de la atestación EP
+
+El panel no calcula readiness solo con `state.json`. `MonitorReadinessEvaluator` combina `session.json` (EP) y el snapshot del servidor, más la verificación independiente del proceso:
+
+1. Sesión `ACTIVE`, schema 1 y atestación con timestamps no futuros.
+2. `protectionState` exactamente `Protection On` (comparación case-insensitive); `Protection Off`, `UNKNOWN` o cualquier valor ausente/no permitido bloquean.
+3. Proceso MCP `RUNNING`, con PID y hora de inicio cotejados contra el proceso real.
+4. Protocolo `INITIALIZED`.
+5. Fuentes importadas, integridad `VERIFIED`, versión vigente.
+6. Operador provisionado.
+7. Root configurado y con read/write disponible.
+8. Snapshot del servidor declara readiness true.
+
+El evaluador no consulta BitLocker, ACL ni el host. Solo interpreta la atestación que EP publica y coteja. Si EP no puede probar `Protection On`, el panel permanece `BLOQUEADO`; no convierte ausencia de datos en PASS.
+
+**Suite:** 21 escenarios sintéticos escritos / 0 ejecutados. Incluye sesión/proyección inválida, eventos corruptos/oversized, escritura del snapshot y pruebas del gate compuesto (Protection Off/UNKNOWN, Protection On, proceso, protocolo, fuentes, operador, root y timestamp futuro).
