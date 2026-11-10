@@ -30,7 +30,7 @@ Identidad vigente: **MCP-OCP** (anteriormente MCP-METODOLOGIA). Se conserva el s
 **Separación de dominio:** MCP-OCP se orienta a desarrollo/gobernanza y operación local mediante localhost y/o RDC autorizado; Khora conserva las capacidades propias de la prótesis cognitiva y su superficie pública Vercel. No se comparten controles, secretos ni autorizaciones.
 
 **Fuente normativa vigente:** [DUG Samantha v386 · NX-386m · Metacanon 1.29 · GOW 2.18](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html).
-**Control vigente:** alcance Sink local por stdio autorizado directamente por el operador; generaciones y sesiones son metadatos históricos de auditoría. Núcleo documental MCP-OCP v0.1.26; backlog v0.7; objetivo de software del sprint MCP-OCP 1.0.0. Implementación y paquete actualizados pendientes. Las candidatas históricas no son código vigente ni paquetes disponibles.
+**Control vigente:** alcance Sink local por stdio autorizado directamente por el operador; generaciones y sesiones son metadatos históricos de auditoría. Núcleo documental MCP-OCP v0.1.27; backlog v0.8; objetivo de software del sprint MCP-OCP 1.0.0. Implementación y paquete actualizados pendientes. Las candidatas históricas no son código vigente ni paquetes disponibles.
 
 - **DTC MCP-OCP · ciclo local 09 · 2026-11-06:** apertura y acuse de la rectificación posterior al ciclo 08 en [coordinación](entregas/COORDINACION-SPRINT-OCP-MCP-v0.1.md); ciclo 08 permanece `CLOSED_VERIFIED`, el objetivo técnico `BLOCKED_PENDING_OPERATOR_SECURITY_REVIEW_AND_SECOND_HOST`. El cierre del ciclo 09 queda en el mismo objeto de coordinación.
 
@@ -54,7 +54,7 @@ Sink local por stdio está autorizado directamente por el operador; no se requie
 
 ## Sprint MCP-OCP 1.0.0 · Sink + panel local · 2026-11-09
 
-Plan y aceptación interfrente: [GOV-TASK-015](../gobernanza/📁%20🧭%20-%20Tareas%20provisionales/📁%20🧩%20-%20GOV-TASK-015%20-%20Sprint%20Sink%20local%20vía%20RDC/README.md). Backlog MCP vigente: [LISTA-TAREAS-PROVISIONAL.md v0.7](LISTA-TAREAS-PROVISIONAL.md). Contrato visual/funcional: [PANEL-OBSERVABILIDAD.md](PANEL-OBSERVABILIDAD.md). Estado: alcance y tareas actualizados; implementación, build, paquete, panel e instalación no ejecutados. DUG vigente: Samantha v386/NX-386m. La instalación EP se mantiene separada y depende de [EP-TASK-005](../ep/📁%20🧭%20-%20Tareas%20provisionales/📁%20🧩%20-%20EP-TASK-005%20-%20Instalación%20y%20aceptación%20de%20MCP-OCP%20local/README.md).
+Plan y aceptación interfrente: [GOV-TASK-015](../gobernanza/📁%20🧭%20-%20Tareas%20provisionales/📁%20🧩%20-%20GOV-TASK-015%20-%20Sprint%20Sink%20local%20vía%20RDC/README.md). Backlog MCP vigente: [LISTA-TAREAS-PROVISIONAL.md v0.8](LISTA-TAREAS-PROVISIONAL.md). Contrato visual/funcional: [PANEL-OBSERVABILIDAD.md](PANEL-OBSERVABILIDAD.md). Estado: alcance y tareas actualizados; implementación, build, paquete, panel e instalación no ejecutados. DUG vigente: Samantha v386/NX-386m. La instalación EP se mantiene separada y depende de [EP-TASK-005](../ep/📁%20🧭%20-%20Tareas%20provisionales/📁%20🧩%20-%20EP-TASK-005%20-%20Instalación%20y%20aceptación%20de%20MCP-OCP%20local/README.md).
 
 
 ## Instalación local del servidor MCP-OCP · destino de release 1.0.0
@@ -63,3 +63,14 @@ El release de software objetivo es MCP-OCP 1.0.0. El ejecutable debe instalarse 
 
 
 **Release objetivo MCP-OCP 1.0.0:** servidor local STDIO más panel de observabilidad Windows de solo lectura, que se abre mientras la sesión EP esté ACTIVE. Ambos se instalan dentro de este checkout, en frentes/mcp-metodologia/instalacion-local/; el panel no es un segundo cliente/servidor MCP y no abre red. DB, claves, fuentes sensibles, logs operativos y backups quedan fuera del checkout bajo root protegido por EP. La carpeta instalada se excluye de Git. No se declara construido, instalado ni aceptado hasta build, pruebas, paquete, extracción y read-back verificados.
+
+## Destino y primer hito operativo · 2026-11-10
+
+El destino del sprint es **Fila 4**, correspondiente a la única sesión RDC disponible indicada por el operador; PC 7 queda supersedido y no es fallback. Últimos datos técnicos documentados, aún no revalidados en vivo: Device ID `d0bbb2a3-d7b4-45e1-8870-652c2c3844fc`; perfil `CENTRAL\\fila4`, SessionId 4. La ubicación física es un dato separado y EP debe verificarla antes de aplicar la regla de dead-man.
+
+**Primer hito:** piloto SINK:P004 consumible desde IPZ por el recorrido real RDC → MCP-OCP STDIO. Prioridad: rama limpia desde main → GOW:ARR/DUG/SINK:P004 → pruebas mínimas → piloto protegido en Fila 4 → E2E IPZ visible al modelo. Solo después se generaliza P001–P043 y se desarrolla el panel WPF en paralelo. El panel continúa obligatorio para 1.0.0, pero no bloquea el piloto.
+
+Rutas de Fila 4: checkout en `%USERPROFILE%\\Desktop\\SeryMente\\Repositorios\\Metodologia\\metodologia\\`; piloto en `frentes/mcp-metodologia/instalacion-local/piloto-sink/`; release final servidor+panel en `frentes/mcp-metodologia/instalacion-local/`; datos y fuentes importadas fuera del checkout bajo `Datos/Metodologia/MCP-OCP/`, dentro del volumen protegido EP.
+
+**Estado:** destino y secuencia documentados; preflight vivo, checkout protegido, piloto, IPZ nativo/read-back, build, instalación y aceptación siguen pendientes. Ver [OEP §120](../ep/OEP.md#120-rectificación-de-host-de-trabajo-e-instalación-mcp-ocp--2026-11-10--oep-v0355) y [backlog v0.8](LISTA-TAREAS-PROVISIONAL.md).
+
