@@ -20,12 +20,12 @@
   },
   "sink": {
     "principle_id": "P004",
-    "title": "Principio de No-Simulación",
+    "title": "Principio de No-Simulación 🔒",
     "human_anchor": "#P004",
     "microdescriptor": "Exigir hechos verificables; activarlo ante afirmaciones sobre capacidades, datos, acciones o certezas.",
     "normative_text": "No finjas capacidades, datos, resultados ni certezas, ni declares límites sin verificar con herramientas. Marca tu certeza y nombra los huecos sin rellenarlos. Precedencia absoluta sobre la exhaustividad y el buen trato."
   },
   "verification": "DUG v388 main source and P004 metadata read and verified; runtime SHA verification is implemented but awaits CI execution",
-  "branch_base_sha": "2e98cb2729741174ccc822f52a87259c4331b066",
-  "branch": "feat/mcp-ocp-p004-pilot-20261110-cycle04"
+  "branch_base_sha": "0f933b9e3efae20131da37f99f50f4bc4a4eaf74",
+  "branch": "feat/mcp-ocp-p004-pilot-20261110-cycle05"
 }
