@@ -18,12 +18,12 @@ El patrón de materialización sigue el registro de tareas provisionales de Gobe
 
 | ID local | Estado | Tarea | Núcleo |
 | EP-TASK-001 | pendiente | NCL — Navegador Compartido Local: integración de Playwright y KeePassXC | [núcleo](./📁%20🧩%20-%20EP-TASK-001%20-%20Integración%20NCL/README.md) |
-| EP-TASK-002 | `en_curso · P0 · BLOQUEADA_VAULT_SELLADA` | Pareja Master EP en Vault; CLI sin sesión (0/5 variables); worker P0-C ciphertext-only preparado; autenticación, upload y restore B2 no ejecutados | [núcleo](./📁%20🧩%20-%20EP-TASK-002%20-%20Persistencia%20provisional%20Backblaze/README.md) |
-| EP-TASK-003 | `en_curso · P0 · PREFLIGHT_FILA4=PARTIAL_FAIL` | Preflight 2026-11-10: C XTS-AES128/Protection Off; VHDX 30 GiB W: descifrado/sin protector; origen 3.103 archivos/659 dirs/159.162.208 bytes con 2 errores; checkout sin .git; root Datos ausente; diseño no aceptado | [núcleo](./📁%20🧩%20-%20EP-TASK-003%20-%20Mapa%20integral%20de%20construcción%20EP/README.md) |
+| EP-TASK-002 | `en_curso · P0 · BLOQUEADA_VAULT_SELLADA` | Status propietario 15:48:48: Vault ciphertext 2.200 B, sessionActive=false; worker/wrapper SHA verificados; recibo ausente; B2 auth/upload/restore no ejecutados | [núcleo](./📁%20🧩%20-%20EP-TASK-002%20-%20Persistencia%20provisional%20Backblaze/README.md) |
+| EP-TASK-003 | `en_curso · P0 · DISEÑO_ACEPTADO · PREFLIGHT_PARTIAL_FAIL` | Diseño VHDX aceptado; 2 enumeraciones 3.127 archivos/660 dirs/179.138.515 B, 0 errores; C: XTS-AES128/Protection Off; W: descifrado; checkout sin .git; Datos/MCP-OCP ausente; espera P0 B2 | [núcleo](./📁%20🧩%20-%20EP-TASK-003%20-%20Mapa%20integral%20de%20construcción%20EP/README.md) |
 | EP-TASK-004 | `en_curso · H7_SINTÉTICO_PARCIAL_PASS · H10_PENDIENTE` | Self-tests sintéticos crypto/job/timeout PASS; parser Core/CLI/GUI y XAML PASS; H7/H8 integrales y aceptación visual H10 pendientes | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-004%20-%20Reconstrucci%C3%B3n%20de%20b%C3%B3veda/README.md) |
 | EP-TASK-005 | pendiente · P0 piloto · BLOQUEADO_EP003+MCP_PACKAGE | EP ejecuta instalación del piloto en Fila 4 solo tras EP-TASK-003 PASS + paquete P004/manifest/SHA + MCP-OCP-03/04 smoke PASS; W: no es destino final. Después release 1.0.0. | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-005%20-%20Instalaci%C3%B3n%20y%20aceptaci%C3%B3n%20de%20MCP-OCP%20local/README.md) |
 | EP-TASK-006 | `en_curso · P1_WAITING_P0_B2` | Centralización: nombres Master B2 EP normalizados y leídos de vuelta; inventario mult proveedor incompleto; P1 sigue después del snapshot/restauración P0 | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-006%20-%20Centralizaci%C3%B3n%20de%20variables%20de%20entorno/README.md) |
-| EP-TASK-007 | `en_curso · HOST_INVENTORY_PARTIAL_READ_ONLY` | Inventario Fila 4 read-only persistido y verificado; ubicación UNCLASSIFIED; Guardian/lease/crypto-erasure no implementados y sujetos a dependencias | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-007%20-%20Guardi%C3%A1n%20de%20sesi%C3%B3n%20ef%C3%ADmera%20e%20inventario%20del%20host/README.md) |
+| EP-TASK-007 | `en_curso · HOST_INVENTORY_PARTIAL_READ_ONLY` | Revalidación read-only: workspace 3.127 archivos/660 dirs/179.138.515 B; C: 100 % XTS-AES128/Protection Off/sin protectores; W: 0 %/sin protectores; ubicación UNCLASSIFIED; Guardian no implementado | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-007%20-%20Guardi%C3%A1n%20de%20sesi%C3%B3n%20ef%C3%ADmera%20e%20inventario%20del%20host/README.md) |
 ## Estado de continuidad · 2026-10-31
 
 EP-TASK-001 permanece `pendiente`. No debe iniciarse mientras siga activo el trabajo prioritario de alojamiento de OCP MCP en EP. Puede retomarse cuando ese trabajo haya concluido o cuando el operador dé una instrucción expresa para alterar el orden.
@@ -318,3 +318,18 @@ Evidencia read-only: [EP-FILA4-READONLY-PREFLIGHT-20261110-1530.json](../entrega
 Regla para EP-TASK-001–007 y tareas futuras: cada resultado se documenta dentro del README de su tarea con [la plantilla común](../../PLANTILLA-REPORTE-CIERRE-TAREA.md). El informe debe explicar cómo se resolvió, resultado frente al objetivo, cambios, evidencia y pruebas ejecutadas, read-back/SHA, bloqueantes, preocupaciones/riesgos, pendientes, rollback y aceptación. Los campos sin incidencias deben decir NINGUNO_VERIFICADO; lo no examinado, NO_VERIFICADO.
 
 El núcleo individual es el registro de cierre. El índice solo refleja estado y enlace, y se actualiza después de verificar el informe. No se cierran varias tareas con una única explicación conjunta. No declarar completada una tarea parcial, bloqueada o con aceptación pendiente. Tras cada cierre, enviar al operador el enlace individual y un resumen de solución, evidencia y asuntos pendientes.
+
+
+---
+
+## Reconciliación ejecutiva EP · 2026-11-10 · 15:49 America/Mexico_City
+
+- **EP-TASK-002:** P0 sigue bloqueada. Status propietario 15:48:48: cámara no activa, ciphertext 2.200 bytes, recibo ausente; worker/wrapper íntegros por SHA-256; no se autenticó ni contactó B2.
+- **EP-TASK-003:** el operador aceptó expresamente el diseño VHDX/BitLocker que conserva Desktop\SeryMente. Gate global permanece PARTIAL_FAIL. Dos enumeraciones recursivas independientes repitieron 3.127 archivos, 660 directorios, 179.138.515 bytes, cero errores y cero reparse points; la diferencia frente al conteo anterior sigue sin causa reconciliada. C: continúa XTS-AES128/Protection Off/sin protectores; W: sigue FullyDecrypted/sin protectores; checkout sin .git y root Datos/MCP-OCP ausente. No hubo mutación física.
+- **EP-TASK-007:** inventario de host y almacenamiento revalidado en modo read-only. Ubicación UNCLASSIFIED; GPS/IP no consultados; Guardian/lease/crypto-erasure no implementados.
+- **EP-TASK-004:** self-tests sintéticos parciales continúan siendo la última evidencia; H7/H8 integrales y H10 pendiente.
+- **EP-TASK-005:** sigue bloqueada por EP-TASK-003 PASS y paquete P004/manifest/SHA/MCP-OCP-03/04.
+- **EP-TASK-006:** P1 sigue detrás del snapshot/restore P0 B2.
+- **EP-TASK-001:** pendiente, sin delta.
+
+**Informes parciales individuales:** EP-TASK-002, EP-TASK-003 y EP-TASK-007 fueron agregados y leídos de vuelta antes de actualizar este índice. No se promueve ninguna tarea a completada. Siguiente gate: desbloqueo local de EP Vault; comprobar sesión y cinco nombres; ejecutar P0-C y demostrar descarga/hash/restore.
