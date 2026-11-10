@@ -241,14 +241,25 @@ static string FixtureHtml(string version = "v387", string? normativeText = null)
             default_consult_before_application = true,
             deliberately_insufficient_for_full_application = true
         },
-        principles = new[]
-        {
-            new { id = "P004", title = "Principio de No-Simulación 🔒",
-                normative_text = normativeText,
-                content_markdown = "> " + normativeText,
-                human_anchor = "#P004",
-                microdescriptor = "Exigir hechos verificables; activarlo ante afirmaciones sobre capacidades, datos, acciones o certezas.",
-                preponderance = new { category = "A", @decimal = 0.8 } }
+        principles = Enumerable.Range(1, 43)
+            .Select(i =>
+            {
+                string id = $"P{i:000}";
+                bool isP004 = i == 4;
+                string text = isP004 ? normativeText : $"Fixture normative text {id}.";
+                return new
+                {
+                    id,
+                    title = isP004 ? "Principio de No-Simulación 🔒" : $"Fixture principle {id}",
+                    normative_text = text,
+                    content_markdown = "> " + text,
+                    human_anchor = "#" + id,
+                    microdescriptor = isP004
+                        ? "Exigir hechos verificables; activarlo ante afirmaciones sobre capacidades, datos, acciones o certezas."
+                        : "Fixture descriptor for a non-target principle with sufficient descriptive content.",
+                    preponderance = new { category = isP004 ? "A" : "B", @decimal = isP004 ? 0.8 : 0.1 }
+                };
+            }).ToArray(),
         },
         glossary = new
         {
