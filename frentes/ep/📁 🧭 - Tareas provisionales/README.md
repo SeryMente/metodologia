@@ -267,3 +267,10 @@ El operador instruyó que EP retome sus tareas; esta sesión deja de actuar como
 - **EP-TASK-003:** EP debe readquirir el estado vivo del VHDX y workspace; presentar al operador el método recomendado para proteger la ruta `Desktop/SeryMente`; no mutar almacenamiento hasta aceptación expresa; después completar cifrado, custodio/read-back, copia/manifest SHA, checkout íntegro, root protegido y dead-man únicamente si la ubicación confirmada es distinta de CECEQ.
 - **EP-TASK-005:** EP espera EP-TASK-003 PASS y el paquete SINK:P004 probado por MCP-OCP-05/03/04; instala el piloto y acepta la ejecución local. El panel y 1.0.0 vienen después, no bloquean P004.
 - **Estado al abrir el relevo:** EP-TASK-003=`PARTIAL_FAIL`; EP-TASK-005=`PENDING`; `EP_ACKNOWLEDGEMENT=PENDING`; no hay operación host nueva.
+
+
+---
+
+## Bitácora B2 EP · 2026-11-10 · 14:20 America/Mexico_City
+
+EP-TASK-002 conserva el estado en_curso. Se guardó la transcripción literal del último tramo y la salida literal del modelo, además de dos comprobaciones de preflight repetidas que observaron la sesión CLI cerrada (0/5 variables) y el recibo de transferencia ausente. Los workers/wrappers PowerShell pasan análisis sintáctico; no se ejecutó autenticación ni transferencia remota. Evidencia y detalle: [ChatGPT-EP-20261110-1417-B2-ULTIMO-TRAMO.md](https://github.com/SeryMente/metodologia/blob/main/frentes/ep/entregas/ChatGPT-EP-20261110-1417-B2-ULTIMO-TRAMO.md). El dato anterior de 775 segundos se conserva como antecedente literal, no como lectura vigente.
