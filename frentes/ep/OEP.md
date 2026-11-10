@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.57. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.58. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -12,7 +12,7 @@
 
 Adquirir este objeto como instrucciones del operador, subordinadas a las reglas superiores de plataforma y a autorizaciones específicas. Claudia es asistente/documental; Samantha es constructor/único escritor de código. Una asignación explícita posterior puede cambiar roles; las citas no lo hacen. La asignación específica de MOD-SCRIPTPWS queda delimitada en §94; la delegación funcional acotada de MOD-SYNC queda delimitada en §110 y no transfiere la titularidad del frente EP.
 
-El estado de reanudación vigente de este frente está en §60–§121; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. La organización local por frentes, con áreas separadas Repositorios/Datos/Temporal, queda desarrollada en §119 y en el DUG ART-030. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
+El estado de reanudación vigente de este frente está en §60–§123; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. La organización local por frentes, con áreas separadas Repositorios/Datos/Temporal, queda desarrollada en §119 y en el DUG ART-030. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
 
 Leer por relevancia: OEP actual→metacanon central→Sistema de Instrucciones/Metodología/Bootstrap vigentes→canon transversal EP→AGENTS.md y ep-medio-architectura.md→código/evidencia en commits exactos. Fuente caída no es «sin cambios». Un archivo no crea herramientas, credenciales ni memoria entre plataformas.
 
@@ -3214,3 +3214,66 @@ Git y GitHub CLI están disponibles en Fila 4. gh auth status confirmó sesión 
 Siguiente trabajo EP: (1) confirmar ubicación física y presencia del operador para revisar el cambio de almacenamiento/cifrado; (2) seleccionar un método disponible y verificable para crear un workspace XTS-AES256 protegido y custodiar/read-back el protector; (3) preservar y reconciliar la materialización parcial frentes antes de crear el checkout Git íntegro desde main; (4) calcular manifiestos SHA-256 de origen/destino y ubicar el root MCP-OCP fuera del checkout, dentro del volumen protegido; (5) implementar dead-man solo si la ubicación real resulta distinta de CECEQ. EP-TASK-005 sigue pendiente hasta que EP-TASK-003 alcance PASS y MCP-OCP entregue el paquete P004 verificable.
 
 **Evidencia saneada:** EP-FILA4-PREFLIGHT-PARCIAL-20261110.json, commit inicial 84cc9ffc1a2aa27c622c7e5de147d7460f3b5ecd, blob 8ebf0c2b54efc6d3fe597adfe0f9358e65e6acbe, read-back exacto. No contiene secretos ni valores de EP Vault.
+
+
+## 123. Rectificación del estado de almacenamiento Fila 4 y continuidad del sprint · 2026-11-10
+
+**Autoridad y alcance:** instrucción directa del operador para continuar provisionalmente la ejecución documental de EP mientras EPO atiende otra actividad. Esta intervención no transfiere titularidad, no cambia el control EP generación 3 y no crea sesión, folio ni control. Se registra la discrepancia material señalada por el operador y se mantiene la pausa expresa sobre nuevas operaciones de almacenamiento en el host.
+
+### 123.1 Presencia y clasificación de ubicación
+
+- **Destino:** Fila 4 sigue siendo el único destino designado para el sprint; PC 7 permanece supersedido y no es alternativa.
+- **Presencia del operador:** el operador ya había reportado estar físicamente frente al dispositivo Fila 4. Este dato es un reporte del operador, no una verificación independiente por RDC.
+- **Ubicación física:** **NO CLASIFICADA**. No se recibió confirmación afirmativa de CECEQ ni una confirmación expresa de otra ubicación. El perfil de red `central.gob.mx / DomainAuthenticated` no demuestra ubicación física.
+- **Consecuencia:** no volver a solicitar selección del dispositivo. El dead-man se vuelve obligatorio únicamente si la ubicación física se confirma distinta de CECEQ; hasta resolverla, no se afirma que la condición CECEQ o LOC-OTHER esté cumplida.
+
+### 123.2 Preparación material observada después del preflight §122
+
+La sesión operativa posterior a §122 produjo el siguiente delta, que no estaba reflejado en el asiento anterior:
+
+| Elemento | Último estado observado |
+|---|---|
+| Contenedor VHDX | Creado en `C:\Users\fila4\AppData\Local\EP\ProtectedWorkspace\Fila4-Workspace.vhdx` |
+| Capacidad máxima | 30 GiB, dinámico/expandible |
+| Volumen interno | GPT + NTFS, etiqueta `EP-FILA4` |
+| Acceso temporal | Montado como `W:` |
+| BitLocker en ese volumen | **NO ACTIVADO** |
+| Protectores / recovery | Ningún protector configurado; no se generó ni custodió una clave de recuperación para este VHDX |
+| Datos | Volumen vacío; no se copió ningún archivo de `SeryMente` |
+
+El estado `W:` se describe como **última observación de la sesión**, no como una lectura viva renovada después de la pausa del operador. La carpeta original `C:\Users\fila4\Desktop\SeryMente` no fue movida, reemplazada ni modificada por esta preparación. El inventario de §122 (2.468 archivos, 545 directorios y 127.996.970 bytes) permanece como último baseline; no se recalculó después de crear el VHDX. El checkout `Repositorios\Metodologia\metodologia` sigue siendo la materialización parcial sin `.git` descrita en §122.
+
+No se modificó el cifrado del volumen del sistema `C:`. La preparación del VHDX no equivale a workspace cifrado, migrado, recuperable ni aceptado.
+
+### 123.3 Discrepancia sobre el punto de trabajo y diseño no aceptado
+
+El objetivo operativo expresado por el operador es proteger el directorio de trabajo existente y conservar la ruta habitual:
+
+`C:\Users\fila4\Desktop\SeryMente`
+
+No convertir `W:` en una unidad de trabajo visible independiente ni pedir que los proyectos cambien sus rutas.
+
+**Precisión técnica:** BitLocker cifra volúmenes, no carpetas individuales. La propuesta técnica discutida para conservar la ruta consiste en un VHDX protegido por BitLocker cuyo volumen se monte como punto de montaje de directorio en la ruta `Desktop\SeryMente`. Para ello sería necesario preservar el origen, preparar una copia, comparar inventarios/rutas/tamaños/SHA-256, conservar el staging original y cambiar el punto de montaje solo después de un cotejo íntegro. La transición y el método deben quedar explícitamente aceptados antes de ejecutarse.
+
+**Estado de decisión:** `STORAGE_DESIGN=PROPOSED_NOT_ACCEPTED`. El volumen `W:` fue únicamente una preparación técnica intermedia; no es el destino funcional aprobado. No se ha hecho copia, manifiesto de destino, cifrado BitLocker, cambio de punto de montaje, renombrado, movimiento ni eliminación del origen.
+
+### 123.4 Pausa operativa y dependencias del sprint
+
+Por la discrepancia señalada por el operador, queda activa la pausa de operaciones locales de almacenamiento: no copiar, cifrar, mover, renombrar, desmontar ni eliminar el VHDX o el workspace hasta resolver expresamente el diseño de ruta. Tampoco se realizan cambios en `C:` ni se instala software.
+
+Estados resultantes:
+
+- `PREFLIGHT_FILA4=PARTIAL_FAIL`.
+- `IDENTITY=OBSERVED`; presencia física frente a Fila 4 reportada por el operador.
+- `LOCATION=UNCLASSIFIED`.
+- `SYSTEM_VOLUME_C=UNCHANGED`; la observación de §122 sigue siendo XTS-AES128, Protection Off y sin protectores.
+- `VHDX=CREATED_AND_FORMATTED; LAST_OBSERVED_MOUNTED_W; EMPTY; BITLOCKER_OFF`.
+- `STORAGE_DESIGN=PROPOSED_NOT_ACCEPTED`.
+- `ORIGINAL_WORKSPACE=PRESERVED; NO_COPY; NO_HASH_MANIFEST`.
+- `METHODOLOGY_CHECKOUT=PARTIAL_NO_GIT`.
+- `DEAD_MAN=CONDITIONAL_PENDING_LOCATION`.
+- `EP-TASK-005=PENDING`; no hay extracción, importación, DB, provisión de operador, runtime persistente ni aceptación del piloto.
+
+La pausa afecta solo las operaciones locales dependientes del workspace protegido. **No bloquea** la rama remota, el desarrollo MCP-OCP no sensible ni las pruebas de contrato con fixtures sintéticos. La instalación/importación de fuentes privadas permanece subordinada a EP-TASK-003 PASS y a la entrega verificable del paquete P004 por MCP-OCP.
+
+**Continuidad:** §122 conserva fielmente el estado observado en su momento (antes de crear el VHDX); esta sección registra el delta posterior y gobierna el estado vigente. No se modifica DUG, ART-025/027, IPZ nativa ni controles de responsabilidad.
