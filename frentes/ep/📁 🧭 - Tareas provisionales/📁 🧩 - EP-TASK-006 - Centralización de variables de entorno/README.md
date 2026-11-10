@@ -337,3 +337,22 @@ Se dejan pendientes: MYSQL_PASSWORD y MYSQL_ROOT_PASSWORD (generateValue de Rend
 **Lectura consolidada posterior:** EP Vault v1.0.0 informa 18 nombres de variable, una nota DPAPI pendiente (`N-20261109213342-BCC5707F`, `VOLATILE_DPAPI`), estado ENCRYPTED_FILE_PRESENT, esquema `ep-env-vault/1`, PBKDF2-HMAC-SHA256/600.000 iteraciones, 2.048 bytes y sesión activa. La lista anterior de nueve nombres de la sección 4 es un snapshot previo; esta lectura de 18 nombres la sustituye como estado más reciente.
 
 **Ciphertext actual en PC-7:** `%LOCALAPPDATA%\Khora\secrets\ep-env-vault.enc.json`; SHA-256 `D7AD1D745CAF460E047EAE521C1C403F36E99864BC9CD0604FFC564E390F2F7D`. Esta huella identifica el archivo local de este corte; no acredita respaldo remoto.
+
+
+---
+
+## Reconciliación de variables B2 EP tras migración Master · 2026-11-10 · 10:12 America/Mexico_City
+
+La pareja Master de la **cuenta Backblaze dedicada a EP**, y solo de esa cuenta, quedó centralizada en EP Vault:
+
+- `EP_B2_MASTER_APPLICATION_KEY_ID`: presente y lectura de vuelta verificada; longitud 12.
+- `EP_B2_MASTER_APPLICATION_KEY`: presente y lectura de vuelta verificada; longitud 42.
+- `EP_B2_APPLICATION_KEY_ID`: alias obsoleto retirado; el registro confirma cero alias B2 EP deprecados restantes.
+- `EP_B2_ACCOUNT_EMAIL`, `EP_B2_BUCKET_NAME` y `EP_B2_PREFIX`: preservadas.
+- `KHORA_B2_MASTER_APPLICATION_KEY`, `KHORA_B2_MASTER_APPLICATION_KEY_ID` y `KHORA_B2_PREFLIGHT`: preservadas, sin alteración.
+
+**Procedencia:** el operador confirmó que las dos notas de origen pertenecían a EP. Cora mantiene una cuenta y credenciales propias; no se reutilizaron credenciales de Cora ni de Khora. Los valores no se incorporan a este expediente ni se emiten a logs/chat (`valuesEmitted=False`).
+
+**Read-back y huella:** migración `MIGRATION_AND_READBACK_VERIFIED`, completada `2026-11-10T16:01:06Z`; verificación final `16:12:43Z`; ciphertext 2.156 bytes, SHA-256 `F41FE765BCD30787C880C9105E3F6B3C4F6D00D67BA7AEAF70E55F3E7A96514C`.
+
+Esto completa la normalización de la pareja maestra B2 de EP en la bóveda; **no** completa la centralización global de variables de todos los proveedores/proyectos ni demuestra autenticación B2, lectura del bucket, upload o restore. EP-TASK-006 permanece `en_curso`.
