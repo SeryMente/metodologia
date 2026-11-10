@@ -95,3 +95,14 @@ Main `8f999198f1d8cde71361c884c9a13b745f442b49`; rama HEAD `4ac337f0b1e507497b8a
 - Smoke: initialize, tools/list, tools/call y EOF; tres respuestas JSON-RPC en STDOUT, evento `SINK_READ_SUCCESS` en STDERR; exit code 0 y `PILOT_CI_RESULT=PASS`.
 - SHA-256: P004 log `D6F21749D8898B6624988BF056DA2BCC66DA3A5DF1CAE8FFA1FA2DB36DEB338B`; monitor log `B9B3F2B5A42285CC3D81AE5EEFBDC678104E5E408A861BB5D1045885CBC29989`; smoke summary `2D5C90D467B5508A9FAD22F0C00902035D9F3FE7F703B052AAB13365BE2C0B31`.
 - Esta evidencia corresponde a Windows local, no al runner hospedado Ubuntu ni a la aceptación IPZ. La instalación EP y el E2E IPZ siguen pendientes de sus responsables/gates.
+
+## Paquete candidato disponible para handoff
+
+- Ruta en la rama PR #27: frentes/mcp-metodologia/entregas/piloto-sink-p004/MCP-OCP-SINK-P004-b6ce37af-v3.zip
+- Manifest: frentes/mcp-metodologia/entregas/piloto-sink-p004/manifest.json
+- Runbook: frentes/mcp-metodologia/entregas/piloto-sink-p004/RUNBOOK.md
+- ZIP SHA-256: DE556FD547ACF2AB3946DF5AC2395A3993CB459B5E48F8E745A661A113A90783
+- Manifest SHA-256: 85F70366144FD2109D9688F2DDB6E7819FF955B8F05697C2FC6966E04F0044B1
+- Estado: CANDIDATE_NOT_ACCEPTED. ZIP extraído, 9/9 archivos cotejados y package smoke P004/STDIO/EOF PASS.
+- Requisito de runtime: Microsoft.NETCore.App 10.0.x x64. Fila 4 NO VERIFICADO.
+- No transferido ni instalado; EP-TASK-003/005 conservan los gates. No equivale a E2E IPZ ni producto 1.0.0.
