@@ -278,3 +278,35 @@ La ruta local observada ya fue reestructurada con esos directorios. La carpeta S
 **Gate LOC-OTHER:** repetir preflight vivo PC 7: dispositivo RDC, usuario/SID efectivos, checkout, permisos, volumen XTS-AES256, BitLocker Protection On y FullyEncrypted 100 %, y root de datos. La evidencia más reciente disponible indicó cifrado 100 % pero `ProtectionStatus=Off`; no declarar protegido hasta obtener Protection On. Implementar y probar el dead-man específico antes de dejar cualquier runtime persistente.
 
 **Criterio de cierre EP-TASK-003 para este sprint:** checkout íntegro y sincronizado con read-back; ruta exacta accesible; controles de protección activos; dead-man LOC-OTHER probado sin borrar fuera de su alcance; evidencia/hash y lectura de vuelta. La falta de Git/checkout puede resolverse en paralelo al desarrollo remoto MCP y no debe bloquear MCP-OCP-02/05/03/04/07.
+
+---
+
+## Rectificación de destino de trabajo MCP-OCP · 2026-11-10
+
+**Decisión vigente del operador:** el destino de materialización y trabajo del sprint MCP-OCP es **Fila 4**, por ser el dispositivo correspondiente a la única sesión RDC disponible indicada por el operador. Esta designación supersede, para MCP-OCP, la selección anterior de PC 7. PC 7 deja de ser destino o fallback. Las entradas PC-14/PC 7/Fila 4 anteriores se conservan como historia de cada observación, no como identidad actual inferida.
+
+### Identidad y alcance de la materialización
+
+- Equipo/etiqueta operativa: **Fila 4**.
+- Últimos datos técnicos documentados: RDC Device ID `d0bbb2a3-d7b4-45e1-8870-652c2c3844fc`; sesión interactiva `CENTRAL\\fila4`, SessionId 4. El operador confirma que este corresponde a la única sesión RDC disponible; no se ejecutó una lectura viva en este ciclo.
+- Confirmar en vivo dispositivo, hostname, sesión, usuario/SID efectivo, `$env:USERPROFILE`, privilegios y permisos antes de cualquier escritura local. No ejecutar materialización bajo `CENTRAL\\MantenimientoRCI` como sustituto del perfil propietario.
+- Ubicación EP física de Fila 4: **PENDIENTE_DE_VERIFICACIÓN**. La identidad de terminal no determina CECEQ/LOC-OTHER. Clasificar la ubicación separadamente en el preflight.
+- Destino de checkout bajo el perfil interactivo: `%USERPROFILE%\\Desktop\\SeryMente\\Repositorios\\Metodologia\\metodologia\\`. No reutilizar como destino el staging de PC-14 ni la materialización parcial histórica de PC 7.
+- Destino del programa: `frentes/mcp-metodologia/instalacion-local/` relativo al checkout anterior. Los datos/DB/DPAPI/fuentes sensibles/logs/backups permanecen fuera del checkout, en `%USERPROFILE%\\Desktop\\SeryMente\\Datos\\Metodologia\\MCP-OCP\\` sobre el workspace protegido.
+
+### Preflight y protección
+
+La última observación registrada para Fila 4 indicaba C: `FullyEncrypted/100 %`, `ProtectionStatus=Off`, `XtsAes128`. Es un dato histórico, no estado vivo ni prueba de protección efectiva. Git 2.45.2 y GitHub CLI 2.52.0 aparecían instalados; la autenticación local de GitHub no estaba verificada. Repetir las comprobaciones en la sesión designada.
+
+1. Completar la materialización del workspace dentro del VHDX/volumen de trabajo EP y leer de vuelta: BitLocker XTS-AES256, Protection On, FullyEncrypted/100 %, protector recuperable custodiado en EP Vault y manifiestos SHA-256 de origen/destino.
+2. Verificar el clon privado completo de Metodología desde `main`, branch/origin/HEAD/status y no sobrescribir cambios locales. La autenticación de GitHub se realiza interactivamente en Fila 4 si hace falta; no transferir tokens desde el conector/chat ni desde otro perfil.
+3. Mantener cualquier staging de PC-14 y sus volúmenes atribuido a ese host; no montar ni reutilizar W:, VHDX, RecoveryPassword o DPAPI de PC-14 en Fila 4.
+4. Clasificar la ubicación real. Si Fila 4 está en CECEQ, conservar workspace cifrado al cierre conforme al perfil CECEQ. Si está en otra ubicación, EP-TASK-003 debe implementar y probar el dead-man específico antes de runtime persistente. No asignar `LOC-OTHER` por inferencia.
+5. Hasta completar el volumen protegido, permitir únicamente código/documentación no sensible; no clonar/importar el DUG privado, generar DB con fuentes, aprovisionar operador ni dejar runtime persistente fuera del perímetro aprobado.
+
+### Efecto sobre el sprint
+
+EP-TASK-003 prepara Fila 4 en paralelo al desarrollo MCP remoto. El primer uso de texto canónico SINK:P004 necesita checkout y root de datos protegidos. No se espera al panel ni a P001–P043 completos para el piloto; la apertura del piloto está subordinada al preflight del workspace/root y a las pruebas del primer corte vertical. EP-TASK-003 no adquiere tareas de producto MCP ni altera el contrato general del dead-man.
+
+**Estado tras la rectificación:** Fila 4 designada; preflight vivo, workspace íntegro/protegido, autenticación local cuando aplique y clasificación de ubicación pendientes. No se materializó ni instaló software en esta actualización.
+
