@@ -1,6 +1,6 @@
 # Operación local · MCP-OCP
 
-**Estado vigente:** núcleo MCP-OCP v0.1.29; backlog v0.10; DUG Samantha v388/NX-388m; sprint operativo `SINK-P004`; producto objetivo MCP-OCP 1.0.0. La implementación P004, pruebas nuevas, paquete e instalación siguen pendientes. La candidata 0.1.0 que se describe aquí es evidencia histórica; la identidad/ruta del entorno temporal no se conserva y el paquete no está disponible en este repositorio.  
+**Estado vigente:** núcleo MCP-OCP v0.1.41; backlog v0.22; DUG Samantha v388/NX-388m; sprint SINK-P004. Build, pruebas P004/monitor y smoke STDIO pasan localmente; un paquete candidato P004 está publicado en la rama PR #27, OPEN/DRAFT/NOT MERGED. No está instalado ni aceptado; EP-TASK-003/005 y GOV-TASK-003 conservan sus gates.  
 **Arquitectura:** proceso MCP stdio local; el cliente inicia y administra el proceso. No hay listener TCP/HTTP ni endpoint público.  
 **Fuente de verdad documental:** [MCP-OCP · núcleo](MCP-METODOLOGIA.md) y [lista provisional de tareas](LISTA-TAREAS-PROVISIONAL.md).  
 **Separación:** este servidor pertenece exclusivamente a MCP-OCP en Metodología. No es Khora MCP ni el bridge de Jules.
@@ -199,3 +199,12 @@ Tras el piloto P004, generalizar a P001–P043, lotes ordenados, integridad, tel
 - Gobernanza: DUG/IPZ, candidato, criterios de aceptación y coordinación central en GOV-TASK-015.
 
 La dependencia EP no detiene código remoto no sensible ni fixtures. Ningún frente declara PASS del otro. Este documento es runbook; no acredita build, instalación ni E2E.
+
+## Paquete piloto P004 · corte 2026-11-10
+
+- Entrega candidata en rama PR #27: frentes/mcp-metodologia/entregas/piloto-sink-p004/
+- ZIP: MCP-OCP-SINK-P004-b6ce37af-v3.zip; 137.474 bytes; SHA-256 DE556FD547ACF2AB3946DF5AC2395A3993CB459B5E48F8E745A661A113A90783.
+- Manifest SHA-256 85F70366144FD2109D9688F2DDB6E7819FF955B8F05697C2FC6966E04F0044B1; 9 archivos internos cotejados.
+- Runtime requerido: Microsoft.NETCore.App 10.0.x x64; no se verificó en Fila 4.
+- Framework-dependent net10.0, STDIO, solo SINK:P004, no listener, MCP-NORMATIVO DESACTIVADO.
+- Paquete smoke PASS. No instalar, importar fuentes privadas, crear DB/root ni provisionar operador hasta EP-TASK-003 PASS y EP-TASK-005 recepción autorizada. La aceptación IPZ corresponde a Gobernanza.
