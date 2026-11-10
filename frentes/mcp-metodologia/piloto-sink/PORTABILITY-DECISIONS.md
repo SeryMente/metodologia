@@ -37,12 +37,12 @@ La rama integration se inspeccionó en csproj, Program, McpServer, PrincipleCata
 - **REWRITE:** servidor STDIO, lector DUG, pins, herramienta SINK:P004 y suite del piloto.
 - **ADAPT:** ninguna pieza funcional se ha copiado literalmente; el contrato se reimplementa contra DUG v388.
 - **DROP:** DB, vault, credenciales, B2, backups, claves, importador persistente, operaciones de escritura, herramientas generales y paquete histórico.
-- **RID:** no aplica al piloto framework-dependent; win-x64 se difiere al paquete. **Pendiente:** ejecutar build/tests con SDK 10.0.403 en runner autorizado; después escribir el smoke del ejecutable compilado.
+- **RID:** no aplica al piloto framework-dependent; win-x64 se difiere al paquete. **Pendiente:** ejecutar build, 13 pruebas y smoke ya escritos con SDK 10.0.403 en runner autorizado; no hay PASS actual.
 
 La clasificación de seguridad/crypto/DB se basa en el inventario de rutas y la inspección de nombres/propósitos; no se afirma auditoría exhaustiva de cada implementación histórica. No se portó código de esas rutas.
 
 
-## Base actual cycle04
+## Base anterior cycle04 (referencia)
 
 La rama cycle04 se crea directamente desde main HEAD 0f933b9e3efae20131da37f99f50f4bc4a4eaf74, con 0 commits por detrás al crearla. Los ocho commits incorporados después del DUG v388 actualizan los objetos de coordinación de Gobernanza; el blob DUG continúa 4db0ebadfd1e48b2bdec9236ba7f344921e4a865. No se arrastran las dos escrituras parciales de cycle03 ni la divergencia de cycle02.
 
