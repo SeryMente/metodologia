@@ -481,3 +481,7 @@ Secuencia:
 `PREFLIGHT_FILA4=PARTIAL_FAIL` · `BITLOCKER_GATE=FAIL` · `CHECKOUT=PARTIAL_NO_GIT` · `DATA_ROOT=ABSENT` · `LOCATION=UNCLASSIFIED` · `COPY=NOT_DONE` · `MANIFEST=NOT_CREATED` · `MOUNTPOINT_SWITCH=NOT_DONE` · `DEAD_MAN=CONDITIONAL_PENDING_LOCATION`.
 
 Siguiente acción material: obtener aceptación expresa del diseño; en paralelo, completar P0-C de EP-TASK-002 cuando EP Vault GUI/CLI compartan sesión activa. Mantener EP-TASK-005 bloqueada hasta PASS completo de esta tarea y el paquete P004 de MCP-OCP.
+
+
+## Reporte individual obligatorio por tarea
+Al resolver esta tarea, el responsable debe agregar el informe individual en este mismo núcleo siguiendo [la plantilla común](../../../PLANTILLA-REPORTE-CIERRE-TAREA.md), completar todos sus campos y actualizar el índice padre solo después del read-back. No marcar como completada sin criterios PASS, evidencia ejecutada, integridad verificada y aceptación exigible. Si termina parcial/bloqueada, dejar igualmente el informe con bloqueantes, preocupaciones, riesgos y condición objetiva de desbloqueo. Informar al operador con enlace al informe. Esta instrucción no altera titularidad, generación, permisos ni controles.
