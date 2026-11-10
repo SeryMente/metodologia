@@ -432,7 +432,7 @@ Esta reconciliación es documental y de referencias. No modifica el repositorio 
 
 Entregar un entorno OCP MCP que permita consultar SINK desde IPZ por RDC → MCP STDIO; trabajar desde equipos temporales/no confiables con workspace cifrado de sesión y caducidad; persistir y restaurar la carpeta de trabajo, la bóveda de variables de entorno y los datos de usuario/OCP; y observar el estado operativo desde el panel WPF.
 
-### Hitos y secuencia
+### Hitos y secuencia · corte previo · SUPERSEDIDO POR REBASELINE APROBADO
 
 1. **H1 · SINK:P004 desde IPZ:** respuesta íntegra visible al modelo con ID/título, DUG, commit/blob y SHA-256.
 2. **H2 · Workspace cifrado verificado:** comprobar la protección que el operador reporta existente; apertura, bloqueo, cierre y desmontaje; no asumir que la existencia de un contenedor demuestra protección efectiva.
@@ -463,7 +463,7 @@ Entregar un entorno OCP MCP que permita consultar SINK desde IPZ por RDC → MCP
 
 El operador reporta persistencia Backblaze terminada; el último read-back EP-TASK-002 disponible en main registra sesión CLI inactiva (0/5 variables), ciphertext local presente, workers/wrapper sintácticamente válidos, pero sin recibo, autenticación, upload, descarga ni SHA remoto. Estado integrado: B2_REMOTE=NOT_VERIFIED_PENDING_EP_RECONCILIATION. Mantener discrepancia abierta hasta evidencia fresca de EP.
 
-### Decisiones pendientes
+### Decisiones pendientes · corte previo · SUPERSEDIDAS POR REBASELINE APROBADO
 
 Nivel final de seguridad; duración/renovación del lease; triggers y acciones exactas; workspace completo local o copia selectiva/remote-first; clasificación de rutas; retención/versionado B2. El ejemplo de 30 minutos no es parámetro aprobado.
 
