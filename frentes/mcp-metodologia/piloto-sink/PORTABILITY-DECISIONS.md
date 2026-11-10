@@ -78,3 +78,12 @@ Esta subsección no sustituye el registro original de la comparación inicial 0/
 - Se conserva el contenido de las 29 rutas propiedad del candidato, incluidas 5 del contrato MCP-OCP-14; el asiento GOV-TASK-015 permanece incorporado desde el árbol de main y no se modificó.
 - Compare posterior: 18 ahead / 0 behind; merge-base igual a main. La actualización documental posterior incrementará el conteo ahead, no las rutas funcionales.
 - PR #27 OPEN / DRAFT / NOT MERGED. CI sigue sin runner observable (jobs recientes `runner_id=0`, pasos vacíos, logs `BlobNotFound`, cero artifacts).
+
+
+## Estado actualizado de la candidata · H1/H2 · 2026-11-10
+
+- Main sincronizado: `8f999198f1d8cde71361c884c9a13b745f442b49`; merge de sincronización `ea32a78e87bd659307fc81ff3f80b3743bae9d0a` conserva ese main como segundo padre y mantiene 29 rutas del candidato.
+- HEAD después de reconciliación y artefactos H2: `4c3d63a5a20d770c1da31366ec3563320ee1c2f6`; compare actual 19 ahead / 0 behind, 29 rutas. PR #27 OPEN / DRAFT / NOT MERGED.
+- Core candidato v0.1.36; backlog provisional LIST_VERSION 0.17.
+- MCP-OCP-14: contrato propuesto v0.1 y cuatro JSON Schemas parseables. Son documentación/esquemas, no motor ni escritura; perfil criptográfico, root, keys, B2 y restore siguen bajo EP. No hubo validación formal con suite ni aceptación GOV-TASK-014.
+- H1: 41 pruebas escritas / 0 ejecutadas con evidencia; build/smoke sin verificar. CI jobs recientes no asignan runner (`runner_id=0`), no tienen pasos, logs `BlobNotFound` ni artefactos; causa raíz no verificada.
