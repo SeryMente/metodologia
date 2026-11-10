@@ -101,3 +101,14 @@ El ciclo de configuración actual no se usa como línea base. La primera muestra
 - **Producto final:** panel WPF obligatorio para MCP-OCP 1.0.0, pero no bloquea P004.
 
 Estado: `SINK_P004=NOT_IMPLEMENTED_NOT_ACCEPTED` · `MCP_NORMATIVO=DESACTIVADO`.
+
+
+---
+
+## Programa vigente · OCP MCP 1.0 · 2026-11-10
+
+OCP MCP 1.0 es el programa completo; MCP-OCP 1.0.0 es el release de software y SINK:P004 es el primer hito operativo. Coordinación en GOV-TASK-015; persistencia en GOV-TASK-014; aceptación en GOV-TASK-003; fast path IPZ en GOV-TASK-007.
+
+El diseño incorpora workspace cifrado de sesión, persistencia B2 del workspace/bóveda/datos de usuario, claves efímeras separadas de las claves de recuperación, expiración automática, inspección HDD/SSD/UNKNOWN y observabilidad WPF. El nivel de seguridad y parámetros dead-man siguen pendientes de aprobación. El último read-back EP no acredita B2 remoto; requiere reconciliación.
+
+Anexo literal: entregas/ChatGPT-GOBERNANZA-20261110-OCP-MCP-1.0-ULTIMO-TRAMO.md.
