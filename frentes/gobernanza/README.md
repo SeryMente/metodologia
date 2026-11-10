@@ -131,3 +131,11 @@ Anexo literal: entregas/ChatGPT-GOBERNANZA-20261110-OCP-MCP-1.0-ULTIMO-TRAMO.md.
 ### Convención de nombres de persistencia
 
 Todo nuevo snapshot provisional debe incorporar fecha, día de semana, hora local de 24 horas y zona `America/Mexico_City`: `EP-Workspace-Recovery_YYYY-MM-DD_DIA_HH-mm_America-Mexico_City_RN.zip`. El nombre debe usar el instante de creación real. Los nombres históricos R2/R3 no se falsean ni se renombra el objeto remoto ya confirmado.
+
+
+### Corte final EP R4 · 2026-11-10
+
+- **Backup R4 remoto PASS:** `EP-Workspace-Recovery_2026-11-10_Martes_17-35_America-Mexico_City_R4.zip`, bucket `OCP-MCP`, prefijo `ep-ocp/workspace/`, 107.081.813 bytes. SHA local/read-back coincide; SSE-B2/AES256. Restorable acreditado por read-back el martes 10-11-2026 a las 17:46:17.620 (-06:00).
+- **Restore aislado R4 PASS:** 3.345 archivos / 145.501.528 bytes; Vault ciphertext incluido; original intacto. Descifrado de Vault y cross-host siguen pendientes.
+- Procedimiento provisional de una sola descarga: descargar R4 y usar **Extraer todo** en destino vacío para recrear `SeryMente`. No ejecutar el script auxiliar incluido por defecto de comodines en rutas `[id]`.
+- R2 anterior sigue preservado. Siguiente hito de producto: H1 SINK:P004; H2 backup y restore aislado acreditados, con descifrado/cross-host abiertos.
