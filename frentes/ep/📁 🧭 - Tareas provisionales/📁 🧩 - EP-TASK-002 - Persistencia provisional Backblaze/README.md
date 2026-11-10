@@ -2161,3 +2161,33 @@ No se ejecutó una autenticación B2 posterior a la migración, consulta del buc
 **Siguiente secuencia:** autenticación B2 de solo lectura con el par Master de EP; verificar cuenta dedicada, bucket OCP-MCP y prefijo `ep-ocp/`; después subir el ciphertext de bóveda y los snapshots de workspace expresamente clasificados, descargarlos y cotejar SHA-256. No subir valores en claro, notas efímeras, perfiles/cookies, `.git` ni conjuntos no clasificados.
 
 **Estado:** `en_curso`. La decisión de usar Master Application Key de la cuenta dedicada EP se mantiene; no crear ni regenerar una Master Key como prueba. La carga y recuperación extremo a extremo siguen abiertas.
+
+
+---
+
+## EP · persistencia del último tramo conversacional y repetición de preflight B2 · 2026-11-10 · 14:20 America/Mexico_City
+
+### Fuente y preservación literal
+
+Se incorpora el último tramo de conversación suministrado por el operador, sin corregir sus errores de dictado, junto con la última salida del modelo reproducida literalmente y la repetición instrumentada del ciclo de preflight. Anexo: [ChatGPT-EP-20261110-1417-B2-ULTIMO-TRAMO.md](https://github.com/SeryMente/metodologia/blob/main/frentes/ep/entregas/ChatGPT-EP-20261110-1417-B2-ULTIMO-TRAMO.md).
+
+- Commit del anexo: 813b53d6d25a989aaec3ba328fb767578488c9e9.
+- Blob SHA del anexo (read-back): 118f8114fffd6390f92aedd673f17eeecb7f31b0.
+- DUG leído en main: Samantha v388 · NX-388m; blob 4db0ebadfd1e48b2bdec9236ba7f344921e4a865.
+
+### Repetición del ciclo y corrección de estado
+
+Dos comprobaciones frescas bajo CENTRAL\\fila4 (20:19:46Z y 20:20:16Z) reportaron ENCRYPTED_FILE_PRESENT, ciphertext de 2.200 bytes, vaultSessionActive=false, variableCount=0 y las cinco variables EP B2 ausentes de la sesión CLI. No hay expiresAtUtc ni tiempo restante. El dato conversacional previo de 775 segundos se conserva como salida literal histórica, pero queda contradicho por estas dos observaciones posteriores y no se usa como estado vigente.
+
+Los scripts Upload-EP-Raw-To-Backblaze-Fila4.ps1 y Run-EP-Backblaze-Persistence-Fila4.ps1 existen y pasaron Parser.ParseFile sin errores (7.013 y 1.205 bytes). El recibo ep-backblaze-persistence-result.json no existe. Para evitar que EP Vault CLI caiga en Read-Host, no se lanzó la operación Run mientras la sesión figura cerrada.
+
+### Estado al cierre de este ciclo
+
+- Worker/wrapper: sintaxis PASS.
+- B2 CLI: presente; su versión no se revalidó en este ciclo.
+- Sesión CLI compartida: NO ACTIVA (dos lecturas).
+- Autenticación B2, validación de OCP-MCP, upload, descarga y SHA-256 remoto: NO EJECUTADOS.
+- Persistencia remota EP: PENDIENTE; no existe recibo remoto.
+- Cora y KHORA: sus cuentas/credenciales permanecen separadas; no se utilizaron.
+
+**Siguiente acción:** diagnosticar la discrepancia entre el estado que muestra la GUI y el estado compartido que consume la CLI, sin cambiar ACL ni rutas de la bóveda y sin pedir la contraseña al chat. Reanudar autenticación y transferencia solo cuando la CLI vea la sesión y las cinco variables.
