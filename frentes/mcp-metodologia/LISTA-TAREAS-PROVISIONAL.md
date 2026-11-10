@@ -302,4 +302,15 @@ El panel MCP-OCP-13 baja a P1 de secuencia, pero permanece como entregable oblig
 - **CI:** workflow Ubuntu + SDK 10.0.403 + script PowerShell de build/tests/smoke y carga de artifact diagnóstico. PR #23/cycle04 run 23 FAILURE; job steps=null, logs no disponibles y artifacts=[]; no se identifica si se lanzó runner, setup, script o test. No adjudicar causa raíz.
 - **Contenedor local:** no dispone de dotnet y no resuelve DNS para descargar el SDK. RDC conectado usa MantenimientoRCI y no tiene dotnet; no se escribieron archivos ni instalaron herramientas en ese perfil. Fila 4 no está disponible en esta sesión.
 - **Gates pendientes:** build Release, 13 pruebas, smoke real del ejecutable, manifest/paquete piloto y aceptación E2E IPZ → RDC → STDIO. No importar fuentes privadas ni instalar en Fila 4 hasta EP PASS; no escribir IPZ nativa; FOL1 y MCP-NORMATIVO siguen fuera.
-- **PR cycle05:** todavía no abierto en este corte; no merge a main.
+- **PR cycle05:** #24 abierto draft, mergeable=true, no fusionado; PR #23/cycle04 cerrado supersedido. Runs MCP-OCP 24 y 25 FAILURE con steps/logs/artifacts ausentes; los dos workflows existentes también fallaron con steps/logs ausentes en run25. Causa raíz del runner/Actions NO VERIFICADA; build, 13 tests y smoke no PASS.
+
+
+## Estado CI / PR cycle05 · 2026-11-10
+
+- PR #24: https://github.com/SeryMente/metodologia/pull/24 · abierto en borrador, no fusionado; GitHub lo marca mergeable=true. Rama cycle05 base 0f933b9e3efae20131da37f99f50f4bc4a4eaf74; HEAD base observado 06467fb32f344e5ff7e4006479a4f614ecd21164; comparación 21 ahead / 11 behind, merge-base 0f933b9e3efae20131da37f99f50f4bc4a4eaf74. Los 11 commits posteriores en main afectan exclusivamente nueve rutas EP/Gobernanza; no hay solapamiento con los 16 paths del candidato.
+- PR #23/cycle04 fue cerrado como supersedido, sin merge.
+- Workflow MCP-OCP P004 run 24 (42863359295) terminó FAILURE; job steps=null, logs_url=null, artifacts=[]. Reintento autorizado del run también terminó FAILURE.
+- Workflow MCP-OCP P004 run 25 (42863666205) terminó FAILURE; job steps=null, logs_url=null, artifacts=[]. En el mismo commit, Validate RDC Governance run 2326 y validate-canonical-bootstrap run 2695 fallaron con idéntico patrón (steps=null, logs_url=null), lo que apunta a una falla común de ejecución/runner de Actions; causa raíz exacta NO VERIFICADA.
+- No se ha demostrado que setup-dotnet, build, pruebas ni smoke llegaran a iniciar. No declarar PASS ni atribuir un fallo a compilación. Build, 13 tests y STDIO smoke siguen NO VERIFICADOS.
+- Entorno local: no hay dotnet en el contenedor y DNS impide descargar SDK; RDC conectado está bajo MantenimientoRCI, por lo que no se instala ni escribe allí. Fila 4 sigue bajo EP-TASK-003/005.
+- Pin DUG sin cambio: Samantha v388/NX-388m; commit 3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c; blob 4db0ebadfd1e48b2bdec9236ba7f344921e4a865. MCP-NORMATIVO DESACTIVADO. Sin instalación, paquete, IPZ nativa, E2E, FOL1 ni merge a main.
