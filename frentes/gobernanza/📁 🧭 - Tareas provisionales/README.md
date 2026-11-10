@@ -33,7 +33,7 @@ El núcleo de cada objeto conserva identificador local, enunciado, referencia re
 | GOV-TASK-012 | en_curso | Revisión integral de fluidez y desempeño del marco de Gobernanza | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-012%20-%20Fluidez%20y%20desempe%C3%B1o%20del%20marco/README.md) |
 | GOV-TASK-013 | en_curso | Medición objetiva y optimización del tiempo de procesamiento de ciclos | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-013%20-%20Medici%C3%B3n%20y%20optimizaci%C3%B3n%20de%20ciclos/README.md) |
 | GOV-TASK-014 | en_curso | Integración y aceptación de persistencia Backblaze para Metodología y OCP | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-014%20-%20Persistencia%20Backblaze%20de%20Metodolog%C3%ADa%20y%20OCP/README.md) |
-| GOV-TASK-015 | en_curso | Plan integrado y aceptación del sprint Sink local vía RDC | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-015%20-%20Sprint%20Sink%20local%20v%C3%ADa%20RDC/README.md) |
+| GOV-TASK-015 | en_curso · P0 SINK:P004 · DEPENDENCIAS_RECONCILIADAS | Coordinar MCP-OCP-02/05/03/04 y EP-TASK-003/005; rama MCP candidata antigua no satisface rebaseline, EP-TASK-003 sigue PARTIAL_FAIL | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-015%20-%20Sprint%20Sink%20local%20v%C3%ADa%20RDC/README.md) |
 
 
 ## Snapshot histórico supersedido · checklist ejecutivo del sprint · 2026-11-01, 20:32:23 America/Mexico_City
@@ -366,3 +366,12 @@ El ejecutable final debe quedar dentro del checkout local en `SeryMente/Reposito
 DUG v388/NX-388m sustituye el antiguo diseño de Worker/Cloudflare, D1/KV, Analytics Engine y aliases HTTP por el contrato local `SINK:Pxxx` mediante MCP-OCP STDIO/RDC. La arquitectura de dos capas y los 43 MDP se conservan; la segunda capa devuelve un único principio, con ID, título, texto íntegro, pin DUG y SHA-256. La frecuencia cuenta solo recuperaciones satisfactorias. `MOD-SYNC` de EP es distinto y no participa. Fuente: ART-027; commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`; blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`.
 
 El control MCP-OCP generación 5 autoriza directamente la implementación local Sink. Su titular ya actualizó el núcleo a v0.1.28 y el backlog a v0.9, ambos contra DUG v388; la rama limpia MCP-OCP-02 y el código P004 siguen pendientes. EP actualizó OEP v0.3.56 y EP-TASK-003/005 para marcar el preflight Fila 4 y el piloto P004 como dependencias P0. No se afirma resolver implementado, importación privada, instalación ni E2E.
+
+
+## Estado vigente del sprint SINK:P004 · reconciliación del 2026-11-10
+
+El objetivo inmediato continúa siendo probar SINK:P004 desde el contexto IPZ por RDC/STDIO. El contrato canónico es DUG Samantha v388/NX-388m, commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`, blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`. La rama candidata `feat/mcp-ocp-sink-p004-pilot-20261110` existe, pero apunta al commit antiguo `1676901cc09af6fcec4d052800b031e4c2f1ab40`; no parte del `main` vigente y no satisface MCP-OCP-02. MCP-OCP-02 sigue P0 abierto hasta crear/reconciliar la rama desde el main actual.
+
+EP-TASK-003 permanece `en_curso / PARTIAL_FAIL`: el VHDX se preparó vacío y sin BitLocker; la solución para conservar `Desktop/SeryMente` no está aceptada y las operaciones locales de almacenamiento están pausadas. La ubicación física de Fila 4 sigue sin clasificar. EP-TASK-005 permanece `pendiente` y bloqueada por EP-TASK-003 PASS más paquete P004 y pruebas mínimas.
+
+La pausa EP bloquea exclusivamente checkout protegido, fuentes privadas, DB, runtime e instalación local. No bloquea MCP-OCP-02, código no sensible, MCP-OCP-03 con fixtures ni preparación de MCP-OCP-04. GOV-TASK-007 puede preparar el candidato IPZ sin modificar el campo nativo; GOV-TASK-003 no acepta E2E hasta que la respuesta P004 llegue visible al modelo desde el contexto IPZ. Panel MCP-OCP-13 y generalización P001–P043 siguen fuera del camino crítico P004, pero el panel es obligatorio para 1.0.0.
