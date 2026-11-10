@@ -31,9 +31,14 @@
     "pilot_runtime_identifier": null,
     "pilot_mode": "framework-dependent",
     "release_runtime_identifier": "win-x64",
-    "release_self_contained": true
+    "release_self_contained": true,
+    "monitoring_library": "net10.0",
+    "panel_target_framework": "net10.0-windows",
+    "panel_runtime_identifier": "win-x64",
+    "panel_publish_profile": "src/OcpMcp.Panel/Properties/PublishProfiles/win-x64.pubxml",
+    "monitor_schema_version": 1
   },
-  "verification": "DUG v388 was read at its pinned commit and at current main; both resolve to the same Git blob; runtime build/tests remain pending",
+  "verification": "DUG v388 pin remains verified; P004 candidate, WPF panel and monitor projection code are written; 15 P004 tests and 11 monitor tests are unexecuted; no build/package/host integration is verified",
   "branch_base_sha": "84cc9ffc1a2aa27c622c7e5de147d7460f3b5ecd",
   "branch": "feat/mcp-ocp-p004-rebaseline-20261110-cycle02"
 }
