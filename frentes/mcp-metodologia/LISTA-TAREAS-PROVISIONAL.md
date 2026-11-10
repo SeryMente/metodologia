@@ -35,8 +35,8 @@ La tabla sustituye los PASS/estados de recibos históricos para la implementaci�
 | 1 | MCP-OCP-01 | P0 | Contrato de producto y frontera OCP/Khora/Jules | VERIFICADO_EN_NUCLEO_V0.1.27 | Un servidor local STDIO; panel acompañante read-only en el producto final; dominios separados. |
 | 2 | MCP-OCP-02 | P0 · CRÍTICO | Rama limpia y reconciliación selectiva desde main | EJECUTADO · VERIFICADO POR READ-BACK | `feat/mcp-ocp-p004-rebaseline-20261110-cycle02`, base `84cc9ffc1a2aa27c622c7e5de147d7460f3b5ecd`; pin v388, inventario REUSE/ADAPT/REWRITE/DROP, SDK 10.0.403 y RID final win-x64 registrados. Build/pruebas aún pendientes. |
 | 3 | MCP-OCP-05 | P0 · SIGUIENTE | Corte vertical GOW:ARR → DUG → SINK:P004 | IMPLEMENTACIÓN CANDIDATA · NO COMPILADA | Servidor/lector/pin P004 escritos; respuesta, blob y SHA-256 implementados en código; requiere build, pruebas y smoke con evidencia CI. |
-| 4 | MCP-OCP-03 | P0 | Suite mínima de contrato del piloto P004 | ESCRITAS · 15 ESCENARIOS / 0 EJECUTADOS | Fixtures sintéticos positivos/negativos, negociación, P004, pins, hashes, errores, telemetría y EOF; ejecución pendiente de runner .NET con logs. |
-| 5 | MCP-OCP-04 | P0 | Transporte y E2E IPZ → RDC → STDIO para P004 | HARNESS/CI ACTUALIZADOS · SIN SMOKE VERIFICADO | CI incluye build servidor, 15 tests P004, 11 tests de monitor, build WPF y smoke STDIO; run CI falla sin steps/logs/artifacts, por lo que ninguna etapa está acreditada. E2E IPZ espera gates EP. |
+| 4 | MCP-OCP-03 | P0 | Suite mínima de contrato del piloto P004 | ESCRITAS · 16 ESCENARIOS / 0 EJECUTADOS | Fixtures sintéticos positivos/negativos, negociación, P004, pins, hashes, errores, telemetría y EOF; ejecución pendiente de runner .NET con logs. |
+| 5 | MCP-OCP-04 | P0 | Transporte y E2E IPZ → RDC → STDIO para P004 | HARNESS/CI ACTUALIZADOS · SIN SMOKE VERIFICADO | CI incluye build servidor, 16 tests P004, 11 tests de monitor, build WPF y smoke STDIO; run CI falla sin steps/logs/artifacts, por lo que ninguna etapa está acreditada. E2E IPZ espera gates EP. |
 | 6 | MCP-OCP-05 (fase posterior) / 03 | P0 | Generalización Sink P001–P043 y lotes | PENDIENTE_POST_PILOTO | 43 respuestas, orden, hashes/eventos y controles negativos PASS. |
 | 7 | MCP-OCP-13 | P1 | Panel local de observabilidad visual | IMPLEMENTACIÓN CANDIDATA · 11 TESTS ESCRITOS / 0 EJECUTADOS | WPF + reader/writer de monitorización y 11 pruebas sintéticas publicados; build, pruebas, revisión visual Windows e integración de ciclo EP pendientes. Obligatorio para 1.0.0; no bloquea P004. |
 | 8 | MCP-OCP-10 | P1 | Pins, manifiesto y evidencia final | PIN/METADATOS DE BUILD FIJADOS · RECIBO PENDIENTE | DUG v388/NX-388m, commit/blob, SDK 10.0.403, dependencias externas 0, piloto sin RID y release win-x64 self-contained; faltan hashes finales y recibo. |
@@ -302,8 +302,13 @@ Main avanzó desde `84cc9ffc1a2aa27c622c7e5de147d7460f3b5ecd` hasta `67b48bc041b
 
 **Contrato de datos:** EP escribe `monitor/session.json`; MCP-OCP solo lo lee. El servidor escribe `monitor/state.json` y `monitor/events.jsonl` exclusivamente cuando recibe `--monitor-root <ruta-EP>`; no existe default, no elige/crea el root y no modifica ACL, BitLocker, Registro ni servicios. Los eventos no incluyen argumentos, contenido, texto de principios, hashes de payload, secretos, tokens ni SID. El primer estado es no listo: fuentes no importadas, integridad UNKNOWN, operador UNKNOWN y readiness `SOURCES_NOT_IMPORTED`.
 
-**MCP-OCP-03:** 15 casos P004 escritos; 0 ejecutados. **MCP-OCP-13:** 11 casos de monitor escritos; 0 ejecutados. El script CI se amplió para restore/build/run de ambas suites y build WPF Windows x64 con cross-targeting; conserva smoke real del ejecutable STDIO.
+**MCP-OCP-03:** 16 casos P004 escritos; 0 ejecutados. **MCP-OCP-13:** 11 casos de monitor escritos; 0 ejecutados. El script CI se amplió para restore/build/run de ambas suites y build WPF Windows x64 con cross-targeting; conserva smoke real del ejecutable STDIO.
 
 **Validación:** no compilado ni probado. El último run CI conocido de la revisión anterior terminó FAILURE sin job steps/logs/artifacts; no prueba fallo del código. El runner de contenedor disponible carece de `dotnet`. El PR ciclo02 sigue draft; los commits recientes requieren una nueva lectura de checks asociada a su HEAD.
 
 **Límites:** no se ha empaquetado el panel, hecho smoke visual Windows, integrado apertura/cierre con EP-TASK-005, instalado ni materializado en Fila 4. El gate EP sigue `PREFLIGHT_PARTIAL_FAIL`; no se suministra monitor-root, fuente privada ni runtime persistente en el host.
+
+
+### Corrección de inventario DUG · 2026-11-10
+
+El lector ahora exige que el inventario sea exactamente `P001…P043` (43 IDs únicos), no solo 43 IDs únicos que incluyan P004. Se añadió un negativo con `P044` sustituyendo `P043`, blob repinneado y rechazo esperado. MCP-OCP-03 queda en 16 escenarios escritos / 0 ejecutados; build y CI siguen sin PASS.
