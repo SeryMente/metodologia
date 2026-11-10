@@ -655,3 +655,52 @@ Esto completa únicamente las pruebas sintéticas indicadas, no H7/H8 integrales
 
 ## Reporte individual obligatorio por tarea
 Al resolver esta tarea, el responsable debe agregar el informe individual en este mismo núcleo siguiendo [la plantilla común](../../../PLANTILLA-REPORTE-CIERRE-TAREA.md), completar todos sus campos y actualizar el índice padre solo después del read-back. No marcar como completada sin criterios PASS, evidencia ejecutada, integridad verificada y aceptación exigible. Si termina parcial/bloqueada, dejar igualmente el informe con bloqueantes, preocupaciones, riesgos y condición objetiva de desbloqueo. Informar al operador con enlace al informe. Esta instrucción no altera titularidad, generación, permisos ni controles.
+
+
+---
+
+## Informe de validación sintética E2E exacta · EP-TASK-004 · 2026-11-10 · 15:59 America/Mexico_City
+
+- **Frente / responsable:** Entorno Persistente (EP).
+- **Estado anterior → resultante:** H7/H8 sintéticos parciales → `H7_H8_SYNTHETIC_E2E_V1_0_0_PASS`; `H10=HUMAN_ACCEPTANCE_PENDING` permanece. No se declara aceptación integral de producto.
+- **Corte de fuentes:** producto `MOD-EPVAULT/v1.0.0` en rama `feat/ep-vault-pc7-hardened-20261109`; manifiesto blob `5659d0e59c336baafc6e5bc2f13c988439758151`; test blob `e324872966131ad0ba0a65b0fe666785dcd6ef1d`. Compare de la rama contra `main`: 10 commits ahead, 272 behind, estado DIVERGED; el módulo sigue siendo candidato separado y no se afirma integrado en `main`.
+- **Objetivo y resultado:** repetir la suite sintética E2E sobre los artefactos exactos v1.0.0, requisito escrito en el README del producto. Resultado PASS con exit code 0, `EP_VAULT_VALIDATION_PASS` y duración de 165,41 s.
+- **Cómo se ejecutó:** comprobación previa de cinco archivos locales mediante `git hash-object --no-filters`; todos los Git blob IDs coincidieron con los declarados por MANIFEST.json de la rama de producto. La suite `tests/Test-EPVault.ps1` se ejecutó bajo `CENTRAL\fila4` mediante Windows PowerShell, con `RUNNER_TEMP=C:\Users\fila4\EP-Test-Temp-20261110-1556`, una carpeta que no existía, fuera de AppData y fuera de `Desktop\SeryMente`. La suite aisló `LOCALAPPDATA` al sandbox sintético. El wrapper eliminó el directorio temporal y verificó su ausencia.
+- **Cambios realizados:** ninguno en el código, manifiesto, rama, GUI, Vault formal ni workspace. Únicamente se creó y eliminó la carpeta temporal de la prueba. Este informe es documentación del resultado.
+- **Validación y evidencia:**
+  | Criterio/marker emitido | Estado | Resultado |
+  |---|---|---|
+  | Parser PowerShell | PASS | `PASS_POWERSHELL_PARSER` |
+  | Contrato geométrico/mecánico GUI | PASS | `PASS_UI_HYPERREALISTIC_3D_STEEL_VAULT_MECHANICAL_CONTRACT` |
+  | XAML WPF y nombres requeridos | PASS | `PASS_WPF_XAML_PARSE_AND_NAME_CONTRACT` |
+  | Referencias de interfaz heredada | PASS | `PASS_CLEAN_ROOM_REFERENCE_SCAN` |
+  | Identidad/vídeo de producto v1.0.0 | PASS | `PASS_EP_VAULT_VERSION_1_0_0` |
+  | Crypto PBKDF2/AES/HMAC, round-trip, contraseña incorrecta y tamper | PASS | `SELFTEST_PASS` |
+  | Job Object / proceso acotado | PASS | `JOB_RUNNER_SELFTEST_PASS` |
+  | Timeout y terminación del árbol | PASS | `JOB_RUNNER_TIMEOUT_PASS` |
+  | Ocho opciones TTL | PASS | `PASS_ALL_EIGHT_SESSION_DURATION_OPTIONS` |
+  | KDF legacy 200.000→600.000 y preservación/read-back | PASS | `PASS_LEGACY_KDF_MIGRATION_200K_TO_600K_WITH_READBACK` |
+  | Allowlist y no herencia de variable sintética del padre | PASS | `PASS_ALLOWLIST_WITHOUT_PARENT_SECRET_INHERITANCE_AND_JOB_OBJECT_PROCESS_SCOPE` |
+  | Notas DPAPI: metadata/reveal/delete | PASS | `PASS_DPAPI_NOTE_METADATA_REVEAL_DELETE` |
+  | Operaciones de notas bloqueadas sin sesión | PASS | `PASS_LOCKED_NOTE_OPERATIONS_FAIL_CLOSED` |
+  | CRUD, rechazo tamper, backup atómico y TTL absoluto | PASS | `PASS_VAULT_CRUD_TAMPER_BACKUP_AND_ABSOLUTE_TTL` |
+  | Redacción de event log | PASS | `PASS_EVENT_LOG_REDACTION` |
+  | CLI/GUI sesión compartida y revocación cruzada | PASS | `PASS_CLI_GUI_SHARED_SESSION_REUSE_AND_REVOCATION` |
+  | Terminación de la suite | PASS | `EP_VAULT_VALIDATION_PASS`, exit code 0 |
+  | Limpieza de sandbox temporal | PASS | `EPVAULT_TEMP_CLEAN=True`; ruta ausente en read-back |
+- **Integridad de fuentes:** los cinco artefactos locales coinciden con el manifiesto de la rama de producto:
+  | Archivo | Bytes | Git blob esperado y observado | SHA-256 local |
+  |---|---:|---|---|
+  | `src/EP.Vault.Core.psm1` | 64.841 | `c7dc353c4aba5b6b7759b359698c4b94446b31b2` | `E219285AC286F1EE9D6FC43C3BEA79B1BC3FD1D6914102858A1C87A7666FF940` |
+  | `src/EP.Vault.CLI.ps1` | 7.606 | `f485bc116df503aaab5d6f96d885d36197439496` | `A61AA573294E6C854CC22F8DFE0222040526D724203A9C20281FCAFF586AA2DD` |
+  | `src/EP-Vault.GUI.ps1` | 47.444 | `a065f1086e01ddc2142f7341ccf28cbea65e7ddf` | `5C36DC7221FD1CC3B7F9F5EF4E2E907915A949C73127CDB5B585B92B5F018683` |
+  | `src/EP-Vault.Window.xaml` | 29.869 | `0d692a2b1cb9b0ee53ce6b480a35ff3a9a9799d3` | `B190E8A945BDCDBF2149B5D563F12BDF02049430703BD0595CDD03F2F090AC1A` |
+  | `tests/Test-EPVault.ps1` | 19.152 | `e324872966131ad0ba0a65b0fe666785dcd6ef1d` | `3AA50615305B41BCDC11EB1F4FD3A6AB42A0B5E45FF643441CB66E4116D9FEC1` |
+- **Read-back del Vault formal posterior:** acción CLI `Status` a las 15:58:57.2440999-06:00: `ENCRYPTED_FILE_PRESENT`, `sessionActive=false`, 2.200 bytes, `updatedAtUtc=2026-11-10T17:54:56.5248087Z`. SHA-256 posterior del ciphertext formal: `4CC2EE09974C9FBF3CF22C28A5A46C8286EB501F59268DBBB2B7BD6D61E8C590`. El valor de fecha/tamaño coincide con la lectura pre-suite; la suite no consumió ni desbloqueó el Vault formal.
+- **Bloqueantes/dependencias:** H10 aún requiere revisión visual/auditiva humana presencial. La suite no satisface aceptación de DPI, teclado, accesibilidad, movimiento reducido ni reproducción de audio; solo comprueba XAML, wiring/contrato estructural y cabeceras RIFF/WAVE. La restauración B2 del Vault formal sigue bloqueada por sesión sellada y es EP-TASK-002, no por esta prueba sintética.
+- **Preocupaciones y riesgos:** rama de producto divergida y aún no integrada en main; la prueba demuestra comportamiento de esta candidata exacta, no de un build/release de main. No prueba ACL/DPAPI del almacén formal, GUI interactiva en el host real, expiración temporal real de la GUI ni B2 backup/restore. Mantener H10 y gates separados.
+- **Pendientes/diferidos:** inspección H10 presencial; revisar y resolver cualquier hallazgo de interfaz en una versión nueva separada; integrar el candidato solo después de los gates DUG P012/P013 y aceptación; persistencia B2 y restore del Vault formal permanecen en EP-TASK-002.
+- **Rollback/recuperación:** no hubo cambio de producto ni de datos reales; el único sandbox se eliminó y su ausencia se verificó. No requiere rollback adicional.
+- **Aceptación:** aceptación sintética H7/H8 para la candidata v1.0.0: PASS. Aceptación humana H10 e integración a main: PENDIENTES.
+- **Siguiente acción:** volver a EP-TASK-002 P0. Esperar desbloqueo local de EP Vault, verificar los cinco nombres y ejecutar P0-C únicamente dentro del TTL; hasta entonces no iniciar migración física.
+- **Conclusión:** PARCIAL. La suite sintética exacta v1.0.0 queda verificada en este host y bajo contexto propietario; H10, aceptación global y persistencia remota no se consideran cubiertas.
