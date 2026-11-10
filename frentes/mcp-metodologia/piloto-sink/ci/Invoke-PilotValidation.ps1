@@ -25,10 +25,15 @@ function Invoke-DotnetCaptured {
 
 try {
     Invoke-DotnetCaptured -Name 'dotnet-info' -Arguments @('--info')
-    Invoke-DotnetCaptured -Name 'restore' -Arguments @('restore', 'tests/OcpMcp.Pilot.Tests/OcpMcp.Pilot.Tests.csproj')
+    Invoke-DotnetCaptured -Name 'restore-pilot-tests' -Arguments @('restore', 'tests/OcpMcp.Pilot.Tests/OcpMcp.Pilot.Tests.csproj')
+    Invoke-DotnetCaptured -Name 'restore-monitor-tests' -Arguments @('restore', 'tests/OcpMcp.Monitoring.Tests/OcpMcp.Monitoring.Tests.csproj')
+    Invoke-DotnetCaptured -Name 'restore-wpf-panel' -Arguments @('restore', 'src/OcpMcp.Panel/OcpMcp.Panel.csproj', '-p:EnableWindowsTargeting=true')
     Invoke-DotnetCaptured -Name 'build-server' -Arguments @('build', 'src/OcpMcp/OcpMcp.csproj', '--configuration', 'Release', '--no-restore')
-    Invoke-DotnetCaptured -Name 'build-tests' -Arguments @('build', 'tests/OcpMcp.Pilot.Tests/OcpMcp.Pilot.Tests.csproj', '--configuration', 'Release', '--no-restore')
-    Invoke-DotnetCaptured -Name 'unit-contract-tests' -Arguments @('run', '--project', 'tests/OcpMcp.Pilot.Tests/OcpMcp.Pilot.Tests.csproj', '--configuration', 'Release', '--no-build')
+    Invoke-DotnetCaptured -Name 'build-pilot-tests' -Arguments @('build', 'tests/OcpMcp.Pilot.Tests/OcpMcp.Pilot.Tests.csproj', '--configuration', 'Release', '--no-restore')
+    Invoke-DotnetCaptured -Name 'pilot-contract-tests' -Arguments @('run', '--project', 'tests/OcpMcp.Pilot.Tests/OcpMcp.Pilot.Tests.csproj', '--configuration', 'Release', '--no-build')
+    Invoke-DotnetCaptured -Name 'build-monitor-tests' -Arguments @('build', 'tests/OcpMcp.Monitoring.Tests/OcpMcp.Monitoring.Tests.csproj', '--configuration', 'Release', '--no-restore')
+    Invoke-DotnetCaptured -Name 'monitor-contract-tests' -Arguments @('run', '--project', 'tests/OcpMcp.Monitoring.Tests/OcpMcp.Monitoring.Tests.csproj', '--configuration', 'Release', '--no-build')
+    Invoke-DotnetCaptured -Name 'build-wpf-panel' -Arguments @('build', 'src/OcpMcp.Panel/OcpMcp.Panel.csproj', '--configuration', 'Release', '--no-restore', '-p:EnableWindowsTargeting=true')
 
     $assemblyPath = Join-Path (Get-Location).Path 'src/OcpMcp/bin/Release/net10.0/OcpMcp.dll'
     if (-not (Test-Path -LiteralPath $assemblyPath -PathType Leaf)) {
@@ -100,7 +105,7 @@ try {
     if ($sinkResult.sourceSha256.Length -ne 64 -or $sinkResult.principleTextSha256.Length -ne 64) { throw 'PILOT_STDIO_SHA256_MISSING' }
     if (-not $stderr.Contains('"eventType":"SINK_READ_SUCCESS"')) { throw 'PILOT_STDIO_SUCCESS_EVENT_MISSING' }
 
-    'PASS: real executable STDIO initialize/list/call/P004/EOF smoke' | Tee-Object -FilePath (Join-Path $diagnosticDir 'smoke-summary.log')
+    'PASS: server build, P004 contract suite, monitor suite, WPF build and real STDIO P004/EOF smoke' | Tee-Object -FilePath (Join-Path $diagnosticDir 'smoke-summary.log')
     'PILOT_CI_RESULT=PASS' | Tee-Object -FilePath (Join-Path $diagnosticDir 'result.txt')
 }
 catch {
