@@ -1,0 +1,134 @@
+<Window x:Class="OcpMcp.Panel.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MCP-OCP · Observabilidad" Height="840" Width="1320"
+        MinHeight="720" MinWidth="1080"
+        Background="{StaticResource PageBrush}"
+        Foreground="{StaticResource TextBrush}"
+        FontFamily="Segoe UI"
+        WindowStartupLocation="CenterScreen">
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+        <Grid Margin="24">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" Margin="0,0,0,18">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel>
+                    <TextBlock Text="MCP-OCP" FontSize="24" FontWeight="Bold"/>
+                    <TextBlock Text="OBSERVABILIDAD LOCAL · STDIO" Style="{StaticResource Eyebrow}" Margin="0,3,0,0"/>
+                </StackPanel>
+                <StackPanel Grid.Column="1" HorizontalAlignment="Right">
+                    <TextBlock Text="{Binding SoftwareVersion}" FontSize="13" FontWeight="SemiBold" HorizontalAlignment="Right"/>
+                    <TextBlock Text="{Binding SessionDuration}" Foreground="{StaticResource MutedBrush}" FontSize="11" HorizontalAlignment="Right"/>
+                </StackPanel>
+            </Grid>
+
+            <Border Grid.Row="1" Background="{StaticResource PanelAltBrush}" CornerRadius="16" Padding="24" Margin="0,0,0,16">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel VerticalAlignment="Center">
+                        <TextBlock Text="ESTADO DEL SERVICIO" Style="{StaticResource Eyebrow}"/>
+                        <TextBlock Text="{Binding OverallStatus}" FontSize="34" FontWeight="Bold" Margin="0,5,0,3"/>
+                        <TextBlock Text="{Binding OverallDetail}" FontSize="14" Foreground="{StaticResource MutedBrush}" TextWrapping="Wrap" MaxWidth="900"/>
+                    </StackPanel>
+                    <Border Grid.Column="1" Background="#203B50" CornerRadius="12" Padding="18,12" VerticalAlignment="Center">
+                        <StackPanel>
+                            <TextBlock Text="{Binding StatusGlyph}" FontSize="30" HorizontalAlignment="Center"/>
+                            <TextBlock Text="{Binding SessionStatus}" FontSize="11" FontWeight="SemiBold" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+            </Border>
+
+            <Grid Grid.Row="2" Margin="0,0,0,12">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/><ColumnDefinition Width="*"/><ColumnDefinition Width="*"/><ColumnDefinition Width="*"/><ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Border Style="{StaticResource Card}" Grid.Column="0">
+                    <StackPanel><TextBlock Text="01 · SESIÓN EP" Style="{StaticResource Eyebrow}"/><TextBlock Text="{Binding SessionStage}" FontSize="16" FontWeight="SemiBold" Margin="0,8,0,2"/><TextBlock Text="{Binding ProtectionSummary}" FontSize="11" Foreground="{StaticResource MutedBrush}" TextWrapping="Wrap"/></StackPanel>
+                </Border>
+                <Border Style="{StaticResource Card}" Grid.Column="1">
+                    <StackPanel><TextBlock Text="02 · PROCESO" Style="{StaticResource Eyebrow}"/><TextBlock Text="{Binding ProcessStage}" FontSize="16" FontWeight="SemiBold" Margin="0,8,0,2"/><TextBlock Text="{Binding ProcessDetail}" FontSize="11" Foreground="{StaticResource MutedBrush}" TextWrapping="Wrap"/></StackPanel>
+                </Border>
+                <Border Style="{StaticResource Card}" Grid.Column="2">
+                    <StackPanel><TextBlock Text="03 · MCP / STDIO" Style="{StaticResource Eyebrow}"/><TextBlock Text="{Binding ProtocolStage}" FontSize="16" FontWeight="SemiBold" Margin="0,8,0,2"/><TextBlock Text="{Binding ProtocolDetail}" FontSize="11" Foreground="{StaticResource MutedBrush}" TextWrapping="Wrap"/></StackPanel>
+                </Border>
+                <Border Style="{StaticResource Card}" Grid.Column="3">
+                    <StackPanel><TextBlock Text="04 · FUENTES" Style="{StaticResource Eyebrow}"/><TextBlock Text="{Binding SourcesStage}" FontSize="16" FontWeight="SemiBold" Margin="0,8,0,2"/><TextBlock Text="{Binding SourcesDetail}" FontSize="11" Foreground="{StaticResource MutedBrush}" TextWrapping="Wrap"/></StackPanel>
+                </Border>
+                <Border Style="{StaticResource Card}" Grid.Column="4">
+                    <StackPanel><TextBlock Text="05 · READINESS" Style="{StaticResource Eyebrow}"/><TextBlock Text="{Binding ReadinessStage}" FontSize="16" FontWeight="SemiBold" Margin="0,8,0,2"/><TextBlock Text="{Binding ReadinessDetail}" FontSize="11" Foreground="{StaticResource MutedBrush}" TextWrapping="Wrap"/></StackPanel>
+                </Border>
+            </Grid>
+
+            <Grid Grid.Row="3" Margin="0,0,0,10">
+                <Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="*"/><ColumnDefinition Width="*"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+                <Border Style="{StaticResource Card}" Grid.Column="0">
+                    <StackPanel><TextBlock Text="PROCESO" Style="{StaticResource Eyebrow}"/><TextBlock Text="{Binding ProcessHealth}" FontSize="18" FontWeight="SemiBold" Margin="0,6,0,2"/><TextBlock Text="{Binding ProcessHealthDetail}" Foreground="{StaticResource MutedBrush}" FontSize="11"/></StackPanel>
+                </Border>
+                <Border Style="{StaticResource Card}" Grid.Column="1">
+                    <StackPanel><TextBlock Text="DUG / FUENTES" Style="{StaticResource Eyebrow}"/><TextBlock Text="{Binding SourcesHealth}" FontSize="18" FontWeight="SemiBold" Margin="0,6,0,2"/><TextBlock Text="{Binding DugPin}" Foreground="{StaticResource MutedBrush}" FontSize="11"/></StackPanel>
+                </Border>
+                <Border Style="{StaticResource Card}" Grid.Column="2">
+                    <StackPanel><TextBlock Text="OPERADOR" Style="{StaticResource Eyebrow}"/><TextBlock Text="{Binding OperatorHealth}" FontSize="18" FontWeight="SemiBold" Margin="0,6,0,2"/><TextBlock Text="{Binding OperatorDetail}" Foreground="{StaticResource MutedBrush}" FontSize="11"/></StackPanel>
+                </Border>
+                <Border Style="{StaticResource Card}" Grid.Column="3">
+                    <StackPanel><TextBlock Text="ROOT / PROTECCIÓN" Style="{StaticResource Eyebrow}"/><TextBlock Text="{Binding RootHealth}" FontSize="18" FontWeight="SemiBold" Margin="0,6,0,2"/><TextBlock Text="{Binding ProtectionSummary}" Foreground="{StaticResource MutedBrush}" FontSize="11" TextWrapping="Wrap"/></StackPanel>
+                </Border>
+            </Grid>
+
+            <Grid Grid.Row="4" Margin="0,8,0,12">
+                <Grid.ColumnDefinitions><ColumnDefinition Width="1.1*"/><ColumnDefinition Width="1.4*"/></Grid.ColumnDefinitions>
+                <Border Style="{StaticResource Card}" Grid.Column="0" Margin="5,5,10,5">
+                    <StackPanel>
+                        <TextBlock Text="ACTIVIDAD ACTUAL" Style="{StaticResource Eyebrow}"/>
+                        <TextBlock Text="{Binding CurrentActivity}" FontSize="21" FontWeight="SemiBold" Margin="0,10,0,4"/>
+                        <TextBlock Text="{Binding ActivityDetail}" Foreground="{StaticResource MutedBrush}" FontSize="12" TextWrapping="Wrap"/>
+                        <TextBlock Text="{Binding ActivityCounts}" Foreground="{StaticResource AccentBrush}" FontSize="12" FontWeight="SemiBold" Margin="0,18,0,0"/>
+                    </StackPanel>
+                </Border>
+                <Border Style="{StaticResource Card}" Grid.Column="1" Margin="5">
+                    <StackPanel>
+                        <TextBlock Text="ACTIVIDAD RECIENTE" Style="{StaticResource Eyebrow}" Margin="0,0,0,10"/>
+                        <ItemsControl ItemsSource="{Binding RecentEvents}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Border BorderBrush="#31465A" BorderThickness="0,0,0,1" Padding="0,7">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions><ColumnDefinition Width="130"/><ColumnDefinition Width="*"/><ColumnDefinition Width="100"/></Grid.ColumnDefinitions>
+                                            <TextBlock Text="{Binding Time}" Foreground="{StaticResource MutedBrush}" FontSize="11" VerticalAlignment="Center"/>
+                                            <TextBlock Text="{Binding Summary}" Grid.Column="1" FontSize="12" TextTrimming="CharacterEllipsis" VerticalAlignment="Center"/>
+                                            <TextBlock Text="{Binding Outcome}" Grid.Column="2" FontSize="11" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                        </Grid>
+                                    </Border>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                        <TextBlock Text="{Binding RecentEventsEmpty}" Foreground="{StaticResource MutedBrush}" FontSize="11" Margin="0,4,0,0"/>
+                    </StackPanel>
+                </Border>
+            </Grid>
+
+            <Border Grid.Row="5" Background="#302F28" CornerRadius="12" Padding="18" Margin="5,0,5,5">
+                <StackPanel>
+                    <TextBlock Text="ATENCIÓN REQUERIDA" Style="{StaticResource Eyebrow}"/>
+                    <TextBlock Text="{Binding AttentionTitle}" FontSize="17" FontWeight="SemiBold" Margin="0,5,0,2"/>
+                    <TextBlock Text="{Binding AttentionDetail}" FontSize="12" Foreground="{StaticResource MutedBrush}" TextWrapping="Wrap"/>
+                </StackPanel>
+            </Border>
+        </Grid>
+    </ScrollViewer>
+</Window>
