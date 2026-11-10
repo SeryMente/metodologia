@@ -7,9 +7,9 @@
 - **Repositorio propietario:** `SeryMente/metodologia`.
 - **Ruta OCP:** `frentes/mcp-metodologia/`.
 - **Versión de la lista:** 0.8 (provisional; consolidación del sprint Sink + panel local en tres frentes).
-- **Última actualización:** 2026-11-09.
-- **Gobierno leído:** Samantha v386 · NX-386m; Metacanon 1.29; GOW 2.18; DUG commit `82843bca9493a522405d840393c229d2af363342`; blob `22dca684830a36dff019b47811d9b800cc9bea0a`. §ARR y P037 revisados; CNP P001/P004/P005/P038/P043 considerado.
-- **Núcleo enlazado:** [MCP-OCP · objeto canónico](MCP-METODOLOGIA.md), v0.1.27; esta lista v0.8 es su backlog auxiliar vigente.
+- **Última actualización:** 2026-11-10.
+- **Gobierno vigente leído:** Samantha v387 · NX-387m; Metacanon 1.29; GOW 2.18; DUG commit `17a4da1d3906e2397ab4682ff46cc9a9f116f34d`; blob `c8d37d92aed7ff9d4fe94e7a9541e76ba5c88a2c`. §ARR, P004 y estado MCP-NORMATIVO DESACTIVADO verificados; CNP P001/P004/P005/P038/P043 considerado. El pin v386 se conserva como histórico.
+- **Núcleo enlazado:** [MCP-OCP · objeto canónico](MCP-METODOLOGIA.md), v0.1.28 en la rama candidata; esta lista v0.8 es su backlog auxiliar vigente.
 - **Control:** [CONTROL-RESPONSABILIDAD.json](CONTROL-RESPONSABILIDAD.json). Las generaciones y sesiones son metadatos de auditoría y no bloquean trabajo autorizado.
 - **MCP-NORMATIVO:** DESACTIVADO.
 - **Producto vs. documento:** MCP-OCP-v0.1.27 es la versión documental vigente; la versión de software objetivo es 1.0.0. La candidata ejecutable 0.1.0 y su recibo histórico no constituyen una versión actualizada ni aceptada del producto.
@@ -32,14 +32,14 @@ La tabla sustituye los PASS/estados de recibos históricos para la implementaci�
 
 | Orden | ID | Prioridad | Tarea | Estado vigente | Condición principal de salida |
 |---:|---|---|---|---|---|
-| 1 | MCP-OCP-01 | P0 | Contrato de producto y frontera OCP/Khora/Jules | VERIFICADO_EN_NUCLEO_V0.1.27 | Un servidor local STDIO; panel acompañante read-only en el producto final; dominios separados. |
-| 2 | MCP-OCP-02 | P0 | Rama limpia y reconciliación selectiva desde main | PENDIENTE_SPRINT | Nueva rama desde HEAD de main; inventario REUSE/ADAPT/REWRITE/DROP y SDK/RID. |
-| 3 | MCP-OCP-05 | P0 | Corte vertical GOW:ARR → DUG → SINK:P004 | PENDIENTE_PILOTO | Respuesta individual completa, pin/commit/blob/SHA-256 y fail-closed. Generalización a 43 después del piloto. |
-| 4 | MCP-OCP-03 | P0 | Suite mínima de contrato del piloto P004 | PENDIENTE_PILOTO | Casos positivos/negativos de fuente, ID, pin/hash, error y cierre; luego ampliar suite 1.0.0. |
-| 5 | MCP-OCP-04 | P0 | Transporte y E2E IPZ → RDC → STDIO para P004 | PENDIENTE_E2E_IPZ | initialize/tools/list/tools/call/cierre y respuesta visible desde el contexto IPZ; consola sola no basta. |
+| 1 | MCP-OCP-01 | P0 | Contrato de producto y frontera OCP/Khora/Jules | VERIFICADO_EN_NUCLEO_V0.1.28 | Un servidor local STDIO; panel acompañante read-only en el producto final; dominios separados. |
+| 2 | MCP-OCP-02 | P0 | Rama limpia y reconciliación selectiva desde main | RAMA_LIMPIA_CREADA · PORTABILIDAD_DOCUMENTADA · SDK/RID_PENDIENTE | Nueva rama desde HEAD de main; inventario REUSE/ADAPT/REWRITE/DROP y SDK/RID. |
+| 3 | MCP-OCP-05 | P0 | Corte vertical GOW:ARR → DUG → SINK:P004 | CANDIDATO_IMPLEMENTADO · BUILD_PENDIENTE | Respuesta individual completa, pin/commit/blob/SHA-256 y fail-closed. Generalización a 43 después del piloto. |
+| 4 | MCP-OCP-03 | P0 | Suite mínima de contrato del piloto P004 | PRUEBAS_ESCRITAS · NO_EJECUTADAS | Casos positivos/negativos de fuente, ID, pin/hash, error y cierre; luego ampliar suite 1.0.0. |
+| 5 | MCP-OCP-04 | P0 | Transporte y E2E IPZ → RDC → STDIO para P004 | PRECONDICIONES_DOCUMENTADAS · E2E_PENDIENTE | initialize/tools/list/tools/call/cierre y respuesta visible desde el contexto IPZ; consola sola no basta. |
 | 6 | MCP-OCP-05 (fase posterior) / 03 | P0 | Generalización Sink P001–P043 y lotes | PENDIENTE_POST_PILOTO | 43 respuestas, orden, hashes/eventos y controles negativos PASS. |
 | 7 | MCP-OCP-13 | P1 | Panel local de observabilidad visual | ESPECIFICADO · IMPLEMENTACIÓN_PENDIENTE | Obligatorio en 1.0.0; se implementa tras congelar schema, en paralelo con la generalización, y no bloquea el piloto SINK:P004. |
-| 8 | MCP-OCP-10 | P1 | Pins, manifiesto y evidencia final | PENDIENTE_EVIDENCIA_ACTUAL | Pins v386/core vigente, SDK/RID, servidor+panel, tests y hashes. |
+| 8 | MCP-OCP-10 | P1 | Pins, manifiesto y evidencia final | PENDIENTE_EVIDENCIA_ACTUAL | Pins DUG v387/core vigente, SDK/RID, servidor+panel, tests y hashes. |
 | 9 | MCP-OCP-07 | P1 | Paquete reproducible 1.0.0 | PENDIENTE_PAQUETE_ACTUAL | ZIP final servidor+panel, configuración, manifest/SHA y read-back. |
 | 10 | MCP-OCP-12 | P1 | Bootstrap local en Fila 4 | BLOQUEADO_GATES_EP | Piloto/instalación dentro de checkout; datos externos protegidos; REGISTER interactivo. |
 | 11 | MCP-OCP-08 | P1 | Handoff y aceptación EP | PENDIENTE_EP_TASK_003_005 | Verificación de ruta, root, panel EP ACTIVE, hashes, cierre y rollback. |
@@ -256,4 +256,16 @@ El panel MCP-OCP-13 baja a P1 de secuencia, pero permanece como entregable oblig
 - MCP-NORMATIVO permanece DESACTIVADO. MCP Studio no se incorpora. MCP Inspector queda opcional para diagnóstico, fuera del paquete final.
 
 **Estado de esta rectificación:** tareas y orden documental alineados; rama, build, pruebas, piloto, IPZ nativa, preflight Fila 4, instalación y aceptación siguen pendientes.
+
+
+
+## Corte de ejecución · Hito A SINK:P004 · 2026-11-10
+
+- MCP-OCP-01: contrato y autorización verificados. Control generación 5, blob 826d7bd3f67bddf4f31bafee5013d1ea55003cf4; Sink STDIO autorizado. MCP-NORMATIVO sigue DESACTIVADO.
+- MCP-OCP-02: rama limpia creada desde main HEAD 73a42bc687f1fa3dd60b44af9cd93f797eba3920: feat/mcp-ocp-p004-pilot-20261110-cycle02. Portabilidad selectiva documentada en piloto-sink/PORTABILITY-DECISIONS.md.
+- MCP-OCP-05: código candidato escrito; fuente actual DUG v387/NX-387m, commit 17a4da1d3906e2397ab4682ff46cc9a9f116f34d, blob c8d37d92aed7ff9d4fe94e7a9541e76ba5c88a2c. El pin v386 anterior queda histórico.
+- MCP-OCP-03: ocho escenarios de prueba escritos; NO EJECUTADOS porque no hay .NET SDK en el entorno de ejecución disponible.
+- MCP-OCP-04: contrato STDIO y precondiciones IPZ documentados; E2E NO EJECUTADO ni aceptado.
+- No se crea paquete ni se instala en Fila 4; no se accede a fuentes privadas ni se crea DB/REGISTER. No merge a main.
+- Detalle de archivos, decisiones, pruebas y límites: piloto-sink/README.md y piloto-sink/PORTABILITY-DECISIONS.md.
 
