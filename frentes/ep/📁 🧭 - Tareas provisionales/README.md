@@ -20,7 +20,7 @@ El patrón de materialización sigue el registro de tareas provisionales de Gobe
 | EP-TASK-001 | pendiente | NCL — Navegador Compartido Local: integración de Playwright y KeePassXC | [núcleo](./📁%20🧩%20-%20EP-TASK-001%20-%20Integración%20NCL/README.md) |
 | EP-TASK-002 | `en_curso · P0 · BLOQUEADA_VAULT_SELLADA` | Status propietario 15:48:48: Vault ciphertext 2.200 B, sessionActive=false; worker/wrapper SHA verificados; recibo ausente; B2 auth/upload/restore no ejecutados | [núcleo](./📁%20🧩%20-%20EP-TASK-002%20-%20Persistencia%20provisional%20Backblaze/README.md) |
 | EP-TASK-003 | `en_curso · P0 · DISEÑO_ACEPTADO · PREFLIGHT_PARTIAL_FAIL` | Diseño VHDX aceptado; 2 enumeraciones 3.127 archivos/660 dirs/179.138.515 B, 0 errores; C: XTS-AES128/Protection Off; W: descifrado; checkout sin .git; Datos/MCP-OCP ausente; espera P0 B2 | [núcleo](./📁%20🧩%20-%20EP-TASK-003%20-%20Mapa%20integral%20de%20construcción%20EP/README.md) |
-| EP-TASK-004 | `en_curso · H7_SINTÉTICO_PARCIAL_PASS · H10_PENDIENTE` | Self-tests sintéticos crypto/job/timeout PASS; parser Core/CLI/GUI y XAML PASS; H7/H8 integrales y aceptación visual H10 pendientes | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-004%20-%20Reconstrucci%C3%B3n%20de%20b%C3%B3veda/README.md) |
+| EP-TASK-004 | `en_curso · H7_H8_SYNTHETIC_E2E_V1_0_0_PASS · H10_PENDIENTE` | Suite sintética exacta v1.0.0 en Fila 4: exit 0/165,41 s; 5 artefactos coinciden con manifest de feat/ep-vault-pc7-hardened-20261109; DPAPI/TTL/allowlist/CRUD/tamper/CLI↔GUI PASS; H10 y merge a main pendientes | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-004%20-%20Reconstrucci%C3%B3n%20de%20b%C3%B3veda/README.md) |
 | EP-TASK-005 | pendiente · P0 piloto · BLOQUEADO_EP003+MCP_PACKAGE | EP ejecuta instalación del piloto en Fila 4 solo tras EP-TASK-003 PASS + paquete P004/manifest/SHA + MCP-OCP-03/04 smoke PASS; W: no es destino final. Después release 1.0.0. | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-005%20-%20Instalaci%C3%B3n%20y%20aceptaci%C3%B3n%20de%20MCP-OCP%20local/README.md) |
 | EP-TASK-006 | `en_curso · P1_WAITING_P0_B2` | Centralización: nombres Master B2 EP normalizados y leídos de vuelta; inventario mult proveedor incompleto; P1 sigue después del snapshot/restauración P0 | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-006%20-%20Centralizaci%C3%B3n%20de%20variables%20de%20entorno/README.md) |
 | EP-TASK-007 | `en_curso · HOST_INVENTORY_PARTIAL_READ_ONLY` | Revalidación read-only: workspace 3.127 archivos/660 dirs/179.138.515 B; C: 100 % XTS-AES128/Protection Off/sin protectores; W: 0 %/sin protectores; ubicación UNCLASSIFIED; Guardian no implementado | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-007%20-%20Guardi%C3%A1n%20de%20sesi%C3%B3n%20ef%C3%ADmera%20e%20inventario%20del%20host/README.md) |
@@ -333,3 +333,16 @@ El núcleo individual es el registro de cierre. El índice solo refleja estado y
 - **EP-TASK-001:** pendiente, sin delta.
 
 **Informes parciales individuales:** EP-TASK-002, EP-TASK-003 y EP-TASK-007 fueron agregados y leídos de vuelta antes de actualizar este índice. No se promueve ninguna tarea a completada. Siguiente gate: desbloqueo local de EP Vault; comprobar sesión y cinco nombres; ejecutar P0-C y demostrar descarga/hash/restore.
+
+
+---
+
+## Reconciliación ejecutiva EP · 2026-11-10 · 15:59 America/Mexico_City
+
+- **EP-TASK-004:** seleccionada como siguiente ejecución independiente mientras EP-TASK-002 permanece bloqueada por Vault sellada. La suite exacta v1.0.0 de la rama feat/ep-vault-pc7-hardened-20261109 pasó completa (exit 0; 165,41 s). Cinco artefactos locales cotejaron sus Git blobs con MANIFEST.json; sandbox aislado fuera de AppData/workspace eliminado con read-back. H7/H8 sintéticos para esta candidata: PASS. H10 humano y merge a main: pendientes.
+- **EP-TASK-002:** P0 continúa bloqueada; Status posterior de Vault formal: sessionActive=false, ciphertext 2.200 B, recibo B2 ausente. No se llamó B2.
+- **EP-TASK-003:** diseño VHDX aceptado, pero gate físico no cambia; inventario del workspace no se congela mientras Temporal/SI-Reconcile-20261110-G14 mantiene actividad de escritura.
+- **EP-TASK-007:** sin cambio funcional; no Guardian ni crypto-erasure.
+- **EP-TASK-005/006/001:** conservan dependencias/orden previamente registrados.
+
+Informe individual EP-TASK-004 publicado y leído de vuelta antes de este índice: commit df54e3521b0fb18dfef63d6c98c391549223ce70, blob 0f9acb4f105e3aa7ff4152a5b392bf365de24e41. No se promueve la tarea a completada.
