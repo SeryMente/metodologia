@@ -703,3 +703,37 @@ Sprint OCP MCP 1.0 / SINK-P004: recuperar el texto normativo íntegro P004 desde
 - Revalidación local de EP Vault a las 16:27:35.0084186-06:00 bajo CENTRAL\fila4: `ENCRYPTED_FILE_PRESENT`, ciphertext 2.200 B, `sessionActive=false`. La sesión/TTL observada previamente no se presume vigente; no se inició v3 ni nueva transferencia.
 - La comprobación B2 read-only anterior sí logró autorizar la cuenta, emparejar key ID y leer bucket OCP-MCP privado con SSE-B2/AES256 predeterminado y cero reglas de lifecycle. No escribió bucket/objeto. Esto no corrige la excepción del worker ni acredita upload/restore.
 - Siguiente gate EP: nueva apertura local de Vault por el operador; EP revalida Status y los cinco nombres y solo entonces ejecuta v3 para registrar la línea exacta de `PropertyNotFoundException`. No repetir v1/v2. Se conserva el ciphertext local; sin objeto remoto demostrado.
+
+## Corte semivivo · prioridad Backblaze satisfecha en transferencia · 2026-11-10 · 17:08 America/Mexico_City
+
+### 🎯 Hito
+
+**H2/H3 · continuidad EP por Backblaze:** transferencia R2 de workspace y ciphertext Vault completada; sigue pendiente restore aislado. Por instrucción del operador, esta prioridad se atendió antes de iniciar nuevo desarrollo del sprint SINK:P004.
+
+### 🚦 Estado por frente
+
+| Frente / gate | Estado | Evidencia y límite |
+|---|---|---|
+| EP-TASK-002 · B2 | `UPLOAD_READBACK_SHA256_PASS` | 4 objetos en OCP-MCP: ZIP, Vault ciphertext, manifest y checksum; descargas SHA-256 MATCH; SSE-B2/AES256; recibo exit 0. Restore cross-host NOT_RUN. |
+| EP-TASK-003 · Fila 4 | `PARTIAL_FAIL` | Diseño VHDX aceptado; gates físicos/BitLocker/checkout no habilitan migración. |
+| EP-TASK-004 · Vault GUI | `PASS_SINTÉTICO` | Dos ejecuciones exactas; H10 humano y merge pendientes. |
+| EP-TASK-005 · instalación P004 | `PENDING_BLOCKED` | Espera EP-TASK-003 PASS y paquete P004/manifest/SHA + MCP-OCP-03/04 PASS. |
+| MCP-OCP H1 | `PAUSADO_POR_PRIORIDAD_DEL_OPERADOR` | DTC ciclo local 13 permanece abierto; PR #27 OPEN/DRAFT/NOT MERGED; no handoff/instalación nueva durante prioridad B2. |
+| Gobernanza SINK:P004 | `PENDIENTE` | Aceptación IPZ real sigue pendiente. |
+
+### ✅ Confirmado
+
+- Snapshot local R2: 3.289 entradas ZIP, 119.076.640 bytes, integridad interna PASS.
+- ZIP remoto descargado y cotejado con SHA-256 idéntico al origen: `9D511614FC6B4001DBA5F8CAAF69ED06107F8B5F5111165F186BE7B2C5C06E09`.
+- Ciphertext Vault, manifiesto y checksum también descargados y cotejados; SSE-B2/AES256 confirmado para los cuatro objetos.
+- Recibo local `ep-backblaze-r2-final-receipt-v1.json`; exit 0; caché B2 temporal limpia; valores secretos no emitidos.
+
+### ⛔ Bloqueantes y siguiente acción
+
+1. EP completa restore aislado de ZIP/ciphertext sin sobrescribir workspace activo; declara de forma separada qué componentes DPAPI no son portables y el bootstrap de acceso B2.
+2. EP-TASK-003 continúa con sus gates físicos; no asumir que el respaldo permite copiar/montar el VHDX.
+3. Solo tras actualizar informes e índice y cerrar la secuencia B2/restore, se reanuda desarrollo H1 SINK:P004 sobre el estado actualizado y se procesa el handoff ya abierto de MCP-OCP.
+
+**Riesgo:** el ZIP se subió sin cifrado cliente por excepción de urgencia informada/ordenada por el operador; únicamente TLS y SSE-B2/AES256 confirmados. No equivale al diseño permanente de cifrado cliente de OCP MCP 1.0.
+
+**Estado integrado:** `B2_UPLOAD_READBACK=PASS` · `CROSS_HOST_RESTORE=NOT_RUN` · `DEVELOPMENT_H1=PAUSED_UNTIL_TASKS_UPDATED_AND_RESTORE_GATE` · `IPZ_E2E=NOT_ACCEPTED` · `MCP_NORMATIVO=DESACTIVADO`.
