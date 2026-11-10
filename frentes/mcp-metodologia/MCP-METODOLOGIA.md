@@ -603,7 +603,7 @@ MCP-OCP-02/05 (corte P004)/03/04 son P0 por el piloto. MCP-OCP-13 baja a P1 de s
 **Estado de la rectificación:** decisión documental y secuencia actualizadas; rama, código, pruebas, piloto, preflight Fila 4, importación, instalación IPZ nativa, E2E y release no ejecutados.
 
 
-## 19. Rebaseline urgente del sprint Sink local · DUG v388 · 2026-11-10
+## 19. Snapshot del rebaseline inicial del sprint Sink local · DUG v388 · 2026-11-10 · supersedido en coordinación por §20
 
 **Estado operativo:** EN CURSO · rebaseline documental realizado. Rama limpia, implementación P004, pruebas nuevas, importación de fuentes privadas, instalación y E2E siguen pendientes.
 
@@ -641,7 +641,7 @@ Este rebaseline no acredita rama nueva, resolver implementado, pruebas PASS nuev
 
 - DUG fuente: Samantha v388/NX-388m · commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c` · blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`.
 - Core de este OCP: v0.1.29 (esta revisión); backlog auxiliar v0.10 (esta revisión).
-- `main` leído al abrir la coordinación: `3fe1a70f59e9dbd53310814813633aa7ef9efd35`. La rama `feat/mcp-ocp-sink-p004-pilot-20261110` permanece anclada a `1676901cc09af6fcec4d052800b031e4c2f1ab40`; en ese cotejo `main` estaba 70 commits por delante y la rama no tenía commits propios exclusivos. La referencia no cumple MCP-OCP-02.
+- **Cotejo histórico de apertura:** `main` observado entonces `3fe1a70f59e9dbd53310814813633aa7ef9efd35`; la rama `feat/mcp-ocp-sink-pilot` sigue anclada al commit histórico `1676901cc09af6fcec4d052800b031e4c2f1ab40`. La distancia exacta registrada en ese momento no es estado vivo; la referencia no cumple MCP-OCP-02. El estado de coordinación y los pins actuales se mantienen en §20.
 - Control MCP-OCP: generación 5; autorización directa para código, pruebas, build, manifiesto, paquete y documentación dentro de este OCP. Se conserva sin cambios. La autorización excluye host EP, EP Vault y operaciones locales de instalación.
 - `MCP_OCP_02=OPEN` · `MCP_OCP_05=PENDING` · `MCP_OCP_03=PARALLEL_SYNTHETIC_FIXTURES` · `MCP_OCP_04=PARALLEL_HARNESS_PREP`.
 - `EP_TASK_003=PARTIAL_FAIL` · `EP_TASK_005=PENDING`. OEP v0.3.59 §124 prepara el relevo de ejecución al frente EP; no se afirma aceptación de EP ni cambio de su control generación 3.
