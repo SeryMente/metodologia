@@ -9,7 +9,7 @@
 - **Versión de la lista:** 0.16 (provisional; coordinación del Sprint SINK-P004 y producto MCP-OCP 1.0.0).
 - **Última actualización:** 2026-11-10.
 - **Gobierno leído:** Samantha v388 · NX-388m; Metacanon 1.29; GOW 2.18; DUG commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`; blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`. ART-027 rebaselined para Sink local STDIO/RDC; §ARR y P037 revisados; CNP P001/P004/P005/P038/P043 considerado.
-- **Núcleo enlazado:** [MCP-OCP · objeto canónico](MCP-METODOLOGIA.md), v0.1.30; esta lista v0.11 es su backlog auxiliar vigente.
+- **Núcleo enlazado:** [MCP-OCP · objeto canónico](MCP-METODOLOGIA.md), v0.1.35; esta lista v0.16 es su backlog auxiliar vigente.
 - **Control:** [CONTROL-RESPONSABILIDAD.json](CONTROL-RESPONSABILIDAD.json). Las generaciones y sesiones son metadatos de auditoría y no bloquean trabajo autorizado.
 - **MCP-NORMATIVO:** DESACTIVADO.
 - **Producto vs. documento:** MCP-OCP-v0.1.35 es la versión documental vigente; la versión de software objetivo es 1.0.0. La candidata ejecutable 0.1.0 y su recibo histórico no constituyen una versión actualizada ni aceptada del producto.
@@ -165,6 +165,8 @@ Una vez configuradas y aceptadas las tareas del frente MCP-Jules, se prepara una
 **Cierre:** build Windows x64; launch/close real desde EP ACTIVE; estados diferenciados de proceso/protocolo/fuentes/operador/root; actividad con ID, resultado y duración sin contenido; caída del servidor y cierre de EP probados; schema/ACL resistentes; manifest/SHA incluido en el ZIP 1.0.0 y read-back de extracción.
 
 ### MCP-OCP-14 — Persistencia mínima, snapshots cifrados y workspace completo por instancia
+**Estado:** CONTRATO_BASE_0.1_PROPUESTO · NO_RATIFICADO · SCHEMAS_JSON_PARSEABLE · SIN_RUNTIME/IO.
+**Artefacto:** [MCP-OCP-14-CONTRATO.md](persistencia/MCP-OCP-14-CONTRATO.md).
 
 **Prioridad:** P0/H2–H3 · **Responsable:** MCP-OCP; ejecución B2 y host bajo EP-TASK-002/003/007.
 
