@@ -18,7 +18,7 @@ El patrón de materialización sigue el registro de tareas provisionales de Gobe
 
 | ID local | Estado | Tarea | Núcleo |
 | EP-TASK-001 | pendiente | NCL — Navegador Compartido Local: integración de Playwright y KeePassXC | [núcleo](./📁%20🧩%20-%20EP-TASK-001%20-%20Integración%20NCL/README.md) |
-| EP-TASK-002 | `en_curso · P0 · BLOQUEADA_VAULT_SELLADA` | Status propietario 15:48:48: Vault ciphertext 2.200 B, sessionActive=false; worker/wrapper SHA verificados; recibo ausente; B2 auth/upload/restore no ejecutados | [núcleo](./📁%20🧩%20-%20EP-TASK-002%20-%20Persistencia%20provisional%20Backblaze/README.md) |
+| EP-TASK-002 | `en_curso · P0 · B2_AUTH_OK_BUCKET_PRIVATE · PREFLIGHT_PROPERTY_EXCEPTION · REUNLOCK_PENDING` | v1/v2 autenticaron y hallaron OCP-MCP privado; ambos fallaron antes de upload (recibos independientes preservados); v3 parser PASS, no ejecutada porque Vault volvió a sellarse; no objeto remoto ni ZIP | [núcleo](./📁%20🧩%20-%20EP-TASK-002%20-%20Persistencia%20provisional%20Backblaze/README.md) |
 | EP-TASK-003 | `en_curso · P0 · DISEÑO_ACEPTADO · PREFLIGHT_PARTIAL_FAIL` | Diseño VHDX aceptado; 2 enumeraciones 3.127 archivos/660 dirs/179.138.515 B, 0 errores; C: XTS-AES128/Protection Off; W: descifrado; checkout sin .git; Datos/MCP-OCP ausente; espera P0 B2 | [núcleo](./📁%20🧩%20-%20EP-TASK-003%20-%20Mapa%20integral%20de%20construcción%20EP/README.md) |
 | EP-TASK-004 | `en_curso · H7_H8_SYNTHETIC_E2E_V1_0_0_PASS · H10_PENDIENTE` | Suite sintética exacta v1.0.0 en Fila 4: exit 0/165,41 s; 5 artefactos coinciden con manifest de feat/ep-vault-pc7-hardened-20261109; DPAPI/TTL/allowlist/CRUD/tamper/CLI↔GUI PASS; H10 y merge a main pendientes | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-004%20-%20Reconstrucci%C3%B3n%20de%20b%C3%B3veda/README.md) |
 | EP-TASK-005 | pendiente · P0 piloto · BLOQUEADO_EP003+MCP_PACKAGE | EP ejecuta instalación del piloto en Fila 4 solo tras EP-TASK-003 PASS + paquete P004/manifest/SHA + MCP-OCP-03/04 smoke PASS; W: no es destino final. Después release 1.0.0. | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-005%20-%20Instalaci%C3%B3n%20y%20aceptaci%C3%B3n%20de%20MCP-OCP%20local/README.md) |
@@ -346,3 +346,16 @@ El núcleo individual es el registro de cierre. El índice solo refleja estado y
 - **EP-TASK-005/006/001:** conservan dependencias/orden previamente registrados.
 
 Informe individual EP-TASK-004 publicado y leído de vuelta antes de este índice: commit df54e3521b0fb18dfef63d6c98c391549223ce70, blob 0f9acb4f105e3aa7ff4152a5b392bf365de24e41. No se promueve la tarea a completada.
+
+
+---
+
+## Reconciliación ejecutiva EP · 2026-11-10 · 16:09 America/Mexico_City
+
+- **EP-TASK-002:** desbloqueo local temporal confirmado a las 16:01:13; los cinco nombres EP B2 presentes sin revelar valores. Dos ejecuciones P0-C autenticaron y detectaron OCP-MCP privado, pero fallaron durante preflight antes de upload: v1 `UNEXPECTED_WORKER_FAILURE`; v2 `WORKER_EXCEPTION_PropertyNotFoundException`. Recibos separados verificados; ninguno contiene objeto remoto/fileId/download. Se preservaron. Worker/wrapper v3 parser PASS preparados con clasificación de línea; no ejecutados porque la sesión volvió a sellarse a las 16:09. Requiere nuevo desbloqueo local. No se subió workspace.
+- **EP-TASK-004:** suite E2E sintética exacta de la candidata v1.0.0 PASS (exit 0, 165,41 s); H10 y merge a main continúan pendientes.
+- **EP-TASK-003:** diseño VHDX aceptado por operador, gate físico sigue PARTIAL_FAIL; workspace cambia mientras hay actividad concurrente en Temporal; no congelar ni copiar todavía.
+- **EP-TASK-007:** sin cambio funcional; Guardian/lease/crypto-erasure no implementados.
+- **EP-TASK-005/006/001:** dependencias y orden sin cambio.
+
+Informe individual de EP-TASK-002 actualizado y leído de vuelta: commit 3dd266d2645cf7884a021a96573692b9c4b39f65, blob de810f529a59f4fea9768393430a07a5c1f8e86e. No se promueve la tarea a completada.
