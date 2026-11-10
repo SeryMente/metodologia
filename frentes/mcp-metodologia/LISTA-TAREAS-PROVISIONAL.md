@@ -36,7 +36,7 @@ La tabla sustituye los PASS/estados de recibos históricos para la implementaci�
 | 2 | MCP-OCP-02 | P0 · CRÍTICO | Rama limpia y reconciliación selectiva desde main | EJECUTADO · VERIFICADO POR READ-BACK | `feat/mcp-ocp-p004-rebaseline-20261110-cycle02`, base `84cc9ffc1a2aa27c622c7e5de147d7460f3b5ecd`; pin v388, inventario REUSE/ADAPT/REWRITE/DROP, SDK 10.0.403 y RID final win-x64 registrados. Build/pruebas aún pendientes. |
 | 3 | MCP-OCP-05 | P0 · SIGUIENTE | Corte vertical GOW:ARR → DUG → SINK:P004 | IMPLEMENTACIÓN CANDIDATA · NO COMPILADA | Servidor/lector/pin P004 escritos; respuesta, blob y SHA-256 implementados en código; requiere build, pruebas y smoke con evidencia CI. |
 | 4 | MCP-OCP-03 | P0 | Suite mínima de contrato del piloto P004 | ESCRITAS · 16 ESCENARIOS / 0 EJECUTADOS | Fixtures sintéticos positivos/negativos, negociación, P004, pins, hashes, errores, telemetría y EOF; ejecución pendiente de runner .NET con logs. |
-| 5 | MCP-OCP-04 | P0 | Transporte y E2E IPZ → RDC → STDIO para P004 | HARNESS/CI ACTUALIZADOS · SIN SMOKE VERIFICADO | CI incluye build servidor, 16 tests P004, 11 tests de monitor, build WPF y smoke STDIO; run CI falla sin steps/logs/artifacts, por lo que ninguna etapa está acreditada. E2E IPZ espera gates EP. |
+| 5 | MCP-OCP-04 | P0 | Transporte y E2E IPZ → RDC → STDIO para P004 | HARNESS/CI ACTUALIZADOS · SIN SMOKE VERIFICADO | CI incluye build servidor, 18 tests P004, 11 tests de monitor, build WPF y smoke STDIO; run CI falla sin steps/logs/artifacts, por lo que ninguna etapa está acreditada. E2E IPZ espera gates EP. |
 | 6 | MCP-OCP-05 (fase posterior) / 03 | P0 | Generalización Sink P001–P043 y lotes | PENDIENTE_POST_PILOTO | 43 respuestas, orden, hashes/eventos y controles negativos PASS. |
 | 7 | MCP-OCP-13 | P1 | Panel local de observabilidad visual | IMPLEMENTACIÓN CANDIDATA · 21 TESTS ESCRITOS / 0 EJECUTADOS | WPF + reader/writer/evaluator de monitorización y 23 pruebas sintéticas publicados; `READY` exige atestación EP `Protection On` además de proceso/protocolo/fuentes/operador/root. Build, pruebas, revisión visual Windows e integración de ciclo EP pendientes. Obligatorio para 1.0.0; no bloquea P004. |
 | 8 | MCP-OCP-10 | P1 | Pins, manifiesto y evidencia final | PIN/METADATOS DE BUILD FIJADOS · RECIBO PENDIENTE | DUG v388/NX-388m, commit/blob, SDK 10.0.403, dependencias externas 0, piloto sin RID y release win-x64 self-contained; faltan hashes finales y recibo. |
@@ -302,7 +302,7 @@ Main avanzó desde `84cc9ffc1a2aa27c622c7e5de147d7460f3b5ecd` hasta `67b48bc041b
 
 **Contrato de datos:** EP escribe `monitor/session.json`; MCP-OCP solo lo lee. El servidor escribe `monitor/state.json` y `monitor/events.jsonl` exclusivamente cuando recibe `--monitor-root <ruta-EP>`; no existe default, no elige/crea el root y no modifica ACL, BitLocker, Registro ni servicios. Los eventos no incluyen argumentos, contenido, texto de principios, hashes de payload, secretos, tokens ni SID. El primer estado es no listo: fuentes no importadas, integridad UNKNOWN, operador UNKNOWN y readiness `SOURCES_NOT_IMPORTED`.
 
-**MCP-OCP-03:** 16 casos P004 escritos; 0 ejecutados. **MCP-OCP-13:** 23 casos de monitor/readiness escritos; 0 ejecutados. Se agregó evaluador fail-closed: READY exige `sessionState=ACTIVE` y `protectionState=Protection On` exacto, sin timestamps futuros, además del proceso RUNNING identificado por PID+inicio, protocolo INITIALIZED, fuentes importadas/VERIFIED/vigentes, operador provisionado y root disponible. El script CI se amplió para restore/build/run de ambas suites y build WPF Windows x64 con cross-targeting; conserva smoke real del ejecutable STDIO.
+**MCP-OCP-03:** 18 casos P004 escritos; 0 ejecutados. **MCP-OCP-13:** 23 casos de monitor/readiness escritos; 0 ejecutados. Se agregó evaluador fail-closed: READY exige `sessionState=ACTIVE` y `protectionState=Protection On` exacto, sin timestamps futuros, además del proceso RUNNING identificado por PID+inicio, protocolo INITIALIZED, fuentes importadas/VERIFIED/vigentes, operador provisionado y root disponible. El script CI se amplió para restore/build/run de ambas suites y build WPF Windows x64 con cross-targeting; conserva smoke real del ejecutable STDIO.
 
 **Validación:** no compilado ni probado. El último run CI conocido de la revisión anterior terminó FAILURE sin job steps/logs/artifacts; no prueba fallo del código. El runner de contenedor disponible carece de `dotnet`. El PR ciclo02 sigue draft; los commits recientes requieren una nueva lectura de checks asociada a su HEAD.
 
@@ -327,3 +327,8 @@ Pruebas añadidas para las condiciones anteriores: 23 escenarios monitor escrito
 
 
 La validación de tiempo también rechaza atestación de protección anterior al inicio de la sesión y snapshot de servidor con fecha futura. Suite monitor/readiness: 23 casos escritos / 0 ejecutados.
+
+
+### Cobertura adicional del vínculo humano P004 · 2026-11-10
+
+La suite del lector P004 aumenta a 18 casos. Dos negativos nuevos repinnean el blob para demostrar que falla si `[[P:P004]]` falta/se duplica o si el `content_markdown` de la tarjeta humana difiere del texto normativo. Ningún PASS se declara hasta ejecución real.
