@@ -178,3 +178,13 @@ Tras el piloto P004, generalizar a P001–P043, lotes ordenados, integridad, tel
 - **Entorno:** el contenedor no resuelve DNS para descargar el SDK. El único RDC conectado ejecuta como MantenimientoRCI y no tiene dotnet; no se instalaron herramientas ni se escribieron archivos en ese perfil. Fila 4 sigue sin preflight vivo.
 - **Siguiente gate MCP-OCP:** obtener una ejecución CI legible o runner .NET autorizado; registrar build, suite de 13 y smoke del DLL. Después, entregar candidato/manifest al frente EP para sus gates y al frente Gobernanza para E2E IPZ visible.
 - **Límites:** no instalar en EP/Fila 4, no importar fuentes privadas, no crear DB/DPAPI/REGISTER, no escribir IPZ nativa, no activar FOL1/MCP-NORMATIVO, no crear panel ni paquete final antes de los gates; no merge a main.
+
+
+## 17. Estado PR/CI cycle05 · 2026-11-10
+
+- PR #24 abierto como borrador y mergeable=true; no merge. PR #23/cycle04 cerrado como supersedido.
+- Rama cycle05: base 0f933b9e3efae20131da37f99f50f4bc4a4eaf74; comparación actual 21 ahead/11 behind, merge-base 0f933b9e3efae20131da37f99f50f4bc4a4eaf74. Los once commits posteriores de main afectan rutas EP/Gobernanza, sin solapamiento con los 16 archivos candidatos.
+- Workflow MCP-OCP run24 y run25: FAILURE. Para ambos, job steps=null, logs_url=null, artifacts=[]; el endpoint de log devuelve NOT_FOUND. Reintento del run24 autorizado y también fallido.
+- En el mismo commit de run25 fallaron Validate RDC Governance y validate-canonical-bootstrap con job steps=null/logs_url=null. Es evidencia de falla compartida del entorno Actions/runner; no identifica causa raíz.
+- No se afirma que SDK setup, build, suite o smoke hayan comenzado; todos permanecen NO VERIFICADOS. No aceptar el piloto por estado del job.
+- No usar MantenimientoRCI ni Fila 4 sin preflight EP. No instalación, paquete, IPZ nativa, E2E, FOL1 ni activación MCP-NORMATIVO.
