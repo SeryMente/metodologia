@@ -753,3 +753,15 @@ Sprint OCP MCP 1.0 / SINK-P004: recuperar el texto normativo íntegro P004 desde
 | MCP-OCP H1 | `READY_TO_RESUME` | Ciclo local 13 abierto; PR #27 OPEN/DRAFT/NOT MERGED. |
 
 **Decisión operativa:** tareas EP/Gobernanza y los cursores de retroalimentación interfrentes están actualizados/leídos. Está habilitado reanudar desarrollo sintético P004 dentro del ciclo local 13 existente. Instalación/aceptación en EP sigue bloqueada por sus gates. Riesgo: ZIP sin cifrado cliente por excepción del operador; TLS/SSE-B2/AES256 sí confirmados. `MCP-NORMATIVO=DESACTIVADO`.
+
+---
+
+## Corte de continuidad y recuperación B2 · 2026-11-10 17:22–17:27
+
+- **Conversación incorporada:** exportación `ChatGPT-GOBERNANZA (1)-20261110-1722.txt` (Downloads; 98.367 bytes; 1.974 líneas). Gobernanza conserva un registro operativo sintetizado y referencia de origen; el TXT íntegro no se publica en el repositorio para no exponer contexto privado/local.
+- **Procedimiento de un archivo:** [Registro y recuperación R2/B2](../../entregas/ChatGPT-GOBERNANZA-20261110-1722-CONTINUIDAD-B2.md). Descargar solo `EP-Backup-Provisional-20261110-164004-R2.zip` del bucket `OCP-MCP`, prefijo `ep-ocp/workspace/`, y extraer en Escritorio para recrear `SeryMente`. El ZIP ya contiene el ciphertext de Vault.
+- **H2 / EP-TASK-002:** upload + read-back de los cuatro objetos PASS; ZIP de 119.076.640 bytes, 3.289 archivos, ciphertext Vault de 2.200 bytes incluido; SSE-B2/AES256.
+- **H3 / restore:** extracción aislada PASS en `C:\R2R`, 3.289/3.289, cero fallos y cero inesperados. No se modificó el workspace original.
+- **Límite explícito:** Vault se restauró como ciphertext; descifrado y restore cross-host permanecen NO_VERIFICADOS. El ZIP carece de cifrado cliente; SSE-B2 es cifrado del proveedor. No declarar recuperación infalible.
+- **Secuencia:** prioridad inmediata Backblaze atendida; habilitar reanudación de desarrollo sintético H1 SINK:P004 en el ciclo MCP-OCP existente. H1 continúa sin aceptación E2E IPZ.
+
