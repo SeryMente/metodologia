@@ -11,7 +11,7 @@
 
 Implementar un ciclo de sesión local segura que inicie automáticamente desde la GUI del Entorno Persistente, inspeccione el equipo en modo read-only, obtenga el workspace completo cifrado, mantenga un lease renovable y cierre/borrado criptográfico local cuando ocurra un trigger terminal.
 
-Esta tarea es distinta del gate de materialización/protección física de Fila 4 en EP-TASK-003. No lo reemplaza, no lo cierra y no permite saltarlo. El dead-man aquí se diseña para las instancias temporales de OCP MCP 1.0 en México.
+Esta tarea es distinta del gate de materialización/protección física de Fila 4 en EP-TASK-003. No lo reemplaza, no lo cierra y no permite saltarlo. El dead-man de sesión se aplica a toda instancia OCP declarada efímera, cualquiera que sea la ubicación física; no depende de la clasificación CECEQ/LOC-OTHER. No elimina ni volatiliza el workspace raíz persistente de EP ni afecta B2. El gate EP-TASK-003 continúa regulando por separado la protección del host/workspace persistente de Fila 4.
 
 ## 2. Decisiones expresas del operador
 
