@@ -50,11 +50,11 @@ GOV-TASK-010 ya contiene la corrección de admisión por instrucción directa y 
 
 | Tarea | Orden | Trabajo ejecutable | Criterio de salida |
 |---|---:|---|---|
-| MCP-OCP-02 | 1 | Crear rama limpia desde HEAD de `main`; usar ramas históricas solo como fuentes de port selectivo. | Rama y diff revisables; matriz REUSE/ADAPT/REWRITE/DROP; SDK/RID fijados. |
-| MCP-OCP-05 | 2 | Corte vertical P004; desarrollo con fixtures y fuente sintética hasta EP PASS. | Texto íntegro P004 con DUG v388/pin/commit/blob/SHA-256 y rechazo fail-closed. Generalización posterior. |
+| MCP-OCP-02 | 1 · P0 CRÍTICO / BLOQUEO ACTUAL | Crear rama limpia desde HEAD de `main`; pin DUG v388; ramas históricas solo fuentes de port selectivo. | Rama/diff revisables; matriz REUSE/ADAPT/REWRITE/DROP; SDK/RID fijados. |
+| MCP-OCP-05 | 2 · P0 SIGUIENTE | Corte vertical P004; desarrollo con fixtures y fuente sintética hasta EP PASS. | Texto íntegro P004 con DUG v388/pin/commit/blob/SHA-256 y rechazo fail-closed. Generalización posterior. |
 | MCP-OCP-13 | 7 · paralelo · P1 secuencia | Construir panel WPF de solo lectura después de congelar schema; trabajar con fixtures mientras se generaliza Sink. | Panel abre en EP ACTIVE y distingue readiness; obligatorio en el ZIP 1.0.0, pero no bloquea el piloto P004. |
-| MCP-OCP-03 | 3 | Contrato y pruebas P004, iniciar en paralelo con fixtures sintéticos. | Recibo ligado a commit con casos positivos/negativos y suite posterior; no reutilizar PASS históricos. |
-| MCP-OCP-04 | 4 | Preparar harness/smoke STDIO/RDC; E2E IPZ después de instalar el piloto. | Smoke técnico y E2E IPZ diferenciados; JSON-RPC de consola no cuenta como aceptación IPZ. |
+| MCP-OCP-03 | 3 · P0 PARALELO | Contrato y pruebas P004 con fixtures sintéticos; fuente real tras EP PASS. | Recibo ligado a commit con casos positivos/negativos y suite posterior; no reutilizar PASS históricos. |
+| MCP-OCP-04 | 4 · P0 PARALELO | Preparar harness/smoke STDIO/RDC; E2E IPZ después de instalar el piloto. | Smoke técnico y E2E IPZ diferenciados; JSON-RPC de consola no cuenta como aceptación IPZ. |
 | MCP-OCP-10 | 8 | Congelar fuentes/pins DUG v388, commit/base, SDK/RID, schema panel, pruebas, manifiestos y limitaciones. | Recibo y hashes del servidor+panel, read-back. |
 | MCP-OCP-07 | 9 | Empaquetar el producto final servidor+panel una vez que pruebas y manifiesto pasen. | ZIP 1.0.0, SHA/manifest y extracción/read-back PASS. |
 | MCP-OCP-12 | 10 | Bootstrap del piloto y después instalación final en checkout Fila 4; datos fuera del checkout en root protegido. | Piloto/P004 y final 1.0.0 identificados separadamente; REGISTER interactivo solo con consentimiento. |
