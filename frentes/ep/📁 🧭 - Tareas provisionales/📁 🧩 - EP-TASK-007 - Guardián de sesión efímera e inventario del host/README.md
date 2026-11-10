@@ -120,3 +120,7 @@ El operador instruyó al frente EP a revisar y resolver sus tareas según la sec
 `HOST_INVENTORY=PARTIAL_READ_ONLY_VERIFIED` · `GPS=NOT_REQUESTED` · `IP=NOT_COLLECTED` · `LOCATION=UNCLASSIFIED`.
 
 No se instaló ni inició Guardian, no se creó lease/heartbeat/tarea programada de guardia, no se registraron triggers, no se montó/desmontó volumen y no se ejecutó crypto-erasure. Los contratos MCP-OCP-14/15/16 y las dependencias EP-TASK-002/003/004/006 siguen abiertos. El inventario no equivale a aceptación de seguridad ni a autorización de runtime.
+
+
+## Reporte individual obligatorio por tarea
+Al resolver esta tarea, el responsable debe agregar el informe individual en este mismo núcleo siguiendo [la plantilla común](../../../PLANTILLA-REPORTE-CIERRE-TAREA.md), completar todos sus campos y actualizar el índice padre solo después del read-back. No marcar como completada sin criterios PASS, evidencia ejecutada, integridad verificada y aceptación exigible. Si termina parcial/bloqueada, dejar igualmente el informe con bloqueantes, preocupaciones, riesgos y condición objetiva de desbloqueo. Informar al operador con enlace al informe. Esta instrucción no altera titularidad, generación, permisos ni controles.
