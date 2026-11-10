@@ -107,9 +107,9 @@ El release 1.0.0 no expone herramientas MCP de escritura ni botones de autorizac
 Próxima ejecución: recuperar o reconstruir el código con fuentes y pins actuales; implementar Sink; compilar, probar y empaquetar un artefacto nuevo. La instalación persistente y la provisión interactiva del operador son fases posteriores, no requisitos para el trabajo de código.
 
 
-## 9. Estado actual · 2026-11-09
+## 9. Snapshot histórico supersedido · 2026-11-09 (v386 / core v0.1.27 / backlog v0.8)
 
-DUG: Samantha v386/NX-386m (blob `22dca684830a36dff019b47811d9b800cc9bea0a`). Núcleo documental: MCP-OCP v0.1.27; backlog v0.8; release de software objetivo: 1.0.0 (servidor + panel). Sink local por stdio y panel: AUTORIZADOS, no implementados ni desplegados. Acceso GitHub privado: conector autenticado de la conversación; `gh auth login` local no es requisito para operaciones del repositorio mediante conector. Destino de trabajo e instalación: terminal Fila 4, última referencia técnica Device ID `d0bbb2a3-d7b4-45e1-8870-652c2c3844fc`, perfil `CENTRAL\\fila4`/SessionId 4; no revalidado en vivo. La ubicación física y las rutas efectivas se resuelven en preflight. MCP-NORMATIVO permanece DESACTIVADO.
+Este snapshot conserva el estado documental de 2026-11-09 y queda supersedido por §13, por el núcleo MCP-OCP v0.1.29, backlog v0.10 y DUG v388/NX-388m. En aquel momento Sink local por stdio y panel estaban autorizados, aún no implementados/desplegados. El conector GitHub de la conversación permitía operaciones del repositorio sin transferir autenticación al host. El destino funcional vigente es Fila 4; conforme a DUG ART-013 no se retienen aquí Device IDs, hostname, cuenta ni SessionIds. La ubicación física se revalida por EP y no se infiere. `MCP-NORMATIVO` permanece DESACTIVADO.
 
 
 ## 10. Instalación del release 1.0.0 dentro del checkout de Metodología · 2026-11-09
