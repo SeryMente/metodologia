@@ -11,6 +11,6 @@
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\\OcpMcp.Monitoring\\OcpMcp.Monitoring.csproj" />
+    <ProjectReference Include="../OcpMcp.Monitoring/OcpMcp.Monitoring.csproj" />
   </ItemGroup>
 </Project>
