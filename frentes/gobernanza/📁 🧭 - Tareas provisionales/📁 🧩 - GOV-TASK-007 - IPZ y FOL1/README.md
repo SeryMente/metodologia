@@ -100,3 +100,16 @@ La escritura en Instrucciones Personalizadas nativas, lectura de vuelta y conteo
 
 **Estado:** secuencia y criterio del piloto documentados; candidato exacto, conteo, escritura nativa, read-back y E2E siguen pendientes.
 
+
+
+---
+
+## Estado vigente de Fast Path IPZ para SINK:P004 · 2026-11-10
+
+El orden continúa siendo: (1) congelar el contrato de respuesta de MCP-OCP para `SINK:P004`; (2) preparar el candidato IPZ compacto con `GOW:ARR → DUG → MDP → SINK:P004`; (3) cotejar el límite de 1.500 caracteres y las salvaguardas de v0.7; (4) instalar/read-back el campo nativo como operación separada; (5) activar FOL1 solo después de que su propio gate quede satisfecho. No invertir el orden ni utilizar un candidato incompleto como reemplazo de v0.7.
+
+**Estado de dependencias:** la implementación P004 y la rama MCP-OCP-02 válida siguen pendientes; la rama candidata observada es antigua respecto de main y no cumple el rebaseline. EP-TASK-003 continúa `PARTIAL_FAIL`, por lo que la instalación/consulta con fuente privada en Fila 4 no puede comenzar. La preparación textual del candidato IPZ y sus pruebas de longitud/estructura pueden avanzar fuera del host; no modificar aún las Instrucciones Personalizadas nativas.
+
+**Aceptación:** GOV-TASK-003 solo cierra cuando la llamada real se origina en el contexto IPZ y la respuesta P004 aparece visible al modelo por RDC/STDIO con texto íntegro, pin y SHA-256. Una prueba manual de consola no es sustituto. FOL1 es independiente y no bloquea el piloto.
+
+`GOV-TASK-007=IPZ_CANDIDATE_PREP_PENDING_P004_CONTRACT` · `IPZ_NATIVE=NOT_VERIFIED` · `FOL1=PREPARADO_PENDIENTE_ACTIVACION_IPZ` · `MCP-NORMATIVO=DESACTIVADO`.
