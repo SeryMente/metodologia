@@ -6,7 +6,7 @@
 
 - [Persistencia DTC EP/MCP-OCP](OEP.md#95-persistencia-dtc-integrada-epmetodologia-y-continuidad-mcp-ocp--v0325--vcu-ep-v27): continuidad multiubicación EP/Metodología y estado operativo MCP-OCP, con autoridad técnica propia de MCP-OCP.
 
-- [OEP.md](OEP.md): único estado vivo del frente, v0.3.58; §122 conserva el preflight vivo parcial de Fila 4 y §123 registra el VHDX vacío sin cifrar, la discrepancia del punto de montaje y la pausa operativa. §121 fija el P0 del sprint Sink P004 y sus dependencias.
+- [OEP.md](OEP.md): único estado vivo del frente, v0.3.59; §122 conserva el preflight parcial, §123 registra el VHDX vacío/sin cifrar y la pausa de almacenamiento, y §124 formaliza el relevo de ejecución a EP para el Sprint SINK-P004. El control EP generación 3 no se modificó.
 - [Organización canónica del workspace](OEP.md#119-organización-canónica-del-workspace-local-y-persistencia-por-frente--v0354--2026-11-09): repositorios agrupados por frente, datos/temporales separados y secretos fuera del workspace.
 - [Objeto de coordinación DTC](entregas/COORDINACION-GOBERNANZA-EP-v0.1.md): único registro de comunicación Gobernanza ↔ EP; historial reconciliado en `main`.
 - [Control de responsabilidad EP](CONTROL-RESPONSABILIDAD.json): registro autoritativo de titularidad y generación; generación 3; titularidad transferida por TRANSFER_RESPONSIBILITY el 2026-11-09; un titular activo, evento C-EP-TRANSFER-RESPONSIBILITY-20261109-01.
@@ -45,7 +45,7 @@ El destino de trabajo e instalación del sprint MCP-OCP es **Fila 4**, alias fun
 - [EP-TASK-003 · workspace Fila 4](./📁%20🧭%20-%20Tareas%20provisionales/📁%20🧩%20-%20EP-TASK-003%20-%20Mapa%20integral%20de%20construcción%20EP/README.md)
 - [EP-TASK-005 · piloto SINK:P004 y aceptación MCP-OCP 1.0.0](./📁%20🧭%20-%20Tareas%20provisionales/📁%20🧩%20-%20EP-TASK-005%20-%20Instalación%20y%20aceptación%20de%20MCP-OCP%20local/README.md)
 
-OEP vigente: v0.3.58. PREFLIGHT_FILA4=PARTIAL_FAIL. El VHDX de 30 GiB quedó creado y montado como W: (última observación), GPT/NTFS, vacío y sin BitLocker; no se copió ni sustituyó Desktop/SeryMente. El diseño para conservar la ruta original sigue PROPOSED_NOT_ACCEPTED. Checkout protegido, dead-man si corresponde, instalación y SINK/IPZ E2E permanecen pendientes.
+OEP vigente: v0.3.59. PREFLIGHT_FILA4=PARTIAL_FAIL. EP reanuda la ejecución de EP-TASK-003/005 al recibir el encargo del operador; esta sesión queda como coordinadora interfrente. Control EP generación 3 sin cambios. El VHDX de 30 GiB quedó creado y montado como W: (última observación), GPT/NTFS, vacío y sin BitLocker; no se copió ni sustituyó Desktop/SeryMente. El diseño para conservar la ruta original sigue PROPOSED_NOT_ACCEPTED. Checkout protegido, dead-man si corresponde, instalación y SINK/IPZ E2E permanecen pendientes.
 
 - [OEP §122 · preflight vivo parcial Fila 4](OEP.md#122-preflight-vivo-parcial-de-fila-4--2026-11-10--ejecución-provisional-del-frente-ep)
 - [OEP §123 · VHDX de preparación, discrepancia del punto de montaje y pausa operativa](OEP.md#123-rectificación-del-estado-de-almacenamiento-fila-4-y-continuidad-del-sprint--2026-11-10)
