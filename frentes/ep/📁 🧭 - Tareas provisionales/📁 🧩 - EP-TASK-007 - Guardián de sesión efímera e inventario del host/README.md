@@ -124,3 +124,33 @@ No se instaló ni inició Guardian, no se creó lease/heartbeat/tarea programada
 
 ## Reporte individual obligatorio por tarea
 Al resolver esta tarea, el responsable debe agregar el informe individual en este mismo núcleo siguiendo [la plantilla común](../../../PLANTILLA-REPORTE-CIERRE-TAREA.md), completar todos sus campos y actualizar el índice padre solo después del read-back. No marcar como completada sin criterios PASS, evidencia ejecutada, integridad verificada y aceptación exigible. Si termina parcial/bloqueada, dejar igualmente el informe con bloqueantes, preocupaciones, riesgos y condición objetiva de desbloqueo. Informar al operador con enlace al informe. Esta instrucción no altera titularidad, generación, permisos ni controles.
+
+
+---
+
+### Informe de revalidación parcial read-only · EP-TASK-007 · 2026-11-10 · 15:49 America/Mexico_City
+
+- **Frente / responsable:** Entorno Persistente (EP).
+- **Estado anterior → resultante:** HOST_INVENTORY_PARTIAL_READ_ONLY_VERIFIED → mismo estado; se agrega evidencia de volúmenes/VHDX y árbol de trabajo.
+- **Corte de fuente:** SeryMente/metodologia/main; núcleos EP-TASK-002/003/007; OEP §125–§126; DUG Samantha v388 · NX-388m.
+- **Objetivo y resultado:** mantener inventario de host de solo lectura y sus dependencias, sin introducir aún Guardian, lease ni crypto-erasure. Resultado: se revalidaron de forma separada el árbol de trabajo (token propietario) y el estado de BitLocker/VHDX (contexto administrativo usado exclusivamente para lectura).
+- **Cómo se revalidó:** se ejecutaron dos enumeraciones recursivas idénticas del workspace y consultas de solo lectura de volúmenes, protectores y DiskImage. No se consultaron IP, GPS, ASN ni ubicación.
+- **Cambios realizados:** ninguno en el host. Se actualiza únicamente este registro documental.
+- **Validación y evidencia:**
+  | Criterio | Estado | Evidencia |
+  |---|---|---|
+  | Enumeración del workspace | PASS en dos lecturas | 3.127 archivos, 660 directorios, 179.138.515 bytes, 0 errores, 0 reparse points |
+  | C: | OBSERVADO / GATE FAIL | XtsAes128, 100 %, Protection Off, 0 protectores |
+  | W: | OBSERVADO / GATE FAIL | FullyDecrypted, método None, Protection Off, 0 protectores; NTFS |
+  | VHDX de preparación | OBSERVADO | Adjunto, 30 GiB; archivo en AppData 171.966.464 bytes |
+  | Equipo/SO | ÚLTIMO INVENTARIO VÁLIDO | Windows 11 Pro build 10.0.26200, HP ProDesk 400 G4 DM, Intel Core i7-8700T, Intel UHD 630; no se repitió inventario de hardware en este subciclo |
+  | Ubicación/IP/GPS | NOT_VERIFIED | Ubicación UNCLASSIFIED; datos de IP/GPS no recopilados |
+  | Guardian/lease/trigger/crypto-erasure | NOT_RUN | Ningún componente implementado ni activado |
+- **Read-back e integridad:** resultados devueltos por las consultas y dos recorridos del workspace; no se escribió evidencia local nueva ni se cambiaron las protecciones.
+- **Bloqueantes/dependencias:** EP-TASK-002/003/004/006 y contratos MCP-OCP-14/15/16. No instalar el Guardián antes de los gates y la aceptación de EP-TASK-003.
+- **Preocupaciones/riesgos y mitigaciones:** el volumen actual de workspace sigue desprotegido por BitLocker activo; no alterar el VHDX viejo ni los volúmenes existentes. No inferir ubicación física a partir de red. Las operaciones administrativas fueron de consulta.
+- **Pendientes/diferidos:** inventario extendido/GPS/IP cuando esté permitido y no ralentice el preflight; Guardian, lease renovable, triggers, cierre, crypto-erasure y recibo; pruebas de fallos/timeout y restauración.
+- **Rollback/recuperación:** no hubo mutaciones y por tanto no se requiere rollback del ciclo. Los mecanismos futuros siguen NO_VERIFICADOS.
+- **Aceptación:** PENDIENTE; inventario parcial no equivale a aceptación de seguridad.
+- **Siguiente acción:** permanecer bloqueado hasta B2 restore, EP-TASK-003 PASS, bóveda validada y contratos MCP-OCP-14/15/16.
+- **Conclusión:** PARCIAL. Se amplió la evidencia read-only; Guardian y borrado criptográfico continúan no implementados.
