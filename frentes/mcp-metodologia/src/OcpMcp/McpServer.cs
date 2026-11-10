@@ -10,6 +10,7 @@ public sealed record SinkSuccessEvent(
 public sealed class McpServer(IPrincipleSource source, Action<SinkSuccessEvent>? onSuccess = null)
 {
     private const string ProtocolVersion = "2025-11-25";
+    private static readonly JsonSerializerOptions JsonOptions = new(JsonSerializerDefaults.Web);
     private static readonly HashSet<string> SupportedProtocolVersions = new(StringComparer.Ordinal)
     {
         "2025-11-25", "2025-06-18", "2025-03-26", "2024-11-05"
@@ -169,7 +170,7 @@ public sealed class McpServer(IPrincipleSource source, Action<SinkSuccessEvent>?
 
         return new
         {
-            content = new[] { new { type = "text", text = JsonSerializer.Serialize(result) } },
+            content = new[] { new { type = "text", text = JsonSerializer.Serialize(result, JsonOptions) } },
             isError = false
         };
     }
