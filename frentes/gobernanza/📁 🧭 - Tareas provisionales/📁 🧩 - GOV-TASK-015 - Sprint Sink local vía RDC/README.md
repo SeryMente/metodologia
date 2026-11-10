@@ -415,3 +415,11 @@ El reintento fue aceptado por GitHub, pero volvió a terminar en `FAILURE`: job 
 - La revisión del watcher contra `PANEL-OBSERVABILIDAD.md` descarta el supuesto defecto: EP debe crear `monitor/session.json` antes de abrir el panel, así que `monitor/` existe cuando se llama `StartWatching()`. La secuencia aprobada permite la suscripción y no exige cambio.
 - Se registra como bloqueo de implementación MCP-OCP-13 la actualización de Sources/Operator/Readiness. Requiere contrato explícito y autorizado EP↔MCP para los estados no sensibles; EP sigue siendo dueño exclusivo de `session.json`. No se altera su contrato ni se afirma integración.
 - Estado de validación: 18 pruebas P004 + 23 monitor/readiness escritas / 0 ejecutadas; build, smoke STDIO, WPF, revisión visual e integración EP no verificados. PR #26 continúa draft y sin merge.
+
+
+### Reintento adicional tras recuperación publicada de GitHub · 2026-11-10
+
+- Fuente de contexto: página oficial [GitHub Status](https://kctbh9vrtdwd.statuspage.io/), incidente “Incident with Git Operations and Pull Requests”. GitHub informó “Actions is operating normally” a las 17:28 UTC y declaró resuelto el incidente a las 17:55 UTC; la página consultada posteriormente muestra Actions y Pull Requests operativos.
+- Tras esa recuperación publicada se reintentó una vez más el job del piloto. GitHub aceptó la operación, pero el nuevo job `130063978631` terminó en FAILURE con `steps=[]`, `logs_url=null` y cero artefactos. La descarga de logs devolvió `BlobNotFound`.
+- El reintento posterior a la recuperación no produjo evidencia de inicio del runner, setup-dotnet, build, tests, WPF o smoke. La coincidencia temporal con el incidente anterior no basta para asignarle la causa; causa raíz NO VERIFICADA.
+- Se cierra el ciclo de reintentos ciegos. Siguiente validación requiere un job que exponga pasos/logs/artefactos o ejecución en runner .NET 10.0.403 autorizado. No declarar PASS.
