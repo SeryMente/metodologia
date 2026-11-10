@@ -171,3 +171,32 @@ EP-TASK-005 permanece `pendiente`. La instalación del piloto está bloqueada po
 - **No bloquean el piloto:** panel MCP-OCP-13, generalización P001–P043, release 1.0.0, EP-TASK-004 GUI de Vault y EP-TASK-002/Backblaze, salvo dependencia material demostrada.
 
 La pausa de almacenamiento detiene únicamente operaciones locales de host; MCP-OCP puede seguir con código remoto no sensible y fixtures sintéticos. No se realizó instalación, extracción, bootstrap, importación, provisión ni E2E en este ciclo documental.
+
+
+---
+
+## Relevo de ejecución EP · piloto SINK-P004 · 2026-11-10
+
+**Responsable de ejecución:** frente EP. El operador ha liberado a EP para retomar sus tareas; la sesión centralizadora solo ordena el sprint y verifica dependencias. No se modifica el control EP generación 3.
+
+### Entradas obligatorias antes de instalar
+
+1. EP-TASK-003 `PASS`, incluyendo ruta de workspace preservada, volumen XTS-AES256/Protection On/100 %, protector recuperable/read-back, checkout completo/sincronizado, root de datos protegido y dead-man PASS únicamente si la ubicación física confirmada es distinta de CECEQ.
+2. Artefacto P004 de MCP-OCP-05, manifest y SHA-256 cotejados; pin DUG v388/NX-388m; SDK/RID y commit del código declarados.
+3. MCP-OCP-03 pruebas contractuales mínimas PASS y MCP-OCP-04 smoke STDIO/RDC PASS. El E2E desde IPZ aún es aceptación conjunta posterior.
+
+### Secuencia de ejecución
+
+- Recibir paquete sin reconstruirlo ni cambiarlo silenciosamente; verificar manifest, hashes, fuente y versión.
+- Extraer el piloto solo en `frentes/mcp-metodologia/instalacion-local/piloto-sink/` dentro del checkout completo y protegido.
+- Configurar datos SQLite/DPAPI/fuentes/logs/backups en `%USERPROFILE%\Desktop\SeryMente\Datos\Metodologia\MCP-OCP\`, fuera del checkout y dentro del volumen protegido.
+- Importar exclusivamente DUG v388 con pins exactos y verificar `GOW:ARR`, catálogo y `SINK:P004`.
+- Ejecutar readiness, initialize/tools/list/tools/call, cierre y reinicio limpios en STDIO/RDC; separar proceso iniciado de protocolo, fuente, integridad y readiness.
+- `provision-operator` / `REGISTER <SID>` es un paso separado, interactivo y con consentimiento/presencia local; no se automatiza ni se transmite SID/secretos por chat.
+- Emitir recibo de instalación con hash, rutas, versiones, resultado y rollback. No declarar aceptación E2E IPZ: esa salida corresponde a GOV-TASK-003 junto con MCP-OCP-04.
+
+### No bloqueadores
+
+Panel MCP-OCP-13, generalización P001–P043, release final 1.0.0, FOL1 y EP-TASK-004 no bloquean la instalación del piloto P004 salvo dependencia técnica demostrada. El panel sí es obligatorio para el paquete 1.0.0.
+
+`EP_TASK_005=WAIT_EP_TASK_003_PASS_AND_MCP_P004_PACKAGE` · `EP_EXECUTION_OWNER=EP` · `CENTRAL_COORDINATION=GOV-TASK-015` · `EP_ACKNOWLEDGEMENT=PENDING`.
