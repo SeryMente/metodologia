@@ -2311,3 +2311,53 @@ El read-back de registros saneados del equipo `PC10RCIF4EI4`, bajo `CENTRAL\fila
 Se actualizan los núcleos EP-TASK-002, EP-TASK-004 y EP-TASK-006, más el índice provisional. Los estados continúan `en_curso`; no se crean tareas, OCP, folios ni titulares nuevos. El ciphertext actualizado mide 2.156 bytes y su SHA-256 es `F41FE765BCD30787C880C9105E3F6B3C4F6D00D67BA7AEAF70E55F3E7A96514C`. La evidencia detallada y la lectura de vuelta de los documentos quedan referidas en los asientos de cada tarea.
 
 **Pendiente técnico principal:** autenticar contra la cuenta EP después de la migración y verificar objeto remoto de respaldo mediante descarga y SHA-256; no declarar persistencia hasta ese read-back.
+
+
+---
+
+## EP · registro de continuidad del sprint SINK:P004 y pausa de almacenamiento Fila 4 · 2026-11-10
+
+### Apertura DTC y cursor
+
+**Fuente/cursor leído:** este mismo objeto en `main`, blob previo `a4bba6744962f626752dbc50ef117e5009e0d459`. Última comunicación disponible en el cursor: asiento EP de 2026-11-10 10:12 America/Mexico_City. No aparece un mensaje nuevo de Gobernanza posterior a ese asiento: **SIN_NOVEDAD**.
+
+**Nota de secuencia:** la consulta íntegra de este objeto se completó después de comenzar la reconciliación documental de este ciclo; por ello la anotación de apertura/respuesta queda registrada ex post. No se declara cumplida en tiempo la regla «respuesta inicial antes del trabajo». Para el próximo ciclo, este objeto deberá leerse primero y la respuesta inicial se registrará antes de cualquier otra operación.
+
+### Delta procesado
+
+1. Se reacquirió DUG Samantha v388/NX-388m desde `main`, blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`. Se consultaron §ARR y los cinco principios CNP relevantes, junto con ART-025/ART-027. No se modificó DUG.
+2. Se verificó que la presencia física del operador frente a Fila 4 ya había sido reportada; CECEQ no fue confirmado. La ubicación permanece `UNCLASSIFIED`; no inferirla del dominio de red.
+3. Se cotejó el último estado del VHDX: 30 GiB máximo, GPT/NTFS, vacío, último acceso observado W:, BitLocker desactivado y sin protector/recovery. El origen Desktop/SeryMente no se copió ni sustituyó. El usuario señaló que el destino esperado era el directorio existente, no una unidad visible independiente. Se mantiene `STORAGE_DESIGN=PROPOSED_NOT_ACCEPTED` y pausa sobre más operaciones del host.
+4. Se comprobó la referencia `feat/mcp-ocp-sink-p004-pilot-20261110`: punta `1676901cc09af6fcec4d052800b031e4c2f1ab40`. En la comparación con `main` observado en `564070216482f26993044b54d94db3e2d4adc802`, main estaba 45 commits por delante y la referencia no tenía commits exclusivos. Los documentos de esa referencia siguen con pins v386/core v0.1.27; no cumple MCP-OCP-02.
+5. Se actualizaron y leyeron de vuelta OEP, EP-TASK-003, EP-TASK-005, índice EP, README EP, GOV-TASK-015 y el índice provisional de Gobernanza.
+
+### Tareas y estado al cierre
+
+- **EP-TASK-003:** `en_curso / P0 / PREFLIGHT_FILA4=PARTIAL_FAIL`. VHDX preparado pero sin cifrar ni datos; ruta de almacenamiento pendiente de aceptación; checkout parcial sin `.git`; ubicación sin clasificar. El origen se preserva.
+- **EP-TASK-005:** `pendiente / P0`. No instalar piloto hasta EP-TASK-003 PASS y paquete P004 de MCP-OCP con manifest/SHA y pruebas mínimas.
+- **MCP-OCP-02:** sigue abierto. La rama candidata existente no es una base limpia desde el main vigente. Crear/reconciliar desde main actual.
+- **MCP-OCP-05:** corte P004 pendiente; fixtures no sensibles pueden avanzar.
+- **MCP-OCP-03/04:** pruebas sintéticas y harness pueden avanzar en paralelo.
+- **GOV-TASK-007:** puede preparar candidato IPZ, pero no se afirma escritura/read-back nativo.
+- **GOV-TASK-003:** E2E no aceptado; requiere respuesta P004 visible al modelo desde el contexto IPZ real.
+- **Panel MCP-OCP-13:** P1 de secuencia, obligatorio para 1.0.0, no bloquea P004.
+- `FOL1=PREPARADO_PENDIENTE_ACTIVACION_IPZ`; no bloquea P004.
+- `MCP-NORMATIVO=DESACTIVADO`.
+
+### Persistencia documental y read-back
+
+| Artefacto | Commit | Blob leído de vuelta |
+|---|---|---|
+| OEP v0.3.58 §123 | `07fd0f5360edf09a3af1cb09720afdeaca7327ba` | `795fce5bfe6d1794441829ef5593516d58c9b8c0` |
+| EP-TASK-003 | `b1fbf4ecbfc9d5855fb207c3eeb9080ff2f9b6b0` | `cf7e070cff20b39da67fdf41e6a2ab89bea12df9` |
+| EP-TASK-005 | `48cf2d516282b6145a96b3ccd6bfa06a4afb796d` | `9d568c9f526100ff7596c58669ce02df0605ccbd` |
+| Índice EP | `5d08675d0744923e8fc596b3156056e83b769db2` | `0a92666d96dfb1a2192f19478966bc0585a717c2` |
+| README EP | `553e3fb7b01abe972a52ac75931fd8aba50ca581` | `5c5c0ba5adbb47d40f5de79c5b91b21a7b2100b3` |
+| Índice Gobernanza | `564070216482f26993044b54d94db3e2d4adc802` | `df206f96734e50d8555ef6c307da4f683891f326` |
+| GOV-TASK-015 | `1c26062e772eb5458264441210bc26d8a98937df` | `8a5f83476aa33634483e9dccd03bde3eb470b476` |
+
+Cada blob fue cotejado con lectura exacta posterior a su escritura. Estos son Git Blob SHA; no son SHA-256 de una imagen/paquete de software. No se modificó el control EP generación 3 ni se cambió la titularidad. No se ejecutó ninguna operación nueva en Fila 4 durante este ciclo de documentación.
+
+### Próxima acción
+
+Mantener la ruta crítica sin tiempo muerto: MCP-OCP-02 debe partir del main vigente; MCP-OCP-03/04 y la vertical P004 con fixtures avanzan en paralelo. EP espera únicamente la resolución explícita del diseño de almacenamiento para conservar la ruta Desktop/SeryMente y después completa el gate local. No se eleva este ciclo documental a PASS técnico ni a aceptación IPZ.
