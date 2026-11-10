@@ -316,11 +316,11 @@ Gobernanza publicó la rectificación de ART-027 mediante el evento `C-GOBERNANZ
 
 ### Bloqueador P0 actual
 
-**MCP-OCP-02 es la primera acción técnica crítica:** crear rama limpia desde el HEAD actual de `main` y reconciliar código/SDK/RID con el núcleo MCP-OCP v0.1.28 y DUG Samantha v388/NX-388m. El contrato ART-027 ya está actualizado; no compilar ni aceptar el piloto con pins v386 ni portar ramas históricas completas. La rama y el código no sensible no dependen del preflight EP.
+**MCP-OCP-02 ya fue ejecutado sobre el HEAD actual:** rama `feat/mcp-ocp-p004-rebaseline-20261110-cycle02`, creada desde `84cc9ffc1a2aa27c622c7e5de147d7460f3b5ecd`. La siguiente prioridad técnica es build, 13 pruebas y smoke P004 con logs observables; no declarar piloto funcional hasta PASS.
 
 ### Camino crítico, precedencias y salida
 
-1. **MCP-OCP-02 (P0):** HEAD actual de main → rama limpia → mapa REUSE/ADAPT/REWRITE/DROP → SDK/RID fijados. Salida: rama/diff revisables y source pins v388.
+1. **MCP-OCP-02 (P0): EJECUTADO / READ-BACK EN RAMA CICLO02.** Rama creada desde main SHA `84cc9ffc...`, pin v388, mapa de portabilidad y SDK/RID fijados. No merge; build y tests pendientes.
 2. **MCP-OCP-05 (P0):** sobre esa rama, corte `GOW:ARR → DUG → SINK:P004`. Desarrollo con fixtures sintéticos en paralelo; respuesta real exige fuente importada y pins cotejados.
 3. **MCP-OCP-03 (P0, paralelo):** contrato, positivos/negativos, integridad y fail-closed con fixtures; repetir contra fuente real después del gate EP.
 4. **MCP-OCP-04 (P0):** harness y smoke STDIO/RDC; la E2E IPZ exige piloto instalado y respuesta visible al modelo. JSON-RPC de consola no cumple E2E.
@@ -336,4 +336,29 @@ EP-TASK-004 GUI de bóveda y EP-TASK-002/Backblaze no bloquean P004 ni el build 
 
 ### Estado de evidencia
 
-**Documentación:** DUG v388, tareas Gobernanza, núcleo/backlog MCP-OCP y OEP/tareas EP rebaselined y leídos de vuelta. **No verificado/pendiente:** rama nueva, código P004, pruebas nuevas, preflight Fila 4, importación, paquete piloto, instalación, IPZ nativa, E2E y panel. No convertir el cierre documental en PASS de producto.
+**Última evidencia:** rama MCP-OCP ciclo02 creada desde el main vigente; candidato P004, pruebas y CI están escritos, pero no hay PASS de compilación/tests/smoke. EP publicó un preflight parcial de Fila 4 con resultado FAIL; no hay instalación/importación. Pendiente: CI observable, correcciones, gates EP, paquete, instalación, IPZ nativa, E2E y panel. No convertir código escrito en PASS.
+## Registro de ejecución MCP-OCP · ciclo02 · 2026-11-10
+
+**Estado de sprint:** MCP-OCP-02 ejecutado y read-back verificado. MCP-OCP-05 tiene implementación candidata P004 escrita, no compilada. MCP-OCP-03 tiene 13 escenarios escritos/0 ejecutados. MCP-OCP-04 tiene harness/CI escritos, smoke pendiente y E2E IPZ pendiente.
+
+### Base de trabajo
+- Main actual al crear la rama: `84cc9ffc1a2aa27c622c7e5de147d7460f3b5ecd`.
+- Rama: `feat/mcp-ocp-p004-rebaseline-20261110-cycle02`.
+- Rama creada directamente desde ese SHA; rebaseline limpio.
+- DUG Samantha v388/NX-388m: commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`, blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`; blob cotejado en commit pinneado y main actual.
+- MCP core v0.1.28, backlog LIST v0.9, control generación 5. Sink STDIO y panel WPF dentro del alcance AUTHORIZED.
+
+### Implementación y validación
+- REWRITE: servidor/protocolo/lector/pins y pruebas del corte actual.
+- DROP para Hito A: SQLite, vault, crypto, backup, importador persistente, operaciones y artefactos históricos.
+- SDK 10.0.403, `net10.0`, 0 dependencias NuGet externas; piloto framework-dependent sin RID; publicación final `win-x64` self-contained.
+- Build/tests/smoke aún sin ejecución verificable. PR #25 corresponde a la rama anterior basada en main SHA `06467fb...` y quedó supersedido porque main avanzó con evidencia EP.
+
+### EP — dependencia externa observada (sin cambiar su objeto)
+- Main añadió `EP-FILA4-PREFLIGHT-PARCIAL-20261110.json`, commit `84cc9ffc1a2aa27c622c7e5de147d7460f3b5ecd`, blob `8ebf0c2b54efc6d3fe597adfe0f9358e65e6acbe`.
+- Resultado: `PREFLIGHT_PARTIAL_FAIL`. C: FullyEncrypted/100 %, pero XTS-AES128, Protection Off y sin protectores; ubicación física UNCLASSIFIED; checkout de Metodología parcial, sin `.git`. El equipo/perfil no está listo para instalación ni importación.
+- EP-TASK-003 conserva estado `en_curso`; EP-TASK-005 conserva `pendiente`. MCP-OCP no actualiza sus objetos ni intenta resolver su gate.
+- No se tocó Fila 4 desde MCP-OCP; sin DB, DPAPI, fuente privada, REGISTER ni runtime persistente.
+
+### Siguiente acción de MCP-OCP
+Abrir PR draft ciclo02; recuperar ejecución CI con steps/logs/artifacts; corregir hasta build/tests/smoke PASS. Después congelar respuesta P004. La E2E real exige gates EP y respuesta visible al modelo desde el contexto IPZ. No mergear main.
