@@ -179,7 +179,7 @@ Una vez configuradas y aceptadas las tareas del frente MCP-Jules, se prepara una
 - Esta lista se revisa al inicio/cierre de cada ciclo y permanece PROVISIONAL hasta que el núcleo y la aceptación del producto reflejen los resultados comprobados.
 
 
-## Alineación vigente · 2026-11-09
+## Alineación de origen · 2026-11-09 · HISTÓRICA, SUPERSIDIDA POR LA RECTIFICACIÓN DEL 2026-11-10
 
 DUG vigente: Samantha v386 · NX-386m; main base `82843bca9493a522405d840393c229d2af363342`; blob `22dca684830a36dff019b47811d9b800cc9bea0a`. El operador autorizó directamente Sink local por stdio, pruebas, build, paquete, manifiesto y documentación dentro de este OCP. No se necesita aprobación del titular anterior ni generación de control. GitHub privado se consulta mediante el conector autenticado; `gh auth login` local no es requisito. La instalación persistente EP y sus operaciones de custodia permanecen separadas. MCP-NORMATIVO sigue DESACTIVADO.
 
@@ -191,19 +191,19 @@ DUG vigente: Samantha v386 · NX-386m; main base `82843bca9493a522405d840393c229
 - **Estado de implementación:** el código candidato ofrece SourceImporter y PrincipleCatalog para IDs/MDP; Sink de texto individual no está desplegado en main. PrincipleCatalog reconoce 43 IDs/MDP pero deja metadata applicability/activation/dependencies incompleta; no inferirla.
 - **Root de datos:** Program.cs usa `%LOCALAPPDATA%\\SeryMente\\OCP MCP` por defecto. Antes del handoff se debe configurar un root de datos/backup dentro del volumen cifrado o demostrar que el volumen del perfil está protegido.
 - **Autenticación:** el conector GitHub de ChatGPT está autenticado para operaciones de repositorio desde esta conversación. La autenticación GitHub local del perfil Windows no se hereda; se valida por separado si build/import local lo necesita.
-- **Dependencias EP:** EP-TASK-003 para workspace protegido y dead-man si LOC-OTHER; EP-TASK-005 para instalación/aceptación. EP-TASK-004 no bloquea compilar Sink ni el trust root DPAPI del servidor.
+- **Dependencias EP:** EP-TASK-003 para workspace protegido y dead-man según ubicación física verificada; EP-TASK-005 para piloto, instalación y aceptación. EP-TASK-004 no bloquea compilar Sink ni el trust root DPAPI del servidor.
 
 
-## Destino EP designado · 2026-11-09
+## Designación inicial de destino EP · 2026-11-09 · SUPERSEDIDA POR FILA 4
 
-El operador designó el perfil/usuario Windows `PC 7`, asociado a un dispositivo RDC, con ubicación `LOC-OTHER`. Esta designación sustituye la selección pendiente del host/perfil. El hostname/ID técnico del dispositivo, sesión, usuario/SID efectivos, rutas, permisos y almacenamiento deberán verificarse en vivo por EP.
+La designación original de PC 7/LOC-OTHER quedó supersedida el 2026-11-10 por Fila 4. Se preserva solo como antecedente. El destino vigente, identidad técnica última conocida y ubicación física pendiente se registran en la rectificación de 2026-11-10 al final de este backlog.
 
-Para MCP-OCP, este dato **no bloquea** reconciliar fuentes, implementar Sink, ejecutar pruebas ni generar el paquete. Sí bloquea handoff/bootstrap e instalación persistente hasta que EP complete EP-TASK-003: workspace/DB/runtime/respaldos protegidos y dead-man LOC-OTHER implementado, probado y leído de vuelta en el destino. El estado de cifrado observado previamente en otro perfil no se hereda.
+Para MCP-OCP, el preflight del destino actual **no bloquea** la reconciliación ni el desarrollo remoto de código no sensible. El uso de fuentes privadas y cualquier instalación/bootstrap sí esperan checkout/root protegidos en Fila 4 y el régimen de protección/dead-man que determine su ubicación física. No heredar estados de otro perfil.
 
 
 ## Contrato de release 1.0.0 e instalación local dentro de Metodología · 2026-11-09
 
-**Objetivo de producto:** MCP-OCP 1.0.0 funcional, reconstruible e instalado en checkout local. La versión de este backlog es 0.6; la versión documental del núcleo es 0.1.25; no son el número del producto.
+**Objetivo de producto:** MCP-OCP 1.0.0 funcional, reconstruible e instalado en checkout local. La versión de este backlog es 0.8; la versión documental del núcleo es 0.1.27; no son el número del producto.
 
 **Instalación obligatoria:** checkout `SeryMente/Repositorios/Metodologia/metodologia/`, carpeta `frentes/mcp-metodologia/instalacion-local/`. Instalar allí binario, runtime, launcher, configuración de ejemplo y manifiesto. La carpeta generada se excluye de Git y no contiene datos sensibles. SQLite, claves DPAPI, fuentes sensibles, logs y backups quedan fuera del checkout en root protegido que EP verifica.
 
@@ -211,9 +211,9 @@ Para MCP-OCP, este dato **no bloquea** reconciliar fuentes, implementar Sink, ej
 
 **Ejecutable vs. instalación:** MCP-OCP entrega código, build y paquete; MCP-OCP-12 materializa la copia en la ruta local y ejecuta bootstrap solo tras gates; MCP-OCP-08/EP-TASK-005 acepta host e instalación EP. No declarar 1.0.0 aceptado con solo build o smoke de root temporal.
 
-**Secuencia crítica:** 02 → 05 vertical → 03/04 pruebas/STDIO → 05 generalización 43 → 10 manifiesto → 07 paquete → 12 instalación local/bootstrapping → 08 handoff EP → GOV-003 E2E. GOV-001/008/009 definen/ejecutan validación en paralelo. EP-003 resuelve checkout y dead-man en paralelo; EP-005 instala después del paquete verificado.
+**Secuencia crítica vigente:** 02 → 05 corte P004 → 03/04 contrato y E2E IPZ/RDC/STDIO del piloto → GOV-007/003 aceptan el uso IPZ → 05 generalización 43 → 13 panel en paralelo (obligatorio para 1.0.0, no bloquea P004) → 10/07 manifest y paquete → 12/08 instalación/handoff → aceptación final. Gobernanza prepara en paralelo; EP prepara Fila 4 sin detener el desarrollo remoto.
 
-**Gates bloqueantes únicamente del tramo instalado:** checkout PC 7 íntegro y sincronizado; protección BitLocker realmente activa; dead-man LOC-OTHER probado; root de datos fuera de checkout y protegido; consentimiento del operador para `REGISTER <SID>`. Estos gates no detienen reconciliación, código, pruebas y paquete desde GitHub.
+**Gates bloqueantes únicamente del tramo local con fuentes y runtime:** checkout Fila 4 íntegro/sincronizado; volumen de trabajo protegido XTS-AES256/Protection On/100 %; root de datos fuera del checkout y protegido; ubicación física verificada y dead-man PASS si está fuera de CECEQ; consentimiento del operador para `REGISTER <SID>`. Estos gates no detienen reconciliación ni desarrollo remoto no sensible.
 
 `MCP-NORMATIVO=DESACTIVADO`; no modificar DUG/IPZ, Khora, secretos ni servicios externos. El código no añade herramientas MCP de escritura en este release.
 
