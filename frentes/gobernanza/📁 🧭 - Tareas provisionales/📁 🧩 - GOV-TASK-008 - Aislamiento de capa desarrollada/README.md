@@ -122,9 +122,25 @@ El primer caso de aceptación del contrato de dos capas será `GOW:ARR → DUG �
 
 La primera E2E debe probar el recorrido que usará el modelo: IPZ → RDC autorizado → MCP-OCP por STDIO → respuesta visible con pin/hash. Un smoke JSON-RPC de consola no demuestra que IPZ pueda invocar Sink.
 
-**Pin DUG vigente para implementación/aceptación:** Samantha v388/NX-388m; commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`; blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`. En `main` el núcleo MCP-OCP está rebaselined a v0.1.28 y el backlog a v0.9, ambos referidos a DUG v388. La rama candidata `feat/mcp-ocp-sink-p004-pilot-20261110` sigue anclada al commit antiguo `1676901cc09af6fcec4d052800b031e4c2f1ab40`; en el cotejo de 2026-11-10 no tenía commits exclusivos y sus documentos aún referían v386/core v0.1.27. Por tanto MCP-OCP-02 sigue abierto: el frente MCP-OCP debe producir una rama válida desde el `main` vigente y reconciliarla en su propio OCP antes del build. Gobernanza no modifica código ni backlog MCP.
+**Pin DUG vigente para implementación/aceptación:** Samantha v388/NX-388m; commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`; blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`. En `main` el núcleo MCP-OCP está rebaselined a v0.1.29 y el backlog a v0.10, ambos referidos a DUG v388. La rama candidata `feat/mcp-ocp-sink-p004-pilot-20261110` sigue anclada al commit antiguo `1676901cc09af6fcec4d052800b031e4c2f1ab40`; no satisface el requisito de partir del main vigente y conserva documentación anterior. Por tanto MCP-OCP-02 sigue abierto: el frente MCP-OCP debe producir una rama válida desde el `main` vigente y reconciliarla en su propio OCP antes del build. Gobernanza no modifica código ni backlog MCP.
 
 **Destino del sprint:** alias funcional Fila 4, designado por el operador; PC 7 queda supersedido. Conforme a ART-013, este registro no conserva Device IDs ni SessionIds efímeros de RDC. El preflight vigente se consulta en EP-TASK-003 y OEP §§122–123: el gate sigue PARTIAL_FAIL y la ubicación física continúa sin clasificar. EP determina el dead-man solo tras conocer la ubicación real. La importación privada y el piloto esperan checkout/root protegidos.
 
 **Estado:** contrato de piloto documentado; implementación, importación, respuesta real, hashes cotejados en runtime y E2E siguen pendientes. MCP-NORMATIVO permanece DESACTIVADO.
 
+
+
+## Reconciliación del Sprint SINK-P004 · 2026-11-10
+
+**Objetivo:** validar que el contrato de dos capas funciona en la primera prueba vertical `GOW:ARR → DUG v388 → SINK:P004`, sin esperar a la generalización P001–P043 ni al panel.
+
+- **MCP-OCP-02:** P0 abierto; rama limpia desde main y mapa REUSE/ADAPT/REWRITE/DROP.
+- **MCP-OCP-05:** P0; implementación de respuesta P004 íntegra, con texto, identidad y hashes, primero con fixtures sintéticos.
+- **MCP-OCP-03/04:** P0 paralelo; contrato y negativos sintéticos, harness/smoke STDIO/RDC. El smoke no equivale a E2E desde IPZ.
+- **EP-TASK-003:** EP retoma ejecución del preflight Fila 4. El gate sigue PARTIAL_FAIL; la propuesta de almacenamiento que conserva `%USERPROFILE%\Desktop\SeryMente` sigue sin aceptación. No importar fuentes privadas ni instalar antes de PASS.
+- **EP-TASK-005:** instalación del piloto por EP después de EP-TASK-003 PASS y paquete P004 probado/manifestado.
+- **GOV-TASK-007/003:** preparar IPZ compacta después de congelar contrato; aceptar solo respuesta P004 visible al modelo desde IPZ real → RDC → STDIO.
+
+**Reparto de funciones:** Gobernanza valida y acepta; MCP-OCP implementa/paquetea; EP ejecuta host/instalación. GOV-TASK-015 centraliza. `MCP-NORMATIVO=DESACTIVADO`; FOL1 no bloquea P004; panel WPF obligatorio solo para 1.0.0.
+
+`SINK_P004=NOT_IMPLEMENTED_NOT_ACCEPTED` · `MCP_OCP_02=OPEN` · `EP_TASK_003=PARTIAL_FAIL` · `EP_TASK_005=PENDING` · `GOV_E2E=PENDING`.
