@@ -78,3 +78,23 @@ La instalación de las Instrucciones Personalizadas nativas y su read-back son u
 ## Separación de la aceptación del servidor MCP-OCP · 2026-11-09
 
 La instalación local del servidor MCP-OCP es entregable de EP-TASK-005 y se ubica en `frentes/mcp-metodologia/instalacion-local/` dentro del checkout local de Metodología. **No depende de instalar o actualizar la IPZ nativa ni de activar FOL1.** GOV-TASK-007 conserva su propio orden: reconciliar v0.7 y salvaguardas, medir menos de 1.500 caracteres, instalar el campo nativo cuando proceda y verificar read-back; solo después se evalúa el gate FOL1. La ausencia de FOL1 no bloquea implementación, build, paquete ni instalación local del servidor. No asignar folios globales antes del corte autorizado.
+
+---
+
+## Fast path IPZ para piloto SINK:P004 · 2026-11-10
+
+Para habilitar el uso práctico de Sink cuanto antes, esta tarea prepara el candidato IPZ compacto **después de congelar el contrato de respuesta SINK:P004** y coordina su prueba con MCP-OCP-04/GOV-TASK-003.
+
+Secuencia de contenido:
+1. `GOW:ARR` — adquirir §ARR y vocabulario operativo.
+2. `DUG` — verificar Samantha v386/NX-386m y procedencia de la fuente canónica.
+3. Inventario de 43 IDs/MDP; determinar pertinencia sin tratar MDP como texto normativo.
+4. Cuando sea pertinente, consulta obligatoria `SINK:Pxxx`; el primer piloto usa P004.
+5. Preservar admisión fail-closed, asignación de frente, titularidad/exclusividad, distinciones de estado y las demás salvaguardas de v0.7.
+
+El candidato debe quedar por debajo de 1.500 caracteres medidos en las unidades nativas requeridas (UTF-16 y puntos de código), cotejado literalmente, sin copiar los textos desarrollados ni convertirse en fuente normativa paralela. El piloto E2E exige demostrar IPZ → RDC autorizado → MCP-OCP STDIO → respuesta visible al modelo con pin/hash. Un JSON-RPC desde consola solo demuestra transporte y no valida el uso desde IPZ.
+
+La escritura en Instrucciones Personalizadas nativas, lectura de vuelta y conteo sobre el campo realmente instalado son acciones separadas. **No se declara IPZ nativo modificado/instalado en esta actualización.** FOL1 sigue `PREPARADO_PENDIENTE_ACTIVACION_IPZ`; no bloquea SINK:P004 y no se activa hasta superar su propio gate. No inventar folios.
+
+**Estado:** secuencia y criterio del piloto documentados; candidato exacto, conteo, escritura nativa, read-back y E2E siguen pendientes.
+
