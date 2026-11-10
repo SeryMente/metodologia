@@ -34,7 +34,18 @@ public sealed class MonitorReader
 
         string statePath = Path.Combine(monitorDirectory, "state.json");
         if (!File.Exists(statePath))
-            return new(true, true, true, "Sesión activa · esperando servidor MCP", session, false, "Servidor no iniciado", null, ReadEvents(monitorDirectory), null);
+        {
+            try
+            {
+                return new(true, true, true, "Sesión activa · esperando servidor MCP", session,
+                    false, "Servidor no iniciado", null, ReadEvents(monitorDirectory), null);
+            }
+            catch
+            {
+                return new(true, true, true, "Sesión activa · proyección no disponible", session,
+                    false, "Estado no disponible / requiere revisión", null, Array.Empty<MonitorEvent>(), "EVENTS_JSON_INVALID");
+            }
+        }
 
         MonitorServerSnapshot? state;
         try { state = ReadState(statePath); }
@@ -103,10 +114,14 @@ public sealed class MonitorReader
                 RequiredInt(activity, "errorCount")));
     }
 
+    private const long MaxEventsBytes = 256 * 1024;
+
     private static IReadOnlyList<MonitorEvent> ReadEvents(string directory)
     {
         string path = Path.Combine(directory, "events.jsonl");
         if (!File.Exists(path)) return Array.Empty<MonitorEvent>();
+        if (new FileInfo(path).Length > MaxEventsBytes)
+            throw new InvalidDataException("EVENTS_PROJECTION_TOO_LARGE");
 
         var events = new List<MonitorEvent>();
         foreach (string line in File.ReadLines(path).TakeLast(50))
