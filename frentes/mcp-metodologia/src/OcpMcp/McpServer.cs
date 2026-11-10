@@ -117,6 +117,7 @@ public sealed class McpServer(IPrincipleSource source, Action<SinkSuccessEvent>?
             throw new RpcException(-32602, "Unknown tool");
         if (!p.TryGetProperty("arguments", out JsonElement args) ||
             args.ValueKind != JsonValueKind.Object ||
+            args.EnumerateObject().Count() != 1 ||
             !args.TryGetProperty("principle_id", out JsonElement idElement) ||
             idElement.ValueKind != JsonValueKind.String)
             return ToolError("INVALID_PRINCIPLE_ID");
