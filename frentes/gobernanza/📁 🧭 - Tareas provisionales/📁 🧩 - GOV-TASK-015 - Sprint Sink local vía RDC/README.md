@@ -6,7 +6,7 @@
 **Responsabilidad:** frente Gobernanza. Las tareas técnicas conservan sus OCP y fuentes.
 **Fuente normativa:** Samantha v388 · NX-388m · Metacanon 1.29 · GOW 2.18.
 **DUG:** Samantha v388/NX-388m; commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`; archivo blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`.
-**MCP-OCP:** núcleo v0.1.30 · commit `4610a81f6522142859ecf7345bc3836763434bd6` · blob `4eea02bcc6dc086af7177ba8791b7e51fb205a2e`; backlog v0.11 · commit `7a8d803f2764f0e9e0e96b98c12fa6a198b5dc9c` · blob `3f2d07e4bf188238d185169bcb3dd61409486b1b`.
+**MCP-OCP:** núcleo v0.1.30 · commit `4610a81f6522142859ecf7345bc3836763434bd6` · blob `4eea02bcc6dc086af7177ba8791b7e51fb205a2e`; backlog v0.11 · commit `41264ce7bae02d03858f8ddf7ffe9e338cf302f9` · blob `cd37932c0046c6769d443e367e786e468a0ba56e`.
 **EP:** OEP v0.3.59 · commit `a8882deba14fb38b2dcdb59cbc313b388d971dd9` · blob `b29e806d2d9473f3828972a0c67d09bf7dcafc4e`. EP-TASK-003=`PARTIAL_FAIL`; EP-TASK-005=`PENDING`; OEP §124 prepara reanudación por EP, sin alterar control generación 3.
 **Autorización:** la implementación Sink local por STDIO, pruebas, build/paquete y panel siguen dentro del control MCP-OCP generación 5. La coordinación no amplía permisos de host EP ni altera los controles MCP-OCP/EP/Gobernanza.
 **Destino EP designado:** alias funcional **Fila 4**, único destino RDC designado por el operador; PC 7 queda supersedido. No se conservan Device IDs, hostnames, cuentas de Windows, rutas concretas de perfil ni identificadores de sesión efímeros conforme a DUG v388/ART-013. El operador reportó estar físicamente frente a Fila 4; CECEQ no fue confirmado y la ubicación física continúa `UNCLASSIFIED`. No inferir CECEQ/LOC-OTHER; el dead-man solo aplica si se confirma ubicación distinta de CECEQ.
@@ -379,7 +379,7 @@ Esta reconciliación es documental y de referencias. No modifica el repositorio 
 ### Baseline canónico y situación actual
 
 - DUG: Samantha v388/NX-388m · ART-027 · commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c` · blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`.
-- Núcleo MCP-OCP v0.1.30 · blob `4eea02bcc6dc086af7177ba8791b7e51fb205a2e`; backlog v0.11 · blob `3f2d07e4bf188238d185169bcb3dd61409486b1b`.
+- Núcleo MCP-OCP v0.1.30 · blob `4eea02bcc6dc086af7177ba8791b7e51fb205a2e`; backlog v0.11 · blob `cd37932c0046c6769d443e367e786e468a0ba56e`.
 - OEP v0.3.59 · blob `b29e806d2d9473f3828972a0c67d09bf7dcafc4e`; EP-TASK-003 `PARTIAL_FAIL`; EP-TASK-005 `PENDING`. OEP §124 deja preparado el relevo operativo al frente EP, sin modificar su control generación 3. La aceptación del handoff por EP queda pendiente.
 - **Punta histórica de rama:** `1676901cc09af6fcec4d052800b031e4c2f1ab40`. El recuento exacto de distancia respecto de main se conserva solo en recibos de comparación de la fecha en que fue calculado; no se presenta como métrica viva. La conclusión estable es que la referencia no parte del main vigente y no cumple MCP-OCP-02.
 - Control MCP-OCP generación 5, autorización y exclusiones sin cambios. Control EP generación 3 sin cambios. Control Gobernanza generación 17 sin cambios. Este coordinador no transfiere titularidad ni permisos entre frentes.
