@@ -170,8 +170,6 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         OperatorHealth = state.Operator.Provisioned ? "Provisionado" : state.Operator.State;
         OperatorDetail = state.Operator.Provisioned ? "Identidad configurada" : "No provisionado / desconocido";
         RootHealth = state.DataRoot.Configured && state.DataRoot.ReadWriteAvailable ? "Accesible" : "No verificado";
-        ReadinessStage = state.Readiness.Ready ? "READY" : "Bloqueado";
-        ReadinessDetail = state.Readiness.ReasonCode;
 
         CurrentActivity = string.IsNullOrWhiteSpace(state.Activity.CurrentTool)
             ? "Sin operaciones en curso" : state.Activity.CurrentTool!;
@@ -188,34 +186,27 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         RecentEventsEmpty = RecentEvents.Count == 0 ? "Sin actividad registrada" : string.Empty;
 
         bool processVerified = AttachProcess(state.Server.ProcessId, state.Server.ProcessStartedAtUtc);
-        bool ready = processVerified &&
-            state.Server.Lifecycle.Equals("RUNNING", StringComparison.OrdinalIgnoreCase) &&
-            string.Equals(state.Protocol.State, "INITIALIZED", StringComparison.OrdinalIgnoreCase) &&
-            state.Readiness.Ready &&
-            state.Sources.Imported &&
-            state.Sources.Current &&
-            state.Sources.Integrity.Equals("VERIFIED", StringComparison.OrdinalIgnoreCase) &&
-            state.Operator.Provisioned &&
-            state.DataRoot.Configured &&
-            state.DataRoot.ReadWriteAvailable;
+        MonitorReadinessResult evaluation = MonitorReadinessEvaluator.Evaluate(view.Session, state, processVerified);
+        ReadinessStage = evaluation.Ready ? "READY" : "Bloqueado";
+        ReadinessDetail = evaluation.ReasonCode;
 
-        if (ready)
+        if (evaluation.Ready)
         {
             OverallStatus = "LISTO";
-            OverallDetail = "Sesión EP activa; proceso, protocolo, fuentes, operador y root cumplen los gates publicados.";
+            OverallDetail = "Sesión EP activa y protección On atestada; proceso, protocolo, fuentes, operador y root cumplen los gates publicados.";
             StatusGlyph = "✓";
             AttentionTitle = "Sin atención requerida";
             AttentionDetail = "Readiness completa según la proyección del servidor y la atestación EP.";
         }
         else
         {
-            OverallStatus = processVerified ? (state.Readiness.Ready ? "ATENCIÓN" : "BLOQUEADO") : "DETENIDO";
-            OverallDetail = processVerified
-                ? $"Servidor {state.Server.Lifecycle}; protocolo {state.Protocol.State}; readiness {state.Readiness.ReasonCode}."
-                : "El PID/fecha de inicio ya no identifica el proceso MCP esperado.";
+            OverallStatus = !processVerified ? "DETENIDO" :
+                evaluation.ReasonCode == "EP_PROTECTION_NOT_ON" ? "BLOQUEADO" :
+                state.Readiness.Ready ? "ATENCIÓN" : "BLOQUEADO";
+            OverallDetail = $"Gate de readiness pendiente: {evaluation.ReasonCode}.";
             StatusGlyph = "!";
-            AttentionTitle = processVerified ? "Gate pendiente" : "Proceso no verificado";
-            AttentionDetail = processVerified ? state.Readiness.ReasonCode : "Verificar proceso y proyección de estado.";
+            AttentionTitle = "Gate pendiente";
+            AttentionDetail = evaluation.ReasonCode;
         }
 
         NotifyAll();
