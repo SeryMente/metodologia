@@ -79,3 +79,12 @@ La suite incluye dos negativos temporales adicionales: verificación Protection 
 
 
 El piloto suma dos negativos de asociación humano/máquina: marcador P004 ausente o duplicado y divergencia entre `content_markdown` y el texto normativo, aun repinneando el blob. Total: 18 tests P004 + 23 tests monitor, todos escritos y no ejecutados.
+
+## Bloqueos de integración hallados por revisión estática · 2026-11-10
+
+La lectura de código (sin build ni ejecución) identifica dos bloqueos funcionales que deben cerrarse antes de aceptar MCP-OCP-13 como operativo:
+
+1. **La ruta runtime no puede alcanzar READY.** `Program.MonitorRuntime` crea `Sources` como no importadas/UNKNOWN, `Operator` como UNKNOWN y `Readiness` como false. `OnEvent` solo actualiza protocolo y actividad; no existe en el ejecutable una ruta que actualice importación/integridad/vigencia de fuentes, aprovisionamiento del operador o readiness del servidor. Por ello, la ruta positiva del evaluador probada con `ReadySnapshot()` es sintética y no representa un estado que el runtime actual pueda emitir. Debe definirse un contrato explícito de procedencia/actualización entre EP y MCP para esos campos, respetando que EP es dueño de `session.json` y MCP del snapshot `state.json`.
+2. **El watcher puede perder el arranque del servidor.** `MainWindow.StartWatching()` retorna definitivamente si `<dataRoot>/monitor` todavía no existe y no observa el directorio padre. El contrato aprobado exige que EP abra el panel tras `ACTIVE`, incluso antes de que el cliente lance el servidor. Si el panel abre primero, el servidor creará `monitor/` después, pero el panel no se suscribirá a sus archivos ni recibirá el cambio a “esperando servidor”/estado disponible. Debe observarse el root padre y conectarse al subdirectorio cuando aparezca, con prueba de integración de ese orden de arranque.
+
+Estos son hallazgos de revisión estática, no defectos reproducidos por ejecución. No se modifica el contrato EP ni se permite que MCP escriba `session.json`. No se declara build, prueba ni aceptación.
