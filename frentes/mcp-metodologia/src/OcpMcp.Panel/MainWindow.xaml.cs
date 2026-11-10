@@ -189,6 +189,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
         bool processVerified = AttachProcess(state.Server.ProcessId, state.Server.ProcessStartedAtUtc);
         bool ready = processVerified &&
+            state.Server.Lifecycle.Equals("RUNNING", StringComparison.OrdinalIgnoreCase) &&
             string.Equals(state.Protocol.State, "INITIALIZED", StringComparison.OrdinalIgnoreCase) &&
             state.Readiness.Ready &&
             state.Sources.Imported &&
