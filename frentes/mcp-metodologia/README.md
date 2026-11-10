@@ -2,7 +2,7 @@
 
 Frente de trabajo para diseñar y desarrollar un servidor MCP local dedicado a tareas de desarrollo y gobernanza de los objetos sometidos a la Metodología de Ser y Mente.
 
-- **Núcleo operativo único:** [MCP-OCP · núcleo canónico](MCP-METODOLOGIA.md)
+- **Núcleo operativo único:** [MCP-OCP · núcleo canónico](MCP-METODOLOGIA.md), v0.1.29 · [Sprint SINK-P004 §20](MCP-METODOLOGIA.md#20-sprint-sink-p004--coordinación-interfrente-y-estado-vigente--2026-11-10)
 - **Control único de responsabilidad:** [CONTROL-RESPONSABILIDAD.json](CONTROL-RESPONSABILIDAD.json)
 - **Originales de creación:** [diálogo C-MCP-METODOLOGIA-001](conversaciones/C-MCP-METODOLOGIA-001-dialogo.jsonl)
 - **Crónica:** [C-MCP-METODOLOGIA-001](cronica/C-MCP-METODOLOGIA-001.md)
@@ -23,7 +23,7 @@ Frente de trabajo para diseñar y desarrollar un servidor MCP local dedicado a t
 - **Ciclo DTC local 04 · novedad EP:** [MCP-OCP · coordinación §§27–27.2](entregas/COORDINACION-SPRINT-OCP-MCP-v0.1.md#27-respuesta-inicial-mcp-ocp-a-la-novedad-dtc-de-ep--cierre-local-del-prompt-adicional-02--2026-10-31). Registra el cierre EP del Prompt 02 en su propio OCP, su cursor, la respuesta inicial MCP-OCP y la reconciliación en §8.1. No crea otro objeto ni modifica EP. La clasificación local MCP-OCP y su read-back quedan en la misma entrada de coordinación.
 - **Build MCP 0.1.0 — candidata técnica verificada:** [recibo de build/test](https://github.com/SeryMente/metodologia/blob/integration/ocp-mcp-0.1.0-selective-20261101/frentes/mcp-metodologia/evidencias/BUILD-CANDIDATE-MCP-OCP-0.1.0-20261101.json). Base de build `main` `419be285373ce5390be2020a954d382f11803674`; código candidato `5956595d5455d5b851c2ef1ff6808f0c2aeabff9`; DUG v377/NX-377m y núcleo v0.1.16. SDK 10.0.403, 31/31 unitarias y 29/29 integración PASS; ZIP 39,690,805 bytes, SHA-256 `96a62fc1291f501b7fa9b0792af07021db4cb2222c8658910bdadb7732bc3b2d`; 200 componentes verificados tras extracción. La candidata no se ha fusionado en `main`, no está instalada en EP ni aceptada por el operador.
 - **Ciclo DTC local 06 · cierre técnico verificado:** [MCP-OCP · coordinación §29](entregas/COORDINACION-SPRINT-OCP-MCP-v0.1.md#29-apertura-dtc-mcp-ocp--ciclo-local-06-preparacion-de-integracion-selectiva). Gobernanza respondió en §§29.1/29.3; MCP-OCP acusó recibo en §§29.2/29.4. La candidata selectiva fue construida sobre main con núcleo v0.1.16 y pasó build/test/ZIP-read-back; el recibo arriba contiene los hashes y fuente exacta. El ciclo local se cierra en §29.7. El DTC global permanece EN_CURSO_RECURRENT.
-- **Lista provisional de tareas:** [LISTA-TAREAS-PROVISIONAL.md](LISTA-TAREAS-PROVISIONAL.md), v0.9 PROVISIONAL, enlazada desde el núcleo. No crea un segundo OCP ni control.
+- **Lista provisional de tareas:** [LISTA-TAREAS-PROVISIONAL.md](LISTA-TAREAS-PROVISIONAL.md), v0.10 PROVISIONAL, enlazada desde el núcleo. No crea un segundo OCP ni control.
 
 Identidad vigente: **MCP-OCP** (anteriormente MCP-METODOLOGIA). Se conserva el slug `mcp-metodologia` y el nombre físico `MCP-METODOLOGIA.md` para preservar rutas y referencias históricas. Leer primero la fuente normativa única en main (Sam, Metacanon y GOW), después el control y el núcleo. Este README es un índice, no un estado vivo paralelo.
 
@@ -52,9 +52,9 @@ Identidad vigente: **MCP-OCP** (anteriormente MCP-METODOLOGIA). Se conserva el s
 Sink local por stdio está autorizado directamente por el operador; no se requiere consentimiento de otro titular ni gestión de generación. El acceso al repositorio privado se realiza mediante el conector GitHub autenticado; `gh auth login` en Windows no es requisito para operaciones ejecutadas con ese conector. No depender de identidades, rutas ni artefactos de terminales efímeras. La instalación persistente y el registro local del operador son fases posteriores. MCP-NORMATIVO sigue DESACTIVADO.
 
 
-## Sprint MCP-OCP 1.0.0 · Sink + panel local · 2026-11-09
+## Sprint SINK-P004 · piloto IPZ primero; release MCP-OCP 1.0.0 servidor + panel después
 
-Plan y aceptación interfrente: [GOV-TASK-015](../gobernanza/📁%20🧭%20-%20Tareas%20provisionales/📁%20🧩%20-%20GOV-TASK-015%20-%20Sprint%20Sink%20local%20vía%20RDC/README.md). Backlog MCP vigente: [LISTA-TAREAS-PROVISIONAL.md v0.8](LISTA-TAREAS-PROVISIONAL.md). Contrato visual/funcional: [PANEL-OBSERVABILIDAD.md](PANEL-OBSERVABILIDAD.md). Estado: alcance y tareas actualizados; implementación, build, paquete, panel e instalación no ejecutados. DUG vigente: Samantha v386/NX-386m. La instalación EP se mantiene separada y depende de [EP-TASK-005](../ep/📁%20🧭%20-%20Tareas%20provisionales/📁%20🧩%20-%20EP-TASK-005%20-%20Instalación%20y%20aceptación%20de%20MCP-OCP%20local/README.md).
+Plan y aceptación interfrente: [GOV-TASK-015](../gobernanza/📁%20🧭%20-%20Tareas%20provisionales/📁%20🧩%20-%20GOV-TASK-015%20-%20Sprint%20Sink%20local%20vía%20RDC/README.md). Backlog MCP vigente: [LISTA-TAREAS-PROVISIONAL.md v0.10](LISTA-TAREAS-PROVISIONAL.md). Contrato visual/funcional: [PANEL-OBSERVABILIDAD.md](PANEL-OBSERVABILIDAD.md). Estado: DUG Samantha v388/NX-388m; core v0.1.29; backlog v0.10. La rama limpia, código P004, pruebas y paquete permanecen pendientes. El panel sigue obligatorio en 1.0.0, sin bloquear P004. La instalación EP se mantiene separada y depende de [EP-TASK-005](../ep/📁%20🧭%20-%20Tareas%20provisionales/📁%20🧩%20-%20EP-TASK-005%20-%20Instalación%20y%20aceptación%20de%20MCP-OCP%20local/README.md).
 
 
 ## Instalación local del servidor MCP-OCP · destino de release 1.0.0
@@ -75,7 +75,7 @@ Rutas de Fila 4: checkout en `%USERPROFILE%\\Desktop\\SeryMente\\Repositorios\\M
 **Estado:** destino y secuencia documentados; preflight vivo, checkout protegido, piloto, IPZ nativo/read-back, build, instalación y aceptación siguen pendientes. Ver [OEP §120](../ep/OEP.md#120-rectificación-de-host-de-trabajo-e-instalación-mcp-ocp--2026-11-10--oep-v0355) y [backlog v0.8](LISTA-TAREAS-PROVISIONAL.md).
 
 
-## Urgencia del sprint Sink local · 2026-11-10
+## Sprint SINK-P004 · prioridad y dependencias · 2026-11-10
 
 **P0 actual:** rebaselinar desde `main` y DUG Samantha v388/NX-388m antes de compilar el piloto. MCP-OCP-02 es el bloqueo inmediato; después MCP-OCP-05 implementa `GOW:ARR → DUG → SINK:P004`. MCP-OCP-03 prepara pruebas con fixtures y MCP-OCP-04 el harness STDIO/RDC en paralelo.
 
