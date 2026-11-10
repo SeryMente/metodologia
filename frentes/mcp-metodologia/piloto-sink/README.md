@@ -9,6 +9,7 @@ Corte vertical mínimo de MCP-OCP. No es release generalizado ni instalación.
 - Hash Git blob verificado antes de parsear; respuesta con texto íntegro, procedencia y SHA-256.
 - Fallo cerrado ante fuente ausente/alterada, metadatos incorrectos, IDs incompletos/duplicados o principio distinto.
 - stdout reservado a JSON-RPC; diagnósticos/eventos minimizados por stderr.
+- Monitorización opcional: `--monitor-root <ruta-EP>`; sin el argumento no hay persistencia de observabilidad. EP conserva `session.json`; el servidor solo escribe `state.json`/`events.jsonl` dentro del root que EP entrega.
 - Cierre por EOF; no define `shutdown` ni `exit`.
 
 ## Requisitos
@@ -23,7 +24,7 @@ dotnet build .\tests\OcpMcp.Pilot.Tests\OcpMcp.Pilot.Tests.csproj -c Release
 dotnet run --project .\tests\OcpMcp.Pilot.Tests\OcpMcp.Pilot.Tests.csproj -c Release
 ```
 
-Los comandos no son evidencia hasta que existan logs asociados al commit. El workflow CI está escrito; build/tests/smoke permanecen pendientes.
+Los comandos no son evidencia hasta que existan logs asociados al commit. El workflow incluye 15 casos P004, 11 casos de monitor, build WPF y smoke STDIO; todo permanece pendiente de ejecución verificable.
 
 ## Límites
-Sin DB, root persistente, importación privada, secretos, operador, listener, instalación, panel WPF ni aceptación IPZ E2E. Fila 4 depende de EP-TASK-003/005.
+Sin DB, importación privada, secretos, operador, listener, instalación ni aceptación IPZ E2E. El panel WPF es una implementación candidata separada, no compilada ni incluida en paquete. Fila 4 depende de EP-TASK-003/005.
