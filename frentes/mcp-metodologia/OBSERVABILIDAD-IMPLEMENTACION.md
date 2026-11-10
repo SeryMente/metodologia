@@ -8,7 +8,7 @@
 - `src/OcpMcp.Panel/`: aplicación Windows WPF/C# de una sola pantalla.
 - `tests/OcpMcp.Monitoring.Tests/`: 11 escenarios sintéticos de lector/escritor.
 - `src/OcpMcp/`: integración opcional del writer con eventos de proceso, protocolo y herramientas.
-- `tests/OcpMcp.Pilot.Tests/`: 15 escenarios del piloto P004, incluyendo telemetría de éxito/fallo.
+- `tests/OcpMcp.Pilot.Tests/`: 16 escenarios del piloto P004, incluyendo telemetría de éxito/fallo.
 
 ## Propiedad de los datos y límites
 
