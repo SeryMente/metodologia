@@ -4,7 +4,7 @@
 
 - **Nombre canónico vigente:** MCP-OCP (anteriormente MCP-METODOLOGIA).
 - **Identidad canónica vigente:** MCP-OCP. **Identidad histórica:** MCP-METODOLOGIA.
-- **Versión/sello:** MCP-OCP-v0.1.27 · Sink local por stdio autorizado; candidata anterior 0.1.0 BUILD_AND_TESTED, bootstrap del perfil persistente pendiente. Las generaciones y folios de sesiones anteriores son metadatos de auditoría.
+- **Versión/sello:** MCP-OCP-v0.1.28 · Hito A: candidato SINK:P004 por STDIO implementado en rama, build y pruebas pendientes; no instalado ni aceptado E2E. La candidata anterior 0.1.0 BUILD_AND_TESTED sigue siendo evidencia histórica, no aceptación del piloto actual. Las generaciones y folios de sesiones anteriores son metadatos de auditoría.
 - **Repositorio propietario:** SeryMente/metodologia, rama main.
 - **OCP canónico:** frentes/mcp-metodologia/.
 - **Núcleo operativo único:** este archivo, MCP-METODOLOGIA.md.
@@ -602,3 +602,52 @@ MCP-OCP-02/05 (corte P004)/03/04 son P0 por el piloto. MCP-OCP-13 baja a P1 de s
 
 **Estado de la rectificación:** decisión documental y secuencia actualizadas; rama, código, pruebas, piloto, preflight Fila 4, importación, instalación IPZ nativa, E2E y release no ejecutados.
 
+
+
+## 19. Hito A · candidato SINK:P004 por STDIO · ciclo 2026-11-10 · núcleo v0.1.28
+
+**Estado:** código y pruebas escritos en rama de trabajo; build, ejecución de pruebas y smoke del binario NO VERIFICADOS. No se declara piloto instalado ni aceptación IPZ.
+
+- **Contrato y autorización:** MCP-OCP-01 verificado contra este núcleo v0.1.27 al inicio, backlog LIST_VERSION 0.8, OPERACION-LOCAL y CONTROL-RESPONSABILIDAD.json blob 826d7bd3f67bddf4f31bafee5013d1ea55003cf4, generación 5, estado owned y implementation_authorization AUTHORIZED. El alcance vigente cubre Sink local STDIO, lector de fuentes, GOW:ARR, DUG, MDP, hashes, eventos de éxito, pruebas y documentación. No habilita EP, red pública, credenciales, B2, Khora ni MCP-NORMATIVO.
+- **Fuente actual de main:** HEAD de rama al crear 73a42bc687f1fa3dd60b44af9cd93f797eba3920. El archivo DUG fue fijado por última vez en commit 17a4da1d3906e2397ab4682ff46cc9a9f116f34d, blob c8d37d92aed7ff9d4fe94e7a9541e76ba5c88a2c; Samantha v387 · NX-387m, Metacanon 1.29, GOW 2.18. El pin histórico v386/blob 22dca684… queda supersedido para este ciclo. No se modifica el DUG.
+- **GOW:** sección glossary.sections[id=gow-sec-14], ancla #gow-arranque-chatgpt; se verifica antes de resolver P004. El término gow-mcp-normativo debe confirmar DESACTIVADO.
+- **MDP/SINK:** P004 único, título y ancla #P004, MDP íntegro y texto desarrollado. La respuesta incluye procedencia DUG, commit/blob, SHA-256 de fuente y SHA-256 del texto normativo.
+- **Implementación:** proyecto .NET 10 sin paquetes externos; MCP JSON-RPC 2.0 sobre STDIO; handshake clásico `2025-11-25` (`initialize` → `notifications/initialized`), `tools/list` y `tools/call`; el cierre del proceso ocurre por EOF, sin métodos `shutdown`/`exit` no definidos. Herramienta `sink_principle` restringida a P004. El protocolo stateless `2026-07-28` queda fuera de este hito porque el contrato solicitado exige `initialize`. Sin listeners, almacenamiento, logs persistentes ni escrituras. El evento SINK_READ_SUCCESS se emite a stderr solo después de lectura íntegra verificada.
+- **Pruebas escritas:** 13 escenarios: P004 y metadatos exactos; lectura del DUG real pinneado; pin alterado; fuente ausente; contenido alterado aunque se repinee el hash; pin no autorizado; metadata DUG inválida; negociación de versión no soportada; rechazo de tools/list antes de `notifications/initialized`; ID inválido sin evento; initialize/discovery/call/hash/evento/EOF; rechazo del método no definido `shutdown` y continuidad hasta EOF; fallo de fuente sin evento. El fixture sintético genera 43 IDs únicos, con P004 exacto. No se han ejecutado.
+- **Rama:** feat/mcp-ocp-p004-pilot-20261110-cycle02, creada desde main HEAD 73a42bc687f1fa3dd60b44af9cd93f797eba3920; no contiene merge de las ramas históricas.
+- **Runner observado:** contenedor sin `dotnet`; sondeo RDC en Windows devolvió `DOTNET=NOT_FOUND`, Git 2.45.2 y perfil de proceso `MantenimientoRCI`. GOW P036 impide usar ese perfil como destino de archivos del operador; no se escribió allí. Se añadió un workflow CI Windows con .NET SDK 10.0.403 y se abrió PR #22 en borrador para validar el candidato sin merge. En las consultas disponibles no apareció un workflow run ni un check status, por lo que CI sigue NO VERIFICADA. **Siguiente gate:** obtener ejecución CI observable o un runner autorizado; compilar, ejecutar las 13 pruebas y smoke del binario, registrar salidas y hashes. E2E IPZ → RDC → STDIO requiere contexto IPZ real y aceptación separada.
+- **Límites:** no paquete, no carpeta instalacion-local, no Fila 4, no DB/fuentes privadas, no REGISTER, no IPZ nativa, no FOL1, no MCP-NORMATIVO, no merge a main.
+
+
+- **SDK/RID del piloto:** .NET SDK 10.0.403 fijado en frentes/mcp-metodologia/global.json; su disponibilidad/ejecución no está verificada en el entorno. RID no aplica al piloto framework-dependent; win-x64 queda para el paquete de release.
+
+## 20. Corrección de protocolo y preparación de CI · ciclo 2026-11-10
+
+- La revisión normativa de MCP 2025-11-25 confirmó que no define mensajes específicos de cierre; para STDIO el cliente cierra la entrada y el servidor termina al recibir EOF. Se eliminaron del servidor las ramas propias shutdown y exit; el método shutdown no definido devuelve -32601 y el proceso continúa hasta EOF.
+- El test correspondiente ahora verifica tres respuestas (initialize, error por método no definido y ping) y la terminación al consumir EOF.
+- Se corrigió el fixture de DUG: genera 43 IDs únicos P001–P043 y conserva P004 con contenido, MDP y preponderancia exactos. Esta corrección evita falsos fallos por un fixture que no cumplía el inventario mínimo del lector.
+- Workflow añadido: .github/workflows/mcp-ocp-p004-pilot.yml; Windows runner, SDK 10.0.403, restore, build del servidor, build del harness y ejecución de 13 pruebas. Se activa en push de la rama piloto y pull request contra main.
+- PR #22: borrador, rama feat/mcp-ocp-p004-pilot-20261110-cycle02 hacia main, sin merge. Se mantiene bloqueado para aceptación hasta obtener evidencia de CI/build/tests y smoke STDIO autorizado.
+- Estado al registrar esta actualización: los archivos fueron escritos en la rama y cotejados por lectura de vuelta; el build y las 13 pruebas siguen NO EJECUTADOS/NO VERIFICADOS. No se declara aceptación IPZ ni release.
+
+
+## 21. Reconciliación con main v388 · candidato cycle03 · 2026-11-10
+
+- **Base limpia:** cycle04 se creó directamente desde main HEAD 2e98cb2729741174ccc822f52a87259c4331b066; no arrastra el commit intermedio del DUG como divergencia ni fusiona ramas históricas.
+- **DUG actual:** Samantha v388 · NX-388m; evento C-GOBERNANZA-ART027-SINK-LOCAL-RECONCILIACION-20261110-01; Metacanon 1.29; GOW 2.18; archivo fuente blob 4db0ebadfd1e48b2bdec9236ba7f344921e4a865; commit 3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c.
+- **Relectura de contrato:** §ARR, P004, MDP P004 y estado MCP-NORMATIVO DESACTIVADO releídos. P004 conserva el mismo texto desarrollado, título, ancla, MDP y preponderancia A/0.8 que el pin v387 anterior. ART-027 v388 explicita Sink local STDIO/RDC, recuperación íntegra y telemetría solo por frecuencia de consulta satisfactoria; el piloto no infiere aplicación normativa.
+- **Pin actualizado:** SourcePin.cs, SOURCE-PIN.json y pruebas apuntan a v388/commit/blob de main. El test de integración verifica el DUG real del checkout y el fixture genera 43 IDs únicos con P004 exacto.
+- **Protocolo:** initialize/notifications/initialized/tools/list/tools/call; cierre por EOF. No se implementan métodos propios shutdown/exit.
+- **CI precedente:** el workflow del PR #22 (cycle02) ejecutó run 14 y terminó FAILURE. El conector devolvió el job como completado/failure, pero no devolvió steps; la descarga de logs respondió 404. Por tanto, no se puede afirmar si falló restore, build o tests. El pin v387 ya estaba obsoleto frente al main v388 usado por el merge ref del PR, lo que es una hipótesis de causa, no una causa raíz confirmada.
+- **Nuevo flujo:** workflow limitado al evento pull_request para evitar ejecuciones redundantes al copiar archivos; cycle04 queda sobre main v388. Se abrirá un nuevo PR en borrador tras completar el read-back. El run nuevo determinará si el pin actualizado corrige el fallo.
+- **Estado:** el candidato y las pruebas siguen escritos pero NO VERIFICADOS en ejecución hasta que CI entregue una salida legible. No instalar en MantenimientoRCI; Fila 4/EP, IPZ nativa, paquete 1.0.0 y E2E siguen pendientes de sus responsables y gates.
+
+
+## 22. Base vigente cycle04 · main actualizado · 2026-11-10
+
+- **Rama:** feat/mcp-ocp-p004-pilot-20261110-cycle04; creada desde el HEAD vivo de main 2e98cb2729741174ccc822f52a87259c4331b066; comparación inicial `main...cycle04` idéntica (0 ahead/0 behind).
+- **DUG:** Samantha v388/NX-388m; fuente canónica commit 3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c, blob 4db0ebadfd1e48b2bdec9236ba7f344921e4a865, evento C-GOBERNANZA-ART027-SINK-LOCAL-RECONCILIACION-20261110-01. P004, MDP, §ARR y ART-027 cotejados; el texto de P004 no cambió.
+- **Cambios de main posteriores a v388:** ocho commits de coordinación/documentación del frente Gobernanza, leídos. No modificaron el HTML DUG; la base de cycle04 incluye esos cambios sin mezclar cycle02 ni la rama parcial cycle03.
+- **Implementación portada:** servidor STDIO, lector fail-closed, pin v388, 13 escenarios, workflow Windows/.NET 10.0.403 y runbook. Cada archivo se coteja con lectura de vuelta.
+- **CI heredada:** run 14 de PR #22/cycle02 = FAILURE; steps no disponibles y logs 404. Causa raíz desconocida. No se marca PASS ni se atribuye el fallo al pin sin una nueva ejecución legible.
+- **Estado actual:** build, 13 pruebas y smoke real NO VERIFICADOS; PR nuevo pendiente de apertura; instalación/paquete/E2E permanecen bajo sus responsables y gates.
