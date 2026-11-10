@@ -50,3 +50,7 @@ El cierre 1.0 requiere inventario explícito de todo elemento situado alrededor 
 El GOW también presenta divergencia humana/estructurada (banner humano 2.12 frente a estructura declarada 2.14/127 términos, con 12 nombres sin coincidencia literal en el texto humano). Resolver precedencia y destino dentro de esta tarea sin cambiar el DUG/GOW canónico sin la autorización normativa requerida. El auxiliar `GLOSARIO-WORKSPACE.fuente.json` es derivado, no una segunda autoridad.
 
 La salida de esta tarea será una matriz de inventario y decisión por satélite, más evidencia de lectura de vuelta. Trazabilidad: [C-GOBERNANZA-VECTOR-SEMANTICO-01](../../cronica/C-GOBERNANZA-VECTOR-SEMANTICO-01.md).
+
+
+## Reporte individual obligatorio de resolución/cierre
+Al resolver, completar, bloquear o cancelar esta tarea, registrar su propio informe en este README usando [la plantilla común](../../../PLANTILLA-REPORTE-CIERRE-TAREA.md). Explicar objetivo y resultado, cómo se solucionó, decisiones verificables, cambios/rutas/commits/blobs/SHA, criterios y pruebas ejecutadas con logs/artefactos, read-back, bloqueantes/dependencias, preocupaciones/riesgos, pendientes, rollback y aceptación. Declarar NINGUNO_VERIFICADO o NO_VERIFICADO donde corresponda; nunca ocultar campos. No marcar completada sin criterios PASS, evidencia y read-back. Actualizar el índice padre después de verificar este informe y entregar al operador el enlace individual y síntesis de solución, evidencia, bloqueantes y preocupaciones. No incluir secretos ni datos sensibles.
