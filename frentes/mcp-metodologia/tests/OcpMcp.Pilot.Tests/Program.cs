@@ -42,6 +42,12 @@ try
         runner.Throws<FileNotFoundException>(() => missingReader.ReadP004());
     });
 
+    runner.Test("unauthorized source pin fails closed", () =>
+    {
+        var wrongPin = pin with { GitBlobSha = new string('0', 40) };
+        runner.Throws<CryptographicException>(() => new DugSourceReader(root, wrongPin).ReadP004());
+    });
+
     runner.Test("invalid DUG metadata fails closed", () =>
     {
         string badRoot = Path.Combine(root, "bad");
