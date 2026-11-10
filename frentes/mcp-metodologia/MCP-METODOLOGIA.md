@@ -4,7 +4,7 @@
 
 - **Nombre canónico vigente:** MCP-OCP (anteriormente MCP-METODOLOGIA).
 - **Identidad canónica vigente:** MCP-OCP. **Identidad histórica:** MCP-METODOLOGIA.
-- **Versión/sello:** MCP-OCP-v0.1.38 · OCP MCP 1.0; H1 SINK:P004, H2 persistencia mínima/bóveda y H3 workspace completo definidos; Sink local por stdio autorizado; contrato DUG v388/NX-388m; piloto P004 pendiente; bootstrap del perfil persistente pendiente. Las generaciones y folios de sesiones anteriores son metadatos de auditoría.
+- **Versión/sello:** MCP-OCP-v0.1.39 · OCP MCP 1.0; H1 SINK:P004, H2 persistencia mínima/bóveda y H3 workspace completo definidos; Sink local por stdio autorizado; contrato DUG v388/NX-388m; piloto P004 pendiente; bootstrap del perfil persistente pendiente. Las generaciones y folios de sesiones anteriores son metadatos de auditoría.
 - **Repositorio propietario:** SeryMente/metodologia, rama main.
 - **OCP canónico:** frentes/mcp-metodologia/.
 - **Núcleo operativo único:** este archivo, MCP-METODOLOGIA.md.
@@ -792,7 +792,7 @@ EP-TASK-007 es independiente del gate físico de Fila 4 en EP-TASK-003. El guard
 
 El último intercambio y la última salida visible anterior se preservan literalmente en [CONTINUIDAD-2026-11-10-ULTIMO-TRAMO.md](conversaciones/CONTINUIDAD-2026-11-10-ULTIMO-TRAMO.md), blob `1373127651be36afcf49dc1ae4fb623948165daf`. La frase histórica de que aún faltaba crear MCP-OCP-02 queda supersedida por §22: la rama ya fue creada y reconciliada con el main actual. Esta captura parcial no se presenta como export nativo de ChatGPT.
 
-**Estado del núcleo:** MCP-OCP-v0.1.38 en esta rama candidata; el núcleo canónico de main permanece sin cambios hasta la revisión/aceptación de la PR. FOL1 continúa PREPARADO/NO ACTIVO; MCP-NORMATIVO permanece DESACTIVADO.
+**Estado del núcleo:** MCP-OCP-v0.1.39 en esta rama candidata; el núcleo canónico de main permanece sin cambios hasta la revisión/aceptación de la PR. FOL1 continúa PREPARADO/NO ACTIVO; MCP-NORMATIVO permanece DESACTIVADO.
 
 
 ## 24. MCP-OCP-14 · contrato base propuesto · H2/H3 · 2026-11-10
@@ -845,3 +845,16 @@ El último intercambio y la última salida visible anterior se preservan literal
 - No se modificó `main`, DUG, ART-025/027, IPZ nativa, control de responsabilidad ni recursos EP. FOL1 NO ACTIVO; MCP-NORMATIVO DESACTIVADO.
 
 **Siguiente paso propio:** conseguir diagnóstico/runner observable para ejecutar build, 41 pruebas y smoke. En paralelo, preparar validación sintética formal de MCP-OCP-14; no iniciar IO/DB/B2/Vault/host sin interfaz y compuertas EP.
+
+
+## 28. Última revalidación del HEAD y CI · 2026-11-10
+
+- Refs cotejadas: main `8f999198f1d8cde71361c884c9a13b745f442b49`; rama `feat/mcp-ocp-sink-p004-main-a34c1c5b`, HEAD `cbb5cbcd4e5389fc859113a386072f0b19cc64ae`. Compare: 30 ahead / 0 behind; merge-base main; 29 rutas. PR #27 OPEN / DRAFT / NOT MERGED.
+- CI push en el HEAD actual: canonical-bootstrap run `42905989338`, job `130143984551`.
+- Checks PR del commit documental anterior `529033dcd4055dbb401315fb75d8397b7a0aab2a`: piloto run `42905982247`, job `130143958894`; Governance run `42905982275`, job `130143958017`; canonical-bootstrap run `42905982244`, job `130143958321`.
+- Los cuatro jobs concluyen FAILURE en 1–3 s, con `runner_id=0`, `steps=[]`; las descargas de logs dan `BlobNotFound` y cada run tiene cero artifacts. No se observó runner ni ejecución de .NET/restore/build/tests/smoke. **Causa raíz NO VERIFICADA**; no es fallo de código probado ni PASS.
+- No se modificó código funcional en estos commits finales; los commits posteriores a la rama reconciliada actualizan núcleo/lista/README/recibos y descripción de estado. Build y 41 pruebas continúan sin evidencia de ejecución.
+- H2 MCP-OCP-14 permanece propuesta no ratificada; cuatro schemas parseables, sin validación formal ni runtime/IO. EP mantiene Vault/B2/root/keys/host; estado reportado por GOV: Vault SELLADA, B2 no ejecutado, EP-TASK-003 PARTIAL_FAIL, EP-TASK-005 PENDING.
+- Control MCP-OCP generación 5 intacto. FOL1 NO ACTIVO; MCP-NORMATIVO DESACTIVADO.
+
+**Siguiente paso:** obtener un runner observable; luego ejecutar build, 41 pruebas y smoke STDIO/EOF. No reintentar a ciegas.
