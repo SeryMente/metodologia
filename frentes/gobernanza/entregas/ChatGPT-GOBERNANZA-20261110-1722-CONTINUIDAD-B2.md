@@ -82,3 +82,25 @@ Se encontró un segundo paquete más reciente, **solo local** en el corte de est
 - Excluye expresamente secretos en claro, claves privadas sueltas, reparse points y directorios regenerables. Mantiene la excepción de no tener cifrado cliente.
 
 **Estado remoto de R3: NO_VERIFICADO / no usar como fuente remota confirmada.** En B2, la fuente remota con read-back demostrado sigue siendo R2. Para salir hoy, R2 es el archivo remoto de recuperación; R3 es una mejora local pendiente de carga y read-back cuando Vault/credenciales estén disponibles. No duplicar ni borrar R2.
+
+
+## 8. Convención obligatoria de nombre · hora local
+
+**Zona horaria:** `America/Mexico_City` (Fila 4 / Santiago de Querétaro).  
+**Reloj comunicado por el operador para este corte:** martes 10 de noviembre de 2026, **17:32** (5:32 p. m.), UTC−06:00.
+
+Todo nuevo paquete provisional deberá usar día de semana en español, fecha local y hora local de 24 horas:
+
+```text
+EP-Workspace-Recovery_YYYY-MM-DD_DIA_HH-mm_America-Mexico_City_RN.zip
+```
+
+Ejemplo para un snapshot creado en el instante comunicado por el operador:
+
+```text
+EP-Workspace-Recovery_2026-11-10_Martes_17-32_America-Mexico_City_RN.zip
+```
+
+La marca horaria representa el momento real de creación/cierre del snapshot, no el momento posterior en que se renombra o se copia. Incluir el mismo prefijo base en manifiesto, recibo y sidecars; conservar el timestamp ISO 8601 con offset dentro de los metadatos.
+
+**No reescribir el historial:** el objeto remoto ya confirmado conserva su nombre original `EP-Backup-Provisional-20261110-164004-R2.zip`; corresponde al snapshot de las 16:40:04 local y no se renombra retroactivamente. El R3 local corresponde a las 17:21:27 local y tampoco debe recibir una marca 17:32. El próximo snapshot generado sí adoptará esta convención. R3 permanece solo local hasta que su carga B2 sea demostrada.
