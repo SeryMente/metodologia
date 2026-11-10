@@ -33,7 +33,7 @@ El núcleo de cada objeto conserva identificador local, enunciado, referencia re
 | GOV-TASK-012 | en_curso | Revisión integral de fluidez y desempeño del marco de Gobernanza | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-012%20-%20Fluidez%20y%20desempe%C3%B1o%20del%20marco/README.md) |
 | GOV-TASK-013 | en_curso | Medición objetiva y optimización del tiempo de procesamiento de ciclos | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-013%20-%20Medici%C3%B3n%20y%20optimizaci%C3%B3n%20de%20ciclos/README.md) |
 | GOV-TASK-014 | en_curso | Integración y aceptación de persistencia Backblaze para Metodología y OCP | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-014%20-%20Persistencia%20Backblaze%20de%20Metodolog%C3%ADa%20y%20OCP/README.md) |
-| GOV-TASK-015 | en_curso · P0 SINK:P004 · DEPENDENCIAS_RECONCILIADAS | Coordinar MCP-OCP-02/05/03/04 y EP-TASK-003/005; rama MCP candidata antigua no satisface rebaseline, EP-TASK-003 sigue PARTIAL_FAIL | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-015%20-%20Sprint%20Sink%20local%20v%C3%ADa%20RDC/README.md) |
+| GOV-TASK-015 | en_curso · P0 · SPRINT SINK-P004 | Coordinar dependencias MCP-OCP-02/05/03/04, EP-TASK-003/005 y GOV-TASK-003/007; handoff de ejecución EP preparado | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-015%20-%20Sprint%20Sink%20local%20v%C3%ADa%20RDC/README.md) |
 
 
 ## Snapshot histórico supersedido · checklist ejecutivo del sprint · 2026-11-01, 20:32:23 America/Mexico_City
@@ -375,3 +375,15 @@ El objetivo inmediato continúa siendo probar SINK:P004 desde el contexto IPZ po
 EP-TASK-003 permanece `en_curso / PARTIAL_FAIL`: el VHDX se preparó vacío y sin BitLocker; la solución para conservar `Desktop/SeryMente` no está aceptada y las operaciones locales de almacenamiento están pausadas. La ubicación física de Fila 4 sigue sin clasificar. EP-TASK-005 permanece `pendiente` y bloqueada por EP-TASK-003 PASS más paquete P004 y pruebas mínimas.
 
 La pausa EP bloquea exclusivamente checkout protegido, fuentes privadas, DB, runtime e instalación local. No bloquea MCP-OCP-02, código no sensible, MCP-OCP-03 con fixtures ni preparación de MCP-OCP-04. GOV-TASK-007 puede preparar el candidato IPZ sin modificar el campo nativo; GOV-TASK-003 no acepta E2E hasta que la respuesta P004 llegue visible al modelo desde el contexto IPZ. Panel MCP-OCP-13 y generalización P001–P043 siguen fuera del camino crítico P004, pero el panel es obligatorio para 1.0.0.
+
+
+## Estado ejecutivo del Sprint SINK-P004 · 2026-11-10
+
+GOV-TASK-015 es el coordinador único del sprint. Primer resultado: recuperación `SINK:P004` visible al modelo desde contexto IPZ real por RDC/STDIO. DUG v388/NX-388m es el único pin vigente.
+
+- **MCP-OCP:** rama limpia/código P004 pendientes; pruebas sintéticas y harness avanzan en paralelo. Core v0.1.29 / backlog v0.10.
+- **EP:** ejecución reanudada al frente EP por instrucción del operador; OEP v0.3.59 §124 deja listo el handoff. EP-TASK-003 continúa PARTIAL_FAIL y EP-TASK-005 pendiente. Control EP generación 3 sin cambios; aceptación del relevo pendiente.
+- **Gobernanza:** GOV-TASK-007 prepara candidato IPZ cuando el contrato P004 se congele; GOV-TASK-003 acepta el E2E real. IPZ nativa no se declara modificada; FOL1 no bloquea P004.
+- **Release:** el panel MCP-OCP-13 es obligatorio para 1.0.0, pero no bloquea el primer P004; generalización 43+8 es posterior a P004 PASS.
+
+`SINK_P004=NOT_IMPLEMENTED_NOT_ACCEPTED` · `MCP_NORMATIVO=DESACTIVADO` · `FOL1=PREPARED_NOT_ACTIVE`.
