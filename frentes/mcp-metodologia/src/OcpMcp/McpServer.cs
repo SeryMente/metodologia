@@ -122,11 +122,9 @@ public sealed class McpServer(IPrincipleSource source, Action<SinkSuccessEvent>?
 
         SinkP004Result result;
         try { result = source.ReadP004(); }
-        catch (Exception ex) when (ex is IOException or UnauthorizedAccessException or
-                                   System.Security.Cryptography.CryptographicException or
-                                   JsonException or InvalidOperationException)
+        catch (Exception ex)
         {
-            return ToolError("SOURCE_NOT_VERIFIED:" + ex.Message);
+            return ToolError("SOURCE_NOT_VERIFIED:" + ex.GetType().Name);
         }
 
         var evt = new SinkSuccessEvent(
