@@ -14,7 +14,7 @@ permissions:
 jobs:
   build-and-test:
     name: Build and run P004 pilot tests
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     timeout-minutes: 15
     defaults:
       run:
@@ -22,6 +22,21 @@ jobs:
         working-directory: frentes/mcp-metodologia
 
     steps:
+      - name: Initialize diagnostic workspace
+        shell: pwsh
+        run: |
+          $diagnosticDir = Join-Path $env:RUNNER_TEMP 'mcp-ocp-p004-pilot-diagnostics'
+          New-Item -ItemType Directory -Force -Path $diagnosticDir | Out-Null
+          @(
+            "RUNNER_OS=$env:RUNNER_OS"
+            "RUNNER_ARCH=$env:RUNNER_ARCH"
+            "IMAGE_OS=$env:ImageOS"
+            "IMAGE_VERSION=$env:ImageVersion"
+            "WORKSPACE=$env:GITHUB_WORKSPACE"
+            "RUN_ID=$env:GITHUB_RUN_ID"
+            "RUN_ATTEMPT=$env:GITHUB_RUN_ATTEMPT"
+          ) | Set-Content -Path (Join-Path $diagnosticDir 'runner-preflight.txt')
+
       - name: Checkout candidate branch
         uses: actions/checkout@v4
 
