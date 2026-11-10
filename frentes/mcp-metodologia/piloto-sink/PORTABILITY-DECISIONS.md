@@ -50,3 +50,8 @@ La rama cycle04 se crea directamente desde main HEAD 0f933b9e3efae20131da37f99f5
 ## Reconciliación actual · cycle05 · 2026-11-10
 
 La rama cycle05 se creó directamente desde main HEAD 0f933b9e3efae20131da37f99f50f4bc4a4eaf74 y la comparación inicial devolvió 0 ahead/0 behind. Cycle04 quedó 22 ahead/6 behind cuando main cambió core y backlog; no se usa como base. La portabilidad de sus componentes sirve como lectura selectiva, no como merge. DUG v388 permanece commit 3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c/blob 4db0ebadfd1e48b2bdec9236ba7f344921e4a865.
+
+
+## Estado de CI cycle05
+
+PR #24 está abierto en draft y mergeable=true; PR #23 fue cerrado supersedido. Los runs MCP-OCP 24/25 terminaron FAILURE sin steps/logs/artifacts; en run25 otros dos workflows del repositorio fallaron igual. No se confirma ejecución de build/tests ni causa raíz. Se requiere runner Actions operativo o runner .NET autorizado para obtener evidencia. Código/test escritos no equivalen a aceptación.
