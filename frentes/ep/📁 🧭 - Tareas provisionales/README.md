@@ -17,15 +17,13 @@ El patrón de materialización sigue el registro de tareas provisionales de Gobe
 ## Registro ejecutivo
 
 | ID local | Estado | Tarea | Núcleo |
-|---|---|---|---|
 | EP-TASK-001 | pendiente | NCL — Navegador Compartido Local: integración de Playwright y KeePassXC | [núcleo](./📁%20🧩%20-%20EP-TASK-001%20-%20Integración%20NCL/README.md) |
-| EP-TASK-002 | `en_curso` | Persistencia B2 EP: pareja Master dedicada migrada a EP Vault y read-back verificado; autenticación B2 y respaldo remoto actual pendientes | [núcleo](./📁%20🧩%20-%20EP-TASK-002%20-%20Persistencia%20provisional%20Backblaze/README.md) |
-| EP-TASK-003 | en_curso · P0 · PREFLIGHT_FILA4=PARTIAL_FAIL · EP_READY_FOR_RETAKE | Fila 4: C: XTS-AES128/Protection Off/sin protectores; VHDX 30 GiB GPT/NTFS vacío, W: último acceso observado, BitLocker Off; ruta Desktop\\SeryMente preservada; diseño de protección/montaje no aceptado; ubicación sin clasificar y checkout parcial sin .git. EP debe readquirir host, resolver diseño con el operador y completar gate. | [núcleo](./📁%20🧩%20-%20EP-TASK-003%20-%20Mapa%20integral%20de%20construcción%20EP/README.md) |
-| EP-TASK-004 | `en_curso` | Bóveda EP: pareja Master EP promovida desde notas efímeras y verificada; H10 y aceptación integral pendientes | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-004%20-%20Reconstrucci%C3%B3n%20de%20b%C3%B3veda/README.md) |
+| EP-TASK-002 | `en_curso · P0 · BLOQUEADA_VAULT_SELLADA` | Pareja Master EP en Vault; CLI sin sesión (0/5 variables); worker P0-C ciphertext-only preparado; autenticación, upload y restore B2 no ejecutados | [núcleo](./📁%20🧩%20-%20EP-TASK-002%20-%20Persistencia%20provisional%20Backblaze/README.md) |
+| EP-TASK-003 | `en_curso · P0 · PREFLIGHT_FILA4=PARTIAL_FAIL` | Preflight 2026-11-10: C XTS-AES128/Protection Off; VHDX 30 GiB W: descifrado/sin protector; origen 3.103 archivos/659 dirs/159.162.208 bytes con 2 errores; checkout sin .git; root Datos ausente; diseño no aceptado | [núcleo](./📁%20🧩%20-%20EP-TASK-003%20-%20Mapa%20integral%20de%20construcción%20EP/README.md) |
+| EP-TASK-004 | `en_curso · H7_SINTÉTICO_PARCIAL_PASS · H10_PENDIENTE` | Self-tests sintéticos crypto/job/timeout PASS; parser Core/CLI/GUI y XAML PASS; H7/H8 integrales y aceptación visual H10 pendientes | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-004%20-%20Reconstrucci%C3%B3n%20de%20b%C3%B3veda/README.md) |
 | EP-TASK-005 | pendiente · P0 piloto · BLOQUEADO_EP003+MCP_PACKAGE | EP ejecuta instalación del piloto en Fila 4 solo tras EP-TASK-003 PASS + paquete P004/manifest/SHA + MCP-OCP-03/04 smoke PASS; W: no es destino final. Después release 1.0.0. | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-005%20-%20Instalaci%C3%B3n%20y%20aceptaci%C3%B3n%20de%20MCP-OCP%20local/README.md) |
-| EP-TASK-006 | `en_curso` | Centralización: nombres Master B2 EP normalizados y leídos de vuelta; cobertura mult proveedor sigue incompleta | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-006%20-%20Centralizaci%C3%B3n%20de%20variables%20de%20entorno/README.md) |
-| EP-TASK-007 | `CONFIGURADA · PENDIENTE_ACUSE_EP` | Guardián de sesión efímera, inventario read-only del host, GPS/IP disponibles, lease renovable y crypto-erasure con prioridad sobre persistencia tardía | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-007%20-%20Guardi%C3%A1n%20de%20sesi%C3%B3n%20ef%C3%ADmera%20e%20inventario%20del%20host/README.md) |
-
+| EP-TASK-006 | `en_curso · P1_WAITING_P0_B2` | Centralización: nombres Master B2 EP normalizados y leídos de vuelta; inventario mult proveedor incompleto; P1 sigue después del snapshot/restauración P0 | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-006%20-%20Centralizaci%C3%B3n%20de%20variables%20de%20entorno/README.md) |
+| EP-TASK-007 | `en_curso · HOST_INVENTORY_PARTIAL_READ_ONLY` | Inventario Fila 4 read-only persistido y verificado; ubicación UNCLASSIFIED; Guardian/lease/crypto-erasure no implementados y sujetos a dependencias | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-007%20-%20Guardi%C3%A1n%20de%20sesi%C3%B3n%20ef%C3%ADmera%20e%20inventario%20del%20host/README.md) |
 ## Estado de continuidad · 2026-10-31
 
 EP-TASK-001 permanece `pendiente`. No debe iniciarse mientras siga activo el trabajo prioritario de alojamiento de OCP MCP en EP. Puede retomarse cuando ese trabajo haya concluido o cuando el operador dé una instrucción expresa para alterar el orden.
@@ -298,3 +296,18 @@ EP-TASK-002 conserva el estado en_curso. Se guardó la transcripción literal de
 OEP §91 y EP-TASK-002 fueron releídos. La inspección viva de EP Vault mostró la ventana GUI abierta pero en estado SELLADA; la sesión DPAPI compartida no está presente bajo la misma identidad propietaria y raíz EP que usa la CLI. No se encontró un fallo de ruta: GUI y CLI comparten el mismo Core y archivo de sesión.
 
 Se preparó un worker/wrapper PowerShell nuevo para P0-C que subirá únicamente el ciphertext de EP Vault a OCP-MCP/ep-ocp/vault/, con bucket privado, revisión lifecycle, SSE-B2/AES256, descarga y SHA-256. Los scripts pasan parser y sus SHA quedan registrados en EP-TASK-002. No se ejecutó autenticación, upload ni descarga; el recibo sigue ausente. El workspace ZIP no se carga porque el hito vigente exige cifrado antes de enviarlo a B2. Detalle en el núcleo EP-TASK-002 y en el anexo conversacional.
+
+
+---
+
+## Reconciliación ejecutiva EP · 2026-11-10 · 15:36 America/Mexico_City
+
+- **EP-TASK-002 (P0):** Vault GUI/CLI SELLADA/no activa en las lecturas de 21:34Z; 0/5 variables disponibles. El worker P0-C solo ciphertext está preparado, sin recibo. No se autenticó ni se subió a B2.
+- **EP-TASK-003 (P0):** preflight read-only nuevo. Origen 3.103 archivos, 659 directorios, 159.162.208 bytes, dos errores de enumeración. VHDX GPT 30 GiB adjunto en W:, sin BitLocker/protector. C: XTS-AES128/Protection Off. Checkout parcial sin .git; Datos/MCP-OCP ausente. Diseño recomendado de montaje en el path original, aún no aceptado.
+- **EP-TASK-004:** self-tests sintéticos criptográficos y job-runner PASS; parser de Core/CLI/GUI y XML de XAML PASS. H7/H8 integral y H10 humano siguen pendientes.
+- **EP-TASK-005:** pendiente; depende de EP-TASK-003 PASS y paquete P004/manifest/SHA/MCP-OCP-03/04.
+- **EP-TASK-006:** nombres Master EP normalizados/read-back; fase P1 de cobertura sigue detrás de P0 B2.
+- **EP-TASK-007:** inventario parcial read-only terminado; Guardian/lease no implementados.
+- **EP-TASK-001:** pendiente sin cambio.
+
+Evidencia read-only: [EP-FILA4-READONLY-PREFLIGHT-20261110-1530.json](../entregas/EP-FILA4-READONLY-PREFLIGHT-20261110-1530.json), blob \`88dd663df4345df343a51ad2800f0ad79953c60d\`. No se cambió workspace, VHDX, BitLocker, checkout, root de datos, bóveda formal ni credenciales. No se declara PASS de host ni persistencia remota.
