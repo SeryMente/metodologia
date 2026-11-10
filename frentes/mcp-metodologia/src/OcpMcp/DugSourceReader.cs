@@ -100,13 +100,14 @@ public sealed class DugSourceReader : IPrincipleSource
         if (humanPrinciples.Split("[[P:P004]]", StringSplitOptions.None).Length - 1 != 1)
             throw new InvalidDataException("P004_HUMAN_ANCHOR_MISSING_OR_AMBIGUOUS");
 
-        JsonElement inventoryPolicy = root.GetProperty("principle_inventory_policy");
-        if (RequiredString(inventoryPolicy, "required_full_text_route") != "Sink alias per principle" ||
+        JsonElement document = root.GetProperty("document");
+        if (!document.TryGetProperty("principle_inventory_policy", out JsonElement inventoryPolicy) ||
+            inventoryPolicy.ValueKind != JsonValueKind.Object ||
+            RequiredString(inventoryPolicy, "required_full_text_route") != "Sink alias per principle" ||
             !inventoryPolicy.GetProperty("default_consult_before_application").GetBoolean() ||
             !inventoryPolicy.GetProperty("deliberately_insufficient_for_full_application").GetBoolean())
             throw new InvalidDataException("SINK_MDP_POLICY_CONTRACT_MISMATCH");
 
-        JsonElement document = root.GetProperty("document");
         Require(document.GetProperty("version").GetString(), _pin.DugVersion, "DUG_VERSION_MISMATCH");
         Require(document.GetProperty("signature").GetString(), _pin.DugSignature, "DUG_SIGNATURE_MISMATCH");
         Require(document.GetProperty("event").GetString(), _pin.DugEvent, "DUG_EVENT_MISMATCH");

@@ -144,3 +144,7 @@ La primera E2E debe probar el recorrido que usará el modelo: IPZ → RDC autori
 **Reparto de funciones:** Gobernanza valida y acepta; MCP-OCP implementa/paquetea; EP ejecuta host/instalación. GOV-TASK-015 centraliza. `MCP-NORMATIVO=DESACTIVADO`; FOL1 no bloquea P004; panel WPF obligatorio solo para 1.0.0.
 
 `SINK_P004=NOT_IMPLEMENTED_NOT_ACCEPTED` · `MCP_OCP_02=OPEN` · `EP_TASK_003=PARTIAL_FAIL` · `EP_TASK_005=PENDING` · `GOV_E2E=PENDING`.
+
+
+## Reporte individual obligatorio de resolución/cierre
+Al resolver, completar, bloquear o cancelar esta tarea, registrar su propio informe en este README usando [la plantilla común](../../../PLANTILLA-REPORTE-CIERRE-TAREA.md). Explicar objetivo y resultado, cómo se solucionó, decisiones verificables, cambios/rutas/commits/blobs/SHA, criterios y pruebas ejecutadas con logs/artefactos, read-back, bloqueantes/dependencias, preocupaciones/riesgos, pendientes, rollback y aceptación. Declarar NINGUNO_VERIFICADO o NO_VERIFICADO donde corresponda; nunca ocultar campos. No marcar completada sin criterios PASS, evidencia y read-back. Actualizar el índice padre después de verificar este informe y entregar al operador el enlace individual y síntesis de solución, evidencia, bloqueantes y preocupaciones. No incluir secretos ni datos sensibles.

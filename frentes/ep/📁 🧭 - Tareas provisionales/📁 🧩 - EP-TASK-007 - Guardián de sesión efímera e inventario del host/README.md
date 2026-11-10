@@ -96,3 +96,61 @@ La caída de energía no puede ejecutar código de limpieza en el instante del c
 No efectuar cambios sobre Fila 4, BitLocker/VHDX, perfiles, almacenamiento o montaje hasta superar los gates vigentes de EP-TASK-003 y su aceptación. No extraer credenciales del chat, no exponer valores de EP Vault en logs ni crear una segunda bóveda. No alterar los controles EP generación 3, MCP-OCP generación 5 o Gobernanza generación 17.
 
 **Resultado del presente asiento:** tarea configurada documentalmente. Acuse y ejecución pertenecen a EP; no se declara guardian, inventario, lease, borrado ni pruebas ejecutados.
+
+
+---
+
+## Acuse de ejecución EP · inventario read-only Fila 4 · 2026-11-10 · 15:33 America/Mexico_City
+
+El operador instruyó al frente EP a revisar y resolver sus tareas según la secuencia programada. Se inició el hito de inventario, sin implementar todavía el Guardián.
+
+### Evidencia
+
+- Inventario ejecutado bajo token propietario Fila 4, no elevado, a las 2026-11-10T21:33:46.2515973Z.
+- OS: Windows 11 Pro, versión/build 10.0.26200, 64 bits; zona Central Standard Time (Mexico).
+- Equipo observado: HP ProDesk 400 G4 DM; RAM 17.015.545.856 bytes; CPU Intel Core i7-8700T, 6 cores/12 logical processors; GPU Intel UHD Graphics 630.
+- Discos detectados: disco virtual Microsoft 30 GiB y HS-SSD-WAVE(S) 256 GB. No se retuvieron seriales, hostname, MAC, IP ni IDs de sesión.
+- Adaptador Realtek PCIe GbE, Up, 1 Gbps. IP pública, IP local y geolocalización no consultadas. GPS no disponible/no solicitado; ubicación física sigue UNCLASSIFIED.
+- GUI EP Vault presente/responsiva; el estado de bóveda se comprobó por separado y permanece SELLADA. B2 CLI presente.
+- Archivo de evidencia local: `EP/local-state/run-logs/ep-task-007-host-inventory.json`, 4.253 bytes, SHA-256 `E0B2FF98A70DF35E2B572638E5E3CFE39D629781852C2F5FBE03A4C4B39FD673`; lectura de vuelta realizada.
+- Copia documental saneada y cotejada en [EP-FILA4-READONLY-PREFLIGHT-20261110-1530.json](https://github.com/SeryMente/metodologia/blob/main/frentes/ep/entregas/EP-FILA4-READONLY-PREFLIGHT-20261110-1530.json), blob `88dd663df4345df343a51ad2800f0ad79953c60d`.
+
+### Estado del hito
+
+`HOST_INVENTORY=PARTIAL_READ_ONLY_VERIFIED` · `GPS=NOT_REQUESTED` · `IP=NOT_COLLECTED` · `LOCATION=UNCLASSIFIED`.
+
+No se instaló ni inició Guardian, no se creó lease/heartbeat/tarea programada de guardia, no se registraron triggers, no se montó/desmontó volumen y no se ejecutó crypto-erasure. Los contratos MCP-OCP-14/15/16 y las dependencias EP-TASK-002/003/004/006 siguen abiertos. El inventario no equivale a aceptación de seguridad ni a autorización de runtime.
+
+
+## Reporte individual obligatorio por tarea
+Al resolver esta tarea, el responsable debe agregar el informe individual en este mismo núcleo siguiendo [la plantilla común](../../../PLANTILLA-REPORTE-CIERRE-TAREA.md), completar todos sus campos y actualizar el índice padre solo después del read-back. No marcar como completada sin criterios PASS, evidencia ejecutada, integridad verificada y aceptación exigible. Si termina parcial/bloqueada, dejar igualmente el informe con bloqueantes, preocupaciones, riesgos y condición objetiva de desbloqueo. Informar al operador con enlace al informe. Esta instrucción no altera titularidad, generación, permisos ni controles.
+
+
+---
+
+### Informe de revalidación parcial read-only · EP-TASK-007 · 2026-11-10 · 15:49 America/Mexico_City
+
+- **Frente / responsable:** Entorno Persistente (EP).
+- **Estado anterior → resultante:** HOST_INVENTORY_PARTIAL_READ_ONLY_VERIFIED → mismo estado; se agrega evidencia de volúmenes/VHDX y árbol de trabajo.
+- **Corte de fuente:** SeryMente/metodologia/main; núcleos EP-TASK-002/003/007; OEP §125–§126; DUG Samantha v388 · NX-388m.
+- **Objetivo y resultado:** mantener inventario de host de solo lectura y sus dependencias, sin introducir aún Guardian, lease ni crypto-erasure. Resultado: se revalidaron de forma separada el árbol de trabajo (token propietario) y el estado de BitLocker/VHDX (contexto administrativo usado exclusivamente para lectura).
+- **Cómo se revalidó:** se ejecutaron dos enumeraciones recursivas idénticas del workspace y consultas de solo lectura de volúmenes, protectores y DiskImage. No se consultaron IP, GPS, ASN ni ubicación.
+- **Cambios realizados:** ninguno en el host. Se actualiza únicamente este registro documental.
+- **Validación y evidencia:**
+  | Criterio | Estado | Evidencia |
+  |---|---|---|
+  | Enumeración del workspace | PASS en dos lecturas | 3.127 archivos, 660 directorios, 179.138.515 bytes, 0 errores, 0 reparse points |
+  | C: | OBSERVADO / GATE FAIL | XtsAes128, 100 %, Protection Off, 0 protectores |
+  | W: | OBSERVADO / GATE FAIL | FullyDecrypted, método None, Protection Off, 0 protectores; NTFS |
+  | VHDX de preparación | OBSERVADO | Adjunto, 30 GiB; archivo en AppData 171.966.464 bytes |
+  | Equipo/SO | ÚLTIMO INVENTARIO VÁLIDO | Windows 11 Pro build 10.0.26200, HP ProDesk 400 G4 DM, Intel Core i7-8700T, Intel UHD 630; no se repitió inventario de hardware en este subciclo |
+  | Ubicación/IP/GPS | NOT_VERIFIED | Ubicación UNCLASSIFIED; datos de IP/GPS no recopilados |
+  | Guardian/lease/trigger/crypto-erasure | NOT_RUN | Ningún componente implementado ni activado |
+- **Read-back e integridad:** resultados devueltos por las consultas y dos recorridos del workspace; no se escribió evidencia local nueva ni se cambiaron las protecciones.
+- **Bloqueantes/dependencias:** EP-TASK-002/003/004/006 y contratos MCP-OCP-14/15/16. No instalar el Guardián antes de los gates y la aceptación de EP-TASK-003.
+- **Preocupaciones/riesgos y mitigaciones:** el volumen actual de workspace sigue desprotegido por BitLocker activo; no alterar el VHDX viejo ni los volúmenes existentes. No inferir ubicación física a partir de red. Las operaciones administrativas fueron de consulta.
+- **Pendientes/diferidos:** inventario extendido/GPS/IP cuando esté permitido y no ralentice el preflight; Guardian, lease renovable, triggers, cierre, crypto-erasure y recibo; pruebas de fallos/timeout y restauración.
+- **Rollback/recuperación:** no hubo mutaciones y por tanto no se requiere rollback del ciclo. Los mecanismos futuros siguen NO_VERIFICADOS.
+- **Aceptación:** PENDIENTE; inventario parcial no equivale a aceptación de seguridad.
+- **Siguiente acción:** permanecer bloqueado hasta B2 restore, EP-TASK-003 PASS, bóveda validada y contratos MCP-OCP-14/15/16.
+- **Conclusión:** PARCIAL. Se amplió la evidencia read-only; Guardian y borrado criptográfico continúan no implementados.

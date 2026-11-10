@@ -1,6 +1,21 @@
+# MCP-OCP local installation is materialized per Windows profile, not committed.
+instalacion-local/
+
+# Build output
 **/bin/
 **/obj/
-**/TestResults/
-/instalacion-local/
-*.user
-*.suo
+
+# Local databases and operational logs
+*.sqlite
+*.sqlite3
+*.db
+*.db-shm
+*.db-wal
+*.log
+
+# Local configuration and secret material
+.env
+.env.*
+*.pfx
+*.key
+*.pem

@@ -272,3 +272,7 @@ Retención prevista indefinida de datasets cifrados útiles, de acuerdo con la i
 Aceptar por estados separados: local durable; remoto cargado; remoto verificado por read-back/hash; restore verificado en entorno aislado. La instancia solo se declara completa cuando se ha descargado y validado el workspace completo esperado. Si B2 no se encuentra disponible, registrar bloqueo y no inventar fallback: el medio alternativo está pendiente para H9.
 
 **Estado:** criterios de Gobernanza configurados. La autenticación/transferencia/restore B2 actual continúan pendientes de recibo EP reciente; no se declara persistencia remota PASS por este documento.
+
+
+## Reporte individual obligatorio de resolución/cierre
+Al resolver, completar, bloquear o cancelar esta tarea, registrar su propio informe en este README usando [la plantilla común](../../../PLANTILLA-REPORTE-CIERRE-TAREA.md). Explicar objetivo y resultado, cómo se solucionó, decisiones verificables, cambios/rutas/commits/blobs/SHA, criterios y pruebas ejecutadas con logs/artefactos, read-back, bloqueantes/dependencias, preocupaciones/riesgos, pendientes, rollback y aceptación. Declarar NINGUNO_VERIFICADO o NO_VERIFICADO donde corresponda; nunca ocultar campos. No marcar completada sin criterios PASS, evidencia y read-back. Actualizar el índice padre después de verificar este informe y entregar al operador el enlace individual y síntesis de solución, evidencia, bloqueantes y preocupaciones. No incluir secretos ni datos sensibles.

@@ -47,3 +47,7 @@ No modificar el DUG, la IPZ, controles ni OCP ajenos por iniciativa de esta tare
 ## Trazabilidad MCP-OCP y enlace de retorno
 
 El DUG enlaza al núcleo operativo y al README del OCP MCP desde el término canónico GOW. Esta tarea puede comprobar por lectura si el núcleo MCP-OCP contiene un vínculo Markdown de retorno al DUG v377 y si sus referencias siguen resolviendo. No modificar el OCP/control MCP-OCP ni emitir solicitudes interfrente desde Gobernanza 2. Si se identifica un backlink faltante o una dependencia del titular MCP-OCP, documentar el hallazgo y canalizarlo a Gobernanza 1 para su tratamiento dentro de la DTC. Los enlaces y retornos internos del propio DUG se auditan por separado.
+
+
+## Reporte individual obligatorio de resolución/cierre
+Al resolver, completar, bloquear o cancelar esta tarea, registrar su propio informe en este README usando [la plantilla común](../../../PLANTILLA-REPORTE-CIERRE-TAREA.md). Explicar objetivo y resultado, cómo se solucionó, decisiones verificables, cambios/rutas/commits/blobs/SHA, criterios y pruebas ejecutadas con logs/artefactos, read-back, bloqueantes/dependencias, preocupaciones/riesgos, pendientes, rollback y aceptación. Declarar NINGUNO_VERIFICADO o NO_VERIFICADO donde corresponda; nunca ocultar campos. No marcar completada sin criterios PASS, evidencia y read-back. Actualizar el índice padre después de verificar este informe y entregar al operador el enlace individual y síntesis de solución, evidencia, bloqueantes y preocupaciones. No incluir secretos ni datos sensibles.

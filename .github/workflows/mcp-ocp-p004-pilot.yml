@@ -4,7 +4,7 @@ on:
   pull_request:
     branches: [main]
     paths:
-      - "global.json"
+      - "frentes/mcp-metodologia/global.json"
       - "frentes/mcp-metodologia/src/OcpMcp/**"
       - "frentes/mcp-metodologia/src/OcpMcp.Monitoring/**"
       - "frentes/mcp-metodologia/tests/OcpMcp.Pilot.Tests/**"

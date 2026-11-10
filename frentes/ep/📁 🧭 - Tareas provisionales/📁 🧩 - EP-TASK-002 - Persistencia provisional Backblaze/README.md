@@ -2287,3 +2287,92 @@ La ayuda local del B2 CLI verificada bajo identidad propietaria confirma: `accou
 - `REMOTE_PERSISTENCE=PENDING`.
 
 **Única compuerta local pendiente:** desbloquear la GUI mediante su campo de clave maestra y botón nativo. Tras confirmar sesión compartida activa con las cinco variables, ejecutar inmediatamente el wrapper nuevo bajo `CENTRAL\fila4`, dentro de la ventana seleccionada. No pedir ni recibir contraseña por chat.
+
+---
+
+## Reanudación EP · preflight B2 repetido tras lectura de tareas · 2026-11-10 · 15:34 America/Mexico_City
+
+La tarea se mantiene en P0 y la prioridad sigue siendo respaldar primero el ciphertext de EP Vault, no el ZIP del workspace sin cifrado cliente.
+
+**Lectura fresca bajo el token propietario Fila 4, 2026-11-10T21:34:04.8042691Z:**
+- `vaultSessionActive=false`, `remainingSeconds=null`, ciphertext presente de 2.200 bytes.
+- `variableCount=0`; 0/5 nombres requeridos expuestos por la sesión CLI.
+- B2 CLI presente.
+- UI Automation, 2026-11-10T21:34:15.6720072Z, confirmó la ventana EP Vault visible pero `SELLADA`; botón DESBLOQUEAR LA CÁMARA visible.
+
+**Estado de P0-C:** worker y wrapper específicos para ciphertext de Vault siguen preparados y con parser PASS (sus SHA se registraron en el asiento anterior). La sintaxis de B2 CLI para autorización por variables de entorno, upload SSE-B2/AES256, download B2 URI y file info quedó comprobada localmente; no hubo autenticación ni contacto remoto a B2.
+
+`B2_ACCOUNT_AUTH=NOT_EXECUTED` · `BUCKET_OCP_MCP=NOT_CHECKED` · `VAULT_CIPHERTEXT_UPLOAD=NOT_EXECUTED` · `DOWNLOAD_SHA256=NOT_EXECUTED` · `RECEIPT=ABSENT` · `REMOTE_PERSISTENCE=PENDING`.
+
+No se invocó el CLI Run mientras la GUI muestra SELLADA; la única compuerta inmediata es que el operador abra la cámara localmente. No pedir, capturar ni incluir la contraseña maestra en el chat. Cora y KHORA siguen separados y no se utilizaron.
+
+
+## Reporte individual obligatorio por tarea
+Al resolver esta tarea, el responsable debe agregar el informe individual en este mismo núcleo siguiendo [la plantilla común](../../../PLANTILLA-REPORTE-CIERRE-TAREA.md), completar todos sus campos y actualizar el índice padre solo después del read-back. No marcar como completada sin criterios PASS, evidencia ejecutada, integridad verificada y aceptación exigible. Si termina parcial/bloqueada, dejar igualmente el informe con bloqueantes, preocupaciones, riesgos y condición objetiva de desbloqueo. Informar al operador con enlace al informe. Esta instrucción no altera titularidad, generación, permisos ni controles.
+
+
+---
+
+### Informe de estado bloqueado · EP-TASK-002 · 2026-11-10 · 15:49 America/Mexico_City
+
+- **Frente / responsable:** Entorno Persistente (EP).
+- **Estado anterior → resultante:** P0_BLOCKED_VAULT_SEALED → P0_BLOCKED_VAULT_SEALED. La aceptación del diseño físico pertenece a EP-TASK-003 y no desbloquea la sesión criptográfica ni la cuenta B2.
+- **Corte de fuente:** SeryMente/metodologia/main; DUG Samantha v388 · NX-388m; núcleo EP-TASK-002 releído en el ciclo. Se conservan los contratos P0-C ciphertext-only y destino OCP-MCP/ep-ocp/vault/.
+- **Objetivo y resultado:** respaldar exclusivamente el ciphertext de EP Vault en B2 y verificar la restauración mediante descarga, tamaño/SHA-256 idénticos y recibo. Resultado de este ciclo: NO EJECUTADO; no hubo llamada autenticada a B2.
+- **Cómo se diagnosticó:** a las 15:48:48.9106824-06:00 se ejecutó la acción no interactiva Status de EP Vault v1.0.0 bajo el contexto propietario, con LOCALAPPDATA apuntando al estado EP y PowerShell -NoProfile -NonInteractive -ExecutionPolicy Bypass. La respuesta fue ENCRYPTED_FILE_PRESENT, vaultExists=true, esquema ep-env-vault/1, PBKDF2-HMAC-SHA256/600.000 iteraciones, ciphertext 2.200 bytes y sessionActive=false; updatedAtUtc=2026-11-10T17:54:56.5248087Z. La política de ejecución del sistema no se modificó.
+- **Cambios realizados:** ningún secreto, ciphertext, variable, script ni objeto B2 fue modificado. Se releyeron los scripts y se cotejaron los hashes actuales: worker Upload-EP-Vault-Ciphertext-To-Backblaze-Fila4.ps1, 11.432 bytes, SHA-256 358AD11DF38FB85ED4BD52C128378E9BA35A1AE5982B61184699B99CDA1BE410; wrapper Run-EP-Backblaze-Vault-Ciphertext-Fila4.ps1, 1.654 bytes, SHA-256 C6BAF9B3B43C3B5824A132242A3005D87AF231F8CAE9820FC5F327C8AC7B9AC8. Ambos existen. El recibo ep-backblaze-vault-ciphertext-result.json sigue AUSENTE.
+- **Validación y evidencia:**
+  | Criterio | Estado | Evidencia |
+  |---|---|---|
+  | Ciphertext local presente | PASS | Status: 2.200 bytes |
+  | Sesión compartida activa | FAIL / BLOQUEANTE | sessionActive=false |
+  | 5 variables disponibles | NOT_RUN en esta lectura | No se ejecutó ListVariables sin sesión activa; la última lectura previa reportó 0/5 |
+  | Worker/wrapper existentes e íntegros | PASS | Tamaño y SHA-256 cotejados en lectura actual |
+  | Recibo de transferencia | NOT_RUN | Archivo AUSENTE |
+  | B2 authorize / bucket / upload | NOT_RUN | No se autenticó ni consultó la cuenta |
+  | Download / SHA remoto / SSE-B2 | NOT_RUN | No existe objeto remoto demostrado |
+  | Restore remoto | NOT_RUN | Sin respaldo remoto para restaurar |
+- **Read-back e integridad:** Status leído; worker y wrapper leídos y sus hashes recalculados. No hubo write remoto ni read-back B2.
+- **Bloqueantes/dependencias:** la cámara de EP Vault debe ser desbloqueada localmente por el operador; después se debe comprobar sesión activa y las cinco variables canónicas. La única condición objetiva para iniciar P0-C es sessionActive=true más disponibilidad de las cinco variables dentro del TTL.
+- **Preocupaciones/riesgos y mitigaciones:** el wrapper Run llama a Enter-EpLocalSession; si la bóveda sigue sellada puede activar un Read-Host interactivo. Por eso no se ejecutó. No pedir, capturar ni transportar la contraseña maestra por chat. El worker sigue limitado a ciphertext y no sube el ZIP del workspace.
+- **Pendientes/diferidos:** autenticar la cuenta B2 dedicada a EP; confirmar bucket privado OCP-MCP, lifecycle y scope de la key; subir con SSE-B2/AES256; descargar por B2 URI; verificar tamaño/SHA-256 y recibo; confirmar restauración aislada. Cuentas KHORA/Cora permanecen separadas.
+- **Rollback/recuperación:** no se creó objeto B2 ni se cambió el ciphertext; no se requiere rollback para este ciclo. La recuperación remota sigue NO_VERIFICADA.
+- **Aceptación:** PENDIENTE; los criterios P0 no se cumplen y no se declara tarea completada.
+- **Siguiente acción:** el operador desbloquea la GUI localmente; EP revalida Status, consulta los nombres sin revelar valores y ejecuta el wrapper P0-C únicamente dentro de la sesión activa.
+- **Conclusión:** BLOQUEADA. La persistencia Backblaze no se ha ejecutado ni demostrado.
+
+
+---
+
+## Informe de reintentos P0-C y diagnóstico de preflight · EP-TASK-002 · 2026-11-10 · 16:09 America/Mexico_City
+
+- **Frente / responsable:** Entorno Persistente (EP).
+- **Estado anterior → resultante:** P0_BLOCKED_VAULT_SEALED → P0_B2_AUTHENTICATED_BUCKET_IDENTIFIED_TRANSFER_FAILED_PREFLIGHT; al corte final la sesión volvió a SELLADA. La tarea sigue en curso y no está completada.
+- **Corte de fuente:** main de SeryMente/metodologia; núcleo EP-TASK-002 y OEP §127 releídos; Vault CLI v1.0.0 local; worker P0-C ciphertext-only y variante v2/v3 locales.
+- **Objetivo y resultado:** persistir solo el ciphertext EP Vault en bucket privado OCP-MCP/ep-ocp/vault/, validar cifrado server-side, descargar y cotejar tamaño/SHA-256. Resultado: autenticación B2 y reconocimiento del bucket sí ocurrieron; las dos ejecuciones del worker fallaron en el preflight antes de upload. No hay persistencia remota demostrada.
+- **Cómo se procesó:** se detectó una sesión DPAPI propietaria recién creada en el estado local EP. A 16:01:13.3609648-06:00, CLI Status bajo CENTRAL\fila4 confirmó sessionActive=true y ciphertext 2.200 bytes. CLI ListVariables salió 0 y confirmó presencia de los cinco nombres permitidos: EP_B2_MASTER_APPLICATION_KEY_ID, EP_B2_MASTER_APPLICATION_KEY, EP_B2_BUCKET_NAME, EP_B2_PREFIX y EP_B2_ACCOUNT_EMAIL; no se imprimieron valores. Se verificaron otra vez los hashes del worker/wrapper y se constató que no existía recibo previo antes del primer intento.
+- **Intento P0-C v1:** ejecutado mediante wrapper original con TTL activo. La cuenta fue autenticada; el key ID autorizado coincidió con el de Vault; se encontró el bucket exacto OCP-MCP y su tipo allPrivate. La ejecución terminó FAILED con UNEXPECTED_WORKER_FAILURE. Recibo local: 989 bytes, SHA-256 7CBAED2A5AB668F0D9771D86F1495AEBF3EC083A474399FF65D586C86735C6D0. remoteObject=null, fileId=null, readbackBytes=null, SSE NOT_CONFIRMED, temporaryAuthCacheCleaned=true, secretValuesEmitted=false, workspaceArchiveUploaded=false.
+- **Intento P0-C v2:** se preservó el worker original; se creó una copia v2, con ruta de recibo independiente, guard para lifecycleRules opcional y clasificación segura del tipo de excepción. Parser worker/wrapper v2: cero errores. El worker autenticó de nuevo y volvió a identificar el bucket privado allPrivate, pero terminó FAILED con WORKER_EXCEPTION_PropertyNotFoundException. Recibo local: 1.006 bytes, SHA-256 10CBA96DDADDB176BDCD846BA90F0A5DAF40AC2E239633717BFD596D063AD8B5. remoteObject=null, fileId=null, readbackBytes=null, SSE NOT_CONFIRMED, caché temporal limpiada, secretos no emitidos y workspaceArchiveUploaded=false. No se confirma que lifecycle sea seguro: el preflight no alcanzó el estado de confirmación.
+- **Variante v3 preparada, no ejecutada:** se creó a partir de la copia v2 para preservar las dos variantes y ambos recibos. Añade captura saneada del número de línea junto al tipo de excepción, utiliza un tercer recibo independiente y conserva el guard lifecycle opcional. Worker v3: 12.014 bytes, SHA-256 45D9E91A16078ABE649A93DCEB56696D9B1F0C493368E2FC09A4F53FD5F92BD6; wrapper v3: 1.660 bytes, SHA-256 7F5C76D31BC6E660F1F6D3DA2DAEF3220A173136F38D8B0298C92ABA9236DFA9. Ambos pasan Parser.ParseFile con cero errores. No existe recibo v3; no se ha ejecutado.
+- **Validación y evidencia:**
+  | Criterio | Estado | Evidencia |
+  |---|---|---|
+  | Sesión activa y 5 nombres EP | PASS durante ventana inicial | 16:01:13, Status true; ListVariables exit 0 y cinco checks true |
+  | Autenticación B2 | PASS en v1/v2 | El worker obtuvo account info y coincidencia del key ID |
+  | Bucket OCP-MCP privado | PASS en v1/v2 | bucketType=allPrivate |
+  | Lifecycle preflight | NOT_VERIFIED | Ambos recibos tienen lifecycleSafe=false porque el worker falla antes de cerrar ese control; no inferir ausencia de reglas ni seguridad |
+  | Upload remoto | NOT_RUN / FAIL antes de upload | Ambos recibos no contienen remoteObject ni fileId |
+  | Download/read-back/SHA remoto | NOT_RUN | No existe descarga ni hash remoto |
+  | SSE-B2/AES256 | NOT_RUN | NOT_CONFIRMED |
+  | Restore remoto | NOT_RUN | Ningún objeto disponible para restaurar |
+  | Limpieza de caché temporal | PASS | temporaryAuthCacheCleaned=true en ambos recibos |
+  | No exposición de secretos / no ZIP | PASS | secretValuesEmitted=false; workspaceArchiveUploaded=false |
+  | Parser v2/v3 | PASS | cero errores de análisis en ambos archivos de cada variante |
+- **Read-back e integridad:** se verificaron tamaño y SHA-256 de ambos recibos y los hashes de worker/wrapper v3. Los recibos v1 y v2 se preservan y no se sobrescriben. El ciphertext local sigue siendo de 2.200 bytes y su hash conocido del read-back de 15:58:57 era 4CC2EE09974C9FBF3CF22C28A5A46C8286EB501F59268DBBB2B7BD6D61E8C590. Una lectura posterior, 16:09:18.5412198-06:00, confirma que el estado final volvió a sessionActive=false.
+- **Bloqueantes/dependencias:** cámara local de EP Vault sellada otra vez; debe abrirse localmente y luego revalidarse Status/los cinco nombres antes de ejecutar v3. La excepción concreta de v2 está clasificada como PropertyNotFoundException, pero el número de línea aún no está disponible porque v3 no se ejecutó. No hay motivo para repetir v1/v2 ni para sobrescribir sus recibos.
+- **Preocupaciones/riesgos:** los dos intentos se detuvieron antes de cargar datos; no declarar snapshot B2. El identificador de cuenta y cualquier metadato sensible permanecen fuera de este informe. No emitir valores ni credenciales a logs/chat. No transferir el ZIP/workspace.
+- **Pendientes/diferidos:** desbloqueo local; Status y nombres; ejecutar solo v3 dentro del TTL; leer el número de línea clasificado en su recibo; corregir la propiedad faltante exacta; luego realizar un solo intento final con nuevo worker/recibo, exigir upload, download/SHA idéntico, SSE-B2 y restore. B2 sigue siendo gate para EP-TASK-003/006.
+- **Rollback/recuperación:** no se creó objeto remoto; ciphertext local intacto; cachés temporales reportadas limpias. No requiere rollback de datos. Los recibos de fallo se mantienen como evidencia append-only.
+- **Aceptación:** PENDIENTE. Autenticación y localización del bucket no satisfacen la persistencia remota.
+- **Siguiente acción:** operador desbloquea EP Vault localmente; EP confirma sessionActive=true y los cinco nombres, y ejecuta v3 con el límite ciphertext-only. No se pide contraseña por chat.
+- **Conclusión:** BLOQUEADA/PARCIAL. B2 fue autenticado y el bucket privado identificado; los preflights fallaron antes de cualquier upload. Persistencia remota y restauración continúan NO VERIFICADAS.

@@ -2460,3 +2460,241 @@ Gate local requerido para continuar sin exponer secretos: el operador desbloquea
 ### Persistencia documental
 
 EP-TASK-002 recibió el detalle y se leyó de vuelta; índice provisional actualizado. Esta entrada documenta bloqueo/preparación, no un éxito remoto.
+
+
+---
+
+## EP · reanudación según cola programada, preflight Fila 4 y avance H7 · 2026-11-10 · 15:36 America/Mexico_City
+
+### Solicitud y gobierno adquirido
+
+El operador instruyó revisar las tareas del frente y resolver conforme al orden programado. Se releyeron desde main OEP §§91/123/124, el índice de tareas, EP-TASK-002/003/004/005/006/007 y DUG Samantha v388 · NX-388m. Control EP generación 3 sin cambios; no se crea sesión, folio ni transferencia de titularidad.
+
+### Ejecución observada del ciclo
+
+1. **EP-TASK-003 — preflight host read-only:** se revalidaron volúmenes, VHDX, checkout, root y árbol fuente. El workspace tiene 3.103 archivos, 659 directorios y 159.162.208 bytes; la enumeración detectó 2 errores. VHDX GPT de 30 GiB adjunto; W: NTFS descifrado y sin protector; C: 100 % XTS-AES128, Protection Off y sin protectores. W: solo presenta System Volume Information. Checkout Metodología sin .git y root Datos/Metodologia/MCP-OCP ausente. No se copió ni alteró el origen. La ubicación física sigue UNCLASSIFIED.
+2. **EP-TASK-002 — B2:** la lectura propietaria de 21:34:04Z confirma Vault SELLADA, sesión CLI inactiva, 0/5 variables disponibles. El worker P0-C ciphertext-only sigue preparado. No hubo B2 authorize, bucket list, upload, download ni receipt.
+3. **EP-TASK-004 — H7/H8:** `SelfTest` terminó exit code 0 en 17,15 s: crypto round-trip/tamper/wrong-password PASS; job runner PASS; timeout/tree termination PASS. Core/CLI/GUI Parser PASS y XAML XML PASS. No es H7/H8 integral. H10/aceptación visual sigue pendiente.
+4. **EP-TASK-007:** inventario read-only de host bajo token propietario ejecutado y leído de vuelta; no se recogieron IP/GPS. Ubicación física no clasificada. No se instaló Guardian, lease, heartbeat ni crypto-erasure.
+5. **EP-TASK-005:** sigue bloqueada por EP-TASK-003 PASS y por el paquete P004/manifest/SHA/MCP-OCP-03/04.
+6. **EP-TASK-006:** su P0 de snapshot depende de EP-TASK-002; la fase P1 de inventario Vercel y proveedores no se anticipa al P0 remoto.
+7. **EP-TASK-001:** permanece pendiente sin cambio.
+
+### Decisión técnica pendiente del operador
+
+La propuesta recomendada es un VHDX nuevo fuera de AppData y fuera del workspace, con volumen BitLocker XTS-AES256/Protection On/100 %, montado como punto de montaje de directorio NTFS en `%USERPROFILE%\Desktop\SeryMente`. Permite preservar la ruta de consumo de los proyectos. La secuencia contempla snapshot B2 de Vault, protector de recuperación en Vault/read-back y segundo snapshot B2; inventario y copia con SHA-256; staging/rollback; cambio de punto de montaje solo tras igualdad; segundo read-back y aceptación. El VHDX actual bajo AppData y W: se dejan intactos.
+
+`STORAGE_DESIGN=PROPOSED_NOT_ACCEPTED`. No se ejecutó ninguna operación de almacenamiento. La aceptación expresa del operador continúa siendo requisito para crear el nuevo volumen/cifrar/copiar/cambiar el punto de montaje. La sesión de EP Vault GUI se leyó como SELLADA; P0-C requiere desbloqueo local, no una extracción de contraseña al chat.
+
+### Escrituras y lectura de vuelta en main
+
+| Objeto | Commit | Blob SHA (read-back) |
+|---|---|---|
+| OEP §125 / v0.3.60 | `489a61da44f72674945924e13401ec1177d2d3f9` | `6d96ba0ed91f7492eeb3ee51dea99b04fb1ef7ea` |
+| EP-TASK-002 | `259116bee842b409fb7238a32d5308c58015a78c` | `e070ec0229ca26a8cbd6c1ec22c0597776e7393f` |
+| EP-TASK-003 | `8803420e47d043f8f23e469f13056ee4da72a3b1` | `72f0194af5b22623a326617dc67d6debfc19ef5a` |
+| EP-TASK-004 | `5a6022093a78bf6dee10decd5c12870de135f2f2` | `285f2fe28655ae28ef782cb47d5cdaf752963cfa` |
+| EP-TASK-007 | `9af59342fb8dc98221f768c5be82df9329b54c25` | `06f3a694871c31ea72ee373286aa8b935b7e0e27` |
+| Índice provisional EP | `701ad75d63f53b71028a6fb76f688536118bd05e` | `a24883591fdcc7e2ba881babd86ee9c2592c9e45` |
+| Evidencia read-only Fila 4 | `4afb9b368b7e8be74aba239796993e71e1d41f43` | `88dd663df4345df343a51ad2800f0ad79953c60d` |
+
+Las siete lecturas de vuelta verificaron contenido/estado esperado y SHA de blob. El archivo local de inventario de Task007 también se leyó de vuelta: 4.253 bytes, SHA-256 `E0B2FF98A70DF35E2B572638E5E3CFE39D629781852C2F5FBE03A4C4B39FD673`.
+
+### Estado al cierre
+
+`EP_TASK_002=P0_BLOCKED_VAULT_SEALED` · `EP_TASK_003=PREFLIGHT_PARTIAL_FAIL_STORAGE_DESIGN_PENDING_ACCEPTANCE` · `EP_TASK_004=SYNTHETIC_TESTS_PARTIAL_PASS_H10_PENDING` · `EP_TASK_005=BLOCKED_ON_003_AND_MCP_PACKAGE` · `EP_TASK_006=P1_AFTER_B2_P0` · `EP_TASK_007=HOST_INVENTORY_PARTIAL_GUARDIAN_PENDING` · `EP_TASK_001=PENDING`.
+
+No se ejecutó persistencia remota ni mutación del host. El DTC cierra con gates y dependencias separados; no se declara completada ninguna tarea por documentación o pruebas parciales.
+
+
+### Adquisición de §ARR y delta de presentación del GOW
+
+Se leyó íntegramente `§ARR · Vocabulario de entrada para ChatGPT` del objeto estructurado `glossary.sections` en DUG Samantha v388 / GOW 2.18. Cubre, entre otros, FT/OCP, núcleo operativo, control de responsabilidad, gestión/registro conversacional, trazabilidad semántica, ciclo/conversación, binomio A/B, UUIDv7 local, foliación, MCP-NORMATIVO desactivado, MCP-OCP, CNP y PAI. Se adquirieron además los textos completos de P001/P004/P005/P012/P013/P016/P035/P037/P038/P041/P042/P043 en el bloque de gobernanza. No se modificó el DUG.
+
+**Delta de fuente registrado:** el metadato/glosario estructurado declara `GOW=2.18` e incluye `gow-sec-14 / §ARR`; la sección GOW renderizada en `D.sections` conserva una ficha visible `v2.17` y no incluye §ARR como subsección renderizada. Se trata como desalineación de representación que requiere reconciliación del propietario de Gobernanza; el vocabulario adquirido no crea reglas ni autoridad independiente. No se editaron el HTML ni su JSON.
+
+
+---
+
+## EP · apertura de ciclo y aceptación del diseño de almacenamiento · 2026-11-10 · 15:45 America/Mexico_City
+
+### Respuesta inicial y cursor de coordinación
+
+**DTC leído:** `main`, blob `f386bbb7e15cd0a677f6ff084830d59fbb13df26`, 2.515 líneas. El último asiento procesado corresponde al ciclo EP del 2026-11-10 · 15:36. No aparece una comunicación posterior de Gobernanza sin procesar en este objeto: `SIN_NOVEDAD` respecto del cursor leído. No se interpreta la ausencia de delta como aceptación de mensajes anteriores ni como ampliación de autoridad.
+
+**Instrucción directa del operador recibida:** revisar la cola del frente, resolver de acuerdo con la secuencia programada y actualizar los objetos de tarea en cada ciclo. El operador confirma expresamente: «sí autorizo» el diseño VHDX/BitLocker propuesto para conservar la ruta original `Desktop\SeryMente`.
+
+**Respuesta inicial:** acuso la instrucción y la aprobación. La decisión cambia únicamente `STORAGE_DESIGN=ACCEPTED_BY_OPERATOR`; no equivale a autorización para omitir controles de seguridad, verificación de respaldo, lectura de vuelta, manejo de la clave de recuperación, cotejo íntegro del origen, staging/rollback ni aceptación final. No se modifica control EP generación 3, titularidad, responsabilidad ni permisos MCP-OCP.
+
+### Estado, viabilidad, bloqueos y orden inmediato
+
+- **EP-TASK-002 / P0 B2:** sigue siendo el primer gate. Última evidencia propietaria fiable (2026-11-10T21:34:04Z) indica Vault SELLADA, sesión CLI inactiva y 0/5 variables EP B2 disponibles; no hay evidencia de autenticación, objeto B2, descarga ni SHA remoto. El respaldo ciphertext-only no se ejecuta mientras la sesión permanezca sellada.
+- **EP-TASK-003 / protección física:** el diseño ya está aceptado por el operador. La materialización queda subordinada a completar y verificar primero el respaldo/restore de Vault, disponer de la clave de recuperación resguardada en Vault y respaldar el Vault actualizado antes de copiar o montar el workspace. Los dos errores de enumeración del origen aún deben resolverse.
+- **EP-TASK-004:** las pruebas sintéticas parciales permanecen como evidencia parcial; no sustituyen H7/H8 integrales ni H10/aceptación visual.
+- **EP-TASK-005:** continúa bloqueada por EP-TASK-003 PASS y el paquete/manifest/SHA y pruebas MCP-OCP-03/04.
+- **EP-TASK-006:** P1 permanece después de P0 B2 y su restore.
+- **EP-TASK-007:** inventario read-only parcial; no implementar Guardian/lease/crypto-erasure antes de satisfacer dependencias.
+- **EP-TASK-001:** permanece pendiente.
+
+Se ejecutará ahora una comprobación propietaria read-only del estado real de EP Vault y de los artefactos de transferencia. Si la cámara está desbloqueada y las cinco variables están disponibles, se ejecutará solo P0-C ciphertext-only dentro del TTL y se verificará por descarga y SHA. Si continúa sellada, el siguiente paso necesario será el desbloqueo local por el operador; no se solicitará ni automatizará la contraseña. Ninguna copia, cifrado, montaje, renombrado o cambio sobre el workspace original se ha realizado.
+
+**Estado de comunicación al abrir:** `DTC_READ=VERIFIED` · `GOV_CURSOR=SIN_NOVEDAD` · `OPERATOR_STORAGE_DESIGN=ACCEPTED` · `EP_EXECUTION=IN_PROGRESS` · `CYCLE_CLOSE=PENDING`.
+
+
+---
+
+## EP · cierre de ciclo tras aceptación del diseño y revalidación de gates · 2026-11-10 · 15:50 America/Mexico_City
+
+### Procesamiento y resultado
+
+**Cursor bilateral:** se leyó DTC en `main`, blob de apertura `6ccddd9704fccb598c7908ba3b2d3eea04d313b2`. No había comunicación nueva de Gobernanza después del último asiento procesado; se registró `SIN_NOVEDAD`. La respuesta inicial al operador y su aprobación expresa del diseño se persistieron al abrir el ciclo.
+
+**Instrucción del operador:** revisar la cola conforme al orden programado y actualizar las tareas en cada ciclo; aprobación expresa del diseño VHDX/BitLocker para preservar la ruta original.
+
+**EP-TASK-002 — P0 Backblaze**
+- Revalidación de EP Vault CLI bajo contexto propietario a las 15:48:48.9106824-06:00: ciphertext de 2.200 bytes, `sessionActive=false`, schema ep-env-vault/1, KDF PBKDF2-HMAC-SHA256/600.000.
+- Worker y wrapper P0-C ciphertext-only cotejados por tamaño/SHA-256; recibo ausente.
+- No se invocó ListVariables, Run, B2 authorize, bucket list, upload, download ni restore mientras la cámara permanezca sellada.
+- Informe individual parcial actualizado y leído de vuelta: commit `d36a8331b801a906108b5fc273fa5b246be21085`, blob `970d55f67f1e84959fdf96e6315bff1b4b4d5297`.
+- Estado: `P0_BLOCKED_VAULT_SEALED`.
+
+**EP-TASK-003 — protección del workspace**
+- Diseño VHDX fuera de AppData, BitLocker XTS-AES256/Protection On/100 % y montaje en la ruta original aceptado expresamente por el operador.
+- Dos enumeraciones recursivas independientes coincidieron: 3.127 archivos, 660 directorios, 179.138.515 bytes, cero errores y cero reparse points. El conteo anterior (3.103/659/159.162.208, dos errores) aún difiere y no se atribuyó una causa sin evidencia.
+- Revalidación administrativa read-only: C: XtsAes128, FullyEncrypted 100 %, Protection Off, cero protectores; W: FullyDecrypted 0 %, método None, Protection Off, cero protectores. VHDX antiguo bajo AppData sigue adjunto, 30 GiB, sin modificación.
+- Checkout de Metodología carece de .git; root Datos/Metodologia/MCP-OCP ausente; ubicación física UNCLASSIFIED.
+- Informe individual parcial actualizado y leído de vuelta: commit `345dedf70f7d036823c6d809f149b2c07a267a4c`, blob `b494c3593e6785178c2902d6ed1679b2b0a7a579`.
+- Estado: `STORAGE_DESIGN=ACCEPTED_BY_OPERATOR`; `PREFLIGHT_FILA4=PARTIAL_FAIL`; no se creó/cifró/copiò/montó/renombró nada.
+
+**EP-TASK-007 — inventario y sesión**
+- Informe de revalidación read-only agregado y leído de vuelta: commit `ac1ea30fc0877ebe0b9feb5c2436aebbef71cec2`, blob `07b8dde6554fe44f810245b69df12e5223c21686`.
+- Ubicación/IP/GPS no verificados; Guardian, lease, heartbeat, trigger y crypto-erasure no implementados.
+
+**Tareas sin delta de ejecución**
+- EP-TASK-004: self-tests sintéticos parciales siguen siendo la última evidencia; H7/H8 integrales y H10 pendientes.
+- EP-TASK-005: bloqueada por EP-TASK-003 PASS y paquete P004/manifest/SHA/MCP-OCP-03/04.
+- EP-TASK-006: P1 después del P0 B2 y restore.
+- EP-TASK-001: pendiente, sin cambio.
+
+### Cambios documentales y lectura de vuelta
+
+| Objeto | Commit | Blob SHA leído de vuelta |
+|---|---|---|
+| EP-TASK-002 | `d36a8331b801a906108b5fc273fa5b246be21085` | `970d55f67f1e84959fdf96e6315bff1b4b4d5297` |
+| EP-TASK-003 | `345dedf70f7d036823c6d809f149b2c07a267a4c` | `b494c3593e6785178c2902d6ed1679b2b0a7a579` |
+| EP-TASK-007 | `ac1ea30fc0877ebe0b9feb5c2436aebbef71cec2` | `07b8dde6554fe44f810245b69df12e5223c21686` |
+| Índice provisional | `ca3848ffd696a9e890f9b7fb7e4d23a6da8819b6` | `498d9945a97924bcc706af5645b7534300998a16` |
+| OEP v0.3.61 / §127 | `74bd0d3356ff9b6535679b14eb8b42eacac976c0` | `959d54fcfd8d4597ad3cb470bde898cca6958f57` |
+
+Los cinco objetos fueron leídos de vuelta y cotejados con el blob esperado. La escritura de documentos no se interpreta como aceptación de tareas ni como persistencia B2.
+
+### Bloqueos, riesgos y siguiente acción
+
+- **Bloqueo inmediato:** EP Vault sigue sellada. El operador debe desbloquearla localmente y confirmar que la cámara está abierta. No se solicita la contraseña por chat.
+- **Siguiente ejecución autorizada:** revalidar Status y cinco nombres; ejecutar únicamente P0-C en el TTL activo; autenticar el bucket EP, subir ciphertext, descargar, cotejar SHA/tamaño, validar SSE-B2 y demostrar restore.
+- **Después de P0-C:** almacenar/read-back el RecoveryPassword del VHDX nuevo en Vault, subir/validar el ciphertext actualizado y solo entonces crear/proteger/copy/mount el workspace.
+- **Riesgos pendientes:** la raíz fuente aún no tiene manifest SHA íntegro; el delta de conteo sigue sin reconciliar; el workspace continúa en el estado físico observado; BitLocker C: Protection Off y W: descifrado. Se preservó el original.
+- No se ejecutaron operaciones destructivas ni de almacenamiento en este ciclo; no hay rollback que aplicar.
+
+**Estado del ciclo:** `PUBLICADO → LEÍDO → RESPUESTA_INICIAL_REGISTRADA → PROCESADO → DOCUMENTADO_AL_CIERRE`. La escritura del presente cierre y su read-back completan `VERIFICADO_READBACK` si el cotejo final es exacto.
+
+
+---
+
+## EP · apertura de ciclo con relectura de tareas y selección de siguiente trabajo · 2026-11-10 · 15:53 America/Mexico_City
+
+### Respuesta inicial y cursor
+
+DTC releído desde `main`, blob `bcad48724aca6ffd34f09ee8d90944ef57d192fd`, 2.600 líneas. El último asiento es el cierre EP de 15:50 del mismo día. No hay mensaje nuevo de Gobernanza posterior a ese cursor: `SIN_NOVEDAD`. Se releyeron en main OEP v0.3.61, índice provisional y los núcleos EP-TASK-001 a EP-TASK-007. La relectura confirma los estados y el orden registrados; no se promovió ninguna tarea a completada por el paso del tiempo.
+
+**Acuse de la instrucción directa del operador:** volver a leer las tareas, escoger la siguiente conforme a dependencias y resolver el trabajo habilitado; mantener actualizados los objetos de tarea en cada ciclo.
+
+### Selección operativa
+
+1. EP-TASK-002 sigue siendo P0 y precede a la migración física, pero una lectura CLI propietaria a las 15:53:23.4679423-06:00 devolvió `sessionActive=false`, ciphertext presente de 2.200 bytes y recibo B2 ausente. No se ejecutará transferencia B2 sin la sesión desbloqueada.
+2. EP-TASK-003 tiene diseño aceptado por el operador, pero su manifiesto de migración no puede congelarse mientras la carpeta Temporal compartida sigue teniendo actividad de escritura. Se observa actividad Git reciente en `Temporal/SI-Reconcile-20261110-G14`, incluidos archivos `.git` modificados a las 15:52; se preserva la serialidad y no se copia ni modifica esa carpeta.
+3. La siguiente tarea independiente apta para ejecución sintética es EP-TASK-004. Su README exige repetir la suite E2E sintética sobre la ruta exacta v1.0.0. El test `tests/Test-EPVault.ps1` usa una bóveda temporal sintética, prueba opciones TTL, inicialización/upgrade, notas DPAPI, allowlist, logs y sesión GUI/CLI compartida; el sandbox puede dirigirse a una carpeta temporal nueva fuera de AppData y del workspace y limpiarse al finalizar. Esta corrida no desbloquea ni accede a la bóveda formal y no sustituye H10.
+4. EP-TASK-005/006/007/001 conservan dependencias y prioridad ya registradas; no se anticipan.
+
+**Siguiente acción inmediata:** verificar el script exacto de suite y su procedencia/versionado; ejecutarlo aislado sobre la ruta local v1.0.0 si el código coincide con el objeto esperado. Registrar resultados y SHA/read-back en EP-TASK-004, índice, OEP y este DTC. No tocar el almacén formal, la GUI, BitLocker ni el workspace compartido.
+
+
+---
+
+## EP · cierre de ciclo: suite sintética v1.0.0 y diagnóstico P0-C · 2026-11-10 · 16:10 America/Mexico_City
+
+### Procesamiento y resultado
+
+**Cursor bilateral:** DTC leído en main al abrir el ciclo, blob `564a1686230a4d7f87066eb95ed7b438cb7328df`. No se recibió comunicación nueva posterior al cursor; `SIN_NOVEDAD`.
+
+**Instrucción del operador:** releer la cola, seleccionar la siguiente tarea según prioridades/dependencias y resolver lo habilitado. Se releyeron OEP, índice y tareas EP-TASK-001–007. La decisión operativa fue ejecutar la revalidación sintética exacta de EP-TASK-004 mientras TASK-002 permanecía SELLADA; al aparecer sesión activa en Vault, se volvió a priorizar P0-C de TASK-002.
+
+### EP-TASK-004 — E2E sintética exacta v1.0.0
+
+- Compare de producto: `feat/ep-vault-pc7-hardened-20261109` versus main, DIVERGED (10 ahead/272 behind).
+- Los cinco artefactos locales coinciden con los Git blobs de MANIFEST v1.0.0.
+- Suite terminada: `EP_VAULT_VALIDATION_PASS`, exit code 0, 165,41 s, sandbox fuera de AppData/workspace limpiado y ausencia verificada.
+- Crypto, KDF legacy/read-back, ocho TTL, Job Object/timeout, allowlist, notas DPAPI, fail-closed, CRUD/tamper/backup, redacción y revocación cruzada CLI↔GUI pasan sintéticamente.
+- H7/H8 sintéticos para la candidata exacta: PASS. H10 de inspección/aceptación visual humana y merge a main siguen pendientes.
+- Informe individual leído de vuelta: commit `df54e3521b0fb18dfef63d6c98c391549223ce70`, blob `0f9acb4f105e3aa7ff4152a5b392bf365de24e41`.
+- Índice leído de vuelta tras su actualización: commit `c454db12da427342d971fe1628d17a6d2a7c0cf9`, blob `97dd5910e5152f4a9162092221cf542afba05c52`.
+
+### EP-TASK-002 — diagnóstico y dos preflights B2 fallidos
+
+- Sesión temporal activa bajo CENTRAL\fila4 a 16:01:13; cinco nombres de variables EP presentes, sin revelar valores.
+- Worker original P0-C: account authorize PASS, key ID emparejado, bucket OCP-MCP allPrivate; falla `UNEXPECTED_WORKER_FAILURE` antes de upload. Recibo 989 B, SHA `7CBAED2A5AB668F0D9771D86F1495AEBF3EC083A474399FF65D586C86735C6D0`.
+- Worker v2: copia independiente, parser PASS, guard de lifecycle opcional y tipo de excepción saneado; vuelve a autenticar y reconocer bucket privado; falla `WORKER_EXCEPTION_PropertyNotFoundException` antes del upload. Recibo 1.006 B, SHA `10CBA96DDADDB176BDCD846BA90F0A5DAF40AC2E239633717BFD596D063AD8B5`.
+- Ambos recibos reportan remoteObject/fileId ausentes, sin download/SHA remoto, SSE no confirmado, caché temporal limpiada, sin emisión de secretos ni upload del workspace.
+- Worker/wrapper v3 preparados con captura saneada de línea, parser PASS; worker SHA `45D9E91A16078ABE649A93DCEB56696D9B1F0C493368E2FC09A4F53FD5F92BD6`, wrapper SHA `7F5C76D31BC6E660F1F6D3DA2DAEF3220A173136F38D8B0298C92ABA9236DFA9`. V3 no ejecutada porque la sesión volvió a SELLADA a 16:09:18.541 local. Recibo v3 ausente.
+- Informe individual actualizado y leído de vuelta: commit `3dd266d2645cf7884a021a96573692b9c4b39f65`, blob `de810f529a59f4fea9768393430a07a5c1f8e86e`.
+- Índice leído de vuelta después: commit `101ed655774d580fef128fff66d65172c7ac69f1`, blob `5de2397a43906bde701fe83f7decf737b5e401f6`.
+
+### Revalidación de tareas relacionadas
+
+- EP-TASK-003 conserva diseño aceptado, pero preflight físico PARTIAL_FAIL; workspace cambia durante actividad concurrente en Temporal; no generar manifest ni copiar.
+- EP-TASK-006 permanece P1 tras snapshot/restore B2.
+- EP-TASK-007 no implementa Guardian/lease/crypto-erasure.
+- EP-TASK-005 sigue bloqueada por TASK-003 PASS y paquete P004 probado.
+- EP-TASK-001 permanece pendiente.
+- OEP actualizado a v0.3.62 / §128; commit `4547b1a1e0044b39189e7099d70451431e5d416d`, blob `e189a10832f9523eed74b348744f35824ca73e46`; lectura de vuelta exacta.
+
+### Estado del ciclo, riesgos y siguiente acción
+
+**P0 B2 no está resuelto.** Se autenticó la cuenta y se encontró bucket privado, pero ambos workers fallaron durante preflight antes de subir; no existe snapshot remoto demostrado. No afirmar backup/restore, y no avanzar a migración física. Los dos recibos de fallo siguen preservados; v3 no se ejecutará hasta nuevo desbloqueo local del Vault. El operador no debe compartir su contraseña por chat.
+
+Siguiente acción concreta: el operador desbloquea EP Vault localmente; EP comprueba Status=true y los cinco nombres sin revelar valores; ejecuta únicamente el worker v3 dentro del TTL para obtener el número de línea saneado. Con la línea confirmada, corrige el fallo en una variante nueva con recibo propio y ejecuta un único intento final P0-C. Solo un recibo con upload, download/SHA-256 idéntico, SSE-B2 y restore verificados permite desbloquear las tareas dependientes.
+
+No se efectuó copia, cifrado ni montaje del workspace; no se alteró el ciphertext formal; no se modificó main de producto, no se fusionó rama ni se aceptó H10.
+
+**Estado del ciclo:** `PUBLICADO → LEÍDO → RESPUESTA_INICIAL_REGISTRADA → PROCESADO → DOCUMENTADO_AL_CIERRE → VERIFICADO_READBACK`.
+
+---
+
+## EP/MCP · cierre de retest EP Vault y transferencia del carril independiente · 2026-11-10
+
+### EP-TASK-004 · corroboración sintética
+
+- Se reprodujo la suite exacta MOD-EPVAULT/v1.0.0 en Fila 4 desde una materialización temporal del release `db4138ca2879148f2f22f159c7609f5fa3466924`, con cinco blobs de código y dos recursos WAV cotejados contra el manifiesto.
+- Resultado: `EP_VAULT_VALIDATION_PASS`, exit 0, 142,61 s; PowerShell 5.1.26100.9711; log saneado SHA-256 `D1D244ADAEA157AA8F295487CCCE9225207738F8865F4909771B5AED523416A1`.
+- El sandbox se eliminó; `LOCALAPPDATA_OUTER_UNCHANGED=True`, `FORBIDDEN_SYNTHETIC_VALUES_IN_LOG=False`, `RUNNER_TEMP_REMAINING_ITEMS=0`.
+- Manifiesto de la rama candidata actualizado/read-back: commit `e165c0b867e20c9ae3156f6bad72c6f13ba8a5c5`, blob `4de6dcc0a5989a2671c8009226405d7f189fe7fe`. Informe individual main: commit `00c20d925711410a91f446fb943757c824765361`, blob `fa31b43ab882e9e24d8e61b494b176c0d700ba25`. Índice EP: commit `1070bed73194f66aee5b539cee35cb62aab87b81`, blob `3cd70e649d49e82b10f0f9337cdde89ed8813229`. OEP v0.3.63 / §129: commit `9b999644abc39235ac20c9bf3a6279d896db6d81`, blob `5998709ef6c7cf4667ac5c6aa7c4403765c8dd97`.
+- EP-TASK-004 permanece `en_curso`; H10 y merge a main siguen pendientes. La carpeta Desktop/SeryMente se comprobó como snapshot anterior y no se sustituyó.
+
+### Cola EP
+
+- EP-TASK-002: dos variantes P0-C autenticaron y encontraron bucket privado, pero fallaron antes de upload; v3 parser PASS quedó preparada y no se ejecutó porque la sesión formal se selló. Requiere desbloqueo local, no credenciales por chat.
+- EP-TASK-003: diseño aceptado; preflight PARTIAL_FAIL y actividad concurrente en Temporal. No congelar ni copiar workspace.
+- EP-TASK-005: bloqueada por EP-TASK-003 PASS y paquete P004 probado.
+- EP-TASK-006/007/001: dependencias y estado sin cambio material.
+
+### Siguiente trabajo seleccionado · MCP-OCP H1
+
+El carril EP no tiene una ejecución material segura sin intervención local del operador para reabrir Vault; por tanto se selecciona el trabajo remoto independiente autorizado en MCP-OCP, dentro de `frentes/mcp-metodologia/`:
+
+1. corregir el lector DUG que busca `principle_inventory_policy` en la raíz, cuando DUG v388 lo ubica en `document.principle_inventory_policy`;
+2. corregir el fixture sintético para reproducir la estructura canónica y evitar falsos positivos;
+3. restaurar exclusiones de secretos/DB/logs en el `.gitignore` de la candidata y reducir el alcance del `global.json` al frente MCP-OCP;
+4. sincronizar la PR #27 con main vigente y volver a ejecutar restore/build, 41 pruebas y STDIO smoke con evidencia local.
+
+Este trabajo usa el alcance MCP-OCP ya autorizado. No modifica EP, Vault, Backblaze, host, DUG, IPZ, Khora ni activa MCP-NORMATIVO. La integración/aceptación H1 permanece pendiente hasta resultados y read-back.
+

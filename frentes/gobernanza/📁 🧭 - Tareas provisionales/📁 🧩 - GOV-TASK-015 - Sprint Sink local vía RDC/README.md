@@ -595,3 +595,45 @@ Los frentes ya estan avanzando, vuelve a revisar las tareas, asegurandote que to
 - No se modificaron controles EP generación 3, MCP-OCP generación 5 ni Gobernanza generación 17. No se ejecutó B2, modificación de host, instalación, escritura IPZ ni pruebas de código en esta revisión.
 
 **Estado del corte:** coordinación actualizada documentalmente; PR #27 es la línea activa; validación MCP pendiente de runner; Vault B2 pendiente de desbloqueo local y recibo remoto; Fila 4 pendiente de relectura y aceptación de diseño; SINK:P004 todavía no aceptado desde IPZ real.
+
+
+---
+
+## Actualización final de avance y gates · 2026-11-10 · main `4afb9b36`
+
+### Evidencia EP recién publicada
+
+- Main HEAD observado: `4afb9b368b7e8be74aba239796993e71e1d41f43`.
+- Recibo: [EP-FILA4-READONLY-PREFLIGHT-20261110-1530.json](../entregas/EP-FILA4-READONLY-PREFLIGHT-20261110-1530.json) · solo lectura/saneado.
+- VHDX existe y está adjunto; volumen W: GPT/NTFS sigue FullyDecrypted, 0 %, Protection Off, sin protectores. No hay workspace observado en W:.
+- C: aparece 100 % FullyEncrypted con XTS-AES128, pero Protection Off y sin protectores: no satisface el gate.
+- Workspace fuente `Desktop\\SeryMente`: 3.103 archivos, 659 directorios, 159.162.208 bytes; 2 errores de enumeración. Checkout parcial sin Git; root de datos aún no existe.
+- EP Vault: ciphertext 2.200 bytes; sesión inactiva; cero variables disponibles; GUI en estado SELLADA. B2 CLI está instalado, pero autenticación/upload/download no ejecutados.
+- Ubicación física UNCLASSIFIED; IP/GPS no consultados/recopilados. Diseño `PROPOSED_NOT_ACCEPTED`; fuente y VHDX sin modificar; pausa de almacenamiento continúa.
+- EP-TASK-007 aporta inventario local saneado, pero no acredita todavía IP/GPS, guardián, lease, crypto-erasure o cierre probado.
+
+### MCP-OCP · cambio de candidato y CI
+
+- PR #27 incorporó contrato y esquemas de MCP-OCP-14, además de actualizar su núcleo a v0.1.35 y backlog a LIST_VERSION 0.16. Es avance documental/material de schema; no acredita implementación de persistencia ni ejecución de pruebas.
+- Tras el último commit EP `4afb9b36`, PR #27 vuelve a `mergeable=false`; su responsable debe integrar/reconciliar ese commit antes de proponer merge. El cambio EP es de una ruta de evidencia, sin solapamiento funcional con las rutas MCP identificadas.
+- CI más reciente: runs P004 `42906110092`, bootstrap `42906110073` y RDC Governance `42906110188`; todos FAILURE con `steps=null`, `logs_url=null` y cero artefactos. No hay evidencia de ejecución de build, 41 pruebas o smoke; causa raíz NO VERIFICADA.
+- Observación de seguridad a corregir antes de integrar PR #27: su modificación de `.gitignore` elimina exclusiones para `.env/.env.*`, claves/certificados, archivos de base de datos y logs. Restaurar esas exclusiones. También revisar el alcance del `global.json` propuesto en la raíz: preferir pin local dentro de `frentes/mcp-metodologia/` para no condicionar proyectos .NET no relacionados.
+- PR #27 única candidata H1; PR #26 referencia selectiva WPF para H8; PR #24 antecedente. Ninguna fusionada ni aceptada.
+
+### Estado consolidado al cierre
+
+- H1: código y pruebas escritas avanzan; runner sigue sin asignarse; sincronización de PR #27 y revisión de seguridad pendientes; smoke y E2E IPZ no verificados.
+- H2/H3: diseño/contratos preparados; EP Vault sellada y B2 sin autenticar; workspace no migrado ni restaurado. No declarar persistencia remota.
+- H4–H6: contratos y EP-TASK-007 definidos; telemetría ampliada, guardian, lease y crypto-erasure no implementados/verificados.
+- H7: diferido a auditoría posterior del canal RDC/Vault.
+- H8: panel/paquete/aceptación 1.0.0 pendientes; panel no bloquea H1.
+- H9: posterior a release; no aprovisionar proveedor alternativo.
+
+**Flujo recomendado:** mantener MCP-OCP en código/fixtures/pruebas sin datos privados y corregir PR #27; EP atiende primero el desbloqueo local de Vault/P0-C y propone solución de almacenamiento sin mutar hasta aceptación expresa; Gobernanza continúa preparando aceptación IPZ/E2E. Cada frente conserva sus permisos y registra evidencia fresca.
+
+**Límites de esta revisión:** no se modificó host, Vault, B2, IPZ, controles ni ramas MCP; únicamente se consolidó evidencia ya publicada y se actualizaron observaciones de revisión en las PR. No se declara aceptación de producto ni activación de FOL1/MCP-NORMATIVO.
+
+
+## Mandato de reporte individual por tarea
+
+Como coordinador interfrentes, exigir que cada responsable documente el cierre en su propia ficha/núcleo usando [la plantilla común](../../../PLANTILLA-REPORTE-CIERRE-TAREA.md). GOV-TASK-015 no reemplaza los informes de EP, MCP-OCP ni las demás tareas de Gobernanza. Antes de reflejar una tarea como completada en la coordinación, comprobar el enlace, el informe, los criterios terminales, la evidencia ejecutada y el read-back. Por cada tarea cerrada, entregar al operador un enlace y síntesis de solución, verificación, bloqueantes y preocupaciones. Si falta un informe o evidencia, el estado correcto es parcial/no verificado, no completado.

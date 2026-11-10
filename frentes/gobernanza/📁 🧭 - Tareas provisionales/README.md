@@ -424,3 +424,10 @@ El anexo de último tramo contiene las instrucciones verbatim y es el criterio d
 **Asignaciones de Gobernanza:** GOV-TASK-015 coordina; GOV-TASK-014 integra y acepta persistencia; GOV-TASK-013 incorpora correlación de metadatos sin redefinir cycle.duration_ms o ipz.resolve.rdc.duration_ms. Los OCP y controles de EP/MCP-OCP permanecen bajo sus titulares. No se cambian controles ni se activa MCP-NORMATIVO.
 
 **Evidencia/estado:** documentación de tareas publicada en main. No se ejecutaron operaciones B2, restore, runtime MCP, inventario de host, GPS, lease ni borrado. Acuse/ejecución del frente EP y ejecución técnica MCP-OCP son pasos posteriores de sus respectivos responsables.
+
+
+## Informe individual obligatorio por tarea
+
+Las quince tareas registradas (y las que se incorporen después) deben dejar su propio informe de resolución/cierre en su núcleo README individual, siguiendo [la plantilla común](../../PLANTILLA-REPORTE-CIERRE-TAREA.md). El informe explica cómo se resolvió y el resultado logrado; identifica cambios/rutas/commits/blobs/SHA; presenta criterios y pruebas realmente ejecutadas con logs/artefactos; deja read-back; y declara expresamente bloqueantes, dependencias, preocupaciones, riesgos, diferidos, rollback y aceptación.
+
+No sustituir los informes individuales por el resumen del registro ni por GOV-TASK-015. Una tarea hermana mantiene estado y evidencia independientes. Si está parcial o bloqueada, informar el impedimento, responsable, impacto y condición de desbloqueo sin marcarla completa. El índice se actualiza después de leer de vuelta el informe. El cierre se comunica al operador con enlace a cada informe y síntesis de solución/evidencia/bloqueantes/preocupaciones. Datos sensibles y secretos nunca se copian al reporte.

@@ -138,3 +138,7 @@ El orden continúa siendo: (1) congelar el contrato de respuesta de MCP-OCP para
 ## OCP MCP 1.0 · primer hito IPZ · 2026-11-10
 
 El programa completo es OCP MCP 1.0; SINK:P004 es el primer hito. Priorizar GOW:ARR → DUG → MDP → SINK:P004 una vez congelado el contrato real de respuesta. No esperar al panel ni a P001–P043. Preservar las salvaguardas IPZ v0.7 y el límite menor a 1.500 caracteres. No escribir IPZ nativa ni activar FOL1 sin autorización/instalación y read-back específicos. MCP-NORMATIVO sigue DESACTIVADO.
+
+
+## Reporte individual obligatorio de resolución/cierre
+Al resolver, completar, bloquear o cancelar esta tarea, registrar su propio informe en este README usando [la plantilla común](../../../PLANTILLA-REPORTE-CIERRE-TAREA.md). Explicar objetivo y resultado, cómo se solucionó, decisiones verificables, cambios/rutas/commits/blobs/SHA, criterios y pruebas ejecutadas con logs/artefactos, read-back, bloqueantes/dependencias, preocupaciones/riesgos, pendientes, rollback y aceptación. Declarar NINGUNO_VERIFICADO o NO_VERIFICADO donde corresponda; nunca ocultar campos. No marcar completada sin criterios PASS, evidencia y read-back. Actualizar el índice padre después de verificar este informe y entregar al operador el enlace individual y síntesis de solución, evidencia, bloqueantes y preocupaciones. No incluir secretos ni datos sensibles.

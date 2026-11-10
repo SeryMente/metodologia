@@ -47,3 +47,7 @@ Marcar como completada solo cuando el enunciado haya sido atendido, la evidencia
 ## Priorización frente al MVP de Gobernanza · 2026-10-31
 
 La tarea se conserva como mantenimiento de integridad documental, pero queda diferida respecto del MVP IPZ + admisión + OCP MCP. Los vacíos P020/P021/P033/P034 no se rellenan por inferencia y no bloquean la integración salvo que una prueba demuestre que uno afecta directamente a un principio seleccionado. Cualquier enmienda normativa sigue requiriendo procedencia suficiente y autorización expresa P005.
+
+
+## Reporte individual obligatorio de resolución/cierre
+Al resolver, completar, bloquear o cancelar esta tarea, registrar su propio informe en este README usando [la plantilla común](../../../PLANTILLA-REPORTE-CIERRE-TAREA.md). Explicar objetivo y resultado, cómo se solucionó, decisiones verificables, cambios/rutas/commits/blobs/SHA, criterios y pruebas ejecutadas con logs/artefactos, read-back, bloqueantes/dependencias, preocupaciones/riesgos, pendientes, rollback y aceptación. Declarar NINGUNO_VERIFICADO o NO_VERIFICADO donde corresponda; nunca ocultar campos. No marcar completada sin criterios PASS, evidencia y read-back. Actualizar el índice padre después de verificar este informe y entregar al operador el enlace individual y síntesis de solución, evidencia, bloqueantes y preocupaciones. No incluir secretos ni datos sensibles.

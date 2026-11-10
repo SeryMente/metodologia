@@ -287,7 +287,13 @@ static string FixtureHtml(string version = "v388", string? normativeText = null,
         {
             version, signature = "NX-388m", @event = "TEST-EVENT",
             canonical_source = "SeryMente/metodologia/main:gobernanza/METAPROMPT-CANONICO-SAMANTHA.html",
-            metacanon_version = "1.29", gow_version = "2.18", principles = 43
+            metacanon_version = "1.29", gow_version = "2.18", principles = 43,
+            principle_inventory_policy = new
+            {
+                required_full_text_route = "Sink alias per principle",
+                default_consult_before_application = true,
+                deliberately_insufficient_for_full_application = true
+            }
         },
         authority = new
         {
@@ -299,12 +305,6 @@ static string FixtureHtml(string version = "v388", string? normativeText = null,
         sections = new[]
         {
             new { id = "samantha", content = humanSectionContent ?? "Principios universales [[P:P004]]." }
-        },
-        principle_inventory_policy = new
-        {
-            required_full_text_route = "Sink alias per principle",
-            default_consult_before_application = true,
-            deliberately_insufficient_for_full_application = true
         },
         principles = Enumerable.Range(1, 43)
             .Select(i =>

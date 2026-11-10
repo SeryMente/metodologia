@@ -437,3 +437,84 @@ La solución de almacenamiento se trata como decisión abierta, no como permiso 
 EP-TASK-003 bloquea únicamente checkout/root protegido, importación de DUG/fuentes privadas, DB real, runtime persistente e instalación local. No bloquea MCP-OCP-02/05 con fixtures, MCP-OCP-03 con fixtures ni MCP-OCP-04 en preparación remota. EP-TASK-005 espera EP-TASK-003 PASS y el paquete P004 probado de MCP-OCP.
 
 `EP_EXECUTION_OWNER=EP` · `CENTRAL_COORDINATION=GOV-TASK-015` · `EP_ACKNOWLEDGEMENT=PENDING` · `PREFLIGHT_FILA4=PARTIAL_FAIL` · `STORAGE_DESIGN=PROPOSED_NOT_ACCEPTED`.
+
+
+---
+
+## Reanudación EP · preflight read-only Fila 4 y diseño recomendado · 2026-11-10 · 15:35 America/Mexico_City
+
+### Autoridad y fuentes
+
+Instrucción directa del operador para revisar y resolver la cola EP según su secuencia. Releídos OEP §§91/123/124, task index, EP-TASK-002/003/005/007 y DUG Samantha v388 · NX-388m. No se transfiere titularidad ni se modifica el control EP generación 3.
+
+### Estado vivo observado
+
+Evidencia consolidada: [EP-FILA4-READONLY-PREFLIGHT-20261110-1530.json](https://github.com/SeryMente/metodologia/blob/main/frentes/ep/entregas/EP-FILA4-READONLY-PREFLIGHT-20261110-1530.json); blob leído en main `88dd663df4345df343a51ad2800f0ad79953c60d`.
+
+| Componente | Observación |
+|---|---|
+| Workspace `Desktop\SeryMente` | Presente; 3.103 archivos, 659 directorios, 159.162.208 bytes; 0 reparse points; 2 errores de enumeración |
+| VHDX | 30 GiB, GPT, adjunto; archivo de 171.966.464 bytes |
+| Volumen W: | EP-FILA4 / NTFS / totalmente descifrado / sin protectores; raíz solo contiene System Volume Information |
+| Volumen C: | 100 % cifrado, XTS-AES128, Protection Off, sin protectores |
+| Checkout Metodología | Ruta presente, sin `.git`; materialización parcial |
+| Root Datos/Metodologia/MCP-OCP | No existe |
+| Ubicación física | UNCLASSIFIED; GPS/IP no consultados |
+
+El inventario del origen produjo dos errores de enumeración, por lo que no se declara baseline íntegro. Deben resolverse antes del manifiesto y copia. El VHDX existente continúa en su ubicación de preparación bajo AppData; no se modificó. W: está adjunto y sin cifrar. No se usó como destino funcional.
+
+### Diseño recomendado para aceptación
+
+Se recomienda un VHDX nuevo fuera de AppData y fuera de la ruta del workspace, con BitLocker XTS-AES256/Protection On/100 %, montado como punto de montaje de directorio NTFS en el path existente `%USERPROFILE%\Desktop\SeryMente`. Esto preserva las rutas consumidas por proyectos y evita obligarlos a migrar a W:.
+
+Secuencia:
+1. Resolver EP-TASK-002 y respaldar la bóveda cifrada en B2; luego registrar el RecoveryPassword del nuevo volumen en Vault, leerlo de vuelta y respaldar el ciphertext actualizado antes de la migración.
+2. Crear y proteger el VHDX fuera de AppData.
+3. Copiar el workspace a volumen temporal, resolver errores de enumeración y comparar manifiestos SHA-256 integrales.
+4. Conservar el original como staging; solo tras igualdad renombrar el original, crear el directorio vacío y montar el volumen en el path original.
+5. Verificar segundo read-back, rutas, ACL y funcionamiento; conservar rollback hasta aceptación.
+
+**Compuerta:** `STORAGE_DESIGN=PROPOSED_NOT_ACCEPTED`. No se ha autorizado ni ejecutado la creación del nuevo VHDX, cifrado, copia, movimiento, renombrado, montaje ni sustitución. La pausa de almacenamiento del operador se mantiene.
+
+### Estado de aceptación
+
+`PREFLIGHT_FILA4=PARTIAL_FAIL` · `BITLOCKER_GATE=FAIL` · `CHECKOUT=PARTIAL_NO_GIT` · `DATA_ROOT=ABSENT` · `LOCATION=UNCLASSIFIED` · `COPY=NOT_DONE` · `MANIFEST=NOT_CREATED` · `MOUNTPOINT_SWITCH=NOT_DONE` · `DEAD_MAN=CONDITIONAL_PENDING_LOCATION`.
+
+Siguiente acción material: obtener aceptación expresa del diseño; en paralelo, completar P0-C de EP-TASK-002 cuando EP Vault GUI/CLI compartan sesión activa. Mantener EP-TASK-005 bloqueada hasta PASS completo de esta tarea y el paquete P004 de MCP-OCP.
+
+
+## Reporte individual obligatorio por tarea
+Al resolver esta tarea, el responsable debe agregar el informe individual en este mismo núcleo siguiendo [la plantilla común](../../../PLANTILLA-REPORTE-CIERRE-TAREA.md), completar todos sus campos y actualizar el índice padre solo después del read-back. No marcar como completada sin criterios PASS, evidencia ejecutada, integridad verificada y aceptación exigible. Si termina parcial/bloqueada, dejar igualmente el informe con bloqueantes, preocupaciones, riesgos y condición objetiva de desbloqueo. Informar al operador con enlace al informe. Esta instrucción no altera titularidad, generación, permisos ni controles.
+
+
+---
+
+### Informe de estado parcial · EP-TASK-003 · 2026-11-10 · 15:49 America/Mexico_City
+
+- **Frente / responsable:** Entorno Persistente (EP).
+- **Estado anterior → resultante:** STORAGE_DESIGN=PROPOSED_NOT_ACCEPTED → STORAGE_DESIGN=ACCEPTED_BY_OPERATOR; PREFLIGHT_FILA4=PARTIAL_FAIL permanece. La aceptación expresa del operador se recibió a las 15:45 America/Mexico_City.
+- **Corte de fuente:** SeryMente/metodologia/main; OEP §125–§126; task index y núcleos EP-TASK-002/003/004/005/006/007; DUG Samantha v388 · NX-388m.
+- **Objetivo y resultado:** proteger el workspace completo conservando la ruta funcional exacta %USERPROFILE%\Desktop\SeryMente. El diseño fue aceptado, pero la protección física y migración siguen NO EJECUTADAS por el gate anterior de respaldo/restore B2 y por la reconciliación pendiente del inventario.
+- **Cómo se resolvió el diseño:** se acepta un VHDX nuevo fuera de AppData y fuera del propio workspace, propuesto en %USERPROFILE%\EP\ProtectedWorkspace\Fila4-Workspace.vhdx, volumen GPT/NTFS con BitLocker XTS-AES256, Protection On y 100 %, montado como punto de montaje de directorio NTFS en la ruta original. El VHDX antiguo bajo AppData se preserva intacto. La secuencia exige: (1) snapshot B2/restauración verificados del Vault; (2) crear protector de recuperación, guardar/read-back en Vault y subir/validar el ciphertext actualizado; (3) crear y proteger el nuevo VHDX; (4) inventariar/copiar con manifiesto SHA-256 integral; (5) conservar staging/rollback; (6) cambiar el punto de montaje solo después de igualdad; (7) segundo read-back y aceptación.
+- **Cambios realizados:** solo actualización documental. No se creó el nuevo VHDX, no se tocó AppData, no se alteró el VHDX antiguo, no se cifró, copió, movió, renombró, desmontó ni sustituyó el workspace.
+- **Validación y evidencia:**
+  | Criterio | Estado | Evidencia |
+  |---|---|---|
+  | Aceptación del diseño | PASS | Instrucción expresa del operador en este ciclo |
+  | Enumeración recursiva actual | PASS (2 lecturas) | 2026-11-10T21:46:56.5616665Z y 21:47:24.7905206Z: ambas 3.127 archivos, 660 directorios, 179.138.515 bytes, 0 errores y 0 puntos de reanálisis |
+  | Reconciliación con inventario previo | PENDIENTE | El corte anterior reportó 3.103 archivos, 659 directorios, 159.162.208 bytes y 2 errores; el delta de conteo/tamaño aún no tiene causa verificada |
+  | Checkout Metodología | FAIL | Ruta existe; .git ausente, por lo tanto no es Git worktree |
+  | Root Datos/Metodologia/MCP-OCP | FAIL | No existe en la lectura actual |
+  | C: BitLocker | FAIL | 2026-11-10T21:49:25.5244492Z: XtsAes128, FullyEncrypted 100 %, Protection Off, cero protectores |
+  | VHDX antiguo / W: | FAIL | VHDX existente en AppData, 171.966.464 bytes, adjunto, capacidad 30 GiB; W: NTFS, FullyDecrypted 0 %, método None, Protection Off, cero protectores |
+  | Ubicación física | NOT_VERIFIED | Sigue UNCLASSIFIED; no se consultaron GPS/IP |
+  | Manifiesto integral SHA-256 | NOT_RUN | Aún no se inició copia ni manifestado de migración |
+  | Punto de montaje, ACL y rollback físico | NOT_RUN | Ninguna transición del workspace ejecutada |
+- **Read-back e integridad:** dos enumeraciones independientes entregaron el mismo conteo; lecturas administrativas de BitLocker/VHDX y lectura propietaria de rutas completadas. No existe aún hash-manifest del árbol de origen.
+- **Bloqueantes/dependencias:** EP-TASK-002 P0 debe completar upload, descarga/hash y restore del ciphertext de Vault; el RecoveryPassword del nuevo volumen debe guardarse/read-back en Vault y su ciphertext actualizado debe volver a B2 antes de migrar el workspace. Además debe reconciliarse la diferencia entre el inventario actual de 3.127 archivos y el corte anterior.
+- **Preocupaciones/riesgos y mitigaciones:** el workspace sigue en el almacenamiento actual y C: tiene Protection Off; W: está sin cifrar. No utilizar el VHDX antiguo como destino funcional. Mantener el origen intacto hasta comprobar igualdad integral y disponer de rollback probado. No clasificar ubicación física por red.
+- **Pendientes/diferidos:** creación/cifrado del VHDX aceptado; snapshot de recuperación; inventario/hash manifest; copia preservando rutas/metadatos; staging; montaje en la ruta original; segundo read-back; verificación de ACL/aplicaciones; aceptación final. Root de Datos/Metodologia/MCP-OCP y checkout íntegro también siguen pendientes.
+- **Rollback/recuperación:** el original permanece intacto y constituye la fuente de rollback actual; el cambio de mountpoint no se ha iniciado. El plan no está probado y queda NO_VERIFICADO.
+- **Aceptación:** diseño aceptado por el operador; protección física, migración, integridad y aceptación final PENDIENTES.
+- **Siguiente acción:** desbloquear EP Vault y completar P0-C; después registrar/proteger el nuevo volumen según la secuencia aprobada.
+- **Conclusión:** PARCIAL. El diseño quedó aceptado y el subcontrol de enumeración pasó en dos lecturas, pero el gate global de host permanece PARTIAL_FAIL.
