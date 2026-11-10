@@ -38,7 +38,7 @@ La tabla sustituye los PASS/estados de recibos históricos para la implementaci�
 | 4 | MCP-OCP-03 | P0 | Suite mínima de contrato del piloto P004 | PENDIENTE_PILOTO | Casos positivos/negativos de fuente, ID, pin/hash, error y cierre; luego ampliar suite 1.0.0. |
 | 5 | MCP-OCP-04 | P0 | Transporte y E2E IPZ → RDC → STDIO para P004 | PENDIENTE_E2E_IPZ | initialize/tools/list/tools/call/cierre y respuesta visible desde el contexto IPZ; consola sola no basta. |
 | 6 | MCP-OCP-13 | P1 | Panel local de observabilidad visual | ESPECIFICADO · IMPLEMENTACIÓN_PENDIENTE | Obligatorio en 1.0.0; se implementa tras congelar schema y no bloquea el piloto SINK:P004. |
-| 7 | MCP-OCP-05/03 | P0 | Generalización Sink P001–P043 y lotes | PENDIENTE_POST_PILOTO | 43 respuestas, orden, hashes/eventos y controles negativos PASS. |
+| 7 | MCP-OCP-05 (fase posterior) / 03 | P0 | Generalización Sink P001–P043 y lotes | PENDIENTE_POST_PILOTO | 43 respuestas, orden, hashes/eventos y controles negativos PASS. |
 | 8 | MCP-OCP-10 | P1 | Pins, manifiesto y evidencia final | PENDIENTE_EVIDENCIA_ACTUAL | Pins v386/core vigente, SDK/RID, servidor+panel, tests y hashes. |
 | 9 | MCP-OCP-07 | P1 | Paquete reproducible 1.0.0 | PENDIENTE_PAQUETE_ACTUAL | ZIP final servidor+panel, configuración, manifest/SHA y read-back. |
 | 10 | MCP-OCP-12 | P1 | Bootstrap local en Fila 4 | BLOQUEADO_GATES_EP | Piloto/instalación dentro de checkout; datos externos protegidos; REGISTER interactivo. |
@@ -88,7 +88,7 @@ La tabla sustituye los PASS/estados de recibos históricos para la implementaci�
 
 **Objetivo:** construir el conjunto mínimo de herramientas de lectura necesarias para MCP-OCP 1.0.0.
 
-**Alcance funcional:** diagnóstico que diferencie proceso activo de readiness; importación/validación de fuentes; recuperación GOW:ARR; identidad y procedencia DUG (versión, firma, commit, blob SHA, SHA-256, adquisición y estado); catálogo 43 MDP; SINK:P001..P043 individual; lote de IDs que respete orden; lectura acotada de documentos/OCP bajo allowlist de repositorio/rutas. No crear herramientas MCP de escritura en 1.0.0 salvo necesidad expresa posterior.
+**Alcance funcional en dos fases:** **Fase A (primero):** diagnóstico mínimo, importación/validación, GOW:ARR, identidad/procedencia DUG y recuperación individual SINK:P004 para habilitar el piloto IPZ. **Fase B (después de verificar el piloto):** catálogo completo 43 MDP, SINK:P001..P043 individual, lotes ordenados, eventos/frecuencia y lectura acotada de documentos/OCP bajo allowlist. No crear herramientas MCP de escritura en 1.0.0.
 
 **Integridad:** respuesta individual con ID/título/pin exacto/hash de texto. Evento de frecuencia solo por recuperación íntegra satisfactoria. Hash de lote sobre serialización UTF-8 canónica de IDs ordenados, pins y hashes individuales. Fuente desactualizada, ausente, alterada, no importada, parámetro inválido o ruta fuera de allowlist ⇒ rechazo explícito; nunca fallback a memoria o MDP.
 
@@ -135,9 +135,9 @@ Una vez configuradas y aceptadas las tareas del frente MCP-Jules, se prepara una
 ### MCP-OCP-12 — Materialización local y bootstrap del producto
 **Prioridad:** P1 · **Estado:** BLOQUEADO_GATES_EP_Y_CONSENTIMIENTO_LOCAL.
 
-**Objetivo:** instalar la copia local del servidor dentro del checkout de Metodología y preparar la instancia real de usuario.
+**Objetivo:** instalar primero el piloto SINK:P004/IPZ y, después de su aceptación, el release final servidor+panel dentro del checkout local de Fila 4.
 
-**Ruta obligatoria del programa:** checkout SeryMente/Repositorios/Metodologia/metodologia/; ejecutable/runtime en frentes/mcp-metodologia/instalacion-local/. No instalar el programa únicamente en LocalAppData. Añadir exclusión Git; binarios/configuración instalada no se versionan.
+**Ruta obligatoria del programa:** checkout `%USERPROFILE%\\Desktop\\SeryMente\\Repositorios\\Metodologia\\metodologia\\` de Fila 4; piloto en `frentes/mcp-metodologia/instalacion-local/piloto-sink/`; release final en `frentes/mcp-metodologia/instalacion-local/`. No instalar el programa únicamente en LocalAppData. Añadir exclusión Git; binarios/configuración instalada no se versionan.
 
 **Datos separados:** DB SQLite, claves DPAPI CurrentUser, fuentes sensibles, logs y backups van a root independiente protegido, fuera del checkout y verificado por EP. No usar LocalAppData sin demostrar protección efectiva.
 
