@@ -3078,7 +3078,7 @@ La raíz física se descubre dinámicamente desde el Escritorio real o desde el 
 ### 120.1 Identidad de equipo, perfil y ubicación
 
 - **Etiqueta operativa del equipo:** Fila 4. La etiqueta identifica la terminal; no determina por sí sola la ubicación física.
-- **Última identidad técnica documentada:** dispositivo RDC `d0bbb2a3-d7b4-45e1-8870-652c2c3844fc`; perfil interactivo `CENTRAL\\fila4`; SessionId 4. Son datos de la última observación registrada en EP-TASK-003, no una lectura nueva del host en este ciclo.
+- **Última referencia operativa:** alias funcional Fila 4, designado por el operador. No se conservan hostname, Device ID, usuario de Windows ni SessionId efímeros; el preflight vivo se registra por resultado y por el alias funcional.
 - **Designación del destino:** reportada expresamente por el operador el 2026-11-10; la sesión RDC actual, hostname, usuario/SID efectivo, token, `USERPROFILE`, permisos y disponibilidad deben confirmarse en vivo antes de la primera escritura local.
 - **Ubicación física/perfil EP:** PENDIENTE_DE_VERIFICACIÓN. No inferir CECEQ ni LOC-OTHER a partir de la etiqueta Fila 4, del dominio CENTRAL o del identificador RDC. Mantener la identidad de la terminal separada del perfil físico de ubicación.
 - La antigua selección PC 7 queda como antecedente histórico. No volver a solicitar al operador la selección del host; validar técnicamente la sesión Fila 4 ya designada.
@@ -3096,7 +3096,7 @@ El release MCP-OCP y su piloto se ubican dentro de ese checkout:
 - `instalacion-local\\piloto-sink\\`: ejecutable temporal del piloto SINK:P004, su configuración no secreta y manifiesto/hash propios. No es release 1.0.0.
 - `instalacion-local\\`: destino del producto final servidor + panel MCP-OCP 1.0.0, excluido de Git.
 - Datos/DB, claves DPAPI CurrentUser, fuentes importadas sensibles, logs operativos y backups no se guardan dentro del checkout ni de la carpeta de instalación. Se ubican en el área `Datos/Metodologia/MCP-OCP/` del workspace protegido, con root real resuelto y verificado por EP antes de importarlos.
-- Resolver `%USERPROFILE%` desde la sesión interactiva Fila 4; no codificar una ruta bajo `C:\\Users\\fila4` ni ejecutar bajo `CENTRAL\\MantenimientoRCI` como sustituto de la identidad propietaria.
+- Resolver `%USERPROFILE%` desde el perfil operativo designado Fila 4. No codificar rutas personales ni utilizar el perfil de mantenimiento como sustituto del perfil propietario; ese perfil solo se usa para elevación administrativa puntual cuando sea necesario.
 
 ### 120.3 Protección y dead-man aplicables a Fila 4
 
@@ -3145,7 +3145,7 @@ La actualización es documental y de secuencia. No se ha operado el dispositivo,
 
 El DUG canónico fue actualizado por Gobernanza a Samantha v388/NX-388m, con ART-027 alineado a Sink local por MCP STDIO/RDC. Pin: commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`; blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`. Las tareas EP de este sprint deben rechazar pins v386; no importar un DUG/MDP de revisión anterior.
 
-**Estado EP observado en la reconciliación:** EP-TASK-003 `en_curso`; EP-TASK-005 `pendiente`. Fila 4 es el destino designado; su identidad técnica última conocida es RDC `d0bbb2a3-d7b4-45e1-8870-652c2c3844fc`, `CENTRAL\\fila4`, SessionId 4. No existe un preflight vivo nuevo ni se acredita checkout/root protegido en esta actualización.
+**Estado EP observado en la reconciliación:** EP-TASK-003 `en_curso`; EP-TASK-005 `pendiente`. Fila 4 es el alias funcional designado; su preflight vivo y los permisos se consultan en el registro de EP. No almacenar ni reutilizar identificadores técnicos de sesiones RDC.
 
 ### 121.2 Secuencia urgente y dependencias
 
@@ -3173,13 +3173,13 @@ Este asiento y las tareas EP reflejan el orden y la urgencia; no se ejecutó pre
 Lectura RDC en vivo, 2026-11-10, zona America/Mexico_City:
 
 - Etiqueta operativa: Fila 4.
-- Hostname observado: PC10RCIF4EI4.
-- Sesión de trabajo: CENTRAL\fila4, perfil C:\Users\fila4.
-- Sesión interactiva: console, Session ID 1, estado Active. El Session ID histórico 4 no coincide con la lectura actual y deja de utilizarse como dato vivo.
-- Dispositivo RDC actual vinculado al token CENTRAL\fila4: 99383b36-cc22-4457-952f-8799cccac0a7. La identidad histórica d0bbb2a3-d7b4-45e1-8870-652c2c3844fc no fue confirmada como ID actual.
-- Perfil de red: central.gob.mx, categoría DomainAuthenticated. Este dato no demuestra ubicación física.
+- Alias funcional observado: Fila 4 (destino designado por el operador).
+- Perfil operativo: corresponde al perfil de trabajo designado para Fila 4; no se conserva el nombre de cuenta ni la ruta concreta del perfil.
+- Estado de sesión observado: sesión interactiva activa; no se conserva su nombre ni identificador efímero.
+- Identidad técnica RDC: no se conserva Device ID ni correlación de sesiones; el alias funcional Fila 4 es suficiente para la continuidad documental.
+- Ubicación: la información de red observada no permite clasificar la ubicación física.
 - Ubicación física CECEQ/LOC-OTHER: **NO CLASIFICADA**.
-- El token de Fila 4 no está elevado. Se utilizó una segunda conexión del mismo host, bajo CENTRAL\MantenimientoRCI, únicamente para lectura administrativa del estado de BitLocker; no se materializaron archivos bajo ese perfil.
+- Privilegios: el perfil operativo Fila 4 no está elevado. Se utilizó un contexto administrativo separado del mismo host únicamente para la lectura de BitLocker; no se materializaron archivos bajo ese perfil.
 
 ### 122.2 Estado del volumen y del workspace
 
@@ -3196,14 +3196,14 @@ La lectura administrativa de manage-bde -status C: observada a las 2026-11-10T11
 
 **Gate de protección: FAIL.** El porcentaje 100 % no equivale a protección activa; XTS-AES128/Protection Off/sin protectores no cumple el requisito XTS-AES256/Protection On/100 % con protector recuperable y read-back.
 
-El root C:\Users\fila4\Desktop\SeryMente existe y contiene 2,468 archivos, 545 directorios y 127,996,970 bytes (aprox. 122.07 MiB). La lectura del checkout objetivo Repositorios\Metodologia\metodologia encontró solo frentes\ en la raíz y ningún .git: se clasifica como **materialización parcial, no clon Git íntegro**. No se sobrescribió ni modificó su contenido.
+El root `%USERPROFILE%\Desktop\SeryMente` existe y el último inventario observado contiene 2.468 archivos, 545 directorios y 127.996.970 bytes (aprox. 122,07 MiB). El checkout objetivo `Repositorios\Metodologia\metodologia` contiene solo `frentes\` en la raíz y ningún `.git`: materialización parcial, no clon Git íntegro. No se sobrescribió ni modificó su contenido.
 
 Git y GitHub CLI están disponibles en Fila 4. gh auth status confirmó sesión autenticada en github.com mediante keyring, con alcance repo y read:org; no se expuso token alguno. Hyper-V/New-VHD no está disponible en la sesión administrativa inspeccionada. No se creó volumen VHDX ni se alteró BitLocker.
 
 ### 122.3 Resultado y siguientes acciones
 
 - PREFLIGHT_FILA4=PARTIAL_FAIL.
-- IDENTITY=OBSERVED, con rectificación de hostname, RDC Device ID y Session ID respecto a datos históricos.
+- `IDENTITY=OBSERVED`; los identificadores técnicos de sesión/dispositivo no se retienen en el OCP conforme a DUG ART-013.
 - LOCATION=UNCLASSIFIED.
 - BITLOCKER_GATE=FAIL.
 - WORKSPACE_EXISTING_CONTENT=PRESERVED.
@@ -3213,7 +3213,7 @@ Git y GitHub CLI están disponibles en Fila 4. gh auth status confirmó sesión 
 
 Siguiente trabajo EP: (1) confirmar ubicación física y presencia del operador para revisar el cambio de almacenamiento/cifrado; (2) seleccionar un método disponible y verificable para crear un workspace XTS-AES256 protegido y custodiar/read-back el protector; (3) preservar y reconciliar la materialización parcial frentes antes de crear el checkout Git íntegro desde main; (4) calcular manifiestos SHA-256 de origen/destino y ubicar el root MCP-OCP fuera del checkout, dentro del volumen protegido; (5) implementar dead-man solo si la ubicación real resulta distinta de CECEQ. EP-TASK-005 sigue pendiente hasta que EP-TASK-003 alcance PASS y MCP-OCP entregue el paquete P004 verificable.
 
-**Evidencia saneada:** EP-FILA4-PREFLIGHT-PARCIAL-20261110.json, commit inicial 84cc9ffc1a2aa27c622c7e5de147d7460f3b5ecd, blob 8ebf0c2b54efc6d3fe597adfe0f9358e65e6acbe, read-back exacto. No contiene secretos ni valores de EP Vault.
+**Evidencia saneada:** EP-FILA4-PREFLIGHT-PARCIAL-20261110.json, saneada conforme a DUG v388/ART-013; commit `2ac3dc5ad2970e71b15a21e33d0740e001c2b183`, blob `9bf9cc7edee2e8a0f483d7191e28b37b1e03e3e5`, read-back exacto. Se eliminaron identificadores efímeros y se conservaron el alias funcional y los resultados del preflight.
 
 
 ## 123. Rectificación del estado de almacenamiento Fila 4 y continuidad del sprint · 2026-11-10
@@ -3224,7 +3224,7 @@ Siguiente trabajo EP: (1) confirmar ubicación física y presencia del operador 
 
 - **Destino:** Fila 4 sigue siendo el único destino designado para el sprint; PC 7 permanece supersedido y no es alternativa.
 - **Presencia del operador:** el operador ya había reportado estar físicamente frente al dispositivo Fila 4. Este dato es un reporte del operador, no una verificación independiente por RDC.
-- **Ubicación física:** **NO CLASIFICADA**. No se recibió confirmación afirmativa de CECEQ ni una confirmación expresa de otra ubicación. El perfil de red `central.gob.mx / DomainAuthenticated` no demuestra ubicación física.
+- **Ubicación física:** **NO CLASIFICADA**. No se recibió confirmación afirmativa de CECEQ ni una confirmación expresa de otra ubicación. La información de dominio/red no demuestra ubicación física.
 - **Consecuencia:** no volver a solicitar selección del dispositivo. El dead-man se vuelve obligatorio únicamente si la ubicación física se confirma distinta de CECEQ; hasta resolverla, no se afirma que la condición CECEQ o LOC-OTHER esté cumplida.
 
 ### 123.2 Preparación material observada después del preflight §122
@@ -3233,7 +3233,7 @@ La sesión operativa posterior a §122 produjo el siguiente delta, que no estaba
 
 | Elemento | Último estado observado |
 |---|---|
-| Contenedor VHDX | Creado en `C:\Users\fila4\AppData\Local\EP\ProtectedWorkspace\Fila4-Workspace.vhdx` |
+| Contenedor VHDX | Creado en `%LOCALAPPDATA%\EP\ProtectedWorkspace\Fila4-Workspace.vhdx` |
 | Capacidad máxima | 30 GiB, dinámico/expandible |
 | Volumen interno | GPT + NTFS, etiqueta `EP-FILA4` |
 | Acceso temporal | Montado como `W:` |
@@ -3247,7 +3247,7 @@ No se modificó el cifrado del volumen del sistema `C:`. La preparación del VHD
 
 ### 123.3 Discrepancia sobre el punto de trabajo y diseño no aceptado
 
-El objetivo operativo expresado por el operador es proteger el directorio de trabajo existente y conservar la ruta habitual:
+El objetivo operativo expresado por el operador es proteger el directorio de trabajo existente y conservar la ruta `%USERPROFILE%\Desktop\SeryMente`.
 
 `C:\Users\fila4\Desktop\SeryMente`
 
