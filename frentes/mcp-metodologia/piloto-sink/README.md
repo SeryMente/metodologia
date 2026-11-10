@@ -11,7 +11,7 @@
 |---|---|
 | Repositorio | SeryMente/metodologia |
 | Rama canónica | main |
-| HEAD de main al crear la rama | 17a4da1d3906e2397ab4682ff46cc9a9f116f34d |
+| HEAD de main al crear la rama | 73a42bc687f1fa3dd60b44af9cd93f797eba3920 |
 | DUG | Samantha v387 · NX-387m |
 | DUG commit | 17a4da1d3906e2397ab4682ff46cc9a9f116f34d |
 | DUG blob | c8d37d92aed7ff9d4fe94e7a9541e76ba5c88a2c |
