@@ -5,7 +5,10 @@ on:
     branches:
       - main
     paths:
-      - "frentes/mcp-metodologia/**"
+      - "frentes/mcp-metodologia/global.json"
+      - "frentes/mcp-metodologia/src/OcpMcp/**"
+      - "frentes/mcp-metodologia/tests/**"
+      - "frentes/mcp-metodologia/piloto-sink/ci/**"
       - ".github/workflows/mcp-ocp-p004-pilot.yml"
 
 permissions:
