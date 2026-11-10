@@ -365,7 +365,7 @@ Abrir PR draft ciclo02; recuperar ejecución CI con steps/logs/artifacts; correg
 
 ### Main posterior a la base de ciclo02
 
-Después de crear la rama ciclo02, main avanzó cuatro commits EP-only hasta `67b48bc041bee372c69389f0aa84ed1a6d19eff5`. La comparación desde la base `84cc9ffc1a2aa27c622c7e5de147d7460f3b5ecd` confirma que las cuatro rutas modificadas pertenecen a EP y no se solapan con las 30 archivos modificados en el diff MCP/GOV de la rama. Se conserva la rama desde su base limpia verificada; relación actual 98 ahead / 4 behind; 30 archivos cambiados en el diff. No se toma control ni se modifica el estado EP.
+Después de crear la rama ciclo02, main avanzó cuatro commits EP-only hasta `67b48bc041bee372c69389f0aa84ed1a6d19eff5`. La comparación desde la base `84cc9ffc1a2aa27c622c7e5de147d7460f3b5ecd` confirma que las cuatro rutas modificadas pertenecen a EP y no se solapan con las 30 archivos modificados en el diff MCP/GOV de la rama. Se conserva la rama desde su base limpia verificada; la rama sigue divergente respecto a main; el conteo ahead/behind y de archivos se consulta en la PR #26 para conservar una única lectura vigente. No se toma control ni se modifica el estado EP.
 
 
 ## Implementación candidata WPF/monitor · ciclo02 · 2026-11-10
