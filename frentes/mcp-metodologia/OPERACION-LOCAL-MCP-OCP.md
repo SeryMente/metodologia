@@ -1,6 +1,6 @@
 # Operación local · MCP-OCP
 
-**Estado vigente:** núcleo documental MCP-OCP v0.1.26; backlog v0.7; DUG Samantha v386/NX-386m; objetivo de software MCP-OCP 1.0.0. Sink local por stdio y panel de observabilidad están autorizados en el alcance del sprint, pero su implementación/build/paquete actuales todavía están pendientes. La candidata 0.1.0 que se describe aquí es evidencia histórica; la identidad/ruta del entorno temporal no se conserva y el paquete no está disponible en este repositorio.  
+**Estado vigente:** núcleo documental MCP-OCP v0.1.27; backlog v0.8; DUG Samantha v386/NX-386m; objetivo de software MCP-OCP 1.0.0. Sink local por stdio y panel de observabilidad están autorizados en el alcance del sprint, pero su implementación/build/paquete actuales todavía están pendientes. La candidata 0.1.0 que se describe aquí es evidencia histórica; la identidad/ruta del entorno temporal no se conserva y el paquete no está disponible en este repositorio.  
 **Arquitectura:** proceso MCP stdio local; el cliente inicia y administra el proceso. No hay listener TCP/HTTP ni endpoint público.  
 **Fuente de verdad documental:** [MCP-OCP · núcleo](MCP-METODOLOGIA.md) y [lista provisional de tareas](LISTA-TAREAS-PROVISIONAL.md).  
 **Separación:** este servidor pertenece exclusivamente a MCP-OCP en Metodología. No es Khora MCP ni el bridge de Jules.
@@ -139,3 +139,31 @@ EP-TASK-005 escribe y coteja `session.json`, y abre la ventana como proceso hijo
 **Estados no intercambiables:** proceso vivo, protocolo inicializado, fuentes importadas/íntegras/vigentes, operador provisionado, root protegido y readiness agregado. “Listo” solo cuando los gates requeridos están verificados. Payloads, texto de documentos, argumentos, resultados, tokens, claves y SID quedan fuera de la telemetría.
 
 **Apertura y cierre son responsabilidad EP.** MCP-OCP construye el panel y entrega contrato, binario, schema, hashes y prueba; no instala ni opera procesos persistentes del host.
+
+## 12. Rectificación del destino y piloto IPZ/SINK prioritario · 2026-11-10
+
+La instalación de MCP-OCP deja de tener como destino PC 7. El operador designó **Fila 4**, el dispositivo correspondiente a la única sesión RDC disponible. No usar PC 7 como alternativa ni reutilizar su perfil/volúmenes. Últimos datos técnicos documentados (no revalidados en vivo): Device ID `d0bbb2a3-d7b4-45e1-8870-652c2c3844fc`, sesión interactiva `CENTRAL\\fila4`, SessionId 4. Confirmar identidad, SID, `USERPROFILE`, permisos y conexión antes de escribir. La ubicación física de Fila 4 no se infiere; EP decide CECEQ u otra ubicación y el dead-man aplicable.
+
+**Rutas:**
+- Checkout: `%USERPROFILE%\\Desktop\\SeryMente\\Repositorios\\Metodologia\\metodologia\\`.
+- Piloto SINK:P004: `<checkout>\\frentes\\mcp-metodologia\\instalacion-local\\piloto-sink\\`.
+- Release final 1.0.0 (servidor + panel): `<checkout>\\frentes\\mcp-metodologia\\instalacion-local\\`.
+- Datos/DB/DPAPI/fuentes/logs/backups: `%USERPROFILE%\\Desktop\\SeryMente\\Datos\\Metodologia\\MCP-OCP\\`, fuera del checkout y dentro del volumen protegido verificado por EP.
+
+**Preflight previo al uso real de fuentes:** la última lectura histórica de Fila 4 informó C: `FullyEncrypted/100 %`, `ProtectionStatus=Off`, `XtsAes128`; no acredita protección efectiva. Repetir en vivo y establecer workspace VHDX XTS-AES256/Protection On/100 %, protector recuperable en EP Vault, checkout completo y SHA/read-back. No importar DUG/MDP privadas, generar DB con fuentes, provisionar operador ni dejar runtime persistente antes de que EP valide checkout/root. El dead-man se implementa si Fila 4 está fuera de CECEQ; la ubicación debe comprobarse y no presumirse. No reutilizar W:/VHDX/DPAPI/RecoveryPassword de PC-14 ni de otros perfiles.
+
+### Hito A — piloto de uso SINK:P004 con IPZ
+
+1. MCP-OCP-02 crea rama nueva desde main y porta selectivamente los módulos reutilizables.
+2. MCP-OCP-05 implementa el corte mínimo GOW:ARR → DUG → SINK:P004, con texto íntegro, ID/título, DUG v386/NX-386m, commit/blob y SHA-256.
+3. MCP-OCP-03/04 prueban initialize, tools/list, tools/call:P004, errores/fuente no verificada y cierre limpio en STDIO/RDC.
+4. EP-TASK-003/005 preparan Fila 4, checkout y root protegido; extraen el piloto solo después del gate y cotejan manifest/SHA.
+5. GOV-TASK-007 prepara un candidato IPZ de menos de 1.500 caracteres y salvaguardas completas con secuencia GOW:ARR → DUG → MDP → SINK:Pxxx; primer caso P004.
+6. La aceptación exige demostrar la invocación desde el contexto IPZ por la ruta RDC/STDIO y que la respuesta visible al modelo incluya pin/hash. Un smoke JSON-RPC desde consola no acredita ese E2E. La escritura/read-back nativos de IPZ son una acción separada; no se declara realizada aquí.
+
+### Hito B — release 1.0.0
+
+Tras el piloto P004, generalizar a P001–P043, lotes ordenados, integridad, telemetría y negativos. Construir MCP-OCP-13 WPF contra schema congelado, en paralelo con la generalización; sigue siendo obligatorio en el paquete final 1.0.0, pero no bloquea el piloto. Cerrar manifest/build/ZIP único servidor+panel, extracción/read-back, bootstrap y aceptación EP/Gobernanza.
+
+**Estado:** ajuste documental verificado; no se ejecutó preflight, clon, instalación, importación, REGISTER, piloto ni E2E IPZ.
+
