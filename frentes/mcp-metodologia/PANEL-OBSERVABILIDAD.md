@@ -2,7 +2,7 @@
 
 **Producto:** MCP-OCP 1.0.0  
 **Versión de esta especificación:** 1.0 · **Estado:** CONTRATO APROBADO PARA IMPLEMENTACIÓN · implementación pendiente  
-**Fuente normativa:** Samantha v386 · NX-386m · Metacanon 1.29 · GOW 2.18  
+**Fuente normativa vigente:** Samantha v388 · NX-388m · Metacanon 1.29 · GOW 2.18; ART-027 define Sink local por STDIO/RDC.  
 **Servidor:** MCP-OCP por STDIO · MCP-NORMATIVO: DESACTIVADO
 
 ## 1. Resultado que debe entregar
@@ -158,3 +158,12 @@ MCP Inspector puede utilizarse de forma opcional durante desarrollo para inspecc
 - Recibo de build y aceptación con evidencia de funcionamiento real.
 
 **Estado:** especificación documental preparada; código, build, integración EP e instalación todavía no ejecutados.
+
+
+## 10. Secuencia del sprint SINK-P004 · 2026-11-10
+
+El panel forma parte obligatoria de MCP-OCP 1.0.0, pero no es requisito previo para el primer piloto SINK:P004. MCP-OCP-13 se implementa después de congelar el schema de estado/eventos y en paralelo con la generalización P001–P043. No debe desviar recursos de MCP-OCP-02/05/03/04 ni bloquear el primer recorrido IPZ → RDC → STDIO.
+
+**Dependencias:** MCP-OCP-02 fija SDK/TFM/RID; MCP-OCP-05/03 congela contrato y eventos; EP define `monitor/session.json` y el ciclo EP ACTIVE; panel consume de forma read-only `session.json`, `state.json` y `events.jsonl`. EP-TASK-005 conserva responsabilidad de apertura/cierre en el ciclo de sesión. El panel no opera BitLocker/ACL, no controla ni reinicia el servidor y no amplía el dead-man.
+
+**Estado vigente:** especificación 1.0 aprobada; implementación pendiente; P1 de secuencia para el sprint; obligatorio para release 1.0.0; no bloquea P004.
