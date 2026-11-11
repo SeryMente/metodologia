@@ -51,10 +51,12 @@
     },
     "dialogue": {
       "path": "frentes/gobernanza/conversaciones/C-GOBERNANZA-RETOMA-14-dialogo.jsonl",
-      "git_blob_sha": "4747b6655de7ec3d0804c7e56fb37213b5e0bb19",
-      "size_bytes": 7537,
-      "sha256": "457F49DCC1A5825ACA386DC649B9A641FA6BFDFA826047CDA4C31E7F54C93B56",
-      "readback_exact": true
+      "commit_sha": "7a6da1366c14c2caca3285ccda0e1b2491d37433",
+      "git_blob_sha": "fe828604ae6c88a5423b29d57354d16aeeedbd62",
+      "size_bytes": 11874,
+      "sha256": "AAAF9A6914C3675E512E6DB168E2BF44F3ED2545C3C76EE6E28629848799AC89",
+      "readback_exact": true,
+      "records": 7
     },
     "chronicle": {
       "path": "frentes/gobernanza/cronica/C-GOBERNANZA-RETOMA-14.md",
@@ -63,9 +65,11 @@
       "sha256": "00A8247AE3B49E80D68FF3852F0D21F27426CFCFEED29FCDE4F4D6ED9CFF1951",
       "readback_exact": true
     },
-    "dialogue_record_count": 6,
+    "dialogue_record_count": 7,
     "last_visible_model_output_literal": "Se ha abierto Review a Device Call",
-    "last_output_provenance": "Texto literal suministrado por el operador; no constituye evidencia de apertura de Vault."
+    "last_output_provenance": "Texto literal suministrado por el operador; no constituye evidencia de apertura de Vault.",
+    "current_model_response_recorded": true,
+    "current_model_response_sha256": "69C7D1B4233FA286FDFB9827003B5D4144034928DC51941AFF3D8F7F69493B01"
   },
   "device_and_secrets": {
     "PC8_status": "OFFLINE",
