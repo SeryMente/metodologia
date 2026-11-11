@@ -88,7 +88,7 @@ La tabla sustituye los PASS/estados de recibos históricos para la implementaci�
 **Salida:** recibo ligado al commit de código y al main base, pins DUG/core, SDK/RID, comandos, conteos, PASS/FAIL, limitaciones y hashes. Release solo cuando suite y paquete pasen; no convertir resultados de candidata antigua en evidencia nueva.
 
 
-**Evidencia MCP-OCP-03 · 2026-11-11:** las suites se ejecutaron de nuevo sobre el source commit `4600086c492582c5d854145db64097310ac73686`. **Resultado MCP-OCP-03 · 2026-11-11:** ejecución fresca ligada al source commit `4600086c492582c5d854145db64097310ac73686`, SDK .NET 10.0.403, Windows 10.0.26200 x64, PowerShell 7.4.22. Restore de ambos proyectos PASS; builds servidor/monitor/tests PASS, 0 warnings/0 errors; P004 18/18 PASS; monitor/readiness 23/23 PASS. Logs y SHA-256 en `piloto-sink/SOURCE-PIN.json` y `entregas/piloto-sink-p004/VALIDATION-RECEIPT.json`. El panel WPF y QA integral del release 1.0.0 permanecen fuera de este piloto.
+**Resultado MCP-OCP-03 · 2026-11-11:** ejecución fresca ligada al source commit `4600086c492582c5d854145db64097310ac73686`, SDK .NET 10.0.403, Windows 10.0.26200 x64, PowerShell 7.4.22. Restore de ambos proyectos PASS; builds servidor/monitor/tests PASS, 0 warnings/0 errors; P004 18/18 PASS; monitor/readiness 23/23 PASS. Logs y SHA-256 en `piloto-sink/SOURCE-PIN.json` y `entregas/piloto-sink-p004/VALIDATION-RECEIPT.json`. El panel WPF y QA integral del release 1.0.0 permanecen fuera de este piloto.
 
 ### MCP-OCP-04 — Transporte MCP STDIO y recorrido RDC
 **Prioridad:** P0 · **Estado:** PENDIENTE.
