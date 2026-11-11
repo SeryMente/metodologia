@@ -190,3 +190,15 @@ Al retomar Loop:
 **Corte de creación:** 2026-11-11.  
 **DUG adquirido:** Samantha v388 · NX-388m · blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`.  
 **Estado de ejecución:** creado en `main`; los requisitos del motor siguen pendientes.
+
+
+## 14. Entrada C-LOOP-002 · contexto y requisitos de diseño
+
+El 2026-11-11 el operador entregó una entrada extensa para reconstruir la progresión narrativa de sus necesidades y documentarla en este frente. La interpretación estructurada, sus requisitos candidatos, secuencia de trabajo e incógnitas están en [C-LOOP-002 · Reconstrucción narrativa y requisitos de diseño](cronica/C-LOOP-002-analisis-y-reconstruccion.md).
+
+- Procedencia y mapa de reconstrucción: [conversaciones/C-LOOP-002-dialogo.jsonl](conversaciones/C-LOOP-002-dialogo.jsonl).
+- Evidencia y estado de validación: [evidencias/C-LOOP-002.json](evidencias/C-LOOP-002.json).
+- Se agrupan OCP, LISA, RAP, PRIUS, entorno persistente, observador núcleo, adaptadores de observabilidad, objetivo visible y orquestación multiagente.
+- Prioridad táctica reportada: piloto RAP + CrewAI/alternativa y definición del taller multiagente; los trabajos de benchmarking e implementación siguen pendientes.
+- La revisión solicitada con GPT-OSS 120B vía Groq no se ejecutó: se verificó la existencia de la entrada GROQ_API_KEY en la bóveda cifrada de KHORA, pero no había acceso temporal disponible para desbloquearla. No se expuso ni se guardó la clave.
+- Los requisitos de la crónica son una interpretación de trabajo, no un canon ratificado. El motor de Loop permanece sin implementar.
