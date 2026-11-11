@@ -1,6 +1,6 @@
 # EP-TASK-007 · Guardián de sesión efímera e inventario del host
 
-**Estado:** `en_curso · HOST_INVENTORY_PARTIAL_READ_ONLY · BITLOCKER_GATE_FAIL · LOCATION_UNCLASSIFIED · GUARDIAN_NOT_RUN`  
+**Estado:** `en_curso · HOST_INVENTORY_PARTIAL_READ_ONLY · C_XTSAES128_100_PROTECTION_OFF_NO_PROTECTORS · W_FULLY_DECRYPTED_0_PROTECTION_OFF_NO_PROTECTORS · LOCATION_UNCLASSIFIED · GUARDIAN_NOT_RUN · LEASE_NOT_RUN · CRYPTO_ERASURE_NOT_RUN`
 **Prioridad:** P0 para protección de sesión después del hito de persistencia mínima; P1 para inventario extendido y optimización.  
 **Responsable:** frente Entorno Persistente (EP).  
 **OEP padre:** `frentes/ep/OEP.md`.  
@@ -208,3 +208,31 @@ Se verificó la sesión RDC de trabajo CENTRAL/fila4, perfil C:/Users/fila4. El 
 ### Estado de Guardian y cierre
 
 No se implementó ni ejecutó Guardian, lease, heartbeat, trigger terminal, bloqueo/desmontaje ni crypto-erasure. No se borró ni modificó workspace, ciphertext, volumen ni archivos. El inventario actualiza el diagnóstico, pero no satisface el gate de protección de EP-TASK-003 ni las dependencias MCP-OCP-14/15/16. Las pruebas destructivas continúan limitadas a contenedores sintéticos desechables hasta que existan almacenamiento, custodia y aceptación requeridos.
+
+ 
+## Revalidación de BitLocker y custodia de host · 2026-11-11 · 14:54 America/Mexico_City
+
+**Resultado:** `HOST_INVENTORY_PARTIAL_READ_ONLY_VERIFIED`; la barrera de almacenamiento continúa FAIL.
+
+- Consulta con `Get-BitLockerVolume` en sesión RDC independiente `CENTRAL\MantenimientoRCI`; la consulta desde `CENTRAL\fila4` resultó `Acceso denegado`. No se eludió el control ni se elevó la sesión propietaria.
+- `C:`: XTS-AES128, 100 %, FullyEncrypted, Protection Off, cero protectores.
+- `W:`: FullyDecrypted, método None, 0 %, Protection Off, cero protectores.
+- Ubicación permanece `UNCLASSIFIED`; GPS/IP no fueron consultados.
+- Revalidación EP Vault separada: ciphertext formal presente (3.352 B); B2 v7 read-back SHA y SSE-B2/AES256 PASS; copia aislada descifrada HMAC/AES PASS. La sesión formal CLI está actualmente cerrada por TTL; no se afirma que la bóveda esté ausente ni NOT_INITIALIZED.
+- Guardian, lease, heartbeat, triggers, bloqueo/desmontaje, crypto-erasure y pruebas destructivas siguen `NOT_RUN`.
+
+**Límites:** no se instalaron servicios, tareas programadas ni procesos de vigilancia; no se modificó BitLocker, VHDX, workspace, ACL, Vault ni B2. EP-TASK-007 permanece `en_curso` y no puede avanzar a una prueba destructiva hasta superar EP-TASK-003 y sus controles de aceptación.
+
+ 
+## Revalidación de BitLocker y custodia de host · 2026-11-11 · 14:54 America/Mexico_City
+
+**Resultado:** `HOST_INVENTORY_PARTIAL_READ_ONLY_VERIFIED`; la barrera de almacenamiento continúa FAIL.
+
+- Consulta con `Get-BitLockerVolume` en sesión RDC independiente `CENTRAL\MantenimientoRCI`; la consulta desde `CENTRAL\fila4` resultó `Acceso denegado`. No se eludió el control ni se elevó la sesión propietaria.
+- `C:`: XTS-AES128, 100 %, FullyEncrypted, Protection Off, cero protectores.
+- `W:`: FullyDecrypted, método None, 0 %, Protection Off, cero protectores.
+- Ubicación permanece `UNCLASSIFIED`; GPS/IP no fueron consultados.
+- Revalidación EP Vault separada: ciphertext formal presente (3.352 B); B2 v7 read-back SHA y SSE-B2/AES256 PASS; copia aislada descifrada HMAC/AES PASS. La sesión formal CLI está actualmente cerrada por TTL; no se afirma que la bóveda esté ausente ni NOT_INITIALIZED.
+- Guardian, lease, heartbeat, triggers, bloqueo/desmontaje, crypto-erasure y pruebas destructivas siguen `NOT_RUN`.
+
+**Límites:** no se instalaron servicios, tareas programadas ni procesos de vigilancia; no se modificó BitLocker, VHDX, workspace, ACL, Vault ni B2. EP-TASK-007 permanece `en_curso` y no puede avanzar a una prueba destructiva hasta superar EP-TASK-003 y sus controles de aceptación.
