@@ -799,3 +799,78 @@ GOV-TASK-014 incorpora el nuevo procedimiento objetivo para próximos snapshots:
 **Límites:** el bucket existente `OCP-MCP` continúa privado. R2/R4 históricos no se mueven ni se reclasifican; R4 sigue siendo un objeto remoto con read-back y restore aislado verificados, pero sin cifrado cliente. R5 será el primer candidato para el canal público protegido.
 
 **Estado:** decisión documental incorporada; EP-TASK-002 todavía debe implementar/verificar bucket dedicado, age y recuperación; no existe aún bucket público, objeto R5 ni URL descargable. Este cambio no bloquea ni altera el camino crítico de SINK:P004.
+
+
+## Revalidación semiviva del sprint SINK-P004 · 2026-11-11 · 14:10 America/Mexico_City
+
+### 🎯 Hito
+
+Revalidar la candidata P004, sus pins y evidencia, separar los gates de desarrollo de los de host y fijar la siguiente acción propietaria sin confundir código candidato con instalación o aceptación.
+
+### 🚦 Estado resultante
+
+GOV_TASK_015=EN_CURSO · MCP_OCP_PR_27=OPEN_DRAFT_DIVERGED · MCP_OCP_CI=NO_EXECUTION_EVIDENCE · EP_TASK_003=PARTIAL_FAIL · EP_TASK_005=BLOCKED · GOV_E2E=NOT_RUN · IPZ_NATIVE=NOT_VERIFIED · FOL1=PREPARED_NOT_ACTIVE · MCP_NORMATIVO=DESACTIVADO.
+
+### ✅ Confirmado
+
+- **Cursor normativo:** DUG Samantha v388/NX-388m, Metacanon 1.29, GOW 2.18; main commit 3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c; blob 4db0ebadfd1e48b2bdec9236ba7f344921e4a865. La lectura actual devuelve exactamente ese blob.
+- **GOW:ARR:** en el bloque gov-data del DUG, sección gow-sec-14, el título §ARR · Vocabulario de entrada para ChatGPT, el ancla gow-arranque-chatgpt y ### Función de entrada están presentes. Este cotejo corrige la sospecha previa de ausencia del ancla; no se modifica el DUG.
+- **Candidata:** PR #27 (https://github.com/SeryMente/metodologia/pull/27), rama feat/mcp-ocp-sink-p004-main-a34c1c5b, contiene servidor STDIO, lector DUG, pruebas, workflow, runbook y paquete ZIP. Continúa OPEN/DRAFT/NOT MERGED.
+- **Lector inspeccionado:** verifica el SHA Git blob del archivo fijado, UTF-8, sección GOW:ARR, estado MCP-NORMATIVO DESACTIVADO, metadatos DUG, inventario de 43 IDs, marcador P004, título, texto, MDP, preponderancia y hashes. La inspección fue estática; no equivale a ejecutar el binario.
+- **Pin del paquete:** SOURCE-PIN.json fija DUG v388/NX-388m y P004. El manifiesto declara CANDIDATE_NOT_ACCEPTED, runtime framework-dependent y E2E IPZ NOT_ACCEPTED.
+- **Seguridad de alcance del diff:** el .gitignore actual de la candidata conserva exclusiones para .env, certificados/llaves, bases locales y logs; global.json está limitado a frentes/mcp-metodologia/. Las observaciones históricas sobre esos dos puntos no se reproducen en los archivos actuales revisados.
+- **Separación interfrentes:** MCP-OCP generación 5 conserva código, pruebas, build y paquete; EP conserva host, almacenamiento e instalación; Gobernanza conserva coordinación, DUG/IPZ y aceptación E2E. No se cambió ningún control ni titularidad.
+
+### 🔎 Validación y evidencia
+
+| Criterio | Estado | Evidencia / límite |
+|---|---|---|
+| Pin DUG v388/NX-388m | PASS | Commit/blob de main cotejados con SOURCE-PIN.json. |
+| GOW:ARR estructurado | PASS | gow-sec-14, ancla y función de entrada presentes en gov-data. |
+| Revisión estática del lector | PASS_ESTÁTICO | Código inspeccionado; no se ejecutó en este ciclo. |
+| Build y 18 pruebas P004 | NO_VERIFICADO | README/RUNBOOK de la rama declaran 18/18 local; no se recibió aquí recibo independiente, comando/log íntegro ni artefacto CI. |
+| 23 pruebas monitor/readiness | NO_VERIFICADO | La rama declara 23/23 local; misma limitación de evidencia independiente. |
+| Smoke STDIO/EOF y paquete | NO_VERIFICADO | Declarado en RUNBOOK; no reproducido en este ciclo. |
+| GitHub Actions | NOT_RUN_AT_CODE_LEVEL | Run P004 42917298648, job 130182917810: failure, steps=[], logs_url=null, cero artifacts; descarga de logs devuelve BlobNotFound. El run anterior 42915178597 repite el patrón. No demuestra fallo del código ni ejecución de build/tests. |
+| Alineación de PR con main | FAIL | compare_commits(main, PR): diverged, 53 commits ahead / 78 behind; main observado 5d96b3d7012980ac9646bd9fd739f2c98fcc2713; merge-base f8a5880f1cbf432754157b5669d1f9e80177766f. El metadato mergeable=true no sustituye esta comparación. |
+| Paquete ZIP: SHA independiente | NOT_RUN | Existe manifiesto y archivo de sumas en la rama; el hash del ZIP no se volvió a calcular desde sus bytes en este ciclo. |
+| EP-TASK-003 / host | FAIL | Último estado documentado: C: XTS-AES128, FullyEncrypted 100 %, Protection Off, sin protectores; W: descifrado 0 %, sin protectores; checkout local sin .git; ubicación física UNCLASSIFIED. Fuente: EP-TASK-003, blob b860bb584534d057dca1a4cf655f78b412096726. |
+| EP-TASK-005 / instalación | BLOCKED | No extracción, importación, DB, provisionamiento, REGISTER, runtime persistente ni instalación. Requiere EP-TASK-003 PASS, paquete/Pins cotejados y MCP-OCP-03/04 PASS. |
+| E2E IPZ → RDC → STDIO → respuesta visible | NOT_RUN | No hay piloto instalado ni invocación desde contexto IPZ. |
+| IPZ nativa/read-back | NOT_VERIFIED | No se escribió ni se modificó el campo nativo. |
+
+### ⛔ Bloqueantes y dependencias
+
+1. **MCP-OCP / PR #27:** reconciliar selectivamente la candidata con el HEAD real de main; revisar las 36 rutas y no integrar la historia completa de 53 commits. El estado 53/78 requiere nueva comparación después de la sincronización.
+2. **MCP-OCP:** entregar evidencia ejecutable observable de build, pruebas, smoke y paquete. El workflow actual no asigna/expone pasos ni logs; raíz del problema del runner NO_VERIFICADA. No relanzar reintentos ciegos.
+3. **EP / EP-TASK-003:** conseguir protección XTS-AES256/100 %/Protection On, protector recuperable con custodia/read-back, checkout Git íntegro y root de datos protegido. Resolver clasificación de ubicación con evidencia. La condición de salida es el PASS documentado por EP, no la mera presencia de RDC.
+4. **EP / EP-TASK-005:** instalar únicamente después del PASS anterior y de recibir paquete con manifest/SHA y pruebas MCP-OCP-03/04 PASS.
+5. **Gobernanza / GOV-TASK-003 y GOV-TASK-007:** después del piloto instalado, ejecutar la aceptación real desde IPZ y verificar texto íntegro, ID/título, versión/firma, commit/blob y hashes. No escribir IPZ nativa ni activar FOL1 como parte de esta revalidación.
+
+### ⚠️ Preocupaciones y riesgos
+
+- La divergencia de PR con main eleva el riesgo de incorporar cambios obsoletos o no revisados. El estado mergeable=true de la API no elimina la diferencia medida por compare.
+- Los PASS locales declarados por el RUNBOOK no sustituyen artefactos reproducibles vinculados al commit y al paquete actual.
+- El paquete depende de .NET runtime 10.0.x x64 y un checkout completo con el DUG fijado; no es autónomo. La instalación en host no es aceptable con los gates EP actuales.
+- La comprobación GOW:ARR valida la representación estructurada consultada por el lector; no es aceptación de toda la semántica de §ARR ni de IPZ.
+- No se inspeccionaron secretos ni valores de Vault; no se modificaron B2, BitLocker, VHDX, perfiles, checkout, IPZ ni runtime del host.
+
+### ⏭️ Pendientes y trabajo diferido
+
+Generalización P001–P043, lote ordenado, panel WPF, release MCP-OCP 1.0.0, bootstrap persistente, importación privada, operador local, FOL1 y aceptación integral. Se mantienen fuera del corte P004 hasta completar sus propios gates.
+
+### ↩️ Rollback / recuperación
+
+No hubo escritura de producto ni operación de instalación en este ciclo; por tanto, no se necesitó rollback. El procedimiento de retirar solo el directorio piloto aislado y restaurar cliente/configuración previa está documentado en EP-TASK-005, pero no se probó aquí: NO_VERIFICADO.
+
+### 🧾 Aceptación y conclusión
+
+**Conclusión GOV-TASK-015:** PARCIAL · EN_CURSO. La coordinación y revalidación documental/estática se ejecutaron; el piloto no está reconciliado contra el main actual, sus pruebas no tienen evidencia independiente de ejecución y no existe instalación ni E2E. No se acepta ni se cierra SINK:P004.
+
+### ➡️ Siguiente acción
+
+MCP-OCP, dentro de su titularidad vigente, debe presentar una candidata reconciliada con el main actual y evidencia de ejecución reproducible (build, 41 pruebas, smoke STDIO/EOF y SHA del paquete). EP mantiene en paralelo los gates de host. Gobernanza revisará esa evidencia y solo entonces habilitará el hito E2E.
+
+### Read-back del informe
+
+Pendiente hasta la escritura de esta sección. Se debe completar con el commit/blob resultante tras volver a leer el archivo.
