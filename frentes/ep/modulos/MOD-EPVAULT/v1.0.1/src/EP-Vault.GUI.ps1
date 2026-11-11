@@ -18,7 +18,10 @@ $xamlPath = Join-Path $PSScriptRoot 'EP-Vault.Window.xaml'
 if (-not (Test-Path -LiteralPath $corePath -PathType Leaf)) { throw 'EP_VAULT_CORE_NOT_FOUND' }
 if (-not (Test-Path -LiteralPath $xamlPath -PathType Leaf)) { throw 'EP_VAULT_XAML_NOT_FOUND' }
 
-Import-Module -Name $corePath -Force -DisableNameChecking -WarningAction SilentlyContinue -ErrorAction Stop`r`n$sessionModulePath = Join-Path $PSScriptRoot 'EP.Session.psm1'`r`nif (-not (Test-Path -LiteralPath $sessionModulePath -PathType Leaf)) { throw 'EP_SESSION_MODULE_MISSING' }`r`nImport-Module -Name $sessionModulePath -Force -DisableNameChecking -ErrorAction Stop
+Import-Module -Name $corePath -Force -DisableNameChecking -WarningAction SilentlyContinue -ErrorAction Stop
+$sessionModulePath = Join-Path $PSScriptRoot 'EP.Session.psm1'
+if (-not (Test-Path -LiteralPath $sessionModulePath -PathType Leaf)) { throw 'EP_SESSION_MODULE_MISSING' }
+Import-Module -Name $sessionModulePath -Force -DisableNameChecking -ErrorAction Stop
 
 [xml]$xaml = Get-Content -LiteralPath $xamlPath -Raw -Encoding UTF8
 $reader = [System.Xml.XmlNodeReader]::new($xaml)
