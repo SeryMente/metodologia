@@ -518,3 +518,31 @@ Al resolver esta tarea, el responsable debe agregar el informe individual en est
 - **Aceptación:** diseño aceptado por el operador; protección física, migración, integridad y aceptación final PENDIENTES.
 - **Siguiente acción:** desbloquear EP Vault y completar P0-C; después registrar/proteger el nuevo volumen según la secuencia aprobada.
 - **Conclusión:** PARCIAL. El diseño quedó aceptado y el subcontrol de enumeración pasó en dos lecturas, pero el gate global de host permanece PARTIAL_FAIL.
+
+
+## Plan de ejecución de materialización y corte controlado · 2026-11-11
+
+**Estado:** diseño funcional aceptado; preflight físico permanece PARTIAL_FAIL. Este plan no equivale a una autorización nueva para modificar host/volúmenes ni a una verificación de la sesión RDC actual. Antes de cualquier operación local se debe comprobar la conexión RDC activa y que corresponde a Fila 4; si no existe, bloquear y solicitar el arranque autorizado de RDC.
+
+### Secuencia con gates independientes
+
+1. **Revalidar identidad y destino.** En modo read-only, comprobar sesión/alias Fila 4, perfil Windows efectivo, elevación, rutas absolutas, permisos y ubicación física. Clasificar CECEQ/LOC-OTHER solo con evidencia suficiente; no inferir por IP, nombre de equipo o historial. La ubicación no verificada bloquea la decisión sobre volatilización.
+2. **Congelar y medir el origen.** Resolver actividad concurrente antes de inventariar. Obtener dos lecturas consistentes de rutas, archivos, directorios, tamaños y SHA-256; explicar cualquier delta anterior antes de fijar el manifiesto. Excluir reparse points y archivos cambiantes de forma explícita, sin declararlos copiados. Preservar Desktop\SeryMente como fuente de rollback.
+3. **Preparar el volumen protegido.** Revalidar el diseño y el VHDX destino; antes de migrar, comprobar BitLocker XTS-AES256, FullyEncrypted=100 %, Protection On, protector recuperable y custodia/read-back por EP Vault. Registrar tamaño, formato, punto de montaje, ACL y capacidad. La mera existencia/montaje de un VHDX no es PASS de protección.
+4. **Copiar sin cortar la fuente.** Copiar preservando jerarquía, timestamps y metadatos requeridos. Comparar manifiesto completo por ruta/tamaño/SHA-256, registrar faltantes/extra inesperados y repetir read-back desde el destino. Mantener el origen intacto hasta igualdad integral.
+5. **Hacer el corte de ruta.** Solo después del PASS anterior, ejecutar el cambio de montaje a la ruta original bajo la autorización específica aplicable. Comprobar resolución de rutas, permisos, apertura de repositorios y funcionamiento de aplicaciones. Si falla, revertir el punto de montaje al estado previo y conservar el destino para diagnóstico.
+6. **Implementar el dead-man limitado.** Si la ubicación verificada es distinta de CECEQ, el único disparador admitido por esta tarea es la terminación del proceso de control EP: bloquear BitLocker, desmontar y eliminar exclusivamente el contenedor/carpeta de trabajo EP. En CECEQ se conserva el workspace cifrado al cierre. No introducir Guardian, heartbeat, polling, inactividad, tareas programadas ni vigilancia excluida por el alcance.
+7. **Probar y aceptar.** Primero simular las operaciones con fixtures/rutas desechables; después realizar pruebas reales autorizadas de bloqueo, desmontaje, recuperación y alcance de borrado. Verificar que archivos ajenos no se tocan, que un fallo del trigger no queda presentado como PASS y que el procedimiento de recuperación funciona.
+
+### Review Focus y criterios de salida
+
+- Workspace completo y estable; origen y destino cotejados por manifest y SHA-256.
+- BitLocker XTS-AES256, 100 %, Protection On y recovery protector recuperable/read-back.
+- Ruta Desktop\SeryMente conservada tras el corte; rollback probado y staging no eliminado antes de aceptación.
+- Dead-man aplica solo al contenedor EP y solo según clasificación física comprobada; CECEQ no se volatiliza.
+- Checkout real e íntegro, directorio Datos/MCP-OCP y aplicaciones verificadas por separado.
+- Cierre: preflight PASS, manifiesto completo, copia/restauración, punto de montaje y dead-man con pruebas reproducibles, evidencia y aceptación del operador.
+
+### Bloqueos automáticos
+
+Actividad concurrente, identidad/perfil no resueltos, ubicación UNCLASSIFIED cuando afecte a la política, BitLocker Protection Off, ausencia de protector, restore incompleto o hashes discordantes detienen únicamente la acción dependiente. No se limpia staging ni se destruye el volumen/origen para forzar el avance.
