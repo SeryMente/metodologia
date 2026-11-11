@@ -2856,3 +2856,41 @@ Se observó material de clave privada KeeShare en salida de configuración local
 6. Completar catálogo multi-proveedor/adaptadores y luego Guardian/lease/crypto-erasure en fixtures aislados y con gates.
 
 El ciclo queda PUBLICADO → LEÍDO → RESPUESTA_INICIAL_REGISTRADA → PROCESADO → DOCUMENTADO_AL_CIERRE → VERIFICADO_READBACK al cotejar el presente cierre.
+
+---
+
+## EP · apertura de ciclo: reconciliación R2 y estado operativo de EP Vault · 2026-11-11 · 14:17:27 America/Mexico_City
+
+**UUIDv7 local:** `01a1cc42-611a-764e-996b-4456f1b53d0a` · identidad local de trazabilidad; no ID nativo ni folio global/FOL1.
+
+### Cursor, fuentes y preflight
+
+- **DTC:** `main`, blob leído `f08859b0f290247798a1655c257dba267ce734c0`. Último ciclo cerrado leído: `01a1cb79-e067-70a7-8808-78d86f5943b7`, cierre 2026-11-11 10:43:39 America/Mexico_City. No se encontró contenido posterior a ese cierre: `SIN_NOVEDAD` en el cursor leído.
+- **OEP:** v0.3.67, `main`, blob `6d123125077400431bdfbf1dde69a12b231ff278`, §133.
+- **DUG:** Samantha v388 · NX-388m; blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`. §ARR leído primero. §ARR establece vocabulario de entrada y remisión al DUG; prepara comprensión, no gobierna ni concede permisos. GOW revisado en la misma fuente.
+- **Índice provisional EP:** blob `357157722c9a05d99efabdc3d945927f49b10d23`. Núcleos consultados: EP-TASK-001 `00a4837a68bbe94a8a55c2cef5f68bc11ed7240c`; EP-TASK-002 `ed44ceb97eb1366d0ee73cb20b6b582d2bb338ed`; EP-TASK-003 `b860bb584534d057dca1a4cf655f78b412096726`; EP-TASK-004 `c4fccb2f4949d087d64f06dd3231327732db0c91`; EP-TASK-005 `13a589610981611173dd2390e53ae2b14338a74e`; EP-TASK-006 `b735ba595ff216c3a65ca732bfc753c223894f9b`; EP-TASK-007 `b270ce0b22334da3ec6985c5c82e7096c3e2b740`.
+- **RDC:** conexión viva al equipo PC10RCIF4EI4; se identificó la GUI EP Vault como proceso PID 3504, propietario CENTRAL\fila4, SessionId 1. El proceso se inició con `Launch-Vault-For-Fila4.ps1`, que redirige `LOCALAPPDATA` a `C:\Users\fila4\Desktop\SeryMente\EP\local-state`. Esto acredita proceso y ruta de arranque, no estado DESBLOQUEADA de la bóveda.
+- **Alcance de normas:** se consideran P001/P004/P005/P038/P043 y P012/P013/P016/P035/P037/P041/P042 según pertinencia. MCP normativo permanece DESACTIVADO por instrucción vigente; no se invocó SINK ni se sustituyó la fuente canónica con una proyección local.
+
+### A literal y respuesta inicial
+
+**A literal:** «Sigue».
+
+Interpreto la instrucción como continuidad del ciclo semi-live EP ya abierto para EP-TASK-001–007, no como dispensa de las compuertas ni autorización para revelar secretos, desbloquear la bóveda, modificar cuentas, instalar componentes, cifrar/mover volúmenes o ejecutar borrado. La acción inmediata de este ciclo es reconciliar rutas/identidad de los ciphertext y obtener únicamente estado de interfaz no sensible de EP Vault; después se decide si existe una ventana de sesión CLI válida para P0-C.
+
+### Hallazgos de apertura ya verificados
+
+1. El recibo R2 documenta 4/4 objetos B2 con read-back de tamaño/SHA-256 y SSE-B2/AES256; el ZIP se restauró en aislamiento same-host con 3.289/3.289 entradas, cero fallos y cero inesperados. No se ha ejecutado descifrado aislado de Vault ni restore cross-host. El ZIP conserva la excepción histórica de no cifrado cliente.
+2. La copia encontrada en `Desktop\SeryMente\EP-Vault\ep-env-vault.enc.json` mide 2.048 bytes, fecha UTC 2026-11-10 15:37:33 y SHA-256 `D7AD1D745CAF460E047EAE521C1C403F36E99864BC9CD0604FFC564E390F2F7D`. Es una ruta distinta del almacén formal que usa el launcher; no se equipara al objeto B2.
+3. El recibo B2 de Vault identifica el ciphertext remoto de 2.200 bytes, SHA-256 `4CC2EE09974C9FBF3CF22C28A5A46C8286EB501F59268DBBB2B7BD6D61E8C590`, con read-back idéntico. La lectura de estado histórica del almacén formal también reportó 2.200 bytes. La ruta formal bajo `EP\local-state\Khora\secrets` no fue legible desde el contexto administrativo distinto; no se inspeccionó su contenido ni se intentó cambiar ACL.
+4. La presencia de la GUI no demuestra que esté abierta criptográficamente: el estado vivo de sus controles todavía debe consultarse sin leer campos ni valores sensibles. No se ha intentado desbloqueo.
+
+### Restricciones y siguiente compuerta
+
+- No repetir upload/download ni extracción R2 que ya tienen recibos íntegros.
+- No copiar, sustituir ni descifrar la copia de 2.048 bytes como si fuera el ciphertext formal.
+- No pedir ni recibir contraseña maestra por chat; no ejecutar CLI que pueda caer en Read-Host.
+- No modificar ACL, DPAPI, Vault formal, credenciales, B2, BitLocker, volúmenes, workspace ni perfiles de navegador.
+- Si la bóveda está SELLADA o la CLI no ve sesión activa y las cinco variables EP, P0-C permanece bloqueada y el operador debe desbloquear localmente por la GUI nativa. Si está activa, el siguiente trabajo se limita a validar el preflight P0-C sin emitir secretos y sin repetir las variantes ya fallidas.
+
+**Estado de apertura:** `LEÍDO → SIN_NOVEDAD → RESPUESTA_INICIAL_REGISTRADA`. El ciclo sigue abierto; el procesamiento y el cierre documental quedan pendientes.
