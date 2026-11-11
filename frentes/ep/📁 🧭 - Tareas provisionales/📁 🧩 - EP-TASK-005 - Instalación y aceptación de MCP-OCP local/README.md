@@ -260,3 +260,28 @@ Consulta read-only de GitHub: PR #27, “Draft: SINK-P004 · piloto STDIO sobre 
 **No ejecutado:** merge, checkout de la rama en Fila 4, extracción, instalación, importación de fuentes, DB, provision-operator, `REGISTER <SID>`, configuración STDIO, apertura de panel o E2E IPZ.
 
 **Siguiente gate:** EP-TASK-003 PASS + paquete P004 con manifiesto/SHA cotejados + MCP-OCP-03/04 PASS y revisión contractual aplicable. EP-TASK-005 permanece `pendiente`.
+
+
+---
+
+## Revalidación del candidato SINK:P004 · PR #28 · 2026-11-11 · 15:48 America/Mexico_City
+
+### Estado actual observado
+
+- PR #28: OPEN / DRAFT / NOT MERGED; HEAD `86e58cff0e58a2452361ff8abe031917dc9a5b11`; base `9ec698fbe27fd087c2cc9939b3afd604984e6154`; 29 archivos; compare 52 ahead / 0 behind; GitHub devuelve `mergeable=false`. Causa de mergeability: NO VERIFICADA. No hay reviews ni hilos en las respuestas consultadas.
+- PR #27 queda como antecedente OPEN/DRAFT no integrado; #28 es la candidata documental más nueva.
+- Recibo local ligado al source commit `f8973a1958fb1e6d259786c2828a19dae05aeee6`: restore/build PASS; 0 warnings/0 errors; 18/18 pruebas P004 y 23/23 monitor/readiness PASS; smoke STDIO/EOF PASS; extracción/read-back del ZIP y smoke del ejecutable extraído PASS.
+- Paquete candidato: `MCP-OCP-SINK-P004-f8973a19-candidate.zip`, 137.784 bytes, SHA-256 `705716c7aa581a98817869eb281b87500b591c4e811653c3a6825e1ceb59a3d2`; manifest SHA-256 `03ef3b75d21a153d6b659056c4e401ca65fd6e7f2355cc57d48ed6e71746f750`; recibo SHA-256 `b068287641fa908d56bc2196dad2a4e840a0120eacf6538c74914e1bc1fdcffd`. Estado CANDIDATE_NOT_ACCEPTED.
+- GitHub-hosted CI: NOT_VERIFIED. Los workflows consultados en el HEAD terminaron FAILURE con `steps=null` y `logs_url=null`; no se demuestra que iniciaran build/test. Causa del fallo NO VERIFICADA.
+
+### Bloqueo documental del paquete
+
+- SOURCE-PIN, recibo y reconciliación §10 identifican main `9ec698fbe27fd087c2cc9939b3afd604984e6154` y merge `720fc22ecad3ecdcfe3087778472e51aaa939068`.
+- RUNBOOK.md identifica otra sincronización (`446e69251335a51fe8d4c01495c3738b11d5808c` / `8d22bff7fae4a23ac224b984576205841abeda9c`).
+- RUNBOOK es parte del paquete manifestado. Corregirlo sin regenerar ZIP, manifest, SHA sums y recibo rompería la integridad. **No se edita el RUNBOOK dentro del paquete actual.** Reemitir el paquete tras resolver la procedencia exacta y repetir read-back/smoke.
+
+### Gates EP y decisión
+
+EP-TASK-003 sigue FAIL: C cifrado XTS-AES128/100 %, Protection Off y cero protectores; W completamente descifrado. Por tanto, root protegido/checkout destino no están habilitados. Runtime destino y .NET 10.x persistente NO VERIFICADOS. No hubo handoff, extracción, instalación, DB, import-sources, REGISTER, configuración STDIO ni E2E IPZ; esta última permanece NOT_RUN/NOT_ACCEPTED.
+
+**Decisión:** candidato técnicamente validado en local, pero no aceptado ni instalado; PR #28 no lista para merge en el estado observado. Mantener bloqueo hasta regenerar paquete documentalmente consistente y superar EP-TASK-003. MCP-NORMATIVO DESACTIVADO.
