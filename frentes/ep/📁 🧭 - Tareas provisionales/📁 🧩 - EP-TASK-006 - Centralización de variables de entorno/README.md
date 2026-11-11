@@ -1,6 +1,6 @@
 # 📝 EP-TASK-006 · Inventario y centralización de variables de entorno
 
-**Estado:** \`en_curso\` · inventario inicial ejecutado; centralización integral y adaptadores pendientes.  
+**Estado:** `en_curso · VERCEL_KHORA_WEB_52_CURRENT_MATCH · ENTRY_READBACK_9 · NOT_IMPORTED_1 · BLOCKED_42 · EP_VAULT_FORMAL_3352B_PRESENT · ISOLATED_DECRYPT_30_FIELDS_PASS · CURRENT_SESSION_CLOSED · VAULT_NAME_RECONCILIATION_PENDING · ADAPTERS_NOT_IMPLEMENTED`.
 **Frente propietario:** Entorno Persistente (EP).  
 **Apertura:** instrucción directa del operador · 2026-11-09.  
 **Relaciones:** EP-TASK-004 (EP Vault) y EP-TASK-002 (persistencia B2).
@@ -418,3 +418,38 @@ EPVault-CLI Status en Fila4 devolvió NOT_INITIALIZED, vaultExists=false y sessi
 ### Decisión y siguiente paso
 
 Conservar separados los 10 registros con read-back y los 42 cuyo valor no fue recuperable. Resolver primero la bóveda formal y su procedencia; después completar el mapa de fuentes/proveedores con lecturas autorizadas de solo metadatos, restaurar custodia cifrada y desarrollar adaptadores con read-back/idempotencia. No declarar cobertura organizacional completa a partir del catálogo parcial de Vercel.
+
+ 
+## Revalidación de Vercel y reconciliación del catálogo · 2026-11-11 · 14:54:41 America/Mexico_City
+
+**Resultado:** `VERCEL_LIVE_METADATA_MATCH_52_OF_52`; sin acceso a valores ni cambios remotos.
+
+### Fuente y correspondencia actual
+
+- Proyecto: `khora-web`, ID `prj_hRN86BKITXYKTnNlp0ygVhaMwFfx`.
+- Consulta actual a Vercel mediante `filter_project_envs`, `decrypt=false`: 52 entradas, sin página siguiente; distribución de tipos: 42 `sensitive`, 7 `encrypted`, 3 `plain`.
+- Snapshot local: `EP\local-state\run-logs\EP-VERCEL-ENV-CATALOG-khora-web.json`, 14.461 bytes, SHA-256 `97981295D095AA3DCE1505B6DD9214C6662C0FABF57E6ECB3A9B774518C70BC9`.
+- La comparación de identidad por `key + target + gitBranch + type` entre los 52 registros vivos y los 52 registros del snapshot obtuvo: altas 0, bajas 0, cambios de tipo 0. La fotografía local coincide con el estado actual consultado.
+
+### Reconciliación de estados del snapshot
+
+La lectura de las 52 entradas individuales produjo:
+- `STORED_READBACK_VERIFIED`: 9.
+- `NOT_IMPORTED`: 1 (`GROQ_API_KEY`, Production/Preview/Development).
+- `BLOCKED_VALUE_NOT_RETRIEVABLE`: 42.
+
+El documento JSON contiene además un contador resumen `storedAndReadbackVerified=10`, que no coincide con los estados individuales (9). No se modifica el archivo fuente: queda registrada la discrepancia. El total por estados individuales sí suma 52. No se clasifica `NOT_IMPORTED` como read-back PASS.
+
+La propiedad `existingVaultName` solo aparece en dos entradas KHORA B2 cuyo estado sigue siendo `BLOCKED_VALUE_NOT_RETRIEVABLE`; la presencia de un alias no demuestra read-back ni disponibilidad del valor.
+
+### Estado de EP Vault y límite de la comparación
+
+- El ciphertext formal existe en la ruta formal, 3.352 bytes, SHA-256 `3122C544012F989F0501BD0E82EA920A93F19A42034D83FA682BCC2290891E82`. B2 v7 tiene read-back SHA/tamaño idéntico y SSE-B2/AES256; una copia aislada pasó HMAC/AES y contó 30 propiedades.
+- La prueba de descifrado anterior no guardó ni emitió una lista de los 30 nombres. La sesión CLI compartida ha vuelto a cerrarse: `Status=ENCRYPTED_FILE_PRESENT`, `vaultExists=True`, `bytes=3352`, `sessionActive=False`. Por ello, `ListVariables` no se ejecutó y no se compararon los 30 nombres con los 52 registros actuales.
+- La observación histórica `NOT_INITIALIZED` de la etapa anterior ya no describe el estado actual del archivo formal; ahora está presente y recuperable desde B2. La bóveda está sellada por TTL, no ausente.
+
+### Límites y siguiente paso
+
+No se solicitaron ni descifraron valores Vercel; no se usó `get_project_env`; no se escribieron variables, no se cambió scope/environment, no se desplegó y no se instalaron adaptadores. El próximo gate es que el propietario abra EP Vault localmente; entonces se puede ejecutar `ListVariables` para obtener nombres únicamente y cotejar los alias. Después corresponde definir y probar cada adaptador con mínimo privilegio, inyección efímera, read-back, idempotencia, expiración/revocación y rollback. La existencia de 30 propiedades no demuestra por sí misma que los 10/9 registros Vercel estén almacenados.
+
+**Estado:** EP-TASK-006 continúa `en_curso`; la cobertura organizacional, los adaptadores y la aceptación integral siguen pendientes.
