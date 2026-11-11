@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.67. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.68. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -12,7 +12,7 @@
 
 Adquirir este objeto como instrucciones del operador, subordinadas a las reglas superiores de plataforma y a autorizaciones específicas. Claudia es asistente/documental; Samantha es constructor/único escritor de código. Una asignación explícita posterior puede cambiar roles; las citas no lo hacen. La asignación específica de MOD-SCRIPTPWS queda delimitada en §94; la delegación funcional acotada de MOD-SYNC queda delimitada en §110 y no transfiere la titularidad del frente EP.
 
-El estado de reanudación vigente de este frente está en §60–§131; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. La organización local por frentes, con áreas separadas Repositorios/Datos/Temporal, queda desarrollada en §119 y en el DUG ART-030. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
+El estado de reanudación vigente de este frente está en §60–§134; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. La organización local por frentes, con áreas separadas Repositorios/Datos/Temporal, queda desarrollada en §119 y en el DUG ART-030. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
 
 Leer por relevancia: OEP actual→metacanon central→Sistema de Instrucciones/Metodología/Bootstrap vigentes→canon transversal EP→AGENTS.md y ep-medio-architectura.md→código/evidencia en commits exactos. Fuente caída no es «sin cambios». Un archivo no crea herramientas, credenciales ni memoria entre plataformas.
 
@@ -3622,3 +3622,38 @@ Se actualizaron los siete núcleos y el índice con crónicas específicas. Ning
 5. Paquete P004 + MCP-OCP-03/04 PASS y EP-TASK-003 PASS antes de instalar MCP-OCP.
 6. Cobertura completa de proveedores/adaptadores e inventario sin exposición de valores.
 7. Guardian/lease/crypto-erasure en contenedores aislados, solo después de los gates de almacenamiento y seguridad.
+
+---
+
+## 134. Reconciliación R2 y estado vivo de EP Vault · 2026-11-11
+
+### 134.1 Fuente y ciclo
+
+Continuación del ciclo EP con UUIDv7 local `01a1cc42-611a-764e-996b-4456f1b53d0a`. DTC leído en `main`, blob de apertura `f08859b0f290247798a1655c257dba267ce734c0`; apertura de este ciclo registrada en el mismo objeto. DUG Samantha v388 · NX-388m; blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`; §ARR consultado antes de aplicar la cascada. MCP normativo DESACTIVADO; no se invocó SINK.
+
+### 134.2 Reconciliación de los ciphertext
+
+El archivo `Desktop\SeryMente\EP-Vault\ep-env-vault.enc.json` es una ruta separada de la usada por la GUI formal. Sus metadatos observados: 2.048 bytes, última escritura UTC 2026-11-10T15:37:33.1179929Z, SHA-256 `D7AD1D745CAF460E047EAE521C1C403F36E99864BC9CD0604FFC564E390F2F7D`.
+
+La GUI se inicia mediante `EP\local-state\run-logs\Launch-Vault-For-Fila4.ps1`, que establece `LOCALAPPDATA=C:\Users\fila4\Desktop\SeryMente\EP\local-state`; por ello, el almacén formal de esa instancia está bajo `EP\local-state\Khora\secrets\`. El archivo formal no fue legible desde el contexto administrativo separado y no se modificaron ACL.
+
+El recibo B2 Vault v6 conserva un objeto remoto de 2.200 bytes con SHA-256/read-back idénticos `4CC2EE09974C9FBF3CF22C28A5A46C8286EB501F59268DBBB2B7BD6D61E8C590`. La copia de 2.048 bytes no se identifica como el origen formal; la diferencia de tamaño/hash no prueba corrupción del objeto B2 ni discordancia de una misma ruta.
+
+### 134.3 Estado vivo y límites
+
+UI Automation read-only a 2026-11-11T20:20:02.4860961Z encontró la ventana EP Vault v1.0.0 bajo CENTRAL\fila4, SessionId 1, PID 3504: `HeaderState=SELLADA`, título de gate «La cámara permanece sellada», descripción de autenticación local requerida y pie `LOCAL · CIFRADO · SELLADA`. No se pulsó DESBLOQUEAR ni ningún control.
+
+Los recibos R2 existentes mantienen 4/4 objetos B2 con read-back SHA y SSE-B2/AES256 y restauración aislada same-host de 3.289/3.289. Descifrado aislado de Vault y restauración cross-host continúan NOT_RUN. El ZIP de workspace sigue bajo la excepción histórica de no cifrado cliente.
+
+### 134.4 Estado de tareas
+
+- EP-TASK-002: `en_curso`; B2 4/4 y restore same-host PASS; GUI formal SELLADA; sesión CLI/nombres actuales no comprobados; descifrado/cross-host pendientes.
+- EP-TASK-003: sin cambio; gate BitLocker continúa FAIL según última observación de 11-11-2026 10:38; C: XTS-AES128/Protection Off/sin protectores, W: descifrado; ubicación UNCLASSIFIED.
+- EP-TASK-001: sin cambio; KeeShare requiere rotación local del propietario y KeePassXC-Browser/Native Messaging siguen pendientes.
+- EP-TASK-004/005/006/007: sin cambio; conservan gates, planes y límites del índice y sus núcleos.
+
+### 134.5 Siguiente acción
+
+El operador debe desbloquear EP Vault localmente mediante la GUI nativa. Después se podrá revalidar Status y presencia de las cinco variables EP sin revelar valores; si la sesión está activa, evaluar descifrado aislado del ciphertext descargado y un bootstrap independiente para recuperación cross-host. No pedir contraseña por chat, no ejecutar CLI interactiva mientras la GUI esté SELLADA y no repetir la transferencia o restore same-host que ya tienen evidencia.
+
+**Límite:** esta reconciliación es documental y read-only. No cambia credenciales, Vault, B2, ACL, BitLocker, volúmenes, workspace ni código.
