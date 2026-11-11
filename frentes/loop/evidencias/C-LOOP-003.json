@@ -2,7 +2,7 @@
   "schema": "loop.input-analysis-evidence.v1",
   "event_id": "C-LOOP-003-SOURCE-01",
   "recorded_on": "2026-11-11",
-  "status": "SOURCE_PRESERVED_GROQ_REVIEW_PENDING",
+  "status": "COMPLETED_WITH_CRITICAL_EDITORIAL_FILTER",
   "repository": "SeryMente/metodologia",
   "branch": "main",
   "front": "loop",
@@ -86,55 +86,168 @@
     "remote_sha256_verified": true,
     "sha256": "E25E047B54E8313B3D08E8A8C0CBA11D0D5C792D642206AE8D14B4D654A78531"
   },
-  "acceptance": {
-    "source_preservation": "VERIFIED",
-    "exact_remote_readback": "VERIFIED",
-    "canonical_github_readback": "VERIFIED",
-    "independent_model_review": "PENDING_EP_VAULT_SESSION",
-    "narrative_reconstruction_from_gpt_oss": "PENDING",
-    "operator_acceptance": "PENDING"
-  },
+  "acceptance": "Fuente original íntegra preservada y cotejada; revisión Groq/GPT-OSS completada mediante tres llamadas (primera parcial, segunda no utilizable, tercera completó H-L); informe externo íntegro y crónica editorial filtrada persistidos y leídos de vuelta. La aceptación del operador sigue PENDIENTE.",
   "no_action": {
     "no_methodology_governance_changed": true,
-    "no_other_front_control_changed": true,
-    "no_external_groq_request_sent": true,
-    "no_gmail_accessed": true,
-    "no_workshop_repository_created": true,
-    "no_crew_ai_benchmark_performed": true,
-    "no_secret_written_to_git": true
+    "no_responsibility_control_changed": true,
+    "no_other_front_authority_changed": true,
+    "no_other_project_repository_changed": true,
+    "external_api_used": true,
+    "external_api_authorized_by_operator_request": true,
+    "deployment": false,
+    "secrets_written_to_repository": false,
+    "secrets_disclosed": false,
+    "gmail_accessed": false,
+    "notion_accessed": false,
+    "workshop_repository_created": false,
+    "crewai_benchmark_performed": false,
+    "software_implemented": false
   },
   "verification": {
-    "status": "PASS_SOURCE_CUSTODY_AND_DOCUMENTATION",
-    "verified_at": "2026-11-11T13:52:33-06:00",
-    "timezone": "America/Mexico_City",
+    "status": "PASS_SOURCE_MODEL_REVIEW_AND_DOCUMENT_READBACK",
+    "readback_at": "2026-11-11T20:10:00Z",
+    "timezone": "UTC",
     "checks": {
-      "original_attached_file_sha256_verified": true,
-      "exact_source_copied_to_ep_runlog": true,
-      "remote_sha256_matches_attachment": true,
+      "original_source_sha256_verified": true,
+      "original_source_remote_readback": true,
       "canonical_source_readback_exact": true,
-      "conversation_provenance_readback_exact": true,
-      "checkpoint_chronicle_readback_present": true,
-      "evidence_readback_present": true,
-      "loop_core_updated_and_readback_exact": true,
-      "readme_updated_and_readback_exact": true,
+      "full_source_sent_to_groq": true,
+      "groq_model_request_completed": true,
+      "first_response_truncation_recorded": true,
+      "second_continuation_failure_recorded": true,
+      "third_continuation_stop_recorded": true,
+      "raw_model_report_persisted": true,
+      "raw_model_report_readback_exact": true,
+      "curated_chronicle_persisted": true,
+      "curated_chronicle_readback_exact": true,
+      "secret_not_printed_or_persisted": true,
       "responsibility_control_unchanged": true,
-      "original_ending_left_truncated": true,
-      "groq_request_sent": false
-    },
-    "main_head": {
-      "commit": "4d82332ba13473e5bc784abc48d354d91206f348",
-      "committed_at_utc": "2026-11-11T19:52:18Z",
-      "committed_at_local": "2026-11-11T13:52:18-06:00",
-      "loop_route_age_floor": "0.0.0"
+      "fol1_still_prepared_not_active": true,
+      "global_folios_still_unassigned": true
     },
     "artifact_blob_shas": {
       "frentes/loop/conversaciones/C-LOOP-003-entrada-verbatim.txt": "b1aec0118f1a5aa2fe03d64ed0528533be02d1db",
-      "frentes/loop/conversaciones/C-LOOP-003-dialogo.jsonl": "bf76fbda05960334aa979db6ea0b1d4970753a40",
       "frentes/loop/cronica/C-LOOP-003-checkpoint.md": "0982bc762642b4a78c7976c32362a74b4b4f00fb",
-      "frentes/loop/LOOP.md": "a7abdf636c94daa34d013d6d480592acede6b368",
-      "frentes/loop/README.md": "96326d92cc2722183843600f38f62192701210f2",
+      "frentes/loop/cronica/C-LOOP-003-analisis-y-secuencia-causal.md": "6d26f169d7b931612ec49c1796a46b2d4e8aeed9",
+      "frentes/loop/evidencias/C-LOOP-003-GPT-OSS-120B-review.md": "e60d5ccce8760039507a67b78df71bf9215c8cf2",
       "frentes/loop/CONTROL-RESPONSABILIDAD.json": "715e49c4dddb34f4d5d3cdf688a3fe99e473c7a4"
+    }
+  },
+  "groq_analysis": {
+    "provider": "Groq",
+    "endpoint": "https://api.groq.com/openai/v1/chat/completions",
+    "model": "openai/gpt-oss-120b",
+    "input": {
+      "source_path": "frentes/loop/conversaciones/C-LOOP-003-entrada-verbatim.txt",
+      "input_mode": "complete verbatim source, not summary or structured outline",
+      "line_count": 60,
+      "character_count": 65884,
+      "sha256": "E25E047B54E8313B3D08E8A8C0CBA11D0D5C792D642206AE8D14B4D654A78531"
     },
-    "note": "Los Blob SHA listados corresponden a artefactos verificados en main. El archivo de evidencia no incluye su propio hash para evitar autorreferencia circular; su blob SHA vigente se obtiene del read-back de GitHub."
+    "vault": {
+      "source": "EP Vault",
+      "variable_name": "VERCEL_KHORA_WEB_ALL_GROQ_API_KEY",
+      "session_open_verified": true,
+      "value_retrieved_in_memory": true,
+      "value_printed": false,
+      "value_persisted": false,
+      "KHORA_vault_used": false
+    },
+    "executions": [
+      {
+        "attempt": 1,
+        "request_id": "chatcmpl-c2fcba8a-6ef8-4f8e-bc60-7f638f5f4dd8",
+        "started_at_utc": "2026-11-11T20:06:02.8443322Z",
+        "finished_at_utc": "2026-11-11T20:06:23.5636378Z",
+        "prompt_tokens": 17768,
+        "completion_tokens": 9000,
+        "reasoning_tokens": 4667,
+        "total_tokens": 26768,
+        "finish_reason": "length",
+        "status": "PARTIAL_OUTPUT_TRUNCATED",
+        "note": "Primera respuesta cubrió A-G y empezó H; cortada por límite de salida."
+      },
+      {
+        "attempt": 2,
+        "request_id": "chatcmpl-19dcd8e6-fe85-45e6-8e22-8a169f603f18",
+        "started_at_utc": "2026-11-11T20:07:27.6025534Z",
+        "finished_at_utc": "2026-11-11T20:07:48.7277911Z",
+        "prompt_tokens": 22102,
+        "completion_tokens": 9000,
+        "reasoning_tokens": 8998,
+        "total_tokens": 31102,
+        "finish_reason": "length",
+        "status": "UNUSABLE_CONTINUATION",
+        "output_characters": 475,
+        "note": "La salida quedó consumida casi por completo por razonamiento y no completó las secciones; no se usa como análisis."
+      },
+      {
+        "attempt": 3,
+        "request_id": "chatcmpl-c615473e-50fb-430f-8304-36662da285e4",
+        "started_at_utc": "2026-11-11T20:08:32.0302210Z",
+        "finished_at_utc": "2026-11-11T20:08:42.3480197Z",
+        "prompt_tokens": 18987,
+        "completion_tokens": 3885,
+        "reasoning_tokens": 282,
+        "total_tokens": 22872,
+        "finish_reason": "stop",
+        "status": "COMPLETED_CONTINUATION",
+        "note": "Completó secciones H-L y rectificó algunos errores críticos de la primera salida."
+      }
+    ],
+    "raw_report": {
+      "path": "frentes/loop/evidencias/C-LOOP-003-GPT-OSS-120B-review.md",
+      "github_blob_sha": "e60d5ccce8760039507a67b78df71bf9215c8cf2",
+      "github_commit": "9bf2ca3fe1bf252c022fe735eb20b566586361f8",
+      "readback_exact": true,
+      "includes_attempts": [
+        1,
+        3
+      ],
+      "excludes_attempt_2_from_model_narrative": true
+    },
+    "curated_analysis": {
+      "path": "frentes/loop/cronica/C-LOOP-003-analisis-y-secuencia-causal.md",
+      "github_blob_sha": "6d26f169d7b931612ec49c1796a46b2d4e8aeed9",
+      "github_commit": "234a895feb12268869a25f499bb883e33bfab425",
+      "readback_exact": true,
+      "status": "EDITORIALLY_FILTERED_NOT_OPERATOR_RATIFIED"
+    },
+    "critical_filters": [
+      "GPT-OSS 120B no se confundió con GPT-4 120B.",
+      "Groq se distingue como proveedor, no modelo adversario.",
+      "RAP conserva requisito expreso de productor y adversario de modelos distintos.",
+      "No se elevaron a dependencias obligatorias las relaciones LISA-OCP o PRIUS-LISA/observador.",
+      "Se descartaron expansiones no sustentadas para ABDF y EP.",
+      "No se canonizaron términos ambiguos de dictado."
+    ],
+    "limits": [
+      "No se consultó Notion ni se recuperaron LISA 2.0 o Canon PRIUS.",
+      "No se consultó Gmail.",
+      "No se realizó benchmark externo de CrewAI, Superpowers, RAP ni alternativas.",
+      "No se implementó ni desplegó software."
+    ]
+  },
+  "analysis": {
+    "method": [
+      "Reconstrucción narrativa por progresión causal.",
+      "Consolidación de la repetición explícita de LISA en la interpretación, sin alterar el original.",
+      "Separación de afirmaciones, inferencias, hipótesis, propuestas, estados y preguntas abiertas.",
+      "Revisión íntegra de la fuente mediante Groq/GPT-OSS 120B con filtro editorial de errores y dependencias no demostradas."
+    ],
+    "requested_external_model": "openai/gpt-oss-120b",
+    "external_model_analysis_status": "COMPLETED_WITH_PARTIAL_FIRST_RESPONSE_AND_VALIDATED_CONTINUATION",
+    "groq_key_vault_source": "EP Vault",
+    "groq_key_variable": "VERCEL_KHORA_WEB_ALL_GROQ_API_KEY",
+    "groq_key_retrieved_in_memory": true,
+    "groq_key_printed": false,
+    "groq_key_persisted": false,
+    "source_verbatim_sent": true,
+    "current_analysis_status": "Curated narrative reconstruction and requirements documented; operator acceptance pending."
+  },
+  "artifacts": {
+    "groq_review": "frentes/loop/evidencias/C-LOOP-003-GPT-OSS-120B-review.md",
+    "curated_chronicle": "frentes/loop/cronica/C-LOOP-003-analisis-y-secuencia-causal.md",
+    "provenance_record": "frentes/loop/conversaciones/C-LOOP-003-dialogo.jsonl"
   }
 }
