@@ -154,3 +154,36 @@ Al resolver esta tarea, el responsable debe agregar el informe individual en est
 - **Aceptación:** PENDIENTE; inventario parcial no equivale a aceptación de seguridad.
 - **Siguiente acción:** permanecer bloqueado hasta B2 restore, EP-TASK-003 PASS, bóveda validada y contratos MCP-OCP-14/15/16.
 - **Conclusión:** PARCIAL. Se amplió la evidencia read-only; Guardian y borrado criptográfico continúan no implementados.
+
+
+## Plan de diseño, verificación y aceptación del ciclo de sesión · 2026-11-11
+
+**Estado:** inventario del host parcial read-only; Guardian/lease/triggers/crypto-erasure continúan NOT_RUN. Este plan no activa monitoreo, Guardian ni operaciones destructivas.
+
+### Límites de responsabilidad
+
+EP-TASK-003 protege y materializa el workspace persistente raíz de EP, con política CECEQ/LOC-OTHER y su dead-man específico. EP-TASK-007 gobierna el ciclo de cada sesión efímera OCP (inventario, lease, checkpoint, trigger y cierre criptográfico). No se duplican ni se usan una tarea para saltar el gate de la otra.
+
+### Secuencia
+
+1. **Definir entradas verificables.** Enumerar propiedades del host/sesión, fuente, timestamp, precisión, permisos y costo del preflight. GPS/IP solo se consultan por interfaces soportadas y con autorización; registrar NO_DISPONIBLE/NO_AUTORIZADO en lugar de inferir ubicación.
+2. **Congelar política de sesión.** Preservar los parámetros aprobados: renovación 60 s, lease 30 min, aviso previo, inactividad 10 min y máximo absoluto 8 h. Mantener estos parámetros separados del TTL de desbloqueo EP Vault. Toda modificación requiere trazabilidad y evaluación de impacto.
+3. **Diseñar el modelo de estados y contratos.** Especificar estados, transiciones, eventos terminales, responsables y recibos de inventario/checkpoint/cierre. La máquina de estados es propuesta técnica a revisar bajo P013 si cambia arquitectura o perímetro de seguridad; no asumir que labels o transiciones sugeridas ya son canónicas.
+4. **Resolver precedencia del cierre.** El checkpoint se intenta primero dentro del presupuesto inicial de 30 s, pero la prioridad de borrado en emergencia/sospecha de compromiso se mantiene. Especificar los resultados para checkpoint PASS/FAIL/timeout, bloqueo BitLocker FAIL, pérdida de red, lease vencido, reloj inconsistente y terminación forzada del controlador.
+5. **Implementar por adaptadores pequeños.** Separar inventario read-only, renovación de lease, decisión de trigger, bloqueo/desmontaje, crypto-erasure y recibo. Cada módulo consume estado comprobado; no iniciar el siguiente paso con datos incompletos o contradictorios. Respetar las exclusiones: sin vigilancia general, sondeos costosos ni mecanismos no aprobados.
+6. **Probar en laboratorio aislado.** Fixtures para expiración, falta de renovación, host suspendido, clock skew, pérdida de red, B2 no disponible, checkpoint parcial, proceso terminado, permisos insuficientes, volumen ajeno y recuperación. Los tests destructivos solo se realizan sobre contenedores desechables; nunca sobre el workspace real.
+7. **Validar extremo a extremo.** Probar inicio, inventario, lease, checkpoint, trigger terminal, bloqueo/desmontaje, eliminación limitada, recibo y ausencia de procesos huérfanos. Medir tiempos reales y falsos positivos; no usar una simulación como evidencia de operación real.
+
+### Review Focus y criterios de cierre
+
+- Sesión de una o dos instancias conforme al límite aprobado; aislamiento entre instancias.
+- Inactividad y máximo absoluto no se confunden con el TTL de Vault.
+- Cada trigger tiene condición positiva, condición negativa, fuente y evidencia.
+- Emergency/suspicion no espera al backup; el intento de checkpoint respeta el presupuesto y no posterga el borrado prioritario.
+- Crypto-erasure afecta únicamente al contenedor efímero declarado; no toca workspace persistente ni B2.
+- Inventario respeta permisos, fuente, precisión y costo; ninguna ubicación se infiere.
+- Cierre: contratos congelados, pruebas de laboratorio PASS, pruebas reales autorizadas de bloqueo/desmontaje/borrado/recuperación, métricas, recibos y aceptación del operador.
+
+### Rollback y seguridad
+
+En desarrollo, rollback a configuración/build previo y destrucción solo de fixtures temporales. En host real, no existe rollback ficticio del borrado criptográfico: por ello las pruebas destructivas se separan del entorno productivo y requieren compuertas y autorización específicas. Si una condición de seguridad no se verifica, el resultado es BLOCKED/FAIL, nunca PASS por defecto.
