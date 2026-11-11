@@ -20,7 +20,7 @@ Integrar en el OCP general del sprint la dependencia técnica EP-TASK-002 y la c
 1. Precisar con EP qué artefactos de Metodología/OCP deben tener copia recuperable en B2 y cuáles deben permanecer únicamente en sus fuentes canónicas.
 2. Mantener GitHub como autoridad de versiones y procedencia. B2 es una copia complementaria de persistencia/recuperación; no es un segundo repositorio canónico, no sustituye Git y no se convierte en almacén de autorización, control, folios o bitácoras.
 3. Reconciliar los artefactos de OCP elegibles con sus propietarios: OEP y documentación EP; documentación y artefactos de MCP-OCP; documentos de Gobernanza. No copiar secretos, credenciales, tokens, perfiles autenticados ni datos excluidos por EP.
-4. Verificar que el destino configurado sea únicamente el bucket `OCP-MCP`; el prefijo históricamente reportado para EP es `ep-ocp/`, sujeto a verificación autenticada de cuenta, región, bucket, key y permisos.
+4. Mantener `OCP-MCP` como bucket privado para los objetos e historial ya existentes. Para descarga pública sin login, preparar un bucket separado dedicado exclusivamente a paquetes ya cifrados del lado cliente (nombre candidato `ocp-mcp-recovery-public-encrypted`, sujeto a disponibilidad y creación por EP). La privacidad pública se aplica a nivel de bucket: todo objeto cargado allí queda públicamente descargable. El prefijo histórico EP `ep-ocp/` en `OCP-MCP` se conserva privado.
 5. Mantener como destinos inválidos `OCP-MSP` y `metodologia-ep-persistencia`. La eliminación de este último figura autorizada en el historial de EP, pero no se considera ejecutada: EP debe verificar cuenta, identidad y contenido antes de actuar.
 6. Obtener evidencia de carga de muestra no sensible, lectura de vuelta, SHA-256, restauración aislada y verificación funcional en una segunda ubicación, bajo las autorizaciones y compuertas de EP.
 7. Integrar el resultado en el checklist del sprint, separando diseño, preparación local, autenticación, operación remota, sincronización, restauración y aceptación.
@@ -65,13 +65,19 @@ Esta evidencia acredita la candidata bajo su escenario de build, no su integraci
 - [ ] EP confirma que bucket, prefijo y `namePrefix` efectivo permiten exactamente los conjuntos autorizados; no amplía permisos ni scopes por inferencia.
 - [ ] El operador acepta expresamente el resultado integrado.
 
+- [ ] El canal de descarga sin login usa un bucket público separado de `OCP-MCP`; el bucket dedicado contiene exclusivamente objetos `.zip.age`, con inventario que descarta objetos/sidecars en claro y con nombre/metadatos sin secretos.
+- [ ] Se comprueba que la URL directa del objeto descarga el ciphertext desde un contexto sin sesión/token B2; el tamaño y SHA-256 del ciphertext descargado coinciden con el origen. El usuario no necesita abrir la consola B2 para descargar.
+- [ ] La identidad privada age está fuera de B2, Git y del paquete; su custodia independiente y copia de contingencia fueron probadas. La recuperación no depende exclusivamente del Vault dentro del mismo ZIP.
+- [ ] La descarga pública se descifra localmente, el ZIP/manifiesto supera integridad y la restauración aislada pasa. No sobrescribir el workspace activo.
+- [ ] Se documentan las implicaciones del enlace permanente, visibilidad de nombre/tamaño/fecha/egress y procedimiento de revocación; se inspeccionan versiones y lifecycle antes de declarar revocado un objeto.
+
 ## 6. Dependencias, límites y decisiones
 
 - EP es responsable de la implementación, credenciales, CLI, host, bucket, transferencias, restauración y evidencia técnica, bajo su control y compuertas.
 - Gobernanza es responsable de integrar la dependencia, fijar criterios de aceptación del sprint, revisar la trazabilidad y elevar decisiones al operador.
 - MCP-OCP conserva la autoridad técnica de su servidor, código, pruebas y empaquetado. La persistencia B2 no autoriza a Gobernanza o EP a modificar su OCP/control/código.
 - MCP-OCP determina datasets, consistencia, exportación nativa, clave y aceptación funcional de sus restauraciones. EP no lee ni copia bases vivas por inferencia; Gobernanza no modifica el OCP, control, código o host MCP-OCP.
-- No crear un bucket alternativo, un segundo OCP, un mirror canónico independiente ni una bitácora paralela.
+- No crear un segundo OCP, mirror canónico independiente ni bitácora paralela. Excepción autorizada para el diseño de distribución: un bucket B2 separado, dedicado exclusivamente a paquetes de recuperación cifrados `.zip.age`; no puede contener objetos en claro ni sustituir el bucket privado `OCP-MCP`.
 - No imprimir, almacenar en Git ni enviar al chat claves, tokens, contraseñas o secretos.
 - No ejecutar `--delete`, cambios lifecycle, cambios ACL o transferencias masivas sin compuerta y autorización específica.
 - La disponibilidad de un CLI o la presencia de variables en otro proyecto no demuestra que B2 esté autenticado, configurado o operativo para Metodología.
@@ -302,3 +308,45 @@ EP-TASK-002 evidencia que el ZIP R2 (idéntico por SHA al objeto descargado de B
 El ciphertext Vault remoto tiene read-back SHA PASS; descifrado aislado y bootstrap B2 independiente están `NOT_RUN`. La sesión DPAPI CurrentUser no es portable. ZIP sin cifrado cliente por excepción de urgencia; SSE-B2/AES256 no reemplaza ese control.
 
 Estado: `B2_UPLOAD_READBACK=PASS_4_OF_4` · `WORKSPACE_ISOLATED_RESTORE=SAME_HOST_PASS` · `VAULT_DECRYPT_RESTORE=NOT_RUN` · `CROSS_HOST_RESTORE=NOT_RUN`. Se puede reanudar desarrollo sintético P004 en el ciclo MCP-OCP existente; no equivale a aceptación integral de persistencia.
+
+## Decisión operativa posterior a R4 · URL pública y cifrado de extremo a extremo · 2026-11-10
+
+**Instrucción del operador incorporada al diseño; implementación aún pendiente.** El objetivo es que la siguiente recuperación pueda descargarse mediante URL directa sin iniciar sesión en Backblaze, sin exponer contenido legible si el objeto o el enlace se exfiltran.
+
+### Canal B2 de dos buckets
+
+1. **Bucket privado existente:** `OCP-MCP` conserva R2/R4, ciphertexts sueltos, manifiestos y cualquier otro objeto histórico. No se cambia a público.
+2. **Bucket público separado:** candidato `ocp-mcp-recovery-public-encrypted`, pendiente de comprobar disponibilidad y de creación/configuración por EP. Configuración objetivo B2 `allPublic`. En él solo se permiten paquetes de recuperación cifrados por cliente con extensión `.zip.age`.
+3. B2 define la privacidad al nivel del bucket: en `allPublic`, cualquier persona puede descargar objetos; la carga, listado y borrado siguen requiriendo autorización. La URL directa no equivale a un enlace privado con caducidad. Un bucket público no puede tratarse como carpeta con ACL por archivo.
+4. Mantener nombres y metadatos sin secretos ni datos personales. El bucket no contendrá ZIP en claro, Vault ciphertext suelto, manifiestos/sidecars legibles, recibos con rutas locales, claves, tokens, logs ni archivos auxiliares.
+
+### Cifrado elegido para el canal público
+
+- Crear un destinatario de recuperación age basado en X25519. El paquete se cifra en el host **antes** de cualquier llamada de carga: ZIP de workspace → `age` → `.zip.age`.
+- Usar el formato age estándar, con cifrado autenticado ChaCha20-Poly1305. La clave pública de destinatario puede estar en la configuración del mecanismo de respaldo; la identidad privada jamás se incluye en el ZIP, en B2, en Git ni en telemetría.
+- La clave privada debe custodiarse independientemente del backup y del bucket, con copia de contingencia recuperable. No depender solo del Vault contenido dentro del propio paquete. La pérdida de la clave privada implica pérdida de capacidad de descifrado.
+- El ciphertext conserva confidencialidad aun si el objeto o su URL pública son copiados por terceros, siempre que la clave privada permanezca secreta. La ruta, nombre, fecha, tamaño y volumen de descarga sí pueden ser visibles; el enlace permite descargar sin autenticación y puede generar cargos de egreso. El enlace no expira por sí mismo.
+- No usar SSE-B2 como sustituto del cifrado cliente: SSE-B2 es una capa adicional del proveedor, no el control criptográfico exigido en este flujo.
+
+### Secuencia del próximo respaldo R5
+
+1. Capturar el workspace clasificado con la nomenclatura horaria local vigente. El ZIP intermedio permanece solo en staging local protegido.
+2. Cifrar el ZIP con age para el destinatario de recuperación aprobado y generar `.zip.age`; no subir el ZIP en claro.
+3. Verificar localmente que el ciphertext existe, que age puede descifrar una copia de prueba con la identidad de recuperación y que el ZIP pasa la prueba de integridad/restauración aislada.
+4. Subir solamente `.zip.age` al bucket público dedicado mediante credenciales B2 autorizadas.
+5. Registrar object key, file ID, bytes y SHA-256 del ciphertext. No publicar SHA ni metadatos del ZIP en claro.
+6. Obtener del objeto su Friendly URL / URL directa y comprobar descarga desde un contexto limpio sin sesión B2 ni token. Comparar tamaño y SHA-256 del ciphertext descargado.
+7. Descifrar la descarga con la identidad privada independiente, probar el ZIP y restaurar en una ubicación aislada. La restauración del workspace original activo queda prohibida durante la prueba.
+8. Limpiar el ZIP temporal en claro del staging protegido tras completar las pruebas; preservar la identidad de recuperación de forma independiente.
+9. Verificar periódicamente que el bucket público contiene exclusivamente objetos cifrados admitidos y revisar costes/egress, retención y capacidad de revocación. El borrado del objeto no recupera copias ya descargadas por terceros.
+
+### Gates y situación de R4
+
+- R4 `EP-Workspace-Recovery_2026-11-10_Martes_17-35_America-Mexico_City_R4.zip` permanece privado en `OCP-MCP/ep-ocp/workspace/`, SHA-256 `DD84AA680CDE49D9940E35203E8D29355FB6904105680E87128DE8C868F883CE`. Es un backup remoto verificado por read-back y restauración aislada, **pero sin cifrado cliente**. No se publica ni se cambia retroactivamente su clasificación.
+- El siguiente R5 será el primer candidato del canal público cifrado; su sufijo de publicación deberá ser `.zip.age`, conservando fecha/hora del snapshot en el nombre.
+- Aceptación: bucket dedicado `allPublic` verificado; inventario sin objetos en claro; age recipient/key custody comprobados; descarga pública real sin autenticación; read-back SHA/bytes PASS; descifrado PASS; ZIP/manifiesto PASS; restore aislado PASS.
+- La URL es pública y persistente mientras el objeto exista: quien la obtenga puede descargar el ciphertext. El cifrado protege el contenido, no los metadatos ni el ancho de banda/coste de descarga.
+
+**Estado actual:** `DESIGN_RECORDED · EP_IMPLEMENTATION_PENDING · PUBLIC_BUCKET_NOT_CREATED · AGE_IDENTITY_NOT_GENERATED · R5_NOT_UPLOADED · PUBLIC_URL_NOT_ISSUED`. Esta actualización no realiza operaciones en B2 ni modifica permisos del bucket existente.
+
+**Fuentes técnicas:** [Backblaze — access controls de buckets](https://www.backblaze.com/docs/cloud-storage-buckets) · [Backblaze — direct download URLs](https://www.backblaze.com/docs/cloud-storage-download-files-with-the-native-api) · [age v1.0 specification](https://c2sp.org/age@v1.0.0) · [age project/CLI](https://github.com/FiloSottile/age).
