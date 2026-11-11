@@ -99,7 +99,7 @@ Esta subsección no sustituye el registro original de la comparación inicial 0/
 
 ## Cierre vivo de candidata · HEAD 4ac337f · 2026-11-10
 
-- Main `8f999198f1d8cde71361c884c9a13b745f442b49`; rama `feat/mcp-ocp-sink-p004-main-a34c1c5b`, HEAD `4ac337f0b1e507497b8ab6c6c64d71d2e8001e13`, 26 ahead / 0 behind; 29 rutas. PR #27 OPEN/DRAFT/NOT MERGED.
+- Main `8f999198f1d8cde71361c884c9a13b745f442b49`; rama `feat/mcp-ocp-sink-p004-main-a34c1c5b`, HEAD `4ac337f0b1e507497b8ab6c6c64d71d2e8001e13`, 34 ahead / 0 behind; 29 rutas. PR #27 OPEN/DRAFT/NOT MERGED.
 - Core candidato v0.1.38; backlog LIST v0.19.
 - H1: 41 tests escritos/0 ejecutados con evidencia; build y smoke pendientes. CI jobs actuales sin runner asignado, steps, logs ni artifacts; causa raíz no verificada.
 - H2: contrato MCP-OCP-14 v0.1 propuesto y cuatro schemas parseables; no ratificado y sin IO/runtime.
@@ -129,6 +129,6 @@ La portación selectiva se ejecutó y validó localmente sobre el commit `460008
 - ZIP SHA-256: `50c0c68f769aefec95dfde3e45c74594d34b3fbcb25916814181fad241e8e3a6` (138.142 bytes). Manifest/receipt/SHA256SUMS están en la misma ruta de entrega.
 - Paquete y pin publicados en commit `69f17be96e6a5e406d59ce66ffe0ac89589831c4`.
 
-La rama se sincronizó después con main hasta `0b4a7373fdc07f39b3f764e9c6e0c94fce21cc2f`, mediante merge `63e2f1399fdb210294ef26983babc8fbef87a4a6`. Los 26 commits ahead / 0 behind incluyen el producto y las anotaciones MCP-OCP; los cambios externos integrados son documentación EP/Gobernanza no solapada.
+La rama se sincronizó después con main hasta `cb9b6a704bb18ccd219d847a48e810f22b4e2c3e`, mediante merge `d1625f9345e54b90ac1ad884d4ee8476c78af491`. Los 34 commits ahead / 0 behind incluyen el producto y las anotaciones MCP-OCP; los cambios externos integrados son documentación EP/Gobernanza no solapada.
 
 **No incluidos/aceptados:** panel WPF y release 1.0.0, generalización P001–P043, hosted CI, instalación/handoff EP, runtime persistente de Fila 4 e IPZ E2E. EP-TASK-003/005 conservan sus gates. El piloto permanece candidato no aceptado.
