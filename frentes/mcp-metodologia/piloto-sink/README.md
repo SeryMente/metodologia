@@ -117,3 +117,6 @@ Rama limpia: `feat/mcp-ocp-p004-reconciled-20261111-7ab0c555`, portación inicia
 Inventario REUSE/ADAPT/DROP/DEFER: [RECONCILIACION-20261111.md](RECONCILIACION-20261111.md). DUG v388/NX-388m y pin `3ba8e737... / 4db0ebad...` vigentes. SDK .NET 10.0.403; piloto net10.0 framework-dependent, sin RID.
 
 Las suites y fuentes coinciden con blobs de una validación local histórica; build, tests y smoke no se han reejecutado en esta rama. No se reutiliza ZIP/manifest/checksums antiguos. No equivale a instalación EP ni aceptación E2E IPZ.
+
+
+La sincronización más reciente incorpora main `1867af0c69f250aaee2b35b585eec8b74827b69c` por merge `d981953da84eaede38cb25649eb76b30a454a7ef`. La rama se revisa en [PR #28](https://github.com/SeryMente/metodologia/pull/28), abierta en DRAFT; no está fusionada. Build/tests/smoke y paquete actual permanecen pendientes.
