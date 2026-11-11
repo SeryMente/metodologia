@@ -2894,3 +2894,37 @@ Interpreto la instrucción como continuidad del ciclo semi-live EP ya abierto pa
 - Si la bóveda está SELLADA o la CLI no ve sesión activa y las cinco variables EP, P0-C permanece bloqueada y el operador debe desbloquear localmente por la GUI nativa. Si está activa, el siguiente trabajo se limita a validar el preflight P0-C sin emitir secretos y sin repetir las variantes ya fallidas.
 
 **Estado de apertura:** `LEÍDO → SIN_NOVEDAD → RESPUESTA_INICIAL_REGISTRADA`. El ciclo sigue abierto; el procesamiento y el cierre documental quedan pendientes.
+
+
+---
+
+## EP · cierre de ciclo: reconciliación R2 y estado vivo de EP Vault · 2026-11-11 · 14:20 America/Mexico_City
+
+**UUIDv7 local:** `01a1cc42-611a-764e-996b-4456f1b53d0a` · sin folio global/FOL1.
+
+### Procesamiento ejecutado
+
+1. Se consultó la GUI formal con UI Automation read-only. Resultado: `SELLADA`; no se accionó ningún control.
+2. Se verificó el launcher y la ruta de almacenamiento formal configurada; el almacén formal no fue leído desde el contexto administrativo separado por restricción ACL.
+3. Se calcularon tamaño/fecha/SHA de una copia en la ruta separada `EP-Vault\` y se distinguió del objeto remoto formal respaldado en B2. No se copió, sustituyó ni descifró ningún ciphertext.
+4. Se reconciliaron los hitos R2: 4/4 objetos B2 con read-back; restore same-host 3.289/3.289. Descifrado aislado y cross-host permanecen pendientes.
+5. Se actualizaron EP-TASK-002, el índice provisional y OEP §134; no hubo cambios en las otras seis tareas.
+
+### Commits y blobs de read-back
+
+| Objeto | Commit | Blob |
+|---|---|---|
+| EP-TASK-002 | f45b44cd730c2a7f3c8aacc5d0b36a7827cea42d | 9ab5beb366861edf813f535e27c7d8a8fc5b7907 |
+| Índice provisional EP | ea8b3300864c773b4dab0dc5d7af0fbe9485fb99 | b6d5a6ea89180e9f457742ca057e9f5be7525114 |
+| OEP v0.3.68 / §134 | 1a654ef8318160962419aedb77a2c44c37727a36 | 8afa1e1f8755fa8c02721d3c95acdba9d489bf69 |
+
+Los tres documentos se leyeron de vuelta desde `main` y su contenido coincide exactamente con el payload escrito. Esta entrada cierra documentalmente el ciclo una vez cotejada su propia lectura de vuelta.
+
+### Estado resultante
+
+- EP-TASK-002 permanece `en_curso`; bloqueo inmediato: GUI formal SELLADA.
+- EP-TASK-003/004/005/006/007/001 conservan sus estados y gates previos.
+- No se revelaron secretos ni se tocó Vault formal, DPAPI, B2, cuentas, ACL, host, volúmenes, workspace, KeePassXC ni perfiles de Chrome.
+- El siguiente paso requiere desbloqueo local de la GUI EP Vault por el operador; no se solicita contraseña por chat ni se ejecuta una CLI interactiva mientras esté SELLADA.
+
+**Estado del ciclo:** `PUBLICADO → LEÍDO → RESPUESTA_INICIAL_REGISTRADA → PROCESADO → DOCUMENTADO_AL_CIERRE → VERIFICADO_READBACK`.
