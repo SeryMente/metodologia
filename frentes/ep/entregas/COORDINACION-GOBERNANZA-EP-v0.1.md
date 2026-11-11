@@ -3200,3 +3200,36 @@ Cada escritura se leyó de vuelta y se comparó con el contenido exacto escrito.
 **Pendientes EP-TASK-002:** recuperación cross-host con host físico independiente y bootstrap B2 separado (PC-8/PC-7 registrados offline al último inventario de dispositivos); contrato/implementación de sincronización idempotente y pruebas de fallos/reanudación; política de cifrado cliente para futuros datasets aprobados; aceptación integral. La etapa P1 queda `NO_ELIGIBLE_DATASET_IDENTIFIED`, no se declara backup nuevo. No se modificaron objetos B2, Vault, credenciales ni datos del workspace.
 
 **Siguiente en cola:** EP-TASK-003. Se conserva EP-TASK-005 detrás de 003 y MCP-OCP P004/03/04; EP-TASK-001 queda pospuesta al final por instrucción expresa.
+
+
+## EP · cierre de ciclo orden EP-TASK-002→003→005 · 2026-11-11
+
+**A literal de reordenamiento:** «Pospon NCL al final. trabaja a aprtir de ep 002. sin burocarcia rapido.» Orden activo: EP-TASK-002 → EP-TASK-003 → EP-TASK-005 → EP-TASK-001. NCL queda al final.
+
+### Resultado técnico por tarea
+
+- **EP-TASK-002:** B2 Vault v7 upload/read-back SHA/tamaño y SSE-B2/AES256 PASS; copia aislada descifrada HMAC/AES PASS (30 propiedades; cinco nombres B2). Inventario agregado P1 read-only bajo fila4: 4.123 archivos / 362.011.264 B / 879 directorios; `Datos` no existe; 0 datasets ordinarios elegibles; sin escrituras en últimos 15 min al corte. Recibo local `EP/local-state/run-logs/ep-p1-inventory-aggregate-v1.json`, 2.479 B, SHA-256 `C2F5BE0C488906BCCED1099BC3F1AA39D185D73FD227A1A7648DB569242C7409`, read-back PASS. No se subió un nuevo ZIP ni se repitieron upload/restore. Cross-host NOT_RUN por ausencia de un segundo host físico conectado; P2 sincronización idempotente/outbox y P3/P4 de aceptación siguen pendientes. EP-TASK-002 sigue `en_curso`.
+- **EP-TASK-003:** inventario read-only de repositorios y rutas. KHORA existe en raíz `Repositorios/KHORA`, rama `work/harmonia-front-workspace-20261110`, HEAD `9fd5c18205e39b6db12c9152b07d8f880f6b256d`, 20 cambios tracked sin confirmar; preservado intacto. RAP/rap en `main`, HEAD `43525b57055ed720f1efdf81ed50ee90a2785e16`, 0 cambios tracked. Signal Interpreter en `work/g14-groq-dual-clean-20261111`, HEAD `305d8d862be629af0fc96e35701adc29be15013c`, 0 cambios tracked. Metodología existe como carpeta sin `.git`; GDP nested no detectado. La ruta aprobada `C:\\Users\\fila4\\EP\\ProtectedWorkspace` y el root MCP `Desktop\\SeryMente\\Datos\\Metodologia\\MCP-OCP` no existen. BitLocker permanece C: XTS-AES128/100 % Protection Off/sin protectores; W: descifrado; ubicación UNCLASSIFIED. Sin mutaciones de disco, workspace, Git o montaje. EP-TASK-003 sigue PARTIAL_FAIL.
+- **EP-TASK-005:** PR #28 OPEN/DRAFT/NOT MERGED, `mergeable=false`; main HEAD `b3c468ce7522dee34631d065011801d6a7efeb1f`, comparación rama contra main `diverged`, 52 ahead/29 behind, merge-base `9ec698fbe27fd087c2cc9939b3afd604984e6154`. Pin v388 stale frente a DUG v389; RUNBOOK/Source-Pin/manifest/recibo no están reconciliados; .NET 10 ausente; CI alojada no verificada. Por OEP §93, EP no modifica el código/paquete de MCP-OCP. No hubo instalación, extracción, DB, provisionamiento, STDIO ni IPZ E2E. EP-TASK-005 continúa pendiente/bloqueada.
+- **EP-TASK-001:** no se trabajó en esta secuencia; queda pospuesta al final por instrucción del operador, preservando la evidencia NCL existente.
+
+### Persistencia documental y lectura de vuelta
+
+| Objeto | Commit | Blob read-back |
+|---|---|---|
+| Apertura de ciclo / orden inicial | `ad8f659e34caf19f51633407937577cb9b4ad61e` | `99cf3c5db0973fbd9361185b1ae89a2e6dbbe2b8` |
+| Rectificación de cola + EP-TASK-002 inventario | `0811defd47649bbdb668eb04828ddd8340108676` | `c9d6396fc1fd00509b8a29131a49483a2d801b2a` |
+| Núcleo EP-TASK-002 | `5d578b403eea0feac3a9a120692a6bae9c6612e8` | `c2f31e8302cdc6117eed26ac0b7e50ef95e4bad0` |
+| Índice EP / EP-TASK-002 + orden | `b0091bc3bb6aa28c5d1507931557d1f0bcb9af07` | `682cd26910a481247ca6855a06d4f92a20ea7885` |
+| Núcleo EP-TASK-003 | `a721793d4c247dd7902288d02b76035093dc89e8` | `9c043c7fe60d92d39b7bc5353066e78331184c94` |
+| Índice EP / EP-TASK-003 | `b3c468ce7522dee34631d065011801d6a7efeb1f` | `3e43b21115ec6f6e80653c1076a7a0af5549ebbb` |
+| Núcleo EP-TASK-005 | `7e5d52640e31ab7848cb023e2b0eafb3c403a2eb` | `32ce914752edb5d0d8f1314639bd5c6c52263903` |
+| Índice EP / EP-TASK-005 | `9d1fbfc054a8915e134d28dfd2261518fc259065` | `6086dabbad64afa1a3bdfa6cdc2042e579cc6453` |
+
+Cada escritura se leyó de vuelta desde el commit y se cotejó por contenido exacto/blob. DTC actualizado con cierre de este ciclo por separado; OEP, DUG, Vault, credenciales, B2, BitLocker, volúmenes, VHDX, ACL, repositorios de producto y PR #28 no fueron modificados en este ciclo.
+
+### Siguiente acción
+
+Continuar EP-TASK-003 desde su gate de almacenamiento y custodia ya documentado, sin repetir diagnósticos ni tocar los discos hasta superar su compuerta. EP-TASK-005 queda detrás de EP-TASK-003 y de la entrega consistente de MCP-OCP P004/03/04. EP-TASK-001 se retoma al final.
+
+**Estado del ciclo:** `PROCESADO → DOCUMENTADO_AL_CIERRE → READBACK_VERIFICADO → CERRADO_PARCIAL`; no se declara completada ninguna de las tres tareas en curso.
