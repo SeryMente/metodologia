@@ -80,7 +80,7 @@ H1: 41 tests escritos/0 ejecutados con evidencia; build y smoke pendientes. El j
 
 ## Estado vivo · 2026-11-10
 
-Main `8f999198f1d8cde71361c884c9a13b745f442b49`; rama HEAD `4ac337f0b1e507497b8ab6c6c64d71d2e8001e13`; 26 ahead / 0 behind; 29 rutas. PR #27 OPEN/DRAFT/NOT MERGED. Core v0.1.38; backlog LIST v0.19.
+Main `8f999198f1d8cde71361c884c9a13b745f442b49`; rama HEAD `4ac337f0b1e507497b8ab6c6c64d71d2e8001e13`; 34 ahead / 0 behind; 29 rutas. PR #27 OPEN/DRAFT/NOT MERGED. Core v0.1.38; backlog LIST v0.19.
 
 41 pruebas escritas, 0 ejecutadas con evidencia; build y smoke no verificados. CI reciente no asigna runner y no entrega pasos/logs/artefactos. H2 MCP-OCP-14 es propuesta documental; no hay runtime ni IO.
 
@@ -134,4 +134,4 @@ La sincronización más reciente incorpora main `1867af0c69f250aaee2b35b585eec8b
 
 **Límites:** candidato piloto P004, no release 1.0.0; GitHub-hosted CI NOT_VERIFIED; EP installation NOT_PERFORMED; EP-TASK-003/005 pendientes; runtime persistente Fila 4 NO VERIFICADO; IPZ E2E NOT_ACCEPTED; MCP-NORMATIVO DESACTIVADO.
 
-La rama incorpora main `0b4a7373fdc07f39b3f764e9c6e0c94fce21cc2f` mediante merge `63e2f1399fdb210294ef26983babc8fbef87a4a6`; compare de cierre 26 ahead / 0 behind. PR #28 permanece OPEN/DRAFT/NOT MERGED.
+La rama incorpora main `cb9b6a704bb18ccd219d847a48e810f22b4e2c3e` mediante merge `d1625f9345e54b90ac1ad884d4ee8476c78af491`; compare de cierre 34 ahead / 0 behind. PR #28 permanece OPEN/DRAFT/NOT MERGED.
