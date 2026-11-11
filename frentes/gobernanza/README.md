@@ -139,3 +139,8 @@ Todo nuevo snapshot provisional debe incorporar fecha, día de semana, hora loca
 - **Restore aislado R4 PASS:** 3.345 archivos / 145.501.528 bytes; Vault ciphertext incluido; original intacto. Descifrado de Vault y cross-host siguen pendientes.
 - Procedimiento provisional de una sola descarga: descargar R4 y usar **Extraer todo** en destino vacío para recrear `SeryMente`. No ejecutar el script auxiliar incluido por defecto de comodines en rutas `[id]`.
 - R2 anterior sigue preservado. Siguiente hito de producto: H1 SINK:P004; H2 backup y restore aislado acreditados, con descifrado/cross-host abiertos.
+
+
+### Procedimiento de respaldo provisional · actualización 2026-11-10
+
+[GOV-TASK-014](./📁%20🧭%20-%20Tareas%20provisionales/📁%20🧩%20-%20GOV-TASK-014%20-%20Persistencia%20Backblaze%20de%20Metodología%20y%20OCP/README.md) registra la decisión de usar, para próximos snapshots, un bucket B2 público separado con **solo paquetes cifrados `.zip.age`** y URL directa sin login. `OCP-MCP` permanece privado; R2/R4 no se exponen ni se alteran. La implementación EP, custodia de la clave age, creación del bucket y primer R5 público siguen pendientes. El [registro de continuidad R4](entregas/ChatGPT-GOBERNANZA-20261110-1722-CONTINUIDAD-B2.md) conserva la evidencia histórica y la nueva regla de transición.
