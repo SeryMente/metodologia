@@ -2,7 +2,7 @@
 
 Punto de entrada del repositorio; no es una fuente normativa.
 
-**Documento Único de Gobernanza:** [DUG · Samantha v388 · NX-388m](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html). Integra 43 principios, 22 anexos jerarquizados, Metacanon 1.28, GOW 2.17 con 131 términos definidos e indexados, §ARR con el vocabulario inicial, taxonomía estructural 1.4, navegación bidireccional y representación estructurada. Fuente, versión, firma y JSON embebido releídos en `main` el 2026-11-01; commit `8ee2482866b3dd085e58e05006727256d0274376`, blob `54064c8fe00f872023a455f06596061ed69062ae`.
+**Documento Único de Gobernanza:** [DUG · Samantha v388 · NX-388m](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html). Integra 43 principios, 24 anexos jerarquizados, Metacanon 1.29, GOW 2.18 con 132 términos definidos e indexados, §ARR con el vocabulario inicial, taxonomía estructural 1.4, navegación bidireccional y representación estructurada. Fuente, versión, firma y JSON embebido cotejados en `main` el 2026-11-11; commit de la ruta `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`, blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`.
 
 La sección humana gobierna la representación estructurada incorporada en el mismo archivo. No hay documentos normativos paralelos ni sincronización automática implícita con Notion, instrucciones personalizadas, memorias o copias locales. La rama `main` de `SeryMente/metodologia` es la fuente documental; si no puede leerse, declara `METODOLOGÍA NO VERIFICADA`. Las políticas obligatorias, los permisos reales y las autorizaciones aplicables conservan precedencia.
 
