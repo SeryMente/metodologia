@@ -227,3 +227,20 @@ Paquete/manifiesto/pins exactos; destino y almacenamiento protegidos; root de da
 ### Rollback
 
 Conservar el paquete original y su SHA; aislar instalación en piloto; antes de cambios de datos, snapshot/read-back. Ante fallo, detener el proceso, retirar solo el directorio piloto creado por este ciclo y devolver cliente/configuración a la versión anterior. No borrar datos ni fuentes compartidas para resolver una instalación fallida.
+
+---
+
+## Revalidación de gates del piloto SINK-P004 · 2026-11-11
+
+**Estado operativo:** pendiente · BLOQUEADA_EP003_STORAGE_AND_P004_PACKAGE_MCP_CONTRACTS.
+
+### Entradas y bloqueos observados
+
+- PR #27 SINK-P004 continúa OPEN/DRAFT, NOT MERGED y mergeable=false. No se declaró paquete validado ni se realizó checkout de la PR en Fila4.
+- La ruta local histórica de Metodología no contiene .git; no puede utilizarse para import-sources ni como checkout de instalación.
+- El gate de almacenamiento no pasa: C: XTS-AES128/100 %/Protection Off/sin protectores; W: descifrado/0 %/sin protectores. El root de datos del servidor no quedó acreditado dentro de un volumen protegido.
+- No se instaló, extrajo, importó, ejecutó provision-operator, registró operador, configuró cliente STDIO ni abrió panel. MCP-OCP-03/04 no se ejecutaron desde EP en este ciclo.
+
+### Secuencia de desbloqueo
+
+Esperar EP-TASK-003 PASS con ruta y volumen protegidos, checkout Git válido, root de datos protegido, paquete P004/manifiesto/SHA correctos y MCP-OCP-03/04 PASS. Después efectuar instalación aislada, importación de fuentes, provisionamiento interactivo por el operador y smoke STDIO/RDC. Mantener ausencia de listener público y secretos en logs. La PR en estado draft no es prueba de paquete ni autorización de instalación.
