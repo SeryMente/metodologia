@@ -3124,3 +3124,18 @@ El UUIDv7 anotado en la apertura `01a1cc90-e140-7c48-b7cd-81f88e940f34` no qued�
 Ciclo documental cerrado con read-back exacto. Ninguna tarea se declara completada. Prioridad siguiente: resolver localmente el gate de almacenamiento EP-TASK-003 con el operador y, en paralelo, corregir la procedencia del RUNBOOK y regenerar el paquete #28 en su rama con hashes/read-back completos. No instalar ni fusionar mientras esos gates permanezcan FAIL. MCP-NORMATIVO DESACTIVADO; FOL1 inactivo.
 
 **Estado:** `OPENING_LATE → PROCESSED → TASKS_UPDATED → READBACK_VERIFIED → CLOSED`.
+
+ 
+## EP · apertura tardía de ciclo: preflight vivo Fila 4 y retoma de EP-TASK-003/005 · 2026-11-11 · 16:43 America/Mexico_City
+
+**Estado de secuencia:** `DTC_OPENING_LATE=TRUE`. Las comprobaciones RDC read-only de identidad, BitLocker, VHDX, checkout y runtime comenzaron antes de escribir esta apertura. La secuencia no se reescribe retroactivamente. No se asigna UUIDv7 ni folio FOL1 no generado/verificado.
+
+**A literal del operador:** «Hazlo no te detengas, resuelve esas dos tareas de extremo a extremo».
+
+**Alcance interpretado:** retomar EP-TASK-003 y EP-TASK-005. Conexión administrativa RDC bajo `CENTRAL\MantenimientoRCI` exclusivamente para operaciones administrativas; cualquier operación de trabajo debe ejecutarse como `CENTRAL\fila4` y bajo `C:\Users\fila4`. Se conserva el diseño aceptado y las rutas originales; no se alteran privilegios, identidad, políticas, BitLocker, protectores, volúmenes, VHDX, ACL ni workspace en este ciclo. Los gates de seguridad de P012/P013 requieren revisión presencial del operador; no se presume presencia física.
+
+**Fuentes canónicas leídas:** DUG Samantha v389/NX-389m, main commit `39ee30a211cd40bca9f3588470bbed36bc19f018`, blob `bcd99e72113f444a045d7f1c91b4ad36865b8ea8`; OEP `frentes/ep/OEP.md` v0.3.69, blob `34ba5fab053f07b79fb928babd07949aae97a5cc`; task index blob `f5b760febe712219622378786d4cd891e9237be2`; núcleos EP-TASK-003 `f3cd910533990b513d10db4e0a7228290724ed31` y EP-TASK-005 `6cbf3b026ff4de50e4b8ccf41009ff9d635f8851`.
+
+**Hallazgos de apertura (lectura de solo lectura):** host `PC10RCIF4EI4`; MantenimientoRCI admin/elevado; fila4 estándar, perfil `C:\Users\fila4`; C: FullyEncrypted/XTS-AES128/100 %, Protection Off y cero protectores; W: FullyDecrypted/0 %, Protection Off y cero protectores; VHDX de 30 GiB adjunto desde `C:\Users\fila4\AppData\Local\EP\ProtectedWorkspace\Fila4-Workspace.vhdx`; W: contiene solo System Volume Information; runtime fila4 .NET SDK 8.0.425 y runtime 8.0.31, sin .NET 10.0.x observado; checkout Metodologia sin `.git`; ubicación física UNCLASSIFIED. No hubo cambios de host.
+
+**Estado de procesamiento:** PREFLIGHT_READ_ONLY_COMPLETADO; EP-TASK-003 continúa parcial/bloqueada por almacenamiento, checkout y clasificación; EP-TASK-005 continúa bloqueada por EP-TASK-003, por candidato P004 desactualizado/inconsistente y por ausencia de runtime .NET 10. Las acciones dependientes quedan detenidas; la documentación y la reconciliación del candidato se evaluarán separadamente.
