@@ -790,3 +790,12 @@ Día en español; hora 24h; zona IANA `America/Mexico_City`; instante de creaci�
 **Instrucción inmediata de recuperación:** descargar el ZIP R4 desde el bucket privado `OCP-MCP`, prefijo `ep-ocp/workspace/`; usar Windows **Extraer todo** en un destino vacío. Se recrea `SeryMente`. El script auxiliar incluido tiene un defecto de comodines con rutas `[id]`; no ejecutarlo. El contenido del ZIP está validado y la restauración aislada pasó usando el mismo contenido con el helper corregido en la copia de prueba.
 
 **Límite de seguridad:** no hay cifrado cliente; solo SSE-B2/AES256. Vault viaja como ciphertext; requiere contraseña maestra independiente. H2 persistencia/backup+restore aislado demostrado; descifrado cross-host pendiente. H1 SINK:P004 sigue como siguiente hito de producto, no aceptado.
+
+
+## Delta de continuidad de respaldo · canal público cifrado · 2026-11-10
+
+GOV-TASK-014 incorpora el nuevo procedimiento objetivo para próximos snapshots: bucket B2 público separado y dedicado exclusivamente a paquetes `.zip.age`, cifrados localmente con age (destinatario X25519; clave privada bajo custodia independiente). La descarga futura será mediante URL directa sin login; el enlace permitirá a terceros obtener el ciphertext y no tendrá expiración automática.
+
+**Límites:** el bucket existente `OCP-MCP` continúa privado. R2/R4 históricos no se mueven ni se reclasifican; R4 sigue siendo un objeto remoto con read-back y restore aislado verificados, pero sin cifrado cliente. R5 será el primer candidato para el canal público protegido.
+
+**Estado:** decisión documental incorporada; EP-TASK-002 todavía debe implementar/verificar bucket dedicado, age y recuperación; no existe aún bucket público, objeto R5 ni URL descargable. Este cambio no bloquea ni altera el camino crítico de SINK:P004.
