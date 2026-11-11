@@ -120,3 +120,18 @@ Las suites y fuentes coinciden con blobs de una validación local histórica; bu
 
 
 La sincronización más reciente incorpora main `1867af0c69f250aaee2b35b585eec8b74827b69c` por merge `d981953da84eaede38cb25649eb76b30a454a7ef`. La rama se revisa en [PR #28](https://github.com/SeryMente/metodologia/pull/28), abierta en DRAFT; no está fusionada. Build/tests/smoke y paquete actual permanecen pendientes.
+
+## Validación nueva y paquete piloto · 2026-11-11
+
+**Build source:** `4600086c492582c5d854145db64097310ac73686`; main base de build `1867af0c69f250aaee2b35b585eec8b74827b69c`; DUG v388/NX-388m, commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`, blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`.
+
+- .NET SDK 10.0.403; PowerShell 7.4.22; Windows x64; checkout y SDK aislados/temporales.
+- Restore y builds: PASS; 0 warnings / 0 errors.
+- P004: 18/18 PASS. Monitor/readiness: 23/23 PASS. Smoke STDIO/EOF: PASS.
+- Paquete candidato: `entregas/piloto-sink-p004/MCP-OCP-SINK-P004-4600086c-candidate.zip`; 138.142 bytes; SHA-256 `50c0c68f769aefec95dfde3e45c74594d34b3fbcb25916814181fad241e8e3a6`.
+- Extracción y cotejo de nueve archivos: PASS. Smoke sobre el ejecutable exacto extraído: PASS.
+- Manifest, `VALIDATION-RECEIPT.json` y `SHA256SUMS.txt` acompañan el paquete; ver el informe [RECONCILIACION-20261111.md](RECONCILIACION-20261111.md).
+
+**Límites:** candidato piloto P004, no release 1.0.0; GitHub-hosted CI NOT_VERIFIED; EP installation NOT_PERFORMED; EP-TASK-003/005 pendientes; runtime persistente Fila 4 NO VERIFICADO; IPZ E2E NOT_ACCEPTED; MCP-NORMATIVO DESACTIVADO.
+
+La rama incorpora main `0b4a7373fdc07f39b3f764e9c6e0c94fce21cc2f` mediante merge `63e2f1399fdb210294ef26983babc8fbef87a4a6`; compare de cierre 26 ahead / 0 behind. PR #28 permanece OPEN/DRAFT/NOT MERGED.
