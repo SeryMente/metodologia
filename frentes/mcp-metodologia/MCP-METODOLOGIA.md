@@ -775,3 +775,6 @@ EP-TASK-007 es independiente del gate físico de Fila 4 en EP-TASK-003. El guard
 
 **Estado:** `MCP_OCP_02=SELECTIVE_PORT_PERSISTED`; `MCP_OCP_03=18_AND_23_TESTS_PRESENT_HISTORICAL_BLOB_EQUIVALENCE_REEXEC_PENDING`; `MCP_OCP_04=HARNESS_PRESENT_SMOKE_REEXEC_PENDING_IPZ_E2E_NOT_ACCEPTED`; `MCP_OCP_05=P004_IMPLEMENTATION_PORTED_BUILD_PACKAGE_PENDING`; `EP_INSTALL=BLOCKED_EP_GATES`; `MCP_NORMATIVO=DESACTIVADO`; `FOL1=PREPARADO_PENDIENTE_ACTIVACION_IPZ`.
 
+### Seguimiento de revisión · PR #28 · 2026-11-11
+
+La portación actual se publicó como PR [#28](https://github.com/SeryMente/metodologia/pull/28), `OPEN / DRAFT / NOT MERGED`, base main `1867af0c69f250aaee2b35b585eec8b74827b69c`, head `d981953da84eaede38cb25649eb76b30a454a7ef`, 16 commits ahead / 0 behind, 23 archivos MCP-OCP. El estado `mergeable=true` solo habilita revisión, no aceptación. PR #27 sigue separada, abierta/draft y no integrada.
