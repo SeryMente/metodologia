@@ -431,3 +431,8 @@ El anexo de último tramo contiene las instrucciones verbatim y es el criterio d
 Las quince tareas registradas (y las que se incorporen después) deben dejar su propio informe de resolución/cierre en su núcleo README individual, siguiendo [la plantilla común](../../PLANTILLA-REPORTE-CIERRE-TAREA.md). El informe explica cómo se resolvió y el resultado logrado; identifica cambios/rutas/commits/blobs/SHA; presenta criterios y pruebas realmente ejecutadas con logs/artefactos; deja read-back; y declara expresamente bloqueantes, dependencias, preocupaciones, riesgos, diferidos, rollback y aceptación.
 
 No sustituir los informes individuales por el resumen del registro ni por GOV-TASK-015. Una tarea hermana mantiene estado y evidencia independientes. Si está parcial o bloqueada, informar el impedimento, responsable, impacto y condición de desbloqueo sin marcarla completa. El índice se actualiza después de leer de vuelta el informe. El cierre se comunica al operador con enlace a cada informe y síntesis de solución/evidencia/bloqueantes/preocupaciones. Datos sensibles y secretos nunca se copian al reporte.
+
+
+## Revalidación semiviva GOV-TASK-015 · 2026-11-11
+
+El informe individual fue persistido y leído de vuelta: [GOV-TASK-015 · Sprint SINK-P004](./%F0%9F%93%81%20%F0%9F%A7%AD%20-%20Tareas%20provisionales/%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-015%20-%20Sprint%20Sink%20local%20v%C3%ADa%20RDC/README.md). Estado: EN_CURSO. Existe candidata PR #27 OPEN/DRAFT, pero compare actual diverged 53 ahead / 78 behind; el workflow no expone pasos/logs ni artefactos; EP-TASK-003 sigue PARTIAL_FAIL y EP-TASK-005 bloqueada. El pin DUG v388 y GOW:ARR estructurado fueron cotejados. No hay instalación ni E2E aceptado.
