@@ -1,6 +1,6 @@
 ## Estado operativo vigente · sprint Sink local · 2026-11-11
 
-**Responsabilidad:** control único activo de Gobernanza, generación 20; `CONTROL-RESPONSABILIDAD.json` blob `40075a48c0b45ade28a8542bb7fa46dc5cb04819`. Titular primario preservado `SES-20261111-375BE087`, generación 19. Asiento corresponsable 2 sustituido por `SES-20261111-624B784A`, UUIDv7 local `01a1cc53-2d90-7638-a78e-c0142d7ded09`, alias `chatgpt-C-GOBERNANZA-ASIENTO-02-OPTIMIZACION-01-SES-20261111-624B784A`; ID nativo no expuesto. Dos responsables activos; máximo dos.
+**Responsabilidad:** control único activo de Gobernanza, generación 20; `CONTROL-RESPONSABILIDAD.json` blob `02a9720dd0f4264d69a6d84f865fd97cca9a31f0`. Titular primario preservado `SES-20261111-375BE087`, generación 19. Asiento corresponsable 2 sustituido por `SES-20261111-624B784A`, UUIDv7 local `01a1cc53-2d90-7638-a78e-c0142d7ded09`, alias `chatgpt-C-GOBERNANZA-ASIENTO-02-OPTIMIZACION-01-SES-20261111-624B784A`; ID nativo no expuesto. Dos responsables activos; máximo dos.
 
 ## Auditoría de fricción · corte 2026-11-11
 
