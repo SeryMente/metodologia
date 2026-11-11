@@ -1,6 +1,6 @@
 # GOV-TASK-013 — Medición objetiva y optimización del tiempo de procesamiento de ciclos
 
-**Estado:** en_curso · **Tipo:** tarea propia de Gobernanza · **Responsabilidad:** Gobernanza 2 (asiento corresponsable activo `SES-20261101-GV8E89D1FF`, generación 12), por delimitación operativa expresa del operador. Esta atribución no transfiere la titularidad primaria del frente ni modifica su control.
+**Estado:** en_curso · **Tipo:** tarea propia de Gobernanza · **Responsabilidad:** Gobernanza 2 (asiento corresponsable activo `SES-20261111-624B784A`, generación 20), por delimitación operativa expresa del operador. Esta atribución no transfiere la titularidad primaria del frente ni modifica su control.
 
 ## Delimitación de responsabilidades
 
@@ -350,5 +350,13 @@ La referencia legal de implementación para México es la LFPDPPP publicada el 2
 **Responsabilidad:** MCP-OCP-15 implementa schema/store; EP-TASK-007 captura inventario/ubicación/lease; Gobernanza 2 mantiene GOV-TASK-013 y correlación de medición. Gobernanza 1 conserva la coordinación y aceptación interfrente según control vigente.
 
 
+## Corte de medición de la auditoría · 2026-11-11
+
+- **Magnitud primaria:** `cycle.duration_ms` permanece sin medir.
+- **Estado:** `NOT_MEASURED` para esta conversación. No hay captura verificable del evento de entrada `cycle.accepted` en el límite del entorno ni del evento final `cycle.completed` en el límite de entrega.
+- **No inferir:** no usar la hora del chat, marcas de herramientas, recuento de llamadas ni percepción de demora como sustitutos de ambos checkpoints.
+- **Alcance:** no se añade KPI, categoría, métrica de primera acción ni nueva telemetría; se conserva el contrato vigente de una sola magnitud primaria.
+- **Línea base:** pendiente de un adaptador real que capture ambos límites con reloj monotónico, marcas UTC y precisión verificable. La comparación requiere diez ciclos completos y comparables, según el contrato existente.
+- **Hallazgo cualitativo:** la demora percibida se asocia a pasos previos de responsabilidad y gobierno; GOV-TASK-012 documenta los cambios propuestos. No se declara que hayan reducido duración hasta medirlo.
 ## Reporte individual obligatorio de resolución/cierre
 Al resolver, completar, bloquear o cancelar esta tarea, registrar su propio informe en este README usando [la plantilla común](../../../PLANTILLA-REPORTE-CIERRE-TAREA.md). Explicar objetivo y resultado, cómo se solucionó, decisiones verificables, cambios/rutas/commits/blobs/SHA, criterios y pruebas ejecutadas con logs/artefactos, read-back, bloqueantes/dependencias, preocupaciones/riesgos, pendientes, rollback y aceptación. Declarar NINGUNO_VERIFICADO o NO_VERIFICADO donde corresponda; nunca ocultar campos. No marcar completada sin criterios PASS, evidencia y read-back. Actualizar el índice padre después de verificar este informe y entregar al operador el enlace individual y síntesis de solución, evidencia, bloqueantes y preocupaciones. No incluir secretos ni datos sensibles.
