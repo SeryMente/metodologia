@@ -2,7 +2,7 @@
 
 DUG v389/NX-389m · Metacanon 1.30 · GOW 2.19. Responsabilidad: autorización directa frente+actuación; relevo por defecto al asumir/retomar; corresponsabilidad solo expresa. Los folios son metadatos y no bloquean el trabajo. Registro A/B consolidado por cambio sustantivo. Sink preferente y fallback DUG canónico. GOV-TASK-013 cancelada; no medir tiempo. FOL1 PREPARADO/no activo; IPZ sin tocar.
 
-## Estado vigente del frente · sprint Sink local · 2026-11-10
+## Snapshot histórico del frente · sprint Sink local · 2026-11-10 · supersedido por rebaseline 2026-11-11
 
 - **Responsabilidad:** roster y metadatos vigentes se consultan en el [control único](CONTROL-RESPONSABILIDAD.json); no duplicarlos en este resumen. El corte de §ARR de v377 quedó supersedido: DUG v388 contiene §ARR en `glossary.sections` con ancla `#gow-arranque-chatgpt`.
 - **DUG canónico:** Samantha v389 · NX-389m · 43 principios · 24 anexos; commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`; blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`. Evento `C-GOBERNANZA-ART027-SINK-LOCAL-RECONCILIACION-20261110-01`. ART-027 quedó alineado con Sink local; ART-025 y ART-031 no se modificaron en esta reconciliación.
