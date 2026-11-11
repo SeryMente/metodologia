@@ -402,3 +402,19 @@ Al resolver esta tarea, el responsable debe agregar el informe individual en est
 ### Bloqueos
 
 Vault formal sellada, autenticación no disponible, API sin capacidad de lectura, scope ambiguo o imposibilidad de proteger el secreto detienen solo el proveedor/operación afectado. No se elude la API ni se recuperan valores por métodos no autorizados.
+
+---
+
+## Revalidación de cobertura Vercel y disponibilidad de EP Vault · 2026-11-11
+
+**Estado operativo:** en_curso · INVENTORY_SNAPSHOT_52 · STORED_READBACK_10 · VALUE_UNAVAILABLE_42 · FORMAL_VAULT_NOT_INITIALIZED.
+
+### Evidencia y límites
+
+El catálogo local EP-VERCEL-ENV-CATALOG-khora-web.json contiene 52 entradas del proyecto khora-web: 10 marcadas STORED_READBACK_VERIFIED y 42 BLOCKED_VALUE_NOT_RETRIEVABLE. Es evidencia del inventario capturado, no una nueva consulta al proveedor en este ciclo ni prueba de que todos los proveedores/proyectos estén cubiertos.
+
+EPVault-CLI Status en Fila4 devolvió NOT_INITIALIZED, vaultExists=false y sessionActive=false. En consecuencia, no se ejecutó ListVariables, RevealVariable, SetFromClipboard, distribución a proveedores ni adaptación just-in-time. No se copiaron valores ni se intentó obtener por inferencia ninguno de los 42 secretos no recuperables.
+
+### Decisión y siguiente paso
+
+Conservar separados los 10 registros con read-back y los 42 cuyo valor no fue recuperable. Resolver primero la bóveda formal y su procedencia; después completar el mapa de fuentes/proveedores con lecturas autorizadas de solo metadatos, restaurar custodia cifrada y desarrollar adaptadores con read-back/idempotencia. No declarar cobertura organizacional completa a partir del catálogo parcial de Vercel.
