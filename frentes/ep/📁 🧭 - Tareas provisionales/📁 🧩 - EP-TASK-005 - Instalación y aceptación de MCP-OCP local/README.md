@@ -204,3 +204,26 @@ Panel MCP-OCP-13, generalización P001–P043, release final 1.0.0, FOL1 y EP-TA
 
 ## Reporte individual obligatorio por tarea
 Al resolver esta tarea, el responsable debe agregar el informe individual en este mismo núcleo siguiendo [la plantilla común](../../../PLANTILLA-REPORTE-CIERRE-TAREA.md), completar todos sus campos y actualizar el índice padre solo después del read-back. No marcar como completada sin criterios PASS, evidencia ejecutada, integridad verificada y aceptación exigible. Si termina parcial/bloqueada, dejar igualmente el informe con bloqueantes, preocupaciones, riesgos y condición objetiva de desbloqueo. Informar al operador con enlace al informe. Esta instrucción no altera titularidad, generación, permisos ni controles.
+
+
+## Plan de instalación y aceptación por contratos · 2026-11-11
+
+**Estado:** sigue pendiente y bloqueada por sus dependencias registradas. Este plan ordena la instalación del piloto P004 sin anticipar gates ni convertir el paquete en autorización para operar Fila 4.
+
+### Secuencia
+
+1. **Preflight del destino.** Comprobar conexión RDC activa y que corresponde a Fila 4, perfil Windows efectivo, privilegios, ubicación física y rutas absolutas. Si RDC no está activo, no ejecutar operaciones locales. Resolver EP-TASK-003 PASS: volumen XTS-AES256/100 %/Protection On, recovery protector custodiado/read-back, checkout íntegro y root de datos protegido; dead-man PASS solo si la ubicación verificada lo exige.
+2. **Congelar entradas del paquete.** Registrar origen, commit, rama, versión, RID, manifiesto, tamaño y SHA-256. Cotejar paquete y pins DUG v388/NX-388m antes de extraer. Rechazar fuentes/pins obsoletos; no reconstruir ni cambiar silenciosamente el paquete recibido.
+3. **Verificar contrato del servidor.** Ejecutar pruebas MCP-OCP-03 y smoke MCP-OCP-04 en entorno de prueba; exigir initialize, tools/list, tools/call, respuesta completa, shutdown y reinicio limpio vía STDIO/RDC. Separar proceso iniciado, protocolo disponible, importación de fuentes, readiness y función real.
+4. **Instalar en el destino piloto.** Solo tras PASS previos, extraer en frentes/mcp-metodologia/instalacion-local/piloto-sink/. Resolver el root de datos en %USERPROFILE%\Desktop\SeryMente\Datos\Metodologia\MCP-OCP\, fuera del checkout y dentro del volumen protegido. No usar W: ni LocalAppData por defecto sin preflight explícito.
+5. **Importar fuentes y provisionar.** Ejecutar import-sources contra checkout con commits/blobs vigentes y verificar GOW:ARR, DUG v388, catálogo y 43 MDP. Ejecutar provision-operator de forma interactiva; REGISTER <SID> solo se escribe localmente por el operador. No capturar, transmitir ni persistir el SID o claves en el chat.
+6. **Validar el panel y el ciclo de vida.** Comprobar session.json ACTIVE antes de abrir el panel; probar espera del servidor, conectado/desconectado, minimización/restauración, cierre al terminar EP y ausencia de procesos huérfanos. El panel no lee secretos ni realiza sondeos no autorizados.
+7. **Emitir recibo y aceptar.** Registrar rutas, versiones, SHA, fuentes importadas, resultado, evidencia, fallos, rollback y aceptación. El piloto P004 no equivale a aceptación E2E IPZ ni al release final 1.0.0.
+
+### Review Focus
+
+Paquete/manifiesto/pins exactos; destino y almacenamiento protegidos; root de datos separado del checkout; autenticación GitHub local no transferida desde el conector; consentimiento local para REGISTER; sin listener HTTP, túnel, firewall, endpoint público ni secretos en logs. Un gate fallido impide la etapa dependiente, no justifica un bypass.
+
+### Rollback
+
+Conservar el paquete original y su SHA; aislar instalación en piloto; antes de cambios de datos, snapshot/read-back. Ante fallo, detener el proceso, retirar solo el directorio piloto creado por este ciclo y devolver cliente/configuración a la versión anterior. No borrar datos ni fuentes compartidas para resolver una instalación fallida.
