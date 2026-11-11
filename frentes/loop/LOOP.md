@@ -100,23 +100,27 @@ No se modifican las normas generales desde este FT. Toda propuesta transversal s
 
 ## 8. Estado vivo
 
-**Estado del frente:** inaugurado en `main` mediante `C-LOOP-INICIO-01`; OCP, núcleo y control único existentes. La presente entrada amplía el contexto del mismo frente, no crea un FT paralelo.
+**Estado del frente:** inaugurado en `main` mediante `C-LOOP-INICIO-01`; OCP, núcleo y control único existentes. C-LOOP-003 amplía el contexto del mismo frente, no crea un FT paralelo.
 
-**Corte de este ciclo:** la fuente original completa aportada para C-LOOP-003 está preservada literalmente y leída de vuelta. La revisión solicitada a Groq/GPT-OSS 120B sigue pendiente porque la sesión compartida de EP Vault estaba cerrada durante la prevalidación; no se envió la petición.
+**Corte actual:** fuente literal C-LOOP-003 preservada y cotejada; análisis externo Groq/GPT-OSS 120B completado con continuación válida; crónica editorial filtrada persistida. La revisión externa es insumo analítico, no canon ratificado.
 
 Materializado:
 - Núcleo de 13 bloques, control inicial y UUIDv7 local.
 - Propósito y autorización de creación originales preservados.
-- C-LOOP-002: reconstrucción manual previa y revisión GPT-OSS secundaria basada en un mapa estructurado, no en el dictado íntegro.
-- C-LOOP-003: dictado original íntegro, procedencia, evidencia y checkpoint de custodia.
-- SHA-256 y lectura de vuelta del original verificados en EP local y en GitHub `main`.
+- C-LOOP-002: reconstrucción previa y revisión GPT-OSS basada en un mapa estructurado, no en el dictado íntegro.
+- C-LOOP-003: fuente literal, procedencia, evidencia, respuestas Groq/GPT-OSS y reconstrucción causal crítica.
+- SHA-256 del original y lectura de vuelta verificados en EP local y GitHub `main`.
+- Distinción editorial de roles: OCP, EP, LISA, RAP, PRIUS, observador núcleo/adaptadores, Loop y orquestación multiagente.
 
 Pendiente:
-- Reabrir EP Vault y enviar la fuente literal C-LOOP-003 completa a `openai/gpt-oss-120b` mediante Groq.
-- Conservar respuesta cruda, metadatos de ejecución y evidencia; reconstruir después la secuencia narrativa y someter la interpretación a revisión crítica.
-- Formalizar contrato técnico del Loop, interfaces, modelo de autorización por acción y parada.
-- Definir y probar el observador núcleo y sus adaptadores por proyecto/frente.
-- Comparar CrewAI y alternativas; priorizar el piloto RAP multiagente y el taller según el vector táctico expresado por el operador.
+- Recuperar y verificar LISA 2.0 y Canon PRIUS desde Notion; no fueron consultados en este ciclo.
+- Benchmark externo de CrewAI y alternativas, y de referentes de calidad (incluido Superpowers); no se realizó aquí.
+- Aclarar el problema técnico concreto pendiente de CrewAI y definir el piloto RAP entre modelos distintos.
+- Formalizar el contrato técnico del Loop, interfaces, autorización por acción y condiciones de parada.
+- Definir y probar observador núcleo y adaptadores por proyecto/frente, a partir de una línea de base.
+- Diseñar el vector objetivo visible y su procedencia canónica.
+- Delimitar el overhaul OCP y el workspace administrativo tipo Notion sin confundirlos con EP.
+- Preparar después el taller y el repositorio correspondiente; no se creó ni se consultó Gmail.
 
 ## 9. Aceptación y viabilidad
 
@@ -206,14 +210,17 @@ El 2026-11-11 el operador entregó una entrada extensa para reconstruir la progr
 - La revisión secundaria con GPT-OSS 120B vía Groq se ejecutó usando la bóveda EP; la respuesta se conserva en [evidencias/C-LOOP-002-GPT-OSS-120B-review.md](evidencias/C-LOOP-002-GPT-OSS-120B-review.md). Se utilizó un mapa estructurado, no el dictado verbatim completo; la crítica y las correcciones están en la crónica §12. La clave no se expuso ni se guardó.
 - Los requisitos de la crónica son una interpretación de trabajo, no un canon ratificado. El motor de Loop permanece sin implementar.
 
-## 15. Entrada C-LOOP-003 · fuente literal y revisión externa pendiente
+## 15. Entrada C-LOOP-003 · fuente literal y análisis externo completados
 
 El operador aportó el archivo `Texto pegado(20261111-194556).txt`. Se conserva sin normalización ni reordenación en [conversaciones/C-LOOP-003-entrada-verbatim.txt](conversaciones/C-LOOP-003-entrada-verbatim.txt), con su procedencia en [conversaciones/C-LOOP-003-dialogo.jsonl](conversaciones/C-LOOP-003-dialogo.jsonl).
 
 - Fuente: 60 líneas, 65.884 caracteres; SHA-256 `E25E047B54E8313B3D08E8A8C0CBA11D0D5C792D642206AE8D14B4D654A78531`; GitHub Blob SHA `b1aec0118f1a5aa2fe03d64ed0528533be02d1db`.
-- Crónica de checkpoint: [C-LOOP-003-checkpoint.md](cronica/C-LOOP-003-checkpoint.md).
-- Evidencia: [C-LOOP-003.json](evidencias/C-LOOP-003.json).
+- Crónica del estado inicial de custodia: [C-LOOP-003-checkpoint.md](cronica/C-LOOP-003-checkpoint.md).
+- Reconstrucción narrativa y requisitos: [C-LOOP-003-analisis-y-secuencia-causal.md](cronica/C-LOOP-003-analisis-y-secuencia-causal.md).
+- Revisión cruda GPT-OSS 120B vía Groq y continuación: [C-LOOP-003-GPT-OSS-120B-review.md](evidencias/C-LOOP-003-GPT-OSS-120B-review.md).
+- Evidencia y metadatos de ejecución/read-back: [C-LOOP-003.json](evidencias/C-LOOP-003.json).
 - La fuente termina truncada en «...los modelos de frontera son muchísimo...». No se completa.
-- GPT-OSS 120B aún no recibió esta fuente: la sesión compartida de EP Vault estaba cerrada (`VAULT_SESSION_NOT_OPEN`). La ejecución queda pendiente; el análisis C-LOOP-002 no se presenta como sustituto.
+- Groq recibió el original literal completo (SHA-256 indicado arriba). La primera respuesta alcanzó el límite de tokens; una continuación intermedia no resultó utilizable; la tercera llamada completó H-L. Las limitaciones y las correcciones críticas están registradas en la evidencia y en la crónica editorial.
+- La salida GPT-OSS contiene hipótesis y errores; no se adopta sin filtro. La crónica distingue requisitos expresos, inferencias y propuestas pendientes.
 - No se modificó el control de responsabilidad ni se asignaron folios globales. FOL1 sigue PREPARADO/NO ACTIVO.
 
