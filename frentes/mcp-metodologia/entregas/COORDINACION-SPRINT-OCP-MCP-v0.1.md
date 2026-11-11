@@ -1915,7 +1915,7 @@ Este suplemento solo registra la actualización de navegación y su cotejo. No r
 - 9 archivos; extracción y cotejo manifest por tamaño/SHA-256 PASS; smoke sobre el ejecutable exacto extraído PASS.
 - Commit de publicación package/pin: `69f17be96e6a5e406d59ce66ffe0ac89589831c4`.
 
-**Sincronización y revisión:** main `0b4a7373fdc07f39b3f764e9c6e0c94fce21cc2f` integrado mediante merge `63e2f1399fdb210294ef26983babc8fbef87a4a6`; comparación posterior 26 ahead / 0 behind. PR #28 OPEN/DRAFT/NOT MERGED, mergeable=true. PR #27 sigue sin integrar.
+**Sincronización y revisión:** main `cb9b6a704bb18ccd219d847a48e810f22b4e2c3e` integrado mediante merge `d1625f9345e54b90ac1ad884d4ee8476c78af491`; comparación posterior 34 ahead / 0 behind. PR #28 OPEN/DRAFT/NOT MERGED, mergeable=true. PR #27 sigue sin integrar.
 
 **Límites y gates:** hosted CI NOT_VERIFIED (el PASS proviene de ejecución local real); EP-TASK-003/005 continúan como gates de instalación/recepción; no hubo handoff, instalación, importación privada, REGISTER ni operación de host; runtime persistente de Fila 4 NO_VERIFICADO; IPZ E2E NOT_RUN/NOT_ACCEPTED; MCP-NORMATIVO DESACTIVADO; panel WPF y release 1.0.0 pendientes. El ZIP es `CANDIDATE_NOT_ACCEPTED`.
 
