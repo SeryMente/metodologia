@@ -8,4 +8,9 @@ Frente de trabajo para diseñar y desarrollar un mecanismo reutilizable de desar
 - **Crónica inicial:** [cronica/C-LOOP-001.md](cronica/C-LOOP-001.md).
 - **Evidencia de creación:** [evidencias/C-LOOP-001.json](evidencias/C-LOOP-001.json).
 
+
+- **Reconstrucción narrativa y requisitos:** [C-LOOP-002](cronica/C-LOOP-002-analisis-y-reconstruccion.md).
+- **Procedencia del análisis:** [conversaciones/C-LOOP-002-dialogo.jsonl](conversaciones/C-LOOP-002-dialogo.jsonl).
+- **Evidencia y estado de validación:** [evidencias/C-LOOP-002.json](evidencias/C-LOOP-002.json).
+
 Leer primero Sam, Metacanon y GOW desde `main`; después el control y el núcleo. Este README es un índice, no un segundo estado vivo. Loop no sustituye los OCP ni los controles de los proyectos en los que llegue a trabajar.
