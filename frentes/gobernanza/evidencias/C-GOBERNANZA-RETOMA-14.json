@@ -76,5 +76,21 @@
     "prior_context": "La salida anterior reporta presencia del archivo cifrado y ausencia de variables en Process/User/Machine en aquella ejecución; no se atribuye a esta instancia.",
     "secrets_exposed": false
   },
-  "pending_next_action": "Con PC-8 en línea, acceder a la nota efímera por el canal autorizado sin revelar la contraseña; después, verificar perfil efectivo Fila4 y la carga de variables sin imprimir valores."
+  "pending_next_action": "Con PC-8 en línea, acceder a la nota efímera por el canal autorizado sin revelar la contraseña; después, verificar perfil efectivo Fila4 y la carga de variables sin imprimir valores.",
+  "registration": {
+    "manifest": {
+      "path": "frentes/gobernanza/documentos/MANIFIESTO-DOCUMENTAL.json",
+      "commit_sha": "b8079aa74705de44ede45d35a83185a43c71a48d",
+      "git_blob_sha": "cd19e44d7cf9f6af55b94e8aa47a6ea357ba39f6",
+      "sha": "1BA6D6688DD1750A9DC07152005CDAABD53B592B2E562BEB0FE5D0AE93A12020",
+      "readback_exact": true
+    },
+    "readme": {
+      "path": "frentes/gobernanza/README.md",
+      "commit_sha": "6d2e18b415f6cd25cdee38aa6e044bb6e2187838",
+      "git_blob_sha": "001d0ade9a28db66447f30e2810cf0b95cbbb98e",
+      "sha": "72419974B22261805933C3100E064001A6DC46507D83504B95F293F224D80A83",
+      "readback_exact": true
+    }
+  }
 }
