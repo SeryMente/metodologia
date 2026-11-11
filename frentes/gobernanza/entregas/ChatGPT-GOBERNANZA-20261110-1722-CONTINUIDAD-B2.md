@@ -129,3 +129,30 @@ La marca horaria representa el momento real de creación/cierre del snapshot, no
 **Marca temporal:** el nombre remoto R4 refleja el instante de captura del snapshot (17:35). El instante en que se confirmó su recuperación desde B2 fue 17:46:17.620. Un intento posterior de crear un alias B2 `17-46` falló sin cambiar ni eliminar el objeto remoto válido. Para próximos paquetes, el nombre publicado como recuperable deberá usar la hora del primer read-back remoto PASS; el manifiesto interno conservará por separado la hora de captura.
 
 R2 sigue existiendo como respaldo remoto anterior; no se modificó ni eliminó.
+
+
+## 10. Cambio de procedimiento · enlace público con cifrado cliente · 2026-11-10
+
+**Decisión solicitada por el operador para los próximos respaldos provisionales:** descargar sin autenticarse en Backblaze mediante una URL pública directa, pero publicar únicamente el paquete cifrado de extremo a extremo.
+
+### Diseño de publicación
+
+- Mantener el bucket existente `OCP-MCP` como **privado**. No cambiar su privacidad ni publicar/mover los objetos históricos R2/R4.
+- Preparar un bucket separado, dedicado exclusivamente a paquetes de recuperación cifrados. Nombre candidato: `ocp-mcp-recovery-public-encrypted` (propuesto; disponibilidad, creación y privacidad efectiva pendientes de EP).
+- La privacidad pública se aplica a todo el bucket, no a un archivo individual. Por tanto, ese bucket no podrá contener ZIP en claro, ciphertext de Vault suelto, manifests/sidecars no cifrados, logs, llaves ni objetos ajenos al procedimiento.
+- Generar localmente el snapshot ZIP y cifrarlo antes de cualquier upload usando **age** con cifrado de destinatario X25519 y autenticación ChaCha20-Poly1305. El objeto que se publica llevará extensión `.zip.age`; la clave pública de recuperación es la destinataria de cifrado, nunca la clave privada.
+- Custodiar la identidad/clave privada age fuera de B2 y fuera del propio paquete, con copia de contingencia independiente. No puede depender exclusivamente del Vault que solo está dentro del paquete que esa clave debe descifrar.
+- Subir únicamente `.zip.age`. El SHA-256 de aceptación será el del ciphertext publicado; no publicar hashes del ZIP en claro ni metadatos sensibles.
+- Tras upload, obtener la URL pública directa/Friendly URL del objeto. La descarga debe funcionar en una sesión limpia, sin login ni token B2. El enlace no es un secreto ni tiene caducidad automática: quien lo posea podrá descargar el ciphertext.
+- Recuperación: descargar `.zip.age`, descifrar localmente con la identidad privada independiente, comprobar el ZIP y su manifiesto, y extraer en destino aislado. No ejecutar sobre un workspace activo.
+- Retirar el ZIP intermedio en claro del staging después de la validación, manteniendo staging dentro del volumen protegido; no afirmar borrado físico irrecuperable en SSD.
+
+### Estado histórico y gate de transición
+
+R4 permanece en `OCP-MCP/ep-ocp/workspace/` como objeto privado, sin modificación. Su SHA-256 remoto/local confirmado es `DD84AA680CDE49D9940E35203E8D29355FB6904105680E87128DE8C868F883CE`; se cargó sin cifrado del lado cliente y solo tuvo SSE-B2/AES256. **No se reutiliza como objeto público ni se etiqueta retroactivamente como cifrado.**
+
+El siguiente snapshot nuevo (R5, sujeto a confirmar la secuencia libre en EP) deberá producirse como `.zip.age`. Su estado solo será PASS cuando se demuestre, por separado: (1) cifrado local antes del upload; (2) ausencia de paquete en claro en el bucket público; (3) read-back por URL pública sin autenticación; (4) SHA-256 idéntico del ciphertext; (5) descifrado con la identidad custodiada independientemente; y (6) restauración aislada del ZIP resultante.
+
+**No ejecutado en esta actualización documental:** no se creó bucket, no se cambió ACL/privacidad, no se generó identidad age, no se subió un nuevo objeto, no se publicó URL real y R4/R2 no se modificaron. La implementación queda pendiente del frente EP en EP-TASK-002 y la aceptación integrada GOV-TASK-014.
+
+**Referencias técnicas:** [Backblaze — buckets y acceso público/privado](https://www.backblaze.com/docs/cloud-storage-buckets) · [Backblaze — descarga por nombre y URL directa](https://www.backblaze.com/docs/cloud-storage-download-files-with-the-native-api) · [age — especificación de cifrado](https://c2sp.org/age@v1.0.0) · [age — implementación y uso](https://github.com/FiloSottile/age).
