@@ -369,19 +369,161 @@ La aspiración de iterar hasta acercarse al ideal no significa un proceso infini
 - Las referencias a TDAH, función ejecutiva, TEA, medicación y salud se conservan como relato y marco de autocomprensión del operador; este documento no aporta evaluación clínica.
 - No se recuperaron en este ciclo LISA 2.0 ni Canon PRIUS desde Notion.
 - No se implementó ni probó CrewAI, otro framework multiagente, el observador núcleo ni los adaptadores.
-- No se ejecutó el análisis independiente con GPT-OSS 120B vía Groq. Se encontró la entrada GROQ_API_KEY en la bóveda cifrada de KHORA, pero no hay acceso temporal DPAPI disponible para desbloquear la bóveda sin interacción. No se mostró ni exportó la clave y no se envió una petición a Groq.
+- La revisión secundaria con GPT-OSS 120B vía Groq sí se ejecutó usando la bóveda EP y quedó preservada en evidencias. Se revisó un mapa estructurado de la entrada, no el dictado verbatim íntegro; véase §12.
 - La reconstrucción aquí documentada es una interpretación de trabajo de esta sesión; requiere revisión del operador antes de tratarla como canon o estándar vinculante.
 
 ## 11. Estado y siguiente checkpoint
 
 **Documentado:** lectura organizada, reconstrucción narrativa, arquitectura conceptual, requisitos candidatos, secuencia inicial y preguntas abiertas.
 
-**No ejecutado:** evaluación independiente de Groq GPT-OSS 120B, benchmarking de CrewAI, consulta del correo del taller, recuperación de LISA/PRIUS desde Notion, implementación, despliegue o cambios en los OCP consumidores.
+**Ejecutado en este ciclo:** revisión secundaria con Groq GPT-OSS 120B, con correcciones críticas documentadas en §12 y respuesta íntegra preservada en evidencias. **No ejecutado:** benchmarking de CrewAI, consulta del correo del taller, recuperación de LISA/PRIUS desde Notion, implementación, despliegue o cambios en los OCP consumidores.
 
-**Siguiente checkpoint recomendado:** reanudar con la evaluación independiente de la entrada cuando el operador habilite el acceso local ya autorizado a GROQ_API_KEY, y en paralelo preparar el alcance mínimo del piloto RAP + orquestador multiagente para el taller. La credencial no debe compartirse en el chat ni persistirse en el repositorio.
+**Siguiente checkpoint recomendado:** recuperar el correo del taller y comparar frameworks multiagente para construir el piloto mínimo RAP + orquestador. En paralelo, verificar el estado de OCP-MSP y recuperar LISA 2.0/PRIUS desde sus fuentes. La credencial de Groq no debe compartirse en el chat ni persistirse en el repositorio.
 
 ---
 
 **Procedencia normativa del análisis:** DUG Samantha v388 · NX-388m, Metacanon v1.29, GOW v2.18, y OCP Loop existente.  
 **Evento:** C-LOOP-002-ANALISIS-ENTRADA-01.  
 **Estado:** DOCUMENTADO COMO INTERPRETACIÓN; PENDIENTE DE REVISIÓN/ACEPTACIÓN DEL OPERADOR.
+
+
+## 12. Segunda revisión independiente con GPT-OSS 120B
+
+### 12.1. Ejecución y procedencia
+
+Se realizó una segunda revisión mediante Groq, utilizando el modelo `openai/gpt-oss-120b` y la variable `VERCEL_KHORA_WEB_ALL_GROQ_API_KEY), recuperada en memoria desde la bóveda local de Entorno Persistente (EP). La clave no se imprimió, copió al chat ni persistió en Git.
+
+- Proveedor: Groq.
+- Modelo: `openai/gpt-oss-120b`.
+- Endpoint: `https://api.groq.com/openai/v1/chat/completions`.
+- Request ID: `chatcmpl-aa0a742d-2235-4352-88e1-8d665706dbf9`.
+- Uso reportado: 2.275 tokens de entrada, 6.317 de salida, 679 tokens de razonamiento; 8.592 tokens totales.
+- Estado de respuesta: `stop` / COMPLETED.
+- Informe íntegro de la segunda revisión: [C-LOOP-002-GPT-OSS-120B-review.md](../evidencias/C-LOOP-002-GPT-OSS-120B-review.md).
+
+**Límite de independencia:** el modelo recibió un mapa estructurado y detallado del contenido de la entrada, junto con el esquema de reconstrucción propuesto. No recibió el mensaje verbatim completo. Por tanto, esta revisión es una crítica independiente de la síntesis y de su orden, no una segunda lectura literal del dictado íntegro. El texto fuente permanece en la conversación de origen.
+
+### 12.2. Coincidencias útiles con la primera reconstrucción
+
+GPT-OSS respaldó la separación entre motivación personal, trayectoria, genealogía de herramientas, arquitectura y prioridades. Señaló además correcciones estructurales útiles:
+
+1. La trayectoria profesional y las primeras experimentaciones tecnológicas pueden integrarse en una sección biográfica/tecnológica común, conservando sus hitos.
+2. El entorno persistente debe aparecer inmediatamente después del origen de OCP, porque es parte de la respuesta material al problema de continuidad.
+3. La extensión de telemetría debe presentarse como precursor técnico del observador núcleo y del Loop, no como una característica subordinada a un framework de agentes.
+4. El objetivo visible por ciclo pertenece a la definición operativa del Loop.
+5. Las digresiones biográficas, filosóficas y personales deben preservarse como contexto o anexo, sin interrumpir el hilo de diseño.
+6. La hoja de ruta debe estar separada del cuerpo conceptual.
+
+### 12.3. Ajustes editoriales adoptados
+
+La secuencia final del documento debe distinguir cuatro planos que se cruzan, pero no forman una cronología estrictamente lineal:
+
+**A. Contexto y genealogía**
+1. Necesidad de continuidad y apoyos cognitivos externos, descrita desde la experiencia del operador.
+2. Trayectoria profesional y primeras soluciones tecnológicas.
+3. Origen de OCP y pérdida de continuidad asociada a la dependencia de Notion.
+4. Entorno persistente como infraestructura de ejecución y recuperación.
+5. Proyectos consumidores, incluida la línea Khora/Cora y el grafo de relación personal.
+
+**B. Subsistemas que coevolucionan**
+6. LISA: trazabilidad de intención a requerimientos, especificación e implementación.
+7. RAP: evaluación adversarial de propuestas y artefactos.
+8. PRIUS: captura de insights empíricos durante el uso.
+9. La extensión de telemetría: observación del ciclo actual de ChatGPT y antecedente del observador núcleo.
+
+**C. Convergencia arquitectónica: Loop**
+10. Observador núcleo y adaptadores específicos por proyecto/frente.
+11. Objetivo persistente y visible, derivado de las fuentes canónicas de intención.
+12. Loop como coordinador de la secuencia dinámica: observa, identifica brechas, selecciona una acción permitida, verifica, persiste y decide si continúa.
+13. Orquestación multiagente como posible runtime para roles de ejecución, crítica y verificación; CrewAI es candidato, no decisión técnica cerrada.
+
+**D. Ejecución y asuntos abiertos**
+14. Prioridad táctica RAP + orquestador + taller.
+15. Base OCP-MSP y observabilidad.
+16. Integración documental de LISA 2.0 y PRIUS desde sus fuentes actuales.
+17. Benchmarking, validación, seguridad, preguntas de investigación y apéndices autobiográficos.
+
+Esta disposición es una estructura de lectura y diseño; no afirma que LISA, RAP y PRIUS se hayan creado en ese orden ni que exista una dependencia técnica entre ellos.
+
+### 12.4. Correcciones críticas a la respuesta de GPT-OSS
+
+El resultado se conserva íntegro como evidencia, pero no se acepta automáticamente. La revisión contiene inferencias y recomendaciones que no están justificadas por el dictado o contradicen el estado conocido:
+
+- **No hay evidencia de que LISA dependa del grafo personal.** LISA traza intención, requisitos y código; el grafo de Khora/Cora es otra línea de arquitectura. Pueden integrarse después, pero no se ha establecido esa dependencia.
+- **RAP no necesita esperar a la implementación completa de LISA ni del observador núcleo.** Se puede realizar un piloto de evaluación adversarial sobre un diseño o documento con registro mínimo de entradas, críticas, revisiones y resultado. La instrumentación completa será una mejora posterior.
+- **CrewAI y RAP no son el mismo componente.** RAP define el método/protocolo adversarial; CrewAI u otro framework ejecutaría la coordinación de agentes y modelos.
+- **GitHub y Backblaze no constituyen una decisión final de arquitectura del workspace.** GitHub es actualmente fuente canónica documental/código según el ámbito; Backblaze forma parte del entorno persistente reportado. El operador expresó precisamente la necesidad de construir una experiencia de trabajo propia, comparable a Notion, porque GitHub no satisface por sí solo ese uso administrativo.
+- **GraphRAG no está ratificado como implementación del grafo personal.** Se mencionó como referencia/ámbito relacionado, no como decisión técnica cerrada.
+- La propuesta de GPT-OSS de usar `Llama-2-7B` como alternativa para una prueba no se incorpora: no fue respaldada por un benchmark actual ni por las restricciones de hardware/modelos del taller.
+- No se convierte la afirmación sobre uso de modafinilo y agotamiento en causalidad farmacológica. Se mantiene como secuencia autobiográfica reportada.
+- No se renombra OCP ni se especula que “Objetos Canónicos de Persistencia” sea un error terminológico. Es el nombre usado por el operador y registrado en el marco.
+- El observador no queda definido todavía como componente exclusivamente de solo lectura. Deben especificarse por separado sus fuentes, eventos, permisos de captura, escritura de telemetría y límites de intervención.
+- La recomendación de posponer RAP hasta después de crear un observador completo contradice la prioridad táctica expresa. El piloto debe poder demostrar el valor de RAP con instrumentación mínima; la observabilidad completa se desarrolla en su propia vía.
+
+### 12.5. Aclaración de la referencia a Henry Kautz y GraphRAG
+
+La revisión de GPT-OSS sugirió una relación incorrecta al asociar a Kautz con la autoría de GraphRAG. Se separan dos líneas:
+
+- **Henry Kautz** es una referencia probable para el recuerdo del operador sobre la clasificación/categorización de arquitecturas neurosimbólicas. Un trabajo de van Bekkum y colaboradores de 2021 declara expresamente que sus patrones de diseño extienden y refinan el intento anterior de Kautz de categorizar arquitecturas neuro-simbólicas. Esto apoya la pista, pero no identifica todavía cuál era el problema o paper exacto que el operador tenía en mente. [Fuente académica: van Bekkum et al., *Modular Design Patterns for Hybrid Learning and Reasoning Systems* (2021)](https://arxiv.org/abs/2102.11965).
+- **GraphRAG** es una línea distinta presentada por Microsoft Research como un enfoque para preguntas sobre corpus privados mediante grafos de conocimiento generados por LLM y resúmenes de comunidades. El artículo *From Local to Global* identifica como autores a Darren Edge, Ha Trinh, Newman Cheng, Joshua Bradley, Alex Chao, Apurva Mody, Steven Truitt, Dasha Metropolitansky, Robert Osazuwa Ness y Jonathan Larson; no atribuye su creación a Henry Kautz. [Microsoft Research: publicación de GraphRAG (2024)](https://www.microsoft.com/en-us/research/publication/from-local-to-global-a-graph-rag-approach-to-query-focused-summarization/).
+- Por tanto, la formulación provisional correcta es: “El operador recuerda a Henry Kautz por una taxonomía/clasificación de arquitecturas neurosimbólicas; la referencia bibliográfica concreta sigue pendiente. GraphRAG es una línea técnica distinta que también interesa al diseño del grafo personal”.
+
+### 12.6. Arquitectura integrada corregida
+
+La relación entre componentes se expresa ahora mediante responsabilidades separadas, sin introducir dependencias no probadas:
+
+| Componente | Responsabilidad delimitada | No debe confundirse con |
+| --- | --- | --- |
+| OCP | Persistencia, procedencia, recuperación y continuidad de objetos del trabajo | La interfaz Notion-like futura o el motor de Loop |
+| LISA | Trazabilidad de intención, requisitos, especificación e implementación | El grafo personal o el orquestador multiagente |
+| PRIUS | Captura contextual de insights y feedback empírico del uso | La aprobación automática de requisitos o cambios |
+| RAP | Evaluación adversarial de asertos, diseños y resultados | CrewAI o un modelo concreto |
+| Observador núcleo | Contrato común para eventos, mediciones y evidencia | El decisor que escoge el siguiente trabajo |
+| Adaptadores | Traducción de señales específicas de cada dominio/frente al contrato común | Métricas universales idénticas para todos los proyectos |
+| Objetivo/vector del frente | Proyección visible de propósito, alcance, restricciones y criterio inmediato | Una segunda fuente de verdad que pueda divergir de OCP/LISA |
+| Loop | Coordinación adaptativa del ciclo y selección del siguiente paso permitido | Un agente con autoridad ilimitada o una iteración infinita |
+| Orquestador multiagente | Runtime para delegar roles y coordinar modelos/herramientas | El protocolo de crítica RAP |
+| Verificación | Pruebas, comparación contra baseline, lectura de vuelta y aceptación externa al modelo | El juicio autoemitido por el agente |
+| Entorno persistente | Recuperación de capacidad de ejecución entre sesiones, equipos y ubicaciones | La persistencia documental canónica por sí sola |
+
+El objetivo visible debería generarse desde las fuentes canónicas de intención y especificación —no duplicarse como texto autónomo sin control de versión—, y releerse en cada ciclo. La definición exacta de esa proyección debe contrastarse con LISA 2.0 cuando sea recuperada.
+
+### 12.7. Hoja de ruta corregida: vías paralelas dentro de un mismo objetivo
+
+El “mega sprint” se conserva como objetivo de overhaul, pero su ejecución debe dividirse en vías con checkpoints verificables. No se establece una cadena serial artificial:
+
+**Vía A · Urgencia RAP + taller multiagente**
+1. Recuperar el correo del taller y sus objetivos reales.
+2. Comparar CrewAI con alternativas vigentes usando el caso de uso RAP: roles, modelos diferentes, control de rondas, límites, herramientas, estado, observabilidad, despliegue local y costo.
+3. Construir un piloto mínimo de RAP con productor y adversario distintos; no esperar a tener toda la arquitectura Loop.
+4. Registrar entradas, críticas, revisiones, pruebas, tiempo y resultado; usar métricas mínimas reproducibles.
+5. Preparar taller y demostración con límites y resultados observados.
+
+**Vía B · OCP-MSP y observabilidad**
+1. Recuperar estado real del frente OCP-MSP y sus gates.
+2. Verificar la extensión actual, las señales de inicio/fin, cobertura y precisión temporal.
+3. Definir el contrato mínimo del observador núcleo.
+4. Construir el primer adaptador sobre un proyecto existente; no intentar instrumentar todos los dominios a la vez.
+
+**Vía C · Intención y feedback empírico**
+1. Recuperar LISA 2.0 y Canon PRIUS desde Notion.
+2. Comparar sus versiones y contenido con la metodología canónica.
+3. Determinar cómo se relacionan vector de intención, requisitos, objetivo visible e insights PRIUS.
+4. Incorporar solo después de verificar y documentar la reconciliación.
+
+**Vía D · Integración de Loop**
+1. Definir el ciclo de decisión, gates, presupuesto, condición de parada y aceptación.
+2. Conectar OCP, LISA, PRIUS, observabilidad y RAP sin duplicar fuentes de verdad.
+3. Incorporar la orquestación multiagente como runtime intercambiable.
+4. Medir mejora neta frente a baseline: calidad, tiempo, intervención, costo, regresiones y recuperación de contexto.
+
+La vía A tiene prioridad táctica por la urgencia del taller. Las vías B y C son fundacionales y pueden avanzar en paralelo donde no existan dependencias reales. La secuencia se reordena mediante observación y feedback, no por una lista fija que suponga que cada módulo debe completarse antes de iniciar cualquier otro.
+
+### 12.8. Límites de la segunda revisión
+
+- La llamada a Groq se ejecutó y la respuesta quedó preservada en el OCP.
+- El análisis del modelo se basó en un mapa estructurado de la entrada, no en el dictado verbatim íntegro.
+- Se rechazan explícitamente las inferencias no sustentadas que se detallan arriba.
+- La selección de CrewAI, la comparación competitiva y la arquitectura definitiva no quedan resueltas por esta revisión.
+- La revisión GPT-OSS es evidencia auxiliar; no es canon, autorización, aceptación del operador ni sustituto de verificación técnica.
+
