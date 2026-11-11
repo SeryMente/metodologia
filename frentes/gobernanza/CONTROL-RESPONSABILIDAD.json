@@ -1164,12 +1164,28 @@
       "retained_co_responsible": "chatgpt-C-GOBERNANZA-ASIENTO-02-RETOMA-20261101-01-SES-20261101-GV8E89D1FF",
       "active_responsibles_after_write": 2,
       "maximum_active_responsibles": 2,
-      "status": "COMMITTED_PENDING_READBACK",
+      "status": "VERIFIED_READBACK",
       "method": "GitHub Contents API update using observed CONTROL blob SHA; immediate exact read-back required.",
       "readback_required": true,
-      "readback_verified": false,
+      "readback_verified": true,
       "uniqueness_check": "GitHub exact code searches for event C-GOBERNANZA-RETOMA-14 and folio prefix SES-20261111 returned no results; no claim of organization-wide uniqueness or platform fencing.",
-      "foliation_status": "LEGACY_PRE_CUTOVER"
+      "foliation_status": "LEGACY_PRE_CUTOVER",
+      "readback_sha": "ab3575ba1f1d9c0a0699a7b879222e1d5ef720cb",
+      "readback_verified_on": "2026-11-11",
+      "readback_verification": {
+        "status": "verified",
+        "verified_on": "2026-11-11",
+        "commit_sha": "a782f6b98c9e671c5d7d157836f3659ac56f3b18",
+        "control_blob_sha": "ab3575ba1f1d9c0a0699a7b879222e1d5ef720cb",
+        "checks": {
+          "new_primary_active": true,
+          "prior_primary_superseded": true,
+          "co_responsible_preserved": true,
+          "generation_is_18": true,
+          "active_responsibles_is_2": true,
+          "global_folios_unassigned": true
+        }
+      }
     }
   ],
   "active_responsibles": [
