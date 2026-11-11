@@ -1,10 +1,10 @@
 {
   "schema": "responsabilidad/1",
-  "front": "loop",
-  "canonical_identity": "Loop",
+  "front": "ocp-2-0",
+  "canonical_identity": "OCP2.0",
   "repository": "SeryMente/metodologia",
-  "front_ocp": "frentes/loop/",
-  "state_object": "frentes/loop/LOOP.md",
+  "front_ocp": "frentes/ocp-2-0/",
+  "state_object": "frentes/ocp-2-0/OCP2.0.md",
   "status": "owned",
   "owner_thread": null,
   "owner_thread_identity_kind": "Native ChatGPT conversation ID not exposed; owner_alias is an operational alias",
@@ -13,9 +13,9 @@
   "instance": "chatgpt-loop",
   "uuidv7_local": "01a1cb67-173a-785c-a7c4-98c377ce1960",
   "generation": 1,
-  "authorization_ref": "Instrucción directa del operador en esta conversación (2026-11-11): «Bueno, crea un frente de trabajo en el repositorio Metodología y nómbrale Loop, así nada más.» El propósito del FT ya había sido dictado literalmente en esta conversación y queda preservado en conversaciones/C-LOOP-001-dialogo.jsonl#1-2.",
+  "authorization_ref": "Instrucción directa del operador en esta conversación (2026-11-11): «Bueno, crea un frente de trabajo en el repositorio Metodología y nómbrale Loop, así nada más.» El propósito del FT ya había sido dictado literalmente en esta conversación y queda preservado en conversaciones/C-LOOP-001-dialogo.jsonl#1-2. Nueva instrucción explícita del operador (2026-11-11): renombrar el frente a OCP2.0 y cambiar su ruta canónica.",
   "authorization_event": "C-LOOP-INICIO-01",
-  "scope": "Crear y mantener el FT Loop para diseñar y desarrollar un mecanismo reutilizable de desarrollo semiautomatizado/autoperfeccionamiento basado en instrucciones verbatim, propósito y alcance declarados, observabilidad, intervenciones del operador, acciones autorizadas y validación con evidencia. Este control no transfiere titularidad ni autoriza mutaciones dentro de Harmonia, Signal Interpreter u otros FT; cada frente conserva su propio OCP, control, permisos y gates. No autoriza credenciales, APIs externas, consumo pagado, automatización de plataformas web, despliegues ni cambios al DUG.",
+  "scope": "Crear y mantener el FT OCP2.0 para diseñar y desarrollar un mecanismo reutilizable de desarrollo semiautomatizado/autoperfeccionamiento basado en instrucciones verbatim, propósito y alcance declarados, observabilidad, intervenciones del operador, acciones autorizadas y validación con evidencia. Este control no transfiere titularidad ni autoriza mutaciones dentro de Harmonia, Signal Interpreter u otros FT; cada frente conserva su propio OCP, control, permisos y gates. No autoriza credenciales, APIs externas, consumo pagado, automatización de plataformas web, despliegues ni cambios al DUG.",
   "expiry": null,
   "handoff": "Asignación inicial de un FT nuevo cuya ruta/control no existían en main. Sin titular previo conocido en la ruta canónica. Generación inicial 1. Alias operativo, no ID nativo. FOL1 permanece PREPARADO/NO ACTIVO; no se asigna folio CV/CY/A/B. SES no asignado en este registro.",
   "session_folio": null,
@@ -24,7 +24,7 @@
     "status": "active_unfoliated",
     "folio": null,
     "assigned_on": "2026-11-11",
-    "front_ocp": "frentes/loop/",
+    "front_ocp": "frentes/ocp-2-0/",
     "owner_alias": "chatgpt-loop-01a1cb67-173a-785c-a7c4-98c377ce1960",
     "instance": "chatgpt-loop",
     "uuidv7_local": "01a1cb67-173a-785c-a7c4-98c377ce1960",
@@ -65,5 +65,33 @@
       ],
       "global_uniqueness": "not_claimed; FOL1 remains inactive and no global folio was assigned."
     }
-  }
+  },
+  "rename_history": [
+    {
+      "event_id": "C-OCP2.0-RENOMBRE-01",
+      "recorded_on": "2026-11-11",
+      "from": {
+        "canonical_identity": "Loop",
+        "front": "loop",
+        "front_ocp": "frentes/loop/",
+        "state_object": "frentes/loop/LOOP.md"
+      },
+      "to": {
+        "canonical_identity": "OCP2.0",
+        "front": "ocp-2-0",
+        "front_ocp": "frentes/ocp-2-0/",
+        "state_object": "frentes/ocp-2-0/OCP2.0.md"
+      },
+      "authorization": "«Renombra frente a OCP2.0»; «no, cambia la ruta, o rehaz desde cero, pero hjazlo bien».",
+      "responsibility_preserved": true,
+      "generation_preserved": 1,
+      "uuidv7_local_preserved": "01a1cb67-173a-785c-a7c4-98c377ce1960",
+      "historical_event_ids_preserved": [
+        "C-LOOP-INICIO-01",
+        "C-LOOP-001",
+        "C-LOOP-002",
+        "C-LOOP-003"
+      ]
+    }
+  ]
 }
