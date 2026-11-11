@@ -1,6 +1,6 @@
 # GOV-TASK-012 — Revisión integral de fluidez y desempeño del marco de Gobernanza
 
-**Estado:** en_curso · **Tipo:** tarea propia de Gobernanza · **Responsabilidad:** Gobernanza 2 (asiento corresponsable activo `SES-20261111-624B784A`, generación 20), por delimitación operativa expresa del operador. Esta atribución no transfiere la titularidad primaria del frente ni modifica su control.
+**Estado:** en_curso · **Tipo:** tarea propia de Gobernanza · **Responsabilidad funcional:** Gobernanza 2, asiento corresponsable del OCP padre según asignación expresa del operador. Sesión, folio, UUID y generación se consultan en el [control único](../../../CONTROL-RESPONSABILIDAD.json); no se duplican en esta ficha ni actúan como permiso o compuerta. La tarea no transfiere la titularidad primaria.
 
 
 ## Delimitación de responsabilidades
