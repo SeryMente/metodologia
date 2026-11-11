@@ -123,8 +123,33 @@
   },
   "acceptance": "La interpretación y sus artefactos quedan documentados y deben verificarse por lectura de vuelta. La revisión externa Groq y la aceptación del operador siguen pendientes.",
   "verification": {
-    "status": "PENDING_FINAL_READBACK",
-    "readback_status": "PENDING_AFTER_GROQ_REVIEW_UPDATE",
-    "note": "La revisión GPT-OSS se ejecutó; se actualizarán los hashes y el read-back final después de escribir crónica, núcleo, README, diálogo y evidencia."
+    "status": "PASS",
+    "readback_status": "PASS",
+    "readback_at": "2026-11-11T13:24:48.5786686-06:00",
+    "readback_timezone": "Central Standard Time (Mexico)",
+    "checks": {
+      "dialogue_jsonl_valid": true,
+      "source_not_claimed_verbatim": true,
+      "groq_call_recorded": true,
+      "chronicle_contains_groq_review": true,
+      "chronicle_marks_input_limit": true,
+      "chronicle_rejects_lisa_graph_dependency": true,
+      "chronicle_corrects_kautz_graphrag": true,
+      "raw_report_preserved": true,
+      "core_reports_groq_completed": true,
+      "readme_indexes_raw_report": true,
+      "control_unchanged": true,
+      "foliation_still_pending": true,
+      "evidence_reports_completion": true
+    },
+    "readback_artifact_blob_shas": {
+      "frentes/loop/conversaciones/C-LOOP-002-dialogo.jsonl": "42cc52136d4a3cde7518faae93ac25c93eff0d5a",
+      "frentes/loop/cronica/C-LOOP-002-analisis-y-reconstruccion.md": "ea5591d75ea726bb8dd87323d6986c9eba707d8b",
+      "frentes/loop/evidencias/C-LOOP-002-GPT-OSS-120B-review.md": "edb42465176f478a6d199961e0869e14ba34c77c",
+      "frentes/loop/LOOP.md": "67e23f237ab1410528f9662e771c6f998ca3b45a",
+      "frentes/loop/README.md": "58d2bca73cdbf1c49be83098cc00b03ccd59ce00",
+      "frentes/loop/CONTROL-RESPONSABILIDAD.json": "715e49c4dddb34f4d5d3cdf688a3fe99e473c7a4"
+    },
+    "note": "SHA de GitHub/Blob para los contenidos recuperados; el archivo de evidencia no se auto-referencia para evitar circularidad. El contenido de cada artefacto se recuperó y sus condiciones semánticas se comprobaron."
   }
 }
