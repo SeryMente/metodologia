@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.66. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.67. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -3579,3 +3579,46 @@ No cambian estados, prioridades, dependencias ni criterios de aceptación de EP-
 
 
 El plan experimental continúa como borrador independiente y no autoriza implementación, instalación, despliegue, merge ni aceptación. La incorporación metodológica tampoco completa ninguna tarea.
+
+---
+
+## 133. Ejecución semi-live de EP-TASK-001–007 · 2026-11-11
+
+**Instrucción:** el operador ordenó resolver todas las tareas EP y recibir reporte semi-live por ciclo. EP-TASK-001 se reactivó pese a la espera previa. El mandato no elimina requisitos de seguridad, autoridad, dependencia ni aceptación.
+
+### Resultados del corte
+
+- **EP-TASK-001:** Profile 36 identificado en Chrome como perfil OCP; Playwright Extension 0.4.0 presente; KeePassXC portable localizado. KeePassXC-Browser no apareció en los dos perfiles examinados; el manifiesto host no incluye Playwright y la comprobación de registro Native Messaging quedó bloqueada por RDC. No se abrió Cora ni se manipularon sesiones. Se registró incidente saneado: una lectura local de configuración devolvió material de clave privada KeeShare; no se guardó ni reprodujo, y la rotación del propietario queda pendiente.
+- **EP-TASK-002:** recibo B2 con 4/4 objetos y read-back SHA/SSE-B2; restore aislado same-host 3.289/3.289. Cross-host y decrypt no ejecutados. El ciphertext local adicional 2.048 B difiere del objeto Vault B2 2.200 B. La CLI formal devuelve NOT_INITIALIZED.
+- **EP-TASK-003:** consulta BitLocker administrativa read-only: C: XTS-AES128, 100 %, Protection Off, sin protectores; W: totalmente descifrado, 0 %, sin protectores. Checkout local Metodología no contiene .git; ubicación UNCLASSIFIED. No hubo mutaciones de volumen/workspace.
+- **EP-TASK-004:** suite sintética sobre el snapshot local ejecutada PASS, exit 0, 118,79 s, con sandbox limpio. Core/GUI/XAML locales divergen del MANIFEST; CLI/tests siguen en v1.0.0. CLI rechaza TTL 3600; la pestaña persistente y sus botones están disabled/no wired. H10 y merge pendientes.
+- **EP-TASK-005:** PR #27 sigue OPEN/DRAFT; no instalación, importación, provisionamiento ni STDIO smoke. El gate físico y el paquete/contratos siguen pendientes.
+- **EP-TASK-006:** catálogo Vercel leído: 52 entradas, 10 almacenadas con read-back, 42 valores no recuperables. No hubo extracción de secretos ni adaptadores; la bóveda formal no está inicializada.
+- **EP-TASK-007:** inventario parcial read-only actualizado; bitlocker gate FAIL; ubicación UNCLASSIFIED; Guardian/lease/trigger/crypto-erasure NOT_RUN.
+
+### Resultado documental y límites
+
+Se actualizaron los siete núcleos y el índice con crónicas específicas. Ninguna tarea se marcó completada. No se modificó código de producto, la bóveda formal, credenciales, objetos B2, Chrome, KeePassXC, base de datos, volúmenes, punto de montaje ni componentes Guardian. No se modificaron DUG, GOW ni CONTROL-RESPONSABILIDAD.json.
+
+### Commits y blobs leídos de vuelta
+
+| Objeto | Commit | Blob |
+|---|---|---|
+| EP-TASK-001 | 8d90aa25dd8a8f7e3438aa9bba5ae4cabe890616 | 00a4837a68bbe94a8a55c2cef5f68bc11ed7240c |
+| EP-TASK-002 | 0ff5fceb64135987ab7cf855b939f3ad554bfb1d | ed44ceb97eb1366d0ee73cb20b6b582d2bb338ed |
+| EP-TASK-003 | 7eb62436037a2c8de8d747ae3c8fe3741a014d62 | b860bb584534d057dca1a4cf655f78b412096726 |
+| EP-TASK-004 | f7990f291b56dfd058c89144cdb59b45fd778fbc | c4fccb2f4949d087d64f06dd3231327732db0c91 |
+| EP-TASK-005 | 1c38f0678d334dd32d7fbd36ca5e0fc214fe5ad5 | 13a589610981611173dd2390e53ae2b14338a74e |
+| EP-TASK-006 | 217443ba30085aa879562918c586d808ca49b387 | b735ba595ff216c3a65ca732bfc753c223894f9b |
+| EP-TASK-007 | 2697dd9708bc77f10a713d5bb39079ae006e055a | b270ce0b22334da3ec6985c5c82e7096c3e2b740 |
+| Índice provisional | 83ee4e6551629fe82176b57d0d1e78cd29a0e1c8 | 357157722c9a05d99efabdc3d945927f49b10d23 |
+
+### Gates que siguen abiertos
+
+1. Rotación local de KeeShare key y revisión humana para configuración NCL/Native Messaging.
+2. Reconciliación de ciphertext Vault local vs B2, apertura local de bóveda formal autorizada, decrypt aislado y restore cross-host.
+3. Volumen protegido XTS-AES256/Protection On/protector recuperable, clasificación física e integridad del workspace antes de dead-man/migración.
+4. EP-App: reconciliar manifest/CLI/Core/GUI/XAML/tests; decisión TTL; handlers reales con fail-closed; P012/P013 y H10.
+5. Paquete P004 + MCP-OCP-03/04 PASS y EP-TASK-003 PASS antes de instalar MCP-OCP.
+6. Cobertura completa de proveedores/adaptadores e inventario sin exposición de valores.
+7. Guardian/lease/crypto-erasure en contenedores aislados, solo después de los gates de almacenamiento y seguridad.
