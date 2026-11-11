@@ -2803,3 +2803,56 @@ Los núcleos contienen planes por tarea con línea base, pasos, interfaces/recur
 ### Plan de procesamiento del ciclo
 
 Persistir primero los resultados saneados en los núcleos correspondientes y el índice/OEP/DTC, con SHA/read-back. Después agotar solo tareas independientes que no dependan de bóveda formal, credenciales no disponibles, elevación, protección física, revisión presencial o aceptación humana. Se mantienen deshabilitadas operaciones destructivas, de host, de secretos y de instalación hasta que sus compuertas propias estén verificadas.
+
+---
+
+## EP · cierre de ciclo: ejecución semi-live de EP-TASK-001–007 · 2026-11-11 · 11/11/2026, 10:43:39 America/Mexico_City
+
+**Ciclo local UUIDv7:** 01a1cb79-e067-70a7-8808-78d86f5943b7 · sin folio global/FOL1.
+
+### Resultado
+
+Se ejecutó preflight y validación read-only de las siete tareas. Se reactivó EP-TASK-001 por instrucción expresa del operador; se añadió evidencia a los siete núcleos, se actualizó el índice ejecutivo y se registró OEP v0.3.67 / §133. Ninguna tarea se declara completada.
+
+### Commits y blobs leídos de vuelta
+
+| Objeto | Commit | Blob de read-back |
+|---|---|---|
+| EP-TASK-001 | 8d90aa25dd8a8f7e3438aa9bba5ae4cabe890616 | 00a4837a68bbe94a8a55c2cef5f68bc11ed7240c |
+| EP-TASK-002 | 0ff5fceb64135987ab7cf855b939f3ad554bfb1d | ed44ceb97eb1366d0ee73cb20b6b582d2bb338ed |
+| EP-TASK-003 | 7eb62436037a2c8de8d747ae3c8fe3741a014d62 | b860bb584534d057dca1a4cf655f78b412096726 |
+| EP-TASK-004 | f7990f291b56dfd058c89144cdb59b45fd778fbc | c4fccb2f4949d087d64f06dd3231327732db0c91 |
+| EP-TASK-005 | 1c38f0678d334dd32d7fbd36ca5e0fc214fe5ad5 | 13a589610981611173dd2390e53ae2b14338a74e |
+| EP-TASK-006 | 217443ba30085aa879562918c586d808ca49b387 | b735ba595ff216c3a65ca732bfc753c223894f9b |
+| EP-TASK-007 | 2697dd9708bc77f10a713d5bb39079ae006e055a | b270ce0b22334da3ec6985c5c82e7096c3e2b740 |
+| Índice provisional | 83ee4e6551629fe82176b57d0d1e78cd29a0e1c8 | 357157722c9a05d99efabdc3d945927f49b10d23 |
+| OEP v0.3.67 / §133 | 405e42357581222c0ca5188c5b4478265f87b485 | 6d123125077400431bdfbf1dde69a12b231ff278 |
+
+Todos los archivos anteriores se compararon por contenido exacto leído desde el SHA de commit; el índice y OEP también se verifican por SHA de blob.
+
+### Estado de las siete tareas
+
+- EP-TASK-001: en_curso; Profile 36 confirmado como OCP, Playwright Extension presente, KeePassXC portable presente. KeePassXC-Browser falta en los perfiles examinados; Native Messaging no verificado; Cora no ejecutado. Incidente KeeShare registrado de forma saneada; rotación del propietario pendiente.
+- EP-TASK-002: B2 4/4 objetos con read-back y SSE; restore same-host 3.289/3.289 PASS. Decrypt/cross-host no ejecutados; ciphertext local de 2.048 B no coincide con el objeto B2 de 2.200 B; CLI formal NOT_INITIALIZED.
+- EP-TASK-003: diseño aceptado; C: XTS-AES128/100 %/Protection Off/sin protectores; W: descifrado 0 %/sin protectores; ubicación UNCLASSIFIED. No se modificaron volúmenes ni workspace.
+- EP-TASK-004: suite sintética local PASS, exit 0, 118,79 s, sandbox limpio. Árbol local diverge del manifiesto; CLI rechaza 3600; pestaña persistente y botones están inertes/deshabilitados; H10 pendiente.
+- EP-TASK-005: instalación no ejecutada; PR #27 OPEN/DRAFT; storage gate y paquete/contratos P004/03/04 pendientes.
+- EP-TASK-006: inventario catalogado 52 Vercel, 10 stored/readback, 42 values unavailable; no adapters ni extracción/revelación de secretos; Vault formal NOT_INITIALIZED.
+- EP-TASK-007: inventario parcial read-only; BitLocker gate fail; ubicación UNCLASSIFIED; Guardian/lease/trigger/crypto-erasure NOT_RUN.
+
+### Seguridad, alcance y límites
+
+No se modificó código de producto, ramas de producto, Vault formal, credenciales, base KeePassXC, Chrome, extensiones, sesiones de navegador, B2, volúmenes, puntos de montaje, ni DUG/GOW/CONTROL-RESPONSABILIDAD.json. La conexión administrativa solo realizó consultas BitLocker read-only. No se accedió a cookies, historial, URLs o contenido de pestañas.
+
+Se observó material de clave privada KeeShare en salida de configuración local de KeePassXC durante la inspección. No se reprodujo ni guardó el valor en repositorio/documentación. Se recomienda tratarlo como expuesto y rotarlo localmente, con revisión de confianza de los grupos compartidos. La rotación no se ejecutó.
+
+### Próxima secuencia prioritaria
+
+1. Resolver y rotar KeeShare key local con el propietario; completar KeePassXC-Browser y Native Messaging en el perfil OCP bajo revisión P012/P013.
+2. Resolver la discrepancia del ciphertext formal y B2 sin sobrescribir ningún archivo; después decrypt aislado/cross-host.
+3. Recuperar acceso administrativo y custodia EP Vault, verificar ubicación y preparar volumen XTS-AES256/Protection On/protector read-back antes de mover workspace.
+4. Reconciliar EP-App manifest/CLI/Core/GUI/XAML/tests, TTL y handlers, con revisión presencial P012/P013 y H10.
+5. Desbloquear instalación MCP-OCP solo tras EP-TASK-003 PASS y paquete P004 + MCP-OCP-03/04 PASS.
+6. Completar catálogo multi-proveedor/adaptadores y luego Guardian/lease/crypto-erasure en fixtures aislados y con gates.
+
+El ciclo queda PUBLICADO → LEÍDO → RESPUESTA_INICIAL_REGISTRADA → PROCESADO → DOCUMENTADO_AL_CIERRE → VERIFICADO_READBACK al cotejar el presente cierre.
