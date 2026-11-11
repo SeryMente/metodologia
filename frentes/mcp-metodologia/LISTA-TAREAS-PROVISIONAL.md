@@ -1,4 +1,4 @@
-<!-- LIST_VERSION=0.14; LIST_STATUS=PROVISIONAL; NOT_A_CANONICAL_OBJECT=true -->
+<!-- LIST_VERSION=0.15; LIST_STATUS=PROVISIONAL; NOT_A_CANONICAL_OBJECT=true -->
 # Lista provisional de tareas · MCP-OCP
 
 > **ESTADO: PROVISIONAL · NO ES UN OCP NI UN CONTROL ADICIONAL.** Esta lista es una vista auxiliar enlazada desde el único núcleo MCP-OCP. El estado vivo y las decisiones de alcance permanecen en `MCP-METODOLOGIA.md`; la titularidad permanece exclusivamente en `CONTROL-RESPONSABILIDAD.json`. Las tareas y dependencias de otros frentes se enlazan sin apropiarse de sus objetos, controles o permisos.
@@ -6,7 +6,7 @@
 - **Frente:** MCP-OCP.
 - **Repositorio propietario:** `SeryMente/metodologia`.
 - **Ruta OCP:** `frentes/mcp-metodologia/`.
-- **Versión de la lista:** 0.14 (provisional; coordinación del Sprint SINK-P004 y producto MCP-OCP 1.0.0).
+- **Versión de la lista:** 0.15 (provisional; coordinación del Sprint SINK-P004 y producto MCP-OCP 1.0.0).
 - **Última actualización:** 2026-11-11.
 - **Gobierno leído:** Samantha v388 · NX-388m; Metacanon 1.29; GOW 2.18; DUG commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`; blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`. ART-027 rebaselined para Sink local STDIO/RDC; §ARR y P037 revisados; CNP P001/P004/P005/P038/P043 considerado.
 - **Núcleo enlazado:** [MCP-OCP · objeto canónico](MCP-METODOLOGIA.md), v0.1.32; esta lista v0.14 es su backlog auxiliar vigente.
@@ -416,3 +416,17 @@ Cada ficha MCP-OCP-XX debe incorporar su propio informe de resolución/cierre ba
 Una tarea queda COMPLETADA únicamente con criterios PASS, evidencia de ejecución reproducible y read-back del informe. Si falta runner, logs, artefactos, prueba, fixture real, aceptación o dependencia externa, registrar PARCIAL/BLOQUEADA con el dato exacto; no inferir causa raíz ni éxito. Actualizar el núcleo MCP-OCP y la lista solo después de verificar el informe; al operador se le entrega un enlace por tarea cerrada y un resumen con solución, evidencia, bloqueantes y preocupaciones. No incluir secretos ni contenido privado en los reportes.
 
 Esta regla no cambia la asignación: MCP-OCP conserva código/schema/pruebas; EP conserva host/Vault/B2/instalación; Gobernanza conserva coordinación y aceptación E2E. Las tareas de otro frente no se declaran completadas desde esta lista.
+
+## Addendum de cierre P004 · 2026-11-11 · LIST_VERSION=0.15
+
+**MCP-OCP-02:** rama `feat/mcp-ocp-p004-reconciled-20261111-7ab0c555`, sincronizada con main `9ec698fbe27fd087c2cc9939b3afd604984e6154` mediante merge `720fc22ecad3ecdcfe3087778472e51aaa939068`; compare final 47 ahead / 0 behind, 29 rutas. PR #28 OPEN/DRAFT/NOT MERGED, mergeable=true.
+
+**MCP-OCP-03/04/05:** ejecución fresca sobre source commit `f8973a1958fb1e6d259786c2828a19dae05aeee6`: restore/build PASS, 0 warnings/0 errors; P004 18/18; monitor/readiness 23/23; STDIO/EOF smoke PASS.
+
+**Paquete final único de este corte:** `MCP-OCP-SINK-P004-f8973a19-candidate.zip`, 137.784 B, SHA-256 `705716c7aa581a98817869eb281b87500b591c4e811653c3a6825e1ceb59a3d2`. Manifest SHA `03ef3b75d21a153d6b659056c4e401ca65fd6e7f2355cc57d48ed6e71746f750`; recibo SHA `b068287641fa908d56bc2196dad2a4e840a0120eacf6538c74914e1bc1fdcffd`; sums SHA `6097ca2315bf531bde31b1df6a69d21f1d668436eef35eb7d92822b6389ed9db`. Nueve archivos, extracción y smoke del ejecutable empaquetado PASS; read-back autenticado exacto de ZIP/manifest/recibo/sums/runbook/pin PASS. Este paquete supersede el candidato histórico `4600086c`; no se conserva como artefacto final.
+
+**Gates no resueltos:** EP-TASK-003 sigue BLOCKED por protección/checkout/root del host; EP-TASK-005 no instala/acepta; GOV-TASK-003 E2E IPZ NOT_RUN/NOT_ACCEPTED. Hosted CI NOT_VERIFIED; runtime persistente Fila 4 NO VERIFICADO; generalización P001–P043, panel WPF, release 1.0.0 y MCP-OCP-14 pendientes/diferidos. MCP-NORMATIVO DESACTIVADO.
+
+**Estado:** `MCP_OCP_02=PASS`; `MCP_OCP_03=PASS_18_PLUS_23`; `MCP_OCP_04=PASS_STDIO_EOF_IPZ_PENDING`; `MCP_OCP_05=PASS_P004_VERTICAL_SLICE`; `MCP_OCP_PACKAGE=PASS_CANDIDATE_NOT_ACCEPTED`; `EP_INSTALL=BLOCKED`; `IPZ_E2E=NOT_ACCEPTED`.
+
+Se conserva `DTC_CYCLE_STATUS=INCOMPLETE` por apertura tardía del ciclo 14; la evidencia técnica posterior no reescribe la cronología.
