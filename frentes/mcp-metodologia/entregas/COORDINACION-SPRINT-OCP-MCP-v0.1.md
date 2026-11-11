@@ -1922,3 +1922,19 @@ Este suplemento solo registra la actualización de navegación y su cotejo. No r
 **Estado técnico actualizado:** `MCP_OCP_02=PASS_SELECTIVE_RECONCILIATION`; `MCP_OCP_03=PASS_P004_18_18_AND_MONITOR_23_23`; `MCP_OCP_04=PASS_STDIO_EOF_SMOKE_IPZ_E2E_PENDING`; `MCP_OCP_05=PASS_P004_VERTICAL_SLICE_GENERALIZATION_PENDING`; `MCP_OCP_PILOT_PACKAGE=PASS_CANDIDATE_NOT_ACCEPTED`; `EP_INSTALL=BLOCKED_EP_TASK_003_005`; `HOSTED_CI=NOT_VERIFIED`; `IPZ_E2E=NOT_ACCEPTED`; `MCP_NORMATIVO=DESACTIVADO`.
 
 **Estado de ciclo conservado:** `DTC_CYCLE_STATUS=INCOMPLETE` por `DTC_OPENING_LATE=TRUE`. La ejecución y sus hashes se documentan como hechos posteriores; no se simula una apertura puntual ni se cierra retrospectivamente el ciclo.
+
+### Addendum de resultado final y read-back del paquete · ciclo local 14 · 2026-11-11
+
+**Sincronización:** main `9ec698fbe27fd087c2cc9939b3afd604984e6154`; merge de dos padres `720fc22ecad3ecdcfe3087778472e51aaa939068`. Compare final verificado: 47 ahead / 0 behind y 29 rutas. PR #28 OPEN/DRAFT/NOT MERGED, mergeable=true. PR #27 no se integra.
+
+**Código ejecutado:** source commit `f8973a1958fb1e6d259786c2828a19dae05aeee6`, antecesor del HEAD documental actual. Windows 10.0.26200 x64; PowerShell 7.4.22; SDK 10.0.403/runtime 10.0.14 en ubicación temporal. Restore/build PASS, 0 warnings/0 errors; 18/18 P004 y 23/23 monitor/readiness; STDIO/EOF PASS.
+
+**Paquete vigente, sustituto del ZIP anterior 460:** `MCP-OCP-SINK-P004-f8973a19-candidate.zip`, 137.784 bytes; ZIP SHA-256 `705716c7aa581a98817869eb281b87500b591c4e811653c3a6825e1ceb59a3d2`; manifest SHA `03ef3b75d21a153d6b659056c4e401ca65fd6e7f2355cc57d48ed6e71746f750`; recibo SHA `b068287641fa908d56bc2196dad2a4e840a0120eacf6538c74914e1bc1fdcffd`; SHA256SUMS SHA `6097ca2315bf531bde31b1df6a69d21f1d668436eef35eb7d92822b6389ed9db`. Nueve archivos; extracción/hash read-back PASS; smoke sobre el ejecutable exacto extraído PASS.
+
+**Read-back remoto:** mediante GitHub API autenticada, los bytes de ZIP, manifest, recibo, SHA256SUMS, RUNBOOK y SOURCE-PIN descargados desde el commit de publicación coincidieron con los hashes locales. `REMOTE_READBACK=PASS`. El pin/manifest/recibo declaran main sincronizado `9ec698f...` y merge `720fc22...`.
+
+**Gates no aceptados:** EP-TASK-003 mantiene bloqueo de almacenamiento y checkout/root del host; EP-TASK-005 no ha realizado handoff, extracción, importación ni instalación. Gobernanza/GOV-TASK-003 no ha hecho E2E IPZ real. Hosted CI NOT_VERIFIED; runtime persistente Fila 4 NO VERIFICADO; MCP-NORMATIVO DESACTIVADO.
+
+**Estado técnico:** `MCP_OCP_02=PASS_MAIN_0_BEHIND`; `MCP_OCP_03=PASS_18_P004_23_MONITOR`; `MCP_OCP_04=PASS_STDIO_EOF_IPZ_PENDING`; `MCP_OCP_05=PASS_P004_SLICE_GENERALIZATION_PENDING`; `MCP_OCP_PACKAGE=PASS_CANDIDATE_NOT_ACCEPTED_READBACK_MATCHED`; `EP_INSTALL=BLOCKED_EP_TASK_003_005`; `IPZ_E2E=NOT_ACCEPTED`; `HOSTED_CI=NOT_VERIFIED`.
+
+Se conserva `DTC_OPENING_LATE=TRUE` y `DTC_CYCLE_STATUS=INCOMPLETE`; no se corrige retrospectivamente la apertura. Los resultados de ejecución y publicación son asientos posteriores, no una aceptación del ciclo completo.
