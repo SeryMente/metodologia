@@ -777,4 +777,4 @@ EP-TASK-007 es independiente del gate físico de Fila 4 en EP-TASK-003. El guard
 
 ### Seguimiento de revisión · PR #28 · 2026-11-11
 
-La portación actual se publicó como PR [#28](https://github.com/SeryMente/metodologia/pull/28), `OPEN / DRAFT / NOT MERGED`, base main `1867af0c69f250aaee2b35b585eec8b74827b69c`, head `d981953da84eaede38cb25649eb76b30a454a7ef`, 16 commits ahead / 0 behind, 23 archivos MCP-OCP. El estado `mergeable=true` solo habilita revisión, no aceptación. PR #27 sigue separada, abierta/draft y no integrada.
+La portación actual se publicó como PR [#28](https://github.com/SeryMente/metodologia/pull/28), `OPEN / DRAFT / NOT MERGED`, con base main `1867af0c69f250aaee2b35b585eec8b74827b69c` y 23 archivos MCP-OCP. El head `d981953da84eaede38cb25649eb76b30a454a7ef` fue el corte inicial de apertura; el head vigente se consulta en GitHub porque la rama recibió documentación incremental posterior. En la apertura se observó 16 commits ahead / 0 behind y `mergeable=true`; eso solo habilita revisión, no aceptación. PR #27 sigue separada, abierta/draft y no integrada.
