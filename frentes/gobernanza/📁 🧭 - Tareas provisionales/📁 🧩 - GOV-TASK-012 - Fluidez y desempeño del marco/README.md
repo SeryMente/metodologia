@@ -54,7 +54,10 @@ El DUG enlaza al núcleo operativo y al README del OCP MCP desde el término can
 **Fuente adquirida:** DUG Samantha v388 · NX-388m · Metacanon 1.29 · GOW 2.18; commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`; blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`. §ARR está presente en `glossary.sections[2]` con ancla `#gow-arranque-chatgpt`; la lectura superficial de la lista de términos no lo representa.
 
 **Diagnóstico confirmado:**
-- La autorización por instrucción directa ya está resuelta en P037 y GOV-TASK-010; §42.2 conserva una pregunta adicional que debe aplicarse solo cuando falte autorización explícita.
+- La autorización directa está resuelta en P037 y GOV-TASK-010, pero sigue contradicha por Metacanon §38.1/§38.2 (bloqueo por hilo/generación/traspaso), §42.2 y §48.3 (preguntas redundantes), y por P039 (elección forzada entre operaciones). P001 da precedencia a P037; el texto subordinado necesita armonización bajo P005.
+- §37.1 y §44.2 duplican adquisición/revisión de DUG/GOW. Una lectura verificable del único DUG contiene Sam, Metacanon y GOW; debe bastar un fetch/pin por ciclo y una revisión local de delta al cierre, salvo que se haya escrito al canon.
+- §4 hace obligatorios diez bloques visibles por ciclo; §28 ya conserva originales, crónica, estado y read-back y prohíbe entradas triviales por llamada. La solución es compactar la salida visible por defecto y mantener el detalle íntegro recuperable en el OCP.
+- En la sustitución real de asiento se generaron 13 commits secuenciales antes de terminar la reconciliación; se añadieron luego commits de limpieza para retirar duplicación. No equivale a una medición de latencia, pero sí demuestra que la secuencia de escritura actual multiplica el trabajo de coordinación. Usar un único árbol/commit por lote, actualización `main` con SHA esperado y read-back agrupado.
 - `INICIO.md` tenía versión de DUG y barrera de responsabilidad obsoletas; el punto de entrada se actualizó en el mismo corte.
 - El informe de diez bloques en cada ciclo, la adquisición redundante del DUG/GOW y la dependencia estricta de Sink aún no aceptado son los principales candidatos de fricción.
 - §37 ya permite reutilizar un documento adquirido cuando el hash no cambia; aplicar esa regla antes de proponer una nueva norma.
