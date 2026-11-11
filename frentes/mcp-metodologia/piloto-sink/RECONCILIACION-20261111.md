@@ -85,3 +85,47 @@ Después del primer registro se incorporó el commit de main `1867af0c69f250aaee
 La rama se publicó para revisión en [PR #28](https://github.com/SeryMente/metodologia/pull/28): `OPEN / DRAFT / NOT MERGED`, 23 archivos, 16 commits ahead / 0 behind en la apertura; GitHub informó `mergeable=true`. PR #27 sigue abierta/draft como antecedente divergente y no integrado.
 
 Los estados de build, tests, smoke y paquete de la rama actual permanecen `NOT_RUN / NOT_REGENERATED`; la apertura de una PR no los convierte en PASS ni en aceptación.
+
+## 9. Revalidación ejecutable y paquete piloto · 2026-11-11
+
+### Sincronización de main posterior al paquete
+
+- Main incorporado al cierre: `0b4a7373fdc07f39b3f764e9c6e0c94fce21cc2f`.
+- Main avanzó con documentación de EP/Gobernanza sin solapar rutas MCP-OCP. Se incorporó en el merge `63e2f1399fdb210294ef26983babc8fbef87a4a6`; padres: rama previa `1cbf7f15a4c7480cb31f2d7073f9151d02964bd7` y main `0b4a7373fdc07f39b3f764e9c6e0c94fce21cc2f`.
+- Se verificó push y lectura de vuelta de la rama. Compare al cierre: **26 commits ahead / 0 behind**, 27 rutas cambiadas.
+- PR #28 sigue `OPEN / DRAFT / NOT MERGED`, base `0b4a7373...`, mergeable. PR #27 permanece abierta/draft como antecedente divergente no integrado.
+
+### Build y pruebas nuevas ligadas al código
+
+- Commit de código probado: `4600086c492582c5d854145db64097310ac73686`; rama `feat/mcp-ocp-p004-reconciled-20261111-7ab0c555`.
+- Baseline de main al construir el piloto: `1867af0c69f250aaee2b35b585eec8b74827b69c`. Los merges posteriores incorporan documentación no solapada; no alteran los blobs probados.
+- Entorno: Windows 10.0.26200 x64; PowerShell 7.4.22; .NET SDK 10.0.403; Microsoft.NETCore.App 10.0.14 x64, todos usados en checkout/SDK aislados bajo `C:\\Temp` y el SDK temporal existente. No se instaló SDK global ni se modificó PATH persistente.
+- Pin de fuente DUG cotejado antes de build: commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`, Git blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`.
+- Restore de las dos suites: PASS. Build servidor, monitor y ambos proyectos de pruebas: PASS, 0 warnings / 0 errors.
+- Pruebas P004: **18/18 PASS**. Monitor/readiness: **23/23 PASS**.
+- Smoke STDIO/EOF del servidor: PASS; initialize, tools/list, tools/call(P004), tres respuestas JSON-RPC, evento `SINK_READ_SUCCESS` por STDERR y terminación EOF.
+- Logs y SHA-256 se registraron en `SOURCE-PIN.json` bajo `validation.logs`; el recibo del paquete contiene la misma referencia y limitaciones.
+
+### Paquete exacto
+
+- ZIP: `entregas/piloto-sink-p004/MCP-OCP-SINK-P004-4600086c-candidate.zip`.
+- Tamaño: **138.142 bytes**.
+- SHA-256: `50c0c68f769aefec95dfde3e45c74594d34b3fbcb25916814181fad241e8e3a6`.
+- Manifest SHA-256: `ac491edc7fadad65715b58d1275592bca86f506584489683012e74779da87627`.
+- Validation receipt SHA-256: `5652b3298b083c72faa59a48d98a644402581bdf7e0718a8bac52b1313f7b6ee`.
+- `SHA256SUMS.txt` SHA-256: `aa688cf2e63a44f5edaba2650f05a2c6aaca2b86f111ee663b24a3d07576d58f`.
+- Nueve archivos en el ZIP; extracción en destino temporal vacío, tamaño/SHA-256 de cada archivo contra manifest: PASS. Smoke ejecutado sobre el `OcpMcp.exe` extraído de ese ZIP: PASS.
+- Manifest y recibo identifican el source commit `4600086c...`, main base de build `1867af0c...`, DUG pin v388/NX-388m y 18/18 + 23/23.
+- Commit de publicación de los artefactos y pin: `69f17be96e6a5e406d59ce66ffe0ac89589831c4`. La sincronización posterior de main los conserva en el árbol de la rama.
+
+### Estado y límites
+
+- `MCP_OCP_02=PASS_SELECTIVE_RECONCILIATION`.
+- `MCP_OCP_03=P004_AND_MONITOR_SUITES_PASS`.
+- `MCP_OCP_04=STDIO_EOF_SMOKE_PASS_IPZ_E2E_PENDING`.
+- `MCP_OCP_05=P004_VERTICAL_SLICE_PASS_GENERALIZATION_P001_P043_PENDING`.
+- `MCP_OCP_PILOT_PACKAGE=PASS_CANDIDATE_NOT_ACCEPTED`.
+- GitHub-hosted CI: `NOT_VERIFIED`; este PASS es ejecución local real y reproducible, no runner hospedado.
+- EP-TASK-003/005 siguen como gates de host/recepción/instalación. No se instaló, transfirió ni configuró nada en EP/Fila 4; disponibilidad persistente del runtime de destino = NO VERIFICADA.
+- IPZ E2E desde contexto real: `NOT_ACCEPTED / NOT_RUN`; la consola local no la sustituye.
+- MCP-NORMATIVO continúa `DESACTIVADO`; FOL1 preparado/no activo; release servidor+panel 1.0.0 no aceptado.
