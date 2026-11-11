@@ -18,7 +18,7 @@ El patrón de materialización sigue el registro de tareas provisionales de Gobe
 
 | ID local | Estado | Tarea | Núcleo |
 | EP-TASK-001 | `en_curso · NCL_PREFLIGHT_PARTIAL · OCP_PROFILE_IDENTIFIED · PLAYWRIGHT_EXTENSION_PRESENT · KEEPASSXC_BROWSER_MISSING` | Profile 36 identificado como OCP; Playwright Extension 0.4.0 presente; KeePassXC portable localizado; Native Messaging no verificado; incidente KeeShare requiere rotación local. | [núcleo](./📁%20🧩%20-%20EP-TASK-001%20-%20Integración%20NCL/README.md) |
-| EP-TASK-002 | `en_curso · P0 · B2_4_OF_4_READBACK_PASS · SAME_HOST_RESTORE_PASS · GUI_SEALED · VAULT_DECRYPT_PENDING · CROSS_HOST_PENDING` | R2 4/4 objetos con SHA/read-back y SSE; restore same-host 3.289/3.289. GUI formal Fila4 observada SELLADA; archivo 2.048 B en ruta EP-Vault separada, no identificado como ciphertext formal. Descifrado/cross-host NOT_RUN. | [núcleo](./📁%20🧩%20-%20EP-TASK-002%20-%20Persistencia%20provisional%20Backblaze/README.md) |
+| EP-TASK-002 | `en_curso · P0 · B2_V6_HISTORICAL_OBJECT_VERIFIED · CURRENT_FORMAL_3352B_NOT_BACKED_UP · SESSION_EXPIRED · V7_PREPARED_NOT_RUN · CROSS_HOST_PENDING` | B2 v6: objeto de 2.200 B con read-back SHA/SSE; R2 same-host 3.289/3.289. Vault formal actual: 3.352 B, SHA 3122C544…; copia separada de 2.048 B antigua. GUI/CLI comparten TTL de 15 min, vencido a las 20:15 UTC. Worker/wrapper v7 parser PASS; upload/decrypt/cross-host pendientes. | [núcleo](./📁%20🧩%20-%20EP-TASK-002%20-%20Persistencia%20provisional%20Backblaze/README.md) |
 | EP-TASK-003 | `en_curso · DISEÑO_ACEPTADO · BITLOCKER_GATE_FAIL · LOCATION_UNCLASSIFIED` | C: XTS-AES128/100 %/Protection Off/sin protectores; W: descifrado 0 %/sin protectores; checkout sin .git; no mutaciones. | [núcleo](./📁%20🧩%20-%20EP-TASK-003%20-%20Mapa%20integral%20de%20construcción%20EP/README.md) |
 | EP-TASK-004 | `en_curso · LOCAL_SYNTHETIC_PASS · UNMANIFESTED_DRIFT · H10_PENDING` | Suite local PASS 118,79 s; Core/GUI/XAML difieren del manifest; CLI 3600 rechazado; pestaña y botones sin handlers/disabled; PR #21 abierta. | [núcleo](./📁%20🧩%20-%20EP-TASK-004%20-%20Reconstrucción%20de%20bóveda/README.md) |
 | EP-TASK-005 | `pendiente · BLOCKED_EP003_STORAGE_AND_P004_PACKAGE_MCP_03_04` | No instalación/bootstrap/STDIO; C:/W: no protegidos; checkout local sin .git; PR #27 OPEN/DRAFT. | [núcleo](./📁%20🧩%20-%20EP-TASK-005%20-%20Instalación%20y%20aceptación%20de%20MCP-OCP%20local/README.md) |
@@ -457,3 +457,17 @@ Cuando una tarea requiera varias etapas, cambios de código/host, seguridad, int
 **Seguridad:** se registró de forma saneada una exposición contextual de material de clave privada KeeShare durante una lectura de configuración local; no se copió a documentos ni Git. Rotación por el propietario pendiente. No se modificó Chrome, KeePassXC, la base, Vault formal, B2, volúmenes ni procesos de sesión.
 
 **Límite del corte:** el checkout local Metodología carece de .git; no es fuente de build. La fuente canónica continúa siendo main del repositorio remoto.
+
+---
+
+## Reconciliación ejecutiva EP · 2026-11-11 · 14:23 America/Mexico_City
+
+**Decisión del ciclo:** EP-TASK-001 conserva prioridad general, pero su próximo paso exige rotación KeeShare local del propietario y revisión P012/P013. El trabajo material P0 que puede continuarse después de esa compuerta es EP-TASK-002; se avanzó en diagnóstico read-only y preparación del worker, sin declarar finalizada la tarea.
+
+- **EP-TASK-002:** el objeto B2 v6 de 2.200 bytes mantiene read-back SHA y SSE-B2/AES256; el restore R2 same-host acredita 3.289/3.289. La versión formal actual en EP\local-state\Khora\secrets mide 3.352 bytes y SHA-256 3122C544012F989F0501BD0E82EA920A93F19A42034D83FA682BCC2290891E82; es posterior al objeto v6 y aún no está respaldada. La copia antigua de 2.048 bytes es otra ruta y no se usa.
+- **Sesión compartida:** GUI/CLI sí comparten DPAPI CurrentUser; la GUI registró unlock 20:00:01Z y lock 20:15:02Z, consistente con TTL 900 s. La sesión actual está cerrada; los nombres de variables no son legibles sin reabrirla.
+- **Preparación:** worker y wrapper v7 creados localmente, lectura de vuelta exacta y parser PASS; receipt v7 aún ausente; ejecución NOT_RUN. El v6 histórico no se sobrescribe.
+- **Siguiente gate:** el operador desbloquea EP Vault desde la GUI por 15 minutos y confirma ABIERTA. Después se ejecuta v7 una sola vez con la identidad propietaria y se exige recibo, upload, download, tamaño/SHA idénticos, SSE-B2/AES256 y restore aislado. Decrypt y cross-host requieren después bootstrap independiente.
+- **Sin cambios:** EP-TASK-003/004/005/006/007 y sus dependencias conservan su estado; no se instala MCP-OCP, no se modifican volúmenes/workspace ni se realiza crypto-erasure.
+
+**Cierre de estado:** EP-TASK-002 continúa en_curso; no se declara completada por el B2 histórico, el restore same-host, la preparación v7 ni la documentación.
