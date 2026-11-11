@@ -117,3 +117,18 @@ La preparación inicial que fijó `global.json` en la raíz queda supersedida po
 - SHA-256: P004 `D6F21749D8898B6624988BF056DA2BCC66DA3A5DF1CAE8FFA1FA2DB36DEB338B`; monitor `B9B3F2B5A42285CC3D81AE5EEFBDC678104E5E408A861BB5D1045885CBC29989`; smoke summary `2D5C90D467B5508A9FAD22F0C00902035D9F3FE7F703B052AAB13365BE2C0B31`; STDOUT `7818B9894239D7760EAD89D18BA78244096041FE2738C639F840A5FCD9918938`; STDERR `8614035B5585D84175B53B1DE4A126ED6B3A84BDED7E6BE51153A2FB8AF2D61B`.
 - Git checkout quedó limpio tras las pruebas (`git diff --check` y cero tracked changes).
 - Límite: validación local Windows; no acredita runner GitHub `ubuntu-latest`, instalación EP, E2E IPZ, paquete con panel WPF ni aceptación del producto 1.0.0.
+
+## Reconciliación final, pruebas y paquete P004 · 2026-11-11
+
+La portación selectiva se ejecutó y validó localmente sobre el commit `4600086c492582c5d854145db64097310ac73686`, con base de main al build `1867af0c69f250aaee2b35b585eec8b74827b69c`. El DUG v388/NX-388m fue cotejado por Git blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`.
+
+- Windows 10.0.26200 x64, PowerShell 7.4.22, .NET SDK 10.0.403 y runtime 10.0.14 x64. SDK y clon usados de manera aislada bajo directorios temporales, sin instalación global ni PATH persistente.
+- Restore/build servidor y dos suites: PASS; 0 warnings / 0 errors.
+- P004: 18/18 PASS; monitor/readiness: 23/23 PASS; smoke STDIO/EOF: PASS.
+- ZIP candidato nuevo con 9 archivos; extracción/hash-readback PASS; smoke sobre binario exacto empaquetado PASS.
+- ZIP SHA-256: `50c0c68f769aefec95dfde3e45c74594d34b3fbcb25916814181fad241e8e3a6` (138.142 bytes). Manifest/receipt/SHA256SUMS están en la misma ruta de entrega.
+- Paquete y pin publicados en commit `69f17be96e6a5e406d59ce66ffe0ac89589831c4`.
+
+La rama se sincronizó después con main hasta `0b4a7373fdc07f39b3f764e9c6e0c94fce21cc2f`, mediante merge `63e2f1399fdb210294ef26983babc8fbef87a4a6`. Los 26 commits ahead / 0 behind incluyen el producto y las anotaciones MCP-OCP; los cambios externos integrados son documentación EP/Gobernanza no solapada.
+
+**No incluidos/aceptados:** panel WPF y release 1.0.0, generalización P001–P043, hosted CI, instalación/handoff EP, runtime persistente de Fila 4 e IPZ E2E. EP-TASK-003/005 conservan sus gates. El piloto permanece candidato no aceptado.
