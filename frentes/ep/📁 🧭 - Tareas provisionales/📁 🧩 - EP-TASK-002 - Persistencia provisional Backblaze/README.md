@@ -2455,3 +2455,24 @@ Estados: `B2_UPLOAD_READBACK=PASS_4_OF_4`; `WORKSPACE_ISOLATED_RESTORE=SAME_HOST
 ### Rollback
 
 Las pruebas no escriben sobre el conjunto de datos activo. Ante discrepancia, detener solo la etapa afectada, preservar recibos y artefactos, no borrar objetos remotos automáticamente y volver al último snapshot íntegro verificado. Registrar causa, corrección, retest y prevención en esta crónica.
+
+---
+
+## Reconciliación de recuperación B2 y bóveda local · 2026-11-11 · 10:38 America/Mexico_City
+
+**Estado operativo:** en_curso · B2_UPLOAD_READBACK_PASS_4_OF_4 · SAME_HOST_RESTORE_PASS · VAULT_DECRYPT_NOT_RUN · CROSS_HOST_RESTORE_NOT_RUN · LOCAL_FORMAL_VAULT_NOT_INITIALIZED.
+
+### Evidencia previa releída
+
+- El recibo ep-backblaze-r2-final-receipt-v1.json declara cuatro objetos subidos y descargados con read-back verificado y SSE-B2 AES256 confirmado. El ZIP workspace tiene 119.076.640 bytes y SHA-256 9D511614FC6B4001DBA5F8CAAF69ED06107F8B5F5111165F186BE7B2C5C06E09. El ciphertext Vault remoto tiene 2.200 bytes y SHA-256 4CC2EE09974C9FBF3CF22C28A5A46C8286EB501F59268DBBB2B7BD6D61E8C590.
+- El recibo ep-r2-restore-validation.json confirma restore aislado a C:/R2R de 3.289/3.289 entradas, cero fallos y cero inesperados; el workspace original no fue modificado. Es restore same-host; restoredFilesDecrypted=false.
+
+### Observación nueva en Fila 4
+
+- EPVault-CLI.cmd -Action Status devolvió NOT_INITIALIZED, vaultExists=false y sessionActive=false para la ubicación formal configurada por la CLI. No se solicitó contraseña ni se intentó inicializar.
+- Existe otro archivo ciphertext local en Desktop/SeryMente/EP-Vault, de 2.048 bytes y SHA-256 d7ad1d745caf460e047eae521c1c403f36e99864bc9cd0604ffc564e390f2f7d. No coincide en tamaño ni SHA con el objeto B2 de 2.200 bytes. No se copió, sustituyó, descifró ni subió.
+- No hubo autenticación B2, nuevo upload, download, decrypt ni restore cross-host en este ciclo; no se intentó eludir el estado NOT_INITIALIZED.
+
+### Siguiente paso y aceptación
+
+Resolver localmente la discrepancia de procedencia entre la bóveda formal esperada y el ciphertext adicional, confirmar qué archivo es autoritativo con el propietario y obtener sesión válida sin revelar contraseña en chat. Después, descifrar una copia aislada del objeto B2 y demostrar recuperación cross-host con bootstrap B2 independiente. La excepción de ZIP sin cifrado cliente permanece registrada; no satisface el diseño permanente.
