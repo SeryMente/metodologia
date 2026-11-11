@@ -1,6 +1,6 @@
-## Estado operativo vigente · sprint Sink local · 2026-11-10
+## Estado operativo vigente · sprint Sink local · 2026-11-11
 
-**Responsabilidad:** control único activo de Gobernanza, generación 17, blob `16a4265c8a5f1c3d5db7a96ca83100bcd973a42e`. Titular `SES-20261108-506DCF0C`, alias `chatgpt-C-GOBERNANZA-RETOMA-13-SES-20261108-506DCF0C`, UUIDv7 local `01a1bc38-78e0-74e5-92ca-8d28506dcf0c`; corresponsable `chatgpt-C-GOBERNANZA-ASIENTO-02-RETOMA-20261101-01-SES-20261101-GV8E89D1FF`. Dos responsables activos; máximo dos. El ID nativo de la conversación no está expuesto.
+**Responsabilidad:** control único activo de Gobernanza, generación 19; `CONTROL-RESPONSABILIDAD.json` blob `c96af67c45977784a91a57850d0397bc72a6560a`. Titular `SES-20261111-375BE087`, alias `chatgpt-C-GOBERNANZA-RETOMA-15-SES-20261111-375BE087`, UUIDv7 local `01a1cc2b-b960-7bca-8135-3b81d3296b7c` (ID nativo no expuesto); corresponsable generación 12 `chatgpt-C-GOBERNANZA-ASIENTO-02-RETOMA-20261101-01-SES-20261101-GV8E89D1FF` preservada. Dos responsables activos; máximo dos. El ID nativo de la conversación no está expuesto.
 
 **DUG canónico:** Samantha v388 · NX-388m · 43 principios · 24 anexos. El evento `C-GOBERNANZA-ART027-SINK-LOCAL-RECONCILIACION-20261110-01` actualizó ART-027 para definir Sink local por MCP-OCP STDIO/RDC. DUG commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`; blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`. ART-025 y ART-031 se preservaron.
 
