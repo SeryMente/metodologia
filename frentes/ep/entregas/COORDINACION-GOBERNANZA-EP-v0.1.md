@@ -2995,3 +2995,25 @@ Los cuatro objetos de trabajo se leyeron de vuelta desde main y se cotejaron con
 PUBLICADO → LEÍDO → RESPUESTA_INICIAL_REGISTRADA → PROCESADO → DOCUMENTADO_AL_CIERRE → VERIFICADO_READBACK.
 
 **Resultado técnico:** respaldo de la versión formal actual NOT_RUN; la evidencia de B2 v6 y restore R2 same-host sigue siendo válida para los artefactos que cubre, no se extrapola a la nueva versión formal. **Resultado documental:** anexo literal, tarea, índice y OEP publicados y verificados. Ninguna tarea se declara completada.
+
+ 
+## EP · apertura de ciclo: revalidación NCL y reconciliación de tareas EP · 2026-11-11 · 14:51:22 America/Mexico_City
+
+**UUIDv7 local:** `01a1cc61-2b4b-7be9-9fb6-caa2e392cd56` · identidad local de trazabilidad; no ID nativo, folio global ni FOL1.
+
+### Cursor y fuentes
+
+- **DTC previo:** `main`, blob leído `ee4058cbe598c3b2046764881bd648ceb42a4a2f`; último ciclo cerrado `01a1cc45-414a-7bd9-8b4e-21ba2e596e91`. No se detectó ciclo posterior en el DTC adquirido.
+- **OEP:** `main/frentes/ep/OEP.md`, v0.3.69, blob `34ba5fab053f07b79fb928babd07949aae97a5cc`, §135. No se modifica en este ciclo por tratarse del objeto normativo.
+- **Índice EP:** blob `b762a901d5100afa5f8e5b2bae81040d22ec102c`, ya registra B2 v7 y descifrado aislado PASS; cross-host sigue pendiente.
+- **EP-TASK-001:** blob leído `00a4837a68bbe94a8a55c2cef5f68bc11ed7240c`; última crónica § de preflight 10:38.
+- **EP-TASK-006:** blob leído `b735ba595ff216c3a65ca732bfc753c223894f9b`; conserva catálogo histórico Vercel 52/10/42, pendiente de revalidación.
+
+### Alcance y controles del ciclo
+
+- Revalidación exclusivamente read-only de Profile 36, manifiestos de extensión y Native Messaging; no abrir pestañas, no leer cookies, sesiones, contraseñas, TOTP, base KeePassXC ni material KeeShare.
+- No modificar Chrome, KeePassXC, extensiones, registro, ACL, variables, Vault, B2, workspace, volúmenes ni configuración de producto.
+- P012/P013 siguen bloqueando mutaciones UX/seguridad y validación supervisada; rotación KeeShare permanece bajo control local del propietario.
+- Investigar si la sesión formal de EP Vault permite completar un subconjunto no sensible del inventario de EP-TASK-006; no leer ni emitir valores.
+
+**Estado inicial:** EP-TASK-002 conserva PASS en respaldo B2 v7 y descifrado aislado HMAC/AES; recuperación cross-host NOT_RUN por no existir un segundo host físico en línea. Ninguna tarea se declara completada.
