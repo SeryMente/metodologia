@@ -640,3 +640,29 @@ Bloqueado crear, cifrar, copiar, montar, cambiar puntos de montaje o implementar
 **Siguiente condición objetiva:** revisión presencial y decisión del operador sobre el perímetro/custodia; clasificar la ubicación con evidencia suficiente; materializar el VHDX nuevo en la ruta de diseño con XTS-AES256, protector recuperable custodiado y Protection On/100 %; inventariar y copiar el workspace con manifiestos SHA-256/rollback; validar el checkout completo/sincronizado y root de datos protegido. Hasta entonces no cortar rutas ni dejar persistencia EP en W:.
 
 **Conclusión:** PARCIAL / BLOQUEADA. La identidad y el diagnóstico actual quedaron verificados; el almacenamiento y el workspace no están aceptados ni protegidos.
+
+
+## Inventario actualizado de repositorios y destinos Fila 4 · 2026-11-11
+
+**Identidad de ejecución:** `CENTRAL\\fila4`, perfil `C:\\Users\\fila4`. Lectura de metadatos Git y existencia de rutas; no se ejecutaron fetch, pull, checkout, reset, clone, copia ni mutaciones.
+
+### Checkouts detectados bajo Repositorios
+
+| Ruta local | Rama | HEAD observado | Cambios tracked | Tratamiento |
+|---|---|---|---:|---|
+| `Repositorios/KHORA` | `work/harmonia-front-workspace-20261110` | `9fd5c18205e39b6db12c9152b07d8f880f6b256d` | 20 | Preservar sin tocar; no es clon limpio. |
+| `Repositorios/RAP/rap` | `main` | `43525b57055ed720f1efdf81ed50ee90a2785e16` | 0 | Checkout detectado; no se verificaron untracked ni sincronización remota en esta lectura. |
+| `Repositorios/signal-interpreter` | `work/g14-groq-dual-clean-20261111` | `305d8d862be629af0fc96e35701adc29be15013c` | 0 | Checkout detectado; no se verificaron untracked ni sincronización remota en esta lectura. |
+
+La observación anterior de que `Repositorios/KHORA/khora` no existía no significa que no hubiera repositorio: el `.git` está en la raíz `Repositorios/KHORA`. La carpeta `Repositorios/Metodologia/metodologia` existe pero no contiene `.git`; no sirve como checkout Git canónico. No se detectó checkout GDP anidado en la ruta prevista.
+
+### Destinos y estado conservado
+
+- Ruta del nuevo VHDX aprobada: `C:\\Users\\fila4\\EP\\ProtectedWorkspace`; el directorio no existe todavía.
+- Root de datos MCP: `C:\\Users\\fila4\\Desktop\\SeryMente\\Datos\\Metodologia\\MCP-OCP`; no existe.
+- El VHDX antiguo adjunto bajo `AppData\\Local\\EP\\ProtectedWorkspace` permanece intacto y no se equipara al nuevo destino.
+- BitLocker conserva el estado previamente verificado: C: XTS-AES128/100 %/Protection Off/sin protectores; W: totalmente descifrado/sin protectores. Ubicación física `UNCLASSIFIED`.
+
+### Decisión
+
+`PREFLIGHT_FILA4=PARTIAL_FAIL`. El inventario de checkouts queda actualizado, pero no habilita materialización: no hay volumen XTS-AES256 con Protection On/100 % y protector recuperable; no hay clasificación física; el checkout Metodología no tiene `.git`; KHORA contiene cambios tracked que deben preservarse. No mover ni renombrar el VHDX existente, no reemplazar checkouts, no materializar repositorios en claro, no crear el root de datos ni cortar el workspace hasta superar los gates de almacenamiento/custodia.
