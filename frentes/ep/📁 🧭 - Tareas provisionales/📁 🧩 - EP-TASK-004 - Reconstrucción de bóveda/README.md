@@ -801,3 +801,16 @@ Consulta read-only de GitHub: PR #21, “EP Vault PC 7: endurecimiento CLI/GUI, 
 - La suite sintética local previamente registrada mantiene su alcance: no acredita H10, UX accesible, aceptación humana, integración a main, ni los mecanismos inertes de la GUI.
 
 **Siguiente gate:** reconciliar baseline/manifest/CLI/Core/XAML/tests con TDD y obtener revisión humana P012/P013 y aceptación H10 antes de cualquier merge o instalación.
+
+
+---
+
+## Revalidación de PR #21 y riesgo de divergencia normativa · 2026-11-11 · 15:48 America/Mexico_City
+
+- PR #21: OPEN / DRAFT / NOT MERGED; HEAD `e165c0b867e20c9ae3156f6bad72c6f13ba8a5c5`; base main `521943b7dcfaf61753306233f8f50a80bddb3ad8`; 34 archivos; `mergeable=false`.
+- No se encontraron reviews, hilos ni workflow runs/statuses asociados al HEAD en las consultas realizadas.
+- **Bloqueo de integración:** PR #21 modifica también `frentes/ep/OEP.md`. El patch transporta OEP v0.3.56/§120 desde una base anterior; main vigente conserva v0.3.69/§135. No es una PR aislada de producto. Fusionarla como está puede reintroducir un OEP obsoleto y pisar evolución posterior.
+- P005: OEP no se modifica aquí ni se resuelve por fusión implícita. Separar el delta de producto y reconciliar docs no normativos antes de revisar de nuevo. Toda actualización normativa requiere autorización expresa independiente.
+- H7/H8 sintéticos constan PASS para cortes concretos; persisten divergencias locales Core/GUI/XAML/manifest, CLI que rechazó 3.600 s y controles GUI persistentes inertes/deshabilitados según el último retest. H10 y revisión presencial P012/P013 siguen pendientes.
+
+**Decisión:** PR #21 NO LISTA PARA MERGE. Sin checkout, aprobación, merge ni instalación.
