@@ -873,4 +873,6 @@ MCP-OCP, dentro de su titularidad vigente, debe presentar una candidata reconcil
 
 ### Read-back del informe
 
-Pendiente hasta la escritura de esta sección. Se debe completar con el commit/blob resultante tras volver a leer el archivo.
+- Commit de escritura del informe: a9d2562e34d35f16d132e65c6ebd8582d11e38f8.
+- Blob leído de vuelta: d507ea5abefc3e817938d279ec2a5990bcc25e1a.
+- Resultado: contenido final recuperado desde main y sección de informe presente; SHA/blob coincide con la respuesta de escritura. Read-back VERIFICADO.
