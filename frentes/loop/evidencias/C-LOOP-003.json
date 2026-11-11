@@ -131,10 +131,10 @@
       "frentes/loop/conversaciones/C-LOOP-003-entrada-verbatim.txt": "b1aec0118f1a5aa2fe03d64ed0528533be02d1db",
       "frentes/loop/conversaciones/C-LOOP-003-dialogo.jsonl": "bf76fbda05960334aa979db6ea0b1d4970753a40",
       "frentes/loop/cronica/C-LOOP-003-checkpoint.md": "0982bc762642b4a78c7976c32362a74b4b4f00fb",
-      "frentes/loop/evidencias/C-LOOP-003.json": "806d250717e43c380f8280f3ff135f7790f6530a",
       "frentes/loop/LOOP.md": "a7abdf636c94daa34d013d6d480592acede6b368",
       "frentes/loop/README.md": "96326d92cc2722183843600f38f62192701210f2",
       "frentes/loop/CONTROL-RESPONSABILIDAD.json": "715e49c4dddb34f4d5d3cdf688a3fe99e473c7a4"
-    }
+    },
+    "note": "Los Blob SHA listados corresponden a artefactos verificados en main. El archivo de evidencia no incluye su propio hash para evitar autorreferencia circular; su blob SHA vigente se obtiene del read-back de GitHub."
   }
 }
