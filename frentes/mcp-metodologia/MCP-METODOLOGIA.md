@@ -4,7 +4,7 @@
 
 - **Nombre canónico vigente:** MCP-OCP (anteriormente MCP-METODOLOGIA).
 - **Identidad canónica vigente:** MCP-OCP. **Identidad histórica:** MCP-METODOLOGIA.
-- **Versión/sello:** MCP-OCP-v0.1.30 · OCP MCP 1.0; H1 SINK:P004, H2 persistencia mínima/bóveda y H3 workspace completo definidos; Sink local por stdio autorizado; contrato DUG v388/NX-388m; piloto P004 pendiente; bootstrap del perfil persistente pendiente. Las generaciones y folios de sesiones anteriores son metadatos de auditoría.
+- **Versión/sello:** MCP-OCP-v0.1.31 · OCP MCP 1.0; H1 SINK:P004, H2 persistencia mínima/bóveda y H3 workspace completo definidos; Sink local por stdio autorizado; contrato DUG v388/NX-388m; piloto P004 pendiente; bootstrap del perfil persistente pendiente. Las generaciones y folios de sesiones anteriores son metadatos de auditoría.
 - **Repositorio propietario:** SeryMente/metodologia, rama main.
 - **OCP canónico:** frentes/mcp-metodologia/.
 - **Núcleo operativo único:** este archivo, MCP-METODOLOGIA.md.
@@ -737,3 +737,42 @@ EP-TASK-007 es independiente del gate físico de Fila 4 en EP-TASK-003. El guard
 - Controles EP gen3, MCP-OCP gen5 y Gobernanza gen17 permanecen sin cambios. FOL1 permanece PREPARADO_NO_ACTIVO; MCP-NORMATIVO DESACTIVADO.
 
 **Estado de documentación:** núcleo v0.1.30 y backlog v0.11 leídos y configurados. No se declara implementado código MCP-OCP-14/15/16/17, B2 upload/restore, captura GPS/IP, guardián, crypto-erasure, instalación, E2E ni aceptación 1.0.0.
+
+## 22. Reanudación MCP-OCP y reconciliación selectiva SINK:P004 · 2026-11-11
+
+**Versión del núcleo:** MCP-OCP-v0.1.31. **Backlog auxiliar:** LIST_VERSION=0.13. **Estado:** PORTACIÓN SELECTIVA PERSISTIDA · BUILD/PRUEBAS DE RAMA ACTUAL PENDIENTES.
+
+### 22.1 Titularidad, autoridad y fuente normativa
+
+- Control leído desde `main`: MCP-OCP `owned`, generación 6, titular `chatgpt-mcp-ocp-01a1cc39-7500-7504-92c7-cbea05ee1c59`, blob `76bd465909f5c68d623cc82dbf9c2467091cd98b`. La titularidad y su read-back permanecen en el control; esta sección no lo sustituye.
+- Se mantiene únicamente la autorización ya concedida: desarrollo local Sink/STDIO, reader/importer, pruebas, build, manifest, paquete, runbook y documentación dentro de `frentes/mcp-metodologia/`. No se amplía.
+- DUG Samantha v388/NX-388m; Metacanon 1.29; GOW 2.18; commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`; blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`. §ARR/`gow-sec-14` y el CNP P001/P004/P005/P038/P043 fueron contrastados.
+- P004 coincide en ID, título, ancla, texto, MDP y preponderancia A/0.8. `MCP-NORMATIVO=DESACTIVADO`. No se modificó DUG, ART-025, ART-027 ni IPZ.
+
+### 22.2 MCP-OCP-02 · base y portación
+
+- Rama de trabajo: `feat/mcp-ocp-p004-reconciled-20261111-7ab0c555`.
+- Portación inicial creada desde main `7ab0c555b774adc5b930aad700f101ab2660b79a`, commit `6dda16a2fe9a5173f21ccdaaa23ba1ac9f9721c4`.
+- Main avanzó con commits del frente EP; se incorporaron sin pérdida mediante merge de dos padres `85902f86a13cb809c38a9cf6b288b1ece08cccc9`, cuyo primer padre es main `07e51261ad6c08ef1327826bbe7af66815ce28bd` y segundo padre la portación. La comparación inmediata tras el merge indicó la rama AHEAD / 0 behind de ese main.
+- PR #27 permanece como fuente de lectura, no como base: su HEAD `5cc59b708c1d5894e7dbfd2a724504fdf5b92974` estaba divergido contra main (53 ahead / 100 behind; merge-base `f8a5880f1cbf432754157b5669d1f9e80177766f`). No se integró la historia completa.
+- Inventario REUSE/ADAPT/DROP/DEFER y rutas revisadas: [RECONCILIACION-20261111.md](piloto-sink/RECONCILIACION-20261111.md).
+- SDK `.NET 10.0.403` fijado en `global.json`. El piloto compila a `net10.0`, framework-dependent y sin RID. Disponibilidad del runtime Microsoft.NETCore.App 10.0.x x64 en Fila 4 = NO VERIFICADA.
+
+### 22.3 MCP-OCP-03/04/05 · pruebas y límites
+
+- Se portaron lector DUG, servidor MCP, Program, pin, monitor/readiness, ambos proyectos de prueba y harness de validación. El piloto expone únicamente `sink_principle(P004)` por STDIO; no crea listener público.
+- Los blobs de lector, servidor, Program, pin, tests P004, tests monitor y harness coinciden con los que respaldaron una ejecución local histórica en Windows/.NET SDK 10.0.403: restore/build PASS, 18/18 P004, 23/23 monitor/readiness y smoke STDIO/EOF PASS.
+- Esa igualdad permite identificar el mismo contenido fuente, pero **no demuestra que el build/test se haya ejecutado en esta rama**. En este entorno faltan `dotnet` y `pwsh`: `NEW_BRANCH_BUILD=NOT_RUN`, `NEW_BRANCH_TESTS=NOT_RUN`, `NEW_BRANCH_SMOKE=NOT_RUN`.
+- ZIP/manifest/sums/runbook binarios históricos no se copiaron ni se aceptan como actuales. Deben regenerarse después del build del commit reconciliado y someterse a extracción/read-back y smoke del binario exacto.
+- CI hospedado = `NOT_VERIFIED`; no se atribuye PASS/FAIL de código a jobs históricos sin runner, steps o logs observables.
+
+### 22.4 Dependencias y siguiente acción
+
+1. Ejecutar restore/build y ambas suites sobre la rama actual con SDK 10.0.403 y PowerShell 7.4+; producir recibo ligado al commit exacto.
+2. Ejecutar smoke STDIO/EOF; regenerar manifest, ZIP, checksums y runbook; cotejar paquete exacto por read-back.
+3. Mantener EP-TASK-003/005 como gates de host e instalación. No tocar host EP, B2, Vault, credenciales ni procesos persistentes.
+4. La aceptación IPZ E2E corresponde a Gobernanza; exige respuesta visible en contexto IPZ por el transporte real. El smoke de consola no la sustituye.
+5. Generalización SINK:P001–P043/lotes, panel 1.0.0 y MCP-OCP-14 H2/H3 siguen como trabajos posteriores o separados; MCP-OCP-14 continúa PROPOSED / NOT ACCEPTED.
+
+**Estado:** `MCP_OCP_02=SELECTIVE_PORT_PERSISTED`; `MCP_OCP_03=18_AND_23_TESTS_PRESENT_HISTORICAL_BLOB_EQUIVALENCE_REEXEC_PENDING`; `MCP_OCP_04=HARNESS_PRESENT_SMOKE_REEXEC_PENDING_IPZ_E2E_NOT_ACCEPTED`; `MCP_OCP_05=P004_IMPLEMENTATION_PORTED_BUILD_PACKAGE_PENDING`; `EP_INSTALL=BLOCKED_EP_GATES`; `MCP_NORMATIVO=DESACTIVADO`; `FOL1=PREPARADO_PENDIENTE_ACTIVACION_IPZ`.
+
