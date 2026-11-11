@@ -314,3 +314,16 @@ EP-TASK-003 sigue FAIL: C cifrado XTS-AES128/100 %, Protection Off y cero protec
 EP-TASK-005 permanece BLOQUEADA. No se instala un artefacto con pin v388 y documentación interna divergente sobre una base que ha quedado 12 commits detrás; no se instala sobre un checkout sin .git ni sobre W: descifrado. El runtime .NET 10 requerido tampoco está presente. La aceptación IPZ E2E exige invocación desde el contexto IPZ real y respuesta visible; no se ejecutó ni se simula.
 
 **Conclusión:** revalidación de destino y procedencia completada; instalación y aceptación no ejecutadas. Mantener el piloto aislado como candidato no aceptado.
+
+
+## Reconciliación de PR #28 contra main vigente · 2026-11-11
+
+**Corte:** `SeryMente/Metodologia/main` HEAD `b3c468ce7522dee34631d065011801d6a7efeb1f`; PR #28 conserva HEAD `86e58cff0e58a2452361ff8abe031917dc9a5b11`, base antigua `9ec698fbe27fd087c2cc9939b3afd604984e6154`, estado OPEN/DRAFT/NOT MERGED y `mergeable=false`.
+
+**Comparación actual:** `main...feat/mcp-ocp-p004-reconciled-20261111-7ab0c555` devuelve `diverged`, 52 commits ahead y 29 behind, con merge-base `9ec698fbe27fd087c2cc9939b3afd604984e6154`. La rama no está actualizada contra main actual. Los 29 archivos de PR #28 siguen siendo nuevos bajo `frentes/mcp-metodologia/`; la comparación no se utilizó para rebase/merge ni para escribir código.
+
+**Integridad de candidato:** se conservan las observaciones previas: pin DUG v388 frente a v389 actual; discrepancia de procedencia RUNBOOK vs SOURCE-PIN/manifest/recibo; el ZIP actual incluye RUNBOOK y no debe corregirse in situ; requiere regeneración completa del paquete, manifest, SHA256SUMS y recibo. Los tests 18/18 y 23/23 son históricos; CI alojada no verificada. .NET 10 no está instalado en perfil fila4. No instalar ni ejecutar el candidato.
+
+**Límite de autoridad:** EP recibe/verifica el handoff e instala tras sus gates; el código, fixtures, contratos y paquete son competencia del frente MCP-OCP según OEP §93. EP no rebasa ni modifica PR #28, no reconstruye P004 en nombre de MCP-OCP ni declara sus pruebas PASS.
+
+**Dependencias:** EP-TASK-003 PASS y artefacto MCP-OCP-05 consistente + MCP-OCP-03/04 PASS siguen siendo precondiciones de instalación. EP-TASK-005 permanece `pendiente/BLOCKED`; no extracción, instalación, DB, provisionamiento, STDIO ni IPZ E2E.
