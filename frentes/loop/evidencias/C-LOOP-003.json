@@ -139,17 +139,17 @@
       "frentes/loop/README.md": "8506f31e401901d1d03c707e26edcd056032c348",
       "frentes/loop/CONTROL-RESPONSABILIDAD.json": "715e49c4dddb34f4d5d3cdf688a3fe99e473c7a4"
     },
-    "main_head": {
-      "commit": "ef61ee7183bc3386a4222a50fe0b36feda1cd9cb",
-      "committed_at_utc": "2026-11-11T20:15:33Z",
-      "committed_at_local": "2026-11-11T14:15:33-06:00",
-      "route_age_floor": "0.0.0"
-    },
     "dug_path_commit": {
       "commit": "3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c",
       "committed_at_utc": "2026-11-10T16:56:10Z",
-      "age_at_readback": "1.21.19"
-    }
+      "age_at_readback": "1.3.19"
+    },
+    "previous_main_head_before_evidence_reconciliation": {
+      "commit": "ef61ee7183bc3386a4222a50fe0b36feda1cd9cb",
+      "committed_at_utc": "2026-11-11T20:15:33Z",
+      "committed_at_local": "2026-11-11T14:15:33-06:00"
+    },
+    "note": "El Blob SHA del propio archivo de evidencia no se lista para evitar autorreferencia. La revisión final del HEAD de main se obtiene del commit de GitHub posterior a esta actualización."
   },
   "groq_analysis": {
     "provider": "Groq",
