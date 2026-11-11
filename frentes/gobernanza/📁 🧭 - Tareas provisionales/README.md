@@ -487,3 +487,8 @@ Fuente vigente: DUG Samantha v389/NX-389m, commit `199bf03ade7aceeedcabc10eeb1c0
 
 PR #28 OPEN/DRAFT/NOT MERGED, DIVERGED 52/17; PR #27 OPEN/DRAFT/NOT MERGED, DIVERGED 53/168. EP-TASK-003 PARTIAL_FAIL; EP-TASK-005 BLOCKED. Sin merge, instalación ni E2E. FOL1 PREPARADO/NO ACTIVO; MCP-NORMATIVO DESACTIVADO.
 
+
+
+## Refresco de divergencia · 2026-11-11
+
+PR #28: 52 ahead / 20 behind; PR #27: 53 ahead / 171 behind; ambas OPEN/DRAFT/NOT MERGED/DIVERGED contra main `f2b6b1cd3626d9d0c30d0c7d47bf0f5769ebcbf2`. Este conteo sustituye los anteriores del snapshot de coordinación; las ramas no se modificaron.

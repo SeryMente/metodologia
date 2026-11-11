@@ -389,3 +389,14 @@ La preparación documental de GOV-TASK-007 está ejecutada; GOV-TASK-003 permane
 - **Hitos:** H1 candidato parcial/no aceptado; H2/H3 parciales; H4 diseño/inventario parcial; H5/H6 NOT_RUN; H7 diferido; H8 pendiente/no listo; H9 post-release.
 - **Límite:** no se cambian controles, DUG, IPZ nativa, MCP-OCP, OEP, EP host, Vault ni B2.
 
+
+
+### Refresco de comparación Git · PR #27/#28 · corte main f2b6b1cd3626d9d0c30d0c7d47bf0f5769ebcbf2 · 2026-11-11
+
+Esta comparación se ejecutó después de los commits documentales de Gobernanza (sin cambios en ramas MCP-OCP):
+
+- PR #28: OPEN/DRAFT/NOT MERGED; HEAD `86e58cff0e58a2452361ff8abe031917dc9a5b11`; DIVERGED, 52 ahead / 20 behind; merge-base `9ec698fbe27fd087c2cc9939b3afd604984e6154`.
+- PR #27: OPEN/DRAFT/NOT MERGED; HEAD `5cc59b708c1d5894e7dbfd2a724504fdf5b92974`; DIVERGED, 53 ahead / 171 behind; merge-base `f8a5880f1cbf432754157b5669d1f9e80177766f`.
+- Los deltas 52/17 y 53/168 del corte anterior pertenecen a main `a1ba2611fd1c218d8f7647f02f7adf5c1dbff8e8`; los commits posteriores movieron main, no las ramas. No existe merge ni cambio de aceptación.
+- DUG continúa v389/NX-389m, blob `bcd99e72113f444a045d7f1c91b4ad36865b8ea8`; control Gobernanza continúa generación 20, blob `02a9720dd0f4264d69a6d84f865fd97cca9a31f0`.
+
