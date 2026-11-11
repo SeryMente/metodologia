@@ -788,3 +788,16 @@ Pasaron parser PowerShell, carga XAML, contrato de geometría WPF/3D, escaneo cl
 ### Cierre del retest y siguiente gate
 
 Este ciclo acredita PASS de la suite sintética sobre la copia local no manifiestada. No acredita H10, accesibilidad, aceptación humana, integración main, TTL extendido, persistencia real, botones funcionales, VHDX, BitLocker, B2, Guardian ni crypto-erasure. No se abrió ni alteró Vault formal. Antes de construir: reconciliar línea base, corregir/integrar manifests/CLI/tests mediante TDD, resolver TTL con decisión, y cumplir P012/P013 para UX/seguridad/arquitectura.
+
+ 
+## Revalidación de PR #21 · 2026-11-11 · 14:54 America/Mexico_City
+
+Consulta read-only de GitHub: PR #21, “EP Vault PC 7: endurecimiento CLI/GUI, notas efímeras y KDF”.
+
+- Estado: `OPEN`; `draft=true`; `merged=false`; `mergeable=false`.
+- Última actualización reportada por GitHub: `2026-11-10T22:12:14Z`.
+- Archivos cambiados reportados: 34.
+- No se ejecutó merge, checkout, instalación ni aprobación.
+- La suite sintética local previamente registrada mantiene su alcance: no acredita H10, UX accesible, aceptación humana, integración a main, ni los mecanismos inertes de la GUI.
+
+**Siguiente gate:** reconciliar baseline/manifest/CLI/Core/XAML/tests con TDD y obtener revisión humana P012/P013 y aceptación H10 antes de cualquier merge o instalación.
