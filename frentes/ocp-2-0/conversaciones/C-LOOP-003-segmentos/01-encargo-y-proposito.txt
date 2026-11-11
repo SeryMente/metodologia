@@ -1,0 +1,9 @@
+Esta entrada es larga, documentala en persistencia documental, de frente loop, y revisaala po rque esta desordenada la concatene de varis fragmentos, analizala muy bien  con la llave api de groq, con  gpt oss 120 b, para que si se analzie bien y quede bien ordenada. el modelo debe de revisar para inferir la secuencia correcta, teniendo en cuenta la progresion narrativa. Leugo la documentas.Usa la misma llave groq
+
+Usa  esta entrada para poder entender mis necesidades. Primero leela, y documentala, luego seguimos hablando.&#x20;
+
+
+`SeryMente/metodologia/frentes/loop/`
+
+Bueno, este frente de trabajo va a servir para desarrollar una solución integral que preveo va a acelerar mucho el ritmo con el que desarrollo mis soluciones. Te voy a dar el contexto. Soy una persona que presumiblemente padece un déficit cognitivo que tiene que ver con la organización y la productividad. Fui diagnosticado hace como siete años y apenas durante el último año he estado construyendo una solucion. Un marco  de trabajo.&#x20;
+

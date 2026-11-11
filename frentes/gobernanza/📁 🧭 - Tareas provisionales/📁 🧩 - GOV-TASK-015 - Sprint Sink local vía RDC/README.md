@@ -923,3 +923,61 @@ H1 (código y pruebas con fixtures, sin fuentes privadas ni host) y H2 (persiste
 - Se actualiza únicamente la coordinación GOV-TASK-015. No se modifica código, paquete, PR, control, Vault, B2, host, workspace, IPZ nativa, DUG/GOW ni tareas propietarias EP/MCP-OCP.
 - No se acepta ningún hito por este asiento. Los estados PARCIAL, NOT_RUN, DIFERIDO y PENDIENTE se mantienen separados.
 - **Read-back requerido:** releer este bloque desde `main` y cotejar blob SHA del archivo antes de declarar persistencia verificada.
+
+
+---
+
+## Rebaseline operativo y fast path para el primer hito · 2026-11-11
+
+**Propósito:** reducir el tiempo hasta el primer resultado observable sin recortar criterios de integridad ni apropiarse de la ejecución de EP/MCP-OCP. Esta sección prevalece sobre fotografías anteriores de este README cuando exista contradicción de estado o prioridad; no cambia titulares, controles ni autorizaciones.
+
+### 1. Corte de evidencia reconciliado
+
+| Plano | Estado leído | Evidencia y límite |
+|---|---|---|
+| DUG/GOW | PASS · PIN VIGENTE | Samantha v388/NX-388m; DUG commit 3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c; blob 4db0ebadfd1e48b2bdec9236ba7f344921e4a865. §ARR estructurado y su ancla presentes. |
+| MCP-OCP · H1 | CANDIDATO LOCAL · NO ACEPTADO | El frente reporta build, 18 pruebas P004 + 23 monitor/readiness (41/41) y smoke STDIO/EOF PASS. Gobernanza no los reprodujo. |
+| PR #27 | OPEN · DRAFT · NO MERGED · DIVERGED | Head 5cc59b708c1d5894e7dbfd2a724504fdf5b92974; main al corte 446e69251335a51fe8d4c01495c3738b11d5808c; compare 53 ahead / 145 behind; merge-base f8a5880f1cbf432754157b5669d1f9e80177766f. La descripción de la PR declara una base anterior y 0 behind; no usar ese texto como estado vivo. |
+| Paquete P004 | PARCIAL · MANIFEST FAIL | ZIP SHA-256 cotejado: DE556FD547ACF2AB3946DF5AC2395A3993CB459B5E48F8E745A661A113A90783. SHA-256 del manifest actual UTF-8/LF: 844A682496023903AC366ACFF658EF7D9AD62E8D889C026FEEFF0D46831085E2; suma publicada: 85F70366144FD2109D9688F2DDB6E7819FF955B8F05697C2FC6966E04F0044B1. No coinciden. Además, manifest.current_branch_head señala f54ce14a..., no el head actual de la PR. Corregir desde MCP-OCP. |
+| EP-TASK-002 · H2 | PARCIAL · AVANCE MATERIAL | Vault v7: upload y descarga/read-back exactos de 3.352 B, SHA 3122C544012F989F0501BD0E82EA920A93F19A42034D83FA682BCC2290891E82, SSE-B2/AES256 PASS; descifrado HMAC/AES de copia aislada PASS, 30 propiedades y cinco nombres B2 presentes. Cross-host NOT_RUN; requiere segundo host físico y bootstrap independiente. No equivale a backup cifrado cliente del workspace. |
+| EP-TASK-003 · H1 local | PARTIAL_FAIL | Última lectura 2026-11-11 14:54: C: XTS-AES128/100 %, Protection Off y sin protectores; W: descifrado/0 %/sin protectores; checkout local sin .git; ubicación UNCLASSIFIED. |
+| EP-TASK-005 | BLOCKED | No instalación, importación, REGISTER ni runtime persistente. Espera EP-TASK-003 PASS, paquete exacto y pruebas MCP-OCP-03/04. |
+| MCP-OCP-14 / H2 | SCHEMAS/20 FIXTURES PASS · CONTRATO NO RATIFICADO | Cuatro schemas y 20 fixtures sintéticos PASS; no hay runtime, DB, IO ni checkpoint operativo. |
+| GOV E2E / IPZ | NOT_RUN | No hay instalación piloto ni recorrido IPZ → RDC → STDIO → respuesta visible. IPZ nativa no verificada; FOL1 preparado/no activo. |
+
+### 2. Camino crítico único para SINK:P004
+
+El primer hito es **una recuperación P004 visible desde el contexto IPZ real**, no el release completo 1.0.0.
+
+| Paso | Responsable | Acción cerrada | Salida verificable |
+|---:|---|---|---|
+| 1 | MCP-OCP | Crear una rama limpia desde main actual (446e692... al corte), revisar las 36 rutas de la candidata y portar selectivamente lo necesario. No integrar en bloque los 53 commits de la rama divergida. | Rama con base verificable, mapa REUSE/ADAPT/REWRITE/DROP y diff acotado. |
+| 2 | MCP-OCP | Congelar el corte vertical GOW:ARR → DUG v388 → SINK:P004, sin panel ni generalización de los 43 principios. Corregir manifest sobre bytes finales UTF-8/LF; actualizar el pin de rama/commit y regenerar ZIP/checksums si el contenido cambia. | Un candidato inmutable: commit, ZIP, manifest, SHA-256 y read-back coincidentes. |
+| 3 · paralelo con 1–2 | MCP-OCP | Ejecutar contrato/negativos con fixtures (MCP-OCP-03) y smoke STDIO/EOF (MCP-OCP-04). Recibos sobre el mismo código/commit/paquete entregado. | Pruebas PASS reproducibles, logs saneados, hashes y cierre limpio. |
+| 4 · paralelo con 1–3 | EP | Resolver gates de Fila 4 que habilitan instalación: identidad/ubicación, almacenamiento protegido, checkout Git íntegro y root protegido, conforme EP-TASK-003. | EP-TASK-003 PASS con evidencia y read-back. |
+| 5 | EP | Recibir paquete P004 probado, verificarlo sin reconstrucción silenciosa e instalarlo aislado según EP-TASK-005. | Instalación piloto, DUG v388 importado, readiness verificable y recibo/read-back. |
+| 6 | Gobernanza | Ejecutar GOV-TASK-003 desde contexto IPZ real; comprobar respuesta visible al modelo, contenido y procedencia. | SINK:P004_IPZ_E2E=PASS o fallo concreto con evidencia. |
+
+**No son prerequisitos de este primer hito:** cross-host de Vault/workspace, cifrado cliente del siguiente snapshot, runtime MCP-OCP-14, telemetría H4, Guardian/lease H5, crypto-erasure H6, credenciales JIT H7, panel WPF, generalización P001–P043 y matriz 43+8, FOL1 o H9. Esos trabajos conservan sus criterios para H2–H9 y para la aceptación final 1.0.0; no deben detener código/pruebas con fixtures ni preparación del piloto P004. EP-TASK-002/H2 continúa en paralelo y no sustituye EP-TASK-003 como gate de instalación.
+
+### 3. Reglas de ejecución para bajar fricción
+
+1. **Una salida por tarea:** declarar precondición, responsable, artefacto de salida y criterio PASS/FAIL/NOT_RUN. No dejar «revisar», «continuar» o «mejorar» como única instrucción.
+2. **Bloqueo local:** una dependencia ausente detiene solo la operación que la necesita. Mientras EP resuelve host, MCP-OCP continúa código no sensible, fixtures, build y pruebas remotas permitidas.
+3. **Una candidata final:** no crear variantes de ZIP/manifests sin necesidad. Congelar un commit, generar el paquete sobre ese commit y validar el mismo objeto que se instalará.
+4. **Reutilización por huella:** conservar recibos EP v7 y pruebas locales MCP si artefacto/commit siguen idénticos. Repetir únicamente lo afectado por cambio de código, contrato, fuente, entorno o paquete. Nunca reutilizar PASS de otro hash.
+5. **CI sin runner:** si GitHub Actions termina antes de asignar runner (runner_id=0, steps=[], sin logs/artefactos), clasificar NO_EJECUTADO_A_NIVEL_CODIGO; no reintentar a ciegas ni atribuirlo al código. Usar prueba local reproducible ligada al commit mientras se resuelve el runner.
+6. **Un informe por tarea:** el delta se registra en el núcleo propietario; Gobernanza resume en GOV-TASK-015. No duplicar recibos completos entre README.
+7. **Sin gates añadidos:** FOL1, panel, H2–H7, 43+8 y release 1.0.0 no son requisitos del piloto P004. No relajar seguridad, hashes, read-back, protección del host ni consentimiento.
+
+### 4. Instrucciones de handoff
+
+- **MCP-OCP entrega a Gobernanza:** URL/branch, base SHA, head SHA, diff revisado, SDK/TFM/RID, commits de código y pruebas, recibos/logs y hashes, ZIP, manifest y SHA-256, limitaciones CI/runner.
+- **EP entrega a Gobernanza:** PASS/FAIL EP-TASK-003 con evidencia de protección/checkout; después, recibo EP-TASK-005 con hash instalado, importación v388, readiness, smoke y rollback.
+- **Gobernanza entrega al operador:** resultado E2E, respuesta P004 y pins/hashes, casos positivos/negativos, eventos de frecuencia y limitaciones. Si la escritura nativa IPZ requiere modificación, no hacerla sin autorización expresa independiente.
+
+### 5. Regla de aceptación del primer hito
+
+H1 PASS requiere conjuntamente: rama/candidato reconciliado, manifest/ZIP íntegros, contrato y smoke reproducibles sobre el artefacto exacto, instalación/read-back EP y respuesta P004 visible desde IPZ real por RDC/STDIO con texto íntegro, ID/título, pin DUG, commit/blob y SHA-256. Build, 41 pruebas, smoke de consola o paquete aislado no bastan por separado.
+
+**Estado de este rebaseline:** instrucciones y secuencia optimizadas; no se declara ejecución técnica, instalación, escritura nativa IPZ ni aceptación E2E por esta actualización.

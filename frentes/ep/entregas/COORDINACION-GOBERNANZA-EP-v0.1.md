@@ -3017,3 +3017,43 @@ PUBLICADO → LEÍDO → RESPUESTA_INICIAL_REGISTRADA → PROCESADO → DOCUMENT
 - Investigar si la sesión formal de EP Vault permite completar un subconjunto no sensible del inventario de EP-TASK-006; no leer ni emitir valores.
 
 **Estado inicial:** EP-TASK-002 conserva PASS en respaldo B2 v7 y descifrado aislado HMAC/AES; recuperación cross-host NOT_RUN por no existir un segundo host físico en línea. Ninguna tarea se declara completada.
+
+ 
+## EP · cierre de ciclo: revalidación NCL, Vercel, BitLocker y gates de instalación · 2026-11-11 · 15:01:27 America/Mexico_City
+
+**UUIDv7 local:** `01a1cc61-2b4b-7be9-9fb6-caa2e392cd56` · trazabilidad local, no ID nativo ni folio global.
+
+### Resultado por frente
+
+- **EP-TASK-001 / NCL:** Profile 36 confirmado; Playwright Extension 0.4.0 y KeePassXC-Browser 1.10.4.1 presentes. Secure Preferences no aporta un campo `state` en la entrada consultada, así que la habilitación no se afirma. Cuatro host manifests KeePassXC presentes y proxy existe; origen KeePassXC-Browser permitido, Playwright origin excluido. KeePassXC no estaba ejecutándose. Registro NativeMessagingHosts no revalidado, asociación funcional no demostrada. KeeShare rotation y P012/P013 pendientes. No se tocaron perfiles ni se abrió Cora.
+- **EP-TASK-002 / B2:** mantiene PASS de B2 v7 y descifrado aislado HMAC/AES descritos en el ciclo anterior: 3.352 B, SHA exacto, SSE-B2/AES256 y 30 propiedades, cinco nombres B2 presentes. Cross-host NOT_RUN por falta de un segundo host físico conectado. No hubo nueva subida ni nueva prueba de descifrado durante este ciclo.
+- **EP-TASK-003 / EP-TASK-007:** consulta BitLocker read-only en `CENTRAL\MantenimientoRCI`: C FullyEncrypted/XTS-AES128/100 %, Protection Off, cero protectores; W FullyDecrypted/None/0 %, Protection Off, cero protectores. La consulta desde `CENTRAL\fila4` recibió Access Denied; no se elevó ni se eludió la restricción. Ubicación UNCLASSIFIED. Guardian, lease, trigger y crypto-erasure no ejecutados. Ningún volumen o archivo fue modificado.
+- **EP-TASK-004 / PR #21:** OPEN / DRAFT / NOT MERGED; mergeable=false; última actualización GitHub 2026-11-10T22:12:14Z; 34 archivos modificados. H10, revisión UX/seguridad y P012/P013 pendientes. Sin checkout, merge ni instalación.
+- **EP-TASK-005 / PR #27:** OPEN / DRAFT / NOT MERGED; mergeable=true en la consulta actual; última actualización GitHub 2026-11-10T23:19:23Z; 36 archivos modificados. Mergeability no equivale a aceptación ni permiso de instalación. Sigue bloqueada por EP-TASK-003 y aceptación contractual MCP-OCP-03/04/paquete P004.
+- **EP-TASK-006 / Vercel:** query actual `decrypt=false` del proyecto khora-web (ID `prj_hRN86BKITXYKTnNlp0ygVhaMwFfx`) devuelve 52 registros; coincidencia exacta 52/52 con el catálogo local por key/target/branch/type, sin altas/bajas/cambios de tipo. Estados por entrada: 9 STORED_READBACK_VERIFIED, 1 NOT_IMPORTED (GROQ_API_KEY), 42 BLOCKED_VALUE_NOT_RETRIEVABLE. El resumen del JSON afirma 10 read-backs y discrepa de los nueve registros individuales; la discrepancia queda abierta. No se consultaron valores Vercel ni se modificó el catálogo. EP Vault formal existe (3.352 B), pero la sesión quedó cerrada por TTL; ListVariables no se ejecutó.
+- **EP-TASK-003/005 y OEP:** el OEP v0.3.69 §135 conserva texto anterior a los hitos B2 v7/descifrado aislado; no se cambió por tratarse de objeto normativo. Para armonizar esa secuencia se requiere autorización expresa de escritura normativa conforme P005.
+
+### Compuertas y decisión
+
+No se marca ninguna tarea completada. Ningún gate de almacenamiento, aceptación visual, Native Messaging funcional, adaptador, instalación local, merge o recuperación cross-host se promueve por inferencia. Continúan bloqueados los cambios de seguridad/UX que requieren revisión local P012/P013. La consulta de estado de Vault devolvió ENCRYPTED_FILE_PRESENT/3352 B/sessionActive=False; no se reabrió ni se pidió la contraseña.
+
+### Objetos modificados y read-back exacto
+
+| Objeto | Commit | Blob cotejado |
+|---|---|---|
+| Apertura DTC del ciclo actual | b12da8ade0eab891c9aef6975843968005c87b3f | 140a413fb37be3ca6dff971d75cc0c427aa897ef |
+| EP-TASK-001 | 33ef4fad2544fa78b62b70452ac4c0fb271658d3 | 07e555621c42cf8127c97fc01f6a7e2140ab3470 |
+| EP-TASK-003 | 837ae2757855805c3faef7881cf626bdb996f962 | f3cd910533990b513d10db4e0a7228290724ed31 |
+| EP-TASK-004 | c78a0b7c60608d1bf7facf8a607ef2768f52136e | 48f780e5c0422674000c5392791428cf9137b10c |
+| EP-TASK-005 | 1947f32178e937231dcec2e4d382054a94994ad9 | 6359451b8f2147f80c848b3a22abe7722f05b645 |
+| EP-TASK-006 | a1c326836f24063b159d16851c0f858de5e71dbd | b083b17554fcdc712cab8b216cdbc32206631626 |
+| EP-TASK-007 | 2b1f7859d855e451baec34475130812cd3bda128 | a49baf1f36b736cfffec4f8ce576b57cde652684 |
+| Índice de tareas EP | 1db86e43019bea4e538e71db55302bc4ddc94ada | f87e386e619c1f536d819c05d5ad4f06c0432b0e |
+
+Cada objeto de la tabla fue leído de vuelta desde `main`; el contenido exacto coincide con el escrito y el blob coincide con el resultado del commit. OEP v0.3.69 no fue escrito.
+
+### Estado terminal del ciclo
+
+`ABIERTO → FUENTES_ADQUIRIDAS → PREFLIGHT_READ_ONLY → HALLAZGOS_RECONCILIADOS → DOCUMENTADO → READBACK_VERIFICADO → CERRADO`.
+
+**Conclusión:** avance documental y revalidación técnica parcial PASS; gates físicos, aceptación humana, instalación y aceptación integral permanecen pendientes. No se realizaron cambios de host o producto.

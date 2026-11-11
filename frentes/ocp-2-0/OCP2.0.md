@@ -1,9 +1,9 @@
-# LOOP · Objeto Canónico de Persistencia
+# OCP2.0 · Objeto Canónico de Persistencia
 
-**Identidad:** Loop  
-**Versión del núcleo:** LOOP-v0.1.0  
+**Identidad:** OCP2.0  
+**Versión del núcleo:** OCP2.0-v0.1.0  
 **Repositorio:** SeryMente/metodologia · rama `main`  
-**Ruta OCP:** `frentes/loop/`  
+**Ruta OCP:** `frentes/ocp-2-0/`  
 **Control:** [CONTROL-RESPONSABILIDAD.json](CONTROL-RESPONSABILIDAD.json)  
 **Propósito original:** [C-LOOP-001](conversaciones/C-LOOP-001-dialogo.jsonl)  
 **Estado:** FT creado; definición inicial y alcance documentados. El motor de ejecución recurrente aún no está implementado.
@@ -12,10 +12,10 @@
 
 ## 1. Control e identidad
 
-- Nombre del FT: **Loop**.
-- Identidad canónica: `Loop`; slug: `loop`.
-- OCP único: `frentes/loop/`.
-- Núcleo operativo único: `LOOP.md`.
+- Nombre del FT: **OCP2.0**.
+- Identidad canónica: `OCP2.0`; slug: `ocp-2-0`.
+- OCP único: `frentes/ocp-2-0/`.
+- Núcleo operativo único: `OCP2.0.md`.
 - Control de responsabilidad: `CONTROL-RESPONSABILIDAD.json`.
 - Titular operativo inicial: `chatgpt-loop-01a1cb67-173a-785c-a7c4-98c377ce1960` (alias operacional; ID nativo de ChatGPT no expuesto).
 - UUIDv7 local: `01a1cb67-173a-785c-a7c4-98c377ce1960`.
@@ -85,14 +85,14 @@ La aspiración de perfeccionamiento potencialmente indefinido no elimina los lí
 
 Precedencia: políticas y límites obligatorios → DUG y controles canónicos → autorización del operador → instrucciones verbatim y propósito del FT → núcleo/backlog → propuestas técnicas.
 
-Loop coordina el método de mejora; no adquiere autoridad sobre el código, datos, credenciales o controles de otros FT. Cada acción sobre Harmonia, Signal Interpreter u otro proyecto debe seguir el OCP, control y autorización de ese proyecto.
+OCP2.0 coordina el método de mejora; no adquiere autoridad sobre el código, datos, credenciales o controles de otros FT. Cada acción sobre Harmonia, Signal Interpreter u otro proyecto debe seguir el OCP, control y autorización de ese proyecto.
 
 No se modifican las normas generales desde este FT. Toda propuesta transversal se remite a Metacanon/Gobernanza para su procedimiento correspondiente.
 
 ## 7. Perfil de entorno
 
 - Repositorio canónico: `SeryMente/metodologia`, rama `main`.
-- OCP: `frentes/loop/`.
+- OCP: `frentes/ocp-2-0/`.
 - Persistencia principal: Git; los originales se conservan en este OCP.
 - Herramientas y hosts se seleccionan por proyecto y por ciclo; no se presupone una conexión RDC, CLI, API o agente específico.
 - Secretos y credenciales nunca se persisten en Git.
@@ -183,7 +183,7 @@ Al retomar Loop:
 
 ## 13. Persistencia y revisión
 
-- Fuente canónica: `SeryMente/metodologia/main/frentes/loop/`.
+- Fuente canónica: `SeryMente/metodologia/main/frentes/ocp-2-0/`.
 - Un solo núcleo operativo y un solo control de responsabilidad.
 - Originales literales separados de interpretaciones y crónica.
 - Cada ciclo sustantivo añade crónica y evidencia; no reescribe historia para aparentar continuidad.
@@ -208,7 +208,7 @@ El 2026-11-11 el operador entregó una entrada extensa para reconstruir la progr
 - Se agrupan OCP, LISA, RAP, PRIUS, entorno persistente, observador núcleo, adaptadores de observabilidad, objetivo visible y orquestación multiagente. Sus responsabilidades se delimitan por separado en la crónica §12.
 - Prioridad táctica reportada: piloto RAP + CrewAI/alternativa y definición del taller multiagente; el benchmarking y la implementación siguen pendientes.
 - La revisión secundaria con GPT-OSS 120B vía Groq se ejecutó usando la bóveda EP; la respuesta se conserva en [evidencias/C-LOOP-002-GPT-OSS-120B-review.md](evidencias/C-LOOP-002-GPT-OSS-120B-review.md). Se utilizó un mapa estructurado, no el dictado verbatim completo; la crítica y las correcciones están en la crónica §12. La clave no se expuso ni se guardó.
-- Los requisitos de la crónica son una interpretación de trabajo, no un canon ratificado. El motor de Loop permanece sin implementar.
+- Los requisitos de la crónica son una interpretación de trabajo, no un canon ratificado. El motor de OCP2.0 permanece sin implementar.
 
 ## 15. Entrada C-LOOP-003 · fuente literal y análisis externo completados
 
@@ -224,3 +224,8 @@ El operador aportó el archivo `Texto pegado(20261111-194556).txt`. Se conserva 
 - La salida GPT-OSS contiene hipótesis y errores; no se adopta sin filtro. La crónica distingue requisitos expresos, inferencias y propuestas pendientes.
 - No se modificó el control de responsabilidad ni se asignaron folios globales. FOL1 sigue PREPARADO/NO ACTIVO.
 
+
+
+## 16. Renombramiento y continuidad de la fuente
+
+El frente fue renombrado de **Loop** a **OCP2.0**. La ruta canónica vigente es `frentes/ocp-2-0/`; la ruta anterior `frentes/loop/` queda como antecedente de migración y no debe recrearse. El núcleo único es `OCP2.0.md`. Los identificadores históricos `C-LOOP-*` y el contenido verbatim se conservan sin renumeración ni reescritura. La segmentación C-LOOP-003 es derivada literal vinculada a la fuente original. La titularidad, UUIDv7 local y generación se conservan; no hubo transferencia de responsabilidad.

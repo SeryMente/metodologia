@@ -436,3 +436,23 @@ No sustituir los informes individuales por el resumen del registro ni por GOV-TA
 ## Revalidación semiviva GOV-TASK-015 · 2026-11-11
 
 El informe individual fue persistido y leído de vuelta: [GOV-TASK-015 · Sprint SINK-P004](./%F0%9F%93%81%20%F0%9F%A7%AD%20-%20Tareas%20provisionales/%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-015%20-%20Sprint%20Sink%20local%20v%C3%ADa%20RDC/README.md). Estado: EN_CURSO. Existe candidata PR #27 OPEN/DRAFT, pero compare actual DIVERGED (corte, main SHA y ahead/behind en el informe individual); el workflow no expone pasos/logs ni artefactos; ZIP SHA-256 PASS y checksum manifest FAIL; EP-TASK-003 sigue PARTIAL_FAIL y EP-TASK-005 bloqueada. El pin DUG v388 y GOW:ARR estructurado fueron cotejados. No hay instalación ni E2E aceptado.
+
+
+---
+
+## Fast path vigente · primer hito OCP MCP 1.0 · 2026-11-11
+
+**Objetivo inmediato:** conseguir SINK:P004 visible desde IPZ real por RDC/STDIO; no esperar al release completo.
+
+| Carril | Responsable | Siguiente salida | Bloquea H1 |
+|---|---|---|---|
+| Rama/código P004 y pruebas | MCP-OCP | Rama limpia desde main, port selectivo, un candidato inmutable, manifest/ZIP íntegros, recibos build/41 pruebas/smoke ligados al mismo commit. | Sí |
+| Host Fila 4 e instalación | EP | EP-TASK-003 PASS; después EP-TASK-005 con paquete verificado y read-back. | Sí, solo instalación piloto |
+| Contrato e IPZ | Gobernanza | GOV-TASK-008 contrato P004; GOV-TASK-007 candidato IPZ medido y compatible con schema real. | Sí para prueba IPZ |
+| E2E y aceptación | Gobernanza | GOV-TASK-003: respuesta P004 visible y hash/pin cotejados. | Criterio H1 PASS |
+| Persistencia Vault/workspace | EP + MCP-OCP + GOV-TASK-014 | Cross-host Vault, cifrado cliente workspace, contrato MCP-OCP-14 y restore funcional, cada uno por separado. | No bloquea H1; requerido H2/H3/release |
+| 43 MDP + panel | Gobernanza + MCP-OCP | GOV-TASK-001 matriz 43+8; MCP-OCP-13 panel. | No bloquea P004; sí release 1.0.0 |
+
+**Corte:** main 446e69251335a51fe8d4c01495c3738b11d5808c; PR #27 head 5cc59b708c1d5894e7dbfd2a724504fdf5b92974, OPEN/DRAFT, compare DIVERGED 53 ahead / 145 behind. EP-TASK-002 v7 upload/read-back y descifrado aislado PASS; cross-host NOT_RUN. EP-TASK-003 PARTIAL_FAIL y EP-TASK-005 BLOCKED. Sin instalación ni E2E; H1 NO ACEPTADO.
+
+**Regla:** avanzar por entregable observable; cada gate bloquea solo su etapa; reutilizar pruebas/recibos si las huellas no cambian; no crear tareas, folios, ramas o paquetes nuevos si un artefacto existente puede reconciliarse. Este índice no modifica tareas/controles EP o MCP-OCP.

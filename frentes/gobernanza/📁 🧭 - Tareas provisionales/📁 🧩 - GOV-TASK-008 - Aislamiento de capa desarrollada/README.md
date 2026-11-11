@@ -148,3 +148,33 @@ La primera E2E debe probar el recorrido que usará el modelo: IPZ → RDC autori
 
 ## Reporte individual obligatorio de resolución/cierre
 Al resolver, completar, bloquear o cancelar esta tarea, registrar su propio informe en este README usando [la plantilla común](../../../PLANTILLA-REPORTE-CIERRE-TAREA.md). Explicar objetivo y resultado, cómo se solucionó, decisiones verificables, cambios/rutas/commits/blobs/SHA, criterios y pruebas ejecutadas con logs/artefactos, read-back, bloqueantes/dependencias, preocupaciones/riesgos, pendientes, rollback y aceptación. Declarar NINGUNO_VERIFICADO o NO_VERIFICADO donde corresponda; nunca ocultar campos. No marcar completada sin criterios PASS, evidencia y read-back. Actualizar el índice padre después de verificar este informe y entregar al operador el enlace individual y síntesis de solución, evidencia, bloqueantes y preocupaciones. No incluir secretos ni datos sensibles.
+
+
+## Contrato mínimo verificable · corte vertical P004 · 2026-11-11
+
+Para acelerar H1, separar el contrato individual P004 de catálogo completo, lotes y manifiesto global.
+
+### Capa 1 · inventario
+
+El catálogo presenta 43 entradas con ID, título canónico y MDP, más identidad/pin DUG. Excluye normative_text y texto desarrollado. Esta minimización es de aplicación, no una frontera criptográfica frente a quien ya tiene acceso al HTML DUG; mantener el repositorio privado.
+
+### Capa 2 · recuperación P004
+
+SINK:P004 devuelve un solo principio. MCP-OCP define nombre real de herramienta y schema; Gobernanza no inventa método/argumentos. El resultado permite verificar ID/título canónicos, texto desarrollado íntegro, DUG Samantha v388/NX-388m, firma, commit/blob y SHA-256 del texto con representación documentada. No afirma aplicación automática del principio.
+
+### Fallo cerrado y frecuencia
+
+- ID fuera de P001..P043, fuente no importada/obsoleta, blob distinto, texto ausente o SHA discrepante: no entregar texto parcial ni reemplazo; resultado no verificado.
+- Servidor/STDIO/RDC no disponible: no afirmar recuperación; no usar memoria ni MDP como fallback normativo.
+- Solo recuperación completa y satisfactoria incrementa frecuencia. Fallos no incrementan.
+- Para H1 basta P004 y un negativo representativo; MCP-OCP-03 cubre fuente ausente, stale pin, blob alterado y SHA discrepante mediante fixtures.
+
+### Fuera del corte P004
+
+Lotes, orden, hash global de manifiesto y telemetría de 43 principios se verifican después de P004 PASS. No condicionar H1 a batch, 43+8, panel WPF ni release 1.0.0. El manifiesto de lote no aplica a recuperación individual; procedencia y SHA individual sí son obligatorios desde P004.
+
+### Evidencia mínima de aceptación
+
+Respuesta capturada por camino real y cotejada contra texto DUG; identidad/pin DUG; ID/título; SHA del principio; un evento de frecuencia; un negativo que no incrementa; read-back del informe. MCP-OCP acredita prueba técnica/paquete; EP acredita instalación; Gobernanza acepta semántica y E2E.
+
+**Estado:** contrato mínimo P004 aclarado; no hay aceptación técnica ni E2E por esta actualización.

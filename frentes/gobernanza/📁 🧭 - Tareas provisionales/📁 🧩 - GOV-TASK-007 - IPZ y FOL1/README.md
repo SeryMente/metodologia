@@ -142,3 +142,38 @@ El programa completo es OCP MCP 1.0; SINK:P004 es el primer hito. Priorizar GOW:
 
 ## Reporte individual obligatorio de resolución/cierre
 Al resolver, completar, bloquear o cancelar esta tarea, registrar su propio informe en este README usando [la plantilla común](../../../PLANTILLA-REPORTE-CIERRE-TAREA.md). Explicar objetivo y resultado, cómo se solucionó, decisiones verificables, cambios/rutas/commits/blobs/SHA, criterios y pruebas ejecutadas con logs/artefactos, read-back, bloqueantes/dependencias, preocupaciones/riesgos, pendientes, rollback y aceptación. Declarar NINGUNO_VERIFICADO o NO_VERIFICADO donde corresponda; nunca ocultar campos. No marcar completada sin criterios PASS, evidencia y read-back. Actualizar el índice padre después de verificar este informe y entregar al operador el enlace individual y síntesis de solución, evidencia, bloqueantes y preocupaciones. No incluir secretos ni datos sensibles.
+
+
+## Fast path por etapas · IPZ piloto P004 y FOL1 separado · 2026-11-11
+
+Separar preparación de IPZ, instalación nativa y corte FOL1 para que el trabajo documental no espere al host.
+
+### Etapa A · candidato IPZ preparado ahora
+
+1. Recuperar texto exacto IPZ v0.7 desde fuente autorizada y conservarlo intacto como baseline.
+2. Crear matriz de cobertura: referencias GOW:ARR/DUG; admisión/frente/titularidad/exclusividad; seis estados PROPUESTO/AUTORIZADO/INTENTADO/EJECUTADO/VERIFICADO/ACEPTADO; A/B literal y trazable; UUIDv7 local distinto del ID nativo; integridad/seguridad/privacidad; eficiencia/no repetición.
+3. Preparar candidato mínimo GOW:ARR → DUG → MDP → SINK:P004. No incluir 43 textos desarrollados, descripción de producto 1.0.0 ni procedimiento FOL1.
+4. Mientras MCP-OCP no entregue nombre real y schema de herramienta, dejar solo esa invocación como punto parametrizable. No inventar tool name, argumentos o respuesta.
+5. Medir texto exacto en UTF-16 code units y puntos de código; debe ser estrictamente menor de 1.500 en cada unidad requerida. Registrar ambos conteos y SHA del texto.
+6. Revisar cobertura: ninguna salvaguarda de v0.7 desaparece. Si no cabe, priorizar referencias canónicas verificables antes que suprimir controles.
+
+### Etapa B · congelación tras contrato MCP
+
+Al recibir MCP-OCP-03/04 y contrato P004, sustituir el punto parametrizable por invocación real; comprobar nombre/argumentos publicados y respuesta con texto/pin/hash. Guardar una sola candidata con conteo/SHA reproducibles. No iterar si contrato/huella no cambió.
+
+### Etapa C · instalación nativa y read-back
+
+No editar Instrucciones Personalizadas nativas por esta actualización. Escritura requiere autorización expresa y capacidad de leer el campo real. Tras autorización, recuperar contenido escrito, cotejarlo, repetir conteo y comprobar truncamiento/normalización. Sin read-back: IPZ_NATIVE=NOT_VERIFIED.
+
+### Etapa D · FOL1
+
+FOL1 permanece PREPARADO_PENDIENTE_ACTIVACION_IPZ. Solo evaluar tras IPZ nativa instalada y leída de vuelta, y tras verificar su registro/compuertas propias. No es requisito P004 y no debe retrasar el piloto. No asignar folios globales/OCP por anticipado.
+
+| Salida | Criterio |
+|---|---|
+| Matriz de cobertura v0.7 | Todas las salvaguardas mapeadas, sin omisiones. |
+| Candidato IPZ | Texto exacto, SHA, conteos UTF-16/code points, invocación compatible con schema MCP. |
+| Instalación nativa | Solo tras autorización; read-back idéntico o diferencias explicadas. |
+| FOL1 | Gate independiente; preparado hasta probar IPZ instalada y requisitos propios. |
+
+GOV-TASK-007 puede completar su preparación documental antes de que EP-TASK-003 habilite Fila 4; no declarar instalación ni activación por esa preparación.
