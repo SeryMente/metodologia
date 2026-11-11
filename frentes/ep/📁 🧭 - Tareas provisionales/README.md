@@ -395,3 +395,45 @@ Informe individual de EP-TASK-002 actualizado y leído de vuelta: commit 3dd266d
 - **EP-TASK-007:** inventario read-only parcial; Guardian/lease/crypto-erasure no implementados. **EP-TASK-001:** pendiente.
 
 **Orden:** Backblaze fue antepuesto y ejecutado. Informes/índice y retroalimentación interfrentes están reconciliados; habilitado reanudar el desarrollo sintético P004 dentro del ciclo MCP-OCP local 13 ya abierto. Instalación/aceptación EP continúa detrás de sus gates. No declarar descifrado Vault ni restore cross-host.
+
+---
+
+## Método local de planificación técnica incorporado al registro EP · 2026-11-11
+
+**Procedencia:** piloto experimental [EP-App v1.1.0 — plan de implementación (Writing Plans)](https://github.com/SeryMente/metodologia/blob/main/docs/superpowers/plans/2026-11-11-ep-app-persistent-environment.md), commit bea10756135a0f657bf5112374f457027cb02143, blob 95b068e27e325a9d0341a864855bbdcf5c8c84bc.
+
+**Alcance:** adaptación local al contenedor provisional EP por instrucción directa del operador. No crea una metodología universal, otro OCP, una bitácora paralela ni autoridad independiente. OEP y DUG prevalecen; cada README de tarea sigue siendo el único núcleo de estado/crónica/aceptación de esa tarea. Este método solo organiza la ejecución futura.
+
+### Contrato mínimo para planes de trabajo sustantivos
+
+Cuando una tarea requiera varias etapas, cambios de código/host, seguridad, integración o aceptación de terceros, su plan debe contener:
+
+1. **Objetivo y alcance:** resultado verificable, exclusiones, condiciones que no se modifican y qué no autoriza el plan.
+2. **Línea base:** repositorio, rama, HEAD/commit, versión, archivos, Git blobs/manifest y entorno exacto. Reportes del operador, resultados de otro agente y código inspeccionado se etiquetan por separado.
+3. **Trazabilidad:** requisito/decisión de origen → archivo, función, interfaz o recurso → prueba → resultado esperado → evidencia de cierre.
+4. **Descomposición ejecutable:** pasos pequeños en orden, indicando Read/Create/Modify/Test, precondiciones, entradas, salidas, interfaces y dependencias. No dejar una tarea amplia como una sola instrucción ambigua.
+5. **Test-first y Review Focus:** pruebas de caracterización, casos positivos/negativos, límites, datos inconsistentes, regresión y salida/exit code esperado. Los fixtures son sintéticos y aislados salvo autorización específica.
+6. **Composición de capacidades y gates:** no confundir selector/toggle visual con permiso/capacidad real; cada acción tiene precondiciones propias, se revalidan al ejecutarla y falla cerrada ante evidencia ausente. No usar un gate común más restrictivo que lo necesario si bloquea un primer ciclo legítimo.
+7. **Revisión de discrepancias:** señalar contradicciones con los núcleos, OEP o código; registrar alternativas y dejar la decisión pendiente cuando exceda el mandato. Nunca reconciliar en silencio.
+8. **Aceptación diferenciada:** verificar requisitos técnicos por pruebas reproducibles y validar el producto en su contexto real; aceptación humana/UI/seguridad no se infiere de tests sintéticos.
+9. **Entrega recuperable:** manifiesto, SHA, read-back exacto, logs saneados, commit aislado, rollback y reporte de límites/bloqueos. La creación del plan no autoriza ejecución, instalación, despliegue, merge ni aceptación.
+
+### Distribución a las siete tareas
+
+| Tarea | Enfoque específico incorporado |
+|---|---|
+| EP-TASK-001 | Línea base Chrome/KeePassXC/Native Messaging/Playwright; delegación por pestaña; preservación de sesiones; control humano y smoke Cora read-only. |
+| EP-TASK-002 | Estados separados de snapshot/cifrado/upload/read-back/restore; idempotencia; restore same-host vs cross-host; bootstrap independiente; excepción de ZIP sin cifrado cliente. |
+| EP-TASK-003 | Preflight Fila 4/ubicación; manifiesto estable; BitLocker verificable; copia/hash; corte de ruta con rollback; dead-man según CECEQ/LOC-OTHER. |
+| EP-TASK-004 | Línea base de ramas/versiones, TTL conflictivo, clean-room, gates independientes por acción, fail-closed, pruebas y H10. |
+| EP-TASK-005 | Proveniencia de paquete, destino protegido, importación/pins, STDIO, provisionamiento interactivo, panel, recibo y rollback. |
+| EP-TASK-006 | Inventario por namespace, adaptadores con read-back, entrega just-in-time, idempotencia, rotación/revocación y cobertura cuantificada. |
+| EP-TASK-007 | Estados de sesión, lease, triggers, precedencia checkpoint/borrado, aislamiento de crypto-erasure y pruebas de fallos. |
+
+### Mantenimiento y economía
+
+- No crear un plan separado para una modificación trivial o de riesgo bajo: aplicar P043 y evitar duplicar documentación.
+- Para un cambio sustantivo, el plan se vincula desde el núcleo de la tarea, y su resultado vuelve a ese mismo núcleo como crónica acumulativa.
+- Cada ciclo revalida los archivos/commits actuales antes de escribir; los cambios son append-only salvo rectificación explícita; el índice se actualiza después de leer de vuelta los núcleos modificados.
+- Los estados, prioridades, dependencias, titulares, autorizaciones y criterios ya existentes no cambian por incorporar este método.
+- Todo plan puede quedar DRAFT/NO_AUTORIZA_IMPLEMENTACIÓN hasta que se cumplan sus gates propios.
