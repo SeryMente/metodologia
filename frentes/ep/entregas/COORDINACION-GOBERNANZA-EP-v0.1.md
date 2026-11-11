@@ -2737,3 +2737,42 @@ Se actualizan documentalmente el índice y los siete núcleos EP-TASK-001–007.
 Se preservan estados y dependencias; no se declaran tareas completadas, no se ejecuta código ni operaciones de host, no se accede a secretos, no se modifica DUG/GOW/control ni se instala/mergea ningún producto. El TTL de 3.600 s del piloto no se convierte automáticamente en requisito: contradice los intervalos y valor predeterminado registrados en EP-TASK-004; queda como discrepancia pendiente de decisión expresa. También se debe reconciliar la rama/base del producto y el requisito clean-room de la UI antes de cualquier implementación.
 
 **Acción inmediata:** registrar esta respuesta inicial; a continuación reconciliar cada núcleo, añadir la planificación apropiada sin duplicar su historia y verificar cada escritura por lectura de vuelta y SHA de Git. Al cierre se actualizarán índice, OEP (solo en lo pertinente) y este DTC.
+
+
+---
+
+## EP · cierre de ciclo: integración del piloto Writing Plans en las siete tareas · 2026-11-11
+
+**Ciclo local UUIDv7:** 01a1cb5c-18d5-7a54-a521-5f024bb22700 · sin folio global/FOL1.
+
+### Resultado
+
+Se consumió el plan experimental independiente de EP-App v1.1.0 y se integraron sus prácticas útiles en EP-TASK-001–007 y en el índice provisional. Se añadió el resumen de estado al OEP §132 y se elevó su versión documental a v0.3.66. El plan experimental permanece separado y no autoriza ejecución.
+
+### Cambios documentales y lectura de vuelta
+
+| Objeto | Commit | Git blob de read-back |
+|---|---|---|
+| EP-TASK-001 | 59a319d550b7e7dbc778debd3a533ca539159ead | 45cbfd662944e165ff269f3636832155f5392137 |
+| EP-TASK-002 | 19f9044945e080211deaef10cc66b41656ba1572 | 79f17111f97dd8ba1be0724148c1a0c9f4c440bf |
+| EP-TASK-003 | b8a2e430b70dde4d5e52a3e459216d0d2e851e87 | f90c7025a440045b87a753f4faadad196682248d |
+| EP-TASK-004 | a5a4a4d53dec61627e8bf45b78620a7e92fa9b00 | 50f2e1a702f709e7a834bbc9d10eaa41d4da69ac |
+| EP-TASK-005 | b301dd70888801caee6393b9501ea783a82079e6 | 1c71389b04590dec7e586628357dec3643b9e5df |
+| EP-TASK-006 | 6bcd944a27fc2db64ac25b3b4ed21dbf8dbf1f83 | 7ab4f3c2fa08876d8512fd60ec8b82b87c61704b |
+| EP-TASK-007 | 295362de7046656a81099b8d46e6286c28ba1013 | 0f54dc81ea28d925558a1f7163fa208f27e5827d |
+| Índice provisional | 2f002ada41d74aa16b989016ef5a07329f0950a2 | 627f89a5445357134d45fc51dde9565628a68469 |
+| OEP v0.3.66 / §132 | f4d8c8a952a3b70d8469c6155e4b26f38d14baa1 | a14b9aaa53c0a091610c9c503939108c2fec871d |
+
+**Verificación:** EP-TASK-001/002/003/005/006/007 e índice devolvieron contenido idéntico al payload escrito; EP-TASK-004 se cotejó reconstruyendo el contenido esperado desde el padre del commit más el bloque añadido (igualdad exacta); OEP se leyó desde el SHA del commit porque el endpoint main devolvió temporalmente una vista anterior cacheada. El árbol de main apunta al blob nuevo y el fetch por commit confirma v0.3.66, §132 y contenido exacto.
+
+### Reconciliaciones y límites
+
+- Estados, prioridades, dependencias y criterios de aceptación preexistentes se conservaron; no se declaró tarea completada.
+- TTL 3.600 s permanece PROPUESTA/PENDIENTE_DE_DECISIÓN; no se altera el default de 5 min ni el conjunto documentado de 15 s a 15 min.
+- La línea base de EP-App y la candidata v1.0.0/v1.0.1 requieren reconciliación antes de construir; clean-room y P012/P013 siguen vigentes.
+- Los gates de guardar/cerrar y restaurar quedan separados para revisión; ningún botón/operación real se habilita por este documento.
+- No se modificó código de producto, ramas de producto, Vault formal, secretos, B2, host, volúmenes, DUG, GOW ni CONTROL-RESPONSABILIDAD.json.
+
+### Siguiente estado
+
+Los núcleos contienen planes por tarea con línea base, pasos, interfaces/recursos, tests, Review Focus, gates, aceptación, rollback y read-back. La implementación sigue sujeta a las prioridades y compuertas de cada tarea. El ciclo queda PUBLICADO → LEÍDO → RESPUESTA_INICIAL_REGISTRADA → PROCESADO → DOCUMENTADO_AL_CIERRE → VERIFICADO_READBACK tras cotejar este cierre.
