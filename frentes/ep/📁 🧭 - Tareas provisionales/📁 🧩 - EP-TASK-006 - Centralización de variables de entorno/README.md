@@ -375,3 +375,30 @@ RDC se autentica al inicio de la sesión. Hacer inventario de mecanismos de aute
 
 ## Reporte individual obligatorio por tarea
 Al resolver esta tarea, el responsable debe agregar el informe individual en este mismo núcleo siguiendo [la plantilla común](../../../PLANTILLA-REPORTE-CIERRE-TAREA.md), completar todos sus campos y actualizar el índice padre solo después del read-back. No marcar como completada sin criterios PASS, evidencia ejecutada, integridad verificada y aceptación exigible. Si termina parcial/bloqueada, dejar igualmente el informe con bloqueantes, preocupaciones, riesgos y condición objetiva de desbloqueo. Informar al operador con enlace al informe. Esta instrucción no altera titularidad, generación, permisos ni controles.
+
+
+## Plan de centralización por contratos e invariantes · 2026-11-11
+
+**Estado:** EP Vault continúa como fuente central prevista; la cobertura organizacional y los adaptadores siguen incompletos. Este plan no implica que todos los valores estén recuperados ni autoriza extraer secretos masivamente.
+
+### Secuencia
+
+1. **Cerrar el inventario de fuentes.** Construir una matriz por proveedor, organización/proyecto, entorno, rama, nombre, tipo (sensible/plain), estado de lectura, procedencia, fecha y evidencia. Conservar como entradas distintas las variables homónimas con ámbitos diferentes. Marcar explícitamente fuentes no consultadas y cobertura no verificada.
+2. **Definir el modelo canónico.** Cada registro debe resolver namespace/proyecto/proveedor/entorno/rama y el identificador estable de la variable. Resolver colisiones y aliases sin colapsar valores por coincidencia de nombre. La fuente única permanece EP Vault; documentos/índices conservan solo metadatos no secretos.
+3. **Especificar el contrato de adaptadores.** Para cada proveedor, fijar operaciones admitidas, autenticación, mínimo privilegio, lectura de estado, escritura, read-back, rotación, revocación y rollback. Un adaptador no informa PASS solo porque la API acepte la solicitud: debe leer y cotejar el estado resultante.
+4. **Implementar inyección efímera.** Entregar valores solo al proceso autorizado y durante su vida necesaria; no escribirlos en argumentos, archivos, logs, historial, telemetría ni variables heredadas no necesarias. La entrega just-in-time desde EP Vault debe probar expiración y revocación.
+5. **Sincronizar con idempotencia.** Definir identidad de operación, detección de drift, conflictos, reintentos y compensación. Repetir una operación con la misma identidad no debe crear duplicados ni sobrescribir un ámbito distinto.
+6. **Probar con fixtures sintéticos.** Cubrir nombres repetidos en Production/Preview/Development y ramas, variables plain/sensitive, valor ausente, proveedor inaccesible, escritura parcial, read-back discordante, rotación, revocación, rollback, expiración y fuga accidental en logs. Probar cada adaptador por separado antes de una matriz multi-proveedor.
+7. **Completar cobertura por evidencia.** Cerrar una fuente solo cuando el inventario, custodia cifrada, distribución autorizada y read-back estén demostrados. Mantener un denominador explícito de fuentes/proveedores y no declarar «todas las variables» a partir del inventario parcial actual.
+
+### Review Focus y aceptación
+
+- No guardar valores, claves, tokens o secretos en Git, documentos, manifiestos, logs o conversación.
+- Nombres con ámbitos distintos permanecen separados; no se deduce igualdad de valores.
+- Cada escritura tiene read-back, scope correcto y operación idempotente.
+- Mínimo privilegio, expiración, revocación, rollback y redacción se prueban para cada adaptador.
+- Cierre: inventario de fuentes completo y fechado; catálogo canónico; adaptadores requeridos con pruebas positivas/negativas; cobertura y excepciones cuantificadas; custodia/restore EP Vault demostrados; aceptación del operador.
+
+### Bloqueos
+
+Vault formal sellada, autenticación no disponible, API sin capacidad de lectura, scope ambiguo o imposibilidad de proteger el secreto detienen solo el proveedor/operación afectado. No se elude la API ni se recuperan valores por métodos no autorizados.
