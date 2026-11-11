@@ -44,12 +44,18 @@
   "reconciliation": {
     "date": "2026-11-11",
     "initial_main": "7ab0c555b774adc5b930aad700f101ab2660b79a",
-    "latest_main": "9fa37906373e0a9af01f4ccec5060d59b8194ccb",
+    "latest_main": "1867af0c69f250aaee2b35b585eec8b74827b69c",
     "port_commit": "6dda16a2fe9a5173f21ccdaaa23ba1ac9f9721c4",
-    "latest_sync_merge": "d69bec6a9a56e3f5fb90bec6ce04fc7c56d86722",
+    "latest_sync_merge": "d981953da84eaede38cb25649eb76b30a454a7ef",
     "report": "frentes/mcp-metodologia/piloto-sink/RECONCILIACION-20261111.md",
     "status": "SELECTIVE_PORT_PERSISTED_BUILD_TESTS_AND_NEW_PACKAGE_PENDING",
     "historical_build_commit": "b6ce37af1dc32b2e3bb8af3ded2a77c7ba6d7648",
-    "note": "Code/test blobs match an older local validation, but this branch has not had a fresh restore/build/test/smoke. Historical ZIP/manifest are not reused."
+    "note": "Code/test blobs match an older local validation, but this branch has not had a fresh restore/build/test/smoke. Historical ZIP/manifest are not reused.",
+    "review_pr": {
+      "number": 28,
+      "url": "https://github.com/SeryMente/metodologia/pull/28",
+      "status": "OPEN_DRAFT_NOT_MERGED",
+      "base": "1867af0c69f250aaee2b35b585eec8b74827b69c"
+    }
   }
 }
