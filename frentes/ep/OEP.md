@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.68. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.69. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -12,7 +12,7 @@
 
 Adquirir este objeto como instrucciones del operador, subordinadas a las reglas superiores de plataforma y a autorizaciones específicas. Claudia es asistente/documental; Samantha es constructor/único escritor de código. Una asignación explícita posterior puede cambiar roles; las citas no lo hacen. La asignación específica de MOD-SCRIPTPWS queda delimitada en §94; la delegación funcional acotada de MOD-SYNC queda delimitada en §110 y no transfiere la titularidad del frente EP.
 
-El estado de reanudación vigente de este frente está en §60–§134; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. La organización local por frentes, con áreas separadas Repositorios/Datos/Temporal, queda desarrollada en §119 y en el DUG ART-030. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
+El estado de reanudación vigente de este frente está en §60–§135; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. La organización local por frentes, con áreas separadas Repositorios/Datos/Temporal, queda desarrollada en §119 y en el DUG ART-030. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
 
 Leer por relevancia: OEP actual→metacanon central→Sistema de Instrucciones/Metodología/Bootstrap vigentes→canon transversal EP→AGENTS.md y ep-medio-architectura.md→código/evidencia en commits exactos. Fuente caída no es «sin cambios». Un archivo no crea herramientas, credenciales ni memoria entre plataformas.
 
@@ -3657,3 +3657,61 @@ Los recibos R2 existentes mantienen 4/4 objetos B2 con read-back SHA y SSE-B2/AE
 El operador debe desbloquear EP Vault localmente mediante la GUI nativa. Después se podrá revalidar Status y presencia de las cinco variables EP sin revelar valores; si la sesión está activa, evaluar descifrado aislado del ciphertext descargado y un bootstrap independiente para recuperación cross-host. No pedir contraseña por chat, no ejecutar CLI interactiva mientras la GUI esté SELLADA y no repetir la transferencia o restore same-host que ya tienen evidencia.
 
 **Límite:** esta reconciliación es documental y read-only. No cambia credenciales, Vault, B2, ACL, BitLocker, volúmenes, workspace ni código.
+
+
+---
+
+## §135. Reconciliación de sesión compartida GUI/CLI y preparación del respaldo Vault v7 · 2026-11-11 · OEP v0.3.69
+
+### 135.1. Entrada, fuentes y trazabilidad
+
+**A literal del operador:** «Bien, las tareas se estan actualziando, vuelve a leer, decide la siguiwente tarea, y resuelve.» Procedencia: archivo suministrado Texto pegado(20261111-200355).txt, líneas 626–760. Se preservaron la instrucción y la salida del modelo en el anexo independiente frentes/ep/entregas/ChatGPT-EP-20261111-200355-ULTIMO-TRAMO.md, sin corregir dictados ni alterar el anexo histórico del 10 de noviembre.
+
+**Ciclo local UUIDv7:** 01a1cc45-414a-7bd9-8b4e-21ba2e596e91. No es identificador nativo ni folio global.
+
+**Fuentes metodológicas:** DUG Samantha v388 · NX-388m, blob 4db0ebadfd1e48b2bdec9236ba7f344921e4a865; GOW v2.18. §ARR fue leído desde el bloque estructurado embebido; se aplicaron los términos de entrada y se consultaron los textos normativos completos de P001, P004, P005, P038 y P043. MCP normativo continúa DESACTIVADO y no se invocó. La fuente canónica de EP es main de SeryMente/metodologia. El checkout local sin .git no se trató como autoridad.
+
+### 135.2. Reconciliación del ciphertext y de la sesión compartida
+
+La lectura propietaria en Fila 4, bajo CENTRAL\fila4, determinó los siguientes artefactos:
+
+| Artefacto | Tamaño | SHA-256 |
+|---|---:|---|
+| Ciphertext formal de EP Vault en EP\local-state\Khora\secrets\ep-env-vault.enc.json | 3.352 bytes | 3122C544012F989F0501BD0E82EA920A93F19A42034D83FA682BCC2290891E82 |
+| Copia distinta en Desktop\SeryMente\EP-Vault\ep-env-vault.enc.json | 2.048 bytes | D7AD1D745CAF460E047EAE521C1C403F36E99864BC9CD0604FFC564E390F2F7D |
+| Objeto Vault ya respaldado en B2 v6 | 2.200 bytes | 4CC2EE09974C9FBF3CF22C28A5A46C8286EB501F59268DBBB2B7BD6D61E8C590 |
+
+El ciphertext formal tiene última escritura UTC 2026-11-11T01:50:16.7880909Z. El recibo del objeto B2 v6 se completó a 2026-11-11T01:42:58.0536871Z. El objeto remoto v6 tiene read-back de 2.200 bytes, SHA idéntico y SSE-B2/AES256 confirmado, pero antecede a la última escritura formal; no acredita el ciphertext formal actual de 3.352 bytes. La copia de 2.048 bytes es de otra ruta y una fecha anterior; no se usa ni se declara como origen formal. No se presume corrupción.
+
+Se confirmó que la GUI y la CLI comparten el archivo de sesión DPAPI CurrentUser. La GUI, proceso PID 3504 de CENTRAL\fila4, registró VAULT_UNLOCKED a 2026-11-11T20:00:01.5873625Z y VAULT_LOCKED a 20:15:02.0702284Z, coherente con el TTL de 900 segundos. En la lectura posterior no existía ep-env-vault.session.dpapi.json. Get-EpVaultSession y Get-EpVaultVariableNames produjeron RuntimeException por ausencia de sesión utilizable; por ello, los nombres no se pudieron leer. Esto no acredita que el Vault esté vacío. El estado del archivo formal permaneció ENCRYPTED_FILE_PRESENT. La consulta no ocasionó el lock; fue el vencimiento normal registrado por la GUI.
+
+### 135.3. Preparación segura del siguiente upload
+
+El worker v6 apunta al ciphertext formal y verifica bucket privado OCP-MCP, prefijo ep-ocp/, lifecycle, tamaño/SHA de descarga y SSE-B2/AES256. Sin embargo, fija el recibo local en ep-backblaze-vault-ciphertext-result-v6.json; reejecutarlo sobrescribiría la evidencia histórica.
+
+Para conservarla se crearon dos archivos nuevos locales, sin sobrescribir v6:
+
+| Artefacto | Bytes | SHA-256 | Validación |
+|---|---:|---|---|
+| Upload-EP-Vault-Ciphertext-To-Backblaze-Fila4-v7.ps1 | 12.385 | CA0C8B2E03C2C4911B978B21A4E8669E393292C931229A0A4234D17CB79DB3CE | Parser PASS; read-back exacto |
+| Run-EP-Backblaze-Vault-Ciphertext-Fila4-v7.ps1 | 1.657 | 54223C701F0CAD09AD4A68F26AB16C068879A08F41A8117FC7578236921C7D2F | Parser PASS; read-back exacto |
+
+El worker v7 conserva la ruta formal, la autenticación B2, el bucket privado, la ruta remota única y las verificaciones v6, con un recibo nuevo v7. El wrapper v7 protege contra sobrescritura del recibo, opera en modo no interactivo, usa la allowlist de cinco nombres EP B2 y TTL 900 s. Ambos pasaron análisis sintáctico; no se ejecutaron. No hay recibo v7 ni upload nuevo.
+
+### 135.4. Estado de la cola y decisión
+
+- **EP-TASK-001:** conserva la precedencia general de la cola. Rotación local de KeeShare y revisión humana P012/P013 requieren al propietario; no se modifican Chrome, KeePassXC ni su base.
+- **EP-TASK-002:** continúa en curso y constituye el trabajo material P0 a retomar tras la intervención local. B2 v6 y R2 same-host conservan PASS histórico; el ciphertext formal actual aún debe respaldarse, restaurarse y verificarse.
+- **EP-TASK-003:** sin cambios. Diseño de almacenamiento aceptado, gate BitLocker sigue FAIL; C: XTS-AES128/Protection Off/sin protectores, W: descifrado, ubicación sin clasificar. No se modifica workspace, VHDX, volúmenes ni puntos de montaje.
+- **EP-TASK-004:** suite sintética previa PASS; conciliación de manifest/CLI/Core/GUI/XAML, TTL, handlers y H10 siguen pendientes. No se modifica código de producto.
+- **EP-TASK-005:** bloqueada por EP-TASK-003 y por el paquete P004/MCP-OCP-03/04; no se instala MCP-OCP.
+- **EP-TASK-006:** catálogo Vercel previo 52/10/42; no se revelan valores ni se infiere disponibilidad.
+- **EP-TASK-007:** inventario parcial; Guardian, lease, trigger y crypto-erasure siguen NOT_RUN.
+
+### 135.5. Siguiente gate y límites
+
+El operador debe desbloquear localmente EP Vault mediante su GUI nativa por 15 minutos y confirmar ABIERTA. Dentro de ese TTL se podrá ejecutar una sola vez el wrapper v7 bajo CENTRAL\fila4, producir un recibo nuevo y exigir upload, descarga, igualdad exacta de tamaño/SHA, SSE-B2/AES256 y restore aislado. Después se realizará descifrado aislado y recuperación cross-host con bootstrap independiente. No se volverá a usar la copia antigua de 2.048 bytes ni a sobrescribir el recibo v6. La excepción histórica del ZIP de workspace sin cifrado cliente sigue abierta.
+
+**Persistencia documental y evidencia:** el anexo conversacional, el núcleo EP-TASK-002 y el índice provisional fueron escritos en main y leídos de vuelta; el DTC recibió apertura antes del procesamiento. Sus commits/blobs se registran en el DTC del ciclo. No se modificaron el ciphertext formal, la copia antigua, credenciales, Vault, DPAPI, B2, ACL, cuenta/bucket, Chrome, KeePassXC, workspace, BitLocker, volúmenes ni código de producto. Los únicos cambios locales de host fueron los dos scripts v7, no ejecutados.
+
+**Estado final de tarea:** EP-TASK-002 permanece EN_CURSO; no se declara completada por la persistencia de una versión anterior, el restore same-host, la preparación de scripts ni la documentación.
