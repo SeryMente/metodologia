@@ -74,44 +74,26 @@ function Get-EpSessionSecretNames {
 }
 function Protect-EpSessionRuntime {
     param([Parameter(Mandatory=$true)]$Metadata,[Parameter(Mandatory=$true)][string]$Password,[string]$B2IdName,[string]$B2KeyName,[string]$Bucket,[string]$Prefix)
+    # Portable metadata only: no credentials, password or key material are written here.
     $runtime = [ordered]@{
         schema = 'ep-session-runtime/1'
         sessionId = [string]$Metadata.sessionId
-        bitlockerPassword = $Password
         b2IdName = $B2IdName
         b2KeyName = $B2KeyName
         bucket = $Bucket
         prefix = $Prefix
     }
-    $plain = [Text.UTF8Encoding]::new($false).GetBytes((ConvertTo-Json $runtime -Compress))
-    $entropy = [Text.Encoding]::UTF8.GetBytes('EP-SESSION-RUNTIME-V1|' + [string]$Metadata.sessionId)
-    $protected = $null
-    try {
-        $protected = [Security.Cryptography.ProtectedData]::Protect($plain,$entropy,[Security.Cryptography.DataProtectionScope]::CurrentUser)
-        [IO.File]::WriteAllBytes([string]$Metadata.runtimePath,$protected)
-    }
-    finally {
-        if ($plain) { [Array]::Clear($plain,0,$plain.Length) }
-        if ($entropy) { [Array]::Clear($entropy,0,$entropy.Length) }
-        if ($protected) { [Array]::Clear($protected,0,$protected.Length) }
-    }
+    [IO.File]::WriteAllText([string]$Metadata.runtimePath,(ConvertTo-Json $runtime -Compress),[Text.UTF8Encoding]::new($false))
 }
 function Read-EpSessionRuntime {
     param([Parameter(Mandatory=$true)]$Metadata)
-    $bytes = [IO.File]::ReadAllBytes([string]$Metadata.runtimePath)
-    $entropy = [Text.Encoding]::UTF8.GetBytes('EP-SESSION-RUNTIME-V1|' + [string]$Metadata.sessionId)
-    $plain = $null
-    try {
-        $plain = [Security.Cryptography.ProtectedData]::Unprotect($bytes,$entropy,[Security.Cryptography.DataProtectionScope]::CurrentUser)
-        $runtime = [Text.Encoding]::UTF8.GetString($plain) | ConvertFrom-Json
-        if ($runtime.schema -cne 'ep-session-runtime/1' -or $runtime.sessionId -cne $Metadata.sessionId) { throw 'EP_SESSION_RUNTIME_INVALID' }
-        return $runtime
-    }
-    finally {
-        if ($bytes) { [Array]::Clear($bytes,0,$bytes.Length) }
-        if ($entropy) { [Array]::Clear($entropy,0,$entropy.Length) }
-        if ($plain) { [Array]::Clear($plain,0,$plain.Length) }
-    }
+    if (-not (Test-Path -LiteralPath $Metadata.runtimePath -PathType Leaf)) { throw 'EP_SESSION_RUNTIME_METADATA_MISSING' }
+    $item = Get-Item -LiteralPath $Metadata.runtimePath
+    if (($item.Attributes -band [IO.FileAttributes]::ReparsePoint) -ne 0 -or $item.Length -gt 8192) { throw 'EP_SESSION_RUNTIME_METADATA_INVALID' }
+    $runtime = Get-Content -LiteralPath $Metadata.runtimePath -Raw | ConvertFrom-Json
+    if ($runtime.schema -cne 'ep-session-runtime/1' -or $runtime.sessionId -cne $Metadata.sessionId) { throw 'EP_SESSION_RUNTIME_INVALID' }
+    if ($runtime.bucket -cne 'OCP-MCP' -or $runtime.prefix -cne 'ep-ocp/') { throw 'EP_SESSION_B2_DESTINATION_NOT_CANONICAL' }
+    return $runtime
 }
 function New-EpSessionPassword {
     $bytes = New-Object byte[] 32
@@ -305,10 +287,11 @@ function Invoke-EpSessionB2Checkpoint {
     $receiptPath = Join-Path $stateDir 'checkpoint-receipt.json'
     $objectName = 'ep-ocp/workspace-sessions/' + [string]$Metadata.sessionId + '/session.vhdx'
     $script = @'
-param([string]$B2Path,[string]$Bucket,[string]$Source,[string]$ObjectName,[string]$VerifyPath,[string]$ReceiptPath,[string]$AccountInfo)
+param([string]$B2Path,[string]$Bucket,[string]$Source,[string]$ObjectName,[string]$VerifyPath,[string]$ReceiptPath,[string]$AccountInfo,[string]$B2IdName,[string]$B2KeyName)
 $ErrorActionPreference = "Stop"
-$env:B2_APPLICATION_KEY_ID = $env:EP_B2_KEY_ID
-$env:B2_APPLICATION_KEY = $env:EP_B2_KEY
+$env:B2_APPLICATION_KEY_ID = [Environment]::GetEnvironmentVariable($B2IdName,'Process')
+$env:B2_APPLICATION_KEY = [Environment]::GetEnvironmentVariable($B2KeyName,'Process')
+if ([string]::IsNullOrWhiteSpace($env:B2_APPLICATION_KEY_ID) -or [string]::IsNullOrWhiteSpace($env:B2_APPLICATION_KEY)) { throw 'EP_SESSION_B2_SECRET_NOT_IN_PROCESS' }
 $env:B2_ACCOUNT_INFO = $AccountInfo
 function Invoke-B2([string[]]$Arguments) {
     & $B2Path @Arguments *> $null
@@ -337,7 +320,7 @@ finally {
 }
 '@
     [IO.File]::WriteAllText($wrapper,$script,[Text.UTF8Encoding]::new($false))
-    $result = Invoke-EpVaultCommand -ExecutablePath (Join-Path $PSHOME 'powershell.exe') -ArgumentList @('-NoProfile','-NonInteractive','-ExecutionPolicy','Bypass','-File',$wrapper,'-B2Path',$b2Path,'-Bucket',[string]$runtime.bucket,'-Source',[string]$Metadata.vhdPath,'-ObjectName',$objectName,'-VerifyPath',$verifyPath,'-ReceiptPath',$receiptPath,'-AccountInfo',$accountInfo) -Names @([string]$runtime.b2IdName,[string]$runtime.b2KeyName)
+    $result = Invoke-EpVaultCommand -ExecutablePath (Join-Path $PSHOME 'powershell.exe') -ArgumentList @('-NoProfile','-NonInteractive','-ExecutionPolicy','Bypass','-File',$wrapper,'-B2Path',$b2Path,'-Bucket',[string]$runtime.bucket,'-Source',[string]$Metadata.vhdPath,'-ObjectName',$objectName,'-VerifyPath',$verifyPath,'-ReceiptPath',$receiptPath,'-AccountInfo',$accountInfo,'-B2IdName',[string]$runtime.b2IdName,'-B2KeyName',[string]$runtime.b2KeyName) -Names @([string]$runtime.b2IdName,[string]$runtime.b2KeyName)
     if ([int]$result.exitCode -ne 0) { throw 'EP_SESSION_B2_UPLOAD_OR_READBACK_FAILED' }
     if (-not (Test-Path -LiteralPath $receiptPath)) { throw 'EP_SESSION_B2_RECEIPT_MISSING' }
     $receipt = Get-Content -LiteralPath $receiptPath -Raw | ConvertFrom-Json
