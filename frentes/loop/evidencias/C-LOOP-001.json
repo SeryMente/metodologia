@@ -1,0 +1,42 @@
+{
+  "schema": "loop.front-initialization-evidence.v1",
+  "event_id": "C-LOOP-INICIO-01",
+  "recorded_on": "2026-11-11",
+  "status": "created",
+  "repository": "SeryMente/metodologia",
+  "branch": "main",
+  "base_commit": "b4735d5e5903ce0257054384eb8a9039a94edd4d",
+  "base_tree": "3cfa7f28ab9c517d78ccbab7e6e24763d13cbd74",
+  "paths": [
+    "frentes/loop/LOOP.md",
+    "frentes/loop/README.md",
+    "frentes/loop/CONTROL-RESPONSABILIDAD.json",
+    "frentes/loop/conversaciones/C-LOOP-001-dialogo.jsonl",
+    "frentes/loop/cronica/C-LOOP-001.md",
+    "frentes/loop/evidencias/C-LOOP-001.json"
+  ],
+  "owner_alias": "chatgpt-loop-01a1cb67-173a-785c-a7c4-98c377ce1960",
+  "instance": "chatgpt-loop",
+  "uuidv7_local": "01a1cb67-173a-785c-a7c4-98c377ce1960",
+  "generation": 1,
+  "session_folio": null,
+  "foliation": "FOL1 PREPARADO/NO ACTIVO; CV/CY/A/B no asignados.",
+  "purpose_sources": [
+    "Conversation dictation: semi-automated loop using extension observability, operator input/interventions and declared purpose.",
+    "Conversation dictation: semantic vector, verbatim instructions, defined purpose/scope and potentially indefinite self-improvement."
+  ],
+  "governance": {
+    "document": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.html",
+    "version": "Samantha v388 · NX-388m",
+    "blob_sha": "4db0ebadfd1e48b2bdec9236ba7f344921e4a865"
+  },
+  "gates": {
+    "DUG_modified": false,
+    "MCP_normativo": "DESACTIVADO",
+    "other_front_authority_modified": false,
+    "agent_implemented": false,
+    "external_api_used": false,
+    "deployment": false
+  },
+  "acceptance": "The front and documentary control are created. The reusable development-loop engine remains unimplemented; criteria in LOOP.md §9 are initial proposals."
+}

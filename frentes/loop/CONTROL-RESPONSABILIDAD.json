@@ -1,0 +1,69 @@
+{
+  "schema": "responsabilidad/1",
+  "front": "loop",
+  "canonical_identity": "Loop",
+  "repository": "SeryMente/metodologia",
+  "front_ocp": "frentes/loop/",
+  "state_object": "frentes/loop/LOOP.md",
+  "status": "owned",
+  "owner_thread": null,
+  "owner_thread_identity_kind": "Native ChatGPT conversation ID not exposed; owner_alias is an operational alias",
+  "owner_alias": "chatgpt-loop-01a1cb67-173a-785c-a7c4-98c377ce1960",
+  "owner_alias_type": "operational_alias_not_native_thread_id",
+  "instance": "chatgpt-loop",
+  "uuidv7_local": "01a1cb67-173a-785c-a7c4-98c377ce1960",
+  "generation": 1,
+  "authorization_ref": "Instrucción directa del operador en esta conversación (2026-11-11): «Bueno, crea un frente de trabajo en el repositorio Metodología y nómbrale Loop, así nada más.» El propósito del FT ya había sido dictado literalmente en esta conversación y queda preservado en conversaciones/C-LOOP-001-dialogo.jsonl#1-2.",
+  "authorization_event": "C-LOOP-INICIO-01",
+  "scope": "Crear y mantener el FT Loop para diseñar y desarrollar un mecanismo reutilizable de desarrollo semiautomatizado/autoperfeccionamiento basado en instrucciones verbatim, propósito y alcance declarados, observabilidad, intervenciones del operador, acciones autorizadas y validación con evidencia. Este control no transfiere titularidad ni autoriza mutaciones dentro de Harmonia, Signal Interpreter u otros FT; cada frente conserva su propio OCP, control, permisos y gates. No autoriza credenciales, APIs externas, consumo pagado, automatización de plataformas web, despliegues ni cambios al DUG.",
+  "expiry": null,
+  "handoff": "Asignación inicial de un FT nuevo cuya ruta/control no existían en main. Sin titular previo conocido en la ruta canónica. Generación inicial 1. Alias operativo, no ID nativo. FOL1 permanece PREPARADO/NO ACTIVO; no se asigna folio CV/CY/A/B. SES no asignado en este registro.",
+  "session_folio": null,
+  "folio_status": "FOL1 PREPARADO_PENDIENTE_ACTIVACION_IPZ; CV/CY/A/B PENDIENTES/NO ASIGNADOS.",
+  "session_assignment": {
+    "status": "active_unfoliated",
+    "folio": null,
+    "assigned_on": "2026-11-11",
+    "front_ocp": "frentes/loop/",
+    "owner_alias": "chatgpt-loop-01a1cb67-173a-785c-a7c4-98c377ce1960",
+    "instance": "chatgpt-loop",
+    "uuidv7_local": "01a1cb67-173a-785c-a7c4-98c377ce1960",
+    "generation": 1,
+    "identity_kind": "operational alias + local UUIDv7; not a native ChatGPT conversation ID",
+    "foliation": "FOL1 PREPARADO, NO ACTIVO; no folio CV/CY/A/B assigned."
+  },
+  "initialization": {
+    "event_id": "C-LOOP-INICIO-01",
+    "recorded_on": "2026-11-11",
+    "status": "created",
+    "authorization": "Direct operator instruction to create a work front named Loop in SeryMente/metodologia. The purpose was dictated earlier in the same conversation and is preserved verbatim.",
+    "purpose_original_path": "frentes/loop/conversaciones/C-LOOP-001-dialogo.jsonl#1-2",
+    "repository": "SeryMente/metodologia",
+    "branch": "main",
+    "ocp_path": "frentes/loop/",
+    "state_object": "frentes/loop/LOOP.md",
+    "previous_canonical_path_state": "NOT_FOUND at frentes/loop/; README, core and control individually returned NOT_FOUND before creation.",
+    "previous_owner": null,
+    "canonical_governance": {
+      "document": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.html",
+      "version": "Samantha v388 · NX-388m",
+      "blob_sha": "4db0ebadfd1e48b2bdec9236ba7f344921e4a865",
+      "main_head": "b4735d5e5903ce0257054384eb8a9039a94edd4d"
+    },
+    "uniqueness_check": {
+      "status": "bounded-path-check",
+      "exact_front_path": "NOT_FOUND",
+      "checked_controls": [
+        "frentes/gobernanza/CONTROL-RESPONSABILIDAD.json",
+        "frentes/metacanon/CONTROL-RESPONSABILIDAD.json",
+        "frentes/acceso/CONTROL-RESPONSABILIDAD.json",
+        "frentes/ep/CONTROL-RESPONSABILIDAD.json",
+        "frentes/mcp-metodologia/CONTROL-RESPONSABILIDAD.json",
+        "frentes/radar-profesional/CONTROL-RESPONSABILIDAD.json",
+        "frentes/khora-workstation-bootstrap/CONTROL-RESPONSABILIDAD.json",
+        "SeryMente/signal-interpreter:docs/frentes/signal-interpreter/CONTROL-RESPONSABILIDAD.json"
+      ],
+      "global_uniqueness": "not_claimed; FOL1 remains inactive and no global folio was assigned."
+    }
+  }
+}
