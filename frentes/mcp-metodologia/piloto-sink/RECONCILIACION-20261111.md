@@ -77,3 +77,11 @@ No se reutilizaron ZIP, manifest ni hashes de la candidata histórica. Se deben 
 5. Generalización P001–P043/lotes, panel 1.0.0 y MCP-OCP-14 quedan como etapas posteriores/separadas.
 
 No se modificó DUG, ART-025, ART-027, IPZ, Khora, EP, B2, Vault, credenciales, host ni producción. No se autoriza merge, instalación o despliegue por esta reconciliación.
+
+## 8. Sincronización final y revisión · 2026-11-11
+
+Después del primer registro se incorporó el commit de main `1867af0c69f250aaee2b35b585eec8b74827b69c` (actualización de coordinación del frente EP) mediante merge de dos padres `d981953da84eaede38cb25649eb76b30a454a7ef`, preservando el árbol de MCP-OCP y cotejando el blob EP resultante con main. El compare inmediato dio 0 commits detrás.
+
+La rama se publicó para revisión en [PR #28](https://github.com/SeryMente/metodologia/pull/28): `OPEN / DRAFT / NOT MERGED`, 23 archivos, 16 commits ahead / 0 behind en la apertura; GitHub informó `mergeable=true`. PR #27 sigue abierta/draft como antecedente divergente y no integrado.
+
+Los estados de build, tests, smoke y paquete de la rama actual permanecen `NOT_RUN / NOT_REGENERATED`; la apertura de una PR no los convierte en PASS ni en aceptación.
