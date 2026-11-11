@@ -4,7 +4,7 @@
 
 - **Nombre canónico vigente:** MCP-OCP (anteriormente MCP-METODOLOGIA).
 - **Identidad canónica vigente:** MCP-OCP. **Identidad histórica:** MCP-METODOLOGIA.
-- **Versión/sello:** MCP-OCP-v0.1.31 · OCP MCP 1.0; H1 SINK:P004, H2 persistencia mínima/bóveda y H3 workspace completo definidos; Sink local por stdio autorizado; contrato DUG v388/NX-388m; piloto P004 pendiente; bootstrap del perfil persistente pendiente. Las generaciones y folios de sesiones anteriores son metadatos de auditoría.
+- **Versión/sello:** MCP-OCP-v0.1.32 · OCP MCP 1.0; H1 SINK:P004 cuenta con corte vertical y candidato de piloto validado localmente; instalación EP y aceptación IPZ pendientes; H2 persistencia mínima/bóveda y H3 workspace completo definidos, aún no aceptados. Las generaciones y folios de sesiones anteriores son metadatos de auditoría.
 - **Repositorio propietario:** SeryMente/metodologia, rama main.
 - **OCP canónico:** frentes/mcp-metodologia/.
 - **Núcleo operativo único:** este archivo, MCP-METODOLOGIA.md.
@@ -778,3 +778,65 @@ EP-TASK-007 es independiente del gate físico de Fila 4 en EP-TASK-003. El guard
 ### Seguimiento de revisión · PR #28 · 2026-11-11
 
 La portación actual se publicó como PR [#28](https://github.com/SeryMente/metodologia/pull/28), `OPEN / DRAFT / NOT MERGED`, con base main `1867af0c69f250aaee2b35b585eec8b74827b69c` y 23 archivos MCP-OCP. El head `d981953da84eaede38cb25649eb76b30a454a7ef` fue el corte inicial de apertura; el head vigente se consulta en GitHub porque la rama recibió documentación incremental posterior. En la apertura se observó 16 commits ahead / 0 behind y `mergeable=true`; eso solo habilita revisión, no aceptación. PR #27 sigue separada, abierta/draft y no integrada.
+
+## 23. Cierre técnico del piloto SINK:P004 · ciclo local 14 · 2026-11-11
+
+**Versión del núcleo:** MCP-OCP-v0.1.32. **Lista auxiliar:** LIST_VERSION=0.14. **Estado:** CORTE VERTICAL P004 + BUILD/TESTS/STDIO + PAQUETE CANDIDATO = PASS LOCAL; EP/IPZ Y RELEASE 1.0.0 NO ACEPTADOS.
+
+### 23.1 Fuente normativa y autoridad
+
+- Control autoritativo MCP-OCP: `owned`, generación 6; blob `76bd465909f5c68d623cc82dbf9c2467091cd98b`. Se conserva sin cambios.
+- DUG Samantha v388/NX-388m; Metacanon 1.29; GOW 2.18; commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`; Git blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`. §ARR/`gow-sec-14` y P004 A/0.8 cotejados.
+- P004: ID, título, ancla, texto desarrollado, MDP y preponderancia coincidentes. El lector falla cerrado ante discrepancias.
+- `MCP-NORMATIVO=DESACTIVADO`; FOL1 preparado/no activo. No se modificó DUG, ART-025, ART-027 ni IPZ.
+
+### 23.2 Rama y revisión
+
+- Rama: `feat/mcp-ocp-p004-reconciled-20261111-7ab0c555`.
+- Portación inicial: `6dda16a2fe9a5173f21ccdaaa23ba1ac9f9721c4`, base `7ab0c555b774adc5b930aad700f101ab2660b79a`.
+- Main al baseline de build: `1867af0c69f250aaee2b35b585eec8b74827b69c`.
+- Main actual incorporado al corte documental: `0b4a7373fdc07f39b3f764e9c6e0c94fce21cc2f`, merge `63e2f1399fdb210294ef26983babc8fbef87a4a6`, de dos padres. Se preservaron cambios posteriores de EP/Gobernanza sin solapar rutas MCP-OCP.
+- Compare al sincronizar: 26 commits ahead / 0 behind. PR [#28](https://github.com/SeryMente/metodologia/pull/28) permanece OPEN/DRAFT/NOT MERGED; mergeable solo habilita revisión. PR #27 continúa como antecedente divergente no integrado.
+- Inventario REUSE/ADAPT/DROP/DEFER: `piloto-sink/RECONCILIACION-20261111.md`.
+
+### 23.3 Build y pruebas ejecutadas
+
+**Código sometido a ejecución:** source commit `4600086c492582c5d854145db64097310ac73686`, que contiene el lector/servidor, monitor y suites portados.
+
+- Entorno: Windows 10.0.26200 x64; PowerShell 7.4.22; .NET SDK 10.0.403; Microsoft.NETCore.App 10.0.14 x64.
+- Checkout y SDK aislados bajo `C:\\Temp` y directorio temporal existente; no hubo instalación global ni modificación de PATH persistente.
+- Antes de ejecutar se cotejaron HEAD local/remoto y Git blob del DUG.
+- Restore de ambos proyectos de pruebas: PASS.
+- Build de servidor/monitor y proyectos de tests: PASS; 0 advertencias / 0 errores.
+- Contratos P004: **18 PASS / 0 FAIL**.
+- Monitor/readiness: **23 PASS / 0 FAIL**.
+- Smoke STDIO/EOF del servidor: PASS. Se verificaron initialize, tools/list, tools/call(P004), tres respuestas JSON-RPC, evento `SINK_READ_SUCCESS` por STDERR y terminación por EOF.
+- Los hashes de los logs están en `piloto-sink/SOURCE-PIN.json` y en `entregas/piloto-sink-p004/VALIDATION-RECEIPT.json`.
+
+### 23.4 Paquete piloto y read-back
+
+- Archivo: `entregas/piloto-sink-p004/MCP-OCP-SINK-P004-4600086c-candidate.zip`.
+- Tamaño: **138.142 bytes**.
+- ZIP SHA-256: `50c0c68f769aefec95dfde3e45c74594d34b3fbcb25916814181fad241e8e3a6`.
+- Manifest SHA-256: `ac491edc7fadad65715b58d1275592bca86f506584489683012e74779da87627`.
+- Validation receipt SHA-256: `5652b3298b083c72faa59a48d98a644402581bdf7e0718a8bac52b1313f7b6ee`.
+- `SHA256SUMS.txt` SHA-256: `aa688cf2e63a44f5edaba2650f05a2c6aaca2b86f111ee663b24a3d07576d58f`.
+- Nueve archivos en el ZIP; extracción a root temporal vacío y cotejo de tamaño/SHA contra manifest: PASS.
+- Smoke ejecutado sobre el `OcpMcp.exe` exacto extraído del ZIP final: PASS; P004 y DUG v388/NX-388m correctos, evento saneado en STDERR y EOF limpio.
+- Commit de publicación del paquete/pin: `69f17be96e6a5e406d59ce66ffe0ac89589831c4`; merges posteriores de main preservan el objeto binario.
+
+**Clasificación del artefacto:** `CANDIDATE_NOT_ACCEPTED`. Es un paquete piloto P004 framework-dependent `net10.0`, no incluye panel WPF ni constituye release servidor+panel 1.0.0.
+
+### 23.5 Dependencias que no se declaran cumplidas
+
+- GitHub-hosted CI: NOT_VERIFIED; la evidencia PASS corresponde al build y pruebas locales en Windows.
+- EP-TASK-003 y EP-TASK-005: mantienen sus gates. No hubo handoff, extracción ni instalación en la carpeta persistente de Fila 4; runtime persistente del destino NO VERIFICADO.
+- IPZ E2E: NOT_RUN / NOT_ACCEPTED; exige la invocación real desde el contexto IPZ y respuesta visible al modelo después de los gates EP.
+- Generalización SINK:P001–P043, lotes, panel WPF, pruebas de release 1.0.0 y MCP-OCP-14 H2/H3: pendientes o diferidos.
+- No se operó B2, Vault, credenciales, host persistente, Khora ni producción.
+
+### 23.6 Estado de cierre del ciclo local 14
+
+`MCP_OCP_02=PASS_SELECTIVE_RECONCILIATION`; `MCP_OCP_03=PASS_18_P004_PLUS_23_MONITOR`; `MCP_OCP_04=PASS_STDIO_EOF_SMOKE_IPZ_E2E_PENDING`; `MCP_OCP_05=PASS_P004_VERTICAL_SLICE_GENERALIZATION_PENDING`; `MCP_OCP_PILOT_PACKAGE=PASS_CANDIDATE_NOT_ACCEPTED`; `EP_INSTALL=BLOCKED_EP_TASK_003_005`; `HOSTED_CI=NOT_VERIFIED`; `IPZ_E2E=NOT_ACCEPTED`; `MCP_NORMATIVO=DESACTIVADO`; `FOL1=PREPARADO_NO_ACTIVO`.
+
+`DTC_CYCLE_STATUS=INCOMPLETE` se conserva porque la apertura del ciclo 14 fue tardía (`DTC_OPENING_LATE=TRUE`). Los resultados técnicos se registran como ejecutados y verificados; no se reconstruye retroactivamente el orden de apertura ni se convierte en ciclo cerrado.
