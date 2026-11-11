@@ -1,7 +1,7 @@
 # 📝 EP-TASK-001 · NCL — Navegador Compartido Local: integración de Playwright y KeePassXC
 
 **Naturaleza:** OCP provisional de tarea; no es un frente independiente ni una capacidad ya implementada.  
-**Estado:** `en_curso · NCL_PREFLIGHT_PARTIAL · OCP_PROFILE_IDENTIFIED_PROFILE_36 · PLAYWRIGHT_EXTENSION_PRESENT · KEEPASSXC_BROWSER_MISSING`  
+**Estado:** `en_curso · NCL_PREFLIGHT_PARTIAL · OCP_PROFILE_36_CONFIRMED · PLAYWRIGHT_EXTENSION_PRESENT_0.4.0 · KEEPASSXC_BROWSER_PRESENT_1.10.4.1 · EXTENSION_ENABLEMENT_UNVERIFIED · NATIVE_MESSAGING_REGISTRY_UNVERIFIED · KEEPASSXC_PROCESS_NOT_RUNNING · KEEPSHARE_ROTATION_PENDING`
 **Responsabilidad:** vinculada al frente Entorno Persistente, `frentes/ep/`; sin control ni sesión propios.  
 **task_id:** `EP-TASK-001` (identificador local de este registro; no es folio global).  
 **scope_ref:** `frentes/ep/`  
@@ -306,3 +306,38 @@ Durante una lectura local de configuración de KeePassXC, la salida incluyó mat
 - Falta instalar o validar KeePassXC-Browser en el perfil OCP, habilitar el origen correcto y acreditar Native Messaging. No alterar perfiles o extensiones hasta superar la revisión P012/P013.
 - La clave KeeShare requiere rotación local controlada; no leer ni volver a exponer la configuración.
 - Siguiente paso seguro: revisar presencialmente el perfil OCP y aprobar la configuración UX/seguridad; después configurar KeePassXC-Browser y Native Messaging, conectar una pestaña delegada de prueba y ejecutar únicamente el smoke read-only en Cora.
+
+ 
+## Revalidación NCL read-only de Profile 36 · 2026-11-11 · 14:51 America/Mexico_City
+
+**Resultado:** `PREFLIGHT_UPDATED · KEEPASSXC_BROWSER_PRESENT · EXTENSION_ENABLEMENT_UNVERIFIED · NATIVE_MESSAGING_UNVERIFIED`. Esta observación actualiza la fotografía anterior de 10:38; no permite determinar en qué momento se materializó la extensión ni acreditar conexión funcional.
+
+### Identidad y estado del perfil
+
+- RDC activo en el equipo `PC10RCIF4EI4`, contexto propietario `CENTRAL\fila4`, SessionId 1. Chrome tiene procesos activos en esa sesión.
+- Directorio de perfil `Profile 36` existe bajo el User Data de Chrome; es el perfil identificado previamente como OCP. Se leyeron solo metadatos de extensiones, sin historial, cookies, pestañas, URLs, contenido de sesión o credenciales.
+- **Playwright Extension:** ID `mmlmfjhmonkocbjadbfplnigmagldckm`, versión 0.4.0, Manifest V3; permisos declarados `debugger`, `activeTab`, `tabs`, `tabGroups`.
+- **KeePassXC-Browser:** ID `oboonakemofpalcgghocfoadofidjkkk`, versión 1.10.4.1, Manifest V3. Su carpeta de extensión y entrada de Secure Preferences están presentes; From Web Store=True, location=1, DisableReasons vacío. El campo `state` no está presente en la entrada consultada, por lo que **no se afirma que esté habilitada**.
+- La lectura anterior que reportó KeePassXC-Browser ausente queda sustituida como estado actual; se conserva como antecedente de la observación 10:38, sin inferir cuándo cambió.
+
+### KeePassXC portable y host manifests
+
+- Raíz portable localizada en `AppData\Local\Programs\KeePassXC-Portable`; `KeePassXC.exe` y `keepassxc-proxy.exe` existen.
+- Proceso KeePassXC no estaba ejecutándose durante esta lectura. Por tanto, no se verificó asociación funcional ni diálogo de conexión.
+- Se encontraron cuatro manifiestos host: variantes Chrome, Brave, Chromium y Vivaldi, en `KeePassXC-Portable\config\`. Cada uno declara el host `org.keepassxc.keepassxc_browser`; el ejecutable de host referenciado existe; los cuatro incluyen el origen de KeePassXC-Browser.
+- Los manifiestos no incluyen el origen de Playwright Extension. No se propone añadirlo: el puente de automatización Playwright y el host de KeePassXC son componentes distintos, y cualquier cambio de orígenes/permiso requiere análisis y revisión explícitos.
+- La asociación del Registro `NativeMessagingHosts` no pudo volver a consultarse: la consulta previa fue bloqueada por RDC. No se buscó un método alternativo para eludir esa limitación. La mera existencia de los manifiestos no prueba qué archivo está registrado para Chrome ni que Chrome pueda lanzar el host.
+
+### Candados y trabajo no ejecutado
+
+- No se modificaron registro, archivos de configuración, manifiestos, extensiones, perfiles ni permisos.
+- No se abrió KeePassXC ni la base; no se volvió a leer configuración KeeShare; no se expusieron claves, contraseñas, TOTP, cookies, tokens ni contenido de la base.
+- KeeShare sigue requiriendo rotación local controlada por su propietario. No se ejecutó.
+- No se habilitó ni conectó la extensión, no se conectó Playwright MCP, no se delegó pestaña, no se abrió Cora y no se ejecutó navegación autenticada.
+- P012/P013 continúan como gates para cambios UX/seguridad y validación supervisada.
+
+### Siguiente gate
+
+Conservar el inventario como `PARTIAL`. Requiere revisión presencial del propietario P012/P013, rotación KeeShare y verificación local de que Chrome mantiene KeePassXC-Browser habilitada y que Native Messaging puede iniciar el host. Solo después se probará una asociación local supervisada, sin exportar secretos, antes de delegar una pestaña para Cora read-only.
+
+**Límites:** la instalación materializada de KeePassXC-Browser ya no se considera ausente, pero el preflight NCL no está completado ni aceptado.
