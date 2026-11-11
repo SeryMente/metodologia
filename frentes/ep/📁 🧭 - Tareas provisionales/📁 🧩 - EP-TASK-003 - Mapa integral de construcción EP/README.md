@@ -581,3 +581,16 @@ Bloqueado crear, cifrar, copiar, montar, cambiar puntos de montaje o implementar
 - Ubicación física continúa `UNCLASSIFIED`; no se consultaron GPS/IP ni se infirió CECEQ/LOC-OTHER.
 
 **Decisión:** no crear, adjuntar, cifrar, copiar, migrar ni montar volumen de workspace, y no activar dead-man hasta satisfacer los gates XTS-AES256/Protection On/protector recuperable/100 %, custodia y clasificación de ubicación. EP-TASK-003 permanece `en_curso`.
+
+ 
+## Revalidación BitLocker read-only de Fila 4 · 2026-11-11 · 14:54 America/Mexico_City
+
+**Resultado:** el gate físico permanece FAIL; esta lectura confirma el diagnóstico previo, no lo resuelve.
+
+- Contexto de consulta: RDC separado en el mismo equipo, usuario `CENTRAL\MantenimientoRCI`; `Get-BitLockerVolume` completó sin error. La sesión propietaria `CENTRAL\fila4` recibió `Acceso denegado`; no se intentó elevación ni bypass en esa sesión.
+- `C:`: `FullyEncrypted`, `XtsAes128`, 100 %, `ProtectionStatus=Off`, `LockStatus=Unlocked`, cero protectores de clave.
+- `W:`: `FullyDecrypted`, `EncryptionMethod=None`, 0 %, `ProtectionStatus=Off`, `LockStatus=Unlocked`, cero protectores.
+- La lectura actual coincide con la revalidación administrativa de 10:38. No se modificaron protectores, algoritmo, porcentaje, estado, puntos de montaje, VHDX, archivos ni ACL.
+- Ubicación física continúa `UNCLASSIFIED`; no se consultaron GPS/IP ni se infirió CECEQ/LOC-OTHER.
+
+**Decisión:** no crear, adjuntar, cifrar, copiar, migrar ni montar volumen de workspace, y no activar dead-man hasta satisfacer los gates XTS-AES256/Protection On/protector recuperable/100 %, custodia y clasificación de ubicación. EP-TASK-003 permanece `en_curso`.
