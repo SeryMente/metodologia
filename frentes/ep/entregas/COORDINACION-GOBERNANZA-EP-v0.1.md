@@ -2717,3 +2717,23 @@ Este trabajo usa el alcance MCP-OCP ya autorizado. No modifica EP, Vault, Backbl
 El ZIP R2, con SHA idéntico al objeto descargado desde B2, fue extraído en `C:\\R2R`: 3.289/3.289 entradas verificadas, cero fallos e inesperados, exit 0. Es restore aislado same-host, no cross-host. Ciphertext Vault remoto/read-back PASS; descifrado aislado NOT_RUN. DPAPI CurrentUser/notes no se declaran portables.
 
 EP-TASK-002, índice EP, OEP §131 y GOV-TASK-014/015 actualizados en main con read-back exacto. Se procesó la retroalimentación de Gobernanza y MCP-OCP; el desarrollo sintético P004 puede reanudarse dentro del ciclo MCP-OCP local 13 ya abierto. No autoriza instalación, merge, aceptación ni activar MCP-NORMATIVO. ZIP sin cifrado cliente por excepción de urgencia; TLS y SSE-B2/AES256 confirmados.
+
+---
+
+## EP · apertura de ciclo: integración del piloto Writing Plans en las tareas provisionales · 2026-11-11 · 10:06:12 America/Mexico_City
+
+**Ciclo local UUIDv7:** `01a1cb5c-18d5-7a54-a521-5f024bb22700` · identidad local de continuidad; no es folio global ni FOL1.
+
+### Cursor y comunicación
+
+- **DTC leído:** `main`, blob `d212206a5ee6f2a4260ba61ff548bae4f8cc64ff`, 349.394 bytes. Se revisó el último tramo cronológico; no se encontró un mensaje nuevo de Gobernanza posterior al último intercambio procesado: `SIN_NOVEDAD` en este cursor.
+- **Fuentes rectoras leídas:** OEP v0.3.65; control EP generación 3 (titularidad y alcance documental consultados como metadatos de procedencia; la instrucción directa del operador en este ciclo autoriza la actualización de las tareas EP); índice provisional y núcleos EP-TASK-001–007; DUG Samantha v388/NX-388m con GOW v2.18 y §ARR.
+- **Instrucción del operador:** consumir el documento experimental de EP-App y trasladar a las tareas provisionales las buenas prácticas útiles del método Writing Plans.
+
+### Lectura del encargo y viabilidad
+
+Se actualizan documentalmente el índice y los siete núcleos EP-TASK-001–007. Se conserva cada tarea como unidad de alcance, estado, crónica y aceptación; el plan experimental se usa como fuente metodológica subordinada, no como segundo registro de estado. Cada núcleo recibirá un bloque específico de planificación técnica: línea base y procedencia, trazabilidad requisito→cambio→prueba→evidencia, pasos pequeños con archivos/interfaces o recursos concretos, dependencias, casos límite/negativos, foco de revisión, criterios de salida, rollback y read-back.
+
+Se preservan estados y dependencias; no se declaran tareas completadas, no se ejecuta código ni operaciones de host, no se accede a secretos, no se modifica DUG/GOW/control ni se instala/mergea ningún producto. El TTL de 3.600 s del piloto no se convierte automáticamente en requisito: contradice los intervalos y valor predeterminado registrados en EP-TASK-004; queda como discrepancia pendiente de decisión expresa. También se debe reconciliar la rama/base del producto y el requisito clean-room de la UI antes de cualquier implementación.
+
+**Acción inmediata:** registrar esta respuesta inicial; a continuación reconciliar cada núcleo, añadir la planificación apropiada sin duplicar su historia y verificar cada escritura por lectura de vuelta y SHA de Git. Al cierre se actualizarán índice, OEP (solo en lo pertinente) y este DTC.
