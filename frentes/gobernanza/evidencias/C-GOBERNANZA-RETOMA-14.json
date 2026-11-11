@@ -51,10 +51,10 @@
     },
     "dialogue": {
       "path": "frentes/gobernanza/conversaciones/C-GOBERNANZA-RETOMA-14-dialogo.jsonl",
-      "commit_sha": "7a6da1366c14c2caca3285ccda0e1b2491d37433",
-      "git_blob_sha": "fe828604ae6c88a5423b29d57354d16aeeedbd62",
+      "commit_sha": "5713545680cc11ac2f7a30af3de6aa1681d5ebff",
+      "git_blob_sha": "d63fc6e9cb421997713ec893046581f8ced8872d",
       "size_bytes": 11874,
-      "sha256": "AAAF9A6914C3675E512E6DB168E2BF44F3ED2545C3C76EE6E28629848799AC89",
+      "sha256": "AF7A84A785A4E1B0A0C1BCB67A9B0DEE85F89939F6735F44C0615DDF9B76F3E3",
       "readback_exact": true,
       "records": 7
     },
@@ -69,7 +69,7 @@
     "last_visible_model_output_literal": "Se ha abierto Review a Device Call",
     "last_output_provenance": "Texto literal suministrado por el operador; no constituye evidencia de apertura de Vault.",
     "current_model_response_recorded": true,
-    "current_model_response_sha256": "69C7D1B4233FA286FDFB9827003B5D4144034928DC51941AFF3D8F7F69493B01"
+    "current_model_response_sha256": "2D46E9E6368255C8ADED4F1C0E8792F4D58122EFDF7EA734C29DBF0B58E030BE"
   },
   "device_and_secrets": {
     "PC8_status": "OFFLINE",
@@ -96,5 +96,14 @@
       "sha": "72419974B22261805933C3100E064001A6DC46507D83504B95F293F224D80A83",
       "readback_exact": true
     }
+  },
+  "age_snapshot": {
+    "as_of_local": "2026-11-11T09:27:18-06:00",
+    "dug_commit": "3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c",
+    "dug_commit_at_utc": "2026-11-10T16:56:10Z",
+    "dug_age_dhm": "0.22.31",
+    "latest_front_commit_before_final_record": "51a203b31657776639d4f1a9f6e57daa84a13cfc",
+    "latest_front_commit_at_utc": "2026-11-11T15:27:10Z",
+    "front_age_dhm_at_cut": "0.0.0"
   }
 }
