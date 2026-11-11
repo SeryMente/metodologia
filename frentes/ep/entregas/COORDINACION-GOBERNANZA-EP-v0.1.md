@@ -3057,3 +3057,37 @@ Cada objeto de la tabla fue leído de vuelta desde `main`; el contenido exacto c
 `ABIERTO → FUENTES_ADQUIRIDAS → PREFLIGHT_READ_ONLY → HALLAZGOS_RECONCILIADOS → DOCUMENTADO → READBACK_VERIFICADO → CERRADO`.
 
 **Conclusión:** avance documental y revalidación técnica parcial PASS; gates físicos, aceptación humana, instalación y aceptación integral permanecen pendientes. No se realizaron cambios de host o producto.
+
+
+---
+
+## EP · apertura tardía de ciclo: revisión de candidato MCP-OCP y revalidación documental · 2026-11-11 · 15:43:29 America/Mexico_City
+
+**UUIDv7 local:** `01a1cc90-e140-7c48-b7cd-81f88e940f34` · generado en runtime local para trazabilidad; no ID nativo ni folio global/FOL1.
+
+### Cursor, fuentes y literal
+
+- **DTC previo:** main, blob `441eeff18223614fae370ce539a6e2cf1367aa32`, último cierre EP leído: ciclo `01a1cc61-2b4b-7be9-9fb6-caa2e392cd56`. No se detectaron entradas posteriores a ese cierre en el cursor leído.
+- **OEP:** v0.3.69, §135, blob `34ba5fab053f07b79fb928babd07949aae97a5cc`; permanece sin modificar.
+- **DUG:** Samantha v388 · NX-388m · Metacanon 1.29 · GOW 2.18; blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`. §ARR y CNP se consultan como entrada y principios pertinentes; MCP normativo sigue DESACTIVADO.
+- **A literal:** «Avanza a paso veloz».
+
+### Apertura tardía y corrección de secuencia
+
+**DTC_OPENING_LATE=TRUE.** Antes de registrar esta apertura se realizaron consultas GitHub read-only para localizar el repositorio correcto y resolver la identidad de PR #21/#28, sus archivos, recibos y workflows. No hubo escrituras, merges, checkout, instalación, acciones de host, acceso a secretos ni operaciones sobre Vault/B2. La apertura no se presenta como anterior a esas consultas.
+
+### Interpretación y alcance
+
+Avanzar con máxima velocidad compatible con integridad: revalidar el candidato P004 vigente; corregir discrepancias documentales no normativas del paquete si se demuestran; actualizar EP-TASK-005 y el índice provisional con evidencia actual; conservar PR #21/#28 como borradores sujetos a revisión. No modificar OEP/DUG/GOW/controles normativos, no fusionar, no instalar, no configurar el host, no abrir secretos, no alterar BitLocker/ACL ni activar MCP-NORMATIVO/FOL1.
+
+### Hallazgos iniciales observados
+
+1. PR #21 de EP Vault permanece OPEN/DRAFT/NOT MERGED, HEAD `e165c0b867e20c9ae3156f6bad72c6f13ba8a5c5`, 34 archivos, `mergeable=false`, sin reviews ni workflow runs devueltos. Incluye cambios a `frentes/ep/OEP.md` desde una base anterior; el patch contiene OEP v0.3.56, mientras main conserva v0.3.69/§135. No se considera listo para merge y no se actualiza el documento normativo.
+2. PR #28 de MCP-OCP permanece OPEN/DRAFT/NOT MERGED, HEAD `86e58cff0e58a2452361ff8abe031917dc9a5b11`, 29 archivos, última actualización `2026-11-11T21:08:05Z`, `mergeable=false` en la consulta actual. PR #27 sigue como antecedente abierto/draft y no integrado.
+3. El candidato #28 declara restore/build PASS, 18/18 pruebas P004, 23/23 monitor/readiness, smoke STDIO/EOF PASS y ZIP/manifest/read-back PASS en ejecución local; CI alojado NOT_VERIFIED, instalación EP NOT_PERFORMED y E2E IPZ NOT_ACCEPTED.
+4. `SOURCE-PIN.json`, recibo y reconciliación #28 apuntan a main `9ec698fbe27fd087c2cc9939b3afd604984e6154` y merge `720fc22ecad3ecdcfe3087778472e51aaa939068`; `RUNBOOK.md` conserva otra sincronización (`446e692...` / `8d22bff...`). Pendiente de corrección documentada tras cotejo.
+5. EP-TASK-003 conserva el gate de almacenamiento FAIL de la última evidencia: C: cifrado XTS-AES128 con Protection Off y sin protectores; W: descifrado. Sin autorización ni precondiciones para instalar en Fila 4.
+
+### Estado de apertura
+
+`READ-ONLY_DISCOVERY_DONE` · `DTC_OPENING_LATE=TRUE` · ciclo todavía abierto. No se atribuye a estas consultas ninguna modificación ni aceptación. Procesamiento documental, read-back y cierre siguen pendientes.
