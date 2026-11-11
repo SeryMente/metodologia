@@ -876,3 +876,12 @@ MCP-OCP, dentro de su titularidad vigente, debe presentar una candidata reconcil
 - Commit de escritura del informe: a9d2562e34d35f16d132e65c6ebd8582d11e38f8.
 - Blob leído de vuelta: d507ea5abefc3e817938d279ec2a5990bcc25e1a.
 - Resultado: contenido final recuperado desde main y sección de informe presente; SHA/blob coincide con la respuesta de escritura. Read-back VERIFICADO.
+
+
+### Addendum de integridad de paquete y comparación refrescada · 2026-11-11 · 14:13:48 America/Mexico_City
+
+- **Corte PR/main:** PR HEAD f54ce14a841971e79b887e760593a91f845b1b5f; main HEAD 519e92cd520aec2914ab5b0c75949863429d1229; merge-base f8a5880f1cbf432754157b5669d1f9e80177766f. Compare: DIVERGED, 53 ahead / 89 behind. Esta medición precede al commit de este addendum; debe repetirse antes de cualquier integración.
+- **ZIP:** 137.474 bytes recuperados del archivo binario en la rama; SHA-256 calculado DE556FD547ACF2AB3946DF5AC2395A3993CB459B5E48F8E745A661A113A90783, coincide con el valor publicado en SHA256SUMS.txt. PASS para el ZIP.
+- **Manifest:** blob Git actual b2090143d9bb2f3ee81fb41dac2f93bf65ef6a7c. La reconstrucción Git blob SHA-1 sobre el contenido UTF-8/LF coincide exactamente con ese blob; SHA-256 de esos bytes actuales 844A682496023903AC366ACFF658EF7D9AD62E8D889C026FEEFF0D46831085E2. SHA256SUMS.txt publica 85F70366144FD2109D9688F2DDB6E7819FF955B8F05697C2FC6966E04F0044B1, que corresponde a una variante CRLF y no al contenido Git actual. **FAIL: suma del manifest desactualizada o no regenerada.** No modificar desde Gobernanza; MCP-OCP debe regenerar la suma, cotejar el paquete y leer de vuelta.
+- **CI:** el run 42917298648 sigue sin pasos, logs y artefactos; el resultado failure no demuestra ejecución del código. No se declara build, test ni smoke PASS a partir de CI.
+- **Estado global del paquete:** ZIP PASS; manifest checksum FAIL; package acceptance NO_ACCEPTED; IPZ E2E NOT_RUN.
