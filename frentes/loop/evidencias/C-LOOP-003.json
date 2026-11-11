@@ -86,7 +86,7 @@
     "remote_sha256_verified": true,
     "sha256": "E25E047B54E8313B3D08E8A8C0CBA11D0D5C792D642206AE8D14B4D654A78531"
   },
-  "acceptance": "Fuente original íntegra preservada y cotejada; revisión Groq/GPT-OSS completada mediante tres llamadas (primera parcial, segunda no utilizable, tercera completó H-L); informe externo íntegro y crónica editorial filtrada persistidos y leídos de vuelta. La aceptación del operador sigue PENDIENTE.",
+  "acceptance": "Fuente original íntegra preservada y cotejada; revisión Groq/GPT-OSS 120B completada mediante tres llamadas (primera parcial, segunda no utilizable, tercera completó H-L); informe externo y crónica editorial filtrada persistidos y leídos de vuelta. La aceptación del operador sigue PENDIENTE.",
   "no_action": {
     "no_methodology_governance_changed": true,
     "no_responsibility_control_changed": true,
@@ -104,9 +104,9 @@
     "software_implemented": false
   },
   "verification": {
-    "status": "PASS_SOURCE_MODEL_REVIEW_AND_DOCUMENT_READBACK",
-    "readback_at": "2026-11-11T20:10:00Z",
-    "timezone": "UTC",
+    "status": "PASS_SOURCE_MODEL_REVIEW_EDITORIAL_AND_READBACK",
+    "readback_at": "2026-11-11T14:15:40-06:00",
+    "timezone": "America/Mexico_City",
     "checks": {
       "original_source_sha256_verified": true,
       "original_source_remote_readback": true,
@@ -123,14 +123,32 @@
       "secret_not_printed_or_persisted": true,
       "responsibility_control_unchanged": true,
       "fol1_still_prepared_not_active": true,
-      "global_folios_still_unassigned": true
+      "global_folios_still_unassigned": true,
+      "readme_indexes_curated_chronicle": true,
+      "readme_indexes_raw_groq_review": true,
+      "core_reports_groq_completed": true,
+      "latest_dialogue_jsonl_has_valid_two_records": true
     },
     "artifact_blob_shas": {
       "frentes/loop/conversaciones/C-LOOP-003-entrada-verbatim.txt": "b1aec0118f1a5aa2fe03d64ed0528533be02d1db",
+      "frentes/loop/conversaciones/C-LOOP-003-dialogo.jsonl": "3ca7ef75acc16b08191a35eb41957a6d39673208",
       "frentes/loop/cronica/C-LOOP-003-checkpoint.md": "0982bc762642b4a78c7976c32362a74b4b4f00fb",
       "frentes/loop/cronica/C-LOOP-003-analisis-y-secuencia-causal.md": "6d26f169d7b931612ec49c1796a46b2d4e8aeed9",
       "frentes/loop/evidencias/C-LOOP-003-GPT-OSS-120B-review.md": "e60d5ccce8760039507a67b78df71bf9215c8cf2",
+      "frentes/loop/LOOP.md": "cec32c1ecab6f4659bdc38aceef1f21aa6e404d2",
+      "frentes/loop/README.md": "8506f31e401901d1d03c707e26edcd056032c348",
       "frentes/loop/CONTROL-RESPONSABILIDAD.json": "715e49c4dddb34f4d5d3cdf688a3fe99e473c7a4"
+    },
+    "main_head": {
+      "commit": "ef61ee7183bc3386a4222a50fe0b36feda1cd9cb",
+      "committed_at_utc": "2026-11-11T20:15:33Z",
+      "committed_at_local": "2026-11-11T14:15:33-06:00",
+      "route_age_floor": "0.0.0"
+    },
+    "dug_path_commit": {
+      "commit": "3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c",
+      "committed_at_utc": "2026-11-10T16:56:10Z",
+      "age_at_readback": "1.21.19"
     }
   },
   "groq_analysis": {
