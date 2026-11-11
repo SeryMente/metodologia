@@ -4,7 +4,7 @@
 
 - **Nombre canónico vigente:** MCP-OCP (anteriormente MCP-METODOLOGIA).
 - **Identidad canónica vigente:** MCP-OCP. **Identidad histórica:** MCP-METODOLOGIA.
-- **Versión/sello:** MCP-OCP-v0.1.32 · OCP MCP 1.0; H1 SINK:P004 cuenta con corte vertical y candidato de piloto validado localmente; instalación EP y aceptación IPZ pendientes; H2 persistencia mínima/bóveda y H3 workspace completo definidos, aún no aceptados. Las generaciones y folios de sesiones anteriores son metadatos de auditoría.
+- **Versión/sello:** MCP-OCP-v0.1.33 · OCP MCP 1.0; H1 SINK:P004 cuenta con corte vertical y candidato de piloto validado localmente; instalación EP y aceptación IPZ pendientes; H2 persistencia mínima/bóveda y H3 workspace completo definidos, aún no aceptados. Las generaciones y folios de sesiones anteriores son metadatos de auditoría.
 - **Repositorio propietario:** SeryMente/metodologia, rama main.
 - **OCP canónico:** frentes/mcp-metodologia/.
 - **Núcleo operativo único:** este archivo, MCP-METODOLOGIA.md.
@@ -840,3 +840,50 @@ La portación actual se publicó como PR [#28](https://github.com/SeryMente/meto
 `MCP_OCP_02=PASS_SELECTIVE_RECONCILIATION`; `MCP_OCP_03=PASS_18_P004_PLUS_23_MONITOR`; `MCP_OCP_04=PASS_STDIO_EOF_SMOKE_IPZ_E2E_PENDING`; `MCP_OCP_05=PASS_P004_VERTICAL_SLICE_GENERALIZATION_PENDING`; `MCP_OCP_PILOT_PACKAGE=PASS_CANDIDATE_NOT_ACCEPTED`; `EP_INSTALL=BLOCKED_EP_TASK_003_005`; `HOSTED_CI=NOT_VERIFIED`; `IPZ_E2E=NOT_ACCEPTED`; `MCP_NORMATIVO=DESACTIVADO`; `FOL1=PREPARADO_NO_ACTIVO`.
 
 `DTC_CYCLE_STATUS=INCOMPLETE` se conserva porque la apertura del ciclo 14 fue tardía (`DTC_OPENING_LATE=TRUE`). Los resultados técnicos se registran como ejecutados y verificados; no se reconstruye retroactivamente el orden de apertura ni se convierte en ciclo cerrado.
+
+## 24. Cierre técnico verificable del piloto SINK:P004 y sincronización final · 2026-11-11
+
+**Versión del núcleo:** MCP-OCP-v0.1.33. **Estado:** CORTE VERTICAL P004 VALIDADO · PAQUETE CANDIDATO PUBLICADO · INSTALACIÓN/E2E PENDIENTES.
+
+### 24.1 Corte de código y procedencia
+
+- Código y suites ejecutados desde source commit `f8973a1958fb1e6d259786c2828a19dae05aeee6`, rama `feat/mcp-ocp-p004-reconciled-20261111-7ab0c555`. El commit de pruebas de código es antecesor del HEAD documental posterior; los merges siguientes incorporaron cambios de EP/Gobernanza sin solapamiento con las 29 rutas de MCP-OCP.
+- Último main sincronizado: `9ec698fbe27fd087c2cc9939b3afd604984e6154`; merge de sincronización: `720fc22ecad3ecdcfe3087778472e51aaa939068`. Compare final comprobado: 47 commits ahead / 0 behind; 29 rutas.
+- PR [#28](https://github.com/SeryMente/metodologia/pull/28): OPEN / DRAFT / NOT MERGED, `mergeable=true`. PR #27 permanece como antecedente divergente no integrado.
+- DUG Samantha v388/NX-388m; commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`; blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`. §ARR `gow-sec-14`; P004 exacto, CNP A/0.8. MCP-NORMATIVO DESACTIVADO.
+
+### 24.2 Build, contrato y transporte
+
+Entorno aislado Windows 10.0.26200 x64 / PowerShell 7.4.22 / .NET SDK 10.0.403 / runtime 10.0.14 x64; checkout temporal `C:\Temp\MCP-OCP-P004-20261111\repo`. No hubo instalación global ni cambio persistente de PATH.
+
+- Restore de los dos proyectos: PASS.
+- Build servidor/monitor y proyectos de pruebas: PASS; 0 warnings / 0 errors.
+- Contrato P004: 18 PASS / 0 FAIL.
+- Monitor/readiness: 23 PASS / 0 FAIL.
+- Smoke STDIO/EOF: initialize, tools/list, tools/call(P004), tres respuestas JSON-RPC, `SINK_READ_SUCCESS` en STDERR y terminación EOF: PASS.
+
+### 24.3 Paquete candidato publicado y leído de vuelta
+
+- ZIP: `entregas/piloto-sink-p004/MCP-OCP-SINK-P004-f8973a19-candidate.zip`.
+- Tamaño: **137.784 bytes**.
+- SHA-256 ZIP: `705716c7aa581a98817869eb281b87500b591c4e811653c3a6825e1ceb59a3d2`.
+- Manifest SHA-256: `03ef3b75d21a153d6b659056c4e401ca65fd6e7f2355cc57d48ed6e71746f750`.
+- Validation receipt SHA-256: `b068287641fa908d56bc2196dad2a4e840a0120eacf6538c74914e1bc1fdcffd`.
+- `SHA256SUMS.txt` SHA-256: `6097ca2315bf531bde31b1df6a69d21f1d668436eef35eb7d92822b6389ed9db`.
+- `RUNBOOK.md` SHA-256: `4190999bee65bfb590c5a3ef24ec2faa5ba8f415c6e2530b3028ee06d7cabfb2`.
+- Nueve archivos en el ZIP; extracción, tamaño y SHA contra manifest: PASS. Smoke sobre el ejecutable exacto extraído del ZIP final: PASS.
+- Read-back autenticado desde GitHub, ligado al commit `7ff736b0b3bd7cef29b80127e4edf3b32f75f8d7`: ZIP, manifest, recibo, sums, runbook y pin coinciden byte a byte con los SHA locales.
+- Clasificación: `CANDIDATE_NOT_ACCEPTED`. Piloto `net10.0`, framework-dependent; no incluye panel WPF ni constituye release 1.0.0.
+
+### 24.4 Gates que permanecen abiertos
+
+- EP-TASK-003 sigue bloqueada según la última evidencia de EP/Gobernanza: C: XTS-AES128/100 %, Protection Off y sin protectores; W: descifrado/0 %/sin protectores; ubicación UNCLASSIFIED. La ruta local persistente de Metodología no tiene `.git`. No cumple precondiciones de instalación/importación.
+- EP-TASK-005 sigue pendiente/bloqueada hasta EP-TASK-003 PASS, recepción y cotejo del paquete, contrato MCP-OCP-03/04 y gates de host/workspace protegido.
+- No hubo handoff, extracción ni instalación en Fila 4; no se ejecutó import-sources, provision-operator, REGISTER ni configuración del cliente persistente. Runtime persistente del destino NO VERIFICADO.
+- GOV-TASK-003 / aceptación IPZ E2E: NOT_RUN / NOT_ACCEPTED. Requiere invocación real desde contexto IPZ y respuesta visible al modelo mediante RDC/STDIO; el smoke local no basta.
+- Hosted CI: NOT_VERIFIED. La evidencia PASS es local y reproducible en Windows.
+- Generalización P001–P043/lotes, panel WPF, release 1.0.0 y MCP-OCP-14 H2/H3: pendientes/diferidos.
+
+**Estado:** `MCP_OCP_02=PASS_RECONCILED_MAIN_0_BEHIND`; `MCP_OCP_03=PASS_18_P004_AND_23_MONITOR`; `MCP_OCP_04=PASS_STDIO_EOF_SMOKE_IPZ_E2E_PENDING`; `MCP_OCP_05=PASS_VERTICAL_P004_GENERALIZATION_PENDING`; `MCP_OCP_PACKAGE=PASS_CANDIDATE_NOT_ACCEPTED_READBACK_MATCHED`; `EP_TASK_003=BLOCKED`; `EP_TASK_005=BLOCKED`; `IPZ_E2E=NOT_ACCEPTED`; `HOSTED_CI=NOT_VERIFIED`; `MCP_NORMATIVO=DESACTIVADO`.
+
+El ciclo local 14 conserva `DTC_OPENING_LATE=TRUE` y `DTC_CYCLE_STATUS=INCOMPLETE`. Se documentan hechos y recibos posteriores; no se reescribe la apertura ni se convierte en aceptación retrospectiva.
