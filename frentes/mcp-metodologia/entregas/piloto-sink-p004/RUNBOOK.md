@@ -2,7 +2,8 @@
 
 **Estado:** CANDIDATE / NOT ACCEPTED / NOT INSTALLED
 **Fuente:** SeryMente/metodologia, rama feat/mcp-ocp-p004-reconciled-20261111-7ab0c555, commit f8973a1958fb1e6d259786c2828a19dae05aeee6.
-**Base main en la validación:** cb9b6a704bb18ccd219d847a48e810f22b4e2c3e.
+**Base main en la validación de código:** cb9b6a704bb18ccd219d847a48e810f22b4e2c3e.
+**Último main sincronizado:** 446e69251335a51fe8d4c01495c3738b11d5808c, merge 8d22bff7fae4a23ac224b984576205841abeda9c.
 **Revisión:** PR #28, OPEN / DRAFT / NOT MERGED.
 **DUG:** Samantha v388 / NX-388m; commit 3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c; blob 4db0ebadfd1e48b2bdec9236ba7f344921e4a865.
 

@@ -44,9 +44,9 @@
   "reconciliation": {
     "date": "2026-11-11",
     "initial_main": "7ab0c555b774adc5b930aad700f101ab2660b79a",
-    "latest_main": "1867af0c69f250aaee2b35b585eec8b74827b69c",
+    "latest_main": "446e69251335a51fe8d4c01495c3738b11d5808c",
     "port_commit": "6dda16a2fe9a5173f21ccdaaa23ba1ac9f9721c4",
-    "latest_sync_merge": "d981953da84eaede38cb25649eb76b30a454a7ef",
+    "latest_sync_merge": "8d22bff7fae4a23ac224b984576205841abeda9c",
     "report": "frentes/mcp-metodologia/piloto-sink/RECONCILIACION-20261111.md",
     "status": "BUILD_TESTS_SMOKE_AND_PACKAGE_VERIFIED_CANDIDATE_NOT_ACCEPTED",
     "historical_build_commit": "b6ce37af1dc32b2e3bb8af3ded2a77c7ba6d7648",
@@ -55,12 +55,12 @@
       "number": 28,
       "url": "https://github.com/SeryMente/metodologia/pull/28",
       "status": "OPEN_DRAFT_NOT_MERGED",
-      "base": "1867af0c69f250aaee2b35b585eec8b74827b69c"
+      "base": "446e69251335a51fe8d4c01495c3738b11d5808c"
     }
   },
   "validation": {
     "status": "PASS",
-    "validated_at": "2026-11-11T14:54:05.1034438-06:00",
+    "validated_at": "2026-11-11T15:00:37.9561271-06:00",
     "time_zone": "America/Mexico_City",
     "source_commit": "f8973a1958fb1e6d259786c2828a19dae05aeee6",
     "source_branch": "feat/mcp-ocp-p004-reconciled-20261111-7ab0c555",
@@ -146,10 +146,10 @@
     "package": {
       "status": "PASS",
       "file": "MCP-OCP-SINK-P004-f8973a19-candidate.zip",
-      "size": 137705,
-      "sha256": "bfaaed6bbdc6222c2ffed6da11f3257a282f2feecc2360ebeb41ede5bfa87cfb",
-      "manifest_sha256": "b738e17ca173e6515a03caf6060f35bf592a0f0effaba420d5ab9b2922e83b8d",
-      "receipt_sha256": "4d59dc29a980ec8dabc55a7c3bd811374272ac689e19ecd8fdd7434112ec0408",
+      "size": 137791,
+      "sha256": "97651021d03cc51d7e215ff81233df092e95cebce592208f2abf9dbaddc41eba",
+      "manifest_sha256": "f8d1559e4fe00d799bc1fee6e6a71c2b89013d26bb83cd182c927c320ec4145b",
+      "receipt_sha256": "3f1d4666a0fe5cfdf542943057316049195bc5b52bc6b96db2f80840a2dcb033",
       "archive_file_count": 9,
       "extract_readback": "PASS",
       "packaged_executable_smoke": "PASS"

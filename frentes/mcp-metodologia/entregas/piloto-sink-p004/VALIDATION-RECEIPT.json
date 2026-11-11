@@ -1,12 +1,14 @@
 {
   "schema": "mcp-ocp-pilot-validation-receipt/v1",
   "status": "PASS_LOCAL_BUILD_TESTS_AND_PACKAGE",
-  "validated_at": "2026-11-11T14:54:06.3013964-06:00",
+  "validated_at": "2026-11-11T15:00:39.7850232-06:00",
   "time_zone": "America/Mexico_City",
   "source_repository": "SeryMente/metodologia",
   "source_branch": "feat/mcp-ocp-p004-reconciled-20261111-7ab0c555",
   "source_commit": "f8973a1958fb1e6d259786c2828a19dae05aeee6",
-  "main_base": "cb9b6a704bb18ccd219d847a48e810f22b4e2c3e",
+  "main_base_at_build": "cb9b6a704bb18ccd219d847a48e810f22b4e2c3e",
+  "latest_main_after_sync": "446e69251335a51fe8d4c01495c3738b11d5808c",
+  "latest_sync_merge": "8d22bff7fae4a23ac224b984576205841abeda9c",
   "review_pr": 28,
   "host": {
     "os": "Windows 10.0.26200",
@@ -16,7 +18,8 @@
     "runtime": "10.0.14"
   },
   "source_integrity": {
-    "checkout_head": "f8973a1958fb1e6d259786c2828a19dae05aeee6",
+    "checkout_head": "8d22bff7fae4a23ac224b984576205841abeda9c",
+    "build_source_commit": "f8973a1958fb1e6d259786c2828a19dae05aeee6",
     "clean_before_build": true,
     "dug_git_blob": "4db0ebadfd1e48b2bdec9236ba7f344921e4a865"
   },
@@ -37,11 +40,11 @@
   },
   "package": {
     "file": "MCP-OCP-SINK-P004-f8973a19-candidate.zip",
-    "size": 137705,
-    "sha256": "bfaaed6bbdc6222c2ffed6da11f3257a282f2feecc2360ebeb41ede5bfa87cfb",
+    "size": 137791,
+    "sha256": "97651021d03cc51d7e215ff81233df092e95cebce592208f2abf9dbaddc41eba",
     "manifest": "manifest.json",
-    "manifest_size": 2933,
-    "manifest_sha256": "b738e17ca173e6515a03caf6060f35bf592a0f0effaba420d5ab9b2922e83b8d",
+    "manifest_size": 3050,
+    "manifest_sha256": "f8d1559e4fe00d799bc1fee6e6a71c2b89013d26bb83cd182c927c320ec4145b",
     "files_in_archive": 9
   },
   "diagnostic_logs": {

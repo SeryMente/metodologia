@@ -2,16 +2,19 @@
   "schema": "mcp-ocp-pilot-package-manifest/v1",
   "product": "MCP-OCP SINK:P004 pilot",
   "package": "MCP-OCP-SINK-P004-f8973a19-candidate.zip",
-  "package_size": 137705,
-  "package_sha256": "bfaaed6bbdc6222c2ffed6da11f3257a282f2feecc2360ebeb41ede5bfa87cfb",
+  "package_size": 137791,
+  "package_sha256": "97651021d03cc51d7e215ff81233df092e95cebce592208f2abf9dbaddc41eba",
   "status": "CANDIDATE_NOT_ACCEPTED",
   "source_repository": "SeryMente/metodologia",
   "source_branch": "feat/mcp-ocp-p004-reconciled-20261111-7ab0c555",
   "source_commit": "f8973a1958fb1e6d259786c2828a19dae05aeee6",
-  "main_base": "cb9b6a704bb18ccd219d847a48e810f22b4e2c3e",
+  "main_base_at_build": "cb9b6a704bb18ccd219d847a48e810f22b4e2c3e",
+  "latest_main_after_sync": "446e69251335a51fe8d4c01495c3738b11d5808c",
+  "latest_sync_merge": "8d22bff7fae4a23ac224b984576205841abeda9c",
   "review_pr": {
     "number": 28,
-    "status": "OPEN_DRAFT_NOT_MERGED"
+    "status": "OPEN_DRAFT_NOT_MERGED",
+    "base": "446e69251335a51fe8d4c01495c3738b11d5808c"
   },
   "dug_version": "v388",
   "dug_signature": "NX-388m",
@@ -40,8 +43,8 @@
   "files": [
     {
       "path": "RUNBOOK.md",
-      "size": 1912,
-      "sha256": "7de3707bf7ac6cdfa0aca7cafb72acb2c2d5b5382e49da678e2a492a1102d8b3"
+      "size": 2013,
+      "sha256": "4190999bee65bfb590c5a3ef24ec2faa5ba8f415c6e2530b3028ee06d7cabfb2"
     },
     {
       "path": "server/OcpMcp.deps.json",
@@ -51,27 +54,27 @@
     {
       "path": "server/OcpMcp.dll",
       "size": 57344,
-      "sha256": "0ec470836d1a18a6ddda529c7bb2b8ebb6dd18bfd1ce5220142346760696e959"
+      "sha256": "891cee2c18195bef64e0a94dc7303f7c5cbc1de2f05b7cfa83a063d1fa318e93"
     },
     {
       "path": "server/OcpMcp.exe",
       "size": 162304,
-      "sha256": "b526b595afb6e107f2b06fbc118bf603380932906e01a1db853fe5723aa9fce5"
+      "sha256": "a21038af4fdea2b230815a705148f0317a3bf912afdf0b038b761d9a259e9df5"
     },
     {
       "path": "server/OcpMcp.Monitoring.dll",
       "size": 41984,
-      "sha256": "e852d65e3ab5324ec3370f16a7af71c1db26d8b5a0bcdb3712040d7219969113"
+      "sha256": "fd9add9a562f9a367a769334798686a61ed0595aaba77895dff83aea3f111deb"
     },
     {
       "path": "server/OcpMcp.Monitoring.pdb",
       "size": 18080,
-      "sha256": "7e37a74ee7071039b14f599ad6d75e6d169e45951e40fc675d23b53dcfcb8e91"
+      "sha256": "f8d18dd3e7d517a73ae5676ce6659b5ceb77a86d69a638b3e5aaebc4a5b3ff8b"
     },
     {
       "path": "server/OcpMcp.pdb",
       "size": 19120,
-      "sha256": "e40dc313c22fb085b1dc1ab41d92eaf84968fac3583b618c832781a8f7f7e4a7"
+      "sha256": "f5757fe8b5985ced3435da72a130764f3f68b8142758fe9040ba184e49fa8e74"
     },
     {
       "path": "server/OcpMcp.runtimeconfig.json",
@@ -80,8 +83,8 @@
     },
     {
       "path": "SOURCE-PIN.json",
-      "size": 6259,
-      "sha256": "e50cad2d7df729198d07d9a1f8ca2633d0802790feb888244e68a0b0d51b1c3e"
+      "size": 6120,
+      "sha256": "3f497415bdfeeeda8eda97fd17a8c342ea64302966e4190d69d0f1ac5521bda8"
     }
   ]
 }
