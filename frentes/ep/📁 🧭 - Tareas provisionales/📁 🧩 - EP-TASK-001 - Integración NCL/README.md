@@ -341,3 +341,22 @@ Durante una lectura local de configuración de KeePassXC, la salida incluyó mat
 Conservar el inventario como `PARTIAL`. Requiere revisión presencial del propietario P012/P013, rotación KeeShare y verificación local de que Chrome mantiene KeePassXC-Browser habilitada y que Native Messaging puede iniciar el host. Solo después se probará una asociación local supervisada, sin exportar secretos, antes de delegar una pestaña para Cora read-only.
 
 **Límites:** la instalación materializada de KeePassXC-Browser ya no se considera ausente, pero el preflight NCL no está completado ni aceptado.
+
+
+## Revalidación Native Messaging y estado de Chrome · 2026-11-11 · ejecución read-only
+
+**Resultado:** `NCL_PREFLIGHT_UPDATED · HOST_MANIFEST_AND_REGISTRY_STATIC_PASS · EXTENSION_ENABLEMENT_UNVERIFIED · LIVE_HANDSHAKE_NOT_RUN · KEEPSHARE_ROTATION_PENDING`.
+
+### Evidencia nueva bajo CENTRAL\fila4
+
+- Perfil Chrome OCP: `Profile 36`. En Secure Preferences la entrada de KeePassXC-Browser (`oboonakemofpalcgghocfoadofidjkkk`) existe; ruta relativa `oboonakemofpalcgghocfoadofidjkkk\1.10.4.1_0`, carpeta y `manifest.json` presentes; versión 1.10.4.1 y nombre `KeePassXC-Browser`.
+- La entrada Secure Preferences no expone el campo `state`; `active_bit=false`, `has_started_service_worker=true`, `disable_reasons` vacío y `withholding_permissions=false`. Estos metadatos no permiten demostrar de forma inequívoca el estado habilitado y no se hizo una conexión real.
+- Registro `HKCU\Software\Google\Chrome\NativeMessagingHosts\org.keepassxc.keepassxc_browser` presente. Su valor apunta a `...\config\org.keepassxc.keepassxc_browser_brave.json`; la denominación `_brave` no constituye por sí sola una incompatibilidad: los cuatro manifiestos Chrome/Brave/Chromium/Vivaldi cotejados tienen SHA-256 idéntico `D3667E44162E5DEE88B0A4F7E2F9E9AF927D921321C10186080A991938C43B92`, declaran `name=org.keepassxc.keepassxc_browser`, `type=stdio`, el mismo `keepassxc-proxy.exe` existente y el origen Chrome de KeePassXC-Browser (`chrome-extension://oboonakemofpalcgghocfoadofidjkkk/`).
+- KeePassXC portable 2.8.0 y `keepassxc-proxy.exe` presentes. El proceso KeePassXC no estaba activo durante la lectura; no se abrió la GUI ni la base.
+- No se volvió a leer ni copiar configuración KeeShare. La rotación de la pareja KeeShare y la revisión presencial de P012/P013 siguen pendientes del propietario.
+
+### Interpretación y próximo paso acotado
+
+La capa estática de Native Messaging está materializada (clave de Registro, manifiesto compatible y ejecutable existente). No equivale a handshake runtime ni a asociación funcional. El estado de habilitación de la extensión permanece `UNVERIFIED`; la prueba de conexión supervisada y la navegación Cora read-only no se ejecutaron. No se modificaron Registro, extensiones, Profile 36, permisos, KeePassXC, base, KeeShare ni procesos.
+
+**Siguiente gate de EP-TASK-001:** propietario completa la rotación local controlada de KeeShare y revisión P012/P013; a continuación se valida la extensión desde la interfaz y se realiza el handshake Native Messaging supervisado, sin exponer secretos, antes del smoke Cora read-only.
