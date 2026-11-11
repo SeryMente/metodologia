@@ -38,7 +38,7 @@
     "panel_publish_profile": "src/OcpMcp.Panel/Properties/PublishProfiles/win-x64.pubxml",
     "monitor_schema_version": 1
   },
-  "verification": "LOCAL_WINDOWS_VALIDATION_PASS: .NET SDK 10.0.403; server build PASS; P004 18/18; monitor/readiness 23/23; MCP STDIO initialize/tools/list/tools/call/EOF PASS; package ZIP extracted and all 9 files matched manifest SHA-256; packaged executable P004 smoke PASS. Build source commit b6ce37af1dc32b2e3bb8af3ded2a77c7ba6d7648. EP installation and IPZ E2E acceptance are not claimed.",
+  "verification": "LOCAL_WINDOWS_VALIDATION_PASS on source 4600086c492582c5d854145db64097310ac73686: .NET SDK 10.0.403; restore/build/publish PASS with 0 warnings/0 errors; P004 18/18; monitor/readiness 23/23; source STDIO and exact packaged executable smoke PASS; package extraction and SHA-256 read-back PASS. EP installation and IPZ E2E acceptance are not claimed.",
   "branch_base_sha": "7ab0c555b774adc5b930aad700f101ab2660b79a",
   "branch": "feat/mcp-ocp-p004-reconciled-20261111-7ab0c555",
   "reconciliation": {
@@ -48,7 +48,7 @@
     "port_commit": "6dda16a2fe9a5173f21ccdaaa23ba1ac9f9721c4",
     "latest_sync_merge": "d981953da84eaede38cb25649eb76b30a454a7ef",
     "report": "frentes/mcp-metodologia/piloto-sink/RECONCILIACION-20261111.md",
-    "status": "SELECTIVE_PORT_PERSISTED_BUILD_TESTS_AND_NEW_PACKAGE_PENDING",
+    "status": "SELECTIVE_PORT_BUILD_TESTS_SMOKE_AND_PACKAGE_VERIFIED_CANDIDATE_NOT_ACCEPTED",
     "historical_build_commit": "b6ce37af1dc32b2e3bb8af3ded2a77c7ba6d7648",
     "note": "Code/test blobs match an older local validation, but this branch has not had a fresh restore/build/test/smoke. Historical ZIP/manifest are not reused.",
     "review_pr": {
@@ -57,5 +57,99 @@
       "status": "OPEN_DRAFT_NOT_MERGED",
       "base": "1867af0c69f250aaee2b35b585eec8b74827b69c"
     }
+  },
+  "validation": {
+    "status": "PASS",
+    "validated_at": "2026-11-11T14:40:50.2723589-06:00",
+    "time_zone": "America/Mexico_City",
+    "source_commit": "4600086c492582c5d854145db64097310ac73686",
+    "source_branch": "feat/mcp-ocp-p004-reconciled-20261111-7ab0c555",
+    "main_base": "1867af0c69f250aaee2b35b585eec8b74827b69c",
+    "host_platform": "Windows 10.0.26200 x64",
+    "powershell": "7.4.22",
+    "sdk": "10.0.403",
+    "runtime_used": "Microsoft.NETCore.App 10.0.14 x64",
+    "sdk_mode": "isolated temporary SDK; no machine-wide installation",
+    "checkout_mode": "ephemeral clone under C:\\Temp",
+    "dug_commit": "3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c",
+    "dug_git_blob": "4db0ebadfd1e48b2bdec9236ba7f344921e4a865",
+    "restore_pilot_tests": "PASS",
+    "restore_monitor_tests": "PASS",
+    "server_build": "PASS",
+    "pilot_test_build": "PASS",
+    "monitor_test_build": "PASS",
+    "build_warnings": 0,
+    "build_errors": 0,
+    "p004_tests": {
+      "pass": 18,
+      "fail": 0
+    },
+    "monitor_readiness_tests": {
+      "pass": 23,
+      "fail": 0
+    },
+    "stdio_smoke": {
+      "status": "PASS",
+      "initialize": "PASS",
+      "tools_list": "PASS",
+      "sink_principle_P004": "PASS",
+      "eof_termination": "PASS",
+      "json_rpc_stdout_responses": 3,
+      "success_event_stderr": "SINK_READ_SUCCESS"
+    },
+    "logs": {
+      "dotnet-info.log": {
+        "sha256": "cf63f9432519bc6777afeab903d1651c3c7cefa5a37b53a64f4d01b512b86db4",
+        "size": 2006
+      },
+      "restore-pilot-tests.log": {
+        "sha256": "b4aa90fe9680915c6ea3d2f45fb20c314a9fc435e384485ed0ca6b04ecee8b7d",
+        "size": 468
+      },
+      "restore-monitor-tests.log": {
+        "sha256": "b703bd0783113bc4dde8457b1ee892ad57393d6d34822c139cd4bf8dcc4ff4a6",
+        "size": 296
+      },
+      "build-server.log": {
+        "sha256": "c206017d3c9f8a118ea958fdece2f09937a0bc55de729cfdc2a7046c740346dc",
+        "size": 376
+      },
+      "build-pilot-tests.log": {
+        "sha256": "20dd8d13f321c3b230a16b7eab2ad0b18a30aee1f3be4b82b299d9c77fca9ccd",
+        "size": 528
+      },
+      "pilot-contract-tests.log": {
+        "sha256": "d6f21749d8898b6624988bf056da2bcc66da3a5df1cae8ffa1fa2db36deb338b",
+        "size": 1098
+      },
+      "build-monitor-tests.log": {
+        "sha256": "137fcc9cb4526329b7363f0450fd83a2c555b9a8c5f5e635f559646612056e26",
+        "size": 429
+      },
+      "monitor-contract-tests.log": {
+        "sha256": "b9b3f2b5a42285cc3d81ae5eefbdc678104e5e408a861bb5d1045885cbc29989",
+        "size": 1384
+      },
+      "smoke-summary.log": {
+        "sha256": "2d5c90d467b5508a9fad22f0c00902035d9f3fe7f703b052aab13365be2c0b31",
+        "size": 78
+      },
+      "stdio-stdout.jsonl": {
+        "sha256": "7818b9894239d7760ead89d18ba78244096041fe2738c639f840a5fcd9918938",
+        "size": 8215
+      },
+      "stdio-stderr.log": {
+        "sha256": "231d9d70cc373b56a54e12539c6e616df03ed86ae02759a2eabb6b8a07aa88e6",
+        "size": 449
+      }
+    },
+    "installation_ep": "NOT_PERFORMED",
+    "ipz_e2e_acceptance": "NOT_ACCEPTED",
+    "hosted_ci": "NOT_VERIFIED",
+    "normative_engine": "DESACTIVADO",
+    "package_extract_hash_readback": "PASS",
+    "packaged_executable_smoke": "PASS",
+    "package_file": "MCP-OCP-SINK-P004-4600086c-candidate.zip",
+    "package_verification": "PASS_CANDIDATE_NOT_ACCEPTED"
   }
 }

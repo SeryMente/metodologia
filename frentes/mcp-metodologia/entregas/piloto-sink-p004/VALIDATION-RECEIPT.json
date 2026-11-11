@@ -1,0 +1,100 @@
+{
+  "schema": "mcp-ocp-pilot-validation-receipt/v1",
+  "status": "PASS_LOCAL_BUILD_TESTS_AND_PACKAGE",
+  "validated_at": "2026-11-11T14:40:50.2723589-06:00",
+  "time_zone": "America/Mexico_City",
+  "source_repository": "SeryMente/metodologia",
+  "source_branch": "feat/mcp-ocp-p004-reconciled-20261111-7ab0c555",
+  "source_commit": "4600086c492582c5d854145db64097310ac73686",
+  "main_base": "1867af0c69f250aaee2b35b585eec8b74827b69c",
+  "review_pr": 28,
+  "host": {
+    "os": "Windows 10.0.26200",
+    "architecture": "x64",
+    "powershell": "7.4.22",
+    "sdk": "10.0.403",
+    "runtime": "10.0.14"
+  },
+  "source_integrity": {
+    "checkout_head": "4600086c492582c5d854145db64097310ac73686",
+    "checkout_clean_before_build": true,
+    "dug_git_blob": "4db0ebadfd1e48b2bdec9236ba7f344921e4a865"
+  },
+  "results": {
+    "restore": "PASS",
+    "builds": "PASS; 0 warnings; 0 errors",
+    "p004_tests": {
+      "pass": 18,
+      "fail": 0
+    },
+    "monitor_readiness_tests": {
+      "pass": 23,
+      "fail": 0
+    },
+    "source_stdio_eof_smoke": "PASS",
+    "package_extract_manifest_readback": "PASS",
+    "packaged_executable_stdio_smoke": "PASS"
+  },
+  "package": {
+    "file": "MCP-OCP-SINK-P004-4600086c-candidate.zip",
+    "size": 138142,
+    "sha256": "50c0c68f769aefec95dfde3e45c74594d34b3fbcb25916814181fad241e8e3a6",
+    "manifest": "manifest.json",
+    "manifest_size": 2948,
+    "manifest_sha256": "ac491edc7fadad65715b58d1275592bca86f506584489683012e74779da87627",
+    "files_in_archive": 9
+  },
+  "diagnostic_logs": {
+    "dotnet-info.log": {
+      "sha256": "cf63f9432519bc6777afeab903d1651c3c7cefa5a37b53a64f4d01b512b86db4",
+      "size": 2006
+    },
+    "restore-pilot-tests.log": {
+      "sha256": "b4aa90fe9680915c6ea3d2f45fb20c314a9fc435e384485ed0ca6b04ecee8b7d",
+      "size": 468
+    },
+    "restore-monitor-tests.log": {
+      "sha256": "b703bd0783113bc4dde8457b1ee892ad57393d6d34822c139cd4bf8dcc4ff4a6",
+      "size": 296
+    },
+    "build-server.log": {
+      "sha256": "c206017d3c9f8a118ea958fdece2f09937a0bc55de729cfdc2a7046c740346dc",
+      "size": 376
+    },
+    "build-pilot-tests.log": {
+      "sha256": "20dd8d13f321c3b230a16b7eab2ad0b18a30aee1f3be4b82b299d9c77fca9ccd",
+      "size": 528
+    },
+    "pilot-contract-tests.log": {
+      "sha256": "d6f21749d8898b6624988bf056da2bcc66da3a5df1cae8ffa1fa2db36deb338b",
+      "size": 1098
+    },
+    "build-monitor-tests.log": {
+      "sha256": "137fcc9cb4526329b7363f0450fd83a2c555b9a8c5f5e635f559646612056e26",
+      "size": 429
+    },
+    "monitor-contract-tests.log": {
+      "sha256": "b9b3f2b5a42285cc3d81ae5eefbdc678104e5e408a861bb5d1045885cbc29989",
+      "size": 1384
+    },
+    "smoke-summary.log": {
+      "sha256": "2d5c90d467b5508a9fad22f0c00902035d9f3fe7f703b052aab13365be2c0b31",
+      "size": 78
+    },
+    "stdio-stdout.jsonl": {
+      "sha256": "7818b9894239d7760ead89d18ba78244096041fe2738c639f840a5fcd9918938",
+      "size": 8215
+    },
+    "stdio-stderr.log": {
+      "sha256": "231d9d70cc373b56a54e12539c6e616df03ed86ae02759a2eabb6b8a07aa88e6",
+      "size": 449
+    }
+  },
+  "limitations": {
+    "github_hosted_ci": "NOT_VERIFIED",
+    "ep_installation": "NOT_PERFORMED",
+    "fila4_persistent_runtime": "NOT_VERIFIED",
+    "ipz_e2e": "NOT_ACCEPTED",
+    "mcp_normativo": "DESACTIVADO"
+  }
+}
