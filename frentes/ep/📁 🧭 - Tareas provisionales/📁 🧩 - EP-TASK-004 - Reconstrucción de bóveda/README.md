@@ -756,3 +756,35 @@ EP-TASK-004 conserva como requisitos documentados el selector 15 s, 30 s, 1, 2, 
 ### 5. Cierre y aceptación separados
 
 H7/H8 sintético, H10 visual/auditivo presencial y aceptación del operador son resultados distintos. Mantenerlos separados. El producto no se integra a main ni reemplaza el release hasta superar sus gates; toda discrepancia, cambio de requisito, excepción o rollback queda en esta crónica con procedencia.
+
+---
+
+## Retest sintético de la copia local EP-App y reconciliación del manifiesto · 2026-11-11
+
+**Resultado:** EP_VAULT_VALIDATION_PASS · exit code 0 · 118,79 s. Este resultado aplica a la copia local exacta ejecutada, no a un release v1.1.0 ni a la candidata manifiestada sin divergencias.
+
+### Línea base y cotejo
+
+Ruta ejecutada: Desktop/SeryMente/Repositorios/Metodologia/metodologia/frentes/ep/modulos/MOD-EPVAULT/v1.0.0. El MANIFEST.json declara v1.0.0 y los hashes originales de release. Git hash-object local devolvió:
+
+- Core local ba5df2ceef45682e5c6e7b6fbbfc28b147444f66, frente al manifiesto c7dc353c4aba5b6b7759b359698c4b94446b31b2.
+- CLI local f485bc116df503aaab5d6f96d885d36197439496, idéntico al manifiesto.
+- GUI local e7a072bc94adcd2ef8fde99168883c654439495e, frente al manifiesto a065f1086e01ddc2142f7341ccf28cbea65e7ddf.
+- XAML local 24949e3daf4de2024cd30934ce25eb1bec322230, frente al manifiesto 0d692a2b1cb9b0ee53ce6b480a35ff3a9a9799d3.
+- Test local e324872966131ad0ba0a65b0fe666785dcd6ef1d, idéntico al manifiesto.
+- Los backups originales de Core, GUI y XAML cotejan los blobs declarados por el manifiesto; las modificaciones locales se preservaron y no se revirtieron.
+
+### Resultado de pruebas
+
+Pasaron parser PowerShell, carga XAML, contrato de geometría WPF/3D, escaneo clean-room, identidad declarada 1.0.0, self-test criptográfico, Job Object/timeout, ocho opciones históricas de TTL, migración KDF 200k a 600k, allowlist de procesos, notas DPAPI, fail-closed, CRUD/tamper/backup, TTL absoluto, redacción de logs y revocación de sesión compartida CLI/GUI. El sandbox sintético se eliminó; la búsqueda posterior no encontró directorio residual. La CLI Status posterior siguió en NOT_INITIALIZED y sessionActive=false.
+
+### Divergencias que impiden aceptar EP-App v1.1.0
+
+- Core admite 1800 y 3600 segundos, pero CLI conserva ValidateSet 15,30,60,120,180,300,600,900. El test conserva las ocho opciones originales y no prueba 1800/3600. El ensayo CLI con DurationSeconds 3600 falló por ValidateSet. No se modifica la política; 3600 s sigue PROPUESTA/PENDIENTE_DE_DECISIÓN por conflicto con el requisito vigente de default 300 s y máximo 900 s.
+- XAML declara el título EP-App v1.1.0 y añade una pestaña ENTORNO PERSISTENTE con selector de 1 hora; el manifiesto/README y la CLI siguen declarando v1.0.0.
+- XAML mantiene PersistentModeToggle, RestoreCheckpointButton y SaveCloseButton deshabilitados. La GUI solo incorpora sus nombres a la lista de elementos; la búsqueda de código no encontró handlers que los conecten a operaciones de sesión. La pestaña es UI inerte, no capacidad implementada.
+- El árbol local no es un checkout Git; las copias de respaldo muestran el baseline original y los cambios locales no están integrados en un manifiesto versionado. PR #21 sigue OPEN, NOT MERGED y mergeable=false.
+
+### Cierre del retest y siguiente gate
+
+Este ciclo acredita PASS de la suite sintética sobre la copia local no manifiestada. No acredita H10, accesibilidad, aceptación humana, integración main, TTL extendido, persistencia real, botones funcionales, VHDX, BitLocker, B2, Guardian ni crypto-erasure. No se abrió ni alteró Vault formal. Antes de construir: reconciliar línea base, corregir/integrar manifests/CLI/tests mediante TDD, resolver TTL con decisión, y cumplir P012/P013 para UX/seguridad/arquitectura.
