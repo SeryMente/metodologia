@@ -1,7 +1,7 @@
 # EP-TASK-003 · Materialización del workspace y dead-man trigger fuera de CECEQ
 
 **Naturaleza:** tarea provisional del frente EP; sin titularidad, control, sesión ni folio propios.  
-**Estado:** `en_curso` — alcance delimitado; implementación del disparador pendiente.  
+**Estado:** `en_curso · DISEÑO_ACEPTADO · BITLOCKER_GATE_FAIL · C_XTSAES128_100_PROTECTION_OFF_NO_PROTECTORS · W_FULLY_DECRYPTED_0_PROTECTION_OFF_NO_PROTECTORS · LOCATION_UNCLASSIFIED · NO_MUTATIONS`
 **Responsabilidad:** frente EP.  
 **OEP padre:** [OEP](../../OEP.md), especialmente §106.
 
@@ -568,3 +568,16 @@ La sesión normal CENTRAL/fila4 no estaba elevada y recibió acceso denegado al 
 ### Decisión
 
 Bloqueado crear, cifrar, copiar, montar, cambiar puntos de montaje o implementar el dead-man. C: no cumple XTS-AES256/Protection On/protector recuperable; W: está sin cifrar y no es destino seguro. El origen Desktop/SeryMente se preserva íntegro. Próximo paso: resolver el acceso administrativo autorizado y la custodia formal de recuperación en EP Vault, clasificar ubicación con evidencia, estabilizar manifiesto y solo después ejecutar la secuencia de volumen/copia/read-back ya aprobada.
+
+ 
+## Revalidación BitLocker read-only de Fila 4 · 2026-11-11 · 14:54 America/Mexico_City
+
+**Resultado:** el gate físico permanece FAIL; esta lectura confirma el diagnóstico previo, no lo resuelve.
+
+- Contexto de consulta: RDC separado en el mismo equipo, usuario `CENTRAL\MantenimientoRCI`; `Get-BitLockerVolume` completó sin error. La sesión propietaria `CENTRAL\fila4` recibió `Acceso denegado`; no se intentó elevación ni bypass en esa sesión.
+- `C:`: `FullyEncrypted`, `XtsAes128`, 100 %, `ProtectionStatus=Off`, `LockStatus=Unlocked`, cero protectores de clave.
+- `W:`: `FullyDecrypted`, `EncryptionMethod=None`, 0 %, `ProtectionStatus=Off`, `LockStatus=Unlocked`, cero protectores.
+- La lectura actual coincide con la revalidación administrativa de 10:38. No se modificaron protectores, algoritmo, porcentaje, estado, puntos de montaje, VHDX, archivos ni ACL.
+- Ubicación física continúa `UNCLASSIFIED`; no se consultaron GPS/IP ni se infirió CECEQ/LOC-OTHER.
+
+**Decisión:** no crear, adjuntar, cifrar, copiar, migrar ni montar volumen de workspace, y no activar dead-man hasta satisfacer los gates XTS-AES256/Protection On/protector recuperable/100 %, custodia y clasificación de ubicación. EP-TASK-003 permanece `en_curso`.
