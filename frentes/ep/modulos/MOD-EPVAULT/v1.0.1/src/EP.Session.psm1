@@ -126,8 +126,8 @@ function New-EpSessionContainer {
     param([ValidateRange(5,30)][int]$SizeGiB = 30,[switch]$ImportCurrentWorkspace)
     $null = Get-EpVaultSession
     $vaultNames = @(Get-EpVaultVariableNames)
-    $idName = 'EP_B2_MASTER_APPLICATION_KEY_ID'
-    $keyName = 'EP_B2_MASTER_APPLICATION_KEY'
+    $idName = 'EP_B2_APPLICATION_KEY_ID'
+    $keyName = 'EP_B2_APPLICATION_KEY'
     foreach ($name in @($idName,$keyName,'EP_B2_BUCKET_NAME','EP_B2_PREFIX')) { if ($vaultNames -notcontains $name) { throw ('EP_SESSION_B2_REQUIRED_VAULT_VARIABLE_MISSING_' + $name) } }
     $bucket = Get-EpVaultVariableValue -Name 'EP_B2_BUCKET_NAME' -Reveal
     $prefix = Get-EpVaultVariableValue -Name 'EP_B2_PREFIX' -Reveal
