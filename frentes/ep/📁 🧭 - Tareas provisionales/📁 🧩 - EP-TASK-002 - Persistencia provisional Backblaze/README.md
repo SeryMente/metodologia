@@ -1,7 +1,7 @@
 # 📝 EP-TASK-002 · Persistencia provisional con Backblaze B2 para datos de usuario y continuidad de la sesión canónica
 
 **Naturaleza:** tarea provisional del frente Entorno Persistente; materialización auxiliar del registro de tareas, no un OEP nuevo, no un frente independiente y no una decisión de arquitectura canónica.  
-**Estado:** `en_curso · P0 · B2_UPLOAD_READBACK_PASS_4_OF_4 · WORKSPACE_ISOLATED_RESTORE_PASS_SAME_HOST · VAULT_DECRYPT_AND_CROSS_HOST_PENDING`. Cuatro objetos R2 cargados y cotejados por SHA-256; SSE-B2/AES256 confirmado. ZIP extraído en C:\\R2R con 3.289/3.289 archivos verificados. Descifrado de copia Vault y prueba cross-host pendientes. ZIP sin cifrado cliente por excepción de urgencia del operador; sincronización automática/idempotente y aceptación integral siguen pendientes.
+**Estado:** `en_curso · P0 · B2_V6_HISTORICAL_OBJECT_VERIFIED · B2_V7_CURRENT_FORMAL_3352B_UPLOAD_READBACK_SHA_PASS · SSE_B2_AES256_PASS · ISOLATED_DECRYPT_PENDING · CROSS_HOST_PENDING`. B2 v7 protege el ciphertext formal vigente (3.352 B; SHA-256 3122C544012F989F0501BD0E82EA920A93F19A42034D83FA682BCC2290891E82): upload, download de retorno y cotejo exacto SHA/tamaño PASS; SSE-B2/AES256 confirmado. El objeto v6 histórico y el restore same-host R2 (3.289/3.289) conservan sus PASS previos. El descifrado aislado de la copia v7 y la recuperación cross-host siguen pendientes. El ZIP del workspace permanece como excepción histórica sin cifrado cliente; no se confunde con SSE-B2. Sincronización automática/idempotente y aceptación integral siguen pendientes.
 **Responsabilidad:** vinculada a `frentes/ep/`; sin control, sesión, titularidad ni folio global propios.  
 **task_id:** `EP-TASK-002` (identificador local estable; no es folio global).  
 **scope_ref:** `frentes/ep/`  
@@ -2572,3 +2572,42 @@ El único cambio funcional del worker es reservar ep-backblaze-vault-ciphertext-
 EP-TASK-002 sigue en_curso y es el siguiente trabajo material P0 en este ciclo, después de reconocer que EP-TASK-001 mantiene precedencia general pero está a la espera de intervención local del propietario (rotación KeeShare y revisión P012/P013). Para EP-TASK-002, el operador debe desbloquear la cámara de EP Vault localmente por 15 minutos y confirmar aquí que muestra ABIERTA. Dentro del TTL se ejecutará una sola vez el wrapper v7 por la identidad propietaria, se exigirá recibo nuevo, objeto B2 nuevo, descarga de retorno, igualdad exacta de tamaño/SHA, SSE-B2/AES256 y restore aislado. Después se hará la prueba de descifrado aislado y recuperación cross-host con bootstrap independiente. No volver a usar la copia antigua de 2.048 B ni sobrescribir el recibo v6.
 
 **Límites:** no se modificaron el ciphertext formal, el archivo de 2.048 B, los recibos históricos, ACL, configuración de Vault, credenciales, cuenta/bucket B2, workspace, volúmenes, BitLocker, KeePassXC ni Chrome. Los únicos archivos nuevos de host son los dos scripts v7; no se ejecutaron.
+
+ 
+## Upload actualizado del ciphertext formal a B2 · 2026-11-11 · 14:41:32 America/Mexico_City
+
+**Ciclo local UUIDv7:** `01a1cc59-9056-7608-9718-2d1451fcf64d` (generado localmente en Fila 4; identificador de trazabilidad, no folio nativo).  
+**Resultado:** `B2_V7_UPLOAD_READBACK_SHA_PASS`; EP-TASK-002 continúa `en_curso`.
+
+### Preflight de titularidad e integridad
+
+- RDC propietario conectado al equipo PC10RCIF4EI4; ejecución como `CENTRAL\fila4`, SessionId 1, coincidente con el propietario del proceso EP Vault GUI PID 3504. No se usó el contexto `CENTRAL\MantenimientoRCI` para leer datos protegidos.
+- La sesión GUI mostraba `ABIERTA` / `CÁMARA ACTIVA`. CLI `Status`, ejecutado como proceso hijo `-NoProfile -NonInteractive -ExecutionPolicy Bypass`, devolvió `ENCRYPTED_FILE_PRESENT`, `vaultExists=True`, `sessionActive=True`, 3.352 bytes y exit 0.
+- Inventario UI de nombres: 14 variables formales; los cinco nombres EP B2 esperados estaban presentes. No se revelaron ni capturaron valores.
+- Wrapper v7 (1.657 B) SHA-256 `54223C701F0CAD09AD4A68F26AB16C068879A08F41A8117FC7578236921C7D2F` y worker v7 (12.385 B) SHA-256 `CA0C8B2E03C2C4911B978B21A4E8669E393292C931229A0A4234D17CB79DB3CE`: coincidencia exacta con los artefactos preparados.
+- Recibo v7 inexistente antes de ejecución; no había ejecución v7 concurrente. El recibo v6 histórico quedó intacto.
+
+### Ejecución y recibo
+
+- Wrapper ejecutado una sola vez; exit 0. CLI informó `CHILD_PROCESS_COMPLETED`, exitCode 0, `injectedVariableCount=5` y `childProcessTreeManaged=True`.
+- Bucket `OCP-MCP`, tipo `allPrivate`, prefijo `ep-ocp/`; 0 reglas lifecycle y `bucketLifecycleSafeForVaultPrefix=True`.
+- Objeto remoto nuevo: `ep-ocp/vault/2026-11-11/204115282Z-92db986d/ep-env-vault.enc.json`.
+- Fuente formal: 3.352 B, SHA-256 `3122C544012F989F0501BD0E82EA920A93F19A42034D83FA682BCC2290891E82`. Descarga de retorno: 3.352 B, mismo SHA-256. El archivo local formal mantuvo el mismo tamaño, hash y última escritura; no fue sustituido.
+- Cifrado del objeto remoto: `SSE-B2_AES256_CONFIRMED`. El identificador de application key reportado por B2 coincidió con la bóveda. El API de cuenta no expuso el campo `accountEmail` (`accountEmailApiFieldPresent=False`); por tanto, el correo no pudo cotejarse independientemente en esa respuesta.
+- Recibo `EP\local-state\run-logs\ep-backblaze-vault-ciphertext-result-v7.json`: 1.216 B, SHA-256 `D8CDE84B90D6F923BD8A42DEA72A284078FACDE84E95E3674675E02B4A81D523`, estado `REMOTE_UPLOADED_REMOTE_VERIFIED_RESTORE_VERIFIED`, 0 errores, caché temporal de autenticación eliminada, `secretValuesEmitted=False`, `workspaceArchiveUploaded=False`.
+- La marca `RESTORE_VERIFIED` del worker corresponde a descarga/read-back del objeto cifrado y cotejo SHA/tamaño; no representa descifrado del contenido ni restore funcional del workspace.
+- Verificación posterior: el SHA de la fuente formal local sigue siendo idéntico al SHA del recibo; no quedan archivos de caché B2 temporal ni directorios temporales de read-back.
+
+### Estado por compuerta
+
+| Etapa | Estado |
+|---|---|
+| B2 v6 histórico, 2.200 B | PASS · objeto previo preservado |
+| B2 v7 ciphertext formal vigente, 3.352 B | PASS · upload + download read-back + SHA exacto + SSE-B2/AES256 |
+| Restore aislado del ZIP R2 same-host | PASS · 3.289/3.289; no equivale a cross-host |
+| Descifrado aislado de la copia B2 v7 | NOT_RUN |
+| Recuperación cross-host | NOT_RUN · exige host físico independiente y bootstrap B2 independiente del ciphertext |
+| Cifrado cliente de futuras capturas de workspace | PENDIENTE · excepción histórica del ZIP sin cifrado cliente permanece explícita |
+| Sincronización idempotente y aceptación integral | PENDIENTE |
+
+**Límites y preservación:** no se leyó ni imprimió ningún valor secreto; no se modificó el ciphertext formal, la copia antigua de 2.048 B, el recibo v6, la GUI, el perfil DPAPI, las ACL, el workspace ni la configuración de lifecycle. No se marcó EP-TASK-002 como completada. Próximo gate: descifrar una copia aislada del objeto v7 con autenticación local, y demostrar recuperación en un segundo host independiente con bootstrap separado; no declarar cross-host por el mero read-back remoto.
