@@ -30,7 +30,7 @@ Antes de cada ciclo sustantivo:
 
 1. Adquirir `INICIO.md`, el DUG integrado y el GOW desde `SeryMente/metodologia/main`; la revisión viva prevalece sobre copias o memorias.
 2. Aplicar la cascada de Sam y los principios pertinentes; revisar GOW al inicio y cierre. MCP normativo permanece DESACTIVADO.
-3. Leer este núcleo, el control vigente, el propósito original, la última crónica y la evidencia necesaria para la acción.
+3. Leer este núcleo, el control vigente, el propósito original, la última crónica y la evidencia necesaria para la acción. Para C-LOOP-003, el original íntegro vive en `conversaciones/C-LOOP-003-entrada-verbatim.txt`; la interpretación nunca lo sustituye.
 4. Para actuar sobre otro FT, adquirir su propio OCP y autorización. Loop no hereda ni sustituye controles ajenos.
 5. Distinguir propuesta, autorización, intento, ejecución, verificación y aceptación. No declarar resultados no observados.
 
@@ -100,20 +100,23 @@ No se modifican las normas generales desde este FT. Toda propuesta transversal s
 
 ## 8. Estado vivo
 
-**Estado inicial:** frente creado y documentado. No hay todavía un motor recurrente ejecutable.
+**Estado del frente:** inaugurado en `main` mediante `C-LOOP-INICIO-01`; OCP, núcleo y control único existentes. La presente entrada amplía el contexto del mismo frente, no crea un FT paralelo.
+
+**Corte de este ciclo:** la fuente original completa aportada para C-LOOP-003 está preservada literalmente y leída de vuelta. La revisión solicitada a Groq/GPT-OSS 120B sigue pendiente porque la sesión compartida de EP Vault estaba cerrada durante la prevalidación; no se envió la petición.
 
 Materializado:
-- Núcleo de 13 bloques.
-- Control inicial y UUIDv7 local.
-- Dictados de propósito y orden de creación preservados.
-- Crónica y evidencia de creación.
-- Referencia en el inventario estructural de Metodología.
+- Núcleo de 13 bloques, control inicial y UUIDv7 local.
+- Propósito y autorización de creación originales preservados.
+- C-LOOP-002: reconstrucción manual previa y revisión GPT-OSS secundaria basada en un mapa estructurado, no en el dictado íntegro.
+- C-LOOP-003: dictado original íntegro, procedencia, evidencia y checkpoint de custodia.
+- SHA-256 y lectura de vuelta del original verificados en EP local y en GitHub `main`.
 
 Pendiente:
-- Formalizar el contrato técnico mínimo del loop y sus estados.
-- Definir interfaces de entrada/salida para instrucciones, telemetría, herramientas y evidencia.
-- Definir el modelo de autorización por acción y el mecanismo de parada.
-- Construir un prototipo acotado y medirlo antes de extenderlo a otros FT.
+- Reabrir EP Vault y enviar la fuente literal C-LOOP-003 completa a `openai/gpt-oss-120b` mediante Groq.
+- Conservar respuesta cruda, metadatos de ejecución y evidencia; reconstruir después la secuencia narrativa y someter la interpretación a revisión crítica.
+- Formalizar contrato técnico del Loop, interfaces, modelo de autorización por acción y parada.
+- Definir y probar el observador núcleo y sus adaptadores por proyecto/frente.
+- Comparar CrewAI y alternativas; priorizar el piloto RAP multiagente y el taller según el vector táctico expresado por el operador.
 
 ## 9. Aceptación y viabilidad
 
@@ -202,3 +205,15 @@ El 2026-11-11 el operador entregó una entrada extensa para reconstruir la progr
 - Prioridad táctica reportada: piloto RAP + CrewAI/alternativa y definición del taller multiagente; el benchmarking y la implementación siguen pendientes.
 - La revisión secundaria con GPT-OSS 120B vía Groq se ejecutó usando la bóveda EP; la respuesta se conserva en [evidencias/C-LOOP-002-GPT-OSS-120B-review.md](evidencias/C-LOOP-002-GPT-OSS-120B-review.md). Se utilizó un mapa estructurado, no el dictado verbatim completo; la crítica y las correcciones están en la crónica §12. La clave no se expuso ni se guardó.
 - Los requisitos de la crónica son una interpretación de trabajo, no un canon ratificado. El motor de Loop permanece sin implementar.
+
+## 15. Entrada C-LOOP-003 · fuente literal y revisión externa pendiente
+
+El operador aportó el archivo `Texto pegado(20261111-194556).txt`. Se conserva sin normalización ni reordenación en [conversaciones/C-LOOP-003-entrada-verbatim.txt](conversaciones/C-LOOP-003-entrada-verbatim.txt), con su procedencia en [conversaciones/C-LOOP-003-dialogo.jsonl](conversaciones/C-LOOP-003-dialogo.jsonl).
+
+- Fuente: 60 líneas, 65.884 caracteres; SHA-256 `E25E047B54E8313B3D08E8A8C0CBA11D0D5C792D642206AE8D14B4D654A78531`; GitHub Blob SHA `b1aec0118f1a5aa2fe03d64ed0528533be02d1db`.
+- Crónica de checkpoint: [C-LOOP-003-checkpoint.md](cronica/C-LOOP-003-checkpoint.md).
+- Evidencia: [C-LOOP-003.json](evidencias/C-LOOP-003.json).
+- La fuente termina truncada en «...los modelos de frontera son muchísimo...». No se completa.
+- GPT-OSS 120B aún no recibió esta fuente: la sesión compartida de EP Vault estaba cerrada (`VAULT_SESSION_NOT_OPEN`). La ejecución queda pendiente; el análisis C-LOOP-002 no se presenta como sustituto.
+- No se modificó el control de responsabilidad ni se asignaron folios globales. FOL1 sigue PREPARADO/NO ACTIVO.
+
