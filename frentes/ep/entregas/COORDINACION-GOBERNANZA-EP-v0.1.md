@@ -3170,3 +3170,18 @@ Cada escritura se leyó de vuelta y se comparó con el contenido exacto escrito.
 4. Solo después ejecutar EP-TASK-005: recepción/extracción aislada, root protegido, importación, smoke STDIO/RDC y recibo. Aceptación IPZ E2E queda en Gobernanza y requiere respuesta visible desde contexto IPZ real.
 
 **Estado terminal:** EP-TASK-003=PARTIAL_FAIL; EP-TASK-005=BLOCKED; INSTALL_NOT_PERFORMED; IPZ_E2E_NOT_RUN; MCP-NORMATIVO=DESACTIVADO; FOL1=INACTIVO.
+
+
+## EP · apertura de ciclo por reanudación ordenada EP-TASK-001→002→003→005 · 2026-11-11
+
+**A literal del operador:** «Ok resuelve en ese orden.» El alcance operativo retomado es la secuencia ya confirmada en la conversación: EP-TASK-001 (NCL) → EP-TASK-002 (persistencia Backblaze) → EP-TASK-003 (workspace protegido) → EP-TASK-005 (instalación MCP-OCP local). Las tareas EP-TASK-004/006/007 permanecen en la cola general, pero no se interponen en esta secuencia salvo dependencia material acreditada.
+
+**Fuentes adquiridas:** OEP v0.3.69 main, blob 34ba5fab053f07b79fb928babd07949aae97a5cc; DUG Samantha v389/NX-389m, blob bcd99e72113f444a045d7f1c91b4ad36865b8ea8; índice EP, blob 922a7cf51cf340c793e96072dabf792ebe5bc3ca; núcleos EP-TASK-001 blob 07e555621c42cf8127c97fc01f6a7e2140ab3470, EP-TASK-002 blob 53b8b05de055de2a388d0a108cdf3136861d8dea, EP-TASK-003 blob 4ab259b79dbd7b93b0a42f3d0732f604be3f9ada. El checkout local Metodología sin .git no se trata como fuente canónica.
+
+**Apertura tardía:** antes de registrar esta entrada se recuperaron fuentes y estado de conexión RDC para establecer la cola y su viabilidad. No se ejecutó mutación de host ni operación sobre secretos/volúmenes. DTC_OPENING_LATE=TRUE; esta secuencia se conserva sin reescribirla retroactivamente.
+
+**Estado de entrada:** EP-TASK-001 conserva precedencia general; falta revisión presencial/decisión de seguridad del propietario y rotación local de KeeShare. EP-TASK-002: B2 v7 upload/read-back y descifrado aislado HMAC/AES PASS; recuperación cross-host pendiente por falta de segundo host físico en línea. EP-TASK-003: preflight parcial; C XTS-AES128/100% Protection Off/sin protectores, W descifrado, VHDX adjunto bajo AppData distinto de la ruta objetivo, checkout Metodología sin .git, ubicación UNCLASSIFIED. EP-TASK-005: rama/paquete P004 desalineados y runtime .NET 10 ausente; instalación no realizada.
+
+**Regla de ejecución:** continuar por tarea y en orden; cada condición faltante detiene únicamente la operación que depende de ella. Se ejecutará trabajo independiente de las tareas posteriores sin adelantar instalaciones, migraciones, decisiones de seguridad, operaciones de custodia ni aceptación que requieran sus propios gates. Las acciones locales de fila4 permanecen en C:\Users\fila4; MantenimientoRCI se limita a consultas administrativas autorizadas.
+
+**Siguiente acción inmediata:** completar el diagnóstico no invasivo de EP-TASK-001 y separar las verificaciones que puede ejecutar el asistente de la rotación KeeShare y revisión presencial que corresponden al propietario.
