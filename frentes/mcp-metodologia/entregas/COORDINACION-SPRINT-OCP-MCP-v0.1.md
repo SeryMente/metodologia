@@ -1888,3 +1888,4 @@ Este suplemento solo registra la actualización de navegación y su cotejo. No r
 
 **Estado:** `MCP_OCP_02=SELECTIVE_PORT_PERSISTED`; `MCP_OCP_03=HISTORICAL_BLOB_EQUIVALENCE_REEXEC_PENDING`; `MCP_OCP_04=SMOKE_REEXEC_PENDING_IPZ_E2E_NOT_ACCEPTED`; `MCP_OCP_05=P004_PORTED_BUILD_PACKAGE_PENDING`; `EP_INSTALL=BLOCKED_EP_GATES`; `HOSTED_CI=NOT_VERIFIED`; `MCP_NORMATIVO=DESACTIVADO`; `FOL1=PREPARADO_PENDIENTE_ACTIVACION_IPZ`.
 
+**Actualización posterior al read-back:** PR #28 creada para revisión, `OPEN/DRAFT/NOT MERGED`, base `1867af0c69f250aaee2b35b585eec8b74827b69c`, head inicial `d981953da84eaede38cb25649eb76b30a454a7ef`, 16 ahead / 0 behind y 23 archivos. PR #27 permanece abierta/draft como antecedente no integrado. Esta publicación no cambia el estado `DTC_CYCLE_STATUS=INCOMPLETE` ni declara build, pruebas, paquete o E2E aceptados.
