@@ -102,5 +102,39 @@
     "no_workshop_repository_created": true,
     "no_crew_ai_benchmark_performed": true,
     "no_secret_written_to_git": true
+  },
+  "verification": {
+    "status": "PASS_SOURCE_CUSTODY_AND_DOCUMENTATION",
+    "verified_at": "2026-11-11T13:52:33-06:00",
+    "timezone": "America/Mexico_City",
+    "checks": {
+      "original_attached_file_sha256_verified": true,
+      "exact_source_copied_to_ep_runlog": true,
+      "remote_sha256_matches_attachment": true,
+      "canonical_source_readback_exact": true,
+      "conversation_provenance_readback_exact": true,
+      "checkpoint_chronicle_readback_present": true,
+      "evidence_readback_present": true,
+      "loop_core_updated_and_readback_exact": true,
+      "readme_updated_and_readback_exact": true,
+      "responsibility_control_unchanged": true,
+      "original_ending_left_truncated": true,
+      "groq_request_sent": false
+    },
+    "main_head": {
+      "commit": "4d82332ba13473e5bc784abc48d354d91206f348",
+      "committed_at_utc": "2026-11-11T19:52:18Z",
+      "committed_at_local": "2026-11-11T13:52:18-06:00",
+      "loop_route_age_floor": "0.0.0"
+    },
+    "artifact_blob_shas": {
+      "frentes/loop/conversaciones/C-LOOP-003-entrada-verbatim.txt": "b1aec0118f1a5aa2fe03d64ed0528533be02d1db",
+      "frentes/loop/conversaciones/C-LOOP-003-dialogo.jsonl": "bf76fbda05960334aa979db6ea0b1d4970753a40",
+      "frentes/loop/cronica/C-LOOP-003-checkpoint.md": "0982bc762642b4a78c7976c32362a74b4b4f00fb",
+      "frentes/loop/evidencias/C-LOOP-003.json": "806d250717e43c380f8280f3ff135f7790f6530a",
+      "frentes/loop/LOOP.md": "a7abdf636c94daa34d013d6d480592acede6b368",
+      "frentes/loop/README.md": "96326d92cc2722183843600f38f62192701210f2",
+      "frentes/loop/CONTROL-RESPONSABILIDAD.json": "715e49c4dddb34f4d5d3cdf688a3fe99e473c7a4"
+    }
   }
 }
