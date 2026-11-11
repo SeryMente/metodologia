@@ -214,7 +214,7 @@ function New-EpSessionContainer {
         $workspace = Join-Path $mount 'workspace'
         New-Item -ItemType Directory -Path $workspace -Force | Out-Null
         if ($ImportCurrentWorkspace) {
-            $source = Join-Path ([Environment]::GetFolderPath([Environment+SpecialFolder]::Desktop) 'SeryMente'
+            $source = Join-Path ([Environment]::GetFolderPath([Environment+SpecialFolder]::Desktop)) 'SeryMente'
             if (Test-Path -LiteralPath $source -PathType Container) {
                 $destination = Join-Path $workspace 'SeryMente'
                 New-Item -ItemType Directory -Path $destination -Force | Out-Null
@@ -225,7 +225,14 @@ function New-EpSessionContainer {
         }
         $metadata.desktopLink = Add-EpSessionDesktopLink -WorkspaceRoot $workspace
         $metadata.state = 'ACTIVE'
-        Protect-EpSessionRuntime -Metadata $metadata -Password $password
+        $vaultNames = @(Get-EpVaultVariableNames)
+        $idName = @('EP_B2_MASTER_APPLICATION_KEY_ID','EP_B2_APPLICATION_KEY_ID','B2_APPLICATION_KEY_ID') | Where-Object { $vaultNames -contains $_ } | Select-Object -First 1
+        $keyName = @('EP_B2_MASTER_APPLICATION_KEY','EP_B2_APPLICATION_KEY','B2_APPLICATION_KEY') | Where-Object { $vaultNames -contains $_ } | Select-Object -First 1
+        $bucket = ''
+        $prefix = ''
+        if ($vaultNames -contains 'EP_B2_BUCKET_NAME') { $bucket = Get-EpVaultVariableValue -Name 'EP_B2_BUCKET_NAME' -Reveal }
+        if ($vaultNames -contains 'EP_B2_PREFIX') { $prefix = Get-EpVaultVariableValue -Name 'EP_B2_PREFIX' -Reveal }
+        Protect-EpSessionRuntime -Metadata $metadata -Password $password -B2IdName ([string]$idName) -B2KeyName ([string]$keyName) -Bucket $bucket -Prefix $prefix
         Write-EpSessionMetadata -Metadata $metadata
         return [pscustomobject]@{status='EP_SESSION_CREATED';sessionId=$sid;mountPoint=$mount;workspaceRoot=$workspace;bitlocker='XTS-AES256/100%/ON';desktopLink=$metadata.desktopLink;imported=[bool]$ImportCurrentWorkspace}
     }
