@@ -369,3 +369,22 @@ MCP normativo: DESACTIVADO
 - Este registro no cambia la titularidad ni la generación 1 del frente.
 - No asigna folios CV/CY/A/B ni activa FOL1.
 - No modifica el DUG, el GOW ni el control de responsabilidad.
+
+
+## B · salida visible del turno de persistencia
+
+Se persistió esta conversación en el frente OCP2.0, ruta canónica `frentes/ocp-2-0/`.
+
+- Registro: [CONTINUIDAD-20261111.md](CONTINUIDAD-20261111.md).
+- Núcleo actualizado para enlazar el registro: [OCP2.0.md](../OCP2.0.md), §17.
+- Índice actualizado: [README.md](../README.md).
+- La transcripción quedó leída de vuelta desde GitHub. Longitud verificada antes de añadir esta sección: 13.099 caracteres.
+- El control de responsabilidad no fue modificado; su blob SHA continuó como `522b7cd249d009ac1f233aa556395a39e39ce768`.
+- Commit de creación del registro: `a0902a5307d020fe11f000a1af713921bab6d9e9`.
+- Commit de enlace en el núcleo: `1cee1a56d7ffc3acb8c15168169b33268ab55a83`.
+- Commit de índice: `b82c0e775ff69e60d511a32a6f77a9290c96e563`.
+- DUG consultado: Samantha v388 · NX-388m; GOW §ARR leído.
+- UUIDv7 local de este registro: `01a1cc8f-15e0-7906-9ebf-3a0af14800e0`.
+- No se asignaron folios CV/CY/A/B, no se activó FOL1 y no se modificó la gobernanza.
+
+Este bloque registra el resultado documental de la operación; no afirma implementación de los componentes de OCP2.0 mencionados en el historial.
