@@ -1276,9 +1276,26 @@
         "folio_status": "LEGACY_PRE_CUTOVER",
         "cycle_number": 1
       },
-      "status": "PENDING_READBACK",
+      "status": "VERIFIED_READBACK",
       "readback_required": true,
-      "readback_verified": false
+      "readback_verified": true,
+      "readback_sha": "45929089ebd5693a57e37fdd3d7e020026e5d39d",
+      "readback_verified_on": "2026-11-11",
+      "readback_verification": {
+        "status": "verified",
+        "verified_on": "2026-11-11",
+        "commit_sha": "166015ab52ba59522cef02c9d6ad388841bcbbc9",
+        "control_blob_sha": "45929089ebd5693a57e37fdd3d7e020026e5d39d",
+        "checks": {
+          "sha_matches_write": true,
+          "generation": true,
+          "current_owner": true,
+          "prior_primary_superseded": true,
+          "co_responsible_preserved": true,
+          "active_count": true,
+          "global_folios_unassigned": true
+        }
+      }
     }
   ],
   "active_responsibles": [
