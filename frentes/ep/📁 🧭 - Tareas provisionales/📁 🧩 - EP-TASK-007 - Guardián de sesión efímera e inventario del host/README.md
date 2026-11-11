@@ -222,3 +222,17 @@ No se implementó ni ejecutó Guardian, lease, heartbeat, trigger terminal, bloq
 - Guardian, lease, heartbeat, triggers, bloqueo/desmontaje, crypto-erasure y pruebas destructivas siguen `NOT_RUN`.
 
 **Límites:** no se instalaron servicios, tareas programadas ni procesos de vigilancia; no se modificó BitLocker, VHDX, workspace, ACL, Vault ni B2. EP-TASK-007 permanece `en_curso` y no puede avanzar a una prueba destructiva hasta superar EP-TASK-003 y sus controles de aceptación.
+
+ 
+## Revalidación de BitLocker y custodia de host · 2026-11-11 · 14:54 America/Mexico_City
+
+**Resultado:** `HOST_INVENTORY_PARTIAL_READ_ONLY_VERIFIED`; la barrera de almacenamiento continúa FAIL.
+
+- Consulta con `Get-BitLockerVolume` en sesión RDC independiente `CENTRAL\MantenimientoRCI`; la consulta desde `CENTRAL\fila4` resultó `Acceso denegado`. No se eludió el control ni se elevó la sesión propietaria.
+- `C:`: XTS-AES128, 100 %, FullyEncrypted, Protection Off, cero protectores.
+- `W:`: FullyDecrypted, método None, 0 %, Protection Off, cero protectores.
+- Ubicación permanece `UNCLASSIFIED`; GPS/IP no fueron consultados.
+- Revalidación EP Vault separada: ciphertext formal presente (3.352 B); B2 v7 read-back SHA y SSE-B2/AES256 PASS; copia aislada descifrada HMAC/AES PASS. La sesión formal CLI está actualmente cerrada por TTL; no se afirma que la bóveda esté ausente ni NOT_INITIALIZED.
+- Guardian, lease, heartbeat, triggers, bloqueo/desmontaje, crypto-erasure y pruebas destructivas siguen `NOT_RUN`.
+
+**Límites:** no se instalaron servicios, tareas programadas ni procesos de vigilancia; no se modificó BitLocker, VHDX, workspace, ACL, Vault ni B2. EP-TASK-007 permanece `en_curso` y no puede avanzar a una prueba destructiva hasta superar EP-TASK-003 y sus controles de aceptación.
