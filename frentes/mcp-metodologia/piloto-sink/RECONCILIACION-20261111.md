@@ -90,9 +90,9 @@ Los estados de build, tests, smoke y paquete de la rama actual permanecen `NOT_R
 
 ### Sincronización de main posterior al paquete
 
-- Main incorporado al cierre: `0b4a7373fdc07f39b3f764e9c6e0c94fce21cc2f`.
-- Main avanzó con documentación de EP/Gobernanza sin solapar rutas MCP-OCP. Se incorporó en el merge `63e2f1399fdb210294ef26983babc8fbef87a4a6`; padres: rama previa `1cbf7f15a4c7480cb31f2d7073f9151d02964bd7` y main `0b4a7373fdc07f39b3f764e9c6e0c94fce21cc2f`.
-- Se verificó push y lectura de vuelta de la rama. Compare al cierre: **26 commits ahead / 0 behind**, 27 rutas cambiadas.
+- Main incorporado al cierre: `cb9b6a704bb18ccd219d847a48e810f22b4e2c3e`.
+- Main avanzó con documentación de EP/Gobernanza sin solapar rutas MCP-OCP. Se incorporó en el merge `d1625f9345e54b90ac1ad884d4ee8476c78af491`; padres: rama previa `1cbf7f15a4c7480cb31f2d7073f9151d02964bd7` y main `cb9b6a704bb18ccd219d847a48e810f22b4e2c3e`.
+- Se verificó push y lectura de vuelta de la rama. Compare al cierre: **34 commits ahead / 0 behind**, 27 rutas cambiadas.
 - PR #28 sigue `OPEN / DRAFT / NOT MERGED`, base `0b4a7373...`, mergeable. PR #27 permanece abierta/draft como antecedente divergente no integrado.
 
 ### Build y pruebas nuevas ligadas al código
