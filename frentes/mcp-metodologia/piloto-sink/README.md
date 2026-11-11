@@ -3,8 +3,8 @@
 **Producto:** MCP-OCP 0.1.0 candidato (no aceptado)  
 **Sprint:** SINK-P004  
 **DUG:** Samantha v388 / NX-388m  
-**Base:** `a34c1c5b43edbcbaf015056f4dc892f5def29eea`  
-**Rama:** `feat/mcp-ocp-sink-p004-main-a34c1c5b`
+**Base inicial de reconciliación:** `7ab0c555b774adc5b930aad700f101ab2660b79a`  
+**Rama:** `feat/mcp-ocp-p004-reconciled-20261111-7ab0c555`
 
 ## Objetivo
 
@@ -106,3 +106,14 @@ Main `8f999198f1d8cde71361c884c9a13b745f442b49`; rama HEAD `4ac337f0b1e507497b8a
 - Estado: CANDIDATE_NOT_ACCEPTED. ZIP extraído, 9/9 archivos cotejados y package smoke P004/STDIO/EOF PASS.
 - Requisito de runtime: Microsoft.NETCore.App 10.0.x x64. Fila 4 NO VERIFICADO.
 - No transferido ni instalado; EP-TASK-003/005 conservan los gates. No equivale a E2E IPZ ni producto 1.0.0.
+
+
+## Reconciliación sobre main vigente · 2026-11-11
+
+La PR #27 permanece como fuente de lectura; su HEAD histórico estaba divergido del main (53 ahead / 100 behind). No se integró su historia completa.
+
+Rama limpia: `feat/mcp-ocp-p004-reconciled-20261111-7ab0c555`, portación inicial `6dda16a2fe9a5173f21ccdaaa23ba1ac9f9721c4`, creada desde `7ab0c555...`. Main actual `9fa37906373e0a9af01f4ccec5060d59b8194ccb` se integró mediante merge `d69bec6a9a56e3f5fb90bec6ce04fc7c56d86722` de dos padres, preservando los commits del frente EP.
+
+Inventario REUSE/ADAPT/DROP/DEFER: [RECONCILIACION-20261111.md](RECONCILIACION-20261111.md). DUG v388/NX-388m y pin `3ba8e737... / 4db0ebad...` vigentes. SDK .NET 10.0.403; piloto net10.0 framework-dependent, sin RID.
+
+Las suites y fuentes coinciden con blobs de una validación local histórica; build, tests y smoke no se han reejecutado en esta rama. No se reutiliza ZIP/manifest/checksums antiguos. No equivale a instalación EP ni aceptación E2E IPZ.
