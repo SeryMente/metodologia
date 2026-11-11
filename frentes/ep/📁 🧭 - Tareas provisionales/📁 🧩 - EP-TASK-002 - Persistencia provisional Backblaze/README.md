@@ -1,7 +1,7 @@
 # 📝 EP-TASK-002 · Persistencia provisional con Backblaze B2 para datos de usuario y continuidad de la sesión canónica
 
 **Naturaleza:** tarea provisional del frente Entorno Persistente; materialización auxiliar del registro de tareas, no un OEP nuevo, no un frente independiente y no una decisión de arquitectura canónica.  
-**Estado:** `en_curso · P0 · B2_V6_HISTORICAL_OBJECT_VERIFIED · B2_V7_CURRENT_FORMAL_3352B_UPLOAD_READBACK_SHA_PASS · SSE_B2_AES256_PASS · ISOLATED_DECRYPT_PENDING · CROSS_HOST_PENDING`. B2 v7 protege el ciphertext formal vigente (3.352 B; SHA-256 3122C544012F989F0501BD0E82EA920A93F19A42034D83FA682BCC2290891E82): upload, download de retorno y cotejo exacto SHA/tamaño PASS; SSE-B2/AES256 confirmado. El objeto v6 histórico y el restore same-host R2 (3.289/3.289) conservan sus PASS previos. El descifrado aislado de la copia v7 y la recuperación cross-host siguen pendientes. El ZIP del workspace permanece como excepción histórica sin cifrado cliente; no se confunde con SSE-B2. Sincronización automática/idempotente y aceptación integral siguen pendientes.
+**Estado:** `en_curso · P0 · B2_V6_HISTORICAL_OBJECT_VERIFIED · B2_V7_CURRENT_FORMAL_3352B_UPLOAD_READBACK_SHA_PASS · ISOLATED_DECRYPT_HMAC_AES_PASS_30_VARIABLES · CROSS_HOST_PENDING`. El ciphertext formal vigente fue respaldado y descargado desde B2 con SHA/tamaño idénticos y SSE-B2/AES256; una copia aislada del objeto v7 pasó verificación HMAC y descifrado AES, con 30 variables y los cinco nombres B2 presentes. La prueba se ejecutó en el mismo host propietario; recuperación cross-host, cifrado cliente de futuras capturas de workspace, sincronización automática/idempotente y aceptación integral siguen pendientes.
 **Responsabilidad:** vinculada a `frentes/ep/`; sin control, sesión, titularidad ni folio global propios.  
 **task_id:** `EP-TASK-002` (identificador local estable; no es folio global).  
 **scope_ref:** `frentes/ep/`  
@@ -2583,7 +2583,7 @@ EP-TASK-002 sigue en_curso y es el siguiente trabajo material P0 en este ciclo, 
 
 - RDC propietario conectado al equipo PC10RCIF4EI4; ejecución como `CENTRAL\fila4`, SessionId 1, coincidente con el propietario del proceso EP Vault GUI PID 3504. No se usó el contexto `CENTRAL\MantenimientoRCI` para leer datos protegidos.
 - La sesión GUI mostraba `ABIERTA` / `CÁMARA ACTIVA`. CLI `Status`, ejecutado como proceso hijo `-NoProfile -NonInteractive -ExecutionPolicy Bypass`, devolvió `ENCRYPTED_FILE_PRESENT`, `vaultExists=True`, `sessionActive=True`, 3.352 bytes y exit 0.
-- Inventario UI de nombres: 14 variables formales; los cinco nombres EP B2 esperados estaban presentes. No se revelaron ni capturaron valores.
+- La inspección UIA anterior expuso 14 filas accesibles en la lista visual; no constituyó un recuento total del payload. La prueba criptográfica posterior de la copia aislada contó 30 propiedades y confirmó los cinco nombres EP B2 esperados. No se revelaron ni capturaron valores.
 - Wrapper v7 (1.657 B) SHA-256 `54223C701F0CAD09AD4A68F26AB16C068879A08F41A8117FC7578236921C7D2F` y worker v7 (12.385 B) SHA-256 `CA0C8B2E03C2C4911B978B21A4E8669E393292C931229A0A4234D17CB79DB3CE`: coincidencia exacta con los artefactos preparados.
 - Recibo v7 inexistente antes de ejecución; no había ejecución v7 concurrente. El recibo v6 histórico quedó intacto.
 
@@ -2611,3 +2611,37 @@ EP-TASK-002 sigue en_curso y es el siguiente trabajo material P0 en este ciclo, 
 | Sincronización idempotente y aceptación integral | PENDIENTE |
 
 **Límites y preservación:** no se leyó ni imprimió ningún valor secreto; no se modificó el ciphertext formal, la copia antigua de 2.048 B, el recibo v6, la GUI, el perfil DPAPI, las ACL, el workspace ni la configuración de lifecycle. No se marcó EP-TASK-002 como completada. Próximo gate: descifrar una copia aislada del objeto v7 con autenticación local, y demostrar recuperación en un segundo host independiente con bootstrap separado; no declarar cross-host por el mero read-back remoto.
+
+ 
+## Descifrado aislado del objeto B2 v7 · 2026-11-11 · 14:46 America/Mexico_City
+
+**Ciclo local UUIDv7:** `01a1cc59-9056-7608-9718-2d1451fcf64d` (identificador local de trazabilidad; no es folio nativo).  
+**Resultado:** `ISOLATED_B2_CIPHERTEXT_DECRYPT_PASS`; la prueba se hizo en el mismo host propietario y no acredita cross-host.
+
+### Procedimiento y evidencia
+
+- Se descargó el objeto v7 exacto desde `b2://OCP-MCP/ep-ocp/vault/2026-11-11/204115282Z-92db986d/ep-env-vault.enc.json` a un directorio temporal único bajo `EP\local-state\run-logs`, mediante el proceso hijo administrado de EP Vault y la allowlist explícita de cinco variables B2.
+- Exit del proceso de descarga: 0; cinco variables inyectadas; árbol de proceso administrado. La copia descargada midió 3.352 B y SHA-256 `3122C544012F989F0501BD0E82EA920A93F19A42034D83FA682BCC2290891E82`, idéntico al objeto/read-back v7 y al ciphertext formal local.
+- Se abrió el envelope descargado con `Open-EpVaultEnvelope` del Core vigente; comprobación HMAC y descifrado AES: PASS. No se sustituyó ni se leyó el plaintext a salida. Resultado agregado: 30 propiedades de variables; los cinco nombres EP B2 estaban presentes; faltantes 0.
+- El proceso comparó también el hash del origen formal antes/después; permaneció idéntico. No se imprimió ningún valor secreto ni se escribió plaintext a disco.
+- Limpieza: directorio temporal de prueba eliminado; caché B2 temporal eliminada; scripts auxiliares eliminados; sin residuo temporal detectado.
+
+### Corrección del conteo de UI
+
+La inspección anterior del árbol UI Automation había devuelto 14 filas visibles/accesibles. Ese resultado era un inventario parcial de controles UI, no el total de propiedades cifradas. El descifrado aislado del envelope completo devuelve 30 propiedades. Se conserva la observación original con ese límite, sin tratarla como un error del payload.
+
+### Compuertas pendientes
+
+| Etapa | Estado |
+|---|---|
+| B2 v7 upload + read-back SHA/tamaño + SSE-B2/AES256 | PASS |
+| Descarga aislada del objeto B2 v7 | PASS · 3.352 B; SHA exacto |
+| Descifrado aislado HMAC + AES | PASS · 30 variables; cinco nombres B2 presentes |
+| Persistencia del ciphertext formal original | PASS · sin cambios |
+| Restore cross-host | NOT_RUN · no hay un segundo equipo físico en línea |
+| Cifrado cliente de nuevas capturas de workspace | PENDIENTE |
+| Sincronización automática/idempotente y aceptación integral | PENDIENTE |
+
+**Disponibilidad cross-host observada:** RDC informa en línea únicamente `PC10RCIF4EI4`; los equipos distintos registrados `PC-8`, `PC-7` y `PC-1` están fuera de línea. Dos sesiones/conexiones al mismo PC no constituyen un segundo host. No se intentó restauración cross-host ni se presentaron datos DPAPI CurrentUser como portables.
+
+**Límites:** EP-TASK-002 permanece `en_curso`. No se modificaron el ciphertext formal ni el objeto remoto, no se repitió la carga v7, no se sobrescribió ningún recibo histórico, no se revelaron valores de Vault y no se modificó el workspace.
