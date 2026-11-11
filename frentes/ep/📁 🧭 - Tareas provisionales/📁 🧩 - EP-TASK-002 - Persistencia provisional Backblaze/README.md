@@ -2476,3 +2476,37 @@ Las pruebas no escriben sobre el conjunto de datos activo. Ante discrepancia, de
 ### Siguiente paso y aceptación
 
 Resolver localmente la discrepancia de procedencia entre la bóveda formal esperada y el ciphertext adicional, confirmar qué archivo es autoritativo con el propietario y obtener sesión válida sin revelar contraseña en chat. Después, descifrar una copia aislada del objeto B2 y demostrar recuperación cross-host con bootstrap B2 independiente. La excepción de ZIP sin cifrado cliente permanece registrada; no satisface el diseño permanente.
+
+---
+
+## Reconciliación de ruta de ciphertext y estado vivo de la GUI · 2026-11-11 · 14:20:02 America/Mexico_City
+
+**Objetivo:** distinguir el ciphertext respaldado en B2 de otra copia local y determinar si existe una sesión formal utilizable. Comprobación limitada a metadatos y UI Automation; no se leyeron secretos ni se ejecutaron acciones de interfaz.
+
+### Evidencia observada
+
+- El proceso GUI EP Vault v1.0.0 está activo como PID 3504, propietario `CENTRAL\fila4`, SessionId 1. Su línea de arranque apunta a `Launch-Vault-For-Fila4.ps1`.
+- El launcher establece `LOCALAPPDATA=C:\Users\fila4\Desktop\SeryMente\EP\local-state`. Por tanto, el almacén formal que consume esa instancia queda bajo `EP\local-state\Khora\secrets\`; esta ruta protegida no fue legible desde el contexto administrativo separado. No se modificaron ACL ni se intentó eludir esa restricción.
+- UI Automation read-only, 2026-11-11T20:20:02.4860961Z: ventana encontrada; `HeaderState=SELLADA`; `GateTitle=La cámara permanece sellada.`; `GateDescription=La autenticación local precede a cualquier movimiento del mecanismo.`; `UnlockButton=DESBLOQUEAR LA CÁMARA` habilitado; `FooterStatus=LOCAL · CIFRADO · SELLADA`. No se accionó ningún control.
+- En la ruta distinta `C:\Users\fila4\Desktop\SeryMente\EP-Vault\ep-env-vault.enc.json` existe un archivo de 2.048 bytes, con última escritura UTC 2026-11-10T15:37:33.1179929Z y SHA-256 `D7AD1D745CAF460E047EAE521C1C403F36E99864BC9CD0604FFC564E390F2F7D`. No se demostró que sea el archivo formal consumido por el launcher.
+- El recibo B2 de Vault v6 registra un objeto remoto de 2.200 bytes con SHA-256 local/read-back `4CC2EE09974C9FBF3CF22C28A5A46C8286EB501F59268DBBB2B7BD6D61E8C590`; el read-back remoto coincide. El recibo R2 documenta 4/4 objetos verificados y el restore aislado same-host acredita 3.289/3.289 entradas, cero fallos y cero inesperados.
+
+### Reconciliación y corrección
+
+La diferencia 2.048 B vs. 2.200 B observada en §133 corresponde a **rutas distintas**: la copia en `EP-Vault\` no ha sido identificada como el ciphertext formal. No existe evidencia suficiente para afirmar corrupción o divergencia del objeto B2. La ruta formal está determinada por el launcher, pero su archivo no pudo leerse desde el contexto administrativo; queda sin hash local fresco en este ciclo.
+
+### Estado por hito
+
+- B2 upload/read-back de los cuatro objetos R2: PASS según recibos conservados.
+- Restore aislado same-host R2: PASS, 3.289/3.289.
+- GUI formal EP Vault: SELLADA en la observación viva.
+- Sesión CLI compartida y disponibilidad actual de las cinco variables EP: NO COMPROBADAS en este ciclo, porque la GUI se observó SELLADA y no se ejecutó CLI.
+- Descifrado aislado del ciphertext Vault: NOT_RUN.
+- Restore cross-host: NOT_RUN.
+- Excepción histórica de ZIP de workspace sin cifrado cliente: permanece registrada; SSE-B2/AES256 no se presenta como sustituto del cifrado cliente.
+
+### Decisión y siguiente gate
+
+`EP-TASK-002` permanece `en_curso`. No repetir upload/download ni restore same-host. El siguiente paso material requiere que el operador desbloquee localmente la GUI por su control nativo. Después se puede comprobar Status y presencia de nombres permitidos sin revelar valores; solo con sesión activa y variables presentes se evalúa una prueba de descifrado aislado/cross-host. No solicitar contraseña por chat ni invocar una CLI que pueda caer en Read-Host.
+
+**Cambios de este ciclo:** solo documentación y consulta read-only. No se modificaron Vault, DPAPI, credenciales, B2, ACL, host, volúmenes, workspace ni perfiles.
