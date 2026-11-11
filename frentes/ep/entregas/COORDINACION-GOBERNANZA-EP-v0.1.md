@@ -2776,3 +2776,30 @@ Se consumió el plan experimental independiente de EP-App v1.1.0 y se integraron
 ### Siguiente estado
 
 Los núcleos contienen planes por tarea con línea base, pasos, interfaces/recursos, tests, Review Focus, gates, aceptación, rollback y read-back. La implementación sigue sujeta a las prioridades y compuertas de cada tarea. El ciclo queda PUBLICADO → LEÍDO → RESPUESTA_INICIAL_REGISTRADA → PROCESADO → DOCUMENTADO_AL_CIERRE → VERIFICADO_READBACK tras cotejar este cierre.
+
+---
+
+## EP · apertura de ciclo semi-live: ejecución integral y diagnóstico de EP-TASK-001–007 · 2026-11-11 · 10:38:14 America/Mexico_City
+
+**Ciclo local UUIDv7:** 01a1cb79-e067-70a7-8808-78d86f5943b7 · identidad local, sin folio global/FOL1.
+
+### Cursor, fuentes y encargo
+
+- **DTC inicial:** main, blob ea73a4d45e5d2b84cbf7315d7098a74f88217cec. Se leyó el último cierre Writing Plans; no había comunicación nueva de Gobernanza después de ese cursor: SIN_NOVEDAD.
+- **Fuentes rectoras:** OEP v0.3.66 / §132; índice provisional y núcleos EP-TASK-001–007; DUG v388/NX-388m y GOW 2.18 con §ARR y principios pertinentes; CONTROL-RESPONSABILIDAD.json generación 3 consultado como procedencia/alcance.
+- **A literal:** «Resuelvelas todas a ver como queda, pero veme dando reporte semi live a cada ciclo».
+- **Interpretación operativa:** reabrir EP-TASK-001 pese a su condición de espera anterior; trabajar las siete tareas según dependencias reales y gates; informar cada ciclo; ejecutar todo lo verificable y permitido; no convertir bloqueos, propuestas o resultados parciales en aceptación.
+
+### Respuesta inicial y primer mapa
+
+1. Se identificó la conexión RDC de Fila 4 por CENTRAL\\fila4 y C:\\Users\\fila4; la segunda conexión, CENTRAL\\MantenimientoRCI, no se usa como perfil de trabajo.
+2. El preflight bajo Fila4 encontró Desktop\\SeryMente, pero el snapshot local de Metodología no tiene .git; no se declara checkout vigente.
+3. El token de Fila4 no tiene elevación. Un proceso administrativo separado se utilizó únicamente para consultas read-only de manage-bde; no se escribieron archivos en su perfil ni se modificó BitLocker.
+4. La suite EP Vault sintética se ejecutó en sandbox, con PASS y exit 0; la bóveda formal de la CLI devolvió NOT_INITIALIZED. El ciphertext local adicional difiere en tamaño/hash del objeto Vault de B2; no se copia, sustituye ni descifra.
+5. B2 R2 conserva recibo 4/4 con read-back SHA/SSE-B2 y restore aislado same-host 3.289/3.289; cross-host y descifrado no quedan demostrados.
+6. NCL tiene KeePassXC portable y Playwright Extension en Profile 36; el perfil OCP no está identificado, no se localizó KeePassXC-Browser en los dos perfiles revisados y Native Messaging no se verificó.
+7. La inspección read-only de configuración local KeePassXC devolvió material de clave privada KeeShare. No se reproduce ni persiste. Se tratará como exposición y requiere rotación del propietario; no alterar ni reiniciar la base.
+
+### Plan de procesamiento del ciclo
+
+Persistir primero los resultados saneados en los núcleos correspondientes y el índice/OEP/DTC, con SHA/read-back. Después agotar solo tareas independientes que no dependan de bóveda formal, credenciales no disponibles, elevación, protección física, revisión presencial o aceptación humana. Se mantienen deshabilitadas operaciones destructivas, de host, de secretos y de instalación hasta que sus compuertas propias estén verificadas.
