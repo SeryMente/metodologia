@@ -1,12 +1,12 @@
 {
   "schema": "mcp-ocp-pilot-validation-receipt/v1",
   "status": "PASS_LOCAL_BUILD_TESTS_AND_PACKAGE",
-  "validated_at": "2026-11-11T14:40:50.2723589-06:00",
+  "validated_at": "2026-11-11T14:54:06.3013964-06:00",
   "time_zone": "America/Mexico_City",
   "source_repository": "SeryMente/metodologia",
   "source_branch": "feat/mcp-ocp-p004-reconciled-20261111-7ab0c555",
-  "source_commit": "4600086c492582c5d854145db64097310ac73686",
-  "main_base": "1867af0c69f250aaee2b35b585eec8b74827b69c",
+  "source_commit": "f8973a1958fb1e6d259786c2828a19dae05aeee6",
+  "main_base": "cb9b6a704bb18ccd219d847a48e810f22b4e2c3e",
   "review_pr": 28,
   "host": {
     "os": "Windows 10.0.26200",
@@ -16,8 +16,8 @@
     "runtime": "10.0.14"
   },
   "source_integrity": {
-    "checkout_head": "4600086c492582c5d854145db64097310ac73686",
-    "checkout_clean_before_build": true,
+    "checkout_head": "f8973a1958fb1e6d259786c2828a19dae05aeee6",
+    "clean_before_build": true,
     "dug_git_blob": "4db0ebadfd1e48b2bdec9236ba7f344921e4a865"
   },
   "results": {
@@ -31,17 +31,17 @@
       "pass": 23,
       "fail": 0
     },
-    "source_stdio_eof_smoke": "PASS",
-    "package_extract_manifest_readback": "PASS",
+    "stdio_eof_smoke": "PASS",
+    "package_extract_hash_readback": "PASS",
     "packaged_executable_stdio_smoke": "PASS"
   },
   "package": {
-    "file": "MCP-OCP-SINK-P004-4600086c-candidate.zip",
-    "size": 138142,
-    "sha256": "50c0c68f769aefec95dfde3e45c74594d34b3fbcb25916814181fad241e8e3a6",
+    "file": "MCP-OCP-SINK-P004-f8973a19-candidate.zip",
+    "size": 137705,
+    "sha256": "bfaaed6bbdc6222c2ffed6da11f3257a282f2feecc2360ebeb41ede5bfa87cfb",
     "manifest": "manifest.json",
-    "manifest_size": 2948,
-    "manifest_sha256": "ac491edc7fadad65715b58d1275592bca86f506584489683012e74779da87627",
+    "manifest_size": 2933,
+    "manifest_sha256": "b738e17ca173e6515a03caf6060f35bf592a0f0effaba420d5ab9b2922e83b8d",
     "files_in_archive": 9
   },
   "diagnostic_logs": {
@@ -50,19 +50,19 @@
       "size": 2006
     },
     "restore-pilot-tests.log": {
-      "sha256": "b4aa90fe9680915c6ea3d2f45fb20c314a9fc435e384485ed0ca6b04ecee8b7d",
-      "size": 468
+      "sha256": "a3928c3fdf591e949f7c764bccc63ebdcb5bffaa771eb953c269c23fecb2af3b",
+      "size": 142
     },
     "restore-monitor-tests.log": {
-      "sha256": "b703bd0783113bc4dde8457b1ee892ad57393d6d34822c139cd4bf8dcc4ff4a6",
-      "size": 296
+      "sha256": "a3928c3fdf591e949f7c764bccc63ebdcb5bffaa771eb953c269c23fecb2af3b",
+      "size": 142
     },
     "build-server.log": {
-      "sha256": "c206017d3c9f8a118ea958fdece2f09937a0bc55de729cfdc2a7046c740346dc",
+      "sha256": "52332c1ba301d8959ac8feac3e2a1089148ef019f0c7938eb32c5f27c6304f36",
       "size": 376
     },
     "build-pilot-tests.log": {
-      "sha256": "20dd8d13f321c3b230a16b7eab2ad0b18a30aee1f3be4b82b299d9c77fca9ccd",
+      "sha256": "e793376fb736b64d8131c971a9ae3d61c77398a53d28b4930dec99d2dcd8f164",
       "size": 528
     },
     "pilot-contract-tests.log": {
@@ -70,7 +70,7 @@
       "size": 1098
     },
     "build-monitor-tests.log": {
-      "sha256": "137fcc9cb4526329b7363f0450fd83a2c555b9a8c5f5e635f559646612056e26",
+      "sha256": "3b0f5d40dbb16b876f726fca57a6abf09ea7b880dd935638ffc3c68d9c50d395",
       "size": 429
     },
     "monitor-contract-tests.log": {
@@ -86,7 +86,7 @@
       "size": 8215
     },
     "stdio-stderr.log": {
-      "sha256": "231d9d70cc373b56a54e12539c6e616df03ed86ae02759a2eabb6b8a07aa88e6",
+      "sha256": "682f9c873520c4d9c5074c926994cb2e33bb5e0da31ecec26b365c1f3e3a30bf",
       "size": 449
     }
   },
