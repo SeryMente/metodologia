@@ -2430,3 +2430,28 @@ Resultado: `ISOLATED_RESTORE_PASS`. El ZIP local tiene el mismo SHA-256 que el o
 - Excepción: ZIP crudo sin cifrado cliente; TLS + SSE-B2/AES256 confirmados. No es el diseño permanente.
 
 Estados: `B2_UPLOAD_READBACK=PASS_4_OF_4`; `WORKSPACE_ISOLATED_RESTORE=SAME_HOST_PASS`; `VAULT_DECRYPT_RESTORE=NOT_RUN`; `CROSS_HOST_RESTORE=NOT_RUN`; `CLIENT_SIDE_ENCRYPTION=EXCEPTION_NOT_APPLIED`.
+
+## Plan de continuidad técnica y verificación por hitos · 2026-11-11
+
+**Estado:** guía de ejecución para los pendientes reales; no reabre hitos ya demostrados ni cambia el estado de la tarea. El resultado B2 4/4 con read-back SHA y el restore aislado same-host 3.289/3.289 permanecen PASS. Descifrado aislado de Vault y restore cross-host siguen NOT_RUN; el ZIP de workspace continúa registrado como excepción sin cifrado cliente.
+
+### Línea base y secuencia
+
+1. **Reconciliar recibos antes de operar.** Leer el manifiesto, los cuatro objetos remotos, sus hashes, el recibo final y el recibo de restore. No repetir upload, download ni extracción que ya tiene evidencia exacta. Mantener separados: integridad remota, restore same-host, descifrado del ciphertext, portabilidad DPAPI y restore cross-host.
+2. **Validar el ciphertext de Vault en aislamiento.** Obtener una copia desde B2, cotejar tamaño/SHA con la fuente, descifrarla solo en un perfil/LOCALAPPDATA temporal autorizado y verificar inventario/metadatos sin mostrar valores. La contraseña maestra se introduce localmente; no se pide ni se transfiere por chat, argumento o log. No sustituir el Vault formal ni migrar DPAPI CurrentUser como si fuera portable.
+3. **Demostrar recuperación cross-host.** Preparar un host de recuperación independiente y un bootstrap B2 independiente del ciphertext que se pretende descargar. Validar descarga, SHA, descifrado y recuperación aislada. Documentar expresamente qué elementos DPAPI/notas efímeras no migran y cuál es su procedimiento de recuperación; no inferir éxito cross-host a partir del restore same-host.
+4. **Cerrar el requisito de cifrado cliente.** Mantener la excepción del ZIP existente como excepción histórica, no como diseño aprobado. Antes de futuras capturas del workspace, definir y probar empaquetado/cifrado cliente, gestión de clave, autenticidad, rotación y recuperación; comprobar que B2 recibe ciphertext y que download/read-back/restauración producen el mismo SHA del artefacto cifrado esperado.
+5. **Completar sincronización idempotente.** Fijar el catálogo de datasets y mapeo ruta lógica↔ruta física, identidad de snapshot, política de conflictos/versiones y límites de exclusión. Implementar por separado descubrimiento, snapshot, cifrado, upload, verificación, restore y reconciliación; cada etapa consume un recibo verificable y solo avanza desde un estado PASS.
+6. **Probar fallos y reanudación.** Cubrir interrupción de red/upload, reintento del mismo snapshot sin duplicados, objeto ausente, SHA/tamaño discordante, ZIP corrupto, ruta fuera del root permitido, falta de bootstrap, clave incorrecta, restore parcial, conflicto de versiones y cierre durante captura. Los fixtures son sintéticos y aislados.
+
+### Interfaces, Review Focus y salida
+
+- Entradas: inventario/manifiesto de captura, ciphertext Vault, credencial B2 obtenida desde el canal autorizado y perfil de destino. Salidas: recibos diferenciados de snapshot, cifrado, upload, read-back, restore y aceptación.
+- No se suben secretos en claro ni se imprimen valores de Vault; logs y recibos contienen nombres/metadatos necesarios, nunca valores.
+- No borrar ni sustituir el origen por un backup remoto: exigir manifest íntegro, restore aislado comprobado y segundo read-back antes de cualquier cambio destructivo.
+- Un PASS en una etapa no promueve las restantes. Las excepciones se documentan con alcance, autoridad, fecha, exposición y remediación.
+- Cierre: ciphertext Vault descifrado en aislamiento; recuperación cross-host demostrada con bootstrap independiente; futura captura cifrada cliente; sincronización/reintento idempotentes; recibos y hashes cotejados; aceptación del operador. Mantener NOT_RUN donde no haya ejecución.
+
+### Rollback
+
+Las pruebas no escriben sobre el conjunto de datos activo. Ante discrepancia, detener solo la etapa afectada, preservar recibos y artefactos, no borrar objetos remotos automáticamente y volver al último snapshot íntegro verificado. Registrar causa, corrección, retest y prevención en esta crónica.
