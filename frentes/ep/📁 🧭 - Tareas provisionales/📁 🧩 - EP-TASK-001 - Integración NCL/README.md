@@ -248,3 +248,29 @@ La crónica es acumulativa: no se sustituye la historia anterior. Un NO-OP requi
 
 ## Reporte individual obligatorio por tarea
 Al resolver esta tarea, el responsable debe agregar el informe individual en este mismo núcleo siguiendo [la plantilla común](../../../PLANTILLA-REPORTE-CIERRE-TAREA.md), completar todos sus campos y actualizar el índice padre solo después del read-back. No marcar como completada sin criterios PASS, evidencia ejecutada, integridad verificada y aceptación exigible. Si termina parcial/bloqueada, dejar igualmente el informe con bloqueantes, preocupaciones, riesgos y condición objetiva de desbloqueo. Informar al operador con enlace al informe. Esta instrucción no altera titularidad, generación, permisos ni controles.
+
+
+## Plan de ejecución estructurado para la reanudación · 2026-11-11
+
+**Estado de este plan:** preparado para cuando se cumpla la condición de activación vigente o el operador cambie expresamente el orden. No cambia el estado pendiente de EP-TASK-001 ni autoriza conexión, instalación, autenticación o uso de credenciales.
+
+### Línea base, interfaces y secuencia
+
+1. **Adquirir la línea base real en modo read-only.** Registrar fecha, perfil Chrome OCP identificado sin copiar cookies ni secretos, versiones de Chrome/Playwright/KeePassXC, extensión instalada, Native Messaging registrado, rutas efectivas y procesos. Contrastar el reporte histórico con los archivos y versiones remotos vigentes; no ejecutar cambios sobre el perfil del usuario durante este inventario.
+2. **Congelar el mapa de integración antes de construir.** Documentar los contratos entre Chrome/perfil existente, Playwright Extension, Playwright MCP, Native Messaging, KeePassXC y la pestaña delegada. Cualquier cambio del mapa de componentes, del perímetro de credenciales o de la experiencia visible debe pasar por los candados P012/P013; no inferir revisión presencial ni aprobación por este plan.
+3. **Implementar por cortes verticales independientes.** Primero conexión a una pestaña delegada; después limitación de alcance a esa pestaña; después custodia/uso autorizado de credenciales y TOTP mediante KeePassXC; por último pausa/reanudación y presentación visible. Cada corte identifica archivos de lectura/creación/modificación, interfaz consumida/producida y rollback. No cambiar el perfil completo ni las extensiones ajenas al alcance.
+4. **Probar con datos y cuentas de prueba.** Los escenarios mínimos son: perfil equivocado, extensión desconectada, Native Messaging ausente, pestaña no delegada, intento de acceso a pestaña ajena, sesión expirada, credencial denegada, TOTP no disponible, agente interrumpido y recuperación. Ninguna salida de prueba puede contener contraseña, TOTP, cookie, token o contenido de KeePass.
+5. **Smoke funcional supervisado.** La primera navegación real será la validación de solo lectura en Cora definida por la tarea, desde la pestaña dedicada del perfil OCP verificado. Confirmar que el usuario puede observar, detener y reanudar el control y que Chrome permanece abierto.
+
+### Review Focus y aceptación
+
+- Reutiliza el Chrome/perfil existente; no crea un perfil paralelo ni fuerza una nueva autenticación como sustituto.
+- El agente solo opera en pestañas delegadas; el resto del perfil, ventanas, sesiones y pestañas se preservan.
+- La operación es visible, interrumpible y compatible con un solo monitor; no se declara UX aceptada por una prueba estructural.
+- KeePassXC conserva la custodia; no se exportan secretos a argumentos, logs, archivos, conversación ni variables persistentes innecesarias.
+- Cada prueba declara PASS/FAIL/NOT_RUN, código de salida, evidencia saneada y límites.
+- Criterio de cierre: navegación Cora read-only verificada, control humano probado, sesión preservada, pruebas negativas PASS, documentación/read-back y aceptación humana aplicable.
+
+### Rollback y registro
+
+Antes de cada mutación, preservar configuración previa y anotar cómo volver a ella. Ante fallo, desconectar el puente y restaurar únicamente los archivos/configuraciones modificados; nunca cerrar Chrome ni borrar sesiones como rollback. Registrar el resultado en esta tarea y actualizar el índice solo tras read-back. La tarea continúa pendiente mientras no se cumpla su activación.
