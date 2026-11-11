@@ -1,6 +1,6 @@
 # EP-TASK-007 · Guardián de sesión efímera e inventario del host
 
-**Estado:** `CONFIGURADA · PENDIENTE DE ACUSE EP Y EJECUCIÓN`  
+**Estado:** `en_curso · HOST_INVENTORY_PARTIAL_READ_ONLY · BITLOCKER_GATE_FAIL · LOCATION_UNCLASSIFIED · GUARDIAN_NOT_RUN`  
 **Prioridad:** P0 para protección de sesión después del hito de persistencia mínima; P1 para inventario extendido y optimización.  
 **Responsable:** frente Entorno Persistente (EP).  
 **OEP padre:** `frentes/ep/OEP.md`.  
@@ -187,3 +187,24 @@ EP-TASK-003 protege y materializa el workspace persistente raíz de EP, con pol�
 ### Rollback y seguridad
 
 En desarrollo, rollback a configuración/build previo y destrucción solo de fixtures temporales. En host real, no existe rollback ficticio del borrado criptográfico: por ello las pruebas destructivas se separan del entorno productivo y requieren compuertas y autorización específicas. Si una condición de seguridad no se verifica, el resultado es BLOCKED/FAIL, nunca PASS por defecto.
+
+---
+
+## Revalidación de host y protección de volúmenes · 2026-11-11 · 10:38 America/Mexico_City
+
+**Estado operativo:** en_curso · HOST_INVENTORY_PARTIAL_READ_ONLY · BITLOCKER_GATE_FAIL · LOCATION_UNCLASSIFIED · GUARDIAN_NOT_RUN.
+
+### Identidad y contexto de ejecución
+
+Se verificó la sesión RDC de trabajo CENTRAL/fila4, perfil C:/Users/fila4. El token de Fila4 no está elevado. La conexión administrativa CENTRAL/MantenimientoRCI se utilizó solo para consulta manage-bde read-only; no se escribieron archivos en ese perfil ni se modificó la configuración del equipo.
+
+### Estado de cifrado observado
+
+- C: cifrado al 100 % por espacio usado, XTS-AES128, Protection Off y sin protectores.
+- W: EP-FILA4, 29.98 GB, completamente descifrado, 0 %, método None, Protection Off y sin protectores.
+- Ubicación CECEQ/LOC-OTHER sigue UNCLASSIFIED; no se recogieron GPS ni IP para inferirla.
+- La CLI EP Vault no está inicializada en su ubicación formal y sessionActive=false.
+
+### Estado de Guardian y cierre
+
+No se implementó ni ejecutó Guardian, lease, heartbeat, trigger terminal, bloqueo/desmontaje ni crypto-erasure. No se borró ni modificó workspace, ciphertext, volumen ni archivos. El inventario actualiza el diagnóstico, pero no satisface el gate de protección de EP-TASK-003 ni las dependencias MCP-OCP-14/15/16. Las pruebas destructivas continúan limitadas a contenedores sintéticos desechables hasta que existan almacenamiento, custodia y aceptación requeridos.
