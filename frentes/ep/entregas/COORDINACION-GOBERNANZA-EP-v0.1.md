@@ -2928,3 +2928,24 @@ Los tres documentos se leyeron de vuelta desde `main` y su contenido coincide ex
 - El siguiente paso requiere desbloqueo local de la GUI EP Vault por el operador; no se solicita contraseña por chat ni se ejecuta una CLI interactiva mientras esté SELLADA.
 
 **Estado del ciclo:** `PUBLICADO → LEÍDO → RESPUESTA_INICIAL_REGISTRADA → PROCESADO → DOCUMENTADO_AL_CIERRE → VERIFICADO_READBACK`.
+
+
+---
+
+## EP · apertura de ciclo de reanudación y reconciliación de Backblaze · 2026-11-11 · 14:20:53 America/Mexico_City
+
+**Ciclo local UUIDv7:** `01a1cc45-414a-7bd9-8b4e-21ba2e596e91` · identidad local de continuidad; no es ID nativo, folio global ni FOL1.
+
+### Cursor y gobernanza
+
+- **DTC anterior leído:** `main`, blob `f08859b0f290247798a1655c257dba267ce734c0`; no se encontró mensaje nuevo de Gobernanza después del último cierre EP: `SIN_NOVEDAD` en ese cursor.
+- **OEP leído:** `main/frentes/ep/OEP.md`, v0.3.67, blob `6d123125077400431bdfbf1dde69a12b231ff278`, §133.
+- **Índice y siete núcleos:** leídos desde main. La cola ejecutiva y el orden de prioridad se conservan; no se usa el snapshot local de Metodología sin `.git` como fuente canónica.
+- **DUG:** Samantha v388 · NX-388m, blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`; GOW v2.18. §ARR se adquirió desde la representación estructurada embebida. Se revisaron los cinco textos completos del CNP: P001, P004, P005, P038 y P043. MCP normativo permanece DESACTIVADO y no se invocó.
+- **A literal de continuidad:** «Bien, las tareas se estan actualziando, vuelve a leer, decide la siguiwente tarea, y resuelve.» El tramo conversacional recibido se preservará en un anexo independiente sin corregir el texto original.
+
+### Decisión operativa inicial
+
+EP-TASK-001 conserva precedencia en la cola, pero su siguiente acto material requiere intervención del propietario para rotación local de KeeShare y revisión presencial P012/P013; no se modifica Chrome, KeePassXC ni la base. En paralelo, por ser P0 y constituir el motivo inmediato de la solicitud, se revalida EP-TASK-002 exclusivamente en lectura: comprobar procedencia/huellas del ciphertext formal, estado de la sesión compartida y relación exacta con el objeto B2 ya respaldado. No se autentica ni sube mientras la sesión esté sellada. No se sobrescribe ninguna copia ni se alteran ACL, volúmenes o workspace.
+
+**Estado de apertura:** `RESPUESTA_INICIAL_REGISTRADA` · procesamiento condicionado a las compuertas de EP-TASK-001/002; no se declara completada ninguna tarea.
