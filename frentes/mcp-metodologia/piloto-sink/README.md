@@ -135,3 +135,13 @@ La sincronización más reciente incorpora main `1867af0c69f250aaee2b35b585eec8b
 **Límites:** candidato piloto P004, no release 1.0.0; GitHub-hosted CI NOT_VERIFIED; EP installation NOT_PERFORMED; EP-TASK-003/005 pendientes; runtime persistente Fila 4 NO VERIFICADO; IPZ E2E NOT_ACCEPTED; MCP-NORMATIVO DESACTIVADO.
 
 La rama incorpora main `cb9b6a704bb18ccd219d847a48e810f22b4e2c3e` mediante merge `d1625f9345e54b90ac1ad884d4ee8476c78af491`; compare de cierre 34 ahead / 0 behind. PR #28 permanece OPEN/DRAFT/NOT MERGED.
+
+## Paquete candidato vigente · 2026-11-11
+
+**ZIP:** [MCP-OCP-SINK-P004-f8973a19-candidate.zip](../entregas/piloto-sink-p004/MCP-OCP-SINK-P004-f8973a19-candidate.zip)  
+**SHA-256:** `705716c7aa581a98817869eb281b87500b591c4e811653c3a6825e1ceb59a3d2`  
+**Manifest:** [manifest.json](../entregas/piloto-sink-p004/manifest.json) · **Recibo:** [VALIDATION-RECEIPT.json](../entregas/piloto-sink-p004/VALIDATION-RECEIPT.json)
+
+Source commit probado `f8973a1958fb1e6d259786c2828a19dae05aeee6`; último main incorporado `9ec698fbe27fd087c2cc9939b3afd604984e6154`, merge `720fc22ecad3ecdcfe3087778472e51aaa939068`. Build/restore PASS; 18/18 P004, 23/23 monitor/readiness y smoke STDIO/EOF PASS. Extracción, hash manifest y smoke del ejecutable empaquetado PASS; read-back remoto autenticado de ZIP/manifest/recibo/sums/runbook/pin PASS.
+
+El ZIP es `CANDIDATE_NOT_ACCEPTED`, no un paquete instalado. EP-TASK-003/005 bloquean instalación; GOV-TASK-003 E2E IPZ sigue pendiente. PR #28 permanece OPEN/DRAFT/NOT MERGED; MCP-NORMATIVO DESACTIVADO.
