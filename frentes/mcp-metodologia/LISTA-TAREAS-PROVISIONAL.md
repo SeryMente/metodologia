@@ -1,4 +1,4 @@
-<!-- LIST_VERSION=0.13; LIST_STATUS=PROVISIONAL; NOT_A_CANONICAL_OBJECT=true -->
+<!-- LIST_VERSION=0.14; LIST_STATUS=PROVISIONAL; NOT_A_CANONICAL_OBJECT=true -->
 # Lista provisional de tareas · MCP-OCP
 
 > **ESTADO: PROVISIONAL · NO ES UN OCP NI UN CONTROL ADICIONAL.** Esta lista es una vista auxiliar enlazada desde el único núcleo MCP-OCP. El estado vivo y las decisiones de alcance permanecen en `MCP-METODOLOGIA.md`; la titularidad permanece exclusivamente en `CONTROL-RESPONSABILIDAD.json`. Las tareas y dependencias de otros frentes se enlazan sin apropiarse de sus objetos, controles o permisos.
@@ -6,13 +6,13 @@
 - **Frente:** MCP-OCP.
 - **Repositorio propietario:** `SeryMente/metodologia`.
 - **Ruta OCP:** `frentes/mcp-metodologia/`.
-- **Versión de la lista:** 0.13 (provisional; coordinación del Sprint SINK-P004 y producto MCP-OCP 1.0.0).
+- **Versión de la lista:** 0.14 (provisional; coordinación del Sprint SINK-P004 y producto MCP-OCP 1.0.0).
 - **Última actualización:** 2026-11-11.
 - **Gobierno leído:** Samantha v388 · NX-388m; Metacanon 1.29; GOW 2.18; DUG commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`; blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`. ART-027 rebaselined para Sink local STDIO/RDC; §ARR y P037 revisados; CNP P001/P004/P005/P038/P043 considerado.
-- **Núcleo enlazado:** [MCP-OCP · objeto canónico](MCP-METODOLOGIA.md), v0.1.31; esta lista v0.13 es su backlog auxiliar vigente.
+- **Núcleo enlazado:** [MCP-OCP · objeto canónico](MCP-METODOLOGIA.md), v0.1.32; esta lista v0.14 es su backlog auxiliar vigente.
 - **Control:** [CONTROL-RESPONSABILIDAD.json](CONTROL-RESPONSABILIDAD.json). Las generaciones y sesiones son metadatos de auditoría y no bloquean trabajo autorizado.
 - **MCP-NORMATIVO:** DESACTIVADO.
-- **Producto vs. documento:** MCP-OCP-v0.1.31 es la versión documental vigente; la versión de software objetivo es 1.0.0. La candidata ejecutable 0.1.0 y su recibo histórico no constituyen una versión actualizada ni aceptada del producto.
+- **Producto vs. documento:** MCP-OCP-v0.1.32 es la versión documental vigente; la versión de software objetivo es 1.0.0. La candidata ejecutable 0.1.0 y su recibo histórico no constituyen una versión actualizada ni aceptada del producto.
 - **Principio de custodia:** no guardar claves, access/refresh tokens, datos privados de usuario, contenido sensible de repositorios ni secretos en esta lista, artefactos, manifests o logs. Utilizar fixtures sintéticos y evidencia minimizada.
 
 ## Decisión de alcance operativa vigente
@@ -33,13 +33,13 @@ La tabla sustituye los PASS/estados de recibos históricos para la implementaci�
 | Orden | ID | Prioridad | Tarea | Estado vigente | Condición principal de salida |
 |---:|---|---|---|---|---|
 | 1 | MCP-OCP-01 | P0 | Contrato de producto y frontera OCP/Khora/Jules | VERIFICADO_EN_NUCLEO_V0.1.29 | Un servidor local STDIO; panel acompañante read-only en el producto final; dominios separados. |
-| 2 | MCP-OCP-02 | P0 · CRÍTICO AHORA | Rama limpia y reconciliación selectiva desde main | PORTACIÓN SELECTIVA EN RAMA LIMPIA; PR #28 OPEN/DRAFT; BUILD ACTUAL PENDIENTE | Nueva rama desde HEAD de main; pin DUG v388 cotejado; inventario REUSE/ADAPT/REWRITE/DROP y SDK/RID. |
-| 3 | MCP-OCP-05 | P0 · SIGUIENTE | Corte vertical GOW:ARR → DUG → SINK:P004 | P004 PORTADO; BUILD DE RAMA ACTUAL PENDIENTE | Respuesta individual completa, pin v388/commit/blob/SHA-256 y fail-closed. Fixtures antes de EP; importación privada tras EP PASS. |
-| 4 | MCP-OCP-03 | P0 | Suite mínima de contrato del piloto P004 | 18/18 P004 + 23/23 MONITOR PASS HISTÓRICO POR BLOBS; REEJECUCIÓN PENDIENTE | Preparar contrato y casos ID/fuente/pin/hash/fallo cerrado/cierre ahora; repetir con fuente real tras EP PASS. |
-| 5 | MCP-OCP-04 | P0 | Transporte y E2E IPZ → RDC → STDIO para P004 | HARNESS PORTADO; REEJECUCIÓN SMOKE PENDIENTE; E2E IPZ PENDIENTE | Preparar harness/smoke; E2E exige P004 instalado y respuesta visible desde contexto IPZ. Consola sola no basta. |
+| 2 | MCP-OCP-02 | P0 · CRÍTICO AHORA | Rama limpia y reconciliación selectiva desde main | PASS_RECONCILIACION_MAIN_ACTUAL; PR #28 OPEN/DRAFT; 0 BEHIND | Nueva rama desde HEAD de main; pin DUG v388 cotejado; inventario REUSE/ADAPT/REWRITE/DROP y SDK/RID. |
+| 3 | MCP-OCP-05 | P0 · SIGUIENTE | Corte vertical GOW:ARR → DUG → SINK:P004 | P004_VERTICAL_SLICE_PASS; GENERALIZACIÓN_P001_P043_PENDIENTE | Respuesta individual completa, pin v388/commit/blob/SHA-256 y fail-closed. Fixtures antes de EP; importación privada tras EP PASS. |
+| 4 | MCP-OCP-03 | P0 | Suite mínima de contrato del piloto P004 | 18/18 P004 + 23/23 MONITOR PASS; BUILDS PASS; PANEL/QA_RELEASE PENDIENTES | Preparar contrato y casos ID/fuente/pin/hash/fallo cerrado/cierre ahora; repetir con fuente real tras EP PASS. |
+| 5 | MCP-OCP-04 | P0 | Transporte y E2E IPZ → RDC → STDIO para P004 | STDIO_EOF_SMOKE_PASS; E2E_IPZ_NOT_RUN; EP_INSTALL_GATES_PENDING | Preparar harness/smoke; E2E exige P004 instalado y respuesta visible desde contexto IPZ. Consola sola no basta. |
 | 6 | MCP-OCP-05 (fase posterior) / 03 | P0 | Generalización Sink P001–P043 y lotes | PENDIENTE_POST_PILOTO | 43 respuestas, orden, hashes/eventos y controles negativos PASS. |
 | 7 | MCP-OCP-13 | P1 | Panel local de observabilidad visual | ESPECIFICADO · IMPLEMENTACIÓN_PENDIENTE | Obligatorio en 1.0.0; se implementa tras congelar schema, en paralelo con la generalización, y no bloquea el piloto SINK:P004. |
-| 8 | MCP-OCP-10 | P1 | Pins, manifiesto y evidencia final | PENDIENTE_EVIDENCIA_ACTUAL | Pins DUG v388/core vigente, SDK/RID, servidor+panel, tests y hashes. |
+| 8 | MCP-OCP-10 | P1 | Pins, manifiesto y evidencia final | P004_PINS_MANIFEST_RECEIPT_PASS; FULL_1.0.0_EVIDENCE_PENDING | Pins DUG v388/core vigente, SDK/RID, servidor+panel, tests y hashes. |
 | 9 | MCP-OCP-07 | P1 | Paquete reproducible 1.0.0 | PENDIENTE_PAQUETE_ACTUAL | ZIP final servidor+panel, configuración, manifest/SHA y read-back. |
 | 10 | MCP-OCP-12 | P1 | Bootstrap local en Fila 4 | BLOQUEADO_GATES_EP | Piloto/instalación dentro de checkout; datos externos protegidos; REGISTER interactivo. |
 | 11 | MCP-OCP-08 | P1 | Handoff y aceptación EP | PENDIENTE_EP_TASK_003_005 | Verificación de ruta, root, panel EP ACTIVE, hashes, cierre y rollback. |
@@ -73,7 +73,11 @@ La tabla sustituye los PASS/estados de recibos históricos para la implementaci�
 **Salida de cierre:** rama candidata desde main con base documentada; mapa de portabilidad; diff acotado; build inicial sin secretos; pruebas históricas clasificadas como antecedentes, nunca como PASS de 1.0.0.
 
 
-**Resultado MCP-OCP-02 · 2026-11-11:** rama `feat/mcp-ocp-p004-reconciled-20261111-7ab0c555`, portación inicial desde `7ab0c555b774adc5b930aad700f101ab2660b79a`, commit `6dda16a2fe9a5173f21ccdaaa23ba1ac9f9721c4`; sincronizada con main `9fa37906373e0a9af01f4ccec5060d59b8194ccb` mediante merge `d69bec6a9a56e3f5fb90bec6ce04fc7c56d86722`. El inventario REUSE/ADAPT/DROP/DEFER está en [RECONCILIACION-20261111.md](piloto-sink/RECONCILIACION-20261111.md). SDK .NET 10.0.403 fijado; piloto net10.0 framework-dependent, sin RID. Build de esta rama pendiente.
+**Resultado MCP-OCP-02 · 2026-11-11:** rama `feat/mcp-ocp-p004-reconciled-20261111-7ab0c555`, portación inicial desde `7ab0c555b774adc5b930aad700f101ab2660b79a`, commit `6dda16a2fe9a5173f21ccdaaa23ba1ac9f9721c4`; última main incorporada `0b4a7373fdc07f39b3f764e9c6e0c94fce21cc2f`, merge `63e2f1399fdb210294ef26983babc8fbef87a4a6`. SDK .NET 10.0.403 fijado; piloto net10.0 framework-dependent, sin RID. Ver informe REUSE/ADAPT/DROP/DEFER en [RECONCILIACION-20261111.md](piloto-sink/RECONCILIACION-20261111.md).
+
+
+**Cierre de MCP-OCP-02 · 2026-11-11:** rama limpia desde main, portación selectiva, clasificación REUSE/ADAPT/DROP/DEFER y pin DUG cotejados. Main incorporado hasta `0b4a7373fdc07f39b3f764e9c6e0c94fce21cc2f` por merge `63e2f1399fdb210294ef26983babc8fbef87a4a6`; compare al corte 26 ahead / 0 behind. PR #28 OPEN/DRAFT/NOT MERGED, mergeable. La reconciliación está ejecutada; la revisión de PR no equivale a merge/aceptación.
+
 ### MCP-OCP-03 — Calidad, pruebas y build de release (servidor + panel)
 **Prioridad:** P0 · **Estado:** PENDIENTE.
 
@@ -84,7 +88,8 @@ La tabla sustituye los PASS/estados de recibos históricos para la implementaci�
 **Salida:** recibo ligado al commit de código y al main base, pins DUG/core, SDK/RID, comandos, conteos, PASS/FAIL, limitaciones y hashes. Release solo cuando suite y paquete pasen; no convertir resultados de candidata antigua en evidencia nueva.
 
 
-**Evidencia MCP-OCP-03 · 2026-11-11:** las suites portadas contienen 18 casos P004 y 23 monitor/readiness. Los blobs de lector, servidor, Program, pin, ambas suites y harness coinciden con la ejecución local histórica (Windows/.NET SDK 10.0.403: restore/build PASS, 18/18 + 23/23 PASS y smoke STDIO/EOF PASS). Esta equivalencia no acredita reejecución en la rama actual. No hay `dotnet` ni `pwsh` en el entorno disponible; la ejecución ligada al commit actual sigue pendiente.
+**Evidencia MCP-OCP-03 · 2026-11-11:** las suites se ejecutaron de nuevo sobre el source commit `4600086c492582c5d854145db64097310ac73686`. **Resultado MCP-OCP-03 · 2026-11-11:** ejecución fresca ligada al source commit `4600086c492582c5d854145db64097310ac73686`, SDK .NET 10.0.403, Windows 10.0.26200 x64, PowerShell 7.4.22. Restore de ambos proyectos PASS; builds servidor/monitor/tests PASS, 0 warnings/0 errors; P004 18/18 PASS; monitor/readiness 23/23 PASS. Logs y SHA-256 en `piloto-sink/SOURCE-PIN.json` y `entregas/piloto-sink-p004/VALIDATION-RECEIPT.json`. El panel WPF y QA integral del release 1.0.0 permanecen fuera de este piloto.
+
 ### MCP-OCP-04 — Transporte MCP STDIO y recorrido RDC
 **Prioridad:** P0 · **Estado:** PENDIENTE.
 
@@ -95,7 +100,7 @@ La tabla sustituye los PASS/estados de recibos históricos para la implementaci�
 **Salida:** recibo de smoke real del ejecutable de release y configuración del cliente, con ruta de binario y evidencia del perímetro. El smoke temporal histórico no cuenta como E2E instalada. El panel recibe la proyección por archivos locales y no se interpone en stdin/stdout.
 
 
-**Estado MCP-OCP-04 · 2026-11-11:** el harness STDIO/EOF está portado; no se ha reejecutado sobre la rama actual. La aceptación IPZ E2E exige instalación válida por EP y respuesta visible desde el contexto IPZ; permanece pendiente.
+**Resultado MCP-OCP-04 · 2026-11-11:** smoke local STDIO/EOF PASS con initialize, tools/list, tools/call(P004), tres respuestas JSON-RPC, evento `SINK_READ_SUCCESS` en STDERR y terminación EOF. El smoke se repitió sobre el ejecutable extraído del ZIP final. No es aceptación IPZ E2E; sigue pendiente de instalación EP y respuesta visible desde contexto IPZ.
 ### MCP-OCP-05 — Fuentes canónicas, herramientas de lectura, Sink y estado observable
 **Prioridad:** P0 · **Estado:** PENDIENTE_IMPLEMENTACION.
 
@@ -108,7 +113,7 @@ La tabla sustituye los PASS/estados de recibos históricos para la implementaci�
 **Salida:** operaciones/schemas implementados, ejemplos de respuesta y pruebas de contrato. Metadatos de aplicabilidad ausentes no se infieren; MCP-NORMATIVO queda DESACTIVADO.
 
 
-**Corte P004 · 2026-11-11:** lector y servidor portados sobre main vigente; DUG v388/NX-388m, §ARR y metadatos P004 cotejados; el código conserva fail-closed. Queda ejecutar build/suite, generar paquete nuevo y verificarlo. La generalización P001–P043 sigue posterior a la aceptación P004.
+**Resultado MCP-OCP-05 · corte vertical P004 · 2026-11-11:** `sink_principle(P004)` recupera el texto completo y sus metadatos DUG v388/NX-388m, con integridad y fail-closed verificados. Los 18 contratos positivos/negativos y el smoke STDIO/EOF pasaron. La generalización P001–P043, lotes ordenados y sus negativos globales no se declaran implementados ni aceptados.
 ### MCP-OCP-06 — Coexistencia con Jules por puente RDC independiente
 **Prioridad:** P0 · **Estado:** PENDIENTE · **Dependencia:** MCP-Jules y Khora-MCP.
 
@@ -122,6 +127,10 @@ La coexistencia debe ser dos clientes/canales locales claramente separados: serv
 **Contenido:** ejecutable MCP, panel Windows, recursos/dependencias necesarias, launcher de sesión, configuración de ejemplo sin secretos, schema de observabilidad, manifiesto de archivos, SHA-256, instrucciones de extracción/ejecución y runbook. Elegir publish mode/RID después del baseline, no por suposición.
 
 **Salida:** paquete nuevo disponible desde la ruta de entrega MCP-OCP; tamaño, RID, build commit, source commit, pins DUG/core y SHA-256. Extraer en root de prueba, cotejar archivos y repetir smoke. Esta tarea entrega paquete; no declara instalada la copia en checkout ni en EP.
+
+
+**Candidato de piloto P004 · 2026-11-11:** ZIP `MCP-OCP-SINK-P004-4600086c-candidate.zip`, 138.142 bytes, SHA-256 `50c0c68f769aefec95dfde3e45c74594d34b3fbcb25916814181fad241e8e3a6`; manifest/recibo/SHA sums presentes; 9 archivos extraídos y cotejados; smoke sobre binario empaquetado PASS. Es candidato P004, no el release servidor+panel 1.0.0; instalación EP sigue gateada.
+
 ### MCP-OCP-08 — Handoff de paquete a EP y recepción de instalación
 **Prioridad:** P1 · **Estado:** BLOQUEADO_DEPENDENCIA_EP.
 
