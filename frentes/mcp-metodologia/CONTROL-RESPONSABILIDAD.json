@@ -78,13 +78,13 @@
     "generation_before": 5,
     "generation_after": 6,
     "operation": "TRANSFER_RESPONSIBILITY",
-    "result": "APPLIED_PENDING_READBACK",
-    "readback_status": "PENDING",
-    "transfer_commit_sha": null,
-    "immediate_readback_blob_sha": null,
-    "generation_readback": null,
-    "owner_readback": null,
-    "identity_readback": null
+    "result": "VERIFIED",
+    "readback_status": "MATCHED",
+    "transfer_commit_sha": "1248eb4ab76db4b98a20c2e67bd2871c0238d16a",
+    "immediate_readback_blob_sha": "c14f87d9b229aec848858a9c4eff28612cee9ccc",
+    "generation_readback": 6,
+    "owner_readback": "chatgpt-mcp-ocp-01a1cc39-7500-7504-92c7-cbea05ee1c59",
+    "identity_readback": "MCP-OCP"
   },
   "implementation_authorization": {
     "event_id": "C-MCP-METODOLOGIA-IMPLEMENTATION-AUTH-20261031-01",
@@ -218,13 +218,13 @@
       "generation_before": 5,
       "generation_after": 6,
       "operation": "TRANSFER_RESPONSIBILITY",
-      "result": "APPLIED_PENDING_READBACK",
-      "readback_status": "PENDING",
-      "transfer_commit_sha": null,
-      "immediate_readback_blob_sha": null,
-      "generation_readback": null,
-      "owner_readback": null,
-      "identity_readback": null
+      "result": "VERIFIED",
+      "readback_status": "MATCHED",
+      "transfer_commit_sha": "1248eb4ab76db4b98a20c2e67bd2871c0238d16a",
+      "immediate_readback_blob_sha": "c14f87d9b229aec848858a9c4eff28612cee9ccc",
+      "generation_readback": 6,
+      "owner_readback": "chatgpt-mcp-ocp-01a1cc39-7500-7504-92c7-cbea05ee1c59",
+      "identity_readback": "MCP-OCP"
     }
   ],
   "display_name": "MCP-OCP",
