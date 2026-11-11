@@ -3091,3 +3091,36 @@ Avanzar con máxima velocidad compatible con integridad: revalidar el candidato 
 ### Estado de apertura
 
 `READ-ONLY_DISCOVERY_DONE` · `DTC_OPENING_LATE=TRUE` · ciclo todavía abierto. No se atribuye a estas consultas ninguna modificación ni aceptación. Procesamiento documental, read-back y cierre siguen pendientes.
+
+
+---
+
+## EP · cierre de ciclo: revisión acelerada de PR #21/#28 y actualización de tareas · 2026-11-11 · 15:52 America/Mexico_City
+
+**Referencia de apertura:** commit DTC `9b622101f43c805e5aa7fad54300a9069b16ea26`, blob de apertura `cd9d15ad418932f1afbf088613248bd69db59ffd`. La apertura fue tardía respecto a consultas iniciales; DTC_OPENING_LATE=TRUE.
+
+### Resultado esencial
+
+1. **EP-TASK-004 / PR #21:** OPEN/DRAFT/NOT MERGED, HEAD `e165c0b867e20c9ae3156f6bad72c6f13ba8a5c5`, mergeable=false. La rama incluye OEP v0.3.56/§120 sobre una base antigua, mientras main conserva v0.3.69/§135. No fusionar como está. H10 y P012/P013 pendientes.
+2. **EP-TASK-005 / PR #28:** OPEN/DRAFT/NOT MERGED, HEAD `86e58cff0e58a2452361ff8abe031917dc9a5b11`, base `9ec698fbe27fd087c2cc9939b3afd604984e6154`, compare 52 ahead/0 behind, mergeable=false. No reviews/hilos en respuestas consultadas. Causa de mergeability NO VERIFICADA.
+3. **Evidencia local del candidato #28:** restore/build PASS, 18/18 P004, 23/23 monitor/readiness, smoke STDIO/EOF y extracción/read-back/smoke del ZIP PASS, según recibo ligado al source commit `f8973a1958fb1e6d259786c2828a19dae05aeee6`. ZIP 137.784 B, SHA-256 `705716c7aa581a98817869eb281b87500b591c4e811653c3a6825e1ceb59a3d2`. CANDIDATE_NOT_ACCEPTED.
+4. **Límites del paquete #28:** CI GitHub-hosted NOT_VERIFIED; los workflows observados fallaron con steps/logs ausentes, sin evidencia de ejecución de build/test en runner. RUNBOOK discrepa de SOURCE-PIN/recibo respecto al commit/merge de sincronización. Como RUNBOOK forma parte del ZIP, corregirlo requiere reemitir ZIP/manifest/SHA sums/recibo; paquete actual queda retenido, sin mutar sus bytes.
+5. **Gate EP-TASK-003:** C XTS-AES128/100 % pero Protection Off y cero protectores; W descifrado. No hay root protegido validado, así que instalación en Fila 4 no se ejecuta. Runtime persistente destino NO VERIFICADO.
+
+### Acciones completadas en este ciclo
+
+- Consultas GitHub read-only de PRs, archivos, reviews/threads, compare y workflows.
+- Actualización de EP-TASK-004: commit `3f16ac4728272c3ca644df435e30de89bfaa3942`, blob/read-back `18a6363615a9a572defaeaf8c473f8fda36e8d02`.
+- Actualización de EP-TASK-005: commit `988960ddbf6f8f6c1d04c5d4f42cb6dafb58b3f0`, blob/read-back `6cbf3b026ff4de50e4b8ccf41009ff9d635f8851`.
+- Actualización del índice EP: commit `1032c9c95dfcef46c7d1c4377300eecdec8083a3`, blob/read-back `f5b760febe712219622378786d4cd891e9237be2`.
+- Los tres contenidos se compararon exactamente con sus lecturas de vuelta desde el commit respectivo. OEP, DUG, GOW, Vault, B2, host, BitLocker y ramas/PRs de producto no fueron modificados.
+
+### Corrección de trazabilidad
+
+El UUIDv7 anotado en la apertura `01a1cc90-e140-7c48-b7cd-81f88e940f34` no quedó acompañado de evidencia de generación local verificable; se conserva como texto histórico no validado, sin tratarlo como ID nativo ni folio. El ciclo queda referido de forma verificable por el commit de apertura DTC indicado arriba. No se reasigna folio ni se activa FOL1.
+
+### Estado y siguiente acción
+
+Ciclo documental cerrado con read-back exacto. Ninguna tarea se declara completada. Prioridad siguiente: resolver localmente el gate de almacenamiento EP-TASK-003 con el operador y, en paralelo, corregir la procedencia del RUNBOOK y regenerar el paquete #28 en su rama con hashes/read-back completos. No instalar ni fusionar mientras esos gates permanezcan FAIL. MCP-NORMATIVO DESACTIVADO; FOL1 inactivo.
+
+**Estado:** `OPENING_LATE → PROCESSED → TASKS_UPDATED → READBACK_VERIFIED → CLOSED`.
