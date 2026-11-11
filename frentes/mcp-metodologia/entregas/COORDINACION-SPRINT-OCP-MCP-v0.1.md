@@ -1889,3 +1889,36 @@ Este suplemento solo registra la actualización de navegación y su cotejo. No r
 **Estado:** `MCP_OCP_02=SELECTIVE_PORT_PERSISTED`; `MCP_OCP_03=HISTORICAL_BLOB_EQUIVALENCE_REEXEC_PENDING`; `MCP_OCP_04=SMOKE_REEXEC_PENDING_IPZ_E2E_NOT_ACCEPTED`; `MCP_OCP_05=P004_PORTED_BUILD_PACKAGE_PENDING`; `EP_INSTALL=BLOCKED_EP_GATES`; `HOSTED_CI=NOT_VERIFIED`; `MCP_NORMATIVO=DESACTIVADO`; `FOL1=PREPARADO_PENDIENTE_ACTIVACION_IPZ`.
 
 **Actualización posterior al read-back:** PR #28 creada para revisión, `OPEN/DRAFT/NOT MERGED`, base `1867af0c69f250aaee2b35b585eec8b74827b69c`, head inicial `d981953da84eaede38cb25649eb76b30a454a7ef`, 16 ahead / 0 behind y 23 archivos. PR #27 permanece abierta/draft como antecedente no integrado. Esta publicación no cambia el estado `DTC_CYCLE_STATUS=INCOMPLETE` ni declara build, pruebas, paquete o E2E aceptados.
+
+### Addendum de resultados verificados y publicación del piloto P004 · ciclo local 14 · 2026-11-11
+
+**Rectificación del estado técnico:** la nota de apertura tardía del ciclo 14 se conserva sin reescribirla. Después se ejecutó el build y las suites en el checkout temporal de la rama; por tanto, los estados `NOT_RUN` de la apertura quedan supersedidos por este resultado, no borrados.
+
+**Fuente ejecutada:** `SeryMente/metodologia`, rama `feat/mcp-ocp-p004-reconciled-20261111-7ab0c555`, source commit `4600086c492582c5d854145db64097310ac73686`; DUG v388/NX-388m commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`, blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`.
+
+**Entorno y procedimiento:** Windows 10.0.26200 x64; PowerShell 7.4.22; SDK .NET 10.0.403 y runtime 10.0.14 x64 en ubicación temporal aislada. Checkout fresco bajo `C:\Temp\MCP-OCP-P004-20261111\repo`. Se cotejaron HEAD local/remoto, estado limpio pre-build y blob Git del DUG. No se modificó el checkout persistente, la instalación global ni el PATH.
+
+**Resultados ejecutados:**
+- Restore de proyectos P004 y monitor/readiness: PASS.
+- Build servidor/monitor y dos proyectos de pruebas: PASS; 0 warnings, 0 errors.
+- P004: 18 PASS / 0 FAIL.
+- Monitor/readiness: 23 PASS / 0 FAIL.
+- STDIO/EOF: initialize, tools/list, tools/call(P004), 3 respuestas JSON-RPC, evento `SINK_READ_SUCCESS` por STDERR y EOF limpio: PASS.
+- Publicación framework-dependent `net10.0`: PASS.
+
+**Paquete exacto publicado:**
+- `frentes/mcp-metodologia/entregas/piloto-sink-p004/MCP-OCP-SINK-P004-4600086c-candidate.zip`, 138.142 bytes.
+- SHA-256 ZIP: `50c0c68f769aefec95dfde3e45c74594d34b3fbcb25916814181fad241e8e3a6`.
+- Manifest SHA-256: `ac491edc7fadad65715b58d1275592bca86f506584489683012e74779da87627`.
+- Validation receipt SHA-256: `5652b3298b083c72faa59a48d98a644402581bdf7e0718a8bac52b1313f7b6ee`.
+- SHA256SUMS SHA-256: `aa688cf2e63a44f5edaba2650f05a2c6aaca2b86f111ee663b24a3d07576d58f`.
+- 9 archivos; extracción y cotejo manifest por tamaño/SHA-256 PASS; smoke sobre el ejecutable exacto extraído PASS.
+- Commit de publicación package/pin: `69f17be96e6a5e406d59ce66ffe0ac89589831c4`.
+
+**Sincronización y revisión:** main `0b4a7373fdc07f39b3f764e9c6e0c94fce21cc2f` integrado mediante merge `63e2f1399fdb210294ef26983babc8fbef87a4a6`; comparación posterior 26 ahead / 0 behind. PR #28 OPEN/DRAFT/NOT MERGED, mergeable=true. PR #27 sigue sin integrar.
+
+**Límites y gates:** hosted CI NOT_VERIFIED (el PASS proviene de ejecución local real); EP-TASK-003/005 continúan como gates de instalación/recepción; no hubo handoff, instalación, importación privada, REGISTER ni operación de host; runtime persistente de Fila 4 NO_VERIFICADO; IPZ E2E NOT_RUN/NOT_ACCEPTED; MCP-NORMATIVO DESACTIVADO; panel WPF y release 1.0.0 pendientes. El ZIP es `CANDIDATE_NOT_ACCEPTED`.
+
+**Estado técnico actualizado:** `MCP_OCP_02=PASS_SELECTIVE_RECONCILIATION`; `MCP_OCP_03=PASS_P004_18_18_AND_MONITOR_23_23`; `MCP_OCP_04=PASS_STDIO_EOF_SMOKE_IPZ_E2E_PENDING`; `MCP_OCP_05=PASS_P004_VERTICAL_SLICE_GENERALIZATION_PENDING`; `MCP_OCP_PILOT_PACKAGE=PASS_CANDIDATE_NOT_ACCEPTED`; `EP_INSTALL=BLOCKED_EP_TASK_003_005`; `HOSTED_CI=NOT_VERIFIED`; `IPZ_E2E=NOT_ACCEPTED`; `MCP_NORMATIVO=DESACTIVADO`.
+
+**Estado de ciclo conservado:** `DTC_CYCLE_STATUS=INCOMPLETE` por `DTC_OPENING_LATE=TRUE`. La ejecución y sus hashes se documentan como hechos posteriores; no se simula una apertura puntual ni se cierra retrospectivamente el ciclo.
