@@ -210,3 +210,21 @@ La rama draft PR #27 declara estáticamente sink_principle con argumento princip
 - GOV-TASK-003 E2E: NOT_RUN. MCP-NORMATIVO: DESACTIVADO.
 
 **Conclusión:** la etapa documental de GOV-TASK-007 produce un candidato medido y recuperable. La tarea global sigue EN_CURSO hasta autorización, instalación/read-back nativo y compuertas separadas. FOL1 no se activa por preparar este archivo.
+
+
+---
+
+## Informe parcial · GOV-TASK-007 · IPZ v0.9 y corte FOL1 · 2026-11-11
+
+- **Estado:** EN_CURSO; candidata documental lista, no instalada.
+- **Corte:** main `a1ba2611fd1c218d8f7647f02f7adf5c1dbff8e8`; DUG v389/NX-389m blob `bcd99e72113f444a045d7f1c91b4ad36865b8ea8`; GOW 2.19, §ARR = `gow-sec-14`, ancla `#gow-arranque-chatgpt`.
+- **Resultado:** candidata v0.9 blob Git `851b3c0aefbb3820772b5c8a9a0e8f3b6100aa51`; SHA-256 UTF-8/LF `ea0001b962cea9e59ef7f0ed5bd1a47e82a147eb09ea4eed077bc75cc8f20aa3`; medida 1.479 UTF-16 LF / 1.475 puntos de código LF; CRLF 1.496 UTF-16 / 1.492 puntos. Límite menor de 1.500 PASS documental.
+- **Contrato:** llamada textual `sink_principle`, `principle_id=P004` concuerda con schema estático observado. No prueba runtime; PR #28 aún pin v388, incompatible con blob v389.
+- **Validación:** texto/conteo/§ARR PASS documental; compatibilidad runtime NOT_VERIFIED; campo nativo no modificado; read-back nativo NOT_RUN.
+- **FOL1:** maestro gen4 `PREPARADO_PENDIENTE_ACTIVACION_IPZ`; contadores globales y OCP en cero. No asignar folios; FOL1 no bloquea H1.
+- **Riesgos/pendientes:** no confundir candidata con instalación; esperar servidor v389; escritura nativa requiere autorización expresa y read-back real.
+- **Rollback:** no hubo escritura del campo; no aplica.
+- **Aceptación:** preparación documental PASS; tarea global EN_CURSO.
+- **Siguiente acción:** congelar llamada tras schema/runtime v389; instalar IPZ solo con autorización y verificar el campo.
+- **Conclusión:** PARCIAL · CANDIDATA PREPARADA, NO INSTALADA.
+

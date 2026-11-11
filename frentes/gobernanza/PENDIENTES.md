@@ -375,3 +375,17 @@ La fotografía activa del sprint se centraliza en [GOV-TASK-015 · Sprint SINK-P
 - **FOL1:** PREPARADO_PENDIENTE_ACTIVACION_IPZ; contadores en cero; no asignar folios. MCP-NORMATIVO DESACTIVADO.
 
 La preparación documental de GOV-TASK-007 está ejecutada; GOV-TASK-003 permanece NOT_RUN y GOV-TASK-008 conserva el contrato P004 sujeto a validación runtime.
+
+
+---
+
+## Rebaseline vigente OCP MCP 1.0.0 · 2026-11-11
+
+- **DUG:** Samantha v389/NX-389m; commit `199bf03ade7aceeedcabc10eeb1c06b1d0e53eaf`; blob `bcd99e72113f444a045d7f1c91b4ad36865b8ea8`; Metacanon 1.30; GOW 2.19.
+- **Jerarquía:** OCP MCP 1.0.0 es el sprint integral H1–H9; SINK-P004 es H1, no el release completo. GOV-TASK-015 coordina; 008 contrato; 007 IPZ/FOL1; 003 E2E.
+- **MCP-OCP:** PR #28 OPEN/DRAFT, 52 ahead/17 behind, DIVERGED; paquete candidate-not-accepted. SourcePin/lector v388 no coincide con DUG v389. RUNBOOK difiere de manifest/SOURCE-PIN en base/merge.
+- **EP:** EP-TASK-002 B2 v7 + decrypt aislado same-host PASS; R2 restore same-host PASS; cross-host y cifrado cliente NOT_RUN. EP-TASK-003 PARTIAL_FAIL; EP-TASK-005 BLOCKED. Sin instalación/E2E.
+- **Gobernanza:** IPZ v0.9 candidata 1.479 UTF-16 LF / 1.496 CRLF; SHA `ea0001b962cea9e59ef7f0ed5bd1a47e82a147eb09ea4eedbc75cc8f20aa3`; no instalada. FOL1 PREPARADO/NO ACTIVO, contadores cero.
+- **Hitos:** H1 candidato parcial/no aceptado; H2/H3 parciales; H4 diseño/inventario parcial; H5/H6 NOT_RUN; H7 diferido; H8 pendiente/no listo; H9 post-release.
+- **Límite:** no se cambian controles, DUG, IPZ nativa, MCP-OCP, OEP, EP host, Vault ni B2.
+

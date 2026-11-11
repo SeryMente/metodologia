@@ -468,3 +468,22 @@ El informe individual fue persistido y leído de vuelta: [GOV-TASK-015 · Sprint
 | GOV-TASK-015 | Camino crítico y límites interfrentes actualizados. | Rama/paquete MCP-OCP y host/instalación EP siguen siendo de sus propietarios. |
 
 **Candidata:** entregas/CHATGPT-v0.9/IPZ-CAMPO-CHATGPT-v0.9-PROPUESTA.txt · UTF-16 1.479 LF / 1.496 CRLF · SHA-256 LF ea0001b962cea9e59ef7f0ed5bd1a47e82a147eb09ea4eed077bc75cc8f20aa3. No equivale a instalación IPZ nativa.
+
+
+---
+
+## Rebaseline de tareas provisionales · 2026-11-11
+
+Fuente vigente: DUG Samantha v389/NX-389m, commit `199bf03ade7aceeedcabc10eeb1c06b1d0e53eaf`, blob `bcd99e72113f444a045d7f1c91b4ad36865b8ea8`; main `a1ba2611fd1c218d8f7647f02f7adf5c1dbff8e8`. Se mantienen los 15 IDs y estados del registro; esta actualización no cierra tareas.
+
+| Tarea | Estado conservado | Delta |
+|---|---|---|
+| GOV-TASK-006 | en_curso | §ARR/GOW v2.19 verificados; inventario satélite pendiente. |
+| GOV-TASK-007 | en_curso | IPZ v0.9 medida; nativa sin escribir; FOL1 preparado/no activo. |
+| GOV-TASK-008 | en_curso | Schema P004 estático; pin candidato v388 obsoleto frente a DUG v389. |
+| GOV-TASK-003 | pendiente | E2E NOT_RUN; depende de v389, EP gates e instalación. |
+| GOV-TASK-014 | en_curso | H2 Vault v7/decrypt same-host PASS; H3 restore same-host PASS; cross-host pendiente. |
+| GOV-TASK-015 | en_curso · P0 | Programa H1–H9 coordinado; H1 no aceptado. |
+
+PR #28 OPEN/DRAFT/NOT MERGED, DIVERGED 52/17; PR #27 OPEN/DRAFT/NOT MERGED, DIVERGED 53/168. EP-TASK-003 PARTIAL_FAIL; EP-TASK-005 BLOCKED. Sin merge, instalación ni E2E. FOL1 PREPARADO/NO ACTIVO; MCP-NORMATIVO DESACTIVADO.
+

@@ -199,3 +199,21 @@ La revisión de solo lectura del candidato PR #27 identificó este contrato decl
 **Condición para congelar contrato:** MCP-OCP debe reconciliar su candidata con main y entregar el artefacto final. EP instala ese artefacto. Luego GOV-TASK-003 verifica tools/list por la conexión real y coteja tools/call. No inventar nombres ni argumentos alternativos.
 
 **Estado:** mapping documental P004 preparado; runtime/read-back y aceptación E2E NO_VERIFICADOS.
+
+
+---
+
+## Informe parcial · GOV-TASK-008 · contrato P004 y pin v389 · 2026-11-11
+
+- **Estado:** EN_CURSO; schema estático observado, runtime no verificado.
+- **Corte:** main `a1ba2611fd1c218d8f7647f02f7adf5c1dbff8e8`; DUG v389/NX-389m blob `bcd99e72113f444a045d7f1c91b4ad36865b8ea8`; PR #28 HEAD `86e58cff0e58a2452361ff8abe031917dc9a5b11`, 52/17 DIVERGED.
+- **Resultado:** `tools/list` estáticamente declara `sink_principle`; `inputSchema` requiere `principle_id` string enum [P004], `additionalProperties=false`. `tools/call` usa ese nombre y argumento; ID distinto devuelve `PILOT_ONLY_SUPPORTS_P004`. Fuente MCP-OCP `McpServer.cs` blob `0b116f82edb2fe60fa2351c12f7b6c7850e146e8`. No equivale a runtime.
+- **Hallazgo P0:** SourcePin blob `a99dcd448724256de238da0e312d12f0d96e4152` y SOURCE-PIN blob `d1e2de14d5959fe61d64ce4b8ec3c3c8ec574c06` fijan v388/blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`. DUG v389 es blob `bcd99e72113f444a045d7f1c91b4ad36865b8ea8`. DugSourceReader blob `294116597fdb281ca1e4e8bf2d9a5e2e94234af3` recalcula el Git blob y falla cerrado (`DUG_GIT_BLOB_PIN_MISMATCH`) ante diferencia. El texto P004 actual coincide con el observado en v388, pero la fuente íntegra no.
+- **Paquete:** ZIP 137.784 B, SHA `705716c7aa581a98817869eb281b87500b591c4e811653c3a6825e1ceb59a3d2`; manifest SHA `03ef3b75d21a153d6b659056c4e401ca65fd6e7f2355cc57d48ed6e71746f750`; recibo SHA `b068287641fa908d56bc2196dad2a4e840a0120eacf6538c74914e1bc1fdcffd`. RUNBOOK y manifest/SOURCE-PIN discrepan en base/merge; candidato no aceptado.
+- **Validación:** schema estático PASS documental; pin contra DUG v389 FAIL; tools/list runtime, llamada, negativo runtime, instalación y E2E NOT_RUN.
+- **Bloqueantes:** MCP-OCP debe sincronizar branch, actualizar pin/fixtures, validar v389 y regenerar paquete completo; EP debe superar gates e instalarlo; Gobernanza coteja runtime después.
+- **Riesgos:** instalar v388 sobre DUG v389 genera rechazo fail-closed; no sustituir por memoria ni MDP. MCP-NORMATIVO DESACTIVADO.
+- **Aceptación:** contrato candidato no congelado para runtime; tarea sigue abierta.
+- **Siguiente acción:** esperar artefacto v389 y verificar tools/list/call reales.
+- **Conclusión:** PARCIAL · PIN ACTUAL INCOMPATIBLE.
+

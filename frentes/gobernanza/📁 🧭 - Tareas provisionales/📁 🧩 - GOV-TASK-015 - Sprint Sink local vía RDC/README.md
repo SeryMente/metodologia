@@ -1,13 +1,13 @@
 # GOV-TASK-015 · OCP MCP 1.0 · Coordinación Gobernanza / MCP-OCP / EP
 
-**Estado:** `EN_CURSO · coordinación centralizada · listo para handoff de ejecución a EP; implementación MCP-OCP y gates EP siguen pendientes de evidencia`
+**Estado:** `EN_CURSO · coordinación H1–H9 · H1 SINK-P004 BLOQUEADO/NO ACEPTADO; gates EP y pin v389 pendientes`
 **Objetivo de release:** entregar MCP-OCP software **1.0.0**, instalado en la carpeta local de Metodología descrita al final de este plan. Las versiones documentales del núcleo MCP-OCP-v0.1.28 y backlog 0.9 son versiones de artefactos auxiliares, no la versión del producto.
 **Tipo:** coordinación y aceptación de un único sprint; no crea un frente nuevo ni controles paralelos.
 **Responsabilidad:** frente Gobernanza. Las tareas técnicas conservan sus OCP y fuentes.
-**Fuente normativa:** Samantha v388 · NX-388m · Metacanon 1.29 · GOW 2.18.
+**Fuente normativa:** Samantha v389 · NX-389m · Metacanon 1.30 · GOW 2.19.
 **DUG:** Samantha v388/NX-388m; commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`; archivo blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`.
 **MCP-OCP:** núcleo v0.1.30 · commit `4610a81f6522142859ecf7345bc3836763434bd6` · blob `4eea02bcc6dc086af7177ba8791b7e51fb205a2e`; backlog v0.11 · commit `a43d53543df79f659888997f332e86ef03cb97b8` · blob `a328dc4fcda6beb0a45ffcc09f68ab5c6407588f`.
-**EP:** OEP v0.3.59 · commit `a8882deba14fb38b2dcdb59cbc313b388d971dd9` · blob `b29e806d2d9473f3828972a0c67d09bf7dcafc4e`. EP-TASK-003=`PARTIAL_FAIL`; EP-TASK-005=`PENDING`; OEP §124 prepara reanudación por EP, sin alterar control generación 3.
+**EP:** OEP v0.3.69 · blob `34ba5fab053f07b79fb928babd07949aae97a5cc`. EP-TASK-003=`PARTIAL_FAIL`; EP-TASK-005=`BLOCKED`; consultar fichas EP para evidencia viva.
 **Autorización:** la implementación Sink local por STDIO, pruebas, build/paquete y panel siguen dentro del control MCP-OCP generación 5. La coordinación no amplía permisos de host EP ni altera los controles MCP-OCP/EP/Gobernanza.
 **Destino EP designado:** alias funcional **Fila 4**, único destino RDC designado por el operador; PC 7 queda supersedido. No se conservan Device IDs, hostnames, cuentas de Windows, rutas concretas de perfil ni identificadores de sesión efímeros conforme a DUG v388/ART-013. El operador reportó estar físicamente frente a Fila 4; CECEQ no fue confirmado y la ubicación física continúa `UNCLASSIFIED`. No inferir CECEQ/LOC-OTHER; el dead-man solo aplica si se confirma ubicación distinta de CECEQ.
 **Alcance:** contrato, implementación Sink local, panel de observabilidad, pruebas, paquete, handoff, bootstrap en el perfil designado y aceptación E2E. Esta ficha es planificación: no acredita código, build, instalación ni prueba ejecutados.
@@ -999,3 +999,52 @@ H1 PASS requiere conjuntamente: rama/candidato reconciliado, manifest/ZIP ínteg
 3. Gobernanza: verificar tools/list runtime y ejecutar GOV-TASK-003 desde IPZ real. FOL1 conserva su propio gate sin bloquear H1.
 
 **Conclusión:** preparación textual IPZ VERIFICADA; compatibilidad runtime, instalación nativa y E2E permanecen NO_VERIFICADAS/NOT_RUN.
+
+
+---
+
+## Informe parcial · GOV-TASK-015 · rebaseline del sprint OCP MCP 1.0.0 · 2026-11-11
+
+- **Estado:** EN_CURSO → EN_CURSO · H1 SINK-P004 bloqueado/no aceptado; programa H1–H9 sin aceptación integral.
+- **Corte:** main `a1ba2611fd1c218d8f7647f02f7adf5c1dbff8e8`; DUG v389/NX-389m, commit `199bf03ade7aceeedcabc10eeb1c06b1d0e53eaf`, blob `bcd99e72113f444a045d7f1c91b4ad36865b8ea8`; Metacanon 1.30, GOW 2.19, 43 principios/24 anexos. Control Gobernanza gen20 activo, blob `02a9720dd0f4264d69a6d84f865fd97cca9a31f0`; sin cambios. OEP v0.3.69, blob `34ba5fab053f07b79fb928babd07949aae97a5cc`.
+- **Objetivo/resultado:** mantener separados los dos niveles: SINK-P004 es H1 del programa OCP MCP 1.0.0; no es el release completo. GOV-TASK-015 coordina; GOV-TASK-008 define contrato; GOV-TASK-007 prepara IPZ/FOL1; GOV-TASK-003 acepta E2E. El corte actual no acepta H1 ni el release.
+- **Método:** comparación viva de PR #27/#28 contra el mismo main; inspección estática de código, pins, manifest, RUNBOOK y recibos; lectura de vuelta de tareas propietarias EP.
+
+### Matriz H1–H9
+
+| Hito | Estado | Evidencia / brecha |
+|---|---|---|
+| H1 SINK:P004 desde IPZ | BLOQUEADO · CANDIDATO PARCIAL · NO ACEPTADO | PR #28 informa restore/build, 0 warnings/0 errors, 18/18 P004, 23/23 monitor/readiness, smoke STDIO/EOF, extracción/read-back y smoke del ZIP; resultados ligados a source commit `f8973a1958fb1e6d259786c2828a19dae05aeee6`, no reejecutados por Gobernanza. Pin v388 incompatible con el archivo DUG v389 actual. |
+| H2 persistencia/bóveda | PARCIAL | EP-TASK-002: ciphertext formal 3.352 B, SHA `3122C544012F989F0501BD0E82EA920A93F19A42034D83FA682BCC2290891E82`, B2 read-back y SSE-B2/AES256 PASS; decrypt aislado HMAC/AES PASS, 30 propiedades/5 nombres B2. Cross-host NOT_RUN. MCP-OCP-14: 4 schemas/20 fixtures sintéticos PASS reportados; contrato no ratificado, sin runtime/DB/IO. |
+| H3 workspace | PARCIAL | R2 restore aislado same-host 3.289/3.289 PASS; no cross-host. ZIP histórico sin cifrado cliente; R5 .zip.age y restore/descifrado pendientes. |
+| H4 identidad/telemetría | DISEÑO + INVENTARIO PARCIAL; runtime NO VERIFICADO | No hay captura runtime completa de ubicación/red/sesión/ciclo. |
+| H5 lease/dead-man | NOT_RUN | Contrato documentado; guardián/heartbeat/lease no probados. |
+| H6 limpieza/crypto-erasure | NOT_RUN | Sin ejecución destructiva aceptada ni recibo. |
+| H7 Vault→RDC JIT | DIFERIDO | Sin implementación; requiere auditoría de canal seguro/custodia. |
+| H8 release MCP-OCP 1.0.0 | PENDIENTE · NO LISTO | Generalización P001–P043, matriz 43+8, panel WPF, persistencia aceptada, lease, paquete reproducible, instalación y aceptación conjunta pendientes. |
+| H9 medio alternativo | POST-RELEASE · NO INICIAR | Evaluación posterior a H8; no aprovisionar. |
+
+### Candidatas y discrepancias actuales
+
+- **PR #28:** OPEN/DRAFT/NOT MERGED; HEAD `86e58cff0e58a2452361ff8abe031917dc9a5b11`; main `a1ba2611fd1c218d8f7647f02f7adf5c1dbff8e8`; DIVERGED 52 ahead/17 behind; merge-base `9ec698fbe27fd087c2cc9939b3afd604984e6154`; mergeable=false.
+- **PR #27:** OPEN/DRAFT/NOT MERGED; HEAD `5cc59b708c1d5894e7dbfd2a724504fdf5b92974`; DIVERGED 53 ahead/168 behind; merge-base `f8a5880f1cbf432754157b5669d1f9e80177766f`. Es antecedente, no reemplaza #28.
+- **ZIP #28:** 137.784 B; SHA-256 `705716c7aa581a98817869eb281b87500b591c4e811653c3a6825e1ceb59a3d2`; manifest SHA `03ef3b75d21a153d6b659056c4e401ca65fd6e7f2355cc57d48ed6e71746f750`; recibo `b068287641fa908d56bc2196dad2a4e840a0120eacf6538c74914e1bc1fdcffd`. RUNBOOK declara base/merge `446e692.../8d22bff...`; SOURCE-PIN/manifest declaran `9ec698f.../720fc22...`. No corregir un sidecar aislado; regenerar todo el paquete.
+- **Pin P0:** SourcePin fija v388, commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`, blob `4db0ebadfd1e48b2bdec9236ba7f344922e4a865`. El DUG actual v389 tiene blob `bcd99e72113f444a045d7f1c91b4ad36865b8ea8`. DugSourceReader verifica el Git blob y produce `DUG_GIT_BLOB_PIN_MISMATCH` ante la diferencia. El texto P004 observado coincide, pero eso no sustituye el pin de archivo íntegro.
+- **EP gate:** EP-TASK-003 PARTIAL_FAIL: C XTS-AES128/100 %/Protection Off/sin protectores; W descifrado/0 %/sin protectores; checkout local sin .git; .NET 10 no presente en el perfil destino; ubicación UNCLASSIFIED. EP-TASK-005 BLOCKED: no handoff, instalación, importación, REGISTER, runtime ni E2E.
+
+### Cola por propietario
+
+1. **MCP-OCP:** reconciliar PR #28 desde main actual sin portar indiscriminadamente 52 commits; pin v389; restore/build/tests/smoke sobre el commit final; alinear RUNBOOK/SOURCE-PIN/manifest/SHA256SUMS/ZIP/recibo y leer de vuelta el mismo paquete.
+2. **EP:** superar EP-TASK-003 y después recibir/extraer/read-back/instalar por EP-TASK-005.
+3. **Gobernanza:** congelar schema v389 desde tools/list runtime instalado y ejecutar GOV-TASK-003 desde IPZ real.
+4. **H2/H3:** reutilizar recibos v7/R2; no repetir cargas/decrypt same-host. Cross-host requiere host físico distinto y bootstrap B2 independiente; H3 requiere cifrado cliente y restore aislado.
+5. **H4–H9:** continuar en sus frentes propietarios, sin anticipar operaciones host, credenciales o acciones destructivas.
+
+- **Cambios:** solo documentación de Gobernanza; no se modificaron código/PR/paquete, controles EP/MCP-OCP, OEP, Vault, B2, host, DUG ni IPZ nativa.
+- **Validación:** PR/contratos/pins inspeccionados estáticamente; runtime tools/list, instalación, E2E y cross-host NOT_RUN.
+- **Riesgos:** pin obsoleto, sidecars divergentes, gate físico FAIL y workspace histórico sin cifrado cliente. 
+- **Rollback:** no hay instalación; rollback operativo NO APLICA/NO VERIFICADO. Futura instalación requiere artefacto aislado y plan EP.
+- **Aceptación:** ningún hito aceptado por este asiento.
+- **Siguiente acción:** MCP-OCP actualiza candidato v389; EP resuelve gates; Gobernanza verifica runtime y E2E.
+- **Conclusión:** PARCIAL · SINK-P004 NO ACEPTADO; sprint OCP MCP 1.0.0 EN_CURSO.
+

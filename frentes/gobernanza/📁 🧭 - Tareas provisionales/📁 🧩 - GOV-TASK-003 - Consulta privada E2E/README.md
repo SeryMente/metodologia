@@ -161,3 +161,21 @@ La inspección estática de la candidata PR #27 indica:
 Fuente: McpServer.cs blob 0b116f82edb2fe60fa2351c12f7b6c7850e146e8 en PR #27, rama draft divergida. Es lectura estática, no prueba de instalación ni schema runtime. Antes de E2E, releer tools/list en el piloto instalado y cotejar. Cualquier diferencia detiene solo la prueba y se devuelve a MCP-OCP.
 
 **Estado:** llamada parametrizada documentalmente sin inventar argumentos; instalación EP y E2E IPZ siguen NOT_RUN.
+
+
+---
+
+## Informe parcial · GOV-TASK-003 · rebaseline de aceptación E2E · 2026-11-11
+
+- **Estado:** PENDIENTE; prueba preparada, entradas no satisfechas.
+- **Corte:** main `a1ba2611fd1c218d8f7647f02f7adf5c1dbff8e8`; DUG v389/NX-389m blob `bcd99e72113f444a045d7f1c91b4ad36865b8ea8`; PR #28 OPEN/DRAFT, 52/17 DIVERGED; SourcePin actual del candidato v388.
+- **Objetivo/resultado:** definir prueba real desde IPZ→RDC→STDIO→respuesta visible, sin confundir smoke local con E2E. No se ejecutó RDC ni se simuló la ruta.
+- **Entradas obligatorias:** (1) candidato MCP-OCP reconciliado con pin v389 y sidecars coherentes; (2) MCP-OCP-03/04 PASS sobre commit/paquete exactos; (3) EP-TASK-003 PASS; (4) EP-TASK-005 instalado y leído de vuelta; (5) IPZ candidata cotejada con schema runtime; (6) fuente v389 verificada.
+- **Ejecución al desbloqueo:** tools/list runtime; tool/argumento real; respuesta P004 íntegra; cotejo ID/título/texto, versión/firma v389, commit/blob/SHA; un evento de éxito; negativo fail-closed sin incremento; salida visible al modelo y cierre limpio.
+- **Validación:** procedimiento documental PASS; EP-TASK-003 PARTIAL_FAIL; EP-TASK-005 BLOCKED; instalación/tools/list/E2E NOT_RUN.
+- **Riesgos:** candidato v388 no valida el blob v389; smoke local no acepta IPZ; PR abierta no acredita instalación.
+- **Rollback:** no hay instalación; futura prueba aislada bajo procedimiento EP, rollback aún NO_VERIFICADO.
+- **Aceptación:** PENDIENTE de recibo E2E visible con hashes, evento positivo/negativo y read-back.
+- **Siguiente acción:** MCP-OCP entrega v389; EP desbloquea/install; Gobernanza corre E2E.
+- **Conclusión:** BLOQUEADA POR DEPENDENCIAS · E2E NO EJECUTADO.
+

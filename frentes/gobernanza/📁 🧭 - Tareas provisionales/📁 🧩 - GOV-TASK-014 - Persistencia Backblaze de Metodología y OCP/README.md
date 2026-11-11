@@ -382,3 +382,21 @@ Los cuatro schemas y 20 fixtures sintéticos reportados PASS acreditan contrato 
 5. Mantener H1 SINK:P004 en su propio camino crítico. H2/H3 no bloquean código/pruebas con fixtures ni piloto P004 instalado si EP-TASK-003 y EP-TASK-005 pasan.
 
 **Estado:** evidencia v7 mejora H2; H2/H3 siguen parciales. No hay aceptación integrada ni cross-host.
+
+
+---
+
+## Reconciliación parcial H2/H3 · EP evidence · 2026-11-11
+
+- **Estado:** EN_CURSO; evidencia H2 mejorada, H2/H3 parciales.
+- **Fuentes:** EP-TASK-002 blob `53b8b05de055de2a388d0a108cdf3136861d8dea`; EP-TASK-003 blob `4ab259b79dbd7b93b0a42f3d0732f604be3f9ada`; EP-TASK-005 blob `6cbf3b026ff4de50e4b8ccf41009ff9d635f8851`; OEP v0.3.69 blob `34ba5fab053f07b79fb928babd07949aae97a5cc`.
+- **H2 Vault:** B2 v7 upload/download/read-back SHA/tamaño y SSE-B2/AES256 PASS. Ciphertext 3.352 B, SHA `3122C544012F989F0501BD0E82EA920A93F19A42034D83FA682BCC2290891E82`. Descifrado aislado HMAC/AES PASS, 30 propiedades, cinco nombres B2, sin imprimir secretos. Cross-host NOT_RUN.
+- **H3 workspace:** R2 restore same-host PASS, 3.289/3.289; no acredita segundo equipo. ZIP histórico sin cifrado cliente; R5 .zip.age, descarga, decrypt y restore no ejecutados.
+- **MCP-OCP-14:** cuatro schemas/20 fixtures sintéticos PASS reportados; contrato PROPOSED/NOT RATIFIED, sin runtime/DB/IO/checkpoint/restore.
+- **Validación:** read-back remoto y descifrado Vault same-host PASS; workspace restore same-host PASS; cross-host y cifrado cliente NOT_RUN.
+- **Riesgos:** no confundir RESTORE_VERIFIED del worker con restore funcional del workspace; SSE-B2 con cifrado cliente; dos conexiones mismo host con cross-host.
+- **Cambios:** solo este informe; sin mutar Vault/B2/host/workspace/OEP.
+- **Aceptación:** parcial; no hay aceptación integrada H2/H3.
+- **Siguiente acción:** EP cross-host en host independiente; MCP-OCP ratifica/runtime MCP-OCP-14; Gobernanza acepta tras recibos.
+- **Conclusión:** PARCIAL.
+

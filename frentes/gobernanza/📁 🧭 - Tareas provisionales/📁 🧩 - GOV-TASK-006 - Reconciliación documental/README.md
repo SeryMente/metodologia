@@ -54,3 +54,19 @@ La salida de esta tarea será una matriz de inventario y decisión por satélite
 
 ## Reporte individual obligatorio de resolución/cierre
 Al resolver, completar, bloquear o cancelar esta tarea, registrar su propio informe en este README usando [la plantilla común](../../../PLANTILLA-REPORTE-CIERRE-TAREA.md). Explicar objetivo y resultado, cómo se solucionó, decisiones verificables, cambios/rutas/commits/blobs/SHA, criterios y pruebas ejecutadas con logs/artefactos, read-back, bloqueantes/dependencias, preocupaciones/riesgos, pendientes, rollback y aceptación. Declarar NINGUNO_VERIFICADO o NO_VERIFICADO donde corresponda; nunca ocultar campos. No marcar completada sin criterios PASS, evidencia y read-back. Actualizar el índice padre después de verificar este informe y entregar al operador el enlace individual y síntesis de solución, evidencia, bloqueantes y preocupaciones. No incluir secretos ni datos sensibles.
+
+
+---
+
+## Revalidación parcial · GOV-TASK-006 · DUG v389 y GOW §ARR · 2026-11-11
+
+- **Estado:** EN_CURSO; pin y sección de entrada reconciliados, inventario satélite no completado.
+- **Corte:** main `a1ba2611fd1c218d8f7647f02f7adf5c1dbff8e8`; DUG v389/NX-389m, commit `199bf03ade7aceeedcabc10eeb1c06b1d0e53eaf`, blob `bcd99e72113f444a045d7f1c91b4ad36865b8ea8`; Metacanon 1.30, GOW 2.19; 43 principios/24 anexos.
+- **Hallazgo:** la proyección vigente contiene 14 secciones; `gow-sec-14` es «§ARR · Vocabulario de entrada para ChatGPT» con ancla `#gow-arranque-chatgpt`. El CNP actual sigue siendo P001/P004/P005/P038/P043. La divergencia humana/estructurada 2.12/2.14 de la ficha es histórica y no debe describirse como GOW vigente.
+- **Validación:** versión, estructura, §ARR y anchor PASS de lectura; propagación de pins en satélites PARCIAL; auditoría total de satélites NOT_RUN.
+- **Límites:** no se modificó DUG/GOW ni se reescribieron snapshots históricos. Persisten referencias v388/v373 en material histórico.
+- **Riesgos/pendientes:** matriz de satélites con autoridad/procedencia/función/dependencia/destino; actualizar referencias vigentes subordinadas sin borrar historia.
+- **Aceptación/rollback:** tarea no aceptada; no hubo mutación normativa ni operación irreversible.
+- **Siguiente acción:** continuar reconciliación documental acotada.
+- **Conclusión:** PARCIAL.
+
