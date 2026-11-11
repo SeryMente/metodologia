@@ -17,13 +17,13 @@ El patrón de materialización sigue el registro de tareas provisionales de Gobe
 ## Registro ejecutivo
 
 | ID local | Estado | Tarea | Núcleo |
-| EP-TASK-001 | pendiente | NCL — Navegador Compartido Local: integración de Playwright y KeePassXC | [núcleo](./📁%20🧩%20-%20EP-TASK-001%20-%20Integración%20NCL/README.md) |
-| EP-TASK-002 | `en_curso · P0 · B2_UPLOAD_READBACK_PASS_4_OF_4 · WORKSPACE_RESTORE_PASS · VAULT_DECRYPT_PENDING` | ZIP 3.289/3.289 restaurado y cotejado en C:\\R2R; ciphertext Vault íntegro/read-back PASS; descifrado aislado y cross-host pendientes | [núcleo](./📁%20🧩%20-%20EP-TASK-002%20-%20Persistencia%20provisional%20Backblaze/README.md) |
-| EP-TASK-003 | `en_curso · P0 · DISEÑO_ACEPTADO · PREFLIGHT_PARTIAL_FAIL` | Diseño VHDX aceptado; 2 enumeraciones 3.127 archivos/660 dirs/179.138.515 B, 0 errores; C: XTS-AES128/Protection Off; W: descifrado; checkout sin .git; Datos/MCP-OCP ausente; espera P0 B2 | [núcleo](./📁%20🧩%20-%20EP-TASK-003%20-%20Mapa%20integral%20de%20construcción%20EP/README.md) |
-| EP-TASK-004 | `en_curso · H7_H8_SYNTHETIC_E2E_V1_0_0_PASS · H10_PENDIENTE` | Suite v1.0.0 exacta PASS en dos corridas independientes (165,41 s y 142,61 s); release manifest actualizado/read-back PASS; checkout Desktop\SeryMente sigue snapshot previo no sustituido; H10 y merge a main pendientes | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-004%20-%20Reconstrucci%C3%B3n%20de%20b%C3%B3veda/README.md) |
-| EP-TASK-005 | pendiente · P0 piloto · BLOQUEADO_EP003+MCP_PACKAGE | EP ejecuta instalación del piloto en Fila 4 solo tras EP-TASK-003 PASS + paquete P004/manifest/SHA + MCP-OCP-03/04 smoke PASS; W: no es destino final. Después release 1.0.0. | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-005%20-%20Instalaci%C3%B3n%20y%20aceptaci%C3%B3n%20de%20MCP-OCP%20local/README.md) |
-| EP-TASK-006 | `en_curso · P1_WAITING_P0_B2` | Centralización: nombres Master B2 EP normalizados y leídos de vuelta; inventario mult proveedor incompleto; P1 sigue después del snapshot/restauración P0 | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-006%20-%20Centralizaci%C3%B3n%20de%20variables%20de%20entorno/README.md) |
-| EP-TASK-007 | `en_curso · HOST_INVENTORY_PARTIAL_READ_ONLY` | Revalidación read-only: workspace 3.127 archivos/660 dirs/179.138.515 B; C: 100 % XTS-AES128/Protection Off/sin protectores; W: 0 %/sin protectores; ubicación UNCLASSIFIED; Guardian no implementado | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-007%20-%20Guardi%C3%A1n%20de%20sesi%C3%B3n%20ef%C3%ADmera%20e%20inventario%20del%20host/README.md) |
+| EP-TASK-001 | `en_curso · NCL_PREFLIGHT_PARTIAL · OCP_PROFILE_IDENTIFIED · PLAYWRIGHT_EXTENSION_PRESENT · KEEPASSXC_BROWSER_MISSING` | Profile 36 identificado como OCP; Playwright Extension 0.4.0 presente; KeePassXC portable localizado; Native Messaging no verificado; incidente KeeShare requiere rotación local. | [núcleo](./📁%20🧩%20-%20EP-TASK-001%20-%20Integración%20NCL/README.md) |
+| EP-TASK-002 | `en_curso · P0 · B2_4_OF_4_READBACK_PASS · SAME_HOST_RESTORE_PASS · LOCAL_VAULT_NOT_INITIALIZED · CROSS_HOST_PENDING` | R2 same-host 3.289/3.289; B2 Vault 2.200 B SHA cotejado; ciphertext local 2.048 B no coincide; descifrado/cross-host NOT_RUN. | [núcleo](./📁%20🧩%20-%20EP-TASK-002%20-%20Persistencia%20provisional%20Backblaze/README.md) |
+| EP-TASK-003 | `en_curso · DISEÑO_ACEPTADO · BITLOCKER_GATE_FAIL · LOCATION_UNCLASSIFIED` | C: XTS-AES128/100 %/Protection Off/sin protectores; W: descifrado 0 %/sin protectores; checkout sin .git; no mutaciones. | [núcleo](./📁%20🧩%20-%20EP-TASK-003%20-%20Mapa%20integral%20de%20construcción%20EP/README.md) |
+| EP-TASK-004 | `en_curso · LOCAL_SYNTHETIC_PASS · UNMANIFESTED_DRIFT · H10_PENDING` | Suite local PASS 118,79 s; Core/GUI/XAML difieren del manifest; CLI 3600 rechazado; pestaña y botones sin handlers/disabled; PR #21 abierta. | [núcleo](./📁%20🧩%20-%20EP-TASK-004%20-%20Reconstrucción%20de%20bóveda/README.md) |
+| EP-TASK-005 | `pendiente · BLOCKED_EP003_STORAGE_AND_P004_PACKAGE_MCP_03_04` | No instalación/bootstrap/STDIO; C:/W: no protegidos; checkout local sin .git; PR #27 OPEN/DRAFT. | [núcleo](./📁%20🧩%20-%20EP-TASK-005%20-%20Instalación%20y%20aceptación%20de%20MCP-OCP%20local/README.md) |
+| EP-TASK-006 | `en_curso · P1 · VERCEL_52 · READBACK_10 · UNAVAILABLE_42 · FORMAL_VAULT_NOT_INITIALIZED` | Snapshot catalogado; no se releyeron secretos ni se ejecutaron adaptadores; cobertura organizacional incompleta. | [núcleo](./📁%20🧩%20-%20EP-TASK-006%20-%20Centralización%20de%20variables%20de%20entorno/README.md) |
+| EP-TASK-007 | `en_curso · INVENTORY_PARTIAL_READ_ONLY · BITLOCKER_GATE_FAIL · GUARDIAN_NOT_RUN` | Inventario Fila4 actualizado; C: Protection Off/sin protectores; W: descifrado; ubicación UNCLASSIFIED; lease/trigger/crypto-erasure no ejecutados. | [núcleo](./📁%20🧩%20-%20EP-TASK-007%20-%20Guardián%20de%20sesión%20efímera%20e%20inventario%20del%20host/README.md) |
 ## Estado de continuidad · 2026-10-31
 
 EP-TASK-001 permanece `pendiente`. No debe iniciarse mientras siga activo el trabajo prioritario de alojamiento de OCP MCP en EP. Puede retomarse cuando ese trabajo haya concluido o cuando el operador dé una instrucción expresa para alterar el orden.
@@ -437,3 +437,23 @@ Cuando una tarea requiera varias etapas, cambios de código/host, seguridad, int
 - Cada ciclo revalida los archivos/commits actuales antes de escribir; los cambios son append-only salvo rectificación explícita; el índice se actualiza después de leer de vuelta los núcleos modificados.
 - Los estados, prioridades, dependencias, titulares, autorizaciones y criterios ya existentes no cambian por incorporar este método.
 - Todo plan puede quedar DRAFT/NO_AUTORIZA_IMPLEMENTACIÓN hasta que se cumplan sus gates propios.
+
+---
+
+## Corte semi-live de ejecución integral · 2026-11-11
+
+**Orden del operador:** resolver EP-TASK-001–007 y reportar a cada ciclo. EP-TASK-001 queda reactivada; ninguna tarea se marca completada por este corte.
+
+| Tarea | Estado del ciclo | Siguiente gate real |
+|---|---|---|
+| EP-TASK-001 | Preflight parcial; Profile 36 confirmado como OCP, Playwright presente, KeePassXC portable localizado. | Validar KeePassXC-Browser y Native Messaging bajo revisión P012/P013; rotar KeeShare key localmente antes de continuar. |
+| EP-TASK-002 | Cuatro objetos B2 con read-back y restore same-host PASS. | Resolver divergencia entre ciphertext local 2.048 B y objeto B2 2.200 B; luego decrypt aislado y cross-host. |
+| EP-TASK-003 | Diseño aceptado; gate BitLocker FAIL. | Custodia Vault, ubicación física y volumen XTS-AES256/Protection On con protector recuperable. |
+| EP-TASK-004 | Suite sintética local PASS; árbol no manifiestado y UI persistente inerte. | Reconciliar release, CLI/Core/XAML/tests, TTL y handlers; H10 y P012/P013 pendientes. |
+| EP-TASK-005 | Bloqueada por almacenamiento y paquete contractual. | EP-TASK-003 PASS + paquete P004/SHA + MCP-OCP-03/04 PASS. |
+| EP-TASK-006 | 52 Vercel; 10 read-back; 42 valores no recuperables; Vault formal no inicializada. | Recuperar custodia formal y completar inventario/adaptadores sin extraer secretos por inferencia. |
+| EP-TASK-007 | Inventario parcial read-only; volúmenes no protegidos. | Proteger workspace por EP-TASK-003; luego diseñar/validar Guardian y lease bajo gates. |
+
+**Seguridad:** se registró de forma saneada una exposición contextual de material de clave privada KeeShare durante una lectura de configuración local; no se copió a documentos ni Git. Rotación por el propietario pendiente. No se modificó Chrome, KeePassXC, la base, Vault formal, B2, volúmenes ni procesos de sesión.
+
+**Límite del corte:** el checkout local Metodología carece de .git; no es fuente de build. La fuente canónica continúa siendo main del repositorio remoto.
