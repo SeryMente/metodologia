@@ -229,3 +229,8 @@ El operador aportó el archivo `Texto pegado(20261111-194556).txt`. Se conserva 
 ## 16. Renombramiento y continuidad de la fuente
 
 El frente fue renombrado de **Loop** a **OCP2.0**. La ruta canónica vigente es `frentes/ocp-2-0/`; la ruta anterior `frentes/loop/` queda como antecedente de migración y no debe recrearse. El núcleo único es `OCP2.0.md`. Los identificadores históricos `C-LOOP-*` y el contenido verbatim se conservan sin renumeración ni reescritura. La segmentación C-LOOP-003 es derivada literal vinculada a la fuente original. La titularidad, UUIDv7 local y generación se conservan; no hubo transferencia de responsabilidad.
+
+
+## 17. Registro de continuidad conversacional · 2026-11-11
+
+El operador pidió conservar el intercambio completo suministrado en esta conversación. La transcripción se registró en [CONTINUIDAD-20261111.md](conversaciones/CONTINUIDAD-20261111.md), con UUIDv7 local `01a1cc8f-15e0-7906-9ebf-3a0af14800e0`. Se conserva el texto tal como fue aportado, sin corregir los errores de transcripción ni alterar los identificadores históricos. Las afirmaciones de respuestas anteriores se preservan como parte del historial visible y no se consideran verificaciones técnicas nuevas por el solo hecho de estar transcritas. Este registro no altera el control de responsabilidad ni la generación del frente.
