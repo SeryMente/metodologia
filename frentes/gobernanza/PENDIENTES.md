@@ -1,8 +1,12 @@
+## Estado vigente · C-GOBERNANZA-STREAMLINE-RESPONSABILIDAD-FOLIACION-20261111-01
+
+DUG v389/NX-389m · Metacanon 1.30 · GOW 2.19. Responsabilidad: autorización directa frente+actuación; relevo por defecto al asumir/retomar; corresponsabilidad solo expresa. Los folios son metadatos y no bloquean el trabajo. Registro A/B consolidado por cambio sustantivo. Sink preferente y fallback DUG canónico. GOV-TASK-013 cancelada; no medir tiempo. FOL1 PREPARADO/no activo; IPZ sin tocar.
+
 ## Estado vigente del frente · sprint Sink local · 2026-11-10
 
 - **Responsabilidad:** roster y metadatos vigentes se consultan en el [control único](CONTROL-RESPONSABILIDAD.json); no duplicarlos en este resumen. El corte de §ARR de v377 quedó supersedido: DUG v388 contiene §ARR en `glossary.sections` con ancla `#gow-arranque-chatgpt`.
-- **DUG canónico:** Samantha v388 · NX-388m · 43 principios · 24 anexos; commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`; blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`. Evento `C-GOBERNANZA-ART027-SINK-LOCAL-RECONCILIACION-20261110-01`. ART-027 quedó alineado con Sink local; ART-025 y ART-031 no se modificaron en esta reconciliación.
-- **Contrato vigente:** `GOW:ARR → DUG → MDP → SINK:Pxxx` cuando el MDP indique pertinencia. Sink es una operación local del servidor MCP-OCP por STDIO/RDC, no URL/alias HTTP. `MOD-SYNC` pertenece a EP y es distinto; no interviene en la recuperación de principios. Solo se cuenta frecuencia de recuperaciones satisfactorias. `MCP-NORMATIVO` continúa `DESACTIVADO`.
+- **DUG canónico:** Samantha v389 · NX-389m · 43 principios · 24 anexos; commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`; blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`. Evento `C-GOBERNANZA-ART027-SINK-LOCAL-RECONCILIACION-20261110-01`. ART-027 quedó alineado con Sink local; ART-025 y ART-031 no se modificaron en esta reconciliación.
+- **Contrato vigente:** `GOW:ARR → DUG → principios pertinentes; Sink cuando esté disponible, extracción exacta del DUG como respaldo.` cuando el MDP indique pertinencia. Sink es una operación local del servidor MCP-OCP por STDIO/RDC, no URL/alias HTTP. `MOD-SYNC` pertenece a EP y es distinto; no interviene en la recuperación de principios. Solo se cuenta frecuencia de recuperaciones satisfactorias. `MCP-NORMATIVO` continúa `DESACTIVADO`.
 - **Orden del sprint:** MCP-OCP-02 rama limpia; MCP-OCP-05 corte vertical P004; MCP-OCP-03 pruebas mínimas; MCP-OCP-04 transporte STDIO/RDC; GOV-TASK-007 prepara IPZ cuando el contrato/respuesta P004 estén congelados; GOV-TASK-003 acepta E2E real; P001–P043 y lotes después del piloto.
 - **Gobernanza:** GOV-TASK-008, GOV-TASK-003, GOV-TASK-001, GOV-TASK-007, GOV-TASK-009 y GOV-TASK-015 fueron reconciliadas con DUG v388 y leídas de vuelta. La matriz 43+8 sigue siendo protocolo, no resultado ejecutado.
 - **MCP-OCP:** autorización local STDIO vigente en control generación 5. Núcleo v0.1.28/blob `8e763231b28dce62cd60f326b04c9a3cc15d5e32` y backlog v0.9/blob `c903c9c1aa5d2461697e8c91182a331c3d19918b` ya usan DUG v388. Rama limpia MCP-OCP-02, implementación P004 y pruebas nuevas pendientes.
@@ -364,7 +368,7 @@ La fotografía activa del sprint se centraliza en [GOV-TASK-015 · Sprint SINK-P
 ---
 ## Rebaseline operativo IPZ/Sink · 2026-11-11
 
-- **DUG:** Samantha v388/NX-388m; blob 4db0ebadfd1e48b2bdec9236ba7f344921e4a865; 43 principios, 24 anexos, Metacanon 1.29, GOW 2.18; ART-025/027 verificados.
+- **DUG:** Samantha v388/NX-388m; blob 4db0ebadfd1e48b2bdec9236ba7f344921e4a865; 43 principios, 24 anexos, Metacanon 1.30, GOW 2.19; ART-025/027 verificados.
 - **IPZ:** v0.7 baseline 2.467; v0.8 1.488 pero incompleta respecto de estados/eficiencia. Nueva candidata [v0.9](entregas/CHATGPT-v0.9/IPZ-CAMPO-CHATGPT-v0.9-PROPUESTA.txt): 1.479 UTF-16/1.475 puntos de código LF; SHA-256 ea0001b962cea9e59ef7f0ed5bd1a47e82a147eb09ea4eed077bc75cc8f20aa3. No instalada; IPZ nativa NOT_VERIFIED.
 - **MCP-OCP:** control actual gen6. PR #27 OPEN/DRAFT/NOT MERGED; head 5cc59b708c1d5894e7dbfd2a724504fdf5b92974; compare contra main d167c17d2882e05821f28ce19f7e505fc460c4a1 = DIVERGED, 53 ahead / 160 behind. La candidata declara estáticamente sink_principle/principle_id=P004; no es runtime aceptado.
 - **EP:** EP-TASK-003 PARTIAL_FAIL; EP-TASK-005 BLOCKED. No hay instalación Fila 4 ni E2E IPZ.

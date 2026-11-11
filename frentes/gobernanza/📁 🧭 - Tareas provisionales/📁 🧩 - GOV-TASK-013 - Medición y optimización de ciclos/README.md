@@ -1,6 +1,10 @@
+## Cancelación · instrucción del operador · 2026-11-11
+
+Se cancela esta tarea. No se implementarán marcas de inicio/fin, instrumentación de duración, latencia, líneas base, muestras ni comparativas. La aceleración se aborda mediante simplificación estructural, no medición. El diseño previo se conserva como antecedente, no como requisito activo. IPZ no modificada; FOL1 no activado.
+
 # GOV-TASK-013 — Medición objetiva y optimización del tiempo de procesamiento de ciclos
 
-**Estado:** en_curso · **Tipo:** tarea propia de Gobernanza · **Responsabilidad funcional:** Gobernanza 2, asiento corresponsable del OCP padre según asignación expresa del operador. Sesión, folio, UUID y generación se consultan en el [control único](../../../CONTROL-RESPONSABILIDAD.json); no se duplican en esta ficha ni actúan como permiso o compuerta. La tarea no transfiere la titularidad primaria.
+**Estado:** cancelada · instrucción del operador 2026-11-11 · **Tipo:** tarea propia de Gobernanza · **Responsabilidad funcional:** Gobernanza 2, asiento corresponsable del OCP padre según asignación expresa del operador. Sesión, folio, UUID y generación se consultan en el [control único](../../../CONTROL-RESPONSABILIDAD.json); no se duplican en esta ficha ni actúan como permiso o compuerta. La tarea no transfiere la titularidad primaria.
 
 ## Delimitación de responsabilidades
 

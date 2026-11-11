@@ -1,14 +1,16 @@
+> **Regla operativa vigente (C-GOBERNANZA-STREAMLINE-RESPONSABILIDAD-FOLIACION-20261111-01):** DUG Samantha v389/NX-389m · Metacanon 1.30 · GOW 2.19. Instrucción explícita frente + actuación = autorización suficiente; «asume/retoma» releva al titular anterior. Corresponsabilidad solo por petición expresa. Folios/UUID/alias/generación son metadatos, no permisos ni bloqueos. Un registro A/B consolidado por cambio sustantivo; FOL1 PREPARADO/NO ACTIVO; Sink preferente con fallback exacto del DUG; sin medición temporal. No modificar IPZ.
+
 # Inicio del espacio de trabajo Ser y Mente
 
 Punto de entrada del repositorio; no es una fuente normativa.
 
-**Documento Único de Gobernanza:** [DUG · Samantha v388 · NX-388m](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html). Integra 43 principios, 24 anexos jerarquizados, Metacanon 1.29, GOW 2.18 con 132 términos definidos e indexados, §ARR con el vocabulario inicial, taxonomía estructural 1.4, navegación bidireccional y representación estructurada. Fuente, versión, firma y JSON embebido cotejados en `main` el 2026-11-11; commit de la ruta `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`, blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`.
+**Documento Único de Gobernanza:** [DUG · Samantha v389 · NX-389m](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html). Integra 43 principios, 24 anexos jerarquizados, Metacanon 1.30, GOW 2.19 con 132 términos definidos e indexados, §ARR con el vocabulario inicial, taxonomía estructural 1.4, navegación bidireccional y representación estructurada. Fuente, versión, firma y JSON embebido cotejados en `main` el 2026-11-11; commit de la ruta `199bf03ade7aceeedcabc10eeb1c06b1d0e53eaf`, blob `bcd99e72113f444a045d7f1c91b4ad36865b8ea8`.
 
 La sección humana gobierna la representación estructurada incorporada en el mismo archivo. No hay documentos normativos paralelos ni sincronización automática implícita con Notion, instrucciones personalizadas, memorias o copias locales. La rama `main` de `SeryMente/metodologia` es la fuente documental; si no puede leerse, declara `METODOLOGÍA NO VERIFICADA`. Las políticas obligatorias, los permisos reales y las autorizaciones aplicables conservan precedencia.
 
 ## MDP y tareas provisionales de Gobernanza
 
-[DUG · ART-027](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-027) define 43 microdescriptores de pertinencia (MDP). Cuando un MDP indica pertinencia, la consulta Sink del principio desarrollado es obligatoria antes de aplicarlo; la telemetría inicial mide únicamente frecuencia de acceso por alias. Gobernanza mantiene ocho [OCP provisionales de tareas](frentes/gobernanza/%F0%9F%93%81%20%F0%9F%A7%AD%20-%20Tareas%20provisionales/README.md). Tareas permanece sin canonizar. GOV-TASK-008 registra el aislamiento técnico pendiente de la norma desarrollada.
+[DUG · ART-027](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-027) define 43 microdescriptores de pertinencia (MDP). Cuando un principio resulta pertinente, consultar su texto completo: Sink si está disponible; si no, extracción exacta del DUG canónico main. Solo llamadas reales satisfactorias cuentan como telemetría Sink. Gobernanza mantiene ocho [OCP provisionales de tareas](frentes/gobernanza/%F0%9F%93%81%20%F0%9F%A7%AD%20-%20Tareas%20provisionales/README.md). Tareas permanece sin canonizar. GOV-TASK-008 registra el aislamiento técnico pendiente de la norma desarrollada.
 
 ## Persistencia remota de dos capas
 
@@ -24,7 +26,7 @@ El histórico **Contexto → Gestión conversacional** está supersedido y rever
 
 ## Estrategia de dos capas de principios
 
-[DUG · ART-027](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-027) define un catálogo de 43 abstracciones, aliases individuales previstos p001–p043 mediante Sink y telemetría separada de consideración/selección/consulta/aplicación. El documento está materializado en DUG v388. PR #27 contiene una implementación candidata limitada a P004, pero sigue OPEN/DRAFT/DIVERGED; no equivale a instancia instalada ni E2E. La herramienta observada estáticamente es sink_principle con principle_id=P004. No se acredita runtime, instalación EP ni respuesta visible desde IPZ. La telemetría sigue contando únicamente recuperaciones satisfactorias.
+[DUG · ART-027](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-027) define un catálogo de 43 abstracciones, aliases individuales p001–p043 mediante Sink cuando esté disponible, con respaldo exacto del DUG canónico y telemetría separada de consideración/selección/consulta/aplicación. El documento está materializado en DUG v388. PR #27 contiene una implementación candidata limitada a P004, pero sigue OPEN/DRAFT/DIVERGED; no equivale a instancia instalada ni E2E. La herramienta observada estáticamente es sink_principle con principle_id=P004. No se acredita runtime, instalación EP ni respuesta visible desde IPZ. La telemetría sigue contando únicamente recuperaciones satisfactorias.
 
 ## Pendientes destacados
 
@@ -57,7 +59,7 @@ Las dieciséis categorías son ejes de auditoría, no sustituyen el molde de tre
 
 ## Refresco de la fuente · ciclo10
 
-Aplicar §37 en cada ciclo activo: comprobar versión/huella y commit de la ruta central por un medio real; recuperar/adoptar solo delta compatible ya autorizado. En ChatGPT, mostrar IPZ y DUG con versión y antigüedad d.h.m desde el último commit de cada archivo exacto, conforme a §37.4. Sin acceso/reloj/origen: vigencia o edad NO VERIFICADA. No fingir refresco entre turnos o de instrucciones nativas.
+Adquirir el DUG una vez al iniciar/retomar un frente y reutilizarlo por revisión/huella durante el ciclo. Consultar de nuevo solo ante indicio de cambio o antes de escribir al canon. No calcular antigüedad ni d.h.m. No fingir refresco entre turnos o de instrucciones nativas.
 
 ## Responsabilidad explícita · método1.14 §§38/42
 

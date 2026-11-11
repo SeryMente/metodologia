@@ -5,11 +5,11 @@
 **OCP padre y fuente de responsabilidad:** `frentes/gobernanza/`  
 **Control heredado:** [CONTROL-RESPONSABILIDAD.json](../CONTROL-RESPONSABILIDAD.json) es la única fuente para roster, folios, UUID y generación vigentes. Las fichas de tareas heredan la responsabilidad funcional del OCP y no replican estos metadatos; no son permiso, veto ni compuerta de trabajo autorizado.
 **Evento de creación:** C-GOBERNANZA-MDP-OCP-01 · 2026-10-30.  
-**Fuente normativa vigente:** [DUG Samantha v388 · NX-388m](../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html); Metacanon 1.29, GOW 2.18, 43 principios y 24 anexos; commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`; blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`. Los snapshots anteriores son antecedentes, no el estado vigente.
+**Fuente normativa vigente:** [DUG Samantha v389 · NX-389m](../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html); Metacanon 1.30, GOW 2.19, 43 principios y 24 anexos; commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`; blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`. Los snapshots anteriores son antecedentes, no el estado vigente.
 
 ## Naturaleza y límites
 
-Este contenedor agrupa quince objetos provisionales de persistencia de tarea, cada uno con su directorio y núcleo propio: once en curso, tres pendientes y uno cancelado. No son frentes independientes ni unidades de una taxonomía ya aprobada. La responsabilidad, sesión y autorización se heredan del OCP padre; no se crean controles, sesiones ni folios independientes para cada tarea.
+Este contenedor agrupa quince objetos provisionales de persistencia de tarea, cada uno con su directorio y núcleo propio: nueve en curso, tres pendientes, uno completado y dos cancelados. No son frentes independientes ni unidades de una taxonomía ya aprobada. La responsabilidad, sesión y autorización se heredan del OCP padre; no se crean controles, sesiones ni folios independientes para cada tarea.
 
 El núcleo de cada objeto conserva identificador local, enunciado, referencia recuperable al origen y estado. El patrón se inspira en el diseño mínimo de Tareas v0.2, pero no declara ratificado ese estándar ni adopta como vigente el candidato v1.0. Cada ID `GOV-TASK-###` es estable dentro de este registro; no se afirma unicidad global.
 
@@ -30,8 +30,8 @@ El núcleo de cada objeto conserva identificador local, enunciado, referencia re
 | GOV-TASK-009 | en_curso | Revisar el GOW y mantener visible su vocabulario inicial esencial | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-009%20-%20Revisi%C3%B3n%20del%20glosario%20operativo/README.md) |
 | GOV-TASK-010 | en_curso | Admisión por instrucción directa; generaciones como auditoría, no como compuerta | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-010%20-%20Admisión%20y%20titularidad%20de%20conversaciones/README.md) |
 | GOV-TASK-011 | en_curso | DTC — Dinámica Trilateral por Ciclo | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-011%20-%20Coordinación%20bilateral%20recurrente/README.md) |
-| GOV-TASK-012 | en_curso | Revisión integral de fluidez y desempeño del marco de Gobernanza | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-012%20-%20Fluidez%20y%20desempe%C3%B1o%20del%20marco/README.md) |
-| GOV-TASK-013 | en_curso | Medición objetiva y optimización del tiempo de procesamiento de ciclos | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-013%20-%20Medici%C3%B3n%20y%20optimizaci%C3%B3n%20de%20ciclos/README.md) |
+| GOV-TASK-012 | completada | Revisión integral de fluidez y desempeño del marco de Gobernanza | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-012%20-%20Fluidez%20y%20desempe%C3%B1o%20del%20marco/README.md) |
+| GOV-TASK-013 | cancelada | Medición temporal de ciclos (cancelada por instrucción del operador) | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-013%20-%20Medici%C3%B3n%20y%20optimizaci%C3%B3n%20de%20ciclos/README.md) |
 | GOV-TASK-014 | en_curso | Integración y aceptación de persistencia Backblaze para Metodología y OCP | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-014%20-%20Persistencia%20Backblaze%20de%20Metodolog%C3%ADa%20y%20OCP/README.md) |
 | GOV-TASK-015 | en_curso · P0 · SPRINT SINK-P004 | Coordinar dependencias MCP-OCP-02/05/03/04, EP-TASK-003/005 y GOV-TASK-003/007; handoff de ejecución EP preparado | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-015%20-%20Sprint%20Sink%20local%20v%C3%ADa%20RDC/README.md) |
 

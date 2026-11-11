@@ -1,3 +1,7 @@
+## Alineación vigente · C-GOBERNANZA-STREAMLINE-RESPONSABILIDAD-FOLIACION-20261111-01
+
+Sink es vía preferente cuando MCP-OCP esté implementado y disponible. Si no, obtener el texto normativo exacto del DUG canónico main, verificando ID/título, versión/firma, commit/blob y SHA-256. El fallback no cuenta como evento Sink ni crea una segunda fuente normativa. No usar memoria o MDP como sustituto del texto completo. No afirmar que Sink está instalado o aceptado E2E.
+
 # 📝 GOV-TASK-008 · Catálogo, selección y recuperación individual mediante OCP MCP/Sink local vía RDC
 
 **Naturaleza:** OCP provisional de tarea; no es un frente independiente ni una unidad taxonómica canonizada.  

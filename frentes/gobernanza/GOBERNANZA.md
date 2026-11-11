@@ -1,4 +1,10 @@
-## Estado operativo vigente · sprint Sink local · 2026-11-11
+## Estado operativo vigente · C-GOBERNANZA-STREAMLINE-RESPONSABILIDAD-FOLIACION-20261111-01
+
+DUG v389/NX-389m · Metacanon 1.30 · GOW 2.19. La instrucción explícita que identifica frente y actuación basta para asumir/retomar; «asume/retoma» releva al responsable operativo anterior. Corresponsabilidad solo por petición expresa. SES, UUID, alias, instancia y generación son metadatos opcionales. Un control único; SHA/read-back solo cuando cambie el asiento. Una entrada A/B consolidada por cambio material. Sink es preferente con respaldo de extracción exacta desde el DUG canónico. GOV-TASK-013 cancelada; no medir tiempo. FOL1 PREPARADO/no activo; IPZ sin tocar; MCP-NORMATIVO desactivado. Seguridad, permisos reales, privacidad y credenciales permanecen protegidos.
+
+## Historial y auditorías anteriores
+
+## Snapshot histórico · sprint Sink local · 2026-11-11
 
 **Responsabilidad:** el único roster y sus metadatos viven en [CONTROL-RESPONSABILIDAD.json](CONTROL-RESPONSABILIDAD.json). Titularidad, corresponsabilidad, folios, UUID y generación deben leerse allí cuando una operación los necesite; este resumen no replica esos campos. Esta conversación trabaja como Gobernanza 2, asiento corresponsable, dentro del alcance funcional autorizado.
 
@@ -26,15 +32,15 @@
 6. Empezar el trabajo sustantivo tan pronto estén comprobados alcance, fuente y permisos reales. Metadatos faltantes no bloquean análisis ni trabajo independiente.
 7. Mantener CAS, read-back, evidencia, seguridad y privacidad. No convertir estos controles en pasos conversacionales repetidos.
 
-**Enmiendas normativas propuestas — NO APLICADAS:**
+**Propuestas históricas — estado:** armonizadas en el DUG v389.
 - §42.2: preguntar solo si la instrucción no expresa frente y actuación; omitir pregunta cuando ya exista autorización explícita.
 - P039/§42: explicitar que SES/UUID/alias/generación son metadatos; el registro puede actualizarse en paralelo, pero no retiene trabajo autorizado.
 - §4: sustituir el informe visible de diez bloques repetidos por un resumen breve por defecto y detalle completo solo ante delta material; conservar evidencia recuperable en el OCP.
 - ART-027: habilitar recuperación exacta desde el propio archivo DUG de `main` como fallback verificable cuando Sink no esté disponible, con commit/blob/SHA y sin recurrir a memoria.
 - Mantener la revisión por hash de §37 y la revisión de términos pertinentes del GOW; evitar lecturas repetidas sin cambio.
 
-P005 exige autorización activa y explícita antes de modificar el DUG. Este corte no altera DUG, IPZ ni OCP de otros frentes.
-**DUG canónico:** Samantha v388 · NX-388m · 43 principios · 24 anexos. El evento `C-GOBERNANZA-ART027-SINK-LOCAL-RECONCILIACION-20261110-01` actualizó ART-027 para definir Sink local por MCP-OCP STDIO/RDC. DUG commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`; blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`. ART-025 y ART-031 se preservaron.
+La instrucción directa del operador autorizó expresamente este aligeramiento conforme a P005. DUG actualizado; IPZ y OCP ajenos no modificados.
+**DUG histórico al corte:** Samantha v388 · NX-388m. Estado vigente: v389 · NX-389m. El evento `C-GOBERNANZA-ART027-SINK-LOCAL-RECONCILIACION-20261110-01` actualizó ART-027 para definir Sink local por MCP-OCP STDIO/RDC. DUG commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`; blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`. ART-025 y ART-031 se preservaron.
 
 **Contrato de dos capas:** primera capa con 43 MDP deliberadamente insuficientes para aplicar la norma; segunda capa mediante la operación local `SINK:Pxxx` para recuperar el texto desarrollado íntegro del principio pertinente. La respuesta exige ID, título, texto, versión/firma, commit/blob y SHA-256. Solo se registra frecuencia de recuperaciones satisfactorias. No hay Worker, redirect, URL ni alias HTTP operativo. `MOD-SYNC` es distinto y pertenece a EP; no forma parte de Sink. `MCP-NORMATIVO` permanece `DESACTIVADO`.
 

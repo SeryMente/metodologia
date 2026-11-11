@@ -1,6 +1,14 @@
+## Resolución · C-GOBERNANZA-STREAMLINE-RESPONSABILIDAD-FOLIACION-20261111-01
+
+**Estado:** completada. Se simplificaron responsabilidad de frentes, foliación, lectura de fuentes y registro conversacional. El DUG fija autorización directa por frente/actuación, retoma como relevo por defecto, corresponsabilidad expresa, folios como metadatos, registro A/B consolidado y fallback canónico para Sink.
+
+**Integridad preservada:** un escritor por defecto; control único; SHA/read-back en cambios de control; seguridad, permisos reales, privacidad, credenciales y trazabilidad. FOL1 sigue PREPARADO/no activo. IPZ no modificada. MCP-NORMATIVO desactivado.
+
+No se hicieron mediciones temporales ni se requieren muestras para cerrar esta tarea.
+
 # GOV-TASK-012 — Revisión integral de fluidez y desempeño del marco de Gobernanza
 
-**Estado:** en_curso · **Tipo:** tarea propia de Gobernanza · **Responsabilidad funcional:** Gobernanza 2, asiento corresponsable del OCP padre según asignación expresa del operador. Sesión, folio, UUID y generación se consultan en el [control único](../../../CONTROL-RESPONSABILIDAD.json); no se duplican en esta ficha ni actúan como permiso o compuerta. La tarea no transfiere la titularidad primaria.
+**Estado:** completada · C-GOBERNANZA-STREAMLINE-RESPONSABILIDAD-FOLIACION-20261111-01 · **Tipo:** tarea propia de Gobernanza · **Responsabilidad funcional:** Gobernanza 2, asiento corresponsable del OCP padre según asignación expresa del operador. Sesión, folio, UUID y generación se consultan en el [control único](../../../CONTROL-RESPONSABILIDAD.json); no se duplican en esta ficha ni actúan como permiso o compuerta. La tarea no transfiere la titularidad primaria.
 
 
 ## Delimitación de responsabilidades
