@@ -594,3 +594,49 @@ Bloqueado crear, cifrar, copiar, montar, cambiar puntos de montaje o implementar
 - Ubicación física continúa `UNCLASSIFIED`; no se consultaron GPS/IP ni se infirió CECEQ/LOC-OTHER.
 
 **Decisión:** no crear, adjuntar, cifrar, copiar, migrar ni montar volumen de workspace, y no activar dead-man hasta satisfacer los gates XTS-AES256/Protection On/protector recuperable/100 %, custodia y clasificación de ubicación. EP-TASK-003 permanece `en_curso`.
+
+
+---
+
+## Revalidación viva del host Fila 4 · 2026-11-11 · 16:42 America/Mexico_City
+
+**Estado:** `en_curso · DISEÑO_ACEPTADO · PREFLIGHT_PARTIAL_FAIL`. Esta entrada complementa las lecturas anteriores; no reemplaza evidencia histórica ni acredita un cierre.
+
+### Identidad, perfil y límites de ejecución
+
+- Host observado: `PC10RCIF4EI4`.
+- Conexión RDC administrativa observada: `CENTRAL\MantenimientoRCI`, token elevado; utilizada solo para consultas administrativas de solo lectura.
+- Proceso operativo independiente observado: `CENTRAL\fila4`, perfil efectivo `C:\Users\fila4`, no administrador. Las lecturas de sus archivos y rutas se ejecutaron en esa identidad.
+- No se alteraron token, perfil, USERPROFILE, HOME, GetFolderPath, ExecutionPolicy, grupos, ACL ni permisos. No se escribió en el perfil MantenimientoRCI.
+
+### Estado criptográfico y VHDX
+
+- `C:`: `FullyEncrypted`, `XtsAes128`, 100 %, `ProtectionStatus=Off`, desbloqueado; `manage-bde -protectors -get C:` devolvió cero protectores.
+- `W:` / etiqueta `EP-FILA4`: `FullyDecrypted`, 0 %, método `None`, `ProtectionStatus=Off`, desbloqueado; `manage-bde -protectors -get W:` devolvió cero protectores.
+- `W:` es Disk 1, `File Backed Virtual`, 30 GiB, adjunto como `\\.\PhysicalDrive1`. `Get-DiskImage` resolvió la ruta del VHDX: `C:\Users\fila4\AppData\Local\EP\ProtectedWorkspace\Fila4-Workspace.vhdx`, tamaño 171,966,464 bytes, adjunto.
+- Lectura como fila4 de `W:\`: únicamente `System Volume Information`; no contiene el workspace.
+- **Discrepancia de destino:** el diseño aceptado en este núcleo propuso un VHDX nuevo fuera de AppData en `%USERPROFILE%\EP\ProtectedWorkspace\Fila4-Workspace.vhdx`. El VHDX actualmente adjunto está bajo `%LOCALAPPDATA%\EP\ProtectedWorkspace\`; no se equiparan las rutas ni se cambia/mueve/monta/desmonta el archivo antiguo. El destino aprobado todavía no está materializado.
+
+### Checkout y raíces locales
+
+- `C:\Users\fila4\Desktop\SeryMente\Repositorios\Metodologia\metodologia` existe, pero no contiene `.git`; no es un checkout Git utilizable.
+- Las rutas anidadas comprobadas `Repositorios\KHORA\khora` y `Repositorios\GDP\GDP` no existen.
+- RAP presenta un checkout Git con `main` y `origin/main`; Signal Interpreter presenta un checkout Git en `work/g14-groq-dual-clean-20261111`, 11 commits por delante de `origin/main`. Ambos se preservaron intactos; no se ejecutó fetch, checkout, pull, reset ni modificación.
+- Las carpetas agrupadoras `GDP`, `KHORA`, `Metodologia`, `RAP` y `signal-interpreter` existen; su presencia no acredita los clones requeridos.
+
+### Runtime y ubicación
+
+- En `C:\Users\fila4\.dotnet\dotnet.exe` se observaron SDK `8.0.425` y runtimes `Microsoft.NETCore.App 8.0.31`, `Microsoft.AspNetCore.App 8.0.31` y `Microsoft.WindowsDesktop.App 8.0.31`.
+- No se encontró .NET 10 en las rutas conocidas ni en PATH; el piloto P004 requiere `Microsoft.NETCore.App 10.0.x x64`.
+- Ubicación física continúa `UNCLASSIFIED`; no se infiere CECEQ/LOC-OTHER del hostname ni de red.
+
+### Decisión y cambios
+
+- `PREFLIGHT_FILA4=PARTIAL_FAIL`. Los gates de BitLocker, protector recuperable/custodia, destino VHDX aceptado, checkout íntegro y clasificación física no pasan.
+- La evidencia histórica B2 no se sustituye ni se declara invalidada por esta lectura; la restauración/custodia que corresponda debe seguir sus recibos específicos.
+- **Cero mutaciones:** no se creó ni cifró un volumen, no se generó un protector, no se abrió/descifró Vault, no se copió/migró el workspace, no se cambió un punto de montaje, no se inició dead-man y no se tocó código o repositorios locales.
+- Los candados P012/P013 siguen pendientes de revisión presencial. No consta en este ciclo confirmación de presencia física del operador.
+
+**Siguiente condición objetiva:** revisión presencial y decisión del operador sobre el perímetro/custodia; clasificar la ubicación con evidencia suficiente; materializar el VHDX nuevo en la ruta de diseño con XTS-AES256, protector recuperable custodiado y Protection On/100 %; inventariar y copiar el workspace con manifiestos SHA-256/rollback; validar el checkout completo/sincronizado y root de datos protegido. Hasta entonces no cortar rutas ni dejar persistencia EP en W:.
+
+**Conclusión:** PARCIAL / BLOQUEADA. La identidad y el diagnóstico actual quedaron verificados; el almacenamiento y el workspace no están aceptados ni protegidos.
