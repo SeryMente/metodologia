@@ -14,4 +14,10 @@ Frente de trabajo para diseñar y desarrollar un mecanismo reutilizable de desar
 - **Evidencia y estado de validación:** [evidencias/C-LOOP-002.json](evidencias/C-LOOP-002.json).
 - **Revisión secundaria GPT-OSS 120B:** [informe íntegro](evidencias/C-LOOP-002-GPT-OSS-120B-review.md).
 
+- **Entrada original C-LOOP-003 (verbatim):** [texto íntegro](conversaciones/C-LOOP-003-entrada-verbatim.txt).
+- **Procedencia C-LOOP-003:** [registro conversacional](conversaciones/C-LOOP-003-dialogo.jsonl).
+- **Checkpoint C-LOOP-003:** [crónica de custodia y bloqueo Groq](cronica/C-LOOP-003-checkpoint.md).
+- **Evidencia C-LOOP-003:** [estado y read-back](evidencias/C-LOOP-003.json).
+
+
 Leer primero Sam, Metacanon y GOW desde `main`; después el control y el núcleo. Este README es un índice, no un segundo estado vivo. Loop no sustituye los OCP ni los controles de los proyectos en los que llegue a trabajar.
