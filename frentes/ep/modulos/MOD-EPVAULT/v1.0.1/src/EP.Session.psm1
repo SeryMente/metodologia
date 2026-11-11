@@ -143,6 +143,15 @@ function New-EpSessionContainer {
     [CmdletBinding()]
     param([ValidateRange(5,30)][int]$SizeGiB = 30,[switch]$ImportCurrentWorkspace)
     $null = Get-EpVaultSession
+    $vaultNames = @(Get-EpVaultVariableNames)
+    $idName = 'EP_B2_MASTER_APPLICATION_KEY_ID'
+    $keyName = 'EP_B2_MASTER_APPLICATION_KEY'
+    foreach ($name in @($idName,$keyName,'EP_B2_BUCKET_NAME','EP_B2_PREFIX')) { if ($vaultNames -notcontains $name) { throw ('EP_SESSION_B2_REQUIRED_VAULT_VARIABLE_MISSING_' + $name) } }
+    $bucket = Get-EpVaultVariableValue -Name 'EP_B2_BUCKET_NAME' -Reveal
+    $prefix = Get-EpVaultVariableValue -Name 'EP_B2_PREFIX' -Reveal
+    $b2IdCheck = Get-EpVaultVariableValue -Name $idName -Reveal
+    $b2KeyCheck = Get-EpVaultVariableValue -Name $keyName -Reveal
+    if ($bucket -cne 'OCP-MCP' -or $prefix -cne 'ep-ocp/' -or [string]::IsNullOrWhiteSpace($b2IdCheck) -or [string]::IsNullOrWhiteSpace($b2KeyCheck)) { throw 'EP_SESSION_B2_PREFLIGHT_NOT_READY' }
     $required = @('diskpart.exe','Enable-BitLocker','Get-BitLockerVolume','Unlock-BitLocker','Lock-BitLocker','Add-BitLockerKeyProtector')
     foreach ($name in $required) { if (-not (Get-Command $name -ErrorAction SilentlyContinue)) { throw ('EP_SESSION_REQUIRED_COMMAND_MISSING_' + $name) } }
     $identity = [Security.Principal.WindowsIdentity]::GetCurrent()
@@ -225,14 +234,7 @@ function New-EpSessionContainer {
         }
         $metadata.desktopLink = Add-EpSessionDesktopLink -WorkspaceRoot $workspace
         $metadata.state = 'ACTIVE'
-        $vaultNames = @(Get-EpVaultVariableNames)
-        $idName = @('EP_B2_MASTER_APPLICATION_KEY_ID','EP_B2_APPLICATION_KEY_ID','B2_APPLICATION_KEY_ID') | Where-Object { $vaultNames -contains $_ } | Select-Object -First 1
-        $keyName = @('EP_B2_MASTER_APPLICATION_KEY','EP_B2_APPLICATION_KEY','B2_APPLICATION_KEY') | Where-Object { $vaultNames -contains $_ } | Select-Object -First 1
-        $bucket = ''
-        $prefix = ''
-        if ($vaultNames -contains 'EP_B2_BUCKET_NAME') { $bucket = Get-EpVaultVariableValue -Name 'EP_B2_BUCKET_NAME' -Reveal }
-        if ($vaultNames -contains 'EP_B2_PREFIX') { $prefix = Get-EpVaultVariableValue -Name 'EP_B2_PREFIX' -Reveal }
-        Protect-EpSessionRuntime -Metadata $metadata -Password $password -B2IdName ([string]$idName) -B2KeyName ([string]$keyName) -Bucket $bucket -Prefix $prefix
+        Protect-EpSessionRuntime -Metadata $metadata -Password $password -B2IdName $idName -B2KeyName $keyName -Bucket $bucket -Prefix $prefix
         Write-EpSessionMetadata -Metadata $metadata
         return [pscustomobject]@{status='EP_SESSION_CREATED';sessionId=$sid;mountPoint=$mount;workspaceRoot=$workspace;bitlocker='XTS-AES256/100%/ON';desktopLink=$metadata.desktopLink;imported=[bool]$ImportCurrentWorkspace}
     }
