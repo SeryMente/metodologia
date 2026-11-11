@@ -4,7 +4,7 @@
   "status": "active",
   "owner_thread": "chatgpt-C-GOBERNANZA-RETOMA-15-SES-20261111-375BE087",
   "instance": "chatgpt-gobernanza-1-2026-11-11-375BE087",
-  "generation": 19,
+  "generation": 20,
   "authorization_ref": "C-GOBERNANZA-RETOMA-15",
   "scope": "Retomar la titularidad primaria del frente Gobernanza en esta instancia y continuar desde el estado persistido del OCP. Sustituir al titular operativo anterior; conservar sin cambios la corresponsabilidad activa de generación 12 y el máximo de dos responsables. Sin cambios normativos al DUG/GOW, sin modificación de IPZ nativa, sin transferencia a otros frentes y sin mutación de controles, código o host de EP/MCP-OCP. FOL1 permanece PREPARADO/NO ACTIVO; no asignar folios globales.",
   "expiry": null,
@@ -1325,27 +1325,25 @@
     {
       "status": "active",
       "role": "corresponsable",
-      "folio": "SES-20261101-GV8E89D1FF",
-      "assigned_on": "2026-11-01",
+      "folio": "SES-20261111-624B784A",
+      "assigned_on": "2026-11-11",
       "front_ocp": "frentes/gobernanza/",
-      "owner_alias": "chatgpt-C-GOBERNANZA-ASIENTO-02-RETOMA-20261101-01-SES-20261101-GV8E89D1FF",
-      "instance": "chatgpt-gobernanza-asiento-02-2026-11-01-8E89D1FF",
-      "generation": 12,
-      "identity_kind": "operational alias + local UUIDv7; not a native ChatGPT conversation ID",
-      "local_conversation_uuidv7": "01a19963-08ed-703e-8134-9df78e89d1ff",
+      "owner_alias": "chatgpt-C-GOBERNANZA-ASIENTO-02-OPTIMIZACION-01-SES-20261111-624B784A",
+      "alias": "chatgpt-C-GOBERNANZA-ASIENTO-02-OPTIMIZACION-01-SES-20261111-624B784A",
+      "instance": "chatgpt-gobernanza-2-2026-11-11-624B784A",
+      "generation": 20,
+      "identity_kind": "alias operativo + UUIDv7 local; ID nativo de ChatGPT no expuesto",
+      "local_conversation_uuidv7": "01a1cc53-2d90-7638-a78e-c0142d7ded09",
       "cycle_folio": null,
-      "event_id": "C-GOBERNANZA-ASIENTO-02-RETOMA-20261101-01",
+      "event_id": "C-GOBERNANZA-OPTIMIZACION-RESPONSABILIDAD-01",
       "authorization": {
         "status": "explicit",
-        "source": "operator instruction in this conversation",
-        "verbatim": "REtoma repsosnbillidad de asiento 2 del frente.",
+        "source": "instrucción directa del operador en esta conversación",
+        "verbatim": "Asume Gobernanza 2",
         "operation": "REPLACE_CO_RESPONSIBLE",
-        "scope": "Relevar únicamente la plaza corresponsable del asiento 2 del frente Gobernanza; preservar el asiento titular activo; mantener máximo dos responsables activos."
+        "scope": "Sustituir exclusivamente el asiento corresponsable 2 del OCP Gobernanza. Conservar íntegros el titular primario activo de generación 19 y el máximo de dos responsables; superseder al corresponsable anterior, asignar un folio SES y UUIDv7 local a esta instancia, y registrar el cambio en el mismo CONTROL-RESPONSABILIDAD.json. No transferir la titularidad primaria, no alterar el DUG/GOW ni actuar sobre otros frentes."
       },
-      "source_control_blob_sha": "beecec6d4a3ca166019f3271bf2715a2c64bb6f1",
-      "readback_required": true,
-      "readback_verified": true,
-      "uniqueness_check": "UUIDv7 local generado para este asiento; no se expone ID nativo de ChatGPT ni se afirma unicidad organizacional o fencing de plataforma."
+      "foliation_status": "LEGACY_PRE_CUTOVER"
     }
   ],
   "co_responsibility": {
@@ -1356,8 +1354,8 @@
     "max_active_responsibles": 2,
     "current_active_responsibles": 2,
     "primary_owner_alias": "chatgpt-C-GOBERNANZA-RETOMA-15-SES-20261111-375BE087",
-    "co_responsible_alias": "chatgpt-C-GOBERNANZA-ASIENTO-02-RETOMA-20261101-01-SES-20261101-GV8E89D1FF",
-    "event_id": "C-GOBERNANZA-ASIENTO-02-RETOMA-20261101-01",
+    "co_responsible_alias": "chatgpt-C-GOBERNANZA-ASIENTO-02-OPTIMIZACION-01-SES-20261111-624B784A",
+    "event_id": "C-GOBERNANZA-OPTIMIZACION-RESPONSABILIDAD-01",
     "authorization_status": "explicit",
     "control_protocol": "same authoritative control; SHA compare-and-swap; read-back before canonical writes",
     "constraint": "cooperative registration only; no native ChatGPT identity, universal fencing or protection against non-cooperating writers is claimed."
@@ -1468,6 +1466,51 @@
       "status": "VERIFIED_READBACK",
       "readback_verified": true,
       "readback_sha": "acc128e23bf942ebfe559923b9188b24e5213512"
+    },
+    {
+      "event_id": "C-GOBERNANZA-OPTIMIZACION-RESPONSABILIDAD-01",
+      "operation": "REPLACE_CO_RESPONSIBLE",
+      "recorded_on": "2026-11-11",
+      "authorized_on": "2026-11-11",
+      "authorization": {
+        "status": "explicit",
+        "source": "instrucción directa del operador en esta conversación",
+        "verbatim": "Asume Gobernanza 2",
+        "operation": "REPLACE_CO_RESPONSIBLE",
+        "scope": "Sustituir exclusivamente el asiento corresponsable 2 del OCP Gobernanza. Conservar íntegros el titular primario activo de generación 19 y el máximo de dos responsables; superseder al corresponsable anterior, asignar un folio SES y UUIDv7 local a esta instancia, y registrar el cambio en el mismo CONTROL-RESPONSABILIDAD.json. No transferir la titularidad primaria, no alterar el DUG/GOW ni actuar sobre otros frentes."
+      },
+      "authorization_verbatim": "Asume Gobernanza 2",
+      "scope": "Sustituir exclusivamente el asiento corresponsable 2 del OCP Gobernanza. Conservar íntegros el titular primario activo de generación 19 y el máximo de dos responsables; superseder al corresponsable anterior, asignar un folio SES y UUIDv7 local a esta instancia, y registrar el cambio en el mismo CONTROL-RESPONSABILIDAD.json. No transferir la titularidad primaria, no alterar el DUG/GOW ni actuar sobre otros frentes.",
+      "source_control_blob_sha": "c96af67c45977784a91a57850d0397bc72a6560a",
+      "generation_before": 19,
+      "generation_after": 20,
+      "retained_primary": "chatgpt-C-GOBERNANZA-RETOMA-15-SES-20261111-375BE087",
+      "retained_primary_folio": "SES-20261111-375BE087",
+      "replaced_co_responsible": {
+        "session_folio": "SES-20261101-GV8E89D1FF",
+        "local_uuidv7": "01a19963-08ed-703e-8134-9df78e89d1ff",
+        "generation": 12,
+        "status": "superseded",
+        "superseded_on": "2026-11-11",
+        "superseded_by_event": "C-GOBERNANZA-OPTIMIZACION-RESPONSABILIDAD-01"
+      },
+      "new_co_responsible": "chatgpt-C-GOBERNANZA-ASIENTO-02-OPTIMIZACION-01-SES-20261111-624B784A",
+      "new_session_folio": "SES-20261111-624B784A",
+      "new_local_uuidv7": "01a1cc53-2d90-7638-a78e-c0142d7ded09",
+      "active_responsibles_after_write": 2,
+      "maximum": 2,
+      "collision_check": {
+        "event_matches": 0,
+        "session_folio_matches": 0,
+        "alias_matches": 0,
+        "uuidv7_matches": 0,
+        "scope": "CONTROL-RESPONSABILIDAD.json leído en main",
+        "organization_wide_uniqueness": "NOT_VERIFIED"
+      },
+      "status": "WRITE_COMMITTED_READBACK_REQUIRED",
+      "readback_required": true,
+      "readback_verified": false,
+      "foliation_status": "LEGACY_PRE_CUTOVER"
     }
   ],
   "generation_semantics": "AUDIT_METADATA_ONLY_NOT_AUTHORITY_OR_EXECUTION_GATE",
