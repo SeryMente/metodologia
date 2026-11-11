@@ -2510,3 +2510,65 @@ La diferencia 2.048 B vs. 2.200 B observada en §133 corresponde a **rutas disti
 `EP-TASK-002` permanece `en_curso`. No repetir upload/download ni restore same-host. El siguiente paso material requiere que el operador desbloquee localmente la GUI por su control nativo. Después se puede comprobar Status y presencia de nombres permitidos sin revelar valores; solo con sesión activa y variables presentes se evalúa una prueba de descifrado aislado/cross-host. No solicitar contraseña por chat ni invocar una CLI que pueda caer en Read-Host.
 
 **Cambios de este ciclo:** solo documentación y consulta read-only. No se modificaron Vault, DPAPI, credenciales, B2, ACL, host, volúmenes, workspace ni perfiles.
+
+
+---
+
+## Reconciliación de ciphertext formal y preparación de worker v7 · 2026-11-11 · 14:23 America/Mexico_City
+
+**Estado operativo:** B2_V6_HISTORICAL_OBJECT_VERIFIED · CURRENT_FORMAL_CIPHERTEXT_IDENTIFIED · SHARED_SESSION_EXPIRED_BY_GUI_TTL · V7_PREPARED_PARSE_PASS_NOT_RUN.
+
+### Identidad y método
+
+La comprobación se realizó por RDC en el equipo Fila 4 bajo CENTRAL\fila4, usando la ruta formal de EP y el módulo EP Vault v1.0.0 vigente en el checkout local. La conexión propietaria estaba activa; la conexión administrativa separada no se usó para leer la carpeta protegida. Se consultaron metadatos, SHA-256, estado de sesión y nombres permitidos; no se revelaron ni emitieron valores de secretos.
+
+### Tres artefactos que no deben confundirse
+
+| Artefacto | Bytes | Última escritura UTC | SHA-256 |
+|---|---:|---|---|
+| Ciphertext formal consumido por la GUI/CLI, EP\local-state\Khora\secrets\ep-env-vault.enc.json | 3.352 | 2026-11-11T01:50:16.7880909Z | 3122C544012F989F0501BD0E82EA920A93F19A42034D83FA682BCC2290891E82 |
+| Copia distinta Desktop\SeryMente\EP-Vault\ep-env-vault.enc.json | 2.048 | 2026-11-10T15:37:33.1179929Z | D7AD1D745CAF460E047EAE521C1C403F36E99864BC9CD0604FFC564E390F2F7D |
+| Objeto Vault v6 en B2 | 2.200 | recibo completado 2026-11-11T01:42:58.0536871Z | 4CC2EE09974C9FBF3CF22C28A5A46C8286EB501F59268DBBB2B7BD6D61E8C590 |
+
+La copia de 2.048 bytes es antigua y reside en una ruta distinta; no se ha establecido que sea el ciphertext formal. El objeto B2 de 2.200 bytes cuenta con recibo de subida y descarga de retorno, SHA idéntico y SSE-B2/AES256, pero su creación antecede en aproximadamente 7 minutos y 18 segundos a la última escritura observada del ciphertext formal de 3.352 bytes. Por ello, B2 v6 es evidencia válida de una versión anterior, no de la versión formal actual. No hay evidencia de corrupción: son artefactos distintos por ruta/tamaño/hash.
+
+### Sesión compartida GUI → CLI
+
+- El proceso GUI permanece abierto como PID 3504, propietario CENTRAL\fila4, SessionId 1. La presencia del proceso no equivale a una cámara desbloqueada.
+- En ep-env-vault-events.jsonl, el proceso GUI 3504 registró VAULT_UNLOCKED a las 2026-11-11T20:00:01.5873625Z y VAULT_LOCKED a las 20:15:02.0702284Z (seguido por otro evento de lock). La duración coincide con el TTL local de 15 minutos.
+- En la lectura posterior, el archivo DPAPI ep-env-vault.session.dpapi.json no existía. Get-EpVaultSession y Get-EpVaultVariableNames produjeron RuntimeException al no existir una sesión utilizable. Esto no significa que la bóveda contenga cero variables: los nombres no pueden leerse sin sesión.
+- Get-EpVaultStatus reconoció ENCRYPTED_FILE_PRESENT. No se pidió contraseña ni se ejecutó la CLI interactiva. La sesión venció por el cierre normal de la GUI, no por la comprobación de este ciclo.
+
+### Worker v6 y conservación del recibo histórico
+
+Se leyó el worker v6 completo. Apunta a la ruta formal EP\local-state\Khora\secrets\ep-env-vault.enc.json, valida la cuenta dedicada, el bucket privado OCP-MCP, el prefijo ep-ocp/, lifecycle, descarga, tamaño, SHA-256 y SSE-B2/AES256. Genera una ruta remota nueva mediante fecha/hora y GUID. Sin embargo, escribe el resultado en el nombre fijo ep-backblaze-vault-ciphertext-result-v6.json; ejecutarlo otra vez sobrescribiría el recibo v6 histórico. No se reutilizó.
+
+### Preparación v7, sin transferencia
+
+Se crearon dos archivos nuevos bajo EP\local-state\run-logs, verificando antes que los destinos no existieran y sin sobrescribir v6:
+
+| Artefacto | Bytes | SHA-256 | Parser |
+|---|---:|---|---|
+| Upload-EP-Vault-Ciphertext-To-Backblaze-Fila4-v7.ps1 | 12.385 | CA0C8B2E03C2C4911B978B21A4E8669E393292C931229A0A4234D17CB79DB3CE | PASS · 0 errores |
+| Run-EP-Backblaze-Vault-Ciphertext-Fila4-v7.ps1 | 1.657 | 54223C701F0CAD09AD4A68F26AB16C068879A08F41A8117FC7578236921C7D2F | PASS · 0 errores |
+
+El único cambio funcional del worker es reservar ep-backblaze-vault-ciphertext-result-v7.json como recibo nuevo; el wrapper apunta al worker y recibo v7, impide sobrescribir ese recibo, ejecuta el CLI con -NonInteractive, allowlist explícita de los cinco nombres EP B2 y TTL de 900 segundos. Los dos archivos pasaron lectura de vuelta exacta. La validación fue sintáctica, no funcional. El wrapper v7 no se ejecutó, el recibo v7 no existe y no se autenticó/subió nada.
+
+### Estado por compuerta
+
+| Etapa | Estado |
+|---|---|
+| B2 v6: objeto histórico, read-back SHA y SSE-B2 | PASS · versión de 2.200 B |
+| R2: restore same-host | PASS · 3.289/3.289; cero fallos e inesperados; no descifrado |
+| Ciphertext formal actual | Identificado · 3.352 B · SHA local medido |
+| Sesión GUI/CLI actual | SELLADA · TTL de 15 min vencido por GUI |
+| Worker/wrapper v7 | Creados · read-back exacto · parser PASS |
+| Upload v7 / descarga / SHA / SSE / restore | NOT_RUN |
+| Descifrado aislado y recuperación cross-host | NOT_RUN |
+| Cifrado cliente permanente del workspace | Pendiente; excepción histórica del ZIP R4 no lo satisface |
+
+### Decisión y siguiente paso
+
+EP-TASK-002 sigue en_curso y es el siguiente trabajo material P0 en este ciclo, después de reconocer que EP-TASK-001 mantiene precedencia general pero está a la espera de intervención local del propietario (rotación KeeShare y revisión P012/P013). Para EP-TASK-002, el operador debe desbloquear la cámara de EP Vault localmente por 15 minutos y confirmar aquí que muestra ABIERTA. Dentro del TTL se ejecutará una sola vez el wrapper v7 por la identidad propietaria, se exigirá recibo nuevo, objeto B2 nuevo, descarga de retorno, igualdad exacta de tamaño/SHA, SSE-B2/AES256 y restore aislado. Después se hará la prueba de descifrado aislado y recuperación cross-host con bootstrap independiente. No volver a usar la copia antigua de 2.048 B ni sobrescribir el recibo v6.
+
+**Límites:** no se modificaron el ciphertext formal, el archivo de 2.048 B, los recibos históricos, ACL, configuración de Vault, credenciales, cuenta/bucket B2, workspace, volúmenes, BitLocker, KeePassXC ni Chrome. Los únicos archivos nuevos de host son los dos scripts v7; no se ejecutaron.
