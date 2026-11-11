@@ -1,14 +1,14 @@
 # GOV-TASK-015 · OCP MCP 1.0 · Coordinación Gobernanza / MCP-OCP / EP
 
 **Estado:** `EN_CURSO · coordinación H1–H9 · H1 SINK-P004 BLOQUEADO/NO ACEPTADO; gates EP y pin v389 pendientes`
-**Objetivo de release:** entregar MCP-OCP software **1.0.0**, instalado en la carpeta local de Metodología descrita al final de este plan. Las versiones documentales del núcleo MCP-OCP-v0.1.28 y backlog 0.9 son versiones de artefactos auxiliares, no la versión del producto.
+**Objetivo de release:** entregar MCP-OCP software **1.0.0**, instalado en la carpeta local de Metodología descrita al final de este plan. El núcleo actual en main es MCP-OCP-v0.1.30 y el backlog LIST_VERSION 0.11; son artefactos auxiliares, no la versión del producto.
 **Tipo:** coordinación y aceptación de un único sprint; no crea un frente nuevo ni controles paralelos.
 **Responsabilidad:** frente Gobernanza. Las tareas técnicas conservan sus OCP y fuentes.
 **Fuente normativa:** Samantha v389 · NX-389m · Metacanon 1.30 · GOW 2.19.
-**DUG:** Samantha v388/NX-388m; commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`; archivo blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`.
+**DUG:** Samantha v389/NX-389m; commit `199bf03ade7aceeedcabc10eeb1c06b1d0e53eaf`; archivo blob `bcd99e72113f444a045d7f1c91b4ad36865b8ea8`.
 **MCP-OCP:** núcleo v0.1.30 · commit `4610a81f6522142859ecf7345bc3836763434bd6` · blob `4eea02bcc6dc086af7177ba8791b7e51fb205a2e`; backlog v0.11 · commit `a43d53543df79f659888997f332e86ef03cb97b8` · blob `a328dc4fcda6beb0a45ffcc09f68ab5c6407588f`.
 **EP:** OEP v0.3.69 · blob `34ba5fab053f07b79fb928babd07949aae97a5cc`. EP-TASK-003=`PARTIAL_FAIL`; EP-TASK-005=`BLOCKED`; consultar fichas EP para evidencia viva.
-**Autorización:** la implementación Sink local por STDIO, pruebas, build/paquete y panel siguen dentro del control MCP-OCP generación 5. La coordinación no amplía permisos de host EP ni altera los controles MCP-OCP/EP/Gobernanza.
+**Autorización:** la implementación Sink local por STDIO, pruebas, build/paquete y panel siguen dentro del control MCP-OCP generación 6; control blob `76bd465909f5c68d623cc82dbf9c2467091cd98b`. La coordinación no amplía permisos de host EP ni altera los controles MCP-OCP/EP/Gobernanza.
 **Destino EP designado:** alias funcional **Fila 4**, único destino RDC designado por el operador; PC 7 queda supersedido. No se conservan Device IDs, hostnames, cuentas de Windows, rutas concretas de perfil ni identificadores de sesión efímeros conforme a DUG v389/ART-013. El operador reportó estar físicamente frente a Fila 4; CECEQ no fue confirmado y la ubicación física continúa `UNCLASSIFIED`. No inferir CECEQ/LOC-OTHER; el dead-man solo aplica si se confirma ubicación distinta de CECEQ.
 **Alcance:** contrato, implementación Sink local, panel de observabilidad, pruebas, paquete, handoff, bootstrap en el perfil designado y aceptación E2E. Esta ficha es planificación: no acredita código, build, instalación ni prueba ejecutados.
 
