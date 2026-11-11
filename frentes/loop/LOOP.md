@@ -198,7 +198,7 @@ El 2026-11-11 el operador entregó una entrada extensa para reconstruir la progr
 
 - Procedencia y mapa de reconstrucción: [conversaciones/C-LOOP-002-dialogo.jsonl](conversaciones/C-LOOP-002-dialogo.jsonl).
 - Evidencia y estado de validación: [evidencias/C-LOOP-002.json](evidencias/C-LOOP-002.json).
-- Se agrupan OCP, LISA, RAP, PRIUS, entorno persistente, observador núcleo, adaptadores de observabilidad, objetivo visible y orquestación multiagente.
-- Prioridad táctica reportada: piloto RAP + CrewAI/alternativa y definición del taller multiagente; los trabajos de benchmarking e implementación siguen pendientes.
-- La revisión solicitada con GPT-OSS 120B vía Groq no se ejecutó: se verificó la existencia de la entrada GROQ_API_KEY en la bóveda cifrada de KHORA, pero no había acceso temporal disponible para desbloquearla. No se expuso ni se guardó la clave.
+- Se agrupan OCP, LISA, RAP, PRIUS, entorno persistente, observador núcleo, adaptadores de observabilidad, objetivo visible y orquestación multiagente. Sus responsabilidades se delimitan por separado en la crónica §12.
+- Prioridad táctica reportada: piloto RAP + CrewAI/alternativa y definición del taller multiagente; el benchmarking y la implementación siguen pendientes.
+- La revisión secundaria con GPT-OSS 120B vía Groq se ejecutó usando la bóveda EP; la respuesta se conserva en [evidencias/C-LOOP-002-GPT-OSS-120B-review.md](evidencias/C-LOOP-002-GPT-OSS-120B-review.md). Se utilizó un mapa estructurado, no el dictado verbatim completo; la crítica y las correcciones están en la crónica §12. La clave no se expuso ni se guardó.
 - Los requisitos de la crónica son una interpretación de trabajo, no un canon ratificado. El motor de Loop permanece sin implementar.
