@@ -16,8 +16,10 @@ Frente de trabajo para diseñar y desarrollar un mecanismo reutilizable de desar
 
 - **Entrada original C-LOOP-003 (verbatim):** [texto íntegro](conversaciones/C-LOOP-003-entrada-verbatim.txt).
 - **Procedencia C-LOOP-003:** [registro conversacional](conversaciones/C-LOOP-003-dialogo.jsonl).
-- **Checkpoint C-LOOP-003:** [crónica de custodia y bloqueo Groq](cronica/C-LOOP-003-checkpoint.md).
+- **Checkpoint inicial C-LOOP-003:** [crónica de custodia y estado inicial de Groq](cronica/C-LOOP-003-checkpoint.md).
 - **Evidencia C-LOOP-003:** [estado y read-back](evidencias/C-LOOP-003.json).
+- **Reconstrucción narrativa C-LOOP-003:** [secuencia causal y análisis crítico](cronica/C-LOOP-003-analisis-y-secuencia-causal.md).
+- **Revisión externa C-LOOP-003:** [GPT-OSS 120B vía Groq, respuestas y metadatos](evidencias/C-LOOP-003-GPT-OSS-120B-review.md).
 
 
 Leer primero Sam, Metacanon y GOW desde `main`; después el control y el núcleo. Este README es un índice, no un segundo estado vivo. Loop no sustituye los OCP ni los controles de los proyectos en los que llegue a trabajar.
