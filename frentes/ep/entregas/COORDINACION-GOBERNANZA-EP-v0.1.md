@@ -3139,3 +3139,34 @@ Ciclo documental cerrado con read-back exacto. Ninguna tarea se declara completa
 **Hallazgos de apertura (lectura de solo lectura):** host `PC10RCIF4EI4`; MantenimientoRCI admin/elevado; fila4 estándar, perfil `C:\Users\fila4`; C: FullyEncrypted/XTS-AES128/100 %, Protection Off y cero protectores; W: FullyDecrypted/0 %, Protection Off y cero protectores; VHDX de 30 GiB adjunto desde `C:\Users\fila4\AppData\Local\EP\ProtectedWorkspace\Fila4-Workspace.vhdx`; W: contiene solo System Volume Information; runtime fila4 .NET SDK 8.0.425 y runtime 8.0.31, sin .NET 10.0.x observado; checkout Metodologia sin `.git`; ubicación física UNCLASSIFIED. No hubo cambios de host.
 
 **Estado de procesamiento:** PREFLIGHT_READ_ONLY_COMPLETADO; EP-TASK-003 continúa parcial/bloqueada por almacenamiento, checkout y clasificación; EP-TASK-005 continúa bloqueada por EP-TASK-003, por candidato P004 desactualizado/inconsistente y por ausencia de runtime .NET 10. Las acciones dependientes quedan detenidas; la documentación y la reconciliación del candidato se evaluarán separadamente.
+
+---
+## EP · cierre parcial del ciclo de preflight Fila 4 y revalidación EP-TASK-005 · 2026-11-11 · 16:43 America/Mexico_City
+
+**Secuencia:** DTC_OPENING_LATE=TRUE → preflight read-only → revisión de candidato → actualización de núcleos → índice → read-back. Se cierra este ciclo como PARCIAL/BLOQUEADO, no como cierre de EP-TASK-003/005.
+
+### Resultado técnico
+
+- **EP-TASK-003:** identidad y rutas actuales verificadas. Gate físico FAIL: C: XTS-AES128/100 % pero Protection Off/sin protectores; W: completamente descifrado/sin protectores. VHDX adjunto bajo AppData, fuera de la ruta objetivo del diseño; W: no contiene workspace. Checkout Metodologia sin .git, KHORA/GDP sin las rutas anidadas esperadas; ubicación UNCLASSIFIED. No hubo mutaciones.
+- **EP-TASK-005:** PR #28 OPEN/DRAFT/NOT MERGED, rama 52 ahead/12 behind frente al main actual 39ee30a211cd40bca9f3588470bbed36bc19f018. Candidato pin DUG v388 frente a DUG main v389/NX-389m; RUNBOOK discrepa de SOURCE-PIN/manifest/recibo; runtime .NET 10 ausente en Fila4. Tests 18/18 + 23/23 y smoke/ZIP PASS son evidencia histórica del recibo local, no ejecución nueva en este ciclo. No se descargó, extrajo, instaló ni aceptó el candidato; IPZ E2E NOT_RUN.
+- **Seguridad:** no se confirmó presencia física del operador; P012/P013 impiden iniciar las mutaciones de almacenamiento/custodia. No se alteraron grupos, perfiles, tokens, ExecutionPolicy, ACL, Registro, BitLocker, protectores, VHDX, rutas, repositorios, Vault, B2 o credenciales.
+
+### Persistencia de este ciclo y read-back
+
+| Objeto | Commit | Blob de read-back |
+|---|---|---|
+| Apertura DTC tardía | 6a0411b7b8b0accb92729bf96306a279cec30920 | fe95569cf4d0d495c87abd126de919037f244af8 |
+| Núcleo EP-TASK-003 | 9da257f678b82ed048f6b4d3449cede5d804f053 | 4ab259b79dbd7b93b0a42f3d0732f604be3f9ada |
+| Núcleo EP-TASK-005 | 13b34c242fead64a24d3dcdce0a91d4b1b3222fc | f3b9517bc4441779a028d50e7aeacb7b1ea0db75 |
+| Índice EP | 0c1cbc8d9251458f1a674be1ffe874dd0ddaa5e6 | 922a7cf51cf340c793e96072dabf792ebe5bc3ca |
+
+Cada escritura se leyó de vuelta y se comparó con el contenido exacto escrito. OEP v0.3.69, DUG, control EP, PR #28, host, volúmenes y Vault permanecen sin modificación.
+
+### Siguiente gate material
+
+1. Revisión presencial del operador y clasificación sustentada de la ubicación; resolver custodia del protector de recuperación y materialización de volumen XTS-AES256/Protection On/100 % en la ruta de diseño.
+2. Migración íntegra con manifiestos SHA-256, rollback, mountpoint y checkout sincronizado, solo tras superar los gates del volumen.
+3. Rebaselinar PR #28 con main/v389, corregir procedencia del RUNBOOK, validar con .NET 10, regenerar ZIP/manifest/SHA256SUMS/recibo y read-back completo.
+4. Solo después ejecutar EP-TASK-005: recepción/extracción aislada, root protegido, importación, smoke STDIO/RDC y recibo. Aceptación IPZ E2E queda en Gobernanza y requiere respuesta visible desde contexto IPZ real.
+
+**Estado terminal:** EP-TASK-003=PARTIAL_FAIL; EP-TASK-005=BLOCKED; INSTALL_NOT_PERFORMED; IPZ_E2E_NOT_RUN; MCP-NORMATIVO=DESACTIVADO; FOL1=INACTIVO.
