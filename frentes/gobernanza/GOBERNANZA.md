@@ -1,7 +1,39 @@
 ## Estado operativo vigente · sprint Sink local · 2026-11-11
 
-**Responsabilidad:** control único activo de Gobernanza, generación 19; `CONTROL-RESPONSABILIDAD.json` blob `c96af67c45977784a91a57850d0397bc72a6560a`. Titular `SES-20261111-375BE087`, alias `chatgpt-C-GOBERNANZA-RETOMA-15-SES-20261111-375BE087`, UUIDv7 local `01a1cc2b-b960-7bca-8135-3b81d3296b7c` (ID nativo no expuesto); corresponsable generación 12 `chatgpt-C-GOBERNANZA-ASIENTO-02-RETOMA-20261101-01-SES-20261101-GV8E89D1FF` preservada. Dos responsables activos; máximo dos. El ID nativo de la conversación no está expuesto.
+**Responsabilidad:** el único roster y sus metadatos viven en [CONTROL-RESPONSABILIDAD.json](CONTROL-RESPONSABILIDAD.json). Titularidad, corresponsabilidad, folios, UUID y generación deben leerse allí cuando una operación los necesite; este resumen no replica esos campos. Esta conversación trabaja como Gobernanza 2, asiento corresponsable, dentro del alcance funcional autorizado.
 
+## Auditoría de fricción · corte 2026-11-11
+
+**Estado:** diagnóstico cualitativo completado; rendimiento temporal `NOT_MEASURED`. No se declara una mejora de velocidad sin línea base y medición válida.
+
+**Hallazgos confirmados:**
+- P037 y GOV-TASK-010 establecen que la instrucción directa que identifica frente y actuación basta; Metacanon §38.1 todavía impone bloqueo duro por hilo/ID/generación, §38.2 condiciona traspasos a requisitos de la sesión anterior, §42.2 pregunta de nuevo, §48.3 vuelve a preguntar y P039 aún exige decidir entre TRANSFER_RESPONSIBILITY y ADD_CO_RESPONSIBLE. Estas reglas subordinadas contradicen P037; conforme a P001 debe prevalecer P037, pero el texto no está armonizado.
+- P037 también dice que el registro de control no debe detener trabajo autorizado; la actualización del control solo protege la mutación registral. Debe separarse la facultad de trabajar de la confirmación de quién figura en el roster, manteniendo un único escritor por defecto y CAS/read-back para las escrituras.
+- §37.1 y §44.2 duplican la obligación de revisar método/GOW, pero ambos se satisfacen con la misma lectura del DUG: una adquisición por ciclo, pin SHA/commit, reutilización si no cambia y revisión de términos pertinentes al inicio; la comprobación de cierre puede operar sobre el delta local sin una segunda descarga cuando no hubo escritura al canon.
+- §4 impone diez bloques en cada salida; §28 ya exige una crónica recuperable, pero prohíbe crear una entrada por cada llamada y bloquea solo el cierre o las mutaciones dependientes cuando falla la custodia. Se recomienda separar registro íntegro en el OCP y salida visible proporcional al cambio.
+- Para una operación GitHub que modifica varios archivos, el flujo usado aquí generó commits secuenciales y referencias duplicadas. Propuesta técnica: formar un árbol con todos los cambios sobre el árbol actual, crear un único commit, mover `main` con expected SHA y hacer un read-back agrupado de cada ruta. Mantiene CAS y evidencia, evita el fan-out de commits.
+- El punto de entrada `INICIO.md` conservaba DUG v377 y un bloqueo de titularidad/generación contrario a P037; ya fue actualizado para reflejar v388 y la autorización explícita del operador.
+- Metacanon §4 exige diez bloques en cada salida de ciclo; provoca repetición de metadatos y reportes extensos aunque no exista delta material.
+- ART-027 exige Sink para recuperar cada principio pertinente, mientras el estado actual de Gobernanza declara que la ruta Sink aún no está aceptada E2E. Sin alternativa autorizada, una dependencia técnica pendiente puede bloquear la aplicación de reglas disponibles en la fuente canónica.
+- Metacanon §37 ya permite reutilizar contenido adquirido cuando la huella no cambia. Debe aplicarse: verificar el pin y reutilizar, no descargar/procesar íntegramente el mismo DUG una y otra vez. GOW se revisa por versión y términos pertinentes; no se carga todo el léxico de proyectos ajenos.
+
+**Fast-path propuesto para el piloto operativo:**
+1. Instrucción explícita frente + actuación = autorización suficiente; una pregunta solo cuando falte de verdad uno de esos dos datos.
+2. Preflight en un lote paralelo: DUG vigente (incluye Sam, Metacanon y GOW), núcleo/README + control del OCP, y ficha de la tarea concreta.
+3. No repetir inventario de repositorios ni redescubrir OCP en cada ciclo cuando la ruta ya está verificada y no cambió.
+4. Actualizar responsabilidad solo cuando la asignación cambia; una escritura condicionada por SHA y un read-back. Sin conformidad del anterior titular.
+5. Reutilizar DUG/GOW adquiridos si el SHA sigue igual; consultar solo principios/entradas pertinentes. Sink sigue sujeto a su estado real de disponibilidad y aceptación.
+6. Empezar el trabajo sustantivo tan pronto estén comprobados alcance, fuente y permisos reales. Metadatos faltantes no bloquean análisis ni trabajo independiente.
+7. Mantener CAS, read-back, evidencia, seguridad y privacidad. No convertir estos controles en pasos conversacionales repetidos.
+
+**Enmiendas normativas propuestas — NO APLICADAS:**
+- §42.2: preguntar solo si la instrucción no expresa frente y actuación; omitir pregunta cuando ya exista autorización explícita.
+- P039/§42: explicitar que SES/UUID/alias/generación son metadatos; el registro puede actualizarse en paralelo, pero no retiene trabajo autorizado.
+- §4: sustituir el informe visible de diez bloques repetidos por un resumen breve por defecto y detalle completo solo ante delta material; conservar evidencia recuperable en el OCP.
+- ART-027: habilitar recuperación exacta desde el propio archivo DUG de `main` como fallback verificable cuando Sink no esté disponible, con commit/blob/SHA y sin recurrir a memoria.
+- Mantener la revisión por hash de §37 y la revisión de términos pertinentes del GOW; evitar lecturas repetidas sin cambio.
+
+P005 exige autorización activa y explícita antes de modificar el DUG. Este corte no altera DUG, IPZ ni OCP de otros frentes.
 **DUG canónico:** Samantha v388 · NX-388m · 43 principios · 24 anexos. El evento `C-GOBERNANZA-ART027-SINK-LOCAL-RECONCILIACION-20261110-01` actualizó ART-027 para definir Sink local por MCP-OCP STDIO/RDC. DUG commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`; blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`. ART-025 y ART-031 se preservaron.
 
 **Contrato de dos capas:** primera capa con 43 MDP deliberadamente insuficientes para aplicar la norma; segunda capa mediante la operación local `SINK:Pxxx` para recuperar el texto desarrollado íntegro del principio pertinente. La respuesta exige ID, título, texto, versión/firma, commit/blob y SHA-256. Solo se registra frecuencia de recuperaciones satisfactorias. No hay Worker, redirect, URL ni alias HTTP operativo. `MOD-SYNC` es distinto y pertenece a EP; no forma parte de Sink. `MCP-NORMATIVO` permanece `DESACTIVADO`.

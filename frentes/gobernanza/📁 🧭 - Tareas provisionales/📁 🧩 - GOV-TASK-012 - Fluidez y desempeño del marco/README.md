@@ -1,6 +1,6 @@
 # GOV-TASK-012 — Revisión integral de fluidez y desempeño del marco de Gobernanza
 
-**Estado:** en_curso · **Tipo:** tarea propia de Gobernanza · **Responsabilidad:** Gobernanza 2 (asiento corresponsable activo `SES-20261101-GV8E89D1FF`, generación 12), por delimitación operativa expresa del operador. Esta atribución no transfiere la titularidad primaria del frente ni modifica su control.
+**Estado:** en_curso · **Tipo:** tarea propia de Gobernanza · **Responsabilidad funcional:** Gobernanza 2, asiento corresponsable del OCP padre según asignación expresa del operador. Sesión, folio, UUID y generación se consultan en el [control único](../../../CONTROL-RESPONSABILIDAD.json); no se duplican en esta ficha ni actúan como permiso o compuerta. La tarea no transfiere la titularidad primaria.
 
 
 ## Delimitación de responsabilidades
@@ -37,7 +37,7 @@ No modificar el DUG, la IPZ, controles ni OCP ajenos por iniciativa de esta tare
 
 ## Fuentes y relación
 
-- Marco vigente: [DUG v377 · NX-377m](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html), en particular [Metacanon §4](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#meta-4) y [§52](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#meta-52), [P020](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#P020) y [P043](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#P043).
+- Marco vigente: [DUG v388 · NX-388m](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html), en particular [Metacanon §4](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#meta-4) y [§52](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#meta-52), [P020](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#P020) y [P043](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#P043).
 - Medición: [GOV-TASK-013](../📁%20🧩%20-%20GOV-TASK-013%20-%20Medición%20y%20optimización%20de%20ciclos/README.md).
 - Coordinación y evidencia de ciclo: [GOV-TASK-011](../📁%20🧩%20-%20GOV-TASK-011%20-%20Coordinación%20bilateral%20recurrente/README.md).
 
@@ -49,5 +49,24 @@ No modificar el DUG, la IPZ, controles ni OCP ajenos por iniciativa de esta tare
 El DUG enlaza al núcleo operativo y al README del OCP MCP desde el término canónico GOW. Esta tarea puede comprobar por lectura si el núcleo MCP-OCP contiene un vínculo Markdown de retorno al DUG v377 y si sus referencias siguen resolviendo. No modificar el OCP/control MCP-OCP ni emitir solicitudes interfrente desde Gobernanza 2. Si se identifica un backlink faltante o una dependencia del titular MCP-OCP, documentar el hallazgo y canalizarlo a Gobernanza 1 para su tratamiento dentro de la DTC. Los enlaces y retornos internos del propio DUG se auditan por separado.
 
 
+## Corte de auditoría y fast-path · 2026-11-11
+
+**Fuente adquirida:** DUG Samantha v388 · NX-388m · Metacanon 1.29 · GOW 2.18; commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`; blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`. §ARR está presente en `glossary.sections[2]` con ancla `#gow-arranque-chatgpt`; la lectura superficial de la lista de términos no lo representa.
+
+**Diagnóstico confirmado:**
+- La autorización directa está resuelta en P037 y GOV-TASK-010, pero sigue contradicha por Metacanon §38.1/§38.2 (bloqueo por hilo/generación/traspaso), §42.2 y §48.3 (preguntas redundantes), y por P039 (elección forzada entre operaciones). P001 da precedencia a P037; el texto subordinado necesita armonización bajo P005.
+- §37.1 y §44.2 duplican adquisición/revisión de DUG/GOW. Una lectura verificable del único DUG contiene Sam, Metacanon y GOW; debe bastar un fetch/pin por ciclo y una revisión local de delta al cierre, salvo que se haya escrito al canon.
+- §4 hace obligatorios diez bloques visibles por ciclo; §28 ya conserva originales, crónica, estado y read-back y prohíbe entradas triviales por llamada. La solución es compactar la salida visible por defecto y mantener el detalle íntegro recuperable en el OCP.
+- En la sustitución real de asiento se generaron 13 commits secuenciales antes de terminar la reconciliación; se añadieron luego commits de limpieza para retirar duplicación. No equivale a una medición de latencia, pero sí demuestra que la secuencia de escritura actual multiplica el trabajo de coordinación. Usar un único árbol/commit por lote, actualización `main` con SHA esperado y read-back agrupado.
+- `INICIO.md` tenía versión de DUG y barrera de responsabilidad obsoletas; el punto de entrada se actualizó en el mismo corte.
+- El informe de diez bloques en cada ciclo, la adquisición redundante del DUG/GOW y la dependencia estricta de Sink aún no aceptado son los principales candidatos de fricción.
+- §37 ya permite reutilizar un documento adquirido cuando el hash no cambia; aplicar esa regla antes de proponer una nueva norma.
+- ART-027 no tiene fallback aprobado para cuando Sink no esté disponible. La propuesta es permitir lectura exacta desde `main` con commit/blob/SHA, nunca memoria.
+
+**Fast-path piloto (procedimiento operativo, no enmienda normativa):** instrucción explícita sin segunda pregunta; lote paralelo DUG + OCP/control + tarea; no repetir inventario OCP en ciclos posteriores; CAS/read-back solo en cambios de control; reuso de DUG/GOW por SHA; trabajo sustantivo sin esperar metadatos no bloqueantes; conservar todos los permisos, compuertas de seguridad, CAS y evidencia.
+
+**Propuesta pendiente P005:** §42.2 condicional; P039/§42 desactivar bloqueo por folio/UUID/generación; §4 resumen visible compacto por defecto; ART-027 fallback canónico verificable cuando Sink no esté disponible. No se modificó DUG ni IPZ.
+
+**Medición:** `NOT_MEASURED`. No existe instrumentación de inicio/fin de ciclo en esta conversación; no se infiere ahorro de tiempo ni mejora de rendimiento a partir del número de herramientas o de la impresión del operador.
 ## Reporte individual obligatorio de resolución/cierre
 Al resolver, completar, bloquear o cancelar esta tarea, registrar su propio informe en este README usando [la plantilla común](../../../PLANTILLA-REPORTE-CIERRE-TAREA.md). Explicar objetivo y resultado, cómo se solucionó, decisiones verificables, cambios/rutas/commits/blobs/SHA, criterios y pruebas ejecutadas con logs/artefactos, read-back, bloqueantes/dependencias, preocupaciones/riesgos, pendientes, rollback y aceptación. Declarar NINGUNO_VERIFICADO o NO_VERIFICADO donde corresponda; nunca ocultar campos. No marcar completada sin criterios PASS, evidencia y read-back. Actualizar el índice padre después de verificar este informe y entregar al operador el enlace individual y síntesis de solución, evidencia, bloqueantes y preocupaciones. No incluir secretos ni datos sensibles.

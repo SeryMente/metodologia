@@ -2,7 +2,7 @@
 
 Punto de entrada del repositorio; no es una fuente normativa.
 
-**Documento Único de Gobernanza:** [DUG · Samantha v377 · NX-377m](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html). Integra 43 principios, 22 anexos jerarquizados, Metacanon 1.28, GOW 2.17 con 131 términos definidos e indexados, §ARR con el vocabulario inicial, taxonomía estructural 1.4, navegación bidireccional y representación estructurada. Fuente, versión, firma y JSON embebido releídos en `main` el 2026-11-01; commit `8ee2482866b3dd085e58e05006727256d0274376`, blob `54064c8fe00f872023a455f06596061ed69062ae`.
+**Documento Único de Gobernanza:** [DUG · Samantha v388 · NX-388m](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html). Integra 43 principios, 24 anexos jerarquizados, Metacanon 1.29, GOW 2.18 con 132 términos definidos e indexados, §ARR con el vocabulario inicial, taxonomía estructural 1.4, navegación bidireccional y representación estructurada. Fuente, versión, firma y JSON embebido cotejados en `main` el 2026-11-11; commit de la ruta `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`, blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`.
 
 La sección humana gobierna la representación estructurada incorporada en el mismo archivo. No hay documentos normativos paralelos ni sincronización automática implícita con Notion, instrucciones personalizadas, memorias o copias locales. La rama `main` de `SeryMente/metodologia` es la fuente documental; si no puede leerse, declara `METODOLOGÍA NO VERIFICADA`. Las políticas obligatorias, los permisos reales y las autorizaciones aplicables conservan precedencia.
 
@@ -24,7 +24,7 @@ El histórico **Contexto → Gestión conversacional** está supersedido y rever
 
 ## Estrategia de dos capas de principios
 
-[DUG · ART-027](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-027) define un catálogo de 43 abstracciones, aliases individuales previstos p001–p043 mediante Sink y telemetría separada de consideración/selección/consulta/aplicación. El documento está materializado en DUG v377. La instancia Sink, los enlaces reales y la lectura privada E2E no están desplegados ni verificados; el repositorio sigue privado. El conteo de aplicaciones procederá de los registros de ciclo, no de los clics.
+[DUG · ART-027](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-027) define un catálogo de 43 abstracciones, aliases individuales previstos p001–p043 mediante Sink y telemetría separada de consideración/selección/consulta/aplicación. El documento está materializado en DUG v388. La instancia Sink, los enlaces reales y la lectura privada E2E no están desplegados ni verificados; el repositorio sigue privado. El conteo de aplicaciones procederá de los registros de ciclo, no de los clics.
 
 ## Pendientes destacados
 
@@ -59,6 +59,6 @@ Las dieciséis categorías son ejes de auditoría, no sustituyen el molde de tre
 
 Aplicar §37 en cada ciclo activo: comprobar versión/huella y commit de la ruta central por un medio real; recuperar/adoptar solo delta compatible ya autorizado. En ChatGPT, mostrar IPZ y DUG con versión y antigüedad d.h.m desde el último commit de cada archivo exacto, conforme a §37.4. Sin acceso/reloj/origen: vigencia o edad NO VERIFICADA. No fingir refresco entre turnos o de instrucciones nativas.
 
-## Responsabilidad exclusiva · método1.14§§38/42
+## Responsabilidad explícita · método1.14 §§38/42
 
-La migración no transfiere el frente por sí sola. Verificar CONTROL-RESPONSABILIDAD.json autoritativo: segundo hilo, copia offline o propiedad incierta ⇒ solo lectura/análisis y propuestas NO APLICADAS, sin asumir responsabilidad ni escribir el canon. No vence por interrupción. Transferir explícitamente a hilo/instancia identificados mediante comparación y sustitución atómicas; nunca sobrescribir el control con push genérico. La biblioteca ensaya el control, no impone un cerrojo a herramientas que lo eludan; esa limitación debe declararse. Refresco y propiedad son compuertas independientes.
+El control del frente se consulta para conocer ruta, estado y procedencia, no para pedir permiso a una sesión anterior. Conforme a P037, una instrucción expresa del operador que identifica el frente y la actuación/alcance constituye autorización suficiente para trabajar, sustituir titularidad primaria o relevar el asiento corresponsable dentro de ese alcance; no pedir una segunda aprobación, conformidad del titular previo ni datos técnicos que el operador no controla. Las generaciones, folios SES, alias, UUID locales y nombres de instancia son metadatos de procedencia, no permisos, vetos ni bloqueos de trabajo autorizado. Mantener un solo escritor activo por defecto; conservar dos asientos solo cuando exista instrucción expresa de corresponsabilidad. Si el cambio de responsabilidad modifica el control, escribir sobre el SHA leído, reconciliar cualquier conflicto mediante nueva lectura y reaplicación, y verificar por read-back. Una colisión de registro afecta únicamente la escritura concurrente concreta; no detiene trabajo independiente autorizado. Los permisos efectivos de plataforma, seguridad, privacidad y credenciales siguen siendo compuertas reales. FOL1 continúa independiente y su ausencia no bloquea la conversación ni el trabajo autorizado.
