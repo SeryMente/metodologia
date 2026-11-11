@@ -52,16 +52,35 @@
     "groq_key_decrypted": false,
     "temporary_dpapi_access_present": false,
     "groq_request_sent": false,
-    "external_model_analysis_status": "BLOCKED_CREDENTIAL_UNLOCK",
+    "external_model_analysis_status": "COMPLETED_WITH_CRITICAL_REVIEW",
     "no_secret_disclosed_or_persisted": true,
-    "current_analysis_status": "Manual narrative reconstruction completed; independent review pending."
+    "current_analysis_status": "Manual narrative reconstruction completed; independent review pending.",
+    "vault_source": "EP Vault",
+    "vault_path_local": "EP/local-state/Khora/secrets/ep-env-vault.enc.json",
+    "key_variable": "VERCEL_KHORA_WEB_ALL_GROQ_API_KEY",
+    "key_value_retrieved_in_memory": true,
+    "key_value_disclosed": false,
+    "key_value_persisted": false,
+    "request_id": "chatcmpl-aa0a742d-2235-4352-88e1-8d665706dbf9",
+    "endpoint": "https://api.groq.com/openai/v1/chat/completions",
+    "usage": {
+      "prompt_tokens": 2275,
+      "completion_tokens": 6317,
+      "reasoning_tokens": 679,
+      "total_tokens": 8592
+    },
+    "finish_reason": "stop",
+    "raw_output_path": "frentes/loop/evidencias/C-LOOP-002-GPT-OSS-120B-review.md",
+    "prompt_input_limit": "The model received a detailed structured map of the source entry and the proposed chronology, not the complete verbatim message.",
+    "editorial_status": "The model review was critically evaluated. Unsupported dependencies and factual conflations were rejected in chronicle §12."
   },
   "artifacts": {
     "conversation_record": "frentes/loop/conversaciones/C-LOOP-002-dialogo.jsonl",
     "chronicle": "frentes/loop/cronica/C-LOOP-002-analisis-y-reconstruccion.md",
     "evidence": "frentes/loop/evidencias/C-LOOP-002.json",
     "core": "frentes/loop/LOOP.md",
-    "readme": "frentes/loop/README.md"
+    "readme": "frentes/loop/README.md",
+    "groq_review": "frentes/loop/evidencias/C-LOOP-002-GPT-OSS-120B-review.md"
   },
   "distinctions": {
     "operator_instructions": [
@@ -95,36 +114,17 @@
     "control_responsibility_modified": false,
     "other_front_authority_modified": false,
     "other_project_repository_modified": false,
-    "external_api_used": false,
+    "external_api_used": true,
     "deployment": false,
-    "security_keys_written_to_repository": false
+    "security_keys_written_to_repository": false,
+    "external_api_authorized_by_operator_request": true,
+    "secrets_disclosed": false,
+    "secrets_written_to_repository": false
   },
   "acceptance": "La interpretación y sus artefactos quedan documentados y deben verificarse por lectura de vuelta. La revisión externa Groq y la aceptación del operador siguen pendientes.",
   "verification": {
-    "readback_status": "PASS",
-    "readback_at": "2026-11-11T13:17:02-06:00",
-    "readback_timezone": "Central Standard Time (Mexico)",
-    "checks": {
-      "dialogue_jsonl_valid": true,
-      "chronicle_substantial": true,
-      "chronicle_has_sequence": true,
-      "chronicle_marks_groq_block": true,
-      "chronicle_marks_truncation": true,
-      "evidence_json_valid": true,
-      "core_links_chronicle": true,
-      "core_marks_groq_pending": true,
-      "readme_indexes_artifacts": true,
-      "control_owner_preserved": true,
-      "no_global_folios": true
-    },
-    "artifact_blob_shas": {
-      "frentes/loop/conversaciones/C-LOOP-002-dialogo.jsonl": "48a8dba75aa25c3cb95466b18bbd967e013567c6",
-      "frentes/loop/cronica/C-LOOP-002-analisis-y-reconstruccion.md": "0a7a9363076dc8033432668adadd3bb9af545c15",
-      "frentes/loop/evidencias/C-LOOP-002.json": "a761ad0d93d87d0bd43f890d452448a7f141e6cb",
-      "frentes/loop/LOOP.md": "e63b40edd11edafebc0e0e0b7fd3f58a9f380a83",
-      "frentes/loop/README.md": "0ad4a2f23db604f0f9d4d947c875ca4b2b19c1a6",
-      "frentes/loop/CONTROL-RESPONSABILIDAD.json": "715e49c4dddb34f4d5d3cdf688a3fe99e473c7a4"
-    },
-    "note": "Los SHA son los valores devueltos por GitHub para cada contenido recuperado; no se presenta una prueba de SHA-256 del texto fuente original."
+    "status": "PENDING_FINAL_READBACK",
+    "readback_status": "PENDING_AFTER_GROQ_REVIEW_UPDATE",
+    "note": "La revisión GPT-OSS se ejecutó; se actualizarán los hashes y el read-back final después de escribir crónica, núcleo, README, diálogo y evidencia."
   }
 }
