@@ -885,3 +885,41 @@ MCP-OCP, dentro de su titularidad vigente, debe presentar una candidata reconcil
 - **Manifest:** blob Git actual b2090143d9bb2f3ee81fb41dac2f93bf65ef6a7c. La reconstrucción Git blob SHA-1 sobre el contenido UTF-8/LF coincide exactamente con ese blob; SHA-256 de esos bytes actuales 844A682496023903AC366ACFF658EF7D9AD62E8D889C026FEEFF0D46831085E2. SHA256SUMS.txt publica 85F70366144FD2109D9688F2DDB6E7819FF955B8F05697C2FC6966E04F0044B1, que corresponde a una variante CRLF y no al contenido Git actual. **FAIL: suma del manifest desactualizada o no regenerada.** No modificar desde Gobernanza; MCP-OCP debe regenerar la suma, cotejar el paquete y leer de vuelta.
 - **CI:** el run 42917298648 sigue sin pasos, logs y artefactos; el resultado failure no demuestra ejecución del código. No se declara build, test ni smoke PASS a partir de CI.
 - **Estado global del paquete:** ZIP PASS; manifest checksum FAIL; package acceptance NO_ACCEPTED; IPZ E2E NOT_RUN.
+
+
+---
+
+## Reconciliación integral de hitos H1–H9 · 2026-11-11 · corte main `776af286884b0b828f78f9f46c6a93b30d0b807a`
+
+**Propósito:** actualizar la vista coordinadora del sprint OCP MCP 1.0.0 con evidencia reciente de los tres frentes. Este asiento no sustituye los informes propietarios ni cambia su titularidad. Los estados se limitan a evidencia leída en `main` y al corte remoto de PR #27; no se infiere aceptación por existencia de diseño o rama.
+
+### Estado ejecutivo por hito
+
+| Hito | Estado en este corte | Evidencia y brecha de aceptación |
+|---|---|---|
+| **H1 · SINK:P004 desde IPZ** | `CANDIDATO TÉCNICO PARCIAL · NO ACEPTADO` | MCP-OCP registra build local, 18 pruebas P004 + 23 monitor/readiness (41/41) y smoke STDIO/EOF PASS sobre el código de build `b6ce37a`; recibos y hashes están en el núcleo MCP-OCP. Gobernanza no reprodujo esos comandos en este ciclo. PR #27 sigue OPEN/DRAFT/NOT MERGED; HEAD `5cc59b708c1d5894e7dbfd2a724504fdf5b92974`; comparación contra main `776af286884b0b828f78f9f46c6a93b30d0b807a`: DIVERGED, 53 ahead / 128 behind, merge-base `f8a5880f1cbf432754157b5669d1f9e80177766f`. El cuerpo del PR conserva una base histórica y una comparación 53/0 ya obsoletas. El ZIP (137.474 B) conserva SHA-256 PASS `DE556FD547ACF2AB3946DF5AC2395A3993CB459B5E48F8E745A661A113A90783`; el manifest no pasa: blob `b2090143d9bb2f3ee81fb41dac2f93bf65ef6a7c`, SHA-256 actual UTF-8/LF `844A682496023903AC366ACFF658EF7D9AD62E8D889C026FEEFF0D46831085E2` frente al valor publicado `85F70366144FD2109D9688F2DDB6E7819FF955B8F05697C2FC6966E04F0044B1`. Además, `manifest.current_branch_head` señala `f54ce14a...`, no el HEAD actual del PR. No hay instalación Fila 4 ni E2E IPZ. |
+| **H2 · Persistencia mínima + bóveda** | `PARCIAL · RESTORE NO ACEPTADO` | EP-TASK-002 v7: ciphertext formal actual de 3.352 B cargado a B2 privado; descarga de retorno y tamaño/SHA-256 exactos PASS (`3122C544012F989F0501BD0E82EA920A93F19A42034D83FA682BCC2290891E82)); SSE-B2/AES256 PASS. Recibo v7 SHA-256 `D8CDE84B90D6F923BD8A42DEA72A284078FACDE84E95E3674675E02B4A81D523`. Falta descifrado aislado de la copia y recuperación independiente/cross-host. En MCP-OCP-14, los cuatro schemas y 20 fixtures sintéticos registran PASS, pero el contrato sigue PROPUESTO/NO RATIFICADO y no hay runtime, DB, IO o checkpoint operativo. |
+| **H3 · Workspace completo por instancia** | `PARCIAL · CROSS-HOST NO EJECUTADO` | Restauración aislada R2 same-host: 3.289/3.289 archivos, PASS. No demuestra recuperación en segundo host. El ZIP R4 conserva una excepción histórica sin cifrado cliente; el diseño de respaldo cifrado `.zip.age` para R5 sigue pendiente de implementación/validación. EP-TASK-003 mantiene PARTIAL_FAIL: C: XTS-AES128/100 %/Protection Off/sin protectores; W: descifrado/0 %/sin protectores; checkout local sin `.git`; ubicación UNCLASSIFIED. |
+| **H4 · Identidad y telemetría** | `DISEÑO + INVENTARIO PARCIAL · RUNTIME NO VERIFICADO` | MCP-OCP-15 está especificado en el núcleo; EP-TASK-007 conserva inventario read-only parcial. No se acreditan captura completa de GPS/IP/ubicación ni telemetría de sesión/ciclo en runtime. |
+| **H5 · Lease renovable y dead-man** | `NOT_RUN` | Se conserva el contrato de renovación 60 s, lease 30 min, aviso, inactividad 10 min y máximo 8 h. EP-TASK-007 declara Guardian, lease, heartbeat y triggers no implementados/no ejecutados. |
+| **H6 · Limpieza adaptativa / crypto-erasure** | `NOT_RUN` | La política y los límites están documentados; no hay implementación ni prueba destructiva válida, ni recibo operativo. No ejecutar sobre workspace real mientras sigan pendientes las compuertas de almacenamiento/custodia. |
+| **H7 · Vault → RDC just-in-time** | `DIFERIDO · NO IMPLEMENTADO` | MCP-OCP-16 queda condicionado a auditoría del canal seguro. El respaldo B2 v7 de ciphertext no demuestra entrega JIT de credenciales ni autoriza integración de secretos. |
+| **H8 · Release MCP-OCP 1.0.0** | `PENDIENTE · NO LISTO` | Requiere además generalización P001–P043, matriz 43+8, panel WPF, persistencia/recuperación aceptadas, lease/dead-man, manifest/build/paquete reproducibles, instalación y aceptación conjunta. El ZIP P004 actual no es el release 1.0.0. EP-TASK-005 sigue bloqueada por EP-TASK-003 y por el paquete/contratos MCP-OCP-03/04. |
+| **H9 · Medio alternativo** | `POST-RELEASE · NO INICIAR` | Se conserva como evaluación posterior a H8. No aprovisionar proveedor, cuenta, bucket ni servicio alternativo ahora. |
+
+### Cola de ejecución por propietario
+
+1. **MCP-OCP · H1:** reconciliar mediante port selectivo desde el main `776af286884b0b828f78f9f46c6a93b30d0b807a`; no integrar los 53 commits completos ni asumir que `mergeable=true` reemplaza la comparación. Actualizar pins del manifest a la rama/commit reales, regenerar SHA-256 del manifest sobre los bytes UTF-8/LF efectivos, corregir la divergencia ZIP/manifest si corresponde y volver a ejecutar build, 41 pruebas y smoke sobre el commit/paquete final exacto. Entregar recibos y read-back al coordinador.
+2. **EP · H2/H3:** descifrar una copia aislada del ciphertext v7 sin alterar la bóveda formal; demostrar después recuperación en un segundo host físico con bootstrap independiente. En paralelo, mantener EP-TASK-003 en modo de desbloqueo protegido; no copiar workspace, migrar rutas ni instalar mientras C:/W: y el checkout continúen en FAIL.
+3. **Gobernanza · H1:** congelar el contrato de respuesta P004 y preparar la matriz positiva/negativa de aceptación. Ejecutar GOV-TASK-003 solo después de instalación/read-back EP y de recibir el paquete con manifest/SHA y contratos MCP-OCP-03/04 PASS. La llamada de consola no es E2E IPZ.
+4. **H4–H7:** continuar diseño y fixtures sintéticos solo en los frentes propietarios; no activar servicios, procesos de vigilancia, credenciales JIT ni operaciones destructivas por adelantado.
+
+### Regla de paralelismo vigente
+
+H1 (código y pruebas con fixtures, sin fuentes privadas ni host) y H2 (persistencia/bóveda bajo EP) pueden avanzar en paralelo. El gate EP no impide el desarrollo remoto no sensible de MCP-OCP; sí impide importar fuentes privadas, crear DB real, instalar o dejar runtime persistente. H3–H7 dependen de sus contratos y gates específicos. H9 queda fuera del release.
+
+### Límites y aceptación de este asiento
+
+- Se actualiza únicamente la coordinación GOV-TASK-015. No se modifica código, paquete, PR, control, Vault, B2, host, workspace, IPZ nativa, DUG/GOW ni tareas propietarias EP/MCP-OCP.
+- No se acepta ningún hito por este asiento. Los estados PARCIAL, NOT_RUN, DIFERIDO y PENDIENTE se mantienen separados.
+- **Read-back requerido:** releer este bloque desde `main` y cotejar blob SHA del archivo antes de declarar persistencia verificada.
