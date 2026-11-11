@@ -3185,3 +3185,18 @@ Cada escritura se leyó de vuelta y se comparó con el contenido exacto escrito.
 **Regla de ejecución:** continuar por tarea y en orden; cada condición faltante detiene únicamente la operación que depende de ella. Se ejecutará trabajo independiente de las tareas posteriores sin adelantar instalaciones, migraciones, decisiones de seguridad, operaciones de custodia ni aceptación que requieran sus propios gates. Las acciones locales de fila4 permanecen en C:\Users\fila4; MantenimientoRCI se limita a consultas administrativas autorizadas.
 
 **Siguiente acción inmediata:** completar el diagnóstico no invasivo de EP-TASK-001 y separar las verificaciones que puede ejecutar el asistente de la rotación KeeShare y revisión presencial que corresponden al propietario.
+
+
+## EP · rectificación de secuencia y avance EP-TASK-002 · 2026-11-11
+
+**A literal del operador:** «Pospon NCL al final. trabaja a aprtir de ep 002. sin burocarcia rapido.»
+
+**Rectificación de cola:** supersede el orden de apertura registrado inmediatamente antes. Orden efectivo solicitado: **EP-TASK-002 → EP-TASK-003 → EP-TASK-005 → EP-TASK-001 (NCL al final)**. La reasignación no elimina los gates propios ni modifica los criterios de aceptación de las tareas.
+
+**EP-TASK-002 · evidencia nueva:** inventario agregado read-only ejecutado bajo CENTRAL\\fila4 sobre `C:\\Users\\fila4\\Desktop\\SeryMente`. Recibo local `EP\\local-state\\run-logs\\ep-p1-inventory-aggregate-v1.json`, 2.479 bytes, SHA-256 `C2F5BE0C488906BCCED1099BC3F1AA39D185D73FD227A1A7648DB569242C7409`; read-back de contenido PASS. Conteo: 4.123 archivos, 362.011.264 bytes, 879 directorios; 0 escrituras en los últimos 15 minutos al momento del inventario. La raíz `Datos` no existe y no se identificaron datasets ordinarios elegibles. Directorios observados: EP (204 archivos/164.076.858 B), EP-Vault (1/2.048 B), Repositorios (2.180/119.842.517 B), signal-interpreter (191/3.540.457 B), Temporal (894/57.907.060 B), _backups (277/8.360.229 B), _staging (374/8.242.030 B). No se leyó contenido de archivos para esta clasificación agregada.
+
+**Decisión de persistencia:** no generar ni subir una nueva captura general: los repositorios se conservan por Git/remotos y `Temporal`, `_backups`, `_staging` y artefactos EP no se admiten por defecto como datos ordinarios. El ZIP R2 histórico sigue bajo excepción documentada sin cifrado cliente; no se presenta como diseño permanente ni se repite su transferencia. El ciphertext formal EP Vault v7 mantiene PASS previo de upload/read-back SHA, SSE-B2/AES256 y descifrado aislado HMAC/AES (30 propiedades; cinco nombres B2).
+
+**Pendientes EP-TASK-002:** recuperación cross-host con host físico independiente y bootstrap B2 separado (PC-8/PC-7 registrados offline al último inventario de dispositivos); contrato/implementación de sincronización idempotente y pruebas de fallos/reanudación; política de cifrado cliente para futuros datasets aprobados; aceptación integral. La etapa P1 queda `NO_ELIGIBLE_DATASET_IDENTIFIED`, no se declara backup nuevo. No se modificaron objetos B2, Vault, credenciales ni datos del workspace.
+
+**Siguiente en cola:** EP-TASK-003. Se conserva EP-TASK-005 detrás de 003 y MCP-OCP P004/03/04; EP-TASK-001 queda pospuesta al final por instrucción expresa.
