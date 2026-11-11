@@ -2,9 +2,9 @@
   "schema": "ser-y-mente-document-manifest/v1",
   "front": "Gobernanza",
   "ocp_path": "frentes/gobernanza/",
-  "event_id": "C-GOBERNANZA-RETOMA-13",
+  "event_id": "C-GOBERNANZA-RETOMA-14",
   "cycle_folio": null,
-  "recorded_on": "2026-11-06",
+  "recorded_on": "2026-11-11",
   "status": "PERSISTIDO_Y_VERIFICADO",
   "rule": "P041 + ART-014 + ART-022; conservar originales sin transformar y declarar persistencia solo tras lectura de vuelta y cotejo.",
   "documents": [
@@ -266,6 +266,33 @@
       },
       "role": "Contexto interfrentes para continuidad de Khora/B2; no constituye fuente normativa del frente Gobernanza.",
       "recorded_in_event_id": "C-GOBERNANZA-RETOMA-13"
+    },
+    {
+      "document_id": "DOC-GOV-CHATGPT-GOBERNANZA-20261111-FRAGMENTO",
+      "original_name": "ChatGPT-GOBERNANZA-20261111-0923-fragmento.txt",
+      "path": "documentos/originales/ChatGPT-GOBERNANZA-20261111-0923-fragmento.txt",
+      "class": "original",
+      "source_path": "conversation-paste: operator-supplied excerpt",
+      "source_device": "ChatGPT conversation input; no full export file attached",
+      "captured_via": "Verbatim UTF-8 transcription of the excerpt pasted by the operator; no claimed original export or device capture.",
+      "media_type": "text/plain; charset=utf-8",
+      "size_bytes": 2457,
+      "sha256": "55390F0D69D3B027DE7566C8359C9B08FB9C2019A1A3C2111D922B33A261816B",
+      "git_blob_sha": "82cc5643d50f2ef2990bc0922dfd1267c25e7f15",
+      "scope": "Excerpt only; not a complete conversation export.",
+      "status": "PERSISTIDO_Y_VERIFICADO",
+      "associated_artifacts": {
+        "dialogue": "conversaciones/C-GOBERNANZA-RETOMA-14-dialogo.jsonl",
+        "chronicle": "cronica/C-GOBERNANZA-RETOMA-14.md",
+        "evidence": "evidencias/C-GOBERNANZA-RETOMA-14.json"
+      },
+      "verification": {
+        "readback": true,
+        "content_cotejo": true,
+        "method": "Exact UTF-8 content equality against the operator-pasted excerpt; SHA-256 recalculated over persisted read-back; Git blob SHA obtained from main.",
+        "readback_blob_sha": "82cc5643d50f2ef2990bc0922dfd1267c25e7f15",
+        "verified_on": "2026-11-11"
+      }
     }
   ],
   "originals_commit_sha": "c3c47a7f185d8e9482b55942e00c7da9ff1e802c",
