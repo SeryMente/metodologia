@@ -2949,3 +2949,49 @@ Los tres documentos se leyeron de vuelta desde `main` y su contenido coincide ex
 EP-TASK-001 conserva precedencia en la cola, pero su siguiente acto material requiere intervención del propietario para rotación local de KeeShare y revisión presencial P012/P013; no se modifica Chrome, KeePassXC ni la base. En paralelo, por ser P0 y constituir el motivo inmediato de la solicitud, se revalida EP-TASK-002 exclusivamente en lectura: comprobar procedencia/huellas del ciphertext formal, estado de la sesión compartida y relación exacta con el objeto B2 ya respaldado. No se autentica ni sube mientras la sesión esté sellada. No se sobrescribe ninguna copia ni se alteran ACL, volúmenes o workspace.
 
 **Estado de apertura:** `RESPUESTA_INICIAL_REGISTRADA` · procesamiento condicionado a las compuertas de EP-TASK-001/002; no se declara completada ninguna tarea.
+
+
+---
+
+## EP · cierre de ciclo: reconciliación de sesión compartida y preparación B2 v7 · 2026-11-11 · 14:26:08 America/Mexico_City
+
+**Ciclo local UUIDv7:** 01a1cc45-414a-7bd9-8b4e-21ba2e596e91. No se asignan IDs nativos, folios globales ni FOL1.
+
+### Resultado del ciclo
+
+Se preservó el último tramo suministrado como anexo nuevo, sin corregir su texto literal ni modificar el anexo histórico del 10 de noviembre. Se volvió a leer el OEP desde main; entre la lectura inicial v0.3.67 y el cierre se constató §134/v0.3.68 ya incorporado en main. El presente ciclo agrega §135 y actualiza el OEP a v0.3.69.
+
+La prioridad canónica sigue siendo EP-TASK-001, cuyo siguiente paso requiere rotación local de KeeShare por el propietario y revisión humana P012/P013. No se alteraron Chrome, KeePassXC ni la base. Por la solicitud inmediata de resolver Backblaze y el carácter P0, se avanzó en paralelo con EP-TASK-002 hasta el último paso habilitado: identificar el ciphertext formal vigente, reconciliar su estado con B2 y dejar preparado un worker nuevo sin sobrescribir el recibo histórico.
+
+### Evidencia material
+
+- Ciphertext formal de EP Vault, en EP\local-state\Khora\secrets\ep-env-vault.enc.json: 3.352 bytes; SHA-256 3122C544012F989F0501BD0E82EA920A93F19A42034D83FA682BCC2290891E82; última escritura UTC 2026-11-11T01:50:16.7880909Z.
+- Copia separada Desktop\SeryMente\EP-Vault\ep-env-vault.enc.json: 2.048 bytes; SHA-256 D7AD1D745CAF460E047EAE521C1C403F36E99864BC9CD0604FFC564E390F2F7D. No se identifica como origen formal.
+- Objeto B2 Vault v6: 2.200 bytes; SHA/read-back 4CC2EE09974C9FBF3CF22C28A5A46C8286EB501F59268DBBB2B7BD6D61E8C590; SSE-B2/AES256 confirmado. Es una versión anterior al último ciphertext formal local; no acredita la versión de 3.352 bytes.
+- GUI/CLI comparten la sesión DPAPI CurrentUser. El proceso GUI 3504 registró VAULT_UNLOCKED 20:00:01.587Z y VAULT_LOCKED 20:15:02.070Z, coherente con TTL 900 s. La última consulta propietaria, 20:26:08Z, encontró el archivo DPAPI de sesión ausente; no se leyeron nombres ni valores y no se inició transferencia.
+- El restore R2 same-host sigue PASS: 3.289/3.289, cero fallos y cero inesperados. Restore cross-host y descifrado aislado continúan NOT_RUN.
+- Worker v6 no se reejecutó porque fija el recibo result-v6 y sobrescribiría evidencia previa. Se crearon worker y wrapper v7 como nuevos archivos locales, con SHA cotejados, read-back exacto y parser PASS; no se ejecutaron. El recibo result-v7 y un nuevo objeto B2 no existen.
+
+### Decisión y siguiente gate
+
+EP-TASK-002 permanece EN_CURSO. El próximo paso material requiere que el operador desbloquee EP Vault localmente desde la GUI por 15 minutos y confirme que muestra ABIERTA. Entonces se ejecutará una sola vez el wrapper v7 bajo CENTRAL\fila4, siempre que la sesión siga activa y estén disponibles los cinco nombres permitidos; se exigirá recibo v7, objeto remoto nuevo, download/read-back, igualdad de tamaño/SHA, SSE-B2/AES256 y restore aislado. Después se prueba descifrado aislado y recuperación cross-host con bootstrap independiente. No se pide ni se transmite la contraseña por chat.
+
+Las tareas EP-TASK-003/004/005/006/007 conservan gates y dependencias anteriores; EP-TASK-003 sigue sin cambios físicos y su gate BitLocker continúa FAIL según la última lectura documentada. No se instaló MCP-OCP ni se alteraron volúmenes, puntos de montaje, workspace, ACL, credenciales, Vault formal, B2 ni componentes de producto.
+
+### Objetos publicados y lectura de vuelta
+
+| Objeto | Commit | Blob verificado |
+|---|---|---|
+| Anexo conversacional literal ChatGPT-EP-20261111-200355-ULTIMO-TRAMO.md | cefcf63d6ddc4b82f9fdbd3a6ce3366efc030f48 | 9ee46b43abc685a403e094b207f7cfab5c5aa7d7 |
+| Núcleo EP-TASK-002 | 07e51261ad6c08ef1327826bbe7af66815ce28bd | ec9d15ed5d135a47aac5fc76a2e1f3df2d3d98c2 |
+| Índice de tareas EP | 8c357beaba23e356e47f66d12a2569d89c827bc3 | bd4c8d966453d2ded73fb950d6297d883941297f |
+| OEP v0.3.69 · §135 | 9fa37906373e0a9af01f4ccec5060d59b8194ccb | 34ba5fab053f07b79fb928babd07949aae97a5cc |
+| Apertura de este ciclo en DTC | bae8c848ab922d997b824026f3305eecd798f85e | 8e60f0a170fc020d6a2b2482728c16f1bdffa54d |
+
+Los cuatro objetos de trabajo se leyeron de vuelta desde main y se cotejaron con sus blobs. La entrada del DTC conserva la apertura y el cierre del ciclo; su propia lectura de vuelta se verificará después de esta escritura.
+
+### Estado de cierre
+
+PUBLICADO → LEÍDO → RESPUESTA_INICIAL_REGISTRADA → PROCESADO → DOCUMENTADO_AL_CIERRE → VERIFICADO_READBACK.
+
+**Resultado técnico:** respaldo de la versión formal actual NOT_RUN; la evidencia de B2 v6 y restore R2 same-host sigue siendo válida para los artefactos que cubre, no se extrapola a la nueva versión formal. **Resultado documental:** anexo literal, tarea, índice y OEP publicados y verificados. Ninguna tarea se declara completada.
