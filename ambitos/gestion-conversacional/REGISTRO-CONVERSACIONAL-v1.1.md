@@ -1,51 +1,36 @@
-# Registro conversacional · guía operativa v1.2
+# Registro conversacional · guía operativa v1.3
 
-El contrato normativo reside en [ART-024 del DUG](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-024) y [P042](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#P042). Esta guía concreta la materialización FOL1. El esquema v1.0 y los registros E/S se conservan como legado, sin sobrescritura.
+Contrato normativo: [ART-024](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-024) y [P042](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#P042) del DUG. Esta guía simplifica la materialización; no activa FOL1 ni modifica la IPZ.
 
 ## Estado
 
-**FOL1 está PREPARADO, no ACTIVO.** El maestro conserva contadores en cero y ninguna asignación. No se emiten folios globales CV/CY/A/B antes del corte que seguirá a la preparación de la nueva IPZ. Esto no bloquea la continuidad: la conversación conserva su UUIDv7 local; la sesión de responsabilidad usa su folio operativo `SES-AAAAMMDD-XXXXXXXX`, independiente del CV global; cada ciclo pre-corte conserva el folio heredado `C-AAAAMMDD-XXXXXXXX` y sus registros físicos `-E/-S`, identificados semánticamente como A/B, con `foliation_generation=LEGACY` y `folio_status=LEGACY_PRE_CUTOVER`. No se renumera ni se finge FOL1.
+**FOL1 PREPARADO, no ACTIVO.** No se emiten folios globales CV/CY/A/B. Para un ciclo sustantivo basta una referencia local de evento/ciclo y una entrada consolidada A/B en el OCP. UUIDv7, SES y alias son referencias opcionales; no se generan por rutina ni son requisitos de admisión. Los registros heredados C-/E/S se conservan literalmente como legado, sin crear nuevos ni renumerarlos. El maestro conserva sus contadores y asignaciones actuales; esta guía no lo modifica.
 
 ## Fuentes
 
-- [Registro maestro global y por OCP](REGISTRO-MAESTRO-FOLIACION.json): única fuente de contadores, catálogo de contextos y asignaciones.
-- [Esquema del registro maestro](ESQUEMA-FOLIACION-MAESTRA-v1.0.json): contrato de datos del maestro.
-- [Esquema de ciclo A/B](ESQUEMA-CICLO-CONVERSACIONAL-v1.1.json): un registro independiente para A o B; contempla registros FOL1 verificados y registros A/B de legado pre-corte.
-- [Índice de conversaciones](REGISTRO-CONVERSACIONES.csv): localizador; no incrementa ni gobierna contadores.
-- [Esquema y guía históricos E/S](ESQUEMA-CICLO-CONVERSACIONAL-v1.0.json) · [guía v1.0](REGISTRO-CONVERSACIONAL-v1.0.md): preservados como antecedente.
+- [Registro maestro global y por OCP](REGISTRO-MAESTRO-FOLIACION.json): fuente única de asignaciones FOL1 si se activa en el futuro.
+- [Esquema del maestro](ESQUEMA-FOLIACION-MAESTRA-v1.0.json) y [esquema A/B](ESQUEMA-CICLO-CONVERSACIONAL-v1.1.json): contratos preparados para ese eventual uso.
+- [Índice de conversaciones](REGISTRO-CONVERSACIONES.csv): localizador; no gobierna la continuidad.
+- Registros y esquemas E/S históricos: preservados como legado.
 
-## Identidades y secuencias
+## Operación vigente
 
-- UUIDv7 local identifica de forma estable el registro de conversación. No es un folio ni un ID nativo de ChatGPT.
-- La conversación tiene folio global CV-G######## y uno CV-OCP-<código>-######## por cada OCP que realmente aplique.
-- Dentro de cada conversación, cycle_number es un natural consecutivo 1, 2, 3… El ciclo también recibe CY-G######## y un CY-OCP-<código>-######## por cada OCP aplicable.
-- A conserva literalmente la entrada del operador; B conserva la salida visible final del modelo. Son registros separados. Tras el corte FOL1 reciben folios A-G######## / A-OCP-<código>-######## y B-G######## / B-OCP-<código>-########. Antes del corte, A/B son las etiquetas semánticas; se preserva el identificador heredado `C-...-E` / `C-...-S` y se declara `LEGACY_PRE_CUTOVER`. Su orden dentro del ciclo es A=1 y B=2 en ambas generaciones.
-- Conversación, ciclo, A y B utilizan contadores independientes globales y contadores independientes por cada OCP. Un ciclo puede relacionarse con varios OCP; los OCP no pertinentes no reciben folio.
+1. Registrar un ciclo solo cuando exista un cambio material, una decisión, un diagnóstico, una prueba, un resultado o un siguiente paso que altere el estado.
+2. Conservar A (entrada literal disponible) y B (salida visible final) dentro de una única entrada consolidada. No crear dos archivos, dos escrituras ni dos folios por sistema.
+3. Conservar las referencias de repositorio/frente/OCP y las huellas disponibles. No inventar IDs nativos, UUID, alias, fechas, folios ni cobertura.
+4. Leer de vuelta y cotejar una escritura antes de afirmar persistencia. Si falla el registro, informar el límite y continuar trabajo independiente seguro.
+5. No archivar razonamiento interno oculto ni secretos; no reconstruir originales ausentes desde memoria.
 
-## Asignación controlada
+## Activación futura de FOL1
 
-1. Leer en main el registro maestro, identificar su blob SHA y comprobar que está ACTIVO.
-2. Determinar los OCP aplicables mediante identidad/catálogo, no por inferencia de una ruta o nombre.
-3. Consultar la clave de idempotencia. Una asignación ya verificada se reutiliza exactamente; nunca se duplica.
-4. Incrementar el contador global y todos los contadores OCP aplicables en una sola actualización del maestro condicionada al SHA leído. No ejecutar escrituras paralelas.
-5. Releer el maestro desde main y cotejar contadores, clave, folios y referencias. Solo emitir folios después de ese read-back.
-6. Si una conversación ya tiene folio global y posteriormente se determina un OCP adicional que sí le aplica, conservar el folio global y todos los folios OCP previamente emitidos; añadir únicamente el folio local faltante en ese OCP mediante una asignación idempotente `clase + objeto + ocp_id`. Nunca crear un segundo folio global para la misma conversación, ciclo o lado A/B.
-7. Ante conflicto, relectura o permiso fallido, no reutilizar ni improvisar números. Mostrar FOLIACIÓN NO ASIGNADA/NO VERIFICADA para el folio afectado y continuar el trabajo que no dependa de esa asignación. Con FOL1 PREPARADO usar el régimen legado, no PENDING FOL1.
+Solo cuando FOL1 esté expresamente ACTIVO y su maestro sea verificable:
+- emitir folios globales y por OCP para conversación, ciclo, A y B;
+- usar idempotencia, comparación SHA, reconciliación y lectura de vuelta;
+- dejar pendiente únicamente el folio cuya asignación falle;
+- no asignar folios retrospectivos ni renumerar registros históricos.
 
-El control por SHA es serialización cooperativa entre escritores que respetan el contrato; no es un bloqueo de servidor ni impide que un escritor lo eluda. La unicidad global queda limitada al catálogo y cobertura efectivamente accesibles/verificados.
+FOL1 no habilita ni modifica la IPZ por sí mismo. Un fallo de foliación no bloquea conversación, responsabilidad ni trabajo independiente.
 
-## Catálogo y cobertura
+## Cobertura y límites
 
-El maestro contiene 26 contextos OCP conocidos, de los cuales 23 son elegibles para asignación y 3 permanecen pendientes: Blog personal (BLOG), EP (EP) y Tareas automáticas (TAU), por falta de control o conciliación de ruta/branch. Etica, el sprint GDP, la ruta de compatibilidad frentes/metodologia, Tareas dentro de Gobernanza y mcp-jules permanecen como contextos pendientes o excluidos, con motivo registrado.
-
-El inventario central consultado cubre repositorios accesibles, no acredita que abarque todos los repositorios de la organización. Por tanto, KNOWN_INVENTORY_ONLY no equivale a exhaustividad. Antes de asignar en un contexto nuevo, incorporarlo al catálogo y releer el maestro; si su identidad no está resuelta, bloquear solo el folio OCP correspondiente y no inventarlo.
-
-## Compatibilidad histórica y preservación
-
-Los folios C-AAAAMMDD-XXXXXXXX con sufijos -E/-S permanecen como identificadores heredados. El esquema v1.1 separa la identidad de registro (`record_id`) del folio FOL1 (`record_folio_global`); no exige que el identificador legado se convierta en un folio FOL1. La lectura lógica del lado se expresa A/B, mientras el sufijo heredado se conserva físicamente (A↔E, B↔S); no se modifica el ID original. No se asigna FOL1 retroactivamente a conversaciones abiertas antes del corte. Los mensajes auxiliares visibles se guardan aparte; no se concatenan a B. No se registra razonamiento interno oculto ni se simula captura automática.
-
-## Formato mínimo de salida tras el corte FOL1
-
-Mostrar folio de conversación, número natural de ciclo, folio global y OCP del ciclo, y folios globales/OCP de A y B. En el metadato de gobernanza se muestran IPZ y DUG con versión y antigüedad d.h.m calculada desde el último commit de cada archivo fuente exacto, conforme a Metacanon §37.4. Ese valor no certifica la instalación nativa del campo IPZ.
-
-**Criterio de cierre de foliación:** A y B están preservados literalmente; cuando FOL1 está ACTIVO, sus folios proceden del maestro, los OCP aplicables están representados con su estado de cobertura y el registro de asignación fue leído de vuelta. Si falla una condición, la foliación queda PENDING/NO ASIGNADA o parcial, según proceda; no se inventa el folio ni se bloquea la continuidad del trabajo independiente. El cierre operativo y el cierre de foliación se reportan por separado.
+El inventario del maestro es KNOWN_INVENTORY_ONLY, no una garantía de exhaustividad. No existe captura automática, sincronización omnicanal ni recuperación de conversaciones no disponibles. El cierre operativo y la emisión de folios son asuntos separados.
