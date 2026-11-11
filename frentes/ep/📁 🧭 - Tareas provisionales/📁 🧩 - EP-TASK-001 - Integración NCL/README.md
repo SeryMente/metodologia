@@ -1,11 +1,11 @@
 # 📝 EP-TASK-001 · NCL — Navegador Compartido Local: integración de Playwright y KeePassXC
 
 **Naturaleza:** OCP provisional de tarea; no es un frente independiente ni una capacidad ya implementada.  
-**Estado:** `pendiente`  
+**Estado:** `en_curso · NCL_PREFLIGHT_PARTIAL · OCP_PROFILE_IDENTIFIED_PROFILE_36 · PLAYWRIGHT_EXTENSION_PRESENT · KEEPASSXC_BROWSER_MISSING`  
 **Responsabilidad:** vinculada al frente Entorno Persistente, `frentes/ep/`; sin control ni sesión propios.  
 **task_id:** `EP-TASK-001` (identificador local de este registro; no es folio global).  
 **scope_ref:** `frentes/ep/`  
-**Condición de activación:** esperar a que concluya el trabajo prioritario de alojamiento de OCP MCP en EP, salvo nueva instrucción expresa del operador.
+**Condición de activación:** REACTIVADA el 2026-11-11 por instrucción expresa del operador; la espera anterior queda levantada para preflight y trabajo independiente, sin omitir dependencias técnicas ni compuertas de seguridad.
 
 ## 1. Enunciado
 
@@ -274,3 +274,35 @@ Al resolver esta tarea, el responsable debe agregar el informe individual en est
 ### Rollback y registro
 
 Antes de cada mutación, preservar configuración previa y anotar cómo volver a ella. Ante fallo, desconectar el puente y restaurar únicamente los archivos/configuraciones modificados; nunca cerrar Chrome ni borrar sesiones como rollback. Registrar el resultado en esta tarea y actualizar el índice solo tras read-back. La tarea continúa pendiente mientras no se cumpla su activación.
+
+---
+
+## Reactivación por instrucción expresa y preflight NCL · 2026-11-11 · 10:38 America/Mexico_City
+
+**Estado operativo:** en_curso · PREFLIGHT_PARTIAL · OCP_PROFILE_IDENTIFIED · PLAYWRIGHT_EXTENSION_PRESENT · KEEPASSXC_BROWSER_MISSING · NATIVE_MESSAGING_UNVERIFIED.
+
+### Decisión de prioridad y perfil
+
+El operador ordenó explícitamente resolver todas las tareas EP en este ciclo; esto levanta la espera operativa previa que subordinaba NCL a la finalización de la instalación MCP-OCP. La reanudación habilita planificación y preflight, no omite requisitos técnicos, revisión humana ni gates de seguridad.
+
+La sesión RDC de trabajo se identificó por el usuario CENTRAL/fila4 y el perfil C:/Users/fila4. Los metadatos locales de Chrome identifican dos perfiles: Profile = Tu Chrome y Profile 36 = OCP. Por tanto, el perfil OCP queda identificado como Profile 36; no se leyeron cookies, historial, URLs, pestañas, credenciales ni contenido de sesiones.
+
+### Componentes observados
+
+- Chrome está instalado y activo. Se identificó Profile 36 con nombre OCP mediante Local State, leyendo solo nombre y directorio de perfil. No se determinó si la extensión está habilitada o conectada a un servidor.
+- Playwright Extension 0.4.0 está materializada en Profile 36. El manifiesto declara permisos debugger, activeTab, tabs y tabGroups. La búsqueda de archivos playwright-mcp dentro de los repositorios SeryMente no encontró coincidencias; esto no excluye una instalación fuera de esa raíz.
+- KeePassXC portable existe bajo AppData/Local/Programs/KeePassXC-Portable con KeePassXC.exe y keepassxc-proxy.exe. El proceso KeePassXC no estaba en ejecución durante el inventario.
+- En los directorios Extensions examinados de Profile y Profile 36 no se encontró KeePassXC-Browser: Profile contiene Google Docs Offline y Profile 36 contiene Playwright Extension.
+- El manifiesto host de KeePassXC disponible declara dos allowed_origins que no incluyen el origen de Playwright Extension. La comprobación del registro NativeMessagingHosts fue bloqueada por la política RDC al intentar reg query; no se intentó una ruta alternativa. El registro/activación real del host permanece NO_VERIFICADO.
+- No se ejecutó Cora, no se conectó Playwright MCP y no se realizó navegación autenticada.
+
+### Incidente de custodia KeeShare · observación saneada
+
+Durante una lectura local de configuración de KeePassXC, la salida incluyó material de clave privada KeeShare. No se reproduce ni conserva su contenido en esta documentación, no se exportó a Git ni a ningún otro archivo y no se abrió la base de datos. Por precaución debe tratarse como material expuesto en el contexto de esta inspección: el propietario debe rotar la pareja KeeShare y revisar o revocar la confianza de los grupos compartidos afectados. No se ejecutó la rotación ni se alteró la base.
+
+### Review Focus y bloqueos actuales
+
+- Perfil OCP identificado, pero falta confirmar autorización/presencia para conectar una pestaña concreta y revisar la experiencia visible.
+- Falta instalar o validar KeePassXC-Browser en el perfil OCP, habilitar el origen correcto y acreditar Native Messaging. No alterar perfiles o extensiones hasta superar la revisión P012/P013.
+- La clave KeeShare requiere rotación local controlada; no leer ni volver a exponer la configuración.
+- Siguiente paso seguro: revisar presencialmente el perfil OCP y aprobar la configuración UX/seguridad; después configurar KeePassXC-Browser y Native Messaging, conectar una pestaña delegada de prueba y ejecutar únicamente el smoke read-only en Cora.
