@@ -3,7 +3,7 @@
 **Estado:** materialización operativa provisional; no constituye el ámbito funcional Tareas ni lo canoniza.  
 **Contenedor:** `frentes/gobernanza/📁 🧭 - Tareas provisionales/`  
 **OCP padre y fuente de responsabilidad:** `frentes/gobernanza/`  
-**Control heredado:** [CONTROL-RESPONSABILIDAD.json](../CONTROL-RESPONSABILIDAD.json). Las generaciones, sesiones y corresponsabilidades se conservan únicamente como metadatos históricos/auditoría; no son permiso, veto ni compuerta de trabajo autorizado. Blob de control observado `18c2d7fa57609465dced61884cec6685bf74f68d`.
+**Control heredado:** [CONTROL-RESPONSABILIDAD.json](../CONTROL-RESPONSABILIDAD.json). Las generaciones, sesiones y corresponsabilidades se conservan únicamente como metadatos históricos/auditoría; no son permiso, veto ni compuerta de trabajo autorizado. Control generación 20; blob `40075a48c0b45ade28a8542bb7fa46dc5cb04819`.
 **Evento de creación:** C-GOBERNANZA-MDP-OCP-01 · 2026-10-30.  
 **Fuente normativa vigente:** [DUG Samantha v388 · NX-388m](../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html); Metacanon 1.29, GOW 2.18, 43 principios y 24 anexos; commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`; blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`. Los snapshots anteriores son antecedentes, no el estado vigente.
 
