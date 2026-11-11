@@ -1,0 +1,80 @@
+{
+  "schema": "ser-y-mente-front-cycle-evidence/v1",
+  "event_id": "C-GOBERNANZA-RETOMA-14",
+  "front": "Gobernanza",
+  "ocp_path": "frentes/gobernanza/",
+  "recorded_on": "2026-11-11",
+  "status": "PERSISTIDO_Y_VERIFICADO",
+  "scope": "Retoma operativa del frente y persistencia del fragmento proporcionado; sin cambio normativo ni acceso a secretos.",
+  "responsibility": {
+    "operation": "TRANSFER_PRIMARY_OWNER",
+    "status": "VERIFIED_READBACK",
+    "generation_before": 17,
+    "generation_after": 18,
+    "session_folio": "SES-20261111-3B2EE800",
+    "owner_alias": "chatgpt-C-GOBERNANZA-RETOMA-14-SES-20261111-3B2EE800",
+    "instance": "chatgpt-gobernanza-1-2026-11-11-3B2EE800",
+    "local_conversation_uuidv7": "01a1cb34-fc9f-77c5-8bb7-e8933b2ee800",
+    "retained_co_responsible": "chatgpt-C-GOBERNANZA-ASIENTO-02-RETOMA-20261101-01-SES-20261101-GV8E89D1FF",
+    "active_responsibles": 2,
+    "maximum_active_responsibles": 2,
+    "control_commit_sha": "8df0974ffcb3ead4fce04e0f19b7188075623e9f",
+    "control_final_blob_sha": "f514d8756dea509ac78ee8defae275659eaeb4ba",
+    "transfer_readback_sha": "ab3575ba1f1d9c0a0699a7b879222e1d5ef720cb",
+    "readback_exact": true
+  },
+  "cycle": {
+    "local_cycle_id": "C-GOBERNANZA-RETOMA-14-CY01",
+    "local_cycle_uuidv7": "01a1cb34-fc9f-755b-b098-3daf07f9d800",
+    "global_folio": null,
+    "ocp_folio": null,
+    "foliation": "LEGACY_PRE_CUTOVER",
+    "FOL1": "PREPARADO · NO ACTIVO"
+  },
+  "canonical_context": {
+    "dug": "Samantha v388 · NX-388m",
+    "dug_commit": "3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c",
+    "dug_blob_sha": "4db0ebadfd1e48b2bdec9236ba7f344921e4a865",
+    "section_arr_read": true,
+    "GOW_read": true,
+    "normative_changes_made": false,
+    "MCP_NORMATIVO": "DESACTIVADO"
+  },
+  "conversation_source": {
+    "classification": "fragmento aportado por el operador; no es un export integral",
+    "original": {
+      "path": "frentes/gobernanza/documentos/originales/ChatGPT-GOBERNANZA-20261111-0923-fragmento.txt",
+      "git_blob_sha": "82cc5643d50f2ef2990bc0922dfd1267c25e7f15",
+      "size_bytes": 2457,
+      "sha256": "55390F0D69D3B027DE7566C8359C9B08FB9C2019A1A3C2111D922B33A261816B",
+      "readback_exact": true
+    },
+    "dialogue": {
+      "path": "frentes/gobernanza/conversaciones/C-GOBERNANZA-RETOMA-14-dialogo.jsonl",
+      "git_blob_sha": "4747b6655de7ec3d0804c7e56fb37213b5e0bb19",
+      "size_bytes": 7537,
+      "sha256": "457F49DCC1A5825ACA386DC649B9A641FA6BFDFA826047CDA4C31E7F54C93B56",
+      "readback_exact": true
+    },
+    "chronicle": {
+      "path": "frentes/gobernanza/cronica/C-GOBERNANZA-RETOMA-14.md",
+      "git_blob_sha": "b6e7d51fd116cc0f68ae64378cc906809e147f27",
+      "size_bytes": 3122,
+      "sha256": "00A8247AE3B49E80D68FF3852F0D21F27426CFCFEED29FCDE4F4D6ED9CFF1951",
+      "readback_exact": true
+    },
+    "dialogue_record_count": 6,
+    "last_visible_model_output_literal": "Se ha abierto Review a Device Call",
+    "last_output_provenance": "Texto literal suministrado por el operador; no constituye evidencia de apertura de Vault."
+  },
+  "device_and_secrets": {
+    "PC8_status": "OFFLINE",
+    "ephemeral_notes": "NOT_ACCESSIBLE",
+    "fila4_vault": "NOT_OPENED; no se intentó descifrado",
+    "EP_B2_variables": "NOT_VERIFIED",
+    "KHORA_B2_variables": "NOT_VERIFIED",
+    "prior_context": "La salida anterior reporta presencia del archivo cifrado y ausencia de variables en Process/User/Machine en aquella ejecución; no se atribuye a esta instancia.",
+    "secrets_exposed": false
+  },
+  "pending_next_action": "Con PC-8 en línea, acceder a la nota efímera por el canal autorizado sin revelar la contraseña; después, verificar perfil efectivo Fila4 y la carga de variables sin imprimir valores."
+}
