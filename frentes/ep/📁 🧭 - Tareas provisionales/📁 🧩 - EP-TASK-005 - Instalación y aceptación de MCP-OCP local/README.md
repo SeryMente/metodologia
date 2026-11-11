@@ -244,3 +244,19 @@ Conservar el paquete original y su SHA; aislar instalación en piloto; antes de 
 ### Secuencia de desbloqueo
 
 Esperar EP-TASK-003 PASS con ruta y volumen protegidos, checkout Git válido, root de datos protegido, paquete P004/manifiesto/SHA correctos y MCP-OCP-03/04 PASS. Después efectuar instalación aislada, importación de fuentes, provisionamiento interactivo por el operador y smoke STDIO/RDC. Mantener ausencia de listener público y secretos en logs. La PR en estado draft no es prueba de paquete ni autorización de instalación.
+
+ 
+## Revalidación de PR #27 y gate de instalación · 2026-11-11 · 14:54 America/Mexico_City
+
+Consulta read-only de GitHub: PR #27, “Draft: SINK-P004 · piloto STDIO sobre main vigente”.
+
+- Estado: `OPEN`; `draft=true`; `merged=false`; `mergeable=true` en la consulta actual.
+- Última actualización reportada por GitHub: `2026-11-10T23:19:23Z`.
+- Archivos cambiados reportados: 36.
+- La condición `mergeable=true` solo describe la posibilidad técnica de integrar la rama en GitHub; no equivale a aprobación, merge ni a aceptación del paquete o de la instalación.
+- EP-TASK-003 sigue bloqueada: C: XTS-AES128/100 %/Protection Off/sin protectores; W: FullyDecrypted/0 %/Protection Off/sin protectores; ubicación UNCLASSIFIED.
+- El contrato MCP-OCP-14 conserva estado PROPUESTO/NO RATIFICADO según la evidencia documentada; aceptación MCP-OCP-03/04 desde EP y el paquete P004 recibido/verificado siguen siendo gates independientes.
+
+**No ejecutado:** merge, checkout de la rama en Fila 4, extracción, instalación, importación de fuentes, DB, provision-operator, `REGISTER <SID>`, configuración STDIO, apertura de panel o E2E IPZ.
+
+**Siguiente gate:** EP-TASK-003 PASS + paquete P004 con manifiesto/SHA cotejados + MCP-OCP-03/04 PASS y revisión contractual aplicable. EP-TASK-005 permanece `pendiente`.
