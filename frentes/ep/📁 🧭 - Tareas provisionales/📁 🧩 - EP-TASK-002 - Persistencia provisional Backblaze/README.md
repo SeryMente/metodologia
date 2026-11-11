@@ -2645,3 +2645,42 @@ La inspección anterior del árbol UI Automation había devuelto 14 filas visibl
 **Disponibilidad cross-host observada:** RDC informa en línea únicamente `PC10RCIF4EI4`; los equipos distintos registrados `PC-8`, `PC-7` y `PC-1` están fuera de línea. Dos sesiones/conexiones al mismo PC no constituyen un segundo host. No se intentó restauración cross-host ni se presentaron datos DPAPI CurrentUser como portables.
 
 **Límites:** EP-TASK-002 permanece `en_curso`. No se modificaron el ciphertext formal ni el objeto remoto, no se repitió la carga v7, no se sobrescribió ningún recibo histórico, no se revelaron valores de Vault y no se modificó el workspace.
+
+
+## Inventario P1 y reordenamiento EP-TASK-002 · 2026-11-11
+
+**Instrucción de cola del operador:** «Pospon NCL al final. trabaja a aprtir de ep 002. sin burocarcia rapido.» Orden efectivo: EP-TASK-002 → EP-TASK-003 → EP-TASK-005 → EP-TASK-001. NCL queda pospuesta al final; no se modifica su alcance ni se pierde evidencia previa.
+
+### P0 · ciphertext formal EP Vault
+
+Se conserva como PASS previo: objeto v7 en `OCP-MCP/ep-ocp/vault/2026-11-11/204115282Z-92db986d/ep-env-vault.enc.json`, 3.352 bytes, SHA-256 `3122C544012F989F0501BD0E82EA920A93F19A42034D83FA682BCC2290891E82`; upload y descarga/read-back con tamaño/SHA idénticos, SSE-B2/AES256 confirmado, y descifrado aislado HMAC/AES PASS sobre copia (30 propiedades, cinco nombres EP B2 presentes). No repetir carga ni descifrado same-host. Esto no acredita recuperación cross-host.
+
+### P1 · inventario vivo de datasets elegibles
+
+**Identidad:** `CENTRAL\\fila4`. **Raíz:** `C:\\Users\\fila4\\Desktop\\SeryMente`. **Método:** enumeración recursiva de metadatos agregados; no se leyeron contenidos de archivos ni se copiaron/subieron datos.
+
+| Conjunto de primer nivel | Archivos | Bytes | Disposición P1 |
+|---|---:|---:|---|
+| EP | 204 | 164.076.858 | Excluir del snapshot general; Vault se respalda por P0 separado; logs/scripts/estado no constituyen dataset ordinario aprobado. |
+| EP-Vault | 1 | 2.048 | No usar; copia distinta/histórica, no es el ciphertext formal de P0. |
+| Repositorios | 2.180 | 119.842.517 | Excluir; código e historial se conservan por Git/remotos. |
+| signal-interpreter | 191 | 3.540.457 | Excluir como checkout/código; preservar su estado por su remoto Git. |
+| Temporal | 894 | 57.907.060 | Excluir por defecto. |
+| _backups | 277 | 8.360.229 | Excluir backups recursivos/regenerables. |
+| _staging | 374 | 8.242.030 | Excluir staging no promovido. |
+
+**Totales observados:** 4.123 archivos, 362.011.264 bytes, 879 directorios. La carpeta `Datos` no existe en la raíz; `eligibleDataRoots=0`. No hubo escrituras en los últimos 15 minutos al corte del inventario. Recibo local: `EP/local-state/run-logs/ep-p1-inventory-aggregate-v1.json`, 2.479 bytes, SHA-256 `C2F5BE0C488906BCCED1099BC3F1AA39D185D73FD227A1A7648DB569242C7409`; lectura de vuelta exacta y métricas internas cotejadas.
+
+**Decisión:** `P1=NO_ELIGIBLE_DATASET_IDENTIFIED`. No se construye ni sube un ZIP nuevo de toda la raíz. El snapshot R2 anterior (3.289 entradas) permanece evidencia histórica de transferencia/read-back y restore same-host, pero fue una excepción sin cifrado cliente; SSE-B2/AES256 no sustituye cifrado cliente. Los builders R3/R4 existentes declaran `clientSideEncryption=false`; el worker R4 sube ese ZIP sin cifrado cliente y no se reutiliza como solución definitiva.
+
+### Compuertas pendientes y orden siguiente
+
+- `P0_VAULT_CIPHERTEXT_UPLOAD_READBACK=PASS`; `P0_ISOLATED_DECRYPT=PASS`; `P0_CROSS_HOST_RESTORE=NOT_RUN` por falta de segundo host físico conectado y bootstrap B2 independiente.
+- `P1_INVENTORY=PASS`; `P1_ELIGIBLE_DATASETS=0`; no hay upload nuevo.
+- `P2_IDEMPOTENT_SYNC/OUTBOX/RETRY/CONFLICT_RECONCILIATION=NOT_IMPLEMENTED_OR_NOT_VERIFIED`.
+- `P3_FUNCTIONAL_RECOVERY_CROSS_HOST=NOT_RUN`.
+- `P4_RETENTION/OBSERVABILITY/OPERATOR_ACCEPTANCE=PENDING`.
+
+**Siguiente tarea de la cola:** EP-TASK-003. EP-TASK-002 sigue `en_curso` hasta recuperar en un host independiente, definir/validar continuidad idempotente para futuros datasets y completar aceptación; no se declara cerrada solo por el P0 v7 ni por la ausencia actual de datasets.
+
+**Límites de este ciclo:** ningún objeto B2, credencial, Vault, archivo del workspace o configuración del host fue modificado. El único archivo local nuevo es el recibo agregado P1 descrito arriba.
