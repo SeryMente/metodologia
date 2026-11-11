@@ -3,8 +3,8 @@
 **Producto:** MCP-OCP 0.1.0 candidato (no aceptado)  
 **Sprint:** SINK-P004  
 **DUG:** Samantha v388 / NX-388m  
-**Base:** `a34c1c5b43edbcbaf015056f4dc892f5def29eea`  
-**Rama:** `feat/mcp-ocp-sink-p004-main-a34c1c5b`
+**Base de reconciliación:** `cefcf63d6ddc4b82f9fdbd3a6ce3366efc030f48`  
+**Rama:** `feat/mcp-ocp-p004-reconciled-20261111-7ab0c555`
 
 ## Objetivo
 
@@ -106,3 +106,14 @@ Main `8f999198f1d8cde71361c884c9a13b745f442b49`; rama HEAD `4ac337f0b1e507497b8a
 - Estado: CANDIDATE_NOT_ACCEPTED. ZIP extraído, 9/9 archivos cotejados y package smoke P004/STDIO/EOF PASS.
 - Requisito de runtime: Microsoft.NETCore.App 10.0.x x64. Fila 4 NO VERIFICADO.
 - No transferido ni instalado; EP-TASK-003/005 conservan los gates. No equivale a E2E IPZ ni producto 1.0.0.
+
+
+## Reconciliación limpia sobre main vigente · 2026-11-11
+
+La PR #27 se conserva solo como fuente de lectura: su HEAD histórico `5cc59b708c1d5894e7dbfd2a724504fdf5b92974` estaba divergido respecto del main vigente (53 ahead / 100 behind). No se integró su historia completa.
+
+La rama `feat/mcp-ocp-p004-reconciled-20261111-7ab0c555` nació desde `7ab0c555b774adc5b930aad700f101ab2660b79a` y se sincronizó con el main posterior `cefcf63d6ddc4b82f9fdbd3a6ce3366efc030f48` mediante un merge de dos padres. Commit de portación `6dda16a2fe9a5173f21ccdaaa23ba1ac9f9721c4`; commit de sincronización `a33308a3527516dd2427d0cfa73b5d30402afbc6`.
+
+El inventario REUSE/ADAPT/DROP/DEFER está en [RECONCILIACION-20261111.md](RECONCILIACION-20261111.md). Se preserva el pin DUG v388/NX-388m (`3ba8e737...` / `4db0ebad...`). SDK 10.0.403; piloto net10.0 framework-dependent; runtime del destino no verificado.
+
+Los blobs de código y pruebas coinciden con los de una validación local histórica, pero el build, pruebas y smoke **no se han reejecutado en esta rama**. No se reutilizan ZIP, manifest ni sums históricos; deberán regenerarse tras una ejecución verificable. No equivale a instalación EP ni aceptación IPZ E2E.
