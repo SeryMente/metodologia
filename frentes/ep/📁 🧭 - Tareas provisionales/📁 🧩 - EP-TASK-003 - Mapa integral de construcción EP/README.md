@@ -546,3 +546,25 @@ Al resolver esta tarea, el responsable debe agregar el informe individual en est
 ### Bloqueos automáticos
 
 Actividad concurrente, identidad/perfil no resueltos, ubicación UNCLASSIFIED cuando afecte a la política, BitLocker Protection Off, ausencia de protector, restore incompleto o hashes discordantes detienen únicamente la acción dependiente. No se limpia staging ni se destruye el volumen/origen para forzar el avance.
+
+---
+
+## Preflight BitLocker administrativo read-only · 2026-11-11 · 10:38 America/Mexico_City
+
+**Estado operativo:** en_curso · DISEÑO_ACEPTADO · PREFLIGHT_PARTIAL_FAIL · C_PROTECTION_OFF · W_DECRYPTED · LOCATION_UNCLASSIFIED.
+
+### Método y contexto
+
+La sesión normal CENTRAL/fila4 no estaba elevada y recibió acceso denegado al consultar manage-bde. Se utilizó una conexión RDC separada de la misma máquina bajo el contexto administrativo CENTRAL/MantenimientoRCI exclusivamente para ejecutar manage-bde -status C: y W: en modo read-only. No se escribió en el perfil MantenimientoRCI, no se modificó configuración y no se alteró ningún volumen.
+
+### Estado observado
+
+- C: 237.48 GB; cifrado por espacio usado al 100 %; método XTS-AES128; Protection Off; desbloqueado; cero protectores de clave.
+- W: volumen EP-FILA4, 29.98 GB; completamente descifrado, 0 %; método Ninguno; Protection Off; desbloqueado; cero protectores.
+- La consulta anterior bajo el token Fila4 estaba bloqueada por privilegios; el resultado administrativo confirma el estado de los volúmenes.
+- El checkout local de Metodología bajo Desktop/SeryMente no contiene .git y no es un repositorio Git válido. No se usó como línea base ni se modificó.
+- La ubicación física permanece UNCLASSIFIED; no se infiere CECEQ/LOC-OTHER a partir de nombre de host o red.
+
+### Decisión
+
+Bloqueado crear, cifrar, copiar, montar, cambiar puntos de montaje o implementar el dead-man. C: no cumple XTS-AES256/Protection On/protector recuperable; W: está sin cifrar y no es destino seguro. El origen Desktop/SeryMente se preserva íntegro. Próximo paso: resolver el acceso administrativo autorizado y la custodia formal de recuperación en EP Vault, clasificar ubicación con evidencia, estabilizar manifiesto y solo después ejecutar la secuencia de volumen/copia/read-back ya aprobada.
