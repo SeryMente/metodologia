@@ -795,8 +795,8 @@ La portación actual se publicó como PR [#28](https://github.com/SeryMente/meto
 - Rama: `feat/mcp-ocp-p004-reconciled-20261111-7ab0c555`.
 - Portación inicial: `6dda16a2fe9a5173f21ccdaaa23ba1ac9f9721c4`, base `7ab0c555b774adc5b930aad700f101ab2660b79a`.
 - Main al baseline de build: `1867af0c69f250aaee2b35b585eec8b74827b69c`.
-- Main actual incorporado al corte documental: `0b4a7373fdc07f39b3f764e9c6e0c94fce21cc2f`, merge `63e2f1399fdb210294ef26983babc8fbef87a4a6`, de dos padres. Se preservaron cambios posteriores de EP/Gobernanza sin solapar rutas MCP-OCP.
-- Compare al sincronizar: 26 commits ahead / 0 behind. PR [#28](https://github.com/SeryMente/metodologia/pull/28) permanece OPEN/DRAFT/NOT MERGED; mergeable solo habilita revisión. PR #27 continúa como antecedente divergente no integrado.
+- Main actual incorporado al corte documental: `cb9b6a704bb18ccd219d847a48e810f22b4e2c3e`, merge `d1625f9345e54b90ac1ad884d4ee8476c78af491`, de dos padres. Se preservaron cambios posteriores de EP/Gobernanza sin solapar rutas MCP-OCP.
+- Compare al sincronizar: 34 commits ahead / 0 behind. PR [#28](https://github.com/SeryMente/metodologia/pull/28) permanece OPEN/DRAFT/NOT MERGED; mergeable solo habilita revisión. PR #27 continúa como antecedente divergente no integrado.
 - Inventario REUSE/ADAPT/DROP/DEFER: `piloto-sink/RECONCILIACION-20261111.md`.
 
 ### 23.3 Build y pruebas ejecutadas
