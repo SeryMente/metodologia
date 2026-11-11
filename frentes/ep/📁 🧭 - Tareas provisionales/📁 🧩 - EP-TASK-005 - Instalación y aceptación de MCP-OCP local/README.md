@@ -285,3 +285,32 @@ Consulta read-only de GitHub: PR #27, “Draft: SINK-P004 · piloto STDIO sobre 
 EP-TASK-003 sigue FAIL: C cifrado XTS-AES128/100 %, Protection Off y cero protectores; W completamente descifrado. Por tanto, root protegido/checkout destino no están habilitados. Runtime destino y .NET 10.x persistente NO VERIFICADOS. No hubo handoff, extracción, instalación, DB, import-sources, REGISTER, configuración STDIO ni E2E IPZ; esta última permanece NOT_RUN/NOT_ACCEPTED.
 
 **Decisión:** candidato técnicamente validado en local, pero no aceptado ni instalado; PR #28 no lista para merge en el estado observado. Mantener bloqueo hasta regenerar paquete documentalmente consistente y superar EP-TASK-003. MCP-NORMATIVO DESACTIVADO.
+
+
+---
+
+## Revalidación viva de destino y candidato P004 · 2026-11-11 · 16:43 America/Mexico_City
+
+**Estado:** `pendiente · EP003_STORAGE_GATE_FAIL · PACKAGE_PIN_STALE · PACKAGE_DOC_MISMATCH · DOTNET10_MISSING · INSTALL_NOT_PERFORMED · IPZ_E2E_NOT_RUN`.
+
+### Host destino
+
+- Identidad operativa verificada: `CENTRAL\fila4`, perfil `C:\Users\fila4`, sesión no administradora.
+- Único SDK/runtimes observados en el perfil: .NET SDK `8.0.425`, runtime `Microsoft.NETCore.App 8.0.31`; .NET 10.0.x x64 no está presente. El candidato framework-dependent exige `Microsoft.NETCore.App 10.0.x x64`.
+- El checkout local de Metodología bajo `Desktop\SeryMente\Repositorios\Metodologia\metodologia` no tiene `.git`; no se usó como source-root. W: no es un destino válido: está descifrado y solo contiene System Volume Information.
+- No se descargó ni extrajo el candidato, no se creó DB/configuración, no se importaron fuentes, no se hizo provision-operator/REGISTER, no se instaló el servidor ni se configuró STDIO.
+
+### Revisión del PR #28 y pin
+
+- PR #28 continúa OPEN / DRAFT / NOT MERGED; rama `feat/mcp-ocp-p004-reconciled-20261111-7ab0c555`; HEAD `86e58cff0e58a2452361ff8abe031917dc9a5b11`; merge-base/base incorporada `9ec698fbe27fd087c2cc9939b3afd604984e6154`.
+- Compare contra main actual `39ee30a211cd40bca9f3588470bbed36bc19f018`: `52 ahead / 12 behind`, estado `diverged`. No se actualizó la rama ni se fusionó.
+- El candidato sigue siendo `MCP-OCP-SINK-P004-f8973a19-candidate.zip`, 137,784 bytes, SHA-256 `705716c7aa581a98817869eb281b87500b591c4e811653c3a6825e1ceb59a3d2`; estado `CANDIDATE_NOT_ACCEPTED`. Los resultados de restore/build, 18/18 P004, 23/23 monitor/readiness, smoke STDIO/EOF, extracción/read-back y smoke del ejecutable constan en el recibo histórico asociado al source commit `f8973a1958fb1e6d259786c2828a19dae05aeee6`; no se reejecutaron aquí. GitHub-hosted CI continúa `NOT_VERIFIED`.
+- El paquete y `SOURCE-PIN.json` fijan DUG v388/NX-388m, commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`, blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`. El DUG actual de main es v389/NX-389m, commit `39ee30a211cd40bca9f3588470bbed36bc19f018`, blob `bcd99e72113f444a045d7f1c91b4ad36865b8ea8`. El texto normativo P004 coincide en el texto leído, pero la versión/fuente completa y el pin del paquete son anteriores; no se declara compatible el paquete sin actualizar fixtures/pin y volver a validar.
+- Persisten discrepancias dentro de los documentos del candidato: `RUNBOOK.md` registra main `446e69251335a51fe8d4c01495c3738b11d5808c` / merge `8d22bff7fae4a23ac224b984576205841abeda9c`; SOURCE-PIN/manifest/recibo registran main `9ec698fbe27fd087c2cc9939b3afd604984e6154` / merge `720fc22ecad3ecdcfe3087778472e51aaa939068`. RUNBOOK está incluido en el ZIP/manifest; no se edita en sitio ni se corrige solo su copia textual.
+- El candidato también queda detrás del main actual por 12 commits. Antes de emitir otra candidata se debe reconciliar la rama con main actual, comprobar solapamientos, ejecutar restore/build/tests/smoke con SDK 10, actualizar pin v389, regenerar RUNBOOK/manifest/ZIP/SHA256SUMS/recibo y leer de vuelta el paquete exacto.
+
+### Decisión
+
+EP-TASK-005 permanece BLOQUEADA. No se instala un artefacto con pin v388 y documentación interna divergente sobre una base que ha quedado 12 commits detrás; no se instala sobre un checkout sin .git ni sobre W: descifrado. El runtime .NET 10 requerido tampoco está presente. La aceptación IPZ E2E exige invocación desde el contexto IPZ real y respuesta visible; no se ejecutó ni se simula.
+
+**Conclusión:** revalidación de destino y procedencia completada; instalación y aceptación no ejecutadas. Mantener el piloto aislado como candidato no aceptado.
