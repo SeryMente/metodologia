@@ -129,3 +129,34 @@ Los estados de build, tests, smoke y paquete de la rama actual permanecen `NOT_R
 - EP-TASK-003/005 siguen como gates de host/recepción/instalación. No se instaló, transfirió ni configuró nada en EP/Fila 4; disponibilidad persistente del runtime de destino = NO VERIFICADA.
 - IPZ E2E desde contexto real: `NOT_ACCEPTED / NOT_RUN`; la consola local no la sustituye.
 - MCP-NORMATIVO continúa `DESACTIVADO`; FOL1 preparado/no activo; release servidor+panel 1.0.0 no aceptado.
+
+## 10. Corte final verificado y sustitución del ZIP previo · 2026-11-11
+
+### Sincronización y revisión
+
+- Último main incorporado: `9ec698fbe27fd087c2cc9939b3afd604984e6154`.
+- Merge de sincronización: `720fc22ecad3ecdcfe3087778472e51aaa939068`; cambios de EP/Gobernanza se incorporaron sin solapamiento con las 29 rutas MCP-OCP.
+- Compare final: 47 commits ahead / 0 behind. PR #28 OPEN / DRAFT / NOT MERGED, mergeable=true. PR #27 sigue como antecedente no integrado.
+
+### Validación ligada al source commit
+
+- Source commit probado: `f8973a1958fb1e6d259786c2828a19dae05aeee6` (antecesor del HEAD documental posterior).
+- Windows 10.0.26200 x64; PowerShell 7.4.22; SDK 10.0.403; runtime 10.0.14 aislado.
+- Restore PASS; builds servidor/monitor/pruebas PASS; 0 warnings/0 errors.
+- P004 18/18 PASS; monitor/readiness 23/23 PASS; STDIO/EOF smoke PASS.
+- DUG v388/NX-388m commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`, blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`.
+
+### Artefacto final
+
+- ZIP: `MCP-OCP-SINK-P004-f8973a19-candidate.zip`, 137.784 bytes.
+- ZIP SHA-256: `705716c7aa581a98817869eb281b87500b591c4e811653c3a6825e1ceb59a3d2`.
+- Manifest SHA-256: `03ef3b75d21a153d6b659056c4e401ca65fd6e7f2355cc57d48ed6e71746f750`.
+- Receipt SHA-256: `b068287641fa908d56bc2196dad2a4e840a0120eacf6538c74914e1bc1fdcffd`.
+- SHA256SUMS SHA-256: `6097ca2315bf531bde31b1df6a69d21f1d668436eef35eb7d92822b6389ed9db`.
+- Nueve archivos. Extracción y cotejo de tamaño/SHA contra manifest PASS; smoke sobre el ejecutable exacto extraído PASS.
+- Read-back autenticado desde el commit de publicación: ZIP, manifest, recibo, sums, runbook y pin coincidieron byte a byte con sus SHA locales. `REMOTE_READBACK=PASS`.
+- Este paquete f897 sustituye el candidato anterior `4600086c`; el anterior queda como antecedente, no como paquete final.
+
+### Gates y límites
+
+EP-TASK-003 continúa bloqueada por el estado de almacenamiento/checkout/root del host; EP-TASK-005 no ha hecho recepción, extracción, importación ni instalación. GOV-TASK-003 E2E desde contexto IPZ sigue NOT_RUN/NOT_ACCEPTED. Hosted CI NOT_VERIFIED; runtime persistente Fila 4 NO VERIFICADO; MCP-NORMATIVO DESACTIVADO. Generalización P001–P043, panel WPF y release 1.0.0 siguen pendientes. El ZIP se clasifica `CANDIDATE_NOT_ACCEPTED`.
