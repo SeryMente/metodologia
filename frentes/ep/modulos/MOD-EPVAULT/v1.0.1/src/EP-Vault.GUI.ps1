@@ -1054,7 +1054,7 @@ function Add-EpSessionTab {
     $panel.Children.Add($create) | Out-Null
 
     $restore = [System.Windows.Controls.Button]::new()
-    $restore.Content = 'RESTAURAR / MONTAR ÚLTIMA SESIÓN'
+    $restore.Content = 'RESTAURAR / MONTAR SESIÓN LOCAL SELLADA'
     $restore.MinHeight = 44
     $restore.Margin = [System.Windows.Thickness]::new(0,0,0,10)
     $restore.Add_Click({
