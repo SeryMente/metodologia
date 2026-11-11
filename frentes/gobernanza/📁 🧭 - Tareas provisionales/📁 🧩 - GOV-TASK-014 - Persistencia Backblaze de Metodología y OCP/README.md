@@ -350,3 +350,35 @@ Estado: `B2_UPLOAD_READBACK=PASS_4_OF_4` · `WORKSPACE_ISOLATED_RESTORE=SAME_HOS
 **Estado actual:** `DESIGN_RECORDED · EP_IMPLEMENTATION_PENDING · PUBLIC_BUCKET_NOT_CREATED · AGE_IDENTITY_NOT_GENERATED · R5_NOT_UPLOADED · PUBLIC_URL_NOT_ISSUED`. Esta actualización no realiza operaciones en B2 ni modifica permisos del bucket existente.
 
 **Fuentes técnicas:** [Backblaze — access controls de buckets](https://www.backblaze.com/docs/cloud-storage-buckets) · [Backblaze — direct download URLs](https://www.backblaze.com/docs/cloud-storage-download-files-with-the-native-api) · [age v1.0 specification](https://c2sp.org/age@v1.0.0) · [age project/CLI](https://github.com/FiloSottile/age).
+
+
+## Reconciliación por etapas H2/H3 · evidencia EP del 11-11-2026
+
+Esta sección sustituye fotografías históricas anteriores sobre las mismas etapas. No modifica titularidad EP/MCP-OCP ni declara aceptación integral.
+
+### H2 · bóveda/ciphertext
+
+- EP-TASK-002 reporta B2_V7_UPLOAD_READBACK_SHA_PASS: ciphertext formal actual 3.352 B; SHA-256 3122C544012F989F0501BD0E82EA920A93F19A42034D83FA682BCC2290891E82; descarga coincidente y SSE-B2/AES256 confirmado.
+- Descifrado aislado de copia exacta v7: ISOLATED_B2_CIPHERTEXT_DECRYPT_PASS, HMAC + AES PASS, 30 propiedades y cinco nombres B2 esperados; sin revelar valores ni escribir plaintext a disco.
+- No demostrado: recuperación cross-host. No había segundo host físico disponible; bootstrap B2 debe ser independiente del ciphertext. Dos conexiones al mismo host no cuentan.
+- Estado integrado H2: B2_UPLOAD_READBACK=PASS · VAULT_DECRYPT_SAME_HOST=PASS · CROSS_HOST_RESTORE=NOT_RUN. EP-TASK-002 sigue en_curso; conservar recibos v7 y no repetir upload/decrypt si el artefacto no cambió.
+
+### H3 · workspace
+
+- R2/R4 acreditan restauración aislada same-host según recibos propietarios; no prueban cross-host.
+- R4 se subió sin cifrado cliente por excepción histórica. SSE-B2/AES256 no satisface cifrado cliente permanente; no reclasificar R4.
+- R5 exige cifrado cliente previo a B2 (.zip.age según diseño), custodia independiente de identidad privada, descarga/descifrado y restore aislado. No están acreditados esos pasos.
+
+### H2 de MCP-OCP-14
+
+Los cuatro schemas y 20 fixtures sintéticos reportados PASS acreditan contrato sintético; no ratificación, runtime, DB, journal/checkpoint operativo, I/O, cifrado, B2 o restore. Gobernanza no ratifica MCP-OCP-14 por fixtures solamente; requiere revisión/versionado y evidencia del dueño MCP-OCP.
+
+### Orden y no dependencia con H1
+
+1. Reutilizar recibos v7; no ordenar otro upload sin delta del objeto/fuente.
+2. Completar cross-host Vault cuando EP disponga de segundo host físico y bootstrap independiente.
+3. Aceptar H3 tras snapshot cliente-cifrado, descarga/descifrado y restore aislado; documentar rutas/exclusiones/hashes sin secretos.
+4. Aceptar capa operativa MCP-OCP-14 cuando haya contrato ratificado, runtime/IO y restore funcional de datasets por su dueño.
+5. Mantener H1 SINK:P004 en su propio camino crítico. H2/H3 no bloquean código/pruebas con fixtures ni piloto P004 instalado si EP-TASK-003 y EP-TASK-005 pasan.
+
+**Estado:** evidencia v7 mejora H2; H2/H3 siguen parciales. No hay aceptación integrada ni cross-host.

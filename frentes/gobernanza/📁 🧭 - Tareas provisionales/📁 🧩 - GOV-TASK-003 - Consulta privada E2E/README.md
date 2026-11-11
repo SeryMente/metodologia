@@ -102,3 +102,49 @@ GOV-TASK-003 es la tarea de aceptación del piloto; no implementa ni instala el 
 
 ## Reporte individual obligatorio de resolución/cierre
 Al resolver, completar, bloquear o cancelar esta tarea, registrar su propio informe en este README usando [la plantilla común](../../../PLANTILLA-REPORTE-CIERRE-TAREA.md). Explicar objetivo y resultado, cómo se solucionó, decisiones verificables, cambios/rutas/commits/blobs/SHA, criterios y pruebas ejecutadas con logs/artefactos, read-back, bloqueantes/dependencias, preocupaciones/riesgos, pendientes, rollback y aceptación. Declarar NINGUNO_VERIFICADO o NO_VERIFICADO donde corresponda; nunca ocultar campos. No marcar completada sin criterios PASS, evidencia y read-back. Actualizar el índice padre después de verificar este informe y entregar al operador el enlace individual y síntesis de solución, evidencia, bloqueantes y preocupaciones. No incluir secretos ni datos sensibles.
+
+
+## Procedimiento resoluble de aceptación · primer corte P004 · 2026-11-11
+
+Preparar la prueba ahora y ejecutarla solo cuando estén satisfechas sus entradas. No esperar batería 43+8 ni release 1.0.0 para aceptar el primer piloto.
+
+### A. Condiciones de entrada
+
+- [ ] **MCP-OCP:** rama/candidato basado en main identificado; commit exacto de código/pruebas; diff sin historia ajena no revisada.
+- [ ] **Paquete:** ZIP, manifest y checksums calculados sobre bytes finales; manifest.current_branch_head coincide con commit candidato; extracción/read-back sin diferencias.
+- [ ] **MCP-OCP-03/04:** pruebas contractuales y smoke STDIO/EOF PASS ligados al mismo commit/artefacto. Prueba local sustituye CI no ejecutado solo con comandos, entorno, logs y hashes reproducibles.
+- [ ] **EP-TASK-003:** gate de host/almacenamiento PASS, checkout Git y root de datos protegidos.
+- [ ] **EP-TASK-005:** piloto instalado en ruta aislada, hash cotejado, DUG v388 importado/read-back y readiness verificable.
+- [ ] **GOV-TASK-007:** candidato IPZ medido y cotejado; si requiere cambiar campo nativo, instalación/read-back por procedimiento autorizado. Esta ficha no autoriza esa modificación.
+- [ ] **GOV-TASK-008:** contrato semántico P004 congelado contra esquema MCP entregado.
+
+Un requisito no disponible deja NOT_RUN/BLOCKED solo a esta prueba; no detiene código, fixtures ni preparación documental independiente.
+
+### B. Ejecución mínima
+
+1. Desde contexto IPZ real, provocar la ruta normal de entrada; no llamar la consola para simular IPZ.
+2. Comprobar invocación RDC al servidor local por STDIO, initialize, tools/list y cierre limpio.
+3. Confirmar catálogo de 43 IDs/MDP sin textos desarrollados; identificar P004.
+4. Invocar la herramienta real que MCP-OCP haya mapeado a SINK:P004; usar nombre/argumentos publicados, sin inventarlos.
+5. Verificar respuesta visible al modelo: texto desarrollado íntegro, ID/título canónicos, Samantha v388/NX-388m, commit/blob DUG y SHA-256 del texto; cotejar con la fuente importada exacta.
+6. Confirmar un solo evento de frecuencia tras éxito. En fallo no aumenta el contador/evento.
+7. Ejecutar un negativo representativo en el mismo recorrido (ID inexistente o servidor desconectado): fallo cerrado, sin reemplazo ni fallback por memoria.
+8. Cerrar STDIO limpiamente y registrar salida visible, no solo log interno.
+
+Los negativos de fuente ausente/obsoleta, blob alterado y SHA incorrecto van en MCP-OCP-03 con fixtures; no inducir corrupción en host productivo.
+
+### C. PASS de GOV-TASK-003
+
+PASS solo si el modelo recibe desde IPZ real una respuesta P004 íntegra por RDC/STDIO, las huellas coinciden, la telemetría registra exactamente una recuperación exitosa y el negativo falla cerrado. El recibo refiere conversación/ciclo disponible, host como alias permitido, servidor/commit, DUG commit/blob, ZIP/manifest SHA, casos y logs saneados.
+
+NOT_MEASURED para ipz.resolve.rdc.duration_ms no bloquea por sí solo la aceptación funcional si el adaptador no observa ambos extremos monotónicos; se registra como limitación y se mantiene GOV-TASK-013 separada.
+
+### D. Fuera del primer corte
+
+No ejecutar aquí P001–P043, batch, matriz 43+8, panel, FOL1, MCP-NORMATIVO, restore cross-host, lease/dead-man ni crypto-erasure. No retrasan P004. La aceptación del producto MCP-OCP 1.0.0 es posterior y más amplia.
+
+### E. Salida del ciclo
+
+Un solo recibo con precondiciones/fuentes; commit/versión servidor y hash paquete; llamadas y respuesta visible P004; cotejo ID/título/texto/pin/blob/SHA; evento de frecuencia positivo y ausencia en negativo; EOF, fallos, límites, rollback y PASS/FAIL/NOT_RUN; enlaces a informe MCP-OCP y recibo EP.
+
+**Estado:** procedimiento preparado; instalación y E2E no ejecutadas.

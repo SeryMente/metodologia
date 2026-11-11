@@ -62,3 +62,27 @@ Fuente de validación: DUG `Samantha v388 · NX-388m`, commit `3ba8e7373324c3dfb
 
 ## Reporte individual obligatorio de resolución/cierre
 Al resolver, completar, bloquear o cancelar esta tarea, registrar su propio informe en este README usando [la plantilla común](../../../PLANTILLA-REPORTE-CIERRE-TAREA.md). Explicar objetivo y resultado, cómo se solucionó, decisiones verificables, cambios/rutas/commits/blobs/SHA, criterios y pruebas ejecutadas con logs/artefactos, read-back, bloqueantes/dependencias, preocupaciones/riesgos, pendientes, rollback y aceptación. Declarar NINGUNO_VERIFICADO o NO_VERIFICADO donde corresponda; nunca ocultar campos. No marcar completada sin criterios PASS, evidencia y read-back. Actualizar el índice padre después de verificar este informe y entregar al operador el enlace individual y síntesis de solución, evidencia, bloqueantes y preocupaciones. No incluir secretos ni datos sensibles.
+
+
+## Plan por etapas para evitar que GOV-TASK-001 bloquee H1 · 2026-11-11
+
+La matriz completa de 43 positivos + 8 negativos/frontera sigue siendo obligatoria para cerrar esta tarea; no es condición de entrada del piloto P004.
+
+### Preparación en paralelo
+
+- Baseline único: DUG Samantha v388/NX-388m; commit 3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c; blob 4db0ebadfd1e48b2bdec9236ba7f344921e4a865.
+- Verificar que la matriz existente tenga entrada, expectativa y resultado por caso; no duplicar matriz ni reescribir 51 pruebas.
+- Preparar datos y tabla de resultados sin ejecutar contra candidata cuya rama/pin siga divergida.
+- P004 de GOV-TASK-003/008 valida el flujo vertical; no equivale a validación semántica completa de los 43 MDP.
+
+### Ejecución posterior a H1
+
+Después de SINK:P004_IPZ_E2E=PASS, ejecutar una corrida controlada de 43 positivos y 8 negativos/frontera contra el mismo pin y contrato Sink. Registrar por caso: ID/título, entrada, expectativa, respuesta MDP, pertinencia esperada/observada, necesidad de Sink, hash cotejado y falsos positivos/negativos.
+
+Repetir solo casos afectados por cambio de MDP, texto fuente, contrato, pin DUG o implementación. Si las huellas no cambian, conservar recibo; no reejecutar por rutina.
+
+### Autoridad de corrección
+
+Esta tarea produce evidencia y propuestas de corrección. No modifica DUG/MDP sin autorización expresa aplicable (P005). Toda propuesta identifica caso fallido, resultado esperado/observado, cambio mínimo y regresiones.
+
+**Criterio de cierre:** 51 resultados recuperables, falsos positivos/negativos, mapeo etiqueta–ID–título, evidencia de insuficiencia deliberada del MDP y read-back. Su ejecución posterior no bloquea primer P004.
