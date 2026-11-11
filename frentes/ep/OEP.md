@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.65. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.66. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -3533,3 +3533,49 @@ El workspace ZIP se subió sin cifrado cliente por excepción de urgencia ordena
 `EP_TASK_002=B2_UPLOAD_READBACK_PASS_4_OF_4` · `WORKSPACE_ISOLATED_RESTORE=SAME_HOST_PASS` · `VAULT_DECRYPT_RESTORE=NOT_RUN` · `CROSS_HOST_RESTORE=NOT_RUN` · `EP_TASK_003=PARTIAL_FAIL` · `EP_TASK_005=BLOCKED_ON_003_AND_P004_PACKAGE`.
 
 Secuencia: prioridad Backblaze ejecutada; desarrollo sintético P004 puede reanudarse en su ciclo existente; no se habilita instalación/aceptación EP.
+
+---
+
+## 132. Integración del método de planificación estructurada en las tareas EP · 2026-11-11
+
+**Origen:** instrucción directa del operador para consumir el piloto [EP-App v1.1.0 — plan de implementación (Writing Plans)](https://github.com/SeryMente/metodologia/blob/main/docs/superpowers/plans/2026-11-11-ep-app-persistent-environment.md), commit \`bea10756135a0f657bf5112374f457027cb02143\`, blob \`95b068e27e325a9d0341a864855bbdcf5c8c84bc\`.
+
+**Resultado documental:** se incorporó a EP-TASK-001–007 una planificación específica por línea de trabajo y al índice un contrato local para trabajos sustantivos. Cada README conserva su función de único núcleo de estado, crónica y aceptación de la tarea. No se creó un OCP, tablero ni bitácora paralelos.
+
+### Ideas transferidas
+
+- Línea base precisa: repositorio, rama, HEAD, commit, versión, archivos, manifiesto y entorno.
+- Trazabilidad requisito/decisión → cambio/interfaz/recurso → prueba → resultado esperado → evidencia.
+- Pasos pequeños, secuenciados, con precondiciones, entradas, salidas y dependencias.
+- Test-first, matriz positiva/negativa, límites, regresión, datos inconsistentes y Review Focus.
+- Gates por acción, separación entre interfaz y capacidad efectiva, revalidación al ejecutar y fail-closed.
+- Discrepancias visibles; verificación técnica separada de validación/aceptación humana.
+- Manifiesto, SHA/read-back, logs saneados, commit aislado, rollback y registro acumulativo.
+- Aplicación austera: no exigir un plan independiente para cambios triviales, conforme a P043.
+
+### Reconciliaciones
+
+1. TTL 3.600 s no se eleva a requisito aprobado: EP-TASK-004 conserva 15 s, 30 s, 1, 2, 3, 5, 10 y 15 min, default 5 min. 3.600 s queda PROPUESTA/PENDIENTE_DE_DECISIÓN, separado del máximo absoluto de 8 h de EP-TASK-007.
+2. La línea base consultada por el piloto (feat/ep-vault-session-mvp-20261110, HEAD 40967d08eafc81963adbfb60ad750f2d11cb9b65, fuentes v1.0.1) no se confundió con la candidata v1.0.0 probada ni con un v1.1.0 no localizado en ese árbol.
+3. Se preservó la restricción clean-room de EP-TASK-004. Construcción UX/UI, seguridad o arquitectura queda sujeta a P012/P013; esta actualización documental no equivale a revisión presencial ni a despacho.
+4. La separación de capacidades CanRestoreCheckpoint/CanSaveAndClose evita que un gate común bloquee un primer guardado legítimo; su revisión no habilita operaciones reales.
+5. Fail-closed se incorpora como expectativa de diseño y prueba, no como afirmación de que VHDX, BitLocker, B2, Guardian, crypto-erasure o EP-App estén implementados.
+
+### Estado y evidencia
+
+No cambian estados, prioridades, dependencias ni criterios de aceptación de EP-TASK-001–007. No se modificó código, Vault formal, credenciales, B2, host, volúmenes, ramas de producto, DUG, GOW ni CONTROL-RESPONSABILIDAD.json. Los ocho documentos fueron leídos de vuelta y cotejados con los blobs siguientes:
+
+
+| Núcleo | Commit de actualización | Blob leído de vuelta |
+|---|---|---|
+| EP-TASK-001 | 59a319d550b7e7dbc778debd3a533ca539159ead | 45cbfd662944e165ff269f3636832155f5392137 |
+| EP-TASK-002 | 19f9044945e080211deaef10cc66b41656ba1572 | 79f17111f97dd8ba1be0724148c1a0c9f4c440bf |
+| EP-TASK-003 | b8a2e430b70dde4d5e52a3e459216d0d2e851e87 | f90c7025a440045b87a753f4faadad196682248d |
+| EP-TASK-004 | a5a4a4d53dec61627e8bf45b78620a7e92fa9b00 | 50f2e1a702f709e7a834bbc9d10eaa41d4da69ac |
+| EP-TASK-005 | b301dd70888801caee6393b9501ea783a82079e6 | 1c71389b04590dec7e586628357dec3643b9e5df |
+| EP-TASK-006 | 6bcd944a27fc2db64ac25b3b4ed21dbf8dbf1f83 | 7ab4f3c2fa08876d8512fd60ec8b82b87c61704b |
+| EP-TASK-007 | 295362de7046656a81099b8d46e6286c28ba1013 | 0f54dc81ea28d925558a1f7163fa208f27e5827d |
+| Índice provisional | 2f002ada41d74aa16b989016ef5a07329f0950a2 | 627f89a5445357134d45fc51dde9565628a68469 |
+
+
+El plan experimental continúa como borrador independiente y no autoriza implementación, instalación, despliegue, merge ni aceptación. La incorporación metodológica tampoco completa ninguna tarea.
