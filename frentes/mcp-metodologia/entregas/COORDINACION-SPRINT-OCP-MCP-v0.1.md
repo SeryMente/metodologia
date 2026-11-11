@@ -1869,3 +1869,22 @@ Este suplemento solo registra la actualización de navegación y su cotejo. No r
 **Estado:** MCP-OCP-14 permanece PROPOSED / NOT ACCEPTED; solo P14-01_SCHEMA_FIXTURES_PASS_20_20. No hay runtime/IO ni ampliación de permisos. H1 permanece PAUSED_PENDING_EP_RESTORE_GATE; PR #27 continúa OPEN/DRAFT/NOT MERGED. MCP-NORMATIVO DESACTIVADO; FOL1 no activo. No se crea un nuevo folio ni ciclo DTC por esta nota incremental.
 
 **Siguiente acción:** respetar la pausa H1/EP. Mantener H2 en diseño/fixtures; la siguiente actividad útil será cerrar canonicalización e idempotencia con datos sintéticos, y revisar consistencia entre datasets/objects y semántica temporal antes de proponer ratificación de MCP-OCP-14.
+
+### Reanudación y resultado MCP-OCP · ciclo local 14 · 2026-11-11
+
+**Desviación de apertura:** el trabajo de inspección y reconciliación técnica comenzó antes de releer este objeto bilateral y GOV-TASK-015. Se registra `DTC_OPENING_LATE=TRUE`; no se reconstruye ni simula una apertura anterior. El ciclo local 13 permanece como antecedente sin renumeración.
+
+**Cursor y autoridad revalidados:** main incorporado hasta `9fa37906373e0a9af01f4ccec5060d59b8194ccb`; DUG Samantha v388/NX-388m, commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`, blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`; §ARR/`gow-sec-14` presente. Control MCP-OCP `owned`, generación 6, blob `76bd465909f5c68d623cc82dbf9c2467091cd98b`, sin modificación. FOL1 preparado/inactivo y CV/CY/A/B globales pendientes/no asignados.
+
+**Respuesta inicial al frente centralizador:** `ACKNOWLEDGED` al orden de GOV-TASK-015: rama limpia, portación selectiva, recibos ligados al commit, pruebas reproducibles y separación de las dependencias EP/IPZ. La PR #27 se conserva como referencia de lectura; no se fusiona ni se usa como base por su divergencia (53 ahead / 100 behind frente al main `7ab0c555...`).
+
+**Resultado de MCP-OCP-02:** rama `feat/mcp-ocp-p004-reconciled-20261111-7ab0c555`; commit de portación `6dda16a2fe9a5173f21ccdaaa23ba1ac9f9721c4` desde main `7ab0c555...`; sincronizaciones de dos padres incorporan commits EP posteriores, con último main `9fa37906373e0a9af01f4ccec5060d59b8194ccb`, último merge `d69bec6a9a56e3f5fb90bec6ce04fc7c56d86722`. Compare inmediato después de ese merge: AHEAD / 0 behind. Se portaron 19 archivos del ámbito MCP-OCP; el inventario REUSE/ADAPT/DROP/DEFER está en `piloto-sink/RECONCILIACION-20261111.md`. El core v0.1.31 y la lista provisional v0.13 reflejan los estados nuevos y los límites de validación.
+
+**Resultado MCP-OCP-03/04/05:** fuentes, proyectos y suites P004/monitor/readiness portados. Los siete blobs relevantes coinciden con contenidos de una validación local histórica (18/18 P004, 23/23 monitor/readiness, restore/build y STDIO/EOF PASS). Esa evidencia es histórica y no se declara reejecución en el commit actual. El entorno de esta sesión no dispone de `dotnet` ni `pwsh`: build, tests y smoke de la rama actual = `NOT_RUN`. No se generó ni reutilizó ZIP, manifest o checksum histórico.
+
+**Dependencias y límites:** EP-TASK-003/005 conservan sus gates; no se instala, extrae ni transfiere paquete a Fila 4. No se opera EP, B2, Vault, credenciales, host, IPZ ni Khora. Gobernanza mantiene la aceptación E2E desde contexto IPZ. MCP-NORMATIVO continúa DESACTIVADO.
+
+**Siguiente acción:** ejecutar restore/build, 18 pruebas P004, 23 monitor/readiness y smoke STDIO/EOF en un entorno con .NET SDK 10.0.403 y PowerShell 7.4+; después regenerar ZIP/manifest/checksums y verificar read-back del paquete exacto. Mantener la PR en DRAFT y no hacer merge. El ciclo no se declara completamente aceptado: `DTC_CYCLE_STATUS=INCOMPLETE` por apertura tardía y validación actual pendiente.
+
+**Estado:** `MCP_OCP_02=SELECTIVE_PORT_PERSISTED`; `MCP_OCP_03=HISTORICAL_BLOB_EQUIVALENCE_REEXEC_PENDING`; `MCP_OCP_04=SMOKE_REEXEC_PENDING_IPZ_E2E_NOT_ACCEPTED`; `MCP_OCP_05=P004_PORTED_BUILD_PACKAGE_PENDING`; `EP_INSTALL=BLOCKED_EP_GATES`; `HOSTED_CI=NOT_VERIFIED`; `MCP_NORMATIVO=DESACTIVADO`; `FOL1=PREPARADO_PENDIENTE_ACTIVACION_IPZ`.
+
