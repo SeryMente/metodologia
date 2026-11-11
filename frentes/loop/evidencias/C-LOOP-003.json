@@ -1,0 +1,106 @@
+{
+  "schema": "loop.input-analysis-evidence.v1",
+  "event_id": "C-LOOP-003-SOURCE-01",
+  "recorded_on": "2026-11-11",
+  "status": "SOURCE_PRESERVED_GROQ_REVIEW_PENDING",
+  "repository": "SeryMente/metodologia",
+  "branch": "main",
+  "front": "loop",
+  "front_ocp": "frentes/loop/",
+  "source": {
+    "role": "operator",
+    "surface": "current conversation attachment",
+    "attached_filename": "Texto pegado(20261111-194556).txt",
+    "source_path": "frentes/loop/conversaciones/C-LOOP-003-entrada-verbatim.txt",
+    "source_native_message_id": null,
+    "source_native_id_status": "NOT_EXPOSED",
+    "encoding": "UTF-8",
+    "line_count": 60,
+    "character_count": 65884,
+    "byte_length": 67165,
+    "sha256": "E25E047B54E8313B3D08E8A8C0CBA11D0D5C792D642206AE8D14B4D654A78531",
+    "github_blob_sha": "b1aec0118f1a5aa2fe03d64ed0528533be02d1db",
+    "github_commit": "5c572dbb2f550821b3e0c82b530afbabf1c112ea",
+    "readback_exact": true,
+    "preservation_rule": "Literal source preserved. No spelling correction, normalization, deduplication, reordering, or completion. All interpretation must remain separate.",
+    "ending": "Source truncates at «...los modelos de frontera son muchísimo...». Not completed."
+  },
+  "provenance_record": {
+    "path": "frentes/loop/conversaciones/C-LOOP-003-dialogo.jsonl",
+    "github_blob_sha": "bf76fbda05960334aa979db6ea0b1d4970753a40",
+    "github_commit": "f6603c1b18022cb2c13ae65974c0e48318cd9c72",
+    "readback_exact": true
+  },
+  "methodology": {
+    "dug": "Samantha v388 · NX-388m",
+    "dug_path": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.html",
+    "dug_blob_sha": "4db0ebadfd1e48b2bdec9236ba7f344921e4a865",
+    "metacanon": "v1.29",
+    "gow": "v2.18",
+    "governing_source": "SeryMente/metodologia/main",
+    "foliation_rule": "FOL1 PREPARADO/NO ACTIVO; global CV/CY/A/B remain PENDING/NOT ASSIGNED",
+    "mcp_normative": "DESACTIVADO",
+    "applicable_method_sections": [
+      "§4",
+      "§27",
+      "§28",
+      "§29",
+      "§39",
+      "§43–§51",
+      "§52"
+    ]
+  },
+  "front_control": {
+    "initialization_event": "C-LOOP-INICIO-01",
+    "preexisting_front": true,
+    "duplicate_front_created": false,
+    "responsibility_control_modified": false,
+    "uuidv7_local": "01a1cb67-173a-785c-a7c4-98c377ce1960",
+    "owner_alias": "chatgpt-loop-01a1cb67-173a-785c-a7c4-98c377ce1960",
+    "generation": 1,
+    "fol1": "PREPARADO/NO ACTIVO"
+  },
+  "groq_request": {
+    "requested_by_operator": true,
+    "provider": "Groq",
+    "endpoint": "https://api.groq.com/openai/v1/chat/completions",
+    "model": "openai/gpt-oss-120b",
+    "input_requirement": "The exact complete original source file above, not a summary or structured content map.",
+    "planned_reasoning_effort": "high",
+    "execution_status": "NOT_SENT",
+    "block": "EP Vault shared session unavailable at execution preflight; Get-EpVaultSession returned VAULT_SESSION_NOT_OPEN.",
+    "vault": {
+      "correct_source": "EP Vault",
+      "expected_variable_name": "VERCEL_KHORA_WEB_ALL_GROQ_API_KEY",
+      "secret_retrieved_this_cycle": false,
+      "secret_disclosed": false,
+      "secret_persisted": false,
+      "KHORA_vault_used": false
+    },
+    "request_id": null,
+    "usage": null,
+    "raw_response_path": null
+  },
+  "remote_custody": {
+    "path": "EP/local-state/run-logs/C-LOOP-003-original-verbatim.txt",
+    "remote_sha256_verified": true,
+    "sha256": "E25E047B54E8313B3D08E8A8C0CBA11D0D5C792D642206AE8D14B4D654A78531"
+  },
+  "acceptance": {
+    "source_preservation": "VERIFIED",
+    "exact_remote_readback": "VERIFIED",
+    "canonical_github_readback": "VERIFIED",
+    "independent_model_review": "PENDING_EP_VAULT_SESSION",
+    "narrative_reconstruction_from_gpt_oss": "PENDING",
+    "operator_acceptance": "PENDING"
+  },
+  "no_action": {
+    "no_methodology_governance_changed": true,
+    "no_other_front_control_changed": true,
+    "no_external_groq_request_sent": true,
+    "no_gmail_accessed": true,
+    "no_workshop_repository_created": true,
+    "no_crew_ai_benchmark_performed": true,
+    "no_secret_written_to_git": true
+  }
+}
