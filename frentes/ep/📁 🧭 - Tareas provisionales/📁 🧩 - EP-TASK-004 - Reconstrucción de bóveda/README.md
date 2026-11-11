@@ -717,3 +717,42 @@ La suite del release exacto se reprodujo de forma independiente en Fila 4 con un
 - **Límite de procedencia local:** la carpeta `Desktop\SeryMente\Repositorios\Metodologia\metodologia\frentes\ep\...\EP-TASK-004` inspeccionada en esta sesión conserva un snapshot anterior (test `9230985801885c7cdd9202c2cfd041a6265ee80e`, Core `8a49d740e3c7b4c3b3be8e1aaf728b63a0d073e1`, CLI `cf1fe2d30c8f2f4c9913448260c3212a3bb7d9ce`, GUI `50a5ebd4e255400aee5a22ea106fd4fde9679c22`, XAML `6e56b9ddbdf5aa79dd635d16f5296ec27a44101a`). No se alteró. La ruta absoluta usada por la corrida previa de 165,41 s no quedó especificada en su informe; no se atribuye esa corrida a este checkout.
 - **Estado:** la candidata v1.0.0 obtiene una segunda verificación sintética PASS. La copia canónica de código bajo Desktop/SeryMente no se declara actualizada; la integración de PR #21 y la materialización del release en la ruta definitiva requieren su propio read-back. H10 y aceptación final permanecen PENDIENTES.
 
+
+
+## Plan técnico estructurado derivado del piloto Writing Plans · 2026-11-11
+
+**Documento consumido:** [plan experimental EP-App v1.1.0](https://github.com/SeryMente/metodologia/blob/main/docs/superpowers/plans/2026-11-11-ep-app-persistent-environment.md). El plan continúa siendo un artefacto experimental independiente; esta sección integra sus buenas prácticas en el núcleo EP-TASK-004 sin convertirlo en autorización de implementación.
+
+### 1. Reconciliación de requisitos y línea base
+
+Antes de construir, fijar en un manifiesto de trabajo: rama, HEAD, commit de release, Git blob de cada fuente, MANIFEST, versión, archivos y entorno de prueba. Reconciliar expresamente:
+- La candidata v1.0.0 probada está en feat/ep-vault-pc7-hardened-20261109, release db4138ca2879148f2f22f159c7609f5fa3466924; sus H7/H8 sintéticos están PASS, pero H10 y merge a main siguen pendientes.
+- El plan experimental consultó feat/ep-vault-session-mvp-20261110, HEAD 40967d08eafc81963adbfb60ad750f2d11cb9b65, con fuentes MOD-EPVAULT/v1.0.1. No se localizó v1.1.0 en ese árbol.
+- El reporte conversacional de EP-App v1.1.0/3600 s se conserva como reportado, no como fuente de código verificada. Ninguna rama se declara prevalente por inferencia: documentar el delta y obtener una línea base aprobada antes de copiar/modificar.
+
+### 2. Reconciliar la política TTL
+
+EP-TASK-004 conserva como requisitos documentados el selector 15 s, 30 s, 1, 2, 3, 5, 10 y 15 min, con predeterminado de 5 min. El TTL 3.600 s del piloto es una propuesta incompatible con ese conjunto y con su máximo de 15 min. Se registra como PROPUESTA/PENDIENTE_DE_DECISIÓN; no se sustituye la política ni se incorpora a los valores admitidos sin decisión expresa y evaluación de seguridad. Mantener separado el límite absoluto de 8 h de EP-TASK-007.
+
+### 3. Secuencia de implementación por cortes
+
+1. **Baseline y pruebas de caracterización:** reproducir la suite exacta de la línea base en LOCALAPPDATA temporal; fijar salida, exit code, duración y SHA del log saneado. No abrir ni modificar Vault formal.
+2. **Backend y TTL:** escribir primero pruebas para valores válidos, inválidos, expiración, integridad de metadatos y compatibilidad con sesiones históricas; centralizar la política entre Core/CLI/GUI para evitar ValidateSet/listas divergentes. No cambiar el valor predeterminado vigente.
+3. **Experiencia clean-room:** respetar cero reutilización de píxeles/recursos/UI legacy. La elección de estructura UX/UI, stack o perímetro de seguridad sigue sujeta a P012/P013; no iniciar construcción de ese alcance sin la revisión/candados aplicables. La preservación del backend no autoriza reutilizar piezas visuales.
+4. **ENTORNO PERSISTENTE y capacidades:** separar preferencia de interfaz de capacidades demostradas. Mostrar NO VERIFICADO y motivo cuando falte evidencia; no conceder capacidad por toggle. Crear funciones puras de evaluación de capacidades y probar combinaciones de estados.
+5. **Gates independientes por acción:** no utilizar una única condición compartida para restaurar y guardar/cerrar. Evaluar por separado CanRestoreCheckpoint y CanSaveAndClose, con requisitos y razones propios. Probar explícitamente el primer guardado sin checkpoint previo; una restauración histórica no debe ser precondición implícita de la primera captura. Esta separación queda como requisito de diseño a revisar dentro de los candados UX/seguridad/arquitectura, no como autorización para activar operaciones reales.
+6. **Handlers fail-closed:** reevaluar el gate al hacer clic; deshabilitar por defecto; tras error recalcular desde evidencia fresca. Prohibir re-enable incondicional en finally. Una capacidad no demostrada nunca llama a Mount/Save/Erase ni a operaciones de host.
+7. **Pruebas, empaquetado y release:** correr pruebas sintéticas, parseo XAML, smoke WPF aislado, regresión PowerShell 5.1, matriz de estados y ausencia de efectos laterales; calcular manifest Git blob/SHA, hacer read-back y commit aislado. No instalar, desplegar, mergear a main ni declarar H10 aceptado por un PASS sintético.
+
+### 4. Review Focus
+
+- TTL válido/inválido, round-trip y metadatos inconsistentes; preservación de las opciones y default vigentes.
+- Vault sellada/expirada, VHDX ausente, BitLocker Off, checkpoint no cifrado, restore no validado y datos contradictorios.
+- Toggle no habilita acciones; cada botón vuelve a evaluar sus condiciones.
+- La primera captura puede guardarse cuando sus precondiciones específicas estén verificadas, sin exigir una restauración previa que no puede existir.
+- Ningún fixture/log contiene secretos ni toca la bóveda formal, B2, DiskPart o BitLocker.
+- Limpieza temporal y ausencia de procesos/archivos residuales; manifiesto/read-back exactos.
+
+### 5. Cierre y aceptación separados
+
+H7/H8 sintético, H10 visual/auditivo presencial y aceptación del operador son resultados distintos. Mantenerlos separados. El producto no se integra a main ni reemplaza el release hasta superar sus gates; toda discrepancia, cambio de requisito, excepción o rollback queda en esta crónica con procedencia.
