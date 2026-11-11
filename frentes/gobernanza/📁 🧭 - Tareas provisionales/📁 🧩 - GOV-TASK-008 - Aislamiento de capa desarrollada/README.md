@@ -178,3 +178,20 @@ Lotes, orden, hash global de manifiesto y telemetría de 43 principios se verifi
 Respuesta capturada por camino real y cotejada contra texto DUG; identidad/pin DUG; ID/título; SHA del principio; un evento de frecuencia; un negativo que no incrementa; read-back del informe. MCP-OCP acredita prueba técnica/paquete; EP acredita instalación; Gobernanza acepta semántica y E2E.
 
 **Estado:** contrato mínimo P004 aclarado; no hay aceptación técnica ni E2E por esta actualización.
+
+---
+## Reconciliación estática del schema piloto P004 · 2026-11-11
+
+La revisión de solo lectura del candidato PR #27 identificó este contrato declarado por MCP-OCP:
+
+- Herramienta: sink_principle.
+- Entrada: objeto con propiedad principle_id de tipo string y enum limitado a P004.
+- Propiedad requerida: principle_id; additionalProperties=false.
+- Invocación declarada: tools/call con name=sink_principle y arguments={principle_id:P004}.
+- Otro ID devuelve PILOT_ONLY_SUPPORTS_P004; por tanto el piloto no expone P001–P043 completos.
+
+**Fuente:** frentes/mcp-metodologia/src/OcpMcp/McpServer.cs, blob 0b116f82edb2fe60fa2351c12f7b6c7850e146e8, rama feat/mcp-ocp-sink-p004-main-a34c1c5b, PR #27 head 5cc59b708c1d5894e7dbfd2a724504fdf5b92974. Al corte: PR OPEN/DRAFT/NOT MERGED; main d167c17d2882e05821f28ce19f7e505fc460c4a1; compare DIVERGED 53 ahead / 160 behind. Es inspección estática de una candidata no aceptada; no demuestra el schema publicado por proceso instalado.
+
+**Condición para congelar contrato:** MCP-OCP debe reconciliar su candidata con main y entregar el artefacto final. EP instala ese artefacto. Luego GOV-TASK-003 verifica tools/list por la conexión real y coteja tools/call. No inventar nombres ni argumentos alternativos.
+
+**Estado:** mapping documental P004 preparado; runtime/read-back y aceptación E2E NO_VERIFICADOS.

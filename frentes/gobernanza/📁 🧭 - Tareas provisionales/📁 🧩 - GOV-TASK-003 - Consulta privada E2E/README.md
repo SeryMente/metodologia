@@ -148,3 +148,16 @@ No ejecutar aquí P001–P043, batch, matriz 43+8, panel, FOL1, MCP-NORMATIVO, r
 Un solo recibo con precondiciones/fuentes; commit/versión servidor y hash paquete; llamadas y respuesta visible P004; cotejo ID/título/texto/pin/blob/SHA; evento de frecuencia positivo y ausencia en negativo; EOF, fallos, límites, rollback y PASS/FAIL/NOT_RUN; enlaces a informe MCP-OCP y recibo EP.
 
 **Estado:** procedimiento preparado; instalación y E2E no ejecutadas.
+
+---
+## Addendum de schema piloto P004 · 2026-11-11
+
+La inspección estática de la candidata PR #27 indica:
+- tools/list declara sink_principle.
+- inputSchema: objeto; propiedad requerida principle_id, string, enum [P004]; additionalProperties=false.
+- tools/call: name=sink_principle, arguments={principle_id:P004}.
+- Cualquier otro ID no está habilitado por este piloto y debe fallar cerrado.
+
+Fuente: McpServer.cs blob 0b116f82edb2fe60fa2351c12f7b6c7850e146e8 en PR #27, rama draft divergida. Es lectura estática, no prueba de instalación ni schema runtime. Antes de E2E, releer tools/list en el piloto instalado y cotejar. Cualquier diferencia detiene solo la prueba y se devuelve a MCP-OCP.
+
+**Estado:** llamada parametrizada documentalmente sin inventar argumentos; instalación EP y E2E IPZ siguen NOT_RUN.

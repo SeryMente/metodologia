@@ -981,3 +981,21 @@ El primer hito es **una recuperación P004 visible desde el contexto IPZ real**,
 H1 PASS requiere conjuntamente: rama/candidato reconciliado, manifest/ZIP íntegros, contrato y smoke reproducibles sobre el artefacto exacto, instalación/read-back EP y respuesta P004 visible desde IPZ real por RDC/STDIO con texto íntegro, ID/título, pin DUG, commit/blob y SHA-256. Build, 41 pruebas, smoke de consola o paquete aislado no bastan por separado.
 
 **Estado de este rebaseline:** instrucciones y secuencia optimizadas; no se declara ejecución técnica, instalación, escritura nativa IPZ ni aceptación E2E por esta actualización.
+
+---
+## Corte incremental Gobernanza · IPZ v0.9 y contrato Sink P004 · 2026-11-11
+
+**Trabajo Gobernanza:** GOV-TASK-007 produjo la candidata documental v0.9; GOV-TASK-008 cotejó estáticamente el schema del piloto P004; GOV-TASK-003 incorporó el argumento observado y mantiene el procedimiento E2E. No se modificaron DUG, controles, código MCP-OCP, OEP/EP, IPZ nativa, FOL1, Vault ni B2.
+
+### Evidencia
+- Candidata IPZ: entregas/CHATGPT-v0.9/IPZ-CAMPO-CHATGPT-v0.9-PROPUESTA.txt; 1.479 UTF-16/1.475 puntos de código LF; SHA-256 ea0001b962cea9e59ef7f0ed5bd1a47e82a147eb09ea4eed077bc75cc8f20aa3. Con CRLF mide 1.496 UTF-16.
+- Schema observado estáticamente: sink_principle, argumento principle_id, enum P004; fuente McpServer.cs blob 0b116f82edb2fe60fa2351c12f7b6c7850e146e8.
+- Main al iniciar: d167c17d2882e05821f28ce19f7e505fc460c4a1. PR #27 OPEN/DRAFT/NOT MERGED; head 5cc59b708c1d5894e7dbfd2a724504fdf5b92974; compare DIVERGED 53 ahead / 160 behind. La candidata sigue sin reconciliar; Gobernanza no corrige manifest/ZIP ni branch ajena.
+- EP-TASK-003 PARTIAL_FAIL / EP-TASK-005 BLOCKED; no instalación ni E2E. FOL1 PREPARADO/NO ACTIVO; MCP-NORMATIVO DESACTIVADO.
+
+### Siguiente movimiento
+1. MCP-OCP: reconciliar rama y entregar manifest/ZIP consistentes, recibos build/tests/smoke sobre artefacto final.
+2. EP: completar gates de host y después instalar/read-back el paquete.
+3. Gobernanza: verificar tools/list runtime y ejecutar GOV-TASK-003 desde IPZ real. FOL1 conserva su propio gate sin bloquear H1.
+
+**Conclusión:** preparación textual IPZ VERIFICADA; compatibilidad runtime, instalación nativa y E2E permanecen NO_VERIFICADAS/NOT_RUN.

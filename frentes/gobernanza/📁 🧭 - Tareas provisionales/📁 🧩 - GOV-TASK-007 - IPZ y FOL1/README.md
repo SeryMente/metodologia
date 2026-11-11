@@ -177,3 +177,36 @@ FOL1 permanece PREPARADO_PENDIENTE_ACTIVACION_IPZ. Solo evaluar tras IPZ nativa 
 | FOL1 | Gate independiente; preparado hasta probar IPZ instalada y requisitos propios. |
 
 GOV-TASK-007 puede completar su preparación documental antes de que EP-TASK-003 habilite Fila 4; no declarar instalación ni activación por esa preparación.
+
+---
+## Candidata documental IPZ v0.9 · fast path P004 · 2026-11-11
+
+**Resultado:** PROPUESTA_DOCUMENTAL_PREPARADA · no instalada · no aceptada como IPZ nativa.
+
+### Baselines cotejados
+- v0.7: 69a6d9a2edbca6fdd6055642a86efce78ec19f5f · 2.467 unidades de texto.
+- v0.8: 4176b4e328becfe4a98b5f96241e2ac198eccd80 · 1.488 unidades; no conserva explícitamente los seis estados ni todo el contrato de eficiencia de v0.7. No se acepta como sustitución íntegra.
+- v0.9: [texto candidato](../../entregas/CHATGPT-v0.9/IPZ-CAMPO-CHATGPT-v0.9-PROPUESTA.txt) · SHA-256 UTF-8/LF ea0001b962cea9e59ef7f0ed5bd1a47e82a147eb09ea4eed077bc75cc8f20aa3.
+
+### Medición y cobertura
+| Medida | Resultado |
+|---|---:|
+| UTF-16, saltos LF | 1.479 |
+| Puntos de código, saltos LF | 1.475 |
+| UTF-16, normalizando saltos CRLF | 1.496 |
+| Puntos de código, CRLF | 1.492 |
+| Límite | Menor de 1.500 |
+
+La propuesta conserva: GOW:ARR/§ARR antes del DUG; principios en orden y anexos por remisión; los cinco CNP completos; MDP como orientación y Sink como recuperación íntegra obligatoria antes de aplicar; piloto restringido a P004; A/B literal, secuencia/procedencia, UUIDv7 local distinto del ID nativo; preescritura con control/titular/generación/autorización; transferencia con autorización expresa, generación/SHA cotejadas, read-back y preservación de rutas; seis estados explícitos; GOW inicio/cierre; MCP-NORMATIVO DESACTIVADO; P043/PAI y reducción de redundancias sin omitir controles; salida y metadatos d.h.m; FOL1 activo como condición para asignar folios y no inventar/renumerar legados.
+
+### Contrato Sink observado y límite
+La rama draft PR #27 declara estáticamente sink_principle con argumento principle_id=P004. Fuente: frentes/mcp-metodologia/src/OcpMcp/McpServer.cs, blob 0b116f82edb2fe60fa2351c12f7b6c7850e146e8, rama feat/mcp-ocp-sink-p004-main-a34c1c5b. Es inspección estática de una PR OPEN/DRAFT/DIVERGED, no read-back de servidor instalado ni evidencia runtime. Antes de congelar la IPZ para instalación, MCP-OCP debe entregar esquema reconciliado y EP el piloto instalado; GOV-TASK-003 conserva la aceptación E2E real.
+
+### Estado de compuertas
+- Texto candidato y conteo: VERIFICADO documentalmente.
+- Compatibilidad de schema: observada estáticamente; read-back runtime PENDIENTE.
+- Campo nativo de Instrucciones Personalizadas: NO MODIFICADO / NO VERIFICADO.
+- FOL1: PREPARADO_PENDIENTE_ACTIVACION_IPZ; maestro gen4, contadores globales/OCP en cero.
+- GOV-TASK-003 E2E: NOT_RUN. MCP-NORMATIVO: DESACTIVADO.
+
+**Conclusión:** la etapa documental de GOV-TASK-007 produce un candidato medido y recuperable. La tarea global sigue EN_CURSO hasta autorización, instalación/read-back nativo y compuertas separadas. FOL1 no se activa por preparar este archivo.

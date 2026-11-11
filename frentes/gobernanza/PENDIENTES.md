@@ -360,3 +360,14 @@ La fotografía activa del sprint se centraliza en [GOV-TASK-015 · Sprint SINK-P
 - **Después de P004:** generalización P001–P043, matriz 43+8 y panel WPF para release 1.0.0.
 
 `SINK_P004=NOT_IMPLEMENTED_NOT_ACCEPTED` · `FOL1=PREPARADO_PENDIENTE_ACTIVACION_IPZ` · `MCP-NORMATIVO=DESACTIVADO`.
+
+---
+## Rebaseline operativo IPZ/Sink · 2026-11-11
+
+- **DUG:** Samantha v388/NX-388m; blob 4db0ebadfd1e48b2bdec9236ba7f344921e4a865; 43 principios, 24 anexos, Metacanon 1.29, GOW 2.18; ART-025/027 verificados.
+- **IPZ:** v0.7 baseline 2.467; v0.8 1.488 pero incompleta respecto de estados/eficiencia. Nueva candidata [v0.9](entregas/CHATGPT-v0.9/IPZ-CAMPO-CHATGPT-v0.9-PROPUESTA.txt): 1.479 UTF-16/1.475 puntos de código LF; SHA-256 ea0001b962cea9e59ef7f0ed5bd1a47e82a147eb09ea4eed077bc75cc8f20aa3. No instalada; IPZ nativa NOT_VERIFIED.
+- **MCP-OCP:** control actual gen6. PR #27 OPEN/DRAFT/NOT MERGED; head 5cc59b708c1d5894e7dbfd2a724504fdf5b92974; compare contra main d167c17d2882e05821f28ce19f7e505fc460c4a1 = DIVERGED, 53 ahead / 160 behind. La candidata declara estáticamente sink_principle/principle_id=P004; no es runtime aceptado.
+- **EP:** EP-TASK-003 PARTIAL_FAIL; EP-TASK-005 BLOCKED. No hay instalación Fila 4 ni E2E IPZ.
+- **FOL1:** PREPARADO_PENDIENTE_ACTIVACION_IPZ; contadores en cero; no asignar folios. MCP-NORMATIVO DESACTIVADO.
+
+La preparación documental de GOV-TASK-007 está ejecutada; GOV-TASK-003 permanece NOT_RUN y GOV-TASK-008 conserva el contrato P004 sujeto a validación runtime.

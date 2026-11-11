@@ -456,3 +456,15 @@ El informe individual fue persistido y leído de vuelta: [GOV-TASK-015 · Sprint
 **Corte:** main 446e69251335a51fe8d4c01495c3738b11d5808c; PR #27 head 5cc59b708c1d5894e7dbfd2a724504fdf5b92974, OPEN/DRAFT, compare DIVERGED 53 ahead / 145 behind. EP-TASK-002 v7 upload/read-back y descifrado aislado PASS; cross-host NOT_RUN. EP-TASK-003 PARTIAL_FAIL y EP-TASK-005 BLOCKED. Sin instalación ni E2E; H1 NO ACEPTADO.
 
 **Regla:** avanzar por entregable observable; cada gate bloquea solo su etapa; reutilizar pruebas/recibos si las huellas no cambian; no crear tareas, folios, ramas o paquetes nuevos si un artefacto existente puede reconciliarse. Este índice no modifica tareas/controles EP o MCP-OCP.
+
+---
+## Corte de avance Gobernanza · candidata IPZ v0.9 · 2026-11-11
+
+| Tarea | Resultado Gobernanza | Pendiente |
+|---|---|---|
+| GOV-TASK-007 | Candidata IPZ v0.9 creada, medida y vinculada; salvaguardas cotejadas. | Instalación nativa/read-back y corte FOL1 por separado. |
+| GOV-TASK-008 | Contrato estático P004 cotejado con el schema declarado en la candidata MCP. | Validar tools/list/runtime tras reconciliación e instalación. |
+| GOV-TASK-003 | Criterio E2E actualizado con herramienta y argumento P004 observados. | IPZ real, EP-TASK-003 PASS, EP-TASK-005 instalado y E2E visible. |
+| GOV-TASK-015 | Camino crítico y límites interfrentes actualizados. | Rama/paquete MCP-OCP y host/instalación EP siguen siendo de sus propietarios. |
+
+**Candidata:** entregas/CHATGPT-v0.9/IPZ-CAMPO-CHATGPT-v0.9-PROPUESTA.txt · UTF-16 1.479 LF / 1.496 CRLF · SHA-256 LF ea0001b962cea9e59ef7f0ed5bd1a47e82a147eb09ea4eed077bc75cc8f20aa3. No equivale a instalación IPZ nativa.
