@@ -1,0 +1,55 @@
+{
+  "schema": "mcp-ocp-sink-source-pin/v1",
+  "repository": "SeryMente/metodologia",
+  "ref": "main",
+  "commit": "3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c",
+  "path": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.html",
+  "git_blob_sha": "4db0ebadfd1e48b2bdec9236ba7f344921e4a865",
+  "dug": {
+    "version": "v388",
+    "signature": "NX-388m",
+    "event": "C-GOBERNANZA-ART027-SINK-LOCAL-RECONCILIACION-20261110-01",
+    "principles": 43,
+    "metacanon": "1.29",
+    "gow": "2.18",
+    "commit": "3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c"
+  },
+  "gow_arr": {
+    "section_id": "gow-sec-14",
+    "anchor": "#gow-arranque-chatgpt"
+  },
+  "sink": {
+    "principle_id": "P004",
+    "title": "Principio de No-Simulación 🔒",
+    "human_anchor": "#P004",
+    "microdescriptor": "Exigir hechos verificables; activarlo ante afirmaciones sobre capacidades, datos, acciones o certezas.",
+    "normative_text": "No finjas capacidades, datos, resultados ni certezas, ni declares límites sin verificar con herramientas. Marca tu certeza y nombra los huecos sin rellenarlos. Precedencia absoluta sobre la exhaustividad y el buen trato."
+  },
+  "build": {
+    "sdk": "10.0.403",
+    "external_package_dependencies": [],
+    "pilot_runtime_identifier": null,
+    "pilot_mode": "framework-dependent",
+    "release_runtime_identifier": "win-x64",
+    "release_self_contained": true,
+    "monitoring_library": "net10.0",
+    "panel_target_framework": "net10.0-windows",
+    "panel_runtime_identifier": "win-x64",
+    "panel_publish_profile": "src/OcpMcp.Panel/Properties/PublishProfiles/win-x64.pubxml",
+    "monitor_schema_version": 1
+  },
+  "verification": "LOCAL_WINDOWS_VALIDATION_PASS: .NET SDK 10.0.403; server build PASS; P004 18/18; monitor/readiness 23/23; MCP STDIO initialize/tools/list/tools/call/EOF PASS; package ZIP extracted and all 9 files matched manifest SHA-256; packaged executable P004 smoke PASS. Build source commit b6ce37af1dc32b2e3bb8af3ded2a77c7ba6d7648. EP installation and IPZ E2E acceptance are not claimed.",
+  "branch_base_sha": "7ab0c555b774adc5b930aad700f101ab2660b79a",
+  "branch": "feat/mcp-ocp-p004-reconciled-20261111-7ab0c555",
+  "reconciliation": {
+    "date": "2026-11-11",
+    "initial_main": "7ab0c555b774adc5b930aad700f101ab2660b79a",
+    "latest_main": "9fa37906373e0a9af01f4ccec5060d59b8194ccb",
+    "port_commit": "6dda16a2fe9a5173f21ccdaaa23ba1ac9f9721c4",
+    "latest_sync_merge": "d69bec6a9a56e3f5fb90bec6ce04fc7c56d86722",
+    "report": "frentes/mcp-metodologia/piloto-sink/RECONCILIACION-20261111.md",
+    "status": "SELECTIVE_PORT_PERSISTED_BUILD_TESTS_AND_NEW_PACKAGE_PENDING",
+    "historical_build_commit": "b6ce37af1dc32b2e3bb8af3ded2a77c7ba6d7648",
+    "note": "Code/test blobs match an older local validation, but this branch has not had a fresh restore/build/test/smoke. Historical ZIP/manifest are not reused."
+  }
+}
