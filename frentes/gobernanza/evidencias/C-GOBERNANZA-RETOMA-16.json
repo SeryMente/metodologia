@@ -29,7 +29,11 @@
     },
     "active_responsibles_after_write": 2,
     "maximum": 2,
-    "foliation": "FOL1 PREPARADO · NO ACTIVO; sin folios CV/CY/A/B, SES ni OCP"
+    "foliation": "FOL1 PREPARADO · NO ACTIVO; sin folios CV/CY/A/B, SES ni OCP",
+    "status": "VERIFIED_READBACK",
+    "control_write_commit_sha": "ba369c4c321f1355907d9b5fc2d7aa7ad13ad3a3",
+    "control_readback_blob_sha": "14dfb466fa950e9ed78026e65044280c55128122",
+    "readback_verified": true
   },
   "cycle": {
     "local_cycle_id": "C-GOBERNANZA-RETOMA-16-CY01",
@@ -118,5 +122,77 @@
     "EP host/control unchanged",
     "MCP-OCP code/control unchanged",
     "no secrets read or exposed"
-  ]
+  ],
+  "registration": {
+    "initial_write_commit_sha": "ba369c4c321f1355907d9b5fc2d7aa7ad13ad3a3",
+    "initial_write_parent_sha": "ab520fc33dccec0c8da4d639d3aabbe72b6767ce",
+    "initial_write_tree_sha": "b27375e375af478bd0d3e86e8b424977c643867a",
+    "initial_write_readback_verified": true,
+    "final_control_blob_sha": null,
+    "note": "El primer commit se leyó de vuelta exactamente; este commit incorpora el recibo de verificación al control, README y manifiesto. Se realiza una última lectura de vuelta después de este commit."
+  },
+  "verification": {
+    "write_commit_sha": "ba369c4c321f1355907d9b5fc2d7aa7ad13ad3a3",
+    "readback_required": true,
+    "readback_verified": true,
+    "readback_verified_on": "2026-11-12",
+    "sha_algorithm": "SHA-256 sobre contenido UTF-8 + Git blob SHA",
+    "cas": {
+      "branch": "main",
+      "expected_parent_sha": "ab520fc33dccec0c8da4d639d3aabbe72b6767ce",
+      "updated_to": "ba369c4c321f1355907d9b5fc2d7aa7ad13ad3a3",
+      "success": true
+    },
+    "files": [
+      {
+        "path": "frentes/gobernanza/documentos/derivados/ChatGPT-Gobernanza-1-20261112-1133-captura-visible.md",
+        "blob_sha": "697c687c0b2239be7fbaaa4364bcc757a29f4300",
+        "sha256": "3F5A0BE2E5DC2D180BA89D18C717939BBE4E8ADFB2796573DD4F29362712AFD2",
+        "bytes": 10084,
+        "content_exact": true
+      },
+      {
+        "path": "frentes/gobernanza/conversaciones/C-GOBERNANZA-RETOMA-16-dialogo.jsonl",
+        "blob_sha": "5e403018580b33e870a99e2e29b4cc16db38d574",
+        "sha256": "308752A365D6B458E2DE04285B83A8D877CEF1371035C8437B29E9AD4C329106",
+        "bytes": 8888,
+        "content_exact": true
+      },
+      {
+        "path": "frentes/gobernanza/cronica/C-GOBERNANZA-RETOMA-16.md",
+        "blob_sha": "7ba918e21f631f1b4eb017f6c93e0d341b4d567b",
+        "sha256": "11F0CB877C99B726579D335098B1D01478678B60654D439B99816E675A303B06",
+        "bytes": 4213,
+        "content_exact": true
+      },
+      {
+        "path": "frentes/gobernanza/evidencias/C-GOBERNANZA-RETOMA-16.json",
+        "blob_sha": "64d23116b54b010dbd4f7e7744f4f1ebb3d47ff9",
+        "sha256": "74A2FC6B0FC11D7B225D182C5D501171525C08016019EFCB7972CF10F1E03E3B",
+        "bytes": 4188,
+        "content_exact": true
+      },
+      {
+        "path": "frentes/gobernanza/CONTROL-RESPONSABILIDAD.json",
+        "blob_sha": "14dfb466fa950e9ed78026e65044280c55128122",
+        "sha256": "A35593B01DE246BDADAB8476F8C1EE39A8C074AC5AE76C36BD7AF59F269C0016",
+        "bytes": 125512,
+        "content_exact": true
+      },
+      {
+        "path": "frentes/gobernanza/documentos/MANIFIESTO-DOCUMENTAL.json",
+        "blob_sha": "2e4f6721dd926586f476f2b6564eecd5069f27fc",
+        "sha256": "681296739D308B3D78E6045853DECC8A509CF897F02C9373F0E382C7D61BF27E",
+        "bytes": 17933,
+        "content_exact": true
+      },
+      {
+        "path": "frentes/gobernanza/README.md",
+        "blob_sha": "96380472e9a62006fa662f01a4ea3ec7642032c8",
+        "sha256": "8425E020D90909B0BA7C2669ECD392363A44D9B66F8CE1179B86EB1D9C7694F1",
+        "bytes": 30197,
+        "content_exact": true
+      }
+    ]
+  }
 }

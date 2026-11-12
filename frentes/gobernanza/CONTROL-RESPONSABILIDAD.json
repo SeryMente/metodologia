@@ -1379,9 +1379,28 @@
         "cycle_number": 1
       },
       "foliation_status": "LEGACY_PRE_CUTOVER",
-      "status": "WRITE_APPLIED_AWAITING_READBACK",
+      "status": "VERIFIED_READBACK",
       "readback_required": true,
-      "readback_verified": false
+      "readback_verified": true,
+      "readback_sha": "14dfb466fa950e9ed78026e65044280c55128122",
+      "readback_verified_on": "2026-11-12",
+      "readback_verification": {
+        "status": "verified",
+        "verified_on": "2026-11-12",
+        "commit_sha": "ba369c4c321f1355907d9b5fc2d7aa7ad13ad3a3",
+        "control_blob_sha": "14dfb466fa950e9ed78026e65044280c55128122",
+        "checks": {
+          "generation_is_21": true,
+          "new_primary_active": true,
+          "prior_primary_superseded": true,
+          "previous_co_responsible_preserved": true,
+          "active_responsibles_is_2": true,
+          "maximum_is_2": true,
+          "session_folio_unassigned": true,
+          "global_and_ocp_folios_unassigned": true,
+          "FOL1_prepared_not_active": true
+        }
+      }
     }
   ],
   "active_responsibles": [

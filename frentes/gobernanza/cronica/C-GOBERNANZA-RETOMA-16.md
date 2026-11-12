@@ -23,7 +23,7 @@ El operador ordenó persistir el último tramo visible en el frente GOBERNANZA, 
 
 ## Responsabilidad y continuidad
 - Control leído antes de escribir: blob `02a9720dd0f4264d69a6d84f865fd97cca9a31f0`, generación 20.
-- Titular primario anterior: `chatgpt-C-GOBERNANZA-RETOMA-16-01a1d0ea3e9e71b1b12dfbc1bc60d2f2` no; titular anterior `chatgpt-C-GOBERNANZA-RETOMA-15-SES-20261111-375BE087` / `SES-20261111-375BE087` / generación 19; supersedido por la instrucción de ocupar el lugar operativo del modelo predecesor.
+- Titular primario anterior: `chatgpt-C-GOBERNANZA-RETOMA-15-SES-20261111-375BE087` / `SES-20261111-375BE087` / generación 19; supersedido por la instrucción de ocupar el lugar operativo del modelo predecesor.
 - Corresponsable activo preservado: `chatgpt-C-GOBERNANZA-ASIENTO-02-OPTIMIZACION-01-SES-20261111-624B784A` / `SES-20261111-624B784A` / generación 20. Máximo dos responsables.
 - Nueva instancia: alias operativo `chatgpt-C-GOBERNANZA-RETOMA-16-01a1d0ea3e9e71b1b12dfbc1bc60d2f2`; UUIDv7 local `01a1d0ea-3e9e-71b1-b12d-fbc1bc60d2f2`; ID nativo de ChatGPT no expuesto.
 - No se asignó folio SES ni folios globales/por OCP porque FOL1 está PREPARADO y NO ACTIVO.
@@ -40,4 +40,4 @@ El operador ordenó persistir el último tramo visible en el frente GOBERNANZA, 
 - Crónica: `frentes/gobernanza/cronica/C-GOBERNANZA-RETOMA-16.md`.
 - Evidencia: `frentes/gobernanza/evidencias/C-GOBERNANZA-RETOMA-16.json`.
 
-**Estado:** PERSISTIDO_Y_VERIFICADO tras escritura CAS, lectura de vuelta exacta y cotejo SHA-256/blob SHA.
+**Estado:** PERSISTIDO_Y_VERIFICADO. Commit `ba369c4c321f1355907d9b5fc2d7aa7ad13ad3a3`; siete rutas leídas de vuelta exactamente, con blob SHA y SHA-256 UTF-8 coincidentes. El control registra la lectura de vuelta del primer commit; el commit de verificación actualiza el índice, manifiesto y evidencia.

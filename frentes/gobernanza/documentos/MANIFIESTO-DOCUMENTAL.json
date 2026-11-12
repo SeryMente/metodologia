@@ -5,7 +5,7 @@
   "event_id": "C-GOBERNANZA-RETOMA-16",
   "cycle_folio": null,
   "recorded_on": "2026-11-12",
-  "status": "ESCRITO_NO_VERIFICADO",
+  "status": "PERSISTIDO_Y_VERIFICADO",
   "rule": "P041 + ART-014 + ART-022; conservar originales sin transformar y declarar persistencia solo tras lectura de vuelta y cotejo.",
   "documents": [
     {
@@ -305,12 +305,13 @@
       "size_bytes": 10084,
       "sha256": "3F5A0BE2E5DC2D180BA89D18C717939BBE4E8ADFB2796573DD4F29362712AFD2",
       "git_blob_sha": "697c687c0b2239be7fbaaa4364bcc757a29f4300",
-      "status": "ESCRITO_NO_VERIFICADO",
+      "status": "PERSISTIDO_Y_VERIFICADO",
       "verification": {
-        "readback": false,
-        "content_cotejo": false,
+        "readback": true,
+        "content_cotejo": true,
         "method": "Git blob SHA + SHA-256 UTF-8 + lectura exacta de vuelta desde main",
-        "verified_on": null
+        "verified_on": "2026-11-12",
+        "write_commit_sha": "ba369c4c321f1355907d9b5fc2d7aa7ad13ad3a3"
       },
       "relations": {
         "event_id": "C-GOBERNANZA-RETOMA-16",
