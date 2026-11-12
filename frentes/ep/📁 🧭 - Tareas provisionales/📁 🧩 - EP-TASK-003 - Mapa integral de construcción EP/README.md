@@ -1,7 +1,7 @@
 # EP-TASK-003 · Materialización del workspace Cryptomator y confinamiento de aplicaciones
 
 **Naturaleza:** tarea provisional del frente EP; sin titularidad, control, sesión ni folio propios.  
-**Estado:** `en_curso · CLI_DEFAULT_POLICY_ADOPTED · GUI_EXCEPTION_OPENED_BY_OPERATOR · VAULT_STORE_READY_EMPTY · CRYPTOMATOR_DESKTOP_AND_WINFSP_INSTALLED · CLI_BUILD_PASS_LOCAL · CLI_BUILD_WRAPPER_PENDING · UNIT_TESTS_12_PASS · INTEGRATION_TESTS_5_PASS · SYNTHETIC_CREATE_UNLOCK_CIPHERTEXT_PASS · WINDOWS_GRACEFUL_UNMOUNT_NOT_VERIFIED · SYNTHETIC_STAGING_CLEANUP_PENDING · REAL_VAULT_NOT_CREATED · APP_DATA_CONFINEMENT_PENDING · MIGRATION_NOT_STARTED · LEGACY_ARTIFACT_AUDIT_PENDING`
+**Estado:** `en_curso · CLI_DEFAULT_POLICY_ADOPTED · GUI_EXCEPTION_OPENED_BY_OPERATOR · CRYPTOMATOR_DESKTOP_AND_WINFSP_INSTALLED · CLI_BUILD_PASS_LOCAL · CLI_BUILD_WRAPPER_PENDING · UNIT_TESTS_12_PASS · INTEGRATION_TESTS_5_PASS · SYNTHETIC_CREATE_UNLOCK_CIPHERTEXT_PASS · REAL_VAULT_CREATED_AT_ACTUAL_PATH_LOCKED · CIPHERTEXT_PARTIAL_ONLY · D_DRIVE_ABSENT · WORKSPACE_MIGRATION_NOT_STARTED · RECOVERY_KEY_NOT_PERSISTED_AUTH_REQUIRED · APP_DATA_CONFINEMENT_PENDING · LEGACY_ARTIFACT_AUDIT_PENDING`
 **Responsabilidad:** frente EP.  
 **OEP padre:** [OEP](../../OEP.md), especialmente §137.
 
@@ -794,3 +794,16 @@ Referencia: OEP §136; documentación oficial Cryptomator Security Architecture,
 **Estado de la transición:** GUI_OPEN_AND_WINDOW_VERIFIED · VAULT_STORE_EXISTS_EMPTY_WRITABLE · REAL_VAULT_NOT_CREATED · PASSWORD_NOT_ENTERED · SOURCE_PRESERVED · MIGRATION_NOT_STARTED · APP_DATA_CONFINEMENT_PENDING.
 
 **Siguiente acción:** creación manual por el operador desde Cryptomator en la ruta anterior. Después se verifica la estructura de bóveda sin leer ni registrar la contraseña. La migración del árbol SeryMente requiere manifiesto, resolución del reparse point, copia y read-back SHA-256.
+
+
+---
+
+## Bóveda real encontrada, bloqueo y alcance de cifrado · 2026-11-12 · 17:37 America/Mexico_City
+
+- **Ubicación real:** `C:\Users\fila4\entorno-persistente\`, nombre `entorno-persistente`. La ruta propuesta `C:\Users\fila4\EP\modulos\MOD-EP-CRYPTO\vault-store\` quedó vacía. No se mueve la bóveda ahora: se preserva el path que Cryptomator registró.
+- **Estructura física:** `vault.cryptomator`, `masterkey.cryptomator`, `c\`, `d\` y respaldos de metadatos presentes. Se agregó `IMPORTANTE.rtf` desde el volumen virtual `D:\`; SHA-256 de origen y copia coincidentes; sidecar en claro eliminado y ausencia verificada. El volumen llegó a contener solo el archivo de bienvenida y este sidecar, no el workspace completo.
+- **Cierre:** el cierre normal de ventana dejó el montaje activo; se terminó el árbol Cryptomator por instrucción del operador. Read-back: procesos Cryptomator=0 y unidad `D:\` ausente. El ciphertext físico permanece. No clasificar como desmontaje graceful.
+- **Workspace:** `C:\Users\fila4\Desktop\SeryMente\` sigue intacto en claro (inventario preliminar 22.890 archivos / 2.125.828.543 bytes). No se migró ni cifró el conjunto; no se borró ni modificó el origen.
+- **Llave:** nota efímera `N-20261112232420-0DC228D3`, DPAPI CurrentUser, TTL hasta 17:39:20 America/Mexico_City. EP Vault formal existe; estado de sesión `sessionActive=false`. Se intentó promoción a `EP_WORKSPACE_CRYPTOMATOR_RECOVERY_KEY`, que requirió autenticación local; no hubo evento PROMOTED ni read-back de variable. No se reveló la carga. Resultado: `RECOVERY_KEY_NOT_PERSISTED_AUTH_REQUIRED`.
+
+**Resultado del ciclo:** bóveda física localizada y bloqueada a nivel de montaje; solo una cantidad mínima de datos fue confinada. El workspace completo y la formalización de la llave permanecen pendientes. Próximo ciclo: reabrir la bóveda, autenticar EP Vault, promover la nota antes de TTL (o capturar de nuevo si expiró), copiar workspace con inventario/manifiesto y SHA-256, gestionar el reparse point y bloquear desde la GUI con verificación posterior.
