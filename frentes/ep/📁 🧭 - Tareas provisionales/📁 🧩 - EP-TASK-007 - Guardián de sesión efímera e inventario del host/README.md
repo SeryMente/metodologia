@@ -13,9 +13,9 @@ EP-TASK-007 no utiliza BitLocker ni VHDX. El workspace persistente se abre y cie
 
 ## 1. Objetivo
 
-Implementar un ciclo de sesión local segura que inicie automáticamente desde la GUI del Entorno Persistente, inspeccione el equipo en modo read-only, obtenga el workspace completo cifrado, mantenga un lease renovable y cierre/borrado criptográfico local cuando ocurra un trigger terminal.
+Implementar un ciclo de sesión local segura que inicie desde la GUI del Entorno Persistente, inspeccione el equipo en modo read-only, habilite el acceso al workspace Cryptomator, mantenga un lease renovable y, ante un trigger terminal, bloquee/desmonte la bóveda y limpie únicamente temporales o artefactos efímeros creados para esa sesión. No borrar ni volatilizar el workspace persistente.
 
-Esta tarea es distinta del gate de materialización/protección física de Fila 4 en EP-TASK-003. No lo reemplaza, no lo cierra y no permite saltarlo. El dead-man de sesión se aplica a toda instancia OCP declarada efímera, cualquiera que sea la ubicación física; no depende de la clasificación CECEQ/LOC-OTHER. No elimina ni volatiliza el workspace raíz persistente de EP ni afecta B2. El gate EP-TASK-003 continúa regulando por separado la protección del host/workspace persistente de Fila 4.
+Esta tarea es distinta de EP-TASK-003, que materializa y protege el workspace persistente Cryptomator. No lo reemplaza, no lo cierra y no permite saltarlo. El control de sesión se aplica a cada instancia OCP declarada efímera, cualquiera que sea la ubicación física. El trigger bloquea/desmonta Cryptomator y limpia solo temporales de la sesión; nunca elimina, volatiliza ni altera la raíz persistente SeryMente ni afecta el ciphertext remoto de B2.
 
 ## 2. Decisiones expresas del operador
 
