@@ -92,6 +92,13 @@ El operador instruye modificar la candidata actual conforme a todas las decision
 - **Verificación de estructura:** parte 5 contiene solo Metacanon §4 y la instrucción de salida; parte 6 contiene solo ART-032 y los complementos no burocracia, continuidad/procedencia e integridad por evento. La parte 6 no contiene formato, campos ni contrato de salida.
 - **Última actualización:** commit `30fb5754b06be6295a3a03aa21b534fac1466252`; blob `4ee1e5b77e5d1f69e020b2e57cfe7adfea8e5de1`.
 
+## Nueva decisión · nombre funcional de salida y economía de IPZ · 2026-11-12
+
+- **Nombre de la parte 5:** usar «Formato de salida» en lugar de «Metacanon §4». El anexo canónico ya se titula «4. Formato de salida» y su ancla estable sigue siendo `#meta-4`; se cambia la etiqueta en IPZ, no el identificador ni el contenido del DUG.
+- **Contenido fuente revisado:** `meta-4`, con salida humana de diez campos lógicos agrupables, telemetría técnica estructurada, reglas específicas Sink/IPZ/MCP-OCP/Harmonia y límite temporal de §52. Se mantiene la distinción entre salida humana y telemetría; no copiar el contrato dentro de la parte 6.
+- **Optimización autorizada:** reducir caracteres mediante redacción compacta, eliminación de duplicaciones y referencias directas más breves, sin quitar ninguna de las seis funciones, la secuencia de lectura, el reconocimiento por MDP, la lectura íntegra de principios pertinentes, la composición CNP, la salida proporcional, los tres complementos, ni las referencias canónicas. No añadir consultas, herramientas, telemetría o pasos que degraden el rendimiento.
+- **Alcance:** actualizar solo la candidata documental v0.13 y esta ficha. No renombrar ni reescribir el DUG; el nombre canónico de `meta-4` ya es Formato de salida. AT continúa aplazada; ART-032 y el campo nativo IPZ permanecen intactos.
+
 ## Trabajo pendiente
 
 1. **Pendiente:** releer la IPZ baseline v0.7 y documentar su procedencia/hash; no presentar la baseline declarada por el operador como lectura nativa. La candidata histórica v0.12 ya fue recuperada y permanece preservada.
