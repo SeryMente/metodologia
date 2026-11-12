@@ -2,10 +2,10 @@
   "schema": "ser-y-mente-document-manifest/v1",
   "front": "Gobernanza",
   "ocp_path": "frentes/gobernanza/",
-  "event_id": "C-GOBERNANZA-RETOMA-14",
+  "event_id": "C-GOBERNANZA-RETOMA-16",
   "cycle_folio": null,
-  "recorded_on": "2026-11-11",
-  "status": "PERSISTIDO_Y_VERIFICADO",
+  "recorded_on": "2026-11-12",
+  "status": "ESCRITO_NO_VERIFICADO",
   "rule": "P041 + ART-014 + ART-022; conservar originales sin transformar y declarar persistencia solo tras lectura de vuelta y cotejo.",
   "documents": [
     {
@@ -292,6 +292,32 @@
         "method": "Exact UTF-8 content equality against the operator-pasted excerpt; SHA-256 recalculated over persisted read-back; Git blob SHA obtained from main.",
         "readback_blob_sha": "82cc5643d50f2ef2990bc0922dfd1267c25e7f15",
         "verified_on": "2026-11-11"
+      }
+    },
+    {
+      "document_id": "DOC-GOV-CHATGPT-GOBERNANZA-20261112-1133-CAPTURA",
+      "original_name": "ChatGPT-Gobernanza (1)-20261112-1133",
+      "path": "documentos/derivados/ChatGPT-Gobernanza-1-20261112-1133-captura-visible.md",
+      "class": "derived_conversation_capture",
+      "source_path": "Mensajes visibles recuperables de la conversación ChatGPT actual; no se proporcionó export nativo.",
+      "captured_via": "Transcripción literal ordenada de instrucciones visibles del operador y salida B anterior recuperada del OCP; Markdown añadido como estructura. No incluye llamadas internas a herramientas ni razonamiento oculto.",
+      "media_type": "text/markdown",
+      "size_bytes": 10084,
+      "sha256": "3F5A0BE2E5DC2D180BA89D18C717939BBE4E8ADFB2796573DD4F29362712AFD2",
+      "git_blob_sha": "697c687c0b2239be7fbaaa4364bcc757a29f4300",
+      "status": "ESCRITO_NO_VERIFICADO",
+      "verification": {
+        "readback": false,
+        "content_cotejo": false,
+        "method": "Git blob SHA + SHA-256 UTF-8 + lectura exacta de vuelta desde main",
+        "verified_on": null
+      },
+      "relations": {
+        "event_id": "C-GOBERNANZA-RETOMA-16",
+        "cycle_id": "C-GOBERNANZA-RETOMA-16-CY01",
+        "dialogue_path": "frentes/gobernanza/conversaciones/C-GOBERNANZA-RETOMA-16-dialogo.jsonl",
+        "chronicle_path": "frentes/gobernanza/cronica/C-GOBERNANZA-RETOMA-16.md",
+        "evidence_path": "frentes/gobernanza/evidencias/C-GOBERNANZA-RETOMA-16.json"
       }
     }
   ],

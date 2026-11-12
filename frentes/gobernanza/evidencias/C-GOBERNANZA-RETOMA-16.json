@@ -1,0 +1,122 @@
+{
+  "schema": "ser-y-mente-front-cycle-evidence/v1",
+  "event_id": "C-GOBERNANZA-RETOMA-16",
+  "front": "Gobernanza",
+  "ocp_path": "frentes/gobernanza/",
+  "recorded_on": "2026-11-12",
+  "status": "PERSISTIDO_Y_VERIFICADO",
+  "scope": "Retoma del titular primario y persistencia de la captura visible del último tramo; sin cambio normativo ni ejecución técnica en EP/MCP-OCP.",
+  "responsibility": {
+    "operation": "TRANSFER_PRIMARY_OWNER",
+    "generation_before": 20,
+    "generation_after": 21,
+    "previous_primary": {
+      "alias": "chatgpt-C-GOBERNANZA-RETOMA-15-SES-20261111-375BE087",
+      "folio": "SES-20261111-375BE087",
+      "generation": 19
+    },
+    "new_primary": {
+      "alias": "chatgpt-C-GOBERNANZA-RETOMA-16-01a1d0ea3e9e71b1b12dfbc1bc60d2f2",
+      "session_folio": null,
+      "local_conversation_uuidv7": "01a1d0ea-3e9e-71b1-b12d-fbc1bc60d2f2",
+      "generation": 21,
+      "native_conversation_id": "NOT_EXPOSED"
+    },
+    "retained_co_responsible": {
+      "alias": "chatgpt-C-GOBERNANZA-ASIENTO-02-OPTIMIZACION-01-SES-20261111-624B784A",
+      "folio": "SES-20261111-624B784A",
+      "generation": 20
+    },
+    "active_responsibles_after_write": 2,
+    "maximum": 2,
+    "foliation": "FOL1 PREPARADO · NO ACTIVO; sin folios CV/CY/A/B, SES ni OCP"
+  },
+  "cycle": {
+    "local_cycle_id": "C-GOBERNANZA-RETOMA-16-CY01",
+    "local_cycle_uuidv7": "01a1d0ea-3e9e-7fc0-b3cb-69b8c913e971",
+    "global_folio": null,
+    "ocp_folio": null,
+    "status": "LEGACY_PRE_CUTOVER"
+  },
+  "canonical_context": {
+    "source": "SeryMente/metodologia/main:gobernanza/METAPROMPT-CANONICO-SAMANTHA.html",
+    "dug": "Samantha v389 · NX-389m",
+    "dug_blob_sha": "bcd99e72113f444a045d7f1c91b4ad36865b8ea8",
+    "dug_path_commit": "199bf03ade7aceeedcabc10eeb1c06b1d0e53eaf",
+    "metacanon": "1.30",
+    "gow": "2.19",
+    "principles": 43,
+    "annexes": 24,
+    "section_arr": {
+      "section_id": "gow-sec-14",
+      "anchor": "#gow-arranque-chatgpt",
+      "read": true
+    },
+    "reviewed_principles": [
+      "P001",
+      "P004",
+      "P005",
+      "P037",
+      "P038",
+      "P043",
+      "P039"
+    ],
+    "reviewed_rules": [
+      "Metacanon §28",
+      "ART-014",
+      "ART-022",
+      "ART-024"
+    ],
+    "IPZ": "v0.7 supplied by user; native installation NOT_VERIFIED",
+    "MCP_NORMATIVO": "DESACTIVADO"
+  },
+  "prior_output": {
+    "path": "frentes/gobernanza/conversaciones/C-GOBERNANZA-RETOMA-14-dialogo.jsonl",
+    "seq": 7,
+    "output_sha256": "2D46E9E6368255C8ADED4F1C0E8792F4D58122EFDF7EA734C29DBF0B58E030BE",
+    "literal_repeated": true
+  },
+  "artifacts": [
+    {
+      "path": "frentes/gobernanza/documentos/derivados/ChatGPT-Gobernanza-1-20261112-1133-captura-visible.md",
+      "class": "derived_conversation_capture",
+      "status": "PERSISTIDO_Y_VERIFICADO",
+      "sha256": "3F5A0BE2E5DC2D180BA89D18C717939BBE4E8ADFB2796573DD4F29362712AFD2",
+      "bytes": 10084
+    },
+    {
+      "path": "frentes/gobernanza/conversaciones/C-GOBERNANZA-RETOMA-16-dialogo.jsonl",
+      "status": "PERSISTIDO_Y_VERIFICADO",
+      "sha256": "308752A365D6B458E2DE04285B83A8D877CEF1371035C8437B29E9AD4C329106",
+      "bytes": 8888,
+      "records": 6
+    },
+    {
+      "path": "frentes/gobernanza/cronica/C-GOBERNANZA-RETOMA-16.md",
+      "status": "PERSISTIDO_Y_VERIFICADO",
+      "sha256": "11F0CB877C99B726579D335098B1D01478678B60654D439B99816E675A303B06",
+      "bytes": 4213
+    },
+    {
+      "path": "frentes/gobernanza/evidencias/C-GOBERNANZA-RETOMA-16.json",
+      "status": "PERSISTIDO_Y_VERIFICADO",
+      "note": "evidencia actualizada tras lectura de vuelta de los demás artefactos"
+    }
+  ],
+  "operation": {
+    "main_parent_sha": "ab520fc33dccec0c8da4d639d3aabbe72b6767ce",
+    "main_parent_tree_sha": "1660ce163e6caa1080e902843b614fdc8b9f5beb",
+    "as_of_local": "2026-11-12T12:00:57-06:00",
+    "sha_algorithm": "SHA-256 UTF-8 + Git blob SHA",
+    "cas_expected_parent": true,
+    "readback_required": true,
+    "readback_verified": true
+  },
+  "non_actions": [
+    "DUG/GOW unchanged",
+    "IPZ native unchanged",
+    "EP host/control unchanged",
+    "MCP-OCP code/control unchanged",
+    "no secrets read or exposed"
+  ]
+}
