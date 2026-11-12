@@ -21,7 +21,7 @@ El patrón de materialización sigue el registro de tareas provisionales de Gobe
 
 | ID local | Estado | Alcance específico vigente | Núcleo |
 |---|---|---|---|
-| EP-TASK-003 | `en_curso · REAL_VAULT_CREATED_AT_ACTUAL_PATH_LOCKED · CIPHERTEXT_PARTIAL_ONLY · D_DRIVE_ABSENT · WORKSPACE_MIGRATION_NOT_STARTED · RECOVERY_KEY_NOT_PERSISTED_AUTH_REQUIRED · CLI_BUILD_PASS_LOCAL · UNIT_TESTS_12_PASS · INTEGRATION_TESTS_5_PASS` | Base del workspace: build Cryptomator CLI, bóveda, árbol SeryMente, migración verificada y retiro seguro de residuos EP VHDX/BitLocker. | [núcleo](./📁%20🧩%20-%20EP-TASK-003%20-%20Mapa%20integral%20de%20construcción%20EP/README.md) |
+| EP-TASK-003 | `en_curso · REAL_VAULT_CREATED_AT_ACTUAL_PATH_LOCKED · CIPHERTEXT_PARTIAL_ONLY · D_DRIVE_ABSENT · WORKSPACE_MIGRATION_NOT_STARTED · RECOVERY_KEY_PROMOTED_READBACK_VERIFIED · CLI_BUILD_PASS_LOCAL · UNIT_TESTS_12_PASS · INTEGRATION_TESTS_5_PASS` | Base del workspace: build Cryptomator CLI, bóveda, árbol SeryMente, migración verificada y retiro seguro de residuos EP VHDX/BitLocker. | [núcleo](./📁%20🧩%20-%20EP-TASK-003%20-%20Mapa%20integral%20de%20construcción%20EP/README.md) |
 | EP-TASK-004 | `en_curso · APP_DATA_CONFINEMENT_PENDING · VAULT_RELOCATION_NOT_STARTED` | EP Vault: herramienta, almacén, configuración, logs y temporales dentro del workspace. | [núcleo](./📁%20🧩%20-%20EP-TASK-004%20-%20Reconstrucción%20de%20bóveda/README.md) |
 | EP-TASK-006 | `en_curso · APP_DATA_CONFINEMENT_PENDING · VAULT_RELOCATION_NOT_STARTED · ADAPTERS_NOT_IMPLEMENTED` | Variables y adaptadores: catálogo y distribución autorizada sin copias locales ni valores en claro fuera del workspace. | [núcleo](./📁%20🧩%20-%20EP-TASK-006%20-%20Centralización%20de%20variables%20de%20entorno/README.md) |
 | EP-TASK-001 | `en_curso · APP_DATA_CONFINEMENT_PENDING · PROFILE_AND_SESSIONS_NOT_MIGRATED` | NCL: Chrome, perfil, sesiones, extensiones, KeePassXC y datos confinados en la bóveda. | [núcleo](./📁%20🧩%20-%20EP-TASK-001%20-%20Integración%20NCL/README.md) |
@@ -542,3 +542,8 @@ EP-TASK-008 inicia la implementación del uso solicitado para Product Design: Ch
 ## Cierre EP-TASK-003 · bóveda localizada y bloqueo parcial · 2026-11-12 · 17:37 America/Mexico_City
 
 Bóveda real `entorno-persistente` en `C:\Users\fila4\entorno-persistente\`; `vault-store` quedó vacío. Se verificaron `vault.cryptomator`, `masterkey.cryptomator` y árboles cifrados. Se copió un sidecar al volumen montado, SHA-256 coincidió y se retiró su original en claro. Se cerró por terminación del árbol Cryptomator; read-back confirma unidad `D:\` ausente y cero procesos Cryptomator. El workspace `Desktop\SeryMente` (22.890 archivos / 2.125.828.543 bytes preliminares) no se migró y permanece en claro. La nota de recuperación DPAPI `N-20261112232420-0DC228D3` no se promovió a variable formal por sesión EP Vault cerrada; variable prevista `EP_WORKSPACE_CRYPTOMATOR_RECOVERY_KEY`, autenticación local pendiente.
+
+
+## Reconciliación final EP · llave formal persistida · 2026-11-12 · 17:39 America/Mexico_City
+
+La variable `EP_WORKSPACE_CRYPTOMATOR_RECOVERY_KEY` quedó promovida en EP Vault con resultado `PROMOTED_READBACK_VERIFIED_NOTE_REMOVED`; su nombre aparece en `ListVariables`, sin revelar el valor. La nota DPAPI fue retirada tras verificación de lectura de vuelta y EP Vault quedó bloqueada (`sessionActive=false`). Cryptomator también sigue bloqueada (`D:\` ausente, cero procesos). El workspace íntegro `Desktop\SeryMente` sigue en claro y no migrado; la bóveda física actual contiene únicamente datos parciales.
