@@ -82,15 +82,15 @@ El operador instruye modificar la candidata actual conforme a todas las decision
 
 - **Ruta:** `frentes/gobernanza/entregas/CHATGPT-v0.13/IPZ-CAMPO-CHATGPT-v0.13-PROPUESTA.txt`
 - **Enlace:** https://github.com/SeryMente/metodologia/blob/main/frentes/gobernanza/entregas/CHATGPT-v0.13/IPZ-CAMPO-CHATGPT-v0.13-PROPUESTA.txt
-- **Versión/contador:** `IPZ v0.13 · 1462/1500`.
-- **Conteo verificado:** UTF-16 LF 1.455; UTF-16 CRLF 1.462; puntos de código 1.455. El encabezado refleja el máximo CRLF.
-- **Blob SHA actual:** `4ee1e5b77e5d1f69e020b2e57cfe7adfea8e5de1`.
-- **Commit de creación:** `1dec260be2edf5e4b507f34b56abd448d3f3ef40`; commit de última actualización a seis partes y corrección del contador: `30fb5754b06be6295a3a03aa21b534fac1466252`.
+- **Versión/contador:** `IPZ v0.13 · 1331/1500`.
+- **Conteo verificado:** UTF-16 LF 1.324; UTF-16 CRLF 1.331; puntos de código 1.324. El encabezado refleja el máximo CRLF.
+- **Blob SHA actual:** `c57537a99f4c6fc01897288e76b6afba6bd1445f`.
+- **Commit de creación:** `1dec260be2edf5e4b507f34b56abd448d3f3ef40`; commit de última optimización y corrección del contador: `1a1c72a8713d90a47cce013ebb7b3141b2279e82`.
 - **Read-back:** contenido recuperado desde `main`; versión, contador, texto y blob cotejados. Los siete destinos/anclas se verificaron contra el DUG vigente.
 - **Preservación:** v0.12 continúa en su ruta histórica y no fue sobrescrita; baseline v0.7 no fue modificada ni declarada instalada.
 - **Límites:** campo nativo IPZ sin modificar; ART-032 sin modificar; AT aplazada; FOL1 y MCP-NORMATIVO no activados.
 - **Verificación de estructura:** parte 5 contiene solo Metacanon §4 y la instrucción de salida; parte 6 contiene solo ART-032 y los complementos no burocracia, continuidad/procedencia e integridad por evento. La parte 6 no contiene formato, campos ni contrato de salida.
-- **Última actualización:** commit `30fb5754b06be6295a3a03aa21b534fac1466252`; blob `4ee1e5b77e5d1f69e020b2e57cfe7adfea8e5de1`.
+- **Última actualización:** commit `1a1c72a8713d90a47cce013ebb7b3141b2279e82`; blob `c57537a99f4c6fc01897288e76b6afba6bd1445f`.
 
 ## Nueva decisión · nombre funcional de salida y economía de IPZ · 2026-11-12
 
@@ -98,6 +98,15 @@ El operador instruye modificar la candidata actual conforme a todas las decision
 - **Contenido fuente revisado:** `meta-4`, con salida humana de diez campos lógicos agrupables, telemetría técnica estructurada, reglas específicas Sink/IPZ/MCP-OCP/Harmonia y límite temporal de §52. Se mantiene la distinción entre salida humana y telemetría; no copiar el contrato dentro de la parte 6.
 - **Optimización autorizada:** reducir caracteres mediante redacción compacta, eliminación de duplicaciones y referencias directas más breves, sin quitar ninguna de las seis funciones, la secuencia de lectura, el reconocimiento por MDP, la lectura íntegra de principios pertinentes, la composición CNP, la salida proporcional, los tres complementos, ni las referencias canónicas. No añadir consultas, herramientas, telemetría o pasos que degraden el rendimiento.
 - **Alcance:** actualizar solo la candidata documental v0.13 y esta ficha. No renombrar ni reescribir el DUG; el nombre canónico de `meta-4` ya es Formato de salida. AT continúa aplazada; ART-032 y el campo nativo IPZ permanecen intactos.
+
+## Ejecución · nombre Formato de salida y optimización IPZ · 2026-11-12
+
+- **Parte 5 actualizada:** etiqueta visible `FORMATO DE SALIDA — Formato de salida`; destino canónico `#meta-4`. Se retiró la mención de marca «Metacanon §4» de la candidata. El título real del destino en el DUG ya era «4. Formato de salida», por lo que no se cambió el DUG ni su ancla estable.
+- **Separación conservada:** parte 5 contiene exclusivamente el acceso a salida; parte 6 conserva solo ART-032 y los complementos no burocracia, continuidad/procedencia e integridad proporcional por evento. No hay instrucciones de salida en parte 6.
+- **Optimización aplicada:** se compactó redacción y se eliminaron repeticiones sin quitar las seis posiciones, verificación de vigencia, lectura íntegra y seguimiento de referencias, reconocimiento MDP, lectura íntegra de cada principio pertinente, lectura del CNP, distinción salida humana/telemetría ni los tres complementos.
+- **Ahorro medido:** anterior 1.462 UTF-16 CRLF; actual 1.331 UTF-16 CRLF; reducción de 131 unidades (8,96%). Actual: LF 1.324; CRLF 1.331; puntos de código 1.324. No se añadieron consultas ni pasos de ejecución.
+- **Candidata actual:** blob `c57537a99f4c6fc01897288e76b6afba6bd1445f`; commit `1a1c72a8713d90a47cce013ebb7b3141b2279e82`. Read-back posterior pendiente de registrar en este mismo checkpoint.
+- **Límites sin cambio:** no se renombró contenido del DUG; no se modificó ART-032; AT continúa aplazada; campo nativo IPZ no modificado.
 
 ## Trabajo pendiente
 
