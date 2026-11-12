@@ -1,6 +1,6 @@
 ## Estado vigente · C-GOBERNANZA-STREAMLINE-RESPONSABILIDAD-FOLIACION-20261111-01
 
-DUG v389/NX-389m · Metacanon 1.30 · GOW 2.19. Responsabilidad: autorización directa frente+actuación; relevo por defecto al asumir/retomar; corresponsabilidad solo expresa. Los folios son metadatos y no bloquean el trabajo. Registro A/B consolidado por cambio sustantivo. Sink preferente y fallback DUG canónico. GOV-TASK-013 cancelada; no medir tiempo. FOL1 PREPARADO/no activo; IPZ sin tocar.
+DUG v389/NX-389m · Metacanon 1.30 · GOW 2.19. Responsabilidad: autorización directa frente+actuación; relevo por defecto al asumir/retomar; corresponsabilidad solo expresa. Los folios son metadatos y no bloquean el trabajo. Registro A/B consolidado por cambio sustantivo. Sink preferente y fallback DUG canónico. GOV-TASK-013 cancelada; no medir tiempo. FOL1 PREPARADO/no activo; IPZ v0.10 candidata documental, campo nativo NO MODIFICADO/NO VERIFICADO; GOV-TASK-016 pendiente.
 
 ## Snapshot histórico del frente · sprint Sink local · 2026-11-10 · supersedido por rebaseline 2026-11-11
 

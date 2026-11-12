@@ -1,0 +1,80 @@
+{
+  "schema": "ser-y-mente-governance-cycle-evidence/v1",
+  "event_id": "C-GOBERNANZA-IPZ-AT-ADECUACION-01",
+  "recorded_on": "2026-11-12",
+  "repository": "SeryMente/metodologia",
+  "branch": "main",
+  "front": "Gobernanza",
+  "ocp": "frentes/gobernanza/",
+  "local_conversation_uuidv7": "01a1d0ea-3e9e-71b1-b12d-fbc1bc60d2f2",
+  "local_cycle_uuidv7": "01a1d17f-006c-7785-a62e-3a6a347faee6",
+  "native_conversation_id": "NOT_EXPOSED",
+  "normative_source": {
+    "dug_version": "v389",
+    "dug_signature": "NX-389m",
+    "dug_blob_sha": "bcd99e72113f444a045d7f1c91b4ad36865b8ea8",
+    "at_version": "v1.2",
+    "at_blob_sha": "4ab56401381deadb873f84b58a9e02c5960cb4d0",
+    "at_status": "PROPOSAL_NOT_CANONIZED_AS_DUG_ANNEX"
+  },
+  "findings": {
+    "art025": {
+      "GOW_ARR": "PASS_DOCUMENTARY",
+      "ART_031": "PASS_DOCUMENTARY",
+      "full_CNP_each_turn": "PASS_DOCUMENTARY"
+    },
+    "art027": {
+      "Sink_preferred_DUG_main_exact_fallback": "PASS_DOCUMENTARY"
+    },
+    "AT_gaps": [
+      "No explicit mandatory preservation/read-back of current IPZ before each IPZ edit",
+      "No explicit IPZ-specific ART-025 conformance test in AT v1.2"
+    ],
+    "exclusive_AT_principle": "NOT_FOUND_IN_43_CANONICAL_PRINCIPLES",
+    "proposed_principle": "RECORDED_NON_CANONICAL_IN_GOV_TASK_016_NO_ID_OR_PREPONDERANCE"
+  },
+  "baseline": {
+    "path": "frentes/gobernanza/entregas/CHATGPT-v0.10/IPZ-CAMPO-CHATGPT-v0.7-BASELINE-OPERADOR.txt",
+    "source_kind": "OPERATOR_SUPPLIED_TEXT_NOT_NATIVE_FIELD_READBACK",
+    "git_blob_sha": "685a0f53a543fa23570d7adf9e10bc0dc81eb63a",
+    "readback_exact": true
+  },
+  "candidate": {
+    "path": "frentes/gobernanza/entregas/CHATGPT-v0.10/IPZ-CAMPO-CHATGPT-v0.10-PROPUESTA.txt",
+    "version": "v0.10",
+    "sha256_utf8": "4f18218735d0a8f698c853875afce9926cd4e830bc07c7301d00d01272195a5e",
+    "utf16_lf": 1466,
+    "utf16_crlf": 1486,
+    "unicode_codepoints": 1461,
+    "limit": "<1500",
+    "status": "DOCUMENTARY_CANDIDATE_NOT_NATIVE"
+  },
+  "task": {
+    "id": "GOV-TASK-016",
+    "path": "frentes/gobernanza/📁 🧭 - Tareas provisionales/📁 🧩 - GOV-TASK-016 - Revisar AT para IPZ y cambios del marco/README.md",
+    "status": "PENDING"
+  },
+  "mutations": {
+    "DUG": "NOT_MODIFIED",
+    "AT_v1_2": "NOT_MODIFIED",
+    "native_IPZ": "NOT_MODIFIED_NOT_VERIFIED",
+    "responsibility_control": "NOT_MODIFIED",
+    "FOL1": "NOT_MODIFIED"
+  },
+  "fol1": {
+    "status": "PREPARADO_PENDIENTE_ACTIVACION_IPZ",
+    "generation": 4,
+    "coverage": "KNOWN_INVENTORY_ONLY",
+    "global_counters_zero": true
+  },
+  "mcp_normative": "DESACTIVADO",
+  "commits": {
+    "pre_write_main": "e268d2b6cee34a30210ec3b4d6badd6ab330dc33",
+    "commit_sha": "TO_BE_FILLED"
+  },
+  "verification": {
+    "baseline_readback": "PASS_EXACT",
+    "candidate_measurements": "PASS",
+    "all_written_files_readback": "PENDING"
+  }
+}

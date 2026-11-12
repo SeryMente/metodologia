@@ -22,6 +22,22 @@ IPZ v0.8 no es sustitución íntegra: tiene 1.488 caracteres, pero omite la list
 
 Cotejar v0.7 frente a v0.8 y ART-025/ART-027, preparar una versión completa dentro del límite de 1.500 caracteres y verificar su instalación antes de activar FOL1.
 
+## Adecuación IPZ · C-GOBERNANZA-IPZ-AT-ADECUACION-01 · 2026-11-12
+
+**Estado:** candidata documental v0.10 preparada y persistida; campo nativo NO MODIFICADO / NO VERIFICADO; FOL1 permanece PREPARADO_PENDIENTE_ACTIVACION_IPZ.
+
+- **Baseline del operador:** [IPZ v0.7 preservada](../../entregas/CHATGPT-v0.10/IPZ-CAMPO-CHATGPT-v0.7-BASELINE-OPERADOR.txt). Procedencia: texto que el operador declaró estar usando; no es lectura de vuelta del campo nativo. Git Blob SHA: `685a0f53a543fa23570d7adf9e10bc0dc81eb63a`; lectura de vuelta exacta comprobada.
+- **Candidata:** [IPZ v0.10](../../entregas/CHATGPT-v0.10/IPZ-CAMPO-CHATGPT-v0.10-PROPUESTA.txt). SHA-256 UTF-8: `4f18218735d0a8f698c853875afce9926cd4e830bc07c7301d00d01272195a5e`; UTF-16 LF: 1.466; UTF-16 CRLF: 1.486; puntos de código: 1.461. Cumple el límite documental inferior a 1.500 incluso con CRLF.
+- **ART-025:** incorporados GOW:ARR/§ARR, directorio ART-031 y lectura/consideración íntegra de P001/P004/P005/P038/P043 en cada turno.
+- **ART-027:** se indica Sink cuando disponible y DUG main exacto como respaldo.
+- **Instrucciones nuevas del operador:** prohibición de burocracia no exigida por DUG; lectura cuidadosa, ejecución completa y verificación hasta el último carácter; cumplimiento exacto, ni más ni menos; incumplimiento no verificado = FALLIDO.
+- **AT:** v1.2 sigue sin modificación y se declara propuesta operativa no canonizada. GOV-TASK-016 queda pendiente para revisar baseline IPZ obligatorio, controles ART-025/027 y principio de exclusividad AT.
+- **DUG:** sin cambios. No se encontró en sus 43 principios uno que obligue a tramitar todas las actualizaciones del marco exclusivamente por AT. El texto de principio está propuesto en GOV-TASK-016, sin ID ni preponderancia asignados y sin canonización; cualquier incorporación exige la compuerta P005.
+- **FOL1:** registro maestro sigue `PREPARADO_PENDIENTE_ACTIVACION_IPZ`; no se activó ni se asignaron folios.
+- **Instalación nativa:** no intentada; no se dispone aquí de lectura/escritura del campo nativo de Instrucciones Personalizadas.
+
+Diálogo A/B, crónica y evidencia de este ciclo: véanse los enlaces de continuidad de [GOV-TASK-016](../📁%20🧩%20-%20GOV-TASK-016%20-%20Revisar%20AT%20para%20IPZ%20y%20cambios%20del%20marco/README.md).
+
 ## Conciliación efectuada · 2026-10-30
 
 - **v0.7:** 2.467 caracteres; conserva los estados propuesto/autorizado/intentado/ejecutado/verificado/aceptado, A/B literal y trazable, UUIDv7 local distinto del ID nativo, protección de rutas/control, GOW y MCP normativo desactivado, y el contrato temporal detallado.
