@@ -300,18 +300,21 @@
       "path": "documentos/derivados/ChatGPT-Gobernanza-1-20261112-1133-captura-visible.md",
       "class": "derived_conversation_capture",
       "source_path": "Mensajes visibles recuperables de la conversación ChatGPT actual; no se proporcionó export nativo.",
-      "captured_via": "Transcripción literal ordenada de instrucciones visibles del operador y salida B anterior recuperada del OCP; Markdown añadido como estructura. No incluye llamadas internas a herramientas ni razonamiento oculto.",
+      "captured_via": "Transcripción literal ordenada de instrucciones visibles del operador y respuestas visibles del modelo, ampliada con el último tramo del 2026-11-12. Markdown añadido como estructura. No incluye llamadas internas a herramientas ni razonamiento oculto.",
       "media_type": "text/markdown",
-      "size_bytes": 10162,
-      "sha256": "4F633D4E34DB8BEC17AD6AD528DA67B50593D47A74D086845C756DE2BF78E737",
-      "git_blob_sha": "05948eab133f02307316810dcbc405ed15a8d012",
+      "size_bytes": 20844,
+      "sha256": "334FE1096D6D03D072E34A4C7E0327DECC275A9DF1692BA13D3FFB886FFC7AE9",
+      "git_blob_sha": "fdc1fe94c4f7f863a48253903e474099c2bf1c1b",
       "status": "PERSISTIDO_Y_VERIFICADO",
       "verification": {
         "readback": true,
         "content_cotejo": true,
-        "method": "Git blob SHA + SHA-256 UTF-8 + lectura exacta de vuelta desde main",
+        "method": "Git blob SHA + SHA-256 UTF-8 + lectura literal exacta de vuelta desde main",
         "verified_on": "2026-11-12",
-        "write_commit_sha": "ba369c4c321f1355907d9b5fc2d7aa7ad13ad3a3"
+        "write_commit_sha": "a5453bc785effa1b683080e8b9e5b5fb030f1a02",
+        "previous_write_commit_sha": "ba369c4c321f1355907d9b5fc2d7aa7ad13ad3a3",
+        "readback_blob_sha": "fdc1fe94c4f7f863a48253903e474099c2bf1c1b",
+        "last_update_note": "Ampliación de la captura existente; sin registros A/B, crónica ni evidencia adicional."
       },
       "relations": {
         "event_id": "C-GOBERNANZA-RETOMA-16",
