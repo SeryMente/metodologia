@@ -58,7 +58,7 @@ La GUI EP inicia automáticamente el guardián al crear cada sesión. El guardi�
 
 Triggers: vencimiento de lease, inactividad, terminación inesperada de GUI/proceso principal, pérdida del heartbeat del cliente, cierre explícito del operador, límite absoluto y activación manual de emergencia. Los triggers se clasifican como normales o de emergencia.
 
-La expiración o inactividad normal intenta un único checkpoint cifrado durante un máximo inicial de 30 s. Si no termina y se verifica, no extiende la sesión: bloquea, desmonta y destruye la clave efímera local. La emergencia/sospecha de host comprometido bloquea y ejecuta crypto-erasure sin esperar a B2.
+La expiración o inactividad normal intenta un único checkpoint cifrado durante un máximo inicial de 30 s. Al vencer o terminar la sesión se bloquea y desmonta Cryptomator. Cualquier crypto-erasure se limita a la clave o contenedor desechable creado exclusivamente para esa sesión; nunca alcanza la bóveda persistente SeryMente, perfiles de aplicaciones ni datos de proyectos. La emergencia/sospecha de host comprometido prioriza bloquear/desmontar y neutralizar solo material efímero, sin esperar a B2 ni destruir datos persistentes.
 
 La caída de energía no puede ejecutar código de limpieza en el instante del corte. Por ello, la clave de sesión no se persistirá en claro ni se hará recuperable desde el perfil local; al perderse la memoria volátil el contenedor sigue cifrado e inaccesible, y la recuperación depende de la copia persistente autorizada.
 
@@ -68,7 +68,7 @@ La caída de energía no puede ejecutar código de limpieza en el instante del c
 - Bloquear/cerrar aplicaciones propias y desmontar el volumen/contenedor cifrado.
 - Invalidar/destruir la clave efímera local y material derivado en memoria/almacén temporal que pertenezca a OCP.
 - Limpiar cachés, temporales, manifiestos de trabajo, mounts y artefactos creados por OCP fuera del contenedor.
-- En SSD/UNKNOWN usar crypto-erasure; no confiar en sobrescritura convencional ni ejecutar utilidades de borrado sobre el disco completo.
+- En SSD/UNKNOWN, cualquier crypto-erasure se limita a claves/material efímero de sesión aislado; no se cifra, borra ni sobrescribe el disco anfitrión ni el workspace persistente.
 - Nunca borrar disco anfitrión, perfil Windows, datos de terceros, historial global, cookies ajenas ni versiones/backups B2.
 - Emitir recibo local cifrado/saneado, sin secretos: trigger, timestamps, checkpoint intentado/resultado, desmontaje, clave invalidada, limpieza, residuos no eliminables y estado final.
 
@@ -87,7 +87,7 @@ La caída de energía no puede ejecutar código de limpieza en el instante del c
 1. Inicio GUI → guardián iniciado automáticamente → evento session.started con IDs y hora UTC.
 2. Preflight reproducible, read-only, con estados para datos no disponibles y duración medida.
 3. Pruebas de renovación, inactividad, expiración, límite 8 h, cierre normal, cierre forzado, GUI caída, pérdida heartbeat y emergencia.
-4. El cierre normal demuestra checkpoint acotado; fallo o timeout conduce al crypto-erasure local.
+4. El cierre normal demuestra checkpoint acotado y bloqueo/desmontaje Cryptomator; fallo o timeout conduce únicamente a neutralizar el material efímero de sesión, nunca el workspace persistente.
 5. La emergencia no espera B2 y destruye la clave efímera.
 6. El contenedor local no puede descifrarse después del cierre; la clave persistente de recuperación no se destruye.
 7. Las operaciones solo afectan artefactos propios de OCP; pruebas negativas demuestran que no se toca el disco/perfil de terceros.
@@ -97,7 +97,7 @@ La caída de energía no puede ejecutar código de limpieza en el instante del c
 
 ## 8. Restricciones
 
-No efectuar cambios sobre Fila 4, BitLocker/VHDX, perfiles, almacenamiento o montaje hasta superar los gates vigentes de EP-TASK-003 y su aceptación. No extraer credenciales del chat, no exponer valores de EP Vault en logs ni crear una segunda bóveda. No alterar los controles EP generación 3, MCP-OCP generación 5 o Gobernanza generación 17.
+No cambiar perfiles, almacenamiento, montaje ni configuración de Cryptomator en Fila 4 hasta superar los gates vigentes de EP-TASK-003 y su aceptación. No crear ni utilizar VHDX/BitLocker para EP. No extraer credenciales del chat, no exponer valores de EP Vault en logs ni crear una segunda bóveda. No alterar los controles EP generación 3, MCP-OCP generación 5 o Gobernanza generación 17.
 
 **Resultado del presente asiento:** tarea configurada documentalmente. Acuse y ejecución pertenecen a EP; no se declara guardian, inventario, lease, borrado ni pruebas ejecutados.
 
@@ -166,27 +166,27 @@ Al resolver esta tarea, el responsable debe agregar el informe individual en est
 
 ### Límites de responsabilidad
 
-EP-TASK-003 protege y materializa el workspace persistente raíz de EP, con política CECEQ/LOC-OTHER y su dead-man específico. EP-TASK-007 gobierna el ciclo de cada sesión efímera OCP (inventario, lease, checkpoint, trigger y cierre criptográfico). No se duplican ni se usan una tarea para saltar el gate de la otra.
+EP-TASK-003 materializa la bóveda persistente Cryptomator y confina los datos de aplicaciones conforme a OEP §137. EP-TASK-007 gobierna el ciclo de cada sesión efímera OCP (inventario, lease, checkpoint, trigger, bloqueo/desmontaje Cryptomator y limpieza temporal). No se duplican ni se usa una tarea para saltar el gate de la otra.
 
 ### Secuencia
 
 1. **Definir entradas verificables.** Enumerar propiedades del host/sesión, fuente, timestamp, precisión, permisos y costo del preflight. GPS/IP solo se consultan por interfaces soportadas y con autorización; registrar NO_DISPONIBLE/NO_AUTORIZADO en lugar de inferir ubicación.
 2. **Congelar política de sesión.** Preservar los parámetros aprobados: renovación 60 s, lease 30 min, aviso previo, inactividad 10 min y máximo absoluto 8 h. Mantener estos parámetros separados del TTL de desbloqueo EP Vault. Toda modificación requiere trazabilidad y evaluación de impacto.
 3. **Diseñar el modelo de estados y contratos.** Especificar estados, transiciones, eventos terminales, responsables y recibos de inventario/checkpoint/cierre. La máquina de estados es propuesta técnica a revisar bajo P013 si cambia arquitectura o perímetro de seguridad; no asumir que labels o transiciones sugeridas ya son canónicas.
-4. **Resolver precedencia del cierre.** El checkpoint se intenta primero dentro del presupuesto inicial de 30 s, pero la prioridad de borrado en emergencia/sospecha de compromiso se mantiene. Especificar los resultados para checkpoint PASS/FAIL/timeout, bloqueo BitLocker FAIL, pérdida de red, lease vencido, reloj inconsistente y terminación forzada del controlador.
-5. **Implementar por adaptadores pequeños.** Separar inventario read-only, renovación de lease, decisión de trigger, bloqueo/desmontaje, crypto-erasure y recibo. Cada módulo consume estado comprobado; no iniciar el siguiente paso con datos incompletos o contradictorios. Respetar las exclusiones: sin vigilancia general, sondeos costosos ni mecanismos no aprobados.
+4. **Resolver precedencia del cierre.** El checkpoint se intenta primero dentro del presupuesto inicial de 30 s; al terminar, bloquear/desmontar Cryptomator. Ante emergencia/sospecha de compromiso se neutraliza únicamente el material efímero de sesión; nunca se destruye el workspace persistente. Especificar resultados para checkpoint PASS/FAIL/timeout, bloqueo/desmontaje Cryptomator FAIL, pérdida de red, lease vencido, reloj inconsistente y terminación forzada del controlador.
+5. **Implementar por adaptadores pequeños.** Separar inventario read-only, renovación de lease, decisión de trigger, bloqueo/desmontaje Cryptomator, neutralización de material efímero y recibo. Cada módulo consume estado comprobado; no iniciar el siguiente paso con datos incompletos o contradictorios. No implementar borrado del workspace persistente. Respetar las exclusiones: sin vigilancia general, sondeos costosos ni mecanismos no aprobados.
 6. **Probar en laboratorio aislado.** Fixtures para expiración, falta de renovación, host suspendido, clock skew, pérdida de red, B2 no disponible, checkpoint parcial, proceso terminado, permisos insuficientes, volumen ajeno y recuperación. Los tests destructivos solo se realizan sobre contenedores desechables; nunca sobre el workspace real.
-7. **Validar extremo a extremo.** Probar inicio, inventario, lease, checkpoint, trigger terminal, bloqueo/desmontaje, eliminación limitada, recibo y ausencia de procesos huérfanos. Medir tiempos reales y falsos positivos; no usar una simulación como evidencia de operación real.
+7. **Validar extremo a extremo.** Probar inicio, inventario, lease, checkpoint, trigger terminal, bloqueo/desmontaje Cryptomator, limpieza limitada a temporales de sesión, recibo y ausencia de procesos huérfanos. Los fixtures destructivos son desechables; no se prueba borrado del workspace real. Medir tiempos reales y falsos positivos; no usar una simulación como evidencia de operación real.
 
 ### Review Focus y criterios de cierre
 
 - Sesión de una o dos instancias conforme al límite aprobado; aislamiento entre instancias.
 - Inactividad y máximo absoluto no se confunden con el TTL de Vault.
 - Cada trigger tiene condición positiva, condición negativa, fuente y evidencia.
-- Emergency/suspicion no espera al backup; el intento de checkpoint respeta el presupuesto y no posterga el borrado prioritario.
+- Emergency/suspicion no espera al backup; el intento de checkpoint respeta el presupuesto y no posterga el bloqueo/desmontaje Cryptomator ni la neutralización de claves/material efímero. No se borra el workspace persistente.
 - Crypto-erasure afecta únicamente al contenedor efímero declarado; no toca workspace persistente ni B2.
 - Inventario respeta permisos, fuente, precisión y costo; ninguna ubicación se infiere.
-- Cierre: contratos congelados, pruebas de laboratorio PASS, pruebas reales autorizadas de bloqueo/desmontaje/borrado/recuperación, métricas, recibos y aceptación del operador.
+- Cierre: contratos congelados, pruebas de laboratorio PASS, pruebas reales autorizadas de bloqueo/desmontaje Cryptomator y recuperación de sesión, métricas, recibos y aceptación del operador. Ninguna prueba destructiva opera sobre el workspace persistente.
 
 ### Rollback y seguridad
 
