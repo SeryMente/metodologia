@@ -1,12 +1,16 @@
 # 📝 EP-TASK-002 · Persistencia provisional con Backblaze B2 para datos de usuario y continuidad de la sesión canónica
 
 **Naturaleza:** tarea provisional del frente Entorno Persistente; materialización auxiliar del registro de tareas, no un OEP nuevo, no un frente independiente y no una decisión de arquitectura canónica.  
-**Estado:** `en_curso · P0 · B2_V6_HISTORICAL_OBJECT_VERIFIED · B2_V7_CURRENT_FORMAL_3352B_UPLOAD_READBACK_SHA_PASS · ISOLATED_DECRYPT_HMAC_AES_PASS_30_VARIABLES · CROSS_HOST_PENDING`. El ciphertext formal vigente fue respaldado y descargado desde B2 con SHA/tamaño idénticos y SSE-B2/AES256; una copia aislada del objeto v7 pasó verificación HMAC y descifrado AES, con 30 variables y los cinco nombres B2 presentes. La prueba se ejecutó en el mismo host propietario; recuperación cross-host, cifrado cliente de futuras capturas de workspace, sincronización automática/idempotente y aceptación integral siguen pendientes.
+**Estado:** `en_curso · B2_V7_UPLOAD_READBACK_SHA_PASS · ISOLATED_DECRYPT_HMAC_AES_PASS_30_VARIABLES · CLIENT_ENCRYPTED_WORKSPACE_BACKUP_PENDING · CROSS_HOST_PENDING`. La evidencia B2 v7 acredita exclusivamente el ciphertext formal de Vault; no acredita que el workspace completo esté cifrado del lado cliente ni que las capturas futuras estén listas para subir.
 **Responsabilidad:** vinculada a `frentes/ep/`; sin control, sesión, titularidad ni folio global propios.  
 **task_id:** `EP-TASK-002` (identificador local estable; no es folio global).  
 **scope_ref:** `frentes/ep/`  
 **Origen:** instrucción directa del operador recibida el 2026-10-31: crear un objeto provisional para habilitar persistencia remota con Backblaze, centrada en los datos de usuario de aplicaciones portables y continuidad de la sesión de trabajo canónica a través de distintas ubicaciones; priorizar confiabilidad y automatización sobre cifrado avanzado.  
 **Relación con el OEP:** desarrolla provisionalmente necesidades dentro de OEP; no lo sustituye ni modifica sus §§23–26, ni crea un almacén paralelo de estado metodológico, autorización o bitácora.
+
+## Especificación vigente aplicable · OEP §137
+
+Los datos de usuario de aplicaciones respaldados por esta tarea deben residir localmente dentro del workspace Cryptomator. Backblaze B2 se utiliza únicamente para persistencia remota autorizada de artefactos cifrados del lado cliente; no se suben perfiles, bases, sesiones ni archivos de aplicación en claro. Los recibos B2 v7 y el descifrado aislado ya verificados conservan su alcance histórico exacto: no demuestran cifrado cliente del workspace ni restauración cross-host. El cifrado, empaquetado, manifiesto, read-back y recuperación de futuras capturas deben probarse antes de habilitar su transferencia.
 
 ## 1. Enunciado
 
