@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.84. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.85. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -4516,3 +4516,39 @@ La elevación administrativa y la identidad de los datos de usuario son dimensio
 - Resultado: `AUTHORIZED_TERMINALS_ONLINE=1`; `MULTI_TERMINAL_CONTINUITY=PENDING_SECOND_DEVICE`.
 
 No se modificó ni cerró la instancia Chrome global del host. La aceptación integral del frente EP permanece pendiente de credencial persistente, recuperación DPAPI/reinicio, segunda terminal y auditoría de confinamiento.
+
+
+### 142.18 MOD-EP-PRODUCT-DESIGN — entrada operativa «Frente Product Design» · 2026-11-12
+
+**Identidad y clasificación**
+- Identificador: `MOD-EP-PRODUCT-DESIGN`.
+- Ubicación canónica: `frentes/ep/modulos/MOD-EP-PRODUCT-DESIGN/` en `SeryMente/metodologia/main`.
+- Clasificación: módulo funcional interno de EP y subfrente funcional conforme a DUG ART-029; no es un FT/OCP independiente.
+- **Invocación operativa:** el operador puede invocarlo como **«Frente Product Design»** o por su identificador. Esa denominación abre el contexto de trabajo del módulo; es una interfaz de acceso y organización, no una promoción taxonómica ni la creación de un segundo frente autónomo.
+- Puerta documental y ficha funcional: `frentes/ep/modulos/MOD-EP-PRODUCT-DESIGN/README.md`.
+
+**Herencia y control**
+- Hereda del FT EP la autoridad, el alcance autorizado, titularidad/sesiones/generación, OCP, núcleo operativo, control de responsabilidad y criterios de seguridad y aceptación.
+- El único estado rector y control de responsabilidad continúan en `frentes/ep/OEP.md` y `frentes/ep/CONTROL-RESPONSABILIDAD.json`.
+- No se crea CONTROL-RESPONSABILIDAD.json, núcleo, OCP, titularidad, sesión, generación ni folio global independiente para este módulo.
+- El OEP conserva la vista integrada; el README del módulo funciona como punto de entrada y su carpeta conserva los documentos, fuentes, especificaciones, diseños, prototipos, pruebas y entregables propios. No se duplican los binarios, configuración ni credenciales de los módulos consumidores.
+
+**Propósito y alcance funcional**
+Desarrollar la capacidad de Product Design asistida por BMAD dentro de EP: transformar necesidades y fuentes del operador en definiciones de producto, requisitos, flujos de experiencia, especificaciones de interfaz y prototipos verificables, con trazabilidad entre fuentes, decisiones, diseño y validación.
+
+El módulo contempla descubrimiento, definición de producto, UX, UI, prototipado, validación y transferencia. Cada entregable identifica su nivel de fidelidad: conceptual, visual, navegable, funcional o técnico. No se confunde prototipo con MVP, producto productivo ni release aceptada.
+
+**Interfaces técnicas**
+- MOD-EP-BMAD conserva la instalación y los recursos BMAD.
+- MOD-EP-OPENCODE conserva el entorno de ejecución, lanzadores y configuración OpenCode/Groq.
+- MOD-EP-CHROME conserva la responsabilidad del navegador y sus datos confinados cuando se utilice.
+- Product Design consume esas capacidades sin reinstalarlas ni crear almacenes de credenciales paralelos.
+- Las pruebas BMAD/OpenCode/Groq registradas en §§142.12 y 142.15 son pruebas E2E acotadas; no equivalen a aceptación integral de EP ni de un producto diseñado.
+
+**Estado inicial**
+- La ficha funcional del módulo fue creada y leída de vuelta en `frentes/ep/modulos/MOD-EP-PRODUCT-DESIGN/README.md`.
+- No se declara aún una implementación completa del proceso Product Design ni un producto específico aceptado.
+- El documento general de implementación al que aludió el operador no está adjunto ni identificado inequívocamente en este ciclo; su contenido y naturaleza no se presuponen.
+- Siguiente paso: adquirir ese documento, conservar el original y clasificar lo que demuestra (prototipo conceptual/visual/navegable/funcional, PoC, MVP o implementación productiva) antes de derivar requisitos y plan de diseño.
+
+**Resultado:** `MOD-EP-PRODUCT-DESIGN=INITIALIZED`; `OPERATIONAL_INVOCATION=FRENTE_PRODUCT_DESIGN`; `PARENT_GOVERNANCE=EP_INHERITED`; `INDEPENDENT_OCP_OR_CONTROL=NONE`.
