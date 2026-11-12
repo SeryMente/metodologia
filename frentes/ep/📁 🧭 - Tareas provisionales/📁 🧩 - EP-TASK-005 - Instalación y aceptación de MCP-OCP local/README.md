@@ -1,14 +1,27 @@
-# EP-TASK-005 · Instalación y aceptación de MCP-OCP local por stdio
+# EP-TASK-005 · Instalación y aceptación de MCP-OCP dentro del workspace Cryptomator por stdio
 
-**Estado:** `pendiente` · **Frente:** Entorno Persistente · **OCP padre:** `frentes/ep/OEP.md`
+**Estado:** `pendiente · WORKSPACE_CRYPTOMATOR_GATE_PENDING · PACKAGE_V389_RECONCILIATION_PENDING · INSTALL_NOT_PERFORMED · IPZ_E2E_NOT_RUN` · **Frente:** Entorno Persistente · **OCP padre:** `frentes/ep/OEP.md`
 **Origen:** planificación interfrente por instrucción directa del operador · 2026-11-09.
 **Registro:** tarea provisional; no crea control, titularidad, sesión, generación ni folio independiente.
+
+## Alcance vigente · OEP §137
+
+1. Esperar a que EP-TASK-003 entregue la bóveda Cryptomator materializada, desbloqueable y aceptada, el árbol de workspace y la verificación de que sus datos permanecen dentro del perímetro.
+2. Instalar el producto bajo SeryMente/Herramientas/MCP-OCP/ o la ruta de instalación específica del proyecto dentro del workspace.
+3. Ubicar DB, estado, fuentes importadas, configuración de usuario, caches, logs y temporales bajo SeryMente/Datos/Metodologia/MCP-OCP/ y SeryMente/Temporal/. SDK/runtime, NuGet cache y herramientas de build se confinan bajo SeryMente/Herramientas/.
+4. Configurar el proceso para no persistir datos en %APPDATA%, %LOCALAPPDATA%, %TEMP%, %TMP% ni otras rutas externas. Observar filesystem durante arranque, consulta, cierre y reinicio; verificar read-back.
+5. Recibir solo un paquete MCP-OCP reconciliado con DUG vigente, manifest/ZIP/recibo coherentes y pruebas ligadas al artefacto exacto. El candidato v388 anterior no se instala contra DUG v389.
+6. Mantener autenticación local y registro de operador mediante el flujo interactivo aprobado, sin transmitir tokens, SID o secretos al chat ni persistirlos en logs.
+7. Probar MCP STDIO y readiness con fuentes importadas; la aceptación IPZ E2E corresponde a Gobernanza y requiere una respuesta visible desde contexto IPZ real.
+8. No instalar ni ejecutar si falla la bóveda, el confinamiento real, integridad del paquete o el gate de seguridad aplicable.
+
+
 
 ## Propósito
 
 Recibir el artefacto MCP-OCP renovado y efectuar su instalación, bootstrap y aceptación en un perfil Windows real y confiable, exclusivamente después de que el destino, el almacenamiento y el canal local estén verificados. La instalación conserva MCP stdio; no requiere servicio Windows, listener HTTP, túnel ni endpoint público.
 
-## Alcance
+## Alcance histórico — SUPEDITADO A OEP §137
 
 1. Destino vigente designado por el operador: terminal **Fila 4**, correspondiente a la única sesión RDC disponible. La identidad técnica efímera no se conserva. Antes de una operación local, revalidar que la conexión corresponde al alias Fila 4, el perfil efectivo, privilegios, rutas y permisos; no persistir hostname, Device ID, sesión ni cuenta/SID. La ubicación física se verifica por separado; no inferir CECEQ ni LOC-OTHER. PC 7 queda supersedido y no es fallback.
 2. Confirmar en Fila 4 que workspace, runtime, DB y respaldos están en un volumen de trabajo protegido. La última observación histórica de Fila 4 indicó FullyEncrypted/100 %, ProtectionStatus=Off y XtsAes128; no acredita protección efectiva. Repetir en vivo y obtener XTS-AES256, Protection On, FullyEncrypted/100 %, protector recuperable custodiado por EP Vault y read-back SHA-256. No heredar W:, VHDX, RecoveryPassword ni DPAPI de PC-14/PC 7.
