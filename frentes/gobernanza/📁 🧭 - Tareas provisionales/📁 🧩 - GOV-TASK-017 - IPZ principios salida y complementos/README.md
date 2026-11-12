@@ -105,7 +105,7 @@ El operador instruye modificar la candidata actual conforme a todas las decision
 - **Separación conservada:** parte 5 contiene exclusivamente el acceso a salida; parte 6 conserva solo ART-032 y los complementos no burocracia, continuidad/procedencia e integridad proporcional por evento. No hay instrucciones de salida en parte 6.
 - **Optimización aplicada:** se compactó redacción y se eliminaron repeticiones sin quitar las seis posiciones, verificación de vigencia, lectura íntegra y seguimiento de referencias, reconocimiento MDP, lectura íntegra de cada principio pertinente, lectura del CNP, distinción salida humana/telemetría ni los tres complementos.
 - **Ahorro medido:** anterior 1.462 UTF-16 CRLF; actual 1.331 UTF-16 CRLF; reducción de 131 unidades (8,96%). Actual: LF 1.324; CRLF 1.331; puntos de código 1.324. No se añadieron consultas ni pasos de ejecución.
-- **Candidata actual:** blob `c57537a99f4c6fc01897288e76b6afba6bd1445f`; commit `1a1c72a8713d90a47cce013ebb7b3141b2279e82`. Read-back posterior pendiente de registrar en este mismo checkpoint.
+- **Candidata actual:** blob `c57537a99f4c6fc01897288e76b6afba6bd1445f`; commit `1a1c72a8713d90a47cce013ebb7b3141b2279e82`. **Read-back completado:** recuperada desde `main`; encabezado, seis posiciones, etiquetas y separación de las partes 5/6 cotejadas. Conteos LF/CRLF coinciden con 1.324/1.331.
 - **Límites sin cambio:** no se renombró contenido del DUG; no se modificó ART-032; AT continúa aplazada; campo nativo IPZ no modificado.
 
 ## Trabajo pendiente
