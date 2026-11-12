@@ -1,19 +1,24 @@
-# EP-TASK-003 · Materialización del workspace y dead-man trigger fuera de CECEQ
+# EP-TASK-003 · Materialización del workspace Cryptomator y confinamiento de aplicaciones
 
 **Naturaleza:** tarea provisional del frente EP; sin titularidad, control, sesión ni folio propios.  
-**Estado:** `en_curso · CRYPTOMATOR_SELECTED · APP_DATA_CONFINEMENT_REQUIRED · IMPLEMENTATION_PENDING · MIGRATION_NOT_STARTED · NO_DATA_MOVED · LOCATION_UNCLASSIFIED`
+**Estado:** `en_curso · CRYPTOMATOR_SELECTED · INSTALLATION_NOT_STARTED · VAULT_NOT_CREATED · APP_DATA_CONFINEMENT_PENDING · MIGRATION_NOT_STARTED · LEGACY_BITLOCKER_VHDX_CLEANUP_PENDING`
 **Responsabilidad:** frente EP.  
-**OEP padre:** [OEP](../../OEP.md), especialmente §106.
+**OEP padre:** [OEP](../../OEP.md), especialmente §137.
 
-## Alcance
+## Alcance vigente · OEP §137
 
-1. Materializar el root `SeryMente` en el Escritorio efectivo de la sesión Windows, con los repositorios actuales de la organización SeryMente.
-2. En los repositorios que sean extensiones de Chrome, mantener la carpeta cargable `Extensión` sincronizada con el commit fuente.
-3. Proteger el workspace completo mediante bóveda Cryptomator con contraseña maestra independiente. Las aplicaciones de sesión EP deben instalar sus binarios y persistir sus datos dentro del workspace protegido, con confinamiento de perfiles, configuración, extensiones, cachés, logs y temporales.
-4. En **CECEQ**, conservar el workspace cifrado al cierre; no aplicar volatilización automática.
-5. En ubicaciones **distintas de CECEQ**, implementar exclusivamente un dead-man trigger ligado a la terminación del proceso que mantiene abierta la sesión EP. Al dispararse: bloquear BitLocker, desmontar el volumen y eliminar únicamente el contenedor/carpeta de trabajo EP.
+1. Materializar una bóveda Cryptomator como único contenedor de protección del workspace persistente SeryMente; no usar ni crear VHDX o configuración BitLocker para EP.
+2. Materializar dentro de la bóveda el árbol canónico Herramientas/, Repositorios/, Datos/ y Temporal/, conservando las rutas lógicas y agrupación por frente definidas en OEP §137.
+3. Inventariar las aplicaciones, herramientas, perfiles, datos y ubicaciones actuales. Instalar las herramientas dentro de Herramientas/ cuando su distribución lo permita y confinar sus datos persistentes bajo Datos/ o Temporal/.
+4. Migrar únicamente después de inventario, preservación del origen y manifiesto; verificar conteos, tamaños, SHA-256, read-back, apertura de repositorios y funcionamiento de aplicaciones. No borrar el original antes de aceptación.
+5. Inventariar y retirar, tras comprobar propiedad y contenido, los artefactos locales específicos del diseño descartado BitLocker/VHDX: VHDX EP, puntos de montaje, scripts, configuraciones, instaladores, accesos directos y trabajos asociados. No retirar a ciegas información útil ni componentes ajenos a EP.
+6. Demostrar que no quedan escrituras persistentes de datos de usuario de aplicaciones fuera del workspace durante arranque y uso representativos. Si una aplicación no puede confinar sus datos, bloquearla para la sesión EP hasta corregirla o sustituirla.
 
-## Diseño histórico revisado: solo el disparador
+## Diseño histórico revisado — ANTECEDENTE NO VIGENTE
+
+El contenido que sigue documenta antecedentes de dead-man/BitLocker/VHDX. No constituye arquitectura actual ni autoriza nuevas operaciones con esas herramientas. La arquitectura vigente es Cryptomator y el confinamiento definido en OEP §137. Las acciones antiguas de bloqueo BitLocker, montaje de VHDX y eliminación de contenedores basadas en ese diseño quedan supersedidas.
+
+
 
 Fuentes consultadas en KHORA, commit histórico `1db42a7fac9f154ac1afbeffc23ff06ea07b1384`:
 
