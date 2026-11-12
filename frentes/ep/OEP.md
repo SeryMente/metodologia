@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.77. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.78. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -4143,12 +4143,14 @@ ChatGPT → RDC → equipo Fila 4 → SeryMente → MOD-EP-BMAD → MOD-EP-OPENC
 
 RDC proporciona al asistente remoto lectura/escritura de archivos y ejecución de comandos autorizados en el equipo. OpenCode es el agente de programación que ejecuta los workflows/skills de BMAD y consume modelos Groq. BMAD aporta instrucciones, roles, workflows y artefactos de desarrollo. ChatGPT coordina las tareas, lee y revisa artefactos a través de RDC; no adquiere por ello una invocación nativa interna de todos los agentes/skills BMAD. La ejecución delegada se realiza mediante CLI OpenCode y las salidas persistentes del módulo.
 
-### 141.2 Selección de versión y compatibilidad
+### 141.2 Selección de versión, dependencias y materialización comprobada
 
-- BMAD 6.12.4 es la versión estable elegida para la primera instalación reproducible; BMAD v7 se considera preview alpha y no se adopta para este EP hasta que exista una versión estable compatible.
-- BMAD requiere Node.js y Python/uv según la guía de instalación estable. Versiones de cada dependencia se inventarían por terminal.
-- OpenCode se evalúa como primer agente por el proveedor Groq nativo y soporte de skills. La compatibilidad final se aprueba solo después de que el agente descubra un skill/workflow BMAD, ejecute una tarea de prueba y escriba el resultado dentro de SeryMente/.
-- Groq se elige como proveedor de inferencia del agente. La configuración de proveedor/modelo es compartible sin credencial; la API key es local y específica de cada terminal.
+- BMAD 6.12.4 es la versión estable adoptada; BMAD v7 continúa como preview alpha y no se adopta como release estable.
+- Fila 4 dispone de Node.js v24.0.0 y npm v11.3.0 a nivel de sistema. El módulo MOD-EP-BMAD materializa uv 0.11.32 y CPython 3.11.15 bajo su carpeta de aplicación, con cachés, temporales y directorios Python/uv propios del módulo.
+- BMAD 6.12.4 está instalado en MOD-EP-BMAD/app/node_modules/bmad-method. El CLI oficial instaló los módulos core y bmm en un proyecto aislado de humo; el comando `status` confirmó ambos módulos en 6.12.4.
+- OpenCode 1.19.5 está materializado como release autónoma en MOD-EP-OPENCODE/app/release-1.19.5/opencode.exe. El binario npm inicialmente materializado quedó no ejecutable/truncado; se sustituyó por el ZIP de la release oficial v1.19.5. ZIP de 81.738.227 bytes: SHA-256 `09A6E693157F0887E504F2CF4357A8CBDDC5EAD5D0DFFB9A269DCC47C48640F5`, cotejado con el manifiesto de paquete externo consultado. Ejecutable: 211.564.424 bytes, SHA-256 `D7B473388CB62555970E400CE54CDFB6D6573608BEEA6F8FDF382CD1A698A3FA`; `opencode --version` devolvió 1.19.5 con exit code 0. Esta prueba acredita ejecución del binario, no la aceptación E2E del agente.
+- El proyecto aislado `MOD-EP-BMAD/data/Fila4/bmad-opencode-smoke` quedó instalado con módulos core y bmm; BMAD generó 29 directorios de skills en `.agents/skills/` y 29 comandos en `.opencode/commands/`. Se verificó por conteo físico y por `bmad-cli status`. Ningún repositorio productivo se modificó.
+- El contrato de integración final requiere que OpenCode descubra los skills generados, ejecute una tarea BMAD sin modificación productiva y escriba/lea sus artefactos dentro del módulo o proyecto asignado. La generación de skills no equivale por sí sola a ejecución del agente.
 
 ### 141.3 Instalación y configuración por módulos
 
@@ -4171,25 +4173,34 @@ La conexión activa MantenimientoRCI es el canal administrativo elevado para alc
 
 El acceso desde varias ubicaciones/equipos no se declara funcional hasta demostrar que cada terminal encuentra la misma fuente de workspace o un mecanismo de sincronización autorizado, con identidad RDC individual, prevención de conflicto, read-back y recuperación. Estado actual: MULTI_TERMINAL_CONTINUITY=NOT_VERIFIED.
 
-### 141.6 Pruebas de aceptación
+### 141.6 Pruebas de aceptación y estado real de Fila 4 · 2026-11-12
 
-La integración E2E exige: versión de BMAD y OpenCode visible; instalación de workflows reconocida; skill BMAD detectado por OpenCode; sesión del agente; llamada autenticada a Groq sin revelar la clave; tarea de prueba sin modificar un proyecto productivo; archivos creados en el módulo/proyecto persistente; lectura de vuelta desde otra sesión; recuperación de configuración local sin reintroducir el secreto; prueba ChatGPT→RDC→comando→resultado; y alta individual de una segunda terminal.
+La integración E2E exige: versión de BMAD y OpenCode visible; workflows instalados; skills BMAD reconocidos por OpenCode; ejecución de una tarea de humo; llamada autenticada a Groq sin revelar la clave; archivos de prueba persistentes en el proyecto aislado; lectura de vuelta; rutas de datos confinadas en MOD-EP-OPENCODE; y prueba ChatGPT→RDC→comando→resultado. La continuidad multi-terminal conserva su gate independiente.
 
-Estado del ciclo de instalación: MODULE_FOLDERS_CREATED; CHROME_FOR_TESTING_DOWNLOAD=ABORTED_BEFORE_CHECKSUM_OR_EXTRACTION (el archivo ZIP quedó bloqueado durante la descarga y no se verificó ni se declaró instalable); CHROME_INSTALL=NOT_INSTALLED; OPENCODE_NPM_INSTALL=ABORTED_WITHOUT_PACKAGE_OR_VERSION_READBACK; BMAD_NPM_INSTALL=ABORTED_WITHOUT_PACKAGE_OR_VERSION_READBACK; BMAD_WORKFLOWS=NOT_INSTALLED; MODULE_LAUNCHERS=NOT_WRITTEN; GROQ_AUTH=NOT_CONFIGURED; BMAD_OPENCODE_COMPATIBILITY=NOT_TESTED; CHATGPT_RDC_E2E=PARTIAL_CAPABILITY_AVAILABLE_E2E_PENDING; MULTI_TERMINAL_CONTINUITY=NOT_VERIFIED; APP_DATA_CONFINEMENT=PARTIAL_PENDING_AUDIT; ACCEPTANCE=PENDING. Los dos procesos de instalación se detuvieron al no producir salida, logs ni artefactos verificables; no quedaron instaladores ejecutándose en segundo plano por este ciclo.
+Evidencia y estado del ciclo:
+- `BMAD_PACKAGE=6.12.4_INSTALLED`; npm install y `npm ls --depth=0` finalizaron con exit code 0.
+- `BMAD_PYTHON_UV=MODULE_LOCAL`; uv 0.11.32 y CPython 3.11.15 instalados bajo MOD-EP-BMAD/app; cachés y temporales apuntados a carpetas del módulo.
+- `BMAD_PROJECT_SMOKE=PASS`; core 6.12.4 y bmm 6.12.4 instalados; `bmad-cli status` exit 0; 29 skills y 29 comandos generados y verificados en el proyecto aislado.
+- `OPENCODE_RELEASE=1.19.5_BINARY_EXECUTION_PASS`; release ZIP SHA cotejado, ejecutable local inicia y reporta versión exacta.
+- `OPENCODE_PATH_REDIRECTION=PASS_OBSERVED`; `opencode debug paths` devolvió home, data, bin, log, repos, cache, config, state y tmp exclusivamente bajo MOD-EP-OPENCODE. La auditoría física completa de escrituras externas sigue pendiente.
+- `GROQ_PROVIDER_CONFIG=V1_CUSTOM_PROVIDER_CONFIGURED`; la versión 1.19.5 utiliza configuración V1 con la clave `provider` (singular), paquete `@ai-sdk/openai-compatible`, endpoint `https://api.groq.com/openai/v1` y `options.apiKey={env:GROQ_API_KEY}`. La configuración local no contiene una credencial.
+- `GROQ_MODEL_DISCOVERY=PASS`; `opencode models groq` finalizó con exit code 0 y enumeró, entre otros, `groq/openai/gpt-oss-120b`.
+- `GROQ_EPHEMERAL_INJECTION=ATTEMPTED_IN_PROCESS`; la nota DPAPI se leyó localmente mediante el hotfix de EP Vault y se asignó `GROQ_API_KEY` únicamente al proceso lanzador y su hijo OpenCode. El valor no se imprimió, no se registró en archivos de configuración y no se guardó en `auth.json`.
+- `GROQ_INFERENCE_E2E=NOT_VERIFIED`; el comando `opencode run` inició y cargó la configuración/proyecto, pero no produjo respuesta visible, no creó una sesión verificable y no mostró conexión TCP del proceso. Se detuvo el proceso de humo para retirar la credencial de la memoria del proceso. No declarar autenticación ni inferencia Groq como PASS.
+- `EPHEMERAL_NOTE=EXPIRED`; la nota que el operador capturó expiró a `2026-11-12T21:39:12.4827781Z` (15:39:12, hora local de Fila 4). El TTL de notas y la sesión de bóveda son relojes independientes. No se reutiliza una nota vencida ni se elude su expiración.
+- `CHATGPT_RDC_EXECUTION=PARTIAL_PASS`; la conexión permite inspección, escrituras locales autorizadas y ejecución de comandos, pero la prueba completa ChatGPT→BMAD→OpenCode→Groq→resultado no está aceptada.
+- `CHROME_INSTALL=NOT_INSTALLED`; el ZIP de Chrome for Testing previo continúa sin checksum ni extracción verificados.
+- `MULTI_TERMINAL_CONTINUITY=NOT_VERIFIED`; `APP_DATA_CONFINEMENT=PARTIAL_PENDING_WRITE_AUDIT`; `ACCEPTANCE=PENDING`.
 
-Fuentes de referencia:
-- BMAD stable install: https://docs.bmad-method.org/getting-started/installation/
-- BMAD package/release: https://www.npmjs.com/package/bmad-method
-- BMAD repository: https://github.com/bmad-code-org/BMAD-METHOD
-- OpenCode install/config/skills: https://opencode.ai/docs/ ; https://opencode.ai/docs/skills/
-- Groq + OpenCode: https://console.groq.com/docs/opencode
-- Chrome for Testing: https://googlechromelabs.github.io/chrome-for-testing/
+La prueba usó exclusivamente el proyecto aislado `bmad-opencode-smoke`. No se autorizó escritura en ningún repositorio productivo. No se almacena ni se transcribe una clave API en este OEP.
 
-Cierre documental: las carpetas de módulos y la reorganización inicial de repositorios fueron creadas; eso no acredita la instalación, autenticación, confinamiento, migración ni aceptación. Solo los estados con evidencia de versión, ejecución, ruta y lectura de vuelta se elevarán a PASS.
+Fuentes técnicas:
+- BMAD instalación y release: https://docs.bmad-method.org/getting-started/installation/ ; https://www.npmjs.com/package/bmad-method
+- OpenCode release y V1 provider config: https://github.com/anomalyco/opencode/releases/tag/v1.19.5 ; https://github.com/anomalyco/opencode/blob/v1.19.5/packages/web/src/content/docs/providers.mdx
+- Groq + OpenCode: https://console.groq.com/docs/coding-with-groq/opencode
+- OpenCode rutas y CLI: https://opencode.ai/docs/ ; https://opencode.ai/docs/cli/providers/
 
-
-
----
+Cierre: BMAD 6.12.4 está instalado y su proyecto de humo integra sus skills/comandos de OpenCode; OpenCode 1.19.5 ejecuta y descubre el modelo Groq. La autenticación efectiva y la respuesta de inferencia aún no están demostradas. Los estados de instalación, configuración, ejecución, prueba, verificación y aceptación se mantienen separados.
 
 ## §142. MOD-EPVAULT — Bóveda de variables de entorno y notas efímeras · 2026-11-12
 
@@ -4262,11 +4273,15 @@ La contraseña maestra se introduce localmente:
 - CLI: prompt interactivo `Read-Host -AsSecureString`.
 - GUI: control local de contraseña de WPF.
 
-No se recibe por conversación, argumentos de proceso, variables de entorno, archivo temporal, portapapeles remoto, log, historial ni configuración compartida. La contraseña maestra no es la API key que el operador desea depositar en una nota.
+No se recibe por conversación, argumentos de proceso, variables de entorno, archivo temporal, portapapeles remoto, log, historial ni configuración compartida. La contraseña maestra no es la API key que el operador deposita en una nota.
 
 La bóveda no se inicializa automáticamente. `Initialize` solo puede crearla si no existe y solicita introducir y confirmar la contraseña localmente; rechaza sobrescribir un archivo existente. No se debe ejecutar Initialize como mecanismo de reparación o sustitución del ciphertext actual.
 
-La sesión compartida CLI/GUI se protege mediante DPAPI CurrentUser. Los TTL admitidos son 15, 30, 60, 120, 180, 300, 600 y 900 segundos; el valor predeterminado es 300 segundos. `Lock` revoca la sesión, limpia el estado de variables cargadas por la aplicación y cierra el acceso operativo. Al terminar una tarea sensible se ejecuta Lock y se finaliza el proceso que tuvo acceso. La sesión no se considera una credencial compartible entre terminales: DPAPI CurrentUser vincula la protección al usuario Windows de esa terminal.
+El formato de sesión DPAPI CurrentUser admite en la GUI las duraciones 15, 30, 60, 120, 180, 300, 600, 900, 1800 y 3600 segundos; el valor predeterminado es 300 segundos. La sesión observada en Fila 4 fue de 3600 segundos, con inicio `2026-11-12T21:08:58.7240128Z` y vencimiento `2026-11-12T22:08:58.7240128Z`. A las 15:41:45 locales seguía activa y restaban aproximadamente 27 minutos. La sesión continúa ligada a DPAPI CurrentUser de Fila 4; no se comparte con otras terminales.
+
+**Incidencia de v1.0.0:** aunque la GUI y las rutinas de creación admiten 1800/3600 segundos, `Import-EpSharedSession` conserva una allowlist que termina en 900 segundos y rechaza la sesión de una hora con `VAULT_SHARED_SESSION_TTL_INVALID`. Se preparó una copia de hotfix local para compatibilidad de importación y parámetro CLI, sin modificar la release v1.0.0 ni la sesión viva. La copia y los hashes se registran en §142.11. Mientras el hotfix no se integre, pruebe y acepte como release, la v1.0.0 original conserva el defecto.
+
+`Lock` revoca la sesión, limpia el estado de variables cargadas por la aplicación y cierra el acceso operativo. Al terminar una tarea sensible se ejecuta Lock y se finaliza el proceso que tuvo acceso. El vencimiento de una nota DPAPI no invalida la sesión de bóveda, y el vencimiento de la sesión no amplía el TTL de una nota.
 
 ### 142.6 Notas efímeras: captura, lectura, promoción y expiración
 
@@ -4312,23 +4327,22 @@ Antes de utilizar GUI en una terminal se requiere un lanzador específico que:
 
 La comprobación de pantalla del 2026-11-12, ejecutada bajo `CENTRAL\fila4` en sesión interactiva 1, enumeró `ACTIVE_SCREEN_COUNT=1`, `\\.\DISPLAY1` a 1366×768 y un monitor PnP HP V193b con estado OK. Este dato describe la configuración observada, pero no es un bloqueo: el operador emitió una instrucción expresa para abrir EP Vault GUI, que conforme a §138 constituye autorización directa y excepción suficiente a CLI-only, sin requerir segundo monitor. La GUI se inició en esa misma sesión mediante PowerShell `-STA`, con identidad efectiva `CENTRAL\fila4` y `LOCALAPPDATA` redirigido por proceso a `data/Fila4/` del módulo. La comprobación posterior identificó el proceso hijo de la aplicación en la sesión interactiva 1, respondiendo, con título de ventana `EP-App v1.1.0`, handle válido y `WindowVisible=True`. Resultado: `GUI_OPEN=VISIBLE`; `WINDOW_PROCESS_RESPONDING=True`. No se introdujo contraseña maestra, no se desbloqueó la bóveda ni se revelaron variables/notas.
 
-### 142.9 Estado real, aceptación y pendientes
+### 142.9 Estado real, aceptación y pendientes · Fila 4 · 2026-11-12
 
-Estado de Fila 4 a 2026-11-12:
-- `MODULE_RELEASE=1.0.0`; el manifiesto indica retest exacto de release pendiente, H10 visual pendiente y merge a main pendiente.
-- `CIPHERTEXT_PRESENT=PASS`: archivo detectado mediante ruta de módulo correcta, esquema reconocido y SHA-256 cotejado.
+- `MODULE_RELEASE=1.0.0`; el manifiesto aún registra retest exacto de release pendiente, H10 visual pendiente y merge a main pendiente.
+- `CIPHERTEXT_PRESENT=PASS`: archivo detectado en la ruta del módulo; SHA-256 cotejado: `D7AD1D745CAF460E047EAE521C1C403F36E99864BC9CD0604FFC564E390F2F7D`.
 - `FILE_AND_DIRECTORY_ACL=PASS_OBSERVED`: propietario `CENTRAL\fila4`, DACL protegida y permisos para Fila 4/LocalSystem.
-- `STRUCTURAL_STATUS=ENCRYPTED_FILE_PRESENT`; no equivale a unlock ni a descifrado correcto.
-- `MASTER_PASSWORD_AUTH=NOT_TESTED`; el operador no ha ingresado la contraseña maestra en esta sesión.
-- `VARIABLE_READ_WRITE=NOT_TESTED`; no se revelaron ni modificaron valores formales.
-- `EPHEMERAL_NOTE_CAPTURE=NOT_TESTED`; no se ha capturado la clave de la aplicación ni otra nota en este ciclo.
-- `NOTE_TTL_AND_PURGE=NOT_TESTED_ON_FILA4`; el comportamiento está descrito por código/documentación, pero falta prueba de aceptación en esta terminal.
-- `GUI=LAUNCHED_PROCESS_RUNNING`; la orden expresa del operador fue ejecutada bajo Fila 4 con redirección local de datos; ventana visible no capturada, bóveda aún bloqueada.
-- `TERMINAL_LAUNCHER_WITH_LOCALAPPDATA_REDIRECTION=NOT_WRITTEN`; el lanzador general actual no confina por sí mismo la ruta de datos en Fila 4.
-- `HEADLESS_CONTRACT_CAPTURENOTE=DOCUMENTATION_CODE_MISMATCH`; corregir antes de declarar el contrato coherente.
-- `EXACT_RELEASE_RETEST= PENDING`; `H10= PENDING`; `MAIN_MERGE= PENDING`; `ACCEPTANCE=PENDING`.
+- `STRUCTURAL_STATUS=ENCRYPTED_FILE_PRESENT`; existe la envoltura cifrada, pero eso no equivale a descifrado/lectura de variables ni a aceptación.
+- `GUI=VISIBLE`; WPF `EP-App v1.1.0` se abrió en la sesión interactiva de Fila 4 y su ventana fue verificada visible/respondiendo.
+- `SESSION=DPAPI_SHARED_SESSION_ACTIVE`; sesión de una hora en Fila 4 observada; la importación por CLI requiere el hotfix §142.11 mientras la release v1.0.0 conserve su allowlist incompleta.
+- `EPHEMERAL_NOTE=CAPTURED_THEN_EXPIRED`; una nota DPAPI con TTL de 30 minutos fue capturada y leída localmente por el launcher sin imprimir su valor. Expiró a las 15:39:12 locales. No se promovió a variable formal ni se extendió su vencimiento.
+- `GROQ_SECRET_STORAGE=NOT_PERSISTED`; no se escribió la API key en Git, config, `auth.json`, logs ni conversación. La inyección efímera al entorno del proceso OpenCode se intentó; la inferencia no quedó verificada.
+- `OPENCODE_GROQ_INFERENCE=NOT_VERIFIED`; la ejecución de humo cargó la configuración V1, pero no entregó respuesta ni evidencia de solicitud completada.
+- `TERMINAL_LAUNCHER_WITH_LOCALAPPDATA_REDIRECTION=WRITTEN`; launcher por proceso, identidad Fila 4, local data dirs y lectura DPAPI sin salida del secreto. Debe invocarse con el ID de una nota vigente.
+- `HEADLESS_CONTRACT_CAPTURENOTE=DOCUMENTATION_CODE_MISMATCH`; corregir el contrato headless para que coincida con el comportamiento de la CLI que requiere sesión antes de CaptureNote.
+- `EXACT_RELEASE_RETEST=PENDING`; `H10=PENDING`; `MAIN_MERGE=PENDING`; `ACCEPTANCE=PENDING`.
 
-No se declara la bóveda abierta, autenticada, vacía, recuperable ni aceptada. No se afirma que una API key ya esté almacenada. Cuando el operador quiera depositar una credencial temporal, debe copiarla al portapapeles local de Fila 4 y capturarla directamente desde el proceso local autorizado, nunca enviarla por esta conversación. El modelo solo debe recibir el identificador de nota, la expiración y el resultado saneado; el contenido permanece fuera del contexto conversacional. La promoción a variable formal requiere instrucción expresa y no debe inferirse de una captura efímera.
+No se declara la bóveda vacía, recuperable ni plenamente aceptada. El hecho de que una nota se haya leído localmente no acredita inferencia del proveedor. Una nota vencida no se revela ni se reutiliza; para una nueva prueba el operador debe capturar otra nota con TTL suficiente (preferiblemente 60 minutos o más, dentro del rango 1–240 minutos).
 
 ### 142.10 Criterios de aceptación de EP Vault
 
@@ -4345,3 +4359,32 @@ La aceptación requiere, como mínimo:
 10. Manifiesto/SHA, lectura de vuelta de la documentación y aceptación expresa del frente.
 
 Hasta superar estos gates, EP Vault permanece como release candidata materializada con ciphertext presente y estado estructural legible, pero con autenticación, pruebas de aceptación y uso GUI pendientes.
+
+
+### 142.11 Incidencias verificadas y artefactos de integración · 2026-11-12
+
+**A. Hotfix de sesión DPAPI 3600 segundos**
+- Ruta: `MOD-EPVAULT/hotfix/session-ttl-3600/`.
+- Copias locales de `EP.Vault.Core.psm1` y `EP.Vault.CLI.ps1`; la allowlist de importación y ValidateSet se amplió a 1800 y 3600 segundos.
+- SHA-256 Core: `306CAF3362ACE521C1E5591A4647E2CE938A586E08D515CA732EDEA2558BF900`.
+- SHA-256 CLI: `77BFEA01CC4A553AB4B7F2791A7EBF10A49AF953C11FA458B4F284F5C2B95E1C`.
+- Importación de la sesión Fila 4 de 3600 segundos comprobada con `Get-EpVaultSession`; el hotfix no modifica ciphertext, la contraseña maestra, ni la GUI de v1.0.0. Es un hotfix de trabajo, no una nueva versión liberada ni aceptada. No reemplaza el source v1.0.0 hasta que pase revisión, pruebas y release.
+- La sesión compartida observada tenía inicio `2026-11-12T21:08:58.7240128Z` y expiración `2026-11-12T22:08:58.7240128Z`. La sesión y cada nota tienen vencimientos independientes.
+
+**B. Instalación OpenCode y configuración V1**
+- El material npm `opencode-ai@1.19.5` quedó no ejecutable en Fila 4: los binarios extraídos eran físicamente más pequeños que la extensión de secciones PE declarada y Windows devolvía error de aplicación no válida. Se conservó el árbol npm como antecedente; no se considera ejecutable.
+- Se descargó desde la release oficial `v1.19.5` el ZIP `opencode-windows-x64.zip`, 81.738.227 bytes; SHA-256 cotejado `09A6E693157F0887E504F2CF4357A8CBDDC5EAD5D0DFFB9A269DCC47C48640F5` contra el manifiesto externo de paquete consultado. Ejecutable extraído `app/release-1.19.5/opencode.exe`, 211.564.424 bytes, SHA-256 `D7B473388CB62555970E400CE54CDFB6D6573608BEEA6F8FDF382CD1A698A3FA`; versión comprobada 1.19.5, exit 0.
+- `opencode debug paths` confirmó que los directorios de home, data, bin, log, repos, cache, config, state y temp estaban dentro de MOD-EP-OPENCODE. No se modificó el entorno global de Windows.
+- La release 1.19.5 utiliza configuración V1; la clave correcta es `provider` singular. La forma V2 `providers` fue descartada por el propio diagnóstico del CLI. La configuración local define proveedor `groq`, `npm: @ai-sdk/openai-compatible`, `baseURL: https://api.groq.com/openai/v1`, `apiKey: {env:GROQ_API_KEY}`, y modelo `openai/gpt-oss-120b`. `opencode models groq` devolvió el catálogo y el modelo esperado con exit 0.
+- Configuración: `MOD-EP-OPENCODE/config/Fila4/xdg-config/opencode/opencode.json`.
+- Launcher: `MOD-EP-OPENCODE/launchers/Start-OpenCode-Groq-Ephemeral.ps1`; exige `-NoteId`, comprueba identidad `CENTRAL\fila4`, importa el hotfix de EP Vault, lee la nota localmente, inyecta `GROQ_API_KEY` solo al proceso OpenCode y elimina la variable del proceso lanzador en finally. El archivo no incluye una clave ni un ID de nota fijo.
+- El primer lanzamiento con esquema incorrecto se detuvo. El segundo, con configuración V1, inició OpenCode y cargó configuración/proyecto; no generó salida final ni registro de sesión verificable. No se observó socket TCP asociado al proceso en la comprobación; el proceso se detuvo sin respuesta. Por tanto, `GROQ_INFERENCE_E2E=NOT_VERIFIED`, no PASS.
+- La nota empleada en el intento expiró a `2026-11-12T21:39:12.4827781Z` (15:39:12 local). La credencial se asignó a memoria de proceso, no a un archivo o `auth.json`; el proceso OpenCode y su padre se detuvieron y ya no estaban presentes al cierre de la prueba. No reutilizar esa nota.
+
+**C. Integración BMAD**
+- BMAD 6.12.4 instalado bajo `MOD-EP-BMAD/app/node_modules/bmad-method`.
+- uv 0.11.32 y CPython 3.11.15 en `MOD-EP-BMAD/app/`; Node.js v24.0.0 y npm v11.3.0 observados en el host.
+- Proyecto de prueba: `MOD-EP-BMAD/data/Fila4/bmad-opencode-smoke/`.
+- `core` y `bmm` 6.12.4 instalados y reconocidos por `bmad-cli status`; 29 directorios de skills y 29 comandos generados para OpenCode. El proyecto no contiene un proyecto productivo.
+- El paso pendiente es una ejecución BMAD real por OpenCode con una respuesta de Groq y lectura de vuelta de un artefacto de prueba dentro del workspace aislado.
+
