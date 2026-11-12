@@ -1,7 +1,7 @@
 # EP-TASK-003 · Materialización del workspace Cryptomator y confinamiento de aplicaciones
 
 **Naturaleza:** tarea provisional del frente EP; sin titularidad, control, sesión ni folio propios.  
-**Estado:** `en_curso · CLI_ONLY_POLICY_ADOPTED · CRYPTOMATOR_DESKTOP_AND_WINFSP_INSTALLED · CLI_BUILD_PENDING · VAULT_NOT_CREATED · APP_DATA_CONFINEMENT_PENDING · MIGRATION_NOT_STARTED · LEGACY_BITLOCKER_VHDX_CLEANUP_PENDING`
+**Estado:** `en_curso · CLI_ONLY_POLICY_ADOPTED · CRYPTOMATOR_DESKTOP_AND_WINFSP_INSTALLED · CLI_BUILD_PASS_LOCAL · CLI_BUILD_WRAPPER_PENDING · UNIT_TESTS_12_PASS · INTEGRATION_TESTS_5_PASS · SYNTHETIC_CREATE_UNLOCK_CIPHERTEXT_PASS · WINDOWS_GRACEFUL_UNMOUNT_NOT_VERIFIED · SYNTHETIC_STAGING_CLEANUP_PENDING · REAL_VAULT_NOT_CREATED · APP_DATA_CONFINEMENT_PENDING · MIGRATION_NOT_STARTED · LEGACY_ARTIFACT_AUDIT_PENDING`
 **Responsabilidad:** frente EP.  
 **OEP padre:** [OEP](../../OEP.md), especialmente §137.
 
@@ -747,3 +747,35 @@ CRYPTOMATOR_SELECTED · INSTALLATION_NOT_STARTED · VAULT_NOT_CREATED · PASSWOR
 El VHDX anterior W: y su archivo físico bajo AppData se preservan sin mutaciones hasta definir si se reutiliza, migra o descarta. No se materializan nuevos clones en claro. No se ejecutó instalación ni cifrado durante este asiento.
 
 Referencia: OEP §136; documentación oficial Cryptomator Security Architecture, Desktop Setup, Volume Types, Admin Configuration y Troubleshooting.
+
+---
+
+## Verificación local de Cryptomator CLI y E2E sintética · 2026-11-12 · 11:54 America/Mexico_City
+
+**UUIDv7 local de continuidad:** `01a1d0e5-5b79-77b8-9cf2-b123a10ff447` · **ID nativo de conversación:** no expuesto por las herramientas. No se crea folio FOL1 ni identificador global CV/CY/A/B.
+
+### Procedencia y build
+
+- **Upstream:** `cryptomator/cli`, commit `f09851d3990f4b7dc6f572f8a9eb9a5f2882f439`, fechado 2026-11-05T16:38:02Z. GitHub reportó `verification.verified=true`, firma SSH válida y autor Armin Schrenk. [Commit upstream](https://github.com/cryptomator/cli/commit/f09851d3990f4b7dc6f572f8a9eb9a5f2882f439).
+- **Blob OID cotejados contra upstream:** `build_win.ps1` `06503b7ffd65a3ab782680edb6fc3ee3bca11d6a`; `pom.xml` `b0379a0c48affd05fedd1f307f03466e8b14e589`; `Create.java` `8d4ab982d26af2e551db32e657d13a0bd078bda8`; `CreateIT.java` `95d49fa75b5e8202e42846b01b64f70089f3103e`; `dist/jlink.args` `c42f03f0a0c0206d6d4221c2b304af0cf34bd75e`; `dist/jpackage.args` `4ebefef4daf8234c2416d93940c438735ab38be1`.
+- **ZIP fuente local:** 72,354 bytes; SHA-256 `8926DCE2DE8C1FFC2A80C24B3562AA583DDD0530D959E2D9B09DA04389FDC8EB` (huella registrada, no se encontró checksum firmado publicado para cotejo directo).
+- **JDK portable:** Temurin 25.0.5+8, ZIP 141,285,173 bytes; SHA-256 local `636BDC13DC649DDC7D5921C5C7D23CCA6E44FD19D662B45CC9C02135A6C96C42`, coincidente con el checksum SHA-256 publicado por Adoptium.
+- **Artefactos locales:** JAR `cryptomator-cli-0.7.0-SNAPSHOT.jar`, 33,883 bytes, SHA-256 `26681D2F53710B952510784DF83FA7DD5F721460D498F9861CB8601D0A7E9BE3`; `cryptomator-cli.exe`, 503,296 bytes, SHA-256 `0F59F11CCD8829E0FB8A5634184C5664442CDE60741A812543E3235F15E6BDE5`.
+- **Etiqueta:** `LOCAL_BUILD_FROM_SIGNED_UPSTREAM_SOURCE`; el ejecutable local no está Authenticode-firmado. `--version` devuelve `0.1.0-local` y el FileVersion PE es `99.9.9`; no se presenta como release oficial.
+- **Build y suites:** el JAR se compiló con Maven; 12 pruebas unitarias PASS. La imagen Windows se generó mediante el ensayo de argumentos JDK UTF-8/barras normalizadas y jpackage; 5 pruebas de integración PASS, incluidas creación de bóveda, unlock WebDAV y contraseña incorrecta. El script upstream `build_win.ps1` conserva su blob original y su ruta `Out-File` predeterminada de PowerShell 5.1 falla al preparar argumentos de jlink; el wrapper local reproducible sigue pendiente.
+
+### Smoke y E2E sintética
+
+- `--version`, `--help`, `create --help`, `unlock --help` y `list-mounters`: exit 0. La lista mostró WinFsp mounters y `FallbackMounter`.
+- **Host observado:** `PC10RCIF4EI4`, perfil `CENTRAL\fila4`, Windows PowerShell `5.1.26100.9711`, no elevado. No se abrió GUI.
+- **Prueba aislada:** raíz `Temporal/Staging/Cryptomator-CLI-SYNTHETIC-20261112`; variables APPDATA/LOCALAPPDATA/TEMP redirigidas al propio staging. `create --password:env` se usó exclusivamente con contraseña sintética no real y creó los archivos formales `vault.cryptomator`, `masterkey.cryptomator` y el árbol `d/`.
+- **Unlock:** `FallbackMounter` inició Jetty/WebDAV en `localhost:49321` y el CLI informó montaje correcto. PUT `synthetic-proof.txt`: HTTP 201; GET: HTTP 200 y 37 bytes idénticos al payload sintético. La inspección física encontró cinco archivos; no detectó el nombre ni el contenido del fichero sintético en claro en los archivos de la bóveda.
+- La primera comparación PowerShell 5.1 fue inválida porque `Invoke-WebRequest.Content` llegó como matriz de bytes; la lectura posterior con .NET `HttpClient` confirmó igualdad byte a byte. No se registra como fallo de cifrado.
+- El proceso y listener WebDAV se retiraron mediante terminación forzada del árbol **sintético** (PIDs 18280/3840/9256); read-back mostró procesos ausentes y puerto 49321 sin listener. **Desmontaje graceful no verificado en Windows**: la señal Ctrl+C remota no se entregó al hijo y la suite upstream solo comprueba shutdown graceful en plataformas no Windows.
+
+### Límites y pendientes que no se promueven a PASS
+
+- No se creó la bóveda real, no se introdujo contraseña real, no se migró el árbol SeryMente y no se modificó el origen.
+- La ruta `C:\Users\fila4\EP\ProtectedWorkspace\SeryMente-Vault` observada antes de la prueba es un directorio vacío, no una bóveda. El comando `create` requiere que la ruta de destino no exista; no se retira ni renombra ese placeholder sin autorización expresa del operador. La contraseña real solo se introducirá localmente mediante `--password:stdin`; no se transmite al chat.
+- El staging sintético continúa presente: los intentos de limpieza no llegaron al host porque el verificador de comandos RDC expiró antes de ejecutar. No se borró ningún archivo en esos intentos; retirar únicamente ese directorio sigue pendiente.
+- No se alteraron BitLocker, VHDX, volúmenes, ACL, WinFsp, Cryptomator Desktop ni datos reales. La GUI permaneció cerrada. Persisten pendientes el wrapper reproducible, el cierre graceful Windows, limpieza staging, destino real, confinamiento completo de datos por aplicación, migración íntegra, recuperación y aceptación.
