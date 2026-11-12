@@ -9,7 +9,7 @@
 
 ## Enunciado
 
-Actualizar la candidata documental de Instrucciones Personalizadas de ChatGPT (IPZ) para reflejar la nueva estructura de cinco partes y el Metacanon §4 vigente; revisar y proponer la reconciliación de ART-032 mediante Articulación Trazable (AT), preservando continuidad y procedencia con sustento explícito en los principios. Reducir fricción y carga repetitiva sin debilitar los controles de integridad realmente necesarios. La instalación en el campo nativo queda fuera de esta tarea y requiere su autorización y verificación independientes.
+Revisar secuencialmente la candidata documental de Instrucciones Personalizadas de ChatGPT (IPZ), recoger las decisiones expresas del operador y preparar una candidata nueva que refleje la estructura de cinco partes y el Metacanon §4 vigente. Preservar continuidad y procedencia con sustento explícito en los principios, y reducir fricción sin debilitar controles de integridad necesarios. La reconciliación normativa de ART-032 mediante Articulación Trazable (AT) queda aplazada para una etapa posterior: no iniciar AT ni modificar ART-032 durante la revisión actual de la candidata. La instalación en el campo nativo queda fuera de esta tarea y requiere autorización y verificación independientes.
 
 ## Decisiones expresas del operador que esta tarea debe conservar
 
@@ -42,13 +42,20 @@ Fuente de referencia: DUG Samantha v393 · NX-393m, Metacanon 1.31, archivo `gob
 
 El complemento no debe volver a explicar las normas ni crear un flujo de comprobación paralelo. Debe ser una remisión breve a los principios existentes, con activadores concretos: P005 ante una modificación normativa; P037 ante concurrencia o cambio del asiento de responsabilidad; P004 antes de afirmar un resultado que requiera verificación; P038 al determinar la fuente canónica. El read-back corresponde a una persistencia real que deba comprobarse. No se vuelve a consultar control, calcular hashes ni repetir preflight por rutina cuando no existe el evento que activa esa salvaguarda. La continuidad/procedencia se mantiene como complemento independiente y compacto, no se sustituye ni se duplica con un nuevo registro en cada respuesta.
 
+## Estado operativo y continuidad de decisiones · 2026-11-12
+
+- **Candidata actual mostrada al operador:** IPZ v0.12, `frentes/gobernanza/entregas/CHATGPT-v0.12/IPZ-CAMPO-CHATGPT-v0.12-PROPUESTA.txt`, blob SHA `46bd200c449a9fbc241567ded745d1fed55f3b8b`. El contenido permanece sin modificar y todavía no implementa la estructura acordada de cinco partes: su posición 3 apunta al CNP y su posición 4 dirige a Metacanon §4 con la antigua formulación de salida.
+- **Decisión expresa más reciente:** AT se deja para después. No iniciar AT, no ejecutar el procedimiento y no modificar ART-032 durante la revisión actual de la candidata. Esta pausa no cancela ni elimina el trabajo de AT; solo lo difiere.
+- **Modo de trabajo acordado:** avanzar por decisiones discretas sobre la candidata. Después de cada decisión expresa del operador, actualizar esta ficha antes de ejecutar el siguiente cambio, preservando la decisión literal o su síntesis fiel, el fundamento, el impacto exacto en la candidata, las cuestiones aún abiertas, el estado de ejecución y el siguiente paso. No atribuir al operador decisiones que no haya tomado; no marcar como ejecutado lo meramente propuesto.
+- **Estado al registrar este checkpoint:** candidata v0.12 recuperada y mostrada; candidata todavía no editada; AT aplazada; ART-032 sin modificación en este ciclo; campo nativo IPZ sin modificación.
+
 ## Trabajo pendiente
 
 1. Releer la IPZ baseline v0.7 y la candidata v0.12 preservadas; identificar su procedencia y hashes sin presentar la baseline declarada por el operador como lectura nativa.
 2. Adquirir DUG vigente desde `main`; revisar ART-025, ART-027, ART-032, P001/P004/P005/P017/P037/P038/P039 y los cinco destinos IPZ previstos.
 3. Contrastar la estructura de cinco partes con ART-032: 1 Vocabulario/GOW §ARR; 2 Taxonomía/ART-031; 3 Principios generales/Principios universales; 4 CNP; 5 Metacanon §4 + complementos ART-032.
 4. Corregir enlaces y anclas verificando su destino real. No asumir que una etiqueta Markdown acredita que el ancla existe.
-5. Proponer mediante AT los cambios coordinados a ART-032: orden y función de las cinco partes; complementos conservados/eliminados; continuidad/procedencia y su fundamento; controles de integridad proporcionales; eliminación de foliación y del punto MCP-NORMATIVO de los complementos.
+5. **APLAZADO:** en una etapa posterior y cuando el operador indique retomarlo, abordar mediante AT la reconciliación de ART-032: orden y función de las cinco partes; complementos conservados/eliminados; continuidad/procedencia y su fundamento; controles de integridad proporcionales; eliminación de foliación y del punto MCP-NORMATIVO de los complementos. Hasta entonces, no iniciar AT ni modificar ART-032.
 6. Preparar una nueva candidata documental IPZ sin sobrescribir baseline ni candidata histórica. Verificar las cinco partes, los enlaces, la secuencia y el límite máximo de 1.500 unidades UTF-16, incluyendo LF y CRLF; conservar hashes y lectura de vuelta.
 7. Mantener GOV-TASK-007 como antecedente/seguimiento de IPZ nativa y FOL1, y GOV-TASK-016 como revisión de AT y de la propuesta general de exclusividad. Coordinar sin duplicar ni cerrar esas tareas por inferencia.
 8. Registrar el resultado y sus límites en el OCP. La instalación nativa solo podrá abordarse en su propio alcance autorizado, con escritura y lectura de vuelta observables.
@@ -60,7 +67,7 @@ El complemento no debe volver a explicar las normas ni crear un flujo de comprob
 - Continuidad/procedencia conservadas y justificadas mediante P017, P039, P037 y P038.
 - Complementos 3, 5 y 6 anteriores retirados; complemento 4 reformulado de forma proporcional y sin controles redundantes; complemento 1 conservado.
 - Baseline y candidatas históricas preservadas con procedencia/hash; candidata nueva con conteo UTF-16 verificado y dentro de 1.500.
-- ART-032 y la candidata revisados mediante AT; cambios normativos sujetos a P005.
+- La candidata revisada y sus decisiones documentadas; la revisión de ART-032 mediante AT queda como aceptación de una etapa posterior, cuando el operador la retome expresamente; cualquier cambio normativo sujeto a P005.
 - Ninguna afirmación de instalación nativa, FOL1 activado o MCP-NORMATIVO activado sin evidencia independiente.
 
 ## Dependencias y límites
