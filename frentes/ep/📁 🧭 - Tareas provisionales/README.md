@@ -2,9 +2,9 @@
 
 **Estado:** materialización operativa provisional; no modifica ni sustituye el OEP, no crea un ámbito funcional ni canoniza un sistema general de gestión de tareas.  
 **Contenedor:** `frentes/ep/📁 🧭 - Tareas provisionales/`  
-**OCP padre y fuente de contexto:** `frentes/ep/OEP.md`  
+**OCP padre y especificación general única:** `frentes/ep/OEP.md` §137. Cada ficha de tarea contiene solo su ejecución específica y referencia a esa especificación.  
 **Evento de creación:** instrucción directa del operador en esta conversación · 2026-10-31.  
-**Fuente normativa consultada:** DUG Samantha v388 · NX-388m · Metacanon 1.29 · GOW 2.18, en `main`; commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`; blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`.
+**Fuente normativa consultada:** DUG Samantha v389 · NX-389m · Metacanon 1.30 · GOW 2.19, en main; commit 199bf03ade7aceeedcabc10eeb1c06b1d0e53eaf; blob bcd99e72113f444a045d7f1c91b4ad36865b8ea8.
 
 ## Naturaleza y límites
 
@@ -16,14 +16,16 @@ El patrón de materialización sigue el registro de tareas provisionales de Gobe
 
 ## Registro ejecutivo
 
-| ID local | Estado | Tarea | Núcleo |
-| EP-TASK-001 | `en_curso · NCL_PREFLIGHT_PARTIAL · NATIVE_MESSAGING_STATIC_PASS · EXTENSION_ENABLEMENT_UNVERIFIED · LIVE_HANDSHAKE_NOT_RUN · KEEPSHARE_ROTATION_PENDING` | Profile 36; KeePassXC-Browser 1.10.4.1 y carpeta/manifest presentes. Registro Native Messaging y manifiesto compatible con Chrome verificados; proxy 2.8.0 presente. Habilitación/handshake no probados; rotación KeeShare y P012/P013 pendientes del propietario. | [núcleo](./📁%20🧩%20-%20EP-TASK-001%20-%20Integración%20NCL/README.md) |
-| EP-TASK-002 | `en_curso · P0_VAULT_CIPHERTEXT_V7_PASS · ISOLATED_DECRYPT_PASS_30 · P1_INVENTORY_PASS_NO_ELIGIBLE_DATASET · CROSS_HOST_PENDING · P2_SYNC_PENDING` | Vault formal v7 respaldada/read-back SHA y SSE-B2/AES256; descifrado aislado HMAC/AES PASS (30 propiedades). Inventario vivo 4.123 archivos/362 MB; raíz Datos ausente, 0 datasets elegibles. Cross-host sin segundo host conectado; automatización idempotente pendiente. | [núcleo](./📁%20🧩%20-%20EP-TASK-002%20-%20Persistencia%20provisional%20Backblaze/README.md) |
-| EP-TASK-003 | `en_curso · CRYPTOMATOR_SELECTED · APP_DATA_CONFINEMENT_REQUIRED · IMPLEMENTATION_PENDING · MIGRATION_NOT_STARTED · NO_DATA_MOVED · LOCATION_UNCLASSIFIED` | C XTS-AES128/100% Protection Off/0 protectores; W descifrado. VHDX actual bajo AppData no es destino aceptado. Inventario: KHORA root checkout con 20 cambios tracked; RAP y Signal checkout presentes; Metodologia sin .git; destino VHDX y root Datos no existen. Sin mutaciones. | [núcleo](./📁%20🧩%20-%20EP-TASK-003%20-%20Mapa%20integral%20de%20construcción%20EP/README.md) |
-| EP-TASK-004 | `en_curso · PR21_OPEN_DRAFT_NOT_MERGED · PR21_TOUCHES_OEP_OLD_BASE · MERGE_BLOCKED · H10_PENDING` | PR #21 transporta un OEP v0.3.56/§120 obsoleto frente a main v0.3.69/§135; mergeable=false. H10 y P012/P013 pendientes. | [núcleo](./📁%20🧩%20-%20EP-TASK-004%20-%20Reconstrucción%20de%20bóveda/README.md) |
-| EP-TASK-005 | `pendiente · EP003_STORAGE_GATE_FAIL · PR27_DIVERGED_53_AHEAD_183_BEHIND · PR28_DIVERGED_52_AHEAD_32_BEHIND · DUG_V388_PIN_STALE_V389 · DOTNET10_PRESENT_OUTSIDE_WORKSPACE · INSTALL_NOT_PERFORMED · IPZ_E2E_NOT_RUN` | PR #28 OPEN/DRAFT/NOT MERGED, mergeable=false; rama divergente 52 ahead/29 behind main `b3c468c`. Pin v388 y Runbook/Source-Pin discordantes; .NET 10 ausente. EP-003, paquete P004 y MCP-OCP-03/04 siguen pendientes. | [núcleo](./📁%20🧩%20-%20EP-TASK-005%20-%20Instalación%20y%20aceptación%20de%20MCP-OCP%20local/README.md) |
-| EP-TASK-006 | `en_curso · VERCEL_KHORA_WEB_52_CURRENT_MATCH · ENTRY_READBACK_9 · NOT_IMPORTED_1 · BLOCKED_42 · EP_VAULT_FORMAL_3352B_PRESENT · SESSION_CLOSED · VAULT_NAME_RECONCILIATION_PENDING` | Live Vercel coincide 52/52 con snapshot; 9 STORED_READBACK_VERIFIED, 1 NOT_IMPORTED y 42 BLOCKED. El contador resumen del snapshot dice 10; discrepancia registrada. Vault formal 3.352 B, descifrado aislado PASS; sesión cerrada, adaptadores pendientes. | [núcleo](./📁%20🧩%20-%20EP-TASK-006%20-%20Centralización%20de%20variables%20de%20entorno/README.md) |
-| EP-TASK-007 | `en_curso · HOST_INVENTORY_PARTIAL_READ_ONLY · BITLOCKER_GATE_FAIL · LOCATION_UNCLASSIFIED · GUARDIAN_NOT_RUN · LEASE_NOT_RUN · CRYPTO_ERASURE_NOT_RUN` | Revalidación 14:54 coincide con EP-003: C XTS-AES128/100 %/Protection Off/0 protectores; W descifrado/0 %/Protection Off/0 protectores. Ubicación UNCLASSIFIED; sin Guardian/lease/trigger/crypto-erasure. | [núcleo](./📁%20🧩%20-%20EP-TASK-007%20-%20Guardián%20de%20sesión%20efímera%20e%20inventario%20del%20host/README.md) |
+| ID local | Estado | Alcance específico vigente | Núcleo |
+|---|---|---|---|
+| EP-TASK-003 | `en_curso · CRYPTOMATOR_SELECTED · INSTALLATION_NOT_STARTED · VAULT_NOT_CREATED · APP_DATA_CONFINEMENT_PENDING · MIGRATION_NOT_STARTED · LEGACY_CLEANUP_PENDING` | Base del workspace: inventario, bóveda, árbol SeryMente, migración verificada y retiro seguro de residuos EP VHDX/BitLocker. | [núcleo](./📁%20🧩%20-%20EP-TASK-003%20-%20Mapa%20integral%20de%20construcción%20EP/README.md) |
+| EP-TASK-004 | `en_curso · APP_DATA_CONFINEMENT_PENDING · VAULT_RELOCATION_NOT_STARTED` | EP Vault: herramienta, almacén, configuración, logs y temporales dentro del workspace. | [núcleo](./📁%20🧩%20-%20EP-TASK-004%20-%20Reconstrucción%20de%20bóveda/README.md) |
+| EP-TASK-006 | `en_curso · APP_DATA_CONFINEMENT_PENDING · VAULT_RELOCATION_NOT_STARTED · ADAPTERS_NOT_IMPLEMENTED` | Variables y adaptadores: catálogo y distribución autorizada sin copias locales ni valores en claro fuera del workspace. | [núcleo](./📁%20🧩%20-%20EP-TASK-006%20-%20Centralización%20de%20variables%20de%20entorno/README.md) |
+| EP-TASK-001 | `en_curso · APP_DATA_CONFINEMENT_PENDING · PROFILE_AND_SESSIONS_NOT_MIGRATED` | NCL: Chrome, perfil, sesiones, extensiones, KeePassXC y datos confinados en la bóveda. | [núcleo](./📁%20🧩%20-%20EP-TASK-001%20-%20Integración%20NCL/README.md) |
+| EP-TASK-002 | `en_curso · B2_V7_UPLOAD_READBACK_PASS · ISOLATED_DECRYPT_PASS_30 · CLIENT_ENCRYPTED_WORKSPACE_BACKUP_PENDING · CROSS_HOST_PENDING` | Backups: solo ciphertext cliente remoto; evidencia Vault v7 no se extrapola al workspace ni a cross-host. | [núcleo](./📁%20🧩%20-%20EP-TASK-002%20-%20Persistencia%20provisional%20Backblaze/README.md) |
+| EP-TASK-005 | `pendiente · WORKSPACE_CRYPTOMATOR_GATE_PENDING · PACKAGE_V389_RECONCILIATION_PENDING · INSTALL_NOT_PERFORMED · IPZ_E2E_NOT_RUN` | MCP-OCP: instalación y todo su estado/caché/logs/runtime dentro del workspace; paquete reconciliado e íntegro antes de instalar. | [núcleo](./📁%20🧩%20-%20EP-TASK-005%20-%20Instalación%20y%20aceptación%20de%20MCP-OCP%20local/README.md) |
+| EP-TASK-007 | `en_curso · HOST_INVENTORY_PARTIAL_READ_ONLY · CRYPTOMATOR_LOCK_UNMOUNT_NOT_RUN · SESSION_CLEANUP_NOT_RUN` | Sesión: inventario, lock/unmount Cryptomator y limpieza limitada a efímeros; no borrar workspace persistente. | [núcleo](./📁%20🧩%20-%20EP-TASK-007%20-%20Guardián%20de%20sesión%20efímera%20e%20inventario%20del%20host/README.md) |
+
 ## Estado de continuidad · 2026-10-31
 
 EP-TASK-001 permanece `pendiente`. No debe iniciarse mientras siga activo el trabajo prioritario de alojamiento de OCP MCP en EP. Puede retomarse cuando ese trabajo haya concluido o cuando el operador dé una instrucción expresa para alterar el orden.
@@ -514,3 +516,10 @@ Cuando una tarea requiera varias etapas, cambios de código/host, seguridad, int
 ## Reordenamiento de ejecución · instrucción del operador · 2026-11-11
 
 Orden vigente para el ciclo actual: **EP-TASK-002 → EP-TASK-003 → EP-TASK-005 → EP-TASK-001**. EP-TASK-001/NCL queda pospuesta al final. EP-TASK-004/006/007 conservan su estado y no se intercalan en esta secuencia salvo dependencia material demostrada. Esta rectificación supersede la cola inmediata que situaba EP-TASK-001 antes de EP-TASK-002; no borra antecedentes ni cambia criterios de aceptación.
+
+
+---
+
+## Rectificación general de tareas por instrucción del operador · 2026-11-12
+
+La única especificación de arquitectura EP es [OEP §137](../OEP.md#137-especificacion-general-del-workspace-protegido-y-confinamiento-integral). La matriz anterior ordena las siete tareas conforme a sus dependencias. Las menciones históricas a VHDX/BitLocker permanecen como evidencia de estados anteriores, no como requisitos vigentes. Esta documentación no autoriza ni registra instalación, desinstalación, creación de bóveda, migración, limpieza de archivos ni cambio alguno en el host.
