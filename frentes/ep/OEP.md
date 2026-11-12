@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.80. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.81. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -4161,11 +4161,13 @@ RDC proporciona al asistente remoto lectura/escritura de archivos y ejecución d
 
 ### 141.4 Groq, secretos y seguridad
 
-La integración se configura con el proveedor V1 compatible con OpenAI de OpenCode 1.19.5: `provider.groq`, paquete `@ai-sdk/openai-compatible`, endpoint `https://api.groq.com/openai/v1` y API key obtenida desde `GROQ_API_KEY` mediante `{env:GROQ_API_KEY}`. El identificador de modelo descubierto por el CLI incluye `groq/openai/gpt-oss-120b`. No se usa `auth.json` para esta integración.
+La configuración activa de OpenCode 1.19.5 utiliza el proveedor **Groq nativo** y el modelo `groq/openai/gpt-oss-120b`. El archivo de configuración solo declara el esquema y el modelo; no define un adaptador personalizado ni contiene credenciales. OpenCode recibe `GROQ_API_KEY` únicamente desde el entorno del proceso. No se utiliza `auth.json` ni se persiste la clave en el árbol compartido.
 
-La API key del operador se capturó localmente como nota efímera DPAPI CurrentUser en Fila 4. El launcher la leyó dentro del proceso autorizado y la asignó únicamente al entorno del proceso OpenCode; no se imprimió, no se guardó en config/Git/logs/conversación ni se promovió a variable formal. La nota venció a las 15:39:12 locales (2026-11-12T21:39:12.4827781Z). El proceso se detuvo después de la prueba sin respuesta observable.
+La prueba con `@ai-sdk/openai-compatible` alcanzó el proveedor, pero falló al reenviar el campo `reasoning_content` del historial de un turno assistant: Groq rechazó esa propiedad. Se retiró el override personalizado y se utilizó el proveedor nativo de OpenCode; con ello el mismo modelo completó la conversación y devolvió la respuesta esperada. La incidencia era de compatibilidad del adaptador, no de RDC ni de la credencial.
 
-Por tanto, `GROQ_KEY_CAPTURE=PASS`, `GROQ_PROCESS_ENV_INJECTION=PASS_OBSERVED`, pero `GROQ_AUTH_AND_INFERENCE=NOT_VERIFIED`. No se ha demostrado una respuesta HTTP/modelo aceptada por Groq; no declarar autenticación como PASS. No se genera ni inventa una cuenta, API key ni consentimiento. Para otra prueba el operador debe capturar una nota nueva y vigente; no se reutiliza una nota expirada ni se extiende su TTL retroactivamente.
+La API key se capturó como nota DPAPI CurrentUser local de Fila 4, ID `N-20261112221106-E270CD5E`, con creación `2026-11-12T22:11:06.1364694Z` y vencimiento `2026-11-12T22:41:06.1364694Z`. El launcher leyó la nota dentro del proceso autorizado y asignó el valor a `GROQ_API_KEY` solo para OpenCode. No se imprimió ni se guardó en config/Git/logs/conversación/ `auth.json`, y no se promovió a variable formal. El bloque `finally` elimina la variable de entorno del proceso lanzador. La nota tiene un TTL independiente del TTL de sesión de la bóveda y no debe reutilizarse después de expirar.
+
+Resultado observado: `GROQ_KEY_CAPTURE=PASS`, `GROQ_PROCESS_ENV_INJECTION=PASS`, `GROQ_AUTH_AND_INFERENCE=PASS_OBSERVED`. Esta prueba demuestra autenticación e inferencia sin revelar el secreto; no equivale a aceptar la política de retención de credenciales a largo plazo.
 
 ### 141.5 Acceso ChatGPT/RDC, límites y multi-equipo
 
@@ -4177,32 +4179,31 @@ El acceso desde varias ubicaciones/equipos no se declara funcional hasta demostr
 
 ### 141.6 Pruebas de aceptación y estado real de Fila 4 · 2026-11-12
 
-La integración E2E exige: versión de BMAD y OpenCode visible; workflows instalados; skills BMAD reconocidos por OpenCode; ejecución de una tarea de humo; llamada autenticada a Groq sin revelar la clave; archivos de prueba persistentes en el proyecto aislado; lectura de vuelta; rutas de datos confinadas en MOD-EP-OPENCODE; y prueba ChatGPT→RDC→comando→resultado. La continuidad multi-terminal conserva su gate independiente.
+La aceptación integral exige: instalación reproducible, skills reconocidas, ejecución delegada del agente, autenticación Groq, escritura y lectura de vuelta en el workspace sintético, recuperación de resultados desde sesión nueva, confinamiento de datos, prueba ChatGPT→RDC→comando→resultado y continuidad de una segunda terminal. Los criterios de continuidad multi-terminal y aceptación global conservan gates independientes.
 
-Evidencia y estado del ciclo:
-- `BMAD_PACKAGE=6.12.4_INSTALLED`; npm install y `npm ls --depth=0` finalizaron con exit code 0.
-- `BMAD_PYTHON_UV=MODULE_LOCAL`; uv 0.11.32 y CPython 3.11.15 instalados bajo MOD-EP-BMAD/app; cachés y temporales apuntados a carpetas del módulo.
-- `BMAD_PROJECT_SMOKE=PASS`; core 6.12.4 y bmm 6.12.4 instalados; `bmad-cli status` exit 0; 29 skills y 29 comandos generados y verificados en el proyecto aislado.
-- `OPENCODE_RELEASE=1.19.5_BINARY_EXECUTION_PASS`; release ZIP SHA cotejado, ejecutable local inicia y reporta versión exacta.
-- `OPENCODE_PATH_REDIRECTION=PASS_OBSERVED`; `opencode debug paths` devolvió home, data, bin, log, repos, cache, config, state y tmp exclusivamente bajo MOD-EP-OPENCODE. La auditoría física completa de escrituras externas sigue pendiente.
-- `GROQ_PROVIDER_CONFIG=V1_CUSTOM_PROVIDER_CONFIGURED`; la versión 1.19.5 utiliza configuración V1 con la clave `provider` (singular), paquete `@ai-sdk/openai-compatible`, endpoint `https://api.groq.com/openai/v1` y `options.apiKey={env:GROQ_API_KEY}`. La configuración local no contiene una credencial.
-- `GROQ_MODEL_DISCOVERY=PASS`; `opencode models groq` finalizó con exit code 0 y enumeró, entre otros, `groq/openai/gpt-oss-120b`.
-- `GROQ_EPHEMERAL_INJECTION=ATTEMPTED_IN_PROCESS`; la nota DPAPI se leyó localmente mediante el hotfix de EP Vault y se asignó `GROQ_API_KEY` únicamente al proceso lanzador y su hijo OpenCode. El valor no se imprimió, no se registró en archivos de configuración y no se guardó en `auth.json`.
-- `GROQ_INFERENCE_E2E=NOT_VERIFIED`; el comando `opencode run` inició y cargó la configuración/proyecto, pero no produjo respuesta visible, no creó una sesión verificable y no mostró conexión TCP del proceso. Se detuvo el proceso de humo para retirar la credencial de la memoria del proceso. No declarar autenticación ni inferencia Groq como PASS.
-- `EPHEMERAL_NOTE=EXPIRED`; la nota que el operador capturó expiró a `2026-11-12T21:39:12.4827781Z` (15:39:12, hora local de Fila 4). El TTL de notas y la sesión de bóveda son relojes independientes. No se reutiliza una nota vencida ni se elude su expiración.
-- `CHATGPT_RDC_EXECUTION=PARTIAL_PASS`; la conexión permite inspección, escrituras locales autorizadas y ejecución de comandos, pero la prueba completa ChatGPT→BMAD→OpenCode→Groq→resultado no está aceptada.
-- `CHROME_INSTALL=NOT_INSTALLED`; el ZIP de Chrome for Testing previo continúa sin checksum ni extracción verificados.
-- `MULTI_TERMINAL_CONTINUITY=NOT_VERIFIED`; `APP_DATA_CONFINEMENT=PARTIAL_PENDING_WRITE_AUDIT`; `ACCEPTANCE=PENDING`.
+Evidencia actualizada:
+- `BMAD_PACKAGE=6.12.4_INSTALLED`; `npm ls --depth=0` exit 0.
+- `BMAD_PYTHON_UV=MODULE_LOCAL`; uv 0.11.32 y CPython 3.11.15 bajo MOD-EP-BMAD/app.
+- `BMAD_PROJECT_SMOKE=PASS`; core y bmm 6.12.4; `bmad-cli status` exit 0; 29 skills y 29 comandos generados en el proyecto aislado.
+- `OPENCODE_RELEASE=1.19.5_BINARY_EXECUTION_PASS`; release ZIP verificado y ejecutable reporta versión 1.19.5.
+- `OPENCODE_PATH_REDIRECTION=PASS_OBSERVED`; rutas principales de OpenCode resueltas bajo MOD-EP-OPENCODE. Auditoría completa de escrituras y subprocesos sigue pendiente.
+- `GROQ_PROVIDER_CONFIG=NATIVE_BUILTIN_PROVIDER_PASS`; config con `model=groq/openai/gpt-oss-120b`, sin adaptador personalizado ni secreto persistido.
+- `GROQ_MODEL_DISCOVERY=PASS`; catálogo Groq reconocido por el CLI.
+- `GROQ_EPHEMERAL_INJECTION=PASS`; nota DPAPI leída bajo CurrentUser de Fila 4 y clave asignada solo al entorno de proceso.
+- `GROQ_INFERENCE_E2E=PASS`; OpenCode devolvió respuesta autenticada con exit code 0 y el agente reconoció Core, BMM y `bmad-help`.
+- `BMAD_SKILL_DISCOVERY=PASS_READ_ONLY`; la instrucción de prueba exigió explícitamente no modificar archivos. El resultado confirmó descubrimiento de skills y respuesta, pero no escritura.
+- `BMAD_WRITE_READBACK=NOT_VERIFIED`; un segundo ensayo de creación de archivo no terminó, no produjo archivo verificable y su tarea devolvió error. No declararlo PASS.
+- `EPHEMERAL_NOTE=N-20261112221106-E270CD5E`; expiración `2026-11-12T22:41:06.1364694Z`. El TTL de la nota y la sesión de bóveda son independientes. No reutilizar tras expirar.
+- `CHATGPT_RDC_EXECUTION=PASS_OBSERVED`; el canal elevado `CENTRAL\MantenimientoRCI` operó sobre `C:\Users\fila4\Desktop\SeryMente`; las tareas que requieren DPAPI se ejecutaron en la sesión interactiva de `CENTRAL\fila4`. La cadena RDC→launcher→OpenCode→Groq→respuesta quedó demostrada.
+- `CHROME_EXISTING_INSTALL=REUSED`; Google Chrome 157.0.8103.51, firma Authenticode válida de Google LLC. Se inició con perfil separado dentro de MOD-EP-CHROME; el ejecutable global y el perfil existente no se modificaron.
+- `CHROME_EP_PROFILE=PASS_OBSERVED`; perfil, caché, carpeta de descargas, APPDATA/LOCALAPPDATA y TEMP redirigidos al módulo; se observaron archivos escritos en el perfil/caché del módulo.
+- `MULTI_TERMINAL_CONTINUITY=NOT_VERIFIED`; solo PC10RCIF4EI4/Fila 4 ha sido probado en este ciclo.
+- `APP_DATA_CONFINEMENT=PARTIAL`; redirección observada para OpenCode y perfil EP de Chrome. No se ha auditado todo el host ni todas las aplicaciones.
+- `ACCEPTANCE=PENDING`; la prueba de escritura/read-back, nueva sesión, segunda terminal y auditoría completa permanecen pendientes.
 
-La prueba usó exclusivamente el proyecto aislado `bmad-opencode-smoke`. No se autorizó escritura en ningún repositorio productivo. No se almacena ni se transcribe una clave API en este OEP.
+La ejecución E2E de lectura utilizó exclusivamente `bmad-opencode-smoke`. No se modificó ningún repositorio productivo ni se escribió una clave en el OEP.
 
-Fuentes técnicas:
-- BMAD instalación y release: https://docs.bmad-method.org/getting-started/installation/ ; https://www.npmjs.com/package/bmad-method
-- OpenCode release y V1 provider config: https://github.com/anomalyco/opencode/releases/tag/v1.19.5 ; https://github.com/anomalyco/opencode/blob/v1.19.5/packages/web/src/content/docs/providers.mdx
-- Groq + OpenCode: https://console.groq.com/docs/coding-with-groq/opencode
-- OpenCode rutas y CLI: https://opencode.ai/docs/ ; https://opencode.ai/docs/cli/providers/
-
-Cierre: BMAD 6.12.4 está instalado y su proyecto de humo integra sus skills/comandos de OpenCode; OpenCode 1.19.5 ejecuta y descubre el modelo Groq. La autenticación efectiva y la respuesta de inferencia aún no están demostradas. Los estados de instalación, configuración, ejecución, prueba, verificación y aceptación se mantienen separados.
+Fuentes oficiales: https://docs.bmad-method.org/getting-started/installation/ ; https://www.npmjs.com/package/bmad-method ; https://github.com/anomalyco/opencode/releases/tag/v1.19.5 ; https://console.groq.com/docs/coding-with-groq/opencode ; https://opencode.ai/docs/ .
 
 ## §142. MOD-EPVAULT — Bóveda de variables de entorno y notas efímeras · 2026-11-12
 
@@ -4417,3 +4418,17 @@ Hasta superar estos gates, EP Vault permanece como release candidata materializa
 - La configuración personalizada anterior se preservó fuera de la configuración activa como respaldo de diagnóstico.
 
 Resultado: `BMAD_GROQ_E2E=PASS_READ_ONLY_SKILL_DISCOVERY`; `GROQ_INFERENCE=PASS_OBSERVED`; `GROQ_SECRET_PERSISTENCE=NONE_OBSERVED`; `PRODUCTIVE_REPO_WRITES=NONE`. Pendientes globales: prueba de generación y read-back sintético dentro del workspace aislado, auditoría física completa del confinamiento de datos, Chrome modular y continuidad multi-terminal.
+
+
+### 142.13 Reutilización de Chrome con perfil confinado EP · Fila 4 · 2026-11-12
+
+- Se detectó Chrome instalado para el host en `C:\Program Files\Google\Chrome\Application\chrome.exe`, versión `157.0.8103.51`.
+- La firma Authenticode se verificó `Valid`; el firmante identificado fue Google LLC. Se reutilizó el binario existente y no se reinstaló ni se modificó la instalación global.
+- Módulo de perfil: `Metodologia/frentes/ep/modulos/MOD-EP-CHROME/`.
+- Launcher: `MOD-EP-CHROME/launchers/Start-Chrome-EP.ps1`; exige identidad `CENTRAL\fila4`, vuelve a validar la firma del binario, crea un perfil de usuario aislado y lanza Chrome con `--user-data-dir` y `--disk-cache-dir` apuntando al módulo.
+- Rutas observadas: perfil `data/Fila4/user-data`; caché `cache/Fila4/disk-cache`; descargas `downloads/Fila4`; AppData `data/Fila4/appdata`; LocalAppData `data/Fila4/localappdata`; TEMP `temp/Fila4`; logs `logs/Fila4`.
+- El launcher configura el directorio de descarga del perfil aislado y requiere confirmación al descargar. El perfil preexistente de Chrome no se tocó. No se copian automáticamente cookies, contraseñas ni sesiones del perfil global.
+- El launcher se probó desde la sesión interactiva de Fila 4 y generó `logs/Fila4/chrome-launch.json`; los procesos Chrome observados mostraron las rutas explícitas del perfil/cache dentro de MOD-EP-CHROME. Se observaron archivos nuevos en el perfil y la caché del módulo.
+- No se afirma que todas las escrituras internas o futuras de Chrome estén confinadas hasta concluir la auditoría de procesos auxiliares, servicios, actualizadores y rutas de crash reporting. La instalación global permanece compartida por el host; la configuración y datos del perfil EP son locales al módulo/terminal.
+
+Resultado: `CHROME_BINARY_SIGNATURE=PASS`; `CHROME_EP_PROFILE=PASS_OBSERVED`; `CHROME_INSTALL_METHOD=REUSE_EXISTING`; `CHROME_FULL_CONFINEMENT_AUDIT=PENDING`.
