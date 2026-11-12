@@ -66,14 +66,26 @@ El operador instruye modificar la candidata actual conforme a todas las decision
 
 **Procedencia de anclas revisadas:** `#gow-arranque-chatgpt`, `#ART-031`, `#principios-universales`, `#ART-027`, `#cnp-conjunto-nuclear-de-principios`, `#meta-4` y `#ART-032` corresponden a destinos presentes en el DUG vigente. Los enlaces de la candidata se resolverán desde su ruta relativa en el repositorio.
 
+## Evidencia de persistencia · candidata v0.13
+
+- **Ruta:** `frentes/gobernanza/entregas/CHATGPT-v0.13/IPZ-CAMPO-CHATGPT-v0.13-PROPUESTA.txt`
+- **Enlace:** https://github.com/SeryMente/metodologia/blob/main/frentes/gobernanza/entregas/CHATGPT-v0.13/IPZ-CAMPO-CHATGPT-v0.13-PROPUESTA.txt
+- **Versión/contador:** `IPZ v0.13 · 1458/1500`.
+- **Conteo verificado:** UTF-16 LF 1.452; UTF-16 CRLF 1.458; puntos de código 1.452. El encabezado refleja el máximo CRLF.
+- **Blob SHA actual:** `f0f5e1afcc3f5677ae75feacb9df558fb671968e`.
+- **Commit de creación:** `1dec260be2edf5e4b507f34b56abd448d3f3ef40`; commit de última corrección del contador: `a359ca75bd8a8683bd5dbd5f451f18d977b1a37d`.
+- **Read-back:** contenido recuperado desde `main`; versión, contador, texto y blob cotejados. Los siete destinos/anclas se verificaron contra el DUG vigente.
+- **Preservación:** v0.12 continúa en su ruta histórica y no fue sobrescrita; baseline v0.7 no fue modificada ni declarada instalada.
+- **Límites:** campo nativo IPZ sin modificar; ART-032 sin modificar; AT aplazada; FOL1 y MCP-NORMATIVO no activados.
+
 ## Trabajo pendiente
 
-1. Releer la IPZ baseline v0.7 y la candidata v0.12 preservadas; identificar su procedencia y hashes sin presentar la baseline declarada por el operador como lectura nativa.
-2. Adquirir DUG vigente desde `main`; revisar ART-025, ART-027, ART-032, P001/P004/P005/P017/P037/P038/P039 y los cinco destinos IPZ previstos.
-3. Contrastar la estructura de cinco partes con ART-032: 1 Vocabulario/GOW §ARR; 2 Taxonomía/ART-031; 3 Principios generales/Principios universales; 4 CNP; 5 Metacanon §4 + complementos ART-032.
-4. Corregir enlaces y anclas verificando su destino real. No asumir que una etiqueta Markdown acredita que el ancla existe.
+1. **Pendiente:** releer la IPZ baseline v0.7 y documentar su procedencia/hash; no presentar la baseline declarada por el operador como lectura nativa. La candidata histórica v0.12 ya fue recuperada y permanece preservada.
+2. **Realizado para esta revisión:** adquirir DUG vigente desde `main` (v393/NX-393m; blob `844fc507a2a9a0bfc8f4e68884cca9f6d2912c96`) y revisar ART-025, ART-027, ART-032, el bloque de Principios universales y el CNP. La revisión no constituye modificación normativa.
+3. **Realizado:** fijar la estructura de cinco partes acordada: GOW §ARR; ART-031; Principios universales + ART-027/MDP; CNP; Metacanon §4 + complementos ART-032 con responsabilidades diferenciadas.
+4. **Realizado:** verificar los siete destinos/anclas usados por v0.13: `#gow-arranque-chatgpt`, `#ART-031`, `#principios-universales`, `#ART-027`, `#cnp-conjunto-nuclear-de-principios`, `#meta-4` y `#ART-032`. Los enlaces relativos se resuelven desde la ruta de la candidata en el repositorio.
 5. **APLAZADO:** en una etapa posterior y cuando el operador indique retomarlo, abordar mediante AT la reconciliación de ART-032: orden y función de las cinco partes; complementos conservados/eliminados; continuidad/procedencia y su fundamento; controles de integridad proporcionales; eliminación de foliación y del punto MCP-NORMATIVO de los complementos. Hasta entonces, no iniciar AT ni modificar ART-032.
-6. Preparar una nueva candidata documental IPZ sin sobrescribir baseline ni candidata histórica. Verificar las cinco partes, los enlaces, la secuencia y el límite máximo de 1.500 unidades UTF-16, incluyendo LF y CRLF; conservar hashes y lectura de vuelta.
+6. **Realizado:** crear candidata documental v0.13 sin sobrescribir v0.7 ni v0.12; verificar las cinco partes, enlaces y conteo UTF-16 LF/CRLF. La candidata queda como propuesta pendiente de revisión, no instalada.
 7. Mantener GOV-TASK-007 como antecedente/seguimiento de IPZ nativa y FOL1, y GOV-TASK-016 como revisión de AT y de la propuesta general de exclusividad. Coordinar sin duplicar ni cerrar esas tareas por inferencia.
 8. Registrar el resultado y sus límites en el OCP. La instalación nativa solo podrá abordarse en su propio alcance autorizado, con escritura y lectura de vuelta observables.
 
