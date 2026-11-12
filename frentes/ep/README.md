@@ -6,7 +6,7 @@
 
 - [Persistencia DTC EP/MCP-OCP](OEP.md#95-persistencia-dtc-integrada-epmetodologia-y-continuidad-mcp-ocp--v0325--vcu-ep-v27): continuidad multiubicación EP/Metodología y estado operativo MCP-OCP, con autoridad técnica propia de MCP-OCP.
 
-- [OEP.md](OEP.md): único estado vivo del frente, v0.3.59; §122 conserva el preflight parcial, §123 registra el VHDX vacío/sin cifrar y la pausa de almacenamiento, y §124 formaliza el relevo de ejecución a EP para el Sprint SINK-P004. El control EP generación 3 no se modificó.
+- [OEP.md](OEP.md): único estado vivo del frente, v0.3.70; §136 canoniza Cryptomator como motor de cifrado del workspace y establece el confinamiento obligatorio de datos persistentes de aplicaciones. La implementación, migración y aceptación siguen pendientes.
 - [Organización canónica del workspace](OEP.md#119-organización-canónica-del-workspace-local-y-persistencia-por-frente--v0354--2026-11-09): repositorios agrupados por frente, datos/temporales separados y secretos fuera del workspace.
 - [Objeto de coordinación DTC](entregas/COORDINACION-GOBERNANZA-EP-v0.1.md): único registro de comunicación Gobernanza ↔ EP; historial reconciliado en `main`.
 - [Control de responsabilidad EP](CONTROL-RESPONSABILIDAD.json): registro autoritativo de titularidad y generación; generación 3; titularidad transferida por TRANSFER_RESPONSIBILITY el 2026-11-09; un titular activo, evento C-EP-TRANSFER-RESPONSIBILITY-20261109-01.
@@ -50,3 +50,11 @@ OEP vigente: v0.3.59. PREFLIGHT_FILA4=PARTIAL_FAIL. EP reanuda la ejecución de 
 - [OEP §122 · preflight vivo parcial Fila 4](OEP.md#122-preflight-vivo-parcial-de-fila-4--2026-11-10--ejecución-provisional-del-frente-ep)
 - [OEP §123 · VHDX de preparación, discrepancia del punto de montaje y pausa operativa](OEP.md#123-rectificación-del-estado-de-almacenamiento-fila-4-y-continuidad-del-sprint--2026-11-10)
 - [Evidencia saneada del preflight Fila 4](evidencias/EP-FILA4-PREFLIGHT-PARCIAL-20261110.json): PREFLIGHT_FILA4=PARTIAL_FAIL; commit `2ac3dc5ad2970e71b15a21e33d0740e001c2b183`; blob `9bf9cc7edee2e8a0f483d7191e28b37b1e03e3e5` (evidencia saneada con read-back exacto).
+
+
+## Canon vigente de seguridad del workspace · 2026-11-12
+
+- [OEP §136](OEP.md#136-canon-de-protección-del-workspace-y-confinamiento-de-aplicaciones--2026-11-12): Cryptomator, EP-CRYPTO, catálogo de aplicaciones, bootstrap mínimo y confinamiento de perfiles/configuración/cachés/logs/temporales.
+- [EP-TASK-003](./📁%20🧭%20-%20Tareas%20provisionales/📁%20🧩%20-%20EP-TASK-003%20-%20Mapa%20integral%20de%20construcción%20EP/README.md): implementación del workspace protegido y migración controlada. Diseño BitLocker-only sustituido; no se ha instalado Cryptomator ni movido datos.
+
+La crónica histórica se conserva para procedencia; las decisiones operativas actuales son las de OEP §136 y el último estado verificado de cada tarea. No interpretar snapshots anteriores como estado vivo.
