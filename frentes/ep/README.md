@@ -3,14 +3,18 @@
 **Repositorio propietario:** `SeryMente/metodologia` (privado).  
 **Rama canónica vigente:** `main`; las ramas documentales anteriores se conservan como antecedentes y no prevalecen sobre `main`.
 
+**OEP vigente:** v0.3.74 (`OEP.md`), leído de vuelta desde `main`. La raíz local del workspace es `SeryMente/`: repositorios como carpetas hijas directas, dentro los frentes, y cada frente con `ambitos/` y `modulos/`. No utilizar `SeryMente/Repositorios/`.
+
 
 - [Persistencia DTC EP/MCP-OCP](OEP.md#95-persistencia-dtc-integrada-epmetodologia-y-continuidad-mcp-ocp--v0325--vcu-ep-v27): continuidad multiubicación EP/Metodología y estado operativo MCP-OCP, con autoridad técnica propia de MCP-OCP.
 
-- [OEP.md](OEP.md): único estado vivo del frente, v0.3.73; §137 fija la arquitectura del workspace, §138 la operación CLI-only y su compuerta de GUI, y §139 define MOD-EP-CRYPTO con instalación/confinamiento y estado vivo.
+- [OEP.md](OEP.md): único estado vivo del frente, v0.3.74; §§137–140 fijan estructura directa de SeryMente, módulos, bóveda y confinamiento de datos de usuario; §138 mantiene el régimen CLI-only; §139 define MOD-EP-CRYPTO; §141 documenta BMAD/OpenCode/Groq/RDC y sus pruebas/pendientes.
 - [Especificación general y operación CLI-only](OEP.md#137-especificación-general-única-del-workspace-ep-protegido--2026-11-12): árbol SeryMente, Cryptomator CLI, Herramientas, Repositorios, Datos, Temporal y confinamiento. [Política CLI-only §138](OEP.md#138-operación-cli-only-de-ep-hasta-disponer-de-segundo-monitor--2026-11-12).
 - [Objeto de coordinación DTC](entregas/COORDINACION-GOBERNANZA-EP-v0.1.md): único registro de comunicación Gobernanza ↔ EP; historial reconciliado en `main`.
 - [Control de responsabilidad EP](CONTROL-RESPONSABILIDAD.json): registro autoritativo de titularidad y generación; generación 3; titularidad transferida por TRANSFER_RESPONSIBILITY el 2026-11-09; un titular activo, evento C-EP-TRANSFER-RESPONSIBILITY-20261109-01.
 - [MOD-SYNC](OEP.md#mod-sync): propósito aprobado; [especificación de implementación §111](OEP.md#mod-sync-implementation), pendiente de validación técnica.
+- [MOD-EP-CRYPTO](OEP.md#139-módulo-funcional-mod-ep-crypto--operación-y-confinamiento-de-cryptomator--2026-11-12): Cryptomator dentro del módulo EP; almacén físico fuera del punto de montaje para evitar recursión.
+- [MOD-EP-BMAD / MOD-EP-OPENCODE / MOD-EP-CHROME](OEP.md#141-módulo-bmad--opencode--groq-y-acceso-mediante-chatgpt-rdc--2026-11-12): BMAD estable, agente OpenCode, proveedor Groq y navegador modular; instalación/aceptación sujetas a evidencia.
 - [MOD-SCRIPTPWS](OEP.md#94-módulo-funcional-mod-scrippws--powershell-para-entorno-persistente--v0326--vcu-ep-v28): módulo funcional interno PowerShell; responsabilidad funcional delimitada en OEP §94, sin OCP ni control independiente.
 - [EP Vault — reconstrucción, CLI y GUI](./📁%20🧭%20-%20Tareas%20provisionales/📁%20🧩%20-%20EP-TASK-004%20-%20Reconstrucción%20de%20bóveda/README.md): herramienta de Metodología; no es extensión Chrome.
 - [Registro de tareas provisionales](📁%20🧭%20-%20Tareas%20provisionales/README.md): índice y compuerta de apertura/cierre por ciclo.
@@ -60,3 +64,6 @@ OEP vigente: v0.3.59. PREFLIGHT_FILA4=PARTIAL_FAIL. EP reanuda la ejecución de 
 - [EP-TASK-003](./📁%20🧭%20-%20Tareas%20provisionales/📁%20🧩%20-%20EP-TASK-003%20-%20Mapa%20integral%20de%20construcción%20EP/README.md): build CLI local desde upstream firmado; 12 pruebas unitarias, 5 de integración y E2E sintética PASS. Siguen pendientes wrapper PowerShell 5.1, desmontaje graceful Windows, limpieza staging, bóveda real, confinamiento, migración y aceptación.
 
 La crónica histórica se conserva para procedencia; las decisiones operativas actuales son las de OEP §§137–139 y el último estado verificado de cada tarea. No interpretar snapshots anteriores como estado vivo.
+
+
+Estado documental añadido: OEP v0.3.74, §§140–141. La organización física de Fila 4 ha empezado; la consolidación de Cryptomator, confinamiento de perfiles, autenticación Groq, pruebas BMAD/OpenCode E2E y continuidad multi-terminal siguen sus propios estados en OEP. No inferir aceptación de la mera existencia de carpetas o paquetes.
