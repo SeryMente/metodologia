@@ -1,0 +1,135 @@
+{
+  "schema": "MCP-OCP-14 draft 0.1",
+  "validation": "Synthetic JSON Schema instance validation",
+  "validator": "PowerShell Test-Json",
+  "validatorRuntime": "PowerShell 7.4.22",
+  "schemaDialect": "https://json-schema.org/draft/2020-12/schema",
+  "executionDate": "2026-11-10",
+  "sourceSchemas": [
+    {
+      "file": "encrypted-object-envelope.schema.json",
+      "gitBlob": "36dfa8bc760114ca3a53077450bdb998f7429bee"
+    },
+    {
+      "file": "snapshot-manifest.schema.json",
+      "gitBlob": "132e054c27c35dcefc46fe26a02fcd4eaecb5737"
+    },
+    {
+      "file": "journal-event.schema.json",
+      "gitBlob": "51b4852ee56068460a323af72b72d137477f5ed6"
+    },
+    {
+      "file": "checkpoint-receipt.schema.json",
+      "gitBlob": "5529f5303c698f8c5f712aed705c8a08c8fdff46"
+    }
+  ],
+  "totals": {
+    "cases": 20,
+    "pass": 20,
+    "fail": 0
+  },
+  "cases": [
+    {
+      "name": "envelope-valid",
+      "expectedValid": true,
+      "result": "PASS"
+    },
+    {
+      "name": "envelope-invalid-uuid",
+      "expectedValid": false,
+      "result": "PASS"
+    },
+    {
+      "name": "envelope-rejects-extra-property",
+      "expectedValid": false,
+      "result": "PASS"
+    },
+    {
+      "name": "manifest-full-valid",
+      "expectedValid": true,
+      "result": "PASS"
+    },
+    {
+      "name": "manifest-incremental-valid",
+      "expectedValid": true,
+      "result": "PASS"
+    },
+    {
+      "name": "manifest-full-rejects-parent",
+      "expectedValid": false,
+      "result": "PASS"
+    },
+    {
+      "name": "manifest-incremental-requires-parent",
+      "expectedValid": false,
+      "result": "PASS"
+    },
+    {
+      "name": "manifest-rejects-path-traversal",
+      "expectedValid": false,
+      "result": "PASS"
+    },
+    {
+      "name": "manifest-rejects-extra-property",
+      "expectedValid": false,
+      "result": "PASS"
+    },
+    {
+      "name": "journal-valid-genesis",
+      "expectedValid": true,
+      "result": "PASS"
+    },
+    {
+      "name": "journal-rejects-content-property",
+      "expectedValid": false,
+      "result": "PASS"
+    },
+    {
+      "name": "journal-rejects-invalid-hash",
+      "expectedValid": false,
+      "result": "PASS"
+    },
+    {
+      "name": "journal-rejects-duplicate-object-refs",
+      "expectedValid": false,
+      "result": "PASS"
+    },
+    {
+      "name": "receipt-local-durable-valid",
+      "expectedValid": true,
+      "result": "PASS"
+    },
+    {
+      "name": "receipt-not-confirmed-valid",
+      "expectedValid": true,
+      "result": "PASS"
+    },
+    {
+      "name": "receipt-emergency-valid",
+      "expectedValid": true,
+      "result": "PASS"
+    },
+    {
+      "name": "receipt-emergency-cannot-claim-durability",
+      "expectedValid": false,
+      "result": "PASS"
+    },
+    {
+      "name": "receipt-remote-state-requires-backblaze",
+      "expectedValid": false,
+      "result": "PASS"
+    },
+    {
+      "name": "receipt-remote-uploaded-valid",
+      "expectedValid": true,
+      "result": "PASS"
+    },
+    {
+      "name": "receipt-rejects-budget-over-30s",
+      "expectedValid": false,
+      "result": "PASS"
+    }
+  ],
+  "scope": "Fully synthetic. No database, cryptographic operation, key material, host, Vault, B2, network, persistent storage, upload, download or restore was accessed.",
+  "conclusion": "All twenty positive/negative instances passed against the exact four schema blobs listed above. This is schema/fixture validation only. MCP-OCP-14 remains PROPOSED / NOT ACCEPTED; no runtime or I/O implementation is authorized or claimed."
+}

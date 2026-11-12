@@ -1,0 +1,69 @@
+{
+  "schema": "mcp-ocp-pilot-package-manifest/v1",
+  "product": "MCP-OCP SINK:P004 pilot",
+  "status": "CANDIDATE_NOT_ACCEPTED",
+  "source_repository": "SeryMente/metodologia",
+  "source_branch": "feat/mcp-ocp-sink-p004-main-a34c1c5b",
+  "source_commit": "b6ce37af1dc32b2e3bb8af3ded2a77c7ba6d7648",
+  "current_branch_head": "f54ce14a841971e79b887e760593a91f845b1b5f",
+  "main_base_at_build": "98d5930701d04ffdf74f1e12906f54c06389637d",
+  "dug_version": "v388",
+  "dug_signature": "NX-388m",
+  "dug_commit": "3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c",
+  "dug_git_blob": "4db0ebadfd1e48b2bdec9236ba7f344921e4a865",
+  "sdk": "10.0.403",
+  "target_framework": "net10.0",
+  "required_runtime": "Microsoft.NETCore.App 10.0.x x64",
+  "runtime_identifier": null,
+  "deployment_mode": "framework-dependent",
+  "network_listener": false,
+  "normative_engine": "DISABLED",
+  "ipz_e2e": "NOT_ACCEPTED",
+  "files": [
+    {
+      "sha256": "6e7cdecbb8ba918d2e2c38cd0f97fab3f400c4ee440bfbc86bae165783dc97e6",
+      "path": "RUNBOOK.md",
+      "size": 2009
+    },
+    {
+      "sha256": "a4f40d142e6e520b2e3b61d3e886a2937e204694cd0b1cd83184839b3c180b79",
+      "path": "server/OcpMcp.deps.json",
+      "size": 819
+    },
+    {
+      "sha256": "213ca91466b7f3c697b3e6d20cee1532bc1a6bd4ebc9a90b5f22261600d2240b",
+      "path": "server/OcpMcp.dll",
+      "size": 57344
+    },
+    {
+      "sha256": "4b99d1e832e75c424e8ff37851280d40944fb226d67d699ada006eba3b20bb32",
+      "path": "server/OcpMcp.exe",
+      "size": 162304
+    },
+    {
+      "sha256": "408d3368133df2f0d32e51fbe0d99e6bc96514759752fd6653aa7ecb6880f7d6",
+      "path": "server/OcpMcp.Monitoring.dll",
+      "size": 41984
+    },
+    {
+      "sha256": "8bb9b202b573491b229bbf6e7f193a63abb717b7edf9a98aeb97b3a2eecd42d9",
+      "path": "server/OcpMcp.Monitoring.pdb",
+      "size": 18188
+    },
+    {
+      "sha256": "70fd2b3b16afa28e84c02a18b4fb0fb30152125e60d65b2719d2b0edceee108c",
+      "path": "server/OcpMcp.pdb",
+      "size": 19228
+    },
+    {
+      "sha256": "c230a317a54dd960bcbeb5f347f52e18dc665a26f7efda2159fced9a5ac7e097",
+      "path": "server/OcpMcp.runtimeconfig.json",
+      "size": 342
+    },
+    {
+      "sha256": "1533d6e11145e33e05a88fc52db9a1c0b3b29d090edfcbcaca2c8b123b148cad",
+      "path": "SOURCE-PIN.json",
+      "size": 2088
+    }
+  ]
+}

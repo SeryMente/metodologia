@@ -4,7 +4,7 @@
 
 - **Nombre canónico vigente:** MCP-OCP (anteriormente MCP-METODOLOGIA).
 - **Identidad canónica vigente:** MCP-OCP. **Identidad histórica:** MCP-METODOLOGIA.
-- **Versión/sello:** MCP-OCP-v0.1.30 · OCP MCP 1.0; H1 SINK:P004, H2 persistencia mínima/bóveda y H3 workspace completo definidos; Sink local por stdio autorizado; contrato DUG v388/NX-388m; piloto P004 pendiente; bootstrap del perfil persistente pendiente. Las generaciones y folios de sesiones anteriores son metadatos de auditoría.
+- **Versión/sello:** MCP-OCP-v0.1.42 · OCP MCP 1.0; H1 SINK:P004, H2 persistencia mínima/bóveda y H3 workspace completo definidos; Sink local por stdio autorizado; contrato DUG v388/NX-388m; piloto P004 pendiente; bootstrap del perfil persistente pendiente. Las generaciones y folios de sesiones anteriores son metadatos de auditoría.
 - **Repositorio propietario:** SeryMente/metodologia, rama main.
 - **OCP canónico:** frentes/mcp-metodologia/.
 - **Núcleo operativo único:** este archivo, MCP-METODOLOGIA.md.
@@ -737,3 +737,257 @@ EP-TASK-007 es independiente del gate físico de Fila 4 en EP-TASK-003. El guard
 - Controles EP gen3, MCP-OCP gen5 y Gobernanza gen17 permanecen sin cambios. FOL1 permanece PREPARADO_NO_ACTIVO; MCP-NORMATIVO DESACTIVADO.
 
 **Estado de documentación:** núcleo v0.1.30 y backlog v0.11 leídos y configurados. No se declara implementado código MCP-OCP-14/15/16/17, B2 upload/restore, captura GPS/IP, guardián, crypto-erasure, instalación, E2E ni aceptación 1.0.0.
+
+
+
+## 22. Ejecución H1 · SINK-P004 · rebaseline y evidencia · 2026-11-10
+
+### 22.1 Base y rama reconciliadas
+
+- DUG canónico: Samantha v388/NX-388m; commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`; blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`.
+- `main` actual al reconciliar: `646608896a499f78640d6f17ec1e87876089e16f`.
+- Rama: `feat/mcp-ocp-sink-p004-main-a34c1c5b`. Base histórica de creación: `a34c1c5b43edbcbaf015056f4dc892f5def29eea`.
+- Reconciliación Git: commit `dfae6b0fe60438753fa7abe0b9febd6f9088783c`; padres `ebc80ae464a24ea99d634eb2d928fcc50a43acfc` (rama candidata) y `646608896a499f78640d6f17ec1e87876089e16f` (main). Árbol `427e72dd30c9c688c78292a2c60d038c07cad0b1`.
+- Comparación después de reconciliar: 7 commits ahead / 0 behind; merge-base coincide con el main actual. Diff de 22 rutas: workflow, configuración, lector/servidor, biblioteca de monitorización, 41 pruebas, manifiesto/pin, harness y transcripción. Los cambios ajenos de EP/Gobernanza de main permanecen como segundo padre y no se reescribieron.
+- PR #27: OPEN / DRAFT / NOT MERGED. No se efectuó merge a main.
+
+### 22.2 Implementación candidata y límites
+
+- SDK fijado: .NET 10.0.403; TFM `net10.0`; piloto framework-dependent, RID no fijado en este corte; sin paquetes NuGet externos declarados.
+- Servidor MCP STDIO JSON-RPC; herramienta `sink_principle` limitada a P004; lector fail-closed contra el pin DUG v388, GOW:ARR, autoridad, catálogo 43, ancla humana y contenido exacto. No hay listener HTTP/TCP ni red.
+- Suite incluida: 18 pruebas P004 + 23 de monitorización/readiness = 41 escritas. No se ejecutó ninguna con evidencia de este candidato.
+- No se incluye panel WPF en el corte H1. Sigue siendo obligatorio para release 1.0.0/H8.
+- Importación de fuentes privadas, persistencia B2, DB operativa, provisión de operador, READY real, instalación Fila 4, IPZ nativa y aceptación E2E siguen fuera de la evidencia de esta rama.
+
+### 22.3 Diagnóstico CI más reciente
+
+- Piloto: run `42903756431`, job `130136260875`, HEAD `dfae6b0fe60438753fa7abe0b9febd6f9088783c`.
+- Validador canónico push: run `42903746528`, job `130136227157`.
+- Ambos jobs terminaron FAILURE en aproximadamente 1–2 segundos; API informa `runner_id=0`, `runner_name=""`, `steps=[]`. Descarga de logs: `BlobNotFound`; artifacts: cero.
+- No hay evidencia de asignación de runner ni de inicio de `setup-dotnet`, restore, build, pruebas o smoke. El contenedor local consultado tampoco dispone de `dotnet`.
+- **Causa raíz del fallo de asignación/ejecución del runner: NO VERIFICADA.** No se clasifica como defecto de código ni como PASS. No se realiza reintento ciego.
+
+### 22.4 Estado de tareas H1 y gates externos
+
+- `MCP-OCP-02=BRANCH_RECONCILED_TO_CURRENT_MAIN; PORTABILITY_PUBLISHED; BUILD_PENDING`.
+- `MCP-OCP-05=P004_CANDIDATE_WRITTEN; BUILD_AND_RUNTIME_RESPONSE_PENDING`.
+- `MCP-OCP-03=41_TESTS_WRITTEN; 0_EXECUTED_WITH_EVIDENCE`.
+- `MCP-OCP-04=HARNESS_AND_WORKFLOW_PUBLISHED; SMOKE_NOT_VERIFIED; IPZ_E2E_PENDING`.
+- `EP-TASK-003=PARTIAL_FAIL`; `EP-TASK-005=PENDING`, según la lista vigente de EP en main. EP conserva preflight, host, root protegido, importación e instalación.
+- Gobernanza conserva la candidata IPZ y la aceptación GOV-TASK-003/007. Una llamada JSON-RPC de consola no acredita E2E IPZ.
+- H2–H9 de OCP MCP 1.0 permanecen según §21 y GOV-TASK-015. MCP-OCP-14/15 están configuradas; no se declara implementación. MCP-OCP-16 sigue diferida y MCP-OCP-17 post-release.
+- Control MCP-OCP generación 5 no fue modificado. No se amplió su alcance a Vault, host EP, credenciales, B2 o almacenamiento operativo.
+
+**Siguiente acción H1:** conseguir un runner .NET 10.0.403 que asigne runner y entregue pasos/logs/artefactos; ejecutar build, las 41 pruebas y smoke STDIO/EOF. Corregir únicamente defectos reproducidos. Mantener EP/Gobernanza en sus compuertas.
+
+
+
+### 22.5 Auditoría del bloque humano P004
+
+- Se releyó el HTML canónico DUG v388 (blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`) y la función de renderizado `card(p)`: la tarjeta humana construye su cuerpo con `render(p.content_markdown, "samantha")`; no existe un segundo texto independiente dentro de `sections[samantha].content`, que contiene el marcador `[[P:P004]]`.
+- El lector exige el marcador exactamente una vez y valida que `content_markdown == "> " + normative_text`, además del texto normativo exacto. La suite ya contiene el negativo `human P004 card markdown must match the exact normative text`, que modifica el Markdown y repinnea el blob; la lectura debe fallar cerrado.
+- **Resultado de revisión estática:** NO SE REPRODUJO LA BRECHA planteada inicialmente. La validación existente cubre el contenido que renderiza la tarjeta. No se añadió código ni una prueba redundante. Esta conclusión es estática; no sustituye build ni ejecución de la suite.
+
+## 23. Continuidad conversacional · lectura literal preservada · 2026-11-10
+
+El último intercambio y la última salida visible anterior se preservan literalmente en [CONTINUIDAD-2026-11-10-ULTIMO-TRAMO.md](conversaciones/CONTINUIDAD-2026-11-10-ULTIMO-TRAMO.md), blob `1373127651be36afcf49dc1ae4fb623948165daf`. La frase histórica de que aún faltaba crear MCP-OCP-02 queda supersedida por §22: la rama ya fue creada y reconciliada con el main actual. Esta captura parcial no se presenta como export nativo de ChatGPT.
+
+**Estado del núcleo:** MCP-OCP-v0.1.39 en esta rama candidata; el núcleo canónico de main permanece sin cambios hasta la revisión/aceptación de la PR. FOL1 continúa PREPARADO/NO ACTIVO; MCP-NORMATIVO permanece DESACTIVADO.
+
+
+## 24. MCP-OCP-14 · contrato base propuesto · H2/H3 · 2026-11-10
+
+- Se añadió [MCP-OCP-14-CONTRATO.md](persistencia/MCP-OCP-14-CONTRATO.md) y cuatro JSON Schemas sintéticos: envelope cifrado, snapshot manifest, journal event y checkpoint receipt.
+- El contrato fija snapshot FULL por instancia, journal append-only, hashes, estados separados `LOCAL_DURABLE` / `REMOTE_UPLOADED` / `REMOTE_VERIFIED` / `RESTORE_VERIFIED`, y checkpoint normal de máximo 30 s con `NOT_CONFIRMED` o `SKIPPED_EMERGENCY` sin prolongar cierre/lease.
+- El manifest lógico se cifra también; los schemas no definen algoritmo/KDF ni contienen valores de clave. `encryption_profile_ref` y `key_reference` son referencias opacas, pendientes del perfil aprobado por EP.
+- Backblaze permanece único backend inicial. EP posee root/ACL, perfil criptográfico, custodia de claves, B2 y restore; Gobernanza/GOV-TASK-014 acepta integridad, privacidad y restauración.
+- **Estado:** contrato y schemas PROPOSED / NO ACCEPTED. No hay runtime, DB, escritura, B2, restore ni pruebas ejecutadas. La entrega no amplía acceso a Vault, credenciales ni host.
+
+
+## 25. Revisión interfrentes y sincronización · 2026-11-10
+
+- **Main actual:** `8f999198f1d8cde71361c884c9a13b745f442b49`. Su último commit actualiza GOV-TASK-015; se integró como segundo padre sin modificar el archivo de Gobernanza.
+- **Rama:** `feat/mcp-ocp-sink-p004-main-a34c1c5b`; reconciliación más reciente `ea32a78e87bd659307fc81ff3f80b3743bae9d0a`, padres `6d56b8b85ef75ea520165c94eb2f7a8b65ac27ad` y main `8f999198f1d8cde71361c884c9a13b745f442b49`. Compare antes de esta actualización documental: 18 ahead / 0 behind, merge-base main y 29 rutas.
+- **PR #27:** OPEN / DRAFT / NOT MERGED; única candidata activa del corte H1 según GOV-TASK-015.
+- **H1:** MCP-OCP-02 sincronizada; MCP-OCP-05 sigue como candidata sin build; MCP-OCP-03 tiene 41 pruebas escritas / 0 ejecutadas con evidencia; MCP-OCP-04 mantiene harness, smoke no verificado y E2E IPZ pendiente.
+- **CI más reciente observado:** piloto run `42904945521`, job `130140381801`; validación canónica run `42905043818`, job `130140724213`. Jobs con `runner_id=0`, `steps=[]`; logs `BlobNotFound` y cero artefactos. No se observó asignación de runner ni ejecución de dotnet/build/tests/smoke. Causa raíz NO VERIFICADA; no declarar fallo del código ni PASS.
+- **H2:** se entrega propuesta MCP-OCP-14 v0.1 y cuatro schemas JSON parseables; no están ratificados ni validados mediante suite, y no existe runtime, DB, escritura, upload o restore.
+- **Estado EP reportado por la revisión GOV-TASK-015 incorporada en main:** Vault GUI observada SELLADA, CLI compartida inactiva/0 de 5 variables; ciphertext local 2.200 bytes; worker P0-C preparado con análisis sintáctico PASS; B2 auth, bucket preflight, upload, descarga, hash remoto y recibo siguen NO EJECUTADOS. Es una referencia del asiento EP/Gobernanza; MCP-OCP no operó esos recursos.
+- EP-TASK-003 continúa PARTIAL_FAIL y EP-TASK-005 PENDING. Host, Vault, B2 y Fila 4 permanecen bajo EP. Gobernanza conserva IPZ y E2E.
+- Control MCP-OCP generación 5, blob `826d7bd3f67bddf4f31bafee5013d1ea55003cf4`, sin cambios. No se amplía a credenciales, host, Vault, B2 ni almacenamiento operativo. FOL1 NO ACTIVO; MCP-NORMATIVO DESACTIVADO.
+
+**Siguiente acción:** obtener runner observable para H1; en paralelo validar los schemas MCP-OCP-14 con fixtures sintéticos y concretar la interfaz EP de almacenamiento sin tocar root/keys/B2.
+
+
+## 26. Cierre actualizado H1/H2 · 2026-11-10
+
+- Main vigente: `8f999198f1d8cde71361c884c9a13b745f442b49`. Rama `feat/mcp-ocp-sink-p004-main-a34c1c5b`; HEAD antes de este asiento documental `d50ae21ee96de04d2d99b4eaf8038f2620c249f8`; compare 22 ahead / 0 behind, merge-base main, 29 rutas. PR #27 OPEN / DRAFT / NOT MERGED.
+- MCP-OCP-02: rama reconciliada y portabilidad publicada. MCP-OCP-05: P004 candidato escrito, sin build/runtime. MCP-OCP-03: 41 pruebas escritas, 0 ejecutadas con evidencia. MCP-OCP-04: harness publicado, smoke no verificado, E2E IPZ pendiente.
+- CI actual: piloto run `42905503340`, job `130142324655`; Validate RDC Governance run `42905503202`, job `130142323533`; canonical-bootstrap push run `42905498023`, job `130142303995`. Jobs concluyen FAILURE en 1–2 s con `runner_id=0`, `steps=[]`; logs `BlobNotFound`, 0 artifacts. No evidencia de runner, dotnet, restore, build, pruebas ni smoke. Causa raíz NO VERIFICADA; no declarar fallo del código ni PASS.
+- H2: MCP-OCP-14 contrato 0.1 PROPOSED / NOT ACCEPTED; cuatro schemas son JSON parseable, sin validación formal/fixtures ejecutados. No hay runtime, DB, write, B2, download o restore.
+- EP/TASK status según revisión GOV-TASK-015 en main: GUI Vault SELLADA; sesión CLI compartida inactiva/0 de 5 variables; ciphertext local 2.200 bytes; worker P0-C preparado/sintaxis PASS; autenticación B2, upload, download, SHA remoto y recibo no ejecutados. EP-TASK-003 PARTIAL_FAIL; EP-TASK-005 PENDING. Esto es evidencia reportada por EP/Gobernanza, no operación MCP-OCP.
+- Control gen5 permanece blob `826d7bd3f67bddf4f31bafee5013d1ea55003cf4`, sin cambios. FOL1 NO ACTIVO; MCP-NORMATIVO DESACTIVADO.
+
+**Siguiente acción técnica:** recuperar un runner observable para build/test/smoke H1; en paralelo preparar pruebas sintéticas de los schemas H2. La ejecución B2/Vault/root/host permanece bajo EP.
+
+
+## 27. Cierre del ciclo y estado vivo · 2026-11-10
+
+- **Main:** `8f999198f1d8cde71361c884c9a13b745f442b49`. **Rama:** `feat/mcp-ocp-sink-p004-main-a34c1c5b`. **HEAD verificado:** `4ac337f0b1e507497b8ab6c6c64d71d2e8001e13`. Comparación: **26 ahead / 0 behind**, merge-base igual a main, **29 rutas**. PR #27 OPEN / DRAFT / NOT MERGED.
+- **Core candidato:** v0.1.38; blob previo a este asiento `b4233a77130eb711647df10d020eb88806afae4e`. **Backlog:** LIST_VERSION 0.19 después de este asiento. Control generación 5 sin modificación (blob `826d7bd3f67bddf4f31bafee5013d1ea55003cf4`).
+- **MCP-OCP-02:** rama limpia creada desde main y reconciliada hasta el HEAD vigente; inventario/portabilidad publicados.
+- **MCP-OCP-05:** código P004 candidato publicado; build y respuesta runtime no verificados.
+- **MCP-OCP-03:** 18 pruebas P004 + 23 de monitor/readiness = 41 escritas; 0 ejecutadas con evidencia.
+- **MCP-OCP-04:** harness/workflow publicados; smoke STDIO/EOF no verificado; E2E IPZ real pendiente de instalación/aceptación por EP/Gobernanza.
+- **CI del HEAD actual:** piloto run `42905655022`, job `130142842660`; canonical-bootstrap run `42905655010`, job `130142843328`; Validate RDC Governance run `42905654984`, job `130142842158`. Los tres jobs FAILURE en ~2 s, `runner_id=0`, `steps=[]`; logs `BlobNotFound`, cero artefactos. No se observó asignación de runner ni inicio de .NET/restore/build/tests/smoke. **Causa raíz NO VERIFICADA**; no es evidencia de fallo del código ni de PASS.
+- **MCP-OCP-14 / H2:** contrato 0.1 PROPOSED / NOT ACCEPTED; cuatro schemas JSON parseables. No hay runtime, DB, escritura, B2, descarga, restore ni pruebas formales ejecutadas. Perfil criptográfico, claves, root, ACL y operación Backblaze permanecen bajo EP; GOV-TASK-014 acepta.
+- **EP según GOV-TASK-015 en main:** Vault GUI SELLADA; CLI compartida inactiva/0 de 5 variables; ciphertext local 2.200 bytes; worker P0-C preparado/sintaxis PASS; B2 auth/upload/download/remote SHA/recibo no ejecutados. EP-TASK-003 PARTIAL_FAIL; EP-TASK-005 PENDING. MCP-OCP no operó esos recursos.
+- No se modificó `main`, DUG, ART-025/027, IPZ nativa, control de responsabilidad ni recursos EP. FOL1 NO ACTIVO; MCP-NORMATIVO DESACTIVADO.
+
+**Siguiente paso propio:** conseguir diagnóstico/runner observable para ejecutar build, 41 pruebas y smoke. En paralelo, preparar validación sintética formal de MCP-OCP-14; no iniciar IO/DB/B2/Vault/host sin interfaz y compuertas EP.
+
+
+## 28. Última revalidación del HEAD y CI · 2026-11-10
+
+- Refs cotejadas: main `8f999198f1d8cde71361c884c9a13b745f442b49`; rama `feat/mcp-ocp-sink-p004-main-a34c1c5b`, HEAD `cbb5cbcd4e5389fc859113a386072f0b19cc64ae`. Compare: 30 ahead / 0 behind; merge-base main; 29 rutas. PR #27 OPEN / DRAFT / NOT MERGED.
+- CI push en el HEAD actual: canonical-bootstrap run `42905989338`, job `130143984551`.
+- Checks PR del commit documental anterior `529033dcd4055dbb401315fb75d8397b7a0aab2a`: piloto run `42905982247`, job `130143958894`; Governance run `42905982275`, job `130143958017`; canonical-bootstrap run `42905982244`, job `130143958321`.
+- Los cuatro jobs concluyen FAILURE en 1–3 s, con `runner_id=0`, `steps=[]`; las descargas de logs dan `BlobNotFound` y cada run tiene cero artifacts. No se observó runner ni ejecución de .NET/restore/build/tests/smoke. **Causa raíz NO VERIFICADA**; no es fallo de código probado ni PASS.
+- No se modificó código funcional en estos commits finales; los commits posteriores a la rama reconciliada actualizan núcleo/lista/README/recibos y descripción de estado. Build y 41 pruebas continúan sin evidencia de ejecución.
+- H2 MCP-OCP-14 permanece propuesta no ratificada; cuatro schemas parseables, sin validación formal ni runtime/IO. EP mantiene Vault/B2/root/keys/host; estado reportado por GOV: Vault SELLADA, B2 no ejecutado, EP-TASK-003 PARTIAL_FAIL, EP-TASK-005 PENDING.
+- Control MCP-OCP generación 5 intacto. FOL1 NO ACTIVO; MCP-NORMATIVO DESACTIVADO.
+
+**Siguiente paso:** obtener un runner observable; luego ejecutar build, 41 pruebas y smoke STDIO/EOF. No reintentar a ciegas.
+
+## 29. Validación local ejecutable H1, corrección de pin DUG y alcance seguro · 2026-11-10
+
+### 29.1 Reconciliación y corrección
+
+- Main incorporado como segundo padre: `ff9c75926a2907c630f506c4e08c267b15bca7cf`; merge de reconciliación: `e5bd7d992f3fda83035cc43329353b846a25e9a8`; HEAD local y remoto cotejado. Compare: 33 ahead / 0 behind; merge-base = main.
+- La suite real había fallado en `DugSourceReader.ReadP004()`: el código buscaba `root.principle_inventory_policy`; el DUG v388 la define en `document.principle_inventory_policy`. El lector ahora exige la propiedad dentro de `document` y falla con `SINK_MDP_POLICY_CONTRACT_MISMATCH` si falta o no es objeto.
+- `FixtureHtml` reproduce la estructura real anidando el MDP bajo `document`; ya no oculta el defecto con un fixture sintético incorrecto.
+- Se recuperó el `.gitignore` de main, blob `845b93c0bf8f268d175969f61878f27e61a94ebd`, con exclusiones `.env/.env.*`, claves/certificados, bases de datos y logs. El `global.json` raíz fue retirado y el pin 10.0.403 quedó en `frentes/mcp-metodologia/global.json`; el workflow observa esa ruta.
+
+### 29.2 Evidencia de validación local
+
+Entorno: Windows 10.0.26200 x64; .NET SDK 10.0.403; PowerShell 7.4.22; checkout temporal limpio bajo `%TEMP%\mcp-ocp-ci-local`. Se ejecutó el harness versionado `piloto-sink/ci/Invoke-PilotValidation.ps1` desde `frentes/mcp-metodologia/`.
+
+- Restore de ambas suites: PASS.
+- Build de `OcpMcp`, `OcpMcp.Pilot.Tests` y `OcpMcp.Monitoring.Tests`: PASS; 0 advertencias y 0 errores en los tres builds.
+- Pruebas P004: `PILOT_TEST_SUMMARY PASS=18 FAIL=0`.
+- Pruebas de monitor/readiness: `MONITOR_TEST_SUMMARY PASS=23 FAIL=0`.
+- Smoke real MCP por STDIO/EOF: initialize, tools/list y tools/call; tres respuestas JSON-RPC en STDOUT, un evento `SINK_READ_SUCCESS` en STDERR; P004, DUG v388, commit/blob y hashes cotejados. `PILOT_CI_RESULT=PASS`, exit code 0.
+- Resumen de smoke SHA-256: `2D5C90D467B5508A9FAD22F0C00902035D9F3FE7F703B052AAB13365BE2C0B31`; log de pruebas P004 SHA-256 `D6F21749D8898B6624988BF056DA2BCC66DA3A5DF1CAE8FFA1FA2DB36DEB338B`; log de monitor SHA-256 `B9B3F2B5A42285CC3D81AE5EEFBDC678104E5E408A861BB5D1045885CBC29989`; stdout STDIO SHA-256 `7818B9894239D7760EAD89D18BA78244096041FE2738C639F840A5FCD9918938`; stderr STDIO SHA-256 `8614035B5585D84175B53B1DE4A126ED6B3A84BDED7E6BE51153A2FB8AF2D61B`.
+- `git diff --check` sin salida; árbol de trabajo limpio después del harness.
+
+### 29.3 Alcance y estado restante
+
+La ejecución es evidencia local real sobre Windows, no una ejecución del runner hospedado Ubuntu de GitHub. Los jobs previos siguen sin asignación de runner; su causa raíz permanece NO VERIFICADA y no se atribuye a código. El workflow se conserva para ejecución GitHub cuando el runner sea observable; no se hacen reintentos ciegos.
+
+H1 queda **BUILD + TESTS + STDIO SMOKE PASS LOCAL** para la candidata en este HEAD. No equivale a instalación en Fila 4, respuesta visible desde el contexto IPZ, aceptación GOV-TASK-003/007, producto 1.0.0, paquete WPF ni merge de PR #27. EP conserva host/Vault/B2/root; Gobernanza conserva IPZ y aceptación. H2 MCP-OCP-14 permanece PROPOSED / NOT ACCEPTED, sin runtime/IO. Control MCP-OCP generación 5 permanece intacto; DUG, ART-025/027 e IPZ no se modificaron.
+
+## 30. Informes individuales de resolución parcial H1 · MCP-OCP-02/03/04/05 · 2026-11-10
+
+Estos informes se añaden al historial del núcleo propietario. No declaran aceptación final ni sustituyen los gates de EP/Gobernanza.
+
+### Informe individual · MCP-OCP-02 · reconciliación selectiva y rama candidata
+
+- Frente/responsable: MCP-OCP.
+- Estado anterior → resultante: rama candidata sincronizada hasta e1fa64a; diff revisable y sin estar detrás de main. PR #27 permanece OPEN/DRAFT/NOT MERGED.
+- Corte: main e1fa64a37048651706fc449d145cf62fffce6901; rama actual cc50e32924226e97afd56c5f0a611753d2c8b4dd; PR #27.
+- Objetivo/resultado: mantener una única candidata H1, incorporar las actualizaciones de main como segundo padre y conservar el diff funcional.
+- Cómo se solucionó: merge explícito de reconciliación; se mantuvo el cambio de DTC del centralizador y se restauró el .gitignore seguro de main. El global.json quedó limitado a frentes/mcp-metodologia/global.json.
+- Cambios: merge de sincronización cc50e32924226e97afd56c5f0a611753d2c8b4dd; rama feat/mcp-ocp-sink-p004-main-a34c1c5b; SDK pin local 10.0.403.
+- Validación: comparación GitHub posterior al merge = 41 ahead / 0 behind, merge-base main; worktree temporal limpio; git diff --check sin salida. Build local del servidor PASS.
+- Read-back/integridad: ref y commit de rama verificados; los documentos de tarea se leyeron de main/branch según corresponde.
+- Bloqueantes/dependencias: ejecución hospedada GitHub Actions sigue sin runner observable; revisión/merge de PR no ejecutados.
+- Riesgos: cambios funcionales permanecen en PR borrador; no hay despliegue/instalación. Ninguno adicional verificado.
+- Pendientes: revisión técnica y decisión del propietario/centralizador sobre PR #27.
+- Rollback: la candidata conserva commits previos y PR no fusionada; reversión no ejecutada ni probada.
+- Aceptación: PENDIENTE; no se declara merge ni aceptación de producto.
+- Siguiente acción: mantener la única rama y resolver revisión/CI hosted cuando exista runner observable.
+- Conclusión: PARCIAL; reconciliación de rama ejecutada y verificada, integración final pendiente.
+
+### Informe individual · MCP-OCP-03 · build y suite de contrato
+
+- Frente/responsable: MCP-OCP.
+- Estado anterior → resultante: 41 pruebas escritas / 0 ejecutadas → 41/41 PASS en entorno local.
+- Corte: código de build b6ce37af1dc32b2e3bb8af3ded2a77c7ba6d7648; rama sincronizada con main vigente por commits de merge posteriores.
+- Objetivo/resultado: validar el servidor y las dos suites de contrato P004 y monitor/readiness.
+- Cómo se solucionó: el lector de MDP se corrigió de root.principle_inventory_policy a document.principle_inventory_policy; el fixture ahora replica la estructura de DUG v388.
+- Cambios: DugSourceReader.cs y fixture de tests dentro de frentes/mcp-metodologia/.
+- Validación: Windows 10.0.26200 x64; .NET SDK 10.0.403; PowerShell 7.4.22. Restore PASS; build servidor/tests PASS con 0 warnings/0 errors; P004 PASS=18 FAIL=0; monitor PASS=23 FAIL=0.
+- Evidencia: P004 log SHA-256 D6F21749D8898B6624988BF056DA2BCC66DA3A5DF1CAE8FFA1FA2DB36DEB338B; monitor log SHA-256 B9B3F2B5A42285CC3D81AE5EEFBDC678104E5E408A861BB5D1045885CBC29989.
+- Read-back/integridad: el harness concluyó exit code 0 y el checkout temporal quedó limpio.
+- Bloqueantes/dependencias: GitHub-hosted CI no comenzó por runner no asignado; la causa es NO_VERIFICADA.
+- Riesgos: prueba local Windows no demuestra compatibilidad con runner Ubuntu ni aceptación EP/IPZ. Ninguno adicional verificado.
+- Pendientes: hosted CI observable y aceptación de P004 tras instalación.
+- Rollback: cambios aislados en una PR no fusionada; rollback no ejecutado.
+- Aceptación: técnica local PASS; aceptación del producto PENDIENTE.
+- Siguiente acción: conservar recibos y solicitar revisión de la PR; no repetir el test local sin delta.
+- Conclusión: PARCIAL; suite local completa PASS, validación hosted/instalación/aceptación pendientes.
+
+### Informe individual · MCP-OCP-04 · transporte MCP STDIO y smoke
+
+- Frente/responsable: MCP-OCP.
+- Estado anterior → resultante: harness escrito / smoke no verificado → smoke local y smoke del paquete PASS.
+- Corte: servidor compilado desde b6ce37af1dc32b2e3bb8af3ded2a77c7ba6d7648; paquete en commit 5f7824464fcf1639342df1b4258e699f8976539f.
+- Objetivo/resultado: verificar initialize, tools/list, tools/call(P004), separación STDOUT/STDERR y EOF.
+- Cómo se solucionó: se ejecutó el harness versionado y se repitió el recorrido contra el binario extraído del ZIP candidato final.
+- Cambios: harness piloto-Sink de la candidata; smoke del paquete exacto.
+- Validación: tres respuestas JSON-RPC válidas en STDOUT; P004 con DUG v388/NX-388m; SINK_READ_SUCCESS en STDERR; proceso cerrado con EOF; exit code 0. Smoke summary SHA-256 2D5C90D467B5508A9FAD22F0C00902035D9F3FE7F703B052AAB13365BE2C0B31.
+- Read-back/integridad: STDOUT SHA-256 7818B9894239D7760EAD89D18BA78244096041FE2738C639F840A5FCD9918938; STDERR SHA-256 8614035B5585D84175B53B1DE4A126ED6B3A84BDED7E6BE51153A2FB8AF2D61B.
+- Bloqueantes/dependencias: no se probó el retorno al contexto IPZ real; requiere instalación bajo EP y GOV-TASK-003.
+- Riesgos: el smoke es STDIO local, no E2E RDC/IPZ. Ninguno adicional verificado.
+- Pendientes: configuración/instalación real y recorrido IPZ → RDC → STDIO.
+- Rollback: proceso temporal termina por EOF; no se dejó servicio. Recuperación de una instalación no aplica aún.
+- Aceptación: transporte local verificado; aceptación IPZ PENDIENTE.
+- Siguiente acción: EP instala tras sus gates; Gobernanza prueba recorrido real.
+- Conclusión: PARCIAL; smoke técnico PASS, E2E de producto no aceptado.
+
+### Informe individual · MCP-OCP-05 · corte vertical SINK:P004 y paquete candidato
+
+- Frente/responsable: MCP-OCP.
+- Estado anterior → resultante: P004 candidato sin build/package → corte vertical probado y paquete candidato persistido en la rama PR #27.
+- Corte de fuente: código de build b6ce37af1dc32b2e3bb8af3ded2a77c7ba6d7648; DUG v388/NX-388m commit 3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c, blob 4db0ebadfd1e48b2bdec9236ba7f344921e4a865; publicación de paquete commit 5f7824464fcf1639342df1b4258e699f8976539f.
+- Objetivo/resultado: entregar el mínimo ejecutable P004 con manifest, source pin, runbook y SHA-256; alcanzado como candidato revisable, no aceptado.
+- Cómo se solucionó: publish framework-dependent net10.0; manifiesto de nueve archivos; extracción en sandbox temporal, cotejo de tamaño/SHA por archivo y smoke del ejecutable extraído.
+- Cambios/rutas: entregas/piloto-sink-p004/MCP-OCP-SINK-P004-b6ce37af-v3.zip; manifest.json; RUNBOOK.md; SOURCE-PIN.json; SHA256SUMS.txt.
+- Evidencia: ZIP 137.474 bytes; SHA-256 DE556FD547ACF2AB3946DF5AC2395A3993CB459B5E48F8E745A661A113A90783; manifest SHA-256 85F70366144FD2109D9688F2DDB6E7819FF955B8F05697C2FC6966E04F0044B1; 9/9 archivos extraídos y verificados; paquete smoke PASS, tres respuestas JSON-RPC y P004 v388.
+- Read-back/integridad: manifest blob b2090143d9bb2f3ee81fb41dac2f93bf65ef6a7c; runbook blob f6af2599a4b9a83b8af634d8a8aa0936e745f25c; source-pin blob 13ebe586b4c75b463ec74aecd13bb4ce313c4baf; checksums blob 011bcb8883aa38a557f7e1a5c249fede4b7e1f15. ZIP blob 7fdb248ddbdb24cea653c72098331030da83e99e en el commit. El endpoint de lectura binaria no devolvió UTF-8 y no permitió comparar bytes tras publicación; lectura de vuelta binaria REMOTA=NO_VERIFICADA. El SHA local y el Git blob de creación sí están registrados.
+- Bloqueantes/dependencias: no transferido ni instalado; EP-TASK-003 PASS y EP-TASK-005 recepción/instalación pendientes. Requiere Microsoft.NETCore.App 10.0.x x64; runtime de Fila 4 NO_VERIFICADO. GitHub-hosted CI runner sigue no asignado.
+- Riesgos: paquete framework-dependent; exige runtime .NET 10 x64 y checkout con fuente DUG fijada. No incluye panel WPF ni producto 1.0.0. La aceptación humana/IPZ no existe.
+- Pendientes: recepción formal por EP cuando sus gates sean PASS; comprobar runtime destino; instalación/rollback por EP; E2E por Gobernanza.
+- Rollback: PR no fusionada; retirar los cinco artefactos del branch mediante commit si el paquete se rechaza; rollback no ejecutado ni probado.
+- Aceptación: candidato publicado, NO ACEPTADO ni transferido.
+- Siguiente acción: comunicar ruta/hash a EP-TASK-005 y esperar EP-TASK-003 PASS antes de cualquier extracción/instalación.
+- Conclusión: PARCIAL; artefacto candidato construido y package smoke PASS; entrega/instalación/aceptación pendientes.
+
+## 31. Informe individual parcial · MCP-OCP-14 · validación sintética de schemas · 2026-11-10
+
+- **Frente / responsable:** MCP-OCP; contrato MCP-OCP-14. EP conserva host, cifrado operativo, claves, B2 y restore; Gobernanza conserva aceptación.
+- **Estado anterior → resultante:** CONTRATO_BASE_0.1_PROPUESTO · NO_RATIFICADO · SCHEMAS_JSON_PARSEABLE · SIN_RUNTIME/IO → P14-01_SCHEMA_FIXTURES_PASS_20_20 · CONTRATO_NO_RATIFICADO · SIN_RUNTIME/IO.
+- **Corte de fuente:** rama feat/mcp-ocp-sink-p004-main-a34c1c5b, sincronizada con main d50560e01b6a1cf2b2f6aecaa3b4766cb1a2266a por merge ed7a097e6810c606c5bb146788e047475166fa48. Main OEP v0.3.64 §130, EP-TASK-002 y GOV-TASK-015 releídos: B2 upload/read-back SHA PASS para cuatro objetos; restore aislado NOT_RUN; EP-TASK-003 PARTIAL_FAIL; H1 instalación/paquete pausados hasta cerrar la secuencia de restore.
+- **Objetivo y resultado:** validar los cuatro JSON Schemas Draft 2020-12 del contrato MCP-OCP-14 con fixtures sintéticos positivos y negativos. Resultado: 20/20 casos PASS; los cuatro schemas se usaron con Git blobs exactos.
+- **Cómo se solucionó:** se utilizó Test-Json -SchemaFile integrado en PowerShell 7.4.22; no se instalaron paquetes externos. Fixtures con UUIDv7 sintéticos, hashes ficticios y referencias opacas de prueba. Los schemas locales se cotejaron con Git blob antes de repetir la suite.
+- **Cambios:** añadido persistencia/tests/Validate-MCP-OCP-14-Schemas.ps1 y evidencia persistencia/evidence/MCP-OCP-14-schema-validation-20261110.json. No se modificaron los cuatro schemas ni el contrato base.
+- **Validación:**
+
+  | Bloque | Casos | Resultado |
+  |---|---:|---|
+  | Envelope | 3 | 3 PASS |
+  | Snapshot manifest FULL/INCREMENTAL | 6 | 6 PASS |
+  | Journal event | 4 | 4 PASS |
+  | Checkpoint receipt / estados | 7 | 7 PASS |
+  | **Total** | **20** | **20 PASS / 0 FAIL** |
+
+  Entorno: Windows 10.0.26200 x64; PowerShell 7.4.22. La suite versionada ejecutó sobre las cuatro copias byte-equivalentes a los blobs remotos.
+- **Blobs fuente cotejados:** envelope 36dfa8bc760114ca3a53077450bdb998f7429bee; snapshot manifest 132e054c27c35dcefc46fe26a02fcd4eaecb5737; journal event 51b4852ee56068460a323af72b72d137477f5ed6; checkpoint receipt 5529f5303c698f8c5f712aed705c8a08c8fdff46.
+- **Artefactos / read-back:** script Git blob dcdb2074bad9815194bbb5c60e8711faff50f968; evidencia JSON Git blob 9d68878b817fae996b519da3eb4780e42ace021e. Ambos se leyeron de vuelta; los cuatro blobs de schemas permanecen sin cambios.
+- **Bloqueantes/dependencias:** contrato MCP-OCP-14 sigue PROPOSED / NOT ACCEPTED; falta congelar canonicalización/idempotencia y recibir aceptación de GOV-TASK-014. No se inicia runtime/IO hasta que los responsables y gates correspondientes lo autoricen. EP restore aislado sigue NOT_RUN y tiene prioridad operativa.
+- **Preocupaciones/riesgos:** format: date-time es una anotación en Draft 2020-12 salvo que se habilite format-assertion; esta batería no certifica semántica de calendario ni orden temporal entre started_at_utc y finished_at_utc. Tampoco valida canonicalización JSON, recomputación de cadena SHA, cifrado, claves, DB, B2, descarga, restore o totalidad real de datasets. No se infiere su cumplimiento por los PASS de schemas.
+- **Pendientes/diferidos:** P14-01 queda PASS para esta matriz sintética; definir fixtures adicionales solo si cambia el contrato; congelar JSON canónico e idempotencia; integrar con EP únicamente tras interfaz/root/gates; aceptación GOV-TASK-014 pendiente.
+- **Rollback/recuperación:** solo se añadió un test y evidencia sintética a una PR no fusionada. Retirar los dos artefactos mediante commit si se rechazan; rollback no ejecutado ni probado.
+- **Aceptación:** verificación técnica sintética PASS; contrato y tarea global MCP-OCP-14 continúan PROPUESTO / NO ACEPTADO.
+- **Siguiente acción:** mantener H1/instalación en pausa hasta EP restore; para MCP-OCP-14, preparar canonicalización/serialización determinista con fixtures sintéticos, sin persistencia ni runtime.
+- **Conclusión:** PARCIAL; P14-01 validado con 20/20 casos y evidencia versionada; contrato global no ratificado.

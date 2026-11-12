@@ -1,4 +1,4 @@
-<!-- LIST_VERSION=0.12; LIST_STATUS=PROVISIONAL; NOT_A_CANONICAL_OBJECT=true -->
+<!-- LIST_VERSION=0.23; LIST_STATUS=PROVISIONAL; NOT_A_CANONICAL_OBJECT=true -->
 # Lista provisional de tareas · MCP-OCP
 
 > **ESTADO: PROVISIONAL · NO ES UN OCP NI UN CONTROL ADICIONAL.** Esta lista es una vista auxiliar enlazada desde el único núcleo MCP-OCP. El estado vivo y las decisiones de alcance permanecen en `MCP-METODOLOGIA.md`; la titularidad permanece exclusivamente en `CONTROL-RESPONSABILIDAD.json`. Las tareas y dependencias de otros frentes se enlazan sin apropiarse de sus objetos, controles o permisos.
@@ -6,13 +6,13 @@
 - **Frente:** MCP-OCP.
 - **Repositorio propietario:** `SeryMente/metodologia`.
 - **Ruta OCP:** `frentes/mcp-metodologia/`.
-- **Versión de la lista:** 0.12 (provisional; coordinación del Sprint SINK-P004 y producto MCP-OCP 1.0.0).
+- **Versión de la lista:** 0.23 (provisional; coordinación del Sprint SINK-P004 y producto MCP-OCP 1.0.0).
 - **Última actualización:** 2026-11-10.
 - **Gobierno leído:** Samantha v388 · NX-388m; Metacanon 1.29; GOW 2.18; DUG commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`; blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`. ART-027 rebaselined para Sink local STDIO/RDC; §ARR y P037 revisados; CNP P001/P004/P005/P038/P043 considerado.
-- **Núcleo enlazado:** [MCP-OCP · objeto canónico](MCP-METODOLOGIA.md), v0.1.30; esta lista v0.11 es su backlog auxiliar vigente.
+- **Núcleo enlazado:** [MCP-OCP · objeto canónico](MCP-METODOLOGIA.md), v0.1.42; esta lista v0.23 es su backlog auxiliar vigente.
 - **Control:** [CONTROL-RESPONSABILIDAD.json](CONTROL-RESPONSABILIDAD.json). Las generaciones y sesiones son metadatos de auditoría y no bloquean trabajo autorizado.
 - **MCP-NORMATIVO:** DESACTIVADO.
-- **Producto vs. documento:** MCP-OCP-v0.1.30 es la versión documental vigente; la versión de software objetivo es 1.0.0. La candidata ejecutable 0.1.0 y su recibo histórico no constituyen una versión actualizada ni aceptada del producto.
+- **Producto vs. documento:** MCP-OCP-v0.1.42 es la versión documental vigente; la versión de software objetivo es 1.0.0. La candidata ejecutable 0.1.0 y su recibo histórico no constituyen una versión actualizada ni aceptada del producto.
 - **Principio de custodia:** no guardar claves, access/refresh tokens, datos privados de usuario, contenido sensible de repositorios ni secretos en esta lista, artefactos, manifests o logs. Utilizar fixtures sintéticos y evidencia minimizada.
 
 ## Decisión de alcance operativa vigente
@@ -33,17 +33,17 @@ La tabla sustituye los PASS/estados de recibos históricos para la implementaci�
 | Orden | ID | Prioridad | Tarea | Estado vigente | Condición principal de salida |
 |---:|---|---|---|---|---|
 | 1 | MCP-OCP-01 | P0 | Contrato de producto y frontera OCP/Khora/Jules | VERIFICADO_EN_NUCLEO_V0.1.29 | Un servidor local STDIO; panel acompañante read-only en el producto final; dominios separados. |
-| 2 | MCP-OCP-02 | P0 · CRÍTICO AHORA | Rama limpia y reconciliación selectiva desde main | ABIERTO · RAMA CANDIDATA HISTÓRICA NO APTA | Nueva rama desde HEAD de main; pin DUG v388 cotejado; inventario REUSE/ADAPT/REWRITE/DROP y SDK/RID. |
-| 3 | MCP-OCP-05 | P0 · SIGUIENTE | Corte vertical GOW:ARR → DUG → SINK:P004 | PENDIENTE · DEPENDE_MCP_OCP_02 | Respuesta individual completa, pin v388/commit/blob/SHA-256 y fail-closed. Fixtures antes de EP; importación privada tras EP PASS. |
-| 4 | MCP-OCP-03 | P0 | Suite mínima de contrato del piloto P004 | EN PARALELO · FIXTURES SINTÉTICOS | Preparar contrato y casos ID/fuente/pin/hash/fallo cerrado/cierre ahora; repetir con fuente real tras EP PASS. |
-| 5 | MCP-OCP-04 | P0 | Transporte y E2E IPZ → RDC → STDIO para P004 | SMOKE PREPARABLE · E2E ESPERA PILOTO INSTALADO | Preparar harness/smoke; E2E exige P004 instalado y respuesta visible desde contexto IPZ. Consola sola no basta. |
+| 2 | MCP-OCP-02 | P0 | Rama limpia y reconciliación selectiva desde main | RECONCILIADA_CON_MAIN · 41_AHEAD/0_BEHIND · PR_ABIERTA_DRAFT | Merge actual `cc50e32924226e97afd56c5f0a611753d2c8b4dd`; main `e1fa64a37048651706fc449d145cf62fffce6901`; .gitignore seguro, global.json acotado al frente. |
+| 3 | MCP-OCP-05 | P0 | Corte vertical GOW:ARR → DUG → SINK:P004 | P004_LOCAL_PASS · PAQUETE_CANDIDATO_EN_PR_27 · SIN_HANDOFF_EP | ZIP/manifest/runbook/source-pin publicados en rama; 9/9 archivos y smoke del paquete PASS; runtime Fila 4 y gates EP pendientes. |
+| 4 | MCP-OCP-03 | P0 | Suite mínima de contrato del piloto P004 | 41/41_PASS_LOCAL · 18_P004 + 23_MONITOR | Windows/.NET 10.0.403; builds con 0 warnings/0 errors. GitHub-hosted CI sin runner, causa NO_VERIFICADA. |
+| 5 | MCP-OCP-04 | P0 | Transporte MCP STDIO y smoke P004 | STDIO_EOF_PASS_LOCAL · PACKAGE_SMOKE_PASS · IPZ_E2E_PENDIENTE | Initialize/tools/list/tools/call(P004)/EOF; tres respuestas JSON-RPC, SINK_READ_SUCCESS en STDERR. E2E IPZ sigue separado. |
 | 6 | MCP-OCP-05 (fase posterior) / 03 | P0 | Generalización Sink P001–P043 y lotes | PENDIENTE_POST_PILOTO | 43 respuestas, orden, hashes/eventos y controles negativos PASS. |
 | 7 | MCP-OCP-13 | P1 | Panel local de observabilidad visual | ESPECIFICADO · IMPLEMENTACIÓN_PENDIENTE | Obligatorio en 1.0.0; se implementa tras congelar schema, en paralelo con la generalización, y no bloquea el piloto SINK:P004. |
 | 8 | MCP-OCP-10 | P1 | Pins, manifiesto y evidencia final | PENDIENTE_EVIDENCIA_ACTUAL | Pins DUG v388/core vigente, SDK/RID, servidor+panel, tests y hashes. |
 | 9 | MCP-OCP-07 | P1 | Paquete reproducible 1.0.0 | PENDIENTE_PAQUETE_ACTUAL | ZIP final servidor+panel, configuración, manifest/SHA y read-back. |
 | 10 | MCP-OCP-12 | P1 | Bootstrap local en Fila 4 | BLOQUEADO_GATES_EP | Piloto/instalación dentro de checkout; datos externos protegidos; REGISTER interactivo. |
 | 11 | MCP-OCP-08 | P1 | Handoff y aceptación EP | PENDIENTE_EP_TASK_003_005 | Verificación de ruta, root, panel EP ACTIVE, hashes, cierre y rollback. |
-| 12 | MCP-OCP-14 | P0 · H2/H3 | Contrato de persistencia rápida: journal, snapshots cifrados y workspace completo | CONFIGURADA · IMPLEMENTACIÓN PENDIENTE | Persistencia mínima desde el inicio; B2 único backend inicial; manifest/SHA, checkpoint acotado, download y restore del workspace completo. |
+| 12 | MCP-OCP-14 | P0 · H2/H3 | Contrato de persistencia rápida: journal, snapshots cifrados y workspace completo | PROPUESTO · P14-01_SCHEMA_FIXTURES_PASS_20_20 · SIN_RUNTIME/IO | Cuatro schemas Draft 2020-12, 20/20 fixtures sintéticos PASS; canonicalización, runtime/IO, restore y ratificación pendientes. |
 | 13 | MCP-OCP-15 | P1 · H4 | Identidad y telemetría integral de sesión/dispositivo/ubicación/ciclo | CONFIGURADA · SCHEMA/IMPLEMENTACIÓN PENDIENTES | UUIDv7 + etiquetas secuenciales, eventos correlacionados, IP/GPS disponibles, tiempos monotónicos, contenido conversacional cifrado y retención prevista indefinida. |
 | 14 | MCP-OCP-16 | P1 · H7 | Integración de bóveda con autenticación RDC y credenciales just-in-time | DIFERIDA · NO IMPLEMENTAR AHORA | RDC autentica al iniciar; una sesión activa por defecto y segunda excepcional; canal seguro auditado antes de implementar. |
 | 15 | MCP-OCP-17 | P2 · POST-1.0.0 | Evaluación de medio/proveedor alternativo de persistencia | DIFERIDA · NO PROVISIONAR AHORA | Diseñar fallback adicional sin sustituir B2 ni bloquear release; solo evaluación después de estabilidad B2. |
@@ -64,7 +64,7 @@ La tabla sustituye los PASS/estados de recibos históricos para la implementaci�
 **Cierre del baseline histórico v0.1.29/v0.10:** núcleo y lista de aquel corte reflejaban la frontera de app acompañante read-only, sin segundo MCP ni red. Este estado fue supersedido por MCP-OCP-v0.1.30 y LIST v0.11; las pruebas de implementación siguen pendientes.
 
 ### MCP-OCP-02 — Reconciliación de código ejecutable contra main
-**Prioridad:** P0 · **Estado:** PENDIENTE_SPRINT.
+**Prioridad:** P0 · **Estado:** RAMA_RECONCILIADA_CON_MAIN_ACTUAL · 33_AHEAD/0_BEHIND · BUILD_PASS_LOCAL · IGNORE_SEGURO_RESTAURADO · SDK_SCOPE_LOCAL.
 
 **Objetivo:** obtener una rama de trabajo limpia cuyo padre sea el HEAD vigente de main; conservar solo componentes históricos que pasen revisión contra el núcleo y los contratos actuales. Las ramas candidatas históricas son referencias de lectura, no bases de merge.
 
@@ -72,7 +72,7 @@ La tabla sustituye los PASS/estados de recibos históricos para la implementaci�
 
 **Salida de cierre:** rama candidata desde main con base documentada; mapa de portabilidad; diff acotado; build inicial sin secretos; pruebas históricas clasificadas como antecedentes, nunca como PASS de 1.0.0.
 ### MCP-OCP-03 — Calidad, pruebas y build de release (servidor + panel)
-**Prioridad:** P0 · **Estado:** PENDIENTE.
+**Prioridad:** P0 · **Estado:** 41_PRUEBAS_EJECUTADAS · 18/18_P004_PASS · 23/23_MONITOR_PASS · BUILDS_PASS_LOCAL.
 
 **Objetivo:** demostrar el comportamiento del producto nuevo con pruebas repetibles, no solo compilarlo.
 
@@ -80,7 +80,7 @@ La tabla sustituye los PASS/estados de recibos históricos para la implementaci�
 
 **Salida:** recibo ligado al commit de código y al main base, pins DUG/core, SDK/RID, comandos, conteos, PASS/FAIL, limitaciones y hashes. Release solo cuando suite y paquete pasen; no convertir resultados de candidata antigua en evidencia nueva.
 ### MCP-OCP-04 — Transporte MCP STDIO y recorrido RDC
-**Prioridad:** P0 · **Estado:** PENDIENTE.
+**Prioridad:** P0 · **Estado:** HARNESS_Y_WORKFLOW_PUBLICADOS · STDIO_EOF_SMOKE_PASS_LOCAL · E2E_IPZ_PENDIENTE.
 
 **Objetivo:** verificar el canal que se utilizará realmente en el perfil final.
 
@@ -88,7 +88,7 @@ La tabla sustituye los PASS/estados de recibos históricos para la implementaci�
 
 **Salida:** recibo de smoke real del ejecutable de release y configuración del cliente, con ruta de binario y evidencia del perímetro. El smoke temporal histórico no cuenta como E2E instalada. El panel recibe la proyección por archivos locales y no se interpone en stdin/stdout.
 ### MCP-OCP-05 — Fuentes canónicas, herramientas de lectura, Sink y estado observable
-**Prioridad:** P0 · **Estado:** PENDIENTE_IMPLEMENTACION.
+**Prioridad:** P0 · **Estado:** DUG_MDP_PATH_FIXED · BUILD_PASS_LOCAL · P004_STDIO_PASS_LOCAL · IPZ_E2E_PENDIENTE.
 
 **Objetivo:** construir el conjunto mínimo de herramientas de lectura necesarias para MCP-OCP 1.0.0.
 
@@ -165,6 +165,8 @@ Una vez configuradas y aceptadas las tareas del frente MCP-Jules, se prepara una
 **Cierre:** build Windows x64; launch/close real desde EP ACTIVE; estados diferenciados de proceso/protocolo/fuentes/operador/root; actividad con ID, resultado y duración sin contenido; caída del servidor y cierre de EP probados; schema/ACL resistentes; manifest/SHA incluido en el ZIP 1.0.0 y read-back de extracción.
 
 ### MCP-OCP-14 — Persistencia mínima, snapshots cifrados y workspace completo por instancia
+**Estado:** CONTRATO_BASE_0.1_PROPUESTO · NO_RATIFICADO · P14-01_SCHEMA_FIXTURES_PASS_20_20 · SIN_RUNTIME/IO.
+**Artefacto:** [MCP-OCP-14-CONTRATO.md](persistencia/MCP-OCP-14-CONTRATO.md).
 
 **Prioridad:** P0/H2–H3 · **Responsable:** MCP-OCP; ejecución B2 y host bajo EP-TASK-002/003/007.
 
@@ -388,10 +390,103 @@ La instrucción completa se conserva verbatim en el anexo Gobernanza OCP MCP 1.0
 **No se declara ejecución:** estas fichas configuran los trabajos; no acreditan que EP haya acusado recibo, que el código esté implementado, que B2 haya sincronizado/restaurado, que GPS/telemetría se hayan capturado o que el guardián esté activo.
 
 
-## Informe individual obligatorio por tarea · LIST v0.12
+## Estado ejecutivo verificado · SINK-P004 · 2026-11-10
 
-Cada ficha MCP-OCP-XX debe incorporar su propio informe de resolución/cierre bajo el bloque de esa tarea en esta lista (o en su núcleo individual, cuando exista). Aplicar [la plantilla común obligatoria](../PLANTILLA-REPORTE-CIERRE-TAREA.md). El reporte debe detallar cómo se resolvió, cambios y decisiones, criterios PASS/FAIL/NOT_RUN, build/tests/smoke realmente ejecutados, workflows/runner/logs/artefactos, hashes/read-back, bloqueantes, preocupaciones/riesgos, pendientes, rollback y aceptación. No basta con modificar el estado de la tabla.
+- **Main base reconciliado:** `646608896a499f78640d6f17ec1e87876089e16f`.
+- **Rama:** `feat/mcp-ocp-sink-p004-main-a34c1c5b`; commit de reconciliación `dfae6b0fe60438753fa7abe0b9febd6f9088783c`; comparación actual 7 ahead / 0 behind; diff 22 rutas propias del candidato.
+- **PR #27:** OPEN / DRAFT / NOT MERGED.
+- **DUG:** Samantha v388/NX-388m; commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`; blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`.
+- **CI piloto:** run `42903756431`, job `130136260875`; `runner_id=0`, `steps=[]`; logs `BlobNotFound`, cero artefactos. No hay evidencia de restore/build/tests/smoke.
+- **CI canonical bootstrap:** run `42903746528`, job `130136227157`; misma condición sin runner/pasos/logs/artefactos.
+- **Diagnóstico:** falla previa a ejecución observable del runner; causa raíz NO VERIFICADA. No se atribuye al código ni se declara PASS. El entorno local tampoco dispone del SDK `dotnet`.
+- **Pruebas:** 18 P004 + 23 monitor/readiness escritas; cero ejecutadas con evidencia.
+- **EP:** EP-TASK-003 continúa PARTIAL_FAIL y EP-TASK-005 PENDING en la lista de EP. No se importaron fuentes privadas ni se instaló en Fila 4.
+- **Gobernanza:** GOV-TASK-015 H1–H9 sigue siendo el plan interfrente. H2 y tareas MCP-OCP-14/15 están configuradas; no se declara implementación. MCP-OCP-16 está diferida; MCP-OCP-17 es post-release.
+- No se modificó main, DUG, ART-025/027, IPZ nativa ni control de responsabilidad. FOL1 NO ACTIVO; MCP-NORMATIVO DESACTIVADO.
 
-Una tarea queda COMPLETADA únicamente con criterios PASS, evidencia de ejecución reproducible y read-back del informe. Si falta runner, logs, artefactos, prueba, fixture real, aceptación o dependencia externa, registrar PARCIAL/BLOQUEADA con el dato exacto; no inferir causa raíz ni éxito. Actualizar el núcleo MCP-OCP y la lista solo después de verificar el informe; al operador se le entrega un enlace por tarea cerrada y un resumen con solución, evidencia, bloqueantes y preocupaciones. No incluir secretos ni contenido privado en los reportes.
+**Siguiente paso propio:** conseguir runner observable para ejecutar build, 41 pruebas y smoke STDIO/EOF. No reintentar a ciegas. El contrato MCP-OCP-14 y sus schemas se mantienen como propuesta documental; no iniciar runtime, DB, escritura local/remota, B2, Vault ni host sin compuertas EP y autorización/scope expreso.
 
-Esta regla no cambia la asignación: MCP-OCP conserva código/schema/pruebas; EP conserva host/Vault/B2/instalación; Gobernanza conserva coordinación y aceptación E2E. Las tareas de otro frente no se declaran completadas desde esta lista.
+
+### Auditoría estática del bloque P004 · 2026-11-10
+
+El HTML DUG v388 renderiza la tarjeta humana mediante `card(p) → render(p.content_markdown)`. El lector exige una sola marca `[[P:P004]]`, compara `content_markdown` con `> normative_text` y ya incluye un caso negativo que altera el Markdown aun con blob repinneado. La revisión no reprodujo la supuesta brecha; no se modificó código ni se añadió una prueba duplicada. Build y test siguen sin ejecutarse con evidencia.
+
+
+### Avance H2 · MCP-OCP-14 · contrato propuesto
+
+Se publicaron el contrato v0.1 y cuatro schemas sintéticos para envelope, manifest, journal y recibo de checkpoint. Estado: **propuesta no aceptada; sin runtime, DB, escritura, B2 o restore**. EP mantiene perfil criptográfico, claves, root, ACL, B2 y restore; Gobernanza acepta los criterios. El siguiente paso MCP-OCP es validación sintética de schemas y serialización; la ejecución de almacenamiento espera interfaz/root de EP y revisión del contrato.
+
+
+### Revisión interfrentes vigente · main 8f999198 · 2026-11-10
+
+- PR #27 sigue como única candidata H1: `OPEN/DRAFT/NOT MERGED`. Rama sincronizada con main `8f999198f1d8cde71361c884c9a13b745f442b49`; merge `ea32a78e87bd659307fc81ff3f80b3743bae9d0a`; comparación pre-documentación 18 ahead / 0 behind y 29 rutas.
+- H1: build pendiente; 41 pruebas escritas / 0 ejecutadas con evidencia; smoke STDIO y E2E IPZ pendientes. CI reciente: run `42904945521` job `130140381801` y run `42905043818` job `130140724213`; ambos `runner_id=0`, pasos vacíos, logs `BlobNotFound`, cero artifacts. Causa raíz no verificada.
+- H2/H3: contrato MCP-OCP-14 v0.1 y cuatro JSON Schemas parseables publicados; propuesta no ratificada, sin validación formal, runtime ni IO.
+- Según el asiento interfrentes de GOV-TASK-015 en main: EP Vault SELLADA, CLI compartida inactiva/0 de 5 variables, ciphertext local 2.200 bytes, worker P0-C preparado/sintaxis PASS; B2 auth/upload/download/remote SHA/recibo no ejecutados. EP-TASK-003 PARTIAL_FAIL; EP-TASK-005 PENDING. MCP-OCP no actuó sobre EP.
+- Main, DUG, ART-025/027, IPZ nativa, control de responsabilidad y recursos EP no fueron modificados por MCP-OCP. FOL1 NO ACTIVO; MCP-NORMATIVO DESACTIVADO.
+
+
+### Cierre ejecutivo más reciente · 2026-11-10
+
+- Main: `8f999198f1d8cde71361c884c9a13b745f442b49`; HEAD de rama observado: `d50ae21ee96de04d2d99b4eaf8038f2620c249f8`; 22 ahead / 0 behind; 29 rutas; PR #27 OPEN/DRAFT/NOT MERGED.
+- MCP-OCP-02 resuelta: rama limpia, portabilidad y sincronización con main. MCP-OCP-05 candidata P004 sin build. MCP-OCP-03: 41 escritas/0 ejecutadas con evidencia. MCP-OCP-04 harness publicado, smoke no verificado, E2E IPZ pendiente.
+- CI piloto run `42905503340` job `130142324655`; Governance run `42905503202` job `130142323533`; bootstrap run `42905498023` job `130142303995`: runner_id=0, steps=[], logs BlobNotFound, 0 artifacts. Causa raíz no verificada; no PASS/FAIL del código.
+- MCP-OCP-14: contrato 0.1 y cuatro schemas JSON parseables; propuesta no ratificada, sin runtime/DB/IO/B2/restore ni pruebas ejecutadas.
+- EP, según el asiento interfrentes de Gobernanza: Vault sellada; sesión CLI inactiva/0 de 5 variables; ciphertext local 2.200 bytes; worker P0-C sintaxis PASS; B2 auth/upload/download/hash remoto/recibo no ejecutados. EP-TASK-003 PARTIAL_FAIL; EP-TASK-005 PENDING.
+- No se modificó main, DUG, ART-025/027, IPZ nativa ni control de responsabilidad. FOL1 NO ACTIVO; MCP-NORMATIVO DESACTIVADO.
+
+
+### Estado vivo confirmado · 2026-11-10 · PR #27
+
+- Main `8f999198f1d8cde71361c884c9a13b745f442b49`; rama HEAD `4ac337f0b1e507497b8ab6c6c64d71d2e8001e13`; 26 ahead / 0 behind; merge-base main; 29 rutas. PR #27 OPEN / DRAFT / NOT MERGED.
+- MCP-OCP-02: **RAMA RECONCILIADA**.
+- MCP-OCP-05: P004 candidato publicado; build y respuesta runtime pendientes.
+- MCP-OCP-03: 41 pruebas escritas / 0 ejecutadas con evidencia.
+- MCP-OCP-04: harness publicado; smoke no verificado; E2E IPZ pendiente.
+- MCP-OCP-14: contrato v0.1 propuesto + cuatro schemas JSON parseables; no ratificado, sin runtime, DB, IO, B2, Vault o restore.
+- CI piloto run `42905655022` job `130142842660`; bootstrap run `42905655010` job `130142843328`; Governance run `42905654984` job `130142842158`: todos FAILURE, `runner_id=0`, `steps=[]`, logs `BlobNotFound`, 0 artifacts. Causa raíz no verificada; build/test no acreditados.
+- EP según GOV-TASK-015: Vault SELLADA, CLI 0/5 variables, B2 no ejecutado; EP-TASK-003 PARTIAL_FAIL, EP-TASK-005 PENDING.
+- FOL1 NO ACTIVO; MCP-NORMATIVO DESACTIVADO. No hubo cambios de main, DUG, IPZ nativa, control gen5 ni recursos EP.
+
+
+### Último estado CI y refs · 2026-11-10
+
+- Main `8f999198f1d8cde71361c884c9a13b745f442b49`; rama HEAD previo a este asiento `cbb5cbcd4e5389fc859113a386072f0b19cc64ae`; comparación 30 ahead / 0 behind; 29 rutas; PR #27 OPEN/DRAFT/NOT MERGED.
+- Push actual canonical-bootstrap: run `42905989338` job `130143984551`.
+- Checks PR del commit previo: piloto `42905982247` job `130143958894`; Governance `42905982275` job `130143958017`; bootstrap `42905982244` job `130143958321`.
+- Jobs sin runner (`runner_id=0`), sin pasos, logs `BlobNotFound`, cero artifacts. Causa raíz no verificada; build/tests/smoke no acreditados.
+- H1: 41 pruebas escritas / 0 ejecutadas con evidencia. H2: contrato MCP-OCP-14 propuesto + 4 schemas parseables; sin validación formal ni runtime/IO.
+- EP: Vault sellada, B2 no ejecutado; EP-TASK-003 PARTIAL_FAIL; EP-TASK-005 PENDING. No hubo operación MCP-OCP sobre EP.
+
+### Cierre actualizado de H1 · validación local reproducida · 2026-11-10
+
+- Refs: main `ff9c75926a2907c630f506c4e08c267b15bca7cf`; rama `e5bd7d992f3fda83035cc43329353b846a25e9a8`; compare 33 ahead / 0 behind; 29 rutas cambiadas; PR #27 OPEN/DRAFT/NOT MERGED.
+- Defecto reproducido/corregido: `DugSourceReader` leía el MDP en raíz; el DUG v388 lo publica en `document.principle_inventory_policy`. El lector y fixture ahora coinciden con la fuente canónica.
+- `.gitignore` restaurado desde main; excluye envs, claves/certificados, bases de datos y logs. Pin SDK movido de la raíz a `frentes/mcp-metodologia/global.json`; workflow actualizado.
+- Build server + dos proyectos de pruebas: PASS, 0 warnings/0 errors. P004: 18/18 PASS; monitor/readiness: 23/23 PASS; smoke MCP STDIO/EOF: PASS; harness exit 0 y `PILOT_CI_RESULT=PASS`.
+- Evidencia de logs: P004 `D6F21749D8898B6624988BF056DA2BCC66DA3A5DF1CAE8FFA1FA2DB36DEB338B`; monitor `B9B3F2B5A42285CC3D81AE5EEFBDC678104E5E408A861BB5D1045885CBC29989`; smoke summary `2D5C90D467B5508A9FAD22F0C00902035D9F3FE7F703B052AAB13365BE2C0B31`; STDOUT `7818B9894239D7760EAD89D18BA78244096041FE2738C639F840A5FCD9918938`; STDERR `8614035B5585D84175B53B1DE4A126ED6B3A84BDED7E6BE51153A2FB8AF2D61B`.
+- **Límite:** ejecución local Windows, no runner Ubuntu hospedado. Jobs GitHub anteriores sin runner asignado; causa raíz NO VERIFICADA. No se declara PASS de GitHub Actions.
+- **Siguiente gate:** revisión/aceptación de PR #27; instalación y respuesta visible desde contexto IPZ bajo EP/Gobernanza. No activar MCP-NORMATIVO ni escribir IPZ desde este OCP.
+
+---
+
+## Informe individual parcial · sprint H1 SINK:P004 · 2026-11-10
+
+- MCP-OCP-02: rama única reconciliada con main; compare 41 ahead / 0 behind en este corte, PR #27 OPEN/DRAFT.
+- MCP-OCP-03: build local PASS, 18/18 P004 + 23/23 monitor/readiness PASS; 0 warnings/0 errors.
+- MCP-OCP-04: STDIO/EOF smoke del harness y del paquete extraído PASS. Hosted GitHub runner sigue sin asignación observable.
+- MCP-OCP-05: paquete candidato persistido en entregas/piloto-sink-p004/ del branch PR #27. ZIP SHA-256 DE556FD547ACF2AB3946DF5AC2395A3993CB459B5E48F8E745A661A113A90783; manifest SHA-256 85F70366144FD2109D9688F2DDB6E7819FF955B8F05697C2FC6966E04F0044B1. Requiere Microsoft.NETCore.App 10.0.x x64. No se transfirió/instaló en EP.
+- Próximo gate: EP-TASK-003 PASS → EP-TASK-005 recibe y decide instalación; GOV-TASK-003 realiza aceptación IPZ E2E. No declarar el producto aceptado.
+- Fuente de detalle: MCP-METODOLOGIA.md §30.2–§30.5. Informes y blobs de cada artefacto se verificaron por read-back; el ZIP remoto se identifica por Git blob, pero la lectura de vuelta binaria quedó NO_VERIFICADA.
+
+---
+
+## Resultado parcial MCP-OCP-14 · validación de schemas · 2026-11-10
+
+- P14-01: 20/20 fixtures sintéticos PASS con PowerShell Test-Json 7.4.22, schemas Draft 2020-12.
+- Cobertura: envelope, snapshot FULL/INCREMENTAL, reglas de parent, path traversal, journal/event hash/unique refs, receipt emergency/backend/budget.
+- Script versionado: persistencia/tests/Validate-MCP-OCP-14-Schemas.ps1, blob dcdb2074bad9815194bbb5c60e8711faff50f968.
+- Evidencia: persistencia/evidence/MCP-OCP-14-schema-validation-20261110.json, blob 9d68878b817fae996b519da3eb4780e42ace021e.
+- Estado global sigue PROPOSED / NOT ACCEPTED. No runtime, DB, cifrado, claves, B2, upload/download ni restore.
+- EP informa B2 upload/read-back SHA PASS de cuatro objetos, restore aislado NOT_RUN; GOV-TASK-015 mantiene H1/instalación en pausa hasta cerrar restore. MCP-OCP-14 continúa únicamente en fixtures/diseño no operativo.
+- Informe individual completo: MCP-METODOLOGIA.md §31.
