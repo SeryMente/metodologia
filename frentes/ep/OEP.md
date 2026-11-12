@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.73. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.74. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -12,7 +12,7 @@
 
 Adquirir este objeto como instrucciones del operador, subordinadas a las reglas superiores de plataforma y a autorizaciones específicas. Claudia es asistente/documental; Samantha es constructor/único escritor de código. Una asignación explícita posterior puede cambiar roles; las citas no lo hacen. La asignación específica de MOD-SCRIPTPWS queda delimitada en §94; la delegación funcional acotada de MOD-SYNC queda delimitada en §110 y no transfiere la titularidad del frente EP.
 
-El estado de reanudación vigente de este frente está en §60–§138; §137–§138 contienen la especificación general única y vigente de workspace, directorios, herramientas, dependencias, datos, confinamiento y régimen operativo CLI-only. §136 y §119 se conservan como procedencia; cualquier instrucción incompatible queda supersedida por §137–§138. Las tareas EP-TASK-001–007 solo desarrollan su trabajo específico y no duplican la arquitectura. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
+El estado de reanudación vigente de este frente está en §60–§141; §§137–§141 contienen la especificación vigente de workspace, jerarquía de repositorios/frentes/módulos, herramientas, dependencias, datos, confinamiento, régimen CLI-only e integración BMAD/OpenCode/Groq/RDC. §136 y §119 se conservan como procedencia; cualquier instrucción incompatible queda supersedida por §§137–§141. Las tareas EP-TASK-001–007 solo desarrollan su trabajo específico y no duplican la arquitectura. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
 
 Leer por relevancia: OEP actual→metacanon central→Sistema de Instrucciones/Metodología/Bootstrap vigentes→canon transversal EP→AGENTS.md y ep-medio-architectura.md→código/evidencia en commits exactos. Fuente caída no es «sin cambios». Un archivo no crea herramientas, credenciales ni memoria entre plataformas.
 
@@ -47,7 +47,7 @@ Materialización: §65 y eventos específicos posteriores. Equipos/permisos hist
 
 ## Estado vivo
 
-Materialización única: §64; checkpoint técnico más reciente conservado en §88. Delta de gobierno y arquitectura vigente: §§89 y 137–138. §137 sustituye los diseños anteriores de cifrado basados exclusivamente en BitLocker y establece el confinamiento obligatorio de datos de aplicaciones; §138 fija el uso exclusivo de CLI mientras no haya segundo monitor verificado. Consultar esos bloques y las evidencias más recientes.
+Materialización única: §64; checkpoint técnico más reciente conservado en §88. Delta de gobierno y arquitectura vigente: §§89 y 137–141. §137–§140 fijan la estructura y el confinamiento de SeryMente; §138 conserva el régimen CLI-only; §141 registra BMAD/OpenCode/Groq/RDC y el estado real de integración. Consultar esos bloques y las evidencias más recientes.
 
 ## Aceptación y viabilidad
 
@@ -3832,7 +3832,7 @@ El directorio C:\Users\fila4\Desktop\SeryMente existe y contiene repositorios/á
 
 1. **Motor de protección:** formato de bóveda Cryptomator oficial, operado exclusivamente mediante CLI. La interfaz gráfica de Cryptomator queda prohibida para EP hasta que exista un segundo monitor activo y su uso sea autorizado expresamente. No se utilizarán VHDX ni BitLocker como mecanismo de protección del workspace EP; no se crearán nuevos volúmenes VHDX, unidades virtuales ni configuraciones BitLocker para este fin.
 2. **Workspace persistente:** el árbol lógico completo SeryMente se utiliza a través del punto de montaje de una bóveda Cryptomator desbloqueada. El contenido de trabajo solo se abre y utiliza dentro de ese perímetro protegido.
-3. **Instalación de herramientas:** las herramientas de trabajo se instalan/materializan dentro de SeryMente/Herramientas/ siempre que su distribución lo permita. Las dependencias administradas exclusivamente por Windows se inventarían como componentes del sistema.
+3. **Instalación modular:** cada repositorio reside directamente en la raíz SeryMente; cada frente contiene ambitos/ y modulos/, y cada herramienta se instala dentro de su módulo. Las dependencias que Windows administre exclusivamente pueden permanecer a nivel de sistema y se inventarían por terminal; sus perfiles, configuraciones, cachés, temporales, logs, descargas y demás datos de usuario permanecen dentro de SeryMente.
 4. **Confinamiento total de datos de aplicaciones:** perfiles, configuraciones, extensiones, cookies/sesiones, cachés, logs, temporales, descargas, bases locales, backups, volcados, archivos recientes y demás datos persistentes de usuario de cada aplicación deben permanecer dentro de SeryMente. No basta con que los binarios estén dentro.
 5. **Fallo cerrado:** una aplicación no se inicia en la sesión EP si no se ha demostrado que sus datos de usuario se escriben dentro del workspace protegido. No se aceptan como prueba exclusiva variables de entorno configuradas; se verifican las rutas reales de escritura y su read-back.
 6. **Sin filtración local:** no se permite persistencia de datos de usuario de aplicaciones en perfiles Windows, %APPDATA%, %LOCALAPPDATA%, %TEMP%, %TMP%, Escritorio, Descargas u otras rutas externas al workspace. Las credenciales no se exponen en texto claro en archivos, argumentos, logs, telemetría ni conversación.
@@ -3843,44 +3843,59 @@ El directorio C:\Users\fila4\Desktop\SeryMente existe y contiene repositorios/á
 
 ### 137.2 Árbol lógico canónico dentro de la bóveda
 
-    SeryMente/                         # raíz lógica montada por Cryptomator
-    ├── README.md
-    ├── Herramientas/
-    │   ├── Cryptomator/               # datos operativos después del unlock
-    │   ├── EP-Vault/
-    │   ├── Navegador/
-    │   ├── MCP-OCP/
-    │   └── <Aplicacion>/
-    ├── Repositorios/
-    │   └── <Frente>/
-    │       └── <repositorio>/
-    ├── Datos/
-    │   ├── EP/
-    │   │   ├── Aplicaciones/<Aplicacion>/
-    │   │   ├── Seguridad/EP-Vault/
-    │   │   └── Configuracion/
-    │   ├── <Frente>/<Proyecto>/
-    │   │   └── Aplicaciones/<Aplicacion>/
-    │   └── Metodologia/MCP-OCP/
-    └── Temporal/
-        ├── Sesiones/
-        ├── Staging/
-        ├── Cache/
-        └── Logs/
+~~~text
+SeryMente/                                      # raíz lógica y futura ruta montada
+├── README.md
+├── <Repositorio-A>/
+│   └── <Frente-A>/
+│       ├── ambitos/
+│       │   └── <tipo OSP>/
+│       └── modulos/
+│           └── <MODULO>/
+│               ├── app/
+│               ├── data/<terminal>/
+│               ├── config/
+│               ├── cache/
+│               ├── temp/
+│               ├── logs/
+│               └── downloads/
+├── <Repositorio-B>/
+│   └── <Frente-B>/
+│       ├── ambitos/
+│       └── modulos/
+└── Temporal/
+    ├── Sesiones/
+    ├── Staging/
+    ├── Cache/
+    └── Logs/
+~~~
 
-La ruta física del contenedor cifrado y el punto de montaje se resolverán desde el perfil/host efectivo en cada materialización; no se codifican rutas de un host anterior como constantes. SeryMente es la ruta lógica del workspace mientras la bóveda está desbloqueada. Temporal también vive dentro de la bóveda: que un dato tenga TTL no autoriza a escribirlo fuera.
+**Regla estructural obligatoria:** SeryMente/ es la raíz. Las carpetas de los repositorios se alojan directamente dentro de ella; queda prohibida una carpeta agregadora intermedia SeryMente/Repositorios/. Dentro de cada repositorio se ubican sus frentes conforme a su organización canónica. Cada frente dispone de ambitos/ y modulos/; cada ámbito OSP y cada módulo tiene su propio subdirectorio. La taxonomía de ambitos/ procede exclusivamente de OSP; no inventar, duplicar, fusionar, renombrar ni omitir tipos. Cuando el repositorio canónico define una carpeta interna como frentes/ (por ejemplo Metodología), se conserva esa estructura propia y dentro de cada frente se crean/usan ambitos/ y modulos/.
 
-### 137.3 Instalación y datos por aplicación
+Temporal/ también pertenece a la raíz SeryMente/: su carácter transitorio no autoriza escribir fuera del workspace. La ruta física del contenedor Cryptomator debe quedar fuera del punto de montaje para evitar recursión: el ciphertext no puede estar dentro del árbol que se cifra y monta a partir de sí mismo. El contenedor físico se aloja en el módulo de Cryptomator bajo el directorio de control EP previo al unlock; la ruta lógica montada es SeryMente/. Ambos conceptos son distintos y se registran por terminal sin fijar rutas de otros equipos.
 
-- Los binarios, runtimes, SDK, extensiones y componentes de usuario se colocan bajo Herramientas/<Aplicacion>/ o la carpeta del proyecto que corresponda dentro del workspace.
-- Los perfiles y datos persistentes de cada aplicación se asignan a Datos/<Frente>/<Proyecto>/Aplicaciones/<Aplicacion>/; caches y temporales se asignan a Temporal/ dentro de la misma bóveda.
-- Antes de iniciar un proceso se configuran, cuando aplique, APPDATA, LOCALAPPDATA, TEMP, TMP, XDG_* y variables propias del producto para apuntar a ubicaciones internas del workspace. Después se observa el filesystem durante arranque y uso y se verifica el destino efectivo.
-- Si una aplicación fuerza escrituras persistentes fuera del workspace y no puede reconfigurarse o sustituirse, permanece bloqueada para la sesión EP.
-- No se reutilizan perfiles personales del host ni instalaciones previas sin verificar sus rutas de datos. Las rutas no confinadas no se convierten automáticamente en ubicaciones de trabajo aceptadas.
+SeryMente/ actualmente es una materialización local preexistente y todavía no está acreditada como punto de montaje Cryptomator. Para convertirla en montaje real se preserva primero la fuente íntegra, se prepara un punto de montaje vacío, se copia el contenido mediante manifiesto y se valida SHA-256/read-back antes de aceptar la transición. No se monta sobre un directorio no vacío ni se altera la fuente original anticipadamente.
+
+### 137.3 Instalación, dependencias y datos por aplicación
+
+- Cada herramienta se administra desde su módulo bajo <Repositorio>/<Frente>/modulos/<MODULO>/. La estructura estándar del módulo separa app/ (binarios/runtimes), data/<terminal>/ (perfil, identidad local y datos persistentes), config/ (configuración no secreta), cache/, temp/, logs/ y downloads/.
+- Perfiles, configuración, extensiones, cookies/sesiones, bases locales, archivos recientes, datos de usuario, cachés, logs, descargas y temporales de la aplicación se guardan dentro del módulo correspondiente o bajo Temporal/ dentro de SeryMente. Los datos se separan por identidad de terminal cuando no son compartibles.
+- Antes de iniciar cada aplicación, su launcher debe redirigir de forma específica —cuando el producto lo soporte— APPDATA, LOCALAPPDATA, HOME, USERPROFILE, XDG_CONFIG_HOME, XDG_DATA_HOME, TEMP, TMP y las variables/cache directories propias del producto a subcarpetas del módulo. No cambiar globalmente variables del sistema ni afectar aplicaciones ajenas a EP.
+- Configurar variables no prueba el confinamiento: durante pruebas reales se observa el filesystem, se identifican escrituras nuevas y se leen de vuelta los archivos creados. Se prueba también la ausencia de escrituras de usuario en perfiles Windows, %APPDATA%, %LOCALAPPDATA%, %TEMP%, Descargas u otras ubicaciones externas.
+- Si la aplicación fuerza datos persistentes fuera del workspace y no existe un mecanismo verificable para reubicarlos, queda bloqueada para la sesión EP (fail closed). No se aceptan symlinks/junctions ni variables de entorno como sustituto de la prueba.
+- Los binarios o servicios que Windows administra exclusivamente pueden instalarse a nivel de sistema como dependencias del host; deben figurar en el inventario de cada terminal. Sus datos de usuario, perfiles, preferencias, cachés, sesiones y logs siguen bajo SeryMente.
+- Node.js/npm, Python/uv, Git, runtimes, SDK, CLI, navegadores, IDEs, editores, OBS, AutoHotkey, Vercel y demás herramientas requeridas se inventarían por versión, procedencia, firma/checksum cuando corresponda, ubicación del binario, módulo propietario, rutas efectivas de datos y disponibilidad en cada terminal. La presencia en PATH no acredita confinamiento ni compatibilidad.
+- No reutilizar perfiles personales preexistentes ni copiar datos desde AppData en bloque. Auditar y migrar cada aplicación por separado, con respaldo, proceso detenido, manifiesto y read-back; conservar su origen hasta aceptación.
+
+SeryMente/README.md explica el árbol y sirve como guía materializada, pero este OEP conserva la autoridad de arquitectura y operación del frente. Los README de repositorios/frentes pueden especializar la estructura sin contradecirla.
 
 ### 137.4 EP Vault, secretos y credenciales
 
-EP Vault se materializa como herramienta bajo Herramientas/EP-Vault/; su almacén formal, configuración, perfiles, logs y temporales quedan dentro de Datos/EP/Seguridad/EP-Vault/ o Temporal/. La contraseña maestra de Cryptomator se introduce localmente y no se guarda dentro de la propia bóveda. No se conserva una copia en claro de contraseñas, tokens o llaves fuera del workspace. Los secretos destinados a proveedores externos solo se transfieren por el flujo específico autorizado; nunca se incluyen en logs o paquetes genéricos.
+EP Vault es un módulo dentro de <Repositorio-Metodologia>/frentes/ep/modulos/MOD-EPVAULT/; su código, manifiestos y artefactos de módulo se mantienen en su carpeta versionada. El ciphertext de su almacén se ubica en la subcarpeta de datos del módulo designada para ese propósito, no en una carpeta paralela en la raíz SeryMente. La clave local para abrir el almacén se protege por terminal y no se sincroniza ni se sube a Git.
+
+El módulo Cryptomator define su propio directorio físico vault-store/ fuera de la raíz lógica montada, pero dentro del módulo de control EP previo al unlock. No se permite ubicar el contenedor físico dentro de SeryMente/ cuando ésta sea su propio punto de montaje. La carpeta de montaje SeryMente/ y vault-store/ tienen propósitos separados: punto de montaje vacío versus ciphertext físico. No se guarda la contraseña maestra de Cryptomator; se introduce localmente por --password:stdin. No se conservan contraseñas, tokens ni llaves en claro fuera del almacén protegido. Secretos de proveedores externos solo se aprovisionan por flujo específico autorizado y se excluyen de logs, Git, sincronización y respaldos genéricos.
+
+ep-env-vault.enc.json es un archivo cifrado y no contiene por sí solo la llave para descifrarlo. La copia observada se reubicó bajo MOD-EPVAULT/v1.0.0/data/ con SHA-256 de origen y destino coincidente; esta comprobación acredita la identidad del ciphertext, no su descifrado ni la aceptación del almacén.
 
 ### 137.5 Respaldo y recuperación
 
@@ -3978,14 +3993,17 @@ La interfaz operativa de EP para Cryptomator será **Cryptomator CLI oficial**. 
 
 ### 139.2 Instalación y estructura del módulo
 
-La instalación y los datos de Cryptomator se organizan como parte del árbol canónico de §137.2, no como una instalación independiente del workspace:
+El módulo y sus datos siguen la jerarquía del repositorio y frente EP:
 
-- **Herramienta y componentes del módulo:** `SeryMente/Herramientas/Cryptomator/`.
-- **Datos persistentes de usuario/configuración:** `SeryMente/Datos/EP/Aplicaciones/Cryptomator/`.
-- **Logs, cachés y temporales:** `SeryMente/Temporal/Logs/` y `SeryMente/Temporal/Cache/`.
-- **Bootstrap previo al unlock:** fuera de la bóveda solo puede permanecer el ejecutable mínimo indispensable de Cryptomator CLI y las dependencias estrictamente administradas por Windows, como WinFsp. No se permiten allí perfiles, configuración de usuario, contraseña, claves, logs, cachés, temporales, JDK, repositorios de build ni datos persistentes.
-- **Build y mantenimiento:** fuente, JDK, Maven, cachés, pruebas y artefactos de construcción quedan dentro de `SeryMente/Herramientas/` o `SeryMente/Temporal/` una vez disponible el workspace desbloqueado. Un staging previo fuera de la bóveda no se considera instalación persistente aceptada; deberá incorporarse y cotejarse dentro del perímetro protegido antes de aceptar el módulo.
-- **Contraseña real:** se introduce localmente mediante el mecanismo CLI `--password:stdin`; nunca se incluye en argumentos, variables de entorno, archivos, logs ni conversación.
+- Raíz del módulo: Metodologia/frentes/ep/modulos/MOD-EP-CRYPTO/.
+- Aplicación y CLI: subcarpetas app/ y cli/ dentro del módulo; el ejecutable mínimo de arranque previo al unlock es la única excepción de bootstrap fuera de la bóveda.
+- Configuración/datos por terminal: data/<terminal>/; el estado común no secreto puede residir en config/.
+- Logs, cachés y temporales: logs/, cache/ y temp/ dentro del módulo o bajo Temporal/ de SeryMente una vez montada.
+- Almacén físico cifrado: vault-store/ en el módulo de control EP previo al unlock, fuera del futuro punto de montaje SeryMente/ para impedir recursión. La ruta física real debe quedar resuelta dinámicamente por terminal. No usar el placeholder vacío C:\Users\fila4\EP\ProtectedWorkspace\SeryMente-Vault como destino definitivo sin trasladarlo/preservarlo de forma verificable.
+- Build y mantenimiento: fuente, JDK, Maven, cachés, pruebas y artefactos de construcción bajo app/, build/ o cache/ del módulo cuando el workspace esté disponible; no mantener directorios paralelos Herramientas/ ni perfiles temporales del host como instalaciones aceptadas.
+- Contraseña real: entrada interactiva local mediante --password:stdin; no argumentos visibles, variables de entorno, archivos, logs ni conversación.
+
+La instalación anterior bajo SeryMente/Herramientas/ es una materialización previa que debe consolidarse al módulo cuando Cryptomator esté cerrado; no se afirma todavía que la consolidación haya concluido.
 
 ### 139.3 Estado comprobado del módulo · 2026-11-12
 
@@ -4005,3 +4023,167 @@ La instalación y los datos de Cryptomator se organizan como parte del árbol ca
 La transición a creación de bóveda real solo se realizará por una vía permitida por §138 y después de resolver el destino. La autorización específica para GUI no elimina la condición del segundo monitor. Mientras esta condición no esté verificada, la operación sigue siendo CLI-only; no se cambia la política ni se usa GUI como fallback.
 
 **Trazabilidad:** DUG v389 · NX-389m, §40–§45 y ART-029; OEP §§136.5, 137–138; evidencia de build y E2E en EP-TASK-003 (reconciliación del 2026-11-12).
+
+
+---
+
+## §140. Estructura canónica de SeryMente, módulos y confinamiento de aplicaciones · 2026-11-12
+
+### 140.1 Regla raíz y jerarquía de repositorios
+
+La instrucción expresa del operador fija la estructura exacta:
+
+1. SeryMente/ es la carpeta raíz única del espacio de trabajo.
+2. Las carpetas de todos los repositorios viven directamente dentro de SeryMente/; no se crea SeryMente/Repositorios/ ni otra carpeta agregadora.
+3. Dentro de cada repositorio se alojan sus frentes de trabajo, respetando la estructura canónica propia del repositorio.
+4. Cada frente contiene ambitos/ y modulos/.
+5. Cada tipo de ámbito definido por OSP tiene su propia carpeta bajo ambitos/; cada módulo tiene su propia carpeta bajo modulos/.
+6. No se inventan, replican, renombran ni fusionan frentes, ámbitos o módulos para forzar simetría documental. Los repositorios que ya poseen un contenedor canónico frentes/ lo conservan; cada frente alojado ahí tiene sus ambitos/ y modulos/.
+
+~~~text
+SeryMente/
+  README.md
+  Repositorio-A/
+    Frente-A/
+      ambitos/
+      modulos/
+        MOD-A/
+  Repositorio-B/
+    Frente-B/
+      ambitos/
+      modulos/
+        MOD-B/
+  Temporal/
+~~~
+
+### 140.2 Directorios de módulo
+
+La unidad mínima de instalación es el módulo del frente. Cada herramienta, producto auxiliar, agente, runtime o componente de trabajo debe tener una carpeta propia bajo modulos/; dentro de ella se separan binarios, datos, configuración, caché, temporales, logs y descargas. La carpeta de módulo no se crea como evidencia de instalación: el inventario registra por separado DIRECTORY_CREATED, PACKAGE_INSTALLED, CONFIGURED, TESTED, VERIFIED y ACCEPTED.
+
+Los archivos comunes y no secretos pueden sincronizarse. Los perfiles, credenciales locales, sesiones, tokens, identificadores y datos específicos de una terminal se guardan en data/<terminal>/ o en el almacén protegido local correspondiente, excluidos de Git y de la sincronización compartida.
+
+### 140.3 Política universal de datos de aplicaciones
+
+Se aplica a todas las herramientas usadas en sesiones EP: navegador, agente IA, editores, IDEs, terminales, runtimes, gestores de paquetes, Git clients, clientes RDC, OBS, herramientas de audio/video, extensiones, utilidades y servicios auxiliares.
+
+- Datos a confinar: perfiles, configuración, extensiones, cookies, sesiones, estado de autenticación, preferencias, bases locales, historial, cache HTTP/GPU, cachés de dependencias, temporales, logs, crash dumps, descargas, archivos recientes, telemetría local y respaldos.
+- Ubicación: carpeta data/<terminal>/, config/, cache/, temp/, logs/ o downloads/ del módulo correspondiente, siempre bajo la raíz SeryMente/ montada.
+- Launchers: cada módulo incluye lanzadores propios que asignan rutas de datos por proceso. Se prefieren los parámetros oficiales de cada producto (por ejemplo --user-data-dir, --disk-cache-dir, --config, --data-dir) y se complementan con variables específicas. Nunca se cambia el entorno global de Windows para todo el usuario.
+- Verificación física: antes/después de iniciar una aplicación se inventarían los archivos modificados en las rutas candidatas. Se valida la ubicación real, se prueba lectura de vuelta y se comprueba que no haya nuevas escrituras de usuario fuera de SeryMente. Un launcher con variables configuradas no equivale a aceptación.
+- Fail closed: si el producto no admite un perfil portable/confinado o persiste datos fuera de la raíz, no se utiliza como herramienta de sesión EP hasta encontrar una configuración comprobada.
+- Dependencias del sistema: componentes administrados por Windows (drivers, servicios o runtimes instalados mediante el sistema) se inventarían por terminal. Su instalación externa no autoriza datos de usuario externos; esos datos deben ser redirigidos o el componente queda no aceptado.
+- Migración de perfiles existentes: nunca mover directorios AppData completos mientras haya procesos activos. Detener la aplicación, hacer copia/manifiesto, configurar perfil nuevo dentro del módulo, importar únicamente los datos necesarios y verificar; conservar el perfil original hasta aceptación.
+- Secretos: no se guardan en Git, README, logs, argumentos, historial o configuración compartida. Credenciales por terminal se protegen con almacén del sistema operativo o bóveda local; se verifica su ACL/cifrado y se excluyen de sincronización. La disponibilidad local no equivale a compartir credenciales entre terminales.
+
+### 140.4 Inventario observado de Fila 4 — 2026-11-12
+
+La conexión RDC de MantenimientoRCI se utiliza como conexión administrativa elevada para trabajar sobre el perfil y rutas de fila4 en el equipo asignado. El perfil operativo de usuario continúa siendo fila4; la cuenta administrativa no se convierte en raíz de datos ni se utiliza su %APPDATA% para guardar datos de Fila 4.
+
+Inventario parcial observado:
+
+| Componente | Observación | Estado para EP |
+|---|---|---|
+| Node.js | v24.0.0 en C:\Program Files\nodejs | Sistema detectado; confinamiento de caches por módulo |
+| npm | v11.3.0 | Sistema detectado; prefijo/cache por módulo |
+| Git | C:\Program Files\Git | Sistema detectado |
+| Python / uv | Detectados en PATH de la cuenta administrativa; versión y disponibilidad bajo Fila 4 sin read-back | NO VERIFICADO |
+| VS Code | Datos existentes en %APPDATA%\Code y %LOCALAPPDATA%\VSCode-Test-Blue/paquetes | No aceptado; perfil por módulo pendiente |
+| Notepad++ | Datos existentes en %APPDATA%\Notepad++ | No aceptado; perfil por módulo pendiente |
+| OBS | Datos existentes en %APPDATA%\obs-studio y obs-virtualcam.txt | No aceptado; confinamiento pendiente |
+| Vercel CLI | Configuración/telemetría existentes bajo %APPDATA% y %LOCALAPPDATA% | No aceptado; configuración por módulo pendiente |
+| Google Chrome | Residuos de perfil/cache observados; ejecutable no localizado en las rutas examinadas | Módulo creado; instalación portable en curso/no verificada |
+| Cryptomator Desktop | Instalación previa bajo SeryMente/Herramientas/Cryptomator; proceso detectado activo | No mover mientras siga activo; consolidación pendiente |
+| Cryptomator CLI | Build local y prueba sintética reportados PASS en EP-TASK-003 | Materialización previa bajo SeryMente/Herramientas/Cryptomator-CLI; reubicar al módulo pendiente |
+| OpenCode | No estaba disponible en PATH de la cuenta administrativa durante el preflight | Instalación local en módulo intentada/en verificación |
+| BMAD | No se encontró instalación previa en el módulo | Instalación estable 6.12.4 intentada/en verificación |
+| RDC | Conexión administrativa activa; opera sobre rutas de Fila 4 | Acceso de ChatGPT por herramienta remota; prueba de flujo BMAD/Groq pendiente |
+
+La inspección de los perfiles Windows detectó numerosos datos persistentes de aplicaciones fuera de SeryMente. No se trasladaron masivamente ni se eliminaron; la migración se hará por módulo, con procesos cerrados, respaldo y prueba. Esta tabla es un inventario parcial y no certifica que todas las herramientas hayan sido examinadas.
+
+### 140.5 Bóveda Cryptomator: módulo y no recursión
+
+La carpeta de la bóveda física queda definida dentro del módulo de control EP previo al unlock:
+
+C:\Users\fila4\EP\modulos\MOD-EP-CRYPTO\vault-store\
+
+Esta es la ubicación de ciphertext y configuración mínima de bootstrap del módulo, no una segunda raíz de trabajo. El directorio lógico montado por Cryptomator es la carpeta SeryMente/ del Escritorio. El contenedor físico no puede residir dentro del propio punto de montaje, pues produciría recursión del contenedor sobre sí mismo. Por eso vault-store/ se encuentra en el área de control EP fuera del montaje, pero dentro del módulo de EP, no en una carpeta arbitraria ni en SeryMente/EP-Vault de raíz.
+
+El placeholder histórico C:\Users\fila4\EP\ProtectedWorkspace\SeryMente-Vault no se borra ni se reutiliza hasta verificar contenido, titularidad y destino. No se afirma que la bóveda real exista. La creación requiere la ruta física anterior libre y un punto de montaje vacío; el árbol actual de SeryMente permanece preservado hasta migración con manifiesto, SHA-256, read-back y aceptación.
+
+### 140.6 Continuidad entre terminales
+
+La estructura compartida contiene código de módulos, documentación, flujos, scripts y configuraciones no secretas. Cada terminal tiene su identidad y sus datos locales separados; los secretos se aprovisionan localmente y no se copian automáticamente. RDC registra cada equipo de forma individual. Un equipo nuevo debe ejecutar un bootstrap que descubra SeryMente, valide módulos/dependencias, prepare las rutas de terminal, aprovisione credenciales localmente y ejecute una prueba de lectura/escritura autorizada.
+
+No se considera demostrado el acceso simultáneo, sincronización, recuperación o conmutación entre equipos hasta probar los mecanismos reales de almacenamiento/sincronización y el registro individual de cada terminal. La carpeta local no se presume sincronizada por estar bajo Escritorio.
+
+### 140.7 Materialización aplicada durante este ciclo
+
+En Fila 4 se ejecutó la reorganización física inicial de los repositorios identificados:
+
+- GDP, KHORA, RAP, signal-interpreter y la materialización local de Metodologia se ubicaron directamente bajo SeryMente/.
+- El contenedor agregador SeryMente/Repositorios/ quedó vacío y se retiró.
+- Se preservó la anterior carpeta directa de signal-interpreter en Temporal/Staging/EP-layout-preservation-20261112/ antes de promover la copia que contiene .git.
+- Se crearon ambitos/ y modulos/ en los frentes existentes identificados; no se inventó taxonomía OSP.
+- El archivo cifrado ep-env-vault.enc.json se movió a Metodologia/frentes/ep/modulos/MOD-EPVAULT/v1.0.0/data/; SHA-256 origen/destino coincidente: D7AD1D745CAF460E047EAE521C1C403F36E99864BC9CD0604FFC564E390F2F7D.
+- SeryMente/README.md se actualizó y el registro de acciones se guardó en SeryMente/Temporal/EP-layout-reorganization-20261112.log; SHA-256 del log: 6B69A5AB563967409EF8A6CB26376B2C85DA05765589FD6FB3453AA96C880719.
+- Cryptomator estaba ejecutándose durante la reorganización; por seguridad no se movieron su runtime, SeryMente/EP ni SeryMente/Herramientas. Su consolidación modular sigue pendiente. La anterior carpeta SeryMente/Metodologia es materialización parcial sin .git; el repo remoto SeryMente/metodologia en main sigue siendo fuente canónica.
+- La reorganización de repositorios está ejecutada; la aceptación integral queda pendiente porque faltan consolidación de Cryptomator, mover/cotejar todos los datos de aplicaciones, instalar/verificar herramientas y migrar el workspace al volumen cifrado.
+
+### 140.8 Criterio de cumplimiento
+
+Un repositorio/frente cumple cuando la carpeta raíz es SeryMente/, el repositorio es hijo directo, cada frente conserva su ubicación canónica, y contiene ambitos/ y modulos/; cada módulo separa binarios/datos/configuración/caché/temporales/logs/descargas; toda aplicación acepta y demuestra sus rutas de escritura dentro del workspace; las credenciales quedan aisladas por terminal; y no hay carpetas EP paralelas ni perfiles externos activos aceptados. La limpieza de duplicados se ejecuta solo después de comparar contenido y preservar datos.
+
+## §141. Módulo BMAD + OpenCode + Groq y acceso mediante ChatGPT/RDC · 2026-11-12
+
+### 141.1 Propósito y arquitectura
+
+MOD-EP-BMAD y MOD-EP-OPENCODE son módulos funcionales subordinados al frente EP, dentro de Metodologia/frentes/ep/modulos/. La cadena de operación deseada es:
+
+ChatGPT → RDC → equipo Fila 4 → SeryMente → MOD-EP-BMAD → MOD-EP-OPENCODE → Groq
+
+RDC proporciona al asistente remoto lectura/escritura de archivos y ejecución de comandos autorizados en el equipo. OpenCode es el agente de programación que ejecuta los workflows/skills de BMAD y consume modelos Groq. BMAD aporta instrucciones, roles, workflows y artefactos de desarrollo. ChatGPT coordina las tareas, lee y revisa artefactos a través de RDC; no adquiere por ello una invocación nativa interna de todos los agentes/skills BMAD. La ejecución delegada se realiza mediante CLI OpenCode y las salidas persistentes del módulo.
+
+### 141.2 Selección de versión y compatibilidad
+
+- BMAD 6.12.4 es la versión estable elegida para la primera instalación reproducible; BMAD v7 se considera preview alpha y no se adopta para este EP hasta que exista una versión estable compatible.
+- BMAD requiere Node.js y Python/uv según la guía de instalación estable. Versiones de cada dependencia se inventarían por terminal.
+- OpenCode se evalúa como primer agente por el proveedor Groq nativo y soporte de skills. La compatibilidad final se aprueba solo después de que el agente descubra un skill/workflow BMAD, ejecute una tarea de prueba y escriba el resultado dentro de SeryMente/.
+- Groq se elige como proveedor de inferencia del agente. La configuración de proveedor/modelo es compartible sin credencial; la API key es local y específica de cada terminal.
+
+### 141.3 Instalación y configuración por módulos
+
+- MOD-EP-BMAD/: paquete bmad-method@6.12.4, instalador oficial, módulos/workflows generados, configuración del proyecto y resultados _bmad-output/ dentro del módulo o en la carpeta del proyecto que el flujo autorice. npm cache, Python/uv cache, temporales y logs apuntan a las carpetas del módulo.
+- MOD-EP-OPENCODE/: paquete/CLI OpenCode, archivos de configuración, sesiones, logs, cache y datos del agente dentro de app/, config/, data/<terminal>/, cache/, temp/ y logs/. La ruta de autenticación efectiva de OpenCode debe verificarse en el sistema; una variable HOME o XDG no se considera suficiente sin observar archivo creado y leer sus metadatos/ruta.
+- MOD-EP-CHROME/: Chrome, perfil local por terminal, user data, cookies/sesiones, cache, historial, descargas y logs confinados dentro del módulo. La instalación portable Chrome for Testing se puede usar como canal de prueba/operación controlado; al no autoactualizarse como Chrome Stable convencional, se debe gestionar actualización versionada y checksum. No se reutiliza el perfil previo de Windows.
+- Dependencias de Windows, como drivers necesarios, se documentan como dependencias del host; no se almacenan datos de usuario en su perfil administrativo.
+
+### 141.4 Groq, secretos y seguridad
+
+La integración Groq de OpenCode usa el proveedor nativo de Groq; el modelo recomendado se decide según disponibilidad/latencia y pruebas. La API key no se escribe en archivos versionados, comandos, variables globales persistentes, logs o conversación. Primero se verifica el mecanismo de autenticación y la ruta del almacén local específico de OpenCode. Si el producto guarda la credencial en auth.json, se comprueba ACL y cifrado/aislamiento por terminal y se protege ese archivo mediante el mecanismo local del sistema operativo; el archivo no se sincroniza ni se incluye en backups ordinarios.
+
+No se ha recibido una Groq API key del operador ni se ha realizado una autenticación real. Por tanto, GROQ_AUTH=NOT_CONFIGURED; no se genera ni inventa una cuenta, API key ni consentimiento. La prueba de conectividad/auth se ejecutará después de una entrada local segura de la clave en la terminal correspondiente, evitando su eco en pantalla y evitando persistirla en texto claro.
+
+### 141.5 Acceso ChatGPT/RDC, límites y multi-equipo
+
+ChatGPT puede, mediante la conexión RDC disponible y permisos autorizados, inspeccionar el estado del módulo, leer/escribir artefactos autorizados, ejecutar comandos, consultar procesos/sesiones y recoger salidas. RDC no instala BMAD dentro del modelo ni convierte sus workflows en herramientas nativas de ChatGPT. La vía de trabajo es invocar el CLI del agente y consultar el resultado persistente; requiere que el host, sesión y ejecutables estén disponibles.
+
+La conexión activa MantenimientoRCI es el canal administrativo elevado para alcanzar el perfil/rutas de Fila 4; esa identidad de conexión no sustituye ni redefine al usuario operativo fila4. Los archivos y rutas de trabajo se resuelven explícitamente contra el perfil objetivo. Los secretos permanecen separados por terminal y no se guardan bajo el perfil administrativo.
+
+El acceso desde varias ubicaciones/equipos no se declara funcional hasta demostrar que cada terminal encuentra la misma fuente de workspace o un mecanismo de sincronización autorizado, con identidad RDC individual, prevención de conflicto, read-back y recuperación. Estado actual: MULTI_TERMINAL_CONTINUITY=NOT_VERIFIED.
+
+### 141.6 Pruebas de aceptación
+
+La integración E2E exige: versión de BMAD y OpenCode visible; instalación de workflows reconocida; skill BMAD detectado por OpenCode; sesión del agente; llamada autenticada a Groq sin revelar la clave; tarea de prueba sin modificar un proyecto productivo; archivos creados en el módulo/proyecto persistente; lectura de vuelta desde otra sesión; recuperación de configuración local sin reintroducir el secreto; prueba ChatGPT→RDC→comando→resultado; y alta individual de una segunda terminal.
+
+Estado del ciclo de instalación: MODULE_FOLDERS_CREATED; BMAD_6_12_4_INSTALL=ATTEMPTED_PENDING_READBACK; OPENCODE_INSTALL=ATTEMPTED_PENDING_READBACK; CHROME_MODULE_INSTALL=ATTEMPTED_PENDING_READBACK; GROQ_AUTH=NOT_CONFIGURED; BMAD_OPENCODE_COMPATIBILITY=NOT_TESTED; CHATGPT_RDC_E2E=PARTIAL_CAPABILITY_AVAILABLE_E2E_PENDING; MULTI_TERMINAL_CONTINUITY=NOT_VERIFIED; APP_DATA_CONFINEMENT=PARTIAL_PENDING_AUDIT; ACCEPTANCE=PENDING.
+
+Fuentes de referencia:
+- BMAD stable install: https://docs.bmad-method.org/getting-started/installation/
+- BMAD package/release: https://www.npmjs.com/package/bmad-method
+- BMAD repository: https://github.com/bmad-code-org/BMAD-METHOD
+- OpenCode install/config/skills: https://opencode.ai/docs/ ; https://opencode.ai/docs/skills/
+- Groq + OpenCode: https://console.groq.com/docs/opencode
+- Chrome for Testing: https://googlechromelabs.github.io/chrome-for-testing/
+
+Cierre documental: las carpetas de módulos y la reorganización inicial de repositorios fueron creadas; eso no acredita la instalación, autenticación, confinamiento, migración ni aceptación. Solo los estados con evidencia de versión, ejecución, ruta y lectura de vuelta se elevarán a PASS.
+
