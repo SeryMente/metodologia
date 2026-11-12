@@ -9,7 +9,7 @@
 
 ## Naturaleza y límites
 
-Este contenedor agrupa dieciséis objetos provisionales de persistencia de tarea, cada uno con su directorio y núcleo propio: nueve en curso, cuatro pendientes, uno completado y dos cancelados. No son frentes independientes ni unidades de una taxonomía ya aprobada. La responsabilidad, sesión y autorización se heredan del OCP padre; no se crean controles, sesiones ni folios independientes para cada tarea.
+Este contenedor agrupa diecisiete objetos provisionales de persistencia de tarea, cada uno con su directorio y núcleo propio: nueve en curso, cinco pendientes, uno completado y dos cancelados. No son frentes independientes ni unidades de una taxonomía ya aprobada. La responsabilidad, sesión y autorización se heredan del OCP padre; no se crean controles, sesiones ni folios independientes para cada tarea.
 
 El núcleo de cada objeto conserva identificador local, enunciado, referencia recuperable al origen y estado. El patrón se inspira en el diseño mínimo de Tareas v0.2, pero no declara ratificado ese estándar ni adopta como vigente el candidato v1.0. Cada ID `GOV-TASK-###` es estable dentro de este registro; no se afirma unicidad global.
 
@@ -35,6 +35,7 @@ El núcleo de cada objeto conserva identificador local, enunciado, referencia re
 | GOV-TASK-014 | en_curso | Integración y aceptación de persistencia Backblaze para Metodología y OCP | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-014%20-%20Persistencia%20Backblaze%20de%20Metodolog%C3%ADa%20y%20OCP/README.md) |
 | GOV-TASK-015 | en_curso · P0 · SPRINT SINK-P004 | Coordinar dependencias MCP-OCP-02/05/03/04, EP-TASK-003/005 y GOV-TASK-003/007; handoff de ejecución EP preparado | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-015%20-%20Sprint%20Sink%20local%20v%C3%ADa%20RDC/README.md) |
 | GOV-TASK-016 | pendiente | Revisar AT para IPZ y cambios del marco | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-016%20-%20Revisar%20AT%20para%20IPZ%20y%20cambios%20del%20marco/README.md) |
+| GOV-TASK-017 | pendiente | Reestructurar IPZ, principios, salida y complementos | [núcleo](./%F0%9F%93%81%20%F0%9F%A7%A9%20-%20GOV-TASK-017%20-%20IPZ%20principios%20salida%20y%20complementos/README.md) |
 
 
 ## Snapshot histórico supersedido · checklist ejecutivo del sprint · 2026-11-01, 20:32:23 America/Mexico_City
