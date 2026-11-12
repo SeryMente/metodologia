@@ -69,12 +69,18 @@
   },
   "mcp_normative": "DESACTIVADO",
   "commits": {
-    "pre_write_main": "e268d2b6cee34a30210ec3b4d6badd6ab330dc33",
-    "commit_sha": "TO_BE_FILLED"
+    "primary_write": "3ec5a0e6c9a43008cb5f5d1c6e3be83ce6228475",
+    "tree": "b25b23e0935ca115d6cf8f25e7febed7f8865aea",
+    "parent": "e268d2b6cee34a30210ec3b4d6badd6ab330dc33"
   },
   "verification": {
     "baseline_readback": "PASS_EXACT",
     "candidate_measurements": "PASS",
-    "all_written_files_readback": "PENDING"
-  }
+    "all_eight_documentary_artifacts_readback": "PASS_EXACT_BLOB_SHAS_AT_MAIN_HEAD_3ec5a0e6c9a43008cb5f5d1c6e3be83ce6228475",
+    "current_dug_and_at_pins_preserved": "PASS",
+    "responsibility_control_readback_unchanged": "PASS",
+    "fol1_master_readback": "PASS_PREPARED_NOT_ACTIVE",
+    "native_ipz": "NOT_MODIFIED_NOT_VERIFIED"
+  },
+  "main_head_after_primary_readback": "3ec5a0e6c9a43008cb5f5d1c6e3be83ce6228475"
 }
