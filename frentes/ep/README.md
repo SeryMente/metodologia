@@ -3,7 +3,7 @@
 **Repositorio propietario:** `SeryMente/metodologia` (privado).  
 **Rama canónica vigente:** `main`; las ramas documentales anteriores se conservan como antecedentes y no prevalecen sobre `main`.
 
-**OEP vigente:** v0.3.76 (`OEP.md`), leído de vuelta desde `main`. La raíz local del workspace es `SeryMente/`: repositorios como carpetas hijas directas, dentro los frentes, y cada frente con `ambitos/` y `modulos/`. No utilizar `SeryMente/Repositorios/`.
+**OEP vigente:** v0.3.77 (`OEP.md`), leído de vuelta desde `main`. La raíz local del workspace es `SeryMente/`: repositorios como carpetas hijas directas, dentro los frentes, y cada frente con `ambitos/` y `modulos/`. No utilizar `SeryMente/Repositorios/`.
 
 
 - [Persistencia DTC EP/MCP-OCP](OEP.md#95-persistencia-dtc-integrada-epmetodologia-y-continuidad-mcp-ocp--v0325--vcu-ep-v27): continuidad multiubicación EP/Metodología y estado operativo MCP-OCP, con autoridad técnica propia de MCP-OCP.
