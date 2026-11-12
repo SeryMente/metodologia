@@ -198,7 +198,6 @@ Al retomar Loop:
 **DUG adquirido:** Samantha v388 · NX-388m · blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`.  
 **Estado de ejecución:** creado en `main`; los requisitos del motor siguen pendientes.
 
-
 ## 14. Entrada C-LOOP-002 · contexto y requisitos de diseño
 
 El 2026-11-11 el operador entregó una entrada extensa para reconstruir la progresión narrativa de sus necesidades y documentarla en este frente. La interpretación estructurada, sus requisitos candidatos, secuencia de trabajo e incógnitas están en [C-LOOP-002 · Reconstrucción narrativa y requisitos de diseño](cronica/C-LOOP-002-analisis-y-reconstruccion.md).
@@ -224,13 +223,24 @@ El operador aportó el archivo `Texto pegado(20261111-194556).txt`. Se conserva 
 - La salida GPT-OSS contiene hipótesis y errores; no se adopta sin filtro. La crónica distingue requisitos expresos, inferencias y propuestas pendientes.
 - No se modificó el control de responsabilidad ni se asignaron folios globales. FOL1 sigue PREPARADO/NO ACTIVO.
 
-
-
 ## 16. Renombramiento y continuidad de la fuente
 
 El frente fue renombrado de **Loop** a **OCP2.0**. La ruta canónica vigente es `frentes/ocp-2-0/`; la ruta anterior `frentes/loop/` queda como antecedente de migración y no debe recrearse. El núcleo único es `OCP2.0.md`. Los identificadores históricos `C-LOOP-*` y el contenido verbatim se conservan sin renumeración ni reescritura. La segmentación C-LOOP-003 es derivada literal vinculada a la fuente original. La titularidad, UUIDv7 local y generación se conservan; no hubo transferencia de responsabilidad.
 
-
 ## 17. Registro de continuidad conversacional · 2026-11-11
 
 El operador pidió conservar el intercambio completo suministrado en esta conversación. La transcripción se registró en [CONTINUIDAD-20261111.md](conversaciones/CONTINUIDAD-20261111.md), con UUIDv7 local `01a1cc8f-15e0-7906-9ebf-3a0af14800e0`. Se conserva el texto tal como fue aportado, sin corregir los errores de transcripción ni alterar los identificadores históricos. Las afirmaciones de respuestas anteriores se preservan como parte del historial visible y no se consideran verificaciones técnicas nuevas por el solo hecho de estar transcritas. Este registro no altera el control de responsabilidad ni la generación del frente.
+
+## 18. Registro de continuidad conversacional · 2026-11-12
+
+El operador solicitó persistir el tramo reciente de conversación sobre Superpowers y WORKSPACE, preservar el contexto para una continuación seamless y repetir la salida del modelo correspondiente al último ciclo anterior a la captura.
+
+- Registro: [ChatGPT-OCP20-20261112-1140.md](conversaciones/ChatGPT-OCP20-20261112-1140.md).
+- UUIDv7 local del registro: `01a1d0d7-6720-7276-b37a-ef4e7374eb94`.
+- El registro conserva las entradas y salidas visibles del tramo, distingue la transcripción de la ficha de continuidad y reproduce íntegramente la salida del último ciclo anterior.
+- Decisión expresa preservada: WORKSPACE será el primer elemento a trabajar; el orden lo determina el operador.
+- Método solicitado: dinámica completa de Superpowers; el brainstorming de WORKSPACE está iniciado, pero aún no se ha desarrollado ni se ha respondido la pregunta inicial.
+- No se declara aprobado el propósito, la arquitectura o el stack de WORKSPACE; tampoco existe diseño o plan aprobado.
+- La mutación del registro y los enlaces se verifica con los SHA y la lectura de vuelta del propio repositorio.
+- El control de responsabilidad no se modifica; titularidad y generación 1 se conservan; FOL1 continúa PREPARADO/NO ACTIVO y no se asignan folios globales.
+
