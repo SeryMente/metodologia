@@ -1,4 +1,4 @@
-IPZ v0.12 · 1441/1500 caracteres
+IPZ v0.12 · 1430/1500
 Cada ciclo: abre y aplica los cinco enlaces en orden (1→5); lee la fuente vigente completa, no la sustituyas por memoria.
 1. VOCABULARIO — [GOW §ARR](https://github.com/SeryMente/metodologia/blob/main/gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#gow-arranque-chatgpt): léelo primero; fija el sentido de los términos.
 2. TAXONOMÍA — [ART-031](https://github.com/SeryMente/metodologia/blob/main/gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-031): ubica entidad, repositorio, frente y OCP; identifica el frente concreto y sigue sus referencias a la fuente y estado.
