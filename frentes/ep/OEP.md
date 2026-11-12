@@ -4432,3 +4432,20 @@ Resultado: `BMAD_GROQ_E2E=PASS_READ_ONLY_SKILL_DISCOVERY`; `GROQ_INFERENCE=PASS_
 - No se afirma que todas las escrituras internas o futuras de Chrome estén confinadas hasta concluir la auditoría de procesos auxiliares, servicios, actualizadores y rutas de crash reporting. La instalación global permanece compartida por el host; la configuración y datos del perfil EP son locales al módulo/terminal.
 
 Resultado: `CHROME_BINARY_SIGNATURE=PASS`; `CHROME_EP_PROFILE=PASS_OBSERVED`; `CHROME_INSTALL_METHOD=REUSE_EXISTING`; `CHROME_FULL_CONFINEMENT_AUDIT=PENDING`.
+
+
+### 142.14 Continuidad operativa RDC y corte de conversación · 2026-11-12
+
+**Regla operativa confirmada por el operador**
+
+La conexión RDC elevada bajo la identidad administrativa `CENTRAL\\MantenimientoRCI` se utiliza como canal de acceso al dispositivo autorizado `PC10RCIF4EI4` y al directorio de trabajo de Fila 4. El directorio de trabajo de destino es `C:\\Users\\fila4\\Desktop\\SeryMente`. No se debe detener el trabajo por el mero hecho de que la conexión RDC esté elevada ni exigir que toda operación remota se origine en un proceso interactivo ordinario de Fila 4.
+
+La elevación administrativa y la identidad de los datos de usuario son dimensiones distintas. Se permite utilizar la conexión elevada para inspeccionar, administrar, instalar, escribir y ejecutar operaciones autorizadas dentro del árbol de trabajo de Fila 4. Cuando una operación dependa de secretos protegidos por DPAPI con ámbito CurrentUser —en particular EP Vault— debe ejecutarse bajo la identidad propietaria `CENTRAL\\fila4`, o mediante el mecanismo local equivalente que preserve exactamente ese contexto criptográfico. No se debe intentar descifrar esos secretos como `CENTRAL\\MantenimientoRCI`, ni copiar secretos descifrados al perfil administrativo.
+
+**Instrucción de eficiencia:** no repetir comprobaciones de identidad, dispositivo, ruta o permisos ya acreditadas en el ciclo vigente, salvo que haya cambiado la conexión, el dispositivo, el proceso o el contexto de seguridad, o que una operación concreta devuelva un error que las haga relevantes. Continuar directamente con el directorio de trabajo Fila 4 usando RDC elevado. Las comprobaciones deben ser proporcionales al riesgo y no convertirse en una barrera burocrática.
+
+**Fuente de continuidad:** exportación `C:\\Users\\fila4\\Downloads\\ChatGPT-EP (1)-20261112-1632.md`, 1.926 líneas, leída desde el dispositivo RDC `PC10RCIF4EI4`. El tramo final establece expresamente la separación entre canal RDC elevado MantenimientoRCI y ejecución DPAPI CurrentUser de Fila 4. La última salida del ciclo exportado tiene marca temporal 12/11/2026, 4:28:36 p. m.; su contenido se reproduce literalmente en el registro de continuidad de la conversación actual y no se reinterpreta como una aceptación integral del EP.
+
+**Estado de integración al cierre de ese ciclo:** BMAD 6.12.4 instalado; 29 skills y 29 comandos; OpenCode 1.19.5 ejecutable; inferencia real Groq con `groq/openai/gpt-oss-120b` y descubrimiento de `bmad-help` verificados en modo de solo lectura; Chrome 157.0.8103.51 reutilizado con perfil EP aislado. No estaban aceptados: escritura/read-back sintético BMAD, persistencia de API key entre sesiones, recuperación tras reinicio, continuidad con segunda terminal física y auditoría integral de confinamiento. La credencial usada en la prueba era una nota efímera y no se considera persistente.
+
+**Siguiente ciclo:** continuar desde el estado anterior sin reinstalar componentes ya verificados. Priorizar (1) generar un artefacto sintético dentro del proyecto aislado BMAD y leerlo de vuelta verificando SHA-256; (2) definir y probar recuperación segura de la credencial desde EP Vault sin persistirla en texto plano; (3) documentar el procedimiento de alta de otra terminal cuando exista un segundo dispositivo autorizado. No modificar proyectos productivos durante las pruebas.
