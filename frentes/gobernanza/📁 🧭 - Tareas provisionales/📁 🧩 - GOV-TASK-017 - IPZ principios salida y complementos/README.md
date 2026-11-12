@@ -18,12 +18,12 @@ Actualizar la candidata documental de Instrucciones Personalizadas de ChatGPT (I
 3. **Parte 5:** salida y complementos. Debe dirigir a Metacanon §4 para el formato de salida y a ART-032 para los complementos y el procedimiento IPZ, distinguiendo ambos destinos.
 4. **Continuidad y procedencia:** conservar como requisito. No se elimina ni se reduce a metadatos decorativos.
 5. **Complementos ART-032 §5:**
-   - Mantener el complemento de no burocracia adicional.
-   - Mantener continuidad y procedencia, justificadas desde principios.
-   - Eliminar el antiguo punto 3 de contrato de salida del operador: ese contrato ya se trata en Metacanon §4 y no debe duplicarse.
-   - Revisar el antiguo punto 4 de integridad: no suprimir controles esenciales, pero evitar que se convierta en una secuencia repetitiva que ralentice cada turno. Delimitar cada control al evento que lo necesita (por ejemplo, autorización previa a una modificación normativa; comparación SHA/CAS ante escritura concurrente; lectura de vuelta para verificar una persistencia efectuada).
-   - Eliminar el antiguo punto 5 de foliación.
-   - Eliminar el antiguo punto 6 de estado MCP-NORMATIVO.
+   - **Conservar sin ampliar** el complemento de no burocracia adicional.
+   - **Conservar continuidad y procedencia** como un único complemento breve. Su fundamento se remite a P017/P039 (continuidad), P037 (procedencia técnica) y P038 (fuente canónica); no copiar sus enunciados ni volver a imponer sus procedimientos dentro de ART-032.
+   - **Eliminar el antiguo punto 3 (contrato de salida del operador).** Metacanon §4 será la única fuente del formato visible, sus campos y su proporcionalidad. ART-032 no repetirá cabeceras, contadores, campos A/B, folios ni formatos que ya estén definidos allí.
+   - **Reformular el antiguo punto 4 (integridad) como una regla mínima, activada por evento y sin checklist repetitivo.** Debe remitir a los principios que ya gobiernan cada salvaguarda: P005 antes de modificar normas del DUG; P037 para CAS/SHA cuando exista escritura concurrente o cambio del asiento de responsabilidad; P004 al declarar hechos/resultados que requieran verificación; P038 para resolver la fuente canónica. La lectura de vuelta se aplica después de una persistencia efectuada cuando haga falta comprobarla, no como ceremonia en cada turno. No duplicar el procedimiento de AT ni el contrato de salida de §4.
+   - **Eliminar el antiguo punto 5 (foliación).**
+   - **Eliminar el antiguo punto 6 (estado MCP-NORMATIVO).**
 6. No instalar ni modificar el campo nativo IPZ en esta tarea. No activar FOL1 ni MCP-NORMATIVO.
 
 ## Fundamento en principios vigentes
@@ -38,9 +38,9 @@ Fuente de referencia: DUG Samantha v393 · NX-393m, Metacanon 1.31, archivo `gob
 - **P005 — Autorización Explícita del MP:** exige autorización activa y explícita antes de modificar normas del DUG y verificación literal posterior. Sustenta la compuerta para cambios normativos, no una ceremonia adicional para cada operación no normativa.
 - **P001 — Cascada Starship:** resuelve conflictos por precedencia y evita que una regla complementaria local desplace un principio superior.
 
-### Diagnóstico del antiguo complemento 4
+### Diagnóstico del antiguo complemento 4 · decisión de no redundancia
 
-El control de integridad tiene fundamento normativo, pero su formulación debe distinguir **qué evento activa cada salvaguarda**. P005 activa autorización antes de modificar normas; P037 activa CAS/SHA cuando hay riesgo de escritura concurrente; P004 exige verificación antes de declarar resultados; P038 fija la fuente canónica. Ninguno justifica repetir en cada turno una auditoría completa, una consulta redundante del control o una lectura de vuelta cuando no hubo persistencia. La propuesta debe preservar el control proporcional al riesgo y evitar su aplicación indiscriminada.
+El complemento no debe volver a explicar las normas ni crear un flujo de comprobación paralelo. Debe ser una remisión breve a los principios existentes, con activadores concretos: P005 ante una modificación normativa; P037 ante concurrencia o cambio del asiento de responsabilidad; P004 antes de afirmar un resultado que requiera verificación; P038 al determinar la fuente canónica. El read-back corresponde a una persistencia real que deba comprobarse. No se vuelve a consultar control, calcular hashes ni repetir preflight por rutina cuando no existe el evento que activa esa salvaguarda. La continuidad/procedencia se mantiene como complemento independiente y compacto, no se sustituye ni se duplica con un nuevo registro en cada respuesta.
 
 ## Trabajo pendiente
 
