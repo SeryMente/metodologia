@@ -4091,11 +4091,11 @@ Inventario parcial observado:
 | Notepad++ | Datos existentes en %APPDATA%\Notepad++ | No aceptado; perfil por módulo pendiente |
 | OBS | Datos existentes en %APPDATA%\obs-studio y obs-virtualcam.txt | No aceptado; confinamiento pendiente |
 | Vercel CLI | Configuración/telemetría existentes bajo %APPDATA% y %LOCALAPPDATA% | No aceptado; configuración por módulo pendiente |
-| Google Chrome | Residuos de perfil/cache observados; ejecutable no localizado en las rutas examinadas | Módulo creado; instalación portable en curso/no verificada |
+| Google Chrome | Residuos de perfil/cache observados; ejecutable no localizado en las rutas examinadas | Módulo creado; descarga Chrome for Testing detenida antes de checksum/extracción; no instalado |
 | Cryptomator Desktop | Instalación previa bajo SeryMente/Herramientas/Cryptomator; proceso detectado activo | No mover mientras siga activo; consolidación pendiente |
 | Cryptomator CLI | Build local y prueba sintética reportados PASS en EP-TASK-003 | Materialización previa bajo SeryMente/Herramientas/Cryptomator-CLI; reubicar al módulo pendiente |
-| OpenCode | No estaba disponible en PATH de la cuenta administrativa durante el preflight | Instalación local en módulo intentada/en verificación |
-| BMAD | No se encontró instalación previa en el módulo | Instalación estable 6.12.4 intentada/en verificación |
+| OpenCode | No estaba disponible en PATH de la cuenta administrativa durante el preflight | npm install se inició y se abortó sin log/paquete/version read-back; no instalado verificado |
+| BMAD | No se encontró instalación previa en el módulo | npm install se inició y se abortó sin log/paquete/version read-back; no instalado verificado |
 | RDC | Conexión administrativa activa; opera sobre rutas de Fila 4 | Acceso de ChatGPT por herramienta remota; prueba de flujo BMAD/Groq pendiente |
 
 La inspección de los perfiles Windows detectó numerosos datos persistentes de aplicaciones fuera de SeryMente. No se trasladaron masivamente ni se eliminaron; la migración se hará por módulo, con procesos cerrados, respaldo y prueba. Esta tabla es un inventario parcial y no certifica que todas las herramientas hayan sido examinadas.
@@ -4175,7 +4175,7 @@ El acceso desde varias ubicaciones/equipos no se declara funcional hasta demostr
 
 La integración E2E exige: versión de BMAD y OpenCode visible; instalación de workflows reconocida; skill BMAD detectado por OpenCode; sesión del agente; llamada autenticada a Groq sin revelar la clave; tarea de prueba sin modificar un proyecto productivo; archivos creados en el módulo/proyecto persistente; lectura de vuelta desde otra sesión; recuperación de configuración local sin reintroducir el secreto; prueba ChatGPT→RDC→comando→resultado; y alta individual de una segunda terminal.
 
-Estado del ciclo de instalación: MODULE_FOLDERS_CREATED; BMAD_6_12_4_INSTALL=ATTEMPTED_PENDING_READBACK; OPENCODE_INSTALL=ATTEMPTED_PENDING_READBACK; CHROME_MODULE_INSTALL=ATTEMPTED_PENDING_READBACK; GROQ_AUTH=NOT_CONFIGURED; BMAD_OPENCODE_COMPATIBILITY=NOT_TESTED; CHATGPT_RDC_E2E=PARTIAL_CAPABILITY_AVAILABLE_E2E_PENDING; MULTI_TERMINAL_CONTINUITY=NOT_VERIFIED; APP_DATA_CONFINEMENT=PARTIAL_PENDING_AUDIT; ACCEPTANCE=PENDING.
+Estado del ciclo de instalación: MODULE_FOLDERS_CREATED; CHROME_FOR_TESTING_DOWNLOAD=ABORTED_BEFORE_CHECKSUM_OR_EXTRACTION (el archivo ZIP quedó bloqueado durante la descarga y no se verificó ni se declaró instalable); CHROME_INSTALL=NOT_INSTALLED; OPENCODE_NPM_INSTALL=ABORTED_WITHOUT_PACKAGE_OR_VERSION_READBACK; BMAD_NPM_INSTALL=ABORTED_WITHOUT_PACKAGE_OR_VERSION_READBACK; BMAD_WORKFLOWS=NOT_INSTALLED; GROQ_AUTH=NOT_CONFIGURED; BMAD_OPENCODE_COMPATIBILITY=NOT_TESTED; CHATGPT_RDC_E2E=PARTIAL_CAPABILITY_AVAILABLE_E2E_PENDING; MULTI_TERMINAL_CONTINUITY=NOT_VERIFIED; APP_DATA_CONFINEMENT=PARTIAL_PENDING_AUDIT; ACCEPTANCE=PENDING.
 
 Fuentes de referencia:
 - BMAD stable install: https://docs.bmad-method.org/getting-started/installation/
