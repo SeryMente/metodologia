@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.82. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.83. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -4478,3 +4478,24 @@ La elevación administrativa y la identidad de los datos de usuario son dimensio
 - `BMAD_WRITE_READBACK=PASS`; `GROQ_INFERENCE=PASS`; `ARTIFACT_SHA256_READBACK=PASS`.
 - `GROQ_CREDENTIAL_PERSISTENCE=PENDING`: la API key se obtuvo de una nota efímera, se inyectó únicamente a memoria del proceso y no se promovió a variable permanente cifrada de EP Vault. No se conserva ni se registra el valor del secreto.
 - Recuperación después de cerrar procesos/reinicio, continuidad con otra terminal física y auditoría integral de confinamiento siguen pendientes. La aceptación integral del frente EP no se declara.
+
+
+### 142.16 Nueva sesión OpenCode y recuperación parcial · Fila 4 · 2026-11-12
+
+**Prueba de recuperación sin secretos**
+- Se inició una instancia nueva de OpenCode desde RDC elevado, configurando explícitamente los directorios de Fila 4 bajo `MOD-EP-OPENCODE` y el proyecto aislado BMAD. No se leyó DPAPI ni se inyectó `GROQ_API_KEY` en esta prueba.
+- `opencode --version`: 1.19.5, exit 0.
+- `opencode debug paths`: exit 0; `home`, `data`, `bin`, `log`, `repos`, `cache`, `config`, `state` y `tmp` se resolvieron dentro de `MOD-EP-OPENCODE`.
+- `opencode models groq`: exit 1, `Provider not found: groq`. El resultado se obtuvo deliberadamente sin credencial de entorno; no invalida la prueba E2E autenticada previa, pero demuestra que el descubrimiento/uso del proveedor no se recupera de forma autónoma sin una credencial disponible para el proceso.
+- Resultado: `FRESH_PROCESS_BINARY=PASS`; `FRESH_PROCESS_PATHS=PASS`; `GROQ_PROVIDER_WITHOUT_SECRET=UNAVAILABLE_EXPECTED`; `DPAPI_RECOVERY=NOT_TESTED`; `GROQ_CREDENTIAL_PERSISTENCE=PENDING`.
+
+**Promoción de nota a variable persistente**
+- Se identificó en el módulo la función `Promote-EpVaultNote`, cuyo flujo es guardar la nota como variable cifrada, leerla de vuelta y retirar la nota temporal; la operación prevista es `GROQ_API_KEY`.
+- El intento de invocación de promoción no llegó a ejecutarse en el dispositivo. La nota que se había utilizado en las pruebas anteriores venció a las 16:41:06 locales del 2026-11-12; no debe reutilizarse.
+- No existe evidencia de que `GROQ_API_KEY` haya sido promovida, ni de que la variable persistente exista. El siguiente intento requiere que el operador capture una nota nueva con TTL suficiente en EP Vault y que la promoción se ejecute en el contexto DPAPI `CENTRAL\fila4`, con read-back sin revelar el valor en consola/log.
+- No se almacenó ningún secreto en texto plano ni se imprimió el valor de la API key.
+
+**Estado**
+- Escritura/read-back BMAD permanece aprobado en §142.15.
+- Recuperación de binario y rutas de OpenCode aprobada para proceso nuevo; recuperación de proveedor/credencial pendiente.
+- Recuperación tras reinicio del equipo, segunda terminal física y auditoría integral de confinamiento permanecen pendientes. No se declara aceptación integral del frente EP.
