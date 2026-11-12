@@ -522,4 +522,4 @@ Orden vigente para el ciclo actual: **EP-TASK-002 → EP-TASK-003 → EP-TASK-00
 
 ## Rectificación general de tareas por instrucción del operador · 2026-11-12
 
-La única especificación de arquitectura EP es [OEP §137](../OEP.md#137-especificacion-general-del-workspace-protegido-y-confinamiento-integral). La matriz anterior ordena las siete tareas conforme a sus dependencias. Las menciones históricas a VHDX/BitLocker permanecen como evidencia de estados anteriores, no como requisitos vigentes. Esta documentación no autoriza ni registra instalación, desinstalación, creación de bóveda, migración, limpieza de archivos ni cambio alguno en el host.
+La única especificación de arquitectura EP es [OEP §137](../OEP.md). La matriz anterior ordena las siete tareas conforme a sus dependencias. Las menciones históricas a VHDX/BitLocker permanecen como evidencia de estados anteriores, no como requisitos vigentes. Esta documentación no autoriza ni registra instalación, desinstalación, creación de bóveda, migración, limpieza de archivos ni cambio alguno en el host.
