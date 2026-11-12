@@ -1,9 +1,13 @@
 # 📝 EP-TASK-006 · Inventario y centralización de variables de entorno
 
-**Estado:** `en_curso · VERCEL_KHORA_WEB_52_CURRENT_MATCH · ENTRY_READBACK_9 · NOT_IMPORTED_1 · BLOCKED_42 · EP_VAULT_FORMAL_3352B_PRESENT · ISOLATED_DECRYPT_30_FIELDS_PASS · CURRENT_SESSION_CLOSED · VAULT_NAME_RECONCILIATION_PENDING · ADAPTERS_NOT_IMPLEMENTED`.
+**Estado:** `en_curso · VERCEL_KHORA_WEB_52_CURRENT_MATCH · ENTRY_READBACK_9 · NOT_IMPORTED_1 · BLOCKED_42 · ISOLATED_DECRYPT_30_FIELDS_PASS · APP_DATA_CONFINEMENT_PENDING · VAULT_RELOCATION_NOT_STARTED · ADAPTERS_NOT_IMPLEMENTED`.
 **Frente propietario:** Entorno Persistente (EP).  
 **Apertura:** instrucción directa del operador · 2026-11-09.  
 **Relaciones:** EP-TASK-004 (EP Vault) y EP-TASK-002 (persistencia B2).
+
+## Especificación vigente aplicable · OEP §137
+
+EP Vault y los adaptadores de variables forman parte del workspace protegido. Binarios y runtimes quedan bajo Herramientas/; catálogos, configuración, estado, bases, caches y logs bajo Datos/EP/ o Temporal/. No se guardan archivos .env, credenciales, valores de variables ni copias persistentes en perfiles Windows o rutas externas. La inyección a proveedores solo ocurre por destinos expresamente autorizados y no se registra el valor en claro. La verificación de cada adaptador se hace por nombre, ámbito y read-back no expositivo.
 
 ## 1. Enunciado
 
