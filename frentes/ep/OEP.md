@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.78. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.79. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -4161,9 +4161,11 @@ RDC proporciona al asistente remoto lectura/escritura de archivos y ejecución d
 
 ### 141.4 Groq, secretos y seguridad
 
-La integración Groq de OpenCode usa el proveedor nativo de Groq; el modelo recomendado se decide según disponibilidad/latencia y pruebas. La API key no se escribe en archivos versionados, comandos, variables globales persistentes, logs o conversación. Primero se verifica el mecanismo de autenticación y la ruta del almacén local específico de OpenCode. Si el producto guarda la credencial en auth.json, se comprueba ACL y cifrado/aislamiento por terminal y se protege ese archivo mediante el mecanismo local del sistema operativo; el archivo no se sincroniza ni se incluye en backups ordinarios.
+La integración se configura con el proveedor V1 compatible con OpenAI de OpenCode 1.19.5: `provider.groq`, paquete `@ai-sdk/openai-compatible`, endpoint `https://api.groq.com/openai/v1` y API key obtenida desde `GROQ_API_KEY` mediante `{env:GROQ_API_KEY}`. El identificador de modelo descubierto por el CLI incluye `groq/openai/gpt-oss-120b`. No se usa `auth.json` para esta integración.
 
-No se ha recibido una Groq API key del operador ni se ha realizado una autenticación real. Por tanto, GROQ_AUTH=NOT_CONFIGURED; no se genera ni inventa una cuenta, API key ni consentimiento. La prueba de conectividad/auth se ejecutará después de una entrada local segura de la clave en la terminal correspondiente, evitando su eco en pantalla y evitando persistirla en texto claro.
+La API key del operador se capturó localmente como nota efímera DPAPI CurrentUser en Fila 4. El launcher la leyó dentro del proceso autorizado y la asignó únicamente al entorno del proceso OpenCode; no se imprimió, no se guardó en config/Git/logs/conversación ni se promovió a variable formal. La nota venció a las 15:39:12 locales (2026-11-12T21:39:12.4827781Z). El proceso se detuvo después de la prueba sin respuesta observable.
+
+Por tanto, `GROQ_KEY_CAPTURE=PASS`, `GROQ_PROCESS_ENV_INJECTION=PASS_OBSERVED`, pero `GROQ_AUTH_AND_INFERENCE=NOT_VERIFIED`. No se ha demostrado una respuesta HTTP/modelo aceptada por Groq; no declarar autenticación como PASS. No se genera ni inventa una cuenta, API key ni consentimiento. Para otra prueba el operador debe capturar una nota nueva y vigente; no se reutiliza una nota expirada ni se extiende su TTL retroactivamente.
 
 ### 141.5 Acceso ChatGPT/RDC, límites y multi-equipo
 
