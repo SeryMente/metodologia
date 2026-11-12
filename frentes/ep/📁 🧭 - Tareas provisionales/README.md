@@ -28,6 +28,7 @@ El patrón de materialización sigue el registro de tareas provisionales de Gobe
 | EP-TASK-002 | `en_curso · B2_V7_UPLOAD_READBACK_PASS · ISOLATED_DECRYPT_PASS_30 · CLIENT_ENCRYPTED_WORKSPACE_BACKUP_PENDING · CROSS_HOST_PENDING` | Backups: solo ciphertext cliente remoto; evidencia Vault v7 no se extrapola al workspace ni a cross-host. | [núcleo](./📁%20🧩%20-%20EP-TASK-002%20-%20Persistencia%20provisional%20Backblaze/README.md) |
 | EP-TASK-005 | `pendiente · WORKSPACE_CRYPTOMATOR_GATE_PENDING · PACKAGE_V389_RECONCILIATION_PENDING · INSTALL_NOT_PERFORMED · IPZ_E2E_NOT_RUN` | MCP-OCP: instalación y todo su estado/caché/logs/runtime dentro del workspace; paquete reconciliado e íntegro antes de instalar. | [núcleo](./📁%20🧩%20-%20EP-TASK-005%20-%20Instalación%20y%20aceptación%20de%20MCP-OCP%20local/README.md) |
 | EP-TASK-007 | `en_curso · HOST_INVENTORY_PARTIAL_READ_ONLY · CRYPTOMATOR_LOCK_UNMOUNT_NOT_RUN · SESSION_CLEANUP_NOT_RUN` | Sesión: inventario, lock/unmount Cryptomator y limpieza limitada a efímeros; no borrar workspace persistente. | [núcleo](./📁%20🧩%20-%20EP-TASK-007%20-%20Guardián%20de%20sesión%20efímera%20e%20inventario%20del%20host/README.md) |
+| EP-TASK-008 | `en_curso · VMAT_VERBATIM_INTAKE_DEFINED · SUPERPOWERS_V7.0.2_CONFIGURED_AND_DOWNLOADED · RUNTIME_SKILL_DISCOVERY_PENDING` | vMAT Product Design: convertir dictados verbatim de ChatGPT en el mínimo conjunto exhaustivo de tareas ejecutables, integrando BMAD y Superpowers. | [núcleo](./📁%20🧩%20-%20EP-TASK-008%20-%20vMAT%20Product%20Design%20-%20Captura%20verbatim%20y%20tareas%20ejecutables%20con%20Superpowers/README.md) |
 
 ## Estado de continuidad · 2026-10-31
 
@@ -531,3 +532,8 @@ La única especificación de arquitectura EP es [OEP §137](../OEP.md). La matri
 ## Reconciliación EP-TASK-003 · build CLI y E2E sintética · 2026-11-12 · 11:54 America/Mexico_City
 
 La build local desde upstream firmado y sus pruebas quedaron registradas en el núcleo EP-TASK-003. Resultado: 12 unit tests y 5 integration tests PASS; CLI `--version/help/create --help/unlock --help/list-mounters` PASS; bóveda sintética creada y desbloqueada por `FallbackMounter`; WebDAV PUT 201 / GET 200, round-trip de 37 bytes y ausencia de nombre/contenido sintético en el árbol físico cifrado. No es release estable ni aceptación de workspace. Windows graceful unmount no verificado, wrapper de build PowerShell 5.1 y limpieza del staging sintético pendientes. No se creó bóveda real, no se introdujo contraseña, no se migró el origen ni se alteró BitLocker/VHDX/GUI. El estado EP-TASK-004 permanece sin cambio.
+
+
+## Reorientación operativa vMAT · EP-TASK-008 · 2026-11-12
+
+EP-TASK-008 inicia la implementación del uso solicitado para Product Design: ChatGPT recibe el dictado, conserva el texto verbatim y crea tareas provisionales en los frentes responsables. La cantidad y el alcance de tareas deben ser mínimos y exhaustivos frente a la fuente; no se añaden tareas por posibilidades o mejoras no pedidas. La especificación funcional reside en `frentes/ep/modulos/MOD-EP-PRODUCT-DESIGN/ESPECIFICACION-OPERATIVA-VMAT.md`. BMAD se reutiliza para procesos de producto; Superpowers se utiliza para las capacidades de ingeniería pertinentes del agente OpenCode. La tarea no crea otro OCP ni un sistema paralelo de gestión.
